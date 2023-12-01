@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.liveForMsg;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Paint;
@@ -17,8 +18,8 @@ import android.widget.TextView;
 import androidx.collection.ArrayMap;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.android.internal.util.cm.SpamFilter;
 import com.anythink.core.common.g.g;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.chat.data.ProfileData;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
@@ -123,13 +124,9 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
     private View R;
     private View S;
     private Runnable W;
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f13473a;
+    public View a;
     public ViewGroup b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public ActivityFragmentActive f13474c;
+    public ActivityFragmentActive c;
     public BaseFragment d;
     public boolean g;
     public Context i;
@@ -183,12 +180,10 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
             LiveMsgManager.this.v();
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             super.onScrollStateChanged(recyclerView, i);
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
             super.onScrolled(recyclerView, i, i2);
             if (LiveMsgManager.this.k.f()) {
@@ -209,13 +204,11 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
         /* renamed from: com.blued.android.module.live_china.liveForMsg.LiveMsgManager$HotEmojiAdapter$1  reason: invalid class name */
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/LiveMsgManager$HotEmojiAdapter$1.class */
         public class AnonymousClass1 implements SendMsgListener {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ FrameLayout f13498a;
+            final /* synthetic */ FrameLayout a;
             final /* synthetic */ LiveZanExtraModel.EmojiModel b;
 
             AnonymousClass1(FrameLayout frameLayout, LiveZanExtraModel.EmojiModel emojiModel) {
-                this.f13498a = frameLayout;
+                this.a = frameLayout;
                 this.b = emojiModel;
             }
 
@@ -230,7 +223,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                 if (!LiveMsgManager.this.k.f()) {
                     LiveMsgManager.this.k.e();
                 }
-                new LiveSendMsgTransitionAnimView(HotEmojiAdapter.this.mContext).a(LiveMsgManager.this.d.getActivity(), LiveMsgManager.this.b, frameLayout, LiveMsgManager.this.j, emojiModel, runnable);
+                new LiveSendMsgTransitionAnimView(HotEmojiAdapter.this.mContext).a((Activity) LiveMsgManager.this.d.getActivity(), LiveMsgManager.this.b, frameLayout, (View) LiveMsgManager.this.j, emojiModel, runnable);
             }
 
             @Override // com.blued.android.module.live_china.msg.SendMsgListener
@@ -242,7 +235,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                 if (LiveMsgManager.this.d == null || LiveMsgManager.this.d.getFragmentActive() == null) {
                     return;
                 }
-                final FrameLayout frameLayout = this.f13498a;
+                final FrameLayout frameLayout = this.a;
                 final LiveZanExtraModel.EmojiModel emojiModel = this.b;
                 frameLayout.post(new Runnable() { // from class: com.blued.android.module.live_china.liveForMsg.-$$Lambda$LiveMsgManager$HotEmojiAdapter$1$8uqHmOm-2H0PsO2jnwkfiURUD6U
                     @Override // java.lang.Runnable
@@ -272,7 +265,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                 multiDialogModel.resource = new MultiDialogResourceModel();
                 multiDialogModel.resource.url = LiveMsgManager.this.D;
                 LiveMultiDialogFragment.a(LiveMsgManager.this.d.getChildFragmentManager(), multiDialogModel);
-            } else if (SystemClock.elapsedRealtime() - LiveMsgManager.this.K < m.ag && StringUtils.a(emojiModel.id, LiveMsgManager.this.J)) {
+            } else if (SystemClock.elapsedRealtime() - LiveMsgManager.this.K < 3000 && StringUtils.a(emojiModel.id, LiveMsgManager.this.J)) {
                 ToastUtils.b("发送过于频繁，请稍后再试~");
             } else {
                 if (LiveMsgManager.this.X) {
@@ -299,7 +292,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                 frameLayout.setVisibility(8);
                 imageView3.setVisibility(8);
                 imageView2.setVisibility(0);
-                ImageLoader.a(LiveMsgManager.this.f13474c, R.drawable.live_emoji_default).a(imageView2);
+                ImageLoader.a(LiveMsgManager.this.c, R.drawable.live_emoji_default).a(imageView2);
             } else {
                 frameLayout.setVisibility(0);
                 imageView3.setVisibility(0);
@@ -317,7 +310,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                     imageView.setAlpha(0.5f);
                     commonAdapterHolder.b(R.id.iv_emoji_lock, 0);
                 }
-                ImageLoader.a(LiveMsgManager.this.f13474c, emojiModel.url).a(imageView);
+                ImageLoader.a(LiveMsgManager.this.c, emojiModel.url).a(imageView);
             }
             commonAdapterHolder.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.liveForMsg.-$$Lambda$LiveMsgManager$HotEmojiAdapter$NED3zCEp3Sf0aYhLS9aOPsqOIyw
                 @Override // android.view.View.OnClickListener
@@ -341,13 +334,11 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
         /* renamed from: com.blued.android.module.live_china.liveForMsg.LiveMsgManager$HotWordAdapter$1  reason: invalid class name */
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/liveForMsg/LiveMsgManager$HotWordAdapter$1.class */
         public class AnonymousClass1 implements SendMsgListener {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ LiveZanExtraModel.HotWords f13501a;
+            final /* synthetic */ LiveZanExtraModel.HotWords a;
             final /* synthetic */ TextView b;
 
             AnonymousClass1(LiveZanExtraModel.HotWords hotWords, TextView textView) {
-                this.f13501a = hotWords;
+                this.a = hotWords;
                 this.b = textView;
             }
 
@@ -378,7 +369,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
             @Override // com.blued.android.module.live_china.msg.SendMsgListener
             public void a() {
                 if (HotWordAdapter.this.b) {
-                    InstantLog.b("live_quick_chat_click", this.f13501a.id);
+                    InstantLog.b("live_quick_chat_click", this.a.id);
                 }
             }
 
@@ -414,7 +405,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(LiveZanExtraModel.HotWords hotWords, CommonRecycleAdapter.CommonAdapterHolder commonAdapterHolder, View view) {
-            if (SystemClock.elapsedRealtime() - LiveMsgManager.this.K < m.ag && StringUtils.a(hotWords.id, LiveMsgManager.this.J)) {
+            if (SystemClock.elapsedRealtime() - LiveMsgManager.this.K < 3000 && StringUtils.a(hotWords.id, LiveMsgManager.this.J)) {
                 ToastUtils.b("发送过于频繁，请稍后再试~");
                 return;
             }
@@ -462,16 +453,16 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
         }
         this.i = baseFragment.getActivity();
         this.d = baseFragment;
-        this.f13474c = baseFragment.getFragmentActive();
+        this.c = baseFragment.getFragmentActive();
         if (baseFragment instanceof RecordingOnliveFragment) {
             this.g = true;
-            this.f13473a = ((RecordingOnliveFragment) baseFragment).b;
+            this.a = ((RecordingOnliveFragment) baseFragment).b;
             this.x = 1;
             PlayingOnliveFragment.cB = 1;
         } else if (baseFragment instanceof PlayingOnliveBaseModeFragment) {
             this.g = false;
             PlayingOnliveBaseModeFragment playingOnliveBaseModeFragment = (PlayingOnliveBaseModeFragment) baseFragment;
-            this.f13473a = playingOnliveBaseModeFragment.b;
+            this.a = playingOnliveBaseModeFragment.b;
             this.e = playingOnliveBaseModeFragment.r;
             this.f = playingOnliveBaseModeFragment.s;
             if (baseFragment instanceof PlayingOnliveSimpleModeFragment) {
@@ -516,7 +507,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
             hashMap.put("KEY_LUCKY_BAG_IMG_URL", liveGiftModel.images_static);
             hashMap.put("KEY_LUCKY_BAG_GIFT_IMG_URL", liveGiftModel.luck_bag_img);
         }
-        this.v.a(this.f13474c, liveGiftModel.images_gif, liveGiftModel.images_apng2, liveGiftModel.images_mp4, liveGiftModel.anim_code, scaleType2, hashMap, new AnimationListenerAdapter() { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.12
+        this.v.a(this.c, liveGiftModel.images_gif, liveGiftModel.images_apng2, liveGiftModel.images_mp4, liveGiftModel.anim_code, scaleType2, hashMap, new AnimationListenerAdapter() { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.12
             @Override // com.blued.android.module.live.base.view.animation.AnimationListenerAdapter, com.blued.android.module.live.base.view.animation.LiveAnimationListener
             public void b() {
                 LiveSetDataObserver.a().a(liveGiftModel);
@@ -550,7 +541,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
             LiveFansLevelModel liveFansLevelModel2 = null;
             try {
                 if (!TextUtils.isEmpty(liveChattingModel.getMsgExtra())) {
-                    liveFansLevelModel2 = (LiveFansLevelModel) f.fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFansLevelModel.class);
+                    liveFansLevelModel2 = (LiveFansLevelModel) f.fromJson(liveChattingModel.getMsgExtra(), LiveFansLevelModel.class);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -655,7 +646,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
     private void z() {
         GiftAnimManager giftAnimManager = new GiftAnimManager();
         this.Q = giftAnimManager;
-        giftAnimManager.a(this, this.n, this.f13474c);
+        giftAnimManager.a(this, this.n, this.c);
     }
 
     public void a() {
@@ -714,22 +705,22 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                         }
                     }, liveMsgReportModel);
                 } else {
-                    String a2 = LiveUtils.a(LiveMsgManager.this.k.b(-1));
-                    if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(a2)) {
-                        str2 = str2 + "\n" + a2;
+                    String a = LiveUtils.a(LiveMsgManager.this.k.b(-1));
+                    if (!TextUtils.isEmpty(str2) && !TextUtils.isEmpty(a)) {
+                        str2 = str2 + "\n" + a;
                     } else if (TextUtils.isEmpty(str2)) {
-                        if (TextUtils.isEmpty(a2)) {
+                        if (TextUtils.isEmpty(a)) {
                             str2 = "";
                         } else {
-                            str2 = "\n" + a2;
+                            str2 = "\n" + a;
                         }
                     }
                     Logger.b(LiveMsgManager.A, "举报手输内容加聊天记录拼接字符串==", str2);
                     if (!TextUtils.isEmpty(str2)) {
-                        LiveRoomInfo.a().a(LiveMsgManager.this.i, str2, str, LiveMsgManager.this.f, LiveMsgManager.this.f13474c);
+                        LiveRoomInfo.a().a(LiveMsgManager.this.i, str2, str, LiveMsgManager.this.f, LiveMsgManager.this.c);
                     }
                 }
-                KeyboardUtils.a(LiveMsgManager.this.d.getActivity());
+                KeyboardUtils.a((Activity) LiveMsgManager.this.d.getActivity());
             }
         }, (DialogInterface.OnClickListener) null));
     }
@@ -826,10 +817,10 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
     }
 
     public void b() {
-        View findViewById = this.f13473a.findViewById(R.id.live_msg_main_root);
+        View findViewById = this.a.findViewById(R.id.live_msg_main_root);
         this.m = findViewById;
-        this.j = (RecyclerView) findViewById.findViewById(R.id.live_msg_content_pullrefresh);
-        TextView textView = (TextView) this.f13473a.findViewById(R.id.tv_msg_scroll_to_bottom);
+        this.j = findViewById.findViewById(R.id.live_msg_content_pullrefresh);
+        TextView textView = (TextView) this.a.findViewById(R.id.tv_msg_scroll_to_bottom);
         this.l = textView;
         if (textView != null) {
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.1
@@ -841,9 +832,9 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                 }
             });
         }
-        this.E = (ShapeLinearLayout) this.f13473a.findViewById(R.id.fl_back_to_last_live_room);
-        this.F = (TextView) this.f13473a.findViewById(R.id.tv_back_to_last_live_room_tips);
-        CircleProgressView circleProgressView = (CircleProgressView) this.f13473a.findViewById(R.id.circle_progress);
+        this.E = (ShapeLinearLayout) this.a.findViewById(R.id.fl_back_to_last_live_room);
+        this.F = (TextView) this.a.findViewById(R.id.tv_back_to_last_live_room_tips);
+        CircleProgressView circleProgressView = (CircleProgressView) this.a.findViewById(R.id.circle_progress);
         this.G = circleProgressView;
         if (circleProgressView != null) {
             circleProgressView.setValue(100.0f);
@@ -853,7 +844,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
             this.G.setBarWidth(DensityUtils.a(this.i, 2.5f));
             this.G.setBarStrokeCap(Paint.Cap.ROUND);
         }
-        this.H = (ImageView) this.f13473a.findViewById(R.id.iv_last_avatar);
+        this.H = (ImageView) this.a.findViewById(R.id.iv_last_avatar);
         LiveRoomData y = LiveRoomManager.a().y();
         if (this.E != null && this.G != null && this.H != null && y != null && this.W == null && this.x == 1) {
             com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive.d(LiveProtos.Event.LIVE_PK_BACK_ROOM_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), String.valueOf(y.lid), y.profile != null ? y.profile.uid : "");
@@ -891,27 +882,27 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                     LiveMsgManager.this.G.a(0.0f, 5000L);
                 }
             }, 500L);
-            ImageLoader.a(this.f13474c, y.profile != null ? y.profile.avatar : "").c().a(this.H);
+            ImageLoader.a(this.c, y.profile != null ? y.profile.avatar : "").c().a(this.H);
         }
-        this.n = (LinearLayout) this.f13473a.findViewById(R.id.ll_gift_ani_root);
-        this.s = (BarrageView) this.f13473a.findViewById(R.id.barrage);
-        this.t = (EntranceEffectLayout) this.f13473a.findViewById(R.id.approach_effect_barrage);
-        this.u = (EntranceNormalLayout) this.f13473a.findViewById(R.id.approach_normal_barrage);
-        this.v = (LiveAnimationView) this.f13473a.findViewById(R.id.live_enter_animation);
+        this.n = (LinearLayout) this.a.findViewById(R.id.ll_gift_ani_root);
+        this.s = (BarrageView) this.a.findViewById(R.id.barrage);
+        this.t = (EntranceEffectLayout) this.a.findViewById(R.id.approach_effect_barrage);
+        this.u = (EntranceNormalLayout) this.a.findViewById(R.id.approach_normal_barrage);
+        this.v = (LiveAnimationView) this.a.findViewById(R.id.live_enter_animation);
         if (LiveFloatManager.a().C()) {
-            this.w = (BarrageViewMultiOneRow) this.f13473a.findViewById(R.id.multi_barrage);
-            this.M = this.f13473a.findViewById(R.id.barrage_occupy_view);
+            this.w = (BarrageViewMultiOneRow) this.a.findViewById(R.id.multi_barrage);
+            this.M = this.a.findViewById(R.id.barrage_occupy_view);
         } else {
             BarrageView barrageView = this.s;
             if (barrageView != null) {
                 barrageView.b = 3;
             }
         }
-        this.N = this.f13473a.findViewById(R.id.occupy_view);
-        this.O = this.f13473a.findViewById(R.id.simple_model_high);
-        this.P = this.f13473a.findViewById(R.id.simple_model_low);
-        this.R = this.f13473a.findViewById(R.id.rl_msg_fans_reopen);
-        View findViewById2 = this.f13473a.findViewById(R.id.ll_msg_fans_reopen);
+        this.N = this.a.findViewById(R.id.occupy_view);
+        this.O = this.a.findViewById(R.id.simple_model_high);
+        this.P = this.a.findViewById(R.id.simple_model_low);
+        this.R = this.a.findViewById(R.id.rl_msg_fans_reopen);
+        View findViewById2 = this.a.findViewById(R.id.ll_msg_fans_reopen);
         this.S = findViewById2;
         findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.5
             @Override // android.view.View.OnClickListener
@@ -933,21 +924,21 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
         }
         GiftAnimManager giftAnimManager = this.Q;
         if (giftAnimManager != null) {
-            giftAnimManager.a(this, this.n, this.f13474c);
+            giftAnimManager.a(this, this.n, this.c);
         }
-        this.I = this.f13473a.findViewById(R.id.live_msg_rv);
-        RecyclerView recyclerView = (RecyclerView) this.f13473a.findViewById(R.id.live_msg_emoji_rv);
-        this.p = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.f13473a.getContext(), 0, false));
+        this.I = this.a.findViewById(R.id.live_msg_rv);
+        RecyclerView findViewById3 = this.a.findViewById(R.id.live_msg_emoji_rv);
+        this.p = findViewById3;
+        findViewById3.setLayoutManager(new LinearLayoutManager(this.a.getContext(), 0, false));
         this.p.setHorizontalFadingEdgeEnabled(true);
         this.p.setFadingEdgeLength(DisplayUtil.a(AppInfo.d(), 30.0f));
         if (this.r == null) {
             this.r = new HotEmojiAdapter(this.p.getContext());
         }
         this.p.setAdapter(this.r);
-        RecyclerView recyclerView2 = (RecyclerView) this.f13473a.findViewById(R.id.live_msg_hot_word_rv);
-        this.o = recyclerView2;
-        recyclerView2.setLayoutManager(new LinearLayoutManager(this.f13473a.getContext(), 0, false));
+        RecyclerView findViewById4 = this.a.findViewById(R.id.live_msg_hot_word_rv);
+        this.o = findViewById4;
+        findViewById4.setLayoutManager(new LinearLayoutManager(this.a.getContext(), 0, false));
         this.o.setHorizontalFadingEdgeEnabled(true);
         this.o.setFadingEdgeLength(DisplayUtil.a(AppInfo.d(), 30.0f));
         if (this.q == null) {
@@ -1025,7 +1016,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
 
     public void c() {
         BaseFragment baseFragment = this.d;
-        if (baseFragment == null || this.f13474c == null) {
+        if (baseFragment == null || this.c == null) {
             return;
         }
         if (baseFragment instanceof RecordingOnliveFragment) {
@@ -1038,7 +1029,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
         if (y()) {
             return;
         }
-        this.k.a(this.i, this.g, this.d, this.f13474c, this.j);
+        this.k.a(this.i, this.g, this.d, this.c, this.j);
         a(LiveRoomManager.a().Z());
         if (this.d instanceof PlayingOnliveFullModeFragment) {
             s();
@@ -1251,7 +1242,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
             case 287:
                 h(liveChattingModel);
                 return;
-            case -9999:
+            case g.h /* -9999 */:
             case 221:
             case 245:
             case 251:
@@ -1390,7 +1381,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
     protected boolean g(LiveGiftModel liveGiftModel) {
         if (liveGiftModel != null && liveGiftModel.vibrate_status == 1 && LiveDataManager.a().j()) {
             if (this.L == null) {
-                this.L = (Vibrator) AppInfo.d().getSystemService(Context.VIBRATOR_SERVICE);
+                this.L = (Vibrator) AppInfo.d().getSystemService("vibrator");
             }
             this.L.vibrate(400L);
             return true;
@@ -1422,11 +1413,11 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                     LiveMsgBonusExtra liveMsgBonusExtra = parseBonusMap.get(i2);
                     ArrayMap arrayMap = new ArrayMap();
                     MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "id", liveMsgBonusExtra.id);
-                    MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "count", liveMsgBonusExtra.count);
-                    MsgPackHelper.putMapValue(arrayMap, "image", liveMsgBonusExtra.image);
+                    MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, SpamFilter.SpamContract.NotificationTable.COUNT, liveMsgBonusExtra.count);
+                    MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "image", liveMsgBonusExtra.image);
                     if (liveMsgBonusExtra.profile != null) {
                         MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "uid", liveMsgBonusExtra.profile.uid);
-                        MsgPackHelper.putMapValue(arrayMap, "name", liveMsgBonusExtra.profile.name);
+                        MsgPackHelper.putMapValue((Map<String, Object>) arrayMap, "name", liveMsgBonusExtra.profile.name);
                     }
                     liveChattingModel.msgMapExtra = arrayMap;
                     this.k.a(liveChattingModel);
@@ -1590,7 +1581,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
 
                 @Override // com.blued.android.module.live_china.view.UserCardDialogFragment.UserCardOnclickListner
                 public void a(final String str, final String str2) {
-                    LiveRoomHttpUtils.a(String.valueOf(LiveMsgManager.this.f), str, new BluedUIHttpResponse(LiveMsgManager.this.f13474c) { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.8.1
+                    LiveRoomHttpUtils.a(String.valueOf(LiveMsgManager.this.f), str, new BluedUIHttpResponse(LiveMsgManager.this.c) { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.8.1
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public boolean onUIFailure(int i, String str3) {
                             AppMethods.a((CharSequence) str3);
@@ -1602,7 +1593,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
                             AppMethods.d(R.string.live_kick_success);
                             LiveMsgSendManager.a().a(StringUtils.a(str, 0L), str2);
                         }
-                    }, LiveMsgManager.this.f13474c);
+                    }, LiveMsgManager.this.c);
                 }
 
                 @Override // com.blued.android.module.live_china.view.UserCardDialogFragment.UserCardOnclickListner
@@ -1625,7 +1616,7 @@ public class LiveMsgManager implements SysNetworkListener, Serializable {
 
                 @Override // com.blued.android.module.live_china.view.UserCardDialogFragment.UserCardOnclickListner
                 public void b(final String str, final String str2) {
-                    LiveRoomHttpUtils.a(String.valueOf(LiveMsgManager.this.f), str, "1", new BluedUIHttpResponse(LiveMsgManager.this.f13474c) { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.8.2
+                    LiveRoomHttpUtils.a(String.valueOf(LiveMsgManager.this.f), str, "1", new BluedUIHttpResponse(LiveMsgManager.this.c) { // from class: com.blued.android.module.live_china.liveForMsg.LiveMsgManager.8.2
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIUpdate(BluedEntity bluedEntity) {
                             ProfileData profileData = new ProfileData();

@@ -6,11 +6,11 @@ import java.util.List;
 final /* synthetic */ class br implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoJoiner f40270a;
+    private final TXVideoJoiner f26579a;
     private final List b;
 
     private br(TXVideoJoiner tXVideoJoiner, List list) {
-        this.f40270a = tXVideoJoiner;
+        this.f26579a = tXVideoJoiner;
         this.b = list;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class br implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoJoiner.lambda$setVideoPathList$0(this.f40270a, this.b);
+        TXVideoJoiner.lambda$setVideoPathList$0(this.f26579a, this.b);
     }
 }

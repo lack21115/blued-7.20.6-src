@@ -16,7 +16,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
-import com.anythink.core.common.res.d;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.activity.base.SobotBaseHelpCenterActivity;
@@ -172,7 +171,7 @@ public class SobotProblemDetailActivity extends SobotBaseHelpCenterActivity impl
                     return;
                 }
                 String str = "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <title></title>\n        <style>\n body{color:" + ResourceUtils.getColorById(SobotProblemDetailActivity.this, "sobot_common_wenzi_black") + ";}\n            img{\n                width: auto;\n                height:auto;\n                max-height: 100%;\n                max-width: 100%;\n            }\n        </style>\n    </head>\n    <body>" + answerDesc + "  </body>\n</html>";
-                Tracker.loadDataWithBaseURL(SobotProblemDetailActivity.this.mWebView, d.f6907a, SobotProblemDetailActivity.DEFAULT_STYLE + str.replace("<p> </p>", "<br/>").replace("<p></p>", "<br/>"), ClipDescription.MIMETYPE_TEXT_HTML, "utf-8", null);
+                Tracker.loadDataWithBaseURL(SobotProblemDetailActivity.this.mWebView, "about:blank", SobotProblemDetailActivity.DEFAULT_STYLE + str.replace("<p> </p>", "<br/>").replace("<p></p>", "<br/>"), ClipDescription.MIMETYPE_TEXT_HTML, "utf-8", null);
             }
         });
     }

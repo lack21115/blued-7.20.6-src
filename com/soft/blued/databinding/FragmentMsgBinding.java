@@ -7,11 +7,11 @@ import com.soft.blued.customview.TouchEnableKeyboardLinearLayout;
 public final class FragmentMsgBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TouchEnableKeyboardLinearLayout f28903a;
+    private final TouchEnableKeyboardLinearLayout f15213a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public TouchEnableKeyboardLinearLayout getRoot() {
-        return this.f28903a;
+        return this.f15213a;
     }
 }

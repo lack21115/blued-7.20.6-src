@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/BluedVBDelegateExtKt$viewBinding$6.class */
 public final /* synthetic */ class BluedVBDelegateExtKt$viewBinding$6 extends FunctionReferenceImpl implements Function1<BasePopupView, View> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final BluedVBDelegateExtKt$viewBinding$6 f10787a = new BluedVBDelegateExtKt$viewBinding$6();
+    public static final BluedVBDelegateExtKt$viewBinding$6 a = new BluedVBDelegateExtKt$viewBinding$6();
 
     public BluedVBDelegateExtKt$viewBinding$6() {
         super(1, BasePopupView.class, "getPopupImplView", "getPopupImplView()Landroid/view/View;", 0);

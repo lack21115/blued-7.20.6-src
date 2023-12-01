@@ -18,22 +18,22 @@ import java.util.List;
 public class DynamicSkinManager {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final DynamicSkinManager f34226c = new DynamicSkinManager();
+    private static final DynamicSkinManager f20535c = new DynamicSkinManager();
 
     /* renamed from: a  reason: collision with root package name */
-    public List<DynamicSkinModel> f34227a;
+    public List<DynamicSkinModel> f20536a;
     private boolean b;
 
     private DynamicSkinManager() {
         ArrayList arrayList = new ArrayList();
-        this.f34227a = arrayList;
+        this.f20536a = arrayList;
         if (arrayList.size() == 0) {
-            this.f34227a = b().getModelList();
+            this.f20536a = b().getModelList();
         }
     }
 
     public static DynamicSkinManager a() {
-        return f34226c;
+        return f20535c;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -61,24 +61,21 @@ public class DynamicSkinManager {
     private void c() {
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<DynamicSkinModel>>() { // from class: com.soft.blued.ui.user.manager.DynamicSkinManager.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<DynamicSkinModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
                     DynamicSkinManager.this.a(bluedEntityA.data);
-                    if (DynamicSkinManager.this.f34227a.size() == 0) {
-                        DynamicSkinManager.this.f34227a.addAll(bluedEntityA.data);
+                    if (DynamicSkinManager.this.f20536a.size() == 0) {
+                        DynamicSkinManager.this.f20536a.addAll(bluedEntityA.data);
                         DynamicSkinManager.this.b(-1);
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
             }
         }, VipBubbleModel.TYPE_TICKTOCKS);
@@ -90,7 +87,7 @@ public class DynamicSkinManager {
             this.b = true;
         }
         Log.v("drb", "getDynamicRes id:" + i);
-        for (DynamicSkinModel dynamicSkinModel : this.f34227a) {
+        for (DynamicSkinModel dynamicSkinModel : this.f20536a) {
             if (dynamicSkinModel.id == i) {
                 Log.v("drb", "getDynamicRes dynamicSkinModel.theme:" + dynamicSkinModel.theme);
                 return dynamicSkinModel.theme;

@@ -5,8 +5,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/Reader.class */
-interface Reader {
+public interface Reader {
     public static final int READ_DONE = Integer.MAX_VALUE;
     public static final int TAG_UNKNOWN = 0;
 

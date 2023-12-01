@@ -10,11 +10,11 @@ class Util {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22055a;
+        static final /* synthetic */ int[] f8448a;
 
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f22055a = iArr;
+            f8448a = iArr;
             try {
                 iArr[ImageView.ScaleType.MATRIX.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
@@ -45,7 +45,7 @@ class Util {
         if (scaleType == null) {
             return false;
         }
-        if (AnonymousClass1.f22055a[scaleType.ordinal()] != 1) {
+        if (AnonymousClass1.f8448a[scaleType.ordinal()] != 1) {
             return true;
         }
         throw new IllegalStateException("Matrix scale type is not supported");

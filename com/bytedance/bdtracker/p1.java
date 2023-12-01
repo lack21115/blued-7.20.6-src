@@ -12,20 +12,20 @@ public class p1 implements Runnable {
     public static final Handler g = new Handler(Looper.getMainLooper());
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f21285a;
+    public final String f7679a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f21286c;
+    public final String f7680c;
     public final UserProfileCallback d;
     public final Context e;
     public final IAppLogInstance f;
 
     public p1(IAppLogInstance iAppLogInstance, String str, String str2, String str3, UserProfileCallback userProfileCallback, Context context) {
         this.f = iAppLogInstance;
-        this.f21285a = str;
+        this.f7679a = str;
         this.b = str2;
-        this.f21286c = str3;
+        this.f7680c = str3;
         this.d = userProfileCallback;
         this.e = context;
     }
@@ -71,7 +71,7 @@ public class p1 implements Runnable {
             HashMap hashMap = new HashMap();
             hashMap.put("Content-Type", "application/json");
             hashMap.put("X-APIKEY", this.b);
-            this.f.getNetClient().post(this.f21285a, this.f21286c.getBytes(), hashMap);
+            this.f.getNetClient().post(this.f7679a, this.f7680c.getBytes(), hashMap);
             a();
         } catch (Throwable th) {
             z2.a(th);

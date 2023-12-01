@@ -47,12 +47,12 @@ public class g {
         int i2 = this.o;
         float[] fArr2 = this.l;
         if (fArr2 == null) {
-            fArr2 = a.a.a.a.a.a.h.f.f1239c;
+            fArr2 = a.a.a.a.a.a.h.f.f1191c;
         }
         GLES20.glUniformMatrix4fv(i2, 1, false, fArr2, 0);
         float[] fArr3 = fArr;
         if (fArr == null) {
-            fArr3 = a.a.a.a.a.a.h.f.f1239c;
+            fArr3 = a.a.a.a.a.a.h.f.f1191c;
         }
         GLES20.glUniformMatrix4fv(this.p, 1, false, fArr3, 0);
         GLES20.glViewport(c(), d(), this.e, this.f);
@@ -88,7 +88,7 @@ public class g {
     }
 
     public float[] e() {
-        return k.f1327a;
+        return k.f1279a;
     }
 
     public float[] f() {

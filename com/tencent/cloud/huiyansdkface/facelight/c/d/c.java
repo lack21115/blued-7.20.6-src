@@ -16,7 +16,7 @@ public interface c {
 
     void a(Camera camera, String str);
 
-    void a(a.InterfaceC0905a interfaceC0905a);
+    void a(a.InterfaceC0735a interfaceC0735a);
 
     void a(byte[] bArr);
 

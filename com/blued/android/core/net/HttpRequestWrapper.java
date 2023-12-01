@@ -1,5 +1,6 @@
 package com.blued.android.core.net;
 
+import com.alibaba.fastjson.support.spring.FastJsonJsonView;
 import com.blued.android.core.net.http.RequestParams;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,13 +8,9 @@ import okhttp3.Call;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/HttpRequestWrapper.class */
 public class HttpRequestWrapper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private HttpType f9665a;
+    private HttpType a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f9666c;
+    private String c;
     private RequestParams d;
     private HttpResponseHandler<?> f;
     private boolean k;
@@ -32,10 +29,10 @@ public class HttpRequestWrapper {
     }
 
     public HttpRequestWrapper(HttpType httpType, String str) {
-        this.f9665a = HttpType.Get;
+        this.a = HttpType.Get;
         boolean z = false;
         this.k = HttpManager.d() != null ? true : z;
-        this.f9665a = httpType;
+        this.a = httpType;
         this.b = str;
     }
 
@@ -70,7 +67,7 @@ public class HttpRequestWrapper {
 
     public HttpRequestWrapper a(String str) {
         k().a(str);
-        this.f9666c = "application/json";
+        this.c = FastJsonJsonView.DEFAULT_CONTENT_TYPE;
         return this;
     }
 
@@ -146,7 +143,7 @@ public class HttpRequestWrapper {
     }
 
     public HttpType getType() {
-        return this.f9665a;
+        return this.a;
     }
 
     public HttpRequestWrapper h() {
@@ -164,12 +161,12 @@ public class HttpRequestWrapper {
     }
 
     public String j() {
-        String a2 = a();
-        String str = a2;
+        String a = a();
+        String str = a;
         if (getType() == HttpType.Get) {
-            str = a2;
+            str = a;
             if (b() != null) {
-                str = RequestParams.a(a2, b());
+                str = RequestParams.a(a, b());
             }
         }
         return str;

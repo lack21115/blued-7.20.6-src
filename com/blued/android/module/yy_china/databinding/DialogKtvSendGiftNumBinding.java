@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogKtvSendGiftNumBinding.class */
 public final class DialogKtvSendGiftNumBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16359a;
+    public final SquareImageView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16360c;
+    public final ShapeTextView c;
     public final ShapeTextView d;
     public final ShapeTextView e;
     public final TextView f;
@@ -28,9 +24,9 @@ public final class DialogKtvSendGiftNumBinding implements ViewBinding {
 
     private DialogKtvSendGiftNumBinding(ShapeConstraintLayout shapeConstraintLayout, SquareImageView squareImageView, LinearLayout linearLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, ShapeTextView shapeTextView3, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.j = shapeConstraintLayout;
-        this.f16359a = squareImageView;
+        this.a = squareImageView;
         this.b = linearLayout;
-        this.f16360c = shapeTextView;
+        this.c = shapeTextView;
         this.d = shapeTextView2;
         this.e = shapeTextView3;
         this.f = textView;
@@ -89,7 +85,6 @@ public final class DialogKtvSendGiftNumBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeConstraintLayout getRoot() {
         return this.j;

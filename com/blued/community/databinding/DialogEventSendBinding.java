@@ -8,14 +8,12 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogEventSendBinding.class */
 public final class DialogEventSendBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f18796a;
+    public final ShapeTextView a;
     private final ConstraintLayout b;
 
     private DialogEventSendBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView) {
         this.b = constraintLayout;
-        this.f18796a = shapeTextView;
+        this.a = shapeTextView;
     }
 
     public static DialogEventSendBinding a(View view) {
@@ -26,7 +24,6 @@ public final class DialogEventSendBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tvOk"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.b;

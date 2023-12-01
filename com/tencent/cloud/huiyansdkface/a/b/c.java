@@ -6,16 +6,16 @@ import android.os.Build;
 public class c extends Throwable {
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f35440c = a();
+    private static String f21749c = a();
 
     /* renamed from: a  reason: collision with root package name */
-    private int f35441a;
+    private int f21750a;
     private String b;
 
     public c(int i, String str, Throwable th, String str2) {
         super(str, th);
         this.b = "type_normal";
-        this.f35441a = i;
+        this.f21750a = i;
         this.b = str2;
     }
 
@@ -36,7 +36,7 @@ public class c extends Throwable {
     }
 
     public int b() {
-        return this.f35441a;
+        return this.f21750a;
     }
 
     public String c() {

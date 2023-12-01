@@ -11,13 +11,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveFragmentLayoutTestBinding.class */
 public final class LiveFragmentLayoutTestBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f12214a;
+    public final LinearLayout a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f12215c;
+    public final TextView c;
     public final RelativeLayout d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class LiveFragmentLayoutTestBinding implements ViewBinding {
 
     private LiveFragmentLayoutTestBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, TextView textView, TextView textView2, RelativeLayout relativeLayout, TextView textView3, TextView textView4, TextView textView5, ViewPager viewPager) {
         this.i = constraintLayout;
-        this.f12214a = linearLayout;
+        this.a = linearLayout;
         this.b = textView;
-        this.f12215c = textView2;
+        this.c = textView2;
         this.d = relativeLayout;
         this.e = textView3;
         this.f = textView4;
@@ -53,9 +49,9 @@ public final class LiveFragmentLayoutTestBinding implements ViewBinding {
                             if (textView4 != null) {
                                 TextView textView5 = (TextView) view.findViewById(R.id.tv_hot);
                                 if (textView5 != null) {
-                                    ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                                    if (viewPager != null) {
-                                        return new LiveFragmentLayoutTestBinding((ConstraintLayout) view, linearLayout, textView, textView2, relativeLayout, textView3, textView4, textView5, viewPager);
+                                    ViewPager findViewById = view.findViewById(R.id.view_pager);
+                                    if (findViewById != null) {
+                                        return new LiveFragmentLayoutTestBinding((ConstraintLayout) view, linearLayout, textView, textView2, relativeLayout, textView3, textView4, textView5, findViewById);
                                     }
                                     str = "viewPager";
                                 } else {
@@ -82,7 +78,6 @@ public final class LiveFragmentLayoutTestBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.i;

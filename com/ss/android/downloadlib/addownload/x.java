@@ -26,7 +26,7 @@ public class x {
     private static com.ss.android.download.api.config.b hj;
 
     /* renamed from: io  reason: collision with root package name */
-    private static g f34888io;
+    private static g f21197io;
     private static com.ss.android.socialbase.appdownloader.b.ww jb;
     private static com.ss.android.download.api.config.hj je;
     private static com.ss.android.download.api.config.lz ko;
@@ -170,7 +170,7 @@ public class x {
     }
 
     public static g l() {
-        return f34888io;
+        return f21197io;
     }
 
     public static com.ss.android.download.api.config.h lc() {

@@ -6,16 +6,14 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/manager/SelectPhotoManager.class */
 public class SelectPhotoManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SelectPhotoManager f20072a = new SelectPhotoManager();
+    private static SelectPhotoManager a = new SelectPhotoManager();
     private List<ChildImageInfo> b = new ArrayList();
 
     private SelectPhotoManager() {
     }
 
     public static SelectPhotoManager a() {
-        return f20072a;
+        return a;
     }
 
     public ChildImageInfo a(int i) {

@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -33,28 +34,26 @@ import com.soft.blued.ui.login_register.LoginRegisterTools;
 import com.soft.blued.ui.setting.model.PayPWDStatusModel;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/fragment/PayPasswordSettingFragment.class */
 public class PayPasswordSettingFragment extends BaseFragment implements View.OnClickListener {
     private static final String b = PayPasswordSettingFragment.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f33520a = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment.5
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    public BluedUIHttpResponse f19829a = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment.5
         public void onUIFinish() {
             DialogUtils.b(PayPasswordSettingFragment.this.d);
             super.onUIFinish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(PayPasswordSettingFragment.this.d);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
-            AppMethods.a((CharSequence) PayPasswordSettingFragment.this.getActivity().getResources().getString(2131886716));
+            AppMethods.a(PayPasswordSettingFragment.this.getActivity().getResources().getString(2131886716));
             Bundle bundle = new Bundle();
             bundle.putString(LoginRegisterTools.g, PayPasswordSettingFragment.this.j);
             bundle.putString(LoginRegisterTools.e, PayPasswordSettingFragment.this.k);
@@ -66,7 +65,7 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33521c;
+    private View f19830c;
     private Dialog d;
     private TextView e;
     private TextView f;
@@ -86,26 +85,23 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
     public void a(String str) {
         PayHttpUtils.a(str, false, 2, new BluedUIHttpResponse<BluedEntityA<PayRemaining>>() { // from class: com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayRemaining> bluedEntityA) {
-                AppMethods.a((CharSequence) PayPasswordSettingFragment.this.getString(2131886100));
+                AppMethods.a(PayPasswordSettingFragment.this.getString(R.string.Live_SendPresent_setPasswordSuccess));
                 if (bluedEntityA != null && bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
                     try {
-                        BluedPreferences.H(((DecryptJson) AppInfo.f().fromJson(AesCrypto.c(bluedEntityA.data.get(0).encrypted), (Class<Object>) DecryptJson.class)).token);
+                        BluedPreferences.H(((DecryptJson) AppInfo.f().fromJson(AesCrypto.c(((PayRemaining) bluedEntityA.data.get(0)).encrypted), (Class<Object>) DecryptJson.class)).token);
                     } catch (Exception e) {
                     }
                 }
                 PayPasswordSettingFragment.this.getActivity().finish();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(PayPasswordSettingFragment.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(PayPasswordSettingFragment.this.d);
@@ -116,19 +112,16 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
     /* JADX INFO: Access modifiers changed from: private */
     public void b(String str) {
         PayHttpUtils.a(str, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 PayPasswordSettingFragment.this.p.a();
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(PayPasswordSettingFragment.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 if (PayPasswordSettingFragment.this.d.isShowing()) {
@@ -137,12 +130,11 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
                 DialogUtils.a(PayPasswordSettingFragment.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
-                AppMethods.a((CharSequence) PayPasswordSettingFragment.this.getString(2131886100));
+                AppMethods.a(PayPasswordSettingFragment.this.getString(R.string.Live_SendPresent_setPasswordSuccess));
                 PayPasswordSettingFragment.this.getActivity().finish();
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     private void c() {
@@ -157,7 +149,7 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
         } else {
             e();
         }
-        GridCodeEditText gridCodeEditText = (GridCodeEditText) this.f33521c.findViewById(R.id.gpv_modify_pwd);
+        GridCodeEditText gridCodeEditText = (GridCodeEditText) this.f19830c.findViewById(R.id.gpv_modify_pwd);
         this.p = gridCodeEditText;
         gridCodeEditText.setPasswordVisibility(true);
         this.p.setOnPasswordChangedListener(new GridCodeEditText.OnPasswordChangedListener() { // from class: com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment.1
@@ -194,13 +186,12 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
     }
 
     private void e() {
-        PayHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<PayPWDStatusModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment.2
+        PayHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<PayPWDStatusModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.PayPasswordSettingFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayPWDStatusModel> bluedEntityA) {
-                if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData().status != 1) {
-                    PayPasswordSettingFragment.this.i.setCenterText(2131886221);
+                if (bluedEntityA == null || !bluedEntityA.hasData() || ((PayPWDStatusModel) bluedEntityA.getSingleData()).status != 1) {
+                    PayPasswordSettingFragment.this.i.setCenterText((int) R.string.Live_setting_payPassword);
                     PayPasswordSettingFragment.this.l.setVisibility(0);
                     PayPasswordSettingFragment.this.m.setVisibility(8);
                     PayPasswordSettingFragment.this.n.setVisibility(8);
@@ -208,7 +199,7 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
                 }
                 String b2 = LoginRegisterTools.b();
                 if (StringUtils.d(b2)) {
-                    PayPasswordSettingFragment.this.i.setCenterText(2131886221);
+                    PayPasswordSettingFragment.this.i.setCenterText((int) R.string.Live_setting_payPassword);
                     PayPasswordSettingFragment.this.l.setVisibility(8);
                     PayPasswordSettingFragment.this.m.setVisibility(0);
                     PayPasswordSettingFragment.this.n.setVisibility(8);
@@ -218,58 +209,56 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
                 PayPasswordSettingFragment.this.j = g[0];
                 PayPasswordSettingFragment.this.k = g[1];
                 if (g.length < 2) {
-                    PayPasswordSettingFragment.this.i.setCenterText(2131886221);
+                    PayPasswordSettingFragment.this.i.setCenterText((int) R.string.Live_setting_payPassword);
                     PayPasswordSettingFragment.this.l.setVisibility(8);
                     PayPasswordSettingFragment.this.m.setVisibility(0);
                     PayPasswordSettingFragment.this.n.setVisibility(8);
                     return;
                 }
                 PayPasswordSettingFragment.this.d();
-                PayPasswordSettingFragment.this.i.setCenterText(2131886230);
+                PayPasswordSettingFragment.this.i.setCenterText((int) R.string.Live_setting_verify_phone);
                 PayPasswordSettingFragment.this.l.setVisibility(8);
                 PayPasswordSettingFragment.this.m.setVisibility(8);
                 PayPasswordSettingFragment.this.n.setVisibility(0);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(PayPasswordSettingFragment.this.d);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(PayPasswordSettingFragment.this.d);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     protected void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33521c.findViewById(2131370749);
-        this.i = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.f19830c.findViewById(R.id.top_title);
+        this.i = findViewById;
+        findViewById.a();
         this.i.f();
         this.i.setTitleBackgroundDrawable(2131101191);
         this.i.setLeftClickListener(this);
     }
 
     protected void b() {
-        LinearLayout linearLayout = (LinearLayout) this.f33521c.findViewById(R.id.ll_modify_pwd);
+        LinearLayout linearLayout = (LinearLayout) this.f19830c.findViewById(R.id.ll_modify_pwd);
         this.l = linearLayout;
         LoginRegisterTools.a(linearLayout);
-        this.m = (LinearLayout) this.f33521c.findViewById(R.id.ll_pay_biding);
+        this.m = (LinearLayout) this.f19830c.findViewById(R.id.ll_pay_biding);
         this.d = DialogUtils.a(getActivity());
-        this.n = (LinearLayout) this.f33521c.findViewById(R.id.ll_pay_vertify);
-        TextView textView = (TextView) this.f33521c.findViewById(R.id.btn_binding);
+        this.n = (LinearLayout) this.f19830c.findViewById(R.id.ll_pay_vertify);
+        TextView textView = (TextView) this.f19830c.findViewById(R.id.btn_binding);
         this.e = textView;
         textView.setOnClickListener(this);
-        TextView textView2 = (TextView) this.f33521c.findViewById(R.id.btn_vertify_next);
+        TextView textView2 = (TextView) this.f19830c.findViewById(R.id.btn_vertify_next);
         this.f = textView2;
         textView2.setOnClickListener(this);
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.f33521c.findViewById(R.id.cev_mobile);
-        this.q = commonEdittextView;
-        this.g = commonEdittextView.getEditText();
+        CommonEdittextView findViewById = this.f19830c.findViewById(R.id.cev_mobile);
+        this.q = findViewById;
+        this.g = findViewById.getEditText();
         this.h = this.q.getAreaCodeText();
     }
 
@@ -290,32 +279,29 @@ public class PayPasswordSettingFragment extends BaseFragment implements View.OnC
             }
             getActivity().finish();
         } else {
-            BluedUIHttpResponse bluedUIHttpResponse = this.f33520a;
-            LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.j + "-" + this.k, "mobile", "", "", 1, getFragmentActive());
+            BluedUIHttpResponse bluedUIHttpResponse = this.f19829a;
+            LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.k, "mobile", "", "", 1, (IRequestHost) getFragmentActive());
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f33521c;
+        View view = this.f19830c;
         if (view == null) {
-            this.f33521c = layoutInflater.inflate(R.layout.fragment_pay_password_settings, viewGroup, false);
+            this.f19830c = layoutInflater.inflate(R.layout.fragment_pay_password_settings, viewGroup, false);
             a();
             b();
             c();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33521c.getParent()).removeView(this.f33521c);
+            ((ViewGroup) this.f19830c.getParent()).removeView(this.f19830c);
         }
-        return this.f33521c;
+        return this.f19830c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         DialogUtils.b(this.d);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
     }

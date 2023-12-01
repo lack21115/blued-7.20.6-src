@@ -9,13 +9,13 @@ import java.io.InputStream;
 public class a implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24899a = a.class.getSimpleName();
+    public static final String f11211a = a.class.getSimpleName();
     d b;
     private d d;
     private int e = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public e f24900c = new f();
+    public e f11212c = new f();
 
     public a(d.a aVar) {
         this.d = aVar.a();
@@ -36,7 +36,7 @@ public class a implements d {
         InputStream a2;
         do {
             this.d.a(context, str, bVar);
-            this.f24900c.a(context, this, str, bVar);
+            this.f11212c.a(context, this, str, bVar);
             if (com.opos.cmn.func.dl.base.h.a.a(d()) && (a2 = a()) != null) {
                 return a2;
             }
@@ -99,7 +99,7 @@ public class a implements d {
             j = com.opos.cmn.func.dl.base.h.a.b(a("Content-Range"));
         }
         if (DownloadUtils.VALUE_CHUNKED.equals(a("Transfer-Encoding"))) {
-            com.opos.cmn.an.f.a.c(f24899a, "Transfer-Encoding is chunked !!");
+            com.opos.cmn.an.f.a.c(f11211a, "Transfer-Encoding is chunked !!");
         }
         return j;
     }

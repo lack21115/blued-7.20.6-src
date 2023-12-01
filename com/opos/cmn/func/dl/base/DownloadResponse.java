@@ -20,23 +20,23 @@ public class DownloadResponse implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public int f24873a;
+    public int f11185a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f24874c;
+    public long f11186c;
     public long d;
     public long e;
 
     public DownloadResponse() {
-        this.f24873a = 0;
+        this.f11185a = 0;
     }
 
     private DownloadResponse(Parcel parcel) {
-        this.f24873a = 0;
-        this.f24873a = parcel.readInt();
+        this.f11185a = 0;
+        this.f11185a = parcel.readInt();
         this.b = parcel.readLong();
-        this.f24874c = parcel.readLong();
+        this.f11186c = parcel.readLong();
         this.d = parcel.readLong();
         this.e = parcel.readLong();
     }
@@ -47,14 +47,14 @@ public class DownloadResponse implements Parcelable {
     }
 
     public String toString() {
-        return "StatusResponse{status=" + this.f24873a + ", startLen=" + this.b + ", downloadedLen=" + this.f24874c + ", totalLen=" + this.d + ", speed=" + this.e + '}';
+        return "StatusResponse{status=" + this.f11185a + ", startLen=" + this.b + ", downloadedLen=" + this.f11186c + ", totalLen=" + this.d + ", speed=" + this.e + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f24873a);
+        parcel.writeInt(this.f11185a);
         parcel.writeLong(this.b);
-        parcel.writeLong(this.f24874c);
+        parcel.writeLong(this.f11186c);
         parcel.writeLong(this.d);
         parcel.writeLong(this.e);
     }

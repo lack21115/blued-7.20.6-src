@@ -13,11 +13,11 @@ public final class k0 {
     public static final k0 f = new k0();
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f22309a;
+    public final int f8701a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile Executor f22310c;
+    public volatile Executor f8702c;
     public volatile ExecutorService d;
     public final Object e = new Object();
 
@@ -31,20 +31,20 @@ public final class k0 {
 
     public k0() {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
-        this.f22309a = availableProcessors + 1;
+        this.f8701a = availableProcessors + 1;
         this.b = (availableProcessors * 2) + 1;
     }
 
     public static Executor a() {
         k0 k0Var = f;
-        if (k0Var.f22310c == null) {
+        if (k0Var.f8702c == null) {
             synchronized (k0Var.e) {
-                if (k0Var.f22310c == null) {
-                    k0Var.f22310c = new a();
+                if (k0Var.f8702c == null) {
+                    k0Var.f8702c = new a();
                 }
             }
         }
-        return k0Var.f22310c;
+        return k0Var.f8702c;
     }
 
     public static void a(Runnable runnable) {
@@ -60,7 +60,7 @@ public final class k0 {
     }
 
     public final ExecutorService b() {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(this.f22309a, this.b, 1L, TimeUnit.SECONDS, new LinkedBlockingQueue());
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(this.f8701a, this.b, 1L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         return threadPoolExecutor;
     }

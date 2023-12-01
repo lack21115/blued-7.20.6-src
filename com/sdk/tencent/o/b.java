@@ -6,30 +6,30 @@ import com.sdk.tencent.f.c;
 public class b extends com.sdk.tencent.i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int f28066a = 0;
+    public static final /* synthetic */ int f14378a = 0;
 
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* renamed from: com.sdk.tencent.o.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/o/b$b.class */
-    public static abstract class EnumC0761b {
+    public static abstract class EnumC0591b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final EnumC0761b f28067a;
-        public static final EnumC0761b b;
+        public static final EnumC0591b f14379a;
+        public static final EnumC0591b b;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final EnumC0761b f28068c;
-        public static final /* synthetic */ EnumC0761b[] d;
+        public static final EnumC0591b f14380c;
+        public static final /* synthetic */ EnumC0591b[] d;
 
         /* renamed from: com.sdk.tencent.o.b$b$a */
         /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/o/b$b$a.class */
-        public enum a extends EnumC0761b {
+        public enum a extends EnumC0591b {
             public a(String str, int i) {
                 super(str, i);
             }
 
-            @Override // com.sdk.tencent.o.b.EnumC0761b
+            @Override // com.sdk.tencent.o.b.EnumC0591b
             public int a() {
                 return 0;
             }
@@ -37,12 +37,12 @@ public class b extends com.sdk.tencent.i.a {
 
         /* renamed from: com.sdk.tencent.o.b$b$b  reason: collision with other inner class name */
         /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/o/b$b$b.class */
-        public enum C0762b extends EnumC0761b {
-            public C0762b(String str, int i) {
+        public enum C0592b extends EnumC0591b {
+            public C0592b(String str, int i) {
                 super(str, i);
             }
 
-            @Override // com.sdk.tencent.o.b.EnumC0761b
+            @Override // com.sdk.tencent.o.b.EnumC0591b
             public int a() {
                 return 1;
             }
@@ -50,12 +50,12 @@ public class b extends com.sdk.tencent.i.a {
 
         /* renamed from: com.sdk.tencent.o.b$b$c */
         /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/o/b$b$c.class */
-        public enum c extends EnumC0761b {
+        public enum c extends EnumC0591b {
             public c(String str, int i) {
                 super(str, i);
             }
 
-            @Override // com.sdk.tencent.o.b.EnumC0761b
+            @Override // com.sdk.tencent.o.b.EnumC0591b
             public int a() {
                 return -1;
             }
@@ -63,23 +63,23 @@ public class b extends com.sdk.tencent.i.a {
 
         static {
             a aVar = new a("WIFI", 0);
-            f28067a = aVar;
-            C0762b c0762b = new C0762b("NET", 1);
-            b = c0762b;
+            f14379a = aVar;
+            C0592b c0592b = new C0592b("NET", 1);
+            b = c0592b;
             c cVar = new c("UNKNOW", 2);
-            f28068c = cVar;
-            d = new EnumC0761b[]{aVar, c0762b, cVar};
+            f14380c = cVar;
+            d = new EnumC0591b[]{aVar, c0592b, cVar};
         }
 
-        public EnumC0761b(String str, int i) {
+        public EnumC0591b(String str, int i) {
         }
 
-        public static EnumC0761b valueOf(String str) {
-            return (EnumC0761b) Enum.valueOf(EnumC0761b.class, str);
+        public static EnumC0591b valueOf(String str) {
+            return (EnumC0591b) Enum.valueOf(EnumC0591b.class, str);
         }
 
-        public static EnumC0761b[] values() {
-            return (EnumC0761b[]) d.clone();
+        public static EnumC0591b[] values() {
+            return (EnumC0591b[]) d.clone();
         }
 
         public abstract int a();

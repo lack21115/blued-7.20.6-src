@@ -10,7 +10,7 @@ import java.util.Iterator;
 public class NearbyPeopleTabSelectedObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static NearbyPeopleTabSelectedObserver f30623a = new NearbyPeopleTabSelectedObserver();
+    private static NearbyPeopleTabSelectedObserver f16933a = new NearbyPeopleTabSelectedObserver();
     private ArrayList<INearbyPeopleTabSelectedObserver> b = new ArrayList<>();
 
     /* renamed from: com.soft.blued.ui.find.observer.NearbyPeopleTabSelectedObserver$1  reason: invalid class name */
@@ -18,12 +18,12 @@ public class NearbyPeopleTabSelectedObserver {
     class AnonymousClass1 implements LifecycleObserver {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ INearbyPeopleTabSelectedObserver f30624a;
+        final /* synthetic */ INearbyPeopleTabSelectedObserver f16934a;
         final /* synthetic */ NearbyPeopleTabSelectedObserver b;
 
         @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
         public void onDestroy() {
-            this.b.b.remove(this.f30624a);
+            this.b.b.remove(this.f16934a);
         }
     }
 
@@ -36,7 +36,7 @@ public class NearbyPeopleTabSelectedObserver {
     }
 
     public static NearbyPeopleTabSelectedObserver a() {
-        return f30623a;
+        return f16933a;
     }
 
     public void a(INearbyPeopleTabSelectedObserver iNearbyPeopleTabSelectedObserver) {

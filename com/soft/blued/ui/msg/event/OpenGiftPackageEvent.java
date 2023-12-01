@@ -6,5 +6,5 @@ import com.blued.android.core.ui.ActivityFragmentActive;
 public class OpenGiftPackageEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public ActivityFragmentActive f32328a;
+    public ActivityFragmentActive f18638a;
 }

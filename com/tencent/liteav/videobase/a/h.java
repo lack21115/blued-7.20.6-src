@@ -63,14 +63,14 @@ public class h extends b {
         for (List<a> list : this.mInterceptorsBeforeFilter.values()) {
             if (list != null && !list.isEmpty()) {
                 for (a aVar : list) {
-                    if (!aVar.f36576a) {
+                    if (!aVar.f22885a) {
                         aVar.a(this.mTexturePool);
                     }
                 }
             }
         }
         for (a aVar2 : this.mLastInterceptors) {
-            if (!aVar2.f36576a) {
+            if (!aVar2.f22885a) {
                 aVar2.a(this.mTexturePool);
             }
         }
@@ -132,8 +132,8 @@ public class h extends b {
                 if (z && outputSize.equals(this.mOutputSize) && bVar.canBeSkipped()) {
                     bVar.onFilterBeenSkipped();
                 } else {
-                    com.tencent.liteav.videobase.frame.d a2 = z ? this.mTexturePool.a(outputSize.f36340a, outputSize.b) : dVar;
-                    OpenGlUtils.glViewport(0, 0, outputSize.f36340a, outputSize.b);
+                    com.tencent.liteav.videobase.frame.d a2 = z ? this.mTexturePool.a(outputSize.f22649a, outputSize.b) : dVar;
+                    OpenGlUtils.glViewport(0, 0, outputSize.f22649a, outputSize.b);
                     int a3 = dVar3 == null ? i : dVar3.a();
                     if (i2 == 0) {
                         bVar.onDraw(a3, a2, floatBuffer, floatBuffer2);

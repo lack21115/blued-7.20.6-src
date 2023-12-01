@@ -12,9 +12,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/SharedPreferencesUtils.class */
 public class SharedPreferencesUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SharedPreferences f10114a;
+    private static SharedPreferences a;
     private static SharedPreferences b;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/SharedPreferencesUtils$ActivityThreadHCallBack.class */
@@ -54,18 +52,14 @@ public class SharedPreferencesUtils {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/SharedPreferencesUtils$SpBlockHelper.class */
     public static class SpBlockHelper {
-
-        /* renamed from: a  reason: collision with root package name */
-        static boolean f10115a = false;
+        static boolean a = false;
         static String b = "android.app.QueuedWork";
-
-        /* renamed from: c  reason: collision with root package name */
-        static String f10116c = "sPendingWorkFinishers";
+        static String c = "sPendingWorkFinishers";
         static ConcurrentLinkedQueue<Runnable> d;
 
         static void a() {
             try {
-                Field declaredField = Class.forName(b).getDeclaredField(f10116c);
+                Field declaredField = Class.forName(b).getDeclaredField(c);
                 if (declaredField != null) {
                     declaredField.setAccessible(true);
                     d = (ConcurrentLinkedQueue) declaredField.get(null);
@@ -77,9 +71,9 @@ public class SharedPreferencesUtils {
         }
 
         public static void a(String str) {
-            if (!f10115a) {
+            if (!a) {
                 a();
-                f10115a = true;
+                a = true;
             }
             Log.d("tryHackActivityThreadH", "beforeSPBlock " + str);
             ConcurrentLinkedQueue<Runnable> concurrentLinkedQueue = d;
@@ -98,10 +92,10 @@ public class SharedPreferencesUtils {
     }
 
     public static SharedPreferences b() {
-        if (f10114a == null) {
-            f10114a = AppUtils.a().getSharedPreferences("blued_common", 0);
+        if (a == null) {
+            a = AppUtils.a().getSharedPreferences("blued_common", 0);
         }
-        return f10114a;
+        return a;
     }
 
     public static void c() {

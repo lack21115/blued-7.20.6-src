@@ -10,14 +10,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyFirstMeetBinding.class */
 public final class ItemYyFirstMeetBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f16713a;
+    public final ShapeConstraintLayout a;
     private final LinearLayout b;
 
     private ItemYyFirstMeetBinding(LinearLayout linearLayout, ShapeConstraintLayout shapeConstraintLayout) {
         this.b = linearLayout;
-        this.f16713a = shapeConstraintLayout;
+        this.a = shapeConstraintLayout;
     }
 
     public static ItemYyFirstMeetBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -36,7 +34,6 @@ public final class ItemYyFirstMeetBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("flMain"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.b;

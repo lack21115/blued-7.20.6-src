@@ -536,10 +536,10 @@ public interface IWindowManager extends IInterface {
                     obtain.writeStrongBinder(iBinder);
                     this.mRemote.transact(80, obtain, obtain2, 0);
                     obtain2.readException();
-                    WindowContentFrameStats createFromParcel = obtain2.readInt() != 0 ? WindowContentFrameStats.CREATOR.createFromParcel(obtain2) : null;
+                    WindowContentFrameStats windowContentFrameStats = obtain2.readInt() != 0 ? (WindowContentFrameStats) WindowContentFrameStats.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return windowContentFrameStats;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();

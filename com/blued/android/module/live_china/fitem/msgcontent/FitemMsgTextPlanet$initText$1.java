@@ -20,13 +20,9 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgTextPlanet$initText$1.class */
 final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FitemMsgTextPlanet f12657a;
+    final /* synthetic */ FitemMsgTextPlanet a;
     final /* synthetic */ String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f12658c;
+    final /* synthetic */ String c;
     final /* synthetic */ Integer d;
     final /* synthetic */ Context e;
     final /* synthetic */ TextView f;
@@ -35,9 +31,9 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgTextPlanet$initText$1(FitemMsgTextPlanet fitemMsgTextPlanet, String str, String str2, Integer num, Context context, TextView textView) {
         super(1);
-        this.f12657a = fitemMsgTextPlanet;
+        this.a = fitemMsgTextPlanet;
         this.b = str;
-        this.f12658c = str2;
+        this.c = str2;
         this.d = num;
         this.e = context;
         this.f = textView;
@@ -49,12 +45,12 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(goods_icon, "$goods_icon");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
         FitemMsgGift.Companion companion = FitemMsgGift.b;
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         Intrinsics.c(iRequestHost, "viewHolder.requestHost");
         companion.a(context, iRequestHost, tv, frameLayout, i, i2, goods_icon);
     }
@@ -72,10 +68,10 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        String k = this.f12657a.k();
+        String k = this.a.k();
         if (k != null) {
             buildSpannableString.a(k, new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextPlanet$initText$1$2$1
                 public final void a(DslSpanBuilder addText) {
@@ -88,7 +84,7 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                     a(dslSpanBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
@@ -103,7 +99,7 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         String str = this.b;
@@ -119,13 +115,13 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                     a(dslSpanBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
-        final String str2 = this.f12658c;
+        final String str2 = this.c;
         if (str2 != null) {
-            final FitemMsgTextPlanet fitemMsgTextPlanet = this.f12657a;
+            final FitemMsgTextPlanet fitemMsgTextPlanet = this.a;
             final Context context = this.e;
             final TextView textView = this.f;
             buildSpannableString.a(new ColorDrawable(), 0, 0, FitemMsgGift.b.c(), FitemMsgGift.b.b(), new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextPlanet$initText$1$nhLSFrCBbCA0_g-NxhmZre1uxN8
@@ -148,11 +144,11 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                     a(dslSpanBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
-        String str3 = this.f12657a.e().msgContent;
+        String str3 = this.a.e().msgContent;
         boolean z = true;
         if (str3 != null) {
             z = str3.length() == 0;
@@ -160,7 +156,7 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
         if (z) {
             return;
         }
-        buildSpannableString.a(Intrinsics.a(" ", (Object) this.f12657a.e().msgContent), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextPlanet$initText$1.7
+        buildSpannableString.a(Intrinsics.a(" ", (Object) this.a.e().msgContent), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextPlanet$initText$1.7
             public final void a(DslSpanBuilder addText) {
                 Intrinsics.e(addText, "$this$addText");
                 Context d = AppInfo.d();
@@ -171,7 +167,7 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -179,6 +175,6 @@ final class FitemMsgTextPlanet$initText$1 extends Lambda implements Function1<Ds
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

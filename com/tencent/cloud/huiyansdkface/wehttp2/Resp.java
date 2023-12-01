@@ -4,14 +4,14 @@ package com.tencent.cloud.huiyansdkface.wehttp2;
 public class Resp<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36104a;
+    private int f22413a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private T f36105c;
+    private T f22414c;
 
     public int getCode() {
-        return this.f36104a;
+        return this.f22413a;
     }
 
     public String getMsg() {
@@ -19,11 +19,11 @@ public class Resp<T> {
     }
 
     public T getResult() {
-        return this.f36105c;
+        return this.f22414c;
     }
 
     public void setCode(int i) {
-        this.f36104a = i;
+        this.f22413a = i;
     }
 
     public void setMsg(String str) {
@@ -31,6 +31,6 @@ public class Resp<T> {
     }
 
     public void setResult(T t) {
-        this.f36105c = t;
+        this.f22414c = t;
     }
 }

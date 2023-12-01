@@ -9,9 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/UIntRange.class */
 public final class UIntRange extends UIntProgression implements ClosedRange<UInt> {
     public static final Companion b = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final UIntRange f42590c = new UIntRange(-1, 0, null);
+    private static final UIntRange c = new UIntRange(-1, 0, null);
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/UIntRange$Companion.class */

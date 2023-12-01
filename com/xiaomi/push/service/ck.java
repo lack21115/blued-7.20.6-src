@@ -6,27 +6,27 @@ import com.xiaomi.push.service.XMPushService;
 class ck extends XMPushService.j {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ XMPushService f41668a;
+    final /* synthetic */ XMPushService f27977a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ck(XMPushService xMPushService, int i) {
         super(i);
-        this.f41668a = xMPushService;
+        this.f27977a = xMPushService;
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public String mo12102a() {
+    public String mo9052a() {
         return "disconnect for service destroy.";
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public void mo11743a() {
-        if (this.f41668a.f921a != null) {
-            this.f41668a.f921a.b(15, (Exception) null);
-            this.f41668a.f921a = null;
+    public void mo8693a() {
+        if (this.f27977a.f874a != null) {
+            this.f27977a.f874a.b(15, (Exception) null);
+            this.f27977a.f874a = null;
         }
     }
 }

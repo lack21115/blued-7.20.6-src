@@ -8,18 +8,18 @@ abstract class a extends com.anythink.expressad.exoplayer.ae {
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final aa f7380c;
+    private final aa f4541c;
     private final boolean d;
 
     public a(boolean z, aa aaVar) {
         this.d = z;
-        this.f7380c = aaVar;
+        this.f4541c = aaVar;
         this.b = aaVar.a();
     }
 
     private int a(int i, boolean z) {
         if (z) {
-            return this.f7380c.a(i);
+            return this.f4541c.a(i);
         }
         if (i < this.b - 1) {
             return i + 1;
@@ -29,7 +29,7 @@ abstract class a extends com.anythink.expressad.exoplayer.ae {
 
     private int b(int i, boolean z) {
         if (z) {
-            return this.f7380c.b(i);
+            return this.f4541c.b(i);
         }
         if (i > 0) {
             return i - 1;
@@ -97,7 +97,7 @@ abstract class a extends com.anythink.expressad.exoplayer.ae {
         if (this.d) {
             z = false;
         }
-        int b = z ? this.f7380c.b() : this.b - 1;
+        int b = z ? this.f4541c.b() : this.b - 1;
         while (c(b).a()) {
             int b2 = b(b, z);
             b = b2;
@@ -113,7 +113,7 @@ abstract class a extends com.anythink.expressad.exoplayer.ae {
         int a2 = a(i);
         int e = e(a2);
         c(a2).a(i - d(a2), aVar, z);
-        aVar.f7162c += e;
+        aVar.f4323c += e;
         if (z) {
             aVar.b = Pair.create(f(a2), aVar.b);
         }
@@ -179,7 +179,7 @@ abstract class a extends com.anythink.expressad.exoplayer.ae {
             z = false;
         }
         if (z) {
-            i = this.f7380c.c();
+            i = this.f4541c.c();
         }
         while (c(i).a()) {
             int a2 = a(i, z);

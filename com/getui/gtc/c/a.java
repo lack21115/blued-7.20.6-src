@@ -6,6 +6,6 @@ import android.util.Base64;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f21919a = new String(Base64.decode("LmRleA==", 0));
+    public static final String f8312a = new String(Base64.decode("LmRleA==", 0));
     public static final String b = new String(Base64.decode("Lmphcg==", 0));
 }

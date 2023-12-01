@@ -36,7 +36,7 @@ public final class InputSubstream extends SdkFilterInputStream {
     }
 
     InputStream getWrappedInputStream() {
-        return this.f42254in;
+        return this.in;
     }
 
     @Override // com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream

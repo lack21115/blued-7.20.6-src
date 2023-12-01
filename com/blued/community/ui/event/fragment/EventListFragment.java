@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,16 +50,12 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventListFragment.class */
 public final class EventListFragment extends MVVMBaseFragment<EventListViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19547c;
+    private final ViewBindingProperty c;
     private EventListAdapter d;
     private boolean e;
     private View f;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(EventListFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentEventListBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19546a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/fragment/EventListFragment$Companion.class */
@@ -78,7 +75,7 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
 
     public EventListFragment() {
         super(R.layout.fragment_event_list);
-        this.f19547c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventListFragment, FragmentEventListBinding>() { // from class: com.blued.community.ui.event.fragment.EventListFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventListFragment, FragmentEventListBinding>() { // from class: com.blued.community.ui.event.fragment.EventListFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentEventListBinding invoke(EventListFragment fragment) {
@@ -133,14 +130,14 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
                 Intrinsics.c("eventListAdapter");
                 eventListAdapter4 = null;
             }
-            if (str.equals(eventListAdapter4.getData().get(i2).id)) {
+            if (str.equals(((EventDetailsModel) eventListAdapter4.getData().get(i2)).id)) {
                 EventListAdapter eventListAdapter5 = this$0.d;
                 EventListAdapter eventListAdapter6 = eventListAdapter5;
                 if (eventListAdapter5 == null) {
                     Intrinsics.c("eventListAdapter");
                     eventListAdapter6 = null;
                 }
-                eventListAdapter6.getData().get(i2).is_sign_in = 1;
+                ((EventDetailsModel) eventListAdapter6.getData().get(i2)).is_sign_in = 1;
                 EventListAdapter eventListAdapter7 = this$0.d;
                 if (eventListAdapter7 == null) {
                     Intrinsics.c("eventListAdapter");
@@ -168,7 +165,7 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
                 noDataAndLoadFailView.a();
             }
             FragmentEventListBinding p3 = p();
-            if (p3 != null && (floatFooterView = p3.f18854a) != null) {
+            if (p3 != null && (floatFooterView = p3.a) != null) {
                 floatFooterView.startBtmBtnShow();
             }
         } else {
@@ -193,7 +190,7 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
         if (context == null) {
             return;
         }
-        EventAddPostFragment.f19970a.a(context);
+        EventAddPostFragment.a.a(context);
         EventTrackFeed.a(FeedProtos.Event.ACTIVITY_AGG_PAGE_PUBLISH_CLICK);
     }
 
@@ -204,12 +201,12 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
         if (context == null) {
             return;
         }
-        MineEventFragment.f19566a.a(context);
+        MineEventFragment.a.a(context);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void b(boolean z) {
-        List<EventDetailsModel> data;
+        List data;
         EventListAdapter eventListAdapter = null;
         if (z) {
             EventListAdapter eventListAdapter2 = this.d;
@@ -247,7 +244,7 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
             View inflate = View.inflate(getContext(), R.layout.layout_event_list_header, null);
             TextView textView = (TextView) inflate.findViewById(R.id.tv_city_info);
             if (BlueAppLocal.d()) {
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = requireContext().getString(R.string.event_nearby_cities_no_event);
                 Intrinsics.c(string, "requireContext().getStri…t_nearby_cities_no_event)");
                 String format = String.format(string, Arrays.copyOf(new Object[]{CityHelper.a().c(requireContext())}, 1));
@@ -272,7 +269,7 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
     }
 
     private final FragmentEventListBinding p() {
-        return (FragmentEventListBinding) this.f19547c.b(this, b[0]);
+        return (FragmentEventListBinding) this.c.b(this, b[0]);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -282,7 +279,7 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
         if (p == null) {
             return;
         }
-        p.d.j();
+        p.d.g();
         EventListAdapter eventListAdapter = this.d;
         EventListAdapter eventListAdapter2 = eventListAdapter;
         if (eventListAdapter == null) {
@@ -356,18 +353,17 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
                 EventListFragment.c(EventListFragment.this, view);
             }
         });
-        p.f18855c.setLayoutManager(new LinearLayoutManager(getContext()));
-        RecyclerView recyclerView = p.f18855c;
-        EventListAdapter eventListAdapter5 = this.d;
-        EventListAdapter eventListAdapter6 = eventListAdapter5;
-        if (eventListAdapter5 == null) {
+        p.c.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerView recyclerView = p.c;
+        RecyclerView.Adapter adapter = this.d;
+        EventListAdapter eventListAdapter5 = adapter;
+        if (adapter == null) {
             Intrinsics.c("eventListAdapter");
-            eventListAdapter6 = null;
+            eventListAdapter5 = null;
         }
-        recyclerView.setAdapter(eventListAdapter6);
-        p.d.l(false);
+        recyclerView.setAdapter(eventListAdapter5);
+        p.d.b(false);
         p.d.a(new OnRefreshListener() { // from class: com.blued.community.ui.event.fragment.EventListFragment$initView$1$4
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 EventListViewModel j;
                 Intrinsics.e(refreshLayout, "refreshLayout");
@@ -375,36 +371,33 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
                 j.a(true, EventListFragment.this.getFragmentActive());
             }
         });
-        EventListAdapter eventListAdapter7 = this.d;
-        if (eventListAdapter7 == null) {
+        EventListAdapter eventListAdapter6 = this.d;
+        if (eventListAdapter6 == null) {
             Intrinsics.c("eventListAdapter");
-            eventListAdapter7 = null;
+            eventListAdapter6 = null;
         }
-        eventListAdapter7.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.event.fragment.EventListFragment$initView$1$5
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
+        eventListAdapter6.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.event.fragment.EventListFragment$initView$1$5
             public void onLoadMoreRequested() {
                 EventListViewModel j;
                 j = EventListFragment.this.j();
                 j.a(false, EventListFragment.this.getFragmentActive());
             }
-        }, p.f18855c);
+        }, p.c);
         if (CommunityServiceManager.a().x() == 1) {
-            p.f18854a.setVisibility(0);
+            p.a.setVisibility(0);
         } else {
-            p.f18854a.setVisibility(8);
+            p.a.setVisibility(8);
         }
-        p.f18854a.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventListFragment$NEzfrb231WuoFupGDaWBFry2HHQ
-            @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
+        p.a.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventListFragment$NEzfrb231WuoFupGDaWBFry2HHQ
             public final void onPostFeedClick() {
                 EventListFragment.b(EventListFragment.this);
             }
         });
-        p.f18855c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.event.fragment.EventListFragment$initView$1$7
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+        p.c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.event.fragment.EventListFragment$initView$1$7
             public void onScrollStateChanged(RecyclerView recyclerView2, int i) {
                 Intrinsics.e(recyclerView2, "recyclerView");
                 super.onScrollStateChanged(recyclerView2, i);
-                FloatFooterView floatFooterView = FragmentEventListBinding.this.f18854a;
+                FloatFooterView floatFooterView = FragmentEventListBinding.this.a;
                 if (i == 0) {
                     if (!recyclerView2.canScrollVertically(-1)) {
                         floatFooterView.startBtmBtnShow();
@@ -415,11 +408,10 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
                 }
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView2, int i, int i2) {
                 Intrinsics.e(recyclerView2, "recyclerView");
                 super.onScrolled(recyclerView2, i, i2);
-                FloatFooterView floatFooterView = FragmentEventListBinding.this.f18854a;
+                FloatFooterView floatFooterView = FragmentEventListBinding.this.a;
                 if (i2 < 0) {
                     floatFooterView.startBtmBtnShow();
                 } else if (i2 > 0) {
@@ -432,15 +424,13 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void k() {
         super.k();
-        EventListFragment eventListFragment = this;
-        LiveEventBus.get("EVENT_BUS_ACTIVITY_SIGN_IN_SUCCESS", String.class).observe(eventListFragment, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventListFragment$tEwnx-TMoTuSIgAwoSVxkPl72yU
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("EVENT_BUS_ACTIVITY_SIGN_IN_SUCCESS", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventListFragment$tEwnx-TMoTuSIgAwoSVxkPl72yU
             public final void onChanged(Object obj) {
                 EventListFragment.a(EventListFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("EVENT_BUS_EVENT_APPLY_SUCC", EventDetailsModel.class).observe(eventListFragment, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventListFragment$Bo0mUl1RuVT1x_CR8ROOSTZujRY
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("EVENT_BUS_EVENT_APPLY_SUCC", EventDetailsModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventListFragment$Bo0mUl1RuVT1x_CR8ROOSTZujRY
             public final void onChanged(Object obj) {
                 EventListFragment.a(EventListFragment.this, (EventDetailsModel) obj);
             }
@@ -449,9 +439,9 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        EventListFragment eventListFragment = this;
-        LifecycleExtKt.a(eventListFragment, j().d(), new EventListFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(eventListFragment, j().f(), new EventListFragment$liveDataObserver$2(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, j().d(), new EventListFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().f(), new EventListFragment$liveDataObserver$2(this));
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -488,7 +478,7 @@ public final class EventListFragment extends MVVMBaseFragment<EventListViewModel
         view.setVisibility(0);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (this.e) {

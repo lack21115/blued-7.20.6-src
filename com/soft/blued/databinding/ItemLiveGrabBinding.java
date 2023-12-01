@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemLiveGrabBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29212a;
+    private final LinearLayout f15522a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29212a;
+        return this.f15522a;
     }
 }

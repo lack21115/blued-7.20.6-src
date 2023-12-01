@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.k.h;
-import com.anythink.expressad.foundation.h.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/ShakeBorderThumbView.class */
 public class ShakeBorderThumbView extends BaseShakeView {
@@ -30,11 +29,11 @@ public class ShakeBorderThumbView extends BaseShakeView {
     final void a() {
         setOrientation(0);
         setGravity(17);
-        setBackgroundResource(h.a(n.a().g(), "myoffer_bg_shake_border_thumb", i.f7952c));
+        setBackgroundResource(h.a(n.a().g(), "myoffer_bg_shake_border_thumb", "drawable"));
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_shake_border_thumb", "layout"), (ViewGroup) this, true);
-        int a2 = h.a(getContext(), 10.0f);
-        int a3 = h.a(getContext(), 12.0f);
-        int a4 = h.a(getContext(), 6.0f);
-        setPadding(a2, a4, a3, a4);
+        int a = h.a(getContext(), 10.0f);
+        int a2 = h.a(getContext(), 12.0f);
+        int a3 = h.a(getContext(), 6.0f);
+        setPadding(a, a3, a2, a3);
     }
 }

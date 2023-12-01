@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/SeekBar.class */
 public class SeekBar extends AbsSeekBar {
@@ -23,7 +24,7 @@ public class SeekBar extends AbsSeekBar {
     }
 
     public SeekBar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842875);
+        this(context, attributeSet, R.attr.seekBarStyle);
     }
 
     public SeekBar(Context context, AttributeSet attributeSet, int i) {

@@ -28,12 +28,12 @@ public final class ImmutableLongArray implements Serializable {
             this.parent = immutableLongArray;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return indexOf(obj) >= 0;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj instanceof AsList) {
                 return this.parent.equals(((AsList) obj).parent);
@@ -60,7 +60,7 @@ public final class ImmutableLongArray implements Serializable {
             return Long.valueOf(this.parent.get(i));
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             return this.parent.hashCode();
         }
@@ -111,7 +111,7 @@ public final class ImmutableLongArray implements Serializable {
             long[] jArr = this.array;
             if (i2 > jArr.length) {
                 long[] jArr2 = new long[expandedCapacity(jArr.length, i2)];
-                System.arraycopy((Object) this.array, 0, (Object) jArr2, 0, this.count);
+                System.arraycopy(this.array, 0, jArr2, 0, this.count);
                 this.array = jArr2;
             }
         }
@@ -143,7 +143,7 @@ public final class ImmutableLongArray implements Serializable {
 
         public Builder addAll(ImmutableLongArray immutableLongArray) {
             ensureRoomFor(immutableLongArray.length());
-            System.arraycopy((Object) immutableLongArray.array, immutableLongArray.start, (Object) this.array, this.count, immutableLongArray.length());
+            System.arraycopy(immutableLongArray.array, immutableLongArray.start, this.array, this.count, immutableLongArray.length());
             this.count += immutableLongArray.length();
             return this;
         }
@@ -171,7 +171,7 @@ public final class ImmutableLongArray implements Serializable {
 
         public Builder addAll(long[] jArr) {
             ensureRoomFor(jArr.length);
-            System.arraycopy((Object) jArr, 0, (Object) this.array, this.count, jArr.length);
+            System.arraycopy(jArr, 0, this.array, this.count, jArr.length);
             this.count += jArr.length;
             return this;
         }
@@ -250,7 +250,7 @@ public final class ImmutableLongArray implements Serializable {
         Preconditions.checkArgument(jArr.length <= 2147483646, "the total number of elements must fit in an int");
         long[] jArr2 = new long[jArr.length + 1];
         jArr2[0] = j;
-        System.arraycopy((Object) jArr, 0, (Object) jArr2, 1, jArr.length);
+        System.arraycopy(jArr, 0, jArr2, 1, jArr.length);
         return new ImmutableLongArray(jArr2);
     }
 

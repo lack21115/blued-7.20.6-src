@@ -33,11 +33,11 @@ public final class OnUndeliveredElementKt {
     }
 
     public static final <E> void a(Function1<? super E, Unit> function1, E e, CoroutineContext coroutineContext) {
-        UndeliveredElementException a2 = a(function1, e, (UndeliveredElementException) null);
-        if (a2 == null) {
+        UndeliveredElementException a = a(function1, e, (UndeliveredElementException) null);
+        if (a == null) {
             return;
         }
-        CoroutineExceptionHandlerKt.a(coroutineContext, a2);
+        CoroutineExceptionHandlerKt.a(coroutineContext, a);
     }
 
     public static final <E> Function1<Throwable, Unit> b(final Function1<? super E, Unit> function1, final E e, final CoroutineContext coroutineContext) {
@@ -56,7 +56,7 @@ public final class OnUndeliveredElementKt {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Throwable th) {
                 a(th);
-                return Unit.f42314a;
+                return Unit.a;
             }
         };
     }

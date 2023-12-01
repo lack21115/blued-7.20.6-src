@@ -18,13 +18,9 @@ import kotlinx.coroutines.Job;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/DebugProbesImpl.class */
 public final class DebugProbesImpl {
     private static volatile int installations;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final DebugProbesImpl f43034a = new DebugProbesImpl();
+    public static final DebugProbesImpl a = new DebugProbesImpl();
     private static final SimpleDateFormat b = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final ConcurrentWeakMap<CoroutineOwner<?>, Boolean> f43035c = new ConcurrentWeakMap<>(false, 1, null);
+    private static final ConcurrentWeakMap<CoroutineOwner<?>, Boolean> c = new ConcurrentWeakMap<>(false, 1, null);
     private static final /* synthetic */ SequenceNumberRefVolatile d = new Object(0) { // from class: kotlinx.coroutines.debug.internal.DebugProbesImpl.SequenceNumberRefVolatile
         volatile long sequenceNumber;
 
@@ -35,7 +31,7 @@ public final class DebugProbesImpl {
     private static final ReentrantReadWriteLock f = new ReentrantReadWriteLock();
     private static boolean g = true;
     private static boolean h = true;
-    private static final Function1<Boolean, Unit> i = f43034a.c();
+    private static final Function1<Boolean, Unit> i = a.c();
     private static final ConcurrentWeakMap<CoroutineStackFrame, DebugCoroutineInfoImpl> j = new ConcurrentWeakMap<>(true);
     private static final /* synthetic */ AtomicLongFieldUpdater e = AtomicLongFieldUpdater.newUpdater(SequenceNumberRefVolatile.class, "sequenceNumber");
 
@@ -43,17 +39,13 @@ public final class DebugProbesImpl {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/DebugProbesImpl$CoroutineOwner.class */
     public static final class CoroutineOwner<T> implements Continuation<T>, CoroutineStackFrame {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Continuation<T> f43036a;
+        public final Continuation<T> a;
         public final DebugCoroutineInfoImpl b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final CoroutineStackFrame f43037c;
+        private final CoroutineStackFrame c;
 
         @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
         public CoroutineStackFrame getCallerFrame() {
-            CoroutineStackFrame coroutineStackFrame = this.f43037c;
+            CoroutineStackFrame coroutineStackFrame = this.c;
             if (coroutineStackFrame == null) {
                 return null;
             }
@@ -62,12 +54,12 @@ public final class DebugProbesImpl {
 
         @Override // kotlin.coroutines.Continuation
         public CoroutineContext getContext() {
-            return this.f43036a.getContext();
+            return this.a.getContext();
         }
 
         @Override // kotlin.coroutines.jvm.internal.CoroutineStackFrame
         public StackTraceElement getStackTraceElement() {
-            CoroutineStackFrame coroutineStackFrame = this.f43037c;
+            CoroutineStackFrame coroutineStackFrame = this.c;
             if (coroutineStackFrame == null) {
                 return null;
             }
@@ -76,12 +68,12 @@ public final class DebugProbesImpl {
 
         @Override // kotlin.coroutines.Continuation
         public void resumeWith(Object obj) {
-            DebugProbesImpl.f43034a.b(this);
-            this.f43036a.resumeWith(obj);
+            DebugProbesImpl.a.b(this);
+            this.a.resumeWith(obj);
         }
 
         public String toString() {
-            return this.f43036a.toString();
+            return this.a.toString();
         }
     }
 
@@ -105,7 +97,7 @@ public final class DebugProbesImpl {
         CoroutineContext context = coroutineOwner.b.getContext();
         Job job = context == null ? null : (Job) context.get(Job.C_);
         if (job != null && job.g()) {
-            f43035c.remove(coroutineOwner);
+            c.remove(coroutineOwner);
             return true;
         }
         return false;
@@ -113,7 +105,7 @@ public final class DebugProbesImpl {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void b(CoroutineOwner<?> coroutineOwner) {
-        f43035c.remove(coroutineOwner);
+        c.remove(coroutineOwner);
         CoroutineStackFrame b2 = coroutineOwner.b.b();
         CoroutineStackFrame a2 = b2 == null ? null : a(b2);
         if (a2 == null) {
@@ -126,11 +118,11 @@ public final class DebugProbesImpl {
         Object f2;
         Object newInstance;
         try {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             DebugProbesImpl debugProbesImpl = this;
             newInstance = Class.forName("kotlinx.coroutines.debug.internal.ByteBuddyDynamicAttach").getConstructors()[0].newInstance(new Object[0]);
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             f2 = Result.f(ResultKt.a(th));
         }
         if (newInstance != null) {

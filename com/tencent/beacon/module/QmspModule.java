@@ -13,11 +13,11 @@ import com.tencent.qmsp.sdk.u.U;
 public class QmspModule implements d, BeaconModule {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35081a;
+    private Context f21390a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Runnable f35082c = new Runnable() { // from class: com.tencent.beacon.module.QmspModule.1
+    private final Runnable f21391c = new Runnable() { // from class: com.tencent.beacon.module.QmspModule.1
         @Override // java.lang.Runnable
         public void run() {
             String str;
@@ -56,13 +56,13 @@ public class QmspModule implements d, BeaconModule {
             String f = com.tencent.beacon.a.c.c.d().f();
             try {
                 c.a("[qmsp] startQ: userId: %s, qimei:%s, appKey:%s, sdkVersion: %s", l, str, f, d.j());
-                i = U.startQ(this.f35081a, l, str, f, d.j(), c.b());
+                i = U.startQ(this.f21390a, l, str, f, d.j(), c.b());
             } catch (Throwable th) {
                 th = th;
                 i = 0;
             }
             try {
-                a.a().a(114, 0L, 300000L, this.f35082c);
+                a.a().a(114, 0L, 300000L, this.f21391c);
                 this.b = true;
             } catch (Throwable th2) {
                 th = th2;
@@ -82,13 +82,13 @@ public class QmspModule implements d, BeaconModule {
             c.a("qmsp disable by user", new Object[0]);
             return;
         }
-        this.f35081a = context;
+        this.f21390a = context;
         b.a().a(13, this);
     }
 
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
-        if (cVar.f34920a != 13) {
+        if (cVar.f21229a != 13) {
             return;
         }
         a(j.c());

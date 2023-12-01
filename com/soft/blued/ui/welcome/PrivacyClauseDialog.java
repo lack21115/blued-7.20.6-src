@@ -32,11 +32,11 @@ import com.soft.blued.utils.UserRelationshipUtils;
 public class PrivacyClauseDialog extends AlertDialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f34541a;
+    private Context f20850a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f34542c;
+    private TextView f20851c;
     private TextView d;
     private TextView e;
     private TextView f;
@@ -48,41 +48,40 @@ public class PrivacyClauseDialog extends AlertDialog {
     public class AnonymousClass5 extends BluedUIHttpResponse<BluedEntityA<UpdateTerms>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f34547a;
+        final /* synthetic */ Context f20856a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass5(IRequestHost iRequestHost, Context context) {
             super(iRequestHost);
-            this.f34547a = context;
+            this.f20856a = context;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<UpdateTerms> bluedEntityA) {
             if (bluedEntityA == null || !bluedEntityA.hasData()) {
                 return;
             }
-            UpdateTerms singleData = bluedEntityA.getSingleData();
-            if (!PrivacyClauseDialog.b(singleData)) {
+            UpdateTerms updateTerms = (UpdateTerms) bluedEntityA.getSingleData();
+            if (!PrivacyClauseDialog.b(updateTerms)) {
                 if (isActive()) {
-                    PrivacyClauseDialog.b(this.f34547a);
+                    PrivacyClauseDialog.b(this.f20856a);
                     return;
                 }
                 return;
             }
-            PrivacyClauseDialog privacyClauseDialog = new PrivacyClauseDialog(this.f34547a, singleData);
+            PrivacyClauseDialog privacyClauseDialog = new PrivacyClauseDialog(this.f20856a, updateTerms);
             privacyClauseDialog.show();
-            CommunityManager.f19086a.a().f(true);
+            CommunityManager.a.a().f(true);
             privacyClauseDialog.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.welcome.PrivacyClauseDialog.5.1
                 @Override // android.content.DialogInterface.OnDismissListener
                 public void onDismiss(DialogInterface dialogInterface) {
-                    CommunityManager.f19086a.a().f(false);
+                    CommunityManager.a.a().f(false);
                     AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.welcome.PrivacyClauseDialog.5.1.1
                         @Override // java.lang.Runnable
                         public void run() {
                             if (AnonymousClass5.this.isActive()) {
-                                PrivacyClauseDialog.b(AnonymousClass5.this.f34547a);
+                                PrivacyClauseDialog.b(AnonymousClass5.this.f20856a);
                             }
                         }
                     }, 500L);
@@ -93,13 +92,13 @@ public class PrivacyClauseDialog extends AlertDialog {
 
     public PrivacyClauseDialog(Context context, UpdateTerms updateTerms) {
         super(context);
-        this.f34541a = context;
+        this.f20850a = context;
         this.g = updateTerms;
     }
 
     private void a() {
         this.b = (TextView) findViewById(2131371186);
-        this.f34542c = (TextView) findViewById(R.id.tv_link1);
+        this.f20851c = (TextView) findViewById(R.id.tv_link1);
         this.d = (TextView) findViewById(R.id.tv_link2);
         this.e = (TextView) findViewById(R.id.tv_one);
         this.f = (TextView) findViewById(R.id.tv_two);
@@ -109,19 +108,19 @@ public class PrivacyClauseDialog extends AlertDialog {
         }
         this.b.setText(updateTerms.description);
         if (this.g.jump_links.size() > 0) {
-            this.f34542c.setVisibility(0);
-            this.f34542c.setText(this.g.jump_links.get(0).text);
-            this.f34542c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.PrivacyClauseDialog.1
+            this.f20851c.setVisibility(0);
+            this.f20851c.setText(this.g.jump_links.get(0).text);
+            this.f20851c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.PrivacyClauseDialog.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     if (PrivacyClauseDialog.this.g != null) {
-                        WebViewShowInfoFragment.show(PrivacyClauseDialog.this.f34541a, PrivacyClauseDialog.this.g.jump_links.get(0).link, 0);
+                        WebViewShowInfoFragment.show(PrivacyClauseDialog.this.f20850a, PrivacyClauseDialog.this.g.jump_links.get(0).link, 0);
                     }
                 }
             });
         } else {
-            this.f34542c.setVisibility(8);
+            this.f20851c.setVisibility(8);
         }
         if (this.g.jump_links.size() > 1) {
             this.d.setVisibility(0);
@@ -131,7 +130,7 @@ public class PrivacyClauseDialog extends AlertDialog {
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     if (PrivacyClauseDialog.this.g != null) {
-                        WebViewShowInfoFragment.show(PrivacyClauseDialog.this.f34541a, PrivacyClauseDialog.this.g.jump_links.get(1).link, 0);
+                        WebViewShowInfoFragment.show(PrivacyClauseDialog.this.f20850a, PrivacyClauseDialog.this.g.jump_links.get(1).link, 0);
                     }
                 }
             });
@@ -186,19 +185,19 @@ public class PrivacyClauseDialog extends AlertDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static void b(final Context context) {
         if (BluedPreferences.fm()) {
-            CommunityManager.f19086a.a().f(true);
+            CommunityManager.a.a().f(true);
             BluedAlertDialog a2 = CommonAlertDialog.a(context, context.getString(2131891631), context.getString(2131891630), context.getString(2131891629), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.welcome.PrivacyClauseDialog.6
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
                     BluedPreferences.fn();
-                    CommunityManager.f19086a.a().f(false);
+                    CommunityManager.a.a().f(false);
                 }
             }, (DialogInterface.OnDismissListener) null, 0);
             a2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.welcome.PrivacyClauseDialog.7
                 @Override // android.content.DialogInterface.OnDismissListener
                 public void onDismiss(DialogInterface dialogInterface) {
-                    CommunityManager.f19086a.a().f(false);
+                    CommunityManager.a.a().f(false);
                 }
             });
             a2.a(false);
@@ -231,7 +230,7 @@ public class PrivacyClauseDialog extends AlertDialog {
         a();
         Window window = getWindow();
         if (window != null) {
-            window.setBackgroundDrawableResource(17170445);
+            window.setBackgroundDrawableResource(android.R.color.transparent);
         }
         setCanceledOnTouchOutside(false);
         setCancelable(false);

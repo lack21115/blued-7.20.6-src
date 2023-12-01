@@ -13,7 +13,6 @@ import com.soft.blued.R;
 public class AddGroupReasonPop extends BottomPopupView {
     private EditText b;
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         this.b = (EditText) findViewById(R.id.et_reason);
@@ -22,7 +21,7 @@ public class AddGroupReasonPop extends BottomPopupView {
             public void onClick(View view) {
                 Tracker.onClick(view);
                 if (TextUtils.isEmpty(AddGroupReasonPop.this.b.getText().toString())) {
-                    ToastUtils.a(AddGroupReasonPop.this.getResources().getString(2131891609));
+                    ToastUtils.a(AddGroupReasonPop.this.getResources().getString(R.string.send_feed_all_null));
                     return;
                 }
                 LiveEventBus.get("add_group").post(AddGroupReasonPop.this.b.getText().toString());
@@ -31,7 +30,6 @@ public class AddGroupReasonPop extends BottomPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_add_group;
     }

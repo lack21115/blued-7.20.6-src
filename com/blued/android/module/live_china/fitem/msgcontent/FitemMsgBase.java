@@ -29,15 +29,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgBase.class */
 public abstract class FitemMsgBase extends FreedomItem {
     private final LiveChattingModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f12555c;
+    private final String c;
     private Pattern d;
 
     public FitemMsgBase(LiveChattingModel msg) {
         Intrinsics.e(msg, "msg");
         this.b = msg;
-        this.f12555c = "@\\(word:([\\s\\S]*?)\\)";
+        this.c = "@\\(word:([\\s\\S]*?)\\)";
         this.d = Pattern.compile("@\\(word:([\\s\\S]*?)\\)");
     }
 
@@ -52,7 +50,7 @@ public abstract class FitemMsgBase extends FreedomItem {
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(long j) {
         BaseFragment baseFragment;
-        if (e().fromId > 0 && (baseFragment = (BaseFragment) this.f10935a.f10931a.a("BaseFragment", (String) null)) != null) {
+        if (e().fromId > 0 && (baseFragment = (BaseFragment) this.a.a.a("BaseFragment", (String) null)) != null) {
             LiveMsgReportModel liveMsgReportModel = new LiveMsgReportModel();
             if (LiveRoomManager.a().p() != null) {
                 liveMsgReportModel.lid = LiveRoomManager.a().e();
@@ -84,7 +82,7 @@ public abstract class FitemMsgBase extends FreedomItem {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void i() {
-        TextView textView = (TextView) this.f10935a.a(R.id.live_msg_content_text);
+        TextView textView = (TextView) this.a.a(R.id.live_msg_content_text);
         if (textView != null) {
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgBase$rLbTpiuiRb8K-f7xvojpPL3oc6k
                 @Override // android.view.View.OnClickListener
@@ -95,13 +93,13 @@ public abstract class FitemMsgBase extends FreedomItem {
             textView.getPaint().setFakeBoldText(true);
             textView.setTag(R.id.live_msg_span, null);
         }
-        this.f10935a.a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgBase$MJD3WZg3rAs6iRnDmTQAhOsZWtI
+        this.a.a(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgBase$MJD3WZg3rAs6iRnDmTQAhOsZWtI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FitemMsgBase.b(view);
             }
         });
-        FrameLayout frameLayout = (FrameLayout) this.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
@@ -137,9 +135,9 @@ public abstract class FitemMsgBase extends FreedomItem {
     /* JADX INFO: Access modifiers changed from: protected */
     public final String k() {
         String str = e().fromNickName;
-        String a2 = LiveCloakingUtil.a(str == null || str.length() == 0 ? "" : e().fromNickName, e().fromPrivilege);
-        Intrinsics.c(a2, "nicknameCloaking(\n      …g.fromPrivilege\n        )");
-        return a2;
+        String a = LiveCloakingUtil.a(str == null || str.length() == 0 ? "" : e().fromNickName, e().fromPrivilege);
+        Intrinsics.c(a, "nicknameCloaking(\n      …g.fromPrivilege\n        )");
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

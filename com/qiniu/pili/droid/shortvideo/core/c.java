@@ -4,6 +4,6 @@ package com.qiniu.pili.droid.shortvideo.core;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f27539a = {"com.yaoyao.live"};
+    public static final String[] f13851a = {"com.yaoyao.live"};
     public static final String[] b = {"LGENexus_5", "vivo_X5Pro_D"};
 }

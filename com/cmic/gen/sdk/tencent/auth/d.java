@@ -1,6 +1,7 @@
 package com.cmic.gen.sdk.tencent.auth;
 
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.opos.process.bridge.provider.ProcessBridgeProvider;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,7 +13,7 @@ public class d {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put(ProcessBridgeProvider.KEY_RESULT_CODE, "103000");
-            jSONObject.put("desc", "true");
+            jSONObject.put("desc", fw.Code);
             return jSONObject;
         } catch (JSONException e) {
             e.printStackTrace();

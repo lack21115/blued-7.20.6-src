@@ -2,7 +2,6 @@ package com.sobot.network.http.upload;
 
 import android.os.BatteryManager;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.igexin.push.core.b;
 import com.sobot.network.http.model.UploadFileResult;
@@ -106,7 +105,7 @@ public class SobotCommonGsonUtil {
                 sb.append("\"" + entry.getKey() + "\":" + entry.getValue() + ",");
             }
             String sb2 = sb.toString();
-            return sb2.substring(0, sb2.lastIndexOf(",")) + i.d;
+            return sb2.substring(0, sb2.lastIndexOf(",")) + "}";
         } catch (Exception e) {
             return "";
         }

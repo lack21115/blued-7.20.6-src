@@ -26,7 +26,7 @@ public final class f implements b.a, d.c, e.c, g.c {
     private static f u;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f37223c;
+    private e f23532c;
     private d d;
     private g e;
     private int k;
@@ -34,7 +34,7 @@ public final class f implements b.a, d.c, e.c, g.c {
     private int m;
 
     /* renamed from: a  reason: collision with root package name */
-    private long f37222a = 5000;
+    private long f23531a = 5000;
     private Context b = null;
     private int f = 1024;
     private int g = 4;
@@ -94,24 +94,24 @@ public final class f implements b.a, d.c, e.c, g.c {
     public final class a extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        private e.b f37226a;
+        private e.b f23535a;
         private d.b b;
 
         /* renamed from: c  reason: collision with root package name */
-        private g.b f37227c;
+        private g.b f23536c;
 
         a(e.b bVar, d.b bVar2, g.b bVar3) {
-            this.f37226a = null;
+            this.f23535a = null;
             this.b = null;
-            this.f37227c = null;
+            this.f23536c = null;
             if (bVar != null) {
-                this.f37226a = (e.b) bVar.clone();
+                this.f23535a = (e.b) bVar.clone();
             }
             if (bVar2 != null) {
                 this.b = (d.b) bVar2.clone();
             }
             if (bVar3 != null) {
-                this.f37227c = (g.b) bVar3.clone();
+                this.f23536c = (g.b) bVar3.clone();
             }
         }
 
@@ -154,12 +154,12 @@ public final class f implements b.a, d.c, e.c, g.c {
                 f fVar4 = f.this;
                 fVar4.I = j.a(fVar4.E == null ? "0123456789ABCDEF" : f.this.E);
             }
-            String a2 = f.this.g == 4 ? i.a(this.f37227c) : "[]";
+            String a2 = f.this.g == 4 ? i.a(this.f23536c) : "[]";
             String a3 = i.a(this.b, f.this.d.b());
             String a4 = i.a(f.this.E, f.this.F, f.this.G, f.this.H, f.this.K);
-            e.b bVar = this.f37226a;
-            String a5 = (bVar == null || !bVar.a()) ? "{}" : i.a(this.f37226a);
-            f.this.q.sendMessage(f.this.q.obtainMessage(16, (("{\"version\":\"1.1.8\",\"address\":" + f.this.l) + ",\"source\":203,\"access_token\":\"" + f.this.I + "\",\"app_name\":\"" + f.this.J + "\",\"bearing\":1") + ",\"attribute\":" + a4 + ",\"location\":" + a5 + ",\"cells\":" + a3 + ",\"wifis\":" + a2 + com.alipay.sdk.util.i.d));
+            e.b bVar = this.f23535a;
+            String a5 = (bVar == null || !bVar.a()) ? "{}" : i.a(this.f23535a);
+            f.this.q.sendMessage(f.this.q.obtainMessage(16, (("{\"version\":\"1.1.8\",\"address\":" + f.this.l) + ",\"source\":203,\"access_token\":\"" + f.this.I + "\",\"app_name\":\"" + f.this.J + "\",\"bearing\":1") + ",\"attribute\":" + a4 + ",\"location\":" + a5 + ",\"cells\":" + a3 + ",\"wifis\":" + a2 + "}"));
         }
     }
 
@@ -168,16 +168,16 @@ public final class f implements b.a, d.c, e.c, g.c {
     public final class b extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f37228a;
+        private String f23537a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f37229c = null;
+        private String f23538c = null;
 
         public b(String str) {
-            this.f37228a = null;
+            this.f23537a = null;
             this.b = null;
-            this.f37228a = str;
+            this.f23537a = str;
             StringBuilder sb = new StringBuilder();
             sb.append(f.this.D == 0 ? "http://lstest.map.soso.com/loc?c=1" : "http://lbs.map.qq.com/loc?c=1");
             sb.append("&mars=");
@@ -201,15 +201,15 @@ public final class f implements b.a, d.c, e.c, g.c {
             Message message = new Message();
             message.what = 8;
             try {
-                byte[] a2 = j.a(this.f37228a.getBytes());
+                byte[] a2 = j.a(this.f23537a.getBytes());
                 f.this.p = true;
                 n a3 = com.tencent.map.b.b.a(this.b, "SOSO MAP LBS SDK", a2);
                 f.this.p = false;
-                String a4 = a(j.b(a3.f37245a), a3.b);
-                this.f37229c = a4;
+                String a4 = a(j.b(a3.f23554a), a3.b);
+                this.f23538c = a4;
                 if (a4 != null) {
                     message.arg1 = 0;
-                    message.obj = this.f37229c;
+                    message.obj = this.f23538c;
                 } else {
                     message.arg1 = 1;
                 }
@@ -222,15 +222,15 @@ public final class f implements b.a, d.c, e.c, g.c {
                     }
                     try {
                         sleep(1000L);
-                        byte[] a5 = j.a(this.f37228a.getBytes());
+                        byte[] a5 = j.a(this.f23537a.getBytes());
                         f.this.p = true;
                         n a6 = com.tencent.map.b.b.a(this.b, "SOSO MAP LBS SDK", a5);
                         f.this.p = false;
-                        String a7 = a(j.b(a6.f37245a), a6.b);
-                        this.f37229c = a7;
+                        String a7 = a(j.b(a6.f23554a), a6.b);
+                        this.f23538c = a7;
                         if (a7 != null) {
                             message.arg1 = 0;
-                            message.obj = this.f37229c;
+                            message.obj = this.f23538c;
                         } else {
                             message.arg1 = 1;
                         }
@@ -298,10 +298,10 @@ public final class f implements b.a, d.c, e.c, g.c {
     }
 
     private f() {
-        this.f37223c = null;
+        this.f23532c = null;
         this.d = null;
         this.e = null;
-        this.f37223c = new e();
+        this.f23532c = new e();
         this.d = new d();
         this.e = new g();
     }
@@ -368,14 +368,14 @@ public final class f implements b.a, d.c, e.c, g.c {
         dVar.z = 0;
         fVar.z.y = 0;
         fVar.z.b = i.a(location.getLatitude(), 6);
-        fVar.z.f37199c = i.a(location.getLongitude(), 6);
+        fVar.z.f23508c = i.a(location.getLongitude(), 6);
         e.b bVar3 = fVar.w;
         if (bVar3 != null && bVar3.a()) {
             fVar.z.e = i.a(fVar.w.b().getAccuracy(), 1);
             fVar.z.d = i.a(fVar.w.b().getAltitude(), 1);
             fVar.z.f = i.a(fVar.w.b().getSpeed(), 1);
             fVar.z.g = i.a(fVar.w.b().getBearing(), 1);
-            fVar.z.f37198a = 0;
+            fVar.z.f23507a = 0;
         }
         fVar.z.x = true;
         int i = fVar.l;
@@ -430,7 +430,7 @@ public final class f implements b.a, d.c, e.c, g.c {
         if (i4 != 0) {
             fVar.z.y = i4;
         }
-        if (System.currentTimeMillis() - fVar.v < fVar.f37222a || (bVar = fVar.j) == null || fVar.k != 1) {
+        if (System.currentTimeMillis() - fVar.v < fVar.f23531a || (bVar = fVar.j) == null || fVar.k != 1) {
             return;
         }
         bVar.a(fVar.z);
@@ -444,7 +444,7 @@ public final class f implements b.a, d.c, e.c, g.c {
             fVar.e.a(0L);
             return;
         }
-        if (fVar.C > 0 && !i.a(bVar.f37215a, bVar.b, bVar.f37216c, bVar.d, bVar.e)) {
+        if (fVar.C > 0 && !i.a(bVar.f23524a, bVar.b, bVar.f23525c, bVar.d, bVar.e)) {
             fVar.C--;
         }
         fVar.d();
@@ -505,14 +505,14 @@ public final class f implements b.a, d.c, e.c, g.c {
             fVar.j.a(bArr, 0);
         } else {
             com.tencent.map.b.c cVar = fVar.h;
-            String b2 = (cVar == null || (bVar = fVar.x) == null || fVar.y == null) ? null : cVar.b(bVar.b, fVar.x.f37216c, fVar.x.d, fVar.x.e, fVar.y.a());
+            String b2 = (cVar == null || (bVar = fVar.x) == null || fVar.y == null) ? null : cVar.b(bVar.b, fVar.x.f23525c, fVar.x.d, fVar.x.e, fVar.y.a());
             if (b2 != null) {
                 fVar.a(b2);
                 return;
             }
             com.tencent.map.b.c cVar2 = fVar.h;
             if (cVar2 != null && (bVar2 = fVar.x) != null && fVar.y != null) {
-                cVar2.a(bVar2.b, fVar.x.f37216c, fVar.x.d, fVar.x.e, fVar.y.a());
+                cVar2.a(bVar2.b, fVar.x.f23525c, fVar.x.d, fVar.x.e, fVar.y.a());
             }
             if (fVar.p) {
                 return;
@@ -537,9 +537,9 @@ public final class f implements b.a, d.c, e.c, g.c {
             this.z = new com.tencent.map.a.a.d();
             JSONObject jSONObject = new JSONObject(str);
             JSONObject jSONObject2 = jSONObject.getJSONObject("location");
-            this.z.f37198a = 1;
+            this.z.f23507a = 1;
             this.z.b = i.a(jSONObject2.getDouble("latitude"), 6);
-            this.z.f37199c = i.a(jSONObject2.getDouble("longitude"), 6);
+            this.z.f23508c = i.a(jSONObject2.getDouble("longitude"), 6);
             this.z.d = i.a(jSONObject2.getDouble("altitude"), 1);
             this.z.e = i.a(jSONObject2.getDouble("accuracy"), 1);
             this.z.x = this.m == 1;
@@ -661,12 +661,12 @@ public final class f implements b.a, d.c, e.c, g.c {
         com.tencent.map.a.a.d dVar = new com.tencent.map.a.a.d();
         this.z = dVar;
         dVar.b = i.a(b2.getLatitude(), 6);
-        this.z.f37199c = i.a(b2.getLongitude(), 6);
+        this.z.f23508c = i.a(b2.getLongitude(), 6);
         this.z.d = i.a(b2.getAltitude(), 1);
         this.z.e = i.a(b2.getAccuracy(), 1);
         this.z.f = i.a(b2.getSpeed(), 1);
         this.z.g = i.a(b2.getBearing(), 1);
-        this.z.f37198a = 0;
+        this.z.f23507a = 0;
         this.z.x = false;
         if (z) {
             this.z.y = 1;
@@ -676,7 +676,7 @@ public final class f implements b.a, d.c, e.c, g.c {
         this.z.z = 0;
         this.A = new com.tencent.map.a.a.d(this.z);
         this.B = 0;
-        if (System.currentTimeMillis() - this.v < this.f37222a || (bVar = this.j) == null || this.k != 1) {
+        if (System.currentTimeMillis() - this.v < this.f23531a || (bVar = this.j) == null || this.k != 1) {
             return;
         }
         bVar.a(this.z);
@@ -700,7 +700,7 @@ public final class f implements b.a, d.c, e.c, g.c {
         this.B = 1;
         dVar.y = 1;
         this.z.z = -1;
-        this.z.f37198a = 1;
+        this.z.f23507a = 1;
         com.tencent.map.a.a.b bVar = this.j;
         if (bVar == null || this.k != 1) {
             return;
@@ -779,7 +779,7 @@ public final class f implements b.a, d.c, e.c, g.c {
                 }
                 this.L = false;
                 this.D = 1;
-                boolean a2 = this.f37223c.a(this, this.b);
+                boolean a2 = this.f23532c.a(this, this.b);
                 boolean a3 = this.d.a(this.b, this);
                 boolean a4 = this.e.a(this.b, this, 1);
                 this.h = com.tencent.map.b.c.a();
@@ -820,7 +820,7 @@ public final class f implements b.a, d.c, e.c, g.c {
                     this.j = null;
                     this.N.removeCallbacks(this.O);
                     this.b.unregisterReceiver(this.P);
-                    this.f37223c.a();
+                    this.f23532c.a();
                     this.d.a();
                     this.e.a();
                 }

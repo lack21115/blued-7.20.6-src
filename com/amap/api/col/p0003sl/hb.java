@@ -4,7 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import com.alipay.sdk.util.l;
 import com.amap.api.col.p0003sl.hx;
+import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.interfaces.IRouteSearch;
 import com.amap.api.services.route.BusRouteResult;
@@ -18,20 +20,16 @@ import com.amap.api.services.route.WalkRouteResult;
 /* renamed from: com.amap.api.col.3sl.hb  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hb.class */
 public final class hb implements IRouteSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RouteSearch.OnRouteSearchListener f5039a;
+    private RouteSearch.OnRouteSearchListener a;
     private RouteSearch.OnTruckRouteSearchListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RouteSearch.OnRoutePlanSearchListener f5040c;
+    private RouteSearch.OnRoutePlanSearchListener c;
     private Context d;
     private Handler e;
 
     public hb(Context context) throws AMapException {
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
         this.d = context.getApplicationContext();
         this.e = fp.a();
@@ -47,10 +45,10 @@ public final class hb implements IRouteSearch {
             fn.a(this.d);
             if (busRouteQuery != null) {
                 if (a(busRouteQuery.getFromAndTo())) {
-                    RouteSearch.BusRouteQuery m2504clone = busRouteQuery.m2504clone();
-                    BusRouteResult d = new ey(this.d, m2504clone).d();
+                    RouteSearch.BusRouteQuery m8947clone = busRouteQuery.m8947clone();
+                    BusRouteResult d = new ey(this.d, m8947clone).d();
                     if (d != null) {
-                        d.setBusQuery(m2504clone);
+                        d.setBusQuery(m8947clone);
                         return d;
                     }
                     return d;
@@ -81,21 +79,21 @@ public final class hb implements IRouteSearch {
                             BusRouteResult calculateBusRoute = hb.this.calculateBusRoute(busRouteQuery);
                             busRouteResult2 = calculateBusRoute;
                             busRouteResult = calculateBusRoute;
-                            bundle.putInt("errorCode", 1000);
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", calculateBusRoute);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, 1000);
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, calculateBusRoute);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         } catch (AMapException e) {
-                            bundle.putInt("errorCode", e.getErrorCode());
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", busRouteResult);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, e.getErrorCode());
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, busRouteResult);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         }
                     } catch (Throwable th) {
-                        obtainMessage.obj = hb.this.f5039a;
-                        bundle.putParcelable("result", busRouteResult2);
+                        obtainMessage.obj = hb.this.a;
+                        bundle.putParcelable(l.c, busRouteResult2);
                         obtainMessage.setData(bundle);
                         hb.this.e.sendMessage(obtainMessage);
                         throw th;
@@ -113,7 +111,7 @@ public final class hb implements IRouteSearch {
             fn.a(this.d);
             if (drivePlanQuery != null) {
                 if (a(drivePlanQuery.getFromAndTo())) {
-                    DriveRoutePlanResult d = new fh(this.d, drivePlanQuery.m2506clone()).d();
+                    DriveRoutePlanResult d = new fh(this.d, drivePlanQuery.m8949clone()).d();
                     if (d != null) {
                         d.setDrivePlanQuery(drivePlanQuery);
                         return d;
@@ -146,21 +144,21 @@ public final class hb implements IRouteSearch {
                             DriveRoutePlanResult calculateDrivePlan = hb.this.calculateDrivePlan(drivePlanQuery);
                             driveRoutePlanResult2 = calculateDrivePlan;
                             driveRoutePlanResult = calculateDrivePlan;
-                            bundle.putInt("errorCode", 1000);
-                            obtainMessage.obj = hb.this.f5040c;
-                            bundle.putParcelable("result", calculateDrivePlan);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, 1000);
+                            obtainMessage.obj = hb.this.c;
+                            bundle.putParcelable(l.c, calculateDrivePlan);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         } catch (AMapException e) {
-                            bundle.putInt("errorCode", e.getErrorCode());
-                            obtainMessage.obj = hb.this.f5040c;
-                            bundle.putParcelable("result", driveRoutePlanResult);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, e.getErrorCode());
+                            obtainMessage.obj = hb.this.c;
+                            bundle.putParcelable(l.c, driveRoutePlanResult);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         }
                     } catch (Throwable th) {
-                        obtainMessage.obj = hb.this.f5040c;
-                        bundle.putParcelable("result", driveRoutePlanResult2);
+                        obtainMessage.obj = hb.this.c;
+                        bundle.putParcelable(l.c, driveRoutePlanResult2);
                         obtainMessage.setData(bundle);
                         hb.this.e.sendMessage(obtainMessage);
                         throw th;
@@ -180,10 +178,10 @@ public final class hb implements IRouteSearch {
                 if (a(driveRouteQuery.getFromAndTo())) {
                     gd.a().a(driveRouteQuery.getPassedByPoints());
                     gd.a().b(driveRouteQuery.getAvoidpolygons());
-                    RouteSearch.DriveRouteQuery m2508clone = driveRouteQuery.m2508clone();
-                    DriveRouteResult d = new fi(this.d, m2508clone).d();
+                    RouteSearch.DriveRouteQuery m8951clone = driveRouteQuery.m8951clone();
+                    DriveRouteResult d = new fi(this.d, m8951clone).d();
                     if (d != null) {
-                        d.setDriveQuery(m2508clone);
+                        d.setDriveQuery(m8951clone);
                         return d;
                     }
                     return d;
@@ -214,21 +212,21 @@ public final class hb implements IRouteSearch {
                             DriveRouteResult calculateDriveRoute = hb.this.calculateDriveRoute(driveRouteQuery);
                             driveRouteResult2 = calculateDriveRoute;
                             driveRouteResult = calculateDriveRoute;
-                            bundle.putInt("errorCode", 1000);
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", calculateDriveRoute);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, 1000);
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, calculateDriveRoute);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         } catch (AMapException e) {
-                            bundle.putInt("errorCode", e.getErrorCode());
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", driveRouteResult);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, e.getErrorCode());
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, driveRouteResult);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         }
                     } catch (Throwable th) {
-                        obtainMessage.obj = hb.this.f5039a;
-                        bundle.putParcelable("result", driveRouteResult2);
+                        obtainMessage.obj = hb.this.a;
+                        bundle.putParcelable(l.c, driveRouteResult2);
                         obtainMessage.setData(bundle);
                         hb.this.e.sendMessage(obtainMessage);
                         throw th;
@@ -247,10 +245,10 @@ public final class hb implements IRouteSearch {
             if (rideRouteQuery != null) {
                 if (a(rideRouteQuery.getFromAndTo())) {
                     gd.a().a(rideRouteQuery.getFromAndTo());
-                    RouteSearch.RideRouteQuery m2512clone = rideRouteQuery.m2512clone();
-                    RideRouteResult d = new gf(this.d, m2512clone).d();
+                    RouteSearch.RideRouteQuery m8955clone = rideRouteQuery.m8955clone();
+                    RideRouteResult d = new gf(this.d, m8955clone).d();
                     if (d != null) {
-                        d.setRideQuery(m2512clone);
+                        d.setRideQuery(m8955clone);
                         return d;
                     }
                     return d;
@@ -281,21 +279,21 @@ public final class hb implements IRouteSearch {
                             RideRouteResult calculateRideRoute = hb.this.calculateRideRoute(rideRouteQuery);
                             rideRouteResult2 = calculateRideRoute;
                             rideRouteResult = calculateRideRoute;
-                            bundle.putInt("errorCode", 1000);
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", calculateRideRoute);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, 1000);
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, calculateRideRoute);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         } catch (AMapException e) {
-                            bundle.putInt("errorCode", e.getErrorCode());
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", rideRouteResult);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, e.getErrorCode());
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, rideRouteResult);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         }
                     } catch (Throwable th) {
-                        obtainMessage.obj = hb.this.f5039a;
-                        bundle.putParcelable("result", rideRouteResult2);
+                        obtainMessage.obj = hb.this.a;
+                        bundle.putParcelable(l.c, rideRouteResult2);
                         obtainMessage.setData(bundle);
                         hb.this.e.sendMessage(obtainMessage);
                         throw th;
@@ -315,10 +313,10 @@ public final class hb implements IRouteSearch {
                 if (a(truckRouteQuery.getFromAndTo())) {
                     gd.a().a(truckRouteQuery.getFromAndTo(), truckRouteQuery.getPassedByPoints());
                     gd.a().a(truckRouteQuery.getPassedByPoints());
-                    RouteSearch.TruckRouteQuery m2514clone = truckRouteQuery.m2514clone();
-                    TruckRouteRestult d = new gl(this.d, m2514clone).d();
+                    RouteSearch.TruckRouteQuery m8957clone = truckRouteQuery.m8957clone();
+                    TruckRouteRestult d = new gl(this.d, m8957clone).d();
                     if (d != null) {
-                        d.setTruckQuery(m2514clone);
+                        d.setTruckQuery(m8957clone);
                         return d;
                     }
                     return d;
@@ -349,21 +347,21 @@ public final class hb implements IRouteSearch {
                             TruckRouteRestult calculateTruckRoute = hb.this.calculateTruckRoute(truckRouteQuery);
                             truckRouteRestult2 = calculateTruckRoute;
                             truckRouteRestult = calculateTruckRoute;
-                            bundle.putInt("errorCode", 1000);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, 1000);
                             obtainMessage.obj = hb.this.b;
-                            bundle.putParcelable("result", calculateTruckRoute);
+                            bundle.putParcelable(l.c, calculateTruckRoute);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         } catch (AMapException e) {
-                            bundle.putInt("errorCode", e.getErrorCode());
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, e.getErrorCode());
                             obtainMessage.obj = hb.this.b;
-                            bundle.putParcelable("result", truckRouteRestult);
+                            bundle.putParcelable(l.c, truckRouteRestult);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         }
                     } catch (Throwable th) {
                         obtainMessage.obj = hb.this.b;
-                        bundle.putParcelable("result", truckRouteRestult2);
+                        bundle.putParcelable(l.c, truckRouteRestult2);
                         obtainMessage.setData(bundle);
                         hb.this.e.sendMessage(obtainMessage);
                         throw th;
@@ -382,10 +380,10 @@ public final class hb implements IRouteSearch {
             if (walkRouteQuery != null) {
                 if (a(walkRouteQuery.getFromAndTo())) {
                     gd.a().b(walkRouteQuery.getFromAndTo());
-                    RouteSearch.WalkRouteQuery m2516clone = walkRouteQuery.m2516clone();
-                    WalkRouteResult d = new gm(this.d, m2516clone).d();
+                    RouteSearch.WalkRouteQuery m8959clone = walkRouteQuery.m8959clone();
+                    WalkRouteResult d = new gm(this.d, m8959clone).d();
                     if (d != null) {
-                        d.setWalkQuery(m2516clone);
+                        d.setWalkQuery(m8959clone);
                         return d;
                     }
                     return d;
@@ -416,21 +414,21 @@ public final class hb implements IRouteSearch {
                             WalkRouteResult calculateWalkRoute = hb.this.calculateWalkRoute(walkRouteQuery);
                             walkRouteResult2 = calculateWalkRoute;
                             walkRouteResult = calculateWalkRoute;
-                            bundle.putInt("errorCode", 1000);
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", calculateWalkRoute);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, 1000);
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, calculateWalkRoute);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         } catch (AMapException e) {
-                            bundle.putInt("errorCode", e.getErrorCode());
-                            obtainMessage.obj = hb.this.f5039a;
-                            bundle.putParcelable("result", walkRouteResult);
+                            bundle.putInt(MyLocationStyle.ERROR_CODE, e.getErrorCode());
+                            obtainMessage.obj = hb.this.a;
+                            bundle.putParcelable(l.c, walkRouteResult);
                             obtainMessage.setData(bundle);
                             hb.this.e.sendMessage(obtainMessage);
                         }
                     } catch (Throwable th) {
-                        obtainMessage.obj = hb.this.f5039a;
-                        bundle.putParcelable("result", walkRouteResult2);
+                        obtainMessage.obj = hb.this.a;
+                        bundle.putParcelable(l.c, walkRouteResult2);
                         obtainMessage.setData(bundle);
                         hb.this.e.sendMessage(obtainMessage);
                         throw th;
@@ -444,7 +442,7 @@ public final class hb implements IRouteSearch {
 
     @Override // com.amap.api.services.interfaces.IRouteSearch
     public final void setOnRoutePlanSearchListener(RouteSearch.OnRoutePlanSearchListener onRoutePlanSearchListener) {
-        this.f5040c = onRoutePlanSearchListener;
+        this.c = onRoutePlanSearchListener;
     }
 
     @Override // com.amap.api.services.interfaces.IRouteSearch
@@ -454,6 +452,6 @@ public final class hb implements IRouteSearch {
 
     @Override // com.amap.api.services.interfaces.IRouteSearch
     public final void setRouteSearchListener(RouteSearch.OnRouteSearchListener onRouteSearchListener) {
-        this.f5039a = onRouteSearchListener;
+        this.a = onRouteSearchListener;
     }
 }

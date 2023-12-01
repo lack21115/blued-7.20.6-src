@@ -4,11 +4,11 @@ package com.autonavi.aps.amapapi;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private String[] f9234a;
+    private String[] f6394a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f9235c;
+    private String f6395c;
     private boolean d = false;
     private boolean e = false;
 
@@ -21,11 +21,11 @@ public final class d {
     }
 
     public final void a(String[] strArr) {
-        this.f9234a = strArr;
+        this.f6394a = strArr;
     }
 
     public final String[] a() {
-        return this.f9234a;
+        return this.f6394a;
     }
 
     public final String b() {
@@ -33,7 +33,7 @@ public final class d {
     }
 
     public final void b(String str) {
-        this.f9235c = str;
+        this.f6395c = str;
     }
 
     public final void b(boolean z) {
@@ -41,7 +41,7 @@ public final class d {
     }
 
     public final String c() {
-        return this.f9235c;
+        return this.f6395c;
     }
 
     public final boolean d() {

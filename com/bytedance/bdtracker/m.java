@@ -11,40 +11,40 @@ import org.json.JSONObject;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public c f21255a;
+    public c f7649a;
 
-    public m(c appLogInstance) {
-        Intrinsics.d(appLogInstance, "appLogInstance");
-        this.f21255a = appLogInstance;
+    public m(c cVar) {
+        Intrinsics.d(cVar, "appLogInstance");
+        this.f7649a = cVar;
     }
 
-    public final i<g> a(String uri, h queryParam) {
-        Intrinsics.d(uri, "uri");
-        Intrinsics.d(queryParam, "queryParam");
+    public final i<g> a(String str, h hVar) {
+        Intrinsics.d(str, "uri");
+        Intrinsics.d(hVar, "queryParam");
         try {
-            INetworkClient netClient = this.f21255a.getNetClient();
-            q1 q1Var = this.f21255a.j;
+            INetworkClient netClient = this.f7649a.getNetClient();
+            q1 q1Var = this.f7649a.j;
             Intrinsics.b(q1Var, "appLogInstance.api");
-            String str = netClient.get(q1Var.f21291c.a(a(uri, queryParam.a())), a());
-            Intrinsics.b(str, "appLogInstance.netClient…etHeaders()\n            )");
-            return i.b.a(str, g.class);
+            String str2 = netClient.get(q1Var.f7685c.a(a(str, hVar.a())), a());
+            Intrinsics.b(str2, "appLogInstance.netClient…etHeaders()\n            )");
+            return i.b.a(str2, g.class);
         } catch (Throwable th) {
             return null;
         }
     }
 
-    public final i<j> a(String uri, k request, h queryParam) {
-        Intrinsics.d(uri, "uri");
-        Intrinsics.d(request, "request");
-        Intrinsics.d(queryParam, "queryParam");
+    public final i<j> a(String str, k kVar, h hVar) {
+        Intrinsics.d(str, "uri");
+        Intrinsics.d(kVar, "request");
+        Intrinsics.d(hVar, "queryParam");
         try {
-            INetworkClient netClient = this.f21255a.getNetClient();
-            q1 q1Var = this.f21255a.j;
+            INetworkClient netClient = this.f7649a.getNetClient();
+            q1 q1Var = this.f7649a.j;
             Intrinsics.b(q1Var, "appLogInstance.api");
-            String a2 = q1Var.f21291c.a(a(uri, queryParam.a()));
-            q1 q1Var2 = this.f21255a.j;
+            String a2 = q1Var.f7685c.a(a(str, hVar.a()));
+            q1 q1Var2 = this.f7649a.j;
             Intrinsics.b(q1Var2, "appLogInstance.api");
-            return i.b.a(netClient.post(a2, q1Var2.f21291c.b(request.toString()), a()), j.class);
+            return i.b.a(netClient.post(a2, q1Var2.f7685c.b(kVar.toString()), a()), j.class);
         } catch (Throwable th) {
             return null;
         }
@@ -65,7 +65,7 @@ public final class m {
 
     public final HashMap<String, String> a() {
         HashMap<String, String> hashMap = new HashMap<>(2);
-        hashMap.put("Content-Type", this.f21255a.A ? "application/octet-stream;tt-data=a" : "application/json; charset=utf-8");
+        hashMap.put("Content-Type", this.f7649a.A ? "application/octet-stream;tt-data=a" : "application/json; charset=utf-8");
         return hashMap;
     }
 }

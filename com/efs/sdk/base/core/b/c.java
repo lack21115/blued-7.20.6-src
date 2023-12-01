@@ -13,19 +13,19 @@ import java.io.File;
 public final class c extends Handler implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f21729a;
+    public boolean f8123a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/efs/sdk/base/core/b/c$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final c f21730a = new c((byte) 0);
+        private static final c f8124a = new c((byte) 0);
     }
 
     private c() {
-        super(com.efs.sdk.base.core.util.concurrent.a.f21795a.getLooper());
-        this.f21729a = true;
+        super(com.efs.sdk.base.core.util.concurrent.a.f8189a.getLooper());
+        this.f8123a = true;
         sendEmptyMessageDelayed(2, 60000L);
     }
 
@@ -34,7 +34,7 @@ public final class c extends Handler implements Runnable {
     }
 
     public static c a() {
-        return a.f21730a;
+        return a.f8124a;
     }
 
     @Override // android.os.Handler
@@ -49,7 +49,7 @@ public final class c extends Handler implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         com.efs.sdk.base.core.b.a unused;
-        unused = a.b.f21727a;
+        unused = a.b.f8121a;
         File f = com.efs.sdk.base.core.util.a.f(ControllerCenter.getGlobalEnvStruct().mAppContext, ControllerCenter.getGlobalEnvStruct().getAppid());
         if (f.exists()) {
             for (File file : com.efs.sdk.base.core.util.b.d(f)) {
@@ -66,7 +66,7 @@ public final class c extends Handler implements Runnable {
         long parseLong = Long.parseLong(str);
         long c2 = com.efs.sdk.base.core.util.b.c(com.efs.sdk.base.core.util.a.f(ControllerCenter.getGlobalEnvStruct().mAppContext, ControllerCenter.getGlobalEnvStruct().getAppid())) + com.efs.sdk.base.core.util.b.c(com.efs.sdk.base.core.util.a.d(ControllerCenter.getGlobalEnvStruct().mAppContext, ControllerCenter.getGlobalEnvStruct().getAppid()));
         boolean z = c2 < parseLong;
-        this.f21729a = z;
+        this.f8123a = z;
         if (!z) {
             Log.w("efs.cache", "Cache Limited! curr " + c2 + "byte, max " + parseLong + " byte.");
         }

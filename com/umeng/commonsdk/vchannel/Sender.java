@@ -36,7 +36,7 @@ public class Sender {
             }
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("analytics", bVar.d());
-            UMEnvelopeBuild.buildEnvelopeWithExtHeader(context, jSONObject, jSONObject2, a.f40970c, "v", "1.0.0");
+            UMEnvelopeBuild.buildEnvelopeWithExtHeader(context, jSONObject, jSONObject2, a.f27279c, "v", "1.0.0");
         } catch (Throwable th2) {
             UMCrashManager.reportCrash(context, th2);
         }

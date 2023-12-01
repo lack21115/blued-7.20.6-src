@@ -9,11 +9,11 @@ import com.tencent.open.a.f;
 public class a extends InputConnectionWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f38294a;
+    public static String f24603a;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f38295c = false;
+    public static boolean f24604c = false;
 
     public a(InputConnection inputConnection, boolean z) {
         super(inputConnection, z);
@@ -21,8 +21,8 @@ public class a extends InputConnectionWrapper {
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public boolean commitText(CharSequence charSequence, int i) {
-        f38295c = true;
-        f38294a = charSequence.toString();
+        f24604c = true;
+        f24603a = charSequence.toString();
         f.a("openSDK_LOG.CaptureInputConnection", "-->commitText: " + charSequence.toString());
         return super.commitText(charSequence, i);
     }
@@ -31,18 +31,18 @@ public class a extends InputConnectionWrapper {
     public boolean sendKeyEvent(KeyEvent keyEvent) {
         if (keyEvent.getAction() == 0) {
             f.c("openSDK_LOG.CaptureInputConnection", "sendKeyEvent");
-            f38294a = String.valueOf((char) keyEvent.getUnicodeChar());
-            f38295c = true;
-            f.b("openSDK_LOG.CaptureInputConnection", "s: " + f38294a);
+            f24603a = String.valueOf((char) keyEvent.getUnicodeChar());
+            f24604c = true;
+            f.b("openSDK_LOG.CaptureInputConnection", "s: " + f24603a);
         }
-        f.b("openSDK_LOG.CaptureInputConnection", "-->sendKeyEvent: " + f38294a);
+        f.b("openSDK_LOG.CaptureInputConnection", "-->sendKeyEvent: " + f24603a);
         return super.sendKeyEvent(keyEvent);
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public boolean setComposingText(CharSequence charSequence, int i) {
-        f38295c = true;
-        f38294a = charSequence.toString();
+        f24604c = true;
+        f24603a = charSequence.toString();
         f.a("openSDK_LOG.CaptureInputConnection", "-->setComposingText: " + charSequence.toString());
         return super.setComposingText(charSequence, i);
     }

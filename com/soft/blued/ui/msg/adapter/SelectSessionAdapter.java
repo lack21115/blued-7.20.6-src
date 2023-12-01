@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public class SelectSessionAdapter extends BaseQuickAdapter<SessionModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f32187a;
+    private IRequestHost f18497a;
 
     public SelectSessionAdapter(IRequestHost iRequestHost) {
         super((int) R.layout.item_select_session);
-        this.f32187a = iRequestHost;
+        this.f18497a = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -28,7 +28,7 @@ public class SelectSessionAdapter extends BaseQuickAdapter<SessionModel, BaseVie
         String str = sessionModel.nickName;
         String str2 = str;
         if (sessionModel.sessionSettingModel != null) {
-            SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+            SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
             str2 = str;
             if (!TextUtils.isEmpty(sessionSettingModel.getSessinoNote())) {
                 str2 = sessionSettingModel.getSessinoNote();
@@ -36,6 +36,6 @@ public class SelectSessionAdapter extends BaseQuickAdapter<SessionModel, BaseVie
         }
         baseViewHolder.setText(2131372046, str2);
         ((ImageView) baseViewHolder.getView(R.id.iv_radio)).setSelected(sessionModel.checked);
-        ImageLoader.a(this.f32187a, sessionModel.avatar).c().b(2131237310).a((ImageView) baseViewHolder.getView(2131365504));
+        ImageLoader.a(this.f18497a, sessionModel.avatar).c().b(2131237310).a((ImageView) baseViewHolder.getView(2131365504));
     }
 }

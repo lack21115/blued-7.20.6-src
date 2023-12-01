@@ -9,8 +9,8 @@ public class SelectObjectContentEvent {
     public static class ContinuationEvent extends SelectObjectContentEvent {
         @Override // com.tencent.cos.xml.model.tag.eventstreaming.SelectObjectContentEvent
         /* renamed from: clone */
-        public /* bridge */ /* synthetic */ Object mo10197clone() throws CloneNotSupportedException {
-            return super.mo10197clone();
+        public /* bridge */ /* synthetic */ Object mo7154clone() throws CloneNotSupportedException {
+            return super.mo7154clone();
         }
     }
 
@@ -18,8 +18,8 @@ public class SelectObjectContentEvent {
     public static class EndEvent extends SelectObjectContentEvent {
         @Override // com.tencent.cos.xml.model.tag.eventstreaming.SelectObjectContentEvent
         /* renamed from: clone */
-        public /* bridge */ /* synthetic */ Object mo10197clone() throws CloneNotSupportedException {
-            return super.mo10197clone();
+        public /* bridge */ /* synthetic */ Object mo7154clone() throws CloneNotSupportedException {
+            return super.mo7154clone();
         }
     }
 
@@ -29,8 +29,8 @@ public class SelectObjectContentEvent {
 
         @Override // com.tencent.cos.xml.model.tag.eventstreaming.SelectObjectContentEvent
         /* renamed from: clone */
-        public /* bridge */ /* synthetic */ Object mo10197clone() throws CloneNotSupportedException {
-            return super.mo10197clone();
+        public /* bridge */ /* synthetic */ Object mo7154clone() throws CloneNotSupportedException {
+            return super.mo7154clone();
         }
 
         public Progress getDetails() {
@@ -53,8 +53,8 @@ public class SelectObjectContentEvent {
 
         @Override // com.tencent.cos.xml.model.tag.eventstreaming.SelectObjectContentEvent
         /* renamed from: clone */
-        public /* bridge */ /* synthetic */ Object mo10197clone() throws CloneNotSupportedException {
-            return super.mo10197clone();
+        public /* bridge */ /* synthetic */ Object mo7154clone() throws CloneNotSupportedException {
+            return super.mo7154clone();
         }
 
         public ByteBuffer getPayload() {
@@ -77,8 +77,8 @@ public class SelectObjectContentEvent {
 
         @Override // com.tencent.cos.xml.model.tag.eventstreaming.SelectObjectContentEvent
         /* renamed from: clone */
-        public /* bridge */ /* synthetic */ Object mo10197clone() throws CloneNotSupportedException {
-            return super.mo10197clone();
+        public /* bridge */ /* synthetic */ Object mo7154clone() throws CloneNotSupportedException {
+            return super.mo7154clone();
         }
 
         public Stats getDetails() {
@@ -97,7 +97,7 @@ public class SelectObjectContentEvent {
 
     @Override // 
     /* renamed from: clone */
-    public SelectObjectContentEvent mo10197clone() {
+    public SelectObjectContentEvent mo7154clone() {
         try {
             return (SelectObjectContentEvent) super.clone();
         } catch (CloneNotSupportedException e) {

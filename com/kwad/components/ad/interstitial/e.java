@@ -41,7 +41,7 @@ public final class e {
         com.kwad.components.ad.interstitial.monitor.b.cR();
         com.kwad.components.ad.interstitial.monitor.b.g(covert.getPosId());
         KsAdLoadManager.ac();
-        KsAdLoadManager.a(new a.C0527a().e(new com.kwad.components.core.n.kwai.b(covert)).aH(a2).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.interstitial.e.2
+        KsAdLoadManager.a(new a.C0357a().e(new com.kwad.components.core.n.kwai.b(covert)).aH(a2).a(new com.kwad.components.core.n.c() { // from class: com.kwad.components.ad.interstitial.e.2
             @Override // com.kwad.components.core.n.c, com.kwad.components.core.n.b
             public final void a(AdResultData adResultData, boolean z) {
                 b bVar;

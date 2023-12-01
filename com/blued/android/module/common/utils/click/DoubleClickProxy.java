@@ -8,20 +8,16 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/click/DoubleClickProxy.class */
 public class DoubleClickProxy implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View.OnClickListener f10920a;
+    private View.OnClickListener a;
     private IClickAgain d;
     private long b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f10921c = 300;
+    private long c = 300;
     private Runnable e = new Runnable() { // from class: com.blued.android.module.common.utils.click.DoubleClickProxy.1
         @Override // java.lang.Runnable
         public void run() {
-            if (SystemClock.elapsedRealtime() - DoubleClickProxy.this.b > DoubleClickProxy.this.f10921c) {
-                if (DoubleClickProxy.this.f10920a != null) {
-                    DoubleClickProxy.this.f10920a.onClick(null);
+            if (SystemClock.elapsedRealtime() - DoubleClickProxy.this.b > DoubleClickProxy.this.c) {
+                if (DoubleClickProxy.this.a != null) {
+                    DoubleClickProxy.this.a.onClick(null);
                 }
                 LogUtils.c("origin.onClick()");
                 DoubleClickProxy.this.b = 0L;
@@ -30,7 +26,7 @@ public class DoubleClickProxy implements View.OnClickListener {
     };
 
     public DoubleClickProxy(View.OnClickListener onClickListener, IClickAgain iClickAgain) {
-        this.f10920a = onClickListener;
+        this.a = onClickListener;
         this.d = iClickAgain;
     }
 
@@ -40,9 +36,9 @@ public class DoubleClickProxy implements View.OnClickListener {
         AppInfo.n().removeCallbacks(this.e);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         LogUtils.c("onClick: " + (elapsedRealtime - this.b));
-        if (elapsedRealtime - this.b >= this.f10921c) {
+        if (elapsedRealtime - this.b >= this.c) {
             this.b = elapsedRealtime;
-            AppInfo.n().postDelayed(this.e, this.f10921c);
+            AppInfo.n().postDelayed(this.e, this.c);
             return;
         }
         LogUtils.c("mIAgain.onAgain()");

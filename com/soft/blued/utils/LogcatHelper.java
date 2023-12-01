@@ -12,17 +12,17 @@ import java.util.Date;
 public class LogcatHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static LogcatHelper f34745a;
+    private static LogcatHelper f21054a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/utils/LogcatHelper$LogDumper.class */
     class LogDumper extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        String f34746a;
+        String f21055a;
         private Process b;
 
         /* renamed from: c  reason: collision with root package name */
-        private BufferedReader f34747c;
+        private BufferedReader f21056c;
         private boolean d;
         private String e;
         private FileOutputStream f;
@@ -33,10 +33,10 @@ public class LogcatHelper {
             String readLine;
             try {
                 try {
-                    this.b = Runtime.getRuntime().exec(this.f34746a);
+                    this.b = Runtime.getRuntime().exec(this.f21055a);
                     Log.v("pk", "logcatProc:" + this.b.toString());
-                    this.f34747c = new BufferedReader(new InputStreamReader(this.b.getInputStream()), 1024);
-                    while (this.d && (readLine = this.f34747c.readLine()) != null && this.d) {
+                    this.f21056c = new BufferedReader(new InputStreamReader(this.b.getInputStream()), 1024);
+                    while (this.d && (readLine = this.f21056c.readLine()) != null && this.d) {
                         if (readLine.length() != 0 && this.f != null && readLine.contains(this.e)) {
                             FileOutputStream fileOutputStream2 = this.f;
                             fileOutputStream2.write((LogcatHelper.a() + "  " + readLine + "\n").getBytes());
@@ -47,11 +47,11 @@ public class LogcatHelper {
                         process.destroy();
                         this.b = null;
                     }
-                    BufferedReader bufferedReader = this.f34747c;
+                    BufferedReader bufferedReader = this.f21056c;
                     if (bufferedReader != null) {
                         try {
                             bufferedReader.close();
-                            this.f34747c = null;
+                            this.f21056c = null;
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -63,11 +63,11 @@ public class LogcatHelper {
                         process2.destroy();
                         this.b = null;
                     }
-                    BufferedReader bufferedReader2 = this.f34747c;
+                    BufferedReader bufferedReader2 = this.f21056c;
                     if (bufferedReader2 != null) {
                         try {
                             bufferedReader2.close();
-                            this.f34747c = null;
+                            this.f21056c = null;
                         } catch (IOException e2) {
                             e2.printStackTrace();
                         }
@@ -90,11 +90,11 @@ public class LogcatHelper {
                     process3.destroy();
                     this.b = null;
                 }
-                BufferedReader bufferedReader3 = this.f34747c;
+                BufferedReader bufferedReader3 = this.f21056c;
                 if (bufferedReader3 != null) {
                     try {
                         bufferedReader3.close();
-                        this.f34747c = null;
+                        this.f21056c = null;
                     } catch (IOException e5) {
                         e5.printStackTrace();
                     }

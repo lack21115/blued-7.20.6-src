@@ -12,11 +12,11 @@ import com.tencent.liteav.videobase.utils.Rotation;
 public final class d extends OrientationEventListener implements r.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f37147a;
+    private final a f23456a;
     private final Display b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Rotation f37148c;
+    private Rotation f23457c;
     private int d;
     private com.tencent.liteav.base.util.r e;
 
@@ -27,7 +27,7 @@ public final class d extends OrientationEventListener implements r.a {
 
     public d(Context context, a aVar) {
         super(context);
-        this.f37147a = aVar;
+        this.f23456a = aVar;
         this.b = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
     }
 
@@ -46,9 +46,9 @@ public final class d extends OrientationEventListener implements r.a {
     }
 
     private void b() {
-        a aVar = this.f37147a;
+        a aVar = this.f23456a;
         if (aVar != null) {
-            aVar.a(this.f37148c, a(this.d));
+            aVar.a(this.f23457c, a(this.d));
         }
     }
 
@@ -124,12 +124,12 @@ public final class d extends OrientationEventListener implements r.a {
             r5 = r0
         L3a:
             r0 = r3
-            com.tencent.liteav.videobase.utils.Rotation r0 = r0.f37148c
+            com.tencent.liteav.videobase.utils.Rotation r0 = r0.f23457c
             r1 = r5
             if (r0 == r1) goto L56
             r0 = r3
             r1 = r5
-            r0.f37148c = r1
+            r0.f23457c = r1
             r0 = r3
             r1 = r3
             android.view.Display r1 = r1.b

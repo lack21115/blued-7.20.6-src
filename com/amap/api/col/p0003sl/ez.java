@@ -8,6 +8,7 @@ import com.amap.api.services.busline.BusStationQuery;
 import com.amap.api.services.busline.BusStationResult;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.SuggestionCity;
+import com.android.internal.util.cm.SpamFilter;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONObject;
@@ -36,7 +37,7 @@ public final class ez<T> extends ex<T, Object> {
                 this.m = fm.a(optJSONObject);
                 this.l = fm.b(optJSONObject);
             }
-            this.k = jSONObject.optInt("count");
+            this.k = jSONObject.optInt(SpamFilter.SpamContract.NotificationTable.COUNT);
             if (this.b instanceof BusLineQuery) {
                 return BusLineResult.createPagedResult((BusLineQuery) this.b, this.k, this.m, this.l, fm.f(jSONObject));
             }

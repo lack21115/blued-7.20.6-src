@@ -16,11 +16,11 @@ import com.igexin.sdk.message.GTTransmitMessage;
 public class GetuiIntentService extends GTIntentService {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f29743a = false;
+    private boolean f16053a = false;
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f29744c = false;
+    private boolean f16054c = false;
     private String d = "";
     private final Runnable e = new Runnable() { // from class: com.soft.blued.push.getui.GetuiIntentService.1
         @Override // java.lang.Runnable
@@ -53,14 +53,14 @@ public class GetuiIntentService extends GTIntentService {
         if (!TextUtils.isEmpty(str)) {
             com.soft.blued.push.PushManager.a().a(str);
         }
-        if (!this.f29743a) {
-            if (this.f29744c) {
+        if (!this.f16053a) {
+            if (this.f16054c) {
                 a();
             } else {
                 AppInfo.n().postDelayed(this.e, 15000L);
             }
         }
-        this.f29743a = true;
+        this.f16053a = true;
     }
 
     @Override // com.igexin.sdk.GTIntentService
@@ -72,11 +72,11 @@ public class GetuiIntentService extends GTIntentService {
         String str2 = this.TAG;
         Log.v(str2, "onReceiveDeviceToken -> token = " + str);
         this.d = str;
-        if (!this.f29744c && this.f29743a) {
+        if (!this.f16054c && this.f16053a) {
             AppInfo.n().removeCallbacks(this.e);
             a();
         }
-        this.f29744c = true;
+        this.f16054c = true;
     }
 
     @Override // com.igexin.sdk.GTIntentService

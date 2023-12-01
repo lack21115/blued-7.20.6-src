@@ -17,11 +17,11 @@ import com.huawei.hms.utils.Util;
 public class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22395a;
+    private Context f8787a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(Context context) {
-        this.f22395a = context;
+        this.f8787a = context;
     }
 
     @Override // java.lang.Runnable
@@ -30,7 +30,7 @@ public class a implements Runnable {
             int internalCode = ErrorEnum.SUCCESS.getInternalCode();
             String str = null;
             try {
-                String token = HmsInstanceId.getInstance(this.f22395a).getToken(Util.getAppId(this.f22395a), null);
+                String token = HmsInstanceId.getInstance(this.f8787a).getToken(Util.getAppId(this.f8787a), null);
                 HMSLog.i("AutoInit", "Push init succeed");
                 str = token;
                 str = token;
@@ -42,18 +42,18 @@ public class a implements Runnable {
                 HMSLog.e("AutoInit", "new Push init failed");
             }
             try {
-                Bundle bundle = this.f22395a.getPackageManager().getApplicationInfo(this.f22395a.getPackageName(), 128).metaData;
+                Bundle bundle = this.f8787a.getPackageManager().getApplicationInfo(this.f8787a.getPackageName(), 128).metaData;
                 if (bundle == null || bundle.getString("com.huawei.hms.client.service.name:push") == null) {
                     HMSLog.i("AutoInit", "push kit sdk not exists");
                     return;
                 }
                 Intent intent = new Intent("com.huawei.push.action.MESSAGING_EVENT");
-                intent.setPackage(this.f22395a.getPackageName());
+                intent.setPackage(this.f8787a.getPackageName());
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("message_type", "new_token");
                 bundle2.putString(RemoteMessageConst.DEVICE_TOKEN, str);
                 bundle2.putInt("error", internalCode);
-                if (new l().a(this.f22395a, bundle2, intent)) {
+                if (new l().a(this.f8787a, bundle2, intent)) {
                     return;
                 }
                 HMSLog.e("AutoInit", "start service failed");

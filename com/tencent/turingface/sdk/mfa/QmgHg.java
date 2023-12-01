@@ -4,11 +4,11 @@ package com.tencent.turingface.sdk.mfa;
 public final class QmgHg {
 
     /* renamed from: a  reason: collision with root package name */
-    public static QmgHg f39912a;
+    public static QmgHg f26221a;
     public static int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static Object f39913c = new Object();
+    public static Object f26222c = new Object();
     public QmgHg d;
     public boolean e;
     public int f;

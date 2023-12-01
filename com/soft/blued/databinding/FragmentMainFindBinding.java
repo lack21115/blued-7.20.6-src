@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentMainFindBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28884a;
+    private final RelativeLayout f15194a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28884a;
+        return this.f15194a;
     }
 }

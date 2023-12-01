@@ -33,30 +33,26 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedDetailsLikeListAdapter.class */
 public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoModel, BaseViewHolder> implements LikeListDataObserver.ILikeListDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19598a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Dialog f19599c;
+    private Dialog c;
     private String d;
     private BluedIngSelfFeed e;
 
     public FeedDetailsLikeListAdapter(Context context, IRequestHost iRequestHost, String str) {
         super(R.layout.fragment_zan_list_item);
         this.b = iRequestHost;
-        this.f19598a = context;
-        this.f19599c = DialogUtils.a(context);
+        this.a = context;
+        this.c = DialogUtils.a(context);
         this.d = str;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final FeedUserInfoModel feedUserInfoModel) {
-        CommunityHttpUtils.b(this.f19598a, new CommunityHttpUtils.IAddOrRemoveAttentionDone() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsLikeListAdapter.3
+        CommunityHttpUtils.b(this.a, new CommunityHttpUtils.IAddOrRemoveAttentionDone() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsLikeListAdapter.3
             @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
             public void a() {
-                DialogUtils.a(FeedDetailsLikeListAdapter.this.f19599c);
+                DialogUtils.a(FeedDetailsLikeListAdapter.this.c);
             }
 
             @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
@@ -69,7 +65,7 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
 
             @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
             public void b() {
-                DialogUtils.b(FeedDetailsLikeListAdapter.this.f19599c);
+                DialogUtils.b(FeedDetailsLikeListAdapter.this.c);
             }
 
             @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
@@ -78,22 +74,22 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
 
             @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
             public void c() {
-                DialogUtils.b(FeedDetailsLikeListAdapter.this.f19599c);
+                DialogUtils.b(FeedDetailsLikeListAdapter.this.c);
             }
         }, feedUserInfoModel.uid, "", this.b);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final FeedUserInfoModel feedUserInfoModel) {
-        Context context = this.f19598a;
-        CommonAlertDialog.a(context, context.getResources().getString(R.string.community_string_notice), this.f19598a.getResources().getString(R.string.cancel_follow_hint), this.f19598a.getResources().getString(R.string.common_ok), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsLikeListAdapter.4
+        Context context = this.a;
+        CommonAlertDialog.a(context, context.getResources().getString(R.string.community_string_notice), this.a.getResources().getString(R.string.cancel_follow_hint), this.a.getResources().getString(R.string.common_ok), new DialogInterface.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsLikeListAdapter.4
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                CommunityHttpUtils.a(FeedDetailsLikeListAdapter.this.f19598a, new CommunityHttpUtils.IAddOrRemoveAttentionDone() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsLikeListAdapter.4.1
+                CommunityHttpUtils.a(FeedDetailsLikeListAdapter.this.a, new CommunityHttpUtils.IAddOrRemoveAttentionDone() { // from class: com.blued.community.ui.feed.adapter.FeedDetailsLikeListAdapter.4.1
                     @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
                     public void a() {
-                        DialogUtils.a(FeedDetailsLikeListAdapter.this.f19599c);
+                        DialogUtils.a(FeedDetailsLikeListAdapter.this.c);
                     }
 
                     @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
@@ -102,7 +98,7 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
 
                     @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
                     public void b() {
-                        DialogUtils.b(FeedDetailsLikeListAdapter.this.f19599c);
+                        DialogUtils.b(FeedDetailsLikeListAdapter.this.c);
                     }
 
                     @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
@@ -115,7 +111,7 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
 
                     @Override // com.blued.community.http.CommunityHttpUtils.IAddOrRemoveAttentionDone
                     public void c() {
-                        DialogUtils.b(FeedDetailsLikeListAdapter.this.f19599c);
+                        DialogUtils.b(FeedDetailsLikeListAdapter.this.c);
                     }
                 }, feedUserInfoModel.uid, "", FeedDetailsLikeListAdapter.this.b);
             }
@@ -131,7 +127,6 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final FeedUserInfoModel feedUserInfoModel) {
         final ImageView imageView = (ImageView) baseViewHolder.getView(R.id.header_view);
@@ -151,7 +146,7 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
             b.d();
         }
         b.a(imageView);
-        UserInfoHelper.a(this.f19598a, textView6, feedUserInfoModel.role);
+        UserInfoHelper.a(this.a, textView6, feedUserInfoModel.role);
         if (!TextUtils.isEmpty(feedUserInfoModel.note)) {
             textView2.setText(feedUserInfoModel.note);
         } else if (TextUtils.isEmpty(feedUserInfoModel.name)) {
@@ -159,14 +154,14 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
         } else {
             textView2.setText(feedUserInfoModel.name);
         }
-        final boolean a2 = FeedMethods.a(textView2, feedUserInfoModel.uid, feedUserInfoModel.is_comment_anonym == 1);
+        final boolean a = FeedMethods.a(textView2, feedUserInfoModel.uid, feedUserInfoModel.is_comment_anonym == 1);
         imageView2.setVisibility(feedUserInfoModel.is_comment_anonym == 1 ? 0 : 8);
-        UserInfoHelper.a(this.f19598a, textView2, feedUserInfoModel);
+        UserInfoHelper.a(this.a, textView2, feedUserInfoModel);
         UserInfoHelper.a(imageView4, feedUserInfoModel);
         if (TextUtils.isEmpty(feedUserInfoModel.age)) {
             textView3.setText("");
         } else {
-            textView3.setText(feedUserInfoModel.age + this.f19598a.getResources().getString(R.string.age_unit));
+            textView3.setText(feedUserInfoModel.age + this.a.getResources().getString(R.string.age_unit));
         }
         if (TextUtils.isEmpty(feedUserInfoModel.height)) {
             textView4.setText("");
@@ -187,7 +182,7 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
         } else {
             textView.setText(feedUserInfoModel.location);
         }
-        DistanceUtils.b(this.f19598a, textView, feedUserInfoModel.is_hide_city_settled, 1);
+        DistanceUtils.b(this.a, textView, feedUserInfoModel.is_hide_city_settled, 1);
         if (feedUserInfoModel.uid.equals(UserInfoUtils.c())) {
             followStatusView.setVisibility(8);
         } else {
@@ -209,10 +204,10 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (a2) {
+                if (a) {
                     return;
                 }
-                CommunityServiceManager.b().a(FeedDetailsLikeListAdapter.this.f19598a, feedUserInfoModel, FeedDetailsLikeListAdapter.this.e, FeedDetailsLikeListAdapter.this.d, imageView);
+                CommunityServiceManager.b().a(FeedDetailsLikeListAdapter.this.a, feedUserInfoModel, FeedDetailsLikeListAdapter.this.e, FeedDetailsLikeListAdapter.this.d, imageView);
             }
         });
     }
@@ -236,7 +231,7 @@ public class FeedDetailsLikeListAdapter extends BaseQuickAdapter<FeedUserInfoMod
             if (this.e.is_feed_anonym == 1 && TextUtils.equals(str, this.e.feed_uid)) {
                 feedUserInfoModel.is_comment_anonym = 1;
             }
-            addData(0, (int) feedUserInfoModel);
+            addData(0, feedUserInfoModel);
         } else if (i == 0) {
             int i2 = 0;
             while (true) {

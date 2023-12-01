@@ -30,12 +30,8 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/dialog/YYGuidebookWeekFragment.class */
 public final class YYGuidebookWeekFragment extends BaseLazyFragment {
     private DialogRomanticCityListBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYCityAdapter f16988c;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f16987a = "https://web.bldimg.com/image-manager/1687760089_43172.png";
+    private YYCityAdapter c;
+    private final String a = "https://web.bldimg.com/image-manager/1687760089_43172.png";
     private String d = "";
     private String e = "";
 
@@ -46,14 +42,14 @@ public final class YYGuidebookWeekFragment extends BaseLazyFragment {
             Intrinsics.c("mBinding");
             dialogRomanticCityListBinding2 = null;
         }
-        dialogRomanticCityListBinding2.f16395a.setVisibility(z ? 8 : 0);
+        dialogRomanticCityListBinding2.a.setVisibility(z ? 8 : 0);
         DialogRomanticCityListBinding dialogRomanticCityListBinding3 = this.b;
         DialogRomanticCityListBinding dialogRomanticCityListBinding4 = dialogRomanticCityListBinding3;
         if (dialogRomanticCityListBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogRomanticCityListBinding4 = null;
         }
-        dialogRomanticCityListBinding4.f16396c.setVisibility(z ? 8 : 0);
+        dialogRomanticCityListBinding4.c.setVisibility(z ? 8 : 0);
         DialogRomanticCityListBinding dialogRomanticCityListBinding5 = this.b;
         if (dialogRomanticCityListBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -102,7 +98,7 @@ public final class YYGuidebookWeekFragment extends BaseLazyFragment {
                     YYGuidebookWeekFragment.this.e();
                     return;
                 }
-                yYCityAdapter = YYGuidebookWeekFragment.this.f16988c;
+                yYCityAdapter = YYGuidebookWeekFragment.this.c;
                 YYCityAdapter yYCityAdapter2 = yYCityAdapter;
                 if (yYCityAdapter2 == null) {
                     Intrinsics.c("cityAdapter");
@@ -136,7 +132,7 @@ public final class YYGuidebookWeekFragment extends BaseLazyFragment {
         a(false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Bundle arguments = getArguments();
@@ -145,38 +141,38 @@ public final class YYGuidebookWeekFragment extends BaseLazyFragment {
         this.e = String.valueOf(arguments2 == null ? null : arguments2.getString("user_id"));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_romantic_city_list, (ViewGroup) null);
-        DialogRomanticCityListBinding a2 = DialogRomanticCityListBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.b = a2;
+        DialogRomanticCityListBinding a = DialogRomanticCityListBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.b = a;
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseLazyFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseLazyFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        ImageWrapper a2 = ImageLoader.a(getFragmentActive(), this.f16987a);
+        ImageWrapper a = ImageLoader.a(getFragmentActive(), this.a);
         DialogRomanticCityListBinding dialogRomanticCityListBinding = this.b;
         DialogRomanticCityListBinding dialogRomanticCityListBinding2 = dialogRomanticCityListBinding;
         if (dialogRomanticCityListBinding == null) {
             Intrinsics.c("mBinding");
             dialogRomanticCityListBinding2 = null;
         }
-        a2.a(dialogRomanticCityListBinding2.f16395a);
+        a.a(dialogRomanticCityListBinding2.a);
         ActivityFragmentActive fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
-        this.f16988c = new YYCityAdapter(fragmentActive);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        this.c = new YYCityAdapter(fragmentActive);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         DialogRomanticCityListBinding dialogRomanticCityListBinding3 = this.b;
         DialogRomanticCityListBinding dialogRomanticCityListBinding4 = dialogRomanticCityListBinding3;
         if (dialogRomanticCityListBinding3 == null) {
@@ -191,7 +187,7 @@ public final class YYGuidebookWeekFragment extends BaseLazyFragment {
             dialogRomanticCityListBinding6 = null;
         }
         RecyclerView recyclerView = dialogRomanticCityListBinding6.b;
-        YYCityAdapter yYCityAdapter = this.f16988c;
+        YYCityAdapter yYCityAdapter = this.c;
         if (yYCityAdapter == null) {
             Intrinsics.c("cityAdapter");
             yYCityAdapter = null;

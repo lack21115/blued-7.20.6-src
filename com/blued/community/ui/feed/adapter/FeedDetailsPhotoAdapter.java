@@ -12,13 +12,9 @@ import com.blued.community.ui.feed.fragment.FeedDetailsFragment;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedDetailsPhotoAdapter.class */
 public class FeedDetailsPhotoAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19606a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BluedIngSelfFeed f19607c;
+    private BluedIngSelfFeed c;
     private LoadOptions d;
     private View e;
     private String f;
@@ -26,9 +22,7 @@ public class FeedDetailsPhotoAdapter extends BaseAdapter {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedDetailsPhotoAdapter$ViewHolder.class */
     class ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        ImageView f19609a;
+        ImageView a;
         ShapeTextView b;
 
         private ViewHolder() {
@@ -36,10 +30,10 @@ public class FeedDetailsPhotoAdapter extends BaseAdapter {
     }
 
     public FeedDetailsPhotoAdapter(FeedDetailsFragment feedDetailsFragment, IRequestHost iRequestHost, BluedIngSelfFeed bluedIngSelfFeed, LoadOptions loadOptions, View view, String str) {
-        this.f19606a = feedDetailsFragment.getContext();
+        this.a = feedDetailsFragment.getContext();
         this.g = feedDetailsFragment;
         this.b = iRequestHost;
-        this.f19607c = bluedIngSelfFeed;
+        this.c = bluedIngSelfFeed;
         this.d = loadOptions;
         this.e = view;
         this.f = str;
@@ -47,7 +41,7 @@ public class FeedDetailsPhotoAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f19607c.feed_pics.length;
+        return this.c.feed_pics.length;
     }
 
     @Override // android.widget.Adapter

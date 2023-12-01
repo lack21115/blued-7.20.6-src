@@ -52,30 +52,26 @@ public class ServerManager {
     }
 
     public static void confirmServer(String str, String str2) {
-        c cVar;
-        c cVar2;
         synchronized (ServerManager.class) {
             try {
                 List<String> list = unavailableServerMap.get(str);
                 if (list != null) {
                     list.remove(str2);
                 }
-                cVar = c.a.f21997a;
-                String str3 = cVar.f21995a.h;
+                String str3 = c.a.a().f8388a.h;
                 Properties properties = new Properties();
                 if (!TextUtils.isEmpty(str3)) {
                     properties.load(new StringReader(str3));
                 }
                 properties.put(str, str2);
                 StringBuilder sb = new StringBuilder();
-                for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+                for (Map.Entry entry : properties.entrySet()) {
                     sb.append((String) entry.getKey());
                     sb.append("=");
                     sb.append((String) entry.getValue());
                     sb.append("\n");
                 }
-                cVar2 = c.a.f21997a;
-                d dVar = cVar2.f21995a;
+                d dVar = c.a.a().f8388a;
                 String sb2 = sb.toString();
                 if (dVar.a(13, Base64.encodeToString(SecureCryptTools.getInstance().encrypt(sb2.getBytes()), 0))) {
                     dVar.h = sb2;
@@ -87,14 +83,12 @@ public class ServerManager {
     }
 
     private static Map<String, List<String>> getAvailableServerMap() {
-        c cVar;
         Map<String, List<String>> map = availableServerMap;
         if (map != null) {
             return map;
         }
         availableServerMap = new HashMap();
-        cVar = c.a.f21997a;
-        parseServerProperties(cVar.f21995a.g, availableServerMap);
+        parseServerProperties(c.a.a().f8388a.g, availableServerMap);
         return availableServerMap;
     }
 
@@ -123,31 +117,27 @@ public class ServerManager {
     }
 
     private static Map<String, List<String>> getConfigServerMap() {
-        c cVar;
         Map<String, List<String>> map = configServerMap;
         if (map != null) {
             return map;
         }
         configServerMap = new HashMap();
-        cVar = c.a.f21997a;
-        parseServerProperties(cVar.f21995a.f, configServerMap);
+        parseServerProperties(c.a.a().f8388a.f, configServerMap);
         return configServerMap;
     }
 
     private static Map<String, String> getRunningServerMap() {
-        c cVar;
         Map<String, String> map = runningServerMap;
         if (map != null) {
             return map;
         }
         runningServerMap = new HashMap();
         try {
-            cVar = c.a.f21997a;
-            String str = cVar.f21995a.h;
+            String str = c.a.a().f8388a.h;
             if (!TextUtils.isEmpty(str)) {
                 Properties properties = new Properties();
                 properties.load(new StringReader(str));
-                for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+                for (Map.Entry entry : properties.entrySet()) {
                     runningServerMap.put((String) entry.getKey(), (String) entry.getValue());
                 }
             }
@@ -203,7 +193,7 @@ public class ServerManager {
             }
             Properties properties = new Properties();
             properties.load(new StringReader(str));
-            for (Map.Entry<Object, Object> entry : properties.entrySet()) {
+            for (Map.Entry entry : properties.entrySet()) {
                 String str2 = (String) entry.getKey();
                 String str3 = (String) entry.getValue();
                 ArrayList arrayList = new ArrayList();
@@ -242,7 +232,6 @@ public class ServerManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void saveAvailableConfigServers() {
-        c cVar;
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, List<String>> entry : availableServerMap.entrySet()) {
             sb.append(entry.getKey());
@@ -260,8 +249,7 @@ public class ServerManager {
             }
             sb.append("\n");
         }
-        cVar = c.a.f21997a;
-        cVar.f21995a.c(sb.toString());
+        c.a.a().f8388a.c(sb.toString());
     }
 
     public static boolean switchServer(String str, String str2) {
@@ -310,16 +298,11 @@ public class ServerManager {
                 ScheduleQueue.getInstance().addSchedule(new Runnable() { // from class: com.getui.gtc.server.ServerManager.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        c cVar;
-                        c cVar2;
-                        c cVar3;
                         synchronized (ServerManager.class) {
                             try {
                                 long currentTimeMillis = System.currentTimeMillis();
-                                cVar = c.a.f21997a;
-                                if (currentTimeMillis - cVar.f21995a.i > 86400000) {
-                                    cVar3 = c.a.f21997a;
-                                    d dVar = cVar3.f21995a;
+                                if (currentTimeMillis - c.a.a().f8388a.i > 86400000) {
+                                    d dVar = c.a.a().f8388a;
                                     if (dVar.a(14, currentTimeMillis)) {
                                         dVar.i = currentTimeMillis;
                                     }
@@ -334,7 +317,6 @@ public class ServerManager {
 
                                     @Override // com.getui.gtc.f.d
                                     public final void a(Map<String, String> map, Map<String, String> map2) {
-                                        c cVar4;
                                         if (map2 == null || map2.size() <= 0) {
                                             return;
                                         }
@@ -345,23 +327,16 @@ public class ServerManager {
                                                 return;
                                             }
                                         }
-                                        cVar4 = c.a.f21997a;
-                                        String str3 = cVar4.f21995a.e;
+                                        String str3 = c.a.a().f8388a.e;
                                         if (TextUtils.isEmpty(str) || str.equalsIgnoreCase(str3)) {
                                             return;
                                         }
                                         e.a(str, map2.get("sdk.gtc.hosts.key"), new e.a() { // from class: com.getui.gtc.server.ServerManager.1.1.1
                                             @Override // com.getui.gtc.h.e.a
                                             public final void a(String str4) {
-                                                c cVar5;
-                                                c cVar6;
-                                                c cVar7;
-                                                cVar5 = c.a.f21997a;
-                                                cVar5.f21995a.a(str);
-                                                cVar6 = c.a.f21997a;
-                                                cVar6.f21995a.b(str4);
-                                                cVar7 = c.a.f21997a;
-                                                cVar7.f21995a.c(str4);
+                                                c.a.a().f8388a.a(str);
+                                                c.a.a().f8388a.b(str4);
+                                                c.a.a().f8388a.c(str4);
                                                 ServerManager.parseServerProperties(str4, ServerManager.access$100());
                                                 ServerManager.parseServerProperties(str4, ServerManager.access$000());
                                             }
@@ -370,21 +345,14 @@ public class ServerManager {
                                 });
                                 if (a2 != null && a2.size() > 0) {
                                     final String str = a2.get("sdk.gtc.hosts.url");
-                                    cVar2 = c.a.f21997a;
-                                    String str2 = cVar2.f21995a.e;
+                                    String str2 = c.a.a().f8388a.e;
                                     if (!TextUtils.isEmpty(str) && !str.equalsIgnoreCase(str2)) {
                                         e.a(str, a2.get("sdk.gtc.hosts.key"), new e.a() { // from class: com.getui.gtc.server.ServerManager.1.2
                                             @Override // com.getui.gtc.h.e.a
                                             public final void a(String str3) {
-                                                c cVar4;
-                                                c cVar5;
-                                                c cVar6;
-                                                cVar4 = c.a.f21997a;
-                                                cVar4.f21995a.a(str);
-                                                cVar5 = c.a.f21997a;
-                                                cVar5.f21995a.b(str3);
-                                                cVar6 = c.a.f21997a;
-                                                cVar6.f21995a.c(str3);
+                                                c.a.a().f8388a.a(str);
+                                                c.a.a().f8388a.b(str3);
+                                                c.a.a().f8388a.c(str3);
                                                 ServerManager.parseServerProperties(str3, ServerManager.access$100());
                                                 ServerManager.parseServerProperties(str3, ServerManager.access$000());
                                             }

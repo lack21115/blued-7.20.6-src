@@ -202,12 +202,12 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             setIndex(runnableScheduledFuture, i);
         }
 
-        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
         public boolean add(Runnable runnable) {
             return offer(runnable);
         }
 
-        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
         public void clear() {
             ReentrantLock reentrantLock = this.lock;
             reentrantLock.lock();
@@ -231,7 +231,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             ReentrantLock reentrantLock = this.lock;
             reentrantLock.lock();
@@ -307,7 +307,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             return i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return size() == 0;
         }
@@ -423,7 +423,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             return Integer.MAX_VALUE;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             ReentrantLock reentrantLock = this.lock;
             reentrantLock.lock();
@@ -452,7 +452,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             ReentrantLock reentrantLock = this.lock;
             reentrantLock.lock();
@@ -498,7 +498,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             return finishPoll(runnableScheduledFuture);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             ReentrantLock reentrantLock = this.lock;
             reentrantLock.lock();
@@ -509,7 +509,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             }
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             ReentrantLock reentrantLock = this.lock;
             reentrantLock.lock();
@@ -696,13 +696,11 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         return isRunningOrShutdown(z ? this.continueExistingPeriodicTasksAfterShutdown : this.executeExistingDelayedTasksAfterShutdown);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public <V> RunnableScheduledFuture<V> decorateTask(Runnable runnable, RunnableScheduledFuture<V> runnableScheduledFuture) {
+    protected <V> RunnableScheduledFuture<V> decorateTask(Runnable runnable, RunnableScheduledFuture<V> runnableScheduledFuture) {
         return runnableScheduledFuture;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public <V> RunnableScheduledFuture<V> decorateTask(Callable<V> callable, RunnableScheduledFuture<V> runnableScheduledFuture) {
+    protected <V> RunnableScheduledFuture<V> decorateTask(Callable<V> callable, RunnableScheduledFuture<V> runnableScheduledFuture) {
         return runnableScheduledFuture;
     }
 

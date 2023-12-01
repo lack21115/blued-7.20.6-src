@@ -9,11 +9,11 @@ public class s {
     public static double[] l = new double[7];
 
     /* renamed from: a  reason: collision with root package name */
-    public t f3971a;
+    public t f3923a;
     public boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public float[] f3972c = new float[9];
+    public float[] f3924c = new float[9];
     public int d = 0;
     public boolean e = false;
     public volatile long f = 0;
@@ -32,7 +32,7 @@ public class s {
             double[][] dArr = this.g;
             if (i >= dArr.length) {
                 Arrays.fill(this.i, -10.0f);
-                this.f3971a.d();
+                this.f3923a.d();
                 return;
             }
             Arrays.fill(dArr[i], 0.0d);
@@ -44,9 +44,9 @@ public class s {
         if (this.b) {
             return;
         }
-        r.f3953a = i;
+        r.f3905a = i;
         r.b = (i * (i - 1)) / 2;
-        r.f3954c = i2;
+        r.f3906c = i2;
         r.d = f;
         r.e = dArr;
         r.f = dArr2;
@@ -54,18 +54,18 @@ public class s {
         r.h = dArr4;
         this.g = (double[][]) Array.newInstance(Double.TYPE, 10, 128);
         this.h = (double[][]) Array.newInstance(Double.TYPE, 10, 128);
-        this.f3971a = new t();
+        this.f3923a = new t();
         this.b = true;
     }
 
     public void a(long j, float f) {
-        this.f3971a.a(j, f);
+        this.f3923a.a(j, f);
     }
 
     public void a(long j, float[] fArr, float[] fArr2) {
         a(this.i, fArr);
-        Arrays.fill(this.f3972c, 0.0f);
-        SensorManager.getRotationMatrix(this.f3972c, null, this.i, this.j);
+        Arrays.fill(this.f3924c, 0.0f);
+        SensorManager.getRotationMatrix(this.f3924c, null, this.i, this.j);
         double[][] dArr = this.g;
         double[] dArr2 = dArr[0];
         int i = this.d;
@@ -82,7 +82,7 @@ public class s {
             d = Math.acos(d2);
         }
         dArr3[i2] = d;
-        a(this.k, this.f3972c, fArr);
+        a(this.k, this.f3924c, fArr);
         double[] dArr4 = this.g[6];
         int i3 = this.d;
         float[] fArr3 = this.k;
@@ -91,7 +91,7 @@ public class s {
         int i4 = this.d;
         float[] fArr4 = this.k;
         dArr5[i4] = fArr4[2];
-        a(fArr4, this.f3972c, fArr2);
+        a(fArr4, this.f3924c, fArr2);
         double[] dArr6 = this.g[8];
         int i5 = this.d;
         float[] fArr5 = this.k;
@@ -112,7 +112,7 @@ public class s {
     public final void a(float[] fArr, float[] fArr2) {
         float f = r.d;
         if (fArr[0] == -10.0f) {
-            System.arraycopy((Object) fArr2, 0, (Object) fArr, 0, fArr.length);
+            System.arraycopy(fArr2, 0, fArr, 0, fArr.length);
             return;
         }
         for (int i = 0; i < fArr.length; i++) {
@@ -136,12 +136,12 @@ public class s {
             int i3 = i2;
             double[][] dArr = this.g;
             if (i3 >= dArr.length) {
-                return this.f3971a.a(j, this.h);
+                return this.f3923a.a(j, this.h);
             }
-            System.arraycopy((Object) dArr[i3], i, (Object) this.h[i3], 0, dArr[i3].length - i);
+            System.arraycopy(dArr[i3], i, this.h[i3], 0, dArr[i3].length - i);
             if (this.d != 0) {
                 double[][] dArr2 = this.g;
-                System.arraycopy((Object) dArr2[i3], 0, (Object) this.h[i3], dArr2[i3].length - i, i);
+                System.arraycopy(dArr2[i3], 0, this.h[i3], dArr2[i3].length - i, i);
             }
             i2 = i3 + 1;
         }
@@ -150,7 +150,7 @@ public class s {
     public void b() {
         if (this.b) {
             a();
-            this.f3971a.b();
+            this.f3923a.b();
             this.b = false;
         }
     }

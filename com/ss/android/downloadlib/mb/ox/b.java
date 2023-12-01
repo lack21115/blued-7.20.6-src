@@ -20,10 +20,10 @@ public interface b extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.ss.android.downloadlib.mb.ox.b$mb$mb  reason: collision with other inner class name */
         /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/mb/ox/b$mb$mb.class */
-        public static class C0874mb implements b {
+        public static class C0704mb implements b {
             private IBinder mb;
 
-            C0874mb(IBinder iBinder) {
+            C0704mb(IBinder iBinder) {
                 if (TextUtils.isEmpty(mb.mb)) {
                     JSONObject lz = x.lz();
                     String unused = mb.mb = com.ss.android.socialbase.appdownloader.u.b.mb(lz.optString("r"), lz.optString("s"));
@@ -63,7 +63,7 @@ public interface b extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface(mb);
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C0874mb(iBinder) : (b) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C0704mb(iBinder) : (b) queryLocalInterface;
         }
 
         @Override // android.os.Binder

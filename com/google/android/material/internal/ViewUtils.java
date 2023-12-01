@@ -120,7 +120,7 @@ public class ViewUtils {
             return null;
         }
         View rootView = view.getRootView();
-        ViewGroup viewGroup = (ViewGroup) rootView.findViewById(16908290);
+        ViewGroup viewGroup = (ViewGroup) rootView.findViewById(android.R.id.content);
         if (viewGroup != null) {
             return viewGroup;
         }
@@ -212,7 +212,7 @@ public class ViewUtils {
         view.post(new Runnable() { // from class: com.google.android.material.internal.ViewUtils.1
             @Override // java.lang.Runnable
             public void run() {
-                ((InputMethodManager) View.this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(View.this, 1);
+                ((InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(view, 1);
             }
         });
     }

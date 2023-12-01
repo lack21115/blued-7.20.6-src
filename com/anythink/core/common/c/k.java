@@ -6,20 +6,14 @@ import com.anythink.core.common.b.n;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/k.class */
 public class k extends com.anythink.core.common.c.a<com.anythink.core.common.a.h> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile k f6594c;
+    private static volatile k c;
     private final String b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/k$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6595a = "offer_data_cache";
+        public static final String a = "offer_data_cache";
         public static final String b = "bid_id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6596c = "adsource_id";
+        public static final String c = "adsource_id";
         public static final String d = "network_firm_id";
         public static final String e = "offer_data";
         public static final String f = "CREATE TABLE IF NOT EXISTS offer_data_cache(bid_id TEXT ,adsource_id TEXT ,network_firm_id INTEGER ,offer_data TEXT)";
@@ -31,18 +25,18 @@ public class k extends com.anythink.core.common.c.a<com.anythink.core.common.a.h
     }
 
     public static k a(b bVar) {
-        if (f6594c == null) {
+        if (c == null) {
             synchronized (k.class) {
                 try {
-                    if (f6594c == null) {
-                        f6594c = new k(bVar);
+                    if (c == null) {
+                        c = new k(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6594c;
+        return c;
     }
 
     private boolean b(com.anythink.core.common.a.h hVar) {
@@ -52,9 +46,9 @@ public class k extends com.anythink.core.common.c.a<com.anythink.core.common.a.h
                 return false;
             }
             if (hVar.c() == 67) {
-                query = a().query(a.f6595a, new String[]{a.e}, "adsource_id=?", new String[]{hVar.b()}, null, null, null);
+                query = a().query(a.a, new String[]{a.e}, "adsource_id=?", new String[]{hVar.b()}, null, null, null);
             } else {
-                query = a().query(a.f6595a, new String[]{a.e}, "bid_id=?", new String[]{hVar.a()}, null, null, null);
+                query = a().query(a.a, new String[]{a.e}, "bid_id=?", new String[]{hVar.a()}, null, null, null);
             }
             if (query != null && query.getCount() > 0) {
                 query.close();
@@ -83,16 +77,16 @@ public class k extends com.anythink.core.common.c.a<com.anythink.core.common.a.h
                     sb.append(hVar.a());
                     sb.append(",adSourceId:");
                     sb.append(hVar.b());
-                    return b().insert(a.f6595a, null, contentValues);
+                    return b().insert(a.a, null, contentValues);
                 } else if (hVar.c() != 67) {
                     new StringBuilder("OfferDataCache update(Adx) BidId:").append(hVar.a());
-                    return b().update(a.f6595a, contentValues, "bid_id = ? ", new String[]{hVar.a()});
+                    return b().update(a.a, contentValues, "bid_id = ? ", new String[]{hVar.a()});
                 } else {
                     StringBuilder sb2 = new StringBuilder("OfferDataCache update(Directly) new BidId:");
                     sb2.append(hVar.a());
                     sb2.append(",old adSourceId:");
                     sb2.append(hVar.b());
-                    return b().update(a.f6595a, contentValues, "adsource_id = ? ", new String[]{hVar.b()});
+                    return b().update(a.a, contentValues, "adsource_id = ? ", new String[]{hVar.b()});
                 }
             } catch (Exception e) {
                 return -1L;
@@ -103,7 +97,7 @@ public class k extends com.anythink.core.common.c.a<com.anythink.core.common.a.h
     public final void a(String str) {
         synchronized (this) {
             try {
-                b().delete(a.f6595a, "bid_id = ? ", new String[]{str});
+                b().delete(a.a, "bid_id = ? ", new String[]{str});
             } catch (Throwable th) {
                 com.anythink.core.common.j.c.a("Error_SQL_DELETE", th.getMessage(), n.a().r());
             }
@@ -112,7 +106,7 @@ public class k extends com.anythink.core.common.c.a<com.anythink.core.common.a.h
 
     public final String b(String str) {
         synchronized (this) {
-            Cursor query = a().query(a.f6595a, new String[]{a.e}, "bid_id=?", new String[]{str}, null, null, null);
+            Cursor query = a().query(a.a, new String[]{a.e}, "bid_id=?", new String[]{str}, null, null, null);
             if (query == null || query.getCount() <= 0) {
                 return "";
             }

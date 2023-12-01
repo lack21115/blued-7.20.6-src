@@ -9,7 +9,7 @@ import com.bytedance.pangle.util.MethodUtils;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Class f21366a;
+    private static Class f7760a;
     private static Object b;
 
     public static final Object a() {
@@ -17,10 +17,10 @@ public class a {
             try {
                 synchronized (a.class) {
                     if (b == null) {
-                        if (f21366a == null) {
-                            f21366a = Class.forName("android.app.ActivityThread");
+                        if (f7760a == null) {
+                            f7760a = Class.forName("android.app.ActivityThread");
                         }
-                        b = MethodUtils.invokeStaticMethod(f21366a, "currentActivityThread", new Object[0]);
+                        b = MethodUtils.invokeStaticMethod(f7760a, "currentActivityThread", new Object[0]);
                     }
                     if (b == null && Looper.myLooper() != Looper.getMainLooper()) {
                         final Object obj = new Object();
@@ -29,19 +29,19 @@ public class a {
                             public final void run() {
                                 try {
                                     try {
-                                        Object unused = a.b = MethodUtils.invokeStaticMethod(a.f21366a, "currentActivityThread", new Object[0]);
-                                        synchronized (Object.this) {
-                                            Object.this.notify();
+                                        Object unused = a.b = MethodUtils.invokeStaticMethod(a.f7760a, "currentActivityThread", new Object[0]);
+                                        synchronized (obj) {
+                                            obj.notify();
                                         }
                                     } catch (Exception e) {
                                         ZeusLogger.errReport(ZeusLogger.TAG, "ActivityThreadHelper main looper invoke currentActivityThread failed.", e);
-                                        synchronized (Object.this) {
-                                            Object.this.notify();
+                                        synchronized (obj) {
+                                            obj.notify();
                                         }
                                     }
                                 } catch (Throwable th) {
-                                    synchronized (Object.this) {
-                                        Object.this.notify();
+                                    synchronized (obj) {
+                                        obj.notify();
                                         throw th;
                                     }
                                 }

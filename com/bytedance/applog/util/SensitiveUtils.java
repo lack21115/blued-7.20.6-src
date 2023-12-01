@@ -9,6 +9,7 @@ import android.os.Process;
 import android.telephony.SubscriptionManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import com.anythink.pd.ExHandler;
 import com.bytedance.applog.ISensitiveInfoProvider;
 import com.bytedance.applog.Level;
 import com.bytedance.bdtracker.a;
@@ -219,7 +220,7 @@ public class SensitiveUtils {
             } catch (Throwable th) {
             }
             try {
-                jSONArray.put(a(telephonyManager.getImei(i2), i2, "imei"));
+                jSONArray.put(a(telephonyManager.getImei(i2), i2, ExHandler.JSON_REQUEST_IMEI));
             } catch (Throwable th2) {
             }
             i = i2 + 1;

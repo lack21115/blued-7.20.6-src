@@ -17,10 +17,10 @@ public class OverlayListenerInfo {
 
         /* renamed from: com.tencent.map.lib.models.OverlayListenerInfo$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/map/lib/models/OverlayListenerInfo$a$a.class */
-        public class RunnableC0945a implements Runnable {
+        public class RunnableC0775a implements Runnable {
             public final /* synthetic */ boolean b;
 
-            public RunnableC0945a(boolean z) {
+            public RunnableC0775a(boolean z) {
                 this.b = z;
             }
 
@@ -39,7 +39,7 @@ public class OverlayListenerInfo {
 
         @Override // com.tencent.tencentmap.mapsdk.maps.model.VectorOverlay.OnVectorOverlayLoadListener
         public void onVectorOverlayLoaded(boolean z) {
-            new Handler(Looper.getMainLooper()).post(new RunnableC0945a(z));
+            new Handler(Looper.getMainLooper()).post(new RunnableC0775a(z));
         }
     }
 

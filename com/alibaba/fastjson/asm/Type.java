@@ -136,26 +136,26 @@ public class Type {
     private static Type getType(char[] cArr, int i) {
         int i2;
         int i3;
-        char c2 = cArr[i];
-        if (c2 == 'F') {
+        char c = cArr[i];
+        if (c == 'F') {
             return FLOAT_TYPE;
         }
-        if (c2 == 'S') {
+        if (c == 'S') {
             return SHORT_TYPE;
         }
-        if (c2 == 'V') {
+        if (c == 'V') {
             return VOID_TYPE;
         }
-        if (c2 == 'I') {
+        if (c == 'I') {
             return INT_TYPE;
         }
-        if (c2 == 'J') {
+        if (c == 'J') {
             return LONG_TYPE;
         }
-        if (c2 == 'Z') {
+        if (c == 'Z') {
             return BOOLEAN_TYPE;
         }
-        if (c2 == '[') {
+        if (c == '[') {
             int i4 = 1;
             while (true) {
                 i2 = i4;
@@ -175,7 +175,7 @@ public class Type {
             }
             return new Type(9, cArr, i, i5 + 1);
         }
-        switch (c2) {
+        switch (c) {
             case 'B':
                 return BYTE_TYPE;
             case 'C':

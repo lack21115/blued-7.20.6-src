@@ -13,11 +13,11 @@ public class NotificationChannelCompat {
     public static final String DEFAULT_CHANNEL_ID = "miscellaneous";
 
     /* renamed from: a  reason: collision with root package name */
-    final String f2341a;
+    final String f2293a;
     CharSequence b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2342c;
+    int f2294c;
     String d;
     String e;
     boolean f;
@@ -38,73 +38,73 @@ public class NotificationChannelCompat {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final NotificationChannelCompat f2343a;
+        private final NotificationChannelCompat f2295a;
 
         public Builder(String str, int i) {
-            this.f2343a = new NotificationChannelCompat(str, i);
+            this.f2295a = new NotificationChannelCompat(str, i);
         }
 
         public NotificationChannelCompat build() {
-            return this.f2343a;
+            return this.f2295a;
         }
 
         public Builder setConversationId(String str, String str2) {
             if (Build.VERSION.SDK_INT >= 30) {
-                this.f2343a.m = str;
-                this.f2343a.n = str2;
+                this.f2295a.m = str;
+                this.f2295a.n = str2;
             }
             return this;
         }
 
         public Builder setDescription(String str) {
-            this.f2343a.d = str;
+            this.f2295a.d = str;
             return this;
         }
 
         public Builder setGroup(String str) {
-            this.f2343a.e = str;
+            this.f2295a.e = str;
             return this;
         }
 
         public Builder setImportance(int i) {
-            this.f2343a.f2342c = i;
+            this.f2295a.f2294c = i;
             return this;
         }
 
         public Builder setLightColor(int i) {
-            this.f2343a.j = i;
+            this.f2295a.j = i;
             return this;
         }
 
         public Builder setLightsEnabled(boolean z) {
-            this.f2343a.i = z;
+            this.f2295a.i = z;
             return this;
         }
 
         public Builder setName(CharSequence charSequence) {
-            this.f2343a.b = charSequence;
+            this.f2295a.b = charSequence;
             return this;
         }
 
         public Builder setShowBadge(boolean z) {
-            this.f2343a.f = z;
+            this.f2295a.f = z;
             return this;
         }
 
         public Builder setSound(Uri uri, AudioAttributes audioAttributes) {
-            this.f2343a.g = uri;
-            this.f2343a.h = audioAttributes;
+            this.f2295a.g = uri;
+            this.f2295a.h = audioAttributes;
             return this;
         }
 
         public Builder setVibrationEnabled(boolean z) {
-            this.f2343a.k = z;
+            this.f2295a.k = z;
             return this;
         }
 
         public Builder setVibrationPattern(long[] jArr) {
-            this.f2343a.k = jArr != null && jArr.length > 0;
-            this.f2343a.l = jArr;
+            this.f2295a.k = jArr != null && jArr.length > 0;
+            this.f2295a.l = jArr;
             return this;
         }
     }
@@ -140,8 +140,8 @@ public class NotificationChannelCompat {
         this.f = true;
         this.g = Settings.System.DEFAULT_NOTIFICATION_URI;
         this.j = 0;
-        this.f2341a = (String) Preconditions.checkNotNull(str);
-        this.f2342c = i;
+        this.f2293a = (String) Preconditions.checkNotNull(str);
+        this.f2294c = i;
         if (Build.VERSION.SDK_INT >= 21) {
             this.h = Notification.AUDIO_ATTRIBUTES_DEFAULT;
         }
@@ -154,7 +154,7 @@ public class NotificationChannelCompat {
         if (Build.VERSION.SDK_INT < 26) {
             return null;
         }
-        NotificationChannel notificationChannel = new NotificationChannel(this.f2341a, this.b, this.f2342c);
+        NotificationChannel notificationChannel = new NotificationChannel(this.f2293a, this.b, this.f2294c);
         notificationChannel.setDescription(this.d);
         notificationChannel.setGroup(this.e);
         notificationChannel.setShowBadge(this.f);
@@ -198,11 +198,11 @@ public class NotificationChannelCompat {
     }
 
     public String getId() {
-        return this.f2341a;
+        return this.f2293a;
     }
 
     public int getImportance() {
-        return this.f2342c;
+        return this.f2294c;
     }
 
     public int getLightColor() {
@@ -242,6 +242,6 @@ public class NotificationChannelCompat {
     }
 
     public Builder toBuilder() {
-        return new Builder(this.f2341a, this.f2342c).setName(this.b).setDescription(this.d).setGroup(this.e).setShowBadge(this.f).setSound(this.g, this.h).setLightsEnabled(this.i).setLightColor(this.j).setVibrationEnabled(this.k).setVibrationPattern(this.l).setConversationId(this.m, this.n);
+        return new Builder(this.f2293a, this.f2294c).setName(this.b).setDescription(this.d).setGroup(this.e).setShowBadge(this.f).setSound(this.g, this.h).setLightsEnabled(this.i).setLightColor(this.j).setVibrationEnabled(this.k).setVibrationPattern(this.l).setConversationId(this.m, this.n);
     }
 }

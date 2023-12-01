@@ -6,7 +6,7 @@ import android.content.Context;
 public class c extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f26134a;
+    private static c f12446a;
 
     private c() {
     }
@@ -14,9 +14,9 @@ public class c extends a {
     public static final void b(Context context) {
         synchronized (c.class) {
             try {
-                if (f26134a != null) {
-                    f26134a.c();
-                    f26134a = null;
+                if (f12446a != null) {
+                    f12446a.c();
+                    f12446a = null;
                 }
             } finally {
             }
@@ -25,16 +25,16 @@ public class c extends a {
 
     public static c d() {
         c cVar;
-        c cVar2 = f26134a;
+        c cVar2 = f12446a;
         if (cVar2 != null) {
             return cVar2;
         }
         synchronized (c.class) {
             try {
-                if (f26134a == null) {
-                    f26134a = new c();
+                if (f12446a == null) {
+                    f12446a = new c();
                 }
-                cVar = f26134a;
+                cVar = f12446a;
             } catch (Throwable th) {
                 throw th;
             }

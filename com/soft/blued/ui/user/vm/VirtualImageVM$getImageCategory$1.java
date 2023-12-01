@@ -31,7 +31,7 @@ import kotlinx.coroutines.CoroutineScope;
 public final class VirtualImageVM$getImageCategory$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f34415a;
+    int f20724a;
     final /* synthetic */ VirtualImageVM b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,26 +41,23 @@ public final class VirtualImageVM$getImageCategory$1 extends SuspendLambda imple
         this.b = virtualImageVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((VirtualImageVM$getImageCategory$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new VirtualImageVM$getImageCategory$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        ApiState error;
+        ApiState apiState;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f34415a;
+        int i = this.f20724a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f34415a = 1;
-            Object c2 = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).c(this);
+            this.f20724a = 1;
+            Object c2 = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).c((Continuation) this);
             obj = c2;
             if (c2 == a2) {
                 return a2;
@@ -74,11 +71,11 @@ public final class VirtualImageVM$getImageCategory$1 extends SuspendLambda imple
         VirtualImageVM virtualImageVM = this.b;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                final List<T> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                final List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
                 bluedEntityA.hasMore();
-                if (!data.isEmpty()) {
-                    List<VirtualImageModel.CategoryModel> category_list = ((VirtualImageModel) data.get(0)).getCategory_list();
+                if (!list.isEmpty()) {
+                    List<VirtualImageModel.CategoryModel> category_list = ((VirtualImageModel) list.get(0)).getCategory_list();
                     if (category_list != null) {
                         virtualImageVM.a(category_list);
                     }
@@ -89,11 +86,10 @@ public final class VirtualImageVM$getImageCategory$1 extends SuspendLambda imple
                             super(1);
                         }
 
-                        @Override // kotlin.jvm.functions.Function1
                         /* renamed from: a */
-                        public final VirtualImageState invoke(VirtualImageState setState) {
-                            Intrinsics.e(setState, "$this$setState");
-                            return VirtualImageState.copy$default(setState, null, null, null, data.get(0).getRed_dot(), 7, null);
+                        public final VirtualImageState invoke(VirtualImageState virtualImageState) {
+                            Intrinsics.e(virtualImageState, "$this$setState");
+                            return VirtualImageState.copy$default(virtualImageState, null, null, null, list.get(0).getRed_dot(), 7, null);
                         }
                     });
                 }
@@ -111,29 +107,28 @@ public final class VirtualImageVM$getImageCategory$1 extends SuspendLambda imple
                             super(1);
                         }
 
-                        @Override // kotlin.jvm.functions.Function1
                         /* renamed from: a */
-                        public final VirtualImageState invoke(VirtualImageState setState) {
-                            Intrinsics.e(setState, "$this$setState");
-                            return VirtualImageState.copy$default(setState, null, null, null, b.get(0).getRed_dot(), 7, null);
+                        public final VirtualImageState invoke(VirtualImageState virtualImageState) {
+                            Intrinsics.e(virtualImageState, "$this$setState");
+                            return VirtualImageState.copy$default(virtualImageState, null, null, null, b.get(0).getRed_dot(), 7, null);
                         }
                     });
                 }
             }
-            error = Succeed.f10631a;
+            apiState = (ApiState) Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            error = new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            apiState = (ApiState) new Error(i2, str);
         }
         VirtualImageVM virtualImageVM2 = this.b;
-        if (error instanceof Error) {
-            Error error2 = (Error) error;
-            error2.a();
-            error2.b();
-            BluedStructureExtKt.a(virtualImageVM2, VirtualImageEvent.ErrorEvent.f34321a);
+        if (apiState instanceof Error) {
+            Error error = apiState;
+            error.a();
+            error.b();
+            BluedStructureExtKt.a(virtualImageVM2, VirtualImageEvent.ErrorEvent.f20630a);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

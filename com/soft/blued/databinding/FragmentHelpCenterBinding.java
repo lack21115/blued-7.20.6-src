@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentHelpCenterBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28851a;
+    private final FrameLayout f15161a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28851a;
+        return this.f15161a;
     }
 }

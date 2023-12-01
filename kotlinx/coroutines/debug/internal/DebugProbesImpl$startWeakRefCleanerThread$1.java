@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/DebugProbesImpl$startWeakRefCleanerThread$1.class */
 final class DebugProbesImpl$startWeakRefCleanerThread$1 extends Lambda implements Function0<Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final DebugProbesImpl$startWeakRefCleanerThread$1 f43039a = new DebugProbesImpl$startWeakRefCleanerThread$1();
+    public static final DebugProbesImpl$startWeakRefCleanerThread$1 a = new DebugProbesImpl$startWeakRefCleanerThread$1();
 
     DebugProbesImpl$startWeakRefCleanerThread$1() {
         super(0);
@@ -25,6 +23,6 @@ final class DebugProbesImpl$startWeakRefCleanerThread$1 extends Lambda implement
     @Override // kotlin.jvm.functions.Function0
     public /* synthetic */ Unit invoke() {
         a();
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

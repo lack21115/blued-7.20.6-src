@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class j implements com.anythink.expressad.e.b, com.anythink.expressad.foundation.g.d.c, Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f8073a = 1;
+    private static final long f5233a = 1;
     public static final int cR = 1;
     public static final int cS = 2;
     public static final int cT = 3;
@@ -25,7 +25,7 @@ public class j implements com.anythink.expressad.e.b, com.anythink.expressad.fou
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8074c = "";
+    private String f5234c = "";
     private String d = "";
     private String e = "";
     private String f = "";
@@ -165,7 +165,7 @@ public class j implements com.anythink.expressad.e.b, com.anythink.expressad.fou
     }
 
     public final String ba() {
-        return this.f8074c;
+        return this.f5234c;
     }
 
     public final String bb() {
@@ -224,7 +224,7 @@ public class j implements com.anythink.expressad.e.b, com.anythink.expressad.fou
     }
 
     public final void w(String str) {
-        this.f8074c = str;
+        this.f5234c = str;
     }
 
     public final void x(String str) {

@@ -94,14 +94,14 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
     private FlowLayout Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34086a;
+    public Context f20395a;
     private TextView aa;
     private TextView ab;
     private FragmentUserinfoNewProfileBinding ac;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BannerADView f34087c;
+    private BannerADView f20396c;
     private BluedADConstraintLayout d;
     private TextView e;
     private TextView f;
@@ -132,18 +132,18 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
     public class AnonymousClass8 extends BluedUIHttpResponse<BluedEntityA<UserGift>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ UserInfoEntity f34096a;
+        final /* synthetic */ UserInfoEntity f20405a;
         final /* synthetic */ TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ RecyclerView f34097c;
+        final /* synthetic */ RecyclerView f20406c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass8(IRequestHost iRequestHost, UserInfoEntity userInfoEntity, TextView textView, RecyclerView recyclerView) {
             super(iRequestHost);
-            this.f34096a = userInfoEntity;
+            this.f20405a = userInfoEntity;
             this.b = textView;
-            this.f34097c = recyclerView;
+            this.f20406c = recyclerView;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -162,52 +162,50 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
                 }, userInfoEntity.relationship, userInfoEntity.name, new int[0]);
                 return;
             }
-            WebViewShowInfoFragment.show(UserinfoFragmentProfileTab.this.f34086a, H5Url.a(44), 0);
+            WebViewShowInfoFragment.show(UserinfoFragmentProfileTab.this.f20395a, H5Url.a(44), 0);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<UserGift> bluedEntityA) {
             if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData() == null) {
-                this.f34097c.setVisibility(8);
+                this.f20406c.setVisibility(8);
                 return;
             }
-            if (bluedEntityA.getSingleData().number != 0) {
-                this.b.setText(StringUtils.a(bluedEntityA.getSingleData().number + ""));
-            } else if (TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, this.f34096a.uid)) {
-                this.b.setText(UserinfoFragmentProfileTab.this.f34086a.getResources().getString(R.string.you_no_gift_yet));
+            if (((UserGift) bluedEntityA.getSingleData()).number != 0) {
+                this.b.setText(StringUtils.a(((UserGift) bluedEntityA.getSingleData()).number + ""));
+            } else if (TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, this.f20405a.uid)) {
+                this.b.setText(UserinfoFragmentProfileTab.this.f20395a.getResources().getString(R.string.you_no_gift_yet));
             } else {
-                this.b.setText(UserinfoFragmentProfileTab.this.f34086a.getResources().getString(R.string.he_no_gift_yet));
+                this.b.setText(UserinfoFragmentProfileTab.this.f20395a.getResources().getString(R.string.he_no_gift_yet));
             }
             ArrayList arrayList = new ArrayList();
-            arrayList.addAll(bluedEntityA.getSingleData().gift_list);
-            UserProfileGiftdapter userProfileGiftdapter = new UserProfileGiftdapter(UserinfoFragmentProfileTab.this.getFragmentActive(), UserinfoFragmentProfileTab.this.f34086a, arrayList);
-            final UserInfoEntity userInfoEntity = this.f34096a;
+            arrayList.addAll(((UserGift) bluedEntityA.getSingleData()).gift_list);
+            UserProfileGiftdapter userProfileGiftdapter = new UserProfileGiftdapter(UserinfoFragmentProfileTab.this.getFragmentActive(), UserinfoFragmentProfileTab.this.f20395a, arrayList);
+            final UserInfoEntity userInfoEntity = this.f20405a;
             userProfileGiftdapter.a(new UserProfileGiftdapter.RecyclerViewItemClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserinfoFragmentProfileTab$8$xbX2GDOKwI5WE69f3ALUbu_aaps
                 @Override // com.soft.blued.ui.user.adapter.UserProfileGiftdapter.RecyclerViewItemClickListener
                 public final void onItemClick(View view, int i) {
                     UserinfoFragmentProfileTab.AnonymousClass8.this.a(userInfoEntity, view, i);
                 }
             });
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(UserinfoFragmentProfileTab.this.f34086a);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(UserinfoFragmentProfileTab.this.f20395a);
             linearLayoutManager.setStackFromEnd(true);
             linearLayoutManager.setOrientation(0);
             linearLayoutManager.scrollToPosition(0);
-            this.f34097c.setLayoutManager(linearLayoutManager);
-            this.f34097c.setHasFixedSize(true);
-            this.f34097c.setAdapter(userProfileGiftdapter);
+            this.f20406c.setLayoutManager(linearLayoutManager);
+            this.f20406c.setHasFixedSize(true);
+            this.f20406c.setAdapter(userProfileGiftdapter);
             userProfileGiftdapter.notifyDataSetChanged();
             if (userProfileGiftdapter.getItemCount() > 0) {
-                this.f34097c.setVisibility(0);
+                this.f20406c.setVisibility(0);
             } else {
-                this.f34097c.setVisibility(8);
+                this.f20406c.setVisibility(8);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f34097c.setVisibility(8);
+            this.f20406c.setVisibility(8);
             return super.onUIFailure(i, str);
         }
     }
@@ -216,7 +214,7 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PROFILE_GIFT_LIST_CLICK);
-        WebViewShowInfoFragment.show(this.f34086a, H5Url.a(44), 0);
+        WebViewShowInfoFragment.show(this.f20395a, H5Url.a(44), 0);
         this.F.setVisibility(8);
         if (BluedPreferences.aR()) {
             return;
@@ -238,11 +236,11 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(UserInfoEntity userInfoEntity, View view, int i) {
-        SwipeAnchorBadge.a(this.f34086a, userInfoEntity.uid, i, getFragmentActive());
+        SwipeAnchorBadge.a(this.f20395a, userInfoEntity.uid, i, getFragmentActive());
     }
 
     private boolean a(String str) {
-        return SubscribeNumberManager.f32449a.a(str, (Short) 2);
+        return SubscribeNumberManager.f18759a.a(str, (Short) 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -298,12 +296,13 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         return true;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void c() {
         LiveEventBus.get(EventBusConstant.KEY_EVENT_OPEN_GIFT_PACKAGE, OpenGiftPackageEvent.class).observe(this, new Observer<OpenGiftPackageEvent>() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentProfileTab.2
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(OpenGiftPackageEvent openGiftPackageEvent) {
-                if (openGiftPackageEvent.f32328a == null || !openGiftPackageEvent.f32328a.equals(UserinfoFragmentProfileTab.this.getFragmentActive())) {
+                if (openGiftPackageEvent.f18638a == null || !openGiftPackageEvent.f18638a.equals(UserinfoFragmentProfileTab.this.getFragmentActive())) {
                     return;
                 }
                 UserGiftDialogFragment.a(UserinfoFragmentProfileTab.this.getContext(), UserinfoFragmentProfileTab.this.getFragmentActive(), UserinfoFragmentProfileTab.this.K.uid, "chat_page_gift", new UserGiftDialogFragment.BuySucceedListener() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentProfileTab.2.1
@@ -322,14 +321,14 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         Tracker.onClick(view);
         this.p.setVisibility(8);
         BluedPreferences.cQ();
-        HealthDialogFragment.a(this.f34086a);
+        HealthDialogFragment.a(this.f20395a);
     }
 
     private void d() {
-        this.f34087c = (BannerADView) this.b.findViewById(R.id.bannerView);
+        this.f20396c = (BannerADView) this.b.findViewById(R.id.bannerView);
         this.d = (BluedADConstraintLayout) this.b.findViewById(R.id.ad_view_layout);
-        this.e = (TextView) this.b.findViewById(2131371168);
-        this.f = (TextView) this.b.findViewById(2131371176);
+        this.e = (TextView) this.b.findViewById(R.id.tv_constellation);
+        this.f = (TextView) this.b.findViewById(R.id.tv_constellation_title);
         this.g = (TextView) this.b.findViewById(R.id.tv_relationship);
         this.h = (TextView) this.b.findViewById(R.id.tv_relationship_title);
         this.i = (TextView) this.b.findViewById(R.id.tv_bloodtype);
@@ -351,10 +350,10 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         this.N = (LinearLayout) this.b.findViewById(R.id.ll_tags);
         this.y = (LinearLayout) this.b.findViewById(R.id.ll_rich_rank);
         this.z = (LinearLayout) this.b.findViewById(R.id.ll_anchor_rank);
-        this.A = (ImageView) this.b.findViewById(2131364660);
+        this.A = (ImageView) this.b.findViewById(R.id.img_rich_rank);
         this.B = (ImageView) this.b.findViewById(R.id.img_anchor_rank);
         this.C = (LinearLayout) this.b.findViewById(R.id.ll_medals_all);
-        this.D = (RecyclerView) this.b.findViewById(2131368416);
+        this.D = (RecyclerView) this.b.findViewById(R.id.lv_medals);
         this.aa = (TextView) this.b.findViewById(R.id.my_tags_title);
         this.ab = (TextView) this.b.findViewById(R.id.tv_lookfor_tags_title);
         this.O = (TextView) this.b.findViewById(R.id.tv_my_figure);
@@ -363,12 +362,12 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         this.R = (TextView) this.b.findViewById(R.id.tv_my_entertainment);
         this.S = (TextView) this.b.findViewById(R.id.tv_lookfor_figure);
         this.T = (TextView) this.b.findViewById(R.id.tv_lookfor_chara);
-        this.U = (FlowLayout) this.b.findViewById(R.id.flow_my_figure);
-        this.V = (FlowLayout) this.b.findViewById(R.id.flow_my_chara);
-        this.W = (FlowLayout) this.b.findViewById(R.id.flow_my_hobby);
-        this.X = (FlowLayout) this.b.findViewById(R.id.flow_my_entertainment);
-        this.Y = (FlowLayout) this.b.findViewById(R.id.flow_lookfor_figure);
-        this.Z = (FlowLayout) this.b.findViewById(R.id.flow_lookfor_chara);
+        this.U = this.b.findViewById(R.id.flow_my_figure);
+        this.V = this.b.findViewById(R.id.flow_my_chara);
+        this.W = this.b.findViewById(R.id.flow_my_hobby);
+        this.X = this.b.findViewById(R.id.flow_my_entertainment);
+        this.Y = this.b.findViewById(R.id.flow_lookfor_figure);
+        this.Z = this.b.findViewById(R.id.flow_lookfor_chara);
         this.F = (ImageView) this.b.findViewById(R.id.img_his_gift_red_dot);
         this.G = (TextView) this.b.findViewById(R.id.tv_personal_info);
         this.H = (ViewGroup) this.b.findViewById(R.id.lay_personal_info);
@@ -458,26 +457,26 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                HealthDialogFragment.a(UserinfoFragmentProfileTab.this.f34086a);
+                HealthDialogFragment.a(UserinfoFragmentProfileTab.this.f20395a);
             }
         });
     }
 
     public void a() {
         if (this.K.ads_banner == null || this.K.ads_banner.size() <= 0) {
-            this.f34087c.b();
+            this.f20396c.b();
             return;
         }
-        this.f34087c.a(getFragmentActive(), this.K.ads_banner.get(0), ADConstants.AD_POSITION.USER_PROFILE_TAB, new BannerADView.ADListener() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentProfileTab.3
+        this.f20396c.a(getFragmentActive(), this.K.ads_banner.get(0), ADConstants.AD_POSITION.USER_PROFILE_TAB, new BannerADView.ADListener() { // from class: com.soft.blued.ui.user.fragment.UserinfoFragmentProfileTab.3
             @Override // com.soft.blued.customview.BannerADView.ADListener
             public void a() {
-                UserinfoFragmentProfileTab.this.f34087c.b();
+                UserinfoFragmentProfileTab.this.f20396c.b();
             }
 
             @Override // com.soft.blued.customview.BannerADView.ADListener
             public void b() {
-                if (UserinfoFragmentProfileTab.this.f34087c != null) {
-                    UserinfoFragmentProfileTab.this.f34087c.b();
+                if (UserinfoFragmentProfileTab.this.f20396c != null) {
+                    UserinfoFragmentProfileTab.this.f20396c.b();
                 }
             }
         });
@@ -490,7 +489,7 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         }
         this.K = userInfoEntity;
         b(userInfoEntity);
-        if (this.f34086a == null || this.L) {
+        if (this.f20395a == null || this.L) {
             return;
         }
         this.L = true;
@@ -524,8 +523,8 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         if (UserInfo.getInstance().getLoginUserInfo().getUid().equals(userInfoEntity.uid)) {
             this.M = true;
         }
-        this.f34086a = getActivity();
-        if (userInfoEntity == null || StringUtils.d(userInfoEntity.uid) || !getFragmentActive().isActive() || this.f34086a == null) {
+        this.f20395a = getActivity();
+        if (userInfoEntity == null || StringUtils.d(userInfoEntity.uid) || !getFragmentActive().isActive() || this.f20395a == null) {
             return;
         }
         if ((userInfoEntity.vbadge == 3 || userInfoEntity.vbadge == 5 || a(userInfoEntity.uid)) && !this.M) {
@@ -533,7 +532,7 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         } else {
             this.G.setVisibility(0);
         }
-        String a4 = StringUtils.a(this.f34086a.getResources().getStringArray(R.array.constellation), this.f34086a.getResources().getStringArray(R.array.constellation_key), userInfoEntity.astro);
+        String a4 = StringUtils.a(this.f20395a.getResources().getStringArray(R.array.constellation), this.f20395a.getResources().getStringArray(R.array.constellation_key), userInfoEntity.astro);
         if (StringUtils.d(a4) || ((userInfoEntity.vbadge == 3 || userInfoEntity.vbadge == 5 || a(userInfoEntity.uid)) && !this.M)) {
             this.e.setVisibility(8);
             this.f.setVisibility(8);
@@ -556,9 +555,9 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
                     break;
                 }
                 if (i2 == 0) {
-                    str2 = userInfoEntity.tags.work.get(i2).name;
+                    str2 = ((UserTag) userInfoEntity.tags.work.get(i2)).name;
                 } else {
-                    str2 = str3 + "、" + userInfoEntity.tags.work.get(i2).name;
+                    str2 = str3 + "、" + ((UserTag) userInfoEntity.tags.work.get(i2)).name;
                 }
                 str3 = str2;
                 i = i2 + 1;
@@ -580,9 +579,9 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
                     break;
                 }
                 if (i4 == 0) {
-                    str = userInfoEntity.tags.i_want.get(i4).name;
+                    str = ((UserTag) userInfoEntity.tags.i_want.get(i4)).name;
                 } else {
-                    str = str4 + "、" + userInfoEntity.tags.i_want.get(i4).name;
+                    str = str4 + "、" + ((UserTag) userInfoEntity.tags.i_want.get(i4)).name;
                 }
                 str4 = str;
                 i3 = i4 + 1;
@@ -593,7 +592,7 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         }
         try {
             Log.v("drb", "服务器返回 userInfo.mate:" + userInfoEntity.mate);
-            a3 = StringUtils.a(this.f34086a, BlueAppLocal.c(), Integer.parseInt(userInfoEntity.mate));
+            a3 = StringUtils.a(this.f20395a, BlueAppLocal.c(), Integer.parseInt(userInfoEntity.mate));
             Log.v("drb", "服务器返回解析后 userInfo.mate:" + a3);
         } catch (Exception e) {
             this.g.setVisibility(8);
@@ -603,8 +602,8 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
             this.g.setVisibility(0);
             this.h.setVisibility(0);
             this.g.setText(a3);
-            a2 = StringUtils.a(this.f34086a.getResources().getStringArray(R.array.bloodtype), this.f34086a.getResources().getStringArray(R.array.bloodtype_key), userInfoEntity.blood_type);
-            if (!StringUtils.d(a2) || this.f34086a.getResources().getString(R.string.hidden).equals(a2) || ((userInfoEntity.vbadge == 3 || userInfoEntity.vbadge == 5 || a(userInfoEntity.uid)) && !this.M)) {
+            a2 = StringUtils.a(this.f20395a.getResources().getStringArray(R.array.bloodtype), this.f20395a.getResources().getStringArray(R.array.bloodtype_key), userInfoEntity.blood_type);
+            if (!StringUtils.d(a2) || this.f20395a.getResources().getString(R.string.hidden).equals(a2) || ((userInfoEntity.vbadge == 3 || userInfoEntity.vbadge == 5 || a(userInfoEntity.uid)) && !this.M)) {
                 this.i.setVisibility(8);
                 this.j.setVisibility(8);
             } else {
@@ -624,9 +623,9 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
             if ((userInfoEntity.vbadge != 5 || a(userInfoEntity.uid)) && !this.M) {
                 this.y.setVisibility(8);
             } else {
-                BitmapUtils.a(this.f34086a, this.A, userInfoEntity.rich_level, false);
+                BitmapUtils.a(this.f20395a, this.A, userInfoEntity.rich_level, false);
                 if (userInfoEntity.anchor == 1) {
-                    LiveUtils.a(this.f34086a, this.B, userInfoEntity.anchor_level, false);
+                    LiveUtils.a(this.f20395a, this.B, userInfoEntity.anchor_level, false);
                     if (UserInfo.getInstance().getLoginUserInfo().uid.equalsIgnoreCase(userInfoEntity.uid)) {
                         this.y.setVisibility(0);
                         this.z.setVisibility(0);
@@ -677,7 +676,7 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         }
         this.g.setVisibility(8);
         this.h.setVisibility(8);
-        a2 = StringUtils.a(this.f34086a.getResources().getStringArray(R.array.bloodtype), this.f34086a.getResources().getStringArray(R.array.bloodtype_key), userInfoEntity.blood_type);
+        a2 = StringUtils.a(this.f20395a.getResources().getStringArray(R.array.bloodtype), this.f20395a.getResources().getStringArray(R.array.bloodtype_key), userInfoEntity.blood_type);
         if (StringUtils.d(a2)) {
         }
         this.i.setVisibility(8);
@@ -807,14 +806,14 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         }
         ArrayList arrayList = new ArrayList();
         arrayList.addAll(userInfoEntity.badge);
-        UserMedalsAdapter userMedalsAdapter = new UserMedalsAdapter(getFragmentActive(), this.f34086a, arrayList);
+        UserMedalsAdapter userMedalsAdapter = new UserMedalsAdapter(getFragmentActive(), this.f20395a, arrayList);
         userMedalsAdapter.a(new UserMedalsAdapter.RecyclerViewItemClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserinfoFragmentProfileTab$QGZAzy-b8srPmFmZKktF5xsE5Ws
             @Override // com.soft.blued.ui.user.adapter.UserMedalsAdapter.RecyclerViewItemClickListener
             public final void onItemClick(View view, int i) {
                 UserinfoFragmentProfileTab.this.a(userInfoEntity, view, i);
             }
         });
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f34086a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20395a);
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setOrientation(0);
         linearLayoutManager.scrollToPosition(0);
@@ -840,7 +839,7 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
             this.F.setVisibility(0);
         }
         if (TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, userInfoEntity.uid)) {
-            textView.setText(this.f34086a.getResources().getString(R.string.my_gift));
+            textView.setText(this.f20395a.getResources().getString(R.string.my_gift));
             linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserinfoFragmentProfileTab$ZEGyYP8S0VMRHnFQ6RUgOrk0zHU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -848,7 +847,7 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
                 }
             });
         } else {
-            textView.setText(this.f34086a.getResources().getString(R.string.his_gift));
+            textView.setText(this.f20395a.getResources().getString(R.string.his_gift));
             linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserinfoFragmentProfileTab$XPuq4FoenAMFelHUdfI4pIdekqA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -856,12 +855,11 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
                 }
             });
         }
-        UserHttpUtils.b(new AnonymousClass8(getFragmentActive(), userInfoEntity, textView2, recyclerView), userInfoEntity.uid, getFragmentActive());
+        UserHttpUtils.b((BluedUIHttpResponse) new AnonymousClass8(getFragmentActive(), userInfoEntity, textView2, recyclerView), userInfoEntity.uid, (IRequestHost) getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34086a = getActivity();
+        this.f20395a = getActivity();
         this.E = layoutInflater;
         View view = this.b;
         if (view == null) {
@@ -880,16 +878,14 @@ public class UserinfoFragmentProfileTab extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        BannerADView bannerADView = this.f34087c;
+        BannerADView bannerADView = this.f20396c;
         if (bannerADView != null) {
             bannerADView.c();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (z && !this.M && b()) {

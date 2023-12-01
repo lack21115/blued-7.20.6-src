@@ -192,7 +192,7 @@ public final class IconMenuItemView extends TextView implements MenuView.ItemVie
     }
 
     @Override // com.android.internal.view.menu.MenuView.ItemView
-    public void setShortcut(boolean z, char c2) {
+    public void setShortcut(boolean z, char c) {
         if (this.mShortcutCaptionMode) {
             this.mShortcutCaption = null;
             setCaptionMode(true);

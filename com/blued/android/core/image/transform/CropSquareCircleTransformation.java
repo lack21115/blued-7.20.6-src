@@ -18,14 +18,12 @@ import java.security.MessageDigest;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/transform/CropSquareCircleTransformation.class */
 public class CropSquareCircleTransformation extends BitmapTransformation {
     private static final Paint b = new Paint(7);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Paint f9565c;
+    private static final Paint c;
     private int d;
 
     static {
         Paint paint = new Paint(b);
-        f9565c = paint;
+        c = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
@@ -69,17 +67,17 @@ public class CropSquareCircleTransformation extends BitmapTransformation {
     }
 
     private void a(Canvas canvas, Paint paint, float f) {
-        PointF[][] a2 = a(f);
+        PointF[][] a = a(f);
         Path path = new Path();
-        path.moveTo(a2[0][0].x, a2[0][0].y);
+        path.moveTo(a[0][0].x, a[0][0].y);
         int i = 0;
         while (i < 8) {
-            float f2 = a2[1][i].x;
-            float f3 = a2[1][i].y;
-            PointF[] pointFArr = a2[0];
+            float f2 = a[1][i].x;
+            float f3 = a[1][i].y;
+            PointF[] pointFArr = a[0];
             i++;
             int i2 = i % 8;
-            path.quadTo(f2, f3, pointFArr[i2].x, a2[0][i2].y);
+            path.quadTo(f2, f3, pointFArr[i2].x, a[0][i2].y);
         }
         path.close();
         canvas.drawPath(path, paint);
@@ -114,7 +112,6 @@ public class CropSquareCircleTransformation extends BitmapTransformation {
         return pointFArr;
     }
 
-    @Override // com.bumptech.glide.load.resource.bitmap.BitmapTransformation
     public Bitmap a(BitmapPool bitmapPool, Bitmap bitmap, int i, int i2) {
         int min = Math.min(i, i2);
         float f = min;
@@ -124,39 +121,36 @@ public class CropSquareCircleTransformation extends BitmapTransformation {
         float max = Math.max(f2, f / height);
         float f3 = width * max;
         float f4 = max * height;
-        PointF a2 = a(f3, f4);
-        RectF rectF = new RectF(a2.x, a2.y, a2.x + f3, a2.y + f4);
-        Bitmap a3 = TransformUtils.a(bitmapPool, bitmap);
-        Bitmap a4 = bitmapPool.a(min, min, TransformUtils.a(bitmap));
-        a4.setHasAlpha(true);
+        PointF a = a(f3, f4);
+        RectF rectF = new RectF(a.x, a.y, a.x + f3, a.y + f4);
+        Bitmap a2 = TransformUtils.a(bitmapPool, bitmap);
+        Bitmap a3 = bitmapPool.a(min, min, TransformUtils.a(bitmap));
+        a3.setHasAlpha(true);
         TransformationUtils.a().lock();
         try {
-            Canvas canvas = new Canvas(a4);
+            Canvas canvas = new Canvas(a3);
             a(canvas, b, f);
-            canvas.drawBitmap(a3, (Rect) null, rectF, f9565c);
+            canvas.drawBitmap(a2, (Rect) null, rectF, c);
             TransformUtils.a(canvas);
             TransformationUtils.a().unlock();
-            if (!a3.equals(bitmap)) {
-                bitmapPool.a(a3);
+            if (!a2.equals(bitmap)) {
+                bitmapPool.a(a2);
             }
-            return a4;
+            return a3;
         } catch (Throwable th) {
             TransformationUtils.a().unlock();
             throw th;
         }
     }
 
-    @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
-        messageDigest.update(("com.blued.android.core.transform.CropSquareCircleTransformation.1" + this.d).getBytes(f20706a));
+        messageDigest.update(("com.blued.android.core.transform.CropSquareCircleTransformation.1" + this.d).getBytes(a));
     }
 
-    @Override // com.bumptech.glide.load.Key
     public boolean equals(Object obj) {
         return (obj instanceof CropSquareCircleTransformation) && ((CropSquareCircleTransformation) obj).d == this.d;
     }
 
-    @Override // com.bumptech.glide.load.Key
     public int hashCode() {
         return (-1286243350) + (this.d * 10);
     }

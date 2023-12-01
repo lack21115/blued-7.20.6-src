@@ -10,14 +10,14 @@ import org.json.JSONObject;
 public final class u3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SharedPreferences f21323a;
+    public final SharedPreferences f7717a;
 
     public u3(Context context) {
-        this.f21323a = e2.a(context, "device_register_oaid_refine", 0);
+        this.f7717a = e2.a(context, "device_register_oaid_refine", 0);
     }
 
     public t3 a() {
-        String string = this.f21323a.getString("oaid", "");
+        String string = this.f7717a.getString("oaid", "");
         if (TextUtils.isEmpty(string)) {
             return null;
         }
@@ -34,6 +34,6 @@ public final class u3 {
         if (t3Var == null) {
             return;
         }
-        this.f21323a.edit().putString("oaid", t3Var.b().toString()).apply();
+        this.f7717a.edit().putString("oaid", t3Var.b().toString()).apply();
     }
 }

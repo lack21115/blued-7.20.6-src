@@ -1,16 +1,16 @@
 package com.bumptech.glide.disklrucache;
 
+import com.anythink.expressad.exoplayer.b;
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/disklrucache/Util.class */
-public final class Util {
+final class Util {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Charset f20684a = Charset.forName("US-ASCII");
+    static final Charset f7078a = Charset.forName(b.i);
     static final Charset b = Charset.forName("UTF-8");
 
     private Util() {

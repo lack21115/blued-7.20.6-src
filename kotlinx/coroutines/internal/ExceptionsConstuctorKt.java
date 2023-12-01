@@ -21,22 +21,18 @@ import kotlinx.coroutines.CopyableThrowable;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/ExceptionsConstuctorKt.class */
 public final class ExceptionsConstuctorKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int f43525a = a(Throwable.class, -1);
+    private static final int a = a(Throwable.class, -1);
     private static final ReentrantReadWriteLock b = new ReentrantReadWriteLock();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final WeakHashMap<Class<? extends Throwable>, Function1<Throwable, Throwable>> f43526c = new WeakHashMap<>();
+    private static final WeakHashMap<Class<? extends Throwable>, Function1<Throwable, Throwable>> c = new WeakHashMap<>();
 
     private static final int a(Class<?> cls, int i) {
         Object f;
         JvmClassMappingKt.a(cls);
         try {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             f = Result.f(Integer.valueOf(a(cls, 0, 1, null)));
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             f = Result.f(ResultKt.a(th));
         }
         Integer num = f;
@@ -57,10 +53,10 @@ public final class ExceptionsConstuctorKt {
         Object f;
         if (e instanceof CopyableThrowable) {
             try {
-                Result.Companion companion = Result.f42293a;
+                Result.Companion companion = Result.a;
                 f = Result.f(((CopyableThrowable) e).a());
             } catch (Throwable th) {
-                Result.Companion companion2 = Result.f42293a;
+                Result.Companion companion2 = Result.a;
                 f = Result.f(ResultKt.a(th));
             }
             if (Result.b(f)) {
@@ -71,11 +67,11 @@ public final class ExceptionsConstuctorKt {
         ReentrantReadWriteLock.ReadLock readLock = b.readLock();
         readLock.lock();
         try {
-            Function1<Throwable, Throwable> function1 = f43526c.get(e.getClass());
+            Function1<Throwable, Throwable> function1 = c.get(e.getClass());
             if (function1 != null) {
                 return (E) function1.invoke(e);
             }
-            if (f43525a == a(e.getClass(), 0)) {
+            if (a == a(e.getClass(), 0)) {
                 Iterator it = ArraysKt.c((Object[]) e.getClass().getConstructors(), new Comparator<T>() { // from class: kotlinx.coroutines.internal.ExceptionsConstuctorKt$tryCopyException$$inlined$sortedByDescending$1
                     @Override // java.util.Comparator
                     public final int compare(T t, T t2) {
@@ -109,14 +105,14 @@ public final class ExceptionsConstuctorKt {
                 ReentrantReadWriteLock.WriteLock writeLock = reentrantReadWriteLock.writeLock();
                 writeLock.lock();
                 try {
-                    f43526c.put(e.getClass(), function12 == null ? new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstuctorKt$tryCopyException$5$1
+                    c.put(e.getClass(), function12 == null ? new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstuctorKt$tryCopyException$5$1
                         @Override // kotlin.jvm.functions.Function1
                         /* renamed from: a */
                         public final Void invoke(Throwable th2) {
                             return null;
                         }
                     } : function12);
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
@@ -160,14 +156,14 @@ public final class ExceptionsConstuctorKt {
             ReentrantReadWriteLock.WriteLock writeLock2 = reentrantReadWriteLock2.writeLock();
             writeLock2.lock();
             try {
-                f43526c.put(e.getClass(), new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstuctorKt$tryCopyException$4$1
+                c.put(e.getClass(), new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstuctorKt$tryCopyException$4$1
                     @Override // kotlin.jvm.functions.Function1
                     /* renamed from: a */
                     public final Void invoke(Throwable th3) {
                         return null;
                     }
                 });
-                Unit unit2 = Unit.f42314a;
+                Unit unit2 = Unit.a;
                 int i9 = 0;
                 while (true) {
                     int i10 = i9;
@@ -212,10 +208,10 @@ public final class ExceptionsConstuctorKt {
                     Object f;
                     Object newInstance;
                     try {
-                        Result.Companion companion = Result.f42293a;
+                        Result.Companion companion = Result.a;
                         newInstance = Constructor.this.newInstance(new Object[0]);
                     } catch (Throwable th2) {
-                        Result.Companion companion2 = Result.f42293a;
+                        Result.Companion companion2 = Result.a;
                         f = Result.f(ResultKt.a(th2));
                     }
                     if (newInstance != null) {
@@ -245,10 +241,10 @@ public final class ExceptionsConstuctorKt {
                         Object f;
                         Object newInstance;
                         try {
-                            Result.Companion companion = Result.f42293a;
+                            Result.Companion companion = Result.a;
                             newInstance = Constructor.this.newInstance(th);
                         } catch (Throwable th2) {
-                            Result.Companion companion2 = Result.f42293a;
+                            Result.Companion companion2 = Result.a;
                             f = Result.f(ResultKt.a(th2));
                         }
                         if (newInstance != null) {
@@ -276,10 +272,10 @@ public final class ExceptionsConstuctorKt {
                         Object f;
                         Object newInstance;
                         try {
-                            Result.Companion companion = Result.f42293a;
+                            Result.Companion companion = Result.a;
                             newInstance = Constructor.this.newInstance(th.getMessage());
                         } catch (Throwable th2) {
-                            Result.Companion companion2 = Result.f42293a;
+                            Result.Companion companion2 = Result.a;
                             f = Result.f(ResultKt.a(th2));
                         }
                         if (newInstance != null) {
@@ -314,10 +310,10 @@ public final class ExceptionsConstuctorKt {
                             Object f;
                             Object newInstance;
                             try {
-                                Result.Companion companion = Result.f42293a;
+                                Result.Companion companion = Result.a;
                                 newInstance = Constructor.this.newInstance(th.getMessage(), th);
                             } catch (Throwable th2) {
-                                Result.Companion companion2 = Result.f42293a;
+                                Result.Companion companion2 = Result.a;
                                 f = Result.f(ResultKt.a(th2));
                             }
                             if (newInstance != null) {

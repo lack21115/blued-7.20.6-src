@@ -1,6 +1,5 @@
 package com.tencent.qcloud.core.http;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.qcloud.core.auth.QCloudSelfSigner;
 import com.tencent.qcloud.core.auth.QCloudSigner;
 import com.tencent.qcloud.core.common.QCloudClientException;
@@ -167,7 +166,7 @@ public class HttpRequest<T> {
 
         public Builder<T> path(String str) {
             String str2 = str;
-            if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (str.startsWith("/")) {
                 str2 = str.substring(1);
             }
             if (str2.length() > 0) {

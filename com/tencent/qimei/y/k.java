@@ -11,33 +11,33 @@ public class k {
     public Context b;
 
     /* renamed from: a  reason: collision with root package name */
-    public WebView f38453a = null;
+    public WebView f24762a = null;
 
     /* renamed from: c  reason: collision with root package name */
-    public final a f38454c = new a("x5");
+    public final a f24763c = new a("x5");
 
     public k(Context context) {
         this.b = context;
     }
 
     public final void a() {
-        WebView webView = this.f38453a;
+        WebView webView = this.f24762a;
         if (webView != null) {
             webView.destroy();
-            this.f38453a = null;
+            this.f24762a = null;
         }
     }
 
     public final void b() {
         WebView webView = new WebView(this.b);
-        this.f38453a = webView;
+        this.f24762a = webView;
         if (webView.getX5WebViewExtension() == null) {
-            this.f38454c.a("x5_sys");
+            this.f24763c.a("x5_sys");
         }
-        this.f38453a.removeJavascriptInterface("searchBoxJavaBridge_");
-        this.f38453a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
-        this.f38453a.removeJavascriptInterface("accessibilityTraversal");
-        WebSettings settings = this.f38453a.getSettings();
+        this.f24762a.removeJavascriptInterface("searchBoxJavaBridge_");
+        this.f24762a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
+        this.f24762a.removeJavascriptInterface("accessibilityTraversal");
+        WebSettings settings = this.f24762a.getSettings();
         settings.setSavePassword(false);
         settings.setAllowFileAccess(true);
         if (Build.VERSION.SDK_INT >= 16) {
@@ -46,8 +46,8 @@ public class k {
         }
         settings.setJavaScriptEnabled(true);
         settings.setCacheMode(-1);
-        this.f38453a.addJavascriptInterface(this.f38454c, "JSInterface");
-        this.f38453a.setWebViewClient(new h(this));
-        Tracker.loadUrl(this.f38453a, com.tencent.qimei.a.a.a(this.b));
+        this.f24762a.addJavascriptInterface(this.f24763c, "JSInterface");
+        this.f24762a.setWebViewClient(new h(this));
+        Tracker.loadUrl(this.f24762a, com.tencent.qimei.a.a.a(this.b));
     }
 }

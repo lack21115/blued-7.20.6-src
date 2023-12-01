@@ -49,7 +49,7 @@ public class IconMenuPresenter extends BaseMenuPresenter {
     }
 
     public IconMenuPresenter(Context context) {
-        super(new ContextThemeWrapper(context, R.style.Theme_IconMenu), R.layout.icon_menu_layout, R.layout.icon_menu_item_layout);
+        super(new ContextThemeWrapper(context, (int) R.style.Theme_IconMenu), R.layout.icon_menu_layout, R.layout.icon_menu_item_layout);
         this.mMaxItems = -1;
         this.mSubMenuPresenterCallback = new SubMenuPresenterCallback();
     }

@@ -7,11 +7,11 @@ import com.blued.android.framework.view.pulltorefresh.PullToRefreshRecyclerView;
 public final class FragmentChatBgSelectBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final PullToRefreshRecyclerView f28792a;
+    private final PullToRefreshRecyclerView f15102a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public PullToRefreshRecyclerView getRoot() {
-        return this.f28792a;
+        return this.f15102a;
     }
 }

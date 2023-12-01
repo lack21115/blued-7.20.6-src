@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveFansHeartLevelSmallBinding.class */
 public final class LiveFansHeartLevelSmallBinding implements ViewBinding {
+    private final LinearLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f12189a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f12189a;
+        return this.a;
     }
 }

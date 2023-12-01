@@ -2,6 +2,7 @@ package com.tencent.cloud.huiyansdkface.facelight.net.tools;
 
 import android.provider.Downloads;
 import com.cdo.oaps.ad.OapsWrapper;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.cloud.huiyansdkface.facelight.common.KycWaSDK;
 import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 import com.tencent.cloud.huiyansdkface.okhttp3.Call;
@@ -31,11 +32,11 @@ public class HttpEventListener extends EventListener {
     public static final EventListener.Factory FACTORY = new EventListener.Factory() { // from class: com.tencent.cloud.huiyansdkface.facelight.net.tools.HttpEventListener.1
 
         /* renamed from: a  reason: collision with root package name */
-        final AtomicLong f35598a = new AtomicLong(1);
+        final AtomicLong f21907a = new AtomicLong(1);
 
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.EventListener.Factory
         public EventListener create(Call call) {
-            long andIncrement = this.f35598a.getAndIncrement();
+            long andIncrement = this.f21907a.getAndIncrement();
             String encodedPath = call.request().url().encodedPath();
             return (encodedPath.contains("Login") || encodedPath.contains("resource") || encodedPath.contains("Resource") || encodedPath.contains("facecompare") || encodedPath.contains("Facecompare") || encodedPath.contains("faceCompare") || encodedPath.contains("appupload") || encodedPath.contains("appUpload") || encodedPath.contains("uploadData") || encodedPath.contains("WbGradeInfo.json")) ? new HttpEventListener(true, andIncrement, call.request().url(), System.nanoTime()) : new HttpEventListener(false, andIncrement, call.request().url(), System.nanoTime());
         }
@@ -58,7 +59,7 @@ public class HttpEventListener extends EventListener {
             long j = this.callStartNanos;
             StringBuilder sb = this.sbLog;
             sb.append(String.format(Locale.CHINA, "%.3f-%s", Double.valueOf((nanoTime - j) / 1.0E9d), str));
-            sb.append(";");
+            sb.append(t.aE);
             if ("callEnd".equalsIgnoreCase(str) || "callFailed".equalsIgnoreCase(str)) {
                 WLogger.i(TAG, this.sbLog.toString());
                 KycWaSDK.getInstance().trackCustomKVEvent(null, "face_service_http_event", this.sbLog.toString(), null);

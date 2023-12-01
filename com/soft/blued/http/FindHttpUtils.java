@@ -14,6 +14,7 @@ import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.CommonPreferences;
 import com.blued.android.module.common.utils.NetworkUtils;
+import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import com.soft.blued.ui.welcome.model.ADClickCoordinate;
@@ -25,14 +26,14 @@ import java.util.Map;
 public class FindHttpUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f29656a = FindHttpUtils.class.getSimpleName();
+    private static final String f15966a = FindHttpUtils.class.getSimpleName();
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         HttpManager.a(BluedHttpUrl.q() + "/users/tags", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("lot", CommonPreferences.u());
         a2.put("lat", CommonPreferences.v());
         a2.put(RemoteMessageConst.MessageBody.PARAM, "text");
@@ -44,7 +45,7 @@ public class FindHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("latitude", CommonPreferences.v());
         a2.put("longitude", CommonPreferences.u());
         a2.put("source", str);
@@ -52,14 +53,14 @@ public class FindHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str, int i) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", str);
         a2.put("from", i + "");
         HttpManager.a(BluedHttpUrl.q() + "/users/map/pass/by/status", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str, int i, String str2) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", str);
         a2.put("is_switch_open", String.valueOf(i));
         a2.put("filters", str2);
@@ -77,7 +78,7 @@ public class FindHttpUtils {
         ArrayMap arrayMap = new ArrayMap();
         arrayMap.put("filter", str);
         arrayMap.put(WBPageConstants.ParamKey.PAGE, i + "");
-        arrayMap.put("size", i2 + "");
+        arrayMap.put(OapsKey.KEY_SIZE, i2 + "");
         HttpManager.a(BluedHttpUrl.q() + "/users/" + UserInfo.getInstance().getLoginUserInfo().getUid() + "/notification", bluedUIHttpResponse, iRequestHost).a(arrayMap).b(BluedHttpTools.a(true)).h();
     }
 
@@ -97,7 +98,7 @@ public class FindHttpUtils {
     }
 
     public static void a(String str, int i, String str2) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("url", str);
         a2.put("http_code", i + "");
         a2.put("other", "http_message:" + str2 + "  v:" + AppInfo.h);
@@ -159,14 +160,12 @@ public class FindHttpUtils {
         }
         final String str8 = str4;
         BluedUIHttpResponse bluedUIHttpResponse = new BluedUIHttpResponse() { // from class: com.soft.blued.http.FindHttpUtils.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str9) {
-                Log.v("drb", "onUIFailure:" + i + " -- errorMessage" + str9 + " -- url:" + String.this);
-                FindHttpUtils.a(String.this, i, str9);
+                Log.v("drb", "onUIFailure:" + i + " -- errorMessage" + str9 + " -- url:" + str8);
+                FindHttpUtils.a(str8, i, str9);
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         };
@@ -197,13 +196,13 @@ public class FindHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", str);
         HttpManager.a(BluedHttpUrl.q() + "/users/call/bubble", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("lot", str);
         a2.put("lat", str2);
         HttpManager.a(BluedHttpUrl.q() + "/blued/city_code", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();

@@ -13,18 +13,18 @@ import java.util.List;
 public final class a extends com.youzan.spiderman.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41754a;
+    private Context f28063a;
     private f b;
 
     public a(Context context, f fVar) {
-        this.f41754a = context;
+        this.f28063a = context;
         this.b = fVar;
     }
 
     @Override // com.youzan.spiderman.a.a
     public final void a() throws Throwable {
         List<String> b;
-        if (!NetWorkUtil.hasNetworkPermission(this.f41754a)) {
+        if (!NetWorkUtil.hasNetworkPermission(this.f28063a)) {
             Logger.e("FetchHtmlJob", "has no network permission to run fetch html job", new Object[0]);
             return;
         }

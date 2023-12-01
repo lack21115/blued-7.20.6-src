@@ -30,17 +30,12 @@ import com.blued.community.ui.topic.model.BluedTopicExtra;
 import com.blued.community.utils.MarkDownLinkHelper;
 import com.blued.das.client.feed.FeedProtos;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import java.util.Collection;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/fragment/MyTopicSinglePageFragment.class */
 public class MyTopicSinglePageFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public CommonTopTitleNoTrans f20259a;
+    public CommonTopTitleNoTrans a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f20260c;
+    private View c;
     private PullToRefreshRecyclerView d;
     private RecyclerView e;
     private MyTopicAdapter f;
@@ -50,13 +45,11 @@ public class MyTopicSinglePageFragment extends BaseFragment {
     private boolean j = true;
     private MyTopicAdapter.MY_TOPIC_PAGE k = MyTopicAdapter.MY_TOPIC_PAGE.CREATED;
     private BluedUIHttpResponse l = new BluedUIHttpResponse<BluedEntity<BluedTopic, BluedTopicExtra>>(getFragmentActive()) { // from class: com.blued.community.ui.topic.fragment.MyTopicSinglePageFragment.4
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f20264a;
+        boolean a;
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f20264a = true;
+            this.a = true;
             return super.onUIFailure(i, str);
         }
 
@@ -65,7 +58,7 @@ public class MyTopicSinglePageFragment extends BaseFragment {
             super.onUIFinish();
             MyTopicSinglePageFragment.this.d.j();
             MyTopicSinglePageFragment.this.f.loadMoreComplete();
-            if (this.f20264a) {
+            if (this.a) {
                 MyTopicSinglePageFragment.this.g.b();
                 if (MyTopicSinglePageFragment.this.f.getData().size() > 0) {
                     MyTopicSinglePageFragment.this.f.loadMoreFail();
@@ -108,7 +101,7 @@ public class MyTopicSinglePageFragment extends BaseFragment {
                 if (MyTopicSinglePageFragment.this.h == 1) {
                     MyTopicSinglePageFragment.this.f.setNewData(bluedEntity.data);
                 } else {
-                    MyTopicSinglePageFragment.this.f.addData((Collection) bluedEntity.data);
+                    MyTopicSinglePageFragment.this.f.addData(bluedEntity.data);
                 }
             }
         }
@@ -121,16 +114,16 @@ public class MyTopicSinglePageFragment extends BaseFragment {
     }
 
     private void a() {
-        ((KeyboardListenLinearLayout) this.f20260c.findViewById(R.id.keyboard_root)).setBackgroundColor(BluedSkinUtils.a(getContext(), R.color.syc_b));
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f20260c.findViewById(R.id.title);
-        this.f20259a = commonTopTitleNoTrans;
+        ((KeyboardListenLinearLayout) this.c.findViewById(R.id.keyboard_root)).setBackgroundColor(BluedSkinUtils.a(getContext(), R.color.syc_b));
+        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.c.findViewById(R.id.title);
+        this.a = commonTopTitleNoTrans;
         commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.topic.fragment.-$$Lambda$MyTopicSinglePageFragment$bBF4P3WNhySFdCI78bVy6ah_y5g
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 MyTopicSinglePageFragment.this.a(view);
             }
         });
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.f20260c.findViewById(R.id.list_view_search);
+        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.c.findViewById(R.id.list_view_search);
         this.d = pullToRefreshRecyclerView;
         pullToRefreshRecyclerView.setBackgroundColor(BluedSkinUtils.a(this.b, R.color.syc_b));
         this.d.setRefreshEnabled(true);
@@ -158,11 +151,11 @@ public class MyTopicSinglePageFragment extends BaseFragment {
                 String str = bluedTopic.super_did;
                 boolean z = true;
                 boolean z2 = bluedTopic.is_anonym == 1;
-                boolean a2 = MarkDownLinkHelper.a(bluedTopic.description);
+                boolean a = MarkDownLinkHelper.a(bluedTopic.description);
                 if (bluedTopic.is_follow != 1) {
                     z = false;
                 }
-                EventTrackFeed.a(event, detailFrom, str, z2, a2, z);
+                EventTrackFeed.a(event, detailFrom, str, z2, a, z);
             }
 
             @Override // com.blued.community.ui.topic.adapter.SuperTopicAdapter.OnShowListener
@@ -178,7 +171,6 @@ public class MyTopicSinglePageFragment extends BaseFragment {
         });
         this.f.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.f.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.topic.fragment.MyTopicSinglePageFragment.3
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 MyTopicSinglePageFragment.a(MyTopicSinglePageFragment.this);
                 MyTopicSinglePageFragment.this.a(false);
@@ -221,22 +213,22 @@ public class MyTopicSinglePageFragment extends BaseFragment {
         return this.k == MyTopicAdapter.MY_TOPIC_PAGE.JOINED ? "A48" : "A47";
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.k = (MyTopicAdapter.MY_TOPIC_PAGE) getArguments().getSerializable("PAGE_KEY");
         FragmentActivity activity = getActivity();
         this.b = activity;
-        View view = this.f20260c;
+        View view = this.c;
         if (view == null) {
-            this.f20260c = LayoutInflater.from(activity).inflate(R.layout.fragment_mine_topic_single_page, viewGroup, false);
+            this.c = LayoutInflater.from(activity).inflate(R.layout.fragment_mine_topic_single_page, viewGroup, false);
             a();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f20260c.getParent()).removeView(this.f20260c);
+            ((ViewGroup) this.c.getParent()).removeView(this.c);
         }
-        return this.f20260c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
     }

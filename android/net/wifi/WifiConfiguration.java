@@ -7,7 +7,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import com.anythink.expressad.foundation.d.c;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Collections;
@@ -484,7 +484,7 @@ public class WifiConfiguration implements Parcelable {
 
     public static String configKey(ScanResult scanResult) {
         String str = "\"" + scanResult.SSID + "\"";
-        return scanResult.capabilities.contains("WEP") ? str + "-WEP" : scanResult.capabilities.contains("PSK") ? str + "-" + KeyMgmt.strings[1] : (scanResult.capabilities.contains("EAP") || scanResult.capabilities.contains("IEEE8021X")) ? str + "-" + KeyMgmt.strings[2] : str + "-" + KeyMgmt.strings[0];
+        return scanResult.capabilities.contains("WEP") ? str + "-WEP" : scanResult.capabilities.contains("PSK") ? str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + KeyMgmt.strings[1] : (scanResult.capabilities.contains("EAP") || scanResult.capabilities.contains("IEEE8021X")) ? str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + KeyMgmt.strings[2] : str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + KeyMgmt.strings[0];
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -554,7 +554,7 @@ public class WifiConfiguration implements Parcelable {
 
     public String configKey(boolean z) {
         if (!z || this.mCachedConfigKey == null) {
-            String str = this.allowedKeyManagement.get(1) ? this.SSID + "-" + KeyMgmt.strings[1] : (this.allowedKeyManagement.get(2) || this.allowedKeyManagement.get(3)) ? this.SSID + "-" + KeyMgmt.strings[2] : this.wepKeys[0] != null ? this.SSID + "-WEP" : this.SSID + "-" + KeyMgmt.strings[0];
+            String str = this.allowedKeyManagement.get(1) ? this.SSID + Constants.ACCEPT_TIME_SEPARATOR_SERVER + KeyMgmt.strings[1] : (this.allowedKeyManagement.get(2) || this.allowedKeyManagement.get(3)) ? this.SSID + Constants.ACCEPT_TIME_SEPARATOR_SERVER + KeyMgmt.strings[2] : this.wepKeys[0] != null ? this.SSID + "-WEP" : this.SSID + Constants.ACCEPT_TIME_SEPARATOR_SERVER + KeyMgmt.strings[0];
             this.mCachedConfigKey = str;
             return str;
         }
@@ -613,7 +613,7 @@ public class WifiConfiguration implements Parcelable {
             if (TextUtils.isEmpty(str2)) {
                 throw new IllegalStateException("Not an EAP network");
             }
-            return trimStringForKeyId(this.SSID) + BridgeUtil.UNDERLINE_STR + str2 + BridgeUtil.UNDERLINE_STR + trimStringForKeyId(this.enterpriseConfig.getKeyId(wifiConfiguration != null ? wifiConfiguration.enterpriseConfig : null));
+            return trimStringForKeyId(this.SSID) + "_" + str2 + "_" + trimStringForKeyId(this.enterpriseConfig.getKeyId(wifiConfiguration != null ? wifiConfiguration.enterpriseConfig : null));
         } catch (NullPointerException e) {
             throw new IllegalStateException("Invalid config details");
         }

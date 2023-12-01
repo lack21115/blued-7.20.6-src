@@ -9,20 +9,16 @@ import com.blued.android.module.live_china.view.righttopfunction.LiveWishView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveRightTopFunctionPlaceBinding.class */
 public final class LiveRightTopFunctionPlaceBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12414a;
+    public final FrameLayout a;
     public final LiveFloatGoodsWallView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LiveWishView f12415c;
+    public final LiveWishView c;
     private final FrameLayout d;
 
     private LiveRightTopFunctionPlaceBinding(FrameLayout frameLayout, FrameLayout frameLayout2, LiveFloatGoodsWallView liveFloatGoodsWallView, LiveWishView liveWishView) {
         this.d = frameLayout;
-        this.f12414a = frameLayout2;
+        this.a = frameLayout2;
         this.b = liveFloatGoodsWallView;
-        this.f12415c = liveWishView;
+        this.c = liveWishView;
     }
 
     public static LiveRightTopFunctionPlaceBinding a(View view) {
@@ -45,7 +41,6 @@ public final class LiveRightTopFunctionPlaceBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

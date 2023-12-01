@@ -54,7 +54,7 @@ public class NotificationService extends IntentService {
             d.a(this, intent, "reflectReceiver startservice", 2003);
             intent.setClassName(getPackageName(), a2);
             com.meizu.cloud.pushsdk.b.b.d a3 = com.meizu.cloud.pushsdk.b.b.a.a(a2).a((Class<?>[]) null).a(null);
-            if (!a3.f23973a || a3.b == 0) {
+            if (!a3.f10362a || a3.b == 0) {
                 return;
             }
             DebugLogger.i("NotificationService", "Reflect MzPushReceiver true");

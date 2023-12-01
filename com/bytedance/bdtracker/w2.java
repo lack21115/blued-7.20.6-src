@@ -11,11 +11,11 @@ import java.io.InputStreamReader;
 public class w2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final CharSequence f21332a = "amigo";
+    public static final CharSequence f7726a = "amigo";
     public static final CharSequence b = "funtouch";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final j2<Boolean> f21333c = new a();
+    public static final j2<Boolean> f7727c = new a();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/w2$a.class */
     public static final class a extends j2<Boolean> {

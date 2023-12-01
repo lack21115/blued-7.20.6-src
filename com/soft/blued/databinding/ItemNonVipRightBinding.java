@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemNonVipRightBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29271a;
+    private final ConstraintLayout f15581a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29271a;
+        return this.f15581a;
     }
 }

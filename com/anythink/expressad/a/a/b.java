@@ -6,11 +6,11 @@ import java.util.HashSet;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f6951a = 0;
+    public static int f4113a = 0;
     public static int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f6952c;
+    private String f4114c;
     private int d;
     private HashSet<String> e = new HashSet<>();
     private long f = System.currentTimeMillis();
@@ -22,12 +22,12 @@ public final class b {
     private int l;
 
     public b(String str, String str2) {
-        this.f6952c = str;
+        this.f4114c = str;
         b(str2);
     }
 
     private String i() {
-        return this.f6952c;
+        return this.f4114c;
     }
 
     private HashSet<String> j() {

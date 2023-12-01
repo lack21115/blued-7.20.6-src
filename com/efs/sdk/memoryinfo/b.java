@@ -8,13 +8,13 @@ import com.efs.sdk.base.protocol.record.EfsJSONLog;
 final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    final EfsReporter f21813a;
+    final EfsReporter f8206a;
     boolean b = false;
     final Context mContext;
 
     public b(Context context, EfsReporter efsReporter) {
         this.mContext = context.getApplicationContext();
-        this.f21813a = efsReporter;
+        this.f8206a = efsReporter;
     }
 
     static /* synthetic */ void a(b bVar, e eVar, String str) {

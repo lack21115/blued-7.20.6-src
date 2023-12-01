@@ -6,11 +6,11 @@ import com.opos.exoplayer.core.e.e;
 final class ae {
 
     /* renamed from: a  reason: collision with root package name */
-    public final y f25063a;
+    public final y f11375a;
     public final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final e.b f25064c;
+    public final e.b f11376c;
     public final long d;
     public final long e;
     public final int f;
@@ -24,9 +24,9 @@ final class ae {
     }
 
     public ae(y yVar, Object obj, e.b bVar, long j, long j2, int i, boolean z, com.opos.exoplayer.core.g.i iVar) {
-        this.f25063a = yVar;
+        this.f11375a = yVar;
         this.b = obj;
-        this.f25064c = bVar;
+        this.f11376c = bVar;
         this.d = j;
         this.e = j2;
         this.i = j;
@@ -42,13 +42,13 @@ final class ae {
     }
 
     public ae a(int i) {
-        ae aeVar = new ae(this.f25063a, this.b, this.f25064c.a(i), this.d, this.e, this.f, this.g, this.h);
+        ae aeVar = new ae(this.f11375a, this.b, this.f11376c.a(i), this.d, this.e, this.f, this.g, this.h);
         a(this, aeVar);
         return aeVar;
     }
 
     public ae a(e.b bVar, long j, long j2) {
-        y yVar = this.f25063a;
+        y yVar = this.f11375a;
         Object obj = this.b;
         if (!bVar.a()) {
             j2 = -9223372036854775807L;
@@ -57,25 +57,25 @@ final class ae {
     }
 
     public ae a(com.opos.exoplayer.core.g.i iVar) {
-        ae aeVar = new ae(this.f25063a, this.b, this.f25064c, this.d, this.e, this.f, this.g, iVar);
+        ae aeVar = new ae(this.f11375a, this.b, this.f11376c, this.d, this.e, this.f, this.g, iVar);
         a(this, aeVar);
         return aeVar;
     }
 
     public ae a(y yVar, Object obj) {
-        ae aeVar = new ae(yVar, obj, this.f25064c, this.d, this.e, this.f, this.g, this.h);
+        ae aeVar = new ae(yVar, obj, this.f11376c, this.d, this.e, this.f, this.g, this.h);
         a(this, aeVar);
         return aeVar;
     }
 
     public ae a(boolean z) {
-        ae aeVar = new ae(this.f25063a, this.b, this.f25064c, this.d, this.e, this.f, z, this.h);
+        ae aeVar = new ae(this.f11375a, this.b, this.f11376c, this.d, this.e, this.f, z, this.h);
         a(this, aeVar);
         return aeVar;
     }
 
     public ae b(int i) {
-        ae aeVar = new ae(this.f25063a, this.b, this.f25064c, this.d, this.e, i, this.g, this.h);
+        ae aeVar = new ae(this.f11375a, this.b, this.f11376c, this.d, this.e, i, this.g, this.h);
         a(this, aeVar);
         return aeVar;
     }

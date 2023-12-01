@@ -77,17 +77,14 @@ public class VideoCallImpl extends InCallService.VideoCall {
         private VideoCallListenerBinder() {
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changeCallDataUsage(int i) {
             VideoCallImpl.this.mHandler.obtainMessage(5, Integer.valueOf(i)).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changeCameraCapabilities(CameraCapabilities cameraCapabilities) {
             VideoCallImpl.this.mHandler.obtainMessage(6, cameraCapabilities).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changePeerDimensions(int i, int i2) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = Integer.valueOf(i);
@@ -95,22 +92,18 @@ public class VideoCallImpl extends InCallService.VideoCall {
             VideoCallImpl.this.mHandler.obtainMessage(4, obtain).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void changeVideoQuality(int i) {
             VideoCallImpl.this.mHandler.obtainMessage(7, i, 0).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void handleCallSessionEvent(int i) {
             VideoCallImpl.this.mHandler.obtainMessage(3, Integer.valueOf(i)).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void receiveSessionModifyRequest(VideoProfile videoProfile) {
             VideoCallImpl.this.mHandler.obtainMessage(1, videoProfile).sendToTarget();
         }
 
-        @Override // com.android.internal.telecom.IVideoCallback
         public void receiveSessionModifyResponse(int i, VideoProfile videoProfile, VideoProfile videoProfile2) {
             SomeArgs obtain = SomeArgs.obtain();
             obtain.arg1 = Integer.valueOf(i);

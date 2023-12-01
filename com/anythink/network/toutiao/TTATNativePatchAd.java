@@ -10,7 +10,7 @@ public class TTATNativePatchAd extends TTATNativeAd {
         super(context, str, tTNativeAd, z, bitmap, i);
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public int getNativeType() {
         return 2;
     }

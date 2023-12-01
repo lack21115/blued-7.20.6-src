@@ -7,14 +7,14 @@ import java.util.Map;
 public class g<K, V> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<K, V> f39432a = new HashMap();
+    private Map<K, V> f25741a = new HashMap();
 
     public g<K, V> a(K k, V v) {
-        this.f39432a.put(k, v);
+        this.f25741a.put(k, v);
         return this;
     }
 
     public Map<K, V> a() {
-        return this.f39432a;
+        return this.f25741a;
     }
 }

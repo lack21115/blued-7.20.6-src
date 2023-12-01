@@ -36,7 +36,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.core.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/c/a$a.class */
-    public static final class C0516a {
+    public static final class C0346a {
         public static String Y(Context context) {
             File file = new File(getDataDir(context), "kwad_ex");
             if (!file.exists()) {
@@ -143,7 +143,7 @@ public final class a {
 
     private static com.kwad.sdk.crash.c mu() {
         final Context context = ServiceProvider.getContext();
-        return new c.a().bm(context).bf(d.b(com.kwad.sdk.core.config.c.acS)).bg(d.b(com.kwad.sdk.core.config.c.acT)).bh(KsAdSDKImpl.get().getIsExternal()).dr(d.a(com.kwad.sdk.core.config.c.acU)).dq(d.a(com.kwad.sdk.core.config.c.acV)).dx(ExceptionMessage.getSdkCrashVersionName(KsAdSDKImpl.get().getSDKVersion(), 1)).bF(KsAdSDKImpl.get().getSDKVersionCode()).dy(ExceptionMessage.getSdkCrashVersionName(KsAdSDKImpl.get().getApiVersion(), 1)).bG(KsAdSDKImpl.get().getApiVersionCode()).bH(1).dw("com.kwad.sdk").dz(context.getPackageName()).dA(ServiceProvider.CB().appId).dB(ServiceProvider.CB().appName).dC(k.bH(context)).dt(au.getDeviceId()).du(ServiceProvider.CB().appId).ds("Android").dv(C0516a.Y(context)).a(new h() { // from class: com.kwad.components.core.c.a.4
+        return new c.a().bm(context).bf(d.b(com.kwad.sdk.core.config.c.acS)).bg(d.b(com.kwad.sdk.core.config.c.acT)).bh(KsAdSDKImpl.get().getIsExternal()).dr(d.a(com.kwad.sdk.core.config.c.acU)).dq(d.a(com.kwad.sdk.core.config.c.acV)).dx(ExceptionMessage.getSdkCrashVersionName(KsAdSDKImpl.get().getSDKVersion(), 1)).bF(KsAdSDKImpl.get().getSDKVersionCode()).dy(ExceptionMessage.getSdkCrashVersionName(KsAdSDKImpl.get().getApiVersion(), 1)).bG(KsAdSDKImpl.get().getApiVersionCode()).bH(1).dw("com.kwad.sdk").dz(context.getPackageName()).dA(ServiceProvider.CB().appId).dB(ServiceProvider.CB().appName).dC(k.bH(context)).dt(au.getDeviceId()).du(ServiceProvider.CB().appId).ds("Android").dv(C0346a.Y(context)).a(new h() { // from class: com.kwad.components.core.c.a.4
             @Override // com.kwad.sdk.crash.h
             public final com.kwad.sdk.crash.model.message.a mA() {
                 com.kwad.sdk.crash.model.message.a aVar = new com.kwad.sdk.crash.model.message.a();

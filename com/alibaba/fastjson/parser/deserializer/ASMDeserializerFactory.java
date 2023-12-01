@@ -1,6 +1,5 @@
 package com.alibaba.fastjson.parser.deserializer;
 
-import android.net.wifi.WifiEnterpriseConfig;
 import com.alibaba.fastjson.asm.ClassWriter;
 import com.alibaba.fastjson.asm.FieldWriter;
 import com.alibaba.fastjson.asm.Label;
@@ -21,6 +20,7 @@ import com.alibaba.fastjson.util.ASMUtils;
 import com.alibaba.fastjson.util.FieldInfo;
 import com.alibaba.fastjson.util.JavaBeanInfo;
 import com.alibaba.fastjson.util.TypeUtils;
+import com.alipay.sdk.util.i;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -183,7 +183,7 @@ public class ASMDeserializerFactory implements Opcodes {
         Label label3 = new Label();
         methodVisitor.visitVarInsn(25, context.var("lexer"));
         methodVisitor.visitMethodInsn(182, JSONLexerBase, "token", "()I");
-        methodVisitor.visitFieldInsn(178, JSONToken, WifiEnterpriseConfig.EMPTY_VALUE, "I");
+        methodVisitor.visitFieldInsn(178, JSONToken, "NULL", "I");
         methodVisitor.visitJumpInsn(160, label3);
         methodVisitor.visitVarInsn(25, context.var("lexer"));
         methodVisitor.visitFieldInsn(178, JSONToken, "COMMA", "I");
@@ -943,7 +943,7 @@ public class ASMDeserializerFactory implements Opcodes {
                     methodWriter.visitLdcInsn(Type.getType(ASMUtils.desc(collectionItemClass)));
                     methodWriter.visitVarInsn(25, 3);
                     String type2 = ASMUtils.type(ASMUtils.class);
-                    methodWriter.visitMethodInsn(184, type2, "parseArray", "(Ljava/util/Collection;" + ASMUtils.desc(ObjectDeserializer.class) + "L" + DefaultJSONParser + ";Ljava/lang/reflect/Type;Ljava/lang/Object;)V");
+                    methodWriter.visitMethodInsn(184, type2, "parseArray", "(Ljava/util/Collection;" + ASMUtils.desc(ObjectDeserializer.class) + "L" + DefaultJSONParser + i.b + "Ljava/lang/reflect/Type;Ljava/lang/Object;)V");
                 }
             } else if (cls.isArray()) {
                 methodWriter.visitVarInsn(25, context.var("lexer"));

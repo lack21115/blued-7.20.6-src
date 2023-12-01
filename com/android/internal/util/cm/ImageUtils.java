@@ -13,6 +13,7 @@ import android.provider.ThemesContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.URLUtil;
+import com.anythink.core.common.c.d;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -218,9 +219,9 @@ public class ImageUtils {
         try {
             try {
                 Context createPackageContext = context.createPackageContext(str, 2);
-                if (query.getInt(query.getColumnIndex(ThemesContract.ThemesColumns.IS_LEGACY_THEME)) == 1) {
+                if (query.getInt(query.getColumnIndex("is_legacy_theme")) == 1) {
                 }
-                String string = query.getString(query.getColumnIndex(ThemesContract.ThemesColumns.WALLPAPER_URI));
+                String string = query.getString(query.getColumnIndex("wallpaper_uri"));
                 if (string != null) {
                     inputStreamFromAsset = URLUtil.isAssetUrl(string) ? ThemeUtils.getInputStreamFromAsset(createPackageContext, string) : context.getContentResolver().openInputStream(Uri.parse(string));
                 } else {
@@ -251,14 +252,14 @@ public class ImageUtils {
     }
 
     private static String queryWpPathFromComponentId(Context context, String str, long j) {
-        Cursor query = context.getContentResolver().query(ThemesContract.PreviewColumns.COMPONENTS_URI, new String[]{"value"}, "pkg_name=? AND component_id=? AND key=?", new String[]{str, Long.toString(j), ThemesContract.PreviewColumns.WALLPAPER_FULL}, null);
+        Cursor query = context.getContentResolver().query(ThemesContract.PreviewColumns.COMPONENTS_URI, new String[]{d.a.d}, "pkg_name=? AND component_id=? AND key=?", new String[]{str, Long.toString(j), "wallpaper_full"}, null);
         String str2 = null;
         if (query != null) {
             str2 = null;
             try {
                 try {
                     if (query.moveToFirst()) {
-                        str2 = query.getString(query.getColumnIndex("value"));
+                        str2 = query.getString(query.getColumnIndex(d.a.d));
                     }
                 } catch (Exception e) {
                     Log.e(TAG, "Could not get wallpaper path", e);

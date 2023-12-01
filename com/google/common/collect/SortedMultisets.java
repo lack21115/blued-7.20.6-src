@@ -31,12 +31,12 @@ final class SortedMultisets {
             return (E) SortedMultisets.getElementOrThrow(multiset().firstEntry());
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> headSet(E e) {
             return multiset().headMultiset(e, BoundType.OPEN).elementSet();
         }
 
-        @Override // com.google.common.collect.Multisets.ElementSet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.Multisets.ElementSet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<E> iterator() {
             return Multisets.elementIterator(multiset().entrySet().iterator());
         }
@@ -52,12 +52,12 @@ final class SortedMultisets {
             return this.multiset;
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> subSet(E e, E e2) {
             return multiset().subMultiset(e, BoundType.CLOSED, e2, BoundType.OPEN).elementSet();
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> tailSet(E e) {
             return multiset().tailMultiset(e, BoundType.CLOSED).elementSet();
         }

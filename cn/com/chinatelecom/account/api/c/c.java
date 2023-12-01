@@ -14,11 +14,11 @@ import java.net.InetAddress;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4109a = c.class.getSimpleName();
+    private static final String f4061a = c.class.getSimpleName();
     private static Handler b = new Handler(Looper.getMainLooper());
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f4110c;
+    private boolean f4062c;
     private Context d;
     private ConnectivityManager.NetworkCallback e;
 
@@ -31,7 +31,7 @@ public class c {
             byte[] address = InetAddress.getByName(str).getAddress();
             return (address[0] & 255) | ((address[3] & 255) << 24) | ((address[2] & 255) << 16) | ((address[1] & 255) << 8);
         } catch (Throwable th) {
-            CtAuth.warn(f4109a, "When InetAddress.getByName(),throws exception", th);
+            CtAuth.warn(f4061a, "When InetAddress.getByName(),throws exception", th);
             return -1;
         }
     }
@@ -91,11 +91,11 @@ public class c {
                 }
             }
             boolean booleanValue = ((Boolean) cls.getMethod("requestRouteToHost", Integer.TYPE, Integer.TYPE).invoke(connectivityManager, 5, Integer.valueOf(a(b(str))))).booleanValue();
-            String str2 = f4109a;
+            String str2 = f4061a;
             CtAuth.info(str2, "STMN_V4 ：" + booleanValue);
             return booleanValue ? 0 : -2;
         } catch (Throwable th) {
-            CtAuth.warn(f4109a, "STMN_V4_T", th);
+            CtAuth.warn(f4061a, "STMN_V4_T", th);
             return -1;
         }
     }
@@ -103,7 +103,7 @@ public class c {
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
         synchronized (this) {
-            this.f4110c = true;
+            this.f4062c = true;
         }
     }
 
@@ -111,7 +111,7 @@ public class c {
     public boolean d() {
         boolean z;
         synchronized (this) {
-            z = this.f4110c;
+            z = this.f4062c;
         }
         return z;
     }

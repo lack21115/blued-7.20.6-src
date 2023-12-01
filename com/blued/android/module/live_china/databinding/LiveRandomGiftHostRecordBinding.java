@@ -12,20 +12,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveRandomGiftHostRecordBinding.class */
 public final class LiveRandomGiftHostRecordBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f12394a;
+    public final LinearLayout a;
     public final RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f12395c;
+    public final RecyclerView c;
     private final FrameLayout d;
 
     private LiveRandomGiftHostRecordBinding(FrameLayout frameLayout, LinearLayout linearLayout, RelativeLayout relativeLayout, RecyclerView recyclerView) {
         this.d = frameLayout;
-        this.f12394a = linearLayout;
+        this.a = linearLayout;
         this.b = relativeLayout;
-        this.f12395c = recyclerView;
+        this.c = recyclerView;
     }
 
     public static LiveRandomGiftHostRecordBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -42,9 +38,9 @@ public final class LiveRandomGiftHostRecordBinding implements ViewBinding {
         if (linearLayout != null) {
             RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_empty);
             if (relativeLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
-                    return new LiveRandomGiftHostRecordBinding((FrameLayout) view, linearLayout, relativeLayout, recyclerView);
+                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                if (findViewById != null) {
+                    return new LiveRandomGiftHostRecordBinding((FrameLayout) view, linearLayout, relativeLayout, findViewById);
                 }
                 str = "rvList";
             } else {
@@ -56,7 +52,6 @@ public final class LiveRandomGiftHostRecordBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

@@ -16,23 +16,21 @@ import com.blued.android.module.yy_china.utils.PopupwindowFactory;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYPopupWindow.class */
 public class YYPopupWindow extends PopupWindow {
-
-    /* renamed from: a  reason: collision with root package name */
-    private PopupwindowFactory.Builder f18379a;
+    private PopupwindowFactory.Builder a;
     private View b;
 
     public YYPopupWindow(Context context, PopupwindowFactory.Builder builder) {
         super(context);
-        this.f18379a = builder;
+        this.a = builder;
         a();
     }
 
     private void a() {
-        setContentView(this.f18379a.c());
-        setWidth(this.f18379a.a());
-        setHeight(this.f18379a.b());
+        setContentView(this.a.c());
+        setWidth(this.a.a());
+        setHeight(this.a.b());
         setBackgroundDrawable(new ColorDrawable(0));
-        if (this.f18379a.f()) {
+        if (this.a.f()) {
             setOutsideTouchable(true);
             setFocusable(true);
             return;
@@ -57,10 +55,10 @@ public class YYPopupWindow extends PopupWindow {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 int x = (int) motionEvent.getX();
                 int y = (int) motionEvent.getY();
-                if (motionEvent.getAction() != 0 || (x >= 0 && x < YYPopupWindow.this.f18379a.c().getMeasuredWidth() && y >= 0 && y < YYPopupWindow.this.f18379a.c().getMeasuredHeight())) {
+                if (motionEvent.getAction() != 0 || (x >= 0 && x < YYPopupWindow.this.a.c().getMeasuredWidth() && y >= 0 && y < YYPopupWindow.this.a.c().getMeasuredHeight())) {
                     return motionEvent.getAction() == 4;
                 }
-                LogUtils.d("YYPopupWindow", "pop width: " + YYPopupWindow.this.f18379a.c().getMeasuredWidth() + "; height: " + YYPopupWindow.this.f18379a.c().getMeasuredHeight());
+                LogUtils.d("YYPopupWindow", "pop width: " + YYPopupWindow.this.a.c().getMeasuredWidth() + "; height: " + YYPopupWindow.this.a.c().getMeasuredHeight());
                 return true;
             }
         });
@@ -69,13 +67,13 @@ public class YYPopupWindow extends PopupWindow {
     private void a(float f) {
         Logger.e("YYPopupWindow", "backgroundAlpha ... bgAlpha = " + f);
         if (this.b == null) {
-            Window window = ((Activity) this.f18379a.d()).getWindow();
-            View view = new View(this.f18379a.d());
+            Window window = ((Activity) this.a.d()).getWindow();
+            View view = new View(this.a.d());
             this.b = view;
             window.addContentView(view, new RelativeLayout.LayoutParams(-1, -1));
         }
         if (f < 1.0f) {
-            this.b.setBackgroundColor(this.f18379a.d().getResources().getColor(this.f18379a.e()));
+            this.b.setBackgroundColor(this.a.d().getResources().getColor(this.a.e()));
             return;
         }
         View view2 = this.b;
@@ -90,10 +88,10 @@ public class YYPopupWindow extends PopupWindow {
         super.dismiss();
         Logger.e("YYPopupWindow", "dismiss ... ");
         a(1.0f);
-        if (this.f18379a.g() != null) {
-            this.f18379a.g().b();
+        if (this.a.g() != null) {
+            this.a.g().b();
         }
-        PopupwindowFactory.Builder builder = this.f18379a;
+        PopupwindowFactory.Builder builder = this.a;
         if (builder != null) {
             builder.a((Context) null);
         }
@@ -102,8 +100,8 @@ public class YYPopupWindow extends PopupWindow {
     @Override // android.widget.PopupWindow
     public void showAsDropDown(View view, int i, int i2, int i3) {
         super.showAsDropDown(view, i, i2, i3);
-        if (this.f18379a.g() != null) {
-            this.f18379a.g().a();
+        if (this.a.g() != null) {
+            this.a.g().a();
         }
     }
 
@@ -112,8 +110,8 @@ public class YYPopupWindow extends PopupWindow {
         super.showAtLocation(view, i, i2, i3);
         Logger.e("YYPopupWindow", "showAtLocation ... ");
         a(0.3f);
-        if (this.f18379a.g() != null) {
-            this.f18379a.g().a();
+        if (this.a.g() != null) {
+            this.a.g().a();
         }
     }
 }

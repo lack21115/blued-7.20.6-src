@@ -76,11 +76,11 @@ public class CompareToBuilder implements Builder<Integer> {
         return this;
     }
 
-    public CompareToBuilder append(char c2, char c3) {
+    public CompareToBuilder append(char c, char c2) {
         if (this.comparison != 0) {
             return this;
         }
-        this.comparison = c2 < c3 ? -1 : c2 > c3 ? 1 : 0;
+        this.comparison = c < c2 ? -1 : c > c2 ? 1 : 0;
         return this;
     }
 

@@ -16,11 +16,11 @@ import java.util.Map;
 public class b extends com.meizu.cloud.pushsdk.handler.a.a<MessageV3> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24157a;
+    private Context f10542a;
 
     public b(Context context, com.meizu.cloud.pushsdk.handler.a aVar) {
         super(context, aVar);
-        this.f24157a = context;
+        this.f10542a = context;
     }
 
     private Intent b(Context context, MessageV3 messageV3) {
@@ -137,7 +137,7 @@ public class b extends com.meizu.cloud.pushsdk.handler.a.a<MessageV3> {
             c().a(d(), MzPushMessage.fromMessageV3(messageV3));
         }
         b(messageV3);
-        a(this.f24157a, messageV3);
+        a(this.f10542a, messageV3);
     }
 
     @Override // com.meizu.cloud.pushsdk.handler.c

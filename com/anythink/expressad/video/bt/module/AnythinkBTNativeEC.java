@@ -109,7 +109,7 @@ public class AnythinkBTNativeEC extends BTBaseView {
 
     private void a(View view) {
         if (view == null) {
-            init(this.f8335a);
+            init(this.f5495a);
             preLoadData();
             return;
         }
@@ -382,7 +382,7 @@ public class AnythinkBTNativeEC extends BTBaseView {
     public Bitmap blurBitmap(Bitmap bitmap) {
         try {
             Bitmap createBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
-            RenderScript create = RenderScript.create(this.f8335a.getApplicationContext());
+            RenderScript create = RenderScript.create(this.f5495a.getApplicationContext());
             ScriptIntrinsicBlur create2 = ScriptIntrinsicBlur.create(create, Element.U8_4(create));
             Allocation createFromBitmap = Allocation.createFromBitmap(create, bitmap);
             Allocation createFromBitmap2 = Allocation.createFromBitmap(create, createBitmap);
@@ -419,9 +419,8 @@ public class AnythinkBTNativeEC extends BTBaseView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.G == null) {
             this.G = new Runnable() { // from class: com.anythink.expressad.video.bt.module.AnythinkBTNativeEC.1
@@ -472,9 +471,8 @@ public class AnythinkBTNativeEC extends BTBaseView {
     public void onDestory() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         Runnable runnable = this.G;
         if (runnable != null) {
@@ -504,8 +502,8 @@ public class AnythinkBTNativeEC extends BTBaseView {
             if (this.e != null) {
                 this.F = this.e.p();
             }
-            b.a(this.f8335a.getApplicationContext()).a(this.b.be(), new e(this.v, this.b, this.J));
-            b.a(this.f8335a.getApplicationContext()).a(this.b.bd(), new com.anythink.expressad.video.module.a.a.j(this.w, t.b(com.anythink.expressad.foundation.b.a.b().d(), 8.0f)));
+            b.a(this.f5495a.getApplicationContext()).a(this.b.be(), new e(this.v, this.b, this.J));
+            b.a(this.f5495a.getApplicationContext()).a(this.b.bd(), new com.anythink.expressad.video.module.a.a.j(this.w, t.b(com.anythink.expressad.foundation.b.a.b().d(), 8.0f)));
             this.z.setText(this.b.bb());
             this.A.setText(this.b.bc());
             this.B.setText(this.b.aY() + ")");
@@ -527,7 +525,7 @@ public class AnythinkBTNativeEC extends BTBaseView {
             if (!TextUtils.isEmpty(this.b.I()) && this.b.I().contains("alecfc=1")) {
                 this.D = true;
             }
-            b.a(this.f8335a.getApplicationContext()).a(TextUtils.isEmpty(this.b.aE()) ? com.anythink.expressad.a.ab : this.b.aE(), new com.anythink.expressad.foundation.g.d.c() { // from class: com.anythink.expressad.video.bt.module.AnythinkBTNativeEC.2
+            b.a(this.f5495a.getApplicationContext()).a(TextUtils.isEmpty(this.b.aE()) ? com.anythink.expressad.a.ab : this.b.aE(), new com.anythink.expressad.foundation.g.d.c() { // from class: com.anythink.expressad.video.bt.module.AnythinkBTNativeEC.2
                 @Override // com.anythink.expressad.foundation.g.d.c
                 public final void a(Bitmap bitmap, String str) {
                     if (bitmap == null || bitmap.isRecycled()) {
@@ -535,7 +533,7 @@ public class AnythinkBTNativeEC extends BTBaseView {
                     }
                     try {
                         float width = (bitmap.getWidth() * 1.0f) / bitmap.getHeight();
-                        int b = t.b(AnythinkBTNativeEC.this.f8335a, 12.0f);
+                        int b = t.b(AnythinkBTNativeEC.this.f5495a, 12.0f);
                         int i = (int) (b * width);
                         AnythinkBTNativeEC.this.x.getLayoutParams().height = b;
                         AnythinkBTNativeEC.this.x.getLayoutParams().width = i;
@@ -561,7 +559,7 @@ public class AnythinkBTNativeEC extends BTBaseView {
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         Tracker.onClick(view);
-                        l.b(AnythinkBTNativeEC.this.f8335a, J);
+                        l.b(AnythinkBTNativeEC.this.f5495a, J);
                     }
                 });
             } else {

@@ -6,12 +6,12 @@ import android.content.Context;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f27474a = false;
+    private static boolean f13786a = false;
 
     public static void a(Context context) {
         synchronized (c.class) {
             try {
-                if (f27474a) {
+                if (f13786a) {
                     return;
                 }
                 Context applicationContext = context.getApplicationContext();
@@ -19,7 +19,7 @@ public class c {
                     f.a().a(applicationContext);
                     NativeCrashHandler.a().a(applicationContext);
                     h.a().a(applicationContext);
-                    f27474a = true;
+                    f13786a = true;
                 }
             } finally {
             }

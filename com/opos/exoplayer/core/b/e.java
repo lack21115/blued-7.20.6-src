@@ -6,11 +6,11 @@ import java.nio.ByteBuffer;
 public class e extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final b f25073a = new b();
+    public final b f11385a = new b();
     public ByteBuffer b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f25074c;
+    public long f11386c;
     private final int d;
 
     public e(int i) {

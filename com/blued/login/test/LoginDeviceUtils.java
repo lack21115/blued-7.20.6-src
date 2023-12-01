@@ -7,6 +7,7 @@ import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.Md5;
 import com.blued.android.framework.utils.AesCrypto;
 import com.blued.android.module.common.utils.CommonPreferences;
+import com.xiaomi.mipush.sdk.Constants;
 import java.lang.reflect.Method;
 import java.util.UUID;
 
@@ -18,7 +19,7 @@ public class LoginDeviceUtils {
             String a2 = CommonPreferences.a().a("uuid", (String) null);
             str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = UUID.randomUUID().toString().replaceAll("-", "");
+                str = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
                 CommonPreferences.a().c().a("uuid", str).a();
             }
         } else {
@@ -39,7 +40,7 @@ public class LoginDeviceUtils {
             String a2 = CommonPreferences.a().a("uuid", (String) null);
             str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = UUID.randomUUID().toString().replaceAll("-", "");
+                str = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
                 CommonPreferences.a().c().a("uuid", str).a();
             }
         } else if (Build.VERSION.SDK_INT < 21) {

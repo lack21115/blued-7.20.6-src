@@ -14,20 +14,16 @@ import org.json.JSONObject;
 public class p {
     private static volatile p d;
     Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f6560c;
-
-    /* renamed from: a  reason: collision with root package name */
-    final int f6559a = -100;
+    int c;
+    final int a = -100;
     private ConcurrentHashMap<Integer, Boolean> e = new ConcurrentHashMap<>(5);
 
     private p(Context context) {
-        this.f6560c = 2;
+        this.c = 2;
         if (context != null) {
             this.b = context.getApplicationContext();
         }
-        this.f6560c = com.anythink.core.common.k.p.b(this.b, g.o, g.o.d, 2);
+        this.c = com.anythink.core.common.k.p.b(this.b, g.o, g.o.d, 2);
     }
 
     public static p a(Context context) {
@@ -46,11 +42,11 @@ public class p {
     }
 
     public final int a() {
-        return this.f6560c;
+        return this.c;
     }
 
     public final void a(int i) {
-        this.f6560c = i;
+        this.c = i;
         com.anythink.core.common.k.p.a(this.b, g.o, g.o.d, i);
     }
 
@@ -128,13 +124,13 @@ public class p {
                 if (p.this.c(i)) {
                     return;
                 }
-                p a2 = p.a(n.a().g());
+                p a = p.a(n.a().g());
                 com.anythink.core.c.a b = com.anythink.core.c.b.a(n.a().g()).b(n.a().p());
-                if (a2.f6560c == 2 && b.U() == 1 && b.I() == 0) {
-                    com.anythink.core.common.j.c.a(1, a2.f6560c, b.U(), i);
+                if (a.c == 2 && b.U() == 1 && b.I() == 0) {
+                    com.anythink.core.common.j.c.a(1, a.c, b.U(), i);
                 }
-                if (a2.f6560c == 1 && b.S() == 0 && b.U() == 0) {
-                    com.anythink.core.common.j.c.a(2, a2.f6560c, b.U(), i);
+                if (a.c == 1 && b.S() == 0 && b.U() == 0) {
+                    com.anythink.core.common.j.c.a(2, a.c, b.U(), i);
                 }
                 p.this.e.put(Integer.valueOf(i), Boolean.TRUE);
             }
@@ -144,11 +140,11 @@ public class p {
     public final boolean b() {
         com.anythink.core.c.a b = com.anythink.core.c.b.a(this.b).b(n.a().p());
         if (b == null || b.G()) {
-            return this.f6560c != 1;
+            return this.c != 1;
         } else if (b.U() == 0) {
             return true;
         } else {
-            int i = this.f6560c;
+            int i = this.c;
             if (b.S() == 1) {
                 i = b.R();
             }
@@ -158,7 +154,7 @@ public class p {
 
     public final boolean c() {
         com.anythink.core.c.a b = com.anythink.core.c.b.a(this.b).b(n.a().p());
-        return (b == null || b.G()) ? this.f6560c != 1 : this.f6560c == 2 ? b.U() == 0 : b.S() == 1 ? b.R() == 0 : this.f6560c == 0 || b.U() == 0;
+        return (b == null || b.G()) ? this.c != 1 : this.c == 2 ? b.U() == 0 : b.S() == 1 ? b.R() == 0 : this.c == 0 || b.U() == 0;
     }
 
     public final boolean c(int i) {

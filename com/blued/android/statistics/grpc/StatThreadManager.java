@@ -11,13 +11,9 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/StatThreadManager.class */
 public class StatThreadManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Long f18703a = 10L;
+    private static final Long a = 10L;
     private static ThreadPoolExecutor b = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static ExecutorService f18704c = null;
+    private static ExecutorService c = null;
 
     public static void a() {
         int i;
@@ -36,7 +32,7 @@ public class StatThreadManager {
             i = 2;
             i2 = 4;
         }
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(i, i2, f18703a.longValue(), TimeUnit.SECONDS, new LinkedBlockingQueue(30), Executors.defaultThreadFactory(), new RejectedExecutionHandler() { // from class: com.blued.android.statistics.grpc.StatThreadManager.1
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(i, i2, a.longValue(), TimeUnit.SECONDS, new LinkedBlockingQueue(30), Executors.defaultThreadFactory(), new RejectedExecutionHandler() { // from class: com.blued.android.statistics.grpc.StatThreadManager.1
             @Override // java.util.concurrent.RejectedExecutionHandler
             public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor2) {
                 if (StatConfig.c()) {
@@ -60,17 +56,17 @@ public class StatThreadManager {
     }
 
     public static ExecutorService b() {
-        if (f18704c == null) {
+        if (c == null) {
             synchronized (ExecutorService.class) {
                 try {
-                    if (f18704c == null) {
-                        f18704c = Executors.newSingleThreadExecutor();
+                    if (c == null) {
+                        c = Executors.newSingleThreadExecutor();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f18704c;
+        return c;
     }
 }

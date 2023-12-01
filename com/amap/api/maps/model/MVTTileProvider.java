@@ -12,18 +12,16 @@ public final class MVTTileProvider implements TileProvider {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/MVTTileProvider$a.class */
     public final class a extends de {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f5527a;
+        String a;
 
         public a(String str) {
             this.isPostFlag = false;
-            this.f5527a = str;
+            this.a = str;
         }
 
         @Override // com.amap.api.col.p0003sl.kb
         public final String getURL() {
-            return this.f5527a;
+            return this.a;
         }
     }
 

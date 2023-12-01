@@ -14,13 +14,9 @@ import java.util.Map;
 public class FontAssetManager {
     private final AssetManager d;
     private FontAssetDelegate e;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutablePair<String> f4309a = new MutablePair<>();
+    private final MutablePair<String> a = new MutablePair<>();
     private final Map<MutablePair<String>, Typeface> b = new HashMap();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Map<String, Typeface> f4310c = new HashMap();
+    private final Map<String, Typeface> c = new HashMap();
     private String f = ".ttf";
 
     public FontAssetManager(Drawable.Callback callback, FontAssetDelegate fontAssetDelegate) {
@@ -41,7 +37,7 @@ public class FontAssetManager {
     }
 
     private Typeface a(String str) {
-        Typeface typeface = this.f4310c.get(str);
+        Typeface typeface = this.c.get(str);
         if (typeface != null) {
             return typeface;
         }
@@ -66,19 +62,19 @@ public class FontAssetManager {
         if (typeface3 == null) {
             typeface4 = Typeface.createFromAsset(this.d, "fonts/" + str + this.f);
         }
-        this.f4310c.put(str, typeface4);
+        this.c.put(str, typeface4);
         return typeface4;
     }
 
     public Typeface a(String str, String str2) {
-        this.f4309a.a(str, str2);
-        Typeface typeface = this.b.get(this.f4309a);
+        this.a.a(str, str2);
+        Typeface typeface = this.b.get(this.a);
         if (typeface != null) {
             return typeface;
         }
-        Typeface a2 = a(a(str), str2);
-        this.b.put(this.f4309a, a2);
-        return a2;
+        Typeface a = a(a(str), str2);
+        this.b.put(this.a, a);
+        return a;
     }
 
     public void a(FontAssetDelegate fontAssetDelegate) {

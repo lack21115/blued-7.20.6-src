@@ -14,11 +14,11 @@ import org.json.JSONObject;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7832a = "native";
+    public static final String f4992a = "native";
     public static final String b = "reward";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7833c = "interactive";
+    public static final String f4993c = "interactive";
     public static final String d = "interstitial";
     public static final String e = "banner";
     public static final String f = "splash";
@@ -166,7 +166,7 @@ public class f {
                 z = true;
                 break;
             case -1052618729:
-                if (str.equals(f7832a)) {
+                if (str.equals(f4992a)) {
                     z = false;
                     break;
                 }
@@ -201,7 +201,7 @@ public class f {
                 z = true;
                 break;
             case 1844104930:
-                if (str.equals(f7833c)) {
+                if (str.equals(f4993c)) {
                     z = true;
                     break;
                 }

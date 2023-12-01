@@ -192,9 +192,8 @@ public final class Suppliers {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/base/Suppliers$SupplierOfInstance.class */
-    public static class SupplierOfInstance<T> implements Supplier<T>, Serializable {
+    static class SupplierOfInstance<T> implements Supplier<T>, Serializable {
         private static final long serialVersionUID = 0;
         @NullableDecl
         final T instance;

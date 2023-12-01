@@ -9,7 +9,7 @@ public final class l {
     private static l b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f37243a;
+    private Context f23552a;
 
     private l() {
     }
@@ -22,12 +22,12 @@ public final class l {
     }
 
     public static Context b() {
-        return a().f37243a;
+        return a().f23552a;
     }
 
     public static boolean c() {
         try {
-            NetworkInfo activeNetworkInfo = ((ConnectivityManager) a().f37243a.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+            NetworkInfo activeNetworkInfo = ((ConnectivityManager) a().f23552a.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
             if (activeNetworkInfo != null) {
                 return activeNetworkInfo.getType() == 1;
             }
@@ -39,7 +39,7 @@ public final class l {
 
     public static boolean d() {
         try {
-            NetworkInfo activeNetworkInfo = ((ConnectivityManager) a().f37243a.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+            NetworkInfo activeNetworkInfo = ((ConnectivityManager) a().f23552a.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
             if (activeNetworkInfo != null) {
                 return activeNetworkInfo.isAvailable();
             }
@@ -50,8 +50,8 @@ public final class l {
     }
 
     public final void a(Context context) {
-        if (this.f37243a == null) {
-            this.f37243a = context.getApplicationContext();
+        if (this.f23552a == null) {
+            this.f23552a = context.getApplicationContext();
         }
     }
 }

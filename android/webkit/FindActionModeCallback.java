@@ -58,12 +58,12 @@ public class FindActionModeCallback implements ActionMode.Callback, TextWatcher,
 
     public FindActionModeCallback(Context context) {
         this.mCustomView = LayoutInflater.from(context).inflate(R.layout.webview_find, (ViewGroup) null);
-        this.mEditText = (EditText) this.mCustomView.findViewById(16908291);
+        this.mEditText = (EditText) this.mCustomView.findViewById(R.id.edit);
         this.mEditText.setCustomSelectionActionModeCallback(new NoAction());
         this.mEditText.setOnClickListener(this);
         setText("");
         this.mMatches = (TextView) this.mCustomView.findViewById(R.id.matches);
-        this.mInput = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        this.mInput = (InputMethodManager) context.getSystemService("input_method");
         this.mResources = context.getResources();
     }
 

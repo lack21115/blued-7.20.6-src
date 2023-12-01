@@ -25,12 +25,8 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/TrimNewBottomView.class */
 public class TrimNewBottomView extends RelativeLayout implements View.OnClickListener {
     private static final String b = TrimNewBottomView.class.getSimpleName() + " ";
-
-    /* renamed from: a  reason: collision with root package name */
-    SeekBar.OnSeekBarChangeListener f15920a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TrimSeekBar f15921c;
+    SeekBar.OnSeekBarChangeListener a;
+    private TrimSeekBar c;
     private TextView d;
     private TextView e;
     private LinearLayout f;
@@ -50,7 +46,7 @@ public class TrimNewBottomView extends RelativeLayout implements View.OnClickLis
 
     public TrimNewBottomView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15920a = new SeekBar.OnSeekBarChangeListener() { // from class: com.blued.android.module.shortvideo.view.TrimNewBottomView.2
+        this.a = new SeekBar.OnSeekBarChangeListener() { // from class: com.blued.android.module.shortvideo.view.TrimNewBottomView.2
             @Override // android.widget.SeekBar.OnSeekBarChangeListener
             public void onProgressChanged(SeekBar seekBar, int i2, boolean z) {
                 if (z) {
@@ -85,13 +81,13 @@ public class TrimNewBottomView extends RelativeLayout implements View.OnClickLis
     }
 
     private void b(int i) {
-        this.f15921c.clearAnimation();
+        this.c.clearAnimation();
         ValueAnimator valueAnimator = this.i;
         if (valueAnimator != null && valueAnimator.isRunning()) {
             this.i.cancel();
         }
-        if (this.f15921c.getVisibility() == 8) {
-            this.f15921c.setVisibility(0);
+        if (this.c.getVisibility() == 8) {
+            this.c.setVisibility(0);
         }
         final int leftProgress = (int) this.j.getLeftProgress();
         final int rightProgress = (int) this.j.getRightProgress();
@@ -99,10 +95,10 @@ public class TrimNewBottomView extends RelativeLayout implements View.OnClickLis
         if (i == 0) {
             i2 = leftProgress;
         }
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.f15921c.getLayoutParams();
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c.getLayoutParams();
         layoutParams.leftMargin = TrimViewUtils.a(this.j);
         layoutParams.width = TrimViewUtils.b(this.j);
-        this.f15921c.setLayoutParams(layoutParams);
+        this.c.setLayoutParams(layoutParams);
         if (leftProgress != rightProgress) {
             StvLogUtils.a(b + "IconStart:" + leftProgress + " | IconEnd:" + rightProgress, new Object[0]);
             StringBuilder sb = new StringBuilder();
@@ -117,7 +113,7 @@ public class TrimNewBottomView extends RelativeLayout implements View.OnClickLis
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator2) {
                     float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                    TrimNewBottomView.this.f15921c.setProgress((int) ((floatValue / (rightProgress - leftProgress)) * 1000.0f));
+                    TrimNewBottomView.this.c.setProgress((int) ((floatValue / (rightProgress - leftProgress)) * 1000.0f));
                     if (floatValue >= rightProgress - leftProgress) {
                         TrimNewBottomView.this.k.i_((int) TrimNewBottomView.this.j.getLeftProgress());
                     }
@@ -177,9 +173,9 @@ public class TrimNewBottomView extends RelativeLayout implements View.OnClickLis
         this.g.setNotifyWhileDragging(true);
         a(this.j.getRightProgress() - this.j.getLeftProgress());
         TrimSeekBar trimSeekBar = (TrimSeekBar) findViewById(R.id.seekbar_position_icon);
-        this.f15921c = trimSeekBar;
+        this.c = trimSeekBar;
         trimSeekBar.setMax(1000);
-        this.f15921c.setOnSeekBarChangeListener(this.f15920a);
+        this.c.setOnSeekBarChangeListener(this.a);
         this.h.a(this.j.getVideoPath(), this.j.getDurationMs(), this.j.getSingleRangeWidth(), DensityUtils.a(getContext(), 54.0f), this.j.getMarginSize(), this.j.getThumbnailsCount());
     }
 

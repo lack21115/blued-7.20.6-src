@@ -23,24 +23,24 @@ public final class CommentFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25531a;
+    public final String f11843a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f25532c;
+    public final String f11844c;
 
     CommentFrame(Parcel parcel) {
-        super(e.f7350a);
-        this.f25531a = parcel.readString();
+        super(e.f4511a);
+        this.f11843a = parcel.readString();
         this.b = parcel.readString();
-        this.f25532c = parcel.readString();
+        this.f11844c = parcel.readString();
     }
 
     public CommentFrame(String str, String str2, String str3) {
-        super(e.f7350a);
-        this.f25531a = str;
+        super(e.f4511a);
+        this.f11843a = str;
         this.b = str2;
-        this.f25532c = str3;
+        this.f11844c = str3;
     }
 
     public boolean equals(Object obj) {
@@ -55,8 +55,8 @@ public final class CommentFrame extends Id3Frame {
                 z = false;
                 if (u.a(this.b, commentFrame.b)) {
                     z = false;
-                    if (u.a(this.f25531a, commentFrame.f25531a)) {
-                        if (!u.a(this.f25532c, commentFrame.f25532c)) {
+                    if (u.a(this.f11843a, commentFrame.f11843a)) {
+                        if (!u.a(this.f11844c, commentFrame.f11844c)) {
                             return false;
                         }
                     }
@@ -69,12 +69,12 @@ public final class CommentFrame extends Id3Frame {
     }
 
     public int hashCode() {
-        String str = this.f25531a;
+        String str = this.f11843a;
         int i = 0;
         int hashCode = str != null ? str.hashCode() : 0;
         String str2 = this.b;
         int hashCode2 = str2 != null ? str2.hashCode() : 0;
-        String str3 = this.f25532c;
+        String str3 = this.f11844c;
         if (str3 != null) {
             i = str3.hashCode();
         }
@@ -84,7 +84,7 @@ public final class CommentFrame extends Id3Frame {
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.f);
-        parcel.writeString(this.f25531a);
-        parcel.writeString(this.f25532c);
+        parcel.writeString(this.f11843a);
+        parcel.writeString(this.f11844c);
     }
 }

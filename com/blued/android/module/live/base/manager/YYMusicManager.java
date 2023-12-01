@@ -48,9 +48,7 @@ public final class YYMusicManager {
     private final String H;
     private final String I;
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f11419c;
+    private final String c;
     private final String d;
     private final String e;
     private final String f;
@@ -74,9 +72,7 @@ public final class YYMusicManager {
     private String x;
     private LiveMusicModel y;
     private YYKtvMusicModel z;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f11418a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final int K = -1;
     private static final int L = -2;
 
@@ -99,16 +95,14 @@ public final class YYMusicManager {
         }
 
         public final YYMusicManager c() {
-            return InstanceHelper.f11420a.a();
+            return InstanceHelper.a.a();
         }
     }
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/manager/YYMusicManager$InstanceHelper.class */
     public static final class InstanceHelper {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final InstanceHelper f11420a = new InstanceHelper();
+        public static final InstanceHelper a = new InstanceHelper();
         private static final YYMusicManager b = new YYMusicManager(null);
 
         private InstanceHelper() {
@@ -137,8 +131,8 @@ public final class YYMusicManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(int i, int i2, int i3) {
-        for (String str : this.D.keySet()) {
-            ISongScoreListener iSongScoreListener = this.D.get(str);
+        for (Object obj : this.D.keySet()) {
+            ISongScoreListener iSongScoreListener = (ISongScoreListener) this.D.get(obj);
             if (iSongScoreListener != null) {
                 iSongScoreListener.a(i, i2, i3);
             }
@@ -187,8 +181,8 @@ public final class YYMusicManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(YYUserSongScoreNoteItem yYUserSongScoreNoteItem) {
-        for (String str : this.D.keySet()) {
-            ISongScoreListener iSongScoreListener = this.D.get(str);
+        for (Object obj : this.D.keySet()) {
+            ISongScoreListener iSongScoreListener = (ISongScoreListener) this.D.get(obj);
             if (iSongScoreListener != null) {
                 iSongScoreListener.a(yYUserSongScoreNoteItem);
             }
@@ -196,8 +190,8 @@ public final class YYMusicManager {
     }
 
     private final void a(String str, ITXCMMusicTrack iTXCMMusicTrack, String str2, String str3) {
-        for (String str4 : this.C.keySet()) {
-            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = this.C.get(str4);
+        for (Object obj : this.C.keySet()) {
+            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = (MusicPlayMusicInfoCallback) this.C.get(obj);
             if (musicPlayMusicInfoCallback != null) {
                 musicPlayMusicInfoCallback.a(str, iTXCMMusicTrack, str2, str3);
             }
@@ -206,8 +200,8 @@ public final class YYMusicManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(String str, String str2, float f) {
-        for (String str3 : this.C.keySet()) {
-            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = this.C.get(str3);
+        for (Object obj : this.C.keySet()) {
+            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = (MusicPlayMusicInfoCallback) this.C.get(obj);
             if (musicPlayMusicInfoCallback != null) {
                 musicPlayMusicInfoCallback.a(str, str2, f);
             }
@@ -216,8 +210,8 @@ public final class YYMusicManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(String str, String str2, int i, String str3) {
-        for (String str4 : this.C.keySet()) {
-            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = this.C.get(str4);
+        for (Object obj : this.C.keySet()) {
+            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = (MusicPlayMusicInfoCallback) this.C.get(obj);
             if (musicPlayMusicInfoCallback != null) {
                 musicPlayMusicInfoCallback.a(str, str2, i, str3);
             }
@@ -226,8 +220,8 @@ public final class YYMusicManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(ArrayList<YYTXSongScoreNoteItem> arrayList) {
-        for (String str : this.D.keySet()) {
-            ISongScoreListener iSongScoreListener = this.D.get(str);
+        for (Object obj : this.D.keySet()) {
+            ISongScoreListener iSongScoreListener = (ISongScoreListener) this.D.get(obj);
             if (iSongScoreListener != null) {
                 iSongScoreListener.a(arrayList);
             }
@@ -236,8 +230,8 @@ public final class YYMusicManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void b(int i) {
-        for (String str : this.D.keySet()) {
-            ISongScoreListener iSongScoreListener = this.D.get(str);
+        for (Object obj : this.D.keySet()) {
+            ISongScoreListener iSongScoreListener = (ISongScoreListener) this.D.get(obj);
             if (iSongScoreListener != null) {
                 iSongScoreListener.a(i);
             }
@@ -246,8 +240,8 @@ public final class YYMusicManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void b(String str, String str2) {
-        for (String str3 : this.C.keySet()) {
-            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = this.C.get(str3);
+        for (Object obj : this.C.keySet()) {
+            MusicPlayMusicInfoCallback musicPlayMusicInfoCallback = (MusicPlayMusicInfoCallback) this.C.get(obj);
             if (musicPlayMusicInfoCallback != null) {
                 musicPlayMusicInfoCallback.a(str, str2);
             }
@@ -296,7 +290,7 @@ public final class YYMusicManager {
     }
 
     private final String u() {
-        return BluedHttpUrl.h() ? this.e : this.f11419c;
+        return BluedHttpUrl.h() ? this.e : this.c;
     }
 
     public final int a(int i) {
@@ -373,7 +367,7 @@ public final class YYMusicManager {
             if (iTXSongScore == null) {
                 return;
             }
-            iTXSongScore.process(trtcAudioFrameModel.f11445a, trtcAudioFrameModel.f11445a.length, (float) (j - j2));
+            iTXSongScore.process(trtcAudioFrameModel.a, trtcAudioFrameModel.a.length, (float) (j - j2));
         }
     }
 
@@ -406,7 +400,6 @@ public final class YYMusicManager {
         ITXCMMusicTrack iTXCMMusicTrack = this.q;
         if (iTXCMMusicTrack != null) {
             iTXCMMusicTrack.setOnPreparedListener(new ITXCMMusicTrack.OnPreparedListener() { // from class: com.blued.android.module.live.base.manager.-$$Lambda$YYMusicManager$ZkVVD4unpSS3dupYRTunFjGa1Fo
-                @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack.OnPreparedListener
                 public final void onPrepared() {
                     YYMusicManager.a(YYMusicManager.this, str);
                 }
@@ -415,7 +408,6 @@ public final class YYMusicManager {
         ITXCMMusicTrack iTXCMMusicTrack2 = this.q;
         if (iTXCMMusicTrack2 != null) {
             iTXCMMusicTrack2.setOnErrorListener(new ITXCMMusicTrack.OnErrorListener() { // from class: com.blued.android.module.live.base.manager.-$$Lambda$YYMusicManager$YQrYcCqmEpF1741wgZKMbrJ8HIU
-                @Override // com.tencent.txcopyrightedmedia.ITXCMMusicTrack.OnErrorListener
                 public final void onError(int i, String str3) {
                     YYMusicManager.a(YYMusicManager.this, i, str3);
                 }
@@ -472,7 +464,6 @@ public final class YYMusicManager {
             this.r = createSongScore;
             if (createSongScore != null) {
                 createSongScore.setSongScoreCallback(new ITXSongScoreCallback() { // from class: com.blued.android.module.live.base.manager.YYMusicManager$startSongScore$1
-                    @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
                     public void onMIDIGroveAndHint(boolean z, float f, float f2, int i3) {
                         String str3;
                         str3 = YYMusicManager.this.j;
@@ -481,7 +472,6 @@ public final class YYMusicManager {
                         YYMusicManager.this.a(new YYUserSongScoreNoteItem(z, f, f2, i3));
                     }
 
-                    @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
                     public void onMIDISCoreUpdate(int i3, int i4, int i5) {
                         int i6;
                         String str3;
@@ -510,7 +500,6 @@ public final class YYMusicManager {
                         yYMusicManager2.a(i10, i8, i5);
                     }
 
-                    @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
                     public void onMIDIScoreError(int i3, String errMsg) {
                         String str3;
                         ITXSongScore iTXSongScore;
@@ -527,7 +516,6 @@ public final class YYMusicManager {
                         iTXSongScore.destroy();
                     }
 
-                    @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
                     public void onMIDIScoreFinish(int[] scoreArray, int i3) {
                         String str3;
                         ITXSongScore iTXSongScore;
@@ -558,7 +546,6 @@ public final class YYMusicManager {
                         iTXSongScore.destroy();
                     }
 
-                    @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
                     public void onMIDIScorePrepared() {
                         String str3;
                         ITXSongScore iTXSongScore;
@@ -576,8 +563,8 @@ public final class YYMusicManager {
                                 LogUtils.d(Intrinsics.a(str4, (Object) "a"), tXSongScoreNoteItem.toString());
                                 YYTXSongScoreNoteItem yYTXSongScoreNoteItem = new YYTXSongScoreNoteItem();
                                 yYTXSongScoreNoteItem.b = tXSongScoreNoteItem.duration;
-                                yYTXSongScoreNoteItem.f11447a = tXSongScoreNoteItem.startTime;
-                                yYTXSongScoreNoteItem.f11448c = tXSongScoreNoteItem.endTime;
+                                yYTXSongScoreNoteItem.a = tXSongScoreNoteItem.startTime;
+                                yYTXSongScoreNoteItem.c = tXSongScoreNoteItem.endTime;
                                 yYTXSongScoreNoteItem.d = tXSongScoreNoteItem.noteHeight;
                                 arrayList.add(yYTXSongScoreNoteItem);
                             }
@@ -610,11 +597,10 @@ public final class YYMusicManager {
 
     public final void a(String str, String str2, final boolean z) {
         ITXMusicPreloadCallback iTXMusicPreloadCallback = new ITXMusicPreloadCallback() { // from class: com.blued.android.module.live.base.manager.YYMusicManager$getMusicInfo$call$1
-            @Override // com.tencent.txcopyrightedmedia.ITXMusicPreloadCallback
             public void onPreloadComplete(String str3, String str4, int i, String str5) {
                 if (!z) {
                     YYMusicManager.this.a(str3, str4, i, str5);
-                } else if (i == YYMusicManager.f11418a.a()) {
+                } else if (i == YYMusicManager.a.a()) {
                     String str6 = str3;
                     if (TextUtils.equals(str6, str6)) {
                         YYMusicManager.this.a(str3, str4);
@@ -622,12 +608,10 @@ public final class YYMusicManager {
                 }
             }
 
-            @Override // com.tencent.txcopyrightedmedia.ITXMusicPreloadCallback
             public void onPreloadProgress(String str3, String str4, float f) {
                 YYMusicManager.this.a(str3, str4, f);
             }
 
-            @Override // com.tencent.txcopyrightedmedia.ITXMusicPreloadCallback
             public void onPreloadStart(String str3, String str4) {
                 YYMusicManager.this.b(str3, str4);
             }
@@ -653,11 +637,11 @@ public final class YYMusicManager {
         this.x = str;
         this.w = str2;
         if (!z) {
-            TXCopyrightedMedia.instance().setExtInfo(TXCopyrightedMedia.EXT_INFO_PLAY_SCENE, TXCopyrightedMedia.PLAY_SCENE_CHAT);
+            TXCopyrightedMedia.instance().setExtInfo("PlayScene", "Chat");
             return;
         }
-        TXCopyrightedMedia.instance().setExtInfo(TXCopyrightedMedia.EXT_INFO_PLAY_SCENE, TXCopyrightedMedia.PLAY_SCENE_LIVE);
-        TXCopyrightedMedia.instance().setExtInfo(TXCopyrightedMedia.EXT_INFO_ROOM_ID, e());
+        TXCopyrightedMedia.instance().setExtInfo("PlayScene", "Live");
+        TXCopyrightedMedia.instance().setExtInfo("RoomId", e());
     }
 
     public final YYKtvMusicModel b() {

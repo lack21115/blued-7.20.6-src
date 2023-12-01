@@ -1,7 +1,5 @@
 package com.alibaba.fastjson.util;
 
-import android.net.wifi.WifiEnterpriseConfig;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
@@ -14,10 +12,7 @@ import com.alibaba.fastjson.parser.deserializer.ASMJavaBeanDeserializer;
 import com.alibaba.fastjson.parser.deserializer.JavaBeanDeserializer;
 import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.igexin.push.core.b;
-import com.sobot.network.http.model.SobotProgress;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
+import com.alipay.sdk.util.i;
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -81,12 +76,12 @@ public class TypeUtils {
 
     private static void addBaseClassMappings() {
         mappings.put("byte", Byte.TYPE);
-        mappings.put(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT, Short.TYPE);
-        mappings.put(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL, Integer.TYPE);
+        mappings.put("short", Short.TYPE);
+        mappings.put("int", Integer.TYPE);
         mappings.put("long", Long.TYPE);
-        mappings.put(TypedValues.Custom.S_FLOAT, Float.TYPE);
+        mappings.put("float", Float.TYPE);
         mappings.put("double", Double.TYPE);
-        mappings.put(TypedValues.Custom.S_BOOLEAN, Boolean.TYPE);
+        mappings.put("boolean", Boolean.TYPE);
         mappings.put("char", Character.TYPE);
         mappings.put("[byte", byte[].class);
         mappings.put("[short", short[].class);
@@ -191,7 +186,7 @@ public class TypeUtils {
             }
             if (obj instanceof String) {
                 String str = (String) obj;
-                if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+                if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
                     return null;
                 }
                 if (cls == Currency.class) {
@@ -249,7 +244,7 @@ public class TypeUtils {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+            if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
                 return null;
             }
         }
@@ -290,8 +285,8 @@ public class TypeUtils {
         BigInteger bigInteger = null;
         if (obj2.length() != 0) {
             bigInteger = null;
-            if (!b.l.equals(obj2)) {
-                if (WifiEnterpriseConfig.EMPTY_VALUE.equals(obj2)) {
+            if (!"null".equals(obj2)) {
+                if ("NULL".equals(obj2)) {
                     return null;
                 }
                 bigInteger = new BigInteger(obj2);
@@ -316,7 +311,7 @@ public class TypeUtils {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+            if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
                 return null;
             }
             if ("true".equalsIgnoreCase(str) || "1".equals(str)) {
@@ -340,7 +335,7 @@ public class TypeUtils {
             throw new JSONException("can not cast to byte, value : " + obj);
         }
         String str = (String) obj;
-        if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+        if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
             return null;
         }
         return Byte.valueOf(Byte.parseByte(str));
@@ -458,7 +453,7 @@ public class TypeUtils {
             throw new JSONException("can not cast to double, value : " + obj);
         }
         String obj2 = obj.toString();
-        if (obj2.length() == 0 || b.l.equals(obj2) || WifiEnterpriseConfig.EMPTY_VALUE.equals(obj2)) {
+        if (obj2.length() == 0 || "null".equals(obj2) || "NULL".equals(obj2)) {
             return null;
         }
         String str = obj2;
@@ -501,7 +496,7 @@ public class TypeUtils {
             throw new JSONException("can not cast to float, value : " + obj);
         }
         String obj2 = obj.toString();
-        if (obj2.length() == 0 || b.l.equals(obj2) || WifiEnterpriseConfig.EMPTY_VALUE.equals(obj2)) {
+        if (obj2.length() == 0 || "null".equals(obj2) || "NULL".equals(obj2)) {
             return null;
         }
         String str = obj2;
@@ -527,7 +522,7 @@ public class TypeUtils {
             if (cls == StackTraceElement.class) {
                 String str = (String) map.get("className");
                 String str2 = (String) map.get("methodName");
-                String str3 = (String) map.get(SobotProgress.FILE_NAME);
+                String str3 = (String) map.get("fileName");
                 Number number = (Number) map.get("lineNumber");
                 if (number != null) {
                     i = number.intValue();
@@ -578,7 +573,7 @@ public class TypeUtils {
         }
         if (obj instanceof String) {
             String str = (String) obj;
-            if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+            if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
                 return null;
             }
             String str2 = str;
@@ -613,7 +608,7 @@ public class TypeUtils {
             throw new JSONException("can not cast to short, value : " + obj);
         }
         String str = (String) obj;
-        if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+        if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
             return null;
         }
         return Short.valueOf(Short.parseShort(str));
@@ -635,7 +630,7 @@ public class TypeUtils {
         long longValue = obj instanceof Number ? ((Number) obj).longValue() : 0L;
         if (obj instanceof String) {
             String str = (String) obj;
-            if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+            if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
                 return null;
             }
             longValue = Long.parseLong(str);
@@ -669,7 +664,7 @@ public class TypeUtils {
         long longValue = obj instanceof Number ? ((Number) obj).longValue() : 0L;
         if (obj instanceof String) {
             String str = (String) obj;
-            if (str.length() == 0 || b.l.equals(str) || WifiEnterpriseConfig.EMPTY_VALUE.equals(str)) {
+            if (str.length() == 0 || "null".equals(str) || "NULL".equals(str)) {
                 return null;
             }
             longValue = Long.parseLong(str);
@@ -928,7 +923,7 @@ public class TypeUtils {
         if (str.charAt(0) == '[') {
             return Array.newInstance(loadClass(str.substring(1), classLoader), 0).getClass();
         }
-        if (str.startsWith("L") && str.endsWith(";")) {
+        if (str.startsWith("L") && str.endsWith(i.b)) {
             return loadClass(str.substring(1, str.length() - 1), classLoader);
         }
         Class<?> cls3 = cls2;

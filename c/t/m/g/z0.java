@@ -10,10 +10,10 @@ import android.os.Bundle;
 public class z0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f4070a;
+    public Context f4022a;
 
     public z0(Context context) {
-        this.f4070a = context;
+        this.f4022a = context;
     }
 
     public String a() {
@@ -21,7 +21,7 @@ public class z0 {
         Uri parse = Uri.parse("content://cn.nubia.identity/identity");
         try {
             if (Build.VERSION.SDK_INT > 17) {
-                ContentProviderClient acquireContentProviderClient = this.f4070a.getContentResolver().acquireContentProviderClient(parse);
+                ContentProviderClient acquireContentProviderClient = this.f4022a.getContentResolver().acquireContentProviderClient(parse);
                 Bundle call2 = acquireContentProviderClient.call("getOAID", null, null);
                 call = call2;
                 if (acquireContentProviderClient != null) {
@@ -34,7 +34,7 @@ public class z0 {
                     }
                 }
             } else {
-                call = this.f4070a.getContentResolver().call(parse, "getOAID", null, null);
+                call = this.f4022a.getContentResolver().call(parse, "getOAID", null, null);
             }
             if (call.getInt("code", -1) == 0) {
                 return call.getString("id");

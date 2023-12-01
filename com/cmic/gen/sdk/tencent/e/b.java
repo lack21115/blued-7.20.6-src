@@ -24,14 +24,14 @@ import javax.security.auth.x500.X500Principal;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static byte[] f21658a;
+    private static byte[] f8052a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String a(Context context, String str) {
         a();
         byte[] b = b(context);
         if (b != null) {
-            return a.a(b, str, f21658a);
+            return a.a(b, str, f8052a);
         }
         a();
         return null;
@@ -95,7 +95,7 @@ public class b {
         }
         byte[] b = b(context);
         if (b != null) {
-            return a.b(b, str, f21658a);
+            return a.b(b, str, f8052a);
         }
         a();
         return null;
@@ -115,12 +115,12 @@ public class b {
                     String b = b();
                     if (TextUtils.isEmpty(b)) {
                         byte[] a2 = q.a();
-                        f21658a = q.a();
+                        f8052a = q.a();
                         Key key = keyStore.getKey("CMCC_SDK_V1", null);
                         if (key instanceof SecretKey) {
                             c.b("KeystoreUtil", "随机生成aes秘钥");
                             cipher2 = Cipher.getInstance("AES/CBC/PKCS7Padding");
-                            cipher2.init(1, key, new IvParameterSpec(f21658a));
+                            cipher2.init(1, key, new IvParameterSpec(f8052a));
                         } else if (!(key instanceof PrivateKey)) {
                             return null;
                         } else {
@@ -130,14 +130,14 @@ public class b {
                             cipher2.init(1, publicKey);
                         }
                         String encodeToString = Base64.encodeToString(cipher2.doFinal(a2), 0);
-                        String encodeToString2 = Base64.encodeToString(f21658a, 0);
+                        String encodeToString2 = Base64.encodeToString(f8052a, 0);
                         HashMap hashMap = new HashMap();
                         hashMap.put("AES_IV", encodeToString2);
                         hashMap.put("AES_KEY", encodeToString);
                         k.a(hashMap);
                         doFinal = a2;
                     } else {
-                        f21658a = Base64.decode(c(), 0);
+                        f8052a = Base64.decode(c(), 0);
                         byte[] decode = Base64.decode(b, 0);
                         Key key2 = keyStore.getKey("CMCC_SDK_V1", null);
                         if (key2 == null) {
@@ -145,7 +145,7 @@ public class b {
                         }
                         if (key2 instanceof SecretKey) {
                             cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-                            cipher.init(2, key2, new IvParameterSpec(f21658a));
+                            cipher.init(2, key2, new IvParameterSpec(f8052a));
                             str = "使用aes";
                         } else if (!(key2 instanceof PrivateKey)) {
                             return null;

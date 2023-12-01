@@ -1,10 +1,9 @@
 package com.alibaba.fastjson.util;
 
-import androidx.exifinterface.media.ExifInterface;
 import com.alibaba.fastjson.parser.DefaultJSONParser;
 import com.alibaba.fastjson.parser.JSONLexer;
 import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
-import com.huawei.hms.ads.ContentClassification;
+import com.alipay.sdk.util.i;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.util.Collection;
@@ -42,7 +41,7 @@ public class ASMUtils {
         if (cls.isArray()) {
             return "[" + desc(cls.getComponentType());
         }
-        return "L" + type(cls) + ";";
+        return "L" + type(cls) + i.b;
     }
 
     public static String desc(Method method) {
@@ -83,7 +82,7 @@ public class ASMUtils {
             return "I";
         }
         if (Void.TYPE.equals(cls)) {
-            return ExifInterface.GPS_MEASUREMENT_INTERRUPTED;
+            return "V";
         }
         if (Boolean.TYPE.equals(cls)) {
             return "Z";
@@ -95,13 +94,13 @@ public class ASMUtils {
             return "B";
         }
         if (Short.TYPE.equals(cls)) {
-            return ExifInterface.LATITUDE_SOUTH;
+            return "S";
         }
         if (Float.TYPE.equals(cls)) {
             return "F";
         }
         if (Long.TYPE.equals(cls)) {
-            return ContentClassification.AD_CONTENT_CLASSIFICATION_J;
+            return "J";
         }
         if (Double.TYPE.equals(cls)) {
             return "D";

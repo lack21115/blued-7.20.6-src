@@ -1,5 +1,6 @@
 package com.tencent.thumbplayer.core.downloadproxy.api;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.thumbplayer.core.downloadproxy.utils.TPDLProxyLog;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -89,7 +90,7 @@ public class TPDownloadParam {
                     stringBuffer.append("?cost=low");
                 }
             }
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
         }
         if (stringBuffer.length() > 0) {
             stringBuffer.deleteCharAt(stringBuffer.length() - 1);

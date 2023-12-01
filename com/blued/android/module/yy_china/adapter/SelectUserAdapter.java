@@ -17,29 +17,25 @@ import java.util.Iterator;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/SelectUserAdapter.class */
 public class SelectUserAdapter extends BaseQuickAdapter<GiftMicModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private HashSet<YYSeatMemberModel> f16153a;
+    private HashSet<YYSeatMemberModel> a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View.OnClickListener f16154c;
+    private View.OnClickListener c;
 
     public SelectUserAdapter() {
         super(R.layout.item_yy_select_user, new ArrayList());
-        this.f16153a = new HashSet<>();
+        this.a = new HashSet<>();
         this.b = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(GiftMicModel giftMicModel, BaseViewHolder baseViewHolder, View view) {
         if (this.b) {
-            if (this.f16153a.size() > 1) {
-                this.f16153a.remove(giftMicModel.getMic());
+            if (this.a.size() > 1) {
+                this.a.remove(giftMicModel.getMic());
             } else {
                 ToastUtils.a("必须选中至少一个麦位");
             }
-            this.f16154c.onClick(null);
+            this.c.onClick(null);
             convert(baseViewHolder, giftMicModel);
         }
     }
@@ -47,10 +43,10 @@ public class SelectUserAdapter extends BaseQuickAdapter<GiftMicModel, BaseViewHo
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(GiftMicModel giftMicModel, BaseViewHolder baseViewHolder, View view) {
         if (!this.b) {
-            this.f16153a.clear();
+            this.a.clear();
         }
-        this.f16153a.add(giftMicModel.getMic());
-        this.f16154c.onClick(null);
+        this.a.add(giftMicModel.getMic());
+        this.c.onClick(null);
         convert(baseViewHolder, giftMicModel);
         if (this.b) {
             return;
@@ -59,20 +55,19 @@ public class SelectUserAdapter extends BaseQuickAdapter<GiftMicModel, BaseViewHo
     }
 
     public HashSet<YYSeatMemberModel> a() {
-        return this.f16153a;
+        return this.a;
     }
 
     public void a(View.OnClickListener onClickListener) {
-        this.f16154c = onClickListener;
+        this.c = onClickListener;
     }
 
     public void a(YYSeatMemberModel yYSeatMemberModel) {
-        this.f16153a.add(yYSeatMemberModel);
+        this.a.add(yYSeatMemberModel);
         notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final GiftMicModel giftMicModel) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_select_user);
@@ -86,7 +81,7 @@ public class SelectUserAdapter extends BaseQuickAdapter<GiftMicModel, BaseViewHo
         }
         YYRoomInfoManager.e().a((IRequestHost) null, imageView, giftMicModel.getMic().getUid(), giftMicModel.getMic().getAvatar());
         imageView.setBackgroundResource(R.drawable.transparent);
-        Iterator<YYSeatMemberModel> it = this.f16153a.iterator();
+        Iterator<YYSeatMemberModel> it = this.a.iterator();
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$SelectUserAdapter$caP0JC7vTPMP8fQeu95GGhYiQfU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -123,16 +118,16 @@ public class SelectUserAdapter extends BaseQuickAdapter<GiftMicModel, BaseViewHo
         }
         if (getData() != null && getData().size() > 0) {
             for (GiftMicModel giftMicModel : getData()) {
-                this.f16153a.add(giftMicModel.getMic());
+                this.a.add(giftMicModel.getMic());
             }
         }
         notifyDataSetChanged();
     }
 
     public void c() {
-        this.f16153a.clear();
+        this.a.clear();
         if (getData() != null && getData().size() > 0) {
-            this.f16153a.add(getData().get(0).getMic());
+            this.a.add(((GiftMicModel) getData().get(0)).getMic());
         }
         notifyDataSetChanged();
     }

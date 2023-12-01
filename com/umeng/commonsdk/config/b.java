@@ -7,15 +7,14 @@ import java.util.Map;
 public class b implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, Boolean> f40842a = new HashMap();
+    private static Map<String, Boolean> f27151a = new HashMap();
     private static Object b = new Object();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/config/b$a.class */
-    public static class a {
+    static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final b f40843a = new b();
+        private static final b f27152a = new b();
 
         private a() {
         }
@@ -27,8 +26,8 @@ public class b implements f {
     public static boolean a(String str) {
         if (d.a(str)) {
             synchronized (b) {
-                if (f40842a.containsKey(str)) {
-                    return f40842a.get(str).booleanValue();
+                if (f27151a.containsKey(str)) {
+                    return f27151a.get(str).booleanValue();
                 }
                 return true;
             }
@@ -37,12 +36,12 @@ public class b implements f {
     }
 
     public static b b() {
-        return a.f40843a;
+        return a.f27152a;
     }
 
     public void a() {
         synchronized (b) {
-            f40842a.clear();
+            f27151a.clear();
         }
     }
 
@@ -50,8 +49,8 @@ public class b implements f {
     public void a(String str, Boolean bool) {
         if (d.a(str)) {
             synchronized (b) {
-                if (f40842a != null) {
-                    f40842a.put(str, bool);
+                if (f27151a != null) {
+                    f27151a.put(str, bool);
                 }
             }
         }

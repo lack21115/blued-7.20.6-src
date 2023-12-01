@@ -13,28 +13,26 @@ import com.blued.android.framework.ui.xpop.util.XPopupUtils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/CenterPopupView.class */
 public class CenterPopupView extends BasePopupView {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected FrameLayout f9980a;
+    protected FrameLayout a;
     protected View b;
 
     public CenterPopupView(Context context) {
         super(context);
-        this.f9980a = (FrameLayout) findViewById(R.id.centerPopupContainer);
+        this.a = (FrameLayout) findViewById(R.id.centerPopupContainer);
     }
 
     protected void a() {
-        View inflate = LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.f9980a, false);
+        View inflate = LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.a, false);
         this.b = inflate;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) inflate.getLayoutParams();
         layoutParams.gravity = 17;
-        this.f9980a.addView(this.b, layoutParams);
+        this.a.addView(this.b, layoutParams);
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        if (this.f9980a.getChildCount() == 0) {
+        if (this.a.getChildCount() == 0) {
             a();
         }
         getPopupContentView().setTranslationX(this.l.x);

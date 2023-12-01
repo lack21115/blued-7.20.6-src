@@ -4,11 +4,11 @@ package c.t.m.g;
 public class i6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public double f3842a;
+    public double f3794a;
     public double b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f3843c;
+    public double f3795c;
     public double d;
     public double e;
     public double f;
@@ -19,7 +19,7 @@ public class i6 {
     public i6(double[] dArr) {
         try {
             this.g = (long) dArr[0];
-            this.f3842a = dArr[1];
+            this.f3794a = dArr[1];
             this.b = dArr[2];
             this.f = dArr[3];
             this.h = dArr[4];
@@ -34,7 +34,7 @@ public class i6 {
                 this.i = "unknown";
             }
             double d2 = dArr[8];
-            this.f3843c = dArr[9];
+            this.f3795c = dArr[9];
         } catch (Exception e) {
         }
     }
@@ -44,7 +44,7 @@ public class i6 {
     }
 
     public double b() {
-        return this.f3843c;
+        return this.f3795c;
     }
 
     public double c() {
@@ -52,7 +52,7 @@ public class i6 {
     }
 
     public double d() {
-        return this.f3842a;
+        return this.f3794a;
     }
 
     public double e() {

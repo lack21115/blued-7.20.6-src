@@ -32,11 +32,11 @@ public final class R {
         public static final int StateListDrawable_android_exitFadeDuration = 0x00000005;
         public static final int StateListDrawable_android_variablePadding = 0x00000002;
         public static final int StateListDrawable_android_visible = 0x00000001;
-        public static final int[] AnimatedStateListDrawableCompat = {16843036, 16843156, 16843157, 16843158, 16843532, 16843533};
-        public static final int[] AnimatedStateListDrawableItem = {16842960, 16843161};
-        public static final int[] AnimatedStateListDrawableTransition = {16843161, 16843849, 16843850, 16843851};
-        public static final int[] StateListDrawable = {16843036, 16843156, 16843157, 16843158, 16843532, 16843533};
-        public static final int[] StateListDrawableItem = {16843161};
+        public static final int[] AnimatedStateListDrawableCompat = {android.R.attr.dither, android.R.attr.visible, android.R.attr.variablePadding, android.R.attr.constantSize, android.R.attr.enterFadeDuration, android.R.attr.exitFadeDuration};
+        public static final int[] AnimatedStateListDrawableItem = {android.R.attr.id, android.R.attr.drawable};
+        public static final int[] AnimatedStateListDrawableTransition = {android.R.attr.drawable, android.R.attr.toId, android.R.attr.fromId, android.R.attr.reversible};
+        public static final int[] StateListDrawable = {android.R.attr.dither, android.R.attr.visible, android.R.attr.variablePadding, android.R.attr.constantSize, android.R.attr.enterFadeDuration, android.R.attr.exitFadeDuration};
+        public static final int[] StateListDrawableItem = {android.R.attr.drawable};
 
         private styleable() {
         }

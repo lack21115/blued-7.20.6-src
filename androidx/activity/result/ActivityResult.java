@@ -21,16 +21,16 @@ public final class ActivityResult implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f1505a;
+    private final int f1457a;
     private final Intent b;
 
     public ActivityResult(int i, Intent intent) {
-        this.f1505a = i;
+        this.f1457a = i;
         this.b = intent;
     }
 
     ActivityResult(Parcel parcel) {
-        this.f1505a = parcel.readInt();
+        this.f1457a = parcel.readInt();
         this.b = parcel.readInt() == 0 ? null : Intent.CREATOR.createFromParcel(parcel);
     }
 
@@ -48,16 +48,16 @@ public final class ActivityResult implements Parcelable {
     }
 
     public int getResultCode() {
-        return this.f1505a;
+        return this.f1457a;
     }
 
     public String toString() {
-        return "ActivityResult{resultCode=" + resultCodeToString(this.f1505a) + ", data=" + this.b + '}';
+        return "ActivityResult{resultCode=" + resultCodeToString(this.f1457a) + ", data=" + this.b + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f1505a);
+        parcel.writeInt(this.f1457a);
         parcel.writeInt(this.b == null ? 0 : 1);
         Intent intent = this.b;
         if (intent != null) {

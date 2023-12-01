@@ -26,7 +26,6 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import androidx.fragment.app.FragmentActivity;
 import com.blued.android.chat.ChatManager;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
@@ -55,6 +54,7 @@ import com.blued.android.module.common.user.model.BluedAlbum;
 import com.blued.android.module.common.user.model.BluedLoginResult;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.user.model.UserRestrictedDescModel;
+import com.blued.android.module.common.user.model.UserTag;
 import com.blued.android.module.common.user.model.UserTagAll;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.PermissionUtils;
@@ -131,7 +131,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     private TextView Z;
 
     /* renamed from: a  reason: collision with root package name */
-    ModifyUserInfoPopView f33433a;
+    ModifyUserInfoPopView f19742a;
     private ArrayList<String> aC;
     private BluedAlbum aD;
     private boolean aE;
@@ -157,7 +157,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     private ImageView ai;
 
     /* renamed from: ar  reason: collision with root package name */
-    private PhotoGridView f33434ar;
+    private PhotoGridView f19743ar;
     private UserDragGirdAdapter at;
     private LoadOptions au;
     private int aw;
@@ -223,7 +223,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     private boolean bm = false;
     private boolean bn = false;
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.17
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
             if (bluedEntityA == null) {
@@ -231,7 +230,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 return;
             }
             DialogUtils.b(ModifyUserInfoFragment.this.f);
-            UserInfoEntity userInfoEntity = bluedEntityA.data.get(0);
+            UserInfoEntity userInfoEntity = (UserInfoEntity) bluedEntityA.data.get(0);
             if (userInfoEntity == null) {
                 AppMethods.d(2131888227);
                 return;
@@ -252,7 +251,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     };
 
     /* renamed from: c  reason: collision with root package name */
-    Map<String, String> f33435c = BluedHttpTools.a();
+    Map<String, String> f19744c = BluedHttpTools.a();
     private boolean bo = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -261,7 +260,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     public class AnonymousClass15 implements QiniuUploadTools.QiNiuListener {
 
         /* renamed from: a  reason: collision with root package name */
-        double f33443a = 0.0d;
+        double f19752a = 0.0d;
         final /* synthetic */ String b;
 
         AnonymousClass15(String str) {
@@ -278,9 +277,9 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             int b = ModifyUserInfoFragment.this.b(str);
             if (d2 >= 100.0d) {
                 ((BluedAlbum) ModifyUserInfoFragment.this.as.get(b)).setProgress("99%");
-            } else if (d > this.f33443a) {
+            } else if (d > this.f19752a) {
                 ((BluedAlbum) ModifyUserInfoFragment.this.as.get(b)).setProgress(sb2);
-                this.f33443a = d;
+                this.f19752a = d;
             }
             ModifyUserInfoFragment.this.at.notifyDataSetChanged();
         }
@@ -292,12 +291,11 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void b(String str) {
-            AppMethods.a((CharSequence) ModifyUserInfoFragment.this.getResources().getString(2131887272));
+            AppMethods.a(ModifyUserInfoFragment.this.getResources().getString(2131887272));
             ((BluedAlbum) ModifyUserInfoFragment.this.as.get(ModifyUserInfoFragment.this.b(str))).setProgress(ModifyUserInfoFragment.this.getResources().getString(R.string.failure));
             ModifyUserInfoFragment.this.at.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public void a(final String str) {
             ModifyUserInfoFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ModifyUserInfoFragment$15$kxFM9b0h6-Olv5B_jOXxdAzy8wo
                 @Override // java.lang.Runnable
@@ -307,7 +305,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             });
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public void a(final String str, final double d) {
             if (ModifyUserInfoFragment.this.aE) {
                 return;
@@ -320,7 +317,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             });
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public void a(final String str, final String str2) {
             ModifyUserInfoFragment modifyUserInfoFragment = ModifyUserInfoFragment.this;
             final String str3 = this.b;
@@ -332,7 +328,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             });
         }
 
-        @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
         public boolean a() {
             return false;
         }
@@ -347,7 +342,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         }
 
         private String a(List<String> list) {
-            if (TypeUtils.a((List<?>) list)) {
+            if (TypeUtils.a(list)) {
                 return null;
             }
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -363,28 +358,26 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         }
 
         private boolean a(List<String> list, List<String> list2) {
-            if (TypeUtils.a((List<?>) list) && TypeUtils.a((List<?>) list2)) {
+            if (TypeUtils.a(list) && TypeUtils.a(list2)) {
                 return true;
             }
-            return !TypeUtils.a((List<?>) list) && !TypeUtils.a((List<?>) list2) && list.size() == list2.size() && list.containsAll(list2) && list2.containsAll(list);
+            return !TypeUtils.a(list) && !TypeUtils.a(list2) && list.size() == list2.size() && list.containsAll(list2) && list2.containsAll(list);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedLoginResult> parseData(String str) {
             UserAccountsVDao.a().b(str);
-            return (BluedEntityA) super.parseData(str);
+            return super.parseData(str);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedLoginResult> bluedEntityA) {
             if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                 return;
             }
-            BluedLoginResult bluedLoginResult = bluedEntityA.data.get(0);
+            BluedLoginResult bluedLoginResult = (BluedLoginResult) bluedEntityA.data.get(0);
             bluedLoginResult.setVip_avatars(UserInfo.getInstance().getLoginUserInfo().getVip_avatars());
             UserInfo.getInstance().getLoginUserInfo().is_show_vip_page = bluedLoginResult.is_show_vip_page;
             BluedConfig.a().b().is_show_vip_page = bluedLoginResult.is_show_vip_page;
@@ -408,7 +401,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 UserInfo.getInstance().getLoginUserInfo().auditing_profile = new AuditingProfileModel();
             }
             UserInfo.getInstance().getLoginUserInfo().auditing_profile.description = ModifyUserInfoFragment.this.j.getText().toString();
-            AppMethods.a((CharSequence) ModifyUserInfoFragment.this.getResources().getString(R.string.modify_user_info_success));
+            AppMethods.a(ModifyUserInfoFragment.this.getResources().getString(R.string.modify_user_info_success));
             String a2 = a(ModifyUserInfoFragment.this.aO);
             String a3 = a(ModifyUserInfoFragment.this.aS);
             String a4 = a(ModifyUserInfoFragment.this.aQ);
@@ -438,19 +431,16 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             userInfoPostFeedDlgFragment.show(ModifyUserInfoFragment.this.getParentFragmentManager(), userInfoPostFeedDlgFragment.b());
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            AppMethods.a((CharSequence) str);
+            AppMethods.a(str);
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(ModifyUserInfoFragment.this.f);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(ModifyUserInfoFragment.this.f);
@@ -463,12 +453,12 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     public class AnonymousClass32 extends BluedUIHttpResponse<BluedEntityA<BluedAlbum>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f33464a;
+        final /* synthetic */ String f19773a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass32(IRequestHost iRequestHost, String str) {
             super(iRequestHost);
-            this.f33464a = str;
+            this.f19773a = str;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -477,15 +467,14 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
-            ImageLoader.a(ModifyUserInfoFragment.this.getFragmentActive(), this.f33464a).b(2131232686).c().a(ModifyUserInfoFragment.this.ah);
+            ImageLoader.a(ModifyUserInfoFragment.this.getFragmentActive(), this.f19773a).b((int) R.drawable.feed_photo_add).c().a(ModifyUserInfoFragment.this.ah);
             ModifyUserInfoFragment.this.a(-1, 0);
             if (UserInfo.getInstance().getLoginUserInfo().auditing_profile == null) {
                 UserInfo.getInstance().getLoginUserInfo().auditing_profile = new AuditingProfileModel();
             }
-            UserInfo.getInstance().getLoginUserInfo().auditing_profile.latest_avatar = this.f33464a;
+            UserInfo.getInstance().getLoginUserInfo().auditing_profile.latest_avatar = this.f19773a;
             BluedConfig.a().d();
             AppMethods.d((int) R.string.avatar_effect_after_audit);
             ModifyUserInfoFragment.this.bj.setText("100%");
@@ -497,13 +486,11 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             }, 2000L);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             ModifyUserInfoFragment.this.bj.setText(R.string.failure);
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(ModifyUserInfoFragment.this.f);
@@ -517,11 +504,9 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         AnonymousClass9() {
         }
 
-        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
         public void a(ActionSheet actionSheet, int i) {
             if (i == 0) {
                 PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.9.1
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void U_() {
                         if (4 == UserInfo.getInstance().getLoginUserInfo().getVBadge() || 7 == UserInfo.getInstance().getLoginUserInfo().getVBadge()) {
                             CommonAlertDialog.a(ModifyUserInfoFragment.this.d, (String) null, ModifyUserInfoFragment.this.getResources().getString(2131886918), ModifyUserInfoFragment.this.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.9.1.1
@@ -536,7 +521,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                         }
                     }
 
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void a(String[] strArr) {
                     }
                 });
@@ -546,7 +530,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             }
         }
 
-        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
         public void a(ActionSheet actionSheet, boolean z) {
         }
     }
@@ -556,7 +539,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         private LayoutInflater b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f33474c;
+        private ImageView f19783c;
         private TextView d;
         private TextView e;
         private int f = -1;
@@ -566,11 +549,11 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         class AnonymousClass3 implements View.OnClickListener {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BluedAlbum f33480a;
+            final /* synthetic */ BluedAlbum f19789a;
             final /* synthetic */ int b;
 
             AnonymousClass3(BluedAlbum bluedAlbum, int i) {
-                this.f33480a = bluedAlbum;
+                this.f19789a = bluedAlbum;
                 this.b = i;
             }
 
@@ -584,19 +567,17 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     return;
                 }
                 InstantLog.a("modify_vip_multi_avatar_click", 1);
-                ModifyUserInfoFragment.this.aD = this.f33480a;
+                ModifyUserInfoFragment.this.aD = this.f19789a;
                 ModifyUserInfoFragment.this.aD.position = this.b;
                 UserRestrictedDescModel userRestrictedDescModel = UserInfo.getInstance().getLoginUserInfo().restricted_desc;
-                if (userRestrictedDescModel != null && userRestrictedDescModel.isExist(ReqAckPackage.REQ_RESPONSE_KEY.AVATAR)) {
-                    AppMethods.a((CharSequence) userRestrictedDescModel.getAvatar_desc());
-                } else if (TextUtils.isEmpty(this.f33480a.getUrl())) {
+                if (userRestrictedDescModel != null && userRestrictedDescModel.isExist("avatar")) {
+                    AppMethods.a(userRestrictedDescModel.getAvatar_desc());
+                } else if (TextUtils.isEmpty(this.f19789a.getUrl())) {
                     PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.UserDragGirdAdapter.3.1
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void U_() {
                             PhotoSelectFragment.a(ModifyUserInfoFragment.this, 2, 22);
                         }
 
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void a(String[] strArr) {
                         }
                     });
@@ -604,16 +585,13 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     String[] stringArray = ModifyUserInfoFragment.this.getResources().getStringArray(R.array.headpic_items);
                     stringArray[0] = ModifyUserInfoFragment.this.getResources().getString(R.string.change_photo);
                     CommonShowBottomWindow.a((FragmentActivity) ModifyUserInfoFragment.this.d, stringArray, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.UserDragGirdAdapter.3.2
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, int i) {
                             if (i == 0) {
                                 PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.UserDragGirdAdapter.3.2.1
-                                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                                     public void U_() {
                                         PhotoSelectFragment.a(ModifyUserInfoFragment.this, 2, 22);
                                     }
 
-                                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                                     public void a(String[] strArr) {
                                     }
                                 });
@@ -621,7 +599,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                                 if (i != 2) {
                                     return;
                                 }
-                                ModifyUserInfoFragment.this.a(AnonymousClass3.this.f33480a.getPid());
+                                ModifyUserInfoFragment.this.a(AnonymousClass3.this.f19789a.getPid());
                             } else {
                                 ArrayList arrayList = new ArrayList();
                                 for (BluedAlbum bluedAlbum : ModifyUserInfoFragment.this.as) {
@@ -645,7 +623,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                             }
                         }
 
-                        @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                         public void a(ActionSheet actionSheet, boolean z) {
                         }
                     });
@@ -680,9 +657,9 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
             layoutParams.height = ModifyUserInfoFragment.this.aw;
             this.d.setLayoutParams(layoutParams);
-            this.e = (TextView) inflate.findViewById(2131372318);
+            this.e = (TextView) inflate.findViewById(R.id.tv_progress);
             ImageView imageView = (ImageView) inflate.findViewById(2131364232);
-            this.f33474c = imageView;
+            this.f19783c = imageView;
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) imageView.getLayoutParams();
             layoutParams2.height = ModifyUserInfoFragment.this.aw;
             this.d.setLayoutParams(layoutParams2);
@@ -696,9 +673,9 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 this.e.setText(bluedAlbum.progress);
             }
             if (TextUtils.isEmpty(bluedAlbum.getUrl())) {
-                this.f33474c.setImageResource(2131232686);
+                this.f19783c.setImageResource(R.drawable.feed_photo_add);
             } else {
-                ImageLoader.a(ModifyUserInfoFragment.this.getFragmentActive(), bluedAlbum.getUrl()).b(2131232686).a(this.f33474c);
+                ImageLoader.a(ModifyUserInfoFragment.this.getFragmentActive(), bluedAlbum.getUrl()).b((int) R.drawable.feed_photo_add).a(this.f19783c);
             }
             this.d.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.UserDragGirdAdapter.1
                 @Override // android.view.View.OnClickListener
@@ -706,7 +683,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     Tracker.onClick(view2);
                     if (UserInfo.getInstance().getLoginUserInfo().vip_grade != 0 || BluedConfig.a().g().is_vip_more_avatar != 0) {
                         PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.UserDragGirdAdapter.1.1
-                            @Override // com.blued.android.framework.permission.PermissionCallbacks
                             public void U_() {
                                 InstantLog.a("modify_vip_multi_avatar_click", 1);
                                 if (bluedAlbum.progress.equals(ModifyUserInfoFragment.this.getResources().getString(R.string.failure))) {
@@ -716,7 +692,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                                 }
                             }
 
-                            @Override // com.blued.android.framework.permission.PermissionCallbacks
                             public void a(String[] strArr) {
                             }
                         });
@@ -743,7 +718,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     }
                 }
             });
-            this.f33474c.setOnClickListener(new AnonymousClass3(bluedAlbum, i));
+            this.f19783c.setOnClickListener(new AnonymousClass3(bluedAlbum, i));
             if (i == this.f) {
                 inflate.setVisibility(4);
             }
@@ -888,7 +863,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         }
         this.i.setText(str5);
         this.j.setText(str6);
-        ImageLoader.a(getFragmentActive(), str4).b(2131232686).c().a(this.ah);
+        ImageLoader.a(getFragmentActive(), str4).b((int) R.drawable.feed_photo_add).c().a(this.ah);
         if (userInfoEntity.is_show_vip_page == 1) {
             this.h.setChecked(true);
         }
@@ -942,20 +917,20 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i2 >= userTagAll.i_want.size()) {
                     break;
                 }
-                this.aF.add(userTagAll.i_want.get(i2).id);
+                this.aF.add(((UserTag) userTagAll.i_want.get(i2)).id);
                 if ("EN".equals(BlueAppLocal.b())) {
                     StringBuilder sb = new StringBuilder();
                     sb.append(com.soft.blued.utils.StringUtils.d(stringBuffer.toString()) ? "" : ", ");
-                    sb.append(userTagAll.i_want.get(i2).name);
+                    sb.append(((UserTag) userTagAll.i_want.get(i2)).name);
                     stringBuffer.append(sb.toString());
                 } else {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(com.soft.blued.utils.StringUtils.d(stringBuffer.toString()) ? "" : "、");
-                    sb2.append(userTagAll.i_want.get(i2).name);
+                    sb2.append(((UserTag) userTagAll.i_want.get(i2)).name);
                     stringBuffer.append(sb2.toString());
                 }
-                stringBuffer2.append(userTagAll.i_want.get(i2).name + ",");
-                this.aR.add(userTagAll.i_want.get(i2).name);
+                stringBuffer2.append(((UserTag) userTagAll.i_want.get(i2)).name + ",");
+                this.aR.add(((UserTag) userTagAll.i_want.get(i2)).name);
                 i = i2 + 1;
             }
             this.u.setText(stringBuffer.toString());
@@ -969,16 +944,16 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     if (i4 >= userTagAll.work.size()) {
                         break;
                     }
-                    this.aH.add(userTagAll.work.get(i4).id);
+                    this.aH.add(((UserTag) userTagAll.work.get(i4)).id);
                     if ("EN".equals(BlueAppLocal.b())) {
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(com.soft.blued.utils.StringUtils.d(stringBuffer3.toString()) ? "" : ", ");
-                        sb3.append(userTagAll.work.get(i4).name);
+                        sb3.append(((UserTag) userTagAll.work.get(i4)).name);
                         stringBuffer3.append(sb3.toString());
                     } else {
                         StringBuilder sb4 = new StringBuilder();
                         sb4.append(com.soft.blued.utils.StringUtils.d(stringBuffer3.toString()) ? "" : "、");
-                        sb4.append(userTagAll.work.get(i4).name);
+                        sb4.append(((UserTag) userTagAll.work.get(i4)).name);
                         stringBuffer3.append(sb4.toString());
                     }
                     i3 = i4 + 1;
@@ -992,16 +967,16 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i6 >= userTagAll.type.size()) {
                     break;
                 }
-                this.aJ.add(userTagAll.type.get(i6).id);
+                this.aJ.add(((UserTag) userTagAll.type.get(i6)).id);
                 if ("EN".equals(BlueAppLocal.b())) {
                     StringBuilder sb5 = new StringBuilder();
                     sb5.append(com.soft.blued.utils.StringUtils.d(stringBuffer4.toString()) ? "" : ", ");
-                    sb5.append(userTagAll.type.get(i6).name);
+                    sb5.append(((UserTag) userTagAll.type.get(i6)).name);
                     stringBuffer4.append(sb5.toString());
                 } else {
                     StringBuilder sb6 = new StringBuilder();
                     sb6.append(com.soft.blued.utils.StringUtils.d(stringBuffer4.toString()) ? "" : "、");
-                    sb6.append(userTagAll.type.get(i6).name);
+                    sb6.append(((UserTag) userTagAll.type.get(i6)).name);
                     stringBuffer4.append(sb6.toString());
                 }
                 i5 = i6 + 1;
@@ -1016,20 +991,20 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i8 >= userTagAll.character.size()) {
                     break;
                 }
-                this.aJ.add(userTagAll.character.get(i8).id);
+                this.aJ.add(((UserTag) userTagAll.character.get(i8)).id);
                 if ("EN".equals(BlueAppLocal.b())) {
                     StringBuilder sb7 = new StringBuilder();
                     sb7.append(com.soft.blued.utils.StringUtils.d(stringBuffer5.toString()) ? "" : ", ");
-                    sb7.append(userTagAll.character.get(i8).name);
+                    sb7.append(((UserTag) userTagAll.character.get(i8)).name);
                     stringBuffer5.append(sb7.toString());
                 } else {
                     StringBuilder sb8 = new StringBuilder();
                     sb8.append(com.soft.blued.utils.StringUtils.d(stringBuffer5.toString()) ? "" : "、");
-                    sb8.append(userTagAll.character.get(i8).name);
+                    sb8.append(((UserTag) userTagAll.character.get(i8)).name);
                     stringBuffer5.append(sb8.toString());
                 }
-                stringBuffer6.append(userTagAll.character.get(i8).name + ",");
-                this.aN.add(userTagAll.character.get(i8).name);
+                stringBuffer6.append(((UserTag) userTagAll.character.get(i8)).name + ",");
+                this.aN.add(((UserTag) userTagAll.character.get(i8)).name);
                 i7 = i8 + 1;
             }
             this.x.setText(stringBuffer5.toString());
@@ -1045,20 +1020,20 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     if (i10 >= userTagAll.hobbies.size()) {
                         break;
                     }
-                    this.aJ.add(userTagAll.hobbies.get(i10).id);
+                    this.aJ.add(((UserTag) userTagAll.hobbies.get(i10)).id);
                     if ("EN".equals(BlueAppLocal.b())) {
                         StringBuilder sb9 = new StringBuilder();
                         sb9.append(com.soft.blued.utils.StringUtils.d(stringBuffer7.toString()) ? "" : ", ");
-                        sb9.append(userTagAll.hobbies.get(i10).name);
+                        sb9.append(((UserTag) userTagAll.hobbies.get(i10)).name);
                         stringBuffer7.append(sb9.toString());
                     } else {
                         StringBuilder sb10 = new StringBuilder();
                         sb10.append(com.soft.blued.utils.StringUtils.d(stringBuffer7.toString()) ? "" : "、");
-                        sb10.append(userTagAll.hobbies.get(i10).name);
+                        sb10.append(((UserTag) userTagAll.hobbies.get(i10)).name);
                         stringBuffer7.append(sb10.toString());
                     }
-                    stringBuffer8.append(userTagAll.hobbies.get(i10).name + ",");
-                    this.aP.add(userTagAll.hobbies.get(i10).name);
+                    stringBuffer8.append(((UserTag) userTagAll.hobbies.get(i10)).name + ",");
+                    this.aP.add(((UserTag) userTagAll.hobbies.get(i10)).name);
                     i9 = i10 + 1;
                 }
             }
@@ -1073,16 +1048,16 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     if (i12 >= userTagAll.recreation.size()) {
                         break;
                     }
-                    this.aJ.add(userTagAll.recreation.get(i12).id);
+                    this.aJ.add(((UserTag) userTagAll.recreation.get(i12)).id);
                     if ("EN".equals(BlueAppLocal.b())) {
                         StringBuilder sb11 = new StringBuilder();
                         sb11.append(com.soft.blued.utils.StringUtils.d(stringBuffer9.toString()) ? "" : ", ");
-                        sb11.append(userTagAll.recreation.get(i12).name);
+                        sb11.append(((UserTag) userTagAll.recreation.get(i12)).name);
                         stringBuffer9.append(sb11.toString());
                     } else {
                         StringBuilder sb12 = new StringBuilder();
                         sb12.append(com.soft.blued.utils.StringUtils.d(stringBuffer9.toString()) ? "" : "、");
-                        sb12.append(userTagAll.recreation.get(i12).name);
+                        sb12.append(((UserTag) userTagAll.recreation.get(i12)).name);
                         stringBuffer9.append(sb12.toString());
                     }
                     i11 = i12 + 1;
@@ -1097,16 +1072,16 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     if (i14 >= userTagAll.love_type.size()) {
                         break;
                     }
-                    this.aT.add(userTagAll.love_type.get(i14).id);
+                    this.aT.add(((UserTag) userTagAll.love_type.get(i14)).id);
                     if ("EN".equals(BlueAppLocal.b())) {
                         StringBuilder sb13 = new StringBuilder();
                         sb13.append(com.soft.blued.utils.StringUtils.d(stringBuffer10.toString()) ? "" : ", ");
-                        sb13.append(userTagAll.love_type.get(i14).name);
+                        sb13.append(((UserTag) userTagAll.love_type.get(i14)).name);
                         stringBuffer10.append(sb13.toString());
                     } else {
                         StringBuilder sb14 = new StringBuilder();
                         sb14.append(com.soft.blued.utils.StringUtils.d(stringBuffer10.toString()) ? "" : "、");
-                        sb14.append(userTagAll.love_type.get(i14).name);
+                        sb14.append(((UserTag) userTagAll.love_type.get(i14)).name);
                         stringBuffer10.append(sb14.toString());
                     }
                     i13 = i14 + 1;
@@ -1121,16 +1096,16 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                     if (i16 >= userTagAll.love_character.size()) {
                         break;
                     }
-                    this.aT.add(userTagAll.love_character.get(i16).id);
+                    this.aT.add(((UserTag) userTagAll.love_character.get(i16)).id);
                     if ("EN".equals(BlueAppLocal.b())) {
                         StringBuilder sb15 = new StringBuilder();
                         sb15.append(com.soft.blued.utils.StringUtils.d(stringBuffer11.toString()) ? "" : ", ");
-                        sb15.append(userTagAll.love_character.get(i16).name);
+                        sb15.append(((UserTag) userTagAll.love_character.get(i16)).name);
                         stringBuffer11.append(sb15.toString());
                     } else {
                         StringBuilder sb16 = new StringBuilder();
                         sb16.append(com.soft.blued.utils.StringUtils.d(stringBuffer11.toString()) ? "" : "、");
-                        sb16.append(userTagAll.love_character.get(i16).name);
+                        sb16.append(((UserTag) userTagAll.love_character.get(i16)).name);
                         stringBuffer11.append(sb16.toString());
                     }
                     i15 = i16 + 1;
@@ -1144,10 +1119,10 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i18 >= userTagAll.type.size()) {
                     break;
                 }
-                this.aB.add(userTagAll.type.get(i18).id);
+                this.aB.add(((UserTag) userTagAll.type.get(i18)).id);
                 StringBuilder sb17 = new StringBuilder();
                 sb17.append(com.soft.blued.utils.StringUtils.d(stringBuffer12.toString()) ? "" : ",");
-                sb17.append(userTagAll.type.get(i18).name);
+                sb17.append(((UserTag) userTagAll.type.get(i18)).name);
                 stringBuffer12.append(sb17.toString());
                 i17 = i18 + 1;
             }
@@ -1157,10 +1132,10 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i20 >= userTagAll.character.size()) {
                     break;
                 }
-                this.aB.add(userTagAll.character.get(i20).id);
+                this.aB.add(((UserTag) userTagAll.character.get(i20)).id);
                 StringBuilder sb18 = new StringBuilder();
                 sb18.append(com.soft.blued.utils.StringUtils.d(stringBuffer12.toString()) ? "" : ",");
-                sb18.append(userTagAll.character.get(i20).name);
+                sb18.append(((UserTag) userTagAll.character.get(i20)).name);
                 stringBuffer12.append(sb18.toString());
                 i19 = i20 + 1;
             }
@@ -1171,10 +1146,10 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i22 >= userTagAll.love_type.size()) {
                     break;
                 }
-                this.aB.add(userTagAll.love_type.get(i22).id);
+                this.aB.add(((UserTag) userTagAll.love_type.get(i22)).id);
                 StringBuilder sb19 = new StringBuilder();
                 sb19.append(com.soft.blued.utils.StringUtils.d(stringBuffer13.toString()) ? "" : ",");
-                sb19.append(userTagAll.love_type.get(i22).name);
+                sb19.append(((UserTag) userTagAll.love_type.get(i22)).name);
                 stringBuffer13.append(sb19.toString());
                 i21 = i22 + 1;
             }
@@ -1184,10 +1159,10 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i24 >= userTagAll.i_want.size()) {
                     break;
                 }
-                this.aB.add(userTagAll.i_want.get(i24).id);
+                this.aB.add(((UserTag) userTagAll.i_want.get(i24)).id);
                 StringBuilder sb20 = new StringBuilder();
                 sb20.append(com.soft.blued.utils.StringUtils.d(stringBuffer13.toString()) ? "" : ",");
-                sb20.append(userTagAll.i_want.get(i24).name);
+                sb20.append(((UserTag) userTagAll.i_want.get(i24)).name);
                 stringBuffer13.append(sb20.toString());
                 i23 = i24 + 1;
             }
@@ -1197,10 +1172,10 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 if (i26 >= userTagAll.love_character.size()) {
                     break;
                 }
-                this.aB.add(userTagAll.love_character.get(i26).id);
+                this.aB.add(((UserTag) userTagAll.love_character.get(i26)).id);
                 StringBuilder sb21 = new StringBuilder();
                 sb21.append(com.soft.blued.utils.StringUtils.d(stringBuffer13.toString()) ? "" : ",");
-                sb21.append(userTagAll.love_character.get(i26).name);
+                sb21.append(((UserTag) userTagAll.love_character.get(i26)).name);
                 stringBuffer13.append(sb21.toString());
                 i25 = i26 + 1;
             }
@@ -1210,7 +1185,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             } else {
                 this.s.setText(getResources().getString(R.string.configured));
             }
-            if (!SubscribeNumberManager.f32449a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2)) {
+            if (!SubscribeNumberManager.f18759a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2)) {
                 this.bd.setVisibility(0);
                 this.bd.setText(String.format(this.d.getResources().getString(R.string.complete_rate), BluedConfig.a().x() + ""));
             }
@@ -1232,7 +1207,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         }
         UserRestrictedDescModel userRestrictedDescModel = userInfoEntity.restricted_desc;
         if (userRestrictedDescModel != null) {
-            z = userRestrictedDescModel.isExist(ReqAckPackage.REQ_RESPONSE_KEY.AVATAR);
+            z = userRestrictedDescModel.isExist("avatar");
             z2 = userRestrictedDescModel.isExist("photo");
             z3 = userRestrictedDescModel.isExist("description");
             z4 = userRestrictedDescModel.isExist(ContactsContract.Contacts.AggregationSuggestions.PARAMETER_MATCH_NICKNAME);
@@ -1264,7 +1239,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     public void a(final String str) {
         MineHttpUtils.c(this.d, new BluedUIHttpResponse<BluedEntityA<BluedLoginResult>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.14
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedLoginResult> bluedEntityA) {
                 AppMethods.d((int) R.string.delete_success);
@@ -1285,13 +1259,11 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 UserHttpUtils.a(ModifyUserInfoFragment.this.d, ModifyUserInfoFragment.this.b, UserInfo.getInstance().getLoginUserInfo().uid, "", false, 0, 0, 0, ModifyUserInfoFragment.this.getFragmentActive());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ModifyUserInfoFragment.this.f);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ModifyUserInfoFragment.this.f);
@@ -1302,23 +1274,19 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.28
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
                 if (CommonTools.a(ModifyUserInfoFragment.this)) {
                     DialogUtils.b(ModifyUserInfoFragment.this.f);
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 ModifyUserInfoFragment.this.d(str2);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -1333,59 +1301,52 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     private void a(final String str, final String str2) {
         this.bj.setVisibility(0);
         this.bj.setText("0%");
-        LoginRegisterHttpUtils.a(this.d, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.30
+        LoginRegisterHttpUtils.a(this.d, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.30
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                ModifyUserInfoFragment.this.b(str, bluedEntityA.data.get(0), str2);
+                ModifyUserInfoFragment.this.b(str, (BluedAlbum) bluedEntityA.data.get(0), str2);
                 ModifyUserInfoFragment.this.bj.setText("5%");
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str3) {
                 ModifyUserInfoFragment.this.bj.setText(R.string.failure);
                 return super.onUIFailure(i, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ModifyUserInfoFragment.this.f);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ModifyUserInfoFragment.this.f);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     private void a(final String str, final String str2, final int i) {
-        LoginRegisterHttpUtils.a(this.d, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.13
+        LoginRegisterHttpUtils.a(this.d, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.13
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                BluedAlbum bluedAlbum = bluedEntityA.data.get(0);
+                BluedAlbum bluedAlbum = (BluedAlbum) bluedEntityA.data.get(0);
                 ((BluedAlbum) ModifyUserInfoFragment.this.as.get(i)).key = bluedAlbum.key;
                 ModifyUserInfoFragment.this.a(str, bluedAlbum, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str3) {
                 ModifyUserInfoFragment.this.bm = true;
                 return super.onUIFailure(i2, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 if (ModifyUserInfoFragment.this.bm) {
@@ -1394,42 +1355,38 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 ModifyUserInfoFragment.this.bm = false;
                 ((BluedAlbum) ModifyUserInfoFragment.this.as.get(i)).setProgress("0%");
-                ((BluedAlbum) ModifyUserInfoFragment.this.as.get(i)).setUrl(RecyclingUtils.Scheme.FILE.b(str));
+                ((BluedAlbum) ModifyUserInfoFragment.this.as.get(i)).setUrl(RecyclingUtils.Scheme.c.b(str));
                 ModifyUserInfoFragment.this.at.notifyDataSetChanged();
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, String str2, final String str3) {
         MineHttpUtils.c(this.d, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.16
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 int b = ModifyUserInfoFragment.this.b(str3);
                 ((BluedAlbum) ModifyUserInfoFragment.this.as.get(b)).setProgress("100%");
                 ModifyUserInfoFragment.this.at.notifyDataSetChanged();
                 if (bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
-                    ((BluedAlbum) ModifyUserInfoFragment.this.as.get(b)).setPid(bluedEntityA.data.get(0).getPid());
+                    ((BluedAlbum) ModifyUserInfoFragment.this.as.get(b)).setPid(((BluedAlbum) bluedEntityA.data.get(0)).getPid());
                     ((BluedAlbum) ModifyUserInfoFragment.this.as.get(b)).setProgress("");
                     ModifyUserInfoFragment.this.at.notifyDataSetChanged();
                 }
                 UserHttpUtils.a(ModifyUserInfoFragment.this.d, ModifyUserInfoFragment.this.b, UserInfo.getInstance().getLoginUserInfo().uid, "", false, 0, 0, 0, ModifyUserInfoFragment.this.getFragmentActive());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str4) {
                 ModifyUserInfoFragment.this.bn = true;
                 return super.onUIFailure(i, str4);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 if (ModifyUserInfoFragment.this.bn) {
@@ -1438,7 +1395,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 ModifyUserInfoFragment.this.bn = false;
@@ -1467,7 +1423,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     /* JADX INFO: Access modifiers changed from: private */
     public void b(String str, BluedAlbum bluedAlbum, final String str2) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.31
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str3) {
                 if (CommonTools.a(ModifyUserInfoFragment.this)) {
                     ModifyUserInfoFragment.this.bj.setText(R.string.failure);
@@ -1476,7 +1431,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str3, double d) {
                 if (CommonTools.a(ModifyUserInfoFragment.this)) {
                     TextView textView = ModifyUserInfoFragment.this.bj;
@@ -1484,12 +1438,10 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str3, String str4) {
                 ModifyUserInfoFragment.this.c(str3, str2, str4);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -1541,34 +1493,30 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     }
 
     private void c(final String str) {
-        LoginRegisterHttpUtils.a(this.d, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.27
+        LoginRegisterHttpUtils.a(this.d, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.27
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                ModifyUserInfoFragment.this.a(str, bluedEntityA.data.get(0));
+                ModifyUserInfoFragment.this.a(str, (BluedAlbum) bluedEntityA.data.get(0));
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ModifyUserInfoFragment.this.f);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ModifyUserInfoFragment.this.f);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1580,7 +1528,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     public void d(final String str) {
         MineHttpUtils.d(this.d, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.29
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 ModifyUserInfoFragment.this.bl = 1;
@@ -1589,12 +1536,10 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 AppMethods.d((int) R.string.profile_background_reviewed);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ModifyUserInfoFragment.this.f);
@@ -1603,9 +1548,9 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     }
 
     private void f() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.e.findViewById(2131370749);
-        this.bc = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(getString(R.string.modify_data));
+        CommonTopTitleNoTrans findViewById = this.e.findViewById(R.id.top_title);
+        this.bc = findViewById;
+        findViewById.setCenterText(getString(R.string.modify_data));
         this.bc.setRightText(2131887320);
         this.bc.setLeftClickListener(this);
         this.bc.setRightClickListener(this);
@@ -1622,8 +1567,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     }
 
     private void g() {
-        ProfileHttpUtils.a(ChatManager.context, new BluedUIHttpResponse<BluedEntityA<BluedBlackList.privacySettingEntity>>() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        ProfileHttpUtils.a(ChatManager.context, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedBlackList.privacySettingEntity>>() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.1
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
                 if (bluedEntityA != null) {
@@ -1631,7 +1575,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                         if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                             return;
                         }
-                        if (bluedEntityA.data.get(0).is_open_private_photos == 1) {
+                        if (((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_open_private_photos == 1) {
                             BluedPreferences.H(true);
                             ModifyUserInfoFragment.this.n();
                             return;
@@ -1640,11 +1584,11 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                         ModifyUserInfoFragment.this.n();
                     } catch (Exception e) {
                         e.printStackTrace();
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                     }
                 }
             }
-        }, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
+        }, UserInfo.getInstance().getLoginUserInfo().getUid(), (IRequestHost) getFragmentActive());
     }
 
     private void h() {
@@ -1661,58 +1605,57 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
 
     private void i() {
         UserHttpUtils.a(ChatManager.context, new BluedUIHttpResponse<BluedEntityA<UserInfoEntity>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.10
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserInfoEntity> bluedEntityA) {
                 if (bluedEntityA == null) {
                     AppMethods.d(2131888227);
                     return;
                 }
-                UserInfoEntity singleData = bluedEntityA.getSingleData();
-                if (singleData == null) {
+                UserInfoEntity userInfoEntity = (UserInfoEntity) bluedEntityA.getSingleData();
+                if (userInfoEntity == null) {
                     AppMethods.d(2131888227);
                     return;
                 }
-                UserInfo.getInstance().getLoginUserInfo().is_audited = singleData.is_audited;
-                UserInfo.getInstance().getLoginUserInfo().avatar_audited = singleData.avatar_audited;
-                UserInfo.getInstance().getLoginUserInfo().auditing_profile = singleData.auditing_profile;
-                UserInfo.getInstance().getLoginUserInfo().restricted_desc = singleData.restricted_desc;
-                ModifyUserInfoFragment.this.a(singleData.is_audited, singleData.avatar_audited);
-                UserInfo.getInstance().getLoginUserInfo().setAvatar_pid(singleData.avatar_pid);
-                UserInfo.getInstance().getLoginUserInfo().setAvatar(singleData.avatar);
-                UserInfo.getInstance().getLoginUserInfo().vip_grade = singleData.vip_grade;
-                UserInfo.getInstance().getLoginUserInfo().is_show_vip_page = singleData.is_show_vip_page;
-                BluedConfig.a().b().is_show_vip_page = singleData.is_show_vip_page;
-                UserInfo.getInstance().getLoginUserInfo().nickname_limit = singleData.nickname_limit;
+                UserInfo.getInstance().getLoginUserInfo().is_audited = userInfoEntity.is_audited;
+                UserInfo.getInstance().getLoginUserInfo().avatar_audited = userInfoEntity.avatar_audited;
+                UserInfo.getInstance().getLoginUserInfo().auditing_profile = userInfoEntity.auditing_profile;
+                UserInfo.getInstance().getLoginUserInfo().restricted_desc = userInfoEntity.restricted_desc;
+                ModifyUserInfoFragment.this.a(userInfoEntity.is_audited, userInfoEntity.avatar_audited);
+                UserInfo.getInstance().getLoginUserInfo().setAvatar_pid(userInfoEntity.avatar_pid);
+                UserInfo.getInstance().getLoginUserInfo().setAvatar(userInfoEntity.avatar);
+                UserInfo.getInstance().getLoginUserInfo().vip_grade = userInfoEntity.vip_grade;
+                UserInfo.getInstance().getLoginUserInfo().is_show_vip_page = userInfoEntity.is_show_vip_page;
+                BluedConfig.a().b().is_show_vip_page = userInfoEntity.is_show_vip_page;
+                UserInfo.getInstance().getLoginUserInfo().nickname_limit = userInfoEntity.nickname_limit;
                 if (UserInfo.getInstance().getLoginUserInfo().is_show_vip_page == 1) {
                     ModifyUserInfoFragment.this.h.setChecked(true);
                 }
-                ReflectionUtils.a(singleData, UserInfo.getInstance().getLoginUserInfo());
-                if (singleData.album != null) {
-                    UserInfo.getInstance().getLoginUserInfo().setAlbum(singleData.album);
+                ReflectionUtils.a(userInfoEntity, UserInfo.getInstance().getLoginUserInfo());
+                if (userInfoEntity.album != null) {
+                    UserInfo.getInstance().getLoginUserInfo().setAlbum(userInfoEntity.album);
                     ModifyUserInfoFragment.this.m();
                 }
-                ImageLoader.a(ModifyUserInfoFragment.this.getFragmentActive(), UserInfo.getInstance().getLoginUserInfo().getAvatar()).b(2131232686).c().a(ModifyUserInfoFragment.this.ah);
-                ModifyUserInfoFragment.this.bk = singleData.background_photo;
-                if (TextUtils.isEmpty(singleData.background_photo)) {
+                ImageLoader.a(ModifyUserInfoFragment.this.getFragmentActive(), UserInfo.getInstance().getLoginUserInfo().getAvatar()).b((int) R.drawable.feed_photo_add).c().a(ModifyUserInfoFragment.this.ah);
+                ModifyUserInfoFragment.this.bk = userInfoEntity.background_photo;
+                if (TextUtils.isEmpty(userInfoEntity.background_photo)) {
                     ModifyUserInfoFragment.this.bl = 0;
                     ModifyUserInfoFragment.this.C.setText(R.string.profile_background_upload);
-                } else if (singleData.background_photo_auditing == 1) {
+                } else if (userInfoEntity.background_photo_auditing == 1) {
                     ModifyUserInfoFragment.this.bl = 1;
                     ModifyUserInfoFragment.this.C.setText(R.string.profile_background_under_review);
                 } else {
                     ModifyUserInfoFragment.this.bl = 2;
                     ModifyUserInfoFragment.this.C.setText(R.string.profile_background_uploaded);
                 }
-                if (singleData.health_test_info_show != 1) {
+                if (userInfoEntity.health_test_info_show != 1) {
                     ModifyUserInfoFragment.this.J.setVisibility(8);
-                } else if (!SubscribeNumberManager.f32449a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2)) {
+                } else if (!SubscribeNumberManager.f18759a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2)) {
                     ModifyUserInfoFragment.this.J.setVisibility(0);
                 }
                 if (UserInfo.getInstance().getLoginUserInfo().vip_grade != 0) {
                     ModifyUserInfoFragment.this.k();
                 }
-                ModifyUserInfoFragment.this.a(singleData);
+                ModifyUserInfoFragment.this.a(userInfoEntity);
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), "", false, 0, 0, 0, getFragmentActive());
     }
@@ -1720,18 +1663,17 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     private void j() {
         UserHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<MultiHeadMigration.DataBean>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.11
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MultiHeadMigration.DataBean> bluedEntityA) {
-                MultiHeadMigration.DataBean singleData;
-                if (bluedEntityA == null || (singleData = bluedEntityA.getSingleData()) == null) {
+                MultiHeadMigration.DataBean dataBean;
+                if (bluedEntityA == null || (dataBean = (MultiHeadMigration.DataBean) bluedEntityA.getSingleData()) == null) {
                     return;
                 }
-                if (singleData.vip_grade != 0 && singleData.vip_avatar_num > 0) {
-                    AppMethods.a((CharSequence) ModifyUserInfoFragment.this.d.getResources().getString(R.string.privacy_photo_album_moved_toast));
-                } else if (singleData.vip_grade != 0 || singleData.vip_avatar_num <= 0) {
+                if (dataBean.vip_grade != 0 && dataBean.vip_avatar_num > 0) {
+                    AppMethods.a(ModifyUserInfoFragment.this.d.getResources().getString(R.string.privacy_photo_album_moved_toast));
+                } else if (dataBean.vip_grade != 0 || dataBean.vip_avatar_num <= 0) {
                 } else {
-                    AppMethods.a((CharSequence) ModifyUserInfoFragment.this.d.getResources().getString(R.string.privacy_photo_album_moved_toast_vip));
+                    AppMethods.a(ModifyUserInfoFragment.this.d.getResources().getString(R.string.privacy_photo_album_moved_toast_vip));
                 }
             }
         }, UserInfo.getInstance().getLoginUserInfo().uid, getFragmentActive());
@@ -1751,11 +1693,11 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                ModifyUserInfoFragment.this.f33433a.d();
+                ModifyUserInfoFragment.this.f19742a.d();
                 BluedPreferences.g(1);
             }
         });
-        this.f33433a = modifyUserInfoPopView;
+        this.f19742a = modifyUserInfoPopView;
         modifyUserInfoPopView.c();
     }
 
@@ -1774,7 +1716,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         LinearLayout linearLayout2 = (LinearLayout) this.e.findViewById(R.id.ll_nickname);
         this.D = linearLayout2;
         linearLayout2.setOnClickListener(this);
-        LinearLayout linearLayout3 = (LinearLayout) this.e.findViewById(2131367739);
+        LinearLayout linearLayout3 = (LinearLayout) this.e.findViewById(R.id.ll_description);
         this.E = linearLayout3;
         linearLayout3.setOnClickListener(this);
         LinearLayout linearLayout4 = (LinearLayout) this.e.findViewById(R.id.ll_birthday);
@@ -1801,16 +1743,16 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         LinearLayout linearLayout11 = (LinearLayout) this.e.findViewById(R.id.ll_relation);
         this.O = linearLayout11;
         linearLayout11.setOnClickListener(this);
-        LinearLayout linearLayout12 = (LinearLayout) this.e.findViewById(2131367890);
+        LinearLayout linearLayout12 = (LinearLayout) this.e.findViewById(R.id.ll_header);
         this.M = linearLayout12;
         linearLayout12.setOnClickListener(this);
         LinearLayout linearLayout13 = (LinearLayout) this.e.findViewById(R.id.ll_tags);
         this.N = linearLayout13;
         linearLayout13.setOnClickListener(this);
         this.ah = (ImageView) this.e.findViewById(2131364232);
-        this.ai = (ImageView) this.e.findViewById(2131364720);
-        this.i = (TextView) this.e.findViewById(2131372085);
-        this.j = (TextView) this.e.findViewById(2131371264);
+        this.ai = (ImageView) this.e.findViewById(R.id.img_verify);
+        this.i = (TextView) this.e.findViewById(R.id.tv_nickname);
+        this.j = (TextView) this.e.findViewById(R.id.tv_description);
         this.k = (TextView) this.e.findViewById(2131370989);
         this.l = (TextView) this.e.findViewById(2131371664);
         this.r = (TextView) this.e.findViewById(R.id.tv_ethnicity);
@@ -1819,7 +1761,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         this.o = (TextView) this.e.findViewById(R.id.tv_health_information);
         this.q = (TextView) this.e.findViewById(R.id.tv_hometown);
         this.s = (TextView) this.e.findViewById(R.id.tv_tags);
-        this.t = (TextView) this.e.findViewById(2131372403);
+        this.t = (TextView) this.e.findViewById(R.id.tv_relation);
         this.P = (LinearLayout) this.e.findViewById(R.id.ll_making_friends);
         this.u = (TextView) this.e.findViewById(R.id.tv_making_friends);
         this.P.setOnClickListener(this);
@@ -1879,7 +1821,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                 ModifyUserInfoFragment.a(compoundButton, z);
             }
         });
-        if (!TextUtils.isEmpty(UserInfo.getInstance().getLoginUserInfo().uid) && SubscribeNumberManager.f32449a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2)) {
+        if (!TextUtils.isEmpty(UserInfo.getInstance().getLoginUserInfo().uid) && SubscribeNumberManager.f18759a.a(UserInfo.getInstance().getLoginUserInfo().uid, (Short) 2)) {
             this.ag.setVisibility(8);
             frameLayout.setVisibility(8);
             frameLayout2.setVisibility(8);
@@ -1910,11 +1852,11 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
 
     /* JADX INFO: Access modifiers changed from: private */
     public void m() {
-        this.f33434ar = (PhotoGridView) this.e.findViewById(2131364131);
+        this.f19743ar = (PhotoGridView) this.e.findViewById(R.id.grid_view);
         UserDragGirdAdapter userDragGirdAdapter = new UserDragGirdAdapter(this.d);
         this.at = userDragGirdAdapter;
-        this.f33434ar.setAdapter((ListAdapter) userDragGirdAdapter);
-        this.f33434ar.setColumnWidth(this.aw);
+        this.f19743ar.setAdapter((ListAdapter) userDragGirdAdapter);
+        this.f19743ar.setColumnWidth(this.aw);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1963,10 +1905,9 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         } catch (Exception e2) {
             i = 0;
         }
-        NumberPicker numberPicker = (NumberPicker) inflate.findViewById(2131364241);
-        numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.18
-            @Override // net.simonvt.numberpicker.NumberPicker.OnValueChangeListener
-            public void onValueChange(NumberPicker numberPicker2, int i4, int i5) {
+        NumberPicker findViewById = inflate.findViewById(2131364241);
+        findViewById.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.18
+            public void onValueChange(NumberPicker numberPicker, int i4, int i5) {
                 ModifyUserInfoFragment modifyUserInfoFragment = ModifyUserInfoFragment.this;
                 modifyUserInfoFragment.aj = i5 + "";
                 int aF2 = BluedPreferences.aF();
@@ -1999,7 +1940,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             this.an = 120;
             this.ao = 220;
             this.al = 170;
-            numberPicker.setDisplayedValues(null);
+            findViewById.setDisplayedValues((String[]) null);
             this.ap = 30;
             this.aq = 200;
             this.am = 60;
@@ -2008,49 +1949,48 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
             String[] strArr3 = av;
             this.ao = strArr3.length - 1;
             this.al = 20;
-            numberPicker.setDisplayedValues(strArr3);
+            findViewById.setDisplayedValues(strArr3);
             this.ap = 66;
             this.aq = 441;
             this.am = 132;
         }
-        numberPicker.setMinValue(this.an);
-        numberPicker.setMaxValue(this.ao);
+        findViewById.setMinValue(this.an);
+        findViewById.setMaxValue(this.ao);
         int i4 = this.an;
         if (parseInt < i4) {
-            numberPicker.setValue(i4);
+            findViewById.setValue(i4);
         } else {
             int i5 = this.ao;
             if (parseInt > i5) {
-                numberPicker.setValue(i5);
+                findViewById.setValue(i5);
             } else {
-                numberPicker.setValue(parseInt);
+                findViewById.setValue(parseInt);
             }
         }
-        numberPicker.setFocusable(true);
-        numberPicker.setFocusableInTouchMode(true);
-        NumberPicker numberPicker2 = (NumberPicker) inflate.findViewById(2131373389);
-        numberPicker2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.19
-            @Override // net.simonvt.numberpicker.NumberPicker.OnValueChangeListener
-            public void onValueChange(NumberPicker numberPicker3, int i6, int i7) {
+        findViewById.setFocusable(true);
+        findViewById.setFocusableInTouchMode(true);
+        NumberPicker findViewById2 = inflate.findViewById(2131373389);
+        findViewById2.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.19
+            public void onValueChange(NumberPicker numberPicker, int i6, int i7) {
                 ModifyUserInfoFragment.this.ak = i7;
             }
         });
         this.ak = i;
-        numberPicker2.setMinValue(this.ap);
-        numberPicker2.setMaxValue(this.aq);
+        findViewById2.setMinValue(this.ap);
+        findViewById2.setMaxValue(this.aq);
         int i6 = this.ap;
         if (i < i6) {
-            numberPicker2.setValue(i6);
+            findViewById2.setValue(i6);
         } else {
             int i7 = this.aq;
             if (i > i7) {
-                numberPicker2.setValue(i7);
+                findViewById2.setValue(i7);
             } else {
-                numberPicker2.setValue(i);
+                findViewById2.setValue(i);
             }
         }
-        numberPicker2.setFocusable(true);
-        numberPicker2.setFocusableInTouchMode(true);
+        findViewById2.setFocusable(true);
+        findViewById2.setFocusableInTouchMode(true);
         String string = getResources().getString(2131886754);
         if (aF == 1) {
             string = getResources().getString(2131886754);
@@ -2083,7 +2023,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
     }
 
     private void p() {
-        UserHttpUtils.a(this.d, new AnonymousClass26(getFragmentActive()), UserInfo.getInstance().getLoginUserInfo().getUid(), this.f33435c, getFragmentActive());
+        UserHttpUtils.a(this.d, (BluedUIHttpResponse) new AnonymousClass26(getFragmentActive()), UserInfo.getInstance().getLoginUserInfo().getUid(), this.f19744c, (IRequestHost) getFragmentActive());
     }
 
     public void a() {
@@ -2111,13 +2051,13 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         c();
         if (!z) {
             if (this.j.getText().length() > 256) {
-                AppMethods.a((CharSequence) getResources().getString(R.string.description_max_256));
-            } else if (this.f33435c.size() != 0) {
+                AppMethods.a(getResources().getString(R.string.description_max_256));
+            } else if (this.f19744c.size() != 0) {
                 p();
             } else {
                 d();
             }
-        } else if (this.f33435c.size() > 1) {
+        } else if (this.f19744c.size() > 1) {
             CommonAlertDialog.a(this.d, "", getResources().getString(R.string.confirm_submit_change), getResources().getString(R.string.continue_edit), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.22
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
@@ -2189,7 +2129,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         getActivity().finish();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i == 2) {
@@ -2350,7 +2289,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
                                     }
                                 }, getString(R.string.sync_profile_photo_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null, 3);
                                 a2.a(182.0f);
-                                a2.a(R.drawable.icon_buy_vip_dialog_close);
+                                a2.a((int) R.drawable.icon_buy_vip_dialog_close);
                             }
                         }
                     }
@@ -2373,13 +2312,12 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         if (this.bo) {
             d();
             return true;
         }
-        ModifyUserInfoPopView modifyUserInfoPopView = this.f33433a;
+        ModifyUserInfoPopView modifyUserInfoPopView = this.f19742a;
         if (modifyUserInfoPopView == null || !modifyUserInfoPopView.b()) {
             a(true);
             return true;
@@ -2387,6 +2325,7 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         return true;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:175:0x0636  */
     /* JADX WARN: Removed duplicated region for block: B:176:0x063c  */
     @Override // android.view.View.OnClickListener
@@ -2402,7 +2341,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.setting.fragment.ModifyUserInfoFragment.onClick(android.view.View):void");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.d = getActivity();
         View view = this.e;
@@ -2429,7 +2367,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.aE = true;
@@ -2448,7 +2385,6 @@ public class ModifyUserInfoFragment extends BaseFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         b();

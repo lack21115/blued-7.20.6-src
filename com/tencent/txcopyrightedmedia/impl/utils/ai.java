@@ -7,14 +7,14 @@ import android.os.HandlerThread;
 public final class ai {
 
     /* renamed from: a  reason: collision with root package name */
-    public HandlerThread f40054a;
+    public HandlerThread f26363a;
     public Handler b;
 
     public ai() {
         HandlerThread handlerThread = new HandlerThread("AME-Callback");
-        this.f40054a = handlerThread;
+        this.f26363a = handlerThread;
         handlerThread.start();
-        this.b = new Handler(this.f40054a.getLooper());
+        this.b = new Handler(this.f26363a.getLooper());
     }
 
     public final void a(Runnable runnable) {

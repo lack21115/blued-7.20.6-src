@@ -23,7 +23,7 @@ import java.lang.reflect.Method;
 public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f1841a;
+    private static Method f1793a;
     private MenuItemHoverListener b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView.class */
@@ -31,7 +31,7 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final int f1842c;
+        final int f1794c;
         private MenuItemHoverListener d;
         private MenuItem e;
 
@@ -40,11 +40,11 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
             Configuration configuration = context.getResources().getConfiguration();
             if (Build.VERSION.SDK_INT < 17 || 1 != configuration.getLayoutDirection()) {
                 this.b = 22;
-                this.f1842c = 21;
+                this.f1794c = 21;
                 return;
             }
             this.b = 21;
-            this.f1842c = 22;
+            this.f1794c = 22;
         }
 
         public void clearSelection() {
@@ -139,7 +139,7 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
                     return true;
                 }
                 return true;
-            } else if (listMenuItemView == null || i != this.f1842c) {
+            } else if (listMenuItemView == null || i != this.f1794c) {
                 return super.onKeyDown(i, keyEvent);
             } else {
                 setSelection(-1);
@@ -167,7 +167,7 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
     static {
         try {
             if (Build.VERSION.SDK_INT <= 28) {
-                f1841a = PopupWindow.class.getDeclaredMethod("setTouchModal", Boolean.TYPE);
+                f1793a = PopupWindow.class.getDeclaredMethod("setTouchModal", Boolean.TYPE);
             }
         } catch (NoSuchMethodException e) {
             Log.i("MenuPopupWindow", "Could not find method setTouchModal() on PopupWindow. Oh well.");
@@ -222,7 +222,7 @@ public class MenuPopupWindow extends ListPopupWindow implements MenuItemHoverLis
             this.g.setTouchModal(z);
             return;
         }
-        Method method = f1841a;
+        Method method = f1793a;
         if (method != null) {
             try {
                 method.invoke(this.g, Boolean.valueOf(z));

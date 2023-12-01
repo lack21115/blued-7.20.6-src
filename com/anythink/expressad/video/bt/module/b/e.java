@@ -6,11 +6,11 @@ import android.content.Context;
 public final class e extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8342a = "ProxyShowRewardListener";
+    private static final String f5502a = "ProxyShowRewardListener";
     private h b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.videocommon.e.d f8343c;
+    private com.anythink.expressad.videocommon.e.d f5503c;
     private String d;
     private String e;
     private boolean f;
@@ -45,7 +45,7 @@ public final class e extends c {
             r0.b = r1
             r0 = r6
             r1 = r9
-            r0.f8343c = r1
+            r0.f5503c = r1
             r0 = r6
             r1 = r13
             r0.d = r1

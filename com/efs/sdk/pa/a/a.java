@@ -13,11 +13,11 @@ import java.util.Set;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    volatile boolean f21849a;
+    volatile boolean f8242a;
     final Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    final Thread f21850c;
+    final Thread f8243c;
     long d;
     long e;
     boolean f;
@@ -37,7 +37,7 @@ public final class a {
     }
 
     public a(Application application, long j, boolean z) {
-        this.f21849a = true;
+        this.f8242a = true;
         this.e = 4L;
         this.f = true;
         this.i = 0L;
@@ -61,7 +61,7 @@ public final class a {
         this.n = new Runnable() { // from class: com.efs.sdk.pa.a.a.2
             @Override // java.lang.Runnable
             public final void run() {
-                a.this.f21849a = true;
+                a.this.f8242a = true;
             }
         };
         this.k = j;
@@ -74,7 +74,7 @@ public final class a {
             this.e = j / 100;
         }
         Log.i("Matrix.AnrTracer", "anrTrace, final mAnrBeatTime:" + this.d + ", mAnrBeatRate:" + this.d);
-        this.f21850c = Looper.getMainLooper().getThread();
+        this.f8243c = Looper.getMainLooper().getThread();
         this.b = new Handler(Looper.getMainLooper());
         HandlerThread handlerThread = new HandlerThread("ANR HANDLER THREAD");
         this.o = handlerThread;

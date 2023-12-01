@@ -5,14 +5,14 @@ public final class a {
 
     /* renamed from: com.tramini.plugin.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tramini/plugin/a/a/a$a.class */
-    public static final class C1066a {
+    public static final class C0896a {
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tramini/plugin/a/a/a$b.class */
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static int f40476a = 1;
+        public static int f26785a = 1;
         public static int b = 2;
     }
 

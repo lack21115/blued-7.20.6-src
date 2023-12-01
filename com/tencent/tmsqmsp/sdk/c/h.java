@@ -9,7 +9,7 @@ import com.tencent.mapsdk.internal.oj;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SharedPreferences f39715a;
+    private static SharedPreferences f26024a;
     private static final int b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/c/h$a.class */
@@ -87,9 +87,9 @@ public class h {
     public static void a(Context context) {
         try {
             StringBuilder sb = new StringBuilder();
-            sb.append(com.tencent.tmsqmsp.sdk.c.b.f39705a);
+            sb.append(com.tencent.tmsqmsp.sdk.c.b.f26014a);
             sb.append("qmsp_cbid_time");
-            f39715a = context.getSharedPreferences(sb.toString(), 0);
+            f26024a = context.getSharedPreferences(sb.toString(), 0);
             b();
         } catch (Exception e) {
             e.printStackTrace();
@@ -103,13 +103,13 @@ public class h {
             taskStatus = oj.getTaskStatus();
             if (!taskStatus) {
                 com.tencent.tmsqmsp.sdk.f.g.a("cbid", 1, "Cbid Task Finish！");
-            } else if (f39715a != null) {
+            } else if (f26024a != null) {
                 if (!f.i().a(1002).booleanValue()) {
                     a(28800000L);
                     return;
                 }
                 long j2 = 0;
-                long j3 = f39715a.getLong("cbid_last_time", 0L);
+                long j3 = f26024a.getLong("cbid_last_time", 0L);
                 long currentTimeMillis = System.currentTimeMillis();
                 long j4 = currentTimeMillis - j3;
                 if (j4 >= 0) {
@@ -117,7 +117,7 @@ public class h {
                 }
                 if (j2 > 28800000) {
                     a();
-                    SharedPreferences.Editor edit = f39715a.edit();
+                    SharedPreferences.Editor edit = f26024a.edit();
                     edit.putLong("cbid_last_time", currentTimeMillis);
                     edit.commit();
                     j = 28800000;

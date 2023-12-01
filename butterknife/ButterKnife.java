@@ -11,7 +11,7 @@ import java.util.Map;
 public final class ButterKnife {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Map<Class<?>, Constructor<? extends Unbinder>> f3720a = new LinkedHashMap();
+    static final Map<Class<?>, Constructor<? extends Unbinder>> f3672a = new LinkedHashMap();
     private static boolean b = false;
 
     private ButterKnife() {
@@ -25,7 +25,7 @@ public final class ButterKnife {
         }
         Constructor<? extends Unbinder> a2 = a(cls);
         if (a2 == null) {
-            return Unbinder.f3727a;
+            return Unbinder.f3679a;
         }
         try {
             return a2.newInstance(obj, view);
@@ -47,8 +47,8 @@ public final class ButterKnife {
 
     private static Constructor<? extends Unbinder> a(Class<?> cls) {
         Constructor<? extends Unbinder> a2;
-        Constructor<? extends Unbinder> constructor = f3720a.get(cls);
-        if (constructor != null || f3720a.containsKey(cls)) {
+        Constructor<? extends Unbinder> constructor = f3672a.get(cls);
+        if (constructor != null || f3672a.containsKey(cls)) {
             if (b) {
                 Log.d("ButterKnife", "HIT: Cached in binding map.");
             }
@@ -78,7 +78,7 @@ public final class ButterKnife {
         } catch (NoSuchMethodException e2) {
             throw new RuntimeException("Unable to find binding constructor for " + name, e2);
         }
-        f3720a.put(cls, a2);
+        f3672a.put(cls, a2);
         return a2;
     }
 }

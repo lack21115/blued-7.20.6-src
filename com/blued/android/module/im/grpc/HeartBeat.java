@@ -1,17 +1,12 @@
 package com.blued.android.module.im.grpc;
 
 import android.os.Handler;
-import com.anythink.expressad.video.module.a.a.m;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/HeartBeat.class */
 public class HeartBeat {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11370a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f11371c;
+    private long c;
     private long d;
     private Runnable e;
     private Runnable f;
@@ -31,7 +26,7 @@ public class HeartBeat {
 
     public HeartBeat(Handler handler, int i, int i2) {
         this.h = handler;
-        this.f11370a = i;
+        this.a = i;
         this.b = i2;
     }
 
@@ -43,14 +38,14 @@ public class HeartBeat {
         }
         Runnable runnable = this.e;
         if (runnable != null) {
-            this.h.postDelayed(runnable, this.f11370a);
+            this.h.postDelayed(runnable, this.a);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        long j = this.f11371c - this.d;
-        if (j <= 0 || j >= m.ag) {
+        long j = this.c - this.d;
+        if (j <= 0 || j >= 3000) {
             OnBeatListener onBeatListener = this.g;
             if (onBeatListener != null) {
                 onBeatListener.b();
@@ -63,7 +58,7 @@ public class HeartBeat {
             this.h.removeCallbacks(runnable);
             this.h.postDelayed(this.f, j);
         }
-        this.d = this.f11371c;
+        this.d = this.c;
     }
 
     public void a() {
@@ -90,7 +85,7 @@ public class HeartBeat {
                 }
             };
             this.e = runnable;
-            this.h.postDelayed(runnable, this.f11370a);
+            this.h.postDelayed(runnable, this.a);
         }
         if (this.f != null) {
             Runnable runnable2 = new Runnable() { // from class: com.blued.android.module.im.grpc.HeartBeat.2
@@ -107,11 +102,11 @@ public class HeartBeat {
     public void update() {
         if (this.f != null) {
             long currentTimeMillis = System.currentTimeMillis();
-            this.f11371c = currentTimeMillis;
-            if (currentTimeMillis - this.d >= m.ag) {
+            this.c = currentTimeMillis;
+            if (currentTimeMillis - this.d >= 3000) {
                 this.h.removeCallbacks(this.f);
                 this.h.postDelayed(this.f, this.b);
-                this.d = this.f11371c;
+                this.d = this.c;
             }
         }
     }

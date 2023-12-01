@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSearchGlobalShortcutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29306a;
+    private final LinearLayout f15616a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29306a;
+        return this.f15616a;
     }
 }

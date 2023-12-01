@@ -15,13 +15,13 @@ public interface b extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.tencent.liteav.audio.earmonitor.a.a.b$a$a  reason: collision with other inner class name */
         /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/audio/earmonitor/a/a/b$a$a.class */
-        public static final class C0923a implements b {
+        public static final class C0753a implements b {
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f36225a;
+            private IBinder f22534a;
 
-            C0923a(IBinder iBinder) {
-                this.f36225a = iBinder;
+            C0753a(IBinder iBinder) {
+                this.f22534a = iBinder;
             }
 
             @Override // com.tencent.liteav.audio.earmonitor.a.a.b
@@ -32,7 +32,7 @@ public interface b extends IInterface {
                     obtain.writeInterfaceToken("com.huawei.multimedia.audioengine.IHwAudioKaraokeFeature");
                     obtain.writeString(str);
                     obtain.writeInt(i);
-                    this.f36225a.transact(4, obtain, obtain2, 0);
+                    this.f22534a.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readInt();
                 } finally {
@@ -48,7 +48,7 @@ public interface b extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.huawei.multimedia.audioengine.IHwAudioKaraokeFeature");
                     obtain.writeInt(z ? 1 : 0);
-                    this.f36225a.transact(2, obtain, obtain2, 0);
+                    this.f22534a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readInt();
                 } finally {
@@ -64,7 +64,7 @@ public interface b extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.huawei.multimedia.audioengine.IHwAudioKaraokeFeature");
                     obtain.writeString(str);
-                    this.f36225a.transact(5, obtain, obtain2, 0);
+                    this.f22534a.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -79,7 +79,7 @@ public interface b extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.huawei.multimedia.audioengine.IHwAudioKaraokeFeature");
                     boolean z = false;
-                    this.f36225a.transact(1, obtain, obtain2, 0);
+                    this.f22534a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -96,7 +96,7 @@ public interface b extends IInterface {
 
             @Override // android.os.IInterface
             public final IBinder asBinder() {
-                return this.f36225a;
+                return this.f22534a;
             }
 
             @Override // com.tencent.liteav.audio.earmonitor.a.a.b
@@ -105,7 +105,7 @@ public interface b extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.huawei.multimedia.audioengine.IHwAudioKaraokeFeature");
-                    this.f36225a.transact(3, obtain, obtain2, 0);
+                    this.f22534a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readInt();
                 } finally {
@@ -120,7 +120,7 @@ public interface b extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.huawei.multimedia.audioengine.IHwAudioKaraokeFeature");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C0923a(iBinder) : (b) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof b)) ? new C0753a(iBinder) : (b) queryLocalInterface;
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

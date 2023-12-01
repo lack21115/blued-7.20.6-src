@@ -20,13 +20,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/ReceiveCityAdapter.class */
 public final class ReceiveCityAdapter extends AbstractReceiverAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ItemTripReceiverLayoutBinding f16142a;
+    private ItemTripReceiverLayoutBinding a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f16143c;
+    private int c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ReceiveCityAdapter(Context context, ActivityFragmentActive fragmentActive) {
@@ -34,12 +30,12 @@ public final class ReceiveCityAdapter extends AbstractReceiverAdapter {
         Intrinsics.e(context, "context");
         Intrinsics.e(fragmentActive, "fragmentActive");
         this.b = DensityUtils.a(context, 15.0f);
-        this.f16143c = DensityUtils.a(context, 8.0f);
+        this.c = DensityUtils.a(context, 8.0f);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.AbstractReceiverAdapter
     public CardView a() {
-        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.f16142a;
+        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.a;
         if (itemTripReceiverLayoutBinding == null) {
             return null;
         }
@@ -48,7 +44,7 @@ public final class ReceiveCityAdapter extends AbstractReceiverAdapter {
 
     @Override // com.blued.android.module.yy_china.adapter.AbstractReceiverAdapter
     public ImageView b() {
-        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.f16142a;
+        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.a;
         if (itemTripReceiverLayoutBinding == null) {
             return null;
         }
@@ -59,29 +55,29 @@ public final class ReceiveCityAdapter extends AbstractReceiverAdapter {
     public void b(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         View view;
         ViewGroup.LayoutParams layoutParams;
-        ItemTripReceiverLayoutBinding a2 = (baseViewHolder == null || (view = baseViewHolder.itemView) == null) ? null : ItemTripReceiverLayoutBinding.a(view);
-        this.f16142a = a2;
-        if (a2 == null) {
+        ItemTripReceiverLayoutBinding a = (baseViewHolder == null || (view = baseViewHolder.itemView) == null) ? null : ItemTripReceiverLayoutBinding.a(view);
+        this.a = a;
+        if (a == null) {
             layoutParams = null;
         } else {
-            ConstraintLayout constraintLayout = a2.f16671c;
+            ConstraintLayout constraintLayout = a.c;
             layoutParams = constraintLayout == null ? null : constraintLayout.getLayoutParams();
         }
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
         }
-        RecyclerView.LayoutParams layoutParams2 = (RecyclerView.LayoutParams) layoutParams;
+        RecyclerView.LayoutParams layoutParams2 = layoutParams;
         if (baseViewHolder != null && baseViewHolder.getAdapterPosition() == 0) {
             layoutParams2.leftMargin = this.b;
         } else {
             layoutParams2.leftMargin = 0;
         }
-        layoutParams2.rightMargin = this.f16143c;
+        layoutParams2.rightMargin = this.c;
     }
 
     @Override // com.blued.android.module.yy_china.adapter.AbstractReceiverAdapter
     public TextView c() {
-        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.f16142a;
+        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.a;
         if (itemTripReceiverLayoutBinding == null) {
             return null;
         }
@@ -90,10 +86,10 @@ public final class ReceiveCityAdapter extends AbstractReceiverAdapter {
 
     @Override // com.blued.android.module.yy_china.adapter.AbstractReceiverAdapter
     public ImageView d() {
-        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.f16142a;
+        ItemTripReceiverLayoutBinding itemTripReceiverLayoutBinding = this.a;
         if (itemTripReceiverLayoutBinding == null) {
             return null;
         }
-        return itemTripReceiverLayoutBinding.f16670a;
+        return itemTripReceiverLayoutBinding.a;
     }
 }

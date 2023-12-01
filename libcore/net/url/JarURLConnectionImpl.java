@@ -1,6 +1,5 @@
 package libcore.net.url;
 
-import android.content.ContentResolver;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -90,7 +89,7 @@ public class JarURLConnectionImpl extends JarURLConnection {
         FileOutputStream fileOutputStream;
         JarFile jarFile;
         File createTempFile;
-        if (this.jarFileURL.getProtocol().equals(ContentResolver.SCHEME_FILE)) {
+        if (this.jarFileURL.getProtocol().equals("file")) {
             jarFile = new JarFile(new File(UriCodec.decode(this.jarFileURL.getFile())), true, 1);
         } else {
             InputStream inputStream = this.jarFileURL.openConnection().getInputStream();

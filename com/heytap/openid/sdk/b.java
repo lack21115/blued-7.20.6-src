@@ -8,10 +8,10 @@ import android.os.IBinder;
 public class b implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ c f22269a;
+    public final /* synthetic */ c f8661a;
 
     public b(c cVar) {
-        this.f22269a = cVar;
+        this.f8661a = cVar;
     }
 
     @Override // android.content.ServiceConnection

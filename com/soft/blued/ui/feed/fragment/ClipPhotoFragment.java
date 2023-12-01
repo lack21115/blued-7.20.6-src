@@ -31,11 +31,11 @@ import com.soft.blued.customview.ClipImageLayout;
 public class ClipPhotoFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f29884a;
+    private Context f16194a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f29885c;
+    private TextView f16195c;
     private View d;
     private TextView e;
     private ImageView f;
@@ -73,19 +73,19 @@ public class ClipPhotoFragment extends BaseFragment {
         this.f = (ImageView) findViewById.findViewById(2131363120);
         this.e = (TextView) this.d.findViewById(2131363108);
         this.g = (ImageView) this.d.findViewById(2131363126);
-        this.f29885c = (TextView) this.b.findViewById(R.id.done_view);
+        this.f16195c = (TextView) this.b.findViewById(R.id.done_view);
         this.g.setVisibility(8);
-        this.f29885c.setVisibility(0);
+        this.f16195c.setVisibility(0);
         this.h = (ClipImageLayout) this.b.findViewById(R.id.id_clipImageLayout);
         if (this.k == 8) {
-            this.h.setVerticalPadding((AppInfo.m - DensityUtils.a(this.f29884a, 198.0f)) / 2);
+            this.h.setVerticalPadding((AppInfo.m - DensityUtils.a(this.f16194a, 198.0f)) / 2);
         }
         if (this.k == 9) {
             this.h.setVerticalPadding((AppInfo.m - AppInfo.l) / 2);
         }
         int c2 = ImageUtils.c(this.i);
         String[] a2 = ImageUtils.a(this.i);
-        int[] a3 = this.k == 8 ? ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue(), DensityUtils.a(this.f29884a, 198.0f) - DensityUtils.a(getActivity())) : ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue());
+        int[] a3 = this.k == 8 ? ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue(), DensityUtils.a(this.f16194a, 198.0f) - DensityUtils.a(getActivity())) : ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue());
         if (a3[0] > a3[1]) {
             int i = a3[0];
         } else {
@@ -131,11 +131,11 @@ public class ClipPhotoFragment extends BaseFragment {
                 if (ClipPhotoFragment.this.getParentFragment() == null || !(ClipPhotoFragment.this.getParentFragment() instanceof LiveBaseDialogFragment)) {
                     ClipPhotoFragment.this.getActivity().finish();
                 } else {
-                    ((LiveBaseDialogFragment) ClipPhotoFragment.this.getParentFragment()).a((LiveBaseDialogFragment) null);
+                    ClipPhotoFragment.this.getParentFragment().a((Object) null);
                 }
             }
         });
-        this.f29885c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipPhotoFragment.2
+        this.f16195c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipPhotoFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -143,12 +143,12 @@ public class ClipPhotoFragment extends BaseFragment {
                     float f = ClipPhotoFragment.this.l;
                     float f2 = ClipPhotoFragment.this.m;
                     if (f < 300.0f || f2 < 300.0f) {
-                        CommonAlertDialog.a(ClipPhotoFragment.this.f29884a, (String) null, ClipPhotoFragment.this.f29884a.getResources().getString(R.string.cropped_image_too_small), ClipPhotoFragment.this.f29884a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipPhotoFragment.2.1
+                        CommonAlertDialog.a(ClipPhotoFragment.this.f16194a, (String) null, ClipPhotoFragment.this.f16194a.getResources().getString(R.string.cropped_image_too_small), ClipPhotoFragment.this.f16194a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipPhotoFragment.2.1
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i3) {
                                 Tracker.onClick(dialogInterface, i3);
                                 if (ClipPhotoFragment.this.getParentFragment() != null && (ClipPhotoFragment.this.getParentFragment() instanceof LiveBaseDialogFragment)) {
-                                    ((LiveBaseDialogFragment) ClipPhotoFragment.this.getParentFragment()).a((LiveBaseDialogFragment) null);
+                                    ClipPhotoFragment.this.getParentFragment().a((Object) null);
                                     return;
                                 }
                                 Intent intent = new Intent();
@@ -156,12 +156,12 @@ public class ClipPhotoFragment extends BaseFragment {
                                 ClipPhotoFragment.this.getActivity().setResult(0, intent);
                                 ClipPhotoFragment.this.getActivity().finish();
                             }
-                        }, ClipPhotoFragment.this.f29884a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipPhotoFragment.2.2
+                        }, ClipPhotoFragment.this.f16194a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipPhotoFragment.2.2
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i3) {
                                 Tracker.onClick(dialogInterface, i3);
                                 if (ClipPhotoFragment.this.getParentFragment() != null && (ClipPhotoFragment.this.getParentFragment() instanceof LiveBaseDialogFragment)) {
-                                    ((LiveBaseDialogFragment) ClipPhotoFragment.this.getParentFragment()).a((LiveBaseDialogFragment) null);
+                                    ClipPhotoFragment.this.getParentFragment().a((Object) null);
                                     return;
                                 }
                                 Intent intent = new Intent();
@@ -193,16 +193,15 @@ public class ClipPhotoFragment extends BaseFragment {
                     LiveMakeLoverFansModel liveMakeLoverFansModel = new LiveMakeLoverFansModel();
                     liveMakeLoverFansModel.avatar = ClipPhotoFragment.this.j;
                     liveMakeLoverFansModel.pic = e2;
-                    ((LiveBaseDialogFragment) ClipPhotoFragment.this.getParentFragment()).a((LiveBaseDialogFragment) liveMakeLoverFansModel);
+                    ClipPhotoFragment.this.getParentFragment().a(liveMakeLoverFansModel);
                 } catch (Exception e3) {
                 }
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29884a = getActivity();
+        this.f16194a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_clip_photo, viewGroup, false);

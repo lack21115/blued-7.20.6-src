@@ -7,18 +7,18 @@ import java.lang.reflect.Method;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f21359a;
+    private static Method f7753a;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f21360c;
+    private static Method f7754c;
     private static Method d;
 
     static {
         try {
-            f21359a = Class.class.getDeclaredMethod("getDeclaredField", String.class);
+            f7753a = Class.class.getDeclaredMethod("getDeclaredField", String.class);
             b = Class.class.getDeclaredMethod("getDeclaredMethod", String.class, Class[].class);
-            f21360c = Class.class.getDeclaredMethod("getDeclaredConstructor", Class[].class);
+            f7754c = Class.class.getDeclaredMethod("getDeclaredConstructor", Class[].class);
             d = Class.class.getDeclaredMethod("forName", String.class);
         } catch (Throwable th) {
             ZeusLogger.errReport(ZeusLogger.TAG_INIT, "DoubleReflectorinit failed", th);
@@ -33,7 +33,7 @@ public final class a {
     */
     public static java.lang.reflect.Constructor a(java.lang.Class<?> r7, java.lang.Class<?>... r8) {
         /*
-            java.lang.reflect.Method r0 = com.bytedance.pangle.b.b.a.f21360c
+            java.lang.reflect.Method r0 = com.bytedance.pangle.b.b.a.f7754c
             r9 = r0
             r0 = r9
             if (r0 == 0) goto L4d
@@ -102,7 +102,7 @@ public final class a {
     */
     public static java.lang.reflect.Field a(java.lang.Class<?> r7, java.lang.String r8) {
         /*
-            java.lang.reflect.Method r0 = com.bytedance.pangle.b.b.a.f21359a
+            java.lang.reflect.Method r0 = com.bytedance.pangle.b.b.a.f7753a
             r10 = r0
             r0 = 0
             r9 = r0

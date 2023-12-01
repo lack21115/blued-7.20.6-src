@@ -60,13 +60,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/music/BackgroundMusicView.class */
 public final class BackgroundMusicView extends FrameLayout implements View.OnClickListener, MusicPlayMusicInfoCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BlackMusicListener f11423a;
+    private final BlackMusicListener a;
     private final Fragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ActivityFragmentActive f11424c;
+    private final ActivityFragmentActive c;
     private final FragmentYyMusicBinding d;
     private final ActivityFragmentActive e;
     private final FragmentManager f;
@@ -84,13 +80,9 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/music/BackgroundMusicView$YYMusicPageAdapter.class */
     public final class YYMusicPageAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BackgroundMusicView f11425a;
+        final /* synthetic */ BackgroundMusicView a;
         private final BackgroundMusicView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private List<? extends YYKtvMusicTypeModel> f11426c;
+        private List<? extends YYKtvMusicTypeModel> c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public YYMusicPageAdapter(BackgroundMusicView this$0, FragmentManager fm, BackgroundMusicView mus) {
@@ -98,32 +90,30 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(fm, "fm");
             Intrinsics.e(mus, "mus");
-            this.f11425a = this$0;
+            this.a = this$0;
             this.b = mus;
-            this.f11426c = new ArrayList();
+            this.c = new ArrayList();
         }
 
         public final void a(List<? extends YYKtvMusicTypeModel> list) {
             Intrinsics.e(list, "<set-?>");
-            this.f11426c = list;
+            this.c = list;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f11426c.size();
+            return this.c.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             YyBackgroundItemFragment yyBackgroundItemFragment = new YyBackgroundItemFragment();
-            yyBackgroundItemFragment.a(this.f11425a.getBaseYYStudioFragment());
+            yyBackgroundItemFragment.a(this.a.getBaseYYStudioFragment());
             yyBackgroundItemFragment.a(this.b);
             Bundle bundle = new Bundle();
-            bundle.putString("sheetId", this.f11426c.get(i).sheetId);
+            bundle.putString("sheetId", this.c.get(i).sheetId);
             bundle.putInt("isPersonal", 0);
             bundle.putString("collectId", "0");
             bundle.putBoolean("searchPage", false);
-            bundle.putString("roomId", this.f11425a.getBaseYYStudioFragment().f());
+            bundle.putString("roomId", this.a.getBaseYYStudioFragment().f());
             yyBackgroundItemFragment.setArguments(bundle);
             return yyBackgroundItemFragment;
         }
@@ -135,19 +125,18 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
         Intrinsics.e(context, "context");
         Intrinsics.e(baseYYStudioFragment, "baseYYStudioFragment");
         Intrinsics.e(fragment, "fragment");
-        this.f11423a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.b = fragment;
-        this.f11424c = activityFragmentActive;
-        FragmentYyMusicBinding a2 = FragmentYyMusicBinding.a(LayoutInflater.from(context), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.d = a2;
-        this.e = this.f11424c;
+        this.c = activityFragmentActive;
+        FragmentYyMusicBinding a = FragmentYyMusicBinding.a(LayoutInflater.from(context), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.d = a;
+        this.e = this.c;
         FragmentManager childFragmentManager = this.b.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "fragment.childFragmentManager");
         this.f = childFragmentManager;
-        YYMusicManager.f11418a.c().a(YYMusicManager.f11418a.c().h(), this);
+        YYMusicManager.a.c().a(YYMusicManager.a.c().h(), this);
         this.k = new Observer() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$ZMh8naBnnyqZ6VmG4y24LIB_KCs
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 BackgroundMusicView.b(BackgroundMusicView.this, (String) obj);
             }
@@ -167,13 +156,13 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
                 if (yYKtvMusicModel == null) {
                     return;
                 }
-                if (YYMusicManager.f11418a.c().c()) {
-                    YYKtvMusicModel b = YYMusicManager.f11418a.c().b();
+                if (YYMusicManager.a.c().c()) {
+                    YYKtvMusicModel b = YYMusicManager.a.c().b();
                     if (BackgroundMusicView.this.getBaseYYStudioFragment().f() != null && b != null) {
                         BackgroundMusicView.this.getBaseYYStudioFragment().a(null, LiveProtos.Event.LIVE_MUSIC_CHANGE, BackgroundMusicView.this.getBaseYYStudioFragment().f(), b.sheetId, b.musicId, b.playTime);
                     }
                 }
-                YYMusicManager.f11418a.c().a(yYKtvMusicModel);
+                YYMusicManager.a.c().a(yYKtvMusicModel);
                 if (BackgroundMusicView.this.getBaseYYStudioFragment().f() != null) {
                     BackgroundMusicView.this.getBaseYYStudioFragment().a(ChatRoomProtos.Event.CHAT_ROOM_TOOLBOX_MUSIC_PLAY_CLICK, LiveProtos.Event.LIVE_MUSIC_PLAY_CLICK, BackgroundMusicView.this.getBaseYYStudioFragment().f(), yYKtvMusicModel.sheetId, yYKtvMusicModel.musicId);
                 }
@@ -283,7 +272,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
                 if (BackgroundMusicView.this.getBaseYYStudioFragment().f() != null && yYKtvMusicModel != null) {
                     BackgroundMusicView.this.getBaseYYStudioFragment().a(ChatRoomProtos.Event.CHAT_ROOM_TOOLBOX_MUSIC_EXIT_CLICK, LiveProtos.Event.LIVE_MUSIC_EXIT_CLICK, BackgroundMusicView.this.getBaseYYStudioFragment().f(), yYKtvMusicModel.sheetId, yYKtvMusicModel.musicId, yYKtvMusicModel.playTime);
                 }
-                YYMusicManager.f11418a.c().a((LiveMusicModel) null);
+                YYMusicManager.a.c().a((LiveMusicModel) null);
                 BlackMusicListener recordingStudioFragment = BackgroundMusicView.this.getRecordingStudioFragment();
                 if (recordingStudioFragment != null) {
                     recordingStudioFragment.J_();
@@ -300,18 +289,18 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
 
             @Override // com.blued.android.module.live.base.music.YYPlayMusicListener
             public void e(YYKtvMusicModel yYKtvMusicModel) {
-                YYMusicManager.f11418a.c().a((LiveMusicModel) null);
+                YYMusicManager.a.c().a((LiveMusicModel) null);
                 BlackMusicListener recordingStudioFragment = BackgroundMusicView.this.getRecordingStudioFragment();
                 if (recordingStudioFragment != null) {
                     recordingStudioFragment.c();
                 }
-                YYKtvMusicModel a3 = yYKtvMusicModel != null ? YYMusicManager.f11418a.c().a(yYKtvMusicModel.musicId) : null;
-                if (a3 != null) {
-                    a(a3);
+                YYKtvMusicModel a2 = yYKtvMusicModel != null ? YYMusicManager.a.c().a(yYKtvMusicModel.musicId) : null;
+                if (a2 != null) {
+                    a(a2);
                     return;
                 }
-                YYMusicManager.f11418a.c().a((List<? extends YYKtvMusicModel>) null);
-                YYMusicManager.f11418a.c().a((YYKtvMusicModel) null);
+                YYMusicManager.a.c().a((List<? extends YYKtvMusicModel>) null);
+                YYMusicManager.a.c().a((YYKtvMusicModel) null);
             }
 
             @Override // com.blued.android.module.live.base.music.YYPlayMusicListener
@@ -332,13 +321,11 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
             }
         };
         this.n = new Observer() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$rVebIxt-tiILXaU3Uc2X1SOsK0c
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 BackgroundMusicView.c(BackgroundMusicView.this, (String) obj);
             }
         };
         this.o = new Observer() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$ioJv4SOtQ_lxmU6OLiHOgUX_15A
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 BackgroundMusicView.a(BackgroundMusicView.this, (TrtcMusicModel) obj);
             }
@@ -368,7 +355,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
                     return;
                 }
                 BackgroundMusicView backgroundMusicView = BackgroundMusicView.this;
-                backgroundMusicView.c(backgroundMusicView.getMBinding().e.f11404a.getText().toString());
+                backgroundMusicView.c(backgroundMusicView.getMBinding().e.a.getText().toString());
             }
 
             @Override // android.text.TextWatcher
@@ -411,19 +398,19 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     public static final void a(BackgroundMusicView this$0, View view, int i) {
         Intrinsics.e(this$0, "this$0");
         if (view instanceof TextView) {
-            this$0.d.e.f11404a.setText(((TextView) view).getText().toString());
+            this$0.d.e.a.setText(((TextView) view).getText().toString());
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(BackgroundMusicView this$0, TrtcMusicModel trtcMusicModel) {
-        LiveMusicModel a2;
+        LiveMusicModel a;
         Intrinsics.e(this$0, "this$0");
         LogUtils.c("music", "更新进度条");
-        if (trtcMusicModel == null || (a2 = YYMusicManager.f11418a.c().a()) == null) {
+        if (trtcMusicModel == null || (a = YYMusicManager.a.c().a()) == null) {
             return;
         }
-        a2.curDuration = trtcMusicModel.curPtsMS;
+        a.curDuration = trtcMusicModel.curPtsMS;
         this$0.a(trtcMusicModel.curPtsMS);
     }
 
@@ -486,8 +473,8 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     public static final boolean a(BackgroundMusicView this$0, TextView textView, int i, KeyEvent keyEvent) {
         Intrinsics.e(this$0, "this$0");
         if (i == 3) {
-            this$0.a(this$0.d.e.f11404a.getText().toString());
-            this$0.c(this$0.d.e.f11404a.getText().toString());
+            this$0.a(this$0.d.e.a.getText().toString());
+            this$0.c(this$0.d.e.a.getText().toString());
             return true;
         }
         return true;
@@ -496,7 +483,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(BackgroundMusicView this$0, String str) {
         Intrinsics.e(this$0, "this$0");
-        this$0.d.f11379c.setVisibility(8);
+        this$0.d.c.setVisibility(8);
         this$0.a(0L);
         this$0.j();
     }
@@ -533,7 +520,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     public final void c(String str) {
         if (TextUtils.isEmpty(str)) {
             getSearchHistory();
-            this.d.e.f11405c.setVisibility(8);
+            this.d.e.c.setVisibility(8);
             return;
         }
         YyBackgroundItemFragment yyBackgroundItemFragment = this.j;
@@ -541,7 +528,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
             yyBackgroundItemFragment.a(str);
         }
         this.d.e.d.setVisibility(8);
-        this.d.e.f11405c.setVisibility(0);
+        this.d.e.c.setVisibility(0);
     }
 
     private final void g() {
@@ -560,13 +547,13 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
             return;
         }
         YyBackgroundItemFragment yyBackgroundItemFragment3 = new YyBackgroundItemFragment();
-        yyBackgroundItemFragment3.a(this.f11423a);
+        yyBackgroundItemFragment3.a(this.a);
         yyBackgroundItemFragment3.a(this);
         this.j = yyBackgroundItemFragment3;
         Bundle bundle = new Bundle();
         bundle.putLong("lid", 0L);
         bundle.putBoolean("searchPage", true);
-        bundle.putString("roomId", this.f11423a.f());
+        bundle.putString("roomId", this.a.f());
         YyBackgroundItemFragment yyBackgroundItemFragment4 = this.j;
         Intrinsics.a(yyBackgroundItemFragment4);
         yyBackgroundItemFragment4.setArguments(bundle);
@@ -638,34 +625,34 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
 
     private final void j() {
         FragmentActivity activity = this.b.getActivity();
-        Object systemService = activity == null ? null : activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = activity == null ? null : activity.getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
-        ((InputMethodManager) systemService).hideSoftInputFromWindow(this.d.e.f11404a.getWindowToken(), 0);
+        ((InputMethodManager) systemService).hideSoftInputFromWindow(this.d.e.a.getWindowToken(), 0);
     }
 
     private final void k() {
-        this.d.e.f11404a.setFocusableInTouchMode(true);
-        this.d.e.f11404a.setFocusable(true);
-        this.d.e.f11404a.requestFocus();
+        this.d.e.a.setFocusableInTouchMode(true);
+        this.d.e.a.setFocusable(true);
+        this.d.e.a.requestFocus();
         FragmentActivity activity = this.b.getActivity();
-        Object systemService = activity == null ? null : activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        Object systemService = activity == null ? null : activity.getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
-        ((InputMethodManager) systemService).showSoftInput(this.d.e.f11404a, 0);
+        ((InputMethodManager) systemService).showSoftInput(this.d.e.a, 0);
     }
 
     public final void a() {
         YYPlayMusicListener yYPlayMusicListener;
-        this.d.d.f11399c.setVisibility(0);
+        this.d.d.c.setVisibility(0);
         this.d.e.d.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$AUNvAd1MaMtcsHp4euny124SOY0
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean a2;
-                a2 = BackgroundMusicView.a(view, motionEvent);
-                return a2;
+                boolean a;
+                a = BackgroundMusicView.a(view, motionEvent);
+                return a;
             }
         });
         this.d.d.d.setLayoutManager(new TabLinearLayoutManager(getContext(), 0, false));
@@ -683,15 +670,12 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
         this.h = new YYMusicPageAdapter(this, this.f, this);
         this.d.d.f.setAdapter(this.h);
         this.d.d.f.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live.base.music.BackgroundMusicView$initView$3
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 YYMusicTabAdapter tabAdapter = BackgroundMusicView.this.getTabAdapter();
                 if (tabAdapter == null) {
@@ -701,14 +685,14 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
             }
         });
         if (getLiveMusicModel() == null || (yYPlayMusicListener = this.l) == null) {
-            this.d.f11379c.setVisibility(8);
+            this.d.c.setVisibility(8);
         } else {
             LiveMusicModel liveMusicModel = getLiveMusicModel();
             if (yYPlayMusicListener.e(liveMusicModel == null ? null : liveMusicModel.music_id)) {
-                this.d.f11379c.setVisibility(0);
+                this.d.c.setVisibility(0);
                 h();
             } else {
-                this.d.f11379c.setVisibility(8);
+                this.d.c.setVisibility(8);
             }
         }
         getSearchHistory();
@@ -717,21 +701,21 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
         this.d.e.b.setOnClickListener(backgroundMusicView);
         this.d.d.b.setOnClickListener(backgroundMusicView);
         this.d.e.g.setOnClickListener(backgroundMusicView);
-        this.d.f11378a.setOnClickListener(backgroundMusicView);
+        this.d.a.setOnClickListener(backgroundMusicView);
         this.d.f.setOnClickListener(backgroundMusicView);
         this.d.g.setOnClickListener(backgroundMusicView);
         this.d.e.f.setOnClickListener(backgroundMusicView);
-        this.d.d.f11398a.f11400a.setOnClickListener(backgroundMusicView);
-        this.d.e.f11404a.addTextChangedListener(this.p);
-        this.d.e.f11404a.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$kMKpjmzTcER0ysJXktukvxZ4whg
+        this.d.d.a.a.setOnClickListener(backgroundMusicView);
+        this.d.e.a.addTextChangedListener(this.p);
+        this.d.e.a.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$kMKpjmzTcER0ysJXktukvxZ4whg
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                boolean a2;
-                a2 = BackgroundMusicView.a(BackgroundMusicView.this, textView, i, keyEvent);
-                return a2;
+                boolean a;
+                a = BackgroundMusicView.a(BackgroundMusicView.this, textView, i, keyEvent);
+                return a;
             }
         });
-        this.d.f11378a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$qOGsQ8KNiD-ugsFcOdTEmnl3Wlg
+        this.d.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live.base.music.-$$Lambda$BackgroundMusicView$qOGsQ8KNiD-ugsFcOdTEmnl3Wlg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 BackgroundMusicView.a(BackgroundMusicView.this, view);
@@ -740,28 +724,28 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     }
 
     public final void a(BluedUIHttpResponse<?> bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        String a2 = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/playlist");
+        String a = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/playlist");
         Map<String, String> params = BluedHttpTools.a();
         Intrinsics.c(params, "params");
         params.put("is_background", "1");
-        if (YYMusicManager.f11418a.c().c()) {
+        if (YYMusicManager.a.c().c()) {
             params.put("source_type", "1");
-            params.put("live_submitted_uid", YYMusicManager.f11418a.c().d());
-            params.put("live_submitted_room_id", YYMusicManager.f11418a.c().e());
+            params.put("live_submitted_uid", YYMusicManager.a.c().d());
+            params.put("live_submitted_room_id", YYMusicManager.a.c().e());
         }
-        HttpManager.a(a2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
+        HttpManager.a(a, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
     }
 
     public final void a(LiveMusicModel music) {
         Intrinsics.e(music, "music");
         music.playStatus = 2;
-        YYMusicManager.f11418a.c().a(music);
+        YYMusicManager.a.c().a(music);
         BlackMusicListener recordingStudioFragment = getRecordingStudioFragment();
         if (recordingStudioFragment != null) {
             recordingStudioFragment.a(music);
         }
         c();
-        YYMusicManager.f11418a.c().a(music.music_id, music.file_url, true);
+        YYMusicManager.a.c().a(music.music_id, music.file_url, true);
     }
 
     public final void a(YYKtvMusicModel yYKtvMusicModel) {
@@ -773,23 +757,23 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
 
     public final void a(String musicId, BluedUIHttpResponse<?> bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
         Intrinsics.e(musicId, "musicId");
-        String a2 = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/musicInfo");
+        String a = Intrinsics.a(BluedHttpUrl.q(), (Object) "/users/chatroom/ktv/musicInfo");
         Map<String, String> params = BluedHttpTools.a();
         Intrinsics.c(params, "params");
         params.put("musicId", musicId);
         params.put("is_background", "1");
-        if (YYMusicManager.f11418a.c().c()) {
+        if (YYMusicManager.a.c().c()) {
             params.put("source_type", "1");
-            params.put("live_submitted_uid", YYMusicManager.f11418a.c().d());
-            params.put("live_submitted_room_id", YYMusicManager.f11418a.c().e());
+            params.put("live_submitted_uid", YYMusicManager.a.c().d());
+            params.put("live_submitted_room_id", YYMusicManager.a.c().e());
         }
-        HttpManager.a(a2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
+        HttpManager.a(a, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(params).h();
     }
 
     @Override // com.blued.android.module.live.base.music.MusicPlayMusicInfoCallback
     public void a(String str, ITXCMMusicTrack iTXCMMusicTrack, String str2, String str3) {
-        this.f11423a.b(str2);
-        this.f11423a.a(iTXCMMusicTrack);
+        this.a.b(str2);
+        this.a.a(iTXCMMusicTrack);
     }
 
     @Override // com.blued.android.module.live.base.music.MusicPlayMusicInfoCallback
@@ -812,10 +796,10 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<YYKtvMusicTypeModel> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
-                    BackgroundMusicView.this.getMBinding().d.f11398a.getRoot().setVisibility(0);
+                    BackgroundMusicView.this.getMBinding().d.a.getRoot().setVisibility(0);
                     return;
                 }
-                BackgroundMusicView.this.getMBinding().d.f11398a.getRoot().setVisibility(8);
+                BackgroundMusicView.this.getMBinding().d.a.getRoot().setVisibility(8);
                 BackgroundMusicView.YYMusicPageAdapter pageAdapter = BackgroundMusicView.this.getPageAdapter();
                 if (pageAdapter != null) {
                     List<YYKtvMusicTypeModel> list = bluedEntityA.data;
@@ -836,7 +820,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                BackgroundMusicView.this.getMBinding().d.f11399c.setVisibility(8);
+                BackgroundMusicView.this.getMBinding().d.c.setVisibility(8);
             }
         }, this.e);
         d();
@@ -844,7 +828,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
 
     public final void c() {
         a(0L);
-        this.d.f11379c.setVisibility(0);
+        this.d.c.setVisibility(0);
         this.m = true;
         this.d.f.setImageResource(R.drawable.live_music_pause);
     }
@@ -862,15 +846,15 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     }
 
     public final void f() {
-        YYMusicManager.f11418a.c().d(YYMusicManager.f11418a.c().h());
+        YYMusicManager.a.c().d(YYMusicManager.a.c().h());
     }
 
     public final ActivityFragmentActive getActive() {
-        return this.f11424c;
+        return this.c;
     }
 
     public final BlackMusicListener getBaseYYStudioFragment() {
-        return this.f11423a;
+        return this.a;
     }
 
     public final FragmentManager getChildFragmentManager() {
@@ -878,7 +862,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     }
 
     public final YYKtvMusicModel getCurrentSheet() {
-        return YYMusicManager.f11418a.c().b();
+        return YYMusicManager.a.c().b();
     }
 
     public final View.OnClickListener getDissListener() {
@@ -894,7 +878,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     }
 
     public final LiveMusicModel getLiveMusicModel() {
-        return YYMusicManager.f11418a.c().a();
+        return YYMusicManager.a.c().a();
     }
 
     public final FragmentYyMusicBinding getMBinding() {
@@ -910,13 +894,14 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
     }
 
     public final BlackMusicListener getRecordingStudioFragment() {
-        BlackMusicListener blackMusicListener = this.f11423a;
+        BlackMusicListener blackMusicListener = this.a;
         if (blackMusicListener instanceof BlackMusicListener) {
             return blackMusicListener;
         }
         return null;
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.live.base.music.BackgroundMusicView$getSearchHistoryDatas$list$1] */
     public final ArrayList<String> getSearchHistoryDatas() {
         ArrayList<String> arrayList;
         ArrayList<String> arrayList2 = (ArrayList) AppInfo.f().fromJson(LiveBasePreferences.c(), new TypeToken<ArrayList<String>>() { // from class: com.blued.android.module.live.base.music.BackgroundMusicView$getSearchHistoryDatas$list$1
@@ -959,17 +944,17 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
         }
         int i2 = R.id.iv_search_clear;
         if (valueOf != null && valueOf.intValue() == i2) {
-            this.d.e.f11404a.setText("");
+            this.d.e.a.setText("");
             this.d.e.d.setVisibility(0);
-            this.d.e.f11405c.setVisibility(8);
+            this.d.e.c.setVisibility(8);
             return;
         }
         int i3 = R.id.tv_search_close;
         if (valueOf != null && valueOf.intValue() == i3) {
-            this.d.e.f11404a.setText("");
+            this.d.e.a.setText("");
             this.d.d.getRoot().setVisibility(0);
             this.d.e.d.setVisibility(0);
-            this.d.e.f11405c.setVisibility(8);
+            this.d.e.c.setVisibility(8);
             this.d.e.getRoot().setVisibility(8);
             j();
             return;
@@ -1011,7 +996,7 @@ public final class BackgroundMusicView extends FrameLayout implements View.OnCli
         }
         int i6 = R.id.tv_exit;
         if (valueOf != null && valueOf.intValue() == i6) {
-            this.d.f11379c.setVisibility(8);
+            this.d.c.setVisibility(8);
             YYPlayMusicListener yYPlayMusicListener6 = this.l;
             if (yYPlayMusicListener6 != null) {
                 yYPlayMusicListener6.d(getCurrentSheet());

@@ -1,5 +1,6 @@
 package com.tencent.lbssearch.object.param;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.lbssearch.object.RequestParams;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 import java.util.ArrayList;
@@ -43,7 +44,7 @@ public class TranslateParam implements ParamObject {
                 if (i2 >= this.latLngs.size()) {
                     break;
                 }
-                String str = i2 != 0 ? ";" : "";
+                String str = i2 != 0 ? t.aE : "";
                 sb.append(str + this.latLngs.get(i2).latitude + "," + this.latLngs.get(i2).longitude);
                 i = i2 + 1;
             }

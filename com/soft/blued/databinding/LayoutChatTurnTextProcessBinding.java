@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeLinearLayout;
 public final class LayoutChatTurnTextProcessBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeLinearLayout f29387a;
+    private final ShapeLinearLayout f15697a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
-        return this.f29387a;
+        return this.f15697a;
     }
 }

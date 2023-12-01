@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/dialog/LiveDialogTip.class */
 public class LiveDialogTip extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public IEventCallback f12519a;
+    public IEventCallback a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f12520c;
+    private String c;
     private String d;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/dialog/LiveDialogTip$IEventCallback.class */
@@ -29,9 +25,9 @@ public class LiveDialogTip extends Dialog {
     public LiveDialogTip(Context context, String str, String str2, IEventCallback iEventCallback) {
         super(context, R.style.transparentFrameWindowStyleLive);
         this.b = context;
-        this.f12520c = str;
+        this.c = str;
         this.d = str2;
-        this.f12519a = iEventCallback;
+        this.a = iEventCallback;
         a();
         c();
     }
@@ -49,7 +45,7 @@ public class LiveDialogTip extends Dialog {
                 LiveDialogTip.this.a(view);
             }
         });
-        ((TextView) findViewById(R.id.tv_title)).setText(this.f12520c);
+        ((TextView) findViewById(R.id.tv_title)).setText(this.c);
         ((TextView) findViewById(R.id.tv_content)).setText(this.d);
     }
 
@@ -68,14 +64,14 @@ public class LiveDialogTip extends Dialog {
         window.getDecorView().setBackgroundColor(0);
         window.setDimAmount(0.0f);
         window.setWindowAnimations(R.style.alpha_menu_animstyle);
-        View inflate = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_live_tip, (ViewGroup) null);
+        View inflate = ((LayoutInflater) getContext().getSystemService("layout_inflater")).inflate(R.layout.dialog_live_tip, (ViewGroup) null);
         addContentView(inflate, new ViewGroup.LayoutParams(-1, -1));
         setContentView(inflate);
         getWindow().setLayout(-1, -1);
     }
 
     public void b() {
-        IEventCallback iEventCallback = this.f12519a;
+        IEventCallback iEventCallback = this.a;
         if (iEventCallback != null) {
             iEventCallback.a();
         }

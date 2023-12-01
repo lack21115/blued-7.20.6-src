@@ -69,10 +69,9 @@ public final class NativeDecimalFormat implements Cloneable {
     private boolean posPrefNull;
     private boolean posSuffNull;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: libcore.icu.NativeDecimalFormat$1  reason: invalid class name */
     /* loaded from: source-2895416-dex2jar.jar:libcore/icu/NativeDecimalFormat$1.class */
-    public static /* synthetic */ class AnonymousClass1 {
+    static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode = new int[RoundingMode.values().length];
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0067 -> B:43:0x0058). Please submit an issue!!! */
@@ -228,13 +227,13 @@ public final class NativeDecimalFormat implements Cloneable {
         return i2;
     }
 
-    private static native long open(String str, String str2, char c2, char c3, String str3, char c4, String str4, String str5, String str6, char c5, String str7, char c6, String str8, char c7, char c8);
+    private static native long open(String str, String str2, char c, char c2, String str3, char c3, String str4, String str5, String str6, char c4, String str7, char c5, String str8, char c6, char c7);
 
     private static native Number parse(long j, String str, ParsePosition parsePosition, boolean z);
 
     private static native void setAttribute(long j, int i, int i2);
 
-    private static native void setDecimalFormatSymbols(long j, String str, char c2, char c3, String str2, char c4, String str3, String str4, String str5, char c5, String str6, char c6, String str7, char c7, char c8);
+    private static native void setDecimalFormatSymbols(long j, String str, char c, char c2, String str2, char c3, String str3, String str4, String str5, char c4, String str6, char c5, String str7, char c6, char c7);
 
     private static native void setRoundingMode(long j, int i, double d);
 

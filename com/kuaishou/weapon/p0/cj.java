@@ -5,11 +5,11 @@ public class cj {
     public static final int A = 106;
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23782a = "1003001";
+    public static String f10174a = "1003001";
     public static String b = "1007001";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f23783c = "1007002";
+    public static String f10175c = "1007002";
     public static String d = "1007004";
     public static String e = "1007005";
     public static String f = "1007017";

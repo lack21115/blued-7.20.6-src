@@ -13,14 +13,12 @@ public class EditTextHeightAnimHelper {
             return;
         }
         editText.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.common.utils.EditTextHeightAnimHelper.1
-
-            /* renamed from: a  reason: collision with root package name */
-            float f10879a;
+            float a;
             float b;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
-                float f3 = this.f10879a;
+                float f3 = this.a;
                 float f4 = this.b;
                 if (f3 != f4) {
                     float lineHeight = EditText.this.getLineHeight();
@@ -30,7 +28,7 @@ public class EditTextHeightAnimHelper {
 
             @Override // android.text.TextWatcher
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-                this.f10879a = EditText.this.getLineCount();
+                this.a = EditText.this.getLineCount();
             }
 
             @Override // android.text.TextWatcher

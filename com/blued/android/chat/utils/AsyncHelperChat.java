@@ -46,9 +46,8 @@ public class AsyncHelperChat extends AsyncTask<Void, Void, Void> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.os.AsyncTask
-    public void onPreExecute() {
+    protected void onPreExecute() {
         super.onPreExecute();
         ProgressDialog progressDialog = this.progressDialog;
         if (progressDialog != null) {

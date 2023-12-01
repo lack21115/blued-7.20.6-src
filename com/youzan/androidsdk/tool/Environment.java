@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class Environment {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static final AtomicInteger f1117 = new AtomicInteger(255);
+    private static final AtomicInteger f1070 = new AtomicInteger(255);
 
     public static boolean appInstalled(Context context, String str) {
         if (context == null || TextUtils.isEmpty(str)) {
@@ -35,13 +35,13 @@ public final class Environment {
         int i;
         int i2;
         do {
-            i = f1117.get();
+            i = f1070.get();
             int i3 = i + 1;
             i2 = i3;
             if (i3 >= 65535) {
                 i2 = 255;
             }
-        } while (!f1117.compareAndSet(i, i2));
+        } while (!f1070.compareAndSet(i, i2));
         return i;
     }
 
@@ -51,7 +51,7 @@ public final class Environment {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: ˊ  reason: contains not printable characters */
-    public static String m12240(Context context) {
+    public static String m9190(Context context) {
         try {
             String packageName = context.getPackageName();
             String str = context.getPackageManager().getPackageInfo(packageName, 0).versionName;

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentNearbyModuleEditBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28918a;
+    private final LinearLayout f15228a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28918a;
+        return this.f15228a;
     }
 }

@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeLinearLayout;
 public final class SendSmsDialogCustomBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeLinearLayout f29586a;
+    private final ShapeLinearLayout f15896a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeLinearLayout getRoot() {
-        return this.f29586a;
+        return this.f15896a;
     }
 }

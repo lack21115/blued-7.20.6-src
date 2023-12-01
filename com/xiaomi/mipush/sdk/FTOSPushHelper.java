@@ -9,15 +9,15 @@ import java.util.Map;
 public class FTOSPushHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f41186a = 0;
+    private static long f27495a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private static volatile boolean f108a = false;
+    private static volatile boolean f61a = false;
 
     private static void a(Context context) {
         AbstractPushManager a2 = f.a(context).a(e.ASSEMBLE_PUSH_FTOS);
         if (a2 != null) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("ASSEMBLE_PUSH :  register fun touch os when network change!");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("ASSEMBLE_PUSH :  register fun touch os when network change!");
             a2.register();
         }
     }
@@ -25,20 +25,20 @@ public class FTOSPushHelper {
     public static void doInNetworkChange(Context context) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (getNeedRegister()) {
-            long j = f41186a;
+            long j = f27495a;
             if (j <= 0 || j + 300000 <= elapsedRealtime) {
-                f41186a = elapsedRealtime;
+                f27495a = elapsedRealtime;
                 a(context);
             }
         }
     }
 
     public static boolean getNeedRegister() {
-        return f108a;
+        return f61a;
     }
 
     public static boolean hasNetwork(Context context) {
-        return i.m11482a(context);
+        return i.m8432a(context);
     }
 
     public static void notifyFTOSNotificationClicked(Context context, Map<String, String> map) {
@@ -58,10 +58,10 @@ public class FTOSPushHelper {
     }
 
     public static void setNeedRegister(boolean z) {
-        f108a = z;
+        f61a = z;
     }
 
     public static void uploadToken(Context context, String str) {
-        i.m11481a(context, e.ASSEMBLE_PUSH_FTOS, str);
+        i.m8431a(context, e.ASSEMBLE_PUSH_FTOS, str);
     }
 }

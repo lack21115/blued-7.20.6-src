@@ -10,16 +10,14 @@ import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/a/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static c f6326a;
+    private static c a;
     private final String b = "pacing_";
 
     public static c a() {
-        if (f6326a == null) {
-            f6326a = new c();
+        if (a == null) {
+            a = new c();
         }
-        return f6326a;
+        return a;
     }
 
     public static void a(String str) {

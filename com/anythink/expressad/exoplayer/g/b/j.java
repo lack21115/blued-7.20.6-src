@@ -29,22 +29,22 @@ public final class j extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7360a = "PRIV";
+    public static final String f4521a = "PRIV";
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final byte[] f7361c;
+    public final byte[] f4522c;
 
     j(Parcel parcel) {
-        super(f7360a);
+        super(f4521a);
         this.b = parcel.readString();
-        this.f7361c = parcel.createByteArray();
+        this.f4522c = parcel.createByteArray();
     }
 
     public j(String str, byte[] bArr) {
-        super(f7360a);
+        super(f4521a);
         this.b = str;
-        this.f7361c = bArr;
+        this.f4522c = bArr;
     }
 
     public final boolean equals(Object obj) {
@@ -55,12 +55,12 @@ public final class j extends h {
             return false;
         }
         j jVar = (j) obj;
-        return af.a((Object) this.b, (Object) jVar.b) && Arrays.equals(this.f7361c, jVar.f7361c);
+        return af.a((Object) this.b, (Object) jVar.b) && Arrays.equals(this.f4522c, jVar.f4522c);
     }
 
     public final int hashCode() {
         String str = this.b;
-        return (((str != null ? str.hashCode() : 0) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.f7361c);
+        return (((str != null ? str.hashCode() : 0) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.f4522c);
     }
 
     @Override // com.anythink.expressad.exoplayer.g.b.h
@@ -71,6 +71,6 @@ public final class j extends h {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.b);
-        parcel.writeByteArray(this.f7361c);
+        parcel.writeByteArray(this.f4522c);
     }
 }

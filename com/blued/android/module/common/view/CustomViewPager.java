@@ -11,35 +11,31 @@ import skin.support.widget.SkinCompatBackgroundHelper;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CustomViewPager.class */
 public class CustomViewPager extends ViewPager implements BluedSkinSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f10982a;
+    private int a;
     private Rect b;
+    private SkinCompatBackgroundHelper c;
 
-    /* renamed from: c  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f10983c;
-
+    /* JADX WARN: Multi-variable type inference failed */
     public CustomViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f10983c = skinCompatBackgroundHelper;
+        this.c = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, 0);
         this.b = new Rect();
     }
 
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f10983c;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.c;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         View findViewById;
         try {
-            if (this.f10982a > 0 && (findViewById = findViewById(this.f10982a)) != null) {
+            if (this.a > 0 && (findViewById = findViewById(this.a)) != null) {
                 if (this.b.bottom == 0) {
                     findViewById.getHitRect(this.b);
                 }
@@ -53,7 +49,6 @@ public class CustomViewPager extends ViewPager implements BluedSkinSupportable {
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         try {
             return super.onTouchEvent(motionEvent);
@@ -62,16 +57,15 @@ public class CustomViewPager extends ViewPager implements BluedSkinSupportable {
         }
     }
 
-    @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f10983c;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.c;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a(i);
         }
     }
 
     public void setChildId(int i) {
-        this.f10982a = i;
+        this.a = i;
     }
 }

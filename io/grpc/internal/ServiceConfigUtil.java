@@ -1,12 +1,11 @@
 package io.grpc.internal;
 
+import com.android.internal.location.GpsNetInitiatedHandler;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
 import com.google.common.base.VerifyException;
-import com.igexin.push.core.b;
-import com.umeng.analytics.pro.d;
 import io.grpc.LoadBalancerProvider;
 import io.grpc.LoadBalancerRegistry;
 import io.grpc.NameResolver;
@@ -60,7 +59,7 @@ public final class ServiceConfigUtil {
         }
 
         public int hashCode() {
-            return Objects.hashCode(this.policyName, this.rawConfigValue);
+            return Objects.hashCode(new Object[]{this.policyName, this.rawConfigValue});
         }
 
         public String toString() {
@@ -78,7 +77,7 @@ public final class ServiceConfigUtil {
         final Map<String, ?> rawConfig;
 
         public PolicySelection(LoadBalancerProvider loadBalancerProvider, @Nullable Map<String, ?> map, @Nullable Object obj) {
-            this.provider = (LoadBalancerProvider) Preconditions.checkNotNull(loadBalancerProvider, d.M);
+            this.provider = (LoadBalancerProvider) Preconditions.checkNotNull(loadBalancerProvider, "provider");
             this.rawConfig = map;
             this.config = obj;
         }
@@ -104,11 +103,11 @@ public final class ServiceConfigUtil {
         }
 
         public int hashCode() {
-            return Objects.hashCode(this.provider, this.rawConfig, this.config);
+            return Objects.hashCode(new Object[]{this.provider, this.rawConfig, this.config});
         }
 
         public String toString() {
-            return MoreObjects.toStringHelper(this).add(d.M, this.provider).add("rawConfig", this.rawConfig).add(b.U, this.config).toString();
+            return MoreObjects.toStringHelper(this).add("provider", this.provider).add("rawConfig", this.rawConfig).add("config", this.config).toString();
         }
     }
 
@@ -295,7 +294,7 @@ public final class ServiceConfigUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Nullable
     public static Long getTimeoutFromMethodConfig(Map<String, ?> map) {
-        return JsonUtil.getStringAsDuration(map, "timeout");
+        return JsonUtil.getStringAsDuration(map, GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

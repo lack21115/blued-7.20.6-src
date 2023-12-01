@@ -17,15 +17,15 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/home/pop/TabBubblePop.class */
 public final class TabBubblePop extends AttachPopupView {
-    static final /* synthetic */ KProperty<Object>[] t = {Reflection.a(new PropertyReference1Impl(TabBubblePop.class, "vb", "getVb()Lcom/soft/blued/databinding/PopTabBubbleBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] t = {(KProperty) Reflection.a(new PropertyReference1Impl(TabBubblePop.class, "vb", "getVb()Lcom/soft/blued/databinding/PopTabBubbleBinding;", 0))};
     private final ViewBindingProperty u;
     private View.OnClickListener v;
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(TabBubblePop this$0, View view) {
+    public static final void a(TabBubblePop tabBubblePop, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        View.OnClickListener onClickListener = this$0.v;
+        Intrinsics.e(tabBubblePop, "this$0");
+        View.OnClickListener onClickListener = tabBubblePop.v;
         if (onClickListener == null) {
             return;
         }
@@ -36,7 +36,6 @@ public final class TabBubblePop extends AttachPopupView {
         return (PopTabBubbleBinding) this.u.b(this, t[0]);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         ConstraintLayout constraintLayout;
         super.b();
@@ -52,20 +51,19 @@ public final class TabBubblePop extends AttachPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_tab_bubble;
     }
 
-    public final void setRootClickListener(View.OnClickListener listener) {
-        Intrinsics.e(listener, "listener");
-        this.v = listener;
+    public final void setRootClickListener(View.OnClickListener onClickListener) {
+        Intrinsics.e(onClickListener, "listener");
+        this.v = onClickListener;
     }
 
     public final void setText(String str) {
         Intrinsics.e(str, "str");
         PopTabBubbleBinding vb = getVb();
-        TextView textView = vb == null ? null : vb.f29558c;
+        TextView textView = vb == null ? null : vb.f15868c;
         if (textView == null) {
             return;
         }
@@ -75,7 +73,7 @@ public final class TabBubblePop extends AttachPopupView {
     public final void setTextResId(int i) {
         TextView textView;
         PopTabBubbleBinding vb = getVb();
-        if (vb == null || (textView = vb.f29558c) == null) {
+        if (vb == null || (textView = vb.f15868c) == null) {
             return;
         }
         textView.setText(i);

@@ -14,12 +14,12 @@ public class g implements g0 {
     @Override // com.zx.a.I8b7.g0
     public e1 a(g0.a aVar) throws IOException {
         v0 v0Var = (v0) aVar;
-        b1 b1Var = v0Var.f42217c;
+        b1 b1Var = v0Var.f28526c;
         HttpURLConnection httpURLConnection = v0Var.d;
         if (httpURLConnection.getDoOutput() && b1Var.d != null) {
             OutputStream outputStream = httpURLConnection.getOutputStream();
             c1 c1Var = (c1) b1Var.d;
-            outputStream.write(c1Var.f42111c, c1Var.d, c1Var.b);
+            outputStream.write(c1Var.f28420c, c1Var.d, c1Var.b);
             l1.a(outputStream);
         }
         int responseCode = httpURLConnection.getResponseCode();
@@ -32,9 +32,9 @@ public class g implements g0 {
         e1.a aVar2 = new e1.a();
         aVar2.b = responseCode;
         aVar2.d = new HashMap(headerFields);
-        aVar2.f42123c = responseMessage;
+        aVar2.f28432c = responseMessage;
         aVar2.e = f1.a(b, httpURLConnection.getContentLength(), responseCode == 200 ? httpURLConnection.getInputStream() : httpURLConnection.getErrorStream());
-        aVar2.f42122a = b1Var;
+        aVar2.f28431a = b1Var;
         return aVar2.a();
     }
 }

@@ -19,7 +19,7 @@ public final class LittleEndianDataOutputStream extends FilterOutputStream imple
         this.out.close();
     }
 
-    @Override // java.io.FilterOutputStream, java.io.OutputStream
+    @Override // java.io.FilterOutputStream, java.io.OutputStream, java.io.DataOutput
     public void write(byte[] bArr, int i, int i2) throws IOException {
         this.out.write(bArr, i, i2);
     }

@@ -56,7 +56,7 @@ class ConcurrencyHelpers {
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
                 Thread a2;
-                a2 = ConcurrencyHelpers.a(String.this, runnable);
+                a2 = ConcurrencyHelpers.a(str, runnable);
                 return a2;
             }
         });

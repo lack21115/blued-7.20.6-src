@@ -7,11 +7,11 @@ import java.util.Map;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f24553a;
+    public final int f10866a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final InputStream f24554c;
+    public final InputStream f10867c;
     public final long d;
     public final Map<String, String> e;
 
@@ -20,15 +20,15 @@ public final class g {
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private InputStream f24556c;
+        private InputStream f10869c;
         private Map<String, String> e;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f24555a = -1;
+        private int f10868a = -1;
         private long d = -1;
 
         public a a(int i) {
-            this.f24555a = i;
+            this.f10868a = i;
             return this;
         }
 
@@ -38,7 +38,7 @@ public final class g {
         }
 
         public a a(InputStream inputStream) {
-            this.f24556c = inputStream;
+            this.f10869c = inputStream;
             return this;
         }
 
@@ -58,14 +58,14 @@ public final class g {
     }
 
     public g(a aVar) {
-        this.f24553a = aVar.f24555a;
+        this.f10866a = aVar.f10868a;
         this.b = aVar.b;
-        this.f24554c = aVar.f24556c;
+        this.f10867c = aVar.f10869c;
         this.d = aVar.d;
         this.e = aVar.e;
     }
 
     public String toString() {
-        return "NetResponse{code=" + this.f24553a + ", errMsg='" + this.b + "', inputStream=" + this.f24554c + ", contentLength=" + this.d + ", headerMap=" + this.e + '}';
+        return "NetResponse{code=" + this.f10866a + ", errMsg='" + this.b + "', inputStream=" + this.f10867c + ", contentLength=" + this.d + ", headerMap=" + this.e + '}';
     }
 }

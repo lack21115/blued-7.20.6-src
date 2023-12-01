@@ -15,13 +15,13 @@ public final class c extends Surface {
     private static final String b = "DummySurface";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7695c = "EGL_EXT_protected_content";
+    private static final String f4856c = "EGL_EXT_protected_content";
     private static final String d = "EGL_KHR_surfaceless_context";
     private static int e;
     private static boolean f;
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f7696a;
+    public final boolean f4857a;
     private final a g;
     private boolean h;
 
@@ -30,11 +30,11 @@ public final class c extends Surface {
     public static final class a extends HandlerThread implements Handler.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final int f7697a = 1;
+        private static final int f4858a = 1;
         private static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        private com.anythink.expressad.exoplayer.k.g f7698c;
+        private com.anythink.expressad.exoplayer.k.g f4859c;
         private Handler d;
         private Error e;
         private RuntimeException f;
@@ -45,14 +45,14 @@ public final class c extends Surface {
         }
 
         private void b() {
-            com.anythink.expressad.exoplayer.k.a.a(this.f7698c);
-            this.f7698c.a();
+            com.anythink.expressad.exoplayer.k.a.a(this.f4859c);
+            this.f4859c.a();
         }
 
         private void b(int i) {
-            com.anythink.expressad.exoplayer.k.a.a(this.f7698c);
-            this.f7698c.a(i);
-            this.g = new c(this, this.f7698c.b(), i != 0, (byte) 0);
+            com.anythink.expressad.exoplayer.k.a.a(this.f4859c);
+            this.f4859c.a(i);
+            this.g = new c(this, this.f4859c.b(), i != 0, (byte) 0);
         }
 
         public final c a(int i) {
@@ -60,7 +60,7 @@ public final class c extends Surface {
             start();
             Handler handler = new Handler(getLooper(), this);
             this.d = handler;
-            this.f7698c = new com.anythink.expressad.exoplayer.k.g(handler);
+            this.f4859c = new com.anythink.expressad.exoplayer.k.g(handler);
             synchronized (this) {
                 this.d.obtainMessage(1, i, 0).sendToTarget();
                 z = false;
@@ -100,8 +100,8 @@ public final class c extends Surface {
                         return true;
                     }
                     try {
-                        com.anythink.expressad.exoplayer.k.a.a(this.f7698c);
-                        this.f7698c.a();
+                        com.anythink.expressad.exoplayer.k.a.a(this.f4859c);
+                        this.f4859c.a();
                     } finally {
                         try {
                             quit();
@@ -115,9 +115,9 @@ public final class c extends Surface {
                 try {
                     try {
                         int i2 = message.arg1;
-                        com.anythink.expressad.exoplayer.k.a.a(this.f7698c);
-                        this.f7698c.a(i2);
-                        this.g = new c(this, this.f7698c.b(), i2 != 0, (byte) 0);
+                        com.anythink.expressad.exoplayer.k.a.a(this.f4859c);
+                        this.f4859c.a(i2);
+                        this.g = new c(this, this.f4859c.b(), i2 != 0, (byte) 0);
                         synchronized (this) {
                             notify();
                         }
@@ -150,7 +150,7 @@ public final class c extends Surface {
     private c(a aVar, SurfaceTexture surfaceTexture, boolean z) {
         super(surfaceTexture);
         this.g = aVar;
-        this.f7696a = z;
+        this.f4857a = z;
     }
 
     /* synthetic */ c(a aVar, SurfaceTexture surfaceTexture, boolean z, byte b2) {
@@ -158,7 +158,7 @@ public final class c extends Surface {
     }
 
     public static c a(Context context, boolean z) {
-        if (af.f7632a >= 17) {
+        if (af.f4793a >= 17) {
             int i = 0;
             com.anythink.expressad.exoplayer.k.a.b(!z || a(context));
             a aVar = new a();
@@ -171,7 +171,7 @@ public final class c extends Surface {
     }
 
     private static void a() {
-        if (af.f7632a < 17) {
+        if (af.f4793a < 17) {
             throw new UnsupportedOperationException("Unsupported prior to API level 17");
         }
     }
@@ -183,7 +183,7 @@ public final class c extends Surface {
         synchronized (c.class) {
             try {
                 if (!f) {
-                    if (af.f7632a >= 24 && ((af.f7632a >= 26 || (!"samsung".equals(af.f7633c) && !"XT1650".equals(af.d))) && ((af.f7632a >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")) && (eglQueryString = EGL14.eglQueryString(EGL14.eglGetDisplay(0), 12373)) != null && eglQueryString.contains(f7695c)))) {
+                    if (af.f4793a >= 24 && ((af.f4793a >= 26 || (!"samsung".equals(af.f4794c) && !"XT1650".equals(af.d))) && ((af.f4793a >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")) && (eglQueryString = EGL14.eglQueryString(EGL14.eglGetDisplay(0), EGL14.EGL_EXTENSIONS)) != null && eglQueryString.contains(f4856c)))) {
                         i2 = eglQueryString.contains(d) ? 1 : 2;
                         e = i2;
                         f = true;
@@ -201,8 +201,8 @@ public final class c extends Surface {
 
     private static int b(Context context) {
         String eglQueryString;
-        if (af.f7632a >= 26 || !("samsung".equals(af.f7633c) || "XT1650".equals(af.d))) {
-            if ((af.f7632a >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")) && (eglQueryString = EGL14.eglQueryString(EGL14.eglGetDisplay(0), 12373)) != null && eglQueryString.contains(f7695c)) {
+        if (af.f4793a >= 26 || !("samsung".equals(af.f4794c) || "XT1650".equals(af.d))) {
+            if ((af.f4793a >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")) && (eglQueryString = EGL14.eglQueryString(EGL14.eglGetDisplay(0), EGL14.EGL_EXTENSIONS)) != null && eglQueryString.contains(f4856c)) {
                 return eglQueryString.contains(d) ? 1 : 2;
             }
             return 0;

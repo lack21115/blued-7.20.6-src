@@ -15,17 +15,13 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/h.class */
 public final class h extends d {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f6376a;
+    private String a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private com.anythink.core.b.b.a f6377c;
+    private com.anythink.core.b.b.a c;
 
     public h(com.anythink.core.common.e.a aVar) {
         super(aVar);
-        this.f6376a = "IH Bidding";
+        this.a = "IH Bidding";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -56,7 +52,7 @@ public final class h extends d {
                         mVar.f = next.n() + System.currentTimeMillis();
                         mVar.e = next.n();
                         if (this.d != null) {
-                            mVar.b(this.d.f6612c);
+                            mVar.b(this.d.c);
                         }
                         a(next, mVar);
                         z = true;
@@ -82,11 +78,11 @@ public final class h extends d {
                     jSONObject.put("IH Bidding Fail List", a(arrayList));
                 } catch (Exception e) {
                 }
-                n.a(this.f6376a, jSONObject.toString(), false);
+                n.a(this.a, jSONObject.toString(), false);
             }
             this.f.set(true);
-            if (this.f6377c != null) {
-                this.f6377c.a(list, arrayList);
+            if (this.c != null) {
+                this.c.a(list, arrayList);
             }
         }
     }
@@ -96,7 +92,7 @@ public final class h extends d {
         mVar.f = aiVar.n() + System.currentTimeMillis();
         mVar.e = aiVar.n();
         if (this.d != null) {
-            mVar.b(this.d.f6612c);
+            mVar.b(this.d.c);
         }
         a(aiVar, mVar);
     }
@@ -114,7 +110,7 @@ public final class h extends d {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.anythink.core.b.d
     public final void a(final com.anythink.core.b.b.a aVar) {
-        this.f6377c = aVar;
+        this.c = aVar;
         this.b = SystemClock.elapsedRealtime();
         List<ai> list = this.d.i;
         if (this.e) {
@@ -123,7 +119,7 @@ public final class h extends d {
                 jSONObject.put("Start IH Bidding List", a(list));
             } catch (Exception e) {
             }
-            n.a(n.f6818a, jSONObject.toString(), false);
+            n.a(n.a, jSONObject.toString(), false);
         }
         if (f.a().b() == null) {
             Iterator<ai> it = list.iterator();
@@ -131,9 +127,9 @@ public final class h extends d {
                 if (!it.hasNext()) {
                     break;
                 }
-                ATBaseAdAdapter a2 = com.anythink.core.common.k.i.a(it.next());
-                if (a2 != null) {
-                    MediationBidManager bidManager = a2.getBidManager();
+                ATBaseAdAdapter a = com.anythink.core.common.k.i.a(it.next());
+                if (a != null) {
+                    MediationBidManager bidManager = a.getBidManager();
                     if (bidManager != null) {
                         f.a().a(bidManager);
                     }
@@ -142,7 +138,7 @@ public final class h extends d {
         }
         MediationBidManager b = f.a().b();
         if (b == null) {
-            Log.i(n.f6818a, "No BidManager.");
+            Log.i(n.a, "No BidManager.");
             a((List<ai>) null, -9);
             return;
         }

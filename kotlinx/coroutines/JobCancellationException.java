@@ -7,13 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/JobCancellationException.class */
 public final class JobCancellationException extends CancellationException implements CopyableThrowable<JobCancellationException> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Job f42836a;
+    public final Job a;
 
     public JobCancellationException(String str, Throwable th, Job job) {
         super(str);
-        this.f42836a = job;
+        this.a = job;
         if (th != null) {
             initCause(th);
         }
@@ -25,7 +23,7 @@ public final class JobCancellationException extends CancellationException implem
         if (DebugKt.b()) {
             String message = getMessage();
             Intrinsics.a((Object) message);
-            return new JobCancellationException(message, this, this.f42836a);
+            return new JobCancellationException(message, this, this.a);
         }
         return null;
     }
@@ -34,7 +32,7 @@ public final class JobCancellationException extends CancellationException implem
         if (obj != this) {
             if (obj instanceof JobCancellationException) {
                 JobCancellationException jobCancellationException = (JobCancellationException) obj;
-                return Intrinsics.a((Object) jobCancellationException.getMessage(), (Object) getMessage()) && Intrinsics.a(jobCancellationException.f42836a, this.f42836a) && Intrinsics.a(jobCancellationException.getCause(), getCause());
+                return Intrinsics.a((Object) jobCancellationException.getMessage(), (Object) getMessage()) && Intrinsics.a(jobCancellationException.a, this.a) && Intrinsics.a(jobCancellationException.getCause(), getCause());
             }
             return false;
         }
@@ -54,13 +52,13 @@ public final class JobCancellationException extends CancellationException implem
         String message = getMessage();
         Intrinsics.a((Object) message);
         int hashCode = message.hashCode();
-        int hashCode2 = this.f42836a.hashCode();
+        int hashCode2 = this.a.hashCode();
         Throwable cause = getCause();
         return (((hashCode * 31) + hashCode2) * 31) + (cause == null ? 0 : cause.hashCode());
     }
 
     @Override // java.lang.Throwable
     public String toString() {
-        return super.toString() + "; job=" + this.f42836a;
+        return super.toString() + "; job=" + this.a;
     }
 }

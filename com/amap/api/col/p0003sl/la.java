@@ -14,13 +14,9 @@ public final class la implements ThreadFactory {
     private static final int k;
     private static final int l;
     private static final int m;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final AtomicLong f5351a;
+    private final AtomicLong a;
     private final ThreadFactory b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Thread.UncaughtExceptionHandler f5352c;
+    private final Thread.UncaughtExceptionHandler c;
     private final String d;
     private final Integer e;
     private final Boolean f;
@@ -32,13 +28,9 @@ public final class la implements ThreadFactory {
     /* renamed from: com.amap.api.col.3sl.la$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/la$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private ThreadFactory f5354a;
+        private ThreadFactory a;
         private Thread.UncaughtExceptionHandler b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5355c;
+        private String c;
         private Integer d;
         private Boolean e;
         private int f = la.l;
@@ -47,9 +39,9 @@ public final class la implements ThreadFactory {
         private BlockingQueue<Runnable> i;
 
         private void c() {
-            this.f5354a = null;
+            this.a = null;
             this.b = null;
-            this.f5355c = null;
+            this.c = null;
             this.d = null;
             this.e = null;
         }
@@ -69,7 +61,7 @@ public final class la implements ThreadFactory {
 
         public final a a(String str) {
             if (str != null) {
-                this.f5355c = str;
+                this.c = str;
                 return this;
             }
             throw new NullPointerException("Naming pattern must not be null!");
@@ -95,10 +87,10 @@ public final class la implements ThreadFactory {
     }
 
     private la(a aVar) {
-        if (aVar.f5354a == null) {
+        if (aVar.a == null) {
             this.b = Executors.defaultThreadFactory();
         } else {
-            this.b = aVar.f5354a;
+            this.b = aVar.a;
         }
         int i = aVar.f;
         this.g = i;
@@ -113,15 +105,15 @@ public final class la implements ThreadFactory {
         } else {
             this.i = aVar.i;
         }
-        if (TextUtils.isEmpty(aVar.f5355c)) {
+        if (TextUtils.isEmpty(aVar.c)) {
             this.d = "amap-threadpool";
         } else {
-            this.d = aVar.f5355c;
+            this.d = aVar.c;
         }
         this.e = aVar.d;
         this.f = aVar.e;
-        this.f5352c = aVar.b;
-        this.f5351a = new AtomicLong();
+        this.c = aVar.b;
+        this.a = new AtomicLong();
     }
 
     /* synthetic */ la(a aVar, byte b) {
@@ -145,7 +137,7 @@ public final class la implements ThreadFactory {
     }
 
     private Thread.UncaughtExceptionHandler k() {
-        return this.f5352c;
+        return this.c;
     }
 
     public final int a() {
@@ -177,7 +169,7 @@ public final class la implements ThreadFactory {
         };
         Thread newThread = g().newThread(runnable);
         if (h() != null) {
-            long incrementAndGet = this.f5351a.incrementAndGet();
+            long incrementAndGet = this.a.incrementAndGet();
             newThread.setName(String.format(h() + "-%d", Long.valueOf(incrementAndGet)));
         }
         if (k() != null) {

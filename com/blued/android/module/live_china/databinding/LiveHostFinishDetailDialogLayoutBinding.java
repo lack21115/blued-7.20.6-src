@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveHostFinishDetailDialogLayoutBinding.class */
 public final class LiveHostFinishDetailDialogLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12239a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f12240c;
+    public final LinearLayout c;
     public final TextView d;
     public final ViewPager e;
     public final View f;
@@ -27,9 +23,9 @@ public final class LiveHostFinishDetailDialogLayoutBinding implements ViewBindin
 
     private LiveHostFinishDetailDialogLayoutBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, TextView textView, ViewPager viewPager, View view) {
         this.g = frameLayout;
-        this.f12239a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12240c = linearLayout;
+        this.c = linearLayout;
         this.d = textView;
         this.e = viewPager;
         this.f = view;
@@ -57,11 +53,11 @@ public final class LiveHostFinishDetailDialogLayoutBinding implements ViewBindin
                 if (linearLayout != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_time);
                     if (textView != null) {
-                        ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                        if (viewPager != null) {
-                            View findViewById = view.findViewById(R.id.view_status_bar);
-                            if (findViewById != null) {
-                                return new LiveHostFinishDetailDialogLayoutBinding((FrameLayout) view, imageView, imageView2, linearLayout, textView, viewPager, findViewById);
+                        ViewPager findViewById = view.findViewById(R.id.view_pager);
+                        if (findViewById != null) {
+                            View findViewById2 = view.findViewById(R.id.view_status_bar);
+                            if (findViewById2 != null) {
+                                return new LiveHostFinishDetailDialogLayoutBinding((FrameLayout) view, imageView, imageView2, linearLayout, textView, findViewById, findViewById2);
                             }
                             str = "viewStatusBar";
                         } else {
@@ -82,7 +78,6 @@ public final class LiveHostFinishDetailDialogLayoutBinding implements ViewBindin
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

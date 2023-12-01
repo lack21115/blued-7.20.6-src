@@ -4,11 +4,11 @@ package com.tencent.qimei.s;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f38411a = 23;
+    public int f24720a = 23;
     public int b = 50;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f38412c = 0;
+    public int f24721c = 0;
     public int d = 10;
     public int e = 60;
 }

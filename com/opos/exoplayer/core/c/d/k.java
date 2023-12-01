@@ -6,12 +6,12 @@ import com.opos.exoplayer.core.i.u;
 final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f25147a = {u.f("isom"), u.f("iso2"), u.f("iso3"), u.f("iso4"), u.f("iso5"), u.f("iso6"), u.f("avc1"), u.f("hvc1"), u.f("hev1"), u.f("mp41"), u.f("mp42"), u.f("3g2a"), u.f("3g2b"), u.f("3gr6"), u.f("3gs6"), u.f("3ge6"), u.f("3gg6"), u.f("M4V "), u.f("M4A "), u.f("f4v "), u.f("kddi"), u.f("M4VP"), u.f("qt  "), u.f("MSNV")};
+    private static final int[] f11459a = {u.f("isom"), u.f("iso2"), u.f("iso3"), u.f("iso4"), u.f("iso5"), u.f("iso6"), u.f("avc1"), u.f("hvc1"), u.f("hev1"), u.f("mp41"), u.f("mp42"), u.f("3g2a"), u.f("3g2b"), u.f("3gr6"), u.f("3gs6"), u.f("3ge6"), u.f("3gg6"), u.f("M4V "), u.f("M4A "), u.f("f4v "), u.f("kddi"), u.f("M4VP"), u.f("qt  "), u.f("MSNV")};
 
     private static boolean a(int i) {
         boolean z;
         if ((i >>> 8) != u.f("3gp")) {
-            int[] iArr = f25147a;
+            int[] iArr = f11459a;
             int length = iArr.length;
             int i2 = 0;
             while (true) {

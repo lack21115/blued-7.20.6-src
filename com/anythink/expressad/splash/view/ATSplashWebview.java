@@ -7,7 +7,7 @@ import com.anythink.expressad.atsignalcommon.windvane.WindVaneWebView;
 public class ATSplashWebview extends WindVaneWebView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8273a = ATSplashWebview.class.getSimpleName();
+    private static final String f5433a = ATSplashWebview.class.getSimpleName();
     private String b;
 
     public ATSplashWebview(Context context) {

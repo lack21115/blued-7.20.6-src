@@ -10,10 +10,10 @@ import java.lang.ref.WeakReference;
 public class e {
 
     /* renamed from: c  reason: collision with root package name */
-    private static PowerManager.WakeLock f35557c;
+    private static PowerManager.WakeLock f21866c;
 
     /* renamed from: a  reason: collision with root package name */
-    public Handler f35558a = new Handler(Looper.getMainLooper());
+    public Handler f21867a = new Handler(Looper.getMainLooper());
     private int b;
     private PowerManager d;
 
@@ -21,18 +21,18 @@ public class e {
     static class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        WeakReference<PowerManager.WakeLock> f35559a;
+        WeakReference<PowerManager.WakeLock> f21868a;
 
         private a() {
-            this.f35559a = new WeakReference<>(e.f35557c);
+            this.f21868a = new WeakReference<>(e.f21866c);
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f35559a.get() == null || !this.f35559a.get().isHeld()) {
+            if (this.f21868a.get() == null || !this.f21868a.get().isHeld()) {
                 return;
             }
-            this.f35559a.get().release();
+            this.f21868a.get().release();
         }
     }
 
@@ -42,10 +42,10 @@ public class e {
     }
 
     public void a() {
-        PowerManager.WakeLock wakeLock = f35557c;
+        PowerManager.WakeLock wakeLock = f21866c;
         if (wakeLock != null && wakeLock.isHeld()) {
-            f35557c.release();
-            f35557c = null;
+            f21866c.release();
+            f21866c = null;
         }
         if (this.d != null) {
             this.d = null;
@@ -53,13 +53,13 @@ public class e {
     }
 
     public void a(Context context) {
-        PowerManager powerManager = (PowerManager) context.getSystemService("power");
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         this.d = powerManager;
         if (powerManager != null) {
             PowerManager.WakeLock newWakeLock = powerManager.newWakeLock(536870922, "cameraFace");
-            f35557c = newWakeLock;
+            f21866c = newWakeLock;
             newWakeLock.acquire();
-            this.f35558a.postDelayed(new a(), this.b);
+            this.f21867a.postDelayed(new a(), this.b);
         }
     }
 }

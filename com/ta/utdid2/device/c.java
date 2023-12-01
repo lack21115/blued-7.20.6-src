@@ -18,10 +18,10 @@ import javax.crypto.spec.SecretKeySpec;
 public class c {
 
     /* renamed from: a  reason: collision with other field name */
-    private com.ta.utdid2.b.a.c f72a;
+    private com.ta.utdid2.b.a.c f25a;
 
     /* renamed from: a  reason: collision with other field name */
-    private d f73a;
+    private d f26a;
     private com.ta.utdid2.b.a.c b;
     private String i;
     private String j;
@@ -29,39 +29,39 @@ public class c {
     private static final Object e = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f34908a = null;
+    private static c f21217a = null;
     private static final String k = ".UTSystemConfig" + File.separator + "Global";
     private String h = null;
 
     /* renamed from: b  reason: collision with other field name */
-    private Pattern f74b = Pattern.compile("[^0-9a-zA-Z=/+]+");
+    private Pattern f27b = Pattern.compile("[^0-9a-zA-Z=/+]+");
 
     private c(Context context) {
         this.mContext = null;
-        this.f73a = null;
+        this.f26a = null;
         this.i = "xx_utdid_key";
         this.j = "xx_utdid_domain";
-        this.f72a = null;
+        this.f25a = null;
         this.b = null;
         this.mContext = context;
         this.b = new com.ta.utdid2.b.a.c(context, k, "Alvin2", false, true);
-        this.f72a = new com.ta.utdid2.b.a.c(context, ".DataStorage", "ContextData", false, true);
-        this.f73a = new d();
+        this.f25a = new com.ta.utdid2.b.a.c(context, ".DataStorage", "ContextData", false, true);
+        this.f26a = new d();
         this.i = String.format("K_%d", Integer.valueOf(g.a(this.i)));
         this.j = String.format("D_%d", Integer.valueOf(g.a(this.j)));
     }
 
     public static c a(Context context) {
-        if (context != null && f34908a == null) {
+        if (context != null && f21217a == null) {
             synchronized (e) {
-                if (f34908a == null) {
+                if (f21217a == null) {
                     c cVar = new c(context);
-                    f34908a = cVar;
+                    f21217a = cVar;
                     cVar.c();
                 }
             }
         }
-        return f34908a;
+        return f21217a;
     }
 
     public static String b(byte[] bArr) throws Exception {
@@ -76,7 +76,7 @@ public class c {
             if (str.endsWith("\n")) {
                 str2 = str.substring(0, str.length() - 1);
             }
-            return 24 == str2.length() && !this.f74b.matcher(str2).find();
+            return 24 == str2.length() && !this.f27b.matcher(str2).find();
         }
         return false;
     }
@@ -84,22 +84,22 @@ public class c {
     private void c() {
         com.ta.utdid2.b.a.c cVar = this.b;
         if (cVar != null) {
-            if (g.m9885a(cVar.getString("UTDID2"))) {
+            if (g.m6840a(cVar.getString("UTDID2"))) {
                 String string = this.b.getString("UTDID");
-                if (!g.m9885a(string)) {
+                if (!g.m6840a(string)) {
                     f(string);
                 }
             }
             boolean z = false;
-            if (!g.m9885a(this.b.getString("DID"))) {
+            if (!g.m6840a(this.b.getString("DID"))) {
                 this.b.remove("DID");
                 z = true;
             }
-            if (!g.m9885a(this.b.getString("EI"))) {
+            if (!g.m6840a(this.b.getString("EI"))) {
                 this.b.remove("EI");
                 z = true;
             }
-            if (!g.m9885a(this.b.getString("SI"))) {
+            if (!g.m6840a(this.b.getString("SI"))) {
                 this.b.remove("SI");
                 z = true;
             }
@@ -110,7 +110,7 @@ public class c {
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    private byte[] m9897c() throws Exception {
+    private byte[] m6852c() throws Exception {
         String str;
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
@@ -154,7 +154,7 @@ public class c {
         com.ta.utdid2.b.a.c cVar = this.b;
         if (cVar != null) {
             String string = cVar.getString("UTDID2");
-            if (g.m9885a(string) || this.f73a.c(string) == null) {
+            if (g.m6840a(string) || this.f26a.c(string) == null) {
                 return null;
             }
             return string;
@@ -164,11 +164,11 @@ public class c {
 
     private void g(String str) {
         com.ta.utdid2.b.a.c cVar;
-        if (str == null || (cVar = this.f72a) == null || str.equals(cVar.getString(this.i))) {
+        if (str == null || (cVar = this.f25a) == null || str.equals(cVar.getString(this.i))) {
             return;
         }
-        this.f72a.putString(this.i, str);
-        this.f72a.commit();
+        this.f25a.putString(this.i, str);
+        this.f25a.commit();
     }
 
     private void h(String str) {
@@ -234,12 +234,12 @@ public class c {
                 return this.h;
             }
             try {
-                byte[] m9897c = m9897c();
-                if (m9897c != null) {
-                    String encodeToString = com.ta.utdid2.a.a.b.encodeToString(m9897c, 2);
+                byte[] m6852c = m6852c();
+                if (m6852c != null) {
+                    String encodeToString = com.ta.utdid2.a.a.b.encodeToString(m6852c, 2);
                     this.h = encodeToString;
                     f(encodeToString);
-                    String c2 = this.f73a.c(m9897c);
+                    String c2 = this.f26a.c(m6852c);
                     if (c2 != null) {
                         j(c2);
                         g(c2);
@@ -271,7 +271,7 @@ public class c {
             } catch (Exception e3) {
                 str = null;
             }
-            if (g.m9885a(str)) {
+            if (g.m6840a(str)) {
                 z = true;
             } else {
                 String e4 = eVar.e(str);
@@ -282,9 +282,9 @@ public class c {
                 String d = eVar.d(str);
                 String str3 = str;
                 if (b(d)) {
-                    String c2 = this.f73a.c(d);
+                    String c2 = this.f26a.c(d);
                     str3 = str;
-                    if (!g.m9885a(c2)) {
+                    if (!g.m6840a(c2)) {
                         j(c2);
                         try {
                             str3 = Settings.System.getString(this.mContext.getContentResolver(), "dxCRMxhQkdGePGnp");
@@ -293,7 +293,7 @@ public class c {
                         }
                     }
                 }
-                String d2 = this.f73a.d(str3);
+                String d2 = this.f26a.d(str3);
                 if (b(d2)) {
                     this.h = d2;
                     f(d2);
@@ -304,7 +304,7 @@ public class c {
             }
             String g = g();
             if (b(g)) {
-                String c3 = this.f73a.c(g);
+                String c3 = this.f26a.c(g);
                 if (z) {
                     j(c3);
                 }
@@ -313,16 +313,16 @@ public class c {
                 this.h = g;
                 return g;
             }
-            String string = this.f72a.getString(this.i);
-            if (!g.m9885a(string)) {
+            String string = this.f25a.getString(this.i);
+            if (!g.m6840a(string)) {
                 String d3 = eVar.d(string);
                 String str4 = d3;
                 if (!b(d3)) {
-                    str4 = this.f73a.d(string);
+                    str4 = this.f26a.d(string);
                 }
                 if (b(str4)) {
-                    String c4 = this.f73a.c(str4);
-                    if (!g.m9885a(str4)) {
+                    String c4 = this.f26a.c(str4);
+                    if (!g.m6840a(str4)) {
                         this.h = str4;
                         if (z) {
                             j(c4);

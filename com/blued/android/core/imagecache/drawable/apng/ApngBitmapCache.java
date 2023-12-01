@@ -9,17 +9,13 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/drawable/apng/ApngBitmapCache.class */
 public class ApngBitmapCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f9624a = 2;
+    private int a = 2;
     private Map<Integer, Bitmap> b = new HashMap();
-
-    /* renamed from: c  reason: collision with root package name */
-    private Set<Bitmap> f9625c = new HashSet();
+    private Set<Bitmap> c = new HashSet();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Bitmap a(int i, int i2) {
-        Iterator<Bitmap> it = this.f9625c.iterator();
+        Iterator<Bitmap> it = this.c.iterator();
         Bitmap bitmap = null;
         while (it.hasNext()) {
             bitmap = it.next();
@@ -42,11 +38,11 @@ public class ApngBitmapCache {
 
     public void a() {
         this.b.clear();
-        this.f9625c.clear();
+        this.c.clear();
     }
 
     public void a(int i) {
-        this.f9624a = i;
+        this.a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -56,12 +52,12 @@ public class ApngBitmapCache {
         }
         if (i == 0) {
             this.b.clear();
-        } else if (this.b.size() >= this.f9624a) {
+        } else if (this.b.size() >= this.a) {
             Iterator<Map.Entry<Integer, Bitmap>> it = this.b.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry<Integer, Bitmap> next = it.next();
                 int intValue = next.getKey().intValue();
-                if (intValue > i || i >= intValue + this.f9624a) {
+                if (intValue > i || i >= intValue + this.a) {
                     it.remove();
                     b(next.getValue());
                 }
@@ -85,6 +81,6 @@ public class ApngBitmapCache {
         if (bitmap == null || a(bitmap)) {
             return;
         }
-        this.f9625c.add(bitmap);
+        this.c.add(bitmap);
     }
 }

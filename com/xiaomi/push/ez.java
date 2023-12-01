@@ -8,31 +8,31 @@ import java.util.List;
 public class ez implements ir<ez, Object>, Serializable, Cloneable {
 
     /* renamed from: a  reason: collision with other field name */
-    public String f427a;
+    public String f380a;
 
     /* renamed from: a  reason: collision with other field name */
-    public List<ey> f428a;
+    public List<ey> f381a;
 
     /* renamed from: b  reason: collision with other field name */
-    public String f429b;
+    public String f382b;
 
     /* renamed from: a  reason: collision with other field name */
-    private static final jh f426a = new jh("StatsEvents");
+    private static final jh f379a = new jh("StatsEvents");
 
     /* renamed from: a  reason: collision with root package name */
-    private static final iz f41393a = new iz("", (byte) 11, 1);
+    private static final iz f27702a = new iz("", (byte) 11, 1);
     private static final iz b = new iz("", (byte) 11, 2);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final iz f41394c = new iz("", (byte) 15, 3);
+    private static final iz f27703c = new iz("", (byte) 15, 3);
 
     public ez() {
     }
 
     public ez(String str, List<ey> list) {
         this();
-        this.f427a = str;
-        this.f428a = list;
+        this.f380a = str;
+        this.f381a = list;
     }
 
     @Override // java.lang.Comparable
@@ -42,21 +42,21 @@ public class ez implements ir<ez, Object>, Serializable, Cloneable {
         int a3;
         int a4;
         if (getClass().equals(ezVar.getClass())) {
-            int compareTo = Boolean.valueOf(m11740a()).compareTo(Boolean.valueOf(ezVar.m11740a()));
+            int compareTo = Boolean.valueOf(m8690a()).compareTo(Boolean.valueOf(ezVar.m8690a()));
             if (compareTo != 0) {
                 return compareTo;
             }
-            if (!m11740a() || (a4 = is.a(this.f427a, ezVar.f427a)) == 0) {
+            if (!m8690a() || (a4 = is.a(this.f380a, ezVar.f380a)) == 0) {
                 int compareTo2 = Boolean.valueOf(b()).compareTo(Boolean.valueOf(ezVar.b()));
                 if (compareTo2 != 0) {
                     return compareTo2;
                 }
-                if (!b() || (a3 = is.a(this.f429b, ezVar.f429b)) == 0) {
+                if (!b() || (a3 = is.a(this.f382b, ezVar.f382b)) == 0) {
                     int compareTo3 = Boolean.valueOf(c()).compareTo(Boolean.valueOf(ezVar.c()));
                     if (compareTo3 != 0) {
                         return compareTo3;
                     }
-                    if (!c() || (a2 = is.a(this.f428a, ezVar.f428a)) == 0) {
+                    if (!c() || (a2 = is.a(this.f381a, ezVar.f381a)) == 0) {
                         return 0;
                     }
                     return a2;
@@ -69,14 +69,14 @@ public class ez implements ir<ez, Object>, Serializable, Cloneable {
     }
 
     public ez a(String str) {
-        this.f429b = str;
+        this.f382b = str;
         return this;
     }
 
     public void a() {
-        if (this.f427a == null) {
+        if (this.f380a == null) {
             throw new jd("Required field 'uuid' was not present! Struct: " + toString());
-        } else if (this.f428a != null) {
+        } else if (this.f381a != null) {
         } else {
             throw new jd("Required field 'events' was not present! Struct: " + toString());
         }
@@ -84,77 +84,77 @@ public class ez implements ir<ez, Object>, Serializable, Cloneable {
 
     @Override // com.xiaomi.push.ir
     public void a(jc jcVar) {
-        jcVar.mo12036a();
+        jcVar.mo8986a();
         while (true) {
-            iz mo12032a = jcVar.mo12032a();
-            if (mo12032a.f41543a == 0) {
+            iz mo8982a = jcVar.mo8982a();
+            if (mo8982a.f27852a == 0) {
                 jcVar.f();
                 a();
                 return;
             }
-            short s = mo12032a.f887a;
+            short s = mo8982a.f840a;
             if (s == 1) {
-                if (mo12032a.f41543a == 11) {
-                    this.f427a = jcVar.mo12037a();
+                if (mo8982a.f27852a == 11) {
+                    this.f380a = jcVar.mo8987a();
                     jcVar.g();
                 }
-                jf.a(jcVar, mo12032a.f41543a);
+                jf.a(jcVar, mo8982a.f27852a);
                 jcVar.g();
             } else if (s != 2) {
-                if (s == 3 && mo12032a.f41543a == 15) {
-                    ja mo12033a = jcVar.mo12033a();
-                    this.f428a = new ArrayList(mo12033a.f889a);
+                if (s == 3 && mo8982a.f27852a == 15) {
+                    ja mo8983a = jcVar.mo8983a();
+                    this.f381a = new ArrayList(mo8983a.f842a);
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= mo12033a.f889a) {
+                        if (i2 >= mo8983a.f842a) {
                             break;
                         }
                         ey eyVar = new ey();
                         eyVar.a(jcVar);
-                        this.f428a.add(eyVar);
+                        this.f381a.add(eyVar);
                         i = i2 + 1;
                     }
                     jcVar.i();
                     jcVar.g();
                 }
-                jf.a(jcVar, mo12032a.f41543a);
+                jf.a(jcVar, mo8982a.f27852a);
                 jcVar.g();
             } else {
-                if (mo12032a.f41543a == 11) {
-                    this.f429b = jcVar.mo12037a();
+                if (mo8982a.f27852a == 11) {
+                    this.f382b = jcVar.mo8987a();
                     jcVar.g();
                 }
-                jf.a(jcVar, mo12032a.f41543a);
+                jf.a(jcVar, mo8982a.f27852a);
                 jcVar.g();
             }
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m11740a() {
-        return this.f427a != null;
+    public boolean m8690a() {
+        return this.f380a != null;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m11741a(ez ezVar) {
+    public boolean m8691a(ez ezVar) {
         if (ezVar == null) {
             return false;
         }
-        boolean m11740a = m11740a();
-        boolean m11740a2 = ezVar.m11740a();
-        if ((m11740a || m11740a2) && !(m11740a && m11740a2 && this.f427a.equals(ezVar.f427a))) {
+        boolean m8690a = m8690a();
+        boolean m8690a2 = ezVar.m8690a();
+        if ((m8690a || m8690a2) && !(m8690a && m8690a2 && this.f380a.equals(ezVar.f380a))) {
             return false;
         }
         boolean b2 = b();
         boolean b3 = ezVar.b();
-        if ((b2 || b3) && !(b2 && b3 && this.f429b.equals(ezVar.f429b))) {
+        if ((b2 || b3) && !(b2 && b3 && this.f382b.equals(ezVar.f382b))) {
             return false;
         }
         boolean c2 = c();
         boolean c3 = ezVar.c();
         if (c2 || c3) {
-            return c2 && c3 && this.f428a.equals(ezVar.f428a);
+            return c2 && c3 && this.f381a.equals(ezVar.f381a);
         }
         return true;
     }
@@ -162,41 +162,41 @@ public class ez implements ir<ez, Object>, Serializable, Cloneable {
     @Override // com.xiaomi.push.ir
     public void b(jc jcVar) {
         a();
-        jcVar.a(f426a);
-        if (this.f427a != null) {
-            jcVar.a(f41393a);
-            jcVar.a(this.f427a);
+        jcVar.a(f379a);
+        if (this.f380a != null) {
+            jcVar.a(f27702a);
+            jcVar.a(this.f380a);
             jcVar.b();
         }
-        if (this.f429b != null && b()) {
+        if (this.f382b != null && b()) {
             jcVar.a(b);
-            jcVar.a(this.f429b);
+            jcVar.a(this.f382b);
             jcVar.b();
         }
-        if (this.f428a != null) {
-            jcVar.a(f41394c);
-            jcVar.a(new ja((byte) 12, this.f428a.size()));
-            for (ey eyVar : this.f428a) {
+        if (this.f381a != null) {
+            jcVar.a(f27703c);
+            jcVar.a(new ja((byte) 12, this.f381a.size()));
+            for (ey eyVar : this.f381a) {
                 eyVar.b(jcVar);
             }
             jcVar.e();
             jcVar.b();
         }
         jcVar.c();
-        jcVar.mo12040a();
+        jcVar.mo8990a();
     }
 
     public boolean b() {
-        return this.f429b != null;
+        return this.f382b != null;
     }
 
     public boolean c() {
-        return this.f428a != null;
+        return this.f381a != null;
     }
 
     public boolean equals(Object obj) {
         if (obj != null && (obj instanceof ez)) {
-            return m11741a((ez) obj);
+            return m8691a((ez) obj);
         }
         return false;
     }
@@ -208,7 +208,7 @@ public class ez implements ir<ez, Object>, Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder("StatsEvents(");
         sb.append("uuid:");
-        String str = this.f427a;
+        String str = this.f380a;
         if (str == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {
@@ -217,7 +217,7 @@ public class ez implements ir<ez, Object>, Serializable, Cloneable {
         if (b()) {
             sb.append(", ");
             sb.append("operator:");
-            String str2 = this.f429b;
+            String str2 = this.f382b;
             if (str2 == null) {
                 sb.append(com.igexin.push.core.b.l);
             } else {
@@ -226,7 +226,7 @@ public class ez implements ir<ez, Object>, Serializable, Cloneable {
         }
         sb.append(", ");
         sb.append("events:");
-        List<ey> list = this.f428a;
+        List<ey> list = this.f381a;
         if (list == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {

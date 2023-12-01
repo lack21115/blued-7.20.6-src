@@ -7,11 +7,11 @@ import java.util.Iterator;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f25955a = 800;
+    private static int f12267a = 800;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayList<h> f25956c;
+    private ArrayList<h> f12268c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/d/a/d$a.class */
     public enum a {
@@ -34,20 +34,20 @@ public class d {
 
     public d() {
         ArrayList<h> arrayList = new ArrayList<>(5);
-        this.f25956c = arrayList;
+        this.f12268c = arrayList;
         arrayList.add(new h(a.INIT_STATUS));
-        this.f25956c.add(new h(a.PROGRESS_STATUS));
-        this.f25956c.add(new h(a.PAUSED_STATUS));
-        this.f25956c.add(new h(a.FAILED_STATUS));
-        this.f25956c.add(new h(a.END_STATUS));
+        this.f12268c.add(new h(a.PROGRESS_STATUS));
+        this.f12268c.add(new h(a.PAUSED_STATUS));
+        this.f12268c.add(new h(a.FAILED_STATUS));
+        this.f12268c.add(new h(a.END_STATUS));
     }
 
     public void a(Runnable runnable, a aVar) {
         String str;
-        h hVar = this.f25956c.get(aVar.a());
-        if (System.currentTimeMillis() <= this.b + f25955a) {
+        h hVar = this.f12268c.get(aVar.a());
+        if (System.currentTimeMillis() <= this.b + f12267a) {
             if (aVar.a() != a.PROGRESS_STATUS.a()) {
-                Iterator<h> it = this.f25956c.iterator();
+                Iterator<h> it = this.f12268c.iterator();
                 while (it.hasNext()) {
                     h next = it.next();
                     if (next.b() >= aVar.a() && next.a()) {
@@ -59,8 +59,8 @@ public class d {
                     }
                 }
                 com.opos.cmn.an.f.a.b("LevelController", "needToPost level = " + aVar.a());
-                hVar.a(runnable, (long) f25955a);
-                this.b = System.currentTimeMillis() + ((long) f25955a);
+                hVar.a(runnable, (long) f12267a);
+                this.b = System.currentTimeMillis() + ((long) f12267a);
                 return;
             }
             return;

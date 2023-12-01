@@ -86,26 +86,26 @@ public class AppDownloadButton extends com.huawei.openalliance.ad.views.AppDownl
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/AppDownloadButton$a.class */
     class a extends com.huawei.openalliance.ad.views.a {
         private AppDownloadButtonStyle B;
-        private a.C0442a C;
+        private a.C0272a C;
 
         public a(Context context, AppDownloadButtonStyle appDownloadButtonStyle) {
             super(context);
-            this.C = new a.C0442a();
+            this.C = new a.C0272a();
             this.B = appDownloadButtonStyle;
             Code(this.V, this.B.normalStyle);
             Code(this.I, this.B.processingStyle);
             Code(this.Z, this.B.installingStyle);
         }
 
-        private void Code(a.C0442a c0442a, AppDownloadButtonStyle.Style style) {
-            c0442a.Code(style.getBackground());
-            c0442a.Code(style.getTextColor());
-            c0442a.V(style.getTextSize());
-            c0442a.Code(style.getTypeface());
+        private void Code(a.C0272a c0272a, AppDownloadButtonStyle.Style style) {
+            c0272a.Code(style.getBackground());
+            c0272a.Code(style.getTextColor());
+            c0272a.V(style.getTextSize());
+            c0272a.Code(style.getTypeface());
         }
 
         @Override // com.huawei.openalliance.ad.views.a
-        public a.C0442a Code(Context context, com.huawei.openalliance.ad.download.app.k kVar) {
+        public a.C0272a Code(Context context, com.huawei.openalliance.ad.download.app.k kVar) {
             AppDownloadButtonStyle.Style style = this.B.getStyle(context, AppDownloadButton.this.V(kVar));
             if (style == this.B.processingStyle) {
                 return this.I;

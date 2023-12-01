@@ -9,17 +9,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogGuideLayoutBinding.class */
 public final class DialogGuideLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16350a;
+    public final ImageView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16351c;
+    private final ConstraintLayout c;
 
     private DialogGuideLayoutBinding(ConstraintLayout constraintLayout, ImageView imageView, ShapeTextView shapeTextView) {
-        this.f16351c = constraintLayout;
-        this.f16350a = imageView;
+        this.c = constraintLayout;
+        this.a = imageView;
         this.b = shapeTextView;
     }
 
@@ -38,9 +34,8 @@ public final class DialogGuideLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16351c;
+        return this.c;
     }
 }

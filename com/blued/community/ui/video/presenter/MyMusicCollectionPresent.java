@@ -29,7 +29,6 @@ public class MyMusicCollectionPresent extends MvpPresenter {
         if (this.j) {
             FeedHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<VideoScanMusic>>(g()) { // from class: com.blued.community.ui.video.presenter.MyMusicCollectionPresent.1
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<VideoScanMusic> bluedEntityA) {
                     if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -41,7 +40,6 @@ public class MyMusicCollectionPresent extends MvpPresenter {
                     iFetchDataListener.b(MyMusicCollectionPresent.this.j);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish(boolean z) {
                     if (!z && MyMusicCollectionPresent.this.h != 1) {
                         MyMusicCollectionPresent.c(MyMusicCollectionPresent.this);
@@ -52,13 +50,11 @@ public class MyMusicCollectionPresent extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.h = 1;
         c(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.h++;
         c(iFetchDataListener);
@@ -66,7 +62,6 @@ public class MyMusicCollectionPresent extends MvpPresenter {
 
     public void d(String str) {
         FeedHttpUtils.f(new BluedUIHttpResponse(g()) { // from class: com.blued.community.ui.video.presenter.MyMusicCollectionPresent.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         }, str, g());

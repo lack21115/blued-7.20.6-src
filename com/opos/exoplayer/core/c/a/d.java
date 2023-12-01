@@ -60,7 +60,7 @@ final class d extends b {
         int h = mVar.h();
         int d = mVar.d();
         mVar.d(h);
-        return new String(mVar.f25496a, d, h);
+        return new String(mVar.f11808a, d, h);
     }
 
     private static ArrayList<Object> f(m mVar) {

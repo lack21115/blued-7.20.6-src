@@ -1,6 +1,6 @@
 package mtopsdk.a;
 
-import com.google.common.net.HttpHeaders;
+import io.grpc.internal.GrpcUtil;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.util.List;
@@ -12,18 +12,14 @@ import mtopsdk.common.util.TBSdkLog;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/a/c.class */
 public final class c implements a {
-
-    /* renamed from: a  reason: collision with root package name */
-    volatile boolean f43671a;
+    volatile boolean a;
     private mtopsdk.a.b.b b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ExecutorService f43672c;
+    private ExecutorService c;
     private Future d;
 
     public c(mtopsdk.a.b.b bVar, ExecutorService executorService) {
         this.b = bVar;
-        this.f43672c = executorService;
+        this.c = executorService;
     }
 
     private static void a(String str, Map map) {
@@ -33,7 +29,7 @@ public final class c implements a {
         try {
             for (Map.Entry entry : map.entrySet()) {
                 String str2 = (String) entry.getKey();
-                if (str2 != null && (str2.equalsIgnoreCase("Set-Cookie") || str2.equalsIgnoreCase(HttpHeaders.SET_COOKIE2))) {
+                if (str2 != null && (str2.equalsIgnoreCase("Set-Cookie") || str2.equalsIgnoreCase("Set-Cookie2"))) {
                     for (String str3 : (List) entry.getValue()) {
                         mtopsdk.a.a.a.a(str, str3);
                     }
@@ -53,7 +49,7 @@ public final class c implements a {
         if (!StringUtils.b(mtopsdk.a.a.a.a(bVar.a()))) {
             httpURLConnection.addRequestProperty("Cookie", mtopsdk.a.a.a.a(bVar.a()));
         }
-        if ("POST".equalsIgnoreCase(bVar.b())) {
+        if (GrpcUtil.HTTP_METHOD.equalsIgnoreCase(bVar.b())) {
             httpURLConnection.setDoOutput(true);
         }
         mtopsdk.a.b.d d = bVar.d();
@@ -83,7 +79,7 @@ public final class c implements a {
 
     @Override // mtopsdk.a.a
     public final void a(f fVar) {
-        ExecutorService executorService = this.f43672c;
+        ExecutorService executorService = this.c;
         if (executorService == null) {
             fVar.a(this, new Exception("miss executorService in CallImpl "));
             return;
@@ -123,7 +119,7 @@ public final class c implements a {
     @Override // mtopsdk.a.a
     public final void c() {
         TBSdkLog.a("mtopsdk.DefaultCallImpl", "try to cancel call");
-        this.f43671a = true;
+        this.a = true;
         Future future = this.d;
         if (future != null) {
             future.cancel(true);

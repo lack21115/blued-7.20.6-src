@@ -11,22 +11,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyStepBinding.class */
 public final class ViewYyStepBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16960a;
+    public final View a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16961c;
+    public final ImageView c;
     public final View d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private ViewYyStepBinding(ConstraintLayout constraintLayout, View view, View view2, ImageView imageView, View view3, TextView textView) {
         this.f = constraintLayout;
-        this.f16960a = view;
+        this.a = view;
         this.b = view2;
-        this.f16961c = imageView;
+        this.c = imageView;
         this.d = view3;
         this.e = textView;
     }
@@ -69,7 +65,6 @@ public final class ViewYyStepBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

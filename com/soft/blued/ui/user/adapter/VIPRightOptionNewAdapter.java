@@ -2,13 +2,13 @@ package com.soft.blued.ui.user.adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -62,11 +62,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOption, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f33810a;
+    private final Context f20119a;
     private final ActivityFragmentActive b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f33811c;
+    private final int f20120c;
     private final FragmentManager d;
     private final VIPCenterTabPageViewModel e;
     private boolean f;
@@ -74,16 +74,16 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
     private int h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public VIPRightOptionNewAdapter(Context context, ActivityFragmentActive fragmentActive, int i, FragmentManager fragmentManager, VIPCenterTabPageViewModel viewModel) {
+    public VIPRightOptionNewAdapter(Context context, ActivityFragmentActive activityFragmentActive, int i, FragmentManager fragmentManager, VIPCenterTabPageViewModel vIPCenterTabPageViewModel) {
         super((int) R.layout.item_vip_right_option);
         Intrinsics.e(context, "context");
-        Intrinsics.e(fragmentActive, "fragmentActive");
-        Intrinsics.e(viewModel, "viewModel");
-        this.f33810a = context;
-        this.b = fragmentActive;
-        this.f33811c = i;
+        Intrinsics.e(activityFragmentActive, "fragmentActive");
+        Intrinsics.e(vIPCenterTabPageViewModel, "viewModel");
+        this.f20119a = context;
+        this.b = activityFragmentActive;
+        this.f20120c = i;
         this.d = fragmentManager;
-        this.e = viewModel;
+        this.e = vIPCenterTabPageViewModel;
         this.g = "";
     }
 
@@ -93,48 +93,48 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(BluedBlackList.privacySettingEntity settingModel, VIPRightOption item, VIPRightOptionNewAdapter this$0, int i, DialogInterface dialogInterface, int i2) {
+    public static final void a(BluedBlackList.privacySettingEntity privacysettingentity, VIPRightOption vIPRightOption, VIPRightOptionNewAdapter vIPRightOptionNewAdapter, int i, DialogInterface dialogInterface, int i2) {
         Tracker.onClick(dialogInterface, i2);
-        Intrinsics.e(settingModel, "$settingModel");
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(this$0, "this$0");
-        settingModel.avatar_location_status = 0;
-        settingModel.is_hide_distance = 1;
-        item.is_on = 1;
-        this$0.notifyItemChanged(i);
-        int i3 = this$0.f33811c;
+        Intrinsics.e(privacysettingentity, "$settingModel");
+        Intrinsics.e(vIPRightOption, "$item");
+        Intrinsics.e(vIPRightOptionNewAdapter, "this$0");
+        privacysettingentity.avatar_location_status = 0;
+        privacysettingentity.is_hide_distance = 1;
+        vIPRightOption.is_on = 1;
+        vIPRightOptionNewAdapter.notifyItemChanged(i);
+        int i3 = vIPRightOptionNewAdapter.f20120c;
         if (i3 == 1) {
-            this$0.g = "vip_center_hide_distance_vip";
-            this$0.h = 1;
+            vIPRightOptionNewAdapter.g = "vip_center_hide_distance_vip";
+            vIPRightOptionNewAdapter.h = 1;
         } else if (i3 != 2) {
         } else {
-            this$0.g = "vip_center_hide_distance_svip";
-            this$0.h = 2;
+            vIPRightOptionNewAdapter.g = "vip_center_hide_distance_svip";
+            vIPRightOptionNewAdapter.h = 2;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VIPRightOptionNewAdapter this$0, VIPRightOption item, DialogInterface dialogInterface, int i) {
+    public static final void a(VIPRightOptionNewAdapter vIPRightOptionNewAdapter, VIPRightOption vIPRightOption, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        this$0.a(item);
+        Intrinsics.e(vIPRightOptionNewAdapter, "this$0");
+        Intrinsics.e(vIPRightOption, "$item");
+        vIPRightOptionNewAdapter.a(vIPRightOption);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final VIPRightOptionNewAdapter this$0, final VIPRightOption item, BaseViewHolder helper, View view) {
+    public static final void a(final VIPRightOptionNewAdapter vIPRightOptionNewAdapter, final VIPRightOption vIPRightOption, BaseViewHolder baseViewHolder, View view) {
         String str;
         String str2;
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(helper, "$helper");
-        if (this$0.a(item, helper, helper.getAdapterPosition())) {
-            if (item.is_on != 1) {
-                if (item.pid == 3) {
-                    str2 = this$0.mContext.getResources().getString(R.string.open_half_invisible);
+        Intrinsics.e(vIPRightOptionNewAdapter, "this$0");
+        Intrinsics.e(vIPRightOption, "$item");
+        Intrinsics.e(baseViewHolder, "$helper");
+        if (vIPRightOptionNewAdapter.a(vIPRightOption, baseViewHolder, baseViewHolder.getAdapterPosition())) {
+            if (vIPRightOption.is_on != 1) {
+                if (vIPRightOption.pid == 3) {
+                    str2 = vIPRightOptionNewAdapter.mContext.getResources().getString(R.string.open_half_invisible);
                     Intrinsics.c(str2, "mContext.resources.getSt…ring.open_half_invisible)");
-                    String string = this$0.mContext.getResources().getString(R.string.open_half_invisible_alert);
+                    String string = vIPRightOptionNewAdapter.mContext.getResources().getString(R.string.open_half_invisible_alert);
                     Intrinsics.c(string, "mContext.resources.getSt…pen_half_invisible_alert)");
                     str = string;
                 } else {
@@ -142,38 +142,38 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                     str2 = "";
                 }
                 if (StringUtils.d(str2) || StringUtils.d(str)) {
-                    this$0.a(item);
+                    vIPRightOptionNewAdapter.a(vIPRightOption);
                 } else {
-                    CommonAlertDialog.a(this$0.mContext, str2, str, (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$_mMhseEW90Gwy8T0N4VRabmmjOI
+                    CommonAlertDialog.a(vIPRightOptionNewAdapter.mContext, str2, str, (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$_mMhseEW90Gwy8T0N4VRabmmjOI
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
-                            VIPRightOptionNewAdapter.b(VIPRightOptionNewAdapter.this, item, dialogInterface, i);
+                            VIPRightOptionNewAdapter.b(VIPRightOptionNewAdapter.this, vIPRightOption, dialogInterface, i);
                         }
                     }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                 }
-            } else if (item.pid == 25) {
-                CommonAlertDialog.a(this$0.mContext, this$0.mContext.getResources().getString(R.string.hide_vip_icon_title), this$0.mContext.getResources().getString(R.string.hide_vip_icon_desc), (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$JPvMqERSurD1VuNFmjufuhtYQ-0
+            } else if (vIPRightOption.pid == 25) {
+                CommonAlertDialog.a(vIPRightOptionNewAdapter.mContext, vIPRightOptionNewAdapter.mContext.getResources().getString(R.string.hide_vip_icon_title), vIPRightOptionNewAdapter.mContext.getResources().getString(R.string.hide_vip_icon_desc), (String) null, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$JPvMqERSurD1VuNFmjufuhtYQ-0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
-                        VIPRightOptionNewAdapter.a(VIPRightOptionNewAdapter.this, item, dialogInterface, i);
+                        VIPRightOptionNewAdapter.a(VIPRightOptionNewAdapter.this, vIPRightOption, dialogInterface, i);
                     }
                 }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
             } else {
-                this$0.a(item);
+                vIPRightOptionNewAdapter.a(vIPRightOption);
             }
-            this$0.notifyDataSetChanged();
+            vIPRightOptionNewAdapter.notifyDataSetChanged();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VIPRightOption item, BaseViewHolder holder, VIPRightOptionNewAdapter this$0, int i, DialogInterface dialogInterface, int i2) {
+    public static final void a(VIPRightOption vIPRightOption, BaseViewHolder baseViewHolder, VIPRightOptionNewAdapter vIPRightOptionNewAdapter, int i, DialogInterface dialogInterface, int i2) {
         Tracker.onClick(dialogInterface, i2);
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(holder, "$holder");
-        Intrinsics.e(this$0, "this$0");
-        item.is_on = 0;
-        ((ToggleButton) holder.getView(R.id.tglbtn)).setChecked(false);
-        this$0.notifyItemChanged(i);
+        Intrinsics.e(vIPRightOption, "$item");
+        Intrinsics.e(baseViewHolder, "$holder");
+        Intrinsics.e(vIPRightOptionNewAdapter, "this$0");
+        vIPRightOption.is_on = 0;
+        ((ToggleButton) baseViewHolder.getView(R.id.tglbtn)).setChecked(false);
+        vIPRightOptionNewAdapter.notifyItemChanged(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -182,25 +182,25 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VIPRightOptionNewAdapter this$0, VIPRightOption item, DialogInterface dialogInterface, int i) {
+    public static final void b(VIPRightOptionNewAdapter vIPRightOptionNewAdapter, VIPRightOption vIPRightOption, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        this$0.a(item);
+        Intrinsics.e(vIPRightOptionNewAdapter, "this$0");
+        Intrinsics.e(vIPRightOption, "$item");
+        vIPRightOptionNewAdapter.a(vIPRightOption);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VIPRightOptionNewAdapter this$0, VIPRightOption item, BaseViewHolder helper, View view) {
+    public static final void b(VIPRightOptionNewAdapter vIPRightOptionNewAdapter, VIPRightOption vIPRightOption, BaseViewHolder baseViewHolder, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(item, "$item");
-        Intrinsics.e(helper, "$helper");
-        this$0.b(item, helper, helper.getAdapterPosition());
+        Intrinsics.e(vIPRightOptionNewAdapter, "this$0");
+        Intrinsics.e(vIPRightOption, "$item");
+        Intrinsics.e(baseViewHolder, "$helper");
+        vIPRightOptionNewAdapter.b(vIPRightOption, baseViewHolder, baseViewHolder.getAdapterPosition());
     }
 
     private final void b(VIPRightOption vIPRightOption, BaseViewHolder baseViewHolder, int i) {
         if (a(vIPRightOption, baseViewHolder, i)) {
-            EventTrackVIP.a(UserInfo.getInstance().getLoginUserInfo().vip_grade, this.f33811c, false, vIPRightOption.pid);
+            EventTrackVIP.a(UserInfo.getInstance().getLoginUserInfo().vip_grade, this.f20120c, false, vIPRightOption.pid);
             int i2 = vIPRightOption.pid;
             if (i2 == 4) {
                 VipInvisibleDialogFragment vipInvisibleDialogFragment = new VipInvisibleDialogFragment();
@@ -216,15 +216,15 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
             } else if (i2 == 5) {
                 ModifyUserInfoFragment.a(this.mContext, false);
             } else if (i2 == 12) {
-                TerminalActivity.d(this.mContext, VisitHistoryFragment.class, null);
+                TerminalActivity.d(this.mContext, VisitHistoryFragment.class, (Bundle) null);
             } else if (i2 == 14) {
-                ChangeBluedIconFragment.a(this.mContext, this.f33811c);
+                ChangeBluedIconFragment.a(this.mContext, this.f20120c);
             } else if (i2 == 26) {
                 DependentVIPSelectedFragment.a(this.mContext);
             } else if (i2 == 28) {
-                BluedURIRouterAdapter.goChatAndOpenMsgBox(this.d, this.f33811c);
+                BluedURIRouterAdapter.goChatAndOpenMsgBox(this.d, this.f20120c);
             } else if (i2 == 34) {
-                MyGroupFragmentNew.f32768a.a(this.mContext, null);
+                MyGroupFragmentNew.f19077a.a(this.mContext, null);
             } else if (i2 == 36) {
                 SpecialCareDialogFragment specialCareDialogFragment = new SpecialCareDialogFragment();
                 if (specialCareDialogFragment.isAdded()) {
@@ -237,14 +237,14 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                 }
                 specialCareDialogFragment.show(fragmentManager2, SpecialCareDialogFragment.class.getName());
             } else if (i2 == 31) {
-                VIPCustomizedFragment.a(this.mContext, this.f33811c);
+                VIPCustomizedFragment.a(this.mContext, this.f20120c);
             } else if (i2 == 32) {
-                EventTrackVIP.a(VipProtos.Event.VIP_CENTER_PHOTO_PENDANT_CLICK, this.f33811c);
-                WidgetListFragment.a(this.mContext, this.f33811c, "photo_pendant_vip_center", VipProtos.FromType.PHOTO_PENDANT_OTHER);
+                EventTrackVIP.a(VipProtos.Event.VIP_CENTER_PHOTO_PENDANT_CLICK, this.f20120c);
+                WidgetListFragment.a(this.mContext, this.f20120c, "photo_pendant_vip_center", VipProtos.FromType.PHOTO_PENDANT_OTHER);
             } else {
                 switch (i2) {
                     case 7:
-                        TerminalActivity.d(this.mContext, BlacklistFragment.class, null);
+                        TerminalActivity.d(this.mContext, BlacklistFragment.class, (Bundle) null);
                         return;
                     case 8:
                         UserGroupListsFragment.a(this.mContext);
@@ -289,7 +289,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
     }
 
     public final int a() {
-        return this.f33811c;
+        return this.f20120c;
     }
 
     public final void a(int i) {
@@ -297,114 +297,117 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
     }
 
     public final void a(int i, final int i2) {
-        Map<String, String> ajaxParms = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (i == 5) {
-            Intrinsics.c(ajaxParms, "ajaxParms");
-            ajaxParms.put("is_show_vip_page", i2 + "");
+            Intrinsics.c(a2, "ajaxParms");
+            a2.put("is_show_vip_page", i2 + "");
             UserHttpUtils.a(this.mContext, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.user.adapter.VIPRightOptionNewAdapter$setChecked$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
-                    super(null);
+                    super((IRequestHost) null);
                 }
 
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                     UserInfo.getInstance().getLoginUserInfo().is_show_vip_page = i2;
                 }
-            }, UserInfo.getInstance().getLoginUserInfo().uid, ajaxParms, (IRequestHost) null);
+            }, UserInfo.getInstance().getLoginUserInfo().uid, a2, (IRequestHost) null);
             return;
         }
         if (i == 0) {
-            Intrinsics.c(ajaxParms, "ajaxParms");
-            ajaxParms.put("is_hide_last_operate", i2 + "");
+            Intrinsics.c(a2, "ajaxParms");
+            a2.put("is_hide_last_operate", i2 + "");
         } else if (i == 1) {
-            Intrinsics.c(ajaxParms, "ajaxParms");
-            ajaxParms.put("is_hide_distance", i2 + "");
+            Intrinsics.c(a2, "ajaxParms");
+            a2.put("is_hide_distance", i2 + "");
         } else if (i != 2) {
             if (i == 3) {
-                Intrinsics.c(ajaxParms, "ajaxParms");
-                ajaxParms.put("is_invisible_half", i2 + "");
+                Intrinsics.c(a2, "ajaxParms");
+                a2.put("is_invisible_half", i2 + "");
                 if (i2 == 1) {
-                    ajaxParms.put("stealth_distance", BluedPreferences.ab());
-                    ajaxParms.put("is_invisible_all", "0");
+                    a2.put("stealth_distance", BluedPreferences.ab());
+                    a2.put("is_invisible_all", "0");
                 }
             } else if (i == 4) {
-                Intrinsics.c(ajaxParms, "ajaxParms");
-                ajaxParms.put("is_invisible_all", i2 + "");
+                Intrinsics.c(a2, "ajaxParms");
+                a2.put("is_invisible_all", i2 + "");
                 if (i2 == 1) {
-                    ajaxParms.put("is_invisible_half", "0");
+                    a2.put("is_invisible_half", "0");
                 }
             } else if (i == 11) {
-                Intrinsics.c(ajaxParms, "ajaxParms");
-                ajaxParms.put("is_traceless_access", i2 + "");
+                Intrinsics.c(a2, "ajaxParms");
+                a2.put("is_traceless_access", i2 + "");
             } else if (i == 13) {
-                Intrinsics.c(ajaxParms, "ajaxParms");
-                ajaxParms.put("is_global_view_secretly", i2 + "");
+                Intrinsics.c(a2, "ajaxParms");
+                a2.put("is_global_view_secretly", i2 + "");
                 BluedPreferences.B(i2 == 1);
                 BluedPreferences.Y(i2 != 1);
             } else if (i == 25) {
-                Intrinsics.c(ajaxParms, "ajaxParms");
-                ajaxParms.put(ReqAckPackage.REQ_RESPONSE_KEY.IS_HIDE_VIP_LOOK, i2 != 1 ? "1" : "0");
+                Intrinsics.c(a2, "ajaxParms");
+                a2.put("is_hide_vip_look", i2 != 1 ? "1" : "0");
             } else if (i == 27) {
-                Intrinsics.c(ajaxParms, "ajaxParms");
-                ajaxParms.put("is_filter_ads", i2 + "");
+                Intrinsics.c(a2, "ajaxParms");
+                a2.put("is_filter_ads", i2 + "");
             }
         } else {
-            Intrinsics.c(ajaxParms, "ajaxParms");
-            ajaxParms.put("is_hide_city_settled", i2 + "");
+            Intrinsics.c(a2, "ajaxParms");
+            a2.put("is_hide_city_settled", i2 + "");
         }
         final ActivityFragmentActive activityFragmentActive = this.b;
         ProfileHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(activityFragmentActive) { // from class: com.soft.blued.ui.user.adapter.VIPRightOptionNewAdapter$setChecked$2
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super((IRequestHost) activityFragmentActive);
+            }
+
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 BluedConfig.a().c();
             }
-        }, UserInfo.getInstance().getLoginUserInfo().uid, ajaxParms);
+        }, UserInfo.getInstance().getLoginUserInfo().uid, a2);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(final BaseViewHolder helper, final VIPRightOption item) {
+    public void convert(final BaseViewHolder baseViewHolder, final VIPRightOption vIPRightOption) {
         String str;
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        ImageView imageView = (ImageView) helper.getView(2131365763);
-        if (this.f33811c == 2) {
-            str = item.icon_svip;
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(vIPRightOption, "item");
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_privilege);
+        if (this.f20120c == 2) {
+            str = vIPRightOption.icon_svip;
             Intrinsics.c(str, "item.icon_svip");
         } else {
-            str = item.icon_vip;
+            str = vIPRightOption.icon_vip;
             Intrinsics.c(str, "item.icon_vip");
         }
         ImageLoader.a(this.b, str).a(imageView);
-        helper.setText(2131372299, item.title);
-        helper.setText(2131372298, item.description);
+        baseViewHolder.setText(R.id.tv_privilege_name, vIPRightOption.title);
+        baseViewHolder.setText(R.id.tv_privilege_desc, vIPRightOption.description);
         boolean z = true;
-        if (item.getRightType() != 0) {
-            helper.getView(R.id.tglbtn).setVisibility(4);
-            helper.setGone(2131365072, true);
-            ((LinearLayout) helper.getView(R.id.ll_item)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$_T0EWblP_9Gc2sU6f2oRKaygZxU
+        if (vIPRightOption.getRightType() != 0) {
+            baseViewHolder.getView(R.id.tglbtn).setVisibility(4);
+            baseViewHolder.setGone(R.id.iv_arrow, true);
+            ((LinearLayout) baseViewHolder.getView(R.id.ll_item)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$_T0EWblP_9Gc2sU6f2oRKaygZxU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    VIPRightOptionNewAdapter.b(VIPRightOptionNewAdapter.this, item, helper, view);
+                    VIPRightOptionNewAdapter.b(VIPRightOptionNewAdapter.this, vIPRightOption, baseViewHolder, view);
                 }
             });
             return;
         }
-        helper.setGone(R.id.tglbtn, true);
-        helper.setGone(2131365072, false);
-        ToggleButton toggleButton = (ToggleButton) helper.getView(R.id.tglbtn);
-        if (item.is_on != 1) {
+        baseViewHolder.setGone(R.id.tglbtn, true);
+        baseViewHolder.setGone(R.id.iv_arrow, false);
+        ToggleButton toggleButton = (ToggleButton) baseViewHolder.getView(R.id.tglbtn);
+        if (vIPRightOption.is_on != 1) {
             z = false;
         }
         toggleButton.setChecked(z);
-        ((LinearLayout) helper.getView(R.id.ll_item)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$8v4czm5R1WXmxP_wwnTETKDb228
+        ((LinearLayout) baseViewHolder.getView(R.id.ll_item)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$8v4czm5R1WXmxP_wwnTETKDb228
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 VIPRightOptionNewAdapter.a(view);
@@ -413,24 +416,24 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
         toggleButton.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$szTQc_zRxbmR8bfqECF7qf_VgTg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                VIPRightOptionNewAdapter.a(VIPRightOptionNewAdapter.this, item, helper, view);
+                VIPRightOptionNewAdapter.a(VIPRightOptionNewAdapter.this, vIPRightOption, baseViewHolder, view);
             }
         });
     }
 
-    public final void a(VIPRightOption rightOption) {
-        Intrinsics.e(rightOption, "rightOption");
-        rightOption.is_on = rightOption.is_on == 1 ? 0 : 1;
-        a(rightOption.pid, rightOption.is_on);
+    public final void a(VIPRightOption vIPRightOption) {
+        Intrinsics.e(vIPRightOption, "rightOption");
+        vIPRightOption.is_on = vIPRightOption.is_on == 1 ? 0 : 1;
+        a(vIPRightOption.pid, vIPRightOption.is_on);
         notifyDataSetChanged();
         boolean z = false;
-        if (rightOption.is_on == 1) {
+        if (vIPRightOption.is_on == 1) {
             z = false;
             if (UserInfo.getInstance().getLoginUserInfo().vip_grade != 0) {
                 z = true;
             }
         }
-        EventTrackVIP.a(UserInfo.getInstance().getLoginUserInfo().vip_grade, this.f33811c, z, rightOption.pid);
+        EventTrackVIP.a(UserInfo.getInstance().getLoginUserInfo().vip_grade, this.f20120c, z, vIPRightOption.pid);
     }
 
     public final void a(String str) {
@@ -438,13 +441,13 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
         this.g = str;
     }
 
-    public final void a(List<? extends VIPRightOption> datas) {
-        Intrinsics.e(datas, "datas");
-        if (datas.size() > 0) {
+    public final void a(List<? extends VIPRightOption> list) {
+        Intrinsics.e(list, "datas");
+        if (list.size() > 0) {
             ArrayList arrayList = new ArrayList();
-            for (VIPRightOption vIPRightOption : datas) {
+            for (VIPRightOption vIPRightOption : list) {
                 vIPRightOption.is_on = VIPRightOption.getOnOffStatus(vIPRightOption.pid);
-                if (this.f33811c == 2) {
+                if (this.f20120c == 2) {
                     arrayList.add(vIPRightOption);
                 } else if (vIPRightOption.is_svip == 0) {
                     arrayList.add(vIPRightOption);
@@ -455,16 +458,16 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
         notifyDataSetChanged();
     }
 
-    public final boolean a(final VIPRightOption item, final BaseViewHolder holder, final int i) {
+    public final boolean a(final VIPRightOption vIPRightOption, final BaseViewHolder baseViewHolder, final int i) {
         final BluedBlackList.privacySettingEntity b;
-        Intrinsics.e(item, "item");
-        Intrinsics.e(holder, "holder");
-        int i2 = item.pid;
+        Intrinsics.e(vIPRightOption, "item");
+        Intrinsics.e(baseViewHolder, "holder");
+        int i2 = vIPRightOption.pid;
         if (i2 == 0) {
             if (BluedConfig.a().g().is_hide_last_operate == 1) {
                 this.f = true;
             }
-            int i3 = this.f33811c;
+            int i3 = this.f20120c;
             if (i3 == 1) {
                 this.g = "vip_center_hide_time_vip";
                 this.h = 1;
@@ -482,12 +485,12 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                     CommonAlertDialog.a(this.mContext, this.mContext.getResources().getString(R.string.call_open_pop_title), this.mContext.getResources().getString(R.string.close_the_location_and_open_hide_distance), this.mContext.getResources().getString(R.string.close_now), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$_C-NvS_qQCTwucgqVNOacphiMdc
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i4) {
-                            VIPRightOptionNewAdapter.a(BluedBlackList.privacySettingEntity.this, item, this, i, dialogInterface, i4);
+                            VIPRightOptionNewAdapter.a(BluedBlackList.privacySettingEntity.this, vIPRightOption, this, i, dialogInterface, i4);
                         }
                     }, this.mContext.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.adapter.-$$Lambda$VIPRightOptionNewAdapter$NgYS-4NaVV7NmqxSx2DlFGr8ay8
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i4) {
-                            VIPRightOptionNewAdapter.a(VIPRightOption.this, holder, this, i, dialogInterface, i4);
+                            VIPRightOptionNewAdapter.a(VIPRightOption.this, baseViewHolder, this, i, dialogInterface, i4);
                         }
                     }, (DialogInterface.OnDismissListener) null);
                 } else if (a() == 2) {
@@ -502,7 +505,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
             if (BluedConfig.a().g().is_invisible_half == 1) {
                 this.f = true;
             }
-            int i4 = this.f33811c;
+            int i4 = this.f20120c;
             if (i4 == 1) {
                 this.g = "vip_center_half_hide_vip";
                 this.h = 1;
@@ -516,7 +519,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
             if (BluedConfig.a().g().is_show_vip_page == 1) {
                 this.f = true;
             }
-            int i5 = this.f33811c;
+            int i5 = this.f20120c;
             if (i5 == 1) {
                 this.g = "vip_center_personal_hom_vip";
                 this.h = 1;
@@ -528,7 +531,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
             if (BluedConfig.a().g().is_improve_backlist == 1) {
                 this.f = true;
             }
-            int i6 = this.f33811c;
+            int i6 = this.f20120c;
             if (i6 == 1) {
                 this.g = "blacklist_expand";
                 this.h = 1;
@@ -540,7 +543,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
             if (BluedConfig.a().g().is_top_feed_views == 1) {
                 this.f = true;
             }
-            int i7 = this.f33811c;
+            int i7 = this.f20120c;
             if (i7 == 1) {
                 this.g = "vip_center_feed_top_vip";
                 this.h = 1;
@@ -560,7 +563,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                     if (BluedConfig.a().g().is_traceless_access == 1) {
                         this.f = true;
                     }
-                    if (this.f33811c == 2) {
+                    if (this.f20120c == 2) {
                         this.g = "vip_center_no_trace_visit_svip";
                         this.h = 2;
                         break;
@@ -570,7 +573,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                     if (BluedConfig.a().g().is_advanced_recently_view == 1) {
                         this.f = true;
                     }
-                    int i8 = this.f33811c;
+                    int i8 = this.f20120c;
                     if (i8 == 1) {
                         this.g = "vip_center_super_visit_vip";
                         this.h = 1;
@@ -585,7 +588,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                     if (BluedConfig.a().g().is_global_view_secretly == 1) {
                         this.f = true;
                     }
-                    if (this.f33811c == 2) {
+                    if (this.f20120c == 2) {
                         this.g = "vip_center_quiety_see_svip";
                         this.h = 2;
                         break;
@@ -595,7 +598,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                     if (BluedConfig.a().g().is_change_blued_icon == 1) {
                         this.f = true;
                     }
-                    int i9 = this.f33811c;
+                    int i9 = this.f20120c;
                     if (i9 == 1) {
                         this.g = "vip_center_change_logo_vip";
                         this.h = 1;
@@ -612,7 +615,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                             if (BluedConfig.a().g().is_find_on_map == 1) {
                                 this.f = true;
                             }
-                            int i10 = this.f33811c;
+                            int i10 = this.f20120c;
                             if (i10 == 1) {
                                 this.g = "vip_center_map_find_vip";
                                 this.h = 1;
@@ -627,7 +630,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                             if (BluedConfig.a().g().is_secretly_followed == 1) {
                                 this.f = true;
                             }
-                            if (this.f33811c == 2) {
+                            if (this.f20120c == 2) {
                                 this.g = "vip_center_quietly_follow_svip";
                                 this.h = 2;
                                 break;
@@ -637,7 +640,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                             if (BluedConfig.a().g().is_chat_backgrounds == 1) {
                                 this.f = true;
                             }
-                            int i11 = this.f33811c;
+                            int i11 = this.f20120c;
                             if (i11 == 1) {
                                 this.g = "chat_customize_bg";
                                 this.h = 1;
@@ -652,7 +655,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                             if (BluedConfig.a().g().is_filter_vip == 1) {
                                 this.f = true;
                             }
-                            int i12 = this.f33811c;
+                            int i12 = this.f20120c;
                             if (i12 == 1) {
                                 this.g = "vip_center_super_filter_vip";
                                 this.h = 1;
@@ -667,7 +670,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                             if (BluedConfig.a().g().is_hide_vip_look == 1) {
                                 this.f = true;
                             }
-                            int i13 = this.f33811c;
+                            int i13 = this.f20120c;
                             if (i13 == 1) {
                                 this.g = "vip_center_logo_vip";
                                 this.h = 1;
@@ -682,7 +685,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                             if (BluedConfig.a().g().is_vip_select == 1) {
                                 this.f = true;
                             }
-                            if (this.f33811c == 2) {
+                            if (this.f20120c == 2) {
                                 this.g = "vip_center_featured_svip";
                                 this.h = 2;
                                 break;
@@ -692,7 +695,7 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
                             if (BluedConfig.a().g().is_filter_ads == 1) {
                                 this.f = true;
                             }
-                            if (this.f33811c == 2) {
+                            if (this.f20120c == 2) {
                                 this.g = "vip_center_no_ad_svip";
                                 this.h = 2;
                                 break;
@@ -707,13 +710,13 @@ public final class VIPRightOptionNewAdapter extends BaseQuickAdapter<VIPRightOpt
             this.f = true;
         }
         if (!this.f) {
-            EventTrackVIP.a(UserInfo.getInstance().getLoginUserInfo().vip_grade, this.f33811c, false, item.pid);
-            PayUtils.a(this.mContext, this.h, this.g, item.pid, VipProtos.FromType.UNKNOWN_FROM);
+            EventTrackVIP.a(UserInfo.getInstance().getLoginUserInfo().vip_grade, this.f20120c, false, vIPRightOption.pid);
+            PayUtils.a(this.mContext, this.h, this.g, vIPRightOption.pid, VipProtos.FromType.UNKNOWN_FROM);
         }
         return this.f;
     }
 
     public final Context getContext() {
-        return this.f33810a;
+        return this.f20119a;
     }
 }

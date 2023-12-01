@@ -1,6 +1,5 @@
 package java.io;
 
-import android.content.ContentResolver;
 import android.system.ErrnoException;
 import android.system.OsConstants;
 import android.system.StructStat;
@@ -61,7 +60,7 @@ public class File implements Serializable, Comparable<File> {
         if (!uri.getRawSchemeSpecificPart().startsWith(BridgeUtil.SPLIT_MARK)) {
             throw new IllegalArgumentException("URI is not hierarchical: " + uri);
         }
-        if (!ContentResolver.SCHEME_FILE.equals(uri.getScheme())) {
+        if (!"file".equals(uri.getScheme())) {
             throw new IllegalArgumentException("Expected file scheme in URI: " + uri);
         }
         String rawPath = uri.getRawPath();
@@ -146,9 +145,9 @@ public class File implements Serializable, Comparable<File> {
         char[] charArray = str.toCharArray();
         int length = charArray.length;
         int i = 0;
-        for (char c2 : charArray) {
-            if (c2 != '/') {
-                charArray[i] = c2;
+        for (char c : charArray) {
+            if (c != '/') {
+                charArray[i] = c;
                 z = false;
                 i++;
             } else if (!z) {
@@ -558,7 +557,7 @@ public class File implements Serializable, Comparable<File> {
     public URI toURI() {
         String absoluteName = getAbsoluteName();
         try {
-            return !absoluteName.startsWith(BridgeUtil.SPLIT_MARK) ? new URI(ContentResolver.SCHEME_FILE, null, BridgeUtil.SPLIT_MARK + absoluteName, null, null) : absoluteName.startsWith("//") ? new URI(ContentResolver.SCHEME_FILE, "", absoluteName, null) : new URI(ContentResolver.SCHEME_FILE, null, absoluteName, null, null);
+            return !absoluteName.startsWith(BridgeUtil.SPLIT_MARK) ? new URI("file", null, BridgeUtil.SPLIT_MARK + absoluteName, null, null) : absoluteName.startsWith("//") ? new URI("file", "", absoluteName, null) : new URI("file", null, absoluteName, null, null);
         } catch (URISyntaxException e) {
             return null;
         }
@@ -567,6 +566,6 @@ public class File implements Serializable, Comparable<File> {
     @Deprecated
     public URL toURL() throws MalformedURLException {
         String absoluteName = getAbsoluteName();
-        return !absoluteName.startsWith(BridgeUtil.SPLIT_MARK) ? new URL(ContentResolver.SCHEME_FILE, "", -1, BridgeUtil.SPLIT_MARK + absoluteName, null) : absoluteName.startsWith("//") ? new URL("file:" + absoluteName) : new URL(ContentResolver.SCHEME_FILE, "", -1, absoluteName, null);
+        return !absoluteName.startsWith(BridgeUtil.SPLIT_MARK) ? new URL("file", "", -1, BridgeUtil.SPLIT_MARK + absoluteName, null) : absoluteName.startsWith("//") ? new URL("file:" + absoluteName) : new URL("file", "", -1, absoluteName, null);
     }
 }

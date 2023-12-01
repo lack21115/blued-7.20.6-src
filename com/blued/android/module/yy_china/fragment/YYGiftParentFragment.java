@@ -3,6 +3,7 @@ package com.blued.android.module.yy_china.fragment;
 import android.os.Bundle;
 import android.text.TextUtils;
 import androidx.viewpager.widget.ViewPager;
+import com.amap.api.fence.GeoFence;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.utils.LogUtils;
 import com.blued.android.framework.utils.Logger;
@@ -23,54 +24,50 @@ public class YYGiftParentFragment extends BaseGiftParentFragment<CommonLiveGiftM
         return new YYGiftPageFragment();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onHiddenChanged(boolean z) {
         super.onHiddenChanged(z);
-        Logger.e("event", "YYGiftParentFragment onHiddenChanged ... ");
+        Logger.e(GeoFence.BUNDLE_KEY_FENCESTATUS, "YYGiftParentFragment onHiddenChanged ... ");
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseGiftParentFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseGiftParentFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
-        CommonGiftPackageModel c2;
+        CommonGiftPackageModel c;
         super.onInitView();
-        this.f10808a.setSelectedImgRes(R.drawable.icon_gift_page_selected);
+        this.a.setSelectedImgRes(R.drawable.icon_gift_page_selected);
         try {
-            c2 = c();
+            c = c();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (c2 == null || !(c2 instanceof YYGiftPackageModel)) {
+        if (c == null || !(c instanceof YYGiftPackageModel)) {
             return;
         }
-        if (TextUtils.equals(((YYGiftPackageModel) c2).type_id, "-1")) {
-            this.f10809c.setVisibility(8);
+        if (TextUtils.equals(((YYGiftPackageModel) c).type_id, YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID)) {
+            this.c.setVisibility(8);
             this.d.setText("背包还是空的哦～");
         }
         this.h.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YYGiftParentFragment.1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 LogUtils.d("sendGiftEvent", "onPageSelected packageIndex: " + YYGiftParentFragment.this.e);
-                YYGiftParentFragment.this.f10808a.b(i);
-                List a2 = YYGiftParentFragment.this.a(i);
-                if (a2 == null) {
+                YYGiftParentFragment.this.a.b(i);
+                List a = YYGiftParentFragment.this.a(i);
+                if (a == null) {
                     return;
                 }
                 int i2 = 0;
                 while (true) {
                     int i3 = i2;
-                    if (i3 >= a2.size()) {
+                    if (i3 >= a.size()) {
                         return;
                     }
-                    if (a2.get(i3) instanceof YYGiftModel) {
-                        LiveEventBus.get("show_gift_item").post((YYGiftModel) a2.get(i3));
+                    if (a.get(i3) instanceof YYGiftModel) {
+                        LiveEventBus.get("show_gift_item").post((YYGiftModel) a.get(i3));
                     }
                     i2 = i3 + 1;
                 }

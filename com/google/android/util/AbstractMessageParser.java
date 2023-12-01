@@ -1,7 +1,10 @@
 package com.google.android.util;
 
+import com.alipay.sdk.sys.a;
 import com.amap.api.col.p0003sl.iu;
-import com.baidu.mobads.sdk.internal.a;
+import com.anythink.core.common.b.g;
+import com.anythink.core.common.c.l;
+import com.anythink.core.common.g.c;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -116,10 +119,10 @@ public abstract class AbstractMessageParser {
 
         public FlickrPhoto(String str, String str2, String str3, String str4, String str5) {
             super(Token.Type.FLICKR, str5);
-            if ("tags".equals(str)) {
+            if (TAGS.equals(str)) {
                 this.user = null;
                 this.photo = null;
-                this.grouping = "tags";
+                this.grouping = TAGS;
                 this.groupingId = str2;
                 return;
             }
@@ -189,7 +192,7 @@ public abstract class AbstractMessageParser {
         }
 
         public String getUrl() {
-            return SETS.equals(this.grouping) ? getUserSetsURL(this.user, this.groupingId) : "tags".equals(this.grouping) ? this.user != null ? getUserTagsURL(this.user, this.groupingId) : getTagsURL(this.groupingId) : this.photo != null ? getPhotoURL(this.user, this.photo) : getUserURL(this.user);
+            return SETS.equals(this.grouping) ? getUserSetsURL(this.user, this.groupingId) : TAGS.equals(this.grouping) ? this.user != null ? getUserTagsURL(this.user, this.groupingId) : getTagsURL(this.groupingId) : this.photo != null ? getPhotoURL(this.user, this.photo) : getUserURL(this.user);
         }
 
         public String getUser() {
@@ -213,14 +216,14 @@ public abstract class AbstractMessageParser {
         private boolean matched;
         private boolean start;
 
-        public Format(char c2, boolean z) {
-            super(Token.Type.FORMAT, String.valueOf(c2));
-            this.ch = c2;
+        public Format(char c, boolean z) {
+            super(Token.Type.FORMAT, String.valueOf(c));
+            this.ch = c;
             this.start = z;
         }
 
-        private String getFormatEnd(char c2) {
-            switch (c2) {
+        private String getFormatEnd(char c) {
+            switch (c) {
                 case '\"':
                     return "”</font>";
                 case '*':
@@ -230,12 +233,12 @@ public abstract class AbstractMessageParser {
                 case '_':
                     return "</i>";
                 default:
-                    throw new AssertionError("unknown format '" + c2 + "'");
+                    throw new AssertionError("unknown format '" + c + "'");
             }
         }
 
-        private String getFormatStart(char c2) {
-            switch (c2) {
+        private String getFormatStart(char c) {
+            switch (c) {
                 case '\"':
                     return "<font color=\"#999999\">“";
                 case '*':
@@ -245,7 +248,7 @@ public abstract class AbstractMessageParser {
                 case '_':
                     return "<i>";
                 default:
-                    throw new AssertionError("unknown format '" + c2 + "'");
+                    throw new AssertionError("unknown format '" + c + "'");
             }
         }
 
@@ -437,7 +440,7 @@ public abstract class AbstractMessageParser {
         }
 
         public String getType(boolean z) {
-            return (z ? "s" : "r") + getPartType();
+            return (z ? "s" : g.o.o) + getPartType();
         }
 
         public boolean isMedia() {
@@ -556,16 +559,16 @@ public abstract class AbstractMessageParser {
 
         /* loaded from: source-4181928-dex2jar.jar:com/google/android/util/AbstractMessageParser$Token$Type.class */
         public enum Type {
-            HTML(a.f),
-            FORMAT("format"),
+            HTML("html"),
+            FORMAT(l.a.b),
             LINK("l"),
             SMILEY(iu.h),
             ACRONYM("a"),
             MUSIC("m"),
             GOOGLE_VIDEO("v"),
             YOUTUBE_VIDEO("yt"),
-            PHOTO("p"),
-            FLICKR("f");
+            PHOTO(c.W),
+            FLICKR(iu.i);
             
             private String stringRep;
 
@@ -654,16 +657,16 @@ public abstract class AbstractMessageParser {
             return this.value != null;
         }
 
-        public TrieNode getChild(char c2) {
-            return this.children.get(Character.valueOf(c2));
+        public TrieNode getChild(char c) {
+            return this.children.get(Character.valueOf(c));
         }
 
-        public TrieNode getOrCreateChild(char c2) {
-            Character valueOf = Character.valueOf(c2);
+        public TrieNode getOrCreateChild(char c) {
+            Character valueOf = Character.valueOf(c);
             TrieNode trieNode = this.children.get(valueOf);
             TrieNode trieNode2 = trieNode;
             if (trieNode == null) {
-                trieNode2 = new TrieNode(this.text + String.valueOf(c2));
+                trieNode2 = new TrieNode(this.text + String.valueOf(c));
                 this.children.put(valueOf, trieNode2);
             }
             return trieNode2;
@@ -707,7 +710,7 @@ public abstract class AbstractMessageParser {
             } else {
                 str3 = str2;
                 if (str2.length() > 0) {
-                    str3 = str2 + "&";
+                    str3 = str2 + a.b;
                 }
             }
             return "http://video.google.com/videoplay?" + str3 + "docid=" + str;
@@ -766,7 +769,7 @@ public abstract class AbstractMessageParser {
             } else {
                 str4 = str3;
                 if (str3.length() > 0) {
-                    str4 = str3 + "&";
+                    str4 = str3 + a.b;
                 }
             }
             return str5 + str6 + "youtube.com/watch?" + str4 + "v=" + str2;
@@ -787,7 +790,7 @@ public abstract class AbstractMessageParser {
             } else {
                 str3 = str2;
                 if (str2.length() > 0) {
-                    str3 = str2 + "&";
+                    str3 = str2 + a.b;
                 }
             }
             return "http://youtube.com/watch?" + str3 + "v=" + str;
@@ -892,12 +895,12 @@ public abstract class AbstractMessageParser {
         return 4;
     }
 
-    private boolean isDomainChar(char c2) {
-        return c2 == '-' || Character.isLetter(c2) || Character.isDigit(c2);
+    private boolean isDomainChar(char c) {
+        return c == '-' || Character.isLetter(c) || Character.isDigit(c);
     }
 
-    private static boolean isFormatChar(char c2) {
-        switch (c2) {
+    private static boolean isFormatChar(char c) {
+        switch (c) {
             case '*':
             case '^':
             case '_':
@@ -907,8 +910,8 @@ public abstract class AbstractMessageParser {
         }
     }
 
-    private static boolean isPunctuation(char c2) {
-        switch (c2) {
+    private static boolean isPunctuation(char c) {
+        switch (c) {
             case '!':
             case '\"':
             case '(':
@@ -924,8 +927,8 @@ public abstract class AbstractMessageParser {
         }
     }
 
-    private static boolean isSmileyBreak(char c2, char c3) {
-        switch (c2) {
+    private static boolean isSmileyBreak(char c, char c2) {
+        switch (c) {
             case '$':
             case '&':
             case '*':
@@ -943,7 +946,7 @@ public abstract class AbstractMessageParser {
             case '|':
             case '}':
             case '~':
-                switch (c3) {
+                switch (c2) {
                     case '#':
                     case '$':
                     case '%':

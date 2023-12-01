@@ -35,12 +35,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetDispatchConfirmDialog.class */
 public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13116a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private Callback f13117c;
+    public static final Companion a = new Companion(null);
+    private Callback c;
     private final Lazy b = LazyKt.a(new Function0<LivePlanetDispatchConfirmDialogBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePlanetDispatchConfirmDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -78,7 +74,7 @@ public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
             Bundle bundle = new Bundle();
             bundle.putInt("bet_num_count", i);
             bundle.putInt("bet_time", i2);
-            livePlanetDispatchConfirmDialog.f13117c = callback;
+            livePlanetDispatchConfirmDialog.c = callback;
             livePlanetDispatchConfirmDialog.setArguments(bundle);
             FragmentManager childFragmentManager = fragment.getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "fragment.childFragmentManager");
@@ -136,7 +132,7 @@ public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LivePlanetDispatchConfirmDialog this$0) {
         Intrinsics.e(this$0, "this$0");
-        FrameLayout frameLayout = this$0.d().f12364a;
+        FrameLayout frameLayout = this$0.d().a;
         Intrinsics.c(frameLayout, "vb.flRoot");
         this$0.a(frameLayout);
     }
@@ -160,7 +156,7 @@ public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
         if (this$0.d) {
             LiveRoomPreferences.V();
         }
-        Callback callback = this$0.f13117c;
+        Callback callback = this$0.c;
         if (callback != null) {
             callback.a();
         }
@@ -187,7 +183,7 @@ public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
         d().h.setText(AppInfo.d().getString(R.string.live_planet_dialog_dispatch_count_down, Integer.valueOf(i2)));
         d().h.setText(LiveUtils.a(d().h.getText(), "#FFEF5F", false));
         d().b.setImageResource(this.d ? R.drawable.live_planet_checkbox_select : R.drawable.live_planet_checkbox_not_select);
-        d().f12365c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetDispatchConfirmDialog$cUJcilr0VLgJpqEgO_sjzX9-4Ls
+        d().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetDispatchConfirmDialog$cUJcilr0VLgJpqEgO_sjzX9-4Ls
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetDispatchConfirmDialog.a(LivePlanetDispatchConfirmDialog.this, view);
@@ -205,7 +201,7 @@ public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
                 LivePlanetDispatchConfirmDialog.c(LivePlanetDispatchConfirmDialog.this, view);
             }
         });
-        d().f12364a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetDispatchConfirmDialog$iOXnmnOeEpQ5q7IM8sZpP_zJXo8
+        d().a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetDispatchConfirmDialog$iOXnmnOeEpQ5q7IM8sZpP_zJXo8
             @Override // java.lang.Runnable
             public final void run() {
                 LivePlanetDispatchConfirmDialog.a(LivePlanetDispatchConfirmDialog.this);
@@ -213,7 +209,6 @@ public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;
@@ -239,13 +234,13 @@ public final class LivePlanetDispatchConfirmDialog extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

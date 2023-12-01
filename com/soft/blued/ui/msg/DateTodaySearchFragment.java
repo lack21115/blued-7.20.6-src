@@ -16,9 +16,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentActivity;
+import com.anythink.expressad.a;
 import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
@@ -59,7 +61,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class DateTodaySearchFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f31701a = new Companion(null);
+    public static final Companion f18011a = new Companion(null);
     private FragmentDateTodaySearchBinding b;
     private long d;
     private DateTodayMatchModel e;
@@ -68,7 +70,7 @@ public final class DateTodaySearchFragment extends BaseFragment {
     private int h;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f31702c = 3000;
+    private final int f18012c = 3000;
     private final int[] i = {R.drawable.icon_date_today_fake1, R.drawable.icon_date_today_fake2, R.drawable.icon_date_today_fake3, R.drawable.icon_date_today_fake4, R.drawable.icon_date_today_fake5, R.drawable.icon_date_today_fake6, R.drawable.icon_date_today_fake7, R.drawable.icon_date_today_fake8};
     private final int[] j = {R.string.date_today_searching1, R.string.date_today_searching2, R.string.date_today_searching3, R.string.date_today_searching4};
     private final DateTodaySearchFragment$changeFakeAvatarRunnable$1 k = new Runnable() { // from class: com.soft.blued.ui.msg.DateTodaySearchFragment$changeFakeAvatarRunnable$1
@@ -92,7 +94,7 @@ public final class DateTodaySearchFragment extends BaseFragment {
             DateTodaySearchFragment dateTodaySearchFragment = DateTodaySearchFragment.this;
             i = dateTodaySearchFragment.h;
             dateTodaySearchFragment.h = i + 1;
-            DateTodayManager dateTodayManager = DateTodayManager.f32404a;
+            DateTodayManager dateTodayManager = DateTodayManager.f18714a;
             i2 = DateTodaySearchFragment.this.h;
             dateTodayManager.a(i2);
             b2 = DateTodaySearchFragment.this.b();
@@ -171,40 +173,40 @@ public final class DateTodaySearchFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodaySearchFragment this$0, View view) {
+    public static final void a(DateTodaySearchFragment dateTodaySearchFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(false);
+        Intrinsics.e(dateTodaySearchFragment, "this$0");
+        dateTodaySearchFragment.a(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final DateTodaySearchFragment this$0, String hisAvatar, final DateTodayMatchModel model) {
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(hisAvatar, "$hisAvatar");
-        Intrinsics.e(model, "$model");
-        if (this$0.b() != null) {
-            this$0.a(new Runnable() { // from class: com.soft.blued.ui.msg.-$$Lambda$DateTodaySearchFragment$rGgocYX0E7BNWm-p8eXjW0kCWTY
+    public static final void a(final DateTodaySearchFragment dateTodaySearchFragment, String str, final DateTodayMatchModel dateTodayMatchModel) {
+        Intrinsics.e(dateTodaySearchFragment, "this$0");
+        Intrinsics.e(str, "$hisAvatar");
+        Intrinsics.e(dateTodayMatchModel, "$model");
+        if (dateTodaySearchFragment.b() != null) {
+            dateTodaySearchFragment.a(new Runnable() { // from class: com.soft.blued.ui.msg.-$$Lambda$DateTodaySearchFragment$rGgocYX0E7BNWm-p8eXjW0kCWTY
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DateTodaySearchFragment.c(DateTodaySearchFragment.this, model);
+                    DateTodaySearchFragment.c(DateTodaySearchFragment.this, dateTodayMatchModel);
                 }
-            }, hisAvatar);
+            }, str);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DateTodaySearchFragment this$0, List views, ValueAnimator valueAnimator) {
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(views, "$views");
-        if (this$0.getContext() != null) {
-            View view = (View) views.get(0);
-            View view2 = (View) views.get(1);
-            View view3 = (View) views.get(2);
+    public static final void a(DateTodaySearchFragment dateTodaySearchFragment, List list, ValueAnimator valueAnimator) {
+        Intrinsics.e(dateTodaySearchFragment, "this$0");
+        Intrinsics.e(list, "$views");
+        if (dateTodaySearchFragment.getContext() != null) {
+            View view = (View) list.get(0);
+            View view2 = (View) list.get(1);
+            View view3 = (View) list.get(2);
             Object animatedValue = valueAnimator.getAnimatedValue();
             if (animatedValue == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
             }
-            this$0.a(view, view2, view3, ((Integer) animatedValue).intValue());
+            dateTodaySearchFragment.a(view, view2, view3, ((Integer) animatedValue).intValue());
         }
     }
 
@@ -284,18 +286,18 @@ public final class DateTodaySearchFragment extends BaseFragment {
             if (r0 != 0) goto L2b
             goto Lc1
         L2b:
-            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f32404a
+            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f18714a
             r0.k()
             java.lang.String r0 = "xxx"
             java.lang.String r1 = "goToPage()"
             int r0 = android.util.Log.e(r0, r1)
-            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f32404a
+            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f18714a
             com.soft.blued.ui.msg.manager.DateTodayManager$Status r1 = com.soft.blued.ui.msg.manager.DateTodayManager.Status.MATCHED
             r2 = 0
             r3 = r18
             com.blued.android.chat.model.SessionModel r0 = r0.a(r1, r2, r3)
             r15 = r0
-            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f32404a     // Catch: java.lang.Exception -> Ld3
+            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f18714a     // Catch: java.lang.Exception -> Ld3
             r1 = r16
             java.lang.String r1 = r1.getUid()     // Catch: java.lang.Exception -> Ld3
             long r0 = r0.d(r1)     // Catch: java.lang.Exception -> Ld3
@@ -343,11 +345,11 @@ public final class DateTodaySearchFragment extends BaseFragment {
             r0.c(r1, r2, r3, r4, r5, r6, r7, r8, r9)     // Catch: java.lang.Exception -> Ld3
             goto Lac
         Lac:
-            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f32404a
+            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f18714a
             long r0 = r0.l()
             r0 = r12
             if (r0 == 0) goto Lc1
-            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f32404a
+            com.soft.blued.ui.msg.manager.DateTodayManager r0 = com.soft.blued.ui.msg.manager.DateTodayManager.f18714a
             r1 = r17
             r2 = r16
             r0.a(r1, r2)
@@ -379,10 +381,10 @@ public final class DateTodaySearchFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(DateTodaySearchFragment this$0, View view) {
+    public static final void b(DateTodaySearchFragment dateTodaySearchFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(dateTodaySearchFragment, "this$0");
+        FragmentActivity activity = dateTodaySearchFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -403,25 +405,21 @@ public final class DateTodaySearchFragment extends BaseFragment {
         sVGAImageView.setLoops(1);
         sVGAImageView.setClearsAfterStop(false);
         sVGAImageView.a();
-        SVGAPlayer.Builder a2 = new SVGAPlayer.Builder().a("date_today_small_heart.svga").a((Integer) 1);
-        SVGAImageView svgaMatchSmallHeartAnim = b.s;
-        Intrinsics.c(svgaMatchSmallHeartAnim, "svgaMatchSmallHeartAnim");
-        a2.a(svgaMatchSmallHeartAnim);
+        SVGAPlayer.Builder a2 = new SVGAPlayer.Builder().a("date_today_small_heart.svga").a(1);
+        SVGAImageView sVGAImageView2 = b.s;
+        Intrinsics.c(sVGAImageView2, "svgaMatchSmallHeartAnim");
+        a2.a(sVGAImageView2);
         b.s.setCallback(new SVGACallback() { // from class: com.soft.blued.ui.msg.DateTodaySearchFragment$showTwoAvatarCollision$1$2
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onFinished() {
                 DateTodaySearchFragment.this.a(true);
             }
 
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onPause() {
             }
 
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onRepeat() {
             }
 
-            @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onStep(int i, double d) {
             }
         });
@@ -465,27 +463,27 @@ public final class DateTodaySearchFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(DateTodaySearchFragment this$0, View view) {
+    public static final void c(DateTodaySearchFragment dateTodaySearchFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.h();
+        Intrinsics.e(dateTodaySearchFragment, "this$0");
+        dateTodaySearchFragment.h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(DateTodaySearchFragment this$0, DateTodayMatchModel model) {
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(model, "$model");
-        if (this$0.b() != null) {
-            this$0.b(model);
+    public static final void c(DateTodaySearchFragment dateTodaySearchFragment, DateTodayMatchModel dateTodayMatchModel) {
+        Intrinsics.e(dateTodaySearchFragment, "this$0");
+        Intrinsics.e(dateTodayMatchModel, "$model");
+        if (dateTodaySearchFragment.b() != null) {
+            dateTodaySearchFragment.b(dateTodayMatchModel);
         }
     }
 
     private final void d() {
         FragmentDateTodaySearchBinding b = b();
         SVGAPlayer.Builder a2 = new SVGAPlayer.Builder().a("date_today_searching.svga");
-        SVGAImageView svgaSearchAnim = b.t;
-        Intrinsics.c(svgaSearchAnim, "svgaSearchAnim");
-        a2.a(svgaSearchAnim);
+        SVGAImageView sVGAImageView = b.t;
+        Intrinsics.c(sVGAImageView, "svgaSearchAnim");
+        a2.a(sVGAImageView);
         ViewGroup.LayoutParams layoutParams = b.r.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
@@ -495,47 +493,46 @@ public final class DateTodaySearchFragment extends BaseFragment {
         layoutParams2.height = AppInfo.l;
         layoutParams2.topMargin = BluedViewExtKt.a(300) - ((layoutParams2.height - BluedViewExtKt.a(126)) / 2);
         b.r.setLayoutParams(layoutParams2);
-        SVGAPlayer.Builder a3 = new SVGAPlayer.Builder().a("date_today_search_heart.svga").a((Integer) 1).a((Boolean) false);
-        SVGAImageView svgaMatchHeartAnim = b.r;
-        Intrinsics.c(svgaMatchHeartAnim, "svgaMatchHeartAnim");
-        a3.a(svgaMatchHeartAnim);
+        SVGAPlayer.Builder a3 = new SVGAPlayer.Builder().a("date_today_search_heart.svga").a(1).a(false);
+        SVGAImageView sVGAImageView2 = b.r;
+        Intrinsics.c(sVGAImageView2, "svgaMatchHeartAnim");
+        a3.a(sVGAImageView2);
     }
 
     private final void e() {
         FragmentDateTodaySearchBinding b = b();
-        a(CollectionsKt.b(b.d, b.e, b.f28809a), new int[]{-5249537, -4542465, -5242909, -5249537});
-        a(CollectionsKt.b(b.f, b.g, b.b), new int[]{-5242909, -5249537, -4542465, -5242909});
-        a(CollectionsKt.b(b.h, b.i, b.f28810c), new int[]{-4542465, -5242909, -5249537, -4542465});
+        a(CollectionsKt.b(new View[]{b.d, b.e, b.f15119a}), new int[]{-5249537, -4542465, -5242909, -5249537});
+        a(CollectionsKt.b(new View[]{b.f, b.g, b.b}), new int[]{-5242909, -5249537, -4542465, -5242909});
+        a(CollectionsKt.b(new View[]{b.h, b.i, b.f15120c}), new int[]{-4542465, -5242909, -5249537, -4542465});
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void f() {
         Log.e("xxx", "showFailureUI()");
-        DateTodayManager.f32404a.a("request_no_match");
+        DateTodayManager.f18714a.a("request_no_match");
         AppInfo.n().removeCallbacks(this.k);
         FragmentDateTodaySearchBinding b = b();
         b.n.setVisibility(0);
         b.m.setVisibility(8);
-        DateTodayManager.a(DateTodayManager.f32404a, DateTodayManager.Status.HAVE_CHANCE, null, null, 6, null);
+        DateTodayManager.a(DateTodayManager.f18714a, DateTodayManager.Status.HAVE_CHANCE, null, null, 6, null);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_SESSION_LIST).post(null);
     }
 
     private final void g() {
-        this.h = DateTodayManager.f32404a.r();
+        this.h = DateTodayManager.f18714a.r();
         AppInfo.n().post(this.k);
     }
 
     private final void h() {
         List<DateTodayPurposeModel> friends_purpose;
         Context context;
-        DateTodayConfigModel b = DateTodayManager.f32404a.b();
+        DateTodayConfigModel b = DateTodayManager.f18714a.b();
         if (b == null || (friends_purpose = b.getFriends_purpose()) == null || (context = getContext()) == null) {
             return;
         }
         AppInfo.n().removeCallbacks(this.l);
         this.f = true;
         new XPopup.Builder(context).a(new SimpleCallback() { // from class: com.soft.blued.ui.msg.DateTodaySearchFragment$showPurposeSelectPop$1$1$1
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
             public void d(BasePopupView basePopupView) {
                 boolean z;
                 DateTodaySearchFragment$showUIRunnable$1 dateTodaySearchFragment$showUIRunnable$1;
@@ -548,21 +545,21 @@ public final class DateTodaySearchFragment extends BaseFragment {
                 }
                 super.d(basePopupView);
             }
-        }).a((BasePopupView) new DateTodayPurposePop(context, getFragmentActive(), friends_purpose)).h();
+        }).a(new DateTodayPurposePop(context, getFragmentActive(), friends_purpose)).h();
     }
 
     private final boolean i() {
-        if (DateTodayManager.f32404a.o()) {
+        if (DateTodayManager.f18714a.o()) {
             return false;
         }
-        long q = DateTodayManager.f32404a.q();
+        long q = DateTodayManager.f18714a.q();
         return q == 0 || q - System.currentTimeMillis() > 604800000;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void l(DateTodaySearchFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.h();
+    public static final void l(DateTodaySearchFragment dateTodaySearchFragment) {
+        Intrinsics.e(dateTodaySearchFragment, "this$0");
+        dateTodaySearchFragment.h();
     }
 
     public final void a() {
@@ -571,27 +568,31 @@ public final class DateTodaySearchFragment extends BaseFragment {
         this.g = false;
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         ChatHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<DateTodayMatchModel>>(fragmentActive) { // from class: com.soft.blued.ui.msg.DateTodaySearchFragment$search$1
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super((IRequestHost) fragmentActive);
+            }
+
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<DateTodayMatchModel> bluedEntityA) {
                 boolean z;
                 long j;
                 int i;
                 DateTodaySearchFragment$showUIRunnable$1 dateTodaySearchFragment$showUIRunnable$1;
-                List<DateTodayMatchModel> list;
+                List list;
                 DateTodayMatchModel dateTodayMatchModel;
                 if (bluedEntityA != null && (list = bluedEntityA.data) != null) {
                     DateTodaySearchFragment dateTodaySearchFragment = DateTodaySearchFragment.this;
                     if (list.size() > 0) {
-                        dateTodaySearchFragment.e = list.get(0);
+                        dateTodaySearchFragment.e = (DateTodayMatchModel) list.get(0);
                         dateTodayMatchModel = dateTodaySearchFragment.e;
                         if (dateTodayMatchModel != null) {
                             if (dateTodayMatchModel.getTarget_info() == null || dateTodayMatchModel.getSelf_info() == null) {
                                 dateTodaySearchFragment.e = null;
                                 return;
                             } else {
-                                DateTodayManager.f32404a.a("");
+                                DateTodayManager.f18714a.a("");
                                 dateTodayMatchModel.setTime(System.currentTimeMillis());
                             }
                         }
@@ -602,7 +603,7 @@ public final class DateTodaySearchFragment extends BaseFragment {
                     return;
                 }
                 j = DateTodaySearchFragment.this.d;
-                i = DateTodaySearchFragment.this.f31702c;
+                i = DateTodaySearchFragment.this.f18012c;
                 long j2 = i;
                 long currentTimeMillis = System.currentTimeMillis();
                 Handler n = AppInfo.n();
@@ -610,13 +611,11 @@ public final class DateTodaySearchFragment extends BaseFragment {
                 n.postDelayed(dateTodaySearchFragment$showUIRunnable$1, (j + j2) - currentTimeMillis);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 DateTodaySearchFragment.this.f();
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DateTodaySearchFragment.this.g = true;
@@ -624,20 +623,17 @@ public final class DateTodaySearchFragment extends BaseFragment {
         }, getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         a(false);
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
-        Intrinsics.e(inflater, "inflater");
-        this.b = FragmentDateTodaySearchBinding.a(inflater, viewGroup, false);
+    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        Intrinsics.e(layoutInflater, "inflater");
+        this.b = FragmentDateTodaySearchBinding.a(layoutInflater, viewGroup, false);
         return b().getRoot();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         AppInfo.n().removeCallbacks(this.k);
@@ -645,9 +641,8 @@ public final class DateTodaySearchFragment extends BaseFragment {
         this.b = null;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         super.onViewCreated(view, bundle);
         c();
     }

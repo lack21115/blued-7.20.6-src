@@ -31,6 +31,7 @@ import com.soft.blued.ui.msg.pop.PopPushSwitch;
 import com.soft.blued.ui.setting.fragment.RemindSettingFragment;
 import com.soft.blued.user.BluedConfig;
 import com.soft.blued.utils.BluedPreferences;
+import com.ss.android.download.api.constant.BaseConstants;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/push/PushChecker.class */
 public class PushChecker {
@@ -39,7 +40,7 @@ public class PushChecker {
     public static class PushCheckerHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public static PushChecker f29733a = new PushChecker();
+        public static PushChecker f16043a = new PushChecker();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -48,14 +49,14 @@ public class PushChecker {
         private Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f29735c;
+        private int f16045c;
         private MessageProtos.WarnTime d;
         private View.OnClickListener e;
 
         public RemindDialog(Context context, int i, MessageProtos.WarnTime warnTime) {
             super(context);
             this.b = context;
-            this.f29735c = i;
+            this.f16045c = i;
             this.d = warnTime;
         }
 
@@ -68,7 +69,7 @@ public class PushChecker {
                     RemindDialog.this.dismiss();
                 }
             });
-            TextView textView = (TextView) view.findViewById(2131371262);
+            TextView textView = (TextView) view.findViewById(R.id.tv_desc);
             TextView textView2 = (TextView) view.findViewById(2131372754);
             TextView textView3 = (TextView) view.findViewById(R.id.btn_open);
             if (i == 0) {
@@ -99,16 +100,16 @@ public class PushChecker {
         public void onCreate(Bundle bundle) {
             View inflate = LayoutInflater.from(this.b).inflate(R.layout.dialog_push_check, (ViewGroup) null);
             setContentView(inflate);
-            a(inflate, this.f29735c, this.d);
+            a(inflate, this.f16045c, this.d);
             Window window = getWindow();
             if (window != null) {
-                window.setBackgroundDrawableResource(17170445);
+                window.setBackgroundDrawableResource(android.R.color.transparent);
             }
         }
     }
 
     public static PushChecker a() {
-        return PushCheckerHolder.f29733a;
+        return PushCheckerHolder.f16043a;
     }
 
     private String a(int i) {
@@ -134,7 +135,7 @@ public class PushChecker {
     }
 
     private void b(final Context context, int i, final MessageProtos.WarnTime warnTime) {
-        BluedPreferences.g(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * 86400000));
+        BluedPreferences.g(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * BaseConstants.Time.DAY));
         if (Build.MANUFACTURER.toLowerCase().equals(AssistUtils.BRAND_OPPO) && !BluedPreferences.cI()) {
             HeytapPushManager.requestNotificationPermission();
             BluedPreferences.cJ();
@@ -168,13 +169,12 @@ public class PushChecker {
 
     private void c(Context context) {
         new XPopup.Builder(context).a(new SimpleCallback() { // from class: com.soft.blued.push.PushChecker.4
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
             public void c(BasePopupView basePopupView) {
                 super.c(basePopupView);
                 BluedPreferences.j(System.currentTimeMillis() + 604800000);
                 EventTrackMessage.a(MessageProtos.Event.MSG_OPEN_PUSH_POP_SHOW);
             }
-        }).a((BasePopupView) new PopPushSwitch(context)).h();
+        }).a(new PopPushSwitch(context)).h();
     }
 
     private boolean c() {
@@ -228,7 +228,7 @@ public class PushChecker {
                     return;
                 }
                 InstantLog.b("my_model", 6);
-                TerminalActivity.d(view.getContext(), RemindSettingFragment.class, null);
+                TerminalActivity.d(view.getContext(), RemindSettingFragment.class, (Bundle) null);
                 EventTrackMessage.a(MessageProtos.Event.MSG_PUSH_WARN_CLICK, MessageProtos.WarnType.TOAST_PUSH, warnTime);
             }
         });
@@ -237,13 +237,13 @@ public class PushChecker {
             public void onClick(View view2) {
                 Tracker.onClick(view2);
                 if (i == 2) {
-                    BluedPreferences.h(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * 86400000));
+                    BluedPreferences.h(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * BaseConstants.Time.DAY));
                     EventTrackMessage.a(MessageProtos.Event.MSG_PUSH_WARN_CLOSE, MessageProtos.WarnType.TOAST_PUSH_PERMANENT, warnTime);
                 } else {
                     EventTrackMessage.a(MessageProtos.Event.MSG_PUSH_WARN_CLOSE, MessageProtos.WarnType.TOAST_PUSH, warnTime);
                 }
                 if (i == 1) {
-                    BluedPreferences.i(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * 86400000));
+                    BluedPreferences.i(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * BaseConstants.Time.DAY));
                 }
                 view.setVisibility(8);
             }
@@ -272,7 +272,7 @@ public class PushChecker {
         if (i == 2) {
             i2 = 2;
         }
-        hintInfo.f11074a = i2;
+        hintInfo.a = i2;
         hintInfo.b = a(i);
         hintInfo.d = new View.OnClickListener() { // from class: com.soft.blued.push.PushChecker.2
             @Override // android.view.View.OnClickListener
@@ -287,20 +287,20 @@ public class PushChecker {
                 EventTrackMessage.a(MessageProtos.Event.MSG_PUSH_WARN_CLICK, MessageProtos.WarnType.TOAST_PUSH, warnTime);
             }
         };
-        hintInfo.f11075c = new View.OnClickListener() { // from class: com.soft.blued.push.PushChecker.3
+        hintInfo.c = new View.OnClickListener() { // from class: com.soft.blued.push.PushChecker.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 if (i == 2) {
-                    BluedPreferences.h(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * 86400000));
+                    BluedPreferences.h(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * BaseConstants.Time.DAY));
                     EventTrackMessage.a(MessageProtos.Event.MSG_PUSH_WARN_CLOSE, MessageProtos.WarnType.TOAST_PUSH_PERMANENT, warnTime);
                 } else {
                     EventTrackMessage.a(MessageProtos.Event.MSG_PUSH_WARN_CLOSE, MessageProtos.WarnType.TOAST_PUSH, warnTime);
                 }
                 if (i == 1) {
-                    BluedPreferences.i(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * 86400000));
+                    BluedPreferences.i(System.currentTimeMillis() + (BluedConfig.a().b().message_push_box * BaseConstants.Time.DAY));
                 }
-                translationAnimHintView.a(hintInfo.f11074a);
+                translationAnimHintView.a(hintInfo.a);
             }
         };
         translationAnimHintView.a(hintInfo);

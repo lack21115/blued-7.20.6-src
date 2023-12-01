@@ -15,7 +15,7 @@ public final class m3 implements s3 {
     public static final f3<Boolean> b = new a();
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21261a;
+    public String f7655a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/m3$a.class */
     public static final class a extends f3<Boolean> {
@@ -29,7 +29,7 @@ public final class m3 implements s3 {
     public static class b extends s3.a {
 
         /* renamed from: c  reason: collision with root package name */
-        public long f21262c = 0;
+        public long f7656c = 0;
     }
 
     public static boolean d(Context context) {
@@ -48,21 +48,21 @@ public final class m3 implements s3 {
                 String string = Settings.Global.getString(context.getContentResolver(), "pps_oaid");
                 String string2 = Settings.Global.getString(context.getContentResolver(), "pps_track_limit");
                 if (!TextUtils.isEmpty(string)) {
-                    bVar.f21305a = string;
+                    bVar.f7699a = string;
                     bVar.b = Boolean.parseBoolean(string2);
-                    bVar.f21262c = 202003021704L;
+                    bVar.f7656c = 202003021704L;
                     return bVar;
                 }
             } catch (Throwable th) {
                 z2.a(th);
             }
         }
-        Pair pair = TextUtils.isEmpty(this.f21261a) ? null : (Pair) new a4(context, new Intent("com.uodis.opendevice.OPENIDS_SERVICE").setPackage(this.f21261a), new n3(this)).a();
+        Pair pair = TextUtils.isEmpty(this.f7655a) ? null : (Pair) new a4(context, new Intent("com.uodis.opendevice.OPENIDS_SERVICE").setPackage(this.f7655a), new n3(this)).a();
         if (pair != null) {
-            bVar.f21305a = (String) pair.first;
+            bVar.f7699a = (String) pair.first;
             bVar.b = ((Boolean) pair.second).booleanValue();
             try {
-                PackageInfo packageInfo = context.getPackageManager().getPackageInfo(this.f21261a, 0);
+                PackageInfo packageInfo = context.getPackageManager().getPackageInfo(this.f7655a, 0);
                 i = 0;
                 if (packageInfo != null) {
                     i = packageInfo.versionCode;
@@ -71,7 +71,7 @@ public final class m3 implements s3 {
                 z2.a(e);
                 i = 0;
             }
-            bVar.f21262c = i;
+            bVar.f7656c = i;
         }
         return bVar;
     }
@@ -108,7 +108,7 @@ public final class m3 implements s3 {
             if (r0 == 0) goto L20
             r0 = r4
             java.lang.String r1 = "com.huawei.hwid"
-            r0.f21261a = r1     // Catch: java.lang.Throwable -> L49
+            r0.f7655a = r1     // Catch: java.lang.Throwable -> L49
             goto L45
         L20:
             r0 = r5
@@ -118,12 +118,12 @@ public final class m3 implements s3 {
             if (r0 == 0) goto L33
             r0 = r4
             java.lang.String r1 = "com.huawei.hwid.tv"
-            r0.f21261a = r1     // Catch: java.lang.Throwable -> L49
+            r0.f7655a = r1     // Catch: java.lang.Throwable -> L49
             goto L45
         L33:
             r0 = r4
             java.lang.String r1 = "com.huawei.hms"
-            r0.f21261a = r1     // Catch: java.lang.Throwable -> L49
+            r0.f7655a = r1     // Catch: java.lang.Throwable -> L49
             r0 = r5
             java.lang.String r1 = "com.huawei.hms"
             r2 = 0

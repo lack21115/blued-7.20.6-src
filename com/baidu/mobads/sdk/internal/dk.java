@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public class dk extends bf implements y {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9422a = "preload_end";
+    private static final String f6582a = "preload_end";
     private AdSize q;
     private String r;
     private boolean s;
@@ -103,10 +103,9 @@ public class dk extends bf implements y {
         a_();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
-    public void a(IOAdEvent iOAdEvent) {
-        if (f9422a.equals(iOAdEvent.getMessage())) {
+    protected void a(IOAdEvent iOAdEvent) {
+        if (f6582a.equals(iOAdEvent.getMessage())) {
             this.s = true;
             InterstitialAdListener interstitialAdListener = this.w;
             if (interstitialAdListener != null) {
@@ -153,9 +152,8 @@ public class dk extends bf implements y {
         a_();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
-    public void b(String str, int i) {
+    protected void b(String str, int i) {
         InterstitialAdListener interstitialAdListener = this.w;
         if (interstitialAdListener != null) {
             interstitialAdListener.onAdFailed(str);
@@ -175,9 +173,8 @@ public class dk extends bf implements y {
     public void g() {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
-    public void g(IOAdEvent iOAdEvent) {
+    protected void g(IOAdEvent iOAdEvent) {
         this.t = false;
         InterstitialAdListener interstitialAdListener = this.w;
         if (interstitialAdListener != null) {
@@ -185,18 +182,16 @@ public class dk extends bf implements y {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
-    public void h(IOAdEvent iOAdEvent) {
+    protected void h(IOAdEvent iOAdEvent) {
         InterstitialAdListener interstitialAdListener = this.w;
         if (interstitialAdListener != null) {
             interstitialAdListener.onAdClick(this.v);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
-    public void q() {
+    protected void q() {
         InterstitialAdListener interstitialAdListener = this.w;
         if (interstitialAdListener != null) {
             interstitialAdListener.onAdPresent();

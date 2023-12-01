@@ -2,6 +2,7 @@ package com.efs.sdk.base.core.a;
 
 import android.os.Message;
 import android.text.TextUtils;
+import com.cdo.oaps.ad.OapsKey;
 import com.efs.sdk.base.core.controller.ControllerCenter;
 import com.efs.sdk.base.core.f.f;
 import com.efs.sdk.base.core.util.Log;
@@ -17,7 +18,7 @@ public final class d extends AbsHttpListener {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final d f21724a = new d((byte) 0);
+        private static final d f8118a = new d((byte) 0);
     }
 
     private d() {
@@ -28,7 +29,7 @@ public final class d extends AbsHttpListener {
     }
 
     public static d a() {
-        return a.f21724a;
+        return a.f8118a;
     }
 
     private static void a(HttpResponse httpResponse) {
@@ -45,7 +46,7 @@ public final class d extends AbsHttpListener {
 
     private static void b(HttpResponse httpResponse) {
         f fVar;
-        fVar = f.a.f21781a;
+        fVar = f.a.f8175a;
         fVar.a(String.valueOf(httpResponse.getHttpCode()), httpResponse.getBizCode(), httpResponse.getReqUrl());
     }
 
@@ -53,7 +54,7 @@ public final class d extends AbsHttpListener {
         int parseInt;
         if (((Map) httpResponse.extra).containsKey("cver")) {
             String str = (String) ((Map) httpResponse.extra).get("cver");
-            if (!TextUtils.isEmpty(str) && (parseInt = Integer.parseInt(str)) > com.efs.sdk.base.core.config.a.c.a().d.f21749a) {
+            if (!TextUtils.isEmpty(str) && (parseInt = Integer.parseInt(str)) > com.efs.sdk.base.core.config.a.c.a().d.f8143a) {
                 com.efs.sdk.base.core.config.a.c.a().a(parseInt);
             }
         }
@@ -87,8 +88,8 @@ public final class d extends AbsHttpListener {
         f fVar;
         if (!((Map) httpResponse.extra).containsKey("flow_limit") || !Boolean.FALSE.toString().equals(((Map) httpResponse.extra).get("flow_limit"))) {
             String str = ((Map) httpResponse.extra).containsKey("type") ? (String) ((Map) httpResponse.extra).get("type") : "";
-            if (((Map) httpResponse.extra).containsKey("size")) {
-                String str2 = (String) ((Map) httpResponse.extra).get("size");
+            if (((Map) httpResponse.extra).containsKey(OapsKey.KEY_SIZE)) {
+                String str2 = (String) ((Map) httpResponse.extra).get(OapsKey.KEY_SIZE);
                 if (!TextUtils.isEmpty(str2)) {
                     i = Integer.parseInt(str2);
                     com.efs.sdk.base.core.c.b a2 = com.efs.sdk.base.core.c.b.a();
@@ -108,8 +109,8 @@ public final class d extends AbsHttpListener {
             a22.sendMessage(obtain2);
         }
         b(httpResponse);
-        fVar = f.a.f21781a;
-        fVar.f21780c.b.incrementAndGet();
+        fVar = f.a.f8175a;
+        fVar.f8174c.b.incrementAndGet();
         c(httpResponse);
         a(httpResponse);
     }

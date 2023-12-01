@@ -31,19 +31,18 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 import androidx.cardview.widget.CardView;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.alipay.sdk.sys.a;
+import com.alipay.sdk.util.i;
 import com.amap.api.location.CoordinateConverter;
 import com.anythink.core.api.ATAdInfo;
-import com.anythink.expressad.video.module.a.a.m;
 import com.anythink.nativead.api.ATNativeAdView;
 import com.anythink.nativead.api.ATNativeEventListener;
 import com.blued.ad.NativeListHelper;
@@ -174,10 +173,7 @@ import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.igexin.push.config.c;
-import com.igexin.push.core.b;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -203,13 +199,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     private long N;
     private long O;
     private long P;
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f19617a;
+    public Context a;
     protected BaseFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public IRequestHost f19618c;
+    public IRequestHost c;
     public int d;
     public int e;
     public Dialog f;
@@ -237,34 +229,25 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* renamed from: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView$6  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$6.class */
     class AnonymousClass6 implements ATNativeEventListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ BluedIngSelfFeed f19630a;
+        final /* synthetic */ BluedIngSelfFeed a;
         final /* synthetic */ int b;
+        final /* synthetic */ FeedListAdapterForRecyclerView c;
 
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ FeedListAdapterForRecyclerView f19631c;
-
-        @Override // com.anythink.nativead.api.ATNativeEventListener
         public void onAdClicked(ATNativeAdView aTNativeAdView, ATAdInfo aTAdInfo) {
-            EventTrackFeed.a(FeedProtos.Event.CITY_AD_CLICK, this.f19630a, this.f19631c.d, this.b, false, this.f19631c.o, this.f19631c.f(this.b) - 1);
-            CommunityHttpUtils.a(this.f19630a.click_url);
+            EventTrackFeed.a(FeedProtos.Event.CITY_AD_CLICK, this.a, this.c.d, this.b, false, this.c.o, this.c.f(this.b) - 1);
+            CommunityHttpUtils.a(this.a.click_url);
         }
 
-        @Override // com.anythink.nativead.api.ATNativeEventListener
         public void onAdImpressed(ATNativeAdView aTNativeAdView, ATAdInfo aTAdInfo) {
-            CommunityHttpUtils.a(this.f19630a.show_url);
+            CommunityHttpUtils.a(this.a.show_url);
         }
 
-        @Override // com.anythink.nativead.api.ATNativeEventListener
         public void onAdVideoEnd(ATNativeAdView aTNativeAdView) {
         }
 
-        @Override // com.anythink.nativead.api.ATNativeEventListener
         public void onAdVideoProgress(ATNativeAdView aTNativeAdView, int i) {
         }
 
-        @Override // com.anythink.nativead.api.ATNativeEventListener
         public void onAdVideoStart(ATNativeAdView aTNativeAdView) {
         }
     }
@@ -273,9 +256,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$AdFeedViewHolder.class */
     public class AdFeedViewHolder implements View.OnClickListener {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19639c;
+        private int c;
         private ImageView d;
         private TextView e;
         private ImageView f;
@@ -309,7 +290,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void c() {
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(0, this.b.user_avatar)).b(R.drawable.user_bg_round).c().a(this.d);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(0, this.b.user_avatar)).b(R.drawable.user_bg_round).c().a(this.d);
             this.e.setText(!TextUtils.isEmpty(this.b.note) ? this.b.note : this.b.user_name);
             if (TextUtils.isEmpty(this.b.target_url)) {
                 this.d.setOnClickListener(null);
@@ -333,26 +314,26 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 if (this.b.feed_pics_width != null && this.b.feed_pics_width.length > 0) {
                     float parseFloat = Float.parseFloat(this.b.feed_pics_height[0]) / Float.parseFloat(this.b.feed_pics_width[0]);
                     ViewGroup.LayoutParams layoutParams = this.h.getLayoutParams();
-                    layoutParams.width = AppInfo.l - DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 20.0f);
+                    layoutParams.width = AppInfo.l - DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 20.0f);
                     layoutParams.height = (int) (layoutParams.width * parseFloat);
                     this.h.setLayoutParams(layoutParams);
                 }
             } catch (Exception e) {
             }
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(this.b.feed_pics[0])).a(FeedListAdapterForRecyclerView.this.B).a(this.h);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(this.b.feed_pics[0])).a(FeedListAdapterForRecyclerView.this.B).a(this.h);
             this.h.setOnClickListener(new SingleClickProxy(this));
         }
 
         private void d() {
             ArrayList arrayList = new ArrayList();
-            arrayList.add(FeedListAdapterForRecyclerView.this.f19617a.getResources().getString(R.string.not_interest));
-            CommonShowBottomWindow.a((FragmentActivity) FeedListAdapterForRecyclerView.this.f19617a, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.AdFeedViewHolder.1
+            arrayList.add(FeedListAdapterForRecyclerView.this.a.getResources().getString(R.string.not_interest));
+            CommonShowBottomWindow.a(FeedListAdapterForRecyclerView.this.a, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.AdFeedViewHolder.1
                 @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                 public void a(ActionSheet actionSheet, int i) {
-                    if (!actionSheet.a(i).equals(FeedListAdapterForRecyclerView.this.f19617a.getResources().getString(R.string.not_interest))) {
+                    if (!actionSheet.a(i).equals(FeedListAdapterForRecyclerView.this.a.getResources().getString(R.string.not_interest))) {
                         return;
                     }
-                    FeedListAdapterForRecyclerView.this.remove(AdFeedViewHolder.this.f19639c);
+                    FeedListAdapterForRecyclerView.this.remove(AdFeedViewHolder.this.c);
                     LiveEventBus.get("feed_delete").post(AdFeedViewHolder.this.b);
                     if (AdFeedViewHolder.this.b.hidden_url == null || AdFeedViewHolder.this.b.hidden_url.length <= 0) {
                         return;
@@ -375,7 +356,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void e() {
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, this.b.detail_url, CommunityConstants.WebShowType.AD);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, this.b.detail_url, CommunityConstants.WebShowType.AD);
             if (this.b.click_url != null && this.b.click_url.length > 0) {
                 int i = 0;
                 while (true) {
@@ -391,7 +372,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void f() {
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, this.b.target_url, CommunityConstants.WebShowType.AD);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, this.b.target_url, CommunityConstants.WebShowType.AD);
             if (this.b.click_url != null && this.b.click_url.length > 0) {
                 int i = 0;
                 while (true) {
@@ -407,13 +388,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         protected void a() {
-            EventTrackFeed.a(FeedProtos.Event.FEED_AD_CLICK, this.b, FeedListAdapterForRecyclerView.this.d, this.f19639c, false, FeedListAdapterForRecyclerView.this.o, FeedListAdapterForRecyclerView.this.f(this.f19639c) - 1);
+            EventTrackFeed.a(FeedProtos.Event.FEED_AD_CLICK, this.b, FeedListAdapterForRecyclerView.this.d, this.c, false, FeedListAdapterForRecyclerView.this.o, FeedListAdapterForRecyclerView.this.f(this.c) - 1);
         }
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
             bluedIngSelfFeed.adPosition = i;
-            this.f19639c = i;
+            this.c = i;
             FeedListAdapterForRecyclerView.this.c(bluedIngSelfFeed, i);
             c();
             b();
@@ -462,9 +443,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         private TextView X;
         private View Y;
         private TextView Z;
-
-        /* renamed from: a  reason: collision with root package name */
-        protected BluedIngSelfFeed f19641a;
+        protected BluedIngSelfFeed a;
         private View aA;
         private TextView aB;
         private TextView aC;
@@ -491,9 +470,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         private ImageView ao;
         private TextView ap;
         private TextView aq;
-
-        /* renamed from: ar  reason: collision with root package name */
-        private ImageView f19642ar;
+        private ImageView ar;
         private FeedItemSayHelloGuideView as;
         private View at;
         private TextView au;
@@ -503,9 +480,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         private SVGAImageView ay;
         private ImageView az;
         protected String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        protected View f19643c;
+        protected View c;
         public int d;
         public View e;
         protected View f;
@@ -537,9 +512,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 marginLayoutParams.rightMargin = FeedListAdapterForRecyclerView.this.J;
                 view.setLayoutParams(marginLayoutParams);
             }
-            View a2 = a(R.id.feed);
-            this.y = a2;
-            a2.setOnClickListener(new SingleClickProxy(this));
+            View a = a(R.id.feed);
+            this.y = a;
+            a.setOnClickListener(new SingleClickProxy(this));
             this.e = a(R.id.feed_visible);
             this.z = (ImageView) a(R.id.iv_visible);
             this.A = (TextView) a(R.id.tv_visible);
@@ -589,8 +564,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.ap = (TextView) a(R.id.event_text);
             this.i = a(R.id.feed_interact_layout);
             this.aq = (TextView) a(R.id.feed_interact_num_tv);
-            this.f19642ar = (ImageView) a(R.id.feed_interact_iv_static);
-            this.as = (FeedItemSayHelloGuideView) a(R.id.feed_say_hello_guide_ly);
+            this.ar = (ImageView) a(R.id.feed_interact_iv_static);
+            this.as = a(R.id.feed_say_hello_guide_ly);
             this.at = a(R.id.feed_mine_visit_num_layout);
             this.au = (TextView) a(R.id.feed_mine_visit_num_tv);
             this.av = (ImageView) a(R.id.feed_mine_visit_num_iv);
@@ -629,9 +604,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (this.ah == null) {
                 return;
             }
-            if (this.f19641a.is_super_topics == 1 && !TextUtils.isEmpty(this.f19641a.super_topics_name) && !TextUtils.isEmpty(this.f19641a.super_did)) {
-                String[] split = this.f19641a.super_topics_name.split(",");
-                String[] split2 = this.f19641a.super_did.split(",");
+            if (this.a.is_super_topics == 1 && !TextUtils.isEmpty(this.a.super_topics_name) && !TextUtils.isEmpty(this.a.super_did)) {
+                String[] split = this.a.super_topics_name.split(",");
+                String[] split2 = this.a.super_did.split(",");
                 if (split2.length > 0 && split.length == split2.length) {
                     ArrayList arrayList = new ArrayList();
                     int i = 0;
@@ -646,9 +621,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                         if (str.endsWith("@")) {
                             bluedTopic.topicType = 1;
                             bluedTopic.super_did = str.split("@")[0];
-                        } else if (str.contains("&")) {
+                        } else if (str.contains(a.b)) {
                             bluedTopic.is_anonym = 1;
-                            bluedTopic.super_did = str.split("&")[0];
+                            bluedTopic.super_did = str.split(a.b)[0];
                         } else {
                             bluedTopic.is_anonym = 0;
                             bluedTopic.super_did = str;
@@ -656,24 +631,22 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                         arrayList.add(bluedTopic);
                         i = i2 + 1;
                     }
-                    ViewUtils.a(FeedListAdapterForRecyclerView.this.f19617a, arrayList, this.ai, true, new ViewUtils.ITopicListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.6
-                        @Override // com.blued.community.utils.ViewUtils.ITopicListener
+                    ViewUtils.a(FeedListAdapterForRecyclerView.this.a, arrayList, this.ai, true, new ViewUtils.ITopicListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.6
                         public void a(View view) {
                         }
 
-                        @Override // com.blued.community.utils.ViewUtils.ITopicListener
                         public void a(BluedTopic bluedTopic2) {
                             BaseFeedViewHolder.this.a(bluedTopic2);
                         }
                     }, true);
                     z = true;
-                    ViewUtils.a(FeedListAdapterForRecyclerView.this.f19617a, this.ai, this.f19641a.is_top_hot, new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BaseFeedViewHolder$SbLqtLMZXg9DHsB54deFjckYsZw
+                    ViewUtils.a(FeedListAdapterForRecyclerView.this.a, this.ai, this.a.is_top_hot, new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BaseFeedViewHolder$SbLqtLMZXg9DHsB54deFjckYsZw
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             FeedListAdapterForRecyclerView.BaseFeedViewHolder.this.d(view);
                         }
                     });
-                    if (this.f19641a.is_top_hot != 1 || z) {
+                    if (this.a.is_top_hot != 1 || z) {
                         this.ah.setVisibility(0);
                     } else {
                         this.ah.setVisibility(8);
@@ -682,13 +655,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 }
             }
             z = false;
-            ViewUtils.a(FeedListAdapterForRecyclerView.this.f19617a, this.ai, this.f19641a.is_top_hot, new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BaseFeedViewHolder$SbLqtLMZXg9DHsB54deFjckYsZw
+            ViewUtils.a(FeedListAdapterForRecyclerView.this.a, this.ai, this.a.is_top_hot, new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BaseFeedViewHolder$SbLqtLMZXg9DHsB54deFjckYsZw
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FeedListAdapterForRecyclerView.BaseFeedViewHolder.this.d(view);
                 }
             });
-            if (this.f19641a.is_top_hot != 1) {
+            if (this.a.is_top_hot != 1) {
             }
             this.ah.setVisibility(0);
         }
@@ -722,8 +695,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private boolean C() {
-            if (this.f19641a.is_bubble_ticktock != 1 || i() || UserInfoHelper.a(this.f19641a.vbadge) || UserInfoHelper.b(this.f19641a.vbadge)) {
-                return (!FeedListAdapterForRecyclerView.this.k() || i() || j() || UserInfoHelper.a(this.f19641a.vbadge) || UserInfoHelper.b(this.f19641a.vbadge)) ? false : true;
+            if (this.a.is_bubble_ticktock != 1 || i() || UserInfoHelper.a(this.a.vbadge) || UserInfoHelper.b(this.a.vbadge)) {
+                return (!FeedListAdapterForRecyclerView.this.k() || i() || j() || UserInfoHelper.a(this.a.vbadge) || UserInfoHelper.b(this.a.vbadge)) ? false : true;
             }
             return true;
         }
@@ -732,18 +705,18 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (this.S == null) {
                 return;
             }
-            if (!i() || this.f19641a.is_bubble_ticktock == 1) {
+            if (!i() || this.a.is_bubble_ticktock == 1) {
                 this.S.setVisibility(8);
                 return;
             }
             this.S.setVisibility(0);
             this.S.setOnClickListener(new SingleClickProxy(this));
-            this.T.setText(m().getFeedFeedShow(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.feed_show));
-            if (this.f19641a.can_promotion != 1) {
+            this.T.setText(m().getFeedFeedShow(FeedListAdapterForRecyclerView.this.a, this.a.feed_show));
+            if (this.a.can_promotion != 1) {
                 this.U.setVisibility(8);
                 return;
             }
-            int i = this.f19641a.promotion_status;
+            int i = this.a.promotion_status;
             if (i == 1) {
                 this.U.setImageResource(R.drawable.feed_icon_extend);
                 this.U.setVisibility(0);
@@ -762,10 +735,10 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (i()) {
                 this.g.setVisibility(8);
                 this.O.setVisibility(8);
-            } else if (this.f19641a.is_recommend != 1) {
+            } else if (this.a.is_recommend != 1) {
                 this.g.setVisibility(0);
                 this.g.setOnClickListener(new SingleClickProxy(this));
-                this.g.setImageDrawable(FeedListAdapterForRecyclerView.this.f19617a.getResources().getDrawable(R.drawable.feed_list_icon_more));
+                this.g.setImageDrawable(FeedListAdapterForRecyclerView.this.a.getResources().getDrawable(R.drawable.feed_list_icon_more));
                 this.O.setVisibility(8);
             } else {
                 this.g.setVisibility(8);
@@ -776,9 +749,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.R.setOnClickListener(new SingleClickProxy(this));
                 this.R.setVisibility(0);
                 this.R.setRelationShip("0");
-            } else if (this.f19641a.forceShowFollowedStatus && j()) {
+            } else if (this.a.forceShowFollowedStatus && j()) {
                 this.R.setVisibility(0);
-                this.R.setRelationShip(this.f19641a.relationship);
+                this.R.setRelationShip(this.a.relationship);
                 this.R.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BaseFeedViewHolder$ai5hvqff5SMIFmso6UauDERSXoE
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -788,12 +761,12 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             } else {
                 this.R.setVisibility(8);
             }
-            if (l() || this.f19641a.is_bubble_ticktock == 1) {
+            if (l() || this.a.is_bubble_ticktock == 1) {
                 this.R.setVisibility(8);
             }
             if (i()) {
                 this.af.setVisibility(8);
-            } else if (FeedListAdapterForRecyclerView.this.g() && this.f19641a.feed_views == 1) {
+            } else if (FeedListAdapterForRecyclerView.this.g() && this.a.feed_views == 1) {
                 this.af.setVisibility(0);
             } else {
                 this.af.setVisibility(8);
@@ -802,64 +775,64 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         private void F() {
             if (l()) {
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(0, this.f19641a.user_avatar)).b(R.drawable.user_bg_round).d().a(this.G);
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(0, this.a.user_avatar)).b(R.drawable.user_bg_round).d().a(this.G);
                 this.L.setVisibility(0);
             } else {
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(0, this.f19641a.user_avatar)).b(R.drawable.user_bg_round).a(this.G);
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(0, this.a.user_avatar)).b(R.drawable.user_bg_round).a(this.G);
                 this.L.setVisibility(8);
             }
             this.G.setOnClickListener(new SingleClickProxy(this));
-            this.K.setText(!TextUtils.isEmpty(this.f19641a.note) ? this.f19641a.note : this.f19641a.user_name);
-            FeedMethods.a(this.K, this.f19641a.feed_uid, l());
+            this.K.setText(!TextUtils.isEmpty(this.a.note) ? this.a.note : this.a.user_name);
+            FeedMethods.a(this.K, this.a.feed_uid, l());
             this.K.setOnClickListener(new SingleClickProxy(this));
             UserBasicModel userBasicModel = new UserBasicModel();
-            userBasicModel.vip_grade = this.f19641a.vip_grade;
-            userBasicModel.is_vip_annual = this.f19641a.is_vip_annual;
-            userBasicModel.is_hide_vip_look = this.f19641a.is_hide_vip_look;
-            userBasicModel.vip_exp_lvl = this.f19641a.vip_exp_lvl;
-            userBasicModel.uid = this.f19641a.feed_id;
-            UserInfoHelper.a(FeedListAdapterForRecyclerView.this.f19617a, this.K, userBasicModel);
-            UserInfoHelper.a(this.N, userBasicModel, FeedListAdapterForRecyclerView.this.f19618c);
+            userBasicModel.vip_grade = this.a.vip_grade;
+            userBasicModel.is_vip_annual = this.a.is_vip_annual;
+            userBasicModel.is_hide_vip_look = this.a.is_hide_vip_look;
+            userBasicModel.vip_exp_lvl = this.a.vip_exp_lvl;
+            userBasicModel.uid = this.a.feed_id;
+            UserInfoHelper.a(FeedListAdapterForRecyclerView.this.a, this.K, userBasicModel);
+            UserInfoHelper.a(this.N, userBasicModel, FeedListAdapterForRecyclerView.this.c);
             ImageView imageView = this.ax;
             if (imageView != null) {
                 imageView.setVisibility(8);
             }
-            if (this.f19641a.getYYLiving()) {
+            if (this.a.getYYLiving()) {
                 this.I.setVisibility(8);
                 this.J.setVisibility(8);
-                UserInfoHelper.a(this.ax, this.f19641a.feed_id, this.f19641a.getYYLiving(), FeedListAdapterForRecyclerView.this.f19618c);
-            } else if (this.f19641a.is_bubble_ticktock == 1) {
+                UserInfoHelper.a(this.ax, this.a.feed_id, this.a.getYYLiving(), FeedListAdapterForRecyclerView.this.c);
+            } else if (this.a.is_bubble_ticktock == 1) {
                 this.I.setVisibility(8);
                 this.M.setVisibility(0);
-                UserInfoHelper.a(this.M, this.f19641a.vbadge, 2, 8);
+                UserInfoHelper.a(this.M, this.a.vbadge, 2, 8);
                 this.H.setVisibility(8);
                 this.J.setVisibility(0);
-                if ((FeedListAdapterForRecyclerView.this.k() || FeedListAdapterForRecyclerView.this.d == 26) && this.f19641a.online_state == 1) {
-                    this.J.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_user_online));
+                if ((FeedListAdapterForRecyclerView.this.k() || FeedListAdapterForRecyclerView.this.d == 26) && this.a.online_state == 1) {
+                    this.J.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_user_online));
                 } else {
                     this.J.setVisibility(8);
                 }
             } else if (!FeedListAdapterForRecyclerView.this.k()) {
                 this.J.setVisibility(8);
                 this.M.setVisibility(8);
-                if (this.f19641a.live <= 0) {
-                    UserInfoHelper.a(this.I, this.f19641a.vbadge, 3);
+                if (this.a.live <= 0) {
+                    UserInfoHelper.a(this.I, this.a.vbadge, 3);
                     this.H.setVisibility(4);
                     return;
                 }
                 this.I.setVisibility(8);
                 this.H.setVisibility(0);
-                ImageLoader.c(FeedListAdapterForRecyclerView.this.f19618c, "anim_feed_live_list.png").e(this.f19641a.hashCode()).g(-1).a(this.H);
+                ImageLoader.c(FeedListAdapterForRecyclerView.this.c, "anim_feed_live_list.png").e(this.a.hashCode()).g(-1).a(this.H);
             } else {
                 this.I.setVisibility(8);
                 this.J.setVisibility(0);
                 this.M.setVisibility(0);
                 this.H.setVisibility(4);
-                UserInfoHelper.b(this.M, this.f19641a.vbadge, 2, 8);
-                if (this.f19641a.live > 0) {
-                    this.J.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.user_list_live_icon));
-                } else if (this.f19641a.online_state == 1) {
-                    this.J.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_user_online));
+                UserInfoHelper.b(this.M, this.a.vbadge, 2, 8);
+                if (this.a.live > 0) {
+                    this.J.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.user_list_live_icon));
+                } else if (this.a.online_state == 1) {
+                    this.J.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_user_online));
                 } else {
                     this.J.setVisibility(8);
                 }
@@ -875,13 +848,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 return;
             }
             this.D.setVisibility(0);
-            if (this.f19641a.is_expression != 1 || this.f19641a.show_expression_id <= 0) {
-                this.E.setText(this.f19641a.interact_desc);
+            if (this.a.is_expression != 1 || this.a.show_expression_id <= 0) {
+                this.E.setText(this.a.interact_desc);
                 return;
             }
-            String str = this.f19641a.interact_desc + FeedMethods.d(this.f19641a.show_expression_id) + " expression_emotion";
+            String str = this.a.interact_desc + FeedMethods.d(this.a.show_expression_id) + " expression_emotion";
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-            FeedMethods.a(spannableStringBuilder, str, "expression_emotion", FeedMethods.f(this.f19641a.show_expression_id), 18, 18);
+            FeedMethods.a(spannableStringBuilder, str, "expression_emotion", FeedMethods.f(this.a.show_expression_id), 18, 18);
             this.E.setText(spannableStringBuilder, TextView.BufferType.SPANNABLE);
         }
 
@@ -895,23 +868,23 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 return;
             }
             this.e.setVisibility(0);
-            if (this.f19641a.feed_views == 1) {
+            if (this.a.feed_views == 1) {
                 this.z.setImageResource(R.drawable.feed_visible_top);
-                this.A.setText(FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_top));
-                this.A.setTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_f));
+                this.A.setText(FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_top));
+                this.A.setTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_f));
             } else if (l()) {
                 this.C.setVisibility(8);
                 this.z.setImageResource(R.drawable.feed_details_anonymous);
                 this.A.setText(R.string.feed_anonymous);
-                this.A.setTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_k));
+                this.A.setTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_k));
             } else {
-                this.A.setTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_j));
-                FeedMethods.a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.reading_scope, this.z, this.A);
+                this.A.setTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_j));
+                FeedMethods.a(FeedListAdapterForRecyclerView.this.a, this.a.reading_scope, this.z, this.A);
             }
-            if (TextUtils.isEmpty(this.f19641a.promotion_bubble)) {
+            if (TextUtils.isEmpty(this.a.promotion_bubble)) {
                 this.C.setVisibility(8);
             } else {
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.f19641a.promotion_bubble).f().a(this.C);
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.a.promotion_bubble).f().a(this.C);
                 this.C.setVisibility(0);
                 this.C.setOnClickListener(new SingleClickProxy(this));
             }
@@ -919,24 +892,24 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private boolean I() {
-            return this.f19641a.theme_id != 0;
+            return this.a.theme_id != 0;
         }
 
         private boolean J() {
-            return this.f19641a.theme_pendant != 0;
+            return this.a.theme_pendant != 0;
         }
 
         private void K() {
-            a(this.f19641a, false);
+            a(this.a, false);
         }
 
         private void L() {
-            a(this.f19641a, false);
+            a(this.a, false);
             LogData logData = new LogData();
             logData.logService = "feed_comment_area_click";
-            logData.id = this.f19641a.feed_id;
+            logData.id = this.a.feed_id;
             logData.from = FeedMethods.b(FeedListAdapterForRecyclerView.this.d) + "";
-            logData.type = this.f19641a.recommend_text;
+            logData.type = this.a.recommend_text;
             if (!TextUtils.isEmpty(FeedListAdapterForRecyclerView.this.j)) {
                 logData.topic_id = FeedListAdapterForRecyclerView.this.j;
             }
@@ -948,44 +921,44 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         private void M() {
             if (g()) {
-                EventTrackFeed.d(FeedProtos.Event.PLAZA_RECOMMEND_NOTE_COMMENT_CLICK, this.f19641a.circle_id, this.f19641a.feed_id);
+                EventTrackFeed.d(FeedProtos.Event.PLAZA_RECOMMEND_NOTE_COMMENT_CLICK, this.a.circle_id, this.a.feed_id);
             } else {
-                CommunityServiceManager.d().b(FeedMethods.b(FeedListAdapterForRecyclerView.this.d), this.f19641a, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k);
+                CommunityServiceManager.d().b(FeedMethods.b(FeedListAdapterForRecyclerView.this.d), this.a, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k);
             }
-            if (CommunityServiceManager.a().b(FeedListAdapterForRecyclerView.this.f19617a)) {
+            if (CommunityServiceManager.a().b(FeedListAdapterForRecyclerView.this.a)) {
                 return;
             }
-            BluedIngSelfFeed bluedIngSelfFeed = this.f19641a;
+            BluedIngSelfFeed bluedIngSelfFeed = this.a;
             a(bluedIngSelfFeed, bluedIngSelfFeed.anchor_comment_id);
         }
 
         private void N() {
-            EventTrackFeed.a(FeedProtos.Event.HOT_FEED_ICON_CLICK, this.f19641a.feed_id, EventTrackFeed.d(FeedListAdapterForRecyclerView.this.d));
-            HotFeedFragment.f20141a.a(FeedListAdapterForRecyclerView.this.f19617a);
+            EventTrackFeed.a(FeedProtos.Event.HOT_FEED_ICON_CLICK, this.a.feed_id, EventTrackFeed.d(FeedListAdapterForRecyclerView.this.d));
+            HotFeedFragment.a.a(FeedListAdapterForRecyclerView.this.a);
         }
 
         private void O() {
-            FeedListAdapterForRecyclerView.this.a(this.f19641a.activity_data.id, this.f19641a.activity_data.uid, FeedProtos.SourcePage.ACTIVITY_FEED, this.f19641a);
+            FeedListAdapterForRecyclerView.this.a(this.a.activity_data.id, this.a.activity_data.uid, FeedProtos.SourcePage.ACTIVITY_FEED, this.a);
         }
 
         private void P() {
             if (Q()) {
-                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.location_lot, this.f19641a.location_lat, this.f19641a.location);
+                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, this.a.location_lot, this.a.location_lat, this.a.location);
             }
         }
 
         private boolean Q() {
-            new CoordinateConverter(FeedListAdapterForRecyclerView.this.f19617a);
-            return !(TextUtils.isEmpty(this.f19641a.location_lot) && TextUtils.isEmpty(this.f19641a.location_lat)) && CoordinateConverter.isAMapDataAvailable(Double.parseDouble(this.f19641a.location_lat), Double.parseDouble(this.f19641a.location_lot));
+            new CoordinateConverter(FeedListAdapterForRecyclerView.this.a);
+            return !(TextUtils.isEmpty(this.a.location_lot) && TextUtils.isEmpty(this.a.location_lat)) && CoordinateConverter.isAMapDataAvailable(Double.parseDouble(this.a.location_lat), Double.parseDouble(this.a.location_lot));
         }
 
         private void R() {
-            EventTrackFeed.b(FeedProtos.Event.FEED_VIEW_NUM_CLICK, this.f19641a, FeedListAdapterForRecyclerView.this.d);
-            if (TextUtils.isEmpty(this.f19641a.promotion_url)) {
+            EventTrackFeed.b(FeedProtos.Event.FEED_VIEW_NUM_CLICK, this.a, FeedListAdapterForRecyclerView.this.d);
+            if (TextUtils.isEmpty(this.a.promotion_url)) {
                 return;
             }
             CommunityServiceManager.d().c("feed_read_count_click", FeedMethods.b(FeedListAdapterForRecyclerView.this.d));
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.promotion_url, CommunityConstants.WebShowType.HIDE_RIGHT);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, this.a.promotion_url, CommunityConstants.WebShowType.HIDE_RIGHT);
         }
 
         private void a(View view) {
@@ -1048,7 +1021,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 public void onAnimationStart(Animator animator) {
                 }
             });
-            EventTrackFeed.e(FeedProtos.Event.FEED_RECOMMEND_LIKE_GUIDE_SHOW, this.f19641a.feed_id);
+            EventTrackFeed.e(FeedProtos.Event.FEED_RECOMMEND_LIKE_GUIDE_SHOW, this.a.feed_id);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -1074,30 +1047,30 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(BluedTopic bluedTopic) {
-            EventTrackFeed.a(FeedProtos.Event.FEED_SUPER_TOPIC_ENTER_CLICK, this.f19641a.feed_id, this.f19641a.super_did, FeedProtos.FeedTopicPage.FEED_TOPIC_FEED_LIST);
+            EventTrackFeed.a(FeedProtos.Event.FEED_SUPER_TOPIC_ENTER_CLICK, this.a.feed_id, this.a.super_did, FeedProtos.FeedTopicPage.FEED_TOPIC_FEED_LIST);
             FeedConstants.b = EventTrackFeed.b(FeedListAdapterForRecyclerView.this.d);
-            SuperTopicDetailFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bluedTopic.super_did);
+            SuperTopicDetailFragment.a(FeedListAdapterForRecyclerView.this.a, bluedTopic.super_did);
         }
 
         private void b(View view) {
-            this.Q.setImageDrawable(FeedListAdapterForRecyclerView.this.f19617a.getResources().getDrawable(R.drawable.icon_feed_arrow_up));
-            String str = this.f19641a.feed_id;
-            View inflate = LayoutInflater.from(FeedListAdapterForRecyclerView.this.f19617a).inflate(R.layout.feed_ad_pop, (ViewGroup) null);
+            this.Q.setImageDrawable(FeedListAdapterForRecyclerView.this.a.getResources().getDrawable(R.drawable.icon_feed_arrow_up));
+            String str = this.a.feed_id;
+            View inflate = LayoutInflater.from(FeedListAdapterForRecyclerView.this.a).inflate(R.layout.feed_ad_pop, (ViewGroup) null);
             TextView textView = (TextView) inflate.findViewById(R.id.tv_adopt_msg);
             TextView textView2 = (TextView) inflate.findViewById(R.id.tv_adopt_notinterested);
-            if (TextUtils.isEmpty(this.f19641a.recommend_text)) {
-                textView.setText(FeedListAdapterForRecyclerView.this.f19617a.getResources().getString(R.string.bigdata_message));
+            if (TextUtils.isEmpty(this.a.recommend_text)) {
+                textView.setText(FeedListAdapterForRecyclerView.this.a.getResources().getString(R.string.bigdata_message));
             } else {
-                textView.setText(this.f19641a.recommend_text);
+                textView.setText(this.a.recommend_text);
             }
             final PopupWindow popupWindow = new PopupWindow(inflate, -2, -2, true);
             popupWindow.setTouchable(true);
-            popupWindow.setBackgroundDrawable(FeedListAdapterForRecyclerView.this.f19617a.getResources().getDrawable(17170445));
+            popupWindow.setBackgroundDrawable(FeedListAdapterForRecyclerView.this.a.getResources().getDrawable(com.android.internal.R.color.transparent));
             popupWindow.showAsDropDown(view);
             popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.8
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public void onDismiss() {
-                    BaseFeedViewHolder.this.Q.setImageDrawable(FeedListAdapterForRecyclerView.this.f19617a.getResources().getDrawable(R.drawable.icon_feed_arrow_down));
+                    BaseFeedViewHolder.this.Q.setImageDrawable(FeedListAdapterForRecyclerView.this.a.getResources().getDrawable(R.drawable.icon_feed_arrow_down));
                 }
             });
             textView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.9
@@ -1105,19 +1078,19 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
                     BaseFeedViewHolder baseFeedViewHolder = BaseFeedViewHolder.this;
-                    baseFeedViewHolder.a(baseFeedViewHolder.f19641a);
-                    LiveEventBus.get("feed_delete").post(BaseFeedViewHolder.this.f19641a);
+                    baseFeedViewHolder.a(baseFeedViewHolder.a);
+                    LiveEventBus.get("feed_delete").post(BaseFeedViewHolder.this.a);
                     popupWindow.dismiss();
-                    if (BaseFeedViewHolder.this.f19641a.hidden_url == null || BaseFeedViewHolder.this.f19641a.hidden_url.length <= 0) {
+                    if (BaseFeedViewHolder.this.a.hidden_url == null || BaseFeedViewHolder.this.a.hidden_url.length <= 0) {
                         return;
                     }
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= BaseFeedViewHolder.this.f19641a.hidden_url.length) {
+                        if (i2 >= BaseFeedViewHolder.this.a.hidden_url.length) {
                             return;
                         }
-                        CommunityHttpUtils.a(BaseFeedViewHolder.this.f19641a.hidden_url[i2]);
+                        CommunityHttpUtils.a(BaseFeedViewHolder.this.a.hidden_url[i2]);
                         i = i2 + 1;
                     }
                 }
@@ -1145,11 +1118,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             }
             if (!J()) {
                 this.aI.setVisibility(8);
-            } else if (this.f19641a.getYYLiving()) {
+            } else if (this.a.getYYLiving()) {
                 this.aI.setVisibility(8);
             } else {
                 this.aI.setVisibility(0);
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, CommunityServiceManager.e().d(this.f19641a.theme_pendant)).a(this.aI);
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, CommunityServiceManager.e().d(this.a.theme_pendant)).a(this.aI);
             }
         }
 
@@ -1159,7 +1132,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 return;
             }
             this.aH.setVisibility(0);
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, CommunityServiceManager.e().c(this.f19641a.theme_id)).a(this.aH);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, CommunityServiceManager.e().c(this.a.theme_id)).a(this.aH);
             this.aH.setOnClickListener(new SingleClickProxy(this));
         }
 
@@ -1178,7 +1151,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (this.aF == null) {
                 return;
             }
-            if (this.f19641a.show_hot_entry != 1) {
+            if (this.a.show_hot_entry != 1) {
                 this.aF.setVisibility(8);
                 return;
             }
@@ -1189,7 +1162,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     EventTrackFeed.c(FeedProtos.Event.FINE_HOT_MORE_GUIDE_CLICK);
-                    HotFeedFragment.f20141a.a(FeedListAdapterForRecyclerView.this.f19617a);
+                    HotFeedFragment.a.a(FeedListAdapterForRecyclerView.this.a);
                 }
             });
         }
@@ -1214,9 +1187,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 } else {
                     this.aC.setVisibility(8);
                 }
-                if (this.f19641a.feed_comment > 2) {
-                    if (this.f19641a.is_super_topics == 1) {
-                        this.aD.setTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_j));
+                if (this.a.feed_comment > 2) {
+                    if (this.a.is_super_topics == 1) {
+                        this.aD.setTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_j));
                     }
                     this.aE.setVisibility(0);
                 } else {
@@ -1233,14 +1206,14 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 return;
             }
             view.setOnClickListener(new SingleClickProxy(this));
-            if (this.f19641a.iliked == 0) {
-                this.m.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_feed_like));
-                this.n.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_h));
+            if (this.a.iliked == 0) {
+                this.m.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_feed_like));
+                this.n.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_h));
             } else {
-                if (this.f19641a.isPlayLikeAnim) {
+                if (this.a.isPlayLikeAnim) {
                     String g = FeedMethods.g();
                     if (!FeedListAdapterForRecyclerView.this.o() || TextUtils.isEmpty(g)) {
-                        ImageLoader.c(FeedListAdapterForRecyclerView.this.f19618c, FeedMethods.f()).g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.3
+                        ImageLoader.c(FeedListAdapterForRecyclerView.this.c, FeedMethods.f()).g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.3
                             @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                             public void a() {
                             }
@@ -1251,7 +1224,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                             }
                         }).a(this.az);
                     } else {
-                        ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, g).f().g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.2
+                        ImageLoader.a(FeedListAdapterForRecyclerView.this.c, g).f().g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.2
                             @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                             public void a() {
                             }
@@ -1264,38 +1237,38 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     }
                 }
                 if (FeedListAdapterForRecyclerView.this.o() && !TextUtils.isEmpty(FeedMethods.h())) {
-                    ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, FeedMethods.h()).d(R.drawable.icon_feed_liked).a(this.m);
-                } else if (this.f19641a.isPlayLikeAnim) {
-                    ImageLoader.c(FeedListAdapterForRecyclerView.this.f19618c, FeedMethods.e()).g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.4
+                    ImageLoader.a(FeedListAdapterForRecyclerView.this.c, FeedMethods.h()).d(R.drawable.icon_feed_liked).a(this.m);
+                } else if (this.a.isPlayLikeAnim) {
+                    ImageLoader.c(FeedListAdapterForRecyclerView.this.c, FeedMethods.e()).g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.4
                         @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                         public void a() {
                         }
 
                         @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                         public void b() {
-                            if (BaseFeedViewHolder.this.f19641a.iliked != 0) {
-                                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, R.drawable.icon_feed_liked).a(BaseFeedViewHolder.this.m);
+                            if (BaseFeedViewHolder.this.a.iliked != 0) {
+                                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, R.drawable.icon_feed_liked).a(BaseFeedViewHolder.this.m);
                             }
                         }
                     }).a(this.m);
                 } else {
-                    ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, R.drawable.icon_feed_liked).a(this.m);
+                    ImageLoader.a(FeedListAdapterForRecyclerView.this.c, R.drawable.icon_feed_liked).a(this.m);
                 }
-                this.f19641a.isPlayLikeAnim = false;
-                this.n.setTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.nafio_g));
+                this.a.isPlayLikeAnim = false;
+                this.n.setTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.nafio_g));
             }
-            this.n.setText(m().getFeedDig(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.feed_dig));
+            this.n.setText(m().getFeedDig(FeedListAdapterForRecyclerView.this.a, this.a.feed_dig));
             this.o.setOnClickListener(new SingleClickProxy(this));
-            this.aw.setText(m().getFeedComment(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.feed_comment));
+            this.aw.setText(m().getFeedComment(FeedListAdapterForRecyclerView.this.a, this.a.feed_comment));
             if (c()) {
                 this.r.setVisibility(0);
-                if (this.f19641a.isDeleted() || this.f19641a.isRepostAndDeleted() || this.f19641a.disallow_share == 1) {
-                    this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_feed_unshare));
-                    this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_k_50));
+                if (this.a.isDeleted() || this.a.isRepostAndDeleted() || this.a.disallow_share == 1) {
+                    this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_feed_unshare));
+                    this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_k_50));
                     this.r.setEnabled(false);
                 } else {
-                    this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_feed_share));
-                    this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_h));
+                    this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_feed_share));
+                    this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_h));
                     this.r.setEnabled(true);
                     this.r.setOnClickListener(new SingleClickProxy(this));
                 }
@@ -1308,15 +1281,15 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             } else {
                 this.t.setVisibility(8);
             }
-            if (this.f19641a.playAnimType == 8) {
+            if (this.a.playAnimType == 8) {
                 a(this.j);
-                this.f19641a.playAnimType = 0;
+                this.a.playAnimType = 0;
             }
         }
 
         private void w() {
             this.b = b();
-            this.f19643c = a();
+            this.c = a();
         }
 
         private void x() {
@@ -1324,50 +1297,50 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (feedItemSayHelloGuideView == null) {
                 return;
             }
-            feedItemSayHelloGuideView.setFeedData(this.f19641a);
+            feedItemSayHelloGuideView.setFeedData(this.a);
         }
 
         private void y() {
             if (this.i == null) {
                 return;
             }
-            if (CommunityManager.f19086a.a().s()) {
-                this.f19642ar.setImageResource(R.drawable.feed_interact_static_dark);
+            if (CommunityManager.a.a().s()) {
+                this.ar.setImageResource(R.drawable.feed_interact_static_dark);
             } else {
-                this.f19642ar.setImageResource(R.drawable.feed_interact_static);
+                this.ar.setImageResource(R.drawable.feed_interact_static);
             }
-            if (this.f19641a.is_expression != 1) {
+            if (this.a.is_expression != 1) {
                 this.i.setVisibility(8);
                 return;
             }
             this.i.setVisibility(0);
-            if (this.f19641a.interaction_count > 0) {
+            if (this.a.interaction_count > 0) {
                 TextView textView = this.aq;
-                textView.setText(this.f19641a.interaction_count + "人");
+                textView.setText(this.a.interaction_count + "人");
             } else {
                 this.aq.setText(R.string.feed_interact);
             }
-            if (this.f19641a.expression_id > 0) {
-                this.aq.setTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_g));
+            if (this.a.expression_id > 0) {
+                this.aq.setTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_g));
             } else {
-                this.aq.setTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_k));
+                this.aq.setTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_k));
             }
-            if (this.f19641a.playAnimType == 1) {
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f19642ar, "ScaleX", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
+            if (this.a.playAnimType == 1) {
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.ar, "ScaleX", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
                 ofFloat.setDuration(800L);
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.f19642ar, "ScaleY", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.ar, "ScaleY", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
                 ofFloat2.setDuration(800L);
                 ofFloat.start();
                 ofFloat2.start();
-                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.f19642ar, "ScaleX", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
+                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.ar, "ScaleX", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
                 ofFloat3.setDuration(800L);
-                ofFloat3.setStartDelay(c.j);
-                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.f19642ar, "ScaleY", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
+                ofFloat3.setStartDelay(1500L);
+                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(this.ar, "ScaleY", 1.0f, 1.14f, 1.0f, 1.14f, 1.0f);
                 ofFloat4.setDuration(800L);
-                ofFloat4.setStartDelay(c.j);
+                ofFloat4.setStartDelay(1500L);
                 ofFloat3.start();
                 ofFloat4.start();
-                this.f19641a.playAnimType = 0;
+                this.a.playAnimType = 0;
             }
             this.i.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BaseFeedViewHolder$konJSjiS6JCMkvg9A2nt-scH_2g
                 @Override // android.view.View.OnClickListener
@@ -1378,11 +1351,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void z() {
-            if (this.f19641a.iliked == 1 && this.f19641a.expression_id == 0) {
-                this.f19641a.expression_id = 1;
+            if (this.a.iliked == 1 && this.a.expression_id == 0) {
+                this.a.expression_id = 1;
             }
-            CommRouteUtil.a(FeedListAdapterForRecyclerView.this.b, this.f19642ar, this.f19641a, FeedMethods.a(this.f19641a, FeedListAdapterForRecyclerView.this.d));
-            EventTrackFeed.a(FeedProtos.Event.MORE_EMOJI_PANEL_SHOW, this.f19641a, FeedListAdapterForRecyclerView.this.d, false);
+            CommRouteUtil.a(FeedListAdapterForRecyclerView.this.b, this.ar, this.a, FeedMethods.a(this.a, FeedListAdapterForRecyclerView.this.d));
+            EventTrackFeed.a(FeedProtos.Event.MORE_EMOJI_PANEL_SHOW, this.a, FeedListAdapterForRecyclerView.this.d, false);
         }
 
         protected abstract View a();
@@ -1396,7 +1369,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
-            this.f19641a = bluedIngSelfFeed;
+            this.a = bluedIngSelfFeed;
             this.d = i;
             w();
             h();
@@ -1430,7 +1403,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 FeedDetailParams feedDetailParams = new FeedDetailParams(0);
                 feedDetailParams.commentID = str;
                 a(feedDetailParams, bluedIngSelfFeed);
-                FeedDetailsFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed, 22, feedDetailParams);
+                FeedDetailsFragment.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed, 22, feedDetailParams);
                 FeedListAdapterForRecyclerView.this.a(3, bluedIngSelfFeed);
             }
             NearbyFeedFragment.q = SystemClock.elapsedRealtime();
@@ -1468,7 +1441,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             feedDetailParams.isFromComment = z;
             feedDetailParams.hasComment = bluedIngSelfFeed.feed_comment > 0;
             a(feedDetailParams, bluedIngSelfFeed);
-            FeedDetailsFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed, FeedListAdapterForRecyclerView.this.d, feedDetailParams);
+            FeedDetailsFragment.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed, FeedListAdapterForRecyclerView.this.d, feedDetailParams);
             FeedListAdapterForRecyclerView.this.a(3, bluedIngSelfFeed);
         }
 
@@ -1483,29 +1456,29 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             CommunityServiceManager.d().a(logData);
             BluedIngSelfFeed bluedIngSelfFeed2 = (BluedIngSelfFeed) bluedIngSelfFeed.clone();
             if (FeedListAdapterForRecyclerView.this.d != 1) {
-                VideoScanFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed2, z, FeedListAdapterForRecyclerView.this.d);
+                VideoScanFragment.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed2, z, FeedListAdapterForRecyclerView.this.d);
                 return;
             }
             bluedIngSelfFeed2.feed_uid = str2;
             bluedIngSelfFeed2.feed_id = str;
-            VideoUserInfoFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed2);
+            VideoUserInfoFragment.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed2);
         }
 
         protected void a(boolean z) {
             if (l()) {
                 return;
             }
-            EventTrackFeed.a(FeedProtos.Event.FEED_PHOTO_CLICK, this.f19641a.feed_id, this.f19641a.feed_uid);
+            EventTrackFeed.a(FeedProtos.Event.FEED_PHOTO_CLICK, this.a.feed_id, this.a.feed_uid);
             if (FeedListAdapterForRecyclerView.this.g()) {
                 return;
             }
-            String a2 = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.f19641a.is_vote);
-            UserBasicModel b = FeedMethods.b(this.f19641a);
+            String a = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.a.is_vote);
+            UserBasicModel b = FeedMethods.b(this.a);
             LogData logData = new LogData();
             logData.logService = "feed_avatar_click";
-            logData.id = this.f19641a.feed_id;
-            logData.type = this.f19641a.recommend_text;
-            logData.target_uid = this.f19641a.feed_uid;
+            logData.id = this.a.feed_id;
+            logData.type = this.a.recommend_text;
+            logData.target_uid = this.a.feed_uid;
             logData.from = FeedMethods.b(FeedListAdapterForRecyclerView.this.d) + "";
             if (!TextUtils.isEmpty(FeedListAdapterForRecyclerView.this.j)) {
                 logData.topic_id = FeedListAdapterForRecyclerView.this.j;
@@ -1514,13 +1487,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 logData.topic_category = FeedListAdapterForRecyclerView.this.k + "";
             }
             CommunityServiceManager.d().a(logData);
-            if (this.f19641a.live > 0 && z) {
-                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, b, this.f19641a.live, a2);
-            } else if (!this.f19641a.getYYLiving()) {
-                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, b, this.f19641a, a2, false, (View) this.G, FeedMethods.a(this.f19641a, FeedListAdapterForRecyclerView.this.d, false, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k), FeedMethods.b(FeedListAdapterForRecyclerView.this.d, this.f19641a.in_promotion));
-                if (this.f19641a.click_url != null && this.f19641a.click_url.length > 0) {
-                    for (int i = 0; i < this.f19641a.click_url.length; i++) {
-                        CommunityHttpUtils.a(this.f19641a.click_url[i]);
+            if (this.a.live > 0 && z) {
+                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, b, this.a.live, a);
+            } else if (!this.a.getYYLiving()) {
+                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, b, this.a, a, false, (View) this.G, FeedMethods.a(this.a, FeedListAdapterForRecyclerView.this.d, false, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k), FeedMethods.b(FeedListAdapterForRecyclerView.this.d, this.a.in_promotion));
+                if (this.a.click_url != null && this.a.click_url.length > 0) {
+                    for (int i = 0; i < this.a.click_url.length; i++) {
+                        CommunityHttpUtils.a(this.a.click_url[i]);
                     }
                 }
                 NearbyFeedFragment.r = SystemClock.elapsedRealtime();
@@ -1528,20 +1501,20 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     ((RecommendFeedFragment) FeedListAdapterForRecyclerView.this.b).b(this.d);
                 }
                 if (z) {
-                    FeedListAdapterForRecyclerView.this.a(1, this.f19641a);
+                    FeedListAdapterForRecyclerView.this.a(1, this.a);
                 } else {
-                    FeedListAdapterForRecyclerView.this.a(4, this.f19641a);
+                    FeedListAdapterForRecyclerView.this.a(4, this.a);
                 }
             } else {
-                EventTrackFeed.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_CLICK, this.f19641a.chat_room.room_id + "", this.f19641a.chat_room.uid, FeedListAdapterForRecyclerView.this.d);
+                EventTrackFeed.a(ChatRoomProtos.Event.CHAT_ROOM_TAB_PAGE_ROOM_CLICK, this.a.chat_room.room_id + "", this.a.chat_room.uid, FeedListAdapterForRecyclerView.this.d);
                 if (FeedListAdapterForRecyclerView.this.d == 0) {
-                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.chat_room.room_id + "", "plaza_follow_yy_icon");
+                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.a, this.a.chat_room.room_id + "", "plaza_follow_yy_icon");
                 } else if (FeedListAdapterForRecyclerView.this.d == 6) {
-                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.chat_room.room_id + "", "plaza_recommend_yy_icon");
+                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.a, this.a.chat_room.room_id + "", "plaza_recommend_yy_icon");
                 } else if (FeedListAdapterForRecyclerView.this.d == 19) {
-                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.chat_room.room_id + "", "city_time_yy_icon");
+                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.a, this.a.chat_room.room_id + "", "city_time_yy_icon");
                 } else {
-                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.chat_room.room_id + "", "");
+                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.a, this.a.chat_room.room_id + "", "");
                 }
             }
         }
@@ -1575,7 +1548,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 r0 = r4
                 r3 = r0
                 r0 = r2
-                com.blued.community.model.BluedIngSelfFeed r0 = r0.f19641a
+                com.blued.community.model.BluedIngSelfFeed r0 = r0.a
                 int r0 = r0.reading_scope
                 if (r0 != 0) goto L38
                 r0 = r2
@@ -1618,7 +1591,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         protected void f() {
             View view;
-            if (this.f19641a.is_top_feed == 1 && (view = this.f) != null) {
+            if (this.a.is_top_feed == 1 && (view = this.f) != null) {
                 view.setVisibility(0);
                 return;
             }
@@ -1631,47 +1604,47 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         protected abstract boolean g();
 
         protected void h() {
-            FeedMethods.a(this.f19641a, FeedListAdapterForRecyclerView.this.d, this.d, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k, "", FeedListAdapterForRecyclerView.this.o, this.f19641a.getYYLiving());
+            FeedMethods.a(this.a, FeedListAdapterForRecyclerView.this.d, this.d, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k, "", FeedListAdapterForRecyclerView.this.o, this.a.getYYLiving());
         }
 
         protected boolean i() {
-            return FeedListAdapterForRecyclerView.this.d(this.f19641a.feed_uid);
+            return FeedListAdapterForRecyclerView.this.d(this.a.feed_uid);
         }
 
         protected boolean j() {
-            return "1".equalsIgnoreCase(this.f19641a.relationship) || "3".equalsIgnoreCase(this.f19641a.relationship);
+            return "1".equalsIgnoreCase(this.a.relationship) || "3".equalsIgnoreCase(this.a.relationship);
         }
 
         protected boolean k() {
-            return this.f19641a.isRepost();
+            return this.a.isRepost();
         }
 
         protected boolean l() {
-            return this.f19641a.is_feed_anonym == 1;
+            return this.a.is_feed_anonym == 1;
         }
 
         protected FeedParse m() {
-            if (this.f19641a.feedParse == null) {
-                this.f19641a.feedParse = new FeedParse(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.D);
+            if (this.a.feedParse == null) {
+                this.a.feedParse = new FeedParse(FeedListAdapterForRecyclerView.this.a, this.a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.D);
             }
-            return this.f19641a.feedParse;
+            return this.a.feedParse;
         }
 
         protected void n() {
-            a(this.f19641a, false);
+            a(this.a, false);
         }
 
         protected void o() {
-            EventTrackFeed.b(FeedProtos.Event.CITY_SAY_HI_CLICK, this.f19641a, FeedListAdapterForRecyclerView.this.d);
-            if (this.f19641a.feed_uid == null || UserInfoHelper.a(this.f19641a.relationship)) {
+            EventTrackFeed.b(FeedProtos.Event.CITY_SAY_HI_CLICK, this.a, FeedListAdapterForRecyclerView.this.d);
+            if (this.a.feed_uid == null || UserInfoHelper.a(this.a.relationship)) {
                 return;
             }
-            LogData a2 = FeedMethods.a(this.f19641a, FeedListAdapterForRecyclerView.this.d);
-            a2.from = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.f19641a.is_vote);
-            a2.userFrom = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.f19641a.is_vote);
-            Logger.e("logDataChat", "from=" + a2.from);
-            a2.is_call = "1";
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a, false, 0, a2, FeedMethods.b(FeedListAdapterForRecyclerView.this.d, 0));
+            LogData a = FeedMethods.a(this.a, FeedListAdapterForRecyclerView.this.d);
+            a.from = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.a.is_vote);
+            a.userFrom = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.a.is_vote);
+            Logger.e("logDataChat", "from=" + a.from);
+            a.is_call = "1";
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, this.a, false, 0, a, FeedMethods.b(FeedListAdapterForRecyclerView.this.d, 0));
         }
 
         @Override // android.view.View.OnClickListener
@@ -1688,31 +1661,31 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             } else if (id == R.id.name_view) {
                 a(false);
             } else if (id == R.id.menu_view) {
-                Context context = FeedListAdapterForRecyclerView.this.f19617a;
+                Context context = FeedListAdapterForRecyclerView.this.a;
                 FollowStatusView followStatusView = this.R;
-                BluedIngSelfFeed bluedIngSelfFeed = this.f19641a;
+                BluedIngSelfFeed bluedIngSelfFeed = this.a;
                 int i = FeedListAdapterForRecyclerView.this.d;
                 FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = FeedListAdapterForRecyclerView.this;
-                FeedMethods.a(context, followStatusView, bluedIngSelfFeed, i, feedListAdapterForRecyclerView, this.d, "", feedListAdapterForRecyclerView.f19618c);
+                FeedMethods.a(context, followStatusView, bluedIngSelfFeed, i, feedListAdapterForRecyclerView, this.d, "", feedListAdapterForRecyclerView.c);
             } else if (id == R.id.visible_menu_view) {
-                Context context2 = FeedListAdapterForRecyclerView.this.f19617a;
+                Context context2 = FeedListAdapterForRecyclerView.this.a;
                 FollowStatusView followStatusView2 = this.R;
-                BluedIngSelfFeed bluedIngSelfFeed2 = this.f19641a;
+                BluedIngSelfFeed bluedIngSelfFeed2 = this.a;
                 int i2 = FeedListAdapterForRecyclerView.this.d;
                 FeedListAdapterForRecyclerView feedListAdapterForRecyclerView2 = FeedListAdapterForRecyclerView.this;
-                FeedMethods.a(context2, followStatusView2, bluedIngSelfFeed2, i2, feedListAdapterForRecyclerView2, this.d, "", feedListAdapterForRecyclerView2.f19618c);
+                FeedMethods.a(context2, followStatusView2, bluedIngSelfFeed2, i2, feedListAdapterForRecyclerView2, this.d, "", feedListAdapterForRecyclerView2.c);
             } else if (id == R.id.img_promotion_bubble || id == R.id.ll_read_num) {
                 R();
             } else if (id == R.id.ll_ad_option) {
                 b(view);
             } else if (id == R.id.follow_status_view) {
-                FeedMethods.a(FeedListAdapterForRecyclerView.this.f19617a, this.R, this.f19641a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.f19618c);
+                FeedMethods.a(FeedListAdapterForRecyclerView.this.a, this.R, this.a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.c);
             } else if (id == R.id.location_layout) {
                 P();
             } else if (id == R.id.event_layout) {
                 O();
             } else if (id == R.id.ll_zan_view) {
-                FeedListAdapterForRecyclerView.this.a(this.f19641a, g(), this.d);
+                FeedListAdapterForRecyclerView.this.a(this.a, g(), this.d);
             } else if (id == R.id.ll_details_comments) {
                 M();
             } else if (id == R.id.ll_details_share) {
@@ -1724,46 +1697,46 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             } else if (id == R.id.reply_view_more) {
                 K();
             } else if (id == R.id.feed_dynamic_skin && I()) {
-                EventTrackFeed.a(FeedProtos.Event.FEED_DYNAMIC_SKIN_CLICK, this.f19641a.feed_id, this.f19641a.feed_uid, EventTrackFeed.f(FeedListAdapterForRecyclerView.this.d), 0);
-                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, 0, "dynamic_skin");
+                EventTrackFeed.a(FeedProtos.Event.FEED_DYNAMIC_SKIN_CLICK, this.a.feed_id, this.a.feed_uid, EventTrackFeed.f(FeedListAdapterForRecyclerView.this.d), 0);
+                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, 0, "dynamic_skin");
             }
         }
 
         protected void p() {
-            String a2;
+            String a;
             if (g()) {
-                EventTrackFeed.d(FeedProtos.Event.PLAZA_RECOMMEND_NOTE_SHARE_CLICK, this.f19641a.circle_id, this.f19641a.feed_id);
+                EventTrackFeed.d(FeedProtos.Event.PLAZA_RECOMMEND_NOTE_SHARE_CLICK, this.a.circle_id, this.a.feed_id);
             } else {
-                CommunityServiceManager.d().c(FeedMethods.b(FeedListAdapterForRecyclerView.this.d), this.f19641a, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k);
+                CommunityServiceManager.d().c(FeedMethods.b(FeedListAdapterForRecyclerView.this.d), this.a, FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k);
             }
-            if (UserInfoHelper.a(this.f19641a.relationship)) {
+            if (UserInfoHelper.a(this.a.relationship)) {
                 return;
             }
-            if (this.f19641a.feed_pics.length <= 0) {
-                a2 = AvatarUtils.a(0, this.f19641a.user_avatar);
-            } else if (this.f19641a.feed_pics.length != 1 || this.f19641a.is_ads == 1) {
+            if (this.a.feed_pics.length <= 0) {
+                a = AvatarUtils.a(0, this.a.user_avatar);
+            } else if (this.a.feed_pics.length != 1 || this.a.is_ads == 1) {
                 String str = this.b;
-                a2 = str;
+                a = str;
                 if (str == null) {
-                    a2 = "";
+                    a = "";
                 }
             } else {
-                int a3 = StringUtils.a(this.f19641a.feed_pics_width[0], 0);
-                int a4 = StringUtils.a(this.f19641a.feed_pics_height[0], 0);
+                int a2 = StringUtils.a(this.a.feed_pics_width[0], 0);
+                int a3 = StringUtils.a(this.a.feed_pics_height[0], 0);
                 int i = (int) (AppInfo.l * 0.77d);
                 int i2 = (int) (i * 0.73d);
-                a2 = AvatarUtils.a(this.f19641a.feed_pics[0], ImageUtils.a(a3, a4, i, i, i2, i2)[0]);
+                a = AvatarUtils.a(this.a.feed_pics[0], ImageUtils.a(a2, a3, i, i, i2, i2)[0]);
             }
-            ImageFileLoader.a((IRequestHost) null).b(a2).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.7
+            ImageFileLoader.a((IRequestHost) null).b(a).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder.7
                 @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     Bitmap decodeFile = (file == null || !file.exists()) ? null : BitmapFactory.decodeFile(file.getPath());
                     int i3 = FeedListAdapterForRecyclerView.this.d;
                     String str2 = i3 != 0 ? i3 != 6 ? "" : "discovery_square" : "discovery_attention";
-                    if (FeedListAdapterForRecyclerView.this.d == 6 && FeedMethods.a(BaseFeedViewHolder.this.f19641a)) {
-                        BaseFeedViewHolder.this.f19641a.is_top = BaseFeedViewHolder.this.f19641a.is_top_new;
+                    if (FeedListAdapterForRecyclerView.this.d == 6 && FeedMethods.a(BaseFeedViewHolder.this.a)) {
+                        BaseFeedViewHolder.this.a.is_top = BaseFeedViewHolder.this.a.is_top_new;
                     }
-                    CommunityShareUtils.b().a(FeedListAdapterForRecyclerView.this.f19617a, BaseFeedViewHolder.this.G, decodeFile, BaseFeedViewHolder.this.f19641a, str2, false, FeedMethods.b(FeedListAdapterForRecyclerView.this.d), FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k, FeedListAdapterForRecyclerView.this.d);
+                    CommunityShareUtils.b().a(FeedListAdapterForRecyclerView.this.a, BaseFeedViewHolder.this.G, decodeFile, BaseFeedViewHolder.this.a, str2, false, FeedMethods.b(FeedListAdapterForRecyclerView.this.d), FeedListAdapterForRecyclerView.this.j, FeedListAdapterForRecyclerView.this.k, FeedListAdapterForRecyclerView.this.d);
                 }
             }).a();
         }
@@ -1772,9 +1745,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$BubblePostGuideViewHolder.class */
     public class BubblePostGuideViewHolder {
         private View b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private BaseViewHolder f19655c;
+        private BaseViewHolder c;
         private RecyclerView d;
         private LinearLayoutManager e;
         private View f;
@@ -1785,12 +1756,10 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         /* renamed from: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView$BubblePostGuideViewHolder$1  reason: invalid class name */
         /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$BubblePostGuideViewHolder$1.class */
         public class AnonymousClass1 extends CommonMultiItemAdapter<FeedPostSignStateItem> {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ FeedListAdapterForRecyclerView f19656a;
+            final /* synthetic */ FeedListAdapterForRecyclerView a;
 
             AnonymousClass1(FeedListAdapterForRecyclerView feedListAdapterForRecyclerView) {
-                this.f19656a = feedListAdapterForRecyclerView;
+                this.a = feedListAdapterForRecyclerView;
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -1799,16 +1768,15 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.community.view.CommonMultiItemAdapter
             /* renamed from: a */
             public void onConvert(CommonViewHolder commonViewHolder, final FeedPostSignStateItem feedPostSignStateItem, int i) {
                 boolean z = BubblePostGuideViewHolder.this.h != null && feedPostSignStateItem.getBubble_state_id().contentEquals(BubblePostGuideViewHolder.this.h.getBubble_state_id());
-                int i2 = z ? R.drawable.item_feed_bubble_iv_selected : CommunityManager.f19086a.a().s() ? R.drawable.item_feed_post_sign_state_iv_bg_black : R.drawable.item_feed_post_sign_state_iv_bg;
-                int a2 = BluedSkinUtils.a(this.mContext, R.color.syc_k);
+                int i2 = z ? R.drawable.item_feed_bubble_iv_selected : CommunityManager.a.a().s() ? R.drawable.item_feed_post_sign_state_iv_bg_black : R.drawable.item_feed_post_sign_state_iv_bg;
+                int a = BluedSkinUtils.a(this.mContext, R.color.syc_k);
                 if (z) {
-                    a2 = BluedSkinUtils.a(this.mContext, R.color.syc_h);
+                    a = BluedSkinUtils.a(this.mContext, R.color.syc_h);
                 }
-                commonViewHolder.setImageUrl(R.id.state_iv, feedPostSignStateItem.getIcon(), 25.0f).setText(R.id.state_tv, feedPostSignStateItem.getName()).setBackgroundRes(R.id.state_iv_layout, i2).setTextColor(R.id.state_tv, a2).itemView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BubblePostGuideViewHolder$1$RUtMGq4GmCfgz3OTg96Dd5Dpufk
+                commonViewHolder.setImageUrl(R.id.state_iv, feedPostSignStateItem.getIcon(), 25.0f).setText(R.id.state_tv, feedPostSignStateItem.getName()).setBackgroundRes(R.id.state_iv_layout, i2).setTextColor(R.id.state_tv, a).itemView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BubblePostGuideViewHolder$1$RUtMGq4GmCfgz3OTg96Dd5Dpufk
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         FeedListAdapterForRecyclerView.BubblePostGuideViewHolder.AnonymousClass1.this.a(feedPostSignStateItem, view);
@@ -1816,7 +1784,6 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 });
             }
 
-            @Override // com.blued.community.view.CommonMultiItemAdapter
             public void onAddItemType() {
                 addItemType(0, R.layout.item_feed_bubble_post_guide);
             }
@@ -1824,18 +1791,18 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public BubblePostGuideViewHolder(BaseViewHolder baseViewHolder, View view) {
             this.b = view;
-            this.f19655c = baseViewHolder;
+            this.c = baseViewHolder;
             View view2 = baseViewHolder.getView(R.id.guide_content_layout_id);
             this.f = view2;
             view2.setVisibility(8);
-            this.d = (RecyclerView) this.f19655c.getView(R.id.recycle_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(FeedListAdapterForRecyclerView.this.f19617a, 0, false);
+            this.d = this.c.getView(R.id.recycle_view);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(FeedListAdapterForRecyclerView.this.a, 0, false);
             this.e = linearLayoutManager;
             this.d.setLayoutManager(linearLayoutManager);
             AnonymousClass1 anonymousClass1 = new AnonymousClass1(FeedListAdapterForRecyclerView.this);
             this.g = anonymousClass1;
             this.d.setAdapter(anonymousClass1);
-            this.f19655c.getView(R.id.send_btn).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BubblePostGuideViewHolder$tn-FH7y1aZYjMg0rpma_0kHG3RQ
+            this.c.getView(R.id.send_btn).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$BubblePostGuideViewHolder$tn-FH7y1aZYjMg0rpma_0kHG3RQ
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view3) {
                     FeedListAdapterForRecyclerView.BubblePostGuideViewHolder.this.a(view3);
@@ -1859,7 +1826,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             Bundle bundle = new Bundle();
             bundle.putSerializable("selected_model", this.h);
             bundle.putInt("page_from", 3);
-            FeedPostSignBaseFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bundle);
+            FeedPostSignBaseFragment.a(FeedListAdapterForRecyclerView.this.a, bundle);
             FeedProtos.Event event = FeedProtos.Event.FEED_PUNCH_LOOK_GUIDE_POP_YES_CLICK;
             FeedPostSignStateItem feedPostSignStateItem = this.h;
             EventTrackFeed.j(event, feedPostSignStateItem != null ? feedPostSignStateItem.getBubble_state_id() : "");
@@ -1875,7 +1842,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (bluedIngSelfFeed == null || bluedIngSelfFeed.bubbleInsertGuideExtra == null) {
                 return;
             }
-            this.f19655c.setText(R.id.tv_title, bluedIngSelfFeed.bubbleInsertGuideExtra.getTitle()).setText(R.id.send_btn, bluedIngSelfFeed.bubbleInsertGuideExtra.getButton());
+            this.c.setText(R.id.tv_title, bluedIngSelfFeed.bubbleInsertGuideExtra.getTitle()).setText(R.id.send_btn, bluedIngSelfFeed.bubbleInsertGuideExtra.getButton());
             if (this.h == null && !TypeUtils.a((List<?>) bluedIngSelfFeed.bubbleInsertGuideExtra.getState_data())) {
                 if (bluedIngSelfFeed.bubbleInsertGuideExtra.getState_data().size() > 1) {
                     this.h = bluedIngSelfFeed.bubbleInsertGuideExtra.getState_data().get(1);
@@ -1931,9 +1898,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$ChatRoomFeedViewHolder.class */
     public class ChatRoomFeedViewHolder implements View.OnClickListener {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19659c;
+        private int c;
         private LinearLayout d;
         private ImageView e;
         private TextView f;
@@ -1972,7 +1937,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         private void a() {
             this.d.setOnClickListener(new SingleClickProxy(this));
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(0, this.b.user_avatar)).b(R.drawable.user_bg_round).c().a(this.e);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(0, this.b.user_avatar)).b(R.drawable.user_bg_round).c().a(this.e);
             this.f.setText(this.b.user_name);
             UserBasicModel userBasicModel = new UserBasicModel();
             userBasicModel.vip_grade = this.b.vip_grade;
@@ -1980,8 +1945,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             userBasicModel.is_hide_vip_look = this.b.is_hide_vip_look;
             userBasicModel.vip_exp_lvl = this.b.vip_exp_lvl;
             userBasicModel.uid = this.b.feed_id;
-            UserInfoHelper.a(FeedListAdapterForRecyclerView.this.f19617a, this.f, userBasicModel);
-            UserInfoHelper.a(this.h, userBasicModel, FeedListAdapterForRecyclerView.this.f19618c);
+            UserInfoHelper.a(FeedListAdapterForRecyclerView.this.a, this.f, userBasicModel);
+            UserInfoHelper.a(this.h, userBasicModel, FeedListAdapterForRecyclerView.this.c);
             UserInfoHelper.b(this.g, this.b.vbadge, 2, 8);
             this.e.setOnClickListener(new SingleClickProxy(this));
             this.f.setOnClickListener(new SingleClickProxy(this));
@@ -1989,9 +1954,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.i.setText(R.string.feed_chatting);
             } else {
                 this.i.setText(DistanceUtils.a(this.b.distance, BlueAppLocal.c(), false));
-                DistanceUtils.a(FeedListAdapterForRecyclerView.this.f19617a, this.i, this.b.is_hide_distance, 0);
+                DistanceUtils.a(FeedListAdapterForRecyclerView.this.a, this.i, this.b.is_hide_distance, 0);
                 TextView textView = this.i;
-                textView.setText(this.i.getText().toString() + " " + FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_living));
+                textView.setText(this.i.getText().toString() + " " + FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_living));
             }
             if (TextUtils.isEmpty(this.b.room_name)) {
                 this.j.setVisibility(8);
@@ -1999,18 +1964,18 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.j.setVisibility(0);
                 this.j.setText(this.b.room_name);
             }
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.b.room_pic).a(this.m);
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.b.room_pic).d().a(this.n);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.b.room_pic).a(this.m);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.b.room_pic).d().a(this.n);
             this.n.setOnClickListener(new SingleClickProxy(this));
             TextView textView2 = this.o;
-            textView2.setText(this.b.realtime_count + FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_living_count));
+            textView2.setText(this.b.realtime_count + FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_living_count));
             this.p.setOnClickListener(new SingleClickProxy(this));
             this.k.setText(this.b.user_name);
         }
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
-            this.f19659c = i;
+            this.c = i;
             a();
             if (bluedIngSelfFeed == null || bluedIngSelfFeed.isShowUrlVisited) {
                 return;
@@ -2026,13 +1991,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             int id = view.getId();
             if (id != R.id.iv_header && id != R.id.tv_name) {
                 if ((id == R.id.root_view || id == R.id.iv_cover || id == R.id.tv_to_live || id == R.id.img_item_background) && this.b != null) {
-                    EventTrackFeed.a(EventTrackFeed.a(FeedProtos.Event.CITY_YY_USER_CLICK, this.b, FeedListAdapterForRecyclerView.this.d, this.f19659c).setTargetUid(EventTrackFeed.a(this.b.uid)).setLiveId(this.b.room_id));
-                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.f19617a, this.b.room_id, "city_all_yy_insert");
+                    EventTrackFeed.a(EventTrackFeed.a(FeedProtos.Event.CITY_YY_USER_CLICK, this.b, FeedListAdapterForRecyclerView.this.d, this.c).setTargetUid(EventTrackFeed.a(this.b.uid)).setLiveId(this.b.room_id));
+                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.a, this.b.room_id, "city_all_yy_insert");
                     return;
                 }
                 return;
             }
-            String a2 = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.b.is_vote);
+            String a = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.b.is_vote);
             UserBasicModel userBasicModel = new UserBasicModel();
             userBasicModel.uid = this.b.uid;
             userBasicModel.avatar = this.b.user_avatar;
@@ -2061,7 +2026,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             logData.is_hot_feed = this.b.is_hot_feed;
             logData.listMode = "";
             logData.strong_insert_data = this.b.strong_insert_data;
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, userBasicModel, a2, false, (View) this.e, logData, b);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, userBasicModel, a, false, (View) this.e, logData, b);
             CommunityHttpUtils.a(this.b.click_url);
         }
     }
@@ -2079,9 +2044,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             super(view);
             this.A = a(R.id.feed_comment);
             this.E = (RelativeLayout) a(R.id.repost_layout);
-            this.B = (TextViewFixTouchForDynamic) a(R.id.repost_content_view);
+            this.B = a(R.id.repost_content_view);
             this.C = (ShapeLinearLayout) a(R.id.ll_content_all);
-            this.D = (TextViewFixTouchForDynamic) a(R.id.content_view);
+            this.D = a(R.id.content_view);
         }
 
         private void b(BluedIngSelfFeed bluedIngSelfFeed) {
@@ -2092,17 +2057,17 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 return;
             }
             ShapeHelper.b(this.C, R.color.syc_x);
-            int a2 = DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 10.0f);
-            this.C.setPadding(a2, a2, a2, a2);
+            int a = DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 10.0f);
+            this.C.setPadding(a, a, a, a);
             if (TextUtils.isEmpty(bluedIngSelfFeed.feed_content)) {
                 this.B.setVisibility(8);
             } else {
                 this.B.setVisibility(0);
                 a(this.E, this.B, m().getFeedContent(), (String) null);
             }
-            CharSequence a3 = StringUtils.a(StringUtils.a(w().feed_limit_desc, (int) this.D.getTextSize(), 0), true, new boolean[0]);
+            CharSequence a2 = StringUtils.a(StringUtils.a(w().feed_limit_desc, (int) this.D.getTextSize(), 0), true, new boolean[0]);
             this.D.setMaxLines(5);
-            this.D.setExpandText(a3);
+            this.D.setExpandText(a2);
             this.D.setMovementMethod(LinkMovementClickMethod.a());
             this.D.setVisibility(0);
         }
@@ -2138,8 +2103,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(View view) {
-            FeedListAdapterForRecyclerView.this.a(w().activity_id, (String) null, FeedProtos.SourcePage.ACTIVITY_FEED, this.f19641a);
-            EventTrackFeed.a(FeedProtos.Event.CITY_ACTIVITY_CARD_CLICK, w().activity_id, this.W, w().strong_insert_data, "", this.f19641a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.o);
+            FeedListAdapterForRecyclerView.this.a(w().activity_id, (String) null, FeedProtos.SourcePage.ACTIVITY_FEED, this.a);
+            EventTrackFeed.a(FeedProtos.Event.CITY_ACTIVITY_CARD_CLICK, w().activity_id, this.W, w().strong_insert_data, "", this.a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.o);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.ShareEventViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -2153,7 +2118,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.g.setVisibility(0);
             }
             this.h.setVisibility(8);
-            FeedMethods.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed, this.X, this.U, this.Y, this.Z, "", FeedListAdapterForRecyclerView.this.f19618c);
+            FeedMethods.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed, this.X, this.U, this.Y, this.Z, "", FeedListAdapterForRecyclerView.this.c);
             if (this.Y.getVisibility() == 0) {
                 this.aa.setVisibility(0);
             } else {
@@ -2185,7 +2150,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected void h() {
-            FeedListAdapterForRecyclerView.this.e(this.f19641a, this.W);
+            FeedListAdapterForRecyclerView.this.e(this.a, this.W);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder, android.view.View.OnClickListener
@@ -2201,14 +2166,14 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.r.setVisibility(8);
             this.o.setVisibility(4);
             this.t.setVisibility(0);
-            this.V.setText(FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.view_detail));
+            this.V.setText(FeedListAdapterForRecyclerView.this.a.getString(R.string.view_detail));
             this.t.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.EventCardViewHolder.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    CommunityHttpUtils.a(EventCardViewHolder.this.f19641a.click_url);
-                    FeedListAdapterForRecyclerView.this.a(EventCardViewHolder.this.w().activity_id, (String) null, FeedProtos.SourcePage.ACTIVITY_FEED, EventCardViewHolder.this.f19641a);
-                    EventTrackFeed.a(FeedProtos.Event.CITY_ACTIVITY_GO_DETAIL_CLICK, EventCardViewHolder.this.w().activity_id, EventCardViewHolder.this.W, EventCardViewHolder.this.f19641a.strong_insert_data, "", EventCardViewHolder.this.f19641a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.o);
+                    CommunityHttpUtils.a(EventCardViewHolder.this.a.click_url);
+                    FeedListAdapterForRecyclerView.this.a(EventCardViewHolder.this.w().activity_id, (String) null, FeedProtos.SourcePage.ACTIVITY_FEED, EventCardViewHolder.this.a);
+                    EventTrackFeed.a(FeedProtos.Event.CITY_ACTIVITY_GO_DETAIL_CLICK, EventCardViewHolder.this.w().activity_id, EventCardViewHolder.this.W, EventCardViewHolder.this.a.strong_insert_data, "", EventCardViewHolder.this.a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this.o);
                 }
             });
         }
@@ -2294,7 +2259,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             circleListToDetailParams.setSource(EventTrackFeed.j(FeedListAdapterForRecyclerView.this.d));
             circleListToDetailParams.setShowCircleEntry(true);
             circleListToDetailParams.setMode("");
-            CirclePostDetailsFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed, circleListToDetailParams);
+            CirclePostDetailsFragment.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed, circleListToDetailParams);
         }
 
         private void q() {
@@ -2306,15 +2271,15 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.x.setVisibility(8);
             this.A.setVisibility(4);
             this.B.setVisibility(0);
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.f19641a.cover).b(R.drawable.circle_header_default).a(5.0f).a(this.C);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.a.cover).b(R.drawable.circle_header_default).a(5.0f).a(this.C);
             TextView textView = this.D;
-            textView.setText(this.f19641a.circle_title + "圈子");
-            this.E.setVisibility(this.f19641a.is_anonym == 1 ? 0 : 8);
+            textView.setText(this.a.circle_title + "圈子");
+            this.E.setVisibility(this.a.is_anonym == 1 ? 0 : 8);
             if (FeedListAdapterForRecyclerView.this.i() || FeedListAdapterForRecyclerView.this.j()) {
-                if (this.f19641a.isNotMember()) {
+                if (this.a.isNotMember()) {
                     this.F.setVisibility(0);
                     TextView textView2 = this.F;
-                    textView2.setText(this.f19641a.members_num + FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.members_count));
+                    textView2.setText(this.a.members_num + FeedListAdapterForRecyclerView.this.a.getString(R.string.members_count));
                 } else {
                     this.F.setVisibility(0);
                     this.F.setText(R.string.circle_joined_recommend);
@@ -2332,16 +2297,16 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void s() {
-            if (!this.f19641a.isNotMember() || (!FeedListAdapterForRecyclerView.this.i() && !FeedListAdapterForRecyclerView.this.j())) {
+            if (!this.a.isNotMember() || (!FeedListAdapterForRecyclerView.this.i() && !FeedListAdapterForRecyclerView.this.j())) {
                 this.H.setVisibility(8);
                 return;
             }
             this.H.setVisibility(0);
-            this.H.setJoinStatus(this.f19641a.getJoinState());
+            this.H.setJoinStatus(this.a.getJoinState());
         }
 
         private void t() {
-            CircleDetailsFragment.a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.circle_id, FeedListAdapterForRecyclerView.this.d);
+            CircleDetailsFragment.a(FeedListAdapterForRecyclerView.this.a, this.a.circle_id, FeedListAdapterForRecyclerView.this.d);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -2385,13 +2350,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected boolean g() {
-            return CircleMethods.a(this.f19641a);
+            return CircleMethods.a(this.a);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected void h() {
             if (g()) {
-                FeedListAdapterForRecyclerView.this.b(this.f19641a, this.d);
+                FeedListAdapterForRecyclerView.this.b(this.a, this.d);
             } else {
                 super.h();
             }
@@ -2405,19 +2370,19 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (id == R.id.circle_header_view || id == R.id.circle_name_view) {
                 t();
             } else if (id == R.id.circle_menu_view) {
-                FeedMethods.a(FeedListAdapterForRecyclerView.this.f19617a, this.H, this.F, this.f19641a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this, this.d, "", FeedListAdapterForRecyclerView.this.f19618c);
+                FeedMethods.a(FeedListAdapterForRecyclerView.this.a, this.H, this.F, this.a, FeedListAdapterForRecyclerView.this.d, FeedListAdapterForRecyclerView.this, this.d, "", FeedListAdapterForRecyclerView.this.c);
             } else if (id == R.id.cjv_join) {
-                FeedMethods.a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a, FeedListAdapterForRecyclerView.this.d, this.H, this.F, "", FeedListAdapterForRecyclerView.this.f19618c);
+                FeedMethods.a(FeedListAdapterForRecyclerView.this.a, this.a, FeedListAdapterForRecyclerView.this.d, this.H, this.F, "", FeedListAdapterForRecyclerView.this.c);
             }
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected void p() {
-            if (!g() || this.f19641a.feed_status != 200) {
+            if (!g() || this.a.feed_status != 200) {
                 super.p();
-            } else if (UserInfoHelper.a(this.f19641a.relationship)) {
+            } else if (UserInfoHelper.a(this.a.relationship)) {
             } else {
-                CommunityShareUtils.b().a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a, FeedListAdapterForRecyclerView.this.d);
+                CommunityShareUtils.b().a(FeedListAdapterForRecyclerView.this.a, this.a, FeedListAdapterForRecyclerView.this.d);
             }
         }
     }
@@ -2434,8 +2399,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public ImageOneFeedViewHolder(View view) {
             super(view);
-            this.A = (TextViewFixTouchForDynamic) a(R.id.content_view);
-            this.B = (CardView) a(R.id.cv_image_one);
+            this.A = a(R.id.content_view);
+            this.B = a(R.id.cv_image_one);
             this.C = (ImageView) a(R.id.image_one);
             this.D = (ShapeTextView) a(R.id.stv_long_pic_icon);
         }
@@ -2445,20 +2410,20 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (w.feed_pics == null || w.feed_pics.length <= 0) {
                 this.B.setVisibility(8);
                 this.C.setVisibility(8);
-                ((ViewGroup.MarginLayoutParams) this.A.getLayoutParams()).bottomMargin = DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 2.0f);
+                ((ViewGroup.MarginLayoutParams) this.A.getLayoutParams()).bottomMargin = DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 2.0f);
                 return;
             }
             this.B.setVisibility(0);
             this.C.setVisibility(0);
-            ((ViewGroup.MarginLayoutParams) this.A.getLayoutParams()).bottomMargin = DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 10.0f);
+            ((ViewGroup.MarginLayoutParams) this.A.getLayoutParams()).bottomMargin = DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 10.0f);
             try {
                 if (w.feed_pics_width.length == 0 || w.feed_pics_height.length == 0) {
                     w.feed_pics_width = new String[]{"480"};
                     w.feed_pics_height = new String[]{"480"};
                 }
-                int a2 = StringUtils.a(w.feed_pics_width[0], 0);
-                int a3 = StringUtils.a(w.feed_pics_height[0], 0);
-                int[] b = FeedMethods.b(FeedListAdapterForRecyclerView.this.f19617a, a2, a3, this.f19641a.isRepost());
+                int a = StringUtils.a(w.feed_pics_width[0], 0);
+                int a2 = StringUtils.a(w.feed_pics_height[0], 0);
+                int[] b = FeedMethods.b(FeedListAdapterForRecyclerView.this.a, a, a2, this.a.isRepost());
                 ViewGroup.LayoutParams layoutParams = this.C.getLayoutParams();
                 layoutParams.width = b[0];
                 boolean z = true;
@@ -2467,17 +2432,17 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.E = w.feed_pics[0];
                 String str = w.feed_pics[0];
                 int i = layoutParams.width;
-                if (a2 != a3) {
+                if (a != a2) {
                     z = false;
                 }
                 this.F = AvatarUtils.a(str, i, z);
-                if (a3 > a2 * 3) {
+                if (a2 > a * 3) {
                     this.D.setVisibility(0);
                     this.F = w.feed_pics[0] + w.getImageMogr(false);
                 } else {
                     this.D.setVisibility(8);
                 }
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.F).a(FeedListAdapterForRecyclerView.this.B).a(this.C);
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.F).a(FeedListAdapterForRecyclerView.this.B).a(this.C);
                 this.C.setOnClickListener(new SingleClickProxy(this));
                 this.b = w.feed_pics[0];
                 if (Build.VERSION.SDK_INT >= 21) {
@@ -2489,21 +2454,21 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         private void r() {
             if (g()) {
-                EventTrackFeed.a(FeedProtos.Event.NOTE_IMAGE_CLICK, this.f19641a.circle_id, this.f19641a.feed_id, EventTrackFeed.j(FeedListAdapterForRecyclerView.this.d), "");
+                EventTrackFeed.a(FeedProtos.Event.NOTE_IMAGE_CLICK, this.a.circle_id, this.a.feed_id, EventTrackFeed.j(FeedListAdapterForRecyclerView.this.d), "");
             }
             if (UserInfoHelper.a(w().relationship)) {
                 return;
             }
             if (w().isCirclePost()) {
-                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, new String[]{this.E}, 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, w().user_name, this.C, this.E);
+                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, new String[]{this.E}, 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, w().user_name, this.C, this.E);
             } else {
-                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, w(), 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, w().user_name, FeedListAdapterForRecyclerView.this.d);
+                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, w(), 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, w().user_name, FeedListAdapterForRecyclerView.this.d);
             }
             NearbyFeedFragment.q = SystemClock.elapsedRealtime();
             if (FeedListAdapterForRecyclerView.this.b != null && (FeedListAdapterForRecyclerView.this.b instanceof RecommendFeedFragment)) {
                 ((RecommendFeedFragment) FeedListAdapterForRecyclerView.this.b).c(this.d);
             }
-            FeedListAdapterForRecyclerView.this.a(2, this.f19641a);
+            FeedListAdapterForRecyclerView.this.a(2, this.a);
             LogData logData = new LogData();
             logData.id = w().feed_id;
             logData.from = FeedListAdapterForRecyclerView.this.e + "";
@@ -2542,11 +2507,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public ImageOtherFeedViewHolder(View view) {
             super(view);
-            this.A = (PhotoGridView) a(R.id.image_other);
+            this.A = a(R.id.image_other);
         }
 
         private void q() {
-            this.A.setAdapter((ListAdapter) new PhotoAdapter(w()));
+            this.A.setAdapter(new PhotoAdapter(w()));
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.FeedOrCircleViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -2569,11 +2534,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public ImageTwoFourFeedViewHolder(View view) {
             super(view);
-            this.A = (PhotoGridView) a(R.id.image_two_four);
+            this.A = a(R.id.image_two_four);
         }
 
         private void q() {
-            this.A.setAdapter((ListAdapter) new PhotoAdapter(w()));
+            this.A.setAdapter(new PhotoAdapter(w()));
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.FeedOrCircleViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -2592,9 +2557,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$LiveFeedViewHolder.class */
     public class LiveFeedViewHolder implements View.OnClickListener {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19663c;
+        private int c;
         private LinearLayout d;
         private ImageView e;
         private TextView f;
@@ -2631,7 +2594,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         private void a() {
             this.d.setOnClickListener(new SingleClickProxy(this));
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(0, this.b.user_avatar)).b(R.drawable.user_bg_round).c().a(this.e);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(0, this.b.user_avatar)).b(R.drawable.user_bg_round).c().a(this.e);
             this.f.setText(this.b.user_name);
             UserBasicModel userBasicModel = new UserBasicModel();
             userBasicModel.vip_grade = this.b.vip_grade;
@@ -2639,8 +2602,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             userBasicModel.is_hide_vip_look = this.b.is_hide_vip_look;
             userBasicModel.vip_exp_lvl = this.b.vip_exp_lvl;
             userBasicModel.uid = this.b.feed_id;
-            UserInfoHelper.a(FeedListAdapterForRecyclerView.this.f19617a, this.f, userBasicModel);
-            UserInfoHelper.a(this.h, userBasicModel, FeedListAdapterForRecyclerView.this.f19618c);
+            UserInfoHelper.a(FeedListAdapterForRecyclerView.this.a, this.f, userBasicModel);
+            UserInfoHelper.a(this.h, userBasicModel, FeedListAdapterForRecyclerView.this.c);
             UserInfoHelper.b(this.g, this.b.vbadge, 2, 8);
             this.e.setOnClickListener(new SingleClickProxy(this));
             this.f.setOnClickListener(new SingleClickProxy(this));
@@ -2648,9 +2611,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.i.setText(R.string.feed_living);
             } else {
                 this.i.setText(DistanceUtils.a(this.b.distance, BlueAppLocal.c(), false));
-                DistanceUtils.a(FeedListAdapterForRecyclerView.this.f19617a, this.i, this.b.is_hide_distance, 0);
+                DistanceUtils.a(FeedListAdapterForRecyclerView.this.a, this.i, this.b.is_hide_distance, 0);
                 TextView textView = this.i;
-                textView.setText(this.i.getText().toString() + " " + FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_living));
+                textView.setText(this.i.getText().toString() + " " + FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_living));
             }
             if (TextUtils.isEmpty(this.b.feed_content)) {
                 this.j.setVisibility(8);
@@ -2670,11 +2633,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                         this.b.feed_pics_width = new String[]{"480"};
                         this.b.feed_pics_height = new String[]{"480"};
                     }
-                    int[] a2 = FeedMethods.a(FeedListAdapterForRecyclerView.this.f19617a, StringUtils.a(this.b.feed_pics_width[0], 0), StringUtils.a(this.b.feed_pics_height[0], 0), false);
+                    int[] a = FeedMethods.a(FeedListAdapterForRecyclerView.this.a, StringUtils.a(this.b.feed_pics_width[0], 0), StringUtils.a(this.b.feed_pics_height[0], 0), false);
                     ViewGroup.LayoutParams layoutParams = this.l.getLayoutParams();
-                    layoutParams.width = a2[0];
-                    layoutParams.height = a2[1];
-                    ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(this.b.feed_pics[0], layoutParams.width)).a(FeedListAdapterForRecyclerView.this.B).a(this.l);
+                    layoutParams.width = a[0];
+                    layoutParams.height = a[1];
+                    ImageLoader.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(this.b.feed_pics[0], layoutParams.width)).a(FeedListAdapterForRecyclerView.this.B).a(this.l);
                     this.l.setOnClickListener(new SingleClickProxy(this));
                     if (Build.VERSION.SDK_INT >= 21) {
                         this.l.setTransitionName(this.b.feed_pics[0]);
@@ -2686,14 +2649,14 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             }
             this.m.setImageResource(CommunityServiceManager.e().f(this.b.link_type));
             TextView textView2 = this.n;
-            textView2.setText(this.b.realtime_count + FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_living_count));
+            textView2.setText(this.b.realtime_count + FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_living_count));
             this.o.setOnClickListener(new SingleClickProxy(this));
-            FeedListAdapterForRecyclerView.this.f(this.b, this.f19663c);
+            FeedListAdapterForRecyclerView.this.f(this.b, this.c);
         }
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
-            this.f19663c = i;
+            this.c = i;
             a();
         }
 
@@ -2703,12 +2666,12 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             int id = view.getId();
             if (id != R.id.iv_header && id != R.id.tv_name) {
                 if (id == R.id.root_view || id == R.id.iv_cover || id == R.id.tv_to_live) {
-                    FeedListAdapterForRecyclerView.this.g(this.b, this.f19663c);
+                    FeedListAdapterForRecyclerView.this.g(this.b, this.c);
                     return;
                 }
                 return;
             }
-            String a2 = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.b.is_vote);
+            String a = FeedMethods.a(FeedListAdapterForRecyclerView.this.d, this.b.is_vote);
             UserBasicModel userBasicModel = new UserBasicModel();
             userBasicModel.uid = this.b.uid;
             userBasicModel.avatar = this.b.user_avatar;
@@ -2737,7 +2700,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             logData.is_hot_feed = this.b.is_hot_feed;
             logData.listMode = "";
             logData.strong_insert_data = this.b.strong_insert_data;
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, userBasicModel, a2, false, (View) this.e, logData, b);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, userBasicModel, a, false, (View) this.e, logData, b);
             NearbyFeedFragment.r = SystemClock.elapsedRealtime();
             CommunityHttpUtils.a(this.b.click_url);
         }
@@ -2755,10 +2718,10 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         public NoneFeedViewHolder(View view) {
             super(view);
             this.A = a(R.id.feed_comment);
-            this.B = (TextViewFixTouchForDynamic) a(R.id.repost_content_view);
+            this.B = a(R.id.repost_content_view);
             this.E = (RelativeLayout) a(R.id.repost_layout);
             this.C = (ShapeLinearLayout) a(R.id.ll_content_all);
-            this.D = (TextViewFixTouchForDynamic) a(R.id.content_view);
+            this.D = a(R.id.content_view);
         }
 
         private void b(BluedIngSelfFeed bluedIngSelfFeed) {
@@ -2767,11 +2730,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.B.setVisibility(8);
             this.E.setVisibility(0);
             ShapeHelper.b(this.C, R.color.syc_x);
-            int a2 = DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 10.0f);
-            this.C.setPadding(a2, a2, a2, a2);
-            CharSequence a3 = StringUtils.a(StringUtils.a(bluedIngSelfFeed.see_limit_desc, (int) this.D.getTextSize(), 0), true, new boolean[0]);
+            int a = DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 10.0f);
+            this.C.setPadding(a, a, a, a);
+            CharSequence a2 = StringUtils.a(StringUtils.a(bluedIngSelfFeed.see_limit_desc, (int) this.D.getTextSize(), 0), true, new boolean[0]);
             this.D.setMaxLines(5);
-            this.D.setExpandText(a3);
+            this.D.setExpandText(a2);
             this.D.setMovementMethod(LinkMovementClickMethod.a());
             this.D.setVisibility(0);
         }
@@ -2797,9 +2760,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$PhotoAdapter$ViewHolder.class */
         class ViewHolder {
-
-            /* renamed from: a  reason: collision with root package name */
-            ImageView f19667a;
+            ImageView a;
             ShapeTextView b;
 
             private ViewHolder() {
@@ -2836,9 +2797,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             int i3;
             float f;
             if (view == null) {
-                view = LayoutInflater.from(FeedListAdapterForRecyclerView.this.f19617a).inflate(R.layout.fragment_feed_grid_item, (ViewGroup) null);
+                view = LayoutInflater.from(FeedListAdapterForRecyclerView.this.a).inflate(R.layout.fragment_feed_grid_item, (ViewGroup) null);
                 viewHolder = new ViewHolder();
-                viewHolder.f19667a = (ImageView) view.findViewById(R.id.photo_view);
+                viewHolder.a = (ImageView) view.findViewById(R.id.photo_view);
                 viewHolder.b = (ShapeTextView) view.findViewById(R.id.stv_long_pic_icon);
                 view.setTag(viewHolder);
             } else {
@@ -2865,9 +2826,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 if (split.length == 2) {
                     f2 = Float.valueOf(split[0]).floatValue();
                     f = Float.valueOf(split[1]).floatValue();
-                    ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, str2).b(R.color.default_place_color).a(6.0f).a(f2, f).a(viewHolder.f19667a);
+                    ImageLoader.a(FeedListAdapterForRecyclerView.this.c, str2).b(R.color.default_place_color).a(6.0f).a(f2, f).a(viewHolder.a);
                     final ViewHolder viewHolder2 = viewHolder;
-                    viewHolder.f19667a.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.PhotoAdapter.1
+                    viewHolder.a.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.PhotoAdapter.1
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view2) {
                             int i4;
@@ -2893,9 +2854,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                             logData.type = PhotoAdapter.this.b.recommend_text;
                             CommunityServiceManager.d().a(logData);
                             if (PhotoAdapter.this.b.isCirclePost()) {
-                                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, PhotoAdapter.this.b.feed_pics, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, viewHolder2.f19667a, str);
+                                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, PhotoAdapter.this.b.feed_pics, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, viewHolder2.a, str);
                             } else {
-                                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, PhotoAdapter.this.b, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, FeedListAdapterForRecyclerView.this.d);
+                                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, PhotoAdapter.this.b, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, FeedListAdapterForRecyclerView.this.d);
                             }
                             NearbyFeedFragment.q = SystemClock.elapsedRealtime();
                             int i5 = 0;
@@ -2917,14 +2878,14 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                             FeedListAdapterForRecyclerView.this.a(2, PhotoAdapter.this.b);
                         }
                     }));
-                    viewHolder.f19667a.setTransitionName(str);
+                    viewHolder.a.setTransitionName(str);
                     return view;
                 }
             }
             f = -1.0f;
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, str2).b(R.color.default_place_color).a(6.0f).a(f2, f).a(viewHolder.f19667a);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, str2).b(R.color.default_place_color).a(6.0f).a(f2, f).a(viewHolder.a);
             final ViewHolder viewHolder22 = viewHolder;
-            viewHolder.f19667a.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.PhotoAdapter.1
+            viewHolder.a.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.PhotoAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
                     int i4;
@@ -2950,9 +2911,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     logData.type = PhotoAdapter.this.b.recommend_text;
                     CommunityServiceManager.d().a(logData);
                     if (PhotoAdapter.this.b.isCirclePost()) {
-                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, PhotoAdapter.this.b.feed_pics, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, viewHolder22.f19667a, str);
+                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, PhotoAdapter.this.b.feed_pics, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, viewHolder22.a, str);
                     } else {
-                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, PhotoAdapter.this.b, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, FeedListAdapterForRecyclerView.this.d);
+                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, PhotoAdapter.this.b, i, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, PhotoAdapter.this.b.user_name, FeedListAdapterForRecyclerView.this.d);
                     }
                     NearbyFeedFragment.q = SystemClock.elapsedRealtime();
                     int i5 = 0;
@@ -2974,7 +2935,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     FeedListAdapterForRecyclerView.this.a(2, PhotoAdapter.this.b);
                 }
             }));
-            viewHolder.f19667a.setTransitionName(str);
+            viewHolder.a.setTransitionName(str);
             return view;
         }
     }
@@ -2983,9 +2944,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendChatRoomViewHolder.class */
     public class RecommendChatRoomViewHolder {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19670c;
+        private int c;
         private TextView d;
         private ImageView e;
         private RecyclerView f;
@@ -3000,7 +2959,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.d = (TextView) view.findViewById(R.id.tv_more);
             this.e = (ImageView) view.findViewById(R.id.iv_more);
             this.f = (RecyclerView) view.findViewById(R.id.recycler_view);
-            this.f.setLayoutManager(new LinearLayoutManager(FeedListAdapterForRecyclerView.this.f19617a));
+            this.f.setLayoutManager(new LinearLayoutManager(FeedListAdapterForRecyclerView.this.a));
         }
 
         private void a() {
@@ -3008,7 +2967,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.f19617a, "plaza_recommend_yy_more");
+                    CommunityServiceManager.b().c(FeedListAdapterForRecyclerView.this.a, "plaza_recommend_yy_more");
                 }
             });
             this.d.setOnClickListener(singleClickProxy);
@@ -3026,7 +2985,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
-            this.f19670c = i;
+            this.c = i;
             a();
             if (FeedListAdapterForRecyclerView.this.z != null) {
                 FeedListAdapterForRecyclerView.this.z.a(i);
@@ -3040,9 +2999,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendCircleViewHolder.class */
     public class RecommendCircleViewHolder {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19673c;
+        private int c;
         private TextView d;
         private ImageView e;
         private RecyclerView f;
@@ -3057,8 +3014,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.d = (TextView) view.findViewById(R.id.tv_more);
             this.e = (ImageView) view.findViewById(R.id.iv_more);
             this.f = (RecyclerView) view.findViewById(R.id.recycler_view);
-            this.f.setLayoutManager(new LinearLayoutManager(FeedListAdapterForRecyclerView.this.f19617a) { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RecommendCircleViewHolder.1
-                @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+            this.f.setLayoutManager(new LinearLayoutManager(FeedListAdapterForRecyclerView.this.a) { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RecommendCircleViewHolder.1
                 public boolean canScrollVertically() {
                     return false;
                 }
@@ -3071,7 +3027,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     EventTrackFeed.a(FeedProtos.Event.CIRCLE_FIND_PAGE_SHOW, FeedProtos.CircleSource.PLAZA_RECOMMEND_CIRCLE);
-                    CircleTypeListFragment.f19307a.a(FeedListAdapterForRecyclerView.this.f19617a, FeedProtos.SourcePage.FEED_PLAZA_RECOMMEND_MORE);
+                    CircleTypeListFragment.a.a(FeedListAdapterForRecyclerView.this.a, FeedProtos.SourcePage.FEED_PLAZA_RECOMMEND_MORE);
                 }
             });
             this.d.setOnClickListener(singleClickProxy);
@@ -3089,7 +3045,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
-            this.f19673c = i;
+            this.c = i;
             a();
             b();
         }
@@ -3098,9 +3054,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendRefreshGuideViewHolder.class */
     public class RecommendRefreshGuideViewHolder {
         private View b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private BaseViewHolder f19677c;
+        private BaseViewHolder c;
         private View d;
         private SVGAImageView e;
 
@@ -3108,17 +3062,15 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         /* renamed from: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView$RecommendRefreshGuideViewHolder$1  reason: invalid class name */
         /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendRefreshGuideViewHolder$1.class */
         public class AnonymousClass1 implements SVGACallback {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ int f19678a;
+            final /* synthetic */ int a;
 
             AnonymousClass1(int i) {
-                this.f19678a = i;
+                this.a = i;
             }
 
             /* JADX INFO: Access modifiers changed from: private */
             public /* synthetic */ void a(int i) {
-                if (FeedListAdapterForRecyclerView.this.f19618c == null || !FeedListAdapterForRecyclerView.this.f19618c.isActive() || FeedListAdapterForRecyclerView.this.getData().size() <= i) {
+                if (FeedListAdapterForRecyclerView.this.c == null || !FeedListAdapterForRecyclerView.this.c.isActive() || FeedListAdapterForRecyclerView.this.getData().size() <= i) {
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
@@ -3145,13 +3097,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
             @Override // com.blued.android.module.svgaplayer.SVGACallback
             public void onFinished() {
-                if (FeedListAdapterForRecyclerView.this.f19618c == null || !FeedListAdapterForRecyclerView.this.f19618c.isActive()) {
+                if (FeedListAdapterForRecyclerView.this.c == null || !FeedListAdapterForRecyclerView.this.c.isActive()) {
                     LogUtils.c("推荐下滑 页面已关闭");
                     return;
                 }
-                LogUtils.c("推荐下滑 推荐提示条与骨架屏占位动画finish， position:" + this.f19678a);
+                LogUtils.c("推荐下滑 推荐提示条与骨架屏占位动画finish， position:" + this.a);
                 Handler n = AppInfo.n();
-                final int i = this.f19678a;
+                final int i = this.a;
                 n.postDelayed(new Runnable() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$RecommendRefreshGuideViewHolder$1$NlHthMNJjmC2XNEhRg4CtosMIJI
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -3175,9 +3127,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public RecommendRefreshGuideViewHolder(BaseViewHolder baseViewHolder, View view) {
             this.b = view;
-            this.f19677c = baseViewHolder;
+            this.c = baseViewHolder;
             this.d = baseViewHolder.getView(R.id.recommend_refresh_guide_content);
-            this.e = (SVGAImageView) this.f19677c.getView(R.id.recommend_refresh_guide_arrow_iv);
+            this.e = (SVGAImageView) this.c.getView(R.id.recommend_refresh_guide_arrow_iv);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -3192,7 +3144,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (bluedIngSelfFeed == null) {
                 return;
             }
-            new SVGAPlayer.Builder().a(CommunityManager.f19086a.a().s() ? "recommend_refresh_guide_arrow_dark.svga" : "recommend_refresh_guide_arrow.svga").a((Integer) 1).a(this.e);
+            new SVGAPlayer.Builder().a(CommunityManager.a.a().s() ? "recommend_refresh_guide_arrow_dark.svga" : "recommend_refresh_guide_arrow.svga").a((Integer) 1).a(this.e);
             this.e.setCallback(new AnonymousClass1(i));
             if (bluedIngSelfFeed.playAnimType == 7) {
                 LogUtils.c("推荐下滑 执行推荐提示条与骨架屏占位动画， position:" + i);
@@ -3224,9 +3176,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendSubjectViewHolder.class */
     public class RecommendSubjectViewHolder {
         private View b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private BaseViewHolder f19680c;
+        private BaseViewHolder c;
         private int d;
         private ImageView e;
         private RecyclerView f;
@@ -3238,14 +3188,12 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         /* renamed from: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView$RecommendSubjectViewHolder$1  reason: invalid class name */
         /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendSubjectViewHolder$1.class */
         public class AnonymousClass1 extends CommonRecycleAdapter<String> {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ FeedListAdapterForRecyclerView f19681a;
+            final /* synthetic */ FeedListAdapterForRecyclerView a;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             AnonymousClass1(Context context, FeedListAdapterForRecyclerView feedListAdapterForRecyclerView) {
                 super(context);
-                this.f19681a = feedListAdapterForRecyclerView;
+                this.a = feedListAdapterForRecyclerView;
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -3266,7 +3214,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 marginLayoutParams.width = RecommendSubjectViewHolder.this.d;
                 marginLayoutParams.height = RecommendSubjectViewHolder.this.d;
                 imageView.setLayoutParams(marginLayoutParams);
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, str).d(R.drawable.defaultpicture).a(4.0f).a(imageView);
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, str).d(R.drawable.defaultpicture).a(4.0f).a(imageView);
                 commonAdapterHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$RecommendSubjectViewHolder$1$zJpMP_57esDV_IX7R1CLIcSniIk
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -3289,15 +3237,15 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 marginLayoutParams.rightMargin = FeedListAdapterForRecyclerView.this.J;
                 this.b.setLayoutParams(marginLayoutParams);
             }
-            this.f19680c = baseViewHolder;
+            this.c = baseViewHolder;
             this.d = ((AppInfo.l - ((FeedListAdapterForRecyclerView.this.J > 0 ? FeedListAdapterForRecyclerView.this.J : FeedMethods.c(12)) * 2)) - FeedMethods.c(8)) / 3;
-            this.e = (ImageView) this.f19680c.getView(R.id.iv_avatar);
-            if (CommunityManager.f19086a.a().s()) {
-                this.f19680c.setImageResource(R.id.iv_icon, R.drawable.feed_post_subject_icon);
+            this.e = (ImageView) this.c.getView(R.id.iv_avatar);
+            if (CommunityManager.a.a().s()) {
+                this.c.setImageResource(R.id.iv_icon, R.drawable.feed_post_subject_icon);
             } else {
-                this.f19680c.setImageResource(R.id.iv_icon, R.drawable.feed_post_subject_icon_dark);
+                this.c.setImageResource(R.id.iv_icon, R.drawable.feed_post_subject_icon_dark);
             }
-            this.f = (RecyclerView) this.f19680c.getView(R.id.rv_subject);
+            this.f = this.c.getView(R.id.rv_subject);
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), 0, false);
             this.g = linearLayoutManager;
             this.f.setLayoutManager(linearLayoutManager);
@@ -3308,7 +3256,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(BluedIngSelfFeed bluedIngSelfFeed, View view) {
-            CommRouteUtil.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed.super_insert_floor.super_did, (String) null, bluedIngSelfFeed.super_insert_floor.tt_ids);
+            CommRouteUtil.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed.super_insert_floor.super_did, (String) null, bluedIngSelfFeed.super_insert_floor.tt_ids);
         }
 
         public void a(final BluedIngSelfFeed bluedIngSelfFeed, int i) {
@@ -3316,9 +3264,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 return;
             }
             this.i = bluedIngSelfFeed;
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, bluedIngSelfFeed.super_insert_floor.avatar).a(9.0f).a(this.e);
-            this.f19680c.setText(R.id.tv_name, bluedIngSelfFeed.super_insert_floor.name);
-            this.f19680c.setText(R.id.tv_desc, CommonStringUtils.b(bluedIngSelfFeed.super_insert_floor.visited_total) + FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.recommend_subject_visit_count));
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, bluedIngSelfFeed.super_insert_floor.avatar).a(9.0f).a(this.e);
+            this.c.setText(R.id.tv_name, bluedIngSelfFeed.super_insert_floor.name);
+            this.c.setText(R.id.tv_desc, CommonStringUtils.b(bluedIngSelfFeed.super_insert_floor.visited_total) + FeedListAdapterForRecyclerView.this.a.getString(R.string.recommend_subject_visit_count));
             if (bluedIngSelfFeed.super_insert_floor.tt_image != null) {
                 if (bluedIngSelfFeed.super_insert_floor.tt_image.size() > 3) {
                     this.h.setDataAndNotify(bluedIngSelfFeed.super_insert_floor.tt_image.subList(0, 3));
@@ -3344,9 +3292,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendTopicViewHolder.class */
     public class RecommendTopicViewHolder {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19683c;
+        private int c;
         private TextView d;
         private ImageView e;
         private RecyclerView f;
@@ -3361,7 +3307,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.d = (TextView) view.findViewById(R.id.tv_more);
             this.e = (ImageView) view.findViewById(R.id.iv_more);
             this.f = (RecyclerView) view.findViewById(R.id.recycler_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(FeedListAdapterForRecyclerView.this.f19617a);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(FeedListAdapterForRecyclerView.this.a);
             linearLayoutManager.setOrientation(0);
             this.f.setLayoutManager(linearLayoutManager);
         }
@@ -3372,7 +3318,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     EventTrackFeed.a(FeedProtos.Event.FIND_PLAZA_RECOMMEND_SUPER_TOPIC_MORE_CLICK);
-                    SuperTopicFragment.a(FeedListAdapterForRecyclerView.this.f19617a);
+                    SuperTopicFragment.a(FeedListAdapterForRecyclerView.this.a);
                 }
             });
             this.d.setOnClickListener(singleClickProxy);
@@ -3390,7 +3336,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
-            this.f19683c = i;
+            this.c = i;
             a();
             b();
         }
@@ -3400,9 +3346,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$RecommendUserFeedViewHolder.class */
     public class RecommendUserFeedViewHolder {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19686c;
+        private int c;
         private RecyclerView d;
 
         public RecommendUserFeedViewHolder(View view) {
@@ -3413,7 +3357,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 view.setLayoutParams(marginLayoutParams);
             }
             this.d = (RecyclerView) view.findViewById(R.id.recycler_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(FeedListAdapterForRecyclerView.this.f19617a);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(FeedListAdapterForRecyclerView.this.a);
             linearLayoutManager.setOrientation(0);
             this.d.setLayoutManager(linearLayoutManager);
         }
@@ -3424,7 +3368,6 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 FeedListAdapterForRecyclerView.this.x.notifyDataSetChanged();
                 FeedListAdapterForRecyclerView.this.x.setLoadMoreView(new RecommendLoadMoreView());
                 FeedListAdapterForRecyclerView.this.x.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RecommendUserFeedViewHolder.1
-                    @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
                     public void onLoadMoreRequested() {
                         if (FeedListAdapterForRecyclerView.this.w == 1) {
                             RecommendUserFeedViewHolder recommendUserFeedViewHolder = RecommendUserFeedViewHolder.this;
@@ -3437,7 +3380,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(final BluedIngSelfFeed bluedIngSelfFeed) {
-            FeedHttpUtils.a(FeedListAdapterForRecyclerView.this.t, FeedListAdapterForRecyclerView.this.u, FeedListAdapterForRecyclerView.this.v, FeedListAdapterForRecyclerView.this.n, FeedListAdapterForRecyclerView.this.f19618c, new BluedUIHttpResponse<BluedEntity<FeedRecommendUser, LiveRecommendExtra>>() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RecommendUserFeedViewHolder.2
+            FeedHttpUtils.a(FeedListAdapterForRecyclerView.this.t, FeedListAdapterForRecyclerView.this.u, FeedListAdapterForRecyclerView.this.v, FeedListAdapterForRecyclerView.this.n, FeedListAdapterForRecyclerView.this.c, new BluedUIHttpResponse<BluedEntity<FeedRecommendUser, LiveRecommendExtra>>() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RecommendUserFeedViewHolder.2
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     super.onUIFinish();
@@ -3453,7 +3396,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     if (bluedEntity == null || bluedEntity.extra == null) {
                         return;
                     }
-                    FeedListAdapterForRecyclerView.this.x.addData((Collection) bluedEntity.data);
+                    FeedListAdapterForRecyclerView.this.x.addData(bluedEntity.data);
                     FeedListAdapterForRecyclerView.this.x.notifyDataSetChanged();
                     FeedListAdapterForRecyclerView.this.w = bluedEntity.extra.hasmore;
                     FeedListAdapterForRecyclerView.this.t = bluedEntity.extra.last_lid;
@@ -3469,7 +3412,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
-            this.f19686c = i;
+            this.c = i;
             if (FeedListAdapterForRecyclerView.this.x != null) {
                 FeedListAdapterForRecyclerView.this.x.a(i);
                 FeedListAdapterForRecyclerView.this.x.a(FeedListAdapterForRecyclerView.this.o);
@@ -3490,13 +3433,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         private RepostAndTextFeedViewHolder(View view) {
             super(view);
             this.x = (LinearLayout) a(R.id.feed_info);
-            this.y = (TextViewFixTouchForDynamic) a(R.id.repost_content_view);
+            this.y = a(R.id.repost_content_view);
             this.C = (RelativeLayout) a(R.id.repost_layout);
             this.A = (ShapeLinearLayout) a(R.id.ll_content_all);
-            this.B = (TextViewFixTouchForDynamic) a(R.id.content_view);
+            this.B = a(R.id.content_view);
             if (FeedListAdapterForRecyclerView.this.d == 5 || FeedListAdapterForRecyclerView.this.d == 29 || FeedListAdapterForRecyclerView.this.d == 30) {
-                this.B.setMoeTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_h));
-                this.y.setMoeTextColor(FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_h));
+                this.B.setMoeTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_h));
+                this.y.setMoeTextColor(FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_h));
             }
             this.C.setOnClickListener(new SingleClickProxy(this));
         }
@@ -3507,13 +3450,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 textViewFixTouchForDynamic.setExpandText(charSequence);
                 return;
             }
-            Bitmap a2 = com.blued.android.framework.utils.ImageUtils.a(file, FeedMethods.c(36), FeedMethods.c(16));
+            Bitmap a = com.blued.android.framework.utils.ImageUtils.a(file, FeedMethods.c(36), FeedMethods.c(16));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("%subject_widget% " + ((Object) charSequence));
-            if (a2 == null || !TextUtils.equals(str, (String) textViewFixTouchForDynamic.getTag(FeedConstants.f19821a))) {
+            if (a == null || !TextUtils.equals(str, (String) textViewFixTouchForDynamic.getTag(FeedConstants.a))) {
                 textViewFixTouchForDynamic.setExpandText(charSequence);
                 return;
             }
-            BitmapDrawable bitmapDrawable = new BitmapDrawable(a2);
+            BitmapDrawable bitmapDrawable = new BitmapDrawable(a);
             bitmapDrawable.setBounds(0, 0, FeedMethods.c(36), FeedMethods.c(16));
             spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable, 2), 0, 16, 33);
             textViewFixTouchForDynamic.setExpandText(spannableStringBuilder);
@@ -3528,8 +3471,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (k()) {
                 this.C.setVisibility(0);
                 ShapeHelper.b(this.A, R.color.syc_x);
-                int a2 = DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 10.0f);
-                this.A.setPadding(a2, a2, a2, a2);
+                int a = DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 10.0f);
+                this.A.setPadding(a, a, a, a);
                 return;
             }
             ShapeHelper.b(this.A, R.color.transparent);
@@ -3539,23 +3482,23 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void s() {
-            if (k() && this.f19641a.isRepostAndDeleted()) {
-                this.f19641a.repost.feed_pics = new String[0];
-                this.f19641a.repost.is_videos = "0";
-                this.f19641a.repost.relationship = this.f19641a.relationship;
-                this.f19641a.repost.recommend_type = this.f19641a.recommend_type;
+            if (k() && this.a.isRepostAndDeleted()) {
+                this.a.repost.feed_pics = new String[0];
+                this.a.repost.is_videos = "0";
+                this.a.repost.relationship = this.a.relationship;
+                this.a.repost.recommend_type = this.a.recommend_type;
             }
         }
 
         private void t() {
-            if (this.f19641a.isRepostAndDeleted()) {
+            if (this.a.isRepostAndDeleted()) {
                 return;
             }
             a(w(), false);
         }
 
         private void u() {
-            a(this.f19641a, false);
+            a(this.a, false);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -3567,17 +3510,17 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (charSequence == null) {
                 return;
             }
-            textViewFixTouchForDynamic.setMoeTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_h), false);
+            textViewFixTouchForDynamic.setMoeTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_h), false);
             textViewFixTouchForDynamic.setMaxLines(5);
             textViewFixTouchForDynamic.setMovementMethod(LinkMovementClickMethod.a());
             if (TextUtils.isEmpty(str)) {
                 textViewFixTouchForDynamic.setExpandText(charSequence);
             } else {
-                textViewFixTouchForDynamic.setTag(FeedConstants.f19821a, str);
-                ImageFileLoader.a(FeedListAdapterForRecyclerView.this.f19618c).a(str).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$RepostAndTextFeedViewHolder$GI1sd_y-cuSSpiyBvBsI_-ctPYU
+                textViewFixTouchForDynamic.setTag(FeedConstants.a, str);
+                ImageFileLoader.a(FeedListAdapterForRecyclerView.this.c).a(str).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$RepostAndTextFeedViewHolder$GI1sd_y-cuSSpiyBvBsI_-ctPYU
                     @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                     public final void onUIFinish(File file, Exception exc) {
-                        FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder.a(TextViewFixTouchForDynamic.this, charSequence, str, file, exc);
+                        FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder.a(textViewFixTouchForDynamic, charSequence, str, file, exc);
                     }
                 }).a();
             }
@@ -3587,13 +3530,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     String charSequence2 = textViewFixTouchForDynamic.getText().toString();
                     if (Build.VERSION.SDK_INT != 18) {
                         try {
-                            ((ClipboardManager) FeedListAdapterForRecyclerView.this.f19617a.getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(charSequence2)));
+                            ((ClipboardManager) FeedListAdapterForRecyclerView.this.a.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("simple text", RegExpUtils.a(charSequence2)));
                         } catch (Exception e) {
                         }
                     } else {
-                        ((android.text.ClipboardManager) FeedListAdapterForRecyclerView.this.f19617a.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(charSequence2));
+                        ((android.text.ClipboardManager) FeedListAdapterForRecyclerView.this.a.getSystemService("clipboard")).setText(RegExpUtils.a(charSequence2));
                     }
-                    AppMethods.a((CharSequence) FeedListAdapterForRecyclerView.this.f19617a.getResources().getString(R.string.copy));
+                    AppMethods.a((CharSequence) FeedListAdapterForRecyclerView.this.a.getResources().getString(R.string.copy));
                     return true;
                 }
             });
@@ -3632,32 +3575,32 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             int i = AppInfo.l;
             CharSequence charSequence = "";
             if (k()) {
-                this.y.setMaxWidth(i - DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 20.0f));
+                this.y.setMaxWidth(i - DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 20.0f));
                 CharSequence feedRepostContent = m().getFeedRepostContent();
-                if (TextUtils.isEmpty(this.f19641a.super_tag_image) || !TextUtils.isEmpty(feedRepostContent)) {
+                if (TextUtils.isEmpty(this.a.super_tag_image) || !TextUtils.isEmpty(feedRepostContent)) {
                     charSequence = feedRepostContent;
                 }
-                a(this.C, this.y, charSequence, this.f19641a.super_tag_image);
-                this.B.setMaxWidth(i - DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 40.0f));
+                a(this.C, this.y, charSequence, this.a.super_tag_image);
+                this.B.setMaxWidth(i - DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 40.0f));
                 this.B.setVisibility(0);
                 a(this.A, this.B, m().getFeedContent(), (String) null);
                 return;
             }
-            this.B.setMaxWidth(i - DensityUtils.a(FeedListAdapterForRecyclerView.this.f19617a, 20.0f));
-            if (TextUtils.isEmpty(w().feed_content) && TextUtils.isEmpty(this.f19641a.super_tag_image)) {
+            this.B.setMaxWidth(i - DensityUtils.a(FeedListAdapterForRecyclerView.this.a, 20.0f));
+            if (TextUtils.isEmpty(w().feed_content) && TextUtils.isEmpty(this.a.super_tag_image)) {
                 this.B.setVisibility(8);
                 return;
             }
             CharSequence feedContent = m().getFeedContent();
-            if (TextUtils.isEmpty(this.f19641a.super_tag_image) || !TextUtils.isEmpty(feedContent)) {
+            if (TextUtils.isEmpty(this.a.super_tag_image) || !TextUtils.isEmpty(feedContent)) {
                 charSequence = feedContent;
             }
-            a(this.A, this.B, charSequence, this.f19641a.super_tag_image);
+            a(this.A, this.B, charSequence, this.a.super_tag_image);
             this.B.setVisibility(0);
         }
 
         protected BluedIngSelfFeed w() {
-            return k() ? this.f19641a.repost : this.f19641a;
+            return k() ? this.a.repost : this.a;
         }
     }
 
@@ -3671,25 +3614,25 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(View view) {
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, b(), CommunityConstants.WebShowType.DEFAULT);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, b(), CommunityConstants.WebShowType.DEFAULT);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             super.a(bluedIngSelfFeed, i);
             if (k()) {
-                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_y));
+                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_y));
             } else {
-                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_x));
+                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_x));
             }
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, bluedIngSelfFeed.getContentData().share_circle_posting_pic).b(R.drawable.defaultpicture).d(R.drawable.circle_default_icon).a(this.N);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, bluedIngSelfFeed.getContentData().share_circle_posting_pic).b(R.drawable.defaultpicture).d(R.drawable.circle_default_icon).a(this.N);
             TextView textView = this.Q;
             textView.setText(bluedIngSelfFeed.getContentData().share_circle_title + "圈子");
             this.Q.setVisibility(0);
             if (TextUtils.isEmpty(bluedIngSelfFeed.getContentData().share_circle_posting_content)) {
-                this.S.setText(FeedListAdapterForRecyclerView.this.f19617a.getResources().getString(R.string.circle_post_share_default));
+                this.S.setText(FeedListAdapterForRecyclerView.this.a.getResources().getString(R.string.circle_post_share_default));
             } else {
-                this.S.setText(MarkDownLinkHelper.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed.getContentData().share_circle_posting_content, true, R.color.syc_m));
+                this.S.setText(MarkDownLinkHelper.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed.getContentData().share_circle_posting_content, true, R.color.syc_m));
             }
             this.S.setVisibility(0);
             this.M.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$ShareCircleFeedViewHolder$EkvBZFSh95pUHEV3snixQ9ABM5U
@@ -3702,7 +3645,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected String b() {
-            return "http://native.blued.cn/?action=base_post_detail&post_id=" + this.f19641a.getContentData().share_circle_posting_id;
+            return "http://native.blued.cn/?action=base_post_detail&post_id=" + this.a.getContentData().share_circle_posting_id;
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -3720,19 +3663,19 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(View view) {
-            FeedListAdapterForRecyclerView.this.f(this.f19641a);
+            FeedListAdapterForRecyclerView.this.f(this.a);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             super.a(bluedIngSelfFeed, i);
-            View a2 = a(R.id.view_share_corner);
+            View a = a(R.id.view_share_corner);
             if (w().is_share_circle == 1) {
-                a2.setVisibility(0);
-                ((ImageView) a2.findViewById(R.id.icon)).setImageResource(R.drawable.icon_share_circle_corner);
-                ((TextView) a2.findViewById(R.id.tv)).setText(R.string.base);
+                a.setVisibility(0);
+                ((ImageView) a.findViewById(R.id.icon)).setImageResource(R.drawable.icon_share_circle_corner);
+                ((TextView) a.findViewById(R.id.tv)).setText(R.string.base);
             } else {
-                a2.setVisibility(8);
+                a.setVisibility(8);
             }
             this.Q.setVisibility(0);
             this.S.setVisibility(0);
@@ -3746,13 +3689,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             }
             this.R.setVisibility(0);
             TextView textView = this.R;
-            textView.setText(w().members_num + FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.members_count));
+            textView.setText(w().members_num + FeedListAdapterForRecyclerView.this.a.getString(R.string.members_count));
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder
         public void q() {
             super.q();
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, FeedListAdapterForRecyclerView.this.d(this.f19641a)).b(R.drawable.defaultpicture).a(this.N);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, FeedListAdapterForRecyclerView.this.d(this.a)).b(R.drawable.defaultpicture).a(this.N);
             this.M.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$ShareCircleViewHolder$hAizld_WBjvgKXNWj_TJNOj4Y1I
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -3792,7 +3735,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(View view) {
-            FeedListAdapterForRecyclerView.this.a(w().share_activity_id, (String) null, FeedMethods.a(FeedListAdapterForRecyclerView.this.d), this.f19641a);
+            FeedListAdapterForRecyclerView.this.a(w().share_activity_id, (String) null, FeedMethods.a(FeedListAdapterForRecyclerView.this.d), this.a);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -3801,10 +3744,10 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.S.setVisibility(8);
             this.A.setVisibility(0);
             this.F.setVisibility(0);
-            View a2 = a(R.id.view_share_corner);
-            a2.setVisibility(0);
-            ((ImageView) a2.findViewById(R.id.icon)).setImageResource(R.drawable.icon_online_event_address_white);
-            ((TextView) a2.findViewById(R.id.tv)).setText(R.string.event_events);
+            View a = a(R.id.view_share_corner);
+            a.setVisibility(0);
+            ((ImageView) a.findViewById(R.id.icon)).setImageResource(R.drawable.icon_online_event_address_white);
+            ((TextView) a.findViewById(R.id.tv)).setText(R.string.event_events);
             this.G.setVisibility(8);
             this.D.setVisibility(8);
         }
@@ -3812,17 +3755,17 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder
         public void q() {
             super.q();
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, FeedListAdapterForRecyclerView.this.h(this.f19641a)).b(R.drawable.event_avatar_square).d(R.drawable.event_avatar_square).a(this.N);
-            this.Q.setText(FeedListAdapterForRecyclerView.this.i(this.f19641a));
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, FeedListAdapterForRecyclerView.this.h(this.a)).b(R.drawable.event_avatar_square).d(R.drawable.event_avatar_square).a(this.N);
+            this.Q.setText(FeedListAdapterForRecyclerView.this.i(this.a));
             this.B.setText(TimeAndDateUtils.e(TimeAndDateUtils.j(r())));
             this.H.setVisibility(0);
             this.C.setVisibility(0);
             if (s() == 1) {
-                this.H.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_eventcard_location));
+                this.H.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_eventcard_location));
             } else {
-                this.H.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_eventcard_link));
+                this.H.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_eventcard_link));
             }
-            this.C.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_eventcard_clock));
+            this.C.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_eventcard_clock));
             this.I.setVisibility(0);
             this.I.setText(t());
             this.E.setVisibility(8);
@@ -3876,21 +3819,21 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(View view) {
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, b(), CommunityConstants.WebShowType.DEFAULT);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, b(), CommunityConstants.WebShowType.DEFAULT);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             super.a(bluedIngSelfFeed, i);
-            View a2 = a(R.id.view_share_corner);
-            ImageView imageView = (ImageView) a2.findViewById(R.id.icon);
+            View a = a(R.id.view_share_corner);
+            ImageView imageView = (ImageView) a.findViewById(R.id.icon);
             if (CommunityServiceManager.a().D() == 1) {
                 imageView.setImageResource(R.drawable.feed_post_subject_icon_corner);
             } else {
                 imageView.setImageResource(R.drawable.icon_share_topic_corner);
             }
-            ((TextView) a2.findViewById(R.id.tv)).setText(R.string.super_topic);
-            a2.setVisibility(0);
+            ((TextView) a.findViewById(R.id.tv)).setText(R.string.super_topic);
+            a.setVisibility(0);
             this.S.setVisibility(0);
             String str = null;
             if (bluedIngSelfFeed.isRepost() && bluedIngSelfFeed.repost.is_share_super_topics == 1) {
@@ -3900,28 +3843,28 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             }
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = FeedListAdapterForRecyclerView.this.f19617a.getResources().getString(R.string.share_topic_to_you);
+                str2 = FeedListAdapterForRecyclerView.this.a.getResources().getString(R.string.share_topic_to_you);
             }
-            this.S.setText(MarkDownLinkHelper.a(FeedListAdapterForRecyclerView.this.f19617a, str2, true, R.color.syc_m));
+            this.S.setText(MarkDownLinkHelper.a(FeedListAdapterForRecyclerView.this.a, str2, true, R.color.syc_m));
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected String b() {
-            return FeedListAdapterForRecyclerView.this.g(this.f19641a);
+            return FeedListAdapterForRecyclerView.this.g(this.a);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.WebFeedViewHolder
         public void q() {
             String str;
             super.q();
-            if (this.f19641a.isRepost() && this.f19641a.repost.is_share_super_topics == 1) {
-                this.Q.setText(this.f19641a.getContentData().share_s_t_name);
-                str = this.f19641a.getContentData().share_s_t_avatar;
+            if (this.a.isRepost() && this.a.repost.is_share_super_topics == 1) {
+                this.Q.setText(this.a.getContentData().share_s_t_name);
+                str = this.a.getContentData().share_s_t_avatar;
             } else {
-                this.Q.setText(this.f19641a.share_s_t_name);
-                str = this.f19641a.share_s_t_avatar;
+                this.Q.setText(this.a.share_s_t_name);
+                str = this.a.share_s_t_avatar;
             }
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, str).b(R.drawable.defaultpicture).a(this.N);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, str).b(R.drawable.defaultpicture).a(this.N);
             this.M.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$ShareTopicFeedViewHolder$RLdT8cNrVHdfoLqfmC0gZTBPFiA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -3953,9 +3896,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$SignStateSetViewHolderV2.class */
     public class SignStateSetViewHolderV2 {
         private BaseViewHolder b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private CommonMultiItemAdapter<BluedIngSelfFeed> f19692c;
+        private CommonMultiItemAdapter<BluedIngSelfFeed> c;
         private AutoPollRecyclerView d;
 
         private SignStateSetViewHolderV2(BaseViewHolder baseViewHolder, View view) {
@@ -3967,8 +3908,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             }
             this.b = baseViewHolder;
             this.d = (AutoPollRecyclerView) baseViewHolder.getView(R.id.item_feed_sign_set_arv);
-            CommonMultiItemAdapter<BluedIngSelfFeed> commonMultiItemAdapter = new CommonMultiItemAdapter<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateSetViewHolderV2.1
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter
+            RecyclerView.Adapter adapter = new CommonMultiItemAdapter<BluedIngSelfFeed>() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateSetViewHolderV2.1
                 /* renamed from: a */
                 public BluedIngSelfFeed getItem(int i) {
                     if (getData().size() > 0) {
@@ -3978,10 +3918,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 }
 
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.community.view.CommonMultiItemAdapter
                 /* renamed from: a */
                 public void onConvert(CommonViewHolder commonViewHolder, BluedIngSelfFeed bluedIngSelfFeed, int i) {
-                    int i2 = CommunityManager.f19086a.a().s() ? R.drawable.feed_sign_set_new_item_bg_dark : R.drawable.feed_sign_set_new_item_bg;
+                    int i2 = CommunityManager.a.a().s() ? R.drawable.feed_sign_set_new_item_bg_dark : R.drawable.feed_sign_set_new_item_bg;
                     String k = FeedListAdapterForRecyclerView.this.k(bluedIngSelfFeed);
                     String str = k;
                     if (TextUtils.isEmpty(k)) {
@@ -3992,12 +3931,10 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     text.setText(i3, "| " + bluedIngSelfFeed.feed_content).setBackgroundRes(R.id.item_feed_sign_content_bg, i2);
                 }
 
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
                 public int getItemCount() {
                     return Integer.MAX_VALUE;
                 }
 
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
                 public int getItemViewType(int i) {
                     int i2 = i;
                     if (getData().size() > 0) {
@@ -4006,15 +3943,14 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     return super.getItemViewType(i2);
                 }
 
-                @Override // com.blued.community.view.CommonMultiItemAdapter
                 public void onAddItemType() {
                     addItemType(0, R.layout.item_feed_sign_set_flipper_layout);
                     addItemType(24, R.layout.item_feed_sign_set_flipper_v2_layout);
                 }
             };
-            this.f19692c = commonMultiItemAdapter;
-            this.d.setAdapter(commonMultiItemAdapter);
-            this.d.setLayoutManager(new LinearLayoutManager(FeedListAdapterForRecyclerView.this.f19617a, 0, false));
+            this.c = adapter;
+            this.d.setAdapter(adapter);
+            this.d.setLayoutManager(new LinearLayoutManager(FeedListAdapterForRecyclerView.this.a, 0, false));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -4024,7 +3960,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public void a(final BluedIngSelfFeed bluedIngSelfFeed, int i) {
             ImageView imageView = (ImageView) this.b.getView(R.id.item_feed_sign_set_title);
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 this.b.setBackgroundRes(R.id.item_feed_sign_set_content_bg, R.drawable.item_feed_sign_set_content_bg_new_dark);
                 this.b.setTextColor(R.id.item_feed_sign_set_time, Color.parseColor("#857C94"));
                 imageView.setImageResource(R.drawable.item_feed_sign_set_title_dark);
@@ -4038,7 +3974,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.b.setText(R.id.item_feed_sign_set_time, TimeAndDateUtils.a(bluedIngSelfFeed.feed_timestamp, true));
                 this.d.setVisibility(0);
                 view.setVisibility(8);
-                this.f19692c.setDataAndNotify(bluedIngSelfFeed.signStateList);
+                this.c.setDataAndNotify(bluedIngSelfFeed.signStateList);
                 this.d.setItemCount(bluedIngSelfFeed.signStateList.size());
                 this.d.a(2000);
             } else if (bluedIngSelfFeed.signStateList.size() == 1) {
@@ -4050,9 +3986,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 marginLayoutParams.width = -1;
                 marginLayoutParams.rightMargin = FeedMethods.c(12);
                 view2.setLayoutParams(marginLayoutParams);
-                int i2 = CommunityManager.f19086a.a().s() ? R.drawable.feed_sign_set_new_item_bg_dark : R.drawable.feed_sign_set_new_item_bg;
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, bluedIngSelfFeed.signStateList.get(0).user_avatar).c().a((ImageView) this.b.getView(R.id.item_feed_sign_set_avatar));
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, bluedIngSelfFeed.signStateList.get(0).bubble_state_icon).c().a((ImageView) this.b.getView(R.id.item_feed_sign_set_state_iv));
+                int i2 = CommunityManager.a.a().s() ? R.drawable.feed_sign_set_new_item_bg_dark : R.drawable.feed_sign_set_new_item_bg;
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, bluedIngSelfFeed.signStateList.get(0).user_avatar).c().a((ImageView) this.b.getView(R.id.item_feed_sign_set_avatar));
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, bluedIngSelfFeed.signStateList.get(0).bubble_state_icon).c().a((ImageView) this.b.getView(R.id.item_feed_sign_set_state_iv));
                 TextView textView = (TextView) this.b.getView(R.id.item_feed_sign_set_state_tv);
                 textView.setMaxWidth(FeedMethods.c(75));
                 textView.setText(bluedIngSelfFeed.signStateList.get(0).bubble_state_name);
@@ -4072,9 +4008,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 final View view3 = this.b.getView(R.id.item_feed_sign_set_guide_id);
                 view3.setVisibility(0);
                 ImageView imageView2 = (ImageView) this.b.getView(R.id.item_feed_sign_set_guide_hand_id);
-                final FeedGuidePop feedGuidePop = new FeedGuidePop(FeedListAdapterForRecyclerView.this.f19617a, FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_bubble_set_see_all), NinePatchUtils.GuideArrowPosition.CENTER, true, 0, null, 0, 0, 0);
+                final FeedGuidePop feedGuidePop = new FeedGuidePop(FeedListAdapterForRecyclerView.this.a, FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_bubble_set_see_all), NinePatchUtils.GuideArrowPosition.CENTER, true, 0, (String) null, 0, 0, 0);
                 FeedGuidePop.t.c(feedGuidePop, new SimpleCallback(), this.b.getView(R.id.item_feed_sign_set_guide_at_id), 0L);
-                ImageLoader.c(FeedListAdapterForRecyclerView.this.f19618c, "sign_feed_guide_poke_hand.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateSetViewHolderV2.2
+                ImageLoader.c(FeedListAdapterForRecyclerView.this.c, "sign_feed_guide_poke_hand.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateSetViewHolderV2.2
                     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                     public void a() {
                     }
@@ -4114,8 +4050,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(View view) {
-            if (this.f19641a != null) {
-                SignInteractiveListFragment.g.a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.feed_id, this.f19641a);
+            if (this.a != null) {
+                SignInteractiveListFragment.g.a(FeedListAdapterForRecyclerView.this.a, this.a.feed_id, this.a);
             }
         }
 
@@ -4125,24 +4061,24 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 textView.setText(str);
                 return;
             }
-            Bitmap a2 = com.blued.android.framework.utils.ImageUtils.a(file, FeedMethods.c(16), FeedMethods.c(16));
+            Bitmap a = com.blued.android.framework.utils.ImageUtils.a(file, FeedMethods.c(16), FeedMethods.c(16));
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str2);
-            if (a2 == null || !TextUtils.equals(this.f19641a.bubble_state_icon, (String) textView.getTag(str3.hashCode()))) {
+            if (a == null || !TextUtils.equals(this.a.bubble_state_icon, (String) textView.getTag(str3.hashCode()))) {
                 textView.setText(str);
                 return;
             }
-            BitmapDrawable bitmapDrawable = new BitmapDrawable(a2);
+            BitmapDrawable bitmapDrawable = new BitmapDrawable(a);
             bitmapDrawable.setBounds(0, 0, FeedMethods.c(16), FeedMethods.c(16));
             spannableStringBuilder.setSpan(new VerticalCenterImageSpan(bitmapDrawable, 2), i, str3.length() + i, 33);
-            int indexOf = str2.indexOf(this.f19641a.bubble_state_name);
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_h)), indexOf, this.f19641a.bubble_state_name.length() + indexOf, 33);
+            int indexOf = str2.indexOf(this.a.bubble_state_name);
+            spannableStringBuilder.setSpan(new ForegroundColorSpan(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_h)), indexOf, this.a.bubble_state_name.length() + indexOf, 33);
             textView.setText(spannableStringBuilder, TextView.BufferType.SPANNABLE);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void a(BluedIngSelfFeed bluedIngSelfFeed, View view) {
-            if (this.f19641a != null) {
-                SignFeedListFragment.b.a(FeedListAdapterForRecyclerView.this.f19617a, this.f19641a.bubble_state_tt_id, 9, this.f19641a);
+            if (this.a != null) {
+                SignFeedListFragment.b.a(FeedListAdapterForRecyclerView.this.a, this.a.bubble_state_tt_id, 9, this.a);
                 EventTrackFeed.b(FeedProtos.Event.PUNCH_FEED_MORE_USER_CLICK, bluedIngSelfFeed, FeedListAdapterForRecyclerView.this.d);
             }
         }
@@ -4163,39 +4099,39 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void b(final BluedIngSelfFeed bluedIngSelfFeed) {
-            View a2 = a(R.id.item_feed_sign_classify_layout);
-            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$injipZuJy7Icsh5LQiE-xiq0opU
+            View a = a(R.id.item_feed_sign_classify_layout);
+            a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$injipZuJy7Icsh5LQiE-xiq0opU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FeedListAdapterForRecyclerView.SignStateViewHolder.this.a(bluedIngSelfFeed, view);
                 }
             });
-            if (this.f19641a.bubble_state_avatars == null || this.f19641a.bubble_state_avatars.size() <= 0) {
+            if (this.a.bubble_state_avatars == null || this.a.bubble_state_avatars.size() <= 0) {
                 this.A.setGone(R.id.item_feed_sign_classify_avatar_1, false);
                 this.A.setGone(R.id.item_feed_sign_classify_more_iv, false);
             } else {
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.f19641a.bubble_state_avatars.get(0).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_classify_avatar_1));
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.a.bubble_state_avatars.get(0).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_classify_avatar_1));
                 this.A.setGone(R.id.item_feed_sign_classify_avatar_1, true);
                 this.A.setGone(R.id.item_feed_sign_classify_more_iv, true);
             }
             final TextView textView = (TextView) a(R.id.item_feed_sign_classify_tv);
-            String string = FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_list_bubble_sign_guide);
-            String str = this.f19641a.bubble_state_count;
-            final String format = String.format(string, str, "[bubble_pic]" + this.f19641a.bubble_state_name);
-            final String format2 = String.format(FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_list_bubble_sign_guide), this.f19641a.bubble_state_count, this.f19641a.bubble_state_name);
+            String string = FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_list_bubble_sign_guide);
+            String str = this.a.bubble_state_count;
+            final String format = String.format(string, str, "[bubble_pic]" + this.a.bubble_state_name);
+            final String format2 = String.format(FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_list_bubble_sign_guide), this.a.bubble_state_count, this.a.bubble_state_name);
             final int indexOf = format.indexOf("[bubble_pic]");
-            if (TextUtils.isEmpty(this.f19641a.bubble_state_icon) || indexOf < 0 || TextUtils.isEmpty(this.f19641a.bubble_state_name)) {
+            if (TextUtils.isEmpty(this.a.bubble_state_icon) || indexOf < 0 || TextUtils.isEmpty(this.a.bubble_state_name)) {
                 textView.setText(format2);
             } else {
-                textView.setTag(-359512917, this.f19641a.bubble_state_icon);
-                ImageFileLoader.a(FeedListAdapterForRecyclerView.this.f19618c).a(this.f19641a.bubble_state_icon).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$iNX93LtQ-cp_WyZuSf9iUQ8CMTA
+                textView.setTag(-359512917, this.a.bubble_state_icon);
+                ImageFileLoader.a(FeedListAdapterForRecyclerView.this.c).a(this.a.bubble_state_icon).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$iNX93LtQ-cp_WyZuSf9iUQ8CMTA
                     @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                     public final void onUIFinish(File file, Exception exc) {
                         FeedListAdapterForRecyclerView.SignStateViewHolder.this.a(textView, format2, format, r8, indexOf, file, exc);
                     }
                 }).a();
             }
-            a2.setVisibility(0);
+            a.setVisibility(0);
             this.A.setGone(R.id.item_feed_sign_go_list, false);
             this.A.setGone(R.id.item_feed_sign_poke_me_layout, false);
             EventTrackFeed.b(FeedProtos.Event.PUNCH_FEED_MORE_USER_SHOW, bluedIngSelfFeed, FeedListAdapterForRecyclerView.this.d);
@@ -4212,33 +4148,33 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
 
         private void q() {
-            View a2 = a(R.id.item_feed_sign_poke_me_layout);
-            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$Xk-a5hbpSd5Uv7XQDgCc7y8nvE0
+            View a = a(R.id.item_feed_sign_poke_me_layout);
+            a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$Xk-a5hbpSd5Uv7XQDgCc7y8nvE0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FeedListAdapterForRecyclerView.SignStateViewHolder.this.a(view);
                 }
             });
             this.A.setGone(R.id.item_feed_sign_poke_me_avatar_1, false).setGone(R.id.item_feed_sign_poke_me_avatar_2, false).setGone(R.id.item_feed_sign_poke_me_avatar_3, false).setGone(R.id.item_feed_sign_poke_me_more_iv, false);
-            if (this.f19641a.bubble_tt_click_uid_info.size() > 0) {
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.f19641a.bubble_tt_click_uid_info.get(0).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_poke_me_avatar_1));
+            if (this.a.bubble_tt_click_uid_info.size() > 0) {
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.a.bubble_tt_click_uid_info.get(0).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_poke_me_avatar_1));
                 this.A.setVisible(R.id.item_feed_sign_poke_me_avatar_1, true);
             }
-            if (this.f19641a.bubble_tt_click_uid_info.size() > 1) {
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.f19641a.bubble_tt_click_uid_info.get(1).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_poke_me_avatar_2));
+            if (this.a.bubble_tt_click_uid_info.size() > 1) {
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.a.bubble_tt_click_uid_info.get(1).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_poke_me_avatar_2));
                 this.A.setVisible(R.id.item_feed_sign_poke_me_avatar_2, true);
             }
-            if (this.f19641a.bubble_tt_click_uid_info.size() > 2) {
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, this.f19641a.bubble_tt_click_uid_info.get(2).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_poke_me_avatar_3));
+            if (this.a.bubble_tt_click_uid_info.size() > 2) {
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, this.a.bubble_tt_click_uid_info.get(2).avatar).c().b(R.drawable.user_bg_round).a((ImageView) this.A.getView(R.id.item_feed_sign_poke_me_avatar_3));
                 this.A.setVisible(R.id.item_feed_sign_poke_me_avatar_3, true);
             }
-            if (this.f19641a.bubble_tt_click_count > 3) {
+            if (this.a.bubble_tt_click_count > 3) {
                 this.A.setVisible(R.id.item_feed_sign_poke_me_more_iv, true);
             }
             TextView textView = this.z;
-            String string = FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.sign_feed_poke_me_num_str);
-            textView.setText(String.format(string, this.f19641a.bubble_tt_click_count + ""));
-            a2.setVisibility(0);
+            String string = FeedListAdapterForRecyclerView.this.a.getString(R.string.sign_feed_poke_me_num_str);
+            textView.setText(String.format(string, this.a.bubble_tt_click_count + ""));
+            a.setVisibility(0);
             this.A.setGone(R.id.item_feed_sign_go_list, false);
             this.A.setGone(R.id.item_feed_sign_classify_layout, false);
         }
@@ -4261,9 +4197,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 this.A.setGone(R.id.dot_age_height_weight, true);
             }
             String str = bluedIngSelfFeed.bubble_state_name;
-            String a2 = TimeAndDateUtils.a(bluedIngSelfFeed.feed_timestamp, false);
-            if (!TextUtils.isEmpty(a2)) {
-                str = bluedIngSelfFeed.bubble_state_name + " · " + a2;
+            String a = TimeAndDateUtils.a(bluedIngSelfFeed.feed_timestamp, false);
+            if (!TextUtils.isEmpty(a)) {
+                str = bluedIngSelfFeed.bubble_state_name + " · " + a;
             }
             this.y.setText(str);
             this.B.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$PbBJpJFH6u72l1Do4sCOFC5_Mzo
@@ -4282,7 +4218,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         protected void a(final BaseViewHolder baseViewHolder, final BluedIngSelfFeed bluedIngSelfFeed, final int i) {
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.item_feed_sign_bg_corner_id);
-            if (CommunityManager.f19086a.a().s()) {
+            if (CommunityManager.a.a().s()) {
                 imageView.setImageResource(R.drawable.item_feed_sign_bg_corner_dark);
             } else {
                 imageView.setImageResource(R.drawable.item_feed_sign_bg_corner);
@@ -4296,7 +4232,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 imageView2.setVisibility(0);
                 imageView3.setVisibility(0);
                 imageView4.setVisibility(0);
-                ImageLoader.c(FeedListAdapterForRecyclerView.this.f19618c, CommunityManager.f19086a.a().s() ? "feed_bubble_nearby_guide_anim_dark.png" : "feed_bubble_nearby_guide_anim.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateViewHolder.1
+                ImageLoader.c(FeedListAdapterForRecyclerView.this.c, CommunityManager.a.a().s() ? "feed_bubble_nearby_guide_anim_dark.png" : "feed_bubble_nearby_guide_anim.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateViewHolder.1
                     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                     public void a() {
                         LogUtils.c("冒泡插入: 引导动画onAnimationStart");
@@ -4308,7 +4244,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                         LogUtils.c("冒泡插入: 引导动画onAnimationEnd");
                     }
                 }).a(imageView2);
-                ImageLoader.c(FeedListAdapterForRecyclerView.this.f19618c, "feed_bubble_nearby_guide_btn_anim.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateViewHolder.2
+                ImageLoader.c(FeedListAdapterForRecyclerView.this.c, "feed_bubble_nearby_guide_btn_anim.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateViewHolder.2
                     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                     public void a() {
                     }
@@ -4318,7 +4254,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                         imageView3.setVisibility(8);
                     }
                 }).a(imageView3);
-                ImageLoader.c(FeedListAdapterForRecyclerView.this.f19618c, "feed_bubble_nearby_guide_btn_light.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateViewHolder.3
+                ImageLoader.c(FeedListAdapterForRecyclerView.this.c, "feed_bubble_nearby_guide_btn_light.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.SignStateViewHolder.3
                     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                     public void a() {
                     }
@@ -4331,7 +4267,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 EventTrackFeed.e(FeedProtos.Event.CITY_PUNCH_GUIDE_FEED_SHOW, bluedIngSelfFeed.feed_id);
             }
             ((TextView) baseViewHolder.getView(R.id.item_feed_sign_new_face)).setVisibility(bluedIngSelfFeed.is_new_face == 1 ? 0 : 8);
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, bluedIngSelfFeed.bubble_state_icon).b(R.drawable.defaultpicture).a((ImageView) baseViewHolder.getView(R.id.item_feed_sign_state_iv));
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, bluedIngSelfFeed.bubble_state_icon).b(R.drawable.defaultpicture).a((ImageView) baseViewHolder.getView(R.id.item_feed_sign_state_iv));
             baseViewHolder.setText(R.id.item_feed_sign_content_tv, bluedIngSelfFeed.feed_content);
             GradientTextView gradientTextView = (GradientTextView) baseViewHolder.getView(R.id.item_feed_sign_go_list_tv);
             if (FeedListAdapterForRecyclerView.this.d(bluedIngSelfFeed.feed_uid)) {
@@ -4343,7 +4279,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 if (bluedIngSelfFeed.is_bubble_tt_click == 0) {
                     baseViewHolder.setBackgroundRes(R.id.item_feed_sign_say_hi_btn, R.drawable.gradient_feed_sign_poke_btn_bg).setVisible(R.id.item_feed_sign_say_hi_iv, true).setTextColor(R.id.item_feed_sign_say_hi_tv, -1).setText(R.id.item_feed_sign_say_hi_tv, R.string.feed_list_item_click_sign);
                 } else {
-                    baseViewHolder.setBackgroundRes(R.id.item_feed_sign_say_hi_btn, R.drawable.item_feed_sign_say_hi_bg).setGone(R.id.item_feed_sign_say_hi_iv, false).setTextColor(R.id.item_feed_sign_say_hi_tv, FeedListAdapterForRecyclerView.this.f19617a.getResources().getColor(R.color.syc_2B72FF));
+                    baseViewHolder.setBackgroundRes(R.id.item_feed_sign_say_hi_btn, R.drawable.item_feed_sign_say_hi_bg).setGone(R.id.item_feed_sign_say_hi_iv, false).setTextColor(R.id.item_feed_sign_say_hi_tv, FeedListAdapterForRecyclerView.this.a.getResources().getColor(R.color.syc_2B72FF));
                     if (bluedIngSelfFeed.is_say_hello == 1) {
                         baseViewHolder.setText(R.id.item_feed_sign_say_hi_tv, R.string.continue_chat);
                     } else {
@@ -4361,7 +4297,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 imageView5.setVisibility(8);
             } else {
                 imageView5.setVisibility(0);
-                ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, bluedIngSelfFeed.complete_style).a(imageView5);
+                ImageLoader.a(FeedListAdapterForRecyclerView.this.c, bluedIngSelfFeed.complete_style).a(imageView5);
             }
             baseViewHolder.setOnClickListener(R.id.item_feed_sign_go_list, new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SignStateViewHolder$tGyrSJYx6LdZ2zzfNodDX1p-skk
                 @Override // android.view.View.OnClickListener
@@ -4407,12 +4343,12 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 sb.append(", bubble_state_count:");
                 sb.append(bluedIngSelfFeed.bubble_state_count);
                 sb.append(", bubble_tt_click_uid_info:");
-                sb.append(bluedIngSelfFeed.bubble_tt_click_uid_info != null ? Integer.valueOf(bluedIngSelfFeed.bubble_tt_click_uid_info.size()) : b.l);
+                sb.append(bluedIngSelfFeed.bubble_tt_click_uid_info != null ? Integer.valueOf(bluedIngSelfFeed.bubble_tt_click_uid_info.size()) : "null");
                 LogUtils.c(sb.toString());
             }
             if (CommunityServiceManager.a().P()) {
                 gradientTextView.setText("去看看更多打卡内容");
-                gradientTextView.a(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_k), BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_k));
+                gradientTextView.a(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_k), BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_k));
             } else {
                 gradientTextView.setText(R.string.feed_list_item_enter_sign);
                 gradientTextView.a(Color.parseColor("#7056FF"), Color.parseColor("#3071FE"));
@@ -4436,16 +4372,16 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected void a(boolean z) {
-            if (this.f19641a.is_bubble_tt_click != 1 && !i()) {
+            if (this.a.is_bubble_tt_click != 1 && !i()) {
                 if (z) {
-                    FeedListAdapterForRecyclerView.this.b(this.A, this.f19641a, this.d);
+                    FeedListAdapterForRecyclerView.this.b(this.A, this.a, this.d);
                     return;
                 }
                 return;
             }
             super.a(z);
-            if (this.f19641a.is_bubble_tt_click == 1) {
-                EventTrackFeed.a(FeedProtos.Event.PUNCH_FEED_PHOTO_CLICK, this.f19641a.feed_id, this.f19641a.feed_uid, FeedListAdapterForRecyclerView.this.q(), this.f19641a.is_new_face == 1, this.f19641a.strong_insert_data, true, false);
+            if (this.a.is_bubble_tt_click == 1) {
+                EventTrackFeed.a(FeedProtos.Event.PUNCH_FEED_PHOTO_CLICK, this.a.feed_id, this.a.feed_uid, FeedListAdapterForRecyclerView.this.q(), this.a.is_new_face == 1, this.a.strong_insert_data, true, false);
             }
             LogUtils.c("onClickHeaderName: toProfilePage");
         }
@@ -4474,13 +4410,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$SubjectPostGuideViewHolder.class */
     public class SubjectPostGuideViewHolder {
         private View b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private BaseViewHolder f19702c;
+        private BaseViewHolder c;
 
         public SubjectPostGuideViewHolder(BaseViewHolder baseViewHolder, View view) {
             this.b = view;
-            this.f19702c = baseViewHolder;
+            this.c = baseViewHolder;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -4489,7 +4423,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             FeedListAdapterForRecyclerView.this.notifyDataSetChanged();
             CommunityPreferences.a(FeedListAdapterForRecyclerView.this.d, 5);
             CommunityPreferences.b(FeedListAdapterForRecyclerView.this.d, TimeAndDateUtils.a());
-            FeedAddPostFragment.a(FeedListAdapterForRecyclerView.this.f19617a, bluedIngSelfFeed.insertSubjectPostGuide);
+            FeedAddPostFragment.a(FeedListAdapterForRecyclerView.this.a, bluedIngSelfFeed.insertSubjectPostGuide);
             EventTrackFeed.a(FeedProtos.Event.TOPIC_GUIDE_CLICK, bluedIngSelfFeed.insertSubjectPostGuide.super_did, i, FeedListAdapterForRecyclerView.this.o, FeedListAdapterForRecyclerView.this.d);
         }
 
@@ -4497,15 +4431,15 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (bluedIngSelfFeed == null || bluedIngSelfFeed.insertSubjectPostGuide == null) {
                 return;
             }
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, bluedIngSelfFeed.insertSubjectPostGuide.avatar).a(9.0f).a((ImageView) this.f19702c.getView(R.id.iv_avatar));
-            this.f19702c.setText(R.id.tv_name, bluedIngSelfFeed.insertSubjectPostGuide.name);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, bluedIngSelfFeed.insertSubjectPostGuide.avatar).a(9.0f).a((ImageView) this.c.getView(R.id.iv_avatar));
+            this.c.setText(R.id.tv_name, bluedIngSelfFeed.insertSubjectPostGuide.name);
             if (TextUtils.isEmpty(bluedIngSelfFeed.insertSubjectPostGuide.description)) {
-                this.f19702c.setGone(R.id.tv_desc, false);
+                this.c.setGone(R.id.tv_desc, false);
             } else {
-                this.f19702c.setText(R.id.tv_desc, bluedIngSelfFeed.insertSubjectPostGuide.description);
-                this.f19702c.setGone(R.id.tv_desc, true);
+                this.c.setText(R.id.tv_desc, bluedIngSelfFeed.insertSubjectPostGuide.description);
+                this.c.setGone(R.id.tv_desc, true);
             }
-            this.f19702c.getView(R.id.btn_post_feed).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SubjectPostGuideViewHolder$sjQ6LSCtx_N4eML227hgtZEDvFI
+            this.c.getView(R.id.btn_post_feed).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$SubjectPostGuideViewHolder$sjQ6LSCtx_N4eML227hgtZEDvFI
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     FeedListAdapterForRecyclerView.SubjectPostGuideViewHolder.this.a(i, bluedIngSelfFeed, view);
@@ -4522,9 +4456,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/adapter/FeedListAdapterForRecyclerView$ThirdAdFeedViewHolder.class */
     public class ThirdAdFeedViewHolder {
         private BluedIngSelfFeed b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19704c;
+        private int c;
 
         public ThirdAdFeedViewHolder(View view) {
         }
@@ -4535,7 +4467,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             this.b = bluedIngSelfFeed;
             bluedIngSelfFeed.adPosition = i;
-            this.f19704c = i;
+            this.c = i;
             FeedListAdapterForRecyclerView.this.d(bluedIngSelfFeed, i);
             a();
         }
@@ -4549,7 +4481,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public VideoFeedViewHolder(View view) {
             super(view);
-            this.A = (CardView) a(R.id.card);
+            this.A = a(R.id.card);
             this.B = (PLVideoPageView) a(R.id.video_view);
         }
 
@@ -4566,35 +4498,35 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     w().feed_videos_height = new String[]{"480"};
                 }
                 int i = 480;
-                int a2 = StringUtils.a(w().feed_videos_width[0], 480);
-                int a3 = StringUtils.a(w().feed_videos_height[0], 480);
-                if (a2 == 0 || a3 == 0) {
-                    a3 = 480;
+                int a = StringUtils.a(w().feed_videos_width[0], 480);
+                int a2 = StringUtils.a(w().feed_videos_height[0], 480);
+                if (a == 0 || a2 == 0) {
+                    a2 = 480;
                 } else {
-                    i = a2;
+                    i = a;
                 }
-                int[] a4 = FeedMethods.a(FeedListAdapterForRecyclerView.this.f19617a, i, a3, this.f19641a.isRepost());
-                int i2 = a4[0];
-                int i3 = a4[1];
+                int[] a3 = FeedMethods.a(FeedListAdapterForRecyclerView.this.a, i, a2, this.a.isRepost());
+                int i2 = a3[0];
+                int i3 = a3[1];
                 ViewGroup.LayoutParams layoutParams = this.A.getLayoutParams();
                 layoutParams.width = i2;
                 layoutParams.height = i3;
                 ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) this.B.getLayoutParams();
                 marginLayoutParams.width = i2;
-                marginLayoutParams.height = (marginLayoutParams.width * a3) / i;
+                marginLayoutParams.height = (marginLayoutParams.width * a2) / i;
                 marginLayoutParams.setMargins(0, (layoutParams.height - marginLayoutParams.height) / 2, 0, 0);
                 ViewGroup.LayoutParams layoutParams2 = this.B.getLayoutParams();
                 final String[] strArr = w().feed_videos;
                 final String str = w().feed_video_size;
                 VideoPlayConfig videoPlayConfig = new VideoPlayConfig();
-                videoPlayConfig.f15652a = w().feed_videos[0];
+                videoPlayConfig.a = w().feed_videos[0];
                 videoPlayConfig.b = w().feed_videos[1];
                 videoPlayConfig.e = layoutParams2.width;
                 videoPlayConfig.f = layoutParams2.height;
                 videoPlayConfig.a(i);
-                videoPlayConfig.b(a3);
+                videoPlayConfig.b(a2);
                 try {
-                    videoPlayConfig.f15653c = Integer.parseInt(w().feed_video_size);
+                    videoPlayConfig.c = Integer.parseInt(w().feed_video_size);
                 } catch (Exception e) {
                     Logger.b(FeedListAdapterForRecyclerView.class.getSimpleName(), " initVideo Integer.parseInt(getContentData().feed_video_size) Exception");
                 }
@@ -4606,7 +4538,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                             return;
                         }
                         if (VideoFeedViewHolder.this.g()) {
-                            EventTrackFeed.a(FeedProtos.Event.NOTE_VIDEO_CLICK, VideoFeedViewHolder.this.f19641a.circle_id, VideoFeedViewHolder.this.f19641a.feed_id, EventTrackFeed.j(FeedListAdapterForRecyclerView.this.d), "");
+                            EventTrackFeed.a(FeedProtos.Event.NOTE_VIDEO_CLICK, VideoFeedViewHolder.this.a.circle_id, VideoFeedViewHolder.this.a.feed_id, EventTrackFeed.j(FeedListAdapterForRecyclerView.this.d), "");
                         }
                         String[] strArr2 = strArr;
                         if (strArr2 == null || strArr2.length < 2) {
@@ -4623,14 +4555,14 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                         }
                         CommunityServiceManager.d().c("feed_video_play", 1);
                         ICommunityShowPageService b = CommunityServiceManager.b();
-                        Context context = FeedListAdapterForRecyclerView.this.f19617a;
+                        Context context = FeedListAdapterForRecyclerView.this.a;
                         String[] strArr3 = strArr;
                         b.a(context, strArr3[0], strArr3[1], VideoFeedViewHolder.this.w().feed_id, FeedListAdapterForRecyclerView.this.h, f);
                         NearbyFeedFragment.q = SystemClock.elapsedRealtime();
                         if (FeedListAdapterForRecyclerView.this.b != null && (FeedListAdapterForRecyclerView.this.b instanceof RecommendFeedFragment)) {
                             ((RecommendFeedFragment) FeedListAdapterForRecyclerView.this.b).c(VideoFeedViewHolder.this.d);
                         }
-                        FeedListAdapterForRecyclerView.this.a(2, VideoFeedViewHolder.this.f19641a);
+                        FeedListAdapterForRecyclerView.this.a(2, VideoFeedViewHolder.this.a);
                     }
                 });
                 this.B.b(videoPlayConfig);
@@ -4650,17 +4582,17 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (CommunityServiceManager.a().k()) {
                 return;
             }
-            if (this.f19641a.isRepostAndDeleted()) {
-                a(this.f19641a, false);
+            if (this.a.isRepostAndDeleted()) {
+                a(this.a, false);
             } else if (FeedListAdapterForRecyclerView.this.d == 1 || FeedListAdapterForRecyclerView.this.d == 5 || FeedListAdapterForRecyclerView.this.d == 29 || FeedListAdapterForRecyclerView.this.d == 30) {
-                a(w(), true, this.f19641a.feed_id, this.f19641a.feed_uid);
+                a(w(), true, this.a.feed_id, this.a.feed_uid);
             } else {
-                a(w(), false, this.f19641a.feed_id, this.f19641a.feed_uid);
+                a(w(), false, this.a.feed_id, this.a.feed_uid);
             }
         }
 
         private void t() {
-            EventTrackFeed.a(FeedProtos.Event.NOTE_VIDEO_CLICK, this.f19641a.circle_id, this.f19641a.feed_id, EventTrackFeed.j(FeedListAdapterForRecyclerView.this.d), "");
+            EventTrackFeed.a(FeedProtos.Event.NOTE_VIDEO_CLICK, this.a.circle_id, this.a.feed_id, EventTrackFeed.j(FeedListAdapterForRecyclerView.this.d), "");
             if (CommunityServiceManager.a().k()) {
                 return;
             }
@@ -4678,12 +4610,12 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                     f = 0.0f;
                 }
             }
-            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, strArr[0], strArr[1], this.f19641a.feed_id, 7, f);
+            CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, strArr[0], strArr[1], this.a.feed_id, 7, f);
             NearbyFeedFragment.q = SystemClock.elapsedRealtime();
             if (FeedListAdapterForRecyclerView.this.b != null && (FeedListAdapterForRecyclerView.this.b instanceof RecommendFeedFragment)) {
                 ((RecommendFeedFragment) FeedListAdapterForRecyclerView.this.b).c(this.d);
             }
-            FeedListAdapterForRecyclerView.this.a(2, this.f19641a);
+            FeedListAdapterForRecyclerView.this.a(2, this.a);
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -4715,7 +4647,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         public VoteFeedViewHolder(View view) {
             super(view);
-            this.y = (FeedVoteGroup) a(R.id.feed_vote);
+            this.y = a(R.id.feed_vote);
         }
 
         private void b(BluedIngSelfFeed bluedIngSelfFeed) {
@@ -4723,13 +4655,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.r.setVisibility(0);
             this.r.setOnClickListener(new SingleClickProxy(this));
             if (TextUtils.isEmpty(bluedIngSelfFeed.feed_id) || bluedIngSelfFeed.feed_status != 200) {
-                this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_feed_unshare));
-                this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_k_50));
+                this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_feed_unshare));
+                this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_k_50));
                 this.r.setEnabled(false);
                 return;
             }
-            this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.f19617a, R.drawable.icon_feed_share));
-            this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_h));
+            this.u.setImageDrawable(BluedSkinUtils.b(FeedListAdapterForRecyclerView.this.a, R.drawable.icon_feed_share));
+            this.v.setTextColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_h));
             this.r.setEnabled(true);
         }
 
@@ -4741,49 +4673,47 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             this.y.setVisibility(0);
             final String str = w().feed_pics[0];
             final String str2 = w().feed_pics[1];
-            this.y.a(FeedListAdapterForRecyclerView.this.f19618c, AvatarUtils.a(str), AvatarUtils.a(str2));
-            this.y.a(w().ivoted, w().a_vote_count, w().vote_count, this.f19641a.isRepost());
+            this.y.a(FeedListAdapterForRecyclerView.this.c, AvatarUtils.a(str), AvatarUtils.a(str2));
+            this.y.a(w().ivoted, w().a_vote_count, w().vote_count, this.a.isRepost());
             this.y.setOnViewClickListener(new FeedVoteGroup.OnViewClickListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.VoteFeedViewHolder.1
-                @Override // com.blued.community.widget.vote.picture.FeedVoteGroup.OnViewClickListener
                 public void a(boolean z) {
-                    if (VoteFeedViewHolder.this.f19641a.isRepost()) {
+                    if (VoteFeedViewHolder.this.a.isRepost()) {
                         VoteFeedViewHolder voteFeedViewHolder = VoteFeedViewHolder.this;
-                        voteFeedViewHolder.a(voteFeedViewHolder.f19641a.repost, false);
+                        voteFeedViewHolder.a(voteFeedViewHolder.a.repost, false);
                         return;
                     }
-                    FeedHttpUtils.a((BluedUIHttpResponse) null, VoteFeedViewHolder.this.f19641a.feed_id, UserInfoUtils.c(), z, FeedListAdapterForRecyclerView.this.f19618c);
-                    VoteFeedViewHolder.this.f19641a.is_vote = 1;
-                    VoteFeedViewHolder.this.f19641a.vote_count++;
+                    FeedHttpUtils.a((BluedUIHttpResponse) null, VoteFeedViewHolder.this.a.feed_id, UserInfoUtils.c(), z, FeedListAdapterForRecyclerView.this.c);
+                    VoteFeedViewHolder.this.a.is_vote = 1;
+                    VoteFeedViewHolder.this.a.vote_count++;
                     if (z) {
-                        VoteFeedViewHolder.this.f19641a.a_vote_count++;
-                        VoteFeedViewHolder.this.f19641a.ivoted = 1;
+                        VoteFeedViewHolder.this.a.a_vote_count++;
+                        VoteFeedViewHolder.this.a.ivoted = 1;
                     } else {
-                        VoteFeedViewHolder.this.f19641a.b_vote_count++;
-                        VoteFeedViewHolder.this.f19641a.ivoted = 2;
+                        VoteFeedViewHolder.this.a.b_vote_count++;
+                        VoteFeedViewHolder.this.a.ivoted = 2;
                     }
-                    VoteFeedViewHolder.this.y.a(VoteFeedViewHolder.this.f19641a.ivoted, VoteFeedViewHolder.this.f19641a.a_vote_count, VoteFeedViewHolder.this.f19641a.vote_count, VoteFeedViewHolder.this.f19641a.isRepost());
-                    LiveEventBus.get("feed_vote_change").post(VoteFeedViewHolder.this.f19641a);
-                    EventTrackVote.a(VoteProtos.Event.VOTE_FEED_CHOOSE_PHOTO_CLICK, VoteFeedViewHolder.this.f19641a, z ? VoteProtos.PhotoOption.PHOTO_A : VoteProtos.PhotoOption.PHOTO_B, FeedListAdapterForRecyclerView.this.d);
+                    VoteFeedViewHolder.this.y.a(VoteFeedViewHolder.this.a.ivoted, VoteFeedViewHolder.this.a.a_vote_count, VoteFeedViewHolder.this.a.vote_count, VoteFeedViewHolder.this.a.isRepost());
+                    LiveEventBus.get("feed_vote_change").post(VoteFeedViewHolder.this.a);
+                    EventTrackVote.a(VoteProtos.Event.VOTE_FEED_CHOOSE_PHOTO_CLICK, VoteFeedViewHolder.this.a, z ? VoteProtos.PhotoOption.PHOTO_A : VoteProtos.PhotoOption.PHOTO_B, FeedListAdapterForRecyclerView.this.d);
                 }
 
-                @Override // com.blued.community.widget.vote.picture.FeedVoteGroup.OnViewClickListener
                 public void b(boolean z) {
-                    if (VoteFeedViewHolder.this.f19641a.isRepost()) {
+                    if (VoteFeedViewHolder.this.a.isRepost()) {
                         VoteFeedViewHolder voteFeedViewHolder = VoteFeedViewHolder.this;
-                        voteFeedViewHolder.a(voteFeedViewHolder.f19641a.repost, false);
+                        voteFeedViewHolder.a(voteFeedViewHolder.a.repost, false);
                         return;
                     }
-                    if (VoteFeedViewHolder.this.f19641a.isCirclePost()) {
-                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, new String[]{str, str2}, !z ? 1 : 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, VoteFeedViewHolder.this.f19641a.user_name, (View) null, "");
+                    if (VoteFeedViewHolder.this.a.isCirclePost()) {
+                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, new String[]{str, str2}, !z ? 1 : 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, VoteFeedViewHolder.this.a.user_name, (View) null, "");
                     } else {
-                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, VoteFeedViewHolder.this.w(), 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, VoteFeedViewHolder.this.w().user_name, FeedListAdapterForRecyclerView.this.d);
+                        CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, VoteFeedViewHolder.this.w(), 0, FeedListAdapterForRecyclerView.this.g, (LoadOptions) null, VoteFeedViewHolder.this.w().user_name, FeedListAdapterForRecyclerView.this.d);
                     }
                     NearbyFeedFragment.q = SystemClock.elapsedRealtime();
                     if (FeedListAdapterForRecyclerView.this.b != null && (FeedListAdapterForRecyclerView.this.b instanceof RecommendFeedFragment)) {
                         ((RecommendFeedFragment) FeedListAdapterForRecyclerView.this.b).c(VoteFeedViewHolder.this.d);
                     }
-                    FeedListAdapterForRecyclerView.this.a(2, VoteFeedViewHolder.this.f19641a);
-                    EventTrackVote.a(VoteProtos.Event.VOTE_FEED_ENLARGE_PHOTO_CLICK, VoteFeedViewHolder.this.f19641a.feed_uid, VoteFeedViewHolder.this.f19641a.feed_id);
+                    FeedListAdapterForRecyclerView.this.a(2, VoteFeedViewHolder.this.a);
+                    EventTrackVote.a(VoteProtos.Event.VOTE_FEED_ENLARGE_PHOTO_CLICK, VoteFeedViewHolder.this.a.feed_uid, VoteFeedViewHolder.this.a.feed_id);
                 }
             });
         }
@@ -4791,7 +4721,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         public void a(BluedIngSelfFeed bluedIngSelfFeed, int i) {
             if (!bluedIngSelfFeed.isRepost() && TextUtils.isEmpty(bluedIngSelfFeed.feed_content)) {
-                bluedIngSelfFeed.feed_content = FeedListAdapterForRecyclerView.this.f19617a.getString(R.string.feed_vote_content_default);
+                bluedIngSelfFeed.feed_content = FeedListAdapterForRecyclerView.this.a.getString(R.string.feed_vote_content_default);
             }
             super.a(bluedIngSelfFeed, i);
             b(bluedIngSelfFeed);
@@ -4819,7 +4749,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected void p() {
-            if (this.f19641a.reading_scope == 0) {
+            if (this.a.reading_scope == 0) {
                 super.p();
             } else {
                 AppMethods.d(R.string.feed_votes_not_share);
@@ -4844,7 +4774,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             super(view);
             this.K = (LinearLayout) a(R.id.feed_info);
             this.L = (TextView) a(R.id.content_view);
-            this.M = (CardView) a(R.id.cv_web_share);
+            this.M = a(R.id.cv_web_share);
             this.N = (ImageView) a(R.id.img_web_share);
             this.O = a(R.id.view_share_corner);
             this.P = (ShapeTextView) a(R.id.view_circle_corner);
@@ -4855,16 +4785,16 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
         private void r() {
             if (k()) {
-                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_y));
+                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_y));
             } else {
-                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.f19617a, R.color.syc_x));
+                this.M.setCardBackgroundColor(BluedSkinUtils.a(FeedListAdapterForRecyclerView.this.a, R.color.syc_x));
             }
         }
 
         private void s() {
             CommunityServiceManager.d().a("feed_web_card_click", 1);
             if (w().feed_extras != null) {
-                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.f19617a, w().feed_extras.url, CommunityConstants.WebShowType.DEFAULT);
+                CommunityServiceManager.b().a(FeedListAdapterForRecyclerView.this.a, w().feed_extras.url, CommunityConstants.WebShowType.DEFAULT);
             }
         }
 
@@ -4882,12 +4812,12 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.RepostAndTextFeedViewHolder, com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
         protected String b() {
             if (w().feed_extras == null || w().feed_extras.thumb == null || w().feed_extras.thumb.size() <= 0) {
-                if (this.f19641a.feed_extras == null || this.f19641a.feed_extras.thumb == null || this.f19641a.feed_extras.thumb.size() <= 0) {
+                if (this.a.feed_extras == null || this.a.feed_extras.thumb == null || this.a.feed_extras.thumb.size() <= 0) {
                     return null;
                 }
-                return this.f19641a.feed_extras.thumb.get(0).replace(";", "");
+                return this.a.feed_extras.thumb.get(0).replace(i.b, "");
             }
-            return w().feed_extras.thumb.get(0).replace(";", "");
+            return w().feed_extras.thumb.get(0).replace(i.b, "");
         }
 
         @Override // com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.BaseFeedViewHolder
@@ -4909,7 +4839,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (w().feed_extras != null) {
                 this.Q.setText(w().feed_extras.title);
             }
-            ImageLoader.a(FeedListAdapterForRecyclerView.this.f19618c, b()).b(R.drawable.defaultpicture).a(this.N);
+            ImageLoader.a(FeedListAdapterForRecyclerView.this.c, b()).b(R.drawable.defaultpicture).a(this.N);
         }
     }
 
@@ -4926,7 +4856,6 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         this.K = false;
         this.M = 0;
         this.s = new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.5
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(final RecyclerView recyclerView2, int i2) {
                 super.onScrollStateChanged(recyclerView2, i2);
                 FeedListAdapterForRecyclerView.this.m = i2;
@@ -4946,12 +4875,11 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 }, 300L);
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView2, int i2, int i3) {
                 super.onScrolled(recyclerView2, i2, i3);
-                RecyclerView.LayoutManager layoutManager = recyclerView2.getLayoutManager();
+                LinearLayoutManager layoutManager = recyclerView2.getLayoutManager();
                 if (layoutManager instanceof LinearLayoutManager) {
-                    LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
+                    LinearLayoutManager linearLayoutManager = layoutManager;
                     FeedListAdapterForRecyclerView.this.E = linearLayoutManager.findFirstVisibleItemPosition();
                     FeedListAdapterForRecyclerView.this.F = linearLayoutManager.findLastVisibleItemPosition();
                 }
@@ -4960,13 +4888,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         this.N = 0L;
         this.O = 0L;
         this.P = 0L;
-        this.f19617a = context;
+        this.a = context;
         this.b = baseFragment;
-        this.f19618c = baseFragment.getFragmentActive();
+        this.c = baseFragment.getFragmentActive();
         this.d = i;
         this.H = new NativeListHelper(0);
         if (recyclerView != null) {
-            recyclerView.setItemAnimator(null);
+            recyclerView.setItemAnimator((RecyclerView.ItemAnimator) null);
             if (getRecyclerView() == null) {
                 bindToRecyclerView(recyclerView);
             }
@@ -5007,7 +4935,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             return;
         }
         bluedIngSelfFeed.isFeedClickPhotoTracked = true;
-        FeedHttpUtils.a(String.valueOf(i), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.feed_uid, (BluedUIHttpResponse) null, this.f19618c);
+        FeedHttpUtils.a(String.valueOf(i), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.feed_uid, (BluedUIHttpResponse) null, this.c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5070,13 +4998,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
         View view = baseViewHolder.getView(R.id.item_feed_sign_say_hi_btn);
         if (view != null) {
-            Context context = this.f19617a;
-            FeedGuidePop.t.a(new FeedGuidePop(context, context.getString(R.string.feed_list_item_double_click_sign), NinePatchUtils.GuideArrowPosition.CENTER, true, 0, null, 0, 0, 0), new SimpleCallback(), view, 0L);
+            Context context = this.a;
+            FeedGuidePop.t.a(new FeedGuidePop(context, context.getString(R.string.feed_list_item_double_click_sign), NinePatchUtils.GuideArrowPosition.CENTER, true, 0, (String) null, 0, 0, 0), new SimpleCallback(), view, 0L);
         }
         final ImageView imageView = (ImageView) baseViewHolder.getView(R.id.sign_feed_guide_poke_hand_iv);
         if (imageView != null) {
             imageView.setVisibility(0);
-            ImageLoader.c(this.f19618c, "sign_feed_guide_poke_hand.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.3
+            ImageLoader.c(this.c, "sign_feed_guide_poke_hand.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.3
                 @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                 public void a() {
                 }
@@ -5130,8 +5058,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 EventTrackFeed.a(FeedProtos.Event.PUNCH_FEED_TXT_CLICK, bluedIngSelfFeed.feed_id, bluedIngSelfFeed.feed_uid, q(), bluedIngSelfFeed.is_new_face == 1, bluedIngSelfFeed.strong_insert_data, false, true);
             }
         } else {
-            Context context = this.f19617a;
-            FeedGuidePop.t.a(new FeedGuidePop(context, context.getString(R.string.feed_list_item_double_click_sign), NinePatchUtils.GuideArrowPosition.CENTER, true, 0, null, 0, 0, 0), new SimpleCallback(), baseViewHolder.getView(R.id.item_feed_sign_say_hi_btn), 0L);
+            Context context = this.a;
+            FeedGuidePop.t.a(new FeedGuidePop(context, context.getString(R.string.feed_list_item_double_click_sign), NinePatchUtils.GuideArrowPosition.CENTER, true, 0, (String) null, 0, 0, 0), new SimpleCallback(), baseViewHolder.getView(R.id.item_feed_sign_say_hi_btn), 0L);
             EventTrackFeed.a(FeedProtos.Event.PUNCH_FEED_POKE_CLICK, bluedIngSelfFeed.feed_id, bluedIngSelfFeed.feed_uid, q(), bluedIngSelfFeed.is_new_face == 1, bluedIngSelfFeed.strong_insert_data, false, false);
         }
         this.N = 0L;
@@ -5182,9 +5110,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         this.i = true;
         a(bluedIngSelfFeed, 1, i);
         if (z) {
-            CircleHttpUtils.a((BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.liked_url, this.f19618c);
+            CircleHttpUtils.a((BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.liked_url, this.c);
         } else {
-            FeedHttpUtils.a(this.f19617a, (BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.is_ads, bluedIngSelfFeed.liked_url, this.f19618c);
+            FeedHttpUtils.a(this.a, (BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.is_ads, bluedIngSelfFeed.liked_url, this.c);
         }
     }
 
@@ -5200,9 +5128,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         bluedIngSelfFeed.iliked = 0;
         a(bluedIngSelfFeed, 0, i);
         if (z) {
-            CircleHttpUtils.a((BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, this.f19618c);
+            CircleHttpUtils.a((BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, this.c);
         } else {
-            FeedHttpUtils.a(this.f19617a, (BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.is_ads, this.f19618c);
+            FeedHttpUtils.a(this.a, (BluedUIHttpResponse) null, UserInfoUtils.c(), bluedIngSelfFeed.feed_id, bluedIngSelfFeed.is_ads, this.c);
         }
     }
 
@@ -5240,19 +5168,19 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (bluedIngSelfFeed.age > 0) {
                 sb.append(bluedIngSelfFeed.age);
             } else {
-                sb.append(Constants.WAVE_SEPARATOR);
+                sb.append("~");
             }
-            sb.append(this.f19617a.getString(R.string.cut_point));
+            sb.append(this.a.getString(R.string.cut_point));
             if (bluedIngSelfFeed.height > 0) {
                 sb.append(bluedIngSelfFeed.height);
             } else {
-                sb.append(Constants.WAVE_SEPARATOR);
+                sb.append("~");
             }
-            sb.append(this.f19617a.getString(R.string.cut_point));
+            sb.append(this.a.getString(R.string.cut_point));
             if (bluedIngSelfFeed.weight > 0) {
                 sb.append(bluedIngSelfFeed.weight);
             } else {
-                sb.append(Constants.WAVE_SEPARATOR);
+                sb.append("~");
             }
             return sb.toString();
         }
@@ -5262,7 +5190,6 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     private void t() {
         if (this.b != null) {
             LiveEventBus.get("FEED_BUBBLE_SAY_HELLO", String.class).observe(this.b, new Observer() { // from class: com.blued.community.ui.feed.adapter.-$$Lambda$FeedListAdapterForRecyclerView$ycG265fQOLKTzZhLDn1gYc11DqM
-                @Override // androidx.lifecycle.Observer
                 public final void onChanged(Object obj) {
                     FeedListAdapterForRecyclerView.this.e((String) obj);
                 }
@@ -5358,12 +5285,12 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     }
 
     protected void a() {
-        this.mLayoutInflater = LayoutInflater.from(this.f19617a);
-        this.f = DialogUtils.a(this.f19617a);
+        this.mLayoutInflater = LayoutInflater.from(this.a);
+        this.f = DialogUtils.a(this.a);
         ImageOptions imageOptions = new ImageOptions();
         this.B = imageOptions;
-        imageOptions.f9508c = R.drawable.defaultpicture;
-        this.B.f9507a = R.drawable.defaultpicture;
+        imageOptions.c = R.drawable.defaultpicture;
+        this.B.a = R.drawable.defaultpicture;
         if (this.d != 1) {
             this.g = 0;
             this.h = 7;
@@ -5395,9 +5322,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         if (recyclerView == null) {
             return;
         }
-        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        LinearLayoutManager layoutManager = recyclerView.getLayoutManager();
         if (layoutManager instanceof LinearLayoutManager) {
-            LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
+            LinearLayoutManager linearLayoutManager = layoutManager;
             this.q = linearLayoutManager.findFirstVisibleItemPosition();
             this.p = linearLayoutManager.findFirstCompletelyVisibleItemPosition();
             this.L = linearLayoutManager.findLastCompletelyVisibleItemPosition();
@@ -5416,7 +5343,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             b(recyclerView);
             f();
             this.I.removeMessages(1);
-            this.I.sendEmptyMessageDelayed(1, m.ag);
+            this.I.sendEmptyMessageDelayed(1, 3000L);
         }
         BaseFragment baseFragment = this.b;
         if (baseFragment != null) {
@@ -5603,7 +5530,6 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, BluedIngSelfFeed bluedIngSelfFeed) {
         a(bluedIngSelfFeed, baseViewHolder.getAdapterPosition() - getHeaderLayoutCount());
@@ -5725,13 +5651,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
     protected void a(BaseViewHolder baseViewHolder, final BluedIngSelfFeed bluedIngSelfFeed, int i) {
         final ViewFlipper viewFlipper;
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             baseViewHolder.setAlpha(R.id.item_feed_sign_set_bg_corner_id, 0.08f);
-            ((CardView) baseViewHolder.getView(R.id.item_feed_sign_set_bg_id)).setCardBackgroundColor(this.f19617a.getResources().getColor(R.color.trans_white_nine));
+            baseViewHolder.getView(R.id.item_feed_sign_set_bg_id).setCardBackgroundColor(this.a.getResources().getColor(R.color.trans_white_nine));
             baseViewHolder.setBackgroundRes(R.id.item_feed_sign_set_content_bg, R.drawable.gradient_feed_sign_set_bg);
         } else {
             baseViewHolder.setAlpha(R.id.item_feed_sign_set_bg_corner_id, 1.0f);
-            ((CardView) baseViewHolder.getView(R.id.item_feed_sign_set_bg_id)).setCardBackgroundColor(this.f19617a.getResources().getColor(R.color.white));
+            baseViewHolder.getView(R.id.item_feed_sign_set_bg_id).setCardBackgroundColor(this.a.getResources().getColor(R.color.white));
             baseViewHolder.setBackgroundRes(R.id.item_feed_sign_set_content_bg, R.drawable.gradient_feed_sign_set_bg_dark);
         }
         baseViewHolder.setText(R.id.item_feed_sign_set_time, TimeAndDateUtils.a(bluedIngSelfFeed.feed_timestamp, true));
@@ -5746,9 +5672,9 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 }
                 BluedIngSelfFeed bluedIngSelfFeed2 = bluedIngSelfFeed.signStateList.get(i4);
                 View inflate = this.mLayoutInflater.inflate(i2, (ViewGroup) null);
-                ImageLoader.a(this.f19618c, bluedIngSelfFeed2.user_avatar).c().a((ImageView) inflate.findViewById(R.id.item_feed_sign_set_avatar));
+                ImageLoader.a(this.c, bluedIngSelfFeed2.user_avatar).c().a((ImageView) inflate.findViewById(R.id.item_feed_sign_set_avatar));
                 ((TextView) inflate.findViewById(R.id.item_feed_sign_set_user_name)).setText(bluedIngSelfFeed2.user_name);
-                ImageLoader.a(this.f19618c, bluedIngSelfFeed2.bubble_state_icon).b(R.drawable.defaultpicture).a((ImageView) inflate.findViewById(R.id.item_feed_sign_set_state_iv));
+                ImageLoader.a(this.c, bluedIngSelfFeed2.bubble_state_icon).b(R.drawable.defaultpicture).a((ImageView) inflate.findViewById(R.id.item_feed_sign_set_state_iv));
                 TextView textView = (TextView) inflate.findViewById(R.id.item_feed_sign_set_state_tv);
                 textView.setText(bluedIngSelfFeed2.bubble_state_name + " | " + bluedIngSelfFeed2.feed_content);
                 viewFlipper.addView(inflate);
@@ -5871,7 +5797,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
         eventLogData.isStagger = false;
         eventLogData.mode = "";
-        EventDetailsFragment.f19534a.a(this.f19617a, str, eventLogData);
+        EventDetailsFragment.a.a(this.a, str, eventLogData);
     }
 
     public void a(List<BluedIngSelfFeed> list) {
@@ -5880,9 +5806,8 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void addData(Collection<? extends BluedIngSelfFeed> collection) {
-        super.addData((Collection) a(collection));
+        super.addData(a(collection));
         notifyDataSetChanged();
     }
 
@@ -5939,7 +5864,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (childAt != null && (childAt.getTag() instanceof SignStateSetViewHolder)) {
                 CommunityPreferences.n(false);
                 SignStateSetViewHolder signStateSetViewHolder = (SignStateSetViewHolder) childAt.getTag();
-                Context context = this.f19617a;
+                Context context = this.a;
                 FeedGuidePop.t.a(new FeedGuidePop(context, context.getString(R.string.sign_feed_set_guide_enter), NinePatchUtils.GuideArrowPosition.RIGHT, true, R.drawable.defaultpicture, "sign_feed_set_guide_update_hand.png", 18, 30, 0), new SimpleCallback(), signStateSetViewHolder.b.getView(R.id.item_feed_sign_set_time_arrow), 0L);
                 return;
             }
@@ -5987,7 +5912,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             logData.target_uid = bluedIngSelfFeed.feed_uid;
             logData.feed_id = bluedIngSelfFeed.feed_id;
             logData.is_call = "1";
-            CommunityServiceManager.b().b(this.f19617a, bluedIngSelfFeed, false, 0, logData, FeedMethods.b(this.d, 0));
+            CommunityServiceManager.b().b(this.a, bluedIngSelfFeed, false, 0, logData, FeedMethods.b(this.d, 0));
         }
         EventTrackFeed.a(FeedProtos.Event.PUNCH_FEED_HI_CLICK, bluedIngSelfFeed.feed_id, bluedIngSelfFeed.feed_uid, q(), bluedIngSelfFeed.is_new_face == 1, bluedIngSelfFeed.strong_insert_data, false, false);
         BaseFragment baseFragment = this.b;
@@ -6035,7 +5960,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 CommunityPreferences.e(false);
                 final ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.feed_sign_guide_avatar_hand);
                 imageView2.setVisibility(0);
-                ImageLoader.c(this.f19618c, "sign_feed_guide_poke_hand.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.10
+                ImageLoader.c(this.c, "sign_feed_guide_poke_hand.png").g().a(new ImageLoader.OnAnimationStateListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.10
                     @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
                     public void a() {
                     }
@@ -6058,7 +5983,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
             if (this.d == 1) {
                 i2 = R.string.feed_list_item_double_click_poke_him;
             }
-            Context context = this.f19617a;
+            Context context = this.a;
             FeedGuidePop feedGuidePop = new FeedGuidePop(context, context.getString(i2), NinePatchUtils.GuideArrowPosition.LEFT, true, 0, "sign_feed_set_guide_update_hand.png", 18, 30, 0);
             feedGuidePop.setOffsetX(FeedMethods.c(-10));
             feedGuidePop.setHorizonTriangleMargin(FeedMethods.c(22));
@@ -6125,7 +6050,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
 
     public void b(List<BluedIngSelfFeed> list) {
         if (list != null) {
-            addData((Collection<? extends BluedIngSelfFeed>) c(list));
+            addData(c(list));
         }
     }
 
@@ -6148,17 +6073,14 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void bindToRecyclerView(RecyclerView recyclerView) {
         super.bindToRecyclerView(recyclerView);
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.1
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView2, int i) {
                 super.onScrollStateChanged(recyclerView2, i);
                 FeedListAdapterForRecyclerView.this.a(recyclerView2, i);
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView2, int i, int i2) {
                 super.onScrolled(recyclerView2, i, i2);
                 FeedListAdapterForRecyclerView.this.a(recyclerView2, i, i2);
@@ -6243,7 +6165,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         if (bluedIngSelfFeed == null) {
             return;
         }
-        FeedHttpUtils.i(new BluedUIHttpResponse<BluedEntityA<String>>(this.f19618c) { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.12
+        FeedHttpUtils.i(new BluedUIHttpResponse<BluedEntityA<String>>(this.c) { // from class: com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView.12
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -6267,7 +6189,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
                 }
                 ((SignFeedListFragment) FeedListAdapterForRecyclerView.this.b).D();
             }
-        }, bluedIngSelfFeed.feed_id, this.f19618c);
+        }, bluedIngSelfFeed.feed_id, this.c);
     }
 
     @Override // com.blued.community.ui.feed.observer.IFeedDataObserver
@@ -6528,7 +6450,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     protected void f(BluedIngSelfFeed bluedIngSelfFeed) {
         CircleConstants.CIRCLE_FROM_PAGE circle_from_page = null;
         if (!e(bluedIngSelfFeed)) {
-            CircleDetailsFragment.a(this.f19617a, c(bluedIngSelfFeed).join_circle_id, (CircleConstants.CIRCLE_FROM_PAGE) null);
+            CircleDetailsFragment.a(this.a, c(bluedIngSelfFeed).join_circle_id, (CircleConstants.CIRCLE_FROM_PAGE) null);
             return;
         }
         int i = this.d;
@@ -6546,7 +6468,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         } else if (g()) {
             circle_from_page = CircleConstants.CIRCLE_FROM_PAGE.USER_INFO_JOIN_CIRCLE_FEED;
         }
-        CircleDetailsFragment.a(this.f19617a, c(bluedIngSelfFeed).join_circle_id, circle_from_page);
+        CircleDetailsFragment.a(this.a, c(bluedIngSelfFeed).join_circle_id, circle_from_page);
     }
 
     protected void f(BluedIngSelfFeed bluedIngSelfFeed, int i) {
@@ -6575,7 +6497,7 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
         userBasicModel.avatar = bluedIngSelfFeed.user_avatar;
         userBasicModel.is_vip_annual = bluedIngSelfFeed.is_vip_annual;
         userBasicModel.is_show_vip_page = bluedIngSelfFeed.is_show_vip_page;
-        CommunityServiceManager.b().a(this.f19617a, userBasicModel, CommonStringUtils.c(bluedIngSelfFeed.lid));
+        CommunityServiceManager.b().a(this.a, userBasicModel, CommonStringUtils.c(bluedIngSelfFeed.lid));
     }
 
     protected boolean g() {
@@ -6653,14 +6575,13 @@ public class FeedListAdapterForRecyclerView extends BaseMultiItemQuickAdapter<Bl
     }
 
     public void s() {
-        if (this.K && this.d == 4 && CommunityPreferences.X() < 2 && FeedConstants.f19822c == 1) {
+        if (this.K && this.d == 4 && CommunityPreferences.X() < 2 && FeedConstants.c == 1) {
             this.P = SystemClock.elapsedRealtime();
-            FeedConstants.f19822c = 0;
+            FeedConstants.c = 0;
             u();
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<BluedIngSelfFeed> list) {
         this.l = true;
         this.C.clear();

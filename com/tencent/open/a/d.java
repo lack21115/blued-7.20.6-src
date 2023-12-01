@@ -34,11 +34,11 @@ public class d {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private File f38233a;
+        private File f24542a;
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f38234c;
+        private long f24543c;
 
         public static c b(File file) {
             StatFs statFs;
@@ -51,7 +51,7 @@ public class d {
         }
 
         public File a() {
-            return this.f38233a;
+            return this.f24542a;
         }
 
         public void a(long j) {
@@ -59,7 +59,7 @@ public class d {
         }
 
         public void a(File file) {
-            this.f38233a = file;
+            this.f24542a = file;
         }
 
         public long b() {
@@ -67,11 +67,11 @@ public class d {
         }
 
         public void b(long j) {
-            this.f38234c = j;
+            this.f24543c = j;
         }
 
         public long c() {
-            return this.f38234c;
+            return this.f24543c;
         }
 
         public String toString() {
@@ -81,7 +81,7 @@ public class d {
 
     /* renamed from: com.tencent.open.a.d$d  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/a/d$d.class */
-    public static final class C0973d {
+    public static final class C0803d {
         public static SimpleDateFormat a(String str) {
             return new SimpleDateFormat(str);
         }

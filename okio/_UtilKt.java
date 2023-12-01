@@ -1,6 +1,5 @@
 package okio;
 
-import android.os.BatteryStats;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -25,8 +24,8 @@ public final class _UtilKt {
         return i & j;
     }
 
-    public static final boolean arrayRangeEquals(byte[] a2, int i, byte[] b, int i2, int i3) {
-        Intrinsics.e(a2, "a");
+    public static final boolean arrayRangeEquals(byte[] a, int i, byte[] b, int i2, int i3) {
+        Intrinsics.e(a, "a");
         Intrinsics.e(b, "b");
         if (i3 <= 0) {
             return true;
@@ -35,7 +34,7 @@ public final class _UtilKt {
         while (true) {
             int i5 = i4;
             int i6 = i5 + 1;
-            if (a2[i5 + i] != b[i5 + i2]) {
+            if (a[i5 + i] != b[i5 + i2]) {
                 return false;
             }
             if (i6 >= i3) {
@@ -93,7 +92,7 @@ public final class _UtilKt {
     }
 
     public static final long reverseBytes(long j) {
-        return ((j & 255) << 56) | ((BatteryStats.STEP_LEVEL_MODIFIED_MODE_MASK & j) >>> 56) | ((BatteryStats.STEP_LEVEL_INITIAL_MODE_MASK & j) >>> 40) | ((BatteryStats.STEP_LEVEL_LEVEL_MASK & j) >>> 24) | ((1095216660480L & j) >>> 8) | ((4278190080L & j) << 8) | ((16711680 & j) << 24) | ((65280 & j) << 40);
+        return ((j & 255) << 56) | (((-72057594037927936L) & j) >>> 56) | ((71776119061217280L & j) >>> 40) | ((280375465082880L & j) >>> 24) | ((1095216660480L & j) >>> 8) | ((4278190080L & j) << 8) | ((16711680 & j) << 24) | ((65280 & j) << 40);
     }
 
     public static final short reverseBytes(short s) {

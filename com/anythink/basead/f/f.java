@@ -9,9 +9,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/f/f.class */
 public class f extends c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6000a = f.class.getSimpleName();
+    public static final String a = f.class.getSimpleName();
     private com.anythink.basead.e.g k;
 
     public f(Context context, j jVar, String str, boolean z) {
@@ -21,7 +19,7 @@ public class f extends c {
     @Override // com.anythink.basead.f.a
     public final void a(Activity activity, Map<String, Object> map) {
         try {
-            if (this.f5991c == null) {
+            if (this.c == null) {
                 if (this.k != null) {
                     this.k.onShowFailed(com.anythink.basead.c.f.a(com.anythink.basead.c.f.i, com.anythink.basead.c.f.B));
                     return;
@@ -32,67 +30,67 @@ public class f extends c {
             String obj = map.get("extra_scenario").toString();
             int intValue = ((Integer) map.get(c.j)).intValue();
             final String str = this.d.b + this.e + System.currentTimeMillis();
-            com.anythink.basead.e.b.a().a(str, new b.InterfaceC0079b() { // from class: com.anythink.basead.f.f.1
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+            com.anythink.basead.e.b.a().a(str, new b.InterfaceC0039b() { // from class: com.anythink.basead.f.f.1
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void a() {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     if (f.this.k != null) {
                         f.this.k.onAdShow();
                     }
                 }
 
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void a(int i) {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     if (f.this.k != null) {
                         f.this.k.onAdClick(i);
                     }
                 }
 
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void a(com.anythink.basead.c.e eVar) {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     new StringBuilder("onVideoShowFailed.......").append(eVar.c());
                     if (f.this.k != null) {
                         f.this.k.onShowFailed(eVar);
                     }
                 }
 
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void a(boolean z) {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     if (f.this.k != null) {
                         f.this.k.onDeeplinkCallback(z);
                     }
                 }
 
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void b() {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     if (f.this.k != null) {
                         f.this.k.onVideoAdPlayStart();
                     }
                 }
 
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void c() {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     if (f.this.k != null) {
                         f.this.k.onVideoAdPlayEnd();
                     }
                 }
 
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void d() {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     if (f.this.k != null) {
                         f.this.k.onRewarded();
                     }
                 }
 
-                @Override // com.anythink.basead.e.b.InterfaceC0079b
+                @Override // com.anythink.basead.e.b.InterfaceC0039b
                 public final void e() {
-                    String str2 = f.f6000a;
+                    String str2 = f.a;
                     if (f.this.k != null) {
                         f.this.k.onAdClosed();
                     }
@@ -100,9 +98,9 @@ public class f extends c {
                 }
             });
             com.anythink.core.basead.b.a aVar = new com.anythink.core.basead.b.a();
-            aVar.f6395c = this.g;
+            aVar.c = this.g;
             aVar.d = str;
-            aVar.f6394a = 1;
+            aVar.a = 1;
             aVar.h = this.d;
             aVar.e = intValue;
             aVar.b = obj;

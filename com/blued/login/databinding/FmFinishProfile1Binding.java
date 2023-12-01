@@ -15,11 +15,11 @@ import com.blued.login.R;
 public final class FmFinishProfile1Binding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CommonEdittextView f20511a;
+    public final CommonEdittextView f6905a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f20512c;
+    public final ImageView f6906c;
     public final RelativeLayout d;
     public final CommonTopTitleNoTrans e;
     public final TextView f;
@@ -29,9 +29,9 @@ public final class FmFinishProfile1Binding implements ViewBinding {
 
     private FmFinishProfile1Binding(ConstraintLayout constraintLayout, CommonEdittextView commonEdittextView, ImageView imageView, ImageView imageView2, RelativeLayout relativeLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, ShapeTextView shapeTextView, TextView textView2) {
         this.i = constraintLayout;
-        this.f20511a = commonEdittextView;
+        this.f6905a = commonEdittextView;
         this.b = imageView;
-        this.f20512c = imageView2;
+        this.f6906c = imageView2;
         this.d = relativeLayout;
         this.e = commonTopTitleNoTrans;
         this.f = textView;
@@ -41,23 +41,23 @@ public final class FmFinishProfile1Binding implements ViewBinding {
 
     public static FmFinishProfile1Binding a(View view) {
         String str;
-        CommonEdittextView commonEdittextView = (CommonEdittextView) view.findViewById(R.id.et_nick);
-        if (commonEdittextView != null) {
+        CommonEdittextView findViewById = view.findViewById(R.id.et_nick);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_camera);
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_head);
                 if (imageView2 != null) {
                     RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_head);
                     if (relativeLayout != null) {
-                        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.title);
-                        if (commonTopTitleNoTrans != null) {
+                        CommonTopTitleNoTrans findViewById2 = view.findViewById(R.id.title);
+                        if (findViewById2 != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_hint);
                             if (textView != null) {
-                                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_next);
-                                if (shapeTextView != null) {
+                                ShapeTextView findViewById3 = view.findViewById(R.id.tv_next);
+                                if (findViewById3 != null) {
                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_nick_hint);
                                     if (textView2 != null) {
-                                        return new FmFinishProfile1Binding((ConstraintLayout) view, commonEdittextView, imageView, imageView2, relativeLayout, commonTopTitleNoTrans, textView, shapeTextView, textView2);
+                                        return new FmFinishProfile1Binding((ConstraintLayout) view, findViewById, imageView, imageView2, relativeLayout, findViewById2, textView, findViewById3, textView2);
                                     }
                                     str = "tvNickHint";
                                 } else {

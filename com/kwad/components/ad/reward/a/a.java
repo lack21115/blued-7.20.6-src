@@ -75,27 +75,27 @@ public final class a extends d implements View.OnClickListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.ad.reward.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/a/a$a.class */
-    public static final class C0490a {
+    public static final class C0320a {
         private CharSequence rc;
         private CharSequence rd;
         private CharSequence re;
         private CharSequence title;
 
-        private C0490a(CouponInfo couponInfo) {
+        private C0320a(CouponInfo couponInfo) {
             this.title = couponInfo.displayTitle;
             this.rc = couponInfo.displayValue;
             this.rd = !TextUtils.isEmpty(couponInfo.displayBase) ? String.format("满%s可用", couponInfo.displayBase) : "";
             this.re = couponInfo.displayActionWords;
         }
 
-        private static C0490a a(CouponInfo couponInfo) {
+        private static C0320a a(CouponInfo couponInfo) {
             if (couponInfo == null) {
                 return null;
             }
-            return new C0490a(couponInfo);
+            return new C0320a(couponInfo);
         }
 
-        public static C0490a s(AdTemplate adTemplate) {
+        public static C0320a s(AdTemplate adTemplate) {
             AdProductInfo ct = com.kwad.sdk.core.response.a.a.ct(com.kwad.sdk.core.response.a.d.cb(adTemplate));
             if (ct == null || ct.couponList == null || ct.couponList.size() <= 0) {
                 return null;
@@ -151,25 +151,25 @@ public final class a extends d implements View.OnClickListener {
         return a(imageView, j);
     }
 
-    private void a(C0490a c0490a) {
-        if (c0490a == null) {
+    private void a(C0320a c0320a) {
+        if (c0320a == null) {
             return;
         }
         TextView textView = this.he;
         if (textView != null) {
-            textView.setText(c0490a.getTitle());
+            textView.setText(c0320a.getTitle());
         }
         TextView textView2 = this.qS;
         if (textView2 != null) {
-            textView2.setText(c0490a.N(this.gv.getContext()));
+            textView2.setText(c0320a.N(this.gv.getContext()));
         }
         TextView textView3 = this.lP;
         if (textView3 != null) {
-            textView3.setText(c0490a.gM());
+            textView3.setText(c0320a.gM());
         }
         Button button = this.qT;
         if (button != null) {
-            button.setText(c0490a.gN());
+            button.setText(c0320a.gN());
         }
     }
 
@@ -251,7 +251,7 @@ public final class a extends d implements View.OnClickListener {
     @Override // com.kwad.components.ad.reward.k.d
     public final void a(v vVar) {
         super.a(vVar);
-        a(C0490a.s(vVar.getAdTemplate()));
+        a(C0320a.s(vVar.getAdTemplate()));
         this.gv.post(new AnonymousClass1(vVar, com.kwad.components.ad.reward.kwai.b.gF()));
     }
 

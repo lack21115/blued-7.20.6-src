@@ -4,14 +4,15 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.SparseArray;
-import com.amap.api.col.p0003sl.hn;
-import com.amap.api.col.p0003sl.iw;
-import com.amap.api.col.p0003sl.kh;
-import com.amap.api.col.p0003sl.ki;
-import com.amap.api.col.p0003sl.kj;
-import com.amap.api.col.p0003sl.kk;
+import com.amap.api.col.3sl.hn;
+import com.amap.api.col.3sl.iw;
+import com.amap.api.col.3sl.kh;
+import com.amap.api.col.3sl.ki;
+import com.amap.api.col.3sl.kj;
+import com.amap.api.col.3sl.kk;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.tencent.tendinsv.a.b;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +23,11 @@ import org.json.JSONObject;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public SparseArray<Long> f9283a = new SparseArray<>();
+    public SparseArray<Long> f6443a = new SparseArray<>();
     public int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f9284c = 0;
+    public long f6444c = 0;
     String[] d = {"ol", "cl", "gl", "ha", "bs", "ds"};
     public int e = -1;
     public long f = -1;
@@ -40,23 +41,23 @@ public final class g {
     static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9285a;
+        static final /* synthetic */ int[] f6445a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[AMapLocationClientOption.AMapLocationMode.values().length];
-            f9285a = iArr;
+            f6445a = iArr;
             try {
                 iArr[AMapLocationClientOption.AMapLocationMode.Battery_Saving.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9285a[AMapLocationClientOption.AMapLocationMode.Device_Sensors.ordinal()] = 2;
+                f6445a[AMapLocationClientOption.AMapLocationMode.Device_Sensors.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9285a[AMapLocationClientOption.AMapLocationMode.Hight_Accuracy.ordinal()] = 3;
+                f6445a[AMapLocationClientOption.AMapLocationMode.Hight_Accuracy.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -247,11 +248,15 @@ public final class g {
             String str2 = "cache";
             if (aMapLocation.getErrorCode() != 0) {
                 int errorCode = aMapLocation.getErrorCode();
-                str2 = (errorCode == 4 || errorCode == 5 || errorCode == 6 || errorCode == 11) ? "net" : "net";
+                if (errorCode == 4 || errorCode == 5 || errorCode == 6 || errorCode == 11) {
+                    str2 = TKDownloadReason.KSAD_TK_NET;
+                }
                 i2 = 0;
             } else {
                 int locationType = aMapLocation.getLocationType();
-                str2 = (locationType == 5 || locationType == 6) ? "net" : "net";
+                if (locationType == 5 || locationType == 6) {
+                    str2 = TKDownloadReason.KSAD_TK_NET;
+                }
                 i2 = 1;
             }
             a(context, "O016", str2, str, i2, aMapLocation.getErrorCode(), aVar);
@@ -385,18 +390,18 @@ public final class g {
                     g = aMapLocation2;
                     return;
                 }
-                g = aMapLocation.m2371clone();
+                g = aMapLocation.clone();
             }
             if (i.a(g) && i.a(aMapLocation2)) {
-                AMapLocation m2371clone = aMapLocation2.m2371clone();
-                if (g.getLocationType() != 1 && g.getLocationType() != 9 && !"gps".equalsIgnoreCase(g.getProvider()) && g.getLocationType() != 7 && m2371clone.getLocationType() != 1 && m2371clone.getLocationType() != 9 && !"gps".equalsIgnoreCase(m2371clone.getProvider()) && m2371clone.getLocationType() != 7) {
-                    long abs = Math.abs(m2371clone.getTime() - g.getTime()) / 1000;
+                AMapLocation clone = aMapLocation2.clone();
+                if (g.getLocationType() != 1 && g.getLocationType() != 9 && !"gps".equalsIgnoreCase(g.getProvider()) && g.getLocationType() != 7 && clone.getLocationType() != 1 && clone.getLocationType() != 9 && !"gps".equalsIgnoreCase(clone.getProvider()) && clone.getLocationType() != 7) {
+                    long abs = Math.abs(clone.getTime() - g.getTime()) / 1000;
                     long j2 = abs;
                     if (abs <= 0) {
                         j2 = 1;
                     }
                     if (j2 <= com.anythink.expressad.d.a.b.aC) {
-                        float a2 = i.a(g, m2371clone);
+                        float a2 = i.a(g, clone);
                         float f = a2 / ((float) j2);
                         if (a2 > 30000.0f && f > 1000.0f) {
                             StringBuilder sb = new StringBuilder();
@@ -414,25 +419,25 @@ public final class g {
                                 sb.append(g.getTime());
                             }
                             sb.append("#");
-                            sb.append(m2371clone.getLatitude());
+                            sb.append(clone.getLatitude());
                             sb.append(",");
-                            sb.append(m2371clone.getLongitude());
+                            sb.append(clone.getLongitude());
                             sb.append(",");
-                            sb.append(m2371clone.getAccuracy());
+                            sb.append(clone.getAccuracy());
                             sb.append(",");
-                            sb.append(m2371clone.getLocationType());
+                            sb.append(clone.getLocationType());
                             sb.append(",");
-                            if (m2371clone.getTime() != 0) {
-                                sb.append(i.a(m2371clone.getTime(), "yyyyMMdd_HH:mm:ss:SS"));
+                            if (clone.getTime() != 0) {
+                                sb.append(i.a(clone.getTime(), "yyyyMMdd_HH:mm:ss:SS"));
                             } else {
-                                sb.append(m2371clone.getTime());
+                                sb.append(clone.getTime());
                             }
                             a("bigshiftstatistics", sb.toString());
                             sb.delete(0, sb.length());
                         }
                     }
                 }
-                g = m2371clone;
+                g = clone;
             }
         } catch (Throwable th) {
         }
@@ -467,7 +472,7 @@ public final class g {
     }
 
     private static boolean a(AMapLocation aMapLocation) {
-        return i.a(aMapLocation) ? !b.a(aMapLocation.getLatitude(), aMapLocation.getLongitude()) : "http://abroad.apilocate.amap.com/mobile/binary".equals(b.f9279c);
+        return i.a(aMapLocation) ? !b.a(aMapLocation.getLatitude(), aMapLocation.getLongitude()) : "http://abroad.apilocate.amap.com/mobile/binary".equals(b.f6439c);
     }
 
     public static void b(Context context, long j2, boolean z) {
@@ -501,10 +506,10 @@ public final class g {
             }
             if (this.b != -1 && this.b != i2) {
                 long b = i.b();
-                long j2 = this.f9284c;
-                this.f9283a.append(this.b, Long.valueOf((b - j2) + this.f9283a.get(this.b, 0L).longValue()));
+                long j2 = this.f6444c;
+                this.f6443a.append(this.b, Long.valueOf((b - j2) + this.f6443a.get(this.b, 0L).longValue()));
             }
-            this.f9284c = i.b() - h.a(context, "pref1", this.d[i2], 0L);
+            this.f6444c = i.b() - h.a(context, "pref1", this.d[i2], 0L);
             this.b = i2;
         } catch (Throwable th) {
             b.a(th, "ReportUtil", "setLocationType");
@@ -513,7 +518,7 @@ public final class g {
 
     public final void a(Context context, AMapLocationClientOption aMapLocationClientOption) {
         try {
-            int i2 = AnonymousClass1.f9285a[aMapLocationClientOption.getLocationMode().ordinal()];
+            int i2 = AnonymousClass1.f6445a[aMapLocationClientOption.getLocationMode().ordinal()];
             int i3 = 3;
             if (i2 == 1) {
                 i3 = 4;
@@ -526,7 +531,7 @@ public final class g {
                 return;
             }
             if (this.e != -1 && this.e != i3) {
-                this.f9283a.append(this.e, Long.valueOf((i.b() - this.f) + this.f9283a.get(this.e, 0L).longValue()));
+                this.f6443a.append(this.e, Long.valueOf((i.b() - this.f) + this.f6443a.get(this.e, 0L).longValue()));
             }
             this.f = i.b() - h.a(context, "pref1", this.d[i3], 0L);
             this.e = i3;
@@ -538,14 +543,14 @@ public final class g {
     public final void b(Context context) {
         try {
             long b = i.b();
-            long j2 = this.f9284c;
+            long j2 = this.f6444c;
             if (this.b != -1) {
-                this.f9283a.append(this.b, Long.valueOf((b - j2) + this.f9283a.get(this.b, 0L).longValue()));
+                this.f6443a.append(this.b, Long.valueOf((b - j2) + this.f6443a.get(this.b, 0L).longValue()));
             }
             long b2 = i.b();
             long j3 = this.f;
             if (this.e != -1) {
-                this.f9283a.append(this.e, Long.valueOf((b2 - j3) + this.f9283a.get(this.e, 0L).longValue()));
+                this.f6443a.append(this.e, Long.valueOf((b2 - j3) + this.f6443a.get(this.e, 0L).longValue()));
             }
             SharedPreferences.Editor a2 = h.a(context, "pref1");
             int i2 = 0;
@@ -555,7 +560,7 @@ public final class g {
                     h.a(a2);
                     return;
                 }
-                long longValue = this.f9283a.get(i3, 0L).longValue();
+                long longValue = this.f6443a.get(i3, 0L).longValue();
                 if (longValue > 0 && longValue > h.a(context, "pref1", this.d[i3], 0L)) {
                     h.a(a2, this.d[i3], longValue);
                 }

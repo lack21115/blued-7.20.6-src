@@ -3,6 +3,7 @@ package com.android.internal.util.cm.palette;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.AsyncTask;
+import android.view.View;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -29,12 +30,12 @@ public final class Palette {
     private static final float WEIGHT_SATURATION = 3.0f;
     private final List<Swatch> mSwatches;
     private final int mHighestPopulation = findMaxPopulation();
-    private Swatch mVibrantSwatch = findColor(0.5f, 0.3f, 0.7f, 1.0f, MIN_VIBRANT_SATURATION, 1.0f);
+    private Swatch mVibrantSwatch = findColor(TARGET_NORMAL_LUMA, 0.3f, MAX_NORMAL_LUMA, 1.0f, MIN_VIBRANT_SATURATION, 1.0f);
     private Swatch mLightVibrantSwatch = findColor(TARGET_LIGHT_LUMA, MIN_LIGHT_LUMA, 1.0f, 1.0f, MIN_VIBRANT_SATURATION, 1.0f);
     private Swatch mDarkVibrantSwatch = findColor(TARGET_DARK_LUMA, 0.0f, MAX_DARK_LUMA, 1.0f, MIN_VIBRANT_SATURATION, 1.0f);
-    private Swatch mMutedSwatch = findColor(0.5f, 0.3f, 0.7f, 0.3f, 0.0f, 0.4f);
-    private Swatch mLightMutedColor = findColor(TARGET_LIGHT_LUMA, MIN_LIGHT_LUMA, 1.0f, 0.3f, 0.0f, 0.4f);
-    private Swatch mDarkMutedSwatch = findColor(TARGET_DARK_LUMA, 0.0f, MAX_DARK_LUMA, 0.3f, 0.0f, 0.4f);
+    private Swatch mMutedSwatch = findColor(TARGET_NORMAL_LUMA, 0.3f, MAX_NORMAL_LUMA, 0.3f, 0.0f, MAX_MUTED_SATURATION);
+    private Swatch mLightMutedColor = findColor(TARGET_LIGHT_LUMA, MIN_LIGHT_LUMA, 1.0f, 0.3f, 0.0f, MAX_MUTED_SATURATION);
+    private Swatch mDarkMutedSwatch = findColor(TARGET_DARK_LUMA, 0.0f, MAX_DARK_LUMA, 0.3f, 0.0f, MAX_MUTED_SATURATION);
 
     /* loaded from: source-4181928-dex2jar.jar:com/android/internal/util/cm/palette/Palette$PaletteAsyncListener.class */
     public interface PaletteAsyncListener {
@@ -82,8 +83,8 @@ public final class Palette {
                 this.mGeneratedTextColors = true;
                 return;
             }
-            int textColorForBackground3 = ColorUtils.getTextColorForBackground(this.mRgb, -16777216, Palette.MIN_CONTRAST_BODY_TEXT);
-            int textColorForBackground4 = ColorUtils.getTextColorForBackground(this.mRgb, -16777216, 3.0f);
+            int textColorForBackground3 = ColorUtils.getTextColorForBackground(this.mRgb, View.MEASURED_STATE_MASK, Palette.MIN_CONTRAST_BODY_TEXT);
+            int textColorForBackground4 = ColorUtils.getTextColorForBackground(this.mRgb, View.MEASURED_STATE_MASK, 3.0f);
             if (textColorForBackground3 != -1 && textColorForBackground3 != -1) {
                 this.mBodyTextColor = textColorForBackground3;
                 this.mTitleTextColor = textColorForBackground4;
@@ -177,7 +178,7 @@ public final class Palette {
     }
 
     private static float createComparisonValue(float f, float f2, float f3, float f4, int i, int i2) {
-        return weightedMean(invertDiff(f, f2), 3.0f, invertDiff(f3, f4), 6.0f, i / i2, 1.0f);
+        return weightedMean(invertDiff(f, f2), 3.0f, invertDiff(f3, f4), WEIGHT_LUMA, i / i2, 1.0f);
     }
 
     private Swatch findColor(float f, float f2, float f3, float f4, float f5, float f6) {

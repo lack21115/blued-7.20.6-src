@@ -1,6 +1,7 @@
 package com.tencent.lbssearch.object.param;
 
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.lbssearch.httpresponse.UrlConstant;
 import com.tencent.lbssearch.object.RequestParams;
 import com.tencent.lbssearch.object.param.RoutePlanningParam;
@@ -151,7 +152,7 @@ public class DrivingParam extends RoutePlanningParam {
                     return super.toString();
                 }
                 sb.append(this.points.get(i3));
-                sb.append(";");
+                sb.append(t.aE);
                 i2 = i3 + 1;
             }
         }
@@ -239,7 +240,7 @@ public class DrivingParam extends RoutePlanningParam {
             StringBuilder sb = new StringBuilder();
             for (LatLng latLng : this.waypoints) {
                 sb.append(locationToParamsString(latLng));
-                sb.append(";");
+                sb.append(t.aE);
             }
             sb.setLength(sb.length() - 1);
             buildParameters.put("waypoints", sb.toString());

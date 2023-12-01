@@ -46,18 +46,18 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String[] f22638a;
+        private String[] f9030a;
         private final ArrayList<HashMap<String, Object>> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f22639c;
+        private final String f9031c;
         private final HashMap<Object, Integer> d;
 
         private Builder(String[] strArr, String str) {
             Preconditions.checkNotNull(strArr, "builderColumnsP cannot be null");
-            this.f22638a = strArr;
+            this.f9030a = strArr;
             this.b = new ArrayList<>();
-            this.f22639c = str;
+            this.f9031c = str;
             this.d = new HashMap<>();
         }
 
@@ -87,7 +87,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
                 java.lang.String r1 = "contentValuesHashMap cannot be null"
                 java.lang.Object r0 = com.huawei.hms.common.internal.Preconditions.checkNotNull(r0, r1)
                 r0 = r4
-                java.lang.String r0 = r0.f22639c
+                java.lang.String r0 = r0.f9031c
                 r8 = r0
                 r0 = 0
                 r7 = r0
@@ -184,11 +184,11 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     }
 
     private DataHolder(Builder builder, int i, Bundle bundle) {
-        this(builder.f22638a, getCursorWindows(builder, -1), i, (Bundle) null);
+        this(builder.f9030a, getCursorWindows(builder, -1), i, (Bundle) null);
     }
 
     private DataHolder(Builder builder, int i, Bundle bundle, int i2) {
-        this(builder.f22638a, getCursorWindows(builder, -1), i, bundle);
+        this(builder.f9030a, getCursorWindows(builder, -1), i, bundle);
     }
 
     private DataHolder(HMSCursorWrapper hMSCursorWrapper, int i, Bundle bundle) {
@@ -313,7 +313,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
     private static ArrayList<CursorWindow> iterCursorWindow(Builder builder, int i, List list) {
         ArrayList<CursorWindow> arrayList = new ArrayList<>();
         CursorWindow cursorWindow = new CursorWindow((String) null);
-        cursorWindow.setNumColumns(builder.f22638a.length);
+        cursorWindow.setNumColumns(builder.f9030a.length);
         arrayList.add(cursorWindow);
         int i2 = 0;
         while (true) {
@@ -326,7 +326,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
                     HMSLog.d(TAG, "Failed to allocate a row");
                     cursorWindow = new CursorWindow((String) null);
                     cursorWindow.setStartPosition(i3);
-                    cursorWindow.setNumColumns(builder.f22638a.length);
+                    cursorWindow.setNumColumns(builder.f9030a.length);
                     if (!cursorWindow.allocRow()) {
                         HMSLog.e(TAG, "Failed to retry to allocate a row");
                         return arrayList;
@@ -338,10 +338,10 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
                 int i4 = 0;
                 while (true) {
                     int i5 = i4;
-                    if (i5 >= builder.f22638a.length) {
+                    if (i5 >= builder.f9030a.length) {
                         break;
                     }
-                    z = putValue(cursorWindow, hashMap.get(builder.f22638a[i5]), i3, i5);
+                    z = putValue(cursorWindow, hashMap.get(builder.f9030a[i5]), i3, i5);
                     if (!z) {
                         break;
                     }
@@ -352,7 +352,7 @@ public final class DataHolder extends AbstractSafeParcelable implements Closeabl
                     cursorWindow.freeLastRow();
                     CursorWindow cursorWindow2 = new CursorWindow((String) null);
                     cursorWindow2.setStartPosition(i3);
-                    cursorWindow2.setNumColumns(builder.f22638a.length);
+                    cursorWindow2.setNumColumns(builder.f9030a.length);
                     arrayList.add(cursorWindow2);
                     return arrayList;
                 }

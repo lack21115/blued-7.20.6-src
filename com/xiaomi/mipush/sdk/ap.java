@@ -11,13 +11,13 @@ import java.util.HashMap;
 public class ap extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ao f41210a;
+    final /* synthetic */ ao f27519a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ap(ao aoVar, Looper looper) {
         super(looper);
-        this.f41210a = aoVar;
+        this.f27519a = aoVar;
     }
 
     @Override // android.os.Handler
@@ -27,7 +27,7 @@ public class ap extends Handler {
         Context context3;
         Context context4;
         Context context5;
-        HashMap<String, String> m11478a;
+        HashMap<String, String> m8428a;
         ao aoVar;
         au auVar;
         Context context6;
@@ -48,83 +48,83 @@ public class ap extends Handler {
         int i = message.arg1;
         synchronized (af.class) {
             try {
-                context = this.f41210a.f132a;
-                if (af.a(context).m11428a(str)) {
-                    context2 = this.f41210a.f132a;
+                context = this.f27519a.f85a;
+                if (af.a(context).m8378a(str)) {
+                    context2 = this.f27519a.f85a;
                     if (af.a(context2).a(str) < 10) {
                         String string = message.getData() != null ? message.getData().getString("third_sync_reason") : "";
                         if (au.DISABLE_PUSH.ordinal() == i) {
-                            context14 = this.f41210a.f132a;
+                            context14 = this.f27519a.f85a;
                             if ("syncing".equals(af.a(context14).a(au.DISABLE_PUSH))) {
-                                aoVar2 = this.f41210a;
+                                aoVar2 = this.f27519a;
                                 auVar2 = au.DISABLE_PUSH;
                                 aoVar2.a(str, auVar2, true, (HashMap<String, String>) null);
-                                context13 = this.f41210a.f132a;
+                                context13 = this.f27519a.f85a;
                                 af.a(context13).b(str);
                             }
                         }
                         if (au.ENABLE_PUSH.ordinal() == i) {
-                            context12 = this.f41210a.f132a;
+                            context12 = this.f27519a.f85a;
                             if ("syncing".equals(af.a(context12).a(au.ENABLE_PUSH))) {
-                                aoVar2 = this.f41210a;
+                                aoVar2 = this.f27519a;
                                 auVar2 = au.ENABLE_PUSH;
                                 aoVar2.a(str, auVar2, true, (HashMap<String, String>) null);
-                                context13 = this.f41210a.f132a;
+                                context13 = this.f27519a.f85a;
                                 af.a(context13).b(str);
                             }
                         }
                         if (au.UPLOAD_HUAWEI_TOKEN.ordinal() == i) {
-                            context10 = this.f41210a.f132a;
+                            context10 = this.f27519a.f85a;
                             if ("syncing".equals(af.a(context10).a(au.UPLOAD_HUAWEI_TOKEN))) {
-                                context11 = this.f41210a.f132a;
-                                m11478a = i.m11478a(context11, e.ASSEMBLE_PUSH_HUAWEI);
-                                m11478a.put("third_sync_reason", string);
-                                aoVar = this.f41210a;
+                                context11 = this.f27519a.f85a;
+                                m8428a = i.m8428a(context11, e.ASSEMBLE_PUSH_HUAWEI);
+                                m8428a.put("third_sync_reason", string);
+                                aoVar = this.f27519a;
                                 auVar = au.UPLOAD_HUAWEI_TOKEN;
-                                aoVar.a(str, auVar, false, m11478a);
-                                context13 = this.f41210a.f132a;
+                                aoVar.a(str, auVar, false, m8428a);
+                                context13 = this.f27519a.f85a;
                                 af.a(context13).b(str);
                             }
                         }
                         if (au.UPLOAD_FCM_TOKEN.ordinal() == i) {
-                            context8 = this.f41210a.f132a;
+                            context8 = this.f27519a.f85a;
                             if ("syncing".equals(af.a(context8).a(au.UPLOAD_FCM_TOKEN))) {
-                                ao aoVar3 = this.f41210a;
+                                ao aoVar3 = this.f27519a;
                                 au auVar3 = au.UPLOAD_FCM_TOKEN;
-                                context9 = this.f41210a.f132a;
-                                aoVar3.a(str, auVar3, false, i.m11478a(context9, e.ASSEMBLE_PUSH_FCM));
-                                context13 = this.f41210a.f132a;
+                                context9 = this.f27519a.f85a;
+                                aoVar3.a(str, auVar3, false, i.m8428a(context9, e.ASSEMBLE_PUSH_FCM));
+                                context13 = this.f27519a.f85a;
                                 af.a(context13).b(str);
                             }
                         }
                         if (au.UPLOAD_COS_TOKEN.ordinal() == i) {
-                            context6 = this.f41210a.f132a;
+                            context6 = this.f27519a.f85a;
                             if ("syncing".equals(af.a(context6).a(au.UPLOAD_COS_TOKEN))) {
-                                context7 = this.f41210a.f132a;
-                                m11478a = i.m11478a(context7, e.ASSEMBLE_PUSH_COS);
-                                m11478a.put("third_sync_reason", string);
-                                aoVar = this.f41210a;
+                                context7 = this.f27519a.f85a;
+                                m8428a = i.m8428a(context7, e.ASSEMBLE_PUSH_COS);
+                                m8428a.put("third_sync_reason", string);
+                                aoVar = this.f27519a;
                                 auVar = au.UPLOAD_COS_TOKEN;
-                                aoVar.a(str, auVar, false, m11478a);
-                                context13 = this.f41210a.f132a;
+                                aoVar.a(str, auVar, false, m8428a);
+                                context13 = this.f27519a.f85a;
                                 af.a(context13).b(str);
                             }
                         }
                         if (au.UPLOAD_FTOS_TOKEN.ordinal() == i) {
-                            context4 = this.f41210a.f132a;
+                            context4 = this.f27519a.f85a;
                             if ("syncing".equals(af.a(context4).a(au.UPLOAD_FTOS_TOKEN))) {
-                                context5 = this.f41210a.f132a;
-                                m11478a = i.m11478a(context5, e.ASSEMBLE_PUSH_FTOS);
-                                m11478a.put("third_sync_reason", string);
-                                aoVar = this.f41210a;
+                                context5 = this.f27519a.f85a;
+                                m8428a = i.m8428a(context5, e.ASSEMBLE_PUSH_FTOS);
+                                m8428a.put("third_sync_reason", string);
+                                aoVar = this.f27519a;
                                 auVar = au.UPLOAD_FTOS_TOKEN;
-                                aoVar.a(str, auVar, false, m11478a);
+                                aoVar.a(str, auVar, false, m8428a);
                             }
                         }
-                        context13 = this.f41210a.f132a;
+                        context13 = this.f27519a.f85a;
                         af.a(context13).b(str);
                     } else {
-                        context3 = this.f41210a.f132a;
+                        context3 = this.f27519a.f85a;
                         af.a(context3).c(str);
                     }
                 }

@@ -17,11 +17,11 @@ import com.soft.blued.R;
 public final class FragmentVirtualImageSelectBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CardView f29029a;
+    public final CardView f15339a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f29030c;
+    public final FrameLayout f15340c;
     public final FrameLayout d;
     public final FrameLayout e;
     public final ImageView f;
@@ -36,9 +36,9 @@ public final class FragmentVirtualImageSelectBinding implements ViewBinding {
 
     private FragmentVirtualImageSelectBinding(RelativeLayout relativeLayout, CardView cardView, FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, FrameLayout frameLayout4, ImageView imageView, ImageView imageView2, ShapeLinearLayout shapeLinearLayout, PageTabLayout pageTabLayout, TextView textView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, NoScrollViewPager noScrollViewPager) {
         this.n = relativeLayout;
-        this.f29029a = cardView;
+        this.f15339a = cardView;
         this.b = frameLayout;
-        this.f29030c = frameLayout2;
+        this.f15340c = frameLayout2;
         this.d = frameLayout3;
         this.e = frameLayout4;
         this.f = imageView;
@@ -67,19 +67,19 @@ public final class FragmentVirtualImageSelectBinding implements ViewBinding {
                             if (imageView != null) {
                                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_marketing);
                                 if (imageView2 != null) {
-                                    ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.ll_panel);
-                                    if (shapeLinearLayout != null) {
-                                        PageTabLayout pageTabLayout = (PageTabLayout) view.findViewById(R.id.tabLayout);
-                                        if (pageTabLayout != null) {
+                                    ShapeLinearLayout findViewById = view.findViewById(R.id.ll_panel);
+                                    if (findViewById != null) {
+                                        PageTabLayout findViewById2 = view.findViewById(R.id.tabLayout);
+                                        if (findViewById2 != null) {
                                             TextView textView = (TextView) view.findViewById(R.id.tv_bean_count);
                                             if (textView != null) {
-                                                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_buy_count);
-                                                if (shapeTextView != null) {
-                                                    ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(2131372499);
-                                                    if (shapeTextView2 != null) {
-                                                        NoScrollViewPager noScrollViewPager = (NoScrollViewPager) view.findViewById(2131373100);
-                                                        if (noScrollViewPager != null) {
-                                                            return new FragmentVirtualImageSelectBinding((RelativeLayout) view, cardView, frameLayout, frameLayout2, frameLayout3, frameLayout4, imageView, imageView2, shapeLinearLayout, pageTabLayout, textView, shapeTextView, shapeTextView2, noScrollViewPager);
+                                                ShapeTextView findViewById3 = view.findViewById(R.id.tv_buy_count);
+                                                if (findViewById3 != null) {
+                                                    ShapeTextView findViewById4 = view.findViewById(2131372499);
+                                                    if (findViewById4 != null) {
+                                                        NoScrollViewPager findViewById5 = view.findViewById(2131373100);
+                                                        if (findViewById5 != null) {
+                                                            return new FragmentVirtualImageSelectBinding((RelativeLayout) view, cardView, frameLayout, frameLayout2, frameLayout3, frameLayout4, imageView, imageView2, findViewById, findViewById2, textView, findViewById3, findViewById4, findViewById5);
                                                         }
                                                         str = "viewPager";
                                                     } else {

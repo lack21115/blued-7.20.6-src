@@ -4,11 +4,11 @@ package a.a.a.a.a.a.j;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1253a = 30;
+    public int f1205a = 30;
     public float b = -1.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    public float f1254c = 0.0f;
+    public float f1206c = 0.0f;
     public long d = 0;
     public long e = 0;
     public int f = 0;
@@ -19,17 +19,17 @@ public final class a {
     public static class C0002a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f1255a = new a();
+        public static final a f1207a = new a();
     }
 
     public static a a() {
-        return C0002a.f1255a;
+        return C0002a.f1207a;
     }
 
     public void a(int i) {
-        this.f1253a = i;
+        this.f1205a = i;
         a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.g;
-        eVar.c("FPSController", "set desire fps:" + this.f1253a);
+        eVar.c("FPSController", "set desire fps:" + this.f1205a);
     }
 
     public void a(boolean z) {
@@ -48,7 +48,7 @@ public final class a {
                     int round = Math.round((float) ((j * 1000) / j2));
                     this.e = currentTimeMillis;
                     this.d = 0L;
-                    if (round <= this.f1253a) {
+                    if (round <= this.f1205a) {
                         this.b = -1.0f;
                     } else {
                         this.b = round / (round - i);
@@ -61,10 +61,10 @@ public final class a {
             if (f < 0.0f) {
                 return false;
             }
-            float f2 = this.f1254c + 1.0f;
-            this.f1254c = f2;
+            float f2 = this.f1206c + 1.0f;
+            this.f1206c = f2;
             if (f2 >= f) {
-                this.f1254c = f2 - f;
+                this.f1206c = f2 - f;
                 return true;
             }
             return false;
@@ -77,6 +77,6 @@ public final class a {
     }
 
     public int d() {
-        return this.f1253a;
+        return this.f1205a;
     }
 }

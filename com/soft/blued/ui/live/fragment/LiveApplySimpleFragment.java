@@ -45,11 +45,11 @@ import java.util.List;
 public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresenter> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31135a;
+    private Context f17445a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f31136c;
+    private Dialog f17446c;
     private BluedLiveState d;
     @BindView
     View fl_error_page;
@@ -106,17 +106,17 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f31140c;
+        private int f17450c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = LiveApplySimpleFragment.this.tv_id.getSelectionStart();
-            this.f31140c = LiveApplySimpleFragment.this.tv_id.getSelectionEnd();
+            this.f17450c = LiveApplySimpleFragment.this.tv_id.getSelectionEnd();
             LiveApplySimpleFragment.this.tv_id.removeTextChangedListener(LiveApplySimpleFragment.this.g);
             while (editable.length() > 18) {
-                editable.delete(this.b - 1, this.f31140c);
+                editable.delete(this.b - 1, this.f17450c);
                 this.b--;
-                this.f31140c--;
+                this.f17450c--;
             }
             LiveApplySimpleFragment.this.tv_id.setSelection(this.b);
             LiveApplySimpleFragment.this.e();
@@ -151,7 +151,7 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
             view.setVisibility(i);
             this.tv_reload.setOnClickListener(this);
             if (z) {
-                j().m();
+                ((LiveApplySimplePresenter) j()).m();
                 return;
             }
             return;
@@ -184,19 +184,19 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
     }
 
     private void c() {
-        this.f31136c = DialogUtils.a(this.f31135a);
+        this.f17446c = DialogUtils.a(this.f17445a);
         this.top_title.f();
         this.top_title.a();
-        this.top_title.setLeftImgDrawable(BluedSkinUtils.b(this.f31135a, 2131233902));
-        this.top_title.setCenterText(getString(2131886176));
+        this.top_title.setLeftImgDrawable(BluedSkinUtils.b(this.f17445a, 2131233902));
+        this.top_title.setCenterText(getString(R.string.Live_applyHost_title));
         this.top_title.setLeftClickListener(this);
         b(true);
         EventTrackLive.a(LiveProtos.Event.LIVE_APPLY_ANCHOR_PAGE_SHOW);
     }
 
     private void d() {
-        String string = this.f31135a.getString(2131886107);
-        String string2 = this.f31135a.getString(2131886123);
+        String string = this.f17445a.getString(R.string.Live_applyHost_agree);
+        String string2 = this.f17445a.getString(R.string.Live_applyHost_bluedAgreement);
         String str = string + " " + string2;
         SpannableString spannableString = new SpannableString(str);
         this.live_agree.setMovementMethod(LinkMovementMethod.getInstance());
@@ -208,7 +208,7 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
             public void updateDrawState(TextPaint textPaint) {
-                textPaint.setColor(BluedSkinUtils.a(LiveApplySimpleFragment.this.f31135a, 2131101766));
+                textPaint.setColor(BluedSkinUtils.a(LiveApplySimpleFragment.this.f17445a, 2131101766));
                 textPaint.setUnderlineText(false);
             }
         }, str.indexOf(string2), (string + " " + string2).length(), 33);
@@ -223,16 +223,14 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
             return;
         }
         this.tv_identify.setOnClickListener(this);
-        this.tv_identify.setBackgroundColor(BluedSkinUtils.a(this.f31135a, 2131101766));
+        this.tv_identify.setBackgroundColor(BluedSkinUtils.a(this.f17445a, 2131101766));
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, List list) {
         boolean z;
         super.a(str, list);
@@ -262,14 +260,13 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
             return;
         }
         this.d.is_easy_way = 1;
-        LiveApplyVerifyFragment.a(this.f31135a, this.d);
+        LiveApplyVerifyFragment.a(this.f17445a, this.d);
         getActivity().finish();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
-        DialogUtils.b(this.f31136c);
+        DialogUtils.b(this.f17446c);
         if (str == "LIVE_APPLY") {
             b(false);
         }
@@ -278,13 +275,13 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
     public void b() {
         try {
             if (this.d == null || this.d.vbadge != 4) {
-                this.tv_identify.setText(getString(2131886164));
-                this.tv_tip_one.setText(getString(2131886170));
-                this.tv_tip_two.setText(getString(2131886171));
+                this.tv_identify.setText(getString(R.string.Live_applyHost_simple_into_identify));
+                this.tv_tip_one.setText(getString(R.string.Live_applyHost_simple_tip_1));
+                this.tv_tip_two.setText(getString(R.string.Live_applyHost_simple_tip_2));
             } else {
-                this.tv_identify.setText(getString(2131886126));
-                this.tv_tip_one.setText(getString(2131886172));
-                this.tv_tip_two.setText(getString(2131886173));
+                this.tv_identify.setText(getString(R.string.Live_applyHost_confirm));
+                this.tv_tip_one.setText(getString(R.string.Live_applyHost_simple_tip_3));
+                this.tv_tip_two.setText(getString(R.string.Live_applyHost_simple_tip_4));
             }
             if (TextUtils.isEmpty(LoginRegisterTools.b())) {
                 this.b = false;
@@ -295,7 +292,7 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
             }
             this.b = true;
             this.tv_binding_cellphone_status.setVisibility(0);
-            this.tv_binding_cellphone_status.setText(getResources().getString(2131886121));
+            this.tv_binding_cellphone_status.setText(getResources().getString(R.string.Live_applyHost_beBindinged));
             this.tv_binding_cellphone.setVisibility(8);
             this.iv_phone_binded.setVisibility(0);
         } catch (Exception e) {
@@ -303,18 +300,15 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live_apply_simple;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void g_(String str) {
         super.g_(str);
-        DialogUtils.a(this.f31136c);
+        DialogUtils.a(this.f17446c);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         Log.i("LiveApplySimpleFragment", "requestCode:" + i + "  :" + i2);
@@ -328,7 +322,7 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
             if (bluedLiveState != null) {
                 bluedLiveState.is_easy_way = 1;
             }
-            LiveApplyVerifyFragment.a(this.f31135a, this.d);
+            LiveApplyVerifyFragment.a(this.f17445a, this.d);
             getActivity().finish();
         }
     }
@@ -353,43 +347,40 @@ public class LiveApplySimpleFragment extends MvpFragment<LiveApplySimplePresente
             case R.id.tv_binding_cellphone /* 2131370981 */:
                 String b = LoginRegisterTools.b();
                 if (TextUtils.isEmpty(b)) {
-                    TerminalActivity.d(getActivity(), LinkMobileFragment.class, null);
+                    TerminalActivity.d(getActivity(), LinkMobileFragment.class, (Bundle) null);
                     return;
                 }
                 String[] g = LoginRegisterTools.g(b);
                 LoginRegisterTools.a(getActivity(), g[0], g[1]);
                 return;
             case 2131371709:
-                j().a(this.tv_name.getText().toString(), this.tv_id.getText().toString());
+                ((LiveApplySimplePresenter) j()).a(this.tv_name.getText().toString(), this.tv_id.getText().toString());
                 return;
             case 2131372200:
-                TerminalActivity.d(this.f31135a, LiveApplyFragment.class, null);
+                TerminalActivity.d(this.f17445a, LiveApplyFragment.class, (Bundle) null);
                 return;
             case 2131372414:
-                j().m();
+                ((LiveApplySimplePresenter) j()).m();
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f31135a = getContext();
+        this.f17445a = getContext();
         if (getArguments() == null || getArguments().getSerializable("applyState") == null) {
             return;
         }
-        this.d = (BluedLiveState) getArguments().getSerializable("applyState");
+        this.d = getArguments().getSerializable("applyState");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        DialogUtils.b(this.f31136c);
+        DialogUtils.b(this.f17446c);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         b();

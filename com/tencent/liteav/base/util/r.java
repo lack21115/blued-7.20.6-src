@@ -8,11 +8,11 @@ import android.os.Message;
 public final class r extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36345a;
+    private int f22654a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final a f36346c;
+    private final a f22655c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/base/util/r$a.class */
     public interface a {
@@ -22,7 +22,7 @@ public final class r extends Handler {
     public r(Looper looper, a aVar) {
         super(looper);
         this.b = false;
-        this.f36346c = aVar;
+        this.f22655c = aVar;
     }
 
     public final void a() {
@@ -34,7 +34,7 @@ public final class r extends Handler {
 
     public final void a(int i, int i2) {
         a();
-        this.f36345a = i2;
+        this.f22654a = i2;
         this.b = true;
         sendEmptyMessageDelayed(0, i);
     }
@@ -43,9 +43,9 @@ public final class r extends Handler {
     public final void handleMessage(Message message) {
         if (this.b) {
             removeMessages(0);
-            sendEmptyMessageDelayed(0, this.f36345a);
+            sendEmptyMessageDelayed(0, this.f22654a);
         }
-        a aVar = this.f36346c;
+        a aVar = this.f22655c;
         if (aVar != null) {
             aVar.a_();
         }

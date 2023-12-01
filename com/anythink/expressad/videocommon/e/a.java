@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8764a = 1000;
+    public static final int f5924a = 1000;
     public static final int b = 1000;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, Integer> f8765c;
+    private Map<String, Integer> f5925c;
     private Map<String, com.anythink.expressad.videocommon.c.c> d;
     private long e;
     private long f;
@@ -32,7 +32,7 @@ public final class a {
                 a aVar3 = new a();
                 try {
                     JSONObject jSONObject = new JSONObject(str);
-                    JSONObject optJSONObject = jSONObject.optJSONObject(b.f8766a);
+                    JSONObject optJSONObject = jSONObject.optJSONObject(b.f5926a);
                     if (optJSONObject != null && optJSONObject.length() > 0) {
                         HashMap hashMap = new HashMap();
                         Iterator<String> keys = optJSONObject.keys();
@@ -47,7 +47,7 @@ public final class a {
                                 }
                             }
                         }
-                        aVar3.f8765c = hashMap;
+                        aVar3.f5925c = hashMap;
                     }
                     aVar3.d = com.anythink.expressad.videocommon.c.c.a(jSONObject.optJSONArray("reward"));
                     aVar3.e = jSONObject.optLong("getpf", 43200L);
@@ -96,7 +96,7 @@ public final class a {
         hashMap.put("8", 1000);
         HashMap hashMap2 = new HashMap(3);
         hashMap2.put("1", new com.anythink.expressad.videocommon.c.c("Virtual Item", 1));
-        aVar.f8765c = hashMap;
+        aVar.f5925c = hashMap;
         aVar.d = hashMap2;
         aVar.e = 43200L;
         aVar.f = 5400L;
@@ -111,7 +111,7 @@ public final class a {
     }
 
     public final void a(Map<String, Integer> map) {
-        this.f8765c = map;
+        this.f5925c = map;
     }
 
     public final void b() {
@@ -147,14 +147,14 @@ public final class a {
     }
 
     public final Map<String, Integer> i() {
-        if (this.f8765c == null) {
+        if (this.f5925c == null) {
             HashMap hashMap = new HashMap();
-            this.f8765c = hashMap;
+            this.f5925c = hashMap;
             hashMap.put("1", 1000);
-            this.f8765c.put("9", 1000);
-            this.f8765c.put("8", 1000);
+            this.f5925c.put("9", 1000);
+            this.f5925c.put("8", 1000);
         }
-        return this.f8765c;
+        return this.f5925c;
     }
 
     public final Map<String, com.anythink.expressad.videocommon.c.c> j() {
@@ -164,13 +164,13 @@ public final class a {
     public final JSONObject k() {
         JSONObject jSONObject = new JSONObject();
         try {
-            if (this.f8765c != null && this.f8765c.size() > 0) {
+            if (this.f5925c != null && this.f5925c.size() > 0) {
                 try {
                     JSONObject jSONObject2 = new JSONObject();
-                    for (Map.Entry<String, Integer> entry : this.f8765c.entrySet()) {
+                    for (Map.Entry<String, Integer> entry : this.f5925c.entrySet()) {
                         jSONObject2.put(entry.getKey(), entry.getValue().intValue());
                     }
-                    jSONObject.put(b.f8766a, jSONObject2);
+                    jSONObject.put(b.f5926a, jSONObject2);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

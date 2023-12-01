@@ -7,7 +7,7 @@ import android.os.Bundle;
 public class TbsMediaPlayer {
 
     /* renamed from: a  reason: collision with root package name */
-    private p f38781a;
+    private p f25090a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/TbsMediaPlayer$TbsMediaPlayerListener.class */
     public interface TbsMediaPlayerListener {
@@ -58,55 +58,55 @@ public class TbsMediaPlayer {
     }
 
     public TbsMediaPlayer(p pVar) {
-        this.f38781a = null;
-        this.f38781a = pVar;
+        this.f25090a = null;
+        this.f25090a = pVar;
     }
 
     public void audio(int i) {
-        this.f38781a.b(i);
+        this.f25090a.b(i);
     }
 
     public void close() {
-        this.f38781a.e();
+        this.f25090a.e();
     }
 
     public float getVolume() {
-        return this.f38781a.b();
+        return this.f25090a.b();
     }
 
     public boolean isAvailable() {
-        return this.f38781a.a();
+        return this.f25090a.a();
     }
 
     public void pause() {
-        this.f38781a.c();
+        this.f25090a.c();
     }
 
     public void play() {
-        this.f38781a.d();
+        this.f25090a.d();
     }
 
     public void seek(long j) {
-        this.f38781a.a(j);
+        this.f25090a.a(j);
     }
 
     public void setPlayerListener(TbsMediaPlayerListener tbsMediaPlayerListener) {
-        this.f38781a.a(tbsMediaPlayerListener);
+        this.f25090a.a(tbsMediaPlayerListener);
     }
 
     public void setSurfaceTexture(SurfaceTexture surfaceTexture) {
-        this.f38781a.a(surfaceTexture);
+        this.f25090a.a(surfaceTexture);
     }
 
     public void setVolume(float f) {
-        this.f38781a.a(f);
+        this.f25090a.a(f);
     }
 
     public void startPlay(String str, Bundle bundle) {
-        this.f38781a.a(str, bundle);
+        this.f25090a.a(str, bundle);
     }
 
     public void subtitle(int i) {
-        this.f38781a.a(i);
+        this.f25090a.a(i);
     }
 }

@@ -4,5 +4,5 @@ package com.chad.library.adapter.base.entity;
 public abstract class AbstractExpandableItem<T> implements IExpandable<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f21569a = false;
+    protected boolean f7963a = false;
 }

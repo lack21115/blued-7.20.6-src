@@ -6,13 +6,13 @@ import com.tencent.beacon.base.net.BResponse;
 public class c implements a<BResponse> {
 
     /* renamed from: a  reason: collision with root package name */
-    private e f34982a;
+    private e f21291a;
 
     public c(e eVar) {
-        this.f34982a = eVar;
+        this.f21291a = eVar;
     }
 
     public void a(Callback<BResponse> callback) {
-        com.tencent.beacon.base.net.c.c().a(this.f34982a, new b(this, callback));
+        com.tencent.beacon.base.net.c.c().a(this.f21291a, new b(this, callback));
     }
 }

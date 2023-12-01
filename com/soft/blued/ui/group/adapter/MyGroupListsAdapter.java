@@ -23,11 +23,11 @@ import java.util.List;
 public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeadersAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<BluedGroupLists> f30949a;
+    private List<BluedGroupLists> f17259a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LoadOptions f30950c;
+    private LoadOptions f17260c;
     private boolean d;
     private IRequestHost e;
 
@@ -35,7 +35,7 @@ public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeader
     class HeaderViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public TextView f30951a;
+        public TextView f17261a;
 
         private HeaderViewHolder() {
         }
@@ -45,11 +45,11 @@ public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeader
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f30952a;
+        public ImageView f17262a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f30953c;
+        public TextView f17263c;
         public TextView d;
         public TextView e;
         public ImageView f;
@@ -60,28 +60,26 @@ public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeader
     }
 
     public MyGroupListsAdapter(Context context, IRequestHost iRequestHost, List<BluedGroupLists> list, boolean z) {
-        this.f30949a = list;
+        this.f17259a = list;
         this.e = iRequestHost;
         this.d = z;
         this.b = LayoutInflater.from(context);
         LoadOptions loadOptions = new LoadOptions();
-        this.f30950c = loadOptions;
+        this.f17260c = loadOptions;
         loadOptions.d = R.drawable.group_default_head;
-        this.f30950c.b = R.drawable.group_default_head;
+        this.f17260c.b = R.drawable.group_default_head;
     }
 
-    @Override // com.blued.android.framework.view.stickylistheaders.StickyListHeadersAdapter
     public long a(int i) {
-        return this.f30949a.get(i).type;
+        return this.f17259a.get(i).type;
     }
 
-    @Override // com.blued.android.framework.view.stickylistheaders.StickyListHeadersAdapter
     public View b(int i, View view, ViewGroup viewGroup) {
         HeaderViewHolder headerViewHolder;
         if (view == null) {
             HeaderViewHolder headerViewHolder2 = new HeaderViewHolder();
             View inflate = this.b.inflate(R.layout.fragment_my_group_lists_header, viewGroup, false);
-            headerViewHolder2.f30951a = (TextView) inflate.findViewById(R.id.tvHeader);
+            headerViewHolder2.f17261a = (TextView) inflate.findViewById(R.id.tvHeader);
             inflate.setTag(headerViewHolder2);
             headerViewHolder = headerViewHolder2;
             view = inflate;
@@ -89,22 +87,22 @@ public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeader
             headerViewHolder = (HeaderViewHolder) view.getTag();
         }
         if (!this.d) {
-            headerViewHolder.f30951a.setVisibility(8);
+            headerViewHolder.f17261a.setVisibility(8);
             return view;
         }
-        headerViewHolder.f30951a.setVisibility(0);
-        headerViewHolder.f30951a.setText(this.f30949a.get(i).header_name);
+        headerViewHolder.f17261a.setVisibility(0);
+        headerViewHolder.f17261a.setText(this.f17259a.get(i).header_name);
         return view;
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f30949a.size();
+        return this.f17259a.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f30949a.get(i);
+        return this.f17259a.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -116,13 +114,13 @@ public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeader
     public View getView(int i, View view, ViewGroup viewGroup) {
         View view2;
         ViewHolder viewHolder;
-        BluedGroupLists bluedGroupLists = this.f30949a.get(i);
+        BluedGroupLists bluedGroupLists = this.f17259a.get(i);
         if (view == null) {
             viewHolder = new ViewHolder();
             view2 = this.b.inflate(R.layout.item_group_list_show, viewGroup, false);
-            viewHolder.f30952a = (ImageView) view2.findViewById(R.id.iv_group_profile_photo);
+            viewHolder.f17262a = (ImageView) view2.findViewById(R.id.iv_group_profile_photo);
             viewHolder.b = (TextView) view2.findViewById(R.id.tv_group_name_info);
-            viewHolder.f30953c = (TextView) view2.findViewById(R.id.tv_groupSize);
+            viewHolder.f17263c = (TextView) view2.findViewById(R.id.tv_groupSize);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_group_location_details);
             viewHolder.e = (TextView) view2.findViewById(R.id.tv_group_distance);
             viewHolder.f = (ImageView) view2.findViewById(R.id.iv_verify_icon);
@@ -137,7 +135,7 @@ public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeader
         } else {
             viewHolder.g.setVisibility(8);
         }
-        ImageLoader.a(this.e, bluedGroupLists.groups_avatar).b(2131237310).c().a(viewHolder.f30952a);
+        ImageLoader.a(this.e, bluedGroupLists.groups_avatar).b(2131237310).c().a(viewHolder.f17262a);
         if (StringUtils.d(bluedGroupLists.groups_name)) {
             viewHolder.b.setVisibility(4);
         } else {
@@ -145,15 +143,15 @@ public class MyGroupListsAdapter extends BaseAdapter implements StickyListHeader
         }
         if (BlueAppLocal.d()) {
             if (StringUtils.d(bluedGroupLists.groups_members_count)) {
-                viewHolder.f30953c.setVisibility(4);
+                viewHolder.f17263c.setVisibility(4);
             } else {
-                TextView textView = viewHolder.f30953c;
+                TextView textView = viewHolder.f17263c;
                 textView.setText(StringUtils.a(bluedGroupLists.groups_members_count) + "人");
             }
         } else if (StringUtils.d(bluedGroupLists.groups_members_count)) {
-            viewHolder.f30953c.setVisibility(4);
+            viewHolder.f17263c.setVisibility(4);
         } else {
-            viewHolder.f30953c.setText(StringUtils.a(bluedGroupLists.groups_members_count));
+            viewHolder.f17263c.setText(StringUtils.a(bluedGroupLists.groups_members_count));
         }
         if (StringUtils.d(bluedGroupLists.groups_city)) {
             viewHolder.d.setVisibility(4);

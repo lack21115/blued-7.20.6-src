@@ -10,14 +10,14 @@ public final class d implements e {
     public final void a(com.efs.sdk.base.core.d.b bVar) {
         com.efs.sdk.base.core.f.f fVar;
         com.efs.sdk.base.core.f.f fVar2;
-        if (bVar.f21765c == null) {
+        if (bVar.f8159c == null) {
             return;
         }
-        com.efs.sdk.base.core.util.b.a(new File(com.efs.sdk.base.core.util.a.f(ControllerCenter.getGlobalEnvStruct().mAppContext, ControllerCenter.getGlobalEnvStruct().getAppid()), com.efs.sdk.base.core.util.b.a(bVar)), bVar.f21765c);
-        fVar = f.a.f21781a;
-        fVar.f21780c.b();
-        fVar2 = f.a.f21781a;
-        fVar2.f21780c.c();
+        com.efs.sdk.base.core.util.b.a(new File(com.efs.sdk.base.core.util.a.f(ControllerCenter.getGlobalEnvStruct().mAppContext, ControllerCenter.getGlobalEnvStruct().getAppid()), com.efs.sdk.base.core.util.b.a(bVar)), bVar.f8159c);
+        fVar = f.a.f8175a;
+        fVar.f8174c.b();
+        fVar2 = f.a.f8175a;
+        fVar2.f8174c.c();
     }
 
     @Override // com.efs.sdk.base.core.b.e

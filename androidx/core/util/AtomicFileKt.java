@@ -1,5 +1,6 @@
 package androidx.core.util;
 
+import android.app.Instrumentation;
 import java.io.FileOutputStream;
 import java.nio.charset.Charset;
 import kotlin.Metadata;
@@ -34,43 +35,43 @@ public final class AtomicFileKt {
         return readText(atomicFile, charset);
     }
 
-    public static final void tryWrite(android.util.AtomicFile atomicFile, Function1<? super FileOutputStream, Unit> block) {
+    public static final void tryWrite(android.util.AtomicFile atomicFile, Function1<? super FileOutputStream, Unit> function1) {
         Intrinsics.e(atomicFile, "<this>");
-        Intrinsics.e(block, "block");
-        FileOutputStream stream = atomicFile.startWrite();
+        Intrinsics.e(function1, "block");
+        FileOutputStream startWrite = atomicFile.startWrite();
         try {
-            Intrinsics.c(stream, "stream");
-            block.invoke(stream);
+            Intrinsics.c(startWrite, Instrumentation.REPORT_KEY_STREAMRESULT);
+            function1.invoke(startWrite);
             InlineMarker.b(1);
-            atomicFile.finishWrite(stream);
+            atomicFile.finishWrite(startWrite);
             InlineMarker.c(1);
         } catch (Throwable th) {
             InlineMarker.b(1);
-            atomicFile.failWrite(stream);
+            atomicFile.failWrite(startWrite);
             InlineMarker.c(1);
             throw th;
         }
     }
 
-    public static final void writeBytes(android.util.AtomicFile atomicFile, byte[] array) {
+    public static final void writeBytes(android.util.AtomicFile atomicFile, byte[] bArr) {
         Intrinsics.e(atomicFile, "<this>");
-        Intrinsics.e(array, "array");
-        FileOutputStream stream = atomicFile.startWrite();
+        Intrinsics.e(bArr, "array");
+        FileOutputStream startWrite = atomicFile.startWrite();
         try {
-            Intrinsics.c(stream, "stream");
-            stream.write(array);
-            atomicFile.finishWrite(stream);
+            Intrinsics.c(startWrite, Instrumentation.REPORT_KEY_STREAMRESULT);
+            startWrite.write(bArr);
+            atomicFile.finishWrite(startWrite);
         } catch (Throwable th) {
-            atomicFile.failWrite(stream);
+            atomicFile.failWrite(startWrite);
             throw th;
         }
     }
 
-    public static final void writeText(android.util.AtomicFile atomicFile, String text, Charset charset) {
+    public static final void writeText(android.util.AtomicFile atomicFile, String str, Charset charset) {
         Intrinsics.e(atomicFile, "<this>");
-        Intrinsics.e(text, "text");
+        Intrinsics.e(str, "text");
         Intrinsics.e(charset, "charset");
-        byte[] bytes = text.getBytes(charset);
+        byte[] bytes = str.getBytes(charset);
         Intrinsics.c(bytes, "(this as java.lang.String).getBytes(charset)");
         writeBytes(atomicFile, bytes);
     }

@@ -9,25 +9,25 @@ import java.security.MessageDigest;
 
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/resource/bitmap/RoundedCorners.class */
 public final class RoundedCorners extends BitmapTransformation {
-    private static final byte[] b = "com.bumptech.glide.load.resource.bitmap.RoundedCorners".getBytes(f20706a);
+    private static final byte[] b = "com.bumptech.glide.load.resource.bitmap.RoundedCorners".getBytes(f7100a);
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f20969c;
+    private final int f7363c;
 
     public RoundedCorners(int i) {
         Preconditions.a(i > 0, "roundingRadius must be greater than 0.");
-        this.f20969c = i;
+        this.f7363c = i;
     }
 
     @Override // com.bumptech.glide.load.resource.bitmap.BitmapTransformation
     protected Bitmap a(BitmapPool bitmapPool, Bitmap bitmap, int i, int i2) {
-        return TransformationUtils.b(bitmapPool, bitmap, this.f20969c);
+        return TransformationUtils.b(bitmapPool, bitmap, this.f7363c);
     }
 
     @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
         messageDigest.update(b);
-        messageDigest.update(ByteBuffer.allocate(4).putInt(this.f20969c).array());
+        messageDigest.update(ByteBuffer.allocate(4).putInt(this.f7363c).array());
     }
 
     @Override // com.bumptech.glide.load.Key
@@ -35,7 +35,7 @@ public final class RoundedCorners extends BitmapTransformation {
         boolean z = false;
         if (obj instanceof RoundedCorners) {
             z = false;
-            if (this.f20969c == ((RoundedCorners) obj).f20969c) {
+            if (this.f7363c == ((RoundedCorners) obj).f7363c) {
                 z = true;
             }
         }
@@ -44,6 +44,6 @@ public final class RoundedCorners extends BitmapTransformation {
 
     @Override // com.bumptech.glide.load.Key
     public int hashCode() {
-        return Util.b(-569625254, Util.b(this.f20969c));
+        return Util.b(-569625254, Util.b(this.f7363c));
     }
 }

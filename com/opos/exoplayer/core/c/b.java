@@ -9,19 +9,19 @@ public final class b implements f {
     private final com.opos.exoplayer.core.h.g b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25087c;
+    private final long f11399c;
     private long d;
     private int f;
     private int g;
     private byte[] e = new byte[65536];
 
     /* renamed from: a  reason: collision with root package name */
-    private final byte[] f25086a = new byte[4096];
+    private final byte[] f11398a = new byte[4096];
 
     public b(com.opos.exoplayer.core.h.g gVar, long j, long j2) {
         this.b = gVar;
         this.d = j;
-        this.f25087c = j2;
+        this.f11399c = j2;
     }
 
     private int a(byte[] bArr, int i, int i2, int i3, boolean z) {
@@ -44,7 +44,7 @@ public final class b implements f {
             return 0;
         }
         int min = Math.min(i3, i2);
-        System.arraycopy((Object) this.e, 0, (Object) bArr, i, min);
+        System.arraycopy(this.e, 0, bArr, i, min);
         f(min);
         return min;
     }
@@ -72,7 +72,7 @@ public final class b implements f {
         if (i2 < bArr.length - 524288) {
             bArr2 = new byte[i2 + 65536];
         }
-        System.arraycopy((Object) this.e, i, (Object) bArr2, 0, this.g);
+        System.arraycopy(this.e, i, bArr2, 0, this.g);
         this.e = bArr2;
     }
 
@@ -87,7 +87,7 @@ public final class b implements f {
         int e = e(i);
         int i2 = e;
         if (e == 0) {
-            byte[] bArr = this.f25086a;
+            byte[] bArr = this.f11398a;
             i2 = a(bArr, 0, Math.min(i, bArr.length), 0, true);
         }
         g(i2);
@@ -118,7 +118,7 @@ public final class b implements f {
             if (i2 >= i || i2 == -1) {
                 break;
             }
-            e = a(this.f25086a, -i2, Math.min(i, this.f25086a.length + i2), i2, z);
+            e = a(this.f11398a, -i2, Math.min(i, this.f11398a.length + i2), i2, z);
         }
         g(i2);
         return i2 != -1;
@@ -173,7 +173,7 @@ public final class b implements f {
     @Override // com.opos.exoplayer.core.c.f
     public boolean b(byte[] bArr, int i, int i2, boolean z) {
         if (b(i2, z)) {
-            System.arraycopy((Object) this.e, this.f - i2, (Object) bArr, i, i2);
+            System.arraycopy(this.e, this.f - i2, bArr, i, i2);
             return true;
         }
         return false;
@@ -196,6 +196,6 @@ public final class b implements f {
 
     @Override // com.opos.exoplayer.core.c.f
     public long d() {
-        return this.f25087c;
+        return this.f11399c;
     }
 }

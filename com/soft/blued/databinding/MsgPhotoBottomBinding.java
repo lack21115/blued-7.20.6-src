@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MsgPhotoBottomBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29473a;
+    private final RelativeLayout f15783a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29473a;
+        return this.f15783a;
     }
 }

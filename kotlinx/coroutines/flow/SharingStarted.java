@@ -5,20 +5,14 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SharingStarted.class */
 public interface SharingStarted {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f43420a = Companion.f43421a;
+    public static final Companion a = Companion.a;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SharingStarted$Companion.class */
     public static final class Companion {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ Companion f43421a = new Companion();
+        static final /* synthetic */ Companion a = new Companion();
         private static final SharingStarted b = new StartedEagerly();
-
-        /* renamed from: c  reason: collision with root package name */
-        private static final SharingStarted f43422c = new StartedLazily();
+        private static final SharingStarted c = new StartedLazily();
 
         private Companion() {
         }
@@ -28,7 +22,7 @@ public interface SharingStarted {
         }
 
         public final SharingStarted b() {
-            return f43422c;
+            return c;
         }
     }
 

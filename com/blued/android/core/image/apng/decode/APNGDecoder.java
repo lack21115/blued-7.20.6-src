@@ -26,13 +26,9 @@ public class APNGDecoder extends FrameSeqDecoder<APNGReader, APNGWriter> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/apng/decode/APNGDecoder$SnapShot.class */
     public class SnapShot {
-
-        /* renamed from: a  reason: collision with root package name */
-        byte f9520a;
+        byte a;
         Rect b;
-
-        /* renamed from: c  reason: collision with root package name */
-        ByteBuffer f9521c;
+        ByteBuffer c;
 
         private SnapShot() {
             this.b = new Rect();
@@ -50,10 +46,10 @@ public class APNGDecoder extends FrameSeqDecoder<APNGReader, APNGWriter> {
     @Override // com.blued.android.core.image.apng.decode.FrameSeqDecoder
     /* renamed from: a */
     public Rect b(APNGReader aPNGReader) throws IOException {
-        List<Chunk> a2 = APNGParser.a(aPNGReader);
+        List<Chunk> a = APNGParser.a(aPNGReader);
         ArrayList arrayList = new ArrayList();
         byte[] bArr = new byte[0];
-        Iterator<Chunk> it = a2.iterator();
+        Iterator<Chunk> it = a.iterator();
         APNGFrame aPNGFrame = null;
         boolean z = false;
         int i = 0;
@@ -64,15 +60,15 @@ public class APNGDecoder extends FrameSeqDecoder<APNGReader, APNGWriter> {
             }
             Chunk next = it.next();
             if (next instanceof ACTLChunk) {
-                this.h = ((ACTLChunk) next).f9519c;
+                this.h = ((ACTLChunk) next).c;
                 z = true;
             } else if (next instanceof FCTLChunk) {
                 APNGFrame aPNGFrame2 = new APNGFrame(aPNGReader, (FCTLChunk) next);
                 aPNGFrame2.e = arrayList;
-                aPNGFrame2.f9523c = bArr;
+                aPNGFrame2.c = bArr;
                 aPNGFrame = aPNGFrame2;
-                if (this.f9527a != null) {
-                    this.f9527a.add(aPNGFrame2);
+                if (this.a != null) {
+                    this.a.add(aPNGFrame2);
                     aPNGFrame = aPNGFrame2;
                 }
             } else if (next instanceof FDATChunk) {
@@ -84,8 +80,8 @@ public class APNGDecoder extends FrameSeqDecoder<APNGReader, APNGWriter> {
                     StillFrame stillFrame = new StillFrame(aPNGReader);
                     stillFrame.h = i;
                     stillFrame.i = i2;
-                    if (this.f9527a != null) {
-                        this.f9527a.add(stillFrame);
+                    if (this.a != null) {
+                        this.a.add(stillFrame);
                     }
                     this.h = 1;
                 } else if (aPNGFrame != null) {
@@ -94,15 +90,15 @@ public class APNGDecoder extends FrameSeqDecoder<APNGReader, APNGWriter> {
             } else if (next instanceof IHDRChunk) {
                 IHDRChunk iHDRChunk = (IHDRChunk) next;
                 i = iHDRChunk.b;
-                i2 = iHDRChunk.f9539c;
+                i2 = iHDRChunk.c;
                 bArr = iHDRChunk.h;
             } else if (!(next instanceof IENDChunk)) {
                 arrayList.add(next);
             }
         }
         int i3 = i * i2;
-        this.e = ByteBuffer.allocate(((i3 / (this.f9528c * this.f9528c)) + 1) * 4);
-        this.j.f9521c = ByteBuffer.allocate(((i3 / (this.f9528c * this.f9528c)) + 1) * 4);
+        this.e = ByteBuffer.allocate(((i3 / (this.c * this.c)) + 1) * 4);
+        this.j.c = ByteBuffer.allocate(((i3 / (this.c * this.c)) + 1) * 4);
         return new Rect(0, 0, i, i2);
     }
 
@@ -129,50 +125,50 @@ public class APNGDecoder extends FrameSeqDecoder<APNGReader, APNGWriter> {
             return;
         }
         try {
-            Bitmap a2 = a(this.f.width() / this.f9528c, this.f.height() / this.f9528c);
+            Bitmap a = a(this.f.width() / this.c, this.f.height() / this.c);
             Canvas canvas = null;
             if (this.d != null) {
-                canvas = this.d.get(a2);
+                canvas = this.d.get(a);
             }
             Canvas canvas2 = canvas;
             if (canvas == null) {
-                canvas2 = new Canvas(a2);
-                this.d.put(a2, canvas2);
+                canvas2 = new Canvas(a);
+                this.d.put(a, canvas2);
             }
             if (frame instanceof APNGFrame) {
                 this.e.rewind();
-                a2.copyPixelsFromBuffer(this.e);
+                a.copyPixelsFromBuffer(this.e);
                 if (this.b == 0) {
                     canvas2.drawColor(0, PorterDuff.Mode.CLEAR);
                 } else {
                     canvas2.save();
                     canvas2.clipRect(this.j.b);
-                    byte b = this.j.f9520a;
+                    byte b = this.j.a;
                     if (b == 1) {
                         canvas2.drawColor(0, PorterDuff.Mode.CLEAR);
                     } else if (b == 2) {
-                        this.j.f9521c.rewind();
-                        a2.copyPixelsFromBuffer(this.j.f9521c);
+                        this.j.c.rewind();
+                        a.copyPixelsFromBuffer(this.j.c);
                     }
                     canvas2.restore();
                 }
-                if (((APNGFrame) frame).b == 2 && this.j.f9520a != 2) {
-                    this.j.f9521c.rewind();
-                    a2.copyPixelsToBuffer(this.j.f9521c);
+                if (((APNGFrame) frame).b == 2 && this.j.a != 2) {
+                    this.j.c.rewind();
+                    a.copyPixelsToBuffer(this.j.c);
                 }
-                this.j.f9520a = ((APNGFrame) frame).b;
+                this.j.a = ((APNGFrame) frame).b;
                 canvas2.save();
-                if (((APNGFrame) frame).f9522a == 0) {
-                    canvas2.clipRect(frame.j / this.f9528c, frame.k / this.f9528c, (frame.j + frame.h) / this.f9528c, (frame.k + frame.i) / this.f9528c);
+                if (((APNGFrame) frame).a == 0) {
+                    canvas2.clipRect(frame.j / this.c, frame.k / this.c, (frame.j + frame.h) / this.c, (frame.k + frame.i) / this.c);
                     canvas2.drawColor(0, PorterDuff.Mode.CLEAR);
                 }
-                this.j.b.set(frame.j / this.f9528c, frame.k / this.f9528c, (frame.j + frame.h) / this.f9528c, (frame.k + frame.i) / this.f9528c);
+                this.j.b.set(frame.j / this.c, frame.k / this.c, (frame.j + frame.h) / this.c, (frame.k + frame.i) / this.c);
                 canvas2.restore();
             }
-            a(frame.a(canvas2, this.i, this.f9528c, a(frame.h, frame.i), d()));
+            a(frame.a(canvas2, this.i, this.c, a(frame.h, frame.i), d()));
             this.e.rewind();
-            a2.copyPixelsToBuffer(this.e);
-            a(a2);
+            a.copyPixelsToBuffer(this.e);
+            a(a);
         } catch (Error e) {
             e.printStackTrace();
         } catch (Exception e2) {
@@ -187,9 +183,9 @@ public class APNGDecoder extends FrameSeqDecoder<APNGReader, APNGWriter> {
 
     @Override // com.blued.android.core.image.apng.decode.FrameSeqDecoder
     protected void c() {
-        if (this.j.f9521c != null) {
-            this.j.f9521c.clear();
-            this.j.f9521c = null;
+        if (this.j.c != null) {
+            this.j.c.clear();
+            this.j.c = null;
         }
         APNGWriter aPNGWriter = this.g;
         if (aPNGWriter != null) {

@@ -7,7 +7,7 @@ public interface a {
 
     /* renamed from: com.kwai.filedownloader.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/a$a.class */
-    public interface InterfaceC0583a {
+    public interface InterfaceC0413a {
         int GA();
 
         void GB();

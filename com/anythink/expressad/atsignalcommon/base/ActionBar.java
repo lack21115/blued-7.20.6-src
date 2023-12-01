@@ -13,7 +13,7 @@ import com.bytedance.applog.tracker.Tracker;
 public class ActionBar extends LinearLayout implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private WebView f7067a;
+    private WebView f4229a;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/atsignalcommon/base/ActionBar$a.class */
     public interface a {
@@ -66,7 +66,7 @@ public class ActionBar extends LinearLayout implements View.OnClickListener {
     }
 
     public WebView getWebView() {
-        return this.f7067a;
+        return this.f4229a;
     }
 
     public View newActionItem() {
@@ -75,7 +75,7 @@ public class ActionBar extends LinearLayout implements View.OnClickListener {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -1);
         layoutParams.weight = 1.0f;
         linearLayout.setLayoutParams(layoutParams);
-        View frameLayout = new FrameLayout(context);
+        FrameLayout frameLayout = new FrameLayout(context);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-1, -1);
         layoutParams2.gravity = 17;
         frameLayout.setLayoutParams(layoutParams2);
@@ -121,6 +121,6 @@ public class ActionBar extends LinearLayout implements View.OnClickListener {
     }
 
     public void setWebView(WebView webView) {
-        this.f7067a = webView;
+        this.f4229a = webView;
     }
 }

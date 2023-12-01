@@ -10,9 +10,7 @@ import java.nio.channels.FileLock;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/k.class */
 public class k {
-
-    /* renamed from: a  reason: collision with root package name */
-    static File f4497a;
+    static File a;
 
     /* renamed from: a  reason: collision with other field name */
     static FileChannel f36a;
@@ -24,14 +22,14 @@ public class k {
         FileLock fileLock;
         synchronized (k.class) {
             try {
-                if (f4497a == null) {
-                    f4497a = new File(context.getFilesDir() + File.separator + "ap.Lock");
+                if (a == null) {
+                    a = new File(context.getFilesDir() + File.separator + "ap.Lock");
                 }
-                boolean exists = f4497a.exists();
+                boolean exists = a.exists();
                 boolean z = exists;
                 if (!exists) {
                     try {
-                        z = f4497a.createNewFile();
+                        z = a.createNewFile();
                     } catch (IOException e) {
                         z = exists;
                     }
@@ -39,7 +37,7 @@ public class k {
                 if (z) {
                     if (f36a == null) {
                         try {
-                            f36a = new RandomAccessFile(f4497a, "rw").getChannel();
+                            f36a = new RandomAccessFile(a, "rw").getChannel();
                         } catch (Exception e2) {
                             return false;
                         }

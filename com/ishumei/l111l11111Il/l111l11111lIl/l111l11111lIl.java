@@ -11,9 +11,8 @@ import java.security.spec.MGF1ParameterSpec;
 import java.security.spec.PSSParameterSpec;
 import java.util.Arrays;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l111l11111Il/l111l11111lIl/l111l11111lIl.class */
-public final class l111l11111lIl {
+final class l111l11111lIl {
     private static final long l1111l111111Il = 3617552046287187010L;
     private static final int l111l11111I1l = 32;
     private static int l111l11111Il = 257;

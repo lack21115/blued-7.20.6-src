@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogRomanticCityListBinding.class */
 public final class DialogRomanticCityListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16395a;
+    public final ImageView a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16396c;
+    public final TextView c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private DialogRomanticCityListBinding(ConstraintLayout constraintLayout, ImageView imageView, RecyclerView recyclerView, TextView textView, TextView textView2) {
         this.e = constraintLayout;
-        this.f16395a = imageView;
+        this.a = imageView;
         this.b = recyclerView;
-        this.f16396c = textView;
+        this.c = textView;
         this.d = textView2;
     }
 
@@ -32,13 +28,13 @@ public final class DialogRomanticCityListBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.img_empty_view);
         if (imageView != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_city_list);
-            if (recyclerView != null) {
+            RecyclerView findViewById = view.findViewById(R.id.rv_city_list);
+            if (findViewById != null) {
                 TextView textView = (TextView) view.findViewById(R.id.tv_empty_text);
                 if (textView != null) {
                     TextView textView2 = (TextView) view.findViewById(R.id.tv_notice);
                     if (textView2 != null) {
-                        return new DialogRomanticCityListBinding((ConstraintLayout) view, imageView, recyclerView, textView, textView2);
+                        return new DialogRomanticCityListBinding((ConstraintLayout) view, imageView, findViewById, textView, textView2);
                     }
                     str = "tvNotice";
                 } else {
@@ -53,7 +49,6 @@ public final class DialogRomanticCityListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

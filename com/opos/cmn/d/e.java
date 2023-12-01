@@ -11,7 +11,7 @@ import java.util.Map;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f24745a = new byte[0];
+    private static final byte[] f11057a = new byte[0];
     private static volatile com.opos.videocache.c b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/d/e$a.class */
@@ -24,17 +24,17 @@ public class e {
     public static final class b implements com.opos.videocache.b.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private Map<String, String> f24749a;
+        private Map<String, String> f11061a;
 
         public b() {
             HashMap hashMap = new HashMap(1);
-            this.f24749a = hashMap;
+            this.f11061a = hashMap;
             hashMap.put("Accept-Encoding", WifiEnterpriseConfig.IDENTITY_KEY);
         }
 
         @Override // com.opos.videocache.b.b
         public Map<String, String> a(String str) {
-            return this.f24749a;
+            return this.f11061a;
         }
     }
 
@@ -42,7 +42,7 @@ public class e {
         com.opos.videocache.c cVar;
         com.opos.videocache.c cVar2 = b;
         if (cVar2 == null) {
-            synchronized (f24745a) {
+            synchronized (f11057a) {
                 com.opos.videocache.c cVar3 = b;
                 cVar = cVar3;
                 if (cVar3 == null) {

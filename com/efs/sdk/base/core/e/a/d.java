@@ -16,7 +16,7 @@ public final class d extends a {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0057, code lost:
-        if (1 == r5.f21764a.f21763c) goto L26;
+        if (1 == r5.f8158a.f8157c) goto L26;
      */
     @Override // com.efs.sdk.base.core.e.a.a
     /*
@@ -27,7 +27,7 @@ public final class d extends a {
         /*
             r4 = this;
             r0 = r5
-            com.efs.sdk.base.core.d.a r0 = r0.f21764a
+            com.efs.sdk.base.core.d.a r0 = r0.f8158a
             int r0 = r0.e
             r6 = r0
             r0 = 0
@@ -46,32 +46,32 @@ public final class d extends a {
             if (r0 != 0) goto L5a
             java.lang.String r0 = "wa"
             r1 = r5
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a
-            java.lang.String r1 = r1.f21762a
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a
+            java.lang.String r1 = r1.f8156a
             boolean r0 = r0.equals(r1)
             if (r0 != 0) goto L5a
             java.lang.String r0 = "startperf"
             r1 = r5
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a
-            java.lang.String r1 = r1.f21762a
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a
+            java.lang.String r1 = r1.f8156a
             boolean r0 = r0.equals(r1)
             if (r0 != 0) goto L5a
             r0 = 1
             r1 = r5
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a
             byte r1 = r1.b
             if (r0 != r1) goto L4d
             r0 = r5
             com.efs.sdk.base.core.d.c r0 = r0.b
-            boolean r0 = r0.f21766a
+            boolean r0 = r0.f8160a
             if (r0 == 0) goto L5a
         L4d:
             r0 = r7
             r6 = r0
             r0 = 1
             r1 = r5
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a
-            int r1 = r1.f21763c
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a
+            int r1 = r1.f8157c
             if (r0 != r1) goto L5c
         L5a:
             r0 = 1
@@ -89,7 +89,7 @@ public final class d extends a {
             com.efs.sdk.base.core.config.GlobalEnvStruct r1 = com.efs.sdk.base.core.controller.ControllerCenter.getGlobalEnvStruct()
             java.lang.String r1 = r1.getSecret()
             r2 = r5
-            byte[] r2 = r2.f21765c
+            byte[] r2 = r2.f8159c
             byte[] r0 = r0.encrypt(r1, r2)
             r8 = r0
             r0 = r8

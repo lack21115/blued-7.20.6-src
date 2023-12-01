@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -36,7 +37,6 @@ import com.blued.android.module.yy_china.model.YYHomeRoomsViewModel;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
@@ -48,13 +48,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHomeRoomsFragment.class */
 public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewModel> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f17284a = {Reflection.a(new PropertyReference1Impl(YYHomeRoomsFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyHomeRoomsBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] a = {Reflection.a(new PropertyReference1Impl(YYHomeRoomsFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyHomeRoomsBinding;", 0))};
     private final ViewBindingProperty b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYChatRoomsListFragment f17285c;
+    private YYChatRoomsListFragment c;
     private YYHomeChatsFragment d;
     private boolean e;
 
@@ -137,7 +133,7 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         }
-        HomeRightMenuAdapter homeRightMenuAdapter = new HomeRightMenuAdapter(this, new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeRoomsFragment$P1bmbT5wUsipIPaPjdJgeEMMMcA
+        RecyclerView.Adapter homeRightMenuAdapter = new HomeRightMenuAdapter(this, new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYHomeRoomsFragment$P1bmbT5wUsipIPaPjdJgeEMMMcA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYHomeRoomsFragment.a(YYHomeRoomsFragment.this, homeRightMenuModels, view);
@@ -156,7 +152,7 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
         if (yYHomeExtraModel == null) {
             return;
         }
-        YYRoomInfoManager.e().f17579c = yYHomeExtraModel.getSwitch_svga();
+        YYRoomInfoManager.e().c = yYHomeExtraModel.getSwitch_svga();
         if (StringUtils.a(yYHomeExtraModel.getExperiment_group(), "new")) {
             r();
         } else {
@@ -238,7 +234,7 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
     }
 
     private final FragmentYyHomeRoomsBinding p() {
-        return (FragmentYyHomeRoomsBinding) this.b.b(this, f17284a[0]);
+        return (FragmentYyHomeRoomsBinding) this.b.b(this, a[0]);
     }
 
     private final void q() {
@@ -275,8 +271,8 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
                 if (layoutParams == null) {
                     throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
                 }
-                ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
-                layoutParams2.topMargin = StatusBarHelper.a(getContext());
+                ViewGroup.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+                ((ConstraintLayout.LayoutParams) layoutParams2).topMargin = StatusBarHelper.a(getContext());
                 p.g.setLayoutParams(layoutParams2);
             }
             LinearLayout titleBackground = p.g.getTitleBackground();
@@ -322,15 +318,15 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
         FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
         Intrinsics.c(beginTransaction, "childFragmentManager.beginTransaction()");
         YYChatRoomsListFragment yYChatRoomsListFragment = (YYChatRoomsListFragment) getChildFragmentManager().findFragmentByTag("homeOldDataFragment");
-        this.f17285c = yYChatRoomsListFragment;
+        this.c = yYChatRoomsListFragment;
         if (yYChatRoomsListFragment == null) {
             YYChatRoomsListFragment yYChatRoomsListFragment2 = new YYChatRoomsListFragment();
-            this.f17285c = yYChatRoomsListFragment2;
+            this.c = yYChatRoomsListFragment2;
             if (yYChatRoomsListFragment2 != null) {
                 yYChatRoomsListFragment2.setArguments(t());
             }
             int i = R.id.fra;
-            YYChatRoomsListFragment yYChatRoomsListFragment3 = this.f17285c;
+            YYChatRoomsListFragment yYChatRoomsListFragment3 = this.c;
             Intrinsics.a(yYChatRoomsListFragment3);
             beginTransaction.add(i, yYChatRoomsListFragment3, "homeOldDataFragment");
         } else if (yYChatRoomsListFragment != null) {
@@ -344,7 +340,7 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
         Bundle bundle = new Bundle();
         bundle.putString("from_source", j().e());
         bundle.putString("type_id", j().d());
-        bundle.putString(TTLiveConstants.ROOMID_KEY, j().f());
+        bundle.putString("room_id", j().f());
         return bundle;
     }
 
@@ -355,10 +351,10 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        YYHomeRoomsFragment yYHomeRoomsFragment = this;
-        LifecycleExtKt.a(yYHomeRoomsFragment, j().g(), new YYHomeRoomsFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(yYHomeRoomsFragment, j().h(), new YYHomeRoomsFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(yYHomeRoomsFragment, j().i(), new YYHomeRoomsFragment$liveDataObserver$3(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, j().g(), new YYHomeRoomsFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().h(), new YYHomeRoomsFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, j().i(), new YYHomeRoomsFragment$liveDataObserver$3(this));
     }
 
     @Override // android.view.View.OnClickListener
@@ -366,7 +362,7 @@ public final class YYHomeRoomsFragment extends MVVMBaseFragment<YYHomeRoomsViewM
         Tracker.onClick(view);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (!TextUtils.isEmpty(j().f()) || this.e) {

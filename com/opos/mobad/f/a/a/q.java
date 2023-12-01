@@ -9,20 +9,20 @@ import java.util.List;
 public class q<T extends com.opos.mobad.ad.b, P> extends h<T> implements o<T, P> {
 
     /* renamed from: a  reason: collision with root package name */
-    final HashMap<Integer, List<P>> f26049a;
+    final HashMap<Integer, List<P>> f12361a;
 
     public q(String str, int i, com.opos.mobad.f.a.c.a aVar, List<e.a> list, e.a aVar2, long j, com.opos.mobad.f.a.b.c<T> cVar, b.a aVar3) {
         super(str, i, aVar, list, aVar2, j, cVar, aVar3);
-        this.f26049a = new HashMap<>();
+        this.f12361a = new HashMap<>();
     }
 
     @Override // com.opos.mobad.f.a.a.h
     protected boolean g(int i) {
-        return this.f26049a.containsKey(Integer.valueOf(i));
+        return this.f12361a.containsKey(Integer.valueOf(i));
     }
 
     @Override // com.opos.mobad.f.a.a.o
     public List<P> h() {
-        return this.f26049a.remove(Integer.valueOf(j()));
+        return this.f12361a.remove(Integer.valueOf(j()));
     }
 }

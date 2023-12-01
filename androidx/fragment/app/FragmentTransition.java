@@ -21,11 +21,11 @@ import java.util.Map;
 public class FragmentTransition {
 
     /* renamed from: a  reason: collision with root package name */
-    static final FragmentTransitionImpl f3014a;
+    static final FragmentTransitionImpl f2966a;
     static final FragmentTransitionImpl b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f3015c = {0, 3, 0, 1, 5, 4, 7, 6, 9, 8, 10};
+    private static final int[] f2967c = {0, 3, 0, 1, 5, 4, 7, 6, 9, 8, 10};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/fragment/app/FragmentTransition$Callback.class */
@@ -50,7 +50,7 @@ public class FragmentTransition {
     }
 
     static {
-        f3014a = Build.VERSION.SDK_INT >= 21 ? new FragmentTransitionCompat21() : null;
+        f2966a = Build.VERSION.SDK_INT >= 21 ? new FragmentTransitionCompat21() : null;
         b = b();
     }
 
@@ -198,18 +198,18 @@ public class FragmentTransition {
         if (arrayList.isEmpty()) {
             return null;
         }
-        FragmentTransitionImpl fragmentTransitionImpl = f3014a;
+        FragmentTransitionImpl fragmentTransitionImpl = f2966a;
         if (fragmentTransitionImpl == null || !a(fragmentTransitionImpl, arrayList)) {
             FragmentTransitionImpl fragmentTransitionImpl2 = b;
             if (fragmentTransitionImpl2 == null || !a(fragmentTransitionImpl2, arrayList)) {
-                if (f3014a == null && b == null) {
+                if (f2966a == null && b == null) {
                     return null;
                 }
                 throw new IllegalArgumentException("Invalid Transition types");
             }
             return b;
         }
-        return f3014a;
+        return f2966a;
     }
 
     private static Object a(final FragmentTransitionImpl fragmentTransitionImpl, ViewGroup viewGroup, View view, ArrayMap<String, String> arrayMap, FragmentContainerTransition fragmentContainerTransition, ArrayList<View> arrayList, ArrayList<View> arrayList2, Object obj, Object obj2) {
@@ -487,10 +487,10 @@ public class FragmentTransition {
         OneShotPreDrawListener.add(viewGroup, new Runnable() { // from class: androidx.fragment.app.FragmentTransition.4
             @Override // java.lang.Runnable
             public void run() {
-                Object obj3 = Object.this;
+                Object obj3 = obj;
                 if (obj3 != null) {
                     fragmentTransitionImpl.removeTarget(obj3, view);
-                    arrayList2.addAll(FragmentTransition.a(fragmentTransitionImpl, Object.this, fragment, arrayList, view));
+                    arrayList2.addAll(FragmentTransition.a(fragmentTransitionImpl, obj, fragment, arrayList, view));
                 }
                 if (arrayList3 != null) {
                     if (obj2 != null) {
@@ -512,7 +512,7 @@ public class FragmentTransition {
             OneShotPreDrawListener.add(fragment.mContainer, new Runnable() { // from class: androidx.fragment.app.FragmentTransition.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    FragmentTransition.a(ArrayList.this, 4);
+                    FragmentTransition.a(arrayList, 4);
                 }
             });
         }
@@ -562,7 +562,7 @@ public class FragmentTransition {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean a() {
-        return (f3014a == null && b == null) ? false : true;
+        return (f2966a == null && b == null) ? false : true;
     }
 
     private static boolean a(FragmentTransitionImpl fragmentTransitionImpl, List<Object> list) {
@@ -751,7 +751,7 @@ public class FragmentTransition {
     }
 
     public static void calculatePopFragments(BackStackRecord backStackRecord, SparseArray<FragmentContainerTransition> sparseArray, boolean z) {
-        if (!backStackRecord.f2900a.j().onHasView()) {
+        if (!backStackRecord.f2852a.j().onHasView()) {
             return;
         }
         int size = backStackRecord.d.size();

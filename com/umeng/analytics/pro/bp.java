@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public class bp extends bw {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f40668a = 0;
+    public static final int f26977a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f40669c = 2;
+    public static final int f26978c = 2;
     public static final int d = 3;
     public static final int e = 4;
     public static final int f = 5;
@@ -50,7 +50,7 @@ public class bp extends bw {
                 cpVar.k();
                 return new bp(i, str);
             }
-            short s = l2.f40700c;
+            short s = l2.f27009c;
             if (s != 1) {
                 if (s != 2) {
                     cs.a(cpVar, l2.b);

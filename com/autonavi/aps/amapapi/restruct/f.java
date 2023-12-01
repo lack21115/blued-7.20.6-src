@@ -1,6 +1,5 @@
 package com.autonavi.aps.amapapi.restruct;
 
-import com.amap.api.maps.model.MyLocationStyle;
 import java.util.Objects;
 import org.json.JSONObject;
 
@@ -8,11 +7,11 @@ import org.json.JSONObject;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f9252a = 0;
+    public int f6412a = 0;
     public double b = 0.0d;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f9253c = 0.0d;
+    public double f6413c = 0.0d;
     public long d = 0;
     public int e = 0;
     public int f = 0;
@@ -24,10 +23,10 @@ public final class f {
         try {
             jSONObject = new JSONObject();
             jSONObject.put("time", this.d);
-            jSONObject.put(com.anythink.core.common.g.c.C, this.f9253c);
+            jSONObject.put("lon", this.f6413c);
             jSONObject.put("lat", this.b);
             jSONObject.put("radius", this.e);
-            jSONObject.put(MyLocationStyle.LOCATION_TYPE, this.f9252a);
+            jSONObject.put("locationType", this.f6412a);
             jSONObject.put("reType", this.g);
             jSONObject.put("reSubType", this.h);
         } catch (Throwable th) {
@@ -39,8 +38,8 @@ public final class f {
     public final void a(JSONObject jSONObject) {
         try {
             this.b = jSONObject.optDouble("lat", this.b);
-            this.f9253c = jSONObject.optDouble(com.anythink.core.common.g.c.C, this.f9253c);
-            this.f9252a = jSONObject.optInt(MyLocationStyle.LOCATION_TYPE, this.f9252a);
+            this.f6413c = jSONObject.optDouble("lon", this.f6413c);
+            this.f6412a = jSONObject.optInt("locationType", this.f6412a);
             this.g = jSONObject.optInt("reType", this.g);
             this.h = jSONObject.optInt("reSubType", this.h);
             this.e = jSONObject.optInt("radius", this.e);
@@ -58,10 +57,10 @@ public final class f {
             return false;
         }
         f fVar = (f) obj;
-        return this.f9252a == fVar.f9252a && Double.compare(fVar.b, this.b) == 0 && Double.compare(fVar.f9253c, this.f9253c) == 0 && this.d == fVar.d && this.e == fVar.e && this.f == fVar.f && this.g == fVar.g && this.h == fVar.h;
+        return this.f6412a == fVar.f6412a && Double.compare(fVar.b, this.b) == 0 && Double.compare(fVar.f6413c, this.f6413c) == 0 && this.d == fVar.d && this.e == fVar.e && this.f == fVar.f && this.g == fVar.g && this.h == fVar.h;
     }
 
     public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.f9252a), Double.valueOf(this.b), Double.valueOf(this.f9253c), Long.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f), Integer.valueOf(this.g), Integer.valueOf(this.h));
+        return Objects.hash(Integer.valueOf(this.f6412a), Double.valueOf(this.b), Double.valueOf(this.f6413c), Long.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f), Integer.valueOf(this.g), Integer.valueOf(this.h));
     }
 }

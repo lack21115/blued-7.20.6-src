@@ -1,7 +1,6 @@
 package com.soft.blued.http;
 
 import android.text.TextUtils;
-import com.anythink.core.api.ATCustomRuleKeys;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.HttpResponseHandler;
@@ -10,12 +9,11 @@ import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.utils.AesCrypto;
-import com.blued.android.module.common.db.model.UserAccountsModel;
 import com.blued.android.module.common.model.CountModel;
 import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.ToastUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.cdo.oaps.ad.OapsKey;
 import com.google.gson.Gson;
 import com.sina.weibo.sdk.constant.WBConstants;
 import com.sina.weibo.sdk.constant.WBPageConstants;
@@ -27,10 +25,10 @@ import java.util.Map;
 public class PayHttpUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f29665a = PayHttpUtils.class.getSimpleName();
+    private static final String f15975a = PayHttpUtils.class.getSimpleName();
 
     public static String a(int i) {
-        return i != 2 ? i != 4 ? "alipay" : "huabei" : UserAccountsModel.ACCOUNT_THREE_WEIXIN;
+        return i != 2 ? i != 4 ? "alipay" : "huabei" : "weixin";
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0011, code lost:
@@ -119,7 +117,7 @@ public class PayHttpUtils {
     }
 
     public static void a(HttpResponseHandler httpResponseHandler, IRequestHost iRequestHost, String str) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", UserInfo.getInstance().getLoginUserInfo().getUid());
         a2.put("access_token", UserInfo.getInstance().getAccessToken());
         a2.put("appkey", str);
@@ -307,29 +305,29 @@ public class PayHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("is_svip", i + "");
         HttpManager.a(BluedHttpUrl.r() + "/pay/config/vip/cancle", bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i, int i2, int i3, int i4, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        a2.put("size", i2 + "");
+        a2.put(OapsKey.KEY_SIZE, i2 + "");
         a2.put("is_custom", i4 + "");
         a2.put("product_id", i3 + "");
         HttpManager.a(BluedHttpUrl.r() + "/pay/coupons/new", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i, int i2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("coupon_id", String.valueOf(i));
         a2.put("money", String.valueOf(i2));
         HttpManager.b(BluedHttpUrl.r() + "/coupons/employ", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, int i, long j, String str, String str2, String str3, String str4, String str5, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("host", WBConstants.ACTION_LOG_TYPE_PAY);
         a2.put("id", String.valueOf(i));
         a2.put("type", "2");
@@ -338,7 +336,7 @@ public class PayHttpUtils {
         a2.put("detail", str);
         a2.put("promotion_type", String.valueOf(str2));
         a2.put("role", str3);
-        a2.put(ATCustomRuleKeys.AGE, str4);
+        a2.put("age", str4);
         a2.put("area", str5);
         a2.put("from", "exposure");
         HttpManager.b(BluedHttpUrl.r() + "/pay/storage", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
@@ -356,13 +354,13 @@ public class PayHttpUtils {
         try {
             HttpManager.a(BluedHttpUrl.r() + "/paymentcode", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).h();
         } catch (Exception e) {
-            bluedUIHttpResponse.onFailure(null);
+            bluedUIHttpResponse.onFailure((Throwable) null);
         }
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, int i, int i2, String str, String str2, String str3, String str4, String str5, int i3) {
         String str6 = BluedHttpUrl.r() + "/pay/android/unified";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("id", i2 + "");
         a2.put("type", a(i));
         a2.put("stage", "prepay");
@@ -386,8 +384,8 @@ public class PayHttpUtils {
         try {
             Logger.c("PayHttpUtils", "data==" + f.toJson(a2));
             String b = AesCrypto.b(f.toJson(a2));
-            Map<String, String> a3 = BluedHttpTools.a();
-            a3.put(BridgeUtil.UNDERLINE_STR, b);
+            Map a3 = BluedHttpTools.a();
+            a3.put("_", b);
             HttpManager.b(str6, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a3)).h();
         } catch (Exception e) {
             bluedUIHttpResponse.onFailure((Throwable) null, -1, "");
@@ -408,7 +406,7 @@ public class PayHttpUtils {
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str, String str2) {
         String str3 = BluedHttpUrl.r() + "/pay/config/" + str;
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         if (!TextUtils.isEmpty(str2)) {
             a2.put("from", str2);
         }
@@ -420,18 +418,16 @@ public class PayHttpUtils {
     }
 
     public static void a(String str, int i, int i2) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("exchange_id", str);
         a2.put("coupon_id", String.valueOf(i));
         a2.put("money", String.valueOf(i2));
         HttpManager.b(BluedHttpUrl.r() + "/coupons/use", new BluedUIHttpResponse<BluedEntityA<CountModel>>(null) { // from class: com.soft.blued.http.PayHttpUtils.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<CountModel> bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i3, final String str2) {
                 AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.http.PayHttpUtils.1.1
                     @Override // java.lang.Runnable
@@ -441,20 +437,20 @@ public class PayHttpUtils {
                 }, 500L);
                 return true;
             }
-        }, null).b(BluedHttpTools.a(true)).a(a2).h();
+        }, (IRequestHost) null).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         try {
-            Map<String, String> a2 = BluedHttpTools.a();
+            Map a2 = BluedHttpTools.a();
             a2.put("type", "modify");
             a2.put("code", BluedHttpTools.b(str));
             String b = AesCrypto.b(AppInfo.f().toJson(a2));
-            Map<String, String> a3 = BluedHttpTools.a();
-            a3.put(BridgeUtil.UNDERLINE_STR, b);
+            Map a3 = BluedHttpTools.a();
+            a3.put("_", b);
             HttpManager.b(BluedHttpUrl.r() + "/paymentcode", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a3)).h();
         } catch (Exception e) {
-            bluedUIHttpResponse.onFailure(null);
+            bluedUIHttpResponse.onFailure((Throwable) null);
         }
     }
 
@@ -462,21 +458,21 @@ public class PayHttpUtils {
         try {
             Logger.e("setPayPW", "pwd===" + BluedHttpTools.b(str));
             String str2 = BluedHttpUrl.r() + "/paymentcode/" + i;
-            Map<String, String> a2 = BluedHttpTools.a();
+            Map a2 = BluedHttpTools.a();
             a2.put("verify", bool.booleanValue() ? "1" : "0");
             a2.put("code", BluedHttpTools.b(str));
             a2.put("type", "set");
             String b = AesCrypto.b(AppInfo.f().toJson(a2));
-            Map<String, String> a3 = BluedHttpTools.a();
-            a3.put(BridgeUtil.UNDERLINE_STR, b);
+            Map a3 = BluedHttpTools.a();
+            a3.put("_", b);
             HttpManager.b(str2, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a3)).h();
         } catch (Exception e) {
-            bluedUIHttpResponse.onFailure(null);
+            bluedUIHttpResponse.onFailure((Throwable) null);
         }
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse) {
-        HttpManager.a(BluedHttpUrl.r() + "/pay/config", bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(BluedHttpUrl.r() + "/pay/config", bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, int i) {
@@ -493,18 +489,18 @@ public class PayHttpUtils {
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost, String str, String str2) {
         String str3 = BluedHttpUrl.r() + "/pay/android/unified";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("stage", "verify");
         if ("alipay".equals(str)) {
             a2.put("result", str2);
-        } else if (UserAccountsModel.ACCOUNT_THREE_WEIXIN.equals(str)) {
+        } else if ("weixin".equals(str)) {
             a2.put("prepayid", str2);
         }
         a2.put("type", str);
         try {
             String b = AesCrypto.b(AppInfo.f().toJson(a2));
-            Map<String, String> a3 = BluedHttpTools.a();
-            a3.put(BridgeUtil.UNDERLINE_STR, b);
+            Map a3 = BluedHttpTools.a();
+            a3.put("_", b);
             HttpManager.b(str3, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a3)).h();
         } catch (Exception e) {
             bluedUIHttpResponse.onFailure((Throwable) null, -1, "");

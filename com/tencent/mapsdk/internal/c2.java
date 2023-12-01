@@ -1,5 +1,6 @@
 package com.tencent.mapsdk.internal;
 
+import com.cdo.oaps.ad.OapsKey;
 import com.tencent.map.sdk.comps.offlinemap.OfflineItem;
 import com.tencent.map.tools.json.JsonComposer;
 import com.tencent.map.tools.json.annotation.Json;
@@ -10,24 +11,24 @@ public class c2 extends JsonComposer {
     @Json(ignore = true)
 
     /* renamed from: a  reason: collision with root package name */
-    public String f37337a;
+    public String f23646a;
     @Json(name = "md5")
     public String b;
     @Json(name = "pinyin")
 
     /* renamed from: c  reason: collision with root package name */
-    public String f37338c;
-    @Json(name = "size")
+    public String f23647c;
+    @Json(name = OapsKey.KEY_SIZE)
     public int d;
     @Json(name = "ver")
     public int e;
 
     public String a() {
-        return this.f37338c + ".dat";
+        return this.f23647c + ".dat";
     }
 
     public boolean a(OfflineItem offlineItem) {
-        return offlineItem.getPinyin().equals(this.f37338c);
+        return offlineItem.getPinyin().equals(this.f23647c);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0072, code lost:
@@ -52,7 +53,7 @@ public class c2 extends JsonComposer {
             r9 = r0
             r0 = r9
             r1 = r4
-            java.lang.String r1 = r1.f37338c
+            java.lang.String r1 = r1.f23647c
             java.lang.StringBuilder r0 = r0.append(r1)
             r0 = r9
             java.lang.String r1 = "-md5"
@@ -68,7 +69,7 @@ public class c2 extends JsonComposer {
             r10 = r0
             r0 = r10
             r1 = r4
-            java.lang.String r1 = r1.f37338c
+            java.lang.String r1 = r1.f23647c
             java.lang.StringBuilder r0 = r0.append(r1)
             r0 = r10
             java.lang.String r1 = "-version"
@@ -105,30 +106,30 @@ public class c2 extends JsonComposer {
     }
 
     public String b() {
-        return this.f37337a + File.separator + this.f37338c + this.e + ".zip";
+        return this.f23646a + File.separator + this.f23647c + this.e + ".zip";
     }
 
     public void b(ic icVar) {
         if (icVar != null) {
-            icVar.b(this.f37338c + "-md5", this.b);
-            icVar.b(this.f37338c + "-version", this.e);
+            icVar.b(this.f23647c + "-md5", this.b);
+            icVar.b(this.f23647c + "-version", this.e);
         }
     }
 
     public String c() {
-        return this.f37338c + ".zip";
+        return this.f23647c + ".zip";
     }
 
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer("OfflineMapConfigCity{");
         stringBuffer.append("url='");
-        stringBuffer.append(this.f37337a);
+        stringBuffer.append(this.f23646a);
         stringBuffer.append('\'');
         stringBuffer.append(", md5='");
         stringBuffer.append(this.b);
         stringBuffer.append('\'');
         stringBuffer.append(", pinyin='");
-        stringBuffer.append(this.f37338c);
+        stringBuffer.append(this.f23647c);
         stringBuffer.append('\'');
         stringBuffer.append(", size=");
         stringBuffer.append(this.d);

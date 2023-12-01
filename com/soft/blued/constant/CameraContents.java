@@ -11,11 +11,11 @@ import java.util.concurrent.Executors;
 public class CameraContents {
 
     /* renamed from: a  reason: collision with root package name */
-    public static ExecutorService f28311a = Executors.newSingleThreadExecutor();
+    public static ExecutorService f14621a = Executors.newSingleThreadExecutor();
     public static String b = "camera_background_thread";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f28312c = "face_";
+    public static String f14622c = "face_";
     public static final SimpleDateFormat d = new SimpleDateFormat("yy_MM_dd_HH-mm_ss");
     public static AdultVerifyFragment.AV_START_PAGE e;
 

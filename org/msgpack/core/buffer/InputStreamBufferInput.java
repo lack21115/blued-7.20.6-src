@@ -9,16 +9,14 @@ import org.msgpack.core.Preconditions;
 /* loaded from: source-3503164-dex2jar.jar:org/msgpack/core/buffer/InputStreamBufferInput.class */
 public class InputStreamBufferInput implements MessageBufferInput {
     private final byte[] buffer;
-
-    /* renamed from: in  reason: collision with root package name */
-    private InputStream f44099in;
+    private InputStream in;
 
     public InputStreamBufferInput(InputStream inputStream) {
         this(inputStream, 8192);
     }
 
     public InputStreamBufferInput(InputStream inputStream, int i) {
-        this.f44099in = (InputStream) Preconditions.checkNotNull(inputStream, "input is null");
+        this.in = (InputStream) Preconditions.checkNotNull(inputStream, "input is null");
         this.buffer = new byte[i];
     }
 
@@ -30,12 +28,12 @@ public class InputStreamBufferInput implements MessageBufferInput {
 
     @Override // org.msgpack.core.buffer.MessageBufferInput, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f44099in.close();
+        this.in.close();
     }
 
     @Override // org.msgpack.core.buffer.MessageBufferInput
     public MessageBuffer next() throws IOException {
-        int read = this.f44099in.read(this.buffer);
+        int read = this.in.read(this.buffer);
         if (read == -1) {
             return null;
         }
@@ -43,8 +41,8 @@ public class InputStreamBufferInput implements MessageBufferInput {
     }
 
     public InputStream reset(InputStream inputStream) throws IOException {
-        InputStream inputStream2 = this.f44099in;
-        this.f44099in = inputStream;
+        InputStream inputStream2 = this.in;
+        this.in = inputStream;
         return inputStream2;
     }
 }

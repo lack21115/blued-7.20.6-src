@@ -16,17 +16,17 @@ import java.util.Iterator;
 public class ViewTransitionController {
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<ViewTransition.Animate> f2222a;
+    ArrayList<ViewTransition.Animate> f2174a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final MotionLayout f2223c;
+    private final MotionLayout f2175c;
     private HashSet<View> e;
     private ArrayList<ViewTransition> d = new ArrayList<>();
     private String f = "ViewTransitionController";
     ArrayList<ViewTransition.Animate> b = new ArrayList<>();
 
     public ViewTransitionController(MotionLayout motionLayout) {
-        this.f2223c = motionLayout;
+        this.f2175c = motionLayout;
     }
 
     private void a(final ViewTransition viewTransition, final boolean z) {
@@ -44,39 +44,39 @@ public class ViewTransitionController {
                     if (sharedValue != i2) {
                         return;
                     }
-                    int childCount = ViewTransitionController.this.f2223c.getChildCount();
+                    int childCount = ViewTransitionController.this.f2175c.getChildCount();
                     int i4 = 0;
                     while (true) {
                         int i5 = i4;
                         if (i5 >= childCount) {
                             return;
                         }
-                        View childAt = ViewTransitionController.this.f2223c.getChildAt(i5);
+                        View childAt = ViewTransitionController.this.f2175c.getChildAt(i5);
                         if (viewTransition.a(childAt)) {
-                            int currentState = ViewTransitionController.this.f2223c.getCurrentState();
-                            ConstraintSet constraintSet = ViewTransitionController.this.f2223c.getConstraintSet(currentState);
+                            int currentState = ViewTransitionController.this.f2175c.getCurrentState();
+                            ConstraintSet constraintSet = ViewTransitionController.this.f2175c.getConstraintSet(currentState);
                             ViewTransition viewTransition2 = viewTransition;
                             ViewTransitionController viewTransitionController = ViewTransitionController.this;
-                            viewTransition2.a(viewTransitionController, viewTransitionController.f2223c, currentState, constraintSet, childAt);
+                            viewTransition2.a(viewTransitionController, viewTransitionController.f2175c, currentState, constraintSet, childAt);
                         }
                         i4 = i5 + 1;
                     }
                 } else if (sharedValue == i2) {
                 } else {
-                    int childCount2 = ViewTransitionController.this.f2223c.getChildCount();
+                    int childCount2 = ViewTransitionController.this.f2175c.getChildCount();
                     int i6 = 0;
                     while (true) {
                         int i7 = i6;
                         if (i7 >= childCount2) {
                             return;
                         }
-                        View childAt2 = ViewTransitionController.this.f2223c.getChildAt(i7);
+                        View childAt2 = ViewTransitionController.this.f2175c.getChildAt(i7);
                         if (viewTransition.a(childAt2)) {
-                            int currentState2 = ViewTransitionController.this.f2223c.getCurrentState();
-                            ConstraintSet constraintSet2 = ViewTransitionController.this.f2223c.getConstraintSet(currentState2);
+                            int currentState2 = ViewTransitionController.this.f2175c.getCurrentState();
+                            ConstraintSet constraintSet2 = ViewTransitionController.this.f2175c.getConstraintSet(currentState2);
                             ViewTransition viewTransition3 = viewTransition;
                             ViewTransitionController viewTransitionController2 = ViewTransitionController.this;
-                            viewTransition3.a(viewTransitionController2, viewTransitionController2.f2223c, currentState2, constraintSet2, childAt2);
+                            viewTransition3.a(viewTransitionController2, viewTransitionController2.f2175c, currentState2, constraintSet2, childAt2);
                         }
                         i6 = i7 + 1;
                     }
@@ -86,24 +86,24 @@ public class ViewTransitionController {
     }
 
     private void a(ViewTransition viewTransition, View... viewArr) {
-        int currentState = this.f2223c.getCurrentState();
-        if (viewTransition.f2217a == 2) {
-            viewTransition.a(this, this.f2223c, currentState, null, viewArr);
+        int currentState = this.f2175c.getCurrentState();
+        if (viewTransition.f2169a == 2) {
+            viewTransition.a(this, this.f2175c, currentState, null, viewArr);
         } else if (currentState != -1) {
-            ConstraintSet constraintSet = this.f2223c.getConstraintSet(currentState);
+            ConstraintSet constraintSet = this.f2175c.getConstraintSet(currentState);
             if (constraintSet == null) {
                 return;
             }
-            viewTransition.a(this, this.f2223c, currentState, constraintSet, viewArr);
+            viewTransition.a(this, this.f2175c, currentState, constraintSet, viewArr);
         } else {
             String str = this.f;
-            Log.w(str, "No support for ViewTransition within transition yet. Currently: " + this.f2223c.toString());
+            Log.w(str, "No support for ViewTransition within transition yet. Currently: " + this.f2175c.toString());
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        ArrayList<ViewTransition.Animate> arrayList = this.f2222a;
+        ArrayList<ViewTransition.Animate> arrayList = this.f2174a;
         if (arrayList == null) {
             return;
         }
@@ -111,10 +111,10 @@ public class ViewTransitionController {
         while (it.hasNext()) {
             it.next().a();
         }
-        this.f2222a.removeAll(this.b);
+        this.f2174a.removeAll(this.b);
         this.b.clear();
-        if (this.f2222a.isEmpty()) {
-            this.f2222a = null;
+        if (this.f2174a.isEmpty()) {
+            this.f2174a = null;
         }
     }
 
@@ -165,7 +165,7 @@ public class ViewTransitionController {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(MotionEvent motionEvent) {
-        int currentState = this.f2223c.getCurrentState();
+        int currentState = this.f2175c.getCurrentState();
         if (currentState == -1) {
             return;
         }
@@ -174,12 +174,12 @@ public class ViewTransitionController {
             Iterator<ViewTransition> it = this.d.iterator();
             while (it.hasNext()) {
                 ViewTransition next = it.next();
-                int childCount = this.f2223c.getChildCount();
+                int childCount = this.f2175c.getChildCount();
                 int i = 0;
                 while (true) {
                     int i2 = i;
                     if (i2 < childCount) {
-                        View childAt = this.f2223c.getChildAt(i2);
+                        View childAt = this.f2175c.getChildAt(i2);
                         if (next.a(childAt)) {
                             childAt.getId();
                             this.e.add(childAt);
@@ -193,15 +193,15 @@ public class ViewTransitionController {
         float y = motionEvent.getY();
         Rect rect = new Rect();
         int action = motionEvent.getAction();
-        ArrayList<ViewTransition.Animate> arrayList = this.f2222a;
+        ArrayList<ViewTransition.Animate> arrayList = this.f2174a;
         if (arrayList != null && !arrayList.isEmpty()) {
-            Iterator<ViewTransition.Animate> it2 = this.f2222a.iterator();
+            Iterator<ViewTransition.Animate> it2 = this.f2174a.iterator();
             while (it2.hasNext()) {
                 it2.next().reactTo(action, x, y);
             }
         }
         if (action == 0 || action == 1) {
-            ConstraintSet constraintSet = this.f2223c.getConstraintSet(currentState);
+            ConstraintSet constraintSet = this.f2175c.getConstraintSet(currentState);
             Iterator<ViewTransition> it3 = this.d.iterator();
             while (it3.hasNext()) {
                 ViewTransition next2 = it3.next();
@@ -212,7 +212,7 @@ public class ViewTransitionController {
                         if (next2.a(next3)) {
                             next3.getHitRect(rect);
                             if (rect.contains((int) x, (int) y)) {
-                                next2.a(this, this.f2223c, currentState, constraintSet, next3);
+                                next2.a(this, this.f2175c, currentState, constraintSet, next3);
                             }
                         }
                     }
@@ -223,10 +223,10 @@ public class ViewTransitionController {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(ViewTransition.Animate animate) {
-        if (this.f2222a == null) {
-            this.f2222a = new ArrayList<>();
+        if (this.f2174a == null) {
+            this.f2174a = new ArrayList<>();
         }
-        this.f2222a.add(animate);
+        this.f2174a.add(animate);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -266,7 +266,7 @@ public class ViewTransitionController {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b() {
-        this.f2223c.invalidate();
+        this.f2175c.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

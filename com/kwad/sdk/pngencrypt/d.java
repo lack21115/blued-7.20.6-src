@@ -58,7 +58,7 @@ public abstract class d extends ChunkReader {
         if (i5 > 0) {
             this.avg.c(bArr, i4, i5);
             if (this.avh) {
-                System.arraycopy((Object) bArr, i4, (Object) Bj().data, this.auz, i5);
+                System.arraycopy(bArr, i4, Bj().data, this.auz, i5);
             }
         }
     }

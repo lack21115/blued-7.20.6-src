@@ -3,13 +3,13 @@ package com.blued.login.vm;
 import android.os.Handler;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
 import com.blued.login.api.LoginService;
 import com.blued.login.state.IdentifyFaceState;
-import java.util.Collection;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -29,7 +29,7 @@ import kotlinx.coroutines.CoroutineScope;
 final class IdentifyFaceVM$sendSucceedRequest$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f20615a;
+    int f7009a;
     final /* synthetic */ IdentifyFaceVM b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -42,36 +42,32 @@ final class IdentifyFaceVM$sendSucceedRequest$1 extends SuspendLambda implements
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(IdentifyFaceVM identifyFaceVM) {
         BluedStructureExtKt.a(identifyFaceVM, new Function1<IdentifyFaceState, IdentifyFaceState>() { // from class: com.blued.login.vm.IdentifyFaceVM$sendSucceedRequest$1$1$1$1
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final IdentifyFaceState invoke(IdentifyFaceState setState) {
-                Intrinsics.e(setState, "$this$setState");
-                return setState.copy(true);
+            public final IdentifyFaceState invoke(IdentifyFaceState identifyFaceState) {
+                Intrinsics.e(identifyFaceState, "$this$setState");
+                return identifyFaceState.copy(true);
             }
         });
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((IdentifyFaceVM$sendSucceedRequest$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new IdentifyFaceVM$sendSucceedRequest$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Handler n;
         Runnable runnable;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f20615a;
+        int i = this.f7009a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f20615a = 1;
-            Object a3 = ((LoginService) BluedApiProxy.b().a(LoginService.class)).a(1, this);
+            this.f7009a = 1;
+            Object a3 = ((LoginService) BluedApiProxy.b().a(LoginService.class)).a(1, (Continuation) this);
             obj = a3;
             if (a3 == a2) {
                 return a2;
@@ -85,8 +81,7 @@ final class IdentifyFaceVM$sendSucceedRequest$1 extends SuspendLambda implements
         final IdentifyFaceVM identifyFaceVM = this.b;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                Collection data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                Intrinsics.c(bluedEntityA.data, "data");
                 bluedEntityA.hasMore();
                 n = AppInfo.n();
                 runnable = new Runnable() { // from class: com.blued.login.vm.-$$Lambda$IdentifyFaceVM$sendSucceedRequest$1$ZOFRtoMSKEsCMCqhM0CfNksei8U
@@ -106,13 +101,13 @@ final class IdentifyFaceVM$sendSucceedRequest$1 extends SuspendLambda implements
                 };
             }
             n.postDelayed(runnable, 100L);
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

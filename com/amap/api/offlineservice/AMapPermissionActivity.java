@@ -6,18 +6,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
-import android.provider.Settings;
 import android.view.MotionEvent;
+import com.anythink.china.common.d;
 import com.bytedance.applog.tracker.Tracker;
 import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/offlineservice/AMapPermissionActivity.class */
 public class AMapPermissionActivity extends Activity {
-    protected String[] needPermissions = {"android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.READ_PHONE_STATE"};
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f5576a = true;
+    protected String[] needPermissions = {d.b, "android.permission.READ_EXTERNAL_STORAGE", d.a};
+    private boolean a = true;
 
     private int a(String str) {
         try {
@@ -126,7 +124,7 @@ public class AMapPermissionActivity extends Activity {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         try {
-            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + getPackageName()));
             startActivity(intent);
         } catch (Throwable th) {
@@ -148,13 +146,14 @@ public class AMapPermissionActivity extends Activity {
         return super.dispatchTouchEvent(motionEvent);
     }
 
+    @Override // android.app.Activity
     public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
         try {
             if (Build.VERSION.SDK_INT < 23 || i != 0 || a(iArr)) {
                 return;
             }
             a();
-            this.f5576a = false;
+            this.a = false;
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -164,7 +163,7 @@ public class AMapPermissionActivity extends Activity {
     public void onResume() {
         try {
             super.onResume();
-            if (Build.VERSION.SDK_INT < 23 || !this.f5576a) {
+            if (Build.VERSION.SDK_INT < 23 || !this.a) {
                 return;
             }
             a(this.needPermissions);

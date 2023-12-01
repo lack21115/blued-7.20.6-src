@@ -18,14 +18,14 @@ public class YYGiftHitLoadingView extends GiftHitLoadingView {
     @Override // com.blued.android.module.live.base.view.GiftHitLoadingView
     public void a() {
         super.a();
-        this.f11475c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     @Override // com.blued.android.module.live.base.view.GiftHitLoadingView
     public void b() {
         this.b.setImageResource(R.drawable.animation00);
         this.b.setVisibility(0);
-        this.f11474a.setImageResource(0);
+        this.a.setImageResource(0);
         setLoadFloorVisibility(8);
         this.d = 0;
     }
@@ -59,7 +59,7 @@ public class YYGiftHitLoadingView extends GiftHitLoadingView {
                 return;
             default:
                 this.b.setImageResource(R.drawable.animation00);
-                this.f11474a.setImageResource(0);
+                this.a.setImageResource(0);
                 setLoadFloorVisibility(8);
                 return;
         }

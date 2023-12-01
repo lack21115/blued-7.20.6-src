@@ -24,13 +24,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/OperationChildDefaultView.class */
 public final class OperationChildDefaultView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15362a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f15363c;
+    private BaseFragment c;
     private LiveRoomOperationModel d;
     private CountDownTimer e;
 
@@ -38,7 +34,7 @@ public final class OperationChildDefaultView extends RelativeLayout {
     public OperationChildDefaultView(Context mContext) {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
-        this.f15362a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LiveOperationChildDefaultViewBinding>() { // from class: com.blued.android.module.live_china.view.operation.OperationChildDefaultView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -48,9 +44,9 @@ public final class OperationChildDefaultView extends RelativeLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveOperationChildDefaultViewBinding invoke() {
-                LiveOperationChildDefaultViewBinding a2 = LiveOperationChildDefaultViewBinding.a(LayoutInflater.from(OperationChildDefaultView.this.getMContext()).inflate(R.layout.live_operation_child_default_view, OperationChildDefaultView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…ult_view, this)\n        )");
-                return a2;
+                LiveOperationChildDefaultViewBinding a = LiveOperationChildDefaultViewBinding.a(LayoutInflater.from(OperationChildDefaultView.this.getMContext()).inflate(R.layout.live_operation_child_default_view, OperationChildDefaultView.this));
+                Intrinsics.c(a, "bind(\n            Layout…ult_view, this)\n        )");
+                return a;
             }
         });
     }
@@ -108,7 +104,7 @@ public final class OperationChildDefaultView extends RelativeLayout {
     }
 
     private final void b() {
-        getVb().f12307c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$OperationChildDefaultView$l0lULbBd99ARner0YiNGch03iwA
+        getVb().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$OperationChildDefaultView$l0lULbBd99ARner0YiNGch03iwA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 OperationChildDefaultView.a(OperationChildDefaultView.this, view);
@@ -120,19 +116,19 @@ public final class OperationChildDefaultView extends RelativeLayout {
     public final void b(LiveRoomOperationModel liveRoomOperationModel) {
         String title = liveRoomOperationModel.getTitle();
         if (title == null || title.length() == 0) {
-            getVb().f12306a.setVisibility(8);
+            getVb().a.setVisibility(8);
             return;
         }
         getVb().e.setText(liveRoomOperationModel.getTitle());
-        getVb().f12306a.setVisibility(0);
+        getVb().a.setVisibility(0);
     }
 
     private final void c(LiveRoomOperationModel liveRoomOperationModel) {
-        getVb().f12306a.setVisibility(0);
+        getVb().a.setVisibility(0);
         long currentTimeMillis = System.currentTimeMillis();
         long get_countdown_timemillis = liveRoomOperationModel.getGet_countdown_timemillis();
         Ref.LongRef longRef = new Ref.LongRef();
-        longRef.f42544a = (liveRoomOperationModel.getCountdown() * 1000) - (currentTimeMillis - get_countdown_timemillis);
+        longRef.a = (liveRoomOperationModel.getCountdown() * 1000) - (currentTimeMillis - get_countdown_timemillis);
         this.e = new OperationChildDefaultView$initTimer$1(longRef, this, liveRoomOperationModel).start();
     }
 
@@ -149,7 +145,7 @@ public final class OperationChildDefaultView extends RelativeLayout {
         if (baseFragment == null) {
             return null;
         }
-        this.f15363c = baseFragment;
+        this.c = baseFragment;
         if (a(liveRoomOperationModel)) {
             return this;
         }
@@ -161,7 +157,7 @@ public final class OperationChildDefaultView extends RelativeLayout {
         final ActivityFragmentActive fragmentActive;
         Intrinsics.e(model, "model");
         setModel(model);
-        if (model.getIcon() != null && (baseFragment = this.f15363c) != null && (fragmentActive = baseFragment.getFragmentActive()) != null) {
+        if (model.getIcon() != null && (baseFragment = this.c) != null && (fragmentActive = baseFragment.getFragmentActive()) != null) {
             post(new Runnable() { // from class: com.blued.android.module.live_china.view.operation.-$$Lambda$OperationChildDefaultView$82r0-z84yo8tXByxBCGRUVLfi_o
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -187,7 +183,7 @@ public final class OperationChildDefaultView extends RelativeLayout {
     }
 
     public final Context getMContext() {
-        return this.f15362a;
+        return this.a;
     }
 
     public final LiveRoomOperationModel getModel() {
@@ -202,7 +198,7 @@ public final class OperationChildDefaultView extends RelativeLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f15363c = null;
+        this.c = null;
         a();
     }
 

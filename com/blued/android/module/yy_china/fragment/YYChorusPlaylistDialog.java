@@ -28,7 +28,6 @@ import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import java.util.Arrays;
-import java.util.Collection;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.StringCompanionObject;
@@ -36,32 +35,26 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChorusPlaylistDialog.class */
 public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogChorusPlaylistBinding f17141a;
+    private DialogChorusPlaylistBinding a;
     private PlaylistAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f17142c = 1;
+    private int c = 1;
     private View d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChorusPlaylistDialog$PlaylistAdapter.class */
     public final class PlaylistAdapter extends BaseQuickAdapter<YYChorusMusicModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYChorusPlaylistDialog f17143a;
+        final /* synthetic */ YYChorusPlaylistDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PlaylistAdapter(YYChorusPlaylistDialog this$0) {
             super(R.layout.item_chorus_playlist_layout);
             Intrinsics.e(this$0, "this$0");
-            this.f17143a = this$0;
+            this.a = this$0;
         }
 
         private final void a(final int i) {
-            PlaylistAdapter playlistAdapter = this.f17143a.b;
+            PlaylistAdapter playlistAdapter = this.a.b;
             PlaylistAdapter playlistAdapter2 = null;
             PlaylistAdapter playlistAdapter3 = playlistAdapter;
             if (playlistAdapter == null) {
@@ -73,22 +66,22 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
             }
             YYRoomModel b = YYRoomInfoManager.e().b();
             String str = b == null ? null : b.room_id;
-            PlaylistAdapter playlistAdapter4 = this.f17143a.b;
+            PlaylistAdapter playlistAdapter4 = this.a.b;
             if (playlistAdapter4 == null) {
                 Intrinsics.c("mAdapter");
             } else {
                 playlistAdapter2 = playlistAdapter4;
             }
-            String str2 = playlistAdapter2.getData().get(i).musicId;
-            final ActivityFragmentActive a2 = this.f17143a.a();
-            final YYChorusPlaylistDialog yYChorusPlaylistDialog = this.f17143a;
-            YYRoomHttpUtils.r(str, str2, new BluedUIHttpResponse<BluedEntityA<Object>>(i, a2) { // from class: com.blued.android.module.yy_china.fragment.YYChorusPlaylistDialog$PlaylistAdapter$deleteMusic$1
+            String str2 = ((YYChorusMusicModel) playlistAdapter2.getData().get(i)).musicId;
+            final ActivityFragmentActive a = this.a.a();
+            final YYChorusPlaylistDialog yYChorusPlaylistDialog = this.a;
+            YYRoomHttpUtils.r(str, str2, new BluedUIHttpResponse<BluedEntityA<Object>>(i, a) { // from class: com.blued.android.module.yy_china.fragment.YYChorusPlaylistDialog$PlaylistAdapter$deleteMusic$1
                 final /* synthetic */ int b;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
-                    super(a2);
+                    super(a);
                 }
 
                 /* JADX INFO: Access modifiers changed from: protected */
@@ -103,7 +96,7 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
                     }
                     playlistAdapter6.remove(this.b);
                 }
-            }, this.f17143a.a());
+            }, this.a.a());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -126,7 +119,6 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
         /* JADX INFO: Access modifiers changed from: protected */
         /* JADX WARN: Removed duplicated region for block: B:71:0x016f  */
         /* JADX WARN: Removed duplicated region for block: B:95:0x01e9  */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -149,16 +141,16 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
 
     private final void f() {
         this.b = new PlaylistAdapter(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.f17141a;
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.a;
         DialogChorusPlaylistBinding dialogChorusPlaylistBinding2 = dialogChorusPlaylistBinding;
         if (dialogChorusPlaylistBinding == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding2 = null;
         }
         dialogChorusPlaylistBinding2.b.setLayoutManager(linearLayoutManager);
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.f17141a;
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.a;
         DialogChorusPlaylistBinding dialogChorusPlaylistBinding4 = dialogChorusPlaylistBinding3;
         if (dialogChorusPlaylistBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -178,20 +170,20 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
         FrameLayout frameLayout;
         BluedLoadMoreView bluedLoadMoreView = new BluedLoadMoreView(getContext());
         bluedLoadMoreView.setBackgroundColorRes(R.color.transparent);
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.f17141a;
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.a;
         DialogChorusPlaylistBinding dialogChorusPlaylistBinding2 = dialogChorusPlaylistBinding;
         if (dialogChorusPlaylistBinding == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding2 = null;
         }
-        dialogChorusPlaylistBinding2.f16308c.a(bluedLoadMoreView);
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.f17141a;
+        dialogChorusPlaylistBinding2.c.a(bluedLoadMoreView);
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.a;
         DialogChorusPlaylistBinding dialogChorusPlaylistBinding4 = dialogChorusPlaylistBinding3;
         if (dialogChorusPlaylistBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding4 = null;
         }
-        RefreshFooter refreshFooter = dialogChorusPlaylistBinding4.f16308c.getRefreshFooter();
+        RefreshFooter refreshFooter = dialogChorusPlaylistBinding4.c.getRefreshFooter();
         if (refreshFooter != null && (view = refreshFooter.getView()) != null && (frameLayout = (FrameLayout) view.findViewById(R.id.layout_load_more_view)) != null) {
             frameLayout.setBackgroundResource(R.color.transparent);
         }
@@ -214,22 +206,20 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
             playlistAdapter4 = null;
         }
         playlistAdapter4.setEnableLoadMore(false);
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding5 = this.f17141a;
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding5 = this.a;
         if (dialogChorusPlaylistBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding5 = null;
         }
-        dialogChorusPlaylistBinding5.f16308c.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYChorusPlaylistDialog$initRefreshView$1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+        dialogChorusPlaylistBinding5.c.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYChorusPlaylistDialog$initRefreshView$1
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYChorusPlaylistDialog.this.h();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
-                YYChorusPlaylistDialog.this.f17142c = 1;
+                YYChorusPlaylistDialog.this.c = 1;
                 YYChorusPlaylistDialog.this.h();
             }
         });
@@ -239,9 +229,9 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
     public final void h() {
         YYRoomModel b = YYRoomInfoManager.e().b();
         String str = b == null ? null : b.room_id;
-        int i = this.f17142c;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.a(str, i, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYChorusMusicModel, BluedEntityBaseExtra>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYChorusPlaylistDialog$loadPlaylist$1
+        int i = this.c;
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.a(str, i, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYChorusMusicModel, BluedEntityBaseExtra>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYChorusPlaylistDialog$loadPlaylist$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
@@ -261,16 +251,16 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
                     YYChorusPlaylistDialog.this.i();
                     return;
                 }
-                i2 = YYChorusPlaylistDialog.this.f17142c;
+                i2 = YYChorusPlaylistDialog.this.c;
                 if (i2 == 1) {
-                    dialogChorusPlaylistBinding3 = YYChorusPlaylistDialog.this.f17141a;
+                    dialogChorusPlaylistBinding3 = YYChorusPlaylistDialog.this.a;
                     DialogChorusPlaylistBinding dialogChorusPlaylistBinding4 = dialogChorusPlaylistBinding3;
                     if (dialogChorusPlaylistBinding3 == null) {
                         Intrinsics.c("mBinding");
                         dialogChorusPlaylistBinding4 = null;
                     }
                     ShapeTextView shapeTextView = dialogChorusPlaylistBinding4.e;
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                     String string = YYChorusPlaylistDialog.this.getResources().getString(R.string.yy_playlist_amount);
                     Intrinsics.c(string, "resources.getString(R.string.yy_playlist_amount)");
                     BluedEntityBaseExtra bluedEntityBaseExtra = bluedEntity.extra;
@@ -291,16 +281,16 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
                         Intrinsics.c("mAdapter");
                         playlistAdapter4 = null;
                     }
-                    playlistAdapter4.addData((Collection) bluedEntity.data);
+                    playlistAdapter4.addData(bluedEntity.data);
                 }
                 if (!bluedEntity.hasMore()) {
-                    dialogChorusPlaylistBinding = YYChorusPlaylistDialog.this.f17141a;
+                    dialogChorusPlaylistBinding = YYChorusPlaylistDialog.this.a;
                     DialogChorusPlaylistBinding dialogChorusPlaylistBinding5 = dialogChorusPlaylistBinding;
                     if (dialogChorusPlaylistBinding5 == null) {
                         Intrinsics.c("mBinding");
                         dialogChorusPlaylistBinding5 = null;
                     }
-                    dialogChorusPlaylistBinding5.f16308c.l(false);
+                    dialogChorusPlaylistBinding5.c.b(false);
                     view = YYChorusPlaylistDialog.this.d;
                     if (view == null) {
                         return;
@@ -309,15 +299,15 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
                     return;
                 }
                 YYChorusPlaylistDialog yYChorusPlaylistDialog = YYChorusPlaylistDialog.this;
-                i3 = yYChorusPlaylistDialog.f17142c;
-                yYChorusPlaylistDialog.f17142c = i3 + 1;
-                dialogChorusPlaylistBinding2 = YYChorusPlaylistDialog.this.f17141a;
+                i3 = yYChorusPlaylistDialog.c;
+                yYChorusPlaylistDialog.c = i3 + 1;
+                dialogChorusPlaylistBinding2 = YYChorusPlaylistDialog.this.a;
                 DialogChorusPlaylistBinding dialogChorusPlaylistBinding6 = dialogChorusPlaylistBinding2;
                 if (dialogChorusPlaylistBinding6 == null) {
                     Intrinsics.c("mBinding");
                     dialogChorusPlaylistBinding6 = null;
                 }
-                dialogChorusPlaylistBinding6.f16308c.l(true);
+                dialogChorusPlaylistBinding6.c.b(true);
                 view2 = YYChorusPlaylistDialog.this.d;
                 if (view2 == null) {
                     return;
@@ -329,55 +319,55 @@ public final class YYChorusPlaylistDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void i() {
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.f17141a;
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.a;
         DialogChorusPlaylistBinding dialogChorusPlaylistBinding2 = dialogChorusPlaylistBinding;
         if (dialogChorusPlaylistBinding == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding2 = null;
         }
-        dialogChorusPlaylistBinding2.f16308c.h();
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.f17141a;
+        dialogChorusPlaylistBinding2.c.h();
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.a;
         if (dialogChorusPlaylistBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding3 = null;
         }
-        dialogChorusPlaylistBinding3.f16308c.j();
+        dialogChorusPlaylistBinding3.c.g();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_chorus_playlist, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…laylist, container, true)");
-        DialogChorusPlaylistBinding a2 = DialogChorusPlaylistBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.f17141a = a2;
+        DialogChorusPlaylistBinding a = DialogChorusPlaylistBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.a = a;
         f();
         g();
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.f17141a;
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding = this.a;
         DialogChorusPlaylistBinding dialogChorusPlaylistBinding2 = dialogChorusPlaylistBinding;
         if (dialogChorusPlaylistBinding == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding2 = null;
         }
-        dialogChorusPlaylistBinding2.f16307a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChorusPlaylistDialog$dsurF8IWl_HYRD2JwTDYqkjAIxE
+        dialogChorusPlaylistBinding2.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChorusPlaylistDialog$dsurF8IWl_HYRD2JwTDYqkjAIxE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYChorusPlaylistDialog.a(YYChorusPlaylistDialog.this, view2);
             }
         });
-        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.f17141a;
+        DialogChorusPlaylistBinding dialogChorusPlaylistBinding3 = this.a;
         if (dialogChorusPlaylistBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogChorusPlaylistBinding3 = null;
         }
-        dialogChorusPlaylistBinding3.f16308c.i();
+        dialogChorusPlaylistBinding3.c.i();
     }
 }

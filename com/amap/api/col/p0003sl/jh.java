@@ -13,9 +13,7 @@ public final class jh {
     /* renamed from: com.amap.api.col.3sl.jh$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jh$a.class */
     static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static jh f5209a = new jh();
+        public static jh a = new jh();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0059, code lost:

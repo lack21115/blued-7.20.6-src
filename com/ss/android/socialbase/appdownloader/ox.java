@@ -22,6 +22,7 @@ import com.ss.android.socialbase.downloader.model.DownloadInfo;
 import com.ss.android.socialbase.downloader.setting.DownloadSetting;
 import com.ss.android.socialbase.downloader.setting.DownloadSettingKeys;
 import com.ss.android.socialbase.downloader.thread.WeakDownloadHandler;
+import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.Callable;
@@ -45,18 +46,18 @@ public class ox {
         public static int mb;
         private static int ox;
         private final Context b;
-        private final InterfaceC0885ox h;
+        private final InterfaceC0715ox h;
         private final Intent hj;
         private final long ko;
         private boolean lz = false;
         private final Handler u;
         private Future<Boolean> ww;
 
-        public h(Context context, Intent intent, int i, InterfaceC0885ox interfaceC0885ox, long j) {
+        public h(Context context, Intent intent, int i, InterfaceC0715ox interfaceC0715ox, long j) {
             this.b = context;
             this.hj = intent;
             ox = i;
-            this.h = interfaceC0885ox;
+            this.h = interfaceC0715ox;
             this.u = new WeakDownloadHandler(Looper.getMainLooper(), this);
             this.ko = j;
         }
@@ -106,11 +107,11 @@ public class ox {
         private final Handler b;
         private final long hj;
         private final Context mb;
-        private final InterfaceC0885ox ox;
+        private final InterfaceC0715ox ox;
 
-        public hj(Handler handler, Context context, InterfaceC0885ox interfaceC0885ox, long j) {
+        public hj(Handler handler, Context context, InterfaceC0715ox interfaceC0715ox, long j) {
             this.mb = context;
-            this.ox = interfaceC0885ox;
+            this.ox = interfaceC0715ox;
             this.b = handler;
             this.hj = j;
         }
@@ -142,11 +143,11 @@ public class ox {
         private final h mb;
         private final int ox;
 
-        public mb(Context context, Intent intent, int i, JSONObject jSONObject, InterfaceC0885ox interfaceC0885ox) {
+        public mb(Context context, Intent intent, int i, JSONObject jSONObject, InterfaceC0715ox interfaceC0715ox) {
             this.b = jSONObject;
             int optInt = jSONObject.optInt(DownloadSettingKeys.AhPlans.KEY_JUMP_UNKNWON_SOURCE_QUERY_INTERVAL, 1000);
             this.ox = optInt;
-            this.mb = new h(context, intent, i, interfaceC0885ox, optInt);
+            this.mb = new h(context, intent, i, interfaceC0715ox, optInt);
         }
 
         @Override // com.ss.android.socialbase.downloader.common.AppStatusManager.AppStatusChangeListener
@@ -178,7 +179,7 @@ public class ox {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ss.android.socialbase.appdownloader.ox$ox  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/socialbase/appdownloader/ox$ox.class */
-    public interface InterfaceC0885ox {
+    public interface InterfaceC0715ox {
         boolean mb(Context context);
     }
 
@@ -289,8 +290,8 @@ public class ox {
         String optString = jSONObject.optString("type");
         mbVar.mb = optString;
         if ("plan_b".equals(optString)) {
-            mbVar.h = "custom";
-            if (com.ss.android.socialbase.appdownloader.mb.hj.mb(DownloadComponentManager.getAppContext(), "custom", jSONObject, downloadSetting)) {
+            mbVar.h = WbCloudFaceContant.CUSTOM;
+            if (com.ss.android.socialbase.appdownloader.mb.hj.mb(DownloadComponentManager.getAppContext(), WbCloudFaceContant.CUSTOM, jSONObject, downloadSetting)) {
                 mbVar.ox = 0;
                 return mbVar;
             }
@@ -362,12 +363,12 @@ public class ox {
         DownloadComponentManager.getEventListener().onUnityEvent(i, MonitorConstants.UnityLabel.GUIDE_AUTH_DIALOG_CONFIRM, jSONObject2);
     }
 
-    private static void mb(Context context, Intent intent, int i, JSONObject jSONObject, InterfaceC0885ox interfaceC0885ox) {
+    private static void mb(Context context, Intent intent, int i, JSONObject jSONObject, InterfaceC0715ox interfaceC0715ox) {
         if (b != null) {
             AppStatusManager.getInstance().unregisterAppSwitchListener(b);
             b = null;
         }
-        b = new mb(context, intent, i, jSONObject, interfaceC0885ox);
+        b = new mb(context, intent, i, jSONObject, interfaceC0715ox);
         AppStatusManager.getInstance().registerAppSwitchListener(b);
     }
 
@@ -409,8 +410,8 @@ public class ox {
             if (com.ss.android.socialbase.appdownloader.u.hj.ox() && Build.VERSION.SDK_INT < 26 && !hj(context)) {
                 com.ss.android.socialbase.appdownloader.mb.u uVar = new com.ss.android.socialbase.appdownloader.mb.u(context);
                 if (uVar.mb()) {
-                    mb(context, intent, i, jSONObject, new InterfaceC0885ox() { // from class: com.ss.android.socialbase.appdownloader.ox.1
-                        @Override // com.ss.android.socialbase.appdownloader.ox.InterfaceC0885ox
+                    mb(context, intent, i, jSONObject, new InterfaceC0715ox() { // from class: com.ss.android.socialbase.appdownloader.ox.1
+                        @Override // com.ss.android.socialbase.appdownloader.ox.InterfaceC0715ox
                         public boolean mb(Context context2) {
                             return ox.hj(context2);
                         }
@@ -423,8 +424,8 @@ public class ox {
             } else {
                 com.ss.android.socialbase.appdownloader.mb.ox oxVar = new com.ss.android.socialbase.appdownloader.mb.ox(context);
                 if (oxVar.mb()) {
-                    mb(context, intent, i, jSONObject, new InterfaceC0885ox() { // from class: com.ss.android.socialbase.appdownloader.ox.2
-                        @Override // com.ss.android.socialbase.appdownloader.ox.InterfaceC0885ox
+                    mb(context, intent, i, jSONObject, new InterfaceC0715ox() { // from class: com.ss.android.socialbase.appdownloader.ox.2
+                        @Override // com.ss.android.socialbase.appdownloader.ox.InterfaceC0715ox
                         public boolean mb(Context context2) {
                             return ox.h(context2);
                         }
@@ -703,8 +704,8 @@ public class ox {
         if (TextUtils.isEmpty(savePath)) {
             return false;
         }
-        mbVar.hj = "custom";
-        com.ss.android.socialbase.appdownloader.mb.mb mb2 = com.ss.android.socialbase.appdownloader.mb.hj.mb(context, "custom", jSONObject, downloadInfo);
+        mbVar.hj = WbCloudFaceContant.CUSTOM;
+        com.ss.android.socialbase.appdownloader.mb.mb mb2 = com.ss.android.socialbase.appdownloader.mb.hj.mb(context, WbCloudFaceContant.CUSTOM, jSONObject, downloadInfo);
         if (mb2 == null || !mb2.mb()) {
             mbVar.ox = 3;
             return false;

@@ -9,17 +9,17 @@ import com.heytap.openid.sdk.OpenIDSDK;
 public class a implements InnerIdSupplier {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f21148a;
+    private Context f7542a;
 
     /* renamed from: com.bun.miitmdid.c.i.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bun/miitmdid/c/i/a$a.class */
-    class RunnableC0303a implements Runnable {
+    class RunnableC0133a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SupplierListener f21149a;
+        final /* synthetic */ SupplierListener f7543a;
 
-        RunnableC0303a(SupplierListener supplierListener) {
-            this.f21149a = supplierListener;
+        RunnableC0133a(SupplierListener supplierListener) {
+            this.f7543a = supplierListener;
         }
 
         @Override // java.lang.Runnable
@@ -28,7 +28,7 @@ public class a implements InnerIdSupplier {
 
     public a(Context context) {
         OpenIDSDK.d(context);
-        this.f21148a = context;
+        this.f7542a = context;
     }
 
     @Override // com.bun.supplier.InnerIdSupplier

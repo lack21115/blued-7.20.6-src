@@ -20,8 +20,8 @@ public class PathShape extends Shape {
 
     @Override // android.graphics.drawable.shapes.Shape
     /* renamed from: clone */
-    public PathShape mo346clone() throws CloneNotSupportedException {
-        PathShape pathShape = (PathShape) super.mo346clone();
+    public PathShape mo343clone() throws CloneNotSupportedException {
+        PathShape pathShape = (PathShape) super.mo343clone();
         pathShape.mPath = new Path(this.mPath);
         return pathShape;
     }

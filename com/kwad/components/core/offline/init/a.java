@@ -43,7 +43,7 @@ public abstract class a {
         com.kwad.sdk.core.d.b.d(tag, "loadComponents pluginInfo: " + nI);
         com.kwai.sodler.kwai.a.a(context, nI, new b.a() { // from class: com.kwad.components.core.offline.init.a.2
             /* JADX INFO: Access modifiers changed from: private */
-            @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+            @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
             public void a(com.kwai.sodler.lib.b.a aVar, PluginError pluginError) {
                 super.a((AnonymousClass2) aVar, pluginError);
                 String tag2 = a.this.getTag();
@@ -51,7 +51,7 @@ public abstract class a {
             }
 
             /* JADX INFO: Access modifiers changed from: private */
-            @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+            @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
             public void a(com.kwai.sodler.lib.b.a aVar, com.kwai.sodler.lib.kwai.a aVar2) {
                 super.a((AnonymousClass2) aVar, (com.kwai.sodler.lib.b.a) aVar2);
                 String tag2 = a.this.getTag();

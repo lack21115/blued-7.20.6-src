@@ -10,7 +10,7 @@ import java.util.Iterator;
 public class VIPBuyOnBackPressedObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static VIPBuyOnBackPressedObserver f34246a = new VIPBuyOnBackPressedObserver();
+    private static VIPBuyOnBackPressedObserver f20555a = new VIPBuyOnBackPressedObserver();
     private ArrayList<IVIPBuyOnBackPressedObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/observer/VIPBuyOnBackPressedObserver$IVIPBuyOnBackPressedObserver.class */
@@ -22,7 +22,7 @@ public class VIPBuyOnBackPressedObserver {
     }
 
     public static VIPBuyOnBackPressedObserver a() {
-        return f34246a;
+        return f20555a;
     }
 
     public void a(final IVIPBuyOnBackPressedObserver iVIPBuyOnBackPressedObserver, Lifecycle lifecycle) {

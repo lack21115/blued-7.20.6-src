@@ -16,7 +16,7 @@ public interface FusibleFlow<T> extends Flow<T> {
         public static /* synthetic */ Flow a(FusibleFlow fusibleFlow, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow, int i2, Object obj) {
             if (obj == null) {
                 if ((i2 & 1) != 0) {
-                    coroutineContext = EmptyCoroutineContext.f42457a;
+                    coroutineContext = EmptyCoroutineContext.a;
                 }
                 if ((i2 & 2) != 0) {
                     i = -3;

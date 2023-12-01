@@ -9,16 +9,16 @@ import java.lang.ref.WeakReference;
 public class bx extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ bv f41294a;
+    final /* synthetic */ bv f27603a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public bx(bv bvVar) {
-        this.f41294a = bvVar;
+        this.f27603a = bvVar;
     }
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public String mo11550a() {
+    public String mo8500a() {
         return "10054";
     }
 
@@ -28,11 +28,11 @@ public class bx extends ai.a {
         Context context;
         Context context2;
         com.xiaomi.channel.commonutils.logger.b.c("exec== DbSizeControlJob");
-        c2 = this.f41294a.c();
-        context = this.f41294a.f227a;
+        c2 = this.f27603a.c();
+        context = this.f27603a.f180a;
         ca caVar = new ca(c2, new WeakReference(context));
-        context2 = this.f41294a.f227a;
+        context2 = this.f27603a.f180a;
         ch.a(context2).a(caVar);
-        this.f41294a.b("check_time");
+        this.f27603a.b("check_time");
     }
 }

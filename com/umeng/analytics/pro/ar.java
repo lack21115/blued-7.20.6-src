@@ -10,18 +10,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ar {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40630a = "UMExecutor";
+    private static final String f26939a = "UMExecutor";
     private static volatile ScheduledThreadPoolExecutor b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final ThreadFactory f40631c = new ThreadFactory() { // from class: com.umeng.analytics.pro.ar.1
+    private static final ThreadFactory f26940c = new ThreadFactory() { // from class: com.umeng.analytics.pro.ar.1
 
         /* renamed from: a  reason: collision with root package name */
-        private final AtomicInteger f40632a = new AtomicInteger(0);
+        private final AtomicInteger f26941a = new AtomicInteger(0);
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
-            return new Thread(runnable, "ccg-" + this.f40632a.incrementAndGet());
+            return new Thread(runnable, "ccg-" + this.f26941a.incrementAndGet());
         }
     };
 
@@ -30,7 +30,7 @@ public class ar {
             synchronized (ar.class) {
                 try {
                     if (b == null) {
-                        b = new ScheduledThreadPoolExecutor(Math.max(2, Math.min(Runtime.getRuntime().availableProcessors(), 4)), f40631c);
+                        b = new ScheduledThreadPoolExecutor(Math.max(2, Math.min(Runtime.getRuntime().availableProcessors(), 4)), f26940c);
                         b.setKeepAliveTime(3L, TimeUnit.SECONDS);
                         b.allowCoreThreadTimeOut(true);
                     }

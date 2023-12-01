@@ -14,6 +14,7 @@ import android.view.TextureView;
 import android.view.ViewGroup;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.cdo.oaps.ad.OapsKey;
+import com.huawei.hms.ads.fw;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.zk_oaction.adengine.lk_expression.a;
 import com.zk_oaction.adengine.lk_expression.c;
@@ -36,11 +37,11 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
     private String H;
 
     /* renamed from: a  reason: collision with root package name */
-    public com.zk_oaction.adengine.lk_sdk.c f42076a;
+    public com.zk_oaction.adengine.lk_sdk.c f28385a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public com.zk_oaction.adengine.lk_expression.a f42077c;
+    public com.zk_oaction.adengine.lk_expression.a f28386c;
     public com.zk_oaction.adengine.lk_expression.a d;
     public com.zk_oaction.adengine.lk_expression.a e;
     public com.zk_oaction.adengine.lk_expression.a f;
@@ -81,7 +82,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
                     if (nVar.p == null || !nVar.h) {
                         return;
                     }
-                    sendEmptyMessageDelayed(0, nVar.f42076a.i);
+                    sendEmptyMessageDelayed(0, nVar.f28385a.i);
                 } catch (Throwable th) {
                 }
             }
@@ -124,7 +125,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
                 n nVar = n.this;
                 nVar.h = false;
                 if (nVar.b != null) {
-                    com.zk_oaction.adengine.lk_variable.g gVar = nVar.f42076a.n;
+                    com.zk_oaction.adengine.lk_variable.g gVar = nVar.f28385a.n;
                     gVar.a(n.this.b + ".play", "0");
                 }
                 n nVar2 = n.this;
@@ -230,7 +231,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         this.B = false;
         this.C = new a(Looper.getMainLooper());
         this.D = new b();
-        this.f42076a = cVar;
+        this.f28385a = cVar;
         setSurfaceTextureListener(this);
         AudioManager audioManager = (AudioManager) cVar.j.getSystemService("audio");
         this.t = audioManager;
@@ -244,7 +245,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         try {
             Class<?> cls = Class.forName("android.media.AudioSystem");
             if (cls != null) {
-                Class<Integer> cls2 = Integer.TYPE;
+                Class<?> cls2 = Integer.TYPE;
                 Method declaredMethod = cls.getDeclaredMethod("isStreamActive", cls2, cls2);
                 if (declaredMethod != null) {
                     return ((Boolean) declaredMethod.invoke(null, Integer.valueOf(i2), 0)).booleanValue();
@@ -306,8 +307,8 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
     }
 
     private void c(XmlPullParser xmlPullParser) {
-        this.f42077c = new com.zk_oaction.adengine.lk_expression.a(this.f42076a, "x", xmlPullParser.getAttributeValue(null, "x"), 0.0f, this, true);
-        this.d = new com.zk_oaction.adengine.lk_expression.a(this.f42076a, "y", xmlPullParser.getAttributeValue(null, "y"), 0.0f, this, true);
+        this.f28386c = new com.zk_oaction.adengine.lk_expression.a(this.f28385a, "x", xmlPullParser.getAttributeValue(null, "x"), 0.0f, this, true);
+        this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28385a, "y", xmlPullParser.getAttributeValue(null, "y"), 0.0f, this, true);
     }
 
     private void d(String str) {
@@ -320,8 +321,8 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         if (attributeValue == null) {
             str = xmlPullParser.getAttributeValue(null, "width");
         }
-        com.zk_oaction.adengine.lk_sdk.c cVar = this.f42076a;
-        float f2 = com.zk_oaction.adengine.lk_sdk.c.f41930a;
+        com.zk_oaction.adengine.lk_sdk.c cVar = this.f28385a;
+        float f2 = com.zk_oaction.adengine.lk_sdk.c.f28239a;
         float f3 = com.zk_oaction.adengine.lk_sdk.c.b;
         if (f2 <= f3) {
             f3 = f2;
@@ -330,9 +331,9 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         if (cVar.C) {
             f2 = (16.0f * f3) / 9.0f;
         }
-        this.e = new com.zk_oaction.adengine.lk_expression.a(this.f42076a, "width", str, f3, this, true);
+        this.e = new com.zk_oaction.adengine.lk_expression.a(this.f28385a, "width", str, f3, this, true);
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "h");
-        this.f = new com.zk_oaction.adengine.lk_expression.a(this.f42076a, "height", attributeValue2 == null ? xmlPullParser.getAttributeValue(null, "height") : attributeValue2, f2, this, true);
+        this.f = new com.zk_oaction.adengine.lk_expression.a(this.f28385a, "height", attributeValue2 == null ? xmlPullParser.getAttributeValue(null, "height") : attributeValue2, f2, this, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -366,7 +367,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
     public void f(String str) {
         this.C.removeCallbacksAndMessages(null);
         if (this.w) {
-            this.f42076a.k.a(this.H, this.y, str, this.z);
+            this.f28385a.k.a(this.H, this.y, str, this.z);
         }
     }
 
@@ -389,7 +390,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
                 this.s = 0.0f;
             }
         }
-        this.f42076a.n.a(this.b + ".sound", "" + this.s);
+        this.f28385a.n.a(this.b + ".sound", "" + this.s);
     }
 
     private void h(XmlPullParser xmlPullParser) {
@@ -401,7 +402,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         if (attributeValue2 == null) {
             attributeValue2 = "";
         } else if (!this.j) {
-            attributeValue2 = this.f42076a.l + attributeValue2;
+            attributeValue2 = this.f28385a.l + attributeValue2;
         }
         this.n = attributeValue2;
     }
@@ -437,7 +438,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
     }
 
     private void j(XmlPullParser xmlPullParser) {
-        this.g = new com.zk_oaction.adengine.lk_expression.a(this.f42076a, "visibility", xmlPullParser.getAttributeValue(null, "visibility"), 1.0f, null, false);
+        this.g = new com.zk_oaction.adengine.lk_expression.a(this.f28385a, "visibility", xmlPullParser.getAttributeValue(null, "visibility"), 1.0f, null, false);
     }
 
     private void k() {
@@ -529,7 +530,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
             }
             String attributeValue2 = xmlPullParser.getAttributeValue(null, "extend");
             if (attributeValue2 != null) {
-                new com.zk_oaction.adengine.lk_expression.c(this.f42076a, attributeValue2, new h());
+                new com.zk_oaction.adengine.lk_expression.c(this.f28385a, attributeValue2, new h());
             }
         } catch (Throwable th) {
         }
@@ -576,10 +577,10 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
             }
             this.p.start();
             if (this.b != null) {
-                com.zk_oaction.adengine.lk_variable.g gVar = this.f42076a.n;
+                com.zk_oaction.adengine.lk_variable.g gVar = this.f28385a.n;
                 gVar.a(this.b + ".play", "1");
             }
-            com.zk_oaction.adengine.lk_interfaces.d dVar = this.f42076a.g;
+            com.zk_oaction.adengine.lk_interfaces.d dVar = this.f28385a.g;
             if (dVar != null) {
                 dVar.a(this.b);
             }
@@ -601,11 +602,11 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
             }
             this.p.pause();
             if (this.b != null) {
-                com.zk_oaction.adengine.lk_variable.g gVar = this.f42076a.n;
+                com.zk_oaction.adengine.lk_variable.g gVar = this.f28385a.n;
                 gVar.a(this.b + ".play", "0");
             }
             this.v = this.p.getCurrentPosition() / this.p.getDuration();
-            com.zk_oaction.adengine.lk_interfaces.d dVar = this.f42076a.g;
+            com.zk_oaction.adengine.lk_interfaces.d dVar = this.f28385a.g;
             if (dVar != null) {
                 dVar.b(this.b);
             }
@@ -634,9 +635,9 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         try {
             if (this.w) {
                 this.A = false;
-                this.f42076a.k.a(this.H, this.y, this.x, this.z);
+                this.f28385a.k.a(this.H, this.y, this.x, this.z);
                 this.C.removeMessages(0);
-                this.C.sendEmptyMessageDelayed(0, this.f42076a.i);
+                this.C.sendEmptyMessageDelayed(0, this.f28385a.i);
             }
         } catch (Throwable th) {
         }
@@ -649,7 +650,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
             if (this.A || !this.w || (mediaPlayer = this.p) == null) {
                 return;
             }
-            this.f42076a.k.b(this.H, this.y, mediaPlayer.getCurrentPosition(), this.x, this.z);
+            this.f28385a.k.b(this.H, this.y, mediaPlayer.getCurrentPosition(), this.x, this.z);
         } catch (Throwable th) {
         }
     }
@@ -660,7 +661,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         if (!this.w || (mediaPlayer = this.p) == null) {
             return;
         }
-        this.f42076a.k.a(this.H, this.y, mediaPlayer.getCurrentPosition(), this.x, this.z);
+        this.f28385a.k.a(this.H, this.y, mediaPlayer.getCurrentPosition(), this.x, this.z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -668,7 +669,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         this.C.removeCallbacksAndMessages(null);
         this.A = true;
         if (this.w) {
-            com.zk_oaction.adengine.lk_interfaces.a aVar = this.f42076a.k;
+            com.zk_oaction.adengine.lk_interfaces.a aVar = this.f28385a.k;
             String str = this.H;
             int i2 = this.y;
             int i3 = this.x;
@@ -687,7 +688,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
             } else {
                 this.s = f2;
             }
-            this.f42076a.n.a(this.b + ".sound", "" + this.s);
+            this.f28385a.n.a(this.b + ".sound", "" + this.s);
             MediaPlayer mediaPlayer = this.p;
             if (mediaPlayer != null) {
                 float f3 = this.s;
@@ -698,7 +699,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
     }
 
     public void a(String str) {
-        if (str.equals("true")) {
+        if (str.equals(fw.Code)) {
             i();
         } else if (str.equals("false")) {
             j();
@@ -844,7 +845,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         k(xmlPullParser);
         l(xmlPullParser);
         m(xmlPullParser);
-        ((ViewGroup) getParent()).setTranslationX(this.f42077c.a());
+        ((ViewGroup) getParent()).setTranslationX(this.f28386c.a());
         ((ViewGroup) getParent()).setTranslationY(this.d.a());
         return true;
     }
@@ -901,7 +902,7 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
     }
 
     public float g() {
-        com.zk_oaction.adengine.lk_expression.a aVar = this.f42077c;
+        com.zk_oaction.adengine.lk_expression.a aVar = this.f28386c;
         if (aVar != null) {
             return aVar.a();
         }
@@ -916,16 +917,15 @@ public class n extends TextureView implements MediaPlayer.OnPreparedListener, Te
         return 0.0f;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i2, int i3) {
+    protected void onMeasure(int i2, int i3) {
         setMeasuredDimension((int) this.e.a(), (int) this.f.a());
     }
 
     @Override // android.media.MediaPlayer.OnPreparedListener
     public void onPrepared(MediaPlayer mediaPlayer) {
         try {
-            if (this.f42076a.f) {
+            if (this.f28385a.f) {
                 MediaPlayer mediaPlayer2 = this.p;
                 if (mediaPlayer2 != null) {
                     mediaPlayer2.release();

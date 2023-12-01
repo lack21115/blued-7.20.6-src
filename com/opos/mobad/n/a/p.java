@@ -18,11 +18,11 @@ import com.heytap.msp.mobad.api.R;
 public class p implements SensorEventListener, f {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26541a;
+    private Context f12853a;
     private RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f26542c;
+    private ImageView f12854c;
     private TextView d;
     private com.opos.mobad.n.c.g e;
     private Animator f;
@@ -40,9 +40,9 @@ public class p implements SensorEventListener, f {
     private boolean r = false;
 
     public p(Context context) {
-        this.f26541a = context;
+        this.f12853a = context;
         g();
-        this.g = n.d(this.f26542c);
+        this.g = n.d(this.f12854c);
     }
 
     private void a(SensorEvent sensorEvent) {
@@ -74,43 +74,43 @@ public class p implements SensorEventListener, f {
     }
 
     private void g() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f26541a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f12853a);
         this.b = relativeLayout;
-        relativeLayout.setPadding(0, 0, 0, com.opos.cmn.an.h.f.a.a(this.f26541a, 18.0f));
-        RelativeLayout relativeLayout2 = new RelativeLayout(this.f26541a);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26541a, 110.0f), com.opos.cmn.an.h.f.a.a(this.f26541a, 110.0f));
+        relativeLayout.setPadding(0, 0, 0, com.opos.cmn.an.h.f.a.a(this.f12853a, 18.0f));
+        RelativeLayout relativeLayout2 = new RelativeLayout(this.f12853a);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12853a, 110.0f), com.opos.cmn.an.h.f.a.a(this.f12853a, 110.0f));
         layoutParams.addRule(14);
         this.b.addView(relativeLayout2, layoutParams);
         relativeLayout2.setId(View.generateViewId());
-        ImageView imageView = new ImageView(this.f26541a);
-        RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26541a, 84.0f), com.opos.cmn.an.h.f.a.a(this.f26541a, 84.0f));
+        ImageView imageView = new ImageView(this.f12853a);
+        RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12853a, 84.0f), com.opos.cmn.an.h.f.a.a(this.f12853a, 84.0f));
         layoutParams2.addRule(13);
         imageView.setBackgroundResource(R.drawable.opos_mobad_bg_cricle_black);
         relativeLayout2.addView(imageView, layoutParams2);
-        this.i = new com.opos.mobad.n.c.e(this.f26541a);
-        RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26541a, 110.0f), com.opos.cmn.an.h.f.a.a(this.f26541a, 110.0f));
+        this.i = new com.opos.mobad.n.c.e(this.f12853a);
+        RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12853a, 110.0f), com.opos.cmn.an.h.f.a.a(this.f12853a, 110.0f));
         layoutParams3.addRule(13);
         this.i.setScaleType(ImageView.ScaleType.FIT_XY);
         this.i.setImageResource(R.drawable.opos_mobad_bg_circle_light);
-        this.i.a(com.opos.cmn.an.h.f.a.a(this.f26541a, 28.0f));
-        this.i.b(com.opos.cmn.an.h.f.a.a(this.f26541a, 110.0f));
+        this.i.a(com.opos.cmn.an.h.f.a.a(this.f12853a, 28.0f));
+        this.i.b(com.opos.cmn.an.h.f.a.a(this.f12853a, 110.0f));
         relativeLayout2.addView(this.i, layoutParams3);
-        ImageView imageView2 = new ImageView(this.f26541a);
-        this.f26542c = imageView2;
+        ImageView imageView2 = new ImageView(this.f12853a);
+        this.f12854c = imageView2;
         imageView2.setImageResource(R.drawable.opos_mobad_icon_hand);
-        this.f26542c.setScaleType(ImageView.ScaleType.CENTER);
-        relativeLayout2.addView(this.f26542c, layoutParams2);
-        TextView textView = new TextView(this.f26541a);
+        this.f12854c.setScaleType(ImageView.ScaleType.CENTER);
+        relativeLayout2.addView(this.f12854c, layoutParams2);
+        TextView textView = new TextView(this.f12853a);
         textView.setTextSize(1, 18.0f);
         textView.setText("摇动手机");
         RelativeLayout.LayoutParams layoutParams4 = new RelativeLayout.LayoutParams(-2, -2);
-        layoutParams4.topMargin = com.opos.cmn.an.h.f.a.a(this.f26541a, 12.0f);
+        layoutParams4.topMargin = com.opos.cmn.an.h.f.a.a(this.f12853a, 12.0f);
         layoutParams4.addRule(14);
         layoutParams4.addRule(3, relativeLayout2.getId());
         textView.setId(View.generateViewId());
         textView.setTextColor(-1);
         this.b.addView(textView, layoutParams4);
-        TextView textView2 = new TextView(this.f26541a);
+        TextView textView2 = new TextView(this.f12853a);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
         this.d.setTextColor(-1);
@@ -136,7 +136,7 @@ public class p implements SensorEventListener, f {
         if (this.j != null) {
             return;
         }
-        SensorManager sensorManager = (SensorManager) this.f26541a.getSystemService("sensor");
+        SensorManager sensorManager = (SensorManager) this.f12853a.getSystemService("sensor");
         this.j = sensorManager;
         Sensor defaultSensor = sensorManager.getDefaultSensor(1);
         if (defaultSensor != null) {

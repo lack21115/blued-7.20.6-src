@@ -7,14 +7,12 @@ import com.alipay.sdk.app.statistic.a;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/statistic/b.class */
 public final class b implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ String f4607a;
+    final /* synthetic */ String a;
     final /* synthetic */ Context b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(String str, Context context) {
-        this.f4607a = str;
+        this.a = str;
         this.b = context;
     }
 
@@ -22,8 +20,8 @@ public final class b implements Runnable {
     public void run() {
         boolean b;
         boolean b2;
-        if (!TextUtils.isEmpty(this.f4607a)) {
-            b2 = a.b.b(this.b, this.f4607a);
+        if (!TextUtils.isEmpty(this.a)) {
+            b2 = a.b.b(this.b, this.a);
             if (!b2) {
                 return;
             }
@@ -34,11 +32,11 @@ public final class b implements Runnable {
             if (i2 >= 4) {
                 return;
             }
-            String a2 = a.C0046a.a(this.b);
-            if (TextUtils.isEmpty(a2)) {
+            String a = a.C0006a.a(this.b);
+            if (TextUtils.isEmpty(a)) {
                 return;
             }
-            b = a.b.b(this.b, a2);
+            b = a.b.b(this.b, a);
             if (!b) {
                 return;
             }

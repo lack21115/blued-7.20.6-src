@@ -4,17 +4,13 @@ import com.amap.api.col.p0003sl.fe;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/busline/BusStationQuery.class */
 public class BusStationQuery implements Cloneable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5590a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5591c = 20;
+    private int c = 20;
     private int d = 1;
 
     public BusStationQuery(String str, String str2) {
-        this.f5590a = str;
+        this.a = str;
         this.b = str2;
         if (a()) {
             return;
@@ -23,14 +19,14 @@ public class BusStationQuery implements Cloneable {
     }
 
     private boolean a() {
-        return !fe.a(this.f5590a);
+        return !fe.a(this.a);
     }
 
     /* renamed from: clone */
-    public BusStationQuery m2444clone() {
-        BusStationQuery busStationQuery = new BusStationQuery(this.f5590a, this.b);
+    public BusStationQuery m8887clone() {
+        BusStationQuery busStationQuery = new BusStationQuery(this.a, this.b);
         busStationQuery.setPageNumber(this.d);
-        busStationQuery.setPageSize(this.f5591c);
+        busStationQuery.setPageSize(this.c);
         return busStationQuery;
     }
 
@@ -48,9 +44,9 @@ public class BusStationQuery implements Cloneable {
             } else if (!str.equals(busStationQuery.b)) {
                 return false;
             }
-            if (this.d == busStationQuery.d && this.f5591c == busStationQuery.f5591c) {
-                String str2 = this.f5590a;
-                return str2 == null ? busStationQuery.f5590a == null : str2.equals(busStationQuery.f5590a);
+            if (this.d == busStationQuery.d && this.c == busStationQuery.c) {
+                String str2 = this.a;
+                return str2 == null ? busStationQuery.a == null : str2.equals(busStationQuery.a);
             }
             return false;
         }
@@ -66,11 +62,11 @@ public class BusStationQuery implements Cloneable {
     }
 
     public int getPageSize() {
-        return this.f5591c;
+        return this.c;
     }
 
     public String getQueryString() {
-        return this.f5590a;
+        return this.a;
     }
 
     public int hashCode() {
@@ -78,8 +74,8 @@ public class BusStationQuery implements Cloneable {
         int i = 0;
         int hashCode = str == null ? 0 : str.hashCode();
         int i2 = this.d;
-        int i3 = this.f5591c;
-        String str2 = this.f5590a;
+        int i3 = this.c;
+        String str2 = this.a;
         if (str2 != null) {
             i = str2.hashCode();
         }
@@ -99,11 +95,11 @@ public class BusStationQuery implements Cloneable {
     }
 
     public void setPageSize(int i) {
-        this.f5591c = i;
+        this.c = i;
     }
 
     public void setQueryString(String str) {
-        this.f5590a = str;
+        this.a = str;
     }
 
     public boolean weakEquals(BusStationQuery busStationQuery) {
@@ -121,10 +117,10 @@ public class BusStationQuery implements Cloneable {
         } else if (!str.equals(busStationQuery.b)) {
             return false;
         }
-        if (this.f5591c != busStationQuery.f5591c) {
+        if (this.c != busStationQuery.c) {
             return false;
         }
-        String str2 = this.f5590a;
-        return str2 == null ? busStationQuery.f5590a == null : str2.equals(busStationQuery.f5590a);
+        String str2 = this.a;
+        return str2 == null ? busStationQuery.a == null : str2.equals(busStationQuery.a);
     }
 }

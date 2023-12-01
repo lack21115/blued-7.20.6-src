@@ -37,10 +37,10 @@ public class PeopleVIPGridAdapter extends PeopleGridQuickAdapter {
 
     @Override // com.soft.blued.ui.find.adapter.PeopleGridQuickAdapter
     public void b(final BaseViewHolder baseViewHolder, final UserFindResult userFindResult) {
-        FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(2131363859);
+        FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(R.id.fl_main);
         GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) frameLayout.getLayoutParams();
-        layoutParams.width = this.f30085c;
-        layoutParams.height = this.f30085c;
+        layoutParams.width = this.f16395c;
+        layoutParams.height = this.f16395c;
         layoutParams.bottomMargin = this.i;
         layoutParams.rightMargin = this.i;
         frameLayout.setLayoutParams(layoutParams);
@@ -51,9 +51,9 @@ public class PeopleVIPGridAdapter extends PeopleGridQuickAdapter {
         View view = baseViewHolder.getView(R.id.img_btm_bg);
         imageView.setVisibility(0);
         view.setVisibility(0);
-        imageView.setLayoutParams(new FrameLayout.LayoutParams(-1, this.f30085c));
+        imageView.setLayoutParams(new FrameLayout.LayoutParams(-1, this.f16395c));
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) view.getLayoutParams();
-        layoutParams2.height = (this.f30085c * 2) / 5;
+        layoutParams2.height = (this.f16395c * 2) / 5;
         layoutParams2.width = -1;
         view.setLayoutParams(layoutParams2);
         if (!(BluedConfig.a().b().vip_grade == 2)) {
@@ -62,7 +62,7 @@ public class PeopleVIPGridAdapter extends PeopleGridQuickAdapter {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
-                    PayUtils.a(PeopleVIPGridAdapter.this.f30084a, 2, "nearby_choice_for_you_buy", 26, VipProtos.FromType.UNKNOWN_FROM);
+                    PayUtils.a(PeopleVIPGridAdapter.this.f16394a, 2, "nearby_choice_for_you_buy", 26, VipProtos.FromType.UNKNOWN_FROM);
                 }
             });
             baseViewHolder.setGone(R.id.img_btm_bg, false);
@@ -91,7 +91,7 @@ public class PeopleVIPGridAdapter extends PeopleGridQuickAdapter {
             textView2.setText("");
         } else if (userFindResult.additional_tag_type == 0) {
             textView2.setText(userFindResult.distance);
-            DistanceUtils.a(this.f30084a, textView2, userFindResult, 1);
+            DistanceUtils.a(this.f16394a, textView2, userFindResult, 1);
         } else {
             textView2.setText(userFindResult.additional_tag_data);
         }
@@ -116,7 +116,7 @@ public class PeopleVIPGridAdapter extends PeopleGridQuickAdapter {
                         InstantLog.g("personal_page", "0");
                     }
                     if (userFindResult.is_invisible_half == 1 && ((UserInfo.getInstance().getLoginUserInfo().vip_grade != 2 && UserInfo.getInstance().getLoginUserInfo().vip_grade != 1) || BluedConfig.a().g().is_invisible_half == 0)) {
-                        PayUtils.a(PeopleVIPGridAdapter.this.f30084a, 3, "user_half_invisible");
+                        PayUtils.a(PeopleVIPGridAdapter.this.f16394a, 3, "user_half_invisible");
                         return;
                     }
                     PeopleVIPGridAdapter peopleVIPGridAdapter = PeopleVIPGridAdapter.this;

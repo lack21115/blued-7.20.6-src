@@ -8,7 +8,7 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static a.c f35532a = new a.c() { // from class: com.tencent.cloud.huiyansdkface.facelight.b.a.1
+    public static a.c f21841a = new a.c() { // from class: com.tencent.cloud.huiyansdkface.facelight.b.a.1
         @Override // com.tencent.cloud.huiyansdkface.a.d.a.c
         public void a(String str, Throwable th, String str2, Object... objArr) {
             WLogger.v(str, String.format(str2, objArr));

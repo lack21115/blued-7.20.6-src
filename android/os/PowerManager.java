@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
-import com.alipay.sdk.util.i;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/os/PowerManager.class */
 public final class PowerManager {
@@ -280,7 +278,7 @@ public final class PowerManager {
         public String toString() {
             String str;
             synchronized (this.mToken) {
-                str = "WakeLock{" + Integer.toHexString(System.identityHashCode(this)) + " held=" + this.mHeld + ", refCount=" + this.mCount + i.d;
+                str = "WakeLock{" + Integer.toHexString(System.identityHashCode(this)) + " held=" + this.mHeld + ", refCount=" + this.mCount + "}";
             }
             return str;
         }
@@ -290,7 +288,7 @@ public final class PowerManager {
         this.mContext = context;
         this.mService = iPowerManager;
         this.mHandler = handler;
-        this.mHasPowerProfilesSupport = (TextUtils.isEmpty(getDefaultPowerProfile()) || TextUtils.isEmpty(this.mContext.getResources().getString(R.string.config_perf_profile_prop))) ? false : true;
+        this.mHasPowerProfilesSupport = (TextUtils.isEmpty(getDefaultPowerProfile()) || TextUtils.isEmpty(this.mContext.getResources().getString(17039639))) ? false : true;
     }
 
     public static boolean useTwilightAdjustmentFeature() {
@@ -345,27 +343,27 @@ public final class PowerManager {
     }
 
     public int getDefaultButtonBrightness() {
-        return this.mContext.getResources().getInteger(R.integer.config_buttonBrightnessSettingDefault);
+        return this.mContext.getResources().getInteger(17694817);
     }
 
     public int getDefaultKeyboardBrightness() {
-        return this.mContext.getResources().getInteger(R.integer.config_keyboardBrightnessSettingDefault);
+        return this.mContext.getResources().getInteger(17694818);
     }
 
     public String getDefaultPowerProfile() {
-        return this.mContext.getResources().getString(R.string.config_perf_profile_default_entry);
+        return this.mContext.getResources().getString(17039640);
     }
 
     public int getDefaultScreenBrightnessSetting() {
-        return this.mContext.getResources().getInteger(R.integer.config_screenBrightnessSettingDefault);
+        return this.mContext.getResources().getInteger(17694809);
     }
 
     public int getMaximumScreenBrightnessSetting() {
-        return this.mContext.getResources().getInteger(R.integer.config_screenBrightnessSettingMaximum);
+        return this.mContext.getResources().getInteger(17694808);
     }
 
     public int getMinimumScreenBrightnessSetting() {
-        return this.mContext.getResources().getInteger(R.integer.config_screenBrightnessSettingMinimum);
+        return this.mContext.getResources().getInteger(17694807);
     }
 
     public String getPowerProfile() {

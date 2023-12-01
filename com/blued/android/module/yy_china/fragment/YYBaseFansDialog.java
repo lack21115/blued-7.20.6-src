@@ -15,19 +15,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYBaseFansDialog.class */
 public abstract class YYBaseFansDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f17106a;
+    private BaseFragment a;
     private final YYUserInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomModel f17107c;
+    private YYRoomModel c;
     private YYNoDataView d;
 
     public YYBaseFansDialog(BaseFragment fragment, YYUserInfo us) {
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(us, "us");
-        this.f17106a = fragment;
+        this.a = fragment;
         this.b = us;
     }
 
@@ -49,7 +45,7 @@ public abstract class YYBaseFansDialog extends BaseFullScreenDialog {
     }
 
     public BaseFragment f() {
-        return this.f17106a;
+        return this.a;
     }
 
     public YYUserInfo g() {
@@ -57,7 +53,7 @@ public abstract class YYBaseFansDialog extends BaseFullScreenDialog {
     }
 
     public final YYRoomModel h() {
-        return this.f17107c;
+        return this.c;
     }
 
     public final YYNoDataView i() {
@@ -68,7 +64,7 @@ public abstract class YYBaseFansDialog extends BaseFullScreenDialog {
 
     public abstract View k();
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         View j = j();
@@ -92,10 +88,10 @@ public abstract class YYBaseFansDialog extends BaseFullScreenDialog {
         });
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f17107c = YYRoomInfoManager.e().b();
+        this.c = YYRoomInfoManager.e().b();
         YYNoDataView yYNoDataView = new YYNoDataView(getContext());
         this.d = yYNoDataView;
         if (yYNoDataView != null) {

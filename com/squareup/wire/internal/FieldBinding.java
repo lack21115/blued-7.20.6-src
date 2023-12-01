@@ -56,13 +56,13 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         }
     }
 
-    public FieldBinding(WireField wireField, Class<M> messageType, Field messageField, Class<B> builderType, boolean z) {
+    public FieldBinding(WireField wireField, Class<M> cls, Field field, Class<B> cls2, boolean z) {
         String declaredName;
         Intrinsics.e(wireField, "wireField");
-        Intrinsics.e(messageType, "messageType");
-        Intrinsics.e(messageField, "messageField");
-        Intrinsics.e(builderType, "builderType");
-        this.messageField = messageField;
+        Intrinsics.e(cls, "messageType");
+        Intrinsics.e(field, "messageField");
+        Intrinsics.e(cls2, "builderType");
+        this.messageField = field;
         this.writeIdentityValues = z;
         this.label = wireField.label();
         String name = this.messageField.getName();
@@ -80,21 +80,21 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         this.keyAdapterString = wireField.keyAdapter();
         this.adapterString = wireField.adapter();
         this.redacted = wireField.redacted();
-        this.builderSetter = getBuilderSetter(builderType, wireField);
-        this.builderGetter = getBuilderGetter(builderType, wireField);
-        this.instanceGetter = getInstanceGetter(messageType);
+        this.builderSetter = getBuilderSetter(cls2, wireField);
+        this.builderGetter = getBuilderGetter(cls2, wireField);
+        this.instanceGetter = getInstanceGetter(cls);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private final Function1<B, Object> getBuilderGetter(Class<?> cls, final WireField wireField) {
         if (cls.isAssignableFrom(KotlinConstructorBuilder.class)) {
-            return (Function1) new Function1<B, Object>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderGetter$1
+            return new Function1<B, Object>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderGetter$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(1);
                 }
 
                 /* JADX WARN: Incorrect types in method signature: (TB;)Ljava/lang/Object; */
-                @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Message.Builder builder) {
                     Intrinsics.e(builder, "builder");
                     return ((KotlinConstructorBuilder) builder).get(WireField.this);
@@ -103,17 +103,17 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         }
         try {
             final Field field = cls.getField(getName());
-            return (Function1) new Function1<B, Object>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderGetter$2
+            return new Function1<B, Object>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderGetter$2
                 /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
                     super(1);
                 }
 
                 /* JADX WARN: Incorrect types in method signature: (TB;)Ljava/lang/Object; */
-                @Override // kotlin.jvm.functions.Function1
                 public final Object invoke(Message.Builder builder) {
                     Intrinsics.e(builder, "builder");
-                    return Field.this.get(builder);
+                    return field.get(builder);
                 }
             };
         } catch (NoSuchFieldException e) {
@@ -121,18 +121,18 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private final Function2<B, Object, Unit> getBuilderSetter(Class<?> cls, final WireField wireField) {
         if (cls.isAssignableFrom(KotlinConstructorBuilder.class)) {
-            return (Function2) new Function2<B, Object, Unit>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderSetter$1
+            return new Function2<B, Object, Unit>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderSetter$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(2);
                 }
 
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2) {
+                public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
                     invoke((Message.Builder) obj, obj2);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
 
                 /* JADX WARN: Incorrect types in method signature: (TB;Ljava/lang/Object;)V */
@@ -145,22 +145,22 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         if (!wireField.label().isOneOf()) {
             try {
                 final Field field = cls.getField(getName());
-                return (Function2) new Function2<B, Object, Unit>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderSetter$3
+                return new Function2<B, Object, Unit>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderSetter$3
                     /* JADX INFO: Access modifiers changed from: package-private */
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(2);
                     }
 
-                    @Override // kotlin.jvm.functions.Function2
-                    public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2) {
+                    public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
                         invoke((Message.Builder) obj, obj2);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
 
                     /* JADX WARN: Incorrect types in method signature: (TB;Ljava/lang/Object;)V */
                     public final void invoke(Message.Builder builder, Object obj) {
                         Intrinsics.e(builder, "builder");
-                        Field.this.set(builder, obj);
+                        field.set(builder, obj);
                     }
                 };
             } catch (NoSuchFieldException e) {
@@ -170,22 +170,22 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         Class<?> type = this.messageField.getType();
         try {
             final Method method = cls.getMethod(getName(), type);
-            return (Function2) new Function2<B, Object, Unit>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderSetter$2
+            return new Function2<B, Object, Unit>() { // from class: com.squareup.wire.internal.FieldBinding$getBuilderSetter$2
                 /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
                     super(2);
                 }
 
-                @Override // kotlin.jvm.functions.Function2
-                public /* bridge */ /* synthetic */ Unit invoke(Object obj, Object obj2) {
+                public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
                     invoke((Message.Builder) obj, obj2);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
 
                 /* JADX WARN: Incorrect types in method signature: (TB;Ljava/lang/Object;)V */
                 public final void invoke(Message.Builder builder, Object obj) {
                     Intrinsics.e(builder, "builder");
-                    Method.this.invoke(builder, obj);
+                    method.invoke(builder, obj);
                 }
             };
         } catch (NoSuchMethodException e2) {
@@ -193,42 +193,43 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private final Function1<M, Object> getInstanceGetter(Class<M> cls) {
         if (Modifier.isPrivate(this.messageField.getModifiers())) {
-            String fieldName = this.messageField.getName();
+            String name = this.messageField.getName();
             Regex regex = IS_GETTER_FIELD_NAME_REGEX;
-            Intrinsics.c(fieldName, "fieldName");
-            String str = fieldName;
+            Intrinsics.c(name, "fieldName");
+            String str = name;
             if (!regex.a(str)) {
-                String str2 = fieldName;
+                String str2 = name;
                 if (str.length() > 0) {
                     StringBuilder sb = new StringBuilder();
-                    String upperCase = String.valueOf(fieldName.charAt(0)).toUpperCase(Locale.ROOT);
+                    String upperCase = String.valueOf(name.charAt(0)).toUpperCase(Locale.ROOT);
                     Intrinsics.c(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
                     sb.append((Object) upperCase);
-                    String substring = fieldName.substring(1);
+                    String substring = name.substring(1);
                     Intrinsics.c(substring, "this as java.lang.String).substring(startIndex)");
                     sb.append(substring);
                     str2 = sb.toString();
                 }
-                fieldName = Intrinsics.a(MonitorConstants.CONNECT_TYPE_GET, (Object) str2);
+                name = Intrinsics.a(MonitorConstants.CONNECT_TYPE_GET, str2);
             }
-            final Method method = cls.getMethod(fieldName, new Class[0]);
-            return (Function1) new Function1<M, Object>() { // from class: com.squareup.wire.internal.FieldBinding$getInstanceGetter$1
+            final Method method = cls.getMethod(name, new Class[0]);
+            return new Function1<M, Object>() { // from class: com.squareup.wire.internal.FieldBinding$getInstanceGetter$1
                 /* JADX INFO: Access modifiers changed from: package-private */
+                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
                     super(1);
                 }
 
                 /* JADX WARN: Incorrect types in method signature: (TM;)Ljava/lang/Object; */
-                @Override // kotlin.jvm.functions.Function1
-                public final Object invoke(Message instance) {
-                    Intrinsics.e(instance, "instance");
-                    return Method.this.invoke(instance, new Object[0]);
+                public final Object invoke(Message message) {
+                    Intrinsics.e(message, "instance");
+                    return method.invoke(message, new Object[0]);
                 }
             };
         }
-        return (Function1) new Function1<M, Object>(this) { // from class: com.squareup.wire.internal.FieldBinding$getInstanceGetter$2
+        return new Function1<M, Object>(this) { // from class: com.squareup.wire.internal.FieldBinding$getInstanceGetter$2
             final /* synthetic */ FieldBinding<M, B> this$0;
 
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -239,19 +240,18 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
             }
 
             /* JADX WARN: Incorrect types in method signature: (TM;)Ljava/lang/Object; */
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Message instance) {
+            public final Object invoke(Message message) {
                 Field field;
-                Intrinsics.e(instance, "instance");
+                Intrinsics.e(message, "instance");
                 field = ((FieldBinding) this.this$0).messageField;
-                return field.get(instance);
+                return field.get(message);
             }
         };
     }
 
-    public Object get(M message) {
-        Intrinsics.e(message, "message");
-        return this.instanceGetter.invoke(message);
+    public Object get(M m) {
+        Intrinsics.e(m, "message");
+        return this.instanceGetter.invoke(m);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -265,9 +265,9 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         return this.declaredName;
     }
 
-    public Object getFromBuilder(B builder) {
-        Intrinsics.e(builder, "builder");
-        return this.builderGetter.invoke(builder);
+    public Object getFromBuilder(B b) {
+        Intrinsics.e(b, "builder");
+        return this.builderGetter.invoke(b);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -327,9 +327,9 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         return Message.class.isAssignableFrom(type == null ? null : JvmClassMappingKt.b(type));
     }
 
-    public void set(B builder, Object obj) {
-        Intrinsics.e(builder, "builder");
-        this.builderSetter.invoke(builder, obj);
+    public void set(B b, Object obj) {
+        Intrinsics.e(b, "builder");
+        this.builderSetter.invoke(b, obj);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -338,21 +338,21 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
         set((FieldBinding<M, B>) ((Message.Builder) obj), obj2);
     }
 
-    public void value(B builder, Object value) {
-        Intrinsics.e(builder, "builder");
-        Intrinsics.e(value, "value");
+    public void value(B b, Object obj) {
+        Intrinsics.e(b, "builder");
+        Intrinsics.e(obj, "value");
         if (getLabel().isRepeated()) {
-            Object fromBuilder = getFromBuilder((FieldBinding<M, B>) builder);
+            Object fromBuilder = getFromBuilder((FieldBinding<M, B>) b);
             if (TypeIntrinsics.e(fromBuilder)) {
                 if (fromBuilder == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.MutableList<kotlin.Any>");
                 }
-                TypeIntrinsics.f(fromBuilder).add(value);
+                TypeIntrinsics.f(fromBuilder).add(obj);
                 return;
             } else if (fromBuilder instanceof List) {
                 List c2 = CollectionsKt.c((Collection) fromBuilder);
-                c2.add(value);
-                set((FieldBinding<M, B>) builder, (Object) c2);
+                c2.add(obj);
+                set((FieldBinding<M, B>) b, (Object) c2);
                 return;
             } else {
                 Class<?> cls = fromBuilder == null ? null : fromBuilder.getClass();
@@ -360,16 +360,16 @@ public final class FieldBinding<M extends Message<M, B>, B extends Message.Build
             }
         }
         if (!(this.keyAdapterString.length() > 0)) {
-            set((FieldBinding<M, B>) builder, value);
+            set((FieldBinding<M, B>) b, obj);
             return;
         }
-        Object fromBuilder2 = getFromBuilder((FieldBinding<M, B>) builder);
+        Object fromBuilder2 = getFromBuilder((FieldBinding<M, B>) b);
         if (TypeIntrinsics.h(fromBuilder2)) {
-            ((Map) fromBuilder2).putAll((Map) value);
+            ((Map) fromBuilder2).putAll((Map) obj);
         } else if (fromBuilder2 instanceof Map) {
             Map d = MapsKt.d((Map) fromBuilder2);
-            d.putAll((Map) value);
-            set((FieldBinding<M, B>) builder, (Object) d);
+            d.putAll((Map) obj);
+            set((FieldBinding<M, B>) b, (Object) d);
         } else {
             Class<?> cls2 = fromBuilder2 == null ? null : fromBuilder2.getClass();
             throw new ClassCastException("Expected a map type, got " + cls2 + '.');

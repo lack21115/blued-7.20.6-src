@@ -18,6 +18,6 @@ public class h extends e {
         jSONObject2.put(bh.al, t2.i);
         jSONObject.put("ctx", jSONObject2);
         jSONObject.put("code", str);
-        return new String(Base64.encode(k.a(jSONObject.toString(), e.f42118a, "UDID_ENC_AUTHTAG"), 2), StandardCharsets.UTF_8);
+        return new String(Base64.encode(k.a(jSONObject.toString(), e.f28427a, "UDID_ENC_AUTHTAG"), 2), StandardCharsets.UTF_8);
     }
 }

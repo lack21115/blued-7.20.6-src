@@ -7,73 +7,73 @@ import java.util.List;
 public class d implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<c> f35628a = new ArrayList();
+    private List<c> f21937a = new ArrayList();
 
     public void a(c cVar) {
         if (cVar != null) {
-            this.f35628a.add(cVar);
+            this.f21937a.add(cVar);
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void h() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.h();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void i() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.i();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void j() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.j();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void k() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.k();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void l() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.l();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void m() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.m();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void n() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.n();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void o() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.o();
         }
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.c
     public void p() {
-        for (c cVar : this.f35628a) {
+        for (c cVar : this.f21937a) {
             cVar.p();
         }
     }

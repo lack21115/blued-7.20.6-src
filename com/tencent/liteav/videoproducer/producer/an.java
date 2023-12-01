@@ -7,17 +7,17 @@ import com.tencent.liteav.videoproducer.producer.VideoProducerDef;
 final /* synthetic */ class an implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37125a;
+    private final f f23434a;
     private final CaptureSourceInterface.SourceType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final VideoProducerDef.ProducerMode f37126c;
+    private final VideoProducerDef.ProducerMode f23435c;
     private final CaptureSourceInterface.CaptureParams d;
 
     private an(f fVar, CaptureSourceInterface.SourceType sourceType, VideoProducerDef.ProducerMode producerMode, CaptureSourceInterface.CaptureParams captureParams) {
-        this.f37125a = fVar;
+        this.f23434a = fVar;
         this.b = sourceType;
-        this.f37126c = producerMode;
+        this.f23435c = producerMode;
         this.d = captureParams;
     }
 
@@ -27,6 +27,6 @@ final /* synthetic */ class an implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.b(this.f37125a, this.b, this.f37126c, this.d);
+        f.b(this.f23434a, this.b, this.f23435c, this.d);
     }
 }

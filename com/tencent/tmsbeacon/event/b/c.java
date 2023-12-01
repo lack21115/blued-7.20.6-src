@@ -7,17 +7,17 @@ import com.tencent.tmsbeacon.event.open.BeaconEvent;
 public abstract class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f39561a;
+    private c f25870a;
 
     public abstract BeaconEvent a(BeaconEvent beaconEvent);
 
     public void a(c cVar) {
-        this.f39561a = cVar;
+        this.f25870a = cVar;
     }
 
     public final EventBean b(BeaconEvent beaconEvent) {
         BeaconEvent a2 = a(beaconEvent);
-        c cVar = this.f39561a;
+        c cVar = this.f25870a;
         return cVar != null ? cVar.b(a2) : com.tencent.tmsbeacon.event.c.a.a(a2);
     }
 }

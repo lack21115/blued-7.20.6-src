@@ -16,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.bytedance.applog.tracker.Tracker;
+import com.soft.blued.R;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -26,11 +27,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class MultiPicLayout extends FrameLayout implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f32604a;
+    private final int f18913a;
     private final FrameLayout.LayoutParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f32605c;
+    private int f18914c;
     private int d;
     private final ArrayList<ImageView> e;
     private final ArrayList<RelativeLayout> f;
@@ -64,15 +65,15 @@ public final class MultiPicLayout extends FrameLayout implements View.OnClickLis
     public MultiPicLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f32604a = 4;
+        this.f18913a = 4;
         this.b = new FrameLayout.LayoutParams(-2, -2);
         this.e = new ArrayList<>();
         this.f = new ArrayList<>();
         this.g = new SparseArray<>();
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        this.f32605c = (int) (TypedValue.applyDimension(1, 144.0f, displayMetrics) + 0.5f);
+        this.f18914c = (int) (TypedValue.applyDimension(1, 144.0f, displayMetrics) + 0.5f);
         this.d = (int) (TypedValue.applyDimension(1, 2.0f, displayMetrics) + 0.5f);
-        int i2 = this.f32604a;
+        int i2 = this.f18913a;
         int i3 = 0;
         while (i3 < i2) {
             i3++;
@@ -122,8 +123,8 @@ public final class MultiPicLayout extends FrameLayout implements View.OnClickLis
         this.b.width = width;
         FrameLayout.LayoutParams layoutParams = this.b;
         layoutParams.height = layoutParams.width;
-        this.h.setVisibility(size > this.f32604a ? 0 : 8);
-        this.h.setText(Intrinsics.a("+ ", (Object) Integer.valueOf(size - this.f32604a)));
+        this.h.setVisibility(size > this.f18913a ? 0 : 8);
+        this.h.setText(Intrinsics.a("+ ", Integer.valueOf(size - this.f18913a)));
         this.h.setLayoutParams(this.b);
         this.g.clear();
         int size2 = this.e.size();
@@ -154,14 +155,14 @@ public final class MultiPicLayout extends FrameLayout implements View.OnClickLis
                 relativeLayout2.setLayoutParams(this.b);
                 List<String> list3 = this.k;
                 if (list3 != null) {
-                    ImageLoader.a(getRequestHost(), list3.get(i4)).b(2131232687).a(imageView2);
+                    ImageLoader.a(getRequestHost(), list3.get(i4)).b((int) R.drawable.feed_photo_default).a(imageView2);
                 }
                 relativeLayout2.setTranslationX((i4 % i2) * (this.d + width));
                 relativeLayout2.setTranslationY((i4 / i2) * (this.d + width));
             } else {
                 relativeLayout2.setVisibility(8);
             }
-            if (i4 == this.f32604a - 1) {
+            if (i4 == this.f18913a - 1) {
                 this.h.setTranslationX((i4 % i2) * (this.d + width));
                 this.h.setTranslationY((i4 / i2) * (this.d + width));
             }
@@ -182,19 +183,18 @@ public final class MultiPicLayout extends FrameLayout implements View.OnClickLis
     }
 
     @Override // android.view.View.OnClickListener
-    public void onClick(View v) {
-        Tracker.onClick(v);
-        Intrinsics.e(v, "v");
+    public void onClick(View view) {
+        Tracker.onClick(view);
+        Intrinsics.e(view, "v");
         Callback callback = this.i;
         if (callback == null) {
             return;
         }
-        callback.a((ImageView) v, this.g, this.k);
+        callback.a((ImageView) view, this.g, this.k);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         a();
     }
@@ -203,9 +203,9 @@ public final class MultiPicLayout extends FrameLayout implements View.OnClickLis
         this.i = callback;
     }
 
-    public final void setData(List<String> urlList) {
-        Intrinsics.e(urlList, "urlList");
-        this.k = urlList;
+    public final void setData(List<String> list) {
+        Intrinsics.e(list, "urlList");
+        this.k = list;
         if (this.j) {
             a();
         }

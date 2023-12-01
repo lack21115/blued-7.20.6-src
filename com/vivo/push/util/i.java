@@ -8,12 +8,12 @@ import android.graphics.Color;
 public final class i implements BaseNotifyLayoutAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Resources f41135a;
+    private Resources f27444a;
     private String b;
 
     @Override // com.vivo.push.util.BaseNotifyLayoutAdapter
     public final int getNotificationLayout() {
-        return this.f41135a.getIdentifier("push_notify", "layout", this.b);
+        return this.f27444a.getIdentifier("push_notify", "layout", this.b);
     }
 
     @Override // com.vivo.push.util.BaseNotifyLayoutAdapter
@@ -21,16 +21,16 @@ public final class i implements BaseNotifyLayoutAdapter {
         Resources resources;
         String str;
         String str2;
-        if (j.f41137c) {
-            resources = this.f41135a;
+        if (j.f27446c) {
+            resources = this.f27444a;
             str = this.b;
             str2 = "notify_icon_rom30";
         } else if (j.b) {
-            resources = this.f41135a;
+            resources = this.f27444a;
             str = this.b;
             str2 = "notify_icon_rom20";
         } else {
-            resources = this.f41135a;
+            resources = this.f27444a;
             str = this.b;
             str2 = "notify_icon";
         }
@@ -47,13 +47,13 @@ public final class i implements BaseNotifyLayoutAdapter {
             i = 0;
         }
         if (i > 0) {
-            return this.f41135a.getColor(i);
+            return this.f27444a.getColor(i);
         }
-        if (j.f41137c) {
+        if (j.f27446c) {
             return -1;
         }
         if (j.b) {
-            if (j.f41137c) {
+            if (j.f27446c) {
                 return Color.parseColor("#ff999999");
             }
             return -1;
@@ -64,6 +64,6 @@ public final class i implements BaseNotifyLayoutAdapter {
     @Override // com.vivo.push.util.BaseNotifyLayoutAdapter
     public final void init(Context context) {
         this.b = context.getPackageName();
-        this.f41135a = context.getResources();
+        this.f27444a = context.getResources();
     }
 }

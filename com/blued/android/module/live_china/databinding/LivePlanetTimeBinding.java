@@ -9,13 +9,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePlanetTimeBinding.class */
 public final class LivePlanetTimeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12375a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12376c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -24,9 +20,9 @@ public final class LivePlanetTimeBinding implements ViewBinding {
 
     private LivePlanetTimeBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, TextView textView) {
         this.h = frameLayout;
-        this.f12375a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f12376c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = imageView5;
@@ -73,7 +69,6 @@ public final class LivePlanetTimeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.h;

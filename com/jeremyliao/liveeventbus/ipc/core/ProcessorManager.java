@@ -15,8 +15,9 @@ public class ProcessorManager {
     private final List<Processor> baseProcessors;
     private final Map<String, Processor> processorMap;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/jeremyliao/liveeventbus/ipc/core/ProcessorManager$SingletonHolder.class */
-    static class SingletonHolder {
+    public static class SingletonHolder {
         private static final ProcessorManager INSTANCE = new ProcessorManager();
 
         private SingletonHolder() {

@@ -10,13 +10,9 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRecommendHotAnchorView$initLiveRecommendHotAnchorView$1$5.class */
 public final class LiveRecommendHotAnchorView$initLiveRecommendHotAnchorView$1$5 implements Animation.AnimationListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LayoutLiveHotRedBinding f14907a;
+    final /* synthetic */ LayoutLiveHotRedBinding a;
     final /* synthetic */ LiveRecommendHotAnchorView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ BluedLiveListData f14908c;
+    final /* synthetic */ BluedLiveListData c;
 
     @Override // android.view.animation.Animation.AnimationListener
     public void onAnimationEnd(Animation animation) {
@@ -28,11 +24,11 @@ public final class LiveRecommendHotAnchorView$initLiveRecommendHotAnchorView$1$5
 
     @Override // android.view.animation.Animation.AnimationListener
     public void onAnimationStart(Animation animation) {
-        int displayedChild = this.f14907a.f12096c.getDisplayedChild();
+        int displayedChild = this.a.c.getDisplayedChild();
         this.b.a(displayedChild);
-        if (displayedChild >= this.f14908c.carousel.size()) {
+        if (displayedChild >= this.c.carousel.size()) {
             return;
         }
-        EventTrackLive.b(LiveProtos.Event.LIVE_ROOM_SHOW, this.f14908c.carousel.get(displayedChild).lid, this.f14908c.carousel.get(displayedChild).uid, this.f14908c.weight, this.f14908c.recommend_type);
+        EventTrackLive.b(LiveProtos.Event.LIVE_ROOM_SHOW, this.c.carousel.get(displayedChild).lid, this.c.carousel.get(displayedChild).uid, this.c.weight, this.c.recommend_type);
     }
 }

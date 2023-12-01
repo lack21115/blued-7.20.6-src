@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyRedEnvelopeOpenedBinding.class */
 public final class FragmentYyRedEnvelopeOpenedBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16539a;
+    public final View a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f16540c;
+    public final LinearLayout c;
     public final ImageView d;
     public final RecyclerView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class FragmentYyRedEnvelopeOpenedBinding implements ViewBinding {
 
     private FragmentYyRedEnvelopeOpenedBinding(ConstraintLayout constraintLayout, View view, ImageView imageView, LinearLayout linearLayout, ImageView imageView2, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3) {
         this.i = constraintLayout;
-        this.f16539a = view;
+        this.a = view;
         this.b = imageView;
-        this.f16540c = linearLayout;
+        this.c = linearLayout;
         this.d = imageView2;
         this.e = recyclerView;
         this.f = textView;
@@ -47,15 +43,15 @@ public final class FragmentYyRedEnvelopeOpenedBinding implements ViewBinding {
                 if (linearLayout != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.red_envelope_img);
                     if (imageView2 != null) {
-                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_drawer_list);
-                        if (recyclerView != null) {
+                        RecyclerView findViewById2 = view.findViewById(R.id.rv_drawer_list);
+                        if (findViewById2 != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_prize_count);
                             if (textView != null) {
                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_red_envelope_title);
                                 if (textView2 != null) {
                                     TextView textView3 = (TextView) view.findViewById(R.id.tv_take_off_count);
                                     if (textView3 != null) {
-                                        return new FragmentYyRedEnvelopeOpenedBinding((ConstraintLayout) view, findViewById, imageView, linearLayout, imageView2, recyclerView, textView, textView2, textView3);
+                                        return new FragmentYyRedEnvelopeOpenedBinding((ConstraintLayout) view, findViewById, imageView, linearLayout, imageView2, findViewById2, textView, textView2, textView3);
                                     }
                                     str = "tvTakeOffCount";
                                 } else {
@@ -82,7 +78,6 @@ public final class FragmentYyRedEnvelopeOpenedBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.i;

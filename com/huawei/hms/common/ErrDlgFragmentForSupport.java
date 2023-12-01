@@ -11,7 +11,7 @@ import com.huawei.hms.common.internal.Preconditions;
 public class ErrDlgFragmentForSupport extends DialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Dialog f22618a = null;
+    private Dialog f9010a = null;
     private DialogInterface.OnCancelListener b = null;
 
     public static ErrDlgFragmentForSupport newInstance(Dialog dialog) {
@@ -21,9 +21,9 @@ public class ErrDlgFragmentForSupport extends DialogFragment {
     public static ErrDlgFragmentForSupport newInstance(Dialog dialog, DialogInterface.OnCancelListener onCancelListener) {
         Preconditions.checkNotNull(dialog, "Dialog cannot be null!");
         ErrDlgFragmentForSupport errDlgFragmentForSupport = new ErrDlgFragmentForSupport();
-        errDlgFragmentForSupport.f22618a = dialog;
+        errDlgFragmentForSupport.f9010a = dialog;
         dialog.setOnCancelListener(null);
-        errDlgFragmentForSupport.f22618a.setOnDismissListener(null);
+        errDlgFragmentForSupport.f9010a.setOnDismissListener(null);
         errDlgFragmentForSupport.b = onCancelListener;
         return errDlgFragmentForSupport;
     }
@@ -38,10 +38,10 @@ public class ErrDlgFragmentForSupport extends DialogFragment {
 
     @Override // android.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        if (this.f22618a == null) {
+        if (this.f9010a == null) {
             setShowsDialog(false);
         }
-        return this.f22618a;
+        return this.f9010a;
     }
 
     @Override // android.app.DialogFragment

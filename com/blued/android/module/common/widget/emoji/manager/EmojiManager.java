@@ -2,28 +2,24 @@ package com.blued.android.module.common.widget.emoji.manager;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/EmojiManager.class */
 public final class EmojiManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final EmojiManager f11142a = new EmojiManager();
+    private static final EmojiManager a = new EmojiManager();
     private final EmojiTree b = new EmojiTree();
-
-    /* renamed from: c  reason: collision with root package name */
-    private EmojiCategory[] f11143c;
+    private EmojiCategory[] c;
 
     private EmojiManager() {
     }
 
     public static EmojiManager a() {
-        return f11142a;
+        return a;
     }
 
     public static void a(EmojiProvider emojiProvider) {
-        f11142a.f11143c = emojiProvider.a();
-        f11142a.b.a();
+        a.c = emojiProvider.a();
+        a.b.a();
         int i = 0;
         while (true) {
             int i2 = i;
-            EmojiCategory[] emojiCategoryArr = f11142a.f11143c;
+            EmojiCategory[] emojiCategoryArr = a.c;
             if (i2 >= emojiCategoryArr.length) {
                 return;
             }
@@ -32,7 +28,7 @@ public final class EmojiManager {
             while (true) {
                 int i4 = i3;
                 if (i4 < a2.length) {
-                    f11142a.b.a(a2[i4]);
+                    a.b.a(a2[i4]);
                     i3 = i4 + 1;
                 }
             }
@@ -47,7 +43,7 @@ public final class EmojiManager {
     }
 
     public void b() {
-        if (this.f11143c != null) {
+        if (this.c != null) {
             return;
         }
         a(new IosEmojiProvider());

@@ -1,5 +1,6 @@
 package com.soft.blued.ui.user.model;
 
+import android.net.UrlQuerySanitizer;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
 import java.io.Serializable;
 import java.util.List;
@@ -52,14 +53,14 @@ public final class VirtualImageModel {
         private int zoom_in;
 
         public CategoryModel() {
-            this(0, null, 0, null, 0.0f, 0L, 0L, null, 0, 0, null, 2047, null);
+            this(0, null, 0, null, 0.0f, 0L, 0L, null, 0, 0, null, UrlQuerySanitizer.IllegalCharacterValueSanitizer.ALL_OK, null);
         }
 
-        public CategoryModel(int i, String name, int i2, Resource resource, float f, long j, long j2, List<ImageGoodsModel> list, int i3, int i4, String red_dot) {
-            Intrinsics.e(name, "name");
-            Intrinsics.e(red_dot, "red_dot");
+        public CategoryModel(int i, String str, int i2, Resource resource, float f, long j, long j2, List<ImageGoodsModel> list, int i3, int i4, String str2) {
+            Intrinsics.e(str, "name");
+            Intrinsics.e(str2, "red_dot");
             this.id = i;
-            this.name = name;
+            this.name = str;
             this.parent_id = i2;
             this.resource = resource;
             this.block_code = f;
@@ -68,7 +69,7 @@ public final class VirtualImageModel {
             this.goods_list = list;
             this.zoom_in = i3;
             this.pack_sort = i4;
-            this.red_dot = red_dot;
+            this.red_dot = str2;
         }
 
         public /* synthetic */ CategoryModel(int i, String str, int i2, Resource resource, float f, long j, long j2, List list, int i3, int i4, String str2, int i5, DefaultConstructorMarker defaultConstructorMarker) {
@@ -156,10 +157,10 @@ public final class VirtualImageModel {
             return this.zoom_in;
         }
 
-        public final CategoryModel copy(int i, String name, int i2, Resource resource, float f, long j, long j2, List<ImageGoodsModel> list, int i3, int i4, String red_dot) {
-            Intrinsics.e(name, "name");
-            Intrinsics.e(red_dot, "red_dot");
-            return new CategoryModel(i, name, i2, resource, f, j, j2, list, i3, i4, red_dot);
+        public final CategoryModel copy(int i, String str, int i2, Resource resource, float f, long j, long j2, List<ImageGoodsModel> list, int i3, int i4, String str2) {
+            Intrinsics.e(str, "name");
+            Intrinsics.e(str2, "red_dot");
+            return new CategoryModel(i, str, i2, resource, f, j, j2, list, i3, i4, str2);
         }
 
         public boolean equals(Object obj) {
@@ -168,7 +169,7 @@ public final class VirtualImageModel {
             }
             if (obj instanceof CategoryModel) {
                 CategoryModel categoryModel = (CategoryModel) obj;
-                return this.id == categoryModel.id && Intrinsics.a((Object) this.name, (Object) categoryModel.name) && this.parent_id == categoryModel.parent_id && Intrinsics.a(this.resource, categoryModel.resource) && Intrinsics.a(Float.valueOf(this.block_code), Float.valueOf(categoryModel.block_code)) && this.created_at == categoryModel.created_at && this.updated_at == categoryModel.updated_at && Intrinsics.a(this.goods_list, categoryModel.goods_list) && this.zoom_in == categoryModel.zoom_in && this.pack_sort == categoryModel.pack_sort && Intrinsics.a((Object) this.red_dot, (Object) categoryModel.red_dot);
+                return this.id == categoryModel.id && Intrinsics.a(this.name, categoryModel.name) && this.parent_id == categoryModel.parent_id && Intrinsics.a(this.resource, categoryModel.resource) && Intrinsics.a(Float.valueOf(this.block_code), Float.valueOf(categoryModel.block_code)) && this.created_at == categoryModel.created_at && this.updated_at == categoryModel.updated_at && Intrinsics.a(this.goods_list, categoryModel.goods_list) && this.zoom_in == categoryModel.zoom_in && this.pack_sort == categoryModel.pack_sort && Intrinsics.a(this.red_dot, categoryModel.red_dot);
             }
             return false;
         }
@@ -741,7 +742,7 @@ public final class VirtualImageModel {
         private String icon = "";
 
         /* renamed from: static  reason: not valid java name */
-        private String f51static = "";
+        private String f4static = "";
         private String dynamic = "";
 
         public final String getChecked() {
@@ -765,7 +766,7 @@ public final class VirtualImageModel {
         }
 
         public final String getStatic() {
-            return this.f51static;
+            return this.f4static;
         }
 
         public final void setChecked(String str) {
@@ -793,11 +794,11 @@ public final class VirtualImageModel {
 
         public final void setStatic(String str) {
             Intrinsics.e(str, "<set-?>");
-            this.f51static = str;
+            this.f4static = str;
         }
 
         public String toString() {
-            return "Resource(checked='" + this.checked + "', parent_id=" + this.parent_id + ", icon='" + this.icon + "', static='" + this.f51static + "', dynamic='" + this.dynamic + "')";
+            return "Resource(checked='" + this.checked + "', parent_id=" + this.parent_id + ", icon='" + this.icon + "', static='" + this.f4static + "', dynamic='" + this.dynamic + "')";
         }
     }
 

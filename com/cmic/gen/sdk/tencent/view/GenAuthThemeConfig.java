@@ -36,7 +36,7 @@ public class GenAuthThemeConfig {
     private int Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f21679a;
+    private int f8073a;
     private boolean aa;
     private int ab;
     private int ac;
@@ -56,7 +56,7 @@ public class GenAuthThemeConfig {
     private int aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private int f21680ar;
+    private int f8074ar;
     private int as;
     private int at;
     private int au;
@@ -66,7 +66,7 @@ public class GenAuthThemeConfig {
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f21681c;
+    private View f8075c;
     private int d;
     private int e;
     private String f;
@@ -109,16 +109,16 @@ public class GenAuthThemeConfig {
         private int aq;
 
         /* renamed from: ar  reason: collision with root package name */
-        private int f21683ar;
+        private int f8077ar;
         private String ax;
         private String f;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f21682a = 0;
+        private int f8076a = 0;
         private boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        private View f21684c = null;
+        private View f8078c = null;
         private int d = -1;
         private int e = -1;
         private int g = 17;
@@ -186,14 +186,14 @@ public class GenAuthThemeConfig {
         }
 
         public Builder setAuthContentView(View view) {
-            this.f21684c = view;
+            this.f8078c = view;
             this.d = -1;
             return this;
         }
 
         public Builder setAuthLayoutResID(int i) {
             this.d = i;
-            this.f21684c = null;
+            this.f8078c = null;
             return this;
         }
 
@@ -217,7 +217,7 @@ public class GenAuthThemeConfig {
 
         public Builder setAuthPageWindowOffset(int i, int i2) {
             this.aq = i;
-            this.f21683ar = i2;
+            this.f8077ar = i2;
             return this;
         }
 
@@ -447,7 +447,7 @@ public class GenAuthThemeConfig {
         }
 
         public Builder setStatusBar(int i, boolean z) {
-            this.f21682a = i;
+            this.f8076a = i;
             this.b = z;
             return this;
         }
@@ -474,9 +474,9 @@ public class GenAuthThemeConfig {
         this.W = null;
         this.X = null;
         this.Y = null;
-        this.f21679a = builder.f21682a;
+        this.f8073a = builder.f8076a;
         this.b = builder.b;
-        this.f21681c = builder.f21684c;
+        this.f8075c = builder.f8078c;
         this.d = builder.d;
         this.e = builder.e;
         this.f = builder.f;
@@ -543,7 +543,7 @@ public class GenAuthThemeConfig {
         this.ao = builder.ao;
         this.ap = builder.ap;
         this.aq = builder.aq;
-        this.f21680ar = builder.f21683ar;
+        this.f8074ar = builder.f8077ar;
         this.as = builder.as;
         this.at = builder.at;
         this.au = builder.au;
@@ -645,7 +645,7 @@ public class GenAuthThemeConfig {
     }
 
     public View getContentView() {
-        return this.f21681c;
+        return this.f8075c;
     }
 
     public GenBackPressedListener getGenBackPressedListener() {
@@ -789,7 +789,7 @@ public class GenAuthThemeConfig {
     }
 
     public int getStatusBarColor() {
-        return this.f21679a;
+        return this.f8073a;
     }
 
     public int getThemeId() {
@@ -817,7 +817,7 @@ public class GenAuthThemeConfig {
     }
 
     public int getWindowY() {
-        return this.f21680ar;
+        return this.f8074ar;
     }
 
     public boolean isBackButton() {

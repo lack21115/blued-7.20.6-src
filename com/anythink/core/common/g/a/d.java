@@ -14,29 +14,23 @@ public final class d {
     private String h;
     private int i;
     private Socket j;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f6714c = 0;
+    private final int c = 0;
     private final int d = 7;
     private final int e = 1;
     private final String f = getClass().getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    byte[] f6713a = null;
+    byte[] a = null;
     byte[] b = new byte[1];
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.g.a.d$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/a/d$1.class */
     public final class AnonymousClass1 extends com.anythink.core.common.k.b.b {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ c f6715a;
+        final /* synthetic */ c a;
         final /* synthetic */ c.a b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public AnonymousClass1(c cVar, c.a aVar) {
-            this.f6715a = cVar;
+            this.a = cVar;
             this.b = aVar;
         }
 
@@ -44,27 +38,27 @@ public final class d {
         public final void a() {
             try {
                 try {
-                    d.this.a(this.f6715a);
+                    d.this.a(this.a);
                     int e = d.this.e();
                     if (e != 1) {
                         throw new Exception("Response Error Code:".concat(String.valueOf(e)));
                     }
                     if (this.b != null) {
-                        this.b.a(this.f6715a);
+                        this.b.a(this.a);
                     }
                 } catch (SocketException e2) {
                     d.b(d.this);
-                    d.this.a(this.f6715a);
+                    d.this.a(this.a);
                     int e3 = d.this.e();
                     if (e3 != 1) {
                         throw new Exception("Response Error Code:".concat(String.valueOf(e3)));
                     }
                     if (this.b != null) {
-                        this.b.a(this.f6715a);
+                        this.b.a(this.a);
                     }
                 }
             } catch (Throwable th) {
-                c cVar = this.f6715a;
+                c cVar = this.a;
                 cVar.a("", th.getMessage() + "," + h.a(th.getStackTrace()), d.this.h, d.this.i);
                 c.a aVar = this.b;
                 if (aVar != null) {
@@ -118,19 +112,19 @@ public final class d {
                     return;
                 }
                 int i = length + 7;
-                if (this.f6713a == null || this.f6713a.length < i) {
-                    this.f6713a = new byte[i];
+                if (this.a == null || this.a.length < i) {
+                    this.a = new byte[i];
                 }
-                this.f6713a[0] = 0;
-                this.f6713a[1] = 3;
-                this.f6713a[2] = (byte) cVar.c();
-                this.f6713a[3] = (byte) ((length >>> 24) & 255);
-                this.f6713a[4] = (byte) ((length >>> 16) & 255);
-                this.f6713a[5] = (byte) ((length >>> 8) & 255);
-                this.f6713a[6] = (byte) ((length >>> 0) & 255);
-                System.arraycopy((Object) e, 0, (Object) this.f6713a, 7, e.length);
+                this.a[0] = 0;
+                this.a[1] = 3;
+                this.a[2] = (byte) cVar.c();
+                this.a[3] = (byte) ((length >>> 24) & 255);
+                this.a[4] = (byte) ((length >>> 16) & 255);
+                this.a[5] = (byte) ((length >>> 8) & 255);
+                this.a[6] = (byte) ((length >>> 0) & 255);
+                System.arraycopy((Object) e, 0, (Object) this.a, 7, e.length);
                 OutputStream outputStream = this.j.getOutputStream();
-                outputStream.write(this.f6713a, 0, i);
+                outputStream.write(this.a, 0, i);
                 outputStream.flush();
             }
         }

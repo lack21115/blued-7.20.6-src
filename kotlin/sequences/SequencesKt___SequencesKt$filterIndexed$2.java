@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$filterIndexed$2.class */
 final class SequencesKt___SequencesKt$filterIndexed$2<T> extends Lambda implements Function1<IndexedValue<? extends T>, T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final SequencesKt___SequencesKt$filterIndexed$2 f42663a = new SequencesKt___SequencesKt$filterIndexed$2();
+    public static final SequencesKt___SequencesKt$filterIndexed$2 a = new SequencesKt___SequencesKt$filterIndexed$2();
 
     SequencesKt___SequencesKt$filterIndexed$2() {
         super(1);

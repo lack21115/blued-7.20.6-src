@@ -7,17 +7,17 @@ import com.qiniu.pili.droid.shortvideo.f.g;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27810a;
+    private String f14122a;
     private AssetFileDescriptor b;
     private int e = 0;
     private boolean f = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private d f27811c = new d(0, 0);
+    private d f14123c = new d(0, 0);
     private c d = new c(1.0f, 1.0f);
 
     public String a() {
-        return this.f27810a;
+        return this.f14122a;
     }
 
     public void a(int i) {
@@ -26,8 +26,8 @@ public class a {
 
     public void a(AssetFileDescriptor assetFileDescriptor) {
         this.b = assetFileDescriptor;
-        this.f27810a = null;
-        this.f27811c = new d(0L, g.a((Object) assetFileDescriptor));
+        this.f14122a = null;
+        this.f14123c = new d(0L, g.a((Object) assetFileDescriptor));
     }
 
     public void a(c cVar) {
@@ -35,13 +35,13 @@ public class a {
     }
 
     public void a(d dVar) {
-        this.f27811c = dVar;
+        this.f14123c = dVar;
     }
 
     public void a(String str) {
-        this.f27810a = str;
+        this.f14122a = str;
         this.b = null;
-        this.f27811c = new d(0L, g.a((Object) str));
+        this.f14123c = new d(0L, g.a((Object) str));
     }
 
     public void a(boolean z) {
@@ -61,7 +61,7 @@ public class a {
     }
 
     public d e() {
-        return this.f27811c;
+        return this.f14123c;
     }
 
     public c f() {

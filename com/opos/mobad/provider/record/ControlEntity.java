@@ -20,11 +20,11 @@ public class ControlEntity implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f27124a;
+    public final boolean f13436a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f27125c;
+    public final boolean f13437c;
     public final long d;
     public final boolean e;
     public final boolean f;
@@ -32,9 +32,9 @@ public class ControlEntity implements Parcelable {
     public final boolean h;
 
     public ControlEntity(boolean z, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, long j, boolean z7) {
-        this.f27124a = z;
+        this.f13436a = z;
         this.b = z2;
-        this.f27125c = z3;
+        this.f13437c = z3;
         this.d = j;
         this.e = z4;
         this.f = z5;

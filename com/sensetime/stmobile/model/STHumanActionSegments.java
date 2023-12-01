@@ -12,9 +12,7 @@ public class STHumanActionSegments {
     private int mouthParseCount;
     private STSegment[] mouthParses;
     private STSegment multiSegment;
-
-    /* renamed from: skin  reason: collision with root package name */
-    private STSegment f28094skin;
+    private STSegment skin;
     private STSegment sky;
 
     public STSegment getDepth() {
@@ -62,7 +60,7 @@ public class STHumanActionSegments {
     }
 
     public STSegment getSkin() {
-        return this.f28094skin;
+        return this.skin;
     }
 
     public STSegment getSky() {

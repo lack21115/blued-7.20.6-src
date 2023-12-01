@@ -17,14 +17,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/builders/SerializedCollection.class */
 public final class SerializedCollection implements Externalizable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42413a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final long serialVersionUID = 0;
     private Collection<?> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f42414c;
+    private final int c;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/builders/SerializedCollection$Companion.class */
@@ -44,7 +40,7 @@ public final class SerializedCollection implements Externalizable {
     public SerializedCollection(Collection<?> collection, int i) {
         Intrinsics.e(collection, "collection");
         this.b = collection;
-        this.f42414c = i;
+        this.c = i;
     }
 
     private final Object readResolve() {
@@ -91,7 +87,7 @@ public final class SerializedCollection implements Externalizable {
     @Override // java.io.Externalizable
     public void writeExternal(ObjectOutput output) {
         Intrinsics.e(output, "output");
-        output.writeByte(this.f42414c);
+        output.writeByte(this.c);
         output.writeInt(this.b.size());
         Iterator<?> it = this.b.iterator();
         while (it.hasNext()) {

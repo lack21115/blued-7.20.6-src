@@ -16,9 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/EventAddPostCityAdapter.class */
 public final class EventAddPostCityAdapter extends BaseMultiItemQuickAdapter<EventAddPostCity, BaseViewHolder> implements StickyHeaderHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19894a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/EventAddPostCityAdapter$Companion.class */
@@ -34,26 +32,22 @@ public final class EventAddPostCityAdapter extends BaseMultiItemQuickAdapter<Eve
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/EventAddPostCityAdapter$EventAddPostCity.class */
     public static class EventAddPostCity implements MultiItemEntity {
-
-        /* renamed from: a  reason: collision with root package name */
-        private ChineseCitiesModel f19895a;
+        private ChineseCitiesModel a;
         private boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19896c;
+        private int c;
 
         public EventAddPostCity(ChineseCitiesModel city) {
             Intrinsics.e(city, "city");
-            this.f19895a = city;
+            this.a = city;
         }
 
         public final ChineseCitiesModel a() {
-            return this.f19895a;
+            return this.a;
         }
 
         public final void a(ChineseCitiesModel chineseCitiesModel) {
             Intrinsics.e(chineseCitiesModel, "<set-?>");
-            this.f19895a = chineseCitiesModel;
+            this.a = chineseCitiesModel;
         }
 
         public final void a(boolean z) {
@@ -65,10 +59,9 @@ public final class EventAddPostCityAdapter extends BaseMultiItemQuickAdapter<Eve
         }
 
         public int c() {
-            return this.f19896c;
+            return this.c;
         }
 
-        @Override // com.chad.library.adapter.base.entity.MultiItemEntity
         public int getItemType() {
             return c();
         }
@@ -77,34 +70,30 @@ public final class EventAddPostCityAdapter extends BaseMultiItemQuickAdapter<Eve
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/EventAddPostCityAdapter$EventAddPostCityHeader.class */
     public static final class EventAddPostCityHeader extends EventAddPostCity {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f19897a;
+        private int a;
 
         public EventAddPostCityHeader() {
             super(new ChineseCitiesModel());
-            this.f19897a = 2;
+            this.a = 2;
         }
 
         @Override // com.blued.community.ui.send.adapter.EventAddPostCityAdapter.EventAddPostCity
         public int c() {
-            return this.f19897a;
+            return this.a;
         }
     }
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/EventAddPostCityAdapter$EventAddPostCityPinYin.class */
     public static final class EventAddPostCityPinYin extends EventAddPostCity implements StickyHeader {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f19898a;
+        private String a;
         private int b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public EventAddPostCityPinYin(String pinYin) {
             super(new ChineseCitiesModel());
             Intrinsics.e(pinYin, "pinYin");
-            this.f19898a = pinYin;
+            this.a = pinYin;
             this.b = 1;
         }
 
@@ -114,37 +103,35 @@ public final class EventAddPostCityAdapter extends BaseMultiItemQuickAdapter<Eve
         }
 
         public final String d() {
-            return this.f19898a;
+            return this.a;
         }
     }
 
     public EventAddPostCityAdapter() {
-        super(null);
+        super((List) null);
         addItemType(0, R.layout.item_select_city);
         addItemType(1, R.layout.item_select_city_pinyin);
         addItemType(2, R.layout.layout_select_city_header);
     }
 
-    @Override // com.brandongogetap.stickyheaders.exposed.StickyHeaderHandler
     public List<?> a() {
-        List data = getData();
+        List<?> data = getData();
         Intrinsics.c(data, "data");
         return data;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, EventAddPostCity item) {
         Intrinsics.e(helper, "helper");
         Intrinsics.e(item, "item");
-        int c2 = item.c();
-        if (c2 == 0) {
+        int c = item.c();
+        if (c == 0) {
             helper.setText(R.id.tv_city, item.a().t);
             helper.setGone(R.id.line, !item.b());
-        } else if (c2 == 1) {
+        } else if (c == 1) {
             helper.setText(R.id.tv_pinyin, ((EventAddPostCityPinYin) item).d());
-        } else if (c2 != 2) {
+        } else if (c != 2) {
         } else {
             ChineseCitiesModel chineseCitiesModel = new ChineseCitiesModel(CityHelper.a().d(this.mContext), CityHelper.a().h(), CityHelper.a().i());
             helper.setText(R.id.tv_city, chineseCitiesModel.t);

@@ -8,30 +8,30 @@ import com.xiaomi.clientreport.processor.IPerfProcessor;
 public class bq implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41289a;
+    private Context f27598a;
 
     /* renamed from: a  reason: collision with other field name */
-    private com.xiaomi.clientreport.processor.c f225a;
+    private com.xiaomi.clientreport.processor.c f178a;
 
     public void a(Context context) {
-        this.f41289a = context;
+        this.f27598a = context;
     }
 
     public void a(com.xiaomi.clientreport.processor.c cVar) {
-        this.f225a = cVar;
+        this.f178a = cVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            if (this.f225a != null) {
-                this.f225a.a();
+            if (this.f178a != null) {
+                this.f178a.a();
             }
             com.xiaomi.channel.commonutils.logger.b.c("begin read and send perf / event");
-            if (this.f225a instanceof IEventProcessor) {
-                bu.a(this.f41289a).m11554a("sp_client_report_status", "event_last_upload_time", System.currentTimeMillis());
-            } else if (this.f225a instanceof IPerfProcessor) {
-                bu.a(this.f41289a).m11554a("sp_client_report_status", "perf_last_upload_time", System.currentTimeMillis());
+            if (this.f178a instanceof IEventProcessor) {
+                bu.a(this.f27598a).m8504a("sp_client_report_status", "event_last_upload_time", System.currentTimeMillis());
+            } else if (this.f178a instanceof IPerfProcessor) {
+                bu.a(this.f27598a).m8504a("sp_client_report_status", "perf_last_upload_time", System.currentTimeMillis());
             }
         } catch (Exception e) {
             com.xiaomi.channel.commonutils.logger.b.a(e);

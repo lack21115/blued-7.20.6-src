@@ -37,7 +37,6 @@ public final class YYRelationShipRoomToInvitedGiftMode implements MultiItemEntit
         return (obj instanceof YYRelationShipRoomToInvitedGiftMode) && Intrinsics.a(this.mode, ((YYRelationShipRoomToInvitedGiftMode) obj).mode);
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

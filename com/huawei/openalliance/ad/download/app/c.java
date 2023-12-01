@@ -26,7 +26,7 @@ public class c {
     private static final String Z = "cancelDownloadApp";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22965a = "reportInstallPermission";
+    private static final String f9357a = "reportInstallPermission";
     private static final String b = "reserveDownloadApp";
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -77,7 +77,7 @@ public class c {
                 return;
             }
         }
-        jSONObject.put(at.f22943a, str);
+        jSONObject.put(at.f9335a, str);
         com.huawei.openalliance.ad.ipc.g.V(context).Code(C, jSONObject.toString(), remoteCallResultCallback, cls);
     }
 
@@ -180,9 +180,9 @@ public class c {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put(at.ai, z);
-            com.huawei.openalliance.ad.ipc.h.Code(context, true).Code(f22965a, jSONObject.toString(), remoteCallResultCallback, cls);
+            com.huawei.openalliance.ad.ipc.h.Code(context, true).Code(f9357a, jSONObject.toString(), remoteCallResultCallback, cls);
             if (v.I()) {
-                com.huawei.openalliance.ad.ipc.g.V(context).Code(f22965a, jSONObject.toString(), remoteCallResultCallback, cls);
+                com.huawei.openalliance.ad.ipc.g.V(context).Code(f9357a, jSONObject.toString(), remoteCallResultCallback, cls);
             }
         } catch (JSONException e) {
             ge.I(Code, "reportInstallPermission JSONException");

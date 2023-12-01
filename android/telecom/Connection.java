@@ -10,6 +10,7 @@ import android.telecom.Conference;
 import android.view.Surface;
 import com.android.internal.telecom.IVideoCallback;
 import com.android.internal.telecom.IVideoProvider;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -89,8 +90,9 @@ public abstract class Connection implements IConferenceable {
     private boolean mRingbackRequested = false;
     private PhoneAccountHandle mPhoneAccountHandle = null;
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/telecom/Connection$FailureSignalingConnection.class */
-    private static class FailureSignalingConnection extends Connection {
+    public static class FailureSignalingConnection extends Connection {
         private boolean mImmutable;
 
         public FailureSignalingConnection(DisconnectCause disconnectCause) {
@@ -201,62 +203,52 @@ public abstract class Connection implements IConferenceable {
         private final VideoProviderHandler mMessageHandler = new VideoProviderHandler();
         private final VideoProviderBinder mBinder = new VideoProviderBinder();
 
+        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/telecom/Connection$VideoProvider$VideoProviderBinder.class */
-        private final class VideoProviderBinder extends IVideoProvider.Stub {
+        public final class VideoProviderBinder extends IVideoProvider.Stub {
             private VideoProviderBinder() {
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void requestCallDataUsage() {
                 VideoProvider.this.mMessageHandler.obtainMessage(10).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void requestCameraCapabilities() {
                 VideoProvider.this.mMessageHandler.obtainMessage(9).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void sendSessionModifyRequest(VideoProfile videoProfile) {
                 VideoProvider.this.mMessageHandler.obtainMessage(7, videoProfile).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void sendSessionModifyResponse(VideoProfile videoProfile) {
                 VideoProvider.this.mMessageHandler.obtainMessage(8, videoProfile).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void setCamera(String str) {
                 VideoProvider.this.mMessageHandler.obtainMessage(2, str).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void setDeviceOrientation(int i) {
                 VideoProvider.this.mMessageHandler.obtainMessage(5, i, 0).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void setDisplaySurface(Surface surface) {
                 VideoProvider.this.mMessageHandler.obtainMessage(4, surface).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void setPauseImage(String str) {
                 VideoProvider.this.mMessageHandler.obtainMessage(11, str).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void setPreviewSurface(Surface surface) {
                 VideoProvider.this.mMessageHandler.obtainMessage(3, surface).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void setVideoCallback(IBinder iBinder) {
                 VideoProvider.this.mMessageHandler.obtainMessage(1, iBinder).sendToTarget();
             }
 
-            @Override // com.android.internal.telecom.IVideoProvider
             public void setZoom(float f) {
                 VideoProvider.this.mMessageHandler.obtainMessage(6, Float.valueOf(f)).sendToTarget();
             }
@@ -517,7 +509,7 @@ public abstract class Connection implements IConferenceable {
                 return "DISCONNECTED";
             default:
                 Log.wtf(Connection.class, "Unknown state %d", Integer.valueOf(i));
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 

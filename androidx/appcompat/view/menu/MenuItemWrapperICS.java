@@ -24,37 +24,37 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
     private final SupportMenuItem b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Method f1682c;
+    private Method f1634c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/view/menu/MenuItemWrapperICS$ActionProviderWrapper.class */
     class ActionProviderWrapper extends ActionProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        final android.view.ActionProvider f1683a;
+        final android.view.ActionProvider f1635a;
 
         ActionProviderWrapper(Context context, android.view.ActionProvider actionProvider) {
             super(context);
-            this.f1683a = actionProvider;
+            this.f1635a = actionProvider;
         }
 
         @Override // androidx.core.view.ActionProvider
         public boolean hasSubMenu() {
-            return this.f1683a.hasSubMenu();
+            return this.f1635a.hasSubMenu();
         }
 
         @Override // androidx.core.view.ActionProvider
         public View onCreateActionView() {
-            return this.f1683a.onCreateActionView();
+            return this.f1635a.onCreateActionView();
         }
 
         @Override // androidx.core.view.ActionProvider
         public boolean onPerformDefaultAction() {
-            return this.f1683a.onPerformDefaultAction();
+            return this.f1635a.onPerformDefaultAction();
         }
 
         @Override // androidx.core.view.ActionProvider
         public void onPrepareSubMenu(SubMenu subMenu) {
-            this.f1683a.onPrepareSubMenu(MenuItemWrapperICS.this.a(subMenu));
+            this.f1635a.onPrepareSubMenu(MenuItemWrapperICS.this.a(subMenu));
         }
     }
 
@@ -68,7 +68,7 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
 
         @Override // androidx.core.view.ActionProvider
         public boolean isVisible() {
-            return this.f1683a.isVisible();
+            return this.f1635a.isVisible();
         }
 
         @Override // android.view.ActionProvider.VisibilityListener
@@ -81,23 +81,23 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
 
         @Override // androidx.core.view.ActionProvider
         public View onCreateActionView(MenuItem menuItem) {
-            return this.f1683a.onCreateActionView(menuItem);
+            return this.f1635a.onCreateActionView(menuItem);
         }
 
         @Override // androidx.core.view.ActionProvider
         public boolean overridesItemVisibility() {
-            return this.f1683a.overridesItemVisibility();
+            return this.f1635a.overridesItemVisibility();
         }
 
         @Override // androidx.core.view.ActionProvider
         public void refreshVisibility() {
-            this.f1683a.refreshVisibility();
+            this.f1635a.refreshVisibility();
         }
 
         @Override // androidx.core.view.ActionProvider
         public void setVisibilityListener(ActionProvider.VisibilityListener visibilityListener) {
             this.d = visibilityListener;
-            this.f1683a.setVisibilityListener(visibilityListener != null ? this : null);
+            this.f1635a.setVisibilityListener(visibilityListener != null ? this : null);
         }
     }
 
@@ -105,26 +105,26 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
     static class CollapsibleActionViewWrapper extends FrameLayout implements CollapsibleActionView {
 
         /* renamed from: a  reason: collision with root package name */
-        final android.view.CollapsibleActionView f1685a;
+        final android.view.CollapsibleActionView f1637a;
 
         CollapsibleActionViewWrapper(View view) {
             super(view.getContext());
-            this.f1685a = (android.view.CollapsibleActionView) view;
+            this.f1637a = (android.view.CollapsibleActionView) view;
             addView(view);
         }
 
         View a() {
-            return (View) this.f1685a;
+            return (View) this.f1637a;
         }
 
         @Override // androidx.appcompat.view.CollapsibleActionView
         public void onActionViewCollapsed() {
-            this.f1685a.onActionViewCollapsed();
+            this.f1637a.onActionViewCollapsed();
         }
 
         @Override // androidx.appcompat.view.CollapsibleActionView
         public void onActionViewExpanded() {
-            this.f1685a.onActionViewExpanded();
+            this.f1637a.onActionViewExpanded();
         }
     }
 
@@ -184,7 +184,7 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
     public android.view.ActionProvider getActionProvider() {
         androidx.core.view.ActionProvider supportActionProvider = this.b.getSupportActionProvider();
         if (supportActionProvider instanceof ActionProviderWrapper) {
-            return ((ActionProviderWrapper) supportActionProvider).f1683a;
+            return ((ActionProviderWrapper) supportActionProvider).f1635a;
         }
         return null;
     }
@@ -310,7 +310,7 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
 
     @Override // android.view.MenuItem
     public MenuItem setActionProvider(android.view.ActionProvider actionProvider) {
-        ActionProviderWrapperJB actionProviderWrapperJB = Build.VERSION.SDK_INT >= 16 ? new ActionProviderWrapperJB(this.f1659a, actionProvider) : new ActionProviderWrapper(this.f1659a, actionProvider);
+        ActionProviderWrapperJB actionProviderWrapperJB = Build.VERSION.SDK_INT >= 16 ? new ActionProviderWrapperJB(this.f1611a, actionProvider) : new ActionProviderWrapper(this.f1611a, actionProvider);
         SupportMenuItem supportMenuItem = this.b;
         if (actionProvider == null) {
             actionProviderWrapperJB = null;
@@ -363,7 +363,7 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
     }
 
     public MenuItem setContentDescription(CharSequence charSequence) {
-        this.b.mo1228setContentDescription(charSequence);
+        this.b.mo1090setContentDescription(charSequence);
         return this;
     }
 
@@ -375,10 +375,10 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
 
     public void setExclusiveCheckable(boolean z) {
         try {
-            if (this.f1682c == null) {
-                this.f1682c = this.b.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
+            if (this.f1634c == null) {
+                this.f1634c = this.b.getClass().getDeclaredMethod("setExclusiveCheckable", Boolean.TYPE);
             }
-            this.f1682c.invoke(this.b, Boolean.valueOf(z));
+            this.f1634c.invoke(this.b, Boolean.valueOf(z));
         } catch (Exception e) {
             Log.w("MenuItemWrapper", "Error while calling setExclusiveCheckable", e);
         }
@@ -476,7 +476,7 @@ public class MenuItemWrapperICS extends BaseMenuWrapper implements MenuItem {
     }
 
     public MenuItem setTooltipText(CharSequence charSequence) {
-        this.b.mo1229setTooltipText(charSequence);
+        this.b.mo1091setTooltipText(charSequence);
         return this;
     }
 

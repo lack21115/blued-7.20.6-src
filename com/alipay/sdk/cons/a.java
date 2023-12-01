@@ -2,13 +2,9 @@ package com.alipay.sdk.cons;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/cons/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f4611a = "https://mobilegw.alipay.com/mgw.htm";
+    public static String a = "https://mobilegw.alipay.com/mgw.htm";
     public static final String b = "https://mobilegw.alipaydev.com/mgw.htm";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4612c = "https://mcgw.alipay.com/sdklog.do";
+    public static final String c = "https://mcgw.alipay.com/sdklog.do";
     public static final String d = "https://loggw-exsdk.alipay.com/loggw/logUpload.do";
     public static String e = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDENksAVqDoz5SMCZq0bsZwE+I3NjrANyTTwUVSf1+ec1PfPB4tiocEpYJFCYju9MIbawR8ivECbUWjpffZq5QllJg+19CB7V5rYGcEnb/M7CS3lFF2sNcRFJUtXUUAqyR3/l7PmpxTwObZ4DLG258dhE2vFlVGXjnuLs+FI2hg4QIDAQAB";
     public static final String f = "2014052600006128";

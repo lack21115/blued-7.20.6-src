@@ -20,68 +20,68 @@ import java.util.concurrent.TimeUnit;
 public class ch {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile ch f41302a;
+    private static volatile ch f27611a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f240a;
+    private Context f193a;
 
     /* renamed from: a  reason: collision with other field name */
-    private cg f241a;
+    private cg f194a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final HashMap<String, cf> f243a = new HashMap<>();
+    private final HashMap<String, cf> f196a = new HashMap<>();
 
     /* renamed from: a  reason: collision with other field name */
-    private ThreadPoolExecutor f244a = new ThreadPoolExecutor(1, 1, 15, TimeUnit.SECONDS, new LinkedBlockingQueue());
+    private ThreadPoolExecutor f197a = new ThreadPoolExecutor(1, 1, 15, TimeUnit.SECONDS, new LinkedBlockingQueue());
 
     /* renamed from: a  reason: collision with other field name */
-    private final ArrayList<a> f242a = new ArrayList<>();
+    private final ArrayList<a> f195a = new ArrayList<>();
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/ch$a.class */
     public static abstract class a implements Runnable {
 
         /* renamed from: a  reason: collision with other field name */
-        private a f246a;
+        private a f199a;
 
         /* renamed from: a  reason: collision with other field name */
-        private String f247a;
+        private String f200a;
 
         /* renamed from: a  reason: collision with other field name */
-        private WeakReference<Context> f248a;
+        private WeakReference<Context> f201a;
         protected String b;
 
         /* renamed from: a  reason: collision with other field name */
-        protected cf f245a = null;
+        protected cf f198a = null;
 
         /* renamed from: a  reason: collision with other field name */
-        private Random f249a = new Random();
+        private Random f202a = new Random();
 
         /* renamed from: a  reason: collision with root package name */
-        private int f41303a = 0;
+        private int f27612a = 0;
 
         public a(String str) {
-            this.f247a = str;
+            this.f200a = str;
         }
 
         public SQLiteDatabase a() {
-            return this.f245a.getWritableDatabase();
+            return this.f198a.getWritableDatabase();
         }
 
         /* renamed from: a  reason: collision with other method in class */
-        public Object mo11582a() {
+        public Object mo8532a() {
             return null;
         }
 
         /* renamed from: a  reason: collision with other method in class */
-        public String m11583a() {
-            return this.f247a;
+        public String m8533a() {
+            return this.f200a;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public void a(Context context) {
-            a aVar = this.f246a;
+            a aVar = this.f199a;
             if (aVar != null) {
-                aVar.a(context, mo11582a());
+                aVar.a(context, mo8532a());
             }
             b(context);
         }
@@ -93,18 +93,18 @@ public class ch {
         }
 
         void a(cf cfVar, Context context) {
-            this.f245a = cfVar;
+            this.f198a = cfVar;
             this.b = cfVar.a();
-            this.f248a = new WeakReference<>(context);
+            this.f201a = new WeakReference<>(context);
         }
 
         public void a(a aVar) {
-            this.f246a = aVar;
+            this.f199a = aVar;
         }
 
         /* renamed from: a  reason: collision with other method in class */
-        public boolean m11584a() {
-            return this.f245a == null || TextUtils.isEmpty(this.b) || this.f248a == null;
+        public boolean m8534a() {
+            return this.f198a == null || TextUtils.isEmpty(this.b) || this.f201a == null;
         }
 
         public void b(Context context) {
@@ -113,11 +113,11 @@ public class ch {
         @Override // java.lang.Runnable
         public final void run() {
             Context context;
-            WeakReference<Context> weakReference = this.f248a;
-            if (weakReference == null || (context = weakReference.get()) == null || context.getFilesDir() == null || this.f245a == null || TextUtils.isEmpty(this.f247a)) {
+            WeakReference<Context> weakReference = this.f201a;
+            if (weakReference == null || (context = weakReference.get()) == null || context.getFilesDir() == null || this.f198a == null || TextUtils.isEmpty(this.f200a)) {
                 return;
             }
-            File file = new File(this.f247a);
+            File file = new File(this.f200a);
             u.a(context, new File(file.getParentFile(), bm.b(file.getAbsolutePath())), new cj(this, context));
         }
     }
@@ -126,38 +126,38 @@ public class ch {
     public static abstract class b<T> extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f41304a;
+        private int f27613a;
 
         /* renamed from: a  reason: collision with other field name */
-        private String f250a;
+        private String f203a;
 
         /* renamed from: a  reason: collision with other field name */
-        private List<String> f251a;
+        private List<String> f204a;
 
         /* renamed from: a  reason: collision with other field name */
-        private String[] f252a;
+        private String[] f205a;
         private List<T> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f41305c;
+        private String f27614c;
         private String d;
         private String e;
 
         public b(String str, List<String> list, String str2, String[] strArr, String str3, String str4, String str5, int i) {
             super(str);
             this.b = new ArrayList();
-            this.f251a = list;
-            this.f250a = str2;
-            this.f252a = strArr;
-            this.f41305c = str3;
+            this.f204a = list;
+            this.f203a = str2;
+            this.f205a = strArr;
+            this.f27614c = str3;
             this.d = str4;
             this.e = str5;
-            this.f41304a = i;
+            this.f27613a = i;
         }
 
         @Override // com.xiaomi.push.ch.a
         public SQLiteDatabase a() {
-            return this.f245a.getReadableDatabase();
+            return this.f198a.getReadableDatabase();
         }
 
         public abstract T a(Context context, Cursor cursor);
@@ -166,19 +166,19 @@ public class ch {
         public void a(Context context, SQLiteDatabase sQLiteDatabase) {
             String[] strArr;
             this.b.clear();
-            List<String> list = this.f251a;
+            List<String> list = this.f204a;
             String str = null;
             if (list == null || list.size() <= 0) {
                 strArr = null;
             } else {
-                strArr = new String[this.f251a.size()];
-                this.f251a.toArray(strArr);
+                strArr = new String[this.f204a.size()];
+                this.f204a.toArray(strArr);
             }
-            int i = this.f41304a;
+            int i = this.f27613a;
             if (i > 0) {
                 str = String.valueOf(i);
             }
-            Cursor query = sQLiteDatabase.query(this.b, strArr, this.f250a, this.f252a, this.f41305c, this.d, this.e, str);
+            Cursor query = sQLiteDatabase.query(this.b, strArr, this.f203a, this.f205a, this.f27614c, this.d, this.e, str);
             if (query != null && query.moveToFirst()) {
                 do {
                     T a2 = a(context, query);
@@ -198,19 +198,19 @@ public class ch {
     public static class c extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private ArrayList<a> f41306a;
+        private ArrayList<a> f27615a;
 
         public c(String str, ArrayList<a> arrayList) {
             super(str);
             ArrayList<a> arrayList2 = new ArrayList<>();
-            this.f41306a = arrayList2;
+            this.f27615a = arrayList2;
             arrayList2.addAll(arrayList);
         }
 
         @Override // com.xiaomi.push.ch.a
         public final void a(Context context) {
             super.a(context);
-            Iterator<a> it = this.f41306a.iterator();
+            Iterator<a> it = this.f27615a.iterator();
             while (it.hasNext()) {
                 a next = it.next();
                 if (next != null) {
@@ -221,7 +221,7 @@ public class ch {
 
         @Override // com.xiaomi.push.ch.a
         public void a(Context context, SQLiteDatabase sQLiteDatabase) {
-            Iterator<a> it = this.f41306a.iterator();
+            Iterator<a> it = this.f27615a.iterator();
             while (it.hasNext()) {
                 a next = it.next();
                 if (next != null) {
@@ -235,20 +235,20 @@ public class ch {
     public static class d extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f41307a;
+        private String f27616a;
 
         /* renamed from: a  reason: collision with other field name */
-        protected String[] f253a;
+        protected String[] f206a;
 
         public d(String str, String str2, String[] strArr) {
             super(str);
-            this.f41307a = str2;
-            this.f253a = strArr;
+            this.f27616a = str2;
+            this.f206a = strArr;
         }
 
         @Override // com.xiaomi.push.ch.a
         public void a(Context context, SQLiteDatabase sQLiteDatabase) {
-            sQLiteDatabase.delete(this.b, this.f41307a, this.f253a);
+            sQLiteDatabase.delete(this.b, this.f27616a, this.f206a);
         }
     }
 
@@ -256,32 +256,32 @@ public class ch {
     public static class e extends a {
 
         /* renamed from: a  reason: collision with root package name */
-        private ContentValues f41308a;
+        private ContentValues f27617a;
 
         public e(String str, ContentValues contentValues) {
             super(str);
-            this.f41308a = contentValues;
+            this.f27617a = contentValues;
         }
 
         @Override // com.xiaomi.push.ch.a
         public void a(Context context, SQLiteDatabase sQLiteDatabase) {
-            sQLiteDatabase.insert(this.b, null, this.f41308a);
+            sQLiteDatabase.insert(this.b, null, this.f27617a);
         }
     }
 
     private ch(Context context) {
-        this.f240a = context;
+        this.f193a = context;
     }
 
     private cf a(String str) {
         cf cfVar;
-        cf cfVar2 = this.f243a.get(str);
+        cf cfVar2 = this.f196a.get(str);
         if (cfVar2 == null) {
-            synchronized (this.f243a) {
+            synchronized (this.f196a) {
                 cfVar = cfVar2;
                 if (cfVar2 == null) {
-                    cfVar = this.f241a.a(this.f240a, str);
-                    this.f243a.put(str, cfVar);
+                    cfVar = this.f194a.a(this.f193a, str);
+                    this.f196a.put(str, cfVar);
                 }
             }
             return cfVar;
@@ -290,26 +290,26 @@ public class ch {
     }
 
     public static ch a(Context context) {
-        if (f41302a == null) {
+        if (f27611a == null) {
             synchronized (ch.class) {
                 try {
-                    if (f41302a == null) {
-                        f41302a = new ch(context);
+                    if (f27611a == null) {
+                        f27611a = new ch(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41302a;
+        return f27611a;
     }
 
     private void a() {
-        ai.a(this.f240a).b(new ci(this), com.xiaomi.push.service.ba.a(this.f240a).a(hl.StatDataProcessFrequency.a(), 5));
+        ai.a(this.f193a).b(new ci(this), com.xiaomi.push.service.ba.a(this.f193a).a(hl.StatDataProcessFrequency.a(), 5));
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m11581a(String str) {
+    public String m8531a(String str) {
         return a(str).a();
     }
 
@@ -318,54 +318,54 @@ public class ch {
         if (aVar == null) {
             return;
         }
-        if (this.f241a == null) {
+        if (this.f194a == null) {
             throw new IllegalStateException("should exec init method first!");
         }
-        String m11583a = aVar.m11583a();
-        synchronized (this.f243a) {
-            cf cfVar2 = this.f243a.get(m11583a);
+        String m8533a = aVar.m8533a();
+        synchronized (this.f196a) {
+            cf cfVar2 = this.f196a.get(m8533a);
             cfVar = cfVar2;
             if (cfVar2 == null) {
-                cfVar = this.f241a.a(this.f240a, m11583a);
-                this.f243a.put(m11583a, cfVar);
+                cfVar = this.f194a.a(this.f193a, m8533a);
+                this.f196a.put(m8533a, cfVar);
             }
         }
-        if (this.f244a.isShutdown()) {
+        if (this.f197a.isShutdown()) {
             return;
         }
-        aVar.a(cfVar, this.f240a);
-        synchronized (this.f242a) {
-            this.f242a.add(aVar);
+        aVar.a(cfVar, this.f193a);
+        synchronized (this.f195a) {
+            this.f195a.add(aVar);
             a();
         }
     }
 
     public void a(Runnable runnable) {
-        if (this.f244a.isShutdown()) {
+        if (this.f197a.isShutdown()) {
             return;
         }
-        this.f244a.execute(runnable);
+        this.f197a.execute(runnable);
     }
 
     public void a(ArrayList<a> arrayList) {
-        if (this.f241a == null) {
+        if (this.f194a == null) {
             throw new IllegalStateException("should exec setDbHelperFactory method first!");
         }
         HashMap hashMap = new HashMap();
-        if (this.f244a.isShutdown()) {
+        if (this.f197a.isShutdown()) {
             return;
         }
         Iterator<a> it = arrayList.iterator();
         while (it.hasNext()) {
             a next = it.next();
-            if (next.m11584a()) {
-                next.a(a(next.m11583a()), this.f240a);
+            if (next.m8534a()) {
+                next.a(a(next.m8533a()), this.f193a);
             }
-            ArrayList arrayList2 = (ArrayList) hashMap.get(next.m11583a());
+            ArrayList arrayList2 = (ArrayList) hashMap.get(next.m8533a());
             ArrayList arrayList3 = arrayList2;
             if (arrayList2 == null) {
                 arrayList3 = new ArrayList();
-                hashMap.put(next.m11583a(), arrayList3);
+                hashMap.put(next.m8533a(), arrayList3);
             }
             arrayList3.add(next);
         }
@@ -373,8 +373,8 @@ public class ch {
             ArrayList arrayList4 = (ArrayList) hashMap.get(str);
             if (arrayList4 != null && arrayList4.size() > 0) {
                 c cVar = new c(str, arrayList4);
-                cVar.a(((a) arrayList4.get(0)).f245a, this.f240a);
-                this.f244a.execute(cVar);
+                cVar.a(((a) arrayList4.get(0)).f198a, this.f193a);
+                this.f197a.execute(cVar);
             }
         }
     }
@@ -384,22 +384,22 @@ public class ch {
         if (aVar == null) {
             return;
         }
-        if (this.f241a == null) {
+        if (this.f194a == null) {
             throw new IllegalStateException("should exec init method first!");
         }
-        String m11583a = aVar.m11583a();
-        synchronized (this.f243a) {
-            cf cfVar2 = this.f243a.get(m11583a);
+        String m8533a = aVar.m8533a();
+        synchronized (this.f196a) {
+            cf cfVar2 = this.f196a.get(m8533a);
             cfVar = cfVar2;
             if (cfVar2 == null) {
-                cfVar = this.f241a.a(this.f240a, m11583a);
-                this.f243a.put(m11583a, cfVar);
+                cfVar = this.f194a.a(this.f193a, m8533a);
+                this.f196a.put(m8533a, cfVar);
             }
         }
-        if (this.f244a.isShutdown()) {
+        if (this.f197a.isShutdown()) {
             return;
         }
-        aVar.a(cfVar, this.f240a);
+        aVar.a(cfVar, this.f193a);
         a((Runnable) aVar);
     }
 }

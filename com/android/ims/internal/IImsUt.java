@@ -451,7 +451,7 @@ public interface IImsUt extends IInterface {
                     return true;
                 case 9:
                     parcel.enforceInterface(DESCRIPTOR);
-                    int transact = transact(parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    int transact = transact(parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(transact);
                     return true;
@@ -525,7 +525,7 @@ public interface IImsUt extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeInt(queryCFForServiceClass);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.os.Process;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.tencent.bugly.proguard.x;
 import com.tencent.bugly.proguard.z;
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public final class a {
     private String U;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35130c;
+    public String f21439c;
     public final String d;
     public final String g;
     public final String h;
@@ -85,7 +86,7 @@ public final class a {
     private final Object ao = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f35129a = System.currentTimeMillis();
+    public final long f21438a = System.currentTimeMillis();
     public final byte b = 1;
 
     private a(Context context) {
@@ -114,7 +115,7 @@ public final class a {
                 }
             }
         }
-        this.f35130c = AppInfo.a(context);
+        this.f21439c = AppInfo.a(context);
         this.d = AppInfo.a(Process.myPid());
         this.g = b.k();
         this.h = b.a();
@@ -139,7 +140,7 @@ public final class a {
                 }
                 String str5 = d.get("BUGLY_ENABLE_DEBUG");
                 if (str5 != null) {
-                    this.v = str5.equalsIgnoreCase("true");
+                    this.v = str5.equalsIgnoreCase(fw.Code);
                 }
                 String str6 = d.get("com.tencent.rdm.uuid");
                 if (str6 != null) {
@@ -165,7 +166,7 @@ public final class a {
                 x.c("App is first time to be installed on the device.", new Object[0]);
             }
         } catch (Throwable th3) {
-            if (com.tencent.bugly.b.f35109c) {
+            if (com.tencent.bugly.b.f21418c) {
                 th3.printStackTrace();
             }
         }

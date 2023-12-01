@@ -6,10 +6,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static AtomicBoolean f38344a = new AtomicBoolean(false);
+    public static AtomicBoolean f24653a = new AtomicBoolean(false);
 
     public static void a(String str) {
-        if (f38344a.get()) {
+        if (f24653a.get()) {
             throw new IllegalStateException("[strict] " + str);
         }
     }

@@ -162,21 +162,21 @@ public final class _Utf8Kt {
                                 cArr[i5] = (char) i11;
                                 i5++;
                             }
-                            Unit unit = Unit.f42314a;
+                            Unit unit = Unit.a;
                             i3 = 2;
                         } else {
                             cArr[i5] = (char) 65533;
                             i5++;
                         }
                     }
-                    Unit unit2 = Unit.f42314a;
+                    Unit unit2 = Unit.a;
                     i3 = 1;
                 } else if ((b >> 4) == -2) {
                     int i12 = i4 + 2;
                     if (i2 <= i12) {
                         int i13 = i5 + 1;
                         cArr[i5] = (char) 65533;
-                        Unit unit3 = Unit.f42314a;
+                        Unit unit3 = Unit.a;
                         int i14 = i4 + 1;
                         i5 = i13;
                         if (i2 > i14) {
@@ -206,17 +206,17 @@ public final class _Utf8Kt {
                                         i5++;
                                     }
                                 }
-                                Unit unit4 = Unit.f42314a;
+                                Unit unit4 = Unit.a;
                                 i3 = 3;
                             } else {
                                 cArr[i5] = (char) 65533;
-                                Unit unit5 = Unit.f42314a;
+                                Unit unit5 = Unit.a;
                                 i5++;
                                 i3 = 2;
                             }
                         } else {
                             cArr[i5] = (char) 65533;
-                            Unit unit6 = Unit.f42314a;
+                            Unit unit6 = Unit.a;
                             i5++;
                             i3 = 1;
                         }
@@ -226,7 +226,7 @@ public final class _Utf8Kt {
                     if (i2 <= i16) {
                         int i17 = i5 + 1;
                         cArr[i5] = 65533;
-                        Unit unit7 = Unit.f42314a;
+                        Unit unit7 = Unit.a;
                         int i18 = i4 + 1;
                         i5 = i17;
                         if (i2 > i18) {
@@ -266,9 +266,9 @@ public final class _Utf8Kt {
                                             cArr[i5] = 65533;
                                             i5++;
                                         } else if (i20 != 65533) {
-                                            char c2 = (char) ((i20 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
+                                            char c = (char) ((i20 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
                                             int i21 = i5 + 1;
-                                            cArr[i5] = c2;
+                                            cArr[i5] = c;
                                             i5 = i21 + 1;
                                             cArr[i21] = (char) ((i20 & 1023) + 56320);
                                         } else {
@@ -276,23 +276,23 @@ public final class _Utf8Kt {
                                             i5++;
                                         }
                                     }
-                                    Unit unit8 = Unit.f42314a;
+                                    Unit unit8 = Unit.a;
                                     i3 = 4;
                                 } else {
                                     cArr[i5] = 65533;
-                                    Unit unit9 = Unit.f42314a;
+                                    Unit unit9 = Unit.a;
                                     i5++;
                                     i3 = 3;
                                 }
                             } else {
                                 cArr[i5] = 65533;
-                                Unit unit10 = Unit.f42314a;
+                                Unit unit10 = Unit.a;
                                 i5++;
                                 i3 = 2;
                             }
                         } else {
                             cArr[i5] = 65533;
-                            Unit unit11 = Unit.f42314a;
+                            Unit unit11 = Unit.a;
                             i5++;
                             i3 = 1;
                         }

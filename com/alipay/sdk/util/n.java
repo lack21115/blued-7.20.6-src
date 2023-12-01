@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.webkit.WebView;
 import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.data.a;
+import com.android.internal.content.NativeLibraryHelper;
 import com.android.internal.telephony.PhoneConstants;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -39,39 +40,31 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/util/n.class */
 public class n {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final String f4674a = "com.eg.android.AlipayGphone";
+    static final String a = "com.eg.android.AlipayGphone";
     static final int b = 125;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f4675c = "com.alipay.android.app";
+    private static final String c = "com.alipay.android.app";
     private static final String d = "com.eg.android.AlipayGphoneRC";
     private static final int e = 99;
     private static final String[] f = {"10.1.5.1013151", "10.1.5.1013148"};
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/util/n$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final PackageInfo f4676a;
+        public final PackageInfo a;
         public final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public final String f4677c;
+        public final String c;
 
         public a(PackageInfo packageInfo, int i, String str) {
-            this.f4676a = packageInfo;
+            this.a = packageInfo;
             this.b = i;
-            this.f4677c = str;
+            this.c = str;
         }
 
         public boolean a() {
-            return this.f4676a.versionCode < this.b;
+            return this.a.versionCode < this.b;
         }
 
         public boolean a(com.alipay.sdk.sys.a aVar) {
-            Signature[] signatureArr = this.f4676a.signatures;
+            Signature[] signatureArr = this.a.signatures;
             if (signatureArr == null || signatureArr.length == 0) {
                 return false;
             }
@@ -82,9 +75,9 @@ public class n {
                 if (i2 >= length) {
                     return false;
                 }
-                String a2 = n.a(aVar, signatureArr[i2].toByteArray());
-                if (a2 != null && !TextUtils.equals(a2, this.f4677c)) {
-                    com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.w, String.format("Got %s, expected %s", a2, this.f4677c));
+                String a = n.a(aVar, signatureArr[i2].toByteArray());
+                if (a != null && !TextUtils.equals(a, this.c)) {
+                    com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.w, String.format("Got %s, expected %s", a, this.c));
                     return true;
                 }
                 i = i2 + 1;
@@ -104,7 +97,7 @@ public class n {
         String str3 = str;
         if (EnvUtils.isSandBox()) {
             str3 = str;
-            if (f4674a.equals(str)) {
+            if (a.equals(str)) {
                 str3 = d;
             }
         }
@@ -120,13 +113,13 @@ public class n {
         return null;
     }
 
-    public static a a(com.alipay.sdk.sys.a aVar, Context context, List<a.C0048a> list) {
+    public static a a(com.alipay.sdk.sys.a aVar, Context context, List<a.C0008a> list) {
         a a2;
         if (list == null) {
             return null;
         }
-        for (a.C0048a c0048a : list) {
-            if (c0048a != null && (a2 = a(aVar, context, c0048a.f4619a, c0048a.b, c0048a.f4620c)) != null && !a2.a(aVar) && !a2.a()) {
+        for (a.C0008a c0008a : list) {
+            if (c0008a != null && (a2 = a(aVar, context, c0008a.a, c0008a.b, c0008a.c)) != null && !a2.a(aVar) && !a2.a()) {
                 return a2;
             }
         }
@@ -139,9 +132,9 @@ public class n {
             return d;
         }
         try {
-            return com.alipay.sdk.app.i.f4599a.get(0).f4619a;
+            return com.alipay.sdk.app.i.a.get(0).a;
         } catch (Throwable th) {
-            return f4674a;
+            return a;
         }
     }
 
@@ -267,7 +260,7 @@ public class n {
         HashMap hashMap = new HashMap(4);
         int indexOf = str.indexOf(63);
         if (indexOf != -1 && indexOf < str.length() - 1) {
-            String[] split = str.substring(indexOf + 1).split("&");
+            String[] split = str.substring(indexOf + 1).split(com.alipay.sdk.sys.a.b);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -288,7 +281,7 @@ public class n {
 
     public static boolean a(Context context) {
         try {
-            return context.getPackageManager().getPackageInfo(f4675c, 128) != null;
+            return context.getPackageManager().getPackageInfo(c, 128) != null;
         } catch (PackageManager.NameNotFoundException e2) {
             return false;
         }
@@ -340,7 +333,7 @@ public class n {
         }
         if (str.toLowerCase().startsWith(com.alipay.sdk.cons.a.l.toLowerCase()) || str.toLowerCase().startsWith(com.alipay.sdk.cons.a.m.toLowerCase())) {
             try {
-                a a2 = a(aVar, activity, com.alipay.sdk.app.i.f4599a);
+                a a2 = a(aVar, activity, com.alipay.sdk.app.i.a);
                 if (a2 == null || a2.a() || a2.a(aVar)) {
                     return true;
                 }
@@ -378,8 +371,8 @@ public class n {
                 int indexOf = decode.indexOf(com.alipay.sdk.cons.a.s) + 12;
                 sb.append(str3);
                 sb.append(com.alipay.sdk.cons.a.s);
-                sb.append(decode.substring(indexOf, decode.indexOf("&", indexOf)));
-                sb.append(decode.substring(decode.indexOf("&", indexOf)));
+                sb.append(decode.substring(indexOf, decode.indexOf(com.alipay.sdk.sys.a.b, indexOf)));
+                sb.append(decode.substring(decode.indexOf(com.alipay.sdk.sys.a.b, indexOf)));
                 substring = sb.toString();
             } else {
                 String decode3 = URLDecoder.decode(str);
@@ -413,7 +406,7 @@ public class n {
 
     public static Map<String, String> b(String str) {
         HashMap hashMap = new HashMap();
-        String[] split = str.split("&");
+        String[] split = str.split(com.alipay.sdk.sys.a.b);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -443,15 +436,15 @@ public class n {
         }
     }
 
-    public static boolean b(com.alipay.sdk.sys.a aVar, Context context, List<a.C0048a> list) {
+    public static boolean b(com.alipay.sdk.sys.a aVar, Context context, List<a.C0008a> list) {
         try {
-            for (a.C0048a c0048a : list) {
-                if (c0048a != null) {
-                    String str = c0048a.f4619a;
+            for (a.C0008a c0008a : list) {
+                if (c0008a != null) {
+                    String str = c0008a.a;
                     String str2 = str;
                     if (EnvUtils.isSandBox()) {
                         str2 = str;
-                        if (f4674a.equals(str)) {
+                        if (a.equals(str)) {
                             str2 = d;
                         }
                     }
@@ -472,7 +465,7 @@ public class n {
 
     public static String c() {
         String d2 = d();
-        int indexOf = d2.indexOf("-");
+        int indexOf = d2.indexOf(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         String str = d2;
         if (indexOf != -1) {
             str = d2.substring(0, indexOf);
@@ -490,7 +483,7 @@ public class n {
         String c2 = c();
         String d2 = d(context);
         String e2 = e(context);
-        return " (" + b2 + ";" + c2 + ";" + d2 + ";;" + e2 + ")(sdk android)";
+        return " (" + b2 + i.b + c2 + i.b + d2 + i.b + i.b + e2 + ")(sdk android)";
     }
 
     public static JSONObject c(String str) {
@@ -535,7 +528,7 @@ public class n {
             return String.format("%s%s", parse.getAuthority(), parse.getPath());
         } catch (Throwable th) {
             c.a(th);
-            return "-";
+            return NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
         }
     }
 
@@ -546,7 +539,7 @@ public class n {
 
     public static String f(String str) {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance(com.anythink.core.common.k.f.a);
             messageDigest.update(str.getBytes());
             return a(messageDigest.digest());
         } catch (NoSuchAlgorithmException e2) {
@@ -560,7 +553,7 @@ public class n {
 
     private static DisplayMetrics h(Context context) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
-        ((WindowManager) context.getApplicationContext().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getMetrics(displayMetrics);
+        ((WindowManager) context.getApplicationContext().getSystemService("window")).getDefaultDisplay().getMetrics(displayMetrics);
         return displayMetrics;
     }
 }

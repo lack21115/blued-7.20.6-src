@@ -112,9 +112,9 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         return ArraysKt.b(bArr, b) >= 0;
     }
 
-    public static final boolean a(char[] cArr, char c2) {
+    public static final boolean a(char[] cArr, char c) {
         Intrinsics.e(cArr, "<this>");
-        return ArraysKt.b(cArr, c2) >= 0;
+        return ArraysKt.b(cArr, c) >= 0;
     }
 
     public static final boolean a(int[] iArr, int i) {
@@ -153,7 +153,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         }
     }
 
-    public static final int b(char[] cArr, char c2) {
+    public static final int b(char[] cArr, char c) {
         Intrinsics.e(cArr, "<this>");
         int length = cArr.length;
         int i = 0;
@@ -162,7 +162,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
             if (i2 >= length) {
                 return -1;
             }
-            if (c2 == cArr[i2]) {
+            if (c == cArr[i2]) {
                 return i2;
             }
             i = i2 + 1;
@@ -276,7 +276,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         }
     }
 
-    public static final int c(char[] cArr, char c2) {
+    public static final int c(char[] cArr, char c) {
         Intrinsics.e(cArr, "<this>");
         int length = cArr.length - 1;
         if (length < 0) {
@@ -284,7 +284,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         }
         while (true) {
             int i = length - 1;
-            if (c2 == cArr[length]) {
+            if (c == cArr[length]) {
                 return length;
             }
             if (i < 0) {

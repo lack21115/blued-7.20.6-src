@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22727a;
+    private String f9119a;
     private final Map<String, c> b = new ConcurrentHashMap(16);
 
     public c a(String str) {
@@ -38,10 +38,10 @@ public class a {
     }
 
     public String b() {
-        return this.f22727a;
+        return this.f9119a;
     }
 
     public void b(String str) {
-        this.f22727a = str;
+        this.f9119a = str;
     }
 }

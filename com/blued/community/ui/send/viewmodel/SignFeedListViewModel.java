@@ -15,19 +15,15 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/viewmodel/SignFeedListViewModel.class */
 public final class SignFeedListViewModel extends BaseListViewModel<BluedIngSelfFeed> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Bundle f20089a;
+    private Bundle a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f20090c;
+    private String c;
     private boolean d = true;
     private FeedBubbleListGuideExtra e;
     private FeedBubbleListGuideExtra f;
 
     public final void a(Bundle bundle) {
-        this.f20089a = bundle;
+        this.a = bundle;
         if (bundle == null) {
             return;
         }
@@ -60,7 +56,7 @@ public final class SignFeedListViewModel extends BaseListViewModel<BluedIngSelfF
     }
 
     public final void b(String str) {
-        this.f20090c = str;
+        this.c = str;
     }
 
     public final FeedBubbleListGuideExtra c() {
@@ -103,6 +99,6 @@ public final class SignFeedListViewModel extends BaseListViewModel<BluedIngSelfF
                 signFeedListViewModel.a(feedBubbleListExtra.getTick_state_popup());
                 signFeedListViewModel.b(feedBubbleListExtra.getTick_state_release());
             }
-        }, getMPage(), "list", CityHelper.a().c(), CityHelper.a().e(), this.b, this.f20090c, (IRequestHost) null);
+        }, getMPage(), "list", CityHelper.a().c(), CityHelper.a().e(), this.b, this.c, (IRequestHost) null);
     }
 }

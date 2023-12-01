@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
 import com.blued.android.module.yy_china.R;
@@ -19,14 +18,12 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvPrizeDialog.class */
 public final class YYKtvPrizeDialog extends BaseFullScreenDialog implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYMsgKtvPrize f17313a;
+    private YYMsgKtvPrize a;
     private FragmentYyKtvPrizeDialogBinding b;
 
     public YYKtvPrizeDialog(YYMsgKtvPrize prize) {
         Intrinsics.e(prize, "prize");
-        this.f17313a = prize;
+        this.a = prize;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -38,7 +35,7 @@ public final class YYKtvPrizeDialog extends BaseFullScreenDialog implements Runn
     private final void f() {
         View view;
         FragmentYyKtvPrizeDialogBinding fragmentYyKtvPrizeDialogBinding = this.b;
-        if (fragmentYyKtvPrizeDialogBinding != null && (view = fragmentYyKtvPrizeDialogBinding.f16521a) != null) {
+        if (fragmentYyKtvPrizeDialogBinding != null && (view = fragmentYyKtvPrizeDialogBinding.a) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvPrizeDialog$s_gD6zTCGVOkY7659Hf7eMVSFL8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -46,20 +43,20 @@ public final class YYKtvPrizeDialog extends BaseFullScreenDialog implements Runn
                 }
             });
         }
-        a(this, m.ag);
-        YYMsgKtvPrize yYMsgKtvPrize = this.f17313a;
+        a(this, 3000L);
+        YYMsgKtvPrize yYMsgKtvPrize = this.a;
         ImageWrapper b = ImageLoader.a(a(), yYMsgKtvPrize.avatar).b(R.drawable.user_bg_round);
         FragmentYyKtvPrizeDialogBinding fragmentYyKtvPrizeDialogBinding2 = this.b;
         b.a(fragmentYyKtvPrizeDialogBinding2 == null ? null : fragmentYyKtvPrizeDialogBinding2.b);
         FragmentYyKtvPrizeDialogBinding fragmentYyKtvPrizeDialogBinding3 = this.b;
-        TextView textView = fragmentYyKtvPrizeDialogBinding3 == null ? null : fragmentYyKtvPrizeDialogBinding3.f16522c;
+        TextView textView = fragmentYyKtvPrizeDialogBinding3 == null ? null : fragmentYyKtvPrizeDialogBinding3.c;
         if (textView != null) {
             textView.setText(yYMsgKtvPrize.name);
         }
         FragmentYyKtvPrizeDialogBinding fragmentYyKtvPrizeDialogBinding4 = this.b;
         TextView textView2 = fragmentYyKtvPrizeDialogBinding4 == null ? null : fragmentYyKtvPrizeDialogBinding4.d;
         if (textView2 != null) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = getResources().getString(R.string.yy_ktv_clap);
             Intrinsics.c(string, "resources.getString(R.string.yy_ktv_clap)");
             String format = String.format(string, Arrays.copyOf(new Object[]{yYMsgKtvPrize.applause}, 1));
@@ -71,7 +68,7 @@ public final class YYKtvPrizeDialog extends BaseFullScreenDialog implements Runn
         if (textView3 == null) {
             return;
         }
-        StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
         String string2 = getResources().getString(R.string.yy_ktv_got_gift);
         Intrinsics.c(string2, "resources.getString(R.string.yy_ktv_got_gift)");
         String format2 = String.format(string2, Arrays.copyOf(new Object[]{yYMsgKtvPrize.gift}, 1));
@@ -79,7 +76,7 @@ public final class YYKtvPrizeDialog extends BaseFullScreenDialog implements Runn
         textView3.setText(format2);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_ktv_prize_dialog, viewGroup, true);

@@ -47,6 +47,7 @@ import com.soft.blued.ui.home.HomeTabClick;
 import com.soft.blued.ui.msg.model.GroupGuideModel;
 import com.soft.blued.ui.msg.model.MessageTabModel;
 import com.soft.blued.ui.msg.observer.MessageSetSelectedTab;
+import com.soft.blued.ui.msg.presenter.MsgPresenter;
 import com.soft.blued.ui.msg_group.fragment.MyGroupFragmentNew;
 import com.soft.blued.ui.notify.fragment.SystemNoticeFragment;
 import com.soft.blued.utils.BluedPreferences;
@@ -58,10 +59,10 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
     public static int b = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    public List<MessageTabModel> f31712a;
+    public List<MessageTabModel> f18022a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31713c;
+    private Context f18023c;
     @BindView
     ImageView cttLeft;
     @BindView
@@ -91,18 +92,18 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return MessagePageFragment.this.f31712a.size();
+            return MessagePageFragment.this.f18022a.size();
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i != 1) {
                 MessagePageFragment messagePageFragment = MessagePageFragment.this;
-                messagePageFragment.k = (SystemNoticeFragment) messagePageFragment.f31712a.get(i).getFragment();
+                messagePageFragment.k = messagePageFragment.f18022a.get(i).getFragment();
                 return MessagePageFragment.this.k;
             }
             MessagePageFragment messagePageFragment2 = MessagePageFragment.this;
-            messagePageFragment2.g = (MsgFragment) messagePageFragment2.f31712a.get(i).getFragment();
+            messagePageFragment2.g = messagePageFragment2.f18022a.get(i).getFragment();
             Bundle bundle = new Bundle();
             bundle.putString("details", MessagePageFragment.this.l);
             MessagePageFragment.this.g.setArguments(bundle);
@@ -112,7 +113,7 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return MessagePageFragment.this.f31712a.get(i).title;
+            return MessagePageFragment.this.f18022a.get(i).title;
         }
     }
 
@@ -148,25 +149,25 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
     /* JADX INFO: Access modifiers changed from: private */
     public void b(int i) {
         if (i == 1) {
-            this.cttRight.setImageDrawable(BluedSkinUtils.b(this.f31713c, R.drawable.icon_title_filter_off));
+            this.cttRight.setImageDrawable(BluedSkinUtils.b(this.f18023c, (int) R.drawable.icon_title_filter_off));
         } else {
-            this.cttRight.setImageDrawable(BluedSkinUtils.b(this.f31713c, R.drawable.icon_title_delete));
+            this.cttRight.setImageDrawable(BluedSkinUtils.b(this.f18023c, (int) R.drawable.icon_title_delete));
         }
     }
 
     private void c() {
         if (StatusBarHelper.a()) {
-            this.findBadgeContainer.setPadding(0, StatusBarHelper.a((Context) getActivity()), 0, 0);
+            this.findBadgeContainer.setPadding(0, StatusBarHelper.a(getActivity()), 0, 0);
         }
         this.vpIndicator.b(2131101780, 2);
         ViewGroup.LayoutParams layoutParams = this.vpIndicator.getLayoutParams();
-        int a2 = DensityUtils.a(this.f31713c, 50.0f);
+        int a2 = DensityUtils.a(this.f18023c, 50.0f);
         ((ViewGroup.MarginLayoutParams) layoutParams).setMargins(a2, 0, a2, 0);
         this.vpIndicator.setLayoutParams(layoutParams);
         if (BlueAppLocal.d()) {
             return;
         }
-        this.vpIndicator.setTabPaddingLeftRight(DensityUtils.a(this.f31713c, 5.0f));
+        this.vpIndicator.setTabPaddingLeftRight(DensityUtils.a(this.f18023c, 5.0f));
     }
 
     private void d() {
@@ -199,7 +200,6 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
         }
         ChatHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<GroupGuideModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.msg.MessagePageFragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(final BluedEntityA<GroupGuideModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
@@ -216,7 +216,7 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
     }
 
     private void e() {
-        this.cttLeft.setVisibility(BluedConstant.f28239a ? 4 : 0);
+        this.cttLeft.setVisibility(BluedConstant.f14549a ? 4 : 0);
         String str = "icon_msg_list_my_group_animation.png";
         if (!BluedSkinUtils.c()) {
             str = "dark_icon_msg_list_my_group_animation.png";
@@ -244,7 +244,7 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                MyGroupFragmentNew.f32768a.a(MessagePageFragment.this.getContext(), null);
+                MyGroupFragmentNew.f19077a.a(MessagePageFragment.this.getContext(), null);
             }
         });
         this.cttRight.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.MessagePageFragment.8
@@ -265,7 +265,7 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        final BasePopupView h = new XPopup.Builder(getContext()).a(this.cttLeft).d((Boolean) false).b(-DensityUtils.a(getContext(), 3.0f)).c(-DensityUtils.a(getContext(), 8.0f)).a(PopupPosition.Bottom).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) new CommonGuidePop(getContext(), str, NinePatchUtils.GuideArrowPosition.LEFT, 2131232900)).h();
+        final BasePopupView h = new XPopup.Builder(getContext()).a(this.cttLeft).d(false).b(-DensityUtils.a(getContext(), 3.0f)).c(-DensityUtils.a(getContext(), 8.0f)).a(PopupPosition.d).a(PopupAnimation.a).a(new CommonGuidePop(getContext(), str, NinePatchUtils.GuideArrowPosition.a, 2131232900)).h();
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.msg.MessagePageFragment.5
             @Override // java.lang.Runnable
             public void run() {
@@ -302,7 +302,7 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
                 if (i == 1) {
                     for (Fragment fragment : MessagePageFragment.this.getChildFragmentManager().getFragments()) {
                         if (fragment instanceof MsgFragment) {
-                            ((MsgFragment) fragment).j().z();
+                            ((MsgPresenter) ((MsgFragment) fragment).j()).z();
                         }
                     }
                 }
@@ -330,10 +330,9 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
         b(i);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f31712a = MessageTabModel.getMessageTabs(this.f31713c);
+        this.f18022a = MessageTabModel.getMessageTabs(this.f18023c);
         if (getActivity() != null && (getActivity() instanceof HomeActivity)) {
             this.m = ((HomeActivity) getActivity()).g();
         }
@@ -368,16 +367,15 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
         a(true, str);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_message_page;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         HomeTabClick.a("msg", this);
-        this.f31713c = getActivity();
+        this.f18023c = getActivity();
         MessageSetSelectedTab.a().a(this);
         SystemNoticeViewModel systemNoticeViewModel = (SystemNoticeViewModel) ViewModelProviders.of(getActivity()).get(SystemNoticeViewModel.class);
         systemNoticeViewModel.f.observe(this, new Observer<Integer>() { // from class: com.soft.blued.ui.msg.MessagePageFragment.1
@@ -424,7 +422,6 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
         MessageEventUtils.c("MESSAGE_SHOW");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         Logger.e("MessagePageFragment", "onDestroy ... ");
@@ -432,13 +429,11 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
         HomeTabClick.b("msg", this);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         Logger.e("MessagePageFragment", "onDestroyView ... ");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         e();
@@ -457,16 +452,14 @@ public class MessagePageFragment extends MvpFragment<MvpPresenter> implements Ho
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        if (BluedConstant.f28239a) {
+        if (BluedConstant.f14549a) {
             return;
         }
         d();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }

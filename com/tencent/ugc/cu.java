@@ -5,13 +5,13 @@ package com.tencent.ugc;
 public final /* synthetic */ class cu implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final cu f40304a = new cu();
+    private static final cu f26613a = new cu();
 
     private cu() {
     }
 
     public static Runnable a() {
-        return f40304a;
+        return f26613a;
     }
 
     @Override // java.lang.Runnable

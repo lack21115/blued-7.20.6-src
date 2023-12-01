@@ -16,7 +16,7 @@ public class BroadcastFragment extends KeyBoardFragment {
         }
     };
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         IntentFilter intentFilter = new IntentFilter();
@@ -24,7 +24,7 @@ public class BroadcastFragment extends KeyBoardFragment {
         getActivity().registerReceiver(this.b, intentFilter);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDetach() {
         super.onDetach();
         getActivity().unregisterReceiver(this.b);

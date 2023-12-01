@@ -3,7 +3,6 @@ package android.content.pm;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.UserHandle;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/pm/PackageStats.class */
 public class PackageStats implements Parcelable {
@@ -109,7 +108,7 @@ public class PackageStats implements Parcelable {
             sb.append(" obb=");
             sb.append(this.externalObbSize);
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

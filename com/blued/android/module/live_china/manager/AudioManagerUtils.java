@@ -12,9 +12,7 @@ import com.blued.android.core.utils.Log;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/AudioManagerUtils.class */
 public class AudioManagerUtils {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f13566c = AudioManagerUtils.class.getSimpleName();
+    private static final String c = AudioManagerUtils.class.getSimpleName();
     private static AudioManagerUtils h;
     AudioFocusCallback b;
     private AudioManager d;
@@ -38,9 +36,7 @@ public class AudioManagerUtils {
             return false;
         }
     });
-
-    /* renamed from: a  reason: collision with root package name */
-    AudioManager.OnAudioFocusChangeListener f13567a = new AudioManager.OnAudioFocusChangeListener() { // from class: com.blued.android.module.live_china.manager.AudioManagerUtils.2
+    AudioManager.OnAudioFocusChangeListener a = new AudioManager.OnAudioFocusChangeListener() { // from class: com.blued.android.module.live_china.manager.AudioManagerUtils.2
         @Override // android.media.AudioManager.OnAudioFocusChangeListener
         public void onAudioFocusChange(int i) {
             Log.c("==xpm", "audioFocusChangeListener:" + i);
@@ -84,11 +80,11 @@ public class AudioManagerUtils {
         if (this.d != null) {
             try {
                 if (Build.VERSION.SDK_INT < 26) {
-                    requestAudioFocus = this.d.requestAudioFocus(this.f13567a, 3, 1);
+                    requestAudioFocus = this.d.requestAudioFocus(this.a, 3, 1);
                     str = " requestAudioFocus: SDK_INT < 26,";
                 } else {
                     if (this.e == null) {
-                        this.e = new AudioFocusRequest.Builder(1).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setAcceptsDelayedFocusGain(true).setOnAudioFocusChangeListener(this.f13567a).build();
+                        this.e = new AudioFocusRequest.Builder(1).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setAcceptsDelayedFocusGain(true).setOnAudioFocusChangeListener(this.a).build();
                     }
                     Log.c("==xpm", "executeRequestAudio 1");
                     requestAudioFocus = this.d.requestAudioFocus(this.e);
@@ -98,7 +94,7 @@ public class AudioManagerUtils {
                     this.f = true;
                 }
                 if (AppInfo.m()) {
-                    String str2 = f13566c;
+                    String str2 = c;
                     Log.b(str2, str + " SDK_INT = " + Build.VERSION.SDK_INT + " , requestFocusResult = " + requestAudioFocus);
                 }
             } catch (Exception e) {
@@ -119,11 +115,11 @@ public class AudioManagerUtils {
             if (this.d != null) {
                 try {
                     if (Build.VERSION.SDK_INT < 26) {
-                        abandonAudioFocusRequest = this.d.abandonAudioFocus(this.f13567a);
+                        abandonAudioFocusRequest = this.d.abandonAudioFocus(this.a);
                         str = " abandonAudioFocus: SDK_INT < 26,";
                     } else {
                         if (this.e == null) {
-                            this.e = new AudioFocusRequest.Builder(1).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setOnAudioFocusChangeListener(this.f13567a).setAcceptsDelayedFocusGain(true).build();
+                            this.e = new AudioFocusRequest.Builder(1).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(3).build()).setOnAudioFocusChangeListener(this.a).setAcceptsDelayedFocusGain(true).build();
                         }
                         Log.c("==xpm", "executeAbandonAudio 1");
                         abandonAudioFocusRequest = this.d.abandonAudioFocusRequest(this.e);
@@ -133,7 +129,7 @@ public class AudioManagerUtils {
                         this.f = false;
                     }
                     if (AppInfo.m()) {
-                        String str2 = f13566c;
+                        String str2 = c;
                         Log.b(str2, str + " SDK_INT = " + Build.VERSION.SDK_INT + " , abandonFocusResult = " + abandonAudioFocusRequest);
                     }
                 } catch (Exception e) {

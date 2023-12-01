@@ -10,20 +10,20 @@ public class g5 extends d5 {
     public static final g5 d = new g5(Collections.emptyList(), 0, 0);
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<ScanResult> f3822a;
+    public final List<ScanResult> f3774a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f3823c;
+    public final int f3775c;
 
     public g5(List<ScanResult> list, long j, int i) {
         this.b = j;
-        this.f3823c = i;
-        this.f3822a = new ArrayList(list);
+        this.f3775c = i;
+        this.f3774a = new ArrayList(list);
     }
 
     public List<ScanResult> a() {
-        return Collections.unmodifiableList(this.f3822a);
+        return Collections.unmodifiableList(this.f3774a);
     }
 
     public boolean a(long j, long j2) {
@@ -34,8 +34,8 @@ public class g5 extends d5 {
         if (g5Var == null) {
             return false;
         }
-        List<ScanResult> list = g5Var.f3822a;
-        List<ScanResult> list2 = this.f3822a;
+        List<ScanResult> list = g5Var.f3774a;
+        List<ScanResult> list2 = this.f3774a;
         if (list == null || list2 == null || list.size() == 0 || list2.size() == 0) {
             return false;
         }
@@ -47,6 +47,6 @@ public class g5 extends d5 {
     }
 
     public int c() {
-        return this.f3823c;
+        return this.f3775c;
     }
 }

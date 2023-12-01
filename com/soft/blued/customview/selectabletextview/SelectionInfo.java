@@ -7,11 +7,11 @@ import android.widget.TextView;
 public class SelectionInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f28650a;
+    public String f14960a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28651c;
+    private int f14961c;
 
     public int a(Spannable spannable) {
         if (spannable == null) {
@@ -49,10 +49,10 @@ public class SelectionInfo {
         if (spannable == null) {
             return 0;
         }
-        if (this.f28651c > spannable.length()) {
+        if (this.f14961c > spannable.length()) {
             return spannable.length();
         }
-        int i = this.f28651c;
+        int i = this.f14961c;
         if (i < 0) {
             return 0;
         }
@@ -63,10 +63,10 @@ public class SelectionInfo {
         if (textView == null) {
             return 0;
         }
-        if (this.f28651c > textView.length()) {
+        if (this.f14961c > textView.length()) {
             return textView.length();
         }
-        int i = this.f28651c;
+        int i = this.f14961c;
         if (i < 0) {
             return 0;
         }
@@ -74,6 +74,6 @@ public class SelectionInfo {
     }
 
     public void b(int i) {
-        this.f28651c = i;
+        this.f14961c = i;
     }
 }

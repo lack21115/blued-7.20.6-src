@@ -3,9 +3,8 @@ package androidx.constraintlayout.core;
 /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/Pools.class */
 final class Pools {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/Pools$Pool.class */
-    public interface Pool<T> {
+    interface Pool<T> {
         T acquire();
 
         boolean release(T t);
@@ -17,7 +16,7 @@ final class Pools {
     static class SimplePool<T> implements Pool<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Object[] f1992a;
+        private final Object[] f1944a;
         private int b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -25,7 +24,7 @@ final class Pools {
             if (i <= 0) {
                 throw new IllegalArgumentException("The max pool size must be > 0");
             }
-            this.f1992a = new Object[i];
+            this.f1944a = new Object[i];
         }
 
         @Override // androidx.constraintlayout.core.Pools.Pool
@@ -33,7 +32,7 @@ final class Pools {
             int i = this.b;
             if (i > 0) {
                 int i2 = i - 1;
-                Object[] objArr = this.f1992a;
+                Object[] objArr = this.f1944a;
                 T t = (T) objArr[i2];
                 objArr[i2] = null;
                 this.b = i - 1;
@@ -45,7 +44,7 @@ final class Pools {
         @Override // androidx.constraintlayout.core.Pools.Pool
         public boolean release(T t) {
             int i = this.b;
-            Object[] objArr = this.f1992a;
+            Object[] objArr = this.f1944a;
             if (i < objArr.length) {
                 objArr[i] = t;
                 this.b = i + 1;
@@ -68,7 +67,7 @@ final class Pools {
                 }
                 T t = tArr[i4];
                 int i5 = this.b;
-                Object[] objArr = this.f1992a;
+                Object[] objArr = this.f1944a;
                 if (i5 < objArr.length) {
                     objArr[i5] = t;
                     this.b = i5 + 1;

@@ -9,7 +9,7 @@ import com.soft.blued.utils.BluedPreferences;
 public class FontAdjustTextHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String[] f28548a = {"A", "标准", "", "", "A"};
+    private static String[] f14858a = {"A", "标准", "", "", "A"};
     private static int[] b = {13, 14, 16, 18, 24};
 
     public static int a() {
@@ -37,8 +37,8 @@ public class FontAdjustTextHelper {
     }
 
     public static String[] c() {
-        f28548a[1] = AppUtils.a((int) R.string.setting_text_size_standard);
-        return f28548a;
+        f14858a[1] = AppUtils.a((int) R.string.setting_text_size_standard);
+        return f14858a;
     }
 
     public static int[] d() {

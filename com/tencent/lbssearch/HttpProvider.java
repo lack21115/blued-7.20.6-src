@@ -3,6 +3,7 @@ package com.tencent.lbssearch;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.lbssearch.httpresponse.BaseObject;
 import com.tencent.lbssearch.object.RequestParams;
 import com.tencent.map.tools.json.JsonUtils;
@@ -25,18 +26,18 @@ public class HttpProvider {
     public static final class a<T> extends AsyncTask<Void, Void, T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f36208a;
+        public final /* synthetic */ String f22517a;
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ RequestParams f36209c;
+        public final /* synthetic */ RequestParams f22518c;
         public final /* synthetic */ Class d;
         public final /* synthetic */ HttpResponseListener e;
 
         public a(String str, String str2, RequestParams requestParams, Class cls, HttpResponseListener httpResponseListener) {
-            this.f36208a = str;
+            this.f22517a = str;
             this.b = str2;
-            this.f36209c = requestParams;
+            this.f22518c = requestParams;
             this.d = cls;
             this.e = httpResponseListener;
         }
@@ -45,8 +46,8 @@ public class HttpProvider {
         @Override // android.os.AsyncTask
         /* renamed from: a */
         public BaseObject doInBackground(Void... voidArr) {
-            NetResponse doGet = NetManager.getInstance().builder(this.f36208a).url(HttpProvider.getUrlWithQueryString(this.b, this.f36209c)).doGet();
-            if (this.f36209c.isDebuggable()) {
+            NetResponse doGet = NetManager.getInstance().builder(this.f22517a).url(HttpProvider.getUrlWithQueryString(this.b, this.f22518c)).doGet();
+            if (this.f22518c.isDebuggable()) {
                 Log.v("TencentSearch", "[RESP]:\n" + doGet);
             }
             return HttpProvider.parse(doGet, this.d);
@@ -109,7 +110,7 @@ public class HttpProvider {
                 if (!trim.equals("?")) {
                     StringBuilder sb = new StringBuilder();
                     sb.append(decodeUrl);
-                    sb.append(decodeUrl.contains("?") ? "&" : "?");
+                    sb.append(decodeUrl.contains("?") ? ContainerUtils.FIELD_DELIMITER : "?");
                     str2 = sb.toString() + trim;
                 }
             }

@@ -30,7 +30,7 @@ public class bh {
     public static final String Z = "battery";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40654a = "devicetoken";
+    public static final String f26963a = "devicetoken";
     public static final String aA = "p";
     public static final String aB = "pr";
     public static final String aC = "pl";
@@ -76,7 +76,7 @@ public class bh {
     public static final String aq = "issys";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f40655ar = "xpus";
+    public static final String f26964ar = "xpus";
     public static final String as = "rpus";
     public static final String at = "analytics";
     public static final String au = "dplus";
@@ -108,7 +108,7 @@ public class bh {
     public static final String bt = "policy";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40656c = "com_type";
+    public static final String f26965c = "com_type";
     public static final String d = "mini_ver";
     public static final String e = "module";
     public static final String f = "umtt";

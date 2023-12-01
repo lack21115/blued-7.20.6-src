@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentFindSearchMapBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28824a;
+    private final ConstraintLayout f15134a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28824a;
+        return this.f15134a;
     }
 }

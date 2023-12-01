@@ -32,9 +32,9 @@ public class ResponseHandlerUtil {
             return;
         }
         try {
-            String a2 = c.a(mtopResponse.e(), "x-systime");
-            if (StringUtils.a(a2)) {
-                a.a("t_offset", String.valueOf(Long.parseLong(a2) - (System.currentTimeMillis() / 1000)));
+            String a = c.a(mtopResponse.e(), "x-systime");
+            if (StringUtils.a(a)) {
+                a.a("t_offset", String.valueOf(Long.parseLong(a) - (System.currentTimeMillis() / 1000)));
             }
         } catch (Exception e) {
             TBSdkLog.b("mtopsdk.ResponseHandlerUtil", "[computeTimeOffset]parse systime from mtop response data error", e);

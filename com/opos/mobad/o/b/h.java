@@ -14,11 +14,11 @@ import java.util.List;
 public abstract class h extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f27052a;
+    private boolean f13364a;
 
     public h(Context context, d dVar, FrameLayout frameLayout, boolean z) {
         super(context, dVar, frameLayout, z);
-        this.f27052a = false;
+        this.f13364a = false;
     }
 
     private void a(Context context, final String str) {
@@ -116,7 +116,7 @@ public abstract class h extends a {
     }
 
     public void W() {
-        this.f27052a = true;
+        this.f13364a = true;
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.2
             @Override // java.lang.Runnable
             public void run() {
@@ -171,7 +171,7 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.6
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 h.this.ah();
@@ -207,7 +207,7 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.9
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 if (!TextUtils.isEmpty(h.this.A) && h.this.A.equals(str)) {
@@ -216,7 +216,7 @@ public abstract class h extends a {
                         h.this.a(j, h.this.R());
                     }
                     if (h.this.u != null) {
-                        h.this.u.c(h.this.n, h.this.f27042c, j);
+                        h.this.u.c(h.this.n, h.this.f13354c, j);
                     }
                 }
                 h.this.s();
@@ -338,7 +338,7 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.1
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a || h.this.e == null) {
+                if (h.this.f13364a || h.this.e == null) {
                     return;
                 }
                 h.this.B = 0;
@@ -353,17 +353,17 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.4
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 h hVar = h.this;
-                hVar.a(hVar.f27042c);
+                hVar.a(hVar.f13354c);
                 if (h.this.e != null && h.this.h != null) {
                     h.this.h.setText(com.opos.mobad.cmn.a.b.e.a(k.a().d(h.this.A)));
                 }
                 h.this.ad();
                 if (h.this.u != null) {
-                    h.this.u.a(h.this.n, h.this.f27042c);
+                    h.this.u.a(h.this.n, h.this.f13354c);
                 }
             }
         });
@@ -375,7 +375,7 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.5
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 if (h.this.e != null) {
@@ -383,7 +383,7 @@ public abstract class h extends a {
                 }
                 h.this.ag();
                 if (h.this.u != null) {
-                    h.this.u.b(h.this.n, h.this.f27042c);
+                    h.this.u.b(h.this.n, h.this.f13354c);
                 }
             }
         });
@@ -395,7 +395,7 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.7
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 if (h.this.e != null && h.this.h != null && h.this.g != null) {
@@ -412,7 +412,7 @@ public abstract class h extends a {
                 }
                 h.this.af();
                 if (h.this.u != null) {
-                    h.this.u.b(h.this.n, h.this.f27042c, k.a().e(h.this.A));
+                    h.this.u.b(h.this.n, h.this.f13354c, k.a().e(h.this.A));
                 }
             }
         });
@@ -424,12 +424,12 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.8
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 h.this.ae();
                 if (h.this.u != null) {
-                    h.this.u.a(h.this.n, h.this.f27042c, k.a().e(h.this.A));
+                    h.this.u.a(h.this.n, h.this.f13354c, k.a().e(h.this.A));
                 }
             }
         });
@@ -441,7 +441,7 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.10
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 h.this.ab();
@@ -455,7 +455,7 @@ public abstract class h extends a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.h.11
             @Override // java.lang.Runnable
             public void run() {
-                if (h.this.f27052a) {
+                if (h.this.f13364a) {
                     return;
                 }
                 h.this.ac();
@@ -469,7 +469,7 @@ public abstract class h extends a {
 
     @Override // com.opos.mobad.o.b.a
     protected void r() {
-        if (this.f27042c == null || this.l == null || this.l.getDrawable() != null || a(this.f27042c)) {
+        if (this.f13354c == null || this.l == null || this.l.getDrawable() != null || a(this.f13354c)) {
             super.r();
         } else {
             s();

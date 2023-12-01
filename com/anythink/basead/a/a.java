@@ -10,30 +10,26 @@ import com.anythink.core.common.e.k;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    com.anythink.basead.d f5822a;
+    com.anythink.basead.d a;
     com.anythink.core.common.k.a.c b;
     private View d;
     private com.anythink.core.common.e.j e;
-    private InterfaceC0066a f;
+    private InterfaceC0026a f;
     private Application.ActivityLifecycleCallbacks i;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f5823c = getClass().getSimpleName();
+    private final String c = getClass().getSimpleName();
     private Activity g = null;
     private boolean h = false;
 
     /* renamed from: com.anythink.basead.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/a$a.class */
-    public interface InterfaceC0066a {
+    public interface InterfaceC0026a {
         void a(int i);
     }
 
-    public a(View view, com.anythink.core.common.e.j jVar, InterfaceC0066a interfaceC0066a) {
+    public a(View view, com.anythink.core.common.e.j jVar, InterfaceC0026a interfaceC0026a) {
         this.d = view;
         this.e = jVar;
-        this.f = interfaceC0066a;
+        this.f = interfaceC0026a;
         Context applicationContext = view.getContext().getApplicationContext();
         Context g = applicationContext instanceof Application ? applicationContext : n.a().g();
         final Context context = g;
@@ -49,7 +45,7 @@ public final class a {
             @Override // com.anythink.basead.a, android.app.Application.ActivityLifecycleCallbacks
             public final void onActivityPaused(Activity activity) {
                 if (a.this.g == activity || a.b(a.this)) {
-                    a.this.f5822a.b();
+                    a.this.a.b();
                 }
             }
 
@@ -69,7 +65,7 @@ public final class a {
         } catch (Exception e) {
             com.anythink.core.common.j.c.a("Error", "Error, cannot registerActivityLifecycleCallbacks here!", n.a().r());
         }
-        this.f5822a = new com.anythink.basead.d(this.e.m.G(), new Runnable() { // from class: com.anythink.basead.a.a.2
+        this.a = new com.anythink.basead.d(this.e.m.G(), new Runnable() { // from class: com.anythink.basead.a.a.2
             @Override // java.lang.Runnable
             public final void run() {
                 a.this.a(2);
@@ -235,7 +231,7 @@ public final class a {
     }
 
     private void f() {
-        this.f5822a.b();
+        this.a.b();
     }
 
     public final void a() {
@@ -244,7 +240,7 @@ public final class a {
         if (kVar.F() != 2 || kVar.G() < 0) {
             return;
         }
-        this.f5822a.a();
+        this.a.a();
     }
 
     public final void b() {
@@ -252,7 +248,7 @@ public final class a {
             ((Application) n.a().g()).unregisterActivityLifecycleCallbacks(this.i);
             this.i = null;
         }
-        this.f5822a.c();
+        this.a.c();
         com.anythink.core.common.k.a.c cVar = this.b;
         if (cVar != null) {
             cVar.b();

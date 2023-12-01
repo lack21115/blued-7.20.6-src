@@ -25,7 +25,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.sdk.core.network.idc.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/network/idc/a$a.class */
-    public static final class C0563a {
+    public static final class C0393a {
         private static final a ahq = new a((byte) 0);
     }
 
@@ -132,7 +132,7 @@ public final class a {
     }
 
     public static a wm() {
-        return C0563a.ahq;
+        return C0393a.ahq;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

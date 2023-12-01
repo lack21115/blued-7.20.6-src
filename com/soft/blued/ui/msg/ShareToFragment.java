@@ -24,11 +24,11 @@ import com.soft.blued.ui.msg.model.ShareToMsgEntity;
 public class ShareToFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Bundle f31920a;
+    private Bundle f18230a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewPager f31921c;
+    private ViewPager f18231c;
     private CommonTopTitleNoTrans d;
     private PageTabLayout e;
     private ShapeTextView f;
@@ -50,7 +50,7 @@ public class ShareToFragment extends BaseFragment {
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            return i != 1 ? i != 2 ? ShareToChatRecentFragment.a(ShareToFragment.this.f31920a) : ShareToGroupsFragment.a(ShareToFragment.this.f31920a) : ShareToFriendsFragment.a(ShareToFragment.this.f31920a);
+            return i != 1 ? i != 2 ? ShareToChatRecentFragment.a(ShareToFragment.this.f18230a) : ShareToGroupsFragment.a(ShareToFragment.this.f18230a) : ShareToFriendsFragment.a(ShareToFragment.this.f18230a);
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
@@ -87,30 +87,27 @@ public class ShareToFragment extends BaseFragment {
         return new String[]{getResources().getString(2131891417), getResources().getString(2131888205)};
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
         this.b = context;
-        this.f31920a = getArguments();
+        this.f18230a = getArguments();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         return layoutInflater.inflate(R.layout.fragment_share_to, viewGroup, false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tab_background);
-        this.f = shapeTextView;
-        ShapeHelper.b(shapeTextView, 2131102360);
-        this.f31921c = (ViewPager) view.findViewById(R.id.vp_pagers);
-        this.d = (CommonTopTitleNoTrans) view.findViewById(R.id.cttnt_title);
-        PageTabLayout pageTabLayout = (PageTabLayout) view.findViewById(2131370555);
-        this.e = pageTabLayout;
-        pageTabLayout.setupWithViewPager(this.f31921c);
-        this.f31921c.setAdapter(new MyAdapter(getFragmentManager()));
+        ShapeTextView findViewById = view.findViewById(R.id.tab_background);
+        this.f = findViewById;
+        ShapeHelper.b(findViewById, 2131102360);
+        this.f18231c = (ViewPager) view.findViewById(R.id.vp_pagers);
+        this.d = view.findViewById(R.id.cttnt_title);
+        PageTabLayout findViewById2 = view.findViewById(R.id.tablayout);
+        this.e = findViewById2;
+        findViewById2.setupWithViewPager(this.f18231c);
+        this.f18231c.setAdapter(new MyAdapter(getFragmentManager()));
         this.d.a();
         this.d.setLeftImg(2131233902);
         this.d.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$ShareToFragment$hkVTXruTIWrlO8a6imuiC8HRji0
@@ -125,7 +122,7 @@ public class ShareToFragment extends BaseFragment {
         if (this.g != 1) {
             this.d.setCenterText(2131891704);
         } else {
-            this.d.setCenterText(2131887083);
+            this.d.setCenterText((int) R.string.circle_member_invitation_title);
         }
     }
 }

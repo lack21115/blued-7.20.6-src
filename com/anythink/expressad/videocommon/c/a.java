@@ -6,11 +6,11 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f8760a;
+    private String f5920a;
     private String b;
 
     private a(String str, String str2) {
-        this.f8760a = str;
+        this.f5920a = str;
         this.b = str2;
     }
 
@@ -27,11 +27,11 @@ public final class a {
     }
 
     private String a() {
-        return this.f8760a;
+        return this.f5920a;
     }
 
     private void a(String str) {
-        this.f8760a = str;
+        this.f5920a = str;
     }
 
     private String b() {

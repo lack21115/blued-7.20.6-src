@@ -1,11 +1,14 @@
 package com.soft.blued.ui.setting.fragment;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.base.mvvm.MVVMBaseFragment;
 import com.blued.android.module.common.extensions.DialogFragmentViewBindingProperty;
@@ -30,11 +33,11 @@ import kotlin.reflect.KProperty;
 public final class CustomOptionsFragment extends MVVMBaseFragment<CustomOptionsViewModel> {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f33338c;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(CustomOptionsFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentCustomOptionsBinding;", 0))};
+    private final ViewBindingProperty f19647c;
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(CustomOptionsFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentCustomOptionsBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f33337a = new Companion(null);
+    public static final Companion f19646a = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/fragment/CustomOptionsFragment$Companion.class */
@@ -48,23 +51,23 @@ public final class CustomOptionsFragment extends MVVMBaseFragment<CustomOptionsV
 
         public final void a(Context context) {
             Intrinsics.e(context, "context");
-            TerminalActivity.d(context, CustomOptionsFragment.class, null);
+            TerminalActivity.d(context, CustomOptionsFragment.class, (Bundle) null);
         }
     }
 
     public CustomOptionsFragment() {
-        super(R.layout.fragment_custom_options);
-        this.f33338c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<CustomOptionsFragment, FragmentCustomOptionsBinding>() { // from class: com.soft.blued.ui.setting.fragment.CustomOptionsFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_custom_options);
+        this.f19647c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<CustomOptionsFragment, FragmentCustomOptionsBinding>() { // from class: com.soft.blued.ui.setting.fragment.CustomOptionsFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/CustomOptionsFragment;)Lcom/soft/blued/databinding/FragmentCustomOptionsBinding; */
             /* renamed from: a */
-            public final FragmentCustomOptionsBinding invoke(CustomOptionsFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentCustomOptionsBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<CustomOptionsFragment, FragmentCustomOptionsBinding>() { // from class: com.soft.blued.ui.setting.fragment.CustomOptionsFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/CustomOptionsFragment;)Lcom/soft/blued/databinding/FragmentCustomOptionsBinding; */
             /* renamed from: a */
-            public final FragmentCustomOptionsBinding invoke(CustomOptionsFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentCustomOptionsBinding.a(fragment.requireView());
             }
@@ -78,10 +81,10 @@ public final class CustomOptionsFragment extends MVVMBaseFragment<CustomOptionsV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(CustomOptionsFragment this$0, View view) {
+    public static final void a(CustomOptionsFragment customOptionsFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(customOptionsFragment, "this$0");
+        FragmentActivity activity = customOptionsFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -89,15 +92,14 @@ public final class CustomOptionsFragment extends MVVMBaseFragment<CustomOptionsV
     }
 
     private final FragmentCustomOptionsBinding p() {
-        return (FragmentCustomOptionsBinding) this.f33338c.b(this, b[0]);
+        return (FragmentCustomOptionsBinding) this.f19647c.b(this, b[0]);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         ToggleButton toggleButton;
         CommonTopTitleNoTrans commonTopTitleNoTrans;
         FragmentCustomOptionsBinding p = p();
-        if (p != null && (commonTopTitleNoTrans = p.f28807c) != null) {
+        if (p != null && (commonTopTitleNoTrans = p.f15117c) != null) {
             commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$CustomOptionsFragment$00udUKg0KFsQUW6E7UjEIZ8jUE4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -122,11 +124,9 @@ public final class CustomOptionsFragment extends MVVMBaseFragment<CustomOptionsV
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void g() {
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
     }
 }

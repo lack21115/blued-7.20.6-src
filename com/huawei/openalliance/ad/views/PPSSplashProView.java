@@ -29,11 +29,11 @@ public class PPSSplashProView extends RelativeLayout {
     private int S;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f23027a;
+    private int f9419a;
     private RoundLinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AnimatorSet f23028c;
+    private AnimatorSet f9420c;
     private AnimatorSet d;
     private AnimatorSet e;
     private AnimatorSet f;
@@ -43,21 +43,21 @@ public class PPSSplashProView extends RelativeLayout {
     public PPSSplashProView(Context context) {
         super(context);
         this.S = 1;
-        this.f23027a = 1;
+        this.f9419a = 1;
         Code(context);
     }
 
     public PPSSplashProView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.S = 1;
-        this.f23027a = 1;
+        this.f9419a = 1;
         Code(context);
     }
 
     public PPSSplashProView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.S = 1;
-        this.f23027a = 1;
+        this.f9419a = 1;
         Code(context);
     }
 
@@ -170,8 +170,8 @@ public class PPSSplashProView extends RelativeLayout {
     }
 
     private void I() {
-        ge.V("PPSSplashProView", "showLogo:" + this.L + ",orientation:" + this.f23027a);
-        if (this.L || this.f23027a != 1) {
+        ge.V("PPSSplashProView", "showLogo:" + this.L + ",orientation:" + this.f9419a);
+        if (this.L || this.f9419a != 1) {
             return;
         }
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
@@ -226,10 +226,10 @@ public class PPSSplashProView extends RelativeLayout {
             ofFloat2.setDuration(300L);
             ofFloat3.setDuration(300L);
             AnimatorSet animatorSet = new AnimatorSet();
-            this.f23028c = animatorSet;
+            this.f9420c = animatorSet;
             animatorSet.playTogether(ofFloat2, ofFloat3, ofFloat);
-            this.f23028c.setInterpolator(new fl(0.2f, 0.0f, 0.2f, 1.0f));
-            this.f23028c.addListener(new Animator.AnimatorListener() { // from class: com.huawei.openalliance.ad.views.PPSSplashProView.3
+            this.f9420c.setInterpolator(new fl(0.2f, 0.0f, 0.2f, 1.0f));
+            this.f9420c.addListener(new Animator.AnimatorListener() { // from class: com.huawei.openalliance.ad.views.PPSSplashProView.3
                 @Override // android.animation.Animator.AnimatorListener
                 public void onAnimationCancel(Animator animator) {
                 }
@@ -279,8 +279,8 @@ public class PPSSplashProView extends RelativeLayout {
                     ge.V("PPSSplashProView", "scaleAnimationDown onAnimationEnd");
                     try {
                         PPSSplashProView.this.setVisibility(0);
-                        if (PPSSplashProView.this.f23028c != null) {
-                            PPSSplashProView.this.f23028c.start();
+                        if (PPSSplashProView.this.f9420c != null) {
+                            PPSSplashProView.this.f9420c.start();
                         }
                     } catch (Throwable th) {
                         ge.I("PPSSplashProView", "up and alpha err: %s", th.getClass().getSimpleName());
@@ -318,10 +318,10 @@ public class PPSSplashProView extends RelativeLayout {
             animatorSet.cancel();
             this.d = null;
         }
-        AnimatorSet animatorSet2 = this.f23028c;
+        AnimatorSet animatorSet2 = this.f9420c;
         if (animatorSet2 != null) {
             animatorSet2.cancel();
-            this.f23028c = null;
+            this.f9420c = null;
         }
         AnimatorSet animatorSet3 = this.e;
         if (animatorSet3 != null) {
@@ -385,6 +385,6 @@ public class PPSSplashProView extends RelativeLayout {
     }
 
     public void setOrientation(int i) {
-        this.f23027a = i;
+        this.f9419a = i;
     }
 }

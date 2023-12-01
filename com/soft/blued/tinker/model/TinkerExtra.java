@@ -6,5 +6,5 @@ import com.blued.android.framework.http.parser.BluedEntityBaseExtra;
 public class TinkerExtra extends BluedEntityBaseExtra {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f29778a;
+    public int f16088a;
 }

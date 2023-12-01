@@ -26,18 +26,18 @@ public class y extends a6 implements t4 {
     public v b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ri f38119c;
+    private ri f24428c;
     public rc d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/y$a.class */
     public class a implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ List f38120a;
+        public final /* synthetic */ List f24429a;
         public final /* synthetic */ List b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f38121c;
+        public final /* synthetic */ int f24430c;
         public final /* synthetic */ int d;
         public final /* synthetic */ Rect e;
         public final /* synthetic */ int f;
@@ -45,9 +45,9 @@ public class y extends a6 implements t4 {
         public final /* synthetic */ t4.a h;
 
         public a(List list, List list2, int i, int i2, Rect rect, int i3, z zVar, t4.a aVar) {
-            this.f38120a = list;
+            this.f24429a = list;
             this.b = list2;
-            this.f38121c = i;
+            this.f24430c = i;
             this.d = i2;
             this.e = rect;
             this.f = i3;
@@ -70,7 +70,7 @@ public class y extends a6 implements t4 {
                     break;
                 }
                 y.this.b(f);
-                Rect a3 = y.this.a(this.f38120a, this.b);
+                Rect a3 = y.this.a(this.f24429a, this.b);
                 geoPoint = new GeoPoint(a3.centerY(), a3.centerX());
                 y.this.c(geoPoint);
                 GeoPoint geoPoint2 = new GeoPoint(a3.top, a3.left);
@@ -80,9 +80,9 @@ public class y extends a6 implements t4 {
                 Rect rect = new Rect();
                 rect.left = (int) Math.min(a4.b, a5.b);
                 rect.right = (int) Math.max(a4.b, a5.b);
-                rect.top = (int) Math.min(a4.f37683c, a5.f37683c);
-                rect.bottom = (int) Math.max(a4.f37683c, a5.f37683c);
-                if (this.f38121c < rect.width() || this.d < rect.height()) {
+                rect.top = (int) Math.min(a4.f23992c, a5.f23992c);
+                rect.bottom = (int) Math.max(a4.f23992c, a5.f23992c);
+                if (this.f24430c < rect.width() || this.d < rect.height()) {
                     f2 = f / 1.01f;
                 } else if (!y.this.c()) {
                     geoPoint = y.this.a(geoPoint, this.e);
@@ -110,7 +110,7 @@ public class y extends a6 implements t4 {
 
     public y(e1 e1Var) {
         super(4.007501668E7d);
-        this.f38119c = e1Var.f();
+        this.f24428c = e1Var.f();
         this.b = e1Var.b();
         if (e1Var instanceof rc) {
             this.d = (rc) e1Var;
@@ -258,7 +258,7 @@ public class y extends a6 implements t4 {
         if (geoPoint == null || (a2 = a(geoPoint)) == null || rect == null) {
             return null;
         }
-        return a(new p5(a2.b - ((rect.left - rect.right) * 0.5d), a2.f37683c - ((rect.top - rect.bottom) * 0.5d)));
+        return a(new p5(a2.b - ((rect.left - rect.right) * 0.5d), a2.f23992c - ((rect.top - rect.bottom) * 0.5d)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -270,7 +270,7 @@ public class y extends a6 implements t4 {
             return null;
         }
         double d3 = a2.b;
-        double d4 = a2.f37683c;
+        double d4 = a2.f23992c;
         Rect rect = new Rect(this.d.e());
         int width = rect.width();
         int height = rect.height();
@@ -312,7 +312,7 @@ public class y extends a6 implements t4 {
     private LatLng a(Context context, p5 p5Var) {
         double d = g7.d(context) * 2.68435456E8f;
         double d2 = d / 2.0d;
-        return new LatLng((Math.asin(1.0d - (2.0d / (Math.pow(2.718281828459045d, ((p5Var.f37683c - d2) / 0.5d) / (d / 6.283185307179586d)) + 1.0d))) * 180.0d) / 3.141592653589793d, (p5Var.b - d2) / (d / 360.0d));
+        return new LatLng((Math.asin(1.0d - (2.0d / (Math.pow(2.718281828459045d, ((p5Var.f23992c - d2) / 0.5d) / (d / 6.283185307179586d)) + 1.0d))) * 180.0d) / 3.141592653589793d, (p5Var.b - d2) / (d / 360.0d));
     }
 
     public static x5 b(GeoPoint geoPoint) {
@@ -334,7 +334,7 @@ public class y extends a6 implements t4 {
             return null;
         }
         p5 b = this.b.b();
-        return new p5((this.b.r().width() / 2) + (p5Var.b - b.b), (this.b.r().height() / 2) - (p5Var.f37683c - b.f37683c));
+        return new p5((this.b.r().width() / 2) + (p5Var.b - b.b), (this.b.r().height() / 2) - (p5Var.f23992c - b.f23992c));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -399,12 +399,12 @@ public class y extends a6 implements t4 {
         byte[] y = this.b.y();
         Rect r = this.b.r();
         int height = r.height();
-        float A = this.f38119c.A();
+        float A = this.f24428c.A();
         float f2 = A;
         if (String.valueOf(A).equals("960.0")) {
             f2 = height;
         }
-        double d = p5Var.f37683c;
+        double d = p5Var.f23992c;
         double d2 = d;
         if (d >= r.top) {
             double d3 = (i + height) - f2;
@@ -426,7 +426,7 @@ public class y extends a6 implements t4 {
                 f5 = f4 - f0.top;
             }
         }
-        return this.f38119c.a(y, f6, f5);
+        return this.f24428c.a(y, f6, f5);
     }
 
     @Override // com.tencent.mapsdk.internal.t4
@@ -446,7 +446,7 @@ public class y extends a6 implements t4 {
         }
         double latitudeE6 = geoPoint.getLatitudeE6() / 1000000.0d;
         double longitudeE6 = geoPoint.getLongitudeE6() / 1000000.0d;
-        PointF a2 = this.f38119c.a(this.b.y(), latitudeE6, longitudeE6);
+        PointF a2 = this.f24428c.a(this.b.y(), latitudeE6, longitudeE6);
         float f2 = a2.x;
         float f3 = a2.y;
         rc rcVar = this.d;
@@ -500,7 +500,7 @@ public class y extends a6 implements t4 {
         }
         matrix.mapPoints(new float[2], new float[]{pointF.x, pointF.y});
         double q = (2.003750834E7d / ((1 << this.b.q()) * 256)) * c7.w();
-        return b(new p5(c2.b + ((fArr[0] - pointF2.x) * q), c2.f37683c + ((fArr[1] - pointF2.y) * q)));
+        return b(new p5(c2.b + ((fArr[0] - pointF2.x) * q), c2.f23992c + ((fArr[1] - pointF2.y) * q)));
     }
 
     @Override // com.tencent.mapsdk.internal.t4
@@ -602,9 +602,9 @@ public class y extends a6 implements t4 {
         }
         float[] fArr = new float[16];
         android.opengl.Matrix.setIdentityM(fArr, 0);
-        float[] G = this.f38119c.G();
-        float[] H = this.f38119c.H();
-        GeoPoint n = this.f38119c.n();
+        float[] G = this.f24428c.G();
+        float[] H = this.f24428c.H();
+        GeoPoint n = this.f24428c.n();
         android.opengl.Matrix.multiplyMM(fArr, 0, G, 0, H, 0);
         PointF b = b(fa.d(n));
         android.opengl.Matrix.translateM(fArr, 0, pointF.x - b.x, b.y - pointF.y, 0.0f);
@@ -614,12 +614,12 @@ public class y extends a6 implements t4 {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.Projection
     public float glPixelRatio() {
-        return this.f38119c.I();
+        return this.f24428c.I();
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.Projection
     public float[] glProjectionMatrix() {
-        return this.f38119c.G();
+        return this.f24428c.G();
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.Projection
@@ -629,7 +629,7 @@ public class y extends a6 implements t4 {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.Projection
     public float[] glViewMatrix() {
-        return this.f38119c.H();
+        return this.f24428c.H();
     }
 
     @Override // com.tencent.mapsdk.internal.t4, com.tencent.tencentmap.mapsdk.maps.Projection
@@ -639,7 +639,7 @@ public class y extends a6 implements t4 {
 
     @Override // com.tencent.tencentmap.mapsdk.maps.Projection
     public Point toScreenLocation(LatLng latLng) {
-        PointF a2 = this.f38119c.a(this.b.y(), latLng.latitude, latLng.longitude);
+        PointF a2 = this.f24428c.a(this.b.y(), latLng.latitude, latLng.longitude);
         float f2 = a2.x;
         float f3 = a2.y;
         rc rcVar = this.d;
@@ -657,7 +657,7 @@ public class y extends a6 implements t4 {
         p5 p5Var = new p5(f4, f5);
         Point point = new Point();
         point.x = (int) Math.round(p5Var.b);
-        point.y = (int) Math.round(p5Var.f37683c);
+        point.y = (int) Math.round(p5Var.f23992c);
         return point;
     }
 }

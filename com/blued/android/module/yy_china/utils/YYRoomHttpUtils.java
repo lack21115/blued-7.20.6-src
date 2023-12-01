@@ -1,12 +1,14 @@
 package com.blued.android.module.yy_china.utils;
 
 import android.content.Context;
-import android.os.BatteryManager;
-import android.provider.SearchIndexablesContract;
-import android.provider.ThemesContract;
-import android.provider.UserDictionary;
 import android.text.TextUtils;
+import com.alipay.sdk.cons.c;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.api.ATAdConst;
+import com.anythink.core.common.b.e;
+import com.anythink.core.common.l;
 import com.blued.android.chat.core.pack.ReqAckPackage;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -20,14 +22,7 @@ import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
 import com.blued.android.module.yy_china.model.YYPayRemaining;
 import com.blued.android.module.yy_china.model.YYReportMsg;
 import com.blued.android.module.yy_china.model.YYWishRequestModel;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.meizu.cloud.pushsdk.constants.PushConstants;
-import com.oplus.quickgame.sdk.hall.Constant;
-import com.sina.weibo.sdk.constant.WBConstants;
-import com.sina.weibo.sdk.constant.WBPageConstants;
-import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -116,39 +111,39 @@ public class YYRoomHttpUtils {
     }
 
     public static void U(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/rob", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/rob", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void V(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/goodsList", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/goodsList", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void W(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("relation_id", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/getList", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("relation_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/getList", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void X(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("data_id", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/getTask", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("data_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/getTask", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void Y(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("id", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/info", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/info", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void Z(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/custom_activity/result", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/custom_activity/result", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void a() {
@@ -172,16 +167,16 @@ public class YYRoomHttpUtils {
     }
 
     public static void a(int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/square/lists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/square/lists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void a(int i, String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        a2.put("topic_id", str + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/topic/getHotLists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", i + "");
+        a.put("topic_id", str + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/topic/getHotLists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse) {
@@ -197,10 +192,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, int i, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("step_id", i + "");
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cproom/step", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("step_id", i + "");
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cproom/step", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
@@ -222,22 +217,22 @@ public class YYRoomHttpUtils {
     }
 
     public static void a(String str, int i, int i2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("status", i + "");
-        a2.put("mic_position", i2 + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/lock", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("status", i + "");
+        a.put("mic_position", i2 + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/lock", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, int i, int i2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
         String str2 = YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/info/set";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map<String, String> a = BluedHttpTools.a();
         if (i > 0) {
-            a2.put("lasted", i + "");
+            a.put("lasted", i + "");
         }
         if (i2 >= 0) {
-            a2.put("recommended", i2 + "");
+            a.put("recommended", i2 + "");
         }
-        HttpManager.b(str2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(str2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, int i, int i2, List<String> list, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -253,137 +248,137 @@ public class YYRoomHttpUtils {
     }
 
     public static void a(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/wait/to/sing/lists", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("page", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/wait/to/sing/lists", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void a(String str, int i, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         String str4 = YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/single_room/set/gift";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("para", i + "");
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("para", i + "");
         if (i == 1) {
-            a2.put("content", str2);
+            a.put(l.y, str2);
         }
         if (i == 2) {
-            a2.put("goods_id", str3);
+            a.put("goods_id", str3);
         }
-        HttpManager.b(str4, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(str4, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/room_info/manager_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/room_info/manager_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void a(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/search/user", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("keywords", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/search/user", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void a(String str, String str2, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        a2.put("mic_position", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/invite", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        a.put("mic_position", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/invite", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("image", str2 + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cover/update", null, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("image", str2 + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cover/update", null, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("content", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/report/music", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put(l.y, str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/report/music", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/nickname/search", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("keywords", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/nickname/search", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void a(String str, String str2, String str3, int i, int i2, String str4, String str5, String str6, String str7, String str8, boolean z, String str9, String str10, String str11, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         String str12 = YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str4 + "/gift/send";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("is_master", str);
-        a2.put("hit_id", str2);
-        a2.put("goods_id", str3);
-        a2.put("count", i + "");
-        a2.put("hit_batch", i2 + "");
-        a2.put("platform", "android");
-        a2.put(TTLiveConstants.ROOMID_KEY, str4);
-        a2.put("target_uid", str5);
-        a2.put(ReqAckPackage.REQ_RESPONSE_KEY.BEANS, str6);
-        a2.put("pay_code", str7);
-        a2.put("pay_token", str8);
-        a2.put("rememberMe", z ? "1" : "0");
-        a2.put("goods_from", str9);
-        a2.put("redPacket_group_id", str10);
-        a2.put("extra_contents", str11);
-        HttpManager.b(str12, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("is_master", str);
+        a.put("hit_id", str2);
+        a.put("goods_id", str3);
+        a.put(SpamFilter.SpamContract.NotificationTable.COUNT, i + "");
+        a.put("hit_batch", i2 + "");
+        a.put("platform", MsgBackupManager.PLATFORM_ANDROID);
+        a.put("room_id", str4);
+        a.put("target_uid", str5);
+        a.put(ReqAckPackage.REQ_RESPONSE_KEY.BEANS, str6);
+        a.put("pay_code", str7);
+        a.put("pay_token", str8);
+        a.put("rememberMe", z ? "1" : "0");
+        a.put("goods_from", str9);
+        a.put("redPacket_group_id", str10);
+        a.put("extra_contents", str11);
+        HttpManager.b(str12, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("uid", str2);
-        a2.put("target_uid", str3);
-        a2.put("is_callback", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/banter", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("uid", str2);
+        a.put("target_uid", str3);
+        a.put("is_callback", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/banter", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, int i, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("source_uid", str3);
-        a2.put("source_room_id", str2);
-        a2.put("result", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/invitation/handle", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("source_uid", str3);
+        a.put("source_room_id", str2);
+        a.put(com.alipay.sdk.util.l.c, i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/invitation/handle", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("apply", "1");
-        a2.put("card_name", str2);
-        a2.put("card_number", str3);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/" + str + "/applied/chatroom", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("apply", "1");
+        a.put("card_name", str2);
+        a.put("card_number", str3);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/" + str + "/applied/chatroom", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str3);
-        a2.put("target_room_id", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/invitation/send", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str3);
+        a.put("target_room_id", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/invitation/send", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, String str4, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         String str5 = YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/auction_room/set/relation";
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map<String, String> a = BluedHttpTools.a();
         if (!TextUtils.isEmpty(str3)) {
-            a2.put("relation_id", str3);
+            a.put("relation_id", str3);
         }
         if (!TextUtils.isEmpty(str2)) {
-            a2.put("goods_id", str2);
+            a.put("goods_id", str2);
         }
         if (!TextUtils.isEmpty(str4)) {
-            a2.put("duration_id", str4);
+            a.put("duration_id", str4);
         }
-        a2.put("para", i + "");
-        HttpManager.b(str5, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        a.put("para", i + "");
+        HttpManager.b(str5, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, String str4, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("room_name", str2);
-        a2.put("room_desc", str3);
-        a2.put("type_id", str4);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/update", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_name", str2);
+        a.put("room_desc", str3);
+        a.put("type_id", str4);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/update", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, String str4, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
@@ -391,32 +386,32 @@ public class YYRoomHttpUtils {
     }
 
     public static void a(String str, String str2, String str3, String str4, String str5, long j, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("musicId", str2);
-        a2.put("musicName", str3);
-        a2.put("artst", str4);
-        a2.put("coverUrl", str5);
-        a2.put("duration", j + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/ktv/choose_song", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("musicId", str2);
+        a.put("musicName", str3);
+        a.put("artst", str4);
+        a.put("coverUrl", str5);
+        a.put("duration", j + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/ktv/choose_song", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, String str4, String str5, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         String str6 = YYRoomInfoManager.e().c().e() + "/users/chatroom/room_info/set";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str + "");
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str + "");
         if (!StringUtils.b(str2)) {
-            a2.put("label_id", str2 + "");
+            a.put("label_id", str2 + "");
         }
         if (!StringUtils.b(str3)) {
-            a2.put("bg_id", str3 + "");
+            a.put("bg_id", str3 + "");
         }
         if (!StringUtils.b(str4)) {
-            a2.put("mic_bean", str4 + "");
+            a.put("mic_bean", str4 + "");
         }
         if (!StringUtils.b(str5)) {
-            a2.put("is_fans_notice", str5 + "");
+            a.put("is_fans_notice", str5 + "");
         }
-        HttpManager.b(str6, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(str6, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, String str4, String str5, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
@@ -436,44 +431,44 @@ public class YYRoomHttpUtils {
 
     public static void a(String str, String str2, String str3, String str4, String str5, String str6, String str7, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         Map<String, Object> b = BluedHttpTools.b();
-        b.put(TTLiveConstants.ROOMID_KEY, Integer.valueOf(StringUtils.a(str, 0)));
+        b.put("room_id", Integer.valueOf(StringUtils.a(str, 0)));
         b.put("name", str2);
         b.put("type", Integer.valueOf(StringUtils.a(str3, 0)));
         b.put("description", str4);
         b.put("notice_type", Integer.valueOf(StringUtils.a(str5, 0)));
-        b.put("start_time", Integer.valueOf(StringUtils.a(str6, 0)));
-        b.put("end_time", Integer.valueOf(StringUtils.a(str7, 0)));
+        b.put(e.a, Integer.valueOf(StringUtils.a(str6, 0)));
+        b.put(e.b, Integer.valueOf(StringUtils.a(str7, 0)));
         HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/custom_activity/add", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(b)).h();
     }
 
     public static void a(String str, String str2, String str3, String str4, List<String> list, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("uid", str3);
-        a2.put("reason", str4);
-        a2.put("anchor", str2);
-        a2.put("members", Arrays.toString(list.toArray(new String[list.size()])));
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/blued/newreport/chat-room/user", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("uid", str3);
+        a.put("reason", str4);
+        a.put("anchor", str2);
+        a.put("members", Arrays.toString(list.toArray(new String[list.size()])));
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/blued/newreport/chat-room/user", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, String str4, List<String> list, List<YYReportMsg> list2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         String str5 = YYRoomInfoManager.e().c().e() + "/blued/newreport/chat-room/msg";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("anchor", str2);
-        a2.put("reason", str4);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("anchor", str2);
+        a.put("reason", str4);
         if (!TextUtils.isEmpty(str3)) {
-            a2.put("uid", str3);
+            a.put("uid", str3);
         }
         HashMap hashMap = new HashMap();
-        hashMap.putAll(a2);
+        hashMap.putAll(a);
         hashMap.put("members", list);
-        hashMap.put("msg", list2);
+        hashMap.put(c.b, list2);
         HttpManager.b(str5, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(hashMap)).h();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x004d, code lost:
-        if (com.igexin.push.core.b.l.equals(r5) != false) goto L15;
+        if ("null".equals(r5) != false) goto L15;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -582,22 +577,22 @@ public class YYRoomHttpUtils {
 
     public static void a(String str, String str2, String str3, String str4, boolean z, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         String str5 = YYRoomInfoManager.e().c().e() + "/users/chatroom/props/buy";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("prop_id", str);
-        a2.put("day", str2);
-        a2.put("pay_code", str3);
-        a2.put("pay_token", str4);
-        a2.put("rememberMe", z ? "1" : "0");
-        HttpManager.b(str5, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("prop_id", str);
+        a.put("day", str2);
+        a.put("pay_code", str3);
+        a.put("pay_token", str4);
+        a.put("rememberMe", z ? "1" : "0");
+        HttpManager.b(str5, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, String str2, String str3, List<String> list, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("anchor", str2);
-        a2.put("reason", str3);
-        a2.put("members", Arrays.toString(list.toArray(new String[list.size()])));
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/blued/newreport/chat-room/room", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("anchor", str2);
+        a.put("reason", str3);
+        a.put("members", Arrays.toString(list.toArray(new String[list.size()])));
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/blued/newreport/chat-room/room", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void a(String str, List<YYWishRequestModel> list, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -607,10 +602,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void b(int i, String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        a2.put(ThemesContract.PreviewColumns.THEME_ID, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/hall/room/lists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", i + "");
+        a.put("theme_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/hall/room/lists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -622,49 +617,49 @@ public class YYRoomHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/anchor", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/anchor", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/kickout", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/kickout", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, int i, int i2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i2 + "");
-        a2.put("page_size", BaseWrapper.ENTER_ID_SYSTEM_HELPER);
-        a2.put("type", i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/send_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", i2 + "");
+        a.put("page_size", "20");
+        a.put("type", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/send_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void b(String str, int i, int i2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
         String str2 = YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/info";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
         if (i > 0) {
-            a2.put("pk_duration", i + "");
+            a.put("pk_duration", i + "");
         }
         if (i2 >= 0) {
-            a2.put("is_open_recommend", i2 + "");
+            a.put("is_open_recommend", i2 + "");
         }
-        HttpManager.b(str2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(str2, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str + "");
-        a2.put("type_id", i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/recommend/room_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str + "");
+        a.put("type_id", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/recommend/room_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void b(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/relation/is_follow", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/relation/is_follow", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void b(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
@@ -672,97 +667,97 @@ public class YYRoomHttpUtils {
     }
 
     public static void b(String str, String str2, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        a2.put("status", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/status", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        a.put("status", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/status", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("type", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/invalid_show", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("type", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/invalid_show", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("choosed_id", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/ktv/applause", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("choosed_id", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/ktv/applause", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void b(String str, String str2, String str3, int i, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("source_uid", str3);
-        a2.put("source_room_id", str2);
-        a2.put("result", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/invite/reply", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("source_uid", str3);
+        a.put("source_room_id", str2);
+        a.put(com.alipay.sdk.util.l.c, i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/invite/reply", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        a2.put("status", str3);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/users/mute", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        a.put("status", str3);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/users/mute", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str3);
-        a2.put("target_room_id", str2);
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/invite/send", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str3);
+        a.put("target_room_id", str2);
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/invite/send", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, String str2, String str3, String str4, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uids", str2);
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("goods_ids", str3 + "");
-        a2.put(PushConstants.PARAMS, str4 + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/gifts/batch/send", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uids", str2);
+        a.put("room_id", str);
+        a.put("goods_ids", str3 + "");
+        a.put("parameters", str4 + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/gifts/batch/send", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void b(String str, String str2, String str3, String str4, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("PlaylistId", str);
-        a2.put("ScrollToken", str2);
-        a2.put(TXCopyrightedMedia.EXT_INFO_ROOM_ID, str3);
-        a2.put("type", str4);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/musiclist", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("PlaylistId", str);
+        a.put("ScrollToken", str2);
+        a.put("RoomId", str3);
+        a.put("type", str4);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/musiclist", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void b(String str, String str2, String str3, String str4, String str5, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("relation_id", str2);
-        a2.put("target_uid", str);
-        a2.put("day", str3);
-        a2.put("goods_id", str4);
-        a2.put(TTLiveConstants.ROOMID_KEY, str5);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/invite", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("relation_id", str2);
+        a.put("target_uid", str);
+        a.put("day", str3);
+        a.put("goods_id", str4);
+        a.put("room_id", str5);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/invite", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     private static void b(String str, String str2, String str3, String str4, String str5, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
         String str6 = YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/ktv/sing_report";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("result", str2);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put(com.alipay.sdk.util.l.c, str2);
         if (TextUtils.equals("1", str2)) {
-            a2.put("dynamicLyricUrl", str3);
-            a2.put("staticLyricUrl", str4);
+            a.put("dynamicLyricUrl", str3);
+            a.put("staticLyricUrl", str4);
         }
-        if (TextUtils.equals("7", str2)) {
-            a2.put(WBConstants.GAME_PARAMS_SCORE, str3);
-            a2.put("sentence", str4);
-            a2.put("total_score", str5);
+        if (TextUtils.equals(ATAdConst.ATDevFrameworkType.ADOBIE_AIR, str2)) {
+            a.put("score", str3);
+            a.put("sentence", str4);
+            a.put("total_score", str5);
         }
-        HttpManager.b(str6, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(str6, bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void c(int i, String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("result", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/apply/confirm", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put(com.alipay.sdk.util.l.c, i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/apply/confirm", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -774,24 +769,24 @@ public class YYRoomHttpUtils {
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, String str, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/mine/history_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/mine/history_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse, String str, String str2, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("target_uid", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cproom/choose", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("target_uid", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cproom/choose", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void c(String str, int i, int i2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i2 + "");
-        a2.put("page_size", BaseWrapper.ENTER_ID_SYSTEM_HELPER);
-        a2.put("type", i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/receive_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", i2 + "");
+        a.put("page_size", "20");
+        a.put("type", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/receive_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void c(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -799,71 +794,71 @@ public class YYRoomHttpUtils {
     }
 
     public static void c(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/room_info/setting", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/room_info/setting", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void c(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/recall/recommend", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/recall/recommend", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void c(String str, String str2, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        a2.put("result", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/apply/handle", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        a.put(com.alipay.sdk.util.l.c, i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/apply/handle", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void c(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("source_from", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/into_room", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("source_from", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/into_room", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void c(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("page_size", BaseWrapper.ENTER_ID_SYSTEM_HELPER);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/record/list", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", str2);
+        a.put("page_size", "20");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/cr_pk/record/list", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void c(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uids", str2);
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("goods_ids", str3 + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/gifts/batch/send", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uids", str2);
+        a.put("room_id", str);
+        a.put("goods_ids", str3 + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/gifts/batch/send", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void c(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("hongbao_id", str2);
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("is_need_follow", str3);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/redPacket/grab", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("hongbao_id", str2);
+        a.put("room_id", str);
+        a.put("is_need_follow", str3);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/redPacket/grab", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void c(String str, String str2, String str3, String str4, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
         String str5 = YYRoomInfoManager.e().c().e() + "/users/chatroom/topic/setInfo";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put(ThemesContract.PreviewColumns.THEME_ID, str2);
-        a2.put(Constant.Param.TOPIC, str3);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("theme_id", str2);
+        a.put("topic", str3);
         if (!StringUtils.b(str4)) {
-            a2.put("topic_id", str4);
+            a.put("topic_id", str4);
         }
-        HttpManager.b(str5, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(str5, bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void d(int i, String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("relation_id", str);
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/rankList", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("relation_id", str);
+        a.put("page", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/rankList", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void d(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -875,15 +870,15 @@ public class YYRoomHttpUtils {
     }
 
     public static void d(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("mic_position", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/apply", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("mic_position", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/apply", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void d(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/toolkit", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/toolkit", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void d(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
@@ -891,24 +886,24 @@ public class YYRoomHttpUtils {
     }
 
     public static void d(String str, String str2, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("uid", str2);
-        a2.put("status", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/manager", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("uid", str2);
+        a.put("status", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/manager", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void d(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/leave", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/leave", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void d(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        a2.put("page_size", BaseWrapper.ENTER_ID_SYSTEM_HELPER);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/history", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("page", str2);
+        a.put("page_size", "20");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/history", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void d(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -916,11 +911,11 @@ public class YYRoomHttpUtils {
     }
 
     public static void d(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("KeyWord", str);
-        a2.put("ScrollToken", str2);
-        a2.put("type", str3);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/search", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("KeyWord", str);
+        a.put("ScrollToken", str2);
+        a.put("type", str3);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/search", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void e(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -936,9 +931,9 @@ public class YYRoomHttpUtils {
     }
 
     public static void e(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("type", str + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/confession/score_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("type", str + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/confession/score_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void e(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
@@ -946,23 +941,23 @@ public class YYRoomHttpUtils {
     }
 
     public static void e(String str, String str2, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        a2.put("status", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/status", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        a.put("status", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/mics/status", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void e(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("source_from", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/leave", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("source_from", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/leave", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void e(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("status", str2);
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/connect", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("status", str2);
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/connect", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void e(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -975,11 +970,11 @@ public class YYRoomHttpUtils {
     }
 
     public static void e(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("music_id", str2);
-        a2.put("exec", str3);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/want/to/sing/action", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("music_id", str2);
+        a.put("exec", str3);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/want/to/sing/action", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void f(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -987,42 +982,42 @@ public class YYRoomHttpUtils {
     }
 
     public static void f(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("result", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/invited/handle", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put(com.alipay.sdk.util.l.c, i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/invited/handle", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void f(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("type", str + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/confession/occupy_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("type", str + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/confession/occupy_rank", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void f(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/info", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/info", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void f(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/users/follow", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/users/follow", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void f(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("status", str2);
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/mics/status", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("status", str2);
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/mics/status", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void f(String str, String str2, String str3, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("type", str2);
-        a2.put("sentence_scores", str3);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/report", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("type", str2);
+        a.put("sentence_scores", str3);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/report", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void g(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1046,10 +1041,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void g(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, str);
-        a2.put("page_size", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/redPacket/room_list", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", str);
+        a.put("page_size", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/redPacket/room_list", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void h(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1057,10 +1052,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void h(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/confession/users_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("page", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/confession/users_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void h(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1068,9 +1063,9 @@ public class YYRoomHttpUtils {
     }
 
     public static void h(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/level", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/level", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void h(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1078,10 +1073,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void h(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("task_type", str);
-        a2.put("current_level", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/daily/tasks/receive_reward", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("task_type", str);
+        a.put("current_level", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/daily/tasks/receive_reward", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void i(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1089,21 +1084,21 @@ public class YYRoomHttpUtils {
     }
 
     public static void i(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("section", i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/activity_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("section", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/activity_list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void i(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("anchor_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/rank_activity/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("anchor_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/rank_activity/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void i(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/random/cancel", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/random/cancel", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void i(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1111,10 +1106,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void i(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("type", str);
-        a2.put(BatteryManager.EXTRA_LEVEL, str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/daily/tasks/receive_gift", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("type", str);
+        a.put("level", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/daily/tasks/receive_gift", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void j(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1122,21 +1117,21 @@ public class YYRoomHttpUtils {
     }
 
     public static void j(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("ended", i + "");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/pk/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("ended", i + "");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/gift/pk/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void j(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("source_from", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/index/right_menu", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("source_from", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/index/right_menu", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void j(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/ktv/choosed", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/ktv/choosed", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void j(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1144,10 +1139,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void j(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("anchor_uid", str);
-        a2.put(WBPageConstants.ParamKey.PAGE, str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/list", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("anchor_uid", str);
+        a.put("page", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/list", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void k(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1155,9 +1150,9 @@ public class YYRoomHttpUtils {
     }
 
     public static void k(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("step_id", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/auction_room/update/step", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("step_id", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/auction_room/update/step", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void k(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1175,10 +1170,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void k(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("target_uid", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/firstMeet/getGifts", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("target_uid", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/firstMeet/getGifts", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void l(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1186,10 +1181,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void l(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("pk_duration", i + "");
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/random/join", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("pk_duration", i + "");
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/pk/random/join", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void l(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1207,10 +1202,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void l(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("music_id", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/want/to/sing", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("music_id", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/want/to/sing", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void m(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1218,10 +1213,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void m(String str, int i, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(WBPageConstants.ParamKey.PAGE, i + "");
-        a2.put("target_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/customCar/getReceived", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("page", i + "");
+        a.put("target_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/customCar/getReceived", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void m(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1229,15 +1224,15 @@ public class YYRoomHttpUtils {
     }
 
     public static void m(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("finish_time", str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/daily/tasks/speak_report", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("finish_time", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/daily/tasks/speak_report", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void m(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("event_id", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/game_room/punishment/choose", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("event_id", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/game_room/punishment/choose", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void n(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1249,15 +1244,15 @@ public class YYRoomHttpUtils {
     }
 
     public static void n(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("anchor_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/info", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("anchor_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/info", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void n(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/game_room/battle/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/game_room/battle/list", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void o(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1265,27 +1260,27 @@ public class YYRoomHttpUtils {
     }
 
     public static void o(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/reportOnline", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/reportOnline", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void o(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("anchor_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/me", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("anchor_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/me", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void o(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("id", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/game_room/game/play", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("id", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/" + str + "/game_room/game/play", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void p(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("_module", "trueLoveBox");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/s/trueLoveBox/sent/info", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("_module", "trueLoveBox");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/s/trueLoveBox/sent/info", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void p(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1293,16 +1288,16 @@ public class YYRoomHttpUtils {
     }
 
     public static void p(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("anchor_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/benefit", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("anchor_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/benefit", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void p(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("status", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/mode", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("status", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/mode", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void q(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1314,16 +1309,16 @@ public class YYRoomHttpUtils {
     }
 
     public static void q(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/playlist", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/playlist", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void q(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("music_id", str2);
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/startRob", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("music_id", str2);
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/startRob", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void r(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1335,16 +1330,16 @@ public class YYRoomHttpUtils {
     }
 
     public static void r(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("musicId", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/musicInfo", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("musicId", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/musicInfo", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void r(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("music_id", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/robSing/wait/to/sing/delete", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("music_id", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/robSing/wait/to/sing/delete", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void s(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1356,16 +1351,16 @@ public class YYRoomHttpUtils {
     }
 
     public static void s(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/treasure/box/basic", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/treasure/box/basic", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void s(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str);
-        a2.put("relation_id", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/respondInvite", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str);
+        a.put("relation_id", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/respondInvite", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void t(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1377,16 +1372,16 @@ public class YYRoomHttpUtils {
     }
 
     public static void t(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/treasure/box/grab", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/treasure/box/grab", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void t(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        a2.put("relation_id", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/getInviteLists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        a.put("relation_id", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/getInviteLists", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void u(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1394,23 +1389,23 @@ public class YYRoomHttpUtils {
     }
 
     public static void u(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("music_id", str);
-        a2.put("from", "1");
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/live/music/song/item", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("music_id", str);
+        a.put("from", "1");
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/live/music/song/item", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void u(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/stage/resources", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/ktv/stage/resources", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void u(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("task_id", str);
-        a2.put("id", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/taskIncrement", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("task_id", str);
+        a.put("id", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/taskIncrement", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void v(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1418,9 +1413,9 @@ public class YYRoomHttpUtils {
     }
 
     public static void v(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/goodsWall", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/goodsWall", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void v(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
@@ -1428,10 +1423,10 @@ public class YYRoomHttpUtils {
     }
 
     public static void v(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("deal_with", str2);
-        a2.put("id", str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/dealWith", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("deal_with", str2);
+        a.put("id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/userRelationship/dealWith", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void w(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1439,22 +1434,22 @@ public class YYRoomHttpUtils {
     }
 
     public static void w(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/goodsExhibit", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/goodsExhibit", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void w(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("name", str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/name/update", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("name", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/fans/name/update", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void w(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("skin_id", str);
-        a2.put("color_id", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/customCar/getPreview", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("skin_id", str);
+        a.put("color_id", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/customCar/getPreview", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void x(BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1462,22 +1457,22 @@ public class YYRoomHttpUtils {
     }
 
     public static void x(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/starGoods", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/starGoods", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void x(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/flexible_bar", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/flexible_bar", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void x(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(UserDictionary.Words.WORD, str);
-        a2.put("from", str2);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/risk_words", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("word", str);
+        a.put("from", str2);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/risk_words", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 
     public static void y(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1485,16 +1480,16 @@ public class YYRoomHttpUtils {
     }
 
     public static void y(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("target_uid", str);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/firstMeet", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("target_uid", str);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/firstMeet", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void y(String str, String str2, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("uid", str);
-        a2.put("type", str2);
-        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/romanticTrip/receive", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("uid", str);
+        a.put("type", str2);
+        HttpManager.a(YYRoomInfoManager.e().c().e() + "/users/chatroom/romanticTrip/receive", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a).h();
     }
 
     public static void z(String str, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
@@ -1502,8 +1497,8 @@ public class YYRoomHttpUtils {
     }
 
     public static void z(String str, BluedUIHttpResponse bluedUIHttpResponse, ActivityFragmentActive activityFragmentActive) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(TTLiveConstants.ROOMID_KEY, str);
-        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/flickering", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("room_id", str);
+        HttpManager.b(YYRoomInfoManager.e().c().e() + "/users/chatroom/robSing/flickering", bluedUIHttpResponse, activityFragmentActive).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).h();
     }
 }

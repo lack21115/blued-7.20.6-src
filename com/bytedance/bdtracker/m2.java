@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class m2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList<String> f21260a = new ArrayList<>();
+    public final ArrayList<String> f7654a = new ArrayList<>();
 
     public final void a(String str, String str2) {
         if (TextUtils.isEmpty(str)) {

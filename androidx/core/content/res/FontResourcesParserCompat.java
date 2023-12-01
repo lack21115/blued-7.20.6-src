@@ -37,14 +37,14 @@ public class FontResourcesParserCompat {
     public static final class FontFamilyFilesResourceEntry implements FamilyResourceEntry {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FontFileResourceEntry[] f2429a;
+        private final FontFileResourceEntry[] f2381a;
 
         public FontFamilyFilesResourceEntry(FontFileResourceEntry[] fontFileResourceEntryArr) {
-            this.f2429a = fontFileResourceEntryArr;
+            this.f2381a = fontFileResourceEntryArr;
         }
 
         public FontFileResourceEntry[] getEntries() {
-            return this.f2429a;
+            return this.f2381a;
         }
     }
 
@@ -52,26 +52,26 @@ public class FontResourcesParserCompat {
     public static final class FontFileResourceEntry {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f2430a;
+        private final String f2382a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f2431c;
+        private boolean f2383c;
         private String d;
         private int e;
         private int f;
 
         public FontFileResourceEntry(String str, int i, boolean z, String str2, int i2, int i3) {
-            this.f2430a = str;
+            this.f2382a = str;
             this.b = i;
-            this.f2431c = z;
+            this.f2383c = z;
             this.d = str2;
             this.e = i2;
             this.f = i3;
         }
 
         public String getFileName() {
-            return this.f2430a;
+            return this.f2382a;
         }
 
         public int getResourceId() {
@@ -91,7 +91,7 @@ public class FontResourcesParserCompat {
         }
 
         public boolean isItalic() {
-            return this.f2431c;
+            return this.f2383c;
         }
     }
 
@@ -99,11 +99,11 @@ public class FontResourcesParserCompat {
     public static final class ProviderResourceEntry implements FamilyResourceEntry {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FontRequest f2432a;
+        private final FontRequest f2384a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f2433c;
+        private final int f2385c;
         private final String d;
 
         public ProviderResourceEntry(FontRequest fontRequest, int i, int i2) {
@@ -111,18 +111,18 @@ public class FontResourcesParserCompat {
         }
 
         public ProviderResourceEntry(FontRequest fontRequest, int i, int i2, String str) {
-            this.f2432a = fontRequest;
-            this.f2433c = i;
+            this.f2384a = fontRequest;
+            this.f2385c = i;
             this.b = i2;
             this.d = str;
         }
 
         public int getFetchStrategy() {
-            return this.f2433c;
+            return this.f2385c;
         }
 
         public FontRequest getRequest() {
-            return this.f2432a;
+            return this.f2384a;
         }
 
         public String getSystemFontFamilyName() {

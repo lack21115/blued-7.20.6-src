@@ -4,6 +4,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.anythink.core.common.g.c;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/TextOptionsCreator.class */
 public class TextOptionsCreator implements Parcelable.Creator<TextOptions> {
@@ -11,9 +12,9 @@ public class TextOptionsCreator implements Parcelable.Creator<TextOptions> {
     @Override // android.os.Parcelable.Creator
     public TextOptions createFromParcel(Parcel parcel) {
         TextOptions textOptions = new TextOptions();
-        textOptions.f5539a = parcel.readString();
+        textOptions.a = parcel.readString();
         Bundle readBundle = parcel.readBundle();
-        textOptions.position(new LatLng(readBundle.getDouble("lat"), readBundle.getDouble("lng")));
+        textOptions.position(new LatLng(readBundle.getDouble(c.B), readBundle.getDouble("lng")));
         textOptions.text(parcel.readString());
         textOptions.typeface(Typeface.defaultFromStyle(parcel.readInt()));
         textOptions.rotate(parcel.readFloat());

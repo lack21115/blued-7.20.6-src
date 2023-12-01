@@ -9,17 +9,17 @@ public class c {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27424c = false;
+    private boolean f13736c = false;
     private int d = 0;
     private b e = new b();
 
     /* renamed from: a  reason: collision with root package name */
-    private m f27423a = new m(com.opos.mobad.service.c.a(), new Runnable() { // from class: com.opos.mobad.service.tasks.c.1
+    private m f13735a = new m(com.opos.mobad.service.c.a(), new Runnable() { // from class: com.opos.mobad.service.tasks.c.1
 
         /* renamed from: com.opos.mobad.service.tasks.c$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/service/tasks/c$1$1.class */
-        class RunnableC07381 implements Runnable {
-            RunnableC07381() {
+        class RunnableC05681 implements Runnable {
+            RunnableC05681() {
             }
 
             @Override // java.lang.Runnable

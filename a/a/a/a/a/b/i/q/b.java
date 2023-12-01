@@ -4,13 +4,13 @@ package a.a.a.a.a.b.i.q;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public Thread f1339a = Thread.currentThread();
+    public Thread f1291a = Thread.currentThread();
 
     public void a() {
-        if (this.f1339a == null) {
-            this.f1339a = Thread.currentThread();
+        if (this.f1291a == null) {
+            this.f1291a = Thread.currentThread();
         }
-        if (Thread.currentThread() != this.f1339a) {
+        if (Thread.currentThread() != this.f1291a) {
             throw new IllegalStateException("Wrong thread");
         }
     }

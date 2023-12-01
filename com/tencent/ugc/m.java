@@ -6,11 +6,11 @@ import java.util.Collections;
 final /* synthetic */ class m implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40437a;
+    private final TXVideoEditer f26746a;
     private final String b;
 
     private m(TXVideoEditer tXVideoEditer, String str) {
-        this.f40437a = tXVideoEditer;
+        this.f26746a = tXVideoEditer;
         this.b = str;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class m implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40437a.setMediaSourcePaths(Collections.singletonList(this.b));
+        this.f26746a.setMediaSourcePaths(Collections.singletonList(this.b));
     }
 }

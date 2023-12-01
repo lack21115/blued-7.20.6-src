@@ -19,11 +19,11 @@ import androidx.core.view.ViewPropertyAnimatorListener;
 public abstract class AbsActionBarView extends ViewGroup {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final VisibilityAnimListener f1696a;
+    protected final VisibilityAnimListener f1648a;
     protected final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected ActionMenuView f1697c;
+    protected ActionMenuView f1649c;
     protected ActionMenuPresenter d;
     protected int e;
     protected ViewPropertyAnimatorCompat f;
@@ -34,37 +34,37 @@ public abstract class AbsActionBarView extends ViewGroup {
     public class VisibilityAnimListener implements ViewPropertyAnimatorListener {
 
         /* renamed from: a  reason: collision with root package name */
-        int f1699a;
+        int f1651a;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f1700c = false;
+        private boolean f1652c = false;
 
         protected VisibilityAnimListener() {
         }
 
         @Override // androidx.core.view.ViewPropertyAnimatorListener
         public void onAnimationCancel(View view) {
-            this.f1700c = true;
+            this.f1652c = true;
         }
 
         @Override // androidx.core.view.ViewPropertyAnimatorListener
         public void onAnimationEnd(View view) {
-            if (this.f1700c) {
+            if (this.f1652c) {
                 return;
             }
             AbsActionBarView.this.f = null;
-            AbsActionBarView.super.setVisibility(this.f1699a);
+            AbsActionBarView.super.setVisibility(this.f1651a);
         }
 
         @Override // androidx.core.view.ViewPropertyAnimatorListener
         public void onAnimationStart(View view) {
             AbsActionBarView.super.setVisibility(0);
-            this.f1700c = false;
+            this.f1652c = false;
         }
 
         public VisibilityAnimListener withFinalVisibility(ViewPropertyAnimatorCompat viewPropertyAnimatorCompat, int i) {
             AbsActionBarView.this.f = viewPropertyAnimatorCompat;
-            this.f1699a = i;
+            this.f1651a = i;
             return this;
         }
     }
@@ -80,7 +80,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AbsActionBarView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f1696a = new VisibilityAnimListener();
+        this.f1648a = new VisibilityAnimListener();
         TypedValue typedValue = new TypedValue();
         if (!context.getTheme().resolveAttribute(R.attr.actionBarPopupTheme, typedValue, true) || typedValue.resourceId == 0) {
             this.b = context;
@@ -133,7 +133,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     }
 
     public int getAnimatedVisibility() {
-        return this.f != null ? this.f1696a.f1699a : getVisibility();
+        return this.f != null ? this.f1648a.f1651a : getVisibility();
     }
 
     public int getContentHeight() {
@@ -169,9 +169,8 @@ public abstract class AbsActionBarView extends ViewGroup {
         return actionMenuPresenter != null && actionMenuPresenter.isOverflowReserved();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
+    protected void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
         setContentHeight(obtainStyledAttributes.getLayoutDimension(R.styleable.ActionBar_height, 0));
@@ -253,7 +252,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         if (i != 0) {
             ViewPropertyAnimatorCompat alpha = ViewCompat.animate(this).alpha(0.0f);
             alpha.setDuration(j);
-            alpha.setListener(this.f1696a.withFinalVisibility(alpha, i));
+            alpha.setListener(this.f1648a.withFinalVisibility(alpha, i));
             return alpha;
         }
         if (getVisibility() != 0) {
@@ -261,7 +260,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         }
         ViewPropertyAnimatorCompat alpha2 = ViewCompat.animate(this).alpha(1.0f);
         alpha2.setDuration(j);
-        alpha2.setListener(this.f1696a.withFinalVisibility(alpha2, i));
+        alpha2.setListener(this.f1648a.withFinalVisibility(alpha2, i));
         return alpha2;
     }
 

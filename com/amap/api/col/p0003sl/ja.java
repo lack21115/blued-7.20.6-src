@@ -18,34 +18,30 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ja.class */
 public final class ja {
     private static Map<Class<? extends iz>, iz> d = new HashMap();
-
-    /* renamed from: a  reason: collision with root package name */
-    private jd f5200a;
+    private jd a;
     private SQLiteDatabase b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private iz f5201c;
+    private iz c;
 
     public ja(Context context, iz izVar) {
         try {
-            this.f5200a = new jd(context.getApplicationContext(), izVar.b(), izVar.c(), izVar);
+            this.a = new jd(context.getApplicationContext(), izVar.b(), izVar.c(), izVar);
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        this.f5201c = izVar;
+        this.c = izVar;
     }
 
     private static ContentValues a(Object obj, jb jbVar) {
         ContentValues contentValues = new ContentValues();
-        Field[] a2 = a(obj.getClass(), jbVar.b());
-        int length = a2.length;
+        Field[] a = a(obj.getClass(), jbVar.b());
+        int length = a.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return contentValues;
             }
-            Field field = a2[i2];
+            Field field = a[i2];
             field.setAccessible(true);
             a(obj, field, contentValues);
             i = i2 + 1;
@@ -55,7 +51,7 @@ public final class ja {
     private SQLiteDatabase a() {
         try {
             if (this.b == null) {
-                this.b = this.f5200a.getReadableDatabase();
+                this.b = this.a.getReadableDatabase();
             }
         } catch (Throwable th) {
             it.a(th, "dbs", "grd");
@@ -79,11 +75,11 @@ public final class ja {
     }
 
     private static <T> T a(Cursor cursor, Class<T> cls, jb jbVar) throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
-        Field[] a2 = a((Class<?>) cls, jbVar.b());
+        Field[] a = a((Class<?>) cls, jbVar.b());
         Constructor<T> declaredConstructor = cls.getDeclaredConstructor(new Class[0]);
         declaredConstructor.setAccessible(true);
         T newInstance = declaredConstructor.newInstance(new Object[0]);
-        for (Field field : a2) {
+        for (Field field : a) {
             field.setAccessible(true);
             Annotation annotation = field.getAnnotation(jc.class);
             if (annotation != null) {
@@ -127,11 +123,11 @@ public final class ja {
 
     private static <T> void a(SQLiteDatabase sQLiteDatabase, T t) {
         jb b = b((Class) t.getClass());
-        String a2 = a(b);
-        if (TextUtils.isEmpty(a2) || t == null || sQLiteDatabase == null) {
+        String a = a(b);
+        if (TextUtils.isEmpty(a) || t == null || sQLiteDatabase == null) {
             return;
         }
-        sQLiteDatabase.insert(a2, null, a(t, b));
+        sQLiteDatabase.insert(a, null, a(t, b));
     }
 
     private <T> void a(T t) {
@@ -176,22 +172,22 @@ public final class ja {
     }
 
     private <T> void a(String str, Object obj) {
-        synchronized (this.f5201c) {
+        synchronized (this.c) {
             if (obj == null) {
                 return;
             }
             jb b = b((Class) obj.getClass());
-            String a2 = a(b);
-            if (TextUtils.isEmpty(a2)) {
+            String a = a(b);
+            if (TextUtils.isEmpty(a)) {
                 return;
             }
-            ContentValues a3 = a(obj, b);
+            ContentValues a2 = a(obj, b);
             SQLiteDatabase b2 = b();
             this.b = b2;
             if (b2 == null) {
                 return;
             }
-            b2.update(a2, a3, str, null);
+            b2.update(a, a2, str, null);
             if (this.b != null) {
                 this.b.close();
                 this.b = null;
@@ -212,7 +208,7 @@ public final class ja {
                 if (this.b != null) {
                     this.b.close();
                 }
-                this.b = this.f5200a.getWritableDatabase();
+                this.b = this.a.getWritableDatabase();
             }
         } catch (Throwable th) {
             it.a(th, "dbs", "gwd");
@@ -229,7 +225,7 @@ public final class ja {
     }
 
     private <T> void b(T t) {
-        synchronized (this.f5201c) {
+        synchronized (this.c) {
             SQLiteDatabase b = b();
             this.b = b;
             if (b == null) {
@@ -249,18 +245,18 @@ public final class ja {
 
     private <T> List<T> c(String str, Class<T> cls) {
         Cursor cursor;
-        synchronized (this.f5201c) {
+        synchronized (this.c) {
             ArrayList arrayList = new ArrayList();
             jb b = b((Class) cls);
-            String a2 = a(b);
+            String a = a(b);
             if (this.b == null) {
                 this.b = a();
             }
-            if (this.b == null || TextUtils.isEmpty(a2) || str == null) {
+            if (this.b == null || TextUtils.isEmpty(a) || str == null) {
                 return arrayList;
             }
             try {
-                cursor = this.b.query(a2, null, str, null, null, null, null);
+                cursor = this.b.query(a, null, str, null, null, null, null);
             } catch (Throwable th) {
                 th = th;
                 cursor = null;
@@ -317,7 +313,7 @@ public final class ja {
     }
 
     public final void a(Object obj, String str) {
-        synchronized (this.f5201c) {
+        synchronized (this.c) {
             List b = b(str, (Class) obj.getClass());
             if (b != null && b.size() != 0) {
                 b(str, obj);
@@ -327,9 +323,9 @@ public final class ja {
     }
 
     public final <T> void a(String str, Class<T> cls) {
-        synchronized (this.f5201c) {
-            String a2 = a(b((Class) cls));
-            if (TextUtils.isEmpty(a2)) {
+        synchronized (this.c) {
+            String a = a(b((Class) cls));
+            if (TextUtils.isEmpty(a)) {
                 return;
             }
             SQLiteDatabase b = b();
@@ -337,7 +333,7 @@ public final class ja {
             if (b == null) {
                 return;
             }
-            b.delete(a2, str, null);
+            b.delete(a, str, null);
             if (this.b != null) {
                 this.b.close();
                 this.b = null;
@@ -346,7 +342,7 @@ public final class ja {
     }
 
     public final <T> void a(List<T> list) {
-        synchronized (this.f5201c) {
+        synchronized (this.c) {
             if (list.size() == 0) {
                 return;
             }

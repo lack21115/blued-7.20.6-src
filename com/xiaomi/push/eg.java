@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/eg.class */
@@ -15,7 +14,7 @@ public class eg implements ee {
                 dx.a(context, com.umeng.analytics.pro.d.M, 1008, "B get a incorrect message");
                 return;
             }
-            String[] split = str.split(BridgeUtil.SPLIT_MARK);
+            String[] split = str.split("/");
             if (split.length <= 0 || TextUtils.isEmpty(split[split.length - 1])) {
                 dx.a(context, com.umeng.analytics.pro.d.M, 1008, "B get a incorrect message");
                 return;
@@ -60,7 +59,7 @@ public class eg implements ee {
             try {
                 if (TextUtils.isEmpty(a3)) {
                     dx.a(context, d, 1008, "info is empty");
-                } else if (a2 == 1 && !eb.m11709a(context)) {
+                } else if (a2 == 1 && !eb.m8659a(context)) {
                     dx.a(context, d, 1008, "A not in foreground");
                 } else {
                     String type = context.getContentResolver().getType(dw.a(b, a3));

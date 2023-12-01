@@ -28,7 +28,6 @@ public class EventMemberModel implements MultiItemEntity {
     public String uid;
     public EventUserModel user_info;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

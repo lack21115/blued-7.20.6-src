@@ -1025,9 +1025,8 @@ public class PPSBannerView extends RelativeLayout implements hr, lc {
         return this.R;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         he heVar = this.ac;
         if (heVar != null) {
@@ -1036,9 +1035,8 @@ public class PPSBannerView extends RelativeLayout implements hr, lc {
         kl.Code(getContext()).V(getContext());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         he heVar = this.ac;
         if (heVar != null) {
@@ -1046,9 +1044,8 @@ public class PPSBannerView extends RelativeLayout implements hr, lc {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         he heVar = this.ac;
         if (heVar != null) {

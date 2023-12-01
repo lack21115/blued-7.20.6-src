@@ -7,7 +7,7 @@ import java.util.List;
 public class MessageSetSelectedTab {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MessageSetSelectedTab f32457a = new MessageSetSelectedTab();
+    private static MessageSetSelectedTab f18766a = new MessageSetSelectedTab();
     private List<IMessageSetSelectedTab> b = new ArrayList();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/observer/MessageSetSelectedTab$IMessageSetSelectedTab.class */
@@ -15,7 +15,7 @@ public class MessageSetSelectedTab {
     }
 
     public static MessageSetSelectedTab a() {
-        return f32457a;
+        return f18766a;
     }
 
     public void a(IMessageSetSelectedTab iMessageSetSelectedTab) {

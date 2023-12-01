@@ -4,12 +4,10 @@ import android.content.Context;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/h.class */
 public final class h extends w {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f4524a;
+    private Context a;
 
     public h(Context context) {
-        this.f4524a = context;
+        this.a = context;
     }
 
     @Override // com.alipay.android.phone.mrpc.core.w

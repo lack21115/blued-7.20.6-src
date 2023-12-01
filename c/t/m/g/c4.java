@@ -4,9 +4,9 @@ package c.t.m.g;
 public class c4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f3775a = "";
+    public static String f3727a = "";
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f3776c = "";
+    public static String f3728c = "";
 }

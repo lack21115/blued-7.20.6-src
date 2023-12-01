@@ -7,18 +7,18 @@ import com.opos.exoplayer.core.u;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final m f25438a;
+    public final m f11750a;
     public final boolean[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final g f25439c;
+    public final g f11751c;
     public final Object d;
     public final u[] e;
 
     public i(m mVar, boolean[] zArr, g gVar, Object obj, u[] uVarArr) {
-        this.f25438a = mVar;
+        this.f11750a = mVar;
         this.b = zArr;
-        this.f25439c = gVar;
+        this.f11751c = gVar;
         this.d = obj;
         this.e = uVarArr;
     }
@@ -26,11 +26,11 @@ public final class i {
     public boolean a(i iVar) {
         boolean z = false;
         if (iVar != null) {
-            if (iVar.f25439c.f25435a == this.f25439c.f25435a) {
+            if (iVar.f11751c.f11747a == this.f11751c.f11747a) {
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= this.f25439c.f25435a) {
+                    if (i2 >= this.f11751c.f11747a) {
                         z = true;
                         break;
                     }
@@ -48,6 +48,6 @@ public final class i {
     }
 
     public boolean a(i iVar, int i) {
-        return iVar != null && this.b[i] == iVar.b[i] && com.opos.exoplayer.core.i.u.a(this.f25439c.a(i), iVar.f25439c.a(i)) && com.opos.exoplayer.core.i.u.a(this.e[i], iVar.e[i]);
+        return iVar != null && this.b[i] == iVar.b[i] && com.opos.exoplayer.core.i.u.a(this.f11751c.a(i), iVar.f11751c.a(i)) && com.opos.exoplayer.core.i.u.a(this.e[i], iVar.e[i]);
     }
 }

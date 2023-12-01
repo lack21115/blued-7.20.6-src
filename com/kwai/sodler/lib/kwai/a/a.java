@@ -18,7 +18,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwai.sodler.lib.kwai.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/lib/kwai/a/a$a.class */
-    public static final class C0598a {
+    public static final class C0428a {
         /* JADX INFO: Access modifiers changed from: private */
         public static Resources a(Resources resources, AssetManager assetManager) {
             try {
@@ -43,7 +43,7 @@ public final class a {
             } catch (Exception e) {
                 e.printStackTrace();
                 try {
-                    return C0598a.a(resources, assetManager);
+                    return C0428a.a(resources, assetManager);
                 } catch (Exception e2) {
                     e2.printStackTrace();
                     return new Resources(assetManager, resources.getDisplayMetrics(), resources.getConfiguration());
@@ -70,7 +70,7 @@ public final class a {
             } catch (Exception e) {
                 e.printStackTrace();
                 try {
-                    return C0598a.a(resources, assetManager);
+                    return C0428a.a(resources, assetManager);
                 } catch (Exception e2) {
                     e2.printStackTrace();
                     return new Resources(assetManager, resources.getDisplayMetrics(), resources.getConfiguration());
@@ -96,7 +96,7 @@ public final class a {
                 return g(resources, assetManager);
             } catch (Exception e) {
                 try {
-                    return C0598a.a(resources, assetManager);
+                    return C0428a.a(resources, assetManager);
                 } catch (Exception e2) {
                     return new Resources(assetManager, resources.getDisplayMetrics(), resources.getConfiguration());
                 }
@@ -122,7 +122,7 @@ public final class a {
             } catch (Exception e) {
                 e.printStackTrace();
                 try {
-                    return C0598a.a(resources, assetManager);
+                    return C0428a.a(resources, assetManager);
                 } catch (Exception e2) {
                     e2.printStackTrace();
                     return new Resources(assetManager, resources.getDisplayMetrics(), resources.getConfiguration());
@@ -149,7 +149,7 @@ public final class a {
             } catch (Exception e) {
                 e.printStackTrace();
                 try {
-                    return C0598a.a(resources, assetManager);
+                    return C0428a.a(resources, assetManager);
                 } catch (Exception e2) {
                     e2.printStackTrace();
                     return new Resources(assetManager, resources.getDisplayMetrics(), resources.getConfiguration());
@@ -179,7 +179,7 @@ public final class a {
 
     private static Resources a(Context context, AssetManager assetManager, DisplayMetrics displayMetrics, Configuration configuration) {
         Resources resources = context.getResources();
-        return a(resources) ? d.a(resources, assetManager) : b(resources) ? c.a(resources, assetManager) : e(resources) ? b.a(resources, assetManager) : c(resources) ? f.a(context, resources, assetManager) : d(resources) ? e.a(resources, assetManager) : f(resources) ? C0598a.a(resources, assetManager) : new Resources(assetManager, displayMetrics, configuration);
+        return a(resources) ? d.a(resources, assetManager) : b(resources) ? c.a(resources, assetManager) : e(resources) ? b.a(resources, assetManager) : c(resources) ? f.a(context, resources, assetManager) : d(resources) ? e.a(resources, assetManager) : f(resources) ? C0428a.a(resources, assetManager) : new Resources(assetManager, displayMetrics, configuration);
     }
 
     public static Resources a(Context context, Resources resources, String str) {

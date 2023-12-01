@@ -205,8 +205,8 @@ public class TransitionSet extends Transition {
 
     @Override // android.transition.Transition
     /* renamed from: clone */
-    public TransitionSet mo1000clone() {
-        TransitionSet transitionSet = (TransitionSet) super.mo1000clone();
+    public TransitionSet mo996clone() {
+        TransitionSet transitionSet = (TransitionSet) super.mo996clone();
         transitionSet.mTransitions = new ArrayList<>();
         int size = this.mTransitions.size();
         int i = 0;
@@ -215,7 +215,7 @@ public class TransitionSet extends Transition {
             if (i2 >= size) {
                 return transitionSet;
             }
-            transitionSet.addTransition(this.mTransitions.get(i2).mo1000clone());
+            transitionSet.addTransition(this.mTransitions.get(i2).mo996clone());
             i = i2 + 1;
         }
     }

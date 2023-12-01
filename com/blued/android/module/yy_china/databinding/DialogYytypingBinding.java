@@ -11,21 +11,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYytypingBinding.class */
 public final class DialogYytypingBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final EditText f16460a;
+    public final EditText a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f16461c;
+    public final LinearLayout c;
     public final ShapeTextView d;
     private final ConstraintLayout e;
 
     private DialogYytypingBinding(ConstraintLayout constraintLayout, EditText editText, ImageView imageView, LinearLayout linearLayout, ShapeTextView shapeTextView) {
         this.e = constraintLayout;
-        this.f16460a = editText;
+        this.a = editText;
         this.b = imageView;
-        this.f16461c = linearLayout;
+        this.c = linearLayout;
         this.d = shapeTextView;
     }
 
@@ -54,7 +50,6 @@ public final class DialogYytypingBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

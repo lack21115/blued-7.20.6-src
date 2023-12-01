@@ -1,5 +1,6 @@
 package com.google.android.material.transition.platform;
 
+import android.R;
 import android.animation.Animator;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -26,7 +27,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import androidx.core.view.ViewCompat;
-import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.shape.MaterialShapeDrawable;
@@ -390,7 +390,7 @@ public final class MaterialContainerTransform extends Transition {
         this.holdAtEndEnabled = false;
         this.pathMotionCustom = false;
         this.appliedThemeValues = false;
-        this.drawingViewId = 16908290;
+        this.drawingViewId = R.id.content;
         this.startViewId = -1;
         this.endViewId = -1;
         this.containerColor = 0;
@@ -411,7 +411,7 @@ public final class MaterialContainerTransform extends Transition {
         this.holdAtEndEnabled = false;
         this.pathMotionCustom = false;
         this.appliedThemeValues = false;
-        this.drawingViewId = 16908290;
+        this.drawingViewId = R.id.content;
         this.startViewId = -1;
         this.endViewId = -1;
         this.containerColor = 0;
@@ -451,9 +451,9 @@ public final class MaterialContainerTransform extends Transition {
             transitionValues.view = TransitionUtils.findDescendantOrAncestorById(transitionValues.view, i);
         } else if (view != null) {
             transitionValues.view = view;
-        } else if (transitionValues.view.getTag(R.id.mtrl_motion_snapshot_view) instanceof View) {
-            View view2 = (View) transitionValues.view.getTag(R.id.mtrl_motion_snapshot_view);
-            transitionValues.view.setTag(R.id.mtrl_motion_snapshot_view, null);
+        } else if (transitionValues.view.getTag(com.google.android.material.R.id.mtrl_motion_snapshot_view) instanceof View) {
+            View view2 = (View) transitionValues.view.getTag(com.google.android.material.R.id.mtrl_motion_snapshot_view);
+            transitionValues.view.setTag(com.google.android.material.R.id.mtrl_motion_snapshot_view, null);
             transitionValues.view = view2;
         }
         View view3 = transitionValues.view;
@@ -473,8 +473,8 @@ public final class MaterialContainerTransform extends Transition {
         if (shapeAppearanceModel != null) {
             return shapeAppearanceModel;
         }
-        if (view.getTag(R.id.mtrl_motion_snapshot_view) instanceof ShapeAppearanceModel) {
-            return (ShapeAppearanceModel) view.getTag(R.id.mtrl_motion_snapshot_view);
+        if (view.getTag(com.google.android.material.R.id.mtrl_motion_snapshot_view) instanceof ShapeAppearanceModel) {
+            return (ShapeAppearanceModel) view.getTag(com.google.android.material.R.id.mtrl_motion_snapshot_view);
         }
         Context context = view.getContext();
         int transitionShapeAppearanceResId = getTransitionShapeAppearanceResId(context);
@@ -489,7 +489,7 @@ public final class MaterialContainerTransform extends Transition {
     }
 
     private static int getTransitionShapeAppearanceResId(Context context) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{R.attr.transitionShapeAppearance});
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(new int[]{com.google.android.material.R.attr.transitionShapeAppearance});
         int resourceId = obtainStyledAttributes.getResourceId(0, -1);
         obtainStyledAttributes.recycle();
         return resourceId;
@@ -514,12 +514,12 @@ public final class MaterialContainerTransform extends Transition {
     }
 
     private void maybeApplyThemeValues(Context context, boolean z) {
-        TransitionUtils.maybeApplyThemeInterpolator(this, context, R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
-        TransitionUtils.maybeApplyThemeDuration(this, context, z ? R.attr.motionDurationLong1 : R.attr.motionDurationMedium2);
+        TransitionUtils.maybeApplyThemeInterpolator(this, context, com.google.android.material.R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR);
+        TransitionUtils.maybeApplyThemeDuration(this, context, z ? com.google.android.material.R.attr.motionDurationLong1 : com.google.android.material.R.attr.motionDurationMedium2);
         if (this.pathMotionCustom) {
             return;
         }
-        TransitionUtils.maybeApplyThemePath(this, context, R.attr.motionPath);
+        TransitionUtils.maybeApplyThemePath(this, context, com.google.android.material.R.attr.motionPath);
     }
 
     @Override // android.transition.Transition

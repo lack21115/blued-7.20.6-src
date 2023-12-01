@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogHelloOpenBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28704a;
+    private final ConstraintLayout f15014a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28704a;
+        return this.f15014a;
     }
 }

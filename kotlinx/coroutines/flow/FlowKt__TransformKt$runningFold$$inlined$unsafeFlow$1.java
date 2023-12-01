@@ -10,22 +10,16 @@ import kotlin.jvm.functions.Function3;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1.class */
 public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> implements Flow<R> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Object f43325a;
+    final /* synthetic */ Object a;
     final /* synthetic */ Flow b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Function3 f43326c;
+    final /* synthetic */ Function3 c;
 
     @Metadata
     @DebugMetadata(b = "Transform.kt", c = {114, 116}, d = "collect", e = "kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1")
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43327a;
+        /* synthetic */ Object a;
         int b;
         Object d;
         Object e;
@@ -37,7 +31,7 @@ public final class FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1<R> impl
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43327a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__TransformKt$runningFold$$inlined$unsafeFlow$1.this.a(null, this);
         }

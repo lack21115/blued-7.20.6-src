@@ -13,11 +13,11 @@ import java.util.Random;
 public class NetConfigManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f21817a = "NetConfigManager";
+    private final String f8210a = "NetConfigManager";
     private final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private EfsReporter f21818c;
+    private EfsReporter f8211c;
     private int d;
     private int e;
     private boolean f;
@@ -35,14 +35,14 @@ public class NetConfigManager {
         this.f = false;
         Context applicationContext = context.getApplicationContext();
         this.g = applicationContext;
-        this.f21818c = efsReporter;
+        this.f8211c = efsReporter;
         SharedPreferences sharedPreferences2 = applicationContext.getSharedPreferences("net_launch", 0);
         if (sharedPreferences2 != null) {
             this.e = sharedPreferences2.getInt("apm_netperf_sampling_rate_last", 0);
         }
         SharedPreferences sharedPreferences3 = this.g.getSharedPreferences("net_launch", 0);
         int i = sharedPreferences3 != null ? sharedPreferences3.getInt("apm_netperf_sampling_rate", -1) : -1;
-        this.f21818c.getAllSdkConfig(new String[]{"apm_netperf_sampling_rate"}, new IConfigCallback() { // from class: com.efs.sdk.net.NetConfigManager.1
+        this.f8211c.getAllSdkConfig(new String[]{"apm_netperf_sampling_rate"}, new IConfigCallback() { // from class: com.efs.sdk.net.NetConfigManager.1
             @Override // com.efs.sdk.base.observer.IConfigCallback
             public final void onChange(Map<String, Object> map) {
                 SharedPreferences sharedPreferences4;

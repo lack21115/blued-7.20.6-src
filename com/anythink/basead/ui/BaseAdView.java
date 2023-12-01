@@ -17,13 +17,9 @@ import java.util.Random;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseAdView.class */
 public abstract class BaseAdView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private com.anythink.basead.a.a f6048a;
+    private com.anythink.basead.a.a a;
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    j f6049c;
+    j c;
     i d;
     c e;
     com.anythink.basead.a.c f;
@@ -53,13 +49,13 @@ public abstract class BaseAdView extends RelativeLayout {
     public BaseAdView(Context context, j jVar, i iVar, String str) {
         super(context);
         this.b = "BaseAdView";
-        this.f6049c = jVar;
+        this.c = jVar;
         this.d = iVar;
         this.q = str;
         this.r = new ArrayList();
-        if (!this.d.L() && this.f6049c.m.F() != 1) {
-            this.f6048a = new com.anythink.basead.a.a(this, this.f6049c, new a.InterfaceC0066a() { // from class: com.anythink.basead.ui.BaseAdView.1
-                @Override // com.anythink.basead.a.a.InterfaceC0066a
+        if (!this.d.L() && this.c.m.F() != 1) {
+            this.a = new com.anythink.basead.a.a(this, this.c, new a.InterfaceC0026a() { // from class: com.anythink.basead.ui.BaseAdView.1
+                @Override // com.anythink.basead.a.a.InterfaceC0026a
                 public final void a(int i) {
                     if (BaseAdView.this.s != null) {
                         BaseAdView baseAdView = BaseAdView.this;
@@ -87,9 +83,9 @@ public abstract class BaseAdView extends RelativeLayout {
         if (iVar instanceof s) {
             com.anythink.basead.f.a.b.a(getContext()).a((s) this.d);
         } else if (iVar instanceof aa) {
-            com.anythink.basead.d.c.c.a().a(getContext(), com.anythink.basead.d.c.c.a(this.f6049c.b, this.f6049c.f6664c), this.d, this.f6049c.m);
+            com.anythink.basead.d.c.c.a().a(getContext(), com.anythink.basead.d.c.c.a(this.c.b, this.c.c), this.d, this.c.m);
         }
-        if ((this.d instanceof aa) && this.f6049c.f == 67) {
+        if ((this.d instanceof aa) && this.c.f == 67) {
             if (((aa) this.d).a(true, true)) {
                 com.anythink.core.common.d.c.a(getContext()).a(this.d.p(), 0, 1);
             }
@@ -116,7 +112,7 @@ public abstract class BaseAdView extends RelativeLayout {
     }
 
     private void c() {
-        if ((this.d instanceof aa) && this.f6049c.f == 67) {
+        if ((this.d instanceof aa) && this.c.f == 67) {
             if (((aa) this.d).a(true, false)) {
                 com.anythink.core.common.d.c.a(getContext()).a(this.d.p(), 1, 0);
             }
@@ -127,7 +123,7 @@ public abstract class BaseAdView extends RelativeLayout {
     }
 
     private void o() {
-        com.anythink.basead.a.a aVar = this.f6048a;
+        com.anythink.basead.a.a aVar = this.a;
         if (aVar != null) {
             aVar.a();
         }
@@ -192,15 +188,15 @@ public abstract class BaseAdView extends RelativeLayout {
         int i2 = iArr[1];
         int width = view.getWidth();
         int height = view.getHeight();
-        int c2 = c(width);
-        int c3 = c(height);
-        int i3 = i + c2;
+        int c = c(width);
+        int c2 = c(height);
+        int i3 = i + c;
         this.i = i3;
-        this.j = i2 + c3;
-        this.m = c2;
-        this.n = c3;
+        this.j = i2 + c2;
+        this.m = c;
+        this.n = c2;
         this.k = i3 + ((int) (Math.random() * 15.0d));
-        int random = c2 + i2 + ((int) (Math.random() * 15.0d));
+        int random = c + i2 + ((int) (Math.random() * 15.0d));
         this.l = random;
         this.o = this.k - i;
         this.p = random - i2;
@@ -213,7 +209,7 @@ public abstract class BaseAdView extends RelativeLayout {
         b();
         k();
         if (this.f == null) {
-            this.f = new com.anythink.basead.a.c(getContext(), this.f6049c, this.d);
+            this.f = new com.anythink.basead.a.c(getContext(), this.c, this.d);
         }
         if (this.f.a()) {
             return;
@@ -224,7 +220,7 @@ public abstract class BaseAdView extends RelativeLayout {
                 BaseAdView.this.a(i);
                 BaseAdView.this.f();
                 BaseAdView baseAdView = BaseAdView.this;
-                if ((baseAdView.d instanceof aa) && baseAdView.f6049c.f == 67) {
+                if ((baseAdView.d instanceof aa) && baseAdView.c.f == 67) {
                     if (((aa) baseAdView.d).a(true, false)) {
                         com.anythink.core.common.d.c.a(baseAdView.getContext()).a(baseAdView.d.p(), 1, 0);
                     }
@@ -299,7 +295,7 @@ public abstract class BaseAdView extends RelativeLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public com.anythink.basead.c.i i() {
-        com.anythink.basead.c.i iVar = new com.anythink.basead.c.i(this.f6049c.d, "");
+        com.anythink.basead.c.i iVar = new com.anythink.basead.c.i(this.c.d, "");
         iVar.e = getWidth();
         iVar.f = getHeight();
         return iVar;
@@ -308,9 +304,9 @@ public abstract class BaseAdView extends RelativeLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     public final com.anythink.basead.c.a j() {
         com.anythink.basead.c.a aVar = new com.anythink.basead.c.a();
-        aVar.f5890a = this.i;
+        aVar.a = this.i;
         aVar.b = this.j;
-        aVar.f5891c = this.k;
+        aVar.c = this.k;
         aVar.d = this.l;
         aVar.e = this.m;
         aVar.f = this.n;
@@ -321,16 +317,16 @@ public abstract class BaseAdView extends RelativeLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void k() {
-        com.anythink.basead.a.a aVar = this.f6048a;
+        com.anythink.basead.a.a aVar = this.a;
         if (aVar != null) {
             aVar.b();
-            this.f6048a = null;
+            this.a = null;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void l() {
-        com.anythink.basead.a.a aVar = this.f6048a;
+        com.anythink.basead.a.a aVar = this.a;
         if (aVar != null) {
             aVar.c();
         }
@@ -339,7 +335,7 @@ public abstract class BaseAdView extends RelativeLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean m() {
         j jVar;
-        return com.anythink.expressad.shake.a.a().b() && (jVar = this.f6049c) != null && jVar.m != null && this.f6049c.m.M() == 1;
+        return com.anythink.expressad.shake.a.a().b() && (jVar = this.c) != null && jVar.m != null && this.c.m.M() == 1;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

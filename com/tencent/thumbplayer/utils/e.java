@@ -4,11 +4,11 @@ package com.tencent.thumbplayer.utils;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f39429a = null;
+    private Object f25738a = null;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private Throwable f39430c = null;
+    private Throwable f25739c = null;
 
     private void b(long j) {
         long currentTimeMillis = System.currentTimeMillis();
@@ -34,10 +34,10 @@ public class e {
             if (!this.b) {
                 b(j);
             }
-            if (this.f39430c != null) {
-                throw this.f39430c;
+            if (this.f25739c != null) {
+                throw this.f25739c;
             }
-            obj = this.f39429a;
+            obj = this.f25738a;
         }
         return obj;
     }
@@ -47,7 +47,7 @@ public class e {
             if (this.b) {
                 return;
             }
-            this.f39429a = obj;
+            this.f25738a = obj;
             this.b = true;
             notifyAll();
         }
@@ -56,7 +56,7 @@ public class e {
     public void a(Throwable th) {
         synchronized (this) {
             if (th != null) {
-                this.f39430c = th;
+                this.f25739c = th;
                 this.b = true;
                 notifyAll();
             }

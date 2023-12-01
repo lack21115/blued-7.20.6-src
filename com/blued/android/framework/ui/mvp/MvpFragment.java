@@ -31,13 +31,9 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
     public View i;
     protected Dialog j;
     private Unbinder k;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f9924a = "_MVP_" + getClass().getSimpleName();
+    private final String a = "_MVP_" + getClass().getSimpleName();
     private boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f9925c = false;
+    private boolean c = false;
     private boolean d = false;
     private boolean e = false;
     private volatile boolean f = false;
@@ -74,7 +70,7 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
         /*
             r4 = this;
             r0 = r4
-            java.lang.String r0 = r0.f9924a
+            java.lang.String r0 = r0.a
             r7 = r0
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
             r1 = r0
@@ -95,7 +91,7 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
             com.blued.android.framework.ui.mvp.MvpPresenter r0 = r0.a(r1)
             r8 = r0
             r0 = r4
-            java.lang.String r0 = r0.f9924a
+            java.lang.String r0 = r0.a
             r9 = r0
             r0 = r8
             if (r0 != 0) goto L41
@@ -215,7 +211,7 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
     private void e() {
         try {
             this.l = (MvpDispatcher) Class.forName(getClass().getName() + "_MVP").getConstructor(new Class[0]).newInstance(new Object[0]);
-            Log.d(this.f9924a, "Loaded _MVP class and constructor.");
+            Log.d(this.a, "Loaded _MVP class and constructor.");
         } catch (Exception e) {
             this.l = null;
         }
@@ -276,18 +272,18 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
     }
 
     protected void a(boolean z) {
-        Log.v(this.f9924a, " onLoadData()");
+        Log.v(this.a, " onLoadData()");
         if (this.h != null && k()) {
             if (!this.d) {
                 this.d = true;
-                List<Pair<String, List>> a2 = this.h.a();
-                if (a2 != null) {
-                    for (Pair<String, List> pair : a2) {
-                        String str = this.f9924a;
-                        Log.v(str, "showDataToUI(), type:" + pair.first);
+                List<Pair<String, List>> a = this.h.a();
+                if (a != null) {
+                    for (Pair<String, List> pair : a) {
+                        String str = this.a;
+                        Log.v(str, "showDataToUI(), type:" + ((String) pair.first));
                         if (!"_internal_data_type_has_more_data_".equals(pair.first)) {
-                            a(pair.first, pair.second);
-                        } else if (((Boolean) pair.second.get(0)).booleanValue()) {
+                            a((String) pair.first, (List) pair.second);
+                        } else if (((Boolean) ((List) pair.second).get(0)).booleanValue()) {
                             o();
                         } else {
                             p();
@@ -304,7 +300,7 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
     }
 
     public void af_() {
-        this.f9925c = false;
+        this.c = false;
         this.d = false;
         this.e = false;
         v();
@@ -339,15 +335,15 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
 
     public T i() {
         String h = h();
-        MvpPresenter a2 = a(h, (MemoryDataCache) null);
-        Log.v(this.f9924a, a2 == null ? "presenter not exist, create it" : "presenter exist, use it");
-        MvpPresenter mvpPresenter = a2;
-        if (a2 != null) {
-            mvpPresenter = a2;
-            if (a2.h() != null) {
-                mvpPresenter = a2;
-                if (!(getActivity() == a2.h())) {
-                    MemoryDataCache memoryDataCache = a2.f;
+        MvpPresenter a = a(h, (MemoryDataCache) null);
+        Log.v(this.a, a == null ? "presenter not exist, create it" : "presenter exist, use it");
+        MvpPresenter mvpPresenter = a;
+        if (a != null) {
+            mvpPresenter = a;
+            if (a.h() != null) {
+                mvpPresenter = a;
+                if (!(getActivity() == a.h())) {
+                    MemoryDataCache memoryDataCache = a.f;
                     mvpPresenter = a(h + "@" + getActivity().hashCode(), memoryDataCache);
                 }
             }
@@ -393,18 +389,17 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
     public void o() {
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        Log.v(this.f9924a, " onActivityCreated()");
-        this.f9925c = true;
+        Log.v(this.a, " onActivityCreated()");
+        this.c = true;
         u();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        Log.v(this.f9924a, " onCreate()");
+        Log.v(this.a, " onCreate()");
         f();
         e();
         T i = i();
@@ -414,9 +409,9 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        Log.v(this.f9924a, " onCreateView()");
+        Log.v(this.a, " onCreateView()");
         View view = this.i;
         if (view != null) {
             if (view.getParent() != null) {
@@ -432,17 +427,17 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
         return this.i;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
-        Log.v(this.f9924a, " onDestroy()");
+        Log.v(this.a, " onDestroy()");
         this.g = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
-        Log.v(this.f9924a, " onDestroyView()");
+        Log.v(this.a, " onDestroyView()");
         if (q()) {
             return;
         }
@@ -453,7 +448,7 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
         af_();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         T t = this.h;
@@ -462,22 +457,22 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStart() {
         super.onStart();
         u();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         this.e = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        Log.v(this.f9924a, " onViewCreated()");
+        Log.v(this.a, " onViewCreated()");
         if (!this.f) {
             a(bundle);
             this.f = true;
@@ -527,10 +522,10 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
-        String str = this.f9924a;
+        String str = this.a;
         Log.v(str, " setUserVisibleHint() " + z);
         this.b = z;
         u();
@@ -544,7 +539,7 @@ public abstract class MvpFragment<T extends MvpPresenter> extends BaseFragment i
     }
 
     protected void u() {
-        if (this.f9925c) {
+        if (this.c) {
             if (!r()) {
                 a(false);
             } else if (c()) {

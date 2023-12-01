@@ -12,22 +12,22 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 public abstract class AnimatedViewPortJob extends ViewPortJob implements Animator.AnimatorListener, ValueAnimator.AnimatorUpdateListener {
 
     /* renamed from: a  reason: collision with root package name */
-    protected ObjectAnimator f22154a;
+    protected ObjectAnimator f8547a;
     protected float b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected float f22155c;
+    protected float f8548c;
     protected float d;
 
     public AnimatedViewPortJob(ViewPortHandler viewPortHandler, float f, float f2, Transformer transformer, View view, float f3, float f4, long j) {
         super(viewPortHandler, f, f2, transformer, view);
-        this.f22155c = f3;
+        this.f8548c = f3;
         this.d = f4;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, TypedValues.CycleType.S_WAVE_PHASE, 0.0f, 1.0f);
-        this.f22154a = ofFloat;
+        this.f8547a = ofFloat;
         ofFloat.setDuration(j);
-        this.f22154a.addUpdateListener(this);
-        this.f22154a.addListener(this);
+        this.f8547a.addUpdateListener(this);
+        this.f8547a.addListener(this);
     }
 
     public abstract void a();
@@ -61,6 +61,6 @@ public abstract class AnimatedViewPortJob extends ViewPortJob implements Animato
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f22154a.start();
+        this.f8547a.start();
     }
 }

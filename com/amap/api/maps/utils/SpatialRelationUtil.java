@@ -34,7 +34,7 @@ public class SpatialRelationUtil {
             }
             Pair<Integer, DPoint> calShortestDistancePoint = calShortestDistancePoint(arrayList, DPoint.obtain(latLng.latitude, latLng.longitude));
             if (calShortestDistancePoint != null) {
-                return new Pair<>(calShortestDistancePoint.first, new LatLng(calShortestDistancePoint.second.x, calShortestDistancePoint.second.y));
+                return new Pair<>(calShortestDistancePoint.first, new LatLng(((DPoint) calShortestDistancePoint.second).x, ((DPoint) calShortestDistancePoint.second).y));
             }
             return null;
         } catch (Throwable th) {
@@ -62,9 +62,9 @@ public class SpatialRelationUtil {
             }
             Pair<Integer, DPoint> calShortestDistancePoint = calShortestDistancePoint(arrayList, DPoint.obtain(latLng.latitude, latLng.longitude), f);
             if (calShortestDistancePoint != null) {
-                DPoint dPoint = calShortestDistancePoint.second;
+                DPoint dPoint = (DPoint) calShortestDistancePoint.second;
                 if (AMapUtils.calculateLineDistance(new LatLng(dPoint.x, dPoint.y), latLng) < d) {
-                    return new Pair<>(calShortestDistancePoint.first, new LatLng(calShortestDistancePoint.second.x, calShortestDistancePoint.second.y));
+                    return new Pair<>(calShortestDistancePoint.first, new LatLng(((DPoint) calShortestDistancePoint.second).x, ((DPoint) calShortestDistancePoint.second).y));
                 }
                 return null;
             }
@@ -109,10 +109,10 @@ public class SpatialRelationUtil {
                         int i3 = i;
                         Pair<Double, DPoint> pointToSegDist = pointToSegDist(dPoint.x, dPoint.y, dPoint2.x, dPoint2.y, dPoint3.x, dPoint3.y);
                         if (pair == null) {
-                            d = pointToSegDist.first.doubleValue();
+                            d = ((Double) pointToSegDist.first).doubleValue();
                             pair = new Pair<>(Integer.valueOf(i3 - 1), pointToSegDist.second);
-                        } else if (d > pointToSegDist.first.doubleValue()) {
-                            d = pointToSegDist.first.doubleValue();
+                        } else if (d > ((Double) pointToSegDist.first).doubleValue()) {
+                            d = ((Double) pointToSegDist.first).doubleValue();
                             pair = new Pair<>(Integer.valueOf(i3 - 1), pointToSegDist.second);
                         }
                     }

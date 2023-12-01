@@ -6,6 +6,7 @@ import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.ServiceSettings;
 import com.amap.api.services.geocoder.GeocodeAddress;
 import com.amap.api.services.geocoder.GeocodeQuery;
+import com.android.internal.util.cm.SpamFilter;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,8 +29,8 @@ public final class fk extends ex<GeocodeQuery, ArrayList<GeocodeAddress>> {
             fe.a(e2, "GeocodingHandler", "paseJSONException");
             return arrayList;
         }
-        if (jSONObject.has("count")) {
-            if (jSONObject.getInt("count") > 0) {
+        if (jSONObject.has(SpamFilter.SpamContract.NotificationTable.COUNT)) {
+            if (jSONObject.getInt(SpamFilter.SpamContract.NotificationTable.COUNT) > 0) {
                 return fm.g(jSONObject);
             }
             return arrayList;
@@ -65,7 +66,7 @@ public final class fk extends ex<GeocodeQuery, ArrayList<GeocodeAddress>> {
     @Override // com.amap.api.col.p0003sl.ew
     protected final ga.b e() {
         ga.b bVar = new ga.b();
-        bVar.f4984a = getURL() + c() + "language=" + ServiceSettings.getInstance().getLanguage();
+        bVar.a = getURL() + c() + "language=" + ServiceSettings.getInstance().getLanguage();
         return bVar;
     }
 

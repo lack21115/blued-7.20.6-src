@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 public class CircularPropagation extends VisibilityPropagation {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f3436a = 3.0f;
+    private float f3388a = 3.0f;
 
     private static float a(float f, float f2, float f3, float f4) {
         float f5 = f3 - f;
@@ -47,13 +47,13 @@ public class CircularPropagation extends VisibilityPropagation {
         if (duration < 0) {
             j = 300;
         }
-        return Math.round((((float) (j * i)) / this.f3436a) * a2);
+        return Math.round((((float) (j * i)) / this.f3388a) * a2);
     }
 
     public void setPropagationSpeed(float f) {
         if (f == 0.0f) {
             throw new IllegalArgumentException("propagationSpeed may not be 0");
         }
-        this.f3436a = f;
+        this.f3388a = f;
     }
 }

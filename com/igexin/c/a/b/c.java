@@ -4,11 +4,11 @@ package com.igexin.c.a.b;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23240a = 2049;
+    public static final int f9632a = 2049;
     public static final int b = -2037;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f23241c = -2036;
+    public static final int f9633c = -2036;
     public static final int d = -2035;
     public static final int e = -2034;
     public static final int f = -2033;

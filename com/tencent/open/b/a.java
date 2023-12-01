@@ -6,12 +6,14 @@ import android.media.AudioSystem;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.telephony.TelephonyManager;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/b/a.class */
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final Uri f38243a = Uri.parse("content://telephony/carriers/preferapn");
+    protected static final Uri f24552a = Uri.parse("content://telephony/carriers/preferapn");
 
     public static String a(Context context) {
         int d = d(context);
@@ -34,7 +36,7 @@ public class a {
             return "wap";
         }
         if (d == 32) {
-            return "net";
+            return TKDownloadReason.KSAD_TK_NET;
         }
         if (d == 512) {
             return "ctwap";
@@ -54,7 +56,7 @@ public class a {
 
     public static String b(Context context) {
         try {
-            Cursor query = context.getContentResolver().query(f38243a, null, null, null, null);
+            Cursor query = context.getContentResolver().query(f24552a, null, null, null, null);
             if (query == null) {
                 return null;
             }
@@ -66,7 +68,7 @@ public class a {
                 }
                 return null;
             }
-            String string = query.getString(query.getColumnIndex("apn"));
+            String string = query.getString(query.getColumnIndex(TelephonyManager.EXTRA_DATA_APN));
             if (query != null) {
                 query.close();
             }
@@ -82,7 +84,7 @@ public class a {
 
     public static String c(Context context) {
         try {
-            Cursor query = context.getContentResolver().query(f38243a, null, null, null, null);
+            Cursor query = context.getContentResolver().query(f24552a, null, null, null, null);
             if (query == null) {
                 return null;
             }
@@ -129,7 +131,7 @@ public class a {
                 if (lowerCase.startsWith("wap")) {
                     return 64;
                 }
-                if (lowerCase.startsWith("net")) {
+                if (lowerCase.startsWith(TKDownloadReason.KSAD_TK_NET)) {
                     return 32;
                 }
                 if (lowerCase.startsWith("ctwap")) {

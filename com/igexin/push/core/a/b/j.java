@@ -19,7 +19,7 @@ public final class j extends a {
                 long j = jSONObject.getLong("timestamp");
                 com.igexin.c.a.c.a.a("SendMessageFeedbackAction|appid:" + string + "|taskid:" + string2 + "|actionid:" + string3, new Object[0]);
                 com.igexin.push.core.l a2 = com.igexin.push.core.l.a();
-                if (com.igexin.push.core.e.f23495a != null && com.igexin.push.core.e.f23495a.equals(string)) {
+                if (com.igexin.push.core.e.f9887a != null && com.igexin.push.core.e.f9887a.equals(string)) {
                     Bundle bundle = new Bundle();
                     bundle.putInt("action", 10010);
                     bundle.putSerializable(PushConsts.KEY_CMD_MSG, new FeedbackCmdMessage(string2, string3, string4, j, PushConsts.THIRDPART_FEEDBACK));

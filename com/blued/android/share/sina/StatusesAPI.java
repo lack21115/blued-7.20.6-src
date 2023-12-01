@@ -4,9 +4,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.util.SparseArray;
+import com.anythink.core.common.g.c;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.net.RequestListener;
 import com.sina.weibo.sdk.net.WeiboParameters;
+import io.grpc.internal.GrpcUtil;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/share/sina/StatusesAPI.class */
 public class StatusesAPI extends AbsOpenAPI {
@@ -64,7 +66,7 @@ public class StatusesAPI extends AbsOpenAPI {
             weiboParameters.put("long", str3);
         }
         if (!TextUtils.isEmpty(str2)) {
-            weiboParameters.put("lat", str2);
+            weiboParameters.put(c.B, str2);
         }
         return weiboParameters;
     }
@@ -86,36 +88,36 @@ public class StatusesAPI extends AbsOpenAPI {
     }
 
     public void update(String str, String str2, String str3, RequestListener requestListener) {
-        requestAsync(sAPIList.get(2), buildUpdateParams(str, str2, str3), "POST", requestListener);
+        requestAsync(sAPIList.get(2), buildUpdateParams(str, str2, str3), GrpcUtil.HTTP_METHOD, requestListener);
     }
 
     public String updateSync(String str, String str2, String str3) {
-        return requestSync(sAPIList.get(2), buildUpdateParams(str, str2, str3), "POST");
+        return requestSync(sAPIList.get(2), buildUpdateParams(str, str2, str3), GrpcUtil.HTTP_METHOD);
     }
 
     public void upload(String str, Bitmap bitmap, String str2, String str3, RequestListener requestListener) {
         WeiboParameters buildUpdateParams = buildUpdateParams(str, str2, str3);
         buildUpdateParams.put("pic", bitmap);
-        requestAsync(sAPIList.get(4), buildUpdateParams, "POST", requestListener);
+        requestAsync(sAPIList.get(4), buildUpdateParams, GrpcUtil.HTTP_METHOD, requestListener);
     }
 
     public String uploadSync(String str, Bitmap bitmap, String str2, String str3) {
         WeiboParameters buildUpdateParams = buildUpdateParams(str, str2, str3);
         buildUpdateParams.put("pic", bitmap);
-        return requestSync(sAPIList.get(4), buildUpdateParams, "POST");
+        return requestSync(sAPIList.get(4), buildUpdateParams, GrpcUtil.HTTP_METHOD);
     }
 
     public void uploadUrlText(String str, String str2, String str3, String str4, String str5, RequestListener requestListener) {
         WeiboParameters buildUpdateParams = buildUpdateParams(str, str4, str5);
         buildUpdateParams.put("url", str2);
         buildUpdateParams.put("pic_id", str3);
-        requestAsync(sAPIList.get(5), buildUpdateParams, "POST", requestListener);
+        requestAsync(sAPIList.get(5), buildUpdateParams, GrpcUtil.HTTP_METHOD, requestListener);
     }
 
     public String uploadUrlTextSync(String str, String str2, String str3, String str4, String str5) {
         WeiboParameters buildUpdateParams = buildUpdateParams(str, str4, str5);
         buildUpdateParams.put("url", str2);
         buildUpdateParams.put("pic_id", str3);
-        return requestSync(sAPIList.get(5), buildUpdateParams, "POST");
+        return requestSync(sAPIList.get(5), buildUpdateParams, GrpcUtil.HTTP_METHOD);
     }
 }

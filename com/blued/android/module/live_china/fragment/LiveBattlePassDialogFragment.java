@@ -21,9 +21,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -63,7 +65,6 @@ import com.blued.android.module.live_china.view.BluedViewExKt;
 import com.blued.android.module.live_china.view.battlepass.BattlePassProgressLevelView;
 import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.umeng.analytics.pro.at;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -78,18 +79,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveBattlePassDialogFragment.class */
 public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12728a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static boolean m;
     private static boolean n;
     public ArrayList<BattlePassBonusHistoryDataModel> b;
     private BattlePassDataModel d;
     private FreedomAdapter e;
     private FreedomAdapter g;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f12729c = LazyKt.a(new Function0<DialogLiveBattlePassBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveBattlePassDialogFragment$vb$2
+    private final Lazy c = LazyKt.a(new Function0<DialogLiveBattlePassBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveBattlePassDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -184,13 +181,13 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
                                 z2 = true;
                             }
                         }
-                        if (LiveBattlePassDialogFragment.f12728a.a() && z2) {
+                        if (LiveBattlePassDialogFragment.a.a() && z2) {
                             f7 = LiveBattlePassDialogFragment.this.f();
                             LinearLayout linearLayout = f7.C;
                             Intrinsics.c(linearLayout, "vb.llBtnRoot");
                             BluedViewExKt.b(linearLayout);
                             f8 = LiveBattlePassDialogFragment.this.f();
-                            ImageView imageView = f8.f11748c;
+                            ImageView imageView = f8.c;
                             Intrinsics.c(imageView, "vb.btnGetAllBig");
                             BluedViewExKt.a(imageView);
                             return;
@@ -200,7 +197,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
                         Intrinsics.c(linearLayout2, "vb.llBtnRoot");
                         BluedViewExKt.a(linearLayout2);
                         f6 = LiveBattlePassDialogFragment.this.f();
-                        ImageView imageView2 = f6.f11748c;
+                        ImageView imageView2 = f6.c;
                         Intrinsics.c(imageView2, "vb.btnGetAllBig");
                         BluedViewExKt.b(imageView2);
                     }
@@ -208,7 +205,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             }
             b(true);
             f().E.setHasLightLevel(false);
-            ObjectAnimator anim = ObjectAnimator.ofInt(f().E, at.b, f().E.getExp(), battlePassDataModel.getExp());
+            ObjectAnimator anim = ObjectAnimator.ofInt(f().E, "exp", f().E.getExp(), battlePassDataModel.getExp());
             anim.setDuration(600L);
             Intrinsics.c(anim, "anim");
             anim.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.fragment.LiveBattlePassDialogFragment$addExp$lambda-30$$inlined$doOnEnd$1
@@ -350,7 +347,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveBattlePassDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveBattleShopDialog.f12741a.b(this$0);
+        LiveBattleShopDialog.a.b((Fragment) this$0);
         EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_TOP_ENTRANCE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
     }
 
@@ -369,7 +366,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveBattlePassDialogFragment this$0, ArrayList it) {
-        View c2;
+        View c;
         Context context;
         DialogLiveBattlePassBinding f;
         RecyclerView recyclerView;
@@ -399,17 +396,17 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         if (i2 > 0 && (f = this$0.f()) != null && (recyclerView = f.I) != null) {
             recyclerView.scrollBy(i2, 0);
         }
-        if (!LiveRoomPreferences.S() || (c2 = this$0.c(this$0.f)) == null || (context = this$0.getContext()) == null) {
+        if (!LiveRoomPreferences.S() || (c = this$0.c(this$0.f)) == null || (context = this$0.getContext()) == null) {
             return;
         }
         int[] iArr = new int[2];
-        c2.getLocationOnScreen(iArr);
+        c.getLocationOnScreen(iArr);
         FragmentActivity activity = this$0.getActivity();
         if (activity == null) {
             return;
         }
         if (iArr[0] + DensityUtils.a(context, 134.0f) < activity.getWindowManager().getDefaultDisplay().getWidth()) {
-            new LiveBattlePassAwardClickTipPop(context, activity).b(c2);
+            new LiveBattlePassAwardClickTipPop(context, activity).b(c);
             LiveRoomPreferences.T();
         }
     }
@@ -427,7 +424,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
                     z = true;
                 }
                 if (z) {
-                    LiveBattleNextLevelRandomAwardDialog.Companion companion = LiveBattleNextLevelRandomAwardDialog.f12725a;
+                    LiveBattleNextLevelRandomAwardDialog.Companion companion = LiveBattleNextLevelRandomAwardDialog.a;
                     FragmentManager childFragmentManager = getChildFragmentManager();
                     Intrinsics.c(childFragmentManager, "childFragmentManager");
                     companion.a(childFragmentManager);
@@ -444,12 +441,12 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             int level = fitemBattlePassLevel.f().getLevel();
             Integer num = (Integer) pair.first;
             if (num != null && level == num.intValue()) {
-                F f = pair.first;
-                Intrinsics.c(f, "pair.first");
-                int intValue = ((Number) f).intValue();
-                S s = pair.second;
-                Intrinsics.c(s, "pair.second");
-                fitemBattlePassLevel.a(intValue, ((Number) s).intValue());
+                Object obj2 = pair.first;
+                Intrinsics.c(obj2, "pair.first");
+                int intValue = ((Number) obj2).intValue();
+                Object obj3 = pair.second;
+                Intrinsics.c(obj3, "pair.second");
+                fitemBattlePassLevel.a(intValue, ((Number) obj3).intValue());
             }
         }
     }
@@ -584,7 +581,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         if (this$0.d != null) {
             BattlePassDataModel battlePassDataModel = this$0.d;
             Intrinsics.a(battlePassDataModel);
-            LiveBattleShopDialog.f12741a.a(this$0, battlePassDataModel.getDesc_pic_url());
+            LiveBattleShopDialog.a.a((Fragment) this$0, battlePassDataModel.getDesc_pic_url());
         }
     }
 
@@ -611,7 +608,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             BluedViewExKt.a(relativeLayout);
         } else {
             ImageLoader.c(a(), "live_battle_box.png").g().g(-1).a(f().v);
-            ImageLoader.c(a(), "live_battle_box_buy_btn.png").g().g(-1).a(f().f11747a);
+            ImageLoader.c(a(), "live_battle_box_buy_btn.png").g().g(-1).a(f().a);
             RelativeLayout relativeLayout2 = f().G;
             Intrinsics.c(relativeLayout2, "vb.rlBuyBattlePassPro");
             BluedViewExKt.b(relativeLayout2);
@@ -625,7 +622,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             for (BattlePassLevelDataModel battlePassLevelDataModel : levels2) {
                 battlePassLevelDataModel.setPriorExp(i);
                 int exp = battlePassLevelDataModel.getExp();
-                this.f.add(new FitemBattlePassLevel(this, battlePassLevelDataModel));
+                this.f.add(new FitemBattlePassLevel((Fragment) this, battlePassLevelDataModel));
                 BattlePassLevelAwardDataModel top = battlePassLevelDataModel.getTop();
                 i = exp;
                 if (top != null && top.getState() == 1) {
@@ -640,14 +637,14 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             LinearLayout linearLayout = f().C;
             Intrinsics.c(linearLayout, "vb.llBtnRoot");
             BluedViewExKt.b(linearLayout);
-            ImageView imageView = f().f11748c;
+            ImageView imageView = f().c;
             Intrinsics.c(imageView, "vb.btnGetAllBig");
             BluedViewExKt.a(imageView);
         } else {
             LinearLayout linearLayout2 = f().C;
             Intrinsics.c(linearLayout2, "vb.llBtnRoot");
             BluedViewExKt.a(linearLayout2);
-            ImageView imageView2 = f().f11748c;
+            ImageView imageView2 = f().c;
             Intrinsics.c(imageView2, "vb.btnGetAllBig");
             BluedViewExKt.b(imageView2);
         }
@@ -686,16 +683,16 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
 
     private final View c(ArrayList<FitemBattlePassLevel> arrayList) {
         View k;
-        RecyclerView.LayoutManager layoutManager = f().I.getLayoutManager();
+        LinearLayoutManager layoutManager = f().I.getLayoutManager();
         if (layoutManager == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.LinearLayoutManager");
         }
-        int findFirstCompletelyVisibleItemPosition = ((LinearLayoutManager) layoutManager).findFirstCompletelyVisibleItemPosition();
-        RecyclerView.LayoutManager layoutManager2 = f().I.getLayoutManager();
+        int findFirstCompletelyVisibleItemPosition = layoutManager.findFirstCompletelyVisibleItemPosition();
+        LinearLayoutManager layoutManager2 = f().I.getLayoutManager();
         if (layoutManager2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.LinearLayoutManager");
         }
-        int findLastCompletelyVisibleItemPosition = ((LinearLayoutManager) layoutManager2).findLastCompletelyVisibleItemPosition();
+        int findLastCompletelyVisibleItemPosition = layoutManager2.findLastCompletelyVisibleItemPosition();
         if (findFirstCompletelyVisibleItemPosition > findLastCompletelyVisibleItemPosition) {
             return null;
         }
@@ -743,11 +740,11 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             return;
         }
         int i5 = i2 - 1;
-        RecyclerView.LayoutManager layoutManager = f().I.getLayoutManager();
+        LinearLayoutManager layoutManager = f().I.getLayoutManager();
         if (layoutManager == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.LinearLayoutManager");
         }
-        LinearLayoutManager linearLayoutManager = (LinearLayoutManager) layoutManager;
+        LinearLayoutManager linearLayoutManager = layoutManager;
         if (linearLayoutManager instanceof LinearLayoutManager) {
             int findFirstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
             int findLastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
@@ -761,21 +758,21 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
                 if (i3 < 0) {
                     i3 = 0;
                 }
-                RecyclerView.LayoutManager layoutManager2 = f().I.getLayoutManager();
+                BattlePassLinearLayoutManger layoutManager2 = f().I.getLayoutManager();
                 if (layoutManager2 == null) {
                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.utils.BattlePassLinearLayoutManger");
                 }
-                ((BattlePassLinearLayoutManger) layoutManager2).b();
+                layoutManager2.b();
             } else if (i5 - 1 <= findLastVisibleItemPosition) {
                 i3 = i5 + i7;
                 if (i3 < 0) {
                     i3 = 0;
                 }
-                RecyclerView.LayoutManager layoutManager3 = f().I.getLayoutManager();
+                BattlePassLinearLayoutManger layoutManager3 = f().I.getLayoutManager();
                 if (layoutManager3 == null) {
                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.utils.BattlePassLinearLayoutManger");
                 }
-                ((BattlePassLinearLayoutManger) layoutManager3).a();
+                layoutManager3.a();
             } else {
                 i3 = i5 + i7;
                 ArrayList<BattlePassLevelDataModel> levels2 = battlePassDataModel.getLevels();
@@ -785,11 +782,11 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
                     Intrinsics.a(levels3);
                     i3 = levels3.size() - 1;
                 }
-                RecyclerView.LayoutManager layoutManager4 = f().I.getLayoutManager();
+                BattlePassLinearLayoutManger layoutManager4 = f().I.getLayoutManager();
                 if (layoutManager4 == null) {
                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.utils.BattlePassLinearLayoutManger");
                 }
-                ((BattlePassLinearLayoutManger) layoutManager4).b();
+                layoutManager4.b();
             }
             f().I.smoothScrollToPosition(i3);
         }
@@ -834,7 +831,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         if (this$0.d != null) {
             BattlePassDataModel battlePassDataModel = this$0.d;
             Intrinsics.a(battlePassDataModel);
-            LiveBattleShopDialog.f12741a.b(this$0, 1, battlePassDataModel.getUnlock_price());
+            LiveBattleShopDialog.a.b((Fragment) this$0, 1, battlePassDataModel.getUnlock_price());
         }
         EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_PRE_UNLOCK_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
     }
@@ -968,7 +965,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         if (this$0.d != null) {
             BattlePassDataModel battlePassDataModel = this$0.d;
             Intrinsics.a(battlePassDataModel);
-            LiveBattleShopDialog.f12741a.b(this$0, 2, battlePassDataModel.getUnlock_all_price());
+            LiveBattleShopDialog.a.b((Fragment) this$0, 2, battlePassDataModel.getUnlock_all_price());
         }
         EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_ALL_UNLOCK_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
     }
@@ -1026,8 +1023,8 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             FrameLayout frameLayout = f().h;
             Intrinsics.c(frameLayout, "vb.flBonusHistoryContent");
             BluedViewExKt.a(frameLayout);
-            ImageLoader.a(a(), ImgURLMap.f10885a.a("live_battle_pass_bonus_history_star")).a(f().r);
-            ImageLoader.a(a(), ImgURLMap.f10885a.a("live_battle_pass_bonus_history_star")).a(f().s);
+            ImageLoader.a(a(), ImgURLMap.a.a("live_battle_pass_bonus_history_star")).a(f().r);
+            ImageLoader.a(a(), ImgURLMap.a.a("live_battle_pass_bonus_history_star")).a(f().s);
             FrameLayout frameLayout2 = f().i;
             Intrinsics.c(frameLayout2, "vb.flBonusHistoryEmpty");
             BluedViewExKt.b(frameLayout2);
@@ -1046,14 +1043,14 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         FrameLayout frameLayout4 = f().h;
         Intrinsics.c(frameLayout4, "vb.flBonusHistoryContent");
         BluedViewExKt.b(frameLayout4);
-        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("live_battle_pass_bonus_history_tag")).a(f().t);
+        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("live_battle_pass_bonus_history_tag")).a(f().t);
         t();
         f().j.animate().alpha(1.0f).setDuration(300L).setStartDelay(0L).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogLiveBattlePassBinding f() {
-        return (DialogLiveBattlePassBinding) this.f12729c.getValue();
+        return (DialogLiveBattlePassBinding) this.c.getValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1118,7 +1115,6 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             return;
         }
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveBattlePassDialogFragment$initRecyclerScrollListener$1
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recycler, int i, int i2) {
                 DialogLiveBattlePassBinding f2;
                 Intrinsics.e(recycler, "recycler");
@@ -1172,7 +1168,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
                 LiveBattlePassDialogFragment.e(LiveBattlePassDialogFragment.this, view);
             }
         });
-        f().f11748c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$8Nl2DX-HQdUYtMrzYNf-TzxuwhQ
+        f().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$8Nl2DX-HQdUYtMrzYNf-TzxuwhQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveBattlePassDialogFragment.f(LiveBattlePassDialogFragment.this, view);
@@ -1199,39 +1195,33 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
     }
 
     private final void j() {
-        LiveBattlePassDialogFragment liveBattlePassDialogFragment = this;
-        LiveEventBus.get(LiveEventBusUtil.E, Integer.TYPE).observe(liveBattlePassDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$a6NNPHDYONDcmvSFxMlE2Bb9Uc8
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get(LiveEventBusUtil.E, Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$a6NNPHDYONDcmvSFxMlE2Bb9Uc8
             public final void onChanged(Object obj) {
                 LiveBattlePassDialogFragment.a(LiveBattlePassDialogFragment.this, (Integer) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.F, Pair.class).observe(liveBattlePassDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$OmffMCveypPy43cO9ZxZa7Tzca0
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.F, Pair.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$OmffMCveypPy43cO9ZxZa7Tzca0
             public final void onChanged(Object obj) {
                 LiveBattlePassDialogFragment.a(LiveBattlePassDialogFragment.this, (Pair) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.G, Integer.TYPE).observe(liveBattlePassDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$7gj-xwT77nuwU844nDhZePXfpwM
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.G, Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$7gj-xwT77nuwU844nDhZePXfpwM
             public final void onChanged(Object obj) {
                 LiveBattlePassDialogFragment.b(LiveBattlePassDialogFragment.this, (Integer) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.H, Integer.TYPE).observe(liveBattlePassDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$_JxE96iaPKiClC3QuhwjUSwBa08
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.H, Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$_JxE96iaPKiClC3QuhwjUSwBa08
             public final void onChanged(Object obj) {
                 LiveBattlePassDialogFragment.c(LiveBattlePassDialogFragment.this, (Integer) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.I, Integer.TYPE).observe(liveBattlePassDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$IUpznPyEj2uy1RhJQbdlIon8HPE
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.I, Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$IUpznPyEj2uy1RhJQbdlIon8HPE
             public final void onChanged(Object obj) {
                 LiveBattlePassDialogFragment.d(LiveBattlePassDialogFragment.this, (Integer) obj);
             }
         });
-        LiveEventBus.get(LiveEventBusUtil.J, Integer.TYPE).observe(liveBattlePassDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$YEE9BHExsSLYl_0yD79j1ACrV-w
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusUtil.J, Integer.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveBattlePassDialogFragment$YEE9BHExsSLYl_0yD79j1ACrV-w
             public final void onChanged(Object obj) {
                 LiveBattlePassDialogFragment.e(LiveBattlePassDialogFragment.this, (Integer) obj);
             }
@@ -1314,7 +1304,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
             LinearLayout linearLayout = f().C;
             Intrinsics.c(linearLayout, "vb.llBtnRoot");
             BluedViewExKt.b(linearLayout);
-            ImageView imageView = f().f11748c;
+            ImageView imageView = f().c;
             Intrinsics.c(imageView, "vb.btnGetAllBig");
             BluedViewExKt.a(imageView);
             return;
@@ -1322,7 +1312,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         LinearLayout linearLayout2 = f().C;
         Intrinsics.c(linearLayout2, "vb.llBtnRoot");
         BluedViewExKt.a(linearLayout2);
-        ImageView imageView2 = f().f11748c;
+        ImageView imageView2 = f().c;
         Intrinsics.c(imageView2, "vb.btnGetAllBig");
         BluedViewExKt.b(imageView2);
     }
@@ -1345,7 +1335,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         if (!z) {
             ToastUtils.b("你已领取全部奖励！");
         } else if (z2) {
-            LiveBattleShopDialog.f12741a.a(this);
+            LiveBattleShopDialog.a.a((Fragment) this);
         } else {
             ToastUtils.b("暂无奖励可领取，快去做任务吧！");
         }
@@ -1395,7 +1385,7 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         if (layoutManager == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.utils.BattlePassLinearLayoutManger");
         }
-        ((BattlePassLinearLayoutManger) layoutManager).a();
+        layoutManager.a();
         DialogLiveBattlePassBinding f3 = f();
         RecyclerView recyclerView4 = f3 == null ? null : f3.I;
         if (recyclerView4 != null) {
@@ -1562,12 +1552,10 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         return null;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
         super.dismissAllowingStateLoss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 540.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -1585,7 +1573,6 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -1597,13 +1584,13 @@ public final class LiveBattlePassDialogFragment extends BaseDialogFragment {
         g();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
             EventTrackLive.a(LiveProtos.Event.LIVE_BATTLE_PASS_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         } catch (Exception e) {

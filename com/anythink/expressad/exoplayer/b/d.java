@@ -11,11 +11,11 @@ import com.anythink.expressad.exoplayer.k.af;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    c f7178a;
+    c f4339a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final b f7179c;
+    private final b f4340c;
     private final BroadcastReceiver d;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/b/d$a.class */
@@ -33,11 +33,11 @@ public final class d {
                 return;
             }
             c a2 = c.a(intent);
-            if (a2.equals(d.this.f7178a)) {
+            if (a2.equals(d.this.f4339a)) {
                 return;
             }
-            d.this.f7178a = a2;
-            b unused = d.this.f7179c;
+            d.this.f4339a = a2;
+            b unused = d.this.f4340c;
         }
     }
 
@@ -48,14 +48,14 @@ public final class d {
 
     private d(Context context, b bVar) {
         this.b = (Context) com.anythink.expressad.exoplayer.k.a.a(context);
-        this.f7179c = (b) com.anythink.expressad.exoplayer.k.a.a(bVar);
-        this.d = af.f7632a >= 21 ? new a(this, (byte) 0) : null;
+        this.f4340c = (b) com.anythink.expressad.exoplayer.k.a.a(bVar);
+        this.d = af.f4793a >= 21 ? new a(this, (byte) 0) : null;
     }
 
     private c a() {
         BroadcastReceiver broadcastReceiver = this.d;
         c a2 = c.a(broadcastReceiver == null ? null : this.b.registerReceiver(broadcastReceiver, new IntentFilter(AudioManager.ACTION_HDMI_AUDIO_PLUG)));
-        this.f7178a = a2;
+        this.f4339a = a2;
         return a2;
     }
 

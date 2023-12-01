@@ -15,18 +15,18 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    byte[] f23181a;
+    byte[] f9573a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f23182c;
+    String f9574c;
     String d;
     String e;
     String f;
     private String g;
 
     private byte[] a() {
-        return this.f23181a;
+        return this.f9573a;
     }
 
     private String b() {
@@ -34,7 +34,7 @@ public final class a {
     }
 
     private String c() {
-        return this.f23182c;
+        return this.f9574c;
     }
 
     private String d() {
@@ -74,7 +74,7 @@ public final class a {
             }
             this.g = context.getPackageName();
             String messageSource = TextUtils.isEmpty(messageBean.getMessageSource()) ? "" : messageBean.getMessageSource();
-            this.f23182c = messageSource + UUID.randomUUID().toString();
+            this.f9574c = messageSource + UUID.randomUUID().toString();
             String a3 = com.igexin.assist.util.a.a(stringMessage, this.d);
             if (TextUtils.isEmpty(a3)) {
                 return;
@@ -87,7 +87,7 @@ public final class a {
                 this.e = jSONObject.getString(AssistPushConsts.MSG_KEY_ACTION);
             }
             if (jSONObject.has(AssistPushConsts.MSG_KEY_CONTENT) && !TextUtils.isEmpty(jSONObject.getString(AssistPushConsts.MSG_KEY_CONTENT))) {
-                this.f23181a = jSONObject.getString(AssistPushConsts.MSG_KEY_CONTENT).getBytes();
+                this.f9573a = jSONObject.getString(AssistPushConsts.MSG_KEY_CONTENT).getBytes();
             }
             if (jSONObject.has(AssistPushConsts.MSG_KEY_ACTION_CHAINS)) {
                 String string = jSONObject.getString(AssistPushConsts.MSG_KEY_ACTION_CHAINS);
@@ -105,6 +105,6 @@ public final class a {
     }
 
     public final boolean a(boolean z) {
-        return (this.f23181a != null || (this.f != null && z)) && (d.a(this.b, this.g, this.d, this.e, this.f23182c) ^ true);
+        return (this.f9573a != null || (this.f != null && z)) && (d.a(this.b, this.g, this.d, this.e, this.f9574c) ^ true);
     }
 }

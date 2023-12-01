@@ -19,11 +19,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class GiftPlayView extends AppCompatImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f32276a = GiftPlayView.class.getSimpleName();
+    public static final String f18586a = GiftPlayView.class.getSimpleName();
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f32277c;
+    private final int f18587c;
     private final int d;
     private int e;
     private MsgExtraGift f;
@@ -32,7 +32,7 @@ public class GiftPlayView extends AppCompatImageView {
     public GiftPlayView(Context context) {
         super(context);
         this.b = 0;
-        this.f32277c = 1;
+        this.f18587c = 1;
         this.d = 2;
         this.e = 0;
         this.g = new LinkedBlockingQueue<>();
@@ -41,7 +41,7 @@ public class GiftPlayView extends AppCompatImageView {
     public GiftPlayView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 0;
-        this.f32277c = 1;
+        this.f18587c = 1;
         this.d = 2;
         this.e = 0;
         this.g = new LinkedBlockingQueue<>();
@@ -50,7 +50,7 @@ public class GiftPlayView extends AppCompatImageView {
     public GiftPlayView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 0;
-        this.f32277c = 1;
+        this.f18587c = 1;
         this.d = 2;
         this.e = 0;
         this.g = new LinkedBlockingQueue<>();
@@ -73,31 +73,28 @@ public class GiftPlayView extends AppCompatImageView {
         giftGivingOptionForJsonParse.gift_id = str;
         giftGivingOptionForJsonParse.extra_info = cardGift;
         new XPopup.Builder(getContext()).a(new SimpleCallback() { // from class: com.soft.blued.ui.msg.customview.GiftPlayView.2
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
             public void d(BasePopupView basePopupView) {
                 super.d(basePopupView);
                 GiftPlayView.this.a();
             }
-        }).a((BasePopupView) new BirthCardPop(getContext(), giftGivingOptionForJsonParse, false, false)).h();
+        }).a(new BirthCardPop(getContext(), giftGivingOptionForJsonParse, false, false)).h();
     }
 
     private void a(final String str) {
-        String str2 = f32276a;
+        String str2 = f18586a;
         Logger.e(str2, "ChattingModel======" + str);
         ImageLoader.a((IRequestHost) null, str).f().a(new ImageLoader.OnAnimationStateListener() { // from class: com.soft.blued.ui.msg.customview.GiftPlayView.1
-            @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void a() {
-                String str3 = GiftPlayView.f32276a;
+                String str3 = GiftPlayView.f18586a;
                 Logger.e(str3, "onAnimationStart======" + str);
                 GiftPlayView.this.e = 1;
                 GiftPlayView.this.setVisibility(0);
-                String str4 = GiftPlayView.f32276a;
+                String str4 = GiftPlayView.f18586a;
                 Logger.e(str4, "onAnimationStart======" + str);
             }
 
-            @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void b() {
-                String str3 = GiftPlayView.f32276a;
+                String str3 = GiftPlayView.f18586a;
                 Logger.e(str3, "onAnimationEnd======" + str);
                 if (GiftPlayView.this.f != null && GiftPlayView.this.f.gift_like != null && GiftPlayView.this.f.gift_like.giftTye == 3 && GiftPlayView.this.f.gift_like.cardGift != null && !TextUtils.isEmpty(GiftPlayView.this.f.gift_like.cardGift.text)) {
                     GiftPlayView giftPlayView = GiftPlayView.this;

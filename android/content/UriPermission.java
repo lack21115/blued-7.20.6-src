@@ -3,7 +3,6 @@ package android.content;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/UriPermission.class */
 public final class UriPermission implements Parcelable {
@@ -59,7 +58,7 @@ public final class UriPermission implements Parcelable {
     }
 
     public String toString() {
-        return "UriPermission {uri=" + this.mUri + ", modeFlags=" + this.mModeFlags + ", persistedTime=" + this.mPersistedTime + i.d;
+        return "UriPermission {uri=" + this.mUri + ", modeFlags=" + this.mModeFlags + ", persistedTime=" + this.mPersistedTime + "}";
     }
 
     @Override // android.os.Parcelable

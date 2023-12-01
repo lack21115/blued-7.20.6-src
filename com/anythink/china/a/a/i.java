@@ -9,12 +9,10 @@ public interface i extends IInterface {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/i$a.class */
     public static final class a implements i {
-
-        /* renamed from: a  reason: collision with root package name */
-        private IBinder f6232a;
+        private IBinder a;
 
         public a(IBinder iBinder) {
-            this.f6232a = iBinder;
+            this.a = iBinder;
         }
 
         public final String a() {
@@ -23,7 +21,7 @@ public interface i extends IInterface {
             Parcel obtain2 = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("com.samsung.android.deviceidservice.IDeviceIdService");
-                this.f6232a.transact(1, obtain, obtain2, 0);
+                this.a.transact(1, obtain, obtain2, 0);
                 obtain2.readException();
                 str = obtain2.readString();
             } catch (Throwable th) {
@@ -39,7 +37,7 @@ public interface i extends IInterface {
 
         @Override // android.os.IInterface
         public final IBinder asBinder() {
-            return this.f6232a;
+            return this.a;
         }
     }
 }

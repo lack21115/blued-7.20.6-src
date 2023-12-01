@@ -1,6 +1,6 @@
 package io.grpc.internal;
 
-import android.provider.ContactsContract;
+import com.alipay.sdk.util.l;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -91,7 +91,7 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public OobChannel(String str, ObjectPool<? extends Executor> objectPool, ScheduledExecutorService scheduledExecutorService, SynchronizationContext synchronizationContext, CallTracer callTracer, ChannelTracer channelTracer, InternalChannelz internalChannelz, TimeProvider timeProvider) {
-        this.authority = (String) Preconditions.checkNotNull(str, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+        this.authority = (String) Preconditions.checkNotNull(str, "authority");
         this.logId = InternalLogId.allocate(getClass(), str);
         this.executorPool = (ObjectPool) Preconditions.checkNotNull(objectPool, "executorPool");
         this.executor = (Executor) Preconditions.checkNotNull(objectPool.getObject(), "executor");
@@ -121,12 +121,10 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
         this.timeProvider = (TimeProvider) Preconditions.checkNotNull(timeProvider, "timeProvider");
     }
 
-    @Override // io.grpc.Channel
     public String authority() {
         return this.authority;
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean awaitTermination(long j, TimeUnit timeUnit) throws InterruptedException {
         return this.terminatedLatch.await(j, timeUnit);
     }
@@ -136,18 +134,15 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
         return this.subchannel;
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return this.logId;
     }
 
-    @Override // io.grpc.ManagedChannel
     public ConnectivityState getState(boolean z) {
         InternalSubchannel internalSubchannel = this.subchannel;
         return internalSubchannel == null ? ConnectivityState.IDLE : internalSubchannel.getState();
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.ChannelStats> getStats() {
         SettableFuture create = SettableFuture.create();
         InternalChannelz.ChannelStats.Builder builder = new InternalChannelz.ChannelStats.Builder();
@@ -179,13 +174,12 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
                     this.errorResult = LoadBalancer.PickResult.withError(connectivityStateInfo.getStatus());
                 }
 
-                @Override // io.grpc.LoadBalancer.SubchannelPicker
                 public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
                     return this.errorResult;
                 }
 
                 public String toString() {
-                    return MoreObjects.toStringHelper((Class<?>) C1OobErrorPicker.class).add("errorResult", this.errorResult).toString();
+                    return MoreObjects.toStringHelper(C1OobErrorPicker.class).add("errorResult", this.errorResult).toString();
                 }
             });
         }
@@ -198,22 +192,18 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
         this.terminatedLatch.countDown();
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean isShutdown() {
         return this.shutdown;
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean isTerminated() {
         return this.terminatedLatch.getCount() == 0;
     }
 
-    @Override // io.grpc.Channel
     public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
         return new ClientCallImpl(methodDescriptor, callOptions.getExecutor() == null ? this.executor : callOptions.getExecutor(), callOptions, this.transportProvider, this.deadlineCancellationExecutor, this.channelCallsTracer, null);
     }
 
-    @Override // io.grpc.ManagedChannel
     public void resetConnectBackoff() {
         this.subchannel.resetConnectBackoff();
     }
@@ -223,12 +213,10 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
         log.log(Level.FINE, "[{0}] Created with [{1}]", new Object[]{this, internalSubchannel});
         this.subchannel = internalSubchannel;
         this.subchannelImpl = new AbstractSubchannel() { // from class: io.grpc.internal.OobChannel.3
-            @Override // io.grpc.LoadBalancer.Subchannel
             public List<EquivalentAddressGroup> getAllAddresses() {
                 return internalSubchannel.getAddressGroups();
             }
 
-            @Override // io.grpc.LoadBalancer.Subchannel
             public Attributes getAttributes() {
                 return Attributes.EMPTY;
             }
@@ -238,17 +226,14 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
                 return internalSubchannel;
             }
 
-            @Override // io.grpc.LoadBalancer.Subchannel
             public Object getInternalSubchannel() {
                 return internalSubchannel;
             }
 
-            @Override // io.grpc.LoadBalancer.Subchannel
             public void requestConnection() {
                 internalSubchannel.obtainActiveTransport();
             }
 
-            @Override // io.grpc.LoadBalancer.Subchannel
             public void shutdown() {
                 internalSubchannel.shutdown(Status.UNAVAILABLE.withDescription("OobChannel is shutdown"));
             }
@@ -260,27 +245,24 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
                 this.result = LoadBalancer.PickResult.withSubchannel(OobChannel.this.subchannelImpl);
             }
 
-            @Override // io.grpc.LoadBalancer.SubchannelPicker
             public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
                 return this.result;
             }
 
             public String toString() {
-                return MoreObjects.toStringHelper((Class<?>) C1OobSubchannelPicker.class).add("result", this.result).toString();
+                return MoreObjects.toStringHelper(C1OobSubchannelPicker.class).add(l.c, this.result).toString();
             }
         };
         this.subchannelPicker = subchannelPicker;
         this.delayedTransport.reprocess(subchannelPicker);
     }
 
-    @Override // io.grpc.ManagedChannel
     public ManagedChannel shutdown() {
         this.shutdown = true;
         this.delayedTransport.shutdown(Status.UNAVAILABLE.withDescription("OobChannel.shutdown() called"));
         return this;
     }
 
-    @Override // io.grpc.ManagedChannel
     public ManagedChannel shutdownNow() {
         this.shutdown = true;
         this.delayedTransport.shutdownNow(Status.UNAVAILABLE.withDescription("OobChannel.shutdownNow() called"));
@@ -288,7 +270,7 @@ public final class OobChannel extends ManagedChannel implements InternalInstrume
     }
 
     public String toString() {
-        return MoreObjects.toStringHelper(this).add("logId", this.logId.getId()).add(ContactsContract.Directory.DIRECTORY_AUTHORITY, this.authority).toString();
+        return MoreObjects.toStringHelper(this).add("logId", this.logId.getId()).add("authority", this.authority).toString();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

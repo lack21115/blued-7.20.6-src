@@ -10,7 +10,7 @@ public class a {
     private static Executor b = Executors.newSingleThreadExecutor();
 
     /* renamed from: a  reason: collision with root package name */
-    public Handler f4123a = new Handler(Looper.getMainLooper());
+    public Handler f4075a = new Handler(Looper.getMainLooper());
 
     public static void a(Runnable runnable) {
         b.execute(runnable);

@@ -9,16 +9,16 @@ import androidx.viewpager.widget.ViewPager;
 public class NoScrollH5ViewPager extends ViewPager {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f28459a;
+    private boolean f14769a;
 
     public NoScrollH5ViewPager(Context context) {
         super(context);
-        this.f28459a = false;
+        this.f14769a = false;
     }
 
     public NoScrollH5ViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28459a = false;
+        this.f14769a = false;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -28,7 +28,7 @@ public class NoScrollH5ViewPager extends ViewPager {
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.f28459a) {
+        if (this.f14769a) {
             return super.onInterceptTouchEvent(motionEvent);
         }
         return false;
@@ -36,13 +36,13 @@ public class NoScrollH5ViewPager extends ViewPager {
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.f28459a) {
+        if (this.f14769a) {
             return super.onTouchEvent(motionEvent);
         }
         return true;
     }
 
     public void setScroll(boolean z) {
-        this.f28459a = z;
+        this.f14769a = z;
     }
 }

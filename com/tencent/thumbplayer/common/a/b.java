@@ -17,11 +17,11 @@ import java.util.Map;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f39268a = false;
+    private static boolean f25577a = false;
 
     public static void a(Context context) {
         TPLogUtil.i("TPBeaconReportWrapper", "Beacon sdk init start.");
-        if (f39268a) {
+        if (f25577a) {
             BeaconConfig.Builder builder = BeaconConfig.builder();
             builder.auditEnable(false);
             BeaconReport.getInstance().setModel(TPSystemInfo.getDeviceName());
@@ -42,7 +42,7 @@ public class b {
     }
 
     public static void a(String str, String str2, Map<String, String> map) {
-        if (f39268a && TPPlayerConfig.isDataReportEnable() && TPPlayerConfig.isPlayerReportEnable()) {
+        if (f25577a && TPPlayerConfig.isDataReportEnable() && TPPlayerConfig.isPlayerReportEnable()) {
             EventResult report = BeaconReport.getInstance().report(BeaconEvent.builder().withCode(str).withType(EventType.NORMAL).withAppKey(str2).withParams(map).build());
             if (report.errorCode != 0) {
                 TPLogUtil.w("TPBeaconReportWrapper", "reportEvent: failed! eventId = " + report.eventID + ", errorCode=" + report.errorCode);

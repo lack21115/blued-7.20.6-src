@@ -9,7 +9,7 @@ import org.json.JSONObject;
 public class cr {
 
     /* renamed from: a  reason: collision with root package name */
-    private cs f23796a = new cs();
+    private cs f10188a = new cs();
 
     public JSONObject a() {
         try {
@@ -63,43 +63,43 @@ public class cr {
     public JSONObject b() {
         try {
             JSONObject jSONObject = new JSONObject();
-            int a2 = this.f23796a.a();
+            int a2 = this.f10188a.a();
             if (a2 <= 0) {
                 return null;
             }
-            int a3 = this.f23796a.a(a2, TelephonyManager.class, "getDeviceId", new Object[0]);
+            int a3 = this.f10188a.a(a2, TelephonyManager.class, "getDeviceId", new Object[0]);
             if (a3 > 0) {
                 jSONObject.put("0", a3);
             }
-            int a4 = this.f23796a.a(a2, TelephonyManager.class, "getSubscriberId", new Object[0]);
+            int a4 = this.f10188a.a(a2, TelephonyManager.class, "getSubscriberId", new Object[0]);
             if (a4 > 0) {
                 jSONObject.put("1", a4);
             }
-            int a5 = this.f23796a.a(a2, TelephonyManager.class, "getSimSerialNumber", new Object[0]);
+            int a5 = this.f10188a.a(a2, TelephonyManager.class, "getSimSerialNumber", new Object[0]);
             if (a5 > 0) {
                 jSONObject.put("2", a5);
             }
-            int a6 = this.f23796a.a(a2, Location.class, "getLatitude", new Object[0]);
+            int a6 = this.f10188a.a(a2, Location.class, "getLatitude", new Object[0]);
             if (a6 > 0) {
                 jSONObject.put("3", a6);
             }
-            int a7 = this.f23796a.a(a2, Location.class, "getLongitude", new Object[0]);
+            int a7 = this.f10188a.a(a2, Location.class, "getLongitude", new Object[0]);
             if (a7 > 0) {
                 jSONObject.put("4", a7);
             }
-            int a8 = this.f23796a.a(a2, WifiInfo.class, "getMacAddress", new Object[0]);
+            int a8 = this.f10188a.a(a2, WifiInfo.class, "getMacAddress", new Object[0]);
             if (a8 > 0) {
                 jSONObject.put("6", a8);
             }
-            int a9 = this.f23796a.a(a2, WifiInfo.class, "getBSSID", new Object[0]);
+            int a9 = this.f10188a.a(a2, WifiInfo.class, "getBSSID", new Object[0]);
             if (a9 > 0) {
                 jSONObject.put("7", a9);
             }
-            int a10 = this.f23796a.a(a2, WifiInfo.class, "getRssi", new Object[0]);
+            int a10 = this.f10188a.a(a2, WifiInfo.class, "getRssi", new Object[0]);
             if (a10 > 0) {
                 jSONObject.put("8", a10);
             }
-            int a11 = this.f23796a.a(a2, JSONObject.class, "toString", new Object[0]);
+            int a11 = this.f10188a.a(a2, JSONObject.class, "toString", new Object[0]);
             if (a11 > 0) {
                 jSONObject.put("9", a11);
             }

@@ -12,14 +12,14 @@ import java.util.List;
 public class e implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private f f38993a;
+    private f f25302a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f38994c;
+    private boolean f25303c;
 
     public e(Context context) {
-        this.f38993a = f.a(context);
+        this.f25302a = f.a(context);
     }
 
     private void a(SQLiteDatabase sQLiteDatabase) {
@@ -63,9 +63,9 @@ public class e implements d {
                     try {
                         if (cursor.moveToLast()) {
                             com.tencent.tendinsv.tool.e eVar = new com.tencent.tendinsv.tool.e();
-                            eVar.f39051a = cursor.getString(cursor.getColumnIndex("DID"));
+                            eVar.f25360a = cursor.getString(cursor.getColumnIndex("DID"));
                             eVar.b = cursor.getString(cursor.getColumnIndex(b.a.o));
-                            eVar.f39052c = cursor.getString(cursor.getColumnIndex(b.a.g));
+                            eVar.f25361c = cursor.getString(cursor.getColumnIndex(b.a.g));
                             eVar.d = cursor.getString(cursor.getColumnIndex(b.a.l));
                             eVar.e = cursor.getString(cursor.getColumnIndex(b.a.m));
                             eVar.f = cursor.getString(cursor.getColumnIndex("sdkVersion"));
@@ -93,9 +93,9 @@ public class e implements d {
                         }
                         if (arrayList.size() > 0) {
                             a((com.tencent.tendinsv.tool.e) arrayList.get(0), j, j2, i, sQLiteDatabase);
-                            this.f38994c = false;
+                            this.f25303c = false;
                         } else {
-                            this.f38994c = true;
+                            this.f25303c = true;
                         }
                         if (cursor != null) {
                             cursor.close();
@@ -134,7 +134,7 @@ public class e implements d {
     private SQLiteDatabase d() {
         SQLiteDatabase writableDatabase;
         synchronized (this) {
-            writableDatabase = this.f38993a.getWritableDatabase();
+            writableDatabase = this.f25302a.getWritableDatabase();
         }
         return writableDatabase;
     }
@@ -194,9 +194,9 @@ public class e implements d {
                 ArrayList arrayList = new ArrayList();
                 while (cursor.moveToNext()) {
                     com.tencent.tendinsv.tool.e eVar = new com.tencent.tendinsv.tool.e();
-                    eVar.f39051a = cursor.getString(cursor.getColumnIndex("DID"));
+                    eVar.f25360a = cursor.getString(cursor.getColumnIndex("DID"));
                     eVar.b = cursor.getString(cursor.getColumnIndex(b.a.o));
-                    eVar.f39052c = cursor.getString(cursor.getColumnIndex(b.a.g));
+                    eVar.f25361c = cursor.getString(cursor.getColumnIndex(b.a.g));
                     eVar.d = cursor.getString(cursor.getColumnIndex(b.a.l));
                     eVar.e = cursor.getString(cursor.getColumnIndex(b.a.m));
                     eVar.f = cursor.getString(cursor.getColumnIndex("sdkVersion"));
@@ -279,15 +279,15 @@ public class e implements d {
                 try {
                     sQLiteDatabase2 = d();
                     try {
-                        this.f38994c = true;
+                        this.f25303c = true;
                         if (z) {
                             a(eVar.w, eVar.o, eVar.o, sQLiteDatabase2);
                         }
-                        if (this.f38994c || !z) {
+                        if (this.f25303c || !z) {
                             ContentValues contentValues = new ContentValues();
-                            contentValues.put("DID", eVar.f39051a);
+                            contentValues.put("DID", eVar.f25360a);
                             contentValues.put(b.a.o, eVar.b);
-                            contentValues.put(b.a.g, eVar.f39052c);
+                            contentValues.put(b.a.g, eVar.f25361c);
                             contentValues.put(b.a.l, eVar.d);
                             contentValues.put(b.a.m, eVar.e);
                             contentValues.put("sdkVersion", eVar.f);
@@ -350,19 +350,19 @@ public class e implements d {
                 try {
                     try {
                         ContentValues contentValues = new ContentValues();
-                        contentValues.put("DID", fVar.f39053a);
-                        contentValues.put(b.a.f38990c, fVar.b);
-                        contentValues.put("IMSI", fVar.f39054c);
+                        contentValues.put("DID", fVar.f25362a);
+                        contentValues.put(b.a.f25299c, fVar.b);
+                        contentValues.put(b.a.d, fVar.f25363c);
                         contentValues.put(b.a.e, fVar.d);
                         contentValues.put(b.a.f, fVar.e);
                         contentValues.put(b.a.h, fVar.f);
                         contentValues.put("device", fVar.g);
                         contentValues.put(b.a.j, fVar.h);
                         contentValues.put("oaid", fVar.i);
-                        query = sQLiteDatabase.query(f.f38995a, new String[]{"DID"}, "DID = ?", new String[]{fVar.f39053a}, null, null, null, null);
+                        query = sQLiteDatabase.query(f.f25304a, new String[]{"DID"}, "DID = ?", new String[]{fVar.f25362a}, null, null, null, null);
                         try {
                             if (query.getCount() == 0) {
-                                sQLiteDatabase.insert(f.f38995a, null, contentValues);
+                                sQLiteDatabase.insert(f.f25304a, null, contentValues);
                             }
                         } catch (Exception e) {
                             e = e;

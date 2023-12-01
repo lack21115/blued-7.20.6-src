@@ -44,13 +44,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYFansWelfareDialog.class */
 public final class YYFansWelfareDialog extends YYBaseFansDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f17235a;
+    private BaseFragment a;
     private final YYUserInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogFansViewBinding f17236c;
+    private DialogFansViewBinding c;
     private FansBenefitAdapter d;
     private YYGiftModel e;
 
@@ -58,19 +54,16 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYFansWelfareDialog$FansBenefitAdapter.class */
     public final class FansBenefitAdapter extends BaseQuickAdapter<YYBenefitsModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYFansWelfareDialog f17237a;
+        final /* synthetic */ YYFansWelfareDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public FansBenefitAdapter(YYFansWelfareDialog this$0) {
             super(R.layout.item_fans_benefit);
             Intrinsics.e(this$0, "this$0");
-            this.f17237a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYBenefitsModel yYBenefitsModel) {
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_prize_picture);
@@ -79,7 +72,7 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
             if (yYBenefitsModel == null) {
                 return;
             }
-            YYFansWelfareDialog yYFansWelfareDialog = this.f17237a;
+            YYFansWelfareDialog yYFansWelfareDialog = this.a;
             if (textView != null) {
                 textView.setText(yYBenefitsModel.content);
             }
@@ -95,7 +88,7 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
         super(fragment, us);
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(us, "us");
-        this.f17235a = fragment;
+        this.a = fragment;
         this.b = us;
     }
 
@@ -120,13 +113,13 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
         YYUserInfo g2 = this$0.g();
         EventTrackYY.k(event, str, uid, g2 == null ? null : g2.getUid());
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = new YYPayRequestModel();
+        objectRef.a = new YYPayRequestModel();
         YYGiftModel yYGiftModel = this$0.e;
         if (yYGiftModel != null) {
             yYGiftModel.hit_id = System.currentTimeMillis();
         }
-        ((YYPayRequestModel) objectRef.f42545a).gift = this$0.e;
-        YYPayRequestModel yYPayRequestModel = (YYPayRequestModel) objectRef.f42545a;
+        ((YYPayRequestModel) objectRef.a).gift = this$0.e;
+        YYPayRequestModel yYPayRequestModel = (YYPayRequestModel) objectRef.a;
         YYGiftModel yYGiftModel2 = this$0.e;
         if ((yYGiftModel2 == null ? null : Long.valueOf(yYGiftModel2.beans)) == null) {
             longValue = 0;
@@ -137,26 +130,26 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
             longValue = valueOf.longValue();
         }
         yYPayRequestModel.beans = longValue;
-        ((YYPayRequestModel) objectRef.f42545a).giftCount = 1;
-        YYPayRequestModel yYPayRequestModel2 = (YYPayRequestModel) objectRef.f42545a;
+        ((YYPayRequestModel) objectRef.a).giftCount = 1;
+        YYPayRequestModel yYPayRequestModel2 = (YYPayRequestModel) objectRef.a;
         YYGiftModel yYGiftModel4 = this$0.e;
         yYPayRequestModel2.goods_id = yYGiftModel4 == null ? null : yYGiftModel4.goods_id;
-        YYPayRequestModel yYPayRequestModel3 = (YYPayRequestModel) objectRef.f42545a;
+        YYPayRequestModel yYPayRequestModel3 = (YYPayRequestModel) objectRef.a;
         YYGiftModel yYGiftModel5 = this$0.e;
         Integer valueOf2 = yYGiftModel5 == null ? null : Integer.valueOf(yYGiftModel5.goods_type);
         Intrinsics.a(valueOf2);
         yYPayRequestModel3.goods_type = valueOf2.intValue();
-        ((YYPayRequestModel) objectRef.f42545a).hit_id = 0L;
-        ((YYPayRequestModel) objectRef.f42545a).payCode = "";
-        ((YYPayRequestModel) objectRef.f42545a).remember_me = false;
-        YYPayRequestModel yYPayRequestModel4 = (YYPayRequestModel) objectRef.f42545a;
+        ((YYPayRequestModel) objectRef.a).hit_id = 0L;
+        ((YYPayRequestModel) objectRef.a).payCode = "";
+        ((YYPayRequestModel) objectRef.a).remember_me = false;
+        YYPayRequestModel yYPayRequestModel4 = (YYPayRequestModel) objectRef.a;
         YYRoomModel h2 = this$0.h();
         yYPayRequestModel4.room_id = h2 == null ? null : h2.room_id;
-        YYPayRequestModel yYPayRequestModel5 = (YYPayRequestModel) objectRef.f42545a;
+        YYPayRequestModel yYPayRequestModel5 = (YYPayRequestModel) objectRef.a;
         YYUserInfo g3 = this$0.g();
         yYPayRequestModel5.target_uid = g3 == null ? null : g3.getUid();
-        ((YYPayRequestModel) objectRef.f42545a).pay_from = 1;
-        YYPayUtils.a((YYPayRequestModel) objectRef.f42545a, YYConstants.PayFromSource.Pay_Gift, this$0.f(), this$0.f().getFragmentActive(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYFansWelfareDialog$initView$1$1
+        ((YYPayRequestModel) objectRef.a).pay_from = 1;
+        YYPayUtils.a((YYPayRequestModel) objectRef.a, YYConstants.PayFromSource.Pay_Gift, this$0.f(), this$0.f().getFragmentActive(), new YYPayUtils.PayGiftStatusListener() { // from class: com.blued.android.module.yy_china.fragment.YYFansWelfareDialog$initView$1$1
             @Override // com.blued.android.module.yy_china.utils.YYPayUtils.PayGiftStatusListener
             public void a(int i, String errorMessage) {
                 Intrinsics.e(errorMessage, "errorMessage");
@@ -166,13 +159,13 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
             public void a(YYPayGoodsModel goodsModel) {
                 YYGiftModel yYGiftModel6;
                 Intrinsics.e(goodsModel, "goodsModel");
-                YYSeatMemberModel yYSeatMemberModel = YYRoomInfoManager.e().o().get(objectRef.f42545a.target_uid);
+                YYSeatMemberModel yYSeatMemberModel = YYRoomInfoManager.e().o().get(objectRef.a.target_uid);
                 if (yYSeatMemberModel == null) {
                     return;
                 }
-                YYImMsgManager a2 = YYImMsgManager.a();
+                YYImMsgManager a = YYImMsgManager.a();
                 yYGiftModel6 = this$0.e;
-                a2.a(yYGiftModel6, yYSeatMemberModel, goodsModel, false);
+                a.a(yYGiftModel6, yYSeatMemberModel, goodsModel, false);
             }
         });
         this$0.dismissAllowingStateLoss();
@@ -184,9 +177,9 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
             return;
         }
         ImageWrapper b = ImageLoader.a(a(), g.getAvatar()).b(R.drawable.user_bg_round);
-        DialogFansViewBinding dialogFansViewBinding = this.f17236c;
+        DialogFansViewBinding dialogFansViewBinding = this.c;
         b.a(dialogFansViewBinding == null ? null : dialogFansViewBinding.d);
-        DialogFansViewBinding dialogFansViewBinding2 = this.f17236c;
+        DialogFansViewBinding dialogFansViewBinding2 = this.c;
         TextView textView = dialogFansViewBinding2 == null ? null : dialogFansViewBinding2.m;
         if (textView == null) {
             return;
@@ -196,13 +189,13 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
 
     private final void m() {
         this.d = new FansBenefitAdapter(this);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
-        DialogFansViewBinding dialogFansViewBinding = this.f17236c;
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
+        DialogFansViewBinding dialogFansViewBinding = this.c;
         RecyclerView recyclerView = dialogFansViewBinding == null ? null : dialogFansViewBinding.j;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(gridLayoutManager);
         }
-        DialogFansViewBinding dialogFansViewBinding2 = this.f17236c;
+        DialogFansViewBinding dialogFansViewBinding2 = this.c;
         RecyclerView recyclerView2 = dialogFansViewBinding2 == null ? null : dialogFansViewBinding2.j;
         if (recyclerView2 == null) {
             return;
@@ -214,8 +207,8 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
         ShapeLinearLayout shapeLinearLayout;
         YYRoomModel h = h();
         if (Intrinsics.a((Object) (h == null ? null : h.uid), (Object) g().getUid())) {
-            DialogFansViewBinding dialogFansViewBinding = this.f17236c;
-            if (dialogFansViewBinding == null || (shapeLinearLayout = dialogFansViewBinding.f16334a) == null) {
+            DialogFansViewBinding dialogFansViewBinding = this.c;
+            if (dialogFansViewBinding == null || (shapeLinearLayout = dialogFansViewBinding.a) == null) {
                 return;
             }
             shapeLinearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFansWelfareDialog$2Sbx0PVTuXTdHJRJiWerRFNE-rw
@@ -226,12 +219,12 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
             });
             return;
         }
-        DialogFansViewBinding dialogFansViewBinding2 = this.f17236c;
+        DialogFansViewBinding dialogFansViewBinding2 = this.c;
         if (dialogFansViewBinding2 == null) {
             return;
         }
-        ShapeHelper.a(dialogFansViewBinding2.f16334a, R.color.syc_7C7C7C, R.color.syc_ADADAD);
-        dialogFansViewBinding2.f16334a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFansWelfareDialog$quAQ-s5_h3Q58S1RUhvpZXGMelE
+        ShapeHelper.a(dialogFansViewBinding2.a, R.color.syc_7C7C7C, R.color.syc_ADADAD);
+        dialogFansViewBinding2.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFansWelfareDialog$quAQ-s5_h3Q58S1RUhvpZXGMelE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYFansWelfareDialog.a(view);
@@ -242,8 +235,8 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
     private final void o() {
         YYUserInfo g = g();
         String uid = g == null ? null : g.getUid();
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.p(uid, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYFansBenefitModel>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYFansWelfareDialog$getFansBenefit$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.p(uid, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYFansBenefitModel>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYFansWelfareDialog$getFansBenefit$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -257,7 +250,7 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
                     return;
                 }
                 YYFansWelfareDialog yYFansWelfareDialog = YYFansWelfareDialog.this;
-                dialogFansViewBinding = yYFansWelfareDialog.f17236c;
+                dialogFansViewBinding = yYFansWelfareDialog.c;
                 TextView textView = dialogFansViewBinding == null ? null : dialogFansViewBinding.k;
                 if (textView != null) {
                     textView.setText(singleData.fans_count);
@@ -279,9 +272,9 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
                 }
                 yYFansWelfareDialog.e = yYGiftModel;
                 ImageWrapper b = ImageLoader.a(yYFansWelfareDialog.a(), yYGiftModel.images_static).b(R.drawable.gift_default_icon);
-                dialogFansViewBinding2 = yYFansWelfareDialog.f17236c;
-                b.a(dialogFansViewBinding2 == null ? null : dialogFansViewBinding2.f16335c);
-                dialogFansViewBinding3 = yYFansWelfareDialog.f17236c;
+                dialogFansViewBinding2 = yYFansWelfareDialog.c;
+                b.a(dialogFansViewBinding2 == null ? null : dialogFansViewBinding2.c);
+                dialogFansViewBinding3 = yYFansWelfareDialog.c;
                 TextView textView2 = dialogFansViewBinding3 == null ? null : dialogFansViewBinding3.l;
                 if (textView2 == null) {
                     return;
@@ -293,7 +286,7 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
     public BaseFragment f() {
-        return this.f17235a;
+        return this.a;
     }
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
@@ -303,31 +296,31 @@ public final class YYFansWelfareDialog extends YYBaseFansDialog {
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
     public View j() {
-        DialogFansViewBinding dialogFansViewBinding = this.f17236c;
+        DialogFansViewBinding dialogFansViewBinding = this.c;
         return dialogFansViewBinding == null ? null : dialogFansViewBinding.e;
     }
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
     public View k() {
-        DialogFansViewBinding dialogFansViewBinding = this.f17236c;
+        DialogFansViewBinding dialogFansViewBinding = this.c;
         if (dialogFansViewBinding == null) {
             return null;
         }
         return dialogFansViewBinding.b;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog, com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog, com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         o();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_fans_view, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…ns_view, container, true)");
-        this.f17236c = DialogFansViewBinding.a(inflate);
+        this.c = DialogFansViewBinding.a(inflate);
         l();
         n();
         m();

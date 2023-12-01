@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public class FFMP4Demuxer {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f27731a = "FFMP4Demuxer";
+    private static String f14043a = "FFMP4Demuxer";
     private long b;
 
     private native int nativeCloseFile(long j);
@@ -85,7 +85,7 @@ public class FFMP4Demuxer {
         long nativeOpenFile = nativeOpenFile(str);
         this.b = nativeOpenFile;
         if (nativeOpenFile == -1) {
-            e.n.e(f27731a, "demuxer create failed!");
+            e.n.e(f14043a, "demuxer create failed!");
             return false;
         }
         return true;

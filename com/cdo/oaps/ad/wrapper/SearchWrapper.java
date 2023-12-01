@@ -8,17 +8,17 @@ import java.util.Map;
 public class SearchWrapper extends BaseWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21542a;
+    private String f7936a;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21543c;
+    private String f7937c;
     private String d;
     private String e;
 
     protected SearchWrapper(Map<String, Object> map) {
         super(map);
-        this.f21542a = "sfl";
-        this.f21543c = "shi";
+        this.f7936a = "sfl";
+        this.f7937c = "shi";
         this.d = "sfr";
         this.e = "sfi";
     }
@@ -61,7 +61,7 @@ public class SearchWrapper extends BaseWrapper {
 
     public String getSearchFlag() {
         try {
-            return (String) get(this.f21542a);
+            return (String) get(this.f7936a);
         } catch (ag e) {
             return "";
         }
@@ -85,7 +85,7 @@ public class SearchWrapper extends BaseWrapper {
 
     public String getSearchHint() {
         try {
-            return (String) get(this.f21543c);
+            return (String) get(this.f7937c);
         } catch (ag e) {
             return "";
         }
@@ -116,7 +116,7 @@ public class SearchWrapper extends BaseWrapper {
     }
 
     public SearchWrapper setSearchFlag(String str) {
-        return (SearchWrapper) set(this.f21542a, str);
+        return (SearchWrapper) set(this.f7936a, str);
     }
 
     public SearchWrapper setSearchFrom(String str) {
@@ -128,7 +128,7 @@ public class SearchWrapper extends BaseWrapper {
     }
 
     public SearchWrapper setSearchHint(String str) {
-        return (SearchWrapper) set(this.f21543c, str);
+        return (SearchWrapper) set(this.f7937c, str);
     }
 
     public ResourceWrapper setTraceId(String str) {

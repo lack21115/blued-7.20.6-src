@@ -4,7 +4,7 @@ package com.cmic.gen.sdk.tencent.view;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f21703a;
+    private static b f8097a;
     private a b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/cmic/gen/sdk/tencent/view/b$a.class */
@@ -13,18 +13,18 @@ public class b {
     }
 
     public static b a() {
-        if (f21703a == null) {
+        if (f8097a == null) {
             synchronized (b.class) {
                 try {
-                    if (f21703a == null) {
-                        f21703a = new b();
+                    if (f8097a == null) {
+                        f8097a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21703a;
+        return f8097a;
     }
 
     public void a(a aVar) {

@@ -12,8 +12,6 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedHttpUtils;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
-import com.blued.android.sdk.a.a;
-import com.blued.android.sdk.a.b;
 import com.soft.blued.http.PayHttpUtils;
 import com.soft.blued.sdk.model.SDKAuthModel;
 import com.soft.blued.sdk.ui.SDKWebAuthFragment;
@@ -31,35 +29,32 @@ public class SDKAuthAction extends SDKBaseAction {
         PayHttpUtils.a((HttpResponseHandler) new BluedUIHttpResponse<BluedEntityA<SDKAuthModel>>() { // from class: com.soft.blued.sdk.SDKAuthAction.1
 
             /* renamed from: c  reason: collision with root package name */
-            private SDKAuthModel f29748c;
+            private SDKAuthModel f16058c;
             private int d = 0;
             private String e = null;
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<SDKAuthModel> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                this.f29748c = bluedEntityA.data.get(0);
+                this.f16058c = (SDKAuthModel) bluedEntityA.data.get(0);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str3) {
                 super.onFailure(th, i, str3);
-                Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str3);
+                Pair a2 = BluedHttpUtils.a(th, i, str3);
                 if (a2 != null) {
-                    this.d = a2.first.intValue();
-                    this.e = a2.second;
+                    this.d = ((Integer) a2.first).intValue();
+                    this.e = (String) a2.second;
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                SDKAuthModel sDKAuthModel = this.f29748c;
+                SDKAuthModel sDKAuthModel = this.f16058c;
                 if (sDKAuthModel != null) {
-                    SDKAuthAction.this.a(context, 0, 0, this.e, sDKAuthModel.access_token, this.f29748c.expire, this.f29748c.package_name);
+                    SDKAuthAction.this.a(context, 0, 0, this.e, sDKAuthModel.access_token, this.f16058c.expire, this.f16058c.package_name);
                 } else {
                     SDKAuthAction.this.a(context, 1, this.d, this.e, null, 0, null);
                 }
@@ -68,11 +63,11 @@ public class SDKAuthAction extends SDKBaseAction {
     }
 
     private void b(Context context, String str, String str2) {
-        SDKWebAuthFragment.a(context, str, str2, this.f29749a);
+        SDKWebAuthFragment.a(context, str, str2, this.f16059a);
     }
 
     private Intent d() {
-        Intent intent = new Intent(b.d, (Uri) null);
+        Intent intent = new Intent("com.blued.android.sdk.action.auth_result", (Uri) null);
         intent.addCategory(Intent.CATEGORY_DEFAULT);
         intent.setPackage(this.e);
         intent.setFlags(67108864);
@@ -83,9 +78,9 @@ public class SDKAuthAction extends SDKBaseAction {
     protected void a(Context context) {
         String packageName = AppInfo.d().getPackageName();
         if (TextUtils.isEmpty(this.e) || !this.e.equals(packageName)) {
-            b(context, this.f29750c, this.d);
+            b(context, this.f16060c, this.d);
         } else {
-            a(context, this.f29750c, this.d);
+            a(context, this.f16060c, this.d);
         }
     }
 
@@ -115,12 +110,12 @@ public class SDKAuthAction extends SDKBaseAction {
         SDKActionCallback sDKActionCallback = this.f;
         if (sDKActionCallback == null) {
             Intent d = d();
-            d.putExtra(a.f18649a, i4);
+            d.putExtra("extra_result_int", i4);
             if (i4 == 1) {
-                d.putExtra(a.b, i5);
+                d.putExtra("extra_error_code_int", i5);
             } else if (i4 == 0) {
-                d.putExtra(b.e, str2);
-                d.putExtra(b.f, i3);
+                d.putExtra("extra_auth_token_string", str2);
+                d.putExtra("extra_auth_expire_int", i3);
             }
             if (AppMethods.a(d)) {
                 context.startActivity(d);

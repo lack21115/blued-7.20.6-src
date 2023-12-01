@@ -21,7 +21,7 @@ public class UTPluginMgr implements UTMCAppStatusCallbacks {
     public static final String PARTNERPLUGIN_UTPREF = "com.ut.mini.perf.UTPerfPlugin";
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTPluginMgr f41028a = new UTPluginMgr();
+    private static UTPluginMgr f27337a = new UTPluginMgr();
     private HandlerThread b = null;
     private Handler mHandler = null;
     private List<UTPlugin> n = new LinkedList();
@@ -39,21 +39,21 @@ public class UTPluginMgr implements UTMCAppStatusCallbacks {
         private int K;
 
         /* renamed from: a  reason: collision with root package name */
-        private UTPlugin f41029a;
+        private UTPlugin f27338a;
         private Object f;
 
         private a() {
             this.K = 0;
             this.f = null;
-            this.f41029a = null;
+            this.f27338a = null;
         }
 
         public UTPlugin a() {
-            return this.f41029a;
+            return this.f27338a;
         }
 
         public void a(UTPlugin uTPlugin) {
-            this.f41029a = uTPlugin;
+            this.f27338a = uTPlugin;
         }
 
         public void c(Object obj) {
@@ -145,7 +145,7 @@ public class UTPluginMgr implements UTMCAppStatusCallbacks {
     }
 
     public static UTPluginMgr getInstance() {
-        return f41028a;
+        return f27337a;
     }
 
     public boolean dispatchPluginMsg(int i, Object obj) {

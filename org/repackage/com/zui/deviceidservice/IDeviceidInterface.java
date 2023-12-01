@@ -14,12 +14,10 @@ public interface IDeviceidInterface extends IInterface {
 
         /* loaded from: source-3503164-dex2jar.jar:org/repackage/com/zui/deviceidservice/IDeviceidInterface$Stub$Proxy.class */
         static class Proxy implements IDeviceidInterface {
-
-            /* renamed from: a  reason: collision with root package name */
-            private IBinder f44122a;
+            private IBinder a;
 
             Proxy(IBinder iBinder) {
-                this.f44122a = iBinder;
+                this.a = iBinder;
             }
 
             @Override // org.repackage.com.zui.deviceidservice.IDeviceidInterface
@@ -28,7 +26,7 @@ public interface IDeviceidInterface extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("org.repackage.com.zui.deviceidservice.IDeviceidInterface");
-                    this.f44122a.transact(1, obtain, obtain2, 0);
+                    this.a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -44,7 +42,7 @@ public interface IDeviceidInterface extends IInterface {
                 try {
                     obtain.writeInterfaceToken("org.repackage.com.zui.deviceidservice.IDeviceidInterface");
                     obtain.writeString(str);
-                    this.f44122a.transact(4, obtain, obtain2, 0);
+                    this.a.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -55,7 +53,7 @@ public interface IDeviceidInterface extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f44122a;
+                return this.a;
             }
 
             @Override // org.repackage.com.zui.deviceidservice.IDeviceidInterface
@@ -64,7 +62,7 @@ public interface IDeviceidInterface extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("org.repackage.com.zui.deviceidservice.IDeviceidInterface");
-                    this.f44122a.transact(2, obtain, obtain2, 0);
+                    this.a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -80,7 +78,7 @@ public interface IDeviceidInterface extends IInterface {
                 try {
                     obtain.writeInterfaceToken("org.repackage.com.zui.deviceidservice.IDeviceidInterface");
                     obtain.writeString(str);
-                    this.f44122a.transact(5, obtain, obtain2, 0);
+                    this.a.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -96,7 +94,7 @@ public interface IDeviceidInterface extends IInterface {
                 try {
                     obtain.writeInterfaceToken("org.repackage.com.zui.deviceidservice.IDeviceidInterface");
                     boolean z = false;
-                    this.f44122a.transact(3, obtain, obtain2, 0);
+                    this.a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -119,7 +117,7 @@ public interface IDeviceidInterface extends IInterface {
                     obtain.writeInterfaceToken("org.repackage.com.zui.deviceidservice.IDeviceidInterface");
                     obtain.writeString(str);
                     boolean z = false;
-                    this.f44122a.transact(6, obtain, obtain2, 0);
+                    this.a.transact(6, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;

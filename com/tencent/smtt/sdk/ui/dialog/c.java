@@ -8,11 +8,11 @@ import android.view.WindowManager;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static float f38895a = -1.0f;
+    private static float f25204a = -1.0f;
     private static int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f38896c = -1;
+    private static int f25205c = -1;
 
     public static int a(Context context) {
         if (b == -1) {
@@ -26,18 +26,18 @@ public class c {
     }
 
     public static int b(Context context, float f) {
-        if (f38895a == -1.0f) {
+        if (f25204a == -1.0f) {
             b(context);
         }
-        return (int) ((f * f38895a) + 0.5f);
+        return (int) ((f * f25204a) + 0.5f);
     }
 
     private static void b(Context context) {
-        if (f38895a < 0.0f) {
+        if (f25204a < 0.0f) {
             WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             DisplayMetrics displayMetrics = new DisplayMetrics();
             windowManager.getDefaultDisplay().getMetrics(displayMetrics);
-            f38895a = displayMetrics.density;
+            f25204a = displayMetrics.density;
             b = displayMetrics.heightPixels;
         }
     }

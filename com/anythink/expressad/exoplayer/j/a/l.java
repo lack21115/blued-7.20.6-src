@@ -16,7 +16,7 @@ public final class l implements i {
     public static final l b = new l(Collections.emptyMap());
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7570c = 10485760;
+    private static final int f4731c = 10485760;
     private int d;
     private final Map<String, byte[]> e;
 
@@ -36,7 +36,7 @@ public final class l implements i {
             }
             String readUTF = dataInputStream.readUTF();
             readInt = dataInputStream.readInt();
-            if (readInt < 0 || readInt > f7570c) {
+            if (readInt < 0 || readInt > f4731c) {
                 break;
             }
             byte[] bArr = new byte[readInt];
@@ -79,8 +79,8 @@ public final class l implements i {
             } else {
                 bArr = (byte[]) obj;
             }
-            if (bArr.length > f7570c) {
-                throw new IllegalArgumentException(String.format("The size of %s (%d) is greater than maximum allowed: %d", str, Integer.valueOf(bArr.length), Integer.valueOf((int) f7570c)));
+            if (bArr.length > f4731c) {
+                throw new IllegalArgumentException(String.format("The size of %s (%d) is greater than maximum allowed: %d", str, Integer.valueOf(bArr.length), Integer.valueOf((int) f4731c)));
             }
             hashMap.put(str, bArr);
         }

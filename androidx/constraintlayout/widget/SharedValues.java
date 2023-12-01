@@ -12,7 +12,7 @@ public class SharedValues {
     public static final int UNSET = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    private SparseIntArray f2284a = new SparseIntArray();
+    private SparseIntArray f2236a = new SparseIntArray();
     private HashMap<Integer, HashSet<WeakReference<SharedValuesListener>>> b = new HashMap<>();
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/widget/SharedValues$SharedValuesListener.class */
@@ -35,11 +35,11 @@ public class SharedValues {
     }
 
     public void fireNewValue(int i, int i2) {
-        int i3 = this.f2284a.get(i, -1);
+        int i3 = this.f2236a.get(i, -1);
         if (i3 == i2) {
             return;
         }
-        this.f2284a.put(i, i2);
+        this.f2236a.put(i, i2);
         HashSet<WeakReference<SharedValuesListener>> hashSet = this.b.get(Integer.valueOf(i));
         if (hashSet == null) {
             return;
@@ -68,7 +68,7 @@ public class SharedValues {
     }
 
     public int getValue(int i) {
-        return this.f2284a.get(i, -1);
+        return this.f2236a.get(i, -1);
     }
 
     public void removeListener(int i, SharedValuesListener sharedValuesListener) {

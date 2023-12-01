@@ -1,6 +1,6 @@
 package okhttp3;
 
-import com.umeng.analytics.pro.bh;
+import com.android.internal.location.GpsNetInitiatedHandler;
 import java.io.IOException;
 import java.net.Proxy;
 import java.net.ProxySelector;
@@ -124,7 +124,7 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
             }
             this.cookieJar = CookieJar.NO_COOKIES;
             this.socketFactory = SocketFactory.getDefault();
-            this.hostnameVerifier = OkHostnameVerifier.f43983a;
+            this.hostnameVerifier = OkHostnameVerifier.a;
             this.certificatePinner = CertificatePinner.DEFAULT;
             this.proxyAuthenticator = Authenticator.NONE;
             this.authenticator = Authenticator.NONE;
@@ -208,12 +208,12 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
         }
 
         public Builder callTimeout(long j, TimeUnit timeUnit) {
-            this.callTimeout = Util.a("timeout", j, timeUnit);
+            this.callTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, j, timeUnit);
             return this;
         }
 
         public Builder callTimeout(Duration duration) {
-            this.callTimeout = Util.a("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
+            this.callTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, duration.toMillis(), TimeUnit.MILLISECONDS);
             return this;
         }
 
@@ -226,12 +226,12 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
         }
 
         public Builder connectTimeout(long j, TimeUnit timeUnit) {
-            this.connectTimeout = Util.a("timeout", j, timeUnit);
+            this.connectTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, j, timeUnit);
             return this;
         }
 
         public Builder connectTimeout(Duration duration) {
-            this.connectTimeout = Util.a("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
+            this.connectTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, duration.toMillis(), TimeUnit.MILLISECONDS);
             return this;
         }
 
@@ -315,12 +315,12 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
         }
 
         public Builder pingInterval(long j, TimeUnit timeUnit) {
-            this.pingInterval = Util.a(bh.aX, j, timeUnit);
+            this.pingInterval = Util.a("interval", j, timeUnit);
             return this;
         }
 
         public Builder pingInterval(Duration duration) {
-            this.pingInterval = Util.a("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
+            this.pingInterval = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, duration.toMillis(), TimeUnit.MILLISECONDS);
             return this;
         }
 
@@ -363,12 +363,12 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
         }
 
         public Builder readTimeout(long j, TimeUnit timeUnit) {
-            this.readTimeout = Util.a("timeout", j, timeUnit);
+            this.readTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, j, timeUnit);
             return this;
         }
 
         public Builder readTimeout(Duration duration) {
-            this.readTimeout = Util.a("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
+            this.readTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, duration.toMillis(), TimeUnit.MILLISECONDS);
             return this;
         }
 
@@ -412,12 +412,12 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
         }
 
         public Builder writeTimeout(long j, TimeUnit timeUnit) {
-            this.writeTimeout = Util.a("timeout", j, timeUnit);
+            this.writeTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, j, timeUnit);
             return this;
         }
 
         public Builder writeTimeout(Duration duration) {
-            this.writeTimeout = Util.a("timeout", duration.toMillis(), TimeUnit.MILLISECONDS);
+            this.writeTimeout = Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, duration.toMillis(), TimeUnit.MILLISECONDS);
             return this;
         }
     }
@@ -532,9 +532,9 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
             }
         }
         if (builder.sslSocketFactory == null && z2) {
-            X509TrustManager a2 = Util.a();
-            this.sslSocketFactory = newSslSocketFactory(a2);
-            this.certificateChainCleaner = CertificateChainCleaner.a(a2);
+            X509TrustManager a = Util.a();
+            this.sslSocketFactory = newSslSocketFactory(a);
+            this.certificateChainCleaner = CertificateChainCleaner.a(a);
         } else {
             this.sslSocketFactory = builder.sslSocketFactory;
             this.certificateChainCleaner = builder.certificateChainCleaner;
@@ -565,9 +565,9 @@ public class OkHttpClient implements Cloneable, Call.Factory, WebSocket.Factory 
 
     private static SSLSocketFactory newSslSocketFactory(X509TrustManager x509TrustManager) {
         try {
-            SSLContext c2 = Platform.e().c();
-            c2.init(null, new TrustManager[]{x509TrustManager}, null);
-            return c2.getSocketFactory();
+            SSLContext c = Platform.e().c();
+            c.init(null, new TrustManager[]{x509TrustManager}, null);
+            return c.getSocketFactory();
         } catch (GeneralSecurityException e) {
             throw Util.a("No System TLS", (Exception) e);
         }

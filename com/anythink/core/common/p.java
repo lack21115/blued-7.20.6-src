@@ -13,18 +13,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/p.class */
 public final class p {
     public static final String b = "Y29tLnhpYW9taS5tYXJrZXQuRE1fUEFHRV9PUEVORUQ=";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6869c = "Y29tLnhpYW9taS5tYXJrZXQuRE1fUEFHRV9DTE9TRUQ=";
+    public static final String c = "Y29tLnhpYW9taS5tYXJrZXQuRE1fUEFHRV9DTE9TRUQ=";
     public static final String d = "Y29tLnhpYW9taS5tYXJrZXQuRElSRUNUX01BSUxfU1RBVFVT";
     public static final String e = "Y29udGVudDovL2NvbS54aWFvbWkubWFya2V0LnByb3ZpZGVyLkRpcmVjdE1haWxQcm92aWRlcg==";
     private static final String f = "code";
     private static final String g = "packageName";
     private static volatile String j;
     private static volatile p n;
-
-    /* renamed from: a  reason: collision with root package name */
-    BroadcastReceiver f6870a;
+    BroadcastReceiver a;
     private CopyOnWriteArrayList<com.anythink.core.common.e.i> h = new CopyOnWriteArrayList<>();
     private final AtomicBoolean i = new AtomicBoolean(false);
     private volatile Boolean k;
@@ -60,11 +56,11 @@ public final class p {
             Bundle extras;
             com.anythink.core.common.e.i iVar;
             String action = intent.getAction();
-            if (TextUtils.isEmpty(action) || action.equals(com.anythink.core.common.k.c.b(p.b)) || action.equals(com.anythink.core.common.k.c.b(p.f6869c)) || !action.equals(com.anythink.core.common.k.c.b(p.d)) || (extras = intent.getExtras()) == null) {
+            if (TextUtils.isEmpty(action) || action.equals(com.anythink.core.common.k.c.b(p.b)) || action.equals(com.anythink.core.common.k.c.b(p.c)) || !action.equals(com.anythink.core.common.k.c.b(p.d)) || (extras = intent.getExtras()) == null) {
                 return;
             }
             int i = extras.getInt("code", -1);
-            String string = extras.getString("packageName", "");
+            String string = extras.getString(p.g, "");
             if (i == -1 || TextUtils.isEmpty(string)) {
                 return;
             }
@@ -119,7 +115,7 @@ public final class p {
     }
 
     private void b(Context context) {
-        BroadcastReceiver broadcastReceiver = this.f6870a;
+        BroadcastReceiver broadcastReceiver = this.a;
         if (broadcastReceiver == null || context == null) {
             return;
         }
@@ -130,7 +126,7 @@ public final class p {
         this.l = null;
         this.h.clear();
         this.h = null;
-        this.f6870a = null;
+        this.a = null;
         this.m = null;
     }
 
@@ -139,12 +135,12 @@ public final class p {
             return;
         }
         try {
-            pVar.f6870a = new AnonymousClass2();
+            pVar.a = new AnonymousClass2();
             IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction(com.anythink.core.common.k.c.b(b));
-            intentFilter.addAction(com.anythink.core.common.k.c.b(f6869c));
+            intentFilter.addAction(com.anythink.core.common.k.c.b(c));
             intentFilter.addAction(com.anythink.core.common.k.c.b(d));
-            pVar.m.registerReceiver(pVar.f6870a, intentFilter);
+            pVar.m.registerReceiver(pVar.a, intentFilter);
         } catch (Throwable th) {
         }
     }
@@ -162,12 +158,12 @@ public final class p {
             return;
         }
         try {
-            this.f6870a = new AnonymousClass2();
+            this.a = new AnonymousClass2();
             IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction(com.anythink.core.common.k.c.b(b));
-            intentFilter.addAction(com.anythink.core.common.k.c.b(f6869c));
+            intentFilter.addAction(com.anythink.core.common.k.c.b(c));
             intentFilter.addAction(com.anythink.core.common.k.c.b(d));
-            this.m.registerReceiver(this.f6870a, intentFilter);
+            this.m.registerReceiver(this.a, intentFilter);
         } catch (Throwable th) {
         }
     }

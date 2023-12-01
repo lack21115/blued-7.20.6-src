@@ -14,13 +14,9 @@ import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickylistheaders/WrapperViewList.class */
 public class WrapperViewList extends ListView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LifeCycleListener f10348a;
+    private LifeCycleListener a;
     private List<View> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10349c;
+    private int c;
     private Rect d;
     private Field e;
     private boolean f;
@@ -55,11 +51,11 @@ public class WrapperViewList extends ListView {
     }
 
     private void b() {
-        int c2;
-        if (this.d.isEmpty() || (c2 = c()) < 0) {
+        int c;
+        if (this.d.isEmpty() || (c = c()) < 0) {
             return;
         }
-        View childAt = getChildAt(c2 - a());
+        View childAt = getChildAt(c - a());
         if (childAt instanceof WrapperView) {
             WrapperView wrapperView = (WrapperView) childAt;
             this.d.top = wrapperView.getTop() + wrapperView.e;
@@ -137,12 +133,12 @@ public class WrapperViewList extends ListView {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(int i) {
-        this.f10349c = i;
+        this.c = i;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(LifeCycleListener lifeCycleListener) {
-        this.f10348a = lifeCycleListener;
+        this.a = lifeCycleListener;
     }
 
     public void a(boolean z) {
@@ -174,17 +170,17 @@ public class WrapperViewList extends ListView {
     @Override // android.widget.ListView, android.widget.AbsListView, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         b();
-        if (this.f10349c != 0) {
+        if (this.c != 0) {
             canvas.save();
             Rect clipBounds = canvas.getClipBounds();
-            clipBounds.top = this.f10349c;
+            clipBounds.top = this.c;
             canvas.clipRect(clipBounds);
             super.dispatchDraw(canvas);
             canvas.restore();
         } else {
             super.dispatchDraw(canvas);
         }
-        this.f10348a.a(canvas);
+        this.a.a(canvas);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -200,7 +196,7 @@ public class WrapperViewList extends ListView {
     public boolean performItemClick(View view, int i, long j) {
         View view2 = view;
         if (view instanceof WrapperView) {
-            view2 = ((WrapperView) view).f10346a;
+            view2 = ((WrapperView) view).a;
         }
         return super.performItemClick(view2, i, j);
     }

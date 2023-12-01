@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MsgBottomTipsLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29468a;
+    private final LinearLayout f15778a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29468a;
+        return this.f15778a;
     }
 }

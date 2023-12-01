@@ -104,7 +104,7 @@ public final class z implements com.kwad.sdk.core.webview.b.a {
         this.Sw.post(new Runnable() { // from class: com.kwad.components.core.webview.jshandler.z.1
             @Override // java.lang.Runnable
             public final void run() {
-                com.kwad.components.core.d.b.a.a(new a.C0519a(z.this.mBridgeContext.LD.getContext()).I(z.this.mAdTemplate).b(z.this.mApkDownloadHelper).a(new a.b() { // from class: com.kwad.components.core.webview.jshandler.z.1.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(z.this.mBridgeContext.LD.getContext()).I(z.this.mAdTemplate).b(z.this.mApkDownloadHelper).a(new a.b() { // from class: com.kwad.components.core.webview.jshandler.z.1.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                     }

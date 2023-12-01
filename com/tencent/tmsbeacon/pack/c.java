@@ -9,17 +9,17 @@ import java.util.Set;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap<String, byte[]> f39605a;
+    private static HashMap<String, byte[]> f25914a;
     public final RequestPacket b = new RequestPacket();
 
     /* renamed from: c  reason: collision with root package name */
-    public HashMap<String, byte[]> f39606c = new HashMap<>();
+    public HashMap<String, byte[]> f25915c = new HashMap<>();
     public String d = "GBK";
     public a e = new a();
 
     static {
         HashMap<String, byte[]> hashMap = new HashMap<>();
-        f39605a = hashMap;
+        f25914a = hashMap;
         hashMap.put("", new byte[0]);
     }
 
@@ -32,20 +32,20 @@ public class c {
     private byte[] a(ByteBuffer byteBuffer) {
         int position = byteBuffer.position();
         byte[] bArr = new byte[position];
-        System.arraycopy((Object) byteBuffer.array(), 0, (Object) bArr, 0, position);
+        System.arraycopy(byteBuffer.array(), 0, bArr, 0, position);
         return bArr;
     }
 
     private void b() {
         a aVar = new a(this.b.sBuffer);
         aVar.a(this.d);
-        this.f39606c = aVar.a((Map) f39605a, 0, false);
+        this.f25915c = aVar.a((Map) f25914a, 0, false);
     }
 
     public <T> T a(String str, T t) throws Exception {
-        if (this.f39606c.containsKey(str)) {
+        if (this.f25915c.containsKey(str)) {
             try {
-                return (T) a(this.f39606c.get(str), t);
+                return (T) a(this.f25915c.get(str), t);
             } catch (Exception e) {
                 throw new Exception(e);
             }
@@ -78,7 +78,7 @@ public class c {
     public byte[] a() {
         b bVar = new b(0);
         bVar.a(this.d);
-        bVar.a((Map) this.f39606c, 0);
+        bVar.a((Map) this.f25915c, 0);
         RequestPacket requestPacket = this.b;
         requestPacket.iVersion = (short) 3;
         requestPacket.sBuffer = a(bVar.a());
@@ -109,6 +109,6 @@ public class c {
         b bVar = new b();
         bVar.a(this.d);
         bVar.a(t, 0);
-        this.f39606c.put(str, a(bVar.a()));
+        this.f25915c.put(str, a(bVar.a()));
     }
 }

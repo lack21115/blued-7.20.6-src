@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/PopupWindow.class */
 public class PopupWindow {
-    private static final int[] ABOVE_ANCHOR_STATE_SET = {16842922};
+    private static final int[] ABOVE_ANCHOR_STATE_SET = {R.attr.state_above_anchor};
     private static final int DEFAULT_ANCHORED_GRAVITY = 8388659;
     public static final int INPUT_METHOD_FROM_FOCUSABLE = 0;
     public static final int INPUT_METHOD_NEEDED = 1;
@@ -172,7 +172,7 @@ public class PopupWindow {
     }
 
     public PopupWindow(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842870);
+        this(context, attributeSet, (int) R.attr.popupWindowStyle);
     }
 
     public PopupWindow(Context context, AttributeSet attributeSet, int i) {
@@ -209,7 +209,7 @@ public class PopupWindow {
             }
         };
         this.mContext = context;
-        this.mWindowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        this.mWindowManager = (WindowManager) context.getSystemService("window");
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.PopupWindow, i, i2);
         Drawable drawable = obtainStyledAttributes.getDrawable(0);
         this.mElevation = obtainStyledAttributes.getDimension(3, 0.0f);
@@ -259,7 +259,7 @@ public class PopupWindow {
         };
         if (view != null) {
             this.mContext = view.getContext();
-            this.mWindowManager = (WindowManager) this.mContext.getSystemService(Context.WINDOW_SERVICE);
+            this.mWindowManager = (WindowManager) this.mContext.getSystemService("window");
         }
         setContentView(view);
         setWidth(i);
@@ -333,7 +333,7 @@ public class PopupWindow {
 
     private WindowManager.LayoutParams createPopupLayout(IBinder iBinder) {
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-        layoutParams.gravity = 8388659;
+        layoutParams.gravity = DEFAULT_ANCHORED_GRAVITY;
         int i = this.mWidth;
         this.mLastWidth = i;
         layoutParams.width = i;
@@ -725,7 +725,7 @@ public class PopupWindow {
             this.mContext = this.mContentView.getContext();
         }
         if (this.mWindowManager == null && this.mContentView != null) {
-            this.mWindowManager = (WindowManager) this.mContext.getSystemService(Context.WINDOW_SERVICE);
+            this.mWindowManager = (WindowManager) this.mContext.getSystemService("window");
         }
         if (this.mContext == null || this.mAttachedInDecorSet) {
             return;
@@ -807,7 +807,7 @@ public class PopupWindow {
     }
 
     public void showAsDropDown(View view, int i, int i2) {
-        showAsDropDown(view, i, i2, 8388659);
+        showAsDropDown(view, i, i2, DEFAULT_ANCHORED_GRAVITY);
     }
 
     public void showAsDropDown(View view, int i, int i2, int i3) {
@@ -846,7 +846,7 @@ public class PopupWindow {
         preparePopup(createPopupLayout);
         int i4 = i;
         if (i == 0) {
-            i4 = 8388659;
+            i4 = DEFAULT_ANCHORED_GRAVITY;
         }
         createPopupLayout.gravity = i4;
         createPopupLayout.x = i2;

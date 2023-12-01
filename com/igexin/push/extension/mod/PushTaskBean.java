@@ -126,7 +126,7 @@ public class PushTaskBean {
     }
 
     public void parse(JSONObject jSONObject) throws JSONException {
-        if (jSONObject.has("appid") && jSONObject.get("appid").equals(e.f23495a)) {
+        if (jSONObject.has("appid") && jSONObject.get("appid").equals(e.f9887a)) {
             this.appid = jSONObject.getString("appid");
         }
         if (jSONObject.has("appkey")) {
@@ -139,7 +139,7 @@ public class PushTaskBean {
             this.messageId = jSONObject.getString("messageid");
         }
         if (TextUtils.isEmpty(this.appid)) {
-            this.appid = e.f23495a;
+            this.appid = e.f9887a;
         }
         this.currentActionid = 1;
     }

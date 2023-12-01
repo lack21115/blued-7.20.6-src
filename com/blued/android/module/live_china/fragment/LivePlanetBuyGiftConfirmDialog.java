@@ -33,12 +33,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetBuyGiftConfirmDialog.class */
 public final class LivePlanetBuyGiftConfirmDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13100a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private Callback f13101c;
+    public static final Companion a = new Companion(null);
+    private Callback c;
     private final Lazy b = LazyKt.a(new Function0<LivePlanetBuyConfirmDialogBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePlanetBuyGiftConfirmDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -78,7 +74,7 @@ public final class LivePlanetBuyGiftConfirmDialog extends BaseDialogFragment {
             bundle.putInt("gift_count", i);
             bundle.putInt("gift_price", i2);
             bundle.putString("gift_img", giftImg);
-            livePlanetBuyGiftConfirmDialog.f13101c = callback;
+            livePlanetBuyGiftConfirmDialog.c = callback;
             livePlanetBuyGiftConfirmDialog.setArguments(bundle);
             livePlanetBuyGiftConfirmDialog.show(fragment.getChildFragmentManager(), "LiveBattleRandomAwardDialog");
         }
@@ -134,7 +130,7 @@ public final class LivePlanetBuyGiftConfirmDialog extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LivePlanetBuyGiftConfirmDialog this$0) {
         Intrinsics.e(this$0, "this$0");
-        FrameLayout frameLayout = this$0.d().f12362a;
+        FrameLayout frameLayout = this$0.d().a;
         Intrinsics.c(frameLayout, "vb.flRoot");
         this$0.a(frameLayout);
     }
@@ -158,7 +154,7 @@ public final class LivePlanetBuyGiftConfirmDialog extends BaseDialogFragment {
         if (this$0.d) {
             LiveRoomPreferences.X();
         }
-        Callback callback = this$0.f13101c;
+        Callback callback = this$0.c;
         if (callback != null) {
             callback.a();
         }
@@ -186,7 +182,7 @@ public final class LivePlanetBuyGiftConfirmDialog extends BaseDialogFragment {
         ImageLoader.a(a(), str).a(d().d);
         d().h.setText(AppInfo.d().getString(R.string.live_planet_dialog_insufficient_info, Integer.valueOf(i), Integer.valueOf(i2)));
         d().b.setImageResource(this.d ? R.drawable.live_planet_checkbox_select : R.drawable.live_planet_checkbox_not_select);
-        d().f12363c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetBuyGiftConfirmDialog$lLxng-kNurlWZ6piutLKTiW6-QM
+        d().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetBuyGiftConfirmDialog$lLxng-kNurlWZ6piutLKTiW6-QM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetBuyGiftConfirmDialog.a(LivePlanetBuyGiftConfirmDialog.this, view);
@@ -204,7 +200,7 @@ public final class LivePlanetBuyGiftConfirmDialog extends BaseDialogFragment {
                 LivePlanetBuyGiftConfirmDialog.c(LivePlanetBuyGiftConfirmDialog.this, view);
             }
         });
-        d().f12362a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetBuyGiftConfirmDialog$ATAsFwc_WdbZmAIeJOoQtIfnZok
+        d().a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetBuyGiftConfirmDialog$ATAsFwc_WdbZmAIeJOoQtIfnZok
             @Override // java.lang.Runnable
             public final void run() {
                 LivePlanetBuyGiftConfirmDialog.a(LivePlanetBuyGiftConfirmDialog.this);
@@ -212,7 +208,6 @@ public final class LivePlanetBuyGiftConfirmDialog extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;

@@ -6,11 +6,11 @@ import com.meizu.cloud.pushsdk.c.c.k;
 public class a extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f24016a;
+    private String f10405a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f24017c;
+    private String f10406c;
     private k d;
 
     public a() {
@@ -36,7 +36,7 @@ public class a extends Exception {
     }
 
     public void a(String str) {
-        this.f24017c = str;
+        this.f10406c = str;
     }
 
     public int b() {
@@ -44,10 +44,10 @@ public class a extends Exception {
     }
 
     public void b(String str) {
-        this.f24016a = str;
+        this.f10405a = str;
     }
 
     public String c() {
-        return this.f24016a;
+        return this.f10405a;
     }
 }

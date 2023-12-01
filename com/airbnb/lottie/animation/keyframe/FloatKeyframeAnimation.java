@@ -19,10 +19,10 @@ public class FloatKeyframeAnimation extends KeyframeAnimation<Float> {
 
     float c(Keyframe<Float> keyframe, float f) {
         Float f2;
-        if (keyframe.f4418a == null || keyframe.b == null) {
+        if (keyframe.a == null || keyframe.b == null) {
             throw new IllegalStateException("Missing values for keyframe.");
         }
-        return (this.b == null || (f2 = (Float) this.b.a(keyframe.d, keyframe.e.floatValue(), keyframe.f4418a, keyframe.b, f, d(), h())) == null) ? MiscUtils.a(keyframe.f(), keyframe.g(), f) : f2.floatValue();
+        return (this.b == null || (f2 = (Float) this.b.a(keyframe.d, keyframe.e.floatValue(), keyframe.a, keyframe.b, f, d(), h())) == null) ? MiscUtils.a(keyframe.f(), keyframe.g(), f) : f2.floatValue();
     }
 
     public float i() {

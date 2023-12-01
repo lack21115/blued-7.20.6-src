@@ -11,17 +11,13 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/vm/FeedPostViewModel.class */
 public final class FeedPostViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<Integer> f20096a = new MutableLiveData<>();
+    private final MutableLiveData<Integer> a = new MutableLiveData<>();
     private final MutableLiveData<Integer> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private FeedProtos.FeedType f20097c = FeedProtos.FeedType.UNKNOWN_FEED_TYPE;
+    private FeedProtos.FeedType c = FeedProtos.FeedType.UNKNOWN_FEED_TYPE;
     private int d;
 
     public FeedPostViewModel() {
-        this.f20096a.setValue(0);
+        this.a.setValue(0);
         this.b.setValue(0);
     }
 
@@ -31,11 +27,11 @@ public final class FeedPostViewModel extends BaseViewModel {
 
     public final void a(FeedProtos.FeedType feedType) {
         Intrinsics.e(feedType, "<set-?>");
-        this.f20097c = feedType;
+        this.c = feedType;
     }
 
     public final MutableLiveData<Integer> d() {
-        return this.f20096a;
+        return this.a;
     }
 
     public final MutableLiveData<Integer> e() {
@@ -43,7 +39,7 @@ public final class FeedPostViewModel extends BaseViewModel {
     }
 
     public final FeedProtos.FeedType f() {
-        return this.f20097c;
+        return this.c;
     }
 
     public final int g() {

@@ -18,12 +18,12 @@ import com.chad.library.adapter.base.BaseViewHolder;
 public class MyMusicCollectionAdapter extends BaseQuickAdapter<VideoScanMusic, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f20294a;
+    private Context f6688a;
     private IRequestHost b;
 
     public MyMusicCollectionAdapter(Context context, IRequestHost iRequestHost) {
         super(R.layout.item_my_music_collection);
-        this.f20294a = context;
+        this.f6688a = context;
         this.b = iRequestHost;
     }
 
@@ -71,7 +71,7 @@ public class MyMusicCollectionAdapter extends BaseQuickAdapter<VideoScanMusic, B
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_music_play);
             if (videoScanMusic.isPlaying) {
                 imageView.setImageResource(R.drawable.video_scan_music_pause_icon);
-                Animation loadAnimation = AnimationUtils.loadAnimation(this.f20294a, R.anim.anim_music_cover_rotate_repeat);
+                Animation loadAnimation = AnimationUtils.loadAnimation(this.f6688a, R.anim.anim_music_cover_rotate_repeat);
                 loadAnimation.setInterpolator(new LinearInterpolator());
                 frameLayout.startAnimation(loadAnimation);
             } else {

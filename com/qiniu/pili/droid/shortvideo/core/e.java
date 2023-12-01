@@ -11,15 +11,15 @@ import java.nio.ByteBuffer;
 public abstract class e extends j {
 
     /* renamed from: a  reason: collision with root package name */
-    protected volatile Surface f27544a;
+    protected volatile Surface f13856a;
     protected com.qiniu.pili.droid.shortvideo.encode.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected PLVideoEncodeSetting f27545c;
+    protected PLVideoEncodeSetting f13857c;
     protected volatile boolean d;
     protected volatile boolean e;
-    protected a.InterfaceC0745a f = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.e.1
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    protected a.InterfaceC0575a f = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.e.1
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.d;
             String a2 = e.this.a();
@@ -29,13 +29,13 @@ public abstract class e extends j {
             e.this.r();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             com.qiniu.pili.droid.shortvideo.f.e.d.c(e.this.a(), "video encode surface created");
-            e.this.f27544a = surface;
+            e.this.f13856a = surface;
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (e.this.l) {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.d;
@@ -45,7 +45,7 @@ public abstract class e extends j {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.d;
             String a2 = e.this.a();
@@ -60,7 +60,7 @@ public abstract class e extends j {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.d.c(e.this.a(), "video encode stopped");
             e.this.d = false;
@@ -127,6 +127,6 @@ public abstract class e extends j {
 
     @Override // com.qiniu.pili.droid.shortvideo.core.j
     protected i g() {
-        return new i(this.m, this.n, this.p, this.f27545c);
+        return new i(this.m, this.n, this.p, this.f13857c);
     }
 }

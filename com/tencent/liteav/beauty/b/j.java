@@ -8,19 +8,19 @@ import com.tencent.liteav.videobase.utils.OpenGlUtils;
 public final /* synthetic */ class j implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final i f36388a;
+    private final i f22697a;
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f36389c;
+    private final float f22698c;
     private final float d;
     private final Bitmap e;
     private final Bitmap f;
 
     private j(i iVar, float f, float f2, float f3, Bitmap bitmap, Bitmap bitmap2) {
-        this.f36388a = iVar;
+        this.f22697a = iVar;
         this.b = f;
-        this.f36389c = f2;
+        this.f22698c = f2;
         this.d = f3;
         this.e = bitmap;
         this.f = bitmap2;
@@ -32,9 +32,9 @@ public final /* synthetic */ class j implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        i iVar = this.f36388a;
+        i iVar = this.f22697a;
         float f = this.b;
-        float f2 = this.f36389c;
+        float f2 = this.f22698c;
         float f3 = this.d;
         Bitmap bitmap = this.e;
         Bitmap bitmap2 = this.f;
@@ -45,7 +45,7 @@ public final /* synthetic */ class j implements Runnable {
             OpenGlUtils.deleteTexture(iVar.b);
             iVar.b = -1;
             iVar.f.put(0, 0.0f);
-        } else if (bitmap != iVar.f36386a) {
+        } else if (bitmap != iVar.f22695a) {
             iVar.b = OpenGlUtils.loadTexture(bitmap, iVar.b, false);
             iVar.f.put(0, 1.0f);
         }
@@ -53,11 +53,11 @@ public final /* synthetic */ class j implements Runnable {
             OpenGlUtils.deleteTexture(iVar.d);
             iVar.d = -1;
             iVar.f.put(1, 0.0f);
-        } else if (bitmap2 != iVar.f36387c) {
+        } else if (bitmap2 != iVar.f22696c) {
             iVar.d = OpenGlUtils.loadTexture(bitmap2, iVar.d, false);
             iVar.f.put(1, 1.0f);
         }
-        iVar.f36386a = bitmap;
-        iVar.f36387c = bitmap2;
+        iVar.f22695a = bitmap;
+        iVar.f22696c = bitmap2;
     }
 }

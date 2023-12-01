@@ -4,14 +4,14 @@ package com.xiaomi.push.service;
 public class bp {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f41646a = 8;
+    private static int f27955a = 8;
     private int d = -666;
 
     /* renamed from: a  reason: collision with other field name */
-    private byte[] f1022a = new byte[256];
+    private byte[] f975a = new byte[256];
 
     /* renamed from: c  reason: collision with root package name */
-    private int f41647c = 0;
+    private int f27956c = 0;
     private int b = 0;
 
     public static int a(byte b) {
@@ -19,7 +19,7 @@ public class bp {
     }
 
     private void a() {
-        this.f41647c = 0;
+        this.f27956c = 0;
         this.b = 0;
     }
 
@@ -31,23 +31,23 @@ public class bp {
             if (i3 >= 256) {
                 break;
             }
-            this.f1022a[i3] = (byte) i3;
+            this.f975a[i3] = (byte) i3;
             i2 = i3 + 1;
         }
-        this.f41647c = 0;
+        this.f27956c = 0;
         this.b = 0;
         while (true) {
             int i4 = this.b;
             if (i4 >= i) {
                 break;
             }
-            int a2 = ((this.f41647c + a(this.f1022a[i4])) + a(bArr[this.b % length])) % 256;
-            this.f41647c = a2;
-            a(this.f1022a, this.b, a2);
+            int a2 = ((this.f27956c + a(this.f975a[i4])) + a(bArr[this.b % length])) % 256;
+            this.f27956c = a2;
+            a(this.f975a, this.b, a2);
             this.b++;
         }
         if (i != 256) {
-            this.d = ((this.f41647c + a(this.f1022a[i])) + a(bArr[i % length])) % 256;
+            this.d = ((this.f27956c + a(this.f975a[i])) + a(bArr[i % length])) % 256;
         }
         if (z) {
             StringBuilder sb = new StringBuilder();
@@ -62,13 +62,13 @@ public class bp {
                     break;
                 }
                 sb.append(" ");
-                sb.append(a(this.f1022a[i7]));
+                sb.append(a(this.f975a[i7]));
                 i6 = i7 + 1;
             }
             sb.append("   j_");
             sb.append(i5);
             sb.append("=");
-            sb.append(this.f41647c);
+            sb.append(this.f27956c);
             sb.append("   j_");
             sb.append(i);
             sb.append("=");
@@ -78,17 +78,17 @@ public class bp {
             sb.append("[j_");
             sb.append(i5);
             sb.append("]=");
-            sb.append(a(this.f1022a[this.f41647c]));
+            sb.append(a(this.f975a[this.f27956c]));
             sb.append("   S_");
             sb.append(i5);
             sb.append("[j_");
             sb.append(i);
             sb.append("]=");
-            sb.append(a(this.f1022a[this.d]));
-            if (this.f1022a[1] != 0) {
+            sb.append(a(this.f975a[this.d]));
+            if (this.f975a[1] != 0) {
                 sb.append("   S[1]!=0");
             }
-            com.xiaomi.channel.commonutils.logger.b.m11394a(sb.toString());
+            com.xiaomi.channel.commonutils.logger.b.m8344a(sb.toString());
         }
     }
 
@@ -103,32 +103,32 @@ public class bp {
     }
 
     public static byte[] a(String str, String str2) {
-        byte[] m11546a = com.xiaomi.push.bk.m11546a(str);
+        byte[] m8496a = com.xiaomi.push.bk.m8496a(str);
         byte[] bytes = str2.getBytes();
-        byte[] bArr = new byte[m11546a.length + 1 + bytes.length];
+        byte[] bArr = new byte[m8496a.length + 1 + bytes.length];
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= m11546a.length) {
+            if (i2 >= m8496a.length) {
                 break;
             }
-            bArr[i2] = m11546a[i2];
+            bArr[i2] = m8496a[i2];
             i = i2 + 1;
         }
-        bArr[m11546a.length] = 95;
+        bArr[m8496a.length] = 95;
         int i3 = 0;
         while (true) {
             int i4 = i3;
             if (i4 >= bytes.length) {
                 return bArr;
             }
-            bArr[m11546a.length + 1 + i4] = bytes[i4];
+            bArr[m8496a.length + 1 + i4] = bytes[i4];
             i3 = i4 + 1;
         }
     }
 
     public static byte[] a(byte[] bArr, String str) {
-        return a(bArr, com.xiaomi.push.bk.m11546a(str));
+        return a(bArr, com.xiaomi.push.bk.m8496a(str));
     }
 
     public static byte[] a(byte[] bArr, byte[] bArr2) {
@@ -142,7 +142,7 @@ public class bp {
             if (i2 >= bArr2.length) {
                 return bArr3;
             }
-            bArr3[i2] = (byte) (bArr2[i2] ^ bpVar.m12163a());
+            bArr3[i2] = (byte) (bArr2[i2] ^ bpVar.m9113a());
             i = i2 + 1;
         }
     }
@@ -164,19 +164,19 @@ public class bp {
         bpVar.a(bArr);
         bpVar.a();
         for (int i4 = 0; i4 < i2; i4++) {
-            bArr3[i3 + i4] = (byte) (bArr2[i + i4] ^ bpVar.m12163a());
+            bArr3[i3 + i4] = (byte) (bArr2[i + i4] ^ bpVar.m9113a());
         }
         return bArr3;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    byte m12163a() {
+    byte m9113a() {
         int i = (this.b + 1) % 256;
         this.b = i;
-        int a2 = (this.f41647c + a(this.f1022a[i])) % 256;
-        this.f41647c = a2;
-        a(this.f1022a, this.b, a2);
-        byte[] bArr = this.f1022a;
-        return bArr[(a(bArr[this.b]) + a(this.f1022a[this.f41647c])) % 256];
+        int a2 = (this.f27956c + a(this.f975a[i])) % 256;
+        this.f27956c = a2;
+        a(this.f975a, this.b, a2);
+        byte[] bArr = this.f975a;
+        return bArr[(a(bArr[this.b]) + a(this.f975a[this.f27956c])) % 256];
     }
 }

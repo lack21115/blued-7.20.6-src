@@ -28,9 +28,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYCodeOfConductKoDialogFragment.class */
 public final class YYCodeOfConductKoDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17160a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private OnClickHintFragmentLister b;
 
     @Metadata
@@ -67,7 +65,7 @@ public final class YYCodeOfConductKoDialogFragment extends BottomSheetDialogFrag
         final TextView textView = (TextView) dialog.findViewById(R.id.tv_titl);
         WebView webView = (WebView) dialog.findViewById(R.id.web);
         webView.setBackgroundColor(0);
-        new BluedWebView(this, webView, null, new BluedWebView.WebCallback() { // from class: com.blued.android.module.yy_china.fragment.YYCodeOfConductKoDialogFragment$initView$webViewHelper$1
+        new BluedWebView((Fragment) this, webView, null, new BluedWebView.WebCallback() { // from class: com.blued.android.module.yy_china.fragment.YYCodeOfConductKoDialogFragment$initView$webViewHelper$1
             @Override // com.blued.android.framework.web.BluedWebView.WebCallback
             public void a() {
             }
@@ -175,7 +173,7 @@ public final class YYCodeOfConductKoDialogFragment extends BottomSheetDialogFrag
             public void a(View bottomSheet, int i) {
                 Intrinsics.e(bottomSheet, "bottomSheet");
                 if (i == 1) {
-                    ((BottomSheetDialog) Dialog.this).a().d(4);
+                    ((BottomSheetDialog) dialog).a().d(4);
                 }
             }
         });
@@ -220,7 +218,7 @@ public final class YYCodeOfConductKoDialogFragment extends BottomSheetDialogFrag
         this.b = onClickHintFragmentLister;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

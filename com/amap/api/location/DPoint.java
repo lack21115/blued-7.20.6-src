@@ -24,31 +24,29 @@ public class DPoint implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private double f5490a;
+    private double a;
     private double b;
 
     public DPoint() {
-        this.f5490a = 0.0d;
+        this.a = 0.0d;
         this.b = 0.0d;
     }
 
     public DPoint(double d, double d2) {
-        this.f5490a = 0.0d;
+        this.a = 0.0d;
         this.b = 0.0d;
         double d3 = d2 > 180.0d ? 180.0d : d2;
         double d4 = d3 < -180.0d ? -180.0d : d3;
         double d5 = d > 90.0d ? 90.0d : d;
         double d6 = d5 < -90.0d ? -90.0d : d5;
-        this.f5490a = d4;
+        this.a = d4;
         this.b = d6;
     }
 
     protected DPoint(Parcel parcel) {
-        this.f5490a = 0.0d;
+        this.a = 0.0d;
         this.b = 0.0d;
-        this.f5490a = parcel.readDouble();
+        this.a = parcel.readDouble();
         this.b = parcel.readDouble();
     }
 
@@ -60,7 +58,7 @@ public class DPoint implements Parcelable {
     public boolean equals(Object obj) {
         if (obj instanceof DPoint) {
             DPoint dPoint = (DPoint) obj;
-            return this.b == dPoint.b && this.f5490a == dPoint.f5490a;
+            return this.b == dPoint.b && this.a == dPoint.a;
         }
         return false;
     }
@@ -70,11 +68,11 @@ public class DPoint implements Parcelable {
     }
 
     public double getLongitude() {
-        return this.f5490a;
+        return this.a;
     }
 
     public int hashCode() {
-        return Double.valueOf((this.b + this.f5490a) * 1000000.0d).intValue();
+        return Double.valueOf((this.b + this.a) * 1000000.0d).intValue();
     }
 
     public void setLatitude(double d) {
@@ -98,12 +96,12 @@ public class DPoint implements Parcelable {
         if (d2 < -180.0d) {
             d3 = -180.0d;
         }
-        this.f5490a = d3;
+        this.a = d3;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeDouble(this.f5490a);
+        parcel.writeDouble(this.a);
         parcel.writeDouble(this.b);
     }
 }

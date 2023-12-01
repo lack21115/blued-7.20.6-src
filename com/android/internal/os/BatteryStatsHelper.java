@@ -93,7 +93,7 @@ public final class BatteryStatsHelper {
         this.mMaxPower = 1.0d;
         this.mMaxRealPower = 1.0d;
         this.mContext = context;
-        this.mBatteryService = (BatteryManager) context.getSystemService(Context.BATTERY_SERVICE);
+        this.mBatteryService = (BatteryManager) context.getSystemService("batterymanager");
         this.mCollectBatteryBroadcast = z;
         this.mWifiOnly = checkWifiOnly(context);
     }
@@ -110,7 +110,7 @@ public final class BatteryStatsHelper {
         this.mMaxPower = 1.0d;
         this.mMaxRealPower = 1.0d;
         this.mContext = context;
-        this.mBatteryService = (BatteryManager) context.getSystemService(Context.BATTERY_SERVICE);
+        this.mBatteryService = (BatteryManager) context.getSystemService("batterymanager");
         this.mCollectBatteryBroadcast = z;
         this.mWifiOnly = z2;
     }
@@ -278,7 +278,7 @@ public final class BatteryStatsHelper {
 
     public static boolean checkWifiOnly(Context context) {
         boolean z = false;
-        if (!((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).isNetworkSupported(0)) {
+        if (!((ConnectivityManager) context.getSystemService("connectivity")).isNetworkSupported(0)) {
             z = true;
         }
         return z;
@@ -377,7 +377,7 @@ public final class BatteryStatsHelper {
         }
         this.mStats = getStats(this.mBatteryInfo);
         if (this.mCollectBatteryBroadcast) {
-            this.mBatteryBroadcast = this.mContext.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+            this.mBatteryBroadcast = this.mContext.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
         }
     }
 
@@ -415,41 +415,41 @@ public final class BatteryStatsHelper {
         long j2 = 0;
         BatterySipper batterySipper2 = null;
         this.mStatsPeriod = this.mTypeBatteryRealtime;
-        SparseArray<? extends BatteryStats.Uid> uidStats = this.mStats.getUidStats();
+        SparseArray uidStats = this.mStats.getUidStats();
         int size = uidStats.size();
         int i4 = 0;
         while (i4 < size) {
-            BatteryStats.Uid valueAt = uidStats.valueAt(i4);
+            BatteryStats.Uid uid = (BatteryStats.Uid) uidStats.valueAt(i4);
             double d2 = 0.0d;
             double d3 = 0.0d;
             String str = null;
             String str2 = null;
-            Map<String, ? extends BatteryStats.Uid.Proc> processStats = valueAt.getProcessStats();
+            Map processStats = uid.getProcessStats();
             long j3 = 0;
             long j4 = 0;
             long j5 = 0;
             long j6 = 0;
             double d4 = 0.0d;
             if (processStats.size() > 0) {
-                Iterator<Map.Entry<String, ? extends BatteryStats.Uid.Proc>> it = processStats.entrySet().iterator();
+                Iterator it = processStats.entrySet().iterator();
                 while (true) {
                     j5 = j4;
                     j6 = j3;
                     str = str2;
                     d4 = d2;
                     if (it.hasNext()) {
-                        Map.Entry<String, ? extends BatteryStats.Uid.Proc> next = it.next();
-                        BatteryStats.Uid.Proc value = next.getValue();
-                        long userTime = value.getUserTime(i);
-                        long systemTime = value.getSystemTime(i);
-                        long foregroundTime = j4 + (10 * value.getForegroundTime(i));
+                        Map.Entry entry = (Map.Entry) it.next();
+                        BatteryStats.Uid.Proc proc = (BatteryStats.Uid.Proc) entry.getValue();
+                        long userTime = proc.getUserTime(i);
+                        long systemTime = proc.getSystemTime(i);
+                        long foregroundTime = j4 + (10 * proc.getForegroundTime(i));
                         long j7 = (userTime + systemTime) * 10;
                         int i5 = 0;
                         int i6 = 0;
                         while (true) {
                             int i7 = i6;
                             if (i7 < numSpeedSteps) {
-                                jArr[i7] = value.getTimeAtCpuSpeedStep(i7, i);
+                                jArr[i7] = proc.getTimeAtCpuSpeedStep(i7, i);
                                 i5 = (int) (i5 + jArr[i7]);
                                 i6 = i7 + 1;
                             } else {
@@ -468,7 +468,7 @@ public final class BatteryStatsHelper {
                                         long j8 = j3 + j7;
                                         double d6 = d2 + d5;
                                         if (str2 == null || str2.startsWith(PhoneConstants.APN_TYPE_ALL)) {
-                                            str2 = next.getKey();
+                                            str2 = (String) entry.getKey();
                                             j4 = foregroundTime;
                                             j3 = j8;
                                             d3 = d5;
@@ -481,8 +481,8 @@ public final class BatteryStatsHelper {
                                                 j4 = foregroundTime;
                                                 j3 = j8;
                                                 d2 = d6;
-                                                if (!next.getKey().startsWith(PhoneConstants.APN_TYPE_ALL)) {
-                                                    str2 = next.getKey();
+                                                if (!((String) entry.getKey()).startsWith(PhoneConstants.APN_TYPE_ALL)) {
+                                                    str2 = (String) entry.getKey();
                                                     j4 = foregroundTime;
                                                     j3 = j8;
                                                     d3 = d5;
@@ -503,8 +503,8 @@ public final class BatteryStatsHelper {
             }
             double d7 = d4 / 3600000.0d;
             long j10 = 0;
-            for (Map.Entry<String, ? extends BatteryStats.Uid.Wakelock> entry : valueAt.getWakelockStats().entrySet()) {
-                BatteryStats.Timer wakeTime = entry.getValue().getWakeTime(0);
+            for (Map.Entry entry2 : uid.getWakelockStats().entrySet()) {
+                BatteryStats.Timer wakeTime = ((BatteryStats.Uid.Wakelock) entry2.getValue()).getWakeTime(0);
                 if (wakeTime != null) {
                     j10 += wakeTime.getTotalTimeLocked(this.mRawRealtime, i);
                 }
@@ -512,33 +512,33 @@ public final class BatteryStatsHelper {
             j2 += j10;
             long j11 = j10 / 1000;
             double averagePower2 = (j11 * this.mPowerProfile.getAveragePower(PowerProfile.POWER_CPU_AWAKE)) / 3600000.0d;
-            long networkActivityPackets = valueAt.getNetworkActivityPackets(0, this.mStatsType);
-            long networkActivityPackets2 = valueAt.getNetworkActivityPackets(1, this.mStatsType);
-            long networkActivityBytes = valueAt.getNetworkActivityBytes(0, this.mStatsType);
-            long networkActivityBytes2 = valueAt.getNetworkActivityBytes(1, this.mStatsType);
-            long mobileRadioActiveTime = valueAt.getMobileRadioActiveTime(this.mStatsType);
+            long networkActivityPackets = uid.getNetworkActivityPackets(0, this.mStatsType);
+            long networkActivityPackets2 = uid.getNetworkActivityPackets(1, this.mStatsType);
+            long networkActivityBytes = uid.getNetworkActivityBytes(0, this.mStatsType);
+            long networkActivityBytes2 = uid.getNetworkActivityBytes(1, this.mStatsType);
+            long mobileRadioActiveTime = uid.getMobileRadioActiveTime(this.mStatsType);
             if (mobileRadioActiveTime > 0) {
                 this.mAppMobileActive += mobileRadioActiveTime;
                 d = (mobileRadioActiveTime * mobilePowerPerMs) / 1000.0d;
             } else {
                 d = (networkActivityPackets + networkActivityPackets2) * mobilePowerPerPacket;
             }
-            long networkActivityPackets3 = valueAt.getNetworkActivityPackets(2, this.mStatsType);
-            long networkActivityPackets4 = valueAt.getNetworkActivityPackets(3, this.mStatsType);
-            long networkActivityBytes3 = valueAt.getNetworkActivityBytes(2, this.mStatsType);
-            long networkActivityBytes4 = valueAt.getNetworkActivityBytes(3, this.mStatsType);
+            long networkActivityPackets3 = uid.getNetworkActivityPackets(2, this.mStatsType);
+            long networkActivityPackets4 = uid.getNetworkActivityPackets(3, this.mStatsType);
+            long networkActivityBytes3 = uid.getNetworkActivityBytes(2, this.mStatsType);
+            long networkActivityBytes4 = uid.getNetworkActivityBytes(3, this.mStatsType);
             double d8 = networkActivityPackets3 + networkActivityPackets4;
-            long wifiRunningTime = valueAt.getWifiRunningTime(this.mRawRealtime, i) / 1000;
+            long wifiRunningTime = uid.getWifiRunningTime(this.mRawRealtime, i) / 1000;
             this.mAppWifiRunning += wifiRunningTime;
-            double averagePower3 = d7 + averagePower2 + d + (d8 * wifiPowerPerPacket) + ((wifiRunningTime * this.mPowerProfile.getAveragePower(PowerProfile.POWER_WIFI_ON)) / 3600000.0d) + (((valueAt.getWifiScanTime(this.mRawRealtime, i) / 1000) * this.mPowerProfile.getAveragePower(PowerProfile.POWER_WIFI_SCAN)) / 3600000.0d);
+            double averagePower3 = d7 + averagePower2 + d + (d8 * wifiPowerPerPacket) + ((wifiRunningTime * this.mPowerProfile.getAveragePower(PowerProfile.POWER_WIFI_ON)) / 3600000.0d) + (((uid.getWifiScanTime(this.mRawRealtime, i) / 1000) * this.mPowerProfile.getAveragePower(PowerProfile.POWER_WIFI_SCAN)) / 3600000.0d);
             int i11 = 0;
             while (true) {
                 int i12 = i11;
                 if (i12 < 5) {
-                    averagePower3 += ((valueAt.getWifiBatchedScanTime(i12, this.mRawRealtime, i) / 1000) * this.mPowerProfile.getAveragePower(PowerProfile.POWER_WIFI_BATCHED_SCAN, i12)) / 3600000.0d;
+                    averagePower3 += ((uid.getWifiBatchedScanTime(i12, this.mRawRealtime, i) / 1000) * this.mPowerProfile.getAveragePower(PowerProfile.POWER_WIFI_BATCHED_SCAN, i12)) / 3600000.0d;
                     i11 = i12 + 1;
                 } else {
-                    SparseArray<? extends BatteryStats.Uid.Sensor> sensorStats = valueAt.getSensorStats();
+                    SparseArray sensorStats = uid.getSensorStats();
                     int size2 = sensorStats.size();
                     int i13 = 0;
                     double d9 = averagePower3;
@@ -546,9 +546,9 @@ public final class BatteryStatsHelper {
                     while (true) {
                         long j13 = j12;
                         if (i13 < size2) {
-                            BatteryStats.Uid.Sensor valueAt2 = sensorStats.valueAt(i13);
+                            BatteryStats.Uid.Sensor sensor = (BatteryStats.Uid.Sensor) sensorStats.valueAt(i13);
                             int keyAt = sensorStats.keyAt(i13);
-                            long totalTimeLocked = valueAt2.getSensorTime().getTotalTimeLocked(this.mRawRealtime, i) / 1000;
+                            long totalTimeLocked = sensor.getSensorTime().getTotalTimeLocked(this.mRawRealtime, i) / 1000;
                             switch (keyAt) {
                                 case -10000:
                                     averagePower = this.mPowerProfile.getAveragePower(PowerProfile.POWER_GPS_ON);
@@ -560,9 +560,9 @@ public final class BatteryStatsHelper {
                                         j = j13;
                                         averagePower = 0.0d;
                                         if (it2.hasNext()) {
-                                            Sensor next2 = it2.next();
-                                            if (next2.getHandle() == keyAt) {
-                                                averagePower = next2.getPower();
+                                            Sensor next = it2.next();
+                                            if (next.getHandle() == keyAt) {
+                                                averagePower = next.getPower();
                                                 j = j13;
                                                 break;
                                             }
@@ -574,15 +574,15 @@ public final class BatteryStatsHelper {
                             i13++;
                             j12 = j;
                         } else {
-                            int userId = UserHandle.getUserId(valueAt.getUid());
+                            int userId = UserHandle.getUserId(uid.getUid());
                             if (d9 == 0.0d) {
                                 batterySipper = batterySipper2;
-                                if (valueAt.getUid() != 0) {
+                                if (uid.getUid() != 0) {
                                     i4++;
                                     batterySipper2 = batterySipper;
                                 }
                             }
-                            BatterySipper batterySipper3 = new BatterySipper(BatterySipper.DrainType.APP, valueAt, new double[]{d9});
+                            BatterySipper batterySipper3 = new BatterySipper(BatterySipper.DrainType.APP, uid, new double[]{d9});
                             batterySipper3.cpuTime = j9;
                             batterySipper3.gpsTime = j13;
                             batterySipper3.wifiRunningTime = wifiRunningTime;
@@ -591,7 +591,7 @@ public final class BatteryStatsHelper {
                             batterySipper3.mobileRxPackets = networkActivityPackets;
                             batterySipper3.mobileTxPackets = networkActivityPackets2;
                             batterySipper3.mobileActive = mobileRadioActiveTime / 1000;
-                            batterySipper3.mobileActiveCount = valueAt.getMobileRadioActiveCount(this.mStatsType);
+                            batterySipper3.mobileActiveCount = uid.getMobileRadioActiveCount(this.mStatsType);
                             batterySipper3.wifiRxPackets = networkActivityPackets3;
                             batterySipper3.wifiTxPackets = networkActivityPackets4;
                             batterySipper3.mobileRxBytes = networkActivityBytes;
@@ -599,13 +599,13 @@ public final class BatteryStatsHelper {
                             batterySipper3.wifiRxBytes = networkActivityBytes3;
                             batterySipper3.wifiTxBytes = networkActivityBytes4;
                             batterySipper3.packageWithHighestDrain = str;
-                            if (valueAt.getUid() == 1010) {
+                            if (uid.getUid() == 1010) {
                                 this.mWifiSippers.add(batterySipper3);
                                 this.mWifiPower += d9;
-                            } else if (valueAt.getUid() == 1002) {
+                            } else if (uid.getUid() == 1002) {
                                 this.mBluetoothSippers.add(batterySipper3);
                                 this.mBluetoothPower += d9;
-                            } else if (z || sparseArray.get(userId) != null || UserHandle.getAppId(valueAt.getUid()) < 10000) {
+                            } else if (z || sparseArray.get(userId) != null || UserHandle.getAppId(uid.getUid()) < 10000) {
                                 this.mUsageList.add(batterySipper3);
                                 if (d9 > this.mMaxPower) {
                                     this.mMaxPower = d9;
@@ -628,7 +628,7 @@ public final class BatteryStatsHelper {
                                 }
                             }
                             batterySipper = batterySipper2;
-                            if (valueAt.getUid() == 0) {
+                            if (uid.getUid() == 0) {
                                 batterySipper = batterySipper3;
                             }
                             i4++;
@@ -730,7 +730,7 @@ public final class BatteryStatsHelper {
                             } catch (IOException e4) {
                             }
                         }
-                        return getStats(IBatteryStats.Stub.asInterface(ServiceManager.getService(BatteryStats.SERVICE_NAME)));
+                        return getStats(IBatteryStats.Stub.asInterface(ServiceManager.getService("batterystats")));
                     } catch (Throwable th) {
                         fileInputStream2 = fileInputStream;
                         th = th;
@@ -768,7 +768,7 @@ public final class BatteryStatsHelper {
             this.mDockStats = sDockStatsXfer;
             this.mBatteryBroadcast = sBatteryBroadcastXfer;
         }
-        this.mBatteryInfo = IBatteryStats.Stub.asInterface(ServiceManager.getService(BatteryStats.SERVICE_NAME));
+        this.mBatteryInfo = IBatteryStats.Stub.asInterface(ServiceManager.getService("batterystats"));
         this.mPowerProfile = new PowerProfile(this.mContext);
     }
 

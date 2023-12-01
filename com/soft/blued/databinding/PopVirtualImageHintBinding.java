@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopVirtualImageHintBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29567a;
+    private final CardView f15877a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29567a;
+        return this.f15877a;
     }
 }

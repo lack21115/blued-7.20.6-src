@@ -15,14 +15,14 @@ import java.util.List;
 public class GroupStickyHeaderGVAdapter extends BaseAdapter implements StickyGridHeadersSimpleAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f30936a;
+    private LayoutInflater f17246a;
     private List<BluedGroupTypeGridItem> b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/group/adapter/GroupStickyHeaderGVAdapter$HeaderViewHolder.class */
     class HeaderViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        TextView f30937a;
+        TextView f17247a;
 
         HeaderViewHolder() {
         }
@@ -32,36 +32,34 @@ public class GroupStickyHeaderGVAdapter extends BaseAdapter implements StickyGri
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        TextView f30938a;
+        TextView f17248a;
 
         ViewHolder() {
         }
     }
 
     public GroupStickyHeaderGVAdapter(Context context, List<BluedGroupTypeGridItem> list) {
-        this.f30936a = LayoutInflater.from(context);
+        this.f17246a = LayoutInflater.from(context);
         this.b = list;
     }
 
-    @Override // com.blued.android.framework.view.stickygridheaders.StickyGridHeadersSimpleAdapter
     public long a(int i) {
         return this.b.get(i).getType();
     }
 
-    @Override // com.blued.android.framework.view.stickygridheaders.StickyGridHeadersSimpleAdapter
     public View a(int i, View view, ViewGroup viewGroup) {
         HeaderViewHolder headerViewHolder;
         if (view == null) {
             HeaderViewHolder headerViewHolder2 = new HeaderViewHolder();
-            View inflate = this.f30936a.inflate(R.layout.group_type_grid_header, viewGroup, false);
-            headerViewHolder2.f30937a = (TextView) inflate.findViewById(R.id.tvHeader);
+            View inflate = this.f17246a.inflate(R.layout.group_type_grid_header, viewGroup, false);
+            headerViewHolder2.f17247a = (TextView) inflate.findViewById(R.id.tvHeader);
             inflate.setTag(headerViewHolder2);
             headerViewHolder = headerViewHolder2;
             view = inflate;
         } else {
             headerViewHolder = (HeaderViewHolder) view.getTag();
         }
-        headerViewHolder.f30937a.setText(this.b.get(i).getName());
+        headerViewHolder.f17247a.setText(this.b.get(i).getName());
         return view;
     }
 
@@ -85,15 +83,15 @@ public class GroupStickyHeaderGVAdapter extends BaseAdapter implements StickyGri
         ViewHolder viewHolder;
         if (view == null) {
             ViewHolder viewHolder2 = new ViewHolder();
-            View inflate = this.f30936a.inflate(R.layout.group_type_grid_item, viewGroup, false);
-            viewHolder2.f30938a = (TextView) inflate.findViewById(R.id.tv_group_type_tag);
+            View inflate = this.f17246a.inflate(R.layout.group_type_grid_item, viewGroup, false);
+            viewHolder2.f17248a = (TextView) inflate.findViewById(R.id.tv_group_type_tag);
             inflate.setTag(viewHolder2);
             viewHolder = viewHolder2;
             view = inflate;
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.f30938a.setText(this.b.get(i).getTags());
+        viewHolder.f17248a.setText(this.b.get(i).getTags());
         return view;
     }
 }

@@ -7,21 +7,19 @@ import android.os.RemoteException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/AppMonitorService.class */
 public class AppMonitorService extends Service {
-
-    /* renamed from: a  reason: collision with root package name */
-    IMonitor f4449a = null;
+    IMonitor a = null;
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
-        if (this.f4449a == null) {
-            this.f4449a = new Monitor(getApplication());
+        if (this.a == null) {
+            this.a = new Monitor(getApplication());
         }
-        return (IBinder) this.f4449a;
+        return (IBinder) this.a;
     }
 
     @Override // android.app.Service
     public void onDestroy() {
-        IMonitor iMonitor = this.f4449a;
+        IMonitor iMonitor = this.a;
         if (iMonitor != null) {
             try {
                 iMonitor.triggerUpload();
@@ -33,7 +31,7 @@ public class AppMonitorService extends Service {
 
     @Override // android.app.Service, android.content.ComponentCallbacks
     public void onLowMemory() {
-        IMonitor iMonitor = this.f4449a;
+        IMonitor iMonitor = this.a;
         if (iMonitor != null) {
             try {
                 iMonitor.triggerUpload();

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 import libcore.io.IoUtils;
+import org.apache.commons.codec.CharEncoding;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.DTDHandler;
 import org.xml.sax.EntityResolver;
@@ -45,7 +46,7 @@ public class ExpatReader implements XMLReader {
     }
 
     private void parse(Reader reader, String str, String str2) throws IOException, SAXException {
-        new ExpatParser("UTF-16", this, this.processNamespaces, str, str2).parseDocument(reader);
+        new ExpatParser(CharEncoding.UTF_16, this, this.processNamespaces, str, str2).parseDocument(reader);
     }
 
     @Override // org.xml.sax.XMLReader

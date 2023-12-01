@@ -3,7 +3,6 @@ package android.os;
 import android.os.IMessenger;
 import android.util.Log;
 import android.util.Printer;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/os/Handler.class */
 public class Handler {
@@ -324,6 +323,6 @@ public class Handler {
     }
 
     public String toString() {
-        return "Handler (" + getClass().getName() + ") {" + Integer.toHexString(System.identityHashCode(this)) + i.d;
+        return "Handler (" + getClass().getName() + ") {" + Integer.toHexString(System.identityHashCode(this)) + "}";
     }
 }

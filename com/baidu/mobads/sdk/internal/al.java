@@ -15,11 +15,11 @@ public class al extends Observable implements u, Runnable {
     private static final String m = "FileDownloader";
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f9307a;
+    protected Context f6467a;
     protected URL b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f9308c;
+    protected String f6468c;
     protected String d;
     protected int e;
     protected u.a f;
@@ -30,9 +30,9 @@ public class al extends Observable implements u, Runnable {
 
     public al(Context context, URL url, String str, String str2, boolean z) {
         this.n = false;
-        this.f9307a = context;
+        this.f6467a = context;
         this.b = url;
-        this.f9308c = str;
+        this.f6468c = str;
         this.n = z;
         if (str2 == null || str2.trim().length() <= 0) {
             String file = url.getFile();
@@ -126,7 +126,7 @@ public class al extends Observable implements u, Runnable {
 
     @Override // com.baidu.mobads.sdk.internal.u
     public String g() {
-        return this.f9308c + this.d;
+        return this.f6468c + this.d;
     }
 
     @Override // com.baidu.mobads.sdk.internal.u
@@ -179,7 +179,7 @@ public class al extends Observable implements u, Runnable {
     }
 
     protected void r() {
-        bo.a(this.f9308c + this.d + ".tmp", this.f9308c + this.d);
+        bo.a(this.f6468c + this.d + ".tmp", this.f6468c + this.d);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0064, code lost:

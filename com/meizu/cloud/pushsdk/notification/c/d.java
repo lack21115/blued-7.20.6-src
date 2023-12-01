@@ -8,7 +8,7 @@ import com.meizu.cloud.pushinternal.DebugLogger;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static d f24171a;
+    private static d f10556a;
     private AssetManager b;
 
     private d(Context context) {
@@ -16,10 +16,10 @@ public class d {
     }
 
     public static d a(Context context) {
-        if (f24171a == null) {
-            f24171a = new d(context);
+        if (f10556a == null) {
+            f10556a = new d(context);
         }
-        return f24171a;
+        return f10556a;
     }
 
     private void b(Context context) {

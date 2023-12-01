@@ -7,6 +7,7 @@ import com.ss.android.socialbase.downloader.constants.DbJsonConstants;
 import com.ss.android.socialbase.downloader.downloader.Downloader;
 import com.ss.android.socialbase.downloader.model.DownloadInfo;
 import com.ss.android.socialbase.downloader.setting.DownloadSetting;
+import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 import java.io.File;
 import org.json.JSONObject;
 
@@ -49,7 +50,7 @@ public class hj {
                         if (!TextUtils.isEmpty(dBJsonString)) {
                             return new lz(context, obtain, file.getAbsolutePath(), dBJsonString, downloadInfo.getName());
                         }
-                    } else if (str.equals("custom")) {
+                    } else if (str.equals(WbCloudFaceContant.CUSTOM)) {
                         return new b(context, obtain, file.getAbsolutePath(), jSONObject);
                     } else {
                         nkVar = null;
@@ -88,7 +89,7 @@ public class hj {
                     mbVar = new ww(context, downloadSetting, ox);
                 } else if (com.ss.android.socialbase.appdownloader.u.hj.hj() && str.equals("o3")) {
                     mbVar = new lz(context, downloadSetting, ox, ox, ox);
-                } else if (com.ss.android.socialbase.appdownloader.u.hj.b() && str.equals("custom")) {
+                } else if (com.ss.android.socialbase.appdownloader.u.hj.b() && str.equals(WbCloudFaceContant.CUSTOM)) {
                     mbVar = new b(context, downloadSetting, ox, jSONObject);
                 } else {
                     mbVar = null;

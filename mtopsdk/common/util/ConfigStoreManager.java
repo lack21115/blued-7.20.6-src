@@ -7,26 +7,24 @@ import mtopsdk.common.util.TBSdkLog;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/common/util/ConfigStoreManager.class */
 public class ConfigStoreManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile ConfigStoreManager f43679a;
+    private static volatile ConfigStoreManager a;
 
     private ConfigStoreManager() {
     }
 
     public static ConfigStoreManager a() {
-        if (f43679a == null) {
+        if (a == null) {
             synchronized (ConfigStoreManager.class) {
                 try {
-                    if (f43679a == null) {
-                        f43679a = new ConfigStoreManager();
+                    if (a == null) {
+                        a = new ConfigStoreManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f43679a;
+        return a;
     }
 
     public String a(Context context, String str, String str2, String str3) {

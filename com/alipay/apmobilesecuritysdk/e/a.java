@@ -11,7 +11,7 @@ public final class a {
                 return null;
             }
             JSONObject jSONObject = new JSONObject(str);
-            return new b(jSONObject.optString("apdid"), jSONObject.optString("deviceInfoHash"), jSONObject.optString("timestamp"));
+            return new b(jSONObject.optString("apdid"), jSONObject.optString("deviceInfoHash"), jSONObject.optString(com.alipay.sdk.tid.b.f));
         } catch (Exception e) {
             com.alipay.apmobilesecuritysdk.c.a.a(e);
             return null;
@@ -39,9 +39,9 @@ public final class a {
             try {
                 try {
                     JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("apdid", bVar.f4549a);
+                    jSONObject.put("apdid", bVar.a);
                     jSONObject.put("deviceInfoHash", bVar.b);
-                    jSONObject.put("timestamp", bVar.f4550c);
+                    jSONObject.put(com.alipay.sdk.tid.b.f, bVar.c);
                     String jSONObject2 = jSONObject.toString();
                     com.alipay.apmobilesecuritysdk.f.a.a(context, "vkeyid_profiles_v3", "deviceid", jSONObject2);
                     com.alipay.apmobilesecuritysdk.f.a.a("wxcasxx_v3", "wxcasxx", jSONObject2);
@@ -57,41 +57,41 @@ public final class a {
     public static b b() {
         synchronized (a.class) {
             try {
-                String a2 = com.alipay.apmobilesecuritysdk.f.a.a("wxcasxx_v3", "wxcasxx");
-                if (com.alipay.security.mobile.module.a.a.a(a2)) {
+                String a = com.alipay.apmobilesecuritysdk.f.a.a("wxcasxx_v3", "wxcasxx");
+                if (com.alipay.security.mobile.module.a.a.a(a)) {
                     return null;
                 }
-                return a(a2);
+                return a(a);
             } finally {
             }
         }
     }
 
     public static b b(Context context) {
-        b a2;
+        b a;
         synchronized (a.class) {
             try {
-                String a3 = com.alipay.apmobilesecuritysdk.f.a.a(context, "vkeyid_profiles_v3", "deviceid");
-                String str = a3;
-                if (com.alipay.security.mobile.module.a.a.a(a3)) {
+                String a2 = com.alipay.apmobilesecuritysdk.f.a.a(context, "vkeyid_profiles_v3", "deviceid");
+                String str = a2;
+                if (com.alipay.security.mobile.module.a.a.a(a2)) {
                     str = com.alipay.apmobilesecuritysdk.f.a.a("wxcasxx_v3", "wxcasxx");
                 }
-                a2 = a(str);
+                a = a(str);
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return a2;
+        return a;
     }
 
     public static b c(Context context) {
         synchronized (a.class) {
             try {
-                String a2 = com.alipay.apmobilesecuritysdk.f.a.a(context, "vkeyid_profiles_v3", "deviceid");
-                if (com.alipay.security.mobile.module.a.a.a(a2)) {
+                String a = com.alipay.apmobilesecuritysdk.f.a.a(context, "vkeyid_profiles_v3", "deviceid");
+                if (com.alipay.security.mobile.module.a.a.a(a)) {
                     return null;
                 }
-                return a(a2);
+                return a(a);
             } finally {
             }
         }

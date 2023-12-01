@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final n f21263a = new n();
+    public static final n f7657a = new n();
 
     public final JSONObject a(Context context) {
         Object systemService;
@@ -46,11 +46,11 @@ public final class n {
                         if (substring != null) {
                             byte[] bytes = substring.getBytes(charset);
                             Intrinsics.b(bytes, "(this as java.lang.String).getBytes(charset)");
-                            byte[] data = Base64.decode(bytes, 2);
+                            byte[] decode = Base64.decode(bytes, 2);
                             StringBuilder sb = new StringBuilder();
                             sb.append("?");
-                            Intrinsics.b(data, "data");
-                            sb.append(new String(data, Charsets.b));
+                            Intrinsics.b(decode, "data");
+                            sb.append(new String(decode, Charsets.b));
                             return a(Uri.parse(sb.toString()));
                         }
                         throw new TypeCastException("null cannot be cast to non-null type java.lang.String");
@@ -71,7 +71,7 @@ public final class n {
             jSONObject = jSONObject2;
             if (uri != null) {
                 String scheme = uri.getScheme();
-                if (Intrinsics.a((Object) scheme, (Object) "http") || Intrinsics.a((Object) scheme, (Object) "https")) {
+                if (Intrinsics.a(scheme, "http") || Intrinsics.a(scheme, "https")) {
                     jSONObject2.put("tr_token", uri.getLastPathSegment());
                 }
                 Iterator<String> it = uri.getQueryParameterNames().iterator();

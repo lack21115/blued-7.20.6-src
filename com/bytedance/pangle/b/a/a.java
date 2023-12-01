@@ -12,11 +12,11 @@ import java.util.Map;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, Field> f21357a = new HashMap();
+    private static Map<String, Field> f7751a = new HashMap();
     private static Map<String, Method> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private static Map<String, Constructor> f21358c = new HashMap();
+    private static Map<String, Constructor> f7752c = new HashMap();
     private static Map<String, Class> d = new HashMap();
 
     static {
@@ -31,8 +31,8 @@ public final class a {
     public static Constructor a(Class<?> cls, Class<?>... clsArr) {
         Constructor constructor;
         String b2 = b(cls, "clinit", clsArr);
-        synchronized (f21358c) {
-            constructor = f21358c.get(b2);
+        synchronized (f7752c) {
+            constructor = f7752c.get(b2);
         }
         if (constructor != null) {
             if (!constructor.isAccessible()) {
@@ -43,8 +43,8 @@ public final class a {
         try {
             Constructor a2 = b.a(cls, clsArr);
             if (a2 != null) {
-                synchronized (f21358c) {
-                    f21358c.put(b2, a2);
+                synchronized (f7752c) {
+                    f7752c.put(b2, a2);
                 }
                 return a2;
             }
@@ -58,8 +58,8 @@ public final class a {
     public static Field a(Class<?> cls, String str) {
         Field field;
         String str2 = cls.getName() + "#" + str;
-        synchronized (f21357a) {
-            field = f21357a.get(str2);
+        synchronized (f7751a) {
+            field = f7751a.get(str2);
         }
         if (field != null) {
             if (!field.isAccessible()) {
@@ -70,8 +70,8 @@ public final class a {
         try {
             Field a2 = b.a(cls, str);
             if (a2 != null) {
-                synchronized (f21357a) {
-                    f21357a.put(str2, a2);
+                synchronized (f7751a) {
+                    f7751a.put(str2, a2);
                 }
                 return a2;
             }

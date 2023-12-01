@@ -18,12 +18,12 @@ public final class NonCancellable extends AbstractCoroutineContextElement implem
 
     @Override // kotlinx.coroutines.Job
     public ChildHandle a(ChildJob childJob) {
-        return NonDisposableHandle.f42847a;
+        return NonDisposableHandle.a;
     }
 
     @Override // kotlinx.coroutines.Job
     public DisposableHandle a(boolean z, boolean z2, Function1<? super Throwable, Unit> function1) {
-        return NonDisposableHandle.f42847a;
+        return NonDisposableHandle.a;
     }
 
     @Override // kotlinx.coroutines.Job
@@ -37,7 +37,7 @@ public final class NonCancellable extends AbstractCoroutineContextElement implem
 
     @Override // kotlinx.coroutines.Job
     public DisposableHandle a_(Function1<? super Throwable, Unit> function1) {
-        return NonDisposableHandle.f42847a;
+        return NonDisposableHandle.a;
     }
 
     @Override // kotlinx.coroutines.Job

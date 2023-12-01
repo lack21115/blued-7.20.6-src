@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlin/UShort.class */
 public final class UShort implements Comparable<UShort> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42311a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final short b;
 
     @Metadata

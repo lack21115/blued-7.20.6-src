@@ -25,13 +25,9 @@ import java.lang.reflect.Method;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/BaseActivity.class */
 public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUtils.APMInterface {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f9718a = "";
+    public static String a = "";
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected Intent f9719c = null;
+    protected Intent c = null;
     public LifecycleRegistry d = new LifecycleRegistry(this);
     private ActivityFragmentActive e = new ActivityFragmentActive(getLifecycle());
 
@@ -81,9 +77,8 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         return PageTimeUtils.d(f());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.ContextThemeWrapper, android.content.ContextWrapper
-    public void attachBaseContext(Context context) {
+    @Override // android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper
+    protected void attachBaseContext(Context context) {
         if (AppInfo.b() != null) {
             super.attachBaseContext(AppInfo.b().a(context));
         } else {
@@ -101,7 +96,6 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // androidx.lifecycle.LifecycleOwner
     public Lifecycle getLifecycle() {
         return this.d;
     }
@@ -123,7 +117,7 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         requestWindowFeature(1);
         ImageLoaderHostManager.a(this.e, this);
         AppInfo.b(this);
-        this.f9719c = getIntent();
+        this.c = getIntent();
     }
 
     @Override // android.app.Activity
@@ -141,12 +135,11 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onNewIntent(Intent intent) {
+    protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         Log.a("BaseActivity", getClass().getName() + " onNewIntent()");
-        this.f9719c = intent;
+        this.c = intent;
     }
 
     @Override // android.app.Activity
@@ -155,12 +148,12 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         this.d.handleLifecycleEvent(Lifecycle.Event.ON_PAUSE);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onPostCreate(Bundle bundle) {
+    protected void onPostCreate(Bundle bundle) {
         super.onPostCreate(bundle);
     }
 
+    @Override // android.app.Activity
     public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
         if (AppInfo.b() != null) {
             AppInfo.b().a(this, i, strArr, iArr);
@@ -168,9 +161,8 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         super.onRequestPermissionsResult(i, strArr, iArr);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onRestoreInstanceState(Bundle bundle) {
+    protected void onRestoreInstanceState(Bundle bundle) {
         super.onRestoreInstanceState(bundle);
         Log.a("BaseActivity", getClass().getName() + " onRestoreInstanceState()");
         if (bundle != null) {
@@ -186,13 +178,13 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         super.onResume();
         this.d.handleLifecycleEvent(Lifecycle.Event.ON_RESUME);
         if (TextUtils.isEmpty(this.b)) {
-            if (TextUtils.isEmpty(f9718a)) {
+            if (TextUtils.isEmpty(a)) {
                 this.b = e();
             } else {
-                this.b = f9718a + "," + e();
+                this.b = a + "," + e();
             }
         }
-        f9718a = this.b;
+        a = this.b;
         Page d = BluedStatistics.d();
         String a2 = a();
         String hexString = Integer.toHexString(hashCode());
@@ -203,9 +195,8 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         Log.a("BaseActivity", sb.toString());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onSaveInstanceState(Bundle bundle) {
+    protected void onSaveInstanceState(Bundle bundle) {
         Bundle bundle2 = bundle;
         if (bundle == null) {
             bundle2 = new Bundle();
@@ -218,9 +209,8 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
         this.d.handleLifecycleEvent(Lifecycle.Event.ON_START);
         Log.a("BaseActivity", getClass().getName() + " onStart()");
@@ -230,9 +220,8 @@ public class BaseActivity extends Activity implements LifecycleOwner, PageTimeUt
         PageTimeUtils.a((PageTimeUtils.APMInterface) this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
         this.d.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
         Log.a("BaseActivity", getClass().getName() + " onStop()");

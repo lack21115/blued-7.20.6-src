@@ -9,11 +9,11 @@ import com.tencent.liteav.videoproducer.capture.s;
 final /* synthetic */ class aa implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s.AnonymousClass1 f36856a;
+    private final s.AnonymousClass1 f23165a;
     private final boolean b;
 
     private aa(s.AnonymousClass1 anonymousClass1, boolean z) {
-        this.f36856a = anonymousClass1;
+        this.f23165a = anonymousClass1;
         this.b = z;
     }
 
@@ -23,23 +23,23 @@ final /* synthetic */ class aa implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        s.AnonymousClass1 anonymousClass1 = this.f36856a;
+        s.AnonymousClass1 anonymousClass1 = this.f23165a;
         boolean z = this.b;
         s sVar = s.this;
-        if (sVar.f36942a != null) {
+        if (sVar.f23251a != null) {
             af.a cameraAPIType = CameraCaptureSingleton.getInstance().getCameraAPIType();
             if (z) {
-                IVideoReporter iVideoReporter = sVar.f36942a;
+                IVideoReporter iVideoReporter = sVar.f23251a;
                 h.b bVar = h.b.EVT_VIDEO_CAPTURE_CAMERA_START_SUCCESS;
                 iVideoReporter.notifyEvent(bVar, "cameraAPIType " + cameraAPIType + " params:" + sVar.f, new Object[0]);
             } else {
-                IVideoReporter iVideoReporter2 = sVar.f36942a;
+                IVideoReporter iVideoReporter2 = sVar.f23251a;
                 h.a aVar = h.a.ERR_VIDEO_CAPTURE_CAMERA_INVALID_DEVICE;
                 iVideoReporter2.notifyError(aVar, "cameraAPIType " + cameraAPIType + " params:" + sVar.f, new Object[0]);
             }
         }
-        if (s.this.f36943c != null) {
-            s.this.f36943c.a(z);
+        if (s.this.f23252c != null) {
+            s.this.f23252c.a(z);
         }
     }
 }

@@ -10,13 +10,13 @@ public class e4 extends JsonComposer {
     @Json(name = "layerid")
 
     /* renamed from: a  reason: collision with root package name */
-    private String f37405a;
+    private String f23714a;
     @Json(name = "type")
     private int b;
     @Json(name = "data_ver")
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37406c;
+    private String f23715c;
     @Json(name = "local_data_ver")
     private int d;
     @Json(name = "cfg_ver")
@@ -31,7 +31,7 @@ public class e4 extends JsonComposer {
     private String i;
 
     private boolean f() {
-        String str = this.f37406c;
+        String str = this.f23715c;
         if (str.equals(this.d + "")) {
             String str2 = this.e;
             StringBuilder sb = new StringBuilder();
@@ -45,7 +45,7 @@ public class e4 extends JsonComposer {
     public String a() {
         if (f()) {
             this.e = this.f + "";
-            this.f37406c = this.d + "";
+            this.f23715c = this.d + "";
             this.i = null;
         }
         if (this.g != null && this.i == null && !TextUtils.isEmpty(this.h)) {
@@ -93,7 +93,7 @@ public class e4 extends JsonComposer {
     }
 
     public String c() {
-        return this.f37405a;
+        return this.f23714a;
     }
 
     public a4 d() {
@@ -105,6 +105,6 @@ public class e4 extends JsonComposer {
     }
 
     public String toString() {
-        return "DataLayer{layerId='" + this.f37405a + "', layerType='" + this.b + "', remoteDataVersion='" + this.f37406c + "', dataVersion=" + this.d + ", remoteStyleVersion='" + this.e + "', styleVersion=" + this.f + ", params=" + Arrays.toString(this.g) + ", dataUrl='" + this.h + "', decodeDataUrl='" + this.i + "'}";
+        return "DataLayer{layerId='" + this.f23714a + "', layerType='" + this.b + "', remoteDataVersion='" + this.f23715c + "', dataVersion=" + this.d + ", remoteStyleVersion='" + this.e + "', styleVersion=" + this.f + ", params=" + Arrays.toString(this.g) + ", dataUrl='" + this.h + "', decodeDataUrl='" + this.i + "'}";
     }
 }

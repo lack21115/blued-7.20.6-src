@@ -142,7 +142,7 @@ public interface IRemoteCreator extends IInterface {
                     obtain.writeInterfaceToken(b.L);
                     if (this.V.transact(9, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
-                        return b.AbstractBinderC0425b.Code(obtain2.readStrongBinder());
+                        return b.AbstractBinderC0255b.Code(obtain2.readStrongBinder());
                     }
                     return b.Code().getUiEngineUtil();
                 } finally {

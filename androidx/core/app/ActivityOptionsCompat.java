@@ -20,10 +20,10 @@ public class ActivityOptionsCompat {
     static class ActivityOptionsCompatImpl extends ActivityOptionsCompat {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ActivityOptions f2316a;
+        private final ActivityOptions f2268a;
 
         ActivityOptionsCompatImpl(ActivityOptions activityOptions) {
-            this.f2316a = activityOptions;
+            this.f2268a = activityOptions;
         }
 
         @Override // androidx.core.app.ActivityOptionsCompat
@@ -31,30 +31,30 @@ public class ActivityOptionsCompat {
             if (Build.VERSION.SDK_INT < 24) {
                 return null;
             }
-            return this.f2316a.getLaunchBounds();
+            return this.f2268a.getLaunchBounds();
         }
 
         @Override // androidx.core.app.ActivityOptionsCompat
         public void requestUsageTimeReport(PendingIntent pendingIntent) {
             if (Build.VERSION.SDK_INT >= 23) {
-                this.f2316a.requestUsageTimeReport(pendingIntent);
+                this.f2268a.requestUsageTimeReport(pendingIntent);
             }
         }
 
         @Override // androidx.core.app.ActivityOptionsCompat
         public ActivityOptionsCompat setLaunchBounds(Rect rect) {
-            return Build.VERSION.SDK_INT < 24 ? this : new ActivityOptionsCompatImpl(this.f2316a.setLaunchBounds(rect));
+            return Build.VERSION.SDK_INT < 24 ? this : new ActivityOptionsCompatImpl(this.f2268a.setLaunchBounds(rect));
         }
 
         @Override // androidx.core.app.ActivityOptionsCompat
         public Bundle toBundle() {
-            return this.f2316a.toBundle();
+            return this.f2268a.toBundle();
         }
 
         @Override // androidx.core.app.ActivityOptionsCompat
         public void update(ActivityOptionsCompat activityOptionsCompat) {
             if (activityOptionsCompat instanceof ActivityOptionsCompatImpl) {
-                this.f2316a.update(((ActivityOptionsCompatImpl) activityOptionsCompat).f2316a);
+                this.f2268a.update(((ActivityOptionsCompatImpl) activityOptionsCompat).f2268a);
             }
         }
     }

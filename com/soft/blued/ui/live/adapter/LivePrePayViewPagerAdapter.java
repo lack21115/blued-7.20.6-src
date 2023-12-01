@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import com.blued.android.framework.utils.DensityUtils;
+import com.blued.android.module.common.adapter.CommonRecycleAdapter;
 import com.blued.android.module.common.model.LiveChargeCouponModel;
 import com.blued.android.module.live.base.model.PayOption;
 import com.soft.blued.ui.pay.adapter.LivePrePayPriceAdapter;
@@ -19,11 +20,11 @@ import java.util.Map;
 public class LivePrePayViewPagerAdapter extends PagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public PayOption._pay_list f31101a;
+    public PayOption._pay_list f17411a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f31102c;
+    public int f17412c;
     private Context e;
     private List<PayOption._pay_list> f;
     private SelectModelCallBack j;
@@ -39,12 +40,12 @@ public class LivePrePayViewPagerAdapter extends PagerAdapter {
     }
 
     public LivePrePayViewPagerAdapter(Context context, List<PayOption._pay_list> list, int i, LiveChargeCouponModel liveChargeCouponModel, SelectModelCallBack selectModelCallBack) {
-        this.f31102c = 0;
+        this.f17412c = 0;
         this.e = context;
         this.f = list;
         this.j = selectModelCallBack;
         this.k = liveChargeCouponModel;
-        this.f31102c = i;
+        this.f17412c = i;
     }
 
     private View a(int i) {
@@ -64,10 +65,10 @@ public class LivePrePayViewPagerAdapter extends PagerAdapter {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: a */
     public void b(int i, View view, PayOption._pay_list _pay_listVar) {
-        if (i == this.f31102c) {
+        if (i == this.f17412c) {
             this.b = view;
-            this.f31102c = i;
-            this.f31101a = _pay_listVar;
+            this.f17412c = i;
+            this.f17411a = _pay_listVar;
             return;
         }
         View view2 = this.b;
@@ -80,25 +81,28 @@ public class LivePrePayViewPagerAdapter extends PagerAdapter {
         view.setScaleY(0.9f);
         view.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(70L);
         this.b = view;
-        this.f31102c = i;
-        this.f31101a = _pay_listVar;
+        this.f17412c = i;
+        this.f17411a = _pay_listVar;
         SelectModelCallBack selectModelCallBack = this.j;
         if (selectModelCallBack != null) {
             selectModelCallBack.selectModel(_pay_listVar);
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void b(int i) {
         Map<Integer, List<PayOption._pay_list>> map;
+        ArrayList arrayList;
         Map<Integer, RecyclerView> map2 = this.g;
         if (map2 == null || map2.get(Integer.valueOf(i)) == null || (map = this.h) == null || this.i == null) {
             return;
         }
-        ArrayList arrayList = map.get(Integer.valueOf(i));
-        if (arrayList == null) {
+        List<PayOption._pay_list> list = map.get(Integer.valueOf(i));
+        if (list == null) {
             arrayList = new ArrayList();
         } else {
-            arrayList.clear();
+            list.clear();
+            arrayList = list;
         }
         int i2 = i * 6;
         while (true) {
@@ -106,8 +110,8 @@ public class LivePrePayViewPagerAdapter extends PagerAdapter {
             if (i3 >= (i + 1) * 6 || i3 >= this.f.size()) {
                 break;
             }
-            if (i3 == this.f31102c) {
-                this.f31101a = this.f.get(i3);
+            if (i3 == this.f17412c) {
+                this.f17411a = this.f.get(i3);
             }
             arrayList.add(this.f.get(i3));
             i2 = i3 + 1;
@@ -115,7 +119,7 @@ public class LivePrePayViewPagerAdapter extends PagerAdapter {
         this.h.put(Integer.valueOf(i), arrayList);
         if (this.i.get(Integer.valueOf(i)) == null) {
             RecyclerView recyclerView = this.g.get(Integer.valueOf(i));
-            LivePrePayPriceAdapter livePrePayPriceAdapter = new LivePrePayPriceAdapter(this.e, this.f31102c, i, 6, this.k, new LivePrePayPriceAdapter.SelectItemCallBack() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LivePrePayViewPagerAdapter$RPIJ0CGAV5yQb9yIFEAeEeV5g_w
+            CommonRecycleAdapter livePrePayPriceAdapter = new LivePrePayPriceAdapter(this.e, this.f17412c, i, 6, this.k, new LivePrePayPriceAdapter.SelectItemCallBack() { // from class: com.soft.blued.ui.live.adapter.-$$Lambda$LivePrePayViewPagerAdapter$RPIJ0CGAV5yQb9yIFEAeEeV5g_w
                 @Override // com.soft.blued.ui.pay.adapter.LivePrePayPriceAdapter.SelectItemCallBack
                 public final void selectItem(int i4, View view, PayOption._pay_list _pay_listVar) {
                     LivePrePayViewPagerAdapter.this.b(i4, view, _pay_listVar);
@@ -125,7 +129,7 @@ public class LivePrePayViewPagerAdapter extends PagerAdapter {
             recyclerView.setAdapter(livePrePayPriceAdapter);
             this.i.put(Integer.valueOf(i), livePrePayPriceAdapter);
         }
-        this.i.get(Integer.valueOf(i)).f32990a = this.f31102c;
+        this.i.get(Integer.valueOf(i)).f19299a = this.f17412c;
         this.i.get(Integer.valueOf(i)).setDataAndNotify(arrayList);
     }
 

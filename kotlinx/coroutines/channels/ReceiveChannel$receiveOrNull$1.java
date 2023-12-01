@@ -11,9 +11,7 @@ import kotlinx.coroutines.channels.ReceiveChannel;
 @DebugMetadata(b = "Channel.kt", c = {349}, d = "receiveOrNull", e = "kotlinx.coroutines.channels.ReceiveChannel$DefaultImpls")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ReceiveChannel$receiveOrNull$1.class */
 public final class ReceiveChannel$receiveOrNull$1<E> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    /* synthetic */ Object f43003a;
+    /* synthetic */ Object a;
     int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,7 +21,7 @@ public final class ReceiveChannel$receiveOrNull$1<E> extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        this.f43003a = obj;
+        this.a = obj;
         this.b |= Integer.MIN_VALUE;
         return ReceiveChannel.DefaultImpls.a(null, this);
     }

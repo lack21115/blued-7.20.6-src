@@ -26,7 +26,7 @@ import java.util.UUID;
 public final class a implements com.opos.exoplayer.core.c.e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final h f25088a = new h() { // from class: com.opos.exoplayer.core.c.b.a.1
+    public static final h f11400a = new h() { // from class: com.opos.exoplayer.core.c.b.a.1
         @Override // com.opos.exoplayer.core.c.h
         public com.opos.exoplayer.core.c.e[] a() {
             return new com.opos.exoplayer.core.c.e[]{new a()};
@@ -35,7 +35,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
     private static final byte[] b = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f25089c = {32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32};
+    private static final byte[] f11401c = {32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32};
     private static final byte[] d = u.c("Format: Start, End, ReadOrder, Layer, Style, Name, MarginL, MarginR, MarginV, Effect, Text");
     private static final byte[] e = {68, 105, 97, 108, 111, 103, 117, 101, 58, 32, 48, 58, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 58, 48, 48, 58, 48, 48, 58, 48, 48, 44};
     private static final byte[] f = {32, 32, 32, 32, 32, 32, 32, 32, 32, 32};
@@ -94,8 +94,8 @@ public final class a implements com.opos.exoplayer.core.c.e {
 
     /* renamed from: com.opos.exoplayer.core.c.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/b/a$a.class */
-    final class C0649a implements d {
-        private C0649a() {
+    final class C0479a implements d {
+        private C0479a() {
         }
 
         @Override // com.opos.exoplayer.core.c.b.d
@@ -161,11 +161,11 @@ public final class a implements com.opos.exoplayer.core.c.e {
         private String Q;
 
         /* renamed from: a  reason: collision with root package name */
-        public String f25091a;
+        public String f11403a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f25092c;
+        public int f11404c;
         public int d;
         public boolean e;
         public byte[] f;
@@ -230,7 +230,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     return null;
                 }
                 int d = mVar.d() + 20;
-                byte[] bArr = mVar.f25496a;
+                byte[] bArr = mVar.f11808a;
                 while (true) {
                     if (d >= bArr.length - 4) {
                         throw new o("Failed to find FourCC VC1 initialization data");
@@ -275,13 +275,13 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     byte b = bArr[i2];
                     if (bArr[i8] == 1) {
                         byte[] bArr2 = new byte[i5];
-                        System.arraycopy((Object) bArr, i8, (Object) bArr2, 0, i5);
+                        System.arraycopy(bArr, i8, bArr2, 0, i5);
                         int i9 = i5 + i8;
                         if (bArr[i9] == 3) {
                             int i10 = i6 + b + i9;
                             if (bArr[i10] == 5) {
                                 byte[] bArr3 = new byte[bArr.length - i10];
-                                System.arraycopy((Object) bArr, i10, (Object) bArr3, 0, bArr.length - i10);
+                                System.arraycopy(bArr, i10, bArr3, 0, bArr.length - i10);
                                 ArrayList arrayList = new ArrayList(2);
                                 arrayList.add(bArr2);
                                 arrayList.add(bArr3);
@@ -368,7 +368,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
             int i5;
             int i6;
             int i7;
-            String str4 = this.f25091a;
+            String str4 = this.f11403a;
             switch (str4.hashCode()) {
                 case -2095576542:
                     if (str4.equals("V_MPEG4/ISO/AP")) {
@@ -615,7 +615,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     break;
                 case true:
                     com.opos.exoplayer.core.video.a a4 = com.opos.exoplayer.core.video.a.a(new m(this.h));
-                    singletonList = a4.f25565a;
+                    singletonList = a4.f11877a;
                     this.P = a4.b;
                     str2 = "video/avc";
                     i2 = -1;
@@ -624,7 +624,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     break;
                 case true:
                     com.opos.exoplayer.core.video.b a5 = com.opos.exoplayer.core.video.b.a(new m(this.h));
-                    singletonList = a5.f25567a;
+                    singletonList = a5.f11879a;
                     this.P = a5.b;
                     str2 = "video/hevc";
                     i2 = -1;
@@ -893,11 +893,11 @@ public final class a implements com.opos.exoplayer.core.c.e {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private final byte[] f25093a = new byte[12];
+        private final byte[] f11405a = new byte[12];
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f25094c;
+        private int f11406c;
         private int d;
         private long e;
         private int f;
@@ -907,38 +907,38 @@ public final class a implements com.opos.exoplayer.core.c.e {
         }
 
         public void a(b bVar) {
-            if (!this.b || this.f25094c <= 0) {
+            if (!this.b || this.f11406c <= 0) {
                 return;
             }
             bVar.O.a(this.e, this.f, this.d, 0, bVar.g);
-            this.f25094c = 0;
+            this.f11406c = 0;
         }
 
         public void a(b bVar, long j) {
             if (this.b) {
-                int i = this.f25094c;
-                this.f25094c = i + 1;
+                int i = this.f11406c;
+                this.f11406c = i + 1;
                 if (i == 0) {
                     this.e = j;
                 }
-                if (this.f25094c >= 8) {
+                if (this.f11406c >= 8) {
                     bVar.O.a(this.e, this.f, this.d, 0, bVar.g);
-                    this.f25094c = 0;
+                    this.f11406c = 0;
                 }
             }
         }
 
         public void a(com.opos.exoplayer.core.c.f fVar, int i, int i2) {
             if (!this.b) {
-                fVar.c(this.f25093a, 0, 12);
+                fVar.c(this.f11405a, 0, 12);
                 fVar.a();
-                if (com.opos.exoplayer.core.a.a.b(this.f25093a) == -1) {
+                if (com.opos.exoplayer.core.a.a.b(this.f11405a) == -1) {
                     return;
                 }
                 this.b = true;
-                this.f25094c = 0;
+                this.f11406c = 0;
             }
-            if (this.f25094c == 0) {
+            if (this.f11406c == 0) {
                 this.f = i;
                 this.d = 0;
             }
@@ -963,14 +963,14 @@ public final class a implements com.opos.exoplayer.core.c.e {
         this.G = -1L;
         this.H = com.anythink.expressad.exoplayer.b.b;
         this.h = cVar;
-        cVar.a(new C0649a());
+        cVar.a(new C0479a());
         this.k = (i & 1) != 0 ? false : true;
         this.i = new f();
         this.j = new SparseArray<>();
         this.n = new m(4);
         this.o = new m(ByteBuffer.allocate(4).putInt(-1).array());
         this.p = new m(4);
-        this.l = new m(k.f25488a);
+        this.l = new m(k.f11800a);
         this.m = new m(4);
         this.q = new m();
         this.r = new m();
@@ -1004,9 +1004,9 @@ public final class a implements com.opos.exoplayer.core.c.e {
         if (bVar.L != null) {
             bVar.L.a(bVar, j);
         } else {
-            if ("S_TEXT/UTF8".equals(bVar.f25091a)) {
-                a(bVar, "%02d:%02d:%02d,%03d", 19, 1000L, f25089c);
-            } else if ("S_TEXT/ASS".equals(bVar.f25091a)) {
+            if ("S_TEXT/UTF8".equals(bVar.f11403a)) {
+                a(bVar, "%02d:%02d:%02d,%03d", 19, 1000L, f11401c);
+            } else if ("S_TEXT/ASS".equals(bVar.f11403a)) {
                 a(bVar, "%01d:%02d:%02d:%02d", 21, 10000L, f);
             }
             bVar.O.a(j, this.T, this.ac, 0, bVar.g);
@@ -1016,7 +1016,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
     }
 
     private void a(b bVar, String str, int i, long j, byte[] bArr) {
-        a(this.r.f25496a, this.N, str, i, j, bArr);
+        a(this.r.f11808a, this.N, str, i, j, bArr);
         n nVar = bVar.O;
         m mVar = this.r;
         nVar.a(mVar, mVar.c());
@@ -1029,18 +1029,18 @@ public final class a implements com.opos.exoplayer.core.c.e {
         }
         if (this.n.e() < i) {
             m mVar = this.n;
-            mVar.a(Arrays.copyOf(mVar.f25496a, Math.max(this.n.f25496a.length * 2, i)), this.n.c());
+            mVar.a(Arrays.copyOf(mVar.f11808a, Math.max(this.n.f11808a.length * 2, i)), this.n.c());
         }
-        fVar.b(this.n.f25496a, this.n.c(), i - this.n.c());
+        fVar.b(this.n.f11808a, this.n.c(), i - this.n.c());
         this.n.b(i);
     }
 
     private void a(com.opos.exoplayer.core.c.f fVar, b bVar, int i) {
         int i2;
         int i3;
-        if ("S_TEXT/UTF8".equals(bVar.f25091a)) {
+        if ("S_TEXT/UTF8".equals(bVar.f11403a)) {
             a(fVar, b, i);
-        } else if ("S_TEXT/ASS".equals(bVar.f25091a)) {
+        } else if ("S_TEXT/ASS".equals(bVar.f11403a)) {
             a(fVar, e, i);
         } else {
             n nVar = bVar.O;
@@ -1050,22 +1050,22 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     this.T &= -1073741825;
                     int i4 = 128;
                     if (!this.W) {
-                        fVar.b(this.n.f25496a, 0, 1);
+                        fVar.b(this.n.f11808a, 0, 1);
                         this.U++;
-                        if ((this.n.f25496a[0] & 128) == 128) {
+                        if ((this.n.f11808a[0] & 128) == 128) {
                             throw new o("Extension bit is set in signal byte");
                         }
-                        this.Z = this.n.f25496a[0];
+                        this.Z = this.n.f11808a[0];
                         this.W = true;
                     }
                     if ((this.Z & 1) == 1) {
                         boolean z2 = (this.Z & 2) == 2;
                         this.T |= 1073741824;
                         if (!this.X) {
-                            fVar.b(this.s.f25496a, 0, 8);
+                            fVar.b(this.s.f11808a, 0, 8);
                             this.U += 8;
                             this.X = true;
-                            byte[] bArr = this.n.f25496a;
+                            byte[] bArr = this.n.f11808a;
                             if (!z2) {
                                 i4 = 0;
                             }
@@ -1079,7 +1079,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                         }
                         if (z2) {
                             if (!this.Y) {
-                                fVar.b(this.n.f25496a, 0, 1);
+                                fVar.b(this.n.f11808a, 0, 1);
                                 this.U++;
                                 this.n.c(0);
                                 this.aa = this.n.g();
@@ -1087,7 +1087,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                             }
                             int i5 = this.aa * 4;
                             this.n.a(i5);
-                            fVar.b(this.n.f25496a, 0, i5);
+                            fVar.b(this.n.f11808a, 0, i5);
                             this.U = i5 + this.U;
                             short s = (short) ((this.aa / 2) + 1);
                             int i6 = (s * 6) + 2;
@@ -1133,7 +1133,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                 this.V = true;
             }
             int c2 = this.q.c() + i;
-            if (!"V_MPEG4/ISO/AVC".equals(bVar.f25091a) && !"V_MPEGH/ISO/HEVC".equals(bVar.f25091a)) {
+            if (!"V_MPEG4/ISO/AVC".equals(bVar.f11403a) && !"V_MPEGH/ISO/HEVC".equals(bVar.f11403a)) {
                 if (bVar.L != null) {
                     if (this.q.c() != 0) {
                         z = false;
@@ -1149,7 +1149,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     a(fVar, nVar, c2 - i10);
                 }
             } else {
-                byte[] bArr2 = this.m.f25496a;
+                byte[] bArr2 = this.m.f11808a;
                 byte b2 = (byte) 0;
                 bArr2[0] = b2;
                 bArr2[1] = b2;
@@ -1170,7 +1170,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     }
                 }
             }
-            if ("A_VORBIS".equals(bVar.f25091a)) {
+            if ("A_VORBIS".equals(bVar.f11403a)) {
                 this.o.c(0);
                 nVar.a(this.o, 4);
                 this.ac += 4;
@@ -1181,11 +1181,11 @@ public final class a implements com.opos.exoplayer.core.c.e {
     private void a(com.opos.exoplayer.core.c.f fVar, byte[] bArr, int i) {
         int length = bArr.length + i;
         if (this.r.e() < length) {
-            this.r.f25496a = Arrays.copyOf(bArr, length + i);
+            this.r.f11808a = Arrays.copyOf(bArr, length + i);
         } else {
-            System.arraycopy((Object) bArr, 0, (Object) this.r.f25496a, 0, bArr.length);
+            System.arraycopy(bArr, 0, this.r.f11808a, 0, bArr.length);
         }
-        fVar.b(this.r.f25496a, bArr.length, i);
+        fVar.b(this.r.f11808a, bArr.length, i);
         this.r.a(length);
     }
 
@@ -1210,7 +1210,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
             int i4 = (int) (j4 / 1000000);
             c2 = u.c(String.format(Locale.US, str, Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4), Integer.valueOf((int) ((j4 - (i4 * 1000000)) / j2))));
         }
-        System.arraycopy((Object) c2, 0, (Object) bArr, i, bArr2.length);
+        System.arraycopy(c2, 0, bArr, i, bArr2.length);
     }
 
     private boolean a(com.opos.exoplayer.core.c.k kVar, long j) {
@@ -1221,14 +1221,14 @@ public final class a implements com.opos.exoplayer.core.c.e {
                 long j2 = this.G;
                 z = false;
                 if (j2 != -1) {
-                    kVar.f25249a = j2;
+                    kVar.f11561a = j2;
                     this.G = -1L;
                 }
             }
             return z;
         }
         this.G = j;
-        kVar.f25249a = this.F;
+        kVar.f11561a = this.F;
         this.E = false;
         z = true;
         return z;
@@ -1483,8 +1483,8 @@ public final class a implements com.opos.exoplayer.core.c.e {
                 this.A.g = new n.a(1, bArr, 0, 0);
                 return;
             } else if (i == 21419) {
-                Arrays.fill(this.p.f25496a, (byte) 0);
-                fVar.b(this.p.f25496a, 4 - i2, i2);
+                Arrays.fill(this.p.f11808a, (byte) 0);
+                fVar.b(this.p.f11808a, 4 - i2, i2);
                 this.p.c(0);
                 this.C = (int) this.p.m();
                 return;
@@ -1515,7 +1515,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
         }
         if (this.L == 1) {
             a(fVar, 3);
-            int i6 = (this.n.f25496a[2] & 6) >> 1;
+            int i6 = (this.n.f11808a[2] & 6) >> 1;
             if (i6 == 0) {
                 this.P = 1;
                 int[] a2 = a(this.Q, 1);
@@ -1525,7 +1525,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                 throw new o("Lacing only supported in SimpleBlocks.");
             } else {
                 a(fVar, 4);
-                int i7 = (this.n.f25496a[3] & 255) + 1;
+                int i7 = (this.n.f11808a[3] & 255) + 1;
                 this.P = i7;
                 int[] a3 = a(this.Q, i7);
                 this.Q = a3;
@@ -1549,7 +1549,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                         int i13 = i5 + 1;
                         a(fVar, i13);
                         int i14 = i13 - 1;
-                        if (this.n.f25496a[i14] == 0) {
+                        if (this.n.f11808a[i14] == 0) {
                             throw new o("No valid varint length mask found");
                         }
                         int i15 = 0;
@@ -1561,17 +1561,17 @@ public final class a implements com.opos.exoplayer.core.c.e {
                                 break;
                             }
                             int i17 = 1 << (7 - i16);
-                            if ((this.n.f25496a[i14] & i17) != 0) {
+                            if ((this.n.f11808a[i14] & i17) != 0) {
                                 int i18 = i13 + i16;
                                 a(fVar, i18);
-                                long j2 = i17 & this.n.f25496a[i14] & 255;
+                                long j2 = i17 & this.n.f11808a[i14] & 255;
                                 int i19 = i14;
                                 while (true) {
                                     int i20 = i19 + 1;
                                     if (i20 >= i18) {
                                         break;
                                     }
-                                    j2 = (j2 << 8) | (this.n.f25496a[i20] & 255);
+                                    j2 = (j2 << 8) | (this.n.f11808a[i20] & 255);
                                     i19 = i20;
                                 }
                                 i5 = i18;
@@ -1610,7 +1610,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                         do {
                             i5 = i24 + 1;
                             a(fVar, i5);
-                            i4 = this.n.f25496a[i5 - 1] & 255;
+                            i4 = this.n.f11808a[i5 - 1] & 255;
                             iArr = this.Q;
                             iArr[i22] = iArr[i22] + i4;
                             i24 = i5;
@@ -1621,8 +1621,8 @@ public final class a implements com.opos.exoplayer.core.c.e {
                     this.Q[i3 - 1] = ((i2 - this.S) - i5) - i23;
                 }
             }
-            this.M = this.H + a((this.n.f25496a[0] << 8) | (this.n.f25496a[1] & 255));
-            this.T = ((this.n.f25496a[2] & 8) == 8 ? Integer.MIN_VALUE : 0) | ((bVar.f25092c == 2 || (i == 163 && (this.n.f25496a[2] & 128) == 128)) ? 1 : 0);
+            this.M = this.H + a((this.n.f11808a[0] << 8) | (this.n.f11808a[1] & 255));
+            this.T = ((this.n.f11808a[2] & 8) == 8 ? Integer.MIN_VALUE : 0) | ((bVar.f11404c == 2 || (i == 163 && (this.n.f11808a[2] & 128) == 128)) ? 1 : 0);
             this.L = 2;
             this.O = 0;
         }
@@ -1657,7 +1657,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
             boolean z = false;
             switch (i) {
                 case 131:
-                    this.A.f25092c = (int) j;
+                    this.A.f11404c = (int) j;
                     return;
                 case 136:
                     b bVar = this.A;
@@ -1866,7 +1866,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
 
     void a(int i, String str) {
         if (i == 134) {
-            this.A.f25091a = str;
+            this.A.f11403a = str;
         } else if (i != 17026) {
             if (i != 2274716) {
                 return;
@@ -1918,7 +1918,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
                 this.L = 0;
             }
         } else if (i == 174) {
-            if (a(this.A.f25091a)) {
+            if (a(this.A.f11403a)) {
                 b bVar = this.A;
                 bVar.a(this.af, bVar.b);
                 this.j.put(this.A.b, this.A);

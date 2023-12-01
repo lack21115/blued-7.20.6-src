@@ -5,16 +5,16 @@ package com.tencent.liteav.videoproducer.preprocessor;
 public final /* synthetic */ class f implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BeautyProcessor f37062a;
+    private final BeautyProcessor f23371a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f37063c;
+    private final int f23372c;
 
     private f(BeautyProcessor beautyProcessor, String str, int i) {
-        this.f37062a = beautyProcessor;
+        this.f23371a = beautyProcessor;
         this.b = str;
-        this.f37063c = i;
+        this.f23372c = i;
     }
 
     public static Runnable a(BeautyProcessor beautyProcessor, String str, int i) {
@@ -23,6 +23,6 @@ public final /* synthetic */ class f implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f37062a.updateStatsInternal(this.b, this.f37063c);
+        this.f23371a.updateStatsInternal(this.b, this.f23372c);
     }
 }

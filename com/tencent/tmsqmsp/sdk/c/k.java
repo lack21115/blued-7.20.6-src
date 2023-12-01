@@ -32,10 +32,10 @@ public class k {
     private CopyOnWriteArrayList<f> b = new CopyOnWriteArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private j f39723c = new j();
+    private j f26032c = new j();
 
     /* renamed from: a  reason: collision with root package name */
-    private ConcurrentHashMap<Integer, f> f39722a = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<Integer, f> f26031a = new ConcurrentHashMap<>();
     private Handler e = new g(com.tencent.tmsqmsp.sdk.app.b.e().c());
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/c/k$a.class */
@@ -52,46 +52,46 @@ public class k {
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/c/k$b.class */
-    public final class b implements a.InterfaceC1043a {
+    public final class b implements a.InterfaceC0873a {
 
         /* renamed from: a  reason: collision with root package name */
-        public f f39725a;
+        public f f26034a;
 
         public b(k kVar) {
         }
 
-        @Override // com.tencent.tmsqmsp.sdk.c.a.InterfaceC1043a
+        @Override // com.tencent.tmsqmsp.sdk.c.a.InterfaceC0873a
         public void a() {
-            this.f39725a.d = 26;
+            this.f26034a.d = 26;
         }
 
-        @Override // com.tencent.tmsqmsp.sdk.c.a.InterfaceC1043a
+        @Override // com.tencent.tmsqmsp.sdk.c.a.InterfaceC0873a
         public void run() {
             f fVar;
             int i;
-            String str = this.f39725a.h;
+            String str = this.f26034a.h;
             if (str == null || str.contains("..")) {
-                fVar = this.f39725a;
+                fVar = this.f26034a;
                 i = 15;
             } else {
-                File file = new File(this.f39725a.h);
+                File file = new File(this.f26034a.h);
                 if (file.exists()) {
-                    this.f39725a.i = new o();
-                    int i2 = this.f39725a.b;
+                    this.f26034a.i = new o();
+                    int i2 = this.f26034a.b;
                     if ((i2 == 2 || i2 == 1) && !com.tencent.tmsqmsp.sdk.d.e.b(file, null)) {
-                        this.f39725a.d = 10;
+                        this.f26034a.d = 10;
                         return;
                     }
                     Object[] objArr = new Object[1];
-                    f fVar2 = this.f39725a;
-                    fVar2.d = com.tencent.tmsqmsp.sdk.c.f.a(2L, fVar2.b, fVar2.f39727a, 0L, fVar2.h, null, null, objArr);
+                    f fVar2 = this.f26034a;
+                    fVar2.d = com.tencent.tmsqmsp.sdk.c.f.a(2L, fVar2.b, fVar2.f26036a, 0L, fVar2.h, null, null, objArr);
                     if (objArr[0] == null || !(objArr[0] instanceof Integer)) {
                         return;
                     }
-                    this.f39725a.f = ((Integer) objArr[0]).intValue();
+                    this.f26034a.f = ((Integer) objArr[0]).intValue();
                     return;
                 }
-                fVar = this.f39725a;
+                fVar = this.f26034a;
                 i = 12;
             }
             fVar.d = i;
@@ -106,8 +106,8 @@ public class k {
 
         @Override // com.tencent.tmsqmsp.sdk.c.k.i
         public void a() {
-            if (this.f39731a) {
-                k.this.f39723c.a();
+            if (this.f26040a) {
+                k.this.f26032c.a();
             }
         }
 
@@ -121,29 +121,29 @@ public class k {
                 com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Invalid mode: %d", Integer.valueOf(i4)));
                 return;
             }
-            j.a a2 = k.this.f39723c.a(i);
+            j.a a2 = k.this.f26032c.a(i);
             if (a2 != null) {
-                k.this.f39723c.a(a2.f39720a, false);
+                k.this.f26032c.a(a2.f26029a, false);
             } else {
                 a2 = new j.a();
             }
-            a2.f39720a = i;
+            a2.f26029a = i;
             a2.b = i2;
-            a2.f39721c = i3;
+            a2.f26030c = i3;
             a2.e = str;
             a2.d = str2;
-            k.this.f39723c.a(a2, false);
-            this.f39731a = true;
+            k.this.f26032c.a(a2, false);
+            this.f26040a = true;
             com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("visitQSecSFUItem libId = %d", Integer.valueOf(i)));
             if (i4 == 1 && k.this.d.a(i) == 1) {
-                f fVar = (f) k.this.f39722a.get(Integer.valueOf(i));
+                f fVar = (f) k.this.f26031a.get(Integer.valueOf(i));
                 if (fVar == null) {
                     k.this.c(k.this.a(a2));
                     return;
                 }
                 k.this.a(fVar, str2, str);
                 if (fVar.d != 0) {
-                    k.this.f39722a.remove(Integer.valueOf(fVar.f39727a));
+                    k.this.f26031a.remove(Integer.valueOf(fVar.f26036a));
                 }
             }
         }
@@ -169,11 +169,11 @@ public class k {
     public static class f {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39727a;
+        public int f26036a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f39728c;
+        public int f26037c;
         public int d;
         public int e;
         public int f;
@@ -223,10 +223,10 @@ public class k {
     public static class h {
 
         /* renamed from: a  reason: collision with root package name */
-        private i f39730a;
+        private i f26039a;
 
         public h(i iVar) {
-            this.f39730a = iVar;
+            this.f26039a = iVar;
         }
 
         public void a(int i) {
@@ -254,7 +254,7 @@ public class k {
                                             int i4 = jSONObject.getInt(k.b(2));
                                             int i5 = jSONObject.getInt(k.b(3));
                                             String string = jSONObject.getString(k.b(4));
-                                            i iVar2 = this.f39730a;
+                                            i iVar2 = this.f26039a;
                                             if (iVar2 != null) {
                                                 iVar2.a(str, string, i2, i3, i4, i5);
                                             }
@@ -264,20 +264,20 @@ public class k {
                             }
                         }
                     }
-                    iVar = this.f39730a;
+                    iVar = this.f26039a;
                     if (iVar == null) {
                         return;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    iVar = this.f39730a;
+                    iVar = this.f26039a;
                     if (iVar == null) {
                         return;
                     }
                 }
                 iVar.a();
             } catch (Throwable th) {
-                i iVar3 = this.f39730a;
+                i iVar3 = this.f26039a;
                 if (iVar3 != null) {
                     iVar3.a();
                 }
@@ -290,10 +290,10 @@ public class k {
     public class i {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f39731a;
+        public boolean f26040a;
 
         private i() {
-            this.f39731a = false;
+            this.f26040a = false;
         }
 
         public /* synthetic */ i(k kVar, a aVar) {
@@ -301,8 +301,8 @@ public class k {
         }
 
         public void a() {
-            if (this.f39731a) {
-                k.this.f39723c.a();
+            if (this.f26040a) {
+                k.this.f26032c.a();
             }
         }
 
@@ -311,24 +311,24 @@ public class k {
             if (TextUtils.isEmpty(str2)) {
                 return;
             }
-            j.a a2 = k.this.f39723c.a(i);
-            if (a2 != null && str.equals(a2.e) && str2.equals(a2.d) && i2 == a2.b && i3 == a2.f39721c) {
+            j.a a2 = k.this.f26032c.a(i);
+            if (a2 != null && str.equals(a2.e) && str2.equals(a2.d) && i2 == a2.b && i3 == a2.f26030c) {
                 return;
             }
             if (a2 == null) {
                 a2 = new j.a();
             } else {
-                k.this.f39723c.a(i, false);
+                k.this.f26032c.a(i, false);
                 com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Database info mismatch for lib: %d", Integer.valueOf(i)));
             }
-            a2.f39720a = i;
+            a2.f26029a = i;
             a2.b = i2;
-            a2.f39721c = i3;
+            a2.f26030c = i3;
             a2.e = str;
             a2.d = str2;
-            com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Add lost lib: %d,%d,%d,%s", Integer.valueOf(i), Integer.valueOf(a2.b), Integer.valueOf(a2.f39721c), a2.e));
-            k.this.f39723c.a(a2, false);
-            this.f39731a = true;
+            com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Add lost lib: %d,%d,%d,%s", Integer.valueOf(i), Integer.valueOf(a2.b), Integer.valueOf(a2.f26030c), a2.e));
+            k.this.f26032c.a(a2, false);
+            this.f26040a = true;
         }
     }
 
@@ -338,9 +338,9 @@ public class k {
     /* JADX INFO: Access modifiers changed from: private */
     public f a(j.a aVar) {
         f fVar = new f(null);
-        fVar.f39727a = aVar.f39720a;
+        fVar.f26036a = aVar.f26029a;
         fVar.b = aVar.b;
-        fVar.f39728c = aVar.f39721c;
+        fVar.f26037c = aVar.f26030c;
         fVar.h = aVar.e;
         fVar.g = aVar.d;
         fVar.e = 4;
@@ -380,13 +380,13 @@ public class k {
 
     private void a(List<j.a> list) {
         for (j.a aVar : list) {
-            this.f39723c.a(aVar.f39720a, false);
+            this.f26032c.a(aVar.f26029a, false);
             String str = aVar.e;
             if (str != null) {
                 com.tencent.tmsqmsp.sdk.f.d.a(str, false);
             }
         }
-        this.f39723c.a();
+        this.f26032c.a();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -397,7 +397,7 @@ public class k {
     private void b(f fVar) {
         try {
             com.tencent.tmsqmsp.sdk.a.g gVar = new com.tencent.tmsqmsp.sdk.a.g();
-            gVar.a(fVar.f39727a).a(fVar.g).a(fVar.d);
+            gVar.a(fVar.f26036a).a(fVar.g).a(fVar.d);
             com.tencent.tmsqmsp.sdk.a.f.a(gVar.toString(), 3);
         } catch (Exception e2) {
             e2.printStackTrace();
@@ -412,9 +412,9 @@ public class k {
         LinkedList linkedList = new LinkedList();
         for (Pair<Integer, Integer> pair : list) {
             com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("cb changed: id(%d), cb(%d)", pair.first, pair.second));
-            f fVar = this.f39722a.get(pair.first);
+            f fVar = this.f26031a.get(pair.first);
             if (fVar == null) {
-                j.a a2 = this.f39723c.a(pair.first.intValue());
+                j.a a2 = this.f26032c.a(pair.first.intValue());
                 if (a2 != null) {
                     if (pair.second.intValue() == 1) {
                         c(a(a2));
@@ -426,13 +426,13 @@ public class k {
                 if (fVar.e == 4) {
                     d(fVar);
                     if (fVar.d != 0) {
-                        this.f39722a.remove(Integer.valueOf(fVar.f39727a));
+                        this.f26031a.remove(Integer.valueOf(fVar.f26036a));
                     }
                     a(fVar);
                 }
             } else if (pair.second.intValue() == 2 && fVar.e == 4) {
-                this.f39722a.remove(pair.first);
-                j.a a3 = this.f39723c.a(pair.first.intValue());
+                this.f26031a.remove(pair.first);
+                j.a a3 = this.f26032c.a(pair.first.intValue());
                 if (a3 != null) {
                     linkedList.add(a3);
                 }
@@ -446,7 +446,7 @@ public class k {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c(e eVar) {
-        for (Map.Entry<Integer, f> entry : this.f39722a.entrySet()) {
+        for (Map.Entry<Integer, f> entry : this.f26031a.entrySet()) {
             if (entry.getValue().e == 1) {
                 com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Notify listener [%d:%d]", 1, entry.getKey()));
                 eVar.a(1, entry.getKey().intValue());
@@ -458,8 +458,8 @@ public class k {
     public void c(f fVar) {
         d(fVar);
         if (fVar.d == 0) {
-            this.f39722a.put(Integer.valueOf(fVar.f39727a), fVar);
-            a(1, fVar.f39727a);
+            this.f26031a.put(Integer.valueOf(fVar.f26036a), fVar);
+            a(1, fVar.f26036a);
         }
         a(fVar);
     }
@@ -472,9 +472,9 @@ public class k {
     private void d(f fVar) {
         fVar.e = 2;
         b bVar = new b(this);
-        bVar.f39725a = fVar;
+        bVar.f26034a = fVar;
         int i2 = 1;
-        new com.tencent.tmsqmsp.sdk.c.a(String.format("Lib%d_%s", Integer.valueOf(fVar.f39727a), fVar.g), 43200000L).a(bVar);
+        new com.tencent.tmsqmsp.sdk.c.a(String.format("Lib%d_%s", Integer.valueOf(fVar.f26036a), fVar.g), 43200000L).a(bVar);
         String str = fVar.h;
         String str2 = str;
         if (str == null) {
@@ -503,15 +503,15 @@ public class k {
     }
 
     private void e(f fVar) {
-        com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Prepare to unload: %d,%d,%d,%d,%s,%s", Integer.valueOf(fVar.f39727a), Integer.valueOf(fVar.b), Integer.valueOf(fVar.f39728c), Integer.valueOf(fVar.e), fVar.g, fVar.h));
-        if ((fVar.f39728c & 1) != 0 && fVar.e == 1) {
+        com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Prepare to unload: %d,%d,%d,%d,%s,%s", Integer.valueOf(fVar.f26036a), Integer.valueOf(fVar.b), Integer.valueOf(fVar.f26037c), Integer.valueOf(fVar.e), fVar.g, fVar.h));
+        if ((fVar.f26037c & 1) != 0 && fVar.e == 1) {
             fVar.e = 3;
             fVar.i.c();
-            int a2 = com.tencent.tmsqmsp.sdk.c.f.a(3L, fVar.f39727a, 0L, 0L, null, null, null, null);
+            int a2 = com.tencent.tmsqmsp.sdk.c.f.a(3L, fVar.f26036a, 0L, 0L, null, null, null, null);
             com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Unload ret: %d", Integer.valueOf(a2)));
             if (a2 == 0) {
                 fVar.e = 4;
-                a(2, fVar.f39727a);
+                a(2, fVar.f26036a);
                 return;
             }
             fVar.e = 5;
@@ -520,16 +520,16 @@ public class k {
     }
 
     private void f() {
-        List<j.a> b2 = this.f39723c.b();
+        List<j.a> b2 = this.f26032c.b();
         if (b2 == null || b2.isEmpty()) {
             return;
         }
         LinkedList linkedList = new LinkedList();
         for (j.a aVar : b2) {
-            int a2 = this.d.a(aVar.f39720a);
-            int i2 = aVar.f39720a;
+            int a2 = this.d.a(aVar.f26029a);
+            int i2 = aVar.f26029a;
             int i3 = aVar.b;
-            int i4 = aVar.f39721c;
+            int i4 = aVar.f26030c;
             String str = aVar.d;
             String str2 = aVar.e;
             String str3 = str2;
@@ -585,7 +585,7 @@ public class k {
         String uid;
         String uid2;
         context = oj.getContext();
-        SharedPreferences sharedPreferences = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f39705a + b(6), 0);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(com.tencent.tmsqmsp.sdk.c.b.f26014a + b(6), 0);
         SharedPreferences.Editor edit = sharedPreferences.edit();
         try {
             Iterator<f> it = this.b.iterator();
@@ -603,19 +603,19 @@ public class k {
                         str = com.tencent.tmsqmsp.sdk.a.c.a(i2);
                     }
                     uid = oj.getUid();
-                    String format = String.format("Lib%d_%s_%s", Integer.valueOf(next.f39727a), uid, str);
+                    String format = String.format("Lib%d_%s_%s", Integer.valueOf(next.f26036a), uid, str);
                     uid2 = oj.getUid();
-                    String format2 = String.format("Lib%d_%s_%s_lpt", Integer.valueOf(next.f39727a), uid2, str);
+                    String format2 = String.format("Lib%d_%s_%s_lpt", Integer.valueOf(next.f26036a), uid2, str);
                     int i3 = sharedPreferences.getInt(format, -1);
                     long currentTimeMillis = System.currentTimeMillis() - sharedPreferences.getLong(format2, 0L);
                     if (currentTimeMillis >= 28800000 || next.d != i3) {
-                        com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Rp: %d,%d,%s", Integer.valueOf(next.f39727a), Integer.valueOf(next.d), str));
+                        com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Rp: %d,%d,%s", Integer.valueOf(next.f26036a), Integer.valueOf(next.d), str));
                         edit.putInt(format, next.d);
                         edit.putLong(format2, System.currentTimeMillis());
                         b(next);
                         this.b.remove(next);
                     } else {
-                        com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Ignore rp for: %d,%08X,%s", Integer.valueOf(next.f39727a), Integer.valueOf(next.d), str));
+                        com.tencent.tmsqmsp.sdk.f.g.a("Qp.QLM", 1, String.format("Ignore rp for: %d,%08X,%s", Integer.valueOf(next.f26036a), Integer.valueOf(next.d), str));
                         long j4 = 28800000 - currentTimeMillis;
                         if (j2 > j4) {
                             j2 = j4;
@@ -646,19 +646,19 @@ public class k {
 
     public int a(int i2, int i3, int i4, Object[] objArr, Object[] objArr2) {
         int i5;
-        f fVar = this.f39722a.get(Integer.valueOf(i2));
+        f fVar = this.f26031a.get(Integer.valueOf(i2));
         if (fVar == null) {
-            i5 = this.f39723c.a(i2) == null ? 4 : 17;
+            i5 = this.f26032c.a(i2) == null ? 4 : 17;
         } else if (i3 != 0 && i3 != fVar.f) {
             i5 = 32;
-        } else if (fVar.f39727a != i2) {
+        } else if (fVar.f26036a != i2) {
             i5 = 5;
         } else {
             int a2 = this.d.a(i2);
             if (1 != a2 && a2 != -1) {
                 i5 = 6;
             } else if (fVar.e == 1 && fVar.i.a()) {
-                i5 = com.tencent.tmsqmsp.sdk.c.f.a(4L, fVar.f39727a, i3, i4, null, null, objArr, objArr2);
+                i5 = com.tencent.tmsqmsp.sdk.c.f.a(4L, fVar.f26036a, i3, i4, null, null, objArr, objArr2);
                 fVar.i.b();
             } else {
                 i5 = 7;
@@ -670,10 +670,10 @@ public class k {
 
     public void a() {
         try {
-            ConcurrentHashMap<Integer, f> concurrentHashMap = this.f39722a;
+            ConcurrentHashMap<Integer, f> concurrentHashMap = this.f26031a;
             if (concurrentHashMap != null) {
                 for (Map.Entry<Integer, f> entry : concurrentHashMap.entrySet()) {
-                    entry.getValue().f39728c = 1;
+                    entry.getValue().f26037c = 1;
                     e(entry.getValue());
                 }
             }

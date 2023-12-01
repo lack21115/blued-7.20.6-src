@@ -6,17 +6,17 @@ import com.tencent.cloud.huiyansdkface.wehttp2.WeReq;
 public class ReqFailException extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeReq.ErrType f36102a;
+    private WeReq.ErrType f22411a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f36103c;
+    private String f22412c;
 
     public ReqFailException(WeReq.ErrType errType, int i, String str, Exception exc) {
         super(str, exc);
-        this.f36102a = errType;
+        this.f22411a = errType;
         this.b = i;
-        this.f36103c = str;
+        this.f22412c = str;
     }
 
     public int code() {
@@ -24,10 +24,10 @@ public class ReqFailException extends Exception {
     }
 
     public String msg() {
-        return this.f36103c;
+        return this.f22412c;
     }
 
     public WeReq.ErrType type() {
-        return this.f36102a;
+        return this.f22411a;
     }
 }

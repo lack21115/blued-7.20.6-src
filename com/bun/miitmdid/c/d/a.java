@@ -8,19 +8,19 @@ import com.bun.supplier.SupplierListener;
 public class a implements InnerIdSupplier {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f21137a;
+    private Context f7531a;
     private SupplierListener f;
     private boolean e = false;
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21138c = "";
+    private String f7532c = "";
     private String d = "";
 
     /* renamed from: com.bun.miitmdid.c.d.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bun/miitmdid/c/d/a$a.class */
-    class RunnableC0301a implements Runnable {
-        RunnableC0301a() {
+    class RunnableC0131a implements Runnable {
+        RunnableC0131a() {
         }
 
         @Override // java.lang.Runnable
@@ -28,7 +28,7 @@ public class a implements InnerIdSupplier {
     }
 
     public a(Context context) {
-        this.f21137a = context;
+        this.f7531a = context;
     }
 
     static native /* synthetic */ Context a(a aVar);

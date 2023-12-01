@@ -2,9 +2,8 @@ package com.google.zxing.oned.rss.expanded.decoders;
 
 import com.google.zxing.common.BitArray;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder.class */
-public abstract class AI01weightDecoder extends AI01decoder {
+abstract class AI01weightDecoder extends AI01decoder {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AI01weightDecoder(BitArray bitArray) {
         super(bitArray);

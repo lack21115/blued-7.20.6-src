@@ -1,8 +1,10 @@
 package com.android.dex;
 
 import com.android.dex.Dex;
+import com.android.org.conscrypt.NativeCrypto;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.SocketOptions;
 import java.util.Arrays;
 
 /* loaded from: source-2895416-dex2jar.jar:com/android/dex/TableOfContents.class */
@@ -23,10 +25,10 @@ public final class TableOfContents {
     public final Section mapList = new Section(4096);
     public final Section typeLists = new Section(4097);
     public final Section annotationSetRefLists = new Section(4098);
-    public final Section annotationSets = new Section(4099);
+    public final Section annotationSets = new Section(SocketOptions.SO_OOBINLINE);
     public final Section classDatas = new Section(8192);
-    public final Section codes = new Section(8193);
-    public final Section stringDatas = new Section(8194);
+    public final Section codes = new Section(NativeCrypto.SSL_CB_ACCEPT_LOOP);
+    public final Section stringDatas = new Section(NativeCrypto.SSL_CB_ACCEPT_EXIT);
     public final Section debugInfos = new Section(8195);
     public final Section annotations = new Section(8196);
     public final Section encodedArrays = new Section(8197);
@@ -178,7 +180,7 @@ public final class TableOfContents {
         section.write(this.signature);
         section.writeInt(this.fileSize);
         section.writeInt(112);
-        section.writeInt(305419896);
+        section.writeInt(DexFormat.ENDIAN_TAG);
         section.writeInt(this.linkSize);
         section.writeInt(this.linkOff);
         section.writeInt(this.mapList.off);

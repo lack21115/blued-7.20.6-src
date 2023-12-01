@@ -52,9 +52,8 @@ public class Semaphore implements Serializable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/Semaphore$Sync.class */
-    public static abstract class Sync extends AbstractQueuedSynchronizer {
+    static abstract class Sync extends AbstractQueuedSynchronizer {
         private static final long serialVersionUID = 1192457210091910933L;
 
         Sync(int i) {
@@ -170,8 +169,7 @@ public class Semaphore implements Serializable {
         return this.sync instanceof FairSync;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void reducePermits(int i) {
+    protected void reducePermits(int i) {
         if (i < 0) {
             throw new IllegalArgumentException();
         }

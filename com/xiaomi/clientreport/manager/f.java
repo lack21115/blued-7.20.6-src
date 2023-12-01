@@ -8,16 +8,16 @@ import java.util.concurrent.ExecutorService;
 public class f extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ a f41177a;
+    final /* synthetic */ a f27486a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public f(a aVar) {
-        this.f41177a = aVar;
+        this.f27486a = aVar;
     }
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public String mo11550a() {
+    public String mo8500a() {
         return "100889";
     }
 
@@ -25,9 +25,9 @@ public class f extends ai.a {
     public void run() {
         int b;
         ExecutorService executorService;
-        b = this.f41177a.b();
+        b = this.f27486a.b();
         if (b > 0) {
-            executorService = this.f41177a.f100a;
+            executorService = this.f27486a.f53a;
             executorService.execute(new g(this));
         }
     }

@@ -11,9 +11,7 @@ import com.blued.android.module.live_china.live_info.LiveRoomInfo;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveDesireDeletePop.class */
 public class LiveDesireDeletePop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f13973c;
+    public Context c;
     private ImageView d;
     private TextView e;
     private TextView f;
@@ -56,7 +54,7 @@ public class LiveDesireDeletePop extends CenterPopupView {
     }
 
     public void c() {
-        LiveRoomInfo.a().a(this.f13973c, LiveRoomInfo.a().E());
+        LiveRoomInfo.a().a(this.c, LiveRoomInfo.a().E());
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView

@@ -76,13 +76,13 @@ public class ThirdPartySplashAdView extends AsseblemSplashAdView {
 
     public void registerNativeClickListener(View view) {
         if (this.P != null) {
-            if (this.f6049c.m.x() == 0) {
+            if (this.c.m.x() == 0) {
                 this.r.add(this);
                 this.P.registerListener(view, this.r, null);
                 return;
             }
             ArrayList arrayList = new ArrayList();
-            arrayList.add(this.f6036a);
+            arrayList.add(this.a);
             this.P.registerListener(view, arrayList, null);
         }
     }

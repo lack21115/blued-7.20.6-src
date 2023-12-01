@@ -1,7 +1,6 @@
 package java.math;
 
 import android.widget.ExpandableListView;
-import com.baidu.mobads.sdk.internal.ci;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:java/math/Conversion.class */
@@ -71,7 +70,7 @@ public class Conversion {
                 case 0:
                     return "0";
                 case 1:
-                    return ci.d;
+                    return "0.0";
                 case 2:
                     return "0.00";
                 case 3:
@@ -188,7 +187,7 @@ public class Conversion {
                 case 0:
                     return "0";
                 case 1:
-                    return ci.d;
+                    return "0.0";
                 case 2:
                     return "0.00";
                 case 3:

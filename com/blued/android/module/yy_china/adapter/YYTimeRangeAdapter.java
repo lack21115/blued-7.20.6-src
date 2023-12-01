@@ -16,7 +16,6 @@ public class YYTimeRangeAdapter extends BaseQuickAdapter<YYVoteTimeModel, BaseVi
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYVoteTimeModel yYVoteTimeModel) {
         ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) baseViewHolder.getView(R.id.fl_vote_time);

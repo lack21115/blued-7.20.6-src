@@ -12,19 +12,19 @@ import java.util.concurrent.Semaphore;
 public abstract class h<T extends k> {
 
     /* renamed from: a  reason: collision with root package name */
-    final Deque<T> f36637a = new LinkedList();
+    final Deque<T> f22946a = new LinkedList();
 
     /* renamed from: c  reason: collision with root package name */
-    volatile boolean f36638c = false;
+    volatile boolean f22947c = false;
     private final g<T> d = (g<T>) new g<T>() { // from class: com.tencent.liteav.videobase.frame.h.1
         @Override // com.tencent.liteav.videobase.frame.g
         public final void a(T t) {
             h.this.b.release();
             synchronized (h.this) {
-                if (h.this.f36638c) {
+                if (h.this.f22947c) {
                     return;
                 }
-                h.this.f36637a.addFirst(t);
+                h.this.f22946a.addFirst(t);
             }
         }
     };
@@ -33,10 +33,10 @@ public abstract class h<T extends k> {
     private void c() {
         ArrayList arrayList;
         synchronized (this) {
-            arrayList = new ArrayList(this.f36637a);
-            this.f36637a.clear();
+            arrayList = new ArrayList(this.f22946a);
+            this.f22946a.clear();
         }
-        Iterator<E> it = arrayList.iterator();
+        Iterator it = arrayList.iterator();
         while (it.hasNext()) {
             it.next();
         }
@@ -46,7 +46,7 @@ public abstract class h<T extends k> {
         T removeFirst;
         this.b.acquire();
         synchronized (this) {
-            removeFirst = !this.f36637a.isEmpty() ? this.f36637a.removeFirst() : a(this.d);
+            removeFirst = !this.f22946a.isEmpty() ? this.f22946a.removeFirst() : a(this.d);
         }
         if (removeFirst.retain() != 1) {
             LiteavLog.e("LimitedFramePool", "invalid reference count for %s", removeFirst);
@@ -57,7 +57,7 @@ public abstract class h<T extends k> {
     protected abstract T a(g<T> gVar);
 
     public final void b() {
-        this.f36638c = true;
+        this.f22947c = true;
         c();
     }
 }

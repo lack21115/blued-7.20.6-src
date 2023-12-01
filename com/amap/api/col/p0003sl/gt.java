@@ -17,23 +17,19 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.gt  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gt.class */
 public final class gt implements ICloudSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5003a;
+    private Context a;
     private CloudSearch.OnCloudSearchListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CloudSearch.Query f5004c;
+    private CloudSearch.Query c;
     private int d;
     private HashMap<Integer, CloudResult> e;
     private Handler f;
 
     public gt(Context context) throws AMapException {
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
-        this.f5003a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.f = fp.a();
     }
 
@@ -46,7 +42,7 @@ public final class gt implements ICloudSearch {
             throw new AMapException("无效的参数 - IllegalArgumentException");
         }
         try {
-            return new fb(this.f5003a, new fx(str, str2)).d();
+            return new fb(this.a, new fx(str, str2)).d();
         } catch (Throwable th) {
             fe.a(th, "CloudSearch", "searchCloudDetail");
             if (th instanceof AMapException) {
@@ -72,9 +68,9 @@ public final class gt implements ICloudSearch {
             th = th;
         }
         if (b(query)) {
-            if (!query.queryEquals(this.f5004c)) {
+            if (!query.queryEquals(this.c)) {
                 this.d = 0;
-                this.f5004c = query.m2448clone();
+                this.c = query.m8891clone();
                 if (this.e != null) {
                     this.e.clear();
                 }
@@ -91,14 +87,14 @@ public final class gt implements ICloudSearch {
                 return cloudResult;
             }
             if (this.d == 0) {
-                CloudResult d = new fc(this.f5003a, query).d();
+                CloudResult d = new fc(this.a, query).d();
                 a(d, query);
                 return d;
             }
-            CloudResult a2 = a(query.getPageNum());
-            cloudResult = a2;
-            if (a2 == null) {
-                CloudResult d2 = new fc(this.f5003a, query).d();
+            CloudResult a = a(query.getPageNum());
+            cloudResult = a;
+            if (a == null) {
+                CloudResult d2 = new fc(this.a, query).d();
                 this.e.put(Integer.valueOf(query.getPageNum()), d2);
                 return d2;
             }
@@ -163,7 +159,7 @@ public final class gt implements ICloudSearch {
                         fp.d dVar = new fp.d();
                         dVar.b = gt.this.b;
                         obtainMessage.obj = dVar;
-                        dVar.f4964a = gt.this.a(query);
+                        dVar.a = gt.this.a(query);
                         obtainMessage.arg2 = 1000;
                     } catch (AMapException e) {
                         obtainMessage.arg2 = e.getErrorCode();
@@ -190,7 +186,7 @@ public final class gt implements ICloudSearch {
                         fp.c cVar = new fp.c();
                         cVar.b = gt.this.b;
                         obtainMessage.obj = cVar;
-                        cVar.f4963a = gt.this.a(str, str2);
+                        cVar.a = gt.this.a(str, str2);
                         obtainMessage.arg2 = 1000;
                     } catch (AMapException e) {
                         obtainMessage.arg2 = e.getErrorCode();

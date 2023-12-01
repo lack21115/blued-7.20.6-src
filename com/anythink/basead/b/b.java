@@ -7,9 +7,7 @@ import com.anythink.basead.b.c;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/b/b.class */
 public final class b extends SQLiteOpenHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static b f5878a;
+    private static b a;
     private static final int b = 3;
 
     private b(Context context, String str, SQLiteDatabase.CursorFactory cursorFactory) {
@@ -17,10 +15,10 @@ public final class b extends SQLiteOpenHelper {
     }
 
     public static b a(Context context) {
-        if (f5878a == null) {
-            f5878a = new b(context, "anythink_myoffer", null);
+        if (a == null) {
+            a = new b(context, "anythink_myoffer", null);
         }
-        return f5878a;
+        return a;
     }
 
     private void a(SQLiteDatabase sQLiteDatabase) {

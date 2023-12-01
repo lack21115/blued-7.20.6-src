@@ -16,11 +16,11 @@ import org.w3c.dom.Element;
 public final class d9yDk {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f39943a = {"px", t.q, FullBackup.SHAREDPREFS_TREE_TOKEN, "pt", "in", "mm"};
+    public static final String[] f26252a = {"px", t.q, FullBackup.SHAREDPREFS_TREE_TOKEN, "pt", "in", "mm"};
     public e7l68 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Map<String, String> f39944c = new HashMap();
+    public Map<String, String> f26253c = new HashMap();
     public byte[] d;
     public String[] e;
     public int[] f;
@@ -34,6 +34,10 @@ public final class d9yDk {
         return ((bArr[i + 0] << 0) & 255) | ((bArr[i + 3] << 24) & (-16777216)) | ((bArr[i + 2] << 16) & Spanned.SPAN_PRIORITY) | ((bArr[i + 1] << 8) & 65280);
     }
 
+    /* JADX WARN: Type inference failed for: r0v129, types: [java.util.Map<java.lang.String, java.lang.String>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r0v45, types: [java.util.Map<java.lang.String, java.lang.String>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r1v37, types: [java.util.Map<java.lang.String, java.lang.String>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r1v86, types: [java.util.Map<java.lang.String, java.lang.String>, java.util.HashMap] */
     public final Document a(InputStream inputStream) throws IOException, ParserConfigurationException {
         String b;
         String str;
@@ -56,9 +60,9 @@ public final class d9yDk {
                 this.b.getClass();
             } else if (a2 == 524291) {
                 e7l68 e7l68Var2 = this.b;
-                Document newDocument = e7l68Var2.f39946c.newDocument();
+                Document newDocument = e7l68Var2.f26255c.newDocument();
                 e7l68Var2.b = newDocument;
-                e7l68Var2.f39945a.push(newDocument);
+                e7l68Var2.f26254a.push(newDocument);
                 this.j += 8;
             } else if (a2 == 524672) {
                 int a3 = a(this.j + 4);
@@ -95,8 +99,8 @@ public final class d9yDk {
                             b = "";
                         } else {
                             b = b(a4);
-                            if (this.f39944c.containsKey(b)) {
-                                str = this.f39944c.get(b) + ':' + b2;
+                            if (this.f26253c.containsKey(b)) {
+                                str = ((String) this.f26253c.get(b)) + ':' + b2;
                             } else {
                                 str = b2;
                             }
@@ -113,15 +117,15 @@ public final class d9yDk {
                                 int a9 = a(this.j + 12);
                                 int a10 = a(this.j + 16);
                                 tLlmS tllms = new tLlmS();
-                                tllms.f39992a = b(a7);
+                                tllms.f26301a = b(a7);
                                 if (a6 == -1) {
-                                    tllms.f39993c = null;
+                                    tllms.f26302c = null;
                                     tllms.b = null;
                                 } else {
                                     String b3 = b(a6);
-                                    if (this.f39944c.containsKey(b3)) {
-                                        tllms.f39993c = b3;
-                                        tllms.b = this.f39944c.get(b3);
+                                    if (this.f26253c.containsKey(b3)) {
+                                        tllms.f26302c = b3;
+                                        tllms.b = (String) this.f26253c.get(b3);
                                     }
                                 }
                                 if (a8 == -1) {
@@ -139,7 +143,7 @@ public final class d9yDk {
                                             format = Float.toString(Float.intBitsToFloat(a10));
                                             break;
                                         case 83886088:
-                                            format = Integer.toString(a10 >> 8) + f39943a[a10 & 255];
+                                            format = Integer.toString(a10 >> 8) + f26252a[a10 & 255];
                                             break;
                                         case 100663304:
                                             format = new DecimalFormat("#.##%").format(a10 / 2.147483647E9d);
@@ -175,16 +179,16 @@ public final class d9yDk {
                                     int i10 = i9;
                                     if (i10 < i6) {
                                         tLlmS tllms2 = tllmsArr[i10];
-                                        String str2 = tllms2.f39993c;
+                                        String str2 = tllms2.f26302c;
                                         if (str2 == null || "".equals(str2)) {
-                                            createElement.setAttribute(tllms2.f39992a, tllms2.d);
+                                            createElement.setAttribute(tllms2.f26301a, tllms2.d);
                                         } else {
-                                            createElement.setAttributeNS(tllms2.f39993c, tllms2.b + ':' + tllms2.f39992a, tllms2.d);
+                                            createElement.setAttributeNS(tllms2.f26302c, tllms2.b + ':' + tllms2.f26301a, tllms2.d);
                                         }
                                         i9 = i10 + 1;
                                     } else {
-                                        e7l68Var3.f39945a.peek().appendChild(createElement);
-                                        e7l68Var3.f39945a.push(createElement);
+                                        e7l68Var3.f26254a.peek().appendChild(createElement);
+                                        e7l68Var3.f26254a.push(createElement);
                                         continue;
                                     }
                                 }
@@ -197,13 +201,13 @@ public final class d9yDk {
                         if (a11 != -1) {
                             b(a11);
                         }
-                        this.b.f39945a.pop();
+                        this.b.f26254a.pop();
                         this.j += 24;
                         continue;
                     case 1048836:
                         String b4 = b(a(this.j + 16));
                         e7l68 e7l68Var4 = this.b;
-                        e7l68Var4.f39945a.peek().appendChild(e7l68Var4.b.createCDATASection(b4));
+                        e7l68Var4.f26254a.peek().appendChild(e7l68Var4.b.createCDATASection(b4));
                         this.j += 28;
                         continue;
                     default:
@@ -270,16 +274,18 @@ public final class d9yDk {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v11, types: [java.util.Map<java.lang.String, java.lang.String>, java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r0v18, types: [java.util.Map<java.lang.String, java.lang.String>, java.util.HashMap] */
     public final void a(boolean z) {
         int a2 = a(this.j + 16);
         String b = b(a(this.j + 20));
         String b2 = b(a2);
         if (z) {
             this.b.getClass();
-            this.f39944c.put(b, b2);
+            this.f26253c.put(b, b2);
         } else {
             this.b.getClass();
-            this.f39944c.remove(b);
+            this.f26253c.remove(b);
         }
         this.j += 24;
     }

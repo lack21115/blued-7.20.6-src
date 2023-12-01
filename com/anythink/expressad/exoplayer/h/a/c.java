@@ -26,11 +26,11 @@ import java.util.Map;
 public final class c extends f<s.a> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7385a = "AdsMediaSource";
+    private static final String f4546a = "AdsMediaSource";
     private final s b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final e f7386c;
+    private final e f4547c;
     private final com.anythink.expressad.exoplayer.h.a.b d;
     private final ViewGroup e;
     private final Handler f;
@@ -38,7 +38,7 @@ public final class c extends f<s.a> {
     private final Handler h;
     private final Map<s, List<l>> i;
     private final ae.a j;
-    private C0132c k;
+    private C0061c k;
     private ae l;
     private Object m;
     private com.anythink.expressad.exoplayer.h.a.a n;
@@ -49,18 +49,18 @@ public final class c extends f<s.a> {
     public static final class a extends IOException {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7390a = 0;
+        public static final int f4551a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7391c = 2;
+        public static final int f4552c = 2;
         public static final int d = 3;
         public final int e;
 
         @Retention(RetentionPolicy.SOURCE)
         /* renamed from: com.anythink.expressad.exoplayer.h.a.c$a$a  reason: collision with other inner class name */
         /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/h/a/c$a$a.class */
-        public @interface InterfaceC0131a {
+        public @interface InterfaceC0060a {
         }
 
         private a(int i, Exception exc) {
@@ -95,12 +95,12 @@ public final class c extends f<s.a> {
         private final Uri b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7393c;
+        private final int f4554c;
         private final int d;
 
         public b(Uri uri, int i, int i2) {
             this.b = uri;
-            this.f7393c = i;
+            this.f4554c = i;
             this.d = i2;
         }
 
@@ -111,7 +111,7 @@ public final class c extends f<s.a> {
                 @Override // java.lang.Runnable
                 public final void run() {
                     com.anythink.expressad.exoplayer.h.a.b unused = c.this.d;
-                    int unused2 = b.this.f7393c;
+                    int unused2 = b.this.f4554c;
                     int unused3 = b.this.d;
                 }
             });
@@ -120,24 +120,24 @@ public final class c extends f<s.a> {
 
     /* renamed from: com.anythink.expressad.exoplayer.h.a.c$c  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/h/a/c$c.class */
-    final class C0132c implements b.a {
+    final class C0061c implements b.a {
         private final Handler b = new Handler();
 
         /* renamed from: c  reason: collision with root package name */
-        private volatile boolean f7396c;
+        private volatile boolean f4557c;
 
-        public C0132c() {
+        public C0061c() {
         }
 
         @Override // com.anythink.expressad.exoplayer.h.a.b.a
         public final void a() {
-            if (this.f7396c || c.this.f == null || c.this.g == null) {
+            if (this.f4557c || c.this.f == null || c.this.g == null) {
                 return;
             }
             c.this.f.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.h.a.c.c.2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (C0132c.this.f7396c) {
+                    if (C0061c.this.f4557c) {
                         return;
                     }
                     d unused = c.this.g;
@@ -147,13 +147,13 @@ public final class c extends f<s.a> {
 
         @Override // com.anythink.expressad.exoplayer.h.a.b.a
         public final void a(final com.anythink.expressad.exoplayer.h.a.a aVar) {
-            if (this.f7396c) {
+            if (this.f4557c) {
                 return;
             }
             this.b.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.h.a.c.c.1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (C0132c.this.f7396c) {
+                    if (C0061c.this.f4557c) {
                         return;
                     }
                     c.a(c.this, aVar);
@@ -163,7 +163,7 @@ public final class c extends f<s.a> {
 
         @Override // com.anythink.expressad.exoplayer.h.a.b.a
         public final void a(final a aVar, k kVar) {
-            if (this.f7396c) {
+            if (this.f4557c) {
                 return;
             }
             c.this.a((s.a) null).a(kVar, aVar);
@@ -173,7 +173,7 @@ public final class c extends f<s.a> {
             c.this.f.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.h.a.c.c.4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (C0132c.this.f7396c) {
+                    if (C0061c.this.f4557c) {
                         return;
                     }
                     if (aVar.e != 3) {
@@ -190,13 +190,13 @@ public final class c extends f<s.a> {
 
         @Override // com.anythink.expressad.exoplayer.h.a.b.a
         public final void b() {
-            if (this.f7396c || c.this.f == null || c.this.g == null) {
+            if (this.f4557c || c.this.f == null || c.this.g == null) {
                 return;
             }
             c.this.f.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.h.a.c.c.3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    if (C0132c.this.f7396c) {
+                    if (C0061c.this.f4557c) {
                         return;
                     }
                     d unused = c.this.g;
@@ -205,7 +205,7 @@ public final class c extends f<s.a> {
         }
 
         public final void c() {
-            this.f7396c = true;
+            this.f4557c = true;
             this.b.removeCallbacksAndMessages(null);
         }
     }
@@ -238,7 +238,7 @@ public final class c extends f<s.a> {
     @Deprecated
     private c(s sVar, e eVar, com.anythink.expressad.exoplayer.h.a.b bVar, ViewGroup viewGroup, Handler handler, d dVar) {
         this.b = sVar;
-        this.f7386c = eVar;
+        this.f4547c = eVar;
         this.d = bVar;
         this.e = viewGroup;
         this.f = handler;
@@ -264,7 +264,7 @@ public final class c extends f<s.a> {
         return aVar.a() ? aVar : aVar2;
     }
 
-    /* JADX WARN: Type inference failed for: r0v11, types: [long[], long[][], java.lang.Object[]] */
+    /* JADX WARN: Type inference failed for: r0v11, types: [java.lang.Object[], long[], long[][]] */
     /* JADX WARN: Type inference failed for: r0v6, types: [java.lang.Object[], com.anythink.expressad.exoplayer.h.s[], com.anythink.expressad.exoplayer.h.s[][]] */
     private void a(com.anythink.expressad.exoplayer.h.a.a aVar) {
         if (this.n == null) {
@@ -279,7 +279,7 @@ public final class c extends f<s.a> {
         c();
     }
 
-    /* JADX WARN: Type inference failed for: r0v11, types: [long[], long[][], java.lang.Object[]] */
+    /* JADX WARN: Type inference failed for: r0v11, types: [java.lang.Object[], long[], long[][]] */
     /* JADX WARN: Type inference failed for: r0v6, types: [java.lang.Object[], com.anythink.expressad.exoplayer.h.s[], com.anythink.expressad.exoplayer.h.s[][]] */
     static /* synthetic */ void a(c cVar, com.anythink.expressad.exoplayer.h.a.a aVar) {
         if (cVar.n == null) {
@@ -303,7 +303,7 @@ public final class c extends f<s.a> {
             return;
         }
         int i = aVar.b;
-        int i2 = aVar.f7485c;
+        int i2 = aVar.f4646c;
         com.anythink.expressad.exoplayer.k.a.a(aeVar.c() == 1);
         this.p[i][i2] = aeVar.a(0, this.j, false).d;
         if (this.i.containsKey(sVar)) {
@@ -363,10 +363,10 @@ public final class c extends f<s.a> {
             return lVar;
         }
         int i = aVar.b;
-        int i2 = aVar.f7485c;
+        int i2 = aVar.f4646c;
         Uri uri = this.n.i[i].b[i2];
         if (this.o[i].length <= i2) {
-            s b2 = this.f7386c.b(uri);
+            s b2 = this.f4547c.b(uri);
             s[][] sVarArr = this.o;
             int length = sVarArr[i].length;
             if (i2 >= length) {
@@ -422,7 +422,7 @@ public final class c extends f<s.a> {
     @Override // com.anythink.expressad.exoplayer.h.s
     public final void a(r rVar) {
         l lVar = (l) rVar;
-        List<l> list = this.i.get(lVar.f7465a);
+        List<l> list = this.i.get(lVar.f4626a);
         if (list != null) {
             list.remove(lVar);
         }
@@ -433,8 +433,8 @@ public final class c extends f<s.a> {
     public final void a(final com.anythink.expressad.exoplayer.h hVar, boolean z) {
         super.a(hVar, z);
         com.anythink.expressad.exoplayer.k.a.a(z);
-        final C0132c c0132c = new C0132c();
-        this.k = c0132c;
+        final C0061c c0061c = new C0061c();
+        this.k = c0061c;
         a((c) new s.a(0), this.b);
         this.h.post(new Runnable() { // from class: com.anythink.expressad.exoplayer.h.a.c.1
             @Override // java.lang.Runnable
@@ -455,7 +455,7 @@ public final class c extends f<s.a> {
             return;
         }
         int i = aVar2.b;
-        int i2 = aVar2.f7485c;
+        int i2 = aVar2.f4646c;
         com.anythink.expressad.exoplayer.k.a.a(aeVar.c() == 1);
         this.p[i][i2] = aeVar.a(0, this.j, false).d;
         if (this.i.containsKey(sVar)) {

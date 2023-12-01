@@ -18,11 +18,11 @@ public abstract class bk {
     public static String N = "dump";
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f41641a = "1";
+    public static String f27950a = "1";
     public static String b = "2";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f41642c = "3";
+    public static String f27951c = "3";
     public static String d = "com.xiaomi.push.OPEN_CHANNEL";
     public static String e = "com.xiaomi.push.SEND_MESSAGE";
     public static String f = "com.xiaomi.push.SEND_IQ";

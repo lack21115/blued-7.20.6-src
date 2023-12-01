@@ -12,9 +12,7 @@ import java.util.Map;
 public abstract class ew<T, V> extends hv {
     protected T b;
     protected Context i;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected boolean f4949a = true;
+    protected boolean a = true;
     protected int g = 1;
     protected String h = "";
     private int k = 1;
@@ -34,10 +32,10 @@ public abstract class ew<T, V> extends hv {
 
     private byte[] a(int i, ka kaVar, hv hvVar) throws hn {
         setHttpProtocol(i == 1 ? kb.c.HTTP : kb.c.HTTPS);
-        kc a2 = this.f4949a ? ka.a(hvVar) : ka.e(hvVar);
-        if (a2 != null) {
-            byte[] bArr = a2.f5264a;
-            this.j = a2.d;
+        kc a = this.a ? ka.a(hvVar) : ka.e(hvVar);
+        if (a != null) {
+            byte[] bArr = a.a;
+            this.j = a.d;
             return bArr;
         }
         return null;
@@ -68,7 +66,7 @@ public abstract class ew<T, V> extends hv {
     /* JADX WARN: Multi-variable type inference failed */
     private V h() throws AMapException {
         int i;
-        ga a2;
+        ga a;
         V v;
         int i2;
         try {
@@ -96,21 +94,21 @@ public abstract class ew<T, V> extends hv {
                             V v6 = v2;
                             hu.a().a(this.i);
                             V v7 = v2;
-                            ka c2 = ka.c();
+                            ka c = ka.c();
                             V v8 = v2;
                             i = i4;
                             if (b) {
-                                ga.c a3 = ga.a().a(e);
+                                ga.c a2 = ga.a().a(e);
                                 v8 = v2;
                                 i = i4;
-                                if (a3 != null) {
+                                if (a2 != null) {
                                     v8 = v2;
                                     i = i4;
-                                    if (a3.f4985a != null) {
+                                    if (a2.a != null) {
                                         V v9 = v2;
-                                        v8 = a3.f4985a;
+                                        v8 = a2.a;
                                         try {
-                                            gj.a(this.i, e.f4984a, a3.b);
+                                            gj.a(this.i, e.a, a2.b);
                                             i = 1;
                                         } catch (hn e2) {
                                             e = e2;
@@ -175,11 +173,11 @@ public abstract class ew<T, V> extends hv {
                                                 v2 = v4;
                                                 i4 = i;
                                                 if (i == 0) {
-                                                    a2 = ga.a();
+                                                    a = ga.a();
                                                     i3 = i14;
                                                     v2 = v4;
                                                     i4 = i;
-                                                    a2.a(e, v2);
+                                                    a.a(e, v2);
                                                 }
                                             }
                                         } catch (Throwable th) {
@@ -196,11 +194,11 @@ public abstract class ew<T, V> extends hv {
                             }
                             v = v8;
                             if (v8 == null) {
-                                byte[] a4 = a(protocol, c2, this);
+                                byte[] a3 = a(protocol, c, this);
                                 V v15 = v8;
                                 long currentTimeMillis2 = System.currentTimeMillis();
                                 V v16 = v8;
-                                v = b(a4);
+                                v = b(a3);
                                 gj.a(this.i, g(), currentTimeMillis2 - currentTimeMillis, true);
                             }
                             V v17 = v;
@@ -221,11 +219,11 @@ public abstract class ew<T, V> extends hv {
                             v2 = v;
                             i4 = i;
                             if (i == 0) {
-                                a2 = ga.a();
+                                a = ga.a();
                                 i4 = i;
                                 v2 = v;
                                 i3 = i2;
-                                a2.a(e, v2);
+                                a.a(e, v2);
                             }
                         }
                     } catch (Throwable th2) {

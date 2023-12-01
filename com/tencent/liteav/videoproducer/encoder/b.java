@@ -5,10 +5,10 @@ package com.tencent.liteav.videoproducer.encoder;
 public final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f37003a;
+    private final a f23312a;
 
     private b(a aVar) {
-        this.f37003a = aVar;
+        this.f23312a = aVar;
     }
 
     public static Runnable a(a aVar) {

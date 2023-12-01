@@ -15,13 +15,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRoomListNormalLayoutBinding.class */
 public final class ItemYyRoomListNormalLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeableImageView f16810a;
+    public final ShapeableImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16811c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final SVGAImageView f;
@@ -38,9 +34,9 @@ public final class ItemYyRoomListNormalLayoutBinding implements ViewBinding {
 
     private ItemYyRoomListNormalLayoutBinding(RelativeLayout relativeLayout, ShapeableImageView shapeableImageView, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, SVGAImageView sVGAImageView, ShapeConstraintLayout shapeConstraintLayout, LinearLayout linearLayout, ShapeLinearLayout shapeLinearLayout, RelativeLayout relativeLayout2, ShapeTextView shapeTextView, TextView textView, TextView textView2, ShapeTextView shapeTextView2, TextView textView3) {
         this.p = relativeLayout;
-        this.f16810a = shapeableImageView;
+        this.a = shapeableImageView;
         this.b = imageView;
-        this.f16811c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = sVGAImageView;
@@ -57,8 +53,8 @@ public final class ItemYyRoomListNormalLayoutBinding implements ViewBinding {
 
     public static ItemYyRoomListNormalLayoutBinding a(View view) {
         String str;
-        ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.img_mask_tag);
-        if (shapeableImageView != null) {
+        ShapeableImageView findViewById = view.findViewById(R.id.img_mask_tag);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_anchor_leve);
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_hot);
@@ -87,7 +83,7 @@ public final class ItemYyRoomListNormalLayoutBinding implements ViewBinding {
                                                             if (shapeTextView2 != null) {
                                                                 TextView textView3 = (TextView) view.findViewById(R.id.tv_room_name);
                                                                 if (textView3 != null) {
-                                                                    return new ItemYyRoomListNormalLayoutBinding((RelativeLayout) view, shapeableImageView, imageView, imageView2, imageView3, imageView4, sVGAImageView, shapeConstraintLayout, linearLayout, shapeLinearLayout, relativeLayout, shapeTextView, textView, textView2, shapeTextView2, textView3);
+                                                                    return new ItemYyRoomListNormalLayoutBinding((RelativeLayout) view, findViewById, imageView, imageView2, imageView3, imageView4, sVGAImageView, shapeConstraintLayout, linearLayout, shapeLinearLayout, relativeLayout, shapeTextView, textView, textView2, shapeTextView2, textView3);
                                                                 }
                                                                 str = "tvRoomName";
                                                             } else {
@@ -135,7 +131,6 @@ public final class ItemYyRoomListNormalLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.p;

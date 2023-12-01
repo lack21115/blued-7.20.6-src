@@ -11,6 +11,7 @@ import android.os.Looper;
 import android.util.Base64;
 import android.util.Log;
 import com.android.internal.http.HttpDateTime;
+import com.blued.das.live.LiveProtos;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -175,7 +176,7 @@ public final class AndroidHttpClient implements HttpClient {
     }
 
     private static boolean isBinaryContent(HttpUriRequest httpUriRequest) {
-        Header[] headers = httpUriRequest.getHeaders("content-encoding");
+        Header[] headers = httpUriRequest.getHeaders(Headers.CONTENT_ENCODING);
         if (headers != null) {
             int length = headers.length;
             int i = 0;
@@ -190,7 +191,7 @@ public final class AndroidHttpClient implements HttpClient {
                 }
             }
         }
-        Header[] headers2 = httpUriRequest.getHeaders("content-type");
+        Header[] headers2 = httpUriRequest.getHeaders(Headers.CONTENT_TYPE);
         if (headers2 == null) {
             return true;
         }
@@ -245,7 +246,7 @@ public final class AndroidHttpClient implements HttpClient {
         HttpProtocolParams.setUserAgent(basicHttpParams, str);
         SchemeRegistry schemeRegistry = new SchemeRegistry();
         schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-        schemeRegistry.register(new Scheme("https", SSLCertificateSocketFactory.getHttpSocketFactory(60000, sSLSessionCache), 443));
+        schemeRegistry.register(new Scheme("https", SSLCertificateSocketFactory.getHttpSocketFactory(60000, sSLSessionCache), (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
         return new AndroidHttpClient(new ThreadSafeClientConnManager(basicHttpParams, schemeRegistry), basicHttpParams);
     }
 

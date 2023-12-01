@@ -15,13 +15,9 @@ import kotlin.sequences.SequenceScope;
 @DebugMetadata(b = "SlidingWindow.kt", c = {34, 40, 49, 55, 58}, d = "invokeSuspend", e = "kotlin.collections.SlidingWindowKt$windowedIterator$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/SlidingWindowKt$windowedIterator$1.class */
 final class SlidingWindowKt$windowedIterator$1<T> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super List<? extends T>>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42397a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42398c;
+    int c;
     int d;
     final /* synthetic */ int e;
     final /* synthetic */ int f;
@@ -45,7 +41,7 @@ final class SlidingWindowKt$windowedIterator$1<T> extends RestrictedSuspendLambd
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SequenceScope<? super List<? extends T>> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((SlidingWindowKt$windowedIterator$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((SlidingWindowKt$windowedIterator$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

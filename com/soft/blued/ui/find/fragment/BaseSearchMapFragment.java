@@ -31,44 +31,43 @@ import java.util.Locale;
 public abstract class BaseSearchMapFragment extends MvpFragment<SearchMapPresenter> implements TencentLocationListener, LocationSource {
 
     /* renamed from: a  reason: collision with root package name */
-    public TencentMap f30188a;
+    public TencentMap f16498a;
     public TextureMapView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LatLng f30189c;
+    public LatLng f16499c;
     public TencentLocationManager d;
     public LocationSource.OnLocationChangedListener e;
 
     private void d() {
-        this.f30188a = this.b.getMap();
+        this.f16498a = this.b.getMap();
         TencentLocationManager tencentLocationManager = TencentLocationManager.getInstance(getActivity());
         this.d = tencentLocationManager;
         tencentLocationManager.setCoordinateType(1);
-        this.f30188a.setLocationSource(this);
-        this.f30188a.setMyLocationEnabled(true);
+        this.f16498a.setLocationSource(this);
+        this.f16498a.setMyLocationEnabled(true);
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         myLocationStyle.icon(BitmapDescriptorFactory.fromResource(R.drawable.my_position));
         myLocationStyle.strokeColor(Color.argb(0, 0, 0, 0));
         myLocationStyle.fillColor(Color.argb(0, 0, 0, 0));
         myLocationStyle.strokeWidth(0);
-        this.f30188a.setMyLocationStyle(myLocationStyle);
-        this.f30188a.getUiSettings().setMyLocationButtonEnabled(false);
-        this.f30188a.getUiSettings().setZoomControlsEnabled(false);
-        this.f30188a.getUiSettings().setGestureScaleByMapCenter(true);
-        this.f30188a.getUiSettings().setRotateGesturesEnabled(false);
-        this.f30188a.moveCamera(CameraUpdateFactory.zoomTo(16.0f));
+        this.f16498a.setMyLocationStyle(myLocationStyle);
+        this.f16498a.getUiSettings().setMyLocationButtonEnabled(false);
+        this.f16498a.getUiSettings().setZoomControlsEnabled(false);
+        this.f16498a.getUiSettings().setGestureScaleByMapCenter(true);
+        this.f16498a.getUiSettings().setRotateGesturesEnabled(false);
+        this.f16498a.moveCamera(CameraUpdateFactory.zoomTo(16.0f));
     }
 
     private void e() {
         Locale c2 = LocaleUtils.c();
         if (TextUtils.equals(c2 != null ? c2.getLanguage() : "", a.V)) {
-            this.f30188a.setForeignLanguage(Language.zh);
+            this.f16498a.setForeignLanguage(Language.zh);
         } else {
-            this.f30188a.setForeignLanguage(Language.en);
+            this.f16498a.setForeignLanguage(Language.en);
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         TencentMapInitializer.setAgreePrivacy(true);
@@ -86,7 +85,7 @@ public abstract class BaseSearchMapFragment extends MvpFragment<SearchMapPresent
             if (requestSingleFreshLocation < 1 || requestSingleFreshLocation > 3) {
                 return;
             }
-            AppMethods.a((CharSequence) (getActivity().getResources().getString(R.string.location_fail_try_again) + "(" + requestSingleFreshLocation + ")"));
+            AppMethods.a(getActivity().getResources().getString(R.string.location_fail_try_again) + "(" + requestSingleFreshLocation + ")");
         } catch (Exception e) {
         }
     }
@@ -103,15 +102,13 @@ public abstract class BaseSearchMapFragment extends MvpFragment<SearchMapPresent
     public void deactivate() {
         this.d = null;
         this.e = null;
-        this.f30188a = null;
+        this.f16498a = null;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return b();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.b.onDestroy();
@@ -128,23 +125,20 @@ public abstract class BaseSearchMapFragment extends MvpFragment<SearchMapPresent
         location.setLongitude(tencentLocation.getLongitude());
         location.setAccuracy(tencentLocation.getAccuracy());
         this.e.onLocationChanged(location);
-        this.f30189c = new LatLng(tencentLocation.getLatitude(), tencentLocation.getLongitude());
+        this.f16499c = new LatLng(tencentLocation.getLatitude(), tencentLocation.getLongitude());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         this.b.onPause();
         deactivate();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         this.b.onResume();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
     }

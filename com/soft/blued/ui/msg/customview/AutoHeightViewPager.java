@@ -12,28 +12,28 @@ import java.util.LinkedHashMap;
 public class AutoHeightViewPager extends ViewPager {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f32268a;
+    private int f18578a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<Integer, View> f32269c;
+    private HashMap<Integer, View> f18579c;
 
     public AutoHeightViewPager(Context context) {
         super(context);
-        this.f32269c = new LinkedHashMap();
+        this.f18579c = new LinkedHashMap();
     }
 
     public AutoHeightViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f32269c = new LinkedHashMap();
+        this.f18579c = new LinkedHashMap();
     }
 
     public void a(int i) {
-        this.f32268a = i;
+        this.f18578a = i;
     }
 
     public void a(View view, int i) {
-        this.f32269c.put(Integer.valueOf(i), view);
+        this.f18579c.put(Integer.valueOf(i), view);
     }
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
@@ -43,14 +43,14 @@ public class AutoHeightViewPager extends ViewPager {
 
     @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public void onMeasure(int i, int i2) {
-        int size = this.f32269c.size();
-        int i3 = this.f32268a;
+        int size = this.f18579c.size();
+        int i3 = this.f18578a;
         if (size > i3) {
-            View view = this.f32269c.get(Integer.valueOf(i3));
+            View view = this.f18579c.get(Integer.valueOf(i3));
             view.measure(i, View.MeasureSpec.makeMeasureSpec(0, 0));
             this.b = view.getMeasuredHeight();
         }
-        if (this.f32269c.size() != 0) {
+        if (this.f18579c.size() != 0) {
             i2 = View.MeasureSpec.makeMeasureSpec(this.b, 1073741824);
         }
         super.onMeasure(i, i2);

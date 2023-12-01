@@ -12,26 +12,25 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 public final class SearchGlobalMoreVM$searchGroup$1 extends ContinuationImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    Object f33181a;
+    Object f19490a;
     /* synthetic */ Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ SearchGlobalMoreVM f33182c;
+    final /* synthetic */ SearchGlobalMoreVM f19491c;
     int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SearchGlobalMoreVM$searchGroup$1(SearchGlobalMoreVM searchGlobalMoreVM, Continuation<? super SearchGlobalMoreVM$searchGroup$1> continuation) {
         super(continuation);
-        this.f33182c = searchGlobalMoreVM;
+        this.f19491c = searchGlobalMoreVM;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object b;
         this.b = obj;
         this.d |= Integer.MIN_VALUE;
-        b = this.f33182c.b(this);
+        b = this.f19491c.b((Continuation) this);
         return b;
     }
 }

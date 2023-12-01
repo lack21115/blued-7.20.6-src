@@ -9,6 +9,7 @@ import androidx.constraintlayout.core.widgets.analyzer.ChainRun;
 import androidx.constraintlayout.core.widgets.analyzer.HorizontalWidgetRun;
 import androidx.constraintlayout.core.widgets.analyzer.VerticalWidgetRun;
 import androidx.constraintlayout.core.widgets.analyzer.WidgetRun;
+import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,7 +72,7 @@ public class ConstraintWidget {
     private boolean Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f2119a;
+    private boolean f2071a;
     private boolean aa;
     private boolean ab;
     private int ac;
@@ -85,7 +86,7 @@ public class ConstraintWidget {
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2120c;
+    int f2072c;
     float d;
     ConstraintAnchor e;
     ConstraintAnchor f;
@@ -151,7 +152,7 @@ public class ConstraintWidget {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2121a;
+        static final /* synthetic */ int[] f2073a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:30:0x00a6 -> B:62:0x0014). Please submit an issue!!! */
@@ -186,41 +187,41 @@ public class ConstraintWidget {
             } catch (NoSuchFieldError e4) {
             }
             int[] iArr2 = new int[ConstraintAnchor.Type.values().length];
-            f2121a = iArr2;
+            f2073a = iArr2;
             try {
                 iArr2[ConstraintAnchor.Type.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.TOP.ordinal()] = 2;
+                f2073a[ConstraintAnchor.Type.TOP.ordinal()] = 2;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.RIGHT.ordinal()] = 3;
+                f2073a[ConstraintAnchor.Type.RIGHT.ordinal()] = 3;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.BOTTOM.ordinal()] = 4;
+                f2073a[ConstraintAnchor.Type.BOTTOM.ordinal()] = 4;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.BASELINE.ordinal()] = 5;
+                f2073a[ConstraintAnchor.Type.BASELINE.ordinal()] = 5;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.CENTER.ordinal()] = 6;
+                f2073a[ConstraintAnchor.Type.CENTER.ordinal()] = 6;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.CENTER_X.ordinal()] = 7;
+                f2073a[ConstraintAnchor.Type.CENTER_X.ordinal()] = 7;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.CENTER_Y.ordinal()] = 8;
+                f2073a[ConstraintAnchor.Type.CENTER_Y.ordinal()] = 8;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f2121a[ConstraintAnchor.Type.NONE.ordinal()] = 9;
+                f2073a[ConstraintAnchor.Type.NONE.ordinal()] = 9;
             } catch (NoSuchFieldError e13) {
             }
         }
@@ -241,7 +242,7 @@ public class ConstraintWidget {
         this.verticalRun = null;
         this.isTerminalWidget = new boolean[]{true, true};
         this.b = false;
-        this.f2119a = true;
+        this.f2071a = true;
         this.O = false;
         this.P = true;
         this.Q = -1;
@@ -263,7 +264,7 @@ public class ConstraintWidget {
         this.mMatchConstraintMinHeight = 0;
         this.mMatchConstraintMaxHeight = 0;
         this.mMatchConstraintPercentHeight = 1.0f;
-        this.f2120c = -1;
+        this.f2072c = -1;
         this.d = 1.0f;
         this.X = new int[]{Integer.MAX_VALUE, Integer.MAX_VALUE};
         this.Y = 0.0f;
@@ -327,7 +328,7 @@ public class ConstraintWidget {
         this.verticalRun = null;
         this.isTerminalWidget = new boolean[]{true, true};
         this.b = false;
-        this.f2119a = true;
+        this.f2071a = true;
         this.O = false;
         this.P = true;
         this.Q = -1;
@@ -349,7 +350,7 @@ public class ConstraintWidget {
         this.mMatchConstraintMinHeight = 0;
         this.mMatchConstraintMaxHeight = 0;
         this.mMatchConstraintPercentHeight = 1.0f;
-        this.f2120c = -1;
+        this.f2072c = -1;
         this.d = 1.0f;
         this.X = new int[]{Integer.MAX_VALUE, Integer.MAX_VALUE};
         this.Y = 0.0f;
@@ -413,7 +414,7 @@ public class ConstraintWidget {
         this.verticalRun = null;
         this.isTerminalWidget = new boolean[]{true, true};
         this.b = false;
-        this.f2119a = true;
+        this.f2071a = true;
         this.O = false;
         this.P = true;
         this.Q = -1;
@@ -435,7 +436,7 @@ public class ConstraintWidget {
         this.mMatchConstraintMinHeight = 0;
         this.mMatchConstraintMaxHeight = 0;
         this.mMatchConstraintPercentHeight = 1.0f;
-        this.f2120c = -1;
+        this.f2072c = -1;
         this.d = 1.0f;
         this.X = new int[]{Integer.MAX_VALUE, Integer.MAX_VALUE};
         this.Y = 0.0f;
@@ -587,7 +588,7 @@ public class ConstraintWidget {
     private void a(StringBuilder sb, String str, int i, int i2, int i3, int i4, int i5, int i6, float f, float f2) {
         sb.append(str);
         sb.append(" :  {\n");
-        a(sb, "size", i, Integer.MIN_VALUE);
+        a(sb, OapsKey.KEY_SIZE, i, Integer.MIN_VALUE);
         a(sb, "min", i2, 0);
         a(sb, "max", i3, Integer.MAX_VALUE);
         a(sb, "matchMin", i5, 0);
@@ -606,7 +607,7 @@ public class ConstraintWidget {
         sb.append("',");
         sb.append(constraintAnchor.mMargin);
         sb.append(",");
-        sb.append(constraintAnchor.f2115a);
+        sb.append(constraintAnchor.f2067a);
         sb.append(",");
         sb.append(" ] ,\n");
     }
@@ -646,12 +647,12 @@ public class ConstraintWidget {
         sb.append(" : [ '");
         sb.append(constraintAnchor.mTarget);
         sb.append("'");
-        if (constraintAnchor.f2115a != Integer.MIN_VALUE || constraintAnchor.mMargin != 0) {
+        if (constraintAnchor.f2067a != Integer.MIN_VALUE || constraintAnchor.mMargin != 0) {
             sb.append(",");
             sb.append(constraintAnchor.mMargin);
-            if (constraintAnchor.f2115a != Integer.MIN_VALUE) {
+            if (constraintAnchor.f2067a != Integer.MIN_VALUE) {
                 sb.append(",");
-                sb.append(constraintAnchor.f2115a);
+                sb.append(constraintAnchor.f2067a);
                 sb.append(",");
             }
         }
@@ -920,7 +921,7 @@ public class ConstraintWidget {
         this.mMatchConstraintPercentHeight = constraintWidget.mMatchConstraintPercentHeight;
         this.mIsWidthWrapContent = constraintWidget.mIsWidthWrapContent;
         this.mIsHeightWrapContent = constraintWidget.mIsHeightWrapContent;
-        this.f2120c = constraintWidget.f2120c;
+        this.f2072c = constraintWidget.f2072c;
         this.d = constraintWidget.d;
         int[] iArr3 = constraintWidget.X;
         this.X = Arrays.copyOf(iArr3, iArr3.length);
@@ -1005,7 +1006,7 @@ public class ConstraintWidget {
     }
 
     public void ensureMeasureRequested() {
-        this.f2119a = true;
+        this.f2071a = true;
     }
 
     public void ensureWidgetRuns() {
@@ -1018,7 +1019,7 @@ public class ConstraintWidget {
     }
 
     public ConstraintAnchor getAnchor(ConstraintAnchor.Type type) {
-        switch (AnonymousClass1.f2121a[type.ordinal()]) {
+        switch (AnonymousClass1.f2073a[type.ordinal()]) {
             case 1:
                 return this.mLeft;
             case 2:
@@ -1493,7 +1494,7 @@ public class ConstraintWidget {
     }
 
     public boolean isMeasureRequested() {
-        return this.f2119a && this.ah != 8;
+        return this.f2071a && this.ah != 8;
     }
 
     public boolean isResolvedHorizontally() {
@@ -1625,7 +1626,7 @@ public class ConstraintWidget {
         this.mMatchConstraintMinWidth = 0;
         this.mMatchConstraintMinHeight = 0;
         this.b = false;
-        this.f2120c = -1;
+        this.f2072c = -1;
         this.d = 1.0f;
         this.F = false;
         boolean[] zArr = this.isTerminalWidget;
@@ -1635,7 +1636,7 @@ public class ConstraintWidget {
         boolean[] zArr2 = this.ae;
         zArr2[0] = false;
         zArr2[1] = false;
-        this.f2119a = true;
+        this.f2071a = true;
         int[] iArr2 = this.mResolvedMatchConstraintDefault;
         iArr2[0] = 0;
         iArr2[1] = 0;
@@ -1982,18 +1983,18 @@ public class ConstraintWidget {
     }
 
     public void setGoneMargin(ConstraintAnchor.Type type, int i) {
-        int i2 = AnonymousClass1.f2121a[type.ordinal()];
+        int i2 = AnonymousClass1.f2073a[type.ordinal()];
         if (i2 == 1) {
-            this.mLeft.f2115a = i;
+            this.mLeft.f2067a = i;
         } else if (i2 == 2) {
-            this.mTop.f2115a = i;
+            this.mTop.f2067a = i;
         } else if (i2 == 3) {
-            this.mRight.f2115a = i;
+            this.mRight.f2067a = i;
         } else if (i2 == 4) {
-            this.mBottom.f2115a = i;
+            this.mBottom.f2067a = i;
         } else if (i2 != 5) {
         } else {
-            this.mBaseline.f2115a = i;
+            this.mBaseline.f2067a = i;
         }
     }
 
@@ -2085,7 +2086,7 @@ public class ConstraintWidget {
     }
 
     public void setMeasureRequested(boolean z) {
-        this.f2119a = z;
+        this.f2071a = z;
     }
 
     public void setMinHeight(int i) {
@@ -2195,36 +2196,36 @@ public class ConstraintWidget {
     }
 
     public void setupDimensionRatio(boolean z, boolean z2, boolean z3, boolean z4) {
-        if (this.f2120c == -1) {
+        if (this.f2072c == -1) {
             if (z3 && !z4) {
-                this.f2120c = 0;
+                this.f2072c = 0;
             } else if (!z3 && z4) {
-                this.f2120c = 1;
+                this.f2072c = 1;
                 if (this.j == -1) {
                     this.d = 1.0f / this.d;
                 }
             }
         }
-        if (this.f2120c == 0 && (!this.mTop.isConnected() || !this.mBottom.isConnected())) {
-            this.f2120c = 1;
-        } else if (this.f2120c == 1 && (!this.mLeft.isConnected() || !this.mRight.isConnected())) {
-            this.f2120c = 0;
+        if (this.f2072c == 0 && (!this.mTop.isConnected() || !this.mBottom.isConnected())) {
+            this.f2072c = 1;
+        } else if (this.f2072c == 1 && (!this.mLeft.isConnected() || !this.mRight.isConnected())) {
+            this.f2072c = 0;
         }
-        if (this.f2120c == -1 && (!this.mTop.isConnected() || !this.mBottom.isConnected() || !this.mLeft.isConnected() || !this.mRight.isConnected())) {
+        if (this.f2072c == -1 && (!this.mTop.isConnected() || !this.mBottom.isConnected() || !this.mLeft.isConnected() || !this.mRight.isConnected())) {
             if (this.mTop.isConnected() && this.mBottom.isConnected()) {
-                this.f2120c = 0;
+                this.f2072c = 0;
             } else if (this.mLeft.isConnected() && this.mRight.isConnected()) {
                 this.d = 1.0f / this.d;
-                this.f2120c = 1;
+                this.f2072c = 1;
             }
         }
-        if (this.f2120c == -1) {
+        if (this.f2072c == -1) {
             if (this.mMatchConstraintMinWidth > 0 && this.mMatchConstraintMinHeight == 0) {
-                this.f2120c = 0;
+                this.f2072c = 0;
             } else if (this.mMatchConstraintMinWidth != 0 || this.mMatchConstraintMinHeight <= 0) {
             } else {
                 this.d = 1.0f / this.d;
-                this.f2120c = 1;
+                this.f2072c = 1;
             }
         }
     }

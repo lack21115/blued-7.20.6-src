@@ -21,7 +21,7 @@ import org.xmlpull.v1.XmlPullParserException;
 public class StateListDrawable extends DrawableContainer {
 
     /* renamed from: a  reason: collision with root package name */
-    private StateListState f1633a;
+    private StateListState f1585a;
     private boolean b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -87,7 +87,7 @@ public class StateListDrawable extends DrawableContainer {
         public void growArray(int i, int i2) {
             super.growArray(i, i2);
             ?? r0 = new int[i2];
-            System.arraycopy(this.L, 0, (Object) r0, 0, i);
+            System.arraycopy(this.L, 0, r0, 0, i);
             this.L = r0;
         }
 
@@ -120,7 +120,7 @@ public class StateListDrawable extends DrawableContainer {
 
     private void a(Context context, Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
         int next;
-        StateListState stateListState = this.f1633a;
+        StateListState stateListState = this.f1585a;
         int depth = xmlPullParser.getDepth() + 1;
         while (true) {
             int next2 = xmlPullParser.next();
@@ -156,7 +156,7 @@ public class StateListDrawable extends DrawableContainer {
     }
 
     private void a(TypedArray typedArray) {
-        StateListState stateListState = this.f1633a;
+        StateListState stateListState = this.f1585a;
         if (Build.VERSION.SDK_INT >= 21) {
             stateListState.f |= Compatibility.Api21Impl.getChangingConfigurations(typedArray);
         }
@@ -172,7 +172,7 @@ public class StateListDrawable extends DrawableContainer {
     public void a(DrawableContainer.DrawableContainerState drawableContainerState) {
         super.a(drawableContainerState);
         if (drawableContainerState instanceof StateListState) {
-            this.f1633a = (StateListState) drawableContainerState;
+            this.f1585a = (StateListState) drawableContainerState;
         }
     }
 
@@ -206,7 +206,7 @@ public class StateListDrawable extends DrawableContainer {
 
     public void addState(int[] iArr, Drawable drawable) {
         if (drawable != null) {
-            this.f1633a.a(iArr, drawable);
+            this.f1585a.a(iArr, drawable);
             onStateChange(getState());
         }
     }
@@ -221,7 +221,7 @@ public class StateListDrawable extends DrawableContainer {
     @Override // androidx.appcompat.graphics.drawable.DrawableContainer
     /* renamed from: b */
     public StateListState c() {
-        return new StateListState(this.f1633a, this, null);
+        return new StateListState(this.f1585a, this, null);
     }
 
     public void inflate(Context context, Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
@@ -242,7 +242,7 @@ public class StateListDrawable extends DrawableContainer {
     @Override // androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
     public Drawable mutate() {
         if (!this.b && super.mutate() == this) {
-            this.f1633a.a();
+            this.f1585a.a();
             this.b = true;
         }
         return this;
@@ -252,10 +252,10 @@ public class StateListDrawable extends DrawableContainer {
     @Override // androidx.appcompat.graphics.drawable.DrawableContainer, android.graphics.drawable.Drawable
     public boolean onStateChange(int[] iArr) {
         boolean onStateChange = super.onStateChange(iArr);
-        int b = this.f1633a.b(iArr);
+        int b = this.f1585a.b(iArr);
         int i = b;
         if (b < 0) {
-            i = this.f1633a.b(StateSet.WILD_CARD);
+            i = this.f1585a.b(StateSet.WILD_CARD);
         }
         return a(i) || onStateChange;
     }

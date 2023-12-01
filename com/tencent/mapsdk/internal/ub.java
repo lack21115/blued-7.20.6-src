@@ -9,11 +9,11 @@ import java.util.List;
 public class ub implements RequestProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<HttpProxyRule> f38043a;
+    private final List<HttpProxyRule> f24352a;
     private final boolean b;
 
     private ub(List<HttpProxyRule> list, boolean z) {
-        this.f38043a = list;
+        this.f24352a = list;
         this.b = z;
     }
 
@@ -36,7 +36,7 @@ public class ub implements RequestProcessor {
         /*
             r7 = this;
             r0 = r7
-            java.util.List<com.tencent.map.tools.net.http.HttpProxyRule> r0 = r0.f38043a
+            java.util.List<com.tencent.map.tools.net.http.HttpProxyRule> r0 = r0.f24352a
             r12 = r0
             r0 = r12
             if (r0 == 0) goto Lb1
@@ -52,11 +52,11 @@ public class ub implements RequestProcessor {
         L1d:
             r0 = r10
             r1 = r7
-            java.util.List<com.tencent.map.tools.net.http.HttpProxyRule> r1 = r1.f38043a
+            java.util.List<com.tencent.map.tools.net.http.HttpProxyRule> r1 = r1.f24352a
             int r1 = r1.size()
             if (r0 >= r1) goto L54
             r0 = r7
-            java.util.List<com.tencent.map.tools.net.http.HttpProxyRule> r0 = r0.f38043a
+            java.util.List<com.tencent.map.tools.net.http.HttpProxyRule> r0 = r0.f24352a
             r1 = r10
             java.lang.Object r0 = r0.get(r1)
             com.tencent.map.tools.net.http.HttpProxyRule r0 = (com.tencent.map.tools.net.http.HttpProxyRule) r0

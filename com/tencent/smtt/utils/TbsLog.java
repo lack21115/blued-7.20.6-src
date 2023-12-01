@@ -22,11 +22,11 @@ public class TbsLog {
     public static final String X5LOGTAG = "x5logtag";
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f38927a = false;
+    private static boolean f25236a = false;
     private static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private static TbsLogClient f38928c;
+    private static TbsLogClient f25237c;
     public static List<String> sTbsLogList = new LinkedList();
     public static int sLogMaxCount = 10;
 
@@ -90,7 +90,7 @@ public class TbsLog {
     }
 
     public static void d(String str, String str2) {
-        TbsLogClient tbsLogClient = f38928c;
+        TbsLogClient tbsLogClient = f25237c;
         if (tbsLogClient == null) {
             return;
         }
@@ -99,51 +99,51 @@ public class TbsLog {
 
     public static void d(String str, String str2, boolean z) {
         d(str, str2);
-        TbsLogClient tbsLogClient = f38928c;
-        if (tbsLogClient != null && f38927a && z) {
+        TbsLogClient tbsLogClient = f25237c;
+        if (tbsLogClient != null && f25236a && z) {
             tbsLogClient.showLog(str + ": " + str2);
         }
     }
 
     public static void e(String str, String str2) {
-        TbsLogClient tbsLogClient = f38928c;
+        TbsLogClient tbsLogClient = f25237c;
         if (tbsLogClient == null) {
             return;
         }
         tbsLogClient.e(str, "TBS:" + str2);
-        TbsLogClient tbsLogClient2 = f38928c;
+        TbsLogClient tbsLogClient2 = f25237c;
         tbsLogClient2.writeLog("(E)-" + str + "-TBS:" + str2);
     }
 
     public static void e(String str, String str2, boolean z) {
         e(str, str2);
-        TbsLogClient tbsLogClient = f38928c;
-        if (tbsLogClient != null && f38927a && z) {
+        TbsLogClient tbsLogClient = f25237c;
+        if (tbsLogClient != null && f25236a && z) {
             tbsLogClient.showLog(str + ": " + str2);
         }
     }
 
     public static String getTbsLogFilePath() {
-        if (TbsLogClient.f38930c != null) {
-            return TbsLogClient.f38930c.getAbsolutePath();
+        if (TbsLogClient.f25239c != null) {
+            return TbsLogClient.f25239c.getAbsolutePath();
         }
         return null;
     }
 
     public static void i(String str, String str2) {
-        TbsLogClient tbsLogClient = f38928c;
+        TbsLogClient tbsLogClient = f25237c;
         if (tbsLogClient == null) {
             return;
         }
         tbsLogClient.i(str, "TBS:" + str2);
-        TbsLogClient tbsLogClient2 = f38928c;
+        TbsLogClient tbsLogClient2 = f25237c;
         tbsLogClient2.writeLog("(I)-" + str + "-TBS:" + str2);
     }
 
     public static void i(String str, String str2, boolean z) {
         i(str, str2);
-        TbsLogClient tbsLogClient = f38928c;
-        if (tbsLogClient != null && f38927a && z) {
+        TbsLogClient tbsLogClient = f25237c;
+        if (tbsLogClient != null && f25236a && z) {
             tbsLogClient.showLog(str + ": " + str2);
         }
     }
@@ -155,7 +155,7 @@ public class TbsLog {
     public static void initIfNeed(Context context) {
         synchronized (TbsLog.class) {
             try {
-                if (f38928c == null) {
+                if (f25237c == null) {
                     setTbsLogClient(new TbsLogClient(context));
                 }
             } catch (Throwable th) {
@@ -166,7 +166,7 @@ public class TbsLog {
 
     public static void setLogView(TextView textView) {
         TbsLogClient tbsLogClient;
-        if (textView == null || (tbsLogClient = f38928c) == null) {
+        if (textView == null || (tbsLogClient = f25237c) == null) {
             return;
         }
         tbsLogClient.setLogView(textView);
@@ -176,21 +176,21 @@ public class TbsLog {
         if (tbsLogClient == null) {
             return false;
         }
-        f38928c = tbsLogClient;
+        f25237c = tbsLogClient;
         TbsLogClient.setWriteLogJIT(b);
         return true;
     }
 
     public static void setWriteLogJIT(boolean z) {
         b = z;
-        if (f38928c == null) {
+        if (f25237c == null) {
             return;
         }
         TbsLogClient.setWriteLogJIT(z);
     }
 
     public static void v(String str, String str2) {
-        TbsLogClient tbsLogClient = f38928c;
+        TbsLogClient tbsLogClient = f25237c;
         if (tbsLogClient == null) {
             return;
         }
@@ -199,26 +199,26 @@ public class TbsLog {
 
     public static void v(String str, String str2, boolean z) {
         v(str, str2);
-        TbsLogClient tbsLogClient = f38928c;
-        if (tbsLogClient != null && f38927a && z) {
+        TbsLogClient tbsLogClient = f25237c;
+        if (tbsLogClient != null && f25236a && z) {
             tbsLogClient.showLog(str + ": " + str2);
         }
     }
 
     public static void w(String str, String str2) {
-        TbsLogClient tbsLogClient = f38928c;
+        TbsLogClient tbsLogClient = f25237c;
         if (tbsLogClient == null) {
             return;
         }
         tbsLogClient.w(str, "TBS:" + str2);
-        TbsLogClient tbsLogClient2 = f38928c;
+        TbsLogClient tbsLogClient2 = f25237c;
         tbsLogClient2.writeLog("(W)-" + str + "-TBS:" + str2);
     }
 
     public static void w(String str, String str2, boolean z) {
         w(str, str2);
-        TbsLogClient tbsLogClient = f38928c;
-        if (tbsLogClient != null && f38927a && z) {
+        TbsLogClient tbsLogClient = f25237c;
+        if (tbsLogClient != null && f25236a && z) {
             tbsLogClient.showLog(str + ": " + str2);
         }
     }
@@ -226,8 +226,8 @@ public class TbsLog {
     public static void writeLogToDisk() {
         synchronized (TbsLog.class) {
             try {
-                if (f38928c != null) {
-                    f38928c.writeLogToDisk();
+                if (f25237c != null) {
+                    f25237c.writeLogToDisk();
                 }
             } catch (Throwable th) {
                 throw th;

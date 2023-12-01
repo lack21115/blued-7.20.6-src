@@ -17,19 +17,19 @@ import org.json.JSONObject;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f25660a;
+    private Activity f11972a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private c f25661c;
+    private c f11973c;
     private com.opos.mobad.activity.a d;
     private WebDataHepler e;
     private com.opos.mobad.activity.webview.b.d f;
     private MaterialData g;
     private b.a i;
     private int h = 0;
-    private b.InterfaceC0687b j = new b.InterfaceC0687b() { // from class: com.opos.mobad.activity.webview.e.2
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+    private b.InterfaceC0517b j = new b.InterfaceC0517b() { // from class: com.opos.mobad.activity.webview.e.2
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void a(AdItemData adItemData, String str) {
             com.opos.cmn.an.f.a.b("WebViewPresenter", "notifyInstallCompletedEvent pkgName =" + str);
             if (TextUtils.isEmpty(str)) {
@@ -39,11 +39,11 @@ public class e {
             com.opos.mobad.cmn.service.a.a.a(e.this.b).c(str);
         }
 
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void b(AdItemData adItemData, String str) {
         }
 
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void c(AdItemData adItemData, String str) {
         }
     };
@@ -204,9 +204,9 @@ public class e {
     };
 
     public e(Activity activity, c cVar) {
-        this.f25660a = activity;
+        this.f11972a = activity;
         this.b = com.opos.mobad.service.b.a(activity.getApplicationContext());
-        this.f25661c = cVar;
+        this.f11973c = cVar;
         cVar.a(this.l);
     }
 
@@ -275,7 +275,7 @@ public class e {
     }
 
     public void a() {
-        this.f25661c.a();
+        this.f11973c.a();
     }
 
     public void a(WebDataHepler webDataHepler) {
@@ -286,7 +286,7 @@ public class e {
         if (this.e.g() == 2) {
             FrameLayout frameLayout = new FrameLayout(this.b);
             this.d = new com.opos.mobad.activity.a(this.b, this.m, frameLayout);
-            this.f25661c.a(frameLayout);
+            this.f11973c.a(frameLayout);
         }
         a(this.g);
         a(this.e.d());
@@ -301,15 +301,15 @@ public class e {
     }
 
     public void a(String str) {
-        this.f25661c.a(str);
+        this.f11973c.a(str);
     }
 
     public void a(final String str, final String str2, final String str3, final String str4) {
-        if (this.f25660a == null || !f.j() || "WIFI".equalsIgnoreCase(com.opos.cmn.an.h.c.a.f(this.b))) {
+        if (this.f11972a == null || !f.j() || "WIFI".equalsIgnoreCase(com.opos.cmn.an.h.c.a.f(this.b))) {
             b(str, str2, str3, str4);
             return;
         }
-        final com.opos.cmn.e.a.b.a aVar = new com.opos.cmn.e.a.b.a(this.f25660a);
+        final com.opos.cmn.e.a.b.a aVar = new com.opos.cmn.e.a.b.a(this.f11972a);
         aVar.a("当前为非Wi-Fi环境，\n是否继续下载？", "取消", "下载", new com.opos.cmn.e.a.b.c.a() { // from class: com.opos.mobad.activity.webview.e.1
             @Override // com.opos.cmn.e.a.b.c.a
             public void a(View view, int[] iArr) {
@@ -401,7 +401,7 @@ public class e {
             int r0 = r0.getAction()
             if (r0 != 0) goto L78
             r0 = r3
-            com.opos.mobad.activity.webview.c r0 = r0.f25661c
+            com.opos.mobad.activity.webview.c r0 = r0.f11973c
             r0.b()
             r0 = 1
             r6 = r0
@@ -421,7 +421,7 @@ public class e {
         }
         com.opos.mobad.cmn.service.a.a.a(this.b).a(this.k);
         com.opos.mobad.cmn.service.pkginstall.b.a(this.b).a(this.j);
-        this.f25660a = null;
+        this.f11972a = null;
     }
 
     public void b(String str) {

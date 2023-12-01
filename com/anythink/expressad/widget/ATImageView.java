@@ -12,11 +12,11 @@ import com.anythink.expressad.foundation.g.d.c;
 public class ATImageView extends ImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8780a = "at-widget-imageview";
+    private static final String f5940a = "at-widget-imageview";
     private Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8781c;
+    private String f5941c;
 
     /* renamed from: com.anythink.expressad.widget.ATImageView$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/widget/ATImageView$1.class */
@@ -51,7 +51,7 @@ public class ATImageView extends ImageView {
 
     private void a() {
         if (getContext() != null) {
-            b.a(getContext()).a(this.f8781c, new AnonymousClass1());
+            b.a(getContext()).a(this.f5941c, new AnonymousClass1());
         }
     }
 
@@ -61,7 +61,7 @@ public class ATImageView extends ImageView {
             if (this.b == null || !this.b.isRecycled()) {
                 super.onDraw(canvas);
             } else if (getContext() != null) {
-                b.a(getContext()).a(this.f8781c, new AnonymousClass1());
+                b.a(getContext()).a(this.f5941c, new AnonymousClass1());
             }
         } catch (Throwable th) {
         }
@@ -79,6 +79,6 @@ public class ATImageView extends ImageView {
     }
 
     public void setImageUrl(String str) {
-        this.f8781c = str;
+        this.f5941c = str;
     }
 }

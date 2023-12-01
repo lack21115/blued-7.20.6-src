@@ -31,13 +31,9 @@ import com.autonavi.base.amap.mapcore.MapConfig;
 /* renamed from: com.amap.api.col.3sl.eg  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/eg.class */
 public final class eg extends ViewGroup implements eh {
-
-    /* renamed from: a  reason: collision with root package name */
-    ei f4898a;
+    ei a;
     au b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IAMapDelegate f4899c;
+    private IAMapDelegate c;
     private IGlOverlayLayer d;
     private Context e;
     private ek f;
@@ -59,27 +55,23 @@ public final class eg extends ViewGroup implements eh {
     /* renamed from: com.amap.api.col.3sl.eg$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/eg$a.class */
     public static final class a extends ViewGroup.LayoutParams {
-
-        /* renamed from: a  reason: collision with root package name */
-        public FPoint f4905a;
+        public FPoint a;
         public boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public int f4906c;
+        public int c;
         public int d;
         public int e;
 
         public a(int i, int i2, float f, float f2, int i3, int i4, int i5) {
             super(i, i2);
             FPoint fPoint = new FPoint();
-            this.f4905a = fPoint;
+            this.a = fPoint;
             this.b = false;
-            this.f4906c = 0;
+            this.c = 0;
             this.d = 0;
             this.e = 51;
             fPoint.x = f;
-            this.f4905a.y = f2;
-            this.f4906c = i3;
+            this.a.y = f2;
+            this.c = i3;
             this.d = i4;
             this.e = i5;
         }
@@ -98,13 +90,13 @@ public final class eg extends ViewGroup implements eh {
         this.t = true;
         try {
             this.d = iGlOverlayLayer;
-            this.f4899c = iAMapDelegate;
+            this.c = iAMapDelegate;
             this.e = context;
-            this.f4898a = new ei();
+            this.a = new ei();
             this.j = new ec(context);
             ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-            if (this.f4899c.getGLMapView() != null) {
-                addView(this.f4899c.getGLMapView(), 0, layoutParams);
+            if (this.c.getGLMapView() != null) {
+                addView(this.c.getGLMapView(), 0, layoutParams);
             } else {
                 i = 0;
             }
@@ -234,11 +226,11 @@ public final class eg extends ViewGroup implements eh {
         ek ekVar = new ek(context);
         this.f = ekVar;
         ekVar.c(this.t);
-        this.i = new ej(context, this.f4899c);
+        this.i = new ej(context, this.c);
         this.k = new ee(context);
-        this.l = new el(context, this.f4899c);
-        this.g = new ef(context, this.f4899c);
-        this.h = new ed(context, this.f4899c);
+        this.l = new el(context, this.c);
+        this.g = new ef(context, this.c);
+        this.h = new ed(context, this.c);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
         addView(this.f, layoutParams);
         addView(this.i, layoutParams);
@@ -247,8 +239,7 @@ public final class eg extends ViewGroup implements eh {
         addView(this.g, new a(FPoint.obtain(0.0f, 0.0f), 83));
         addView(this.h, new a(FPoint.obtain(0.0f, 0.0f), 51));
         this.h.setVisibility(8);
-        this.f4899c.setMapWidgetListener(new AMapWidgetListener() { // from class: com.amap.api.col.3sl.eg.1
-            @Override // com.autonavi.base.ae.gmap.listener.AMapWidgetListener
+        this.c.setMapWidgetListener(new AMapWidgetListener() { // from class: com.amap.api.col.3sl.eg.1
             public final void invalidateCompassView() {
                 if (eg.this.h == null) {
                     return;
@@ -261,7 +252,6 @@ public final class eg extends ViewGroup implements eh {
                 });
             }
 
-            @Override // com.autonavi.base.ae.gmap.listener.AMapWidgetListener
             public final void invalidateScaleView() {
                 if (eg.this.i == null) {
                     return;
@@ -274,7 +264,6 @@ public final class eg extends ViewGroup implements eh {
                 });
             }
 
-            @Override // com.autonavi.base.ae.gmap.listener.AMapWidgetListener
             public final void invalidateZoomController(final float f) {
                 if (eg.this.l == null) {
                     return;
@@ -287,12 +276,11 @@ public final class eg extends ViewGroup implements eh {
                 });
             }
 
-            @Override // com.autonavi.base.ae.gmap.listener.AMapWidgetListener
             public final void setFrontViewVisibility(boolean z) {
             }
         });
         try {
-            if (this.f4899c.getUiSettings().isMyLocationButtonEnabled()) {
+            if (this.c.getUiSettings().isMyLocationButtonEnabled()) {
                 return;
             }
             this.g.setVisibility(8);
@@ -360,7 +348,7 @@ public final class eg extends ViewGroup implements eh {
         }
         view.layout(i6, i7, i6 + i, i7 + i2);
         if (view instanceof IGLSurfaceView) {
-            this.f4899c.changeSize(i, i2);
+            this.c.changeSize(i, i2);
         }
     }
 
@@ -393,7 +381,7 @@ public final class eg extends ViewGroup implements eh {
         int[] iArr = new int[2];
         a(view, layoutParams.width, layoutParams.height, iArr);
         if (view instanceof ee) {
-            a(view, iArr[0], iArr[1], 20, (this.f4899c.getWaterMarkerPositon().y - 80) - iArr[1], 51);
+            a(view, iArr[0], iArr[1], 20, (this.c.getWaterMarkerPositon().y - 80) - iArr[1], 51);
         } else {
             a(view, iArr[0], iArr[1], 0, 0, 51);
         }
@@ -408,15 +396,15 @@ public final class eg extends ViewGroup implements eh {
             a(view, iArr[0], iArr[1], getWidth() - iArr[0], iArr[1], aVar.e);
         } else if (view instanceof ed) {
             a(view, iArr[0], iArr[1], 0, 0, aVar.e);
-        } else if (aVar.f4905a != null) {
+        } else if (aVar.a != null) {
             IPoint obtain = IPoint.obtain();
-            MapConfig mapConfig = this.f4899c.getMapConfig();
-            GLMapState mapProjection = this.f4899c.getMapProjection();
+            MapConfig mapConfig = this.c.getMapConfig();
+            GLMapState mapProjection = this.c.getMapProjection();
             if (mapConfig != null && mapProjection != null) {
-                obtain.x = (int) aVar.f4905a.x;
-                obtain.y = (int) aVar.f4905a.y;
+                obtain.x = (int) aVar.a.x;
+                obtain.y = (int) aVar.a.y;
             }
-            obtain.x += aVar.f4906c;
+            obtain.x += aVar.c;
             obtain.y += aVar.d;
             a(view, iArr[0], iArr[1], obtain.x, obtain.y, aVar.e);
             obtain.recycle();
@@ -431,7 +419,7 @@ public final class eg extends ViewGroup implements eh {
     private void k() {
         ej ejVar = this.i;
         if (ejVar == null) {
-            this.f4898a.a(this, new Object[0]);
+            this.a.a(this, new Object[0]);
         } else if (ejVar == null || ejVar.getVisibility() != 0) {
         } else {
             this.i.postInvalidate();
@@ -497,7 +485,7 @@ public final class eg extends ViewGroup implements eh {
     public final void a(ee.a aVar) {
         ee eeVar = this.k;
         if (eeVar == null) {
-            this.f4898a.a(this, aVar);
+            this.a.a(this, aVar);
         } else {
             eeVar.a(aVar);
         }
@@ -506,11 +494,11 @@ public final class eg extends ViewGroup implements eh {
     @Override // com.amap.api.col.p0003sl.eh
     public final void a(CameraPosition cameraPosition) {
         if (this.f == null) {
-            this.f4898a.a(this, cameraPosition);
-        } else if (this.f4899c.getUiSettings().isLogoEnable()) {
+            this.a.a(this, cameraPosition);
+        } else if (this.c.getUiSettings().isLogoEnable()) {
             if (MapsInitializer.isLoadWorldGridMap() && cameraPosition.zoom >= 6.0f && !dp.a(cameraPosition.target.latitude, cameraPosition.target.longitude)) {
                 this.f.setVisibility(8);
-            } else if (this.f4899c.getMaskLayerType() == -1) {
+            } else if (this.c.getMaskLayerType() == -1) {
                 this.f.setVisibility(0);
             }
         }
@@ -520,8 +508,8 @@ public final class eg extends ViewGroup implements eh {
     public final void a(Boolean bool) {
         ee eeVar = this.k;
         if (eeVar == null) {
-            this.f4898a.a(this, bool);
-        } else if (eeVar != null && bool.booleanValue() && this.f4899c.canShowIndoorSwitch()) {
+            this.a.a(this, bool);
+        } else if (eeVar != null && bool.booleanValue() && this.c.canShowIndoorSwitch()) {
             this.k.a(true);
         }
     }
@@ -530,7 +518,7 @@ public final class eg extends ViewGroup implements eh {
     public final void a(Float f) {
         el elVar = this.l;
         if (elVar == null) {
-            this.f4898a.a(this, f);
+            this.a.a(this, f);
         } else if (elVar != null) {
             elVar.a(f.floatValue());
         }
@@ -540,7 +528,7 @@ public final class eg extends ViewGroup implements eh {
     public final void a(Integer num) {
         el elVar = this.l;
         if (elVar == null) {
-            this.f4898a.a(this, num);
+            this.a.a(this, num);
         } else if (elVar != null) {
             elVar.a(num.intValue());
         }
@@ -550,7 +538,7 @@ public final class eg extends ViewGroup implements eh {
     public final void a(Integer num, Float f) {
         ek ekVar = this.f;
         if (ekVar != null) {
-            this.f4898a.a(this, num, f);
+            this.a.a(this, num, f);
         } else if (ekVar != null) {
             ekVar.a(num.intValue(), f.floatValue());
             k();
@@ -560,7 +548,7 @@ public final class eg extends ViewGroup implements eh {
     @Override // com.amap.api.col.p0003sl.eh
     public final void a(String str, Boolean bool, Integer num) {
         if (this.f == null) {
-            this.f4898a.a(this, str, bool, num);
+            this.a.a(this, str, bool, num);
         } else if (num.intValue() == 2) {
             this.f.b(bool.booleanValue());
         } else if (TextUtils.isEmpty(str)) {
@@ -583,7 +571,7 @@ public final class eg extends ViewGroup implements eh {
     public final void b(Boolean bool) {
         el elVar = this.l;
         if (elVar == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
         } else {
             elVar.a(bool.booleanValue());
         }
@@ -593,7 +581,7 @@ public final class eg extends ViewGroup implements eh {
     public final void b(Integer num) {
         ek ekVar = this.f;
         if (ekVar == null) {
-            this.f4898a.a(this, num);
+            this.a.a(this, num);
         } else if (ekVar != null) {
             ekVar.a(num.intValue());
             this.f.postInvalidate();
@@ -614,7 +602,7 @@ public final class eg extends ViewGroup implements eh {
     public final void c() {
         ek ekVar = this.f;
         if (ekVar == null) {
-            this.f4898a.a(this, new Object[0]);
+            this.a.a(this, new Object[0]);
         } else if (ekVar != null) {
             ekVar.c();
         }
@@ -623,7 +611,7 @@ public final class eg extends ViewGroup implements eh {
     @Override // com.amap.api.col.p0003sl.eh
     public final void c(Boolean bool) {
         if (this.g == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
         } else if (bool.booleanValue()) {
             this.g.setVisibility(0);
         } else {
@@ -635,7 +623,7 @@ public final class eg extends ViewGroup implements eh {
     public final void c(Integer num) {
         ek ekVar = this.f;
         if (ekVar == null) {
-            this.f4898a.a(this, num);
+            this.a.a(this, num);
         } else if (ekVar != null) {
             ekVar.b(num.intValue());
             k();
@@ -651,7 +639,7 @@ public final class eg extends ViewGroup implements eh {
     public final void d(Boolean bool) {
         ed edVar = this.h;
         if (edVar == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
         } else {
             edVar.a(bool.booleanValue());
         }
@@ -661,7 +649,7 @@ public final class eg extends ViewGroup implements eh {
     public final void d(Integer num) {
         ek ekVar = this.f;
         if (ekVar == null) {
-            this.f4898a.a(this, num);
+            this.a.a(this, num);
         } else if (ekVar != null) {
             ekVar.c(num.intValue());
             k();
@@ -677,7 +665,7 @@ public final class eg extends ViewGroup implements eh {
     public final void e(Boolean bool) {
         ej ejVar = this.i;
         if (ejVar == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
         } else {
             ejVar.a(bool.booleanValue());
         }
@@ -693,7 +681,7 @@ public final class eg extends ViewGroup implements eh {
         ek ekVar = this.f;
         int i = 0;
         if (ekVar == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
             return;
         }
         if (!bool.booleanValue()) {
@@ -715,7 +703,7 @@ public final class eg extends ViewGroup implements eh {
     public final void g(Boolean bool) {
         ek ekVar = this.f;
         if (ekVar == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
         } else if (ekVar != null && bool.booleanValue()) {
             this.f.a(true);
         } else {
@@ -730,7 +718,7 @@ public final class eg extends ViewGroup implements eh {
     public final void h() {
         ed edVar = this.h;
         if (edVar == null) {
-            this.f4898a.a(this, new Object[0]);
+            this.a.a(this, new Object[0]);
         } else {
             edVar.b();
         }
@@ -740,19 +728,18 @@ public final class eg extends ViewGroup implements eh {
     public final void h(Boolean bool) {
         ef efVar = this.g;
         if (efVar == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
         } else {
             efVar.a(bool.booleanValue());
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction
     public final void hideInfoWindow() {
         try {
-            if (this.f4899c == null || this.f4899c.getMainHandler() == null) {
+            if (this.c == null || this.c.getMainHandler() == null) {
                 return;
             }
-            this.f4899c.getMainHandler().post(new Runnable() { // from class: com.amap.api.col.3sl.eg.2
+            this.c.getMainHandler().post(new Runnable() { // from class: com.amap.api.col.3sl.eg.2
                 @Override // java.lang.Runnable
                 public final void run() {
                     if (eg.this.m != null) {
@@ -781,7 +768,7 @@ public final class eg extends ViewGroup implements eh {
             return;
         }
         a(context);
-        ei eiVar = this.f4898a;
+        ei eiVar = this.a;
         if (eiVar != null) {
             eiVar.a();
         }
@@ -791,13 +778,12 @@ public final class eg extends ViewGroup implements eh {
     public final void i(Boolean bool) {
         ee eeVar = this.k;
         if (eeVar == null) {
-            this.f4898a.a(this, bool);
+            this.a.a(this, bool);
         } else {
             eeVar.a(bool.booleanValue());
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction
     public final boolean isInfoWindowShown() {
         return false;
     }
@@ -807,7 +793,6 @@ public final class eg extends ViewGroup implements eh {
         return this;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction
     public final boolean onInfoWindowTap(MotionEvent motionEvent) {
         return (this.m == null || this.n == null || !dw.a(new Rect(this.m.getLeft(), this.m.getTop(), this.m.getRight(), this.m.getBottom()), (int) motionEvent.getX(), (int) motionEvent.getY())) ? false : true;
     }
@@ -840,7 +825,6 @@ public final class eg extends ViewGroup implements eh {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction
     public final void redrawInfoWindow() {
         try {
             if (this.n == null || !this.d.checkInBounds(this.n.getId())) {
@@ -868,8 +852,8 @@ public final class eg extends ViewGroup implements eh {
                 if (this.m != null) {
                     a aVar = (a) this.m.getLayoutParams();
                     if (aVar != null) {
-                        aVar.f4905a = FPoint.obtain(obtain2.x, obtain2.y);
-                        aVar.f4906c = i;
+                        aVar.a = FPoint.obtain(obtain2.x, obtain2.y);
+                        aVar.c = i;
                         aVar.d = i2;
                     }
                     onLayout(false, 0, 0, 0, 0);
@@ -888,12 +872,10 @@ public final class eg extends ViewGroup implements eh {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction
     public final void setInfoWindowAdapterManager(au auVar) {
         this.b = auVar;
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction
     public final void showInfoWindow(BasePointOverlay basePointOverlay) {
         if (basePointOverlay == null) {
             return;
@@ -913,7 +895,6 @@ public final class eg extends ViewGroup implements eh {
         }
     }
 
-    @Override // com.autonavi.base.amap.api.mapcore.infowindow.IInfoWindowAction
     public final void showInfoWindow(BaseOverlayImp baseOverlayImp) {
         if (baseOverlayImp == null) {
             return;

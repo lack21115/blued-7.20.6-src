@@ -8,41 +8,41 @@ import com.tencent.smtt.export.external.DexLoader;
 public class TbsMediaFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38779a;
+    private Context f25088a;
     private u b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private DexLoader f38780c = null;
+    private DexLoader f25089c = null;
 
     public TbsMediaFactory(Context context) {
-        this.f38779a = null;
-        this.f38779a = context.getApplicationContext();
+        this.f25088a = null;
+        this.f25088a = context.getApplicationContext();
         a();
     }
 
     private void a() {
-        if (this.f38779a == null) {
+        if (this.f25088a == null) {
             Log.e("TbsVideo", "TbsVideo needs context !!");
             return;
         }
         if (this.b == null) {
-            f.a(true).a(this.f38779a, false, false);
+            f.a(true).a(this.f25088a, false, false);
             u a2 = f.a(true).a();
             this.b = a2;
             if (a2 != null) {
-                this.f38780c = a2.b();
+                this.f25089c = a2.b();
             }
         }
-        if (this.b == null || this.f38780c == null) {
+        if (this.b == null || this.f25089c == null) {
             throw new RuntimeException("tbs core dex(s) load failure !!!");
         }
     }
 
     public TbsMediaPlayer createPlayer() {
         DexLoader dexLoader;
-        if (this.b == null || (dexLoader = this.f38780c) == null) {
+        if (this.b == null || (dexLoader = this.f25089c) == null) {
             throw new RuntimeException("tbs core dex(s) did not loaded !!!");
         }
-        return new TbsMediaPlayer(new p(dexLoader, this.f38779a));
+        return new TbsMediaPlayer(new p(dexLoader, this.f25088a));
     }
 }

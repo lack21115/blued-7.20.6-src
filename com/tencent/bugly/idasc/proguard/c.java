@@ -11,12 +11,12 @@ import java.util.Set;
 class c {
 
     /* renamed from: a  reason: collision with root package name */
-    protected HashMap<String, HashMap<String, byte[]>> f35317a = new HashMap<>();
+    protected HashMap<String, HashMap<String, byte[]>> f21626a = new HashMap<>();
     protected HashMap<String, Object> b = new HashMap<>();
     private HashMap<String, Object> e = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f35318c = "GBK";
+    protected String f21627c = "GBK";
     k d = new k();
 
     private static void a(ArrayList<String> arrayList, Object obj) {
@@ -63,7 +63,7 @@ class c {
     }
 
     public void a(String str) {
-        this.f35318c = str;
+        this.f21627c = str;
     }
 
     public <T> void a(String str, T t) {
@@ -77,31 +77,31 @@ class c {
             throw new IllegalArgumentException("can not support Set");
         }
         l lVar = new l();
-        lVar.a(this.f35318c);
+        lVar.a(this.f21627c);
         lVar.a(t, 0);
-        byte[] a2 = n.a(lVar.f35325a);
+        byte[] a2 = n.a(lVar.f21634a);
         HashMap<String, byte[]> hashMap = new HashMap<>(1);
         ArrayList arrayList = new ArrayList(1);
         a(arrayList, t);
         hashMap.put(a.a(arrayList), a2);
         this.e.remove(str);
-        this.f35317a.put(str, hashMap);
+        this.f21626a.put(str, hashMap);
     }
 
     public void a(byte[] bArr) {
         this.d.a(bArr);
-        this.d.a(this.f35318c);
+        this.d.a(this.f21627c);
         HashMap hashMap = new HashMap(1);
         HashMap hashMap2 = new HashMap(1);
         hashMap2.put("", new byte[0]);
         hashMap.put("", hashMap2);
-        this.f35317a = this.d.a((Map) hashMap, 0, false);
+        this.f21626a = this.d.a((Map) hashMap, 0, false);
     }
 
     public byte[] a() {
         l lVar = new l(0);
-        lVar.a(this.f35318c);
-        lVar.a((Map) this.f35317a, 0);
-        return n.a(lVar.f35325a);
+        lVar.a(this.f21627c);
+        lVar.a((Map) this.f21626a, 0);
+        return n.a(lVar.f21634a);
     }
 }

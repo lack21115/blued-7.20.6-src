@@ -11,11 +11,11 @@ import java.util.ArrayList;
 public final class e extends f<Void> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s f7443a;
+    private final s f4604a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f7444c;
+    private final long f4605c;
     private final boolean d;
     private final boolean e;
     private final boolean f;
@@ -32,7 +32,7 @@ public final class e extends f<Void> {
     public static final class a extends p {
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f7445c;
+        private final long f4606c;
         private final long d;
         private final long e;
         private final boolean f;
@@ -56,7 +56,7 @@ public final class e extends f<Void> {
                     throw new b(2);
                 }
             }
-            this.f7445c = max;
+            this.f4606c = max;
             this.d = j3;
             int i = (j3 > com.anythink.expressad.exoplayer.b.b ? 1 : (j3 == com.anythink.expressad.exoplayer.b.b ? 0 : -1));
             this.e = i == 0 ? -9223372036854775807L : j3 - max;
@@ -76,28 +76,28 @@ public final class e extends f<Void> {
         @Override // com.anythink.expressad.exoplayer.h.p, com.anythink.expressad.exoplayer.ae
         public final ae.a a(int i, ae.a aVar, boolean z) {
             this.b.a(0, aVar, z);
-            long b = aVar.b() - this.f7445c;
+            long b = aVar.b() - this.f4606c;
             long j = this.e;
-            return aVar.a(aVar.f7161a, aVar.b, j == com.anythink.expressad.exoplayer.b.b ? -9223372036854775807L : j - b, b);
+            return aVar.a(aVar.f4322a, aVar.b, j == com.anythink.expressad.exoplayer.b.b ? -9223372036854775807L : j - b, b);
         }
 
         @Override // com.anythink.expressad.exoplayer.h.p, com.anythink.expressad.exoplayer.ae
         public final ae.b a(int i, ae.b bVar, boolean z, long j) {
             this.b.a(0, bVar, z, 0L);
-            bVar.j += this.f7445c;
+            bVar.j += this.f4606c;
             bVar.i = this.e;
             bVar.e = this.f;
             if (bVar.h != com.anythink.expressad.exoplayer.b.b) {
-                bVar.h = Math.max(bVar.h, this.f7445c);
+                bVar.h = Math.max(bVar.h, this.f4606c);
                 bVar.h = this.d == com.anythink.expressad.exoplayer.b.b ? bVar.h : Math.min(bVar.h, this.d);
-                bVar.h -= this.f7445c;
+                bVar.h -= this.f4606c;
             }
-            long a2 = com.anythink.expressad.exoplayer.b.a(this.f7445c);
+            long a2 = com.anythink.expressad.exoplayer.b.a(this.f4606c);
             if (bVar.b != com.anythink.expressad.exoplayer.b.b) {
                 bVar.b += a2;
             }
-            if (bVar.f7164c != com.anythink.expressad.exoplayer.b.b) {
-                bVar.f7164c += a2;
+            if (bVar.f4325c != com.anythink.expressad.exoplayer.b.b) {
+                bVar.f4325c += a2;
             }
             return bVar;
         }
@@ -107,11 +107,11 @@ public final class e extends f<Void> {
     public static final class b extends IOException {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7446a = 0;
+        public static final int f4607a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7447c = 2;
+        public static final int f4608c = 2;
         public final int d;
 
         @Retention(RetentionPolicy.SOURCE)
@@ -190,9 +190,9 @@ public final class e extends f<Void> {
 
     private e(s sVar, long j, long j2, boolean z, boolean z2) {
         com.anythink.expressad.exoplayer.k.a.a(j >= 0);
-        this.f7443a = (s) com.anythink.expressad.exoplayer.k.a.a(sVar);
+        this.f4604a = (s) com.anythink.expressad.exoplayer.k.a.a(sVar);
         this.b = j;
-        this.f7444c = j2;
+        this.f4605c = j2;
         this.d = z;
         this.e = false;
         this.f = z2;
@@ -207,7 +207,7 @@ public final class e extends f<Void> {
         long j3 = this.h.j;
         if (this.j == null || this.g.isEmpty() || this.e) {
             long j4 = this.b;
-            long j5 = this.f7444c;
+            long j5 = this.f4605c;
             j = j4;
             j2 = j5;
             if (this.f) {
@@ -216,14 +216,14 @@ public final class e extends f<Void> {
                 j2 = j5 + j6;
             }
             this.l = j3 + j;
-            this.m = this.f7444c != Long.MIN_VALUE ? j3 + j2 : Long.MIN_VALUE;
+            this.m = this.f4605c != Long.MIN_VALUE ? j3 + j2 : Long.MIN_VALUE;
             int size = this.g.size();
             for (int i = 0; i < size; i++) {
                 this.g.get(i).a(this.l, this.m);
             }
         } else {
             long j7 = this.l;
-            j2 = this.f7444c == Long.MIN_VALUE ? Long.MIN_VALUE : this.m - j3;
+            j2 = this.f4605c == Long.MIN_VALUE ? Long.MIN_VALUE : this.m - j3;
             j = j7 - j3;
         }
         try {
@@ -241,7 +241,7 @@ public final class e extends f<Void> {
         }
         long a2 = com.anythink.expressad.exoplayer.b.a(this.b);
         long max = Math.max(0L, j - a2);
-        long j2 = this.f7444c;
+        long j2 = this.f4605c;
         long j3 = max;
         if (j2 != Long.MIN_VALUE) {
             j3 = Math.min(com.anythink.expressad.exoplayer.b.a(j2) - a2, max);
@@ -264,7 +264,7 @@ public final class e extends f<Void> {
         }
         long a2 = com.anythink.expressad.exoplayer.b.a(this.b);
         long max = Math.max(0L, j - a2);
-        long j2 = this.f7444c;
+        long j2 = this.f4605c;
         long j3 = max;
         if (j2 != Long.MIN_VALUE) {
             j3 = Math.min(com.anythink.expressad.exoplayer.b.a(j2) - a2, max);
@@ -274,7 +274,7 @@ public final class e extends f<Void> {
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final r a(s.a aVar, com.anythink.expressad.exoplayer.j.b bVar) {
-        d dVar = new d(this.f7443a.a(aVar, bVar), this.d, this.l, this.m);
+        d dVar = new d(this.f4604a.a(aVar, bVar), this.d, this.l, this.m);
         this.g.add(dVar);
         return dVar;
     }
@@ -289,7 +289,7 @@ public final class e extends f<Void> {
     @Override // com.anythink.expressad.exoplayer.h.s
     public final void a(r rVar) {
         com.anythink.expressad.exoplayer.k.a.b(this.g.remove(rVar));
-        this.f7443a.a(((d) rVar).f7439a);
+        this.f4604a.a(((d) rVar).f4600a);
         if (!this.g.isEmpty() || this.e) {
             return;
         }
@@ -299,7 +299,7 @@ public final class e extends f<Void> {
     @Override // com.anythink.expressad.exoplayer.h.f, com.anythink.expressad.exoplayer.h.c
     public final void a(com.anythink.expressad.exoplayer.h hVar, boolean z) {
         super.a(hVar, z);
-        a((e) null, this.f7443a);
+        a((e) null, this.f4604a);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.f

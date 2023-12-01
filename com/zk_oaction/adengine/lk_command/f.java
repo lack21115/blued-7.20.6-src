@@ -19,7 +19,7 @@ public class f extends b {
 
     @Override // com.zk_oaction.adengine.lk_command.b
     public void a() {
-        this.f41909a.k.a(this.i, this.j, this.k, this.l);
+        this.f28218a.k.a(this.i, this.j, this.k, this.l);
     }
 
     @Override // com.zk_oaction.adengine.lk_command.b
@@ -30,9 +30,9 @@ public class f extends b {
             if (attributeValue == null) {
                 return false;
             }
-            String str2 = this.f41909a.l + this.i;
+            String str2 = this.f28218a.l + this.i;
             this.i = str2;
-            this.f41909a.k.a(str2);
+            this.f28218a.k.a(str2);
             String attributeValue2 = xmlPullParser.getAttributeValue(null, "volume");
             if (attributeValue2 != null) {
                 this.j = Float.parseFloat(attributeValue2);

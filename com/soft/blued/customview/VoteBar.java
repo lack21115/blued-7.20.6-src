@@ -16,11 +16,11 @@ import com.blued.android.framework.utils.DensityUtils;
 public class VoteBar extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f28537a;
+    private Context f14847a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28538c;
+    private int f14848c;
     private int d;
     private int e;
     private int f;
@@ -36,11 +36,11 @@ public class VoteBar extends View {
     class AnonymousClass1 implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f28539a;
+        final /* synthetic */ int f14849a;
         final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f28540c;
+        final /* synthetic */ int f14850c;
         final /* synthetic */ int d;
         final /* synthetic */ VoteBar e;
 
@@ -48,11 +48,11 @@ public class VoteBar extends View {
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
             VoteBar voteBar = this.e;
-            int i = this.f28539a;
+            int i = this.f14849a;
             int i2 = this.b;
-            voteBar.f28538c = ((int) ((i - i2) * floatValue)) + i2;
+            voteBar.f14848c = ((int) ((i - i2) * floatValue)) + i2;
             VoteBar voteBar2 = this.e;
-            int i3 = this.f28540c;
+            int i3 = this.f14850c;
             int i4 = this.d;
             voteBar2.b = ((int) ((i3 - i4) * floatValue)) + i4;
             this.e.postInvalidate();
@@ -74,9 +74,9 @@ public class VoteBar extends View {
     private Paint a(boolean z) {
         Paint paint = new Paint();
         if (z) {
-            paint.setColor(this.f28537a.getResources().getColor(2131101305));
+            paint.setColor(this.f14847a.getResources().getColor(2131101305));
         } else {
-            paint.setColor(this.f28537a.getResources().getColor(2131101306));
+            paint.setColor(this.f14847a.getResources().getColor(2131101306));
         }
         paint.setStyle(Paint.Style.FILL);
         paint.setStrokeWidth(1.0f);
@@ -169,18 +169,17 @@ public class VoteBar extends View {
     }
 
     public void a(Context context) {
-        this.f28537a = context;
+        this.f14847a = context;
         if ("en".equals(BlueAppLocal.a())) {
-            this.d = DensityUtils.a(this.f28537a, 70.0f);
+            this.d = DensityUtils.a(this.f14847a, 70.0f);
         } else {
-            this.d = DensityUtils.a(this.f28537a, 47.0f);
+            this.d = DensityUtils.a(this.f14847a, 47.0f);
         }
-        this.e = DensityUtils.a(this.f28537a, 5.0f);
+        this.e = DensityUtils.a(this.f14847a, 5.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (!this.j) {
             this.f = getPaddingLeft();
             this.g = getPaddingTop();
@@ -189,16 +188,16 @@ public class VoteBar extends View {
             this.k = a(true);
             this.l = a(false);
             int i = this.d;
-            this.f28538c = i;
+            this.f14848c = i;
             this.b = i;
             this.j = true;
         }
-        int i2 = this.f28538c;
+        int i2 = this.f14848c;
         int i3 = this.d;
         if (i2 == i3 && this.b == i3) {
             canvas.drawPath(a(i2), this.k);
             canvas.drawPath(b(this.b), this.l);
-        } else if (this.f28538c == 0) {
+        } else if (this.f14848c == 0) {
             canvas.drawPath(getRoundSquarePath(), this.l);
         } else {
             int i4 = this.b;
@@ -207,13 +206,12 @@ public class VoteBar extends View {
                 return;
             }
             canvas.drawPath(b(i4), this.l);
-            canvas.drawPath(a(this.f28538c), this.k);
+            canvas.drawPath(a(this.f14848c), this.k);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
     }
 }

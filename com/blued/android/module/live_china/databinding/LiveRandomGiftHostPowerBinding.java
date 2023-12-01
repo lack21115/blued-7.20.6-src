@@ -13,21 +13,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveRandomGiftHostPowerBinding.class */
 public final class LiveRandomGiftHostPowerBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f12392a;
+    public final LinearLayout a;
     public final RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f12393c;
+    public final RecyclerView c;
     public final TextView d;
     private final FrameLayout e;
 
     private LiveRandomGiftHostPowerBinding(FrameLayout frameLayout, LinearLayout linearLayout, RelativeLayout relativeLayout, RecyclerView recyclerView, TextView textView) {
         this.e = frameLayout;
-        this.f12392a = linearLayout;
+        this.a = linearLayout;
         this.b = relativeLayout;
-        this.f12393c = recyclerView;
+        this.c = recyclerView;
         this.d = textView;
     }
 
@@ -45,11 +41,11 @@ public final class LiveRandomGiftHostPowerBinding implements ViewBinding {
         if (linearLayout != null) {
             RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_empty);
             if (relativeLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
+                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                if (findViewById != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_belted);
                     if (textView != null) {
-                        return new LiveRandomGiftHostPowerBinding((FrameLayout) view, linearLayout, relativeLayout, recyclerView, textView);
+                        return new LiveRandomGiftHostPowerBinding((FrameLayout) view, linearLayout, relativeLayout, findViewById, textView);
                     }
                     str = "tvBelted";
                 } else {
@@ -64,7 +60,6 @@ public final class LiveRandomGiftHostPowerBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

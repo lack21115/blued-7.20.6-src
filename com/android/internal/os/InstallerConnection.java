@@ -4,6 +4,7 @@ import android.net.LocalSocket;
 import android.net.LocalSocketAddress;
 import android.util.Slog;
 import com.android.internal.telephony.PhoneConstants;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -151,13 +152,13 @@ public class InstallerConnection {
                         if (!writeCommand(str)) {
                         }
                     }
-                    str2 = "-1";
+                    str2 = YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
                 }
                 int readReply = readReply();
-                str2 = readReply > 0 ? new String(this.buf, 0, readReply) : "-1";
+                str2 = readReply > 0 ? new String(this.buf, 0, readReply) : YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
             } else {
                 Slog.e(TAG, "connection failed");
-                str2 = "-1";
+                str2 = YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
             }
         }
         return str2;

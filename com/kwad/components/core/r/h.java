@@ -14,6 +14,6 @@ public final class h {
     }
 
     public static void g(Context context, AdTemplate adTemplate) {
-        AdWebViewActivityProxy.launch(context, new AdWebViewActivityProxy.a.C0529a().av(com.kwad.sdk.core.response.a.b.bg(adTemplate)).L(adTemplate).aB(true).oc());
+        AdWebViewActivityProxy.launch(context, new AdWebViewActivityProxy.a.C0359a().av(com.kwad.sdk.core.response.a.b.bg(adTemplate)).L(adTemplate).aB(true).oc());
     }
 }

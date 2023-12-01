@@ -8,14 +8,12 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveRechargeGiftBagViewBinding.class */
 public final class LiveRechargeGiftBagViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12405a;
+    public final ImageView a;
     private final RelativeLayout b;
 
     private LiveRechargeGiftBagViewBinding(RelativeLayout relativeLayout, ImageView imageView) {
         this.b = relativeLayout;
-        this.f12405a = imageView;
+        this.a = imageView;
     }
 
     public static LiveRechargeGiftBagViewBinding a(View view) {
@@ -26,7 +24,6 @@ public final class LiveRechargeGiftBagViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("ivGiftBag"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.b;

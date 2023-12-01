@@ -2,15 +2,15 @@ package com.sina.weibo.sdk.statistic;
 
 import android.os.Environment;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sina.weibo.sdk.utils.LogUtil;
 import com.sina.weibo.sdk.utils.MD5;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sina/weibo/sdk/statistic/LogFileUtil.class */
-class LogFileUtil {
+public class LogFileUtil {
     public static final String ANALYTICS_FILE_NAME = "app_logs";
     private static final String ANALYTICS_FILE_SUFFIX = ".txt";
     private static final String SDCARD_WEIBO_ANALYTICS_DIR = "/sina/weibo/.applogs/";
@@ -30,7 +30,7 @@ class LogFileUtil {
     public static String getAppLogPath(String str) {
         String str2;
         if (LogReport.getPackageName() != null) {
-            str2 = String.valueOf(MD5.hexdigest(LogReport.getPackageName())) + BridgeUtil.SPLIT_MARK;
+            str2 = String.valueOf(MD5.hexdigest(LogReport.getPackageName())) + "/";
         } else {
             str2 = "";
         }

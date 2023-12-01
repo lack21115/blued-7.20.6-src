@@ -9,15 +9,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.ui.BaseDialogFragment;
 import com.blued.android.framework.utils.ReflectionUtils;
 import com.blued.android.module.live.base.constants.LiveEventBusConstant;
 import com.blued.android.module.live_china.R;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Method;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -25,9 +27,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/BaseFullScreenDialog.class */
 public abstract class BaseFullScreenDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f12693a = "navigationBarBackground";
+    private final String a = "navigationBarBackground";
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(BaseFullScreenDialog this$0, String str) {
@@ -36,7 +36,7 @@ public abstract class BaseFullScreenDialog extends BaseDialogFragment {
     }
 
     private final void f() {
-        if (Build.VERSION.SDK_INT < 19 || !e() || a(getActivity())) {
+        if (Build.VERSION.SDK_INT < 19 || !e() || a((Activity) getActivity())) {
             return;
         }
         Dialog dialog = getDialog();
@@ -64,7 +64,7 @@ public abstract class BaseFullScreenDialog extends BaseDialogFragment {
                 return false;
             }
             viewGroup2.getChildAt(i2).getContext().getPackageName();
-            if (viewGroup2.getChildAt(i2).getId() != -1 && Intrinsics.a((Object) this.f12693a, (Object) activity.getResources().getResourceEntryName(viewGroup2.getChildAt(i2).getId()))) {
+            if (viewGroup2.getChildAt(i2).getId() != -1 && Intrinsics.a((Object) this.a, (Object) activity.getResources().getResourceEntryName(viewGroup2.getChildAt(i2).getId()))) {
                 return true;
             }
             i = i2 + 1;
@@ -79,11 +79,11 @@ public abstract class BaseFullScreenDialog extends BaseDialogFragment {
         Object invoke;
         Resources resources = getResources();
         Intrinsics.c(resources, "resources");
-        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", "android");
+        int identifier = resources.getIdentifier("config_showNavigationBar", "bool", MsgBackupManager.PLATFORM_ANDROID);
         boolean z = identifier > 0 ? resources.getBoolean(identifier) : false;
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            Method method = cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class);
+            Method method = cls.getMethod("get", String.class);
             Intrinsics.c(method, "systemPropertiesClass.ge…get\", String::class.java)");
             invoke = method.invoke(cls, "qemu.hw.mainkeys");
         } catch (Exception e) {
@@ -101,7 +101,6 @@ public abstract class BaseFullScreenDialog extends BaseDialogFragment {
         throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         f();
@@ -119,25 +118,24 @@ public abstract class BaseFullScreenDialog extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setStyle(0, R.style.dialog_full_screen);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        LiveEventBus.get(LiveEventBusConstant.d, String.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$BaseFullScreenDialog$it40W9dEbtx9wxs_za6rB-wyySM
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusConstant.d, String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$BaseFullScreenDialog$it40W9dEbtx9wxs_za6rB-wyySM
             public final void onChanged(Object obj) {
                 BaseFullScreenDialog.a(BaseFullScreenDialog.this, (String) obj);
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
@@ -145,7 +143,7 @@ public abstract class BaseFullScreenDialog extends BaseDialogFragment {
             ReflectionUtils.a(this, "mShownByMe", true);
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

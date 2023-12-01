@@ -19,11 +19,11 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f35108a = true;
+    public static boolean f21417a = true;
     public static List<a> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f35109c;
+    public static boolean f21418c;
     private static p d;
     private static boolean e;
 
@@ -43,16 +43,16 @@ public final class b {
                 if (e) {
                     x.d("[init] initial Multi-times, ignore this.", new Object[0]);
                 } else if (context == null) {
-                    Log.w(x.f35414a, "[init] context of init() is null, check it.");
+                    Log.w(x.f21723a, "[init] context of init() is null, check it.");
                 } else {
                     com.tencent.bugly.crashreport.common.info.a a2 = com.tencent.bugly.crashreport.common.info.a.a(context);
                     if (a(a2)) {
-                        f35108a = false;
+                        f21417a = false;
                         return;
                     }
                     String f = a2.f();
                     if (f == null) {
-                        Log.e(x.f35414a, "[init] meta data of BUGLY_APPID in AndroidManifest.xml should be set.");
+                        Log.e(x.f21723a, "[init] meta data of BUGLY_APPID in AndroidManifest.xml should be set.");
                     } else {
                         a(context, f, a2.v, buglyStrategy);
                     }
@@ -70,13 +70,13 @@ public final class b {
                 if (e) {
                     x.d("[init] initial Multi-times, ignore this.", new Object[0]);
                 } else if (context == null) {
-                    Log.w(x.f35414a, "[init] context is null, check it.");
+                    Log.w(x.f21723a, "[init] context is null, check it.");
                 } else if (str == null) {
-                    Log.e(x.f35414a, "init arg 'crashReportAppID' should not be null!");
+                    Log.e(x.f21723a, "init arg 'crashReportAppID' should not be null!");
                 } else {
                     e = true;
                     if (z) {
-                        f35109c = true;
+                        f21418c = true;
                         x.b = true;
                         x.d("Bugly debug模式开启，请在发布时把isDebug关闭。 -- Running in debug model for 'isDebug' is enabled. Please disable it when you release.", new Object[0]);
                         x.e("--------------------------------------------------------------------------------------------", new Object[0]);
@@ -99,7 +99,7 @@ public final class b {
                     com.tencent.bugly.crashreport.common.strategy.a a4 = com.tencent.bugly.crashreport.common.strategy.a.a(a2, b);
                     n a5 = n.a(a2);
                     if (a(a3)) {
-                        f35108a = false;
+                        f21417a = false;
                         return;
                     }
                     a3.a(str);
@@ -135,7 +135,7 @@ public final class b {
                             }
                             x.a("[param] Set App channel: %s", a3.m);
                         } catch (Exception e2) {
-                            if (f35109c) {
+                            if (f21418c) {
                                 e2.printStackTrace();
                             }
                         }
@@ -146,7 +146,7 @@ public final class b {
                                 str4 = appPackageName.substring(0, 100);
                                 x.d("appPackageName %s length is over limit %d substring to %s", appPackageName, 100, str4);
                             }
-                            a3.f35130c = str4;
+                            a3.f21439c = str4;
                             x.a("[param] Set App package: %s", buglyStrategy.getAppPackageName());
                         }
                         String deviceID = buglyStrategy.getDeviceID();
@@ -160,7 +160,7 @@ public final class b {
                             x.a("[param] Set device ID: %s", str5);
                         }
                         a3.e = buglyStrategy.isUploadProcess();
-                        y.f35416a = buglyStrategy.isBuglyLogUpload();
+                        y.f21725a = buglyStrategy.isBuglyLogUpload();
                     }
                     int i = 0;
                     while (true) {

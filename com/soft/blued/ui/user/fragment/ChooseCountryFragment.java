@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import com.android.internal.telephony.PhoneConstants;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.activity.keyboardpage.KeyBoardFragment;
@@ -23,7 +22,6 @@ import com.blued.android.module.common.utils.area.AreaUtils;
 import com.blued.android.module.common.utils.area.Country;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.android.module.common.view.SearchView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.BluedConstant;
 import com.soft.blued.R;
@@ -40,7 +38,7 @@ public class ChooseCountryFragment extends KeyBoardFragment {
     public CountryAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    public SearchView f33825c;
+    public SearchView f20134c;
     private Context j;
     private View k;
     private List<Country> l = new ArrayList();
@@ -51,12 +49,10 @@ public class ChooseCountryFragment extends KeyBoardFragment {
 
     public static void a(final BaseFragment baseFragment, final int i) {
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.user.fragment.ChooseCountryFragment.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
-                TerminalActivity.a(BaseFragment.this, ChooseCountryFragment.class, (Bundle) null, i);
+                TerminalActivity.a(baseFragment, ChooseCountryFragment.class, (Bundle) null, i);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -74,7 +70,7 @@ public class ChooseCountryFragment extends KeyBoardFragment {
     public String b(String str) {
         String str2 = str;
         for (int length = str.length(); length < 5; length++) {
-            str2 = PhoneConstants.APN_TYPE_ALL.equals(str) ? "9" + str2 : "0" + str2;
+            str2 = "*".equals(str) ? "9" + str2 : "0" + str2;
         }
         return str2;
     }
@@ -82,17 +78,15 @@ public class ChooseCountryFragment extends KeyBoardFragment {
     private void h() {
         this.m = (AreaCodeSectionBar) this.k.findViewById(R.id.ac_sb);
         this.n = (ListView) this.k.findViewById(R.id.ac_lv);
-        this.o = (KeyboardListenLinearLayout) this.k.findViewById(2131366091);
-        this.p = this.k.findViewById(2131366095);
-        SearchView searchView = (SearchView) this.k.findViewById(2131369680);
-        this.f33825c = searchView;
-        searchView.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.user.fragment.ChooseCountryFragment.2
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
+        this.o = this.k.findViewById(R.id.keyboardRelativeLayout);
+        this.p = this.k.findViewById(R.id.keyboard_view);
+        SearchView findViewById = this.k.findViewById(R.id.search_view);
+        this.f20134c = findViewById;
+        findViewById.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.user.fragment.ChooseCountryFragment.2
             public void a() {
                 KeyboardUtils.a(ChooseCountryFragment.this.getActivity());
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 if (ChooseCountryFragment.this.b != null) {
                     ChooseCountryFragment.this.b.b(str);
@@ -100,17 +94,16 @@ public class ChooseCountryFragment extends KeyBoardFragment {
                 }
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
     }
 
     private void i() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.k.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(2131887002));
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseCountryFragment.3
+        CommonTopTitleNoTrans findViewById = this.k.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(2131887002));
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseCountryFragment.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -120,7 +113,7 @@ public class ChooseCountryFragment extends KeyBoardFragment {
     }
 
     private void j() {
-        List<Country> countryCodeList = AreaUtils.getCountryCodeList();
+        List countryCodeList = AreaUtils.getCountryCodeList();
         Collections.sort(countryCodeList, new Comparator<Country>() { // from class: com.soft.blued.ui.user.fragment.ChooseCountryFragment.4
             @Override // java.util.Comparator
             /* renamed from: a */
@@ -143,20 +136,20 @@ public class ChooseCountryFragment extends KeyBoardFragment {
                         Country country = (Country) ChooseCountryFragment.this.l.get(i3);
                         if ("1".equals(country.has_child)) {
                             ChooseCountryFragment chooseCountryFragment = ChooseCountryFragment.this;
-                            ChooseCityFragment.a(chooseCountryFragment, country.continent + BridgeUtil.UNDERLINE_STR + country.nation_code, country.nation);
+                            ChooseCityFragment.a(chooseCountryFragment, country.continent + "_" + country.nation_code, country.nation);
                             return;
                         }
                         ChooseCountryFragment chooseCountryFragment2 = ChooseCountryFragment.this;
-                        chooseCountryFragment2.a(country.continent + BridgeUtil.UNDERLINE_STR + country.nation_code + "_000000");
+                        chooseCountryFragment2.a(country.continent + "_" + country.nation_code + "_000000");
                     }
                 });
-                Country country = new Country(this.j.getResources().getString(2131887000).replace(BridgeUtil.UNDERLINE_STR, ""), "156", "CN", "CN", "1", 1);
+                Country country = new Country(this.j.getResources().getString(2131887000).replace("_", ""), "156", "CN", "CN", "1", 1);
                 country.group_by = getResources().getString(R.string.position_now);
                 this.b.a(country);
                 this.b.notifyDataSetChanged();
                 return;
             }
-            this.l.add(countryCodeList.get(i2));
+            this.l.add((Country) countryCodeList.get(i2));
             i = i2 + 1;
         }
     }
@@ -165,7 +158,6 @@ public class ChooseCountryFragment extends KeyBoardFragment {
         super.a(keyboardListenLinearLayout);
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         if (BluedConstant.e == BluedConstant.g || BluedConstant.e == BluedConstant.f) {
             return;
@@ -179,7 +171,7 @@ public class ChooseCountryFragment extends KeyBoardFragment {
                         return false;
                     }
                     Rect rect = new Rect();
-                    ChooseCountryFragment.this.f33825c.getFocusedRect(rect);
+                    ChooseCountryFragment.this.f20134c.getFocusedRect(rect);
                     if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                         return false;
                     }
@@ -187,7 +179,7 @@ public class ChooseCountryFragment extends KeyBoardFragment {
                     return false;
                 }
             });
-            SearchView searchView = this.f33825c;
+            SearchView searchView = this.f20134c;
             if (searchView != null) {
                 searchView.a(true);
             }
@@ -195,14 +187,13 @@ public class ChooseCountryFragment extends KeyBoardFragment {
         } else {
             this.p.setVisibility(8);
             this.p.setOnTouchListener(null);
-            SearchView searchView2 = this.f33825c;
+            SearchView searchView2 = this.f20134c;
             if (searchView2 != null) {
                 searchView2.a(false);
             }
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && intent != null && !StringUtils.d(intent.getStringExtra("areacode"))) {
             a(intent.getStringExtra("areacode"));
@@ -210,7 +201,6 @@ public class ChooseCountryFragment extends KeyBoardFragment {
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.j = getActivity();
         if (this.k == null) {

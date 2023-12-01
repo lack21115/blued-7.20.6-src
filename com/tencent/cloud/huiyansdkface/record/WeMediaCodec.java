@@ -17,11 +17,11 @@ public class WeMediaCodec {
     private static int g;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36054a;
+    private int f22363a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MediaCodec f36055c;
+    private MediaCodec f22364c;
     private NV21Convert d;
     private WbRecordFinishListener e;
     private boolean f;
@@ -65,11 +65,11 @@ public class WeMediaCodec {
             e.printStackTrace();
         }
         this.s = null;
-        MediaCodec mediaCodec = this.f36055c;
+        MediaCodec mediaCodec = this.f22364c;
         if (mediaCodec != null) {
             mediaCodec.stop();
-            this.f36055c.release();
-            this.f36055c = null;
+            this.f22364c.release();
+            this.f22364c = null;
         }
     }
 
@@ -80,20 +80,20 @@ public class WeMediaCodec {
     public boolean initMediaCodec(Context context) {
         WLogger.i("WeMediaCodec", "initMediaCodec");
         g = 0;
-        this.f36054a = 30;
+        this.f22363a = 30;
         this.b = 1000000;
         try {
             EncoderDebugger debug = EncoderDebugger.debug(context, this.h, this.i);
             this.d = debug.getNV21Convertor();
             this.q = debug.getEncoderColorFormat();
-            this.f36055c = MediaCodec.createByCodecName(debug.getEncoderName());
+            this.f22364c = MediaCodec.createByCodecName(debug.getEncoderName());
             MediaFormat createVideoFormat = MediaFormat.createVideoFormat("video/avc", this.h, this.i);
             createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, this.b);
-            createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, this.f36054a);
+            createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, this.f22363a);
             createVideoFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, debug.getEncoderColorFormat());
             createVideoFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 5);
-            this.f36055c.configure(createVideoFormat, null, null, 1);
-            this.f36055c.start();
+            this.f22364c.configure(createVideoFormat, null, null, 1);
+            this.f22364c.start();
             return true;
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,10 +117,10 @@ public class WeMediaCodec {
             }
             return;
         }
-        ByteBuffer[] inputBuffers = this.f36055c.getInputBuffers();
-        ByteBuffer[] outputBuffers = this.f36055c.getOutputBuffers();
+        ByteBuffer[] inputBuffers = this.f22364c.getInputBuffers();
+        ByteBuffer[] outputBuffers = this.f22364c.getOutputBuffers();
         try {
-            int dequeueInputBuffer = this.f36055c.dequeueInputBuffer(10000L);
+            int dequeueInputBuffer = this.f22364c.dequeueInputBuffer(10000L);
             if (dequeueInputBuffer < 0) {
                 WLogger.e("WeMediaCodec", "No buffer available !");
                 return;
@@ -128,9 +128,9 @@ public class WeMediaCodec {
             inputBuffers[dequeueInputBuffer].clear();
             this.m.NV21ToTarget(bArr, this.p, this.h, this.i, this.q, this.r, this.n, this.o);
             inputBuffers[dequeueInputBuffer].put(this.p, 0, this.p.length);
-            this.f36055c.queueInputBuffer(dequeueInputBuffer, 0, inputBuffers[dequeueInputBuffer].position(), System.nanoTime() / 1000, 0);
+            this.f22364c.queueInputBuffer(dequeueInputBuffer, 0, inputBuffers[dequeueInputBuffer].position(), System.nanoTime() / 1000, 0);
             MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
-            int dequeueOutputBuffer = this.f36055c.dequeueOutputBuffer(bufferInfo, 0L);
+            int dequeueOutputBuffer = this.f22364c.dequeueOutputBuffer(bufferInfo, 0L);
             g++;
             WLogger.d("WeMediaCodec", "video frame count=" + g);
             while (dequeueOutputBuffer >= 0) {
@@ -153,8 +153,8 @@ public class WeMediaCodec {
                                     bArr2 = bArr3;
                                     if (bArr3[4] == 101) {
                                         bArr2 = new byte[this.k.length + i];
-                                        System.arraycopy((Object) this.k, 0, (Object) bArr2, 0, this.k.length);
-                                        System.arraycopy((Object) bArr3, 0, (Object) bArr2, this.k.length, i);
+                                        System.arraycopy(this.k, 0, bArr2, 0, this.k.length);
+                                        System.arraycopy(bArr3, 0, bArr2, this.k.length, i);
                                     }
                                 }
                             }
@@ -162,8 +162,8 @@ public class WeMediaCodec {
                     }
                 }
                 this.s.write(bArr2);
-                this.f36055c.releaseOutputBuffer(dequeueOutputBuffer, false);
-                dequeueOutputBuffer = this.f36055c.dequeueOutputBuffer(bufferInfo, 0L);
+                this.f22364c.releaseOutputBuffer(dequeueOutputBuffer, false);
+                dequeueOutputBuffer = this.f22364c.dequeueOutputBuffer(bufferInfo, 0L);
             }
         } catch (Exception e) {
             StringWriter stringWriter = new StringWriter();

@@ -8,11 +8,11 @@ import java.nio.FloatBuffer;
 public final /* synthetic */ class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f36579a;
+    private final int f22888a;
     private final float[] b;
 
     private e(int i, float[] fArr) {
-        this.f36579a = i;
+        this.f22888a = i;
         this.b = fArr;
     }
 
@@ -22,6 +22,6 @@ public final /* synthetic */ class e implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        GLES20.glUniform2fv(this.f36579a, 1, FloatBuffer.wrap(this.b));
+        GLES20.glUniform2fv(this.f22888a, 1, FloatBuffer.wrap(this.b));
     }
 }

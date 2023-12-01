@@ -4,9 +4,9 @@ package com.umeng.analytics.pro;
 public final class by {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte f40673a = 1;
+    public static final byte f26982a = 1;
     public static final byte b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte f40674c = 3;
+    public static final byte f26983c = 3;
 }

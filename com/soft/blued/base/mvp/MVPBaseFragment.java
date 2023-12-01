@@ -23,11 +23,11 @@ import com.soft.blued.base.mvp.MVPBasePresent;
 public abstract class MVPBaseFragment<V, T extends MVPBasePresent<V>> extends BaseFragment implements MVPIView {
 
     /* renamed from: a  reason: collision with root package name */
-    public T f28293a;
+    public T f14603a;
     protected Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected RelativeLayout f28294c;
+    protected RelativeLayout f14604c;
     protected FrameLayout d;
     protected FrameLayout e;
     protected CommonTopTitleNoTrans f;
@@ -37,34 +37,34 @@ public abstract class MVPBaseFragment<V, T extends MVPBasePresent<V>> extends Ba
 
     public View a(int i, LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         RelativeLayout relativeLayout = (RelativeLayout) layoutInflater.inflate(R.layout.fragment_base, (ViewGroup) null);
-        this.f28294c = relativeLayout;
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) relativeLayout.findViewById(2131370694);
-        this.f = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.base.mvp.MVPBaseFragment.1
+        this.f14604c = relativeLayout;
+        CommonTopTitleNoTrans findViewById = relativeLayout.findViewById(2131370694);
+        this.f = findViewById;
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.base.mvp.MVPBaseFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 MVPBaseFragment.this.getActivity().finish();
             }
         });
-        FrameLayout frameLayout = (FrameLayout) this.f28294c.findViewById(R.id.content_v);
+        FrameLayout frameLayout = (FrameLayout) this.f14604c.findViewById(R.id.content_v);
         this.d = frameLayout;
         layoutInflater.inflate(i, frameLayout);
-        this.g = (NestedScrollView) this.f28294c.findViewById(R.id.error_view);
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) this.f28294c.findViewById(R.id.nodataview);
-        this.h = noDataAndLoadFailView;
-        noDataAndLoadFailView.setBackgroundColorRes(2131101191);
-        this.e = (FrameLayout) this.f28294c.findViewById(R.id.guide_v);
-        this.i = this.f28294c.findViewById(R.id.base_loading);
+        this.g = (NestedScrollView) this.f14604c.findViewById(R.id.error_view);
+        NoDataAndLoadFailView findViewById2 = this.f14604c.findViewById(R.id.nodataview);
+        this.h = findViewById2;
+        findViewById2.setBackgroundColorRes(2131101191);
+        this.e = (FrameLayout) this.f14604c.findViewById(R.id.guide_v);
+        this.i = this.f14604c.findViewById(R.id.base_loading);
         b(bundle);
         T e = e();
-        this.f28293a = e;
+        this.f14603a = e;
         if (e != null) {
             e.a(this);
-            this.f28293a.a(bundle);
+            this.f14603a.a(bundle);
         }
         f();
-        return this.f28294c;
+        return this.f14604c;
     }
 
     public void a() {
@@ -157,24 +157,21 @@ public abstract class MVPBaseFragment<V, T extends MVPBasePresent<V>> extends Ba
         return super.getActivity();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
-        T t = this.f28293a;
+        T t = this.f14603a;
         if (t != null) {
             t.a(getActivity(), i, i2, intent);
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.b = getContext();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
-        T t = this.f28293a;
+        T t = this.f14603a;
         if (t != null) {
             t.b();
         }
@@ -182,11 +179,10 @@ public abstract class MVPBaseFragment<V, T extends MVPBasePresent<V>> extends Ba
         LogUtils.b(MVPBaseFragment.class.getSimpleName() + " onDestroy()");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         T t;
         super.onSaveInstanceState(bundle);
-        if (a(bundle) || (t = this.f28293a) == null) {
+        if (a(bundle) || (t = this.f14603a) == null) {
             return;
         }
         t.b(bundle);

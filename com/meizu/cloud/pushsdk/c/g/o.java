@@ -2,12 +2,11 @@ package com.meizu.cloud.pushsdk.c.g;
 
 import java.nio.charset.Charset;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/c/g/o.class */
-public final class o {
+final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Charset f24078a = Charset.forName("UTF-8");
+    public static final Charset f10467a = Charset.forName("UTF-8");
 
     public static void a(long j, long j2, long j3) {
         if ((j2 | j3) < 0 || j2 > j || j - j2 < j3) {

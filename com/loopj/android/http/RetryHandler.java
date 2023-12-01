@@ -13,9 +13,8 @@ import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.protocol.HttpContext;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/loopj/android/http/RetryHandler.class */
-public class RetryHandler implements HttpRequestRetryHandler {
+class RetryHandler implements HttpRequestRetryHandler {
     private final int maxRetries;
     private final int retrySleepTimeMS;
     private static final HashSet<Class<?>> exceptionWhitelist = new HashSet<>();

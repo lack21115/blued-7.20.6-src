@@ -148,15 +148,15 @@ public class SobotCusFieldAdapter extends SobotBaseAdapter<SobotCusFieldDataInfo
             this.myViewHolder.categorySmallIshave.setVisibility(8);
             this.myViewHolder.categorySmallCheckBox.setVisibility(0);
             if (this.displayList.get(i).isChecked()) {
-                this.myViewHolder.categorySmallCheckBox.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_post_category_checkbox_pressed"));
+                this.myViewHolder.categorySmallCheckBox.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_post_category_checkbox_pressed"));
             } else {
-                this.myViewHolder.categorySmallCheckBox.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_post_category_checkbox_normal"));
+                this.myViewHolder.categorySmallCheckBox.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_post_category_checkbox_normal"));
             }
         } else {
             this.myViewHolder.categorySmallCheckBox.setVisibility(8);
             if (this.displayList.get(i).isChecked()) {
                 this.myViewHolder.categorySmallIshave.setVisibility(0);
-                this.myViewHolder.categorySmallIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_work_order_selected_mark"));
+                this.myViewHolder.categorySmallIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_work_order_selected_mark"));
             } else {
                 this.myViewHolder.categorySmallIshave.setVisibility(8);
             }

@@ -5,12 +5,10 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/PoolingByteArrayOutputStream.class */
 public class PoolingByteArrayOutputStream extends ByteArrayOutputStream {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ByteArrayPool f9737a;
+    private final ByteArrayPool a;
 
     public PoolingByteArrayOutputStream(ByteArrayPool byteArrayPool, int i) {
-        this.f9737a = byteArrayPool;
+        this.a = byteArrayPool;
         this.buf = byteArrayPool.a(Math.max(i, 256));
     }
 
@@ -18,21 +16,21 @@ public class PoolingByteArrayOutputStream extends ByteArrayOutputStream {
         if (this.count + i <= this.buf.length) {
             return;
         }
-        byte[] a2 = this.f9737a.a((this.count + i) * 2);
-        System.arraycopy((Object) this.buf, 0, (Object) a2, 0, this.count);
-        this.f9737a.a(this.buf);
-        this.buf = a2;
+        byte[] a = this.a.a((this.count + i) * 2);
+        System.arraycopy((Object) this.buf, 0, (Object) a, 0, this.count);
+        this.a.a(this.buf);
+        this.buf = a;
     }
 
     @Override // java.io.ByteArrayOutputStream, java.io.OutputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f9737a.a(this.buf);
+        this.a.a(this.buf);
         this.buf = null;
         super.close();
     }
 
     public void finalize() {
-        this.f9737a.a(this.buf);
+        this.a.a(this.buf);
     }
 
     @Override // java.io.ByteArrayOutputStream, java.io.OutputStream

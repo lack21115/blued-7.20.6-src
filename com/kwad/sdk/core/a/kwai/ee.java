@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.a.kwai;
 
+import com.anythink.pd.ExHandler;
 import com.kwad.sdk.core.config.item.h;
 import org.json.JSONObject;
 
@@ -10,7 +11,7 @@ public final class ee implements com.kwad.sdk.core.d<h.a> {
         if (jSONObject == null) {
             return;
         }
-        aVar.adV = jSONObject.optString("imei");
+        aVar.adV = jSONObject.optString(ExHandler.JSON_REQUEST_IMEI);
         if (aVar.adV == JSONObject.NULL) {
             aVar.adV = "";
         }
@@ -27,7 +28,7 @@ public final class ee implements com.kwad.sdk.core.d<h.a> {
             jSONObject2 = new JSONObject();
         }
         if (aVar.adV != null && !aVar.adV.equals("")) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "imei", aVar.adV);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, ExHandler.JSON_REQUEST_IMEI, aVar.adV);
         }
         if (aVar.adW != null && !aVar.adW.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "oaid", aVar.adW);

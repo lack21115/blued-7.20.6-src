@@ -3,7 +3,6 @@ package android.database.sqlite;
 import android.content.res.Resources;
 import android.os.StatFs;
 import android.os.SystemProperties;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/database/sqlite/SQLiteGlobal.class */
 public final class SQLiteGlobal {
@@ -15,7 +14,7 @@ public final class SQLiteGlobal {
     }
 
     public static String getDefaultJournalMode() {
-        return SystemProperties.get("debug.sqlite.journalmode", Resources.getSystem().getString(R.string.db_default_journal_mode));
+        return SystemProperties.get("debug.sqlite.journalmode", Resources.getSystem().getString(17039604));
     }
 
     public static int getDefaultPageSize() {
@@ -30,23 +29,23 @@ public final class SQLiteGlobal {
     }
 
     public static String getDefaultSyncMode() {
-        return SystemProperties.get("debug.sqlite.syncmode", Resources.getSystem().getString(R.string.db_default_sync_mode));
+        return SystemProperties.get("debug.sqlite.syncmode", Resources.getSystem().getString(17039605));
     }
 
     public static int getJournalSizeLimit() {
-        return SystemProperties.getInt("debug.sqlite.journalsizelimit", Resources.getSystem().getInteger(R.integer.db_journal_size_limit));
+        return SystemProperties.getInt("debug.sqlite.journalsizelimit", Resources.getSystem().getInteger(17694829));
     }
 
     public static int getWALAutoCheckpoint() {
-        return Math.max(1, SystemProperties.getInt("debug.sqlite.wal.autocheckpoint", Resources.getSystem().getInteger(R.integer.db_wal_autocheckpoint)));
+        return Math.max(1, SystemProperties.getInt("debug.sqlite.wal.autocheckpoint", Resources.getSystem().getInteger(17694830)));
     }
 
     public static int getWALConnectionPoolSize() {
-        return Math.max(2, SystemProperties.getInt("debug.sqlite.wal.poolsize", Resources.getSystem().getInteger(R.integer.db_connection_pool_size)));
+        return Math.max(2, SystemProperties.getInt("debug.sqlite.wal.poolsize", Resources.getSystem().getInteger(17694828)));
     }
 
     public static String getWALSyncMode() {
-        return SystemProperties.get("debug.sqlite.wal.syncmode", Resources.getSystem().getString(R.string.db_wal_sync_mode));
+        return SystemProperties.get("debug.sqlite.wal.syncmode", Resources.getSystem().getString(17039606));
     }
 
     private static native int nativeReleaseMemory();

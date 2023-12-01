@@ -17,19 +17,17 @@ import java.net.URL;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/drawable/apng/ApngImageLoadingListener.class */
 public class ApngImageLoadingListener extends BaseImageLoadingListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ApngPlayListener f9636a;
+    private ApngPlayListener a;
     private boolean b;
 
     private ApngDrawable a(String str, ImageView.ScaleType scaleType, Drawable drawable) {
-        File a2 = a(str);
+        File a = a(str);
         Bitmap bitmap = null;
-        if ((a2 == null || !a2.exists()) ? false : ApngDrawable.a(a2)) {
+        if ((a == null || !a.exists()) ? false : ApngDrawable.a(a)) {
             if (drawable instanceof BitmapDrawable) {
                 bitmap = ((BitmapDrawable) drawable).getBitmap();
             }
-            return new RecyclingApngDrawable(str, bitmap, Uri.fromFile(a2), scaleType);
+            return new RecyclingApngDrawable(str, bitmap, Uri.fromFile(a), scaleType);
         }
         return null;
     }
@@ -69,16 +67,16 @@ public class ApngImageLoadingListener extends BaseImageLoadingListener {
             super.a(str, recyclingImageView, loadOptions, drawable, z);
             apngDrawable = (ApngDrawable) drawable;
         } else {
-            ApngDrawable a2 = a(str, recyclingImageView.getScaleType(), drawable);
-            if (a2 != null) {
-                recyclingImageView.setImageDrawable(a2);
+            ApngDrawable a = a(str, recyclingImageView.getScaleType(), drawable);
+            if (a != null) {
+                recyclingImageView.setImageDrawable(a);
             } else {
                 super.a(str, recyclingImageView, loadOptions, drawable, z);
             }
-            apngDrawable = a2;
+            apngDrawable = a;
         }
         if (apngDrawable == null) {
-            ApngPlayListener apngPlayListener = this.f9636a;
+            ApngPlayListener apngPlayListener = this.a;
             if (apngPlayListener != null) {
                 apngPlayListener.b(null);
                 return;
@@ -86,7 +84,7 @@ public class ApngImageLoadingListener extends BaseImageLoadingListener {
             return;
         }
         apngDrawable.g();
-        apngDrawable.a(this.f9636a);
+        apngDrawable.a(this.a);
         if (this.b) {
             apngDrawable.a(1);
         }

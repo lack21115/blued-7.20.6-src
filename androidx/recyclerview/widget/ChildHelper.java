@@ -11,18 +11,18 @@ import java.util.List;
 public class ChildHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    final Callback f3232a;
+    final Callback f3184a;
     final Bucket b = new Bucket();
 
     /* renamed from: c  reason: collision with root package name */
-    final List<View> f3233c = new ArrayList();
+    final List<View> f3185c = new ArrayList();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/recyclerview/widget/ChildHelper$Bucket.class */
     public static class Bucket {
 
         /* renamed from: a  reason: collision with root package name */
-        long f3234a = 0;
+        long f3186a = 0;
         Bucket b;
 
         Bucket() {
@@ -35,7 +35,7 @@ public class ChildHelper {
         }
 
         void a() {
-            this.f3234a = 0L;
+            this.f3186a = 0L;
             Bucket bucket = this.b;
             if (bucket != null) {
                 bucket.a();
@@ -44,7 +44,7 @@ public class ChildHelper {
 
         void a(int i) {
             if (i < 64) {
-                this.f3234a |= 1 << i;
+                this.f3186a |= 1 << i;
                 return;
             }
             b();
@@ -53,7 +53,7 @@ public class ChildHelper {
 
         void b(int i) {
             if (i < 64) {
-                this.f3234a &= 1 << i;
+                this.f3186a &= 1 << i;
                 return;
             }
             Bucket bucket = this.b;
@@ -64,7 +64,7 @@ public class ChildHelper {
 
         boolean c(int i) {
             if (i < 64) {
-                return (this.f3234a & (1 << i)) != 0;
+                return (this.f3186a & (1 << i)) != 0;
             }
             b();
             return this.b.c(i - 64);
@@ -76,11 +76,11 @@ public class ChildHelper {
                 return this.b.d(i - 64);
             }
             long j = 1 << i;
-            boolean z = (this.f3234a & j) != 0;
-            long j2 = this.f3234a & j;
-            this.f3234a = j2;
+            boolean z = (this.f3186a & j) != 0;
+            long j2 = this.f3186a & j;
+            this.f3186a = j2;
             long j3 = j - 1;
-            this.f3234a = (j2 & j3) | Long.rotateRight(j3 & j2, 1);
+            this.f3186a = (j2 & j3) | Long.rotateRight(j3 & j2, 1);
             Bucket bucket = this.b;
             if (bucket != null) {
                 if (bucket.c(0)) {
@@ -93,7 +93,7 @@ public class ChildHelper {
 
         int e(int i) {
             Bucket bucket = this.b;
-            return bucket == null ? i >= 64 ? Long.bitCount(this.f3234a) : Long.bitCount(this.f3234a & ((1 << i) - 1)) : i < 64 ? Long.bitCount(this.f3234a & ((1 << i) - 1)) : bucket.e(i - 64) + Long.bitCount(this.f3234a);
+            return bucket == null ? i >= 64 ? Long.bitCount(this.f3186a) : Long.bitCount(this.f3186a & ((1 << i) - 1)) : i < 64 ? Long.bitCount(this.f3186a & ((1 << i) - 1)) : bucket.e(i - 64) + Long.bitCount(this.f3186a);
         }
 
         void insert(int i, boolean z) {
@@ -102,10 +102,10 @@ public class ChildHelper {
                 this.b.insert(i - 64, z);
                 return;
             }
-            boolean z2 = (this.f3234a & Long.MIN_VALUE) != 0;
+            boolean z2 = (this.f3186a & Long.MIN_VALUE) != 0;
             long j = (1 << i) - 1;
-            long j2 = this.f3234a;
-            this.f3234a = ((j2 & j) << 1) | (j2 & j);
+            long j2 = this.f3186a;
+            this.f3186a = ((j2 & j) << 1) | (j2 & j);
             if (z) {
                 a(i);
             } else {
@@ -119,9 +119,9 @@ public class ChildHelper {
 
         public String toString() {
             if (this.b == null) {
-                return Long.toBinaryString(this.f3234a);
+                return Long.toBinaryString(this.f3186a);
             }
-            return this.b.toString() + "xx" + Long.toBinaryString(this.f3234a);
+            return this.b.toString() + "xx" + Long.toBinaryString(this.f3186a);
         }
     }
 
@@ -153,14 +153,14 @@ public class ChildHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ChildHelper(Callback callback) {
-        this.f3232a = callback;
+        this.f3184a = callback;
     }
 
     private int f(int i) {
         if (i < 0) {
             return -1;
         }
-        int childCount = this.f3232a.getChildCount();
+        int childCount = this.f3184a.getChildCount();
         int i2 = i;
         while (true) {
             int i3 = i2;
@@ -179,13 +179,13 @@ public class ChildHelper {
     }
 
     private void g(View view) {
-        this.f3233c.add(view);
-        this.f3232a.onEnteredHiddenState(view);
+        this.f3185c.add(view);
+        this.f3184a.onEnteredHiddenState(view);
     }
 
     private boolean h(View view) {
-        if (this.f3233c.remove(view)) {
-            this.f3232a.onLeftHiddenState(view);
+        if (this.f3185c.remove(view)) {
+            this.f3184a.onLeftHiddenState(view);
             return true;
         }
         return false;
@@ -194,15 +194,15 @@ public class ChildHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
         this.b.a();
-        int size = this.f3233c.size();
+        int size = this.f3185c.size();
         while (true) {
             int i = size - 1;
             if (i < 0) {
-                this.f3232a.removeAllViews();
+                this.f3184a.removeAllViews();
                 return;
             }
-            this.f3232a.onLeftHiddenState(this.f3233c.get(i));
-            this.f3233c.remove(i);
+            this.f3184a.onLeftHiddenState(this.f3185c.get(i));
+            this.f3185c.remove(i);
             size = i;
         }
     }
@@ -210,46 +210,46 @@ public class ChildHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(int i) {
         int f = f(i);
-        View childAt = this.f3232a.getChildAt(f);
+        View childAt = this.f3184a.getChildAt(f);
         if (childAt == null) {
             return;
         }
         if (this.b.d(f)) {
             h(childAt);
         }
-        this.f3232a.removeViewAt(f);
+        this.f3184a.removeViewAt(f);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(View view) {
-        int indexOfChild = this.f3232a.indexOfChild(view);
+        int indexOfChild = this.f3184a.indexOfChild(view);
         if (indexOfChild < 0) {
             return;
         }
         if (this.b.d(indexOfChild)) {
             h(view);
         }
-        this.f3232a.removeViewAt(indexOfChild);
+        this.f3184a.removeViewAt(indexOfChild);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(View view, int i, ViewGroup.LayoutParams layoutParams, boolean z) {
-        int childCount = i < 0 ? this.f3232a.getChildCount() : f(i);
+        int childCount = i < 0 ? this.f3184a.getChildCount() : f(i);
         this.b.insert(childCount, z);
         if (z) {
             g(view);
         }
-        this.f3232a.attachViewToParent(view, childCount, layoutParams);
+        this.f3184a.attachViewToParent(view, childCount, layoutParams);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(View view, int i, boolean z) {
-        int childCount = i < 0 ? this.f3232a.getChildCount() : f(i);
+        int childCount = i < 0 ? this.f3184a.getChildCount() : f(i);
         this.b.insert(childCount, z);
         if (z) {
             g(view);
         }
-        this.f3232a.addView(view, childCount);
+        this.f3184a.addView(view, childCount);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -259,12 +259,12 @@ public class ChildHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int b() {
-        return this.f3232a.getChildCount() - this.f3233c.size();
+        return this.f3184a.getChildCount() - this.f3185c.size();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int b(View view) {
-        int indexOfChild = this.f3232a.indexOfChild(view);
+        int indexOfChild = this.f3184a.indexOfChild(view);
         if (indexOfChild == -1 || this.b.c(indexOfChild)) {
             return -1;
         }
@@ -273,25 +273,25 @@ public class ChildHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public View b(int i) {
-        return this.f3232a.getChildAt(f(i));
+        return this.f3184a.getChildAt(f(i));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int c() {
-        return this.f3232a.getChildCount();
+        return this.f3184a.getChildCount();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public View c(int i) {
-        int size = this.f3233c.size();
+        int size = this.f3185c.size();
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (i3 >= size) {
                 return null;
             }
-            View view = this.f3233c.get(i3);
-            RecyclerView.ViewHolder childViewHolder = this.f3232a.getChildViewHolder(view);
+            View view = this.f3185c.get(i3);
+            RecyclerView.ViewHolder childViewHolder = this.f3184a.getChildViewHolder(view);
             if (childViewHolder.getLayoutPosition() == i && !childViewHolder.isInvalid() && !childViewHolder.isRemoved()) {
                 return view;
             }
@@ -301,17 +301,17 @@ public class ChildHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean c(View view) {
-        return this.f3233c.contains(view);
+        return this.f3185c.contains(view);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public View d(int i) {
-        return this.f3232a.getChildAt(i);
+        return this.f3184a.getChildAt(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void d(View view) {
-        int indexOfChild = this.f3232a.indexOfChild(view);
+        int indexOfChild = this.f3184a.indexOfChild(view);
         if (indexOfChild >= 0) {
             this.b.a(indexOfChild);
             g(view);
@@ -324,12 +324,12 @@ public class ChildHelper {
     public void e(int i) {
         int f = f(i);
         this.b.d(f);
-        this.f3232a.detachViewFromParent(f);
+        this.f3184a.detachViewFromParent(f);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void e(View view) {
-        int indexOfChild = this.f3232a.indexOfChild(view);
+        int indexOfChild = this.f3184a.indexOfChild(view);
         if (indexOfChild < 0) {
             throw new IllegalArgumentException("view is not a child, cannot hide " + view);
         } else if (this.b.c(indexOfChild)) {
@@ -342,14 +342,14 @@ public class ChildHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean f(View view) {
-        int indexOfChild = this.f3232a.indexOfChild(view);
+        int indexOfChild = this.f3184a.indexOfChild(view);
         if (indexOfChild == -1) {
             h(view);
             return true;
         } else if (this.b.c(indexOfChild)) {
             this.b.d(indexOfChild);
             h(view);
-            this.f3232a.removeViewAt(indexOfChild);
+            this.f3184a.removeViewAt(indexOfChild);
             return true;
         } else {
             return false;
@@ -357,6 +357,6 @@ public class ChildHelper {
     }
 
     public String toString() {
-        return this.b.toString() + ", hidden list:" + this.f3233c.size();
+        return this.b.toString() + ", hidden list:" + this.f3185c.size();
     }
 }

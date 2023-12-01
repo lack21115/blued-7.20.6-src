@@ -5,10 +5,10 @@ package com.tencent.liteav.videoproducer.capture;
 public final /* synthetic */ class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CameraCaptureSingleton f36931a;
+    private final CameraCaptureSingleton f23240a;
 
     private i(CameraCaptureSingleton cameraCaptureSingleton) {
-        this.f36931a = cameraCaptureSingleton;
+        this.f23240a = cameraCaptureSingleton;
     }
 
     public static Runnable a(CameraCaptureSingleton cameraCaptureSingleton) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class i implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        r0.resumeInternal(this.f36931a.mCurrentCaptureParams);
+        r0.resumeInternal(this.f23240a.mCurrentCaptureParams);
     }
 }

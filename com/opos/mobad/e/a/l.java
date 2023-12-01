@@ -6,11 +6,11 @@ import android.view.MotionEvent;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public MotionEvent f25998a;
+    public MotionEvent f12310a;
     public MotionEvent b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f25999c;
+    public int f12311c;
     public int d;
     public long e;
     public int f;
@@ -18,6 +18,6 @@ public class l {
     public long h;
 
     public String toString() {
-        return "MatEvent{downEvent=" + this.f25998a + ", upEvent=" + this.b + ", downX=" + this.f25999c + ", downY=" + this.d + ", downTime=" + this.e + ", upX=" + this.f + ", upY=" + this.g + ", upTime=" + this.h + '}';
+        return "MatEvent{downEvent=" + this.f12310a + ", upEvent=" + this.b + ", downX=" + this.f12311c + ", downY=" + this.d + ", downTime=" + this.e + ", upX=" + this.f + ", upY=" + this.g + ", upTime=" + this.h + '}';
     }
 }

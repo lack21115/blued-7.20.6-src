@@ -200,7 +200,7 @@ public final class k {
 
     public static Context dl(Context context) {
         checkInit();
-        if (((com.kwad.sdk.service.kwai.e) ServiceProvider.get(com.kwad.sdk.service.kwai.e.class)).getIsExternal() && !m7853do(context)) {
+        if (((com.kwad.sdk.service.kwai.e) ServiceProvider.get(com.kwad.sdk.service.kwai.e.class)).getIsExternal() && !m4846do(context)) {
             return dm(dg(context) ? i.de(context) : j.unwrapContextIfNeed(context));
         }
         return context;
@@ -224,7 +224,7 @@ public final class k {
     }
 
     /* renamed from: do  reason: not valid java name */
-    public static boolean m7853do(Context context) {
+    public static boolean m4846do(Context context) {
         return (dg(context) || j.dg(context)) ? false : true;
     }
 
@@ -237,7 +237,7 @@ public final class k {
         if (context2 instanceof a) {
             context3 = ((a) context2).getDelegatedContext();
         }
-        if (m7853do(context3)) {
+        if (m4846do(context3)) {
             return context3;
         }
         Context context4 = context3;
@@ -250,7 +250,7 @@ public final class k {
             if (context5 instanceof a) {
                 context4 = ((a) context5).getDelegatedContext();
             }
-            if (m7853do(context4)) {
+            if (m4846do(context4)) {
                 return context4;
             }
         }

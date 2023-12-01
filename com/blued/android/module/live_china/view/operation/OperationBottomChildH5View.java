@@ -19,20 +19,16 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/operation/OperationBottomChildH5View.class */
 public final class OperationBottomChildH5View extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15359a;
+    private final Context a;
     private final Lazy b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f15360c;
+    private BaseFragment c;
     private LiveRoomOperationModel d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public OperationBottomChildH5View(Context mContext) {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
-        this.f15359a = mContext;
+        this.a = mContext;
         this.b = LazyKt.a(new Function0<LiveOperationBottomChildH5ViewBinding>() { // from class: com.blued.android.module.live_china.view.operation.OperationBottomChildH5View$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -42,9 +38,9 @@ public final class OperationBottomChildH5View extends RelativeLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveOperationBottomChildH5ViewBinding invoke() {
-                LiveOperationBottomChildH5ViewBinding a2 = LiveOperationBottomChildH5ViewBinding.a(LayoutInflater.from(OperationBottomChildH5View.this.getMContext()).inflate(R.layout.live_operation_bottom_child_h5_view, OperationBottomChildH5View.this));
-                Intrinsics.c(a2, "bind(\n            Layout…_h5_view, this)\n        )");
-                return a2;
+                LiveOperationBottomChildH5ViewBinding a = LiveOperationBottomChildH5ViewBinding.a(LayoutInflater.from(OperationBottomChildH5View.this.getMContext()).inflate(R.layout.live_operation_bottom_child_h5_view, OperationBottomChildH5View.this));
+                Intrinsics.c(a, "bind(\n            Layout…_h5_view, this)\n        )");
+                return a;
             }
         });
     }
@@ -61,7 +57,7 @@ public final class OperationBottomChildH5View extends RelativeLayout {
         if (baseFragment == null) {
             return null;
         }
-        this.f15360c = baseFragment;
+        this.c = baseFragment;
         if (a(liveRoomOperationModel)) {
             return this;
         }
@@ -75,7 +71,7 @@ public final class OperationBottomChildH5View extends RelativeLayout {
         if (model.getIcon() == null) {
             return false;
         }
-        BaseFragment baseFragment = this.f15360c;
+        BaseFragment baseFragment = this.c;
         if (baseFragment == null || (fragmentActive = baseFragment.getFragmentActive()) == null) {
             return false;
         }
@@ -84,7 +80,7 @@ public final class OperationBottomChildH5View extends RelativeLayout {
     }
 
     public final Context getMContext() {
-        return this.f15359a;
+        return this.a;
     }
 
     public final LiveRoomOperationModel getModel() {
@@ -92,7 +88,7 @@ public final class OperationBottomChildH5View extends RelativeLayout {
     }
 
     public final ShapeRelativeLayout getRedDot() {
-        ShapeRelativeLayout shapeRelativeLayout = getVb().f12304a;
+        ShapeRelativeLayout shapeRelativeLayout = getVb().a;
         Intrinsics.c(shapeRelativeLayout, "vb.ivH5WellDot");
         return shapeRelativeLayout;
     }

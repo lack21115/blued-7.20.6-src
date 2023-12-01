@@ -30,7 +30,7 @@ public class d {
     public static final String Z = "inner_input";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40966a = "header_utoken";
+    public static final String f27275a = "header_utoken";
     public static final String aa = "inner_bt";
     public static final String ab = "inner_mem";
     public static final String ac = "inner_cpu";
@@ -50,13 +50,13 @@ public class d {
     public static final String aq = "inner_cpu2";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f40967ar = "ccg_switch";
+    public static final String f27276ar = "ccg_switch";
     public static final String as = "check_system_app";
     public static final String at = "check_pus_permission";
     public static final String b = "header_cpu";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40968c = "header_mccmnc";
+    public static final String f27277c = "header_mccmnc";
     public static final String d = "header_sub_os_name";
     public static final String e = "header_sub_os_version";
     public static final String f = "header_device_type";

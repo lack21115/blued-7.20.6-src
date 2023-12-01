@@ -18,21 +18,21 @@ public class LiveGiftBackpackParentFragment extends BaseGiftBagParentFragment<Li
     @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagParentFragment
     public void b() {
         super.b();
-        CommonGiftPackageModel c2 = c();
-        if (c2 != null) {
-            if (c2.packageType == 10) {
+        CommonGiftPackageModel c = c();
+        if (c != null) {
+            if (c.packageType == 10) {
                 this.d.setText("可通过参加活动获得头像框哦");
-            } else if (c2.packageType == 9) {
+            } else if (c.packageType == 9) {
                 this.d.setText("可通过参加活动获得公聊气泡哦");
-            } else if (c2.packageType == 11) {
+            } else if (c.packageType == 11) {
                 this.d.setText("可通过参加活动获得座驾哦");
-            } else if (c2.packageType == 7) {
+            } else if (c.packageType == 7) {
                 this.d.setText("暂无生效中道具");
-            } else if (c2.packageType == 8) {
+            } else if (c.packageType == 8) {
                 this.d.setText("暂未获得道具");
-            } else if (c2.packageType == 12) {
+            } else if (c.packageType == 12) {
                 this.d.setText("可通过参加活动获得公聊角标哦");
-            } else if (c2.packageType == 13) {
+            } else if (c.packageType == 13) {
                 this.d.setText("暂未获得碎片");
             }
         }
@@ -79,7 +79,7 @@ public class LiveGiftBackpackParentFragment extends BaseGiftBagParentFragment<Li
         }
     }
 
-    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagParentFragment, com.blued.android.module.live_china.mine.backpack.BaseViewBakPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.live_china.mine.backpack.BaseGiftBagParentFragment, com.blued.android.module.live_china.mine.backpack.BaseViewBakPagerParentFragment
     public void onInitView() {
         super.onInitView();
     }

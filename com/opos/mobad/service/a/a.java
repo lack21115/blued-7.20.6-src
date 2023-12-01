@@ -4,28 +4,28 @@ package com.opos.mobad.service.a;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.m.a.a f27281a;
+    private com.opos.mobad.m.a.a f13593a;
 
     public a() {
     }
 
     public a(com.opos.mobad.m.a.a aVar) {
-        this.f27281a = aVar;
+        this.f13593a = aVar;
     }
 
     public int a() {
-        com.opos.mobad.m.a.a aVar = this.f27281a;
+        com.opos.mobad.m.a.a aVar = this.f13593a;
         if (aVar == null || aVar.j == null) {
             return 0;
         }
-        return this.f27281a.j.intValue();
+        return this.f13593a.j.intValue();
     }
 
     public int b() {
-        com.opos.mobad.m.a.a aVar = this.f27281a;
+        com.opos.mobad.m.a.a aVar = this.f13593a;
         if (aVar == null || aVar.k == null) {
             return 0;
         }
-        return this.f27281a.k.intValue();
+        return this.f13593a.k.intValue();
     }
 }

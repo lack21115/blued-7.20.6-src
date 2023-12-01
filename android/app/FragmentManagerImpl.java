@@ -26,7 +26,6 @@ import com.android.internal.R;
 import com.android.internal.util.FastPrintWriter;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -92,7 +91,7 @@ public final class FragmentManagerImpl extends FragmentManager implements Layout
 
     private void throwException(RuntimeException runtimeException) {
         Log.e(TAG, runtimeException.getMessage());
-        FastPrintWriter fastPrintWriter = new FastPrintWriter((Writer) new LogWriter(6, TAG), false, 1024);
+        PrintWriter fastPrintWriter = new FastPrintWriter(new LogWriter(6, TAG), false, 1024);
         if (this.mActivity != null) {
             Log.e(TAG, "Activity state:");
             try {
@@ -1436,7 +1435,7 @@ public final class FragmentManagerImpl extends FragmentManager implements Layout
             BackStackRecord instantiate2 = fragmentManagerState.mBackStack[i10].instantiate(this);
             if (DEBUG) {
                 Log.v(TAG, "restoreAllState: back stack #" + i10 + " (index " + instantiate2.mIndex + "): " + instantiate2);
-                FastPrintWriter fastPrintWriter = new FastPrintWriter((Writer) new LogWriter(2, TAG), false, 1024);
+                FastPrintWriter fastPrintWriter = new FastPrintWriter(new LogWriter(2, TAG), false, 1024);
                 instantiate2.dump("  ", fastPrintWriter, false);
                 fastPrintWriter.flush();
             }

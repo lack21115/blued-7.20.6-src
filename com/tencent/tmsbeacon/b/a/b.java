@@ -13,11 +13,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f39490a;
+    private static b f25799a;
     private static byte[] b = {33, 94, 120, 74, 111, 43, 35};
 
     /* renamed from: c  reason: collision with root package name */
-    private SharedPreferences f39491c;
+    private SharedPreferences f25800c;
     private SharedPreferences.Editor d;
     private Lock e = new ReentrantLock();
     private Runnable f = new a();
@@ -36,7 +36,7 @@ public class b {
     public b() {
         Context c2 = c.d().c();
         if (c2 != null) {
-            this.f39491c = c2.getSharedPreferences("DENGTA_META", 0);
+            this.f25800c = c2.getSharedPreferences("DENGTA_META", 0);
         }
     }
 
@@ -44,10 +44,10 @@ public class b {
         b bVar;
         synchronized (b.class) {
             try {
-                if (f39490a == null) {
-                    f39490a = new b();
+                if (f25799a == null) {
+                    f25799a = new b();
                 }
-                bVar = f39490a;
+                bVar = f25799a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -92,14 +92,14 @@ public class b {
     public String a(String str, String str2) {
         String string;
         synchronized (this) {
-            string = this.f39491c.getString(str, str2);
+            string = this.f25800c.getString(str, str2);
         }
         return string;
     }
 
     public String a(String str, String str2, String str3) {
         synchronized (this) {
-            SharedPreferences sharedPreferences = this.f39491c;
+            SharedPreferences sharedPreferences = this.f25800c;
             String string = sharedPreferences.getString(str, "");
             if (string != null && !string.trim().equals("")) {
                 String b2 = b(string);

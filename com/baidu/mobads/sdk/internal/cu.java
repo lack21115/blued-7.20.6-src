@@ -1,6 +1,7 @@
 package com.baidu.mobads.sdk.internal;
 
 import android.view.ViewGroup;
+import com.anythink.pd.ExHandler;
 import java.util.HashMap;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,19 +10,19 @@ import org.json.JSONObject;
 class cu implements t {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int f9402a;
+    final /* synthetic */ int f6562a;
     final /* synthetic */ int b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f9403c;
+    final /* synthetic */ String f6563c;
     final /* synthetic */ cq d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cu(cq cqVar, int i, int i2, String str) {
         this.d = cqVar;
-        this.f9402a = i;
+        this.f6562a = i;
         this.b = i2;
-        this.f9403c = str;
+        this.f6563c = str;
     }
 
     @Override // com.baidu.mobads.sdk.internal.t
@@ -32,7 +33,7 @@ class cu implements t {
         String h3 = this.d.h("get_oaid");
         try {
             jSONObject.put("cuid", h);
-            jSONObject.put("imei", h2);
+            jSONObject.put(ExHandler.JSON_REQUEST_IMEI, h2);
             jSONObject.put("oaid", h3);
             return jSONObject;
         } catch (JSONException e) {
@@ -52,9 +53,9 @@ class cu implements t {
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("novel_activity", this.d.f());
         hashMap.put("interstitial_container", viewGroup);
-        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f9402a));
+        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f6562a));
         hashMap.put("channelId", Integer.valueOf(this.b));
-        hashMap.put("novel_id", this.f9403c);
+        hashMap.put("novel_id", this.f6563c);
         this.d.a(cv.r, hashMap);
     }
 
@@ -64,9 +65,9 @@ class cu implements t {
         hashMap.put("novel_activity", this.d.f());
         hashMap.put("interstitial_container", viewGroup);
         hashMap.put("isnight", Boolean.valueOf(this.d.g()));
-        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f9402a));
+        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f6562a));
         hashMap.put("channelId", Integer.valueOf(this.b));
-        hashMap.put("novel_id", this.f9403c);
+        hashMap.put("novel_id", this.f6563c);
         hashMap.put("count_down", Integer.valueOf(i));
         this.d.a(cv.x, hashMap);
     }
@@ -78,9 +79,9 @@ class cu implements t {
         hashMap.put("banner_container", viewGroup2);
         hashMap.put("interstitial_container", viewGroup);
         hashMap.put("isnight", Boolean.valueOf(this.d.g()));
-        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f9402a));
+        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f6562a));
         hashMap.put("channelId", Integer.valueOf(this.b));
-        hashMap.put("novel_id", this.f9403c);
+        hashMap.put("novel_id", this.f6563c);
         hashMap.put("backgroundColor", Integer.valueOf(i));
         this.d.a(cv.w, hashMap);
     }
@@ -91,9 +92,9 @@ class cu implements t {
         hashMap.put("novel_activity", this.d.f());
         hashMap.put("interstitial_container", viewGroup);
         hashMap.put("isnight", Boolean.valueOf(this.d.g()));
-        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f9402a));
+        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f6562a));
         hashMap.put("channelId", Integer.valueOf(this.b));
-        hashMap.put("novel_id", this.f9403c);
+        hashMap.put("novel_id", this.f6563c);
         hashMap.put("novel_info", jSONObject);
         this.d.a(cv.s, hashMap);
     }
@@ -111,9 +112,9 @@ class cu implements t {
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("novel_activity", viewGroup.getContext());
         hashMap.put("banner_container", viewGroup);
-        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f9402a));
+        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f6562a));
         hashMap.put("channelId", Integer.valueOf(this.b));
-        hashMap.put("novel_id", this.f9403c);
+        hashMap.put("novel_id", this.f6563c);
         this.d.a(cv.v, hashMap);
     }
 
@@ -123,9 +124,9 @@ class cu implements t {
         hashMap.put("novel_activity", this.d.f());
         hashMap.put("banner_container", viewGroup);
         hashMap.put("isnight", Boolean.valueOf(this.d.g()));
-        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f9402a));
+        hashMap.put(com.anythink.expressad.foundation.g.a.aj, Integer.valueOf(this.f6562a));
         hashMap.put("channelId", Integer.valueOf(this.b));
-        hashMap.put("novel_id", this.f9403c);
+        hashMap.put("novel_id", this.f6563c);
         hashMap.put("novel_info", jSONObject);
         this.d.a(cv.t, hashMap);
     }

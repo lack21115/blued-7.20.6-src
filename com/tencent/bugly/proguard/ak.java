@@ -17,11 +17,11 @@ public final class ak extends k {
     private static ArrayList<ah> z;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f35368a = "";
+    public String f21677a = "";
     public long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35369c = "";
+    public String f21678c = "";
     public String d = "";
     public String e = "";
     public String f = "";
@@ -63,9 +63,9 @@ public final class ak extends k {
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(i iVar) {
-        this.f35368a = iVar.b(0, true);
+        this.f21677a = iVar.b(0, true);
         this.b = iVar.a(this.b, 1, true);
-        this.f35369c = iVar.b(2, true);
+        this.f21678c = iVar.b(2, true);
         this.d = iVar.b(3, false);
         this.e = iVar.b(4, false);
         this.f = iVar.b(5, false);
@@ -88,9 +88,9 @@ public final class ak extends k {
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(j jVar) {
-        jVar.a(this.f35368a, 0);
+        jVar.a(this.f21677a, 0);
         jVar.a(this.b, 1);
-        jVar.a(this.f35369c, 2);
+        jVar.a(this.f21678c, 2);
         String str = this.d;
         if (str != null) {
             jVar.a(str, 3);

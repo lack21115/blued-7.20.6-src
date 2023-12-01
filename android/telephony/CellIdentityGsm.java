@@ -2,7 +2,6 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/CellIdentityGsm.class */
 public final class CellIdentityGsm implements Parcelable {
@@ -124,7 +123,7 @@ public final class CellIdentityGsm implements Parcelable {
         sb.append(" mMnc=").append(this.mMnc);
         sb.append(" mLac=").append(this.mLac);
         sb.append(" mCid=").append(this.mCid);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

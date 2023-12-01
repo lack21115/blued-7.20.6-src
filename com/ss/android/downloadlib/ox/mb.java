@@ -111,7 +111,7 @@ public class mb {
             h.mb().mb(new hj() { // from class: com.ss.android.downloadlib.ox.mb.1
                 @Override // com.ss.android.downloadlib.ox.hj
                 public void mb(boolean z2) {
-                    AdEventHandler.mb().ox(z2 ? EventConstants.Label.DEEPLINK_SUCCESS : EventConstants.Label.DEEPLINK_FAILED, JSONObject.this, mbVar);
+                    AdEventHandler.mb().ox(z2 ? EventConstants.Label.DEEPLINK_SUCCESS : EventConstants.Label.DEEPLINK_FAILED, jSONObject, mbVar);
                     if (z2) {
                         com.ss.android.downloadlib.addownload.x.gm().mb(com.ss.android.downloadlib.addownload.x.getContext(), mbVar.g(), mbVar.r(), mbVar.df(), mbVar.h(), 0);
                     }
@@ -139,7 +139,7 @@ public class mb {
             h.mb().ox(new hj() { // from class: com.ss.android.downloadlib.ox.mb.3
                 @Override // com.ss.android.downloadlib.ox.hj
                 public void mb(boolean z2) {
-                    if (!z2 && !EventConstants.AppLinkSource.OPEN_MARKET.equals(String.this)) {
+                    if (!z2 && !EventConstants.AppLinkSource.OPEN_MARKET.equals(str)) {
                         Context context = com.ss.android.downloadlib.addownload.x.getContext();
                         mb.mb(com.ss.android.downloadlib.utils.ww.mb(context, Uri.parse(BaseConstants.MARKET_PREFIX + hVar.h())), hVar, false);
                     }
@@ -350,7 +350,7 @@ public class mb {
             h.mb().mb(new hj() { // from class: com.ss.android.downloadlib.ox.mb.2
                 @Override // com.ss.android.downloadlib.ox.hj
                 public void mb(boolean z2) {
-                    AdEventHandler.mb().ox(z2 ? EventConstants.Label.DEEPLINK_SUCCESS : EventConstants.Label.DEEPLINK_FAILED, JSONObject.this, mbVar);
+                    AdEventHandler.mb().ox(z2 ? EventConstants.Label.DEEPLINK_SUCCESS : EventConstants.Label.DEEPLINK_FAILED, jSONObject, mbVar);
                     if (z2) {
                         com.ss.android.downloadlib.addownload.x.gm().mb(com.ss.android.downloadlib.addownload.x.getContext(), mbVar.g(), mbVar.r(), mbVar.df(), mbVar.h(), 0);
                     }

@@ -14,18 +14,18 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public abstract class b extends Fragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private LinearLayout f35686a;
+    private LinearLayout f21995a;
     private LayoutInflater b;
 
     public <T> T a(int i) {
-        return (T) this.f35686a.findViewById(i);
+        return (T) this.f21995a.findViewById(i);
     }
 
     public View b(int i) {
         View inflate = this.b.inflate(i, (ViewGroup) null);
         inflate.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
-        this.f35686a.addView(inflate);
-        return this.f35686a;
+        this.f21995a.addView(inflate);
+        return this.f21995a;
     }
 
     public int c(int i) {
@@ -53,7 +53,7 @@ public abstract class b extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = layoutInflater;
         View inflate = layoutInflater.inflate(R.layout.wbcf_base_fragment_layout, viewGroup, false);
-        this.f35686a = (LinearLayout) inflate.findViewById(R.id.wbcf_contain);
+        this.f21995a = (LinearLayout) inflate.findViewById(R.id.wbcf_contain);
         q();
         return inflate;
     }

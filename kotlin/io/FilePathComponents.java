@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/io/FilePathComponents.class */
 public final class FilePathComponents {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final File f42485a;
+    private final File a;
     private final List<File> b;
 
     public boolean equals(Object obj) {
@@ -19,16 +17,16 @@ public final class FilePathComponents {
         }
         if (obj instanceof FilePathComponents) {
             FilePathComponents filePathComponents = (FilePathComponents) obj;
-            return Intrinsics.a(this.f42485a, filePathComponents.f42485a) && Intrinsics.a(this.b, filePathComponents.b);
+            return Intrinsics.a(this.a, filePathComponents.a) && Intrinsics.a(this.b, filePathComponents.b);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.f42485a.hashCode() * 31) + this.b.hashCode();
+        return (this.a.hashCode() * 31) + this.b.hashCode();
     }
 
     public String toString() {
-        return "FilePathComponents(root=" + this.f42485a + ", segments=" + this.b + ')';
+        return "FilePathComponents(root=" + this.a + ", segments=" + this.b + ')';
     }
 }

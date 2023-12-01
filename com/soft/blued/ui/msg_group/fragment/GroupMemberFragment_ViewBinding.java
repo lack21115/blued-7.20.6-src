@@ -19,13 +19,13 @@ public class GroupMemberFragment_ViewBinding implements Unbinder {
     public GroupMemberFragment_ViewBinding(GroupMemberFragment groupMemberFragment, View view) {
         this.b = groupMemberFragment;
         groupMemberFragment.ctt_left_img = (ImageView) Utils.a(view, 2131363123, "field 'ctt_left_img'", ImageView.class);
-        groupMemberFragment.iv_delete = (ImageView) Utils.a(view, 2131365254, "field 'iv_delete'", ImageView.class);
+        groupMemberFragment.iv_delete = (ImageView) Utils.a(view, R.id.iv_delete, "field 'iv_delete'", ImageView.class);
         groupMemberFragment.iv_sort = (ImageView) Utils.a(view, R.id.iv_sort, "field 'iv_sort'", ImageView.class);
         groupMemberFragment.mListViewWrapper = (RenrenPullToRefreshListView) Utils.a(view, R.id.member_list, "field 'mListViewWrapper'", RenrenPullToRefreshListView.class);
         groupMemberFragment.frame_layout = (FrameLayout) Utils.a(view, 2131364048, "field 'frame_layout'", FrameLayout.class);
         groupMemberFragment.rl_bottom = (RelativeLayout) Utils.a(view, R.id.rl_bottom, "field 'rl_bottom'", RelativeLayout.class);
-        groupMemberFragment.tv_delete = (TextView) Utils.a(view, 2131371256, "field 'tv_delete'", TextView.class);
-        groupMemberFragment.search_view = (SearchView) Utils.a(view, 2131369680, "field 'search_view'", SearchView.class);
+        groupMemberFragment.tv_delete = (TextView) Utils.a(view, R.id.tv_delete, "field 'tv_delete'", TextView.class);
+        groupMemberFragment.search_view = (SearchView) Utils.a(view, R.id.search_view, "field 'search_view'", SearchView.class);
         groupMemberFragment.fm_search_list = (FrameLayout) Utils.a(view, R.id.fm_search_list, "field 'fm_search_list'", FrameLayout.class);
         groupMemberFragment.searchNoDataView = (NoDataAndLoadFailView) Utils.a(view, 2131368721, "field 'searchNoDataView'", NoDataAndLoadFailView.class);
         groupMemberFragment.search_list = (RenrenPullToRefreshListView) Utils.a(view, R.id.search_list, "field 'search_list'", RenrenPullToRefreshListView.class);

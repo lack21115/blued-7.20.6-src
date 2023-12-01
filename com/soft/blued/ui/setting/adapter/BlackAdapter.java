@@ -42,39 +42,36 @@ import java.util.List;
 public class BlackAdapter extends BaseQuickAdapter<BluedBlackList, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33272a;
+    private Context f19581a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33273c;
+    private Dialog f19582c;
     private IRequestHost d;
 
     public BlackAdapter(Context context, IRequestHost iRequestHost) {
         super((int) R.layout.fragment_black_list_item);
         this.b = BlackAdapter.class.getSimpleName();
         this.d = iRequestHost;
-        this.f33272a = context;
-        this.f33273c = DialogUtils.a(context);
+        this.f19581a = context;
+        this.f19582c = DialogUtils.a(context);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final BluedBlackList bluedBlackList) {
-        UserHttpUtils.c(this.f33272a, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.adapter.BlackAdapter.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        UserHttpUtils.c(this.f19581a, new BluedUIHttpResponse() { // from class: com.soft.blued.ui.setting.adapter.BlackAdapter.3
             public void onUIFinish() {
                 super.onUIFinish();
-                DialogUtils.b(BlackAdapter.this.f33273c);
+                DialogUtils.b(BlackAdapter.this.f19582c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                DialogUtils.a(BlackAdapter.this.f33273c);
+                DialogUtils.a(BlackAdapter.this.f19582c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
-                DialogUtils.b(BlackAdapter.this.f33273c);
+                DialogUtils.b(BlackAdapter.this.f19582c);
                 BlackAdapter.this.getData().remove(bluedBlackList);
                 BlackAdapter.this.notifyDataSetChanged();
                 BlackAdapter.this.notifyDataSetChanged();
@@ -93,16 +90,16 @@ public class BlackAdapter extends BaseQuickAdapter<BluedBlackList, BaseViewHolde
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final BluedBlackList bluedBlackList) {
         final ImageView imageView = (ImageView) baseViewHolder.getView(2131364232);
-        TextView textView = (TextView) baseViewHolder.getView(2131368652);
-        TextView textView2 = (TextView) baseViewHolder.getView(2131363246);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.name_view);
+        TextView textView2 = (TextView) baseViewHolder.getView(R.id.distance_view);
         TextView textView3 = (TextView) baseViewHolder.getView(R.id.online_time_view);
-        TextView textView4 = (TextView) baseViewHolder.getView(2131362003);
-        TextView textView5 = (TextView) baseViewHolder.getView(2131364242);
-        TextView textView6 = (TextView) baseViewHolder.getView(2131373390);
-        TextView textView7 = (TextView) baseViewHolder.getView(2131369448);
-        ImageView imageView2 = (ImageView) baseViewHolder.getView(2131364720);
+        TextView textView4 = (TextView) baseViewHolder.getView(R.id.age_view);
+        TextView textView5 = (TextView) baseViewHolder.getView(R.id.height_view);
+        TextView textView6 = (TextView) baseViewHolder.getView(R.id.weight_view);
+        TextView textView7 = (TextView) baseViewHolder.getView(R.id.role_view);
+        ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.img_verify);
         TextView textView8 = (TextView) baseViewHolder.getView(R.id.tv_city_settled);
-        ImageView imageView3 = (ImageView) baseViewHolder.getView(2131364625);
+        ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.img_online);
         ImageView imageView4 = (ImageView) baseViewHolder.getView(2131364726);
         LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.ll_personal_info);
         UserInfoHelper.a(imageView2, bluedBlackList.vbadge, 3);
@@ -110,7 +107,7 @@ public class BlackAdapter extends BaseQuickAdapter<BluedBlackList, BaseViewHolde
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                UserInfoFragmentNew.a(BlackAdapter.this.f33272a, bluedBlackList, "", imageView);
+                UserInfoFragmentNew.a(BlackAdapter.this.f19581a, bluedBlackList, "", imageView);
             }
         });
         ImageLoader.a(this.d, bluedBlackList.avatar).c().b(2131237310).a(imageView);
@@ -124,7 +121,7 @@ public class BlackAdapter extends BaseQuickAdapter<BluedBlackList, BaseViewHolde
         } else {
             textView8.setText(AreaUtils.getAreaTxt(bluedBlackList.city_settled, BlueAppLocal.c()));
         }
-        TypefaceUtils.b(this.f33272a, textView8, bluedBlackList.is_hide_city_settled, 1);
+        TypefaceUtils.b(this.f19581a, textView8, bluedBlackList.is_hide_city_settled, 1);
         if (bluedBlackList.online_state == 1) {
             imageView3.setVisibility(0);
         } else {
@@ -137,15 +134,15 @@ public class BlackAdapter extends BaseQuickAdapter<BluedBlackList, BaseViewHolde
         } else {
             textView.setText(bluedBlackList.name);
         }
-        UserRelationshipUtils.a(this.f33272a, textView, bluedBlackList);
+        UserRelationshipUtils.a(this.f19581a, textView, bluedBlackList);
         UserRelationshipUtils.a(imageView4, bluedBlackList);
-        String string = this.f33272a.getResources().getString(R.string.block_time);
+        String string = this.f19581a.getResources().getString(R.string.block_time);
         if (TextUtils.isEmpty(bluedBlackList.black_time)) {
-            textView3.setText(string + this.f33272a.getResources().getString(R.string.biao_time_just));
+            textView3.setText(string + this.f19581a.getResources().getString(R.string.biao_time_just));
         } else {
             String a2 = MsgCommonUtils.a(AppInfo.d(), Long.valueOf(TimeAndDateUtils.c(bluedBlackList.black_time)).longValue());
             if (StringUtils.d(a2)) {
-                textView3.setText(string + this.f33272a.getResources().getString(R.string.biao_time_just));
+                textView3.setText(string + this.f19581a.getResources().getString(R.string.biao_time_just));
             } else {
                 textView3.setText(string + a2);
             }
@@ -154,11 +151,11 @@ public class BlackAdapter extends BaseQuickAdapter<BluedBlackList, BaseViewHolde
             linearLayout.setVisibility(8);
         } else {
             linearLayout.setVisibility(0);
-            UserInfoHelper.a(this.f33272a, textView7, bluedBlackList.role);
+            UserInfoHelper.a(this.f19581a, textView7, bluedBlackList.role);
             if (TextUtils.isEmpty(bluedBlackList.age)) {
                 textView4.setText("");
             } else {
-                textView4.setText(bluedBlackList.age + this.f33272a.getResources().getString(2131886374));
+                textView4.setText(bluedBlackList.age + this.f19581a.getResources().getString(2131886374));
             }
             if (TextUtils.isEmpty(bluedBlackList.height)) {
                 textView5.setText("");
@@ -177,7 +174,7 @@ public class BlackAdapter extends BaseQuickAdapter<BluedBlackList, BaseViewHolde
                 if (baseViewHolder.getAdapterPosition() < 0 || baseViewHolder.getAdapterPosition() > BlackAdapter.this.getData().size()) {
                     return true;
                 }
-                CommonAlertDialog.a(BlackAdapter.this.f33272a, bluedBlackList.name, new String[]{BlackAdapter.this.f33272a.getResources().getString(R.string.remove_from_blacklist)}, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.adapter.BlackAdapter.2.1
+                CommonAlertDialog.a(BlackAdapter.this.f19581a, bluedBlackList.name, new String[]{BlackAdapter.this.f19581a.getResources().getString(R.string.remove_from_blacklist)}, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.adapter.BlackAdapter.2.1
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Tracker.onClick(dialogInterface, i);

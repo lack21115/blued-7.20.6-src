@@ -8,10 +8,10 @@ import com.blued.android.module.common.base.mvvm.SingleLiveEvent;
 public class HomeViewModel extends AndroidViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    public SingleLiveEvent<Integer> f31047a;
+    public SingleLiveEvent<Integer> f17357a;
 
     public HomeViewModel(Application application) {
         super(application);
-        this.f31047a = new SingleLiveEvent<>();
+        this.f17357a = new SingleLiveEvent<>();
     }
 }

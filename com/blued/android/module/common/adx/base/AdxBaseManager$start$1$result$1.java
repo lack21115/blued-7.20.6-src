@@ -12,13 +12,9 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(b = "AdxBaseManager.kt", c = {105, 110, 124, 127}, d = "invokeSuspend", e = "com.blued.android.module.common.adx.base.AdxBaseManager$start$1$result$1")
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$start$1$result$1.class */
 final class AdxBaseManager$start$1$result$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10521a;
+    int a;
     final /* synthetic */ AdxBaseManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private /* synthetic */ Object f10522c;
+    private /* synthetic */ Object c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -30,13 +26,13 @@ final class AdxBaseManager$start$1$result$1 extends SuspendLambda implements Fun
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((AdxBaseManager$start$1$result$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((AdxBaseManager$start$1$result$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         AdxBaseManager$start$1$result$1 adxBaseManager$start$1$result$1 = new AdxBaseManager$start$1$result$1(this.b, continuation);
-        adxBaseManager$start$1$result$1.f10522c = obj;
+        adxBaseManager$start$1$result$1.c = obj;
         return adxBaseManager$start$1$result$1;
     }
 

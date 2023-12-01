@@ -22,6 +22,7 @@ import com.squareup.okhttp.internal.Version;
 import com.squareup.okhttp.internal.http.CacheStrategy;
 import com.squareup.okhttp.internal.io.RealConnection;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
+import java.io.Closeable;
 import java.io.IOException;
 import java.net.CookieHandler;
 import java.net.ProtocolException;
@@ -76,8 +77,9 @@ public final class HttpEngine {
     private final Request userRequest;
     private Response userResponse;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/squareup/okhttp/internal/http/HttpEngine$NetworkInterceptorChain.class */
-    class NetworkInterceptorChain implements Interceptor.Chain {
+    public class NetworkInterceptorChain implements Interceptor.Chain {
         private int calls;
         private final int index;
         private final Request request;
@@ -156,7 +158,6 @@ public final class HttpEngine {
             return response.newBuilder().body(new RealResponseBody(response.headers(), Okio.buffer(new Source() { // from class: com.squareup.okhttp.internal.http.HttpEngine.2
                 boolean cacheRequestClosed;
 
-                @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
                 public void close() throws IOException {
                     if (!this.cacheRequestClosed && !Util.discard(this, 100, TimeUnit.MILLISECONDS)) {
                         this.cacheRequestClosed = true;
@@ -165,7 +166,6 @@ public final class HttpEngine {
                     source.close();
                 }
 
-                @Override // okio.Source
                 public long read(Buffer buffer2, long j) throws IOException {
                     try {
                         long read = source.read(buffer2, j);
@@ -189,7 +189,6 @@ public final class HttpEngine {
                     }
                 }
 
-                @Override // okio.Source
                 public Timeout timeout() {
                     return source.timeout();
                 }
@@ -278,7 +277,7 @@ public final class HttpEngine {
             newBuilder.header("Host", Util.hostHeader(request.httpUrl()));
         }
         if (request.header("Connection") == null) {
-            newBuilder.header("Connection", c.f7906c);
+            newBuilder.header("Connection", c.f5066c);
         }
         if (request.header("Accept-Encoding") == null) {
             this.transparentGzip = true;
@@ -348,11 +347,11 @@ public final class HttpEngine {
     public StreamAllocation close() {
         BufferedSink bufferedSink = this.bufferedRequestBody;
         if (bufferedSink != null) {
-            Util.closeQuietly(bufferedSink);
+            Util.closeQuietly((Closeable) bufferedSink);
         } else {
             Sink sink = this.requestBodyOut;
             if (sink != null) {
-                Util.closeQuietly(sink);
+                Util.closeQuietly((Closeable) sink);
             }
         }
         Response response = this.userResponse;

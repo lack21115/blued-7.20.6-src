@@ -19,7 +19,7 @@ import org.json.JSONObject;
 public class f6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile long f3812a;
+    public static volatile long f3764a;
     public static volatile long b;
 
     public static double a(double d) {
@@ -83,7 +83,7 @@ public class f6 {
         }
         sb.append(",\"ts\":");
         sb.append(j2);
-        sb.append(com.alipay.sdk.util.i.d);
+        sb.append("}");
         return sb.toString();
     }
 
@@ -97,8 +97,8 @@ public class f6 {
             return "[]";
         }
         int i = a5Var.b;
-        int i2 = a5Var.f3750c;
-        int ordinal = a5Var.f3749a.ordinal();
+        int i2 = a5Var.f3702c;
+        int ordinal = a5Var.f3701a.ordinal();
         ArrayList arrayList = new ArrayList();
         a5Var.d();
         long currentTimeMillis = System.currentTimeMillis();
@@ -109,7 +109,7 @@ public class f6 {
         }
         try {
             for (a5 a5Var2 : a5Var.c()) {
-                arrayList.add(a(a5Var2.b, a5Var2.f3750c, a5Var2.d, a5Var2.f, a5Var2.e, a5Var2.g, a5Var2.h, (currentTimeMillis - a5Var2.e()) / 1000));
+                arrayList.add(a(a5Var2.b, a5Var2.f3702c, a5Var2.d, a5Var2.f, a5Var2.e, a5Var2.g, a5Var2.h, (currentTimeMillis - a5Var2.e()) / 1000));
             }
         } catch (Throwable th) {
         }
@@ -120,7 +120,7 @@ public class f6 {
         if (b5Var == null) {
             return "{}";
         }
-        Location location = b5Var.f3763a;
+        Location location = b5Var.f3715a;
         StringBuilder sb = new StringBuilder();
         double a2 = a(location.getLatitude(), 6);
         double a3 = a(location.getLongitude(), 6);
@@ -137,7 +137,7 @@ public class f6 {
         sb.append("\"" + a4 + "," + a5 + "," + a6 + "," + a7 + "," + b5Var.b + "\"");
         sb.append(",\"source\":");
         sb.append(b5Var.f.ordinal());
-        sb.append(com.alipay.sdk.util.i.d);
+        sb.append("}");
         return sb.toString();
     }
 
@@ -185,13 +185,13 @@ public class f6 {
                         j = j5;
                     }
                 }
-                sb.append(com.alipay.sdk.util.i.d);
+                sb.append("}");
                 i++;
                 j3 = j;
             }
         }
         sb.append("]");
-        f3812a = j3 == Long.MAX_VALUE ? 0L : System.currentTimeMillis() - j3;
+        f3764a = j3 == Long.MAX_VALUE ? 0L : System.currentTimeMillis() - j3;
         return sb.toString();
     }
 

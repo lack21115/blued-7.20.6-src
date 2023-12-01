@@ -2,6 +2,7 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/NeighboringCellInfo.class */
 public class NeighboringCellInfo implements Parcelable {
@@ -144,9 +145,9 @@ public class NeighboringCellInfo implements Parcelable {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         if (this.mPsc != -1) {
-            sb.append(Integer.toHexString(this.mPsc)).append("@").append(this.mRssi == 99 ? "-" : Integer.valueOf(this.mRssi));
+            sb.append(Integer.toHexString(this.mPsc)).append("@").append(this.mRssi == 99 ? Constants.ACCEPT_TIME_SEPARATOR_SERVER : Integer.valueOf(this.mRssi));
         } else if (this.mLac != -1 && this.mCid != -1) {
-            sb.append(Integer.toHexString(this.mLac)).append(Integer.toHexString(this.mCid)).append("@").append(this.mRssi == 99 ? "-" : Integer.valueOf(this.mRssi));
+            sb.append(Integer.toHexString(this.mLac)).append(Integer.toHexString(this.mCid)).append("@").append(this.mRssi == 99 ? Constants.ACCEPT_TIME_SEPARATOR_SERVER : Integer.valueOf(this.mRssi));
         }
         sb.append("]");
         return sb.toString();

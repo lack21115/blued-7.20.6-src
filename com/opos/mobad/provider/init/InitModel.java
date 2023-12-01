@@ -15,7 +15,7 @@ public class InitModel implements d {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile InitModel f27113a;
+    private static volatile InitModel f13425a;
     private Context b;
 
     public InitModel(Context context) {
@@ -24,18 +24,18 @@ public class InitModel implements d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final InitModel b(Context context) {
-        if (f27113a == null) {
+        if (f13425a == null) {
             synchronized (InitModel.class) {
                 try {
-                    if (f27113a == null) {
-                        f27113a = new InitModel(context);
+                    if (f13425a == null) {
+                        f13425a = new InitModel(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f27113a;
+        return f13425a;
     }
 
     @BridgeMethod(a = 1)

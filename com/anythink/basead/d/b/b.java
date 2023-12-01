@@ -1,6 +1,7 @@
 package com.anythink.basead.d.b;
 
 import com.anythink.basead.b.a;
+import com.anythink.core.api.ATAdConst;
 import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.ab;
 import com.anythink.core.common.e.ac;
@@ -8,15 +9,11 @@ import com.anythink.core.common.e.j;
 import com.anythink.core.common.e.k;
 import com.anythink.core.common.e.z;
 import com.anythink.core.common.l;
-import com.anythink.expressad.foundation.d.c;
-import com.anythink.expressad.foundation.d.r;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b/b.class */
 public final class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5951a = "sdk_updatetime";
+    public static final String a = "sdk_updatetime";
 
     public static final z a(j jVar, JSONObject jSONObject) {
         try {
@@ -29,15 +26,15 @@ public final class b {
             zVar.a(jVar.f);
             zVar.j(optJSONObject2.optString(l.ad));
             zVar.k(optJSONObject2.optString("c_id"));
-            zVar.w(optJSONObject2.optString("pkg"));
+            zVar.w(optJSONObject2.optString(a.C0030a.A));
             zVar.l(optJSONObject2.optString("title"));
-            zVar.m(optJSONObject2.optString("desc"));
-            zVar.f(optJSONObject2.optInt(c.Y));
+            zVar.m(optJSONObject2.optString(a.C0030a.f));
+            zVar.f(optJSONObject2.optInt("rating"));
             zVar.n(optJSONObject2.optString("icon_u"));
             zVar.p(optJSONObject2.optString("full_u"));
             zVar.d(optJSONObject2.optInt("unit_type"));
             zVar.q(optJSONObject2.optString("tp_logo_u"));
-            zVar.r(optJSONObject2.optString(a.C0070a.k));
+            zVar.r(optJSONObject2.optString(a.C0030a.k));
             zVar.s(optJSONObject2.optString("video_u"));
             zVar.d(optJSONObject2.optInt("video_l"));
             zVar.J(optJSONObject2.optString("video_r"));
@@ -52,10 +49,10 @@ public final class b {
             zVar.j(optJSONObject2.optInt("crt_type", 1));
             zVar.L(optJSONObject2.optString("img_list"));
             zVar.M(optJSONObject2.optString("banner_xhtml"));
-            zVar.b(jSONObject.optLong(f5951a));
+            zVar.b(jSONObject.optLong(a));
             zVar.c(optJSONObject2.optInt("offer_firm_id"));
             zVar.i(optJSONObject2.optString("jump_url"));
-            zVar.N(optJSONObject2.optString("app_name"));
+            zVar.N(optJSONObject2.optString(ATAdConst.KEY.APP_NAME));
             zVar.y(optJSONObject2.optString("publisher"));
             zVar.z(optJSONObject2.optString("app_version"));
             zVar.A(optJSONObject2.optString("privacy"));
@@ -65,7 +62,7 @@ public final class b {
             zVar.a(ac.a(optJSONObject2.optString("tk")));
             zVar.b(optJSONObject2.optInt("adp_type"));
             zVar.e(optJSONObject2.optString("offer_html"));
-            zVar.f(optJSONObject2.optString(r.ab));
+            zVar.f(optJSONObject2.optString("offer_url"));
             zVar.c(optJSONObject2.optString("wx_username"));
             zVar.d(optJSONObject2.optString("wx_path"));
             return zVar;

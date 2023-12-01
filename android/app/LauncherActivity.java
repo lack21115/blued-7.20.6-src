@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ComponentInfo;
@@ -22,7 +23,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.internal.R;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -154,7 +154,7 @@ public abstract class LauncherActivity extends ListActivity {
         @Override // android.widget.Adapter
         public View getView(int i, View view, ViewGroup viewGroup) {
             if (view == null) {
-                view = this.mInflater.inflate(R.layout.activity_list_item_2, viewGroup, false);
+                view = this.mInflater.inflate(17367076, viewGroup, false);
             }
             bindView(view, this.mActivitiesList.get(i));
             return view;
@@ -196,7 +196,7 @@ public abstract class LauncherActivity extends ListActivity {
             this.mIconWidth = -1;
             this.mIconHeight = -1;
             this.mCanvas.setDrawFilter(new PaintFlagsDrawFilter(4, 2));
-            int dimension = (int) LauncherActivity.this.getResources().getDimension(17104896);
+            int dimension = (int) LauncherActivity.this.getResources().getDimension(R.dimen.app_icon_size);
             this.mIconHeight = dimension;
             this.mIconWidth = dimension;
         }
@@ -293,14 +293,14 @@ public abstract class LauncherActivity extends ListActivity {
     }
 
     private void updateAlertTitle() {
-        TextView textView = (TextView) findViewById(R.id.alertTitle);
+        TextView textView = (TextView) findViewById(16908994);
         if (textView != null) {
             textView.setText(getTitle());
         }
     }
 
     private void updateButtonText() {
-        Button button = (Button) findViewById(16908313);
+        Button button = (Button) findViewById(R.id.button1);
         if (button != null) {
             button.setOnClickListener(new View.OnClickListener() { // from class: android.app.LauncherActivity.1
                 @Override // android.view.View.OnClickListener
@@ -378,7 +378,7 @@ public abstract class LauncherActivity extends ListActivity {
     }
 
     protected void onSetContentView() {
-        setContentView(R.layout.activity_list);
+        setContentView(17367075);
     }
 
     protected void onSortResultList(List<ResolveInfo> list) {

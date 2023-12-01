@@ -8,15 +8,15 @@ import android.os.Parcel;
 public final class f1 implements IInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    public IBinder f3807a;
+    public IBinder f3759a;
 
     public f1(IBinder iBinder) {
-        this.f3807a = iBinder;
+        this.f3759a = iBinder;
     }
 
     @Override // android.os.IInterface
     public IBinder asBinder() {
-        return this.f3807a;
+        return this.f3759a;
     }
 
     public String e() {
@@ -25,7 +25,7 @@ public final class f1 implements IInterface {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-            this.f3807a.transact(3, obtain, obtain2, 0);
+            this.f3759a.transact(3, obtain, obtain2, 0);
             obtain2.readException();
             str = obtain2.readString();
         } catch (Throwable th) {
@@ -43,7 +43,7 @@ public final class f1 implements IInterface {
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-            this.f3807a.transact(1, obtain, obtain2, 0);
+            this.f3759a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.readInt() != 0;
         } catch (Exception e) {

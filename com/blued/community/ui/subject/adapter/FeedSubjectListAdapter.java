@@ -22,25 +22,22 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-6737240-dex2jar.jar:com/blued/community/ui/subject/adapter/FeedSubjectListAdapter.class */
 public final class FeedSubjectListAdapter extends CommonMultiItemAdapter<BluedTopic> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f20216a;
+    private final int a;
 
     public FeedSubjectListAdapter(int i) {
-        this.f20216a = i;
+        this.a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(FeedSubjectListAdapter this$0, BluedTopic item, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(item, "$item");
-        int i = this$0.f20216a;
+        int i = this$0.a;
         FeedConstants.b = i == 1 ? FeedProtos.DetailFrom.SUPER_TOPIC_JOIN : i == 4 ? FeedProtos.DetailFrom.SUPER_TOPIC_FOLLOW : FeedProtos.DetailFrom.FIND_SUPER_TOPIC_LIST;
         CommRouteUtil.a(this$0.mContext, item.super_did, item.name);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.blued.community.view.CommonMultiItemAdapter
     /* renamed from: a */
     public void onConvert(CommonViewHolder holder, final BluedTopic item, int i) {
         Intrinsics.e(holder, "holder");
@@ -58,7 +55,7 @@ public final class FeedSubjectListAdapter extends CommonMultiItemAdapter<BluedTo
         if (item.is_anonym == 1) {
             i5 = 0;
         }
-        visibility.setVisibility(i4, i5).setCardBackgroundColor(R.id.item_feed_subject_ann_cv, Color.parseColor(CommunityManager.f19086a.a().s() ? "#388C8C8C" : "#17252630")).setConvertViewOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.subject.adapter.-$$Lambda$FeedSubjectListAdapter$I9lmOY3bEt1QwOceZRCGmydK5AI
+        visibility.setVisibility(i4, i5).setCardBackgroundColor(R.id.item_feed_subject_ann_cv, Color.parseColor(CommunityManager.a.a().s() ? "#388C8C8C" : "#17252630")).setConvertViewOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.subject.adapter.-$$Lambda$FeedSubjectListAdapter$I9lmOY3bEt1QwOceZRCGmydK5AI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeedSubjectListAdapter.a(FeedSubjectListAdapter.this, item, view);
@@ -71,12 +68,11 @@ public final class FeedSubjectListAdapter extends CommonMultiItemAdapter<BluedTo
             return;
         }
         FeedProtos.Event event = FeedProtos.Event.SUPER_TOPIC_DRAW;
-        int i6 = this.f20216a;
+        int i6 = this.a;
         EventTrackFeed.a(event, i6 == 1 ? FeedProtos.DetailFrom.SUPER_TOPIC_JOIN : i6 == 4 ? FeedProtos.DetailFrom.SUPER_TOPIC_FOLLOW : FeedProtos.DetailFrom.FIND_SUPER_TOPIC_LIST, item.super_did, item.is_anonym == 1, false, item.is_follow == 1);
         item.isShowUrlVisited = true;
     }
 
-    @Override // com.blued.community.view.CommonMultiItemAdapter
     public void onAddItemType() {
         addItemType(0, R.layout.item_feed_subject_list);
     }

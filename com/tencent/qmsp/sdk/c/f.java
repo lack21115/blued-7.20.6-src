@@ -17,30 +17,30 @@ public final class f {
     private k f;
     private g h;
     private static final byte[][] i = {new byte[]{52, 125, -93}, new byte[]{41, 121, -79, 113, 35, 43, 57, -18, 42}};
-    private static ConcurrentHashMap<Long, InterfaceC0987f> k = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<Long, InterfaceC0817f> k = new ConcurrentHashMap<>();
     private static Handler l = null;
     private static volatile f m = null;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38549a = -1;
+    private int f24858a = -1;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f38550c = false;
+    private boolean f24859c = false;
     private com.tencent.qmsp.sdk.d.c g = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/c/f$a.class */
-    public class a implements a.InterfaceC0986a {
+    public class a implements a.InterfaceC0816a {
         a(f fVar) {
         }
 
-        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0986a
+        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0816a
         public void a() {
             com.tencent.qmsp.sdk.f.g.a("Qp.QFW", 1, "Something wrong when load native so.");
         }
 
-        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0986a
+        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0816a
         public void run() {
             if (f.j) {
                 return;
@@ -57,16 +57,16 @@ public final class f {
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/c/f$b.class */
-    class b implements a.InterfaceC0986a {
+    class b implements a.InterfaceC0816a {
         b() {
         }
 
-        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0986a
+        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0816a
         public void a() {
             com.tencent.qmsp.sdk.f.g.a("Qp.QFW", 1, "Something wrong when init native.");
         }
 
-        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0986a
+        @Override // com.tencent.qmsp.sdk.c.a.InterfaceC0816a
         public void run() {
             Context context;
             if (!f.j || f.this.b) {
@@ -77,11 +77,11 @@ public final class f {
                 l lVar = f.this.e;
                 context = com.tencent.qmsp.sdk.app.a.getContext();
                 if (f.a(1L, 512L, com.tencent.qmsp.sdk.a.c.g(), 0L, lVar, context, null, objArr) == 0 && objArr[0] != null && (objArr[0] instanceof Integer)) {
-                    f.this.f38549a = ((Integer) objArr[0]).intValue();
-                    int unused = f.this.f38549a;
+                    f.this.f24858a = ((Integer) objArr[0]).intValue();
+                    int unused = f.this.f24858a;
                     f.this.b = true;
                 }
-                com.tencent.qmsp.sdk.f.g.a("Qp.QFW", 1, String.format("Native ver: %d(%s)", Integer.valueOf(f.this.f38549a), com.tencent.qmsp.sdk.a.c.a(f.this.f38549a)));
+                com.tencent.qmsp.sdk.f.g.a("Qp.QFW", 1, String.format("Native ver: %d(%s)", Integer.valueOf(f.this.f24858a), com.tencent.qmsp.sdk.a.c.a(f.this.f24858a)));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -110,11 +110,11 @@ public final class f {
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/c/f$d.class */
-    class d implements InterfaceC0987f {
+    class d implements InterfaceC0817f {
         d() {
         }
 
-        @Override // com.tencent.qmsp.sdk.c.f.InterfaceC0987f
+        @Override // com.tencent.qmsp.sdk.c.f.InterfaceC0817f
         public int a(long j, long j2, long j3, Object obj, Object obj2, Object[] objArr, Object[] objArr2) {
             if (j != 0) {
                 com.tencent.qmsp.sdk.f.g.a("Qp.QFW", 1, String.format("Native msg, cookie: %08X, delay: %d", Long.valueOf(j), Long.valueOf(j2)));
@@ -144,7 +144,7 @@ public final class f {
 
     /* renamed from: com.tencent.qmsp.sdk.c.f$f  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/c/f$f.class */
-    public interface InterfaceC0987f {
+    public interface InterfaceC0817f {
         int a(long j, long j2, long j3, Object obj, Object obj2, Object[] objArr, Object[] objArr2);
     }
 
@@ -195,9 +195,9 @@ public final class f {
         return null;
     }
 
-    public static void a(long j2, InterfaceC0987f interfaceC0987f) {
-        if (interfaceC0987f != null) {
-            k.put(Long.valueOf(j2), interfaceC0987f);
+    public static void a(long j2, InterfaceC0817f interfaceC0817f) {
+        if (interfaceC0817f != null) {
+            k.put(Long.valueOf(j2), interfaceC0817f);
         }
     }
 
@@ -211,9 +211,9 @@ public final class f {
     private static native String goingDownInternal(long j2, long j3, long j4, long j5, Object obj, Object obj2);
 
     private static int goingUp(long j2, long j3, long j4, long j5, Object obj, Object obj2, Object[] objArr, Object[] objArr2) {
-        InterfaceC0987f interfaceC0987f = k.get(Long.valueOf(j2));
-        if (interfaceC0987f != null) {
-            return interfaceC0987f.a(j3, j4, j5, obj, obj2, objArr, objArr2);
+        InterfaceC0817f interfaceC0817f = k.get(Long.valueOf(j2));
+        if (interfaceC0817f != null) {
+            return interfaceC0817f.a(j3, j4, j5, obj, obj2, objArr, objArr2);
         }
         return 30;
     }
@@ -308,8 +308,8 @@ public final class f {
     }
 
     public void f() {
-        if (!this.f38550c) {
-            this.f38550c = true;
+        if (!this.f24859c) {
+            this.f24859c = true;
         }
         if (com.tencent.qmsp.sdk.c.b.b) {
             com.tencent.qmsp.sdk.e.a.a();

@@ -3,7 +3,6 @@ package io.github.inflationx.calligraphy3;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,7 +38,7 @@ public final class TypefaceUtils {
                 if (sCachedFonts.containsKey(str)) {
                     return sCachedFonts.get(str);
                 }
-                Typeface createFromFile = str.startsWith(BridgeUtil.SPLIT_MARK) ? Typeface.createFromFile(str) : Typeface.createFromAsset(assetManager, str);
+                Typeface createFromFile = str.startsWith("/") ? Typeface.createFromFile(str) : Typeface.createFromAsset(assetManager, str);
                 sCachedFonts.put(str, createFromFile);
                 return createFromFile;
             } catch (Exception e) {

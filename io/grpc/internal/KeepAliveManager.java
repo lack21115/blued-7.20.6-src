@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import androidx.core.app.NotificationCompat;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -120,7 +119,7 @@ public class KeepAliveManager {
         });
         this.keepAlivePinger = (KeepAlivePinger) Preconditions.checkNotNull(keepAlivePinger, "keepAlivePinger");
         this.scheduler = (ScheduledExecutorService) Preconditions.checkNotNull(scheduledExecutorService, "scheduler");
-        this.stopwatch = (Stopwatch) Preconditions.checkNotNull(stopwatch, NotificationCompat.CATEGORY_STOPWATCH);
+        this.stopwatch = (Stopwatch) Preconditions.checkNotNull(stopwatch, "stopwatch");
         this.keepAliveTimeInNanos = j;
         this.keepAliveTimeoutInNanos = j2;
         this.keepAliveDuringTransportIdle = z;

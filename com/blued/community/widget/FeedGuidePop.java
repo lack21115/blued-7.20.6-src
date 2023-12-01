@@ -1,6 +1,7 @@
 package com.blued.community.widget;
 
 import android.content.Context;
+import android.provider.BrowserContract;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +54,7 @@ public final class FeedGuidePop extends AttachPopupView {
     private final int x;
     private final String y;
     private final int z;
-    static final /* synthetic */ KProperty<Object>[] u = {Reflection.a(new PropertyReference1Impl(FeedGuidePop.class, "vb", "getVb()Lcom/blued/community/databinding/PopGuideCommonWithImgBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] u = {(KProperty) Reflection.a(new PropertyReference1Impl(FeedGuidePop.class, "vb", "getVb()Lcom/blued/community/databinding/PopGuideCommonWithImgBinding;", 0))};
     public static final Companion t = new Companion(null);
 
     @Metadata
@@ -78,7 +79,7 @@ public final class FeedGuidePop extends AttachPopupView {
                 j = 0;
             }
             if ((i & 16) != 0) {
-                popupPosition = PopupPosition.Top;
+                popupPosition = PopupPosition.c;
             }
             if ((i & 32) != 0) {
                 z = true;
@@ -86,38 +87,38 @@ public final class FeedGuidePop extends AttachPopupView {
             companion.a(feedGuidePop, xPopupCallback, view, j, popupPosition, z);
         }
 
-        public final void a(FeedGuidePop guidePop, XPopupCallback xPopupCallback, View atView, long j) {
-            Intrinsics.e(guidePop, "guidePop");
-            Intrinsics.e(atView, "atView");
-            a(guidePop, xPopupCallback, atView, j, PopupPosition.Bottom, false);
+        public final void a(FeedGuidePop feedGuidePop, XPopupCallback xPopupCallback, View view, long j) {
+            Intrinsics.e(feedGuidePop, "guidePop");
+            Intrinsics.e(view, "atView");
+            a(feedGuidePop, xPopupCallback, view, j, PopupPosition.d, false);
         }
 
-        public final void a(FeedGuidePop guidePop, XPopupCallback xPopupCallback, View atView, long j, PopupPosition position, boolean z) {
-            Intrinsics.e(guidePop, "guidePop");
-            Intrinsics.e(atView, "atView");
-            Intrinsics.e(position, "position");
-            final BasePopupView a2 = new XPopup.Builder(guidePop.getContext()).a(atView).a(xPopupCallback).d((Boolean) false).b(z).a(position).c((Boolean) true).a(PopupAnimation.ScaleAlphaFromCenter).b(Boolean.valueOf(guidePop.A())).c(guidePop.B()).b(guidePop.getOffsetX()).c(guidePop.getOffsetY()).a((BasePopupView) guidePop);
+        public final void a(FeedGuidePop feedGuidePop, XPopupCallback xPopupCallback, View view, long j, PopupPosition popupPosition, boolean z) {
+            Intrinsics.e(feedGuidePop, "guidePop");
+            Intrinsics.e(view, "atView");
+            Intrinsics.e(popupPosition, BrowserContract.Bookmarks.POSITION);
+            final BasePopupView a2 = new XPopup.Builder(feedGuidePop.getContext()).a(view).a(xPopupCallback).d(false).b(z).a(popupPosition).c(true).a(PopupAnimation.a).b(Boolean.valueOf(feedGuidePop.A())).c(feedGuidePop.B()).b(feedGuidePop.getOffsetX()).c(feedGuidePop.getOffsetY()).a((BasePopupView) feedGuidePop);
             a2.h();
             if (j != 0) {
                 AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.community.widget.-$$Lambda$FeedGuidePop$Companion$mmxlD8j9hfOIDuVH6nAGwmxVoY0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FeedGuidePop.Companion.a(BasePopupView.this);
+                        FeedGuidePop.Companion.a(a2);
                     }
                 }, j);
             }
         }
 
-        public final void b(FeedGuidePop guidePop, XPopupCallback xPopupCallback, View atView, long j) {
-            Intrinsics.e(guidePop, "guidePop");
-            Intrinsics.e(atView, "atView");
-            a(guidePop, xPopupCallback, atView, j, PopupPosition.Top, false);
+        public final void b(FeedGuidePop feedGuidePop, XPopupCallback xPopupCallback, View view, long j) {
+            Intrinsics.e(feedGuidePop, "guidePop");
+            Intrinsics.e(view, "atView");
+            a(feedGuidePop, xPopupCallback, view, j, PopupPosition.c, false);
         }
 
-        public final void c(FeedGuidePop guidePop, XPopupCallback xPopupCallback, View atView, long j) {
-            Intrinsics.e(guidePop, "guidePop");
-            Intrinsics.e(atView, "atView");
-            a(this, guidePop, xPopupCallback, atView, j, PopupPosition.Bottom, false, 32, null);
+        public final void c(FeedGuidePop feedGuidePop, XPopupCallback xPopupCallback, View view, long j) {
+            Intrinsics.e(feedGuidePop, "guidePop");
+            Intrinsics.e(view, "atView");
+            a(this, feedGuidePop, xPopupCallback, view, j, PopupPosition.d, false, 32, null);
         }
     }
 
@@ -126,37 +127,37 @@ public final class FeedGuidePop extends AttachPopupView {
     public final /* synthetic */ class WhenMappings {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f20484a;
+        public static final /* synthetic */ int[] f6878a;
 
         static {
             int[] iArr = new int[NinePatchUtils.GuideArrowPosition.values().length];
-            iArr[NinePatchUtils.GuideArrowPosition.LEFT.ordinal()] = 1;
-            iArr[NinePatchUtils.GuideArrowPosition.RIGHT.ordinal()] = 2;
-            f20484a = iArr;
+            iArr[NinePatchUtils.GuideArrowPosition.a.ordinal()] = 1;
+            iArr[NinePatchUtils.GuideArrowPosition.c.ordinal()] = 2;
+            f6878a = iArr;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public FeedGuidePop(Context context, String text, NinePatchUtils.GuideArrowPosition position, boolean z, int i, String str, int i2, int i3, int i4) {
+    public FeedGuidePop(Context context, String str, NinePatchUtils.GuideArrowPosition guideArrowPosition, boolean z, int i, String str2, int i2, int i3, int i4) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(text, "text");
-        Intrinsics.e(position, "position");
-        this.v = position;
+        Intrinsics.e(str, "text");
+        Intrinsics.e(guideArrowPosition, BrowserContract.Bookmarks.POSITION);
+        this.v = guideArrowPosition;
         this.w = z;
         this.x = i;
-        this.y = str;
+        this.y = str2;
         this.z = i2;
         this.A = i3;
         this.B = i4;
-        this.C = text;
+        this.C = str;
         this.D = true;
+        BasePopupView basePopupView = (BasePopupView) this;
         this.K = new CustomViewBindingProperty(new Function1<FeedGuidePop, PopGuideCommonWithImgBinding>() { // from class: com.blued.community.widget.FeedGuidePop$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final PopGuideCommonWithImgBinding invoke(FeedGuidePop popView) {
-                Intrinsics.e(popView, "popView");
-                return PopGuideCommonWithImgBinding.a(popView.getPopupImplView());
+            public final PopGuideCommonWithImgBinding invoke(FeedGuidePop feedGuidePop) {
+                Intrinsics.e(feedGuidePop, "popView");
+                return PopGuideCommonWithImgBinding.a(feedGuidePop.getPopupImplView());
             }
         });
     }
@@ -173,7 +174,6 @@ public final class FeedGuidePop extends AttachPopupView {
         return this.E;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         ImageView imageView;
         PopGuideCommonWithImgBinding vb;
@@ -196,12 +196,12 @@ public final class FeedGuidePop extends AttachPopupView {
             setBottomPadding(FeedMethods.c(getDrawableRes() == 0 ? 9 : 5));
         }
         PopGuideCommonWithImgBinding vb3 = getVb();
-        if (vb3 != null && (linearLayout = vb3.f19061c) != null) {
+        if (vb3 != null && (linearLayout = vb3.c) != null) {
             linearLayout.setPadding(FeedMethods.c(getDrawableRes() == 0 ? 10 : 15), getTopPadding(), FeedMethods.c(getDrawableRes() == 0 ? 10 : 15), getBottomPadding());
         }
         if (z()) {
             PopGuideCommonWithImgBinding vb4 = getVb();
-            ImageView imageView4 = vb4 == null ? null : vb4.f19060a;
+            ImageView imageView4 = vb4 == null ? null : vb4.a;
             if (imageView4 != null) {
                 imageView4.setVisibility(8);
             }
@@ -213,7 +213,7 @@ public final class FeedGuidePop extends AttachPopupView {
                     throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
                 }
                 LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) layoutParams;
-                int i = WhenMappings.f20484a[getPosition().ordinal()];
+                int i = WhenMappings.f6878a[getPosition().ordinal()];
                 if (i == 1) {
                     layoutParams2.gravity = 3;
                     layoutParams2.leftMargin = getHorizonTriangleMargin() != 0 ? getHorizonTriangleMargin() : FeedMethods.c(30);
@@ -235,14 +235,14 @@ public final class FeedGuidePop extends AttachPopupView {
                 imageView5.setVisibility(8);
             }
             PopGuideCommonWithImgBinding vb7 = getVb();
-            if (vb7 != null && (imageView = vb7.f19060a) != null) {
+            if (vb7 != null && (imageView = vb7.a) != null) {
                 imageView.setVisibility(0);
                 ViewGroup.LayoutParams layoutParams3 = imageView.getLayoutParams();
                 if (layoutParams3 == null) {
                     throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
                 }
                 LinearLayout.LayoutParams layoutParams4 = (LinearLayout.LayoutParams) layoutParams3;
-                int i2 = WhenMappings.f20484a[getPosition().ordinal()];
+                int i2 = WhenMappings.f6878a[getPosition().ordinal()];
                 if (i2 == 1) {
                     layoutParams4.gravity = 3;
                     layoutParams4.leftMargin = DisplayUtil.a(AppInfo.d(), 20.0f);
@@ -271,7 +271,7 @@ public final class FeedGuidePop extends AttachPopupView {
             } else {
                 String apngRes = getApngRes();
                 if (apngRes != null) {
-                    ImageWrapper g = ImageLoader.c(null, apngRes).f().g(3);
+                    ImageWrapper g = ImageLoader.c((IRequestHost) null, apngRes).f().g(3);
                     PopGuideCommonWithImgBinding vb10 = getVb();
                     g.a(vb10 == null ? null : vb10.d);
                 }
@@ -321,7 +321,6 @@ public final class FeedGuidePop extends AttachPopupView {
         return this.z;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_guide_common_with_img;
     }
@@ -334,7 +333,6 @@ public final class FeedGuidePop extends AttachPopupView {
         return this.G;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public PopupAnimator getPopupAnimator() {
         return null;
     }
@@ -351,7 +349,6 @@ public final class FeedGuidePop extends AttachPopupView {
         return this.H;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void p() {
         super.p();
     }

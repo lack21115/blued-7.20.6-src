@@ -64,14 +64,14 @@ public class c extends a {
 
     @Override // com.huawei.hms.framework.network.grs.f.a
     public int a(String str) {
-        this.f22690a = new com.huawei.hms.framework.network.grs.local.model.a();
+        this.f9082a = new com.huawei.hms.framework.network.grs.local.model.a();
         try {
             JSONObject jSONObject = new JSONObject(str).getJSONObject("application");
             String string = jSONObject.getString("name");
             long j = jSONObject.getLong("cacheControl");
             JSONArray jSONArray = jSONObject.getJSONArray(k2.d);
-            this.f22690a.b(string);
-            this.f22690a.a(j);
+            this.f9082a.b(string);
+            this.f9082a.a(j);
             if (jSONArray != null) {
                 return jSONArray.length() == 0 ? -1 : 0;
             }

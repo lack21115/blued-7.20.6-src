@@ -29,13 +29,9 @@ public abstract class ScrollPickerView<T> extends View {
     private boolean D;
     private boolean E;
     private ValueAnimator F;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11078a;
+    private int a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f11079c;
+    private boolean c;
     private boolean d;
     private int e;
     private List<T> f;
@@ -63,28 +59,24 @@ public abstract class ScrollPickerView<T> extends View {
     /* renamed from: com.blued.android.module.common.view.scrollpicker.ScrollPickerView$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/scrollpicker/ScrollPickerView$1.class */
     class AnonymousClass1 implements ValueAnimator.AnimatorUpdateListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f11080a;
+        final /* synthetic */ int a;
         final /* synthetic */ ScrollPickerView b;
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            this.b.a(((Integer) valueAnimator.getAnimatedValue()).intValue(), this.f11080a, (((float) valueAnimator.getCurrentPlayTime()) * 1.0f) / ((float) valueAnimator.getDuration()));
+            this.b.a(((Integer) valueAnimator.getAnimatedValue()).intValue(), this.a, (((float) valueAnimator.getCurrentPlayTime()) * 1.0f) / ((float) valueAnimator.getDuration()));
         }
     }
 
     /* renamed from: com.blued.android.module.common.view.scrollpicker.ScrollPickerView$2  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/scrollpicker/ScrollPickerView$2.class */
     class AnonymousClass2 extends AnimatorListenerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ScrollPickerView f11081a;
+        final /* synthetic */ ScrollPickerView a;
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
             super.onAnimationEnd(animator);
-            this.f11081a.E = false;
+            this.a.E = false;
         }
     }
 
@@ -190,9 +182,9 @@ public abstract class ScrollPickerView<T> extends View {
 
     public ScrollPickerView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f11078a = 3;
+        this.a = 3;
         this.b = true;
-        this.f11079c = true;
+        this.c = true;
         this.d = false;
         this.g = 0;
         this.h = 0;
@@ -313,11 +305,11 @@ public abstract class ScrollPickerView<T> extends View {
 
     private void i() {
         if (this.j < 0) {
-            this.j = this.f11078a / 2;
+            this.j = this.a / 2;
         }
         if (this.C) {
             this.g = getMeasuredHeight();
-            int measuredWidth = getMeasuredWidth() / this.f11078a;
+            int measuredWidth = getMeasuredWidth() / this.a;
             this.h = measuredWidth;
             this.k = 0;
             int i = this.j * measuredWidth;
@@ -325,7 +317,7 @@ public abstract class ScrollPickerView<T> extends View {
             this.i = measuredWidth;
             this.m = i;
         } else {
-            this.g = getMeasuredHeight() / this.f11078a;
+            this.g = getMeasuredHeight() / this.a;
             this.h = getMeasuredWidth();
             int i2 = this.j;
             int i3 = this.g;
@@ -353,7 +345,7 @@ public abstract class ScrollPickerView<T> extends View {
             this.e = i2;
             if (i2 >= 0) {
                 this.p = (f - i) % i;
-            } else if (this.f11079c) {
+            } else if (this.c) {
                 do {
                     size2 = this.f.size() + this.e;
                     this.e = size2;
@@ -378,7 +370,7 @@ public abstract class ScrollPickerView<T> extends View {
                 float f3 = this.p;
                 int i5 = this.i;
                 this.p = (f3 + i5) % i5;
-            } else if (this.f11079c) {
+            } else if (this.c) {
                 do {
                     size = this.e - this.f.size();
                     this.e = size;
@@ -518,7 +510,7 @@ public abstract class ScrollPickerView<T> extends View {
     }
 
     public boolean c() {
-        return this.f11079c;
+        return this.c;
     }
 
     @Override // android.view.View
@@ -621,7 +613,7 @@ public abstract class ScrollPickerView<T> extends View {
     }
 
     public int getVisibleItemCount() {
-        return this.f11078a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -636,7 +628,7 @@ public abstract class ScrollPickerView<T> extends View {
             drawable.draw(canvas);
         }
         int i = this.j;
-        int min = Math.min(Math.max(i + 1, this.f11078a - i), this.f.size());
+        int min = Math.min(Math.max(i + 1, this.a - i), this.f.size());
         if (this.D) {
             min = this.f.size();
         }
@@ -648,7 +640,7 @@ public abstract class ScrollPickerView<T> extends View {
                     i3 = this.f.size() + this.e;
                 }
                 int i4 = i3 - min;
-                if (this.f11079c) {
+                if (this.c) {
                     float f = this.p;
                     a(canvas, this.f, i4, -min, f, (this.m + f) - (this.i * min));
                 } else if (this.e - min >= 0) {
@@ -656,9 +648,9 @@ public abstract class ScrollPickerView<T> extends View {
                     a(canvas, this.f, i4, -min, f2, (this.m + f2) - (this.i * min));
                 }
             }
-            if (this.D || min <= this.f11078a - this.j) {
+            if (this.D || min <= this.a - this.j) {
                 int size = this.e + min >= this.f.size() ? (this.e + min) - this.f.size() : this.e + min;
-                if (this.f11079c) {
+                if (this.c) {
                     List<T> list2 = this.f;
                     float f3 = this.p;
                     a(canvas, list2, size, min, f3, this.m + f3 + (this.i * min));
@@ -746,7 +738,7 @@ public abstract class ScrollPickerView<T> extends View {
         if (i < 0) {
             this.j = 0;
         } else {
-            int i2 = this.f11078a;
+            int i2 = this.a;
             if (i >= i2) {
                 this.j = i2 - 1;
             } else {
@@ -798,7 +790,7 @@ public abstract class ScrollPickerView<T> extends View {
     }
 
     public void setIsCirculation(boolean z) {
-        this.f11079c = z;
+        this.c = z;
     }
 
     public void setOnSelectedListener(OnSelectedListener onSelectedListener) {
@@ -832,7 +824,7 @@ public abstract class ScrollPickerView<T> extends View {
     }
 
     public void setVisibleItemCount(int i) {
-        this.f11078a = i;
+        this.a = i;
         i();
         invalidate();
     }

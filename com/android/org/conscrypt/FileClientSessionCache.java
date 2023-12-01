@@ -47,9 +47,8 @@ public class FileClientSessionCache {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-273268-dex2jar.jar:com/android/org/conscrypt/FileClientSessionCache$Impl.class */
-    public static class Impl implements SSLClientSessionCache {
+    static class Impl implements SSLClientSessionCache {
         Map<String, File> accessOrder = newAccessOrder();
         final File directory;
         String[] initialFiles;

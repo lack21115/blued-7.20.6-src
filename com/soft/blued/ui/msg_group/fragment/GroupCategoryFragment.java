@@ -22,6 +22,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.soft.blued.R;
 import com.soft.blued.ui.msg_group.adapter.GroupCategoryAdapter;
 import com.soft.blued.ui.msg_group.viewmodel.GroupCategoryVM;
+import java.io.Serializable;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -34,7 +35,7 @@ public final class GroupCategoryFragment extends BaseListFragment<GroupCategoryV
     public static final Companion b = new Companion(null);
 
     /* renamed from: c  reason: collision with root package name */
-    private GroupCategoryModel f32671c;
+    private GroupCategoryModel f18980c;
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/fragment/GroupCategoryFragment$Companion.class */
@@ -56,30 +57,30 @@ public final class GroupCategoryFragment extends BaseListFragment<GroupCategoryV
         public final void a(Fragment fragment, int i, GroupCategoryModel groupCategoryModel) {
             Bundle bundle = new Bundle();
             bundle.putInt(WifiEnterpriseConfig.PRIVATE_KEY_ID_KEY, i);
-            bundle.putSerializable("key_data", groupCategoryModel);
-            Unit unit = Unit.f42314a;
+            bundle.putSerializable("key_data", (Serializable) groupCategoryModel);
+            Unit unit = Unit.a;
             TerminalActivity.a(fragment, GroupCategoryFragment.class, bundle);
         }
     }
 
     private final void D() {
-        if (this.f32671c == null) {
+        if (this.f18980c == null) {
             return;
         }
         Context context = getContext();
         Bundle bundle = new Bundle();
-        bundle.putSerializable("key_data", this.f32671c);
-        Unit unit = Unit.f42314a;
+        bundle.putSerializable("key_data", (Serializable) this.f18980c);
+        Unit unit = Unit.a;
         TerminalActivity.d(context, GroupInfoEditFragment.class, bundle);
     }
 
     private final void E() {
-        if (this.f32671c == null) {
+        if (this.f18980c == null) {
             return;
         }
         FragmentActivity activity = getActivity();
         if (activity != null) {
-            activity.setResult(-1, new Intent().putExtra("key_data", this.f32671c));
+            activity.setResult(-1, new Intent().putExtra("key_data", (Serializable) this.f18980c));
         }
         FragmentActivity activity2 = getActivity();
         if (activity2 == null) {
@@ -89,21 +90,21 @@ public final class GroupCategoryFragment extends BaseListFragment<GroupCategoryV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(int i, GroupCategoryFragment this$0, View view) {
+    public static final void a(int i, GroupCategoryFragment groupCategoryFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(groupCategoryFragment, "this$0");
         if (i == 0) {
-            this$0.D();
+            groupCategoryFragment.D();
         } else {
-            this$0.E();
+            groupCategoryFragment.E();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(GroupCategoryFragment this$0, View view) {
+    public static final void a(GroupCategoryFragment groupCategoryFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(groupCategoryFragment, "this$0");
+        FragmentActivity activity = groupCategoryFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -111,12 +112,12 @@ public final class GroupCategoryFragment extends BaseListFragment<GroupCategoryV
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(GroupCategoryFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+    public static final void a(GroupCategoryFragment groupCategoryFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Context context;
         CommonTopTitleNoTrans b2;
         ShapeTextView rightTextView;
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.f32671c == null && (context = this$0.getContext()) != null && (b2 = this$0.b()) != null && (rightTextView = b2.getRightTextView()) != null) {
+        Intrinsics.e(groupCategoryFragment, "this$0");
+        if (groupCategoryFragment.f18980c == null && (context = groupCategoryFragment.getContext()) != null && (b2 = groupCategoryFragment.b()) != null && (rightTextView = b2.getRightTextView()) != null) {
             rightTextView.setTextColor(ContextCompat.getColor(context, 2131102254));
         }
         List data = baseQuickAdapter.getData();
@@ -132,20 +133,18 @@ public final class GroupCategoryFragment extends BaseListFragment<GroupCategoryV
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.group.GroupCategoryModel");
         }
         GroupCategoryModel groupCategoryModel = (GroupCategoryModel) obj2;
-        this$0.f32671c = groupCategoryModel;
+        groupCategoryFragment.f18980c = groupCategoryModel;
         if (groupCategoryModel != null) {
             groupCategoryModel.setSelected(true);
         }
         baseQuickAdapter.notifyDataSetChanged();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public GroupCategoryAdapter i() {
         return new GroupCategoryAdapter();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         ListConfig h = super.h();
         h.c(false);
@@ -153,16 +152,15 @@ public final class GroupCategoryFragment extends BaseListFragment<GroupCategoryV
         return h;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         Context context;
         CommonTopTitleNoTrans b2;
         ShapeTextView rightTextView;
         super.m();
         final int A = A();
-        this.f32671c = (GroupCategoryModel) B();
-        ((GroupCategoryVM) y()).a(this.f32671c);
-        if (this.f32671c == null && (context = getContext()) != null && (b2 = b()) != null && (rightTextView = b2.getRightTextView()) != null) {
+        this.f18980c = (GroupCategoryModel) B();
+        y().a(this.f18980c);
+        if (this.f18980c == null && (context = getContext()) != null && (b2 = b()) != null && (rightTextView = b2.getRightTextView()) != null) {
             rightTextView.setTextColor(ContextCompat.getColor(context, 2131102264));
         }
         CommonTopTitleNoTrans b3 = b();

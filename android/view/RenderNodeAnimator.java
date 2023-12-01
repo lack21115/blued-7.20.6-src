@@ -10,7 +10,6 @@ import android.util.SparseIntArray;
 import com.android.internal.util.VirtualRefBasePtr;
 import com.android.internal.view.animation.FallbackLUTInterpolator;
 import com.android.internal.view.animation.HasNativeInterpolator;
-import com.android.internal.view.animation.NativeInterpolatorFactory;
 import java.util.ArrayList;
 
 /* loaded from: source-9557208-dex2jar.jar:android/view/RenderNodeAnimator.class */
@@ -163,7 +162,7 @@ public class RenderNodeAnimator extends Animator {
             return;
         }
         if (isNativeInterpolator(this.mInterpolator)) {
-            createNativeInterpolator = ((NativeInterpolatorFactory) this.mInterpolator).createNativeInterpolator();
+            createNativeInterpolator = this.mInterpolator.createNativeInterpolator();
         } else {
             createNativeInterpolator = FallbackLUTInterpolator.createNativeInterpolator(this.mInterpolator, nGetDuration(this.mNativePtr.get()));
         }
@@ -216,8 +215,7 @@ public class RenderNodeAnimator extends Animator {
         this.mNativePtr = new VirtualRefBasePtr(j);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static boolean isNativeInterpolator(TimeInterpolator timeInterpolator) {
+    static boolean isNativeInterpolator(TimeInterpolator timeInterpolator) {
         return timeInterpolator.getClass().isAnnotationPresent(HasNativeInterpolator.class);
     }
 

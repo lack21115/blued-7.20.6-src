@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemGroupCategoryBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29189a;
+    private final FrameLayout f15499a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29189a;
+        return this.f15499a;
     }
 }

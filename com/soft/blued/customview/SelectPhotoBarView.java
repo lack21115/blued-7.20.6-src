@@ -20,11 +20,11 @@ import com.soft.blued.ui.msg.manager.FlashPhotoManager;
 public class SelectPhotoBarView extends RelativeLayout implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private CheckBox f28513a;
+    private CheckBox f14823a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f28514c;
+    private TextView f14824c;
     private TextView d;
     private View e;
     private ISelectPhotoBarCallback f;
@@ -44,34 +44,34 @@ public class SelectPhotoBarView extends RelativeLayout implements View.OnClickLi
 
     private void a(Context context, AttributeSet attributeSet) {
         a(context);
-        this.f28513a = (CheckBox) findViewById(R.id.photo_burn_btn);
+        this.f14823a = (CheckBox) findViewById(R.id.photo_burn_btn);
         this.b = (TextView) findViewById(R.id.photo_album_tv);
-        this.f28514c = (TextView) findViewById(R.id.photo_send_tv);
+        this.f14824c = (TextView) findViewById(R.id.photo_send_tv);
         this.e = findViewById(R.id.photo_send_btn);
         this.d = (TextView) findViewById(R.id.photo_num_tv);
-        String string = context.getString(2131890784);
+        String string = context.getString(R.string.msg_look_burn);
         String str = string;
         if (!TextUtils.isEmpty(FlashPhotoManager.a().b().flash_prompt)) {
             str = string + "\n" + FlashPhotoManager.a().b().flash_prompt;
         }
-        this.f28513a.setText(str);
+        this.f14823a.setText(str);
         this.e.setOnClickListener(this);
         this.b.setOnClickListener(this);
-        this.f28513a.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.customview.SelectPhotoBarView.1
+        this.f14823a.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.customview.SelectPhotoBarView.1
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if (DateTodayManager.f32404a.e()) {
+                if (DateTodayManager.f18714a.e()) {
                     AppMethods.d((int) R.string.date_today_flash_toast);
                     return true;
                 }
                 return false;
             }
         });
-        this.f28513a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.customview.SelectPhotoBarView.2
+        this.f14823a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.customview.SelectPhotoBarView.2
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
                 Tracker.onCheckedChanged(compoundButton, z);
-                if (SelectPhotoBarView.this.f28513a != null) {
+                if (SelectPhotoBarView.this.f14823a != null) {
                     SelectPhotoBarView.this.f.a(z);
                 }
             }
@@ -79,7 +79,7 @@ public class SelectPhotoBarView extends RelativeLayout implements View.OnClickLi
     }
 
     private void setBurnBtnEnable(boolean z) {
-        CheckBox checkBox = this.f28513a;
+        CheckBox checkBox = this.f14823a;
         if (checkBox != null) {
             checkBox.setEnabled(z);
         }
@@ -103,7 +103,7 @@ public class SelectPhotoBarView extends RelativeLayout implements View.OnClickLi
     }
 
     private void setSendBtnEnable(boolean z) {
-        TextView textView = this.f28514c;
+        TextView textView = this.f14824c;
         if (textView != null) {
             textView.setEnabled(z);
         }
@@ -114,7 +114,7 @@ public class SelectPhotoBarView extends RelativeLayout implements View.OnClickLi
     }
 
     private void setSendBtnSelected(boolean z) {
-        TextView textView = this.f28514c;
+        TextView textView = this.f14824c;
         if (textView != null) {
             textView.setSelected(z);
         }
@@ -141,18 +141,18 @@ public class SelectPhotoBarView extends RelativeLayout implements View.OnClickLi
     }
 
     public boolean a() {
-        return this.f28513a.isChecked();
+        return this.f14823a.isChecked();
     }
 
     public void b() {
-        CheckBox checkBox = this.f28513a;
+        CheckBox checkBox = this.f14823a;
         if (checkBox != null) {
             checkBox.setVisibility(8);
         }
     }
 
     public void c() {
-        CheckBox checkBox = this.f28513a;
+        CheckBox checkBox = this.f14823a;
         if (checkBox != null) {
             checkBox.setVisibility(0);
         }
@@ -173,19 +173,19 @@ public class SelectPhotoBarView extends RelativeLayout implements View.OnClickLi
     }
 
     public void setBurnBtnChecked(boolean z) {
-        CheckBox checkBox = this.f28513a;
+        CheckBox checkBox = this.f14823a;
         if (checkBox == null || z == checkBox.isChecked()) {
             return;
         }
-        this.f28513a.setChecked(z);
+        this.f14823a.setChecked(z);
         this.f.a(z);
     }
 
     public void setBurnBtnText(String str) {
-        if (this.f28513a == null || TextUtils.isEmpty(str)) {
+        if (this.f14823a == null || TextUtils.isEmpty(str)) {
             return;
         }
-        this.f28513a.setText(str);
+        this.f14823a.setText(str);
     }
 
     public void setOperationCallback(ISelectPhotoBarCallback iSelectPhotoBarCallback) {

@@ -21,11 +21,11 @@ import com.soft.blued.ui.user.observer.ReportObserver;
 public class ReportTipFragment extends BaseFragment implements View.OnClickListener, ReportObserver.IReportObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33954a;
+    private View f20263a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f33955c;
+    private TextView f20264c;
     private TextView d;
     private ImageView e;
     private ShapeTextView f;
@@ -49,10 +49,10 @@ public class ReportTipFragment extends BaseFragment implements View.OnClickListe
         Bundle arguments = getArguments();
         int i = arguments != null ? arguments.getInt("type") : 0;
         if (i == 2) {
-            this.f33955c.setText(R.string.report_user_feed_help);
+            this.f20264c.setText(R.string.report_user_feed_help);
             this.d.setText(R.string.report_user_feed_tip);
             this.e.setImageResource(R.drawable.report_tip_feed);
-            this.f.setText(R.string.report_to_feed);
+            this.f.setText((int) R.string.report_to_feed);
             this.g.setVisibility(8);
             this.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportTipFragment.3
                 @Override // android.view.View.OnClickListener
@@ -62,18 +62,18 @@ public class ReportTipFragment extends BaseFragment implements View.OnClickListe
                 }
             });
         } else if (i == 3) {
-            this.f33955c.setText(R.string.report_user_comment_help);
+            this.f20264c.setText(R.string.report_user_comment_help);
             this.d.setText(R.string.report_user_comment_tip);
             this.e.setImageResource(R.drawable.report_tip_comment);
             this.f.setVisibility(8);
             this.g.setVisibility(8);
         } else {
-            this.f33955c.setText(R.string.report_user_chat_help);
+            this.f20264c.setText(R.string.report_user_chat_help);
             this.d.setText(R.string.report_user_chat_tip);
             this.e.setImageResource(R.drawable.report_tip_chat);
-            this.f.setText(R.string.report_to_chat);
+            this.f.setText((int) R.string.report_to_chat);
             this.g.setVisibility(0);
-            this.g.setText(R.string.report_to_report);
+            this.g.setText((int) R.string.report_to_report);
             this.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportTipFragment.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -92,15 +92,15 @@ public class ReportTipFragment extends BaseFragment implements View.OnClickListe
     }
 
     public void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33954a.findViewById(2131370694);
-        commonTopTitleNoTrans.setCenterText(this.b.getResources().getString(2131891497));
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        this.f33955c = (TextView) this.f33954a.findViewById(R.id.tv_report_help);
-        this.d = (TextView) this.f33954a.findViewById(R.id.tv_report_tip);
-        this.e = (ImageView) this.f33954a.findViewById(R.id.iv_report_tip);
-        this.f = (ShapeTextView) this.f33954a.findViewById(R.id.tv_to_page);
-        this.g = (ShapeTextView) this.f33954a.findViewById(R.id.tv_to_report);
+        CommonTopTitleNoTrans findViewById = this.f20263a.findViewById(2131370694);
+        findViewById.setCenterText(this.b.getResources().getString(2131891497));
+        findViewById.a();
+        findViewById.setLeftClickListener(this);
+        this.f20264c = (TextView) this.f20263a.findViewById(R.id.tv_report_help);
+        this.d = (TextView) this.f20263a.findViewById(R.id.tv_report_tip);
+        this.e = (ImageView) this.f20263a.findViewById(R.id.iv_report_tip);
+        this.f = this.f20263a.findViewById(R.id.tv_to_page);
+        this.g = this.f20263a.findViewById(R.id.tv_to_report);
     }
 
     @Override // com.soft.blued.ui.user.observer.ReportObserver.IReportObserver
@@ -120,11 +120,10 @@ public class ReportTipFragment extends BaseFragment implements View.OnClickListe
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        if (this.f33954a == null) {
-            this.f33954a = layoutInflater.inflate(R.layout.fragment_report_tip, viewGroup, false);
+        if (this.f20263a == null) {
+            this.f20263a = layoutInflater.inflate(R.layout.fragment_report_tip, viewGroup, false);
             if (getArguments() != null) {
                 this.h = getArguments().getString("KEY_REPORT_TARGET_ID");
                 this.i = getArguments().getString("KEY_REPORT_TARGET_TEXT");
@@ -133,10 +132,9 @@ public class ReportTipFragment extends BaseFragment implements View.OnClickListe
             b();
             ReportObserver.a().a(this);
         }
-        return this.f33954a;
+        return this.f20263a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         ReportObserver.a().b(this);

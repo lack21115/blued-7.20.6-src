@@ -7,11 +7,11 @@ import com.anythink.expressad.exoplayer.h.s;
 final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ae f7738a;
+    public final ae f4899a;
     public final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final s.a f7739c;
+    public final s.a f4900c;
     public final long d;
     public final long e;
     public final int f;
@@ -26,9 +26,9 @@ final class u {
     }
 
     public u(ae aeVar, Object obj, s.a aVar, long j, long j2, int i, boolean z, af afVar, com.anythink.expressad.exoplayer.i.i iVar) {
-        this.f7738a = aeVar;
+        this.f4899a = aeVar;
         this.b = obj;
-        this.f7739c = aVar;
+        this.f4900c = aVar;
         this.d = j;
         this.e = j2;
         this.j = j;
@@ -45,25 +45,25 @@ final class u {
     }
 
     public final u a(int i) {
-        u uVar = new u(this.f7738a, this.b, this.f7739c.a(i), this.d, this.e, this.f, this.g, this.h, this.i);
+        u uVar = new u(this.f4899a, this.b, this.f4900c.a(i), this.d, this.e, this.f, this.g, this.h, this.i);
         a(this, uVar);
         return uVar;
     }
 
     public final u a(ae aeVar, Object obj) {
-        u uVar = new u(aeVar, obj, this.f7739c, this.d, this.e, this.f, this.g, this.h, this.i);
+        u uVar = new u(aeVar, obj, this.f4900c, this.d, this.e, this.f, this.g, this.h, this.i);
         a(this, uVar);
         return uVar;
     }
 
     public final u a(af afVar, com.anythink.expressad.exoplayer.i.i iVar) {
-        u uVar = new u(this.f7738a, this.b, this.f7739c, this.d, this.e, this.f, this.g, afVar, iVar);
+        u uVar = new u(this.f4899a, this.b, this.f4900c, this.d, this.e, this.f, this.g, afVar, iVar);
         a(this, uVar);
         return uVar;
     }
 
     public final u a(s.a aVar, long j, long j2) {
-        ae aeVar = this.f7738a;
+        ae aeVar = this.f4899a;
         Object obj = this.b;
         if (!aVar.a()) {
             j2 = -9223372036854775807L;
@@ -72,13 +72,13 @@ final class u {
     }
 
     public final u a(boolean z) {
-        u uVar = new u(this.f7738a, this.b, this.f7739c, this.d, this.e, this.f, z, this.h, this.i);
+        u uVar = new u(this.f4899a, this.b, this.f4900c, this.d, this.e, this.f, z, this.h, this.i);
         a(this, uVar);
         return uVar;
     }
 
     public final u b(int i) {
-        u uVar = new u(this.f7738a, this.b, this.f7739c, this.d, this.e, i, this.g, this.h, this.i);
+        u uVar = new u(this.f4899a, this.b, this.f4900c, this.d, this.e, i, this.g, this.h, this.i);
         a(this, uVar);
         return uVar;
     }

@@ -44,13 +44,10 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
     private final TextView mSubHeaderText;
     private boolean mUseIntrinsicAnimation;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.framework.view.pulltorefresh.LoadingLayout$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/LoadingLayout$1.class */
-    public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10215a;
+    static /* synthetic */ class AnonymousClass1 {
+        static final /* synthetic */ int[] a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:12:0x003f -> B:26:0x0014). Please submit an issue!!! */
@@ -68,13 +65,13 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[PullToRefreshBase.Orientation.values().length];
-            f10215a = iArr2;
+            a = iArr2;
             try {
                 iArr2[PullToRefreshBase.Orientation.HORIZONTAL.ordinal()] = 1;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f10215a[PullToRefreshBase.Orientation.VERTICAL.ordinal()] = 2;
+                a[PullToRefreshBase.Orientation.VERTICAL.ordinal()] = 2;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -90,7 +87,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
         this.isHeaderStyleEnabled = true;
         this.mMode = mode;
         this.mScrollDirection = orientation;
-        if (AnonymousClass1.f10215a[orientation.ordinal()] != 1) {
+        if (AnonymousClass1.a[orientation.ordinal()] != 1) {
             LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_vertical, this);
         } else {
             LayoutInflater.from(context).inflate(R.layout.pull_to_refresh_header_horizontal, this);
@@ -217,7 +214,7 @@ public abstract class LoadingLayout extends FrameLayout implements ILoadingLayou
     }
 
     public final int getContentSize() {
-        if (AnonymousClass1.f10215a[this.mScrollDirection.ordinal()] != 1) {
+        if (AnonymousClass1.a[this.mScrollDirection.ordinal()] != 1) {
             int i = this.mRefreshingHeight;
             return i != 0 ? i : this.isHeaderStyleEnabled ? "2".equals(AppInfo.e()) ? AppMethods.a(100) : AppMethods.a(65) : "2".equals(AppInfo.e()) ? AppMethods.a(60) : AppMethods.a(50);
         }

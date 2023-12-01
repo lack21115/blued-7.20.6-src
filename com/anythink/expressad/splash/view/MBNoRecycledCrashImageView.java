@@ -23,9 +23,8 @@ public class MBNoRecycledCrashImageView extends ImageView {
         super(context, attributeSet, i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         try {
             super.onDraw(canvas);
         } catch (RuntimeException e) {

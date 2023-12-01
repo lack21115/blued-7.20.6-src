@@ -35,12 +35,12 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
     public static final <T> Continuation<Unit> a(final Function1<? super Continuation<? super T>, ? extends Object> function1, Continuation<? super T> completion) {
         Intrinsics.e(function1, "<this>");
         Intrinsics.e(completion, "completion");
-        final Continuation<?> a2 = DebugProbesKt.a(completion);
+        final Continuation<?> a = DebugProbesKt.a(completion);
         if (function1 instanceof BaseContinuationImpl) {
-            return ((BaseContinuationImpl) function1).create(a2);
+            return ((BaseContinuationImpl) function1).create(a);
         }
-        final CoroutineContext context = a2.getContext();
-        return context == EmptyCoroutineContext.f42457a ? new RestrictedContinuationImpl(a2) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$1
+        final CoroutineContext context = a.getContext();
+        return context == EmptyCoroutineContext.a ? new RestrictedContinuationImpl(a) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$1
             private int b;
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -58,7 +58,7 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
                     throw new IllegalStateException("This coroutine had already completed".toString());
                 }
             }
-        } : new ContinuationImpl(a2, context) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$2
+        } : new ContinuationImpl(a, context) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$2
             private int b;
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -82,48 +82,44 @@ public class IntrinsicsKt__IntrinsicsJvmKt {
     public static final <R, T> Continuation<Unit> a(final Function2<? super R, ? super Continuation<? super T>, ? extends Object> function2, final R r, Continuation<? super T> completion) {
         Intrinsics.e(function2, "<this>");
         Intrinsics.e(completion, "completion");
-        final Continuation<?> a2 = DebugProbesKt.a(completion);
+        final Continuation<?> a = DebugProbesKt.a(completion);
         if (function2 instanceof BaseContinuationImpl) {
-            return ((BaseContinuationImpl) function2).create(r, a2);
+            return ((BaseContinuationImpl) function2).create(r, a);
         }
-        final CoroutineContext context = a2.getContext();
-        return context == EmptyCoroutineContext.f42457a ? new RestrictedContinuationImpl(a2) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$3
-
-            /* renamed from: c  reason: collision with root package name */
-            private int f42465c;
+        final CoroutineContext context = a.getContext();
+        return context == EmptyCoroutineContext.a ? new RestrictedContinuationImpl(a) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$3
+            private int c;
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public Object invokeSuspend(Object obj) {
-                int i = this.f42465c;
+                int i = this.c;
                 if (i != 0) {
                     if (i == 1) {
-                        this.f42465c = 2;
+                        this.c = 2;
                         ResultKt.a(obj);
                         return obj;
                     }
                     throw new IllegalStateException("This coroutine had already completed".toString());
                 }
-                this.f42465c = 1;
+                this.c = 1;
                 ResultKt.a(obj);
                 return ((Function2) TypeIntrinsics.b(function2, 2)).invoke(r, this);
             }
-        } : new ContinuationImpl(a2, context) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$4
-
-            /* renamed from: c  reason: collision with root package name */
-            private int f42467c;
+        } : new ContinuationImpl(a, context) { // from class: kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt$createCoroutineUnintercepted$$inlined$createCoroutineFromSuspendFunction$IntrinsicsKt__IntrinsicsJvmKt$4
+            private int c;
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public Object invokeSuspend(Object obj) {
-                int i = this.f42467c;
+                int i = this.c;
                 if (i != 0) {
                     if (i == 1) {
-                        this.f42467c = 2;
+                        this.c = 2;
                         ResultKt.a(obj);
                         return obj;
                     }
                     throw new IllegalStateException("This coroutine had already completed".toString());
                 }
-                this.f42467c = 1;
+                this.c = 1;
                 ResultKt.a(obj);
                 return ((Function2) TypeIntrinsics.b(function2, 2)).invoke(r, this);
             }

@@ -15,11 +15,11 @@ import java.util.concurrent.TimeUnit;
 public class aw implements au {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40637a = "Coolpad";
+    private static final String f26946a = "Coolpad";
     private static final String b = "com.coolpad.deviceidsupport";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f40638c = "com.coolpad.deviceidsupport.DeviceIdService";
+    private static final String f26947c = "com.coolpad.deviceidsupport.DeviceIdService";
     private static a d;
     private CountDownLatch f;
     private Context g;
@@ -30,16 +30,16 @@ public class aw implements au {
             try {
                 a unused = aw.d = a.b.a(iBinder);
                 aw.this.e = aw.d.b(aw.this.g.getPackageName());
-                Log.d(aw.f40637a, "onServiceConnected: oaid = " + aw.this.e);
+                Log.d(aw.f26946a, "onServiceConnected: oaid = " + aw.this.e);
             } catch (RemoteException | NullPointerException e) {
-                Log.e(aw.f40637a, "onServiceConnected failed e=" + e.getMessage());
+                Log.e(aw.f26946a, "onServiceConnected failed e=" + e.getMessage());
             }
             aw.this.f.countDown();
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
-            Log.d(aw.f40637a, "onServiceDisconnected");
+            Log.d(aw.f26946a, "onServiceDisconnected");
             a unused = aw.d = null;
         }
     };
@@ -47,23 +47,23 @@ public class aw implements au {
     private void b(Context context) {
         try {
             Intent intent = new Intent();
-            intent.setComponent(new ComponentName(b, f40638c));
+            intent.setComponent(new ComponentName(b, f26947c));
             if (context.bindService(intent, this.h, 1)) {
                 return;
             }
-            Log.e(f40637a, "bindService return false");
+            Log.e(f26946a, "bindService return false");
         } catch (Throwable th) {
-            Log.e(f40637a, "bindService failed. e=" + th.getMessage());
+            Log.e(f26946a, "bindService failed. e=" + th.getMessage());
             this.f.countDown();
         }
     }
 
     private void c(Context context) {
         try {
-            Log.d(f40637a, "call unbindService.");
+            Log.d(f26946a, "call unbindService.");
             context.unbindService(this.h);
         } catch (Throwable th) {
-            Log.e(f40637a, "unbindService failed. e=" + th.getMessage());
+            Log.e(f26946a, "unbindService failed. e=" + th.getMessage());
         }
     }
 
@@ -78,11 +78,11 @@ public class aw implements au {
             try {
                 b(context);
                 if (!this.f.await(500L, TimeUnit.MILLISECONDS)) {
-                    Log.e(f40637a, "getOAID time-out");
+                    Log.e(f26946a, "getOAID time-out");
                 }
                 return this.e;
             } catch (InterruptedException e) {
-                Log.e(f40637a, "getOAID interrupted. e=" + e.getMessage());
+                Log.e(f26946a, "getOAID interrupted. e=" + e.getMessage());
                 c(context);
                 return null;
             }

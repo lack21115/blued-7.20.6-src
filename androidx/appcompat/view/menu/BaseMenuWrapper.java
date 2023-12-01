@@ -11,15 +11,15 @@ import androidx.core.internal.view.SupportSubMenu;
 abstract class BaseMenuWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    final Context f1659a;
+    final Context f1611a;
     private SimpleArrayMap<SupportMenuItem, MenuItem> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SimpleArrayMap<SupportSubMenu, SubMenu> f1660c;
+    private SimpleArrayMap<SupportSubMenu, SubMenu> f1612c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BaseMenuWrapper(Context context) {
-        this.f1659a = context;
+        this.f1611a = context;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -33,7 +33,7 @@ abstract class BaseMenuWrapper {
             MenuItem menuItem2 = this.b.get(menuItem);
             menuItemWrapperICS = menuItem2;
             if (menuItem2 == null) {
-                menuItemWrapperICS = new MenuItemWrapperICS(this.f1659a, supportMenuItem);
+                menuItemWrapperICS = new MenuItemWrapperICS(this.f1611a, supportMenuItem);
                 this.b.put(supportMenuItem, menuItemWrapperICS);
             }
         }
@@ -44,14 +44,14 @@ abstract class BaseMenuWrapper {
     public final SubMenu a(SubMenu subMenu) {
         if (subMenu instanceof SupportSubMenu) {
             SupportSubMenu supportSubMenu = (SupportSubMenu) subMenu;
-            if (this.f1660c == null) {
-                this.f1660c = new SimpleArrayMap<>();
+            if (this.f1612c == null) {
+                this.f1612c = new SimpleArrayMap<>();
             }
-            SubMenu subMenu2 = this.f1660c.get(supportSubMenu);
+            SubMenu subMenu2 = this.f1612c.get(supportSubMenu);
             SubMenuWrapperICS subMenuWrapperICS = subMenu2;
             if (subMenu2 == null) {
-                subMenuWrapperICS = new SubMenuWrapperICS(this.f1659a, supportSubMenu);
-                this.f1660c.put(supportSubMenu, subMenuWrapperICS);
+                subMenuWrapperICS = new SubMenuWrapperICS(this.f1611a, supportSubMenu);
+                this.f1612c.put(supportSubMenu, subMenuWrapperICS);
             }
             return subMenuWrapperICS;
         }
@@ -64,7 +64,7 @@ abstract class BaseMenuWrapper {
         if (simpleArrayMap != null) {
             simpleArrayMap.clear();
         }
-        SimpleArrayMap<SupportSubMenu, SubMenu> simpleArrayMap2 = this.f1660c;
+        SimpleArrayMap<SupportSubMenu, SubMenu> simpleArrayMap2 = this.f1612c;
         if (simpleArrayMap2 != null) {
             simpleArrayMap2.clear();
         }

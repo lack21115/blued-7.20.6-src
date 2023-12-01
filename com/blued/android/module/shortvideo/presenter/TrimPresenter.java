@@ -28,13 +28,9 @@ import java.io.File;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/presenter/TrimPresenter.class */
 public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnSeekCompleteListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15828a = TrimPresenter.class.getSimpleName();
+    private static final String a = TrimPresenter.class.getSimpleName();
     private VideoView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private PLShortVideoTrimmer f15829c;
+    private PLShortVideoTrimmer c;
     private Bundle d;
     private TrimDataModel e;
     private DeleteAutoCheckedListener f;
@@ -46,7 +42,7 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
         public void a(RangeSeekBar rangeSeekBar, long j, long j2, int i, boolean z, RangeSeekBar.Thumb thumb) {
             long scrollMs = TrimPresenter.this.e.getScrollMs();
             long scrollMs2 = j2 + TrimPresenter.this.e.getScrollMs();
-            StvLogUtils.a(TrimPresenter.f15828a + " bar.getWidth():" + rangeSeekBar.getWidth(), new Object[0]);
+            StvLogUtils.a(TrimPresenter.a + " bar.getWidth():" + rangeSeekBar.getWidth(), new Object[0]);
             TrimPresenter.this.e.setLeftProgress((double) (j + scrollMs));
             TrimPresenter.this.e.setRightProgress(scrollMs2 < TrimPresenter.this.e.getMinVideoDuration() ? TrimPresenter.this.e.getMinVideoDuration() : scrollMs2);
             ITrimView D = TrimPresenter.this.D();
@@ -73,7 +69,6 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
     private final RecyclerView.OnScrollListener m = new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.shortvideo.presenter.TrimPresenter.3
         private int b = 0;
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             super.onScrollStateChanged(recyclerView, i);
             this.b = i;
@@ -88,7 +83,6 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
             }
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
             long j;
             long j2;
@@ -96,9 +90,9 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
             if (this.b == 0) {
                 return;
             }
-            LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-            int findFirstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
-            View findViewByPosition = linearLayoutManager.findViewByPosition(findFirstVisibleItemPosition);
+            LinearLayoutManager layoutManager = recyclerView.getLayoutManager();
+            int findFirstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
+            View findViewByPosition = layoutManager.findViewByPosition(findFirstVisibleItemPosition);
             int width = (findFirstVisibleItemPosition * findViewByPosition.getWidth()) - findViewByPosition.getLeft();
             if (TrimPresenter.this.l()) {
                 TrimPresenter.this.m();
@@ -131,9 +125,8 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
     }
 
     private void b(final View view, final int i) {
-        StvLogUtils.a(f15828a + " 剪切视频，视频地址: " + this.e.getVideoPath() + " 剪切范围: " + p() + " - " + q(), new Object[0]);
-        this.f15829c.trim((long) p(), (long) q(), PLShortVideoTrimmer.TRIM_MODE.FAST, new PLVideoSaveListener() { // from class: com.blued.android.module.shortvideo.presenter.TrimPresenter.1
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
+        StvLogUtils.a(a + " 剪切视频，视频地址: " + this.e.getVideoPath() + " 剪切范围: " + p() + " - " + q(), new Object[0]);
+        this.c.trim((long) p(), (long) q(), PLShortVideoTrimmer.TRIM_MODE.FAST, new PLVideoSaveListener() { // from class: com.blued.android.module.shortvideo.presenter.TrimPresenter.1
             public void onProgressUpdate(final float f) {
                 if (TrimPresenter.this.D() != null && TrimPresenter.this.D().getActivity() != null && !TrimPresenter.this.D().getActivity().isFinishing()) {
                     TrimPresenter.this.D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.TrimPresenter.1.4
@@ -144,10 +137,9 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
                     });
                     return;
                 }
-                StvLogUtils.a(TrimPresenter.f15828a + " getView() == null!!!", new Object[0]);
+                StvLogUtils.a(TrimPresenter.a + " getView() == null!!!", new Object[0]);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoCanceled() {
                 if (TrimPresenter.this.D() != null && TrimPresenter.this.D().getActivity() != null && !TrimPresenter.this.D().getActivity().isFinishing()) {
                     TrimPresenter.this.D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.TrimPresenter.1.3
@@ -159,14 +151,13 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
                     });
                     return;
                 }
-                StvLogUtils.a(TrimPresenter.f15828a + " getView() == null!!!", new Object[0]);
+                StvLogUtils.a(TrimPresenter.a + " getView() == null!!!", new Object[0]);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoFailed(int i2) {
-                StvLogUtils.a(TrimPresenter.f15828a + " 视频剪切失败, error code: " + i2, new Object[0]);
+                StvLogUtils.a(TrimPresenter.a + " 视频剪切失败, error code: " + i2, new Object[0]);
                 if (i2 == 16) {
-                    StvLogUtils.a(TrimPresenter.f15828a + " 视频剪切，当前机型暂不支持该功能", new Object[0]);
+                    StvLogUtils.a(TrimPresenter.a + " 视频剪切，当前机型暂不支持该功能", new Object[0]);
                 }
                 if (TrimPresenter.this.D() != null && TrimPresenter.this.D().getActivity() != null && !TrimPresenter.this.D().getActivity().isFinishing()) {
                     TrimPresenter.this.D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.TrimPresenter.1.2
@@ -179,10 +170,9 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
                     });
                     return;
                 }
-                StvLogUtils.a(TrimPresenter.f15828a + " getView() == null!!!", new Object[0]);
+                StvLogUtils.a(TrimPresenter.a + " getView() == null!!!", new Object[0]);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoSuccess(final String str) {
                 if (TrimPresenter.this.D() != null && TrimPresenter.this.D().getActivity() != null && !TrimPresenter.this.D().getActivity().isFinishing()) {
                     TrimPresenter.this.D().a(new Runnable() { // from class: com.blued.android.module.shortvideo.presenter.TrimPresenter.1.1
@@ -209,7 +199,7 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
                     });
                     return;
                 }
-                StvLogUtils.a(TrimPresenter.f15828a + " getView() == null!!!", new Object[0]);
+                StvLogUtils.a(TrimPresenter.a + " getView() == null!!!", new Object[0]);
             }
         });
     }
@@ -225,7 +215,7 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
             z = true;
         }
         if (bundle == null) {
-            StvLogUtils.a(f15828a + "TrimPresenter bundle == null!!!", new Object[0]);
+            StvLogUtils.a(a + "TrimPresenter bundle == null!!!", new Object[0]);
             AppMethods.d(R.string.common_net_error);
             D().getActivity().finish();
         } else if (!STLicenseUtils.a(D().getContext())) {
@@ -259,11 +249,11 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
             this.b.setVideoPath(this.e.getVideoPath());
             this.b.setOnPreparedListener(this);
             this.b.setOnCompletionListener(this);
-            this.f15829c = new PLShortVideoTrimmer(D().getContext(), this.e.getVideoPath(), StvTools.d());
+            this.c = new PLShortVideoTrimmer(D().getContext(), this.e.getVideoPath(), StvTools.d());
             D().a(this.e);
             D().a(this.l);
             D().a(this.m);
-            StvLogUtils.a(f15828a + "video duration: " + this.e.getDurationMs(), new Object[0]);
+            StvLogUtils.a(a + "video duration: " + this.e.getDurationMs(), new Object[0]);
         }
     }
 
@@ -318,7 +308,7 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
         if (trimDataModel != null) {
             trimDataModel.clear();
         }
-        PLShortVideoTrimmer pLShortVideoTrimmer = this.f15829c;
+        PLShortVideoTrimmer pLShortVideoTrimmer = this.c;
         if (pLShortVideoTrimmer != null) {
             pLShortVideoTrimmer.destroy();
         }
@@ -328,7 +318,7 @@ public class TrimPresenter extends ShortVideoBasePresent<ITrimView> implements M
         if (this.b == null) {
             return;
         }
-        String str = f15828a;
+        String str = a;
         Logger.c(str, "var1" + i);
         this.b.seekTo(i);
     }

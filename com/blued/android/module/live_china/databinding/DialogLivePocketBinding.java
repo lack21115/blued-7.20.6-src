@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLivePocketBinding.class */
 public final class DialogLivePocketBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f11799a;
+    public final LinearLayout a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TabPageIndicatorWithDot f11800c;
+    public final TabPageIndicatorWithDot c;
     public final TextView d;
     public final View e;
     public final ViewPager f;
@@ -27,9 +23,9 @@ public final class DialogLivePocketBinding implements ViewBinding {
 
     private DialogLivePocketBinding(FrameLayout frameLayout, LinearLayout linearLayout, LinearLayout linearLayout2, TabPageIndicatorWithDot tabPageIndicatorWithDot, TextView textView, View view, ViewPager viewPager) {
         this.g = frameLayout;
-        this.f11799a = linearLayout;
+        this.a = linearLayout;
         this.b = linearLayout2;
-        this.f11800c = tabPageIndicatorWithDot;
+        this.c = tabPageIndicatorWithDot;
         this.d = textView;
         this.e = view;
         this.f = viewPager;
@@ -59,9 +55,9 @@ public final class DialogLivePocketBinding implements ViewBinding {
                     if (textView != null) {
                         View findViewById = view.findViewById(R.id.view_bg_top);
                         if (findViewById != null) {
-                            ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                            if (viewPager != null) {
-                                return new DialogLivePocketBinding((FrameLayout) view, linearLayout, linearLayout2, tabPageIndicatorWithDot, textView, findViewById, viewPager);
+                            ViewPager findViewById2 = view.findViewById(R.id.view_pager);
+                            if (findViewById2 != null) {
+                                return new DialogLivePocketBinding((FrameLayout) view, linearLayout, linearLayout2, tabPageIndicatorWithDot, textView, findViewById, findViewById2);
                             }
                             str = "viewPager";
                         } else {
@@ -82,7 +78,6 @@ public final class DialogLivePocketBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

@@ -186,7 +186,7 @@ public final class Etag {
             b = 22;
         }
         bArr4[0] = b;
-        System.arraycopy((Object) bArr2, 0, (Object) bArr4, 1, length);
+        System.arraycopy(bArr2, 0, bArr4, 1, length);
         return UrlSafeBase64.encodeToString(bArr4);
     }
 

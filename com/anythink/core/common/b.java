@@ -7,12 +7,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6465a = "1";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile b f6466c;
+    public static final String a = "1";
+    private static volatile b c;
     ConcurrentHashMap<String, List<a>> b = new ConcurrentHashMap<>();
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b$a.class */
@@ -24,18 +20,18 @@ public class b {
     }
 
     public static b a() {
-        if (f6466c == null) {
+        if (c == null) {
             synchronized (b.class) {
                 try {
-                    if (f6466c == null) {
-                        f6466c = new b();
+                    if (c == null) {
+                        c = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6466c;
+        return c;
     }
 
     public final void a(final String str, final a aVar) {

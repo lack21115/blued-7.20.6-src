@@ -7,27 +7,27 @@ import java.util.Arrays;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f25488a = {0, 0, 0, 1};
+    public static final byte[] f11800a = {0, 0, 0, 1};
     public static final float[] b = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 2.1818182f, 1.8181819f, 2.909091f, 2.4242425f, 1.6363636f, 1.3636364f, 1.939394f, 1.6161616f, 1.3333334f, 1.5f, 2.0f};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f25489c = new Object();
+    private static final Object f11801c = new Object();
     private static int[] d = new int[10];
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/i/k$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25490a;
+        public final int f11802a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final boolean f25491c;
+        public final boolean f11803c;
 
         public a(int i, int i2, boolean z) {
-            this.f25490a = i;
+            this.f11802a = i;
             this.b = i2;
-            this.f25491c = z;
+            this.f11803c = z;
         }
     }
 
@@ -35,11 +35,11 @@ public final class k {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25492a;
+        public final int f11804a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25493c;
+        public final int f11805c;
         public final float d;
         public final boolean e;
         public final boolean f;
@@ -49,9 +49,9 @@ public final class k {
         public final boolean j;
 
         public b(int i, int i2, int i3, float f, boolean z, boolean z2, int i4, int i5, int i6, boolean z3) {
-            this.f25492a = i;
+            this.f11804a = i;
             this.b = i2;
-            this.f25493c = i3;
+            this.f11805c = i3;
             this.d = f;
             this.e = z;
             this.f = z2;
@@ -64,7 +64,7 @@ public final class k {
 
     public static int a(byte[] bArr, int i) {
         int i2;
-        synchronized (f25489c) {
+        synchronized (f11801c) {
             int i3 = 0;
             int i4 = 0;
             while (i3 < i) {
@@ -87,7 +87,7 @@ public final class k {
                 int i8 = i7;
                 if (i5 < i4) {
                     int i9 = d[i5] - i6;
-                    System.arraycopy((Object) bArr, i6, (Object) bArr, i8, i9);
+                    System.arraycopy(bArr, i6, bArr, i8, i9);
                     int i10 = i8 + i9;
                     int i11 = i10 + 1;
                     byte b2 = (byte) 0;
@@ -97,7 +97,7 @@ public final class k {
                     i5++;
                     i7 = i11 + 1;
                 } else {
-                    System.arraycopy((Object) bArr, i6, (Object) bArr, i8, i2 - i8);
+                    System.arraycopy(bArr, i6, bArr, i8, i2 - i8);
                 }
             }
         }

@@ -7,7 +7,6 @@ public final class DiscoveryPageFragment_MVP implements MvpDispatcher {
     /* JADX WARN: Code restructure failed: missing block: B:19:0x0054, code lost:
         if (r5.equals("show_red_dot") != false) goto L16;
      */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

@@ -4,9 +4,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/c.class */
 public class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final c f4484a = new c();
+    public static final c a = new c();
     private boolean u = false;
     private boolean v = false;
     private String H = null;
@@ -19,11 +17,11 @@ public class c {
     private boolean y = false;
 
     public static c a() {
-        return f4484a;
+        return a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public Map<String, String> m2169a() {
+    public Map<String, String> m8612a() {
         Map<String, String> map;
         synchronized (this) {
             map = this.r;

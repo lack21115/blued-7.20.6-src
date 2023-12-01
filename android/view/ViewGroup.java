@@ -2,7 +2,6 @@ package android.view;
 
 import android.animation.LayoutTransition;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -33,7 +32,6 @@ import android.view.animation.Transformation;
 import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import com.android.internal.util.Predicate;
-import com.umeng.analytics.pro.d;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -107,13 +105,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
     private boolean mHoveredSelf;
     RectF mInvalidateRegion;
     Transformation mInvalidationTransformation;
-    @ViewDebug.ExportedProperty(category = d.f40716ar)
+    @ViewDebug.ExportedProperty(category = "events")
     private int mLastTouchDownIndex;
-    @ViewDebug.ExportedProperty(category = d.f40716ar)
+    @ViewDebug.ExportedProperty(category = "events")
     private long mLastTouchDownTime;
-    @ViewDebug.ExportedProperty(category = d.f40716ar)
+    @ViewDebug.ExportedProperty(category = "events")
     private float mLastTouchDownX;
-    @ViewDebug.ExportedProperty(category = d.f40716ar)
+    @ViewDebug.ExportedProperty(category = "events")
     private float mLastTouchDownY;
     private LayoutAnimationController mLayoutAnimationController;
     private boolean mLayoutCalledWhileSuppressed;
@@ -189,13 +187,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         }
 
         public static ChildListForAccessibility obtain(ViewGroup viewGroup, boolean z) {
-            ChildListForAccessibility acquire = sPool.acquire();
-            ChildListForAccessibility childListForAccessibility = acquire;
-            if (acquire == null) {
-                childListForAccessibility = new ChildListForAccessibility();
+            ChildListForAccessibility childListForAccessibility = (ChildListForAccessibility) sPool.acquire();
+            ChildListForAccessibility childListForAccessibility2 = childListForAccessibility;
+            if (childListForAccessibility == null) {
+                childListForAccessibility2 = new ChildListForAccessibility();
             }
-            childListForAccessibility.init(viewGroup, z);
-            return childListForAccessibility;
+            childListForAccessibility2.init(viewGroup, z);
+            return childListForAccessibility2;
         }
 
         private void sort(ArrayList<ViewLocationHolder> arrayList) {
@@ -645,13 +643,13 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         }
 
         public static ViewLocationHolder obtain(ViewGroup viewGroup, View view) {
-            ViewLocationHolder acquire = sPool.acquire();
-            ViewLocationHolder viewLocationHolder = acquire;
-            if (acquire == null) {
-                viewLocationHolder = new ViewLocationHolder();
+            ViewLocationHolder viewLocationHolder = (ViewLocationHolder) sPool.acquire();
+            ViewLocationHolder viewLocationHolder2 = viewLocationHolder;
+            if (viewLocationHolder == null) {
+                viewLocationHolder2 = new ViewLocationHolder();
             }
-            viewLocationHolder.init(viewGroup, view);
-            return viewLocationHolder;
+            viewLocationHolder2.init(viewGroup, view);
+            return viewLocationHolder2;
         }
 
         public static void setComparisonStrategy(int i) {
@@ -1743,8 +1741,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public ArrayList<View> buildOrderedChildList() {
+    ArrayList<View> buildOrderedChildList() {
         int i;
         int i2 = this.mChildrenCount;
         if (i2 <= 1 || !hasChildWithZ()) {
@@ -2066,8 +2063,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void detachViewFromParent(int i) {
+    protected void detachViewFromParent(int i) {
         removeFromArray(i);
     }
 
@@ -3398,8 +3394,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         return z2;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public LayoutParams generateDefaultLayoutParams() {
+    protected LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(-2, -2);
     }
 
@@ -3407,8 +3402,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         return new LayoutParams(getContext(), attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public LayoutParams generateLayoutParams(LayoutParams layoutParams) {
+    protected LayoutParams generateLayoutParams(LayoutParams layoutParams) {
         return layoutParams;
     }
 
@@ -3691,9 +3685,8 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         return (this.mGroupFlags & 64) == 64;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @ViewDebug.ExportedProperty(category = "drawing")
-    public boolean isChildrenDrawingOrderEnabled() {
+    protected boolean isChildrenDrawingOrderEnabled() {
         return (this.mGroupFlags & 1024) == 1024;
     }
 
@@ -3923,8 +3916,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         offsetRectBetweenParentAndChild(view, rect, true, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public void offsetRectBetweenParentAndChild(View view, Rect rect, boolean z, boolean z2) {
+    void offsetRectBetweenParentAndChild(View view, Rect rect, boolean z, boolean z2) {
         ViewParent viewParent;
         if (view == this) {
             return;
@@ -4200,8 +4192,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         this.mNestedScrollAxes = i;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public boolean onRequestFocusInDescendants(int i, Rect rect) {
+    protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         int i2;
         int i3;
         int i4 = this.mChildrenCount;
@@ -4874,7 +4865,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean shouldBlockFocusForTouchscreen() {
-        return getTouchscreenBlocksFocus() && this.mContext.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TOUCHSCREEN);
+        return getTouchscreenBlocksFocus() && this.mContext.getPackageManager().hasSystemFeature("android.hardware.touchscreen");
     }
 
     public boolean shouldDelayChildPressedState() {
@@ -4886,6 +4877,7 @@ public abstract class ViewGroup extends View implements ViewParent, ViewManager 
         return this.mParent != null && this.mParent.showContextMenuForChild(view);
     }
 
+    @Override // android.view.ViewParent
     public ActionMode startActionModeForChild(View view, ActionMode.Callback callback) {
         if (this.mParent != null) {
             return this.mParent.startActionModeForChild(view, callback);

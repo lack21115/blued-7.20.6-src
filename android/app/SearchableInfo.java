@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
+import android.content.res.ThemeConfig;
 import android.content.res.TypedArray;
 import android.content.res.XmlResourceParser;
 import android.os.Parcel;
@@ -228,7 +229,7 @@ public final class SearchableInfo implements Parcelable {
 
     public static SearchableInfo getActivityMetaData(Context context, ActivityInfo activityInfo, int i) {
         try {
-            Context createPackageContextAsUser = context.createPackageContextAsUser("system", 0, new UserHandle(i));
+            Context createPackageContextAsUser = context.createPackageContextAsUser(ThemeConfig.SYSTEM_DEFAULT, 0, new UserHandle(i));
             XmlResourceParser loadXmlMetaData = activityInfo.loadXmlMetaData(createPackageContextAsUser.getPackageManager(), MD_LABEL_SEARCHABLE);
             if (loadXmlMetaData == null) {
                 return null;

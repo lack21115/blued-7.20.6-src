@@ -14,20 +14,20 @@ public abstract class IdentifyFaceAction implements UiAction {
     public static final class VerifyCard extends IdentifyFaceAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f20565a;
+        private final String f6959a;
         private final String b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public VerifyCard(String name, String cardId) {
+        public VerifyCard(String str, String str2) {
             super(null);
-            Intrinsics.e(name, "name");
-            Intrinsics.e(cardId, "cardId");
-            this.f20565a = name;
-            this.b = cardId;
+            Intrinsics.e(str, "name");
+            Intrinsics.e(str2, "cardId");
+            this.f6959a = str;
+            this.b = str2;
         }
 
         public final String a() {
-            return this.f20565a;
+            return this.f6959a;
         }
 
         public final String b() {
@@ -40,17 +40,17 @@ public abstract class IdentifyFaceAction implements UiAction {
             }
             if (obj instanceof VerifyCard) {
                 VerifyCard verifyCard = (VerifyCard) obj;
-                return Intrinsics.a((Object) this.f20565a, (Object) verifyCard.f20565a) && Intrinsics.a((Object) this.b, (Object) verifyCard.b);
+                return Intrinsics.a(this.f6959a, verifyCard.f6959a) && Intrinsics.a(this.b, verifyCard.b);
             }
             return false;
         }
 
         public int hashCode() {
-            return (this.f20565a.hashCode() * 31) + this.b.hashCode();
+            return (this.f6959a.hashCode() * 31) + this.b.hashCode();
         }
 
         public String toString() {
-            return "VerifyCard(name=" + this.f20565a + ", cardId=" + this.b + ')';
+            return "VerifyCard(name=" + this.f6959a + ", cardId=" + this.b + ')';
         }
     }
 

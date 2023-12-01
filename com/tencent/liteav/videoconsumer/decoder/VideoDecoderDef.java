@@ -43,18 +43,18 @@ public interface VideoDecoderDef {
     public static class DecodeAbility {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f36741a = true;
+        public boolean f23050a = true;
         public boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f36742c = false;
+        public boolean f23051c = false;
 
         public boolean isSupportHEVC() {
-            return this.f36742c;
+            return this.f23051c;
         }
 
         public boolean isSupportRPS() {
-            return this.f36741a;
+            return this.f23050a;
         }
 
         public boolean isSupportSVC() {
@@ -66,11 +66,11 @@ public interface VideoDecoderDef {
     public static class DecoderProperty {
 
         /* renamed from: a  reason: collision with root package name */
-        public ay.a f36743a;
+        public ay.a f23052a;
         public CodecType b;
 
         public DecoderProperty(ay.a aVar, CodecType codecType) {
-            this.f36743a = aVar;
+            this.f23052a = aVar;
             this.b = codecType;
         }
 
@@ -79,7 +79,7 @@ public interface VideoDecoderDef {
         }
 
         public int getDecoderType() {
-            return this.f36743a.mValue;
+            return this.f23052a.mValue;
         }
     }
 }

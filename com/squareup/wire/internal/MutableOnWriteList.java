@@ -16,17 +16,16 @@ public final class MutableOnWriteList<T> extends AbstractMutableList<T> implemen
     private List<? extends T> mutableList;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public MutableOnWriteList(List<? extends T> immutableList) {
-        Intrinsics.e(immutableList, "immutableList");
-        this.immutableList = immutableList;
-        this.mutableList = immutableList;
+    public MutableOnWriteList(List<? extends T> list) {
+        Intrinsics.e(list, "immutableList");
+        this.immutableList = list;
+        this.mutableList = list;
     }
 
     private final Object writeReplace() throws ObjectStreamException {
         return new ArrayList(this.mutableList);
     }
 
-    @Override // kotlin.collections.AbstractMutableList, java.util.AbstractList, java.util.List
     public void add(int i, T t) {
         if (this.mutableList == this.immutableList) {
             this.mutableList = new ArrayList(this.immutableList);
@@ -34,7 +33,6 @@ public final class MutableOnWriteList<T> extends AbstractMutableList<T> implemen
         ((ArrayList) this.mutableList).add(i, t);
     }
 
-    @Override // java.util.AbstractList, java.util.List
     public T get(int i) {
         return this.mutableList.get(i);
     }
@@ -43,12 +41,10 @@ public final class MutableOnWriteList<T> extends AbstractMutableList<T> implemen
         return (List<? extends T>) this.mutableList;
     }
 
-    @Override // kotlin.collections.AbstractMutableList
     public int getSize() {
         return this.mutableList.size();
     }
 
-    @Override // kotlin.collections.AbstractMutableList
     public T removeAt(int i) {
         if (this.mutableList == this.immutableList) {
             this.mutableList = new ArrayList(this.immutableList);
@@ -56,7 +52,6 @@ public final class MutableOnWriteList<T> extends AbstractMutableList<T> implemen
         return (T) ((ArrayList) this.mutableList).remove(i);
     }
 
-    @Override // kotlin.collections.AbstractMutableList, java.util.AbstractList, java.util.List
     public T set(int i, T t) {
         if (this.mutableList == this.immutableList) {
             this.mutableList = new ArrayList(this.immutableList);

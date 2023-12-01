@@ -17,11 +17,11 @@ public class t6 {
     public static boolean f = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f3999a;
+    public final File f3951a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Handler f4000c;
+    public Handler f3952c;
     public HandlerThread d;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/t6$a.class */
@@ -32,11 +32,11 @@ public class t6 {
     public final class b extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public File f4001a;
+        public File f3953a;
 
         public b(Looper looper) {
             super(looper);
-            this.f4001a = a();
+            this.f3953a = a();
         }
 
         public /* synthetic */ b(t6 t6Var, Looper looper, a aVar) {
@@ -44,7 +44,7 @@ public class t6 {
         }
 
         public final File a() {
-            File file = t6.this.f3999a;
+            File file = t6.this.f3951a;
             if (!file.exists()) {
                 file.mkdirs();
             }
@@ -54,32 +54,32 @@ public class t6 {
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             super.handleMessage(message);
-            File file = this.f4001a;
+            File file = this.f3953a;
             if (file == null || !"dexlog".equals(file.getName())) {
-                this.f4001a = a();
+                this.f3953a = a();
             }
             try {
-                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(this.f4001a, true));
+                BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(this.f3953a, true));
                 bufferedOutputStream.write(message.obj.toString().getBytes("GBK"));
                 bufferedOutputStream.flush();
             } catch (IOException e) {
-                this.f4001a = null;
+                this.f3953a = null;
             }
         }
     }
 
     public t6(Context context, File file) {
-        this.f3999a = file;
+        this.f3951a = file;
         boolean z = file != null && (file.exists() || file.mkdirs());
         this.b = z;
         if (z) {
             HandlerThread handlerThread = new HandlerThread("log_worker", 10);
             this.d = handlerThread;
             handlerThread.start();
-            this.f4000c = new b(this, this.d.getLooper(), null);
+            this.f3952c = new b(this, this.d.getLooper(), null);
         }
         if (f) {
-            String str = "log dir=" + this.f3999a;
+            String str = "log dir=" + this.f3951a;
             boolean z2 = this.b;
         }
     }
@@ -105,11 +105,11 @@ public class t6 {
 
     public void a(String str, int i, String str2) {
         if (b()) {
-            this.f4000c.obtainMessage(1, DateFormat.format("yyyy-MM-dd kk:mm:ss", System.currentTimeMillis()) + ":" + str + ":" + str2 + "\n").sendToTarget();
+            this.f3952c.obtainMessage(1, DateFormat.format("yyyy-MM-dd kk:mm:ss", System.currentTimeMillis()) + ":" + str + ":" + str2 + "\n").sendToTarget();
         }
     }
 
     public final boolean b() {
-        return this.b && this.f4000c != null;
+        return this.b && this.f3952c != null;
     }
 }

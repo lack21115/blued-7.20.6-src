@@ -11,12 +11,12 @@ import java.util.concurrent.TimeUnit;
 public final class a implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24896a;
+    private int f11208a;
 
     public a(int i) {
-        this.f24896a = i;
+        this.f11208a = i;
         if (i <= 0) {
-            this.f24896a = 5;
+            this.f11208a = 5;
         }
     }
 
@@ -27,13 +27,13 @@ public final class a implements c {
 
     @Override // com.opos.cmn.func.dl.base.b.c
     public final ThreadPoolExecutor b() {
-        int i = this.f24896a;
+        int i = this.f11208a;
         return new ThreadPoolExecutor(i, i, 0L, TimeUnit.MILLISECONDS, new PriorityBlockingQueue());
     }
 
     @Override // com.opos.cmn.func.dl.base.b.c
     public final ThreadPoolExecutor c() {
-        return new a.C0622a().b(Integer.MAX_VALUE).a(0).a("tp_thread").c(30000).a(new SynchronousQueue()).a();
+        return new a.C0452a().b(Integer.MAX_VALUE).a(0).a("tp_thread").c(30000).a(new SynchronousQueue()).a();
     }
 
     @Override // com.opos.cmn.func.dl.base.b.c

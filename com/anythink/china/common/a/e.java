@@ -5,13 +5,9 @@ import com.anythink.core.common.e.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/a/e.class */
 public final class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f6302a;
+    public String a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f6303c;
+    public String c;
     public Bitmap d;
     public String e;
     public String f;

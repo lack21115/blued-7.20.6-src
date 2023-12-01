@@ -23,7 +23,7 @@ public class b extends a {
     }
 
     private Map<String, String> c() {
-        Map<String, List<String>> headerFields = this.f24542c.getHeaderFields();
+        Map<String, List<String>> headerFields = this.f10855c.getHeaderFields();
         HashMap hashMap = null;
         HashMap hashMap2 = null;
         if (headerFields != null) {
@@ -66,30 +66,30 @@ public class b extends a {
 
     public g a() {
         com.opos.cmn.an.f.a.b("HttpURLSyncTask", "execute start");
-        if (this.f24542c != null) {
+        if (this.f10855c != null) {
             try {
                 com.opos.cmn.an.f.a.b("HttpURLSyncTask", "connect start");
-                this.f24542c.connect();
+                this.f10855c.connect();
                 com.opos.cmn.an.f.a.b("HttpURLSyncTask", "connect end");
                 if ("POST".equals(this.b.b) && this.b.g != null && this.b.g.length > 0) {
-                    OutputStream outputStream = this.f24542c.getOutputStream();
+                    OutputStream outputStream = this.f10855c.getOutputStream();
                     this.d = outputStream;
                     outputStream.write(this.b.g);
                     this.d.flush();
                 }
                 long j = -1;
-                int responseCode = this.f24542c.getResponseCode();
+                int responseCode = this.f10855c.getResponseCode();
                 com.opos.cmn.an.f.a.b("HttpURLSyncTask", "code=" + responseCode);
-                String responseMessage = this.f24542c.getResponseMessage();
+                String responseMessage = this.f10855c.getResponseMessage();
                 StringBuilder sb = new StringBuilder();
                 sb.append("msg=");
                 sb.append(responseMessage != null ? responseMessage : com.igexin.push.core.b.l);
                 com.opos.cmn.an.f.a.b("HttpURLSyncTask", sb.toString());
                 try {
-                    this.e = this.f24542c.getInputStream();
+                    this.e = this.f10855c.getInputStream();
                 } catch (IOException e) {
                 }
-                String headerField = this.f24542c.getHeaderField("Content-Length");
+                String headerField = this.f10855c.getHeaderField("Content-Length");
                 if (!com.opos.cmn.an.c.a.a(headerField)) {
                     j = Long.parseLong(headerField);
                 }
@@ -110,8 +110,8 @@ public class b extends a {
             if (this.e != null) {
                 this.e.close();
             }
-            if (this.f24542c != null) {
-                this.f24542c.disconnect();
+            if (this.f10855c != null) {
+                this.f10855c.disconnect();
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("HttpURLSyncTask", "", e);

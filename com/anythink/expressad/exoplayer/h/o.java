@@ -13,11 +13,11 @@ import java.io.IOException;
 public final class o extends com.anythink.expressad.exoplayer.h.c implements n.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7476a = 3;
+    public static final int f4637a = 3;
     public static final int b = 6;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7477c = -1;
+    public static final int f4638c = -1;
     public static final int d = 1048576;
     private final Uri e;
     private final h.a f;
@@ -39,10 +39,10 @@ public final class o extends com.anythink.expressad.exoplayer.h.c implements n.c
     static final class b extends k {
 
         /* renamed from: a  reason: collision with root package name */
-        private final a f7478a;
+        private final a f4639a;
 
         public b(a aVar) {
-            this.f7478a = (a) com.anythink.expressad.exoplayer.k.a.a(aVar);
+            this.f4639a = (a) com.anythink.expressad.exoplayer.k.a.a(aVar);
         }
 
         @Override // com.anythink.expressad.exoplayer.h.k, com.anythink.expressad.exoplayer.h.t
@@ -54,18 +54,18 @@ public final class o extends com.anythink.expressad.exoplayer.h.c implements n.c
     public static final class c implements c.e {
 
         /* renamed from: a  reason: collision with root package name */
-        private final h.a f7479a;
+        private final h.a f4640a;
         private com.anythink.expressad.exoplayer.e.h b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f7480c;
+        private String f4641c;
         private Object d;
         private int e = -1;
         private int f = 1048576;
         private boolean g;
 
         public c(h.a aVar) {
-            this.f7479a = aVar;
+            this.f4640a = aVar;
         }
 
         private c a(int i) {
@@ -88,7 +88,7 @@ public final class o extends com.anythink.expressad.exoplayer.h.c implements n.c
 
         private c a(String str) {
             com.anythink.expressad.exoplayer.k.a.b(!this.g);
-            this.f7480c = str;
+            this.f4641c = str;
             return this;
         }
 
@@ -114,7 +114,7 @@ public final class o extends com.anythink.expressad.exoplayer.h.c implements n.c
             if (this.b == null) {
                 this.b = new com.anythink.expressad.exoplayer.e.c();
             }
-            return new o(uri, this.f7479a, this.b, this.e, this.f7480c, this.f, this.d, (byte) 0);
+            return new o(uri, this.f4640a, this.b, this.e, this.f4641c, this.f, this.d, (byte) 0);
         }
 
         @Override // com.anythink.expressad.exoplayer.h.a.c.e
@@ -165,7 +165,7 @@ public final class o extends com.anythink.expressad.exoplayer.h.c implements n.c
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final r a(s.a aVar, com.anythink.expressad.exoplayer.j.b bVar) {
-        com.anythink.expressad.exoplayer.k.a.a(aVar.f7484a == 0);
+        com.anythink.expressad.exoplayer.k.a.a(aVar.f4645a == 0);
         return new n(this.e, this.f.a(), this.g.a(), this.h, a(aVar), this, bVar, this.i, this.j);
     }
 

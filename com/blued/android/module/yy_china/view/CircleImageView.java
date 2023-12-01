@@ -27,13 +27,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/CircleImageView.class */
 public class CircleImageView extends AppCompatImageView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final ImageView.ScaleType f17905a = ImageView.ScaleType.CENTER_CROP;
+    private static final ImageView.ScaleType a = ImageView.ScaleType.CENTER_CROP;
     private static final Bitmap.Config b = Bitmap.Config.ARGB_8888;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final RectF f17906c;
+    private final RectF c;
     private final RectF d;
     private final Matrix e;
     private final Paint f;
@@ -74,13 +70,13 @@ public class CircleImageView extends AppCompatImageView {
 
     public CircleImageView(Context context) {
         super(context);
-        this.f17906c = new RectF();
+        this.c = new RectF();
         this.d = new RectF();
         this.e = new Matrix();
         this.f = new Paint();
         this.g = new Paint();
         this.h = new Paint();
-        this.i = -16777216;
+        this.i = View.MEASURED_STATE_MASK;
         this.j = 0;
         this.k = 0;
         this.l = 255;
@@ -93,19 +89,19 @@ public class CircleImageView extends AppCompatImageView {
 
     public CircleImageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f17906c = new RectF();
+        this.c = new RectF();
         this.d = new RectF();
         this.e = new Matrix();
         this.f = new Paint();
         this.g = new Paint();
         this.h = new Paint();
-        this.i = -16777216;
+        this.i = View.MEASURED_STATE_MASK;
         this.j = 0;
         this.k = 0;
         this.l = 255;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.CircleImageView, i, 0);
         this.j = obtainStyledAttributes.getDimensionPixelSize(R.styleable.CircleImageView_civ_border_width, 0);
-        this.i = obtainStyledAttributes.getColor(R.styleable.CircleImageView_civ_border_color, -16777216);
+        this.i = obtainStyledAttributes.getColor(R.styleable.CircleImageView_civ_border_color, View.MEASURED_STATE_MASK);
         this.u = obtainStyledAttributes.getBoolean(R.styleable.CircleImageView_civ_border_overlay, false);
         this.k = obtainStyledAttributes.getColor(R.styleable.CircleImageView_civ_circle_background_color, 0);
         obtainStyledAttributes.recycle();
@@ -133,7 +129,7 @@ public class CircleImageView extends AppCompatImageView {
 
     private void a() {
         this.r = true;
-        super.setScaleType(f17905a);
+        super.setScaleType(a);
         this.f.setAntiAlias(true);
         this.f.setDither(true);
         this.f.setFilterBitmap(true);
@@ -176,11 +172,11 @@ public class CircleImageView extends AppCompatImageView {
         int i;
         this.d.set(d());
         this.p = Math.min((this.d.height() - this.j) / 2.0f, (this.d.width() - this.j) / 2.0f);
-        this.f17906c.set(this.d);
+        this.c.set(this.d);
         if (!this.u && (i = this.j) > 0) {
-            this.f17906c.inset(i - 1.0f, i - 1.0f);
+            this.c.inset(i - 1.0f, i - 1.0f);
         }
-        this.o = Math.min(this.f17906c.height() / 2.0f, this.f17906c.width() / 2.0f);
+        this.o = Math.min(this.c.height() / 2.0f, this.c.width() / 2.0f);
         e();
     }
 
@@ -205,16 +201,16 @@ public class CircleImageView extends AppCompatImageView {
         float width2 = this.m.getWidth();
         float f = height2;
         float f2 = 0.0f;
-        if (this.f17906c.height() * width2 > this.f17906c.width() * f) {
-            width = this.f17906c.height() / f;
-            f2 = (this.f17906c.width() - (width2 * width)) * 0.5f;
+        if (this.c.height() * width2 > this.c.width() * f) {
+            width = this.c.height() / f;
+            f2 = (this.c.width() - (width2 * width)) * 0.5f;
             height = 0.0f;
         } else {
-            width = this.f17906c.width() / width2;
-            height = (this.f17906c.height() - (f * width)) * 0.5f;
+            width = this.c.width() / width2;
+            height = (this.c.height() - (f * width)) * 0.5f;
         }
         this.e.setScale(width, width);
-        this.e.postTranslate(((int) (f2 + 0.5f)) + this.f17906c.left, ((int) (height + 0.5f)) + this.f17906c.top);
+        this.e.postTranslate(((int) (f2 + 0.5f)) + this.c.left, ((int) (height + 0.5f)) + this.c.top);
         this.s = true;
     }
 
@@ -230,31 +226,26 @@ public class CircleImageView extends AppCompatImageView {
         return this.k;
     }
 
-    @Override // android.widget.ImageView
     public ColorFilter getColorFilter() {
         return this.q;
     }
 
-    @Override // android.widget.ImageView
     public int getImageAlpha() {
         return this.l;
     }
 
-    @Override // android.widget.ImageView, android.view.View, android.graphics.drawable.Drawable.Callback
     public void invalidateDrawable(Drawable drawable) {
         this.t = true;
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (this.v) {
             super.onDraw(canvas);
             return;
         }
         if (this.k != 0) {
-            canvas.drawCircle(this.f17906c.centerX(), this.f17906c.centerY(), this.o, this.h);
+            canvas.drawCircle(this.c.centerX(), this.c.centerY(), this.o, this.h);
         }
         if (this.m != null) {
             if (this.t && this.n != null) {
@@ -269,27 +260,23 @@ public class CircleImageView extends AppCompatImageView {
                 bitmapShader.setLocalMatrix(this.e);
                 this.f.setShader(bitmapShader);
             }
-            canvas.drawCircle(this.f17906c.centerX(), this.f17906c.centerY(), this.o, this.f);
+            canvas.drawCircle(this.c.centerX(), this.c.centerY(), this.o, this.f);
         }
         if (this.j > 0) {
             canvas.drawCircle(this.d.centerX(), this.d.centerY(), this.p, this.g);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         c();
         invalidate();
     }
 
-    @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         return this.v ? super.onTouchEvent(motionEvent) : a(motionEvent.getX(), motionEvent.getY()) && super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.ImageView
     public void setAdjustViewBounds(boolean z) {
         if (z) {
             throw new IllegalArgumentException("adjustViewBounds not supported.");
@@ -338,7 +325,6 @@ public class CircleImageView extends AppCompatImageView {
         setCircleBackgroundColor(getContext().getResources().getColor(i));
     }
 
-    @Override // android.widget.ImageView
     public void setColorFilter(ColorFilter colorFilter) {
         if (colorFilter == this.q) {
             return;
@@ -365,7 +351,6 @@ public class CircleImageView extends AppCompatImageView {
         invalidate();
     }
 
-    @Override // android.widget.ImageView
     public void setImageAlpha(int i) {
         int i2 = i & 255;
         if (i2 == this.l) {
@@ -378,51 +363,44 @@ public class CircleImageView extends AppCompatImageView {
         }
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         super.setImageBitmap(bitmap);
         b();
         invalidate();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
         super.setImageDrawable(drawable);
         b();
         invalidate();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageResource(int i) {
         super.setImageResource(i);
         b();
         invalidate();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageURI(Uri uri) {
         super.setImageURI(uri);
         b();
         invalidate();
     }
 
-    @Override // android.view.View
     public void setPadding(int i, int i2, int i3, int i4) {
         super.setPadding(i, i2, i3, i4);
         c();
         invalidate();
     }
 
-    @Override // android.view.View
     public void setPaddingRelative(int i, int i2, int i3, int i4) {
         super.setPaddingRelative(i, i2, i3, i4);
         c();
         invalidate();
     }
 
-    @Override // android.widget.ImageView
     public void setScaleType(ImageView.ScaleType scaleType) {
-        if (scaleType != f17905a) {
+        if (scaleType != a) {
             throw new IllegalArgumentException(String.format("ScaleType %s not supported.", scaleType));
         }
     }

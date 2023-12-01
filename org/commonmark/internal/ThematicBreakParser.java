@@ -11,9 +11,7 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ThematicBreakParser.class */
 public class ThematicBreakParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ThematicBreak f44040a = new ThematicBreak();
+    private final ThematicBreak a = new ThematicBreak();
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ThematicBreakParser$Factory.class */
     public static class Factory extends AbstractBlockParserFactory {
@@ -51,6 +49,6 @@ public class ThematicBreakParser extends AbstractBlockParser {
 
     @Override // org.commonmark.parser.block.BlockParser
     public Block c() {
-        return this.f44040a;
+        return this.a;
     }
 }

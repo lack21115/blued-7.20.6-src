@@ -6,16 +6,14 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/ChildPhotoManager.class */
 public class ChildPhotoManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ChildPhotoManager f19081a = new ChildPhotoManager();
+    private static ChildPhotoManager a = new ChildPhotoManager();
     private List<ChildImageInfo> b = new ArrayList();
 
     private ChildPhotoManager() {
     }
 
     public static ChildPhotoManager a() {
-        return f19081a;
+        return a;
     }
 
     public ChildImageInfo a(int i) {

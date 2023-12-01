@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemCouponBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29165a;
+    private final ConstraintLayout f15475a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29165a;
+        return this.f15475a;
     }
 }

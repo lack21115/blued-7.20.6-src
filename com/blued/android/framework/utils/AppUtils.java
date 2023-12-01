@@ -17,24 +17,22 @@ import java.util.Locale;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/AppUtils.class */
 public class AppUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Application f10069a;
+    private static Application a;
 
     private AppUtils() {
     }
 
     public static Application a() {
-        if (f10069a == null) {
+        if (a == null) {
             synchronized (AppUtils.class) {
                 try {
-                    if (f10069a == null) {
+                    if (a == null) {
                         try {
                             Class<?> cls = Class.forName("android.app.ActivityThread");
                             Method declaredMethod = cls.getDeclaredMethod("currentActivityThread", new Class[0]);
                             Field declaredField = cls.getDeclaredField("mInitialApplication");
                             declaredField.setAccessible(true);
-                            f10069a = (Application) declaredField.get(declaredMethod.invoke(null, new Object[0]));
+                            a = (Application) declaredField.get(declaredMethod.invoke(null, new Object[0]));
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -44,7 +42,7 @@ public class AppUtils {
                 }
             }
         }
-        return f10069a;
+        return a;
     }
 
     public static String a(int i) {
@@ -84,7 +82,7 @@ public class AppUtils {
             });
             return;
         }
-        Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, UriUtils.a(str));
+        Intent intent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE", UriUtils.a(str));
         intent.addFlags(1);
         intent.addFlags(2);
         context.sendBroadcast(intent);

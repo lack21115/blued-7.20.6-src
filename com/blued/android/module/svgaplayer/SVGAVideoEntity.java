@@ -33,19 +33,15 @@ import okio.ByteString;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAVideoEntity.class */
 public final class SVGAVideoEntity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SVGAVideoData f15978a;
+    private SVGAVideoData a;
     private final String b = "SVGAVideoEntity";
-
-    /* renamed from: c  reason: collision with root package name */
-    private SVGASoundManager.SVGASoundCallBack f15979c;
+    private SVGASoundManager.SVGASoundCallBack c;
     private SVGAParser.PlayCallback d;
     private Function0<Unit> e;
     private SoundPool f;
 
     public SVGAVideoEntity(SVGAVideoData sVGAVideoData) {
-        this.f15978a = sVGAVideoData;
+        this.a = sVGAVideoData;
     }
 
     private final SVGAAudioEntity a(AudioEntity audioEntity, HashMap<String, File> hashMap) {
@@ -79,13 +75,13 @@ public final class SVGAVideoEntity {
             FileInputStream fileInputStream2 = fileInputStream;
             double available = fileInputStream2.available();
             long j = (long) ((intValue / intValue2) * available);
-            if (SVGASoundManager.f15975a.a()) {
-                sVGAAudioEntity.a(Integer.valueOf(SVGASoundManager.f15975a.a(this.f15979c, fileInputStream2.getFD(), j, (long) available, 1)));
+            if (SVGASoundManager.a.a()) {
+                sVGAAudioEntity.a(Integer.valueOf(SVGASoundManager.a.a(this.c, fileInputStream2.getFD(), j, (long) available, 1)));
             } else {
                 SoundPool soundPool = this.f;
                 sVGAAudioEntity.a(soundPool != null ? Integer.valueOf(soundPool.load(fileInputStream2.getFD(), j, (long) available, 1)) : null);
             }
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
             CloseableKt.a(fileInputStream, null);
             return sVGAAudioEntity;
         } finally {
@@ -104,7 +100,7 @@ public final class SVGAVideoEntity {
         HashMap<String, byte[]> hashMap2 = b;
         if (hashMap2.size() > 0) {
             for (Map.Entry<String, byte[]> entry : hashMap2.entrySet()) {
-                File f = SVGACache.f15940a.f(entry.getKey());
+                File f = SVGACache.a.f(entry.getKey());
                 HashMap<String, File> hashMap3 = hashMap;
                 String key = entry.getKey();
                 File file = f.exists() ? f : null;
@@ -124,12 +120,12 @@ public final class SVGAVideoEntity {
             boolean z = true;
             if (!((list == null || !list.isEmpty()) ? false : false)) {
                 b(movieEntity, function0);
-                HashMap<String, File> a2 = a(movieEntity);
-                if (a2.size() == 0) {
+                HashMap<String, File> a = a(movieEntity);
+                if (a.size() == 0) {
                     function0.invoke();
                     return;
                 }
-                SVGAVideoData sVGAVideoData = this.f15978a;
+                SVGAVideoData sVGAVideoData = this.a;
                 if (sVGAVideoData == null) {
                     return;
                 }
@@ -139,7 +135,7 @@ public final class SVGAVideoEntity {
                 ArrayList arrayList = new ArrayList(CollectionsKt.a((Iterable) list3, 10));
                 for (AudioEntity audio : list3) {
                     Intrinsics.c(audio, "audio");
-                    arrayList.add(a(audio, a2));
+                    arrayList.add(a(audio, a));
                 }
                 sVGAVideoData.b(arrayList);
                 return;
@@ -153,9 +149,9 @@ public final class SVGAVideoEntity {
         Intrinsics.e(soundLoaded, "$soundLoaded");
         Intrinsics.e(entity, "$entity");
         Intrinsics.e(completionBlock, "$completionBlock");
-        LogUtils.f16034a.a("SVGAParser", "pool_complete");
-        soundLoaded.f42543a++;
-        int i3 = soundLoaded.f42543a;
+        LogUtils.a.a("SVGAParser", "pool_complete");
+        soundLoaded.a++;
+        int i3 = soundLoaded.a;
         List<AudioEntity> list = entity.audios;
         Intrinsics.c(list, "entity.audios");
         if (i3 >= list.size()) {
@@ -172,11 +168,11 @@ public final class SVGAVideoEntity {
                 String imageKey = entry.getKey();
                 byte[] byteArray = entry.getValue().toByteArray();
                 if (byteArray.length >= 4) {
-                    List<Byte> a2 = ArraysKt.a(byteArray, new IntRange(0, 3));
-                    if (a2.get(0).byteValue() == 73 && a2.get(1).byteValue() == 68 && a2.get(2).byteValue() == 51) {
+                    List<Byte> a = ArraysKt.a(byteArray, new IntRange(0, 3));
+                    if (a.get(0).byteValue() == 73 && a.get(1).byteValue() == 68 && a.get(2).byteValue() == 51) {
                         Intrinsics.c(imageKey, "imageKey");
                         hashMap.put(imageKey, byteArray);
-                    } else if (a2.get(0).byteValue() == -1 && a2.get(1).byteValue() == -5 && a2.get(2).byteValue() == -108) {
+                    } else if (a.get(0).byteValue() == -1 && a.get(1).byteValue() == -5 && a.get(2).byteValue() == -108) {
                         Intrinsics.c(imageKey, "imageKey");
                         hashMap.put(imageKey, byteArray);
                     }
@@ -188,13 +184,13 @@ public final class SVGAVideoEntity {
 
     private final void b(final MovieEntity movieEntity, final Function0<Unit> function0) {
         final Ref.IntRef intRef = new Ref.IntRef();
-        if (SVGASoundManager.f15975a.a()) {
-            this.f15979c = new SVGASoundManager.SVGASoundCallBack() { // from class: com.blued.android.module.svgaplayer.SVGAVideoEntity$setupSoundPool$1
+        if (SVGASoundManager.a.a()) {
+            this.c = new SVGASoundManager.SVGASoundCallBack() { // from class: com.blued.android.module.svgaplayer.SVGAVideoEntity$setupSoundPool$1
             };
             return;
         }
         this.f = c(movieEntity);
-        LogUtils.f16034a.a("SVGAParser", "pool_start");
+        LogUtils.a.a("SVGAParser", "pool_start");
         SoundPool soundPool = this.f;
         if (soundPool != null) {
             soundPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAVideoEntity$TkeeMuzfqBwXxTObX_jlMWRr8gM
@@ -218,20 +214,20 @@ public final class SVGAVideoEntity {
             Intrinsics.c(list2, "entity.audios");
             return audioAttributes.setMaxStreams(RangesKt.d(12, list2.size())).build();
         } catch (Exception e) {
-            LogUtils.f16034a.a(this.b, e);
+            LogUtils.a.a(this.b, e);
             return null;
         }
     }
 
     public final SVGAVideoData a() {
-        return this.f15978a;
+        return this.a;
     }
 
     public final void a(Function0<Unit> callback, SVGAParser.PlayCallback playCallback) {
         Intrinsics.e(callback, "callback");
         this.e = callback;
         this.d = playCallback;
-        SVGAVideoData sVGAVideoData = this.f15978a;
+        SVGAVideoData sVGAVideoData = this.a;
         if ((sVGAVideoData != null ? sVGAVideoData.b() : null) == null) {
             Function0<Unit> function0 = this.e;
             if (function0 != null) {
@@ -240,7 +236,7 @@ public final class SVGAVideoEntity {
             }
             return;
         }
-        SVGAVideoData sVGAVideoData2 = this.f15978a;
+        SVGAVideoData sVGAVideoData2 = this.a;
         MovieEntity movieEntity = null;
         if (sVGAVideoData2 != null) {
             movieEntity = sVGAVideoData2.b();
@@ -262,7 +258,7 @@ public final class SVGAVideoEntity {
             @Override // kotlin.jvm.functions.Function0
             public /* synthetic */ Unit invoke() {
                 a();
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -273,17 +269,17 @@ public final class SVGAVideoEntity {
 
     public final void c() {
         List<SVGAAudioEntity> g;
-        if (SVGASoundManager.f15975a.a()) {
-            SVGAVideoData sVGAVideoData = this.f15978a;
+        if (SVGASoundManager.a.a()) {
+            SVGAVideoData sVGAVideoData = this.a;
             if (sVGAVideoData != null && (g = sVGAVideoData.g()) != null) {
                 for (SVGAAudioEntity sVGAAudioEntity : g) {
                     Integer d = sVGAAudioEntity.d();
                     if (d != null) {
-                        SVGASoundManager.f15975a.a(d.intValue());
+                        SVGASoundManager.a.a(d.intValue());
                     }
                 }
             }
-            this.f15979c = null;
+            this.c = null;
         }
         this.e = null;
         SoundPool soundPool = this.f;
@@ -291,6 +287,6 @@ public final class SVGAVideoEntity {
             soundPool.release();
         }
         this.f = null;
-        this.f15978a = null;
+        this.a = null;
     }
 }

@@ -10,7 +10,7 @@ import com.bun.supplier.SupplierListener;
 public class b implements com.bun.miitmdid.c.e.a, InnerIdSupplier {
 
     /* renamed from: a  reason: collision with root package name */
-    public SupplierListener f21164a;
+    public SupplierListener f7558a;
     private MsaClient b;
 
     public b(Context context) {

@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.model.object;
 
 import android.content.ContentResolver;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.CosXmlSimpleService;
 import com.tencent.cos.xml.common.COSStorageClass;
 import com.tencent.cos.xml.common.ClientErrorCode;
@@ -173,7 +172,7 @@ public class PostObjectRequest extends ObjectRequest implements TransferRequest 
     }
 
     private PostObjectRequest(String str, String str2) {
-        super(str, BridgeUtil.SPLIT_MARK);
+        super(str, "/");
         FormStruct formStruct = new FormStruct();
         this.formStruct = formStruct;
         this.offset = 0L;

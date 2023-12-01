@@ -25,9 +25,9 @@ public final class f extends HandlerThread {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.os.HandlerThread
     public final void onLooperPrepared() {
-        d dVar = d.a.f23474a;
+        d dVar = d.a.f9866a;
         try {
-            e.a(dVar.f23469a);
+            e.a(dVar.f9861a);
             com.igexin.push.config.b.a();
             com.igexin.push.config.b.b();
             IntentFilter intentFilter = new IntentFilter();
@@ -37,7 +37,7 @@ public final class f extends HandlerThread {
             intentFilter.addAction("com.igexin.action.notification.click");
             intentFilter.addAction(Intent.ACTION_SCREEN_ON);
             intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-            dVar.f23469a.registerReceiver(i.a(), intentFilter, e.ac, null);
+            dVar.f9861a.registerReceiver(i.a(), intentFilter, e.ac, null);
             com.igexin.push.a.a aVar = new com.igexin.push.a.a();
             aVar.a((com.igexin.push.core.e.a) com.igexin.push.core.e.f.a());
             aVar.a((com.igexin.push.core.e.a) com.igexin.push.config.a.a());
@@ -45,7 +45,7 @@ public final class f extends HandlerThread {
             aVar.a((com.igexin.push.core.e.a) com.igexin.push.core.e.c.a());
             dVar.f.a((com.igexin.c.a.d.f) aVar, true, false);
             com.igexin.push.core.e.f a2 = com.igexin.push.core.e.f.a();
-            if (TextUtils.isEmpty(com.igexin.push.f.g.f23649c)) {
+            if (TextUtils.isEmpty(com.igexin.push.f.g.f10041c)) {
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass26(), true, false);
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass27(), true, false);
             }
@@ -53,7 +53,7 @@ public final class f extends HandlerThread {
             com.igexin.c.a.c.a.b("Type145Task", "doAction ---");
             Intent intent = new Intent(e.g + ".doaction");
             intent.putExtra("cid", e.A);
-            intent.putExtra("appid", e.f23495a);
+            intent.putExtra("appid", e.f9887a);
             intent.putExtra("gtcid", e.C);
             intent.putExtra("type145DelayMs", com.igexin.push.config.d.Z);
             intent.putExtra("type145Enable", com.igexin.push.config.d.Y);
@@ -65,13 +65,13 @@ public final class f extends HandlerThread {
             intent.putExtra("type145NetLocEnable", com.igexin.push.config.d.ad);
             intent.putExtra("type145CellInfoEnable", com.igexin.push.config.d.ae);
             com.igexin.push.e.h.a(e.l, 1, intent);
-            com.igexin.push.e.h unused = h.a.f23635a;
+            com.igexin.push.e.h unused = h.a.f10027a;
             com.igexin.push.e.h.a(e.l, intent);
             com.igexin.c.a.b.e eVar = dVar.f;
-            Context context = dVar.f23469a;
+            Context context = dVar.f9861a;
             if (!eVar.H) {
                 if (!com.igexin.push.f.n.m()) {
-                    eVar.u = (PowerManager) context.getSystemService("power");
+                    eVar.u = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
                     eVar.C = true;
                     eVar.v = (AlarmManager) context.getSystemService("alarm");
                     context.registerReceiver(eVar, new g.AnonymousClass1(context), e.ac, null);
@@ -112,8 +112,8 @@ public final class f extends HandlerThread {
             com.igexin.push.e.f.c().d();
             e.m.set(true);
             com.igexin.push.e.g.c().d();
-            while (!dVar.f23470c.isEmpty()) {
-                Message poll = dVar.f23470c.poll();
+            while (!dVar.f9862c.isEmpty()) {
+                Message poll = dVar.f9862c.poll();
                 if (poll != null && dVar.b != null) {
                     dVar.b.sendMessage(poll);
                 }

@@ -25,13 +25,9 @@ import java.util.Random;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BubbleLayout.class */
 public class BubbleLayout extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<Bubble> f14239a;
+    private List<Bubble> a;
     private Random b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14240c;
+    private int c;
     private int d;
     private Context e;
     private Paint f;
@@ -45,12 +41,8 @@ public class BubbleLayout extends View {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BubbleLayout$Bubble.class */
     public static class Bubble {
-
-        /* renamed from: a  reason: collision with root package name */
-        public float f14246a;
-
-        /* renamed from: c  reason: collision with root package name */
-        public float f14247c;
+        public float a;
+        public float c;
         public Bitmap e;
         private float f;
         private float g;
@@ -106,7 +98,7 @@ public class BubbleLayout extends View {
 
     public BubbleLayout(Context context) {
         super(context);
-        this.f14239a = Collections.synchronizedList(new ArrayList());
+        this.a = Collections.synchronizedList(new ArrayList());
         this.b = new Random();
         this.f = new Paint();
         this.m = true;
@@ -115,7 +107,7 @@ public class BubbleLayout extends View {
 
     public BubbleLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14239a = Collections.synchronizedList(new ArrayList());
+        this.a = Collections.synchronizedList(new ArrayList());
         this.b = new Random();
         this.f = new Paint();
         this.m = true;
@@ -124,7 +116,7 @@ public class BubbleLayout extends View {
 
     public BubbleLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14239a = Collections.synchronizedList(new ArrayList());
+        this.a = Collections.synchronizedList(new ArrayList());
         this.b = new Random();
         this.f = new Paint();
         this.m = true;
@@ -132,9 +124,9 @@ public class BubbleLayout extends View {
     }
 
     protected Bitmap a(Bitmap bitmap) {
-        float a2 = DensityUtils.a(this.e, 5.0f) / 10.0f;
+        float a = DensityUtils.a(this.e, 5.0f) / 10.0f;
         Matrix matrix = new Matrix();
-        matrix.postScale(a2, a2);
+        matrix.postScale(a, a);
         Bitmap createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         bitmap.recycle();
         return createBitmap;
@@ -183,7 +175,7 @@ public class BubbleLayout extends View {
             }
             this.f.reset();
             this.f.setColor(6723993);
-            this.f14240c = getWidth();
+            this.c = getWidth();
             this.d = getHeight();
             final Bubble bubble = new Bubble();
             if (i >= 26) {
@@ -192,8 +184,8 @@ public class BubbleLayout extends View {
                 bubble.e = this.j.get(this.b.nextInt(this.j.size()));
             }
             bubble.c((this.b.nextFloat() * 5.0f) + 1.5f);
-            bubble.f14247c = 0.08f;
-            bubble.a((this.f14240c - this.h) - DensityUtils.a(this.e, 22.0f));
+            bubble.c = 0.08f;
+            bubble.a((this.c - this.h) - DensityUtils.a(this.e, 22.0f));
             bubble.b(this.d - DensityUtils.a(this.e, 12.0f));
             float nextFloat = this.b.nextFloat();
             while (true) {
@@ -208,14 +200,14 @@ public class BubbleLayout extends View {
                 f2 = f * (-1.0f);
             }
             bubble.d(f2 * 3.0f);
-            bubble.f14246a = bubble.e();
+            bubble.a = bubble.e();
             post(new Runnable() { // from class: com.blued.android.module.live_china.view.BubbleLayout.3
                 @Override // java.lang.Runnable
                 public void run() {
                     if (z) {
-                        BubbleLayout.this.f14239a.add(bubble);
-                    } else if (BubbleLayout.this.f14239a.size() <= 50) {
-                        BubbleLayout.this.f14239a.add(bubble);
+                        BubbleLayout.this.a.add(bubble);
+                    } else if (BubbleLayout.this.a.size() <= 50) {
+                        BubbleLayout.this.a.add(bubble);
                     }
                     BubbleLayout.this.invalidate();
                 }
@@ -274,7 +266,7 @@ public class BubbleLayout extends View {
         if (bitmap != null && !bitmap.isRecycled()) {
             this.l.recycle();
         }
-        List<Bubble> list = this.f14239a;
+        List<Bubble> list = this.a;
         if (list != null) {
             list.clear();
         }
@@ -284,17 +276,17 @@ public class BubbleLayout extends View {
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (!this.m || this.f14239a.size() <= 0) {
+        if (!this.m || this.a.size() <= 0) {
             return;
         }
-        Iterator<Bubble> it = this.f14239a.iterator();
+        Iterator<Bubble> it = this.a.iterator();
         while (it.hasNext()) {
             Bubble next = it.next();
             if (next != null) {
                 if (next.c() - next.d() <= 0.0f || (next.e != null && next.e.isRecycled())) {
                     it.remove();
                 } else {
-                    float b = (this.f14240c - this.g) - next.b();
+                    float b = (this.c - this.g) - next.b();
                     float f = this.i;
                     if (next.e() >= 0.0f) {
                         if (b <= 0.0f) {
@@ -313,7 +305,7 @@ public class BubbleLayout extends View {
                         if (next.e != null && !next.e.isRecycled()) {
                             canvas.drawBitmap(next.e, matrix, this.f);
                         }
-                        next.b += next.f14247c;
+                        next.b += next.c;
                         next.b(next.c() - 5.0f);
                         next.a(next.b() - 3.5f);
                     } else {

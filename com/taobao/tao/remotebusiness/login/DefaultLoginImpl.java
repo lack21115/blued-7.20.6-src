@@ -135,7 +135,7 @@ public final class DefaultLoginImpl implements IRemoteLogin {
                                     return;
                                 }
                                 String action = intent.getAction();
-                                if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+                                if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
                                     TBSdkLog.b(DefaultLoginImpl.TAG, "Login Broadcast Received. action=" + action);
                                 }
                                 if ("NOTIFY_LOGIN_SUCCESS".equals(action)) {
@@ -193,7 +193,7 @@ public final class DefaultLoginImpl implements IRemoteLogin {
                     bundle = new Bundle();
                     try {
                         String jSONString = sessionInvalidEvent.toJSONString();
-                        if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+                        if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
                             TBSdkLog.b(TAG, "apiRefer=" + jSONString);
                         }
                         bundle.putString(MTOP_API_REFERENCE, jSONString);

@@ -26,7 +26,6 @@ final class AccessibilityIterators {
             return sLineInstance;
         }
 
-        @Override // android.view.AccessibilityIterators.TextSegmentIterator
         public int[] following(int i) {
             int i2;
             if (this.mText.length() > 0 && i < this.mText.length()) {
@@ -53,7 +52,6 @@ final class AccessibilityIterators {
             this.mLayout = layout;
         }
 
-        @Override // android.view.AccessibilityIterators.TextSegmentIterator
         public int[] preceding(int i) {
             int i2;
             if (this.mText.length() > 0 && i > 0) {
@@ -88,7 +86,7 @@ final class AccessibilityIterators {
             return sPageInstance;
         }
 
-        @Override // android.widget.AccessibilityIterators.LineTextSegmentIterator, android.view.AccessibilityIterators.TextSegmentIterator
+        @Override // android.widget.AccessibilityIterators.LineTextSegmentIterator
         public int[] following(int i) {
             if (this.mText.length() > 0 && i < this.mText.length() && this.mView.getGlobalVisibleRect(this.mTempRect)) {
                 int max = Math.max(0, i);
@@ -103,7 +101,7 @@ final class AccessibilityIterators {
             this.mView = textView;
         }
 
-        @Override // android.widget.AccessibilityIterators.LineTextSegmentIterator, android.view.AccessibilityIterators.TextSegmentIterator
+        @Override // android.widget.AccessibilityIterators.LineTextSegmentIterator
         public int[] preceding(int i) {
             if (this.mText.length() > 0 && i > 0 && this.mView.getGlobalVisibleRect(this.mTempRect)) {
                 int min = Math.min(this.mText.length(), i);

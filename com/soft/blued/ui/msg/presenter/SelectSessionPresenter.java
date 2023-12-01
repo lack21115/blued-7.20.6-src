@@ -10,10 +10,8 @@ import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/presenter/SelectSessionPresenter.class */
 public class SelectSessionPresenter extends MvpPresenter {
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(final IFetchDataListener iFetchDataListener) {
         ChatManager.getInstance().getSessionModelList(new FetchDataListener<List<SessionModel>>() { // from class: com.soft.blued.ui.msg.presenter.SelectSessionPresenter.1
-            @Override // com.blued.android.chat.listener.FetchDataListener
             /* renamed from: a */
             public void onFetchData(List<SessionModel> list) {
                 ChatHelperV4.a(list, true);
@@ -22,7 +20,6 @@ public class SelectSessionPresenter extends MvpPresenter {
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 }

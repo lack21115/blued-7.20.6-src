@@ -2,12 +2,14 @@ package com.sobot.chat.api;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ThemeConfig;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.UserDictionary;
 import android.telecom.PhoneAccount;
 import android.text.TextUtils;
 import android.util.Log;
+import com.anythink.expressad.d.a.b;
 import com.huawei.hms.push.AttributionReporter;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.huawei.openalliance.ad.constant.ao;
@@ -82,6 +84,7 @@ import com.sobot.chat.utils.ZhiChiConstant;
 import com.sobot.network.http.SobotOkHttpUtils;
 import com.sobot.network.http.callback.StringResultCallBack;
 import com.sobot.network.http.upload.SobotUploadTask;
+import com.ss.android.download.api.constant.BaseConstants;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import java.io.File;
@@ -97,11 +100,11 @@ import org.json.JSONObject;
 public class ZhiChiApiImpl implements ZhiChiApi {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f28099a = ZhiChiApiImpl.class.getSimpleName() + "";
+    private static final String f14410a = ZhiChiApiImpl.class.getSimpleName() + "";
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f28100c = "2";
+    private String f14411c = "2";
     private String d = ZhiChiUrlApi.VERSION;
 
     private ZhiChiApiImpl() {
@@ -148,7 +151,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str5, int i2) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str5, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str5, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -193,7 +196,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -227,7 +230,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         hashMap.put("questionFlag", i + "");
         hashMap.put("uid", str4);
         hashMap.put("cid", str5);
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         hashMap.put("robotFlag", str);
         if (map != null) {
@@ -278,7 +281,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str4, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str4, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str4, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -312,7 +315,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         if (!TextUtils.isEmpty(sobotCommentParam.getScore())) {
             hashMap.put("source", sobotCommentParam.getScore());
         }
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         HttpUtilsTools.doPost(SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_chat_comment, hashMap, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.52
             @Override // com.sobot.chat.core.HttpUtils.a
@@ -321,7 +324,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -349,7 +352,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
             LogUtils.init(context);
         }
         long longData = SharedPreferencesUtil.getLongData(this.b, ZhiChiConstant.SOBOT_CONFIG_LAST_UPDATE_TIME, -1L);
-        long intData = SharedPreferencesUtil.getIntData(this.b, ZhiChiConstant.SOBOT_CONFIG_REQ_FREQUENCY, 2) * 86400000;
+        long intData = SharedPreferencesUtil.getIntData(this.b, ZhiChiConstant.SOBOT_CONFIG_REQ_FREQUENCY, 2) * BaseConstants.Time.DAY;
         if (-1 == longData || System.currentTimeMillis() > longData + intData) {
             HashMap hashMap = new HashMap();
             hashMap.put("appId", str);
@@ -360,7 +363,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
                 @Override // com.sobot.chat.core.HttpUtils.a
                 public void a(Exception exc, String str2, int i) {
-                    LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                    LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 }
 
                 @Override // com.sobot.chat.core.HttpUtils.a
@@ -409,7 +412,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         final String stackTraceString = Log.getStackTraceString(new Throwable());
         hashMap.put("uid", sobotConnCusParam.getPartnerid());
         hashMap.put("cid", sobotConnCusParam.getCid());
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         hashMap.put("groupId", sobotConnCusParam.getGroupId());
         hashMap.put("groupName", sobotConnCusParam.getGroupName());
@@ -442,7 +445,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
                 hashMap2.put("接口异常", "请求url-->" + SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_transfer_people + "  请求参数-->" + hashMap + "  请求异常信息: --> " + str + "------" + exc.getMessage() + "调用过程 -->" + stackTraceString);
                 LogUtils.i2Local(ZhiChiApiImpl.this.b, hashMap2, "请求异常");
                 StringBuilder sb = new StringBuilder();
-                sb.append(ZhiChiApiImpl.f28099a);
+                sb.append(ZhiChiApiImpl.f14410a);
                 sb.append(str);
                 LogUtils.i(sb.toString(), exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
@@ -520,7 +523,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str4, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str4, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str4, exc);
                 resultCallBack.onFailure(exc, "网络错误");
             }
 
@@ -550,7 +553,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str2, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -579,7 +582,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, str3);
             }
 
@@ -601,7 +604,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         hashMap.put("appId", str);
         hashMap.put(ao.q, str2);
         hashMap.put("source", "2");
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         HttpUtilsTools.doPost(obj, SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_group_list, hashMap, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.2
             @Override // com.sobot.chat.core.HttpUtils.a
@@ -610,7 +613,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -636,7 +639,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -665,7 +668,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -696,7 +699,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str2, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -725,7 +728,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -758,7 +761,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -808,7 +811,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str2, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -842,7 +845,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -875,7 +878,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str4, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str4, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str4, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -909,7 +912,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str4, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str4, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str4, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -966,7 +969,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -995,7 +998,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, str3);
             }
 
@@ -1004,7 +1007,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
                 LogUtils.i("input---" + str3);
                 CommonModel jsonToCommonModel = GsonUtil.jsonToCommonModel(str3);
                 if (jsonToCommonModel != null && jsonToCommonModel.getData() != null) {
-                    LogUtils.i(ZhiChiApiImpl.f28099a + "input" + jsonToCommonModel.toString());
+                    LogUtils.i(ZhiChiApiImpl.f14410a + "input" + jsonToCommonModel.toString());
                 }
                 stringResultCallBack.onSuccess(jsonToCommonModel);
             }
@@ -1025,7 +1028,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str5, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str5, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str5, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -1053,7 +1056,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, str3);
             }
 
@@ -1083,7 +1086,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str4, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str4, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str4, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -1176,7 +1179,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -1193,7 +1196,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         final String stackTraceString = Log.getStackTraceString(new Throwable());
         hashMap.put("uid", str2);
         hashMap.put("cid", str);
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         HttpUtilsTools.doPost(SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_login_out, hashMap, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.53
             @Override // com.sobot.chat.core.HttpUtils.a
@@ -1206,7 +1209,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
                 hashMap2.put("接口异常", "请求url-->" + SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_login_out + "  请求参数-->" + hashMap + "  请求异常信息: --> " + str3 + "------" + exc.getMessage() + "调用过程 -->" + stackTraceString);
                 LogUtils.i2Local(ZhiChiApiImpl.this.b, hashMap2, "请求异常");
                 StringBuilder sb = new StringBuilder();
-                sb.append(ZhiChiApiImpl.f28099a);
+                sb.append(ZhiChiApiImpl.f14410a);
                 sb.append(str3);
                 LogUtils.i(sb.toString(), exc);
                 stringResultCallBack.onFailure(exc, str3);
@@ -1236,7 +1239,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str2, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 stringResultCallBack.onFailure(exc, ResourceUtils.getResString(ZhiChiApiImpl.this.b, "sobot_try_again"));
             }
 
@@ -1265,7 +1268,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         hashMap.put("paramsExtends", postParamModel.getParamsExtends());
         hashMap.put("ticketFrom", postParamModel.getTicketFrom());
         hashMap.put("customerSource", "4");
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         HttpUtilsTools.doPost(obj, SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_post_msg, hashMap, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.3
             @Override // com.sobot.chat.core.HttpUtils.a
@@ -1274,7 +1277,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str, exc);
                 stringResultCallBack.onFailure(exc, str);
             }
 
@@ -1302,7 +1305,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str2, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 stringResultCallBack.onFailure(exc, str2);
             }
 
@@ -1335,7 +1338,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -1363,7 +1366,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str2, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -1394,7 +1397,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str2, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str2, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str2, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -1430,7 +1433,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str9, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str9, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str9, exc);
                 stringResultCallBack.onFailure(exc, str9);
             }
 
@@ -1539,7 +1542,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str4, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str4, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str4, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -1620,7 +1623,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         hashMap.put("uid", str);
         hashMap.put("cid", str2);
         hashMap.put("msgType", "24");
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         HttpUtilsTools.doPost(ZhiChiConstant.SOBOT_GLOBAL_REQUEST_CANCEL_TAG, SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_sendmessage_to_customService, hashMap, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.45
             @Override // com.sobot.chat.core.HttpUtils.a
@@ -1629,7 +1632,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, str3);
             }
 
@@ -1654,7 +1657,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         if (!TextUtils.isEmpty(str4)) {
             hashMap.put("duration", str4);
         }
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         final long totalSpace = new File(str3).getTotalSpace();
         HttpUtilsTools.uploadFile(ZhiChiConstant.SOBOT_GLOBAL_REQUEST_CANCEL_TAG, SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_sendFile_to_customeService, hashMap, str3, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.51
@@ -1665,7 +1668,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str5, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str5, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str5, exc);
                 resultCallBack.onFailure(exc, str5);
             }
 
@@ -1701,7 +1704,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -1725,7 +1728,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         hashMap.put("content", str);
         hashMap.put("uid", str2);
         hashMap.put("cid", str3);
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         HttpUtilsTools.doPost(ZhiChiConstant.SOBOT_GLOBAL_REQUEST_CANCEL_TAG, SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_sendmessage_to_customService, hashMap, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.34
             @Override // com.sobot.chat.core.HttpUtils.a
@@ -1738,7 +1741,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
                 hashMap2.put("接口异常", "请求url-->" + SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_sendmessage_to_customService + "  请求参数-->" + hashMap + "  请求异常信息: --> " + str4 + "------" + exc.getMessage() + "调用过程 -->" + stackTraceString);
                 LogUtils.i2Local(ZhiChiApiImpl.this.b, hashMap2, "请求异常");
                 StringBuilder sb = new StringBuilder();
-                sb.append(ZhiChiApiImpl.f28099a);
+                sb.append(ZhiChiApiImpl.f14410a);
                 sb.append(str4);
                 LogUtils.i(sb.toString(), exc);
                 stringResultCallBack.onFailure(exc, str4);
@@ -1770,7 +1773,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         hashMap.put("uid", str);
         hashMap.put("cid", str2);
         hashMap.put("msgType", "25");
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         HttpUtilsTools.doPost(ZhiChiConstant.SOBOT_GLOBAL_REQUEST_CANCEL_TAG, SobotBaseUrl.getBaseIp() + ZhiChiUrlApi.api_sendmessage_to_customService, hashMap, new HttpUtils.a() { // from class: com.sobot.chat.api.ZhiChiApiImpl.50
             @Override // com.sobot.chat.core.HttpUtils.a
@@ -1779,7 +1782,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, str3);
             }
 
@@ -1813,7 +1816,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str6, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str6, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str6, exc);
                 resultCallBack.onFailure(exc, str6);
             }
 
@@ -1837,11 +1840,11 @@ public class ZhiChiApiImpl implements ZhiChiApi {
         final String stackTraceString = Log.getStackTraceString(new Throwable());
         hashMap.put("partnerId", information.getPartnerid());
         hashMap.put("way", "10");
-        hashMap.put("from", this.f28100c);
+        hashMap.put("from", this.f14411c);
         hashMap.put("version", this.d);
         hashMap.put("ack", "1");
         hashMap.put("appId", information.getApp_key());
-        hashMap.put("system", "android" + Build.VERSION.RELEASE);
+        hashMap.put(ThemeConfig.SYSTEM_DEFAULT, "android" + Build.VERSION.RELEASE);
         hashMap.put(AttributionReporter.APP_VERSION, CommonUtils.getAppName(this.b) + " " + CommonUtils.getVersionName(this.b));
         hashMap.put("phoneModel", Build.MANUFACTURER + " " + Build.MODEL);
         hashMap.put(UserDictionary.Words.LOCALE, information.getLocale());
@@ -1912,7 +1915,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
             hashMap.put("robotAlias", information.getRobot_alias());
         }
         if (!TextUtils.isEmpty(information.getSign())) {
-            hashMap.put("sign", information.getSign());
+            hashMap.put(b.d, information.getSign());
         }
         if (!TextUtils.isEmpty(information.getCreateTime())) {
             hashMap.put("createTime", information.getCreateTime());
@@ -1969,7 +1972,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str3, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str3, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str3, exc);
                 stringResultCallBack.onFailure(exc, "当前网络不可用，请检查您的网络设置");
             }
 
@@ -1993,7 +1996,7 @@ public class ZhiChiApiImpl implements ZhiChiApi {
 
             @Override // com.sobot.chat.core.HttpUtils.a
             public void a(Exception exc, String str4, int i) {
-                LogUtils.i(ZhiChiApiImpl.f28099a + str4, exc);
+                LogUtils.i(ZhiChiApiImpl.f14410a + str4, exc);
             }
 
             @Override // com.sobot.chat.core.HttpUtils.a

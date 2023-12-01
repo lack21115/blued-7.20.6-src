@@ -32,11 +32,11 @@ import java.util.List;
 public class GroupUserInviteAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30939a;
+    private Context f17249a;
     private List<BluedUserInviteList> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f30940c;
+    private LayoutInflater f17250c;
     private String d;
     private String e;
     private String f;
@@ -49,11 +49,11 @@ public class GroupUserInviteAdapter extends BaseAdapter {
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f30947a;
+        public ImageView f17257a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f30948c;
+        public TextView f17258c;
         public TextView d;
         public TextView e;
         public TextView f;
@@ -66,10 +66,10 @@ public class GroupUserInviteAdapter extends BaseAdapter {
     }
 
     public GroupUserInviteAdapter(Context context, IRequestHost iRequestHost, List<BluedUserInviteList> list) {
-        this.f30939a = context;
+        this.f17249a = context;
         this.j = iRequestHost;
         this.b = list;
-        this.f30940c = LayoutInflater.from(context);
+        this.f17250c = LayoutInflater.from(context);
         LoadOptions loadOptions = new LoadOptions();
         this.i = loadOptions;
         loadOptions.d = 2131237310;
@@ -98,10 +98,10 @@ public class GroupUserInviteAdapter extends BaseAdapter {
         final BluedUserInviteList bluedUserInviteList = this.b.get(i);
         if (view == null) {
             viewHolder = new ViewHolder();
-            view2 = this.f30940c.inflate(R.layout.item_group_member_invite_show, viewGroup, false);
-            viewHolder.f30947a = (ImageView) view2.findViewById(2131366011);
-            viewHolder.b = (TextView) view2.findViewById(2131372879);
-            viewHolder.f30948c = (TextView) view2.findViewById(R.id.tv_user_distance);
+            view2 = this.f17250c.inflate(R.layout.item_group_member_invite_show, viewGroup, false);
+            viewHolder.f17257a = (ImageView) view2.findViewById(R.id.iv_user_head);
+            viewHolder.b = (TextView) view2.findViewById(R.id.tv_user_name);
+            viewHolder.f17258c = (TextView) view2.findViewById(R.id.tv_user_distance);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_online_time);
             viewHolder.e = (TextView) view2.findViewById(R.id.tv_user_location);
             viewHolder.f = (TextView) view2.findViewById(R.id.tv_group_user_details);
@@ -113,7 +113,7 @@ public class GroupUserInviteAdapter extends BaseAdapter {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
-        ImageLoader.a(this.j, bluedUserInviteList.avatar).b(2131237310).c().a(viewHolder.f30947a);
+        ImageLoader.a(this.j, bluedUserInviteList.avatar).b(2131237310).c().a(viewHolder.f17257a);
         UserRelationshipUtils.a(viewHolder.i, bluedUserInviteList);
         if (!StringUtils.d(bluedUserInviteList.note)) {
             viewHolder.b.setText(bluedUserInviteList.note);
@@ -122,27 +122,27 @@ public class GroupUserInviteAdapter extends BaseAdapter {
         } else {
             viewHolder.b.setText(bluedUserInviteList.name);
         }
-        UserRelationshipUtils.a(this.f30939a, viewHolder.b, bluedUserInviteList);
+        UserRelationshipUtils.a(this.f17249a, viewHolder.b, bluedUserInviteList);
         if (StringUtils.d(bluedUserInviteList.distance)) {
-            viewHolder.f30948c.setVisibility(4);
+            viewHolder.f17258c.setVisibility(4);
         } else {
-            viewHolder.f30948c.setText(DistanceUtils.a(bluedUserInviteList.distance, BlueAppLocal.c(), false));
+            viewHolder.f17258c.setText(DistanceUtils.a(bluedUserInviteList.distance, BlueAppLocal.c(), false));
         }
-        DistanceUtils.a(this.f30939a, viewHolder.f30948c, bluedUserInviteList, 1);
+        DistanceUtils.a(this.f17249a, viewHolder.f17258c, bluedUserInviteList, 1);
         if (StringUtils.d(bluedUserInviteList.last_operate)) {
             viewHolder.d.setText("");
         } else {
-            viewHolder.d.setText(TimeAndDateUtils.f(this.f30939a, TimeAndDateUtils.c(bluedUserInviteList.last_operate)));
+            viewHolder.d.setText(TimeAndDateUtils.f(this.f17249a, TimeAndDateUtils.c(bluedUserInviteList.last_operate)));
         }
-        TypefaceUtils.a(this.f30939a, viewHolder.d, bluedUserInviteList.is_hide_last_operate, 1);
+        TypefaceUtils.a(this.f17249a, viewHolder.d, bluedUserInviteList.is_hide_last_operate, 1);
         if (StringUtils.d(bluedUserInviteList.city_settled)) {
             viewHolder.e.setVisibility(4);
         } else {
             viewHolder.e.setText(AreaUtils.getAreaTxt(bluedUserInviteList.city_settled, BlueAppLocal.c()));
         }
-        TypefaceUtils.b(this.f30939a, viewHolder.e, bluedUserInviteList.is_hide_city_settled, 1);
+        TypefaceUtils.b(this.f17249a, viewHolder.e, bluedUserInviteList.is_hide_city_settled, 1);
         TextView textView = viewHolder.f;
-        textView.setText(bluedUserInviteList.age + " / " + bluedUserInviteList.height + " / " + bluedUserInviteList.weight + " " + this.f30939a.getResources().getString(2131891624) + " " + UserInfoHelper.a(this.f30939a, bluedUserInviteList.role));
+        textView.setText(bluedUserInviteList.age + " / " + bluedUserInviteList.height + " / " + bluedUserInviteList.weight + " " + this.f17249a.getResources().getString(R.string.separator) + " " + UserInfoHelper.a(this.f17249a, bluedUserInviteList.role));
         if (this.b.size() > 0) {
             int i2 = 0;
             while (true) {
@@ -155,14 +155,14 @@ public class GroupUserInviteAdapter extends BaseAdapter {
                 i2 = i3 + 1;
             }
         }
-        if (GroupMemberInviteFragment.f30810a.size() > 0) {
+        if (GroupMemberInviteFragment.f17120a.size() > 0) {
             int i4 = 0;
             while (true) {
                 int i5 = i4;
-                if (i5 >= GroupMemberInviteFragment.f30810a.size()) {
+                if (i5 >= GroupMemberInviteFragment.f17120a.size()) {
                     break;
                 }
-                if (GroupMemberInviteFragment.f30810a.get(i5).equals(bluedUserInviteList.uid) && 2 == GroupMemberInviteFragment.e.get(i5).shortValue()) {
+                if (GroupMemberInviteFragment.f17120a.get(i5).equals(bluedUserInviteList.uid) && 2 == GroupMemberInviteFragment.e.get(i5).shortValue()) {
                     bluedUserInviteList.isCheckedFlag = true;
                     bluedUserInviteList.isEnabledFlag = true;
                 }
@@ -194,17 +194,17 @@ public class GroupUserInviteAdapter extends BaseAdapter {
                         public void onClick(View view3) {
                             Tracker.onClick(view3);
                             GroupUserInviteAdapter.this.h = ((BluedUserInviteList) GroupUserInviteAdapter.this.b.get(i)).uid;
-                            if (GroupMemberInviteFragment.f30810a != null) {
+                            if (GroupMemberInviteFragment.f17120a != null) {
                                 int i8 = 0;
                                 while (true) {
                                     int i9 = i8;
-                                    if (i9 >= GroupMemberInviteFragment.f30810a.size()) {
+                                    if (i9 >= GroupMemberInviteFragment.f17120a.size()) {
                                         break;
                                     }
-                                    if (GroupMemberInviteFragment.f30810a.get(i9).equals(GroupUserInviteAdapter.this.h)) {
+                                    if (GroupMemberInviteFragment.f17120a.get(i9).equals(GroupUserInviteAdapter.this.h)) {
                                         GroupMemberInviteFragment.b.remove(GroupMemberInviteFragment.b.get(i9));
-                                        GroupMemberInviteFragment.f30811c.remove(GroupMemberInviteFragment.f30811c.get(i9));
-                                        GroupMemberInviteFragment.f30810a.remove(GroupMemberInviteFragment.f30810a.get(i9));
+                                        GroupMemberInviteFragment.f17121c.remove(GroupMemberInviteFragment.f17121c.get(i9));
+                                        GroupMemberInviteFragment.f17120a.remove(GroupMemberInviteFragment.f17120a.get(i9));
                                         GroupMemberInviteFragment.d.remove(GroupMemberInviteFragment.d.get(i9));
                                         GroupMemberInviteFragment.e.remove(GroupMemberInviteFragment.e.get(i9));
                                     }
@@ -228,15 +228,15 @@ public class GroupUserInviteAdapter extends BaseAdapter {
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view3) {
                         Tracker.onClick(view3);
-                        if (GroupMemberInviteFragment.f30810a.size() >= 8) {
+                        if (GroupMemberInviteFragment.f17120a.size() >= 8) {
                             viewHolder2.g.setChecked(false);
                             AppMethods.d((int) R.string.only_9_invite);
                             return;
                         }
                         if (!StringUtils.d(GroupUserInviteAdapter.this.d)) {
-                            GroupMemberInviteFragment.f30810a.add(GroupUserInviteAdapter.this.d);
+                            GroupMemberInviteFragment.f17120a.add(GroupUserInviteAdapter.this.d);
                             GroupMemberInviteFragment.b.add(GroupUserInviteAdapter.this.e);
-                            GroupMemberInviteFragment.f30811c.add(GroupUserInviteAdapter.this.f);
+                            GroupMemberInviteFragment.f17121c.add(GroupUserInviteAdapter.this.f);
                             GroupMemberInviteFragment.d.add(Integer.valueOf(GroupUserInviteAdapter.this.g));
                             GroupMemberInviteFragment.e.add((short) 2);
                         }
@@ -252,7 +252,7 @@ public class GroupUserInviteAdapter extends BaseAdapter {
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {
                 Tracker.onClick(view3);
-                UserInfoFragmentNew.a(GroupUserInviteAdapter.this.f30939a, bluedUserInviteList, "", viewHolder3.f30947a);
+                UserInfoFragmentNew.a(GroupUserInviteAdapter.this.f17249a, bluedUserInviteList, "", viewHolder3.f17257a);
             }
         });
         UserInfoHelper.a(viewHolder.h, bluedUserInviteList.vbadge, 3);

@@ -27,11 +27,11 @@ import java.util.List;
 public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
 
     /* renamed from: a  reason: collision with root package name */
-    protected BarDataProvider f22170a;
+    protected BarDataProvider f8563a;
     protected RectF b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected BarBuffer[] f22171c;
+    protected BarBuffer[] f8564c;
     protected Paint d;
     protected Paint e;
     private RectF l;
@@ -40,7 +40,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
         super(chartAnimator, viewPortHandler);
         this.b = new RectF();
         this.l = new RectF();
-        this.f22170a = barDataProvider;
+        this.f8563a = barDataProvider;
         this.i = new Paint(1);
         this.i.setStyle(Paint.Style.FILL);
         this.i.setColor(Color.rgb(0, 0, 0));
@@ -55,16 +55,16 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void a() {
-        BarData barData = this.f22170a.getBarData();
-        this.f22171c = new BarBuffer[barData.d()];
+        BarData barData = this.f8563a.getBarData();
+        this.f8564c = new BarBuffer[barData.d()];
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f22171c.length) {
+            if (i2 >= this.f8564c.length) {
                 return;
             }
             IBarDataSet iBarDataSet = (IBarDataSet) barData.a(i2);
-            this.f22171c[i2] = new BarBuffer(iBarDataSet.H() * 4 * (iBarDataSet.b() ? iBarDataSet.a() : 1), barData.d(), iBarDataSet.b());
+            this.f8564c[i2] = new BarBuffer(iBarDataSet.H() * 4 * (iBarDataSet.b() ? iBarDataSet.a() : 1), barData.d(), iBarDataSet.b());
             i = i2 + 1;
         }
     }
@@ -76,7 +76,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void a(Canvas canvas) {
-        BarData barData = this.f22170a.getBarData();
+        BarData barData = this.f8563a.getBarData();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -92,15 +92,15 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
     }
 
     protected void a(Canvas canvas, IBarDataSet iBarDataSet, int i) {
-        Transformer a2 = this.f22170a.a(iBarDataSet.C());
+        Transformer a2 = this.f8563a.a(iBarDataSet.C());
         this.e.setColor(iBarDataSet.e());
         this.e.setStrokeWidth(Utils.a(iBarDataSet.d()));
         boolean z = iBarDataSet.d() > 0.0f;
         float b = this.g.b();
         float a3 = this.g.a();
-        if (this.f22170a.d()) {
+        if (this.f8563a.d()) {
             this.d.setColor(iBarDataSet.c());
-            float a4 = this.f22170a.getBarData().a() / 2.0f;
+            float a4 = this.f8563a.getBarData().a() / 2.0f;
             int min = Math.min((int) Math.ceil(iBarDataSet.H() * b), iBarDataSet.H());
             int i2 = 0;
             while (true) {
@@ -123,11 +123,11 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
                 i2 = i3 + 1;
             }
         }
-        BarBuffer barBuffer = this.f22171c[i];
+        BarBuffer barBuffer = this.f8564c[i];
         barBuffer.a(b, a3);
         barBuffer.a(i);
-        barBuffer.a(this.f22170a.c(iBarDataSet.C()));
-        barBuffer.a(this.f22170a.getBarData().a());
+        barBuffer.a(this.f8563a.c(iBarDataSet.C()));
+        barBuffer.a(this.f8563a.getBarData().a());
         barBuffer.a(iBarDataSet);
         a2.a(barBuffer.b);
         boolean z2 = iBarDataSet.j().size() == 1;
@@ -185,7 +185,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
     public void a(Canvas canvas, Highlight[] highlightArr) {
         float b;
         float f;
-        BarData barData = this.f22170a.getBarData();
+        BarData barData = this.f8563a.getBarData();
         int length = highlightArr.length;
         int i = 0;
         while (true) {
@@ -198,18 +198,18 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
             if (iBarDataSet != null && iBarDataSet.p()) {
                 BarEntry barEntry = (BarEntry) iBarDataSet.b(highlight.a(), highlight.b());
                 if (a(barEntry, iBarDataSet)) {
-                    Transformer a2 = this.f22170a.a(iBarDataSet.C());
+                    Transformer a2 = this.f8563a.a(iBarDataSet.C());
                     this.i.setColor(iBarDataSet.h());
                     this.i.setAlpha(iBarDataSet.f());
                     if (!(highlight.g() >= 0 && barEntry.d())) {
                         b = barEntry.b();
                         f = 0.0f;
-                    } else if (this.f22170a.e()) {
+                    } else if (this.f8563a.e()) {
                         b = barEntry.e();
                         f = -barEntry.f();
                     } else {
                         Range range = barEntry.c()[highlight.g()];
-                        b = range.f22153a;
+                        b = range.f8546a;
                         f = range.b;
                     }
                     a(barEntry.i(), b, f, barData.a() / 2.0f, a2);
@@ -233,16 +233,16 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
         int i;
         int length;
         float f;
-        if (a(this.f22170a)) {
-            List i2 = this.f22170a.getBarData().i();
+        if (a(this.f8563a)) {
+            List i2 = this.f8563a.getBarData().i();
             float a2 = Utils.a(4.5f);
-            boolean c2 = this.f22170a.c();
+            boolean c2 = this.f8563a.c();
             int i3 = 0;
-            while (i3 < this.f22170a.getBarData().d()) {
+            while (i3 < this.f8563a.getBarData().d()) {
                 IBarDataSet iBarDataSet = (IBarDataSet) i2.get(i3);
                 if (a(iBarDataSet)) {
                     b(iBarDataSet);
-                    boolean c3 = this.f22170a.c(iBarDataSet.C());
+                    boolean c3 = this.f8563a.c(iBarDataSet.C());
                     float b = Utils.b(this.k, "8");
                     float f2 = c2 ? -a2 : b + a2;
                     float f3 = c2 ? b + a2 : -a2;
@@ -252,15 +252,15 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
                         f4 = (-f2) - b;
                         f5 = (-f3) - b;
                     }
-                    BarBuffer barBuffer = this.f22171c[i3];
+                    BarBuffer barBuffer = this.f8564c[i3];
                     float a3 = this.g.a();
                     ValueFormatter q = iBarDataSet.q();
                     MPPointF a4 = MPPointF.a(iBarDataSet.A());
-                    a4.f22204a = Utils.a(a4.f22204a);
+                    a4.f8597a = Utils.a(a4.f8597a);
                     a4.b = Utils.a(a4.b);
                     if (iBarDataSet.b()) {
                         List list2 = i2;
-                        Transformer a5 = this.f22170a.a(iBarDataSet.C());
+                        Transformer a5 = this.f8563a.a(iBarDataSet.C());
                         int i4 = 0;
                         int i5 = 0;
                         float f6 = a2;
@@ -313,7 +313,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
                                         }
                                         if (barEntry.g() != null && iBarDataSet.z()) {
                                             Drawable g = barEntry.g();
-                                            Utils.a(canvas, g, (int) (f7 + a4.f22204a), (int) (f13 + a4.b), g.getIntrinsicWidth(), g.getIntrinsicHeight());
+                                            Utils.a(canvas, g, (int) (f7 + a4.f8597a), (int) (f13 + a4.b), g.getIntrinsicWidth(), g.getIntrinsicHeight());
                                         }
                                     }
                                 }
@@ -333,7 +333,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
                                     }
                                     if (barEntry.g() != null && iBarDataSet.z()) {
                                         Drawable g2 = barEntry.g();
-                                        Utils.a(canvas, g2, (int) (a4.f22204a + f7), (int) (barBuffer.b[i10] + (barEntry.b() >= 0.0f ? f4 : f5) + a4.b), g2.getIntrinsicWidth(), g2.getIntrinsicHeight());
+                                        Utils.a(canvas, g2, (int) (a4.f8597a + f7), (int) (barBuffer.b[i10] + (barEntry.b() >= 0.0f ? f4 : f5) + a4.b), g2.getIntrinsicWidth(), g2.getIntrinsicHeight());
                                     }
                                 }
                             }
@@ -368,7 +368,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
                                 }
                                 if (barEntry2.g() != null && iBarDataSet.z()) {
                                     Drawable g3 = barEntry2.g();
-                                    Utils.a(canvas, g3, (int) (f14 + a4.f22204a), (int) ((b2 >= 0.0f ? barBuffer.b[i12] + f4 : barBuffer.b[i11 + 3] + f5) + a4.b), g3.getIntrinsicWidth(), g3.getIntrinsicHeight());
+                                    Utils.a(canvas, g3, (int) (f14 + a4.f8597a), (int) ((b2 >= 0.0f ? barBuffer.b[i12] + f4 : barBuffer.b[i11 + 3] + f5) + a4.b), g3.getIntrinsicWidth(), g3.getIntrinsicHeight());
                                 }
                             }
                         }

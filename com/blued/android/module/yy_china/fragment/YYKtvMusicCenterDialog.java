@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -37,13 +38,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvMusicCenterDialog.class */
 public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implements OnCLickSingNumListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17301a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FragmentYyKtvMusicCenterBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private MusicAdapter f17302c;
+    private MusicAdapter c;
     private BaseYYStudioFragment d;
     private YYKtvCardModel e;
 
@@ -61,23 +58,19 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYKtvMusicCenterDialog$MusicAdapter.class */
     public final class MusicAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYKtvMusicCenterDialog f17303a;
+        final /* synthetic */ YYKtvMusicCenterDialog a;
         private List<? extends YYKtvMusicTypeModel> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private OnCLickSingNumListener f17304c;
+        private OnCLickSingNumListener c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MusicAdapter(YYKtvMusicCenterDialog this$0) {
             super(this$0.getChildFragmentManager(), 1);
             Intrinsics.e(this$0, "this$0");
-            this.f17303a = this$0;
+            this.a = this$0;
         }
 
         public final void a(OnCLickSingNumListener onCLickSingNumListener) {
-            this.f17304c = onCLickSingNumListener;
+            this.c = onCLickSingNumListener;
         }
 
         public final void a(List<? extends YYKtvMusicTypeModel> list) {
@@ -86,7 +79,6 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
             notifyDataSetChanged();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             List<? extends YYKtvMusicTypeModel> list = this.b;
             if (list == null || list.isEmpty()) {
@@ -98,7 +90,6 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
             return valueOf.intValue();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             YYKtvMusicTypeModel yYKtvMusicTypeModel;
             String str;
@@ -108,7 +99,7 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
                 yYKtvMusicListFragment = new YYKtvMusicListFragment(str);
             }
             if (yYKtvMusicListFragment != null) {
-                yYKtvMusicListFragment.a(this.f17304c);
+                yYKtvMusicListFragment.a(this.c);
             }
             if (yYKtvMusicListFragment != null) {
                 return yYKtvMusicListFragment;
@@ -116,7 +107,6 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
             throw new NullPointerException("null cannot be cast to non-null type androidx.fragment.app.Fragment");
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             YYKtvMusicTypeModel yYKtvMusicTypeModel;
             List<? extends YYKtvMusicTypeModel> list = this.b;
@@ -207,7 +197,7 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
             return;
         }
         FragmentYyKtvMusicCenterBinding fragmentYyKtvMusicCenterBinding6 = this.b;
-        tabPageIndicatorWithDot.setViewPager(fragmentYyKtvMusicCenterBinding6 == null ? null : fragmentYyKtvMusicCenterBinding6.f16518c);
+        tabPageIndicatorWithDot.setViewPager(fragmentYyKtvMusicCenterBinding6 == null ? null : fragmentYyKtvMusicCenterBinding6.c);
     }
 
     @Override // com.blued.android.module.yy_china.fragment.OnCLickSingNumListener
@@ -250,18 +240,17 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
         this.e = yYKtvCardModel;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        getChildFragmentManager().setFragmentResultListener("key_cancel", this, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvMusicCenterDialog$cCymYaBueOZuVe0D_F5cKB6jq5Y
-            @Override // androidx.fragment.app.FragmentResultListener
+        getChildFragmentManager().setFragmentResultListener("key_cancel", (LifecycleOwner) this, new FragmentResultListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvMusicCenterDialog$cCymYaBueOZuVe0D_F5cKB6jq5Y
             public final void onFragmentResult(String str, Bundle bundle2) {
                 YYKtvMusicCenterDialog.a(YYKtvMusicCenterDialog.this, str, bundle2);
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         View view;
         Intrinsics.e(inflater, "inflater");
@@ -269,7 +258,7 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
         Intrinsics.c(inflate, "inflater.inflate(R.layou…_center, container, true)");
         FragmentYyKtvMusicCenterBinding a2 = FragmentYyKtvMusicCenterBinding.a(inflate);
         this.b = a2;
-        if (a2 != null && (view = a2.f16517a) != null) {
+        if (a2 != null && (view = a2.a) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYKtvMusicCenterDialog$cQv9iAXrYe1walnduSj9KsQeep8
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -278,22 +267,22 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
             });
         }
         MusicAdapter musicAdapter = new MusicAdapter(this);
-        this.f17302c = musicAdapter;
+        this.c = musicAdapter;
         if (musicAdapter != null) {
             musicAdapter.a(this);
         }
         FragmentYyKtvMusicCenterBinding fragmentYyKtvMusicCenterBinding = this.b;
-        ViewPager viewPager = fragmentYyKtvMusicCenterBinding == null ? null : fragmentYyKtvMusicCenterBinding.f16518c;
+        ViewPager viewPager = fragmentYyKtvMusicCenterBinding == null ? null : fragmentYyKtvMusicCenterBinding.c;
         if (viewPager != null) {
-            viewPager.setAdapter(this.f17302c);
+            viewPager.setAdapter(this.c);
         }
         FragmentYyKtvMusicCenterBinding fragmentYyKtvMusicCenterBinding2 = this.b;
-        ViewPager viewPager2 = fragmentYyKtvMusicCenterBinding2 == null ? null : fragmentYyKtvMusicCenterBinding2.f16518c;
+        ViewPager viewPager2 = fragmentYyKtvMusicCenterBinding2 == null ? null : fragmentYyKtvMusicCenterBinding2.c;
         if (viewPager2 != null) {
             viewPager2.setCurrentItem(0);
         }
         FragmentYyKtvMusicCenterBinding fragmentYyKtvMusicCenterBinding3 = this.b;
-        ViewPager viewPager3 = fragmentYyKtvMusicCenterBinding3 == null ? null : fragmentYyKtvMusicCenterBinding3.f16518c;
+        ViewPager viewPager3 = fragmentYyKtvMusicCenterBinding3 == null ? null : fragmentYyKtvMusicCenterBinding3.c;
         if (viewPager3 == null) {
             return inflate;
         }
@@ -301,13 +290,13 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         LiveEventBus.get("inner_fragment_close").post("");
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         ShapeLinearLayout shapeLinearLayout;
         Intrinsics.e(view, "view");
@@ -324,7 +313,7 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                musicAdapter = YYKtvMusicCenterDialog.this.f17302c;
+                musicAdapter = YYKtvMusicCenterDialog.this.c;
                 if (musicAdapter != null) {
                     List<YYKtvMusicTypeModel> list = bluedEntityA.data;
                     Intrinsics.c(list, "result.data");
@@ -380,7 +369,7 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
                 fragmentYyKtvMusicCenterBinding4 = YYKtvMusicCenterDialog.this.b;
                 ShapeTextView shapeTextView3 = fragmentYyKtvMusicCenterBinding4 == null ? null : fragmentYyKtvMusicCenterBinding4.e;
                 if (shapeTextView3 != null) {
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                     String string = YYKtvMusicCenterDialog.this.getResources().getString(R.string.yy_ktv_available_amount);
                     Intrinsics.c(string, "resources.getString(R.st….yy_ktv_available_amount)");
                     YYKtvCardModel singleData2 = bluedEntityA.getSingleData();
@@ -394,7 +383,7 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
                         fragmentYyKtvMusicCenterBinding6 = yYKtvMusicCenterDialog.b;
                         ShapeTextView shapeTextView4 = fragmentYyKtvMusicCenterBinding6 == null ? null : fragmentYyKtvMusicCenterBinding6.e;
                         if (shapeTextView4 != null) {
-                            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                             String string2 = yYKtvMusicCenterDialog.getString(R.string.yy_ktv_available_amount_feel);
                             Intrinsics.c(string2, "getString(R.string.yy_ktv_available_amount_feel)");
                             String format2 = String.format(string2, Arrays.copyOf(new Object[]{Long.valueOf(singleData.free_sing_limit)}, 1));
@@ -408,7 +397,7 @@ public final class YYKtvMusicCenterDialog extends BaseFullScreenDialog implement
                         fragmentYyKtvMusicCenterBinding5 = yYKtvMusicCenterDialog.b;
                         ShapeTextView shapeTextView5 = fragmentYyKtvMusicCenterBinding5 == null ? null : fragmentYyKtvMusicCenterBinding5.e;
                         if (shapeTextView5 != null) {
-                            StringCompanionObject stringCompanionObject3 = StringCompanionObject.f42549a;
+                            StringCompanionObject stringCompanionObject3 = StringCompanionObject.a;
                             String string3 = yYKtvMusicCenterDialog.getResources().getString(R.string.yy_ktv_available_amount);
                             Intrinsics.c(string3, "resources.getString(R.st….yy_ktv_available_amount)");
                             YYKtvCardModel singleData3 = bluedEntityA.getSingleData();

@@ -7,15 +7,15 @@ import com.qiniu.pili.droid.streaming.StreamingProfile;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f1219a = null;
+    public static final String f1171a = null;
     public StreamingProfile.Stream b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f1220c;
+    public String f1172c;
 
     public d(StreamingProfile.Stream stream, String str) {
         if (stream == null) {
-            this.f1220c = str;
+            this.f1172c = str;
         }
         this.b = stream;
     }
@@ -23,13 +23,13 @@ public class d {
     public String a() {
         StreamingProfile.Stream stream = this.b;
         if (stream != null) {
-            this.f1220c = a(stream);
+            this.f1172c = a(stream);
         }
-        String str = f1219a;
+        String str = f1171a;
         if (str != null) {
-            this.f1220c = str;
+            this.f1172c = str;
         }
-        return this.f1220c;
+        return this.f1172c;
     }
 
     public final String a(StreamingProfile.Stream stream) {

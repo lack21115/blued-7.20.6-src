@@ -25,31 +25,31 @@ public final class b extends f {
     public final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ WebView f40514a;
+        final /* synthetic */ WebView f26823a;
         final /* synthetic */ ExecutorService b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String[] f40515c;
+        final /* synthetic */ String[] f26824c;
 
         AnonymousClass1(WebView webView, ExecutorService executorService, String[] strArr) {
-            this.f40514a = webView;
+            this.f26823a = webView;
             this.b = executorService;
-            this.f40515c = strArr;
+            this.f26824c = strArr;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                if (this.f40514a == null) {
+                if (this.f26823a == null) {
                     synchronized (this.b) {
                         this.b.notifyAll();
                     }
                 }
-                this.f40514a.post(new Runnable() { // from class: com.tramini.plugin.a.e.b.1.1
+                this.f26823a.post(new Runnable() { // from class: com.tramini.plugin.a.e.b.1.1
                     @Override // java.lang.Runnable
                     public final void run() {
                         if (Build.VERSION.SDK_INT >= 19) {
-                            AnonymousClass1.this.f40514a.evaluateJavascript("(function() { return (document.getElementsByTagName('html')[0].innerHTML); })();", new ValueCallback<String>() { // from class: com.tramini.plugin.a.e.b.1.1.1
+                            AnonymousClass1.this.f26823a.evaluateJavascript("(function() { return (document.getElementsByTagName('html')[0].innerHTML); })();", new ValueCallback<String>() { // from class: com.tramini.plugin.a.e.b.1.1.1
                                 @Override // android.webkit.ValueCallback
                                 public final /* synthetic */ void onReceiveValue(String str) {
                                     Properties properties = new Properties();
@@ -59,7 +59,7 @@ public final class b extends f {
                                     }
                                     String property = properties.getProperty("unicodedString");
                                     if (property.length() > 2) {
-                                        AnonymousClass1.this.f40515c[0] = property.substring(1, property.length() - 1);
+                                        AnonymousClass1.this.f26824c[0] = property.substring(1, property.length() - 1);
                                     }
                                     synchronized (AnonymousClass1.this.b) {
                                         AnonymousClass1.this.b.notifyAll();

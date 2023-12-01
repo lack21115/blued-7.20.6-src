@@ -20,9 +20,9 @@ public final class d extends a {
             sb.append("; rpc response:  ");
             sb.append(str);
             JSONObject jSONObject = new JSONObject(str);
-            int i = jSONObject.getInt(l.f4671a);
+            int i = jSONObject.getInt(l.a);
             if (i == 1000) {
-                return this.f4511a == String.class ? jSONObject.optString("result") : com.alipay.a.a.e.a(jSONObject.optString("result"), this.f4511a);
+                return this.a == String.class ? jSONObject.optString(l.c) : com.alipay.a.a.e.a(jSONObject.optString(l.c), this.a);
             }
             throw new RpcException(Integer.valueOf(i), jSONObject.optString("tips"));
         } catch (Exception e) {

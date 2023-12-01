@@ -5,11 +5,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Xml;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.anythink.expressad.foundation.d.l;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.igexin.push.core.b;
-import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.anythink.core.common.c.d;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -294,7 +290,7 @@ public class XmlUtils {
         int i;
         int next;
         try {
-            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, l.d));
+            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, "num"));
             xmlPullParser.next();
             boolean[] zArr = new boolean[parseInt];
             int i2 = 0;
@@ -315,7 +311,7 @@ public class XmlUtils {
                     throw new XmlPullParserException("Expected item tag at: " + xmlPullParser.getName());
                 } else {
                     try {
-                        zArr[i2] = Boolean.valueOf(xmlPullParser.getAttributeValue(null, "value")).booleanValue();
+                        zArr[i2] = Boolean.valueOf(xmlPullParser.getAttributeValue(null, d.a.d)).booleanValue();
                         i = i2;
                     } catch (NullPointerException e) {
                         throw new XmlPullParserException("Need value attribute in item");
@@ -339,7 +335,7 @@ public class XmlUtils {
         int i;
         int next;
         try {
-            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, l.d));
+            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, "num"));
             xmlPullParser.next();
             double[] dArr = new double[parseInt];
             int i2 = 0;
@@ -360,7 +356,7 @@ public class XmlUtils {
                     throw new XmlPullParserException("Expected item tag at: " + xmlPullParser.getName());
                 } else {
                     try {
-                        dArr[i2] = Double.parseDouble(xmlPullParser.getAttributeValue(null, "value"));
+                        dArr[i2] = Double.parseDouble(xmlPullParser.getAttributeValue(null, d.a.d));
                         i = i2;
                     } catch (NullPointerException e) {
                         throw new XmlPullParserException("Need value attribute in item");
@@ -384,7 +380,7 @@ public class XmlUtils {
         int i;
         int next;
         try {
-            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, l.d));
+            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, "num"));
             xmlPullParser.next();
             int[] iArr = new int[parseInt];
             int i2 = 0;
@@ -405,7 +401,7 @@ public class XmlUtils {
                     throw new XmlPullParserException("Expected item tag at: " + xmlPullParser.getName());
                 } else {
                     try {
-                        iArr[i2] = Integer.parseInt(xmlPullParser.getAttributeValue(null, "value"));
+                        iArr[i2] = Integer.parseInt(xmlPullParser.getAttributeValue(null, d.a.d));
                         i = i2;
                     } catch (NullPointerException e) {
                         throw new XmlPullParserException("Need value attribute in item");
@@ -452,7 +448,7 @@ public class XmlUtils {
         int i;
         int next;
         try {
-            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, l.d));
+            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, "num"));
             xmlPullParser.next();
             long[] jArr = new long[parseInt];
             int i2 = 0;
@@ -473,7 +469,7 @@ public class XmlUtils {
                     throw new XmlPullParserException("Expected item tag at: " + xmlPullParser.getName());
                 } else {
                     try {
-                        jArr[i2] = Long.parseLong(xmlPullParser.getAttributeValue(null, "value"));
+                        jArr[i2] = Long.parseLong(xmlPullParser.getAttributeValue(null, d.a.d));
                         i = i2;
                     } catch (NullPointerException e) {
                         throw new XmlPullParserException("Need value attribute in item");
@@ -519,26 +515,26 @@ public class XmlUtils {
     private static final Object readThisPrimitiveValueXml(XmlPullParser xmlPullParser, String str) throws XmlPullParserException, IOException {
         Boolean bool = null;
         try {
-            if (str.equals(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL)) {
-                return Integer.valueOf(Integer.parseInt(xmlPullParser.getAttributeValue(null, "value")));
+            if (str.equals("int")) {
+                return Integer.valueOf(Integer.parseInt(xmlPullParser.getAttributeValue(null, d.a.d)));
             }
             if (str.equals("long")) {
-                return Long.valueOf(xmlPullParser.getAttributeValue(null, "value"));
+                return Long.valueOf(xmlPullParser.getAttributeValue(null, d.a.d));
             }
-            if (str.equals(TypedValues.Custom.S_FLOAT)) {
-                return new Float(xmlPullParser.getAttributeValue(null, "value"));
+            if (str.equals("float")) {
+                return new Float(xmlPullParser.getAttributeValue(null, d.a.d));
             }
             if (str.equals("double")) {
-                return new Double(xmlPullParser.getAttributeValue(null, "value"));
+                return new Double(xmlPullParser.getAttributeValue(null, d.a.d));
             }
-            if (str.equals(TypedValues.Custom.S_BOOLEAN)) {
-                bool = Boolean.valueOf(xmlPullParser.getAttributeValue(null, "value"));
+            if (str.equals("boolean")) {
+                bool = Boolean.valueOf(xmlPullParser.getAttributeValue(null, d.a.d));
             }
             return bool;
         } catch (NullPointerException e) {
-            throw new XmlPullParserException("Need value attribute in <" + str + SimpleComparison.GREATER_THAN_OPERATION);
+            throw new XmlPullParserException("Need value attribute in <" + str + ">");
         } catch (NumberFormatException e2) {
-            throw new XmlPullParserException("Not a number in value attribute in <" + str + SimpleComparison.GREATER_THAN_OPERATION);
+            throw new XmlPullParserException("Not a number in value attribute in <" + str + ">");
         }
     }
 
@@ -569,7 +565,7 @@ public class XmlUtils {
         int i;
         int next;
         try {
-            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, l.d));
+            int parseInt = Integer.parseInt(xmlPullParser.getAttributeValue(null, "num"));
             xmlPullParser.next();
             String[] strArr2 = new String[parseInt];
             int i2 = 0;
@@ -590,7 +586,7 @@ public class XmlUtils {
                     throw new XmlPullParserException("Expected item tag at: " + xmlPullParser.getName());
                 } else {
                     try {
-                        strArr2[i2] = xmlPullParser.getAttributeValue(null, "value");
+                        strArr2[i2] = xmlPullParser.getAttributeValue(null, d.a.d);
                         i = i2;
                     } catch (NullPointerException e) {
                         throw new XmlPullParserException("Need value attribute in item");
@@ -615,7 +611,7 @@ public class XmlUtils {
         int next;
         String attributeValue = xmlPullParser.getAttributeValue(null, "name");
         String name = xmlPullParser.getName();
-        if (name.equals(b.l)) {
+        if (name.equals("null")) {
             obj = null;
         } else if (name.equals("string")) {
             String str = "";
@@ -687,7 +683,7 @@ public class XmlUtils {
         do {
             next = xmlPullParser.next();
             if (next == 1) {
-                throw new XmlPullParserException("Unexpected end of document in <" + name + SimpleComparison.GREATER_THAN_OPERATION);
+                throw new XmlPullParserException("Unexpected end of document in <" + name + ">");
             }
             if (next == 3) {
                 if (xmlPullParser.getName().equals(name)) {
@@ -753,8 +749,8 @@ public class XmlUtils {
 
     public static final void writeBooleanArrayXml(boolean[] zArr, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (zArr == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "boolean-array");
@@ -762,7 +758,7 @@ public class XmlUtils {
             xmlSerializer.attribute(null, "name", str);
         }
         int length = zArr.length;
-        xmlSerializer.attribute(null, l.d, Integer.toString(length));
+        xmlSerializer.attribute(null, "num", Integer.toString(length));
         int i = 0;
         while (true) {
             int i2 = i;
@@ -771,7 +767,7 @@ public class XmlUtils {
                 return;
             }
             xmlSerializer.startTag(null, "item");
-            xmlSerializer.attribute(null, "value", Boolean.toString(zArr[i2]));
+            xmlSerializer.attribute(null, d.a.d, Boolean.toString(zArr[i2]));
             xmlSerializer.endTag(null, "item");
             i = i2 + 1;
         }
@@ -789,8 +785,8 @@ public class XmlUtils {
 
     public static final void writeByteArrayXml(byte[] bArr, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (bArr == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "byte-array");
@@ -798,7 +794,7 @@ public class XmlUtils {
             xmlSerializer.attribute(null, "name", str);
         }
         int length = bArr.length;
-        xmlSerializer.attribute(null, l.d, Integer.toString(length));
+        xmlSerializer.attribute(null, "num", Integer.toString(length));
         StringBuilder sb = new StringBuilder(bArr.length * 2);
         int i = 0;
         while (true) {
@@ -819,8 +815,8 @@ public class XmlUtils {
 
     public static final void writeDoubleArrayXml(double[] dArr, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (dArr == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "double-array");
@@ -828,7 +824,7 @@ public class XmlUtils {
             xmlSerializer.attribute(null, "name", str);
         }
         int length = dArr.length;
-        xmlSerializer.attribute(null, l.d, Integer.toString(length));
+        xmlSerializer.attribute(null, "num", Integer.toString(length));
         int i = 0;
         while (true) {
             int i2 = i;
@@ -837,7 +833,7 @@ public class XmlUtils {
                 return;
             }
             xmlSerializer.startTag(null, "item");
-            xmlSerializer.attribute(null, "value", Double.toString(dArr[i2]));
+            xmlSerializer.attribute(null, d.a.d, Double.toString(dArr[i2]));
             xmlSerializer.endTag(null, "item");
             i = i2 + 1;
         }
@@ -849,8 +845,8 @@ public class XmlUtils {
 
     public static final void writeIntArrayXml(int[] iArr, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (iArr == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "int-array");
@@ -858,7 +854,7 @@ public class XmlUtils {
             xmlSerializer.attribute(null, "name", str);
         }
         int length = iArr.length;
-        xmlSerializer.attribute(null, l.d, Integer.toString(length));
+        xmlSerializer.attribute(null, "num", Integer.toString(length));
         int i = 0;
         while (true) {
             int i2 = i;
@@ -867,7 +863,7 @@ public class XmlUtils {
                 return;
             }
             xmlSerializer.startTag(null, "item");
-            xmlSerializer.attribute(null, "value", Integer.toString(iArr[i2]));
+            xmlSerializer.attribute(null, d.a.d, Integer.toString(iArr[i2]));
             xmlSerializer.endTag(null, "item");
             i = i2 + 1;
         }
@@ -888,8 +884,8 @@ public class XmlUtils {
 
     public static final void writeListXml(List list, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (list == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "list");
@@ -912,8 +908,8 @@ public class XmlUtils {
 
     public static final void writeLongArrayXml(long[] jArr, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (jArr == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "long-array");
@@ -921,7 +917,7 @@ public class XmlUtils {
             xmlSerializer.attribute(null, "name", str);
         }
         int length = jArr.length;
-        xmlSerializer.attribute(null, l.d, Integer.toString(length));
+        xmlSerializer.attribute(null, "num", Integer.toString(length));
         int i = 0;
         while (true) {
             int i2 = i;
@@ -930,7 +926,7 @@ public class XmlUtils {
                 return;
             }
             xmlSerializer.startTag(null, "item");
-            xmlSerializer.attribute(null, "value", Long.toString(jArr[i2]));
+            xmlSerializer.attribute(null, d.a.d, Long.toString(jArr[i2]));
             xmlSerializer.endTag(null, "item");
             i = i2 + 1;
         }
@@ -955,8 +951,8 @@ public class XmlUtils {
 
     public static final void writeMapXml(Map map, String str, XmlSerializer xmlSerializer, WriteMapCallback writeMapCallback) throws XmlPullParserException, IOException {
         if (map == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "map");
@@ -978,8 +974,8 @@ public class XmlUtils {
 
     public static final void writeSetXml(Set set, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (set == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "set");
@@ -994,8 +990,8 @@ public class XmlUtils {
 
     public static final void writeStringArrayXml(String[] strArr, String str, XmlSerializer xmlSerializer) throws XmlPullParserException, IOException {
         if (strArr == null) {
-            xmlSerializer.startTag(null, b.l);
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
+            xmlSerializer.endTag(null, "null");
             return;
         }
         xmlSerializer.startTag(null, "string-array");
@@ -1003,7 +999,7 @@ public class XmlUtils {
             xmlSerializer.attribute(null, "name", str);
         }
         int length = strArr.length;
-        xmlSerializer.attribute(null, l.d, Integer.toString(length));
+        xmlSerializer.attribute(null, "num", Integer.toString(length));
         int i = 0;
         while (true) {
             int i2 = i;
@@ -1012,7 +1008,7 @@ public class XmlUtils {
                 return;
             }
             xmlSerializer.startTag(null, "item");
-            xmlSerializer.attribute(null, "value", strArr[i2]);
+            xmlSerializer.attribute(null, d.a.d, strArr[i2]);
             xmlSerializer.endTag(null, "item");
             i = i2 + 1;
         }
@@ -1037,11 +1033,11 @@ public class XmlUtils {
     private static final void writeValueXml(Object obj, String str, XmlSerializer xmlSerializer, WriteMapCallback writeMapCallback) throws XmlPullParserException, IOException {
         String str2;
         if (obj == null) {
-            xmlSerializer.startTag(null, b.l);
+            xmlSerializer.startTag(null, "null");
             if (str != null) {
                 xmlSerializer.attribute(null, "name", str);
             }
-            xmlSerializer.endTag(null, b.l);
+            xmlSerializer.endTag(null, "null");
         } else if (obj instanceof String) {
             xmlSerializer.startTag(null, "string");
             if (str != null) {
@@ -1051,11 +1047,11 @@ public class XmlUtils {
             xmlSerializer.endTag(null, "string");
         } else {
             if (obj instanceof Integer) {
-                str2 = IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL;
+                str2 = "int";
             } else if (obj instanceof Long) {
                 str2 = "long";
             } else if (obj instanceof Float) {
-                str2 = TypedValues.Custom.S_FLOAT;
+                str2 = "float";
             } else if (obj instanceof Double) {
                 str2 = "double";
             } else if (!(obj instanceof Boolean)) {
@@ -1102,13 +1098,13 @@ public class XmlUtils {
                     return;
                 }
             } else {
-                str2 = TypedValues.Custom.S_BOOLEAN;
+                str2 = "boolean";
             }
             xmlSerializer.startTag(null, str2);
             if (str != null) {
                 xmlSerializer.attribute(null, "name", str);
             }
-            xmlSerializer.attribute(null, "value", obj.toString());
+            xmlSerializer.attribute(null, d.a.d, obj.toString());
             xmlSerializer.endTag(null, str2);
         }
     }

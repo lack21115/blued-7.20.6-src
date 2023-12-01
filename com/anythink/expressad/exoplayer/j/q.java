@@ -6,11 +6,11 @@ import com.anythink.expressad.exoplayer.j.s;
 public final class q extends s.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f7598a;
+    private final String f4759a;
     private final aa<? super h> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f7599c;
+    private final int f4760c;
     private final int d;
     private final boolean e;
 
@@ -23,19 +23,19 @@ public final class q extends s.a {
     }
 
     private q(String str, aa<? super h> aaVar, byte b) {
-        this.f7598a = str;
+        this.f4759a = str;
         this.b = aaVar;
-        this.f7599c = 8000;
+        this.f4760c = 8000;
         this.d = 8000;
         this.e = false;
     }
 
     private p b(s.f fVar) {
-        return new p(this.f7598a, null, this.b, this.f7599c, this.d, this.e, fVar);
+        return new p(this.f4759a, null, this.b, this.f4760c, this.d, this.e, fVar);
     }
 
     @Override // com.anythink.expressad.exoplayer.j.s.a
     protected final /* synthetic */ s a(s.f fVar) {
-        return new p(this.f7598a, null, this.b, this.f7599c, this.d, this.e, fVar);
+        return new p(this.f4759a, null, this.b, this.f4760c, this.d, this.e, fVar);
     }
 }

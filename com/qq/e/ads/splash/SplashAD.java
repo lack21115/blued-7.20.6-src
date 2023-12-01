@@ -22,7 +22,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     private volatile ViewGroup b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile SplashADListener f27898c;
+    private volatile SplashADListener f14210c;
     private volatile ADRewardListener d;
     private volatile LoadAdParams e;
     private volatile boolean f;
@@ -41,7 +41,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
         @Override // com.qq.e.comm.adevent.ADListener
         public void onADEvent(ADEvent aDEvent) {
             String str;
-            if (SplashAD.this.f27898c == null) {
+            if (SplashAD.this.f14210c == null) {
                 GDTLogger.d("SplashADListener == null");
                 return;
             }
@@ -50,22 +50,22 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
                 case 100:
                     Long l = (Long) aDEvent.getParam(Long.class);
                     if (l != null) {
-                        SplashAD.this.f27898c.onADLoaded(l.longValue());
+                        SplashAD.this.f14210c.onADLoaded(l.longValue());
                         return;
                     }
                     return;
                 case 101:
                     Integer num = (Integer) aDEvent.getParam(Integer.class);
                     if (num != null) {
-                        SplashAD.this.f27898c.onNoAD(AdErrorConvertor.formatErrorCode(num.intValue()));
+                        SplashAD.this.f14210c.onNoAD(AdErrorConvertor.formatErrorCode(num.intValue()));
                         return;
                     }
                     return;
                 case 102:
-                    SplashAD.this.f27898c.onADPresent();
+                    SplashAD.this.f14210c.onADPresent();
                     return;
                 case 103:
-                    SplashAD.this.f27898c.onADExposure();
+                    SplashAD.this.f14210c.onADExposure();
                     return;
                 case 104:
                     if (SplashAD.this.d == null || (str = (String) aDEvent.getParam(String.class)) == null) {
@@ -76,29 +76,29 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
                     SplashAD.this.d.onReward(hashMap);
                     return;
                 case 105:
-                    SplashAD.this.f27898c.onADClicked();
+                    SplashAD.this.f14210c.onADClicked();
                     return;
                 case 106:
-                    SplashAD.this.f27898c.onADDismissed();
+                    SplashAD.this.f14210c.onADDismissed();
                     return;
                 default:
                     switch (type) {
                         case 112:
                             Long l2 = (Long) aDEvent.getParam(Long.class);
                             if (l2 != null) {
-                                SplashAD.this.f27898c.onADTick(l2.longValue());
+                                SplashAD.this.f14210c.onADTick(l2.longValue());
                                 return;
                             }
                             return;
                         case 113:
-                            if (SplashAD.this.f27898c instanceof SplashADZoomOutListener) {
-                                ((SplashADZoomOutListener) SplashAD.this.f27898c).onZoomOut();
+                            if (SplashAD.this.f14210c instanceof SplashADZoomOutListener) {
+                                ((SplashADZoomOutListener) SplashAD.this.f14210c).onZoomOut();
                                 return;
                             }
                             return;
                         case 114:
-                            if (SplashAD.this.f27898c instanceof SplashADZoomOutListener) {
-                                ((SplashADZoomOutListener) SplashAD.this.f27898c).onZoomOutPlayFinish();
+                            if (SplashAD.this.f14210c instanceof SplashADZoomOutListener) {
+                                ((SplashADZoomOutListener) SplashAD.this.f14210c).onZoomOutPlayFinish();
                                 return;
                             }
                             return;
@@ -115,14 +115,14 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
 
     public SplashAD(Context context, String str, SplashADListener splashADListener, int i) {
         this.f = false;
-        this.f27898c = splashADListener;
+        this.f14210c = splashADListener;
         this.l = i;
         a(context, str);
     }
 
     public SplashAD(Context context, String str, SplashADListener splashADListener, int i, String str2) {
         this.f = false;
-        this.f27898c = splashADListener;
+        this.f14210c = splashADListener;
         this.l = i;
         a(context, str, str2);
     }
@@ -133,7 +133,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
             a(4001);
             return;
         }
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t == 0) {
             this.h = z;
             this.b = viewGroup;
@@ -154,7 +154,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
                 this.g = true;
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t == 0) {
                 a("fetchAdInner");
                 return;
@@ -174,7 +174,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
             a(4001);
             return;
         }
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t == 0) {
             this.b = viewGroup;
             return;
@@ -207,7 +207,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
         nspvi.setFetchDelay(this.l);
         nspvi.setAdListener(new ADListenerAdapter());
         nspvi.setServerSideVerificationOptions(this.k);
-        if ((this.f27898c instanceof SplashADZoomOutListener) && ((SplashADZoomOutListener) this.f27898c).isSupportZoomOut()) {
+        if ((this.f14210c instanceof SplashADZoomOutListener) && ((SplashADZoomOutListener) this.f14210c).isSupportZoomOut()) {
             nspvi.setSupportZoomOut(true);
         }
         if (this.b != null) {
@@ -233,8 +233,8 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
 
     @Override // com.qq.e.ads.AbstractAD
     public void b(int i) {
-        if (this.f27898c != null) {
-            this.f27898c.onNoAD(AdErrorConvertor.formatErrorCode(i));
+        if (this.f14210c != null) {
+            this.f14210c.onNoAD(AdErrorConvertor.formatErrorCode(i));
         }
     }
 
@@ -255,7 +255,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     }
 
     public String getAdNetWorkName() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((NSPVI) t).getAdNetWorkName();
         }
@@ -264,7 +264,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     }
 
     public Bitmap getZoomOutBitmap() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((NSPVI) t).getZoomOutBitmap();
         }
@@ -278,7 +278,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
                 this.f = true;
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t != 0) {
                 ((NSPVI) t).preload();
             } else {
@@ -292,7 +292,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     }
 
     public void setDeveloperLogo(int i) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t == 0) {
             this.i = i;
         } else {
@@ -301,7 +301,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     }
 
     public void setDeveloperLogo(byte[] bArr) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t == 0) {
             this.j = bArr;
         } else {
@@ -310,7 +310,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     }
 
     public void setLoadAdParams(LoadAdParams loadAdParams) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((NSPVI) t).setLoadAdParams(loadAdParams);
         } else {
@@ -330,7 +330,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     @Override // com.qq.e.comm.pi.IReward
     public void setServerSideVerificationOptions(ServerSideVerificationOptions serverSideVerificationOptions) {
         this.k = serverSideVerificationOptions;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((NSPVI) t).setServerSideVerificationOptions(serverSideVerificationOptions);
         }
@@ -345,7 +345,7 @@ public final class SplashAD extends LiteAbstractAD<NSPVI> implements IReward {
     }
 
     public void zoomOutAnimationFinish() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((NSPVI) t).zoomOutAnimationFinish();
         } else {

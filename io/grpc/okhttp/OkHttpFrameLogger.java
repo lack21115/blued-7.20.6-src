@@ -1,7 +1,5 @@
 package io.grpc.okhttp;
 
-import android.os.BatteryManager;
-import com.baidu.mobads.sdk.internal.bq;
 import com.google.common.base.Preconditions;
 import io.grpc.okhttp.internal.framed.ErrorCode;
 import io.grpc.okhttp.internal.framed.Header;
@@ -54,8 +52,8 @@ public class OkHttpFrameLogger {
     }
 
     OkHttpFrameLogger(Level level, Logger logger) {
-        this.level = (Level) Preconditions.checkNotNull(level, BatteryManager.EXTRA_LEVEL);
-        this.logger = (Logger) Preconditions.checkNotNull(logger, bq.f9354a);
+        this.level = (Level) Preconditions.checkNotNull(level, "level");
+        this.logger = (Logger) Preconditions.checkNotNull(logger, "logger");
     }
 
     private boolean isEnabled() {

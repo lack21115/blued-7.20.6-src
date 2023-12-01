@@ -12,22 +12,18 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyHotTopicItemBinding.class */
 public final class FragmentYyHotTopicItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f16513a;
+    public final ShapeConstraintLayout a;
     public final NoDataAndLoadFailView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f16514c;
+    public final RecyclerView c;
     public final SmartRefreshLayout d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private FragmentYyHotTopicItemBinding(ConstraintLayout constraintLayout, ShapeConstraintLayout shapeConstraintLayout, NoDataAndLoadFailView noDataAndLoadFailView, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, TextView textView) {
         this.f = constraintLayout;
-        this.f16513a = shapeConstraintLayout;
+        this.a = shapeConstraintLayout;
         this.b = noDataAndLoadFailView;
-        this.f16514c = recyclerView;
+        this.c = recyclerView;
         this.d = smartRefreshLayout;
         this.e = textView;
     }
@@ -38,13 +34,13 @@ public final class FragmentYyHotTopicItemBinding implements ViewBinding {
         if (shapeConstraintLayout != null) {
             NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(R.id.noDataView);
             if (noDataAndLoadFailView != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-                if (recyclerView != null) {
-                    SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-                    if (smartRefreshLayout != null) {
+                RecyclerView findViewById = view.findViewById(R.id.recycler_view);
+                if (findViewById != null) {
+                    SmartRefreshLayout findViewById2 = view.findViewById(R.id.refresh_layout);
+                    if (findViewById2 != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_hot_topic_name);
                         if (textView != null) {
-                            return new FragmentYyHotTopicItemBinding((ConstraintLayout) view, shapeConstraintLayout, noDataAndLoadFailView, recyclerView, smartRefreshLayout, textView);
+                            return new FragmentYyHotTopicItemBinding((ConstraintLayout) view, shapeConstraintLayout, noDataAndLoadFailView, findViewById, findViewById2, textView);
                         }
                         str = "tvHotTopicName";
                     } else {
@@ -62,7 +58,6 @@ public final class FragmentYyHotTopicItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

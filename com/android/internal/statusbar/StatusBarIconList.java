@@ -45,7 +45,7 @@ public class StatusBarIconList implements Parcelable {
                 return;
             }
             this.mSlots[i2] = statusBarIconList.mSlots[i2];
-            this.mIcons[i2] = statusBarIconList.mIcons[i2] != null ? statusBarIconList.mIcons[i2].m2596clone() : null;
+            this.mIcons[i2] = statusBarIconList.mIcons[i2] != null ? statusBarIconList.mIcons[i2].m9043clone() : null;
             i = i2 + 1;
         }
     }
@@ -149,7 +149,7 @@ public class StatusBarIconList implements Parcelable {
     }
 
     public void setIcon(int i, StatusBarIcon statusBarIcon) {
-        this.mIcons[i] = statusBarIcon.m2596clone();
+        this.mIcons[i] = statusBarIcon.m9043clone();
     }
 
     public int size() {

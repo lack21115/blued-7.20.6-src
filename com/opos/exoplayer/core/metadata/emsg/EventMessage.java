@@ -24,29 +24,29 @@ public final class EventMessage implements Metadata.Entry {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25520a;
+    public final String f11832a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f25521c;
+    public final long f11833c;
     public final long d;
     public final long e;
     public final byte[] f;
     private int g;
 
     EventMessage(Parcel parcel) {
-        this.f25520a = parcel.readString();
+        this.f11832a = parcel.readString();
         this.b = parcel.readString();
         this.d = parcel.readLong();
-        this.f25521c = parcel.readLong();
+        this.f11833c = parcel.readLong();
         this.e = parcel.readLong();
         this.f = parcel.createByteArray();
     }
 
     public EventMessage(String str, String str2, long j, long j2, byte[] bArr, long j3) {
-        this.f25520a = str;
+        this.f11832a = str;
         this.b = str2;
-        this.f25521c = j;
+        this.f11833c = j;
         this.e = j2;
         this.f = bArr;
         this.d = j3;
@@ -69,11 +69,11 @@ public final class EventMessage implements Metadata.Entry {
                 z = false;
                 if (this.d == eventMessage.d) {
                     z = false;
-                    if (this.f25521c == eventMessage.f25521c) {
+                    if (this.f11833c == eventMessage.f11833c) {
                         z = false;
                         if (this.e == eventMessage.e) {
                             z = false;
-                            if (u.a(this.f25520a, eventMessage.f25520a)) {
+                            if (u.a(this.f11832a, eventMessage.f11832a)) {
                                 z = false;
                                 if (u.a(this.b, eventMessage.b)) {
                                     if (!Arrays.equals(this.f, eventMessage.f)) {
@@ -93,7 +93,7 @@ public final class EventMessage implements Metadata.Entry {
 
     public int hashCode() {
         if (this.g == 0) {
-            String str = this.f25520a;
+            String str = this.f11832a;
             int i = 0;
             int hashCode = str != null ? str.hashCode() : 0;
             String str2 = this.b;
@@ -102,7 +102,7 @@ public final class EventMessage implements Metadata.Entry {
             }
             long j = this.d;
             int i2 = (int) (j ^ (j >>> 32));
-            long j2 = this.f25521c;
+            long j2 = this.f11833c;
             int i3 = (int) (j2 ^ (j2 >>> 32));
             long j3 = this.e;
             this.g = ((((((((((hashCode + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + i) * 31) + i2) * 31) + i3) * 31) + ((int) (j3 ^ (j3 >>> 32)))) * 31) + Arrays.hashCode(this.f);
@@ -112,10 +112,10 @@ public final class EventMessage implements Metadata.Entry {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25520a);
+        parcel.writeString(this.f11832a);
         parcel.writeString(this.b);
         parcel.writeLong(this.d);
-        parcel.writeLong(this.f25521c);
+        parcel.writeLong(this.f11833c);
         parcel.writeLong(this.e);
         parcel.writeByteArray(this.f);
     }

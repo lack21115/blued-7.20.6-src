@@ -151,7 +151,7 @@ public class AsyncPlayer {
         if (this.mWakeLock != null || this.mThread != null) {
             throw new RuntimeException("assertion failed mWakeLock=" + this.mWakeLock + " mThread=" + this.mThread);
         }
-        this.mWakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(1, this.mTag);
+        this.mWakeLock = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(1, this.mTag);
     }
 
     public void stop() {

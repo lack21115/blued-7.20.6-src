@@ -30,7 +30,7 @@ public final class b {
     public static final int Z = 20;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8766a = "caplist";
+    public static final String f5926a = "caplist";
     public static final String aA = "placementid";
     public static final int aB = 70;
     public static final String aC = "load_global_timeout";
@@ -65,7 +65,7 @@ public final class b {
     public static final int aq = 3;
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f8767ar = "ccbprule";
+    public static final String f5927ar = "ccbprule";
     public static final String as = "ccbp";
     public static final int at = 2;
     public static final double au = 1.0d;
@@ -77,7 +77,7 @@ public final class b {
     public static final String b = "reward";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f8768c = "unitId";
+    public static final String f5928c = "unitId";
     public static final String d = "unitSetting";
     public static final String e = "adSourceList";
     public static final String f = "current_time";

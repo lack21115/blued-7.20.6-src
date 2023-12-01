@@ -8,9 +8,7 @@ import com.anythink.core.common.k.u;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/ui/component/RoundRelativeLayout.class */
 public class RoundRelativeLayout extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f6931a;
+    int a;
 
     public RoundRelativeLayout(Context context) {
         this(context, null);
@@ -18,7 +16,7 @@ public class RoundRelativeLayout extends RelativeLayout {
 
     public RoundRelativeLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f6931a = dip2px(context, 4.0f);
+        this.a = dip2px(context, 4.0f);
     }
 
     public RoundRelativeLayout(Context context, AttributeSet attributeSet, int i) {
@@ -26,7 +24,7 @@ public class RoundRelativeLayout extends RelativeLayout {
     }
 
     private void a(Context context) {
-        this.f6931a = dip2px(context, 4.0f);
+        this.a = dip2px(context, 4.0f);
     }
 
     public static int dip2px(Context context, float f) {
@@ -37,7 +35,7 @@ public class RoundRelativeLayout extends RelativeLayout {
     public void draw(Canvas canvas) {
         int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null, 31);
         super.draw(canvas);
-        u.a(canvas, getWidth(), getHeight(), this.f6931a);
+        u.a(canvas, getWidth(), getHeight(), this.a);
         canvas.restoreToCount(saveLayer);
     }
 }

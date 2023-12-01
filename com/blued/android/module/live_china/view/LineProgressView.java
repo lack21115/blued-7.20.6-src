@@ -3,7 +3,6 @@ package com.blued.android.module.live_china.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
@@ -16,13 +15,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LineProgressView.class */
 public final class LineProgressView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f14337a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f14338c;
+    private float c;
     private float d;
     private int e;
     private int f;
@@ -39,7 +34,7 @@ public final class LineProgressView extends View {
         this.e = -1;
         this.f = -1;
         this.g = -256;
-        this.h = Color.CYAN;
+        this.h = -16711681;
         this.i = true;
         a(context, (AttributeSet) null);
     }
@@ -52,7 +47,7 @@ public final class LineProgressView extends View {
         this.e = -1;
         this.f = -1;
         this.g = -256;
-        this.h = Color.CYAN;
+        this.h = -16711681;
         this.i = true;
         a(context, attributeSet);
     }
@@ -65,7 +60,7 @@ public final class LineProgressView extends View {
         this.e = -1;
         this.f = -1;
         this.g = -256;
-        this.h = Color.CYAN;
+        this.h = -16711681;
         this.i = true;
         a(context, attributeSet);
     }
@@ -75,7 +70,7 @@ public final class LineProgressView extends View {
             this.e = -1;
             this.f = -1;
             this.g = -256;
-            this.h = Color.CYAN;
+            this.h = -16711681;
             this.i = true;
             invalidate();
             return;
@@ -96,20 +91,20 @@ public final class LineProgressView extends View {
         float f3 = f / f2;
         float f4 = f / f2;
         paint.setColor(this.h);
-        canvas.drawLine(f3, f4, this.f14338c - (f / f2), f4, paint);
+        canvas.drawLine(f3, f4, this.c - (f / f2), f4, paint);
     }
 
     private final void b(Canvas canvas, Paint paint) {
-        if (this.d <= 0.0f || this.f14338c <= 0.0f) {
+        if (this.d <= 0.0f || this.c <= 0.0f) {
             return;
         }
-        float f = this.f14337a / this.b;
+        float f = this.a / this.b;
         if (f > 0.0f || this.i) {
             float f2 = this.d;
             float f3 = 2;
             float f4 = f2 / f3;
             float f5 = f2 / f3;
-            float f6 = f4 + ((this.f14338c - f2) * f);
+            float f6 = f4 + ((this.c - f2) * f);
             if (this.e == -1 || this.f == -1) {
                 paint.setColor(this.g);
             } else {
@@ -150,7 +145,7 @@ public final class LineProgressView extends View {
     }
 
     public final int getProgress() {
-        return this.f14337a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -167,7 +162,7 @@ public final class LineProgressView extends View {
     @Override // android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f14338c = getMeasuredWidth();
+        this.c = getMeasuredWidth();
         this.d = getMeasuredHeight();
         invalidate();
     }
@@ -186,7 +181,7 @@ public final class LineProgressView extends View {
         if (i2 > i3) {
             i4 = i3;
         }
-        this.f14337a = i4;
+        this.a = i4;
         invalidate();
     }
 

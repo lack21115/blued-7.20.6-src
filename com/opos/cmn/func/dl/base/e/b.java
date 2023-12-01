@@ -7,11 +7,11 @@ import java.util.List;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24915a = d.class.getSimpleName();
+    public static final String f11227a = d.class.getSimpleName();
     public File b;
 
     /* renamed from: c  reason: collision with root package name */
-    public File f24916c;
+    public File f11228c;
     public com.opos.cmn.func.dl.base.a.b d;
     public List<c> e;
     public a f;
@@ -20,7 +20,7 @@ public final class b {
         this.d = bVar;
         this.b = bVar.i;
         File file = bVar.j;
-        this.f24916c = file;
+        this.f11228c = file;
         this.f = new d(this.b, file);
     }
 
@@ -47,7 +47,7 @@ public final class b {
 
     public static boolean a(long j, Boolean bool) {
         boolean z = j > 0 && bool.booleanValue();
-        com.opos.cmn.an.f.a.b(f24915a, "supportMultBlock:".concat(String.valueOf(z)));
+        com.opos.cmn.an.f.a.b(f11227a, "supportMultBlock:".concat(String.valueOf(z)));
         return z;
     }
 }

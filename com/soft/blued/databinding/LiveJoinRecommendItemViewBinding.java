@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveJoinRecommendItemViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29455a;
+    private final LinearLayout f15765a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29455a;
+        return this.f15765a;
     }
 }

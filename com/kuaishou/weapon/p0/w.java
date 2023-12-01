@@ -10,17 +10,17 @@ import org.json.JSONArray;
 public class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23871a;
+    private Context f10263a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private h f23872c;
+    private h f10264c;
 
     public w(Context context) {
         this.b = 0;
-        this.f23871a = context;
+        this.f10263a = context;
         h a2 = h.a(context, "re_po_rt");
-        this.f23872c = a2;
+        this.f10264c = a2;
         if (a2 != null) {
             this.b = a2.b(de.p, 0);
         }
@@ -28,7 +28,7 @@ public class w {
 
     public JSONArray a(int i) {
         try {
-            new A(this.f23871a, i);
+            new A(this.f10263a, i);
             JSONArray jsonObject = A.getJsonObject();
             JSONArray jSONArray = new JSONArray();
             if (jsonObject == null) {
@@ -64,7 +64,7 @@ public class w {
     public JSONArray d(int i) {
         JSONArray jSONArray = new JSONArray();
         try {
-            PackageManager packageManager = this.f23871a.getPackageManager();
+            PackageManager packageManager = this.f10263a.getPackageManager();
             int i2 = 1000;
             while (true) {
                 int i3 = i2;
@@ -85,7 +85,7 @@ public class w {
                             try {
                                 PackageInfo packageInfo = packageManager.getPackageInfo(strArr[i5], 0);
                                 if (i != 1 || (packageInfo.applicationInfo.flags & 1) != 1) {
-                                    v vVar = new v(packageInfo, this.f23871a);
+                                    v vVar = new v(packageInfo, this.f10263a);
                                     vVar.h();
                                     jSONArray.put(vVar.k());
                                 }

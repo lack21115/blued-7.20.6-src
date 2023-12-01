@@ -19,13 +19,9 @@ public final class DialogEventScoreBinding implements ViewBinding {
     public final TextView A;
     public final TextView B;
     private final FrameLayout C;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f18794a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final CheckBox f18795c;
+    public final CheckBox c;
     public final CheckBox d;
     public final CheckBox e;
     public final CheckBox f;
@@ -52,9 +48,9 @@ public final class DialogEventScoreBinding implements ViewBinding {
 
     private DialogEventScoreBinding(FrameLayout frameLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, CheckBox checkBox, CheckBox checkBox2, CheckBox checkBox3, CheckBox checkBox4, CheckBox checkBox5, Flow flow, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, LinearLayout linearLayout6, FrameLayout frameLayout2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8) {
         this.C = frameLayout;
-        this.f18794a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
-        this.f18795c = checkBox;
+        this.c = checkBox;
         this.d = checkBox2;
         this.e = checkBox3;
         this.f = checkBox4;
@@ -110,8 +106,8 @@ public final class DialogEventScoreBinding implements ViewBinding {
                             if (checkBox4 != null) {
                                 CheckBox checkBox5 = (CheckBox) view.findViewById(R.id.cb_score_5);
                                 if (checkBox5 != null) {
-                                    Flow flow = (Flow) view.findViewById(R.id.flow_score);
-                                    if (flow != null) {
+                                    Flow findViewById = view.findViewById(R.id.flow_score);
+                                    if (findViewById != null) {
                                         ImageView imageView = (ImageView) view.findViewById(R.id.iv_close);
                                         if (imageView != null) {
                                             ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_done);
@@ -152,7 +148,7 @@ public final class DialogEventScoreBinding implements ViewBinding {
                                                                                                                 if (textView7 != null) {
                                                                                                                     TextView textView8 = (TextView) view.findViewById(R.id.tv_title);
                                                                                                                     if (textView8 != null) {
-                                                                                                                        return new DialogEventScoreBinding((FrameLayout) view, shapeTextView, shapeTextView2, checkBox, checkBox2, checkBox3, checkBox4, checkBox5, flow, imageView, imageView2, imageView3, shapeConstraintLayout, shapeConstraintLayout2, linearLayout, linearLayout2, linearLayout3, linearLayout4, linearLayout5, linearLayout6, frameLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
+                                                                                                                        return new DialogEventScoreBinding((FrameLayout) view, shapeTextView, shapeTextView2, checkBox, checkBox2, checkBox3, checkBox4, checkBox5, findViewById, imageView, imageView2, imageView3, shapeConstraintLayout, shapeConstraintLayout2, linearLayout, linearLayout2, linearLayout3, linearLayout4, linearLayout5, linearLayout6, frameLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
                                                                                                                     }
                                                                                                                     str = "tvTitle";
                                                                                                                 } else {
@@ -239,7 +235,6 @@ public final class DialogEventScoreBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.C;

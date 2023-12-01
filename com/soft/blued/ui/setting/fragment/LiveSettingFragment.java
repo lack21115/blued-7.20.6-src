@@ -5,8 +5,11 @@ import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.ToggleButton;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.MutableLiveData;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.module.common.base.mvvm.LifecycleExtKt;
 import com.blued.android.module.common.base.mvvm.MVVMBaseFragment;
@@ -20,7 +23,6 @@ import com.soft.blued.R;
 import com.soft.blued.databinding.FragmentLiveSettingBinding;
 import com.soft.blued.ui.setting.vm.LiveSettingViewModel;
 import com.soft.blued.ui.web.WebViewShowInfoFragment;
-import java.util.Iterator;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
@@ -35,14 +37,14 @@ import kotlin.reflect.KProperty;
 public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewModel> {
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f33396c;
+    private final ViewBindingProperty f19705c;
     private String d;
     private int e;
     private String f;
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(LiveSettingFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentLiveSettingBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(LiveSettingFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentLiveSettingBinding;", 0))};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f33395a = new Companion(null);
+    public static final Companion f19704a = new Companion(null);
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/fragment/LiveSettingFragment$Companion.class */
@@ -56,18 +58,18 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
     }
 
     public LiveSettingFragment() {
-        super(R.layout.fragment_live_setting);
-        this.f33396c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<LiveSettingFragment, FragmentLiveSettingBinding>() { // from class: com.soft.blued.ui.setting.fragment.LiveSettingFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_live_setting);
+        this.f19705c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<LiveSettingFragment, FragmentLiveSettingBinding>() { // from class: com.soft.blued.ui.setting.fragment.LiveSettingFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/LiveSettingFragment;)Lcom/soft/blued/databinding/FragmentLiveSettingBinding; */
             /* renamed from: a */
-            public final FragmentLiveSettingBinding invoke(LiveSettingFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentLiveSettingBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<LiveSettingFragment, FragmentLiveSettingBinding>() { // from class: com.soft.blued.ui.setting.fragment.LiveSettingFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/LiveSettingFragment;)Lcom/soft/blued/databinding/FragmentLiveSettingBinding; */
             /* renamed from: a */
-            public final FragmentLiveSettingBinding invoke(LiveSettingFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentLiveSettingBinding.a(fragment.requireView());
             }
@@ -77,10 +79,10 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LiveSettingFragment this$0, View view) {
+    public static final void a(LiveSettingFragment liveSettingFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(liveSettingFragment, "this$0");
+        FragmentActivity activity = liveSettingFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -88,13 +90,13 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(LiveSettingFragment this$0, View view) {
+    public static final void b(LiveSettingFragment liveSettingFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.e == 0) {
-            ToastUtils.a(this$0.f);
+        Intrinsics.e(liveSettingFragment, "this$0");
+        if (liveSettingFragment.e == 0) {
+            ToastUtils.a(liveSettingFragment.f);
         } else {
-            WebViewShowInfoFragment.show(this$0.getContext(), this$0.d);
+            WebViewShowInfoFragment.show(liveSettingFragment.getContext(), liveSettingFragment.d);
         }
     }
 
@@ -112,89 +114,60 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
         this.d = str;
     }
 
-    public final void a(List<? extends LiveSettingModel> liveSettingList) {
-        Intrinsics.e(liveSettingList, "liveSettingList");
-        Iterator<? extends LiveSettingModel> it = liveSettingList.iterator();
-        while (it.hasNext()) {
-            LiveSettingModel next = it.next();
-            Integer valueOf = next == null ? null : Integer.valueOf(next.privilege_type);
+    public final void a(List<? extends LiveSettingModel> list) {
+        Intrinsics.e(list, "liveSettingList");
+        for (LiveSettingModel liveSettingModel : list) {
+            Integer valueOf = liveSettingModel == null ? null : Integer.valueOf(liveSettingModel.privilege_type);
             boolean z = false;
-            boolean z2 = false;
             if (valueOf != null && valueOf.intValue() == 3) {
                 FragmentLiveSettingBinding p = p();
                 ToggleButton toggleButton = p == null ? null : p.b;
                 if (toggleButton != null) {
-                    if (next.privilege_status == 1) {
-                        z2 = true;
-                    }
-                    toggleButton.setChecked(z2);
+                    toggleButton.setChecked(liveSettingModel.privilege_status == 1);
                 }
             } else if (valueOf != null && valueOf.intValue() == 4) {
                 FragmentLiveSettingBinding p2 = p();
-                ToggleButton toggleButton2 = p2 == null ? null : p2.f28876c;
+                ToggleButton toggleButton2 = p2 == null ? null : p2.f15186c;
                 if (toggleButton2 != null) {
-                    boolean z3 = false;
-                    if (next.privilege_status == 1) {
-                        z3 = true;
-                    }
-                    toggleButton2.setChecked(z3);
+                    toggleButton2.setChecked(liveSettingModel.privilege_status == 1);
                 }
             } else if (valueOf != null && valueOf.intValue() == 2) {
                 FragmentLiveSettingBinding p3 = p();
                 ToggleButton toggleButton3 = p3 == null ? null : p3.g;
                 if (toggleButton3 != null) {
-                    boolean z4 = false;
-                    if (next.privilege_status == 1) {
-                        z4 = true;
-                    }
-                    toggleButton3.setChecked(z4);
+                    toggleButton3.setChecked(liveSettingModel.privilege_status == 1);
                 }
             } else if (valueOf != null && valueOf.intValue() == 1) {
                 FragmentLiveSettingBinding p4 = p();
                 ToggleButton toggleButton4 = p4 == null ? null : p4.f;
                 if (toggleButton4 != null) {
-                    boolean z5 = false;
-                    if (next.privilege_status == 1) {
-                        z5 = true;
-                    }
-                    toggleButton4.setChecked(z5);
+                    toggleButton4.setChecked(liveSettingModel.privilege_status == 1);
                 }
             } else if (valueOf != null && valueOf.intValue() == 5) {
                 FragmentLiveSettingBinding p5 = p();
                 ToggleButton toggleButton5 = p5 == null ? null : p5.d;
                 if (toggleButton5 != null) {
-                    boolean z6 = false;
-                    if (next.privilege_status == 1) {
-                        z6 = true;
-                    }
-                    toggleButton5.setChecked(z6);
+                    toggleButton5.setChecked(liveSettingModel.privilege_status == 1);
                 }
             } else if (valueOf != null && valueOf.intValue() == 6) {
                 FragmentLiveSettingBinding p6 = p();
                 ToggleButton toggleButton6 = p6 == null ? null : p6.e;
                 if (toggleButton6 != null) {
-                    boolean z7 = false;
-                    if (next.privilege_status == 1) {
-                        z7 = true;
-                    }
-                    toggleButton6.setChecked(z7);
+                    toggleButton6.setChecked(liveSettingModel.privilege_status == 1);
                 }
             } else if (valueOf != null && valueOf.intValue() == 7) {
                 FragmentLiveSettingBinding p7 = p();
-                RelativeLayout relativeLayout = p7 == null ? null : p7.f28875a;
+                RelativeLayout relativeLayout = p7 == null ? null : p7.f15185a;
                 if (relativeLayout != null) {
                     relativeLayout.setVisibility(0);
                 }
-                a(next.privilege_status);
-                String str = next.link;
+                a(liveSettingModel.privilege_status);
+                String str = liveSettingModel.link;
                 Intrinsics.c(str, "it.link");
                 a(str);
-                String str2 = next.text;
-                if (str2 == null || str2.length() == 0) {
-                    z = true;
-                }
-                if (!z) {
-                    b(next.text);
+                String str2 = liveSettingModel.text;
+                if (!((str2 == null || str2.length() == 0) ? true : true)) {
+                    b(liveSettingModel.text);
                 }
             }
         }
@@ -203,8 +176,8 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
     public final LiveSettingModel b(int i) {
         MutableLiveData<List<LiveSettingModel>> d;
         List<LiveSettingModel> value;
-        LiveSettingViewModel j = j();
-        if (j == null || (d = j.d()) == null || (value = d.getValue()) == null) {
+        LiveSettingViewModel liveSettingViewModel = (LiveSettingViewModel) j();
+        if (liveSettingViewModel == null || (d = liveSettingViewModel.d()) == null || (value = d.getValue()) == null) {
             return null;
         }
         for (LiveSettingModel liveSettingModel : value) {
@@ -219,7 +192,6 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
         this.f = str;
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         FragmentLiveSettingBinding p = p();
         if (p != null) {
@@ -235,7 +207,7 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
                     LiveSettingFragment.this.a(compoundButton, z);
                 }
             });
-            p.f28876c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$FbT9clp-qgGKmeGrxE8hxTD92Nc
+            p.f15186c.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$FbT9clp-qgGKmeGrxE8hxTD92Nc
                 @Override // android.widget.CompoundButton.OnCheckedChangeListener
                 public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
                     LiveSettingFragment.this.a(compoundButton, z);
@@ -265,20 +237,19 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
                     LiveSettingFragment.this.a(compoundButton, z);
                 }
             });
-            p.f28875a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$LiveSettingFragment$aF6b12UiaAxOYCssjlN3v4XsnNc
+            p.f15185a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$LiveSettingFragment$aF6b12UiaAxOYCssjlN3v4XsnNc
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveSettingFragment.b(LiveSettingFragment.this, view);
                 }
             });
         }
-        LiveSettingViewModel a2 = a();
+        LiveSettingViewModel liveSettingViewModel = (LiveSettingViewModel) a();
         ActivityFragmentActive fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
-        a2.a(fragmentActive);
+        liveSettingViewModel.a(fragmentActive);
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void g() {
     }
 
@@ -294,7 +265,7 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
             return 3;
         }
         FragmentLiveSettingBinding p2 = p();
-        if ((p2 == null || (toggleButton2 = p2.f28876c) == null || i != toggleButton2.getId()) ? false : true) {
+        if ((p2 == null || (toggleButton2 = p2.f15186c) == null || i != toggleButton2.getId()) ? false : true) {
             return 4;
         }
         FragmentLiveSettingBinding p3 = p();
@@ -313,14 +284,13 @@ public final class LiveSettingFragment extends MVVMBaseFragment<LiveSettingViewM
         return p6 != null && (toggleButton6 = p6.e) != null && i == toggleButton6.getId() ? 6 : -1;
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LiveSettingFragment liveSettingFragment = this;
-        LiveSettingViewModel j = j();
-        LifecycleExtKt.a(liveSettingFragment, j == null ? null : j.d(), new LiveSettingFragment$liveDataObserver$1(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveSettingViewModel liveSettingViewModel = (LiveSettingViewModel) j();
+        LifecycleExtKt.a(lifecycleOwner, liveSettingViewModel == null ? null : liveSettingViewModel.d(), new LiveSettingFragment$liveDataObserver$1(this));
     }
 
     public final FragmentLiveSettingBinding p() {
-        return (FragmentLiveSettingBinding) this.f33396c.b(this, b[0]);
+        return (FragmentLiveSettingBinding) this.f19705c.b(this, b[0]);
     }
 }

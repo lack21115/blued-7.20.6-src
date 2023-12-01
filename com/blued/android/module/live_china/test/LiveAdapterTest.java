@@ -29,7 +29,6 @@ public final class LiveAdapterTest extends BaseQuickAdapter<BluedLiveListDataTes
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final BluedLiveListDataTest bluedLiveListDataTest) {
         TextView textView;
@@ -67,13 +66,13 @@ public final class LiveAdapterTest extends BaseQuickAdapter<BluedLiveListDataTes
                     AppMethods.a((CharSequence) "lid is 0");
                 }
                 BluedLiveListDataTest bluedLiveListDataTest2 = BluedLiveListDataTest.this;
-                long a2 = StringUtils.a(bluedLiveListDataTest2 == null ? null : bluedLiveListDataTest2.lid, 0L);
+                long a = StringUtils.a(bluedLiveListDataTest2 == null ? null : bluedLiveListDataTest2.lid, 0L);
                 BluedLiveListDataTest bluedLiveListDataTest3 = BluedLiveListDataTest.this;
                 String str = (bluedLiveListDataTest3 == null || (userBasicModel2 = bluedLiveListDataTest3.anchor) == null) ? null : userBasicModel2.uid;
                 BluedLiveListDataTest bluedLiveListDataTest4 = BluedLiveListDataTest.this;
                 String str2 = (bluedLiveListDataTest4 == null || (userBasicModel3 = bluedLiveListDataTest4.anchor) == null) ? null : userBasicModel3.name;
                 BluedLiveListDataTest bluedLiveListDataTest5 = BluedLiveListDataTest.this;
-                LiveRoomData liveRoomData = new LiveRoomData(a2, 0, "", str, str2, (bluedLiveListDataTest5 == null || (userBasicModel4 = bluedLiveListDataTest5.anchor) == null) ? null : userBasicModel4.avatar, 0);
+                LiveRoomData liveRoomData = new LiveRoomData(a, 0, "", str, str2, (bluedLiveListDataTest5 == null || (userBasicModel4 = bluedLiveListDataTest5.anchor) == null) ? null : userBasicModel4.avatar, 0);
                 context = this.mContext;
                 PlayingOnliveFragment.a(context, liveRoomData);
             }

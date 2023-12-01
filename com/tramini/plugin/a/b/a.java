@@ -6,18 +6,18 @@ import android.database.sqlite.SQLiteDatabase;
 public abstract class a<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f40491a;
+    private b f26800a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(b bVar) {
-        this.f40491a = bVar;
+        this.f26800a = bVar;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final SQLiteDatabase a() {
         SQLiteDatabase a2;
         synchronized (this) {
-            a2 = this.f40491a.a();
+            a2 = this.f26800a.a();
         }
         return a2;
     }
@@ -28,7 +28,7 @@ public abstract class a<T> {
     public final SQLiteDatabase b() {
         SQLiteDatabase b;
         synchronized (this) {
-            b = this.f40491a.b();
+            b = this.f26800a.b();
         }
         return b;
     }

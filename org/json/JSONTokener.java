@@ -1,42 +1,37 @@
 package org.json;
 
-import com.igexin.push.core.b;
-import com.loopj.android.http.AsyncHttpResponseHandler;
-
 /* loaded from: source-2895416-dex2jar.jar:org/json/JSONTokener.class */
 public class JSONTokener {
-
-    /* renamed from: in  reason: collision with root package name */
-    private final String f44093in;
+    private final String in;
     private int pos;
 
     public JSONTokener(String str) {
         String str2 = str;
         if (str != null) {
             str2 = str;
-            if (str.startsWith(AsyncHttpResponseHandler.UTF8_BOM)) {
+            if (str.startsWith("\ufeff")) {
                 str2 = str.substring(1);
             }
         }
-        this.f44093in = str2;
+        this.in = str2;
     }
 
-    public static int dehexchar(char c2) {
-        if (c2 < '0' || c2 > '9') {
-            if (c2 < 'A' || c2 > 'F') {
-                if (c2 < 'a' || c2 > 'f') {
+    public static int dehexchar(char c) {
+        if (c < '0' || c > '9') {
+            if (c < 'A' || c > 'F') {
+                if (c < 'a' || c > 'f') {
                     return -1;
                 }
-                return (c2 - 'a') + 10;
+                return (c - 'a') + 10;
             }
-            return (c2 - 'A') + 10;
+            return (c - 'A') + 10;
         }
-        return c2 - '0';
+        return c - '0';
     }
 
     private int nextCleanInternal() throws JSONException {
-        while (this.pos < this.f44093in.length()) {
-            String str = this.f44093in;
+        while (this.pos < this.in.length()) {
+            String str = this.in;
             int i = this.pos;
             this.pos = i + 1;
             char charAt = str.charAt(i);
@@ -50,11 +45,11 @@ public class JSONTokener {
                     skipToEndOfLine();
                     break;
                 case '/':
-                    if (this.pos != this.f44093in.length()) {
-                        switch (this.f44093in.charAt(this.pos)) {
+                    if (this.pos != this.in.length()) {
+                        switch (this.in.charAt(this.pos)) {
                             case '*':
                                 this.pos++;
-                                int indexOf = this.f44093in.indexOf("*/", this.pos);
+                                int indexOf = this.in.indexOf("*/", this.pos);
                                 if (indexOf == -1) {
                                     throw syntaxError("Unterminated comment");
                                 }
@@ -79,14 +74,14 @@ public class JSONTokener {
 
     private String nextToInternal(String str) {
         int i = this.pos;
-        while (this.pos < this.f44093in.length()) {
-            char charAt = this.f44093in.charAt(this.pos);
+        while (this.pos < this.in.length()) {
+            char charAt = this.in.charAt(this.pos);
             if (charAt == '\r' || charAt == '\n' || str.indexOf(charAt) != -1) {
-                return this.f44093in.substring(i, this.pos);
+                return this.in.substring(i, this.pos);
             }
             this.pos++;
         }
-        return this.f44093in.substring(i);
+        return this.in.substring(i);
     }
 
     private JSONArray readArray() throws JSONException {
@@ -127,7 +122,7 @@ public class JSONTokener {
     }
 
     private char readEscapeCharacter() throws JSONException {
-        String str = this.f44093in;
+        String str = this.in;
         int i = this.pos;
         this.pos = i + 1;
         char charAt = str.charAt(i);
@@ -143,10 +138,10 @@ public class JSONTokener {
             case 't':
                 return '\t';
             case 'u':
-                if (this.pos + 4 > this.f44093in.length()) {
+                if (this.pos + 4 > this.in.length()) {
                     throw syntaxError("Unterminated escape sequence");
                 }
-                String substring = this.f44093in.substring(this.pos, this.pos + 4);
+                String substring = this.in.substring(this.pos, this.pos + 4);
                 this.pos += 4;
                 return (char) Integer.parseInt(substring, 16);
             default:
@@ -161,7 +156,7 @@ public class JSONTokener {
         if (nextToInternal.length() == 0) {
             throw syntaxError("Expected literal value");
         }
-        if (b.l.equalsIgnoreCase(nextToInternal)) {
+        if ("null".equalsIgnoreCase(nextToInternal)) {
             return JSONObject.NULL;
         }
         if ("true".equalsIgnoreCase(nextToInternal)) {
@@ -216,7 +211,7 @@ public class JSONTokener {
                 }
                 int nextCleanInternal2 = nextCleanInternal();
                 if (nextCleanInternal2 == 58 || nextCleanInternal2 == 61) {
-                    if (this.pos < this.f44093in.length() && this.f44093in.charAt(this.pos) == '>') {
+                    if (this.pos < this.in.length() && this.in.charAt(this.pos) == '>') {
                         this.pos++;
                     }
                     jSONObject.put((String) nextValue, nextValue());
@@ -239,8 +234,8 @@ public class JSONTokener {
     }
 
     private void skipToEndOfLine() {
-        while (this.pos < this.f44093in.length()) {
-            char charAt = this.f44093in.charAt(this.pos);
+        while (this.pos < this.in.length()) {
+            char charAt = this.in.charAt(this.pos);
             if (charAt == '\r' || charAt == '\n') {
                 this.pos++;
                 return;
@@ -258,12 +253,12 @@ public class JSONTokener {
     }
 
     public boolean more() {
-        return this.pos < this.f44093in.length();
+        return this.pos < this.in.length();
     }
 
     public char next() {
-        if (this.pos < this.f44093in.length()) {
-            String str = this.f44093in;
+        if (this.pos < this.in.length()) {
+            String str = this.in;
             int i = this.pos;
             this.pos = i + 1;
             return str.charAt(i);
@@ -271,19 +266,19 @@ public class JSONTokener {
         return (char) 0;
     }
 
-    public char next(char c2) throws JSONException {
+    public char next(char c) throws JSONException {
         char next = next();
-        if (next != c2) {
-            throw syntaxError("Expected " + c2 + " but was " + next);
+        if (next != c) {
+            throw syntaxError("Expected " + c + " but was " + next);
         }
         return next;
     }
 
     public String next(int i) throws JSONException {
-        if (this.pos + i > this.f44093in.length()) {
+        if (this.pos + i > this.in.length()) {
             throw syntaxError(i + " is out of bounds");
         }
-        String substring = this.f44093in.substring(this.pos, this.pos + i);
+        String substring = this.in.substring(this.pos, this.pos + i);
         this.pos += i;
         return substring;
     }
@@ -296,29 +291,29 @@ public class JSONTokener {
         return (char) nextCleanInternal;
     }
 
-    public String nextString(char c2) throws JSONException {
+    public String nextString(char c) throws JSONException {
         StringBuilder sb = null;
         int i = this.pos;
-        while (this.pos < this.f44093in.length()) {
-            String str = this.f44093in;
+        while (this.pos < this.in.length()) {
+            String str = this.in;
             int i2 = this.pos;
             this.pos = i2 + 1;
             char charAt = str.charAt(i2);
-            if (charAt == c2) {
+            if (charAt == c) {
                 if (sb == null) {
-                    return new String(this.f44093in.substring(i, this.pos - 1));
+                    return new String(this.in.substring(i, this.pos - 1));
                 }
-                sb.append((CharSequence) this.f44093in, i, this.pos - 1);
+                sb.append((CharSequence) this.in, i, this.pos - 1);
                 return sb.toString();
             } else if (charAt == '\\') {
-                if (this.pos == this.f44093in.length()) {
+                if (this.pos == this.in.length()) {
                     throw syntaxError("Unterminated escape sequence");
                 }
                 StringBuilder sb2 = sb;
                 if (sb == null) {
                     sb2 = new StringBuilder();
                 }
-                sb2.append((CharSequence) this.f44093in, i, this.pos - 1);
+                sb2.append((CharSequence) this.in, i, this.pos - 1);
                 sb2.append(readEscapeCharacter());
                 i = this.pos;
                 sb = sb2;
@@ -327,8 +322,8 @@ public class JSONTokener {
         throw syntaxError("Unterminated string");
     }
 
-    public String nextTo(char c2) {
-        return nextToInternal(String.valueOf(c2)).trim();
+    public String nextTo(char c) {
+        return nextToInternal(String.valueOf(c)).trim();
     }
 
     public String nextTo(String str) {
@@ -357,15 +352,15 @@ public class JSONTokener {
     }
 
     public void skipPast(String str) {
-        int indexOf = this.f44093in.indexOf(str, this.pos);
-        this.pos = indexOf == -1 ? this.f44093in.length() : str.length() + indexOf;
+        int indexOf = this.in.indexOf(str, this.pos);
+        this.pos = indexOf == -1 ? this.in.length() : str.length() + indexOf;
     }
 
-    public char skipTo(char c2) {
-        int indexOf = this.f44093in.indexOf(c2, this.pos);
+    public char skipTo(char c) {
+        int indexOf = this.in.indexOf(c, this.pos);
         if (indexOf != -1) {
             this.pos = indexOf;
-            return c2;
+            return c;
         }
         return (char) 0;
     }
@@ -375,6 +370,6 @@ public class JSONTokener {
     }
 
     public String toString() {
-        return " at character " + this.pos + " of " + this.f44093in;
+        return " at character " + this.pos + " of " + this.in;
     }
 }

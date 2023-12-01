@@ -82,15 +82,13 @@ public class SnackbarContentLayout extends LinearLayout implements ContentViewCa
         return this.messageView;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         this.messageView = (TextView) findViewById(R.id.snackbar_text);
         this.actionView = (Button) findViewById(R.id.snackbar_action);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0060, code lost:
         if (updateViewsWithinLayout(1, r10, r10 - r0) != false) goto L18;
      */
@@ -105,7 +103,7 @@ public class SnackbarContentLayout extends LinearLayout implements ContentViewCa
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onMeasure(int r7, int r8) {
+    protected void onMeasure(int r7, int r8) {
         /*
             r6 = this;
             r0 = r6

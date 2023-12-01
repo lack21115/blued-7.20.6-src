@@ -13,20 +13,18 @@ public class GeoFenceClient {
     public static final int GEOFENCE_IN = 1;
     public static final int GEOFENCE_OUT = 2;
     public static final int GEOFENCE_STAYED = 4;
-
-    /* renamed from: a  reason: collision with root package name */
-    Context f5468a;
+    Context a;
     a b;
 
     public GeoFenceClient(Context context) {
-        this.f5468a = null;
+        this.a = null;
         this.b = null;
         try {
             if (context == null) {
                 throw new IllegalArgumentException("Context参数不能为null");
             }
             Context applicationContext = context.getApplicationContext();
-            this.f5468a = applicationContext;
+            this.a = applicationContext;
             this.b = a(applicationContext);
         } catch (Throwable th) {
             b.a(th, "GeoFenceClient", "<init>");

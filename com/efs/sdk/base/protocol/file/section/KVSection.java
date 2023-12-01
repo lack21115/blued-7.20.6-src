@@ -1,6 +1,5 @@
 package com.efs.sdk.base.protocol.file.section;
 
-import com.efs.sdk.base.protocol.ILogProtocol;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,17 +42,17 @@ public class KVSection extends AbsSection {
     }
 
     public KVSection putNum(String str, long j) {
-        this.dataMap.put(ILogProtocol.KEY_PREFIX_NUM.concat(String.valueOf(str)), Long.valueOf(j));
+        this.dataMap.put("wl_".concat(String.valueOf(str)), Long.valueOf(j));
         return this;
     }
 
     public KVSection putString(String str, String str2) {
-        this.dataMap.put(ILogProtocol.KEY_PREFIX_STRING.concat(String.valueOf(str)), str2);
+        this.dataMap.put("wk_".concat(String.valueOf(str)), str2);
         return this;
     }
 
     public KVSection putTimestamp(String str, long j) {
-        this.dataMap.put(ILogProtocol.KEY_PREFIX_TIMESTAMP.concat(String.valueOf(str)), Long.valueOf(j));
+        this.dataMap.put("wd_".concat(String.valueOf(str)), Long.valueOf(j));
         return this;
     }
 }

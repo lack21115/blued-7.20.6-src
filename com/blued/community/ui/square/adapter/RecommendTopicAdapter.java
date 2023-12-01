@@ -17,20 +17,17 @@ import com.blued.das.client.feed.FeedProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/adapter/RecommendTopicAdapter.class */
 public class RecommendTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f20122a;
+    private Context a;
     private IRequestHost b;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/adapter/RecommendTopicAdapter$MyTopicViewHolder.class */
     public class MyTopicViewHolder {
         private View b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f20125c;
+        private ImageView c;
         private TextView d;
         private TextView e;
         private ShapeTextView f;
@@ -43,7 +40,7 @@ public class RecommendTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseView
             } else if (i == 2) {
                 this.b = baseViewHolder.getView(R.id.item_recommend3);
             }
-            this.f20125c = (ImageView) this.b.findViewById(R.id.img_cover);
+            this.c = (ImageView) this.b.findViewById(R.id.img_cover);
             this.d = (TextView) this.b.findViewById(R.id.tv_topic_name);
             this.e = (TextView) this.b.findViewById(R.id.tv_topic_desc);
             this.f = (ShapeTextView) this.b.findViewById(R.id.stv_into);
@@ -51,15 +48,15 @@ public class RecommendTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseView
     }
 
     public RecommendTopicAdapter(Context context, IRequestHost iRequestHost) {
-        super(R.layout.item_recommend_topic_list, null);
-        this.f20122a = context;
+        super(R.layout.item_recommend_topic_list, (List) null);
+        this.a = context;
         this.b = iRequestHost;
     }
 
     private void a(final BluedTopic bluedTopic, MyTopicViewHolder myTopicViewHolder) {
-        ImageLoader.a(this.b, bluedTopic.avatar).b(R.drawable.topic_default_header).a(6.0f).a(myTopicViewHolder.f20125c);
+        ImageLoader.a(this.b, bluedTopic.avatar).b(R.drawable.topic_default_header).a(6.0f).a(myTopicViewHolder.c);
         myTopicViewHolder.d.setText(bluedTopic.name);
-        myTopicViewHolder.e.setText(DistanceUtils.a(this.f20122a, bluedTopic.join_total) + this.f20122a.getString(R.string.participate));
+        myTopicViewHolder.e.setText(DistanceUtils.a(this.a, bluedTopic.join_total) + this.a.getString(R.string.participate));
         myTopicViewHolder.f.getBackground().setAlpha(15);
         myTopicViewHolder.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.square.adapter.RecommendTopicAdapter.1
             @Override // android.view.View.OnClickListener
@@ -67,13 +64,12 @@ public class RecommendTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseView
                 Tracker.onClick(view);
                 EventTrackFeed.f(FeedProtos.Event.FIND_PLAZA_RECOMMEND_SUPER_TOPIC_CLICK, bluedTopic.super_did);
                 FeedConstants.b = FeedProtos.DetailFrom.FIND_PLAZA_RECOMMEND;
-                SuperTopicDetailFragment.a(RecommendTopicAdapter.this.f20122a, bluedTopic.super_did);
+                SuperTopicDetailFragment.a(RecommendTopicAdapter.this.a, bluedTopic.super_did);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, BluedTopic bluedTopic) {
         if (baseViewHolder != null) {

@@ -9,9 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/CoroutineName.class */
 public final class CoroutineName extends AbstractCoroutineContextElement {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Key f42799a = new Key(null);
+    public static final Key a = new Key(null);
     private final String b;
 
     @Metadata
@@ -26,7 +24,7 @@ public final class CoroutineName extends AbstractCoroutineContextElement {
     }
 
     public CoroutineName(String str) {
-        super(f42799a);
+        super(a);
         this.b = str;
     }
 

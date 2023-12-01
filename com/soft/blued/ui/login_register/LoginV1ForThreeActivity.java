@@ -1,12 +1,12 @@
 package com.soft.blued.ui.login_register;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.FrameLayout;
-import com.alipay.sdk.app.statistic.c;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.BaseFragmentActivity;
@@ -15,7 +15,6 @@ import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.utils.AesCrypto2;
 import com.blued.android.module.common.db.UserAccountsVDao;
-import com.blued.android.module.common.db.model.UserAccountsModel;
 import com.blued.android.module.common.user.model.BluedLoginResult;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.DialogUtils;
@@ -58,14 +57,14 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
     private String l;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f31409c = LoginV1ForThreeActivity.class.getSimpleName();
+    private String f17719c = LoginV1ForThreeActivity.class.getSimpleName();
     private int k = 0;
     private Handler m = new Handler(new Handler.Callback() { // from class: com.soft.blued.ui.login_register.LoginV1ForThreeActivity.1
         @Override // android.os.Handler.Callback
         public boolean handleMessage(Message message) {
             int i = message.what;
             if (i == 4) {
-                Logger.b(LoginV1ForThreeActivity.this.f31409c, "==WX_CALLBACK_OK====");
+                Logger.b(LoginV1ForThreeActivity.this.f17719c, "==WX_CALLBACK_OK====");
                 WXLoginBean wXLoginBean = (WXLoginBean) message.obj;
                 if (wXLoginBean == null) {
                     DialogUtils.b(LoginV1ForThreeActivity.this.i);
@@ -81,7 +80,7 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
                 loginV1ForThreeActivity.a(loginV1ForThreeActivity.j);
                 return false;
             } else if (i == 5) {
-                Logger.b(LoginV1ForThreeActivity.this.f31409c, "==FB_CALLBACK_ERROR====");
+                Logger.b(LoginV1ForThreeActivity.this.f17719c, "==FB_CALLBACK_ERROR====");
                 LoginV1ForThreeActivity.this.a(new Runnable() { // from class: com.soft.blued.ui.login_register.LoginV1ForThreeActivity.1.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -96,7 +95,7 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
                 LoginV1ForThreeActivity.this.finish();
                 return false;
             } else {
-                Logger.b(LoginV1ForThreeActivity.this.f31409c, "==FB_CALLBACK_CANCEL====");
+                Logger.b(LoginV1ForThreeActivity.this.f17719c, "==FB_CALLBACK_CANCEL====");
                 ToastUtils.a(LoginV1ForThreeActivity.this.getResources().getString(2131886652));
                 DialogUtils.b(LoginV1ForThreeActivity.this.i);
                 LoginV1ForThreeActivity.this.finish();
@@ -105,11 +104,10 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
         }
     });
     private BluedUIHttpResponse n = new BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>>() { // from class: com.soft.blued.ui.login_register.LoginV1ForThreeActivity.3
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str, String str2) {
             switch (i) {
                 case 4035009:
-                    String a2 = LoginRegisterTools.a(LoginV1ForThreeActivity.this.e, LoginV1ForThreeActivity.this.f, UserAccountsModel.ACCOUNT_THREE_WEIXIN);
+                    String a2 = LoginRegisterTools.a(LoginV1ForThreeActivity.this.e, LoginV1ForThreeActivity.this.f, "weixin");
                     Bundle bundle = new Bundle();
                     String token = LoginRegisterTools.d(str2).getToken();
                     String login_mobile = LoginRegisterTools.d(str2).getLogin_mobile();
@@ -122,7 +120,7 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
                     bundle.putString("login_email", login_email);
                     bundle.putString("safe_email", safe_email);
                     bundle.putString("password", "");
-                    bundle.putString("login_type", c.e);
+                    bundle.putString("login_type", "third");
                     bundle.putString("login_account", a2);
                     bundle.putString("key_uid", LoginRegisterTools.d(str2).getUid());
                     bundle.putInt("target_type", 0);
@@ -156,7 +154,7 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
                             return true;
                         }
                         String a3 = AesCrypto2.a(((BluedCheckResult) bluedEntityA2.data.get(0)).getEncrypted());
-                        Logger.b(LoginV1ForThreeActivity.this.f31409c, "解密：deData===", a3);
+                        Logger.b(LoginV1ForThreeActivity.this.f17719c, "解密：deData===", a3);
                         final BluedCheckResult bluedCheckResult = (BluedCheckResult) f.fromJson(a3, (Class<Object>) BluedCheckResult.class);
                         if ("plat_weixin".endsWith(LoginV1ForThreeActivity.this.d)) {
                             LoginV1ForThreeActivity.this.e = bluedCheckResult.getThirdToken();
@@ -201,42 +199,39 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(LoginV1ForThreeActivity.this.i);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedLoginResult, AVConfigExtra> bluedEntity) {
             try {
                 boolean z = false;
-                Logger.b(LoginV1ForThreeActivity.this.f31409c + "===success", "===responseJson:", bluedEntity);
+                Logger.b(LoginV1ForThreeActivity.this.f17719c + "===success", "===responseJson:", bluedEntity);
                 if (bluedEntity.data.size() > 0 && bluedEntity.data.get(0) != null) {
                     if (bluedEntity.extra != null) {
-                        AVConfig.a().a(bluedEntity.extra.f20538a, false);
+                        AVConfig.a().a(((AVConfigExtra) bluedEntity.extra).f6932a, false);
                     }
-                    BluedLoginResult bluedLoginResult = bluedEntity.data.get(0);
+                    BluedLoginResult bluedLoginResult = (BluedLoginResult) bluedEntity.data.get(0);
                     String str = "";
                     if ("plat_weixin".endsWith(LoginV1ForThreeActivity.this.d)) {
                         if (StringUtils.g(bluedLoginResult.getUid())) {
                             LoginV1ForThreeActivity.this.e = bluedLoginResult.getThird_access_token();
                             LoginV1ForThreeActivity.this.f = bluedLoginResult.getThird_user_id();
                             LoginV1ForThreeActivity.g(LoginV1ForThreeActivity.this);
-                            Logger.b(LoginV1ForThreeActivity.this.f31409c, "===request time:", Integer.valueOf(LoginV1ForThreeActivity.this.k));
+                            Logger.b(LoginV1ForThreeActivity.this.f17719c, "===request time:", Integer.valueOf(LoginV1ForThreeActivity.this.k));
                             if (LoginV1ForThreeActivity.this.k <= 2) {
-                                LoginRegisterHttpUtils.a(LoginV1ForThreeActivity.this.n, LoginV1ForThreeActivity.this.e, LoginV1ForThreeActivity.this.f, (String) null, UserAccountsModel.ACCOUNT_THREE_WEIXIN, false);
+                                LoginRegisterHttpUtils.a(LoginV1ForThreeActivity.this.n, LoginV1ForThreeActivity.this.e, LoginV1ForThreeActivity.this.f, (String) null, "weixin", false);
                                 return;
                             }
                             return;
                         }
-                        str = LoginRegisterTools.a(LoginV1ForThreeActivity.this.e, LoginV1ForThreeActivity.this.f, UserAccountsModel.ACCOUNT_THREE_WEIXIN);
+                        str = LoginRegisterTools.a(LoginV1ForThreeActivity.this.e, LoginV1ForThreeActivity.this.f, "weixin");
                     }
-                    Logger.b(LoginV1ForThreeActivity.this.f31409c, "accountJson===", str);
-                    UserInfo.getInstance().saveUserInfo(str, 2, LoginV1ForThreeActivity.this.h, bluedLoginResult, LoginV1ForThreeActivity.this.l);
+                    Logger.b(LoginV1ForThreeActivity.this.f17719c, "accountJson===", str);
+                    UserInfo.getInstance().saveUserInfo(str, 2, LoginV1ForThreeActivity.this.h, bluedLoginResult, new String[]{LoginV1ForThreeActivity.this.l});
                     if (!StringUtils.d(LoginV1ForThreeActivity.this.l)) {
                         UserAccountsVDao.a().c(LoginV1ForThreeActivity.this.l);
                     }
@@ -249,14 +244,14 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
                     if (bluedLoginResult == null || bluedLoginResult.getNeedAdultVerify() != 1) {
                         Bundle bundle = new Bundle();
                         bundle.putString("from_tag_page", "from_tag_login");
-                        HomeArgumentHelper.a(LoginV1ForThreeActivity.this, (String) null, bundle);
+                        HomeArgumentHelper.a((Context) LoginV1ForThreeActivity.this, (String) null, bundle);
                     } else {
-                        AdultVerifyFragment.a(LoginV1ForThreeActivity.this);
+                        AdultVerifyFragment.a((Context) LoginV1ForThreeActivity.this);
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                AppMethods.a(AppInfo.d().getResources().getString(2131887272));
             }
             if (!"plat_weixin".endsWith(LoginV1ForThreeActivity.this.d)) {
                 DialogUtils.b(LoginV1ForThreeActivity.this.i);
@@ -267,21 +262,20 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<BluedLoginResult, AVConfigExtra> parseData(String str) {
             LoginV1ForThreeActivity.this.h = str;
             BluedEntity<BluedLoginResult, AVConfigExtra> parseData = super.parseData(str);
             if (parseData != null) {
                 try {
                     if (parseData.data != null && parseData.data.size() > 0) {
-                        String a2 = AesCrypto2.a(parseData.data.get(0).getEncrypted());
-                        Logger.b(LoginV1ForThreeActivity.this.f31409c, "解密：deData===", a2);
+                        String a2 = AesCrypto2.a(((BluedLoginResult) parseData.data.get(0)).getEncrypted());
+                        Logger.b(LoginV1ForThreeActivity.this.f17719c, "解密：deData===", a2);
                         parseData.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class));
                         return parseData;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
             return parseData;
@@ -292,7 +286,7 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
     public void a(String str) {
         if (!StringUtils.d(str)) {
             this.k++;
-            LoginRegisterHttpUtils.a(this.n, (String) null, (String) null, str, UserAccountsModel.ACCOUNT_THREE_WEIXIN, false);
+            LoginRegisterHttpUtils.a(this.n, (String) null, (String) null, str, "weixin", false);
             return;
         }
         ToastUtils.a(getResources().getString(2131886653));
@@ -301,8 +295,9 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void b(String str) {
-        FinishProfile1Fragment.f20540a.a(this, str, this.g, this.d, this.e, this.f, this.l);
+        FinishProfile1Fragment.f6934a.a(this, str, this.g, this.d, this.e, this.f, this.l);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -324,6 +319,7 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
         return i;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void g() {
         this.i = DialogUtils.a(this);
     }
@@ -350,6 +346,7 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void i() {
         if (!Util.isClientAvailable(this, "com.tencent.mm")) {
             AppMethods.d(2131892807);
@@ -376,10 +373,10 @@ public class LoginV1ForThreeActivity extends BaseFragmentActivity {
                 LoginV1ForThreeActivity.this.m.sendEmptyMessage(6);
             }
         });
-        WXProvider.a().a(this);
+        WXProvider.a().a((Context) this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(new FrameLayout(this));

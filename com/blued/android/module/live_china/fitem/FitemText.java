@@ -9,9 +9,7 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemText.class */
 public class FitemText extends FreedomItem {
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f12544c;
+    public int c;
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public int a() {

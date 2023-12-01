@@ -8,9 +8,7 @@ import java.util.Map;
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/e/a.class */
 public class a {
     private static final String TAG = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static a f4470a;
+    private static a a;
 
     private a() {
     }
@@ -19,10 +17,10 @@ public class a {
         a aVar;
         synchronized (a.class) {
             try {
-                if (f4470a == null) {
-                    f4470a = new a();
+                if (a == null) {
+                    a = new a();
                 }
-                aVar = f4470a;
+                aVar = a;
             } catch (Throwable th) {
                 throw th;
             }

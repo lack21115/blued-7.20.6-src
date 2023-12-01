@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.FragmentActivity;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityBaseExtra;
@@ -43,7 +42,7 @@ public final class SignInteractiveListFragment extends BaseListFragment<EventMem
             Intrinsics.e(feed, "feed");
             Bundle bundle = new Bundle();
             bundle.putString("feed_id", feedId);
-            bundle.putSerializable(IAdInterListener.AdProdType.PRODUCT_FEEDS, feed);
+            bundle.putSerializable("feed", feed);
             TerminalActivity.d(context, SignInteractiveListFragment.class, bundle);
         }
     }
@@ -63,6 +62,7 @@ public final class SignInteractiveListFragment extends BaseListFragment<EventMem
         return new SignInteractiveListFragment$initAdapter$1(this, R.layout.item_sign_interactive);
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.blued.community.ui.feed.fragment.SignInteractiveListFragment$getHttpResDataType$1] */
     @Override // com.blued.android.module.common.fragment.BaseListFragment
     public Type b() {
         Type type = new TypeToken<BluedEntity<EventMemberModel, BluedEntityBaseExtra>>() { // from class: com.blued.community.ui.feed.fragment.SignInteractiveListFragment$getHttpResDataType$1
@@ -76,18 +76,18 @@ public final class SignInteractiveListFragment extends BaseListFragment<EventMem
         return CommunityHttpUtils.a() + "/ticktocks/feed/double_click_list?feed_id=" + this.h;
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseListFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseListFragment
     public void onInitView() {
         super.onInitView();
-        CommonTopTitleNoTrans commonTopTitleNoTrans = this.f10817a;
+        CommonTopTitleNoTrans commonTopTitleNoTrans = this.a;
         if (commonTopTitleNoTrans != null) {
             commonTopTitleNoTrans.f();
         }
-        CommonTopTitleNoTrans commonTopTitleNoTrans2 = this.f10817a;
+        CommonTopTitleNoTrans commonTopTitleNoTrans2 = this.a;
         if (commonTopTitleNoTrans2 != null) {
             commonTopTitleNoTrans2.setCenterText(R.string.sign_interactive_title);
         }
-        CommonTopTitleNoTrans commonTopTitleNoTrans3 = this.f10817a;
+        CommonTopTitleNoTrans commonTopTitleNoTrans3 = this.a;
         if (commonTopTitleNoTrans3 != null) {
             commonTopTitleNoTrans3.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$SignInteractiveListFragment$aFiJXuwSA9Q8EoJNj1J1N0kTZhY
                 @Override // android.view.View.OnClickListener
@@ -96,15 +96,14 @@ public final class SignInteractiveListFragment extends BaseListFragment<EventMem
                 }
             });
         }
-        this.f10818c.setDividerHeight(0);
-        this.f10818c.setHeaderDividersEnabled(false);
-        this.f10818c.setFooterDividersEnabled(false);
+        this.c.setDividerHeight(0);
+        this.c.setHeaderDividersEnabled(false);
+        this.c.setFooterDividersEnabled(false);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onParseArguments() {
         super.onParseArguments();
         this.h = String.valueOf(this.args.getString("feed_id"));
-        this.i = (BluedIngSelfFeed) this.args.getSerializable(IAdInterListener.AdProdType.PRODUCT_FEEDS);
+        this.i = (BluedIngSelfFeed) this.args.getSerializable("feed");
     }
 }

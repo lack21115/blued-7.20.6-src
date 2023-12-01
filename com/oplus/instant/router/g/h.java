@@ -5,7 +5,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.umeng.analytics.pro.bh;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -14,11 +13,11 @@ import java.net.URLEncoder;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile String f24308a;
+    private static volatile String f10621a;
     private static String b = "com." + b() + ".instant.platform";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f24309c = "com." + b() + ".instant.platform.tv";
+    private static String f10622c = "com." + b() + ".instant.platform.tv";
 
     public static String a() {
         return "1.3.8_cb5042c_211129";
@@ -39,9 +38,9 @@ public class h {
                     }
                     StringBuilder sb = new StringBuilder();
                     sb.append(f);
-                    sb.append(BridgeUtil.SPLIT_MARK);
+                    sb.append("/");
                     sb.append(e);
-                    sb.append(BridgeUtil.SPLIT_MARK);
+                    sb.append("/");
                     sb.append(g);
                     try {
                         return URLEncoder.encode(sb.toString(), "UTF-8");
@@ -117,10 +116,10 @@ public class h {
     }
 
     public static String d(Context context) {
-        if (TextUtils.isEmpty(f24308a)) {
-            f24308a = h(context);
+        if (TextUtils.isEmpty(f10621a)) {
+            f10621a = h(context);
         }
-        return f24308a;
+        return f10621a;
     }
 
     private static int e(Context context) {
@@ -166,6 +165,6 @@ public class h {
     }
 
     private static String h(Context context) {
-        return com.oplus.instant.router.a.a() ? c(context, "com.oplus.instant.platform") ? "com.oplus.instant.platform" : c(context, b) ? b : "" : com.oplus.instant.router.a.b() ? c(context, "com.oplus.instant.platform.tv") ? "com.oplus.instant.platform.tv" : c(context, f24309c) ? f24309c : "" : "";
+        return com.oplus.instant.router.a.a() ? c(context, "com.oplus.instant.platform") ? "com.oplus.instant.platform" : c(context, b) ? b : "" : com.oplus.instant.router.a.b() ? c(context, "com.oplus.instant.platform.tv") ? "com.oplus.instant.platform.tv" : c(context, f10622c) ? f10622c : "" : "";
     }
 }

@@ -18,13 +18,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/presenter/YYKtvPresenter$downloadLrc$1.class */
 public final class YYKtvPresenter$downloadLrc$1 extends FileHttpResponseHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ YYKtvPresenter f17766a;
+    final /* synthetic */ YYKtvPresenter a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public YYKtvPresenter$downloadLrc$1(YYKtvPresenter yYKtvPresenter) {
-        this.f17766a = yYKtvPresenter;
+        this.a = yYKtvPresenter;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -33,7 +31,7 @@ public final class YYKtvPresenter$downloadLrc$1 extends FileHttpResponseHandler 
         Intrinsics.e(file, "$file");
         Intrinsics.e(this$0, "this$0");
         LiveLogUtils.a(Intrinsics.a("Lrc --> 歌词下载成功：", (Object) file.getName()));
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17634a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment != null) {
             BaseConnectingAdapter baseConnectingAdapter = baseYYStudioFragment.E;
             if (baseConnectingAdapter == null) {
@@ -64,7 +62,7 @@ public final class YYKtvPresenter$downloadLrc$1 extends FileHttpResponseHandler 
     public void onSuccess(final File file) {
         Intrinsics.e(file, "file");
         Handler n = AppInfo.n();
-        final YYKtvPresenter yYKtvPresenter = this.f17766a;
+        final YYKtvPresenter yYKtvPresenter = this.a;
         n.post(new Runnable() { // from class: com.blued.android.module.yy_china.presenter.-$$Lambda$YYKtvPresenter$downloadLrc$1$ak-DxYGm6xMhgaXwe7vc2Sh6R5o
             @Override // java.lang.Runnable
             public final void run() {

@@ -6,16 +6,16 @@ import android.graphics.Bitmap;
 final /* synthetic */ class au implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37137a;
+    private final f f23446a;
     private final Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f37138c;
+    private final int f23447c;
 
     private au(f fVar, Bitmap bitmap, int i) {
-        this.f37137a = fVar;
+        this.f23446a = fVar;
         this.b = bitmap;
-        this.f37138c = i;
+        this.f23447c = i;
     }
 
     public static Runnable a(f fVar, Bitmap bitmap, int i) {
@@ -24,6 +24,6 @@ final /* synthetic */ class au implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37137a, this.b, this.f37138c);
+        f.a(this.f23446a, this.b, this.f23447c);
     }
 }

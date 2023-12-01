@@ -11,7 +11,7 @@ import com.kwad.sdk.widget.KSFrameLayout;
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/widget/a.class */
 public final class a extends KSFrameLayout implements bm.a {
     private final View Ru;
-    private InterfaceC0544a VJ;
+    private InterfaceC0374a VJ;
     private boolean VK;
     private boolean VL;
     private int VM;
@@ -24,7 +24,7 @@ public final class a extends KSFrameLayout implements bm.a {
 
     /* renamed from: com.kwad.components.core.widget.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/widget/a$a.class */
-    public interface InterfaceC0544a {
+    public interface InterfaceC0374a {
         void eM();
 
         void k(View view);
@@ -48,9 +48,9 @@ public final class a extends KSFrameLayout implements bm.a {
     }
 
     private void rq() {
-        InterfaceC0544a interfaceC0544a;
-        if (this.VR == 0 && (interfaceC0544a = this.VJ) != null) {
-            interfaceC0544a.k(this.Ru);
+        InterfaceC0374a interfaceC0374a;
+        if (this.VR == 0 && (interfaceC0374a = this.VJ) != null) {
+            interfaceC0374a.k(this.Ru);
             return;
         }
         Message obtainMessage = this.gK.obtainMessage();
@@ -86,9 +86,9 @@ public final class a extends KSFrameLayout implements bm.a {
                 this.gK.sendEmptyMessage(1);
                 return;
             }
-            InterfaceC0544a interfaceC0544a = this.VJ;
-            if (interfaceC0544a != null) {
-                interfaceC0544a.k(this.Ru);
+            InterfaceC0374a interfaceC0374a = this.VJ;
+            if (interfaceC0374a != null) {
+                interfaceC0374a.k(this.Ru);
                 return;
             }
             return;
@@ -96,9 +96,9 @@ public final class a extends KSFrameLayout implements bm.a {
         com.kwad.sdk.core.d.b.d("AdExposureView", "handleMsg MSG_CHECKING");
         long j = 100;
         if (!bl.a(this.Ru, (int) (this.VQ * 100.0f), false)) {
-            InterfaceC0544a interfaceC0544a2 = this.VJ;
-            if (interfaceC0544a2 != null && !this.VP) {
-                interfaceC0544a2.eM();
+            InterfaceC0374a interfaceC0374a2 = this.VJ;
+            if (interfaceC0374a2 != null && !this.VP) {
+                interfaceC0374a2.eM();
             }
             this.VP = true;
             bm bmVar = this.gK;
@@ -112,9 +112,9 @@ public final class a extends KSFrameLayout implements bm.a {
         }
         rr();
         if (this.VN) {
-            InterfaceC0544a interfaceC0544a3 = this.VJ;
-            if (interfaceC0544a3 != null) {
-                interfaceC0544a3.k(this.Ru);
+            InterfaceC0374a interfaceC0374a3 = this.VJ;
+            if (interfaceC0374a3 != null) {
+                interfaceC0374a3.k(this.Ru);
             }
         } else {
             this.VN = true;
@@ -133,19 +133,19 @@ public final class a extends KSFrameLayout implements bm.a {
 
     @Override // com.kwad.sdk.widget.KSFrameLayout, com.kwad.sdk.widget.i
     public final void onFirstVisible(View view) {
-        InterfaceC0544a interfaceC0544a;
-        InterfaceC0544a interfaceC0544a2;
+        InterfaceC0374a interfaceC0374a;
+        InterfaceC0374a interfaceC0374a2;
         super.onFirstVisible(view);
-        if (this.VR == 0 && (interfaceC0544a2 = this.VJ) != null) {
-            interfaceC0544a2.k(view);
+        if (this.VR == 0 && (interfaceC0374a2 = this.VJ) != null) {
+            interfaceC0374a2.k(view);
         } else if (!this.VN) {
             this.VN = true;
             this.VO = System.currentTimeMillis();
             rr();
             rq();
-        } else if (System.currentTimeMillis() - this.VO <= this.VR || (interfaceC0544a = this.VJ) == null) {
+        } else if (System.currentTimeMillis() - this.VO <= this.VR || (interfaceC0374a = this.VJ) == null) {
         } else {
-            interfaceC0544a.k(view);
+            interfaceC0374a.k(view);
             rr();
         }
     }
@@ -157,9 +157,9 @@ public final class a extends KSFrameLayout implements bm.a {
         this.VK = false;
         this.VN = false;
         rs();
-        InterfaceC0544a interfaceC0544a = this.VJ;
-        if (interfaceC0544a != null) {
-            interfaceC0544a.onViewAttached();
+        InterfaceC0374a interfaceC0374a = this.VJ;
+        if (interfaceC0374a != null) {
+            interfaceC0374a.onViewAttached();
         }
     }
 
@@ -170,9 +170,9 @@ public final class a extends KSFrameLayout implements bm.a {
         this.VM = 0;
         this.VO = 0L;
         this.VK = true;
-        InterfaceC0544a interfaceC0544a = this.VJ;
-        if (interfaceC0544a != null) {
-            interfaceC0544a.onViewDetached();
+        InterfaceC0374a interfaceC0374a = this.VJ;
+        if (interfaceC0374a != null) {
+            interfaceC0374a.onViewDetached();
         }
     }
 
@@ -186,7 +186,7 @@ public final class a extends KSFrameLayout implements bm.a {
         rs();
     }
 
-    public final void setViewCallback(InterfaceC0544a interfaceC0544a) {
-        this.VJ = interfaceC0544a;
+    public final void setViewCallback(InterfaceC0374a interfaceC0374a) {
+        this.VJ = interfaceC0374a;
     }
 }

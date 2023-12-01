@@ -14,6 +14,6 @@ public interface ag {
     public static final String Z = "reward.cb.reward";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22435a = "interstitial.cb.completed";
+    public static final String f8827a = "interstitial.cb.completed";
     public static final String b = "interstitial.cb.click";
 }

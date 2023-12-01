@@ -5,22 +5,16 @@ import java.util.HashMap;
 /* renamed from: com.amap.api.col.3sl.ga  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ga.class */
 public class ga {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile ga f4981a;
+    private static volatile ga a;
     private HashMap<String, gb> b = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.ga$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ga$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private boolean f4982a = true;
+        private boolean a = true;
         private long b = 86400;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f4983c = 10;
+        private int c = 10;
         private double d = 0.0d;
 
         public final void a(double d) {
@@ -28,7 +22,7 @@ public class ga {
         }
 
         public final void a(int i) {
-            this.f4983c = i;
+            this.c = i;
         }
 
         public final void a(long j) {
@@ -36,11 +30,11 @@ public class ga {
         }
 
         public final void a(boolean z) {
-            this.f4982a = z;
+            this.a = z;
         }
 
         public final boolean a() {
-            return this.f4982a;
+            return this.a;
         }
 
         public final long b() {
@@ -48,7 +42,7 @@ public class ga {
         }
 
         public final int c() {
-            return this.f4983c;
+            return this.c;
         }
 
         public final double d() {
@@ -60,9 +54,7 @@ public class ga {
     /* renamed from: com.amap.api.col.3sl.ga$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ga$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f4984a;
+        String a;
         Object b;
 
         public final boolean equals(Object obj) {
@@ -73,12 +65,12 @@ public class ga {
                 return false;
             }
             b bVar = (b) obj;
-            String str = this.f4984a;
-            return str == null ? bVar.f4984a == null && this.b == bVar.b : str.equals(bVar.f4984a) && this.b == bVar.b;
+            String str = this.a;
+            return str == null ? bVar.a == null && this.b == bVar.b : str.equals(bVar.a) && this.b == bVar.b;
         }
 
         public final int hashCode() {
-            String str = this.f4984a;
+            String str = this.a;
             int i = 0;
             int hashCode = str == null ? 0 : str.hashCode();
             Object obj = this.b;
@@ -93,30 +85,28 @@ public class ga {
     /* renamed from: com.amap.api.col.3sl.ga$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ga$c.class */
     public static final class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        Object f4985a;
+        Object a;
         boolean b;
 
         public c(Object obj, boolean z) {
-            this.f4985a = obj;
+            this.a = obj;
             this.b = z;
         }
     }
 
     public static ga a() {
-        if (f4981a == null) {
+        if (a == null) {
             synchronized (ga.class) {
                 try {
-                    if (f4981a == null) {
-                        f4981a = new ga();
+                    if (a == null) {
+                        a = new ga();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f4981a;
+        return a;
     }
 
     public final c a(b bVar) {

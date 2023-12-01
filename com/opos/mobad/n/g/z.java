@@ -10,11 +10,11 @@ import com.opos.mobad.n.a;
 public class z extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f26946a;
+    private TextView f13258a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26947c;
+    private TextView f13259c;
     private TextView d;
     private TextView e;
     private TextView f;
@@ -24,7 +24,7 @@ public class z extends RelativeLayout {
     private String j;
     private String k;
     private String l;
-    private a.InterfaceC0708a m;
+    private a.InterfaceC0538a m;
 
     public z(Context context, int i, boolean z) {
         super(context);
@@ -70,18 +70,18 @@ public class z extends RelativeLayout {
         return new z(context, 0, true);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("BlockPrivacyView", "setListener " + interfaceC0708a);
-        this.m = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("BlockPrivacyView", "setListener " + interfaceC0538a);
+        this.m = interfaceC0538a;
     }
 
     public void a(String str, String str2) {
         if (!TextUtils.isEmpty(str)) {
-            this.f26946a.setText(str);
+            this.f13258a.setText(str);
         }
         if (TextUtils.isEmpty(str2)) {
             return;
         }
-        this.f26947c.setText(str2);
+        this.f13259c.setText(str2);
     }
 }

@@ -362,7 +362,6 @@ public final class AccessibilityInteractionController {
             this.mViewId = -1;
         }
 
-        @Override // com.android.internal.util.Predicate
         public boolean apply(View view) {
             if (view.getId() == this.mViewId && AccessibilityInteractionController.this.isShown(view)) {
                 this.mInfos.add(view.createAccessibilityNodeInfo());
@@ -630,7 +629,7 @@ public final class AccessibilityInteractionController {
                         magnificationSpec.recycle();
                     }
                     adjustIsVisibleToUserIfNeeded((List<AccessibilityNodeInfo>) null, region);
-                    iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfosResult(null, i4);
+                    iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfosResult((List) null, i4);
                     return;
                 } catch (RemoteException e) {
                     return;
@@ -700,7 +699,7 @@ public final class AccessibilityInteractionController {
                     magnificationSpec.recycle();
                 }
                 adjustIsVisibleToUserIfNeeded((List<AccessibilityNodeInfo>) null, region);
-                iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfosResult(null, i4);
+                iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfosResult((List) null, i4);
             } catch (RemoteException e3) {
             }
             throw th;
@@ -798,7 +797,7 @@ public final class AccessibilityInteractionController {
                         magnificationSpec.recycle();
                     }
                     adjustIsVisibleToUserIfNeeded((AccessibilityNodeInfo) null, region);
-                    iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfoResult(null, i3);
+                    iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfoResult((AccessibilityNodeInfo) null, i3);
                     return;
                 } catch (RemoteException e) {
                     return;
@@ -880,7 +879,7 @@ public final class AccessibilityInteractionController {
                     magnificationSpec.recycle();
                 }
                 adjustIsVisibleToUserIfNeeded((AccessibilityNodeInfo) null, region);
-                iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfoResult(null, i3);
+                iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfoResult((AccessibilityNodeInfo) null, i3);
             } catch (RemoteException e3) {
             }
             throw th;
@@ -955,7 +954,7 @@ public final class AccessibilityInteractionController {
                     magnificationSpec.recycle();
                 }
                 adjustIsVisibleToUserIfNeeded((AccessibilityNodeInfo) null, region);
-                iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfoResult(null, i4);
+                iAccessibilityInteractionConnectionCallback.setFindAccessibilityNodeInfoResult((AccessibilityNodeInfo) null, i4);
             } catch (RemoteException e3) {
             }
         }

@@ -12,11 +12,11 @@ import android.os.HandlerThread;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public Handler f1275a;
+    public Handler f1227a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1276c;
+    public int f1228c;
     public volatile boolean d;
     public Context f;
     public a.a.a.a.a.b.c g;
@@ -37,19 +37,19 @@ public abstract class a {
 
         @Override // java.lang.Runnable
         public void run() {
-            e.f1361c.c("PictureStreamingManager", "starting picture streaming +");
+            e.f1313c.c("PictureStreamingManager", "starting picture streaming +");
             if (a.this.g != null) {
                 a.this.g.k();
             }
             a aVar = a.this;
             String str = aVar.b;
-            a.this.a(str != null ? a.a(str, aVar.h.a()) : aVar.a(aVar.f1276c, aVar.h.a()));
-            a.this.f1275a.post(a.this.n);
+            a.this.a(str != null ? a.a(str, aVar.h.a()) : aVar.a(aVar.f1228c, aVar.h.a()));
+            a.this.f1227a.post(a.this.n);
             synchronized (a.this.k) {
                 a.this.d = true;
                 a.this.k.notify();
             }
-            e.f1361c.c("PictureStreamingManager", "starting picture streaming -");
+            e.f1313c.c("PictureStreamingManager", "starting picture streaming -");
         }
     }
 
@@ -60,8 +60,8 @@ public abstract class a {
 
         @Override // java.lang.Runnable
         public void run() {
-            e.f1361c.c("PictureStreamingManager", "stopping picture streaming +");
-            a.this.f1275a.getLooper().quit();
+            e.f1313c.c("PictureStreamingManager", "stopping picture streaming +");
+            a.this.f1227a.getLooper().quit();
             a.this.b();
             if (a.this.j && a.this.g != null) {
                 a.this.g.a(a.this.h);
@@ -71,7 +71,7 @@ public abstract class a {
                 a.this.d = false;
                 a.this.k.notify();
             }
-            e.f1361c.c("PictureStreamingManager", "stopping picture streaming -");
+            e.f1313c.c("PictureStreamingManager", "stopping picture streaming -");
         }
     }
 
@@ -83,7 +83,7 @@ public abstract class a {
         @Override // java.lang.Runnable
         public void run() {
             a.this.a();
-            a.this.f1275a.postDelayed(this, a.this.i);
+            a.this.f1227a.postDelayed(this, a.this.i);
         }
     }
 
@@ -156,7 +156,7 @@ public abstract class a {
             return;
         }
         this.b = null;
-        this.f1276c = i;
+        this.f1228c = i;
         if (c()) {
             b(a(i, this.h.a()));
         }
@@ -169,7 +169,7 @@ public abstract class a {
             e.d.e("PictureStreamingManager", "Error: filePath cannot be empty!");
             return;
         }
-        this.f1276c = -1;
+        this.f1228c = -1;
         this.b = str;
         if (c()) {
             b(a(str, this.h.a()));
@@ -187,11 +187,11 @@ public abstract class a {
     public void b(boolean z) {
         synchronized (this) {
             if (!this.d) {
-                e.f1361c.d("PictureStreamingManager", "not working !!!");
+                e.f1313c.d("PictureStreamingManager", "not working !!!");
                 return;
             }
             this.j = z;
-            this.f1275a.post(this.m);
+            this.f1227a.post(this.m);
             synchronized (this.k) {
                 if (this.d) {
                     try {
@@ -215,14 +215,14 @@ public abstract class a {
     public void e() {
         synchronized (this) {
             if (this.d) {
-                e.f1361c.d("PictureStreamingManager", "already working !!!");
+                e.f1313c.d("PictureStreamingManager", "already working !!!");
                 return;
             }
             if (this.f != null && this.h != null) {
                 HandlerThread handlerThread = new HandlerThread("PictureStreamingManager");
                 handlerThread.start();
                 Handler handler = new Handler(handlerThread.getLooper());
-                this.f1275a = handler;
+                this.f1227a = handler;
                 handler.post(this.l);
                 synchronized (this.k) {
                     if (!this.d) {
@@ -235,7 +235,7 @@ public abstract class a {
                 }
                 return;
             }
-            e.f1361c.d("PictureStreamingManager", "something is null !!!");
+            e.f1313c.d("PictureStreamingManager", "something is null !!!");
         }
     }
 }

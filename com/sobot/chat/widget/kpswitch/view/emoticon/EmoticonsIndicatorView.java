@@ -26,10 +26,10 @@ public class EmoticonsIndicatorView extends LinearLayout {
         this.mContext = context;
         setOrientation(0);
         if (this.mDrawableNomal == null) {
-            this.mDrawableNomal = getResources().getDrawable(ResourceUtils.getIdByName(context, i.f7952c, "sobot_indicator_point_nomal"));
+            this.mDrawableNomal = getResources().getDrawable(ResourceUtils.getIdByName(context, i.f5112c, "sobot_indicator_point_nomal"));
         }
         if (this.mDrawableSelect == null) {
-            this.mDrawableSelect = getResources().getDrawable(ResourceUtils.getIdByName(context, i.f7952c, "sobot_indicator_point_select"));
+            this.mDrawableSelect = getResources().getDrawable(ResourceUtils.getIdByName(context, i.f5112c, "sobot_indicator_point_select"));
         }
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
         this.mLeftLayoutParams = layoutParams;

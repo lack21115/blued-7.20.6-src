@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -48,9 +49,7 @@ import kotlin.jvm.internal.StringCompanionObject;
 public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRoomModel, BaseViewHolder> implements BGABanner.Adapter<View, Object> {
     private static final int k = 0;
     private YYRoomListPopularAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ActivityFragmentActive f16232c;
+    private final ActivityFragmentActive c;
     private final String d;
     private final String e;
     private final OnCLickRoomItemToGoRoomListener f;
@@ -58,9 +57,7 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
     private YYLastRoomModel h;
     private int i;
     private boolean j;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f16231a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final int l = 1;
     private static final int m = 2;
     private static final int n = 3;
@@ -91,7 +88,7 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
         Intrinsics.e(fragmentActive, "fragmentActive");
         Intrinsics.e(tabId, "tabId");
         Intrinsics.e(source, "source");
-        this.f16232c = fragmentActive;
+        this.c = fragmentActive;
         this.d = source;
         this.e = tabId;
         this.f = onCLickRoomItemToGoRoomListener;
@@ -148,23 +145,23 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
         ItemYyPopularLayoutBinding a2 = ItemYyPopularLayoutBinding.a(baseViewHolder.itemView);
         Intrinsics.c(a2, "bind(helper.itemView)");
         if (this.b == null) {
-            a2.f16781c.setLayoutManager(new LinearLayoutManager(a2.f16781c.getContext()));
-            this.b = new YYRoomListPopularAdapter(this.f16232c, this.e, this.d, this.f);
-            a2.f16781c.setAdapter(this.b);
-            a2.f16781c.setNestedScrollingEnabled(false);
+            a2.c.setLayoutManager(new LinearLayoutManager(a2.c.getContext()));
+            this.b = new YYRoomListPopularAdapter(this.c, this.e, this.d, this.f);
+            a2.c.setAdapter(this.b);
+            a2.c.setNestedScrollingEnabled(false);
         }
         if (this.g) {
-            a2.f16780a.setImageResource(this.h == null ? R.drawable.icon_yy_entertainment_create : R.drawable.icon_yy_entertainment_reenter);
-            a2.f16780a.setVisibility(0);
+            a2.a.setImageResource(this.h == null ? R.drawable.icon_yy_entertainment_create : R.drawable.icon_yy_entertainment_reenter);
+            a2.a.setVisibility(0);
         } else {
-            a2.f16780a.setVisibility(4);
+            a2.a.setVisibility(4);
         }
         a2.d.setText(yYChatR_InnerModel == null ? null : yYChatR_InnerModel.title);
         YYRoomListPopularAdapter yYRoomListPopularAdapter = this.b;
         if (yYRoomListPopularAdapter != null) {
             yYRoomListPopularAdapter.setNewData(yYChatR_InnerModel == null ? null : yYChatR_InnerModel.list);
         }
-        a2.f16780a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYRoomListsAdapter$q0KHfsbGtGObwPdOf4LhjfNwObc
+        a2.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYRoomListsAdapter$q0KHfsbGtGObwPdOf4LhjfNwObc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRoomListsAdapter.a(YYRoomListsAdapter.this, view);
@@ -201,17 +198,17 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
             ImageView imageView = new ImageView(a2.h.getContext());
             a2.h.addView(imageView, layoutParams);
             if (this.j) {
-                ImageLoader.a(this.f16232c, yYChatR_InnerModel.label_link).g().a(imageView);
+                ImageLoader.a(this.c, yYChatR_InnerModel.label_link).g().a(imageView);
             } else {
-                ImageLoader.a(this.f16232c, yYChatR_InnerModel.label_link).a(imageView);
+                ImageLoader.a(this.c, yYChatR_InnerModel.label_link).a(imageView);
             }
             a2.k.setVisibility(8);
         }
         a2.g.setShapeModel(yYChatR_InnerModel.getRoomTagBack(a2.g.getContext(), i));
-        ImageLoader.a(this.f16232c, yYChatR_InnerModel.user_avatar).b(R.drawable.user_bg_round).c().a(a2.d);
+        ImageLoader.a(this.c, yYChatR_InnerModel.user_avatar).b(R.drawable.user_bg_round).c().a(a2.d);
         a2.o.setText(yYChatR_InnerModel.user_name);
         TextView textView = a2.l;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = this.mContext.getResources().getString(R.string.yy_home_onlin_count);
         Intrinsics.c(string, "mContext.resources.getSt…ring.yy_home_onlin_count)");
         String format = String.format(string, Arrays.copyOf(new Object[]{yYChatR_InnerModel.room_member_count}, 1));
@@ -225,17 +222,17 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
         ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) findViewById;
         ShapeLinearLayout shapeLinearLayout2 = shapeLinearLayout;
         ShapeHelper.a(shapeLinearLayout2, shapeLinearLayout.getResources().getDimension(R.dimen.dp_8), shapeLinearLayout.getResources().getDimension(R.dimen.dp_8), shapeLinearLayout.getResources().getDimension(R.dimen.dp_8), shapeLinearLayout.getResources().getDimension(R.dimen.dp_8));
-        YyChatRoomTagShapeUtils.f10915a.a(shapeLinearLayout2, yYChatR_InnerModel.room_type_id);
+        YyChatRoomTagShapeUtils.a.a(shapeLinearLayout2, yYChatR_InnerModel.room_type_id);
         a2.n.setText(yYChatR_InnerModel.room_type_name);
         a2.f.setMIsNeedOnDetachedFromWindow(true);
-        SVGAPlayer.Builder builder = new SVGAPlayer.Builder(ImgURLMap.f10885a.a("yy_home_small_white"));
+        SVGAPlayer.Builder builder = new SVGAPlayer.Builder(ImgURLMap.a.a("yy_home_small_white"));
         SVGAImageView sVGAImageView = a2.f;
         Intrinsics.c(sVGAImageView, "bind.ivTypeAni");
         builder.a(sVGAImageView);
         if (yYChatR_InnerModel.is_hot == 1) {
-            a2.f16811c.setVisibility(0);
+            a2.c.setVisibility(0);
         } else {
-            a2.f16811c.setVisibility(8);
+            a2.c.setVisibility(8);
         }
         if (!yYChatR_InnerModel.isUpload) {
             yYChatR_InnerModel.isUpload = true;
@@ -251,7 +248,7 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
                 YYRoomListsAdapter.a(YYRoomListsAdapter.this, yYChatR_InnerModel, view);
             }
         });
-        a2.f16810a.setVisibility(TextUtils.equals(yYChatR_InnerModel.room_type_id, "11") ? 0 : 8);
+        a2.a.setVisibility(TextUtils.equals(yYChatR_InnerModel.room_type_id, "11") ? 0 : 8);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -262,12 +259,12 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
         }
         List<String> list = banner.click_url;
         if (list != null) {
-            IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+            IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
             Object[] array = list.toArray(new String[0]);
             if (array == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
-            c2.a((String[]) array);
+            c.a((String[]) array);
         }
         EventTrackYY.b(ChatRoomProtos.Event.CHAT_ROOM_BANNER_CLICK, banner.ads_id);
         YYRoomInfoManager.e().c().a(imageView == null ? null : imageView.getContext(), str, 9);
@@ -279,17 +276,17 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
     private final void b(BaseViewHolder baseViewHolder, YYChatR_InnerModel yYChatR_InnerModel) {
         ItemYyAdvertiseLayoutBinding a2 = ItemYyAdvertiseLayoutBinding.a(baseViewHolder.itemView);
         Intrinsics.c(a2, "bind(helper.itemView)");
-        a2.f16675a.setAdapter(this);
+        a2.a.setAdapter(this);
         List<YYBannerModel> list = yYChatR_InnerModel.adv_list;
         Integer valueOf = list == null ? null : Integer.valueOf(list.size());
         Intrinsics.a(valueOf);
         if (valueOf.intValue() > 1) {
-            a2.f16675a.setAutoPlayAble(true);
+            a2.a.setAutoPlayAble(true);
         } else {
-            a2.f16675a.setAutoPlayAble(false);
+            a2.a.setAutoPlayAble(false);
         }
-        a2.f16675a.setmIsNeedShowIndicator(false);
-        a2.f16675a.a(R.layout.item_more_adpics, yYChatR_InnerModel.adv_list, (List<String>) null);
+        a2.a.setmIsNeedShowIndicator(false);
+        a2.a.a(R.layout.item_more_adpics, yYChatR_InnerModel.adv_list, (List<String>) null);
     }
 
     @Override // com.blued.android.module.yy_china.view.ban.BGABanner.Adapter
@@ -305,14 +302,14 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
         if (imageView2 != null) {
             imageView2.setVisibility(8);
         }
-        ImageLoader.a(this.f16232c, yYBannerModel.ads_pics).b(R.drawable.defaultpicture).a(imageView);
+        ImageLoader.a(this.c, yYBannerModel.ads_pics).b(R.drawable.defaultpicture).a(imageView);
         if (!yYBannerModel.isShowUrlVisited && list != null) {
-            IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+            IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
             Object[] array = list.toArray(new String[0]);
             if (array == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
-            c2.a((String[]) array);
+            c.a((String[]) array);
             yYBannerModel.isShowUrlVisited = true;
             EventTrackYY.b(ChatRoomProtos.Event.CHAT_ROOM_BANNER_SHOW, yYBannerModel.ads_id);
         }
@@ -328,11 +325,10 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
         });
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.e(holder, "holder");
-        super.onViewRecycled(holder);
+        super.onViewRecycled((RecyclerView.ViewHolder) holder);
         SVGAImageView sVGAImageView = (SVGAImageView) holder.itemView.findViewById(R.id.iv_type_ani);
         if (sVGAImageView == null) {
             return;
@@ -341,7 +337,6 @@ public final class YYRoomListsAdapter extends BaseMultiItemQuickAdapter<YYChatRo
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYChatRoomModel yYChatRoomModel) {
         if (yYChatRoomModel == null) {

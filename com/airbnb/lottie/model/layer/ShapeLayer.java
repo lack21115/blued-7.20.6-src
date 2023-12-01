@@ -25,7 +25,7 @@ public class ShapeLayer extends BaseLayer {
     @Override // com.airbnb.lottie.model.layer.BaseLayer, com.airbnb.lottie.animation.content.DrawingContent
     public void a(RectF rectF, Matrix matrix, boolean z) {
         super.a(rectF, matrix, z);
-        this.e.a(rectF, this.f4379a, z);
+        this.e.a(rectF, this.a, z);
     }
 
     @Override // com.airbnb.lottie.model.layer.BaseLayer

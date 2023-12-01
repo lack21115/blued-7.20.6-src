@@ -194,7 +194,7 @@ public final class InputMethodSubtype implements Parcelable {
             synchronized (this) {
                 if (this.mExtraValueHashMapCache == null) {
                     this.mExtraValueHashMapCache = new HashMap<>();
-                    String[] split = this.mSubtypeExtraValue.split(",");
+                    String[] split = this.mSubtypeExtraValue.split(EXTRA_VALUE_PAIR_SEPARATOR);
                     int length = split.length;
                     int i = 0;
                     while (true) {
@@ -202,7 +202,7 @@ public final class InputMethodSubtype implements Parcelable {
                         if (i2 >= length) {
                             break;
                         }
-                        String[] split2 = split[i2].split("=");
+                        String[] split2 = split[i2].split(EXTRA_VALUE_KEY_VALUE_SEPARATOR);
                         if (split2.length == 1) {
                             this.mExtraValueHashMapCache.put(split2[0], null);
                         } else if (split2.length > 1) {

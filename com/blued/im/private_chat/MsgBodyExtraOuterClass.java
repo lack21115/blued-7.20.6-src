@@ -1,6 +1,5 @@
 package com.blued.im.private_chat;
 
-import com.alipay.sdk.packet.e;
 import com.google.common.net.HttpHeaders;
 import com.google.protobuf.AbstractMessageLite;
 import com.google.protobuf.AbstractParser;
@@ -243,7 +242,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder addImageList(String str) {
                 if (str != null) {
                     ensureImageListIsMutable();
-                    this.imageList_.add((LazyStringList) str);
+                    this.imageList_.add(str);
                     onChanged();
                     return this;
                 }
@@ -472,8 +471,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ActivityShareExtraOrBuilder
@@ -642,7 +641,7 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ActivityShareExtraOrBuilder
             public String getImageList(int i) {
-                return this.imageList_.get(i);
+                return (String) this.imageList_.get(i);
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ActivityShareExtraOrBuilder
@@ -1168,7 +1167,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder setImageList(int i, String str) {
                 if (str != null) {
                     ensureImageListIsMutable();
-                    this.imageList_.set(i, (int) str);
+                    this.imageList_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -1435,7 +1434,7 @@ public final class MsgBodyExtraOuterClass {
                                     this.imageList_ = new LazyStringArrayList();
                                     z10 = z2 | true;
                                 }
-                                this.imageList_.add((LazyStringList) readStringRequireUtf8);
+                                this.imageList_.add(readStringRequireUtf8);
                                 z2 = z10;
                                 continue;
                             case 114:
@@ -1731,7 +1730,7 @@ public final class MsgBodyExtraOuterClass {
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ActivityShareExtraOrBuilder
         public String getImageList(int i) {
-            return this.imageList_.get(i);
+            return (String) this.imageList_.get(i);
         }
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ActivityShareExtraOrBuilder
@@ -2364,8 +2363,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.CardGiftOrBuilder
@@ -3427,8 +3426,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -3979,8 +3978,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -4520,8 +4519,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -5905,8 +5904,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.FriendsCircleExtraOrBuilder
@@ -7419,8 +7418,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -8100,8 +8099,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.GiftLikeOrBuilder
@@ -9497,8 +9496,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.GroupCardExtraOrBuilder
@@ -10936,8 +10935,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -11451,8 +11450,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -11937,8 +11936,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ImageTextExtraOrBuilder
@@ -12764,8 +12763,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -13573,8 +13572,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.LiveShareExtraOrBuilder
@@ -15976,8 +15975,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.LiveShareInternationalExtraOrBuilder
@@ -17771,8 +17770,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -18390,8 +18389,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -19148,8 +19147,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.MsgSourceOrBuilder
@@ -19717,8 +19716,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.MultiContentsOrBuilder
@@ -20585,8 +20584,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.PnsExtraOrBuilder
@@ -21388,8 +21387,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ProfileOrBuilder
@@ -21952,8 +21951,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -22674,7 +22673,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder addHighlightKeywords(String str) {
                 if (str != null) {
                     ensureHighlightKeywordsIsMutable();
-                    this.highlightKeywords_.add((LazyStringList) str);
+                    this.highlightKeywords_.add(str);
                     onChanged();
                     return this;
                 }
@@ -22695,7 +22694,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder addHighlightKeywordsEnUs(String str) {
                 if (str != null) {
                     ensureHighlightKeywordsEnUsIsMutable();
-                    this.highlightKeywordsEnUs_.add((LazyStringList) str);
+                    this.highlightKeywordsEnUs_.add(str);
                     onChanged();
                     return this;
                 }
@@ -22716,7 +22715,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder addHighlightKeywordsZhCn(String str) {
                 if (str != null) {
                     ensureHighlightKeywordsZhCnIsMutable();
-                    this.highlightKeywordsZhCn_.add((LazyStringList) str);
+                    this.highlightKeywordsZhCn_.add(str);
                     onChanged();
                     return this;
                 }
@@ -22737,7 +22736,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder addHighlightKeywordsZhTw(String str) {
                 if (str != null) {
                     ensureHighlightKeywordsZhTwIsMutable();
-                    this.highlightKeywordsZhTw_.add((LazyStringList) str);
+                    this.highlightKeywordsZhTw_.add(str);
                     onChanged();
                     return this;
                 }
@@ -23406,8 +23405,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -23598,7 +23597,7 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
             public String getHighlightKeywords(int i) {
-                return this.highlightKeywords_.get(i);
+                return (String) this.highlightKeywords_.get(i);
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -23613,7 +23612,7 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
             public String getHighlightKeywordsEnUs(int i) {
-                return this.highlightKeywordsEnUs_.get(i);
+                return (String) this.highlightKeywordsEnUs_.get(i);
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -23638,7 +23637,7 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
             public String getHighlightKeywordsZhCn(int i) {
-                return this.highlightKeywordsZhCn_.get(i);
+                return (String) this.highlightKeywordsZhCn_.get(i);
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -23658,7 +23657,7 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
             public String getHighlightKeywordsZhTw(int i) {
-                return this.highlightKeywordsZhTw_.get(i);
+                return (String) this.highlightKeywordsZhTw_.get(i);
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -24685,7 +24684,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder setHighlightKeywords(int i, String str) {
                 if (str != null) {
                     ensureHighlightKeywordsIsMutable();
-                    this.highlightKeywords_.set(i, (int) str);
+                    this.highlightKeywords_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -24695,7 +24694,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder setHighlightKeywordsEnUs(int i, String str) {
                 if (str != null) {
                     ensureHighlightKeywordsEnUsIsMutable();
-                    this.highlightKeywordsEnUs_.set(i, (int) str);
+                    this.highlightKeywordsEnUs_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -24705,7 +24704,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder setHighlightKeywordsZhCn(int i, String str) {
                 if (str != null) {
                     ensureHighlightKeywordsZhCnIsMutable();
-                    this.highlightKeywordsZhCn_.set(i, (int) str);
+                    this.highlightKeywordsZhCn_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -24715,7 +24714,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder setHighlightKeywordsZhTw(int i, String str) {
                 if (str != null) {
                     ensureHighlightKeywordsZhTwIsMutable();
-                    this.highlightKeywordsZhTw_.set(i, (int) str);
+                    this.highlightKeywordsZhTw_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -25295,7 +25294,7 @@ public final class MsgBodyExtraOuterClass {
                                     this.highlightKeywords_ = new LazyStringArrayList();
                                     z8 = z2 | true;
                                 }
-                                this.highlightKeywords_.add((LazyStringList) readStringRequireUtf8);
+                                this.highlightKeywords_.add(readStringRequireUtf8);
                                 z2 = z8;
                                 continue;
                             case 234:
@@ -25305,7 +25304,7 @@ public final class MsgBodyExtraOuterClass {
                                     this.highlightKeywordsZhCn_ = new LazyStringArrayList();
                                     z9 = z2 | true;
                                 }
-                                this.highlightKeywordsZhCn_.add((LazyStringList) readStringRequireUtf82);
+                                this.highlightKeywordsZhCn_.add(readStringRequireUtf82);
                                 z2 = z9;
                                 continue;
                             case 242:
@@ -25315,7 +25314,7 @@ public final class MsgBodyExtraOuterClass {
                                     this.highlightKeywordsZhTw_ = new LazyStringArrayList();
                                     z10 = z2 | true;
                                 }
-                                this.highlightKeywordsZhTw_.add((LazyStringList) readStringRequireUtf83);
+                                this.highlightKeywordsZhTw_.add(readStringRequireUtf83);
                                 z2 = z10;
                                 continue;
                             case 250:
@@ -25325,7 +25324,7 @@ public final class MsgBodyExtraOuterClass {
                                     this.highlightKeywordsEnUs_ = new LazyStringArrayList();
                                     z11 = z2 | true;
                                 }
-                                this.highlightKeywordsEnUs_.add((LazyStringList) readStringRequireUtf84);
+                                this.highlightKeywordsEnUs_.add(readStringRequireUtf84);
                                 z2 = z11;
                                 continue;
                             case 258:
@@ -25670,7 +25669,7 @@ public final class MsgBodyExtraOuterClass {
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
         public String getHighlightKeywords(int i) {
-            return this.highlightKeywords_.get(i);
+            return (String) this.highlightKeywords_.get(i);
         }
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -25685,7 +25684,7 @@ public final class MsgBodyExtraOuterClass {
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
         public String getHighlightKeywordsEnUs(int i) {
-            return this.highlightKeywordsEnUs_.get(i);
+            return (String) this.highlightKeywordsEnUs_.get(i);
         }
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -25710,7 +25709,7 @@ public final class MsgBodyExtraOuterClass {
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
         public String getHighlightKeywordsZhCn(int i) {
-            return this.highlightKeywordsZhCn_.get(i);
+            return (String) this.highlightKeywordsZhCn_.get(i);
         }
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -25730,7 +25729,7 @@ public final class MsgBodyExtraOuterClass {
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
         public String getHighlightKeywordsZhTw(int i) {
-            return this.highlightKeywordsZhTw_.get(i);
+            return (String) this.highlightKeywordsZhTw_.get(i);
         }
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.SecureNotifyOrBuilder
@@ -26881,7 +26880,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder addImageList(String str) {
                 if (str != null) {
                     ensureImageListIsMutable();
-                    this.imageList_.add((LazyStringList) str);
+                    this.imageList_.add(str);
                     onChanged();
                     return this;
                 }
@@ -27078,8 +27077,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -27160,7 +27159,7 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ShareExtraOrBuilder
             public String getImageList(int i) {
-                return this.imageList_.get(i);
+                return (String) this.imageList_.get(i);
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ShareExtraOrBuilder
@@ -27594,7 +27593,7 @@ public final class MsgBodyExtraOuterClass {
             public Builder setImageList(int i, String str) {
                 if (str != null) {
                     ensureImageListIsMutable();
-                    this.imageList_.set(i, (int) str);
+                    this.imageList_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -27857,7 +27856,7 @@ public final class MsgBodyExtraOuterClass {
                                     this.imageList_ = new LazyStringArrayList();
                                     z10 = z2 | true;
                                 }
-                                this.imageList_.add((LazyStringList) readStringRequireUtf8);
+                                this.imageList_.add(readStringRequireUtf8);
                                 z2 = z10;
                                 continue;
                             default:
@@ -28053,7 +28052,7 @@ public final class MsgBodyExtraOuterClass {
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ShareExtraOrBuilder
         public String getImageList(int i) {
-            return this.imageList_.get(i);
+            return (String) this.imageList_.get(i);
         }
 
         @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ShareExtraOrBuilder
@@ -28681,8 +28680,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.ShareUserInfoOrBuilder
@@ -29792,8 +29791,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -30421,8 +30420,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.TextExtraOrBuilder
@@ -31282,8 +31281,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.VideoChatCallingExtraOrBuilder
@@ -31842,8 +31841,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.VideoChatEndExtraOrBuilder
@@ -32403,8 +32402,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -33051,8 +33050,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.MsgBodyExtraOuterClass.VipExtraOrBuilder
@@ -33763,8 +33762,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -34413,8 +34412,8 @@ public final class MsgBodyExtraOuterClass {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -34888,7 +34887,7 @@ public final class MsgBodyExtraOuterClass {
         internal_static_com_blued_im_private_chat_LiveShareInternationalExtra_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor8, new String[]{"PicUrl", "Name", "Description", "WatchCount", "Vbadge", "Avatar", "Uid", "Lib", "Copywriting", "SessionType", "SessionId", TXCopyrightedMedia.EXT_INFO_ROOM_ID, "RoomType", "MsgType", "Redirect", HttpHeaders.LINK, "PushType", "Lid", "Url", "LiveType", "ScreenPattern", "IsPrivate"});
         Descriptors.Descriptor descriptor9 = getDescriptor().getMessageTypes().get(7);
         internal_static_com_blued_im_private_chat_VideoChatCallingExtra_descriptor = descriptor9;
-        internal_static_com_blued_im_private_chat_VideoChatCallingExtra_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor9, new String[]{"ChatSdkType", e.f, "UserSig"});
+        internal_static_com_blued_im_private_chat_VideoChatCallingExtra_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor9, new String[]{"ChatSdkType", "AppId", "UserSig"});
         Descriptors.Descriptor descriptor10 = getDescriptor().getMessageTypes().get(8);
         internal_static_com_blued_im_private_chat_VideoChatEndExtra_descriptor = descriptor10;
         internal_static_com_blued_im_private_chat_VideoChatEndExtra_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor10, new String[]{"ChatSdkType", "UserSig"});

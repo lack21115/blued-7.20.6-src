@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class LiveApplyDelPhotoObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static LiveApplyDelPhotoObserver f31242a = new LiveApplyDelPhotoObserver();
+    private static LiveApplyDelPhotoObserver f17552a = new LiveApplyDelPhotoObserver();
     private ArrayList<IDelPhotoObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/live/manager/LiveApplyDelPhotoObserver$IDelPhotoObserver.class */
@@ -19,7 +19,7 @@ public class LiveApplyDelPhotoObserver {
     }
 
     public static LiveApplyDelPhotoObserver a() {
-        return f31242a;
+        return f17552a;
     }
 
     public void a(IDelPhotoObserver iDelPhotoObserver) {

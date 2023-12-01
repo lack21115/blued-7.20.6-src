@@ -4,14 +4,12 @@ import java.util.ArrayList;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/observe/SkinObservable.class */
 public class SkinObservable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<SkinObserver> f44247a = new ArrayList<>();
+    private final ArrayList<SkinObserver> a = new ArrayList<>();
 
     public void a(Object obj) {
         SkinObserver[] skinObserverArr;
         synchronized (this) {
-            skinObserverArr = (SkinObserver[]) this.f44247a.toArray(new SkinObserver[this.f44247a.size()]);
+            skinObserverArr = (SkinObserver[]) this.a.toArray(new SkinObserver[this.a.size()]);
         }
         int length = skinObserverArr.length;
         while (true) {
@@ -29,15 +27,15 @@ public class SkinObservable {
             if (skinObserver == null) {
                 throw new NullPointerException();
             }
-            if (!this.f44247a.contains(skinObserver)) {
-                this.f44247a.add(skinObserver);
+            if (!this.a.contains(skinObserver)) {
+                this.a.add(skinObserver);
             }
         }
     }
 
     public void b(SkinObserver skinObserver) {
         synchronized (this) {
-            this.f44247a.remove(skinObserver);
+            this.a.remove(skinObserver);
         }
     }
 

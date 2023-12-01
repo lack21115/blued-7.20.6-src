@@ -60,9 +60,9 @@ public final class ColorKt {
         return i & 255;
     }
 
-    public static final long convertTo(int i, ColorSpace.Named colorSpace) {
-        Intrinsics.e(colorSpace, "colorSpace");
-        return Color.convert(i, ColorSpace.get(colorSpace));
+    public static final long convertTo(int i, ColorSpace.Named named) {
+        Intrinsics.e(named, "colorSpace");
+        return Color.convert(i, ColorSpace.get(named));
     }
 
     public static final long convertTo(int i, ColorSpace colorSpace) {
@@ -70,9 +70,9 @@ public final class ColorKt {
         return Color.convert(i, colorSpace);
     }
 
-    public static final long convertTo(long j, ColorSpace.Named colorSpace) {
-        Intrinsics.e(colorSpace, "colorSpace");
-        return Color.convert(j, ColorSpace.get(colorSpace));
+    public static final long convertTo(long j, ColorSpace.Named named) {
+        Intrinsics.e(named, "colorSpace");
+        return Color.convert(j, ColorSpace.get(named));
     }
 
     public static final long convertTo(long j, ColorSpace colorSpace) {
@@ -80,10 +80,10 @@ public final class ColorKt {
         return Color.convert(j, colorSpace);
     }
 
-    public static final Color convertTo(Color color, ColorSpace.Named colorSpace) {
+    public static final Color convertTo(Color color, ColorSpace.Named named) {
         Intrinsics.e(color, "<this>");
-        Intrinsics.e(colorSpace, "colorSpace");
-        Color convert = color.convert(ColorSpace.get(colorSpace));
+        Intrinsics.e(named, "colorSpace");
+        Color convert = color.convert(ColorSpace.get(named));
         Intrinsics.c(convert, "convert(ColorSpace.get(colorSpace))");
         return convert;
     }
@@ -150,10 +150,10 @@ public final class ColorKt {
         return Color.isWideGamut(j);
     }
 
-    public static final Color plus(Color color, Color c2) {
+    public static final Color plus(Color color, Color color2) {
         Intrinsics.e(color, "<this>");
-        Intrinsics.e(c2, "c");
-        Color compositeColors = ColorUtils.compositeColors(c2, color);
+        Intrinsics.e(color2, "c");
+        Color compositeColors = ColorUtils.compositeColors(color2, color);
         Intrinsics.c(compositeColors, "compositeColors(c, this)");
         return compositeColors;
     }

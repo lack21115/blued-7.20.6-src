@@ -4,11 +4,11 @@ package c.t.m.g;
 public class y {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f4061a = true;
+    public boolean f4013a = true;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f4062c;
+    public double f4014c;
     public j2 d;
     public i2 e;
     public i2 f;
@@ -22,7 +22,7 @@ public class y {
 
     public void a(long j, double d) {
         this.b = j;
-        this.f4062c = d;
+        this.f4014c = d;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0099, code lost:
@@ -41,13 +41,13 @@ public class y {
     }
 
     public boolean a() {
-        return this.f4061a;
+        return this.f4013a;
     }
 
     public void b() {
-        this.f4061a = true;
+        this.f4013a = true;
         this.b = 0L;
-        this.f4062c = -1.0d;
+        this.f4014c = -1.0d;
         this.d.a();
         this.e.a();
         this.f.a();

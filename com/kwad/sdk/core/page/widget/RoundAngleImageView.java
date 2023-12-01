@@ -28,9 +28,8 @@ public class RoundAngleImageView extends ImageView {
         this.mRectF = new RectF();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         float[] fArr = this.ahO;
         if (fArr == null || fArr.length != 8) {
             super.onDraw(canvas);

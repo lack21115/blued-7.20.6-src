@@ -17,9 +17,7 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYPkTimerView.class */
 public class YYPkTimerView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ShapeTextView f18367a;
+    private ShapeTextView a;
     private ImageView b;
 
     public YYPkTimerView(Context context) {
@@ -39,7 +37,7 @@ public class YYPkTimerView extends FrameLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_pk_timer_layout, (ViewGroup) this, true);
-        this.f18367a = (ShapeTextView) findViewById(R.id.tv_pk_time);
+        this.a = (ShapeTextView) findViewById(R.id.tv_pk_time);
         ImageView imageView = (ImageView) findViewById(R.id.iv_pk_view);
         this.b = imageView;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYPkTimerView.1
@@ -53,18 +51,17 @@ public class YYPkTimerView extends FrameLayout {
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
         LiveEventBus.get("show_gift_pk_time", String.class).observe(baseYYStudioFragment, new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYPkTimerView.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (TextUtils.isEmpty(str)) {
-                    YYPkTimerView.this.f18367a.setText("00:00");
+                    YYPkTimerView.this.a.setText("00:00");
                     YYPkTimerView.this.setVisibility(8);
                     return;
                 }
                 if (YYPkTimerView.this.getVisibility() != 0) {
                     YYPkTimerView.this.setVisibility(0);
                 }
-                YYPkTimerView.this.f18367a.setText(str);
+                YYPkTimerView.this.a.setText(str);
             }
         });
     }

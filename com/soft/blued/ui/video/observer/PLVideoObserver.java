@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class PLVideoObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PLVideoObserver f34466a = new PLVideoObserver();
+    private static PLVideoObserver f20775a = new PLVideoObserver();
     private ArrayList<IPLVideoObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/video/observer/PLVideoObserver$IPLVideoObserver.class */

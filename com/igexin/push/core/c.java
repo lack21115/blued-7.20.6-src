@@ -8,6 +8,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.igexin.assist.sdk.AssistPushManager;
 import com.igexin.push.core.d;
 import com.igexin.push.extension.mod.PushMessageInterface;
@@ -20,7 +21,7 @@ import java.util.HashMap;
 public class c extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f23466a = c.class.getName();
+    private static String f9858a = c.class.getName();
     private boolean b;
 
     public c(Looper looper) {
@@ -34,7 +35,7 @@ public class c extends Handler {
         }
         int random = (int) ((Math.random() * 100.0d) + 150.0d);
         long j = e.O;
-        com.igexin.c.a.c.a.a(f23466a + "|userPresent, rdelay = " + e.O + ", reset = " + random, new Object[0]);
+        com.igexin.c.a.c.a.a(f9858a + "|userPresent, rdelay = " + e.O + ", reset = " + random, new Object[0]);
         e.O = (long) random;
         com.igexin.push.e.b.e.g().a(e.O);
     }
@@ -45,7 +46,7 @@ public class c extends Handler {
             com.igexin.push.core.a.b.d();
             com.igexin.push.core.a.b.a(intent);
         } else if (stringExtra.equals(PushConsts.ACTION_SERVICE_ONRESUME)) {
-            com.igexin.c.a.c.a.a(f23466a + "|handle onresume ~~~", new Object[0]);
+            com.igexin.c.a.c.a.a(f9858a + "|handle onresume ~~~", new Object[0]);
             com.igexin.push.core.a.b.d();
             com.igexin.push.core.a.b.b("on fg");
         } else if (stringExtra.equals(PushConsts.ACTION_SERVICE_INITIALIZE_SLAVE)) {
@@ -69,7 +70,7 @@ public class c extends Handler {
             }
             int random = (int) ((Math.random() * 100.0d) + 150.0d);
             long j = e.O;
-            com.igexin.c.a.c.a.a(f23466a + "|userPresent, rdelay = " + e.O + ", reset = " + random, new Object[0]);
+            com.igexin.c.a.c.a.a(f9858a + "|userPresent, rdelay = " + e.O + ", reset = " + random, new Object[0]);
             e.O = (long) random;
             com.igexin.push.e.b.e.g().a(e.O);
         } else if (stringExtra.equals("com.igexin.action.notification.click")) {
@@ -80,8 +81,8 @@ public class c extends Handler {
             }
         } else if (stringExtra.equals(b.I)) {
             HashMap hashMap = (HashMap) intent.getSerializableExtra("push_action");
-            com.igexin.c.a.c.a.a(f23466a + "| handle other push action broadcast", new Object[0]);
-            n.a().f23578a.putAll(hashMap);
+            com.igexin.c.a.c.a.a(f9858a + "| handle other push action broadcast", new Object[0]);
+            n.a().f9970a.putAll(hashMap);
             n.a().e();
         } else if (!stringExtra.equals("com.igexin.action.notification.delete")) {
             if (stringExtra.equals(PushConsts.ACTION_BROADCAST_UPLOAD_TYPE253)) {
@@ -108,10 +109,10 @@ public class c extends Handler {
             FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean, String.valueOf(parseInt), "notifyStyle:" + intent.getStringExtra("notifyStyle"));
             com.igexin.push.core.a.b.d();
             String a3 = com.igexin.push.core.a.b.a(intent.getStringExtra("taskid"), intent.getStringExtra("messageid"));
-            com.igexin.c.a.c.a.a(f23466a + "|notification delete = " + a3, new Object[0]);
+            com.igexin.c.a.c.a.a(f9858a + "|notification delete = " + a3, new Object[0]);
             try {
                 e.ah.remove(a3);
-                com.igexin.c.a.c.a.a(f23466a + "|del notification, pushMessageMap remove = " + a3, new Object[0]);
+                com.igexin.c.a.c.a.a(f9858a + "|del notification, pushMessageMap remove = " + a3, new Object[0]);
             } catch (Exception e) {
                 com.igexin.c.a.c.a.a(e);
                 com.igexin.c.a.c.a.a("EndAction|" + e.toString(), new Object[0]);
@@ -145,7 +146,7 @@ public class c extends Handler {
                             n.a().a(intent);
                             return;
                         } else if ("android.intent.action.TIME_SET".equals(action)) {
-                            if (com.igexin.push.config.d.f23376c != 0) {
+                            if (com.igexin.push.config.d.f9768c != 0) {
                                 com.igexin.push.e.f.c().d();
                                 return;
                             }
@@ -184,23 +185,23 @@ public class c extends Handler {
                         String string3 = bundle2.getString("taskid");
                         String string4 = bundle2.getString("messageid");
                         String string5 = bundle2.getString("actionid");
-                        com.igexin.c.a.c.a.a(f23466a + "|hand execute_action taskid = " + string3 + ", actionid = " + string5, new Object[0]);
+                        com.igexin.c.a.c.a.a(f9858a + "|hand execute_action taskid = " + string3 + ", actionid = " + string5, new Object[0]);
                         n.a().b(string3, string4, string5);
                         return;
                     } else if (message.what == b.S) {
                         if (this.b) {
                             return;
                         }
-                        d.a.f23474a.a();
+                        d.a.f9866a.a();
                         this.b = true;
                         return;
                     } else if (message.what != b.Q || "false".equals(e.I)) {
                         return;
                     } else {
                         com.igexin.push.c.c.n nVar = new com.igexin.push.c.c.n();
-                        nVar.f23354c = 128;
+                        nVar.f9746c = 128;
                         nVar.f = message.obj;
-                        nVar.g = message.getData().getByteArray("payload");
+                        nVar.g = message.getData().getByteArray(AssistPushConsts.MSG_TYPE_PAYLOAD);
                         new com.igexin.push.core.a.b.d().a(nVar);
                         return;
                     }
@@ -212,7 +213,7 @@ public class c extends Handler {
                         com.igexin.push.core.a.b.d();
                         com.igexin.push.core.a.b.a(intent2);
                     } else if (stringExtra.equals(PushConsts.ACTION_SERVICE_ONRESUME)) {
-                        com.igexin.c.a.c.a.a(f23466a + "|handle onresume ~~~", new Object[0]);
+                        com.igexin.c.a.c.a.a(f9858a + "|handle onresume ~~~", new Object[0]);
                         com.igexin.push.core.a.b.d();
                         com.igexin.push.core.a.b.b("on fg");
                     } else if (stringExtra.equals(PushConsts.ACTION_SERVICE_INITIALIZE_SLAVE)) {
@@ -236,7 +237,7 @@ public class c extends Handler {
                         }
                         int random = (int) ((Math.random() * 100.0d) + 150.0d);
                         long j = e.O;
-                        com.igexin.c.a.c.a.a(f23466a + "|userPresent, rdelay = " + e.O + ", reset = " + random, new Object[0]);
+                        com.igexin.c.a.c.a.a(f9858a + "|userPresent, rdelay = " + e.O + ", reset = " + random, new Object[0]);
                         e.O = (long) random;
                         com.igexin.push.e.b.e.g().a(e.O);
                     } else if (stringExtra.equals("com.igexin.action.notification.click")) {
@@ -247,8 +248,8 @@ public class c extends Handler {
                         }
                     } else if (stringExtra.equals(b.I)) {
                         HashMap hashMap = (HashMap) intent2.getSerializableExtra("push_action");
-                        com.igexin.c.a.c.a.a(f23466a + "| handle other push action broadcast", new Object[0]);
-                        n.a().f23578a.putAll(hashMap);
+                        com.igexin.c.a.c.a.a(f9858a + "| handle other push action broadcast", new Object[0]);
+                        n.a().f9970a.putAll(hashMap);
                         n.a().e();
                     } else if (!stringExtra.equals("com.igexin.action.notification.delete")) {
                         if (stringExtra.equals(PushConsts.ACTION_BROADCAST_UPLOAD_TYPE253)) {
@@ -275,10 +276,10 @@ public class c extends Handler {
                         FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean, String.valueOf(parseInt), "notifyStyle:" + intent2.getStringExtra("notifyStyle"));
                         com.igexin.push.core.a.b.d();
                         String a4 = com.igexin.push.core.a.b.a(intent2.getStringExtra("taskid"), intent2.getStringExtra("messageid"));
-                        com.igexin.c.a.c.a.a(f23466a + "|notification delete = " + a4, new Object[0]);
+                        com.igexin.c.a.c.a.a(f9858a + "|notification delete = " + a4, new Object[0]);
                         try {
                             e.ah.remove(a4);
-                            com.igexin.c.a.c.a.a(f23466a + "|del notification, pushMessageMap remove = " + a4, new Object[0]);
+                            com.igexin.c.a.c.a.a(f9858a + "|del notification, pushMessageMap remove = " + a4, new Object[0]);
                         } catch (Exception e) {
                             com.igexin.c.a.c.a.a(e);
                             com.igexin.c.a.c.a.a("EndAction|" + e.toString(), new Object[0]);

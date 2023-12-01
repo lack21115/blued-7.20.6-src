@@ -88,8 +88,8 @@ public class UMProcessDBDatasSender implements UMLogDataProtocol {
                 return true;
             }
             String str2 = str;
-            if (str.startsWith(a.f40803c)) {
-                str2 = str.replaceFirst(a.f40803c, "");
+            if (str.startsWith(a.f27112c)) {
+                str2 = str.replaceFirst(a.f27112c, "");
             }
             UMProcessDBHelper.getInstance(UMProcessDBDatasSender.this.mContext).deleteEventDatas(str2.replace(a.d, ""), null, null);
             return true;

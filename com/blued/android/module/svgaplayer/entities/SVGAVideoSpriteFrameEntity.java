@@ -18,13 +18,9 @@ import org.json.JSONObject;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/entities/SVGAVideoSpriteFrameEntity.class */
 public final class SVGAVideoSpriteFrameEntity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private double f16017a;
+    private double a;
     private SVGARect b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Matrix f16018c;
+    private Matrix c;
     private SVGAPathEntity d;
     private List<SVGAVideoShapeEntity> e;
 
@@ -39,9 +35,9 @@ public final class SVGAVideoSpriteFrameEntity {
         Float f2;
         Intrinsics.e(obj, "obj");
         this.b = new SVGARect(0.0d, 0.0d, 0.0d, 0.0d);
-        this.f16018c = new Matrix();
+        this.c = new Matrix();
         this.e = CollectionsKt.b();
-        this.f16017a = obj.alpha != null ? f.floatValue() : 0.0f;
+        this.a = obj.alpha != null ? f.floatValue() : 0.0f;
         Layout layout = obj.layout;
         if (layout != null) {
             Float f3 = layout.x;
@@ -54,7 +50,7 @@ public final class SVGAVideoSpriteFrameEntity {
         Transform transform = obj.transform;
         boolean z = true;
         if (transform != null) {
-            Float f6 = transform.f16021a;
+            Float f6 = transform.a;
             if (f6 == null) {
                 floatValue = 1.0f;
             } else {
@@ -68,7 +64,7 @@ public final class SVGAVideoSpriteFrameEntity {
                 Intrinsics.c(f7, "it.b ?: 0.0f");
                 floatValue2 = f7.floatValue();
             }
-            Float f8 = transform.f16022c;
+            Float f8 = transform.c;
             if (f8 == null) {
                 floatValue3 = 0.0f;
             } else {
@@ -96,7 +92,7 @@ public final class SVGAVideoSpriteFrameEntity {
                 Intrinsics.c(f11, "it.ty ?: 0.0f");
                 floatValue6 = f11.floatValue();
             }
-            this.f16018c.setValues(new float[]{floatValue, floatValue3, floatValue5, floatValue2, floatValue4, floatValue6, 0.0f, 0.0f, 1.0f});
+            this.c.setValues(new float[]{floatValue, floatValue3, floatValue5, floatValue2, floatValue4, floatValue6, 0.0f, 0.0f, 1.0f});
         }
         String str = obj.clipPath;
         if (str != null) {
@@ -119,9 +115,9 @@ public final class SVGAVideoSpriteFrameEntity {
     public SVGAVideoSpriteFrameEntity(JSONObject obj) {
         Intrinsics.e(obj, "obj");
         this.b = new SVGARect(0.0d, 0.0d, 0.0d, 0.0d);
-        this.f16018c = new Matrix();
+        this.c = new Matrix();
         this.e = CollectionsKt.b();
-        this.f16017a = obj.optDouble("alpha", 0.0d);
+        this.a = obj.optDouble("alpha", 0.0d);
         JSONObject optJSONObject = obj.optJSONObject("layout");
         if (optJSONObject != null) {
             this.b = new SVGARect(optJSONObject.optDouble("x", 0.0d), optJSONObject.optDouble("y", 0.0d), optJSONObject.optDouble("width", 0.0d), optJSONObject.optDouble("height", 0.0d));
@@ -130,7 +126,7 @@ public final class SVGAVideoSpriteFrameEntity {
         if (optJSONObject2 != null) {
             double optDouble = optJSONObject2.optDouble("a", 1.0d);
             double optDouble2 = optJSONObject2.optDouble("b", 0.0d);
-            this.f16018c.setValues(new float[]{(float) optDouble, (float) optJSONObject2.optDouble("c", 0.0d), (float) optJSONObject2.optDouble("tx", 0.0d), (float) optDouble2, (float) optJSONObject2.optDouble("d", 1.0d), (float) optJSONObject2.optDouble(a.g, 0.0d), 0.0f, 0.0f, 1.0f});
+            this.c.setValues(new float[]{(float) optDouble, (float) optJSONObject2.optDouble("c", 0.0d), (float) optJSONObject2.optDouble("tx", 0.0d), (float) optDouble2, (float) optJSONObject2.optDouble("d", 1.0d), (float) optJSONObject2.optDouble(a.g, 0.0d), 0.0f, 0.0f, 1.0f});
         }
         boolean z = true;
         String optString = obj.optString("clipPath");
@@ -162,7 +158,7 @@ public final class SVGAVideoSpriteFrameEntity {
     }
 
     public final double a() {
-        return this.f16017a;
+        return this.a;
     }
 
     public final void a(List<SVGAVideoShapeEntity> list) {
@@ -175,7 +171,7 @@ public final class SVGAVideoSpriteFrameEntity {
     }
 
     public final Matrix c() {
-        return this.f16018c;
+        return this.c;
     }
 
     public final SVGAPathEntity d() {

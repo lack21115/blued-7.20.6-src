@@ -147,12 +147,12 @@ public class kh implements VisualLayer {
         public final /* synthetic */ VisualLayer b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f37601c;
+        public final /* synthetic */ String f23910c;
         public final /* synthetic */ String d;
 
         public g(VisualLayer visualLayer, String str, String str2) {
             this.b = visualLayer;
-            this.f37601c = str;
+            this.f23910c = str;
             this.d = str2;
         }
 
@@ -165,7 +165,7 @@ public class kh implements VisualLayer {
             while (it.hasNext()) {
                 VisualLayer.OnLayerStatusChangedListener onLayerStatusChangedListener = (VisualLayer.OnLayerStatusChangedListener) it.next();
                 if (onLayerStatusChangedListener != null) {
-                    onLayerStatusChangedListener.onEvent(this.b, this.f37601c, this.d);
+                    onLayerStatusChangedListener.onEvent(this.b, this.f23910c, this.d);
                 }
             }
         }
@@ -352,7 +352,7 @@ public class kh implements VisualLayer {
             this.g.a(getId(), this.r.b(), this.r.c());
             na.a(ma.x, "创建Protocol对象：成功");
             return true;
-        } else if (z && (g4Var = this.r) != null && (bVar = g4Var.f37456a) != null && bVar.f37464a == 0) {
+        } else if (z && (g4Var = this.r) != null && (bVar = g4Var.f23765a) != null && bVar.f23773a == 0) {
             na.a(ma.x, "创建Protocol对象：网络返回数据版本无变化, 无需更新本地数据");
             return false;
         } else {

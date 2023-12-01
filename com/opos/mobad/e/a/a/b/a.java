@@ -15,84 +15,84 @@ public final class a implements j {
     private static volatile a b;
 
     /* renamed from: a  reason: collision with root package name */
-    public m f25993a;
+    public m f12305a;
 
     /* renamed from: c  reason: collision with root package name */
-    private j f25994c;
+    private j f12306c;
 
     /* renamed from: com.opos.mobad.e.a.a.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/e/a/a/b/a$a.class */
-    public static class C0691a<T extends C0691a<T>> {
+    public static class C0521a<T extends C0521a<T>> {
 
         /* renamed from: a  reason: collision with root package name */
-        protected Map<String, String> f25995a = new HashMap();
+        protected Map<String, String> f12307a = new HashMap();
 
-        public final T a(C0691a c0691a) {
+        public final T a(C0521a c0521a) {
             Map<String, String> map;
-            if (c0691a != null && (map = c0691a.f25995a) != null) {
-                this.f25995a.putAll(map);
+            if (c0521a != null && (map = c0521a.f12307a) != null) {
+                this.f12307a.putAll(map);
             }
             return this;
         }
 
         public final T a(String str) {
-            this.f25995a.put("matId", str);
+            this.f12307a.put("matId", str);
             return this;
         }
 
         public final T a(Map<String, String> map) {
             if (map != null) {
-                this.f25995a.putAll(map);
+                this.f12307a.putAll(map);
             }
             return this;
         }
 
         public final void a(Context context) {
-            Map<String, String> map = this.f25995a;
+            Map<String, String> map = this.f12307a;
             StringBuilder sb = new StringBuilder();
             sb.append(System.currentTimeMillis());
             map.put("eventTime", sb.toString());
-            this.f25995a.put("appPkg", context != null ? context.getPackageName() : "");
-            a.a().a(context, this.f25995a);
+            this.f12307a.put("appPkg", context != null ? context.getPackageName() : "");
+            a.a().a(context, this.f12307a);
         }
 
         public final T b(String str) {
-            this.f25995a.put("adId", str);
+            this.f12307a.put("adId", str);
             return this;
         }
 
         public final T c(String str) {
-            this.f25995a.put("loadId", str);
+            this.f12307a.put("loadId", str);
             return this;
         }
     }
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/e/a/a/b/a$b.class */
-    public static final class b extends C0691a<b> {
+    public static final class b extends C0521a<b> {
         public b() {
-            this.f25995a.put(STManager.KEY_DATA_TYPE, "dy-mat-click");
+            this.f12307a.put(STManager.KEY_DATA_TYPE, "dy-mat-click");
         }
 
         public final b a(int i) {
-            this.f25995a.put("sceneType", String.valueOf(i));
+            this.f12307a.put("sceneType", String.valueOf(i));
             return this;
         }
 
         public final b a(l lVar) {
             if (lVar != null) {
-                Map<String, String> map = this.f25995a;
+                Map<String, String> map = this.f12307a;
                 StringBuilder sb = new StringBuilder();
-                sb.append(lVar.f25999c);
+                sb.append(lVar.f12311c);
                 map.put(STManager.KEY_DOWN_X, sb.toString());
-                Map<String, String> map2 = this.f25995a;
+                Map<String, String> map2 = this.f12307a;
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(lVar.d);
                 map2.put(STManager.KEY_DOWN_Y, sb2.toString());
-                Map<String, String> map3 = this.f25995a;
+                Map<String, String> map3 = this.f12307a;
                 StringBuilder sb3 = new StringBuilder();
                 sb3.append(lVar.f);
                 map3.put(STManager.KEY_UP_X, sb3.toString());
-                Map<String, String> map4 = this.f25995a;
+                Map<String, String> map4 = this.f12307a;
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(lVar.g);
                 map4.put(STManager.KEY_UP_Y, sb4.toString());
@@ -101,61 +101,61 @@ public final class a implements j {
         }
 
         public final b d(String str) {
-            this.f25995a.put(PushConstants.CLICK_TYPE, str);
+            this.f12307a.put(PushConstants.CLICK_TYPE, str);
             return this;
         }
 
         public final b e(String str) {
-            this.f25995a.put("adAreaType", str);
+            this.f12307a.put("adAreaType", str);
             return this;
         }
 
         public final b f(String str) {
-            this.f25995a.put("sceneId", str);
+            this.f12307a.put("sceneId", str);
             return this;
         }
     }
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/e/a/a/b/a$c.class */
-    public static final class c extends C0691a<c> {
+    public static final class c extends C0521a<c> {
         public c() {
-            this.f25995a.put(STManager.KEY_DATA_TYPE, "dy-mat-error");
+            this.f12307a.put(STManager.KEY_DATA_TYPE, "dy-mat-error");
         }
 
         public final c d(String str) {
-            this.f25995a.put("errorType", str);
+            this.f12307a.put("errorType", str);
             return this;
         }
 
         public final c e(String str) {
-            this.f25995a.put(Downloads.Impl.COLUMN_ERROR_MSG, str);
+            this.f12307a.put(Downloads.Impl.COLUMN_ERROR_MSG, str);
             return this;
         }
     }
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/e/a/a/b/a$d.class */
-    public static final class d extends C0691a<d> {
+    public static final class d extends C0521a<d> {
         public d() {
-            this.f25995a.put(STManager.KEY_DATA_TYPE, "dy-mat-expose");
+            this.f12307a.put(STManager.KEY_DATA_TYPE, "dy-mat-expose");
         }
 
         public final d a(int i) {
-            this.f25995a.put("sceneType", String.valueOf(i));
+            this.f12307a.put("sceneType", String.valueOf(i));
             return this;
         }
 
         public final d a(long j) {
-            this.f25995a.put("loadTime", String.valueOf(j));
+            this.f12307a.put("loadTime", String.valueOf(j));
             return this;
         }
 
         public final d d(String str) {
-            this.f25995a.put("lastScene", str);
+            this.f12307a.put("lastScene", str);
             return this;
         }
 
         public final d e(String str) {
-            this.f25995a.put("curScene", str);
+            this.f12307a.put("curScene", str);
             return this;
         }
     }
@@ -163,8 +163,8 @@ public final class a implements j {
     private a() {
     }
 
-    public static C0691a a(String str, String str2, String str3, Map map) {
-        return new C0691a().c(str).b(str2).a(str3).a(map);
+    public static C0521a a(String str, String str2, String str3, Map map) {
+        return new C0521a().c(str).b(str2).a(str3).a(map);
     }
 
     public static a a() {
@@ -199,10 +199,10 @@ public final class a implements j {
     private j e() {
         j jVar;
         synchronized (this) {
-            if (this.f25994c == null) {
-                this.f25994c = (this.f25993a == null || this.f25993a.f26000a == null) ? new com.opos.mobad.e.a.a.b.b() : this.f25993a.f26000a;
+            if (this.f12306c == null) {
+                this.f12306c = (this.f12305a == null || this.f12305a.f12312a == null) ? new com.opos.mobad.e.a.a.b.b() : this.f12305a.f12312a;
             }
-            jVar = this.f25994c;
+            jVar = this.f12306c;
         }
         return jVar;
     }

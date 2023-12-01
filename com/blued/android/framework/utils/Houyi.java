@@ -14,41 +14,33 @@ import java.io.IOException;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/Houyi.class */
 public class Houyi implements Handler.Callback {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f10083a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private OnCompressListener f10084c;
+    private OnCompressListener c;
     private Handler d;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/Houyi$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f10086a;
+        private String a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private OnCompressListener f10087c;
+        private OnCompressListener c;
 
         private Houyi c() {
             return new Houyi(this);
         }
 
         public Builder a(OnCompressListener onCompressListener) {
-            this.f10087c = onCompressListener;
+            this.c = onCompressListener;
             return this;
         }
 
         public Builder a(String str) {
-            this.f10086a = str;
+            this.a = str;
             return this;
         }
 
         public Builder a(String str, String str2) {
-            this.f10086a = str;
+            this.a = str;
             this.b = str2;
             return this;
         }
@@ -72,9 +64,9 @@ public class Houyi implements Handler.Callback {
     }
 
     private Houyi(Builder builder) {
-        this.f10083a = builder.f10086a;
+        this.a = builder.a;
         this.b = builder.b;
-        this.f10084c = builder.f10087c;
+        this.c = builder.c;
         this.d = new Handler(Looper.getMainLooper(), this);
     }
 
@@ -171,25 +163,25 @@ public class Houyi implements Handler.Callback {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean a(String str, String str2) {
-        Bitmap a2 = a(str);
-        if (a2 == null) {
+        Bitmap a = a(str);
+        if (a == null) {
             return false;
         }
-        Bitmap a3 = a(b(str), a2);
-        if (a3 != null) {
-            if (a3 != a2 && a2 != null && !a2.isRecycled()) {
-                a2.recycle();
+        Bitmap a2 = a(b(str), a);
+        if (a2 != null) {
+            if (a2 != a && a != null && !a.isRecycled()) {
+                a.recycle();
             }
-            a2 = a3;
+            a = a2;
         }
         if (!TextUtils.isEmpty(str2)) {
             str = str2;
         }
-        boolean a4 = a(a2, str, 90);
-        if (a2 != null && !a2.isRecycled()) {
-            a2.recycle();
+        boolean a3 = a(a, str, 90);
+        if (a != null && !a.isRecycled()) {
+            a.recycle();
         }
-        return a4;
+        return a3;
     }
 
     private static int b(String str) {
@@ -211,7 +203,7 @@ public class Houyi implements Handler.Callback {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         OnCompressListener onCompressListener;
-        if (TextUtils.isEmpty(this.f10083a) && (onCompressListener = this.f10084c) != null) {
+        if (TextUtils.isEmpty(this.a) && (onCompressListener = this.c) != null) {
             onCompressListener.a(new RuntimeException("image originalPath cannot be null"));
         }
         new Thread(new Runnable() { // from class: com.blued.android.framework.utils.Houyi.1
@@ -219,8 +211,8 @@ public class Houyi implements Handler.Callback {
             public void run() {
                 Houyi.this.d.sendMessage(Houyi.this.d.obtainMessage(1));
                 Houyi houyi = Houyi.this;
-                if (houyi.a(houyi.f10083a, Houyi.this.b)) {
-                    Houyi.this.d.sendMessage(Houyi.this.d.obtainMessage(0, !TextUtils.isEmpty(Houyi.this.b) ? Houyi.this.b : Houyi.this.f10083a));
+                if (houyi.a(houyi.a, Houyi.this.b)) {
+                    Houyi.this.d.sendMessage(Houyi.this.d.obtainMessage(0, !TextUtils.isEmpty(Houyi.this.b) ? Houyi.this.b : Houyi.this.a));
                 } else {
                     Houyi.this.d.sendMessage(Houyi.this.d.obtainMessage(2, new RuntimeException("Image processing exception, please try again later.")));
                 }
@@ -230,25 +222,25 @@ public class Houyi implements Handler.Callback {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean c() {
-        return a(this.f10083a, this.b);
+        return a(this.a, this.b);
     }
 
     @Override // android.os.Handler.Callback
     public boolean handleMessage(Message message) {
-        if (this.f10084c == null) {
+        if (this.c == null) {
             return false;
         }
         int i = message.what;
         if (i == 0) {
-            this.f10084c.a((String) message.obj);
+            this.c.a((String) message.obj);
             return false;
         } else if (i == 1) {
-            this.f10084c.a();
+            this.c.a();
             return false;
         } else if (i != 2) {
             return false;
         } else {
-            this.f10084c.a((Throwable) message.obj);
+            this.c.a((Throwable) message.obj);
             return false;
         }
     }

@@ -4,15 +4,15 @@ package com.anythink.network.ks;
 public class KSATBiddingInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    protected double f8978a;
+    protected double f6138a;
     protected Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Object f8979c;
+    protected Object f6139c;
 
     private KSATBiddingInfo(Object obj, double d, Object obj2) {
-        this.f8978a = d;
+        this.f6138a = d;
         this.b = obj;
-        this.f8979c = obj2;
+        this.f6139c = obj2;
     }
 }

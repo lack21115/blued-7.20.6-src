@@ -8,7 +8,6 @@ import com.blued.android.core.image.util.ExecutorUtils;
 import com.blued.android.core.image.util.ImageSize;
 import com.blued.android.core.net.IRequestHost;
 import com.bumptech.glide.RequestBuilder;
-import com.bumptech.glide.load.Option;
 import com.bumptech.glide.request.FutureTarget;
 import java.io.File;
 import java.util.HashMap;
@@ -16,13 +15,9 @@ import java.util.LinkedHashSet;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageFileWrapper.class */
 public class ImageFileWrapper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RequestBuilder f9495a;
+    private RequestBuilder a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private FutureTarget<File> f9496c;
+    private FutureTarget<File> c;
     private ImageFileLoader.OnLoadFileListener j;
     private String d = "";
     private boolean e = false;
@@ -35,7 +30,7 @@ public class ImageFileWrapper {
     /* JADX INFO: Access modifiers changed from: protected */
     public ImageFileWrapper(IRequestHost iRequestHost, RequestBuilder requestBuilder) {
         this.b = iRequestHost;
-        this.f9495a = requestBuilder;
+        this.a = requestBuilder;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -88,7 +83,7 @@ public class ImageFileWrapper {
 
     public ImageFileWrapper a(ImageLoadResult imageLoadResult) {
         if (imageLoadResult != null) {
-            this.f9495a.d(new HttpRequestListener(imageLoadResult));
+            this.a.d(new HttpRequestListener(imageLoadResult));
         }
         return this;
     }
@@ -105,7 +100,7 @@ public class ImageFileWrapper {
         }
         this.f = true;
         d(str2);
-        this.f9495a.b(str2);
+        this.a.b(str2);
         return this;
     }
 
@@ -119,8 +114,8 @@ public class ImageFileWrapper {
             str4 = "";
         }
         this.g = str3;
-        this.f9495a.b(str4);
-        this.f9495a.b((Option<Option<String>>) ImageLoaderOptions.f9505a, (Option<String>) str3);
+        this.a.b(str4);
+        this.a.b(ImageLoaderOptions.a, str3);
         return this;
     }
 
@@ -140,19 +135,19 @@ public class ImageFileWrapper {
             return;
         }
         int b = b();
-        HashMap<Integer, LinkedHashSet<ImageFileWrapper>> a2 = ImageFileLoader.a(this.f);
-        synchronized (a2) {
-            LinkedHashSet<ImageFileWrapper> linkedHashSet2 = a2.get(Integer.valueOf(b));
+        HashMap<Integer, LinkedHashSet<ImageFileWrapper>> a = ImageFileLoader.a(this.f);
+        synchronized (a) {
+            LinkedHashSet<ImageFileWrapper> linkedHashSet2 = a.get(Integer.valueOf(b));
             linkedHashSet = linkedHashSet2;
             if (linkedHashSet2 == null) {
                 linkedHashSet = new LinkedHashSet<>();
-                a2.put(Integer.valueOf(b), linkedHashSet);
+                a.put(Integer.valueOf(b), linkedHashSet);
                 z = true;
             }
         }
         linkedHashSet.add(this);
         if (z) {
-            this.f9496c = this.f9495a.g();
+            this.c = this.a.g();
             if (this.f) {
                 ExecutorUtils.a(b, c());
             } else {
@@ -171,8 +166,8 @@ public class ImageFileWrapper {
             str2 = "";
         }
         d(str2);
-        this.f9495a.b(str2);
-        this.f9495a.e(true);
+        this.a.b(str2);
+        this.a.e(true);
         return this;
     }
 
@@ -182,7 +177,7 @@ public class ImageFileWrapper {
             str2 = "";
         }
         this.g = str2;
-        this.f9495a.b(str2);
+        this.a.b(str2);
         return this;
     }
 }

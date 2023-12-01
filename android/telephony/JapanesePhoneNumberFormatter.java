@@ -1,6 +1,7 @@
 package android.telephony;
 
 import android.text.Editable;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/JapanesePhoneNumberFormatter.class */
 class JapanesePhoneNumberFormatter {
@@ -49,17 +50,17 @@ class JapanesePhoneNumberFormatter {
             } else {
                 int abs = i + (Math.abs((int) c2) % 10);
                 if (length2 > abs) {
-                    editable.insert(abs, "-");
+                    editable.insert(abs, Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 }
                 int abs2 = i + (Math.abs((int) c2) / 10);
                 if (length2 > abs2) {
-                    editable.insert(abs2, "-");
+                    editable.insert(abs2, Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 }
             }
         }
         if (length2 <= 3 || i != 3) {
             return;
         }
-        editable.insert(i, "-");
+        editable.insert(i, Constants.ACCEPT_TIME_SEPARATOR_SERVER);
     }
 }

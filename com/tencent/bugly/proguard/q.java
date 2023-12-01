@@ -3,7 +3,6 @@ package com.tencent.bugly.proguard;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.List;
 
@@ -11,18 +10,18 @@ import java.util.List;
 public final class q extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f35400a = "bugly_db";
+    public static String f21709a = "bugly_db";
     private static int b = 15;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f35401c;
+    private Context f21710c;
     private List<com.tencent.bugly.a> d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public q(Context context, List<com.tencent.bugly.a> list) {
-        super(context, f35400a + BridgeUtil.UNDERLINE_STR, null, b);
+        super(context, f21709a + "_", null, b);
         com.tencent.bugly.crashreport.common.info.a.a(context).getClass();
-        this.f35401c = context;
+        this.f21710c = context;
         this.d = list;
     }
 
@@ -226,7 +225,7 @@ public final class q extends SQLiteOpenHelper {
                     return;
                 }
                 x.d("[Database] Failed to drop, delete db.", new Object[0]);
-                File databasePath = this.f35401c.getDatabasePath(f35400a);
+                File databasePath = this.f21710c.getDatabasePath(f21709a);
                 if (databasePath != null && databasePath.canWrite()) {
                     databasePath.delete();
                 }
@@ -248,7 +247,7 @@ public final class q extends SQLiteOpenHelper {
                 return;
             }
             x.d("[Database] Failed to drop, delete db.", new Object[0]);
-            File databasePath = this.f35401c.getDatabasePath(f35400a);
+            File databasePath = this.f21710c.getDatabasePath(f21709a);
             if (databasePath != null && databasePath.canWrite()) {
                 databasePath.delete();
             }

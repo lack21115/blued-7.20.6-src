@@ -4,10 +4,10 @@ package com.anythink.expressad.c;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f7121a = 1;
+    public static int f4283a = 1;
     public static int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f7122c = 21600000;
+    public static int f4284c = 21600000;
     public static String d = "rover_interval_time";
 }

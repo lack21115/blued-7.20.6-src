@@ -4,7 +4,6 @@ import android.content.Context;
 import android.hardware.Camera;
 import android.os.Build;
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import com.huawei.hms.ads.hn;
 import com.huawei.openalliance.ad.activity.PPSLauncherActivity;
@@ -23,22 +22,22 @@ import org.json.JSONObject;
 public class ck {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23784a;
+    private Context f10176a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23785c;
+    private int f10177c;
 
     public ck(Context context, int i, int i2) {
-        this.f23784a = context;
+        this.f10176a = context;
         this.b = i;
-        this.f23785c = i2;
+        this.f10177c = i2;
     }
 
     public String a(String str) {
         JSONObject a2;
         try {
-            JSONObject a3 = new cl(str, cj.j).a(this.f23784a);
+            JSONObject a3 = new cl(str, cj.j).a(this.f10176a);
             if (a3 == null || (a2 = a()) == null) {
                 return null;
             }
@@ -53,23 +52,23 @@ public class ck {
         try {
             long currentTimeMillis = System.currentTimeMillis();
             JSONObject jSONObject = new JSONObject();
-            h a2 = h.a(this.f23784a, "re_po_rt");
+            h a2 = h.a(this.f10176a, "re_po_rt");
             boolean e = a2.e("a1_p_s_p_s");
             boolean e2 = a2.e("a1_p_s_p_s_c_b");
-            ai aiVar = new ai(this.f23784a);
+            ai aiVar = new ai(this.f10176a);
             jSONObject.put("0", aiVar.d());
             jSONObject.put("1", aiVar.a());
             jSONObject.put("2", aiVar.c());
             jSONObject.put("3", aiVar.f());
             jSONObject.put("24", aiVar.e());
             jSONObject.put(BaseWrapper.ENTER_ID_OAPS_SPEECH_ASSIST, ab.b() ? 1 : 0);
-            jSONObject.put(BaseWrapper.ENTER_ID_OAPS_FLOWMARKET, ab.a(this.f23784a) ? 1 : 0);
-            JSONObject a3 = ah.a(this.f23784a);
+            jSONObject.put(BaseWrapper.ENTER_ID_OAPS_FLOWMARKET, ab.a(this.f10176a) ? 1 : 0);
+            JSONObject a3 = ah.a(this.f10176a);
             if (a3 != null) {
                 jSONObject.put("4", a3);
             }
             z zVar = new z();
-            JSONArray a4 = zVar.a(this.f23784a);
+            JSONArray a4 = zVar.a(this.f10176a);
             jSONObject.put(com.huawei.openalliance.ad.beans.inner.a.V, a4);
             jSONObject.put("146", zVar.e());
             jSONObject.put("154", zVar.a());
@@ -83,15 +82,15 @@ public class ck {
             jSONObject.put("22", ab.a());
             ac acVar = new ac();
             jSONObject.put("7", acVar.a() ? 1 : 0);
-            boolean a5 = acVar.a(this.f23784a);
+            boolean a5 = acVar.a(this.f10176a);
             jSONObject.put("8", a5 ? 1 : 0);
             if (a5) {
-                jSONObject.put("61", acVar.b(this.f23784a));
+                jSONObject.put("61", acVar.b(this.f10176a));
             }
-            jSONObject.put("181", acVar.f(this.f23784a) ? 1 : 0);
-            jSONObject.put("9", acVar.d(this.f23784a));
-            jSONObject.put("10", acVar.e(this.f23784a));
-            jSONObject.put("11", acVar.c(this.f23784a));
+            jSONObject.put("181", acVar.f(this.f10176a) ? 1 : 0);
+            jSONObject.put("9", acVar.d(this.f10176a));
+            jSONObject.put("10", acVar.e(this.f10176a));
+            jSONObject.put("11", acVar.c(this.f10176a));
             ae aeVar = new ae();
             jSONObject.put("26", aeVar.a("cpuinfo") ? 1 : 0);
             jSONObject.put("27", aeVar.a("meminfo") ? 1 : 0);
@@ -125,15 +124,15 @@ public class ck {
                     if (c2 != null) {
                         hashSet.add(c2);
                     }
-                    jSONObject.put("13", anVar.a(this.f23784a, 13, hashSet));
-                    jSONObject.put("14", anVar.a(this.f23784a, 14, hashSet));
-                    jSONObject.put("15", anVar.a(this.f23784a, 15, hashSet));
-                    jSONObject.put("16", anVar.a(this.f23784a, 16, hashSet));
-                    jSONObject.put("17", anVar.a(this.f23784a, 17, hashSet));
-                    jSONObject.put("18", anVar.a(this.f23784a, 18, hashSet));
-                    jSONObject.put("19", anVar.a(this.f23784a, 19, hashSet));
-                    jSONObject.put(BaseWrapper.ENTER_ID_SYSTEM_HELPER, anVar.a(this.f23784a, 20, hashSet));
-                    jSONObject.put("21", anVar.a(this.f23784a, 21, hashSet));
+                    jSONObject.put("13", anVar.a(this.f10176a, 13, hashSet));
+                    jSONObject.put("14", anVar.a(this.f10176a, 14, hashSet));
+                    jSONObject.put("15", anVar.a(this.f10176a, 15, hashSet));
+                    jSONObject.put("16", anVar.a(this.f10176a, 16, hashSet));
+                    jSONObject.put("17", anVar.a(this.f10176a, 17, hashSet));
+                    jSONObject.put("18", anVar.a(this.f10176a, 18, hashSet));
+                    jSONObject.put("19", anVar.a(this.f10176a, 19, hashSet));
+                    jSONObject.put(BaseWrapper.ENTER_ID_SYSTEM_HELPER, anVar.a(this.f10176a, 20, hashSet));
+                    jSONObject.put("21", anVar.a(this.f10176a, 21, hashSet));
                     jSONObject.put("130", anVar.b(hashSet));
                 }
             }
@@ -147,14 +146,14 @@ public class ck {
             jSONObject.put("68", aoVar.f() ? 1 : 0);
             jSONObject.put(PPSLauncherActivity.Code, aoVar.e());
             jSONObject.put("101", aoVar.c() ? 1 : 0);
-            jSONObject.put(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB, aoVar.g() ? 1 : 0);
+            jSONObject.put("102", aoVar.g() ? 1 : 0);
             jSONObject.put("99", new af().a());
-            jSONObject.put(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_NORMAL, new ad().a() ? 1 : 0);
+            jSONObject.put("103", new ad().a() ? 1 : 0);
             JSONObject jSONObject2 = new JSONObject();
-            jSONObject2.put("03007", bu.a(this.f23784a));
-            jSONObject2.put("03014", bg.g(this.f23784a));
-            jSONObject2.put("03020", bu.b(this.f23784a));
-            jSONObject2.put("03030", bf.d(this.f23784a));
+            jSONObject2.put("03007", bu.a(this.f10176a));
+            jSONObject2.put("03014", bg.g(this.f10176a));
+            jSONObject2.put("03020", bu.b(this.f10176a));
+            jSONObject2.put("03030", bf.d(this.f10176a));
             jSONObject.put("51", jSONObject2);
             an anVar2 = new an();
             jSONObject.put("107", anVar2.d());
@@ -163,12 +162,12 @@ public class ck {
             jSONObject.put("190", anVar2.f());
             ag agVar = new ag();
             jSONObject.put("131", agVar.a());
-            jSONObject.put("145", agVar.a(this.f23784a));
+            jSONObject.put("145", agVar.a(this.f10176a));
             jSONObject.put("132", dj.a());
-            jSONObject.put("133", new ai(this.f23784a).g());
+            jSONObject.put("133", new ai(this.f10176a).g());
             if (a2.b(de.af, 1) == 1) {
-                jSONObject.put("139", dk.c(this.f23784a));
-                jSONObject.put("140", dk.d(this.f23784a));
+                jSONObject.put("139", dk.c(this.f10176a));
+                jSONObject.put("140", dk.d(this.f10176a));
                 jSONObject.put("147", dk.a());
                 jSONObject.put("148", dh.b());
                 jSONObject.put("149", dh.c());
@@ -176,12 +175,12 @@ public class ck {
             }
             if (a2.b(de.aa, 0) == 1) {
                 if (e || e2) {
-                    jSONObject.put("25", al.a(this.f23784a) ? 1 : 0);
+                    jSONObject.put("25", al.a(this.f10176a) ? 1 : 0);
                 }
                 jSONObject.put("128", ad.b() ? 1 : 0);
             }
             if (Engine.loadSuccess) {
-                as asVar = new as(this.f23784a, 100);
+                as asVar = new as(this.f10176a, 100);
                 jSONObject.put("6", asVar.a("6"));
                 JSONArray a7 = asVar.a(asVar.a(), "41");
                 if (a7 != null && a7.length() > 0) {
@@ -215,7 +214,7 @@ public class ck {
                 jSONObject.put("74", asVar.a("74"));
                 jSONObject.put("104", asVar.a("104"));
                 if (a2.b(de.V, 1) == 1 && Build.VERSION.SDK_INT < 23) {
-                    ar arVar = new ar(this.f23784a);
+                    ar arVar = new ar(this.f10176a);
                     String a8 = arVar.a("57");
                     if (!TextUtils.isEmpty(a8)) {
                         jSONObject.put("57", a8);
@@ -243,13 +242,13 @@ public class ck {
                 jSONObject.put("100", asVar.a("100"));
                 jSONObject.put("105", asVar.a("105"));
                 if (a2.b(de.X, 1) == 1) {
-                    aq aqVar = new aq(this.f23784a, 0);
+                    aq aqVar = new aq(this.f10176a, 0);
                     jSONObject.put("108", aqVar.a("108"));
                     jSONObject.put("109", aqVar.a("109"));
                     jSONObject.put("111", aqVar.a("111"));
                 }
                 if (a2.b(de.Z, 1) == 1) {
-                    aq aqVar2 = new aq(this.f23784a, 1);
+                    aq aqVar2 = new aq(this.f10176a, 1);
                     jSONObject.put("112", aqVar2.b("112"));
                     jSONObject.put("113", aqVar2.a("113"));
                     jSONObject.put("114", aqVar2.a("114"));
@@ -257,33 +256,33 @@ public class ck {
                     jSONObject.put("116", aqVar2.a("116"));
                     jSONObject.put("117", aqVar2.a("117"));
                     jSONObject.put(Camera.Parameters.VIDEO_HFR_4X, aqVar2.a(Camera.Parameters.VIDEO_HFR_4X));
-                    aq aqVar3 = new aq(this.f23784a, 4);
+                    aq aqVar3 = new aq(this.f10176a, 4);
                     jSONObject.put("124", aqVar3.a("124"));
                     jSONObject.put("125", aqVar3.a("125"));
                     jSONObject.put("126", aqVar3.a("126"));
                     jSONObject.put("127", aqVar3.a("127"));
                 }
                 if (a2.b(de.ab, 0) == 1) {
-                    av avVar = new av(this.f23784a, 100);
+                    av avVar = new av(this.f10176a, 100);
                     jSONObject.put("97", avVar.a("97"));
                     jSONObject.put("118", avVar.a("118"));
                     jSONObject.put("119", avVar.a("119"));
                     jSONObject.put("135", avVar.a("135"));
                     jSONObject.put("174", avVar.a("174"));
-                    av avVar2 = new av(this.f23784a, 200);
+                    av avVar2 = new av(this.f10176a, 200);
                     jSONObject.put("173", avVar2.a("173"));
                     jSONObject.put("182", avVar2.a("182"));
                 }
                 if (a2.b(de.W, 1) == 1) {
-                    jSONObject.put("129", new bd(this.f23784a, 4).a("129"));
-                    bd bdVar = new bd(this.f23784a, 1);
+                    jSONObject.put("129", new bd(this.f10176a, 4).a("129"));
+                    bd bdVar = new bd(this.f10176a, 1);
                     jSONObject.put("121", bdVar.a(bdVar.a(), "121"));
-                    bd bdVar2 = new bd(this.f23784a, 2);
+                    bd bdVar2 = new bd(this.f10176a, 2);
                     jSONObject.put("137", bdVar2.a("137"));
                     jSONObject.put("138", bdVar2.a("138"));
                     jSONObject.put("141", bdVar2.a("141"));
                     jSONObject.put("142", bdVar2.a("142"));
-                    be beVar = new be(this.f23784a, 3);
+                    be beVar = new be(this.f10176a, 3);
                     JSONArray b4 = beVar.b("150");
                     jSONObject.put("150", b4);
                     if (b4 != null) {
@@ -291,7 +290,7 @@ public class ck {
                     }
                 }
                 if (a2.b(de.S, 1) == 1) {
-                    az azVar = new az(this.f23784a, 100);
+                    az azVar = new az(this.f10176a, 100);
                     jSONObject.put("152", azVar.a("152"));
                     jSONObject.put("153", azVar.a("153"));
                     jSONObject.put("156", azVar.a("156"));
@@ -299,34 +298,34 @@ public class ck {
                     jSONObject.put("163", azVar.a("163"));
                     jSONObject.put("171", azVar.a("171", true));
                     jSONObject.put("172", azVar.b("172"));
-                    jSONObject.put("177", new az(this.f23784a, 500).d("177"));
+                    jSONObject.put("177", new az(this.f10176a, 500).d("177"));
                 }
                 if ((e || e2) && a2.b(de.U, 0) == 1) {
-                    jSONObject.put("158", new az(this.f23784a, 300).b("158"));
+                    jSONObject.put("158", new az(this.f10176a, 300).b("158"));
                 }
                 if (a2.b(de.ae, 0) == 1) {
-                    bc bcVar = new bc(this.f23784a);
+                    bc bcVar = new bc(this.f10176a);
                     jSONObject.put("162", bcVar.a("162"));
                     jSONObject.put("160", bcVar.a(bcVar.a(), "160"));
-                    az azVar2 = new az(this.f23784a, 400);
+                    az azVar2 = new az(this.f10176a, 400);
                     jSONObject.put("164", azVar2.a("164"));
                     jSONObject.put("165", azVar2.a("165"));
                     jSONObject.put("166", azVar2.c("166"));
                     jSONObject.put("167", azVar2.a("167"));
                 }
                 if (a2.b(de.ac, 1) == 1) {
-                    ax axVar = new ax(this.f23784a, 600);
+                    ax axVar = new ax(this.f10176a, 600);
                     jSONObject.put("179", axVar.a("179"));
                     jSONObject.put("186", axVar.a("186"));
                     jSONObject.put("189", axVar.a("189"));
                 }
             }
-            jSONObject.put("58", ae.a(this.f23784a));
-            jSONObject.put(Camera.Parameters.VIDEO_HFR_2X, ab.b(this.f23784a) ? 1 : 0);
+            jSONObject.put("58", ae.a(this.f10176a));
+            jSONObject.put(Camera.Parameters.VIDEO_HFR_2X, ab.b(this.f10176a) ? 1 : 0);
             jSONObject.put(WbFaceError.WBFaceErrorCodeInputParaNull, Engine.loadSuccess ? 1 : 0);
             jSONObject.put(WbFaceError.WBFaceErrorCodeDataSerilizerError, Engine.soVersion);
             jSONObject.put("11008", a2.b(de.g, bp.e));
-            jSONObject.put("11009", br.a(this.f23784a.getApplicationContext()));
+            jSONObject.put("11009", br.a(this.f10176a.getApplicationContext()));
             try {
                 jSONObject.put("11301", bg.c(com.kwad.sdk.d.b.Ax().Aw()));
                 jSONObject.put("11302", bg.c(com.kwad.sdk.d.b.Ax().getSdkVersion()));
@@ -338,12 +337,12 @@ public class ck {
                 jSONObject.put("183", b5);
                 a2.c(de.k, "");
             }
-            jSONObject.put("187", ak.a(this.f23784a) ? 1 : 0);
+            jSONObject.put("187", ak.a(this.f10176a) ? 1 : 0);
             jSONObject.put("11006", e ? 1 : 0);
             jSONObject.put("11029", e2 ? 1 : 0);
             jSONObject.put("11028", WeaponHI.sKSSdkver);
             jSONObject.put(PushConsts.SEND_MESSAGE_ERROR, this.b);
-            jSONObject.put("20001", this.f23785c);
+            jSONObject.put(PushConsts.SEND_MESSAGE_ERROR_GENERAL, this.f10177c);
             try {
                 jSONObject.put("02078", A.getE("W_S_V"));
                 jSONObject.put("02079", A.getE("W_S_S_V"));

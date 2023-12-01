@@ -96,12 +96,12 @@ public final class CharSequenceAdapter extends CharBuffer {
     }
 
     @Override // java.nio.CharBuffer
-    public CharBuffer put(char c2) {
+    public CharBuffer put(char c) {
         throw new ReadOnlyBufferException();
     }
 
     @Override // java.nio.CharBuffer
-    public CharBuffer put(int i, char c2) {
+    public CharBuffer put(int i, char c) {
         throw new ReadOnlyBufferException();
     }
 

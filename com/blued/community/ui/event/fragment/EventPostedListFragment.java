@@ -22,7 +22,7 @@ public final class EventPostedListFragment extends BaseListFragment<EventPostedL
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(EventPostedListFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        ((EventPostedListViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+        ((EventPostedListViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.a);
     }
 
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment
@@ -42,15 +42,15 @@ public final class EventPostedListFragment extends BaseListFragment<EventPostedL
         if (b != null) {
             b.setVisibility(8);
         }
-        NoDataAndLoadFailView c2 = c();
-        if (c2 != null) {
-            c2.setNoDataStr(R.string.event_my_post_no_data_content);
+        NoDataAndLoadFailView c = c();
+        if (c != null) {
+            c.setNoDataStr(R.string.event_my_post_no_data_content);
         }
-        NoDataAndLoadFailView c3 = c();
-        if (c3 == null) {
+        NoDataAndLoadFailView c2 = c();
+        if (c2 == null) {
             return;
         }
-        c3.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventPostedListFragment$LykDKksFpwLjixV8rfXmrBFiBL4
+        c2.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventPostedListFragment$LykDKksFpwLjixV8rfXmrBFiBL4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EventPostedListFragment.a(EventPostedListFragment.this, view);

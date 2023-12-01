@@ -13,11 +13,11 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f8373a;
+    private static volatile a f5533a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Bitmap f8374c;
+    private Bitmap f5534c;
     private Bitmap d;
 
     private a() {
@@ -25,25 +25,25 @@ public class a {
 
     public static a a() {
         a aVar;
-        if (f8373a == null) {
+        if (f5533a == null) {
             synchronized (a.class) {
                 try {
-                    if (f8373a == null) {
-                        f8373a = new a();
+                    if (f5533a == null) {
+                        f5533a = new a();
                     }
-                    aVar = f8373a;
+                    aVar = f5533a;
                 } catch (Throwable th) {
                     throw th;
                 }
             }
             return aVar;
         }
-        return f8373a;
+        return f5533a;
     }
 
     private void a(int i, float f, float f2, Bitmap bitmap, Bitmap bitmap2) {
         synchronized (this) {
-            a.C0161a a2 = com.anythink.expressad.video.dynview.g.a.a();
+            a.C0090a a2 = com.anythink.expressad.video.dynview.g.a.a();
             a2.a(i).a(bitmap).b(bitmap2);
             if (i != 2) {
                 a2.a(f).b(f2);
@@ -68,7 +68,7 @@ public class a {
                 Bitmap bitmap2 = (Bitmap) map.get(p.a(g.get(0).be()));
                 if (g.get(0) != null && bitmap2 != null && !bitmap2.isRecycled()) {
                     b.a();
-                    this.f8374c = b.a(bitmap2, 0);
+                    this.f5534c = b.a(bitmap2, 0);
                 }
             }
             if (map.get(p.a(g.get(1).be())) != null && (map.get(p.a(g.get(1).be())) instanceof Bitmap)) {
@@ -79,21 +79,21 @@ public class a {
                 }
             }
         }
-        Bitmap bitmap4 = this.f8374c;
+        Bitmap bitmap4 = this.f5534c;
         if (bitmap4 == null || bitmap4.isRecycled() || (bitmap = this.d) == null || bitmap.isRecycled()) {
             return;
         }
-        a(e, d, c2, this.f8374c, this.d);
+        a(e, d, c2, this.f5534c, this.d);
     }
 
     public final void b() {
         if (this.b != null) {
             this.b = null;
         }
-        Bitmap bitmap = this.f8374c;
+        Bitmap bitmap = this.f5534c;
         if (bitmap != null && !bitmap.isRecycled()) {
-            this.f8374c.recycle();
-            this.f8374c = null;
+            this.f5534c.recycle();
+            this.f5534c = null;
         }
         Bitmap bitmap2 = this.d;
         if (bitmap2 == null || bitmap2.isRecycled()) {

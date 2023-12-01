@@ -15,13 +15,9 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyRankChildLayoutBinding.class */
 public final class FragmentYyRankChildLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeableImageView f16531a;
+    public final ShapeableImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeConstraintLayout f16532c;
+    public final ShapeConstraintLayout c;
     public final ConstraintLayout d;
     public final LinearLayout e;
     public final RecyclerView f;
@@ -35,9 +31,9 @@ public final class FragmentYyRankChildLayoutBinding implements ViewBinding {
 
     private FragmentYyRankChildLayoutBinding(SmartRefreshLayout smartRefreshLayout, ShapeableImageView shapeableImageView, ImageView imageView, ShapeConstraintLayout shapeConstraintLayout, ConstraintLayout constraintLayout, LinearLayout linearLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout2, TextView textView, TextView textView2, ShapeTextView shapeTextView, TextView textView3, TextView textView4) {
         this.m = smartRefreshLayout;
-        this.f16531a = shapeableImageView;
+        this.a = shapeableImageView;
         this.b = imageView;
-        this.f16532c = shapeConstraintLayout;
+        this.c = shapeConstraintLayout;
         this.d = constraintLayout;
         this.e = linearLayout;
         this.f = recyclerView;
@@ -51,20 +47,20 @@ public final class FragmentYyRankChildLayoutBinding implements ViewBinding {
 
     public static FragmentYyRankChildLayoutBinding a(View view) {
         String str;
-        ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.img_my_avatar);
-        if (shapeableImageView != null) {
+        ShapeableImageView findViewById = view.findViewById(R.id.img_my_avatar);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.img_unit);
             if (imageView != null) {
                 ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.ll_bottom_layout);
                 if (shapeConstraintLayout != null) {
-                    ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_hasdata_view);
-                    if (constraintLayout != null) {
+                    ConstraintLayout findViewById2 = view.findViewById(R.id.ll_hasdata_view);
+                    if (findViewById2 != null) {
                         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_nodata_view);
                         if (linearLayout != null) {
-                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rank_list_view);
-                            if (recyclerView != null) {
-                                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_view);
-                                if (smartRefreshLayout != null) {
+                            RecyclerView findViewById3 = view.findViewById(R.id.rank_list_view);
+                            if (findViewById3 != null) {
+                                SmartRefreshLayout findViewById4 = view.findViewById(R.id.refresh_view);
+                                if (findViewById4 != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_my_order);
                                     if (textView != null) {
                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_nickname);
@@ -75,7 +71,7 @@ public final class FragmentYyRankChildLayoutBinding implements ViewBinding {
                                                 if (textView3 != null) {
                                                     TextView textView4 = (TextView) view.findViewById(R.id.tv_wandou);
                                                     if (textView4 != null) {
-                                                        return new FragmentYyRankChildLayoutBinding((SmartRefreshLayout) view, shapeableImageView, imageView, shapeConstraintLayout, constraintLayout, linearLayout, recyclerView, smartRefreshLayout, textView, textView2, shapeTextView, textView3, textView4);
+                                                        return new FragmentYyRankChildLayoutBinding((SmartRefreshLayout) view, findViewById, imageView, shapeConstraintLayout, findViewById2, linearLayout, findViewById3, findViewById4, textView, textView2, shapeTextView, textView3, textView4);
                                                     }
                                                     str = "tvWandou";
                                                 } else {
@@ -114,7 +110,6 @@ public final class FragmentYyRankChildLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public SmartRefreshLayout getRoot() {
         return this.m;

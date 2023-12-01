@@ -6,10 +6,10 @@ import android.opengl.GLES20;
 final /* synthetic */ class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36626a;
+    private final j f22935a;
 
     private k(j jVar) {
-        this.f36626a = jVar;
+        this.f22935a = jVar;
     }
 
     public static Runnable a(j jVar) {
@@ -18,8 +18,8 @@ final /* synthetic */ class k implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36626a;
-        GLES20.glUniform1f(jVar.f36625a, jVar.mOutputSize.f36340a);
+        j jVar = this.f22935a;
+        GLES20.glUniform1f(jVar.f22934a, jVar.mOutputSize.f22649a);
         GLES20.glUniform1f(jVar.b, jVar.mOutputSize.b);
     }
 }

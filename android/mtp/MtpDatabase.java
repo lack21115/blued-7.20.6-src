@@ -17,8 +17,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
-import android.widget.ExpandableListView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -133,7 +131,7 @@ public class MtpDatabase {
             String country = locale.getCountry();
             if (language != null) {
                 if (country != null) {
-                    this.mMediaScanner.setLocale(language + BridgeUtil.UNDERLINE_STR + country);
+                    this.mMediaScanner.setLocale(language + "_" + country);
                 } else {
                     this.mMediaScanner.setLocale(language);
                 }
@@ -317,12 +315,12 @@ public class MtpDatabase {
                         }
                     } else {
                         if (i3 == 12289) {
-                            this.mMediaProvider.delete(this.mPackageName, MediaStore.Files.getMtpObjectsUri(this.mVolumeName), "_data LIKE ?1 AND lower(substr(_data,1,?2))=lower(?3)", new String[]{string + "/%", Integer.toString(string.length() + 1), string + BridgeUtil.SPLIT_MARK});
+                            this.mMediaProvider.delete(this.mPackageName, MediaStore.Files.getMtpObjectsUri(this.mVolumeName), "_data LIKE ?1 AND lower(substr(_data,1,?2))=lower(?3)", new String[]{string + "/%", Integer.toString(string.length() + 1), string + "/"});
                         }
                         if (this.mMediaProvider.delete(this.mPackageName, MediaStore.Files.getMtpObjectsUri(this.mVolumeName, i), null, null) > 0) {
                             if (i3 != 12289 && string.toLowerCase(Locale.US).endsWith("/.nomedia")) {
                                 try {
-                                    this.mMediaProvider.call(this.mPackageName, MediaStore.UNHIDE_CALL, string.substring(0, string.lastIndexOf(BridgeUtil.SPLIT_MARK)), null);
+                                    this.mMediaProvider.call(this.mPackageName, MediaStore.UNHIDE_CALL, string.substring(0, string.lastIndexOf("/")), null);
                                 } catch (RemoteException e) {
                                     cursor2 = query;
                                     cursor = query;
@@ -654,7 +652,7 @@ public class MtpDatabase {
         if (i2 != 0) {
             return new MtpPropertyList(0, MtpConstants.RESPONSE_SPECIFICATION_BY_GROUP_UNSUPPORTED);
         }
-        if (j2 == ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+        if (j2 == 4294967295L) {
             int i5 = i;
             if (i == 0) {
                 i5 = i;

@@ -11,12 +11,10 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/GradientColorParser.class */
 public class GradientColorParser implements ValueParser<GradientColor> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f4401a;
+    private int a;
 
     public GradientColorParser(int i) {
-        this.f4401a = i;
+        this.a = i;
     }
 
     private int a(double d, double[] dArr, double[] dArr2) {
@@ -42,7 +40,7 @@ public class GradientColorParser implements ValueParser<GradientColor> {
 
     private void a(GradientColor gradientColor, List<Float> list) {
         int i;
-        int i2 = this.f4401a * 4;
+        int i2 = this.a * 4;
         if (list.size() <= i2) {
             return;
         }
@@ -82,15 +80,15 @@ public class GradientColorParser implements ValueParser<GradientColor> {
         if (z) {
             jsonReader.endArray();
         }
-        if (this.f4401a == -1) {
-            this.f4401a = arrayList.size() / 4;
+        if (this.a == -1) {
+            this.a = arrayList.size() / 4;
         }
-        int i = this.f4401a;
+        int i = this.a;
         float[] fArr = new float[i];
         int[] iArr = new int[i];
         int i2 = 0;
         int i3 = 0;
-        for (int i4 = 0; i4 < this.f4401a * 4; i4++) {
+        for (int i4 = 0; i4 < this.a * 4; i4++) {
             int i5 = i4 / 4;
             double floatValue = arrayList.get(i4).floatValue();
             int i6 = i4 % 4;

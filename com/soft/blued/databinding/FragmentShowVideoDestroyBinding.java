@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentShowVideoDestroyBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28979a;
+    private final FrameLayout f15289a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28979a;
+        return this.f15289a;
     }
 }

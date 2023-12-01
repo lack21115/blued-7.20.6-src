@@ -81,7 +81,7 @@ public final class b {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    private static void a(com.kwai.filedownloader.a.a.InterfaceC0584a r10) {
+    private static void a(com.kwai.filedownloader.a.a.InterfaceC0414a r10) {
         /*
             Method dump skipped, instructions count: 666
             To view this dump change 'Code comments level' option to 'DEBUG'

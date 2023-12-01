@@ -11,22 +11,18 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentHomeBinding.class */
 public final class FragmentHomeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f18886a;
+    public final LinearLayout a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f18887c;
+    public final ShapeTextView c;
     public final CustomViewPager d;
     public final TabPageIndicatorWithDot e;
     private final ConstraintLayout f;
 
     private FragmentHomeBinding(ConstraintLayout constraintLayout, LinearLayout linearLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, CustomViewPager customViewPager, TabPageIndicatorWithDot tabPageIndicatorWithDot) {
         this.f = constraintLayout;
-        this.f18886a = linearLayout;
+        this.a = linearLayout;
         this.b = shapeTextView;
-        this.f18887c = shapeTextView2;
+        this.c = shapeTextView2;
         this.d = customViewPager;
         this.e = tabPageIndicatorWithDot;
     }
@@ -61,7 +57,6 @@ public final class FragmentHomeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

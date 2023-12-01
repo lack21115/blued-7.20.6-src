@@ -1,7 +1,6 @@
 package external.org.apache.commons.lang3.builder;
 
 import com.alipay.sdk.util.i;
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import external.org.apache.commons.lang3.ClassUtils;
 import external.org.apache.commons.lang3.ObjectUtils;
 import external.org.apache.commons.lang3.SystemUtils;
@@ -37,9 +36,9 @@ public abstract class ToStringStyle implements Serializable {
     private boolean defaultFullDetail = true;
     private String nullText = "<null>";
     private String sizeStartText = "<size=";
-    private String sizeEndText = SimpleComparison.GREATER_THAN_OPERATION;
-    private String summaryObjectStartText = SimpleComparison.LESS_THAN_OPERATION;
-    private String summaryObjectEndText = SimpleComparison.GREATER_THAN_OPERATION;
+    private String sizeEndText = ">";
+    private String summaryObjectStartText = "<";
+    private String summaryObjectEndText = ">";
 
     /* loaded from: source-259656-dex2jar.jar:external/org/apache/commons/lang3/builder/ToStringStyle$DefaultToStringStyle.class */
     private static final class DefaultToStringStyle extends ToStringStyle {
@@ -151,9 +150,9 @@ public abstract class ToStringStyle implements Serializable {
         appendFieldEnd(stringBuffer, str);
     }
 
-    public void append(StringBuffer stringBuffer, String str, char c2) {
+    public void append(StringBuffer stringBuffer, String str, char c) {
         appendFieldStart(stringBuffer, str);
-        appendDetail(stringBuffer, str, c2);
+        appendDetail(stringBuffer, str, c);
         appendFieldEnd(stringBuffer, str);
     }
 
@@ -339,8 +338,8 @@ public abstract class ToStringStyle implements Serializable {
         stringBuffer.append((int) b);
     }
 
-    protected void appendDetail(StringBuffer stringBuffer, String str, char c2) {
-        stringBuffer.append(c2);
+    protected void appendDetail(StringBuffer stringBuffer, String str, char c) {
+        stringBuffer.append(c);
     }
 
     protected void appendDetail(StringBuffer stringBuffer, String str, double d) {

@@ -15,24 +15,24 @@ public class ViewPropertyAnimatorCompatSet {
     private boolean e;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f1649c = -1;
+    private long f1601c = -1;
     private final ViewPropertyAnimatorListenerAdapter f = new ViewPropertyAnimatorListenerAdapter() { // from class: androidx.appcompat.view.ViewPropertyAnimatorCompatSet.1
         private boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1651c = 0;
+        private int f1603c = 0;
 
         void a() {
-            this.f1651c = 0;
+            this.f1603c = 0;
             this.b = false;
             ViewPropertyAnimatorCompatSet.this.a();
         }
 
         @Override // androidx.core.view.ViewPropertyAnimatorListenerAdapter, androidx.core.view.ViewPropertyAnimatorListener
         public void onAnimationEnd(View view) {
-            int i = this.f1651c + 1;
-            this.f1651c = i;
-            if (i == ViewPropertyAnimatorCompatSet.this.f1648a.size()) {
+            int i = this.f1603c + 1;
+            this.f1603c = i;
+            if (i == ViewPropertyAnimatorCompatSet.this.f1600a.size()) {
                 if (ViewPropertyAnimatorCompatSet.this.b != null) {
                     ViewPropertyAnimatorCompatSet.this.b.onAnimationEnd(null);
                 }
@@ -53,7 +53,7 @@ public class ViewPropertyAnimatorCompatSet {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    final ArrayList<ViewPropertyAnimatorCompat> f1648a = new ArrayList<>();
+    final ArrayList<ViewPropertyAnimatorCompat> f1600a = new ArrayList<>();
 
     void a() {
         this.e = false;
@@ -61,7 +61,7 @@ public class ViewPropertyAnimatorCompatSet {
 
     public void cancel() {
         if (this.e) {
-            Iterator<ViewPropertyAnimatorCompat> it = this.f1648a.iterator();
+            Iterator<ViewPropertyAnimatorCompat> it = this.f1600a.iterator();
             while (it.hasNext()) {
                 it.next().cancel();
             }
@@ -71,21 +71,21 @@ public class ViewPropertyAnimatorCompatSet {
 
     public ViewPropertyAnimatorCompatSet play(ViewPropertyAnimatorCompat viewPropertyAnimatorCompat) {
         if (!this.e) {
-            this.f1648a.add(viewPropertyAnimatorCompat);
+            this.f1600a.add(viewPropertyAnimatorCompat);
         }
         return this;
     }
 
     public ViewPropertyAnimatorCompatSet playSequentially(ViewPropertyAnimatorCompat viewPropertyAnimatorCompat, ViewPropertyAnimatorCompat viewPropertyAnimatorCompat2) {
-        this.f1648a.add(viewPropertyAnimatorCompat);
+        this.f1600a.add(viewPropertyAnimatorCompat);
         viewPropertyAnimatorCompat2.setStartDelay(viewPropertyAnimatorCompat.getDuration());
-        this.f1648a.add(viewPropertyAnimatorCompat2);
+        this.f1600a.add(viewPropertyAnimatorCompat2);
         return this;
     }
 
     public ViewPropertyAnimatorCompatSet setDuration(long j) {
         if (!this.e) {
-            this.f1649c = j;
+            this.f1601c = j;
         }
         return this;
     }
@@ -108,10 +108,10 @@ public class ViewPropertyAnimatorCompatSet {
         if (this.e) {
             return;
         }
-        Iterator<ViewPropertyAnimatorCompat> it = this.f1648a.iterator();
+        Iterator<ViewPropertyAnimatorCompat> it = this.f1600a.iterator();
         while (it.hasNext()) {
             ViewPropertyAnimatorCompat next = it.next();
-            long j = this.f1649c;
+            long j = this.f1601c;
             if (j >= 0) {
                 next.setDuration(j);
             }

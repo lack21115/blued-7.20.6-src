@@ -9,13 +9,13 @@ public interface h extends w {
     @Deprecated
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7378a = 1;
+    public static final int f4539a = 1;
     @Deprecated
     public static final int b = 2;
     @Deprecated
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7379c = 3;
+    public static final int f4540c = 3;
     @Deprecated
     public static final int d = 4;
     @Deprecated
@@ -40,17 +40,17 @@ public interface h extends w {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final x.b f7435a;
+        public final x.b f4596a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final Object f7436c;
+        public final Object f4597c;
 
         @Deprecated
         private c(x.b bVar, int i, Object obj) {
-            this.f7435a = bVar;
+            this.f4596a = bVar;
             this.b = i;
-            this.f7436c = obj;
+            this.f4597c = obj;
         }
     }
 

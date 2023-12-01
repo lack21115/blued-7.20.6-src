@@ -39,59 +39,59 @@ import java.util.Stack;
 public class WebClientWrapper extends WebViewClient {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static int f1190 = -9;
+    private static int f1143 = -9;
 
     /* renamed from: ˎ  reason: contains not printable characters */
-    private static final long f1191 = 3000;
+    private static final long f1144 = 3000;
 
     /* renamed from: ʻ  reason: contains not printable characters */
-    private WeakReference<Activity> f1192;
+    private WeakReference<Activity> f1145;
 
     /* renamed from: ʽ  reason: contains not printable characters */
-    private String f1194;
+    private String f1147;
 
     /* renamed from: ʾ  reason: contains not printable characters */
-    private View f1195;
+    private View f1148;
 
     /* renamed from: ˈ  reason: contains not printable characters */
-    private int f1197;
+    private int f1150;
 
     /* renamed from: ˉ  reason: contains not printable characters */
-    private String f1198;
+    private String f1151;
 
     /* renamed from: ι  reason: contains not printable characters */
-    private FrameLayout f1203;
+    private FrameLayout f1156;
 
     /* renamed from: ᐝ  reason: contains not printable characters */
-    private WebViewClient f1204;
+    private WebViewClient f1157;
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    private long f1199 = 0;
+    private long f1152 = 0;
 
     /* renamed from: ˏ  reason: contains not printable characters */
-    private final Stack<String> f1201 = new Stack<>();
+    private final Stack<String> f1154 = new Stack<>();
 
     /* renamed from: ʼ  reason: contains not printable characters */
-    private boolean f1193 = false;
+    private boolean f1146 = false;
 
     /* renamed from: ͺ  reason: contains not printable characters */
-    private boolean f1202 = false;
+    private boolean f1155 = false;
 
     /* renamed from: ʿ  reason: contains not printable characters */
-    private boolean f1196 = false;
+    private boolean f1149 = false;
 
     /* renamed from: ˌ  reason: contains not printable characters */
-    private final Handler f1200 = new Handler(Looper.getMainLooper());
+    private final Handler f1153 = new Handler(Looper.getMainLooper());
 
     public WebClientWrapper(Context context) {
         if (context instanceof Activity) {
-            this.f1192 = new WeakReference<>((Activity) context);
+            this.f1145 = new WeakReference<>((Activity) context);
         }
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private Pair<Integer, Integer> m12271(ViewGroup viewGroup) {
-        Pair<Integer, Integer> m12271;
+    private Pair<Integer, Integer> m9221(ViewGroup viewGroup) {
+        Pair<Integer, Integer> m9221;
         int i = 0;
         while (true) {
             int i2 = i;
@@ -103,8 +103,8 @@ public class WebClientWrapper extends WebViewClient {
                 int[] iArr = new int[2];
                 childAt.getLocationOnScreen(iArr);
                 return new Pair<>(Integer.valueOf(iArr[1]), Integer.valueOf(childAt.getHeight()));
-            } else if ((childAt instanceof ViewGroup) && (m12271 = m12271((ViewGroup) childAt)) != null) {
-                return m12271;
+            } else if ((childAt instanceof ViewGroup) && (m9221 = m9221((ViewGroup) childAt)) != null) {
+                return m9221;
             } else {
                 i = i2 + 1;
             }
@@ -113,7 +113,7 @@ public class WebClientWrapper extends WebViewClient {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ˊ  reason: contains not printable characters */
-    public View m12272(Activity activity) {
+    public View m9222(Activity activity) {
         try {
             return activity.getWindow().getDecorView().getRootView();
         } catch (Exception e) {
@@ -124,78 +124,78 @@ public class WebClientWrapper extends WebViewClient {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ˊ  reason: contains not printable characters */
-    public void m12275(View view) {
-        Pair<Integer, Integer> m12271;
-        if (this.f1203 == null) {
-            this.f1203 = new FrameLayout(view.getContext());
+    public void m9225(View view) {
+        Pair<Integer, Integer> m9221;
+        if (this.f1156 == null) {
+            this.f1156 = new FrameLayout(view.getContext());
         }
-        if (this.f1195 == null) {
-            this.f1195 = new LoadingView(view.getContext());
-            if (TextUtils.isEmpty(this.f1198)) {
-                int i = this.f1197;
+        if (this.f1148 == null) {
+            this.f1148 = new LoadingView(view.getContext());
+            if (TextUtils.isEmpty(this.f1151)) {
+                int i = this.f1150;
                 if (i > 0) {
-                    ((LoadingView) this.f1195).setLoadImage(i);
+                    ((LoadingView) this.f1148).setLoadImage(i);
                 } else {
-                    ((LoadingView) this.f1195).setImage();
+                    ((LoadingView) this.f1148).setImage();
                 }
             } else {
-                ((LoadingView) this.f1195).setLoadImage(this.f1198);
+                ((LoadingView) this.f1148).setLoadImage(this.f1151);
             }
         }
-        if (this.f1195.getParent() == null || this.f1195.getParent() != this.f1203) {
-            if (this.f1195.getParent() != null) {
-                ((ViewGroup) this.f1195.getParent()).removeView(this.f1195);
+        if (this.f1148.getParent() == null || this.f1148.getParent() != this.f1156) {
+            if (this.f1148.getParent() != null) {
+                ((ViewGroup) this.f1148.getParent()).removeView(this.f1148);
             }
-            ViewGroup.LayoutParams layoutParams = this.f1195.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = this.f1148.getLayoutParams();
             FrameLayout.LayoutParams layoutParams2 = layoutParams;
             if (layoutParams == null) {
                 layoutParams2 = new FrameLayout.LayoutParams(-2, -2);
             }
             FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(layoutParams2);
             layoutParams3.gravity = 17;
-            this.f1203.addView(this.f1195, layoutParams3);
+            this.f1156.addView(this.f1148, layoutParams3);
         }
-        if (this.f1203.getParent() == null || this.f1203.getParent() != view) {
+        if (this.f1156.getParent() == null || this.f1156.getParent() != view) {
             ViewGroup viewGroup = (ViewGroup) view;
             FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(-1, -1, 17);
-            if (this.f1196 && (m12271 = m12271(viewGroup)) != null) {
+            if (this.f1149 && (m9221 = m9221(viewGroup)) != null) {
                 int[] iArr = new int[2];
                 view.getLocationOnScreen(iArr);
-                layoutParams4.topMargin = m12271.first.intValue() - iArr[1];
-                layoutParams4.height = m12271.second.intValue();
+                layoutParams4.topMargin = m9221.first.intValue() - iArr[1];
+                layoutParams4.height = m9221.second.intValue();
                 layoutParams4.gravity = 48;
             }
-            this.f1203.setClickable(false);
-            viewGroup.addView(this.f1203, layoutParams4);
+            this.f1156.setClickable(false);
+            viewGroup.addView(this.f1156, layoutParams4);
         }
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private void m12276(WebView webView) {
-        if (System.currentTimeMillis() - this.f1199 > 3000) {
-            this.f1199 = System.currentTimeMillis();
+    private void m9226(WebView webView) {
+        if (System.currentTimeMillis() - this.f1152 > 3000) {
+            this.f1152 = System.currentTimeMillis();
             SessionManager.unregister(webView.getContext());
             webView.reload();
         }
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private void m12278(String str) {
+    private void m9228(String str) {
         if (TextUtils.isEmpty(str) || str.equals(getUrl())) {
             return;
         }
         if (WebParameter.isYouzanPage(str)) {
-            this.f1201.push(str);
-        } else if (TextUtils.isEmpty(this.f1194)) {
+            this.f1154.push(str);
+        } else if (TextUtils.isEmpty(this.f1147)) {
         } else {
-            this.f1201.push(this.f1194);
-            this.f1194 = null;
+            this.f1154.push(this.f1147);
+            this.f1147 = null;
         }
     }
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void doUpdateVisitedHistory(WebView webView, String str, boolean z) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.doUpdateVisitedHistory(webView, str, z);
         } else {
@@ -204,7 +204,7 @@ public class WebClientWrapper extends WebViewClient {
     }
 
     protected final Activity getActivity() {
-        WeakReference<Activity> weakReference = this.f1192;
+        WeakReference<Activity> weakReference = this.f1145;
         if (weakReference != null) {
             return weakReference.get();
         }
@@ -212,18 +212,18 @@ public class WebClientWrapper extends WebViewClient {
     }
 
     public String getUrl() {
-        if (this.f1201.size() > 0) {
-            return this.f1201.peek();
+        if (this.f1154.size() > 0) {
+            return this.f1154.peek();
         }
         return null;
     }
 
     public void hideProgressBar() {
-        this.f1200.post(new Runnable() { // from class: com.youzan.androidsdkx5.plugin.WebClientWrapper.2
+        this.f1153.post(new Runnable() { // from class: com.youzan.androidsdkx5.plugin.WebClientWrapper.2
             @Override // java.lang.Runnable
             public void run() {
-                if (WebClientWrapper.this.f1203 != null && WebClientWrapper.this.f1203.isShown()) {
-                    WebClientWrapper.this.f1203.setVisibility(8);
+                if (WebClientWrapper.this.f1156 != null && WebClientWrapper.this.f1156.isShown()) {
+                    WebClientWrapper.this.f1156.setVisibility(8);
                 }
             }
         });
@@ -231,7 +231,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onFormResubmission(WebView webView, Message message, Message message2) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onFormResubmission(webView, message, message2);
         } else {
@@ -241,7 +241,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onLoadResource(WebView webView, String str) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onLoadResource(webView, str);
         } else {
@@ -251,14 +251,14 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onPageFinished(WebView webView, String str) {
-        if (this.f1193) {
-            this.f1193 = false;
+        if (this.f1146) {
+            this.f1146 = false;
         }
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onPageFinished(webView, str);
         }
-        if (this.f1202) {
+        if (this.f1155) {
             YouzanLog.d("finish loading by onPageFinished");
             hideProgressBar();
         }
@@ -267,15 +267,15 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onPageStarted(WebView webView, String str, Bitmap bitmap) {
-        if (this.f1193 && this.f1201.size() > 0) {
-            this.f1194 = this.f1201.pop();
+        if (this.f1146 && this.f1154.size() > 0) {
+            this.f1147 = this.f1154.pop();
         }
-        m12278(str);
-        this.f1193 = true;
-        if ((webView.getContext() instanceof Activity) && this.f1202) {
+        m9228(str);
+        this.f1146 = true;
+        if ((webView.getContext() instanceof Activity) && this.f1155) {
             showProgressBar((Activity) webView.getContext());
         }
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onPageStarted(webView, str, bitmap);
         }
@@ -283,7 +283,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onReceivedClientCertRequest(WebView webView, ClientCertRequest clientCertRequest) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onReceivedClientCertRequest(webView, clientCertRequest);
         } else {
@@ -293,11 +293,11 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onReceivedError(WebView webView, int i, String str, String str2) {
-        if (Build.VERSION.SDK_INT < 23 && i == f1190) {
-            m12276(webView);
+        if (Build.VERSION.SDK_INT < 23 && i == f1143) {
+            m9226(webView);
             return;
         }
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onReceivedError(webView, i, str, str2);
         } else {
@@ -307,11 +307,11 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-        if (Build.VERSION.SDK_INT >= 23 && webResourceError != null && webResourceError.getErrorCode() == f1190) {
-            m12276(webView);
+        if (Build.VERSION.SDK_INT >= 23 && webResourceError != null && webResourceError.getErrorCode() == f1143) {
+            m9226(webView);
             return;
         }
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onReceivedError(webView, webResourceRequest, webResourceError);
         } else {
@@ -321,7 +321,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onReceivedHttpAuthRequest(WebView webView, HttpAuthHandler httpAuthHandler, String str, String str2) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onReceivedHttpAuthRequest(webView, httpAuthHandler, str, str2);
         } else {
@@ -331,7 +331,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
         } else {
@@ -341,7 +341,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onReceivedLoginRequest(WebView webView, String str, String str2, String str3) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onReceivedLoginRequest(webView, str, str2, str3);
         } else {
@@ -351,7 +351,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onReceivedSslError(webView, sslErrorHandler, sslError);
         } else {
@@ -361,7 +361,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onScaleChanged(WebView webView, float f, float f2) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onScaleChanged(webView, f, f2);
         } else {
@@ -371,7 +371,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onTooManyRedirects(WebView webView, Message message, Message message2) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onTooManyRedirects(webView, message, message2);
         } else {
@@ -381,7 +381,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public void onUnhandledKeyEvent(WebView webView, KeyEvent keyEvent) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             webViewClient.onUnhandledKeyEvent(webView, keyEvent);
         } else {
@@ -390,7 +390,7 @@ public class WebClientWrapper extends WebViewClient {
     }
 
     public boolean pageCanGoBack() {
-        return this.f1201.size() >= 2;
+        return this.f1154.size() >= 2;
     }
 
     public final boolean pageGoBack(WebView webView) {
@@ -406,9 +406,9 @@ public class WebClientWrapper extends WebViewClient {
     }
 
     public final String popBackUrl() {
-        if (this.f1201.size() >= 2) {
-            this.f1201.pop();
-            return this.f1201.pop();
+        if (this.f1154.size() >= 2) {
+            this.f1154.pop();
+            return this.f1154.pop();
         }
         return null;
     }
@@ -417,32 +417,32 @@ public class WebClientWrapper extends WebViewClient {
         if (webViewClient instanceof WebClientWrapper) {
             return;
         }
-        this.f1204 = webViewClient;
+        this.f1157 = webViewClient;
     }
 
     public void setLoadingImage(int i) {
-        this.f1197 = i;
+        this.f1150 = i;
     }
 
     public void setLoadingImage(String str) {
-        this.f1198 = str;
+        this.f1151 = str;
     }
 
     public void setLoadingView(View view) {
-        this.f1195 = view;
+        this.f1148 = view;
     }
 
     public void setNeedLoading(boolean z) {
-        this.f1202 = z;
+        this.f1155 = z;
     }
 
     public void setOnlyWebRegionLoadingShow(boolean z) {
-        this.f1196 = z;
+        this.f1149 = z;
     }
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             return webViewClient.shouldInterceptRequest(webView, webResourceRequest);
         }
@@ -451,7 +451,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         if (webViewClient != null) {
             return webViewClient.shouldInterceptRequest(webView, str);
         }
@@ -460,7 +460,7 @@ public class WebClientWrapper extends WebViewClient {
 
     @Override // com.tencent.smtt.sdk.WebViewClient
     public boolean shouldOverrideKeyEvent(WebView webView, KeyEvent keyEvent) {
-        WebViewClient webViewClient = this.f1204;
+        WebViewClient webViewClient = this.f1157;
         return webViewClient != null ? webViewClient.shouldOverrideKeyEvent(webView, keyEvent) : super.shouldOverrideKeyEvent(webView, keyEvent);
     }
 
@@ -480,7 +480,7 @@ public class WebClientWrapper extends WebViewClient {
             if (WebParameter.isBlockHost(parse.getHost())) {
                 return false;
             }
-            WebViewClient webViewClient = this.f1204;
+            WebViewClient webViewClient = this.f1157;
             if ((webViewClient != null && webViewClient.shouldOverrideUrlLoading(webView, str)) || SchemeIntent.handleAlive(context, parse)) {
                 z = true;
             }
@@ -490,25 +490,25 @@ public class WebClientWrapper extends WebViewClient {
     }
 
     public void showProgressBar(final Activity activity) {
-        this.f1200.post(new Runnable() { // from class: com.youzan.androidsdkx5.plugin.WebClientWrapper.1
+        this.f1153.post(new Runnable() { // from class: com.youzan.androidsdkx5.plugin.WebClientWrapper.1
             @Override // java.lang.Runnable
             public void run() {
-                View m12272 = WebClientWrapper.this.m12272(activity);
-                if (m12272 == null) {
+                View m9222 = WebClientWrapper.this.m9222(activity);
+                if (m9222 == null) {
                     return;
                 }
-                WebClientWrapper.this.m12275(m12272);
-                if (WebClientWrapper.this.f1203.getVisibility() == 8) {
-                    WebClientWrapper.this.f1203.setVisibility(0);
+                WebClientWrapper.this.m9225(m9222);
+                if (WebClientWrapper.this.f1156.getVisibility() == 8) {
+                    WebClientWrapper.this.f1156.setVisibility(0);
                 }
             }
         });
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    String m12279() {
-        if (this.f1201.size() > 0) {
-            return this.f1201.pop();
+    String m9229() {
+        if (this.f1154.size() > 0) {
+            return this.f1154.pop();
         }
         return null;
     }

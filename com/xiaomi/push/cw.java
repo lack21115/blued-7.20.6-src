@@ -7,20 +7,20 @@ import java.util.List;
 public abstract class cw {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41322a;
+    private int f27631a;
 
     public cw(int i) {
-        this.f41322a = i;
+        this.f27631a = i;
     }
 
     public int a() {
-        return this.f41322a;
+        return this.f27631a;
     }
 
     public abstract String a(Context context, String str, List<bg> list);
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m11609a(Context context, String str, List<bg> list) {
+    public boolean m8559a(Context context, String str, List<bg> list) {
         return true;
     }
 }

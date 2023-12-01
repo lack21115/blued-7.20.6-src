@@ -91,7 +91,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo1800clone() {
+        public BuilderType mo2030clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.mergeFrom(buildPartial());
             return buildertype;
@@ -200,7 +200,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
             FieldSet<ExtensionDescriptor> fieldSet = ((ExtendableMessage) this.instance).extensions;
             FieldSet<ExtensionDescriptor> fieldSet2 = fieldSet;
             if (fieldSet.isImmutable()) {
-                fieldSet2 = fieldSet.m6682clone();
+                fieldSet2 = fieldSet.m3675clone();
                 ((ExtendableMessage) this.instance).extensions = fieldSet2;
             }
             return fieldSet2;
@@ -240,7 +240,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         @Override // com.google.protobuf.GeneratedMessageLite.Builder
         protected void copyOnWriteInternal() {
             super.copyOnWriteInternal();
-            ((ExtendableMessage) this.instance).extensions = ((ExtendableMessage) this.instance).extensions.m6682clone();
+            ((ExtendableMessage) this.instance).extensions = ((ExtendableMessage) this.instance).extensions.m3675clone();
         }
 
         @Override // com.google.protobuf.GeneratedMessageLite.ExtendableMessageOrBuilder
@@ -404,7 +404,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
         /* JADX INFO: Access modifiers changed from: package-private */
         public FieldSet<ExtensionDescriptor> ensureExtensionsAreMutable() {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m6682clone();
+                this.extensions = this.extensions.m3675clone();
             }
             return this.extensions;
         }
@@ -457,7 +457,7 @@ public abstract class GeneratedMessageLite<MessageType extends GeneratedMessageL
 
         protected final void mergeExtensionFields(MessageType messagetype) {
             if (this.extensions.isImmutable()) {
-                this.extensions = this.extensions.m6682clone();
+                this.extensions = this.extensions.m3675clone();
             }
             this.extensions.mergeFrom(messagetype.extensions);
         }

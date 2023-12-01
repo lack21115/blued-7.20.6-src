@@ -14,7 +14,7 @@ public final class e extends b {
         super.a(new com.anythink.basead.e.c() { // from class: com.anythink.basead.d.e.1
             @Override // com.anythink.basead.e.c
             public final void onAdCacheLoaded() {
-                h hVar = new h(e.this.b, e.this.e, e.this.f5937c, e.this.f);
+                h hVar = new h(e.this.b, e.this.e, e.this.c, e.this.f);
                 com.anythink.basead.e.d dVar2 = dVar;
                 if (dVar2 != null) {
                     dVar2.onNativeAdLoaded(hVar);

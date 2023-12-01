@@ -2,18 +2,19 @@ package com.soft.blued.ui.msg;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.model.ChattingModel;
 import com.blued.android.chat.model.SessionModel;
-import com.blued.android.core.ui.ActivityFragmentActive;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.utils.AppUtils;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
@@ -47,7 +48,7 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
     public static final Companion b = new Companion(null);
 
     /* renamed from: c  reason: collision with root package name */
-    private BottomMenuPop f31912c;
+    private BottomMenuPop f18222c;
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/ServiceNumberListFragment$Companion.class */
@@ -61,13 +62,13 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
 
         public final void a(Context context) {
             Intrinsics.e(context, "context");
-            TerminalActivity.d(context, ServiceNumberListFragment.class, null);
+            TerminalActivity.d(context, ServiceNumberListFragment.class, (Bundle) null);
         }
     }
 
     private final void a(SessionModel sessionModel, int i) {
         ChatManager.getInstance().deleteSessionAndChatting((short) 2, sessionModel.sessionId);
-        ((ServiceNumberListViewModel) y()).dispatchAction(ServiceNumberListAction.RefreshNewMsg.f32598a);
+        y().dispatchAction(ServiceNumberListAction.RefreshNewMsg.f18907a);
         f().notifyDataSetChanged();
         LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NUMBER_DELETE).post(null);
     }
@@ -80,7 +81,7 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
             final String str = strArr[i2];
             i2++;
             BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-            menuItemInfo.f11214a = str;
+            menuItemInfo.a = str;
             final Context context = getContext();
             if (context != null) {
                 menuItemInfo.d = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceNumberListFragment$IbiXgS5TASzc_TqjmpH3GleBVvw
@@ -91,25 +92,25 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
                 };
                 arrayList.add(menuItemInfo);
                 BottomMenuPop bottomMenuPop = new BottomMenuPop(context);
-                this.f31912c = bottomMenuPop;
+                this.f18222c = bottomMenuPop;
                 if (bottomMenuPop != null) {
                     bottomMenuPop.b = arrayList;
                 }
-                new XPopup.Builder(context).a((BasePopupView) this.f31912c).h();
+                new XPopup.Builder(context).a(this.f18222c).h();
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceNumberListFragment this$0, ChattingModel chattingModel) {
-        Intrinsics.e(this$0, "this$0");
-        ((ServiceNumberListViewModel) this$0.y()).dispatchAction(ServiceNumberListAction.RefreshNewMsg.f32598a);
-        SubscribeNumberManager.f32449a.c();
+    public static final void a(ServiceNumberListFragment serviceNumberListFragment, ChattingModel chattingModel) {
+        Intrinsics.e(serviceNumberListFragment, "this$0");
+        serviceNumberListFragment.y().dispatchAction(ServiceNumberListAction.RefreshNewMsg.f18907a);
+        SubscribeNumberManager.f18759a.c();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceNumberListFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(ServiceNumberListFragment serviceNumberListFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(serviceNumberListFragment, "this$0");
         Object obj = baseQuickAdapter.getData().get(i);
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.chat.model.SessionModel");
@@ -117,57 +118,53 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
         SessionModel sessionModel = (SessionModel) obj;
         LogData logData = new LogData();
         logData.from = "none";
-        ChatHelperV4.a().a((Context) this$0.getActivity(), sessionModel.sessionId, sessionModel.nickName, sessionModel.avatar, sessionModel.vBadge, sessionModel.vipGrade, sessionModel.vipAnnual, sessionModel.vipExpLvl, Intrinsics.a(sessionModel.lastMsgFromDistance, (Object) ""), false, 0, 0, logData, BluedPreferences.eS() && !BluedPreferences.eQ(), new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""));
+        ChatHelperV4.a().a((Context) serviceNumberListFragment.getActivity(), sessionModel.sessionId, sessionModel.nickName, sessionModel.avatar, sessionModel.vBadge, sessionModel.vipGrade, sessionModel.vipAnnual, sessionModel.vipExpLvl, Intrinsics.a(sessionModel.lastMsgFromDistance, ""), false, 0, 0, logData, BluedPreferences.eS() && !BluedPreferences.eQ(), new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceNumberListFragment this$0, String s, Context context, SessionModel sessionModel, int i, View view) {
+    public static final void a(ServiceNumberListFragment serviceNumberListFragment, String str, Context context, SessionModel sessionModel, int i, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(s, "$s");
+        Intrinsics.e(serviceNumberListFragment, "this$0");
+        Intrinsics.e(str, "$s");
         Intrinsics.e(context, "$context");
         Intrinsics.e(sessionModel, "$sessionModel");
-        BottomMenuPop bottomMenuPop = this$0.f31912c;
+        BottomMenuPop bottomMenuPop = serviceNumberListFragment.f18222c;
         if (bottomMenuPop != null && bottomMenuPop != null) {
             bottomMenuPop.p();
         }
-        if (TextUtils.equals(s, context.getResources().getString(2131887471))) {
-            this$0.a(sessionModel, i);
+        if (TextUtils.equals(str, context.getResources().getString(2131887471))) {
+            serviceNumberListFragment.a(sessionModel, i);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean b(ServiceNumberListFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
+    public static final boolean b(ServiceNumberListFragment serviceNumberListFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(serviceNumberListFragment, "this$0");
         Object obj = baseQuickAdapter.getData().get(i);
         if (obj != null) {
             SessionModel sessionModel = (SessionModel) obj;
-            Object[] array = CollectionsKt.d(AppUtils.a(2131887471)).toArray(new String[0]);
+            Object[] array = CollectionsKt.d(new String[]{AppUtils.a(2131887471)}).toArray(new String[0]);
             Intrinsics.c(array, "items.toArray(arrayOf())");
-            this$0.a(sessionModel, (String[]) array, i);
+            serviceNumberListFragment.a(sessionModel, (String[]) array, i);
             return true;
         }
         throw new NullPointerException("null cannot be cast to non-null type com.blued.android.chat.model.SessionModel");
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public LinearLayoutManager g() {
         return new LinearLayoutManager(getContext());
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         return new ListConfig.Builder().c(false).b(false).a();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public BaseQuickAdapter<SessionModel, BaseViewHolder> i() {
-        ActivityFragmentActive fragmentActive = getFragmentActive();
+        IRequestHost fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
         return new ServiceNumberListAdapter(fragmentActive);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         Resources resources;
         super.m();
@@ -191,7 +188,7 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
         if (c2 != null) {
             c2.setNoDataImg(2131233626);
             c2.setNoDataBtnVisibility(8);
-            c2.setNoDataStr(R.string.msg_service_number_no_data);
+            c2.setNoDataStr((int) R.string.msg_service_number_no_data);
         }
         f().setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceNumberListFragment$yX2BajpHWg_OSUNEVNZPFkPrKkk
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemLongClickListener
@@ -203,10 +200,9 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         super.o();
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NEW_MSG, ChattingModel.class).observe(this, new Observer() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceNumberListFragment$KDDZd2Ze9GV0kFENuCTqeVHVSXo
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NEW_MSG, ChattingModel.class).observe((LifecycleOwner) this, new Observer() { // from class: com.soft.blued.ui.msg.-$$Lambda$ServiceNumberListFragment$KDDZd2Ze9GV0kFENuCTqeVHVSXo
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 ServiceNumberListFragment.a(ServiceNumberListFragment.this, (ChattingModel) obj);
@@ -214,15 +210,13 @@ public final class ServiceNumberListFragment extends BaseListFragment<ServiceNum
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
-        ((ServiceNumberListViewModel) y()).b();
+        y().b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
-        ((ServiceNumberListViewModel) y()).c();
+        y().c();
     }
 }

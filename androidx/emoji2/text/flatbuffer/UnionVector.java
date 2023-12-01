@@ -10,6 +10,6 @@ public final class UnionVector extends BaseVector {
     }
 
     public Table get(Table table, int i) {
-        return Table.a(table, a(i), this.f2849a);
+        return Table.a(table, a(i), this.f2801a);
     }
 }

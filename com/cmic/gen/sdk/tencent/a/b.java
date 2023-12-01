@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import com.cmic.gen.sdk.tencent.a.a;
 import com.cmic.gen.sdk.tencent.e.k;
 import com.cmic.gen.sdk.tencent.e.n;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.igexin.assist.sdk.AssistPushConsts;
 import org.json.JSONObject;
 
@@ -11,47 +12,48 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: c  reason: collision with root package name */
-    private static b f21580c;
+    private static b f7974c;
 
     /* renamed from: a  reason: collision with root package name */
-    private com.cmic.gen.sdk.tencent.a.a f21581a;
+    private com.cmic.gen.sdk.tencent.a.a f7975a;
     private final com.cmic.gen.sdk.tencent.a.a b;
     private volatile boolean d = false;
     private a e;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/cmic/gen/sdk/tencent/a/b$a.class */
-    interface a {
+    public interface a {
         void a(com.cmic.gen.sdk.tencent.a.a aVar);
     }
 
     private b(boolean z) {
-        com.cmic.gen.sdk.tencent.a.a a2 = new a.C0328a().a();
+        com.cmic.gen.sdk.tencent.a.a a2 = new a.C0158a().a();
         this.b = a2;
         if (z) {
-            this.f21581a = a2;
+            this.f7975a = a2;
         } else {
-            this.f21581a = d();
+            this.f7975a = d();
         }
     }
 
     public static b a(boolean z) {
-        if (f21580c == null) {
+        if (f7974c == null) {
             synchronized (b.class) {
                 try {
-                    if (f21580c == null) {
-                        f21580c = new b(z);
+                    if (f7974c == null) {
+                        f7974c = new b(z);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21580c;
+        return f7974c;
     }
 
     private String a(String str, String str2) {
         String str3;
-        String[] split = str.split("&");
+        String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -114,7 +116,7 @@ public class b {
                 a(jSONObject2, "CLOSE_M008_SDKVERSION_LIST", "0", b);
                 a(jSONObject2, "CLOSE_M008_APPID_LIST", "0", b);
                 if (jSONObject2.has("LOGS_CONTROL")) {
-                    String[] split = jSONObject2.getString("LOGS_CONTROL").replace("h", "").split("&");
+                    String[] split = jSONObject2.getString("LOGS_CONTROL").replace("h", "").split(ContainerUtils.FIELD_DELIMITER);
                     if (split.length == 2 && !TextUtils.isEmpty(split[0]) && !TextUtils.isEmpty(split[1])) {
                         try {
                             int parseInt = Integer.parseInt(split[0]);
@@ -170,9 +172,9 @@ public class b {
                     if ("103000".equals(str)) {
                         b.this.a(jSONObject);
                         k.a("sdk_config_version", com.cmic.gen.sdk.tencent.auth.c.SDK_VERSION);
-                        b.this.f21581a = b.this.d();
+                        b.this.f7975a = b.this.d();
                         if (b.this.e != null) {
-                            b.this.e.a(b.this.f21581a);
+                            b.this.e.a(b.this.f7975a);
                         }
                     }
                 } catch (Exception e) {
@@ -185,7 +187,7 @@ public class b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public com.cmic.gen.sdk.tencent.a.a d() {
-        return new a.C0328a().a(d.b(this.b.a())).c(d.a(this.b.c())).b(d.b(this.b.b())).d(d.c(this.b.d())).d(d.a(this.b.h())).e(d.b(this.b.i())).a(d.e(this.b.e())).b(d.d(this.b.f())).c(d.c(this.b.g())).f(d.f(this.b.j())).a(d.a(this.b.k())).b(d.b(this.b.l())).a();
+        return new a.C0158a().a(d.b(this.b.a())).c(d.a(this.b.c())).b(d.b(this.b.b())).d(d.c(this.b.d())).d(d.a(this.b.h())).e(d.b(this.b.i())).a(d.e(this.b.e())).b(d.d(this.b.f())).c(d.c(this.b.g())).f(d.f(this.b.j())).a(d.a(this.b.k())).b(d.b(this.b.l())).a();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -213,7 +215,7 @@ public class b {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public com.cmic.gen.sdk.tencent.a.a b() {
-        return this.f21581a;
+        return this.f7975a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

@@ -9,12 +9,8 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/backpack/observer/LiveGiftBackpackItemObserver.class */
 public final class LiveGiftBackpackItemObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13929a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final LiveGiftBackpackItemObserver f13930c = new LiveGiftBackpackItemObserver();
+    public static final Companion a = new Companion(null);
+    private static final LiveGiftBackpackItemObserver c = new LiveGiftBackpackItemObserver();
     private final ArrayList<ILiveBackpackObserver> b = new ArrayList<>();
 
     @Metadata
@@ -29,7 +25,7 @@ public final class LiveGiftBackpackItemObserver {
 
         @JvmStatic
         public final LiveGiftBackpackItemObserver a() {
-            return LiveGiftBackpackItemObserver.f13930c;
+            return LiveGiftBackpackItemObserver.c;
         }
     }
 
@@ -45,7 +41,7 @@ public final class LiveGiftBackpackItemObserver {
 
     @JvmStatic
     public static final LiveGiftBackpackItemObserver a() {
-        return f13929a.a();
+        return a.a();
     }
 
     public final void a(ILiveBackpackObserver iLiveBackpackObserver) {

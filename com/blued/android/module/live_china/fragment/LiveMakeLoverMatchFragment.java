@@ -25,13 +25,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMakeLoverMatchFragment.class */
 public class LiveMakeLoverMatchFragment extends MvpFragment<LiveMakeLoverMatchPresent> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    View f13036a;
+    View a;
     View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    View f13037c;
+    View c;
     ImageView d;
     ImageView e;
     ImageView f;
@@ -87,9 +83,9 @@ public class LiveMakeLoverMatchFragment extends MvpFragment<LiveMakeLoverMatchPr
     }
 
     private void d() {
-        this.f13036a = this.i.findViewById(R.id.fl_make_lover_match);
+        this.a = this.i.findViewById(R.id.fl_make_lover_match);
         this.b = this.i.findViewById(R.id.fl_avatar_left);
-        this.f13037c = this.i.findViewById(R.id.fl_avatar_right);
+        this.c = this.i.findViewById(R.id.fl_avatar_right);
         this.d = (ImageView) this.i.findViewById(R.id.iv_avatar_left);
         this.e = (ImageView) this.i.findViewById(R.id.iv_avatar_right);
         this.f = (ImageView) this.i.findViewById(R.id.iv_anim);
@@ -115,14 +111,14 @@ public class LiveMakeLoverMatchFragment extends MvpFragment<LiveMakeLoverMatchPr
             }
         }).a(this.f);
         final int i = AppInfo.l;
-        final int a2 = DensityUtils.a(getContext(), 75.0f);
-        int a3 = DensityUtils.a(getContext(), 20.0f);
-        final int i2 = (i / 2) - (((a2 * 2) - a3) / 2);
+        final int a = DensityUtils.a(getContext(), 75.0f);
+        int a2 = DensityUtils.a(getContext(), 20.0f);
+        final int i2 = (i / 2) - (((a * 2) - a2) / 2);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.setDuration(1000L);
         ofFloat.setRepeatCount(0);
         ofFloat.setInterpolator(new DecelerateInterpolator());
-        final int i3 = (i - ((i2 + a2) - a3)) - a2;
+        final int i3 = (i - ((i2 + a) - a2)) - a;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.fragment.LiveMakeLoverMatchFragment.2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -130,13 +126,13 @@ public class LiveMakeLoverMatchFragment extends MvpFragment<LiveMakeLoverMatchPr
                 if (LiveMakeLoverMatchFragment.this.b != null) {
                     LiveMakeLoverMatchFragment.this.b.setX(i2 * floatValue);
                 }
-                if (LiveMakeLoverMatchFragment.this.f13037c != null) {
-                    LiveMakeLoverMatchFragment.this.f13037c.setX((i - (i3 * floatValue)) - a2);
+                if (LiveMakeLoverMatchFragment.this.c != null) {
+                    LiveMakeLoverMatchFragment.this.c.setX((i - (i3 * floatValue)) - a);
                 }
             }
         });
         ofFloat.start();
-        this.f13036a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveMakeLoverMatchFragment.3
+        this.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveMakeLoverMatchFragment.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -200,7 +196,7 @@ public class LiveMakeLoverMatchFragment extends MvpFragment<LiveMakeLoverMatchPr
 
     public LiveMakeLoverOkDialogFragment b() {
         if (getParentFragment() instanceof LiveMakeLoverOkDialogFragment) {
-            return (LiveMakeLoverOkDialogFragment) getParentFragment();
+            return getParentFragment();
         }
         return null;
     }
@@ -221,13 +217,13 @@ public class LiveMakeLoverMatchFragment extends MvpFragment<LiveMakeLoverMatchPr
         Tracker.onClick(view);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         DialogUtils.b(this.s);

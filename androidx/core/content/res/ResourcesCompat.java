@@ -23,11 +23,11 @@ public final class ResourcesCompat {
     public static final int ID_NULL = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<TypedValue> f2435a = new ThreadLocal<>();
+    private static final ThreadLocal<TypedValue> f2387a = new ThreadLocal<>();
     private static final WeakHashMap<ColorStateListCacheKey, SparseArray<ColorStateListCacheEntry>> b = new WeakHashMap<>(0);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f2436c = new Object();
+    private static final Object f2388c = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/content/res/ResourcesCompat$Api23Impl.class */
@@ -45,11 +45,11 @@ public final class ResourcesCompat {
     public static class ColorStateListCacheEntry {
 
         /* renamed from: a  reason: collision with root package name */
-        final ColorStateList f2437a;
+        final ColorStateList f2389a;
         final Configuration b;
 
         ColorStateListCacheEntry(ColorStateList colorStateList, Configuration configuration) {
-            this.f2437a = colorStateList;
+            this.f2389a = colorStateList;
             this.b = configuration;
         }
     }
@@ -59,11 +59,11 @@ public final class ResourcesCompat {
     public static final class ColorStateListCacheKey {
 
         /* renamed from: a  reason: collision with root package name */
-        final Resources f2438a;
+        final Resources f2390a;
         final Resources.Theme b;
 
         ColorStateListCacheKey(Resources resources, Resources.Theme theme) {
-            this.f2438a = resources;
+            this.f2390a = resources;
             this.b = theme;
         }
 
@@ -75,11 +75,11 @@ public final class ResourcesCompat {
                 return false;
             }
             ColorStateListCacheKey colorStateListCacheKey = (ColorStateListCacheKey) obj;
-            return this.f2438a.equals(colorStateListCacheKey.f2438a) && ObjectsCompat.equals(this.b, colorStateListCacheKey.b);
+            return this.f2390a.equals(colorStateListCacheKey.f2390a) && ObjectsCompat.equals(this.b, colorStateListCacheKey.b);
         }
 
         public int hashCode() {
-            return ObjectsCompat.hash(this.f2438a, this.b);
+            return ObjectsCompat.hash(this.f2390a, this.b);
         }
     }
 
@@ -133,18 +133,18 @@ public final class ResourcesCompat {
         static class ImplApi23 {
 
             /* renamed from: a  reason: collision with root package name */
-            private static final Object f2441a = new Object();
+            private static final Object f2393a = new Object();
             private static Method b;
 
             /* renamed from: c  reason: collision with root package name */
-            private static boolean f2442c;
+            private static boolean f2394c;
 
             private ImplApi23() {
             }
 
             static void a(Resources.Theme theme) {
-                synchronized (f2441a) {
-                    if (!f2442c) {
+                synchronized (f2393a) {
+                    if (!f2394c) {
                         try {
                             Method declaredMethod = Resources.Theme.class.getDeclaredMethod("rebase", new Class[0]);
                             b = declaredMethod;
@@ -152,7 +152,7 @@ public final class ResourcesCompat {
                         } catch (NoSuchMethodException e) {
                             Log.i("ResourcesCompat", "Failed to retrieve rebase() method", e);
                         }
-                        f2442c = true;
+                        f2394c = true;
                     }
                     if (b != null) {
                         try {
@@ -205,11 +205,11 @@ public final class ResourcesCompat {
 
     private static ColorStateList a(ColorStateListCacheKey colorStateListCacheKey, int i) {
         ColorStateListCacheEntry colorStateListCacheEntry;
-        synchronized (f2436c) {
+        synchronized (f2388c) {
             SparseArray<ColorStateListCacheEntry> sparseArray = b.get(colorStateListCacheKey);
             if (sparseArray != null && sparseArray.size() > 0 && (colorStateListCacheEntry = sparseArray.get(i)) != null) {
-                if (colorStateListCacheEntry.b.equals(colorStateListCacheKey.f2438a.getConfiguration())) {
-                    return colorStateListCacheEntry.f2437a;
+                if (colorStateListCacheEntry.b.equals(colorStateListCacheKey.f2390a.getConfiguration())) {
+                    return colorStateListCacheEntry.f2389a;
                 }
                 sparseArray.remove(i);
             }
@@ -245,24 +245,24 @@ public final class ResourcesCompat {
     }
 
     private static TypedValue a() {
-        TypedValue typedValue = f2435a.get();
+        TypedValue typedValue = f2387a.get();
         TypedValue typedValue2 = typedValue;
         if (typedValue == null) {
             typedValue2 = new TypedValue();
-            f2435a.set(typedValue2);
+            f2387a.set(typedValue2);
         }
         return typedValue2;
     }
 
     private static void a(ColorStateListCacheKey colorStateListCacheKey, int i, ColorStateList colorStateList) {
-        synchronized (f2436c) {
+        synchronized (f2388c) {
             SparseArray<ColorStateListCacheEntry> sparseArray = b.get(colorStateListCacheKey);
             SparseArray<ColorStateListCacheEntry> sparseArray2 = sparseArray;
             if (sparseArray == null) {
                 sparseArray2 = new SparseArray<>();
                 b.put(colorStateListCacheKey, sparseArray2);
             }
-            sparseArray2.append(i, new ColorStateListCacheEntry(colorStateList, colorStateListCacheKey.f2438a.getConfiguration()));
+            sparseArray2.append(i, new ColorStateListCacheEntry(colorStateList, colorStateListCacheKey.f2390a.getConfiguration()));
         }
     }
 

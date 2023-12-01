@@ -10,7 +10,7 @@ import okio.ByteString;
 public final class s extends com.heytap.nearx.a.a.b<s, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<s> f26363c = new b();
+    public static final com.heytap.nearx.a.a.e<s> f12675c = new b();
     public static final Boolean d = false;
     public static final n e = n.HORIZONTAL;
     public static final c f = c.UNKNOWN;
@@ -35,7 +35,7 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
     public static final class a extends b.a<s, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public String f26364c;
+        public String f12676c;
         public List<f> d = com.heytap.nearx.a.a.a.b.a();
         public Boolean e;
         public n f;
@@ -77,7 +77,7 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
         }
 
         public a a(String str) {
-            this.f26364c = str;
+            this.f12676c = str;
             return this;
         }
 
@@ -89,9 +89,9 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
         public s b() {
             Boolean bool;
             j jVar;
-            String str = this.f26364c;
+            String str = this.f12676c;
             if (str == null || (bool = this.e) == null || (jVar = this.k) == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f26364c, "posId", this.e, "isConcurrentEnable", this.k, "distributionMode");
+                throw com.heytap.nearx.a.a.a.b.a(this.f12676c, "posId", this.e, "isConcurrentEnable", this.k, "distributionMode");
             }
             return new s(str, this.d, bool, this.f, this.g, this.h, this.i, this.j, jVar, this.l, super.a());
         }
@@ -111,17 +111,17 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
         @Override // com.heytap.nearx.a.a.e
         public int a(s sVar) {
             int a2 = com.heytap.nearx.a.a.e.p.a(1, (int) sVar.l);
-            int a3 = f.f26337c.a().a(2, (int) sVar.m);
-            int a4 = com.heytap.nearx.a.a.e.f22261c.a(3, (int) sVar.n);
+            int a3 = f.f12649c.a().a(2, (int) sVar.m);
+            int a4 = com.heytap.nearx.a.a.e.f8653c.a(3, (int) sVar.n);
             int i = 0;
-            int a5 = sVar.o != null ? n.f26354c.a(4, (int) sVar.o) : 0;
+            int a5 = sVar.o != null ? n.f12666c.a(4, (int) sVar.o) : 0;
             int a6 = sVar.p != null ? c.j.a(5, (int) sVar.p) : 0;
             int a7 = sVar.q != null ? com.heytap.nearx.a.a.e.i.a(6, (int) sVar.q) : 0;
             int a8 = sVar.r != null ? com.heytap.nearx.a.a.e.g.a(7, (int) sVar.r) : 0;
-            int a9 = sVar.s != null ? com.heytap.nearx.a.a.e.f22261c.a(8, (int) sVar.s) : 0;
+            int a9 = sVar.s != null ? com.heytap.nearx.a.a.e.f8653c.a(8, (int) sVar.s) : 0;
             int a10 = j.e.a(9, (int) sVar.t);
             if (sVar.u != null) {
-                i = com.heytap.nearx.a.a.e.f22261c.a(10, (int) sVar.u);
+                i = com.heytap.nearx.a.a.e.f8653c.a(10, (int) sVar.u);
             }
             return a9 + a4 + a2 + a3 + a5 + a6 + a7 + a8 + a10 + i + sVar.a().size();
         }
@@ -129,10 +129,10 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
         @Override // com.heytap.nearx.a.a.e
         public void a(com.heytap.nearx.a.a.g gVar, s sVar) throws IOException {
             com.heytap.nearx.a.a.e.p.a(gVar, 1, sVar.l);
-            f.f26337c.a().a(gVar, 2, sVar.m);
-            com.heytap.nearx.a.a.e.f22261c.a(gVar, 3, sVar.n);
+            f.f12649c.a().a(gVar, 2, sVar.m);
+            com.heytap.nearx.a.a.e.f8653c.a(gVar, 3, sVar.n);
             if (sVar.o != null) {
-                n.f26354c.a(gVar, 4, sVar.o);
+                n.f12666c.a(gVar, 4, sVar.o);
             }
             if (sVar.p != null) {
                 c.j.a(gVar, 5, sVar.p);
@@ -144,11 +144,11 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
                 com.heytap.nearx.a.a.e.g.a(gVar, 7, sVar.r);
             }
             if (sVar.s != null) {
-                com.heytap.nearx.a.a.e.f22261c.a(gVar, 8, sVar.s);
+                com.heytap.nearx.a.a.e.f8653c.a(gVar, 8, sVar.s);
             }
             j.e.a(gVar, 9, sVar.t);
             if (sVar.u != null) {
-                com.heytap.nearx.a.a.e.f22261c.a(gVar, 10, sVar.u);
+                com.heytap.nearx.a.a.e.f8653c.a(gVar, 10, sVar.u);
             }
             gVar.a(sVar.a());
         }
@@ -169,13 +169,13 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
                         aVar.a(com.heytap.nearx.a.a.e.p.a(fVar));
                         break;
                     case 2:
-                        aVar.d.add(f.f26337c.a(fVar));
+                        aVar.d.add(f.f12649c.a(fVar));
                         break;
                     case 3:
-                        aVar.a(com.heytap.nearx.a.a.e.f22261c.a(fVar));
+                        aVar.a(com.heytap.nearx.a.a.e.f8653c.a(fVar));
                         break;
                     case 4:
-                        aVar.a(n.f26354c.a(fVar));
+                        aVar.a(n.f12666c.a(fVar));
                         break;
                     case 5:
                         aVar.a(c.j.a(fVar));
@@ -187,18 +187,18 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
                         aVar.a(com.heytap.nearx.a.a.e.g.a(fVar));
                         break;
                     case 8:
-                        aVar.b(com.heytap.nearx.a.a.e.f22261c.a(fVar));
+                        aVar.b(com.heytap.nearx.a.a.e.f8653c.a(fVar));
                         break;
                     case 9:
                         try {
                             aVar.a(j.e.a(fVar));
                             break;
                         } catch (e.a e) {
-                            aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f22263a));
+                            aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f8655a));
                             break;
                         }
                     case 10:
-                        aVar.c(com.heytap.nearx.a.a.e.f22261c.a(fVar));
+                        aVar.c(com.heytap.nearx.a.a.e.f8653c.a(fVar));
                         break;
                     default:
                         com.heytap.nearx.a.a.a c2 = fVar.c();
@@ -210,7 +210,7 @@ public final class s extends com.heytap.nearx.a.a.b<s, a> {
     }
 
     public s(String str, List<f> list, Boolean bool, n nVar, c cVar, Long l, Integer num, Boolean bool2, j jVar, Boolean bool3, ByteString byteString) {
-        super(f26363c, byteString);
+        super(f12675c, byteString);
         this.l = str;
         this.m = com.heytap.nearx.a.a.a.b.b("channelStrategy", list);
         this.n = bool;

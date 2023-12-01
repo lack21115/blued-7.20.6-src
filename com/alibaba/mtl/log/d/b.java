@@ -1,10 +1,12 @@
 package com.alibaba.mtl.log.d;
 
+import android.widget.SpellChecker;
 import com.alibaba.mtl.log.e.a;
 import com.alibaba.mtl.log.e.e;
 import com.alibaba.mtl.log.e.i;
 import com.alibaba.mtl.log.e.l;
 import com.alibaba.mtl.log.e.n;
+import com.android.internal.util.cm.QSConstants;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -19,9 +21,7 @@ public abstract class b implements Runnable {
     private static volatile boolean E = false;
     private static boolean F = false;
     int B = -1;
-
-    /* renamed from: a  reason: collision with root package name */
-    float f4489a = 200.0f;
+    float a = 200.0f;
     int C = 0;
 
     /* JADX WARN: Code restructure failed: missing block: B:47:0x0152, code lost:
@@ -56,20 +56,20 @@ public abstract class b implements Runnable {
         } else if (j > 45000) {
             return this.B;
         } else {
-            this.B = (int) (((f * 45000.0f) / this.f4489a) - A);
+            this.B = (int) (((f * 45000.0f) / this.a) - A);
         }
         int i = this.B;
         if (i < 1) {
             this.B = 1;
             A = 0;
         } else if (i > 350) {
-            this.B = 350;
+            this.B = SpellChecker.WORD_ITERATOR_INTERVAL;
         }
         i.a("UploadTask", "winsize:", Integer.valueOf(this.B));
         return this.B;
     }
 
-    private a.C0043a a(String str, Map<String, Object> map) {
+    private a.C0003a a(String str, Map<String, Object> map) {
         if (str != null) {
             byte[] bArr = e.a(2, str, map, false).e;
             i.a("UploadTask", "url:", str);
@@ -86,11 +86,11 @@ public abstract class b implements Runnable {
                 }
             }
         }
-        return a.C0043a.f4490a;
+        return a.C0003a.a;
     }
 
     private List<String> a(com.alibaba.mtl.log.model.a aVar) {
-        return com.alibaba.mtl.log.a.a.m2161a(aVar.T);
+        return com.alibaba.mtl.log.a.a.m8604a(aVar.T);
     }
 
     private Map<String, Object> a(List<com.alibaba.mtl.log.model.a> list) {
@@ -104,16 +104,16 @@ public abstract class b implements Runnable {
             if (i2 >= list.size()) {
                 break;
             }
-            List<String> a2 = a(list.get(i2));
-            if (a2 != null) {
+            List<String> a = a(list.get(i2));
+            if (a != null) {
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
-                    if (i4 < a2.size()) {
-                        StringBuilder sb = (StringBuilder) hashMap.get(a2.get(i4));
+                    if (i4 < a.size()) {
+                        StringBuilder sb = (StringBuilder) hashMap.get(a.get(i4));
                         if (sb == null) {
                             sb = new StringBuilder();
-                            hashMap.put(a2.get(i4), sb);
+                            hashMap.put(a.get(i4), sb);
                         } else {
                             sb.append("\n");
                         }
@@ -127,19 +127,19 @@ public abstract class b implements Runnable {
         HashMap hashMap2 = new HashMap();
         this.C = 0;
         for (String str : hashMap.keySet()) {
-            byte[] a3 = a(((StringBuilder) hashMap.get(str)).toString());
-            hashMap2.put(str, a3);
-            this.C += a3.length;
+            byte[] a2 = a(((StringBuilder) hashMap.get(str)).toString());
+            hashMap2.put(str, a2);
+            this.C += a2.length;
         }
         float size = this.C / list.size();
-        this.f4489a = size;
+        this.a = size;
         i.a("UploadTask", "averagePackageSize:", Float.valueOf(size));
         return hashMap2;
     }
 
     private byte[] a(String str) {
         GZIPOutputStream gZIPOutputStream;
-        byte[] a2;
+        byte[] a;
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         GZIPOutputStream gZIPOutputStream2 = null;
         try {
@@ -158,9 +158,9 @@ public abstract class b implements Runnable {
                         if (gZIPOutputStream != null) {
                             gZIPOutputStream.close();
                         }
-                        a2 = n.a(byteArrayOutputStream.toByteArray(), "QrMgt8GGYI6T52ZY5AnhtxkLzb8egpFn3j5JELI8H6wtACbUnZ5cc3aYTsTRbmkAkRJeYbtx92LPBWm7nBO9UIl7y5i5MQNmUZNf5QENurR5tGyo7yJ2G0MBjWvy6iAtlAbacKP0SwOUeUWx5dsBdyhxa7Id1APtybSdDgicBDuNjI0mlZFUzZSS9dmN8lBD0WTVOMz0pRZbR3cysomRXOO1ghqjJdTcyDIxzpNAEszN8RMGjrzyU7Hjbmwi6YNK");
+                        a = n.a(byteArrayOutputStream.toByteArray(), "QrMgt8GGYI6T52ZY5AnhtxkLzb8egpFn3j5JELI8H6wtACbUnZ5cc3aYTsTRbmkAkRJeYbtx92LPBWm7nBO9UIl7y5i5MQNmUZNf5QENurR5tGyo7yJ2G0MBjWvy6iAtlAbacKP0SwOUeUWx5dsBdyhxa7Id1APtybSdDgicBDuNjI0mlZFUzZSS9dmN8lBD0WTVOMz0pRZbR3cysomRXOO1ghqjJdTcyDIxzpNAEszN8RMGjrzyU7Hjbmwi6YNK");
                         byteArrayOutputStream.close();
-                        return a2;
+                        return a;
                     } catch (Throwable th) {
                         th = th;
                         gZIPOutputStream2 = gZIPOutputStream3;
@@ -181,12 +181,12 @@ public abstract class b implements Runnable {
             }
         } catch (Exception e4) {
         }
-        a2 = n.a(byteArrayOutputStream.toByteArray(), "QrMgt8GGYI6T52ZY5AnhtxkLzb8egpFn3j5JELI8H6wtACbUnZ5cc3aYTsTRbmkAkRJeYbtx92LPBWm7nBO9UIl7y5i5MQNmUZNf5QENurR5tGyo7yJ2G0MBjWvy6iAtlAbacKP0SwOUeUWx5dsBdyhxa7Id1APtybSdDgicBDuNjI0mlZFUzZSS9dmN8lBD0WTVOMz0pRZbR3cysomRXOO1ghqjJdTcyDIxzpNAEszN8RMGjrzyU7Hjbmwi6YNK");
+        a = n.a(byteArrayOutputStream.toByteArray(), "QrMgt8GGYI6T52ZY5AnhtxkLzb8egpFn3j5JELI8H6wtACbUnZ5cc3aYTsTRbmkAkRJeYbtx92LPBWm7nBO9UIl7y5i5MQNmUZNf5QENurR5tGyo7yJ2G0MBjWvy6iAtlAbacKP0SwOUeUWx5dsBdyhxa7Id1APtybSdDgicBDuNjI0mlZFUzZSS9dmN8lBD0WTVOMz0pRZbR3cysomRXOO1ghqjJdTcyDIxzpNAEszN8RMGjrzyU7Hjbmwi6YNK");
         try {
             byteArrayOutputStream.close();
-            return a2;
+            return a;
         } catch (Exception e5) {
-            return a2;
+            return a;
         }
     }
 
@@ -217,7 +217,7 @@ public abstract class b implements Runnable {
     private int h() {
         if (this.B == -1) {
             String u = l.u();
-            if ("wifi".equalsIgnoreCase(u)) {
+            if (QSConstants.TILE_WIFI.equalsIgnoreCase(u)) {
                 this.B = 20;
             } else if ("4G".equalsIgnoreCase(u)) {
                 this.B = 16;

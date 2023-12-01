@@ -7,17 +7,18 @@ import com.soft.blued.R;
 import com.soft.blued.user.BluedConfig;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/manager/FilterHelper.class */
 public class FilterHelper {
     private static FilterHelper i;
 
     /* renamed from: a  reason: collision with root package name */
-    private String[] f30591a;
+    private String[] f16901a;
     private String[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String[] f30592c;
+    private String[] f16902c;
     private boolean d;
     private String e;
     private String f;
@@ -50,13 +51,13 @@ public class FilterHelper {
         } else if (aF == 2) {
             this.d = true;
         }
-        this.f30591a = AppInfo.d().getResources().getStringArray(R.array.age_array_key_all);
+        this.f16901a = AppInfo.d().getResources().getStringArray(R.array.age_array_key_all);
         if (this.d) {
             this.b = AppInfo.d().getResources().getStringArray(R.array.inch_height_list_all);
-            this.f30592c = StringUtils.a(AppInfo.d());
+            this.f16902c = StringUtils.a(AppInfo.d());
         } else {
             this.b = AppInfo.d().getResources().getStringArray(R.array.height_array_key_all);
-            this.f30592c = AppInfo.d().getResources().getStringArray(R.array.weight_key_all);
+            this.f16902c = AppInfo.d().getResources().getStringArray(R.array.weight_key_all);
         }
         this.e = AppInfo.d().getResources().getString(R.string.unlimited);
         this.f = AppInfo.d().getResources().getString(R.string.less_than);
@@ -68,22 +69,22 @@ public class FilterHelper {
         String str2;
         String str3;
         String string = AppInfo.d().getResources().getString(R.string.old);
-        if (StringUtils.d(str) || str.split("-").length != 2) {
+        if (StringUtils.d(str) || str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER).length != 2) {
             return this.e;
         }
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         int parseInt = Integer.parseInt(split[0]);
         int parseInt2 = Integer.parseInt(split[1]);
-        String[] strArr = this.f30591a;
+        String[] strArr = this.f16901a;
         if (parseInt > strArr.length - 1 || parseInt2 > strArr.length - 1) {
             try {
-                String str4 = this.f30591a[0];
+                String str4 = this.f16901a[0];
                 String str5 = "";
                 try {
-                    String str6 = this.f30591a[this.f30591a.length - 1];
+                    String str6 = this.f16901a[this.f16901a.length - 1];
                     StringBuilder sb = new StringBuilder();
                     sb.append("0-");
-                    sb.append(this.f30591a.length - 1);
+                    sb.append(this.f16901a.length - 1);
                     str5 = str6;
                     BluedPreferences.l(sb.toString());
                     str5 = str6;
@@ -102,7 +103,7 @@ public class FilterHelper {
         }
         if (str3.equals(this.e) && str2.equals(this.e)) {
             StringBuilder sb2 = new StringBuilder();
-            String[] strArr2 = this.f30591a;
+            String[] strArr2 = this.f16901a;
             sb2.append(strArr2[strArr2.length - 2]);
             sb2.append(string);
             return sb2.toString();
@@ -121,17 +122,17 @@ public class FilterHelper {
     }
 
     public String[] a() {
-        return this.f30591a;
+        return this.f16901a;
     }
 
     public String b(String str) {
         String str2;
         String str3;
         String string = this.d ? "" : AppInfo.d().getResources().getString(R.string.cm);
-        if (StringUtils.d(str) || str.split("-").length != 2) {
+        if (StringUtils.d(str) || str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER).length != 2) {
             return this.e;
         }
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         int parseInt = Integer.parseInt(split[0]);
         int parseInt2 = Integer.parseInt(split[1]);
         String[] strArr = this.b;
@@ -176,15 +177,15 @@ public class FilterHelper {
         String str2;
         String str3;
         String string = this.d ? AppInfo.d().getResources().getString(R.string.lbs) : AppInfo.d().getResources().getString(R.string.kg);
-        if (StringUtils.d(str) || str.split("-").length != 2) {
+        if (StringUtils.d(str) || str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER).length != 2) {
             return this.e;
         }
-        String[] split = str.split("-");
+        String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         int intValue = Integer.valueOf(split[0]).intValue();
         int intValue2 = Integer.valueOf(split[1]).intValue();
-        String[] strArr = this.f30592c;
+        String[] strArr = this.f16902c;
         if (intValue > strArr.length - 1 || intValue2 > strArr.length - 1) {
-            String[] strArr2 = this.f30592c;
+            String[] strArr2 = this.f16902c;
             str2 = strArr2[0];
             str3 = strArr2[strArr2.length - 1];
         } else {
@@ -192,12 +193,12 @@ public class FilterHelper {
             str3 = strArr[intValue2];
         }
         if (intValue == 0 && intValue2 == 0) {
-            return this.f30592c[1] + string;
+            return this.f16902c[1] + string;
         }
-        String[] strArr3 = this.f30592c;
+        String[] strArr3 = this.f16902c;
         if (intValue == strArr3.length - 1 && intValue2 == strArr3.length - 1) {
             StringBuilder sb = new StringBuilder();
-            String[] strArr4 = this.f30592c;
+            String[] strArr4 = this.f16902c;
             sb.append(strArr4[strArr4.length - 2]);
             sb.append(string);
             return sb.toString();
@@ -217,7 +218,7 @@ public class FilterHelper {
     }
 
     public String[] c() {
-        return this.f30592c;
+        return this.f16902c;
     }
 
     public void e() {
@@ -279,7 +280,7 @@ public class FilterHelper {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("0-");
-        sb.append(this.f30591a.length - 1);
+        sb.append(this.f16901a.length - 1);
         return !K.equals(sb.toString());
     }
 
@@ -301,7 +302,7 @@ public class FilterHelper {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("0-");
-        sb.append(this.f30592c.length - 1);
+        sb.append(this.f16902c.length - 1);
         return !O.equals(sb.toString());
     }
 

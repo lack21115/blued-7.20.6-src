@@ -7,11 +7,11 @@ import java.util.concurrent.TimeUnit;
 public final class a implements Choreographer.FrameCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final a f1403a = new a();
+    public static final a f1355a = new a();
     public static final long b = TimeUnit.NANOSECONDS.convert(1, TimeUnit.SECONDS);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final long f1404c = TimeUnit.NANOSECONDS.convert(10, TimeUnit.SECONDS);
+    public static final long f1356c = TimeUnit.NANOSECONDS.convert(10, TimeUnit.SECONDS);
     public static long d = 0;
     public static long e = 0;
     public static int f = 0;
@@ -38,7 +38,7 @@ public final class a implements Choreographer.FrameCallback {
     }
 
     public final void d() {
-        if (g == 0 || e - d >= f1404c) {
+        if (g == 0 || e - d >= f1356c) {
             g = Math.round(((float) (f * b)) / ((float) (e - d)));
             d = e;
             f = 0;

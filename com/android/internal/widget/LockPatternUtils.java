@@ -1,6 +1,5 @@
 package com.android.internal.widget;
 
-import android.Manifest;
 import android.app.ActivityManagerNative;
 import android.app.AlarmManager;
 import android.app.admin.DevicePolicyManager;
@@ -21,17 +20,18 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.os.storage.IMountService;
-import android.os.storage.StorageManager;
 import android.provider.Settings;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.telecom.TelecomManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.IWindowManager;
 import android.widget.Button;
 import com.android.internal.R;
+import com.android.internal.util.Protocol;
 import com.android.internal.widget.ILockSettings;
 import com.android.internal.widget.LockPatternView;
+import com.android.org.conscrypt.NativeCrypto;
+import com.anythink.core.common.k.f;
 import com.google.android.collect.Lists;
 import java.lang.reflect.Array;
 import java.security.MessageDigest;
@@ -92,13 +92,13 @@ public class LockPatternUtils {
     public LockPatternUtils(Context context) {
         this.mContext = context;
         this.mContentResolver = context.getContentResolver();
-        this.mMultiUserMode = context.checkCallingOrSelfPermission(Manifest.permission.INTERACT_ACROSS_USERS_FULL) == 0;
+        this.mMultiUserMode = context.checkCallingOrSelfPermission("android.permission.INTERACT_ACROSS_USERS_FULL") == 0;
     }
 
-    private static int categoryChar(char c2) {
-        if ('a' > c2 || c2 > 'z') {
-            if ('A' > c2 || c2 > 'Z') {
-                return ('0' > c2 || c2 > '9') ? 3 : 2;
+    private static int categoryChar(char c) {
+        if ('a' > c || c > 'z') {
+            if ('A' > c || c > 'Z') {
+                return ('0' > c || c > '9') ? 3 : 2;
             }
             return 1;
         }
@@ -164,13 +164,16 @@ public class LockPatternUtils {
             i = i2 + 1;
         }
         if (z2 && z) {
-            return 327680;
+            return Protocol.BASE_DNS_PINGER;
         }
         if (z2) {
             return 262144;
         }
         if (z) {
-            return maxLengthSequence(str) > 3 ? 131072 : 196608;
+            if (maxLengthSequence(str) > 3) {
+                return 131072;
+            }
+            return Protocol.BASE_DHCP;
         }
         return 0;
     }
@@ -184,7 +187,7 @@ public class LockPatternUtils {
 
     private int[] getAppWidgets(int i) {
         int[] iArr;
-        String stringForUser = Settings.Secure.getStringForUser(this.mContentResolver, Settings.Secure.LOCK_SCREEN_APPWIDGET_IDS, i);
+        String stringForUser = Settings.Secure.getStringForUser(this.mContentResolver, "lock_screen_appwidget_ids", i);
         if (stringForUser == null || stringForUser.length() <= 0) {
             return new int[0];
         }
@@ -280,7 +283,7 @@ public class LockPatternUtils {
     }
 
     private TrustManager getTrustManager() {
-        TrustManager trustManager = (TrustManager) this.mContext.getSystemService(Context.TRUST_SERVICE);
+        TrustManager trustManager = (TrustManager) this.mContext.getSystemService("trust");
         if (trustManager == null) {
             Log.e(TAG, "Can't get TrustManagerService: is it running?", new IllegalStateException("Stack trace:"));
         }
@@ -306,7 +309,7 @@ public class LockPatternUtils {
 
     public static boolean isSafeModeEnabled() {
         try {
-            return IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE)).isSafeModeEnabled();
+            return IWindowManager.Stub.asInterface(ServiceManager.getService("window")).isSafeModeEnabled();
         } catch (RemoteException e) {
             return false;
         }
@@ -329,11 +332,11 @@ public class LockPatternUtils {
         boolean z = false;
         int i2 = 0;
         int i3 = 0;
-        char c2 = charAt;
+        char c = charAt;
         for (int i4 = 1; i4 < str.length(); i4++) {
             char charAt2 = str.charAt(i4);
             int categoryChar2 = categoryChar(charAt2);
-            int i5 = charAt2 - c2;
+            int i5 = charAt2 - c;
             if (categoryChar2 != categoryChar || Math.abs(i5) > maxDiffCategory(categoryChar)) {
                 i2 = Math.max(i2, i4 - i3);
                 i3 = i4;
@@ -355,7 +358,7 @@ public class LockPatternUtils {
                 i2 = i6;
                 i3 = i7;
             }
-            c2 = charAt2;
+            c = charAt2;
         }
         return Math.max(i2, str.length() - i3);
     }
@@ -495,12 +498,13 @@ public class LockPatternUtils {
         IMountService asInterface = IMountService.Stub.asInterface(service);
         try {
             Log.d(TAG, "Setting owner info");
-            asInterface.setField(StorageManager.OWNER_INFO_KEY, ownerInfo);
+            asInterface.setField("OwnerInfo", ownerInfo);
         } catch (RemoteException e) {
             Log.e(TAG, "Error changing user info", e);
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v4, types: [com.android.internal.widget.LockPatternUtils$1] */
     private void updateEncryptionPassword(final int i, final String str) {
         if (isDeviceEncryptionEnabled()) {
             final IBinder service = ServiceManager.getService("mount");
@@ -525,7 +529,7 @@ public class LockPatternUtils {
     }
 
     private void writeAppWidgets(int[] iArr) {
-        Settings.Secure.putStringForUser(this.mContentResolver, Settings.Secure.LOCK_SCREEN_APPWIDGET_IDS, combineStrings(iArr, ","), -2);
+        Settings.Secure.putStringForUser(this.mContentResolver, "lock_screen_appwidget_ids", combineStrings(iArr, ","), -2);
     }
 
     public boolean addAppWidget(int i, int i2) {
@@ -649,7 +653,7 @@ public class LockPatternUtils {
     }
 
     public int getActivePasswordQuality() {
-        switch ((int) getLong(PASSWORD_TYPE_KEY, 65536L)) {
+        switch ((int) getLong(PASSWORD_TYPE_KEY, NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION)) {
             case 2048:
                 return isThirdPartyKeyguardEnabled() ? 2048 : 0;
             case 32768:
@@ -658,12 +662,18 @@ public class LockPatternUtils {
                 return isLockPatternEnabled() ? 65536 : 0;
             case 131072:
                 return isLockPasswordEnabled() ? 131072 : 0;
-            case 196608:
-                return isLockPasswordEnabled() ? 196608 : 0;
+            case Protocol.BASE_DHCP /* 196608 */:
+                if (isLockPasswordEnabled()) {
+                    return Protocol.BASE_DHCP;
+                }
+                return 0;
             case 262144:
                 return isLockPasswordEnabled() ? 262144 : 0;
-            case 327680:
-                return isLockPasswordEnabled() ? 327680 : 0;
+            case Protocol.BASE_DNS_PINGER /* 327680 */:
+                if (isLockPasswordEnabled()) {
+                    return Protocol.BASE_DNS_PINGER;
+                }
+                return 0;
             case 393216:
                 return isLockPasswordEnabled() ? 393216 : 0;
             case 524288:
@@ -690,7 +700,7 @@ public class LockPatternUtils {
 
     public DevicePolicyManager getDevicePolicyManager() {
         if (this.mDevicePolicyManager == null) {
-            this.mDevicePolicyManager = (DevicePolicyManager) this.mContext.getSystemService(Context.DEVICE_POLICY_SERVICE);
+            this.mDevicePolicyManager = (DevicePolicyManager) this.mContext.getSystemService("device_policy");
             if (this.mDevicePolicyManager == null) {
                 Log.e(TAG, "Can't get DevicePolicyManagerService: is it running?", new IllegalStateException("Stack trace:"));
             }
@@ -729,7 +739,7 @@ public class LockPatternUtils {
     }
 
     public int getFallbackAppWidgetId() {
-        return Settings.Secure.getIntForUser(this.mContentResolver, Settings.Secure.LOCK_SCREEN_FALLBACK_APPWIDGET_ID, 0, -2);
+        return Settings.Secure.getIntForUser(this.mContentResolver, "lock_screen_fallback_appwidget_id", 0, -2);
     }
 
     public int getKeyguardStoredPasswordQuality() {
@@ -746,7 +756,7 @@ public class LockPatternUtils {
     }
 
     public byte getLockPatternSize() {
-        long j = getLong(Settings.Secure.LOCK_PATTERN_SIZE, -1L);
+        long j = getLong("lock_pattern_size", -1L);
         if (j <= 0 || j >= 128) {
             return (byte) 3;
         }
@@ -754,7 +764,7 @@ public class LockPatternUtils {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x001e, code lost:
-        if (r0 > (30000 + r0)) goto L8;
+        if (r0 > (com.android.internal.widget.LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS + r0)) goto L8;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -797,7 +807,7 @@ public class LockPatternUtils {
     }
 
     public String getOwnerInfo(int i) {
-        return getString("lock_screen_owner_info");
+        return getString(LOCK_SCREEN_OWNER_INFO);
     }
 
     public boolean getPowerButtonInstantlyLocks() {
@@ -879,18 +889,18 @@ public class LockPatternUtils {
         PackageManager packageManager = this.mContext.getPackageManager();
         try {
             packageManager.getPackageInfo("com.android.facelock", 1);
-            return (packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA_FRONT) && getDevicePolicyManager().getCameraDisabled(null, getCurrentOrCallingUserId())) ? false : false;
+            return (packageManager.hasSystemFeature("android.hardware.camera.front") && getDevicePolicyManager().getCameraDisabled(null, getCurrentOrCallingUserId())) ? false : false;
         } catch (PackageManager.NameNotFoundException e) {
             return false;
         }
     }
 
     public boolean isBiometricWeakLivelinessEnabled() {
-        return (1 & getLong(Settings.Secure.LOCK_BIOMETRIC_WEAK_FLAGS, 0L)) != 0;
+        return (1 & getLong("lock_biometric_weak_flags", 0L)) != 0;
     }
 
     public boolean isCredentialRequiredToDecrypt(boolean z) {
-        int i = Settings.Global.getInt(this.mContentResolver, Settings.Global.REQUIRE_PASSWORD_TO_DECRYPT, -1);
+        int i = Settings.Global.getInt(this.mContentResolver, "require_password_to_decrypt", -1);
         return i == -1 ? z : i != 0;
     }
 
@@ -903,7 +913,7 @@ public class LockPatternUtils {
     }
 
     public boolean isFingerprintInstalled(Context context) {
-        return context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_FINGERPRINT);
+        return context.getPackageManager().hasSystemFeature("android.hardware.fingerprint");
     }
 
     public boolean isGestureEverChosen() {
@@ -919,9 +929,9 @@ public class LockPatternUtils {
     }
 
     public boolean isLockGestureEnabled(int i) {
-        boolean z = getLong(PASSWORD_TYPE_ALTERNATE_KEY, PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED, i) == PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED;
-        if (getBoolean(Settings.Secure.LOCK_GESTURE_ENABLED, false, i)) {
-            if (getLong(PASSWORD_TYPE_KEY, PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED, i) != PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED) {
+        boolean z = getLong(PASSWORD_TYPE_ALTERNATE_KEY, 524288L, i) == 524288;
+        if (getBoolean("lock_gesture_autolock", false, i)) {
+            if (getLong(PASSWORD_TYPE_KEY, 524288L, i) != 524288) {
                 return usingBiometricWeak(i) && z;
             }
             return true;
@@ -948,9 +958,9 @@ public class LockPatternUtils {
     }
 
     public boolean isLockPatternEnabled(int i) {
-        boolean z = getLong(PASSWORD_TYPE_ALTERNATE_KEY, 0L, i) == 65536;
+        boolean z = getLong(PASSWORD_TYPE_ALTERNATE_KEY, 0L, i) == NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION;
         if (getBoolean("lock_pattern_autolock", false, i)) {
-            if (getLong(PASSWORD_TYPE_KEY, 0L, i) != 65536) {
+            if (getLong(PASSWORD_TYPE_KEY, 0L, i) != NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION) {
                 return usingBiometricWeak(i) && z;
             }
             return true;
@@ -959,16 +969,16 @@ public class LockPatternUtils {
     }
 
     public boolean isLockScreenDisabled() {
-        if (isSecure() || getLong("lockscreen.disabled", 0L) == 0) {
+        if (isSecure() || getLong(DISABLE_LOCKSCREEN_KEY, 0L) == 0) {
             return false;
         }
-        List<UserInfo> users = UserManager.get(this.mContext).getUsers(true);
+        List users = UserManager.get(this.mContext).getUsers(true);
         int size = users.size();
         int i = 0;
         int i2 = 0;
         while (i2 < size) {
             int i3 = i;
-            if (users.get(i2).supportsSwitchTo()) {
+            if (((UserInfo) users.get(i2)).supportsSwitchTo()) {
                 i3 = i + 1;
             }
             i2++;
@@ -978,7 +988,7 @@ public class LockPatternUtils {
     }
 
     public boolean isOwnerInfoEnabled() {
-        return getBoolean("lock_screen_owner_info_enabled", false);
+        return getBoolean(LOCK_SCREEN_OWNER_INFO_ENABLED, false);
     }
 
     public boolean isPatternEverChosen() {
@@ -999,8 +1009,8 @@ public class LockPatternUtils {
 
     public boolean isSecure(int i) {
         long keyguardStoredPasswordQuality = getKeyguardStoredPasswordQuality(i);
-        boolean z = keyguardStoredPasswordQuality == 65536;
-        boolean z2 = keyguardStoredPasswordQuality == PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED;
+        boolean z = keyguardStoredPasswordQuality == NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION;
+        boolean z2 = keyguardStoredPasswordQuality == 524288;
         boolean z3 = keyguardStoredPasswordQuality == 131072 || keyguardStoredPasswordQuality == 196608 || keyguardStoredPasswordQuality == 262144 || keyguardStoredPasswordQuality == 327680 || keyguardStoredPasswordQuality == 393216;
         if (z && isLockPatternEnabled(i) && savedPatternExists(i)) {
             return true;
@@ -1012,11 +1022,11 @@ public class LockPatternUtils {
     }
 
     public boolean isShowErrorPath() {
-        return getBoolean(Settings.Secure.LOCK_SHOW_ERROR_PATH, true);
+        return getBoolean("lock_pattern_show_error_path", true);
     }
 
     public boolean isTactileFeedbackEnabled() {
-        return Settings.System.getIntForUser(this.mContentResolver, Settings.System.HAPTIC_FEEDBACK_ENABLED, 1, -2) != 0;
+        return Settings.System.getIntForUser(this.mContentResolver, "haptic_feedback_enabled", 1, -2) != 0;
     }
 
     public boolean isThirdPartyKeyguardEnabled() {
@@ -1024,11 +1034,11 @@ public class LockPatternUtils {
     }
 
     public boolean isVisibleDotsEnabled() {
-        return getBoolean(Settings.Secure.LOCK_DOTS_VISIBLE, true);
+        return getBoolean("lock_pattern_dotsvisible", true);
     }
 
     public boolean isVisibleGestureEnabled() {
-        return getBoolean(Settings.Secure.LOCK_GESTURE_VISIBLE, true);
+        return getBoolean("lock_gesture_visible_pattern", true);
     }
 
     public boolean isVisiblePatternEnabled() {
@@ -1042,8 +1052,10 @@ public class LockPatternUtils {
         String str2 = null;
         try {
             byte[] bytes = (str + getSalt(i)).getBytes();
-            str2 = "MD5";
-            return (toHex(MessageDigest.getInstance("SHA-1").digest(bytes)) + toHex(MessageDigest.getInstance("MD5").digest(bytes))).getBytes();
+            byte[] digest = MessageDigest.getInstance("SHA-1").digest(bytes);
+            byte[] digest2 = MessageDigest.getInstance(f.a).digest(bytes);
+            str2 = f.a;
+            return (toHex(digest) + toHex(digest2)).getBytes();
         } catch (NoSuchAlgorithmException e) {
             Log.w(TAG, "Failed to encode string because of missing algorithm: " + str2);
             return null;
@@ -1143,12 +1155,12 @@ public class LockPatternUtils {
             setBoolean(GESTURE_EVER_CHOSEN_KEY, true);
             if (!z) {
                 deleteGallery(i);
-                setLong(PASSWORD_TYPE_KEY, PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED, i);
+                setLong(PASSWORD_TYPE_KEY, 524288L, i);
                 devicePolicyManager.setActivePasswordState(524288, 0, 0, 0, 0, 0, 0, 0, i);
                 return;
             }
             setLong(PASSWORD_TYPE_KEY, 32768L, i);
-            setLong(PASSWORD_TYPE_ALTERNATE_KEY, PlaybackStateCompat.ACTION_SET_SHUFFLE_MODE_ENABLED, i);
+            setLong(PASSWORD_TYPE_ALTERNATE_KEY, 524288L, i);
             finishBiometricWeak(i);
             devicePolicyManager.setActivePasswordState(32768, 0, 0, 0, 0, 0, 0, 0, i);
         } catch (RemoteException e) {
@@ -1275,7 +1287,7 @@ public class LockPatternUtils {
                 }
                 setBoolean(PATTERN_EVER_CHOSEN_KEY, true, i);
                 if (z) {
-                    setLong(PASSWORD_TYPE_ALTERNATE_KEY, 65536L, i);
+                    setLong(PASSWORD_TYPE_ALTERNATE_KEY, NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION, i);
                     if (!z2) {
                         setLong(PASSWORD_TYPE_KEY, 32768L, i);
                         finishBiometricWeak(i);
@@ -1283,7 +1295,7 @@ public class LockPatternUtils {
                     }
                 } else {
                     deleteGallery(i);
-                    setLong(PASSWORD_TYPE_KEY, 65536L, i);
+                    setLong(PASSWORD_TYPE_KEY, NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION, i);
                     devicePolicyManager.setActivePasswordState(65536, list.size(), 0, 0, 0, 0, 0, 0, i);
                 }
             } else {
@@ -1332,15 +1344,15 @@ public class LockPatternUtils {
     }
 
     public void setBiometricWeakLivelinessEnabled(boolean z) {
-        long j = getLong(Settings.Secure.LOCK_BIOMETRIC_WEAK_FLAGS, 0L);
-        setLong(Settings.Secure.LOCK_BIOMETRIC_WEAK_FLAGS, z ? j | 1 : j & (-2));
+        long j = getLong("lock_biometric_weak_flags", 0L);
+        setLong("lock_biometric_weak_flags", z ? j | 1 : j & (-2));
     }
 
     public void setCredentialRequiredToDecrypt(boolean z) {
         if (getCurrentUser() != 0) {
             Log.w(TAG, "Only device owner may call setCredentialRequiredForDecrypt()");
         } else {
-            Settings.Global.putInt(this.mContext.getContentResolver(), Settings.Global.REQUIRE_PASSWORD_TO_DECRYPT, z ? 1 : 0);
+            Settings.Global.putInt(this.mContext.getContentResolver(), "require_password_to_decrypt", z ? 1 : 0);
         }
     }
 
@@ -1369,7 +1381,7 @@ public class LockPatternUtils {
     }
 
     public void setLockGestureEnabled(boolean z, int i) {
-        setBoolean(Settings.Secure.LOCK_GESTURE_ENABLED, z, i);
+        setBoolean("lock_gesture_autolock", z, i);
     }
 
     public void setLockPatternEnabled(boolean z) {
@@ -1381,31 +1393,31 @@ public class LockPatternUtils {
     }
 
     public void setLockPatternSize(long j) {
-        setLong(Settings.Secure.LOCK_PATTERN_SIZE, j);
+        setLong("lock_pattern_size", j);
     }
 
     public void setLockScreenDisabled(boolean z) {
-        setLong("lockscreen.disabled", z ? 1L : 0L);
+        setLong(DISABLE_LOCKSCREEN_KEY, z ? 1L : 0L);
     }
 
     public long setLockoutAttemptDeadline() {
-        long elapsedRealtime = SystemClock.elapsedRealtime() + 30000;
+        long elapsedRealtime = SystemClock.elapsedRealtime() + FAILED_ATTEMPT_TIMEOUT_MS;
         setLong(LOCKOUT_ATTEMPT_DEADLINE, elapsedRealtime);
         return elapsedRealtime;
     }
 
     public void setOwnerInfo(String str, int i) {
-        setString("lock_screen_owner_info", str, i);
+        setString(LOCK_SCREEN_OWNER_INFO, str, i);
         updateCryptoUserInfo();
     }
 
     public void setOwnerInfoEnabled(boolean z) {
-        setBoolean("lock_screen_owner_info_enabled", z);
+        setBoolean(LOCK_SCREEN_OWNER_INFO_ENABLED, z);
         updateCryptoUserInfo();
     }
 
     public void setPassToSecurityView(boolean z) {
-        setBoolean(Settings.Secure.LOCK_PASS_TO_SECURITY_VIEW, z);
+        setBoolean("lock_screen_pass_to_security_view", z);
     }
 
     public void setPermanentlyLocked(boolean z) {
@@ -1417,7 +1429,7 @@ public class LockPatternUtils {
     }
 
     public void setShowErrorPath(boolean z) {
-        setBoolean(Settings.Secure.LOCK_SHOW_ERROR_PATH, z);
+        setBoolean("lock_pattern_show_error_path", z);
     }
 
     public void setThirdPartyKeyguard(ComponentName componentName) throws PackageManager.NameNotFoundException {
@@ -1431,7 +1443,7 @@ public class LockPatternUtils {
                 z = false;
                 if (i2 >= length) {
                     break;
-                } else if (Manifest.permission.THIRD_PARTY_KEYGUARD.equals(strArr[i2])) {
+                } else if ("android.permission.THIRD_PARTY_KEYGUARD".equals(strArr[i2])) {
                     z = true;
                     break;
                 } else {
@@ -1439,7 +1451,7 @@ public class LockPatternUtils {
                 }
             }
             if (!z) {
-                throw new SecurityException("Package " + componentName.getPackageName() + " does nothave " + Manifest.permission.THIRD_PARTY_KEYGUARD);
+                throw new SecurityException("Package " + componentName.getPackageName() + " does nothave android.permission.THIRD_PARTY_KEYGUARD");
             }
         }
         setString(THIRD_PARTY_KEYGUARD_COMPONENT, componentName != null ? componentName.flattenToString() : "");
@@ -1458,11 +1470,11 @@ public class LockPatternUtils {
     }
 
     public void setVisibleDotsEnabled(boolean z) {
-        setBoolean(Settings.Secure.LOCK_DOTS_VISIBLE, z);
+        setBoolean("lock_pattern_dotsvisible", z);
     }
 
     public void setVisibleGestureEnabled(boolean z) {
-        setBoolean(Settings.Secure.LOCK_GESTURE_VISIBLE, z);
+        setBoolean("lock_gesture_visible_pattern", z);
     }
 
     public void setVisiblePatternEnabled(boolean z) {
@@ -1476,7 +1488,7 @@ public class LockPatternUtils {
             return;
         }
         try {
-            IMountService.Stub.asInterface(service).setField(StorageManager.PATTERN_VISIBLE_KEY, z ? "1" : "0");
+            IMountService.Stub.asInterface(service).setField("PatternVisible", z ? "1" : "0");
         } catch (RemoteException e) {
             Log.e(TAG, "Error changing pattern visible state", e);
         }
@@ -1491,7 +1503,7 @@ public class LockPatternUtils {
     }
 
     public boolean shouldPassToSecurityView() {
-        return getBoolean(Settings.Secure.LOCK_PASS_TO_SECURITY_VIEW, false);
+        return getBoolean("lock_screen_pass_to_security_view", false);
     }
 
     public List<LockPatternView.Cell> stringToPattern(String str) {
@@ -1532,6 +1544,6 @@ public class LockPatternUtils {
     }
 
     public void writeFallbackAppWidgetId(int i) {
-        Settings.Secure.putIntForUser(this.mContentResolver, Settings.Secure.LOCK_SCREEN_FALLBACK_APPWIDGET_ID, i, -2);
+        Settings.Secure.putIntForUser(this.mContentResolver, "lock_screen_fallback_appwidget_id", i, -2);
     }
 }

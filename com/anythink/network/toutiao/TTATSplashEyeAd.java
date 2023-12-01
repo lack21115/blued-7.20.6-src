@@ -10,11 +10,11 @@ import com.bytedance.sdk.openadsdk.CSJSplashAd;
 public class TTATSplashEyeAd extends CustomSplashEyeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    CSJSplashAd f9154a;
+    CSJSplashAd f6314a;
 
     public TTATSplashEyeAd(ATBaseAdAdapter aTBaseAdAdapter, CSJSplashAd cSJSplashAd) {
         super(aTBaseAdAdapter);
-        this.f9154a = cSJSplashAd;
+        this.f6314a = cSJSplashAd;
     }
 
     private static int a(Context context, float f) {
@@ -23,13 +23,13 @@ public class TTATSplashEyeAd extends CustomSplashEyeAd {
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashEyeAd
     public void customResourceDestory() {
-        this.f9154a = null;
+        this.f6314a = null;
     }
 
     @Override // com.anythink.splashad.api.IATSplashEyeAd
     public int[] getSuggestedSize(Context context) {
         int[] splashClickEyeSizeToDp;
-        CSJSplashAd cSJSplashAd = this.f9154a;
+        CSJSplashAd cSJSplashAd = this.f6314a;
         if (cSJSplashAd == null || context == null || (splashClickEyeSizeToDp = cSJSplashAd.getSplashClickEyeSizeToDp()) == null || splashClickEyeSizeToDp.length < 2) {
             return null;
         }
@@ -38,10 +38,10 @@ public class TTATSplashEyeAd extends CustomSplashEyeAd {
 
     @Override // com.anythink.splashad.api.IATSplashEyeAd
     public void onFinished() {
-        if (this.f9154a == null || this.mEyeAdContainer == null) {
+        if (this.f6314a == null || this.mEyeAdContainer == null) {
             return;
         }
-        this.f9154a.showSplashClickEyeView(this.mEyeAdContainer);
+        this.f6314a.showSplashClickEyeView(this.mEyeAdContainer);
     }
 
     @Override // com.anythink.splashad.unitgroup.api.CustomSplashEyeAd

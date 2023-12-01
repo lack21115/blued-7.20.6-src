@@ -8,17 +8,17 @@ import com.tencent.thumbplayer.api.resourceloader.TPAssetResourceLoadingContentI
 public class d implements ITPAssetResourceLoadingRequest {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f39244a;
+    private int f25553a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TPAssetResourceLoadingContentInformationRequest f39245c;
+    private TPAssetResourceLoadingContentInformationRequest f25554c;
     private boolean d = false;
     private boolean e = false;
 
     public d(long j, long j2, int i, boolean z) {
-        this.f39244a = 0;
-        this.f39244a = i;
+        this.f25553a = 0;
+        this.f25553a = i;
         c cVar = new c(j, j2, z);
         this.b = cVar;
         cVar.a(i);
@@ -39,7 +39,7 @@ public class d implements ITPAssetResourceLoadingRequest {
     }
 
     public void a(TPAssetResourceLoadingContentInformationRequest tPAssetResourceLoadingContentInformationRequest) {
-        this.f39245c = tPAssetResourceLoadingContentInformationRequest;
+        this.f25554c = tPAssetResourceLoadingContentInformationRequest;
     }
 
     public void a(String str) {
@@ -62,7 +62,7 @@ public class d implements ITPAssetResourceLoadingRequest {
 
     @Override // com.tencent.thumbplayer.api.resourceloader.ITPAssetResourceLoadingRequest
     public TPAssetResourceLoadingContentInformationRequest getContentInformation() {
-        return this.f39245c;
+        return this.f25554c;
     }
 
     @Override // com.tencent.thumbplayer.api.resourceloader.ITPAssetResourceLoadingRequest

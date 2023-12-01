@@ -25,7 +25,7 @@ import com.kwad.sdk.utils.w;
 public final class e extends c implements View.OnClickListener {
     private Runnable IE;
     public b Iv;
-    public b.C0518b Iw;
+    public b.C0348b Iw;
     private KsAdWebView cS;
     private com.kwad.components.core.webview.a cU;
     private com.kwad.sdk.core.webview.b cV;

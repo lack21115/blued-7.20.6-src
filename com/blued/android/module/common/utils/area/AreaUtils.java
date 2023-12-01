@@ -2,6 +2,7 @@ package com.blued.android.module.common.utils.area;
 
 import android.text.TextUtils;
 import androidx.collection.ArrayMap;
+import com.alipay.sdk.util.i;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.framework.utils.StringUtils;
@@ -38,6 +39,7 @@ public class AreaUtils {
 
     /* JADX WARN: Removed duplicated region for block: B:56:0x0103 A[Catch: IOException -> 0x0118, TRY_ENTER, TRY_LEAVE, TryCatch #0 {IOException -> 0x0118, blocks: (B:53:0x00f8, B:56:0x0103), top: B:66:0x00f8 }] */
     /* JADX WARN: Removed duplicated region for block: B:66:0x00f8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r0v37, types: [com.blued.android.module.common.utils.area.AreaUtils$2] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -82,17 +84,17 @@ public class AreaUtils {
                                         }
                                     }
                                 } else {
-                                    str2 = str2 + ";" + str3;
+                                    str2 = str2 + i.b + str3;
                                     arrayList.add(country);
                                 }
                             }
                         } else if (obj2.split(BridgeUtil.UNDERLINE_STR).length == 4) {
                             String str4 = obj2.split(BridgeUtil.UNDERLINE_STR)[3];
-                            str2 = str2 + ";" + str4;
+                            str2 = str2 + i.b + str4;
                             arrayList.add(new Country(str4, obj, "", "", "", 0));
                         } else if (obj2.split(BridgeUtil.UNDERLINE_STR).length == 3) {
                             String str5 = obj2.split(BridgeUtil.UNDERLINE_STR)[2];
-                            str2 = str2 + ";" + str5;
+                            str2 = str2 + i.b + str5;
                             arrayList.add(new Country(str5, obj, "", "", "", 0));
                         }
                     }
@@ -223,6 +225,7 @@ public class AreaUtils {
 
     /* JADX WARN: Removed duplicated region for block: B:56:0x010d A[Catch: IOException -> 0x0122, TRY_ENTER, TRY_LEAVE, TryCatch #6 {IOException -> 0x0122, blocks: (B:53:0x0102, B:56:0x010d), top: B:70:0x0102 }] */
     /* JADX WARN: Removed duplicated region for block: B:70:0x0102 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r0v39, types: [com.blued.android.module.common.utils.area.AreaUtils$3] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

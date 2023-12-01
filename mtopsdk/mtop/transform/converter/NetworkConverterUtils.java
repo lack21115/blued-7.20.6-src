@@ -1,5 +1,6 @@
 package mtopsdk.mtop.transform.converter;
 
+import com.alipay.sdk.sys.a;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Iterator;
@@ -26,7 +27,7 @@ public class NetworkConverterUtils {
                     sb.append("=");
                     sb.append((Object) encode2);
                     if (it.hasNext()) {
-                        sb.append("&");
+                        sb.append(a.b);
                     }
                 } catch (Throwable th) {
                     TBSdkLog.d("mtopsdk.NetworkConverterUtils", "[createParamQueryStr]getQueryStr error ---" + th.toString());
@@ -45,10 +46,10 @@ public class NetworkConverterUtils {
         try {
             StringBuilder sb = new StringBuilder(str);
             if (map != null) {
-                String a2 = a(map, "utf-8");
-                if (StringUtils.a(a2) && str.indexOf("?") == -1) {
+                String a = a(map, "utf-8");
+                if (StringUtils.a(a) && str.indexOf("?") == -1) {
                     sb.append("?");
-                    sb.append(a2);
+                    sb.append(a);
                 }
             }
             return new URL(sb.toString());

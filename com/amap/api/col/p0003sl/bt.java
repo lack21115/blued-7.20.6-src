@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.text.TextUtils;
+import com.alipay.sdk.util.i;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -14,41 +15,33 @@ import java.util.zip.ZipInputStream;
 /* renamed from: com.amap.api.col.3sl.bt  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bt.class */
 public final class bt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private b f4792a;
+    private b a;
 
     /* renamed from: com.amap.api.col.3sl.bt$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bt$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public boolean f4794a = false;
+        public boolean a = false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.amap.api.col.3sl.bt$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bt$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f4795a;
+        private String a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private bp f4796c;
+        private bp c;
         private a d = new a();
         private String e;
 
         public b(bq bqVar, bp bpVar) {
-            this.f4796c = null;
-            this.f4795a = bqVar.x();
+            this.c = null;
+            this.a = bqVar.x();
             this.b = bqVar.y();
-            this.f4796c = bpVar;
+            this.c = bpVar;
         }
 
         public final String a() {
-            return this.f4795a;
+            return this.a;
         }
 
         public final void a(String str) {
@@ -66,7 +59,7 @@ public final class bt {
         }
 
         public final bp d() {
-            return this.f4796c;
+            return this.c;
         }
 
         public final a e() {
@@ -74,7 +67,7 @@ public final class bt {
         }
 
         public final void f() {
-            this.d.f4794a = true;
+            this.d.a = true;
         }
     }
 
@@ -87,7 +80,7 @@ public final class bt {
     }
 
     public bt(bq bqVar, bp bpVar) {
-        this.f4792a = new b(bqVar, bpVar);
+        this.a = new b(bqVar, bpVar);
     }
 
     private static int a(File file, ZipInputStream zipInputStream, long j, long j2, c cVar, a aVar) throws Exception {
@@ -99,7 +92,7 @@ public final class bt {
             if (read == -1) {
                 bufferedOutputStream.close();
                 return i;
-            } else if (aVar != null && aVar.f4794a) {
+            } else if (aVar != null && aVar.a) {
                 bufferedOutputStream.close();
                 return i;
             } else {
@@ -112,7 +105,7 @@ public final class bt {
                         long j3 = ((i2 + j) * 100) / j2;
                         if (aVar != null) {
                             i = i2;
-                            if (!aVar.f4794a) {
+                            if (!aVar.a) {
                             }
                         }
                         cVar.a(j3);
@@ -134,7 +127,7 @@ public final class bt {
         String a2 = bVar.a();
         String b2 = bVar.b();
         if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(b2)) {
-            if (bVar.e().f4794a) {
+            if (bVar.e().a) {
                 if (d != null) {
                     d.r();
                     return;
@@ -149,7 +142,7 @@ public final class bt {
         }
         File file = new File(a2);
         if (!file.exists()) {
-            if (bVar.e().f4794a) {
+            if (bVar.e().a) {
                 if (d != null) {
                     d.r();
                     return;
@@ -186,11 +179,11 @@ public final class bt {
             }
         };
         try {
-            if (bVar.e().f4794a && d != null) {
+            if (bVar.e().a && d != null) {
                 d.r();
             }
             a(file, file2, cVar, bVar);
-            if (bVar.e().f4794a) {
+            if (bVar.e().a) {
                 if (d != null) {
                     d.r();
                 }
@@ -198,7 +191,7 @@ public final class bt {
                 d.b(bVar.c());
             }
         } catch (Throwable th) {
-            if (bVar.e().f4794a) {
+            if (bVar.e().a) {
                 if (d != null) {
                     d.r();
                 }
@@ -230,7 +223,7 @@ public final class bt {
                 long j3 = j;
                 ZipEntry nextEntry = zipInputStream.getNextEntry();
                 if (nextEntry != null) {
-                    if (e != null && e.f4794a) {
+                    if (e != null && e.a) {
                         long j4 = j;
                         zipInputStream.closeEntry();
                         long j5 = j;
@@ -250,7 +243,7 @@ public final class bt {
                         }
                         stringBuffer.append(nextEntry.getName());
                         long j10 = j;
-                        stringBuffer.append(";");
+                        stringBuffer.append(i.b);
                     }
                     long j11 = j;
                     j += nextEntry.getSize();
@@ -286,7 +279,7 @@ public final class bt {
             if (nextEntry == null) {
                 return;
             }
-            if (aVar != null && aVar.f4794a) {
+            if (aVar != null && aVar.a) {
                 zipInputStream.closeEntry();
                 return;
             }
@@ -314,14 +307,14 @@ public final class bt {
     }
 
     public final void a() {
-        b bVar = this.f4792a;
+        b bVar = this.a;
         if (bVar != null) {
             bVar.f();
         }
     }
 
     public final void b() {
-        b bVar = this.f4792a;
+        b bVar = this.a;
         if (bVar != null) {
             a(bVar);
         }

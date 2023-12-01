@@ -7,7 +7,7 @@ import java.util.Objects;
 public class o2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final char[] f21278a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    public static final char[] f7672a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     public static String a(byte[] bArr) {
         if (bArr != null) {
@@ -41,7 +41,7 @@ public class o2 {
             for (int i3 = 0; i3 < length; i3++) {
                 int i4 = bArr[i3 + 0] & 255;
                 int i5 = i2 + 1;
-                char[] cArr2 = f21278a;
+                char[] cArr2 = f7672a;
                 cArr[i2] = cArr2[i4 >> 4];
                 i2 = i5 + 1;
                 cArr[i5] = cArr2[i4 & 15];

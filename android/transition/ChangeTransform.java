@@ -71,8 +71,8 @@ public class ChangeTransform extends Transition {
         public void onTransitionEnd(Transition transition) {
             transition.removeListener(this);
             GhostView.removeGhost(this.mView);
-            this.mView.setTagInternal(R.id.transitionTransform, null);
-            this.mView.setTagInternal(R.id.parentMatrix, null);
+            this.mView.setTagInternal(16908358, null);
+            this.mView.setTagInternal(16908359, null);
             this.mStartView.setTransitionAlpha(1.0f);
         }
 
@@ -195,8 +195,8 @@ public class ChangeTransform extends Transition {
             viewGroup.transformMatrixToGlobal(matrix2);
             matrix2.preTranslate(-viewGroup.getScrollX(), -viewGroup.getScrollY());
             transitionValues.values.put(PROPNAME_PARENT_MATRIX, matrix2);
-            transitionValues.values.put(PROPNAME_INTERMEDIATE_MATRIX, view.getTag(R.id.transitionTransform));
-            transitionValues.values.put(PROPNAME_INTERMEDIATE_PARENT_MATRIX, view.getTag(R.id.parentMatrix));
+            transitionValues.values.put(PROPNAME_INTERMEDIATE_MATRIX, view.getTag(16908358));
+            transitionValues.values.put(PROPNAME_INTERMEDIATE_PARENT_MATRIX, view.getTag(16908359));
         }
     }
 
@@ -252,7 +252,7 @@ public class ChangeTransform extends Transition {
 
             private void setCurrentMatrix(Matrix matrix6) {
                 this.mTempMatrix.set(matrix6);
-                view.setTagInternal(R.id.transitionTransform, this.mTempMatrix);
+                view.setTagInternal(16908358, this.mTempMatrix);
                 transforms.restore(view);
             }
 
@@ -267,8 +267,8 @@ public class ChangeTransform extends Transition {
                     if (z && ChangeTransform.this.mUseOverlay) {
                         setCurrentMatrix(matrix5);
                     } else {
-                        view.setTagInternal(R.id.transitionTransform, null);
-                        view.setTagInternal(R.id.parentMatrix, null);
+                        view.setTagInternal(16908358, null);
+                        view.setTagInternal(16908359, null);
                     }
                 }
                 view.setAnimationMatrix(null);
@@ -312,7 +312,7 @@ public class ChangeTransform extends Transition {
 
     private void setMatricesForParent(TransitionValues transitionValues, TransitionValues transitionValues2) {
         Matrix matrix = (Matrix) transitionValues2.values.get(PROPNAME_PARENT_MATRIX);
-        transitionValues2.view.setTagInternal(R.id.parentMatrix, matrix);
+        transitionValues2.view.setTagInternal(16908359, matrix);
         Matrix matrix2 = this.mTempMatrix;
         matrix2.reset();
         matrix.invert(matrix2);

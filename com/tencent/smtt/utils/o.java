@@ -9,7 +9,7 @@ import java.util.Map;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f38971a = null;
+    private b f25280a = null;
     private b b = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -18,17 +18,17 @@ public class o {
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f38973c;
+        private long f25282c;
         private long d;
 
         a(String str, long j, long j2) {
             this.b = str;
-            this.f38973c = j;
+            this.f25282c = j;
             this.d = j2;
         }
 
         long a() {
-            return this.f38973c;
+            return this.f25282c;
         }
 
         long b() {
@@ -166,12 +166,12 @@ public class o {
     }
 
     public void a(File file) {
-        this.f38971a = new b(file);
+        this.f25280a = new b(file);
     }
 
     public boolean a() {
         b bVar = this.b;
-        return bVar != null && this.f38971a != null && bVar.a().size() == this.f38971a.a().size() && a(this.f38971a, this.b);
+        return bVar != null && this.f25280a != null && bVar.a().size() == this.f25280a.a().size() && a(this.f25280a, this.b);
     }
 
     public void b(File file) {

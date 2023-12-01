@@ -14,7 +14,7 @@ import javax.crypto.NoSuchPaddingException;
 public class b extends com.sdk.tencent.i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int f28070a = 0;
+    public static final /* synthetic */ int f14382a = 0;
 
     static {
         boolean z = c.b;

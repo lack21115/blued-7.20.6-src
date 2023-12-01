@@ -57,7 +57,6 @@ public final class ConfessedListMode implements MultiItemEntity {
         return this.data;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

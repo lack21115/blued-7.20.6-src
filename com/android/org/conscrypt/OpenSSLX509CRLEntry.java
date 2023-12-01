@@ -1,6 +1,5 @@
 package com.android.org.conscrypt;
 
-import android.text.format.Time;
 import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.security.cert.CRLException;
@@ -51,7 +50,7 @@ public class OpenSSLX509CRLEntry extends X509CRLEntry {
 
     @Override // java.security.cert.X509CRLEntry
     public Date getRevocationDate() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         calendar.set(14, 0);
         NativeCrypto.ASN1_TIME_to_Calendar(NativeCrypto.get_X509_REVOKED_revocationDate(this.mContext), calendar);
         return calendar.getTime();

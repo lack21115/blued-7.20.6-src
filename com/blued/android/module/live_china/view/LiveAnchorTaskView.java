@@ -37,13 +37,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveAnchorTaskView.class */
 public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LinearLayout f14356a;
+    private LinearLayout a;
     private LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CardView f14357c;
+    private CardView c;
     private PopupWindow d;
     private TaskDialogHolder e;
     private LayoutInflater f;
@@ -54,13 +50,9 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveAnchorTaskView$TaskDialogHolder.class */
     public class TaskDialogHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        ShapeTextView f14360a;
+        ShapeTextView a;
         TextView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        TextView f14361c;
+        TextView c;
         ShapeTextView d;
         TextView e;
         TextView f;
@@ -79,9 +71,9 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
         TextView s;
 
         public TaskDialogHolder(View view) {
-            this.f14360a = (ShapeTextView) view.findViewById(R.id.live_receive_fans);
+            this.a = (ShapeTextView) view.findViewById(R.id.live_receive_fans);
             this.b = (TextView) view.findViewById(R.id.live_fans_count);
-            this.f14361c = (TextView) view.findViewById(R.id.live_fans_award);
+            this.c = (TextView) view.findViewById(R.id.live_fans_award);
             this.d = (ShapeTextView) view.findViewById(R.id.live_receive_coin);
             this.e = (TextView) view.findViewById(R.id.live_coin_count);
             this.f = (TextView) view.findViewById(R.id.live_coin_award);
@@ -124,15 +116,15 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
         public void a(int i) {
             String string;
             if (i == 0) {
-                this.f14360a.setEnabled(true);
-                ShapeHelper.a(this.f14360a, R.color.syc_w_996AFB, R.color.syc_w_465CF2);
+                this.a.setEnabled(true);
+                ShapeHelper.a(this.a, R.color.syc_w_996AFB, R.color.syc_w_465CF2);
                 string = LiveAnchorTaskView.this.getResources().getString(R.string.live_reward_follow);
             } else {
-                this.f14360a.setEnabled(false);
-                ShapeHelper.a(this.f14360a, R.color.syc_dark_z, R.color.syc_dark_z);
+                this.a.setEnabled(false);
+                ShapeHelper.a(this.a, R.color.syc_dark_z, R.color.syc_dark_z);
                 string = LiveAnchorTaskView.this.getResources().getString(R.string.live_chat_followed);
             }
-            this.f14360a.setText(string);
+            this.a.setText(string);
         }
 
         public void a(ShapeTextView shapeTextView, int i) {
@@ -169,10 +161,10 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
         LayoutInflater from = LayoutInflater.from(getContext());
         this.f = from;
         from.inflate(R.layout.live_anchor_task_layout, (ViewGroup) this, true);
-        this.f14357c = (CardView) findViewById(R.id.live_task_root_view);
-        this.f14356a = (LinearLayout) findViewById(R.id.live_anchor_layout);
+        this.c = findViewById(R.id.live_task_root_view);
+        this.a = (LinearLayout) findViewById(R.id.live_anchor_layout);
         this.b = (LinearLayout) findViewById(R.id.live_task_list);
-        this.f14356a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
     }
 
     private void a(TextView textView, int i, Object... objArr) {
@@ -202,7 +194,7 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
         View inflate = this.f.inflate(R.layout.live_pop_anchor_task, (ViewGroup) null);
         this.e = new TaskDialogHolder(inflate);
         b(list, liveTaskListModelExtra);
-        this.e.f14360a.setOnClickListener(this);
+        this.e.a.setOnClickListener(this);
         this.e.d.setOnClickListener(this);
         this.e.g.setOnClickListener(this);
         this.e.j.setOnClickListener(this);
@@ -210,7 +202,7 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
             this.e.g.setVisibility(0);
             this.e.j.setVisibility(0);
             this.e.n.setVisibility(0);
-            this.e.f14361c.setVisibility(0);
+            this.e.c.setVisibility(0);
             this.e.f.setVisibility(0);
             this.e.i.setVisibility(0);
             this.e.l.setVisibility(0);
@@ -218,18 +210,18 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
             this.e.g.setVisibility(4);
             this.e.j.setVisibility(4);
             this.e.n.setVisibility(8);
-            this.e.f14361c.setVisibility(8);
+            this.e.c.setVisibility(8);
             this.e.f.setVisibility(8);
             this.e.i.setVisibility(8);
             this.e.l.setVisibility(8);
         }
-        int a2 = AppInfo.l - (DensityUtils.a(getContext(), 38.0f) * 2);
-        int i = (int) (a2 * 0.3d);
+        int a = AppInfo.l - (DensityUtils.a(getContext(), 38.0f) * 2);
+        int i = (int) (a * 0.3d);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.e.m.getLayoutParams();
-        layoutParams.width = a2;
+        layoutParams.width = a;
         layoutParams.height = i;
         this.e.m.setLayoutParams(layoutParams);
-        PopupWindow popupWindow = new PopupWindow(inflate, a2, -2);
+        PopupWindow popupWindow = new PopupWindow(inflate, a, -2);
         this.d = popupWindow;
         popupWindow.setBackgroundDrawable(new ColorDrawable(0));
         this.d.setOutsideTouchable(true);
@@ -263,12 +255,12 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
                     this.e.a();
                 }
             } else if (i == 3) {
-                this.e.f14360a.setTag(liveTaskListModel.task_id);
+                this.e.a.setTag(liveTaskListModel.task_id);
                 this.e.b.setText(liveTaskListModel.task_text);
-                this.e.f14361c.setText(liveTaskListModel.task_reward_text);
+                this.e.c.setText(liveTaskListModel.task_reward_text);
                 if (this.i) {
                     TaskDialogHolder taskDialogHolder3 = this.e;
-                    taskDialogHolder3.a(taskDialogHolder3.f14360a, liveTaskListModel.task_status);
+                    taskDialogHolder3.a(taskDialogHolder3.a, liveTaskListModel.task_status);
                 } else {
                     this.e.a(liveTaskListModelExtra.is_follow);
                 }
@@ -290,9 +282,9 @@ public class LiveAnchorTaskView extends FrameLayout implements View.OnClickListe
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<LiveTaskListModel, LiveTaskListModelExtra> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.isEmpty()) {
-                    LiveAnchorTaskView.this.f14356a.setVisibility(8);
+                    LiveAnchorTaskView.this.a.setVisibility(8);
                 } else if (LiveAnchorTaskView.this.d == null || !LiveAnchorTaskView.this.d.isShowing()) {
-                    LiveAnchorTaskView.this.f14356a.setVisibility(0);
+                    LiveAnchorTaskView.this.a.setVisibility(0);
                     LiveAnchorTaskView.this.a(bluedEntity.data, bluedEntity.extra);
                 } else {
                     LiveAnchorTaskView.this.b(bluedEntity.data, bluedEntity.extra);

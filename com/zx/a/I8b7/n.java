@@ -6,12 +6,12 @@ import android.content.Context;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public static float f42149a;
+    public static float f28458a;
 
     public static int a(Context context, float f) {
-        if (f42149a == 0.0f) {
-            f42149a = context.getResources().getDisplayMetrics().density;
+        if (f28458a == 0.0f) {
+            f28458a = context.getResources().getDisplayMetrics().density;
         }
-        return (int) ((f * f42149a) + 0.5f);
+        return (int) ((f * f28458a) + 0.5f);
     }
 }

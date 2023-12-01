@@ -41,12 +41,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftGalleryDialogFragment.class */
 public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12902a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private FreedomAdapter f12903c;
+    public static final Companion a = new Companion(null);
+    private FreedomAdapter c;
     private final Lazy b = LazyKt.a(new Function0<LiveGiftGalleryBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveGiftGalleryDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -95,8 +91,7 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
     }
 
     private final void e() {
-        d().f12219c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveGiftGalleryDialogFragment$initRecyclerView$1
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+        d().c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveGiftGalleryDialogFragment$initRecyclerView$1
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 Intrinsics.e(recyclerView, "recyclerView");
                 super.onScrolled(recyclerView, i, i2);
@@ -119,7 +114,7 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
                     d = LiveGiftGalleryDialogFragment.this.d();
                     d.b.setVisibility(0);
                     d2 = LiveGiftGalleryDialogFragment.this.d();
-                    d2.f12219c.setVisibility(8);
+                    d2.c.setVisibility(8);
                     return;
                 }
                 List<GiftGalleryDataModel> list = bluedEntityA.data;
@@ -142,7 +137,7 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
                 d = LiveGiftGalleryDialogFragment.this.d();
                 d.b.setVisibility(0);
                 d2 = LiveGiftGalleryDialogFragment.this.d();
-                d2.f12219c.setVisibility(8);
+                d2.c.setVisibility(8);
                 return super.onUIFailure(i, str, str2);
             }
         }, a());
@@ -152,7 +147,7 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
     public final void g() {
         ViewPropertyAnimator alpha;
         ViewPropertyAnimator duration;
-        FreedomAdapter freedomAdapter = this.f12903c;
+        FreedomAdapter freedomAdapter = this.c;
         if (freedomAdapter != null) {
             if (freedomAdapter == null) {
                 return;
@@ -160,9 +155,8 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        final RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveGiftGalleryDialogFragment$notifyList$1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 ArrayList arrayList;
                 arrayList = LiveGiftGalleryDialogFragment.this.d;
@@ -171,18 +165,17 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
                 return ((FitemGiftGallery) obj).a(gridLayoutManager.getSpanCount());
             }
         });
-        this.f12903c = new FreedomAdapter(getContext(), a(), this.d, this);
-        d().f12219c.setLayoutManager(gridLayoutManager);
-        d().f12219c.setItemAnimator(new DefaultItemAnimator());
-        d().f12219c.setAdapter(this.f12903c);
-        ViewPropertyAnimator animate = d().f12219c.animate();
+        this.c = new FreedomAdapter(getContext(), a(), this.d, this);
+        d().c.setLayoutManager(gridLayoutManager);
+        d().c.setItemAnimator(new DefaultItemAnimator());
+        d().c.setAdapter(this.c);
+        ViewPropertyAnimator animate = d().c.animate();
         if (animate == null || (alpha = animate.alpha(1.0f)) == null || (duration = alpha.setDuration(300L)) == null) {
             return;
         }
         duration.start();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
         super.dismiss();
         for (FitemGiftGallery fitemGiftGallery : this.d) {
@@ -194,12 +187,11 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
     public void onClick(View view, int i, BaseViewHolder baseViewHolder) {
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 511.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -223,22 +215,21 @@ public final class LiveGiftGalleryDialogFragment extends BaseDialogFragment impl
             attributes.gravity = 80;
         }
         dialog.onWindowAttributesChanged(attributes);
-        d().f12219c.setPadding(DensityUtils.a(getContext(), 11.0f), DensityUtils.a(getContext(), 10.0f), DensityUtils.a(getContext(), 11.0f), DensityUtils.a(getContext(), 10.0f));
+        d().c.setPadding(DensityUtils.a(getContext(), 11.0f), DensityUtils.a(getContext(), 10.0f), DensityUtils.a(getContext(), 11.0f), DensityUtils.a(getContext(), 10.0f));
         e();
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         super.onDismiss(dialog);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
-        d().f12218a.f12221a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGiftGalleryDialogFragment$s6eAAwAiBIPHDqPPAYdssyurr0M
+        d().a.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGiftGalleryDialogFragment$s6eAAwAiBIPHDqPPAYdssyurr0M
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveGiftGalleryDialogFragment.a(LiveGiftGalleryDialogFragment.this, view);

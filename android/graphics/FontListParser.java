@@ -77,32 +77,32 @@ public class FontListParser {
 
     public static Config parse(InputStream inputStream, String str) throws XmlPullParserException, IOException {
         Config config;
-        AutoCloseable autoCloseable = null;
+        BufferedInputStream bufferedInputStream = null;
         try {
-            BufferedInputStream bufferedInputStream = !(inputStream instanceof BufferedInputStream) ? new BufferedInputStream(inputStream) : (BufferedInputStream) inputStream;
-            BufferedInputStream bufferedInputStream2 = bufferedInputStream;
-            bufferedInputStream.mark(inputStream.available());
-            BufferedInputStream bufferedInputStream3 = bufferedInputStream;
-            if (isLegacyFormat(bufferedInputStream)) {
-                BufferedInputStream bufferedInputStream4 = bufferedInputStream;
-                Config parseLegacyFormat = parseLegacyFormat(bufferedInputStream, str);
+            BufferedInputStream bufferedInputStream2 = !(inputStream instanceof BufferedInputStream) ? new BufferedInputStream(inputStream) : (BufferedInputStream) inputStream;
+            BufferedInputStream bufferedInputStream3 = bufferedInputStream2;
+            bufferedInputStream2.mark(inputStream.available());
+            BufferedInputStream bufferedInputStream4 = bufferedInputStream2;
+            if (isLegacyFormat(bufferedInputStream2)) {
+                BufferedInputStream bufferedInputStream5 = bufferedInputStream2;
+                Config parseLegacyFormat = parseLegacyFormat(bufferedInputStream2, str);
                 config = parseLegacyFormat;
-                if (bufferedInputStream != null) {
-                    bufferedInputStream.close();
+                if (bufferedInputStream2 != null) {
+                    bufferedInputStream2.close();
                     config = parseLegacyFormat;
                 }
             } else {
-                Config parseNormalFormat = parseNormalFormat(bufferedInputStream, str);
+                Config parseNormalFormat = parseNormalFormat(bufferedInputStream2, str);
                 config = parseNormalFormat;
-                if (bufferedInputStream != null) {
-                    bufferedInputStream.close();
+                if (bufferedInputStream2 != null) {
+                    bufferedInputStream2.close();
                     return parseNormalFormat;
                 }
             }
             return config;
         } catch (Throwable th) {
             if (0 != 0) {
-                autoCloseable.close();
+                bufferedInputStream.close();
             }
             throw th;
         }

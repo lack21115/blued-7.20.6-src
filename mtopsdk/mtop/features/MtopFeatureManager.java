@@ -7,9 +7,7 @@ import mtopsdk.common.util.TBSdkLog;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/features/MtopFeatureManager.class */
 public final class MtopFeatureManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Map f43753a = new HashMap();
+    private static Map a = new HashMap();
 
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/features/MtopFeatureManager$MtopFeatureEnum.class */
     public enum MtopFeatureEnum {
@@ -40,12 +38,12 @@ public final class MtopFeatureManager {
     public static long a() {
         long j;
         long j2 = 0;
-        if (f43753a.isEmpty()) {
+        if (a.isEmpty()) {
             return 0L;
         }
         long j3 = 0;
         try {
-            Iterator it = f43753a.entrySet().iterator();
+            Iterator it = a.entrySet().iterator();
             while (true) {
                 j3 = j2;
                 j = j2;
@@ -76,7 +74,7 @@ public final class MtopFeatureManager {
 
     public static void a(MtopFeatureEnum mtopFeatureEnum, boolean z) {
         if (mtopFeatureEnum != null) {
-            f43753a.put(mtopFeatureEnum, Boolean.valueOf(z));
+            a.put(mtopFeatureEnum, Boolean.valueOf(z));
             if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
                 TBSdkLog.b("mtopsdk.MtopFeatureManager", "[setMtopFeatureFlag] set feature=" + mtopFeatureEnum + " , openFlag=" + z);
             }

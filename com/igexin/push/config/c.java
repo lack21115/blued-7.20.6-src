@@ -17,11 +17,11 @@ public final class c {
     public static final int M = 50;
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23373a = "PushSdk";
+    public static String f9765a = "PushSdk";
     public static final boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f23374c = 10;
+    public static final int f9766c = 10;
     public static final int d = 10000;
     public static final int e = 30;
     public static final long f = 1;

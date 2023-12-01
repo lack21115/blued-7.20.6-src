@@ -11,15 +11,13 @@ import javax.crypto.spec.SecretKeySpec;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LogEncryptionUtils.class */
 public class LogEncryptionUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f11473a = {66, 89, -81, 81, -1, -77, 2, 104, 98, -50, -38, 17, 0, -23, 68, 1};
+    private static final byte[] a = {66, 89, -81, 81, -1, -77, 2, 104, 98, -50, -38, 17, 0, -23, 68, 1};
 
     public static String a(String str, String str2) throws GeneralSecurityException {
         try {
             SecretKeySpec a2 = a(str);
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            cipher.init(1, a2, new IvParameterSpec(f11473a));
+            cipher.init(1, a2, new IvParameterSpec(a));
             return Base64.encodeToString(cipher.doFinal(str2.getBytes("UTF-8")), 2);
         } catch (UnsupportedEncodingException e) {
             throw new GeneralSecurityException(e);
@@ -38,7 +36,7 @@ public class LogEncryptionUtils {
             SecretKeySpec a2 = a(str);
             byte[] decode = Base64.decode(str2, 2);
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            cipher.init(2, a2, new IvParameterSpec(f11473a));
+            cipher.init(2, a2, new IvParameterSpec(a));
             return new String(cipher.doFinal(decode), "UTF-8");
         } catch (UnsupportedEncodingException e) {
             throw new GeneralSecurityException(e);

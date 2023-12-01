@@ -6,11 +6,11 @@ import com.tencent.liteav.videoproducer.producer.ServerVideoProducerConfig;
 final /* synthetic */ class ab implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final x f36970a;
+    private final x f23279a;
     private final ServerVideoProducerConfig b;
 
     private ab(x xVar, ServerVideoProducerConfig serverVideoProducerConfig) {
-        this.f36970a = xVar;
+        this.f23279a = xVar;
         this.b = serverVideoProducerConfig;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class ab implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36970a.i = this.b;
+        this.f23279a.i = this.b;
     }
 }

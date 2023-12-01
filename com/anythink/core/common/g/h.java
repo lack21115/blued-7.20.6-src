@@ -33,14 +33,14 @@ public final class h extends a {
     @Override // com.anythink.core.common.g.a
     protected final String b() {
         long currentTimeMillis = System.currentTimeMillis();
-        String c2 = com.anythink.core.common.k.f.c(String.valueOf(currentTimeMillis));
+        String c = com.anythink.core.common.k.f.c(String.valueOf(currentTimeMillis));
         StringBuilder sb = new StringBuilder();
         com.anythink.core.common.i.a();
         sb.append(com.anythink.core.common.i.d());
         sb.append("?t=");
         sb.append(currentTimeMillis);
         sb.append("&sign=");
-        sb.append(c2);
+        sb.append(c);
         return sb.toString();
     }
 

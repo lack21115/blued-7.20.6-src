@@ -67,9 +67,8 @@ public final class Closer implements Closeable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/io/Closer$Suppressor.class */
-    public interface Suppressor {
+    interface Suppressor {
         void suppress(Closeable closeable, Throwable th, Throwable th2);
     }
 

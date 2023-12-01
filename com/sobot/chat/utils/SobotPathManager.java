@@ -106,6 +106,6 @@ public class SobotPathManager {
         if (Build.VERSION.SDK_INT >= 19) {
             return this.mContext.getExternalFilesDir(Environment.DIRECTORY_MUSIC).getPath() + File.separator;
         }
-        return getRootDir() + File.separator + "voice" + File.separator;
+        return getRootDir() + File.separator + VOICE_DIR + File.separator;
     }
 }

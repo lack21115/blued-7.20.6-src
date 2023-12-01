@@ -4,13 +4,9 @@ import android.util.Log;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/e.class */
 public final class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f6807a = false;
+    public static boolean a = false;
     public static boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f6808c = false;
+    private static boolean c = false;
     private static boolean d = false;
     private static boolean e = false;
     private static boolean f = false;
@@ -21,13 +17,13 @@ public final class e {
     }
 
     private static void a(String str, String str2) {
-        if (f6808c) {
+        if (c) {
             Log.v(str, str2);
         }
     }
 
     private static void a(String str, String str2, Throwable th) {
-        if (f6808c) {
+        if (c) {
             Log.v(str, str2, th);
         }
     }

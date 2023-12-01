@@ -16,7 +16,7 @@ import java.util.Map;
 public abstract class k extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f36583a;
+    public final a f22892a;
     private a f;
     private int[] g;
     private int h;
@@ -28,24 +28,24 @@ public abstract class k extends b {
     private final FloatBuffer b = OpenGlUtils.createNormalCubeVerticesBuffer();
 
     /* renamed from: c  reason: collision with root package name */
-    private final FloatBuffer f36584c = OpenGlUtils.createTextureCoordsBuffer(Rotation.NORMAL, false, false);
+    private final FloatBuffer f22893c = OpenGlUtils.createTextureCoordsBuffer(Rotation.NORMAL, false, false);
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/a/k$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        final b f36585a;
+        final b f22894a;
         final Map<String, a> b;
 
         /* renamed from: c  reason: collision with root package name */
-        com.tencent.liteav.videobase.frame.d f36586c;
+        com.tencent.liteav.videobase.frame.d f22895c;
         int d;
 
         private a(b bVar) {
             this.b = new HashMap();
-            this.f36586c = null;
+            this.f22895c = null;
             this.d = 0;
-            this.f36585a = bVar;
+            this.f22894a = bVar;
         }
 
         /* synthetic */ a(b bVar, byte b) {
@@ -65,51 +65,51 @@ public abstract class k extends b {
 
     public k() {
         a aVar = new a(null, (byte) 0);
-        this.f36583a = aVar;
+        this.f22892a = aVar;
         this.d.add(aVar);
     }
 
     private void a(a aVar) {
         for (a aVar2 : aVar.b.values()) {
-            if (aVar2 != this.f36583a && aVar2.f36586c == null) {
+            if (aVar2 != this.f22892a && aVar2.f22895c == null) {
                 a(aVar2);
             }
         }
-        if (aVar.f36585a instanceof j) {
-            j jVar = (j) aVar.f36585a;
+        if (aVar.f22894a instanceof j) {
+            j jVar = (j) aVar.f22894a;
             for (Map.Entry<String, a> entry : aVar.b.entrySet()) {
                 if (!"input-texture-name-for-on-draw".equals(entry.getKey())) {
-                    if (entry.getValue() == this.f36583a) {
+                    if (entry.getValue() == this.f22892a) {
                         jVar.setInputTexture(entry.getKey(), this.h);
                     } else {
-                        jVar.setInputTexture(entry.getKey(), entry.getValue().f36586c.a());
+                        jVar.setInputTexture(entry.getKey(), entry.getValue().f22895c.a());
                     }
                 }
             }
         }
         com.tencent.liteav.videobase.frame.d dVar = this.i;
-        int i = this.mOutputSize.f36340a;
+        int i = this.mOutputSize.f22649a;
         int i2 = this.mOutputSize.b;
         if (aVar != this.f) {
-            i = aVar.f36585a.getOutputSize().f36340a;
-            i2 = aVar.f36585a.getOutputSize().b;
-            aVar.f36586c = this.mTexturePool.a(i, i2);
-            dVar = aVar.f36586c;
+            i = aVar.f22894a.getOutputSize().f22649a;
+            i2 = aVar.f22894a.getOutputSize().b;
+            aVar.f22895c = this.mTexturePool.a(i, i2);
+            dVar = aVar.f22895c;
         }
         a aVar3 = aVar.b.get("input-texture-name-for-on-draw");
         GLES20.glViewport(0, 0, i, i2);
-        if (aVar3 == this.f36583a) {
-            aVar.f36585a.onDraw(this.h, dVar, this.j, this.k);
+        if (aVar3 == this.f22892a) {
+            aVar.f22894a.onDraw(this.h, dVar, this.j, this.k);
         } else {
-            aVar.f36585a.onDraw(aVar3.f36586c.a(), dVar, this.b, this.f36584c);
+            aVar.f22894a.onDraw(aVar3.f22895c.a(), dVar, this.b, this.f22893c);
         }
         for (a aVar4 : aVar.b.values()) {
             int intValue = this.e.get(aVar4).intValue();
             int[] iArr = this.g;
             iArr[intValue] = iArr[intValue] + 1;
-            if (aVar4.f36586c != null && this.g[intValue] == aVar4.d) {
-                aVar4.f36586c.release();
-                aVar4.f36586c = null;
+            if (aVar4.f22895c != null && this.g[intValue] == aVar4.d) {
+                aVar4.f22895c.release();
+                aVar4.f22895c = null;
             }
         }
     }
@@ -142,8 +142,8 @@ public abstract class k extends b {
     public void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
         for (a aVar : this.d) {
-            if (aVar.f36585a != null) {
-                aVar.f36585a.initialize(eVar);
+            if (aVar.f22894a != null) {
+                aVar.f22894a.initialize(eVar);
             }
         }
         int i = 0;
@@ -234,8 +234,8 @@ public abstract class k extends b {
     public void onOutputSizeChanged(int i, int i2) {
         super.onOutputSizeChanged(i, i2);
         for (a aVar : this.d) {
-            if (aVar.f36585a != null) {
-                aVar.f36585a.onOutputSizeChanged(i, i2);
+            if (aVar.f22894a != null) {
+                aVar.f22894a.onOutputSizeChanged(i, i2);
             }
         }
     }
@@ -245,8 +245,8 @@ public abstract class k extends b {
     public void onUninit() {
         super.onUninit();
         for (a aVar : this.d) {
-            if (aVar.f36585a != null) {
-                aVar.f36585a.uninitialize();
+            if (aVar.f22894a != null) {
+                aVar.f22894a.uninitialize();
             }
         }
     }

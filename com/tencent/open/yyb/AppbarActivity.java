@@ -27,7 +27,6 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ZoomButtonsController;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.igexin.assist.util.AssistUtils;
 import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
@@ -102,10 +101,10 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
     public static class b extends AsyncTask<String, Void, byte[]> {
 
         /* renamed from: a  reason: collision with root package name */
-        private a f38301a;
+        private a f24610a;
 
         public b(a aVar) {
-            this.f38301a = aVar;
+            this.f24610a = aVar;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -113,7 +112,7 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
         /* renamed from: a */
         public void onPostExecute(byte[] bArr) {
             super.onPostExecute(bArr);
-            this.f38301a.a(bArr);
+            this.f24610a.a(bArr);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -220,7 +219,7 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
             if (str.startsWith(AppbarJsBridge.JS_BRIDGE_SCHEME)) {
                 AppbarActivity.this.jsBridge.invoke(str);
                 return true;
-            } else if (str.equals("about:blank;") || str.equals(com.anythink.core.common.res.d.f6907a)) {
+            } else if (str.equals("about:blank;") || str.equals("about:blank")) {
                 if (Build.VERSION.SDK_INT < 11) {
                     z = true;
                 }
@@ -349,7 +348,7 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
     private void initViews() {
         WebSettings settings = this.mWebView.getSettings();
         settings.setBuiltInZoomControls(true);
-        settings.setUserAgentString(settings.getUserAgentString() + BridgeUtil.SPLIT_MARK + UA_PREFIX + this.jsBridge.getVersion() + "/sdk");
+        settings.setUserAgentString(settings.getUserAgentString() + "/" + UA_PREFIX + this.jsBridge.getVersion() + "/sdk");
         settings.setJavaScriptEnabled(true);
         Class<?> cls = settings.getClass();
         try {
@@ -428,7 +427,7 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
 
     private void shareToWX(boolean z) {
         f.a(TAG, "-->shareToWX : wx_appid = wx8e8dc60535c9cd93");
-        if (TextUtils.isEmpty(this.model.f38307c)) {
+        if (TextUtils.isEmpty(this.model.f24616c)) {
             return;
         }
         showProgressDialog(this, "", "");
@@ -437,7 +436,7 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
             public void a(byte[] bArr) {
                 AppbarActivity.this.mProgressDialog.dismiss();
             }
-        }).execute(this.model.f38307c);
+        }).execute(this.model.f24616c);
     }
 
     private boolean supportWebViewFullScreen() {
@@ -595,14 +594,14 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
         }
         QQShare qQShare = new QQShare(this, token);
         Bundle bundle = new Bundle();
-        bundle.putString("title", this.model.f38306a);
+        bundle.putString("title", this.model.f24615a);
         bundle.putString("targetUrl", this.model.d);
         bundle.putString("summary", this.model.b);
-        bundle.putString("imageUrl", this.model.f38307c);
-        f.a(TAG, "-->(AppbarActivity)shareToQQ : model.mTitle = " + this.model.f38306a);
+        bundle.putString("imageUrl", this.model.f24616c);
+        f.a(TAG, "-->(AppbarActivity)shareToQQ : model.mTitle = " + this.model.f24615a);
         f.a(TAG, "-->(AppbarActivity)shareToQQ : model.mTargetUrl = " + this.model.d);
         f.a(TAG, "-->(AppbarActivity)shareToQQ : model.mDescription = " + this.model.b);
-        f.a(TAG, "-->(AppbarActivity)shareToQQ : model.mIconUrl = " + this.model.f38307c);
+        f.a(TAG, "-->(AppbarActivity)shareToQQ : model.mIconUrl = " + this.model.f24616c);
         qQShare.shareToQQ(this, bundle, new IUiListener() { // from class: com.tencent.open.yyb.AppbarActivity.2
             @Override // com.tencent.tauth.IUiListener
             public void onCancel() {
@@ -634,12 +633,12 @@ public class AppbarActivity extends Activity implements View.OnClickListener {
         QzoneShare qzoneShare = new QzoneShare(this, token);
         Bundle bundle = new Bundle();
         bundle.putInt("req_type", 1);
-        bundle.putString("title", this.model.f38306a);
+        bundle.putString("title", this.model.f24615a);
         bundle.putString("summary", this.model.b);
         bundle.putString("targetUrl", this.model.d);
         ArrayList<String> arrayList = new ArrayList<>();
-        f.a(TAG, "-->shareToQzone : mIconUrl = " + this.model.f38307c);
-        arrayList.add(this.model.f38307c);
+        f.a(TAG, "-->shareToQzone : mIconUrl = " + this.model.f24616c);
+        arrayList.add(this.model.f24616c);
         bundle.putStringArrayList("imageUrl", arrayList);
         qzoneShare.shareToQzone(this, bundle, new IUiListener() { // from class: com.tencent.open.yyb.AppbarActivity.3
             @Override // com.tencent.tauth.IUiListener

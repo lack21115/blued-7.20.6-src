@@ -45,13 +45,13 @@ public class c implements UMLogDataProtocol {
     public static final String b = "preInitInvokedFlag";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40863c = "policyGrantInvokedFlag";
+    public static final String f27172c = "policyGrantInvokedFlag";
     public static final String d = "policyGrantResult";
     private static int f = 1;
     private Context e;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40862a = at.b().b(at.q);
+    public static final String f27171a = at.b().b(at.q);
     private static Class<?> g = null;
     private static Method h = null;
     private static Method i = null;
@@ -116,13 +116,13 @@ public class c implements UMLogDataProtocol {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    SharedPreferences sharedPreferences = Context.this.getSharedPreferences(h.f40924a, 0);
+                    SharedPreferences sharedPreferences = Context.this.getSharedPreferences(h.f27233a, 0);
                     long currentTimeMillis = System.currentTimeMillis();
                     String a2 = av.a(Context.this);
                     long currentTimeMillis2 = System.currentTimeMillis();
                     if (!TextUtils.isEmpty(a2) && sharedPreferences != null) {
                         SharedPreferences.Editor edit = sharedPreferences.edit();
-                        edit.putString(h.f40925c, (currentTimeMillis2 - currentTimeMillis) + "");
+                        edit.putString(h.f27234c, (currentTimeMillis2 - currentTimeMillis) + "");
                         edit.commit();
                     }
                     if (sharedPreferences != null) {
@@ -217,7 +217,7 @@ public class c implements UMLogDataProtocol {
                         return;
                     }
                     try {
-                        SharedPreferences sharedPreferences = Context.this.getSharedPreferences(h.f40924a, 0);
+                        SharedPreferences sharedPreferences = Context.this.getSharedPreferences(h.f27233a, 0);
                         if (sharedPreferences == null || sharedPreferences.getString(h.b, "").equalsIgnoreCase(str)) {
                             return;
                         }
@@ -234,19 +234,19 @@ public class c implements UMLogDataProtocol {
 
     private void d() {
         bj a2 = bj.a(this.e);
-        bk a3 = a2.a(bl.f40666c);
+        bk a3 = a2.a(bl.f26975c);
         if (a3 != null) {
             UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> [有状态]二级缓存记录构建成真正信封。");
             try {
-                String str = a3.f40663a;
+                String str = a3.f26972a;
                 String str2 = a3.b;
-                JSONObject a4 = new com.umeng.commonsdk.statistics.b().a(this.e.getApplicationContext(), new JSONObject(a3.f40664c), new JSONObject(a3.d), a3.e, str2, a3.f);
+                JSONObject a4 = new com.umeng.commonsdk.statistics.b().a(this.e.getApplicationContext(), new JSONObject(a3.f26973c), new JSONObject(a3.d), a3.e, str2, a3.f);
                 if (a4 == null || !a4.has("exception")) {
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> [有状态]二级缓存记录构建真正信封 成功! 删除二级缓存记录。");
                 } else {
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> [有状态]二级缓存记录构建真正信封 失败。删除二级缓存记录");
                 }
-                a2.a(bl.f40666c, str);
+                a2.a(bl.f26975c, str);
                 a2.b();
             } catch (Throwable th) {
             }
@@ -391,7 +391,7 @@ public class c implements UMLogDataProtocol {
                         return;
                     }
                     try {
-                        SharedPreferences sharedPreferences = c.this.e.getSharedPreferences(h.f40924a, 0);
+                        SharedPreferences sharedPreferences = c.this.e.getSharedPreferences(h.f27233a, 0);
                         if (sharedPreferences != null) {
                             SharedPreferences.Editor edit = sharedPreferences.edit();
                             edit.putString(h.b, str);
@@ -465,7 +465,7 @@ public class c implements UMLogDataProtocol {
         if (UMUtils.isMainProgress(this.e)) {
             f(this.e);
             UMInnerManager.sendInnerPackage(this.e);
-            if (!FieldManager.allow(com.umeng.commonsdk.utils.d.f40967ar) && SdkVersion.SDK_TYPE == 0 && UMUtils.isMainProgress(this.e)) {
+            if (!FieldManager.allow(com.umeng.commonsdk.utils.d.f27276ar) && SdkVersion.SDK_TYPE == 0 && UMUtils.isMainProgress(this.e)) {
                 Context context = this.e;
                 UMWorkDispatch.sendEvent(context, a.G, b.a(context).a(), null, 5000L);
             }
@@ -554,10 +554,10 @@ public class c implements UMLogDataProtocol {
                         long currentTimeMillis2 = System.currentTimeMillis();
                         String a2 = av.a(this.e);
                         long currentTimeMillis3 = System.currentTimeMillis();
-                        if (!TextUtils.isEmpty(a2) && (sharedPreferences = this.e.getSharedPreferences(h.f40924a, 0)) != null) {
+                        if (!TextUtils.isEmpty(a2) && (sharedPreferences = this.e.getSharedPreferences(h.f27233a, 0)) != null) {
                             SharedPreferences.Editor edit2 = sharedPreferences.edit();
                             edit2.putString(h.b, a2);
-                            edit2.putString(h.f40925c, (currentTimeMillis3 - currentTimeMillis2) + "");
+                            edit2.putString(h.f27234c, (currentTimeMillis3 - currentTimeMillis2) + "");
                             edit2.commit();
                         }
                     } catch (Throwable th) {
@@ -594,9 +594,9 @@ public class c implements UMLogDataProtocol {
                     JSONObject jSONObject = new JSONObject();
                     com.umeng.commonsdk.internal.utils.b bVar = (com.umeng.commonsdk.internal.utils.b) obj;
                     try {
-                        jSONObject.put("le", bVar.f40871a);
+                        jSONObject.put("le", bVar.f27180a);
                         jSONObject.put("vol", bVar.b);
-                        jSONObject.put("temp", bVar.f40872c);
+                        jSONObject.put("temp", bVar.f27181c);
                         jSONObject.put("st", bVar.d);
                         jSONObject.put(com.anythink.expressad.d.a.b.dx, bVar.e);
                         jSONObject.put("ts", bVar.f);
@@ -719,7 +719,7 @@ public class c implements UMLogDataProtocol {
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> 正常冷启动流程，接收到云控配置加载成功通知。");
                     c(this.e);
                     UMInnerManager.sendInnerPackage(this.e);
-                    if (!FieldManager.allow(com.umeng.commonsdk.utils.d.f40967ar) && SdkVersion.SDK_TYPE == 0 && UMUtils.isMainProgress(this.e)) {
+                    if (!FieldManager.allow(com.umeng.commonsdk.utils.d.f27276ar) && SdkVersion.SDK_TYPE == 0 && UMUtils.isMainProgress(this.e)) {
                         Context context4 = this.e;
                         UMWorkDispatch.sendEvent(context4, a.G, b.a(context4).a(), null, 5000L);
                     }
@@ -730,7 +730,7 @@ public class c implements UMLogDataProtocol {
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> 保存隐私授权结果.");
                     if (obj instanceof Integer) {
                         int intValue = ((Integer) obj).intValue();
-                        SharedPreferences sharedPreferences2 = this.e.getApplicationContext().getSharedPreferences(f40862a, 0);
+                        SharedPreferences sharedPreferences2 = this.e.getApplicationContext().getSharedPreferences(f27171a, 0);
                         if (sharedPreferences2 != null) {
                             sharedPreferences2.edit().putInt("policyGrantResult", intValue).commit();
                             return;
@@ -746,10 +746,10 @@ public class c implements UMLogDataProtocol {
                             int i3 = jSONObject5.getInt(a.J);
                             int i4 = jSONObject5.getInt(a.K);
                             int i5 = jSONObject5.getInt("policyGrantResult");
-                            SharedPreferences sharedPreferences3 = this.e.getApplicationContext().getSharedPreferences(f40862a, 0);
+                            SharedPreferences sharedPreferences3 = this.e.getApplicationContext().getSharedPreferences(f27171a, 0);
                             if (sharedPreferences3 != null && (edit = sharedPreferences3.edit()) != null) {
                                 edit.putInt(b, i3);
-                                edit.putInt(f40863c, i4);
+                                edit.putInt(f27172c, i4);
                                 edit.putInt("policyGrantResult", i5);
                                 edit.commit();
                             }
@@ -824,12 +824,12 @@ public class c implements UMLogDataProtocol {
                     });
                     SharedPreferences a5 = aq.a(this.e);
                     if (a5 != null) {
-                        long j2 = a5.getLong(aq.f40628a, 0L);
+                        long j2 = a5.getLong(aq.f26937a, 0L);
                         long j3 = j2;
                         if (j2 < Long.MAX_VALUE) {
                             j3 = j2 + 1;
                         }
-                        a5.edit().putLong(aq.f40628a, j3).commit();
+                        a5.edit().putLong(aq.f26937a, j3).commit();
                     }
                     CcgAgent.init(this.e);
                     return;

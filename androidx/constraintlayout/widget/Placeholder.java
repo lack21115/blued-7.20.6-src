@@ -15,47 +15,47 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public class Placeholder extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f2280a;
+    private int f2232a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2281c;
+    private int f2233c;
 
     public Placeholder(Context context) {
         super(context);
-        this.f2280a = -1;
+        this.f2232a = -1;
         this.b = null;
-        this.f2281c = 4;
+        this.f2233c = 4;
         a(null);
     }
 
     public Placeholder(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f2280a = -1;
+        this.f2232a = -1;
         this.b = null;
-        this.f2281c = 4;
+        this.f2233c = 4;
         a(attributeSet);
     }
 
     public Placeholder(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f2280a = -1;
+        this.f2232a = -1;
         this.b = null;
-        this.f2281c = 4;
+        this.f2233c = 4;
         a(attributeSet);
     }
 
     public Placeholder(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i);
-        this.f2280a = -1;
+        this.f2232a = -1;
         this.b = null;
-        this.f2281c = 4;
+        this.f2233c = 4;
         a(attributeSet);
     }
 
     private void a(AttributeSet attributeSet) {
-        super.setVisibility(this.f2281c);
-        this.f2280a = -1;
+        super.setVisibility(this.f2233c);
+        this.f2232a = -1;
         if (attributeSet == null) {
             return;
         }
@@ -70,9 +70,9 @@ public class Placeholder extends View {
             }
             int index = obtainStyledAttributes.getIndex(i2);
             if (index == R.styleable.ConstraintLayout_placeholder_content) {
-                this.f2280a = obtainStyledAttributes.getResourceId(index, this.f2280a);
+                this.f2232a = obtainStyledAttributes.getResourceId(index, this.f2232a);
             } else if (index == R.styleable.ConstraintLayout_placeholder_placeholder_emptyVisibility) {
-                this.f2281c = obtainStyledAttributes.getInt(index, this.f2281c);
+                this.f2233c = obtainStyledAttributes.getInt(index, this.f2233c);
             }
             i = i2 + 1;
         }
@@ -83,7 +83,7 @@ public class Placeholder extends View {
     }
 
     public int getEmptyVisibility() {
-        return this.f2281c;
+        return this.f2233c;
     }
 
     @Override // android.view.View
@@ -107,7 +107,7 @@ public class Placeholder extends View {
 
     public void setContentId(int i) {
         View findViewById;
-        if (this.f2280a == i) {
+        if (this.f2232a == i) {
             return;
         }
         View view = this.b;
@@ -116,7 +116,7 @@ public class Placeholder extends View {
             ((ConstraintLayout.LayoutParams) this.b.getLayoutParams()).j = false;
             this.b = null;
         }
-        this.f2280a = i;
+        this.f2232a = i;
         if (i == -1 || (findViewById = ((View) getParent()).findViewById(i)) == null) {
             return;
         }
@@ -124,7 +124,7 @@ public class Placeholder extends View {
     }
 
     public void setEmptyVisibility(int i) {
-        this.f2281c = i;
+        this.f2233c = i;
     }
 
     public void updatePostMeasure(ConstraintLayout constraintLayout) {
@@ -144,10 +144,10 @@ public class Placeholder extends View {
     }
 
     public void updatePreLayout(ConstraintLayout constraintLayout) {
-        if (this.f2280a == -1 && !isInEditMode()) {
-            setVisibility(this.f2281c);
+        if (this.f2232a == -1 && !isInEditMode()) {
+            setVisibility(this.f2233c);
         }
-        View findViewById = constraintLayout.findViewById(this.f2280a);
+        View findViewById = constraintLayout.findViewById(this.f2232a);
         this.b = findViewById;
         if (findViewById != null) {
             ((ConstraintLayout.LayoutParams) findViewById.getLayoutParams()).j = true;

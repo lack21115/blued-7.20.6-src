@@ -38,9 +38,8 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
         public Transform transform;
         public ShapeType type;
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message.Builder
-        public ShapeEntity build() {
+        /* renamed from: build */
+        public ShapeEntity m10565build() {
             return new ShapeEntity(this.type, this.styles, this.transform, this.shape, this.rect, this.ellipse, super.buildUnknownFields());
         }
 
@@ -105,9 +104,8 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             public Float x;
             public Float y;
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.Message.Builder
-            public EllipseArgs build() {
+            /* renamed from: build */
+            public EllipseArgs m10568build() {
                 return new EllipseArgs(this.x, this.y, this.radiusX, this.radiusY, super.buildUnknownFields());
             }
 
@@ -138,49 +136,46 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 super(FieldEncoding.LENGTH_DELIMITED, EllipseArgs.class);
             }
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.ProtoAdapter
-            public EllipseArgs decode(ProtoReader protoReader) throws IOException {
+            /* renamed from: decode */
+            public EllipseArgs m10569decode(ProtoReader protoReader) throws IOException {
                 Builder builder = new Builder();
                 long beginMessage = protoReader.beginMessage();
                 while (true) {
                     int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
                         protoReader.endMessage(beginMessage);
-                        return builder.build();
+                        return builder.m10568build();
                     } else if (nextTag == 1) {
-                        builder.x(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.x((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     } else if (nextTag == 2) {
-                        builder.y(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.y((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     } else if (nextTag == 3) {
-                        builder.radiusX(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.radiusX((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     } else if (nextTag != 4) {
                         FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                         builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                     } else {
-                        builder.radiusY(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.radiusY((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     }
                 }
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public void encode(ProtoWriter protoWriter, EllipseArgs ellipseArgs) throws IOException {
                 if (ellipseArgs.x != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, (int) ellipseArgs.x);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, ellipseArgs.x);
                 }
                 if (ellipseArgs.y != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, (int) ellipseArgs.y);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, ellipseArgs.y);
                 }
                 if (ellipseArgs.radiusX != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, (int) ellipseArgs.radiusX);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, ellipseArgs.radiusX);
                 }
                 if (ellipseArgs.radiusY != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, (int) ellipseArgs.radiusY);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, ellipseArgs.radiusY);
                 }
                 protoWriter.writeBytes(ellipseArgs.unknownFields());
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public int encodedSize(EllipseArgs ellipseArgs) {
                 int i = 0;
                 int encodedSizeWithTag = ellipseArgs.x != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(1, ellipseArgs.x) : 0;
@@ -192,11 +187,10 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + i + ellipseArgs.unknownFields().size();
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public EllipseArgs redact(EllipseArgs ellipseArgs) {
-                Builder newBuilder = ellipseArgs.newBuilder();
-                newBuilder.clearUnknownFields();
-                return newBuilder.build();
+                Builder m10567newBuilder = ellipseArgs.m10567newBuilder();
+                m10567newBuilder.clearUnknownFields();
+                return m10567newBuilder.m10568build();
             }
         }
 
@@ -232,7 +226,7 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
         }
 
         public int hashCode() {
-            int i = this.hashCode;
+            int i = ((Message) this).hashCode;
             int i2 = i;
             if (i == 0) {
                 int hashCode = unknownFields().hashCode();
@@ -248,14 +242,13 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                     i3 = f4.hashCode();
                 }
                 i2 = (((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + i3;
-                this.hashCode = i2;
+                ((Message) this).hashCode = i2;
             }
             return i2;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message
-        public Builder newBuilder() {
+        /* renamed from: newBuilder */
+        public Builder m10567newBuilder() {
             Builder builder = new Builder();
             builder.x = this.x;
             builder.y = this.y;
@@ -265,7 +258,6 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             return builder;
         }
 
-        @Override // com.squareup.wire.Message
         public String toString() {
             StringBuilder sb = new StringBuilder();
             if (this.x != null) {
@@ -296,63 +288,60 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             super(FieldEncoding.LENGTH_DELIMITED, ShapeEntity.class);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.ProtoAdapter
-        public ShapeEntity decode(ProtoReader protoReader) throws IOException {
+        /* renamed from: decode */
+        public ShapeEntity m10570decode(ProtoReader protoReader) throws IOException {
             Builder builder = new Builder();
             long beginMessage = protoReader.beginMessage();
             while (true) {
                 int nextTag = protoReader.nextTag();
                 if (nextTag == -1) {
                     protoReader.endMessage(beginMessage);
-                    return builder.build();
+                    return builder.m10565build();
                 } else if (nextTag == 1) {
                     try {
-                        builder.type(ShapeType.ADAPTER.decode(protoReader));
+                        builder.type((ShapeType) ShapeType.ADAPTER.decode(protoReader));
                     } catch (ProtoAdapter.EnumConstantNotFoundException e) {
                         builder.addUnknownField(nextTag, FieldEncoding.VARINT, Long.valueOf(e.value));
                     }
                 } else if (nextTag == 2) {
-                    builder.shape(ShapeArgs.ADAPTER.decode(protoReader));
+                    builder.shape((ShapeArgs) ShapeArgs.ADAPTER.decode(protoReader));
                 } else if (nextTag == 3) {
-                    builder.rect(RectArgs.ADAPTER.decode(protoReader));
+                    builder.rect((RectArgs) RectArgs.ADAPTER.decode(protoReader));
                 } else if (nextTag == 4) {
-                    builder.ellipse(EllipseArgs.ADAPTER.decode(protoReader));
+                    builder.ellipse((EllipseArgs) EllipseArgs.ADAPTER.decode(protoReader));
                 } else if (nextTag == 10) {
-                    builder.styles(ShapeStyle.ADAPTER.decode(protoReader));
+                    builder.styles((ShapeStyle) ShapeStyle.ADAPTER.decode(protoReader));
                 } else if (nextTag != 11) {
                     FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                     builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                 } else {
-                    builder.transform(Transform.ADAPTER.decode(protoReader));
+                    builder.transform((Transform) Transform.ADAPTER.decode(protoReader));
                 }
             }
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public void encode(ProtoWriter protoWriter, ShapeEntity shapeEntity) throws IOException {
             if (shapeEntity.type != null) {
-                ShapeType.ADAPTER.encodeWithTag(protoWriter, 1, (int) shapeEntity.type);
+                ShapeType.ADAPTER.encodeWithTag(protoWriter, 1, shapeEntity.type);
             }
             if (shapeEntity.styles != null) {
-                ShapeStyle.ADAPTER.encodeWithTag(protoWriter, 10, (int) shapeEntity.styles);
+                ShapeStyle.ADAPTER.encodeWithTag(protoWriter, 10, shapeEntity.styles);
             }
             if (shapeEntity.transform != null) {
-                Transform.ADAPTER.encodeWithTag(protoWriter, 11, (int) shapeEntity.transform);
+                Transform.ADAPTER.encodeWithTag(protoWriter, 11, shapeEntity.transform);
             }
             if (shapeEntity.shape != null) {
-                ShapeArgs.ADAPTER.encodeWithTag(protoWriter, 2, (int) shapeEntity.shape);
+                ShapeArgs.ADAPTER.encodeWithTag(protoWriter, 2, shapeEntity.shape);
             }
             if (shapeEntity.rect != null) {
-                RectArgs.ADAPTER.encodeWithTag(protoWriter, 3, (int) shapeEntity.rect);
+                RectArgs.ADAPTER.encodeWithTag(protoWriter, 3, shapeEntity.rect);
             }
             if (shapeEntity.ellipse != null) {
-                EllipseArgs.ADAPTER.encodeWithTag(protoWriter, 4, (int) shapeEntity.ellipse);
+                EllipseArgs.ADAPTER.encodeWithTag(protoWriter, 4, shapeEntity.ellipse);
             }
             protoWriter.writeBytes(shapeEntity.unknownFields());
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public int encodedSize(ShapeEntity shapeEntity) {
             int i = 0;
             int encodedSizeWithTag = shapeEntity.type != null ? ShapeType.ADAPTER.encodedSizeWithTag(1, shapeEntity.type) : 0;
@@ -366,26 +355,25 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + encodedSizeWithTag4 + encodedSizeWithTag5 + i + shapeEntity.unknownFields().size();
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public ShapeEntity redact(ShapeEntity shapeEntity) {
-            Builder newBuilder = shapeEntity.newBuilder();
-            if (newBuilder.styles != null) {
-                newBuilder.styles = ShapeStyle.ADAPTER.redact(newBuilder.styles);
+            Builder m10564newBuilder = shapeEntity.m10564newBuilder();
+            if (m10564newBuilder.styles != null) {
+                m10564newBuilder.styles = (ShapeStyle) ShapeStyle.ADAPTER.redact(m10564newBuilder.styles);
             }
-            if (newBuilder.transform != null) {
-                newBuilder.transform = Transform.ADAPTER.redact(newBuilder.transform);
+            if (m10564newBuilder.transform != null) {
+                m10564newBuilder.transform = (Transform) Transform.ADAPTER.redact(m10564newBuilder.transform);
             }
-            if (newBuilder.shape != null) {
-                newBuilder.shape = ShapeArgs.ADAPTER.redact(newBuilder.shape);
+            if (m10564newBuilder.shape != null) {
+                m10564newBuilder.shape = (ShapeArgs) ShapeArgs.ADAPTER.redact(m10564newBuilder.shape);
             }
-            if (newBuilder.rect != null) {
-                newBuilder.rect = RectArgs.ADAPTER.redact(newBuilder.rect);
+            if (m10564newBuilder.rect != null) {
+                m10564newBuilder.rect = (RectArgs) RectArgs.ADAPTER.redact(m10564newBuilder.rect);
             }
-            if (newBuilder.ellipse != null) {
-                newBuilder.ellipse = EllipseArgs.ADAPTER.redact(newBuilder.ellipse);
+            if (m10564newBuilder.ellipse != null) {
+                m10564newBuilder.ellipse = (EllipseArgs) EllipseArgs.ADAPTER.redact(m10564newBuilder.ellipse);
             }
-            newBuilder.clearUnknownFields();
-            return newBuilder.build();
+            m10564newBuilder.clearUnknownFields();
+            return m10564newBuilder.m10565build();
         }
     }
 
@@ -417,9 +405,8 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             public Float x;
             public Float y;
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.Message.Builder
-            public RectArgs build() {
+            /* renamed from: build */
+            public RectArgs m10573build() {
                 return new RectArgs(this.x, this.y, this.width, this.height, this.cornerRadius, super.buildUnknownFields());
             }
 
@@ -455,54 +442,51 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 super(FieldEncoding.LENGTH_DELIMITED, RectArgs.class);
             }
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.ProtoAdapter
-            public RectArgs decode(ProtoReader protoReader) throws IOException {
+            /* renamed from: decode */
+            public RectArgs m10574decode(ProtoReader protoReader) throws IOException {
                 Builder builder = new Builder();
                 long beginMessage = protoReader.beginMessage();
                 while (true) {
                     int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
                         protoReader.endMessage(beginMessage);
-                        return builder.build();
+                        return builder.m10573build();
                     } else if (nextTag == 1) {
-                        builder.x(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.x((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     } else if (nextTag == 2) {
-                        builder.y(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.y((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     } else if (nextTag == 3) {
-                        builder.width(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.width((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     } else if (nextTag == 4) {
-                        builder.height(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.height((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     } else if (nextTag != 5) {
                         FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                         builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                     } else {
-                        builder.cornerRadius(ProtoAdapter.FLOAT.decode(protoReader));
+                        builder.cornerRadius((Float) ProtoAdapter.FLOAT.decode(protoReader));
                     }
                 }
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public void encode(ProtoWriter protoWriter, RectArgs rectArgs) throws IOException {
                 if (rectArgs.x != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, (int) rectArgs.x);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, rectArgs.x);
                 }
                 if (rectArgs.y != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, (int) rectArgs.y);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, rectArgs.y);
                 }
                 if (rectArgs.width != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, (int) rectArgs.width);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, rectArgs.width);
                 }
                 if (rectArgs.height != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, (int) rectArgs.height);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, rectArgs.height);
                 }
                 if (rectArgs.cornerRadius != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 5, (int) rectArgs.cornerRadius);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 5, rectArgs.cornerRadius);
                 }
                 protoWriter.writeBytes(rectArgs.unknownFields());
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public int encodedSize(RectArgs rectArgs) {
                 int i = 0;
                 int encodedSizeWithTag = rectArgs.x != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(1, rectArgs.x) : 0;
@@ -515,11 +499,10 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + encodedSizeWithTag4 + i + rectArgs.unknownFields().size();
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public RectArgs redact(RectArgs rectArgs) {
-                Builder newBuilder = rectArgs.newBuilder();
-                newBuilder.clearUnknownFields();
-                return newBuilder.build();
+                Builder m10572newBuilder = rectArgs.m10572newBuilder();
+                m10572newBuilder.clearUnknownFields();
+                return m10572newBuilder.m10573build();
             }
         }
 
@@ -557,7 +540,7 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
         }
 
         public int hashCode() {
-            int i = this.hashCode;
+            int i = ((Message) this).hashCode;
             int i2 = i;
             if (i == 0) {
                 int hashCode = unknownFields().hashCode();
@@ -575,14 +558,13 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                     i3 = f5.hashCode();
                 }
                 i2 = (((((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + hashCode5) * 37) + i3;
-                this.hashCode = i2;
+                ((Message) this).hashCode = i2;
             }
             return i2;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message
-        public Builder newBuilder() {
+        /* renamed from: newBuilder */
+        public Builder m10572newBuilder() {
             Builder builder = new Builder();
             builder.x = this.x;
             builder.y = this.y;
@@ -593,7 +575,6 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             return builder;
         }
 
-        @Override // com.squareup.wire.Message
         public String toString() {
             StringBuilder sb = new StringBuilder();
             if (this.x != null) {
@@ -634,9 +615,8 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
         public static final class Builder extends Message.Builder<ShapeArgs, Builder> {
             public String d;
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.Message.Builder
-            public ShapeArgs build() {
+            /* renamed from: build */
+            public ShapeArgs m10577build() {
                 return new ShapeArgs(this.d, super.buildUnknownFields());
             }
 
@@ -652,43 +632,39 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 super(FieldEncoding.LENGTH_DELIMITED, ShapeArgs.class);
             }
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.ProtoAdapter
-            public ShapeArgs decode(ProtoReader protoReader) throws IOException {
+            /* renamed from: decode */
+            public ShapeArgs m10578decode(ProtoReader protoReader) throws IOException {
                 Builder builder = new Builder();
                 long beginMessage = protoReader.beginMessage();
                 while (true) {
                     int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
                         protoReader.endMessage(beginMessage);
-                        return builder.build();
+                        return builder.m10577build();
                     } else if (nextTag != 1) {
                         FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                         builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                     } else {
-                        builder.d(ProtoAdapter.STRING.decode(protoReader));
+                        builder.d((String) ProtoAdapter.STRING.decode(protoReader));
                     }
                 }
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public void encode(ProtoWriter protoWriter, ShapeArgs shapeArgs) throws IOException {
                 if (shapeArgs.d != null) {
-                    ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, (int) shapeArgs.d);
+                    ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, shapeArgs.d);
                 }
                 protoWriter.writeBytes(shapeArgs.unknownFields());
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public int encodedSize(ShapeArgs shapeArgs) {
                 return (shapeArgs.d != null ? ProtoAdapter.STRING.encodedSizeWithTag(1, shapeArgs.d) : 0) + shapeArgs.unknownFields().size();
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public ShapeArgs redact(ShapeArgs shapeArgs) {
-                Builder newBuilder = shapeArgs.newBuilder();
-                newBuilder.clearUnknownFields();
-                return newBuilder.build();
+                Builder m10576newBuilder = shapeArgs.m10576newBuilder();
+                m10576newBuilder.clearUnknownFields();
+                return m10576newBuilder.m10577build();
             }
         }
 
@@ -713,27 +689,25 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
         }
 
         public int hashCode() {
-            int i = this.hashCode;
+            int i = ((Message) this).hashCode;
             int i2 = i;
             if (i == 0) {
                 int hashCode = unknownFields().hashCode();
                 String str = this.d;
                 i2 = (hashCode * 37) + (str != null ? str.hashCode() : 0);
-                this.hashCode = i2;
+                ((Message) this).hashCode = i2;
             }
             return i2;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message
-        public Builder newBuilder() {
+        /* renamed from: newBuilder */
+        public Builder m10576newBuilder() {
             Builder builder = new Builder();
             builder.d = this.d;
             builder.addUnknownFields(unknownFields());
             return builder;
         }
 
-        @Override // com.squareup.wire.Message
         public String toString() {
             StringBuilder sb = new StringBuilder();
             if (this.d != null) {
@@ -788,9 +762,8 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             public RGBAColor stroke;
             public Float strokeWidth;
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.Message.Builder
-            public ShapeStyle build() {
+            /* renamed from: build */
+            public ShapeStyle m10581build() {
                 return new ShapeStyle(this.fill, this.stroke, this.strokeWidth, this.lineCap, this.lineJoin, this.miterLimit, this.lineDashI, this.lineDashII, this.lineDashIII, super.buildUnknownFields());
             }
 
@@ -866,7 +839,6 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 return LineCap_BUTT;
             }
 
-            @Override // com.squareup.wire.WireEnum
             public int getValue() {
                 return this.value;
             }
@@ -898,7 +870,6 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 return LineJoin_MITER;
             }
 
-            @Override // com.squareup.wire.WireEnum
             public int getValue() {
                 return this.value;
             }
@@ -910,30 +881,29 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 super(FieldEncoding.LENGTH_DELIMITED, ShapeStyle.class);
             }
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.ProtoAdapter
-            public ShapeStyle decode(ProtoReader protoReader) throws IOException {
+            /* renamed from: decode */
+            public ShapeStyle m10584decode(ProtoReader protoReader) throws IOException {
                 Builder builder = new Builder();
                 long beginMessage = protoReader.beginMessage();
                 while (true) {
                     int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
                         protoReader.endMessage(beginMessage);
-                        return builder.build();
+                        return builder.m10581build();
                     }
                     switch (nextTag) {
                         case 1:
-                            builder.fill(RGBAColor.ADAPTER.decode(protoReader));
+                            builder.fill((RGBAColor) RGBAColor.ADAPTER.decode(protoReader));
                             break;
                         case 2:
-                            builder.stroke(RGBAColor.ADAPTER.decode(protoReader));
+                            builder.stroke((RGBAColor) RGBAColor.ADAPTER.decode(protoReader));
                             break;
                         case 3:
-                            builder.strokeWidth(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.strokeWidth((Float) ProtoAdapter.FLOAT.decode(protoReader));
                             break;
                         case 4:
                             try {
-                                builder.lineCap(LineCap.ADAPTER.decode(protoReader));
+                                builder.lineCap((LineCap) LineCap.ADAPTER.decode(protoReader));
                                 break;
                             } catch (ProtoAdapter.EnumConstantNotFoundException e) {
                                 builder.addUnknownField(nextTag, FieldEncoding.VARINT, Long.valueOf(e.value));
@@ -941,23 +911,23 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                             }
                         case 5:
                             try {
-                                builder.lineJoin(LineJoin.ADAPTER.decode(protoReader));
+                                builder.lineJoin((LineJoin) LineJoin.ADAPTER.decode(protoReader));
                                 break;
                             } catch (ProtoAdapter.EnumConstantNotFoundException e2) {
                                 builder.addUnknownField(nextTag, FieldEncoding.VARINT, Long.valueOf(e2.value));
                                 break;
                             }
                         case 6:
-                            builder.miterLimit(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.miterLimit((Float) ProtoAdapter.FLOAT.decode(protoReader));
                             break;
                         case 7:
-                            builder.lineDashI(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.lineDashI((Float) ProtoAdapter.FLOAT.decode(protoReader));
                             break;
                         case 8:
-                            builder.lineDashII(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.lineDashII((Float) ProtoAdapter.FLOAT.decode(protoReader));
                             break;
                         case 9:
-                            builder.lineDashIII(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.lineDashIII((Float) ProtoAdapter.FLOAT.decode(protoReader));
                             break;
                         default:
                             FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
@@ -967,39 +937,37 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 }
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public void encode(ProtoWriter protoWriter, ShapeStyle shapeStyle) throws IOException {
                 if (shapeStyle.fill != null) {
-                    RGBAColor.ADAPTER.encodeWithTag(protoWriter, 1, (int) shapeStyle.fill);
+                    RGBAColor.ADAPTER.encodeWithTag(protoWriter, 1, shapeStyle.fill);
                 }
                 if (shapeStyle.stroke != null) {
-                    RGBAColor.ADAPTER.encodeWithTag(protoWriter, 2, (int) shapeStyle.stroke);
+                    RGBAColor.ADAPTER.encodeWithTag(protoWriter, 2, shapeStyle.stroke);
                 }
                 if (shapeStyle.strokeWidth != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, (int) shapeStyle.strokeWidth);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, shapeStyle.strokeWidth);
                 }
                 if (shapeStyle.lineCap != null) {
-                    LineCap.ADAPTER.encodeWithTag(protoWriter, 4, (int) shapeStyle.lineCap);
+                    LineCap.ADAPTER.encodeWithTag(protoWriter, 4, shapeStyle.lineCap);
                 }
                 if (shapeStyle.lineJoin != null) {
-                    LineJoin.ADAPTER.encodeWithTag(protoWriter, 5, (int) shapeStyle.lineJoin);
+                    LineJoin.ADAPTER.encodeWithTag(protoWriter, 5, shapeStyle.lineJoin);
                 }
                 if (shapeStyle.miterLimit != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 6, (int) shapeStyle.miterLimit);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 6, shapeStyle.miterLimit);
                 }
                 if (shapeStyle.lineDashI != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 7, (int) shapeStyle.lineDashI);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 7, shapeStyle.lineDashI);
                 }
                 if (shapeStyle.lineDashII != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 8, (int) shapeStyle.lineDashII);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 8, shapeStyle.lineDashII);
                 }
                 if (shapeStyle.lineDashIII != null) {
-                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 9, (int) shapeStyle.lineDashIII);
+                    ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 9, shapeStyle.lineDashIII);
                 }
                 protoWriter.writeBytes(shapeStyle.unknownFields());
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public int encodedSize(ShapeStyle shapeStyle) {
                 int i = 0;
                 int encodedSizeWithTag = shapeStyle.fill != null ? RGBAColor.ADAPTER.encodedSizeWithTag(1, shapeStyle.fill) : 0;
@@ -1016,17 +984,16 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + encodedSizeWithTag4 + encodedSizeWithTag5 + encodedSizeWithTag6 + encodedSizeWithTag7 + encodedSizeWithTag8 + i + shapeStyle.unknownFields().size();
             }
 
-            @Override // com.squareup.wire.ProtoAdapter
             public ShapeStyle redact(ShapeStyle shapeStyle) {
-                Builder newBuilder = shapeStyle.newBuilder();
-                if (newBuilder.fill != null) {
-                    newBuilder.fill = RGBAColor.ADAPTER.redact(newBuilder.fill);
+                Builder m10580newBuilder = shapeStyle.m10580newBuilder();
+                if (m10580newBuilder.fill != null) {
+                    m10580newBuilder.fill = (RGBAColor) RGBAColor.ADAPTER.redact(m10580newBuilder.fill);
                 }
-                if (newBuilder.stroke != null) {
-                    newBuilder.stroke = RGBAColor.ADAPTER.redact(newBuilder.stroke);
+                if (m10580newBuilder.stroke != null) {
+                    m10580newBuilder.stroke = (RGBAColor) RGBAColor.ADAPTER.redact(m10580newBuilder.stroke);
                 }
-                newBuilder.clearUnknownFields();
-                return newBuilder.build();
+                m10580newBuilder.clearUnknownFields();
+                return m10580newBuilder.m10581build();
             }
         }
 
@@ -1039,9 +1006,7 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             public static final Float DEFAULT_R;
             private static final long serialVersionUID = 0;
             @WireField(adapter = "com.squareup.wire.ProtoAdapter#FLOAT", tag = 4)
-
-            /* renamed from: a  reason: collision with root package name */
-            public final Float f16019a;
+            public final Float a;
             @WireField(adapter = "com.squareup.wire.ProtoAdapter#FLOAT", tag = 3)
             public final Float b;
             @WireField(adapter = "com.squareup.wire.ProtoAdapter#FLOAT", tag = 2)
@@ -1051,15 +1016,13 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
 
             /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/proto/ShapeEntity$ShapeStyle$RGBAColor$Builder.class */
             public static final class Builder extends Message.Builder<RGBAColor, Builder> {
-
-                /* renamed from: a  reason: collision with root package name */
-                public Float f16020a;
+                public Float a;
                 public Float b;
                 public Float g;
                 public Float r;
 
                 public Builder a(Float f) {
-                    this.f16020a = f;
+                    this.a = f;
                     return this;
                 }
 
@@ -1068,10 +1031,9 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                     return this;
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // com.squareup.wire.Message.Builder
-                public RGBAColor build() {
-                    return new RGBAColor(this.r, this.g, this.b, this.f16020a, super.buildUnknownFields());
+                /* renamed from: build */
+                public RGBAColor m10587build() {
+                    return new RGBAColor(this.r, this.g, this.b, this.a, super.buildUnknownFields());
                 }
 
                 public Builder g(Float f) {
@@ -1091,65 +1053,61 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                     super(FieldEncoding.LENGTH_DELIMITED, RGBAColor.class);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // com.squareup.wire.ProtoAdapter
-                public RGBAColor decode(ProtoReader protoReader) throws IOException {
+                /* renamed from: decode */
+                public RGBAColor m10588decode(ProtoReader protoReader) throws IOException {
                     Builder builder = new Builder();
                     long beginMessage = protoReader.beginMessage();
                     while (true) {
                         int nextTag = protoReader.nextTag();
                         if (nextTag == -1) {
                             protoReader.endMessage(beginMessage);
-                            return builder.build();
+                            return builder.m10587build();
                         } else if (nextTag == 1) {
-                            builder.r(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.r((Float) ProtoAdapter.FLOAT.decode(protoReader));
                         } else if (nextTag == 2) {
-                            builder.g(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.g((Float) ProtoAdapter.FLOAT.decode(protoReader));
                         } else if (nextTag == 3) {
-                            builder.b(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.b((Float) ProtoAdapter.FLOAT.decode(protoReader));
                         } else if (nextTag != 4) {
                             FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                             builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                         } else {
-                            builder.a(ProtoAdapter.FLOAT.decode(protoReader));
+                            builder.a((Float) ProtoAdapter.FLOAT.decode(protoReader));
                         }
                     }
                 }
 
-                @Override // com.squareup.wire.ProtoAdapter
                 public void encode(ProtoWriter protoWriter, RGBAColor rGBAColor) throws IOException {
                     if (rGBAColor.r != null) {
-                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, (int) rGBAColor.r);
+                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, rGBAColor.r);
                     }
                     if (rGBAColor.g != null) {
-                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, (int) rGBAColor.g);
+                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 2, rGBAColor.g);
                     }
                     if (rGBAColor.b != null) {
-                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, (int) rGBAColor.b);
+                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 3, rGBAColor.b);
                     }
-                    if (rGBAColor.f16019a != null) {
-                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, (int) rGBAColor.f16019a);
+                    if (rGBAColor.a != null) {
+                        ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 4, rGBAColor.a);
                     }
                     protoWriter.writeBytes(rGBAColor.unknownFields());
                 }
 
-                @Override // com.squareup.wire.ProtoAdapter
                 public int encodedSize(RGBAColor rGBAColor) {
                     int i = 0;
                     int encodedSizeWithTag = rGBAColor.r != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(1, rGBAColor.r) : 0;
                     int encodedSizeWithTag2 = rGBAColor.g != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(2, rGBAColor.g) : 0;
                     int encodedSizeWithTag3 = rGBAColor.b != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(3, rGBAColor.b) : 0;
-                    if (rGBAColor.f16019a != null) {
-                        i = ProtoAdapter.FLOAT.encodedSizeWithTag(4, rGBAColor.f16019a);
+                    if (rGBAColor.a != null) {
+                        i = ProtoAdapter.FLOAT.encodedSizeWithTag(4, rGBAColor.a);
                     }
                     return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + i + rGBAColor.unknownFields().size();
                 }
 
-                @Override // com.squareup.wire.ProtoAdapter
                 public RGBAColor redact(RGBAColor rGBAColor) {
-                    Builder newBuilder = rGBAColor.newBuilder();
-                    newBuilder.clearUnknownFields();
-                    return newBuilder.build();
+                    Builder m10586newBuilder = rGBAColor.m10586newBuilder();
+                    m10586newBuilder.clearUnknownFields();
+                    return m10586newBuilder.m10587build();
                 }
             }
 
@@ -1170,7 +1128,7 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 this.r = f;
                 this.g = f2;
                 this.b = f3;
-                this.f16019a = f4;
+                this.a = f4;
             }
 
             public boolean equals(Object obj) {
@@ -1179,13 +1137,13 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 }
                 if (obj instanceof RGBAColor) {
                     RGBAColor rGBAColor = (RGBAColor) obj;
-                    return unknownFields().equals(rGBAColor.unknownFields()) && Internal.equals(this.r, rGBAColor.r) && Internal.equals(this.g, rGBAColor.g) && Internal.equals(this.b, rGBAColor.b) && Internal.equals(this.f16019a, rGBAColor.f16019a);
+                    return unknownFields().equals(rGBAColor.unknownFields()) && Internal.equals(this.r, rGBAColor.r) && Internal.equals(this.g, rGBAColor.g) && Internal.equals(this.b, rGBAColor.b) && Internal.equals(this.a, rGBAColor.a);
                 }
                 return false;
             }
 
             public int hashCode() {
-                int i = this.hashCode;
+                int i = ((Message) this).hashCode;
                 int i2 = i;
                 if (i == 0) {
                     int hashCode = unknownFields().hashCode();
@@ -1196,29 +1154,27 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                     int hashCode3 = f2 != null ? f2.hashCode() : 0;
                     Float f3 = this.b;
                     int hashCode4 = f3 != null ? f3.hashCode() : 0;
-                    Float f4 = this.f16019a;
+                    Float f4 = this.a;
                     if (f4 != null) {
                         i3 = f4.hashCode();
                     }
                     i2 = (((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + i3;
-                    this.hashCode = i2;
+                    ((Message) this).hashCode = i2;
                 }
                 return i2;
             }
 
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.squareup.wire.Message
-            public Builder newBuilder() {
+            /* renamed from: newBuilder */
+            public Builder m10586newBuilder() {
                 Builder builder = new Builder();
                 builder.r = this.r;
                 builder.g = this.g;
                 builder.b = this.b;
-                builder.f16020a = this.f16019a;
+                builder.a = this.a;
                 builder.addUnknownFields(unknownFields());
                 return builder;
             }
 
-            @Override // com.squareup.wire.Message
             public String toString() {
                 StringBuilder sb = new StringBuilder();
                 if (this.r != null) {
@@ -1233,9 +1189,9 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                     sb.append(", b=");
                     sb.append(this.b);
                 }
-                if (this.f16019a != null) {
+                if (this.a != null) {
                     sb.append(", a=");
-                    sb.append(this.f16019a);
+                    sb.append(this.a);
                 }
                 StringBuilder replace = sb.replace(0, 2, "RGBAColor{");
                 replace.append('}');
@@ -1283,7 +1239,7 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
         }
 
         public int hashCode() {
-            int i = this.hashCode;
+            int i = ((Message) this).hashCode;
             int i2 = i;
             if (i == 0) {
                 int hashCode = unknownFields().hashCode();
@@ -1309,14 +1265,13 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                     i3 = f5.hashCode();
                 }
                 i2 = (((((((((((((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + hashCode5) * 37) + hashCode6) * 37) + hashCode7) * 37) + hashCode8) * 37) + hashCode9) * 37) + i3;
-                this.hashCode = i2;
+                ((Message) this).hashCode = i2;
             }
             return i2;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message
-        public Builder newBuilder() {
+        /* renamed from: newBuilder */
+        public Builder m10580newBuilder() {
             Builder builder = new Builder();
             builder.fill = this.fill;
             builder.stroke = this.stroke;
@@ -1331,7 +1286,6 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             return builder;
         }
 
-        @Override // com.squareup.wire.Message
         public String toString() {
             StringBuilder sb = new StringBuilder();
             if (this.fill != null) {
@@ -1406,7 +1360,6 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
             return SHAPE;
         }
 
-        @Override // com.squareup.wire.WireEnum
         public int getValue() {
             return this.value;
         }
@@ -1441,7 +1394,7 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
     }
 
     public int hashCode() {
-        int i = this.hashCode;
+        int i = ((Message) this).hashCode;
         int i2 = i;
         if (i == 0) {
             int hashCode = unknownFields().hashCode();
@@ -1461,14 +1414,13 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
                 i3 = ellipseArgs.hashCode();
             }
             i2 = (((((((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + hashCode5) * 37) + hashCode6) * 37) + i3;
-            this.hashCode = i2;
+            ((Message) this).hashCode = i2;
         }
         return i2;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // com.squareup.wire.Message
-    public Builder newBuilder() {
+    /* renamed from: newBuilder */
+    public Builder m10564newBuilder() {
         Builder builder = new Builder();
         builder.type = this.type;
         builder.styles = this.styles;
@@ -1480,7 +1432,6 @@ public final class ShapeEntity extends Message<ShapeEntity, Builder> {
         return builder;
     }
 
-    @Override // com.squareup.wire.Message
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (this.type != null) {

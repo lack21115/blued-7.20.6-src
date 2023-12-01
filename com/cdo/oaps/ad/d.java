@@ -4,7 +4,7 @@ package com.cdo.oaps.ad;
 public class d extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f21525a = -1315051953604789788L;
+    private static final long f7919a = -1315051953604789788L;
 
     public d(String str) {
         super(str);

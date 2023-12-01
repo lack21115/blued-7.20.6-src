@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import dalvik.system.BaseDexClassLoader;
 import dalvik.system.DexClassLoader;
@@ -95,7 +94,7 @@ public class DexClassLoaderProvider extends DexClassLoader {
         Log.i(LOGTAG, "new DexClassLoaderDelegate: " + str + ", context: " + context);
         mContext = context.getApplicationContext();
         mRealDexPath = str;
-        int lastIndexOf = str.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1;
+        int lastIndexOf = str.lastIndexOf("/") + 1;
         String str4 = str.substring(0, lastIndexOf) + "fake_dex.jar";
         String substring = str.substring(lastIndexOf);
         if (supportSpeedyClassLoader() && is_first_load_tbs_dex(str2, substring)) {
@@ -117,14 +116,14 @@ public class DexClassLoaderProvider extends DexClassLoader {
                 public void run() {
                     try {
                         ArrayList<String> arrayList = new ArrayList<>(4);
-                        arrayList.add(0, String.this);
+                        arrayList.add(0, str);
                         arrayList.add(1, str2);
                         arrayList.add(2, str3);
                         arrayList.add(3, str4);
                         Intent intent = new Intent(DexClassLoaderProvider.mContext, DexClassLoaderProviderService.class);
                         intent.putStringArrayListExtra("dex2oat", arrayList);
                         DexClassLoaderProvider.mContext.startService(intent);
-                        Log.d(DexClassLoaderProvider.LOGTAG, "shouldUseDexLoaderService(" + String.this + ", " + intent + ")");
+                        Log.d(DexClassLoaderProvider.LOGTAG, "shouldUseDexLoaderService(" + str + ", " + intent + ")");
                     } catch (SecurityException e) {
                         Log.e(DexClassLoaderProvider.LOGTAG, "start DexLoaderService exception", e);
                     } catch (Throwable th) {
@@ -140,7 +139,7 @@ public class DexClassLoaderProvider extends DexClassLoader {
             public void run() {
                 boolean z;
                 try {
-                    File file = new File(String.this.replace(ShareConstants.JAR_SUFFIX, ShareConstants.DEX_SUFFIX));
+                    File file = new File(str2.replace(ShareConstants.JAR_SUFFIX, ShareConstants.DEX_SUFFIX));
                     if (!file.exists() || file.length() == 0) {
                         Log.d(DexClassLoaderProvider.LOGTAG, "" + file + " does not existed!");
                         z = false;
@@ -149,7 +148,7 @@ public class DexClassLoaderProvider extends DexClassLoader {
                         z = true;
                     }
                     File file2 = new File(str3);
-                    File file3 = new File(String.this);
+                    File file3 = new File(str2);
                     boolean exists = file2.exists();
                     boolean isDirectory = file2.isDirectory();
                     boolean exists2 = file3.exists();
@@ -158,7 +157,7 @@ public class DexClassLoaderProvider extends DexClassLoader {
                         return;
                     }
                     long currentTimeMillis = System.currentTimeMillis();
-                    new DexClassLoader(String.this, str3, str4, classLoader);
+                    new DexClassLoader(str2, str3, str4, classLoader);
                     Log.d(DexClassLoaderProvider.LOGTAG, "" + String.format("load_dex completed -- cl_cost: %d, existed: %b", Long.valueOf(System.currentTimeMillis() - currentTimeMillis), Boolean.valueOf(z)));
                     if (DexClassLoaderProvider.mForceLoadDexFlag && DexClassLoaderProvider.LAST_DEX_NAME.equals(str)) {
                         Log.d(DexClassLoaderProvider.LOGTAG, "Stop provider service after loading " + str);
@@ -180,7 +179,7 @@ public class DexClassLoaderProvider extends DexClassLoader {
         }
         StringBuilder sb = new StringBuilder();
         sb.append(str2);
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(IS_FIRST_LOAD_DEX_FLAG_FILE);
         return !new File(str, sb.toString()).exists();
     }
@@ -192,7 +191,7 @@ public class DexClassLoaderProvider extends DexClassLoader {
     }
 
     private static void set_first_load_tbs_dex(String str, String str2) {
-        File file = new File(str, str2 + BridgeUtil.UNDERLINE_STR + IS_FIRST_LOAD_DEX_FLAG_FILE);
+        File file = new File(str, str2 + "_" + IS_FIRST_LOAD_DEX_FLAG_FILE);
         if (file.exists()) {
             return;
         }
@@ -224,15 +223,13 @@ public class DexClassLoaderProvider extends DexClassLoader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public Package definePackage(String str, String str2, String str3, String str4, String str5, String str6, String str7, URL url) throws IllegalArgumentException {
+    protected Package definePackage(String str, String str2, String str3, String str4, String str5, String str6, String str7, URL url) throws IllegalArgumentException {
         return useSelfClassloader() ? super.definePackage(str, str2, str3, str4, str5, str6, str7, url) : this.mClassLoader.definePackage(str, str2, str3, str4, str5, str6, str7, url);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // dalvik.system.BaseDexClassLoader, java.lang.ClassLoader
-    public Class<?> findClass(String str) throws ClassNotFoundException {
+    protected Class<?> findClass(String str) throws ClassNotFoundException {
         return useSelfClassloader() ? super.findClass(str) : this.mClassLoader.findClass(str);
     }
 
@@ -241,21 +238,18 @@ public class DexClassLoaderProvider extends DexClassLoader {
         return useSelfClassloader() ? super.findLibrary(str) : this.mClassLoader.findLibrary(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // dalvik.system.BaseDexClassLoader, java.lang.ClassLoader
-    public URL findResource(String str) {
+    protected URL findResource(String str) {
         return useSelfClassloader() ? super.findResource(str) : this.mClassLoader.findResource(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // dalvik.system.BaseDexClassLoader, java.lang.ClassLoader
-    public Enumeration<URL> findResources(String str) {
+    protected Enumeration<URL> findResources(String str) {
         return useSelfClassloader() ? super.findResources(str) : this.mClassLoader.findResources(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // dalvik.system.BaseDexClassLoader, java.lang.ClassLoader
-    public Package getPackage(String str) {
+    protected Package getPackage(String str) {
         synchronized (this) {
             if (useSelfClassloader()) {
                 return super.getPackage(str);
@@ -264,9 +258,8 @@ public class DexClassLoaderProvider extends DexClassLoader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public Package[] getPackages() {
+    protected Package[] getPackages() {
         return useSelfClassloader() ? super.getPackages() : this.mClassLoader.getPackages();
     }
 
@@ -290,9 +283,8 @@ public class DexClassLoaderProvider extends DexClassLoader {
         return useSelfClassloader() ? super.loadClass(str) : this.mClassLoader.loadClass(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
+    protected Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
         return useSelfClassloader() ? super.loadClass(str, z) : this.mClassLoader.loadClass(str, z);
     }
 

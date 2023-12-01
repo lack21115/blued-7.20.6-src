@@ -5,20 +5,20 @@ package com.tencent.ugc;
 public final /* synthetic */ class gk implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCWatermarkAlphaTextureFilter f40420a;
+    private final UGCWatermarkAlphaTextureFilter f26729a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f40421c;
+    private final int f26730c;
     private final int d;
     private final float e;
     private final float f;
     private final float g;
 
     private gk(UGCWatermarkAlphaTextureFilter uGCWatermarkAlphaTextureFilter, int i, int i2, int i3, float f, float f2, float f3) {
-        this.f40420a = uGCWatermarkAlphaTextureFilter;
+        this.f26729a = uGCWatermarkAlphaTextureFilter;
         this.b = i;
-        this.f40421c = i2;
+        this.f26730c = i2;
         this.d = i3;
         this.e = f;
         this.f = f2;
@@ -31,6 +31,6 @@ public final /* synthetic */ class gk implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCWatermarkAlphaTextureFilter.lambda$setTextureWatermark$1(this.f40420a, this.b, this.f40421c, this.d, this.e, this.f, this.g);
+        UGCWatermarkAlphaTextureFilter.lambda$setTextureWatermark$1(this.f26729a, this.b, this.f26730c, this.d, this.e, this.f, this.g);
     }
 }

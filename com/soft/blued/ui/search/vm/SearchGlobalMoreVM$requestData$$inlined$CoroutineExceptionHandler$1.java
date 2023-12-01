@@ -9,10 +9,9 @@ import kotlinx.coroutines.CoroutineExceptionHandler;
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/search/vm/SearchGlobalMoreVM$requestData$$inlined$CoroutineExceptionHandler$1.class */
 public final class SearchGlobalMoreVM$requestData$$inlined$CoroutineExceptionHandler$1 extends AbstractCoroutineContextElement implements CoroutineExceptionHandler {
     public SearchGlobalMoreVM$requestData$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key key) {
-        super(key);
+        super((CoroutineContext.Key) key);
     }
 
-    @Override // kotlinx.coroutines.CoroutineExceptionHandler
     public void handleException(CoroutineContext coroutineContext, Throwable th) {
     }
 }

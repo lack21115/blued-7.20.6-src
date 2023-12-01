@@ -8,20 +8,20 @@ import android.text.TextPaint;
 public final class TypefaceEmojiSpan extends EmojiSpan {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Paint f2847a;
+    private static Paint f2799a;
 
     public TypefaceEmojiSpan(EmojiMetadata emojiMetadata) {
         super(emojiMetadata);
     }
 
     private static Paint b() {
-        if (f2847a == null) {
+        if (f2799a == null) {
             TextPaint textPaint = new TextPaint();
-            f2847a = textPaint;
+            f2799a = textPaint;
             textPaint.setColor(EmojiCompat.get().getEmojiSpanIndicatorColor());
-            f2847a.setStyle(Paint.Style.FILL);
+            f2799a.setStyle(Paint.Style.FILL);
         }
-        return f2847a;
+        return f2799a;
     }
 
     @Override // android.text.style.ReplacementSpan

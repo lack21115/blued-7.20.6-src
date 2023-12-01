@@ -11,7 +11,7 @@ public abstract class b<K, V> extends a<K, V> {
     private static final int b = 16;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7827c = 16777216;
+    private static final int f4987c = 16777216;
     private final int d;
     private final List<V> f = Collections.synchronizedList(new LinkedList());
     private final AtomicInteger e = new AtomicInteger();

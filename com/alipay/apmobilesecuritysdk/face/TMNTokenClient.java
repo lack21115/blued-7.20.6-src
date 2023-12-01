@@ -1,18 +1,14 @@
 package com.alipay.apmobilesecuritysdk.face;
 
 import android.content.Context;
-import android.speech.tts.TextToSpeech;
 import com.alipay.apmobilesecuritysdk.otherid.UtdidWrapper;
 import com.alipay.sdk.cons.b;
 import com.alipay.security.mobile.module.a.a;
-import com.huawei.openalliance.ad.constant.ao;
 import java.util.HashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/face/TMNTokenClient.class */
 public class TMNTokenClient {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static TMNTokenClient f4566a;
+    private static TMNTokenClient a;
     private Context b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/face/TMNTokenClient$InitResultListener.class */
@@ -29,18 +25,18 @@ public class TMNTokenClient {
     }
 
     public static TMNTokenClient getInstance(Context context) {
-        if (f4566a == null) {
+        if (a == null) {
             synchronized (TMNTokenClient.class) {
                 try {
-                    if (f4566a == null) {
-                        f4566a = new TMNTokenClient(context);
+                    if (a == null) {
+                        a = new TMNTokenClient(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f4566a;
+        return a;
     }
 
     public void intiToken(final String str, String str2, String str3, final InitResultListener initResultListener) {
@@ -53,11 +49,11 @@ public class TMNTokenClient {
         final HashMap hashMap = new HashMap();
         hashMap.put(b.g, UtdidWrapper.getUtdid(this.b));
         hashMap.put("tid", "");
-        hashMap.put(ao.q, "");
+        hashMap.put("userId", "");
         hashMap.put("appName", str);
         hashMap.put("appKeyClient", str2);
         hashMap.put("appchannel", "openapi");
-        hashMap.put(TextToSpeech.Engine.KEY_PARAM_SESSION_ID, str3);
+        hashMap.put("sessionId", str3);
         hashMap.put("rpcVersion", "8");
         com.alipay.apmobilesecuritysdk.f.b.a().a(new Runnable() { // from class: com.alipay.apmobilesecuritysdk.face.TMNTokenClient.1
             @Override // java.lang.Runnable

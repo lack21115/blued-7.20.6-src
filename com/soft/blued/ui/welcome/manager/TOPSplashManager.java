@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class TOPSplashManager extends SplashAdManagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private ATSplashAd f34655a;
+    private ATSplashAd f20964a;
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean a(String str) {
@@ -44,7 +44,7 @@ public class TOPSplashManager extends SplashAdManagerAdapter {
             public void onAdLoaded(boolean z) {
                 try {
                     if (context != null) {
-                        TOPSplashManager.this.f34655a.show((Activity) context, viewGroup);
+                        TOPSplashManager.this.f20964a.show((Activity) context, viewGroup);
                     }
                 } catch (Exception e) {
                     splashAdListener.a(0, e.toString());
@@ -63,11 +63,11 @@ public class TOPSplashManager extends SplashAdManagerAdapter {
                 Log.v("drb", "topon广告载入失败：" + adError.getFullErrorInfo());
             }
         });
-        this.f34655a = aTSplashAd;
+        this.f20964a = aTSplashAd;
         if (aTSplashAd.isAdReady()) {
-            this.f34655a.show((Activity) context, viewGroup);
+            this.f20964a.show((Activity) context, viewGroup);
         } else {
-            this.f34655a.loadAd();
+            this.f20964a.loadAd();
         }
     }
 }

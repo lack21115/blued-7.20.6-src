@@ -24,7 +24,7 @@ public class ExternalMediaFormatActivity extends AlertActivity implements Dialog
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             Log.d("ExternalMediaFormatActivity", "got action " + action);
-            if (action == Intent.ACTION_MEDIA_REMOVED || action == Intent.ACTION_MEDIA_CHECKING || action == Intent.ACTION_MEDIA_MOUNTED || action == Intent.ACTION_MEDIA_SHARED) {
+            if (action == "android.intent.action.MEDIA_REMOVED" || action == "android.intent.action.MEDIA_CHECKING" || action == "android.intent.action.MEDIA_MOUNTED" || action == "android.intent.action.MEDIA_SHARED") {
                 ExternalMediaFormatActivity.this.finish();
             }
         }
@@ -35,7 +35,7 @@ public class ExternalMediaFormatActivity extends AlertActivity implements Dialog
         if (i == -1) {
             Intent intent = new Intent(ExternalStorageFormatter.FORMAT_ONLY);
             intent.setComponent(ExternalStorageFormatter.COMPONENT_NAME);
-            intent.putExtra(StorageVolume.EXTRA_STORAGE_VOLUME, this.mStorageVolume);
+            intent.putExtra("storage_volume", this.mStorageVolume);
             startService(intent);
         }
         finish();
@@ -45,7 +45,7 @@ public class ExternalMediaFormatActivity extends AlertActivity implements Dialog
     @Override // com.android.internal.app.AlertActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.mStorageManager = (StorageManager) getSystemService(Context.STORAGE_SERVICE);
+        this.mStorageManager = (StorageManager) getSystemService("storage");
         String stringExtra = getIntent().getStringExtra(FORMAT_PATH);
         StorageVolume[] volumeList = this.mStorageManager.getVolumeList();
         int length = volumeList.length;
@@ -70,27 +70,25 @@ public class ExternalMediaFormatActivity extends AlertActivity implements Dialog
         alertParams.mMessage = String.format(getString(z ? 17039512 : 17039513), this.mStorageVolume.getPath());
         alertParams.mPositiveButtonText = getString(R.string.extmedia_format_button_format);
         alertParams.mPositiveButtonListener = this;
-        alertParams.mNegativeButtonText = getString(17039360);
+        alertParams.mNegativeButtonText = getString(R.string.cancel);
         alertParams.mNegativeButtonListener = this;
         setupAlert();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onPause() {
+    protected void onPause() {
         super.onPause();
         unregisterReceiver(this.mStorageReceiver);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(Intent.ACTION_MEDIA_REMOVED);
-        intentFilter.addAction(Intent.ACTION_MEDIA_CHECKING);
-        intentFilter.addAction(Intent.ACTION_MEDIA_MOUNTED);
-        intentFilter.addAction(Intent.ACTION_MEDIA_SHARED);
+        intentFilter.addAction("android.intent.action.MEDIA_REMOVED");
+        intentFilter.addAction("android.intent.action.MEDIA_CHECKING");
+        intentFilter.addAction("android.intent.action.MEDIA_MOUNTED");
+        intentFilter.addAction("android.intent.action.MEDIA_SHARED");
         registerReceiver(this.mStorageReceiver, intentFilter);
     }
 }

@@ -11,11 +11,11 @@ import com.umeng.commonsdk.statistics.internal.PreferenceWrapper;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static d f40909a;
+    private static d f27218a;
     private static Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f40910c;
+    private static String f27219c;
     private static final String d = at.b().b("user");
 
     public d(Context context) {
@@ -26,11 +26,11 @@ public final class d {
         synchronized (d.class) {
             try {
                 b = context.getApplicationContext();
-                f40910c = context.getPackageName();
-                if (f40909a == null) {
-                    f40909a = new d(context);
+                f27219c = context.getPackageName();
+                if (f27218a == null) {
+                    f27218a = new d(context);
                 }
-                dVar = f40909a;
+                dVar = f27218a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -40,7 +40,7 @@ public final class d {
 
     private SharedPreferences f() {
         Context context = b;
-        return context.getSharedPreferences(d + f40910c, 0);
+        return context.getSharedPreferences(d + f27219c, 0);
     }
 
     public int a() {

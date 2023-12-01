@@ -16,11 +16,11 @@ public class a {
     public static final String L = "policyGrantResult";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40858a = "umpx_internal";
+    public static final String f27167a = "umpx_internal";
     public static final String b = "umpx_crash";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f40859c = 10;
+    public static final int f27168c = 10;
     public static final int d = 10;
     public static final String e = "1.2.0";
     public static final int f = 32769;

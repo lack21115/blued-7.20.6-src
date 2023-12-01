@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.view.shape.ShapeTextView;
@@ -32,6 +33,7 @@ import com.blued.community.ui.send.observer.IAddPost;
 import com.blued.community.ui.send.observer.OnAddPostTitleListener;
 import com.blued.community.ui.send.vm.SelectAlbumViewModel;
 import com.blued.das.client.feed.FeedProtos;
+import java.io.Serializable;
 import java.util.List;
 import kotlin.Lazy;
 import kotlin.LazyKt;
@@ -48,16 +50,12 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/CollectionAddPostFragment.class */
 public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19964c;
+    private final ViewBindingProperty c;
     private final Lazy d;
     private MyAdapter e;
     private final OnAddPostTitleListener f;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(CollectionAddPostFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentCollectionAddPostBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19963a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/CollectionAddPostFragment$Companion.class */
@@ -79,13 +77,9 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/CollectionAddPostFragment$MyAdapter.class */
     public static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f19965a;
+        private final Context a;
         private final OnAddPostTitleListener b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private IAddPost f19966c;
+        private IAddPost c;
         private final List<Integer> d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -93,25 +87,23 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
             super(fm, 1);
             Intrinsics.e(addPostTitleListener, "addPostTitleListener");
             Intrinsics.e(fm, "fm");
-            this.f19965a = context;
+            this.a = context;
             this.b = addPostTitleListener;
             this.d = CollectionsKt.b(Integer.valueOf(R.string.feed_feeds), Integer.valueOf(R.string.event_events));
         }
 
         public final IAddPost a() {
-            return this.f19966c;
+            return this.c;
         }
 
         public final Context getContext() {
-            return this.f19965a;
+            return this.a;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.d.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             if (i == 0) {
                 FeedAddPostFragment feedAddPostFragment = new FeedAddPostFragment();
@@ -121,30 +113,28 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
             }
             EventAddPostFragment eventAddPostFragment = new EventAddPostFragment();
             Bundle bundle = new Bundle();
-            bundle.putSerializable("event_from_page", FeedProtos.SourcePage.ONE_CITY);
+            bundle.putSerializable("event_from_page", (Serializable) FeedProtos.SourcePage.ONE_CITY);
             eventAddPostFragment.setArguments(bundle);
             eventAddPostFragment.a(this.b);
             return eventAddPostFragment;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            Context context = this.f19965a;
+            Context context = this.a;
             return context == null ? null : context.getString(this.d.get(i).intValue());
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void setPrimaryItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
-            this.f19966c = (IAddPost) object;
+            this.c = (IAddPost) object;
             super.setPrimaryItem(container, i, object);
         }
     }
 
     public CollectionAddPostFragment() {
         super(R.layout.fragment_collection_add_post);
-        this.f19964c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<CollectionAddPostFragment, FragmentCollectionAddPostBinding>() { // from class: com.blued.community.ui.send.fragment.CollectionAddPostFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<CollectionAddPostFragment, FragmentCollectionAddPostBinding>() { // from class: com.blued.community.ui.send.fragment.CollectionAddPostFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentCollectionAddPostBinding invoke(CollectionAddPostFragment fragment) {
@@ -223,14 +213,14 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
         FragmentCollectionAddPostBinding p = p();
         CustomViewPager customViewPager2 = p == null ? null : p.d;
         if (customViewPager2 != null) {
-            customViewPager2.setAdapter(this.e);
+            customViewPager2.setAdapter((PagerAdapter) this.e);
         }
         FragmentCollectionAddPostBinding p2 = p();
         if (p2 != null && (tabPageIndicatorWithDot5 = p2.e) != null) {
             FragmentCollectionAddPostBinding p3 = p();
             tabPageIndicatorWithDot5.setViewPager(p3 == null ? null : p3.d);
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             FragmentCollectionAddPostBinding p4 = p();
             if (p4 != null && (tabPageIndicatorWithDot4 = p4.e) != null) {
                 tabPageIndicatorWithDot4.setRealTextColor(R.color.syc_EAEAEA);
@@ -252,27 +242,24 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
         FragmentCollectionAddPostBinding p8 = p();
         if (p8 != null && (customViewPager = p8.d) != null) {
             customViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.community.ui.send.fragment.CollectionAddPostFragment$initView$1
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
                     SelectPhotoManager.a().d();
                     AlbumDataManager.clear();
                     ChildPhotoManager.a().d();
-                    CollectionAddPostFragment.this.q().f().setValue(null);
+                    CollectionAddPostFragment.this.q().f().setValue((Object) null);
                     CollectionAddPostFragment.this.q().j().setValue(true);
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrolled(int i, float f, int i2) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageSelected(int i) {
                     CollectionAddPostFragment.this.r();
                 }
             });
         }
         FragmentCollectionAddPostBinding p9 = p();
-        if (p9 != null && (imageView = p9.f18843a) != null) {
+        if (p9 != null && (imageView = p9.a) != null) {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$CollectionAddPostFragment$lroJ-nlDgS2OcH-c9AtCGD8rqt4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -281,7 +268,7 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
             });
         }
         FragmentCollectionAddPostBinding p10 = p();
-        if (p10 == null || (shapeTextView = p10.f18844c) == null) {
+        if (p10 == null || (shapeTextView = p10.c) == null) {
             return;
         }
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$CollectionAddPostFragment$fPiOVlmelX8-ogkmM5_bddxj28w
@@ -297,7 +284,7 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
     }
 
     public final FragmentCollectionAddPostBinding p() {
-        return (FragmentCollectionAddPostBinding) this.f19964c.b(this, b[0]);
+        return (FragmentCollectionAddPostBinding) this.c.b(this, b[0]);
     }
 
     public final SelectAlbumViewModel q() {
@@ -311,7 +298,7 @@ public final class CollectionAddPostFragment extends MVVMBaseFragment<EmptyViewM
             return;
         }
         FragmentCollectionAddPostBinding p = p();
-        ShapeTextView shapeTextView = p == null ? null : p.f18844c;
+        ShapeTextView shapeTextView = p == null ? null : p.c;
         if (shapeTextView == null) {
             return;
         }

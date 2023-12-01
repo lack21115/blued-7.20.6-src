@@ -30,13 +30,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 /* renamed from: com.blued.android.module.common.adx.ks.native.KSNativeExpressAdAdapter  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/ks/native/KSNativeExpressAdAdapter.class */
 public final class KSNativeExpressAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10572a;
+    private BluedADExtra a;
     private ADSize b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ADListener f10573c;
+    private ADListener c;
     private final Context d;
     private KSNativeExpressAdDataAdapter e;
     private int f;
@@ -46,16 +42,16 @@ public final class KSNativeExpressAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(adSize, "adSize");
         Intrinsics.e(listener, "listener");
-        this.f10572a = adExtra;
+        this.a = adExtra;
         this.b = adSize;
-        this.f10573c = listener;
+        this.c = listener;
         this.d = context;
         this.f = -1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final ADListener aDListener) {
-        String str = this.f10572a.third_id;
+        String str = this.a.third_id;
         Intrinsics.c(str, "adExtra.third_id");
         KsScene build = new KsScene.Builder(Long.parseLong(str)).width(this.b.getWidth()).adNum(1).build();
         KsLoadManager loadManager = KsAdSDK.getLoadManager();
@@ -63,7 +59,6 @@ public final class KSNativeExpressAdAdapter extends BaseNativeExpressAd {
             return;
         }
         loadManager.loadConfigFeedAd(build, new KsLoadManager.FeedAdListener() { // from class: com.blued.android.module.common.adx.ks.native.KSNativeExpressAdAdapter$loadExpressAd$1
-            @Override // com.kwad.sdk.api.KsLoadManager.FeedAdListener
             public void onError(int i, String msg) {
                 Intrinsics.e(msg, "msg");
                 BluedADExtra e = KSNativeExpressAdAdapter.this.e();
@@ -72,7 +67,6 @@ public final class KSNativeExpressAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, KSNativeExpressAdAdapter.this));
             }
 
-            @Override // com.kwad.sdk.api.KsLoadManager.FeedAdListener
             public void onFeedAdLoad(List<? extends KsFeedAd> list) {
                 Context context;
                 Context context2;
@@ -92,7 +86,7 @@ public final class KSNativeExpressAdAdapter extends BaseNativeExpressAd {
                 context2 = KSNativeExpressAdAdapter.this.d;
                 KSNativeExpressAdDataAdapter kSNativeExpressAdDataAdapter = new KSNativeExpressAdDataAdapter(context, ksFeedAd, f, ksFeedAd.getFeedView(context2), KSNativeExpressAdAdapter.this.e());
                 KSNativeExpressAdAdapter.this.e = kSNativeExpressAdDataAdapter;
-                aDListener2 = KSNativeExpressAdAdapter.this.f10573c;
+                aDListener2 = KSNativeExpressAdAdapter.this.c;
                 kSNativeExpressAdDataAdapter.setAdListener(aDListener2);
                 KSNativeExpressAdAdapter.this.f = ksFeedAd.getECPM();
                 aDListener.onADEvent(new ADEvent(100, KSNativeExpressAdAdapter.this));
@@ -127,21 +121,21 @@ public final class KSNativeExpressAdAdapter extends BaseNativeExpressAd {
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void a(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendWinNotification(map);
+        a.sendWinNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.BaseNativeExpressAd
     public void b(Map<String, ? extends Object> map) {
         Intrinsics.e(map, "map");
-        NativeExpressADView a2 = a();
-        if (a2 == null) {
+        NativeExpressADView a = a();
+        if (a == null) {
             return;
         }
-        a2.sendLossNotification(map);
+        a.sendLossNotification(map);
     }
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
@@ -151,11 +145,11 @@ public final class KSNativeExpressAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10572a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10572a;
+        return this.a;
     }
 
     public final ADSize f() {

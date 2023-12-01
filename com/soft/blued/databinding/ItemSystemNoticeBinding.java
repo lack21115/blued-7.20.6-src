@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSystemNoticeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29326a;
+    private final LinearLayout f15636a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29326a;
+        return this.f15636a;
     }
 }

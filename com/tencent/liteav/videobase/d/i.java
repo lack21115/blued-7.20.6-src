@@ -10,18 +10,18 @@ import java.util.Arrays;
 public abstract class i extends com.tencent.liteav.videobase.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36623a;
+    private int f22932a;
     private final int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f36624c;
+    private int f22933c;
     private int d;
 
     public i(String str, String str2) {
         super(str, str2);
         int[] iArr = new int[2];
         this.b = iArr;
-        this.f36624c = 0;
+        this.f22933c = 0;
         this.d = 0;
         Arrays.fill(iArr, -1);
     }
@@ -43,9 +43,9 @@ public abstract class i extends com.tencent.liteav.videobase.a.b {
     protected abstract int a();
 
     public final void a(ByteBuffer byteBuffer, int i, int i2) {
-        if (this.f36624c != i || this.d != i2) {
+        if (this.f22933c != i || this.d != i2) {
             b();
-            this.f36624c = i;
+            this.f22933c = i;
             this.d = i2;
         }
         OpenGlUtils.loadYuv420DataToTextures(byteBuffer, a(), i, i2, this.b);
@@ -56,7 +56,7 @@ public abstract class i extends com.tencent.liteav.videobase.a.b {
         super.beforeDrawArrays(i);
         GLES20.glActiveTexture(33985);
         OpenGlUtils.bindTexture(getTarget(), this.b[1]);
-        GLES20.glUniform1i(this.f36623a, 1);
+        GLES20.glUniform1i(this.f22932a, 1);
     }
 
     @Override // com.tencent.liteav.videobase.a.b
@@ -67,7 +67,7 @@ public abstract class i extends com.tencent.liteav.videobase.a.b {
     @Override // com.tencent.liteav.videobase.a.b
     public void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
-        this.f36623a = GLES20.glGetUniformLocation(getProgramId(), "uvTexture");
+        this.f22932a = GLES20.glGetUniformLocation(getProgramId(), "uvTexture");
     }
 
     @Override // com.tencent.liteav.videobase.a.b

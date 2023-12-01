@@ -17,11 +17,11 @@ import java.util.List;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27674a;
+    private String f13986a;
     private MediaExtractor b;
 
     /* renamed from: c  reason: collision with root package name */
-    private MediaExtractor f27675c;
+    private MediaExtractor f13987c;
     private MediaFormat d;
     private MediaFormat e;
     private List<Long> f;
@@ -37,7 +37,7 @@ public class f {
             e.w.e("MediaFile", "Create MediaFile failed, empty path");
             return;
         }
-        this.f27674a = str;
+        this.f13986a = str;
         if (z) {
             a(str);
         }
@@ -96,7 +96,7 @@ public class f {
                 return true;
             }
             e eVar = e.w;
-            eVar.e("MediaFile", "failed to select video track: " + this.f27674a);
+            eVar.e("MediaFile", "failed to select video track: " + this.f13986a);
             return false;
         } catch (IOException e) {
             e.w.e("MediaFile", e.getMessage());
@@ -110,7 +110,7 @@ public class f {
         eVar.c("MediaFile", "getVideoFrame at in Us: " + j + " is key frame: " + z);
         MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
         try {
-            mediaMetadataRetriever.setDataSource(this.f27674a);
+            mediaMetadataRetriever.setDataSource(this.f13986a);
             Bitmap frameAtTime = mediaMetadataRetriever.getFrameAtTime(j, z ? 2 : 3);
             if (frameAtTime != null) {
                 Bitmap.Config config = frameAtTime.getConfig();
@@ -151,17 +151,17 @@ public class f {
 
     private boolean b(String str) {
         MediaExtractor mediaExtractor = new MediaExtractor();
-        this.f27675c = mediaExtractor;
+        this.f13987c = mediaExtractor;
         try {
             mediaExtractor.setDataSource(str);
-            int a2 = a(this.f27675c, "audio/");
+            int a2 = a(this.f13987c, "audio/");
             if (a2 >= 0) {
-                this.f27675c.selectTrack(a2);
-                this.e = this.f27675c.getTrackFormat(a2);
+                this.f13987c.selectTrack(a2);
+                this.e = this.f13987c.getTrackFormat(a2);
                 return true;
             }
             e eVar = e.w;
-            eVar.e("MediaFile", "failed to select audio track: " + this.f27674a);
+            eVar.e("MediaFile", "failed to select audio track: " + this.f13986a);
             return false;
         } catch (IOException e) {
             e.w.e("MediaFile", e.getMessage());
@@ -177,7 +177,7 @@ public class f {
         this.g = new ArrayList();
         MediaExtractor mediaExtractor = new MediaExtractor();
         try {
-            mediaExtractor.setDataSource(this.f27674a);
+            mediaExtractor.setDataSource(this.f13986a);
             int i2 = 0;
             while (true) {
                 i = i2;
@@ -262,15 +262,15 @@ public class f {
             mediaExtractor.release();
             this.b = null;
         }
-        MediaExtractor mediaExtractor2 = this.f27675c;
+        MediaExtractor mediaExtractor2 = this.f13987c;
         if (mediaExtractor2 != null) {
             mediaExtractor2.release();
-            this.f27675c = null;
+            this.f13987c = null;
         }
     }
 
     public String b() {
-        return this.f27674a;
+        return this.f13986a;
     }
 
     public MediaExtractor c() {
@@ -278,7 +278,7 @@ public class f {
     }
 
     public MediaExtractor d() {
-        return this.f27675c;
+        return this.f13987c;
     }
 
     public MediaFormat e() {
@@ -290,14 +290,14 @@ public class f {
     }
 
     public long g() {
-        return g.a((Object) this.f27674a);
+        return g.a((Object) this.f13986a);
     }
 
     public int h() {
         MediaFormat mediaFormat = this.d;
         if (mediaFormat == null || !mediaFormat.containsKey("width")) {
             e eVar = e.w;
-            eVar.d("MediaFile", "failed to get video width: " + this.f27674a);
+            eVar.d("MediaFile", "failed to get video width: " + this.f13986a);
             return 0;
         }
         return this.d.getInteger("width");
@@ -307,7 +307,7 @@ public class f {
         MediaFormat mediaFormat = this.d;
         if (mediaFormat == null || !mediaFormat.containsKey("height")) {
             e eVar = e.w;
-            eVar.d("MediaFile", "failed to get video height: " + this.f27674a);
+            eVar.d("MediaFile", "failed to get video height: " + this.f13986a);
             return 0;
         }
         return this.d.getInteger("height");
@@ -321,7 +321,7 @@ public class f {
                 return (int) ((a(false) * 1000) / g());
             }
             e eVar = e.w;
-            eVar.d("MediaFile", "failed to get video framerate: " + this.f27674a + ", illegal video duration value.");
+            eVar.d("MediaFile", "failed to get video framerate: " + this.f13986a + ", illegal video duration value.");
         }
         return integer;
     }
@@ -330,13 +330,13 @@ public class f {
         MediaFormat mediaFormat = this.d;
         if (mediaFormat == null || !mediaFormat.containsKey(MediaFormat.KEY_BIT_RATE)) {
             MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
-            mediaMetadataRetriever.setDataSource(this.f27674a);
+            mediaMetadataRetriever.setDataSource(this.f13986a);
             String extractMetadata = mediaMetadataRetriever.extractMetadata(20);
             if (extractMetadata != null) {
                 return Integer.parseInt(extractMetadata);
             }
             e eVar = e.w;
-            eVar.d("MediaFile", "failed to get video bitrate: " + this.f27674a);
+            eVar.d("MediaFile", "failed to get video bitrate: " + this.f13986a);
             return 0;
         }
         return this.d.getInteger(MediaFormat.KEY_BIT_RATE);
@@ -346,21 +346,21 @@ public class f {
         MediaFormat mediaFormat = this.d;
         if (mediaFormat == null || !mediaFormat.containsKey(MediaFormat.KEY_I_FRAME_INTERVAL)) {
             e eVar = e.w;
-            eVar.d("MediaFile", "failed to get video i interval: " + this.f27674a);
+            eVar.d("MediaFile", "failed to get video i interval: " + this.f13986a);
             return 0;
         }
         return this.d.getInteger(MediaFormat.KEY_I_FRAME_INTERVAL);
     }
 
     public int m() {
-        return g.d(this.f27674a);
+        return g.d(this.f13986a);
     }
 
     public int n() {
         MediaFormat mediaFormat = this.e;
         if (mediaFormat == null || !mediaFormat.containsKey(MediaFormat.KEY_CHANNEL_COUNT)) {
             e eVar = e.w;
-            eVar.d("MediaFile", "failed to get audio channels: " + this.f27674a);
+            eVar.d("MediaFile", "failed to get audio channels: " + this.f13986a);
             return 0;
         }
         return this.e.getInteger(MediaFormat.KEY_CHANNEL_COUNT);
@@ -370,7 +370,7 @@ public class f {
         MediaFormat mediaFormat = this.e;
         if (mediaFormat == null || !mediaFormat.containsKey(MediaFormat.KEY_SAMPLE_RATE)) {
             e eVar = e.w;
-            eVar.d("MediaFile", "failed to get audio samplerate: " + this.f27674a);
+            eVar.d("MediaFile", "failed to get audio samplerate: " + this.f13986a);
             return 0;
         }
         return this.e.getInteger(MediaFormat.KEY_SAMPLE_RATE);

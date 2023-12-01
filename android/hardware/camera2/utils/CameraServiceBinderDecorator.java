@@ -10,9 +10,8 @@ import java.lang.reflect.Method;
 public class CameraServiceBinderDecorator extends CameraBinderDecorator {
     private static final String TAG = "CameraServiceBinderDecorator";
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/utils/CameraServiceBinderDecorator$CameraServiceBinderDecoratorListener.class */
-    public static class CameraServiceBinderDecoratorListener extends CameraBinderDecorator.CameraBinderDecoratorListener {
+    static class CameraServiceBinderDecoratorListener extends CameraBinderDecorator.CameraBinderDecoratorListener {
         CameraServiceBinderDecoratorListener() {
         }
 

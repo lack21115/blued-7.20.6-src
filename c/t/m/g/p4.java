@@ -14,6 +14,8 @@ import c.t.m.g.q5;
 import c.t.m.g.t4;
 import c.t.m.g.u4;
 import com.baidu.mobads.sdk.internal.bw;
+import com.cdo.oaps.ad.OapsKey;
+import com.huawei.hms.ads.fw;
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManagerOptions;
@@ -69,11 +71,11 @@ public class p4 {
     public final t3 z;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f3922a = "ReGeoCodingnKey";
+    public String f3874a = "ReGeoCodingnKey";
     public String b = "default";
 
     /* renamed from: c  reason: collision with root package name */
-    public int f3923c = -1;
+    public int f3875c = -1;
     public int d = 1;
     public long E = 0;
     public volatile long F = 0;
@@ -123,11 +125,11 @@ public class p4 {
     public class c extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f3925a;
+        public long f3877a;
         public boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f3926c;
+        public boolean f3878c;
         public int d;
         public t4.c e;
 
@@ -156,9 +158,9 @@ public class p4 {
             super(looper);
             this.d = 0;
             this.e = new a();
-            this.f3925a = 0L;
+            this.f3877a = 0L;
             this.b = false;
-            this.f3926c = false;
+            this.f3878c = false;
         }
 
         public final void a() {
@@ -169,7 +171,7 @@ public class p4 {
 
         public final void a(int i) {
             boolean z = false;
-            if (!h5.f3832a) {
+            if (!h5.f3784a) {
                 if (p4.this.Q == 0 && p4.this.M != null && System.currentTimeMillis() - p4.this.M.getTime() < 60000) {
                     b(0);
                     return;
@@ -285,7 +287,7 @@ public class p4 {
                                             return;
                                         }
                                         JSONObject jSONObject = new JSONObject(b);
-                                        p4.this.f3923c = jSONObject.optInt("status");
+                                        p4.this.f3875c = jSONObject.optInt("status");
                                         p4.this.Y = jSONObject.getJSONObject("result").getJSONObject("ad_info").getInt("nation_code");
                                         int unused = p4.this.Y;
                                         p4.this.a(q5Var, i2, i3);
@@ -338,7 +340,7 @@ public class p4 {
                                         try {
                                             q5 a2 = new q5.b().a(obj).a(requestLevel).b("network").a();
                                             if (a2.isMockGps() == 1) {
-                                                this.f3926c = true;
+                                                this.f3878c = true;
                                             }
                                             q5.d(a2);
                                             if (p4.this.U != null) {
@@ -381,7 +383,7 @@ public class p4 {
                                                 } catch (Exception e) {
                                                 }
                                             }
-                                            r5.a(p4.this.z.f3992a);
+                                            r5.a(p4.this.z.f3944a);
                                             return;
                                         } catch (JSONException e2) {
                                             s3.a("LOC", "server location error.");
@@ -422,14 +424,14 @@ public class p4 {
                                 a(2);
                                 return;
                             }
-                            if (!j4.b() || System.currentTimeMillis() - this.f3925a <= 60000) {
+                            if (!j4.b() || System.currentTimeMillis() - this.f3877a <= 60000) {
                                 this.b = false;
                             } else {
                                 this.b = true;
-                                this.f3926c = false;
-                                this.f3925a = System.currentTimeMillis();
+                                this.f3878c = false;
+                                this.f3877a = System.currentTimeMillis();
                             }
-                            String a3 = j4.a(requestLevel, p4.this.T, p4.this.z, this.b, this.f3926c, p4.this.S == d.Daemon);
+                            String a3 = j4.a(requestLevel, p4.this.T, p4.this.z, this.b, this.f3878c, p4.this.S == d.Daemon);
                             if (a3 == null || !f6.a(a3)) {
                                 s3.a("LOC", "bad json " + a3);
                                 a(2);
@@ -465,11 +467,11 @@ public class p4 {
     public class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public TencentLocationListener f3930a;
+        public TencentLocationListener f3882a;
         public long b;
 
         public e(p4 p4Var, TencentLocationListener tencentLocationListener, long j) {
-            this.f3930a = tencentLocationListener;
+            this.f3882a = tencentLocationListener;
             this.b = j;
         }
 
@@ -482,12 +484,12 @@ public class p4 {
     public class f extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public double f3931a;
+        public double f3883a;
         public double b;
 
         public f(Looper looper) {
             super(looper);
-            this.f3931a = 0.0d;
+            this.f3883a = 0.0d;
             this.b = 0.0d;
         }
 
@@ -539,12 +541,12 @@ public class p4 {
                             q5Var.getProvider();
                             return;
                         }
-                        if (this.f3931a != q5Var.getLatitude() || this.b != q5Var.getLongitude()) {
+                        if (this.f3883a != q5Var.getLatitude() || this.b != q5Var.getLongitude()) {
                             try {
                                 s3.a("LOC", String.format(Locale.ENGLISH, "callback:%d,%s,%.6f,%.6f,%.1f,%.2f,%.1f,%.1f,%s", Integer.valueOf(i), q5Var.getProvider().substring(0, 1), Double.valueOf(q5Var.getLatitude()), Double.valueOf(q5Var.getLongitude()), Double.valueOf(q5Var.getAltitude()), Float.valueOf(q5Var.getAccuracy()), Float.valueOf(q5Var.getBearing()), Float.valueOf(q5Var.getSpeed()), q5Var.getIndoorBuildingFloor()));
                             } catch (Exception e) {
                             }
-                            this.f3931a = q5Var.getLatitude();
+                            this.f3883a = q5Var.getLatitude();
                             this.b = q5Var.getLongitude();
                         }
                         if (p4.this.B != null) {
@@ -585,7 +587,7 @@ public class p4 {
                             return;
                         }
                         for (e eVar : p4.this.D) {
-                            TencentLocationListener tencentLocationListener3 = eVar.f3930a;
+                            TencentLocationListener tencentLocationListener3 = eVar.f3882a;
                             if (tencentLocationListener3 != null && System.currentTimeMillis() - eVar.b > p4.this.K.getGpsFirstTimeOut()) {
                                 p4.this.C.size();
                                 p4.this.D.size();
@@ -679,10 +681,10 @@ public class p4 {
         this.D = new CopyOnWriteArrayList();
         this.q = new q4(this.z);
         this.r = new u4(this.z);
-        this.o = m4.a(t3Var.f3992a);
+        this.o = m4.a(t3Var.f3944a);
         if (Build.VERSION.SDK_INT >= 21) {
             try {
-                this.p = new i4(this.z.f3992a);
+                this.p = new i4(this.z.f3944a);
             } catch (Exception e2) {
                 this.p = null;
             }
@@ -717,7 +719,7 @@ public class p4 {
             return;
         }
         try {
-            m0.a(this.z.f3992a, "txsdk", "7.4.9.official_1");
+            m0.a(this.z.f3944a, "txsdk", "7.4.9.official_1");
             m0.a(this.T);
         } catch (Throwable th4) {
         }
@@ -755,7 +757,7 @@ public class p4 {
             h6.d = false;
         }
         Bundle extras = tencentLocationRequest.getExtras();
-        if (extras == null || extras.getString("LOCATION_URL_IOT") == null || !extras.getString("LOCATION_URL_IOT").equals("true")) {
+        if (extras == null || extras.getString("LOCATION_URL_IOT") == null || !extras.getString("LOCATION_URL_IOT").equals(fw.Code)) {
             d0 = false;
         } else {
             d0 = true;
@@ -841,7 +843,7 @@ public class p4 {
                 if (i3 != 5) {
                     str = str5;
                     str4 = "wifi";
-                    if (h6.f3833a) {
+                    if (h6.f3785a) {
                         str2 = "wifi";
                         i3 = 2;
                         str3 = "location permission denied";
@@ -870,7 +872,7 @@ public class p4 {
             case 12003:
                 str3 = i3 == 1 ? "cell enabled" : i3 == 0 ? "cell disabled" : "unknown";
                 str2 = "cell";
-                if (v5.f4028a) {
+                if (v5.f3980a) {
                     str2 = "cell";
                     i3 = 2;
                     str3 = "location permission denied";
@@ -1012,13 +1014,13 @@ public class p4 {
     public final void a(b5 b5Var) {
         double d2;
         double d3;
-        if (b5Var.f3763a == l4.f3873a) {
+        if (b5Var.f3715a == l4.f3825a) {
             return;
         }
         this.y = b5Var;
         int requestLevel = this.K.getRequestLevel();
         q5 q5Var = this.P;
-        Location location = new Location(b5Var.f3763a);
+        Location location = new Location(b5Var.f3715a);
         Bundle extras = location.getExtras();
         if (extras != null) {
             d2 = extras.getDouble("lat");
@@ -1028,7 +1030,7 @@ public class p4 {
             d3 = 0.0d;
         }
         if (d2 == 0.0d && d3 == 0.0d) {
-            s3.a("g", "defl error");
+            s3.a(OapsKey.KEY_GRADE, "defl error");
             return;
         }
         if (b()) {
@@ -1036,7 +1038,7 @@ public class p4 {
             a(3999);
         }
         int a2 = e4.b().a(b5Var);
-        q5 a3 = new q5.b().a(q5Var).b("gps").a(requestLevel).a(location.getExtras()).a(new Location(b5Var.f3763a)).a();
+        q5 a3 = new q5.b().a(q5Var).b("gps").a(requestLevel).a(location.getExtras()).a(new Location(b5Var.f3715a)).a();
         location.setLatitude(d2);
         location.setLongitude(d3);
         a3.b(location);
@@ -1105,8 +1107,8 @@ public class p4 {
                     if (this.Y != 0 && i == 0) {
                         q5Var.a(this.Y);
                         q5Var.getNationCode();
-                    } else if (i == 0 && extras != null && extras.containsKey(this.f3922a) && w()) {
-                        String string = extras.getString(this.f3922a, "default");
+                    } else if (i == 0 && extras != null && extras.containsKey(this.f3874a) && w()) {
+                        String string = extras.getString(this.f3874a, "default");
                         if (!"default".equals(string)) {
                             this.b = string;
                             c3.b(this.e, 5999, i, i2, q5Var);
@@ -1152,7 +1154,7 @@ public class p4 {
                             break;
                         }
                         e next = it.next();
-                        if (next.f3930a.equals(tencentLocationListener)) {
+                        if (next.f3882a.equals(tencentLocationListener)) {
                             this.D.remove(next);
                             break;
                         }
@@ -1306,7 +1308,7 @@ public class p4 {
     }
 
     public final t4 f() {
-        if (this.z.h() && h5.f3832a) {
+        if (this.z.h() && h5.f3784a) {
             return new t4(this.z);
         }
         return null;
@@ -1362,7 +1364,7 @@ public class p4 {
                 if (Build.VERSION.SDK_INT >= 12) {
                     int i = a5Var2.d;
                     long j = a5Var2.f;
-                    Location location = b5Var2.f3763a;
+                    Location location = b5Var2.f3715a;
                     Bundle bundle = new Bundle();
                     bundle.putString("cellkey", i + "" + j);
                     bundle.putParcelable("location", location);
@@ -1419,7 +1421,7 @@ public class p4 {
         c5.e = 0L;
         this.W = false;
         this.X = false;
-        this.f3923c = -1;
+        this.f3875c = -1;
         this.S = d.Stop;
         this.E = 0L;
         this.L = 0L;
@@ -1449,7 +1451,7 @@ public class p4 {
     }
 
     public final void o() {
-        v5.f4028a = false;
+        v5.f3980a = false;
         if (b6.b(this.q)) {
             this.q.a();
         }
@@ -1500,7 +1502,7 @@ public class p4 {
     public void onCellInfoEvent(a5 a5Var) {
         a(a5Var);
         if (this.U != null) {
-            c.t.m.g.d dVar = new c.t.m.g.d(a5Var.b, a5Var.f3750c, a5Var.d, a5Var.f, a5Var.e, a5Var.f3749a.ordinal());
+            c.t.m.g.d dVar = new c.t.m.g.d(a5Var.b, a5Var.f3702c, a5Var.d, a5Var.f, a5Var.e, a5Var.f3701a.ordinal());
             ArrayList arrayList = new ArrayList();
             arrayList.add(dVar);
             this.U.a(dVar, arrayList);
@@ -1511,12 +1513,12 @@ public class p4 {
         a(b5Var);
         c.t.m.g.b bVar = this.U;
         if (bVar != null) {
-            bVar.a(b5Var.f3763a);
+            bVar.a(b5Var.f3715a);
         }
     }
 
     public void onNetworkEvent(Integer num) {
-        a6.b(this.z.f3992a);
+        a6.b(this.z.f3944a);
         int intValue = num.intValue();
         if (intValue == 0 || intValue != 1) {
             return;
@@ -1595,7 +1597,7 @@ public class p4 {
             this.V.a(booleanValue);
             if (booleanValue) {
                 this.V.e();
-                s3.a("LOC", "request {interval: " + this.K.getInterval() + ", level: " + this.K.getRequestLevel() + ", gps: " + this.K.isAllowGPS() + ", direct: " + this.K.isAllowDirection() + com.alipay.sdk.util.i.d);
+                s3.a("LOC", "request {interval: " + this.K.getInterval() + ", level: " + this.K.getRequestLevel() + ", gps: " + this.K.isAllowGPS() + ", direct: " + this.K.isAllowDirection() + "}");
             }
         }
         this.r.a(cVar2, z2);
@@ -1643,7 +1645,7 @@ public class p4 {
         if (b6.b(cVar2)) {
             int c2 = n0.b().c("f_coll_item");
             if ((c2 == 1 || c2 == 2) && this.U == null) {
-                this.U = new c.t.m.g.b(this.z.f3992a);
+                this.U = new c.t.m.g.b(this.z.f3944a);
             } else {
                 this.U = null;
             }
@@ -1685,7 +1687,7 @@ public class p4 {
     }
 
     public final boolean w() {
-        int i = this.f3923c;
-        return (i < 110 || i > 199) && this.f3923c != 311;
+        int i = this.f3875c;
+        return (i < 110 || i > 199) && this.f3875c != 311;
     }
 }

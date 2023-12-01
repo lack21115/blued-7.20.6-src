@@ -9,12 +9,12 @@ import org.json.JSONObject;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public SharedPreferences f21210a;
+    public SharedPreferences f7604a;
 
-    public e(Application applicationContext, String spName) {
-        Intrinsics.d(applicationContext, "applicationContext");
-        Intrinsics.d(spName, "spName");
-        this.f21210a = e2.a(applicationContext, spName, 0);
+    public e(Application application, String str) {
+        Intrinsics.d(application, "applicationContext");
+        Intrinsics.d(str, "spName");
+        this.f7604a = e2.a(application, str, 0);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x005b A[Catch: all -> 0x008d, TRY_ENTER, TryCatch #0 {all -> 0x008d, blocks: (B:3:0x000c, B:5:0x0017, B:7:0x0027, B:12:0x004b, B:17:0x005b, B:20:0x0066, B:22:0x006e, B:24:0x0079, B:26:0x0085), top: B:34:0x000c }] */
@@ -33,7 +33,7 @@ public final class e {
             java.lang.String r1 = "clazz"
             kotlin.jvm.internal.Intrinsics.d(r0, r1)
             r0 = r5
-            android.content.SharedPreferences r0 = r0.f21210a     // Catch: java.lang.Throwable -> L8d
+            android.content.SharedPreferences r0 = r0.f7604a     // Catch: java.lang.Throwable -> L8d
             r11 = r0
             r0 = r11
             if (r0 == 0) goto L8b
@@ -69,14 +69,14 @@ public final class e {
         L57:
             r0 = r8
             if (r0 == 0) goto L65
-            com.bytedance.bdtracker.l$a r0 = com.bytedance.bdtracker.l.f21245a     // Catch: java.lang.Throwable -> L8d
+            com.bytedance.bdtracker.l$a r0 = com.bytedance.bdtracker.l.f7639a     // Catch: java.lang.Throwable -> L8d
             r1 = r11
             r2 = r7
             com.bytedance.bdtracker.l r0 = r0.a(r1, r2)     // Catch: java.lang.Throwable -> L8d
             return r0
         L65:
             r0 = r5
-            android.content.SharedPreferences r0 = r0.f21210a     // Catch: java.lang.Throwable -> L8d
+            android.content.SharedPreferences r0 = r0.f7604a     // Catch: java.lang.Throwable -> L8d
             r7 = r0
             r0 = r7
             if (r0 == 0) goto L8b
@@ -125,7 +125,7 @@ public final class e {
             java.lang.String r1 = "key"
             kotlin.jvm.internal.Intrinsics.d(r0, r1)
             r0 = r5
-            android.content.SharedPreferences r0 = r0.f21210a     // Catch: java.lang.Throwable -> L87
+            android.content.SharedPreferences r0 = r0.f7604a     // Catch: java.lang.Throwable -> L87
             r10 = r0
             r0 = r10
             if (r0 == 0) goto L85
@@ -167,7 +167,7 @@ public final class e {
             return r0
         L59:
             r0 = r5
-            android.content.SharedPreferences r0 = r0.f21210a     // Catch: java.lang.Throwable -> L87
+            android.content.SharedPreferences r0 = r0.f7604a     // Catch: java.lang.Throwable -> L87
             r10 = r0
             r0 = r10
             if (r0 == 0) goto L85
@@ -203,29 +203,29 @@ public final class e {
         throw new UnsupportedOperationException("Method not decompiled: com.bytedance.bdtracker.e.a(java.lang.String):java.lang.String");
     }
 
-    public final void a(String key, l data, long j) {
+    public final void a(String str, l lVar, long j) {
         SharedPreferences.Editor edit;
         SharedPreferences.Editor putString;
-        Intrinsics.d(key, "key");
-        Intrinsics.d(data, "data");
-        JSONObject a2 = data.a();
+        Intrinsics.d(str, "key");
+        Intrinsics.d(lVar, "data");
+        JSONObject a2 = lVar.a();
         a2.put("expire_ts", j == -1 ? -1L : System.currentTimeMillis() + j);
-        SharedPreferences sharedPreferences = this.f21210a;
-        if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null || (putString = edit.putString(key, a2.toString())) == null) {
+        SharedPreferences sharedPreferences = this.f7604a;
+        if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null || (putString = edit.putString(str, a2.toString())) == null) {
             return;
         }
         putString.apply();
     }
 
-    public final void a(String key, String str, long j) {
+    public final void a(String str, String str2, long j) {
         SharedPreferences.Editor edit;
         SharedPreferences.Editor putString;
-        Intrinsics.d(key, "key");
+        Intrinsics.d(str, "key");
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("data", str);
+        jSONObject.put("data", str2);
         jSONObject.put("expire_ts", j == -1 ? -1L : System.currentTimeMillis() + j);
-        SharedPreferences sharedPreferences = this.f21210a;
-        if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null || (putString = edit.putString(key, jSONObject.toString())) == null) {
+        SharedPreferences sharedPreferences = this.f7604a;
+        if (sharedPreferences == null || (edit = sharedPreferences.edit()) == null || (putString = edit.putString(str, jSONObject.toString())) == null) {
             return;
         }
         putString.apply();

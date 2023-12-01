@@ -7,7 +7,7 @@ public class n1 {
     public static volatile n1 b;
 
     /* renamed from: a  reason: collision with root package name */
-    public b f3890a = new b();
+    public b f3842a = new b();
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/n1$b.class */
     public static class b extends Observable {
@@ -39,10 +39,10 @@ public class n1 {
     }
 
     public void a(p1 p1Var) {
-        this.f3890a.addObserver(p1Var);
+        this.f3842a.addObserver(p1Var);
     }
 
     public void b(p1 p1Var) {
-        this.f3890a.deleteObserver(p1Var);
+        this.f3842a.deleteObserver(p1Var);
     }
 }

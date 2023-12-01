@@ -6,12 +6,12 @@ import java.util.concurrent.TimeUnit;
 public final class z5VDt {
 
     /* renamed from: a  reason: collision with root package name */
-    public static long f40015a;
+    public static long f26324a;
     public static final /* synthetic */ int b = 0;
 
     static {
         TimeUnit timeUnit = TimeUnit.HOURS;
-        f40015a = timeUnit.toMillis(1L);
+        f26324a = timeUnit.toMillis(1L);
         timeUnit.toMillis(4L);
     }
 }

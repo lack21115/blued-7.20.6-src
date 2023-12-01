@@ -63,11 +63,11 @@ public class JNICallback implements JNIInterfaceCallback {
     public static final class a extends AsyncTask<Void, Void, Void> {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f37279a;
+        private String f23588a;
         private byte[] b;
 
         public a(String str, byte[] bArr) {
-            this.f37279a = str;
+            this.f23588a = str;
             this.b = bArr;
         }
 
@@ -76,8 +76,6 @@ public class JNICallback implements JNIInterfaceCallback {
         /* JADX WARN: Removed duplicated region for block: B:53:0x00df A[EXC_TOP_SPLITTER, SYNTHETIC] */
         /* JADX WARN: Removed duplicated region for block: B:63:? A[RETURN, SYNTHETIC] */
         /* JADX WARN: Type inference failed for: r0v12, types: [java.io.FileOutputStream] */
-        /* JADX WARN: Type inference failed for: r10v5 */
-        /* JADX WARN: Type inference failed for: r10v7 */
         @Override // android.os.AsyncTask
         /* renamed from: a */
         /*
@@ -243,12 +241,12 @@ public class JNICallback implements JNIInterfaceCallback {
             case 3:
                 if (!f7.b(jNIEvent.name)) {
                     hb hbVar = new hb();
-                    hbVar.f37522a = jNIEvent.id;
+                    hbVar.f23831a = jNIEvent.id;
                     Object obj = jNIEvent.extra;
                     if (obj instanceof MapTileID) {
                         MapTileID mapTileID = (MapTileID) obj;
                         hbVar.b = mapTileID.getDataSource().getValue();
-                        hbVar.f37523c = mapTileID.getPriority().getValue();
+                        hbVar.f23832c = mapTileID.getPriority().getValue();
                     }
                     hbVar.d = jNIEvent.extra;
                     download(jNIEvent.name, hbVar);
@@ -303,12 +301,12 @@ public class JNICallback implements JNIInterfaceCallback {
                 ra.a("CB_TYPE_CANCEL_DOWNLOAD", jNIEvent);
                 if (!f7.b(jNIEvent.name)) {
                     hb hbVar2 = new hb();
-                    hbVar2.f37522a = jNIEvent.id;
+                    hbVar2.f23831a = jNIEvent.id;
                     Object obj2 = jNIEvent.extra;
                     if (obj2 instanceof MapTileID) {
                         MapTileID mapTileID2 = (MapTileID) obj2;
                         hbVar2.b = mapTileID2.getDataSource().getValue();
-                        hbVar2.f37523c = mapTileID2.getPriority().getValue();
+                        hbVar2.f23832c = mapTileID2.getPriority().getValue();
                     }
                     hbVar2.d = jNIEvent.extra;
                     cancelDownload(jNIEvent.name, hbVar2);

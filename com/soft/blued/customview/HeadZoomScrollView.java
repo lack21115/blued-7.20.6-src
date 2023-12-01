@@ -14,11 +14,11 @@ import androidx.core.widget.NestedScrollView;
 public class HeadZoomScrollView extends NestedScrollView {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f28428a;
+    private float f14738a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28429c;
+    private int f14739c;
     private boolean d;
     private View e;
     private float f;
@@ -38,9 +38,9 @@ public class HeadZoomScrollView extends NestedScrollView {
 
     public HeadZoomScrollView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28428a = 0.0f;
+        this.f14738a = 0.0f;
         this.b = 0;
-        this.f28429c = 0;
+        this.f14739c = 0;
         this.d = false;
         this.f = 0.4f;
         this.g = 1.5f;
@@ -51,9 +51,9 @@ public class HeadZoomScrollView extends NestedScrollView {
 
     public HeadZoomScrollView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28428a = 0.0f;
+        this.f14738a = 0.0f;
         this.b = 0;
-        this.f28429c = 0;
+        this.f14739c = 0;
         this.d = false;
         this.f = 0.4f;
         this.g = 1.5f;
@@ -93,7 +93,7 @@ public class HeadZoomScrollView extends NestedScrollView {
         ViewGroup.LayoutParams layoutParams = this.e.getLayoutParams();
         int i2 = this.b;
         layoutParams.width = (int) Math.max(i2 + f, i2);
-        float f2 = this.f28429c;
+        float f2 = this.f14739c;
         int i3 = this.b;
         layoutParams.height = (int) (f2 * ((i3 + f) / i3));
         int i4 = (-(layoutParams.width - this.b)) / 2;
@@ -101,13 +101,12 @@ public class HeadZoomScrollView extends NestedScrollView {
         this.e.setLayoutParams(layoutParams);
         OnScrollListener onScrollListener = this.l;
         if (onScrollListener != null) {
-            onScrollListener.a(layoutParams.width, layoutParams.height, this.b, this.f28429c, layoutParams);
+            onScrollListener.a(layoutParams.width, layoutParams.height, this.b, this.f14739c, layoutParams);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         setOverScrollMode(2);
         if (getChildAt(0) != null && (getChildAt(0) instanceof ViewGroup) && this.e == null) {
@@ -137,11 +136,11 @@ public class HeadZoomScrollView extends NestedScrollView {
 
     @Override // androidx.core.widget.NestedScrollView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.b <= 0 || this.f28429c <= 0) {
+        if (this.b <= 0 || this.f14739c <= 0) {
             this.b = this.e.getMeasuredWidth();
-            this.f28429c = this.e.getMeasuredHeight();
+            this.f14739c = this.e.getMeasuredHeight();
         }
-        if (this.e == null || this.b <= 0 || this.f28429c <= 0) {
+        if (this.e == null || this.b <= 0 || this.f14739c <= 0) {
             return super.onTouchEvent(motionEvent);
         }
         try {
@@ -152,10 +151,10 @@ public class HeadZoomScrollView extends NestedScrollView {
                 if (action == 2 && this.j) {
                     if (!this.d) {
                         if (getScrollY() == 0) {
-                            this.f28428a = motionEvent.getY();
+                            this.f14738a = motionEvent.getY();
                         }
                     }
-                    int y = (int) ((motionEvent.getY() - this.f28428a) * this.f);
+                    int y = (int) ((motionEvent.getY() - this.f14738a) * this.f);
                     if (y >= 0) {
                         this.d = true;
                         setZoom(y);

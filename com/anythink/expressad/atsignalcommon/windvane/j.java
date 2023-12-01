@@ -10,19 +10,19 @@ import org.json.JSONObject;
 public final class j implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static j f7109a = new j();
+    private static j f4271a = new j();
 
     private j() {
     }
 
     public static j a() {
-        return f7109a;
+        return f4271a;
     }
 
     public static void a(WebView webView) {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put(com.alipay.sdk.packet.e.j, "1.0.0");
+            jSONObject.put("api_version", "1.0.0");
             a(webView, com.anythink.expressad.atsignalcommon.base.e.j, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (Exception e) {
             a(webView, com.anythink.expressad.atsignalcommon.base.e.j, "");
@@ -50,7 +50,7 @@ public final class j implements b {
     public static void b(WebView webView) {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put(com.alipay.sdk.packet.e.j, "1.0.0");
+            jSONObject.put("api_version", "1.0.0");
             a(webView, "onJSBridgeConnected", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (Exception e) {
             a(webView, "onJSBridgeConnected", "");
@@ -64,11 +64,11 @@ public final class j implements b {
         if (obj instanceof a) {
             a aVar = (a) obj;
             String format = TextUtils.isEmpty(str) ? String.format("javascript:window.WindVane.onSuccess(%s,'');", aVar.g) : String.format("javascript:window.WindVane.onSuccess(%s,'%s');", aVar.g, n.c(str));
-            if (aVar.f7101a == null || aVar.f7101a.isDestroyed()) {
+            if (aVar.f4263a == null || aVar.f4263a.isDestroyed()) {
                 return;
             }
             try {
-                aVar.f7101a.loadUrl(format);
+                aVar.f4263a.loadUrl(format);
             } catch (Exception e) {
                 e.printStackTrace();
             } catch (Throwable th) {
@@ -82,11 +82,11 @@ public final class j implements b {
         if (obj instanceof a) {
             a aVar = (a) obj;
             String format = TextUtils.isEmpty(str2) ? String.format("javascript:window.WindVane.fireEvent('%s', '');", str) : String.format("javascript:window.WindVane.fireEvent('%s','%s');", str, n.c(str2));
-            if (aVar.f7101a == null || aVar.f7101a.isDestroyed()) {
+            if (aVar.f4263a == null || aVar.f4263a.isDestroyed()) {
                 return;
             }
             try {
-                aVar.f7101a.loadUrl(format);
+                aVar.f4263a.loadUrl(format);
             } catch (Exception e) {
                 e.printStackTrace();
             } catch (Throwable th) {
@@ -105,11 +105,11 @@ public final class j implements b {
                 str = n.c(str);
             }
             String format = String.format("javascript:window.WindVane.onFailure(%s,'%s');", aVar.g, str);
-            if (aVar.f7101a == null || aVar.f7101a.isDestroyed()) {
+            if (aVar.f4263a == null || aVar.f4263a.isDestroyed()) {
                 return;
             }
             try {
-                aVar.f7101a.loadUrl(format);
+                aVar.f4263a.loadUrl(format);
             } catch (Exception e) {
                 e.printStackTrace();
             } catch (Throwable th) {

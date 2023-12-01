@@ -23,7 +23,7 @@ public abstract class d extends com.qiniu.pili.droid.shortvideo.encode.a {
         synchronized (this) {
             com.qiniu.pili.droid.shortvideo.f.e.h.c(j(), "startEncode +");
             this.b = 0;
-            this.f27650c = 0;
+            this.f13962c = 0;
             MediaFormat g2 = g();
             try {
                 MediaCodec createEncoderByType = MediaCodec.createEncoderByType(h());
@@ -186,7 +186,7 @@ public abstract class d extends com.qiniu.pili.droid.shortvideo.encode.a {
                 String str = i() == a.VIDEO_ENCODER ? "video" : "audio";
                 com.qiniu.pili.droid.shortvideo.f.e eVar2 = com.qiniu.pili.droid.shortvideo.f.e.h;
                 String j2 = j();
-                eVar2.e(j2, str + " frame output time out, stop encode!  input frame count: " + this.b + " output frame count: " + this.f27650c + " drop frames: " + (this.b - this.f27650c));
+                eVar2.e(j2, str + " frame output time out, stop encode!  input frame count: " + this.b + " output frame count: " + this.f13962c + " drop frames: " + (this.b - this.f13962c));
                 this.i = true;
                 return;
             }
@@ -194,7 +194,7 @@ public abstract class d extends com.qiniu.pili.droid.shortvideo.encode.a {
             String j3 = j();
             StringBuilder sb = new StringBuilder();
             sb.append("output frame: ");
-            sb.append(this.f27650c);
+            sb.append(this.f13962c);
             sb.append(" index:");
             sb.append(dequeueOutputBuffer);
             sb.append(" key frame:");

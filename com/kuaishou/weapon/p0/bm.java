@@ -8,10 +8,10 @@ import com.kuaishou.weapon.p0.jni.Engine;
 public class bm {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23753a;
+    private Context f10145a;
 
     public bm(Context context) {
-        this.f23753a = context;
+        this.f10145a = context;
     }
 
     public static String b(String str) {
@@ -90,7 +90,7 @@ public class bm {
             }
             byte[] a3 = c.a(str.getBytes(), 2);
             if (Engine.loadSuccess) {
-                a2 = Engine.getInstance(this.f23753a).dr(Engine.getInstance(this.f23753a).dc(a3, str3.substring(0, 16).getBytes()), str3.getBytes());
+                a2 = Engine.getInstance(this.f10145a).dr(Engine.getInstance(this.f10145a).dc(a3, str3.substring(0, 16).getBytes()), str3.getBytes());
             } else {
                 a2 = i.a(b.b(str3.substring(0, 16), str3.substring(0, 16), a3), str3.substring(0, 16));
             }
@@ -136,7 +136,7 @@ public class bm {
             }
             byte[] a2 = d.a(str.getBytes());
             if (Engine.loadSuccess) {
-                bArr = Engine.getInstance(this.f23753a).ac(Engine.getInstance(this.f23753a).ar(a2, str3.getBytes()), str3.substring(0, 16).getBytes());
+                bArr = Engine.getInstance(this.f10145a).ac(Engine.getInstance(this.f10145a).ar(a2, str3.getBytes()), str3.substring(0, 16).getBytes());
             } else {
                 try {
                     bArr = b.a(str3.substring(0, 16), str3.substring(0, 16), i.b(a2, str3));

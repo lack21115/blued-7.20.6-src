@@ -44,11 +44,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FeedBubbleProfileView extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private FrameLayout f29794a;
+    private FrameLayout f16104a;
     private ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private FrameLayout f29795c;
+    private FrameLayout f16105c;
     private ImageView d;
     private TextView e;
     private ImageView f;
@@ -90,22 +90,22 @@ public final class FeedBubbleProfileView extends FrameLayout {
 
     private final void a() {
         FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(getContext()).inflate(R.layout.feed_bubble_profile_view_layout, (ViewGroup) null);
-        this.f29794a = frameLayout;
+        this.f16104a = frameLayout;
         if (frameLayout == null) {
             return;
         }
-        this.f29795c = (FrameLayout) frameLayout.findViewById(R.id.feed_bubble_state_content);
+        this.f16105c = (FrameLayout) frameLayout.findViewById(R.id.feed_bubble_state_content);
         this.b = (ImageView) frameLayout.findViewById(R.id.feed_bubble_host_shine_iv);
         this.d = (ImageView) frameLayout.findViewById(R.id.feed_bubble_state_iv);
         this.e = (TextView) frameLayout.findViewById(R.id.feed_bubble_state_tv);
         this.f = (ImageView) frameLayout.findViewById(R.id.feed_bubble_arrow_iv);
         this.g = (TextView) frameLayout.findViewById(R.id.feed_bubble_content_tv);
         this.h = (ImageView) frameLayout.findViewById(R.id.feed_bubble_add_iv);
-        this.i = (ShapeFrameLayout) frameLayout.findViewById(R.id.feed_bubble_guest_him_lo);
+        this.i = frameLayout.findViewById(R.id.feed_bubble_guest_him_lo);
         this.j = frameLayout.findViewById(R.id.feed_bubble_space);
         this.k = frameLayout.findViewById(R.id.feed_bubble_double_click_lo);
         b();
-        FrameLayout frameLayout2 = this.f29795c;
+        FrameLayout frameLayout2 = this.f16105c;
         if (frameLayout2 != null) {
             frameLayout2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.community.view.-$$Lambda$FeedBubbleProfileView$qt9IpFgm7kdk4PkS0PicZEFLk4c
                 @Override // android.view.View.OnClickListener
@@ -134,13 +134,12 @@ public final class FeedBubbleProfileView extends FrameLayout {
         }
         View view = this.k;
         if (view != null) {
-            view.setOnClickListener(new DoubleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.community.view.-$$Lambda$FeedBubbleProfileView$_kZXqBENKxkmGO5VZfca1UtDExI
+            view.setOnClickListener((View.OnClickListener) new DoubleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.community.view.-$$Lambda$FeedBubbleProfileView$_kZXqBENKxkmGO5VZfca1UtDExI
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
                     FeedBubbleProfileView.d(FeedBubbleProfileView.this, view2);
                 }
             }, new IClickAgain() { // from class: com.soft.blued.ui.community.view.-$$Lambda$FeedBubbleProfileView$MbKvLXQ435FJyLbWzM0Y5bHfzB8
-                @Override // com.blued.android.module.common.utils.click.IClickAgain
                 public final void onAgain() {
                     FeedBubbleProfileView.j(FeedBubbleProfileView.this);
                 }
@@ -150,28 +149,28 @@ public final class FeedBubbleProfileView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(TextView it, ValueAnimator animation) {
-        Intrinsics.e(it, "$it");
-        Intrinsics.e(animation, "animation");
-        Object animatedValue = animation.getAnimatedValue();
+    public static final void a(TextView textView, ValueAnimator valueAnimator) {
+        Intrinsics.e(textView, "$it");
+        Intrinsics.e(valueAnimator, "animation");
+        Object animatedValue = valueAnimator.getAnimatedValue();
         if (animatedValue == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
         }
         int intValue = ((Integer) animatedValue).intValue();
-        ViewGroup.LayoutParams layoutParams = it.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         marginLayoutParams.width = intValue;
-        it.setLayoutParams(marginLayoutParams);
+        textView.setLayoutParams(marginLayoutParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FeedBubbleProfileView this$0, View view) {
+    public static final void a(FeedBubbleProfileView feedBubbleProfileView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.g();
+        Intrinsics.e(feedBubbleProfileView, "this$0");
+        feedBubbleProfileView.g();
     }
 
     private final void a(String str) {
@@ -189,7 +188,7 @@ public final class FeedBubbleProfileView extends FrameLayout {
             ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.community.view.-$$Lambda$FeedBubbleProfileView$3ZNr9l9qleaDPwmVfuryj23mPGI
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    FeedBubbleProfileView.a(TextView.this, valueAnimator);
+                    FeedBubbleProfileView.a(textView, valueAnimator);
                 }
             });
             ofInt.addListener(new Animator.AnimatorListener() { // from class: com.soft.blued.ui.community.view.FeedBubbleProfileView$startContentShowAnim$1$1$2
@@ -317,28 +316,28 @@ public final class FeedBubbleProfileView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(TextView it, ValueAnimator animation) {
-        Intrinsics.e(it, "$it");
-        Intrinsics.e(animation, "animation");
-        Object animatedValue = animation.getAnimatedValue();
+    public static final void b(TextView textView, ValueAnimator valueAnimator) {
+        Intrinsics.e(textView, "$it");
+        Intrinsics.e(valueAnimator, "animation");
+        Object animatedValue = valueAnimator.getAnimatedValue();
         if (animatedValue == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
         }
         int intValue = ((Integer) animatedValue).intValue();
-        ViewGroup.LayoutParams layoutParams = it.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         marginLayoutParams.width = intValue;
-        it.setLayoutParams(marginLayoutParams);
+        textView.setLayoutParams(marginLayoutParams);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FeedBubbleProfileView this$0, View view) {
+    public static final void b(FeedBubbleProfileView feedBubbleProfileView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.g();
+        Intrinsics.e(feedBubbleProfileView, "this$0");
+        feedBubbleProfileView.g();
     }
 
     private final void c() {
@@ -371,7 +370,7 @@ public final class FeedBubbleProfileView extends FrameLayout {
             }
         }
         setVisibility(0);
-        FrameLayout frameLayout = this.f29795c;
+        FrameLayout frameLayout = this.f16105c;
         if (frameLayout != null) {
             frameLayout.setVisibility(0);
         }
@@ -445,10 +444,10 @@ public final class FeedBubbleProfileView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(FeedBubbleProfileView this$0, View view) {
+    public static final void c(FeedBubbleProfileView feedBubbleProfileView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.h();
+        Intrinsics.e(feedBubbleProfileView, "this$0");
+        feedBubbleProfileView.h();
     }
 
     private final void d() {
@@ -461,10 +460,10 @@ public final class FeedBubbleProfileView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(FeedBubbleProfileView this$0, View view) {
+    public static final void d(FeedBubbleProfileView feedBubbleProfileView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.i();
+        Intrinsics.e(feedBubbleProfileView, "this$0");
+        feedBubbleProfileView.i();
     }
 
     private final void e() {
@@ -495,7 +494,7 @@ public final class FeedBubbleProfileView extends FrameLayout {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.community.view.-$$Lambda$FeedBubbleProfileView$x5-SaJ0Ut1ulvgoF8APGT73-GTQ
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FeedBubbleProfileView.b(TextView.this, valueAnimator);
+                FeedBubbleProfileView.b(textView, valueAnimator);
             }
         });
         ofInt.addListener(new Animator.AnimatorListener() { // from class: com.soft.blued.ui.community.view.FeedBubbleProfileView$startContentHideAnim$1$2
@@ -548,7 +547,7 @@ public final class FeedBubbleProfileView extends FrameLayout {
             a(feedPostSignStateItem == null ? null : feedPostSignStateItem.getLeading_words());
             EventTrackPersonalProfile.b(PersonalProfileProtos.Event.PERSONAL_BUBBLE_ICON_CLICK, this.m, "");
         } else if (this.n) {
-            FeedPostSignStateFragment.Companion companion = FeedPostSignStateFragment.f20033a;
+            FeedPostSignStateFragment.Companion companion = FeedPostSignStateFragment.a;
             Context context = getContext();
             Intrinsics.c(context, "context");
             companion.a(context, 3);
@@ -558,7 +557,7 @@ public final class FeedBubbleProfileView extends FrameLayout {
 
     private final void h() {
         if (this.n) {
-            FeedPostSignStateFragment.Companion companion = FeedPostSignStateFragment.f20033a;
+            FeedPostSignStateFragment.Companion companion = FeedPostSignStateFragment.a;
             Context context = getContext();
             Intrinsics.c(context, "context");
             companion.a(context, 3);
@@ -603,9 +602,9 @@ public final class FeedBubbleProfileView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void j(FeedBubbleProfileView this$0) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.k();
+    public static final void j(FeedBubbleProfileView feedBubbleProfileView) {
+        Intrinsics.e(feedBubbleProfileView, "this$0");
+        feedBubbleProfileView.k();
     }
 
     private final void k() {
@@ -624,13 +623,16 @@ public final class FeedBubbleProfileView extends FrameLayout {
             UserInfoFragmentNew userInfoFragmentNew = this.p;
             final ActivityFragmentActive fragmentActive = userInfoFragmentNew == null ? null : userInfoFragmentNew.getFragmentActive();
             BluedUIHttpResponse<BluedEntityA<String>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<String>>(fragmentActive) { // from class: com.soft.blued.ui.community.view.FeedBubbleProfileView$onDoubleClickPoke$1$1
+                /* JADX INFO: Access modifiers changed from: package-private */
+                {
+                    super((IRequestHost) fragmentActive);
+                }
+
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<String> bluedEntityA) {
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish(boolean z2) {
                     super.onUIFinish(z2);
                     FeedBubbleProfileView.this.setVisibility(8);
@@ -643,14 +645,14 @@ public final class FeedBubbleProfileView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void k(FeedBubbleProfileView this$0) {
-        Intrinsics.e(this$0, "this$0");
-        ImageView imageView = this$0.b;
+    public static final void k(FeedBubbleProfileView feedBubbleProfileView) {
+        Intrinsics.e(feedBubbleProfileView, "this$0");
+        ImageView imageView = feedBubbleProfileView.b;
         if (imageView == null) {
             return;
         }
-        this$0.setVisibility(0);
-        FrameLayout frameLayout = this$0.f29795c;
+        feedBubbleProfileView.setVisibility(0);
+        FrameLayout frameLayout = feedBubbleProfileView.f16105c;
         if (frameLayout != null) {
             frameLayout.setVisibility(8);
         }
@@ -665,22 +667,22 @@ public final class FeedBubbleProfileView extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void l(FeedBubbleProfileView this$0) {
+    public static final void l(FeedBubbleProfileView feedBubbleProfileView) {
         ActivityFragmentActive fragmentActive;
-        Intrinsics.e(this$0, "this$0");
-        UserInfoFragmentNew userInfoFragmentNew = this$0.p;
+        Intrinsics.e(feedBubbleProfileView, "this$0");
+        UserInfoFragmentNew userInfoFragmentNew = feedBubbleProfileView.p;
         boolean z = true;
         if (userInfoFragmentNew == null || (fragmentActive = userInfoFragmentNew.getFragmentActive()) == null || !fragmentActive.isActive()) {
             z = false;
         }
-        if (z && this$0.getVisibility() == 0) {
-            this$0.f();
+        if (z && feedBubbleProfileView.getVisibility() == 0) {
+            feedBubbleProfileView.f();
         }
     }
 
     public final void a(FeedPostSignStateItem feedPostSignStateItem, String str) {
         this.m = str;
-        this.n = CommunityManager.f19086a.a().c(str);
+        this.n = CommunityManager.a.a().c(str);
         this.l = feedPostSignStateItem;
         c();
     }

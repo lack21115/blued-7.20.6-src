@@ -1,6 +1,5 @@
 package com.cdo.oaps.ad;
 
-import android.widget.ExpandableListView;
 import java.io.ByteArrayOutputStream;
 import java.util.Random;
 
@@ -8,10 +7,10 @@ import java.util.Random;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Random f21519a = new Random();
+    private static Random f7913a = new Random();
 
     /* renamed from: c  reason: collision with root package name */
-    private int f21520c;
+    private int f7914c;
     private int d;
     private int e;
     private byte[] g;
@@ -30,7 +29,7 @@ public class c {
             j = (j << 8) | (bArr[i] & 255);
             i++;
         }
-        return (ExpandableListView.PACKED_POSITION_VALUE_NULL & j) | (j >>> 32);
+        return (4294967295L & j) | (j >>> 32);
     }
 
     private void a() {
@@ -51,12 +50,12 @@ public class c {
             }
             this.k++;
         }
-        System.arraycopy((Object) b(this.j), 0, (Object) this.h, this.d, 8);
+        System.arraycopy(b(this.j), 0, this.h, this.d, 8);
         this.k = 0;
         while (true) {
             int i3 = this.k;
             if (i3 >= 8) {
-                System.arraycopy((Object) this.j, 0, (Object) this.l, 0, 8);
+                System.arraycopy(this.j, 0, this.l, 0, 8);
                 int i4 = this.d;
                 this.e = i4;
                 this.d = i4 + 8;
@@ -89,9 +88,9 @@ public class c {
         long a7 = a(this.g, 12, 4);
         long j = 3816266640L;
         for (int i2 = 16; i2 > 0; i2--) {
-            a3 = (a3 - ((((a2 << 4) + a6) ^ (a2 + j)) ^ ((a2 >>> 5) + a7))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-            a2 = (a2 - ((((a3 << 4) + a4) ^ (a3 + j)) ^ ((a3 >>> 5) + a5))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-            j = (j - 2654435769L) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+            a3 = (a3 - ((((a2 << 4) + a6) ^ (a2 + j)) ^ ((a2 >>> 5) + a7))) & 4294967295L;
+            a2 = (a2 - ((((a3 << 4) + a4) ^ (a3 + j)) ^ ((a3 >>> 5) + a5))) & 4294967295L;
+            j = (j - 2654435769L) & 4294967295L;
         }
         this.b.reset();
         a((int) a2);
@@ -100,7 +99,7 @@ public class c {
     }
 
     private int b() {
-        return f21519a.nextInt();
+        return f7913a.nextInt();
     }
 
     private boolean b(byte[] bArr, int i, int i2) {
@@ -110,11 +109,11 @@ public class c {
             int i3 = this.k;
             if (i3 >= 8) {
                 this.l = a(this.l);
-                this.f21520c += 8;
+                this.f7914c += 8;
                 this.d += 8;
                 this.k = 0;
                 return true;
-            } else if (this.f21520c + i3 >= i2) {
+            } else if (this.f7914c + i3 >= i2) {
                 return true;
             } else {
                 this.l[i3] = (byte) (bArr2[i3] ^ bArr[(this.d + i) + i3]);
@@ -132,9 +131,9 @@ public class c {
         long a7 = a(this.g, 12, 4);
         long j = 0;
         for (int i = 16; i > 0; i--) {
-            j = (j + 2654435769L) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-            a2 = (a2 + ((((a3 << 4) + a4) ^ (a3 + j)) ^ ((a3 >>> 5) + a5))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-            a3 = (a3 + ((((a2 << 4) + a6) ^ (a2 + j)) ^ ((a2 >>> 5) + a7))) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+            j = (j + 2654435769L) & 4294967295L;
+            a2 = (a2 + ((((a3 << 4) + a4) ^ (a3 + j)) ^ ((a3 >>> 5) + a5))) & 4294967295L;
+            a3 = (a3 + ((((a2 << 4) + a6) ^ (a2 + j)) ^ ((a2 >>> 5) + a7))) & 4294967295L;
         }
         this.b.reset();
         a((int) a2);
@@ -176,7 +175,7 @@ public class c {
             this.h = new byte[i5];
             this.e = 0;
             this.d = 8;
-            this.f21520c = 8;
+            this.f7914c = 8;
             this.k++;
             this.i = 1;
             byte[] bArr5 = bArr3;

@@ -14,14 +14,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemBattlePassAward.class */
 public final class FitemBattlePassAward extends FreedomItem {
     private final LiveBattleGiftModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final boolean f12524c;
+    private final boolean c;
 
     public FitemBattlePassAward(LiveBattleGiftModel model, boolean z) {
         Intrinsics.e(model, "model");
         this.b = model;
-        this.f12524c = z;
+        this.c = z;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -49,10 +47,10 @@ public final class FitemBattlePassAward extends FreedomItem {
     public void a(Context context, final BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(context, "context");
         Intrinsics.e(vh, "vh");
-        BaseViewHolder a2 = vh.a(R.id.iv_icon, this.b.getIcon()).a(R.id.tv_count, (CharSequence) this.b.getLabel()).a(R.id.tv_count, true);
+        BaseViewHolder a = vh.a(R.id.iv_icon, this.b.getIcon()).a(R.id.tv_count, (CharSequence) this.b.getLabel()).a(R.id.tv_count, true);
         int i2 = R.id.tv_count;
         String label = this.b.getLabel();
-        a2.b(i2, true ^ (label == null || label.length() == 0)).a(R.id.fl_root, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassAward$sz7n-UZ-5fUZnp6feXbYZpuP-NQ
+        a.b(i2, true ^ (label == null || label.length() == 0)).a(R.id.fl_root, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassAward$sz7n-UZ-5fUZnp6feXbYZpuP-NQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FitemBattlePassAward.a(FitemBattlePassAward.this, vh, view);

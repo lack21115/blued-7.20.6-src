@@ -8,18 +8,18 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f23952a;
+    private final int f10341a;
     private final String b;
 
     public c(int i, String str) {
-        this.f23952a = i;
+        this.f10341a = i;
         this.b = str;
     }
 
     public String toString() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("code", this.f23952a);
+            jSONObject.put("code", this.f10341a);
             jSONObject.put(TtmlUtils.TAG_BODY, this.b);
         } catch (JSONException e) {
             e.printStackTrace();

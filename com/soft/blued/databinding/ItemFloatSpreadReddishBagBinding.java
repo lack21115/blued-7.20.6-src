@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemFloatSpreadReddishBagBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29179a;
+    private final RelativeLayout f15489a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29179a;
+        return this.f15489a;
     }
 }

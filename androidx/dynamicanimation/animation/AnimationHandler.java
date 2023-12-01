@@ -15,10 +15,10 @@ public class AnimationHandler {
     private AnimationFrameCallbackProvider e;
 
     /* renamed from: c  reason: collision with root package name */
-    private final SimpleArrayMap<AnimationFrameCallback, Long> f2794c = new SimpleArrayMap<>();
+    private final SimpleArrayMap<AnimationFrameCallback, Long> f2746c = new SimpleArrayMap<>();
 
     /* renamed from: a  reason: collision with root package name */
-    final ArrayList<AnimationFrameCallback> f2793a = new ArrayList<>();
+    final ArrayList<AnimationFrameCallback> f2745a = new ArrayList<>();
     private final AnimationCallbackDispatcher d = new AnimationCallbackDispatcher();
     long b = 0;
     private boolean f = false;
@@ -33,7 +33,7 @@ public class AnimationHandler {
             AnimationHandler.this.b = SystemClock.uptimeMillis();
             AnimationHandler animationHandler = AnimationHandler.this;
             animationHandler.a(animationHandler.b);
-            if (AnimationHandler.this.f2793a.size() > 0) {
+            if (AnimationHandler.this.f2745a.size() > 0) {
                 AnimationHandler.this.a().a();
             }
         }
@@ -50,10 +50,10 @@ public class AnimationHandler {
     public static abstract class AnimationFrameCallbackProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        final AnimationCallbackDispatcher f2796a;
+        final AnimationCallbackDispatcher f2748a;
 
         AnimationFrameCallbackProvider(AnimationCallbackDispatcher animationCallbackDispatcher) {
-            this.f2796a = animationCallbackDispatcher;
+            this.f2748a = animationCallbackDispatcher;
         }
 
         abstract void a();
@@ -65,17 +65,17 @@ public class AnimationHandler {
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Runnable f2797c;
+        private final Runnable f2749c;
         private final Handler d;
 
         FrameCallbackProvider14(AnimationCallbackDispatcher animationCallbackDispatcher) {
             super(animationCallbackDispatcher);
             this.b = -1L;
-            this.f2797c = new Runnable() { // from class: androidx.dynamicanimation.animation.AnimationHandler.FrameCallbackProvider14.1
+            this.f2749c = new Runnable() { // from class: androidx.dynamicanimation.animation.AnimationHandler.FrameCallbackProvider14.1
                 @Override // java.lang.Runnable
                 public void run() {
                     FrameCallbackProvider14.this.b = SystemClock.uptimeMillis();
-                    FrameCallbackProvider14.this.f2796a.a();
+                    FrameCallbackProvider14.this.f2748a.a();
                 }
             };
             this.d = new Handler(Looper.myLooper());
@@ -83,7 +83,7 @@ public class AnimationHandler {
 
         @Override // androidx.dynamicanimation.animation.AnimationHandler.AnimationFrameCallbackProvider
         void a() {
-            this.d.postDelayed(this.f2797c, Math.max(10 - (SystemClock.uptimeMillis() - this.b), 0L));
+            this.d.postDelayed(this.f2749c, Math.max(10 - (SystemClock.uptimeMillis() - this.b), 0L));
         }
     }
 
@@ -93,22 +93,22 @@ public class AnimationHandler {
         private final Choreographer b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Choreographer.FrameCallback f2799c;
+        private final Choreographer.FrameCallback f2751c;
 
         FrameCallbackProvider16(AnimationCallbackDispatcher animationCallbackDispatcher) {
             super(animationCallbackDispatcher);
             this.b = Choreographer.getInstance();
-            this.f2799c = new Choreographer.FrameCallback() { // from class: androidx.dynamicanimation.animation.AnimationHandler.FrameCallbackProvider16.1
+            this.f2751c = new Choreographer.FrameCallback() { // from class: androidx.dynamicanimation.animation.AnimationHandler.FrameCallbackProvider16.1
                 @Override // android.view.Choreographer.FrameCallback
                 public void doFrame(long j) {
-                    FrameCallbackProvider16.this.f2796a.a();
+                    FrameCallbackProvider16.this.f2748a.a();
                 }
             };
         }
 
         @Override // androidx.dynamicanimation.animation.AnimationHandler.AnimationFrameCallbackProvider
         void a() {
-            this.b.postFrameCallback(this.f2799c);
+            this.b.postFrameCallback(this.f2751c);
         }
     }
 
@@ -116,12 +116,12 @@ public class AnimationHandler {
     }
 
     private boolean a(AnimationFrameCallback animationFrameCallback, long j) {
-        Long l = this.f2794c.get(animationFrameCallback);
+        Long l = this.f2746c.get(animationFrameCallback);
         if (l == null) {
             return true;
         }
         if (l.longValue() < j) {
-            this.f2794c.remove(animationFrameCallback);
+            this.f2746c.remove(animationFrameCallback);
             return true;
         }
         return false;
@@ -131,15 +131,15 @@ public class AnimationHandler {
         if (!this.f) {
             return;
         }
-        int size = this.f2793a.size();
+        int size = this.f2745a.size();
         while (true) {
             int i = size - 1;
             if (i < 0) {
                 this.f = false;
                 return;
             }
-            if (this.f2793a.get(i) == null) {
-                this.f2793a.remove(i);
+            if (this.f2745a.get(i) == null) {
+                this.f2745a.remove(i);
             }
             size = i;
         }
@@ -175,11 +175,11 @@ public class AnimationHandler {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f2793a.size()) {
+            if (i2 >= this.f2745a.size()) {
                 b();
                 return;
             }
-            AnimationFrameCallback animationFrameCallback = this.f2793a.get(i2);
+            AnimationFrameCallback animationFrameCallback = this.f2745a.get(i2);
             if (animationFrameCallback != null && a(animationFrameCallback, uptimeMillis)) {
                 animationFrameCallback.doAnimationFrame(j);
             }
@@ -188,22 +188,22 @@ public class AnimationHandler {
     }
 
     public void addAnimationFrameCallback(AnimationFrameCallback animationFrameCallback, long j) {
-        if (this.f2793a.size() == 0) {
+        if (this.f2745a.size() == 0) {
             a().a();
         }
-        if (!this.f2793a.contains(animationFrameCallback)) {
-            this.f2793a.add(animationFrameCallback);
+        if (!this.f2745a.contains(animationFrameCallback)) {
+            this.f2745a.add(animationFrameCallback);
         }
         if (j > 0) {
-            this.f2794c.put(animationFrameCallback, Long.valueOf(SystemClock.uptimeMillis() + j));
+            this.f2746c.put(animationFrameCallback, Long.valueOf(SystemClock.uptimeMillis() + j));
         }
     }
 
     public void removeCallback(AnimationFrameCallback animationFrameCallback) {
-        this.f2794c.remove(animationFrameCallback);
-        int indexOf = this.f2793a.indexOf(animationFrameCallback);
+        this.f2746c.remove(animationFrameCallback);
+        int indexOf = this.f2745a.indexOf(animationFrameCallback);
         if (indexOf >= 0) {
-            this.f2793a.set(indexOf, null);
+            this.f2745a.set(indexOf, null);
             this.f = true;
         }
     }

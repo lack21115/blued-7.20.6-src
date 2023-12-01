@@ -3,10 +3,9 @@ package androidx.lifecycle;
 import androidx.lifecycle.ClassesInfoCache;
 import androidx.lifecycle.Lifecycle;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Deprecated
 /* loaded from: source-8756600-dex2jar.jar:androidx/lifecycle/ReflectiveGenericLifecycleObserver.class */
-public class ReflectiveGenericLifecycleObserver implements LifecycleEventObserver {
+class ReflectiveGenericLifecycleObserver implements LifecycleEventObserver {
     private final ClassesInfoCache.CallbackInfo mInfo;
     private final Object mWrapped;
 

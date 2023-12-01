@@ -31,7 +31,7 @@ public final class PopPushSwitch extends BottomPopupView {
     private static final int t = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f32505c;
+    private boolean f18814c;
     private boolean d;
     private boolean e;
     private boolean f;
@@ -63,105 +63,105 @@ public final class PopPushSwitch extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopPushSwitch this$0, View view) {
+    public static final void a(PopPushSwitch popPushSwitch, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.f32505c = !this$0.f32505c;
-        this$0.f = false;
-        this$0.d();
+        Intrinsics.e(popPushSwitch, "this$0");
+        popPushSwitch.f18814c = !popPushSwitch.f18814c;
+        popPushSwitch.f = false;
+        popPushSwitch.d();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(PopPushSwitch this$0, View view) {
+    public static final void b(PopPushSwitch popPushSwitch, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.d = !this$0.d;
-        this$0.f = false;
-        this$0.d();
+        Intrinsics.e(popPushSwitch, "this$0");
+        popPushSwitch.d = !popPushSwitch.d;
+        popPushSwitch.f = false;
+        popPushSwitch.d();
     }
 
     private final void c() {
-        Map<String, String> ajaxParams = BluedHttpTools.a();
+        Map<String, String> a2 = BluedHttpTools.a();
         if (this.f) {
             if (!BluedPreferences.aj()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_other_message_push", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_other_message_push", "1");
                 BluedPreferences.p(true);
             }
             if (!BluedPreferences.ak()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_private_msg_push", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_private_msg_push", "1");
                 BluedPreferences.q(true);
             }
             if (!BluedPreferences.am()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_groups_notify", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_groups_notify", "1");
                 BluedPreferences.s(true);
             }
             if (!BluedPreferences.ao()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_like_push", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_like_push", "1");
                 BluedPreferences.u(true);
             }
             if (!BluedPreferences.an()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_comment_push", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_comment_push", "1");
                 BluedPreferences.t(true);
             }
             if (!BluedPreferences.ap()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_at_push", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_at_push", "1");
                 BluedPreferences.v(true);
             }
             if (!BluedPreferences.ai()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_live_push", "0");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_live_push", "0");
                 BluedPreferences.o(true);
             }
             if (!BluedPreferences.al()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_followed_push", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_followed_push", "1");
                 BluedPreferences.r(true);
             }
         } else {
-            if (this.f32505c && !BluedPreferences.ak()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_private_msg_push", "1");
+            if (this.f18814c && !BluedPreferences.ak()) {
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_private_msg_push", "1");
                 BluedPreferences.q(true);
             }
             if (this.d && !BluedPreferences.am()) {
-                Intrinsics.c(ajaxParams, "ajaxParams");
-                ajaxParams.put("is_groups_notify", "1");
+                Intrinsics.c(a2, "ajaxParams");
+                a2.put("is_groups_notify", "1");
                 BluedPreferences.s(true);
             }
             if (this.e) {
                 if (!BluedPreferences.ao()) {
-                    Intrinsics.c(ajaxParams, "ajaxParams");
-                    ajaxParams.put("is_like_push", "1");
+                    Intrinsics.c(a2, "ajaxParams");
+                    a2.put("is_like_push", "1");
                     BluedPreferences.u(true);
                 }
                 if (!BluedPreferences.an()) {
-                    Intrinsics.c(ajaxParams, "ajaxParams");
-                    ajaxParams.put("is_comment_push", "1");
+                    Intrinsics.c(a2, "ajaxParams");
+                    a2.put("is_comment_push", "1");
                     BluedPreferences.t(true);
                 }
                 if (!BluedPreferences.ap()) {
-                    Intrinsics.c(ajaxParams, "ajaxParams");
-                    ajaxParams.put("is_at_push", "1");
+                    Intrinsics.c(a2, "ajaxParams");
+                    a2.put("is_at_push", "1");
                     BluedPreferences.v(true);
                 }
             }
         }
-        setReminding(ajaxParams);
+        setReminding(a2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(PopPushSwitch this$0, View view) {
+    public static final void c(PopPushSwitch popPushSwitch, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.e = !this$0.e;
-        this$0.f = false;
-        this$0.d();
+        Intrinsics.e(popPushSwitch, "this$0");
+        popPushSwitch.e = !popPushSwitch.e;
+        popPushSwitch.f = false;
+        popPushSwitch.d();
     }
 
     private final void d() {
@@ -171,7 +171,7 @@ public final class PopPushSwitch extends BottomPopupView {
             Intrinsics.c("cb_chat");
             imageView2 = null;
         }
-        imageView2.setImageResource(!this.f32505c ? 2131237252 : 2131237255);
+        imageView2.setImageResource(!this.f18814c ? 2131237252 : 2131237255);
         ImageView imageView3 = this.h;
         ImageView imageView4 = imageView3;
         if (imageView3 == null) {
@@ -196,19 +196,19 @@ public final class PopPushSwitch extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void d(PopPushSwitch this$0, View view) {
+    public static final void d(PopPushSwitch popPushSwitch, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.f = !this$0.f;
-        this$0.d = false;
-        this$0.f32505c = false;
-        this$0.e = false;
-        this$0.d();
+        Intrinsics.e(popPushSwitch, "this$0");
+        popPushSwitch.f = !popPushSwitch.f;
+        popPushSwitch.d = false;
+        popPushSwitch.f18814c = false;
+        popPushSwitch.e = false;
+        popPushSwitch.d();
     }
 
     private final void e() {
         boolean z;
-        if (this.f || (z = this.f32505c) || this.d || z) {
+        if (this.f || (z = this.f18814c) || this.d || z) {
             ShapeTextView shapeTextView = this.k;
             ShapeTextView shapeTextView2 = shapeTextView;
             if (shapeTextView == null) {
@@ -240,20 +240,20 @@ public final class PopPushSwitch extends BottomPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void e(PopPushSwitch this$0, View view) {
+    public static final void e(PopPushSwitch popPushSwitch, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(popPushSwitch, "this$0");
+        popPushSwitch.p();
         EventTrackMessage.a(MessageProtos.Event.MSG_OPEN_PUSH_POP_NO_CLICK);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void f(PopPushSwitch this$0, View view) {
+    public static final void f(PopPushSwitch popPushSwitch, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
-        this$0.p();
-        EventTrackMessage.a(MessageProtos.Event.MSG_OPEN_PUSH_POP_OPEN_CLICK, this$0.getType());
+        Intrinsics.e(popPushSwitch, "this$0");
+        popPushSwitch.c();
+        popPushSwitch.p();
+        EventTrackMessage.a(MessageProtos.Event.MSG_OPEN_PUSH_POP_OPEN_CLICK, popPushSwitch.getType());
     }
 
     private final String getType() {
@@ -261,7 +261,7 @@ public final class PopPushSwitch extends BottomPopupView {
         if (this.f) {
             sb.append(String.valueOf(t));
         }
-        if (this.f32505c) {
+        if (this.f18814c) {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(u);
             sb2.append(',');
@@ -290,12 +290,10 @@ public final class PopPushSwitch extends BottomPopupView {
         }
         MineHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.msg.pop.PopPushSwitch$setReminding$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -305,7 +303,6 @@ public final class PopPushSwitch extends BottomPopupView {
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), map, (IRequestHost) null);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         View findViewById = findViewById(R.id.cb_chat);
@@ -323,10 +320,10 @@ public final class PopPushSwitch extends BottomPopupView {
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_chat);
         RelativeLayout relativeLayout2 = (RelativeLayout) findViewById(R.id.rl_group);
         RelativeLayout relativeLayout3 = (RelativeLayout) findViewById(R.id.rl_community);
-        ShapeTextView shapeTextView = (ShapeTextView) findViewById(2131371711);
-        View findViewById5 = findViewById(R.id.tv_open);
-        Intrinsics.c(findViewById5, "findViewById<ShapeTextView>(R.id.tv_open)");
-        this.k = (ShapeTextView) findViewById5;
+        ShapeTextView findViewById5 = findViewById(R.id.tv_ignore);
+        ShapeTextView findViewById6 = findViewById(R.id.tv_open);
+        Intrinsics.c(findViewById6, "findViewById<ShapeTextView>(R.id.tv_open)");
+        this.k = findViewById6;
         if (BluedPreferences.ak()) {
             relativeLayout.setVisibility(8);
         }
@@ -384,18 +381,18 @@ public final class PopPushSwitch extends BottomPopupView {
                 PopPushSwitch.d(PopPushSwitch.this, view);
             }
         });
-        shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$PopPushSwitch$vCXPswdiEL7nicmJDwTbsz3cncM
+        findViewById5.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$PopPushSwitch$vCXPswdiEL7nicmJDwTbsz3cncM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PopPushSwitch.e(PopPushSwitch.this, view);
             }
         });
-        ShapeTextView shapeTextView2 = this.k;
-        if (shapeTextView2 == null) {
+        ShapeTextView shapeTextView = this.k;
+        if (shapeTextView == null) {
             Intrinsics.c("tv_open");
-            shapeTextView2 = null;
+            shapeTextView = null;
         }
-        shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$PopPushSwitch$4E6X7vk_kJ5MLettpZ0TbnPbu-A
+        shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.-$$Lambda$PopPushSwitch$4E6X7vk_kJ5MLettpZ0TbnPbu-A
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PopPushSwitch.f(PopPushSwitch.this, view);
@@ -405,7 +402,6 @@ public final class PopPushSwitch extends BottomPopupView {
         d();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_push_switch;
     }

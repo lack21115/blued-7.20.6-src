@@ -70,8 +70,8 @@ public final class Decoder {
             correctErrors(readCodewords, 20, 68, 56, 2);
             bArr = new byte[78];
         }
-        System.arraycopy((Object) readCodewords, 0, (Object) bArr, 0, 10);
-        System.arraycopy((Object) readCodewords, 20, (Object) bArr, 10, bArr.length - 10);
+        System.arraycopy(readCodewords, 0, bArr, 0, 10);
+        System.arraycopy(readCodewords, 20, bArr, 10, bArr.length - 10);
         return DecodedBitStreamParser.decode(bArr, i);
     }
 }

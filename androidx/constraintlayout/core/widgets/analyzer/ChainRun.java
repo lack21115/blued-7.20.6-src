@@ -11,12 +11,12 @@ import java.util.Iterator;
 public class ChainRun extends WidgetRun {
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<WidgetRun> f2132a;
+    ArrayList<WidgetRun> f2084a;
     private int h;
 
     public ChainRun(ConstraintWidget constraintWidget, int i) {
         super(constraintWidget);
-        this.f2132a = new ArrayList<>();
+        this.f2084a = new ArrayList<>();
         this.orientation = i;
         e();
     }
@@ -33,17 +33,17 @@ public class ChainRun extends WidgetRun {
             previousChainMember = constraintWidget2.getPreviousChainMember(this.orientation);
         }
         this.b = constraintWidget;
-        this.f2132a.add(constraintWidget.getRun(this.orientation));
+        this.f2084a.add(constraintWidget.getRun(this.orientation));
         ConstraintWidget nextChainMember = constraintWidget.getNextChainMember(this.orientation);
         while (true) {
             ConstraintWidget constraintWidget3 = nextChainMember;
             if (constraintWidget3 == null) {
                 break;
             }
-            this.f2132a.add(constraintWidget3.getRun(this.orientation));
+            this.f2084a.add(constraintWidget3.getRun(this.orientation));
             nextChainMember = constraintWidget3.getNextChainMember(this.orientation);
         }
-        Iterator<WidgetRun> it = this.f2132a.iterator();
+        Iterator<WidgetRun> it = this.f2084a.iterator();
         while (it.hasNext()) {
             WidgetRun next = it.next();
             if (this.orientation == 0) {
@@ -52,8 +52,8 @@ public class ChainRun extends WidgetRun {
                 next.b.verticalChainRun = this;
             }
         }
-        if ((this.orientation == 0 && ((ConstraintWidgetContainer) this.b.getParent()).isRtl()) && this.f2132a.size() > 1) {
-            ArrayList<WidgetRun> arrayList = this.f2132a;
+        if ((this.orientation == 0 && ((ConstraintWidgetContainer) this.b.getParent()).isRtl()) && this.f2084a.size() > 1) {
+            ArrayList<WidgetRun> arrayList = this.f2084a;
             this.b = arrayList.get(arrayList.size() - 1).b;
         }
         this.h = this.orientation == 0 ? this.b.getHorizontalChainStyle() : this.b.getVerticalChainStyle();
@@ -63,10 +63,10 @@ public class ChainRun extends WidgetRun {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f2132a.size()) {
+            if (i2 >= this.f2084a.size()) {
                 return null;
             }
-            WidgetRun widgetRun = this.f2132a.get(i2);
+            WidgetRun widgetRun = this.f2084a.get(i2);
             if (widgetRun.b.getVisibility() != 8) {
                 return widgetRun.b;
             }
@@ -75,13 +75,13 @@ public class ChainRun extends WidgetRun {
     }
 
     private ConstraintWidget g() {
-        int size = this.f2132a.size();
+        int size = this.f2084a.size();
         while (true) {
             int i = size - 1;
             if (i < 0) {
                 return null;
             }
-            WidgetRun widgetRun = this.f2132a.get(i);
+            WidgetRun widgetRun = this.f2084a.get(i);
             if (widgetRun.b.getVisibility() != 8) {
                 return widgetRun.b;
             }
@@ -91,14 +91,14 @@ public class ChainRun extends WidgetRun {
 
     @Override // androidx.constraintlayout.core.widgets.analyzer.WidgetRun
     boolean a() {
-        int size = this.f2132a.size();
+        int size = this.f2084a.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return true;
             }
-            if (!this.f2132a.get(i2).a()) {
+            if (!this.f2084a.get(i2).a()) {
                 return false;
             }
             i = i2 + 1;
@@ -110,18 +110,18 @@ public class ChainRun extends WidgetRun {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f2132a.size()) {
+            if (i2 >= this.f2084a.size()) {
                 return;
             }
-            this.f2132a.get(i2).applyToWidget();
+            this.f2084a.get(i2).applyToWidget();
             i = i2 + 1;
         }
     }
 
     @Override // androidx.constraintlayout.core.widgets.analyzer.WidgetRun
     void b() {
-        this.f2150c = null;
-        Iterator<WidgetRun> it = this.f2132a.iterator();
+        this.f2102c = null;
+        Iterator<WidgetRun> it = this.f2084a.iterator();
         while (it.hasNext()) {
             it.next().b();
         }
@@ -135,16 +135,16 @@ public class ChainRun extends WidgetRun {
 
     @Override // androidx.constraintlayout.core.widgets.analyzer.WidgetRun
     void d() {
-        Iterator<WidgetRun> it = this.f2132a.iterator();
+        Iterator<WidgetRun> it = this.f2084a.iterator();
         while (it.hasNext()) {
             it.next().d();
         }
-        int size = this.f2132a.size();
+        int size = this.f2084a.size();
         if (size < 1) {
             return;
         }
-        ConstraintWidget constraintWidget = this.f2132a.get(0).b;
-        ConstraintWidget constraintWidget2 = this.f2132a.get(size - 1).b;
+        ConstraintWidget constraintWidget = this.f2084a.get(0).b;
+        ConstraintWidget constraintWidget2 = this.f2084a.get(size - 1).b;
         if (this.orientation == 0) {
             ConstraintAnchor constraintAnchor = constraintWidget.mLeft;
             ConstraintAnchor constraintAnchor2 = constraintWidget2.mRight;
@@ -195,7 +195,7 @@ public class ChainRun extends WidgetRun {
     @Override // androidx.constraintlayout.core.widgets.analyzer.WidgetRun
     public long getWrapDimension() {
         WidgetRun widgetRun;
-        int size = this.f2132a.size();
+        int size = this.f2084a.size();
         long j = 0;
         int i = 0;
         while (true) {
@@ -203,7 +203,7 @@ public class ChainRun extends WidgetRun {
             if (i2 >= size) {
                 return j;
             }
-            j = j + widgetRun.start.f2136c + this.f2132a.get(i2).getWrapDimension() + widgetRun.end.f2136c;
+            j = j + widgetRun.start.f2088c + this.f2084a.get(i2).getWrapDimension() + widgetRun.end.f2088c;
             i = i2 + 1;
         }
     }
@@ -211,7 +211,7 @@ public class ChainRun extends WidgetRun {
     public String toString() {
         StringBuilder sb = new StringBuilder("ChainRun ");
         sb.append(this.orientation == 0 ? "horizontal : " : "vertical : ");
-        Iterator<WidgetRun> it = this.f2132a.iterator();
+        Iterator<WidgetRun> it = this.f2084a.iterator();
         while (it.hasNext()) {
             sb.append(SimpleComparison.LESS_THAN_OPERATION);
             sb.append(it.next());
@@ -248,7 +248,7 @@ public class ChainRun extends WidgetRun {
         ConstraintWidget parent = this.b.getParent();
         boolean isRtl = parent instanceof ConstraintWidgetContainer ? ((ConstraintWidgetContainer) parent).isRtl() : false;
         int i18 = this.end.value - this.start.value;
-        int size = this.f2132a.size();
+        int size = this.f2084a.size();
         int i19 = 0;
         while (true) {
             int i20 = i19;
@@ -257,7 +257,7 @@ public class ChainRun extends WidgetRun {
                 break;
             }
             i = i20;
-            if (this.f2132a.get(i20).b.getVisibility() != 8) {
+            if (this.f2084a.get(i20).b.getVisibility() != 8) {
                 break;
             }
             i19 = i20 + 1;
@@ -270,7 +270,7 @@ public class ChainRun extends WidgetRun {
             if (i23 < 0) {
                 break;
             }
-            if (this.f2132a.get(i23).b.getVisibility() != 8) {
+            if (this.f2084a.get(i23).b.getVisibility() != 8) {
                 i2 = i23;
                 break;
             }
@@ -292,7 +292,7 @@ public class ChainRun extends WidgetRun {
             i11 = 0;
             f = 0.0f;
             while (i26 < size) {
-                WidgetRun widgetRun = this.f2132a.get(i26);
+                WidgetRun widgetRun = this.f2084a.get(i26);
                 if (widgetRun.b.getVisibility() == 8) {
                     i16 = i4;
                     i17 = i10;
@@ -302,7 +302,7 @@ public class ChainRun extends WidgetRun {
                     if (i26 > 0) {
                         i28 = i4;
                         if (i26 >= i) {
-                            i28 = i4 + widgetRun.start.f2136c;
+                            i28 = i4 + widgetRun.start.f2088c;
                         }
                     }
                     int i29 = widgetRun.e.value;
@@ -362,7 +362,7 @@ public class ChainRun extends WidgetRun {
                         i11 = i27;
                         f = f2;
                         if (i26 < i2) {
-                            i16 = i15 + (-widgetRun.end.f2136c);
+                            i16 = i15 + (-widgetRun.end.f2088c);
                             f = f2;
                             i11 = i27;
                             i17 = i13;
@@ -394,7 +394,7 @@ public class ChainRun extends WidgetRun {
             int i34 = 0;
             int i35 = i32;
             for (int i36 = 0; i36 < size; i36++) {
-                WidgetRun widgetRun2 = this.f2132a.get(i36);
+                WidgetRun widgetRun2 = this.f2084a.get(i36);
                 if (widgetRun2.b.getVisibility() != 8 && widgetRun2.d == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && !widgetRun2.e.resolved) {
                     int i37 = f > 0.0f ? (int) (((widgetRun2.b.mWeight[this.orientation] * f4) / f) + 0.5f) : i33;
                     if (this.orientation == 0) {
@@ -423,13 +423,13 @@ public class ChainRun extends WidgetRun {
                 int i41 = i5 - i34;
                 i7 = 0;
                 for (int i42 = 0; i42 < size; i42++) {
-                    WidgetRun widgetRun3 = this.f2132a.get(i42);
+                    WidgetRun widgetRun3 = this.f2084a.get(i42);
                     if (widgetRun3.b.getVisibility() != 8) {
                         int i43 = i7;
                         if (i42 > 0) {
                             i43 = i7;
                             if (i42 >= i) {
-                                i43 = i7 + widgetRun3.start.f2136c;
+                                i43 = i7 + widgetRun3.start.f2088c;
                             }
                         }
                         int i44 = i43 + widgetRun3.e.value;
@@ -437,7 +437,7 @@ public class ChainRun extends WidgetRun {
                         if (i42 < i21) {
                             i7 = i44;
                             if (i42 < i2) {
-                                i7 = i44 + (-widgetRun3.end.f2136c);
+                                i7 = i44 + (-widgetRun3.end.f2088c);
                             }
                         }
                     }
@@ -478,7 +478,7 @@ public class ChainRun extends WidgetRun {
                 if (i48 >= size) {
                     return;
                 }
-                WidgetRun widgetRun4 = this.f2132a.get(isRtl ? size - (i48 + 1) : i48);
+                WidgetRun widgetRun4 = this.f2084a.get(isRtl ? size - (i48 + 1) : i48);
                 if (widgetRun4.b.getVisibility() == 8) {
                     widgetRun4.start.resolve(i49);
                     widgetRun4.end.resolve(i49);
@@ -492,7 +492,7 @@ public class ChainRun extends WidgetRun {
                     if (i48 > 0) {
                         i51 = i50;
                         if (i48 >= i) {
-                            i51 = isRtl ? i50 - widgetRun4.start.f2136c : i50 + widgetRun4.start.f2136c;
+                            i51 = isRtl ? i50 - widgetRun4.start.f2088c : i50 + widgetRun4.start.f2088c;
                         }
                     }
                     if (isRtl) {
@@ -519,7 +519,7 @@ public class ChainRun extends WidgetRun {
                     if (i48 < i21) {
                         i32 = i54;
                         if (i48 < i2) {
-                            i32 = isRtl ? i54 - (-widgetRun4.end.f2136c) : i54 + (-widgetRun4.end.f2136c);
+                            i32 = isRtl ? i54 - (-widgetRun4.end.f2088c) : i54 + (-widgetRun4.end.f2088c);
                         }
                     }
                 }
@@ -536,7 +536,7 @@ public class ChainRun extends WidgetRun {
                 if (i57 >= size) {
                     return;
                 }
-                WidgetRun widgetRun5 = this.f2132a.get(isRtl ? size - (i57 + 1) : i57);
+                WidgetRun widgetRun5 = this.f2084a.get(isRtl ? size - (i57 + 1) : i57);
                 if (widgetRun5.b.getVisibility() == 8) {
                     widgetRun5.start.resolve(i32);
                     widgetRun5.end.resolve(i32);
@@ -546,7 +546,7 @@ public class ChainRun extends WidgetRun {
                     if (i57 > 0) {
                         i59 = i58;
                         if (i57 >= i) {
-                            i59 = isRtl ? i58 - widgetRun5.start.f2136c : i58 + widgetRun5.start.f2136c;
+                            i59 = isRtl ? i58 - widgetRun5.start.f2088c : i58 + widgetRun5.start.f2088c;
                         }
                     }
                     if (isRtl) {
@@ -572,7 +572,7 @@ public class ChainRun extends WidgetRun {
                     if (i57 < i21) {
                         i32 = i62;
                         if (i57 < i2) {
-                            i32 = isRtl ? i62 - (-widgetRun5.end.f2136c) : i62 + (-widgetRun5.end.f2136c);
+                            i32 = isRtl ? i62 - (-widgetRun5.end.f2088c) : i62 + (-widgetRun5.end.f2088c);
                         }
                     }
                 }
@@ -592,7 +592,7 @@ public class ChainRun extends WidgetRun {
                 if (i66 >= size) {
                     return;
                 }
-                WidgetRun widgetRun6 = this.f2132a.get(isRtl ? size - (i66 + 1) : i66);
+                WidgetRun widgetRun6 = this.f2084a.get(isRtl ? size - (i66 + 1) : i66);
                 if (widgetRun6.b.getVisibility() == 8) {
                     widgetRun6.start.resolve(i64);
                     widgetRun6.end.resolve(i64);
@@ -601,7 +601,7 @@ public class ChainRun extends WidgetRun {
                     if (i66 > 0) {
                         i67 = i64;
                         if (i66 >= i) {
-                            i67 = isRtl ? i64 - widgetRun6.start.f2136c : i64 + widgetRun6.start.f2136c;
+                            i67 = isRtl ? i64 - widgetRun6.start.f2088c : i64 + widgetRun6.start.f2088c;
                         }
                     }
                     if (isRtl) {
@@ -623,7 +623,7 @@ public class ChainRun extends WidgetRun {
                     if (i66 < i21) {
                         i64 = i69;
                         if (i66 < i2) {
-                            i64 = isRtl ? i69 - (-widgetRun6.end.f2136c) : i69 + (-widgetRun6.end.f2136c);
+                            i64 = isRtl ? i69 - (-widgetRun6.end.f2088c) : i69 + (-widgetRun6.end.f2088c);
                         }
                     }
                 }

@@ -29,7 +29,7 @@ import java.util.Map;
 public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implements Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f21039a;
+    private int f7433a;
     private Drawable e;
     private int f;
     private Drawable g;
@@ -46,7 +46,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
     private float b = 1.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private DiskCacheStrategy f21040c = DiskCacheStrategy.e;
+    private DiskCacheStrategy f7434c = DiskCacheStrategy.e;
     private Priority d = Priority.NORMAL;
     private boolean i = true;
     private int j = -1;
@@ -72,7 +72,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
     }
 
     private boolean a(int i) {
-        return a(this.f21039a, i);
+        return a(this.f7433a, i);
     }
 
     private static boolean a(int i, int i2) {
@@ -172,14 +172,14 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
         Preconditions.a(cls);
         Preconditions.a(transformation);
         this.r.put(cls, transformation);
-        int i = this.f21039a | 2048;
-        this.f21039a = i;
+        int i = this.f7433a | 2048;
+        this.f7433a = i;
         this.n = true;
         int i2 = i | 65536;
-        this.f21039a = i2;
+        this.f7433a = i2;
         this.y = false;
         if (z) {
-            this.f21039a = i2 | 131072;
+            this.f7433a = i2 | 131072;
             this.m = true;
         }
         return a();
@@ -193,7 +193,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             throw new IllegalArgumentException("sizeMultiplier must be between 0 and 1");
         }
         this.b = f;
-        this.f21039a |= 2;
+        this.f7433a |= 2;
         return a();
     }
 
@@ -203,7 +203,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
         }
         this.k = i;
         this.j = i2;
-        this.f21039a |= 512;
+        this.f7433a |= 512;
         return a();
     }
 
@@ -212,10 +212,10 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().b(drawable);
         }
         this.g = drawable;
-        int i = this.f21039a | 64;
-        this.f21039a = i;
+        int i = this.f7433a | 64;
+        this.f7433a = i;
         this.h = 0;
-        this.f21039a = i & (-129);
+        this.f7433a = i & (-129);
         return a();
     }
 
@@ -224,7 +224,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().b(priority);
         }
         this.d = (Priority) Preconditions.a(priority);
-        this.f21039a |= 8;
+        this.f7433a |= 8;
         return a();
     }
 
@@ -233,7 +233,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().b(key);
         }
         this.l = (Key) Preconditions.a(key);
-        this.f21039a |= 1024;
+        this.f7433a |= 1024;
         return a();
     }
 
@@ -255,8 +255,8 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
         if (this.v) {
             return (T) clone().b(diskCacheStrategy);
         }
-        this.f21040c = (DiskCacheStrategy) Preconditions.a(diskCacheStrategy);
-        this.f21039a |= 4;
+        this.f7434c = (DiskCacheStrategy) Preconditions.a(diskCacheStrategy);
+        this.f7433a |= 4;
         return a();
     }
 
@@ -276,89 +276,89 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
         if (this.v) {
             return (T) clone().b(baseRequestOptions);
         }
-        if (a(baseRequestOptions.f21039a, 2)) {
+        if (a(baseRequestOptions.f7433a, 2)) {
             this.b = baseRequestOptions.b;
         }
-        if (a(baseRequestOptions.f21039a, 262144)) {
+        if (a(baseRequestOptions.f7433a, 262144)) {
             this.w = baseRequestOptions.w;
         }
-        if (a(baseRequestOptions.f21039a, 1048576)) {
+        if (a(baseRequestOptions.f7433a, 1048576)) {
             this.z = baseRequestOptions.z;
         }
-        if (a(baseRequestOptions.f21039a, 4)) {
-            this.f21040c = baseRequestOptions.f21040c;
+        if (a(baseRequestOptions.f7433a, 4)) {
+            this.f7434c = baseRequestOptions.f7434c;
         }
-        if (a(baseRequestOptions.f21039a, 8)) {
+        if (a(baseRequestOptions.f7433a, 8)) {
             this.d = baseRequestOptions.d;
         }
-        if (a(baseRequestOptions.f21039a, 16)) {
+        if (a(baseRequestOptions.f7433a, 16)) {
             this.e = baseRequestOptions.e;
             this.f = 0;
-            this.f21039a &= -33;
+            this.f7433a &= -33;
         }
-        if (a(baseRequestOptions.f21039a, 32)) {
+        if (a(baseRequestOptions.f7433a, 32)) {
             this.f = baseRequestOptions.f;
             this.e = null;
-            this.f21039a &= -17;
+            this.f7433a &= -17;
         }
-        if (a(baseRequestOptions.f21039a, 64)) {
+        if (a(baseRequestOptions.f7433a, 64)) {
             this.g = baseRequestOptions.g;
             this.h = 0;
-            this.f21039a &= -129;
+            this.f7433a &= -129;
         }
-        if (a(baseRequestOptions.f21039a, 128)) {
+        if (a(baseRequestOptions.f7433a, 128)) {
             this.h = baseRequestOptions.h;
             this.g = null;
-            this.f21039a &= -65;
+            this.f7433a &= -65;
         }
-        if (a(baseRequestOptions.f21039a, 256)) {
+        if (a(baseRequestOptions.f7433a, 256)) {
             this.i = baseRequestOptions.i;
         }
-        if (a(baseRequestOptions.f21039a, 512)) {
+        if (a(baseRequestOptions.f7433a, 512)) {
             this.k = baseRequestOptions.k;
             this.j = baseRequestOptions.j;
         }
-        if (a(baseRequestOptions.f21039a, 1024)) {
+        if (a(baseRequestOptions.f7433a, 1024)) {
             this.l = baseRequestOptions.l;
         }
-        if (a(baseRequestOptions.f21039a, 4096)) {
+        if (a(baseRequestOptions.f7433a, 4096)) {
             this.s = baseRequestOptions.s;
         }
-        if (a(baseRequestOptions.f21039a, 8192)) {
+        if (a(baseRequestOptions.f7433a, 8192)) {
             this.o = baseRequestOptions.o;
             this.p = 0;
-            this.f21039a &= -16385;
+            this.f7433a &= -16385;
         }
-        if (a(baseRequestOptions.f21039a, 16384)) {
+        if (a(baseRequestOptions.f7433a, 16384)) {
             this.p = baseRequestOptions.p;
             this.o = null;
-            this.f21039a &= -8193;
+            this.f7433a &= -8193;
         }
-        if (a(baseRequestOptions.f21039a, 32768)) {
+        if (a(baseRequestOptions.f7433a, 32768)) {
             this.u = baseRequestOptions.u;
         }
-        if (a(baseRequestOptions.f21039a, 65536)) {
+        if (a(baseRequestOptions.f7433a, 65536)) {
             this.n = baseRequestOptions.n;
         }
-        if (a(baseRequestOptions.f21039a, 131072)) {
+        if (a(baseRequestOptions.f7433a, 131072)) {
             this.m = baseRequestOptions.m;
         }
-        if (a(baseRequestOptions.f21039a, 2048)) {
+        if (a(baseRequestOptions.f7433a, 2048)) {
             this.r.putAll(baseRequestOptions.r);
             this.y = baseRequestOptions.y;
         }
-        if (a(baseRequestOptions.f21039a, 524288)) {
+        if (a(baseRequestOptions.f7433a, 524288)) {
             this.x = baseRequestOptions.x;
         }
         if (!this.n) {
             this.r.clear();
-            int i = this.f21039a & (-2049);
-            this.f21039a = i;
+            int i = this.f7433a & (-2049);
+            this.f7433a = i;
             this.m = false;
-            this.f21039a = i & (-131073);
+            this.f7433a = i & (-131073);
             this.y = true;
         }
-        this.f21039a |= baseRequestOptions.f21039a;
+        this.f7433a |= baseRequestOptions.f7433a;
         this.q.a(baseRequestOptions.q);
         return a();
     }
@@ -368,7 +368,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().b(cls);
         }
         this.s = (Class) Preconditions.a(cls);
-        this.f21039a |= 4096;
+        this.f7433a |= 4096;
         return a();
     }
 
@@ -381,7 +381,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().d(true);
         }
         this.i = !z;
-        this.f21039a |= 256;
+        this.f7433a |= 256;
         return a();
     }
 
@@ -394,7 +394,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().e(z);
         }
         this.x = z;
-        this.f21039a |= 524288;
+        this.f7433a |= 524288;
         return a();
     }
 
@@ -431,7 +431,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
                                                                 z = false;
                                                                 if (this.x == baseRequestOptions.x) {
                                                                     z = false;
-                                                                    if (this.f21040c.equals(baseRequestOptions.f21040c)) {
+                                                                    if (this.f7434c.equals(baseRequestOptions.f7434c)) {
                                                                         z = false;
                                                                         if (this.d == baseRequestOptions.d) {
                                                                             z = false;
@@ -475,10 +475,10 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().f(i);
         }
         this.f = i;
-        int i2 = this.f21039a | 32;
-        this.f21039a = i2;
+        int i2 = this.f7433a | 32;
+        this.f7433a = i2;
         this.e = null;
-        this.f21039a = i2 & (-17);
+        this.f7433a = i2 & (-17);
         return a();
     }
 
@@ -487,7 +487,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().f(z);
         }
         this.z = z;
-        this.f21039a |= 1048576;
+        this.f7433a |= 1048576;
         return a();
     }
 
@@ -496,10 +496,10 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().g(i);
         }
         this.p = i;
-        int i2 = this.f21039a | 16384;
-        this.f21039a = i2;
+        int i2 = this.f7433a | 16384;
+        this.f7433a = i2;
         this.o = null;
-        this.f21039a = i2 & (-8193);
+        this.f7433a = i2 & (-8193);
         return a();
     }
 
@@ -516,15 +516,15 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
             return (T) clone().h(i);
         }
         this.h = i;
-        int i2 = this.f21039a | 128;
-        this.f21039a = i2;
+        int i2 = this.f7433a | 128;
+        this.f7433a = i2;
         this.g = null;
-        this.f21039a = i2 & (-65);
+        this.f7433a = i2 & (-65);
         return a();
     }
 
     public int hashCode() {
-        return Util.a(this.u, Util.a(this.l, Util.a(this.s, Util.a(this.r, Util.a(this.q, Util.a(this.d, Util.a(this.f21040c, Util.a(this.x, Util.a(this.w, Util.a(this.n, Util.a(this.m, Util.b(this.k, Util.b(this.j, Util.a(this.i, Util.a(this.o, Util.b(this.p, Util.a(this.g, Util.b(this.h, Util.a(this.e, Util.b(this.f, Util.a(this.b)))))))))))))))))))));
+        return Util.a(this.u, Util.a(this.l, Util.a(this.s, Util.a(this.r, Util.a(this.q, Util.a(this.d, Util.a(this.f7434c, Util.a(this.x, Util.a(this.w, Util.a(this.n, Util.a(this.m, Util.b(this.k, Util.b(this.j, Util.a(this.i, Util.a(this.o, Util.b(this.p, Util.a(this.g, Util.b(this.h, Util.a(this.e, Util.b(this.f, Util.a(this.b)))))))))))))))))))));
     }
 
     public T i() {
@@ -537,7 +537,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
     }
 
     public T k() {
-        return c(DownsampleStrategy.f20948c, new FitCenter());
+        return c(DownsampleStrategy.f7342c, new FitCenter());
     }
 
     public T l() {
@@ -592,7 +592,7 @@ public abstract class BaseRequestOptions<T extends BaseRequestOptions<T>> implem
     }
 
     public final DiskCacheStrategy u() {
-        return this.f21040c;
+        return this.f7434c;
     }
 
     public final Drawable v() {

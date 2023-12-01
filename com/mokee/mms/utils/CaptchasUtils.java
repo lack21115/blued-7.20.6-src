@@ -5,13 +5,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/mms/utils/CaptchasUtils.class */
 public class CaptchasUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24220a = null;
+    private static final String[] a = null;
     public static int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String[] f24221c;
+    private static String[] c;
     private static String[] d;
     private static String[] e;
     private static String[] f;
@@ -23,21 +19,21 @@ public class CaptchasUtils {
     }
 
     private static int a(String str) {
-        if (str.matches(f24220a[8])) {
+        if (str.matches(a[8])) {
             return 2;
         }
-        return str.matches(f24220a[7]) ? 0 : 1;
+        return str.matches(a[7]) ? 0 : 1;
     }
 
     private static String a(String str, String str2, String str3) {
-        if (str3.equals(f24220a[1])) {
-            str = f24220a[6];
+        if (str3.equals(a[1])) {
+            str = a[6];
         }
-        if (str3.equals(f24220a[2])) {
-            str = f24220a[5];
+        if (str3.equals(a[2])) {
+            str = a[5];
         }
-        if (str3.equals(f24220a[3])) {
-            str = f24220a[4];
+        if (str3.equals(a[3])) {
+            str = a[4];
         }
         return str;
     }
@@ -56,7 +52,7 @@ public class CaptchasUtils {
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0099, code lost:
         r14 = true;
         r16 = true;
-        r0 = com.mokee.mms.utils.CaptchasUtils.f24221c.length;
+        r0 = com.mokee.mms.utils.CaptchasUtils.c.length;
         r15 = 0;
         r17 = 0;
         r8 = r11;
@@ -256,7 +252,7 @@ public class CaptchasUtils {
         /*
             int r0 = com.mokee.mms.utils.CaptchasUtils.b
             r6 = r0
-            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.f24220a
+            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.a
             r1 = 10
             r0 = r0[r1]
             java.util.regex.Pattern r0 = java.util.regex.Pattern.compile(r0)
@@ -298,7 +294,7 @@ public class CaptchasUtils {
             r0 = r8
             boolean r0 = r0.find()
             if (r0 != 0) goto L23
-            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.f24220a
+            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.a
             r1 = 11
             r0 = r0[r1]
             java.util.regex.Pattern r0 = java.util.regex.Pattern.compile(r0)
@@ -329,7 +325,7 @@ public class CaptchasUtils {
             r0 = r8
             boolean r0 = r0.find()
             if (r0 != 0) goto L66
-            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.f24220a
+            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.a
             r1 = 12
             r0 = r0[r1]
             java.util.regex.Pattern r0 = java.util.regex.Pattern.compile(r0)
@@ -560,7 +556,7 @@ public class CaptchasUtils {
 
     public static boolean isChineseContains(String str) {
         int i = b;
-        if ((Pattern.compile(f24220a[13]).matcher(str).find()) || str.contains("【") || str.contains("】") || str.contains("。")) {
+        if ((Pattern.compile(a[13]).matcher(str).find()) || str.contains("【") || str.contains("】") || str.contains("。")) {
             if (VolleyError.b) {
                 b = i + 1;
                 return true;
@@ -589,7 +585,7 @@ public class CaptchasUtils {
         /*
             int r0 = com.mokee.mms.utils.CaptchasUtils.b
             r4 = r0
-            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.f24220a
+            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.a
             r1 = 9
             r0 = r0[r1]
             java.util.regex.Pattern r0 = java.util.regex.Pattern.compile(r0)
@@ -702,7 +698,7 @@ public class CaptchasUtils {
         /*
             int r0 = com.mokee.mms.utils.CaptchasUtils.b
             r4 = r0
-            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.f24220a
+            java.lang.String[] r0 = com.mokee.mms.utils.CaptchasUtils.a
             r1 = 0
             r0 = r0[r1]
             java.util.regex.Pattern r0 = java.util.regex.Pattern.compile(r0)

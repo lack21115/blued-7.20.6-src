@@ -44,28 +44,22 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYWishDetailDialog.class */
 public final class YYWishDetailDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f17489a;
+    private BaseYYStudioFragment a;
     private ViewYyWishDetailLayoutBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYWishDetailAdapter f17490c;
+    private YYWishDetailAdapter c;
     private GoldUserAdapter d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYWishDetailDialog$GoldUserAdapter.class */
     public final class GoldUserAdapter extends BaseQuickAdapter<YYAudienceModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYWishDetailDialog f17491a;
+        final /* synthetic */ YYWishDetailDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public GoldUserAdapter(YYWishDetailDialog this$0) {
-            super(R.layout.item_yy_gold_user, null);
+            super(R.layout.item_yy_gold_user, (List) null);
             Intrinsics.e(this$0, "this$0");
-            this.f17491a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -84,18 +78,17 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final YYAudienceModel yYAudienceModel) {
             String avatar;
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.iv_user_head);
             if (yYAudienceModel != null && (avatar = yYAudienceModel.getAvatar()) != null) {
-                ImageLoader.a(this.f17491a.f().getFragmentActive(), avatar).a(imageView);
+                ImageLoader.a(this.a.f().getFragmentActive(), avatar).a(imageView);
             }
             if (imageView == null) {
                 return;
             }
-            final YYWishDetailDialog yYWishDetailDialog = this.f17491a;
+            final YYWishDetailDialog yYWishDetailDialog = this.a;
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYWishDetailDialog$GoldUserAdapter$STJw_FKDbdGuIIgJMDFDMmYhz9Q
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -107,7 +100,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
 
     public YYWishDetailDialog(BaseYYStudioFragment fragment) {
         Intrinsics.e(fragment, "fragment");
-        this.f17489a = fragment;
+        this.a = fragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -128,23 +121,23 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<? extends YYWishGoodsModel> list) {
         RecyclerView recyclerView;
-        GridLayoutManager linearLayoutManager;
+        LinearLayoutManager linearLayoutManager;
         ViewYyWishDetailLayoutBinding viewYyWishDetailLayoutBinding = this.b;
         ViewGroup.LayoutParams layoutParams = (viewYyWishDetailLayoutBinding == null || (recyclerView = viewYyWishDetailLayoutBinding.e) == null) ? null : recyclerView.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+        ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
         if (list.size() >= 3) {
             layoutParams2.width = -1;
-            YYWishDetailAdapter yYWishDetailAdapter = this.f17490c;
+            YYWishDetailAdapter yYWishDetailAdapter = this.c;
             if (yYWishDetailAdapter != null) {
                 yYWishDetailAdapter.a(0);
             }
-            linearLayoutManager = new GridLayoutManager(getContext(), 3);
+            linearLayoutManager = (LinearLayoutManager) new GridLayoutManager(getContext(), 3);
         } else {
             layoutParams2.width = -2;
-            YYWishDetailAdapter yYWishDetailAdapter2 = this.f17490c;
+            YYWishDetailAdapter yYWishDetailAdapter2 = this.c;
             if (yYWishDetailAdapter2 != null) {
                 yYWishDetailAdapter2.a(DensityUtils.a(getContext(), 100.0f));
             }
@@ -159,9 +152,9 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
         ViewYyWishDetailLayoutBinding viewYyWishDetailLayoutBinding3 = this.b;
         RecyclerView recyclerView3 = viewYyWishDetailLayoutBinding3 == null ? null : viewYyWishDetailLayoutBinding3.e;
         if (recyclerView3 != null) {
-            recyclerView3.setAdapter(this.f17490c);
+            recyclerView3.setAdapter(this.c);
         }
-        YYWishDetailAdapter yYWishDetailAdapter3 = this.f17490c;
+        YYWishDetailAdapter yYWishDetailAdapter3 = this.c;
         if (yYWishDetailAdapter3 == null) {
             return;
         }
@@ -176,8 +169,8 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
             EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_USER_LIST_CLICK, b.room_id, b.uid);
         }
         YYWishRankingView yYWishRankingView = new YYWishRankingView(this$0.getContext());
-        yYWishRankingView.a(this$0.f17489a);
-        this$0.f17489a.a(yYWishRankingView, -2);
+        yYWishRankingView.a(this$0.a);
+        this$0.a.a(yYWishRankingView, -2);
         this$0.dismissAllowingStateLoss();
     }
 
@@ -198,7 +191,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
         if (b != null) {
             EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_WISH_RESET_CLICK, b.room_id, b.uid);
         }
-        View inflate = LayoutInflater.from(this$0.f17489a.getContext()).inflate(R.layout.dialog_single_line_layout, (ViewGroup) null);
+        View inflate = LayoutInflater.from(this$0.a.getContext()).inflate(R.layout.dialog_single_line_layout, (ViewGroup) null);
         ((TextView) inflate.findViewById(R.id.tv_title_text)).setText("确认重置吗？重置后，当前心愿礼物数据会被清空。");
         LiveAlterDialog.b(this$0.getContext(), inflate, new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYWishDetailDialog$XXq6SMM5yNqWdVgci7lz1zNs_BY
             @Override // android.view.View.OnClickListener
@@ -259,7 +252,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
 
     private final void h() {
         YYWishDetailAdapter yYWishDetailAdapter = new YYWishDetailAdapter();
-        this.f17490c = yYWishDetailAdapter;
+        this.c = yYWishDetailAdapter;
         if (yYWishDetailAdapter != null) {
             yYWishDetailAdapter.a(new YYWishDetailAdapter.OnClickVoteListener() { // from class: com.blued.android.module.yy_china.fragment.YYWishDetailDialog$initAdapter$1
                 @Override // com.blued.android.module.yy_china.adapter.YYWishDetailAdapter.OnClickVoteListener
@@ -279,7 +272,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
                 }
             });
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         ViewYyWishDetailLayoutBinding viewYyWishDetailLayoutBinding = this.b;
         RecyclerView recyclerView = viewYyWishDetailLayoutBinding == null ? null : viewYyWishDetailLayoutBinding.d;
@@ -301,7 +294,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
             return;
         }
         String str = b.room_id;
-        final ActivityFragmentActive fragmentActive = this.f17489a.getFragmentActive();
+        final ActivityFragmentActive fragmentActive = this.a.getFragmentActive();
         YYRoomHttpUtils.C(str, new BluedUIHttpResponse<BluedEntity<YYWishGoodsModel, YYWishGoodsExtraModel>>(fragmentActive) { // from class: com.blued.android.module.yy_china.fragment.YYWishDetailDialog$getWishDetails$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<YYWishGoodsModel, YYWishGoodsExtraModel> bluedEntity) {
@@ -345,7 +338,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
                         if (layoutParams == null) {
                             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
                         }
-                        ((ConstraintLayout.LayoutParams) layoutParams).bottomMargin = DensityUtils.a(yYWishDetailDialog2.getContext(), 47.0f);
+                        layoutParams.bottomMargin = DensityUtils.a(yYWishDetailDialog2.getContext(), 47.0f);
                     }
                     viewYyWishDetailLayoutBinding5 = yYWishDetailDialog2.b;
                     TextView textView3 = viewYyWishDetailLayoutBinding5 == null ? null : viewYyWishDetailLayoutBinding5.i;
@@ -379,14 +372,14 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
                 }
                 yYWishDetailDialog2.j();
             }
-        }, this.f17489a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void j() {
         ViewGroup.LayoutParams layoutParams;
         ViewYyWishDetailLayoutBinding viewYyWishDetailLayoutBinding = this.b;
-        RelativeLayout relativeLayout = viewYyWishDetailLayoutBinding == null ? null : viewYyWishDetailLayoutBinding.f16975c;
+        RelativeLayout relativeLayout = viewYyWishDetailLayoutBinding == null ? null : viewYyWishDetailLayoutBinding.c;
         if (relativeLayout != null) {
             relativeLayout.setVisibility(8);
         }
@@ -400,7 +393,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+        ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
         layoutParams2.topToBottom = R.id.tv_wish_sub_title;
         layoutParams2.topMargin = DensityUtils.a(getContext(), 18.0f);
     }
@@ -409,7 +402,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
     public final void k() {
         ViewGroup.LayoutParams layoutParams;
         ViewYyWishDetailLayoutBinding viewYyWishDetailLayoutBinding = this.b;
-        RelativeLayout relativeLayout = viewYyWishDetailLayoutBinding == null ? null : viewYyWishDetailLayoutBinding.f16975c;
+        RelativeLayout relativeLayout = viewYyWishDetailLayoutBinding == null ? null : viewYyWishDetailLayoutBinding.c;
         if (relativeLayout != null) {
             relativeLayout.setVisibility(0);
         }
@@ -423,17 +416,17 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+        ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
         layoutParams2.topToBottom = R.id.rl_gold;
         layoutParams2.topMargin = DensityUtils.a(getContext(), 10.0f);
     }
 
     private final void l() {
-        if (YYRoomInfoManager.e().b() == null || this.f17489a == null) {
+        if (YYRoomInfoManager.e().b() == null || this.a == null) {
             return;
         }
         String str = YYRoomInfoManager.e().b().room_id;
-        final ActivityFragmentActive fragmentActive = this.f17489a.getFragmentActive();
+        final ActivityFragmentActive fragmentActive = this.a.getFragmentActive();
         YYRoomHttpUtils.E(str, new BluedUIHttpResponse<BluedEntityA<Object>>(fragmentActive) { // from class: com.blued.android.module.yy_china.fragment.YYWishDetailDialog$resetWish$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -442,14 +435,14 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
                 LiveEventBus.get("show_create_wish").post("");
                 YYWishDetailDialog.this.dismissAllowingStateLoss();
             }
-        }, this.f17489a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     public final BaseYYStudioFragment f() {
-        return this.f17489a;
+        return this.a;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.view_yy_wish_detail_layout, viewGroup, true);
@@ -459,7 +452,7 @@ public final class YYWishDetailDialog extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

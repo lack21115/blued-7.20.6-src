@@ -12,10 +12,9 @@ public class TextState implements Serializable {
     private int state;
     private String text;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.openalliance.ad.beans.metadata.TextState$1  reason: invalid class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/beans/metadata/TextState$1.class */
-    public static /* synthetic */ class AnonymousClass1 {
+    static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] Code;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */

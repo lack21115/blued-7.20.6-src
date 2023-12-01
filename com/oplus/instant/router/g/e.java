@@ -11,9 +11,9 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.text.TextUtils;
 import com.baidu.mobads.sdk.internal.bw;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsKey;
 import com.google.common.net.HttpHeaders;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.oplus.instant.router.callback.Callback;
 import com.oplus.quickgame.sdk.hall.Constant;
 import java.util.HashMap;
@@ -23,30 +23,29 @@ import java.util.Map;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Handler f24298a;
+    private static Handler f10611a;
     private static Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static com.oplus.instant.router.callback.a f24299c = new com.oplus.instant.router.callback.a();
+    private static com.oplus.instant.router.callback.a f10612c = new com.oplus.instant.router.callback.a();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/instant/router/g/e$a.class */
-    public static final class a implements Runnable {
+    static final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f24300a;
+        final /* synthetic */ Context f10613a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Map f24301c;
+        final /* synthetic */ Map f10614c;
         final /* synthetic */ Map d;
         final /* synthetic */ Map e;
         final /* synthetic */ Map f;
 
         a(Context context, String str, Map map, Map map2, Map map3, Map map4) {
-            this.f24300a = context;
+            this.f10613a = context;
             this.b = str;
-            this.f24301c = map;
+            this.f10614c = map;
             this.d = map2;
             this.e = map3;
             this.f = map4;
@@ -54,32 +53,31 @@ public class e {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (h.c(this.f24300a) < 1100) {
-                e.c(e.f24299c, new Exception("platform not found"));
+            if (h.c(this.f10613a) < 1100) {
+                e.c(e.f10612c, new Exception("platform not found"));
             } else {
-                e.c(this.b, this.f24300a, this.f24301c, this.d, this.e, this.f);
+                e.c(this.b, this.f10613a, this.f10614c, this.d, this.e, this.f);
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/instant/router/g/e$b.class */
-    public static final class b implements Runnable {
+    static final class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f24302a;
+        final /* synthetic */ String f10615a;
         final /* synthetic */ Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Map f24303c;
+        final /* synthetic */ Map f10616c;
         final /* synthetic */ Map d;
         final /* synthetic */ Map e;
         final /* synthetic */ Map f;
 
         b(String str, Context context, Map map, Map map2, Map map3, Map map4) {
-            this.f24302a = str;
+            this.f10615a = str;
             this.b = context;
-            this.f24303c = map;
+            this.f10616c = map;
             this.d = map2;
             this.e = map3;
             this.f = map4;
@@ -87,7 +85,7 @@ public class e {
 
         @Override // java.lang.Runnable
         public void run() {
-            e.d(this.f24302a, this.b, this.f24303c, this.d, this.e, this.f);
+            e.d(this.f10615a, this.b, this.f10616c, this.d, this.e, this.f);
         }
     }
 
@@ -96,11 +94,11 @@ public class e {
     public static final class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f24304a;
+        final /* synthetic */ Context f10617a;
         final /* synthetic */ Intent b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Callback f24305c;
+        final /* synthetic */ Callback f10618c;
 
         /* loaded from: source-8303388-dex2jar.jar:com/oplus/instant/router/g/e$c$a.class */
         class a implements Runnable {
@@ -109,26 +107,26 @@ public class e {
 
             @Override // java.lang.Runnable
             public void run() {
-                e.b(c.this.f24305c);
+                e.b(c.this.f10618c);
             }
         }
 
         c(Context context, Intent intent, Callback callback) {
-            this.f24304a = context;
+            this.f10617a = context;
             this.b = intent;
-            this.f24305c = callback;
+            this.f10618c = callback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
-                if (!(this.f24304a instanceof Activity)) {
+                if (!(this.f10617a instanceof Activity)) {
                     this.b.addFlags(268435456);
                 }
-                this.f24304a.startActivity(this.b);
-                e.f24298a.post(new a());
+                this.f10617a.startActivity(this.b);
+                e.f10611a.post(new a());
             } catch (Exception e) {
-                e.c(this.f24305c, e);
+                e.c(this.f10618c, e);
             }
         }
     }
@@ -138,17 +136,17 @@ public class e {
     public static final class d implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Callback f24307a;
+        final /* synthetic */ Callback f10620a;
         final /* synthetic */ Throwable b;
 
         d(Callback callback, Throwable th) {
-            this.f24307a = callback;
+            this.f10620a = callback;
             this.b = th;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            e.d(this.f24307a, this.b);
+            e.d(this.f10620a, this.b);
         }
     }
 
@@ -187,9 +185,9 @@ public class e {
         }
         sb.append(str3);
         sb.append(parse.getScheme());
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(parse.getHost());
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         sb.append(str2);
         return Uri.parse(sb.toString());
     }
@@ -198,7 +196,7 @@ public class e {
         StringBuilder sb = new StringBuilder();
         for (String str : map.keySet()) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(str);
             sb.append("=");
@@ -250,8 +248,8 @@ public class e {
                         }
                     }
                 }
-                f24299c.a(cVar);
-                f24298a.post(new a(applicationContext, str, map2, map, map3, map4));
+                f10612c.a(cVar);
+                f10611a.post(new a(applicationContext, str, map2, map, map3, map4));
             } catch (Throwable th) {
                 throw th;
             }
@@ -306,9 +304,9 @@ public class e {
         }
         sb.append(str3);
         sb.append(parse.getScheme());
-        sb.append(BridgeUtil.UNDERLINE_STR);
+        sb.append("_");
         sb.append(parse.getHost());
-        sb.append(BridgeUtil.SPLIT_MARK);
+        sb.append("/");
         sb.append(str2);
         return Uri.parse(sb.toString());
     }
@@ -323,8 +321,8 @@ public class e {
 
     public static void b(Context context, String str, Map<String, String> map, Map<String, String> map2, Map<String, String> map3, Map<String, String> map4, Callback callback) {
         c();
-        f24299c.a(callback);
-        f24298a.post(new b(str, context, map2, map, map3, map4));
+        f10612c.a(callback);
+        f10611a.post(new b(str, context, map2, map, map3, map4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -338,14 +336,14 @@ public class e {
     private static void c() {
         synchronized (e.class) {
             try {
-                Handler handler = f24298a;
+                Handler handler = f10611a;
                 if (handler == null || handler.getLooper() == null) {
                     HandlerThread handlerThread = new HandlerThread("instant-req");
                     handlerThread.start();
                     if (handlerThread.getLooper() != null) {
-                        f24298a = new Handler(handlerThread.getLooper());
+                        f10611a = new Handler(handlerThread.getLooper());
                     } else {
-                        f24298a = new Handler();
+                        f10611a = new Handler();
                     }
                 }
             } finally {
@@ -356,7 +354,7 @@ public class e {
     /* JADX INFO: Access modifiers changed from: private */
     public static void c(Callback callback, Throwable th) {
         if (g.a()) {
-            f24298a.post(new d(callback, th));
+            f10611a.post(new d(callback, th));
         } else {
             d(callback, th);
         }
@@ -370,11 +368,12 @@ public class e {
         if (r9.startsWith("hap://") != false) goto L16;
      */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00e1, code lost:
-        a(r12, r10, r9, com.oplus.instant.router.g.e.f24299c);
+        a(r12, r10, r9, com.oplus.instant.router.g.e.f10612c);
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x00ea, code lost:
         return;
      */
+    /* JADX WARN: Multi-variable type inference failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -412,11 +411,11 @@ public class e {
                     String str3 = (String) b2.get(HttpHeaders.ReferrerPolicyValues.ORIGIN);
                     Uri b3 = b(str, com.oplus.instant.router.g.b.a(context, str2, a(b2)));
                     ContentValues a2 = a(context, str, map, map2, map3, map4, str2, str3);
-                    context.getContentResolver().registerContentObserver(b3, false, new com.oplus.instant.router.e.a(context, b2, f24299c, b3));
+                    context.getContentResolver().registerContentObserver(b3, false, new com.oplus.instant.router.e.a(context, b2, f10612c, b3));
                     context.getContentResolver().insert(b3, a2);
                 }
             } catch (Throwable th) {
-                c(f24299c, th);
+                c(f10612c, th);
                 return;
             }
         }
@@ -428,7 +427,7 @@ public class e {
         String str32 = (String) b22.get(HttpHeaders.ReferrerPolicyValues.ORIGIN);
         Uri b32 = b(str, com.oplus.instant.router.g.b.a(context, str22, a(b22)));
         ContentValues a22 = a(context, str, map, map2, map3, map4, str22, str32);
-        context.getContentResolver().registerContentObserver(b32, false, new com.oplus.instant.router.e.a(context, b22, f24299c, b32));
+        context.getContentResolver().registerContentObserver(b32, false, new com.oplus.instant.router.e.a(context, b22, f10612c, b32));
         context.getContentResolver().insert(b32, a22);
     }
 }

@@ -25,15 +25,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.expressad.a;
 import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.RecyclingUtils;
-import com.blued.android.core.ui.ActivityFragmentActive;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.utils.ImageUtils;
 import com.blued.android.framework.utils.LogUtils;
@@ -69,6 +71,7 @@ import com.soft.blued.R;
 import com.soft.blued.ui.find.observer.NearbyFindSetSelectedTab;
 import com.soft.blued.ui.setting.model.UserInfoPostFeedTextInfo;
 import com.soft.blued.ui.web.WebViewShowInfoFragment;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -86,7 +89,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f29801a = new Companion(null);
+    public static final Companion f16111a = new Companion(null);
     private LinearLayout A;
     private LinearLayout B;
     private LinearLayout C;
@@ -99,7 +102,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CardView f29802c;
+    private CardView f16112c;
     private View d;
     private View e;
     private TextView f;
@@ -152,31 +155,31 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             } else if (CommunityPreferences.J() > b) {
                 LogUtils.c("当周已显示过模态弹层: " + CommunityPreferences.J() + " > " + b);
             } else {
-                LogUtils.c(Intrinsics.a("本周显示过模态弹层次数：", (Object) Integer.valueOf(CommunityPreferences.K())));
+                LogUtils.c(Intrinsics.a("本周显示过模态弹层次数：", Integer.valueOf(CommunityPreferences.K())));
                 if (CommunityPreferences.K() >= 2) {
                     LogUtils.c("所有类型的模态弹层，一周之内总计不能展示超过2次");
                 } else if (CommunityPreferences.I() >= a2) {
                     LogUtils.c("若一个uid今日已经看过模态弹层，但是未点击，次日不可再弹出模态弹层");
                 } else {
-                    LogUtils.c(Intrinsics.a("上次显示的模态弹层时间是", (Object) Long.valueOf(CommunityPreferences.H())));
-                    LogUtils.c(Intrinsics.a("上次显示的模态弹层类型是", (Object) Integer.valueOf(CommunityPreferences.N())));
-                    Iterator<NearbyGuideModel> it = CommunityManager.f19086a.a().g().iterator();
+                    LogUtils.c(Intrinsics.a("上次显示的模态弹层时间是", Long.valueOf(CommunityPreferences.H())));
+                    LogUtils.c(Intrinsics.a("上次显示的模态弹层类型是", Integer.valueOf(CommunityPreferences.N())));
+                    Iterator it = CommunityManager.a.a().g().iterator();
                     while (true) {
                         nearbyGuideModel = null;
                         if (!it.hasNext()) {
                             break;
                         }
-                        nearbyGuideModel = it.next();
+                        nearbyGuideModel = (NearbyGuideModel) it.next();
                         if (a2 - CommunityPreferences.H() != 1 || nearbyGuideModel.getType() != CommunityPreferences.N()) {
                             break;
                         }
                         LogUtils.c("同一类型的模态弹层，需求隔天显示");
                     }
                     if (nearbyGuideModel == null) {
-                        CommunityManager.f19086a.a().g().clear();
+                        CommunityManager.a.a().g().clear();
                         return;
                     }
-                    LogUtils.c(Intrinsics.a("本次显示的模态弹层类型是", (Object) Integer.valueOf(nearbyGuideModel.getType())));
+                    LogUtils.c(Intrinsics.a("本次显示的模态弹层类型是", Integer.valueOf(nearbyGuideModel.getType())));
                     FragmentManager fragmentManager = baseFragment.getFragmentManager();
                     if (fragmentManager == null) {
                         return;
@@ -191,7 +194,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     CommunityPreferences.b(a2);
                     CommunityPreferences.b(nearbyGuideModel.getType());
                     CommunityPreferences.c(a2 + 1);
-                    CommunityManager.f19086a.a().g().clear();
+                    CommunityManager.a.a().g().clear();
                 }
             }
         }
@@ -207,13 +210,13 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         Bitmap createBitmap = Bitmap.createBitmap(view.getMeasuredWidth(), view.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
         view.draw(new Canvas(createBitmap));
         Bitmap a2 = ImageUtils.a((int) R.drawable.nearby_guide_no_posted_feed_dlg_bg, FeedMethods.c(232), FeedMethods.c(222));
-        Bitmap newBitmap = Bitmap.createBitmap(FeedMethods.c(232), FeedMethods.c(232), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(newBitmap);
+        Bitmap createBitmap2 = Bitmap.createBitmap(FeedMethods.c(232), FeedMethods.c(232), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap2);
         canvas.drawARGB(255, 255, 255, 255);
         canvas.drawBitmap(a2, 0.0f, 0.0f, (Paint) null);
         canvas.drawBitmap(createBitmap, (FeedMethods.c(232) - view.getMeasuredWidth()) / 2.0f, (FeedMethods.c(232) - view.getMeasuredHeight()) / 2.0f, (Paint) null);
-        Intrinsics.c(newBitmap, "newBitmap");
-        return newBitmap;
+        Intrinsics.c(createBitmap2, "newBitmap");
+        return createBitmap2;
     }
 
     private final void a(float f) {
@@ -221,14 +224,14 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         if (i != 0) {
             dismissAllowingStateLoss();
         }
-        CommEventBusUtil.f20461a.a(i);
-        LogUtils.c(Intrinsics.a("onClickBottom: ", (Object) Integer.valueOf(i)));
+        CommEventBusUtil.f6855a.a(i);
+        LogUtils.c(Intrinsics.a("onClickBottom: ", Integer.valueOf(i)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(Context it) {
-        Intrinsics.e(it, "$it");
-        SignFeedListFragment.b.a(it, "", 9);
+    public static final void a(Context context) {
+        Intrinsics.e(context, "$it");
+        SignFeedListFragment.b.a(context, "", 9);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x00df, code lost:
@@ -252,7 +255,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         if (feedPostSignStateItem != null) {
             this.I = feedPostSignStateItem.getBubble_state_id();
             FeedPostSignStateItem feedPostSignStateItem2 = this.D;
-            LogUtils.c(Intrinsics.a("onBubbleSelected:", (Object) (feedPostSignStateItem2 == null ? null : feedPostSignStateItem2.getName())));
+            LogUtils.c(Intrinsics.a("onBubbleSelected:", feedPostSignStateItem2 == null ? null : feedPostSignStateItem2.getName()));
         }
         CommonMultiItemAdapter<FeedPostSignStateItem> commonMultiItemAdapter = this.n;
         if (commonMultiItemAdapter == null) {
@@ -262,16 +265,16 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FeedPostSignStateItem model, Context it, NearbyGuideDlgFragment this$0) {
-        Intrinsics.e(model, "$model");
-        Intrinsics.e(it, "$it");
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(FeedPostSignStateItem feedPostSignStateItem, Context context, NearbyGuideDlgFragment nearbyGuideDlgFragment) {
+        Intrinsics.e(feedPostSignStateItem, "$model");
+        Intrinsics.e(context, "$it");
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
         Bundle bundle = new Bundle();
-        bundle.putSerializable("selected_model", model);
+        bundle.putSerializable("selected_model", (Serializable) feedPostSignStateItem);
         bundle.putInt("page_from", 2);
-        FeedPostSignBaseFragment.a(it, bundle);
-        this$0.dismissAllowingStateLoss();
-        FeedConstants.f19822c = 1;
+        FeedPostSignBaseFragment.a(context, bundle);
+        nearbyGuideDlgFragment.dismissAllowingStateLoss();
+        FeedConstants.c = 1;
     }
 
     private final void a(CommBundleBuilder commBundleBuilder) {
@@ -338,12 +341,12 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                 String str3 = "今天 " + ((Object) str2) + " 是我的生日";
                 canvas.drawText(str3, (f - textPaint.measureText(str3)) / 2.0f, FeedMethods.c(168), textPaint);
                 canvas.drawText("小哥哥，求祝福~", (f - textPaint.measureText("小哥哥，求祝福~")) / 2.0f, FeedMethods.c(190), textPaint);
-                String a4 = Intrinsics.a(RecyclingUtils.e("photo"), (Object) "/GuideBirthdaySendFeed.png");
+                String a4 = Intrinsics.a(RecyclingUtils.e("photo"), "/GuideBirthdaySendFeed.png");
                 String str4 = a4;
                 if (!ImageUtils.a(createBitmap, a4, Bitmap.CompressFormat.PNG)) {
                     str4 = "";
                 }
-                LogUtils.c(Intrinsics.a("createBirthdayPicFile. imgPath: ", (Object) str4));
+                LogUtils.c(Intrinsics.a("createBirthdayPicFile. imgPath: ", str4));
                 if (!TextUtils.isEmpty(str4)) {
                     NewFeedModel newFeedModel = new NewFeedModel();
                     newFeedModel.setPics(str4);
@@ -351,7 +354,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     newFeedModel.tt_type = 5;
                     commBundleBuilder.a(newFeedModel);
                 }
-                LogUtils.c(Intrinsics.a("createBirthdayPicFile. FeedAddPostFragment.show: ", (Object) str4));
+                LogUtils.c(Intrinsics.a("createBirthdayPicFile. FeedAddPostFragment.show: ", str4));
             } catch (Exception e) {
                 e = e;
                 str = "createBirthdayPicFile";
@@ -369,16 +372,16 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(NearbyGuideDlgFragment this$0, View view) {
+    public static final void a(NearbyGuideDlgFragment nearbyGuideDlgFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.i();
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        nearbyGuideDlgFragment.i();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(NearbyGuideDlgFragment this$0, Boolean bool) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.j();
+    public static final void a(NearbyGuideDlgFragment nearbyGuideDlgFragment, Boolean bool) {
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        nearbyGuideDlgFragment.j();
     }
 
     private final void a(String str, String str2) {
@@ -440,7 +443,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                 marginLayoutParams.topMargin = FeedMethods.c(22);
             }
             int lineStart = a2.getLineStart(1) + 1;
-            Intrinsics.a((Object) str);
+            Intrinsics.a(str);
             if (str.length() > lineStart) {
                 String substring = str.substring(lineStart);
                 Intrinsics.c(substring, "this as java.lang.String).substring(startIndex)");
@@ -504,18 +507,18 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         }
         linearLayout.removeAllViews();
         linearLayout.setGravity(17);
-        Iterator<UserInfoPostFeedTextInfo> it = arrayList.iterator();
+        Iterator<T> it = arrayList.iterator();
         int i = 0;
         while (true) {
             int i2 = i;
             if (!it.hasNext()) {
                 return;
             }
-            UserInfoPostFeedTextInfo next = it.next();
+            Object next = it.next();
             if (i2 < 0) {
                 CollectionsKt.c();
             }
-            UserInfoPostFeedTextInfo userInfoPostFeedTextInfo = next;
+            UserInfoPostFeedTextInfo userInfoPostFeedTextInfo = (UserInfoPostFeedTextInfo) next;
             ShapeTextView shapeTextView = new ShapeTextView(context);
             shapeTextView.setText(userInfoPostFeedTextInfo.getContentList().get(0));
             shapeTextView.setMaxLines(1);
@@ -534,7 +537,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             if (i2 != 0) {
                 layoutParams.setMarginStart(FeedMethods.c(r()));
             }
-            linearLayout.addView(shapeTextView, layoutParams);
+            linearLayout.addView((View) shapeTextView, layoutParams);
             i = i2 + 1;
         }
     }
@@ -542,18 +545,18 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     private final void a(List<TagModel> list) {
         String name;
         ArrayList arrayList = new ArrayList();
-        Iterator<TagModel> it = list.iterator();
+        Iterator<T> it = list.iterator();
         int i = 0;
         while (true) {
             int i2 = i;
             if (!it.hasNext()) {
                 break;
             }
-            TagModel next = it.next();
+            Object next = it.next();
             if (i2 < 0) {
                 CollectionsKt.c();
             }
-            TagModel tagModel = next;
+            TagModel tagModel = (TagModel) next;
             if (tagModel != null && (name = tagModel.getName()) != null) {
                 UserInfoPostFeedTextInfo userInfoPostFeedTextInfo = new UserInfoPostFeedTextInfo();
                 if (arrayList.size() == 0) {
@@ -565,7 +568,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     userInfoPostFeedTextInfo.setOriginTopBottomMargin(FeedMethods.a(5.7f));
                     userInfoPostFeedTextInfo.setRealTextSize(13.2f);
                     userInfoPostFeedTextInfo.setSort(2);
-                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(name));
+                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(new String[]{name}));
                     arrayList.add(userInfoPostFeedTextInfo);
                 } else if (arrayList.size() == 1) {
                     userInfoPostFeedTextInfo.setFactor(0.9230769f);
@@ -576,7 +579,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     userInfoPostFeedTextInfo.setOriginTopBottomMargin(FeedMethods.a(5.2f));
                     userInfoPostFeedTextInfo.setRealTextSize(11.9f);
                     userInfoPostFeedTextInfo.setSort(4);
-                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(name));
+                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(new String[]{name}));
                     arrayList.add(userInfoPostFeedTextInfo);
                 } else if (arrayList.size() == 2) {
                     userInfoPostFeedTextInfo.setFactor(0.7692308f);
@@ -587,7 +590,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     userInfoPostFeedTextInfo.setOriginTopBottomMargin(FeedMethods.a(4.8f));
                     userInfoPostFeedTextInfo.setRealTextSize(10.6f);
                     userInfoPostFeedTextInfo.setSort(6);
-                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(name));
+                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(new String[]{name}));
                     arrayList.add(userInfoPostFeedTextInfo);
                 } else if (arrayList.size() == 3) {
                     userInfoPostFeedTextInfo.setFactor(0.74615383f);
@@ -598,7 +601,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     userInfoPostFeedTextInfo.setOriginTopBottomMargin(FeedMethods.a(4.0f));
                     userInfoPostFeedTextInfo.setRealTextSize(9.7f);
                     userInfoPostFeedTextInfo.setSort(5);
-                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(name));
+                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(new String[]{name}));
                     arrayList.add(userInfoPostFeedTextInfo);
                 } else if (arrayList.size() == 4) {
                     userInfoPostFeedTextInfo.setFactor(0.6769231f);
@@ -609,7 +612,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     userInfoPostFeedTextInfo.setOriginTopBottomMargin(FeedMethods.a(3.7f));
                     userInfoPostFeedTextInfo.setRealTextSize(8.8f);
                     userInfoPostFeedTextInfo.setSort(3);
-                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(name));
+                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(new String[]{name}));
                     arrayList.add(userInfoPostFeedTextInfo);
                 } else if (arrayList.size() == 5) {
                     userInfoPostFeedTextInfo.setFactor(0.6f);
@@ -620,7 +623,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     userInfoPostFeedTextInfo.setOriginTopBottomMargin(FeedMethods.a(3.5f));
                     userInfoPostFeedTextInfo.setRealTextSize(7.8f);
                     userInfoPostFeedTextInfo.setSort(1);
-                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(name));
+                    userInfoPostFeedTextInfo.getContentList().addAll(CollectionsKt.c(new String[]{name}));
                     arrayList.add(userInfoPostFeedTextInfo);
                 }
             }
@@ -629,16 +632,16 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         Collections.sort(arrayList, new Comparator<UserInfoPostFeedTextInfo>() { // from class: com.soft.blued.ui.community.view.NearbyGuideDlgFragment$sortTagInfo$2
             @Override // java.util.Comparator
             /* renamed from: a */
-            public int compare(UserInfoPostFeedTextInfo o1, UserInfoPostFeedTextInfo o2) {
-                Intrinsics.e(o1, "o1");
-                Intrinsics.e(o2, "o2");
-                return o1.getSort() < o2.getSort() ? -1 : 1;
+            public int compare(UserInfoPostFeedTextInfo userInfoPostFeedTextInfo2, UserInfoPostFeedTextInfo userInfoPostFeedTextInfo3) {
+                Intrinsics.e(userInfoPostFeedTextInfo2, "o1");
+                Intrinsics.e(userInfoPostFeedTextInfo3, "o2");
+                return userInfoPostFeedTextInfo2.getSort() < userInfoPostFeedTextInfo3.getSort() ? -1 : 1;
             }
         });
         ArrayList<ArrayList<UserInfoPostFeedTextInfo>> arrayList2 = new ArrayList<>();
         ArrayList<UserInfoPostFeedTextInfo> arrayList3 = new ArrayList<>();
         ArrayList<UserInfoPostFeedTextInfo> arrayList4 = new ArrayList<>();
-        Iterator<E> it2 = arrayList.iterator();
+        Iterator it2 = arrayList.iterator();
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -668,10 +671,10 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean a(NearbyGuideDlgFragment this$0, View view, MotionEvent motionEvent) {
-        Intrinsics.e(this$0, "this$0");
+    public static final boolean a(NearbyGuideDlgFragment nearbyGuideDlgFragment, View view, MotionEvent motionEvent) {
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
         if (motionEvent.getAction() == 1) {
-            this$0.a(motionEvent.getX());
+            nearbyGuideDlgFragment.a(motionEvent.getX());
             return true;
         }
         return true;
@@ -728,12 +731,12 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                 if (nearbyGuideModel != null && (text = nearbyGuideModel.getText()) != null) {
                     canvas.drawText(text, (c2 - textPaint.measureText(text)) / 2.0f, c3 - FeedMethods.c(54), textPaint);
                 }
-                String a3 = Intrinsics.a(RecyclingUtils.e("photo"), (Object) "/GuideAnniversarySendFeed.png");
+                String a3 = Intrinsics.a(RecyclingUtils.e("photo"), "/GuideAnniversarySendFeed.png");
                 String str2 = a3;
                 if (!ImageUtils.a(createBitmap, a3, Bitmap.CompressFormat.PNG)) {
                     str2 = "";
                 }
-                LogUtils.c(Intrinsics.a("createAnniversaryPicFile. imgPath: ", (Object) str2));
+                LogUtils.c(Intrinsics.a("createAnniversaryPicFile. imgPath: ", str2));
                 if (!TextUtils.isEmpty(str2)) {
                     NewFeedModel newFeedModel = new NewFeedModel();
                     newFeedModel.setPics(str2);
@@ -741,7 +744,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                     newFeedModel.tt_type = 6;
                     commBundleBuilder.a(newFeedModel);
                 }
-                LogUtils.c(Intrinsics.a("createAnniversaryPicFile. FeedAddPostFragment.show: ", (Object) str2));
+                LogUtils.c(Intrinsics.a("createAnniversaryPicFile. FeedAddPostFragment.show: ", str2));
             } catch (Exception e) {
                 e = e;
                 str = "createAnniversaryPicFile";
@@ -759,16 +762,16 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(NearbyGuideDlgFragment this$0, View view) {
+    public static final void b(NearbyGuideDlgFragment nearbyGuideDlgFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.v();
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        nearbyGuideDlgFragment.v();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(NearbyGuideDlgFragment this$0, Boolean bool) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.k();
+    public static final void b(NearbyGuideDlgFragment nearbyGuideDlgFragment, Boolean bool) {
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        nearbyGuideDlgFragment.k();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -777,45 +780,45 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void g(NearbyGuideDlgFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        NearbyGuideModel nearbyGuideModel = this$0.F;
+    public static final void g(NearbyGuideDlgFragment nearbyGuideDlgFragment) {
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        NearbyGuideModel nearbyGuideModel = nearbyGuideDlgFragment.F;
         if (nearbyGuideModel != null) {
-            WebViewShowInfoFragment.show(this$0.getContext(), nearbyGuideModel.getUrl());
+            WebViewShowInfoFragment.show(nearbyGuideDlgFragment.getContext(), nearbyGuideModel.getUrl());
         }
-        this$0.dismissAllowingStateLoss();
+        nearbyGuideDlgFragment.dismissAllowingStateLoss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void h(NearbyGuideDlgFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        NearbyGuideModel nearbyGuideModel = this$0.F;
+    public static final void h(NearbyGuideDlgFragment nearbyGuideDlgFragment) {
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        NearbyGuideModel nearbyGuideModel = nearbyGuideDlgFragment.F;
         if (nearbyGuideModel != null) {
             CommBundleBuilder commBundleBuilder = new CommBundleBuilder();
-            commBundleBuilder.b(nearbyGuideModel.getType()).a(this$0.G);
+            commBundleBuilder.b(nearbyGuideModel.getType()).a(nearbyGuideDlgFragment.G);
             BluedTopic bluedTopic = null;
             if (nearbyGuideModel.getType() == 17) {
-                this$0.a(commBundleBuilder);
-                NearbyGuideModel nearbyGuideModel2 = this$0.F;
+                nearbyGuideDlgFragment.a(commBundleBuilder);
+                NearbyGuideModel nearbyGuideModel2 = nearbyGuideDlgFragment.F;
                 if (nearbyGuideModel2 != null) {
                     bluedTopic = nearbyGuideModel2.getTopics_data();
                 }
-                this$0.H = bluedTopic;
+                nearbyGuideDlgFragment.H = bluedTopic;
             } else if (nearbyGuideModel.getType() == 19) {
-                this$0.b(commBundleBuilder);
-                NearbyGuideModel nearbyGuideModel3 = this$0.F;
-                this$0.H = nearbyGuideModel3 == null ? null : nearbyGuideModel3.getTopics_data();
+                nearbyGuideDlgFragment.b(commBundleBuilder);
+                NearbyGuideModel nearbyGuideModel3 = nearbyGuideDlgFragment.F;
+                nearbyGuideDlgFragment.H = nearbyGuideModel3 == null ? null : nearbyGuideModel3.getTopics_data();
             }
-            commBundleBuilder.a(this$0.H);
-            FeedAddPostFragment.a(this$0.getContext(), commBundleBuilder);
+            commBundleBuilder.a(nearbyGuideDlgFragment.H);
+            FeedAddPostFragment.a(nearbyGuideDlgFragment.getContext(), commBundleBuilder);
         }
-        this$0.dismissAllowingStateLoss();
+        nearbyGuideDlgFragment.dismissAllowingStateLoss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void i(NearbyGuideDlgFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        View view = this$0.b;
+    public static final void i(NearbyGuideDlgFragment nearbyGuideDlgFragment) {
+        Intrinsics.e(nearbyGuideDlgFragment, "this$0");
+        View view = nearbyGuideDlgFragment.b;
         if (view != null) {
             view.setVisibility(0);
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "alpha", 0.0f, 1.0f);
@@ -824,7 +827,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             objectAnimator.setDuration(500L);
             objectAnimator.start();
         }
-        CardView cardView = this$0.f29802c;
+        CardView cardView = nearbyGuideDlgFragment.f16112c;
         if (cardView == null) {
             return;
         }
@@ -838,7 +841,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         View d = d();
         this.b = d == null ? null : d.findViewById(R.id.nearby_common_guide_bg_ly_id);
         View d2 = d();
-        this.f29802c = d2 == null ? null : (CardView) d2.findViewById(R.id.nearby_common_guide_content_ly_id);
+        this.f16112c = d2 == null ? null : (CardView) d2.findViewById(R.id.nearby_common_guide_content_ly_id);
         View d3 = d();
         this.d = d3 == null ? null : d3.findViewById(R.id.nearby_common_guide_content_bg_id);
         View d4 = d();
@@ -871,9 +874,9 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             view.setVisibility(8);
         }
         View d16 = d();
-        this.t = d16 == null ? null : d16.findViewById(2131364186);
+        this.t = d16 == null ? null : d16.findViewById(R.id.guide_layout);
         View d17 = d();
-        this.u = d17 == null ? null : (ImageView) d17.findViewById(2131368925);
+        this.u = d17 == null ? null : (ImageView) d17.findViewById(R.id.pop_guide_iv);
         View d18 = d();
         this.v = d18 == null ? null : (ImageView) d18.findViewById(R.id.nearby_common_guide_birthday_avatar);
         View d19 = d();
@@ -890,10 +893,10 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         this.B = d24 == null ? null : (LinearLayout) d24.findViewById(R.id.ll_tag_1);
         View d25 = d();
         this.C = d25 == null ? null : (LinearLayout) d25.findViewById(R.id.ll_tag_2);
-        boolean s = CommunityManager.f19086a.a().s();
+        boolean s = CommunityManager.a.a().s();
         this.E = s;
         if (s) {
-            CardView cardView = this.f29802c;
+            CardView cardView = this.f16112c;
             if (cardView != null) {
                 cardView.setCardBackgroundColor(getResources().getColor(2131101478));
             }
@@ -908,7 +911,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             textView.setTextColor(getResources().getColor(2131101681));
             return;
         }
-        CardView cardView2 = this.f29802c;
+        CardView cardView2 = this.f16112c;
         if (cardView2 != null) {
             cardView2.setCardBackgroundColor(getResources().getColor(2131102478));
         }
@@ -955,7 +958,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                 }
             });
         }
-        CardView cardView = this.f29802c;
+        CardView cardView = this.f16112c;
         if (cardView != null) {
             cardView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.community.view.-$$Lambda$NearbyGuideDlgFragment$CYo6d77i_zLfYXVIdeWs6RUSbeo
                 @Override // android.view.View.OnClickListener
@@ -982,14 +985,14 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                 }
             });
         }
-        NearbyGuideDlgFragment nearbyGuideDlgFragment = this;
-        LiveEventBus.get("NearbyGuideDlgShowCloseGuide", Boolean.TYPE).observe(nearbyGuideDlgFragment, new Observer() { // from class: com.soft.blued.ui.community.view.-$$Lambda$NearbyGuideDlgFragment$b9K6b3JI5OISyX-BAMuC-MPtJzU
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("NearbyGuideDlgShowCloseGuide", Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.community.view.-$$Lambda$NearbyGuideDlgFragment$b9K6b3JI5OISyX-BAMuC-MPtJzU
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 NearbyGuideDlgFragment.a(NearbyGuideDlgFragment.this, (Boolean) obj);
             }
         });
-        LiveEventBus.get("NearbyGuideDlgHideCloseGuide", Boolean.TYPE).observe(nearbyGuideDlgFragment, new Observer() { // from class: com.soft.blued.ui.community.view.-$$Lambda$NearbyGuideDlgFragment$LQlXdSaHuEny4crbOzvfjLkY4a0
+        LiveEventBus.get("NearbyGuideDlgHideCloseGuide", Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.community.view.-$$Lambda$NearbyGuideDlgFragment$LQlXdSaHuEny4crbOzvfjLkY4a0
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 NearbyGuideDlgFragment.b(NearbyGuideDlgFragment.this, (Boolean) obj);
@@ -1028,7 +1031,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         if (recyclerView3 != null) {
             recyclerView3.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.community.view.NearbyGuideDlgFragment$initRecycleView$1
                 /* JADX WARN: Code restructure failed: missing block: B:4:0x0010, code lost:
-                    r0 = r4.f29804a.o;
+                    r0 = r4.f16114a.o;
                  */
                 @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                 /*
@@ -1179,7 +1182,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         if (str == null) {
             str2 = "";
         }
-        ImageLoader.a(a(), str2).a(40.0f).b(R.drawable.icon_default_user_avatar).d(R.drawable.icon_default_user_avatar).a(this.v);
+        ImageLoader.a(a(), str2).a(40.0f).b((int) R.drawable.icon_default_user_avatar).d((int) R.drawable.icon_default_user_avatar).a(this.v);
         ImageView imageView = this.j;
         if (imageView == null) {
             return;
@@ -1202,10 +1205,10 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         }
         NearbyGuideModel nearbyGuideModel = this.F;
         if ((nearbyGuideModel == null ? null : nearbyGuideModel.getImage()) != null) {
-            ActivityFragmentActive a2 = a();
+            IRequestHost a2 = a();
             NearbyGuideModel nearbyGuideModel2 = this.F;
             String image = nearbyGuideModel2 == null ? null : nearbyGuideModel2.getImage();
-            Intrinsics.a((Object) image);
+            Intrinsics.a(image);
             ImageLoader.a(a2, image).a(this.x);
         }
         ImageView imageView2 = this.j;
@@ -1250,7 +1253,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             a(new Runnable() { // from class: com.soft.blued.ui.community.view.-$$Lambda$NearbyGuideDlgFragment$dvMrhfVIYtertJDgfy8rJnJV6Ak
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NearbyGuideDlgFragment.a(FeedPostSignStateItem.this, context, this);
+                    NearbyGuideDlgFragment.a(feedPostSignStateItem, context, this);
                 }
             }, 250L);
             this.I = feedPostSignStateItem.getBubble_state_id();
@@ -1259,7 +1262,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
     }
 
     private final void u() {
-        ArrayList<FeedPostSignStateItem> bubble_data;
+        ArrayList bubble_data;
         int i;
         FeedPostSignStateItem feedPostSignStateItem;
         RecyclerView recyclerView;
@@ -1268,18 +1271,18 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             return;
         }
         int i2 = -1;
-        Iterator<FeedPostSignStateItem> it = bubble_data.iterator();
+        Iterator it = bubble_data.iterator();
         while (true) {
             i = i2;
             feedPostSignStateItem = null;
             if (!it.hasNext()) {
                 break;
             }
-            feedPostSignStateItem = it.next();
+            feedPostSignStateItem = (FeedPostSignStateItem) it.next();
             i = i2 + 1;
             i2 = i;
             if (feedPostSignStateItem.getCheck() == 1) {
-                LogUtils.c(Intrinsics.a("模态弹层冒泡默认选中：", (Object) Integer.valueOf(i)));
+                LogUtils.c(Intrinsics.a("模态弹层冒泡默认选中：", Integer.valueOf(i)));
                 break;
             }
         }
@@ -1324,7 +1327,7 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
                 if (nearbyGuideModel2.getType() == 18 && this.A != null) {
                     NewFeedModel newFeedModel = new NewFeedModel();
                     newFeedModel.setLoadName(CommonStringUtils.c(UserInfoUtils.c()));
-                    String a2 = Intrinsics.a(RecyclingUtils.e("photo"), (Object) "/noPostedFeedGuide.png");
+                    String a2 = Intrinsics.a(RecyclingUtils.e("photo"), "/noPostedFeedGuide.png");
                     LinearLayout linearLayout = this.A;
                     Intrinsics.a(linearLayout);
                     if (!ImageUtils.a(a(linearLayout), a2, Bitmap.CompressFormat.PNG)) {
@@ -1399,19 +1402,19 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
             objectAnimator.setDuration(500L);
             objectAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.ui.community.view.NearbyGuideDlgFragment$dismissAnim$1$1
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationEnd(Animator animation) {
-                    Intrinsics.e(animation, "animation");
+                public void onAnimationEnd(Animator animator) {
+                    Intrinsics.e(animator, "animation");
                     NearbyGuideDlgFragment.this.dismissAllowingStateLoss();
                 }
 
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-                public void onAnimationStart(Animator animation) {
-                    Intrinsics.e(animation, "animation");
+                public void onAnimationStart(Animator animator) {
+                    Intrinsics.e(animator, "animation");
                 }
             });
             objectAnimator.start();
         }
-        CardView cardView = this.f29802c;
+        CardView cardView = this.f16112c;
         if (cardView == null) {
             return;
         }
@@ -1431,19 +1434,16 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         NearbyFindSetSelectedTab.a().a(1);
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog
     public int e() {
         return R.layout.nearby_common_guide_layout;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog
     public void f() {
         super.f();
         Bundle arguments = getArguments();
-        this.F = (NearbyGuideModel) (arguments == null ? null : arguments.getSerializable("guide_model"));
+        this.F = arguments == null ? null : arguments.getSerializable("guide_model");
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog
     public void i() {
         x();
     }
@@ -1467,9 +1467,8 @@ public final class NearbyGuideDlgFragment extends CommFullScreenDialog {
         view.setVisibility(8);
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         super.onViewCreated(view, bundle);
         l();
         m();

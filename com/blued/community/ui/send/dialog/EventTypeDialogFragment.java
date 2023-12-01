@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -32,13 +33,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/EventTypeDialogFragment.class */
 public final class EventTypeDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19915a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f19916c = LazyKt.a(new Function0<DialogEventTypeBinding>() { // from class: com.blued.community.ui.send.dialog.EventTypeDialogFragment$viewBinding$2
+    private final Lazy c = LazyKt.a(new Function0<DialogEventTypeBinding>() { // from class: com.blued.community.ui.send.dialog.EventTypeDialogFragment$viewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -106,7 +103,7 @@ public final class EventTypeDialogFragment extends BottomSheetDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(EventTypeDialogFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.e(this$0, "this$0");
-        this$0.j().h().setValue(this$0.k().getData().get(i).getType_id());
+        this$0.j().h().setValue(((EventAddPostTypeModel) this$0.k().getData().get(i)).getType_id());
         this$0.dismiss();
     }
 
@@ -130,26 +127,25 @@ public final class EventTypeDialogFragment extends BottomSheetDialogFragment {
     }
 
     private final void l() {
-        EventTypeDialogFragment eventTypeDialogFragment = this;
-        LifecycleExtKt.b(eventTypeDialogFragment, j().g(), new EventTypeDialogFragment$initData$1(this));
-        LifecycleExtKt.a(eventTypeDialogFragment, j().h(), new EventTypeDialogFragment$initData$2(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.b(lifecycleOwner, j().g(), new EventTypeDialogFragment$initData$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().h(), new EventTypeDialogFragment$initData$2(this));
     }
 
     private final void m() {
-        i().f18799a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$EventTypeDialogFragment$4ex7HXRbmuv_35HsBGJtdt9dv9Y
+        i().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$EventTypeDialogFragment$4ex7HXRbmuv_35HsBGJtdt9dv9Y
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EventTypeDialogFragment.a(EventTypeDialogFragment.this, view);
             }
         });
         k().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$EventTypeDialogFragment$pV_JEd11gXhUofdst32bbq8wbwQ
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 EventTypeDialogFragment.a(EventTypeDialogFragment.this, baseQuickAdapter, view, i);
             }
         });
-        i().f18800c.setLayoutManager(new GridLayoutManager(getContext(), 4));
-        i().f18800c.setAdapter(k());
+        i().c.setLayoutManager(new GridLayoutManager(getContext(), 4));
+        i().c.setAdapter(k());
     }
 
     public final int h() {
@@ -158,7 +154,7 @@ public final class EventTypeDialogFragment extends BottomSheetDialogFragment {
     }
 
     public final DialogEventTypeBinding i() {
-        return (DialogEventTypeBinding) this.f19916c.getValue();
+        return (DialogEventTypeBinding) this.c.getValue();
     }
 
     public final EventAddPostViewModel j() {
@@ -169,7 +165,7 @@ public final class EventTypeDialogFragment extends BottomSheetDialogFragment {
         return (EventAddPostTypeAdapter) this.e.getValue();
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

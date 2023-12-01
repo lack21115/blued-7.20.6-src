@@ -14,11 +14,11 @@ import com.soft.blued.ui.find.view.ExpandLinearLayout;
 public final class LayoutFilterCommonPhotoGridViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PhotoGridView f29389a;
+    public final PhotoGridView f15699a;
     public final PhotoGridView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29390c;
+    public final ImageView f15700c;
     public final ExpandLinearLayout d;
     public final RelativeLayout e;
     public final TextView f;
@@ -29,9 +29,9 @@ public final class LayoutFilterCommonPhotoGridViewBinding implements ViewBinding
 
     private LayoutFilterCommonPhotoGridViewBinding(LinearLayout linearLayout, PhotoGridView photoGridView, PhotoGridView photoGridView2, ImageView imageView, ExpandLinearLayout expandLinearLayout, RelativeLayout relativeLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.j = linearLayout;
-        this.f29389a = photoGridView;
+        this.f15699a = photoGridView;
         this.b = photoGridView2;
-        this.f29390c = imageView;
+        this.f15700c = imageView;
         this.d = expandLinearLayout;
         this.e = relativeLayout;
         this.f = textView;

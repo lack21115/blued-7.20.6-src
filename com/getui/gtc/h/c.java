@@ -37,25 +37,25 @@ public final class c {
                 if (!TextUtils.isEmpty(str)) {
                     jSONObject2.put("gtcid", str);
                 }
-                unused = b.a.f22037a;
+                unused = b.a.f8430a;
                 String str2 = (String) DimManager.getInstance().get(new DimRequest.Builder().key("dim-2-1-5-1").useExpiredCacheForReserve(true).build());
                 if (!TextUtils.isEmpty(str2)) {
                     jSONObject2.put("oaid", str2);
                 }
-                jSONObject2.put("gtAppid", com.getui.gtc.c.b.f21920a);
+                jSONObject2.put("gtAppid", com.getui.gtc.c.b.f8313a);
                 jSONObject2.put("pkgName", GtcProvider.context().getPackageName());
                 jSONObject2.put(bh.x, "android");
-                unused2 = b.a.f22037a;
+                unused2 = b.a.f8430a;
                 String str3 = (String) DimManager.getInstance().get(new DimRequest.Builder().key("dim-2-1-8-1").useExpiredCacheForReserve(true).build());
                 if (!TextUtils.isEmpty(str3)) {
                     jSONObject2.put("androidAid", str3);
                 }
-                unused3 = b.a.f22037a;
+                unused3 = b.a.f8430a;
                 String str4 = (String) DimManager.getInstance().get(new DimRequest.Builder().key("dim-2-1-10-1").useExpiredCacheForReserve(true).build());
                 if (!TextUtils.isEmpty(str4)) {
                     jSONObject2.put("phoneModel", str4);
                 }
-                JSONObject jSONObject3 = new JSONObject(d.f22027a.newCall(new Request.Builder().url(String.format("%s/cidserver/getcid", server)).method("POST").body(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jSONObject.toString())).cryptInterceptor(new PtRASCryptoInterceptor(com.getui.gtc.c.b.i, com.getui.gtc.c.b.h)).tag("register gtcid").build()).execute().body().string());
+                JSONObject jSONObject3 = new JSONObject(d.f8420a.newCall(new Request.Builder().url(String.format("%s/cidserver/getcid", server)).method("POST").body(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jSONObject.toString())).cryptInterceptor(new PtRASCryptoInterceptor(com.getui.gtc.c.b.i, com.getui.gtc.c.b.h)).tag("register gtcid").build()).execute().body().string());
                 int i = jSONObject3.getInt("errno");
                 String string = jSONObject3.getString("errmsg");
                 if (i == 0) {
@@ -77,7 +77,7 @@ public final class c {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    String a2 = c.a(String.this);
+                    String a2 = c.a(str);
                     if (aVar != null) {
                         aVar.a(a2);
                     }

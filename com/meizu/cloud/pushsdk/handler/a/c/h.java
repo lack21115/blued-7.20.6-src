@@ -24,16 +24,16 @@ public class h implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private b f24155a;
+    private b f10540a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24156c;
+    private int f10541c;
 
     protected h(Parcel parcel) {
-        this.f24155a = (b) parcel.readParcelable(b.class.getClassLoader());
+        this.f10540a = (b) parcel.readParcelable(b.class.getClassLoader());
         this.b = parcel.readString();
-        this.f24156c = parcel.readInt();
+        this.f10541c = parcel.readInt();
     }
 
     public h(String str, String str2, String str3, String str4, String str5) {
@@ -41,20 +41,20 @@ public class h implements Parcelable {
         try {
             JSONObject jSONObject = new JSONObject(str);
             if (!jSONObject.isNull(RemoteMessageConst.Notification.NOTIFY_ID)) {
-                this.f24156c = jSONObject.getInt(RemoteMessageConst.Notification.NOTIFY_ID);
+                this.f10541c = jSONObject.getInt(RemoteMessageConst.Notification.NOTIFY_ID);
             }
         } catch (JSONException e) {
             DebugLogger.e("WithDrawMessage", "parse WithDrawMessage error " + e.getMessage());
         }
-        this.f24155a = new b(str3, str4, str5);
+        this.f10540a = new b(str3, str4, str5);
     }
 
     public b a() {
-        return this.f24155a;
+        return this.f10540a;
     }
 
     public int b() {
-        return this.f24156c;
+        return this.f10541c;
     }
 
     public String c() {
@@ -67,13 +67,13 @@ public class h implements Parcelable {
     }
 
     public String toString() {
-        return "WithDrawMessage{controlMessage=" + this.f24155a + ", revokePackageName='" + this.b + "', notifyId=" + this.f24156c + '}';
+        return "WithDrawMessage{controlMessage=" + this.f10540a + ", revokePackageName='" + this.b + "', notifyId=" + this.f10541c + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f24155a, i);
+        parcel.writeParcelable(this.f10540a, i);
         parcel.writeString(this.b);
-        parcel.writeInt(this.f24156c);
+        parcel.writeInt(this.f10541c);
     }
 }

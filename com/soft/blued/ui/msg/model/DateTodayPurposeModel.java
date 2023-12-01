@@ -14,11 +14,11 @@ public final class DateTodayPurposeModel {
         this(null, null, 3, null);
     }
 
-    public DateTodayPurposeModel(String title, String icon) {
-        Intrinsics.e(title, "title");
-        Intrinsics.e(icon, "icon");
-        this.title = title;
-        this.icon = icon;
+    public DateTodayPurposeModel(String str, String str2) {
+        Intrinsics.e(str, "title");
+        Intrinsics.e(str2, "icon");
+        this.title = str;
+        this.icon = str2;
     }
 
     public /* synthetic */ DateTodayPurposeModel(String str, String str2, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -43,10 +43,10 @@ public final class DateTodayPurposeModel {
         return this.icon;
     }
 
-    public final DateTodayPurposeModel copy(String title, String icon) {
-        Intrinsics.e(title, "title");
-        Intrinsics.e(icon, "icon");
-        return new DateTodayPurposeModel(title, icon);
+    public final DateTodayPurposeModel copy(String str, String str2) {
+        Intrinsics.e(str, "title");
+        Intrinsics.e(str2, "icon");
+        return new DateTodayPurposeModel(str, str2);
     }
 
     public boolean equals(Object obj) {
@@ -55,7 +55,7 @@ public final class DateTodayPurposeModel {
         }
         if (obj instanceof DateTodayPurposeModel) {
             DateTodayPurposeModel dateTodayPurposeModel = (DateTodayPurposeModel) obj;
-            return Intrinsics.a((Object) this.title, (Object) dateTodayPurposeModel.title) && Intrinsics.a((Object) this.icon, (Object) dateTodayPurposeModel.icon);
+            return Intrinsics.a(this.title, dateTodayPurposeModel.title) && Intrinsics.a(this.icon, dateTodayPurposeModel.icon);
         }
         return false;
     }

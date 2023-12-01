@@ -12,22 +12,16 @@ import kotlin.jvm.internal.Ref;
 /* renamed from: kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$lambda-4$$inlined$collect$1  reason: invalid class name */
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$dropWhile$lambda-4$$inlined$collect$1.class */
 public final class FlowKt__LimitKt$dropWhile$lambda4$$inlined$collect$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.BooleanRef f43190a;
+    final /* synthetic */ Ref.BooleanRef a;
     final /* synthetic */ FlowCollector b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Function2 f43191c;
+    final /* synthetic */ Function2 c;
 
     @Metadata
     @DebugMetadata(b = "Limit.kt", c = {136, 137, 139}, d = "emit", e = "kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$lambda-4$$inlined$collect$1")
     /* renamed from: kotlinx.coroutines.flow.FlowKt__LimitKt$dropWhile$lambda-4$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$dropWhile$lambda-4$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43192a;
+        /* synthetic */ Object a;
         int b;
         Object d;
         Object e;
@@ -38,16 +32,16 @@ public final class FlowKt__LimitKt$dropWhile$lambda4$$inlined$collect$1<T> imple
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43192a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__LimitKt$dropWhile$lambda4$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public FlowKt__LimitKt$dropWhile$lambda4$$inlined$collect$1(Ref.BooleanRef booleanRef, FlowCollector flowCollector, Function2 function2) {
-        this.f43190a = booleanRef;
+        this.a = booleanRef;
         this.b = flowCollector;
-        this.f43191c = function2;
+        this.c = function2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

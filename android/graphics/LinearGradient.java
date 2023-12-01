@@ -51,8 +51,9 @@ public class LinearGradient extends Shader {
 
     private native long nativeCreate2(float f, float f2, float f3, float f4, int i, int i2, int i3);
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.Shader
-    protected Shader copy() {
+    public Shader copy() {
         LinearGradient linearGradient;
         switch (this.mType) {
             case 1:

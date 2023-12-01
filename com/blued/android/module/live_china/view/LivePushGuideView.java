@@ -37,13 +37,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePushGuideView.class */
 public final class LivePushGuideView extends FrameLayout implements PushGuideObserver.IPushGuideObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14884a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f14885c;
+    private BaseFragment c;
     private boolean d;
     private int e;
     private LivePushGuideShadeView f;
@@ -79,8 +75,8 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
         this.o = new ImageView(getContext());
         this.p = new TextView(getContext());
         this.q = new ShapeTextView(getContext());
-        PushGuideObserver.f13957a.a().b();
-        PushGuideObserver.f13957a.a().a((PushGuideObserver.IPushGuideObserver) this);
+        PushGuideObserver.a.a().b();
+        PushGuideObserver.a.a().a((PushGuideObserver.IPushGuideObserver) this);
     }
 
     private final int a(MotionEvent motionEvent) {
@@ -162,13 +158,13 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
 
     private final void a(int i) {
         Ref.LongRef longRef = new Ref.LongRef();
-        longRef.f42544a = 560L;
+        longRef.a = 560L;
         if (this.o.getParent() == null) {
             int a2 = DensityUtils.a(getContext(), 82.0f);
             this.o.setLayoutParams(new FrameLayout.LayoutParams(a2, a2));
             this.o.setAlpha(0.0f);
             addView(this.o);
-            longRef.f42544a = 100L;
+            longRef.a = 100L;
         }
         this.o.animate().alpha(0.0f).setDuration(200L).setListener(new LivePushGuideView$showFinger$1(longRef, this, i));
     }
@@ -278,7 +274,7 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
         if (i == 1) {
             this.o.setTranslationX((livePushGuideShadeView.getTargetX() + livePushGuideShadeView.getTargetW()) - DensityUtils.a(getContext(), 48.0f));
             this.o.setTranslationY(livePushGuideShadeView.getTargetY() + DensityUtils.a(getContext(), 2.0f));
-            BaseFragment baseFragment = this.f14885c;
+            BaseFragment baseFragment = this.c;
             BaseFragment baseFragment2 = baseFragment;
             if (baseFragment == null) {
                 Intrinsics.c("mFragment");
@@ -288,7 +284,7 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
         } else if (i == 2) {
             this.o.setTranslationX((livePushGuideShadeView.getTargetX() + livePushGuideShadeView.getTargetW()) - DensityUtils.a(getContext(), 103.0f));
             this.o.setTranslationY(livePushGuideShadeView.getTargetY() - DensityUtils.a(getContext(), 14.0f));
-            BaseFragment baseFragment3 = this.f14885c;
+            BaseFragment baseFragment3 = this.c;
             BaseFragment baseFragment4 = baseFragment3;
             if (baseFragment3 == null) {
                 Intrinsics.c("mFragment");
@@ -298,7 +294,7 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
         } else if (i == 3) {
             this.o.setTranslationX(livePushGuideShadeView.getTargetX() - DensityUtils.a(getContext(), 30.0f));
             this.o.setTranslationY(livePushGuideShadeView.getTargetY() - DensityUtils.a(getContext(), 8.0f));
-            BaseFragment baseFragment5 = this.f14885c;
+            BaseFragment baseFragment5 = this.c;
             BaseFragment baseFragment6 = baseFragment5;
             if (baseFragment5 == null) {
                 Intrinsics.c("mFragment");
@@ -327,14 +323,14 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
 
     private final void c(int i) {
         Ref.LongRef longRef = new Ref.LongRef();
-        longRef.f42544a = 560L;
+        longRef.a = 560L;
         if (this.p.getParent() == null) {
             this.p.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
             this.p.setAlpha(0.0f);
             addView(this.p);
             this.p.setTextSize(2, 12.0f);
             this.p.setTextColor(BluedSkinUtils.a(this.b, R.color.syc_dark_b));
-            longRef.f42544a = 100L;
+            longRef.a = 100L;
         }
         this.p.animate().alpha(0.0f).translationY(this.p.getTranslationY() + DensityUtils.a(getContext(), 30.0f)).setDuration(200L).setListener(new LivePushGuideView$showTips$1(longRef, this, i));
     }
@@ -468,7 +464,7 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
         if (parent != null) {
             ((ViewGroup) parent).removeView(this);
         }
-        PushGuideObserver.f13957a.a().b((PushGuideObserver.IPushGuideObserver) this);
+        PushGuideObserver.a.a().b((PushGuideObserver.IPushGuideObserver) this);
     }
 
     @Override // com.blued.android.module.live_china.observer.PushGuideObserver.IPushGuideObserver
@@ -483,7 +479,7 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
     public final void a(final ViewGroup parent, final BaseFragment fragment) {
         Intrinsics.e(parent, "parent");
         Intrinsics.e(fragment, "fragment");
-        this.f14885c = fragment;
+        this.c = fragment;
         parent.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LivePushGuideView$h2IYvDFi0JmdZDjF7XODo4R-_g4
             @Override // java.lang.Runnable
             public final void run() {
@@ -539,7 +535,7 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
                     if (parent != null) {
                         ((ViewGroup) parent).removeView(LivePushGuideView.this);
                     }
-                    PushGuideObserver.f13957a.a().b((PushGuideObserver.IPushGuideObserver) LivePushGuideView.this);
+                    PushGuideObserver.a.a().b((PushGuideObserver.IPushGuideObserver) LivePushGuideView.this);
                     EventTrackLive.a(LiveProtos.Event.LIVE_RECOMMEND_POP_CLOSE, LiveRoomManager.a().e(), LiveRoomManager.a().p().profile.uid);
                 }
             });
@@ -549,7 +545,7 @@ public final class LivePushGuideView extends FrameLayout implements PushGuideObs
         if (parent != null) {
             ((ViewGroup) parent).removeView(this);
         }
-        PushGuideObserver.f13957a.a().b((PushGuideObserver.IPushGuideObserver) this);
+        PushGuideObserver.a.a().b((PushGuideObserver.IPushGuideObserver) this);
     }
 
     public void b() {

@@ -31,13 +31,13 @@ public class ContextCompat {
         if (context != null) {
             return Build.VERSION.SDK_INT < 24 ? context : context.createDeviceProtectedStorageContext();
         }
-        Logger.w(TAG, b.f7836a);
+        Logger.w(TAG, b.f4996a);
         return null;
     }
 
     public static Object getSystemService(Context context, String str) {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return null;
         }
         try {
@@ -50,7 +50,7 @@ public class ContextCompat {
 
     public static Intent registerReceiver(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return null;
         }
         try {
@@ -63,7 +63,7 @@ public class ContextCompat {
 
     public static Intent registerReceiver(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, String str, Handler handler) {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return null;
         }
         try {
@@ -76,7 +76,7 @@ public class ContextCompat {
 
     public static ComponentName startService(Context context, Intent intent) {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return null;
         }
         try {
@@ -89,7 +89,7 @@ public class ContextCompat {
 
     public static void unregisterReceiver(Context context, BroadcastReceiver broadcastReceiver) {
         if (context == null) {
-            Logger.w(TAG, b.f7836a);
+            Logger.w(TAG, b.f4996a);
             return;
         }
         try {

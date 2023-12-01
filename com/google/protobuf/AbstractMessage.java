@@ -40,7 +40,7 @@ public abstract class AbstractMessage extends AbstractMessageLite implements Mes
 
         @Override // com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo1800clone() {
+        public BuilderType mo2030clone() {
             throw new UnsupportedOperationException("clone() should be implemented in subclasses.");
         }
 
@@ -489,8 +489,9 @@ public abstract class AbstractMessage extends AbstractMessageLite implements Mes
         throw new UnsupportedOperationException("Nested builder is not supported for this type.");
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.protobuf.AbstractMessageLite
-    UninitializedMessageException newUninitializedMessageException() {
+    public UninitializedMessageException newUninitializedMessageException() {
         return Builder.newUninitializedMessageException((Message) this);
     }
 

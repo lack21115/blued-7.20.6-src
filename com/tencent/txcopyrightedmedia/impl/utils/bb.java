@@ -23,7 +23,7 @@ public abstract class bb implements w.b {
     public byte[] a() {
         bc bcVar = this.m;
         if (bcVar != null) {
-            return bcVar.f40088a;
+            return bcVar.f26397a;
         }
         return null;
     }
@@ -38,24 +38,24 @@ public abstract class bb implements w.b {
 
     public final e g() {
         ba baVar = this.k;
-        if (baVar == null || baVar.f40086a == null) {
+        if (baVar == null || baVar.f26395a == null) {
             return null;
         }
-        return this.k.f40086a.f40084a;
+        return this.k.f26395a.f26393a;
     }
 
     public final g h() {
         ba baVar = this.k;
-        if (baVar == null || baVar.f40086a == null) {
+        if (baVar == null || baVar.f26395a == null) {
             return null;
         }
-        return this.k.f40086a.d;
+        return this.k.f26395a.d;
     }
 
     public final String i() {
         ba baVar = this.k;
         if (baVar != null) {
-            return baVar.f40087c.f40078a;
+            return baVar.f26396c.f26387a;
         }
         return null;
     }
@@ -63,7 +63,7 @@ public abstract class bb implements w.b {
     public final String j() {
         ba baVar = this.k;
         if (baVar != null) {
-            return baVar.f40087c.d;
+            return baVar.f26396c.d;
         }
         return null;
     }
@@ -71,7 +71,7 @@ public abstract class bb implements w.b {
     public final String k() {
         ba baVar = this.k;
         if (baVar != null) {
-            return baVar.g.f40104a;
+            return baVar.g.f26413a;
         }
         return null;
     }

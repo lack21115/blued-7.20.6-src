@@ -6,11 +6,11 @@ import com.tencent.liteav.videoconsumer.decoder.VideoDecoderDef;
 final /* synthetic */ class ab implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36692a;
+    private final j f23001a;
     private final VideoDecoderDef.ConsumerScene b;
 
     private ab(j jVar, VideoDecoderDef.ConsumerScene consumerScene) {
-        this.f36692a = jVar;
+        this.f23001a = jVar;
         this.b = consumerScene;
     }
 
@@ -20,7 +20,7 @@ final /* synthetic */ class ab implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36692a;
+        j jVar = this.f23001a;
         VideoDecoderDef.ConsumerScene consumerScene = this.b;
         jVar.t = consumerScene;
         if (jVar.f != null) {

@@ -22,7 +22,6 @@ public class YYImModel implements MultiItemEntity, Serializable {
     public boolean isKtvSendGift = false;
     public boolean is_play_only_mp4 = false;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

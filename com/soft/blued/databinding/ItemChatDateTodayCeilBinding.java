@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeTextView;
 public final class ItemChatDateTodayCeilBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeTextView f29083a;
+    private final ShapeTextView f15393a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeTextView getRoot() {
-        return this.f29083a;
+        return this.f15393a;
     }
 }

@@ -7,25 +7,23 @@ import kotlin.collections.LongIterator;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/ArrayLongIterator.class */
 final class ArrayLongIterator extends LongIterator {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final long[] f42522a;
+    private final long[] a;
     private int b;
 
     public ArrayLongIterator(long[] array) {
         Intrinsics.e(array, "array");
-        this.f42522a = array;
+        this.a = array;
     }
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.b < this.f42522a.length;
+        return this.b < this.a.length;
     }
 
     @Override // kotlin.collections.LongIterator
     public long nextLong() {
         try {
-            long[] jArr = this.f42522a;
+            long[] jArr = this.a;
             int i = this.b;
             this.b = i + 1;
             return jArr[i];

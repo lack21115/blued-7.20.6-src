@@ -10,37 +10,37 @@ import java.util.zip.GZIPInputStream;
 public class fn {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f41412a = {80, 85, 83, 72};
+    public static final byte[] f27721a = {80, 85, 83, 72};
 
     /* renamed from: a  reason: collision with other field name */
-    private byte f467a;
+    private byte f420a;
 
     /* renamed from: a  reason: collision with other field name */
-    private int f468a;
+    private int f421a;
 
     /* renamed from: a  reason: collision with other field name */
-    private short f469a;
+    private short f422a;
     private byte[] b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/fn$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final c f41413a = new c();
+        public static final c f27722a = new c();
 
         /* renamed from: a  reason: collision with other field name */
-        public static final d f470a = new d();
+        public static final d f423a = new d();
 
         public static byte[] a(byte[] bArr) {
-            return a(bArr, f470a);
+            return a(bArr, f423a);
         }
 
         public static byte[] a(byte[] bArr, b bVar) {
             byte[] bArr2 = bArr;
-            if (fn.m11771a(bArr)) {
+            if (fn.m8721a(bArr)) {
                 fn a2 = fn.a(bArr);
-                if (a2.f467a != 0 && a2.f467a == bVar.a()) {
-                    return bVar.a(a2.b, a2.f468a);
+                if (a2.f420a != 0 && a2.f420a == bVar.a()) {
+                    return bVar.a(a2.b, a2.f421a);
                 }
                 bArr2 = a2.b;
             }
@@ -113,10 +113,10 @@ public class fn {
     }
 
     protected fn(short s, byte b2, int i, byte[] bArr) {
-        this.f469a = (short) 1;
-        this.f469a = s;
-        this.f467a = b2;
-        this.f468a = i;
+        this.f422a = (short) 1;
+        this.f422a = s;
+        this.f420a = b2;
+        this.f421a = i;
         this.b = bArr;
     }
 
@@ -129,7 +129,7 @@ public class fn {
     }
 
     public static fn a(byte[] bArr) {
-        if (m11771a(bArr)) {
+        if (m8721a(bArr)) {
             ByteBuffer order = ByteBuffer.wrap(bArr).order(ByteOrder.BIG_ENDIAN);
             order.getInt();
             short s = order.getShort();
@@ -143,8 +143,8 @@ public class fn {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m11771a(byte[] bArr) {
-        byte[] bArr2 = f41412a;
+    public static boolean m8721a(byte[] bArr) {
+        byte[] bArr2 = f27721a;
         return a(bArr2, bArr, bArr2.length);
     }
 

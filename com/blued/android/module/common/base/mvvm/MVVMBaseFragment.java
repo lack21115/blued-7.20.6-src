@@ -24,19 +24,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvvm/MVVMBaseFragment.class */
 public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f10696a;
+    private final int a;
     private final Lazy b = LazyKt.a(new Function0<M>(this) { // from class: com.blued.android.module.common.base.mvvm.MVVMBaseFragment$mViewModel$2
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MVVMBaseFragment<M> f10699a;
+        final /* synthetic */ MVVMBaseFragment<M> a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         {
             super(0);
-            this.f10699a = this;
+            this.a = this;
         }
 
         /* JADX WARN: Incorrect return type in method signature: ()TM; */
@@ -44,20 +40,16 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final BaseViewModel invoke() {
-            return this.f10699a.i();
+            return this.a.i();
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10697c = true;
+    private boolean c = true;
     private boolean d = true;
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvvm/MVVMBaseFragment$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f10698a;
+        public static final /* synthetic */ int[] a;
         public static final /* synthetic */ int[] b;
 
         static {
@@ -65,7 +57,7 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
             iArr[LoadState.LoadStart.ordinal()] = 1;
             iArr[LoadState.LoadSuccess.ordinal()] = 2;
             iArr[LoadState.LoadFail.ordinal()] = 3;
-            f10698a = iArr;
+            a = iArr;
             int[] iArr2 = new int[HasMoreState.values().length];
             iArr2[HasMoreState.HasMore.ordinal()] = 1;
             iArr2[HasMoreState.NoMore.ordinal()] = 2;
@@ -74,7 +66,7 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
     }
 
     public MVVMBaseFragment(int i) {
-        this.f10696a = i;
+        this.a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -92,7 +84,7 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(MVVMBaseFragment this$0, LoadState loadState) {
         Intrinsics.e(this$0, "this$0");
-        int i = loadState == null ? -1 : WhenMappings.f10698a[loadState.ordinal()];
+        int i = loadState == null ? -1 : WhenMappings.a[loadState.ordinal()];
         if (i == 1) {
             this$0.m();
         } else if (i == 2) {
@@ -125,19 +117,16 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
 
     private final void q() {
         j().a().observe(getViewLifecycleOwner(), new Observer() { // from class: com.blued.android.module.common.base.mvvm.-$$Lambda$MVVMBaseFragment$RhNLJ-mKjTuXtSJgjoL1XqmOVWo
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MVVMBaseFragment.a(MVVMBaseFragment.this, (LoadState) obj);
             }
         });
         j().b().observe(getViewLifecycleOwner(), new Observer() { // from class: com.blued.android.module.common.base.mvvm.-$$Lambda$MVVMBaseFragment$yWeQYAB7oZ7yGmZkY7G_GfmbQO0
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MVVMBaseFragment.a(MVVMBaseFragment.this, (HasMoreState) obj);
             }
         });
         a().c().observe(getViewLifecycleOwner(), new Observer() { // from class: com.blued.android.module.common.base.mvvm.-$$Lambda$MVVMBaseFragment$XKTjys5JJARKmBO5aNkoPvjwlT4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MVVMBaseFragment.a(MVVMBaseFragment.this, (Void) obj);
             }
@@ -151,9 +140,8 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
     public void a(boolean z) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final boolean b() {
-        return this.f10697c;
+    protected final boolean b() {
+        return this.c;
     }
 
     protected boolean c() {
@@ -173,7 +161,7 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
     }
 
     protected ViewModelStoreOwner h() {
-        return this;
+        return (ViewModelStoreOwner) this;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -187,7 +175,7 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
         ViewModelProvider.AndroidViewModelFactory.Companion companion = ViewModelProvider.AndroidViewModelFactory.Companion;
         Context d = AppInfo.d();
         if (d != null) {
-            ViewModelProvider viewModelProvider = new ViewModelProvider(h, companion.getInstance((Application) d));
+            ViewModelProvider viewModelProvider = new ViewModelProvider(h, (ViewModelProvider.Factory) companion.getInstance((Application) d));
             if (type != null) {
                 return (M) viewModelProvider.get((Class) type);
             }
@@ -214,37 +202,37 @@ public abstract class MVVMBaseFragment<M extends BaseViewModel> extends BaseFrag
     public void o() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.d = true;
         e();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         p();
         c();
-        return inflater.inflate(this.f10696a, (ViewGroup) null, false);
+        return inflater.inflate(this.a, (ViewGroup) null, false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         j().a().removeObservers(getViewLifecycleOwner());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
-        if (this.f10697c) {
-            this.f10697c = false;
+        if (this.c) {
+            this.c = false;
             g();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

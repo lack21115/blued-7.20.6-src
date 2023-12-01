@@ -7,15 +7,15 @@ import com.qiniu.pili.droid.streaming.StreamingProfile;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1221a;
+    public final int f1173a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f1222c;
+    public final int f1174c;
 
     public a(int i, int i2, int i3) {
-        this.f1221a = i;
-        this.f1222c = i3;
+        this.f1173a = i;
+        this.f1174c = i3;
         this.b = i2;
     }
 
@@ -26,7 +26,7 @@ public class a {
     }
 
     public int a() {
-        return this.f1221a;
+        return this.f1173a;
     }
 
     public int b() {
@@ -34,11 +34,11 @@ public class a {
     }
 
     public int c() {
-        return this.f1222c;
+        return this.f1174c;
     }
 
     public int d() {
-        int i = this.f1221a;
+        int i = this.f1173a;
         if (i == 1) {
             e.f.b("AudioEncoderConfig", "SETTING CHANNEL MONO");
             return 16;
@@ -51,6 +51,6 @@ public class a {
     }
 
     public String toString() {
-        return "AudioEncoderConfig: " + this.f1221a + " channels totaling " + this.f1222c + " bps @" + this.b + " Hz";
+        return "AudioEncoderConfig: " + this.f1173a + " channels totaling " + this.f1174c + " bps @" + this.b + " Hz";
     }
 }

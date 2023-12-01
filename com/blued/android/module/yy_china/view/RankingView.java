@@ -35,18 +35,13 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/RankingView.class */
 public class RankingView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f17970a;
+    private ImageView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f17971c;
+    private LinearLayout c;
     private ImageView d;
     private TextView e;
     private LinearLayout f;
@@ -87,10 +82,10 @@ public class RankingView extends LinearLayout {
     private void a() {
         this.o = DensityUtils.a(getContext(), 10.0f);
         LayoutInflater.from(getContext()).inflate(R.layout.view_ranking_layoug, (ViewGroup) this, true);
-        this.m = (RecyclerView) findViewById(R.id.member_list_view);
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) findViewById(R.id.refresh_view);
-        this.l = smartRefreshLayout;
-        smartRefreshLayout.c(false);
+        this.m = findViewById(R.id.member_list_view);
+        SmartRefreshLayout findViewById = findViewById(R.id.refresh_view);
+        this.l = findViewById;
+        findViewById.c(false);
         this.j = (LinearLayout) findViewById(R.id.layout_no);
         this.k = (LinearLayout) findViewById(R.id.layout_no_title);
         this.i = (LinearLayout) findViewById(R.id.ll_no3_layout);
@@ -99,19 +94,18 @@ public class RankingView extends LinearLayout {
         this.f = (LinearLayout) findViewById(R.id.ll_no1_layout);
         this.e = (TextView) findViewById(R.id.tv_name_no1);
         this.d = (ImageView) findViewById(R.id.iv_no_1);
-        this.f17971c = (LinearLayout) findViewById(R.id.ll_no2_layout);
+        this.c = (LinearLayout) findViewById(R.id.ll_no2_layout);
         this.b = (TextView) findViewById(R.id.tv_name_no2);
-        this.f17970a = (ImageView) findViewById(R.id.iv_no_2);
+        this.a = (ImageView) findViewById(R.id.iv_no_2);
         this.s = (LinearLayout) findViewById(R.id.ll_yy_end_recommend);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rcv_yy_end);
-        this.t = recyclerView;
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 4));
+        RecyclerView findViewById2 = findViewById(R.id.rcv_yy_end);
+        this.t = findViewById2;
+        findViewById2.setLayoutManager(new GridLayoutManager(getContext(), 4));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
         this.m.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.RankingView.1
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-            public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView2, RecyclerView.State state) {
-                if (recyclerView2.getChildAdapterPosition(view) == 0) {
+            public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
+                if (recyclerView.getChildAdapterPosition(view) == 0) {
                     rect.top = RankingView.this.o;
                 }
                 rect.bottom = RankingView.this.o;
@@ -119,13 +113,11 @@ public class RankingView extends LinearLayout {
         });
         this.m.setLayoutManager(linearLayoutManager);
         this.l.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.view.RankingView.2
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 RankingView.b(RankingView.this);
                 RankingView.this.getMembers();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 RankingView.this.p = 1;
                 RankingView.this.getMembers();
@@ -162,7 +154,7 @@ public class RankingView extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         this.l.h();
-        this.l.j();
+        this.l.g();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -181,15 +173,15 @@ public class RankingView extends LinearLayout {
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<YYUserInfo> bluedEntityA) {
                 if (RankingView.this.p == 1) {
-                    RankingView.this.l.l(false);
+                    RankingView.this.l.b(false);
                     RankingView.this.n.a(bluedEntityA);
                     return;
                 }
-                RankingView.this.n.addData((Collection) bluedEntityA.data);
+                RankingView.this.n.addData(bluedEntityA.data);
                 if (bluedEntityA.hasMore()) {
-                    RankingView.this.l.l(true);
+                    RankingView.this.l.b(true);
                 } else {
-                    RankingView.this.l.l(false);
+                    RankingView.this.l.b(false);
                 }
             }
 
@@ -262,10 +254,10 @@ public class RankingView extends LinearLayout {
     }
 
     public void b(final YYUserInfo yYUserInfo) {
-        this.f17971c.setVisibility(0);
-        ImageLoader.a(this.r.getFragmentActive(), yYUserInfo.getAvatar()).b(R.drawable.user_bg_round).a(this.f17970a);
+        this.c.setVisibility(0);
+        ImageLoader.a(this.r.getFragmentActive(), yYUserInfo.getAvatar()).b(R.drawable.user_bg_round).a(this.a);
         this.b.setText(yYUserInfo.getName());
-        this.f17970a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.RankingView.6
+        this.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.RankingView.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);

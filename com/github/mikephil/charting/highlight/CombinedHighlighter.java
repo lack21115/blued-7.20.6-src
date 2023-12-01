@@ -12,17 +12,17 @@ import java.util.List;
 public class CombinedHighlighter extends ChartHighlighter<CombinedDataProvider> implements IHighlighter {
 
     /* renamed from: c  reason: collision with root package name */
-    protected BarHighlighter f22149c;
+    protected BarHighlighter f8542c;
 
     public CombinedHighlighter(CombinedDataProvider combinedDataProvider, BarDataProvider barDataProvider) {
         super(combinedDataProvider);
-        this.f22149c = barDataProvider.getBarData() == null ? null : new BarHighlighter(barDataProvider);
+        this.f8542c = barDataProvider.getBarData() == null ? null : new BarHighlighter(barDataProvider);
     }
 
     @Override // com.github.mikephil.charting.highlight.ChartHighlighter
     protected List<Highlight> b(float f, float f2, float f3) {
         this.b.clear();
-        List<BarLineScatterCandleBubbleData> p = ((CombinedDataProvider) this.f22148a).getCombinedData().p();
+        List<BarLineScatterCandleBubbleData> p = ((CombinedDataProvider) this.f8541a).getCombinedData().p();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -30,7 +30,7 @@ public class CombinedHighlighter extends ChartHighlighter<CombinedDataProvider> 
                 return this.b;
             }
             BarLineScatterCandleBubbleData barLineScatterCandleBubbleData = p.get(i2);
-            BarHighlighter barHighlighter = this.f22149c;
+            BarHighlighter barHighlighter = this.f8542c;
             if (barHighlighter == null || !(barLineScatterCandleBubbleData instanceof BarData)) {
                 int d = barLineScatterCandleBubbleData.d();
                 int i3 = 0;

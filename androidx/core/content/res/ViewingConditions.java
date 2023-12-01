@@ -4,11 +4,11 @@ package androidx.core.content.res;
 final class ViewingConditions {
 
     /* renamed from: a  reason: collision with root package name */
-    static final ViewingConditions f2443a = a(CamUtils.f2425c, (float) ((CamUtils.c(50.0f) * 63.66197723675813d) / 100.0d), 50.0f, 2.0f, false);
+    static final ViewingConditions f2395a = a(CamUtils.f2377c, (float) ((CamUtils.c(50.0f) * 63.66197723675813d) / 100.0d), 50.0f, 2.0f, false);
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f2444c;
+    private final float f2396c;
     private final float d;
     private final float e;
     private final float f;
@@ -21,7 +21,7 @@ final class ViewingConditions {
     private ViewingConditions(float f, float f2, float f3, float f4, float f5, float f6, float[] fArr, float f7, float f8, float f9) {
         this.g = f;
         this.b = f2;
-        this.f2444c = f3;
+        this.f2396c = f3;
         this.d = f4;
         this.e = f5;
         this.f = f6;
@@ -32,7 +32,7 @@ final class ViewingConditions {
     }
 
     static ViewingConditions a(float[] fArr, float f, float f2, float f3, boolean z) {
-        float[][] fArr2 = CamUtils.f2424a;
+        float[][] fArr2 = CamUtils.f2376a;
         float f4 = (fArr[0] * fArr2[0][0]) + (fArr[1] * fArr2[0][1]) + (fArr[2] * fArr2[0][2]);
         float f5 = (fArr[0] * fArr2[1][0]) + (fArr[1] * fArr2[1][1]) + (fArr[2] * fArr2[1][2]);
         float f6 = (fArr[0] * fArr2[2][0]) + (fArr[1] * fArr2[2][1]) + (fArr[2] * fArr2[2][2]);
@@ -71,7 +71,7 @@ final class ViewingConditions {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public float c() {
-        return this.f2444c;
+        return this.f2396c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

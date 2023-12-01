@@ -15,9 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/vm/CircleMyManagementViewModel.class */
 public final class CircleMyManagementViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<List<MyCircleModel>> f19377a = new MutableLiveData<>();
+    private final MutableLiveData<List<MyCircleModel>> a = new MutableLiveData<>();
     private int b = 1;
 
     private final void c(final IRequestHost iRequestHost) {
@@ -69,7 +67,7 @@ public final class CircleMyManagementViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<List<MyCircleModel>> d() {
-        return this.f19377a;
+        return this.a;
     }
 
     public final int e() {

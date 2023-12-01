@@ -1,5 +1,6 @@
 package java.security;
 
+import com.android.internal.telephony.SmsConstants;
 import java.nio.ByteOrder;
 import java.security.Provider;
 import java.util.Random;
@@ -37,7 +38,7 @@ public class SecureRandom extends Random {
     }
 
     protected SecureRandom(SecureRandomSpi secureRandomSpi, Provider provider) {
-        this(secureRandomSpi, provider, "unknown");
+        this(secureRandomSpi, provider, SmsConstants.FORMAT_UNKNOWN);
     }
 
     private SecureRandom(SecureRandomSpi secureRandomSpi, Provider provider, String str) {

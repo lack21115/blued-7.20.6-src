@@ -34,13 +34,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/subject/fragment/FeedSubjectListFragment.class */
 public final class FeedSubjectListFragment extends CommonRecyclerFragment<BluedTopic, BluedTopicExtra> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private CardView f20224a;
+    private CardView a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f20225c;
+    private View c;
     private GridView d;
     private CommonAdapter<BluedTopic> e;
     private View f;
@@ -132,6 +128,7 @@ public final class FeedSubjectListFragment extends CommonRecyclerFragment<BluedT
         b.setNoDataBtnStr(R.string.common_no_data);
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.blued.community.ui.subject.fragment.FeedSubjectListFragment$getHttpResDataType$1] */
     @Override // com.blued.community.ui.common.CommonRecyclerFragment
     public Type k() {
         Type type = new TypeToken<BluedEntity<BluedTopic, BluedTopicExtra>>() { // from class: com.blued.community.ui.subject.fragment.FeedSubjectListFragment$getHttpResDataType$1
@@ -145,10 +142,9 @@ public final class FeedSubjectListFragment extends CommonRecyclerFragment<BluedT
         return Intrinsics.a(CommunityHttpUtils.a(), (Object) "/ticktocks/super_topics?filter=list");
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitListener() {
         super.onInitListener();
-        CardView cardView = this.f20224a;
+        CardView cardView = this.a;
         if (cardView != null) {
             cardView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.subject.fragment.-$$Lambda$FeedSubjectListFragment$dJ4Dmxk0-idVJdM_q1i_WjmOdJM
                 @Override // android.view.View.OnClickListener
@@ -157,7 +153,7 @@ public final class FeedSubjectListFragment extends CommonRecyclerFragment<BluedT
                 }
             });
         }
-        View view = this.f20225c;
+        View view = this.c;
         if (view == null) {
             return;
         }
@@ -169,19 +165,19 @@ public final class FeedSubjectListFragment extends CommonRecyclerFragment<BluedT
         });
     }
 
-    @Override // com.blued.community.ui.common.CommonRecyclerFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.community.ui.common.CommonRecyclerFragment
     public void onInitView() {
-        CommonMultiItemAdapter<BluedTopic> a2;
+        CommonMultiItemAdapter<BluedTopic> a;
         super.onInitView();
         View inflate = getLayoutInflater().inflate(R.layout.feed_subject_list_header, (ViewGroup) null);
         this.f = inflate;
-        CardView cardView = inflate == null ? null : (CardView) inflate.findViewById(R.id.feed_subject_list_search);
-        this.f20224a = cardView;
-        if (cardView != null) {
-            cardView.setCardBackgroundColor(CommunityManager.f19086a.a().s() ? Color.parseColor("#202020") : getResources().getColor(R.color.syc_c));
+        CardView findViewById = inflate == null ? null : inflate.findViewById(R.id.feed_subject_list_search);
+        this.a = findViewById;
+        if (findViewById != null) {
+            findViewById.setCardBackgroundColor(CommunityManager.a.a().s() ? Color.parseColor("#202020") : getResources().getColor(R.color.syc_c));
         }
         View view = this.f;
-        this.f20225c = view == null ? null : view.findViewById(R.id.feed_subject_list_mine_layout);
+        this.c = view == null ? null : view.findViewById(R.id.feed_subject_list_mine_layout);
         View view2 = this.f;
         this.b = view2 == null ? null : view2.findViewById(R.id.feed_subject_list_my_join_all);
         View view3 = this.f;
@@ -193,19 +189,19 @@ public final class FeedSubjectListFragment extends CommonRecyclerFragment<BluedT
             gridView.setAdapter((ListAdapter) feedSubjectListFragment$onInitView$1);
         }
         View view4 = this.f;
-        if (view4 == null || (a2 = a()) == null) {
+        if (view4 == null || (a = a()) == null) {
             return;
         }
-        a2.addHeaderView(view4);
+        a.addHeaderView(view4);
     }
 
-    @Override // com.blued.community.ui.common.CommonRecyclerFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.community.ui.common.CommonRecyclerFragment
     public int onSetRootViewId() {
         return R.layout.fragment_feed_subject_list;
     }
 
     public final View q() {
-        return this.f20225c;
+        return this.c;
     }
 
     public final GridView r() {

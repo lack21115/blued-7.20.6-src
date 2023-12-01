@@ -9,7 +9,7 @@ import java.io.IOException;
 public class RetryInterceptor implements Interceptor {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final RetryStrategy f36106a = new RetryStrategy() { // from class: com.tencent.cloud.huiyansdkface.wehttp2.RetryInterceptor.1
+    public static final RetryStrategy f22415a = new RetryStrategy() { // from class: com.tencent.cloud.huiyansdkface.wehttp2.RetryInterceptor.1
         @Override // com.tencent.cloud.huiyansdkface.wehttp2.RetryInterceptor.RetryStrategy
         public boolean needRetry(Request request, Response response, int i) {
             return !response.isSuccessful();
@@ -18,7 +18,7 @@ public class RetryInterceptor implements Interceptor {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RetryStrategy f36107c;
+    private RetryStrategy f22416c;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/wehttp2/RetryInterceptor$RetryStrategy.class */
     public interface RetryStrategy {
@@ -28,12 +28,12 @@ public class RetryInterceptor implements Interceptor {
     public RetryInterceptor(int i, RetryStrategy retryStrategy) {
         this.b = 3;
         this.b = i;
-        this.f36107c = retryStrategy;
+        this.f22416c = retryStrategy;
     }
 
     private boolean a(Request request, Response response, int i) {
-        RetryStrategy retryStrategy = this.f36107c;
-        return retryStrategy != null ? retryStrategy.needRetry(request, response, i) : f36106a.needRetry(request, response, i);
+        RetryStrategy retryStrategy = this.f22416c;
+        return retryStrategy != null ? retryStrategy.needRetry(request, response, i) : f22415a.needRetry(request, response, i);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor
@@ -54,7 +54,7 @@ public class RetryInterceptor implements Interceptor {
     }
 
     public RetryInterceptor setRetryStrategy(RetryStrategy retryStrategy) {
-        this.f36107c = retryStrategy;
+        this.f22416c = retryStrategy;
         return this;
     }
 }

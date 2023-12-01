@@ -1,7 +1,5 @@
 package android.media;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-9557208-dex2jar.jar:android/media/AudioPatch.class */
 public class AudioPatch {
     private final AudioHandle mHandle;
@@ -46,7 +44,7 @@ public class AudioPatch {
         while (true) {
             int i4 = i3;
             if (i4 >= length2) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             sb.append(audioPortConfigArr2[i4].toString());

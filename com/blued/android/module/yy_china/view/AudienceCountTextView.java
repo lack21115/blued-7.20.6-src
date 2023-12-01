@@ -9,9 +9,7 @@ import com.blued.android.module.yy_china.observer.AudienceCountObserver;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/AudienceCountTextView.class */
 public class AudienceCountTextView extends AppCompatTextView implements AudienceCountObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f17893a;
+    private BaseYYStudioFragment a;
 
     public AudienceCountTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -23,7 +21,7 @@ public class AudienceCountTextView extends AppCompatTextView implements Audience
 
     @Override // com.blued.android.module.yy_china.observer.AudienceCountObserver
     public void a(final int i) {
-        this.f17893a.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.view.AudienceCountTextView.1
+        this.a.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.view.AudienceCountTextView.1
             @Override // java.lang.Runnable
             public void run() {
                 AudienceCountTextView audienceCountTextView = AudienceCountTextView.this;
@@ -32,15 +30,11 @@ public class AudienceCountTextView extends AppCompatTextView implements Audience
         });
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
     }
 }

@@ -1,9 +1,9 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
-import android.provider.MediaStore;
-import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
+import com.alipay.sdk.sys.a;
+import com.alipay.sdk.util.i;
 import com.amap.api.services.cloud.CloudItem;
 import com.amap.api.services.cloud.CloudItemDetail;
 import com.amap.api.services.cloud.CloudResult;
@@ -11,6 +11,7 @@ import com.amap.api.services.cloud.CloudSearch;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.district.DistrictSearchQuery;
+import com.anythink.core.common.c.d;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
@@ -39,7 +40,7 @@ public final class fc extends fa<CloudSearch.Query, CloudResult> {
             StringBuilder sb = new StringBuilder();
             for (Map.Entry<String, String> entry : map.entrySet()) {
                 if (sb.length() > 0) {
-                    sb.append("&");
+                    sb.append(a.b);
                 }
                 sb.append(entry.getKey());
                 sb.append("=");
@@ -80,21 +81,21 @@ public final class fc extends fa<CloudSearch.Query, CloudResult> {
 
     private ArrayList<CloudItem> d(JSONObject jSONObject) throws JSONException {
         ArrayList<CloudItem> arrayList = new ArrayList<>();
-        JSONArray a2 = a(jSONObject);
-        if (a2 == null) {
+        JSONArray a = a(jSONObject);
+        if (a == null) {
             return arrayList;
         }
         this.k = b(jSONObject);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= a2.length()) {
+            if (i2 >= a.length()) {
                 return arrayList;
             }
-            JSONObject optJSONObject = a2.optJSONObject(i2);
-            CloudItemDetail c2 = c(optJSONObject);
-            a(c2, optJSONObject);
-            arrayList.add(c2);
+            JSONObject optJSONObject = a.optJSONObject(i2);
+            CloudItemDetail c = c(optJSONObject);
+            a(c, optJSONObject);
+            arrayList.add(c);
             i = i2 + 1;
         }
     }
@@ -123,7 +124,7 @@ public final class fc extends fa<CloudSearch.Query, CloudResult> {
             return "";
         }
         String d = d(str);
-        String[] split = d.split("&");
+        String[] split = d.split(a.b);
         Arrays.sort(split);
         StringBuffer stringBuffer = new StringBuffer();
         int length = split.length;
@@ -134,7 +135,7 @@ public final class fc extends fa<CloudSearch.Query, CloudResult> {
                 break;
             }
             stringBuffer.append(split[i2]);
-            stringBuffer.append("&");
+            stringBuffer.append(a.b);
             i = i2 + 1;
         }
         String e = e(stringBuffer.toString());
@@ -166,28 +167,28 @@ public final class fc extends fa<CloudSearch.Query, CloudResult> {
     @Override // com.amap.api.col.p0003sl.ex, com.amap.api.col.p0003sl.ew, com.amap.api.col.p0003sl.kb
     public final Map<String, String> getParams() {
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("key", ho.f(this.i));
-        hashtable.put(MediaStore.EXTRA_OUTPUT, "json");
+        hashtable.put(d.a.b, ho.f(this.i));
+        hashtable.put("output", "json");
         if (((CloudSearch.Query) this.b).getBound() != null) {
             if (((CloudSearch.Query) this.b).getBound().getShape().equals("Bound")) {
-                double a2 = fe.a(((CloudSearch.Query) this.b).getBound().getCenter().getLongitude());
-                double a3 = fe.a(((CloudSearch.Query) this.b).getBound().getCenter().getLatitude());
-                hashtable.put("center", a2 + "," + a3);
+                double a = fe.a(((CloudSearch.Query) this.b).getBound().getCenter().getLongitude());
+                double a2 = fe.a(((CloudSearch.Query) this.b).getBound().getCenter().getLatitude());
+                hashtable.put("center", a + "," + a2);
                 StringBuilder sb = new StringBuilder();
                 sb.append(((CloudSearch.Query) this.b).getBound().getRange());
                 hashtable.put("radius", sb.toString());
             } else if (((CloudSearch.Query) this.b).getBound().getShape().equals("Rectangle")) {
                 LatLonPoint lowerLeft = ((CloudSearch.Query) this.b).getBound().getLowerLeft();
                 LatLonPoint upperRight = ((CloudSearch.Query) this.b).getBound().getUpperRight();
-                double a4 = fe.a(lowerLeft.getLatitude());
-                double a5 = fe.a(lowerLeft.getLongitude());
-                double a6 = fe.a(upperRight.getLatitude());
-                double a7 = fe.a(upperRight.getLongitude());
-                hashtable.put("polygon", a5 + "," + a4 + ";" + a7 + "," + a6);
+                double a3 = fe.a(lowerLeft.getLatitude());
+                double a4 = fe.a(lowerLeft.getLongitude());
+                double a5 = fe.a(upperRight.getLatitude());
+                double a6 = fe.a(upperRight.getLongitude());
+                hashtable.put("polygon", a4 + "," + a3 + i.b + a6 + "," + a5);
             } else if (((CloudSearch.Query) this.b).getBound().getShape().equals("Polygon")) {
                 List<LatLonPoint> polyGonList = ((CloudSearch.Query) this.b).getBound().getPolyGonList();
                 if (polyGonList != null && polyGonList.size() > 0) {
-                    hashtable.put("polygon", fe.a(polyGonList, ";"));
+                    hashtable.put("polygon", fe.a(polyGonList, i.b));
                 }
             } else if (((CloudSearch.Query) this.b).getBound().getShape().equals(CloudSearch.SearchBound.LOCAL_SHAPE)) {
                 hashtable.put(DistrictSearchQuery.KEYWORDS_CITY, ((CloudSearch.Query) this.b).getBound().getCity());
@@ -203,9 +204,9 @@ public final class fc extends fa<CloudSearch.Query, CloudResult> {
         }
         String queryString = ((CloudSearch.Query) this.b).getQueryString();
         if (queryString == null || "".equals(queryString)) {
-            hashtable.put(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, "");
+            hashtable.put("keywords", "");
         } else {
-            hashtable.put(SearchIndexablesContract.RawData.COLUMN_KEYWORDS, queryString);
+            hashtable.put("keywords", queryString);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append(((CloudSearch.Query) this.b).getPageSize());
@@ -213,10 +214,10 @@ public final class fc extends fa<CloudSearch.Query, CloudResult> {
         StringBuilder sb3 = new StringBuilder();
         sb3.append(((CloudSearch.Query) this.b).getPageNum());
         hashtable.put("pageNum", sb3.toString());
-        String a8 = hr.a();
-        String a9 = hr.a(this.i, a8, a(hashtable));
-        hashtable.put("ts", a8);
-        hashtable.put("scode", a9);
+        String a7 = hr.a();
+        String a8 = hr.a(this.i, a7, a(hashtable));
+        hashtable.put("ts", a7);
+        hashtable.put("scode", a8);
         return hashtable;
     }
 

@@ -37,9 +37,8 @@ public class TrafficControlInterceptor implements Interceptor {
             super(i, z);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.util.concurrent.Semaphore
-        public void reducePermits(int i) {
+        protected void reducePermits(int i) {
             super.reducePermits(i);
         }
     }
@@ -150,7 +149,6 @@ public class TrafficControlInterceptor implements Interceptor {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x00d4  */
-    @Override // okhttp3.Interceptor
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

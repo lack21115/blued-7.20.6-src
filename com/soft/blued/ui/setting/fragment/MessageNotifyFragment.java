@@ -34,10 +34,9 @@ public class MessageNotifyFragment extends MvpFragment<MessageNotifyPresenter> i
     CommonTopTitleNoTrans topTitle;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, MessageNotifyFragment.class, null);
+        TerminalActivity.d(context, MessageNotifyFragment.class, (Bundle) null);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.topTitle.setCenterText(getResources().getString(R.string.message_remind));
@@ -51,15 +50,15 @@ public class MessageNotifyFragment extends MvpFragment<MessageNotifyPresenter> i
         });
         this.llMessageMobileLogin.setVisibility(8);
         this.llMessageCommonLogin.setVisibility(8);
-        boolean de2 = BluedPreferences.de();
+        boolean de = BluedPreferences.de();
         boolean df = BluedPreferences.df();
-        if (de2) {
+        if (de) {
             this.llMessageMobileLogin.setVisibility(0);
         }
         if (df) {
             this.llMessageCommonLogin.setVisibility(0);
         }
-        if (!de2 && !df) {
+        if (!de && !df) {
             this.llMessageMobileLogin.setVisibility(0);
             this.llMessageCommonLogin.setVisibility(0);
         }
@@ -69,7 +68,6 @@ public class MessageNotifyFragment extends MvpFragment<MessageNotifyPresenter> i
         this.tbMessageCommonLogin.setOnCheckedChangeListener(this);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_message_notify;
     }
@@ -100,6 +98,6 @@ public class MessageNotifyFragment extends MvpFragment<MessageNotifyPresenter> i
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        j().a(a2);
+        ((MessageNotifyPresenter) j()).a(a2);
     }
 }

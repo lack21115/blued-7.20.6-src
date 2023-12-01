@@ -13,34 +13,34 @@ import java.util.concurrent.TimeUnit;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    public ExecutorService f42165a;
+    public ExecutorService f28474a;
     public final Deque<u0.a> b = new ArrayDeque();
 
     /* renamed from: c  reason: collision with root package name */
-    public final Deque<u0.a> f42166c = new ArrayDeque();
+    public final Deque<u0.a> f28475c = new ArrayDeque();
     public final Deque<u0> d = new ArrayDeque();
 
     public final void a() {
         ExecutorService executorService;
-        if (this.f42166c.size() < 64 && !this.b.isEmpty()) {
+        if (this.f28475c.size() < 64 && !this.b.isEmpty()) {
             Iterator<u0.a> it = this.b.iterator();
             while (it.hasNext()) {
                 u0.a next = it.next();
-                Iterator<u0.a> it2 = this.f42166c.iterator();
+                Iterator<u0.a> it2 = this.f28475c.iterator();
                 if (it2.hasNext()) {
                     it2.next().getClass();
                     throw null;
                 }
                 it.remove();
-                this.f42166c.add(next);
+                this.f28475c.add(next);
                 synchronized (this) {
-                    if (this.f42165a == null) {
-                        this.f42165a = new ThreadPoolExecutor(1, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue(), new p(this));
+                    if (this.f28474a == null) {
+                        this.f28474a = new ThreadPoolExecutor(1, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue(), new p(this));
                     }
-                    executorService = this.f42165a;
+                    executorService = this.f28474a;
                 }
                 executorService.execute(next);
-                if (this.f42166c.size() >= 64) {
+                if (this.f28475c.size() >= 64) {
                     return;
                 }
             }

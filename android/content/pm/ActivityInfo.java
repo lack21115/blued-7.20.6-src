@@ -3,7 +3,6 @@ package android.content.pm;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/pm/ActivityInfo.class */
 public class ActivityInfo extends ComponentInfo implements Parcelable {
@@ -200,7 +199,7 @@ public class ActivityInfo extends ComponentInfo implements Parcelable {
     }
 
     public String toString() {
-        return "ActivityInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.name + i.d;
+        return "ActivityInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.name + "}";
     }
 
     @Override // android.content.pm.ComponentInfo, android.content.pm.PackageItemInfo, android.os.Parcelable

@@ -6,7 +6,7 @@ import java.util.Map;
 public class BuglyStrategy {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35105c;
+    private String f21414c;
     private String d;
     private String e;
     private long f;
@@ -24,7 +24,7 @@ public class BuglyStrategy {
     private boolean q = false;
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f35104a = 31;
+    protected int f21413a = 31;
     protected boolean b = false;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/BuglyStrategy$a.class */
@@ -65,7 +65,7 @@ public class BuglyStrategy {
     public String getAppPackageName() {
         synchronized (this) {
             if (this.e == null) {
-                return com.tencent.bugly.crashreport.common.info.a.b().f35130c;
+                return com.tencent.bugly.crashreport.common.info.a.b().f21439c;
             }
             return this.e;
         }
@@ -81,17 +81,17 @@ public class BuglyStrategy {
 
     public String getAppVersion() {
         synchronized (this) {
-            if (this.f35105c == null) {
+            if (this.f21414c == null) {
                 return com.tencent.bugly.crashreport.common.info.a.b().k;
             }
-            return this.f35105c;
+            return this.f21414c;
         }
     }
 
     public int getCallBackType() {
         int i;
         synchronized (this) {
-            i = this.f35104a;
+            i = this.f21413a;
         }
         return i;
     }
@@ -219,7 +219,7 @@ public class BuglyStrategy {
 
     public BuglyStrategy setAppVersion(String str) {
         synchronized (this) {
-            this.f35105c = str;
+            this.f21414c = str;
         }
         return this;
     }
@@ -233,7 +233,7 @@ public class BuglyStrategy {
 
     public void setCallBackType(int i) {
         synchronized (this) {
-            this.f35104a = i;
+            this.f21413a = i;
         }
     }
 

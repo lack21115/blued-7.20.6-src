@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.app.ActivityManager;
 import android.app.Instrumentation;
 import android.content.ComponentCallbacks2;
@@ -58,11 +59,11 @@ import android.view.WindowManager;
 import android.view.WindowManagerGlobal;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.Toolbar;
-import com.android.internal.R;
 import com.android.internal.app.IVoiceInteractor;
 import com.android.internal.app.ToolbarActionBar;
 import com.android.internal.app.WindowDecorActionBar;
 import com.android.internal.policy.PolicyManager;
+import com.tencent.smtt.sdk.WebView;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -76,7 +77,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     public static final int DEFAULT_KEYS_SEARCH_GLOBAL = 4;
     public static final int DEFAULT_KEYS_SEARCH_LOCAL = 3;
     public static final int DEFAULT_KEYS_SHORTCUT = 2;
-    protected static final int[] FOCUSED_STATE_SET = {16842908};
+    protected static final int[] FOCUSED_STATE_SET = {R.attr.state_focused};
     static final String FRAGMENTS_TAG = "android:fragments";
     public static final int RESULT_CANCELED = 0;
     public static final int RESULT_FIRST_USER = 1;
@@ -515,7 +516,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         accessibilityEvent.setClassName(getClass().getName());
         accessibilityEvent.setPackageName(getPackageName());
         WindowManager.LayoutParams attributes = getWindow().getAttributes();
-        accessibilityEvent.setFullScreen(attributes.width == -1 && attributes.height == -1);
+        accessibilityEvent.setFullScreen(((ViewGroup.LayoutParams) attributes).width == -1 && ((ViewGroup.LayoutParams) attributes).height == -1);
         CharSequence title = getTitle();
         if (TextUtils.isEmpty(title)) {
             return true;
@@ -1045,7 +1046,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
             theme.applyStyle(i, false);
         }
         if (theme != null) {
-            TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(R.styleable.Theme);
+            TypedArray obtainStyledAttributes = theme.obtainStyledAttributes(com.android.internal.R.styleable.Theme);
             int color = obtainStyledAttributes.getColor(227, 0);
             obtainStyledAttributes.recycle();
             if (color != 0) {
@@ -1271,7 +1272,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
                         z = true;
                         switch (this.mDefaultKeyMode) {
                             case 1:
-                                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + spannableStringBuilder));
+                                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(WebView.SCHEME_TEL + spannableStringBuilder));
                                 intent.addFlags(268435456);
                                 startActivity(intent);
                                 z2 = onKeyDown;
@@ -1673,7 +1674,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         getWindowManager().updateViewLayout(view, layoutParams);
     }
 
-    @Override // android.view.Window.OnWindowDismissedCallback
     public void onWindowDismissed() {
         finish();
     }

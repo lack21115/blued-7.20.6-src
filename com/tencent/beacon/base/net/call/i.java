@@ -10,13 +10,13 @@ import com.tencent.beacon.pack.ResponsePackage;
 public class i implements Callback<byte[]> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Callback f34990a;
+    final /* synthetic */ Callback f21299a;
     final /* synthetic */ j b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public i(j jVar, Callback callback) {
         this.b = jVar;
-        this.f34990a = callback;
+        this.f21299a = callback;
     }
 
     @Override // com.tencent.beacon.base.net.call.Callback
@@ -28,7 +28,7 @@ public class i implements Callback<byte[]> {
         byte[] bArr2;
         long j;
         com.tencent.beacon.base.util.c.a("[BeaconNet]", "raw response size: " + bArr.length, new Object[0]);
-        jceRequestEntity = this.b.f34991a;
+        jceRequestEntity = this.b.f21300a;
         if (jceRequestEntity.getType() == RequestType.EVENT) {
             a2 = com.tencent.beacon.base.net.c.c().e.b().a(bArr);
             if (a2 == null) {
@@ -42,7 +42,7 @@ public class i implements Callback<byte[]> {
             }
             ResponsePackage responsePackage = (ResponsePackage) a2;
             int i = responsePackage.cmd;
-            jceRequestEntity2 = this.b.f34991a;
+            jceRequestEntity2 = this.b.f21300a;
             if (i != jceRequestEntity2.getResponseCmd()) {
                 throw new NetException("responsePackage.cmd != requestEntity.responseCmd");
             }
@@ -56,7 +56,7 @@ public class i implements Callback<byte[]> {
         }
         j = this.b.b;
         com.tencent.beacon.base.net.b.d.a(j, a2.serverTime, a2.srcGatewayIp);
-        Callback callback = this.f34990a;
+        Callback callback = this.f21299a;
         if (callback != null) {
             callback.onResponse(bArr2);
         }
@@ -64,7 +64,7 @@ public class i implements Callback<byte[]> {
 
     @Override // com.tencent.beacon.base.net.call.Callback
     public void onFailure(com.tencent.beacon.base.net.d dVar) {
-        Callback callback = this.f34990a;
+        Callback callback = this.f21299a;
         if (callback != null) {
             callback.onFailure(dVar);
         }

@@ -2,6 +2,7 @@ package com.anythink.core.common.j;
 
 import android.os.PowerManager;
 import android.text.TextUtils;
+import com.android.internal.util.cm.PowerMenuConstants;
 import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.AdError;
 import com.anythink.core.c.e;
@@ -20,13 +21,9 @@ import org.json.JSONArray;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/j/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6771a = 1;
+    public static final int a = 1;
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6772c = 3;
+    public static final int c = 3;
     public static final int d = 4;
     public static final int e = 5;
     public static final int f = 0;
@@ -43,13 +40,13 @@ public final class c {
 
     public static void a() {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004657";
+        hVar.a = "1004657";
         a(hVar);
     }
 
     public static void a(int i2, int i3, int i4, int i5) {
         h hVar = new h(null, String.valueOf(i5));
-        hVar.f6660a = "1004641";
+        hVar.a = "1004641";
         hVar.m = String.valueOf(i2);
         hVar.n = String.valueOf(i3);
         hVar.o = String.valueOf(i4);
@@ -59,7 +56,7 @@ public final class c {
 
     public static void a(int i2, long j2, long j3, String str) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004644";
+        hVar.a = "1004644";
         hVar.e = str;
         hVar.m = String.valueOf(i2);
         hVar.n = String.valueOf(j2);
@@ -70,7 +67,7 @@ public final class c {
 
     private static void a(int i2, long j2, long j3, String str, String str2) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004651";
+        hVar.a = "1004651";
         hVar.e = str;
         hVar.m = String.valueOf(i2);
         hVar.n = String.valueOf(j3 - j2);
@@ -80,9 +77,9 @@ public final class c {
 
     public static void a(ai aiVar, com.anythink.core.common.e.a aVar, long j2, boolean z, boolean z2) {
         h hVar = new h(String.valueOf(aVar.e), String.valueOf(aiVar.c()));
-        hVar.f6660a = "1004660";
+        hVar.a = "1004660";
         com.anythink.core.c.d dVar = aVar.n;
-        hVar.b = aVar.f6612c;
+        hVar.b = aVar.c;
         hVar.d = aVar.d;
         hVar.g = String.valueOf(dVar != null ? Integer.valueOf(dVar.ae()) : "");
         hVar.l = String.valueOf(dVar != null ? Integer.valueOf(dVar.O()) : "");
@@ -115,7 +112,7 @@ public final class c {
             return;
         }
         h hVar = new h(null, String.valueOf(anVar.a()));
-        hVar.f6660a = "1004667";
+        hVar.a = "1004667";
         hVar.m = String.valueOf(anVar.a());
         hVar.n = anVar.b();
         hVar.o = anVar.c();
@@ -139,7 +136,7 @@ public final class c {
     public static void a(com.anythink.core.common.e.e eVar) {
         try {
             h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-            hVar.f6660a = "1004640";
+            hVar.a = "1004640";
             hVar.b = eVar.X();
             hVar.g = String.valueOf(eVar.I());
             hVar.l = String.valueOf(eVar.U());
@@ -173,7 +170,7 @@ public final class c {
 
     public static void a(com.anythink.core.common.e.e eVar, int i2, String str, double d2, String str2, String str3) {
         h hVar = new h(eVar.Y(), String.valueOf(i2));
-        hVar.f6660a = "1004668";
+        hVar.a = "1004668";
         hVar.d = eVar.W();
         hVar.m = String.valueOf(i2);
         hVar.n = str;
@@ -191,7 +188,7 @@ public final class c {
     public static void a(com.anythink.core.common.e.e eVar, int i2, String str, String str2) {
         try {
             h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-            hVar.f6660a = "1004633";
+            hVar.a = "1004633";
             hVar.b = eVar.X();
             hVar.d = eVar.W();
             hVar.g = String.valueOf(eVar.I());
@@ -217,7 +214,7 @@ public final class c {
     public static void a(com.anythink.core.common.e.e eVar, AdError adError) {
         try {
             h hVar = new h(eVar.Y(), null);
-            hVar.f6660a = "1004630";
+            hVar.a = "1004630";
             hVar.b = eVar.X();
             hVar.d = eVar.W();
             hVar.l = String.valueOf(eVar.U());
@@ -238,7 +235,7 @@ public final class c {
 
     public static void a(com.anythink.core.common.e.e eVar, AdError adError, Map<String, Object> map) {
         h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-        hVar.f6660a = "1004636";
+        hVar.a = "1004636";
         hVar.b = eVar.X();
         hVar.d = eVar.W();
         hVar.g = String.valueOf(eVar.I());
@@ -269,7 +266,7 @@ public final class c {
     public static void a(com.anythink.core.common.e.e eVar, com.anythink.core.c.d dVar, String str, String str2) {
         try {
             h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-            hVar.f6660a = "1004658";
+            hVar.a = "1004658";
             hVar.b = eVar.X();
             hVar.d = eVar.W();
             hVar.g = String.valueOf(eVar.I());
@@ -292,7 +289,7 @@ public final class c {
 
     public static void a(com.anythink.core.common.e.e eVar, ai aiVar, double d2, String str) {
         h hVar = new h(String.valueOf(eVar.Y()), String.valueOf(aiVar.c()));
-        hVar.f6660a = "1004659";
+        hVar.a = "1004659";
         hVar.b = eVar.X();
         hVar.d = eVar.W();
         hVar.g = String.valueOf(eVar.I());
@@ -310,7 +307,7 @@ public final class c {
     public static void a(com.anythink.core.common.e.e eVar, String str) {
         try {
             h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-            hVar.f6660a = "1004639";
+            hVar.a = "1004639";
             hVar.b = eVar.X();
             hVar.d = eVar.W();
             hVar.l = String.valueOf(eVar.U());
@@ -329,7 +326,7 @@ public final class c {
 
     public static void a(com.anythink.core.common.e.e eVar, String str, String str2) {
         h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-        hVar.f6660a = "1004669";
+        hVar.a = "1004669";
         hVar.b = eVar.X();
         hVar.d = eVar.W();
         hVar.m = String.valueOf(eVar.H());
@@ -345,7 +342,7 @@ public final class c {
 
     public static void a(com.anythink.core.common.e.e eVar, boolean z) {
         h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-        hVar.f6660a = "1004634";
+        hVar.a = "1004634";
         hVar.b = eVar.X();
         hVar.d = eVar.W();
         hVar.g = String.valueOf(eVar.I());
@@ -370,7 +367,7 @@ public final class c {
                 @Override // java.lang.Runnable
                 public final void run() {
                     h hVar = new h(com.anythink.core.common.e.e.this.Y(), String.valueOf(com.anythink.core.common.e.e.this.H()));
-                    hVar.f6660a = "1004632";
+                    hVar.a = "1004632";
                     hVar.b = com.anythink.core.common.e.e.this.X();
                     hVar.d = com.anythink.core.common.e.e.this.W();
                     hVar.g = String.valueOf(com.anythink.core.common.e.e.this.I());
@@ -410,7 +407,7 @@ public final class c {
     public static void a(com.anythink.core.common.e.e eVar, boolean z, long j2, long j3, long j4) {
         try {
             h hVar = new h(eVar.Y(), String.valueOf(eVar.H()));
-            hVar.f6660a = "1004643";
+            hVar.a = "1004643";
             hVar.b = eVar.X();
             hVar.d = eVar.W();
             hVar.g = String.valueOf(eVar.I());
@@ -468,10 +465,10 @@ public final class c {
             return;
         }
         h hVar = new h(String.valueOf(jVar.j), String.valueOf(jVar.f));
-        hVar.f6660a = "1004652";
+        hVar.a = "1004652";
         hVar.d = jVar.b;
         hVar.m = String.valueOf(jVar.f);
-        hVar.n = jVar.f6664c;
+        hVar.n = jVar.c;
         hVar.b = jVar.d;
         if (iVar instanceof s) {
             hVar.o = "1";
@@ -523,13 +520,13 @@ public final class c {
     public static void a(j jVar, i iVar, int i2) {
         try {
             h hVar = new h(String.valueOf(jVar.j), String.valueOf(jVar.f));
-            hVar.f6660a = "1004679";
+            hVar.a = "1004679";
             hVar.b = jVar.d;
             hVar.d = jVar.b;
             if (iVar instanceof g) {
                 hVar.m = ((g) iVar).T();
             }
-            hVar.n = jVar.f6664c;
+            hVar.n = jVar.c;
             hVar.o = iVar.p();
             hVar.p = String.valueOf(iVar.d());
             hVar.q = iVar.e();
@@ -545,7 +542,7 @@ public final class c {
             return;
         }
         h hVar = new h(String.valueOf(jVar.j), String.valueOf(jVar.f));
-        hVar.f6660a = "1004650";
+        hVar.a = "1004650";
         hVar.d = jVar.b;
         hVar.m = iVar.p();
         hVar.n = String.valueOf(iVar.d());
@@ -562,7 +559,7 @@ public final class c {
             return;
         }
         h hVar = new h(null, null);
-        hVar.f6660a = "1004648";
+        hVar.a = "1004648";
         hVar.d = jVar.b;
         hVar.m = iVar.p();
         hVar.n = String.valueOf(iVar.d());
@@ -582,7 +579,7 @@ public final class c {
                     return;
                 }
                 h a2 = h.a(String.this);
-                if (TextUtils.isEmpty(a2.f6660a)) {
+                if (TextUtils.isEmpty(a2.a)) {
                     return;
                 }
                 c.a(a2);
@@ -593,7 +590,7 @@ public final class c {
     public static void a(String str, ai aiVar, boolean z, long j2, com.anythink.core.common.e.a aVar) {
         com.anythink.core.c.d dVar = aVar != null ? aVar.n : null;
         h hVar = new h(String.valueOf(aVar.e), String.valueOf(aiVar.c()));
-        hVar.f6660a = "1004665";
+        hVar.a = "1004665";
         hVar.d = str;
         hVar.j = dVar != null ? dVar.U() : "";
         hVar.m = String.valueOf(aiVar.c());
@@ -620,7 +617,7 @@ public final class c {
 
     private static void a(String str, String str2, int i2, int i3, int i4, String str3, String str4, int i5, int i6, AdError adError, int i7, double d2, long j2, int i8, int i9, int i10, String str5, String str6) {
         h hVar = new h(str4, String.valueOf(i4));
-        hVar.f6660a = "1004631";
+        hVar.a = "1004631";
         hVar.b = str;
         hVar.d = str2;
         hVar.g = String.valueOf(i2);
@@ -648,7 +645,7 @@ public final class c {
 
     public static void a(String str, String str2, int i2, String str3, JSONArray jSONArray, int i3, int i4, int i5, String str4, int i6) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004675";
+        hVar.a = "1004675";
         hVar.b = str2;
         hVar.d = str;
         hVar.m = str3;
@@ -664,7 +661,7 @@ public final class c {
 
     public static void a(String str, String str2, long j2, long j3, long j4) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004635";
+        hVar.a = "1004635";
         if (!TextUtils.isEmpty(str2)) {
             hVar.d = str2;
         }
@@ -677,7 +674,7 @@ public final class c {
 
     private static void a(String str, String str2, com.anythink.core.c.d dVar, String str3) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004646";
+        hVar.a = "1004646";
         hVar.b = str;
         hVar.d = str2;
         hVar.g = String.valueOf(dVar.ae());
@@ -689,7 +686,7 @@ public final class c {
 
     public static void a(String str, String str2, String str3) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004647";
+        hVar.a = "1004647";
         hVar.e = str3;
         hVar.m = str2;
         hVar.n = str;
@@ -698,7 +695,7 @@ public final class c {
 
     public static void a(String str, String str2, String str3, int i2, String str4, long j2, long j3) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004642";
+        hVar.a = "1004642";
         hVar.b = str;
         hVar.m = str2;
         hVar.n = str3;
@@ -714,7 +711,7 @@ public final class c {
 
     public static void a(String str, String str2, String str3, String str4) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004637";
+        hVar.a = "1004637";
         hVar.d = str;
         hVar.m = str2;
         hVar.n = str3;
@@ -724,7 +721,7 @@ public final class c {
 
     public static void a(String str, String str2, String str3, String str4, long j2, String str5, long j3, long j4, int i2, long j5) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004638";
+        hVar.a = "1004638";
         hVar.d = str;
         hVar.m = str2;
         hVar.n = str3;
@@ -747,7 +744,7 @@ public final class c {
             @Override // java.lang.Runnable
             public final void run() {
                 h hVar = new h(String.this, str5);
-                hVar.f6660a = "1004680";
+                hVar.a = "1004680";
                 hVar.b = str;
                 hVar.d = str2;
                 hVar.m = str3;
@@ -755,7 +752,7 @@ public final class c {
                 hVar.o = z ? "1" : "0";
                 boolean z2 = true;
                 try {
-                    z2 = ((PowerManager) n.a().g().getSystemService("power")).isScreenOn();
+                    z2 = ((PowerManager) n.a().g().getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER)).isScreenOn();
                 } catch (Throwable th) {
                 }
                 hVar.p = z2 ? "1" : "0";
@@ -769,7 +766,7 @@ public final class c {
 
     public static void a(String str, String str2, String str3, String str4, String str5, String str6, String str7) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004616";
+        hVar.a = "1004616";
         hVar.d = str5;
         hVar.m = str;
         hVar.n = str2;
@@ -782,7 +779,7 @@ public final class c {
 
     private static boolean a(h hVar, com.anythink.core.c.a aVar) {
         Map<String, String> e2;
-        if (TextUtils.isEmpty(hVar.f6660a) || TextUtils.isEmpty(hVar.B) || TextUtils.isEmpty(hVar.A) || (e2 = aVar.e(hVar.f6660a)) == null) {
+        if (TextUtils.isEmpty(hVar.a) || TextUtils.isEmpty(hVar.B) || TextUtils.isEmpty(hVar.A) || (e2 = aVar.e(hVar.a)) == null) {
             return false;
         }
         if (e2.containsKey("0")) {
@@ -798,7 +795,7 @@ public final class c {
 
     public static void b(String str, String str2, String str3) {
         h hVar = new h(null, null);
-        hVar.f6660a = "1004666";
+        hVar.a = "1004666";
         hVar.m = str;
         hVar.n = str2;
         hVar.o = str3;
@@ -807,7 +804,7 @@ public final class c {
 
     private static /* synthetic */ boolean b(h hVar, com.anythink.core.c.a aVar) {
         Map<String, String> e2;
-        if (TextUtils.isEmpty(hVar.f6660a) || TextUtils.isEmpty(hVar.B) || TextUtils.isEmpty(hVar.A) || (e2 = aVar.e(hVar.f6660a)) == null) {
+        if (TextUtils.isEmpty(hVar.a) || TextUtils.isEmpty(hVar.B) || TextUtils.isEmpty(hVar.A) || (e2 = aVar.e(hVar.a)) == null) {
             return false;
         }
         if (e2.containsKey("0")) {

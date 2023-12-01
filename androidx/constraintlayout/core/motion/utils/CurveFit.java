@@ -10,11 +10,11 @@ public abstract class CurveFit {
     static class Constant extends CurveFit {
 
         /* renamed from: a  reason: collision with root package name */
-        double f2027a;
+        double f1979a;
         double[] b;
 
         Constant(double d, double[] dArr) {
-            this.f2027a = d;
+            this.f1979a = d;
             this.b = dArr;
         }
 
@@ -26,7 +26,7 @@ public abstract class CurveFit {
         @Override // androidx.constraintlayout.core.motion.utils.CurveFit
         public void getPos(double d, double[] dArr) {
             double[] dArr2 = this.b;
-            System.arraycopy((Object) dArr2, 0, (Object) dArr, 0, dArr2.length);
+            System.arraycopy(dArr2, 0, dArr, 0, dArr2.length);
         }
 
         @Override // androidx.constraintlayout.core.motion.utils.CurveFit
@@ -63,7 +63,7 @@ public abstract class CurveFit {
 
         @Override // androidx.constraintlayout.core.motion.utils.CurveFit
         public double[] getTimePoints() {
-            return new double[]{this.f2027a};
+            return new double[]{this.f1979a};
         }
     }
 

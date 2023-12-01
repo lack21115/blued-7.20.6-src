@@ -12,19 +12,19 @@ import com.soft.blued.R;
 public final class FmQuestionDetailBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final RelativeLayout f28759a;
+    public final RelativeLayout f15069a;
     public final CommonTopTitleNoTrans b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final TextView f28760c;
+    public final TextView f15070c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private FmQuestionDetailBinding(ConstraintLayout constraintLayout, RelativeLayout relativeLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, TextView textView2) {
         this.e = constraintLayout;
-        this.f28759a = relativeLayout;
+        this.f15069a = relativeLayout;
         this.b = commonTopTitleNoTrans;
-        this.f28760c = textView;
+        this.f15070c = textView;
         this.d = textView2;
     }
 
@@ -32,13 +32,13 @@ public final class FmQuestionDetailBinding implements ViewBinding {
         String str;
         RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.bottomView);
         if (relativeLayout != null) {
-            CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370694);
-            if (commonTopTitleNoTrans != null) {
+            CommonTopTitleNoTrans findViewById = view.findViewById(2131370694);
+            if (findViewById != null) {
                 TextView textView = (TextView) view.findViewById(2131371186);
                 if (textView != null) {
                     TextView textView2 = (TextView) view.findViewById(2131372754);
                     if (textView2 != null) {
-                        return new FmQuestionDetailBinding((ConstraintLayout) view, relativeLayout, commonTopTitleNoTrans, textView, textView2);
+                        return new FmQuestionDetailBinding((ConstraintLayout) view, relativeLayout, findViewById, textView, textView2);
                     }
                     str = "tvTitle";
                 } else {

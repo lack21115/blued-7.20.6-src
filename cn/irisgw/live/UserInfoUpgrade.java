@@ -19,7 +19,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/UserInfoUpgrade.class */
 public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInfoUpgradeOrBuilder {
@@ -35,8 +34,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
     public static final int CHAT_FRAME_ICON_FIELD_NUMBER = 2;
     private static final UserInfoUpgrade DEFAULT_INSTANCE = new UserInfoUpgrade();
     private static final Parser<UserInfoUpgrade> PARSER = new AbstractParser<UserInfoUpgrade>() { // from class: cn.irisgw.live.UserInfoUpgrade.1
-        @Override // com.google.protobuf.Parser
-        public UserInfoUpgrade parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public UserInfoUpgrade m7881parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new UserInfoUpgrade(codedInputStream, extensionRegistryLite);
         }
     };
@@ -113,14 +112,14 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -128,7 +127,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -149,7 +148,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -167,22 +166,22 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m7883addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UserInfoUpgrade build() {
-            UserInfoUpgrade buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public UserInfoUpgrade m7885build() {
+            UserInfoUpgrade m7887buildPartial = m7887buildPartial();
+            if (m7887buildPartial.isInitialized()) {
+                return m7887buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m7887buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UserInfoUpgrade buildPartial() {
+        /* renamed from: buildPartial */
+        public UserInfoUpgrade m7887buildPartial() {
             UserInfoUpgrade userInfoUpgrade = new UserInfoUpgrade(this);
             userInfoUpgrade.chatFrame_ = this.chatFrame_;
             userInfoUpgrade.chatFrameIcon_ = this.chatFrameIcon_;
@@ -207,8 +206,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             return userInfoUpgrade;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m7891clear() {
             super.clear();
             this.chatFrame_ = "";
             this.chatFrameIcon_ = "";
@@ -222,7 +221,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             this.canMute_ = 0;
             this.canKick_ = 0;
             this.canEmoji_ = 0;
-            this.pushMillisecond_ = 0L;
+            this.pushMillisecond_ = UserInfoUpgrade.serialVersionUID;
             return this;
         }
 
@@ -288,26 +287,25 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m7893clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m7896clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
         public Builder clearPushMillisecond() {
-            this.pushMillisecond_ = 0L;
+            this.pushMillisecond_ = UserInfoUpgrade.serialVersionUID;
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m7902clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
@@ -360,7 +358,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
 
         @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
@@ -374,7 +372,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         }
 
         @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo7872getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -396,7 +395,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
 
         @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
@@ -410,7 +409,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         }
 
         @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo7873getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -441,12 +441,11 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public UserInfoUpgrade getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public UserInfoUpgrade m7904getDefaultInstanceForType() {
             return UserInfoUpgrade.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_UserInfoUpgrade_descriptor;
         }
@@ -456,12 +455,10 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             return this.pushMillisecond_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_UserInfoUpgrade_fieldAccessorTable.ensureFieldAccessorsInitialized(UserInfoUpgrade.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -517,21 +514,21 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             if (userInfoUpgrade.getCanEmoji() != 0) {
                 setCanEmoji(userInfoUpgrade.getCanEmoji());
             }
-            if (userInfoUpgrade.getPushMillisecond() != 0) {
+            if (userInfoUpgrade.getPushMillisecond() != UserInfoUpgrade.serialVersionUID) {
                 setPushMillisecond(userInfoUpgrade.getPushMillisecond());
             }
-            mergeUnknownFields(userInfoUpgrade.unknownFields);
+            m7913mergeUnknownFields(userInfoUpgrade.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.UserInfoUpgrade.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.UserInfoUpgrade.Builder m7910mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -576,11 +573,11 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserInfoUpgrade.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserInfoUpgrade$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserInfoUpgrade.Builder.m7910mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserInfoUpgrade$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m7909mergeFrom(Message message) {
             if (message instanceof UserInfoUpgrade) {
                 return mergeFrom((UserInfoUpgrade) message);
             }
@@ -588,8 +585,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m7913mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -642,7 +639,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -668,7 +665,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -700,8 +697,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m7915setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -711,13 +708,13 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m7917setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m7919setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -766,7 +763,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
                                 this.chatFrameFrameColor_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                            this.chatFrameFrameColor_.add(readStringRequireUtf8);
                             z2 = z4;
                             continue;
                         case 50:
@@ -776,7 +773,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
                                 this.chatFrameBorderColor_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                            this.chatFrameBorderColor_.add(readStringRequireUtf82);
                             z2 = z5;
                             continue;
                         case 58:
@@ -843,73 +840,72 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m7880toBuilder();
     }
 
     public static Builder newBuilder(UserInfoUpgrade userInfoUpgrade) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(userInfoUpgrade);
+        return DEFAULT_INSTANCE.m7880toBuilder().mergeFrom(userInfoUpgrade);
     }
 
     public static UserInfoUpgrade parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (UserInfoUpgrade) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static UserInfoUpgrade parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserInfoUpgrade) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UserInfoUpgrade parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (UserInfoUpgrade) PARSER.parseFrom(byteString);
     }
 
     public static UserInfoUpgrade parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (UserInfoUpgrade) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static UserInfoUpgrade parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (UserInfoUpgrade) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static UserInfoUpgrade parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserInfoUpgrade) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static UserInfoUpgrade parseFrom(InputStream inputStream) throws IOException {
-        return (UserInfoUpgrade) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static UserInfoUpgrade parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserInfoUpgrade) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UserInfoUpgrade parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (UserInfoUpgrade) PARSER.parseFrom(byteBuffer);
     }
 
     public static UserInfoUpgrade parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (UserInfoUpgrade) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static UserInfoUpgrade parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (UserInfoUpgrade) PARSER.parseFrom(bArr);
     }
 
     public static UserInfoUpgrade parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (UserInfoUpgrade) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<UserInfoUpgrade> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof UserInfoUpgrade) {
             UserInfoUpgrade userInfoUpgrade = (UserInfoUpgrade) obj;
-            return getChatFrame().equals(userInfoUpgrade.getChatFrame()) && getChatFrameIcon().equals(userInfoUpgrade.getChatFrameIcon()) && getChatFrameColorType() == userInfoUpgrade.getChatFrameColorType() && getChatFrameGradientType() == userInfoUpgrade.getChatFrameGradientType() && getChatFrameFrameColorList().equals(userInfoUpgrade.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(userInfoUpgrade.getChatFrameBorderColorList()) && getAvatarFrameImg().equals(userInfoUpgrade.getAvatarFrameImg()) && getCanMute() == userInfoUpgrade.getCanMute() && getCanKick() == userInfoUpgrade.getCanKick() && getCanEmoji() == userInfoUpgrade.getCanEmoji() && getPushMillisecond() == userInfoUpgrade.getPushMillisecond() && this.unknownFields.equals(userInfoUpgrade.unknownFields);
+            return getChatFrame().equals(userInfoUpgrade.getChatFrame()) && getChatFrameIcon().equals(userInfoUpgrade.getChatFrameIcon()) && getChatFrameColorType() == userInfoUpgrade.getChatFrameColorType() && getChatFrameGradientType() == userInfoUpgrade.getChatFrameGradientType() && mo7873getChatFrameFrameColorList().equals(userInfoUpgrade.mo7873getChatFrameFrameColorList()) && mo7872getChatFrameBorderColorList().equals(userInfoUpgrade.mo7872getChatFrameBorderColorList()) && getAvatarFrameImg().equals(userInfoUpgrade.getAvatarFrameImg()) && getCanMute() == userInfoUpgrade.getCanMute() && getCanKick() == userInfoUpgrade.getCanKick() && getCanEmoji() == userInfoUpgrade.getCanEmoji() && getPushMillisecond() == userInfoUpgrade.getPushMillisecond() && this.unknownFields.equals(userInfoUpgrade.unknownFields);
         }
         return super.equals(obj);
     }
@@ -964,7 +960,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
 
     @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
@@ -978,7 +974,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
     }
 
     @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo7872getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -1000,7 +997,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
 
     @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
@@ -1014,7 +1011,8 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
     }
 
     @Override // cn.irisgw.live.UserInfoUpgradeOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo7873getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -1045,12 +1043,11 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public UserInfoUpgrade getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public UserInfoUpgrade m7875getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<UserInfoUpgrade> getParserForType() {
         return PARSER;
     }
@@ -1060,7 +1057,6 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         return this.pushMillisecond_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1085,7 +1081,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         for (int i8 = 0; i8 < this.chatFrameFrameColor_.size(); i8++) {
             i7 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i8));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo7873getChatFrameFrameColorList().size();
         int i9 = 0;
         int i10 = 0;
         while (true) {
@@ -1096,7 +1092,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             i9 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i11));
             i10 = i11 + 1;
         }
-        int size2 = i6 + i7 + (size * 1) + i9 + (getChatFrameBorderColorList().size() * 1);
+        int size2 = i6 + i7 + (size * 1) + i9 + (mo7872getChatFrameBorderColorList().size() * 1);
         int i12 = size2;
         if (!getAvatarFrameImgBytes().isEmpty()) {
             i12 = size2 + GeneratedMessageV3.computeStringSize(7, this.avatarFrameImg_);
@@ -1118,7 +1114,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         }
         long j = this.pushMillisecond_;
         int i19 = i18;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i19 = i18 + CodedOutputStream.computeUInt64Size(11, j);
         }
         int serializedSize = i19 + this.unknownFields.getSerializedSize();
@@ -1126,12 +1122,10 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1139,23 +1133,21 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         int hashCode = ((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getChatFrame().hashCode()) * 37) + 2) * 53) + getChatFrameIcon().hashCode()) * 37) + 3) * 53) + getChatFrameColorType()) * 37) + 4) * 53) + getChatFrameGradientType();
         int i = hashCode;
         if (getChatFrameFrameColorCount() > 0) {
-            i = (((hashCode * 37) + 5) * 53) + getChatFrameFrameColorList().hashCode();
+            i = (((hashCode * 37) + 5) * 53) + mo7873getChatFrameFrameColorList().hashCode();
         }
         int i2 = i;
         if (getChatFrameBorderColorCount() > 0) {
-            i2 = (((i * 37) + 6) * 53) + getChatFrameBorderColorList().hashCode();
+            i2 = (((i * 37) + 6) * 53) + mo7872getChatFrameBorderColorList().hashCode();
         }
         int hashCode2 = (((((((((((((((((((((i2 * 37) + 7) * 53) + getAvatarFrameImg().hashCode()) * 37) + 8) * 53) + getCanMute()) * 37) + 9) * 53) + getCanKick()) * 37) + 10) * 53) + getCanEmoji()) * 37) + 11) * 53) + Internal.hashLong(getPushMillisecond())) * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode2;
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_UserInfoUpgrade_fieldAccessorTable.ensureFieldAccessorsInitialized(UserInfoUpgrade.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1168,28 +1160,26 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m7878newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m7877newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new UserInfoUpgrade();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m7880toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         if (!getChatFrameBytes().isEmpty()) {
@@ -1234,7 +1224,7 @@ public final class UserInfoUpgrade extends GeneratedMessageV3 implements UserInf
             codedOutputStream.writeInt32(10, i8);
         }
         long j = this.pushMillisecond_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(11, j);
         }
         this.unknownFields.writeTo(codedOutputStream);

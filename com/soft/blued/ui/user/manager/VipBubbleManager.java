@@ -1,5 +1,6 @@
 package com.soft.blued.ui.user.manager;
 
+import android.R;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -21,7 +22,6 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.BitmapUtils;
 import com.blued.android.module.common.utils.NinePatchBitmapFactory;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.R;
 import com.soft.blued.constant.EventBusConstant;
 import com.soft.blued.http.UserHttpUtils;
 import com.soft.blued.ui.user.model.VipBubbleModel;
@@ -39,7 +39,7 @@ public class VipBubbleManager {
     private VipBubbleModel b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Bitmap f34230c;
+    private Bitmap f20539c;
     private Bitmap d;
     private Bitmap e;
     private Bitmap f;
@@ -47,7 +47,7 @@ public class VipBubbleManager {
     private Bitmap h;
 
     /* renamed from: a  reason: collision with root package name */
-    private List<VipBubbleModel> f34229a = new ArrayList();
+    private List<VipBubbleModel> f20538a = new ArrayList();
     private VipBubbleModel i = new VipBubbleModel();
     private VipBubbleModel j = new VipBubbleModel();
 
@@ -59,7 +59,6 @@ public class VipBubbleManager {
     private VipBubbleManager() {
         b();
         BluedSkinUtils.a(new BluedSkinObserver() { // from class: com.soft.blued.ui.user.manager.VipBubbleManager.1
-            @Override // skin.support.observe.SkinObserver
             public void a(SkinObservable skinObservable, Object obj) {
                 Logger.c("VipBubbleManager", "VipBubbleManager=====updateSkin");
                 VipBubbleManager.this.b();
@@ -68,15 +67,15 @@ public class VipBubbleManager {
     }
 
     private Drawable a(Bitmap bitmap) {
-        return NinePatchBitmapFactory.a(AppInfo.d().getResources(), bitmap, c(bitmap.getWidth() / 2), c(bitmap.getHeight() / 2), null);
+        return NinePatchBitmapFactory.a(AppInfo.d().getResources(), bitmap, c(bitmap.getWidth() / 2), c(bitmap.getHeight() / 2), (String) null);
     }
 
     private Drawable a(Bitmap bitmap, Bitmap bitmap2) {
-        NinePatchDrawable a2 = NinePatchBitmapFactory.a(AppInfo.d().getResources(), bitmap, c(bitmap.getWidth() / 2), c(bitmap.getHeight() / 2), null);
-        NinePatchDrawable a3 = NinePatchBitmapFactory.a(AppInfo.d().getResources(), bitmap2, c(bitmap2.getWidth() / 2), c(bitmap2.getHeight() / 2), null);
+        NinePatchDrawable a2 = NinePatchBitmapFactory.a(AppInfo.d().getResources(), bitmap, c(bitmap.getWidth() / 2), c(bitmap.getHeight() / 2), (String) null);
+        NinePatchDrawable a3 = NinePatchBitmapFactory.a(AppInfo.d().getResources(), bitmap2, c(bitmap2.getWidth() / 2), c(bitmap2.getHeight() / 2), (String) null);
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{16842919}, a3);
-        stateListDrawable.addState(new int[]{16842910}, a2);
+        stateListDrawable.addState(new int[]{R.attr.state_pressed}, a3);
+        stateListDrawable.addState(new int[]{R.attr.state_enabled}, a2);
         return stateListDrawable;
     }
 
@@ -98,7 +97,7 @@ public class VipBubbleManager {
     private List<NinePatchBitmapFactory.Range> c(int i) {
         ArrayList arrayList = new ArrayList();
         NinePatchBitmapFactory.Range range = new NinePatchBitmapFactory.Range();
-        range.f10890a = i - 1;
+        range.a = i - 1;
         range.b = i + 1;
         arrayList.add(range);
         return arrayList;
@@ -162,7 +161,7 @@ public class VipBubbleManager {
             LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_IM_BUBBLE).post(null);
             return;
         }
-        for (VipBubbleModel vipBubbleModel : this.f34229a) {
+        for (VipBubbleModel vipBubbleModel : this.f20538a) {
             if (vipBubbleModel.id == i) {
                 this.b = vipBubbleModel.copy();
                 f();
@@ -191,11 +190,11 @@ public class VipBubbleManager {
                 }
             }
         } else if (i2 == 0) {
-            if (this.f34230c == null || this.d == null) {
+            if (this.f20539c == null || this.d == null) {
                 return;
             }
             if (this.i.mNormalBitmap == null || this.i.mNormalBitmap.get() == null) {
-                this.i.mNormalBitmap = new SoftReference<>(this.f34230c);
+                this.i.mNormalBitmap = new SoftReference<>(this.f20539c);
             }
             if (this.i.mPressBitmap == null || this.i.mPressBitmap.get() == null) {
                 this.i.mPressBitmap = new SoftReference<>(this.d);
@@ -216,13 +215,12 @@ public class VipBubbleManager {
     public void a(final RefreshListener refreshListener, IRequestHost iRequestHost) {
         UserHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VipBubbleModel>>(iRequestHost) { // from class: com.soft.blued.ui.user.manager.VipBubbleManager.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipBubbleModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
-                    VipBubbleManager.this.f34229a.clear();
-                    VipBubbleManager.this.f34229a.addAll(bluedEntityA.data);
-                    for (VipBubbleModel vipBubbleModel : VipBubbleManager.this.f34229a) {
+                    VipBubbleManager.this.f20538a.clear();
+                    VipBubbleManager.this.f20538a.addAll(bluedEntityA.data);
+                    for (VipBubbleModel vipBubbleModel : VipBubbleManager.this.f20538a) {
                         if (vipBubbleModel.selected == 1) {
                             VipBubbleManager.this.b = vipBubbleModel.copy();
                             VipBubbleManager.this.f();
@@ -231,7 +229,6 @@ public class VipBubbleManager {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 RefreshListener refreshListener2;
                 super.onUIFinish(z);
@@ -249,7 +246,6 @@ public class VipBubbleManager {
         }
         if (vipBubbleModel.mVoiceBitmap == null || vipBubbleModel.mVoiceBitmap.get() == null) {
             ImageFileLoader.a((IRequestHost) null).a(i == 0 ? vipBubbleModel.voice_left : vipBubbleModel.voice_right).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.user.manager.VipBubbleManager.5
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     if (file == null) {
                         return;
@@ -267,11 +263,11 @@ public class VipBubbleManager {
     }
 
     public VipBubbleModel b(int i) {
-        if (this.f34229a.size() == 0) {
+        if (this.f20538a.size() == 0) {
             a((RefreshListener) null, (IRequestHost) null);
             return null;
         }
-        for (VipBubbleModel vipBubbleModel : this.f34229a) {
+        for (VipBubbleModel vipBubbleModel : this.f20538a) {
             if (vipBubbleModel.id == i) {
                 return vipBubbleModel;
             }
@@ -284,21 +280,20 @@ public class VipBubbleManager {
         this.i.mPressBitmap = null;
         this.i.mVoiceBitmap = null;
         ThreadManager.a().a(new ThreadExecutor("loadDefaultBubble") { // from class: com.soft.blued.ui.user.manager.VipBubbleManager.2
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 if (VipBubbleManager.this.h == null) {
-                    VipBubbleManager.this.h = BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.voice_right);
+                    VipBubbleManager.this.h = BitmapFactory.decodeResource(AppInfo.d().getResources(), com.soft.blued.R.drawable.voice_right);
                 }
                 if (VipBubbleManager.this.e == null) {
-                    VipBubbleManager.this.e = BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.bubble_right);
+                    VipBubbleManager.this.e = BitmapFactory.decodeResource(AppInfo.d().getResources(), com.soft.blued.R.drawable.bubble_right);
                 }
                 if (VipBubbleManager.this.f == null) {
-                    VipBubbleManager.this.f = BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.bubble_right_pressed);
+                    VipBubbleManager.this.f = BitmapFactory.decodeResource(AppInfo.d().getResources(), com.soft.blued.R.drawable.bubble_right_pressed);
                 }
                 try {
-                    VipBubbleManager.this.f34230c = BitmapUtils.a(BluedSkinUtils.b(AppInfo.d(), R.drawable.bubble_left));
-                    VipBubbleManager.this.d = BitmapUtils.a(BluedSkinUtils.b(AppInfo.d(), R.drawable.bubble_left_pressed));
-                    VipBubbleManager.this.g = BitmapUtils.a(BluedSkinUtils.b(AppInfo.d(), R.drawable.bubble_left));
+                    VipBubbleManager.this.f20539c = BitmapUtils.a(BluedSkinUtils.b(AppInfo.d(), (int) com.soft.blued.R.drawable.bubble_left));
+                    VipBubbleManager.this.d = BitmapUtils.a(BluedSkinUtils.b(AppInfo.d(), (int) com.soft.blued.R.drawable.bubble_left_pressed));
+                    VipBubbleManager.this.g = BitmapUtils.a(BluedSkinUtils.b(AppInfo.d(), (int) com.soft.blued.R.drawable.bubble_left));
                 } catch (Exception e) {
                 }
             }
@@ -311,11 +306,10 @@ public class VipBubbleManager {
         }
         if (vipBubbleModel.mNormalBitmap == null || vipBubbleModel.mNormalBitmap.get() == null || vipBubbleModel.mPressBitmap == null || vipBubbleModel.mPressBitmap.get() == null) {
             ThreadManager.a().a(new ThreadExecutor("loadBubble") { // from class: com.soft.blued.ui.user.manager.VipBubbleManager.6
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 public void execute() {
                     try {
-                        vipBubbleModel.mNormalBitmap = new SoftReference<>(GlideApp.b(AppInfo.d()).f().b(i == 0 ? vipBubbleModel.bubble_left : vipBubbleModel.bubble_right).g().get());
-                        vipBubbleModel.mPressBitmap = new SoftReference<>(GlideApp.b(AppInfo.d()).f().b(i == 0 ? vipBubbleModel.bubble_left_click : vipBubbleModel.bubble_right_click).g().get());
+                        vipBubbleModel.mNormalBitmap = new SoftReference<>((Bitmap) GlideApp.b(AppInfo.d()).a().a(i == 0 ? vipBubbleModel.bubble_left : vipBubbleModel.bubble_right).g().get());
+                        vipBubbleModel.mPressBitmap = new SoftReference<>((Bitmap) GlideApp.b(AppInfo.d()).a().a(i == 0 ? vipBubbleModel.bubble_left_click : vipBubbleModel.bubble_right_click).g().get());
                         if (vipBubbleModel.mNormalBitmap == null || vipBubbleModel.mPressBitmap == null || vipBubbleModel.mNormalBitmap.get() == null || vipBubbleModel.mPressBitmap.get() == null) {
                             return;
                         }
@@ -346,11 +340,11 @@ public class VipBubbleManager {
     }
 
     public List<VipBubbleModel> d() {
-        return this.f34229a;
+        return this.f20538a;
     }
 
     public void e() {
         this.b = null;
-        this.f34229a.clear();
+        this.f20538a.clear();
     }
 }

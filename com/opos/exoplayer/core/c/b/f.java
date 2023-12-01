@@ -4,11 +4,11 @@ package com.opos.exoplayer.core.c.b;
 final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long[] f25099a = {128, 64, 32, 16, 8, 4, 2, 1};
+    private static final long[] f11411a = {128, 64, 32, 16, 8, 4, 2, 1};
     private final byte[] b = new byte[8];
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25100c;
+    private int f11412c;
     private int d;
 
     public static int a(int i) {
@@ -16,7 +16,7 @@ final class f {
         int i2;
         int i3 = 0;
         do {
-            jArr = f25099a;
+            jArr = f11411a;
             if (i3 >= jArr.length) {
                 return -1;
             }
@@ -30,7 +30,7 @@ final class f {
         long j = bArr[0] & 255;
         long j2 = j;
         if (z) {
-            j2 = j & f25099a[i - 1];
+            j2 = j & f11411a[i - 1];
         }
         int i2 = 1;
         while (true) {
@@ -44,7 +44,7 @@ final class f {
     }
 
     public long a(com.opos.exoplayer.core.c.f fVar, boolean z, boolean z2, int i) {
-        if (this.f25100c == 0) {
+        if (this.f11412c == 0) {
             if (!fVar.a(this.b, 0, 1, z)) {
                 return -1L;
             }
@@ -53,22 +53,22 @@ final class f {
             if (a2 == -1) {
                 throw new IllegalStateException("No valid varint length mask found");
             }
-            this.f25100c = 1;
+            this.f11412c = 1;
         }
         int i2 = this.d;
         if (i2 > i) {
-            this.f25100c = 0;
+            this.f11412c = 0;
             return -2L;
         }
         if (i2 != 1) {
             fVar.b(this.b, 1, i2 - 1);
         }
-        this.f25100c = 0;
+        this.f11412c = 0;
         return a(this.b, this.d, z2);
     }
 
     public void a() {
-        this.f25100c = 0;
+        this.f11412c = 0;
         this.d = 0;
     }
 

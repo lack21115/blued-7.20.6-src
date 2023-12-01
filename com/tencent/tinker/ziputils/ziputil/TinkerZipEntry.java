@@ -1,6 +1,5 @@
 package com.tencent.tinker.ziputils.ziputil;
 
-import android.widget.ExpandableListView;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteOrder;
@@ -120,7 +119,7 @@ public class TinkerZipEntry implements ZipConstants, Cloneable {
         Streams.readFully(inputStream, bArr, 0, bArr.length);
         BufferIterator it = HeapBufferIterator.iterator(bArr, 0, bArr.length, ByteOrder.LITTLE_ENDIAN);
         int readInt = it.readInt();
-        if (readInt != 33639248) {
+        if (readInt != ZipConstants.CENSIG) {
             TinkerZipFile.throwZipException("unknown", inputStream.available(), "unknown", 0L, "Central Directory Entry", readInt);
         }
         it.seek(8);
@@ -132,14 +131,14 @@ public class TinkerZipEntry implements ZipConstants, Cloneable {
         this.compressionMethod = it.readShort() & 65535;
         this.time = it.readShort() & 65535;
         this.modDate = it.readShort() & 65535;
-        this.crc = it.readInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-        this.compressedSize = it.readInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-        this.size = it.readInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+        this.crc = it.readInt() & 4294967295L;
+        this.compressedSize = it.readInt() & 4294967295L;
+        this.size = it.readInt() & 4294967295L;
         int readShort2 = it.readShort() & 65535;
         int readShort3 = it.readShort() & 65535;
         int readShort4 = 65535 & it.readShort();
         it.seek(42);
-        this.localHeaderRelOffset = it.readInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+        this.localHeaderRelOffset = it.readInt() & 4294967295L;
         byte[] bArr2 = new byte[readShort2];
         Streams.readFully(inputStream, bArr2, 0, readShort2);
         if (containsNulByte(bArr2)) {
@@ -265,7 +264,7 @@ public class TinkerZipEntry implements ZipConstants, Cloneable {
     }
 
     public void setCrc(long j) {
-        if (j >= 0 && j <= ExpandableListView.PACKED_POSITION_VALUE_NULL) {
+        if (j >= 0 && j <= 4294967295L) {
             this.crc = j;
             return;
         }

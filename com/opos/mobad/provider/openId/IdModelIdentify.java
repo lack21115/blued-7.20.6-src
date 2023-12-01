@@ -25,11 +25,11 @@ public class IdModelIdentify implements IBridgeTargetIdentify {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f27119a;
+    public final boolean f13431a;
     public final String b;
 
     public IdModelIdentify(boolean z, String str) {
-        this.f27119a = z;
+        this.f13431a = z;
         this.b = str;
     }
 

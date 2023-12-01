@@ -4,16 +4,16 @@ package com.tencent.qimei.b;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile a f38311a;
+    public static volatile a f24620a;
 
     public static a a() {
         a aVar;
         synchronized (a.class) {
             try {
-                if (f38311a == null) {
-                    f38311a = new c();
+                if (f24620a == null) {
+                    f24620a = new c();
                 }
-                aVar = f38311a;
+                aVar = f24620a;
             } catch (Throwable th) {
                 throw th;
             }

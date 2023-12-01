@@ -6,11 +6,11 @@ import com.tencent.liteav.videobase.base.TakeSnapshotListener;
 final /* synthetic */ class n implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final g f36836a;
+    private final g f23145a;
     private final TakeSnapshotListener b;
 
     private n(g gVar, TakeSnapshotListener takeSnapshotListener) {
-        this.f36836a = gVar;
+        this.f23145a = gVar;
         this.b = takeSnapshotListener;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class n implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        g.a(this.f36836a, this.b);
+        g.a(this.f23145a, this.b);
     }
 }

@@ -16,7 +16,7 @@ public class fg extends ListView {
         super(context);
     }
 
-    @Override // android.widget.AbsListView, android.widget.AdapterView
+    @Override // android.widget.AbsListView
     public void handleDataChanged() {
         super.handleDataChanged();
         a aVar = this.g;

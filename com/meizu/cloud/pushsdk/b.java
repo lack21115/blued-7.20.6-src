@@ -26,10 +26,10 @@ public class b {
     private static volatile b b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final SparseArray<c> f23956a;
+    private final SparseArray<c> f10345a;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, com.meizu.cloud.pushsdk.handler.a> f23957c;
+    private Map<String, com.meizu.cloud.pushsdk.handler.a> f10346c;
     private com.meizu.cloud.pushsdk.handler.a.f.a d;
     private com.meizu.cloud.pushsdk.handler.a.a.a e;
 
@@ -40,7 +40,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.a
         public void a(Context context, Intent intent) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, intent);
@@ -50,7 +50,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, MzPushMessage mzPushMessage) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, mzPushMessage);
@@ -60,7 +60,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, PushSwitchStatus pushSwitchStatus) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, pushSwitchStatus);
@@ -70,7 +70,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, RegisterStatus registerStatus) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, registerStatus);
@@ -80,7 +80,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, SubAliasStatus subAliasStatus) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, subAliasStatus);
@@ -90,7 +90,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, SubTagsStatus subTagsStatus) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, subTagsStatus);
@@ -100,7 +100,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, UnRegisterStatus unRegisterStatus) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, unRegisterStatus);
@@ -110,7 +110,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, String str) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, str);
@@ -120,7 +120,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, String str, String str2) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, str, str2);
@@ -130,7 +130,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(Context context, boolean z) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(context, z);
@@ -140,7 +140,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void a(PushNotificationBuilder pushNotificationBuilder) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.a(pushNotificationBuilder);
@@ -150,7 +150,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void b(Context context, MzPushMessage mzPushMessage) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.b(context, mzPushMessage);
@@ -160,7 +160,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void b(Context context, String str) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.b(context, str);
@@ -170,7 +170,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void c(Context context, MzPushMessage mzPushMessage) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.c(context, mzPushMessage);
@@ -180,7 +180,7 @@ public class b {
 
         @Override // com.meizu.cloud.pushsdk.handler.b
         public void c(Context context, String str) {
-            for (Map.Entry entry : b.this.f23957c.entrySet()) {
+            for (Map.Entry entry : b.this.f10346c.entrySet()) {
                 com.meizu.cloud.pushsdk.handler.a aVar = (com.meizu.cloud.pushsdk.handler.a) entry.getValue();
                 if (aVar != null) {
                     aVar.c(context, str);
@@ -198,12 +198,12 @@ public class b {
     }
 
     public b(Context context, List<c> list, com.meizu.cloud.pushsdk.handler.a aVar) {
-        this.f23956a = new SparseArray<>();
+        this.f10345a = new SparseArray<>();
         if (context == null) {
             throw new IllegalArgumentException("Context must not be null.");
         }
         Context applicationContext = context.getApplicationContext();
-        this.f23957c = new HashMap();
+        this.f10346c = new HashMap();
         a aVar2 = new a();
         if (PushConstants.PUSH_PACKAGE_NAME.equalsIgnoreCase(applicationContext.getPackageName())) {
             this.d = new com.meizu.cloud.pushsdk.handler.a.f.a(applicationContext);
@@ -254,12 +254,12 @@ public class b {
     }
 
     public b a(c cVar) {
-        this.f23956a.put(cVar.a(), cVar);
+        this.f10345a.put(cVar.a(), cVar);
         return this;
     }
 
     public b a(String str, com.meizu.cloud.pushsdk.handler.a aVar) {
-        this.f23957c.put(str, aVar);
+        this.f10346c.put(str, aVar);
         return this;
     }
 
@@ -285,7 +285,7 @@ public class b {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f23956a.size() || this.f23956a.valueAt(i2).b(intent)) {
+                if (i2 >= this.f10345a.size() || this.f10345a.valueAt(i2).b(intent)) {
                     return;
                 }
                 i = i2 + 1;

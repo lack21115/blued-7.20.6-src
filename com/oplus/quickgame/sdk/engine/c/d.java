@@ -18,7 +18,7 @@ public class d extends a {
         if (this.d == null) {
             this.d = new HashMap(1);
         }
-        j.a(context, this.f, this.f24394a, this.b, this.f24395c, this.d, this.e);
+        j.a(context, this.f, this.f10707a, this.b, this.f10708c, this.d, this.e);
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.Req
@@ -51,6 +51,6 @@ public class d extends a {
         if (this.d == null) {
             this.d = new HashMap(1);
         }
-        j.b(context, this.f, this.f24394a, this.b, this.f24395c, this.d, this.e);
+        j.b(context, this.f, this.f10707a, this.b, this.f10708c, this.d, this.e);
     }
 }

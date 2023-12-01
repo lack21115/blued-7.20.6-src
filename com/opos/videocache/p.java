@@ -12,16 +12,16 @@ import java.util.List;
 class p extends ProxySelector {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final List<Proxy> f27455a = Arrays.asList(Proxy.NO_PROXY);
+    private static final List<Proxy> f13767a = Arrays.asList(Proxy.NO_PROXY);
     private final ProxySelector b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f27456c;
+    private final String f13768c;
     private final int d;
 
     p(ProxySelector proxySelector, String str, int i) {
         this.b = (ProxySelector) f.a(proxySelector);
-        this.f27456c = (String) f.a(str);
+        this.f13768c = (String) f.a(str);
         this.d = i;
     }
 
@@ -37,6 +37,6 @@ class p extends ProxySelector {
 
     @Override // java.net.ProxySelector
     public List<Proxy> select(URI uri) {
-        return this.f27456c.equals(uri.getHost()) && this.d == uri.getPort() ? f27455a : this.b.select(uri);
+        return this.f13768c.equals(uri.getHost()) && this.d == uri.getPort() ? f13767a : this.b.select(uri);
     }
 }

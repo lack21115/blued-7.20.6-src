@@ -13,9 +13,7 @@ import com.blued.android.framework.view.shape.ShapeHelper;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/shape/ShapeConstraintLayout.class */
 public class ShapeConstraintLayout extends ConstraintLayout implements BluedSkinSupportable, ShapeHelper.ShapeView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ShapeModel f10289a;
+    private ShapeModel a;
 
     public ShapeConstraintLayout(Context context) {
         super(context);
@@ -42,186 +40,186 @@ public class ShapeConstraintLayout extends ConstraintLayout implements BluedSkin
     private void a(Context context, AttributeSet attributeSet) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ShapeConstraintLayout);
         ShapeModel shapeModel = new ShapeModel();
-        this.f10289a = shapeModel;
-        shapeModel.f10292a = obtainStyledAttributes.getBoolean(R.styleable.ShapeConstraintLayout_bg_default_touch, false);
-        this.f10289a.h = obtainStyledAttributes.getDrawable(R.styleable.ShapeConstraintLayout_bg_drawable);
-        this.f10289a.i = obtainStyledAttributes.getDrawable(R.styleable.ShapeConstraintLayout_bg_touch_drawable);
-        this.f10289a.j = obtainStyledAttributes.getDrawable(R.styleable.ShapeConstraintLayout_bg_unable_drawable);
+        this.a = shapeModel;
+        shapeModel.a = obtainStyledAttributes.getBoolean(R.styleable.ShapeConstraintLayout_bg_default_touch, false);
+        this.a.h = obtainStyledAttributes.getDrawable(R.styleable.ShapeConstraintLayout_bg_drawable);
+        this.a.i = obtainStyledAttributes.getDrawable(R.styleable.ShapeConstraintLayout_bg_touch_drawable);
+        this.a.j = obtainStyledAttributes.getDrawable(R.styleable.ShapeConstraintLayout_bg_unable_drawable);
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_solid_color)) {
             int resourceId = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_solid_color, 0);
-            this.f10289a.U = resourceId;
+            this.a.U = resourceId;
             Log.e("skin", "solid color resid = " + resourceId);
-            this.f10289a.k = a(context, resourceId);
+            this.a.k = a(context, resourceId);
         } else {
-            this.f10289a.k = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_solid_color, 0);
-            this.f10289a.U = 17170445;
+            this.a.k = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_solid_color, 0);
+            this.a.U = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_solid_touch_color)) {
             int resourceId2 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_solid_touch_color, 0);
-            this.f10289a.V = resourceId2;
+            this.a.V = resourceId2;
             Log.e("skin", "solid touch color resid = " + resourceId2);
-            this.f10289a.l = a(context, resourceId2);
+            this.a.l = a(context, resourceId2);
         } else {
-            this.f10289a.l = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_solid_touch_color, 0);
-            this.f10289a.V = 17170445;
+            this.a.l = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_solid_touch_color, 0);
+            this.a.V = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_solid_unable_color)) {
             int resourceId3 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_solid_unable_color, 0);
-            this.f10289a.W = resourceId3;
+            this.a.W = resourceId3;
             Log.e("skin", "solid unable color resid = " + resourceId3);
-            this.f10289a.m = a(context, resourceId3);
+            this.a.m = a(context, resourceId3);
         } else {
-            this.f10289a.m = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_solid_unable_color, 0);
-            this.f10289a.W = 17170445;
+            this.a.m = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_solid_unable_color, 0);
+            this.a.W = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_stroke_color)) {
             int resourceId4 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_stroke_color, 0);
-            this.f10289a.X = resourceId4;
+            this.a.X = resourceId4;
             Log.e("skin", "solid unable color resid = " + resourceId4);
-            this.f10289a.n = a(context, resourceId4);
+            this.a.n = a(context, resourceId4);
         } else {
-            this.f10289a.n = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_stroke_color, 0);
-            this.f10289a.X = 17170445;
+            this.a.n = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_stroke_color, 0);
+            this.a.X = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_stroke_touch_color)) {
             int resourceId5 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_stroke_touch_color, 0);
-            this.f10289a.Y = resourceId5;
+            this.a.Y = resourceId5;
             Log.e("skin", "solid unable color resid = " + resourceId5);
-            this.f10289a.o = a(context, resourceId5);
+            this.a.o = a(context, resourceId5);
         } else {
-            this.f10289a.o = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_stroke_touch_color, 0);
-            this.f10289a.Y = 17170445;
+            this.a.o = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_stroke_touch_color, 0);
+            this.a.Y = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_stroke_unable_color)) {
             int resourceId6 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_stroke_unable_color, 0);
-            this.f10289a.Z = resourceId6;
+            this.a.Z = resourceId6;
             Log.e("skin", "solid unable color resid = " + resourceId6);
-            this.f10289a.p = a(context, resourceId6);
+            this.a.p = a(context, resourceId6);
         } else {
-            this.f10289a.p = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_stroke_unable_color, 0);
-            this.f10289a.Z = 17170445;
+            this.a.p = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_stroke_unable_color, 0);
+            this.a.Z = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_start_color)) {
             int resourceId7 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_start_color, 0);
-            this.f10289a.aa = resourceId7;
+            this.a.aa = resourceId7;
             Log.e("skin", "start color resid = " + resourceId7);
-            this.f10289a.t = a(context, resourceId7);
+            this.a.t = a(context, resourceId7);
         } else {
-            this.f10289a.t = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_start_color, 0);
-            this.f10289a.aa = 17170445;
+            this.a.t = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_start_color, 0);
+            this.a.aa = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_center_color)) {
             int resourceId8 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_center_color, 0);
-            this.f10289a.ab = resourceId8;
+            this.a.ab = resourceId8;
             Log.e("skin", "center color resid = " + resourceId8);
-            this.f10289a.u = a(context, resourceId8);
+            this.a.u = a(context, resourceId8);
         } else {
-            this.f10289a.u = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_center_color, 0);
-            this.f10289a.ab = 17170445;
+            this.a.u = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_center_color, 0);
+            this.a.ab = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_end_color)) {
             int resourceId9 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_end_color, 0);
-            this.f10289a.ac = resourceId9;
+            this.a.ac = resourceId9;
             Log.e("skin", "end color resid = " + resourceId9);
-            this.f10289a.v = a(context, resourceId9);
+            this.a.v = a(context, resourceId9);
         } else {
-            this.f10289a.v = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_end_color, 0);
-            this.f10289a.ac = 17170445;
+            this.a.v = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_end_color, 0);
+            this.a.ac = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_start_touch_color)) {
             int resourceId10 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_start_touch_color, 0);
-            this.f10289a.ad = resourceId10;
+            this.a.ad = resourceId10;
             Log.e("skin", "start touch color resid = " + resourceId10);
-            this.f10289a.w = a(context, resourceId10);
+            this.a.w = a(context, resourceId10);
         } else {
-            this.f10289a.w = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_start_touch_color, 0);
-            this.f10289a.ad = 17170445;
+            this.a.w = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_start_touch_color, 0);
+            this.a.ad = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_center_touch_color)) {
             int resourceId11 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_center_touch_color, 0);
-            this.f10289a.ae = resourceId11;
+            this.a.ae = resourceId11;
             Log.e("skin", "start touch color resid = " + resourceId11);
-            this.f10289a.x = a(context, resourceId11);
+            this.a.x = a(context, resourceId11);
         } else {
-            this.f10289a.x = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_center_touch_color, 0);
-            this.f10289a.ae = 17170445;
+            this.a.x = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_center_touch_color, 0);
+            this.a.ae = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_end_touch_color)) {
             int resourceId12 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_end_touch_color, 0);
-            this.f10289a.af = resourceId12;
+            this.a.af = resourceId12;
             Log.e("skin", "end touch color resid = " + resourceId12);
-            this.f10289a.y = a(context, resourceId12);
+            this.a.y = a(context, resourceId12);
         } else {
-            this.f10289a.y = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_end_touch_color, 0);
-            this.f10289a.af = 17170445;
+            this.a.y = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_end_touch_color, 0);
+            this.a.af = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_start_unable_color)) {
             int resourceId13 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_start_unable_color, 0);
-            this.f10289a.ag = resourceId13;
+            this.a.ag = resourceId13;
             Log.e("skin", "start unable color resid = " + resourceId13);
-            this.f10289a.z = a(context, resourceId13);
+            this.a.z = a(context, resourceId13);
         } else {
-            this.f10289a.z = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_start_unable_color, 0);
-            this.f10289a.ag = 17170445;
+            this.a.z = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_start_unable_color, 0);
+            this.a.ag = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_center_unable_color)) {
             int resourceId14 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_center_unable_color, 0);
-            this.f10289a.ah = resourceId14;
+            this.a.ah = resourceId14;
             Log.e("skin", "center unable color resid = " + resourceId14);
-            this.f10289a.A = a(context, resourceId14);
+            this.a.A = a(context, resourceId14);
         } else {
-            this.f10289a.A = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_center_unable_color, 0);
-            this.f10289a.ah = 17170445;
+            this.a.A = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_center_unable_color, 0);
+            this.a.ah = com.android.internal.R.color.transparent;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.ShapeConstraintLayout_gradient_end_unable_color)) {
             int resourceId15 = obtainStyledAttributes.getResourceId(R.styleable.ShapeConstraintLayout_gradient_end_unable_color, 0);
-            this.f10289a.ai = resourceId15;
+            this.a.ai = resourceId15;
             Log.e("skin", "end unable color resid = " + resourceId15);
-            this.f10289a.B = a(context, resourceId15);
+            this.a.B = a(context, resourceId15);
         } else {
-            this.f10289a.B = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_end_unable_color, 0);
-            this.f10289a.ai = 17170445;
+            this.a.B = obtainStyledAttributes.getColor(R.styleable.ShapeConstraintLayout_gradient_end_unable_color, 0);
+            this.a.ai = com.android.internal.R.color.transparent;
         }
-        this.f10289a.q = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_stroke_width, 0.0f);
-        this.f10289a.r = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_stroke_dash_width, 0.0f);
-        this.f10289a.s = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_stroke_dash_gap, 0.0f);
-        this.f10289a.H = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_corner_radius, 0.0f);
-        this.f10289a.I = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_top_left_radius, 0.0f);
-        this.f10289a.J = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_top_right_radius, 0.0f);
-        this.f10289a.K = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_bottom_left_radius, 0.0f);
-        this.f10289a.L = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_bottom_right_radius, 0.0f);
-        this.f10289a.C = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_gradient_angle, 0);
-        this.f10289a.D = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_gradient_type, 0);
-        this.f10289a.E = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_gradient_radius, 0.0f);
-        this.f10289a.F = obtainStyledAttributes.getFloat(R.styleable.ShapeConstraintLayout_gradient_center_x, 0.5f);
-        this.f10289a.G = obtainStyledAttributes.getFloat(R.styleable.ShapeConstraintLayout_gradient_center_y, 0.5f);
-        this.f10289a.M = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_bg_model, 0);
-        this.f10289a.N = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_shape_type, 0);
-        this.f10289a.O = obtainStyledAttributes.getFloat(R.styleable.ShapeConstraintLayout_wh_ratio, 0.0f);
-        this.f10289a.aj = obtainStyledAttributes.getBoolean(R.styleable.ShapeConstraintLayout_supportsRtl, true);
+        this.a.q = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_stroke_width, 0.0f);
+        this.a.r = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_stroke_dash_width, 0.0f);
+        this.a.s = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_stroke_dash_gap, 0.0f);
+        this.a.H = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_corner_radius, 0.0f);
+        this.a.I = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_top_left_radius, 0.0f);
+        this.a.J = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_top_right_radius, 0.0f);
+        this.a.K = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_bottom_left_radius, 0.0f);
+        this.a.L = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_bottom_right_radius, 0.0f);
+        this.a.C = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_gradient_angle, 0);
+        this.a.D = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_gradient_type, 0);
+        this.a.E = obtainStyledAttributes.getDimension(R.styleable.ShapeConstraintLayout_gradient_radius, 0.0f);
+        this.a.F = obtainStyledAttributes.getFloat(R.styleable.ShapeConstraintLayout_gradient_center_x, 0.5f);
+        this.a.G = obtainStyledAttributes.getFloat(R.styleable.ShapeConstraintLayout_gradient_center_y, 0.5f);
+        this.a.M = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_bg_model, 0);
+        this.a.N = obtainStyledAttributes.getInt(R.styleable.ShapeConstraintLayout_shape_type, 0);
+        this.a.O = obtainStyledAttributes.getFloat(R.styleable.ShapeConstraintLayout_wh_ratio, 0.0f);
+        this.a.aj = obtainStyledAttributes.getBoolean(R.styleable.ShapeConstraintLayout_supportsRtl, true);
         obtainStyledAttributes.recycle();
         a();
     }
 
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        Log.e("skin", "ShapeConstraintLayout apply skin solidColor = " + this.f10289a.U);
+        Log.e("skin", "ShapeConstraintLayout apply skin solidColor = " + this.a.U);
         try {
-            this.f10289a.k = BluedSkinUtils.a(getContext(), this.f10289a.U);
-            this.f10289a.l = BluedSkinUtils.a(getContext(), this.f10289a.V);
-            this.f10289a.m = BluedSkinUtils.a(getContext(), this.f10289a.W);
-            this.f10289a.t = BluedSkinUtils.a(getContext(), this.f10289a.aa);
-            this.f10289a.u = BluedSkinUtils.a(getContext(), this.f10289a.ab);
-            this.f10289a.v = BluedSkinUtils.a(getContext(), this.f10289a.ac);
-            this.f10289a.z = BluedSkinUtils.a(getContext(), this.f10289a.ag);
-            this.f10289a.A = BluedSkinUtils.a(getContext(), this.f10289a.ah);
-            this.f10289a.B = BluedSkinUtils.a(getContext(), this.f10289a.ai);
-            this.f10289a.w = BluedSkinUtils.a(getContext(), this.f10289a.ad);
-            this.f10289a.x = BluedSkinUtils.a(getContext(), this.f10289a.ae);
-            this.f10289a.y = BluedSkinUtils.a(getContext(), this.f10289a.af);
-            this.f10289a.n = BluedSkinUtils.a(getContext(), this.f10289a.X);
-            this.f10289a.o = BluedSkinUtils.a(getContext(), this.f10289a.Y);
-            this.f10289a.p = BluedSkinUtils.a(getContext(), this.f10289a.Z);
+            this.a.k = BluedSkinUtils.a(getContext(), this.a.U);
+            this.a.l = BluedSkinUtils.a(getContext(), this.a.V);
+            this.a.m = BluedSkinUtils.a(getContext(), this.a.W);
+            this.a.t = BluedSkinUtils.a(getContext(), this.a.aa);
+            this.a.u = BluedSkinUtils.a(getContext(), this.a.ab);
+            this.a.v = BluedSkinUtils.a(getContext(), this.a.ac);
+            this.a.z = BluedSkinUtils.a(getContext(), this.a.ag);
+            this.a.A = BluedSkinUtils.a(getContext(), this.a.ah);
+            this.a.B = BluedSkinUtils.a(getContext(), this.a.ai);
+            this.a.w = BluedSkinUtils.a(getContext(), this.a.ad);
+            this.a.x = BluedSkinUtils.a(getContext(), this.a.ae);
+            this.a.y = BluedSkinUtils.a(getContext(), this.a.af);
+            this.a.n = BluedSkinUtils.a(getContext(), this.a.X);
+            this.a.o = BluedSkinUtils.a(getContext(), this.a.Y);
+            this.a.p = BluedSkinUtils.a(getContext(), this.a.Z);
             a();
         } catch (Exception e) {
         }
@@ -229,15 +227,14 @@ public class ShapeConstraintLayout extends ConstraintLayout implements BluedSkin
 
     @Override // com.blued.android.framework.view.shape.ShapeHelper.ShapeView
     public ShapeModel getShapeModel() {
-        if (this.f10289a == null) {
-            this.f10289a = new ShapeModel();
+        if (this.a == null) {
+            this.a = new ShapeModel();
         }
-        return this.f10289a;
+        return this.a;
     }
 
-    @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.View
     public void onMeasure(int i, int i2) {
-        ShapeModel shapeModel = this.f10289a;
+        ShapeModel shapeModel = this.a;
         int i3 = i;
         int i4 = i2;
         if (shapeModel != null) {
@@ -247,7 +244,7 @@ public class ShapeConstraintLayout extends ConstraintLayout implements BluedSkin
                 setMeasuredDimension(getDefaultSize(0, i), getDefaultSize(0, i2));
                 int measuredWidth = getMeasuredWidth();
                 i3 = View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824);
-                i4 = View.MeasureSpec.makeMeasureSpec((int) (measuredWidth / this.f10289a.O), 1073741824);
+                i4 = View.MeasureSpec.makeMeasureSpec((int) (measuredWidth / this.a.O), 1073741824);
             }
         }
         super.onMeasure(i3, i4);
@@ -255,7 +252,7 @@ public class ShapeConstraintLayout extends ConstraintLayout implements BluedSkin
 
     @Override // com.blued.android.framework.view.shape.ShapeHelper.ShapeView
     public void setShapeModel(ShapeModel shapeModel) {
-        this.f10289a = shapeModel;
+        this.a = shapeModel;
         a();
     }
 }

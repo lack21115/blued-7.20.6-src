@@ -4,11 +4,11 @@ package com.opos.mobad.cmn.service.a;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f25920a;
+    public int f12232a;
     public int b;
 
     public b(int i, int i2) {
-        this.f25920a = i;
+        this.f12232a = i;
         this.b = i2;
     }
 }

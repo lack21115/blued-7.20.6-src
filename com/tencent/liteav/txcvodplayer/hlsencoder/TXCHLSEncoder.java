@@ -10,11 +10,11 @@ import java.util.Random;
 public class TXCHLSEncoder {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f36551a = TXCHLSEncoder.class.getName();
+    private static final String f22860a = TXCHLSEncoder.class.getName();
     private static final Charset b = Charset.forName("UTF-8");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final char[] f36552c = "0123456789ABCDEF".toCharArray();
+    private static final char[] f22861c = "0123456789ABCDEF".toCharArray();
 
     public static String a() {
         StringBuilder sb = new StringBuilder();
@@ -24,7 +24,7 @@ public class TXCHLSEncoder {
             if (i2 >= 32) {
                 return sb.toString();
             }
-            sb.append(f36552c[new Random().nextInt(f36552c.length)]);
+            sb.append(f22861c[new Random().nextInt(f22861c.length)]);
             i = i2 + 1;
         }
     }
@@ -35,7 +35,7 @@ public class TXCHLSEncoder {
             str3 = "default";
         }
         if (TextUtils.isEmpty(str2)) {
-            LiteavLog.w(f36551a, "genSecretKey input exception!");
+            LiteavLog.w(f22860a, "genSecretKey input exception!");
             return null;
         }
         return md5(i, str3, str2, i2);
@@ -43,7 +43,7 @@ public class TXCHLSEncoder {
 
     public static String a(String str) {
         if (TextUtils.isEmpty(str)) {
-            LiteavLog.w(f36551a, "encryptKey input exception!");
+            LiteavLog.w(f22860a, "encryptKey input exception!");
             return null;
         }
         return rsaEncrypt(str);
@@ -51,7 +51,7 @@ public class TXCHLSEncoder {
 
     public static String a(String str, String str2) {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
-            LiteavLog.w(f36551a, "encryptWithSecretKey input exception!");
+            LiteavLog.w(f22860a, "encryptWithSecretKey input exception!");
             return null;
         }
         return Base64.encodeToString(aesEncrypt(str, str2.getBytes(b)), 2);
@@ -63,7 +63,7 @@ public class TXCHLSEncoder {
 
     public static String b(String str, String str2) {
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
-            LiteavLog.w(f36551a, "decryptWithSecretKey input exception!");
+            LiteavLog.w(f22860a, "decryptWithSecretKey input exception!");
             return null;
         }
         return new String(aesDecrypt(str, Base64.decode(str2, 2)), b);

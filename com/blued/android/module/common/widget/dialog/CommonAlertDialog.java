@@ -32,7 +32,7 @@ public class CommonAlertDialog {
 
     public static AlertDialog.Builder a(Context context) {
         int i = 2;
-        if (((UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE)).getNightMode() != 2) {
+        if (((UiModeManager) context.getSystemService("uimode")).getNightMode() != 2) {
             i = 3;
         }
         return new AlertDialog.Builder(context, i);
@@ -62,8 +62,8 @@ public class CommonAlertDialog {
         linearLayout.addView(editText);
         linearLayout.addView(textView);
         linearLayout.setPadding(DensityUtils.a(context, 22.0f), 0, DensityUtils.a(context, 27.0f), 0);
-        int c2 = StringUtils.c(str5);
-        textView.setText(c2 + BridgeUtil.SPLIT_MARK + i);
+        int c = StringUtils.c(str5);
+        textView.setText(c + BridgeUtil.SPLIT_MARK + i);
         editText.setSelection(str5.length());
         editText.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.common.widget.dialog.CommonAlertDialog.1
             private int d;
@@ -97,8 +97,8 @@ public class CommonAlertDialog {
             public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
             }
         });
-        AlertDialog.Builder a2 = a(context);
-        AlertDialog.Builder view = a2.setTitle(str).setView(linearLayout);
+        AlertDialog.Builder a = a(context);
+        AlertDialog.Builder view = a.setTitle(str).setView(linearLayout);
         if (TextUtils.isEmpty(str4)) {
             str4 = context.getResources().getString(R.string.biao_v4_ok);
         }
@@ -115,9 +115,9 @@ public class CommonAlertDialog {
         }
         positiveButton.setNegativeButton(str3, onClickListener).setCancelable(true).setOnCancelListener(null);
         if (!TextUtils.isEmpty(str2)) {
-            a2.setMessage(str2);
+            a.setMessage(str2);
         }
-        AlertDialog create = a2.create();
+        AlertDialog create = a.create();
         create.getWindow().setSoftInputMode(5);
         create.setCanceledOnTouchOutside(true);
         create.show();
@@ -131,8 +131,8 @@ public class CommonAlertDialog {
 
     @Deprecated
     public static Dialog a(Context context, View view, String str, String str2, String str3, String str4, DialogInterface.OnClickListener onClickListener, DialogInterface.OnClickListener onClickListener2, DialogInterface.OnCancelListener onCancelListener, boolean z, boolean z2) {
-        AlertDialog.Builder a2 = a(context);
-        AlertDialog.Builder view2 = a2.setTitle(str).setView(view);
+        AlertDialog.Builder a = a(context);
+        AlertDialog.Builder view2 = a.setTitle(str).setView(view);
         String str5 = str4;
         if (TextUtils.isEmpty(str4)) {
             str5 = context.getResources().getString(R.string.biao_v4_ok);
@@ -144,9 +144,9 @@ public class CommonAlertDialog {
         }
         positiveButton.setNegativeButton(str6, onClickListener2).setCancelable(z).setOnCancelListener(onCancelListener);
         if (!TextUtils.isEmpty(str2)) {
-            a2.setMessage(str2);
+            a.setMessage(str2);
         }
-        AlertDialog create = a2.create();
+        AlertDialog create = a.create();
         create.setCanceledOnTouchOutside(z2);
         create.show();
         return create;
@@ -206,19 +206,19 @@ public class CommonAlertDialog {
     public static BluedAlertDialog a(Context context, int i, String str, String str2, View view, String str3, int i2, DialogInterface.OnClickListener onClickListener, String str4, int i3, DialogInterface.OnClickListener onClickListener2, DialogInterface.OnDismissListener onDismissListener, boolean z, int i4, int i5, boolean z2, boolean z3) {
         BluedAlertDialog.Builder builder = new BluedAlertDialog.Builder(context);
         builder.c(i).a(str).b(str2).a(view).a(str3, onClickListener).b(str4, onClickListener2).a(z).b(z2).a(onDismissListener).a(i4).i(i2).h(i3).b(i5);
-        BluedAlertDialog a2 = builder.a();
-        a2.setCanceledOnTouchOutside(z3);
-        a2.show();
-        return a2;
+        BluedAlertDialog a = builder.a();
+        a.setCanceledOnTouchOutside(z3);
+        a.show();
+        return a;
     }
 
     public static BluedAlertDialog a(Context context, int i, String str, String str2, View view, String str3, DialogInterface.OnClickListener onClickListener, String str4, DialogInterface.OnClickListener onClickListener2, DialogInterface.OnDismissListener onDismissListener, boolean z, int i2, int i3, boolean z2, boolean z3) {
         BluedAlertDialog.Builder builder = new BluedAlertDialog.Builder(context);
         builder.c(i).a(str).b(str2).a(view).a(str3, onClickListener).b(str4, onClickListener2).a(z).b(z2).a(onDismissListener).a(i2).b(i3);
-        BluedAlertDialog a2 = builder.a();
-        a2.setCanceledOnTouchOutside(z3);
-        a2.show();
-        return a2;
+        BluedAlertDialog a = builder.a();
+        a.setCanceledOnTouchOutside(z3);
+        a.show();
+        return a;
     }
 
     public static BluedAlertDialog a(Context context, int i, String str, String str2, String str3, DialogInterface.OnClickListener onClickListener, DialogInterface.OnDismissListener onDismissListener) {
@@ -281,17 +281,17 @@ public class CommonAlertDialog {
 
     @Deprecated
     public static void a(Context context, View view, String str, String str2, String str3, DialogInterface.OnClickListener onClickListener, DialogInterface.OnCancelListener onCancelListener, boolean z) {
-        AlertDialog.Builder a2 = a(context);
-        AlertDialog.Builder view2 = a2.setTitle(str).setView(view);
+        AlertDialog.Builder a = a(context);
+        AlertDialog.Builder view2 = a.setTitle(str).setView(view);
         String str4 = str3;
         if (TextUtils.isEmpty(str3)) {
             str4 = context.getResources().getString(R.string.biao_v4_ok);
         }
         view2.setPositiveButton(str4, onClickListener).setCancelable(z).setOnCancelListener(onCancelListener);
         if (!TextUtils.isEmpty(str2)) {
-            a2.setMessage(str2);
+            a.setMessage(str2);
         }
-        AlertDialog create = a2.create();
+        AlertDialog create = a.create();
         if (z) {
             create.setCanceledOnTouchOutside(true);
         }
@@ -303,12 +303,12 @@ public class CommonAlertDialog {
     }
 
     public static void a(Context context, String str, String[] strArr, DialogInterface.OnClickListener onClickListener, DialogInterface.OnDismissListener onDismissListener) {
-        AlertDialog.Builder a2 = a(context);
-        a2.setItems(strArr, onClickListener);
+        AlertDialog.Builder a = a(context);
+        a.setItems(strArr, onClickListener);
         if (!TextUtils.isEmpty(str)) {
-            a2.setTitle(str);
+            a.setTitle(str);
         }
-        AlertDialog create = a2.create();
+        AlertDialog create = a.create();
         create.setCanceledOnTouchOutside(true);
         if (onDismissListener != null) {
             create.setOnDismissListener(onDismissListener);

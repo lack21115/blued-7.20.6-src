@@ -31,7 +31,7 @@ public class b {
     private static final AtomicInteger sFilterCount = new AtomicInteger();
 
     public b() {
-        this(NO_FILTER_VERTEX_SHADER, "varying highp vec2 textureCoordinate;\n \nuniform sampler2D inputImageTexture;\n \nvoid main()\n{\n     gl_FragColor = texture2D(inputImageTexture, textureCoordinate);\n}");
+        this(NO_FILTER_VERTEX_SHADER, NO_FILTER_FRAGMENT_SHADER);
     }
 
     public b(String str, String str2) {
@@ -56,7 +56,7 @@ public class b {
 
     protected int buildProgram() {
         com.tencent.liteav.videobase.utils.i iVar = this.mProgram;
-        int a2 = com.tencent.liteav.videobase.utils.i.a(iVar.f36660a, GLES20.GL_VERTEX_SHADER);
+        int a2 = com.tencent.liteav.videobase.utils.i.a(iVar.f22969a, GLES20.GL_VERTEX_SHADER);
         if (a2 == 0) {
             LiteavLog.e("Program", "load vertex shader failed.");
             return -1;
@@ -174,7 +174,7 @@ public class b {
     }
 
     public void onOutputSizeChanged(int i, int i2) {
-        this.mOutputSize.f36340a = i;
+        this.mOutputSize.f22649a = i;
         this.mOutputSize.b = i2;
     }
 

@@ -13,22 +13,22 @@ public class c5 {
     public static long e;
 
     /* renamed from: a  reason: collision with root package name */
-    public final g5 f3777a;
+    public final g5 f3729a;
     public final a5 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final b5 f3778c;
+    public final b5 f3730c;
     public final List<z4> d;
 
     public c5(g5 g5Var, a5 a5Var, b5 b5Var, List<z4> list) {
-        this.f3777a = g5Var;
+        this.f3729a = g5Var;
         this.b = a5Var;
-        this.f3778c = b5Var;
+        this.f3730c = b5Var;
         this.d = list;
     }
 
     public g5 a() {
-        return this.f3777a;
+        return this.f3729a;
     }
 
     public final g5 a(g5 g5Var) {
@@ -98,6 +98,6 @@ public class c5 {
     }
 
     public boolean b() {
-        return this.f3778c != null;
+        return this.f3730c != null;
     }
 }

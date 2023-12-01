@@ -1,5 +1,6 @@
 package c.t.m.g;
 
+import android.app.backup.FullBackup;
 import java.util.Locale;
 
 /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/k3.class */
@@ -11,7 +12,7 @@ public class k3 {
 
     public static final String a(double d, int i) {
         Locale locale = Locale.ENGLISH;
-        return String.format(locale, "%." + i + "f", Double.valueOf(d));
+        return String.format(locale, "%." + i + FullBackup.DATA_TREE_TOKEN, Double.valueOf(d));
     }
 
     public static final boolean a(double d, double d2) {

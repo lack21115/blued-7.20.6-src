@@ -12,11 +12,11 @@ public final class af {
     private static Boolean e;
 
     /* renamed from: a  reason: collision with root package name */
-    a f36859a = a.CAMERA_1;
+    a f23168a = a.CAMERA_1;
     int b = Integer.MAX_VALUE;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f36860c = false;
+    boolean f23169c = false;
     boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/capture/af$a.class */
@@ -38,18 +38,18 @@ public final class af {
         }
         double c2 = nVar.c();
         com.tencent.liteav.base.util.n nVar2 = new com.tencent.liteav.base.util.n(640, 640);
-        if (nVar.f36340a <= nVar2.f36340a && nVar.b <= nVar2.b) {
+        if (nVar.f22649a <= nVar2.f22649a && nVar.b <= nVar2.b) {
             nVar2.a(nVar);
-        } else if (nVar.f36340a > nVar.b) {
-            nVar2.b = (nVar2.f36340a * nVar.b) / nVar.f36340a;
+        } else if (nVar.f22649a > nVar.b) {
+            nVar2.b = (nVar2.f22649a * nVar.b) / nVar.f22649a;
         } else {
-            nVar2.f36340a = (nVar2.b * nVar.f36340a) / nVar.b;
+            nVar2.f22649a = (nVar2.b * nVar.f22649a) / nVar.b;
         }
         ArrayList<com.tencent.liteav.base.util.n> arrayList = new ArrayList();
         long j = Long.MAX_VALUE;
         for (com.tencent.liteav.base.util.n nVar3 : list) {
             LiteavLog.d("CameraSupervisor", "support preview size ".concat(String.valueOf(nVar3)));
-            long round = (nVar3.f36340a < nVar2.f36340a || nVar3.b < nVar2.b) ? Long.MAX_VALUE : Math.round(Math.abs(nVar3.c() - c2) * 10.0d);
+            long round = (nVar3.f22649a < nVar2.f22649a || nVar3.b < nVar2.b) ? Long.MAX_VALUE : Math.round(Math.abs(nVar3.c() - c2) * 10.0d);
             int i3 = (round > j ? 1 : (round == j ? 0 : -1));
             if (i3 < 0) {
                 arrayList.clear();
@@ -65,7 +65,7 @@ public final class af {
         double d = Double.MAX_VALUE;
         for (com.tencent.liteav.base.util.n nVar5 : arrayList) {
             LiteavLog.i("CameraSupervisor", "size in same buck ".concat(String.valueOf(nVar5)));
-            double d2 = c2 > nVar5.c() ? (nVar5.f36340a * nVar5.f36340a) / c2 : nVar5.b * nVar5.b * c2;
+            double d2 = c2 > nVar5.c() ? (nVar5.f22649a * nVar5.f22649a) / c2 : nVar5.b * nVar5.b * c2;
             double d3 = b;
             if (d2 / d3 >= 0.9d) {
                 double d4 = d2 - d3;
@@ -76,7 +76,7 @@ public final class af {
             }
         }
         LiteavLog.i("CameraSupervisor", "best match preview size ".concat(String.valueOf(nVar4)));
-        return new com.tencent.liteav.base.util.n(nVar4.f36340a, nVar4.b);
+        return new com.tencent.liteav.base.util.n(nVar4.f22649a, nVar4.b);
     }
 
     private boolean b() {
@@ -107,12 +107,12 @@ public final class af {
 
     public final a a() {
         if (this.d) {
-            this.f36859a = a.MOCK;
-        } else if (!b() || this.f36860c) {
-            this.f36859a = a.CAMERA_1;
+            this.f23168a = a.MOCK;
+        } else if (!b() || this.f23169c) {
+            this.f23168a = a.CAMERA_1;
         } else {
-            this.f36859a = a.CAMERA_2;
+            this.f23168a = a.CAMERA_2;
         }
-        return this.f36859a;
+        return this.f23168a;
     }
 }

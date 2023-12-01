@@ -91,9 +91,8 @@ public interface IBatteryStats extends IInterface {
         static final int TRANSACTION_setBatteryState = 67;
         static final int TRANSACTION_setDockBatteryState = 73;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/IBatteryStats$Stub$Proxy.class */
-        public static class Proxy implements IBatteryStats {
+        private static class Proxy implements IBatteryStats {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -218,10 +217,10 @@ public interface IBatteryStats extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(71, obtain, obtain2, 0);
                     obtain2.readException();
-                    ParcelFileDescriptor createFromParcel = obtain2.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(obtain2) : null;
+                    ParcelFileDescriptor parcelFileDescriptor = obtain2.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return parcelFileDescriptor;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -256,10 +255,10 @@ public interface IBatteryStats extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(10, obtain, obtain2, 0);
                     obtain2.readException();
-                    ParcelFileDescriptor createFromParcel = obtain2.readInt() != 0 ? ParcelFileDescriptor.CREATOR.createFromParcel(obtain2) : null;
+                    ParcelFileDescriptor parcelFileDescriptor = obtain2.readInt() != 0 ? (ParcelFileDescriptor) ParcelFileDescriptor.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return parcelFileDescriptor;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -1514,17 +1513,17 @@ public interface IBatteryStats extends IInterface {
                     return true;
                 case 20:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteStartWakelockFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt(), parcel.readInt() != 0);
+                    noteStartWakelockFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt(), parcel.readInt() != 0);
                     parcel2.writeNoException();
                     return true;
                 case 21:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteChangeWakelockFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt(), parcel.readInt() != 0);
+                    noteChangeWakelockFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt(), parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt(), parcel.readInt() != 0);
                     parcel2.writeNoException();
                     return true;
                 case 22:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteStopWakelockFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt());
+                    noteStopWakelockFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 23:
@@ -1599,7 +1598,7 @@ public interface IBatteryStats extends IInterface {
                     return true;
                 case 37:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notePhoneSignalStrength(parcel.readInt() != 0 ? SignalStrength.CREATOR.createFromParcel(parcel) : null);
+                    notePhoneSignalStrength(parcel.readInt() != 0 ? (SignalStrength) SignalStrength.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 38:
@@ -1624,17 +1623,17 @@ public interface IBatteryStats extends IInterface {
                     return true;
                 case 42:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiRunning(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiRunning(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 43:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiRunningChanged(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiRunningChanged(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 44:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiStopped(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiStopped(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 45:
@@ -1699,42 +1698,42 @@ public interface IBatteryStats extends IInterface {
                     return true;
                 case 57:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteFullWifiLockAcquiredFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteFullWifiLockAcquiredFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 58:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteFullWifiLockReleasedFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteFullWifiLockReleasedFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 59:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiScanStartedFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiScanStartedFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 60:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiScanStoppedFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiScanStoppedFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 61:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiBatchedScanStartedFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    noteWifiBatchedScanStartedFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     parcel2.writeNoException();
                     return true;
                 case 62:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiBatchedScanStoppedFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiBatchedScanStoppedFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 63:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiMulticastEnabledFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiMulticastEnabledFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 64:
                     parcel.enforceInterface(DESCRIPTOR);
-                    noteWifiMulticastDisabledFromSource(parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    noteWifiMulticastDisabledFromSource(parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 65:
@@ -1803,7 +1802,7 @@ public interface IBatteryStats extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeLong(awakeTimeDockPlugged);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

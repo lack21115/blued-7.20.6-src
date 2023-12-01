@@ -4,17 +4,17 @@ package com.soft.blued.bluedBus;
 final class PendingPostQueue {
 
     /* renamed from: a  reason: collision with root package name */
-    private PendingPost f28304a;
+    private PendingPost f14614a;
     private PendingPost b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PendingPost a() {
         PendingPost pendingPost;
         synchronized (this) {
-            pendingPost = this.f28304a;
-            if (this.f28304a != null) {
-                PendingPost pendingPost2 = this.f28304a.f28303c;
-                this.f28304a = pendingPost2;
+            pendingPost = this.f14614a;
+            if (this.f14614a != null) {
+                PendingPost pendingPost2 = this.f14614a.f14613c;
+                this.f14614a = pendingPost2;
                 if (pendingPost2 == null) {
                     this.b = null;
                 }

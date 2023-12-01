@@ -42,6 +42,7 @@ public final class FeedSubjectAttentionFragment extends CommonRecyclerFragment<B
         b.setNoDataStr(R.string.feed_subject_no_followed_data);
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.blued.community.ui.subject.fragment.FeedSubjectAttentionFragment$getHttpResDataType$1] */
     @Override // com.blued.community.ui.common.CommonRecyclerFragment
     public Type k() {
         Type type = new TypeToken<BluedEntity<BluedTopic, BluedEntityBaseExtra>>() { // from class: com.blued.community.ui.subject.fragment.FeedSubjectAttentionFragment$getHttpResDataType$1

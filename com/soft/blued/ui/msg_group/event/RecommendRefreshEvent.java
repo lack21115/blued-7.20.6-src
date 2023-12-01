@@ -10,15 +10,15 @@ import kotlin.jvm.internal.Intrinsics;
 public final class RecommendRefreshEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RecommendGroupFragment.RecommendType f32664a;
+    private final RecommendGroupFragment.RecommendType f18973a;
 
     public RecommendRefreshEvent() {
         this(null, 1, null);
     }
 
-    public RecommendRefreshEvent(RecommendGroupFragment.RecommendType type) {
-        Intrinsics.e(type, "type");
-        this.f32664a = type;
+    public RecommendRefreshEvent(RecommendGroupFragment.RecommendType recommendType) {
+        Intrinsics.e(recommendType, "type");
+        this.f18973a = recommendType;
     }
 
     public /* synthetic */ RecommendRefreshEvent(RecommendGroupFragment.RecommendType recommendType, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -26,6 +26,6 @@ public final class RecommendRefreshEvent {
     }
 
     public final RecommendGroupFragment.RecommendType getType() {
-        return this.f32664a;
+        return this.f18973a;
     }
 }

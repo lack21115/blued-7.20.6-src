@@ -1,6 +1,5 @@
 package android.webkit;
 
-import android.content.ClipDescription;
 import android.net.ParseException;
 import android.net.Uri;
 import android.net.WebAddress;
@@ -123,7 +122,7 @@ public final class URLUtil {
                 if (str3 == null || !str3.toLowerCase(Locale.ROOT).startsWith("text/")) {
                     str4 = ".bin";
                     substring = str8;
-                } else if (str3.equalsIgnoreCase(ClipDescription.MIMETYPE_TEXT_HTML)) {
+                } else if (str3.equalsIgnoreCase("text/html")) {
                     str4 = ".html";
                     substring = str8;
                 } else {
@@ -158,7 +157,7 @@ public final class URLUtil {
     }
 
     public static String guessUrl(String str) {
-        if (str.length() == 0 || str.startsWith("about:") || str.startsWith("data:") || str.startsWith("file:") || str.startsWith("javascript:")) {
+        if (str.length() == 0 || str.startsWith("about:") || str.startsWith("data:") || str.startsWith("file:") || str.startsWith(BridgeUtil.JAVASCRIPT_STR)) {
             return str;
         }
         String str2 = str;
@@ -230,7 +229,7 @@ public final class URLUtil {
     }
 
     public static boolean isJavaScriptUrl(String str) {
-        return str != null && str.startsWith("javascript:");
+        return str != null && str.startsWith(BridgeUtil.JAVASCRIPT_STR);
     }
 
     public static boolean isNetworkUrl(String str) {

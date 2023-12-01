@@ -8,7 +8,7 @@ public class GDTATConst {
     public static final int NETWORK_FIRM_ID = 8;
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String f8932a = "299";
+    protected static final String f6092a = "299";
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/network/gdt/GDTATConst$DEBUGGER_CONFIG.class */
     public static class DEBUGGER_CONFIG {

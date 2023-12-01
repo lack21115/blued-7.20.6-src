@@ -15,18 +15,18 @@ import java.util.Hashtable;
 final class DecodeHandler extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9870a = DecodeHandler.class.getSimpleName();
+    private static final String f6668a = DecodeHandler.class.getSimpleName();
     private final MultiFormatReader b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final OnCaptureHandlerListener f9871c;
+    private final OnCaptureHandlerListener f6669c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DecodeHandler(OnCaptureHandlerListener onCaptureHandlerListener, Hashtable<DecodeHintType, Object> hashtable) {
         MultiFormatReader multiFormatReader = new MultiFormatReader();
         this.b = multiFormatReader;
         multiFormatReader.setHints(hashtable);
-        this.f9871c = onCaptureHandlerListener;
+        this.f6669c = onCaptureHandlerListener;
     }
 
     private static void a(PlanarYUVLuminanceSource planarYUVLuminanceSource, Bundle bundle) {

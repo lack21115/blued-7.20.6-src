@@ -6,11 +6,11 @@ import com.tencent.liteav.videoproducer.capture.CaptureSourceInterface;
 final /* synthetic */ class y implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s f36951a;
+    private final s f23260a;
     private final CaptureSourceInterface.CaptureParams b;
 
     private y(s sVar, CaptureSourceInterface.CaptureParams captureParams) {
-        this.f36951a = sVar;
+        this.f23260a = sVar;
         this.b = captureParams;
     }
 
@@ -20,13 +20,13 @@ final /* synthetic */ class y implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        s sVar = this.f36951a;
+        s sVar = this.f23260a;
         sVar.f = new CameraCaptureParams((CameraCaptureParams) this.b);
         if (sVar.d) {
             sVar.e = true;
             return;
         }
         CameraCaptureSingleton.getInstance().updateParams(sVar.f);
-        sVar.f.f36842a = null;
+        sVar.f.f23151a = null;
     }
 }

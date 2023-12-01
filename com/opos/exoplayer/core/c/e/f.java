@@ -10,11 +10,11 @@ final class f {
     private static final int k = u.f("OggS");
 
     /* renamed from: a  reason: collision with root package name */
-    public int f25170a;
+    public int f11482a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f25171c;
+    public long f11483c;
     public long d;
     public long e;
     public long f;
@@ -25,9 +25,9 @@ final class f {
     private final m l = new m(255);
 
     public void a() {
-        this.f25170a = 0;
+        this.f11482a = 0;
         this.b = 0;
-        this.f25171c = 0L;
+        this.f11483c = 0L;
         this.d = 0L;
         this.e = 0L;
         this.f = 0L;
@@ -40,13 +40,13 @@ final class f {
         boolean z2;
         this.l.a();
         a();
-        if ((fVar.d() == -1 || fVar.d() - fVar.b() >= 27) && fVar.b(this.l.f25496a, 0, 27, true)) {
+        if ((fVar.d() == -1 || fVar.d() - fVar.b() >= 27) && fVar.b(this.l.f11808a, 0, 27, true)) {
             if (this.l.m() == k) {
                 int g = this.l.g();
-                this.f25170a = g;
+                this.f11482a = g;
                 if (g == 0) {
                     this.b = this.l.g();
-                    this.f25171c = this.l.r();
+                    this.f11483c = this.l.r();
                     this.d = this.l.n();
                     this.e = this.l.n();
                     this.f = this.l.n();
@@ -54,7 +54,7 @@ final class f {
                     this.g = g2;
                     this.h = g2 + 27;
                     this.l.a();
-                    fVar.c(this.l.f25496a, 0, this.g);
+                    fVar.c(this.l.f11808a, 0, this.g);
                     int i = 0;
                     while (true) {
                         int i2 = i;

@@ -9,16 +9,16 @@ import java.io.File;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f39672a = {52, 125, -96, 80};
+    private static final byte[] f25981a = {52, 125, -96, 80};
     private static final byte[] b = {107, 124, -70, 66, 61};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f39673c = {107, 67, -107, 117, 97};
+    private static final byte[] f25982c = {107, 67, -107, 117, 97};
 
     public static String a() {
         Context context;
         context = oj.getContext();
-        return context.getDir(com.tencent.tmsqmsp.sdk.c.b.f39705a + h.a(f39672a), 0).toString();
+        return context.getDir(com.tencent.tmsqmsp.sdk.c.b.f26014a + h.a(f25981a), 0).toString();
     }
 
     public static String b() {
@@ -26,6 +26,6 @@ public class b {
     }
 
     public static String c() {
-        return a() + File.separator + h.a(f39673c);
+        return a() + File.separator + h.a(f25982c);
     }
 }

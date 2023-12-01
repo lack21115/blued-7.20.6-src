@@ -20,17 +20,17 @@ import com.soft.blued.utils.StringUtils;
 public class GestureLockSettingFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33380a;
+    private View f19689a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f33381c;
+    private TextView f19690c;
     private ToggleButton d;
 
     private void a() {
-        this.b = (LinearLayout) this.f33380a.findViewById(R.id.ll_lock_pattern_reset);
-        this.f33381c = (TextView) this.f33380a.findViewById(R.id.tv_lock_pattern_reset);
-        this.d = (ToggleButton) this.f33380a.findViewById(R.id.tglbtn_pattern_lock_onoff);
+        this.b = (LinearLayout) this.f19689a.findViewById(R.id.ll_lock_pattern_reset);
+        this.f19690c = (TextView) this.f19689a.findViewById(R.id.tv_lock_pattern_reset);
+        this.d = (ToggleButton) this.f19689a.findViewById(R.id.tglbtn_pattern_lock_onoff);
         this.b.setOnClickListener(this);
         if (BluedPreferences.aY()) {
             this.b.setVisibility(0);
@@ -50,7 +50,7 @@ public class GestureLockSettingFragment extends BaseFragment implements View.OnC
                 } else {
                     BluedPreferences.F(false);
                     GestureLockSettingFragment.this.b.setVisibility(8);
-                    TerminalActivity.d(GestureLockSettingFragment.this.getActivity(), LockPatternSetupFragment.class, null);
+                    TerminalActivity.d(GestureLockSettingFragment.this.getActivity(), LockPatternSetupFragment.class, (Bundle) null);
                     GestureLockSettingFragment.this.getActivity().finish();
                 }
             }
@@ -58,11 +58,11 @@ public class GestureLockSettingFragment extends BaseFragment implements View.OnC
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33380a.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.lock_pattern_title));
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.f19689a.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.f();
+        findViewById.setCenterText(getString(R.string.lock_pattern_title));
+        findViewById.setLeftClickListener(this);
     }
 
     private void c() {
@@ -70,7 +70,6 @@ public class GestureLockSettingFragment extends BaseFragment implements View.OnC
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         c();
         return false;
@@ -91,21 +90,19 @@ public class GestureLockSettingFragment extends BaseFragment implements View.OnC
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f33380a;
+        View view = this.f19689a;
         if (view == null) {
-            this.f33380a = layoutInflater.inflate(R.layout.fragment_gesture_lock_setting, viewGroup, false);
+            this.f19689a = layoutInflater.inflate(R.layout.fragment_gesture_lock_setting, viewGroup, false);
             a();
             b();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33380a.getParent()).removeView(this.f33380a);
+            ((ViewGroup) this.f19689a.getParent()).removeView(this.f19689a);
         }
-        return this.f33380a;
+        return this.f19689a;
     }
 }

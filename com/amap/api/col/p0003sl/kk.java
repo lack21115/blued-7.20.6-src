@@ -5,19 +5,16 @@ import android.text.TextUtils;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.util.Grego;
 import java.util.List;
 import java.util.Random;
 
 /* renamed from: com.amap.api.col.3sl.kk  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/kk.class */
 public class kk {
-
-    /* renamed from: a  reason: collision with root package name */
-    static boolean f5278a = false;
+    static boolean a = false;
     static int b = 20;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int f5279c = 20;
+    private static int c = 20;
     private static WeakReference<ke> d;
     private static int e;
 
@@ -25,13 +22,9 @@ public class kk {
     /* renamed from: com.amap.api.col.3sl.kk$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/kk$a.class */
     public static final class a extends lc {
-
-        /* renamed from: a  reason: collision with root package name */
-        static int f5280a = 1;
+        static int a = 1;
         static int b = 2;
-
-        /* renamed from: c  reason: collision with root package name */
-        static int f5281c = 3;
+        static int c = 3;
         private Context d;
         private kj e;
         private int g;
@@ -82,12 +75,12 @@ public class kk {
                         if (a2.g == null) {
                             a2.g = new km(new kq(this.d, new kn(new kr(new kt()))));
                         }
-                        a2.h = 3600000;
+                        a2.h = Grego.MILLIS_PER_HOUR;
                         if (TextUtils.isEmpty(a2.i)) {
                             a2.i = "cKey";
                         }
                         if (a2.f == null) {
-                            a2.f = new kx(this.d, a2.h, a2.i, new ku(a2.f5266a, new kv(this.d, kk.f5278a, kk.f5279c * 1024, kk.b * 1024, "staticUpdate", kk.e * 1024)));
+                            a2.f = new kx(this.d, a2.h, a2.i, new ku(a2.a, new kv(this.d, kk.a, kk.c * 1024, kk.b * 1024, "staticUpdate", kk.e * 1024)));
                         }
                         kf.a(a2);
                     } catch (Throwable th3) {
@@ -147,7 +140,7 @@ public class kk {
     }
 
     public static void a(Context context) {
-        lb.a().a(new a(context, a.f5281c));
+        lb.a().a(new a(context, a.c));
     }
 
     static /* synthetic */ void a(Context context, byte[] bArr) throws IOException {
@@ -167,7 +160,7 @@ public class kk {
     public static void a(kj kjVar, Context context) {
         synchronized (kk.class) {
             try {
-                lb.a().a(new a(context, a.f5280a, kjVar));
+                lb.a().a(new a(context, a.a, kjVar));
             } catch (Throwable th) {
                 throw th;
             }
@@ -190,7 +183,7 @@ public class kk {
     public static void a(boolean z, int i) {
         synchronized (kk.class) {
             try {
-                f5278a = z;
+                a = z;
                 e = Math.max(0, i);
             } catch (Throwable th) {
                 throw th;

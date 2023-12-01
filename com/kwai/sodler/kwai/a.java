@@ -13,13 +13,13 @@ import java.io.File;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/kwai/a.class */
 public final class a {
-    private static InterfaceC0594a aJF;
+    private static InterfaceC0424a aJF;
     private static final Handler handler = new Handler(Looper.getMainLooper());
     private static volatile boolean hasInit = false;
 
     /* renamed from: com.kwai.sodler.kwai.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/kwai/a$a.class */
-    public interface InterfaceC0594a {
+    public interface InterfaceC0424a {
         void a(f fVar, File file);
 
         int getMaxRetryCount();
@@ -29,7 +29,7 @@ public final class a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/kwai/a$b.class */
-    public static final class b<P extends com.kwai.sodler.lib.a.a, R extends f<P>> extends b.C0595b<P, R> {
+    public static final class b<P extends com.kwai.sodler.lib.a.a, R extends f<P>> extends b.C0425b<P, R> {
         com.kwai.sodler.lib.ext.b<P, R> aJI;
         c<P, R> aJJ;
 
@@ -38,7 +38,7 @@ public final class a {
             this.aJJ = cVar;
         }
 
-        @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+        @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
         public final void a(R r) {
             com.kwai.sodler.lib.ext.b<P, R> bVar = this.aJI;
             if (bVar != null) {
@@ -46,7 +46,7 @@ public final class a {
             }
         }
 
-        @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+        @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
         public final void a(R r, P p) {
             com.kwai.sodler.lib.ext.b<P, R> bVar = this.aJI;
             if (bVar != null) {
@@ -54,7 +54,7 @@ public final class a {
             }
         }
 
-        @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+        @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
         public final void a(R r, PluginError pluginError) {
             com.kwai.sodler.lib.a.e("Sodler.helper", "load failed:" + pluginError.getCode() + ":" + pluginError.getMessage());
             com.kwai.sodler.lib.ext.b<P, R> bVar = this.aJI;
@@ -67,7 +67,7 @@ public final class a {
             }
         }
 
-        @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+        @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
         public final void b(R r) {
             com.kwai.sodler.lib.ext.b<P, R> bVar = this.aJI;
             if (bVar != null) {
@@ -75,7 +75,7 @@ public final class a {
             }
         }
 
-        @Override // com.kwai.sodler.lib.ext.b.C0595b, com.kwai.sodler.lib.ext.b
+        @Override // com.kwai.sodler.lib.ext.b.C0425b, com.kwai.sodler.lib.ext.b
         public final void c(R r) {
             com.kwai.sodler.lib.ext.b<P, R> bVar = this.aJI;
             if (bVar != null) {
@@ -119,8 +119,8 @@ public final class a {
         a(context, new com.kwai.sodler.lib.b.c(bVar), cVar);
     }
 
-    public static void a(InterfaceC0594a interfaceC0594a) {
-        aJF = interfaceC0594a;
+    public static void a(InterfaceC0424a interfaceC0424a) {
+        aJF = interfaceC0424a;
     }
 
     public static <T extends com.kwai.sodler.lib.a.a> T ar(Context context, String str) {

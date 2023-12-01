@@ -15,10 +15,10 @@ import org.json.JSONObject;
 public class cv implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23802a;
+    private Context f10194a;
 
     public cv(Context context) {
-        this.f23802a = context;
+        this.f10194a = context;
     }
 
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:63:0x06d2 -> B:98:0x0278). Please submit an issue!!! */
@@ -76,7 +76,7 @@ public class cv implements Runnable {
                 JSONObject jSONObject4 = jSONObject.getJSONObject("r");
                 if (jSONObject4 != null) {
                     gVar.b(jSONObject4.optInt("rs", 1));
-                    gVar.c(jSONObject4.optInt(com.anythink.core.common.g.c.R, 6));
+                    gVar.c(jSONObject4.optInt("rc", 6));
                     gVar.d(jSONObject4.optInt("ri", 4));
                     gVar.e(jSONObject4.optInt("ro", 5));
                     gVar.a(jSONObject4.optInt("rb", 0));
@@ -194,7 +194,7 @@ public class cv implements Runnable {
                     JSONObject optJSONObject2 = optJSONObject.optJSONObject("pcl");
                     if (optJSONObject2 != null) {
                         y.f.a aVar5 = new y.f.a();
-                        aVar5.d(optJSONObject2.optInt(com.alipay.sdk.app.statistic.c.f4610c, 1));
+                        aVar5.d(optJSONObject2.optInt("cp", 1));
                         aVar5.c(optJSONObject2.optInt(Launcher.Host.GC, 1));
                         aVar5.b(optJSONObject2.optInt("pke", 1));
                         aVar5.e(optJSONObject2.optInt("pds", 1));
@@ -244,15 +244,15 @@ public class cv implements Runnable {
         try {
             JSONObject jSONObject = new JSONObject(str);
             if (jSONObject.optInt("result", 0) == 1) {
-                String a2 = new bm(this.f23802a).a(jSONObject.getString("antispamPluginRsp"));
+                String a2 = new bm(this.f10194a).a(jSONObject.getString("antispamPluginRsp"));
                 if (TextUtils.isEmpty(a2)) {
                     return;
                 }
                 y b = b(a2);
                 if (b != null) {
-                    de.a(this.f23802a).a(str, b);
+                    de.a(this.f10194a).a(str, b);
                 } else {
-                    de.a(this.f23802a).b(System.currentTimeMillis());
+                    de.a(this.f10194a).b(System.currentTimeMillis());
                 }
             }
         } catch (Exception e) {
@@ -262,18 +262,18 @@ public class cv implements Runnable {
     @Override // java.lang.Runnable
     public void run() {
         try {
-            String str = ct.f23798a + ct.d;
-            String a2 = cu.a(this.f23802a);
+            String str = ct.f10190a + ct.d;
+            String a2 = cu.a(this.f10194a);
             String str2 = str;
             if (!TextUtils.isEmpty(a2)) {
                 str2 = str + "?" + a2;
             }
             JSONObject jSONObject = new JSONObject();
-            JSONObject b = cu.b(this.f23802a);
+            JSONObject b = cu.b(this.f10194a);
             if (b != null) {
-                jSONObject.put("data", new bm(this.f23802a).c(b.toString()));
+                jSONObject.put("data", new bm(this.f10194a).c(b.toString()));
             }
-            l a3 = l.a(this.f23802a);
+            l a3 = l.a(this.f10194a);
             m mVar = new m(str2, jSONObject);
             mVar.a(WeaponHI.cookieData);
             mVar.b(WeaponHI.encryENV);

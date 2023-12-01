@@ -4,11 +4,11 @@ package com.tencent.turingface.sdk.mfa;
 public final class OTVRM {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f39908a;
+    public String f26217a;
     public int b;
 
     public OTVRM(String str, int i) {
-        this.f39908a = str;
+        this.f26217a = str;
         this.b = i;
     }
 

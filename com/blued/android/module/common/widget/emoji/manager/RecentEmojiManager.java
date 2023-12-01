@@ -2,6 +2,7 @@ package com.blued.android.module.common.widget.emoji.manager;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -12,30 +13,24 @@ import java.util.StringTokenizer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/RecentEmojiManager.class */
 public final class RecentEmojiManager implements RecentEmoji {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f11151a;
+    private final Context a;
     private EmojiList b = new EmojiList(0);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/RecentEmojiManager$Data.class */
     public static class Data {
-
-        /* renamed from: a  reason: collision with root package name */
-        final Emoji f11152a;
+        final Emoji a;
         final long b;
 
         Data(Emoji emoji, long j) {
-            this.f11152a = emoji;
+            this.a = emoji;
             this.b = j;
         }
     }
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/manager/RecentEmojiManager$EmojiList.class */
     static class EmojiList implements Iterable<Data> {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final Comparator<Data> f11153a = new Comparator<Data>() { // from class: com.blued.android.module.common.widget.emoji.manager.RecentEmojiManager.EmojiList.1
+        static final Comparator<Data> a = new Comparator<Data>() { // from class: com.blued.android.module.common.widget.emoji.manager.RecentEmojiManager.EmojiList.1
             @Override // java.util.Comparator
             /* renamed from: a */
             public int compare(Data data, Data data2) {
@@ -49,10 +44,10 @@ public final class RecentEmojiManager implements RecentEmoji {
         }
 
         Collection<Emoji> a() {
-            Collections.sort(this.b, f11153a);
+            Collections.sort(this.b, a);
             ArrayList arrayList = new ArrayList(this.b.size());
             for (Data data : this.b) {
-                arrayList.add(data.f11152a);
+                arrayList.add(data.a);
             }
             return arrayList;
         }
@@ -64,7 +59,7 @@ public final class RecentEmojiManager implements RecentEmoji {
         void a(Emoji emoji, long j) {
             Iterator<Data> it = this.b.iterator();
             while (it.hasNext()) {
-                if (it.next().f11152a.equals(emoji)) {
+                if (it.next().a.equals(emoji)) {
                     it.remove();
                 }
             }
@@ -85,23 +80,23 @@ public final class RecentEmojiManager implements RecentEmoji {
     }
 
     public RecentEmojiManager(Context context) {
-        this.f11151a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
     }
 
     private SharedPreferences c() {
-        return this.f11151a.getSharedPreferences("emoji-recent-manager", 0);
+        return this.a.getSharedPreferences("emoji-recent-manager", 0);
     }
 
     public Collection<Emoji> a() {
-        Emoji a2;
+        Emoji a;
         if (this.b.b() == 0) {
             String string = c().getString("recent-emojis", "");
             if (string.length() > 0) {
-                StringTokenizer stringTokenizer = new StringTokenizer(string, com.xiaomi.mipush.sdk.Constants.WAVE_SEPARATOR);
+                StringTokenizer stringTokenizer = new StringTokenizer(string, "~");
                 while (stringTokenizer.hasMoreTokens()) {
-                    String[] split = stringTokenizer.nextToken().split(";");
-                    if (split.length == 2 && (a2 = EmojiManager.a().a(split[0])) != null && a2.d() == split[0].length()) {
-                        this.b.a(a2, Long.parseLong(split[1]));
+                    String[] split = stringTokenizer.nextToken().split(i.b);
+                    if (split.length == 2 && (a = EmojiManager.a().a(split[0])) != null && a.d() == split[0].length()) {
+                        this.b.a(a, Long.parseLong(split[1]));
                     }
                 }
             }
@@ -119,10 +114,10 @@ public final class RecentEmojiManager implements RecentEmoji {
             Iterator<Data> it = this.b.iterator();
             while (it.hasNext()) {
                 Data next = it.next();
-                sb.append(next.f11152a.a());
-                sb.append(";");
+                sb.append(next.a.a());
+                sb.append(i.b);
                 sb.append(next.b);
-                sb.append(com.xiaomi.mipush.sdk.Constants.WAVE_SEPARATOR);
+                sb.append("~");
             }
             sb.setLength(sb.length() - 1);
             c().edit().putString("recent-emojis", sb.toString()).apply();

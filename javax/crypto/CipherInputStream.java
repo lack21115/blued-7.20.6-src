@@ -39,7 +39,7 @@ public class CipherInputStream extends FilterInputStream {
             if (this.outputBuffer == null || this.outputBuffer.length < outputSize) {
                 this.outputBuffer = new byte[outputSize];
             }
-            int read = this.f42254in.read(this.inputBuffer);
+            int read = this.in.read(this.inputBuffer);
             if (read == -1) {
                 try {
                     this.outputLength = this.cipher.doFinal(this.outputBuffer, 0);
@@ -65,7 +65,7 @@ public class CipherInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
-        this.f42254in.close();
+        this.in.close();
         try {
             this.cipher.doFinal();
         } catch (GeneralSecurityException e) {
@@ -79,7 +79,7 @@ public class CipherInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read() throws IOException {
-        if (this.f42254in == null) {
+        if (this.in == null) {
             throw new NullPointerException("in == null");
         }
         if (this.outputIndex != this.outputLength || fillBuffer()) {
@@ -93,7 +93,7 @@ public class CipherInputStream extends FilterInputStream {
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr, int i, int i2) throws IOException {
-        if (this.f42254in == null) {
+        if (this.in == null) {
             throw new NullPointerException("in == null");
         }
         if (this.outputIndex != this.outputLength || fillBuffer()) {

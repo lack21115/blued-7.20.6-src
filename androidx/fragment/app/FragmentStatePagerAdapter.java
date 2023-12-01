@@ -1,5 +1,6 @@
 package androidx.fragment.app;
 
+import android.app.backup.FullBackup;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.Log;
@@ -129,7 +130,7 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
                 }
             }
             for (String str : bundle.keySet()) {
-                if (str.startsWith("f")) {
+                if (str.startsWith(FullBackup.DATA_TREE_TOKEN)) {
                     int parseInt = Integer.parseInt(str.substring(1));
                     Fragment fragment = this.mFragmentManager.getFragment(bundle, str);
                     if (fragment != null) {
@@ -168,7 +169,7 @@ public abstract class FragmentStatePagerAdapter extends PagerAdapter {
                     if (bundle == null) {
                         bundle2 = new Bundle();
                     }
-                    this.mFragmentManager.putFragment(bundle2, "f" + i, fragment);
+                    this.mFragmentManager.putFragment(bundle2, FullBackup.DATA_TREE_TOKEN + i, fragment);
                 }
             }
             i++;

@@ -1,5 +1,6 @@
 package com.opos.mobad.q.a;
 
+import android.R;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Build;
@@ -16,11 +17,11 @@ import com.opos.mobad.o.d.e;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.cmn.e.a.b.f.a f27159a;
+    private com.opos.cmn.e.a.b.f.a f13471a;
     private com.opos.mobad.n.h.d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.e.a.b.f.a f27160c;
+    private com.opos.cmn.e.a.b.f.a f13472c;
     private com.opos.mobad.n.h.i d;
     private com.opos.cmn.e.a.b.b.d e;
     private Activity f;
@@ -64,7 +65,7 @@ public class d {
                         return;
                     }
                     com.opos.cmn.an.f.a.b("DialogTemplate", "reset system ui");
-                    Window.this.getDecorView().setSystemUiVisibility(5894);
+                    window.getDecorView().setSystemUiVisibility(5894);
                 }
             });
         }
@@ -113,15 +114,15 @@ public class d {
     }
 
     public void a(CharSequence charSequence) {
-        com.opos.cmn.e.a.b.f.a aVar = this.f27160c;
+        com.opos.cmn.e.a.b.f.a aVar = this.f13472c;
         if (aVar == null || !aVar.isShowing()) {
-            if (this.f27159a == null) {
+            if (this.f13471a == null) {
                 com.opos.mobad.n.h.d a2 = com.opos.mobad.n.h.d.a(this.f.getApplicationContext());
                 this.b = a2;
                 a2.a(new d.a() { // from class: com.opos.mobad.q.a.d.4
                     @Override // com.opos.mobad.n.h.d.a
                     public void a(View view, int[] iArr) {
-                        d.this.f27159a.dismiss();
+                        d.this.f13471a.dismiss();
                         if (d.this.g != null) {
                             d.this.g.a(view, iArr);
                         }
@@ -129,45 +130,45 @@ public class d {
 
                     @Override // com.opos.mobad.n.h.d.a
                     public void b(View view, int[] iArr) {
-                        d.this.f27159a.dismiss();
+                        d.this.f13471a.dismiss();
                         if (d.this.g != null) {
                             d.this.g.b(view, iArr);
                         }
                     }
                 });
-                com.opos.cmn.e.a.b.f.a aVar2 = new com.opos.cmn.e.a.b.f.a(this.f, 16973841, new a.C0634a().a(16973840).a(false).b(false).a());
-                this.f27159a = aVar2;
+                com.opos.cmn.e.a.b.f.a aVar2 = new com.opos.cmn.e.a.b.f.a(this.f, R.style.Theme_Translucent_NoTitleBar_Fullscreen, new a.C0464a().a(R.style.Theme_Translucent_NoTitleBar).a(false).b(false).a());
+                this.f13471a = aVar2;
                 aVar2.setContentView(this.b);
-                a(this.f27159a.getWindow());
+                a(this.f13471a.getWindow());
             }
             this.b.a(charSequence);
-            this.f27159a.show();
+            this.f13471a.show();
         }
     }
 
     public void b() {
-        com.opos.cmn.e.a.b.f.a aVar = this.f27159a;
+        com.opos.cmn.e.a.b.f.a aVar = this.f13471a;
         if (aVar != null && aVar.isShowing()) {
-            this.f27159a.dismiss();
+            this.f13471a.dismiss();
         }
-        if (this.f27160c == null) {
+        if (this.f13472c == null) {
             com.opos.mobad.n.h.i a2 = com.opos.mobad.n.h.i.a(this.f.getApplicationContext());
             this.d = a2;
             a2.a(new i.a() { // from class: com.opos.mobad.q.a.d.5
                 @Override // com.opos.mobad.n.h.i.a
                 public void a(View view, int[] iArr) {
-                    d.this.f27160c.dismiss();
+                    d.this.f13472c.dismiss();
                     if (d.this.g != null) {
                         d.this.g.a(view, iArr);
                     }
                 }
             });
-            com.opos.cmn.e.a.b.f.a aVar2 = new com.opos.cmn.e.a.b.f.a(this.f, 16973841, new a.C0634a().a(16973841).a(false).b(false).a());
-            this.f27160c = aVar2;
+            com.opos.cmn.e.a.b.f.a aVar2 = new com.opos.cmn.e.a.b.f.a(this.f, R.style.Theme_Translucent_NoTitleBar_Fullscreen, new a.C0464a().a(R.style.Theme_Translucent_NoTitleBar_Fullscreen).a(false).b(false).a());
+            this.f13472c = aVar2;
             aVar2.setContentView(this.d);
-            a(this.f27160c.getWindow());
+            a(this.f13472c.getWindow());
         }
-        this.f27160c.show();
+        this.f13472c.show();
     }
 
     public void b(final a aVar) {
@@ -203,9 +204,9 @@ public class d {
         if (dialog != null && dialog.isShowing()) {
             this.h.dismiss();
         }
-        com.opos.cmn.e.a.b.f.a aVar = this.f27159a;
+        com.opos.cmn.e.a.b.f.a aVar = this.f13471a;
         if (aVar != null && aVar.isShowing()) {
-            this.f27159a.dismiss();
+            this.f13471a.dismiss();
         }
         com.opos.cmn.e.a.b.b.d dVar = this.e;
         if (dVar != null && dVar.a()) {
@@ -215,10 +216,10 @@ public class d {
         if (aVar2 != null) {
             aVar2.a();
         }
-        com.opos.cmn.e.a.b.f.a aVar3 = this.f27160c;
+        com.opos.cmn.e.a.b.f.a aVar3 = this.f13472c;
         if (aVar3 == null || !aVar3.isShowing()) {
             return;
         }
-        this.f27160c.dismiss();
+        this.f13472c.dismiss();
     }
 }

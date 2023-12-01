@@ -30,11 +30,11 @@ import com.soft.blued.ui.web.WebViewShowInfoFragment;
 public class HelpCenterFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    View f33383a;
+    View f19692a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33384c;
+    private View f19693c;
     private LinearLayout d;
     private LinearLayout e;
     private LinearLayout f;
@@ -44,6 +44,7 @@ public class HelpCenterFragment extends BaseFragment implements View.OnClickList
     private LinearLayout j;
     private HelperCenterVM k;
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a() {
         this.k.d().observe(this, new Observer<Boolean>() { // from class: com.soft.blued.ui.setting.fragment.HelpCenterFragment.1
             @Override // androidx.lifecycle.Observer
@@ -57,32 +58,32 @@ public class HelpCenterFragment extends BaseFragment implements View.OnClickList
     }
 
     public static void a(Context context) {
-        TerminalActivity.d(context, HelpCenterFragment.class, null);
+        TerminalActivity.d(context, HelpCenterFragment.class, (Bundle) null);
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33383a.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.help_and_feedback));
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.f19692a.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.help_and_feedback));
+        findViewById.setLeftClickListener(this);
     }
 
     private void c() {
-        this.f33384c = this.f33383a.findViewById(R.id.top_divider);
-        this.d = (LinearLayout) this.f33383a.findViewById(R.id.ll_consult_online);
-        this.e = (LinearLayout) this.f33383a.findViewById(R.id.ll_termes);
-        this.f = (LinearLayout) this.f33383a.findViewById(R.id.ll_code_of_conduct);
-        this.g = (LinearLayout) this.f33383a.findViewById(R.id.ll_live_specification);
-        this.h = (LinearLayout) this.f33383a.findViewById(R.id.ll_contact);
-        this.i = (LinearLayout) this.f33383a.findViewById(R.id.ll_privacy_clause);
-        this.j = (LinearLayout) this.f33383a.findViewById(R.id.ll_invoice);
+        this.f19693c = this.f19692a.findViewById(R.id.top_divider);
+        this.d = (LinearLayout) this.f19692a.findViewById(R.id.ll_consult_online);
+        this.e = (LinearLayout) this.f19692a.findViewById(R.id.ll_termes);
+        this.f = (LinearLayout) this.f19692a.findViewById(R.id.ll_code_of_conduct);
+        this.g = (LinearLayout) this.f19692a.findViewById(R.id.ll_live_specification);
+        this.h = (LinearLayout) this.f19692a.findViewById(R.id.ll_contact);
+        this.i = (LinearLayout) this.f19692a.findViewById(R.id.ll_privacy_clause);
+        this.j = (LinearLayout) this.f19692a.findViewById(R.id.ll_invoice);
         if (UserInfo.getInstance().isLogin()) {
             this.d.setVisibility(0);
             this.d.setOnClickListener(this);
-            this.f33384c.setVisibility(0);
+            this.f19693c.setVisibility(0);
         } else {
             this.d.setVisibility(8);
-            this.f33384c.setVisibility(8);
+            this.f19693c.setVisibility(8);
         }
         this.g.setOnClickListener(this);
         this.e.setOnClickListener(this);
@@ -95,13 +96,12 @@ public class HelpCenterFragment extends BaseFragment implements View.OnClickList
     private void d() {
         MineHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<BillIdentifyModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.HelpCenterFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BillIdentifyModel> bluedEntityA) {
-                if (bluedEntityA.hasData() && bluedEntityA.getSingleData().getVerify() == 1) {
+                if (bluedEntityA.hasData() && ((BillIdentifyModel) bluedEntityA.getSingleData()).getVerify() == 1) {
                     WebViewShowInfoFragment.show(HelpCenterFragment.this.getActivity(), Host.a("H5_INVOICE"));
                 } else {
-                    TerminalActivity.d(HelpCenterFragment.this.getActivity(), InvoiceIdentifyFragment.class, null);
+                    TerminalActivity.d(HelpCenterFragment.this.getActivity(), InvoiceIdentifyFragment.class, (Bundle) null);
                 }
             }
         });
@@ -144,25 +144,23 @@ public class HelpCenterFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f33383a;
+        View view = this.f19692a;
         if (view == null) {
-            this.f33383a = layoutInflater.inflate(R.layout.fragment_help_center, viewGroup, false);
+            this.f19692a = layoutInflater.inflate(R.layout.fragment_help_center, viewGroup, false);
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33383a.getParent()).removeView(this.f33383a);
+            ((ViewGroup) this.f19692a.getParent()).removeView(this.f19692a);
         }
-        return this.f33383a;
+        return this.f19692a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        ServiceHelper.f33645a.a((QBadgeContainer) this.f33383a.findViewById(R.id.badge_container), this.f33383a.findViewById(R.id.bindView));
+        ServiceHelper.f19954a.a((QBadgeContainer) this.f19692a.findViewById(R.id.badge_container), this.f19692a.findViewById(R.id.bindView));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         b();

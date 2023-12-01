@@ -12,7 +12,7 @@ public final class ProtoUtils {
     }
 
     public static <T extends Message> Metadata.Key<T> keyForProto(T t) {
-        return Metadata.Key.of(t.getDescriptorForType().getFullName() + Metadata.BINARY_HEADER_SUFFIX, metadataMarshaller(t));
+        return Metadata.Key.of(t.getDescriptorForType().getFullName() + "-bin", metadataMarshaller(t));
     }
 
     public static <T extends Message> MethodDescriptor.Marshaller<T> marshaller(T t) {

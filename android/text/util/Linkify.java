@@ -212,7 +212,7 @@ public class Linkify {
                 obj = obj.substring(length);
                 i += length;
                 try {
-                    linkSpec.url = "geo:0,0?q=" + URLEncoder.encode(findAddress, "UTF-8");
+                    linkSpec.url = com.tencent.smtt.sdk.WebView.SCHEME_GEO + URLEncoder.encode(findAddress, "UTF-8");
                     arrayList.add(linkSpec);
                 } catch (UnsupportedEncodingException e) {
                 }
@@ -225,7 +225,7 @@ public class Linkify {
     private static final void gatherTelLinks(ArrayList<LinkSpec> arrayList, Spannable spannable) {
         for (PhoneNumberMatch phoneNumberMatch : PhoneNumberUtil.getInstance().findNumbers(spannable.toString(), Locale.getDefault().getCountry(), PhoneNumberUtil.Leniency.POSSIBLE, Long.MAX_VALUE)) {
             LinkSpec linkSpec = new LinkSpec();
-            linkSpec.url = "tel:" + PhoneNumberUtils.normalizeNumber(phoneNumberMatch.rawString());
+            linkSpec.url = com.tencent.smtt.sdk.WebView.SCHEME_TEL + PhoneNumberUtils.normalizeNumber(phoneNumberMatch.rawString());
             linkSpec.start = phoneNumberMatch.start();
             linkSpec.end = phoneNumberMatch.end();
             arrayList.add(linkSpec);

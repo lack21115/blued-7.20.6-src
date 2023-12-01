@@ -11,10 +11,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 public final class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private static u f35406a;
+    private static u f21715a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f35407c;
+    private final Context f21716c;
     private long e;
     private long f;
     private Map<Integer, Long> d = new HashMap();
@@ -25,14 +25,14 @@ public final class u {
     private final p b = p.a();
 
     private u(Context context) {
-        this.f35407c = context;
+        this.f21716c = context;
     }
 
     public static u a() {
         u uVar;
         synchronized (u.class) {
             try {
-                uVar = f35406a;
+                uVar = f21715a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -44,10 +44,10 @@ public final class u {
         u uVar;
         synchronized (u.class) {
             try {
-                if (f35406a == null) {
-                    f35406a = new u(context);
+                if (f21715a == null) {
+                    f21715a = new u(context);
                 }
-                uVar = f35406a;
+                uVar = f21715a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -207,7 +207,7 @@ public final class u {
             r rVar = new r();
             rVar.b = i;
             rVar.e = j;
-            rVar.f35403c = "";
+            rVar.f21712c = "";
             rVar.d = "";
             rVar.g = new byte[0];
             this.b.b(i);
@@ -218,7 +218,7 @@ public final class u {
 
     public final void a(int i, am amVar, String str, String str2, t tVar, long j, boolean z) {
         try {
-            a(new v(this.f35407c, i, amVar.g, a.a((Object) amVar), str, str2, tVar, true, z), true, true, j);
+            a(new v(this.f21716c, i, amVar.g, a.a((Object) amVar), str, str2, tVar, true, z), true, true, j);
         } catch (Throwable th) {
             if (x.a(th)) {
                 return;
@@ -229,7 +229,7 @@ public final class u {
 
     public final void a(int i, am amVar, String str, String str2, t tVar, boolean z) {
         try {
-            a(new v(this.f35407c, i, amVar.g, a.a((Object) amVar), str, str2, tVar, 0, 0, false, null), z, false, 0L);
+            a(new v(this.f21716c, i, amVar.g, a.a((Object) amVar), str, str2, tVar, 0, 0, false, null), z, false, 0L);
         } catch (Throwable th) {
             if (x.a(th)) {
                 return;
@@ -245,7 +245,7 @@ public final class u {
             r rVar = new r();
             rVar.b = i;
             rVar.e = z.b();
-            rVar.f35403c = "";
+            rVar.f21712c = "";
             rVar.d = "";
             rVar.g = z.c(j);
             this.b.b(i);
@@ -260,7 +260,7 @@ public final class u {
     }
 
     public final boolean b(int i) {
-        if (com.tencent.bugly.b.f35109c) {
+        if (com.tencent.bugly.b.f21418c) {
             x.c("Uploading frequency will not be checked if SDK is in debug mode.", new Object[0]);
             return true;
         }

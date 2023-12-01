@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class UnityPlugin {
 
     /* renamed from: a  reason: collision with root package name */
-    public Activity f21177a;
+    public Activity f7571a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/applog/game/UnityPlugin$a.class */
     public class a implements ILogger {
@@ -74,14 +74,14 @@ public class UnityPlugin {
         if (!TextUtils.isEmpty(str3)) {
             initConfig.setUriConfig(UriConfig.createByDomain(str3, null));
         }
-        if (this.f21177a == null) {
+        if (this.f7571a == null) {
             try {
                 Class<?> cls = Class.forName("com.unity3d.player.UnityPlayer");
-                this.f21177a = (Activity) cls.getDeclaredField("currentActivity").get(cls);
+                this.f7571a = (Activity) cls.getDeclaredField("currentActivity").get(cls);
             } catch (Exception e) {
             }
         }
-        AppLog.init(this.f21177a, initConfig);
+        AppLog.init(this.f7571a, initConfig);
     }
 
     public void onEventV3(String str, String str2) {

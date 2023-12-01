@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.expressad.a;
 import com.blued.android.module.common.base.dialog.CommonDialogFragment;
 import com.blued.das.profile.PersonalProfileProtos;
 import com.bytedance.applog.tracker.Tracker;
@@ -27,7 +28,7 @@ public final class ServiceMenuDialogFragment extends CommonDialogFragment {
     public static final Companion b = new Companion(null);
 
     /* renamed from: c  reason: collision with root package name */
-    public ServiceMenuAdapter f33965c;
+    public ServiceMenuAdapter f20274c;
     private List<ServiceMenuModel> d = new ArrayList();
     private String e = "";
 
@@ -41,22 +42,22 @@ public final class ServiceMenuDialogFragment extends CommonDialogFragment {
             this();
         }
 
-        public final ServiceMenuDialogFragment a(FragmentManager manager, List<ServiceMenuModel> data, String uid) {
-            Intrinsics.e(manager, "manager");
-            Intrinsics.e(data, "data");
-            Intrinsics.e(uid, "uid");
+        public final ServiceMenuDialogFragment a(FragmentManager fragmentManager, List<ServiceMenuModel> list, String str) {
+            Intrinsics.e(fragmentManager, "manager");
+            Intrinsics.e(list, "data");
+            Intrinsics.e(str, "uid");
             ServiceMenuDialogFragment serviceMenuDialogFragment = new ServiceMenuDialogFragment();
-            serviceMenuDialogFragment.show(manager, ServiceMenuDialogFragment.class.getSimpleName());
-            serviceMenuDialogFragment.a(data, uid);
+            serviceMenuDialogFragment.show(fragmentManager, ServiceMenuDialogFragment.class.getSimpleName());
+            serviceMenuDialogFragment.a(list, str);
             return serviceMenuDialogFragment;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ServiceMenuDialogFragment this$0, View view) {
+    public static final void a(ServiceMenuDialogFragment serviceMenuDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.dismiss();
+        Intrinsics.e(serviceMenuDialogFragment, "this$0");
+        serviceMenuDialogFragment.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -66,15 +67,14 @@ public final class ServiceMenuDialogFragment extends CommonDialogFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(ServiceMenuDialogFragment this$0, View view) {
+    public static final void b(ServiceMenuDialogFragment serviceMenuDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.dismiss();
+        Intrinsics.e(serviceMenuDialogFragment, "this$0");
+        serviceMenuDialogFragment.dismiss();
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public void a(View view) {
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         Context context = getContext();
         if (context == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.fragment.app.FragmentActivity");
@@ -109,26 +109,23 @@ public final class ServiceMenuDialogFragment extends CommonDialogFragment {
 
     public final void a(ServiceMenuAdapter serviceMenuAdapter) {
         Intrinsics.e(serviceMenuAdapter, "<set-?>");
-        this.f33965c = serviceMenuAdapter;
+        this.f20274c = serviceMenuAdapter;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int d() {
         return R.layout.dialog_service_menu;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int e() {
         return -1;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int f() {
         return -1;
     }
 
     public final ServiceMenuAdapter h() {
-        ServiceMenuAdapter serviceMenuAdapter = this.f33965c;
+        ServiceMenuAdapter serviceMenuAdapter = this.f20274c;
         if (serviceMenuAdapter != null) {
             return serviceMenuAdapter;
         }
@@ -136,9 +133,8 @@ public final class ServiceMenuDialogFragment extends CommonDialogFragment {
         return null;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setStyle(0, 16973834);
+        setStyle(0, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
     }
 }

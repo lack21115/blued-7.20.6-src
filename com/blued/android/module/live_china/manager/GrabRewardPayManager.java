@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import androidx.core.util.Pair;
 import androidx.fragment.app.FragmentManager;
+import com.anythink.core.common.b.g;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.HttpManager;
@@ -39,25 +40,17 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/GrabRewardPayManager.class */
 public class GrabRewardPayManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public DialogWith6PW f13592a;
+    public DialogWith6PW a;
     private boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BackGiftStatusListener f13593c;
+    private BackGiftStatusListener c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.module.live_china.manager.GrabRewardPayManager$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/GrabRewardPayManager$1.class */
     public class AnonymousClass1 extends BluedUIHttpResponse<BluedEntity<PayRemaining, LiveRewardDescribe>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f13594a;
+        final /* synthetic */ Context a;
         final /* synthetic */ BackGiftStatusListener b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ LiveRewardConfigModel f13595c;
+        final /* synthetic */ LiveRewardConfigModel c;
         final /* synthetic */ FragmentManager d;
         final /* synthetic */ IRequestHost e;
         final /* synthetic */ String f;
@@ -73,8 +66,8 @@ public class GrabRewardPayManager {
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.blued.android.module.live_china.manager.GrabRewardPayManager$1$2$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/GrabRewardPayManager$1$2$1.class */
-            public class C02331 implements CommonAlertDialog.PWDListener {
-                C02331() {
+            public class C01091 implements CommonAlertDialog.PWDListener {
+                C01091() {
                 }
 
                 @Override // com.blued.android.module.live_china.same.tip.CommonAlertDialog.PWDListener
@@ -93,27 +86,27 @@ public class GrabRewardPayManager {
                         @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
                         public void onFailure(Throwable th, int i, String str3) {
                             GrabRewardPayManager.this.a(str3);
-                            final Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str3);
-                            int intValue = a2.first.intValue();
+                            final Pair<Integer, String> a = BluedHttpUtils.a(th, i, str3);
+                            int intValue = ((Integer) a.first).intValue();
                             if (intValue == 4221004) {
-                                if (TextUtils.isEmpty(a2.second)) {
+                                if (TextUtils.isEmpty((CharSequence) a.second)) {
                                     return;
                                 }
                                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.manager.GrabRewardPayManager.1.2.1.1.1
                                     @Override // java.lang.Runnable
                                     public void run() {
-                                        if (GrabRewardPayManager.this.f13592a == null || GrabRewardPayManager.this.f13592a.f14129c == null || GrabRewardPayManager.this.f13592a.b == null) {
+                                        if (GrabRewardPayManager.this.a == null || GrabRewardPayManager.this.a.c == null || GrabRewardPayManager.this.a.b == null) {
                                             return;
                                         }
-                                        GrabRewardPayManager.this.f13592a.f14129c.setTextColor(AnonymousClass1.this.f13594a.getResources().getColor(R.color.biao_live_bug_gift_paycode_error));
-                                        GrabRewardPayManager.this.f13592a.f14129c.setText((CharSequence) a2.second);
-                                        GrabRewardPayManager.this.f13592a.b.a();
+                                        GrabRewardPayManager.this.a.c.setTextColor(AnonymousClass1.this.a.getResources().getColor(R.color.biao_live_bug_gift_paycode_error));
+                                        GrabRewardPayManager.this.a.c.setText((CharSequence) a.second);
+                                        GrabRewardPayManager.this.a.b.a();
                                     }
                                 });
                             } else if (intValue == 4221008) {
-                                GrabRewardPayManager.this.a(AnonymousClass1.this.f13594a, AnonymousClass1.this.d, AnonymousClass1.this.b, AnonymousClass1.this.e);
+                                GrabRewardPayManager.this.a(AnonymousClass1.this.a, AnonymousClass1.this.d, AnonymousClass1.this.b, AnonymousClass1.this.e);
                             } else {
-                                GrabRewardPayManager.this.a(AnonymousClass1.this.b, a2.second);
+                                GrabRewardPayManager.this.a(AnonymousClass1.this.b, (String) a.second);
                                 BluedHttpUtils.b(th, i, str3);
                             }
                         }
@@ -129,9 +122,9 @@ public class GrabRewardPayManager {
                             if (!TextUtils.isEmpty(str3)) {
                                 LiveRoomPreferences.c(str3);
                             }
-                            GrabRewardPayManager.this.a(AnonymousClass1.this.f13594a, AnonymousClass1.this.b, payRemaining, AnonymousClass1.this.f13595c, bluedEntity.extra);
+                            GrabRewardPayManager.this.a(AnonymousClass1.this.a, AnonymousClass1.this.b, payRemaining, AnonymousClass1.this.c, bluedEntity.extra);
                         }
-                    }, AnonymousClass1.this.f13595c, AnonymousClass1.this.f, AnonymousClass1.this.g, str2, "", z, AnonymousClass1.this.h, AnonymousClass1.this.i, AnonymousClass1.this.e);
+                    }, AnonymousClass1.this.c, AnonymousClass1.this.f, AnonymousClass1.this.g, str2, "", z, AnonymousClass1.this.h, AnonymousClass1.this.i, AnonymousClass1.this.e);
                 }
             }
 
@@ -140,10 +133,10 @@ public class GrabRewardPayManager {
 
             @Override // java.lang.Runnable
             public void run() {
-                if (GrabRewardPayManager.this.f13592a == null || GrabRewardPayManager.this.f13592a.f14128a == null || !GrabRewardPayManager.this.f13592a.f14128a.isShowing()) {
-                    String string = AnonymousClass1.this.f13594a.getResources().getString(R.string.Live_SendPresent_verifyPassword);
-                    String string2 = AnonymousClass1.this.f13594a.getResources().getString(R.string.Live_SendPresent_verifyPasswordText);
-                    GrabRewardPayManager.this.f13592a = CommonAlertDialog.a(AnonymousClass1.this.f13594a, string, string2, true, false, true, !LiveFloatManager.a().C(), false, (CommonAlertDialog.PWDListener) new C02331(), new DialogInterface.OnCancelListener() { // from class: com.blued.android.module.live_china.manager.GrabRewardPayManager.1.2.2
+                if (GrabRewardPayManager.this.a == null || GrabRewardPayManager.this.a.a == null || !GrabRewardPayManager.this.a.a.isShowing()) {
+                    String string = AnonymousClass1.this.a.getResources().getString(R.string.Live_SendPresent_verifyPassword);
+                    String string2 = AnonymousClass1.this.a.getResources().getString(R.string.Live_SendPresent_verifyPasswordText);
+                    GrabRewardPayManager.this.a = CommonAlertDialog.a(AnonymousClass1.this.a, string, string2, true, false, true, !LiveFloatManager.a().C(), false, (CommonAlertDialog.PWDListener) new C01091(), new DialogInterface.OnCancelListener() { // from class: com.blued.android.module.live_china.manager.GrabRewardPayManager.1.2.2
                         @Override // android.content.DialogInterface.OnCancelListener
                         public void onCancel(DialogInterface dialogInterface) {
                             GrabRewardPayManager.this.a(AnonymousClass1.this.b, "");
@@ -154,9 +147,9 @@ public class GrabRewardPayManager {
         }
 
         AnonymousClass1(Context context, BackGiftStatusListener backGiftStatusListener, LiveRewardConfigModel liveRewardConfigModel, FragmentManager fragmentManager, IRequestHost iRequestHost, String str, String str2, boolean z, String str3) {
-            this.f13594a = context;
+            this.a = context;
             this.b = backGiftStatusListener;
-            this.f13595c = liveRewardConfigModel;
+            this.c = liveRewardConfigModel;
             this.d = fragmentManager;
             this.e = iRequestHost;
             this.f = str;
@@ -168,25 +161,25 @@ public class GrabRewardPayManager {
         @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             GrabRewardPayManager.this.a(str);
-            Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str);
-            if (a2.first.intValue() == 0) {
+            Pair<Integer, String> a = BluedHttpUtils.a(th, i, str);
+            if (((Integer) a.first).intValue() == 0) {
                 return;
             }
-            int intValue = a2.first.intValue();
+            int intValue = ((Integer) a.first).intValue();
             if (intValue == 4221002) {
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.manager.GrabRewardPayManager.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        GrabRewardPayManager.this.a(AnonymousClass1.this.f13594a, AnonymousClass1.this.d, AnonymousClass1.this.e, AnonymousClass1.this.f13595c, AnonymousClass1.this.f, AnonymousClass1.this.g, AnonymousClass1.this.h, AnonymousClass1.this.b);
+                        GrabRewardPayManager.this.a(AnonymousClass1.this.a, AnonymousClass1.this.d, AnonymousClass1.this.e, AnonymousClass1.this.c, AnonymousClass1.this.f, AnonymousClass1.this.g, AnonymousClass1.this.h, AnonymousClass1.this.b);
                     }
                 });
             } else if (intValue == 4221005) {
                 AppInfo.n().post(new AnonymousClass2());
             } else if (intValue == 4221008) {
-                GrabRewardPayManager.this.a(this.f13594a, this.d, this.b, this.e);
+                GrabRewardPayManager.this.a(this.a, this.d, this.b, this.e);
             } else {
                 BluedHttpUtils.b(th, i, str);
-                GrabRewardPayManager.this.a(this.b, a2.second);
+                GrabRewardPayManager.this.a(this.b, (String) a.second);
             }
         }
 
@@ -196,7 +189,7 @@ public class GrabRewardPayManager {
                 GrabRewardPayManager.this.a(this.b, "");
                 return;
             }
-            GrabRewardPayManager.this.a(this.f13594a, this.b, bluedEntity.data.get(0), this.f13595c, bluedEntity.extra);
+            GrabRewardPayManager.this.a(this.a, this.b, bluedEntity.data.get(0), this.c, bluedEntity.extra);
         }
     }
 
@@ -210,29 +203,27 @@ public class GrabRewardPayManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/GrabRewardPayManager$SingletonCreator.class */
     public static class SingletonCreator {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final GrabRewardPayManager f13613a = new GrabRewardPayManager();
+        private static final GrabRewardPayManager a = new GrabRewardPayManager();
 
         private SingletonCreator() {
         }
     }
 
     public static GrabRewardPayManager a() {
-        return SingletonCreator.f13613a;
+        return SingletonCreator.a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final Context context, final FragmentManager fragmentManager, final IRequestHost iRequestHost, boolean z, final LiveRewardConfigModel liveRewardConfigModel, final String str, final String str2, final boolean z2, final String str3, final BackGiftStatusListener backGiftStatusListener) {
         String str4 = LiveRoomInfo.a().m() + "/paymentcode/1";
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("verify", z ? "1" : "0");
-        a2.put("type", "set");
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("verify", z ? "1" : "0");
+        a.put("type", "set");
         try {
-            a2.put("code", BluedHttpTools.b(str3));
-            String b = AesCrypto.b(AppInfo.f().toJson(a2));
-            Map<String, String> a3 = BluedHttpTools.a();
-            a3.put(BridgeUtil.UNDERLINE_STR, b);
+            a.put(g.c.b, BluedHttpTools.b(str3));
+            String b = AesCrypto.b(AppInfo.f().toJson(a));
+            Map<String, String> a2 = BluedHttpTools.a();
+            a2.put(BridgeUtil.UNDERLINE_STR, b);
             HttpManager.b(str4, new BluedUIHttpResponse<BluedEntityA<BasePayRemaining>>(iRequestHost) { // from class: com.blued.android.module.live_china.manager.GrabRewardPayManager.5
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -244,15 +235,15 @@ public class GrabRewardPayManager {
                         AppMethods.d(com.blued.android.module.live.base.R.string.get_user_info_fail);
                     } else {
                         try {
-                            String c2 = AesCrypto.c(bluedEntityA.getSingleData().encrypted);
-                            Logger.c("pwd", "dataStr = " + c2);
-                            LiveBasePreferences.b(((DecryptJson) AppInfo.f().fromJson(c2, (Class<Object>) DecryptJson.class)).token);
+                            String c = AesCrypto.c(bluedEntityA.getSingleData().encrypted);
+                            Logger.c("pwd", "dataStr = " + c);
+                            LiveBasePreferences.b(((DecryptJson) AppInfo.f().fromJson(c, DecryptJson.class)).token);
                             GrabRewardPayManager.this.a(context, fragmentManager, iRequestHost, liveRewardConfigModel, str, str2, z2, str3, backGiftStatusListener);
                         } catch (Exception e) {
                         }
                     }
                 }
-            }, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a3)).h();
+            }, iRequestHost).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -324,6 +315,7 @@ public class GrabRewardPayManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.live_china.manager.GrabRewardPayManager$6] */
     public void a(String str) {
         if (TextUtils.isEmpty(str)) {
             return;
@@ -344,17 +336,17 @@ public class GrabRewardPayManager {
     }
 
     private void b() {
-        DialogWith6PW dialogWith6PW = this.f13592a;
-        if (dialogWith6PW == null || dialogWith6PW.f14128a == null) {
+        DialogWith6PW dialogWith6PW = this.a;
+        if (dialogWith6PW == null || dialogWith6PW.a == null) {
             return;
         }
-        this.f13592a.f14128a.dismiss();
+        this.a.a.dismiss();
     }
 
     public void a(final Context context, final FragmentManager fragmentManager, final IRequestHost iRequestHost, final LiveRewardConfigModel liveRewardConfigModel, final String str, final String str2, final boolean z, final BackGiftStatusListener backGiftStatusListener) {
-        DialogWith6PW dialogWith6PW = this.f13592a;
-        if (dialogWith6PW == null || dialogWith6PW.f14128a == null || !this.f13592a.f14128a.isShowing()) {
-            this.f13592a = CommonAlertDialog.a(context, context.getResources().getString(R.string.Live_SendPresent_resetPayPassword), context.getResources().getString(R.string.live_set_6_num), true, new CommonAlertDialog.PWDListener() { // from class: com.blued.android.module.live_china.manager.GrabRewardPayManager.2
+        DialogWith6PW dialogWith6PW = this.a;
+        if (dialogWith6PW == null || dialogWith6PW.a == null || !this.a.a.isShowing()) {
+            this.a = CommonAlertDialog.a(context, context.getResources().getString(R.string.Live_SendPresent_resetPayPassword), context.getResources().getString(R.string.live_set_6_num), true, new CommonAlertDialog.PWDListener() { // from class: com.blued.android.module.live_china.manager.GrabRewardPayManager.2
                 @Override // com.blued.android.module.live_china.same.tip.CommonAlertDialog.PWDListener
                 public void a(String str3, boolean z2, DialogWith6PW dialogWith6PW2) {
                     GrabRewardPayManager.this.a(context, fragmentManager, iRequestHost, z2, liveRewardConfigModel, str, str2, z, str3, backGiftStatusListener);
@@ -369,7 +361,7 @@ public class GrabRewardPayManager {
     }
 
     public void a(Context context, FragmentManager fragmentManager, IRequestHost iRequestHost, LiveRewardConfigModel liveRewardConfigModel, String str, String str2, boolean z, String str3, BackGiftStatusListener backGiftStatusListener) {
-        this.f13593c = backGiftStatusListener;
+        this.c = backGiftStatusListener;
         try {
             LiveRoomHttpUtils.a((BluedUIHttpResponse) new AnonymousClass1(context, backGiftStatusListener, liveRewardConfigModel, fragmentManager, iRequestHost, str, str2, z, str3), liveRewardConfigModel, str, str2, "", LiveRoomPreferences.b(""), false, z, str3, iRequestHost);
         } catch (Exception e) {

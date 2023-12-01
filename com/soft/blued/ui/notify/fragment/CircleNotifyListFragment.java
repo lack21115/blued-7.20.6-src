@@ -14,6 +14,7 @@ import com.bytedance.applog.tracker.Tracker;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
+import com.soft.blued.R;
 import com.soft.blued.ui.notify.adapter.CircleNotifyAdapter;
 import com.soft.blued.ui.notify.model.CircleNotify;
 import com.soft.blued.ui.notify.presenter.CircleNotifyListPresenter;
@@ -23,7 +24,7 @@ import java.util.List;
 public class CircleNotifyListFragment extends MvpFragment<CircleNotifyListPresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private CircleNotifyAdapter f32895a;
+    private CircleNotifyAdapter f19204a;
     private NoDataAndLoadFailView b;
     @BindView
     RecyclerView recyclerView;
@@ -33,7 +34,7 @@ public class CircleNotifyListFragment extends MvpFragment<CircleNotifyListPresen
     CommonTopTitleNoTrans title;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, CircleNotifyListFragment.class, null);
+        TerminalActivity.d(context, CircleNotifyListFragment.class, (Bundle) null);
     }
 
     private void b(boolean z) {
@@ -42,7 +43,7 @@ public class CircleNotifyListFragment extends MvpFragment<CircleNotifyListPresen
         if (!z) {
             this.refreshLayout.l(false);
         }
-        if (this.f32895a.getData().size() <= 0) {
+        if (this.f19204a.getData().size() <= 0) {
             if (z) {
                 this.b.a();
             } else {
@@ -51,7 +52,6 @@ public class CircleNotifyListFragment extends MvpFragment<CircleNotifyListPresen
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.title.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.notify.fragment.CircleNotifyListFragment.1
@@ -63,28 +63,27 @@ public class CircleNotifyListFragment extends MvpFragment<CircleNotifyListPresen
         });
         this.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         CircleNotifyAdapter circleNotifyAdapter = new CircleNotifyAdapter(getContext(), getFragmentActive());
-        this.f32895a = circleNotifyAdapter;
+        this.f19204a = circleNotifyAdapter;
         this.recyclerView.setAdapter(circleNotifyAdapter);
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
         this.b = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(2131233627);
         this.b.setNoDataStr(2131891064);
-        this.f32895a.setEmptyView(this.b);
+        this.f19204a.setEmptyView((View) this.b);
         this.refreshLayout.l(true);
         this.refreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.soft.blued.ui.notify.fragment.CircleNotifyListFragment.2
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                CircleNotifyListFragment.this.j().f();
+                ((CircleNotifyListPresenter) CircleNotifyListFragment.this.j()).f();
             }
 
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
-                CircleNotifyListFragment.this.j().e();
+                ((CircleNotifyListPresenter) CircleNotifyListFragment.this.j()).e();
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (str == null) {
@@ -106,32 +105,27 @@ public class CircleNotifyListFragment extends MvpFragment<CircleNotifyListPresen
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(List<CircleNotify> list) {
-        this.f32895a.setNewData(list);
+        this.f19204a.setNewData(list);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         this.b = null;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
-        return 2131558998;
+        return R.layout.fragment_circle_notify_list;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
         this.refreshLayout.i();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
         this.refreshLayout.l(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.refreshLayout.l(false);

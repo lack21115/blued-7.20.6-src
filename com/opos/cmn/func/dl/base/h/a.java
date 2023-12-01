@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Environment;
 import android.os.StatFs;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.opos.cmn.an.a.c;
 import java.io.Closeable;
 import java.io.File;
@@ -21,7 +20,7 @@ import java.util.regex.Pattern;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24949a = a.class.getSimpleName();
+    private static final String f11261a = a.class.getSimpleName();
     private static final Pattern b = Pattern.compile("attachment;\\s*filename\\s*=\\s*(\"?)([^\"]*)\\1\\s*$", 2);
 
     public static int a(String str, String str2) {
@@ -77,7 +76,7 @@ public class a {
                 i = i2 + 1;
             }
         } catch (IOException e) {
-            com.opos.cmn.an.f.a.c(f24949a, e.getMessage());
+            com.opos.cmn.an.f.a.c(f11261a, e.getMessage());
         }
     }
 
@@ -103,7 +102,7 @@ public class a {
 
     public static boolean a(long j, File file) {
         boolean z = j <= 0 || j == file.length();
-        com.opos.cmn.an.f.a.a(f24949a, "length check:".concat(String.valueOf(z)));
+        com.opos.cmn.an.f.a.a(f11261a, "length check:".concat(String.valueOf(z)));
         return z;
     }
 
@@ -113,7 +112,7 @@ public class a {
 
     public static boolean a(String str, File file) {
         boolean equals = !TextUtils.isEmpty(str) ? str.equals(c.a(file)) : true;
-        com.opos.cmn.an.f.a.a(f24949a, "md5 check:".concat(String.valueOf(equals)));
+        com.opos.cmn.an.f.a.a(f11261a, "md5 check:".concat(String.valueOf(equals)));
         return equals;
     }
 
@@ -121,12 +120,12 @@ public class a {
         if (str == null) {
             return -1L;
         }
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         if (split.length >= 2) {
             try {
                 return Long.parseLong(split[1]);
             } catch (NumberFormatException e) {
-                com.opos.cmn.an.f.a.c(f24949a, "parse instance length failed with ".concat(String.valueOf(str)));
+                com.opos.cmn.an.f.a.c(f11261a, "parse instance length failed with ".concat(String.valueOf(str)));
                 return -1L;
             }
         }

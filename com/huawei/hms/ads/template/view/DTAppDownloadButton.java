@@ -26,12 +26,12 @@ public class DTAppDownloadButton extends AppDownloadButton implements com.huawei
             super(context);
         }
 
-        protected a.C0442a Code(Context context) {
+        protected a.C0272a Code(Context context) {
             return this.V;
         }
 
         @Override // com.huawei.openalliance.ad.views.a
-        public a.C0442a Code(Context context, k kVar) {
+        public a.C0272a Code(Context context, k kVar) {
             return Code(context);
         }
     }

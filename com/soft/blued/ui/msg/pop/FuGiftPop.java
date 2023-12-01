@@ -27,7 +27,7 @@ import java.util.List;
 public class FuGiftPop extends CenterPopupView {
 
     /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f32474c;
+    private RecyclerView f18783c;
     private List<FuGiftModel> d;
     private TextView e;
     private TextView f;
@@ -42,18 +42,17 @@ public class FuGiftPop extends CenterPopupView {
         this.h = activityFragmentActive;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         RecyclerView recyclerView = (RecyclerView) findViewById(2131369096);
-        this.f32474c = recyclerView;
+        this.f18783c = recyclerView;
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(getContext(), 5.0f));
         spacesItemDecoration.a(true, false, false, false);
         spacesItemDecoration.a(5);
         FuGiftAdapter fuGiftAdapter = new FuGiftAdapter(this.d, this.h);
-        this.f32474c.addItemDecoration(spacesItemDecoration);
-        this.f32474c.setAdapter(fuGiftAdapter);
+        this.f18783c.addItemDecoration(spacesItemDecoration);
+        this.f18783c.setAdapter(fuGiftAdapter);
         this.e = (TextView) findViewById(2131371675);
         String string = getContext().getString(R.string.msg_get_following_gifts);
         TextView textView = this.e;
@@ -70,18 +69,16 @@ public class FuGiftPop extends CenterPopupView {
                 BluedPreferences.aa(false);
                 FuGiftPop.this.p();
                 OpenGiftPackageEvent openGiftPackageEvent = new OpenGiftPackageEvent();
-                openGiftPackageEvent.f32328a = FuGiftPop.this.h;
+                openGiftPackageEvent.f18638a = FuGiftPop.this.h;
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_OPEN_GIFT_PACKAGE).post(openGiftPackageEvent);
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_fu_gift;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getMaxWidth() {
         return AppInfo.l;
     }

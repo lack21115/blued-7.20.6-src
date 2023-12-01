@@ -6,17 +6,17 @@ import android.database.ContentObserver;
 public class c extends ContentObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21155a;
+    private String f7549a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private b f21156c;
+    private b f7550c;
 
     public c(b bVar, int i, String str) {
         super(null);
-        this.f21156c = bVar;
+        this.f7550c = bVar;
         this.b = i;
-        this.f21155a = str;
+        this.f7549a = str;
     }
 
     @Override // android.database.ContentObserver

@@ -128,7 +128,7 @@ public final class ITFReader extends OneDReader {
                 } else {
                     i3 += iArr2[0] + iArr2[1];
                     int i5 = i2 - 1;
-                    System.arraycopy((Object) iArr2, 2, (Object) iArr2, 0, i5);
+                    System.arraycopy(iArr2, 2, iArr2, 0, i5);
                     iArr2[i5] = 0;
                     iArr2[i2] = 0;
                     i2--;

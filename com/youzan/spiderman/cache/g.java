@@ -11,12 +11,12 @@ import java.io.File;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41807a;
+    private static String f28116a;
     private static boolean b;
 
     static {
         g.class.getSimpleName();
-        f41807a = null;
+        f28116a = null;
         b = false;
     }
 
@@ -24,14 +24,14 @@ public class g {
         File externalFilesDir;
         try {
             if (PermissionUtil.hasExtStroragePermision(context) && Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) && (externalFilesDir = context.getExternalFilesDir(null)) != null) {
-                f41807a = externalFilesDir.getAbsolutePath() + File.separator + "spider_porval";
+                f28116a = externalFilesDir.getAbsolutePath() + File.separator + "spider_porval";
                 b = false;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (TextUtils.isEmpty(f41807a)) {
-            f41807a = context.getFilesDir().getAbsolutePath() + File.separator + "spider_porval";
+        if (TextUtils.isEmpty(f28116a)) {
+            f28116a = context.getFilesDir().getAbsolutePath() + File.separator + "spider_porval";
             b = true;
         }
         try {
@@ -61,19 +61,19 @@ public class g {
     }
 
     public static String b() {
-        return String.format("%s%s%s", f41807a, File.separator, "preload_res");
+        return String.format("%s%s%s", f28116a, File.separator, "preload_res");
     }
 
     public static String c() {
-        return String.format("%s%s%s", f41807a, File.separator, DownloadSettingKeys.KEY_ANTI_HIJACK_DIR);
+        return String.format("%s%s%s", f28116a, File.separator, DownloadSettingKeys.KEY_ANTI_HIJACK_DIR);
     }
 
     public static String d() {
-        return String.format("%s%s%s", f41807a, File.separator, "stream_download_dir");
+        return String.format("%s%s%s", f28116a, File.separator, "stream_download_dir");
     }
 
     public static String e() {
-        return String.format("%s%s%s", f41807a, File.separator, "preference_dir");
+        return String.format("%s%s%s", f28116a, File.separator, "preference_dir");
     }
 
     public static String f() {

@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.opengl.EGL14;
 import android.os.Build;
 import android.util.TypedValue;
-import com.amap.api.col.p0003sl.dw;
+import com.amap.api.col.3sl.dw;
 import com.amap.api.maps.model.BitmapDescriptor;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.CrossOverlay;
@@ -32,7 +32,7 @@ public class CrossVectorOverlay extends BaseMapOverlay<GLCrossVector, Object> im
     public void drawVectorFailed(int i) {
         CrossOverlay.GenerateCrossImageListener generateCrossImageListener;
         if (this.isImageMode && (generateCrossImageListener = this.imageListener) != null) {
-            generateCrossImageListener.onGenerateComplete(null, i);
+            generateCrossImageListener.onGenerateComplete((Bitmap) null, i);
         }
         if (this.updateListener != null) {
             CrossOverlay.UpdateItem updateItem = new CrossOverlay.UpdateItem();

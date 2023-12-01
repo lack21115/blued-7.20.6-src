@@ -9,9 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/ULongRange.class */
 public final class ULongRange extends ULongProgression implements ClosedRange<ULong> {
     public static final Companion b = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final ULongRange f42595c = new ULongRange(-1, 0, null);
+    private static final ULongRange c = new ULongRange(-1, 0, null);
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/ULongRange$Companion.class */

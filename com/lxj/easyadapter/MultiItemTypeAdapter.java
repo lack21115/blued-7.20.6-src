@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import androidx.collection.SparseArrayCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.expressad.a;
 import com.bytedance.applog.tracker.Tracker;
 import com.lxj.easyadapter.MultiItemTypeAdapter;
 import com.lxj.easyadapter.ViewHolder;
@@ -20,11 +21,11 @@ import kotlin.jvm.internal.Intrinsics;
 public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f23931a = new Companion(null);
+    public static final Companion f10320a = new Companion(null);
     private final SparseArrayCompat<View> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final SparseArrayCompat<View> f23932c;
+    private final SparseArrayCompat<View> f10321c;
     private ItemDelegateManager<T> d;
     private OnItemClickListener e;
     private List<? extends T> f;
@@ -52,15 +53,15 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     /* loaded from: source-7994992-dex2jar.jar:com/lxj/easyadapter/MultiItemTypeAdapter$SimpleOnItemClickListener.class */
     public static class SimpleOnItemClickListener implements OnItemClickListener {
         @Override // com.lxj.easyadapter.MultiItemTypeAdapter.OnItemClickListener
-        public void a(View view, RecyclerView.ViewHolder holder, int i) {
-            Intrinsics.d(view, "view");
-            Intrinsics.d(holder, "holder");
+        public void a(View view, RecyclerView.ViewHolder viewHolder, int i) {
+            Intrinsics.d(view, a.B);
+            Intrinsics.d(viewHolder, "holder");
         }
 
         @Override // com.lxj.easyadapter.MultiItemTypeAdapter.OnItemClickListener
-        public boolean b(View view, RecyclerView.ViewHolder holder, int i) {
-            Intrinsics.d(view, "view");
-            Intrinsics.d(holder, "holder");
+        public boolean b(View view, RecyclerView.ViewHolder viewHolder, int i) {
+            Intrinsics.d(view, a.B);
+            Intrinsics.d(viewHolder, "holder");
             return false;
         }
     }
@@ -79,42 +80,42 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        Intrinsics.d(parent, "parent");
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        Intrinsics.d(viewGroup, "parent");
         if (this.b.get(i) != null) {
-            ViewHolder.Companion companion = ViewHolder.f23936a;
+            ViewHolder.Companion companion = ViewHolder.f10325a;
             View view = this.b.get(i);
             if (view == null) {
                 Intrinsics.a();
             }
             return companion.a(view);
-        } else if (this.f23932c.get(i) != null) {
-            ViewHolder.Companion companion2 = ViewHolder.f23936a;
-            View view2 = this.f23932c.get(i);
+        } else if (this.f10321c.get(i) != null) {
+            ViewHolder.Companion companion2 = ViewHolder.f10325a;
+            View view2 = this.f10321c.get(i);
             if (view2 == null) {
                 Intrinsics.a();
             }
             return companion2.a(view2);
         } else {
             int a2 = this.d.a(i).a();
-            ViewHolder.Companion companion3 = ViewHolder.f23936a;
-            Context context = parent.getContext();
+            ViewHolder.Companion companion3 = ViewHolder.f10325a;
+            Context context = viewGroup.getContext();
             Intrinsics.b(context, "parent.context");
-            ViewHolder a3 = companion3.a(context, parent, a2);
+            ViewHolder a3 = companion3.a(context, viewGroup, a2);
             a(a3, a3.a());
-            a(parent, a3, i);
+            a(viewGroup, a3, i);
             return a3;
         }
     }
 
-    protected final void a(ViewGroup parent, final ViewHolder viewHolder, int i) {
-        Intrinsics.d(parent, "parent");
+    protected final void a(ViewGroup viewGroup, final ViewHolder viewHolder, int i) {
+        Intrinsics.d(viewGroup, "parent");
         Intrinsics.d(viewHolder, "viewHolder");
         if (a(i)) {
             viewHolder.a().setOnClickListener(new View.OnClickListener() { // from class: com.lxj.easyadapter.MultiItemTypeAdapter$setListener$1
                 @Override // android.view.View.OnClickListener
-                public final void onClick(View v) {
-                    Tracker.onClick(v);
+                public final void onClick(View view) {
+                    Tracker.onClick(view);
                     if (MultiItemTypeAdapter.this.b() != null) {
                         int adapterPosition = viewHolder.getAdapterPosition();
                         int c2 = MultiItemTypeAdapter.this.c();
@@ -122,14 +123,14 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
                         if (b == null) {
                             Intrinsics.a();
                         }
-                        Intrinsics.b(v, "v");
-                        b.a(v, viewHolder, adapterPosition - c2);
+                        Intrinsics.b(view, "v");
+                        b.a(view, viewHolder, adapterPosition - c2);
                     }
                 }
             });
             viewHolder.a().setOnLongClickListener(new View.OnLongClickListener() { // from class: com.lxj.easyadapter.MultiItemTypeAdapter$setListener$2
                 @Override // android.view.View.OnLongClickListener
-                public final boolean onLongClick(View v) {
+                public final boolean onLongClick(View view) {
                     if (MultiItemTypeAdapter.this.b() != null) {
                         int adapterPosition = viewHolder.getAdapterPosition();
                         int c2 = MultiItemTypeAdapter.this.c();
@@ -137,8 +138,8 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
                         if (b == null) {
                             Intrinsics.a();
                         }
-                        Intrinsics.b(v, "v");
-                        return b.b(v, viewHolder, adapterPosition - c2);
+                        Intrinsics.b(view, "v");
+                        return b.b(view, viewHolder, adapterPosition - c2);
                     }
                     return false;
                 }
@@ -148,34 +149,34 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
-    public void onViewAttachedToWindow(ViewHolder holder) {
-        Intrinsics.d(holder, "holder");
-        ViewHolder viewHolder = holder;
-        super.onViewAttachedToWindow(viewHolder);
-        int layoutPosition = holder.getLayoutPosition();
+    public void onViewAttachedToWindow(ViewHolder viewHolder) {
+        Intrinsics.d(viewHolder, "holder");
+        ViewHolder viewHolder2 = viewHolder;
+        super.onViewAttachedToWindow(viewHolder2);
+        int layoutPosition = viewHolder.getLayoutPosition();
         if (b(layoutPosition) || c(layoutPosition)) {
-            WrapperUtils.f23938a.a(viewHolder);
+            WrapperUtils.f10327a.a(viewHolder2);
         }
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
-    public void onBindViewHolder(ViewHolder holder, int i) {
-        Intrinsics.d(holder, "holder");
+    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+        Intrinsics.d(viewHolder, "holder");
         if (b(i) || c(i)) {
             return;
         }
-        a(holder, (ViewHolder) this.f.get(i - c()));
+        a(viewHolder, (ViewHolder) this.f.get(i - c()));
     }
 
-    public final void a(ViewHolder holder, View itemView) {
-        Intrinsics.d(holder, "holder");
-        Intrinsics.d(itemView, "itemView");
+    public final void a(ViewHolder viewHolder, View view) {
+        Intrinsics.d(viewHolder, "holder");
+        Intrinsics.d(view, "itemView");
     }
 
-    public final void a(ViewHolder holder, T t) {
-        Intrinsics.d(holder, "holder");
-        this.d.a(holder, t, holder.getAdapterPosition() - c());
+    public final void a(ViewHolder viewHolder, T t) {
+        Intrinsics.d(viewHolder, "holder");
+        this.d.a(viewHolder, t, viewHolder.getAdapterPosition() - c());
     }
 
     protected final boolean a(int i) {
@@ -192,7 +193,7 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     }
 
     public final int d() {
-        return this.f23932c.size();
+        return this.f10321c.size();
     }
 
     protected final boolean e() {
@@ -206,36 +207,35 @@ public class MultiItemTypeAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemViewType(int i) {
-        return b(i) ? this.b.keyAt(i) : c(i) ? this.f23932c.keyAt((i - c()) - a()) : !e() ? super.getItemViewType(i) : this.d.a(this.f.get(i - c()), i - c());
+        return b(i) ? this.b.keyAt(i) : c(i) ? this.f10321c.keyAt((i - c()) - a()) : !e() ? super.getItemViewType(i) : this.d.a(this.f.get(i - c()), i - c());
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         Intrinsics.d(recyclerView, "recyclerView");
         super.onAttachedToRecyclerView(recyclerView);
-        WrapperUtils.f23938a.a(recyclerView, new Function3<GridLayoutManager, GridLayoutManager.SpanSizeLookup, Integer, Integer>() { // from class: com.lxj.easyadapter.MultiItemTypeAdapter$onAttachedToRecyclerView$1
+        WrapperUtils.f10327a.a(recyclerView, new Function3<GridLayoutManager, GridLayoutManager.SpanSizeLookup, Integer, Integer>() { // from class: com.lxj.easyadapter.MultiItemTypeAdapter$onAttachedToRecyclerView$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(3);
             }
 
-            public final int a(GridLayoutManager layoutManager, GridLayoutManager.SpanSizeLookup oldLookup, int i) {
+            public final int a(GridLayoutManager gridLayoutManager, GridLayoutManager.SpanSizeLookup spanSizeLookup, int i) {
                 SparseArrayCompat sparseArrayCompat;
                 SparseArrayCompat sparseArrayCompat2;
-                Intrinsics.d(layoutManager, "layoutManager");
-                Intrinsics.d(oldLookup, "oldLookup");
+                Intrinsics.d(gridLayoutManager, "layoutManager");
+                Intrinsics.d(spanSizeLookup, "oldLookup");
                 int itemViewType = MultiItemTypeAdapter.this.getItemViewType(i);
                 sparseArrayCompat = MultiItemTypeAdapter.this.b;
                 if (sparseArrayCompat.get(itemViewType) != null) {
-                    return layoutManager.getSpanCount();
+                    return gridLayoutManager.getSpanCount();
                 }
-                sparseArrayCompat2 = MultiItemTypeAdapter.this.f23932c;
-                return sparseArrayCompat2.get(itemViewType) != null ? layoutManager.getSpanCount() : oldLookup.getSpanSize(i);
+                sparseArrayCompat2 = MultiItemTypeAdapter.this.f10321c;
+                return sparseArrayCompat2.get(itemViewType) != null ? gridLayoutManager.getSpanCount() : spanSizeLookup.getSpanSize(i);
             }
 
-            @Override // kotlin.jvm.functions.Function3
-            public /* synthetic */ Integer a(GridLayoutManager gridLayoutManager, GridLayoutManager.SpanSizeLookup spanSizeLookup, Integer num) {
-                return Integer.valueOf(a(gridLayoutManager, spanSizeLookup, num.intValue()));
+            public /* synthetic */ Object a(Object obj, Object obj2, Object obj3) {
+                return Integer.valueOf(a((GridLayoutManager) obj, (GridLayoutManager.SpanSizeLookup) obj2, ((Number) obj3).intValue()));
             }
         });
     }

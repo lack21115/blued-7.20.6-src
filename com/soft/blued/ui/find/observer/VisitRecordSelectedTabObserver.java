@@ -7,7 +7,7 @@ import java.util.List;
 public class VisitRecordSelectedTabObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static VisitRecordSelectedTabObserver f30632a = new VisitRecordSelectedTabObserver();
+    private static VisitRecordSelectedTabObserver f16942a = new VisitRecordSelectedTabObserver();
     private List<IVisitRecordSelectedTabObserver> b = new ArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/VisitRecordSelectedTabObserver$IVisitRecordSelectedTabObserver.class */
@@ -19,7 +19,7 @@ public class VisitRecordSelectedTabObserver {
     }
 
     public static VisitRecordSelectedTabObserver a() {
-        return f30632a;
+        return f16942a;
     }
 
     public void a(int i) {

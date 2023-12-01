@@ -64,14 +64,14 @@ public class PlatLogoActivity extends Activity {
                             return false;
                         }
                         ContentResolver contentResolver = PlatLogoActivity.this.getContentResolver();
-                        if (Settings.System.getLong(contentResolver, Settings.System.EGG_MODE, 0L) == 0) {
-                            Settings.System.putLong(contentResolver, Settings.System.EGG_MODE, System.currentTimeMillis());
+                        if (Settings.System.getLong(contentResolver, "egg_mode", 0L) == 0) {
+                            Settings.System.putLong(contentResolver, "egg_mode", System.currentTimeMillis());
                         }
                         AnonymousClass2.this.val$im.post(new Runnable() { // from class: com.android.internal.app.PlatLogoActivity.2.1.1
                             @Override // java.lang.Runnable
                             public void run() {
                                 try {
-                                    PlatLogoActivity.this.startActivity(new Intent(Intent.ACTION_MAIN).setFlags(276856832).putExtra("is_mk", PlatLogoActivity.this.mIsMK).addCategory("com.android.internal.category.PLATLOGO"));
+                                    PlatLogoActivity.this.startActivity(new Intent("android.intent.action.MAIN").setFlags(276856832).putExtra("is_mk", PlatLogoActivity.this.mIsMK).addCategory("com.android.internal.category.PLATLOGO"));
                                 } catch (ActivityNotFoundException e) {
                                     Log.e("PlatLogoActivity", "No more eggs.");
                                 }
@@ -96,7 +96,7 @@ public class PlatLogoActivity extends Activity {
         int newColorIndex = newColorIndex();
         ShapeDrawable shapeDrawable = new ShapeDrawable(new OvalShape());
         shapeDrawable.getPaint().setColor(FLAVORS[newColorIndex]);
-        return new RippleDrawable(ColorStateList.valueOf(FLAVORS[newColorIndex + 1]), shapeDrawable, (Drawable) null);
+        return new RippleDrawable(ColorStateList.valueOf(FLAVORS[newColorIndex + 1]), shapeDrawable, null);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -181,9 +181,8 @@ public class PlatLogoActivity extends Activity {
         imageView.animate().scaleX(0.3f).scaleY(0.3f).setInterpolator(this.mInterpolator).setDuration(500L).setStartDelay(800L).start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.mIsMK = getIntent().hasExtra("is_mk");
         this.mLayout = new FrameLayout(this);

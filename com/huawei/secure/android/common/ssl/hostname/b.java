@@ -1,6 +1,7 @@
 package com.huawei.secure.android.common.ssl.hostname;
 
 import com.huawei.secure.android.common.ssl.util.g;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
@@ -17,11 +18,11 @@ import javax.net.ssl.SSLException;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f23123a = Pattern.compile("^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$");
+    private static final Pattern f9515a = Pattern.compile("^(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$");
     private static final String[] b;
 
     static {
-        String[] strArr = {"ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info", "lg", "ne", "net", "or", "org"};
+        String[] strArr = {"ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info", "lg", "ne", TKDownloadReason.KSAD_TK_NET, "or", "org"};
         b = strArr;
         Arrays.sort(strArr);
     }
@@ -60,7 +61,7 @@ public class b {
         }
         StringBuffer stringBuffer = new StringBuffer();
         String lowerCase = str.trim().toLowerCase(Locale.ENGLISH);
-        Iterator<E> it = linkedList.iterator();
+        Iterator it = linkedList.iterator();
         boolean z3 = false;
         do {
             z2 = z3;
@@ -161,6 +162,6 @@ public class b {
     }
 
     private static boolean c(String str) {
-        return f23123a.matcher(str).matches();
+        return f9515a.matcher(str).matches();
     }
 }

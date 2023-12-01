@@ -17,7 +17,7 @@ public class Guideline extends ConstraintWidget {
     private boolean U;
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f2126a = -1.0f;
+    protected float f2078a = -1.0f;
     protected int O = -1;
     protected int P = -1;
     protected boolean Q = true;
@@ -30,7 +30,7 @@ public class Guideline extends ConstraintWidget {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2127a;
+        static final /* synthetic */ int[] f2079a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0071 -> B:49:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0075 -> B:45:0x001f). Please submit an issue!!! */
@@ -42,41 +42,41 @@ public class Guideline extends ConstraintWidget {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x008d -> B:51:0x0064). Please submit an issue!!! */
         static {
             int[] iArr = new int[ConstraintAnchor.Type.values().length];
-            f2127a = iArr;
+            f2079a = iArr;
             try {
                 iArr[ConstraintAnchor.Type.LEFT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.RIGHT.ordinal()] = 2;
+                f2079a[ConstraintAnchor.Type.RIGHT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.TOP.ordinal()] = 3;
+                f2079a[ConstraintAnchor.Type.TOP.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.BOTTOM.ordinal()] = 4;
+                f2079a[ConstraintAnchor.Type.BOTTOM.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.BASELINE.ordinal()] = 5;
+                f2079a[ConstraintAnchor.Type.BASELINE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.CENTER.ordinal()] = 6;
+                f2079a[ConstraintAnchor.Type.CENTER.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.CENTER_X.ordinal()] = 7;
+                f2079a[ConstraintAnchor.Type.CENTER_X.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.CENTER_Y.ordinal()] = 8;
+                f2079a[ConstraintAnchor.Type.CENTER_Y.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f2127a[ConstraintAnchor.Type.NONE.ordinal()] = 9;
+                f2079a[ConstraintAnchor.Type.NONE.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
         }
@@ -133,8 +133,8 @@ public class Guideline extends ConstraintWidget {
                 linearSystem.addGreaterThan(linearSystem.createObjectVariable(anchor2), createObjectVariable3, 0, 5);
             }
         } else if (this.P == -1) {
-            if (this.f2126a != -1.0f) {
-                linearSystem.addConstraint(LinearSystem.createRowDimensionPercent(linearSystem, linearSystem.createObjectVariable(this.R), linearSystem.createObjectVariable(anchor2), this.f2126a));
+            if (this.f2078a != -1.0f) {
+                linearSystem.addConstraint(LinearSystem.createRowDimensionPercent(linearSystem, linearSystem.createObjectVariable(this.R), linearSystem.createObjectVariable(anchor2), this.f2078a));
             }
         } else {
             SolverVariable createObjectVariable4 = linearSystem.createObjectVariable(this.R);
@@ -156,7 +156,7 @@ public class Guideline extends ConstraintWidget {
     public void copy(ConstraintWidget constraintWidget, HashMap<ConstraintWidget, ConstraintWidget> hashMap) {
         super.copy(constraintWidget, hashMap);
         Guideline guideline = (Guideline) constraintWidget;
-        this.f2126a = guideline.f2126a;
+        this.f2078a = guideline.f2078a;
         this.O = guideline.O;
         this.P = guideline.P;
         this.Q = guideline.Q;
@@ -166,7 +166,7 @@ public class Guideline extends ConstraintWidget {
     public void cyclePosition() {
         if (this.O != -1) {
             a();
-        } else if (this.f2126a != -1.0f) {
+        } else if (this.f2078a != -1.0f) {
             f();
         } else if (this.P != -1) {
             e();
@@ -195,7 +195,7 @@ public class Guideline extends ConstraintWidget {
 
     @Override // androidx.constraintlayout.core.widgets.ConstraintWidget
     public ConstraintAnchor getAnchor(ConstraintAnchor.Type type) {
-        int i = AnonymousClass1.f2127a[type.ordinal()];
+        int i = AnonymousClass1.f2079a[type.ordinal()];
         if (i == 1 || i == 2) {
             if (this.S == 1) {
                 return this.R;
@@ -217,7 +217,7 @@ public class Guideline extends ConstraintWidget {
     }
 
     public int getRelativeBehaviour() {
-        if (this.f2126a != -1.0f) {
+        if (this.f2078a != -1.0f) {
             return 0;
         }
         if (this.O != -1) {
@@ -231,7 +231,7 @@ public class Guideline extends ConstraintWidget {
     }
 
     public float getRelativePercent() {
-        return this.f2126a;
+        return this.f2078a;
     }
 
     @Override // androidx.constraintlayout.core.widgets.ConstraintWidget
@@ -240,7 +240,7 @@ public class Guideline extends ConstraintWidget {
     }
 
     public boolean isPercent() {
-        return this.f2126a != -1.0f && this.O == -1 && this.P == -1;
+        return this.f2078a != -1.0f && this.O == -1 && this.P == -1;
     }
 
     @Override // androidx.constraintlayout.core.widgets.ConstraintWidget
@@ -260,7 +260,7 @@ public class Guideline extends ConstraintWidget {
 
     public void setGuideBegin(int i) {
         if (i > -1) {
-            this.f2126a = -1.0f;
+            this.f2078a = -1.0f;
             this.O = i;
             this.P = -1;
         }
@@ -268,7 +268,7 @@ public class Guideline extends ConstraintWidget {
 
     public void setGuideEnd(int i) {
         if (i > -1) {
-            this.f2126a = -1.0f;
+            this.f2078a = -1.0f;
             this.O = -1;
             this.P = i;
         }
@@ -276,7 +276,7 @@ public class Guideline extends ConstraintWidget {
 
     public void setGuidePercent(float f) {
         if (f > -1.0f) {
-            this.f2126a = f;
+            this.f2078a = f;
             this.O = -1;
             this.P = -1;
         }

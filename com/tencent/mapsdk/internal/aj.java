@@ -16,7 +16,7 @@ public class aj extends ib {
     private w6 g;
 
     /* renamed from: c  reason: collision with root package name */
-    private nb f37300c = new nb();
+    private nb f23609c = new nb();
     private String e = "";
 
     public aj(gj gjVar) {
@@ -32,7 +32,7 @@ public class aj extends ib {
     @Override // com.tencent.mapsdk.internal.ib
     public byte[] e(String str) {
         na.a(ma.f, "download url : " + str);
-        if (this.b == null || f7.b(str) || !this.f37300c.b(str)) {
+        if (this.b == null || f7.b(str) || !this.f23609c.b(str)) {
             return null;
         }
         if (this.f != null && f7.b(this.e) && !f7.b(this.f.y())) {
@@ -46,7 +46,7 @@ public class aj extends ib {
                 return null;
             }
             if (!g.contains("qt=rtt")) {
-                this.f37300c.a(g);
+                this.f23609c.a(g);
             }
             return doGet.data;
         } catch (Exception e) {

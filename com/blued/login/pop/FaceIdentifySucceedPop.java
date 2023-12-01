@@ -2,6 +2,7 @@ package com.blued.login.pop;
 
 import android.content.Context;
 import android.view.View;
+import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.CenterPopupView;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.extensions.CustomViewBindingProperty;
@@ -20,31 +21,30 @@ import kotlin.reflect.KProperty;
 public final class FaceIdentifySucceedPop extends CenterPopupView {
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f20563c = {Reflection.a(new PropertyReference1Impl(FaceIdentifySucceedPop.class, "vb", "getVb()Lcom/blued/login/databinding/LoginPopFaceSucceedBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f6957c = {(KProperty) Reflection.a(new PropertyReference1Impl(FaceIdentifySucceedPop.class, "vb", "getVb()Lcom/blued/login/databinding/LoginPopFaceSucceedBinding;", 0))};
     private final View.OnClickListener d;
     private final ViewBindingProperty e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public FaceIdentifySucceedPop(Context context, View.OnClickListener clickListener) {
+    public FaceIdentifySucceedPop(Context context, View.OnClickListener onClickListener) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(clickListener, "clickListener");
-        this.d = clickListener;
+        Intrinsics.e(onClickListener, "clickListener");
+        this.d = onClickListener;
+        BasePopupView basePopupView = (BasePopupView) this;
         this.e = new CustomViewBindingProperty(new Function1<FaceIdentifySucceedPop, LoginPopFaceSucceedBinding>() { // from class: com.blued.login.pop.FaceIdentifySucceedPop$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final LoginPopFaceSucceedBinding invoke(FaceIdentifySucceedPop popView) {
-                Intrinsics.e(popView, "popView");
-                return LoginPopFaceSucceedBinding.a(popView.getPopupImplView());
+            public final LoginPopFaceSucceedBinding invoke(FaceIdentifySucceedPop faceIdentifySucceedPop) {
+                Intrinsics.e(faceIdentifySucceedPop, "popView");
+                return LoginPopFaceSucceedBinding.a(faceIdentifySucceedPop.getPopupImplView());
             }
         });
     }
 
     private final LoginPopFaceSucceedBinding getVb() {
-        return (LoginPopFaceSucceedBinding) this.e.b(this, f20563c[0]);
+        return (LoginPopFaceSucceedBinding) this.e.b(this, f6957c[0]);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         ShapeTextView shapeTextView;
         super.b();
@@ -59,7 +59,6 @@ public final class FaceIdentifySucceedPop extends CenterPopupView {
         return this.d;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.login_pop_face_succeed;
     }

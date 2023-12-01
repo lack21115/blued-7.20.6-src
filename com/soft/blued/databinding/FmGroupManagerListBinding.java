@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FmGroupManagerListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28749a;
+    private final LinearLayout f15059a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28749a;
+        return this.f15059a;
     }
 }

@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleBuyDialogBinding.class */
 public final class LiveBattleBuyDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12133a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f12134c;
+    public final FrameLayout c;
     public final RecyclerView d;
     public final TextView e;
     public final TextView f;
@@ -28,9 +24,9 @@ public final class LiveBattleBuyDialogBinding implements ViewBinding {
 
     private LiveBattleBuyDialogBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, FrameLayout frameLayout2, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, ImageView imageView3) {
         this.i = frameLayout;
-        this.f12133a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12134c = frameLayout2;
+        this.c = frameLayout2;
         this.d = recyclerView;
         this.e = textView;
         this.f = textView2;
@@ -54,8 +50,8 @@ public final class LiveBattleBuyDialogBinding implements ViewBinding {
             if (imageView2 != null) {
                 FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.root);
                 if (frameLayout != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                    if (recyclerView != null) {
+                    RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                    if (findViewById != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_content);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_gift_title);
@@ -64,7 +60,7 @@ public final class LiveBattleBuyDialogBinding implements ViewBinding {
                                 if (textView3 != null) {
                                     ImageView imageView3 = (ImageView) view.findViewById(R.id.view_line);
                                     if (imageView3 != null) {
-                                        return new LiveBattleBuyDialogBinding((FrameLayout) view, imageView, imageView2, frameLayout, recyclerView, textView, textView2, textView3, imageView3);
+                                        return new LiveBattleBuyDialogBinding((FrameLayout) view, imageView, imageView2, frameLayout, findViewById, textView, textView2, textView3, imageView3);
                                     }
                                     str = "viewLine";
                                 } else {
@@ -91,7 +87,6 @@ public final class LiveBattleBuyDialogBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.i;

@@ -17,7 +17,7 @@ public class ch extends Thread {
     private rc b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ib f37374c;
+    private ib f23683c;
     private boolean d = true;
     private boolean e = false;
     private boolean f = false;
@@ -27,7 +27,7 @@ public class ch extends Thread {
     public class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37375a;
+        public int f23684a;
         public int b;
 
         private b() {
@@ -36,10 +36,10 @@ public class ch extends Thread {
 
     public ch(rc rcVar, ib ibVar) {
         this.b = null;
-        this.f37374c = null;
+        this.f23683c = null;
         setName("tms-traffic-refresh");
         this.b = rcVar;
-        this.f37374c = ibVar;
+        this.f23683c = ibVar;
         this.g = new ArrayList();
     }
 
@@ -65,7 +65,7 @@ public class ch extends Thread {
                 }
                 bh bhVar = k2[i3];
                 arrayList.add(Integer.valueOf(bhVar.d));
-                arrayList.add(Integer.valueOf(bhVar.f37330c));
+                arrayList.add(Integer.valueOf(bhVar.f23639c));
                 arrayList.add(Integer.valueOf(bhVar.f));
                 arrayList.add(Integer.valueOf(bhVar.e));
                 arrayList.add(Integer.valueOf(bhVar.g));
@@ -73,7 +73,7 @@ public class ch extends Thread {
             }
             rttRequest.bounds = arrayList;
             rttRequest.zip = (short) 1;
-            rttRequest.zoom = (short) k2[0].f37329a;
+            rttRequest.zoom = (short) k2[0].f23638a;
         }
         return rttRequest;
     }
@@ -82,7 +82,7 @@ public class ch extends Thread {
         double sin = Math.sin((d2 * 3.1415926d) / 180.0d);
         double log = (180.0d - ((Math.log((sin + 1.0d) / (1.0d - sin)) * 180.0d) / 6.2831852d)) / 360.0d;
         b bVar = new b();
-        bVar.f37375a = (int) ((((d + 180.0d) / 360.0d) * 2.68435456E8d) + 0.5d);
+        bVar.f23684a = (int) ((((d + 180.0d) / 360.0d) * 2.68435456E8d) + 0.5d);
         bVar.b = (int) ((log * 2.68435456E8d) + 0.5d);
         return bVar;
     }
@@ -110,7 +110,7 @@ public class ch extends Thread {
         double d4 = i2.top / 1000000.0f;
         b a2 = a(d, d2);
         b a3 = a(d3, d4);
-        this.b.S().a(r, Math.min(a2.f37375a, a3.f37375a), Math.min(a2.b, a3.b), Math.max(a3.f37375a, a2.f37375a), Math.max(a3.b, a2.b));
+        this.b.S().a(r, Math.min(a2.f23684a, a3.f23684a), Math.min(a2.b, a3.b), Math.max(a3.f23684a, a2.f23684a), Math.max(a3.b, a2.b));
     }
 
     private byte[] d() {
@@ -118,7 +118,7 @@ public class ch extends Thread {
         if (this.b == null || (a2 = a()) == null) {
             return null;
         }
-        return this.f37374c.a(a(a2));
+        return this.f23683c.a(a(a2));
     }
 
     private void f() {

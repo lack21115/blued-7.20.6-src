@@ -311,16 +311,14 @@ public class StCameraView extends FrameLayout implements SurfaceHolder.Callback,
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         recycleBitmap();
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         float measuredWidth = this.mVideoView.getMeasuredWidth();
         float measuredHeight = this.mVideoView.getMeasuredHeight();
@@ -512,6 +510,7 @@ public class StCameraView extends FrameLayout implements SurfaceHolder.Callback,
     public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
     }
 
+    /* JADX WARN: Type inference failed for: r0v1, types: [com.sobot.chat.camera.StCameraView$6] */
     @Override // android.view.SurfaceHolder.Callback
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
         StCmeraLog.i("JCameraView SurfaceCreated");

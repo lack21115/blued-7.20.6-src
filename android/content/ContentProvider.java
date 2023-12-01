@@ -19,6 +19,7 @@ import android.os.Process;
 import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Log;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileNotFoundException;
@@ -845,7 +846,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
                 return;
             }
             this.mAuthority = null;
-            this.mAuthorities = str.split(";");
+            this.mAuthorities = str.split(t.aE);
         }
     }
 

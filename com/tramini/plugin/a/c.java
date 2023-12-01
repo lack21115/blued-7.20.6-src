@@ -10,7 +10,7 @@ import com.efs.sdk.base.core.util.NetworkUtil;
 public class c extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40497a = c.class.getSimpleName();
+    public static final String f26806a = c.class.getSimpleName();
 
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {

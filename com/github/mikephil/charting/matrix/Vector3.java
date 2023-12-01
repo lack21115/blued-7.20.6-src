@@ -8,11 +8,11 @@ public final class Vector3 {
     public static final Vector3 g = new Vector3(0.0f, 0.0f, 1.0f);
 
     /* renamed from: a  reason: collision with root package name */
-    public float f22165a;
+    public float f8558a;
     public float b;
 
     /* renamed from: c  reason: collision with root package name */
-    public float f22166c;
+    public float f8559c;
 
     public Vector3() {
     }
@@ -22,8 +22,8 @@ public final class Vector3 {
     }
 
     public final void a(float f2, float f3, float f4) {
-        this.f22165a = f2;
+        this.f8558a = f2;
         this.b = f3;
-        this.f22166c = f4;
+        this.f8559c = f4;
     }
 }

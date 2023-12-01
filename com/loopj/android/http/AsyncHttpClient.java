@@ -3,6 +3,8 @@ package com.loopj.android.http;
 import android.content.Context;
 import android.os.Looper;
 import android.util.Log;
+import com.blued.das.live.LiveProtos;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -124,11 +126,11 @@ public class AsyncHttpClient {
     }
 
     public AsyncHttpClient() {
-        this(false, 80, 443);
+        this(false, 80, LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE);
     }
 
     public AsyncHttpClient(int i) {
-        this(false, i, 443);
+        this(false, i, LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE);
     }
 
     public AsyncHttpClient(int i, int i2) {
@@ -303,7 +305,7 @@ public class AsyncHttpClient {
                 if (!trim.equals("?")) {
                     StringBuilder sb = new StringBuilder();
                     sb.append(str2);
-                    sb.append(str2.contains("?") ? "&" : "?");
+                    sb.append(str2.contains("?") ? ContainerUtils.FIELD_DELIMITER : "?");
                     str3 = sb.toString() + trim;
                 }
             }
@@ -743,7 +745,7 @@ public class AsyncHttpClient {
     }
 
     public void setSSLSocketFactory(SSLSocketFactory sSLSocketFactory) {
-        this.httpClient.getConnectionManager().getSchemeRegistry().register(new Scheme("https", sSLSocketFactory, 443));
+        this.httpClient.getConnectionManager().getSchemeRegistry().register(new Scheme("https", sSLSocketFactory, (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
     }
 
     public void setThreadPool(ExecutorService executorService) {

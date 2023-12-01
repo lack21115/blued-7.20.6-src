@@ -6,13 +6,9 @@ import java.util.concurrent.BlockingQueue;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/CacheDispatcher.class */
 public class CacheDispatcher extends Thread {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final boolean f24229c = false;
+    private static final boolean c = false;
     private static final String[] g = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BlockingQueue<Request<?>> f24230a;
+    private final BlockingQueue<Request<?>> a;
     private final Cache b;
     private final BlockingQueue<Request<?>> d;
     private volatile boolean e = false;
@@ -41,7 +37,7 @@ public class CacheDispatcher extends Thread {
     }
 
     public CacheDispatcher(BlockingQueue<Request<?>> blockingQueue, BlockingQueue<Request<?>> blockingQueue2, Cache cache, ResponseDelivery responseDelivery) {
-        this.f24230a = blockingQueue;
+        this.a = blockingQueue;
         this.d = blockingQueue2;
         this.b = cache;
         this.f = responseDelivery;
@@ -59,14 +55,14 @@ public class CacheDispatcher extends Thread {
         Response<?> parseNetworkResponse;
         boolean z = Request.e;
         try {
-            if (f24229c) {
+            if (c) {
                 VolleyLog.v(g[1], new Object[0]);
             }
             Process.setThreadPriority(10);
             this.b.initialize();
             while (true) {
                 try {
-                    take = this.f24230a.take();
+                    take = this.a.take();
                     take.addMarker(g[4]);
                 } catch (InterruptedException e) {
                     if (this.e) {

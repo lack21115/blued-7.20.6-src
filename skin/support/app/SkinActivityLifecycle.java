@@ -21,29 +21,23 @@ import skin.support.widget.SkinCompatSupportable;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/app/SkinActivityLifecycle.class */
 public class SkinActivityLifecycle implements Application.ActivityLifecycleCallbacks {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile SkinActivityLifecycle f44193a;
+    private static volatile SkinActivityLifecycle a;
     private WeakHashMap<Context, SkinCompatDelegate> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WeakHashMap<Context, LazySkinObserver> f44194c;
+    private WeakHashMap<Context, LazySkinObserver> c;
     private WeakReference<Activity> d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:skin/support/app/SkinActivityLifecycle$LazySkinObserver.class */
     public class LazySkinObserver implements SkinObserver {
         private final Context b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f44196c = false;
+        private boolean c = false;
 
         LazySkinObserver(Context context) {
             this.b = context;
         }
 
         void a() {
-            if (this.f44196c) {
+            if (this.c) {
                 b();
             }
         }
@@ -53,12 +47,12 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
             if (SkinActivityLifecycle.this.d == null || this.b == SkinActivityLifecycle.this.d.get() || !(this.b instanceof Activity)) {
                 b();
             } else {
-                this.f44196c = true;
+                this.c = true;
             }
         }
 
         void b() {
-            if (Slog.f44252a) {
+            if (Slog.a) {
                 Slog.a("SkinActivityLifecycle", "Context: " + this.b + " updateSkinForce");
             }
             Context context = this.b;
@@ -73,7 +67,7 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
             if (context2 instanceof SkinCompatSupportable) {
                 ((SkinCompatSupportable) context2).applySkin();
             }
-            this.f44196c = false;
+            this.c = false;
         }
     }
 
@@ -84,18 +78,18 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
     }
 
     public static SkinActivityLifecycle a(Application application) {
-        if (f44193a == null) {
+        if (a == null) {
             synchronized (SkinActivityLifecycle.class) {
                 try {
-                    if (f44193a == null) {
-                        f44193a = new SkinActivityLifecycle(application);
+                    if (a == null) {
+                        a = new SkinActivityLifecycle(application);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f44193a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -133,14 +127,14 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
     }
 
     private LazySkinObserver c(Context context) {
-        if (this.f44194c == null) {
-            this.f44194c = new WeakHashMap<>();
+        if (this.c == null) {
+            this.c = new WeakHashMap<>();
         }
-        LazySkinObserver lazySkinObserver = this.f44194c.get(context);
+        LazySkinObserver lazySkinObserver = this.c.get(context);
         LazySkinObserver lazySkinObserver2 = lazySkinObserver;
         if (lazySkinObserver == null) {
             lazySkinObserver2 = new LazySkinObserver(context);
-            this.f44194c.put(context, lazySkinObserver2);
+            this.c.put(context, lazySkinObserver2);
         }
         return lazySkinObserver2;
     }
@@ -165,7 +159,7 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
     public void onActivityDestroyed(Activity activity) {
         if (d(activity)) {
             SkinCompatManager.a().b(c(activity));
-            this.f44194c.remove(activity);
+            this.c.remove(activity);
             this.b.remove(activity);
         }
     }
@@ -178,9 +172,9 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
     public void onActivityResumed(Activity activity) {
         this.d = new WeakReference<>(activity);
         if (d(activity)) {
-            LazySkinObserver c2 = c(activity);
-            SkinCompatManager.a().a((SkinObserver) c2);
-            c2.a();
+            LazySkinObserver c = c(activity);
+            SkinCompatManager.a().a((SkinObserver) c);
+            c.a();
         }
     }
 

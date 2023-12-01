@@ -11,10 +11,10 @@ public final class KKOXW extends ucT3w {
     public Map<String, String> m;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final /* synthetic */ boolean f39889c = !KKOXW.class.desiredAssertionStatus();
+    public static final /* synthetic */ boolean f26198c = !KKOXW.class.desiredAssertionStatus();
 
     /* renamed from: a  reason: collision with root package name */
-    public static byte[] f39888a = null;
+    public static byte[] f26197a = null;
     public static Map<String, String> b = null;
     public short d = 0;
     public byte e = 0;
@@ -48,8 +48,8 @@ public final class KKOXW extends ucT3w {
             this.g = nyvkz.a(this.g, 4, true);
             this.h = nyvkz.b(5, true);
             this.i = nyvkz.b(6, true);
-            if (f39888a == null) {
-                f39888a = new byte[]{0};
+            if (f26197a == null) {
+                f26197a = new byte[]{0};
             }
             this.j = nyvkz.a(7, true);
             this.k = nyvkz.a(this.k, 8, true);
@@ -82,7 +82,7 @@ public final class KKOXW extends ucT3w {
                     }
                     byte b3 = bArr[i2];
                     int i3 = i2 * 2;
-                    char[] cArr2 = NbXuL.f39897a;
+                    char[] cArr2 = NbXuL.f26206a;
                     cArr[i3 + 1] = cArr2[b3 & 15];
                     cArr[i3 + 0] = cArr2[((byte) (b3 >>> 4)) & 15];
                     i = i2 + 1;
@@ -99,7 +99,7 @@ public final class KKOXW extends ucT3w {
         try {
             return super.clone();
         } catch (CloneNotSupportedException e) {
-            if (f39889c) {
+            if (f26198c) {
                 return null;
             }
             throw new AssertionError();

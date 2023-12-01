@@ -23,21 +23,17 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgText$setSpanToText$1.class */
 public final class FitemMsgText$setSpanToText$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FitemMsgText f12605a;
+    final /* synthetic */ FitemMsgText a;
     final /* synthetic */ Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ TextView f12606c;
+    final /* synthetic */ TextView c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgText$setSpanToText$1(FitemMsgText fitemMsgText, Context context, TextView textView) {
         super(1);
-        this.f12605a = fitemMsgText;
+        this.a = fitemMsgText;
         this.b = context;
-        this.f12606c = textView;
+        this.c = textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -45,7 +41,7 @@ public final class FitemMsgText$setSpanToText$1 extends Lambda implements Functi
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
@@ -59,7 +55,7 @@ public final class FitemMsgText$setSpanToText$1 extends Lambda implements Functi
         if (emoji_url == null || emoji_url.length() == 0) {
             return;
         }
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         String emoji_url2 = liveEmojiModel.getEmoji_url();
         Intrinsics.a((Object) emoji_url2);
         ImageLoader.a(iRequestHost, emoji_url2).a(imageView);
@@ -67,7 +63,7 @@ public final class FitemMsgText$setSpanToText$1 extends Lambda implements Functi
 
     public final void a(DslSpannableStringBuilder buildSpannableString) {
         Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-        buildSpannableString.a(Intrinsics.a(this.f12605a.k(), (Object) "："), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgText$setSpanToText$1.1
+        buildSpannableString.a(Intrinsics.a(this.a.k(), (Object) "："), new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgText$setSpanToText$1.1
             public final void a(DslSpanBuilder addText) {
                 Intrinsics.e(addText, "$this$addText");
                 Context d = AppInfo.d();
@@ -78,21 +74,21 @@ public final class FitemMsgText$setSpanToText$1 extends Lambda implements Functi
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        final LiveEmojiModel t = this.f12605a.t();
+        final LiveEmojiModel t = this.a.t();
         if (t == null) {
-            String str = this.f12605a.e().msgContent;
+            String str = this.a.e().msgContent;
             Intrinsics.c(str, "msg.msgContent");
             DslSpannableStringBuilder.DefaultImpls.a(buildSpannableString, str, null, 2, null);
             return;
         }
-        final int g = (int) ((this.f12605a.g() * t.getEmoji_w()) / t.getEmoji_h());
-        final int g2 = this.f12605a.g();
-        final FitemMsgText fitemMsgText = this.f12605a;
+        final int g = (int) ((this.a.g() * t.getEmoji_w()) / t.getEmoji_h());
+        final int g2 = this.a.g();
+        final FitemMsgText fitemMsgText = this.a;
         final Context context = this.b;
-        final TextView textView = this.f12606c;
+        final TextView textView = this.c;
         buildSpannableString.a(new ColorDrawable(), 0, 0, g, g2, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgText$setSpanToText$1$oc4zNmjMFKLGaC6VvfjlE4pRrcw
             @Override // com.blued.android.module.live_china.liveForMsg.ui.VerticalCenterImageSpan.SpanDrawCallback
             public final void drawFinish(int i, int i2) {
@@ -104,6 +100,6 @@ public final class FitemMsgText$setSpanToText$1 extends Lambda implements Functi
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

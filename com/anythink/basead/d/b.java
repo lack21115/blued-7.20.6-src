@@ -14,13 +14,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b.class */
 public abstract class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private a f5936a;
+    private a a;
     protected Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected j f5937c;
+    protected j c;
     protected c d;
     protected aa e;
     protected com.anythink.core.common.a.g f;
@@ -32,35 +28,33 @@ public abstract class b {
 
     /* renamed from: com.anythink.basead.d.b$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b$1.class */
-    final class AnonymousClass1 implements a.InterfaceC0072a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.basead.e.c f5938a;
+    final class AnonymousClass1 implements a.InterfaceC0032a {
+        final /* synthetic */ com.anythink.basead.e.c a;
 
         AnonymousClass1(com.anythink.basead.e.c cVar) {
-            this.f5938a = cVar;
+            this.a = cVar;
         }
 
-        @Override // com.anythink.basead.d.a.a.InterfaceC0072a
+        @Override // com.anythink.basead.d.a.a.InterfaceC0032a
         public final void a(com.anythink.core.common.e.g gVar) {
             b.this.a(gVar);
-            com.anythink.basead.e.c cVar = this.f5938a;
+            com.anythink.basead.e.c cVar = this.a;
             if (cVar != null) {
                 cVar.onAdDataLoaded();
             }
         }
 
-        @Override // com.anythink.basead.d.a.a.InterfaceC0072a
+        @Override // com.anythink.basead.d.a.a.InterfaceC0032a
         public final void a(com.anythink.core.common.e.g gVar, com.anythink.basead.c.e eVar) {
-            b.a(b.this, gVar, eVar, this.f5938a, true);
+            b.a(b.this, gVar, eVar, this.a, true);
         }
 
-        @Override // com.anythink.basead.d.a.a.InterfaceC0072a
+        @Override // com.anythink.basead.d.a.a.InterfaceC0032a
         public final void a(com.anythink.core.common.e.g gVar, com.anythink.core.common.a.g gVar2) {
             b.this.e = gVar;
             b.this.f = gVar2;
             b bVar = b.this;
-            bVar.g = new com.anythink.basead.a.c(bVar.b, b.this.f5937c, b.this.e);
+            bVar.g = new com.anythink.basead.a.c(bVar.b, b.this.c, b.this.e);
             b.this.g.a(new c.b() { // from class: com.anythink.basead.d.b.1.1
                 @Override // com.anythink.basead.a.c.b
                 public final void a() {
@@ -80,9 +74,9 @@ public abstract class b {
                 public final void b() {
                 }
             });
-            com.anythink.basead.a.b.a(33, gVar, new com.anythink.basead.c.i(b.this.f5937c.d, ""));
+            com.anythink.basead.a.b.a(33, gVar, new com.anythink.basead.c.i(b.this.c.d, ""));
             b.a(b.this);
-            com.anythink.basead.e.c cVar = this.f5938a;
+            com.anythink.basead.e.c cVar = this.a;
             if (cVar != null) {
                 cVar.onAdCacheLoaded();
             }
@@ -91,57 +85,53 @@ public abstract class b {
 
     /* renamed from: com.anythink.basead.d.b$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b$2.class */
-    final class AnonymousClass2 implements a.InterfaceC0075a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.basead.e.c f5940a;
+    final class AnonymousClass2 implements a.InterfaceC0035a {
+        final /* synthetic */ com.anythink.basead.e.c a;
 
         AnonymousClass2(com.anythink.basead.e.c cVar) {
-            this.f5940a = cVar;
+            this.a = cVar;
         }
 
-        @Override // com.anythink.basead.d.b.a.InterfaceC0075a
+        @Override // com.anythink.basead.d.b.a.InterfaceC0035a
         public final void a() {
-            com.anythink.basead.e.c cVar = this.f5940a;
+            com.anythink.basead.e.c cVar = this.a;
             if (cVar != null) {
                 cVar.onAdDataLoaded();
             }
         }
 
-        @Override // com.anythink.basead.d.b.a.InterfaceC0075a
+        @Override // com.anythink.basead.d.b.a.InterfaceC0035a
         public final void a(z zVar) {
             b.this.e = zVar;
-            com.anythink.basead.a.b.a(33, b.this.e, new com.anythink.basead.c.i(b.this.f5937c.d, ""));
+            com.anythink.basead.a.b.a(33, b.this.e, new com.anythink.basead.c.i(b.this.c.d, ""));
             b.a(b.this);
-            com.anythink.basead.e.c cVar = this.f5940a;
+            com.anythink.basead.e.c cVar = this.a;
             if (cVar != null) {
                 cVar.onAdCacheLoaded();
             }
         }
 
-        @Override // com.anythink.basead.d.b.a.InterfaceC0075a
+        @Override // com.anythink.basead.d.b.a.InterfaceC0035a
         public final void a(z zVar, com.anythink.basead.c.e eVar) {
-            b.a(b.this, zVar, eVar, this.f5940a, false);
+            b.a(b.this, zVar, eVar, this.a, false);
         }
     }
 
     /* renamed from: com.anythink.basead.d.b$4  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b$4.class */
     static final /* synthetic */ class AnonymousClass4 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f5942a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[a.values().length];
-            f5942a = iArr;
+            a = iArr;
             try {
                 iArr[a.ADX_OFFER_REQUEST_TYPE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f5942a[a.ONLINE_API_OFFER_REQUEST_TYPE.ordinal()] = 2;
+                a[a.ONLINE_API_OFFER_REQUEST_TYPE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -155,26 +145,26 @@ public abstract class b {
 
     public b(Context context, a aVar, j jVar) {
         this.b = context.getApplicationContext();
-        this.f5936a = aVar;
-        this.f5937c = jVar;
+        this.a = aVar;
+        this.c = jVar;
     }
 
     static /* synthetic */ void a(b bVar, com.anythink.core.common.e.i iVar, com.anythink.basead.c.e eVar, com.anythink.basead.e.c cVar, boolean z) {
         if (iVar != null) {
-            com.anythink.basead.a.b.a(34, iVar, new com.anythink.basead.c.i(bVar.f5937c.d, ""));
+            com.anythink.basead.a.b.a(34, iVar, new com.anythink.basead.c.i(bVar.c.d, ""));
         }
         if (iVar instanceof z) {
             com.anythink.core.basead.b.a();
             Context g = n.a().g();
             com.anythink.core.basead.b.a();
-            com.anythink.core.basead.b.b(g, com.anythink.core.basead.b.a(bVar.f5937c));
+            com.anythink.core.basead.b.b(g, com.anythink.core.basead.b.a(bVar.c));
         }
         if (z) {
             try {
-                com.anythink.core.b.f.a().a(bVar.f5937c.f6664c);
+                com.anythink.core.b.f.a().a(bVar.c.c);
                 com.anythink.core.b.f.a();
-                com.anythink.core.b.f.b(bVar.f5937c.f6664c);
-                com.anythink.core.common.a.a.a().b(n.a().g(), bVar.f5937c.f6663a);
+                com.anythink.core.b.f.b(bVar.c.c);
+                com.anythink.core.common.a.a.a().b(n.a().g(), bVar.c.a);
             } catch (Throwable th) {
             }
         }
@@ -185,20 +175,20 @@ public abstract class b {
 
     private void a(com.anythink.core.common.e.i iVar, com.anythink.basead.c.e eVar, com.anythink.basead.e.c cVar, boolean z) {
         if (iVar != null) {
-            com.anythink.basead.a.b.a(34, iVar, new com.anythink.basead.c.i(this.f5937c.d, ""));
+            com.anythink.basead.a.b.a(34, iVar, new com.anythink.basead.c.i(this.c.d, ""));
         }
         if (iVar instanceof z) {
             com.anythink.core.basead.b.a();
             Context g = n.a().g();
             com.anythink.core.basead.b.a();
-            com.anythink.core.basead.b.b(g, com.anythink.core.basead.b.a(this.f5937c));
+            com.anythink.core.basead.b.b(g, com.anythink.core.basead.b.a(this.c));
         }
         if (z) {
             try {
-                com.anythink.core.b.f.a().a(this.f5937c.f6664c);
+                com.anythink.core.b.f.a().a(this.c.c);
                 com.anythink.core.b.f.a();
-                com.anythink.core.b.f.b(this.f5937c.f6664c);
-                com.anythink.core.common.a.a.a().b(n.a().g(), this.f5937c.f6663a);
+                com.anythink.core.b.f.b(this.c.c);
+                com.anythink.core.common.a.a.a().b(n.a().g(), this.c.a);
             } catch (Throwable th) {
             }
         }
@@ -214,8 +204,8 @@ public abstract class b {
 
     private void b(com.anythink.basead.e.c cVar) {
         try {
-            if (this.f5937c != null && !TextUtils.isEmpty(this.f5937c.b) && !TextUtils.isEmpty(this.f5937c.f6663a)) {
-                com.anythink.basead.d.a.a.a(this.b).a(this.f5937c, new AnonymousClass1(cVar));
+            if (this.c != null && !TextUtils.isEmpty(this.c.b) && !TextUtils.isEmpty(this.c.a)) {
+                com.anythink.basead.d.a.a.a(this.b).a(this.c, new AnonymousClass1(cVar));
                 return;
             }
             if (cVar != null) {
@@ -231,7 +221,7 @@ public abstract class b {
 
     private void c(com.anythink.basead.e.c cVar) {
         try {
-            com.anythink.basead.d.b.a.a(this.b).a(this.f5937c, this.j, new AnonymousClass2(cVar));
+            com.anythink.basead.d.b.a.a(this.b).a(this.c, this.j, new AnonymousClass2(cVar));
         } catch (Throwable th) {
             th.printStackTrace();
             if (cVar != null) {
@@ -242,13 +232,13 @@ public abstract class b {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final String a(aa aaVar) {
-        return this.f5937c.b + this.f5937c.f6664c + this.f5937c.f + aaVar.p() + System.currentTimeMillis();
+        return this.c.b + this.c.c + this.c.f + aaVar.p() + System.currentTimeMillis();
     }
 
     public final void a(c cVar) {
         this.d = cVar;
-        if (this.f5937c.m instanceof ab) {
-            ab abVar = (ab) this.f5937c.m;
+        if (this.c.m instanceof ab) {
+            ab abVar = (ab) this.c.m;
             c cVar2 = this.d;
             if (abVar == null || cVar2 == null) {
                 return;
@@ -271,13 +261,13 @@ public abstract class b {
     }
 
     public final void a(com.anythink.basead.e.c cVar) {
-        int i = AnonymousClass4.f5942a[this.f5936a.ordinal()];
+        int i = AnonymousClass4.a[this.a.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return;
             }
             try {
-                com.anythink.basead.d.b.a.a(this.b).a(this.f5937c, this.j, new AnonymousClass2(cVar));
+                com.anythink.basead.d.b.a.a(this.b).a(this.c, this.j, new AnonymousClass2(cVar));
                 return;
             } catch (Throwable th) {
                 th.printStackTrace();
@@ -286,8 +276,8 @@ public abstract class b {
             }
         }
         try {
-            if (this.f5937c != null && !TextUtils.isEmpty(this.f5937c.b) && !TextUtils.isEmpty(this.f5937c.f6663a)) {
-                com.anythink.basead.d.a.a.a(this.b).a(this.f5937c, new AnonymousClass1(cVar));
+            if (this.c != null && !TextUtils.isEmpty(this.c.b) && !TextUtils.isEmpty(this.c.a)) {
+                com.anythink.basead.d.a.a.a(this.b).a(this.c, new AnonymousClass1(cVar));
                 return;
             }
             cVar.onAdLoadFailed(com.anythink.basead.c.f.a(com.anythink.basead.c.f.i, com.anythink.basead.c.f.v));
@@ -333,7 +323,7 @@ public abstract class b {
                     this.i.put(cVar.aZ(), cVar3);
                 }
                 if (cVar3 != null) {
-                    com.anythink.basead.c.i iVar = new com.anythink.basead.c.i(this.f5937c.d, str);
+                    com.anythink.basead.c.i iVar = new com.anythink.basead.c.i(this.c.d, str);
                     iVar.g = new com.anythink.basead.c.a();
                     cVar3.a(new c.b() { // from class: com.anythink.basead.d.b.3
                         @Override // com.anythink.basead.a.c.b
@@ -371,10 +361,10 @@ public abstract class b {
     }
 
     public final boolean c() {
-        int i = AnonymousClass4.f5942a[this.f5936a.ordinal()];
+        int i = AnonymousClass4.a[this.a.ordinal()];
         if (i == 1) {
             if (this.e == null) {
-                this.e = com.anythink.basead.d.a.a.a(this.b).a(this.f5937c);
+                this.e = com.anythink.basead.d.a.a.a(this.b).a(this.c);
             }
             com.anythink.core.common.a.g gVar = this.f;
             if (gVar != null) {
@@ -384,7 +374,7 @@ public abstract class b {
                 return true;
             }
             aa aaVar = this.e;
-            if (aaVar == null || !com.anythink.basead.a.b.c.a(aaVar, this.f5937c)) {
+            if (aaVar == null || !com.anythink.basead.a.b.c.a(aaVar, this.c)) {
                 return false;
             }
             this.k = true;
@@ -393,13 +383,13 @@ public abstract class b {
             return false;
         } else {
             if (this.e == null) {
-                this.e = com.anythink.basead.d.b.a.a(this.b).a(this.f5937c);
+                this.e = com.anythink.basead.d.b.a.a(this.b).a(this.c);
             }
             if (this.k) {
                 return true;
             }
             aa aaVar2 = this.e;
-            if (aaVar2 == null || !(aaVar2 instanceof z) || ((z) aaVar2).N() || !com.anythink.basead.a.b.c.a(this.e, this.f5937c)) {
+            if (aaVar2 == null || !(aaVar2 instanceof z) || ((z) aaVar2).N() || !com.anythink.basead.a.b.c.a(this.e, this.c)) {
                 return false;
             }
             this.k = true;

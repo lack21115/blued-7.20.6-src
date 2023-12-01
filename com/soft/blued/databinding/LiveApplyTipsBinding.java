@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveApplyTipsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29446a;
+    private final FrameLayout f15756a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29446a;
+        return this.f15756a;
     }
 }

@@ -23,11 +23,11 @@ import java.util.Objects;
 public class h4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public w6 f3829a;
+    public w6 f3781a;
     public y6 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f3830c;
+    public String f3782c;
     public b d;
     public boolean e = false;
 
@@ -80,19 +80,19 @@ public class h4 {
                 case 6007:
                     Location location = (Location) message.obj;
                     h4.this.b.a(location);
-                    if (h4.this.f3829a.i && location.getProvider().equals("gps")) {
-                        if (h4.this.f3829a.b) {
-                            h4.this.f3829a.g = SystemClock.elapsedRealtimeNanos();
-                            h4.this.f3829a.h = h4.this.f3829a.g - h4.this.f3829a.f;
-                            h4.this.b.a(h4.this.f3829a.h);
+                    if (h4.this.f3781a.i && location.getProvider().equals("gps")) {
+                        if (h4.this.f3781a.b) {
+                            h4.this.f3781a.g = SystemClock.elapsedRealtimeNanos();
+                            h4.this.f3781a.h = h4.this.f3781a.g - h4.this.f3781a.f;
+                            h4.this.b.a(h4.this.f3781a.h);
                         }
-                        h4.this.f3829a.i = false;
+                        h4.this.f3781a.i = false;
                         return;
                     }
                     return;
                 case 6008:
                     e5 e5Var = (e5) message.obj;
-                    if (h4.this.f3829a.b) {
+                    if (h4.this.f3781a.b) {
                         h4.this.b.a(e5Var.b(), e5Var.c(), e5Var.a());
                         return;
                     }
@@ -121,18 +121,18 @@ public class h4 {
     }
 
     public h4(Context context) {
-        this.f3829a = null;
+        this.f3781a = null;
         this.b = null;
-        if (u6.f4014a) {
+        if (u6.f3966a) {
             try {
                 u6.a(context, new File(context.getExternalFilesDir("data").getAbsolutePath() + "/s_l"));
                 u6.a(new a(this));
             } catch (Throwable th) {
             }
         }
-        this.f3830c = ((File) Objects.requireNonNull(context.getExternalFilesDir("dgnss"))).getAbsolutePath();
+        this.f3782c = ((File) Objects.requireNonNull(context.getExternalFilesDir("dgnss"))).getAbsolutePath();
         this.b = new y6(context);
-        this.f3829a = new w6(context, this.b);
+        this.f3781a = new w6(context, this.b);
     }
 
     public static boolean a(Location location) {
@@ -171,10 +171,10 @@ public class h4 {
     }
 
     public final int b() {
-        if (u6.f4014a) {
-            TxRtkSvr.jni_settrace_path(3, this.f3830c + "/txgpos_%Y_%m_%d_%h_%M_%S.trace");
-            TxRtkSvr.jni_setlogger_path(this.f3830c + "/txgpos_%Y_%m_%d_%h_%M_%S.log");
-            TxRtkSvr.jni_setsol_path(this.f3830c + "/txgpos_%Y_%m_%d_%h_%M_%S.sol");
+        if (u6.f3966a) {
+            TxRtkSvr.jni_settrace_path(3, this.f3782c + "/txgpos_%Y_%m_%d_%h_%M_%S.trace");
+            TxRtkSvr.jni_setlogger_path(this.f3782c + "/txgpos_%Y_%m_%d_%h_%M_%S.log");
+            TxRtkSvr.jni_setsol_path(this.f3782c + "/txgpos_%Y_%m_%d_%h_%M_%S.sol");
         }
         return TxRtkSvr.jni_init_txgpos();
     }

@@ -7,18 +7,18 @@ import java.util.Random;
 public class x2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Random f4050a = new Random();
+    public static final Random f4002a = new Random();
     public static final a b = new a();
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/x2$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public w2 f4051a = new w2();
+        public w2 f4003a = new w2();
         public String b = "";
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f4052c = false;
+        public boolean f4004c = false;
 
         public a() {
             a();
@@ -34,7 +34,7 @@ public class x2 {
             }
             try {
                 byteArrayOutputStream.write(this.b.getBytes("UTF-8"));
-                this.f4051a.a(byteArrayOutputStream, bArr2);
+                this.f4003a.a(byteArrayOutputStream, bArr2);
                 byteArrayOutputStream.write(u2.a(bArr, bArr2, bArr2));
             } catch (Throwable th) {
             }
@@ -47,7 +47,7 @@ public class x2 {
                 return;
             }
             this.b = str;
-            this.f4051a.a(bArr);
+            this.f4003a.a(bArr);
         }
 
         public byte[] a(byte[] bArr, byte[] bArr2, boolean z) {
@@ -67,7 +67,7 @@ public class x2 {
 
     public static byte[] a(int i) {
         byte[] bArr = new byte[i];
-        f4050a.nextBytes(bArr);
+        f4002a.nextBytes(bArr);
         return bArr;
     }
 

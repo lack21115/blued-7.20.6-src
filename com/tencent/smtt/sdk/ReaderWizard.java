@@ -12,13 +12,13 @@ import com.tencent.smtt.sdk.TbsReaderView;
 public class ReaderWizard {
 
     /* renamed from: a  reason: collision with root package name */
-    private DexLoader f38725a;
+    private DexLoader f25034a;
     private TbsReaderView.ReaderCallback b;
 
     public ReaderWizard(TbsReaderView.ReaderCallback readerCallback) {
-        this.f38725a = null;
+        this.f25034a = null;
         this.b = null;
-        this.f38725a = a();
+        this.f25034a = a();
         this.b = readerCallback;
     }
 
@@ -79,7 +79,7 @@ public class ReaderWizard {
 
     public boolean checkPlugin(Object obj, Context context, String str, boolean z) {
         String str2;
-        DexLoader dexLoader = this.f38725a;
+        DexLoader dexLoader = this.f25034a;
         if (dexLoader == null) {
             str2 = "checkPlugin:Unexpect null object!";
         } else {
@@ -95,7 +95,7 @@ public class ReaderWizard {
 
     public void destroy(Object obj) {
         this.b = null;
-        DexLoader dexLoader = this.f38725a;
+        DexLoader dexLoader = this.f25034a;
         if (dexLoader == null || obj == null) {
             Log.e("ReaderWizard", "destroy:Unexpect null object!");
         } else {
@@ -104,7 +104,7 @@ public class ReaderWizard {
     }
 
     public void doCommand(Object obj, Integer num, Object obj2, Object obj3) {
-        DexLoader dexLoader = this.f38725a;
+        DexLoader dexLoader = this.f25034a;
         if (dexLoader == null) {
             Log.e("ReaderWizard", "doCommand:Unexpect null object!");
         } else {
@@ -113,12 +113,12 @@ public class ReaderWizard {
     }
 
     public Object getTbsReader() {
-        return this.f38725a.newInstance("com.tencent.tbs.reader.TbsReader", new Class[0], new Object[0]);
+        return this.f25034a.newInstance("com.tencent.tbs.reader.TbsReader", new Class[0], new Object[0]);
     }
 
     public boolean initTbsReader(Object obj, Context context) {
         String str;
-        DexLoader dexLoader = this.f38725a;
+        DexLoader dexLoader = this.f25034a;
         if (dexLoader == null || obj == null) {
             str = "initTbsReader:Unexpect null object!";
         } else {
@@ -140,7 +140,7 @@ public class ReaderWizard {
     }
 
     public void onSizeChanged(Object obj, int i, int i2) {
-        DexLoader dexLoader = this.f38725a;
+        DexLoader dexLoader = this.f25034a;
         if (dexLoader == null) {
             Log.e("ReaderWizard", "onSizeChanged:Unexpect null object!");
         } else {
@@ -150,7 +150,7 @@ public class ReaderWizard {
 
     public boolean openFile(Object obj, Context context, Bundle bundle, FrameLayout frameLayout) {
         String str;
-        DexLoader dexLoader = this.f38725a;
+        DexLoader dexLoader = this.f25034a;
         if (dexLoader == null) {
             str = "openFile:Unexpect null object!";
         } else {
@@ -165,7 +165,7 @@ public class ReaderWizard {
     }
 
     public void userStatistics(Object obj, String str) {
-        DexLoader dexLoader = this.f38725a;
+        DexLoader dexLoader = this.f25034a;
         if (dexLoader == null) {
             Log.e("ReaderWizard", "userStatistics:Unexpect null object!");
         } else {

@@ -17,12 +17,8 @@ public final class av implements AMapLocationListener, LocationSource {
     private AMapLocationClient e;
     private AMapLocationClientOption f;
     private Context g;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Bundle f4755c = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    boolean f4754a = false;
+    private Bundle c = null;
+    boolean a = false;
     long b = 2000;
 
     public av(Context context) {
@@ -48,7 +44,7 @@ public final class av implements AMapLocationListener, LocationSource {
                 e.printStackTrace();
             }
         }
-        this.f4754a = z;
+        this.a = z;
     }
 
     public final void a(int i) {
@@ -71,13 +67,13 @@ public final class av implements AMapLocationListener, LocationSource {
     @Override // com.amap.api.maps.LocationSource
     public final void activate(LocationSource.OnLocationChangedListener onLocationChangedListener) {
         this.d = onLocationChangedListener;
-        if (hx.a(this.g, dw.a()).f5127a == hx.c.SuccessCode && this.e == null) {
+        if (hx.a(this.g, dw.a()).a == hx.c.SuccessCode && this.e == null) {
             try {
                 this.e = new AMapLocationClient(this.g);
                 this.f = new AMapLocationClientOption();
                 this.e.setLocationListener(this);
                 this.f.setInterval(this.b);
-                this.f.setOnceLocation(this.f4754a);
+                this.f.setOnceLocation(this.a);
                 this.f.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
                 this.f.setNeedAddress(false);
                 this.e.setLocationOption(this.f);
@@ -106,31 +102,31 @@ public final class av implements AMapLocationListener, LocationSource {
                 return;
             }
             Bundle extras = aMapLocation.getExtras();
-            this.f4755c = extras;
+            this.c = extras;
             if (extras == null) {
-                this.f4755c = new Bundle();
+                this.c = new Bundle();
             }
-            this.f4755c.putInt("errorCode", aMapLocation.getErrorCode());
-            this.f4755c.putString(MyLocationStyle.ERROR_INFO, aMapLocation.getErrorInfo());
-            this.f4755c.putInt(MyLocationStyle.LOCATION_TYPE, aMapLocation.getLocationType());
-            this.f4755c.putFloat("Accuracy", aMapLocation.getAccuracy());
-            this.f4755c.putString("AdCode", aMapLocation.getAdCode());
-            this.f4755c.putString("Address", aMapLocation.getAddress());
-            this.f4755c.putString("AoiName", aMapLocation.getAoiName());
-            this.f4755c.putString("City", aMapLocation.getCity());
-            this.f4755c.putString("CityCode", aMapLocation.getCityCode());
-            this.f4755c.putString("Country", aMapLocation.getCountry());
-            this.f4755c.putString("District", aMapLocation.getDistrict());
-            this.f4755c.putString("Street", aMapLocation.getStreet());
-            this.f4755c.putString("StreetNum", aMapLocation.getStreetNum());
-            this.f4755c.putString("PoiName", aMapLocation.getPoiName());
-            this.f4755c.putString("Province", aMapLocation.getProvince());
-            this.f4755c.putFloat("Speed", aMapLocation.getSpeed());
-            this.f4755c.putString("Floor", aMapLocation.getFloor());
-            this.f4755c.putFloat("Bearing", aMapLocation.getBearing());
-            this.f4755c.putString("BuildingId", aMapLocation.getBuildingId());
-            this.f4755c.putDouble("Altitude", aMapLocation.getAltitude());
-            aMapLocation.setExtras(this.f4755c);
+            this.c.putInt(MyLocationStyle.ERROR_CODE, aMapLocation.getErrorCode());
+            this.c.putString(MyLocationStyle.ERROR_INFO, aMapLocation.getErrorInfo());
+            this.c.putInt(MyLocationStyle.LOCATION_TYPE, aMapLocation.getLocationType());
+            this.c.putFloat("Accuracy", aMapLocation.getAccuracy());
+            this.c.putString("AdCode", aMapLocation.getAdCode());
+            this.c.putString("Address", aMapLocation.getAddress());
+            this.c.putString("AoiName", aMapLocation.getAoiName());
+            this.c.putString("City", aMapLocation.getCity());
+            this.c.putString("CityCode", aMapLocation.getCityCode());
+            this.c.putString("Country", aMapLocation.getCountry());
+            this.c.putString("District", aMapLocation.getDistrict());
+            this.c.putString("Street", aMapLocation.getStreet());
+            this.c.putString("StreetNum", aMapLocation.getStreetNum());
+            this.c.putString("PoiName", aMapLocation.getPoiName());
+            this.c.putString("Province", aMapLocation.getProvince());
+            this.c.putFloat("Speed", aMapLocation.getSpeed());
+            this.c.putString("Floor", aMapLocation.getFloor());
+            this.c.putFloat("Bearing", aMapLocation.getBearing());
+            this.c.putString("BuildingId", aMapLocation.getBuildingId());
+            this.c.putDouble("Altitude", aMapLocation.getAltitude());
+            aMapLocation.setExtras(this.c);
             this.d.onLocationChanged(aMapLocation);
         } catch (Throwable th) {
             th.printStackTrace();

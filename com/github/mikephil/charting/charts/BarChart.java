@@ -14,14 +14,14 @@ import com.github.mikephil.charting.renderer.BarChartRenderer;
 public class BarChart extends BarLineChartBase<BarData> implements BarDataProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f22062a;
+    protected boolean f8455a;
     private boolean aa;
     private boolean ab;
     private boolean ac;
 
     public BarChart(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f22062a = false;
+        this.f8455a = false;
         this.aa = true;
         this.ab = false;
         this.ac = false;
@@ -29,7 +29,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
 
     public BarChart(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f22062a = false;
+        this.f8455a = false;
         this.aa = true;
         this.ab = false;
         this.ac = false;
@@ -81,7 +81,7 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
 
     @Override // com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider
     public boolean e() {
-        return this.f22062a;
+        return this.f8455a;
     }
 
     @Override // com.github.mikephil.charting.interfaces.dataprovider.BarDataProvider
@@ -102,6 +102,6 @@ public class BarChart extends BarLineChartBase<BarData> implements BarDataProvid
     }
 
     public void setHighlightFullBarEnabled(boolean z) {
-        this.f22062a = z;
+        this.f8455a = z;
     }
 }

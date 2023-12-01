@@ -6,17 +6,17 @@ import com.ut.mini.sdkevents.UTMI1010_2001Event;
 public class UTMIVariables {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTMIVariables f41021a = new UTMIVariables();
+    private static UTMIVariables f27330a = new UTMIVariables();
     private String am = null;
     private String aj = null;
     private String an = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private UTMI1010_2001Event f78a = null;
+    private UTMI1010_2001Event f31a = null;
     private boolean O = false;
 
     public static UTMIVariables getInstance() {
-        return f41021a;
+        return f27330a;
     }
 
     public String getH5RefPage() {
@@ -34,7 +34,7 @@ public class UTMIVariables {
     public UTMI1010_2001Event getUTMI1010_2001EventInstance() {
         UTMI1010_2001Event uTMI1010_2001Event;
         synchronized (this) {
-            uTMI1010_2001Event = this.f78a;
+            uTMI1010_2001Event = this.f31a;
         }
         return uTMI1010_2001Event;
     }
@@ -67,7 +67,7 @@ public class UTMIVariables {
 
     public void setUTMI1010_2001EventInstance(UTMI1010_2001Event uTMI1010_2001Event) {
         synchronized (this) {
-            this.f78a = uTMI1010_2001Event;
+            this.f31a = uTMI1010_2001Event;
         }
     }
 }

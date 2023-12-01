@@ -2,6 +2,8 @@ package com.blued.android.chat;
 
 import android.text.TextUtils;
 import com.alibaba.fastjson.JSONObject;
+import com.android.internal.telephony.SmsConstants;
+import com.anythink.core.common.g.c;
 import com.blued.android.chat.listener.ChatTipsListener;
 import com.blued.android.chat.listener.FetchDataListener;
 import com.blued.android.chat.listener.LoadMsgListener;
@@ -15,13 +17,12 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.module.common.db.model.SessionSettingModel;
 import com.blued.android.module.common.user.model.UserInfo;
+import com.blued.android.module.live_china.R;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.android.statistics.biz.Event;
 import com.blued.das.message.MessageProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.R;
 import com.soft.blued.constant.ChatConstants;
-import com.soft.blued.constant.EventBusConstant;
 import com.soft.blued.http.ChatHttpUtils;
 import com.soft.blued.log.track.EventTrackMessage;
 import com.soft.blued.manager.FollowedUsersNotificationManager;
@@ -68,8 +69,8 @@ public class IMTipsListener implements ChatTipsListener {
     }
 
     private void filterServiceMsg(SessionModel sessionModel, ChattingModel chattingModel) {
-        if (SubscribeNumberManager.f32449a.a(chattingModel.sessionId, chattingModel.sessionType)) {
-            LiveEventBus.get(EventBusConstant.KEY_EVENT_SERVICE_NEW_MSG).post(chattingModel);
+        if (SubscribeNumberManager.a.a(chattingModel.sessionId, chattingModel.sessionType)) {
+            LiveEventBus.get("service_new_msg").post(chattingModel);
         }
     }
 
@@ -82,7 +83,7 @@ public class IMTipsListener implements ChatTipsListener {
         StringBuilder sb = new StringBuilder();
         sb.append("msgMapExtra===");
         sb.append(chattingModel.msgMapExtra);
-        Logger.c(TAG, Boolean.valueOf(sb.toString() == null));
+        Logger.c(TAG, new Object[]{Boolean.valueOf(sb.toString() == null)});
         if (chattingModel.msgType != 164) {
             return;
         }
@@ -100,11 +101,11 @@ public class IMTipsListener implements ChatTipsListener {
             return;
         }
         sessionModel.lastGiftMsgId = chattingModel.msgId;
-        MsgExtraGift msgExtraGift = (MsgExtraGift) AppInfo.f().fromJson(chattingModel.getMsgExtra(), (Class<Object>) MsgExtraGift.class);
+        MsgExtraGift msgExtraGift = (MsgExtraGift) AppInfo.f().fromJson(chattingModel.getMsgExtra(), MsgExtraGift.class);
         if (msgExtraGift != null && msgExtraGift.gift_like != null) {
-            byte[] a2 = UserPagerGiftManager.a(sessionModel.unreadGiftCnt);
-            byte b3 = a2[0];
-            byte b4 = a2[1];
+            byte[] a = UserPagerGiftManager.a(sessionModel.unreadGiftCnt);
+            byte b3 = a[0];
+            byte b4 = a[1];
             if (msgExtraGift.gift_like.giftTye == 3) {
                 b = b4;
                 b2 = b3;
@@ -146,11 +147,11 @@ public class IMTipsListener implements ChatTipsListener {
             @Override // com.blued.android.chat.listener.FetchDataListener
             public void onFetchData(SessionModel sessionModel) {
                 if (sessionModel == null || sessionModel._msgList == null) {
-                    Logger.c(IMTipsListener.TAG, "onFetchData=SessionModel=" + sessionModel);
+                    Logger.c(IMTipsListener.TAG, new Object[]{"onFetchData=SessionModel=" + sessionModel});
                     return;
                 }
                 ChattingModel chattingModel = sessionModel._msgList.get(sessionModel._msgList.size() - 1);
-                String string = AppInfo.d().getResources().getString(R.string.disturb_notice);
+                String string = AppInfo.d().getResources().getString(2131887500);
                 ChattingModel chattingModel2 = new ChattingModel(chattingModel);
                 chattingModel2.msgLocalId = ChatHelper.getLocalId();
                 chattingModel2.msgType = (short) -3;
@@ -162,7 +163,7 @@ public class IMTipsListener implements ChatTipsListener {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onReplyServiceMsg(final ChattingModel chattingModel) {
-        SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f32449a;
+        SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.a;
         if (subscribeNumberManager.a(chattingModel.sessionId + "", Short.valueOf(chattingModel.sessionType))) {
             String str = chattingModel.msgType == 1 ? chattingModel.msgContent : "";
             BluedUIHttpResponse<BluedEntityA<ServiceMsgReplyModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<ServiceMsgReplyModel>>(null) { // from class: com.blued.android.chat.IMTipsListener.8
@@ -173,7 +174,7 @@ public class IMTipsListener implements ChatTipsListener {
                         return;
                     }
                     MessageProtos.Event event = MessageProtos.Event.SERVICE_MSG_PAGE_AUTO_REPLY;
-                    EventTrackMessage.f(event, chattingModel.sessionId + "", bluedEntityA.getSingleData().reply_type == 1 ? "keyword" : "common");
+                    EventTrackMessage.f(event, chattingModel.sessionId + "", bluedEntityA.getSingleData().reply_type == 1 ? "keyword" : c.Z);
                 }
             };
             ChatHttpUtils.a(bluedUIHttpResponse, chattingModel.sessionId + "", 0, 0, 0, str, chattingModel);
@@ -184,9 +185,8 @@ public class IMTipsListener implements ChatTipsListener {
     public void refreshFlashNumbers(int i, String str, boolean z) {
         if (i == 25 || i == 24) {
             FlashPhotoManager.a().a(new FlashPhotoManager.FlashPhotoModelSuccessListener() { // from class: com.blued.android.chat.IMTipsListener.7
-                @Override // com.soft.blued.ui.msg.manager.FlashPhotoManager.FlashPhotoModelSuccessListener
                 public void onSuccess(BluedEntityA<FlashNumberModel> bluedEntityA) {
-                    LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_FLASH_TIP).post(true);
+                    LiveEventBus.get("refresh_flash_tip").post(true);
                 }
             });
         }
@@ -220,7 +220,7 @@ public class IMTipsListener implements ChatTipsListener {
             sessionSettingModel2.setRemindAudio(chattingModel.status);
             ChatManager.getInstance().setSessionSetting(chattingModel.sessionType, chattingModel.sessionId, sessionSettingModel2);
         }
-        if (TextUtils.equals(chattingModel.session_common_status, ChatConstants.f28314c)) {
+        if (TextUtils.equals(chattingModel.session_common_status, ChatConstants.c)) {
             return;
         }
         SessionSettingModel sessionSettingModel3 = new SessionSettingModel();
@@ -254,30 +254,30 @@ public class IMTipsListener implements ChatTipsListener {
 
     @Override // com.blued.android.chat.listener.ChatTipsListener
     public void onConnectException(String str) {
-        Logger.e(TAG, "onConnectException(), exception:" + str);
+        Logger.e(TAG, new Object[]{"onConnectException(), exception:" + str});
     }
 
     @Override // com.blued.android.chat.listener.ChatTipsListener
     public void onDisconnect(int i, String str) {
         String string;
         if (TextUtils.isEmpty(str)) {
-            string = AppInfo.d().getResources().getString(R.string.account_abnormal);
+            string = AppInfo.d().getResources().getString(2131886266);
             if (i == 3) {
-                string = AppInfo.d().getResources().getString(R.string.account_forbidden);
+                string = AppInfo.d().getResources().getString(2131886269);
             } else if (i == 4) {
-                string = AppInfo.d().getResources().getString(R.string.account_duplicate_login);
+                string = AppInfo.d().getResources().getString(2131886268);
             }
         } else {
             string = str;
         }
-        Event c2 = BluedStatistics.c();
-        c2.a("IM_KICK_OFF", 0L, i, str + "；" + string);
-        UserRelationshipUtils.a(string, 1);
+        Event c = BluedStatistics.c();
+        c.a("IM_KICK_OFF", 0L, i, str + "；" + string);
+        UserRelationshipUtils.a(string, new int[]{1});
     }
 
     @Override // com.blued.android.chat.listener.ChatTipsListener
     public void onReceiveNotification(ChattingModel chattingModel) {
-        FollowedUsersNotificationManager.f29698a.a(chattingModel);
+        FollowedUsersNotificationManager.a.a(chattingModel);
     }
 
     @Override // com.blued.android.chat.listener.ChatTipsListener
@@ -286,9 +286,9 @@ public class IMTipsListener implements ChatTipsListener {
             if (TextUtils.isEmpty(chattingModel.msgContent)) {
                 return;
             }
-            Logger.c(TAG, "MT_TASK_PROGRESS: " + chattingModel.msgContent);
+            Logger.c(TAG, new Object[]{"MT_TASK_PROGRESS: " + chattingModel.msgContent});
             try {
-                final GlobalTaskFloatManager.TaskInfo taskInfo = (GlobalTaskFloatManager.TaskInfo) AppInfo.f().fromJson(chattingModel.msgContent, (Class<Object>) GlobalTaskFloatManager.TaskInfo.class);
+                final GlobalTaskFloatManager.TaskInfo taskInfo = (GlobalTaskFloatManager.TaskInfo) AppInfo.f().fromJson(chattingModel.msgContent, GlobalTaskFloatManager.TaskInfo.class);
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.chat.IMTipsListener.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -306,8 +306,8 @@ public class IMTipsListener implements ChatTipsListener {
         this.recvMsgTask.setMsgData(sessionModel, chattingModel);
         AppInfo.n().removeCallbacks(this.recvMsgTask);
         long currentTimeMillis = System.currentTimeMillis();
-        if (currentTimeMillis - this.lastNotifyTime < 500) {
-            AppInfo.n().postDelayed(this.recvMsgTask, 500L);
+        if (currentTimeMillis - this.lastNotifyTime < MIN_NOTIFY_DIFF_MS) {
+            AppInfo.n().postDelayed(this.recvMsgTask, MIN_NOTIFY_DIFF_MS);
             return;
         }
         this.lastNotifyTime = currentTimeMillis;
@@ -324,20 +324,20 @@ public class IMTipsListener implements ChatTipsListener {
             if (i2 != 21) {
                 switch (i2) {
                     case 3:
-                        string = AppInfo.d().getString(R.string.msgfailed_content_empty);
+                        string = AppInfo.d().getString(2131890918);
                         z = true;
                         break;
                     case 4:
-                        string = AppInfo.d().getString(R.string.msgfailed_content_invalid);
+                        string = AppInfo.d().getString(2131890919);
                         z = true;
                         break;
                     case 5:
                         if (s != 3) {
-                            string = AppInfo.d().getString(R.string.msgfailed_receiver_invalid);
+                            string = AppInfo.d().getString(2131890926);
                             z = true;
                             break;
                         } else {
-                            string = AppInfo.d().getString(R.string.group_msg_failed_dismissed);
+                            string = AppInfo.d().getString(2131888473);
                             z = true;
                             break;
                         }
@@ -346,62 +346,62 @@ public class IMTipsListener implements ChatTipsListener {
                             @Override // com.blued.android.chat.listener.FetchDataListener
                             public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                                 if (TextUtils.equals(((SessionSettingModel) sessionSettingBaseModel).getSessionCommonStatus(), "1")) {
-                                    AppMethods.d((int) R.string.msg_special_care_black);
+                                    AppMethods.d(2131890875);
                                 } else {
-                                    AppMethods.d((int) R.string.msgfailed_receiver_reject);
+                                    AppMethods.d(2131890927);
                                 }
                             }
                         });
-                        string = AppInfo.d().getString(R.string.msgfailed_receiver_reject);
+                        string = AppInfo.d().getString(2131890927);
                         z = false;
                         break;
                     case 7:
-                        string = AppInfo.d().getString(R.string.msgfailed_receiver_in_black);
+                        string = AppInfo.d().getString(2131890925);
                         z = true;
                         break;
                     case 8:
-                        string = AppInfo.d().getString(R.string.msgfailed_you_not_in_group);
+                        string = AppInfo.d().getString(2131890931);
                         z = true;
                         break;
                     case 9:
-                        string = AppInfo.d().getString(R.string.msgfailed_operation_too_frequent);
+                        string = AppInfo.d().getString(2131890924);
                         z = true;
                         break;
                     case 10:
-                        string = AppInfo.d().getString(R.string.msgfailed_account_not_verify);
+                        string = AppInfo.d().getString(2131890917);
                         z = true;
                         break;
                     case 11:
-                        string = AppInfo.d().getString(R.string.msgfailed_not_friends);
+                        string = AppInfo.d().getString(2131890923);
                         z = true;
                         break;
                     case 12:
-                        string = AppInfo.d().getString(R.string.msgfailed_group_video_forbidden);
+                        string = AppInfo.d().getString(2131890922);
                         z = true;
                         break;
                     case 13:
-                        string = AppInfo.d().getString(2131889162);
+                        string = AppInfo.d().getString(R.string.liveVideo_livingView_tips_forbidedToSpeak);
                         z = true;
                         break;
                     case 14:
-                        string = AppInfo.d().getString(2131889186);
+                        string = AppInfo.d().getString(R.string.liveVideo_message_tips_toofrequent);
                         z = true;
                         break;
                     case 15:
-                        string = AppInfo.d().getString(R.string.group_msg_failed_locked);
+                        string = AppInfo.d().getString(2131888474);
                         z = true;
                         break;
                     default:
                         switch (i2) {
                             case 17:
-                                string = AppInfo.d().getString(R.string.msgfailed_group_chat_pause);
+                                string = AppInfo.d().getString(2131890920);
                                 z = true;
                                 break;
                             case 18:
                                 insertDisturbNotice(j);
                                 break;
                             case 19:
-                                string = AppInfo.d().getString(R.string.group_send_msg_error);
+                                string = AppInfo.d().getString(2131888576);
                                 z = true;
                                 break;
                         }
@@ -412,12 +412,12 @@ public class IMTipsListener implements ChatTipsListener {
             string = null;
             z = true;
         } else {
-            string = AppInfo.d().getString(R.string.msgfailed_timeout);
+            string = AppInfo.d().getString(2131890928);
             z = true;
         }
         refreshFlashNumbers(i, j + "", false);
         if (TextUtils.isEmpty(string)) {
-            str = "unknown";
+            str = SmsConstants.FORMAT_UNKNOWN;
         } else {
             str = string;
             if (z) {
@@ -440,13 +440,13 @@ public class IMTipsListener implements ChatTipsListener {
                 if (chattingModel.msgType == 267) {
                     ChatManager.getInstance().deleteOneMessage(chattingModel.sessionType, chattingModel.sessionId, chattingModel.msgId, chattingModel.msgLocalId);
                 }
-                Logger.c(IMTipsListener.TAG, "onSendMsgSucceed : " + ((int) chattingModel.sessionType) + " | " + chattingModel.sessionId);
+                Logger.c(IMTipsListener.TAG, new Object[]{"onSendMsgSucceed : " + ((int) chattingModel.sessionType) + " | " + chattingModel.sessionId});
                 IMTipsListener iMTipsListener = IMTipsListener.this;
                 short s = chattingModel.msgType;
                 iMTipsListener.refreshFlashNumbers(s, chattingModel.sessionId + "", true);
                 IMTipsListener.this.onReplyServiceMsg(chattingModel);
                 BluedPreferences.B(chattingModel.msgTimestamp);
-                LiveEventBus.get(EventBusConstant.KEY_EVENT_MSG_SEND_SUCCEED).post(chattingModel);
+                LiveEventBus.get("msg_send_succeed").post(chattingModel);
             }
         });
     }

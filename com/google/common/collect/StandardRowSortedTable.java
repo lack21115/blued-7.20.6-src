@@ -36,7 +36,7 @@ public class StandardRowSortedTable<R, C, V> extends StandardTable<R, C, V> impl
             return (R) StandardRowSortedTable.this.sortedBackingMap().firstKey();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<R, Map<C, V>> headMap(R r) {
             Preconditions.checkNotNull(r);
             return new StandardRowSortedTable(StandardRowSortedTable.this.sortedBackingMap().headMap(r), StandardRowSortedTable.this.factory).rowMap();
@@ -52,14 +52,14 @@ public class StandardRowSortedTable<R, C, V> extends StandardTable<R, C, V> impl
             return (R) StandardRowSortedTable.this.sortedBackingMap().lastKey();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<R, Map<C, V>> subMap(R r, R r2) {
             Preconditions.checkNotNull(r);
             Preconditions.checkNotNull(r2);
             return new StandardRowSortedTable(StandardRowSortedTable.this.sortedBackingMap().subMap(r, r2), StandardRowSortedTable.this.factory).rowMap();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<R, Map<C, V>> tailMap(R r) {
             Preconditions.checkNotNull(r);
             return new StandardRowSortedTable(StandardRowSortedTable.this.sortedBackingMap().tailMap(r), StandardRowSortedTable.this.factory).rowMap();

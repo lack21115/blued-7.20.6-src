@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import androidx.core.os.CancellationSignal;
 import androidx.core.view.ViewCompat;
 import androidx.fragment.R;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,11 +16,11 @@ import java.util.List;
 public abstract class SpecialEffectsController {
 
     /* renamed from: a  reason: collision with root package name */
-    final ArrayList<Operation> f3052a = new ArrayList<>();
+    final ArrayList<Operation> f3004a = new ArrayList<>();
     final ArrayList<Operation> b = new ArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f3053c = false;
+    boolean f3005c = false;
     boolean d = false;
     private final ViewGroup e;
 
@@ -31,7 +30,7 @@ public abstract class SpecialEffectsController {
     public static /* synthetic */ class AnonymousClass3 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f3056a;
+        static final /* synthetic */ int[] f3008a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:18:0x0060 -> B:40:0x0014). Please submit an issue!!! */
@@ -56,21 +55,21 @@ public abstract class SpecialEffectsController {
             } catch (NoSuchFieldError e3) {
             }
             int[] iArr2 = new int[Operation.State.values().length];
-            f3056a = iArr2;
+            f3008a = iArr2;
             try {
                 iArr2[Operation.State.REMOVED.ordinal()] = 1;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f3056a[Operation.State.VISIBLE.ordinal()] = 2;
+                f3008a[Operation.State.VISIBLE.ordinal()] = 2;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f3056a[Operation.State.GONE.ordinal()] = 3;
+                f3008a[Operation.State.GONE.ordinal()] = 3;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f3056a[Operation.State.INVISIBLE.ordinal()] = 4;
+                f3008a[Operation.State.INVISIBLE.ordinal()] = 4;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -81,17 +80,17 @@ public abstract class SpecialEffectsController {
     public static class FragmentStateManagerOperation extends Operation {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FragmentStateManager f3057a;
+        private final FragmentStateManager f3009a;
 
         FragmentStateManagerOperation(Operation.State state, Operation.LifecycleImpact lifecycleImpact, FragmentStateManager fragmentStateManager, CancellationSignal cancellationSignal) {
             super(state, lifecycleImpact, fragmentStateManager.a(), cancellationSignal);
-            this.f3057a = fragmentStateManager;
+            this.f3009a = fragmentStateManager;
         }
 
         @Override // androidx.fragment.app.SpecialEffectsController.Operation
         void a() {
             if (b() == Operation.LifecycleImpact.ADDING) {
-                Fragment a2 = this.f3057a.a();
+                Fragment a2 = this.f3009a.a();
                 View findFocus = a2.mView.findFocus();
                 if (findFocus != null) {
                     a2.setFocusedView(findFocus);
@@ -101,7 +100,7 @@ public abstract class SpecialEffectsController {
                 }
                 View requireView = getFragment().requireView();
                 if (requireView.getParent() == null) {
-                    this.f3057a.s();
+                    this.f3009a.s();
                     requireView.setAlpha(0.0f);
                 }
                 if (requireView.getAlpha() == 0.0f && requireView.getVisibility() == 0) {
@@ -114,7 +113,7 @@ public abstract class SpecialEffectsController {
         @Override // androidx.fragment.app.SpecialEffectsController.Operation
         public void complete() {
             super.complete();
-            this.f3057a.c();
+            this.f3009a.c();
         }
     }
 
@@ -123,11 +122,11 @@ public abstract class SpecialEffectsController {
     public static class Operation {
 
         /* renamed from: a  reason: collision with root package name */
-        private State f3058a;
+        private State f3010a;
         private LifecycleImpact b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Fragment f3059c;
+        private final Fragment f3011c;
         private final List<Runnable> d = new ArrayList();
         private final HashSet<CancellationSignal> e = new HashSet<>();
         private boolean f = false;
@@ -170,7 +169,7 @@ public abstract class SpecialEffectsController {
 
             /* JADX INFO: Access modifiers changed from: package-private */
             public void b(View view) {
-                int i = AnonymousClass3.f3056a[ordinal()];
+                int i = AnonymousClass3.f3008a[ordinal()];
                 if (i == 1) {
                     ViewGroup viewGroup = (ViewGroup) view.getParent();
                     if (viewGroup != null) {
@@ -200,9 +199,9 @@ public abstract class SpecialEffectsController {
         }
 
         Operation(State state, LifecycleImpact lifecycleImpact, Fragment fragment, CancellationSignal cancellationSignal) {
-            this.f3058a = state;
+            this.f3010a = state;
             this.b = lifecycleImpact;
-            this.f3059c = fragment;
+            this.f3011c = fragment;
             cancellationSignal.setOnCancelListener(new CancellationSignal.OnCancelListener() { // from class: androidx.fragment.app.SpecialEffectsController.Operation.1
                 @Override // androidx.core.os.CancellationSignal.OnCancelListener
                 public void onCancel() {
@@ -217,24 +216,24 @@ public abstract class SpecialEffectsController {
         final void a(State state, LifecycleImpact lifecycleImpact) {
             int i = AnonymousClass3.b[lifecycleImpact.ordinal()];
             if (i == 1) {
-                if (this.f3058a == State.REMOVED) {
+                if (this.f3010a == State.REMOVED) {
                     if (FragmentManager.a(2)) {
-                        Log.v("FragmentManager", "SpecialEffectsController: For fragment " + this.f3059c + " mFinalState = REMOVED -> VISIBLE. mLifecycleImpact = " + this.b + " to ADDING.");
+                        Log.v("FragmentManager", "SpecialEffectsController: For fragment " + this.f3011c + " mFinalState = REMOVED -> VISIBLE. mLifecycleImpact = " + this.b + " to ADDING.");
                     }
-                    this.f3058a = State.VISIBLE;
+                    this.f3010a = State.VISIBLE;
                     this.b = LifecycleImpact.ADDING;
                 }
             } else if (i == 2) {
                 if (FragmentManager.a(2)) {
-                    Log.v("FragmentManager", "SpecialEffectsController: For fragment " + this.f3059c + " mFinalState = " + this.f3058a + " -> REMOVED. mLifecycleImpact  = " + this.b + " to REMOVING.");
+                    Log.v("FragmentManager", "SpecialEffectsController: For fragment " + this.f3011c + " mFinalState = " + this.f3010a + " -> REMOVED. mLifecycleImpact  = " + this.b + " to REMOVING.");
                 }
-                this.f3058a = State.REMOVED;
+                this.f3010a = State.REMOVED;
                 this.b = LifecycleImpact.REMOVING;
-            } else if (i == 3 && this.f3058a != State.REMOVED) {
+            } else if (i == 3 && this.f3010a != State.REMOVED) {
                 if (FragmentManager.a(2)) {
-                    Log.v("FragmentManager", "SpecialEffectsController: For fragment " + this.f3059c + " mFinalState = " + this.f3058a + " -> " + state + ". ");
+                    Log.v("FragmentManager", "SpecialEffectsController: For fragment " + this.f3011c + " mFinalState = " + this.f3010a + " -> " + state + ". ");
                 }
-                this.f3058a = state;
+                this.f3010a = state;
             }
         }
 
@@ -290,11 +289,11 @@ public abstract class SpecialEffectsController {
         }
 
         public State getFinalState() {
-            return this.f3058a;
+            return this.f3010a;
         }
 
         public final Fragment getFragment() {
-            return this.f3059c;
+            return this.f3011c;
         }
 
         public final void markStartedSpecialEffect(CancellationSignal cancellationSignal) {
@@ -303,7 +302,7 @@ public abstract class SpecialEffectsController {
         }
 
         public String toString() {
-            return "Operation {" + Integer.toHexString(System.identityHashCode(this)) + "} {mFinalState = " + this.f3058a + "} {mLifecycleImpact = " + this.b + "} {mFragment = " + this.f3059c + i.d;
+            return "Operation {" + Integer.toHexString(System.identityHashCode(this)) + "} {mFinalState = " + this.f3010a + "} {mLifecycleImpact = " + this.b + "} {mFragment = " + this.f3011c + "}";
         }
     }
 
@@ -313,7 +312,7 @@ public abstract class SpecialEffectsController {
     }
 
     private Operation a(Fragment fragment) {
-        Iterator<Operation> it = this.f3052a.iterator();
+        Iterator<Operation> it = this.f3004a.iterator();
         while (it.hasNext()) {
             Operation next = it.next();
             if (next.getFragment().equals(fragment) && !next.c()) {
@@ -340,7 +339,7 @@ public abstract class SpecialEffectsController {
     }
 
     private void a(Operation.State state, Operation.LifecycleImpact lifecycleImpact, FragmentStateManager fragmentStateManager) {
-        synchronized (this.f3052a) {
+        synchronized (this.f3004a) {
             CancellationSignal cancellationSignal = new CancellationSignal();
             Operation a2 = a(fragmentStateManager.a());
             if (a2 != null) {
@@ -348,11 +347,11 @@ public abstract class SpecialEffectsController {
                 return;
             }
             final FragmentStateManagerOperation fragmentStateManagerOperation = new FragmentStateManagerOperation(state, lifecycleImpact, fragmentStateManager, cancellationSignal);
-            this.f3052a.add(fragmentStateManagerOperation);
+            this.f3004a.add(fragmentStateManagerOperation);
             fragmentStateManagerOperation.a(new Runnable() { // from class: androidx.fragment.app.SpecialEffectsController.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (SpecialEffectsController.this.f3052a.contains(fragmentStateManagerOperation)) {
+                    if (SpecialEffectsController.this.f3004a.contains(fragmentStateManagerOperation)) {
                         fragmentStateManagerOperation.getFinalState().b(fragmentStateManagerOperation.getFragment().mView);
                     }
                 }
@@ -360,7 +359,7 @@ public abstract class SpecialEffectsController {
             fragmentStateManagerOperation.a(new Runnable() { // from class: androidx.fragment.app.SpecialEffectsController.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    SpecialEffectsController.this.f3052a.remove(fragmentStateManagerOperation);
+                    SpecialEffectsController.this.f3004a.remove(fragmentStateManagerOperation);
                     SpecialEffectsController.this.b.remove(fragmentStateManagerOperation);
                 }
             });
@@ -379,7 +378,7 @@ public abstract class SpecialEffectsController {
     }
 
     private void e() {
-        Iterator<Operation> it = this.f3052a.iterator();
+        Iterator<Operation> it = this.f3004a.iterator();
         while (it.hasNext()) {
             Operation next = it.next();
             if (next.b() == Operation.LifecycleImpact.ADDING) {
@@ -398,16 +397,16 @@ public abstract class SpecialEffectsController {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        synchronized (this.f3052a) {
+        synchronized (this.f3004a) {
             e();
             this.d = false;
-            int size = this.f3052a.size();
+            int size = this.f3004a.size();
             while (true) {
                 int i = size - 1;
                 if (i < 0) {
                     break;
                 }
-                Operation operation = this.f3052a.get(i);
+                Operation operation = this.f3004a.get(i);
                 Operation.State a2 = Operation.State.a(operation.getFragment().mView);
                 if (operation.getFinalState() == Operation.State.VISIBLE && a2 != Operation.State.VISIBLE) {
                     this.d = operation.getFragment().isPostponed();
@@ -430,7 +429,7 @@ public abstract class SpecialEffectsController {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(boolean z) {
-        this.f3053c = z;
+        this.f3005c = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -456,11 +455,11 @@ public abstract class SpecialEffectsController {
         }
         if (!ViewCompat.isAttachedToWindow(this.e)) {
             d();
-            this.f3053c = false;
+            this.f3005c = false;
             return;
         }
-        synchronized (this.f3052a) {
-            if (!this.f3052a.isEmpty()) {
+        synchronized (this.f3004a) {
+            if (!this.f3004a.isEmpty()) {
                 ArrayList arrayList = new ArrayList(this.b);
                 this.b.clear();
                 Iterator it = arrayList.iterator();
@@ -475,15 +474,15 @@ public abstract class SpecialEffectsController {
                     }
                 }
                 e();
-                ArrayList arrayList2 = new ArrayList(this.f3052a);
-                this.f3052a.clear();
+                ArrayList arrayList2 = new ArrayList(this.f3004a);
+                this.f3004a.clear();
                 this.b.addAll(arrayList2);
-                Iterator<Operation> it2 = arrayList2.iterator();
+                Iterator it2 = arrayList2.iterator();
                 while (it2.hasNext()) {
-                    it2.next().a();
+                    ((Operation) it2.next()).a();
                 }
-                a(arrayList2, this.f3053c);
-                this.f3053c = false;
+                a(arrayList2, this.f3005c);
+                this.f3005c = false;
             }
         }
     }
@@ -501,9 +500,9 @@ public abstract class SpecialEffectsController {
         String str;
         String str2;
         boolean isAttachedToWindow = ViewCompat.isAttachedToWindow(this.e);
-        synchronized (this.f3052a) {
+        synchronized (this.f3004a) {
             e();
-            Iterator<Operation> it = this.f3052a.iterator();
+            Iterator<Operation> it = this.f3004a.iterator();
             while (it.hasNext()) {
                 it.next().a();
             }
@@ -525,7 +524,7 @@ public abstract class SpecialEffectsController {
                 }
                 operation.d();
             }
-            Iterator it3 = new ArrayList(this.f3052a).iterator();
+            Iterator it3 = new ArrayList(this.f3004a).iterator();
             while (it3.hasNext()) {
                 Operation operation2 = (Operation) it3.next();
                 if (FragmentManager.a(2)) {

@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -21,6 +20,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
@@ -114,9 +114,7 @@ import net.simonvt.datepicker.DatePickerDialog;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/EventAddPostFragment.class */
 public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostViewModel> implements IAddPost {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19971c;
+    private final ViewBindingProperty c;
     private final Lazy d;
     private final Lazy e;
     private final Lazy f;
@@ -125,9 +123,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
     private final TextWatcher i;
     private OnAddPostTitleListener j;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(EventAddPostFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentEventAddPostBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19970a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/EventAddPostFragment$Companion.class */
@@ -146,14 +142,14 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                 return;
             }
             Bundle bundle = new Bundle();
-            bundle.putSerializable("event_from_page", FeedProtos.SourcePage.ACTIVITY_PAGE);
+            bundle.putSerializable("event_from_page", (Serializable) FeedProtos.SourcePage.ACTIVITY_PAGE);
             TerminalActivity.d(context, EventAddPostFragment.class, bundle);
         }
     }
 
     public EventAddPostFragment() {
         super(R.layout.fragment_event_add_post);
-        this.f19971c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventAddPostFragment, FragmentEventAddPostBinding>() { // from class: com.blued.community.ui.send.fragment.EventAddPostFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<EventAddPostFragment, FragmentEventAddPostBinding>() { // from class: com.blued.community.ui.send.fragment.EventAddPostFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentEventAddPostBinding invoke(EventAddPostFragment fragment) {
@@ -268,20 +264,17 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
             });
         }
         OnItemDragListener onItemDragListener = new OnItemDragListener() { // from class: com.blued.community.ui.send.fragment.EventAddPostFragment$initLivePhoto$listener$1
-            @Override // com.chad.library.adapter.base.listener.OnItemDragListener
             public void a(RecyclerView.ViewHolder viewHolder, int i) {
                 Intrinsics.e(viewHolder, "viewHolder");
                 KeyboardUtils.a(EventAddPostFragment.this.getActivity());
                 ((BaseViewHolder) viewHolder).setGone(R.id.drag, true);
             }
 
-            @Override // com.chad.library.adapter.base.listener.OnItemDragListener
             public void a(RecyclerView.ViewHolder source, int i, RecyclerView.ViewHolder target, int i2) {
                 Intrinsics.e(source, "source");
                 Intrinsics.e(target, "target");
             }
 
-            @Override // com.chad.library.adapter.base.listener.OnItemDragListener
             public void b(RecyclerView.ViewHolder viewHolder, int i) {
                 Intrinsics.e(viewHolder, "viewHolder");
                 ((BaseViewHolder) viewHolder).setGone(R.id.drag, false);
@@ -292,7 +285,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         }
-        ItemDragAndSwipeCallback itemDragAndSwipeCallback = new ItemDragAndSwipeCallback(r());
+        ItemTouchHelper.Callback itemDragAndSwipeCallback = new ItemDragAndSwipeCallback(r());
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(itemDragAndSwipeCallback);
         FragmentEventAddPostBinding p3 = p();
         itemTouchHelper.attachToRecyclerView(p3 == null ? null : p3.y);
@@ -302,13 +295,11 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         r().a(itemTouchHelper);
         r().a(onItemDragListener);
         r().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$EventAddPostFragment$bHt03sb7bMftVLud2D1QvT15AX4
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 EventAddPostFragment.a(EventAddPostFragment.this, baseQuickAdapter, view, i);
             }
         });
         r().setOnItemChildClickListener(new SingleItemChildClickProxy(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$EventAddPostFragment$W3a0TfQucR47o6gGxBwnzNSFEI8
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 EventAddPostFragment.b(EventAddPostFragment.this, baseQuickAdapter, view, i);
             }
@@ -323,7 +314,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
 
     private final void C() {
         D();
-        AlbumSelectDialogFragment.Companion companion = AlbumSelectDialogFragment.f19909a;
+        AlbumSelectDialogFragment.Companion companion = AlbumSelectDialogFragment.a;
         FragmentActivity requireActivity = requireActivity();
         Intrinsics.c(requireActivity, "requireActivity()");
         companion.a(requireActivity, 4, 1, 9, 196, false);
@@ -337,8 +328,8 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         ShapeLinearLayout shapeLinearLayout2;
         ImageView imageView2;
         r().a();
-        AlbumSelectInfo value = u().f().getValue();
-        if (value != null) {
+        AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) u().f().getValue();
+        if (albumSelectInfo != null) {
             ArrayList arrayList = new ArrayList();
             List<ChildImageInfo> data = r().getData();
             Intrinsics.c(data, "photoAdapter.data");
@@ -346,15 +337,15 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                 arrayList.add(childImageInfo.mImagePath);
             }
             ArrayList<String> arrayList2 = new ArrayList();
-            List<MediaInfo> c2 = value.c();
-            Intrinsics.c(c2, "albumSelectInfo.selectImgeList");
-            for (MediaInfo mediaInfo : c2) {
+            List<MediaInfo> c = albumSelectInfo.c();
+            Intrinsics.c(c, "albumSelectInfo.selectImgeList");
+            for (MediaInfo mediaInfo : c) {
                 if (!arrayList.contains(mediaInfo.imagePath)) {
                     arrayList2.add(mediaInfo.imagePath);
                 }
             }
             for (String str : arrayList2) {
-                value.a(str);
+                albumSelectInfo.a(str);
                 u().h().setValue(str);
             }
         }
@@ -437,9 +428,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         if (p2 != null && (selectionEditText2 = p2.e) != null) {
             selectionEditText2.addTextChangedListener(new TextWatcher() { // from class: com.blued.community.ui.send.fragment.EventAddPostFragment$initHyperlinks$1
                 private int b;
-
-                /* renamed from: c  reason: collision with root package name */
-                private int f19974c;
+                private int c;
                 private SpannableStringBuilder d;
                 private SpannableStringBuilder e;
 
@@ -452,12 +441,12 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                         selectionEditText4.removeTextChangedListener(this);
                     }
                     FragmentEventAddPostBinding p4 = EventAddPostFragment.this.p();
-                    MarkDownLinkHelper.a(p4 == null ? null : p4.e, this.d, this.e, editable, this.b, this.f19974c);
+                    MarkDownLinkHelper.a(p4 == null ? null : p4.e, this.d, this.e, editable, this.b, this.c);
                     FragmentEventAddPostBinding p5 = EventAddPostFragment.this.p();
                     if (p5 != null && (selectionEditText3 = p5.e) != null) {
                         selectionEditText3.addTextChangedListener(this);
                     }
-                    if (MarkDownLinkHelper.a((Spannable) editable)) {
+                    if (MarkDownLinkHelper.a(editable)) {
                         return;
                     }
                     EventAddPostFragment.this.a().e().online_url = String.valueOf(editable);
@@ -481,7 +470,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                         valueOf = selectionEditText4 == null ? null : Integer.valueOf(selectionEditText4.getSelectionEnd());
                     }
                     Intrinsics.a(valueOf);
-                    this.f19974c = valueOf.intValue();
+                    this.c = valueOf.intValue();
                 }
 
                 @Override // android.text.TextWatcher
@@ -507,12 +496,12 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         EditText editText;
         EditInputNumView editInputNumView;
         TextView textView;
-        String c2 = CityHelper.a().c(getContext());
-        a().e().cityDef = c2;
+        String c = CityHelper.a().c(getContext());
+        a().e().cityDef = c;
         FragmentEventAddPostBinding p = p();
         TextView textView2 = p == null ? null : p.C;
         if (textView2 != null) {
-            textView2.setText(c2);
+            textView2.setText(c);
         }
         FragmentEventAddPostBinding p2 = p();
         if (p2 != null && (textView = p2.C) != null) {
@@ -526,10 +515,10 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         FragmentEventAddPostBinding p3 = p();
         if (p3 != null && (editInputNumView = p3.j) != null) {
             FragmentEventAddPostBinding p4 = p();
-            editInputNumView.init(p4 == null ? null : p4.f18850c);
+            editInputNumView.init(p4 == null ? null : p4.c);
         }
         FragmentEventAddPostBinding p5 = p();
-        if (p5 != null && (editText = p5.f18850c) != null) {
+        if (p5 != null && (editText = p5.c) != null) {
             editText.addTextChangedListener(new TextWatcher() { // from class: com.blued.community.ui.send.fragment.EventAddPostFragment$initLocation$2
                 @Override // android.text.TextWatcher
                 public void afterTextChanged(Editable editable) {
@@ -549,7 +538,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
             });
         }
         FragmentEventAddPostBinding p6 = p();
-        if (p6 == null || (linearLayout = p6.f18849a) == null) {
+        if (p6 == null || (linearLayout = p6.a) == null) {
             return;
         }
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$EventAddPostFragment$z4y2vVGj-eSxb4pMMRcZuFDk6uU
@@ -616,7 +605,6 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
 
     private final void J() {
         q().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$EventAddPostFragment$UIqFBoOGVyF2rniBUO7UPMkaZRM
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 EventAddPostFragment.c(EventAddPostFragment.this, baseQuickAdapter, view, i);
             }
@@ -800,7 +788,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                     FragmentEventAddPostBinding p3 = p();
                     TextView textView5 = p3 == null ? null : p3.E;
                     if (textView5 != null) {
-                        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                         String string = requireContext().getString(R.string.event_post_number_persons_exceed);
                         Intrinsics.c(string, "requireContext().getStri…st_number_persons_exceed)");
                         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(a().m())}, 1));
@@ -816,7 +804,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                     FragmentEventAddPostBinding p5 = p();
                     TextView textView6 = p5 == null ? null : p5.E;
                     if (textView6 != null) {
-                        StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                         String string2 = requireContext().getString(R.string.event_post_number_persons_limit);
                         Intrinsics.c(string2, "requireContext().getStri…ost_number_persons_limit)");
                         String format2 = String.format(string2, Arrays.copyOf(new Object[]{Integer.valueOf(a().m())}, 1));
@@ -836,7 +824,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(EventAddPostFragment this$0, DialogInterface dialogInterface) {
         Intrinsics.e(this$0, "this$0");
-        this$0.a(this$0.a().g().getValue());
+        this$0.a((List) this$0.a().g().getValue());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -880,7 +868,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(EventAddPostFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.e(this$0, "this$0");
-        CommunityServiceManager.b().a(this$0.getActivity(), i, 0, (LoadOptions) null);
+        CommunityServiceManager.b().a((Context) this$0.getActivity(), i, 0, (LoadOptions) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -926,7 +914,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         if (textView == null) {
             return;
         }
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = requireContext().getString(R.string.event_post_number_persons_limit);
         Intrinsics.c(string, "requireContext().getStri…ost_number_persons_limit)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(a().m())}, 1));
@@ -938,7 +926,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
     public final void a(String str) {
         EditText editText;
         FragmentEventAddPostBinding p = p();
-        if (p != null && (editText = p.f18850c) != null) {
+        if (p != null && (editText = p.c) != null) {
             editText.setText(str);
         }
         a().e().location = str;
@@ -956,7 +944,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                     break;
                 }
                 EventAddPostTypeModel next = it.next();
-                if (next.getMode_id() == a().f() && next.isSelect(a().h().getValue())) {
+                if (next.getMode_id() == a().f() && next.isSelect((String) a().h().getValue())) {
                     arrayList.add(next);
                     break;
                 }
@@ -968,7 +956,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
                     break;
                 }
                 EventAddPostTypeModel next2 = it2.next();
-                if (next2.getMode_id() == a().f() && !next2.isSelect(a().h().getValue())) {
+                if (next2.getMode_id() == a().f() && !next2.isSelect((String) a().h().getValue())) {
                     if (arrayList.size() >= 7) {
                         z = true;
                         break;
@@ -1012,7 +1000,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         if (context == null) {
             format = null;
         } else {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = context.getString(R.string.max_select_num);
             Intrinsics.c(string, "it1.getString(R.string.max_select_num)");
             format = String.format(string, Arrays.copyOf(new Object[]{9}, 1));
@@ -1052,12 +1040,12 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
             }
             return;
         }
-        SelectPhotoManager.a().b(this$0.r().getData().get(i));
-        AlbumSelectInfo value = this$0.u().f().getValue();
-        if (value != null) {
-            value.a(this$0.r().getData().get(i).mImagePath);
+        SelectPhotoManager.a().b((ChildImageInfo) this$0.r().getData().get(i));
+        AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) this$0.u().f().getValue();
+        if (albumSelectInfo != null) {
+            albumSelectInfo.a(((ChildImageInfo) this$0.r().getData().get(i)).mImagePath);
         }
-        this$0.u().h().setValue(this$0.r().getData().get(i).mImagePath);
+        this$0.u().h().setValue(((ChildImageInfo) this$0.r().getData().get(i)).mImagePath);
         this$0.D();
     }
 
@@ -1124,7 +1112,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(final EventAddPostFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
         Intrinsics.e(this$0, "this$0");
-        EventAddPostTypeModel eventAddPostTypeModel = this$0.q().getData().get(i);
+        EventAddPostTypeModel eventAddPostTypeModel = (EventAddPostTypeModel) this$0.q().getData().get(i);
         if (!eventAddPostTypeModel.isMore()) {
             this$0.a().h().setValue(eventAddPostTypeModel.getType_id());
             return;
@@ -1133,7 +1121,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         if (fragmentManager == null) {
             return;
         }
-        EventTypeDialogFragment.f19915a.a(fragmentManager).a(new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$EventAddPostFragment$9flz2wNKka9R8TqkDzLcpgUm8Dw
+        EventTypeDialogFragment.a.a(fragmentManager).a(new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$EventAddPostFragment$9flz2wNKka9R8TqkDzLcpgUm8Dw
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
                 EventAddPostFragment.a(EventAddPostFragment.this, dialogInterface);
@@ -1155,7 +1143,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         if (fragmentManager == null) {
             return;
         }
-        SelectCityDialogFragment.f19926a.a(fragmentManager);
+        SelectCityDialogFragment.a.a(fragmentManager);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1181,7 +1169,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         if (fragmentManager == null) {
             return;
         }
-        SelectLocationDialogFragment.f19932a.a(fragmentManager, true);
+        SelectLocationDialogFragment.a.a(fragmentManager, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1274,11 +1262,11 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         }
         this$0.a().e().mode_id = 1;
         this$0.a().n();
-        this$0.a(this$0.a().g().getValue());
+        this$0.a((List) this$0.a().g().getValue());
         FragmentEventAddPostBinding p9 = this$0.p();
         TextView textView3 = p9 == null ? null : p9.E;
         if (textView3 != null) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = this$0.requireContext().getString(R.string.event_post_number_persons_limit);
             Intrinsics.c(string, "requireContext().getStri…ost_number_persons_limit)");
             String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(this$0.a().m())}, 1));
@@ -1335,11 +1323,11 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         }
         this$0.a().e().mode_id = 2;
         this$0.a().n();
-        this$0.a(this$0.a().g().getValue());
+        this$0.a((List) this$0.a().g().getValue());
         FragmentEventAddPostBinding p9 = this$0.p();
         TextView textView3 = p9 == null ? null : p9.E;
         if (textView3 != null) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = this$0.requireContext().getString(R.string.event_post_number_persons_limit);
             Intrinsics.c(string, "requireContext().getStri…ost_number_persons_limit)");
             String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(this$0.a().m())}, 1));
@@ -1420,7 +1408,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public ViewModelStoreOwner h() {
-        FragmentActivity requireActivity = requireActivity();
+        ViewModelStoreOwner requireActivity = requireActivity();
         Intrinsics.c(requireActivity, "requireActivity()");
         return requireActivity;
     }
@@ -1429,7 +1417,6 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
     public void k() {
         super.k();
         u().j().observe(getViewLifecycleOwner(), new Observer() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$EventAddPostFragment$y1wUWBkfERe3IEkSVMOVDxj7cT4
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 EventAddPostFragment.a(EventAddPostFragment.this, (Boolean) obj);
             }
@@ -1438,16 +1425,15 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        EventAddPostFragment eventAddPostFragment = this;
-        LifecycleExtKt.b(eventAddPostFragment, a().g(), new EventAddPostFragment$liveDataObserver$1(this));
-        LifecycleExtKt.b(eventAddPostFragment, a().k(), new EventAddPostFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(eventAddPostFragment, a().h(), new EventAddPostFragment$liveDataObserver$3(this));
-        LifecycleExtKt.a(eventAddPostFragment, t().d(), new EventAddPostFragment$liveDataObserver$4(this));
-        LifecycleExtKt.a(eventAddPostFragment, s().e(), new EventAddPostFragment$liveDataObserver$5(this));
-        LifecycleExtKt.a(eventAddPostFragment, s().f(), new EventAddPostFragment$liveDataObserver$6(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.b(lifecycleOwner, a().g(), new EventAddPostFragment$liveDataObserver$1(this));
+        LifecycleExtKt.b(lifecycleOwner, a().k(), new EventAddPostFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, a().h(), new EventAddPostFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, t().d(), new EventAddPostFragment$liveDataObserver$4(this));
+        LifecycleExtKt.a(lifecycleOwner, s().e(), new EventAddPostFragment$liveDataObserver$5(this));
+        LifecycleExtKt.a(lifecycleOwner, s().f(), new EventAddPostFragment$liveDataObserver$6(this));
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i != 176) {
@@ -1491,20 +1477,20 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         A();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         D();
     }
 
     public final FragmentEventAddPostBinding p() {
-        return (FragmentEventAddPostBinding) this.f19971c.b(this, b[0]);
+        return (FragmentEventAddPostBinding) this.c.b(this, b[0]);
     }
 
     public final EventAddPostTypeAdapter q() {
@@ -1528,7 +1514,7 @@ public final class EventAddPostFragment extends MVVMBaseFragment<EventAddPostVie
     }
 
     public final void v() {
-        EventSendManager.a().a(getActivity(), a().e());
+        EventSendManager.a().a((Context) getActivity(), a().e());
     }
 
     public final void w() {

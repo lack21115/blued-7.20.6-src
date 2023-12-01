@@ -2,9 +2,11 @@ package a.a.a.a.a.k.d;
 
 import a.a.a.a.a.e.h;
 import a.a.a.a.a.k.c.a;
+import android.accounts.AccountManager;
 import android.app.Instrumentation;
 import android.content.Context;
 import android.content.Intent;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -12,7 +14,7 @@ import java.util.Iterator;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Context f1418a;
+    public static Context f1370a;
     public static String b;
     public c f;
     public ArrayList<Float> g;
@@ -22,7 +24,7 @@ public final class f {
     public e k = new e();
 
     /* renamed from: c  reason: collision with root package name */
-    public a f1419c = new a(this);
+    public a f1371c = new a(this);
     public b d = new b();
     public d e = new d(this);
 
@@ -30,7 +32,7 @@ public final class f {
     public final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f1420a;
+        public String f1372a;
         public long b;
 
         public a(f fVar) {
@@ -41,12 +43,12 @@ public final class f {
         }
 
         public void a(String str, String str2) {
-            this.f1420a = str + "." + str2;
+            this.f1372a = str + "." + str2;
         }
 
         public String toString() {
             a();
-            return f.a(this.f1420a) + "\t" + this.b + "\t" + f.a(f.b) + "\t" + f.a("3.0.0");
+            return f.a(this.f1372a) + "\t" + this.b + "\t" + f.a(f.b) + "\t" + f.a("3.0.0");
         }
     }
 
@@ -54,11 +56,11 @@ public final class f {
     public final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f1421a;
+        public String f1373a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f1422c;
+        public String f1374c;
         public String d;
         public String e;
 
@@ -66,15 +68,15 @@ public final class f {
         }
 
         public void a(String str, String str2, String str3, String str4, String str5) {
-            this.f1421a = str;
+            this.f1373a = str;
             this.b = str2;
             this.e = str3;
-            this.f1422c = str4;
+            this.f1374c = str4;
             this.d = str5;
         }
 
         public String toString() {
-            return f.this.f1419c.toString() + "\t" + f.a(this.f1421a) + "\t" + f.a(this.b) + "\t" + f.a(this.f1422c) + "\t" + f.a(this.d) + "\t" + f.a(this.e);
+            return f.this.f1371c.toString() + "\t" + f.a(this.f1373a) + "\t" + f.a(this.b) + "\t" + f.a(this.f1374c) + "\t" + f.a(this.d) + "\t" + f.a(this.e);
         }
     }
 
@@ -82,11 +84,11 @@ public final class f {
     public final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1423a = 0;
+        public int f1375a = 0;
         public long b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f1424c = 0;
+        public long f1376c = 0;
         public int d = 0;
         public int e = 0;
         public int f = 0;
@@ -103,8 +105,8 @@ public final class f {
 
         public boolean a(long j, long j2, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j3, long j4, int i9) {
             this.b = j;
-            this.f1424c = j2;
-            this.f1423a = i;
+            this.f1376c = j2;
+            this.f1375a = i;
             this.d = i2;
             this.e = i3;
             this.f = i4;
@@ -122,8 +124,8 @@ public final class f {
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append(this.b + "\t");
-            sb.append(this.f1424c + "\t");
-            sb.append(this.f1423a + "\t");
+            sb.append(this.f1376c + "\t");
+            sb.append(this.f1375a + "\t");
             sb.append(this.d + "\t");
             sb.append(this.e + "\t");
             sb.append(this.f + "\t");
@@ -142,11 +144,11 @@ public final class f {
     public final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f1425a;
+        public String f1377a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f1426c;
+        public String f1378c;
         public String d;
         public String e;
 
@@ -154,21 +156,21 @@ public final class f {
         }
 
         public final void a() {
-            this.f1425a = h.i();
+            this.f1377a = h.i();
             this.b = "Android";
-            this.f1426c = h.j();
-            this.d = h.i(f.f1418a);
-            this.e = h.j(f.f1418a);
+            this.f1378c = h.j();
+            this.d = h.i(f.f1370a);
+            this.e = h.j(f.f1370a);
         }
 
         public String toString() {
             a();
-            return f.a(this.f1425a) + "\t" + f.a(this.b) + "\t" + f.a(this.f1426c) + "\t" + f.a(this.d) + "\t" + f.a(this.e);
+            return f.a(this.f1377a) + "\t" + f.a(this.b) + "\t" + f.a(this.f1378c) + "\t" + f.a(this.d) + "\t" + f.a(this.e);
         }
     }
 
     public static String a(String str) {
-        return (str == null || "".equals(str)) ? "-" : str;
+        return (str == null || "".equals(str)) ? Constants.ACCEPT_TIME_SEPARATOR_SERVER : str;
     }
 
     public final float a(ArrayList<Float> arrayList) {
@@ -203,9 +205,9 @@ public final class f {
 
     public void a(Context context) {
         Context applicationContext = context.getApplicationContext();
-        f1418a = applicationContext;
+        f1370a = applicationContext;
         this.k.a(applicationContext);
-        b = h.k(f1418a);
+        b = h.k(f1370a);
     }
 
     public void a(Intent intent) {
@@ -217,7 +219,7 @@ public final class f {
         int intExtra3 = intent.getIntExtra("tcpConnect", 0);
         int intExtra4 = intent.getIntExtra("rtmpConnect", 0);
         int intExtra5 = intent.getIntExtra("firstByte", 0);
-        this.f1419c.a("stream_start", com.anythink.expressad.foundation.g.a.i);
+        this.f1371c.a("stream_start", com.anythink.expressad.foundation.g.a.i);
         String str = this.d.toString() + "\t" + a(stringExtra) + "\t" + a(stringExtra2) + "\t" + intExtra + "\t" + intExtra2 + "\t" + longExtra + "\t" + intExtra3 + "\t" + intExtra4 + "\t" + intExtra5 + "\n";
         d(str);
         c(str);
@@ -233,9 +235,9 @@ public final class f {
         int intExtra4 = intent.getIntExtra("audioDroppedFrames", -1);
         long longExtra4 = intent.getLongExtra("totalSendBytes", -1L);
         int intExtra5 = intent.getIntExtra("tcpFullTime", 0);
-        int intExtra6 = intent.getIntExtra("errorCode", 0);
+        int intExtra6 = intent.getIntExtra(AccountManager.KEY_ERROR_CODE, 0);
         int intExtra7 = intent.getIntExtra("errorOSCode", 0);
-        this.f1419c.a("stream_end", com.anythink.expressad.foundation.g.a.i);
+        this.f1371c.a("stream_end", com.anythink.expressad.foundation.g.a.i);
         String str = this.d.toString() + "\t" + longExtra + "\t" + longExtra2 + "\t" + longExtra3 + "\t" + intExtra + "\t" + intExtra2 + "\t" + intExtra3 + "\t" + intExtra4 + "\t" + longExtra4 + "\t" + intExtra5 + "\t" + a(intExtra6, intExtra7) + "\n";
         d(str);
         c(str);
@@ -274,7 +276,7 @@ public final class f {
     }
 
     public void h() {
-        this.f1419c.a(Instrumentation.REPORT_KEY_STREAMRESULT, com.anythink.expressad.foundation.g.a.i);
+        this.f1371c.a(Instrumentation.REPORT_KEY_STREAMRESULT, com.anythink.expressad.foundation.g.a.i);
         d(this.d.toString() + "\t" + this.f.toString() + "\n");
     }
 
@@ -283,14 +285,14 @@ public final class f {
         String str;
         int parseInt;
         String str2;
-        String b2 = a.a.a.a.a.k.c.a.b(f1418a);
+        String b2 = a.a.a.a.a.k.c.a.b(f1370a);
         String a2 = a.a.a.a.a.k.c.a.a();
         String d2 = a.a.a.a.a.k.c.a.d();
         boolean equals = b2.equals("WIFI");
         boolean equals2 = b2.equals("None");
         int i = 0;
         if (equals) {
-            String[] f = a.a.a.a.a.k.c.a.f(f1418a);
+            String[] f = a.a.a.a.a.k.c.a.f(f1370a);
             if (f != null && f.length >= 2) {
                 str2 = f[0];
                 i = 0;
@@ -303,7 +305,7 @@ public final class f {
             }
             str = null;
         } else {
-            if (!equals2 && (g = a.a.a.a.a.k.c.a.g(f1418a)) != null && g.length >= 2) {
+            if (!equals2 && (g = a.a.a.a.a.k.c.a.g(f1370a)) != null && g.length >= 2) {
                 String str3 = g[0];
                 str = str3;
                 if (h.d(g[1])) {
@@ -321,23 +323,23 @@ public final class f {
     }
 
     public final void j() {
-        this.f1419c.a("network_change", com.anythink.expressad.foundation.g.a.i);
-        c(this.f1419c.toString() + "\t" + this.e.toString() + "\t" + i() + "\n");
+        this.f1371c.a("network_change", com.anythink.expressad.foundation.g.a.i);
+        c(this.f1371c.toString() + "\t" + this.e.toString() + "\t" + i() + "\n");
     }
 
     public final void k() {
         float f;
         a.C0014a e = a.a.a.a.a.k.c.a.e();
-        a.b a2 = a.a.a.a.a.k.c.a.a(f1418a);
-        float f2 = e.f1400a / 100.0f;
+        a.b a2 = a.a.a.a.a.k.c.a.a(f1370a);
+        float f2 = e.f1352a / 100.0f;
         float f3 = e.b / 100.0f;
-        long j = a2.f1401a;
+        long j = a2.f1353a;
         float f4 = 0.0f;
         if (j != 0) {
             float f5 = (float) a2.b;
             float f6 = (float) j;
             f4 = f5 / f6;
-            f = ((float) a2.f1402c) / f6;
+            f = ((float) a2.f1354c) / f6;
         } else {
             f = 0.0f;
         }

@@ -24,10 +24,10 @@ public final class AccessibilityManagerCompat {
     static class AccessibilityStateChangeListenerWrapper implements AccessibilityManager.AccessibilityStateChangeListener {
 
         /* renamed from: a  reason: collision with root package name */
-        AccessibilityStateChangeListener f2720a;
+        AccessibilityStateChangeListener f2672a;
 
         AccessibilityStateChangeListenerWrapper(AccessibilityStateChangeListener accessibilityStateChangeListener) {
-            this.f2720a = accessibilityStateChangeListener;
+            this.f2672a = accessibilityStateChangeListener;
         }
 
         public boolean equals(Object obj) {
@@ -35,18 +35,18 @@ public final class AccessibilityManagerCompat {
                 return true;
             }
             if (obj instanceof AccessibilityStateChangeListenerWrapper) {
-                return this.f2720a.equals(((AccessibilityStateChangeListenerWrapper) obj).f2720a);
+                return this.f2672a.equals(((AccessibilityStateChangeListenerWrapper) obj).f2672a);
             }
             return false;
         }
 
         public int hashCode() {
-            return this.f2720a.hashCode();
+            return this.f2672a.hashCode();
         }
 
         @Override // android.view.accessibility.AccessibilityManager.AccessibilityStateChangeListener
         public void onAccessibilityStateChanged(boolean z) {
-            this.f2720a.onAccessibilityStateChanged(z);
+            this.f2672a.onAccessibilityStateChanged(z);
         }
     }
 
@@ -59,10 +59,10 @@ public final class AccessibilityManagerCompat {
     static final class TouchExplorationStateChangeListenerWrapper implements AccessibilityManager.TouchExplorationStateChangeListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final TouchExplorationStateChangeListener f2721a;
+        final TouchExplorationStateChangeListener f2673a;
 
         TouchExplorationStateChangeListenerWrapper(TouchExplorationStateChangeListener touchExplorationStateChangeListener) {
-            this.f2721a = touchExplorationStateChangeListener;
+            this.f2673a = touchExplorationStateChangeListener;
         }
 
         public boolean equals(Object obj) {
@@ -70,18 +70,18 @@ public final class AccessibilityManagerCompat {
                 return true;
             }
             if (obj instanceof TouchExplorationStateChangeListenerWrapper) {
-                return this.f2721a.equals(((TouchExplorationStateChangeListenerWrapper) obj).f2721a);
+                return this.f2673a.equals(((TouchExplorationStateChangeListenerWrapper) obj).f2673a);
             }
             return false;
         }
 
         public int hashCode() {
-            return this.f2721a.hashCode();
+            return this.f2673a.hashCode();
         }
 
         @Override // android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener
         public void onTouchExplorationStateChanged(boolean z) {
-            this.f2721a.onTouchExplorationStateChanged(z);
+            this.f2673a.onTouchExplorationStateChanged(z);
         }
     }
 

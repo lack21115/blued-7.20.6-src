@@ -36,11 +36,11 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
         }
         int[] iArr = this.array;
         if (i3 < iArr.length) {
-            System.arraycopy((Object) iArr, i, (Object) iArr, i + 1, i3 - i);
+            System.arraycopy(iArr, i, iArr, i + 1, i3 - i);
         } else {
             int[] iArr2 = new int[((i3 * 3) / 2) + 1];
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i);
-            System.arraycopy((Object) this.array, i, (Object) iArr2, i + 1, this.size - i);
+            System.arraycopy(iArr, 0, iArr2, 0, i);
+            System.arraycopy(this.array, i, iArr2, i + 1, this.size - i);
             this.array = iArr2;
         }
         this.array[i] = i2;
@@ -67,13 +67,13 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
         addInt(i, num.intValue());
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(Integer num) {
         addInt(num.intValue());
         return true;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection<? extends Integer> collection) {
         ensureIsMutable();
         Internal.checkNotNull(collection);
@@ -90,7 +90,7 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
                 if (i3 > iArr.length) {
                     this.array = Arrays.copyOf(iArr, i3);
                 }
-                System.arraycopy((Object) intArrayList.array, 0, (Object) this.array, this.size, intArrayList.size);
+                System.arraycopy(intArrayList.array, 0, this.array, this.size, intArrayList.size);
                 this.size = i3;
                 this.modCount++;
                 return true;
@@ -107,7 +107,7 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
         int[] iArr = this.array;
         if (i2 == iArr.length) {
             int[] iArr2 = new int[((i2 * 3) / 2) + 1];
-            System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i2);
+            System.arraycopy(iArr, 0, iArr2, 0, i2);
             this.array = iArr2;
         }
         int[] iArr3 = this.array;
@@ -116,12 +116,12 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
         iArr3[i3] = i;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean contains(Object obj) {
         return indexOf(obj) != -1;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -158,7 +158,7 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
         return this.array[i];
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int i = 1;
         int i2 = 0;
@@ -209,14 +209,14 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
         int i2 = iArr[i];
         int i3 = this.size;
         if (i < i3 - 1) {
-            System.arraycopy((Object) iArr, i + 1, (Object) iArr, i, (i3 - i) - 1);
+            System.arraycopy(iArr, i + 1, iArr, i, (i3 - i) - 1);
         }
         this.size--;
         this.modCount++;
         return Integer.valueOf(i2);
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean remove(Object obj) {
         ensureIsMutable();
         int i = 0;
@@ -227,7 +227,7 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
             }
             if (obj.equals(Integer.valueOf(this.array[i2]))) {
                 int[] iArr = this.array;
-                System.arraycopy((Object) iArr, i2 + 1, (Object) iArr, i2, (this.size - i2) - 1);
+                System.arraycopy(iArr, i2 + 1, iArr, i2, (this.size - i2) - 1);
                 this.size--;
                 this.modCount++;
                 return true;
@@ -243,7 +243,7 @@ public final class IntArrayList extends AbstractProtobufList<Integer> implements
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
         int[] iArr = this.array;
-        System.arraycopy((Object) iArr, i2, (Object) iArr, i, this.size - i2);
+        System.arraycopy(iArr, i2, iArr, i, this.size - i2);
         this.size -= i2 - i;
         this.modCount++;
     }

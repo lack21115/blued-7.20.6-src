@@ -8,13 +8,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/AppRatingView.class */
 public class AppRatingView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f6034a;
+    private Context a;
     private List<StarLevelView> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f6035c;
+    private int c;
     private int d;
 
     public AppRatingView(Context context) {
@@ -27,7 +23,7 @@ public class AppRatingView extends LinearLayout {
 
     public AppRatingView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f6034a = context;
+        this.a = context;
         setStarSizeInDp(17);
         setStarMargin(8);
     }
@@ -71,7 +67,7 @@ public class AppRatingView extends LinearLayout {
                 return;
             }
             StarLevelView starLevelView = new StarLevelView(getContext());
-            int i4 = this.f6035c;
+            int i4 = this.c;
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(i4, i4);
             if (i3 != i - 1) {
                 layoutParams.setMargins(0, 0, dip2px(getContext(), this.d), 0);
@@ -84,6 +80,6 @@ public class AppRatingView extends LinearLayout {
     }
 
     public void setStarSizeInDp(int i) {
-        this.f6035c = dip2px(this.f6034a, i);
+        this.c = dip2px(this.a, i);
     }
 }

@@ -6,11 +6,11 @@ import android.os.SystemClock;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27399a;
+    private int f13711a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27400c;
+    private int f13712c;
     private double d;
     private a e;
     private long f;
@@ -23,9 +23,9 @@ public class m {
     }
 
     public m(int i, int i2, int i3, double d, a aVar) {
-        this.f27399a = i;
+        this.f13711a = i;
         this.b = i2;
-        this.f27400c = i3;
+        this.f13712c = i3;
         this.d = d;
         this.e = aVar;
     }
@@ -37,7 +37,7 @@ public class m {
     private void e() {
         int i;
         int i2;
-        if (SystemClock.elapsedRealtime() - this.f >= this.f27399a && (i = this.g) >= this.b && (i2 = this.h) >= this.f27400c && i / i2 >= this.d) {
+        if (SystemClock.elapsedRealtime() - this.f >= this.f13711a && (i = this.g) >= this.b && (i2 = this.h) >= this.f13712c && i / i2 >= this.d) {
             this.e.a(this);
             f();
         }

@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg_group.viewmodel;
 
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
@@ -20,48 +21,44 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 @DebugMetadata(b = "MyGroupViewModel.kt", c = {120}, d = "invokeSuspend", e = "com.soft.blued.ui.msg_group.viewmodel.MyGroupViewModel$initData$1")
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/viewmodel/MyGroupViewModel$initData$1.class */
-public final class MyGroupViewModel$initData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+final class MyGroupViewModel$initData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32864a;
+    int f19173a;
     final /* synthetic */ List<GroupInfoModel> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ MyGroupViewModel f32865c;
+    final /* synthetic */ MyGroupViewModel f19174c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public MyGroupViewModel$initData$1(List<GroupInfoModel> list, MyGroupViewModel myGroupViewModel, Continuation<? super MyGroupViewModel$initData$1> continuation) {
         super(2, continuation);
         this.b = list;
-        this.f32865c = myGroupViewModel;
+        this.f19174c = myGroupViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((MyGroupViewModel$initData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new MyGroupViewModel$initData$1(this.b, this.f32865c, continuation);
+        return new MyGroupViewModel$initData$1(this.b, this.f19174c, continuation);
     }
 
     /* JADX WARN: Type inference failed for: r1v17, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r1v29, types: [java.lang.Object] */
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32864a;
+        int i = this.f19173a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f32864a = 1;
-            Object c2 = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).c(this);
+            this.f19173a = 1;
+            Object c2 = ((GroupApiService) BluedApiProxy.b().a(GroupApiService.class)).c((Continuation) this);
             obj = c2;
             if (c2 == a2) {
                 return a2;
@@ -73,31 +70,31 @@ public final class MyGroupViewModel$initData$1 extends SuspendLambda implements 
         }
         BluedEntityA bluedEntityA = (BluedEntityA) obj;
         List<GroupInfoModel> list = this.b;
-        MyGroupViewModel myGroupViewModel = this.f32865c;
+        MyGroupViewModel myGroupViewModel = this.f19174c;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                List<T> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                List list2 = bluedEntityA.data;
+                Intrinsics.c(list2, "data");
                 bluedEntityA.hasMore();
-                if (!data.isEmpty() && ((GroupPrivilegeModel) data.get(0)).getPrivilege() == 1 && ((GroupPrivilegeModel) data.get(0)).getSuper_max_group() - ((GroupPrivilegeModel) data.get(0)).getSuper_group() > 0) {
-                    ((GroupPrivilegeModel) data.get(0)).setGroupList(list);
-                    myGroupViewModel.g().setValue(data.get(0));
+                if (!list2.isEmpty() && ((GroupPrivilegeModel) list2.get(0)).getPrivilege() == 1 && ((GroupPrivilegeModel) list2.get(0)).getSuper_max_group() - ((GroupPrivilegeModel) list2.get(0)).getSuper_group() > 0) {
+                    ((GroupPrivilegeModel) list2.get(0)).setGroupList(list);
+                    myGroupViewModel.g().setValue(list2.get(0));
                 }
             } else {
                 List b = CollectionsKt.b();
-                List list2 = b;
-                if (!(list2 == null || list2.isEmpty()) && ((GroupPrivilegeModel) b.get(0)).getPrivilege() == 1 && ((GroupPrivilegeModel) b.get(0)).getSuper_max_group() - ((GroupPrivilegeModel) b.get(0)).getSuper_group() > 0) {
+                List list3 = b;
+                if (!(list3 == null || list3.isEmpty()) && ((GroupPrivilegeModel) b.get(0)).getPrivilege() == 1 && ((GroupPrivilegeModel) b.get(0)).getSuper_max_group() - ((GroupPrivilegeModel) b.get(0)).getSuper_group() > 0) {
                     ((GroupPrivilegeModel) b.get(0)).setGroupList(list);
                     myGroupViewModel.g().setValue(b.get(0));
                 }
             }
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

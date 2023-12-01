@@ -10,22 +10,16 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/DistinctFlowImpl$collect$$inlined$collect$1.class */
 public final class DistinctFlowImpl$collect$$inlined$collect$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ DistinctFlowImpl f43051a;
+    final /* synthetic */ DistinctFlowImpl a;
     final /* synthetic */ Ref.ObjectRef b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ FlowCollector f43052c;
+    final /* synthetic */ FlowCollector c;
 
     @Metadata
     @DebugMetadata(b = "Distinct.kt", c = {139}, d = "emit", e = "kotlinx.coroutines.flow.DistinctFlowImpl$collect$$inlined$collect$1")
     /* renamed from: kotlinx.coroutines.flow.DistinctFlowImpl$collect$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/DistinctFlowImpl$collect$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43053a;
+        /* synthetic */ Object a;
         int b;
 
         public AnonymousClass1(Continuation continuation) {
@@ -34,16 +28,16 @@ public final class DistinctFlowImpl$collect$$inlined$collect$1<T> implements Flo
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43053a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return DistinctFlowImpl$collect$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public DistinctFlowImpl$collect$$inlined$collect$1(DistinctFlowImpl distinctFlowImpl, Ref.ObjectRef objectRef, FlowCollector flowCollector) {
-        this.f43051a = distinctFlowImpl;
+        this.a = distinctFlowImpl;
         this.b = objectRef;
-        this.f43052c = flowCollector;
+        this.c = flowCollector;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -85,7 +79,7 @@ public final class DistinctFlowImpl$collect$$inlined$collect$1<T> implements Flo
             r7 = r0
         L35:
             r0 = r7
-            java.lang.Object r0 = r0.f43053a
+            java.lang.Object r0 = r0.a
             r10 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r9 = r0
@@ -113,22 +107,22 @@ public final class DistinctFlowImpl$collect$$inlined$collect$1<T> implements Flo
             kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
             r10 = r0
             r0 = r5
-            kotlinx.coroutines.flow.DistinctFlowImpl r0 = r0.f43051a
-            kotlin.jvm.functions.Function1<T, java.lang.Object> r0 = r0.f43049a
+            kotlinx.coroutines.flow.DistinctFlowImpl r0 = r0.a
+            kotlin.jvm.functions.Function1<T, java.lang.Object> r0 = r0.a
             r1 = r6
             java.lang.Object r0 = r0.invoke(r1)
             r10 = r0
             r0 = r5
             kotlin.jvm.internal.Ref$ObjectRef r0 = r0.b
-            T r0 = r0.f42545a
-            kotlinx.coroutines.internal.Symbol r1 = kotlinx.coroutines.flow.internal.NullSurrogateKt.f43498a
+            T r0 = r0.a
+            kotlinx.coroutines.internal.Symbol r1 = kotlinx.coroutines.flow.internal.NullSurrogateKt.a
             if (r0 == r1) goto La5
             r0 = r5
-            kotlinx.coroutines.flow.DistinctFlowImpl r0 = r0.f43051a
+            kotlinx.coroutines.flow.DistinctFlowImpl r0 = r0.a
             kotlin.jvm.functions.Function2<java.lang.Object, java.lang.Object, java.lang.Boolean> r0 = r0.b
             r1 = r5
             kotlin.jvm.internal.Ref$ObjectRef r1 = r1.b
-            T r1 = r1.f42545a
+            T r1 = r1.a
             r2 = r10
             java.lang.Object r0 = r0.invoke(r1, r2)
             java.lang.Boolean r0 = (java.lang.Boolean) r0
@@ -138,9 +132,9 @@ public final class DistinctFlowImpl$collect$$inlined$collect$1<T> implements Flo
             r0 = r5
             kotlin.jvm.internal.Ref$ObjectRef r0 = r0.b
             r1 = r10
-            r0.f42545a = r1
+            r0.a = r1
             r0 = r5
-            kotlinx.coroutines.flow.FlowCollector r0 = r0.f43052c
+            kotlinx.coroutines.flow.FlowCollector r0 = r0.c
             r10 = r0
             r0 = r7
             r1 = 1
@@ -154,7 +148,7 @@ public final class DistinctFlowImpl$collect$$inlined$collect$1<T> implements Flo
             r0 = r9
             return r0
         Lca:
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.DistinctFlowImpl$collect$$inlined$collect$1.emit(java.lang.Object, kotlin.coroutines.Continuation):java.lang.Object");

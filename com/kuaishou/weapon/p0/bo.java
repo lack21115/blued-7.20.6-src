@@ -18,7 +18,7 @@ public class bo {
             File[] listFiles = file.listFiles(new FileFilter() { // from class: com.kuaishou.weapon.p0.bo.1
                 @Override // java.io.FileFilter
                 public final boolean accept(File file2) {
-                    return file2.isDirectory() || file2.getName().toLowerCase().contains(String.this);
+                    return file2.isDirectory() || file2.getName().toLowerCase().contains(str);
                 }
             });
             if (listFiles != null) {

@@ -12,31 +12,29 @@ import java.nio.channels.FileLock;
 public final class cb implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f41661a;
+    final /* synthetic */ Context f27970a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ hk f1041a;
+    final /* synthetic */ hk f994a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cb(Context context, hk hkVar) {
-        this.f41661a = context;
-        this.f1041a = hkVar;
+        this.f27970a = context;
+        this.f994a = hkVar;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v13, types: [java.nio.channels.FileLock] */
-    /* JADX WARN: Type inference failed for: r0v17, types: [java.nio.channels.FileLock] */
     @Override // java.lang.Runnable
     public final void run() {
         RandomAccessFile randomAccessFile;
-        synchronized (ca.f41660a) {
+        synchronized (ca.f27969a) {
             FileLock fileLock = null;
             RandomAccessFile randomAccessFile2 = null;
             RandomAccessFile randomAccessFile3 = null;
             try {
                 try {
-                    File file = new File(this.f41661a.getFilesDir(), "tiny_data.lock");
-                    com.xiaomi.push.x.m12222a(file);
+                    File file = new File(this.f27970a.getFilesDir(), "tiny_data.lock");
+                    com.xiaomi.push.x.m9172a(file);
                     randomAccessFile = new RandomAccessFile(file, "rw");
                     fileLock = null;
                 } catch (Exception e) {
@@ -59,7 +57,7 @@ public final class cb implements Runnable {
                     FileLock lock = randomAccessFile.getChannel().lock();
                     fileLock = lock;
                     randomAccessFile3 = randomAccessFile;
-                    ca.c(this.f41661a, this.f1041a);
+                    ca.c(this.f27970a, this.f994a);
                     randomAccessFile2 = randomAccessFile;
                     if (lock != null) {
                         randomAccessFile2 = randomAccessFile;

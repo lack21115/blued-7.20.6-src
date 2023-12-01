@@ -243,7 +243,7 @@ public class AsyncChannel {
         this.mSrcHandler = handler;
         this.mSrcMessenger = new Messenger(handler);
         this.mDstMessenger = null;
-        Intent intent = new Intent(Intent.ACTION_MAIN);
+        Intent intent = new Intent("android.intent.action.MAIN");
         intent.setClassName(str, str2);
         if (context.bindService(intent, this.mConnection, 1)) {
             i = 0;

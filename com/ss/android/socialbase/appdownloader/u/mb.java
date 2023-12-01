@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.socialbase.appdownloader.ko;
 import com.ss.android.socialbase.downloader.setting.DownloadSettingKeys;
 import java.lang.reflect.Field;
@@ -75,7 +74,7 @@ public class mb {
     private static boolean mb(JSONArray jSONArray, JSONArray jSONArray2, String str, ko.mb mbVar) {
         String ko = mbVar.ko();
         int u = mbVar.u();
-        String str2 = u + BridgeUtil.UNDERLINE_STR + ko;
+        String str2 = u + "_" + ko;
         if (TextUtils.isEmpty(str)) {
             return (jSONArray == null || jSONArray.length() <= 0) ? (jSONArray2 == null || jSONArray2.length() <= 0 || ox(jSONArray2, str2)) ? false : true : ox(jSONArray, str2);
         }

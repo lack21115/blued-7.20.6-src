@@ -7,11 +7,11 @@ import java.util.List;
 public class nb {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<String> f37662a = new ArrayList();
+    private List<String> f23971a = new ArrayList();
     private List<String> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f37663c = 300;
+    private final int f23972c = 300;
 
     private void a(List<String> list) {
         if (list != null && list.size() > 300) {
@@ -21,7 +21,7 @@ public class nb {
 
     public void a() {
         synchronized (this) {
-            this.f37662a.clear();
+            this.f23971a.clear();
             this.b.clear();
         }
     }
@@ -35,13 +35,13 @@ public class nb {
                         this.b.add(str);
                         return;
                     }
-                    if (this.f37662a.contains(str)) {
+                    if (this.f23971a.contains(str)) {
                         a(this.b);
                         this.b.add(str);
-                        this.f37662a.remove(str);
+                        this.f23971a.remove(str);
                     } else {
-                        a(this.f37662a);
-                        this.f37662a.add(str);
+                        a(this.f23971a);
+                        this.f23971a.add(str);
                     }
                 }
             }

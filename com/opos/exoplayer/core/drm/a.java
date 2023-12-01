@@ -7,12 +7,12 @@ public interface a<T extends c> {
 
     /* renamed from: com.opos.exoplayer.core.drm.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/drm/a$a.class */
-    public static class C0656a extends Exception {
+    public static class C0486a extends Exception {
     }
 
     int a();
 
-    C0656a b();
+    C0486a b();
 
     T c();
 }

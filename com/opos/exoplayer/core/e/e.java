@@ -15,11 +15,11 @@ public interface e {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25286a;
+        public final int f11598a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25287c;
+        public final int f11599c;
         public final long d;
 
         public b(int i) {
@@ -27,9 +27,9 @@ public interface e {
         }
 
         public b(int i, int i2, int i3, long j) {
-            this.f25286a = i;
+            this.f11598a = i;
             this.b = i2;
-            this.f25287c = i3;
+            this.f11599c = i3;
             this.d = j;
         }
 
@@ -38,7 +38,7 @@ public interface e {
         }
 
         public b a(int i) {
-            return this.f25286a == i ? this : new b(i, this.b, this.f25287c, this.d);
+            return this.f11598a == i ? this : new b(i, this.b, this.f11599c, this.d);
         }
 
         public boolean a() {
@@ -55,11 +55,11 @@ public interface e {
                     }
                     b bVar = (b) obj;
                     z = false;
-                    if (this.f25286a == bVar.f25286a) {
+                    if (this.f11598a == bVar.f11598a) {
                         z = false;
                         if (this.b == bVar.b) {
                             z = false;
-                            if (this.f25287c == bVar.f25287c) {
+                            if (this.f11599c == bVar.f11599c) {
                                 if (this.d != bVar.d) {
                                     return false;
                                 }
@@ -74,7 +74,7 @@ public interface e {
         }
 
         public int hashCode() {
-            return ((((((this.f25286a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f25287c) * 31) + ((int) this.d);
+            return ((((((this.f11598a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f11599c) * 31) + ((int) this.d);
         }
     }
 

@@ -4,12 +4,8 @@ import android.content.Intent;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/AuthFailureError.class */
 public class AuthFailureError extends VolleyError {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f24227c;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Intent f24228a;
+    private static final String c;
+    private Intent a;
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x005c, code lost:
         r0 = r6;
@@ -27,7 +23,7 @@ public class AuthFailureError extends VolleyError {
         if (r7 > r8) goto L3;
      */
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0074, code lost:
-        com.mokee.volley.AuthFailureError.f24227c = new java.lang.String(r11).intern();
+        com.mokee.volley.AuthFailureError.c = new java.lang.String(r11).intern();
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0083, code lost:
         return;
@@ -157,7 +153,7 @@ public class AuthFailureError extends VolleyError {
             r2 = r11
             r1.<init>(r2)
             java.lang.String r0 = r0.intern()
-            com.mokee.volley.AuthFailureError.f24227c = r0
+            com.mokee.volley.AuthFailureError.c = r0
             return
         L84:
             r0 = 84
@@ -176,14 +172,14 @@ public class AuthFailureError extends VolleyError {
             r5 = r0
             goto L4b
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.AuthFailureError.m8053clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.AuthFailureError.m11276clinit():void");
     }
 
     public AuthFailureError() {
     }
 
     public AuthFailureError(Intent intent) {
-        this.f24228a = intent;
+        this.a = intent;
     }
 
     public AuthFailureError(NetworkResponse networkResponse) {
@@ -200,10 +196,10 @@ public class AuthFailureError extends VolleyError {
 
     @Override // java.lang.Throwable
     public String getMessage() {
-        return this.f24228a != null ? f24227c : super.getMessage();
+        return this.a != null ? c : super.getMessage();
     }
 
     public Intent getResolutionIntent() {
-        return this.f24228a;
+        return this.a;
     }
 }

@@ -11,13 +11,9 @@ import kotlin.jvm.functions.Function1;
 @DebugMetadata(b = "Channels.common.kt", c = {129}, d = "consumeEach", e = "kotlinx.coroutines.channels.ChannelsKt__Channels_commonKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__Channels_commonKt$consumeEach$3.class */
 public final class ChannelsKt__Channels_commonKt$consumeEach$3<E> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42912a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42913c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 

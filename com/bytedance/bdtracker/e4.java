@@ -12,18 +12,18 @@ public interface e4 extends IInterface {
 
         /* renamed from: com.bytedance.bdtracker.e4$a$a  reason: collision with other inner class name */
         /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/e4$a$a.class */
-        public static class C0309a implements e4 {
+        public static class C0139a implements e4 {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f21213a;
+            public IBinder f7607a;
 
-            public C0309a(IBinder iBinder) {
-                this.f21213a = iBinder;
+            public C0139a(IBinder iBinder) {
+                this.f7607a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f21213a;
+                return this.f7607a;
             }
         }
 
@@ -32,7 +32,7 @@ public interface e4 extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.zui.deviceidservice.IDeviceidInterface");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof e4)) ? new C0309a(iBinder) : (e4) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof e4)) ? new C0139a(iBinder) : (e4) queryLocalInterface;
         }
     }
 }

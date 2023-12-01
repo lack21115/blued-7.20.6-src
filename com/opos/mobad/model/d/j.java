@@ -17,17 +17,17 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class j implements o {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26435a;
+    private Context f12747a;
     private com.opos.mobad.model.a.c b;
 
     public j(Context context) {
-        this.f26435a = context;
+        this.f12747a = context;
         this.b = new com.opos.mobad.model.a.a.c(context);
     }
 
     private com.opos.mobad.i.a a(com.opos.mobad.model.b.e eVar) {
         try {
-            return new a.C0699a().a(new d.a().a("GET").b(eVar.a()).a()).a(eVar.b()).b(eVar.c()).a(0).a();
+            return new a.C0529a().a(new d.a().a("GET").b(eVar.a()).a()).a(eVar.b()).b(eVar.c()).a(0).a();
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("FetchMaterialTask", "", (Throwable) e);
             return null;
@@ -71,14 +71,14 @@ public class j implements o {
                 if (!com.opos.cmn.an.c.a.a(str)) {
                     com.opos.mobad.i.a aVar = a2.get(str);
                     com.opos.mobad.i.b bVar = a3.get(str);
-                    if (bVar == null || !bVar.f26218a) {
-                        if (qVar != null && aVar != null && aVar.f26207a != null) {
-                            qVar.a(aVar.f26207a.b, 3);
+                    if (bVar == null || !bVar.f12530a) {
+                        if (qVar != null && aVar != null && aVar.f12519a != null) {
+                            qVar.a(aVar.f12519a.b, 3);
                         }
                         com.opos.cmn.an.f.a.c("FetchMaterialTask", "downloadResponse fail=", bVar);
                     } else {
-                        if (qVar != null && aVar != null && aVar.f26207a != null) {
-                            qVar.a(aVar.f26207a.b, 1);
+                        if (qVar != null && aVar != null && aVar.f12519a != null) {
+                            qVar.a(aVar.f12519a.b, 1);
                         }
                         i++;
                     }
@@ -105,17 +105,17 @@ public class j implements o {
         }
         final AtomicInteger atomicInteger = new AtomicInteger(0);
         final CountDownLatch countDownLatch = new CountDownLatch(1);
-        com.opos.mobad.d.d.a().a(arrayList, new a.InterfaceC0677a() { // from class: com.opos.mobad.model.d.j.1
-            @Override // com.opos.mobad.c.a.a.InterfaceC0677a
+        com.opos.mobad.d.d.a().a(arrayList, new a.InterfaceC0507a() { // from class: com.opos.mobad.model.d.j.1
+            @Override // com.opos.mobad.c.a.a.InterfaceC0507a
             public void a() {
                 countDownLatch.countDown();
             }
 
-            @Override // com.opos.mobad.c.a.a.InterfaceC0677a
+            @Override // com.opos.mobad.c.a.a.InterfaceC0507a
             public void a(String str) {
             }
 
-            @Override // com.opos.mobad.c.a.a.InterfaceC0677a
+            @Override // com.opos.mobad.c.a.a.InterfaceC0507a
             public void a(String str, int i) {
                 com.opos.cmn.an.f.a.b("FetchMaterialTask", "load:" + str + "," + i);
                 if (i == 1 || i == 0) {

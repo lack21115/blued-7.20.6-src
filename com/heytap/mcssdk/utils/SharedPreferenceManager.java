@@ -17,9 +17,8 @@ public class SharedPreferenceManager {
     private SharedPreferences mSharedPrefs;
     private Object prefsLock;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/heytap/mcssdk/utils/SharedPreferenceManager$SharedPreferenceManagerInstanceHolder.class */
-    public static class SharedPreferenceManagerInstanceHolder {
+    static class SharedPreferenceManagerInstanceHolder {
         static SharedPreferenceManager INSTANCE = new SharedPreferenceManager();
 
         private SharedPreferenceManagerInstanceHolder() {

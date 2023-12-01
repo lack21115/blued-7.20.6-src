@@ -10,7 +10,7 @@ import com.opos.cmn.an.f.a.f;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f24505a;
+    private static volatile b f10818a;
     private static final byte[] b = new byte[0];
 
     public static void a() {
@@ -25,49 +25,49 @@ public final class a {
         if (bVar == null) {
             throw new NullPointerException("initParams is null.");
         }
-        if (f24505a == null) {
+        if (f10818a == null) {
             synchronized (b) {
-                if (f24505a == null) {
-                    f24505a = new e();
-                    f24505a.a(bVar);
+                if (f10818a == null) {
+                    f10818a = new e();
+                    f10818a.a(bVar);
                 }
             }
         }
     }
 
     public static void a(com.opos.cmn.an.f.b.c cVar, com.opos.cmn.an.f.b.a aVar) {
-        if (f24505a != null) {
-            f24505a.a(cVar, aVar);
+        if (f10818a != null) {
+            f10818a.a(cVar, aVar);
         }
     }
 
     public static void a(String str, Object obj) {
-        if (f24505a != null) {
-            f24505a.a(str, obj);
+        if (f10818a != null) {
+            f10818a.a(str, obj);
         }
     }
 
     public static void a(String str, Object obj, Throwable th) {
-        if (f24505a != null) {
-            f24505a.a(str, obj, th);
+        if (f10818a != null) {
+            f10818a.a(str, obj, th);
         }
     }
 
     public static void a(String str, String str2) {
-        if (f24505a != null) {
-            f24505a.a(str, str2);
+        if (f10818a != null) {
+            f10818a.a(str, str2);
         }
     }
 
     public static void a(String str, String str2, Throwable th) {
-        if (f24505a != null) {
-            f24505a.a(str, str2, th);
+        if (f10818a != null) {
+            f10818a.a(str, str2, th);
         }
     }
 
     public static void a(String str, Object... objArr) {
-        if (f24505a != null) {
-            f24505a.a(str, objArr);
+        if (f10818a != null) {
+            f10818a.a(str, objArr);
         }
     }
 
@@ -80,26 +80,26 @@ public final class a {
     }
 
     public static void b() {
-        if (f24505a != null) {
-            f24505a.a();
+        if (f10818a != null) {
+            f10818a.a();
         }
     }
 
     public static void b(String str, String str2) {
-        if (f24505a != null) {
-            f24505a.b(str, str2);
+        if (f10818a != null) {
+            f10818a.b(str, str2);
         }
     }
 
     public static void b(String str, String str2, Throwable th) {
-        if (f24505a != null) {
-            f24505a.b(str, str2, th);
+        if (f10818a != null) {
+            f10818a.b(str, str2, th);
         }
     }
 
     public static void b(String str, Object... objArr) {
-        if (f24505a != null) {
-            f24505a.b(str, objArr);
+        if (f10818a != null) {
+            f10818a.b(str, objArr);
         }
     }
 
@@ -116,32 +116,32 @@ public final class a {
     }
 
     public static void c(String str, String str2) {
-        if (f24505a != null) {
-            f24505a.c(str, str2);
+        if (f10818a != null) {
+            f10818a.c(str, str2);
         }
     }
 
     public static void c(String str, String str2, Throwable th) {
-        if (f24505a != null) {
-            f24505a.c(str, str2, th);
+        if (f10818a != null) {
+            f10818a.c(str, str2, th);
         }
     }
 
     public static void c(String str, Object... objArr) {
-        if (f24505a != null) {
-            f24505a.c(str, objArr);
+        if (f10818a != null) {
+            f10818a.c(str, objArr);
         }
     }
 
     public static void d(String str, String str2) {
-        if (f24505a != null) {
-            f24505a.d(str, str2);
+        if (f10818a != null) {
+            f10818a.d(str, str2);
         }
     }
 
     public static void d(String str, String str2, Throwable th) {
-        if (f24505a != null) {
-            f24505a.d(str, str2, th);
+        if (f10818a != null) {
+            f10818a.d(str, str2, th);
         }
     }
 }

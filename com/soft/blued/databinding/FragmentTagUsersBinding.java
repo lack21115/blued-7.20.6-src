@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentTagUsersBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28987a;
+    private final ConstraintLayout f15297a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28987a;
+        return this.f15297a;
     }
 }

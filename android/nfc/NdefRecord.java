@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ExpandableListView;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
@@ -264,7 +263,7 @@ public final class NdefRecord implements Parcelable {
                     throw new FormatException("unexpected TNF_UNCHANGED in first chunk or unchunked record");
                 }
                 int i = byteBuffer.get() & 255;
-                long j = z6 ? byteBuffer.get() & 255 : byteBuffer.getInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+                long j = z6 ? byteBuffer.get() & 255 : byteBuffer.getInt() & 4294967295L;
                 int i2 = z7 ? byteBuffer.get() & 255 : 0;
                 if (z2 && i != 0) {
                     throw new FormatException("expected zero-length type in non-leading chunk");

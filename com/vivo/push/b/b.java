@@ -4,11 +4,11 @@ package com.vivo.push.b;
 public final class b extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41035a;
+    private String f27344a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41036c;
+    private String f27345c;
     private String d;
     private boolean e;
 
@@ -20,22 +20,22 @@ public final class b extends c {
     @Override // com.vivo.push.b.c, com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
         super.c(aVar);
-        aVar.a("sdk_clients", this.f41035a);
+        aVar.a("sdk_clients", this.f27344a);
         aVar.a("sdk_version", 323L);
-        aVar.a("BaseAppCommand.EXTRA_APPID", this.f41036c);
+        aVar.a("BaseAppCommand.EXTRA_APPID", this.f27345c);
         aVar.a("BaseAppCommand.EXTRA_APPKEY", this.b);
         aVar.a("PUSH_REGID", this.d);
     }
 
     public final void d() {
-        this.f41036c = null;
+        this.f27345c = null;
     }
 
     @Override // com.vivo.push.b.c, com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
         super.d(aVar);
-        this.f41035a = aVar.a("sdk_clients");
-        this.f41036c = aVar.a("BaseAppCommand.EXTRA_APPID");
+        this.f27344a = aVar.a("sdk_clients");
+        this.f27345c = aVar.a("BaseAppCommand.EXTRA_APPID");
         this.b = aVar.a("BaseAppCommand.EXTRA_APPKEY");
         this.d = aVar.a("PUSH_REGID");
     }

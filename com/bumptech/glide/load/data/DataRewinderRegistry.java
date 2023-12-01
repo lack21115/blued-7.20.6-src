@@ -21,21 +21,21 @@ public class DataRewinderRegistry {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<Class<?>, DataRewinder.Factory<?>> f20715a = new HashMap();
+    private final Map<Class<?>, DataRewinder.Factory<?>> f7109a = new HashMap();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/data/DataRewinderRegistry$DefaultRewinder.class */
     static final class DefaultRewinder implements DataRewinder<Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Object f20716a;
+        private final Object f7110a;
 
         DefaultRewinder(Object obj) {
-            this.f20716a = obj;
+            this.f7110a = obj;
         }
 
         @Override // com.bumptech.glide.load.data.DataRewinder
         public Object a() {
-            return this.f20716a;
+            return this.f7110a;
         }
 
         @Override // com.bumptech.glide.load.data.DataRewinder
@@ -47,10 +47,10 @@ public class DataRewinderRegistry {
         DataRewinder<T> dataRewinder;
         synchronized (this) {
             Preconditions.a(t);
-            DataRewinder.Factory<?> factory = this.f20715a.get(t.getClass());
+            DataRewinder.Factory<?> factory = this.f7109a.get(t.getClass());
             DataRewinder.Factory<?> factory2 = factory;
             if (factory == null) {
-                Iterator<DataRewinder.Factory<?>> it = this.f20715a.values().iterator();
+                Iterator<DataRewinder.Factory<?>> it = this.f7109a.values().iterator();
                 do {
                     factory2 = factory;
                     if (!it.hasNext()) {
@@ -70,7 +70,7 @@ public class DataRewinderRegistry {
 
     public void a(DataRewinder.Factory<?> factory) {
         synchronized (this) {
-            this.f20715a.put(factory.a(), factory);
+            this.f7109a.put(factory.a(), factory);
         }
     }
 }

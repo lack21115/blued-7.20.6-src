@@ -9,37 +9,37 @@ import com.xiaomi.push.ai;
 public final class cd extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int f41662a;
+    final /* synthetic */ int f27971a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ Notification f1042a;
+    final /* synthetic */ Notification f995a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ Context f1043a;
+    final /* synthetic */ Context f996a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ String f1044a;
+    final /* synthetic */ String f997a;
     final /* synthetic */ String b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cd(int i, String str, Context context, String str2, Notification notification) {
-        this.f41662a = i;
-        this.f1044a = str;
-        this.f1043a = context;
+        this.f27971a = i;
+        this.f997a = str;
+        this.f996a = context;
         this.b = str2;
-        this.f1042a = notification;
+        this.f995a = notification;
     }
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public final String mo11550a() {
+    public final String mo8500a() {
         String b;
-        b = cc.b(this.f41662a, this.f1044a);
+        b = cc.b(this.f27971a, this.f997a);
         return b;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        cc.c(this.f1043a, this.b, this.f41662a, this.f1044a, this.f1042a);
+        cc.c(this.f996a, this.b, this.f27971a, this.f997a, this.f995a);
     }
 }

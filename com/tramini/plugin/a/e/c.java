@@ -59,7 +59,7 @@ public final class c extends f {
                             if (!TextUtils.isEmpty(str5)) {
                                 jSONObject2.put(str5, obj2.toString());
                             }
-                            aVar.f40498a = jSONObject2;
+                            aVar.f26807a = jSONObject2;
                             return aVar;
                         }
                         continue;

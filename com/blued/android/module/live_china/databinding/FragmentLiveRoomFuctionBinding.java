@@ -10,14 +10,12 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLiveRoomFuctionBinding.class */
 public final class FragmentLiveRoomFuctionBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ListView f11971a;
+    public final ListView a;
     private final FrameLayout b;
 
     private FragmentLiveRoomFuctionBinding(FrameLayout frameLayout, ListView listView) {
         this.b = frameLayout;
-        this.f11971a = listView;
+        this.a = listView;
     }
 
     public static FragmentLiveRoomFuctionBinding a(LayoutInflater layoutInflater) {
@@ -40,7 +38,6 @@ public final class FragmentLiveRoomFuctionBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("liveRoomFunctionLv"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.b;

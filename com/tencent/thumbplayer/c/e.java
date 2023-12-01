@@ -39,11 +39,11 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
     private static int g = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39249a;
+    private Context f25558a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ITPDownloadProxy f39250c;
+    private ITPDownloadProxy f25559c;
     private b e;
     private ITPPlayListener f;
     private ArrayList<TPDownloadParamData> i;
@@ -110,21 +110,21 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
                         e.this.f.onDownloadCdnUrlExpired((Map) message.obj);
                         return;
                     case o.a.h /* 4104 */:
-                        C1016e c1016e = (C1016e) message.obj;
-                        f fVar = (f) c1016e.f39255a;
-                        c1016e.b.a(e.this.f.onPlayCallback(fVar.f39256a, fVar.b, fVar.f39257c, fVar.d, fVar.e));
+                        C0846e c0846e = (C0846e) message.obj;
+                        f fVar = (f) c0846e.f25564a;
+                        c0846e.b.a(e.this.f.onPlayCallback(fVar.f25565a, fVar.b, fVar.f25566c, fVar.d, fVar.e));
                         return;
                     case 4105:
-                        C1016e c1016e2 = (C1016e) message.obj;
-                        c1016e2.b.a(e.this.f.getPlayInfo(((Long) c1016e2.f39255a).longValue()));
+                        C0846e c0846e2 = (C0846e) message.obj;
+                        c0846e2.b.a(e.this.f.getPlayInfo(((Long) c0846e2.f25564a).longValue()));
                         return;
                     case 4106:
                         TPPlayerMsg.TPDownLoadProgressInfo tPDownLoadProgressInfo = (TPPlayerMsg.TPDownLoadProgressInfo) message.obj;
                         e.this.f.onDownloadProgressUpdate((int) tPDownLoadProgressInfo.playableDurationMS, tPDownLoadProgressInfo.downloadSpeedKBps, tPDownLoadProgressInfo.currentDownloadSize, tPDownLoadProgressInfo.totalFileSize, tPDownLoadProgressInfo.extraInfo);
                         return;
                     case 4107:
-                        C1016e c1016e3 = (C1016e) message.obj;
-                        c1016e3.b.a(e.this.f.getPlayInfo((String) c1016e3.f39255a));
+                        C0846e c0846e3 = (C0846e) message.obj;
+                        c0846e3.b.a(e.this.f.getPlayInfo((String) c0846e3.f25564a));
                         return;
                     default:
                         return;
@@ -177,20 +177,20 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public Object getPlayInfo(long j) {
             com.tencent.thumbplayer.utils.e eVar = new com.tencent.thumbplayer.utils.e();
-            C1016e c1016e = new C1016e();
-            c1016e.f39255a = Long.valueOf(j);
-            c1016e.b = eVar;
-            e.this.a(4105, c1016e);
+            C0846e c0846e = new C0846e();
+            c0846e.f25564a = Long.valueOf(j);
+            c0846e.b = eVar;
+            e.this.a(4105, c0846e);
             return e.this.a(eVar);
         }
 
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public Object getPlayInfo(String str) {
             com.tencent.thumbplayer.utils.e eVar = new com.tencent.thumbplayer.utils.e();
-            C1016e c1016e = new C1016e();
-            c1016e.f39255a = str;
-            c1016e.b = eVar;
-            e.this.a(4107, c1016e);
+            C0846e c0846e = new C0846e();
+            c0846e.f25564a = str;
+            c0846e.b = eVar;
+            e.this.a(4107, c0846e);
             return e.this.a(eVar);
         }
 
@@ -256,16 +256,16 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
         @Override // com.tencent.thumbplayer.core.downloadproxy.api.ITPPlayListener
         public Object onPlayCallback(int i, Object obj, Object obj2, Object obj3, Object obj4) {
             f fVar = new f();
-            fVar.f39256a = i;
+            fVar.f25565a = i;
             fVar.b = obj;
-            fVar.f39257c = obj2;
+            fVar.f25566c = obj2;
             fVar.d = obj3;
             fVar.e = obj4;
             com.tencent.thumbplayer.utils.e eVar = new com.tencent.thumbplayer.utils.e();
-            C1016e c1016e = new C1016e();
-            c1016e.f39255a = fVar;
-            c1016e.b = eVar;
-            e.this.a((int) o.a.h, c1016e);
+            C0846e c0846e = new C0846e();
+            c0846e.f25564a = fVar;
+            c0846e.b = eVar;
+            e.this.a((int) o.a.h, c0846e);
             return e.this.a(eVar);
         }
 
@@ -290,11 +290,11 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        long f39253a;
+        long f25562a;
         int b;
 
         c(long j, int i) {
-            this.f39253a = j;
+            this.f25562a = j;
             this.b = i;
         }
     }
@@ -304,24 +304,24 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        int f39254a;
+        int f25563a;
         int b;
 
         d(int i, int i2) {
-            this.f39254a = i;
+            this.f25563a = i;
             this.b = i2;
         }
     }
 
     /* renamed from: com.tencent.thumbplayer.c.e$e  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/c/e$e.class */
-    static class C1016e {
+    static class C0846e {
 
         /* renamed from: a  reason: collision with root package name */
-        Object f39255a;
+        Object f25564a;
         com.tencent.thumbplayer.utils.e b;
 
-        private C1016e() {
+        private C0846e() {
         }
     }
 
@@ -329,11 +329,11 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
     static class f {
 
         /* renamed from: a  reason: collision with root package name */
-        int f39256a;
+        int f25565a;
         Object b;
 
         /* renamed from: c  reason: collision with root package name */
-        Object f39257c;
+        Object f25566c;
         Object d;
         Object e;
 
@@ -342,7 +342,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
     }
 
     public e(Context context, Looper looper) {
-        this.f39249a = context;
+        this.f25558a = context;
         this.b = new a(looper);
         com.tencent.thumbplayer.utils.f.a(this);
         com.tencent.thumbplayer.utils.i.a().a(this);
@@ -386,7 +386,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
             return -1;
         }
         try {
-            i = this.f39250c.startClipPlay(str, hashMap.size(), this.e);
+            i = this.f25559c.startClipPlay(str, hashMap.size(), this.e);
         } catch (Throwable th) {
             th = th;
             i = -1;
@@ -418,9 +418,9 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
                     TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", "fatal err, paramData is null.");
                     return -1;
                 }
-                TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", "multi trackClipIndex:" + dVar.b + ", download seq:" + dVar.f39254a + ", clip.url:" + hVar.getUrl() + ", clip.getFilePath:" + hVar.getFilePath() + ", paramData.savePath:" + a2.getSavePath() + ", paramData.DownloadFileID:" + a2.getDownloadFileID());
-                if (this.f39250c.setClipInfo(i, dVar.f39254a, a2.getDownloadFileID(), a(hVar.getFilePath(), a2, (Map<String, String>) null))) {
-                    hVar.a(this.f39250c.getClipPlayUrl(i, dVar.f39254a, 1));
+                TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", "multi trackClipIndex:" + dVar.b + ", download seq:" + dVar.f25563a + ", clip.url:" + hVar.getUrl() + ", clip.getFilePath:" + hVar.getFilePath() + ", paramData.savePath:" + a2.getSavePath() + ", paramData.DownloadFileID:" + a2.getDownloadFileID());
+                if (this.f25559c.setClipInfo(i, dVar.f25563a, a2.getDownloadFileID(), a(hVar.getFilePath(), a2, (Map<String, String>) null))) {
+                    hVar.a(this.f25559c.getClipPlayUrl(i, dVar.f25563a, 1));
                 }
             }
         }
@@ -443,18 +443,18 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
                     return eVar;
                 }
             }
-            int startPlay = this.f39250c.startPlay(str2, a2, this.e);
+            int startPlay = this.f25559c.startPlay(str2, a2, this.e);
             if (startPlay <= 0) {
                 TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", "p2p proxy switch def failed, cause : playId <= 0");
                 return eVar;
             }
-            String playUrl = this.f39250c.getPlayUrl(startPlay, 1);
+            String playUrl = this.f25559c.getPlayUrl(startPlay, 1);
             String str3 = playUrl;
             if (TextUtils.isEmpty(playUrl)) {
                 str3 = str;
             }
             eVar.b(str3);
-            String playUrl2 = this.f39250c.getPlayUrl(startPlay, 0);
+            String playUrl2 = this.f25559c.getPlayUrl(startPlay, 0);
             if (!TextUtils.isEmpty(playUrl2)) {
                 str = playUrl2;
             }
@@ -586,7 +586,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
                         return;
                     }
                     TPDownloadParamData tPDownloadParamData = downloadPraramList.get(i2);
-                    if (!this.f39250c.setClipInfo(this.k, tPDownloadParamData.getClipNo(), tPDownloadParamData.getDownloadFileID(), a(tPDownloadParamData.getUrl(), tPDownloadParamData, (Map<String, String>) null))) {
+                    if (!this.f25559c.setClipInfo(this.k, tPDownloadParamData.getClipNo(), tPDownloadParamData.getDownloadFileID(), a(tPDownloadParamData.getUrl(), tPDownloadParamData, (Map<String, String>) null))) {
                         TPLogUtil.w("TPThumbPlayer[TPPlayManagerImpl.java]", "setClipInfo failed, playID:" + this.k + ", clipNo:" + tPDownloadParamData.getClipNo() + ", downloadFileID:" + tPDownloadParamData.getDownloadFileID());
                     }
                     i = i2 + 1;
@@ -605,7 +605,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
         HashMap hashMap = new HashMap();
         hashMap.put(TPDownloadProxyEnum.DLPARAM_DATA_TRANSFER_MODE, 1);
         try {
-            return this.f39250c.setClipInfo(this.k, 2, str2, new TPDownloadParam(arrayList, 3, hashMap));
+            return this.f25559c.setClipInfo(this.k, 2, str2, new TPDownloadParam(arrayList, 3, hashMap));
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th);
             return false;
@@ -637,7 +637,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
 
     private void c(int i) {
         try {
-            this.f39250c.pauseDownload(i);
+            this.f25559c.pauseDownload(i);
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th, "p2p proxy pause download failed, taskId:".concat(String.valueOf(i)));
         }
@@ -645,7 +645,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
 
     private void d(int i) {
         try {
-            this.f39250c.resumeDownload(this.k);
+            this.f25559c.resumeDownload(this.k);
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th, "p2p proxy resume download failed, taskId:".concat(String.valueOf(i)));
         }
@@ -656,7 +656,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
             return;
         }
         try {
-            this.f39250c.stopPlay(i);
+            this.f25559c.stopPlay(i);
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th, "p2p proxy stop play failed, taskID:".concat(String.valueOf(i)));
         }
@@ -730,21 +730,21 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
         }
         try {
             ITPDownloadProxy a3 = a2.a();
-            this.f39250c = a3;
+            this.f25559c = a3;
             a3.setUserData(TPDownloadProxyEnum.USER_IS_VIP, Boolean.valueOf(TPPlayerConfig.isUserIsVip()));
             if (!TextUtils.isEmpty(TPPlayerConfig.getUserUin())) {
-                this.f39250c.setUserData(TPDownloadProxyEnum.USER_UIN, TPPlayerConfig.getUserUin());
+                this.f25559c.setUserData(TPDownloadProxyEnum.USER_UIN, TPPlayerConfig.getUserUin());
             }
-            if (!TextUtils.isEmpty(TPPlayerConfig.getAppVersionName(this.f39249a))) {
-                this.f39250c.setUserData("app_version_name", TPPlayerConfig.getAppVersionName(this.f39249a));
+            if (!TextUtils.isEmpty(TPPlayerConfig.getAppVersionName(this.f25558a))) {
+                this.f25559c.setUserData("app_version_name", TPPlayerConfig.getAppVersionName(this.f25558a));
             }
-            if (TPPlayerConfig.getBuildNumber(this.f39249a) != -1) {
-                this.f39250c.setUserData("app_version_code", String.valueOf(TPPlayerConfig.getBuildNumber(this.f39249a)));
+            if (TPPlayerConfig.getBuildNumber(this.f25558a) != -1) {
+                this.f25559c.setUserData("app_version_code", String.valueOf(TPPlayerConfig.getBuildNumber(this.f25558a)));
             }
-            this.f39250c.setUserData(TPDownloadProxyEnum.USER_UPC, TPPlayerConfig.getUserUpc());
-            this.f39250c.setUserData(TPDownloadProxyEnum.USER_UPC_STATE, Integer.valueOf(TPPlayerConfig.getUserUpcState()));
-            this.f39250c.setUserData(TPDownloadProxyEnum.USER_EXTERNAL_NETWORK_IP, TPPlayerConfig.getOutNetIp());
-            this.f39250c.setUserData(TPDownloadProxyEnum.TAB_ABUSERID, TPPlayerConfig.getAbUserId());
+            this.f25559c.setUserData(TPDownloadProxyEnum.USER_UPC, TPPlayerConfig.getUserUpc());
+            this.f25559c.setUserData(TPDownloadProxyEnum.USER_UPC_STATE, Integer.valueOf(TPPlayerConfig.getUserUpcState()));
+            this.f25559c.setUserData(TPDownloadProxyEnum.USER_EXTERNAL_NETWORK_IP, TPPlayerConfig.getOutNetIp());
+            this.f25559c.setUserData(TPDownloadProxyEnum.TAB_ABUSERID, TPPlayerConfig.getAbUserId());
             return true;
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th);
@@ -754,7 +754,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
 
     private void l() {
         try {
-            this.f39250c.setPlayState(this.k, this.t ? 101 : 100);
+            this.f25559c.setPlayState(this.k, this.t ? 101 : 100);
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th);
         }
@@ -763,8 +763,8 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
     private void m() {
         int i = this.k;
         if (i > 0) {
-            this.f39250c.updateTaskInfo(i, TPDownloadProxyEnum.TASKINFO_ADAPTIVE_DYNAMIC_SWITCH, Integer.valueOf((this.u || this.v) ? 1 : 0));
-            this.f39250c.updateTaskInfo(this.k, TPDownloadProxyEnum.TASKINFO_MAX_BITRATE, Long.valueOf(this.w));
+            this.f25559c.updateTaskInfo(i, TPDownloadProxyEnum.TASKINFO_ADAPTIVE_DYNAMIC_SWITCH, Integer.valueOf((this.u || this.v) ? 1 : 0));
+            this.f25559c.updateTaskInfo(this.k, TPDownloadProxyEnum.TASKINFO_MAX_BITRATE, Long.valueOf(this.w));
         }
     }
 
@@ -784,7 +784,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
         }
         this.d = 0;
         this.h = g;
-        this.f39250c = null;
+        this.f25559c = null;
         this.w = 100000000L;
     }
 
@@ -805,8 +805,8 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
 
     private void q() {
         try {
-            this.f39250c.setUserData(TPDownloadProxyEnum.DLPARAM_PLAY_START_TIME, Long.valueOf(this.q));
-            this.f39250c.setUserData(TPDownloadProxyEnum.DLPARAM_PLAY_END_TIME, Long.valueOf(this.r));
+            this.f25559c.setUserData(TPDownloadProxyEnum.DLPARAM_PLAY_START_TIME, Long.valueOf(this.q));
+            this.f25559c.setUserData(TPDownloadProxyEnum.DLPARAM_PLAY_END_TIME, Long.valueOf(this.r));
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th);
         }
@@ -868,19 +868,19 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
                 }
                 sb.append(str2);
                 TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", sb.toString());
-                int startPlay = this.f39250c.startPlay(p(), a3, this.e);
+                int startPlay = this.f25559c.startPlay(p(), a3, this.e);
                 if (startPlay <= 0) {
                     TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", "p2p proxy start play failed, cause : playId <= 0");
                     return eVar;
                 }
-                String playUrl = this.f39250c.getPlayUrl(startPlay, 0);
+                String playUrl = this.f25559c.getPlayUrl(startPlay, 0);
                 String str3 = playUrl;
                 if (TextUtils.isEmpty(playUrl)) {
                     str3 = str;
                 }
                 TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", "startDownloadPlay, playId:".concat(String.valueOf(startPlay)));
                 eVar.b(str3);
-                String playUrl2 = this.f39250c.getPlayUrl(startPlay, 1);
+                String playUrl2 = this.f25559c.getPlayUrl(startPlay, 1);
                 if (!TextUtils.isEmpty(playUrl2)) {
                     str = playUrl2;
                 }
@@ -963,13 +963,13 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
                     a2 = com.tencent.thumbplayer.utils.b.a(str);
                     i2 = 1;
                 }
-                int startPlay = this.f39250c.startPlay(a2, tPDownloadParam, this.e);
+                int startPlay = this.f25559c.startPlay(a2, tPDownloadParam, this.e);
                 if (startPlay <= 0) {
                     TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", "p2p proxy start play failed, cause : playId <= 0");
                     return str;
                 }
                 TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", "p2p proxy start play, url type".concat(String.valueOf(i2)));
-                String playUrl = this.f39250c.getPlayUrl(startPlay, i2);
+                String playUrl = this.f25559c.getPlayUrl(startPlay, i2);
                 this.p.put(playUrl, Integer.valueOf(startPlay));
                 return playUrl;
             } catch (Throwable th) {
@@ -993,7 +993,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
             return;
         }
         TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", "set play speed value to proxy:".concat(String.valueOf(f2)));
-        this.f39250c.updateTaskInfo(this.k, TPDownloadProxyEnum.TASKINFO_SPEED_RATIO, Float.valueOf(f2));
+        this.f25559c.updateTaskInfo(this.k, TPDownloadProxyEnum.TASKINFO_SPEED_RATIO, Float.valueOf(f2));
     }
 
     @Override // com.tencent.thumbplayer.c.a
@@ -1003,14 +1003,14 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
             return;
         }
         try {
-            this.f39250c.setPlayState(this.k, i);
+            this.f25559c.setPlayState(this.k, i);
             if ((i == 5 || i == 0) && !com.tencent.thumbplayer.utils.b.a(this.o)) {
                 Iterator<c> it = this.o.iterator();
                 while (it.hasNext()) {
                     c next = it.next();
                     if (next != null) {
-                        TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", "setProxyPlayState definitionID:" + next.f39253a + ", taskID:" + next.b + ", state:" + i);
-                        this.f39250c.setPlayState(next.b, i);
+                        TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", "setProxyPlayState definitionID:" + next.f25562a + ", taskID:" + next.b + ", state:" + i);
+                        this.f25559c.setPlayState(next.b, i);
                     }
                 }
             }
@@ -1044,10 +1044,10 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
             c peek = this.o.peek();
             while (true) {
                 cVar = peek;
-                if (cVar == null || cVar.f39253a == j) {
+                if (cVar == null || cVar.f25562a == j) {
                     break;
                 }
-                TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", "stop proxy definitionID:" + cVar.f39253a + ", taskID:" + cVar.b);
+                TPLogUtil.i("TPThumbPlayer[TPPlayManagerImpl.java]", "stop proxy definitionID:" + cVar.f25562a + ", taskID:" + cVar.b);
                 e(cVar.b);
                 this.o.removeFirst();
                 peek = this.o.peek();
@@ -1077,7 +1077,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
                 long j = tPOptionalParam.getParamLong().value;
                 this.r = j;
                 if (this.k > 0) {
-                    this.f39250c.setUserData(TPDownloadProxyEnum.DLPARAM_PLAY_END_TIME, Long.valueOf(j));
+                    this.f25559c.setUserData(TPDownloadProxyEnum.DLPARAM_PLAY_END_TIME, Long.valueOf(j));
                 }
             } catch (Throwable th) {
                 TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th);
@@ -1126,7 +1126,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
 
     @Override // com.tencent.thumbplayer.c.a
     public void a(String str, Object obj) {
-        ITPDownloadProxy iTPDownloadProxy = this.f39250c;
+        ITPDownloadProxy iTPDownloadProxy = this.f25559c;
         if (iTPDownloadProxy != null) {
             iTPDownloadProxy.updateTaskInfo(this.k, str, obj);
         }
@@ -1190,7 +1190,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
             return;
         }
         try {
-            this.f39250c.pushEvent(i);
+            this.f25559c.pushEvent(i);
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th, "p2p proxy pushEvent failed, event:".concat(String.valueOf(i)));
         }
@@ -1238,7 +1238,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
         this.n = null;
         this.f = new com.tencent.thumbplayer.c.f("TPThumbPlayer[TPPlayManagerImpl.java]");
         this.e = null;
-        this.f39250c = null;
+        this.f25559c = null;
     }
 
     @Override // com.tencent.thumbplayer.c.a
@@ -1252,7 +1252,7 @@ public class e implements com.tencent.thumbplayer.c.a, f.a, i.b {
             return null;
         }
         try {
-            return this.f39250c.getPlayErrorCodeStr(this.k);
+            return this.f25559c.getPlayErrorCodeStr(this.k);
         } catch (Throwable th) {
             TPLogUtil.e("TPThumbPlayer[TPPlayManagerImpl.java]", th);
             return null;

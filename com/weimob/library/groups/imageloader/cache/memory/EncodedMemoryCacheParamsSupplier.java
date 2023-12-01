@@ -17,7 +17,7 @@ public class EncodedMemoryCacheParamsSupplier implements Supplier<MemoryCachePar
     }
 
     /* renamed from: get */
-    public MemoryCacheParams m11375get() {
+    public MemoryCacheParams m8332get() {
         int i = this.maxMemoryCacheSize / 8;
         int i2 = this.maxMemoryCacheSize;
         return new MemoryCacheParams(i2, Integer.MAX_VALUE, i2, Integer.MAX_VALUE, i);

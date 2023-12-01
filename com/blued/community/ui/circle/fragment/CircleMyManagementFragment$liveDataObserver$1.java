@@ -24,6 +24,6 @@ final /* synthetic */ class CircleMyManagementFragment$liveDataObserver$1 extend
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(List<? extends MyCircleModel> list) {
         a(list);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

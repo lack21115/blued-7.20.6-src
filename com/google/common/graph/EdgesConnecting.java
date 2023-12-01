@@ -30,13 +30,13 @@ final class EdgesConnecting<E> extends AbstractSet<E> {
         return connectingEdge != null && connectingEdge.equals(obj);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public UnmodifiableIterator<E> iterator() {
         E connectingEdge = getConnectingEdge();
         return connectingEdge == null ? ImmutableSet.of().iterator() : Iterators.singletonIterator(connectingEdge);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         return getConnectingEdge() == null ? 0 : 1;
     }

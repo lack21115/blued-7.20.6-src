@@ -16,18 +16,17 @@ public class BottomMenuAdapter extends BaseQuickAdapter<BottomMenuPop.MenuItemIn
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, BottomMenuPop.MenuItemInfo menuItemInfo) {
         if (menuItemInfo == null) {
             return;
         }
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv);
-        textView.setText(menuItemInfo.f11214a);
+        textView.setText(menuItemInfo.a);
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.icon);
-        if (menuItemInfo.f11215c != 0) {
+        if (menuItemInfo.c != 0) {
             imageView.setVisibility(0);
-            imageView.setImageResource(menuItemInfo.f11215c);
+            imageView.setImageResource(menuItemInfo.c);
         } else {
             imageView.setVisibility(8);
         }

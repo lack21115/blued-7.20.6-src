@@ -15,10 +15,10 @@ public final class a {
     private static String b = "BannerController";
 
     /* renamed from: a  reason: collision with root package name */
-    i f8052a;
+    i f5212a;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8053c;
+    private String f5213c;
     private String d;
     private boolean e;
     private int f;
@@ -77,12 +77,12 @@ public final class a {
             if (z) {
                 com.anythink.expressad.mbbanner.a.d.a a2 = com.anythink.expressad.mbbanner.a.d.a.a();
                 String unused = a.this.d;
-                a2.a(2, a.this.f8053c);
+                a2.a(2, a.this.f5213c);
                 return;
             }
             com.anythink.expressad.mbbanner.a.d.a a3 = com.anythink.expressad.mbbanner.a.d.a.a();
             String unused2 = a.this.d;
-            String str = a.this.f8053c;
+            String str = a.this.f5213c;
             new com.anythink.expressad.mbbanner.a.b.d(a.this.i + "x" + a.this.h, a.this.j * 1000);
             b unused3 = a.this.v;
             a3.a(3, str);
@@ -95,7 +95,7 @@ public final class a {
                 a.this.t = true;
                 com.anythink.expressad.mbbanner.a.d.a a2 = com.anythink.expressad.mbbanner.a.d.a.a();
                 String unused2 = a.this.d;
-                a2.a(2, a.this.f8053c);
+                a2.a(2, a.this.f5213c);
             }
         }
 
@@ -106,7 +106,7 @@ public final class a {
                 a.this.t = false;
                 com.anythink.expressad.mbbanner.a.d.a a2 = com.anythink.expressad.mbbanner.a.d.a.a();
                 String unused2 = a.this.d;
-                String str = a.this.f8053c;
+                String str = a.this.f5213c;
                 new com.anythink.expressad.mbbanner.a.b.d(a.this.i + "x" + a.this.h, a.this.j * 1000);
                 b unused3 = a.this.v;
                 a2.a(3, str);
@@ -146,7 +146,7 @@ public final class a {
         @Override // com.anythink.expressad.mbbanner.a.c.b
         public final void b() {
             if (a.this.l != null) {
-                a.this.l.a(com.anythink.expressad.mbbanner.a.a.f7995c);
+                a.this.l.a(com.anythink.expressad.mbbanner.a.a.f5155c);
             }
             o.d(a.b, "onResourceFail:");
         }
@@ -158,14 +158,14 @@ public final class a {
             this.h = iVar.a();
             this.i = iVar.b();
         }
-        this.f8052a = iVar;
-        this.f8053c = str2;
+        this.f5212a = iVar;
+        this.f5213c = str2;
         this.d = str;
         com.anythink.expressad.d.b.a();
-        com.anythink.expressad.d.c c2 = com.anythink.expressad.d.b.c(com.anythink.expressad.foundation.b.a.b().e(), this.f8053c);
+        com.anythink.expressad.d.c c2 = com.anythink.expressad.d.b.c(com.anythink.expressad.foundation.b.a.b().e(), this.f5213c);
         this.o = c2;
         if (c2 == null) {
-            this.o = com.anythink.expressad.d.c.c(this.f8053c);
+            this.o = com.anythink.expressad.d.c.c(this.f5213c);
         }
         if (this.k == -1) {
             int b2 = this.o.b();
@@ -217,10 +217,10 @@ public final class a {
 
     private void f() {
         com.anythink.expressad.d.b.a();
-        com.anythink.expressad.d.c c2 = com.anythink.expressad.d.b.c(com.anythink.expressad.foundation.b.a.b().e(), this.f8053c);
+        com.anythink.expressad.d.c c2 = com.anythink.expressad.d.b.c(com.anythink.expressad.foundation.b.a.b().e(), this.f5213c);
         this.o = c2;
         if (c2 == null) {
-            this.o = com.anythink.expressad.d.c.c(this.f8053c);
+            this.o = com.anythink.expressad.d.c.c(this.f5213c);
         }
         if (this.k == -1) {
             int b2 = this.o.b();
@@ -252,10 +252,10 @@ public final class a {
 
     private void g() {
         com.anythink.expressad.d.b.a();
-        com.anythink.expressad.d.c c2 = com.anythink.expressad.d.b.c(com.anythink.expressad.foundation.b.a.b().e(), this.f8053c);
+        com.anythink.expressad.d.c c2 = com.anythink.expressad.d.b.c(com.anythink.expressad.foundation.b.a.b().e(), this.f5213c);
         this.o = c2;
         if (c2 == null) {
-            this.o = com.anythink.expressad.d.c.c(this.f8053c);
+            this.o = com.anythink.expressad.d.c.c(this.f5213c);
         }
         if (this.k == -1) {
             int b2 = this.o.b();
@@ -292,9 +292,9 @@ public final class a {
         }
         if (this.m != null) {
             if (this.n == null) {
-                this.n = new c(this.g, this.u, this.d, this.f8053c, this.e, this.o);
+                this.n = new c(this.g, this.u, this.d, this.f5213c, this.e, this.o);
             }
-            this.n.a(this.f8052a);
+            this.n.a(this.f5212a);
             this.n.b(this.p);
             this.n.c(this.q);
             this.n.a(this.e, this.f);
@@ -321,18 +321,18 @@ public final class a {
         TemplateBannerView templateBannerView = this.g;
         if (templateBannerView != null) {
             if (!this.p || !this.q || this.t || y.a(templateBannerView)) {
-                com.anythink.expressad.mbbanner.a.d.a.a().a(2, this.f8053c);
+                com.anythink.expressad.mbbanner.a.d.a.a().a(2, this.f5213c);
             } else {
                 com.anythink.expressad.mbbanner.a.d.a a2 = com.anythink.expressad.mbbanner.a.d.a.a();
-                String str = this.f8053c;
+                String str = this.f5213c;
                 new com.anythink.expressad.mbbanner.a.b.d(this.i + "x" + this.h, this.j * 1000);
                 a2.a(3, str);
             }
             if (this.p) {
                 return;
             }
-            com.anythink.expressad.mbbanner.a.d.a.a().a(4, this.f8053c);
-            com.anythink.expressad.mbbanner.a.d.a.a().a(this.f8053c);
+            com.anythink.expressad.mbbanner.a.d.a.a().a(4, this.f5213c);
+            com.anythink.expressad.mbbanner.a.d.a.a().a(this.f5213c);
         }
     }
 
@@ -359,7 +359,7 @@ public final class a {
 
     public final void a(d dVar) {
         this.m = dVar;
-        com.anythink.expressad.mbbanner.a.d.a.a().a(this.f8053c, dVar, this.v);
+        com.anythink.expressad.mbbanner.a.d.a.a().a(this.f5213c, dVar, this.v);
     }
 
     public final void a(h hVar) {
@@ -392,8 +392,8 @@ public final class a {
         if (this.g != null) {
             this.g = null;
         }
-        com.anythink.expressad.mbbanner.a.d.a.a().a(4, this.f8053c);
-        com.anythink.expressad.mbbanner.a.d.a.a().a(this.f8053c);
+        com.anythink.expressad.mbbanner.a.d.a.a().a(4, this.f5213c);
+        com.anythink.expressad.mbbanner.a.d.a.a().a(this.f5213c);
         com.anythink.expressad.mbbanner.a.d.a.a().b();
         c cVar = this.n;
         if (cVar != null) {
@@ -409,7 +409,7 @@ public final class a {
 
     public final void c() {
         com.anythink.expressad.mbbanner.a.d.a a2 = com.anythink.expressad.mbbanner.a.d.a.a();
-        String str = this.f8053c;
+        String str = this.f5213c;
         new com.anythink.expressad.mbbanner.a.b.d(this.i + "x" + this.h, this.j * 1000);
         a2.a(4, str);
     }
@@ -421,7 +421,7 @@ public final class a {
 
     public final void d() {
         com.anythink.expressad.mbbanner.a.d.a a2 = com.anythink.expressad.mbbanner.a.d.a.a();
-        String str = this.f8053c;
+        String str = this.f5213c;
         new com.anythink.expressad.mbbanner.a.b.d(this.i + "x" + this.h, this.j * 1000);
         a2.a(3, str);
     }

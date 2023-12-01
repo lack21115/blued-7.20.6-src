@@ -9,11 +9,11 @@ public final class VIPPrivilegeDataModel {
     private final PrivilegeList privilege_list;
     private final UsersInfo users_info;
 
-    public VIPPrivilegeDataModel(PrivilegeList privilege_list, UsersInfo users_info) {
-        Intrinsics.e(privilege_list, "privilege_list");
-        Intrinsics.e(users_info, "users_info");
-        this.privilege_list = privilege_list;
-        this.users_info = users_info;
+    public VIPPrivilegeDataModel(PrivilegeList privilegeList, UsersInfo usersInfo) {
+        Intrinsics.e(privilegeList, "privilege_list");
+        Intrinsics.e(usersInfo, "users_info");
+        this.privilege_list = privilegeList;
+        this.users_info = usersInfo;
     }
 
     public static /* synthetic */ VIPPrivilegeDataModel copy$default(VIPPrivilegeDataModel vIPPrivilegeDataModel, PrivilegeList privilegeList, UsersInfo usersInfo, int i, Object obj) {
@@ -34,10 +34,10 @@ public final class VIPPrivilegeDataModel {
         return this.users_info;
     }
 
-    public final VIPPrivilegeDataModel copy(PrivilegeList privilege_list, UsersInfo users_info) {
-        Intrinsics.e(privilege_list, "privilege_list");
-        Intrinsics.e(users_info, "users_info");
-        return new VIPPrivilegeDataModel(privilege_list, users_info);
+    public final VIPPrivilegeDataModel copy(PrivilegeList privilegeList, UsersInfo usersInfo) {
+        Intrinsics.e(privilegeList, "privilege_list");
+        Intrinsics.e(usersInfo, "users_info");
+        return new VIPPrivilegeDataModel(privilegeList, usersInfo);
     }
 
     public boolean equals(Object obj) {

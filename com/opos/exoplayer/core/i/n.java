@@ -4,11 +4,11 @@ package com.opos.exoplayer.core.i;
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f25498a;
+    private byte[] f11810a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25499c;
+    private int f11811c;
     private int d;
 
     public n(byte[] bArr, int i, int i2) {
@@ -19,7 +19,7 @@ public final class n {
         if (2 > i || i >= this.b) {
             return false;
         }
-        byte[] bArr = this.f25498a;
+        byte[] bArr = this.f11810a;
         return bArr[i] == 3 && bArr[i - 2] == 0 && bArr[i - 1] == 0;
     }
 
@@ -42,7 +42,7 @@ public final class n {
 
     private void g() {
         int i;
-        int i2 = this.f25499c;
+        int i2 = this.f11811c;
         a.b(i2 >= 0 && (i2 < (i = this.b) || (i2 == i && this.d == 0)));
     }
 
@@ -52,58 +52,58 @@ public final class n {
         this.d = i2;
         if (i2 == 8) {
             this.d = 0;
-            int i3 = this.f25499c;
+            int i3 = this.f11811c;
             if (d(i3 + 1)) {
                 i = 2;
             }
-            this.f25499c = i + i3;
+            this.f11811c = i + i3;
         }
         g();
     }
 
     public void a(int i) {
-        int i2 = this.f25499c;
+        int i2 = this.f11811c;
         int i3 = i / 8;
         int i4 = i2 + i3;
-        this.f25499c = i4;
+        this.f11811c = i4;
         int i5 = (i - (i3 * 8)) + this.d;
         this.d = i5;
         int i6 = i2;
         if (i5 > 7) {
-            this.f25499c = i4 + 1;
+            this.f11811c = i4 + 1;
             this.d = i5 - 8;
             i6 = i2;
         }
         while (true) {
             int i7 = i6 + 1;
-            if (i7 > this.f25499c) {
+            if (i7 > this.f11811c) {
                 g();
                 return;
             }
             i6 = i7;
             if (d(i7)) {
-                this.f25499c++;
+                this.f11811c++;
                 i6 = i7 + 2;
             }
         }
     }
 
     public void a(byte[] bArr, int i, int i2) {
-        this.f25498a = bArr;
-        this.f25499c = i;
+        this.f11810a = bArr;
+        this.f11811c = i;
         this.b = i2;
         this.d = 0;
         g();
     }
 
     public boolean b() {
-        boolean z = (this.f25498a[this.f25499c] & (128 >> this.d)) != 0;
+        boolean z = (this.f11810a[this.f11811c] & (128 >> this.d)) != 0;
         a();
         return z;
     }
 
     public boolean b(int i) {
-        int i2 = this.f25499c;
+        int i2 = this.f11811c;
         int i3 = i / 8;
         int i4 = i2 + i3;
         int i5 = (this.d + i) - (i3 * 8);
@@ -150,23 +150,23 @@ public final class n {
             }
             int i5 = i2 - 8;
             this.d = i5;
-            byte[] bArr = this.f25498a;
-            int i6 = this.f25499c;
+            byte[] bArr = this.f11810a;
+            int i6 = this.f11811c;
             i4 |= (bArr[i6] & 255) << i5;
             if (!d(i6 + 1)) {
                 i3 = 1;
             }
-            this.f25499c = i3 + i6;
+            this.f11811c = i3 + i6;
         }
-        byte[] bArr2 = this.f25498a;
-        int i7 = this.f25499c;
+        byte[] bArr2 = this.f11810a;
+        int i7 = this.f11811c;
         byte b = bArr2[i7];
         if (i2 == 8) {
             this.d = 0;
             if (!d(i7 + 1)) {
                 i3 = 1;
             }
-            this.f25499c = i7 + i3;
+            this.f11811c = i7 + i3;
         }
         g();
         return ((-1) >>> (32 - i)) & (((b & 255) >> (8 - i2)) | i4);
@@ -174,18 +174,18 @@ public final class n {
 
     public boolean c() {
         int i;
-        int i2 = this.f25499c;
+        int i2 = this.f11811c;
         int i3 = this.d;
         int i4 = 0;
         while (true) {
             i = i4;
-            if (this.f25499c >= this.b || b()) {
+            if (this.f11811c >= this.b || b()) {
                 break;
             }
             i4 = i + 1;
         }
-        boolean z = this.f25499c == this.b;
-        this.f25499c = i2;
+        boolean z = this.f11811c == this.b;
+        this.f11811c = i2;
         this.d = i3;
         boolean z2 = false;
         if (!z) {

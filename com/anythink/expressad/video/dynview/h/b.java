@@ -21,17 +21,17 @@ public final class b {
     final class AnonymousClass5 implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f8371a;
+        final /* synthetic */ View f5531a;
 
         AnonymousClass5(View view) {
-            this.f8371a = view;
+            this.f5531a = view;
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-            ViewGroup.LayoutParams layoutParams = this.f8371a.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = this.f5531a.getLayoutParams();
             layoutParams.width = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-            this.f8371a.setLayoutParams(layoutParams);
+            this.f5531a.setLayoutParams(layoutParams);
         }
     }
 
@@ -40,16 +40,16 @@ public final class b {
     final class AnonymousClass6 implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f8372a;
+        final /* synthetic */ View f5532a;
 
         AnonymousClass6(View view) {
-            this.f8372a = view;
+            this.f5532a = view;
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-            this.f8372a.setScaleX(((Float) valueAnimator.getAnimatedValue()).floatValue());
-            this.f8372a.setScaleY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+            this.f5532a.setScaleX(((Float) valueAnimator.getAnimatedValue()).floatValue());
+            this.f5532a.setScaleY(((Float) valueAnimator.getAnimatedValue()).floatValue());
         }
     }
 

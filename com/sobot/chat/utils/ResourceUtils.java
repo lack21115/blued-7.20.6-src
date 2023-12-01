@@ -30,7 +30,7 @@ public class ResourceUtils {
     }
 
     public static int getDrawableId(Context context, String str) {
-        return getIdByName(context, i.f7952c, str);
+        return getIdByName(context, i.f5112c, str);
     }
 
     public static int getIdByName(Context context, String str, String str2) {
@@ -79,12 +79,14 @@ public class ResourceUtils {
         return context.getResources().getString(getResStrId(context, str));
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v10, types: [java.io.FileInputStream] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x007c -> B:38:0x0095). Please submit an issue!!! */
     public static String readExternal(String str) throws IOException {
         FileInputStream fileInputStream;
         StringBuffer stringBuffer = new StringBuffer();
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            InputStreamReader inputStreamReader = null;
+            FileInputStream fileInputStream2 = null;
             try {
             } catch (IOException e) {
                 e.printStackTrace();
@@ -93,8 +95,8 @@ public class ResourceUtils {
                 try {
                     fileInputStream = new FileInputStream(str);
                     try {
-                        inputStreamReader = new InputStreamReader(fileInputStream, "UTF-8");
-                        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                        fileInputStream2 = new InputStreamReader(fileInputStream, "UTF-8");
+                        BufferedReader bufferedReader = new BufferedReader(fileInputStream2);
                         while (true) {
                             String readLine = bufferedReader.readLine();
                             if (readLine == null) {
@@ -103,22 +105,22 @@ public class ResourceUtils {
                             stringBuffer.append(readLine);
                         }
                         bufferedReader.close();
-                        inputStreamReader.close();
+                        fileInputStream2.close();
                         fileInputStream.close();
                     } catch (Exception e2) {
                         e = e2;
-                        inputStreamReader = fileInputStream;
+                        fileInputStream2 = fileInputStream;
                         e.printStackTrace();
                         if (fileInputStream != null) {
                             fileInputStream.close();
                         }
                         return stringBuffer.toString();
                     } catch (Throwable th) {
-                        inputStreamReader = fileInputStream;
+                        fileInputStream2 = fileInputStream;
                         th = th;
-                        if (inputStreamReader != null) {
+                        if (fileInputStream2 != null) {
                             try {
-                                inputStreamReader.close();
+                                fileInputStream2.close();
                             } catch (IOException e3) {
                                 e3.printStackTrace();
                             }

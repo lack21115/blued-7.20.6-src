@@ -42,12 +42,12 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
     }
 
     public AMap getMap() {
-        IMapFragmentDelegate a2 = a();
-        if (a2 == null) {
+        IMapFragmentDelegate a = a();
+        if (a == null) {
             return null;
         }
         try {
-            IAMap map = a2.getMap();
+            IAMap map = a.getMap();
             if (map == null) {
                 return null;
             }
@@ -79,17 +79,14 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onAttach(Activity activity) {
         super.onAttach(activity);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Bundle bundle2 = bundle;
         if (bundle == null) {
@@ -103,7 +100,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         return a().onCreateView(layoutInflater, viewGroup, bundle2);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onDestroy() {
         try {
             a().onDestroy();
@@ -114,7 +110,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         super.onDestroy();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onDestroyView() {
         try {
             a().onDestroyView();
@@ -124,13 +119,11 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         super.onDestroyView();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onHiddenChanged(boolean z) {
         Tracker.onHiddenChanged(this, z);
         super.onHiddenChanged(z);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onInflate(Activity activity, AttributeSet attributeSet, Bundle bundle) {
         super.onInflate(activity, attributeSet, bundle);
         try {
@@ -140,7 +133,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
     public void onLowMemory() {
         super.onLowMemory();
         try {
@@ -150,7 +142,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onPause() {
         Tracker.onPause(this);
         super.onPause();
@@ -161,7 +152,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onResume() {
         Tracker.onResume(this);
         super.onResume();
@@ -172,7 +162,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         try {
             a().onSaveInstanceState(bundle);
@@ -182,7 +171,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         super.onSaveInstanceState(bundle);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void setArguments(Bundle bundle) {
         try {
             super.setArguments(bundle);
@@ -191,7 +179,6 @@ public class TextureSupportMapFragment extends Fragment implements BaseMapView {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         Tracker.setUserVisibleHint(this, z);
         super.setUserVisibleHint(z);

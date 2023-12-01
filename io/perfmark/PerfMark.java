@@ -89,7 +89,7 @@ public final class PerfMark {
         L82:
             return
         */
-        throw new UnsupportedOperationException("Method not decompiled: io.perfmark.PerfMark.m12622clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: io.perfmark.PerfMark.m11531clinit():void");
     }
 
     private PerfMark() {

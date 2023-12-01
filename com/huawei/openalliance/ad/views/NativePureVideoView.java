@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.ImageView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.ads.ge;
 import com.huawei.hms.ads.gn;
 import com.huawei.hms.ads.go;
@@ -35,11 +34,11 @@ public class NativePureVideoView extends NativeMediaView implements la, ls {
     private ImageView L;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f23005a;
+    private boolean f9397a;
     private v b;
 
     /* renamed from: c  reason: collision with root package name */
-    private k f23006c;
+    private k f9398c;
     private boolean d;
     private long e;
     private long f;
@@ -355,16 +354,16 @@ public class NativePureVideoView extends NativeMediaView implements la, ls {
             return;
         }
         k kVar = Z.get(0);
-        this.f23006c = kVar;
+        this.f9398c = kVar;
         if (kVar != null) {
             if (au.B(kVar.Z())) {
                 ge.V(S, "don't load preview image with http url");
                 return;
             }
-            if (this.f23006c.B() > 0) {
-                setRatio(Float.valueOf((this.f23006c.C() * 1.0f) / this.f23006c.B()));
+            if (this.f9398c.B() > 0) {
+                setRatio(Float.valueOf((this.f9398c.C() * 1.0f) / this.f9398c.B()));
             }
-            this.F.Code(this.f23006c);
+            this.F.Code(this.f9398c);
         }
     }
 
@@ -388,7 +387,7 @@ public class NativePureVideoView extends NativeMediaView implements la, ls {
 
     private void d() {
         e();
-        this.f23005a = false;
+        this.f9397a = false;
         this.d = false;
     }
 
@@ -415,7 +414,7 @@ public class NativePureVideoView extends NativeMediaView implements la, ls {
     }
 
     private String getTAG() {
-        return S + BridgeUtil.UNDERLINE_STR + hashCode();
+        return S + "_" + hashCode();
     }
 
     @Override // com.huawei.hms.ads.la
@@ -425,7 +424,7 @@ public class NativePureVideoView extends NativeMediaView implements la, ls {
 
     @Override // com.huawei.hms.ads.la
     public void Code(k kVar, Drawable drawable) {
-        k kVar2 = this.f23006c;
+        k kVar2 = this.f9398c;
         if (kVar2 == null || kVar == null || !TextUtils.equals(kVar2.Z(), kVar.Z())) {
             return;
         }
@@ -439,7 +438,7 @@ public class NativePureVideoView extends NativeMediaView implements la, ls {
         if (!z || (vVar2 = this.b) == null || vVar == null || !TextUtils.equals(vVar2.V(), vVar.V())) {
             return;
         }
-        this.f23005a = true;
+        this.f9397a = true;
         this.D.setVideoFileUrl(vVar.V());
         if (this.d) {
             V(false);

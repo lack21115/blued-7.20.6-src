@@ -3,7 +3,6 @@ package com.umeng.commonsdk.stateless;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.umeng.commonsdk.internal.crash.UMCrashManager;
 import com.umeng.commonsdk.statistics.common.ULog;
 import java.io.ByteArrayOutputStream;
@@ -24,7 +23,7 @@ import java.util.zip.Deflater;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f40896a;
+    public static int f27205a;
     private static Object b = new Object();
 
     /* JADX WARN: Code restructure failed: missing block: B:55:0x0150, code lost:
@@ -247,7 +246,7 @@ public class d {
                     File[] listFiles = file.listFiles(new FilenameFilter() { // from class: com.umeng.commonsdk.stateless.d.5
                         @Override // java.io.FilenameFilter
                         public boolean accept(File file2, String str3) {
-                            return str3.startsWith(String.this);
+                            return str3.startsWith(str2);
                         }
                     });
                     if (listFiles == null || listFiles.length < i) {
@@ -383,13 +382,13 @@ public class d {
         deflater.setInput(bArr);
         deflater.finish();
         byte[] bArr2 = new byte[8192];
-        f40896a = 0;
+        f27205a = 0;
         try {
             byteArrayOutputStream = new ByteArrayOutputStream();
             while (!deflater.finished()) {
                 try {
                     int deflate = deflater.deflate(bArr2);
-                    f40896a += deflate;
+                    f27205a += deflate;
                     byteArrayOutputStream.write(bArr2, 0, deflate);
                 } catch (Throwable th) {
                     th = th;
@@ -544,7 +543,7 @@ public class d {
 
     public static String d(String str) {
         if (!TextUtils.isEmpty(str) && str.indexOf("envelope") < 0) {
-            int lastIndexOf = str.lastIndexOf(BridgeUtil.UNDERLINE_STR);
+            int lastIndexOf = str.lastIndexOf("_");
             String str2 = "";
             if (lastIndexOf >= 0) {
                 int lastIndexOf2 = str.lastIndexOf(".");

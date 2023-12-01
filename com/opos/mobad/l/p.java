@@ -7,15 +7,15 @@ import android.os.SystemClock;
 public class p implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Runnable f26325a;
+    private Runnable f12637a;
     private volatile long b = Long.MAX_VALUE;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f26326c;
+    private Handler f12638c;
 
     public p(Handler handler, Runnable runnable) {
-        this.f26326c = handler;
-        this.f26325a = runnable;
+        this.f12638c = handler;
+        this.f12637a = runnable;
     }
 
     public void a() {
@@ -25,17 +25,17 @@ public class p implements Runnable {
     public void a(long j) {
         long max = Math.max(0L, j);
         this.b = SystemClock.uptimeMillis() + max;
-        this.f26326c.postDelayed(this, max);
+        this.f12638c.postDelayed(this, max);
     }
 
     public void b() {
-        this.f26326c.removeCallbacks(this);
+        this.f12638c.removeCallbacks(this);
     }
 
     @Override // java.lang.Runnable
     public void run() {
         Runnable runnable;
-        if (SystemClock.uptimeMillis() >= this.b && (runnable = this.f26325a) != null) {
+        if (SystemClock.uptimeMillis() >= this.b && (runnable = this.f12637a) != null) {
             runnable.run();
         }
     }

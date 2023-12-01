@@ -33,7 +33,6 @@ public class MusicVideoCollectPresent extends MvpPresenter {
         }
         if (this.l) {
             FeedHttpUtils.b(new BluedUIHttpResponse<BluedEntity<BluedIngSelfFeed, VideoScanMusic>>(g()) { // from class: com.blued.community.ui.video.presenter.MusicVideoCollectPresent.1
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish(boolean z) {
                     if (!z && MusicVideoCollectPresent.this.j != 1) {
                         MusicVideoCollectPresent.c(MusicVideoCollectPresent.this);
@@ -41,20 +40,19 @@ public class MusicVideoCollectPresent extends MvpPresenter {
                     iFetchDataListener.a(z);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<BluedIngSelfFeed, VideoScanMusic> bluedEntity) {
                     boolean z = false;
                     if (bluedEntity != null) {
-                        if (bluedEntity.extra != null && !TextUtils.isEmpty(bluedEntity.extra.music_id)) {
-                            MusicVideoCollectPresent.this.h = bluedEntity.extra;
+                        if (bluedEntity.extra != null && !TextUtils.isEmpty(((VideoScanMusic) bluedEntity.extra).music_id)) {
+                            MusicVideoCollectPresent.this.h = (VideoScanMusic) bluedEntity.extra;
                         }
-                        MusicVideoCollectPresent.this.a("collect_music", (String) bluedEntity.extra);
+                        MusicVideoCollectPresent.this.a("collect_music", (VideoScanMusic) bluedEntity.extra);
                         if (bluedEntity.hasData()) {
                             iFetchDataListener.a("collect_list", bluedEntity.data);
                         }
                         if (bluedEntity.extra != null) {
                             MusicVideoCollectPresent musicVideoCollectPresent = MusicVideoCollectPresent.this;
-                            if (bluedEntity.extra.has_more == 1) {
+                            if (((VideoScanMusic) bluedEntity.extra).has_more == 1) {
                                 z = true;
                             }
                             musicVideoCollectPresent.l = z;
@@ -73,7 +71,6 @@ public class MusicVideoCollectPresent extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         VideoScanMusic videoScanMusic = (VideoScanMusic) bundle.getSerializable("video_scan_music");
@@ -83,16 +80,14 @@ public class MusicVideoCollectPresent extends MvpPresenter {
             return;
         }
         this.i = this.h.music_id;
-        a("collect_music", (String) this.h);
+        a("collect_music", this.h);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.j = 1;
         c(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.j++;
         c(iFetchDataListener);
@@ -101,22 +96,21 @@ public class MusicVideoCollectPresent extends MvpPresenter {
     public void m() {
         if (p().i_star == 1) {
             p().i_star = 0;
-            a("collect_music", (String) this.h);
+            a("collect_music", this.h);
             o();
             return;
         }
         p().i_star = 1;
-        a("collect_music", (String) this.h);
+        a("collect_music", this.h);
         n();
     }
 
     public void n() {
         FeedHttpUtils.e(new BluedUIHttpResponse(g()) { // from class: com.blued.community.ui.video.presenter.MusicVideoCollectPresent.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 MusicVideoCollectPresent.this.p().i_star = 1;
                 MusicVideoCollectPresent musicVideoCollectPresent = MusicVideoCollectPresent.this;
-                musicVideoCollectPresent.a("collect_music", (String) musicVideoCollectPresent.h);
+                musicVideoCollectPresent.a("collect_music", musicVideoCollectPresent.h);
                 AppMethods.d(R.string.music_collection_success);
             }
         }, this.i, g());
@@ -124,11 +118,10 @@ public class MusicVideoCollectPresent extends MvpPresenter {
 
     public void o() {
         FeedHttpUtils.f(new BluedUIHttpResponse(g()) { // from class: com.blued.community.ui.video.presenter.MusicVideoCollectPresent.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 MusicVideoCollectPresent.this.p().i_star = 0;
                 MusicVideoCollectPresent musicVideoCollectPresent = MusicVideoCollectPresent.this;
-                musicVideoCollectPresent.a("collect_music", (String) musicVideoCollectPresent.h);
+                musicVideoCollectPresent.a("collect_music", musicVideoCollectPresent.h);
             }
         }, this.i, g());
     }

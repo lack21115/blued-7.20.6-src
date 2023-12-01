@@ -2,13 +2,9 @@ package com.anythink.core.common.g;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/g.class */
 public final class g {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6727a = -1000;
+    public static final int a = -1000;
     public static final int b = -1001;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6728c = -1002;
+    public static final int c = -1002;
     public static final int d = -1003;
     public static final int e = -1004;
     public static final int f = -1005;

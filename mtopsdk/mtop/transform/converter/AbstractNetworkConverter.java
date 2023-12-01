@@ -18,10 +18,10 @@ public abstract class AbstractNetworkConverter implements INetworkConverter {
     public String a(String str, String str2, MtopProxy mtopProxy) {
         UserUnit userUnit;
         ApiUnit l;
-        if (!SwitchConfig.a().d() || StringUtils.b(str) || StringUtils.b(str2) || (userUnit = mtopProxy.e.p) == null || !UserUnit.UnitType.UNIT.a().equalsIgnoreCase(userUnit.b.a()) || !StringUtils.a(userUnit.f43778c) || (l = SDKConfig.a().l()) == null || l.b == null || !l.b.contains(new ApiInfo(str, str2))) {
+        if (!SwitchConfig.a().d() || StringUtils.b(str) || StringUtils.b(str2) || (userUnit = mtopProxy.e.p) == null || !UserUnit.UnitType.UNIT.a().equalsIgnoreCase(userUnit.b.a()) || !StringUtils.a(userUnit.c) || (l = SDKConfig.a().l()) == null || l.b == null || !l.b.contains(new ApiInfo(str, str2))) {
             return null;
         }
-        return userUnit.f43778c;
+        return userUnit.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -49,10 +49,10 @@ public abstract class AbstractNetworkConverter implements INetworkConverter {
         if (StringUtils.b(str)) {
             str2 = "utf-8";
         }
-        String a2 = NetworkConverterUtils.a(map, str2);
-        if (a2 != null) {
+        String a = NetworkConverterUtils.a(map, str2);
+        if (a != null) {
             try {
-                return a2.getBytes(str2);
+                return a.getBytes(str2);
             } catch (Exception e) {
                 TBSdkLog.d("mtopsdk.NetworkConverter", "[createParamPostData]getPostData error");
                 return null;

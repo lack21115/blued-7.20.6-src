@@ -16,11 +16,11 @@ import kotlin.Metadata;
 public final class SearchShortcutAdapter extends BaseQuickAdapter<SearchGlobalInfo.SearchShortcutModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f33158a;
+    private final IRequestHost f19467a;
 
     public SearchShortcutAdapter(IRequestHost iRequestHost) {
         super((int) R.layout.item_search_global_shortcut);
-        this.f33158a = iRequestHost;
+        this.f19467a = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -30,7 +30,7 @@ public final class SearchShortcutAdapter extends BaseQuickAdapter<SearchGlobalIn
         if (baseViewHolder == null || searchShortcutModel == null) {
             return;
         }
-        ImageLoader.a(this.f33158a, searchShortcutModel.getIcon_url()).b(BluedSkinUtils.c() ? 2131233787 : 2131233788).a((ImageView) baseViewHolder.getView(R.id.iv_shortcut_icon));
+        ImageLoader.a(this.f19467a, searchShortcutModel.getIcon_url()).b(BluedSkinUtils.c() ? 2131233787 : 2131233788).a((ImageView) baseViewHolder.getView(R.id.iv_shortcut_icon));
         ((TextView) baseViewHolder.getView(R.id.tv_shortcut_name)).setText(searchShortcutModel.getName());
     }
 }

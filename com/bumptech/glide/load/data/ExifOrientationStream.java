@@ -8,20 +8,20 @@ import java.io.InputStream;
 public final class ExifOrientationStream extends FilterInputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f20717a;
+    private static final byte[] f7111a;
     private static final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f20718c;
+    private static final int f7112c;
     private final byte d;
     private int e;
 
     static {
         byte[] bArr = {-1, -31, 0, 28, 69, 120, 105, 102, 0, 0, 77, 77, 0, 0, 0, 0, 0, 8, 0, 1, 1, 18, 0, 2, 0, 0, 0, 1, 0};
-        f20717a = bArr;
+        f7111a = bArr;
         int length = bArr.length;
         b = length;
-        f20718c = length + 2;
+        f7112c = length + 2;
     }
 
     public ExifOrientationStream(InputStream inputStream, int i) {
@@ -47,7 +47,7 @@ public final class ExifOrientationStream extends FilterInputStream {
     public int read() throws IOException {
         int i;
         int i2 = this.e;
-        byte read = (i2 < 2 || i2 > (i = f20718c)) ? super.read() : i2 == i ? this.d : f20717a[i2 - 2] & 255;
+        byte read = (i2 < 2 || i2 > (i = f7112c)) ? super.read() : i2 == i ? this.d : f7111a[i2 - 2] & 255;
         if (read != -1) {
             this.e++;
         }
@@ -58,7 +58,7 @@ public final class ExifOrientationStream extends FilterInputStream {
     public int read(byte[] bArr, int i, int i2) throws IOException {
         int i3;
         int i4 = this.e;
-        int i5 = f20718c;
+        int i5 = f7112c;
         if (i4 > i5) {
             i3 = super.read(bArr, i, i2);
         } else if (i4 == i5) {
@@ -68,7 +68,7 @@ public final class ExifOrientationStream extends FilterInputStream {
             i3 = super.read(bArr, i, 2 - i4);
         } else {
             int min = Math.min(i5 - i4, i2);
-            System.arraycopy((Object) f20717a, this.e - 2, (Object) bArr, i, min);
+            System.arraycopy(f7111a, this.e - 2, bArr, i, min);
             i3 = min;
         }
         if (i3 > 0) {

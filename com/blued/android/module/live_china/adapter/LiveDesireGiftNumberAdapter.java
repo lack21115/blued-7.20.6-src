@@ -22,13 +22,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveDesireGiftNumberAdapter.class */
 public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveDesireGiftNumberModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public FragmentManager f11611a;
+    public FragmentManager a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f11612c;
+    public int c;
     private GiftNumberEventCallBack d;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveDesireGiftNumberAdapter$GiftNumberEventCallBack.class */
@@ -38,9 +34,9 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
 
     public LiveDesireGiftNumberAdapter(Context context, FragmentManager fragmentManager, GiftNumberEventCallBack giftNumberEventCallBack) {
         super(new ArrayList());
-        this.f11612c = 0;
+        this.c = 0;
         this.mContext = context;
-        this.f11611a = fragmentManager;
+        this.a = fragmentManager;
         this.d = giftNumberEventCallBack;
         addItemType(0, R.layout.item_live_desire_gift_number);
         addItemType(1, R.layout.item_live_desire_gift_number_input);
@@ -48,7 +44,7 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(View view, LiveDesireGiftNumberModel liveDesireGiftNumberModel) {
-        if ((liveDesireGiftNumberModel == null || this.f11612c != liveDesireGiftNumberModel.id) && this.d != null) {
+        if ((liveDesireGiftNumberModel == null || this.c != liveDesireGiftNumberModel.id) && this.d != null) {
             View view2 = this.b;
             if (view2 != null) {
                 a(view2, false);
@@ -56,10 +52,10 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
             if (view != null) {
                 a(view, true);
                 this.b = view;
-                this.f11612c = liveDesireGiftNumberModel.id;
+                this.c = liveDesireGiftNumberModel.id;
             } else {
                 this.b = null;
-                this.f11612c = 0;
+                this.c = 0;
             }
             this.d.giftNumber(liveDesireGiftNumberModel);
         }
@@ -126,7 +122,7 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
                 }
                 liveDesireGiftNumberModel.count = 0;
                 view.setClickable(false);
-                if (LiveDesireGiftNumberAdapter.this.f11612c == liveDesireGiftNumberModel.id) {
+                if (LiveDesireGiftNumberAdapter.this.c == liveDesireGiftNumberModel.id) {
                     LiveDesireGiftNumberAdapter.this.a((View) null, (LiveDesireGiftNumberModel) null);
                 }
                 LiveDesireGiftNumberAdapter.this.a(view2, false);
@@ -143,9 +139,9 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireGiftNumberAdapter$HH87omUZPN9sRw4qPSge2Wtw48A
             @Override // android.widget.TextView.OnEditorActionListener
             public final boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                boolean a2;
-                a2 = LiveDesireGiftNumberAdapter.a(EditText.this, textView, i, keyEvent);
-                return a2;
+                boolean a;
+                a = LiveDesireGiftNumberAdapter.a(EditText.this, textView, i, keyEvent);
+                return a;
             }
         });
     }
@@ -172,7 +168,7 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
         ((TextView) baseViewHolder.getView(R.id.tv_number)).setText(String.valueOf(liveDesireGiftNumberModel.count));
         ((TextView) baseViewHolder.getView(R.id.tv_title)).setText(liveDesireGiftNumberModel.title);
         final View view = baseViewHolder.getView(R.id.iv_check);
-        if (this.f11612c == liveDesireGiftNumberModel.id) {
+        if (this.c == liveDesireGiftNumberModel.id) {
             view.setAlpha(1.0f);
             view.setTag(true);
             this.b = view;
@@ -199,7 +195,7 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
             editText.setText("");
             view2.setAlpha(0.0f);
         }
-        if (this.f11612c == liveDesireGiftNumberModel.id) {
+        if (this.c == liveDesireGiftNumberModel.id) {
             view.setAlpha(1.0f);
             view.setTag(true);
             this.b = view;
@@ -215,7 +211,6 @@ public class LiveDesireGiftNumberAdapter extends BaseMultiItemQuickAdapter<LiveD
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, LiveDesireGiftNumberModel liveDesireGiftNumberModel) {
         int i = liveDesireGiftNumberModel.type;

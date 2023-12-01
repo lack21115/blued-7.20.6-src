@@ -39,7 +39,7 @@ public class WeaponHI {
             }
             if (application != null) {
                 IntentFilter intentFilter = new IntentFilter(bp.f);
-                intentFilter.addDataScheme(com.umeng.analytics.pro.at.f40633a);
+                intentFilter.addDataScheme(com.umeng.analytics.pro.at.f26942a);
                 application.registerReceiver(weaponRECE, intentFilter);
             }
         } catch (Throwable th) {

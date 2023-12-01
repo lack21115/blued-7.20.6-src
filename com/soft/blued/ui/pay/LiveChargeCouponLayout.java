@@ -16,11 +16,11 @@ import com.blued.android.module.live_china.live_info.LiveRoomInfo;
 public class LiveChargeCouponLayout extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f32985a;
+    private Context f19294a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f32986c;
+    private int f19295c;
     private Paint d;
     private Paint e;
     private Path f;
@@ -42,13 +42,13 @@ public class LiveChargeCouponLayout extends FrameLayout {
         this.f = new Path();
         this.g = new Path();
         this.i = 0;
-        this.f32985a = context;
+        this.f19294a = context;
         a();
     }
 
     private void a() {
-        this.f32986c = DisplayUtil.a(this.f32985a, 6.0f);
-        this.b = DisplayUtil.a(this.f32985a, 0.5f);
+        this.f19295c = DisplayUtil.a(this.f19294a, 6.0f);
+        this.b = DisplayUtil.a(this.f19294a, 0.5f);
         this.d.setStyle(Paint.Style.STROKE);
         this.d.setAntiAlias(true);
         this.d.setDither(true);
@@ -58,7 +58,7 @@ public class LiveChargeCouponLayout extends FrameLayout {
         } else {
             this.d.setColor(Color.parseColor("#E5E5E5"));
         }
-        DashPathEffect dashPathEffect = new DashPathEffect(new float[]{DisplayUtil.a(this.f32985a, 4.0f), DisplayUtil.a(this.f32985a, 4.0f)}, 0.0f);
+        DashPathEffect dashPathEffect = new DashPathEffect(new float[]{DisplayUtil.a(this.f19294a, 4.0f), DisplayUtil.a(this.f19294a, 4.0f)}, 0.0f);
         this.h = dashPathEffect;
         this.d.setPathEffect(dashPathEffect);
         Paint paint = new Paint();
@@ -75,31 +75,29 @@ public class LiveChargeCouponLayout extends FrameLayout {
         setBackgroundResource(2131102388);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (getMeasuredWidth() > 0) {
             canvas.drawPath(this.f, this.e);
-            canvas.drawLine(this.f32986c, this.i, getMeasuredWidth() - this.f32986c, this.i, this.d);
+            canvas.drawLine(this.f19295c, this.i, getMeasuredWidth() - this.f19295c, this.i, this.d);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (z) {
-            this.i = getMeasuredHeight() - DisplayUtil.a(this.f32985a, 40.0f);
+            this.i = getMeasuredHeight() - DisplayUtil.a(this.f19294a, 40.0f);
             this.g.reset();
-            this.g.addCircle(0.0f, this.i, this.f32986c, Path.Direction.CW);
-            this.g.addCircle(getMeasuredWidth(), this.i, this.f32986c, Path.Direction.CW);
+            this.g.addCircle(0.0f, this.i, this.f19295c, Path.Direction.CW);
+            this.g.addCircle(getMeasuredWidth(), this.i, this.f19295c, Path.Direction.CW);
             this.g.close();
             this.f.reset();
             Path path = this.f;
             float measuredWidth = getMeasuredWidth();
             float measuredHeight = getMeasuredHeight();
-            int i5 = this.f32986c;
+            int i5 = this.f19295c;
             path.addRoundRect(0.0f, 0.0f, measuredWidth, measuredHeight, i5, i5, Path.Direction.CW);
             this.f.op(this.g, Path.Op.DIFFERENCE);
             this.f.close();

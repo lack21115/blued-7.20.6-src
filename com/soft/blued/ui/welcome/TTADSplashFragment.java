@@ -90,23 +90,20 @@ public class TTADSplashFragment extends TimeoutFragment {
         });
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public void g() {
         k();
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment
     public View h() {
         return this.o;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
     public void j() {
-        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.n, R.drawable.app_loading_bg));
+        getActivity().getWindow().getDecorView().setBackground(BluedSkinUtils.b(this.n, (int) R.drawable.app_loading_bg));
         this.u = (FrameLayout) this.o.findViewById(R.id.fl_ad_content);
         View findViewById = this.o.findViewById(R.id.ll_click_skip);
         this.v = findViewById;
@@ -139,7 +136,6 @@ public class TTADSplashFragment extends TimeoutFragment {
         e();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.n = getActivity();
         getActivity().overridePendingTransition(R.anim.activity_switch_none, R.anim.activity_switch_none);
@@ -160,13 +156,11 @@ public class TTADSplashFragment extends TimeoutFragment {
         return this.o;
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         m = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnKeyListener
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (i == 4 || i == 3) {
             return true;
@@ -174,7 +168,6 @@ public class TTADSplashFragment extends TimeoutFragment {
         return super.onKeyDown(i, keyEvent);
     }
 
-    @Override // com.blued.android.ui.TimeoutFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
     }

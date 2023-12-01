@@ -16,7 +16,6 @@ import android.service.wallpaper.WallpaperService;
 import android.util.AttributeSet;
 import android.util.Printer;
 import android.util.Xml;
-import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParserException;
@@ -176,7 +175,7 @@ public final class WallpaperInfo implements Parcelable {
     }
 
     public String toString() {
-        return "WallpaperInfo{" + this.mService.serviceInfo.name + ", settings: " + this.mSettingsActivityName + i.d;
+        return "WallpaperInfo{" + this.mService.serviceInfo.name + ", settings: " + this.mSettingsActivityName + "}";
     }
 
     @Override // android.os.Parcelable

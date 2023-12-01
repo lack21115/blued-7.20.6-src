@@ -34,7 +34,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import com.android.internal.util.cm.palette.Palette;
 import com.anythink.expressad.foundation.h.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.ads.fw;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,7 +44,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import javax.xml.XMLConstants;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -291,7 +290,7 @@ public class IconPackHelper {
                     builder.saturate(clampValue(getInt(trim, 100), 0, 200));
                     return true;
                 } else if (FILTER_INVERT.equalsIgnoreCase(str)) {
-                    if ("true".equalsIgnoreCase(trim)) {
+                    if (fw.Code.equalsIgnoreCase(trim)) {
                         builder.invertColors();
                         return true;
                     }
@@ -592,7 +591,7 @@ public class IconPackHelper {
     }
 
     private int getResourceIdForDrawable(String str) {
-        return this.mLoadedIconPackResource.getIdentifier(str, i.f7952c, this.mLoadedIconPackName);
+        return this.mLoadedIconPackResource.getIdentifier(str, i.f5112c, this.mLoadedIconPackName);
     }
 
     private int getResourceIdForName(ComponentName componentName) {
@@ -652,10 +651,10 @@ public class IconPackHelper {
                     map.put(ICON_SCALE_COMPONENT, str);
                 } else if (!parseRotationComponent(xmlPullParser, this.mComposedIconInfo) && !parseTranslationComponent(xmlPullParser, this.mComposedIconInfo) && xmlPullParser.getName().equalsIgnoreCase("item")) {
                     String attributeValue2 = xmlPullParser.getAttributeValue(null, CardEmulation.EXTRA_SERVICE_COMPONENT);
-                    String attributeValue3 = xmlPullParser.getAttributeValue(null, i.f7952c);
-                    if (!TextUtils.isEmpty(attributeValue2) && !TextUtils.isEmpty(attributeValue3) && attributeValue2.startsWith("ComponentInfo{") && attributeValue2.endsWith(com.alipay.sdk.util.i.d) && attributeValue2.length() >= 16 && attributeValue3.length() != 0) {
+                    String attributeValue3 = xmlPullParser.getAttributeValue(null, i.f5112c);
+                    if (!TextUtils.isEmpty(attributeValue2) && !TextUtils.isEmpty(attributeValue3) && attributeValue2.startsWith("ComponentInfo{") && attributeValue2.endsWith("}") && attributeValue2.length() >= 16 && attributeValue3.length() != 0) {
                         String lowerCase = attributeValue2.substring(14, attributeValue2.length() - 1).toLowerCase();
-                        ComponentName componentName = !lowerCase.contains(BridgeUtil.SPLIT_MARK) ? new ComponentName(lowerCase.toLowerCase(), "") : ComponentName.unflattenFromString(lowerCase);
+                        ComponentName componentName = !lowerCase.contains("/") ? new ComponentName(lowerCase.toLowerCase(), "") : ComponentName.unflattenFromString(lowerCase);
                         if (componentName != null) {
                             map.put(componentName, attributeValue3);
                         }
@@ -843,7 +842,7 @@ public class IconPackHelper {
             newPullParser.setInput(inputStream, "UTF-8");
             xmlResourceParser = newPullParser;
         } catch (Exception e) {
-            int identifier = resources.getIdentifier("appfilter", XMLConstants.XML_NS_PREFIX, str);
+            int identifier = resources.getIdentifier("appfilter", "xml", str);
             inputStream = inputStream2;
             if (identifier != 0) {
                 xmlResourceParser = resources.getXml(identifier);
@@ -905,7 +904,7 @@ public class IconPackHelper {
                     }
                     String str2 = stringArray[i3];
                     if (!TextUtils.isEmpty(str2)) {
-                        String replaceAll = str2.replaceAll(BridgeUtil.UNDERLINE_STR, ".");
+                        String replaceAll = str2.replaceAll("_", ".");
                         hashMap.put(new ComponentName(replaceAll.toLowerCase(), ""), str2);
                         int lastIndexOf = replaceAll.lastIndexOf(".");
                         if (lastIndexOf > 0 && lastIndexOf != replaceAll.length() - 1) {

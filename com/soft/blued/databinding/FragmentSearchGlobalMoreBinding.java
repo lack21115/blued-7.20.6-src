@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentSearchGlobalMoreBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28962a;
+    private final LinearLayout f15272a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28962a;
+        return this.f15272a;
     }
 }

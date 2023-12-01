@@ -242,9 +242,9 @@ public class GL3DModel extends BasePointOverlay {
 
     @Override // com.amap.api.maps.model.BasePointOverlay
     public boolean startAnimation() {
-        Object a2 = a("startAnimation", null);
-        if (a2 instanceof Boolean) {
-            return ((Boolean) a2).booleanValue();
+        Object a = a("startAnimation", null);
+        if (a instanceof Boolean) {
+            return ((Boolean) a).booleanValue();
         }
         return false;
     }

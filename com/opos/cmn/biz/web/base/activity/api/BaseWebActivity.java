@@ -1,5 +1,6 @@
 package com.opos.cmn.biz.web.base.activity.api;
 
+import android.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,11 +19,11 @@ import java.util.Map;
 public abstract class BaseWebActivity extends Activity implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f24735a;
+    private a f11047a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f24736c = false;
+    private boolean f11048c = false;
     private ViewGroup d;
 
     private void b(Intent intent) {
@@ -49,11 +50,11 @@ public abstract class BaseWebActivity extends Activity implements b {
             if (com.opos.cmn.an.c.a.a(this.b)) {
                 return;
             }
-            this.d = (ViewGroup) getWindow().getDecorView().findViewById(16908290);
-            if (this.f24735a.b() != null && this.f24735a.b().getParent() == null) {
-                this.d.addView(this.f24735a.b(), new RelativeLayout.LayoutParams(-1, -1));
+            this.d = (ViewGroup) getWindow().getDecorView().findViewById(R.id.content);
+            if (this.f11047a.b() != null && this.f11047a.b().getParent() == null) {
+                this.d.addView(this.f11047a.b(), new RelativeLayout.LayoutParams(-1, -1));
             }
-            this.f24735a.a(this.b);
+            this.f11047a.a(this.b);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("AdActivity", "showWebView", e);
         }
@@ -67,7 +68,7 @@ public abstract class BaseWebActivity extends Activity implements b {
 
     public void a(Intent intent) {
         com.opos.cmn.an.f.a.b("AdActivity", "reInitWebView");
-        a aVar = this.f24735a;
+        a aVar = this.f11047a;
         if (aVar != null) {
             aVar.e();
             b(intent);
@@ -75,14 +76,14 @@ public abstract class BaseWebActivity extends Activity implements b {
     }
 
     public void b() {
-        if (this.f24736c) {
+        if (this.f11048c) {
             return;
         }
         try {
             com.opos.cmn.biz.web.base.activity.a.a.a.a(this);
             com.opos.cmn.biz.web.base.activity.a.a.a.b(this);
-            this.f24735a = new a(this, new b.a().a(this).a(a()).a(true).a());
-            this.f24736c = true;
+            this.f11047a = new a(this, new b.a().a(this).a(a()).a(true).a());
+            this.f11048c = true;
         } catch (Exception e) {
             com.opos.cmn.an.f.a.c("AdActivity", "initWebView", e);
         }
@@ -112,15 +113,15 @@ public abstract class BaseWebActivity extends Activity implements b {
     public void onDestroy() {
         com.opos.cmn.an.f.a.b("AdActivity", "onDestroy");
         com.opos.cmn.an.f.a.b("AdActivity", "closeWebWidget");
-        a aVar = this.f24735a;
+        a aVar = this.f11047a;
         if (aVar != null && aVar.b() != null) {
-            this.d.removeView(this.f24735a.b());
+            this.d.removeView(this.f11047a.b());
         }
-        a aVar2 = this.f24735a;
+        a aVar2 = this.f11047a;
         if (aVar2 != null) {
             aVar2.a();
         }
-        this.f24735a = null;
+        this.f11047a = null;
         super.onDestroy();
     }
 
@@ -128,8 +129,8 @@ public abstract class BaseWebActivity extends Activity implements b {
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         a aVar;
         com.opos.cmn.an.f.a.b("AdActivity", "onKeyDown");
-        if (i == 4 && keyEvent.getAction() == 0 && (aVar = this.f24735a) != null) {
-            if (!aVar.c() && this.f24735a.d()) {
+        if (i == 4 && keyEvent.getAction() == 0 && (aVar = this.f11047a) != null) {
+            if (!aVar.c() && this.f11047a.d()) {
                 return true;
             }
             c();

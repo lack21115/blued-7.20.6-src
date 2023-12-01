@@ -49,10 +49,10 @@ public class ATSplashAd {
 
         /* renamed from: com.anythink.splashad.api.ATSplashAd$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: source-8756600-dex2jar.jar:com/anythink/splashad/api/ATSplashAd$1$1.class */
-        class C01871 extends com.anythink.splashad.a.b {
+        class C01161 extends com.anythink.splashad.a.b {
             boolean hasCacheWhenTimeout = false;
 
-            C01871() {
+            C01161() {
             }
 
             @Override // com.anythink.splashad.a.b
@@ -61,7 +61,7 @@ public class ATSplashAd {
                     @Override // java.lang.Runnable
                     public final void run() {
                         if (ATSplashAd.this.mListener != null) {
-                            ATSplashAd.this.mListener.onAdLoaded(!C01871.this.hasCacheWhenTimeout && z);
+                            ATSplashAd.this.mListener.onAdLoaded(!C01161.this.hasCacheWhenTimeout && z);
                         }
                     }
                 });
@@ -114,17 +114,17 @@ public class ATSplashAd {
                 a b = com.anythink.core.c.b.a(ATSplashAd.this.mContext).b(n.a().p());
                 i2 = b.V() == 0 ? 5000 : (int) b.V();
             }
-            C01871 c01871 = null;
+            C01161 c01161 = null;
             Activity activity = ATSplashAd.this.mActivityWeakRef != null ? ATSplashAd.this.mActivityWeakRef.get() : null;
             if (this.val$loadType == 0) {
-                c01871 = new C01871();
-                c01871.startCountDown(i2);
+                c01161 = new C01161();
+                c01161.startCountDown(i2);
             }
             c cVar = ATSplashAd.this.mAdLoadManager;
             if (activity == null) {
                 activity = ATSplashAd.this.mContext;
             }
-            cVar.a(activity, ATSplashAd.this.mDefaultRequestInfo, ATSplashAd.this.mDefaultAdSourceConfig, c01871, i2, this.val$loadType, ATSplashAd.this.mAdSourceEventListener, ATSplashAd.this.mTKExtraMap);
+            cVar.a(activity, ATSplashAd.this.mDefaultRequestInfo, ATSplashAd.this.mDefaultAdSourceConfig, c01161, i2, this.val$loadType, ATSplashAd.this.mAdSourceEventListener, ATSplashAd.this.mTKExtraMap);
         }
     }
 
@@ -184,7 +184,7 @@ public class ATSplashAd {
     }
 
     public static void entryAdScenario(String str, String str2) {
-        n.a().a(str, str2, "4", (Map<String, Object>) null);
+        n.a().a(str, str2, "4", (Map) null);
     }
 
     public static void entryAdScenario(String str, String str2, Map<String, Object> map) {
@@ -208,7 +208,7 @@ public class ATSplashAd {
     public ATAdStatusInfo checkAdStatus() {
         ATAdStatusInfo adStatus = getAdStatus();
         if (adStatus == null) {
-            return new ATAdStatusInfo(false, false, null);
+            return new ATAdStatusInfo(false, false, (ATAdInfo) null);
         }
         com.anythink.core.common.k.n.b(this.mPlacementId, g.i.m, g.i.u, adStatus.toString(), "");
         return adStatus;

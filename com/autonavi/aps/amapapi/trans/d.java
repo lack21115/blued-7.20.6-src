@@ -2,8 +2,8 @@ package com.autonavi.aps.amapapi.trans;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.ia;
-import com.amap.api.col.p0003sl.jv;
+import com.amap.api.col.3sl.ia;
+import com.amap.api.col.3sl.jv;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Map;
@@ -114,7 +114,6 @@ public final class d extends jv {
         this.k = bArr;
     }
 
-    @Override // com.amap.api.col.p0003sl.jv
     public final byte[] c() {
         return this.k;
     }
@@ -127,52 +126,42 @@ public final class d extends jv {
         }
     }
 
-    @Override // com.amap.api.col.p0003sl.jv
     public final byte[] d() {
         return this.l;
     }
 
-    @Override // com.amap.api.col.p0003sl.jv
     public final boolean f() {
         return this.m;
     }
 
-    @Override // com.amap.api.col.p0003sl.jv
     public final String g() {
         return this.n;
     }
 
-    @Override // com.amap.api.col.p0003sl.kb
     public final String getIPDNSName() {
         return this.q;
     }
 
-    @Override // com.amap.api.col.p0003sl.hv, com.amap.api.col.p0003sl.kb
     public final String getIPV6URL() {
         return this.j;
     }
 
-    @Override // com.amap.api.col.p0003sl.jv, com.amap.api.col.p0003sl.kb
     public final Map<String, String> getParams() {
         return this.o;
     }
 
-    @Override // com.amap.api.col.p0003sl.kb
     public final Map<String, String> getRequestHead() {
         return this.h;
     }
 
-    @Override // com.amap.api.col.p0003sl.kb
     public final String getSDKName() {
         return "loc";
     }
 
-    @Override // com.amap.api.col.p0003sl.kb
     public final String getURL() {
         return this.i;
     }
 
-    @Override // com.amap.api.col.p0003sl.jv
     public final boolean h() {
         return this.p;
     }

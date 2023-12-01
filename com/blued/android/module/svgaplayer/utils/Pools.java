@@ -14,16 +14,14 @@ public final class Pools {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/utils/Pools$SimplePool.class */
     public static class SimplePool<T> implements Pool<T> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Object[] f16025a;
+        private final Object[] a;
         private int b;
 
         public SimplePool(int i) {
             if (!(i > 0)) {
                 throw new IllegalArgumentException("The max pool size must be > 0".toString());
             }
-            this.f16025a = new Object[i];
+            this.a = new Object[i];
         }
 
         private final boolean b(T t) {
@@ -34,7 +32,7 @@ public final class Pools {
                 if (i3 >= i) {
                     return false;
                 }
-                if (this.f16025a[i3] == t) {
+                if (this.a[i3] == t) {
                     return true;
                 }
                 i2 = i3 + 1;
@@ -45,7 +43,7 @@ public final class Pools {
             int i = this.b;
             if (i > 0) {
                 int i2 = i - 1;
-                Object[] objArr = this.f16025a;
+                Object[] objArr = this.a;
                 T t = (T) objArr[i2];
                 objArr[i2] = null;
                 this.b = i - 1;
@@ -57,7 +55,7 @@ public final class Pools {
         public boolean a(T t) {
             if (!b(t)) {
                 int i = this.b;
-                Object[] objArr = this.f16025a;
+                Object[] objArr = this.a;
                 if (i < objArr.length) {
                     objArr[i] = t;
                     this.b = i + 1;

@@ -8,13 +8,9 @@ import com.autonavi.base.amap.mapcore.FileUtil;
 /* renamed from: com.amap.api.col.3sl.ct  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ct.class */
 public final class ct extends lc {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f4822a;
+    private Context a;
     private cs b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private cz f4823c;
+    private cz c;
     private a d;
 
     /* renamed from: com.amap.api.col.3sl.ct$a */
@@ -24,7 +20,7 @@ public final class ct extends lc {
     }
 
     public ct(Context context) {
-        this.f4822a = context;
+        this.a = context;
         if (this.b == null) {
             this.b = new cs(context, "");
         }
@@ -39,7 +35,7 @@ public final class ct extends lc {
     }
 
     public final void a() {
-        this.f4822a = null;
+        this.a = null;
         if (this.b != null) {
             this.b = null;
         }
@@ -50,7 +46,7 @@ public final class ct extends lc {
     }
 
     public final void a(cz czVar) {
-        this.f4823c = czVar;
+        this.c = czVar;
     }
 
     public final void a(String str) {
@@ -73,16 +69,16 @@ public final class ct extends lc {
                     String str = null;
                     if (d != null) {
                         str = null;
-                        if (d.f4821a != null) {
-                            str = a(this.f4822a) + "/custom_texture_data";
-                            a(str, d.f4821a);
+                        if (d.a != null) {
+                            str = a(this.a) + "/custom_texture_data";
+                            a(str, d.a);
                         }
                     }
                     if (this.d != null) {
-                        this.d.a(str, this.f4823c);
+                        this.d.a(str, this.c);
                     }
                 }
-                iw.a(this.f4822a, dw.a());
+                iw.a(this.a, dw.a());
             }
         } catch (Throwable th) {
             iw.c(th, "CustomStyleTask", "download customStyle");

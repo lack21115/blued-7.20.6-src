@@ -14,6 +14,7 @@ import android.provider.Settings;
 import android.telecom.PhoneAccountHandle;
 import android.text.TextUtils;
 import com.android.internal.telephony.CallerInfo;
+import com.huawei.hms.ads.fw;
 import java.util.List;
 
 /* loaded from: source-9557208-dex2jar.jar:android/provider/CallLog.class */
@@ -73,7 +74,7 @@ public class CallLog {
         public static final Uri CONTENT_URI = Uri.parse("content://call_log/calls");
         public static final Uri CONTENT_FILTER_URI = Uri.parse("content://call_log/calls/filter");
         public static final String ALLOW_VOICEMAILS_PARAM_KEY = "allow_voicemails";
-        public static final Uri CONTENT_URI_WITH_VOICEMAIL = CONTENT_URI.buildUpon().appendQueryParameter(ALLOW_VOICEMAILS_PARAM_KEY, "true").build();
+        public static final Uri CONTENT_URI_WITH_VOICEMAIL = CONTENT_URI.buildUpon().appendQueryParameter(ALLOW_VOICEMAILS_PARAM_KEY, fw.Code).build();
 
         public static Uri addCall(CallerInfo callerInfo, Context context, String str, int i, int i2, int i3, PhoneAccountHandle phoneAccountHandle, long j, int i4, Long l) {
             return addCall(callerInfo, context, str, i, i2, i3, phoneAccountHandle, j, i4, l, false);

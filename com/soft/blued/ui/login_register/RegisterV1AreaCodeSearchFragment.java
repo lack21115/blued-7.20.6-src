@@ -34,7 +34,7 @@ public class RegisterV1AreaCodeSearchFragment extends KeyBoardFragment {
     public AreaCodeSelectorSearchAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    public SearchView f31422c;
+    public SearchView f17732c;
     private View k;
     private Context l;
     private ListView m;
@@ -91,17 +91,15 @@ public class RegisterV1AreaCodeSearchFragment extends KeyBoardFragment {
     }
 
     private void i() {
-        this.n = (KeyboardListenLinearLayout) this.k.findViewById(2131366091);
-        this.o = this.k.findViewById(2131366095);
-        SearchView searchView = (SearchView) this.k.findViewById(2131369680);
-        this.f31422c = searchView;
-        searchView.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.login_register.RegisterV1AreaCodeSearchFragment.2
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
+        this.n = this.k.findViewById(R.id.keyboardRelativeLayout);
+        this.o = this.k.findViewById(R.id.keyboard_view);
+        SearchView findViewById = this.k.findViewById(R.id.search_view);
+        this.f17732c = findViewById;
+        findViewById.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.login_register.RegisterV1AreaCodeSearchFragment.2
             public void a() {
                 KeyboardUtils.a(RegisterV1AreaCodeSearchFragment.this.getActivity());
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 if (StringUtils.d(str)) {
                     RegisterV1AreaCodeSearchFragment.this.b.a(RegisterV1AreaCodeSearchFragment.this.q, "");
@@ -110,7 +108,6 @@ public class RegisterV1AreaCodeSearchFragment extends KeyBoardFragment {
                 }
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -130,7 +127,6 @@ public class RegisterV1AreaCodeSearchFragment extends KeyBoardFragment {
         super.a(keyboardListenLinearLayout);
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         if (BluedConstant.e == BluedConstant.f || BluedConstant.e == BluedConstant.g) {
             return;
@@ -150,7 +146,7 @@ public class RegisterV1AreaCodeSearchFragment extends KeyBoardFragment {
                     return true;
                 }
             });
-            SearchView searchView = this.f31422c;
+            SearchView searchView = this.f17732c;
             if (searchView != null) {
                 searchView.a(true);
             }
@@ -158,14 +154,13 @@ public class RegisterV1AreaCodeSearchFragment extends KeyBoardFragment {
         } else {
             this.o.setVisibility(8);
             this.o.setOnTouchListener(null);
-            SearchView searchView2 = this.f31422c;
+            SearchView searchView2 = this.f17732c;
             if (searchView2 != null) {
                 searchView2.a(false);
             }
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.l = getActivity();
         View view = this.k;

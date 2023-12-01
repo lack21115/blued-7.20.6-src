@@ -341,8 +341,8 @@ public class LockPatternView extends View {
         while (true) {
             int i2 = i;
             if (i2 >= this.mPatternSize) {
-                this.mFastOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563661);
-                this.mLinearOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563662);
+                this.mFastOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, R.interpolator.fast_out_slow_in);
+                this.mLinearOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, R.interpolator.linear_out_slow_in);
                 return;
             }
             int i3 = 0;
@@ -784,7 +784,7 @@ public class LockPatternView extends View {
         int size = arrayList.size();
         boolean[][] zArr = this.mPatternDrawLookup;
         if (this.mPatternDisplayMode == DisplayMode.Animate) {
-            int elapsedRealtime2 = (((int) (SystemClock.elapsedRealtime() - this.mAnimatingPeriodStart)) % ((size + 1) * 700)) / 700;
+            int elapsedRealtime2 = (((int) (SystemClock.elapsedRealtime() - this.mAnimatingPeriodStart)) % ((size + 1) * MILLIS_PER_CIRCLE_ANIMATING)) / MILLIS_PER_CIRCLE_ANIMATING;
             clearPatternDrawLookup();
             int i = 0;
             while (true) {
@@ -797,7 +797,7 @@ public class LockPatternView extends View {
                 i = i2 + 1;
             }
             if (elapsedRealtime2 > 0 && elapsedRealtime2 < size) {
-                float f = (elapsedRealtime % 700) / 700.0f;
+                float f = (elapsedRealtime % MILLIS_PER_CIRCLE_ANIMATING) / 700.0f;
                 Cell cell2 = arrayList.get(elapsedRealtime2 - 1);
                 float centerXForColumn = getCenterXForColumn(cell2.column);
                 float centerYForRow = getCenterYForRow(cell2.row);

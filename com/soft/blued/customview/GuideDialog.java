@@ -17,11 +17,11 @@ public class GuideDialog extends Dialog {
     class AnonymousClass1 implements DialogInterface.OnDismissListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f28426a;
+        final /* synthetic */ String f14736a;
 
         @Override // android.content.DialogInterface.OnDismissListener
         public void onDismiss(DialogInterface dialogInterface) {
-            GuideDialog.a(this.f28426a);
+            GuideDialog.a(this.f14736a);
         }
     }
 
@@ -30,13 +30,13 @@ public class GuideDialog extends Dialog {
     class AnonymousClass2 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f28427a;
+        final /* synthetic */ String f14737a;
         final /* synthetic */ GuideDialog b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            GuideDialog.a(this.f28427a);
+            GuideDialog.a(this.f14737a);
             this.b.dismiss();
         }
     }

@@ -15,11 +15,11 @@ import java.util.Set;
 public abstract class SimpleClickListener implements RecyclerView.OnItemTouchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21570a = "SimpleClickListener";
+    public static String f7964a = "SimpleClickListener";
     protected BaseQuickAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private GestureDetectorCompat f21571c;
+    private GestureDetectorCompat f7965c;
     private RecyclerView d;
     private boolean e = false;
     private boolean f = false;
@@ -29,7 +29,7 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
     class ItemTouchHelperGestureListener implements GestureDetector.OnGestureListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SimpleClickListener f21572a;
+        final /* synthetic */ SimpleClickListener f7966a;
         private RecyclerView b;
 
         private void a(final View view) {
@@ -44,14 +44,14 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
                     }
                 }, 50L);
             }
-            this.f21572a.e = false;
-            this.f21572a.g = null;
+            this.f7966a.e = false;
+            this.f7966a.g = null;
         }
 
         @Override // android.view.GestureDetector.OnGestureListener
         public boolean onDown(MotionEvent motionEvent) {
-            this.f21572a.e = true;
-            this.f21572a.g = this.b.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+            this.f7966a.e = true;
+            this.f7966a.g = this.b.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
             return false;
         }
 
@@ -82,30 +82,30 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
 
         @Override // android.view.GestureDetector.OnGestureListener
         public void onShowPress(MotionEvent motionEvent) {
-            if (!this.f21572a.e || this.f21572a.g == null) {
+            if (!this.f7966a.e || this.f7966a.g == null) {
                 return;
             }
-            this.f21572a.f = true;
+            this.f7966a.f = true;
         }
 
         @Override // android.view.GestureDetector.OnGestureListener
         public boolean onSingleTapUp(MotionEvent motionEvent) {
-            if (!this.f21572a.e || this.f21572a.g == null) {
+            if (!this.f7966a.e || this.f7966a.g == null) {
                 return true;
             }
             if (this.b.getScrollState() != 0) {
                 return false;
             }
-            View view = this.f21572a.g;
+            View view = this.f7966a.g;
             BaseViewHolder baseViewHolder = (BaseViewHolder) this.b.getChildViewHolder(view);
-            if (this.f21572a.a(baseViewHolder.getLayoutPosition())) {
+            if (this.f7966a.a(baseViewHolder.getLayoutPosition())) {
                 return false;
             }
             HashSet<Integer> childClickViewIds = baseViewHolder.getChildClickViewIds();
             Set<Integer> nestViews = baseViewHolder.getNestViews();
             if (childClickViewIds == null || childClickViewIds.size() <= 0) {
-                this.f21572a.a(motionEvent, view);
-                this.f21572a.g.setPressed(true);
+                this.f7966a.a(motionEvent, view);
+                this.f7966a.g.setPressed(true);
                 if (childClickViewIds != null && childClickViewIds.size() > 0) {
                     for (Integer num : childClickViewIds) {
                         View findViewById = view.findViewById(num.intValue());
@@ -114,18 +114,18 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
                         }
                     }
                 }
-                SimpleClickListener simpleClickListener = this.f21572a;
-                simpleClickListener.a(simpleClickListener.b, view, baseViewHolder.getLayoutPosition() - this.f21572a.b.getHeaderLayoutCount());
+                SimpleClickListener simpleClickListener = this.f7966a;
+                simpleClickListener.a(simpleClickListener.b, view, baseViewHolder.getLayoutPosition() - this.f7966a.b.getHeaderLayoutCount());
             } else {
                 for (Integer num2 : childClickViewIds) {
                     View findViewById2 = view.findViewById(num2.intValue());
                     if (findViewById2 != null) {
-                        if (this.f21572a.a(findViewById2, motionEvent) && findViewById2.isEnabled()) {
+                        if (this.f7966a.a(findViewById2, motionEvent) && findViewById2.isEnabled()) {
                             if (nestViews == null || !nestViews.contains(num2)) {
-                                this.f21572a.a(motionEvent, findViewById2);
+                                this.f7966a.a(motionEvent, findViewById2);
                                 findViewById2.setPressed(true);
-                                SimpleClickListener simpleClickListener2 = this.f21572a;
-                                simpleClickListener2.c(simpleClickListener2.b, findViewById2, baseViewHolder.getLayoutPosition() - this.f21572a.b.getHeaderLayoutCount());
+                                SimpleClickListener simpleClickListener2 = this.f7966a;
+                                simpleClickListener2.c(simpleClickListener2.b, findViewById2, baseViewHolder.getLayoutPosition() - this.f7966a.b.getHeaderLayoutCount());
                                 a(findViewById2);
                                 return true;
                             }
@@ -134,16 +134,16 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
                         findViewById2.setPressed(false);
                     }
                 }
-                this.f21572a.a(motionEvent, view);
-                this.f21572a.g.setPressed(true);
+                this.f7966a.a(motionEvent, view);
+                this.f7966a.g.setPressed(true);
                 for (Integer num3 : childClickViewIds) {
                     View findViewById3 = view.findViewById(num3.intValue());
                     if (findViewById3 != null) {
                         findViewById3.setPressed(false);
                     }
                 }
-                SimpleClickListener simpleClickListener3 = this.f21572a;
-                simpleClickListener3.a(simpleClickListener3.b, view, baseViewHolder.getLayoutPosition() - this.f21572a.b.getHeaderLayoutCount());
+                SimpleClickListener simpleClickListener3 = this.f7966a;
+                simpleClickListener3.a(simpleClickListener3.b, view, baseViewHolder.getLayoutPosition() - this.f7966a.b.getHeaderLayoutCount());
             }
             a(view);
             return true;
@@ -200,6 +200,6 @@ public abstract class SimpleClickListener implements RecyclerView.OnItemTouchLis
 
     @Override // androidx.recyclerview.widget.RecyclerView.OnItemTouchListener
     public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
-        this.f21571c.onTouchEvent(motionEvent);
+        this.f7965c.onTouchEvent(motionEvent);
     }
 }

@@ -9,7 +9,7 @@ public interface m9<D extends n9> {
     public interface a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f37641a = -1;
+        public static final int f23950a = -1;
 
         int a();
     }

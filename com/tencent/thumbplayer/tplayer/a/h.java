@@ -7,15 +7,15 @@ import java.util.Map;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<Integer, String> f39393a;
+    private static final Map<Integer, String> f25702a;
     private int b = 1;
 
     static {
         HashMap hashMap = new HashMap();
-        f39393a = hashMap;
+        f25702a = hashMap;
         hashMap.put(1, "IDLE");
-        f39393a.put(2, "PREPARING");
-        f39393a.put(3, "PREPARED");
+        f25702a.put(2, "PREPARING");
+        f25702a.put(3, "PREPARED");
     }
 
     public void a(int i) {
@@ -35,7 +35,7 @@ public class h {
     public String toString() {
         String str;
         synchronized (this) {
-            str = "state[ cur : " + f39393a.get(Integer.valueOf(this.b)) + " ]";
+            str = "state[ cur : " + f25702a.get(Integer.valueOf(this.b)) + " ]";
         }
         return str;
     }

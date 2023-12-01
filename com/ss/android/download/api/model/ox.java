@@ -15,7 +15,7 @@ public class ox {
     private final boolean hj;
 
     /* renamed from: io  reason: collision with root package name */
-    private final JSONObject f34883io;
+    private final JSONObject f21192io;
     private final int jb;
     private final Object je;
     private final long ko;
@@ -36,7 +36,7 @@ public class ox {
         private long h;
 
         /* renamed from: io  reason: collision with root package name */
-        private String f34884io;
+        private String f21193io;
         private List<String> jb;
         private int je;
         private long ko;
@@ -113,7 +113,7 @@ public class ox {
                     }
                 }
                 if (this.lc) {
-                    this.f34884io = this.b;
+                    this.f21193io = this.b;
                     JSONObject jSONObject2 = new JSONObject();
                     this.e = jSONObject2;
                     if (this.hj) {
@@ -200,8 +200,8 @@ public class ox {
         this.jb = mbVar.je;
         this.je = mbVar.nk;
         this.o = mbVar.lc;
-        this.lc = mbVar.f34884io;
-        this.f34883io = mbVar.e;
+        this.lc = mbVar.f21193io;
+        this.f21192io = mbVar.e;
         this.nk = mbVar.o;
     }
 
@@ -230,7 +230,7 @@ public class ox {
     }
 
     public JSONObject lc() {
-        return this.f34883io;
+        return this.f21192io;
     }
 
     public JSONObject lz() {
@@ -286,7 +286,7 @@ public class ox {
         sb.append("\tV3EventName: ");
         sb.append(this.lc);
         sb.append("\tV3EventParams: ");
-        JSONObject jSONObject = this.f34883io;
+        JSONObject jSONObject = this.f21192io;
         sb.append(jSONObject != null ? jSONObject.toString() : "");
         return sb.toString();
     }

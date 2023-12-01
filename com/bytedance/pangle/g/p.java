@@ -8,14 +8,14 @@ import java.util.Arrays;
 final class p extends r {
 
     /* renamed from: a  reason: collision with root package name */
-    private final byte[] f21426a;
+    private final byte[] f7820a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public p(X509Certificate x509Certificate, byte[] bArr) {
         super(x509Certificate);
         this.b = -1;
-        this.f21426a = bArr;
+        this.f7820a = bArr;
     }
 
     @Override // java.security.cert.Certificate
@@ -35,7 +35,7 @@ final class p extends r {
 
     @Override // com.bytedance.pangle.g.r, java.security.cert.Certificate
     public final byte[] getEncoded() {
-        return this.f21426a;
+        return this.f7820a;
     }
 
     @Override // java.security.cert.Certificate

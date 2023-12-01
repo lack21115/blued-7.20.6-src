@@ -6,16 +6,16 @@ import java.util.Set;
 public class GeolocationPermissions {
 
     /* renamed from: a  reason: collision with root package name */
-    private static GeolocationPermissions f38701a;
+    private static GeolocationPermissions f25010a;
 
     private static GeolocationPermissions a() {
         GeolocationPermissions geolocationPermissions;
         synchronized (GeolocationPermissions.class) {
             try {
-                if (f38701a == null) {
-                    f38701a = new GeolocationPermissions();
+                if (f25010a == null) {
+                    f25010a = new GeolocationPermissions();
                 }
-                geolocationPermissions = f38701a;
+                geolocationPermissions = f25010a;
             } catch (Throwable th) {
                 throw th;
             }

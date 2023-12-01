@@ -3,6 +3,7 @@ package com.tencent.smtt.sdk.a;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ import java.util.List;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static g f38835a;
+    private static g f25144a;
     private static f b;
 
     private g() {
@@ -22,10 +23,10 @@ public class g {
         g gVar;
         synchronized (g.class) {
             try {
-                if (f38835a == null) {
-                    f38835a = new g();
+                if (f25144a == null) {
+                    f25144a = new g();
                 }
-                gVar = f38835a;
+                gVar = f25144a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -71,7 +72,7 @@ public class g {
     public List<String> a(Context context, String str) {
         String string = b(context).getString(str, "");
         ArrayList arrayList = new ArrayList();
-        String[] split = string.split(";");
+        String[] split = string.split(t.aE);
         if (split.length > 0) {
             arrayList.addAll(Arrays.asList(split));
         }
@@ -107,7 +108,7 @@ public class g {
                         break;
                     }
                     sb.append(list.get(i2));
-                    sb.append(";");
+                    sb.append(t.aE);
                     i = i2 + 1;
                 }
             }

@@ -5,11 +5,11 @@ package com.tencent.ugc;
 public final /* synthetic */ class fq implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCVideoProcessor f40392a;
+    private final UGCVideoProcessor f26701a;
     private final int b;
 
     private fq(UGCVideoProcessor uGCVideoProcessor, int i) {
-        this.f40392a = uGCVideoProcessor;
+        this.f26701a = uGCVideoProcessor;
         this.b = i;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class fq implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40392a.mTransitionType = this.b;
+        this.f26701a.mTransitionType = this.b;
     }
 }

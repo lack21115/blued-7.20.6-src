@@ -11,7 +11,7 @@ import java.util.zip.GZIPOutputStream;
 public abstract class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23814a = 2048;
+    public static final int f10206a = 2048;
     public static final String b = ".gz";
 
     public static void a(InputStream inputStream, OutputStream outputStream) {

@@ -72,7 +72,7 @@ public final class i extends f {
                                             }
                                         }
                                         com.tramini.plugin.a.c.a aVar = new com.tramini.plugin.a.c.a();
-                                        aVar.f40498a = jSONObject2;
+                                        aVar.f26807a = jSONObject2;
                                         return aVar;
                                     }
                                 } catch (Throwable th4) {

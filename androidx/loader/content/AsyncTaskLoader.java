@@ -14,11 +14,11 @@ import java.util.concurrent.Executor;
 public abstract class AsyncTaskLoader<D> extends Loader<D> {
 
     /* renamed from: a  reason: collision with root package name */
-    volatile AsyncTaskLoader<D>.LoadTask f3082a;
+    volatile AsyncTaskLoader<D>.LoadTask f3034a;
     volatile AsyncTaskLoader<D>.LoadTask b;
 
     /* renamed from: c  reason: collision with root package name */
-    long f3083c;
+    long f3035c;
     long d;
     Handler e;
     private final Executor f;
@@ -28,7 +28,7 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     public final class LoadTask extends ModernAsyncTask<Void, Void, D> implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f3084a;
+        boolean f3036a;
         private final CountDownLatch e = new CountDownLatch(1);
 
         LoadTask() {
@@ -67,7 +67,7 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f3084a = false;
+            this.f3036a = false;
             AsyncTaskLoader.this.c();
         }
 
@@ -94,7 +94,7 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     public void a() {
         super.a();
         cancelLoad();
-        this.f3082a = new LoadTask();
+        this.f3034a = new LoadTask();
         c();
     }
 
@@ -110,43 +110,43 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     }
 
     void b(AsyncTaskLoader<D>.LoadTask loadTask, D d) {
-        if (this.f3082a != loadTask) {
+        if (this.f3034a != loadTask) {
             a(loadTask, d);
         } else if (isAbandoned()) {
             onCanceled(d);
         } else {
             commitContentChanged();
             this.d = SystemClock.uptimeMillis();
-            this.f3082a = null;
+            this.f3034a = null;
             deliverResult(d);
         }
     }
 
     @Override // androidx.loader.content.Loader
     protected boolean b() {
-        if (this.f3082a != null) {
+        if (this.f3034a != null) {
             if (!this.r) {
                 this.u = true;
             }
             if (this.b != null) {
-                if (this.f3082a.f3084a) {
-                    this.f3082a.f3084a = false;
-                    this.e.removeCallbacks(this.f3082a);
+                if (this.f3034a.f3036a) {
+                    this.f3034a.f3036a = false;
+                    this.e.removeCallbacks(this.f3034a);
                 }
-                this.f3082a = null;
+                this.f3034a = null;
                 return false;
-            } else if (this.f3082a.f3084a) {
-                this.f3082a.f3084a = false;
-                this.e.removeCallbacks(this.f3082a);
-                this.f3082a = null;
+            } else if (this.f3034a.f3036a) {
+                this.f3034a.f3036a = false;
+                this.e.removeCallbacks(this.f3034a);
+                this.f3034a = null;
                 return false;
             } else {
-                boolean cancel = this.f3082a.cancel(false);
+                boolean cancel = this.f3034a.cancel(false);
                 if (cancel) {
-                    this.b = this.f3082a;
+                    this.b = this.f3034a;
                     cancelLoadInBackground();
                 }
-                this.f3082a = null;
+                this.f3034a = null;
                 return cancel;
             }
         }
@@ -154,19 +154,19 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     }
 
     void c() {
-        if (this.b != null || this.f3082a == null) {
+        if (this.b != null || this.f3034a == null) {
             return;
         }
-        if (this.f3082a.f3084a) {
-            this.f3082a.f3084a = false;
-            this.e.removeCallbacks(this.f3082a);
+        if (this.f3034a.f3036a) {
+            this.f3034a.f3036a = false;
+            this.e.removeCallbacks(this.f3034a);
         }
-        if (this.f3083c <= 0 || SystemClock.uptimeMillis() >= this.d + this.f3083c) {
-            this.f3082a.executeOnExecutor(this.f, null);
+        if (this.f3035c <= 0 || SystemClock.uptimeMillis() >= this.d + this.f3035c) {
+            this.f3034a.executeOnExecutor(this.f, null);
             return;
         }
-        this.f3082a.f3084a = true;
-        this.e.postAtTime(this.f3082a, this.d + this.f3083c);
+        this.f3034a.f3036a = true;
+        this.e.postAtTime(this.f3034a, this.d + this.f3035c);
     }
 
     public void cancelLoadInBackground() {
@@ -180,24 +180,24 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     @Deprecated
     public void dump(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         super.dump(str, fileDescriptor, printWriter, strArr);
-        if (this.f3082a != null) {
+        if (this.f3034a != null) {
             printWriter.print(str);
             printWriter.print("mTask=");
-            printWriter.print(this.f3082a);
+            printWriter.print(this.f3034a);
             printWriter.print(" waiting=");
-            printWriter.println(this.f3082a.f3084a);
+            printWriter.println(this.f3034a.f3036a);
         }
         if (this.b != null) {
             printWriter.print(str);
             printWriter.print("mCancellingTask=");
             printWriter.print(this.b);
             printWriter.print(" waiting=");
-            printWriter.println(this.b.f3084a);
+            printWriter.println(this.b.f3036a);
         }
-        if (this.f3083c != 0) {
+        if (this.f3035c != 0) {
             printWriter.print(str);
             printWriter.print("mUpdateThrottle=");
-            TimeUtils.formatDuration(this.f3083c, printWriter);
+            TimeUtils.formatDuration(this.f3035c, printWriter);
             printWriter.print(" mLastLoadCompleteTime=");
             TimeUtils.formatDuration(this.d, SystemClock.uptimeMillis(), printWriter);
             printWriter.println();
@@ -214,14 +214,14 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     }
 
     public void setUpdateThrottle(long j) {
-        this.f3083c = j;
+        this.f3035c = j;
         if (j != 0) {
             this.e = new Handler();
         }
     }
 
     public void waitForLoader() {
-        AsyncTaskLoader<D>.LoadTask loadTask = this.f3082a;
+        AsyncTaskLoader<D>.LoadTask loadTask = this.f3034a;
         if (loadTask != null) {
             loadTask.waitForLoader();
         }

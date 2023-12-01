@@ -1,6 +1,5 @@
 package com.alibaba.fastjson.serializer;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.annotation.JSONField;
@@ -15,10 +14,9 @@ import com.alibaba.fastjson.util.ASMClassLoader;
 import com.alibaba.fastjson.util.ASMUtils;
 import com.alibaba.fastjson.util.FieldInfo;
 import com.alibaba.fastjson.util.TypeUtils;
-import com.baidu.mobads.sdk.api.IAdInterListener;
+import com.alipay.sdk.util.i;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
@@ -39,7 +37,7 @@ public class ASMSerializerFactory implements Opcodes {
     static final String JSONSerializer = ASMUtils.type(JSONSerializer.class);
     static final String SerializeWriter = ASMUtils.type(SerializeWriter.class);
     static final String JavaBeanSerializer = ASMUtils.type(JavaBeanSerializer.class);
-    static final String JavaBeanSerializer_desc = "L" + ASMUtils.type(JavaBeanSerializer.class) + ";";
+    static final String JavaBeanSerializer_desc = "L" + ASMUtils.type(JavaBeanSerializer.class) + i.b;
     static final String SerialContext_desc = ASMUtils.desc(SerialContext.class);
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -104,10 +102,10 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitVarInsn(21, context.var("byte"));
             methodVisitor.visitMethodInsn(184, "java/lang/Byte", "valueOf", "(B)Ljava/lang/Byte;");
         } else if (cls == Short.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT));
+            methodVisitor.visitVarInsn(21, context.var("short"));
             methodVisitor.visitMethodInsn(184, "java/lang/Short", "valueOf", "(S)Ljava/lang/Short;");
         } else if (cls == Integer.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+            methodVisitor.visitVarInsn(21, context.var("int"));
             methodVisitor.visitMethodInsn(184, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;");
         } else if (cls == Character.TYPE) {
             methodVisitor.visitVarInsn(21, context.var("char"));
@@ -116,13 +114,13 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitVarInsn(22, context.var("long", 2));
             methodVisitor.visitMethodInsn(184, "java/lang/Long", "valueOf", "(J)Ljava/lang/Long;");
         } else if (cls == Float.TYPE) {
-            methodVisitor.visitVarInsn(23, context.var(TypedValues.Custom.S_FLOAT));
+            methodVisitor.visitVarInsn(23, context.var("float"));
             methodVisitor.visitMethodInsn(184, "java/lang/Float", "valueOf", "(F)Ljava/lang/Float;");
         } else if (cls == Double.TYPE) {
             methodVisitor.visitVarInsn(24, context.var("double", 2));
             methodVisitor.visitMethodInsn(184, "java/lang/Double", "valueOf", "(D)Ljava/lang/Double;");
         } else if (cls == Boolean.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(TypedValues.Custom.S_BOOLEAN));
+            methodVisitor.visitVarInsn(21, context.var("boolean"));
             methodVisitor.visitMethodInsn(184, "java/lang/Boolean", "valueOf", "(Z)Ljava/lang/Boolean;");
         } else if (cls == BigDecimal.class) {
             methodVisitor.visitVarInsn(25, context.var("decimal"));
@@ -150,12 +148,12 @@ public class ASMSerializerFactory implements Opcodes {
         Label label = new Label();
         _nameApply(methodVisitor, fieldInfo, context, label);
         _get(methodVisitor, context, fieldInfo);
-        methodVisitor.visitVarInsn(54, context.var(TypedValues.Custom.S_BOOLEAN));
+        methodVisitor.visitVarInsn(54, context.var("boolean"));
         _filters(methodVisitor, fieldInfo, context, label);
         methodVisitor.visitVarInsn(25, context.var("out"));
         methodVisitor.visitVarInsn(21, context.var("seperator"));
         methodVisitor.visitVarInsn(25, Context.fieldName);
-        methodVisitor.visitVarInsn(21, context.var(TypedValues.Custom.S_BOOLEAN));
+        methodVisitor.visitVarInsn(21, context.var("boolean"));
         methodVisitor.visitMethodInsn(182, SerializeWriter, "writeFieldValue", "(CLjava/lang/String;Z)V");
         _seperator(methodVisitor, context);
         methodVisitor.visitLabel(label);
@@ -303,12 +301,12 @@ public class ASMSerializerFactory implements Opcodes {
         Label label = new Label();
         _nameApply(methodVisitor, fieldInfo, context, label);
         _get(methodVisitor, context, fieldInfo);
-        methodVisitor.visitVarInsn(56, context.var(TypedValues.Custom.S_FLOAT));
+        methodVisitor.visitVarInsn(56, context.var("float"));
         _filters(methodVisitor, fieldInfo, context, label);
         methodVisitor.visitVarInsn(25, context.var("out"));
         methodVisitor.visitVarInsn(21, context.var("seperator"));
         methodVisitor.visitVarInsn(25, Context.fieldName);
-        methodVisitor.visitVarInsn(23, context.var(TypedValues.Custom.S_FLOAT));
+        methodVisitor.visitVarInsn(23, context.var("float"));
         methodVisitor.visitMethodInsn(182, SerializeWriter, "writeFieldValue", "(CLjava/lang/String;F)V");
         _seperator(methodVisitor, context);
         methodVisitor.visitLabel(label);
@@ -445,12 +443,12 @@ public class ASMSerializerFactory implements Opcodes {
         Label label = new Label();
         _nameApply(methodVisitor, fieldInfo, context, label);
         _get(methodVisitor, context, fieldInfo);
-        methodVisitor.visitVarInsn(54, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+        methodVisitor.visitVarInsn(54, context.var("int"));
         _filters(methodVisitor, fieldInfo, context, label);
         methodVisitor.visitVarInsn(25, context.var("out"));
         methodVisitor.visitVarInsn(21, context.var("seperator"));
         methodVisitor.visitVarInsn(25, Context.fieldName);
-        methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+        methodVisitor.visitVarInsn(21, context.var("int"));
         methodVisitor.visitMethodInsn(182, SerializeWriter, "writeFieldValue", "(CLjava/lang/String;I)V");
         _seperator(methodVisitor, context);
         methodVisitor.visitLabel(label);
@@ -494,13 +492,13 @@ public class ASMSerializerFactory implements Opcodes {
         methodVisitor.visitInsn(3);
         methodVisitor.visitMethodInsn(182, SerializeWriter, "writeFieldName", "(Ljava/lang/String;Z)V");
         methodVisitor.visitVarInsn(25, context.var("list"));
-        methodVisitor.visitMethodInsn(185, "java/util/List", "size", "()I");
-        methodVisitor.visitVarInsn(54, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+        methodVisitor.visitMethodInsn(185, "java/util/List", ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE, "()I");
+        methodVisitor.visitVarInsn(54, context.var("int"));
         Label label5 = new Label();
         Label label6 = new Label();
         Label label7 = new Label();
         methodVisitor.visitLabel(label5);
-        methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+        methodVisitor.visitVarInsn(21, context.var("int"));
         methodVisitor.visitInsn(3);
         methodVisitor.visitJumpInsn(160, label6);
         methodVisitor.visitVarInsn(25, context.var("out"));
@@ -524,7 +522,7 @@ public class ASMSerializerFactory implements Opcodes {
         methodVisitor.visitVarInsn(54, context.var("i"));
         methodVisitor.visitLabel(label8);
         methodVisitor.visitVarInsn(21, context.var("i"));
-        methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+        methodVisitor.visitVarInsn(21, context.var("int"));
         methodVisitor.visitInsn(4);
         methodVisitor.visitInsn(100);
         methodVisitor.visitJumpInsn(162, label9);
@@ -532,7 +530,7 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitVarInsn(25, context.var("out"));
             methodVisitor.visitVarInsn(25, context.var("list"));
             methodVisitor.visitVarInsn(21, context.var("i"));
-            methodVisitor.visitMethodInsn(185, "java/util/List", MonitorConstants.CONNECT_TYPE_GET, "(I)Ljava/lang/Object;");
+            methodVisitor.visitMethodInsn(185, "java/util/List", "get", "(I)Ljava/lang/Object;");
             methodVisitor.visitTypeInsn(192, "java/lang/String");
             methodVisitor.visitVarInsn(16, 44);
             if (context.writeDirect) {
@@ -545,7 +543,7 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitVarInsn(25, 1);
             methodVisitor.visitVarInsn(25, context.var("list"));
             methodVisitor.visitVarInsn(21, context.var("i"));
-            methodVisitor.visitMethodInsn(185, "java/util/List", MonitorConstants.CONNECT_TYPE_GET, "(I)Ljava/lang/Object;");
+            methodVisitor.visitMethodInsn(185, "java/util/List", "get", "(I)Ljava/lang/Object;");
             methodVisitor.visitVarInsn(21, context.var("i"));
             methodVisitor.visitMethodInsn(184, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;");
             if (cls3 == null || !Modifier.isPublic(cls3.getModifiers())) {
@@ -566,10 +564,10 @@ public class ASMSerializerFactory implements Opcodes {
         if (cls2 == String.class) {
             methodVisitor.visitVarInsn(25, context.var(str));
             methodVisitor.visitVarInsn(25, context.var("list"));
-            methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+            methodVisitor.visitVarInsn(21, context.var("int"));
             methodVisitor.visitInsn(4);
             methodVisitor.visitInsn(100);
-            methodVisitor.visitMethodInsn(185, "java/util/List", MonitorConstants.CONNECT_TYPE_GET, "(I)Ljava/lang/Object;");
+            methodVisitor.visitMethodInsn(185, "java/util/List", "get", "(I)Ljava/lang/Object;");
             methodVisitor.visitTypeInsn(192, "java/lang/String");
             methodVisitor.visitVarInsn(16, 93);
             if (context.writeDirect) {
@@ -581,7 +579,7 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitVarInsn(25, 1);
             methodVisitor.visitVarInsn(25, context.var("list"));
             methodVisitor.visitVarInsn(21, context.var("i"));
-            methodVisitor.visitMethodInsn(185, "java/util/List", MonitorConstants.CONNECT_TYPE_GET, "(I)Ljava/lang/Object;");
+            methodVisitor.visitMethodInsn(185, "java/util/List", "get", "(I)Ljava/lang/Object;");
             methodVisitor.visitVarInsn(21, context.var("i"));
             methodVisitor.visitMethodInsn(184, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;");
             if (cls3 == null || !Modifier.isPublic(cls3.getModifiers())) {
@@ -640,16 +638,16 @@ public class ASMSerializerFactory implements Opcodes {
         methodVisitor.visitJumpInsn(153, label2);
         Class<?> cls = fieldInfo.fieldClass;
         if (cls == Boolean.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(TypedValues.Custom.S_BOOLEAN));
+            methodVisitor.visitVarInsn(21, context.var("boolean"));
             methodVisitor.visitJumpInsn(153, label);
         } else if (cls == Byte.TYPE) {
             methodVisitor.visitVarInsn(21, context.var("byte"));
             methodVisitor.visitJumpInsn(153, label);
         } else if (cls == Short.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT));
+            methodVisitor.visitVarInsn(21, context.var("short"));
             methodVisitor.visitJumpInsn(153, label);
         } else if (cls == Integer.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+            methodVisitor.visitVarInsn(21, context.var("int"));
             methodVisitor.visitJumpInsn(153, label);
         } else if (cls == Long.TYPE) {
             methodVisitor.visitVarInsn(22, context.var("long"));
@@ -657,7 +655,7 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitInsn(148);
             methodVisitor.visitJumpInsn(153, label);
         } else if (cls == Float.TYPE) {
-            methodVisitor.visitVarInsn(23, context.var(TypedValues.Custom.S_FLOAT));
+            methodVisitor.visitVarInsn(23, context.var("float"));
             methodVisitor.visitInsn(11);
             methodVisitor.visitInsn(149);
             methodVisitor.visitJumpInsn(153, label);
@@ -692,10 +690,10 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitVarInsn(21, context.var("byte"));
             methodVisitor.visitMethodInsn(184, "java/lang/Byte", "valueOf", "(B)Ljava/lang/Byte;");
         } else if (cls == Short.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT));
+            methodVisitor.visitVarInsn(21, context.var("short"));
             methodVisitor.visitMethodInsn(184, "java/lang/Short", "valueOf", "(S)Ljava/lang/Short;");
         } else if (cls == Integer.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+            methodVisitor.visitVarInsn(21, context.var("int"));
             methodVisitor.visitMethodInsn(184, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;");
         } else if (cls == Character.TYPE) {
             methodVisitor.visitVarInsn(21, context.var("char"));
@@ -704,13 +702,13 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitVarInsn(22, context.var("long", 2));
             methodVisitor.visitMethodInsn(184, "java/lang/Long", "valueOf", "(J)Ljava/lang/Long;");
         } else if (cls == Float.TYPE) {
-            methodVisitor.visitVarInsn(23, context.var(TypedValues.Custom.S_FLOAT));
+            methodVisitor.visitVarInsn(23, context.var("float"));
             methodVisitor.visitMethodInsn(184, "java/lang/Float", "valueOf", "(F)Ljava/lang/Float;");
         } else if (cls == Double.TYPE) {
             methodVisitor.visitVarInsn(24, context.var("double", 2));
             methodVisitor.visitMethodInsn(184, "java/lang/Double", "valueOf", "(D)Ljava/lang/Double;");
         } else if (cls == Boolean.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(TypedValues.Custom.S_BOOLEAN));
+            methodVisitor.visitVarInsn(21, context.var("boolean"));
             methodVisitor.visitMethodInsn(184, "java/lang/Boolean", "valueOf", "(Z)Ljava/lang/Boolean;");
         } else if (cls == BigDecimal.class) {
             methodVisitor.visitVarInsn(25, context.var("decimal"));
@@ -741,12 +739,12 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitInsn(89);
             methodVisitor.visitVarInsn(58, Context.original);
         } else if (cls == Short.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT));
+            methodVisitor.visitVarInsn(21, context.var("short"));
             methodVisitor.visitMethodInsn(184, "java/lang/Short", "valueOf", "(S)Ljava/lang/Short;");
             methodVisitor.visitInsn(89);
             methodVisitor.visitVarInsn(58, Context.original);
         } else if (cls == Integer.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL));
+            methodVisitor.visitVarInsn(21, context.var("int"));
             methodVisitor.visitMethodInsn(184, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;");
             methodVisitor.visitInsn(89);
             methodVisitor.visitVarInsn(58, Context.original);
@@ -761,7 +759,7 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitInsn(89);
             methodVisitor.visitVarInsn(58, Context.original);
         } else if (cls == Float.TYPE) {
-            methodVisitor.visitVarInsn(23, context.var(TypedValues.Custom.S_FLOAT));
+            methodVisitor.visitVarInsn(23, context.var("float"));
             methodVisitor.visitMethodInsn(184, "java/lang/Float", "valueOf", "(F)Ljava/lang/Float;");
             methodVisitor.visitInsn(89);
             methodVisitor.visitVarInsn(58, Context.original);
@@ -771,7 +769,7 @@ public class ASMSerializerFactory implements Opcodes {
             methodVisitor.visitInsn(89);
             methodVisitor.visitVarInsn(58, Context.original);
         } else if (cls == Boolean.TYPE) {
-            methodVisitor.visitVarInsn(21, context.var(TypedValues.Custom.S_BOOLEAN));
+            methodVisitor.visitVarInsn(21, context.var("boolean"));
             methodVisitor.visitMethodInsn(184, "java/lang/Boolean", "valueOf", "(Z)Ljava/lang/Boolean;");
             methodVisitor.visitInsn(89);
             methodVisitor.visitVarInsn(58, Context.original);
@@ -810,12 +808,12 @@ public class ASMSerializerFactory implements Opcodes {
         Label label = new Label();
         _nameApply(methodVisitor, fieldInfo, context, label);
         _get(methodVisitor, context, fieldInfo);
-        methodVisitor.visitVarInsn(54, context.var(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT));
+        methodVisitor.visitVarInsn(54, context.var("short"));
         _filters(methodVisitor, fieldInfo, context, label);
         methodVisitor.visitVarInsn(25, context.var("out"));
         methodVisitor.visitVarInsn(21, context.var("seperator"));
         methodVisitor.visitVarInsn(25, Context.fieldName);
-        methodVisitor.visitVarInsn(21, context.var(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT));
+        methodVisitor.visitVarInsn(21, context.var("short"));
         methodVisitor.visitMethodInsn(182, SerializeWriter, "writeFieldValue", "(CLjava/lang/String;I)V");
         _seperator(methodVisitor, context);
         methodVisitor.visitLabel(label);
@@ -1243,7 +1241,7 @@ public class ASMSerializerFactory implements Opcodes {
             Context context = new Context(str3, serializeFeatures, z2);
             MethodWriter methodWriter2 = new MethodWriter(classWriter, 1, str, "(L" + JSONSerializer + ";Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;I)V", null, new String[]{"java/io/IOException"});
             methodWriter2.visitVarInsn(25, 1);
-            methodWriter2.visitMethodInsn(182, JSONSerializer, "getWriter", "()L" + SerializeWriter + ";");
+            methodWriter2.visitMethodInsn(182, JSONSerializer, "getWriter", "()L" + SerializeWriter + i.b);
             methodWriter2.visitVarInsn(58, context.var("out"));
             if (!z && (jSONType == null || jSONType.alphabetic())) {
                 Label label = new Label();
@@ -1287,7 +1285,7 @@ public class ASMSerializerFactory implements Opcodes {
             Context context2 = new Context(str3, serializeFeatures, false);
             MethodWriter methodWriter3 = new MethodWriter(classWriter, 1, "writeUnsorted", "(L" + JSONSerializer + ";Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;I)V", null, new String[]{"java/io/IOException"});
             methodWriter3.visitVarInsn(25, 1);
-            methodWriter3.visitMethodInsn(182, JSONSerializer, "getWriter", "()L" + SerializeWriter + ";");
+            methodWriter3.visitMethodInsn(182, JSONSerializer, "getWriter", "()L" + SerializeWriter + i.b);
             methodWriter3.visitVarInsn(58, context2.var("out"));
             methodWriter3.visitVarInsn(25, 2);
             methodWriter3.visitTypeInsn(192, ASMUtils.type(cls));
@@ -1300,7 +1298,7 @@ public class ASMSerializerFactory implements Opcodes {
         Context context3 = new Context(str3, serializeFeatures, false);
         MethodWriter methodWriter4 = new MethodWriter(classWriter, 1, "writeAsArray", "(L" + JSONSerializer + ";Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/reflect/Type;)V", null, new String[]{"java/io/IOException"});
         methodWriter4.visitVarInsn(25, 1);
-        methodWriter4.visitMethodInsn(182, JSONSerializer, "getWriter", "()L" + SerializeWriter + ";");
+        methodWriter4.visitMethodInsn(182, JSONSerializer, "getWriter", "()L" + SerializeWriter + i.b);
         methodWriter4.visitVarInsn(58, context3.var("out"));
         methodWriter4.visitVarInsn(25, 2);
         methodWriter4.visitTypeInsn(192, ASMUtils.type(cls));

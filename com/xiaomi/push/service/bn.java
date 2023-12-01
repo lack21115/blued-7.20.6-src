@@ -9,44 +9,44 @@ import com.igexin.assist.util.AssistUtils;
 public class bn {
 
     /* renamed from: a  reason: collision with root package name */
-    private static bn f41644a;
+    private static bn f27953a;
 
     /* renamed from: a  reason: collision with other field name */
-    private int f1020a = 0;
+    private int f973a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f1021a;
+    private Context f974a;
 
     private bn(Context context) {
-        this.f1021a = context.getApplicationContext();
+        this.f974a = context.getApplicationContext();
     }
 
     public static bn a(Context context) {
-        if (f41644a == null) {
-            f41644a = new bn(context);
+        if (f27953a == null) {
+            f27953a = new bn(context);
         }
-        return f41644a;
+        return f27953a;
     }
 
     public int a() {
-        int i = this.f1020a;
+        int i = this.f973a;
         if (i != 0) {
             return i;
         }
         try {
-            this.f1020a = Settings.Global.getInt(this.f1021a.getContentResolver(), "device_provisioned", 0);
+            this.f973a = Settings.Global.getInt(this.f974a.getContentResolver(), "device_provisioned", 0);
         } catch (Exception e) {
         }
-        return this.f1020a;
+        return this.f973a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public Uri m12159a() {
+    public Uri m9109a() {
         return Settings.Global.getUriFor("device_provisioned");
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m12160a() {
-        return com.xiaomi.push.aa.f169a.contains("xmsf") || com.xiaomi.push.aa.f169a.contains(AssistUtils.BRAND_XIAOMI) || com.xiaomi.push.aa.f169a.contains("miui");
+    public boolean m9110a() {
+        return com.xiaomi.push.aa.f122a.contains("xmsf") || com.xiaomi.push.aa.f122a.contains(AssistUtils.BRAND_XIAOMI) || com.xiaomi.push.aa.f122a.contains("miui");
     }
 }

@@ -9,13 +9,13 @@ import java.util.concurrent.TimeUnit;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ScheduledExecutorService f39109a = new ScheduledThreadPoolExecutor(1);
+    private static ScheduledExecutorService f25418a = new ScheduledThreadPoolExecutor(1);
 
     public static void a() {
         synchronized (o.class) {
             try {
-                if (f39109a != null) {
-                    f39109a.shutdownNow();
+                if (f25418a != null) {
+                    f25418a.shutdownNow();
                 }
             } catch (Throwable th) {
                 throw th;
@@ -24,11 +24,11 @@ public class o {
     }
 
     public static void a(final String str, final long j, final int i, final GetPhoneInfoCallbacks getPhoneInfoCallbacks, final long j2, final long j3, final long j4) {
-        ScheduledExecutorService scheduledExecutorService = f39109a;
+        ScheduledExecutorService scheduledExecutorService = f25418a;
         if (scheduledExecutorService == null || scheduledExecutorService.isShutdown()) {
-            f39109a = new ScheduledThreadPoolExecutor(1);
+            f25418a = new ScheduledThreadPoolExecutor(1);
         }
-        f39109a.schedule(new Runnable() { // from class: com.tencent.tendinsv.utils.o.1
+        f25418a.schedule(new Runnable() { // from class: com.tencent.tendinsv.utils.o.1
             @Override // java.lang.Runnable
             public void run() {
                 GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = GetPhoneInfoCallbacks.this;
@@ -38,10 +38,10 @@ public class o {
     }
 
     public void a(long j, long j2, Runnable runnable) {
-        f39109a.scheduleAtFixedRate(runnable, j, j2, TimeUnit.MILLISECONDS);
+        f25418a.scheduleAtFixedRate(runnable, j, j2, TimeUnit.MILLISECONDS);
     }
 
     public void b(long j, long j2, Runnable runnable) {
-        f39109a.scheduleWithFixedDelay(runnable, j, j2, TimeUnit.MILLISECONDS);
+        f25418a.scheduleWithFixedDelay(runnable, j, j2, TimeUnit.MILLISECONDS);
     }
 }

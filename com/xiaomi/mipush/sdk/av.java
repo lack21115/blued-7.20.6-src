@@ -30,21 +30,21 @@ public class av {
     }
 
     public static void a(Context context, Cif cif) {
-        com.xiaomi.channel.commonutils.logger.b.m11394a("need to update local info with: " + cif.m11964a());
-        String str = cif.m11964a().get(Constants.EXTRA_KEY_ACCEPT_TIME);
+        com.xiaomi.channel.commonutils.logger.b.m8344a("need to update local info with: " + cif.m8914a());
+        String str = cif.m8914a().get(Constants.EXTRA_KEY_ACCEPT_TIME);
         if (str != null) {
             MiPushClient.removeAcceptTime(context);
-            String[] split = str.split("-");
+            String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             if (split.length == 2) {
                 MiPushClient.addAcceptTime(context, split[0], split[1]);
                 if ("00:00".equals(split[0]) && "00:00".equals(split[1])) {
-                    b.m11457a(context).a(true);
+                    b.m8407a(context).a(true);
                 } else {
-                    b.m11457a(context).a(false);
+                    b.m8407a(context).a(false);
                 }
             }
         }
-        String str2 = cif.m11964a().get(Constants.EXTRA_KEY_ALIASES);
+        String str2 = cif.m8914a().get(Constants.EXTRA_KEY_ALIASES);
         if (str2 != null) {
             MiPushClient.removeAllAliases(context);
             if (!"".equals(str2)) {
@@ -61,7 +61,7 @@ public class av {
                 }
             }
         }
-        String str3 = cif.m11964a().get(Constants.EXTRA_KEY_TOPICS);
+        String str3 = cif.m8914a().get(Constants.EXTRA_KEY_TOPICS);
         if (str3 != null) {
             MiPushClient.removeAllTopics(context);
             if (!"".equals(str3)) {
@@ -78,7 +78,7 @@ public class av {
                 }
             }
         }
-        String str4 = cif.m11964a().get(Constants.EXTRA_KEY_ACCOUNTS);
+        String str4 = cif.m8914a().get(Constants.EXTRA_KEY_ACCOUNTS);
         if (str4 == null) {
             return;
         }
@@ -116,7 +116,7 @@ public class av {
         }
         ArrayList arrayList = new ArrayList(list);
         Collections.sort(arrayList, Collator.getInstance(Locale.CHINA));
-        Iterator<E> it = arrayList.iterator();
+        Iterator it = arrayList.iterator();
         String str = "";
         while (true) {
             String str2 = str;

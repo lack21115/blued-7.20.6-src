@@ -9,18 +9,18 @@ import com.tencent.liteav.beauty.NativeLoad;
 public final class e extends com.tencent.liteav.videobase.c.d {
 
     /* renamed from: a  reason: collision with root package name */
-    int f36367a;
+    int f22676a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f36368c;
+    private int f22677c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public e() {
         super(null, null);
         this.b = -1;
-        this.f36368c = -1;
-        this.f36367a = -1;
+        this.f22677c = -1;
+        this.f22676a = -1;
     }
 
     @Override // com.tencent.liteav.videobase.a.b
@@ -36,8 +36,8 @@ public final class e extends com.tencent.liteav.videobase.c.d {
     public final void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
         this.b = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
-        this.f36368c = GLES20.glGetUniformLocation(getProgramId(), "texelHeightOffset");
-        this.f36367a = GLES20.glGetUniformLocation(getProgramId(), "smoothDegree");
+        this.f22677c = GLES20.glGetUniformLocation(getProgramId(), "texelHeightOffset");
+        this.f22676a = GLES20.glGetUniformLocation(getProgramId(), "smoothDegree");
     }
 
     @Override // com.tencent.liteav.videobase.a.b
@@ -49,6 +49,6 @@ public final class e extends com.tencent.liteav.videobase.c.d {
         }
         LiteavLog.i("SmoothVertical", "mTextureRation ".concat(String.valueOf(f)));
         setFloatOnDraw(this.b, f / i);
-        setFloatOnDraw(this.f36368c, f / i2);
+        setFloatOnDraw(this.f22677c, f / i2);
     }
 }

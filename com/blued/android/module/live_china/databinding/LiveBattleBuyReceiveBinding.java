@@ -15,13 +15,9 @@ import com.blued.android.module.svgaplayer.SVGAImageView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleBuyReceiveBinding.class */
 public final class LiveBattleBuyReceiveBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12135a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12136c;
+    public final ImageView c;
     public final LinearLayout d;
     public final RelativeLayout e;
     public final RecyclerView f;
@@ -32,9 +28,9 @@ public final class LiveBattleBuyReceiveBinding implements ViewBinding {
 
     private LiveBattleBuyReceiveBinding(RelativeLayout relativeLayout, FrameLayout frameLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, RelativeLayout relativeLayout2, RecyclerView recyclerView, SVGAImageView sVGAImageView, TextView textView, TextView textView2) {
         this.j = relativeLayout;
-        this.f12135a = frameLayout;
+        this.a = frameLayout;
         this.b = imageView;
-        this.f12136c = imageView2;
+        this.c = imageView2;
         this.d = linearLayout;
         this.e = relativeLayout2;
         this.f = recyclerView;
@@ -63,15 +59,15 @@ public final class LiveBattleBuyReceiveBinding implements ViewBinding {
                     if (linearLayout != null) {
                         RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.root);
                         if (relativeLayout != null) {
-                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                            if (recyclerView != null) {
+                            RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                            if (findViewById != null) {
                                 SVGAImageView sVGAImageView = (SVGAImageView) view.findViewById(R.id.svg_backlight);
                                 if (sVGAImageView != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_experience);
                                     if (textView != null) {
                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_ok);
                                         if (textView2 != null) {
-                                            return new LiveBattleBuyReceiveBinding((RelativeLayout) view, frameLayout, imageView, imageView2, linearLayout, relativeLayout, recyclerView, sVGAImageView, textView, textView2);
+                                            return new LiveBattleBuyReceiveBinding((RelativeLayout) view, frameLayout, imageView, imageView2, linearLayout, relativeLayout, findViewById, sVGAImageView, textView, textView2);
                                         }
                                         str = "tvOk";
                                     } else {
@@ -101,7 +97,6 @@ public final class LiveBattleBuyReceiveBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.j;

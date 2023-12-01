@@ -6,19 +6,19 @@ import android.text.TextUtils;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25950a;
+    public final String f12262a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f25951c;
+    public final int f12263c;
     public int d = 0;
     public int e;
     public d f;
 
     public b(String str, String str2, int i, d dVar) {
-        this.f25950a = str;
+        this.f12262a = str;
         this.b = str2;
-        this.f25951c = i;
+        this.f12263c = i;
         this.f = dVar;
     }
 

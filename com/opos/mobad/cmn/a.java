@@ -4,5 +4,5 @@ package com.opos.mobad.cmn;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f25816a = true;
+    public static final Boolean f12128a = true;
 }

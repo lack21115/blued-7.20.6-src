@@ -94,7 +94,7 @@ public class BLTxPlayView extends AbBaseVideoView implements ITXVodPlayListener 
         }
         this.o = PlayerState.IDLE;
         this.h.setConfig(this.i);
-        this.h.enableHardwareDecode(this.f15659c.v);
+        this.h.enableHardwareDecode(this.c.v);
     }
 
     private boolean k() {
@@ -106,7 +106,7 @@ public class BLTxPlayView extends AbBaseVideoView implements ITXVodPlayListener 
     }
 
     private void m() {
-        if (this.h == null || this.f15659c == null) {
+        if (this.h == null || this.c == null) {
             Log.d("BLTxPlayView", "something is null, startTxPlayer discard");
             return;
         }
@@ -124,7 +124,7 @@ public class BLTxPlayView extends AbBaseVideoView implements ITXVodPlayListener 
     private void n() {
         TXVodPlayer tXVodPlayer = this.h;
         if (tXVodPlayer != null) {
-            tXVodPlayer.setVodListener(null);
+            tXVodPlayer.setVodListener((ITXVodPlayListener) null);
             this.h.stopPlay(true);
             this.h = null;
             this.o = PlayerState.IDLE;
@@ -219,7 +219,7 @@ public class BLTxPlayView extends AbBaseVideoView implements ITXVodPlayListener 
             if (this.h == null) {
                 j();
             }
-            if (this.f15659c.j) {
+            if (this.c.j) {
                 a(1.0f, 1.0f);
             } else {
                 a(0.0f, 0.0f);
@@ -294,11 +294,9 @@ public class BLTxPlayView extends AbBaseVideoView implements ITXVodPlayListener 
         return tXVodPlayer != null ? tXVodPlayer.getDuration() * 1000 : super.getDuration();
     }
 
-    @Override // com.tencent.rtmp.ITXVodPlayListener
     public void onNetStatus(TXVodPlayer tXVodPlayer, Bundle bundle) {
     }
 
-    @Override // com.tencent.rtmp.ITXVodPlayListener
     public void onPlayEvent(TXVodPlayer tXVodPlayer, int i, Bundle bundle) {
         String str;
         if (i != 2005) {

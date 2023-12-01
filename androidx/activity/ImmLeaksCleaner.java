@@ -14,11 +14,11 @@ import java.lang.reflect.Field;
 public final class ImmLeaksCleaner implements LifecycleEventObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f1492a;
+    private static int f1444a;
     private static Field b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Field f1493c;
+    private static Field f1445c;
     private static Field d;
     private Activity e;
 
@@ -29,9 +29,9 @@ public final class ImmLeaksCleaner implements LifecycleEventObserver {
 
     private static void a() {
         try {
-            f1492a = 2;
+            f1444a = 2;
             Field declaredField = InputMethodManager.class.getDeclaredField("mServedView");
-            f1493c = declaredField;
+            f1445c = declaredField;
             declaredField.setAccessible(true);
             Field declaredField2 = InputMethodManager.class.getDeclaredField("mNextServedView");
             d = declaredField2;
@@ -39,7 +39,7 @@ public final class ImmLeaksCleaner implements LifecycleEventObserver {
             Field declaredField3 = InputMethodManager.class.getDeclaredField("mH");
             b = declaredField3;
             declaredField3.setAccessible(true);
-            f1492a = 1;
+            f1444a = 1;
         } catch (NoSuchFieldException e) {
         }
     }
@@ -49,10 +49,10 @@ public final class ImmLeaksCleaner implements LifecycleEventObserver {
         if (event != Lifecycle.Event.ON_DESTROY) {
             return;
         }
-        if (f1492a == 0) {
+        if (f1444a == 0) {
             a();
         }
-        if (f1492a == 1) {
+        if (f1444a == 1) {
             InputMethodManager inputMethodManager = (InputMethodManager) this.e.getSystemService(Context.INPUT_METHOD_SERVICE);
             try {
                 Object obj = b.get(inputMethodManager);
@@ -61,7 +61,7 @@ public final class ImmLeaksCleaner implements LifecycleEventObserver {
                 }
                 synchronized (obj) {
                     try {
-                        View view = (View) f1493c.get(inputMethodManager);
+                        View view = (View) f1445c.get(inputMethodManager);
                         if (view == null) {
                             return;
                         }

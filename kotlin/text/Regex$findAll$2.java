@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/Regex$findAll$2.class */
 final /* synthetic */ class Regex$findAll$2 extends FunctionReferenceImpl implements Function1<MatchResult, MatchResult> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Regex$findAll$2 f42736a = new Regex$findAll$2();
+    public static final Regex$findAll$2 a = new Regex$findAll$2();
 
     Regex$findAll$2() {
         super(1, MatchResult.class, "next", "next()Lkotlin/text/MatchResult;", 0);

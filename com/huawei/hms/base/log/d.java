@@ -7,11 +7,11 @@ import com.huawei.hms.support.log.HMSExtLogger;
 public class d implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HMSExtLogger f22615a;
+    public final HMSExtLogger f9007a;
     public b b;
 
     public d(HMSExtLogger hMSExtLogger) {
-        this.f22615a = hMSExtLogger;
+        this.f9007a = hMSExtLogger;
     }
 
     @Override // com.huawei.hms.base.log.b
@@ -29,7 +29,7 @@ public class d implements b {
 
     @Override // com.huawei.hms.base.log.b
     public void a(String str, int i, String str2, String str3) {
-        HMSExtLogger hMSExtLogger = this.f22615a;
+        HMSExtLogger hMSExtLogger = this.f9007a;
         if (hMSExtLogger != null) {
             if (i == 3) {
                 hMSExtLogger.d(str2, str3);

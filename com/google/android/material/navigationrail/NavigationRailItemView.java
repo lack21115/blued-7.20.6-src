@@ -21,9 +21,8 @@ final class NavigationRailItemView extends NavigationBarItemView {
         return R.layout.mtrl_navigation_rail_item;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (View.MeasureSpec.getMode(i2) == 0) {
             setMeasuredDimension(getMeasuredWidthAndState(), View.resolveSizeAndState(Math.max(getMeasuredHeight(), View.MeasureSpec.getSize(i2)), i2, 0));

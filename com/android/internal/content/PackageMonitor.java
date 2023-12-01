@@ -33,17 +33,17 @@ public abstract class PackageMonitor extends BroadcastReceiver {
     String[] mTempArray = new String[1];
 
     static {
-        sPackageFilt.addAction(Intent.ACTION_PACKAGE_ADDED);
-        sPackageFilt.addAction(Intent.ACTION_PACKAGE_REMOVED);
-        sPackageFilt.addAction(Intent.ACTION_PACKAGE_CHANGED);
-        sPackageFilt.addAction(Intent.ACTION_QUERY_PACKAGE_RESTART);
-        sPackageFilt.addAction(Intent.ACTION_PACKAGE_RESTARTED);
-        sPackageFilt.addAction(Intent.ACTION_UID_REMOVED);
+        sPackageFilt.addAction("android.intent.action.PACKAGE_ADDED");
+        sPackageFilt.addAction("android.intent.action.PACKAGE_REMOVED");
+        sPackageFilt.addAction("android.intent.action.PACKAGE_CHANGED");
+        sPackageFilt.addAction("android.intent.action.QUERY_PACKAGE_RESTART");
+        sPackageFilt.addAction("android.intent.action.PACKAGE_RESTARTED");
+        sPackageFilt.addAction("android.intent.action.UID_REMOVED");
         sPackageFilt.addDataScheme("package");
-        sNonDataFilt.addAction(Intent.ACTION_UID_REMOVED);
-        sNonDataFilt.addAction(Intent.ACTION_USER_STOPPED);
-        sExternalFilt.addAction(Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE);
-        sExternalFilt.addAction(Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE);
+        sNonDataFilt.addAction("android.intent.action.UID_REMOVED");
+        sNonDataFilt.addAction("android.intent.action.USER_STOPPED");
+        sExternalFilt.addAction("android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE");
+        sExternalFilt.addAction("android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE");
     }
 
     public boolean anyPackagesAppearing() {
@@ -201,7 +201,7 @@ public abstract class PackageMonitor extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public void onReceive(Context context, Intent intent) {
         int i = 2;
-        this.mChangeUserId = intent.getIntExtra(Intent.EXTRA_USER_HANDLE, -10000);
+        this.mChangeUserId = intent.getIntExtra("android.intent.extra.user_handle", -10000);
         if (this.mChangeUserId == -10000) {
             Slog.w("PackageMonitor", "Intent broadcast does not contain user handle: " + intent);
             return;
@@ -211,14 +211,14 @@ public abstract class PackageMonitor extends BroadcastReceiver {
         this.mDisappearingPackages = null;
         this.mSomePackagesChanged = false;
         String action = intent.getAction();
-        if (Intent.ACTION_PACKAGE_ADDED.equals(action)) {
+        if ("android.intent.action.PACKAGE_ADDED".equals(action)) {
             String packageName = getPackageName(intent);
-            int intExtra = intent.getIntExtra(Intent.EXTRA_UID, 0);
+            int intExtra = intent.getIntExtra("android.intent.extra.UID", 0);
             this.mSomePackagesChanged = true;
             if (packageName != null) {
                 this.mAppearingPackages = this.mTempArray;
                 this.mTempArray[0] = packageName;
-                if (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false)) {
+                if (intent.getBooleanExtra("android.intent.extra.REPLACING", false)) {
                     this.mModifiedPackages = this.mTempArray;
                     this.mChangeType = 1;
                     onPackageUpdateFinished(packageName, intExtra);
@@ -234,13 +234,13 @@ public abstract class PackageMonitor extends BroadcastReceiver {
                     }
                 }
             }
-        } else if (Intent.ACTION_PACKAGE_REMOVED.equals(action)) {
+        } else if ("android.intent.action.PACKAGE_REMOVED".equals(action)) {
             String packageName2 = getPackageName(intent);
-            int intExtra2 = intent.getIntExtra(Intent.EXTRA_UID, 0);
+            int intExtra2 = intent.getIntExtra("android.intent.extra.UID", 0);
             if (packageName2 != null) {
                 this.mDisappearingPackages = this.mTempArray;
                 this.mTempArray[0] = packageName2;
-                if (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false)) {
+                if (intent.getBooleanExtra("android.intent.extra.REPLACING", false)) {
                     this.mChangeType = 1;
                     synchronized (this.mUpdatingPackages) {
                     }
@@ -249,16 +249,16 @@ public abstract class PackageMonitor extends BroadcastReceiver {
                     this.mChangeType = 3;
                     this.mSomePackagesChanged = true;
                     onPackageRemoved(packageName2, intExtra2);
-                    if (intent.getBooleanExtra(Intent.EXTRA_REMOVED_FOR_ALL_USERS, false)) {
+                    if (intent.getBooleanExtra("android.intent.extra.REMOVED_FOR_ALL_USERS", false)) {
                         onPackageRemovedAllUsers(packageName2, intExtra2);
                     }
                 }
                 onPackageDisappeared(packageName2, this.mChangeType);
             }
-        } else if (Intent.ACTION_PACKAGE_CHANGED.equals(action)) {
+        } else if ("android.intent.action.PACKAGE_CHANGED".equals(action)) {
             String packageName3 = getPackageName(intent);
-            int intExtra3 = intent.getIntExtra(Intent.EXTRA_UID, 0);
-            String[] stringArrayExtra = intent.getStringArrayExtra(Intent.EXTRA_CHANGED_COMPONENT_NAME_LIST);
+            int intExtra3 = intent.getIntExtra("android.intent.extra.UID", 0);
+            String[] stringArrayExtra = intent.getStringArrayExtra("android.intent.extra.changed_component_name_list");
             if (packageName3 != null) {
                 this.mModifiedPackages = this.mTempArray;
                 this.mTempArray[0] = packageName3;
@@ -268,26 +268,26 @@ public abstract class PackageMonitor extends BroadcastReceiver {
                 }
                 onPackageModified(packageName3);
             }
-        } else if (Intent.ACTION_QUERY_PACKAGE_RESTART.equals(action)) {
-            this.mDisappearingPackages = intent.getStringArrayExtra(Intent.EXTRA_PACKAGES);
+        } else if ("android.intent.action.QUERY_PACKAGE_RESTART".equals(action)) {
+            this.mDisappearingPackages = intent.getStringArrayExtra("android.intent.extra.PACKAGES");
             this.mChangeType = 2;
-            if (onHandleForceStop(intent, this.mDisappearingPackages, intent.getIntExtra(Intent.EXTRA_UID, 0), false)) {
+            if (onHandleForceStop(intent, this.mDisappearingPackages, intent.getIntExtra("android.intent.extra.UID", 0), false)) {
                 setResultCode(-1);
             }
-        } else if (Intent.ACTION_PACKAGE_RESTARTED.equals(action)) {
+        } else if ("android.intent.action.PACKAGE_RESTARTED".equals(action)) {
             this.mDisappearingPackages = new String[]{getPackageName(intent)};
             this.mChangeType = 2;
-            onHandleForceStop(intent, this.mDisappearingPackages, intent.getIntExtra(Intent.EXTRA_UID, 0), true);
-        } else if (Intent.ACTION_UID_REMOVED.equals(action)) {
-            onUidRemoved(intent.getIntExtra(Intent.EXTRA_UID, 0));
-        } else if (Intent.ACTION_USER_STOPPED.equals(action)) {
-            if (intent.hasExtra(Intent.EXTRA_USER_HANDLE)) {
-                onHandleUserStop(intent, intent.getIntExtra(Intent.EXTRA_USER_HANDLE, 0));
+            onHandleForceStop(intent, this.mDisappearingPackages, intent.getIntExtra("android.intent.extra.UID", 0), true);
+        } else if ("android.intent.action.UID_REMOVED".equals(action)) {
+            onUidRemoved(intent.getIntExtra("android.intent.extra.UID", 0));
+        } else if ("android.intent.action.USER_STOPPED".equals(action)) {
+            if (intent.hasExtra("android.intent.extra.user_handle")) {
+                onHandleUserStop(intent, intent.getIntExtra("android.intent.extra.user_handle", 0));
             }
-        } else if (Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE.equals(action)) {
-            String[] stringArrayExtra2 = intent.getStringArrayExtra(Intent.EXTRA_CHANGED_PACKAGE_LIST);
+        } else if ("android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE".equals(action)) {
+            String[] stringArrayExtra2 = intent.getStringArrayExtra("android.intent.extra.changed_package_list");
             this.mAppearingPackages = stringArrayExtra2;
-            if (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false)) {
+            if (intent.getBooleanExtra("android.intent.extra.REPLACING", false)) {
                 i = 1;
             }
             this.mChangeType = i;
@@ -304,10 +304,10 @@ public abstract class PackageMonitor extends BroadcastReceiver {
                     i2 = i3 + 1;
                 }
             }
-        } else if (Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE.equals(action)) {
-            String[] stringArrayExtra3 = intent.getStringArrayExtra(Intent.EXTRA_CHANGED_PACKAGE_LIST);
+        } else if ("android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE".equals(action)) {
+            String[] stringArrayExtra3 = intent.getStringArrayExtra("android.intent.extra.changed_package_list");
             this.mDisappearingPackages = stringArrayExtra3;
-            if (intent.getBooleanExtra(Intent.EXTRA_REPLACING, false)) {
+            if (intent.getBooleanExtra("android.intent.extra.REPLACING", false)) {
                 i = 1;
             }
             this.mChangeType = i;

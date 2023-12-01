@@ -19,11 +19,11 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class x implements i, q.c, q.d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final s[] f25590a;
+    protected final s[] f11902a;
     private final i b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final a f25591c;
+    private final a f11903c;
     private final CopyOnWriteArraySet<com.opos.exoplayer.core.video.e> d;
     private final CopyOnWriteArraySet<com.opos.exoplayer.core.f.j> e;
     private final CopyOnWriteArraySet<com.opos.exoplayer.core.metadata.e> f;
@@ -224,30 +224,30 @@ public class x implements i, q.c, q.d {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public x(v vVar, com.opos.exoplayer.core.g.h hVar, n nVar) {
-        this(vVar, hVar, nVar, com.opos.exoplayer.core.i.b.f25479a);
+        this(vVar, hVar, nVar, com.opos.exoplayer.core.i.b.f11791a);
     }
 
     protected x(v vVar, com.opos.exoplayer.core.g.h hVar, n nVar, com.opos.exoplayer.core.i.b bVar) {
-        this.f25591c = new a();
+        this.f11903c = new a();
         this.d = new CopyOnWriteArraySet<>();
         this.e = new CopyOnWriteArraySet<>();
         this.f = new CopyOnWriteArraySet<>();
         this.g = new CopyOnWriteArraySet<>();
         this.h = new CopyOnWriteArraySet<>();
         Handler handler = new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper());
-        a aVar = this.f25591c;
-        this.f25590a = vVar.a(handler, aVar, aVar, aVar, aVar);
+        a aVar = this.f11903c;
+        this.f11902a = vVar.a(handler, aVar, aVar, aVar, aVar);
         this.t = 1.0f;
         this.r = 0;
-        this.s = com.opos.exoplayer.core.a.b.f25008a;
+        this.s = com.opos.exoplayer.core.a.b.f11320a;
         this.m = 1;
-        this.b = a(this.f25590a, hVar, nVar, bVar);
+        this.b = a(this.f11902a, hVar, nVar, bVar);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(Surface surface, boolean z) {
         ArrayList<r> arrayList = new ArrayList();
-        s[] sVarArr = this.f25590a;
+        s[] sVarArr = this.f11902a;
         int length = sVarArr.length;
         int i = 0;
         while (true) {
@@ -284,7 +284,7 @@ public class x implements i, q.c, q.d {
     private void q() {
         TextureView textureView = this.o;
         if (textureView != null) {
-            if (textureView.getSurfaceTextureListener() != this.f25591c) {
+            if (textureView.getSurfaceTextureListener() != this.f11903c) {
                 com.opos.cmn.an.f.a.c("SimpleExoPlayer", "SurfaceTextureListener already unset or replaced.");
             } else {
                 this.o.setSurfaceTextureListener(null);
@@ -293,7 +293,7 @@ public class x implements i, q.c, q.d {
         }
         SurfaceHolder surfaceHolder = this.n;
         if (surfaceHolder != null) {
-            surfaceHolder.removeCallback(this.f25591c);
+            surfaceHolder.removeCallback(this.f11903c);
             this.n = null;
         }
     }
@@ -314,7 +314,7 @@ public class x implements i, q.c, q.d {
 
     public void a(float f) {
         this.t = f;
-        s[] sVarArr = this.f25590a;
+        s[] sVarArr = this.f11902a;
         int length = sVarArr.length;
         int i = 0;
         while (true) {
@@ -352,7 +352,7 @@ public class x implements i, q.c, q.d {
         if (surfaceHolder == null) {
             surface = null;
         } else {
-            surfaceHolder.addCallback(this.f25591c);
+            surfaceHolder.addCallback(this.f11903c);
             Surface surface2 = surfaceHolder.getSurface();
             surface = null;
             if (surface2 != null) {
@@ -381,7 +381,7 @@ public class x implements i, q.c, q.d {
             if (textureView.getSurfaceTextureListener() != null) {
                 com.opos.cmn.an.f.a.c("SimpleExoPlayer", "Replacing existing SurfaceTextureListener.");
             }
-            textureView.setSurfaceTextureListener(this.f25591c);
+            textureView.setSurfaceTextureListener(this.f11903c);
             SurfaceTexture surfaceTexture = textureView.isAvailable() ? textureView.getSurfaceTexture() : null;
             surface = surfaceTexture == null ? null : new Surface(surfaceTexture);
         }

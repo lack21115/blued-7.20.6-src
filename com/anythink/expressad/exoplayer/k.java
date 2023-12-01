@@ -21,11 +21,11 @@ import java.util.Iterator;
 final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7622a = 0;
+    public static final int f4783a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7623c = 2;
+    public static final int f4784c = 2;
     private static final String d = "ExoPlayerImplInternal";
     private static final int e = 0;
     private static final int f = 1;
@@ -84,16 +84,16 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     final class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ x f7624a;
+        final /* synthetic */ x f4785a;
 
         AnonymousClass1(x xVar) {
-            this.f7624a = xVar;
+            this.f4785a = xVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                k.f(this.f7624a);
+                k.f(this.f4785a);
             } catch (g e) {
                 Log.e(k.d, "Unexpected error delivering message on external thread.", e);
                 throw new RuntimeException(e);
@@ -105,16 +105,16 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final com.anythink.expressad.exoplayer.h.s f7625a;
+        public final com.anythink.expressad.exoplayer.h.s f4786a;
         public final ae b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final Object f7626c;
+        public final Object f4787c;
 
         public a(com.anythink.expressad.exoplayer.h.s sVar, ae aeVar, Object obj) {
-            this.f7625a = sVar;
+            this.f4786a = sVar;
             this.b = aeVar;
-            this.f7626c = obj;
+            this.f4787c = obj;
         }
     }
 
@@ -123,15 +123,15 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     public static final class b implements Comparable<b> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final x f7637a;
+        public final x f4798a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f7638c;
+        public long f4799c;
         public Object d;
 
         public b(x xVar) {
-            this.f7637a = xVar;
+            this.f4798a = xVar;
         }
 
         private int a(b bVar) {
@@ -141,13 +141,13 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 return 0;
             } else {
                 int i = this.b - bVar.b;
-                return i != 0 ? i : af.b(this.f7638c, bVar.f7638c);
+                return i != 0 ? i : af.b(this.f4799c, bVar.f4799c);
             }
         }
 
         public final void a(int i, long j, Object obj) {
             this.b = i;
-            this.f7638c = j;
+            this.f4799c = j;
             this.d = obj;
         }
 
@@ -160,7 +160,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 return 0;
             } else {
                 int i = this.b - bVar2.b;
-                return i != 0 ? i : af.b(this.f7638c, bVar2.f7638c);
+                return i != 0 ? i : af.b(this.f4799c, bVar2.f4799c);
             }
         }
     }
@@ -170,11 +170,11 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        private u f7641a;
+        private u f4802a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f7642c;
+        private boolean f4803c;
         private int d;
 
         private c() {
@@ -189,13 +189,13 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
         }
 
         public final boolean a(u uVar) {
-            return uVar != this.f7641a || this.b > 0 || this.f7642c;
+            return uVar != this.f4802a || this.b > 0 || this.f4803c;
         }
 
         public final void b(int i) {
             boolean z = true;
-            if (!this.f7642c || this.d == 4) {
-                this.f7642c = true;
+            if (!this.f4803c || this.d == 4) {
+                this.f4803c = true;
                 this.d = i;
                 return;
             }
@@ -206,9 +206,9 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
         }
 
         public final void b(u uVar) {
-            this.f7641a = uVar;
+            this.f4802a = uVar;
             this.b = 0;
-            this.f7642c = false;
+            this.f4803c = false;
         }
     }
 
@@ -217,16 +217,16 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public final ae f7645a;
+        public final ae f4806a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long f7646c;
+        public final long f4807c;
 
         public d(ae aeVar, int i, long j) {
-            this.f7645a = aeVar;
+            this.f4806a = aeVar;
             this.b = i;
-            this.f7646c = j;
+            this.f4807c = j;
         }
     }
 
@@ -241,7 +241,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
         this.F = handler;
         this.G = hVar2;
         this.O = cVar;
-        this.R = new u(ae.f7160a, com.anythink.expressad.exoplayer.b.b, com.anythink.expressad.exoplayer.h.af.f7419a, iVar);
+        this.R = new u(ae.f4321a, com.anythink.expressad.exoplayer.b.b, com.anythink.expressad.exoplayer.h.af.f4580a, iVar);
         this.z = new z[yVarArr.length];
         int i3 = 0;
         while (true) {
@@ -320,8 +320,8 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             a(c2);
             long j3 = j2;
             if (qVar.g) {
-                j3 = qVar.f7724a.b(j2);
-                qVar.f7724a.a(j3 - this.J, this.K);
+                j3 = qVar.f4885a.b(j2);
+                qVar.f4885a.a(j3 - this.J, this.K);
             }
             a(j3);
             r();
@@ -340,8 +340,8 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
 
     private Pair<Integer, Long> a(d dVar, boolean z) {
         int a2;
-        ae aeVar = this.R.f7738a;
-        ae aeVar2 = dVar.f7645a;
+        ae aeVar = this.R.f4899a;
+        ae aeVar2 = dVar.f4806a;
         if (aeVar.a()) {
             return null;
         }
@@ -350,7 +350,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             aeVar3 = aeVar;
         }
         try {
-            Pair<Integer, Long> a3 = aeVar3.a(this.H, this.I, dVar.b, dVar.f7646c);
+            Pair<Integer, Long> a3 = aeVar3.a(this.H, this.I, dVar.b, dVar.f4807c);
             if (aeVar == aeVar3) {
                 return a3;
             }
@@ -361,9 +361,9 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             if (!z || (a2 = a(a3.first.intValue(), aeVar3, aeVar)) == -1) {
                 return null;
             }
-            return a(aeVar, aeVar.a(a2, this.I, false).f7162c);
+            return a(aeVar, aeVar.a(a2, this.I, false).f4323c);
         } catch (IndexOutOfBoundsException e2) {
-            throw new o(aeVar, dVar.b, dVar.f7646c);
+            throw new o(aeVar, dVar.b, dVar.f4807c);
         }
     }
 
@@ -375,7 +375,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 return;
             }
             if (qVar.k != null) {
-                com.anythink.expressad.exoplayer.i.f[] a2 = qVar.k.f7548c.a();
+                com.anythink.expressad.exoplayer.i.f[] a2 = qVar.k.f4709c.a();
                 int length = a2.length;
                 int i2 = 0;
                 while (true) {
@@ -399,9 +399,9 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
         this.T[i3] = yVar;
         if (yVar.a_() == 0) {
             aa aaVar = c2.k.b[i2];
-            m[] a2 = a(c2.k.f7548c.a(i2));
+            m[] a2 = a(c2.k.f4709c.a(i2));
             boolean z2 = this.V && this.R.f == 3;
-            yVar.a(aaVar, a2, c2.f7725c[i2], this.ab, !z && z2, c2.e);
+            yVar.a(aaVar, a2, c2.f4886c[i2], this.ab, !z && z2, c2.e);
             this.L.a(yVar);
             if (z2) {
                 yVar.b_();
@@ -434,16 +434,16 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     }
 
     private void a(com.anythink.expressad.exoplayer.i.i iVar) {
-        this.C.a(this.y, iVar.f7548c);
+        this.C.a(this.y, iVar.f4709c);
     }
 
     private void a(a aVar) {
-        if (aVar.f7625a != this.S) {
+        if (aVar.f4786a != this.S) {
             return;
         }
-        ae aeVar = this.R.f7738a;
+        ae aeVar = this.R.f4899a;
         ae aeVar2 = aVar.b;
-        Object obj = aVar.f7626c;
+        Object obj = aVar.f4787c;
         this.P.a(aeVar2);
         this.R = this.R.a(aeVar2, obj);
         int size = this.N.size();
@@ -453,7 +453,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 break;
             }
             if (!a(this.N.get(i2))) {
-                this.N.get(i2).f7637a.a(false);
+                this.N.get(i2).f4798a.a(false);
                 this.N.remove(i2);
             }
             size = i2;
@@ -492,7 +492,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 return;
             }
         }
-        int i4 = this.R.f7739c.f7484a;
+        int i4 = this.R.f4900c.f4645a;
         long j3 = this.R.e;
         if (aeVar.a()) {
             if (aeVar2.a()) {
@@ -508,7 +508,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             if (a7 != i4) {
                 this.R = this.R.a(a7);
             }
-            s.a aVar2 = this.R.f7739c;
+            s.a aVar2 = this.R.f4900c;
             if (aVar2.a()) {
                 s.a a8 = this.P.a(a7, j3);
                 if (!a8.equals(aVar2)) {
@@ -530,7 +530,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             o();
             return;
         }
-        Pair<Integer, Long> a10 = a(aeVar2, aeVar2.a(a9, this.I, false).f7162c);
+        Pair<Integer, Long> a10 = a(aeVar2, aeVar2.a(a9, this.I, false).f4323c);
         int intValue3 = a10.first.intValue();
         long longValue3 = a10.second.longValue();
         s.a a11 = this.P.a(intValue3, longValue3);
@@ -589,7 +589,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             if (c2.k.a(i2)) {
                 i5 = i4 + 1;
             }
-            if (zArr[i2] && (!c2.k.a(i2) || (yVar.i() && yVar.f() == qVar.f7725c[i2]))) {
+            if (zArr[i2] && (!c2.k.a(i2) || (yVar.i() && yVar.f() == qVar.f4886c[i2]))) {
                 b(yVar);
             }
             i2++;
@@ -636,23 +636,23 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             this.aa = null;
         }
         if (z3) {
-            this.P.a(ae.f7160a);
+            this.P.a(ae.f4321a);
             Iterator<b> it = this.N.iterator();
             while (it.hasNext()) {
-                it.next().f7637a.a(false);
+                it.next().f4798a.a(false);
             }
             this.N.clear();
             this.ac = 0;
         }
-        ae aeVar = z3 ? ae.f7160a : this.R.f7738a;
+        ae aeVar = z3 ? ae.f4321a : this.R.f4899a;
         Object obj = z3 ? null : this.R.b;
-        s.a aVar = z2 ? new s.a(j()) : this.R.f7739c;
+        s.a aVar = z2 ? new s.a(j()) : this.R.f4900c;
         long j2 = -9223372036854775807L;
         long j3 = z2 ? -9223372036854775807L : this.R.j;
         if (!z2) {
             j2 = this.R.e;
         }
-        this.R = new u(aeVar, obj, aVar, j3, j2, this.R.f, false, z3 ? com.anythink.expressad.exoplayer.h.af.f7419a : this.R.h, z3 ? this.B : this.R.i);
+        this.R = new u(aeVar, obj, aVar, j3, j2, this.R.f, false, z3 ? com.anythink.expressad.exoplayer.h.af.f4580a : this.R.h, z3 ? this.B : this.R.i);
         if (!z || (sVar = this.S) == null) {
             return;
         }
@@ -681,24 +681,24 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     }
 
     private boolean a(s.a aVar, long j2, q qVar) {
-        if (aVar.equals(qVar.h.f7726a) && qVar.f) {
-            this.R.f7738a.a(qVar.h.f7726a.f7484a, this.I, false);
+        if (aVar.equals(qVar.h.f4887a) && qVar.f) {
+            this.R.f4899a.a(qVar.h.f4887a.f4645a, this.I, false);
             int b2 = this.I.b(j2);
-            return b2 == -1 || this.I.a(b2) == qVar.h.f7727c;
+            return b2 == -1 || this.I.a(b2) == qVar.h.f4888c;
         }
         return false;
     }
 
     private boolean a(b bVar) {
         if (bVar.d == null) {
-            Pair<Integer, Long> a2 = a(new d(bVar.f7637a.a(), bVar.f7637a.g(), com.anythink.expressad.exoplayer.b.b(bVar.f7637a.f())), false);
+            Pair<Integer, Long> a2 = a(new d(bVar.f4798a.a(), bVar.f4798a.g(), com.anythink.expressad.exoplayer.b.b(bVar.f4798a.f())), false);
             if (a2 == null) {
                 return false;
             }
-            bVar.a(a2.first.intValue(), a2.second.longValue(), this.R.f7738a.a(a2.first.intValue(), this.I, true).b);
+            bVar.a(a2.first.intValue(), a2.second.longValue(), this.R.f4899a.a(a2.first.intValue(), this.I, true).b);
             return true;
         }
-        int a3 = this.R.f7738a.a(bVar.d);
+        int a3 = this.R.f4899a.a(bVar.d);
         if (a3 == -1) {
             return false;
         }
@@ -780,12 +780,12 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             q b2 = this.P.b();
             float f2 = this.L.e().b;
             b2.f = true;
-            b2.j = b2.f7724a.b();
+            b2.j = b2.f4885a.b();
             b2.a(f2);
             long b3 = b2.b(b2.h.b);
             b2.e += b2.h.b - b3;
             r rVar2 = b2.h;
-            b2.h = new r(rVar2.f7726a, b3, rVar2.f7727c, rVar2.d, rVar2.e, rVar2.f, rVar2.g);
+            b2.h = new r(rVar2.f4887a, b3, rVar2.f4888c, rVar2.d, rVar2.e, rVar2.f, rVar2.g);
             a(b2.k);
             if (!this.P.f()) {
                 a(this.P.h().h.b);
@@ -822,7 +822,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
 
     private void d() {
         if (this.M.a(this.R)) {
-            this.F.obtainMessage(0, this.M.b, this.M.f7642c ? this.M.d : -1, this.R).sendToTarget();
+            this.F.obtainMessage(0, this.M.b, this.M.f4803c ? this.M.d : -1, this.R).sendToTarget();
             this.M.b(this.R);
         }
     }
@@ -915,12 +915,12 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     private void g() {
         if (this.P.f()) {
             q c2 = this.P.c();
-            long c3 = c2.f7724a.c();
+            long c3 = c2.f4885a.c();
             if (c3 != com.anythink.expressad.exoplayer.b.b) {
                 a(c3);
                 if (c3 != this.R.j) {
                     u uVar = this.R;
-                    this.R = uVar.a(uVar.f7739c, c3, this.R.e);
+                    this.R = uVar.a(uVar.f4900c, c3, this.R.e);
                     this.M.b(4);
                 }
             } else {
@@ -935,7 +935,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     }
 
     private void g(boolean z) {
-        s.a aVar = this.P.c().h.f7726a;
+        s.a aVar = this.P.c().h.f4887a;
         long a2 = a(aVar, this.R.j, true);
         if (a2 != this.R.j) {
             u uVar = this.R;
@@ -993,7 +993,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
     }
 
     private int j() {
-        ae aeVar = this.R.f7738a;
+        ae aeVar = this.R.f4899a;
         if (aeVar.a()) {
             return 0;
         }
@@ -1009,7 +1009,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 return;
             }
             if (!a(this.N.get(i2))) {
-                this.N.get(i2).f7637a.a(false);
+                this.N.get(i2).f4798a.a(false);
                 this.N.remove(i2);
             }
             size = i2;
@@ -1032,7 +1032,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                         a(c3.k);
                         if (this.R.f != 4 && a3 != this.R.j) {
                             u uVar = this.R;
-                            this.R = uVar.a(uVar.f7739c, a3, this.R.e);
+                            this.R = uVar.a(uVar.f4900c, a3, this.R.e);
                             this.M.b(4);
                             a(a3);
                         }
@@ -1047,7 +1047,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                             }
                             y yVar = yVarArr[i3];
                             zArr2[i3] = yVar.a_() != 0;
-                            com.anythink.expressad.exoplayer.h.y yVar2 = c3.f7725c[i3];
+                            com.anythink.expressad.exoplayer.h.y yVar2 = c3.f4886c[i3];
                             int i5 = i2;
                             if (yVar2 != null) {
                                 i5 = i2 + 1;
@@ -1093,7 +1093,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             return true;
         }
         if (c2.i != null) {
-            return c2.i.f || c2.i.h.f7726a.a();
+            return c2.i.f || c2.i.h.f4887a.a();
         }
         return false;
     }
@@ -1113,7 +1113,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
         while (true) {
             int i3 = i2;
             if (i3 >= length) {
-                b2.f7724a.a();
+                b2.f4885a.a();
                 return;
             } else if (!yVarArr[i3].g()) {
                 return;
@@ -1143,7 +1143,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             if (a2 == null) {
                 this.S.b();
             } else {
-                this.P.a(this.z, this.A, this.C.d(), this.S, this.R.f7738a.a(a2.f7726a.f7484a, this.I, true).b, a2).a(this, a2.b);
+                this.P.a(this.z, this.A, this.C.d(), this.S, this.R.f4899a.a(a2.f4887a.f4645a, this.I, true).b, a2).a(this, a2.b);
                 d(true);
             }
         }
@@ -1170,7 +1170,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
             int i2 = c2.h.f ? 0 : 3;
             q h2 = this.P.h();
             a(c2);
-            this.R = this.R.a(h2.h.f7726a, h2.h.b, h2.h.d);
+            this.R = this.R.a(h2.h.f4887a, h2.h.b, h2.h.d);
             this.M.b(i2);
             g();
             c2 = h2;
@@ -1185,7 +1185,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                     return;
                 }
                 y yVar = yVarArr[i4];
-                com.anythink.expressad.exoplayer.h.y yVar2 = d2.f7725c[i4];
+                com.anythink.expressad.exoplayer.h.y yVar2 = d2.f4886c[i4];
                 if (yVar2 != null && yVar.f() == yVar2 && yVar.g()) {
                     yVar.h();
                 }
@@ -1199,7 +1199,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 y[] yVarArr2 = this.y;
                 if (i6 < yVarArr2.length) {
                     y yVar3 = yVarArr2[i6];
-                    com.anythink.expressad.exoplayer.h.y yVar4 = d2.f7725c[i6];
+                    com.anythink.expressad.exoplayer.h.y yVar4 = d2.f4886c[i6];
                     if (yVar3.f() != yVar4) {
                         return;
                     }
@@ -1211,7 +1211,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                     com.anythink.expressad.exoplayer.i.i iVar = d2.k;
                     q g2 = this.P.g();
                     com.anythink.expressad.exoplayer.i.i iVar2 = g2.k;
-                    boolean z3 = g2.f7724a.c() != com.anythink.expressad.exoplayer.b.b;
+                    boolean z3 = g2.f4885a.c() != com.anythink.expressad.exoplayer.b.b;
                     int i7 = 0;
                     while (true) {
                         int i8 = i7;
@@ -1223,13 +1223,13 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                         if (iVar.a(i8)) {
                             if (!z3) {
                                 if (!yVar5.i()) {
-                                    com.anythink.expressad.exoplayer.i.f a3 = iVar2.f7548c.a(i8);
+                                    com.anythink.expressad.exoplayer.i.f a3 = iVar2.f4709c.a(i8);
                                     boolean a4 = iVar2.a(i8);
                                     boolean z4 = this.z[i8].a() == 5;
                                     aa aaVar = iVar.b[i8];
                                     aa aaVar2 = iVar2.b[i8];
                                     if (a4 && aaVar2.equals(aaVar) && !z4) {
-                                        yVar5.a(a(a3), g2.f7725c[i8], g2.e);
+                                        yVar5.a(a(a3), g2.f4886c[i8], g2.e);
                                     }
                                 }
                             }
@@ -1250,7 +1250,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 this.S.b();
                 return;
             }
-            this.P.a(this.z, this.A, this.C.d(), this.S, this.R.f7738a.a(a2.f7726a.f7484a, this.I, true).b, a2).a(this, a2.b);
+            this.P.a(this.z, this.A, this.C.d(), this.S, this.R.f4899a.a(a2.f4887a.f4645a, this.I, true).b, a2).a(this, a2.b);
             d(true);
         }
     }
@@ -1335,7 +1335,7 @@ final class k implements Handler.Callback, e.a, r.a, s.b, h.a, x.a {
                 return;
             }
             if (qVar.k != null) {
-                com.anythink.expressad.exoplayer.i.f[] a2 = qVar.k.f7548c.a();
+                com.anythink.expressad.exoplayer.i.f[] a2 = qVar.k.f4709c.a();
                 int length = a2.length;
                 int i2 = 0;
                 while (true) {

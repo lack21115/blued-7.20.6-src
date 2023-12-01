@@ -459,13 +459,13 @@ public class MaterialButtonToggleGroup extends LinearLayout {
         this.onButtonCheckedListeners.clear();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         updateChildOrder();
         super.dispatchDraw(canvas);
     }
 
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
     public CharSequence getAccessibilityClassName() {
         return MaterialButtonToggleGroup.class.getName();
     }
@@ -493,9 +493,8 @@ public class MaterialButtonToggleGroup extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public int getChildDrawingOrder(int i, int i2) {
+    protected int getChildDrawingOrder(int i, int i2) {
         Integer[] numArr = this.childOrder;
         if (numArr == null || i2 >= numArr.length) {
             Log.w(LOG_TAG, "Child order wasn't updated");
@@ -512,9 +511,8 @@ public class MaterialButtonToggleGroup extends LinearLayout {
         return this.singleSelection;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         int i = this.checkedId;
         if (i != -1) {
@@ -522,15 +520,14 @@ public class MaterialButtonToggleGroup extends LinearLayout {
         }
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         AccessibilityNodeInfoCompat.wrap(accessibilityNodeInfo).setCollectionInfo(AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(1, getVisibleButtonCount(), false, isSingleSelection() ? 1 : 2));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         updateChildShapes();
         adjustChildMarginsAndUpdateLayout();
         super.onMeasure(i, i2);

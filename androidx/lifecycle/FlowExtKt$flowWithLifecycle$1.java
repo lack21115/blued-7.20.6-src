@@ -44,17 +44,14 @@ final class FlowExtKt$flowWithLifecycle$1<T> extends SuspendLambda implements Fu
             this.$$this$callbackFlow = producerScope;
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
             return new AnonymousClass1(this.$this_flowWithLifecycle, this.$$this$callbackFlow, continuation);
         }
 
-        @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             Object a2 = IntrinsicsKt.a();
             int i = this.label;
@@ -63,13 +60,12 @@ final class FlowExtKt$flowWithLifecycle$1<T> extends SuspendLambda implements Fu
                 Flow<T> flow = this.$this_flowWithLifecycle;
                 final ProducerScope<T> producerScope = this.$$this$callbackFlow;
                 this.label = 1;
-                if (flow.a((FlowCollector) ((FlowCollector<T>) new FlowCollector<T>() { // from class: androidx.lifecycle.FlowExtKt$flowWithLifecycle$1$1$invokeSuspend$$inlined$collect$1
-                    @Override // kotlinx.coroutines.flow.FlowCollector
+                if (flow.a(new FlowCollector<T>() { // from class: androidx.lifecycle.FlowExtKt$flowWithLifecycle$1$1$invokeSuspend$$inlined$collect$1
                     public Object emit(T t, Continuation<? super Unit> continuation) {
-                        Object a3 = ProducerScope.this.a(t, continuation);
-                        return a3 == IntrinsicsKt.a() ? a3 : Unit.f42314a;
+                        Object a3 = producerScope.a(t, continuation);
+                        return a3 == IntrinsicsKt.a() ? a3 : Unit.a;
                     }
-                }), this) == a2) {
+                }, (Continuation) this) == a2) {
                     return a2;
                 }
             } else if (i != 1) {
@@ -77,7 +73,7 @@ final class FlowExtKt$flowWithLifecycle$1<T> extends SuspendLambda implements Fu
             } else {
                 ResultKt.a(obj);
             }
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -91,23 +87,20 @@ final class FlowExtKt$flowWithLifecycle$1<T> extends SuspendLambda implements Fu
         this.$this_flowWithLifecycle = flow;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        FlowExtKt$flowWithLifecycle$1 flowExtKt$flowWithLifecycle$1 = new FlowExtKt$flowWithLifecycle$1(this.$lifecycle, this.$minActiveState, this.$this_flowWithLifecycle, continuation);
+        Continuation<Unit> flowExtKt$flowWithLifecycle$1 = new FlowExtKt$flowWithLifecycle$1<>(this.$lifecycle, this.$minActiveState, this.$this_flowWithLifecycle, continuation);
         flowExtKt$flowWithLifecycle$1.L$0 = obj;
         return flowExtKt$flowWithLifecycle$1;
     }
 
-    @Override // kotlin.jvm.functions.Function2
-    public /* bridge */ /* synthetic */ Object invoke(Object obj, Continuation<? super Unit> continuation) {
-        return invoke((ProducerScope) ((ProducerScope) obj), continuation);
+    public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
+        return invoke((ProducerScope) ((ProducerScope) obj), (Continuation) obj2);
     }
 
     public final Object invoke(ProducerScope<? super T> producerScope, Continuation<? super Unit> continuation) {
-        return ((FlowExtKt$flowWithLifecycle$1) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(producerScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         ProducerScope producerScope;
         Object a2 = IntrinsicsKt.a();
@@ -117,7 +110,7 @@ final class FlowExtKt$flowWithLifecycle$1<T> extends SuspendLambda implements Fu
             producerScope = (ProducerScope) this.L$0;
             this.L$0 = producerScope;
             this.label = 1;
-            if (RepeatOnLifecycleKt.repeatOnLifecycle(this.$lifecycle, this.$minActiveState, new AnonymousClass1(this.$this_flowWithLifecycle, producerScope, null), this) == a2) {
+            if (RepeatOnLifecycleKt.repeatOnLifecycle(this.$lifecycle, this.$minActiveState, new AnonymousClass1(this.$this_flowWithLifecycle, producerScope, null), (Continuation) this) == a2) {
                 return a2;
             }
         } else if (i != 1) {
@@ -126,7 +119,7 @@ final class FlowExtKt$flowWithLifecycle$1<T> extends SuspendLambda implements Fu
             ResultKt.a(obj);
             producerScope = (ProducerScope) this.L$0;
         }
-        SendChannel.DefaultImpls.a(producerScope, null, 1, null);
-        return Unit.f42314a;
+        SendChannel.DefaultImpls.a(producerScope, (Throwable) null, 1, (Object) null);
+        return Unit.a;
     }
 }

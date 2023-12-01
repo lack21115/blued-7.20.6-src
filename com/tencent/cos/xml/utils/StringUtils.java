@@ -1,7 +1,7 @@
 package com.tencent.cos.xml.utils;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.qcloud.core.util.QCloudHttpUtils;
 import java.util.Map;
 
@@ -41,8 +41,8 @@ public class StringUtils {
         if (TextUtils.isEmpty(str)) {
             return "";
         }
-        if (str.endsWith(BridgeUtil.SPLIT_MARK)) {
-            return BridgeUtil.SPLIT_MARK;
+        if (str.endsWith("/")) {
+            return "/";
         }
         int lastIndexOf = str.lastIndexOf(46);
         return lastIndexOf > 0 ? str.substring(lastIndexOf) : "";
@@ -58,7 +58,7 @@ public class StringUtils {
             String key = entry.getKey();
             String value = entry.getValue();
             if (!z) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
             sb.append(key);
             z = false;

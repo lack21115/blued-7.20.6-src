@@ -1,9 +1,7 @@
 package java.util;
 
-import android.provider.Contacts;
-import android.speech.tts.TextToSpeech;
-import android.text.style.SuggestionSpan;
-import com.anythink.expressad.video.dynview.a.a;
+import com.amap.api.services.district.DistrictSearchQuery;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -33,28 +31,28 @@ public final class Locale implements Cloneable, Serializable {
     private transient Map<String, String> unicodeKeywords;
     private transient String variantCode;
     public static final Locale CANADA = new Locale(true, "en", "CA");
-    public static final Locale CANADA_FRENCH = new Locale(true, a.Z, "CA");
-    public static final Locale CHINA = new Locale(true, a.V, "CN");
-    public static final Locale CHINESE = new Locale(true, a.V, "");
+    public static final Locale CANADA_FRENCH = new Locale(true, "fr", "CA");
+    public static final Locale CHINA = new Locale(true, "zh", "CN");
+    public static final Locale CHINESE = new Locale(true, "zh", "");
     public static final Locale ENGLISH = new Locale(true, "en", "");
-    public static final Locale FRANCE = new Locale(true, a.Z, "FR");
-    public static final Locale FRENCH = new Locale(true, a.Z, "");
-    public static final Locale GERMAN = new Locale(true, a.X, "");
-    public static final Locale GERMANY = new Locale(true, a.X, "DE");
+    public static final Locale FRANCE = new Locale(true, "fr", "FR");
+    public static final Locale FRENCH = new Locale(true, "fr", "");
+    public static final Locale GERMAN = new Locale(true, "de", "");
+    public static final Locale GERMANY = new Locale(true, "de", "DE");
     public static final Locale ITALIAN = new Locale(true, "it", "");
     public static final Locale ITALY = new Locale(true, "it", "IT");
-    public static final Locale JAPAN = new Locale(true, a.W, "JP");
-    public static final Locale JAPANESE = new Locale(true, a.W, "");
-    public static final Locale KOREA = new Locale(true, a.Y, "KR");
-    public static final Locale KOREAN = new Locale(true, a.Y, "");
-    public static final Locale PRC = new Locale(true, a.V, "CN");
+    public static final Locale JAPAN = new Locale(true, "ja", "JP");
+    public static final Locale JAPANESE = new Locale(true, "ja", "");
+    public static final Locale KOREA = new Locale(true, "ko", "KR");
+    public static final Locale KOREAN = new Locale(true, "ko", "");
+    public static final Locale PRC = new Locale(true, "zh", "CN");
     public static final Locale ROOT = new Locale(true, "", "");
-    public static final Locale SIMPLIFIED_CHINESE = new Locale(true, a.V, "CN");
-    public static final Locale TAIWAN = new Locale(true, a.V, "TW");
-    public static final Locale TRADITIONAL_CHINESE = new Locale(true, a.V, "TW");
+    public static final Locale SIMPLIFIED_CHINESE = new Locale(true, "zh", "CN");
+    public static final Locale TAIWAN = new Locale(true, "zh", "TW");
+    public static final Locale TRADITIONAL_CHINESE = new Locale(true, "zh", "TW");
     public static final Locale UK = new Locale(true, "en", "GB");
     public static final Locale US = new Locale(true, "en", "US");
-    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("country", String.class), new ObjectStreamField(SuggestionSpan.SUGGESTION_SPAN_PICKED_HASHCODE, Integer.TYPE), new ObjectStreamField("language", String.class), new ObjectStreamField(TextToSpeech.Engine.KEY_PARAM_VARIANT, String.class), new ObjectStreamField("script", String.class), new ObjectStreamField(Contacts.People.Extensions.CONTENT_DIRECTORY, String.class)};
+    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField(DistrictSearchQuery.KEYWORDS_COUNTRY, String.class), new ObjectStreamField("hashcode", Integer.TYPE), new ObjectStreamField("language", String.class), new ObjectStreamField("variant", String.class), new ObjectStreamField("script", String.class), new ObjectStreamField("extensions", String.class)};
     private static final TreeMap<String, String> GRANDFATHERED_LOCALES = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
 
     /* loaded from: source-2895416-dex2jar.jar:java/util/Locale$Builder.class */
@@ -85,7 +83,7 @@ public final class Locale implements Cloneable, Serializable {
                     if (z) {
                         throw new IllformedLocaleException("Invalid language: " + str);
                     }
-                    return "und";
+                    return Locale.UNDETERMINED_LANGUAGE;
                 }
             }
             return str2;
@@ -194,21 +192,21 @@ public final class Locale implements Cloneable, Serializable {
             throw new IllformedLocaleException("Invalid locale attribute: " + str);
         }
 
-        public Builder setExtension(char c2, String str) {
+        public Builder setExtension(char c, String str) {
             if (str == null || str.isEmpty()) {
-                this.extensions.remove(Character.valueOf(c2));
+                this.extensions.remove(Character.valueOf(c));
                 return this;
             }
             String replace = str.toLowerCase(Locale.ROOT).replace('_', '-');
-            String[] split = replace.split("-");
-            int i = c2 == 'x' ? 1 : 2;
+            String[] split = replace.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
+            int i = c == 'x' ? 1 : 2;
             int length = split.length;
             int i2 = 0;
             while (true) {
                 int i3 = i2;
                 if (i3 >= length) {
-                    if (c2 != 'u') {
-                        this.extensions.put(Character.valueOf(c2), replace);
+                    if (c != 'u') {
+                        this.extensions.put(Character.valueOf(c), replace);
                         return this;
                     }
                     this.extensions.clear();
@@ -288,7 +286,7 @@ public final class Locale implements Cloneable, Serializable {
             }
             String lowerCase = str.toLowerCase(Locale.ROOT);
             if (lowerCase.length() == 2 && Locale.isAsciiAlphaNum(lowerCase)) {
-                String replace = str2.toLowerCase(Locale.ROOT).replace(BridgeUtil.UNDERLINE_STR, "-");
+                String replace = str2.toLowerCase(Locale.ROOT).replace(BridgeUtil.UNDERLINE_STR, NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                 if (Locale.isValidTypeList(replace)) {
                     this.keywords.put(lowerCase, replace);
                     return this;
@@ -623,7 +621,7 @@ public final class Locale implements Cloneable, Serializable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean isValidTypeList(String str) {
-        String[] split = str.split("-");
+        String[] split = str.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -677,7 +675,7 @@ public final class Locale implements Cloneable, Serializable {
         }
         String str3 = normalizeAndValidateLanguage;
         if (normalizeAndValidateLanguage.isEmpty()) {
-            str3 = "und";
+            str3 = UNDETERMINED_LANGUAGE;
         }
         String str4 = str3;
         String str5 = normalizeAndValidateRegion;
@@ -734,7 +732,7 @@ public final class Locale implements Cloneable, Serializable {
     }
 
     public static void parseSerializedExtensions(String str, Map<Character, String> map) {
-        String[] split = str.split("-");
+        String[] split = str.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         int[] iArr = new int[split.length / 2];
         int i = 0;
         int length = split.length;
@@ -805,7 +803,7 @@ public final class Locale implements Cloneable, Serializable {
         parseSerializedExtensions(str, treeMap);
         this.extensions = Collections.unmodifiableMap(treeMap);
         if (treeMap.containsKey('u')) {
-            String[] split = ((String) treeMap.get('u')).split("-");
+            String[] split = ((String) treeMap.get('u')).split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
             TreeMap treeMap2 = new TreeMap();
             TreeSet treeSet = new TreeSet();
             parseUnicodeExtension(split, treeMap2, treeSet);
@@ -816,14 +814,14 @@ public final class Locale implements Cloneable, Serializable {
 
     private void readObject(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
         ObjectInputStream.GetField readFields = objectInputStream.readFields();
-        this.countryCode = (String) readFields.get("country", "");
+        this.countryCode = (String) readFields.get(DistrictSearchQuery.KEYWORDS_COUNTRY, "");
         this.languageCode = (String) readFields.get("language", "");
-        this.variantCode = (String) readFields.get(TextToSpeech.Engine.KEY_PARAM_VARIANT, "");
+        this.variantCode = (String) readFields.get("variant", "");
         this.scriptCode = (String) readFields.get("script", "");
         this.unicodeKeywords = Collections.EMPTY_MAP;
         this.unicodeAttributes = Collections.EMPTY_SET;
         this.extensions = Collections.EMPTY_MAP;
-        String str = (String) readFields.get(Contacts.People.Extensions.CONTENT_DIRECTORY, (Object) null);
+        String str = (String) readFields.get("extensions", (Object) null);
         if (str != null) {
             readExtensions(str);
         }
@@ -860,7 +858,7 @@ public final class Locale implements Cloneable, Serializable {
 
     private static String[] splitIllformedVariant(String str) {
         int i;
-        String[] split = str.replace('_', '-').split("-");
+        String[] split = str.replace('_', '-').split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         String[] strArr = {"", ""};
         int length = split.length;
         int i2 = 0;
@@ -951,13 +949,13 @@ public final class Locale implements Cloneable, Serializable {
 
     private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
         ObjectOutputStream.PutField putFields = objectOutputStream.putFields();
-        putFields.put("country", this.countryCode);
-        putFields.put(SuggestionSpan.SUGGESTION_SPAN_PICKED_HASHCODE, -1);
+        putFields.put(DistrictSearchQuery.KEYWORDS_COUNTRY, this.countryCode);
+        putFields.put("hashcode", -1);
         putFields.put("language", this.languageCode);
-        putFields.put(TextToSpeech.Engine.KEY_PARAM_VARIANT, this.variantCode);
+        putFields.put("variant", this.variantCode);
         putFields.put("script", this.scriptCode);
         if (!this.extensions.isEmpty()) {
-            putFields.put(Contacts.People.Extensions.CONTENT_DIRECTORY, serializeExtensions(this.extensions));
+            putFields.put("extensions", serializeExtensions(this.extensions));
         }
         objectOutputStream.writeFields();
     }
@@ -1013,7 +1011,7 @@ public final class Locale implements Cloneable, Serializable {
         String str;
         if (this.languageCode.isEmpty()) {
             str = "";
-        } else if ("und".equals(Builder.normalizeAndValidateLanguage(this.languageCode, false))) {
+        } else if (UNDETERMINED_LANGUAGE.equals(Builder.normalizeAndValidateLanguage(this.languageCode, false))) {
             return this.languageCode;
         } else {
             String displayLanguage = ICU.getDisplayLanguage(this, locale);
@@ -1135,8 +1133,8 @@ public final class Locale implements Cloneable, Serializable {
         return str;
     }
 
-    public String getExtension(char c2) {
-        return this.extensions.get(Character.valueOf(c2));
+    public String getExtension(char c) {
+        return this.extensions.get(Character.valueOf(c));
     }
 
     public Set<Character> getExtensionKeys() {

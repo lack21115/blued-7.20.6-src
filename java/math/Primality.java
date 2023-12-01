@@ -1,16 +1,16 @@
 package java.math;
 
-import android.provider.Downloads;
 import com.android.ims.ImsReasonInfo;
-import com.blued.das.client.chatroom.ChatRoomProtos;
-import com.blued.das.live.LiveProtos;
-import com.tencent.cloud.huiyansdkface.facelivesdk.BuildConfig;
-import com.tencent.smtt.sdk.TbsMediaPlayer;
+import com.android.internal.R;
+import com.android.internal.telephony.RILConstants;
+import io.grpc.internal.GrpcUtil;
+import java.net.HttpURLConnection;
 import java.util.Arrays;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-2895416-dex2jar.jar:java/math/Primality.class */
 class Primality {
-    private static final int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, ChatRoomProtos.Event.YY_LIFT_MASK_POP_USE_CLICK_VALUE, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, LiveProtos.Event.LIVE_ROOM_CONFIG_POP_LINK_CLICK_VALUE, LiveProtos.Event.LIVE_LIST_CONFIG_POP_SHOW_VALUE, LiveProtos.Event.LIVE_VIP_ICON_CLICK_VALUE, LiveProtos.Event.LIVE_DOWN_COLLECTION_FEATURE_CLICK_VALUE, LiveProtos.Event.LIVE_GIFT_WALL_PAGE_HISTORY_ONE_CLICK_VALUE, Downloads.Impl.STATUS_UNKNOWN_ERROR, 499, 503, 509, LiveProtos.Event.LIVE_HOUR_LIST_TOP_TAB_SHOW_VALUE, LiveProtos.Event.LIVE_HOUR_LIST_TIME_TAB_SHOW_VALUE, LiveProtos.Event.LIVE_BAG_CHAT_MARK_USE_CLICK_VALUE, LiveProtos.Event.LIVE_GIFT_VALIDITY_POP_YES_CLICK_VALUE, LiveProtos.Event.LIVE_KEYBOARD_BARRAGE_CLICK_VALUE, LiveProtos.Event.LIVE_NOBLE_BANNER_SHOW_VALUE, 569, 571, 577, LiveProtos.Event.LIVE_PK_MORE_START_BTN_SHOW_VALUE, LiveProtos.Event.LIVE_PK_MORE_SCORE_BTN_SHOW_VALUE, LiveProtos.Event.LIVE_PK_MORE_EXIT_YES_CLICK_VALUE, 601, 607, 613, LiveProtos.Event.LIVE_BATTLE_PASS_TOP_ENTRANCE_CLICK_VALUE, LiveProtos.Event.LIVE_BATTLE_PASS_TOP_PAGE_BUY_CLICK_VALUE, LiveProtos.Event.LIVE_SET_GIFT_EXPLAIN_PAGE_SHOW_VALUE, LiveProtos.Event.LIVE_STAR_EXPLORE_PAGE_SHOW_VALUE, LiveProtos.Event.LIVE_STAR_EXPLORE_PAGE_STAR_CANCEL_VALUE, LiveProtos.Event.LIVE_STAR_EXPLORE_PAGE_RECORD_CLICK_VALUE, LiveProtos.Event.LIVE_NEW_FIRST_PAY_POP_SHOW_VALUE, LiveProtos.Event.LIVE_PROFILE_CARD_SUBSTITUTE_ME_CLICK_VALUE, LiveProtos.Event.LIVE_ONLINE_USER_PAGE_BTN_CLICK_VALUE, LiveProtos.Event.LIVE_USER_RANDOM_GIFT_PAGE_LOTTERY_CLICK_VALUE, LiveProtos.Event.LIVE_ANCHOR_RANDOM_GIFT_EXPLAIN_PAGE_SHOW_VALUE, LiveProtos.Event.LIVE_CUSTOM_MADE_SEAL_PAGE_REWARD_POP_SHOW_VALUE, 691, 701, LiveProtos.Event.ANCHOR_END_PAGE_COLLEGE_CLICK_VALUE, 719, 727, 733, 739, 743, TbsMediaPlayer.TbsMediaPlayerListener.MEDIA_INFO_NO_VIDEO_DATA, 757, 761, 769, 773, 787, 797, 809, 811, ImsReasonInfo.CODE_UT_CB_PASSWORD_MISMATCH, 823, 827, 829, BuildConfig.VERSION_CODE, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997, 1009, 1013, 1019, 1021};
+    private static final int[] primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, R.styleable.Theme_preferenceListStyle, R.styleable.Theme_colorSwitchThumbNormal, 311, 313, 317, ImsReasonInfo.CODE_SIP_BAD_REQUEST, ImsReasonInfo.CODE_SIP_BAD_ADDRESS, 347, 349, ImsReasonInfo.CODE_SIP_SERVER_BAD_GATEWAY, ImsReasonInfo.CODE_SIP_SERVER_ERROR, 367, 373, 379, 383, 389, 397, 401, HttpURLConnection.HTTP_CONFLICT, 419, 421, 431, 433, 439, GrpcUtil.DEFAULT_PORT_SSL, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, GL10.GL_ONE_MINUS_SRC_COLOR, GL10.GL_ONE_MINUS_DST_ALPHA, 787, 797, 809, 811, ImsReasonInfo.CODE_UT_CB_PASSWORD_MISMATCH, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997, 1009, 1013, RILConstants.RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED, RILConstants.RIL_UNSOL_RESPONSE_NEW_BROADCAST_SMS};
     private static final BigInteger[] BIprimes = new BigInteger[primes.length];
 
     static {

@@ -34,13 +34,13 @@ public final class ReflectiveFallbackViewCreator implements FallbackViewCreator 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v44, types: [java.lang.Object[]] */
     @Override // io.github.inflationx.viewpump.FallbackViewCreator
-    public View onCreateView(View view, String name, Context context, AttributeSet attributeSet) {
+    public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
         Constructor constructor;
         Context[] contextArr;
-        Intrinsics.d(name, "name");
+        Intrinsics.d(str, "name");
         Intrinsics.d(context, "context");
         try {
-            Class asSubclass = Class.forName(name).asSubclass(View.class);
+            Class asSubclass = Class.forName(str).asSubclass(View.class);
             try {
                 Class<? extends Object>[] clsArr = CONSTRUCTOR_SIGNATURE_2;
                 constructor = asSubclass.getConstructor((Class[]) Arrays.copyOf(clsArr, clsArr.length));

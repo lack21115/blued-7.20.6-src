@@ -49,7 +49,7 @@ public final class FuturesGetChecked {
                 }
 
                 /* renamed from: computeValue  reason: collision with other method in class */
-                protected /* bridge */ /* synthetic */ Object m6536computeValue(Class cls) {
+                protected /* bridge */ /* synthetic */ Object m3529computeValue(Class cls) {
                     return computeValue((Class<?>) cls);
                 }
             };

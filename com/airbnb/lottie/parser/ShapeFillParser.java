@@ -6,6 +6,7 @@ import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.model.animatable.AnimatableColorValue;
 import com.airbnb.lottie.model.animatable.AnimatableIntegerValue;
 import com.airbnb.lottie.model.content.ShapeFill;
+import com.anythink.core.common.b.g;
 import java.io.IOException;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -37,7 +38,7 @@ public class ShapeFillParser {
                             } else if (nextName.equals("hd")) {
                                 z3 = true;
                             }
-                        } else if (nextName.equals("r")) {
+                        } else if (nextName.equals(g.o.o)) {
                             z3 = true;
                         }
                     } else if (nextName.equals("o")) {

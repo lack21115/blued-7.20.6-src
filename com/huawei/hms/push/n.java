@@ -8,11 +8,11 @@ import com.huawei.hms.support.log.HMSLog;
 public class n extends Thread {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22852a;
+    private Context f9244a;
     private m b;
 
     public n(Context context, m mVar) {
-        this.f22852a = context;
+        this.f9244a = context;
         this.b = mVar;
     }
 
@@ -72,10 +72,10 @@ public class n extends Thread {
     public void run() {
         HMSLog.i("PushSelfShowLog", "enter run()");
         try {
-            if (!b(this.f22852a) || b(this.f22852a, this.b)) {
+            if (!b(this.f9244a) || b(this.f9244a, this.b)) {
                 return;
             }
-            l.a(this.f22852a, this.b);
+            l.a(this.f9244a, this.b);
         } catch (Exception e) {
             HMSLog.e("PushSelfShowLog", e.toString());
         }

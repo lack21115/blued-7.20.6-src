@@ -12,22 +12,22 @@ import java.util.zip.ZipFile;
 public class n extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile n f39092a;
+    private static volatile n f25401a;
     private SwitchNetworkCallbacks b;
 
     public static b a() {
-        if (f39092a == null) {
+        if (f25401a == null) {
             synchronized (n.class) {
                 try {
-                    if (f39092a == null) {
-                        f39092a = new n();
+                    if (f25401a == null) {
+                        f25401a = new n();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39092a;
+        return f25401a;
     }
 
     private ZipEntry a(ZipFile zipFile) {

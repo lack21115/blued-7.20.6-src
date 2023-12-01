@@ -9,6 +9,7 @@ import android.security.NetworkSecurityPolicy;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -19,9 +20,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/h.class */
 public final class h {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6811a = "CommonUtils";
+    public static final String a = "CommonUtils";
     public static char[] b = {'a', 'n', 'd', 'r', 'o', 'i', 'd', 'c', 'o', 'n', 't', 'e', 'n', 't', 'p', 'm', 'g', 'e', 't', 'C', 'o', 'n', 't', 'e', 'x', 't'};
     private static char[] d = {'A', 'p', 'p', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 'I', 'n', 'f', 'o'};
     private static char[] e = {'.', 'X'};
@@ -35,25 +34,21 @@ public final class h {
     private static int m = 19;
     private static int n = 16;
     private static int o = 26;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static char[] f6812c = {'P', 'a', 'c', 'k', 'a', 'g', 'e', 'M', 'a', 'n', 'a', 'g', 'e', 'r'};
+    public static char[] c = {'P', 'a', 'c', 'k', 'a', 'g', 'e', 'M', 'a', 'n', 'a', 'g', 'e', 'r'};
 
     /* renamed from: com.anythink.core.common.k.h$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/h$1.class */
     final class AnonymousClass1 implements View.OnSystemUiVisibilityChangeListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f6813a;
+        final /* synthetic */ View a;
 
         AnonymousClass1(View view) {
-            this.f6813a = view;
+            this.a = view;
         }
 
         @Override // android.view.View.OnSystemUiVisibilityChangeListener
         public final void onSystemUiVisibilityChange(int i) {
             if ((i & 2) == 0) {
-                h.a(this.f6813a);
+                h.a(this.a);
             }
         }
     }
@@ -116,7 +111,7 @@ public final class h {
 
     public static boolean a(Context context) {
         try {
-            NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+            NetworkInfo activeNetworkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
             if (activeNetworkInfo != null) {
                 return activeNetworkInfo.isAvailable();
             }
@@ -182,7 +177,7 @@ public final class h {
             sb.append(e[j]);
             sb.append(String.valueOf(Arrays.copyOfRange(b, l, n)));
             sb.append(e[j]);
-            sb.append(String.valueOf(f6812c));
+            sb.append(String.valueOf(c));
         } else if (i2 == 1) {
             sb = new StringBuilder();
             sb.append(String.valueOf(Arrays.copyOf(b, k)));
@@ -199,7 +194,7 @@ public final class h {
         } else {
             sb = new StringBuilder();
             sb.append(String.valueOf(Arrays.copyOfRange(b, n, m)));
-            sb.append(String.valueOf(f6812c));
+            sb.append(String.valueOf(c));
         }
         return sb.toString().toCharArray();
     }
@@ -225,7 +220,7 @@ public final class h {
     }
 
     public static int b(Context context) {
-        int identifier = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        int identifier = context.getResources().getIdentifier("status_bar_height", "dimen", MsgBackupManager.PLATFORM_ANDROID);
         if (identifier > 0) {
             return context.getResources().getDimensionPixelSize(identifier);
         }

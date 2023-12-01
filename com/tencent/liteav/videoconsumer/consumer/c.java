@@ -6,11 +6,11 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderListener;
 final /* synthetic */ class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36698a;
+    private final a f23007a;
     private final VideoRenderListener b;
 
     private c(a aVar, VideoRenderListener videoRenderListener) {
-        this.f36698a = aVar;
+        this.f23007a = aVar;
         this.b = videoRenderListener;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.a(this.f36698a, this.b);
+        a.a(this.f23007a, this.b);
     }
 }

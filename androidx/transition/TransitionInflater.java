@@ -21,14 +21,14 @@ import org.xmlpull.v1.XmlPullParserException;
 public class TransitionInflater {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Class<?>[] f3473a = {Context.class, AttributeSet.class};
+    private static final Class<?>[] f3425a = {Context.class, AttributeSet.class};
     private static final ArrayMap<String, Constructor<?>> b = new ArrayMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f3474c;
+    private final Context f3426c;
 
     private TransitionInflater(Context context) {
-        this.f3474c = context;
+        this.f3426c = context;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:89:0x0281, code lost:
@@ -143,15 +143,15 @@ public class TransitionInflater {
                 Constructor<?> constructor = b.get(attributeValue);
                 Constructor<?> constructor2 = constructor;
                 if (constructor == null) {
-                    Class<? extends U> asSubclass = Class.forName(attributeValue, false, this.f3474c.getClassLoader()).asSubclass(cls);
+                    Class<? extends U> asSubclass = Class.forName(attributeValue, false, this.f3426c.getClassLoader()).asSubclass(cls);
                     constructor2 = constructor;
                     if (asSubclass != 0) {
-                        constructor2 = asSubclass.getConstructor(f3473a);
+                        constructor2 = asSubclass.getConstructor(f3425a);
                         constructor2.setAccessible(true);
                         b.put(attributeValue, constructor2);
                     }
                 }
-                newInstance = constructor2.newInstance(this.f3474c, attributeSet);
+                newInstance = constructor2.newInstance(this.f3426c, attributeSet);
             }
             return newInstance;
         } catch (Exception e) {
@@ -161,12 +161,12 @@ public class TransitionInflater {
 
     private void a(AttributeSet attributeSet, XmlPullParser xmlPullParser, ViewGroup viewGroup, TransitionManager transitionManager) throws Resources.NotFoundException {
         Transition inflateTransition;
-        TypedArray obtainStyledAttributes = this.f3474c.obtainStyledAttributes(attributeSet, Styleable.b);
+        TypedArray obtainStyledAttributes = this.f3426c.obtainStyledAttributes(attributeSet, Styleable.b);
         int namedResourceId = TypedArrayUtils.getNamedResourceId(obtainStyledAttributes, xmlPullParser, "transition", 2, -1);
         int namedResourceId2 = TypedArrayUtils.getNamedResourceId(obtainStyledAttributes, xmlPullParser, "fromScene", 0, -1);
-        Scene sceneForLayout = namedResourceId2 < 0 ? null : Scene.getSceneForLayout(viewGroup, namedResourceId2, this.f3474c);
+        Scene sceneForLayout = namedResourceId2 < 0 ? null : Scene.getSceneForLayout(viewGroup, namedResourceId2, this.f3426c);
         int namedResourceId3 = TypedArrayUtils.getNamedResourceId(obtainStyledAttributes, xmlPullParser, "toScene", 1, -1);
-        Scene sceneForLayout2 = namedResourceId3 < 0 ? null : Scene.getSceneForLayout(viewGroup, namedResourceId3, this.f3474c);
+        Scene sceneForLayout2 = namedResourceId3 < 0 ? null : Scene.getSceneForLayout(viewGroup, namedResourceId3, this.f3426c);
         if (namedResourceId >= 0 && (inflateTransition = inflateTransition(namedResourceId)) != null) {
             if (sceneForLayout2 == null) {
                 throw new RuntimeException("No toScene for transition ID " + namedResourceId);
@@ -190,7 +190,7 @@ public class TransitionInflater {
                 if (!xmlPullParser.getName().equals(TypedValues.AttributesType.S_TARGET)) {
                     throw new RuntimeException("Unknown scene name: " + xmlPullParser.getName());
                 }
-                TypedArray obtainStyledAttributes = this.f3474c.obtainStyledAttributes(attributeSet, Styleable.f3467a);
+                TypedArray obtainStyledAttributes = this.f3426c.obtainStyledAttributes(attributeSet, Styleable.f3419a);
                 int namedResourceId = TypedArrayUtils.getNamedResourceId(obtainStyledAttributes, xmlPullParser, "targetId", 1, 0);
                 if (namedResourceId != 0) {
                     transition.addTarget(namedResourceId);
@@ -235,7 +235,7 @@ public class TransitionInflater {
     }
 
     public Transition inflateTransition(int i) {
-        XmlResourceParser xml = this.f3474c.getResources().getXml(i);
+        XmlResourceParser xml = this.f3426c.getResources().getXml(i);
         try {
             try {
                 Transition a2 = a(xml, Xml.asAttributeSet(xml), (Transition) null);
@@ -253,7 +253,7 @@ public class TransitionInflater {
     }
 
     public TransitionManager inflateTransitionManager(int i, ViewGroup viewGroup) {
-        XmlResourceParser xml = this.f3474c.getResources().getXml(i);
+        XmlResourceParser xml = this.f3426c.getResources().getXml(i);
         try {
             try {
                 TransitionManager a2 = a(xml, Xml.asAttributeSet(xml), viewGroup);

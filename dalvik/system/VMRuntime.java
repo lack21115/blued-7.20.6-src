@@ -1,6 +1,5 @@
 package dalvik.system;
 
-import com.bun.miitmdid.core.Utils;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,7 +14,7 @@ public final class VMRuntime {
         ABI_TO_INSTRUCTION_SET_MAP.put("armeabi-v7a", "arm");
         ABI_TO_INSTRUCTION_SET_MAP.put("mips", "mips");
         ABI_TO_INSTRUCTION_SET_MAP.put("mips64", "mips64");
-        ABI_TO_INSTRUCTION_SET_MAP.put(Utils.CPU_ABI_X86, Utils.CPU_ABI_X86);
+        ABI_TO_INSTRUCTION_SET_MAP.put("x86", "x86");
         ABI_TO_INSTRUCTION_SET_MAP.put("x86_64", "x86_64");
         ABI_TO_INSTRUCTION_SET_MAP.put("arm64-v8a", "arm64");
     }

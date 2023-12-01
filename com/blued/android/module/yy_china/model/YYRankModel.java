@@ -12,7 +12,6 @@ public class YYRankModel implements MultiItemEntity {
     public int type = 0;
     public String uid;
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

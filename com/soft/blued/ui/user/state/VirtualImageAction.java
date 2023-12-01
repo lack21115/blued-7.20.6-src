@@ -14,7 +14,7 @@ public abstract class VirtualImageAction implements UiAction {
     public static final class GetBeanCount extends VirtualImageAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetBeanCount f34315a = new GetBeanCount();
+        public static final GetBeanCount f20624a = new GetBeanCount();
 
         private GetBeanCount() {
             super(null);
@@ -26,32 +26,32 @@ public abstract class VirtualImageAction implements UiAction {
     public static final class GetGuestImage extends VirtualImageAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f34316a;
+        private final String f20625a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public GetGuestImage(String uid) {
+        public GetGuestImage(String str) {
             super(null);
-            Intrinsics.e(uid, "uid");
-            this.f34316a = uid;
+            Intrinsics.e(str, "uid");
+            this.f20625a = str;
         }
 
         public final String a() {
-            return this.f34316a;
+            return this.f20625a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof GetGuestImage) && Intrinsics.a((Object) this.f34316a, (Object) ((GetGuestImage) obj).f34316a);
+            return (obj instanceof GetGuestImage) && Intrinsics.a(this.f20625a, ((GetGuestImage) obj).f20625a);
         }
 
         public int hashCode() {
-            return this.f34316a.hashCode();
+            return this.f20625a.hashCode();
         }
 
         public String toString() {
-            return "GetGuestImage(uid=" + this.f34316a + ')';
+            return "GetGuestImage(uid=" + this.f20625a + ')';
         }
     }
 
@@ -60,7 +60,7 @@ public abstract class VirtualImageAction implements UiAction {
     public static final class GetImageCategory extends VirtualImageAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetImageCategory f34317a = new GetImageCategory();
+        public static final GetImageCategory f20626a = new GetImageCategory();
 
         private GetImageCategory() {
             super(null);
@@ -72,7 +72,7 @@ public abstract class VirtualImageAction implements UiAction {
     public static final class GetMarketingPicture extends VirtualImageAction {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final GetMarketingPicture f34318a = new GetMarketingPicture();
+        public static final GetMarketingPicture f20627a = new GetMarketingPicture();
 
         private GetMarketingPicture() {
             super(null);
@@ -84,32 +84,32 @@ public abstract class VirtualImageAction implements UiAction {
     public static final class Save extends VirtualImageAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f34319a;
+        private final String f20628a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public Save(String goodsJson) {
+        public Save(String str) {
             super(null);
-            Intrinsics.e(goodsJson, "goodsJson");
-            this.f34319a = goodsJson;
+            Intrinsics.e(str, "goodsJson");
+            this.f20628a = str;
         }
 
         public final String a() {
-            return this.f34319a;
+            return this.f20628a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof Save) && Intrinsics.a((Object) this.f34319a, (Object) ((Save) obj).f34319a);
+            return (obj instanceof Save) && Intrinsics.a(this.f20628a, ((Save) obj).f20628a);
         }
 
         public int hashCode() {
-            return this.f34319a.hashCode();
+            return this.f20628a.hashCode();
         }
 
         public String toString() {
-            return "Save(goodsJson=" + this.f34319a + ')';
+            return "Save(goodsJson=" + this.f20628a + ')';
         }
     }
 

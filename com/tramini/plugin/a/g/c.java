@@ -9,21 +9,21 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: c  reason: collision with root package name */
-    private static Map<Character, Character> f40544c;
+    private static Map<Character, Character> f26853c;
     private static Map<Character, Character> d;
     private static final String b = c.class.getSimpleName();
     private static char[] e = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
     private static byte[] f = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -1, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1};
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40543a = "";
+    public static String f26852a = "";
     private static String g = "";
 
     static {
-        f40544c = null;
+        f26853c = null;
         d = null;
         d = new HashMap();
-        f40544c = new HashMap();
+        f26853c = new HashMap();
     }
 
     private c() {
@@ -52,10 +52,10 @@ public class c {
                                 int i3 = 0;
                                 while (true) {
                                     int i4 = i3;
-                                    if (i4 >= f40543a.length()) {
+                                    if (i4 >= f26852a.length()) {
                                         break;
                                     }
-                                    d.put(Character.valueOf(g.charAt(i4)), Character.valueOf(f40543a.charAt(i4)));
+                                    d.put(Character.valueOf(g.charAt(i4)), Character.valueOf(f26852a.charAt(i4)));
                                     i3 = i4 + 1;
                                 }
                             }
@@ -125,19 +125,19 @@ public class c {
                     return new String(cArr);
                 }
                 char c2 = charArray[i2];
-                if (f40544c == null) {
-                    f40544c = new HashMap();
+                if (f26853c == null) {
+                    f26853c = new HashMap();
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
-                        if (i4 >= f40543a.length()) {
+                        if (i4 >= f26852a.length()) {
                             break;
                         }
-                        f40544c.put(Character.valueOf(f40543a.charAt(i4)), Character.valueOf(g.charAt(i4)));
+                        f26853c.put(Character.valueOf(f26852a.charAt(i4)), Character.valueOf(g.charAt(i4)));
                         i3 = i4 + 1;
                     }
                 }
-                cArr[i2] = (f40544c.containsKey(Character.valueOf(c2)) ? f40544c.get(Character.valueOf(c2)) : Character.valueOf(c2)).charValue();
+                cArr[i2] = (f26853c.containsKey(Character.valueOf(c2)) ? f26853c.get(Character.valueOf(c2)) : Character.valueOf(c2)).charValue();
                 i = i2 + 1;
             }
         } catch (Exception e2) {
@@ -155,19 +155,19 @@ public class c {
             if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2)) {
                 return;
             }
-            f40543a = optString;
+            f26852a = optString;
             g = optString2;
             int i2 = 0;
             while (true) {
                 int i3 = i2;
-                if (i3 >= f40543a.length()) {
+                if (i3 >= f26852a.length()) {
                     break;
                 }
-                d.put(Character.valueOf(g.charAt(i3)), Character.valueOf(f40543a.charAt(i3)));
+                d.put(Character.valueOf(g.charAt(i3)), Character.valueOf(f26852a.charAt(i3)));
                 i2 = i3 + 1;
             }
-            for (i = 0; i < f40543a.length(); i++) {
-                f40544c.put(Character.valueOf(f40543a.charAt(i)), Character.valueOf(g.charAt(i)));
+            for (i = 0; i < f26852a.length(); i++) {
+                f26853c.put(Character.valueOf(f26852a.charAt(i)), Character.valueOf(g.charAt(i)));
             }
         } catch (Throwable th) {
         }

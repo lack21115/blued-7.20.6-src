@@ -11,7 +11,6 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.view.Surface;
 import android.view.TextureView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.ContextUtils;
 import com.tencent.liteav.base.datareport.Event4XReporter;
 import com.tencent.liteav.base.system.LiteavSystemInfo;
@@ -57,16 +56,16 @@ public final class a implements c.a {
     private int C;
     private int D;
     private boolean H;
-    private C0920a I;
+    private C0750a I;
     private boolean J;
     private boolean K;
 
     /* renamed from: a  reason: collision with root package name */
-    public ITXLivePlayListener f36212a;
+    public ITXLivePlayListener f22521a;
     public ITXVodPlayListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    public WeakReference<TXVodPlayer> f36213c;
+    public WeakReference<TXVodPlayer> f22522c;
     public TXCVodVideoView d;
     public boolean f;
     public Surface i;
@@ -143,7 +142,7 @@ public final class a implements c.a {
                                             bundle3.putLong("EVT_TIME", TimeUtil.a());
                                             bundle3.putLong("EVT_UTC_TIME", TimeUtil.b());
                                             b mediaInfo = a.this.d.getMediaInfo();
-                                            if (mediaInfo == null || mediaInfo.f36481c == null || !mediaInfo.f36481c.toLowerCase().contains("hevc")) {
+                                            if (mediaInfo == null || mediaInfo.f22790c == null || !mediaInfo.f22790c.toLowerCase().contains("hevc")) {
                                                 bundle3.putCharSequence("description", a.this.w ? "Enables hardware decoding" : "Enables software decoding");
                                                 i2 = 0;
                                             } else {
@@ -168,7 +167,7 @@ public final class a implements c.a {
                                         int i3 = bundle.getInt("EVT_PLAY_DURATION", 0);
                                         int i4 = bundle.getInt("EVT_PLAY_PROGRESS", 0);
                                         aVar3.i = i3;
-                                        int a2 = i4 / com.tencent.liteav.txcvodplayer.a.b.a(aVar3.f36507a).a(aVar3.B);
+                                        int a2 = i4 / com.tencent.liteav.txcvodplayer.a.b.a(aVar3.f22816a).a(aVar3.B);
                                         if (a2 != aVar3.j) {
                                             aVar3.j = a2;
                                             if (!aVar3.f) {
@@ -210,8 +209,8 @@ public final class a implements c.a {
                                                 LiteavLog.i(TXVodPlayer.TAG, "util play tcp connect success");
                                                 com.tencent.liteav.txcvodplayer.a.a aVar5 = a.this.e;
                                                 if (aVar5.v == 0) {
-                                                    aVar5.v = (int) (System.currentTimeMillis() - aVar5.f36508c);
-                                                    LiteavLog.i("TXCVodPlayCollection", "mTcpConnectTS = " + aVar5.v + ", mOriginBeginPlayTS = " + aVar5.f36508c + ", " + System.currentTimeMillis());
+                                                    aVar5.v = (int) (System.currentTimeMillis() - aVar5.f22817c);
+                                                    LiteavLog.i("TXCVodPlayCollection", "mTcpConnectTS = " + aVar5.v + ", mOriginBeginPlayTS = " + aVar5.f22817c + ", " + System.currentTimeMillis());
                                                     return;
                                                 }
                                                 return;
@@ -227,7 +226,7 @@ public final class a implements c.a {
                                                 LiteavLog.i(TXVodPlayer.TAG, "util play dns resolved");
                                                 com.tencent.liteav.txcvodplayer.a.a aVar7 = a.this.e;
                                                 if (aVar7.w == 0) {
-                                                    aVar7.w = (int) (System.currentTimeMillis() - aVar7.f36508c);
+                                                    aVar7.w = (int) (System.currentTimeMillis() - aVar7.f22817c);
                                                     return;
                                                 }
                                                 return;
@@ -291,14 +290,14 @@ public final class a implements c.a {
 
     /* renamed from: com.tencent.liteav.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/a$a.class */
-    static final class C0920a {
+    static final class C0750a {
 
         /* renamed from: a  reason: collision with root package name */
-        Class f36219a;
+        Class f22528a;
         Class b;
 
         /* renamed from: c  reason: collision with root package name */
-        Class f36220c;
+        Class f22529c;
         Field d;
         Field e;
         Field f;
@@ -309,19 +308,19 @@ public final class a implements c.a {
         Field k;
         Field l;
 
-        public C0920a(Object obj) {
+        public C0750a(Object obj) {
             try {
-                this.f36219a = obj.getClass();
+                this.f22528a = obj.getClass();
                 this.b = Class.forName("com.tencent.trtc.TRTCCloudDef$TRTCTexture");
-                this.f36220c = Class.forName("com.tencent.trtc.TRTCCloudDef$TRTCVideoFrame");
+                this.f22529c = Class.forName("com.tencent.trtc.TRTCCloudDef$TRTCVideoFrame");
                 this.d = this.b.getDeclaredField("textureId");
                 this.e = this.b.getDeclaredField("eglContext10");
-                this.g = this.f36220c.getDeclaredField("texture");
-                this.h = this.f36220c.getDeclaredField("width");
-                this.i = this.f36220c.getDeclaredField("height");
-                this.j = this.f36220c.getDeclaredField("pixelFormat");
-                this.k = this.f36220c.getDeclaredField("bufferType");
-                this.l = this.f36220c.getDeclaredField("timestamp");
+                this.g = this.f22529c.getDeclaredField("texture");
+                this.h = this.f22529c.getDeclaredField("width");
+                this.i = this.f22529c.getDeclaredField("height");
+                this.j = this.f22529c.getDeclaredField("pixelFormat");
+                this.k = this.f22529c.getDeclaredField("bufferType");
+                this.l = this.f22529c.getDeclaredField("timestamp");
                 if (LiteavSystemInfo.getSystemOSVersionInt() >= 17) {
                     this.f = this.b.getDeclaredField("eglContext14");
                 }
@@ -343,7 +342,7 @@ public final class a implements c.a {
             ContextUtils.initApplicationContext(applicationContext);
             ContextUtils.setDataDirectorySuffix("liteav");
         }
-        this.f36212a = null;
+        this.f22521a = null;
         this.b = null;
         RenderProcessService.getInstance().checkInit(context.getApplicationContext());
         TXCVodVideoView tXCVodVideoView = new TXCVodVideoView(context);
@@ -356,21 +355,21 @@ public final class a implements c.a {
         TXVodPlayer tXVodPlayer;
         TXVodPlayer tXVodPlayer2;
         if (i == 15001) {
-            ITXLivePlayListener iTXLivePlayListener = aVar.f36212a;
+            ITXLivePlayListener iTXLivePlayListener = aVar.f22521a;
             if (iTXLivePlayListener != null) {
                 iTXLivePlayListener.onNetStatus(bundle);
             }
-            if (aVar.b == null || (tXVodPlayer2 = aVar.f36213c.get()) == null) {
+            if (aVar.b == null || (tXVodPlayer2 = aVar.f22522c.get()) == null) {
                 return;
             }
             aVar.b.onNetStatus(tXVodPlayer2, bundle);
             return;
         }
-        ITXLivePlayListener iTXLivePlayListener2 = aVar.f36212a;
+        ITXLivePlayListener iTXLivePlayListener2 = aVar.f22521a;
         if (iTXLivePlayListener2 != null) {
             iTXLivePlayListener2.onPlayEvent(i, bundle);
         }
-        if (aVar.b == null || (tXVodPlayer = aVar.f36213c.get()) == null) {
+        if (aVar.b == null || (tXVodPlayer = aVar.f22522c.get()) == null) {
             return;
         }
         aVar.b.onPlayEvent(tXVodPlayer, i, bundle);
@@ -400,7 +399,7 @@ public final class a implements c.a {
             String path = Uri.parse(str).getPath();
             str3 = str;
             if (path != null) {
-                String[] split = path.split(BridgeUtil.SPLIT_MARK);
+                String[] split = path.split("/");
                 str3 = str;
                 if (split.length > 0) {
                     int lastIndexOf = str.lastIndexOf(split[split.length - 1]);
@@ -608,27 +607,27 @@ public final class a implements c.a {
         if (this.J) {
             try {
                 if (this.I == null && this.s != null) {
-                    this.I = new C0920a(this.s);
+                    this.I = new C0750a(this.s);
                 }
                 if (this.I != null) {
-                    C0920a c0920a = this.I;
+                    C0750a c0750a = this.I;
                     Object obj = this.s;
                     try {
-                        Object newInstance = c0920a.b.newInstance();
-                        c0920a.d.set(newInstance, Integer.valueOf(pixelFrame.getTextureId()));
+                        Object newInstance = c0750a.b.newInstance();
+                        c0750a.d.set(newInstance, Integer.valueOf(pixelFrame.getTextureId()));
                         if (pixelFrame.getGLContext() instanceof EGLContext) {
-                            c0920a.e.set(newInstance, pixelFrame.getGLContext());
+                            c0750a.e.set(newInstance, pixelFrame.getGLContext());
                         } else {
-                            c0920a.f.set(newInstance, pixelFrame.getGLContext());
+                            c0750a.f.set(newInstance, pixelFrame.getGLContext());
                         }
-                        Object newInstance2 = c0920a.f36220c.newInstance();
-                        c0920a.g.set(newInstance2, newInstance);
-                        c0920a.h.set(newInstance2, Integer.valueOf(pixelFrame.getWidth()));
-                        c0920a.i.set(newInstance2, Integer.valueOf(pixelFrame.getHeight()));
-                        c0920a.j.set(newInstance2, 2);
-                        c0920a.k.set(newInstance2, 3);
-                        c0920a.l.set(newInstance2, 0);
-                        c0920a.f36219a.getDeclaredMethod("sendCustomVideoData", Integer.TYPE, newInstance2.getClass()).invoke(obj, 2, newInstance2);
+                        Object newInstance2 = c0750a.f22529c.newInstance();
+                        c0750a.g.set(newInstance2, newInstance);
+                        c0750a.h.set(newInstance2, Integer.valueOf(pixelFrame.getWidth()));
+                        c0750a.i.set(newInstance2, Integer.valueOf(pixelFrame.getHeight()));
+                        c0750a.j.set(newInstance2, 2);
+                        c0750a.k.set(newInstance2, 3);
+                        c0750a.l.set(newInstance2, 0);
+                        c0750a.f22528a.getDeclaredMethod("sendCustomVideoData", Integer.TYPE, newInstance2.getClass()).invoke(obj, 2, newInstance2);
                     } catch (Exception e) {
                         LiteavLog.e(TXVodPlayer.TAG, "sendCustomVideoData method error ", e);
                     }
@@ -682,13 +681,13 @@ public final class a implements c.a {
         e eVar = new e();
         float connectRetryCount = this.v.getConnectRetryCount();
         if (connectRetryCount >= 1.0f && connectRetryCount <= 10.0f) {
-            eVar.f36487a = (int) connectRetryCount;
+            eVar.f22796a = (int) connectRetryCount;
         }
         float connectRetryInterval = this.v.getConnectRetryInterval();
         if (connectRetryInterval >= 3.0f && connectRetryInterval <= 30.0f) {
             eVar.b = (int) connectRetryInterval;
         }
-        eVar.f36488c = this.v.getTimeout();
+        eVar.f22797c = this.v.getTimeout();
         eVar.d = this.w;
         eVar.e = this.v.getCacheFolderPath();
         eVar.f = this.v.getMaxCacheItems();
@@ -836,8 +835,8 @@ public final class a implements c.a {
     public final void d() {
         this.K = false;
         TXCVodVideoView tXCVodVideoView = this.d;
-        if (tXCVodVideoView.f36491c != null) {
-            tXCVodVideoView.f36491c.unpublishAudioToNetwork();
+        if (tXCVodVideoView.f22800c != null) {
+            tXCVodVideoView.f22800c.unpublishAudioToNetwork();
         }
     }
 

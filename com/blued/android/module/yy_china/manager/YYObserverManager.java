@@ -19,13 +19,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYObserverManager.class */
 public class YYObserverManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<AudienceCountObserver> f17563a;
+    private List<AudienceCountObserver> a;
     private List<FollowStatusObserver> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<IMMessageObserver> f17564c;
+    private List<IMMessageObserver> c;
     private List<WaittingCountObserver> d;
     private List<RoleStatusObserver> e;
     private List<AudiencesChangedObserver> f;
@@ -36,15 +32,13 @@ public class YYObserverManager {
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYObserverManager$Manager.class */
     public static class Manager {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static YYObserverManager f17565a = new YYObserverManager();
+        public static YYObserverManager a = new YYObserverManager();
     }
 
     private YYObserverManager() {
-        this.f17563a = new ArrayList();
+        this.a = new ArrayList();
         this.b = new ArrayList();
-        this.f17564c = new ArrayList();
+        this.c = new ArrayList();
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.f = new ArrayList();
@@ -55,11 +49,11 @@ public class YYObserverManager {
     }
 
     public static YYObserverManager a() {
-        return Manager.f17565a;
+        return Manager.a;
     }
 
     public void a(int i) {
-        List<AudienceCountObserver> list = this.f17563a;
+        List<AudienceCountObserver> list = this.a;
         if (list == null) {
             return;
         }
@@ -88,7 +82,7 @@ public class YYObserverManager {
     }
 
     public void a(YYImModel yYImModel) {
-        List<IMMessageObserver> list = this.f17564c;
+        List<IMMessageObserver> list = this.c;
         if (list == null) {
             return;
         }
@@ -108,7 +102,7 @@ public class YYObserverManager {
     }
 
     public void a(AudienceCountObserver audienceCountObserver) {
-        List<AudienceCountObserver> list = this.f17563a;
+        List<AudienceCountObserver> list = this.a;
         if (list == null) {
             return;
         }
@@ -148,7 +142,7 @@ public class YYObserverManager {
     }
 
     public void a(IMMessageObserver iMMessageObserver) {
-        List<IMMessageObserver> list = this.f17564c;
+        List<IMMessageObserver> list = this.c;
         if (list == null) {
             return;
         }
@@ -218,9 +212,9 @@ public class YYObserverManager {
     }
 
     public void b() {
-        this.f17563a.clear();
+        this.a.clear();
         this.b.clear();
-        this.f17564c.clear();
+        this.c.clear();
         this.d.clear();
         this.e.clear();
         this.f.clear();
@@ -241,11 +235,11 @@ public class YYObserverManager {
     }
 
     public void b(AudienceCountObserver audienceCountObserver) {
-        List<AudienceCountObserver> list = this.f17563a;
+        List<AudienceCountObserver> list = this.a;
         if (list == null || list.isEmpty()) {
             return;
         }
-        this.f17563a.remove(audienceCountObserver);
+        this.a.remove(audienceCountObserver);
     }
 
     public void b(AudiencesChangedObserver audiencesChangedObserver) {
@@ -273,11 +267,11 @@ public class YYObserverManager {
     }
 
     public void b(IMMessageObserver iMMessageObserver) {
-        List<IMMessageObserver> list = this.f17564c;
+        List<IMMessageObserver> list = this.c;
         if (list == null || list.isEmpty()) {
             return;
         }
-        this.f17564c.remove(iMMessageObserver);
+        this.c.remove(iMMessageObserver);
     }
 
     public void b(NewGiftComesObserver newGiftComesObserver) {

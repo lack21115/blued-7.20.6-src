@@ -19,12 +19,12 @@ final class FilteredMultimapValues<K, V> extends AbstractCollection<V> {
         this.multimap = (FilteredMultimap) Preconditions.checkNotNull(filteredMultimap);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.multimap.clear();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(@NullableDecl Object obj) {
         return this.multimap.containsValue(obj);
     }
@@ -34,7 +34,7 @@ final class FilteredMultimapValues<K, V> extends AbstractCollection<V> {
         return Maps.valueIterator(this.multimap.entries().iterator());
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(@NullableDecl Object obj) {
         Predicate<? super Map.Entry<K, V>> entryPredicate = this.multimap.entryPredicate();
         Iterator<Map.Entry<K, V>> it = this.multimap.unfiltered().entries().iterator();
@@ -48,17 +48,17 @@ final class FilteredMultimapValues<K, V> extends AbstractCollection<V> {
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         return Iterables.removeIf(this.multimap.unfiltered().entries(), Predicates.and(this.multimap.entryPredicate(), Maps.valuePredicateOnEntries(Predicates.in(collection))));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         return Iterables.removeIf(this.multimap.unfiltered().entries(), Predicates.and(this.multimap.entryPredicate(), Maps.valuePredicateOnEntries(Predicates.not(Predicates.in(collection)))));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.multimap.size();
     }

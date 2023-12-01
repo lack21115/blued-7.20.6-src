@@ -15,11 +15,11 @@ import java.util.Set;
 public class MultiModelLoaderFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Factory f20898a = new Factory();
+    private static final Factory f7292a = new Factory();
     private static final ModelLoader<Object, Object> b = new EmptyModelLoader();
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<Entry<?, ?>> f20899c;
+    private final List<Entry<?, ?>> f7293c;
     private final Factory d;
     private final Set<Entry<?, ?>> e;
     private final Pools.Pool<List<Throwable>> f;
@@ -45,24 +45,24 @@ public class MultiModelLoaderFactory {
     public static class Entry<Model, Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        final Class<Data> f20900a;
+        final Class<Data> f7294a;
         final ModelLoaderFactory<? extends Model, ? extends Data> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Class<Model> f20901c;
+        private final Class<Model> f7295c;
 
         public Entry(Class<Model> cls, Class<Data> cls2, ModelLoaderFactory<? extends Model, ? extends Data> modelLoaderFactory) {
-            this.f20901c = cls;
-            this.f20900a = cls2;
+            this.f7295c = cls;
+            this.f7294a = cls2;
             this.b = modelLoaderFactory;
         }
 
         public boolean a(Class<?> cls) {
-            return this.f20901c.isAssignableFrom(cls);
+            return this.f7295c.isAssignableFrom(cls);
         }
 
         public boolean a(Class<?> cls, Class<?> cls2) {
-            return a(cls) && this.f20900a.isAssignableFrom(cls2);
+            return a(cls) && this.f7294a.isAssignableFrom(cls2);
         }
     }
 
@@ -77,11 +77,11 @@ public class MultiModelLoaderFactory {
     }
 
     public MultiModelLoaderFactory(Pools.Pool<List<Throwable>> pool) {
-        this(pool, f20898a);
+        this(pool, f7292a);
     }
 
     MultiModelLoaderFactory(Pools.Pool<List<Throwable>> pool, Factory factory) {
-        this.f20899c = new ArrayList();
+        this.f7293c = new ArrayList();
         this.e = new HashSet();
         this.f = pool;
         this.d = factory;
@@ -97,7 +97,7 @@ public class MultiModelLoaderFactory {
 
     private <Model, Data> void a(Class<Model> cls, Class<Data> cls2, ModelLoaderFactory<? extends Model, ? extends Data> modelLoaderFactory, boolean z) {
         Entry<?, ?> entry = new Entry<>(cls, cls2, modelLoaderFactory);
-        List<Entry<?, ?>> list = this.f20899c;
+        List<Entry<?, ?>> list = this.f7293c;
         list.add(z ? list.size() : 0, entry);
     }
 
@@ -111,7 +111,7 @@ public class MultiModelLoaderFactory {
         synchronized (this) {
             try {
                 arrayList = new ArrayList();
-                for (Entry<?, ?> entry : this.f20899c) {
+                for (Entry<?, ?> entry : this.f7293c) {
                     if (!this.e.contains(entry) && entry.a(cls)) {
                         this.e.add(entry);
                         arrayList.add(b(entry));
@@ -130,7 +130,7 @@ public class MultiModelLoaderFactory {
         ArrayList arrayList;
         synchronized (this) {
             arrayList = new ArrayList();
-            Iterator<Entry<?, ?>> it = this.f20899c.iterator();
+            Iterator<Entry<?, ?>> it = this.f7293c.iterator();
             while (it.hasNext()) {
                 Entry<?, ?> next = it.next();
                 if (next.a(cls, cls2)) {
@@ -154,7 +154,7 @@ public class MultiModelLoaderFactory {
             try {
                 ArrayList arrayList = new ArrayList();
                 boolean z = false;
-                for (Entry<?, ?> entry : this.f20899c) {
+                for (Entry<?, ?> entry : this.f7293c) {
                     if (this.e.contains(entry)) {
                         z = true;
                     } else if (entry.a(cls, cls2)) {
@@ -184,9 +184,9 @@ public class MultiModelLoaderFactory {
         ArrayList arrayList;
         synchronized (this) {
             arrayList = new ArrayList();
-            for (Entry<?, ?> entry : this.f20899c) {
-                if (!arrayList.contains(entry.f20900a) && entry.a(cls)) {
-                    arrayList.add(entry.f20900a);
+            for (Entry<?, ?> entry : this.f7293c) {
+                if (!arrayList.contains(entry.f7294a) && entry.a(cls)) {
+                    arrayList.add(entry.f7294a);
                 }
             }
         }

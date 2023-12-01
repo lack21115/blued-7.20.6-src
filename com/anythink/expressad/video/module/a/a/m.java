@@ -24,7 +24,6 @@ public final class m extends o {
         boolean z2 = true;
         this.ao = 1;
         this.aq = new com.anythink.core.common.i.b() { // from class: com.anythink.expressad.video.module.a.a.m.1
-            @Override // java.lang.Runnable
             public final void run() {
                 m.this.aj.showVideoClickView(-1);
                 m.this.ai.soundOperate(0, 2);
@@ -159,7 +158,7 @@ public final class m extends o {
 
     private void h() {
         g();
-        this.al.a(this.aq, ag);
+        this.al.a(this.aq, (long) ag);
     }
 
     private void i() {
@@ -218,7 +217,7 @@ public final class m extends o {
         r8 = true;
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x01b4, code lost:
-        if (r0.f8500a == r0.b) goto L63;
+        if (r0.f5660a == r0.b) goto L63;
      */
     /* JADX WARN: Code restructure failed: missing block: B:90:0x0237, code lost:
         if (r5.ao != 0) goto L88;

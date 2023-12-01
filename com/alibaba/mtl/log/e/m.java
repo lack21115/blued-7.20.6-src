@@ -4,14 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import com.android.internal.telephony.PhoneConstants;
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/e/m.class */
 public class m {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Random f4500a = new Random();
+    private static final Random a = new Random();
 
     public static String getImei(Context context) {
         String str = null;
@@ -27,7 +26,7 @@ public class m {
             } catch (Exception e) {
             }
             try {
-                TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+                TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
                 str = null;
                 if (telephonyManager != null) {
                     str = telephonyManager.getDeviceId();
@@ -67,7 +66,7 @@ public class m {
             } catch (Exception e) {
             }
             try {
-                TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+                TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
                 str = null;
                 if (telephonyManager != null) {
                     str = telephonyManager.getSubscriberId();
@@ -96,8 +95,8 @@ public class m {
     public static final String getUniqueID() {
         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
         int nanoTime = (int) System.nanoTime();
-        int nextInt = f4500a.nextInt();
-        int nextInt2 = f4500a.nextInt();
+        int nextInt = a.nextInt();
+        int nextInt2 = a.nextInt();
         byte[] bytes = f.getBytes(currentTimeMillis);
         byte[] bytes2 = f.getBytes(nanoTime);
         byte[] bytes3 = f.getBytes(nextInt);

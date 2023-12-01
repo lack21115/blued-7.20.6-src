@@ -13,11 +13,11 @@ import javax.crypto.spec.SecretKeySpec;
 public class sa {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f38003a = "AESCrypt";
+    private static final String f24312a = "AESCrypt";
     private static final String b = "AES/CBC/PKCS7Padding";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f38004c = "UTF-8";
+    private static final String f24313c = "UTF-8";
     private static final String d = "SHA-256";
     private static final byte[] e = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 

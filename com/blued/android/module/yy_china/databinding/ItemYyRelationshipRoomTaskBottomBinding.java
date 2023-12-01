@@ -8,14 +8,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRelationshipRoomTaskBottomBinding.class */
 public final class ItemYyRelationshipRoomTaskBottomBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16799a;
+    public final TextView a;
     private final ConstraintLayout b;
 
     private ItemYyRelationshipRoomTaskBottomBinding(ConstraintLayout constraintLayout, TextView textView) {
         this.b = constraintLayout;
-        this.f16799a = textView;
+        this.a = textView;
     }
 
     public static ItemYyRelationshipRoomTaskBottomBinding a(View view) {
@@ -26,7 +24,6 @@ public final class ItemYyRelationshipRoomTaskBottomBinding implements ViewBindin
         throw new NullPointerException("Missing required view with ID: ".concat("tvTaskInfo"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.b;

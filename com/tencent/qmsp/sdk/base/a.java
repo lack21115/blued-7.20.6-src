@@ -4,9 +4,9 @@ package com.tencent.qmsp.sdk.base;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f38536a = -11;
+    public static int f24845a = -11;
     public static int b = -12;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f38537c = -13;
+    public static int f24846c = -13;
 }

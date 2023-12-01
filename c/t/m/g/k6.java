@@ -12,11 +12,11 @@ public class k6 {
     public static volatile k6 g;
 
     /* renamed from: a  reason: collision with root package name */
-    public d4 f3867a;
+    public d4 f3819a;
     public TencentLocationManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    public t3 f3868c;
+    public t3 f3820c;
     public l6 d;
     public l6 e;
     public final TencentLocationListener f;
@@ -47,9 +47,9 @@ public class k6 {
         this.d = l6Var;
         this.e = l6Var;
         this.f = new a();
-        this.f3868c = t3Var;
-        this.f3867a = t3Var.c().a();
-        this.b = TencentLocationManager.getInstance(t3Var.f3992a);
+        this.f3820c = t3Var;
+        this.f3819a = t3Var.c().a();
+        this.b = TencentLocationManager.getInstance(t3Var.f3944a);
     }
 
     public static k6 a(t3 t3Var) {
@@ -68,9 +68,9 @@ public class k6 {
     }
 
     public int a(int i) {
-        if (this.f3868c.h()) {
-            int startDrEngine = this.f3867a.startDrEngine(i);
-            if (this.f3867a.a()) {
+        if (this.f3820c.h()) {
+            int startDrEngine = this.f3819a.startDrEngine(i);
+            if (this.f3819a.a()) {
                 c();
             }
             return startDrEngine;
@@ -79,7 +79,7 @@ public class k6 {
     }
 
     public TencentLocation a() {
-        double[] position = this.f3867a.getPosition();
+        double[] position = this.f3819a.getPosition();
         if (position != null && p2.a(position[1], position[2])) {
             Location location = new Location("gps");
             location.setLatitude(position[1]);
@@ -112,8 +112,8 @@ public class k6 {
     }
 
     public boolean b() {
-        if (this.f3868c.h()) {
-            return this.f3867a.isSupport();
+        if (this.f3820c.h()) {
+            return this.f3819a.isSupport();
         }
         return false;
     }
@@ -127,6 +127,6 @@ public class k6 {
 
     public void d() {
         this.b.removeUpdates(this.f);
-        this.f3867a.terminateDrEngine();
+        this.f3819a.terminateDrEngine();
     }
 }

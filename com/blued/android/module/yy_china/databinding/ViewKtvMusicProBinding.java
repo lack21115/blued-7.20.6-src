@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.view.YYKtvPro2View;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewKtvMusicProBinding.class */
 public final class ViewKtvMusicProBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16862a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16863c;
+    public final ImageView c;
     public final LinearLayout d;
     public final LinearLayout e;
     public final TextView f;
@@ -30,9 +26,9 @@ public final class ViewKtvMusicProBinding implements ViewBinding {
 
     private ViewKtvMusicProBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, TextView textView2, TextView textView3, YYKtvPro2View yYKtvPro2View) {
         this.j = constraintLayout;
-        this.f16862a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16863c = imageView3;
+        this.c = imageView3;
         this.d = linearLayout;
         this.e = linearLayout2;
         this.f = textView;
@@ -99,7 +95,6 @@ public final class ViewKtvMusicProBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.j;

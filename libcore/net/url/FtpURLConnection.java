@@ -1,6 +1,5 @@
 package libcore.net.url;
 
-import com.tencent.qcloud.core.util.IOUtils;
 import java.io.BufferedInputStream;
 import java.io.EOFException;
 import java.io.FileNotFoundException;
@@ -83,7 +82,7 @@ public class FtpURLConnection extends URLConnection {
         int lastIndexOf = this.url.getFile().lastIndexOf(47);
         if (lastIndexOf > 0) {
             String substring = this.url.getFile().substring(0, lastIndexOf);
-            write("CWD " + substring + IOUtils.LINE_SEPARATOR_WINDOWS);
+            write("CWD " + substring + "\r\n");
             int reply = getReply();
             int i = reply;
             if (reply != 250) {
@@ -91,7 +90,7 @@ public class FtpURLConnection extends URLConnection {
                 if (substring.length() > 0) {
                     i = reply;
                     if (substring.charAt(0) == '/') {
-                        write("CWD " + substring.substring(1) + IOUtils.LINE_SEPARATOR_WINDOWS);
+                        write("CWD " + substring.substring(1) + "\r\n");
                         i = getReply();
                     }
                 }
@@ -148,15 +147,15 @@ public class FtpURLConnection extends URLConnection {
 
     private void getFile() throws IOException {
         String file = this.url.getFile();
-        write("RETR " + file + IOUtils.LINE_SEPARATOR_WINDOWS);
+        write("RETR " + file + "\r\n");
         int reply = getReply();
         int i = reply;
-        if (reply == 550) {
+        if (reply == FTP_NOTFOUND) {
             i = reply;
             if (file.length() > 0) {
                 i = reply;
                 if (file.charAt(0) == '/') {
-                    write("RETR " + file.substring(1) + IOUtils.LINE_SEPARATOR_WINDOWS);
+                    write("RETR " + file.substring(1) + "\r\n");
                     i = getReply();
                 }
             }
@@ -202,13 +201,13 @@ public class FtpURLConnection extends URLConnection {
         if (getReply() != 220) {
             throw new IOException("Unable to connect to server: " + this.url.getHost());
         }
-        write("USER " + this.username + IOUtils.LINE_SEPARATOR_WINDOWS);
+        write("USER " + this.username + "\r\n");
         int reply = getReply();
         if (reply != 331 && reply != 230) {
             throw new IOException("Unable to log in to server (USER): " + this.url.getHost());
         }
         if (reply == 331) {
-            write("PASS " + this.password + IOUtils.LINE_SEPARATOR_WINDOWS);
+            write("PASS " + this.password + "\r\n");
             int reply2 = getReply();
             if (reply2 != 200 && reply2 != 220 && reply2 != 230) {
                 throw new IOException("Unable to log in to server (PASS): " + this.url.getHost());
@@ -217,7 +216,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     private void port() throws IOException {
-        write("PORT " + this.controlSocket.getLocalAddress().getHostAddress().replace('.', ',') + ',' + (this.dataPort >> 8) + ',' + (this.dataPort & 255) + IOUtils.LINE_SEPARATOR_WINDOWS);
+        write("PORT " + this.controlSocket.getLocalAddress().getHostAddress().replace('.', ',') + ',' + (this.dataPort >> 8) + ',' + (this.dataPort & 255) + "\r\n");
         if (getReply() != 200) {
             throw new IOException("Unable to configure data port");
         }
@@ -240,7 +239,7 @@ public class FtpURLConnection extends URLConnection {
     }
 
     private void sendFile() throws IOException {
-        write("STOR " + this.url.getFile().substring(this.url.getFile().lastIndexOf(47) + 1, this.url.getFile().length()) + IOUtils.LINE_SEPARATOR_WINDOWS);
+        write("STOR " + this.url.getFile().substring(this.url.getFile().lastIndexOf(47) + 1, this.url.getFile().length()) + "\r\n");
         int reply = getReply();
         if (reply != 150 && reply != 200 && reply != 125) {
             throw new IOException("Unable to store file");

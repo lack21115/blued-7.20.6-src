@@ -26,7 +26,7 @@ public final class ChannelFlowTransformLatest<T, R> extends ChannelFlowOperator<
     }
 
     public /* synthetic */ ChannelFlowTransformLatest(Function3 function3, Flow flow, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow, int i2, DefaultConstructorMarker defaultConstructorMarker) {
-        this(function3, flow, (i2 & 4) != 0 ? EmptyCoroutineContext.f42457a : coroutineContext, (i2 & 8) != 0 ? -2 : i, (i2 & 16) != 0 ? BufferOverflow.SUSPEND : bufferOverflow);
+        this(function3, flow, (i2 & 4) != 0 ? EmptyCoroutineContext.a : coroutineContext, (i2 & 8) != 0 ? -2 : i, (i2 & 16) != 0 ? BufferOverflow.SUSPEND : bufferOverflow);
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow
@@ -38,8 +38,8 @@ public final class ChannelFlowTransformLatest<T, R> extends ChannelFlowOperator<
     @Override // kotlinx.coroutines.flow.internal.ChannelFlowOperator
     public Object b(FlowCollector<? super R> flowCollector, Continuation<? super Unit> continuation) {
         if (!DebugKt.a() || Boxing.a(flowCollector instanceof SendingCollector).booleanValue()) {
-            Object a2 = FlowCoroutineKt.a(new ChannelFlowTransformLatest$flowCollect$3(this, flowCollector, null), continuation);
-            return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+            Object a = FlowCoroutineKt.a(new ChannelFlowTransformLatest$flowCollect$3(this, flowCollector, null), continuation);
+            return a == IntrinsicsKt.a() ? a : Unit.a;
         }
         throw new AssertionError();
     }

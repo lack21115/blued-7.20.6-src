@@ -27,7 +27,7 @@ public class NavigateArrowOptionsCreator implements Parcelable.Creator<NavigateA
         navigateArrowOptions.sideColor(readInt2);
         navigateArrowOptions.zIndex(readFloat2);
         navigateArrowOptions.visible(z2);
-        navigateArrowOptions.f5535a = parcel.readString();
+        navigateArrowOptions.a = parcel.readString();
         navigateArrowOptions.set3DModel(z);
         return navigateArrowOptions;
     }

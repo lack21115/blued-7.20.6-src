@@ -24,13 +24,9 @@ import kotlinx.coroutines.internal.Symbol;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SharedFlowImpl.class */
 public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> implements CancellableFlow<T>, MutableSharedFlow<T>, FusibleFlow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f43409a;
+    private final int a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BufferOverflow f43410c;
+    private final BufferOverflow c;
     private Object[] d;
     private long e;
     private long f;
@@ -41,42 +37,36 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SharedFlowImpl$Emitter.class */
     public static final class Emitter implements DisposableHandle {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final SharedFlowImpl<?> f43411a;
+        public final SharedFlowImpl<?> a;
         public long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public final Object f43412c;
+        public final Object c;
         public final Continuation<Unit> d;
 
         /* JADX WARN: Multi-variable type inference failed */
         public Emitter(SharedFlowImpl<?> sharedFlowImpl, long j, Object obj, Continuation<? super Unit> continuation) {
-            this.f43411a = sharedFlowImpl;
+            this.a = sharedFlowImpl;
             this.b = j;
-            this.f43412c = obj;
+            this.c = obj;
             this.d = continuation;
         }
 
         @Override // kotlinx.coroutines.DisposableHandle
         public void dispose() {
-            this.f43411a.a(this);
+            this.a.a(this);
         }
     }
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SharedFlowImpl$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f43413a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[BufferOverflow.valuesCustom().length];
             iArr[BufferOverflow.SUSPEND.ordinal()] = 1;
             iArr[BufferOverflow.DROP_LATEST.ordinal()] = 2;
             iArr[BufferOverflow.DROP_OLDEST.ordinal()] = 3;
-            f43413a = iArr;
+            a = iArr;
         }
     }
 
@@ -86,12 +76,12 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(IntrinsicsKt.a(continuation), 1);
         cancellableContinuationImpl.e();
         CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
-        Continuation<Unit>[] continuationArr2 = AbstractSharedFlowKt.f43445a;
+        Continuation<Unit>[] continuationArr2 = AbstractSharedFlowKt.a;
         synchronized (this) {
             if (b((SharedFlowImpl<T>) t)) {
                 CancellableContinuationImpl cancellableContinuationImpl3 = cancellableContinuationImpl2;
-                Unit unit = Unit.f42314a;
-                Result.Companion companion = Result.f42293a;
+                Unit unit = Unit.a;
+                Result.Companion companion = Result.a;
                 cancellableContinuationImpl3.resumeWith(Result.f(unit));
                 continuationArr = a(continuationArr2);
                 emitter = null;
@@ -115,8 +105,8 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
             Continuation<Unit> continuation2 = continuationArr[i];
             i++;
             if (continuation2 != null) {
-                Unit unit2 = Unit.f42314a;
-                Result.Companion companion2 = Result.f42293a;
+                Unit unit2 = Unit.a;
+                Result.Companion companion2 = Result.a;
                 continuation2.resumeWith(Result.f(unit2));
             }
         }
@@ -124,37 +114,37 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return h == IntrinsicsKt.a() ? h : Unit.f42314a;
+        return h == IntrinsicsKt.a() ? h : Unit.a;
     }
 
     private final Object a(SharedFlowSlot sharedFlowSlot) {
-        Symbol c2;
-        Continuation<Unit>[] a2;
-        Continuation<Unit>[] continuationArr = AbstractSharedFlowKt.f43445a;
+        Symbol c;
+        Continuation<Unit>[] a;
+        Continuation<Unit>[] continuationArr = AbstractSharedFlowKt.a;
         synchronized (this) {
             long b = b(sharedFlowSlot);
             if (b < 0) {
-                a2 = continuationArr;
-                c2 = SharedFlowKt.f43416a;
+                a = continuationArr;
+                c = SharedFlowKt.a;
             } else {
-                long j = sharedFlowSlot.f43417a;
-                c2 = c(b);
-                sharedFlowSlot.f43417a = b + 1;
-                a2 = a(j);
+                long j = sharedFlowSlot.a;
+                c = c(b);
+                sharedFlowSlot.a = b + 1;
+                a = a(j);
             }
         }
         int i = 0;
-        int length = a2.length;
+        int length = a.length;
         while (i < length) {
-            Continuation<Unit> continuation = a2[i];
+            Continuation<Unit> continuation = a[i];
             i++;
             if (continuation != null) {
-                Unit unit = Unit.f42314a;
-                Result.Companion companion = Result.f42293a;
+                Unit unit = Unit.a;
+                Result.Companion companion = Result.a;
                 continuation.resumeWith(Result.f(unit));
             }
         }
-        return c2;
+        return c;
     }
 
     private final Object a(SharedFlowSlot sharedFlowSlot, Continuation<? super Unit> continuation) {
@@ -167,17 +157,17 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
                 sharedFlowSlot.b = cancellableContinuationImpl2;
             } else {
                 CancellableContinuationImpl cancellableContinuationImpl3 = cancellableContinuationImpl2;
-                Unit unit = Unit.f42314a;
-                Result.Companion companion = Result.f42293a;
+                Unit unit = Unit.a;
+                Result.Companion companion = Result.a;
                 cancellableContinuationImpl3.resumeWith(Result.f(unit));
             }
-            Unit unit2 = Unit.f42314a;
+            Unit unit2 = Unit.a;
         }
         Object h = cancellableContinuationImpl.h();
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return h == IntrinsicsKt.a() ? h : Unit.f42314a;
+        return h == IntrinsicsKt.a() ? h : Unit.a;
     }
 
     private final void a(long j, long j2, long j3, long j4) {
@@ -234,9 +224,9 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
             if (b != emitter) {
                 return;
             }
-            SharedFlowKt.b(objArr, emitter.b, SharedFlowKt.f43416a);
+            SharedFlowKt.b(objArr, emitter.b, SharedFlowKt.a);
             o();
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
     }
 
@@ -279,7 +269,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
         SharedFlowImpl<T> sharedFlowImpl = this;
         i = ((AbstractSharedFlow) sharedFlowImpl).b;
         if (i != 0) {
-            abstractSharedFlowSlotArr = ((AbstractSharedFlow) sharedFlowImpl).f43443a;
+            abstractSharedFlowSlotArr = ((AbstractSharedFlow) sharedFlowImpl).a;
             if (abstractSharedFlowSlotArr != null) {
                 int length2 = abstractSharedFlowSlotArr.length;
                 int i2 = 0;
@@ -327,7 +317,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
 
     /* JADX INFO: Access modifiers changed from: private */
     public final long b(SharedFlowSlot sharedFlowSlot) {
-        long j = sharedFlowSlot.f43417a;
+        long j = sharedFlowSlot.a;
         if (j < l()) {
             return j;
         }
@@ -338,7 +328,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0011, code lost:
-        r0 = ((kotlinx.coroutines.flow.internal.AbstractSharedFlow) r0).f43443a;
+        r0 = ((kotlinx.coroutines.flow.internal.AbstractSharedFlow) r0).a;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -381,18 +371,18 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
             kotlinx.coroutines.flow.SharedFlowSlot r0 = (kotlinx.coroutines.flow.SharedFlowSlot) r0
             r11 = r0
             r0 = r11
-            long r0 = r0.f43417a
+            long r0 = r0.a
             r1 = 0
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 < 0) goto L59
             r0 = r11
-            long r0 = r0.f43417a
+            long r0 = r0.a
             r1 = r6
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 >= 0) goto L59
             r0 = r11
             r1 = r6
-            r0.f43417a = r1
+            r0.a = r1
         L59:
             r0 = r8
             r1 = 1
@@ -414,7 +404,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
             return c((SharedFlowImpl<T>) t);
         }
         if (this.g >= this.b && this.f <= this.e) {
-            int i = WhenMappings.f43413a[this.f43410c.ordinal()];
+            int i = WhenMappings.a[this.c.ordinal()];
             if (i == 1) {
                 return false;
             }
@@ -428,7 +418,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
         if (i2 > this.b) {
             n();
         }
-        if (j() > this.f43409a) {
+        if (j() > this.a) {
             a(this.e + 1, this.f, l(), m());
             return true;
         }
@@ -442,7 +432,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
         b = SharedFlowKt.b(objArr, j);
         Object obj = b;
         if (b instanceof Emitter) {
-            obj = ((Emitter) b).f43412c;
+            obj = ((Emitter) b).c;
         }
         return obj;
     }
@@ -453,13 +443,13 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
                 throw new AssertionError();
             }
         }
-        if (this.f43409a == 0) {
+        if (this.a == 0) {
             return true;
         }
         d(t);
         int i = this.g + 1;
         this.g = i;
-        if (i > this.f43409a) {
+        if (i > this.a) {
             n();
         }
         this.f = i() + this.g;
@@ -530,7 +520,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
             Intrinsics.a(objArr);
             while (this.h > 0) {
                 b = SharedFlowKt.b(objArr, (i() + k()) - 1);
-                if (b != SharedFlowKt.f43416a) {
+                if (b != SharedFlowKt.a) {
                     return;
                 }
                 this.h--;
@@ -568,7 +558,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
         int i;
         boolean z;
         Continuation<Unit>[] continuationArr;
-        Continuation<Unit>[] continuationArr2 = AbstractSharedFlowKt.f43445a;
+        Continuation<Unit>[] continuationArr2 = AbstractSharedFlowKt.a;
         synchronized (this) {
             i = 0;
             if (b((SharedFlowImpl<T>) t)) {
@@ -584,8 +574,8 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
             Continuation<Unit> continuation = continuationArr[i];
             i++;
             if (continuation != null) {
-                Unit unit = Unit.f42314a;
-                Result.Companion companion = Result.f42293a;
+                Unit unit = Unit.a;
+                Result.Companion companion = Result.a;
                 continuation.resumeWith(Result.f(unit));
             }
         }
@@ -593,7 +583,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x006c, code lost:
-        r0 = ((kotlinx.coroutines.flow.internal.AbstractSharedFlow) r0).f43443a;
+        r0 = ((kotlinx.coroutines.flow.internal.AbstractSharedFlow) r0).a;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -623,7 +613,7 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
     public void b() {
         synchronized (this) {
             a(l(), this.f, l(), m());
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
     }
 
@@ -644,10 +634,10 @@ public final class SharedFlowImpl<T> extends AbstractSharedFlow<SharedFlowSlot> 
 
     @Override // kotlinx.coroutines.flow.FlowCollector
     public Object emit(T t, Continuation<? super Unit> continuation) {
-        Object a2;
-        if (!a((SharedFlowImpl<T>) t) && (a2 = a((SharedFlowImpl<T>) t, continuation)) == IntrinsicsKt.a()) {
-            return a2;
+        Object a;
+        if (!a((SharedFlowImpl<T>) t) && (a = a((SharedFlowImpl<T>) t, continuation)) == IntrinsicsKt.a()) {
+            return a;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

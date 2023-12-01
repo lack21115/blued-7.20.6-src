@@ -8,10 +8,10 @@ import com.tencent.tencentmap.mapsdk.maps.model.TencentMapGestureListenerList;
 public class wi implements w4 {
 
     /* renamed from: a  reason: collision with root package name */
-    private yi f38100a;
+    private yi f24409a;
 
     public wi(yi yiVar) {
-        this.f38100a = yiVar;
+        this.f24409a = yiVar;
     }
 
     @Override // com.tencent.mapsdk.internal.w4
@@ -77,7 +77,7 @@ public class wi implements w4 {
     public boolean onDoubleTap(float f, float f2) {
         boolean z;
         TencentMapGestureListenerList tencentMapGestureListenerList;
-        yi yiVar = this.f38100a;
+        yi yiVar = this.f24409a;
         if (yiVar != null && (z = yiVar.p) && (tencentMapGestureListenerList = yiVar.o) != null && z) {
             return tencentMapGestureListenerList.onDoubleTap(f, f2);
         }
@@ -86,7 +86,7 @@ public class wi implements w4 {
 
     @Override // com.tencent.mapsdk.internal.w4
     public boolean onDown(float f, float f2) {
-        yi yiVar = this.f38100a;
+        yi yiVar = this.f24409a;
         if (yiVar != null && yiVar.p) {
             yiVar.t++;
             TencentMapGestureListenerList tencentMapGestureListenerList = yiVar.o;
@@ -101,7 +101,7 @@ public class wi implements w4 {
     @Override // com.tencent.mapsdk.internal.w4
     public boolean onFling(float f, float f2) {
         TencentMapGestureListenerList tencentMapGestureListenerList;
-        yi yiVar = this.f38100a;
+        yi yiVar = this.f24409a;
         if (yiVar == null || !yiVar.p || (tencentMapGestureListenerList = yiVar.o) == null) {
             return false;
         }
@@ -110,10 +110,10 @@ public class wi implements w4 {
 
     @Override // com.tencent.mapsdk.internal.w4
     public boolean onLongPress(float f, float f2) {
-        yi yiVar = this.f38100a;
+        yi yiVar = this.f24409a;
         if (yiVar != null && yiVar.p) {
             yiVar.f(f, f2);
-            TencentMapGestureListenerList tencentMapGestureListenerList = this.f38100a.o;
+            TencentMapGestureListenerList tencentMapGestureListenerList = this.f24409a.o;
             if (tencentMapGestureListenerList != null) {
                 return tencentMapGestureListenerList.onLongPress(f, f2);
             }
@@ -125,7 +125,7 @@ public class wi implements w4 {
     @Override // com.tencent.mapsdk.internal.w4
     public boolean onScroll(float f, float f2) {
         TencentMapGestureListenerList tencentMapGestureListenerList;
-        yi yiVar = this.f38100a;
+        yi yiVar = this.f24409a;
         if (yiVar == null || !yiVar.p || (tencentMapGestureListenerList = yiVar.o) == null) {
             return false;
         }
@@ -134,15 +134,15 @@ public class wi implements w4 {
 
     @Override // com.tencent.mapsdk.internal.w4
     public boolean onSingleTap(float f, float f2) {
-        yi yiVar = this.f38100a;
+        yi yiVar = this.f24409a;
         if (yiVar != null && yiVar.p) {
             if (yiVar.e(f, f2)) {
                 return true;
             }
-            if (!this.f38100a.d(f, f2)) {
-                this.f38100a.b(f, f2);
+            if (!this.f24409a.d(f, f2)) {
+                this.f24409a.b(f, f2);
             }
-            yi yiVar2 = this.f38100a;
+            yi yiVar2 = this.f24409a;
             TencentMapGestureListenerList tencentMapGestureListenerList = yiVar2.o;
             if (tencentMapGestureListenerList == null || !yiVar2.p) {
                 return false;
@@ -155,7 +155,7 @@ public class wi implements w4 {
     @Override // com.tencent.mapsdk.internal.w4
     public boolean onUp(float f, float f2) {
         int i;
-        yi yiVar = this.f38100a;
+        yi yiVar = this.f24409a;
         if (yiVar != null && yiVar.p) {
             int i2 = yiVar.t;
             if (i2 > 0) {
@@ -165,18 +165,18 @@ public class wi implements w4 {
                 i = 0;
             }
             yiVar.t = i;
-            if (yiVar.s && this.f38100a.r) {
-                yi yiVar2 = this.f38100a;
+            if (yiVar.s && this.f24409a.r) {
+                yi yiVar2 = this.f24409a;
                 if (yiVar2.t == 0) {
                     CameraPosition J = yiVar2.J();
                     if (J == null) {
                         return false;
                     }
-                    this.f38100a.s = false;
-                    this.f38100a.onCameraChangeFinished(J);
+                    this.f24409a.s = false;
+                    this.f24409a.onCameraChangeFinished(J);
                 }
             }
-            TencentMapGestureListenerList tencentMapGestureListenerList = this.f38100a.o;
+            TencentMapGestureListenerList tencentMapGestureListenerList = this.f24409a.o;
             if (tencentMapGestureListenerList != null) {
                 return tencentMapGestureListenerList.onUp(f, f2);
             }

@@ -4,30 +4,30 @@ package com.anythink.expressad.exoplayer.k;
 public final class t {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f7676a;
+    private byte[] f4837a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7677c;
+    private int f4838c;
     private int d = 0;
 
     public t(byte[] bArr, int i, int i2) {
-        this.f7676a = bArr;
-        this.f7677c = i;
+        this.f4837a = bArr;
+        this.f4838c = i;
         this.b = i2;
         g();
     }
 
     private void a(byte[] bArr, int i, int i2) {
-        this.f7676a = bArr;
-        this.f7677c = i;
+        this.f4837a = bArr;
+        this.f4838c = i;
         this.b = i2;
         this.d = 0;
         g();
     }
 
     private boolean c(int i) {
-        int i2 = this.f7677c;
+        int i2 = this.f4838c;
         int i3 = i / 8;
         int i4 = i2 + i3;
         int i5 = (this.d + i) - (i3 * 8);
@@ -65,24 +65,24 @@ public final class t {
         if (2 > i || i >= this.b) {
             return false;
         }
-        byte[] bArr = this.f7676a;
+        byte[] bArr = this.f4837a;
         return bArr[i] == 3 && bArr[i - 2] == 0 && bArr[i - 1] == 0;
     }
 
     private boolean e() {
         int i;
-        int i2 = this.f7677c;
+        int i2 = this.f4838c;
         int i3 = this.d;
         int i4 = 0;
         while (true) {
             i = i4;
-            if (this.f7677c >= this.b || b()) {
+            if (this.f4838c >= this.b || b()) {
                 break;
             }
             i4 = i + 1;
         }
-        boolean z = this.f7677c == this.b;
-        this.f7677c = i2;
+        boolean z = this.f4838c == this.b;
+        this.f4838c = i2;
         this.d = i3;
         if (z) {
             return false;
@@ -133,7 +133,7 @@ public final class t {
 
     private void g() {
         int i;
-        int i2 = this.f7677c;
+        int i2 = this.f4838c;
         a.b(i2 >= 0 && (i2 < (i = this.b) || (i2 == i && this.d == 0)));
     }
 
@@ -143,37 +143,37 @@ public final class t {
         this.d = i2;
         if (i2 == 8) {
             this.d = 0;
-            int i3 = this.f7677c;
+            int i3 = this.f4838c;
             if (d(i3 + 1)) {
                 i = 2;
             }
-            this.f7677c = i3 + i;
+            this.f4838c = i3 + i;
         }
         g();
     }
 
     public final void a(int i) {
-        int i2 = this.f7677c;
+        int i2 = this.f4838c;
         int i3 = i / 8;
         int i4 = i2 + i3;
-        this.f7677c = i4;
+        this.f4838c = i4;
         int i5 = this.d + (i - (i3 * 8));
         this.d = i5;
         int i6 = i2;
         if (i5 > 7) {
-            this.f7677c = i4 + 1;
+            this.f4838c = i4 + 1;
             this.d = i5 - 8;
             i6 = i2;
         }
         while (true) {
             int i7 = i6 + 1;
-            if (i7 > this.f7677c) {
+            if (i7 > this.f4838c) {
                 g();
                 return;
             }
             i6 = i7;
             if (d(i7)) {
-                this.f7677c++;
+                this.f4838c++;
                 i6 = i7 + 2;
             }
         }
@@ -192,30 +192,30 @@ public final class t {
             }
             int i5 = i2 - 8;
             this.d = i5;
-            byte[] bArr = this.f7676a;
-            int i6 = this.f7677c;
+            byte[] bArr = this.f4837a;
+            int i6 = this.f4838c;
             i4 |= (bArr[i6] & 255) << i5;
             if (!d(i6 + 1)) {
                 i3 = 1;
             }
-            this.f7677c = i6 + i3;
+            this.f4838c = i6 + i3;
         }
-        byte[] bArr2 = this.f7676a;
-        int i7 = this.f7677c;
+        byte[] bArr2 = this.f4837a;
+        int i7 = this.f4838c;
         byte b = bArr2[i7];
         if (i2 == 8) {
             this.d = 0;
             if (!d(i7 + 1)) {
                 i3 = 1;
             }
-            this.f7677c = i7 + i3;
+            this.f4838c = i7 + i3;
         }
         g();
         return ((-1) >>> (32 - i)) & (i4 | ((b & 255) >> (8 - i2)));
     }
 
     public final boolean b() {
-        boolean z = (this.f7676a[this.f7677c] & (128 >> this.d)) != 0;
+        boolean z = (this.f4837a[this.f4838c] & (128 >> this.d)) != 0;
         a();
         return z;
     }

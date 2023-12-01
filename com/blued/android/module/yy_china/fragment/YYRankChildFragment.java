@@ -1,11 +1,12 @@
 package com.blued.android.module.yy_china.fragment;
 
 import android.os.Bundle;
-import android.provider.BrowserContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
 import com.blued.android.core.net.IRequestHost;
@@ -26,7 +27,6 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -35,13 +35,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRankChildFragment.class */
 public final class YYRankChildFragment extends BaseLazyFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17393a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FragmentYyRankChildLayoutBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRankAdapter f17394c;
+    private YYRankAdapter c;
     private int d;
     private int e;
     private int f = 1;
@@ -64,7 +60,7 @@ public final class YYRankChildFragment extends BaseLazyFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<? extends YYRankModel> list) {
-        YYRankAdapter yYRankAdapter = this.f17394c;
+        YYRankAdapter yYRankAdapter = this.c;
         if (yYRankAdapter == null) {
             return;
         }
@@ -79,13 +75,11 @@ public final class YYRankChildFragment extends BaseLazyFragment {
             fragmentYyRankChildLayoutBinding2 = null;
         }
         fragmentYyRankChildLayoutBinding2.g.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYRankChildFragment$onInitView$1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYRankChildFragment.this.a();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYRankChildFragment.this.f = 1;
@@ -107,7 +101,7 @@ public final class YYRankChildFragment extends BaseLazyFragment {
     }
 
     private final void c() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
         FragmentYyRankChildLayoutBinding fragmentYyRankChildLayoutBinding = this.b;
         FragmentYyRankChildLayoutBinding fragmentYyRankChildLayoutBinding2 = fragmentYyRankChildLayoutBinding;
@@ -116,17 +110,17 @@ public final class YYRankChildFragment extends BaseLazyFragment {
             fragmentYyRankChildLayoutBinding2 = null;
         }
         fragmentYyRankChildLayoutBinding2.f.setLayoutManager(linearLayoutManager);
-        this.f17394c = new YYRankAdapter(getFragmentActive());
+        this.c = new YYRankAdapter(getFragmentActive());
         FragmentYyRankChildLayoutBinding fragmentYyRankChildLayoutBinding3 = this.b;
         if (fragmentYyRankChildLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             fragmentYyRankChildLayoutBinding3 = null;
         }
-        fragmentYyRankChildLayoutBinding3.f.setAdapter(this.f17394c);
+        fragmentYyRankChildLayoutBinding3.f.setAdapter(this.c);
     }
 
     private final void d() {
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo != null) {
             ImageWrapper a2 = ImageLoader.a(getFragmentActive(), yYUserInfo.getAvatar());
             FragmentYyRankChildLayoutBinding fragmentYyRankChildLayoutBinding = this.b;
@@ -135,7 +129,7 @@ public final class YYRankChildFragment extends BaseLazyFragment {
                 Intrinsics.c("mBinding");
                 fragmentYyRankChildLayoutBinding2 = null;
             }
-            a2.a(fragmentYyRankChildLayoutBinding2.f16531a);
+            a2.a((ImageView) fragmentYyRankChildLayoutBinding2.a);
             FragmentYyRankChildLayoutBinding fragmentYyRankChildLayoutBinding3 = this.b;
             if (fragmentYyRankChildLayoutBinding3 == null) {
                 Intrinsics.c("mBinding");
@@ -174,7 +168,7 @@ public final class YYRankChildFragment extends BaseLazyFragment {
                     Intrinsics.c("mBinding");
                     fragmentYyRankChildLayoutBinding3 = null;
                 }
-                fragmentYyRankChildLayoutBinding3.g.j();
+                fragmentYyRankChildLayoutBinding3.g.g();
                 fragmentYyRankChildLayoutBinding2 = YYRankChildFragment.this.b;
                 FragmentYyRankChildLayoutBinding fragmentYyRankChildLayoutBinding4 = fragmentYyRankChildLayoutBinding2;
                 if (fragmentYyRankChildLayoutBinding4 == null) {
@@ -261,9 +255,9 @@ public final class YYRankChildFragment extends BaseLazyFragment {
                         fragmentYyRankChildLayoutBinding10.l.setText(bluedEntity.extra.getScore());
                     }
                 } else {
-                    yYRankAdapter = YYRankChildFragment.this.f17394c;
+                    yYRankAdapter = YYRankChildFragment.this.c;
                     if (yYRankAdapter != null) {
-                        yYRankAdapter.addData((Collection) bluedEntity.data);
+                        yYRankAdapter.addData(bluedEntity.data);
                     }
                 }
                 if (!bluedEntity.hasMore()) {
@@ -273,7 +267,7 @@ public final class YYRankChildFragment extends BaseLazyFragment {
                         Intrinsics.c("mBinding");
                         fragmentYyRankChildLayoutBinding11 = null;
                     }
-                    fragmentYyRankChildLayoutBinding11.g.l(false);
+                    fragmentYyRankChildLayoutBinding11.g.b(false);
                     return;
                 }
                 YYRankChildFragment yYRankChildFragment = YYRankChildFragment.this;
@@ -285,7 +279,7 @@ public final class YYRankChildFragment extends BaseLazyFragment {
                     Intrinsics.c("mBinding");
                     fragmentYyRankChildLayoutBinding12 = null;
                 }
-                fragmentYyRankChildLayoutBinding12.g.l(true);
+                fragmentYyRankChildLayoutBinding12.g.b(true);
             }
         };
     }
@@ -346,7 +340,7 @@ public final class YYRankChildFragment extends BaseLazyFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Bundle arguments = getArguments();
@@ -354,10 +348,10 @@ public final class YYRankChildFragment extends BaseLazyFragment {
             return;
         }
         this.d = arguments.getInt("rank_type", 0);
-        this.e = arguments.getInt(BrowserContract.Bookmarks.POSITION, 0);
+        this.e = arguments.getInt("position", 0);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.fragment_yy_rank_child_layout, (ViewGroup) null);

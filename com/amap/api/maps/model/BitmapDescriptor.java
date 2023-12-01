@@ -8,17 +8,15 @@ import com.amap.api.col.p0003sl.dw;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/BitmapDescriptor.class */
 public final class BitmapDescriptor implements Parcelable, Cloneable {
     public static final BitmapDescriptorCreator CREATOR = new BitmapDescriptorCreator();
-
-    /* renamed from: a  reason: collision with root package name */
-    int f5519a;
+    int a;
     int b;
     protected Object mBitmap;
     private String mId;
 
     private BitmapDescriptor(Bitmap bitmap, int i, int i2, String str) {
-        this.f5519a = 0;
+        this.a = 0;
         this.b = 0;
-        this.f5519a = i;
+        this.a = i;
         this.b = i2;
         this.mBitmap = bitmap;
         this.mId = str;
@@ -26,11 +24,11 @@ public final class BitmapDescriptor implements Parcelable, Cloneable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public BitmapDescriptor(Bitmap bitmap, String str) {
-        this.f5519a = 0;
+        this.a = 0;
         this.b = 0;
         if (bitmap != null) {
             try {
-                this.f5519a = bitmap.getWidth();
+                this.a = bitmap.getWidth();
                 this.b = bitmap.getHeight();
                 if (bitmap.getConfig() == null) {
                     this.mBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true);
@@ -46,9 +44,9 @@ public final class BitmapDescriptor implements Parcelable, Cloneable {
     }
 
     /* renamed from: clone */
-    public final BitmapDescriptor m2397clone() {
+    public final BitmapDescriptor m8840clone() {
         try {
-            return new BitmapDescriptor(((Bitmap) this.mBitmap).copy(((Bitmap) this.mBitmap).getConfig(), true), this.f5519a, this.b, this.mId);
+            return new BitmapDescriptor(((Bitmap) this.mBitmap).copy(((Bitmap) this.mBitmap).getConfig(), true), this.a, this.b, this.mId);
         } catch (Throwable th) {
             th.printStackTrace();
             dw.a(th);
@@ -71,7 +69,7 @@ public final class BitmapDescriptor implements Parcelable, Cloneable {
         if (this == obj) {
             return true;
         }
-        if (getClass() == obj.getClass() && (obj2 = (bitmapDescriptor = (BitmapDescriptor) obj).mBitmap) != null && !((Bitmap) obj2).isRecycled() && this.f5519a == bitmapDescriptor.getWidth() && this.b == bitmapDescriptor.getHeight()) {
+        if (getClass() == obj.getClass() && (obj2 = (bitmapDescriptor = (BitmapDescriptor) obj).mBitmap) != null && !((Bitmap) obj2).isRecycled() && this.a == bitmapDescriptor.getWidth() && this.b == bitmapDescriptor.getHeight()) {
             try {
                 return ((Bitmap) this.mBitmap).sameAs((Bitmap) bitmapDescriptor.mBitmap);
             } catch (Throwable th) {
@@ -95,7 +93,7 @@ public final class BitmapDescriptor implements Parcelable, Cloneable {
     }
 
     public final int getWidth() {
-        return this.f5519a;
+        return this.a;
     }
 
     public final int hashCode() {
@@ -114,7 +112,7 @@ public final class BitmapDescriptor implements Parcelable, Cloneable {
     public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.mId);
         parcel.writeParcelable((Bitmap) this.mBitmap, i);
-        parcel.writeInt(this.f5519a);
+        parcel.writeInt(this.a);
         parcel.writeInt(this.b);
     }
 }

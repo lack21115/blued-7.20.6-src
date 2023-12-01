@@ -1,7 +1,6 @@
 package com.bumptech.glide.manager;
 
 import android.util.Log;
-import com.alipay.sdk.util.i;
 import com.bumptech.glide.request.Request;
 import com.bumptech.glide.util.Util;
 import java.util.ArrayList;
@@ -14,15 +13,15 @@ import java.util.WeakHashMap;
 public class RequestTracker {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Set<Request> f21021a = Collections.newSetFromMap(new WeakHashMap());
+    private final Set<Request> f7415a = Collections.newSetFromMap(new WeakHashMap());
     private final List<Request> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f21022c;
+    private boolean f7416c;
 
     public void a() {
-        this.f21022c = true;
-        for (Request request : Util.a(this.f21021a)) {
+        this.f7416c = true;
+        for (Request request : Util.a(this.f7415a)) {
             if (request.d()) {
                 request.c();
                 this.b.add(request);
@@ -31,8 +30,8 @@ public class RequestTracker {
     }
 
     public void a(Request request) {
-        this.f21021a.add(request);
-        if (!this.f21022c) {
+        this.f7415a.add(request);
+        if (!this.f7416c) {
             request.a();
             return;
         }
@@ -44,8 +43,8 @@ public class RequestTracker {
     }
 
     public void b() {
-        this.f21022c = true;
-        for (Request request : Util.a(this.f21021a)) {
+        this.f7416c = true;
+        for (Request request : Util.a(this.f7415a)) {
             if (request.d() || request.e()) {
                 request.b();
                 this.b.add(request);
@@ -57,7 +56,7 @@ public class RequestTracker {
         if (request == null) {
             return true;
         }
-        boolean remove = this.f21021a.remove(request);
+        boolean remove = this.f7415a.remove(request);
         boolean z = true;
         if (!this.b.remove(request)) {
             z = remove;
@@ -69,8 +68,8 @@ public class RequestTracker {
     }
 
     public void c() {
-        this.f21022c = false;
-        for (Request request : Util.a(this.f21021a)) {
+        this.f7416c = false;
+        for (Request request : Util.a(this.f7415a)) {
             if (!request.e() && !request.d()) {
                 request.a();
             }
@@ -79,17 +78,17 @@ public class RequestTracker {
     }
 
     public void d() {
-        for (Request request : Util.a(this.f21021a)) {
+        for (Request request : Util.a(this.f7415a)) {
             b(request);
         }
         this.b.clear();
     }
 
     public void e() {
-        for (Request request : Util.a(this.f21021a)) {
+        for (Request request : Util.a(this.f7415a)) {
             if (!request.e() && !request.f()) {
                 request.b();
-                if (this.f21022c) {
+                if (this.f7416c) {
                     this.b.add(request);
                 } else {
                     request.a();
@@ -99,6 +98,6 @@ public class RequestTracker {
     }
 
     public String toString() {
-        return super.toString() + "{numRequests=" + this.f21021a.size() + ", isPaused=" + this.f21022c + i.d;
+        return super.toString() + "{numRequests=" + this.f7415a.size() + ", isPaused=" + this.f7416c + "}";
     }
 }

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.text.TextUtils;
+import com.android.internal.widget.LockPatternUtils;
+import com.anythink.core.common.c.d;
 import com.autonavi.base.amap.api.mapcore.IAMapDelegate;
 import java.lang.ref.WeakReference;
 import java.util.Hashtable;
@@ -14,13 +16,9 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.v  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/v.class */
 public final class v {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5431a;
+    private Context a;
     private WeakReference<IAMapDelegate> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private HandlerThread f5432c;
+    private HandlerThread c;
     private Handler d;
     private a e;
     private final Runnable f = new Runnable() { // from class: com.amap.api.col.3sl.v.1
@@ -28,7 +26,7 @@ public final class v {
         public final void run() {
             if (v.this.e == null) {
                 v vVar = v.this;
-                vVar.e = new a(vVar.f5431a, v.this);
+                vVar.e = new a(vVar.a, v.this);
             }
             du.a().a(v.this.e);
         }
@@ -40,40 +38,36 @@ public final class v {
             if (iAMapDelegate != null) {
                 iAMapDelegate.setTerrainAuth(false);
             }
-            dc.a(v.this.f5431a, "地形图鉴权失败，当前key没有地形图的使用权限，地形图，将不会呈现！");
+            dc.a(v.this.a, "地形图鉴权失败，当前key没有地形图的使用权限，地形图，将不会呈现！");
         }
     };
 
     /* renamed from: com.amap.api.col.3sl.v$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/v$a.class */
     static final class a extends lc {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f5435a;
+        private Context a;
         private v b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private b f5436c;
+        private b c;
 
         public a(Context context, v vVar) {
-            this.f5435a = context;
+            this.a = context;
             this.b = vVar;
-            this.f5436c = new b(context, "");
+            this.c = new b(context, "");
         }
 
         @Override // com.amap.api.col.p0003sl.lc
         public final void runTask() {
             try {
-                c d = this.f5436c.d();
+                c d = this.c.d();
                 if (d == null) {
-                    this.b.a(30000L);
+                    this.b.a(LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
                 } else if (d.d) {
                 } else {
                     this.b.c();
                 }
             } catch (hf e) {
                 e.printStackTrace();
-                this.b.a(30000L);
+                this.b.a(LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
             }
         }
     }
@@ -98,9 +92,9 @@ public final class v {
                 String optString2 = jSONObject.optString("infocode");
                 String optString3 = jSONObject.optString("status");
                 c cVar = new c((byte) 0);
-                cVar.f5437a = optString;
+                cVar.a = optString;
                 cVar.b = optString2;
-                cVar.f5438c = optString3;
+                cVar.c = optString3;
                 boolean z = false;
                 if (!TextUtils.isEmpty(optString2)) {
                     z = false;
@@ -153,14 +147,14 @@ public final class v {
         @Override // com.amap.api.col.p0003sl.da, com.amap.api.col.p0003sl.kb
         public final Map<String, String> getParams() {
             Hashtable hashtable = new Hashtable(16);
-            hashtable.put("key", ho.f(this.g));
+            hashtable.put(d.a.b, ho.f(this.g));
             if (this.j) {
                 hashtable.put("pname", "3dmap");
             }
-            String a2 = hr.a();
-            String a3 = hr.a(this.g, a2, ib.b(hashtable));
-            hashtable.put("ts", a2);
-            hashtable.put("scode", a3);
+            String a = hr.a();
+            String a2 = hr.a(this.g, a, ib.b(hashtable));
+            hashtable.put("ts", a);
+            hashtable.put("scode", a2);
             return hashtable;
         }
 
@@ -179,13 +173,9 @@ public final class v {
     /* renamed from: com.amap.api.col.3sl.v$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/v$c.class */
     public static final class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f5437a;
+        public String a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f5438c;
+        public String c;
         public boolean d;
 
         private c() {
@@ -198,17 +188,17 @@ public final class v {
     }
 
     public v(Context context, IAMapDelegate iAMapDelegate) {
-        this.f5431a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.b = new WeakReference<>(iAMapDelegate);
         b();
     }
 
     private void b() {
-        if (this.f5432c == null) {
+        if (this.c == null) {
             HandlerThread handlerThread = new HandlerThread("terrain_auth");
-            this.f5432c = handlerThread;
+            this.c = handlerThread;
             handlerThread.start();
-            this.d = new Handler(this.f5432c.getLooper());
+            this.d = new Handler(this.c.getLooper());
         }
     }
 
@@ -226,10 +216,10 @@ public final class v {
             handler.removeCallbacksAndMessages(null);
             this.d = null;
         }
-        HandlerThread handlerThread = this.f5432c;
+        HandlerThread handlerThread = this.c;
         if (handlerThread != null) {
             handlerThread.quitSafely();
-            this.f5432c = null;
+            this.c = null;
         }
     }
 

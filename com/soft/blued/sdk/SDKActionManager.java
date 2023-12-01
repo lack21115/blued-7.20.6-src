@@ -7,7 +7,7 @@ import com.soft.blued.utils.Logger;
 public class SDKActionManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SDKBaseAction f29746a;
+    private static SDKBaseAction f16056a;
 
     public static void a() {
         synchronized (SDKActionManager.class) {
@@ -72,10 +72,10 @@ public class SDKActionManager {
     private static SDKBaseAction b() {
         synchronized (SDKActionManager.class) {
             try {
-                if (f29746a == null || f29746a.c()) {
+                if (f16056a == null || f16056a.c()) {
                     return null;
                 }
-                return f29746a;
+                return f16056a;
             } finally {
             }
         }
@@ -92,7 +92,7 @@ public class SDKActionManager {
     private static void b(SDKBaseAction sDKBaseAction) {
         synchronized (SDKActionManager.class) {
             try {
-                f29746a = sDKBaseAction;
+                f16056a = sDKBaseAction;
             } catch (Throwable th) {
                 throw th;
             }

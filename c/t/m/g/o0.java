@@ -7,14 +7,14 @@ import java.util.Observable;
 public class o0 extends Observable implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile String f3903a = "cc_c_t_m_l_";
+    public static volatile String f3855a = "cc_c_t_m_l_";
     public static volatile o0 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static volatile SharedPreferences f3904c;
+    public static volatile SharedPreferences f3856c;
 
     public o0() {
-        f3904c = p3.a(f3903a);
+        f3856c = p3.a(f3855a);
     }
 
     public static o0 a() {
@@ -35,33 +35,33 @@ public class o0 extends Observable implements SharedPreferences.OnSharedPreferen
     }
 
     public static void a(String str) {
-        f3903a = "cc_c_t_m_l_" + str;
+        f3855a = "cc_c_t_m_l_" + str;
     }
 
     public SharedPreferences b() {
         SharedPreferences sharedPreferences;
         synchronized (this) {
-            if (f3904c == null) {
-                f3904c = p3.a(f3903a);
+            if (f3856c == null) {
+                f3856c = p3.a(f3855a);
             }
-            sharedPreferences = f3904c;
+            sharedPreferences = f3856c;
         }
         return sharedPreferences;
     }
 
     public void c() {
         synchronized (this) {
-            if (f3904c != null) {
+            if (f3856c != null) {
                 addObserver(n0.b());
-                f3904c.registerOnSharedPreferenceChangeListener(this);
+                f3856c.registerOnSharedPreferenceChangeListener(this);
             }
         }
     }
 
     public void d() {
         synchronized (this) {
-            if (f3904c != null) {
-                f3904c.unregisterOnSharedPreferenceChangeListener(this);
+            if (f3856c != null) {
+                f3856c.unregisterOnSharedPreferenceChangeListener(this);
                 deleteObserver(n0.b());
             }
         }

@@ -7,11 +7,11 @@ import com.tencent.liteav.videoconsumer.renderer.VideoRenderInterface;
 final /* synthetic */ class ac implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36693a;
+    private final j f23002a;
     private final boolean b;
 
     private ac(j jVar, boolean z) {
-        this.f36693a = jVar;
+        this.f23002a = jVar;
         this.b = z;
     }
 
@@ -21,9 +21,9 @@ final /* synthetic */ class ac implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36693a;
+        j jVar = this.f23002a;
         boolean z = this.b;
-        LiteavLog.i(jVar.f36705a, "setRenderMirrorEnabled: ".concat(String.valueOf(z)));
+        LiteavLog.i(jVar.f23014a, "setRenderMirrorEnabled: ".concat(String.valueOf(z)));
         jVar.l = z;
         for (VideoRenderInterface videoRenderInterface : jVar.a()) {
             if (videoRenderInterface != null) {

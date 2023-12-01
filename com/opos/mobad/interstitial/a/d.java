@@ -8,12 +8,12 @@ import android.os.Bundle;
 public class d extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private Boolean f26233a;
+    private Boolean f12545a;
     private Activity b;
 
     public d(Activity activity, int i) {
         super(activity, i);
-        this.f26233a = null;
+        this.f12545a = null;
         this.b = activity;
     }
 
@@ -24,7 +24,7 @@ public class d extends Dialog {
 
     @Override // android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
-        Boolean bool = this.f26233a;
+        Boolean bool = this.f12545a;
         if (bool == null || !bool.booleanValue()) {
             super.dismiss();
         } else {
@@ -35,7 +35,7 @@ public class d extends Dialog {
     @Override // android.app.Dialog, android.view.Window.Callback
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.f26233a = false;
+        this.f12545a = false;
         com.opos.cmn.an.f.a.b("", "dialog onAttachedToWindow");
     }
 
@@ -49,7 +49,7 @@ public class d extends Dialog {
     @Override // android.app.Dialog, android.view.Window.Callback
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f26233a = true;
+        this.f12545a = true;
         com.opos.cmn.an.f.a.b("", "dialog onDetachedFromWindow");
     }
 

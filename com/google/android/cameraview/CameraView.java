@@ -135,7 +135,7 @@ public class CameraView extends FrameLayout {
             super(parcelable);
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
             parcel.writeInt(this.facing);
@@ -220,9 +220,8 @@ public class CameraView extends FrameLayout {
         return this.mImpl.isCameraOpened();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (isInEditMode()) {
             return;
@@ -230,18 +229,16 @@ public class CameraView extends FrameLayout {
         this.mDisplayOrientationDetector.enable(ViewCompat.getDisplay(this));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         if (!isInEditMode()) {
             this.mDisplayOrientationDetector.disable();
         }
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (isInEditMode()) {
             super.onMeasure(i, i2);
             return;
@@ -287,9 +284,8 @@ public class CameraView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -302,9 +298,8 @@ public class CameraView extends FrameLayout {
         setFlash(savedState.flash);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
         savedState.facing = getFacing();
         savedState.ratio = getAspectRatio();

@@ -9,11 +9,11 @@ import java.util.Collections;
 public final class k implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final w f25206a;
+    private final w f11518a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.exoplayer.core.c.n f25207c;
+    private com.opos.exoplayer.core.c.n f11519c;
     private a d;
     private boolean e;
     private long l;
@@ -31,11 +31,11 @@ public final class k implements h {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final com.opos.exoplayer.core.c.n f25208a;
+        private final com.opos.exoplayer.core.c.n f11520a;
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f25209c;
+        private boolean f11521c;
         private int d;
         private long e;
         private boolean f;
@@ -48,7 +48,7 @@ public final class k implements h {
         private boolean m;
 
         public a(com.opos.exoplayer.core.c.n nVar) {
-            this.f25208a = nVar;
+            this.f11520a = nVar;
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -66,7 +66,7 @@ public final class k implements h {
 
         public void a(long j, int i) {
             if (this.j && this.g) {
-                this.m = this.f25209c;
+                this.m = this.f11521c;
                 this.j = false;
             } else if (this.h || this.g) {
                 if (this.i) {
@@ -75,7 +75,7 @@ public final class k implements h {
                 this.k = this.b;
                 this.l = this.e;
                 this.i = true;
-                this.m = this.f25209c;
+                this.m = this.f11521c;
             }
         }
 
@@ -150,7 +150,7 @@ public final class k implements h {
             L69:
                 r0 = r4
                 r1 = r11
-                r0.f25209c = r1
+                r0.f11521c = r1
                 r0 = r11
                 if (r0 != 0) goto L7f
                 r0 = r12
@@ -185,16 +185,16 @@ public final class k implements h {
     }
 
     public k(w wVar) {
-        this.f25206a = wVar;
+        this.f11518a = wVar;
     }
 
     private static Format a(String str, v vVar, v vVar2, v vVar3) {
         float f;
         byte[] bArr = new byte[vVar.b + vVar2.b + vVar3.b];
-        System.arraycopy((Object) vVar.f25237a, 0, (Object) bArr, 0, vVar.b);
-        System.arraycopy((Object) vVar2.f25237a, 0, (Object) bArr, vVar.b, vVar2.b);
-        System.arraycopy((Object) vVar3.f25237a, 0, (Object) bArr, vVar.b + vVar2.b, vVar3.b);
-        com.opos.exoplayer.core.i.n nVar = new com.opos.exoplayer.core.i.n(vVar2.f25237a, 0, vVar2.b);
+        System.arraycopy(vVar.f11549a, 0, bArr, 0, vVar.b);
+        System.arraycopy(vVar2.f11549a, 0, bArr, vVar.b, vVar2.b);
+        System.arraycopy(vVar3.f11549a, 0, bArr, vVar.b + vVar2.b, vVar3.b);
+        com.opos.exoplayer.core.i.n nVar = new com.opos.exoplayer.core.i.n(vVar2.f11549a, 0, vVar2.b);
         nVar.a(44);
         int c2 = nVar.c(3);
         nVar.a();
@@ -362,19 +362,19 @@ public final class k implements h {
             this.h.b(i2);
             this.i.b(i2);
             if (this.g.b() && this.h.b() && this.i.b()) {
-                this.f25207c.a(a(this.b, this.g, this.h, this.i));
+                this.f11519c.a(a(this.b, this.g, this.h, this.i));
                 this.e = true;
             }
         }
         if (this.j.b(i2)) {
-            this.n.a(this.j.f25237a, com.opos.exoplayer.core.i.k.a(this.j.f25237a, this.j.b));
+            this.n.a(this.j.f11549a, com.opos.exoplayer.core.i.k.a(this.j.f11549a, this.j.b));
             this.n.d(5);
-            this.f25206a.a(j2, this.n);
+            this.f11518a.a(j2, this.n);
         }
         if (this.k.b(i2)) {
-            this.n.a(this.k.f25237a, com.opos.exoplayer.core.i.k.a(this.k.f25237a, this.k.b));
+            this.n.a(this.k.f11549a, com.opos.exoplayer.core.i.k.a(this.k.f11549a, this.k.b));
             this.n.d(5);
-            this.f25206a.a(j2, this.n);
+            this.f11518a.a(j2, this.n);
         }
     }
 
@@ -458,9 +458,9 @@ public final class k implements h {
         dVar.a();
         this.b = dVar.c();
         com.opos.exoplayer.core.c.n a2 = gVar.a(dVar.b(), 2);
-        this.f25207c = a2;
+        this.f11519c = a2;
         this.d = new a(a2);
-        this.f25206a.a(gVar, dVar);
+        this.f11518a.a(gVar, dVar);
     }
 
     @Override // com.opos.exoplayer.core.c.f.h
@@ -468,9 +468,9 @@ public final class k implements h {
         while (mVar.b() > 0) {
             int d = mVar.d();
             int c2 = mVar.c();
-            byte[] bArr = mVar.f25496a;
+            byte[] bArr = mVar.f11808a;
             this.l += mVar.b();
-            this.f25207c.a(mVar, mVar.b());
+            this.f11519c.a(mVar, mVar.b());
             while (d < c2) {
                 int a2 = com.opos.exoplayer.core.i.k.a(bArr, d, c2, this.f);
                 if (a2 == c2) {

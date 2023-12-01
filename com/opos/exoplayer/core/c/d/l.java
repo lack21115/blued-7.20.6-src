@@ -4,11 +4,11 @@ package com.opos.exoplayer.core.c.d;
 final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public i f25148a;
+    public i f11460a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f25149c;
+    public long f11461c;
     public long d;
     public int e;
     public int f;
@@ -64,13 +64,13 @@ final class l {
     }
 
     public void a(com.opos.exoplayer.core.c.f fVar) {
-        fVar.b(this.q.f25496a, 0, this.p);
+        fVar.b(this.q.f11808a, 0, this.p);
         this.q.c(0);
         this.r = false;
     }
 
     public void a(com.opos.exoplayer.core.i.m mVar) {
-        mVar.a(this.q.f25496a, 0, this.p);
+        mVar.a(this.q.f11808a, 0, this.p);
         this.q.c(0);
         this.r = false;
     }

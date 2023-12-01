@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.amap.api.col.p0003sl.fe;
 import com.amap.api.services.core.LatLonPoint;
+import com.android.internal.content.NativeLibraryHelper;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,13 +26,9 @@ public class BusLineItem implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f5580a;
+    private float a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5581c;
+    private String c;
     private String d;
     private List<LatLonPoint> e;
     private List<LatLonPoint> f;
@@ -55,9 +52,9 @@ public class BusLineItem implements Parcelable {
         this.e = new ArrayList();
         this.f = new ArrayList();
         this.o = new ArrayList();
-        this.f5580a = parcel.readFloat();
+        this.a = parcel.readFloat();
         this.b = parcel.readString();
-        this.f5581c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readArrayList(LatLonPoint.class.getClassLoader());
         this.f = parcel.readArrayList(LatLonPoint.class.getClassLoader());
@@ -110,7 +107,7 @@ public class BusLineItem implements Parcelable {
     }
 
     public String getBusLineType() {
-        return this.f5581c;
+        return this.c;
     }
 
     public List<BusStationItem> getBusStations() {
@@ -126,7 +123,7 @@ public class BusLineItem implements Parcelable {
     }
 
     public float getDistance() {
-        return this.f5580a;
+        return this.a;
     }
 
     public Date getFirstBusTime() {
@@ -183,7 +180,7 @@ public class BusLineItem implements Parcelable {
     }
 
     public void setBusLineType(String str) {
-        this.f5581c = str;
+        this.c = str;
     }
 
     public void setBusStations(List<BusStationItem> list) {
@@ -199,7 +196,7 @@ public class BusLineItem implements Parcelable {
     }
 
     public void setDistance(float f) {
-        this.f5580a = f;
+        this.a = f;
     }
 
     public void setFirstBusTime(Date date) {
@@ -231,14 +228,14 @@ public class BusLineItem implements Parcelable {
     }
 
     public String toString() {
-        return this.b + " " + fe.a(this.j) + "-" + fe.a(this.k);
+        return this.b + " " + fe.a(this.j) + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + fe.a(this.k);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeFloat(this.f5580a);
+        parcel.writeFloat(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5581c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeList(this.e);
         parcel.writeList(this.f);

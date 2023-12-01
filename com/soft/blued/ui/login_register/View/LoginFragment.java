@@ -55,7 +55,7 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f31492c = 0;
+    private final int f17802c = 0;
     private final int j = 1;
     private final int k = 2;
     private KeyboardListenLinearLayout l;
@@ -83,14 +83,14 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
     public class MyAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        public Object f31495a;
+        public Object f17805a;
 
         /* renamed from: c  reason: collision with root package name */
-        private String[] f31496c;
+        private String[] f17806c;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f31496c = new String[]{LoginFragment.this.b.getResources().getString(2131886701), LoginFragment.this.b.getResources().getString(2131886664)};
+            this.f17806c = new String[]{LoginFragment.this.b.getResources().getString(2131886701), LoginFragment.this.b.getResources().getString(2131886664)};
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
@@ -116,7 +116,7 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return this.f31496c[i];
+            return this.f17806c[i];
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
@@ -125,19 +125,19 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
             if (obj == null) {
                 return;
             }
-            Object obj2 = this.f31495a;
+            Object obj2 = this.f17805a;
             if (obj2 == null || !obj2.equals(obj)) {
                 if (obj instanceof LoginWithPhoneFragment) {
                     LoginWithPhoneFragment loginWithPhoneFragment = (LoginWithPhoneFragment) obj;
                     if (loginWithPhoneFragment.g != null) {
                         loginWithPhoneFragment.g.requestFocus();
-                        this.f31495a = obj;
+                        this.f17805a = obj;
                     }
                 } else if (obj instanceof LoginWithEmailFragment) {
                     LoginWithEmailFragment loginWithEmailFragment = (LoginWithEmailFragment) obj;
                     if (loginWithEmailFragment.d != null) {
                         loginWithEmailFragment.d.requestFocus();
-                        this.f31495a = obj;
+                        this.f17805a = obj;
                     }
                 }
             }
@@ -148,9 +148,9 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
         TextView textView = (TextView) this.m.findViewById(2131363120);
         this.n = textView;
         textView.setVisibility(8);
-        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) this.m.findViewById(2131366091);
-        this.l = keyboardListenLinearLayout;
-        keyboardListenLinearLayout.setBackgroundColor(BluedSkinUtils.a(this.b, 2131101780));
+        KeyboardListenLinearLayout findViewById = this.m.findViewById(R.id.keyboardRelativeLayout);
+        this.l = findViewById;
+        findViewById.setBackgroundColor(BluedSkinUtils.a(this.b, 2131101780));
         this.p = (ViewPager) this.m.findViewById(R.id.viewpager_login_phone_email);
         this.o = (TabPageIndicatorWithDot) this.m.findViewById(R.id.tti_tab_indicator);
         this.q = (TextView) this.m.findViewById(R.id.tv_sign_up);
@@ -180,7 +180,7 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
                 }
             }, (DialogInterface.OnDismissListener) null, 0).a(false);
         }
-        LoginTool.f31584a.a(this.A, this.B, false);
+        LoginTool.f17894a.a(this.A, this.B, false);
         this.C.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.ui.login_register.View.LoginFragment.2
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
@@ -219,12 +219,10 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
         this.p.setCurrentItem(1);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 100 && intent != null) {
@@ -232,11 +230,10 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
             if (StringUtils.d(stringExtra)) {
                 return;
             }
-            LoginConstants.f20505c = stringExtra;
+            LoginConstants.f6899c = stringExtra;
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         AppUtils.a(AppInfo.d());
         return false;
@@ -247,12 +244,12 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
         Tracker.onClick(view);
         switch (view.getId()) {
             case 2131363120:
-                TerminalActivity.d(getActivity(), ServerAddressSettingFragment.class, null);
+                TerminalActivity.d(getActivity(), ServerAddressSettingFragment.class, (Bundle) null);
                 return;
             case 2131363123:
                 getActivity().finish();
                 return;
-            case 2131366091:
+            case R.id.keyboardRelativeLayout /* 2131366091 */:
                 KeyboardUtils.a(getActivity());
                 return;
             case R.id.tv_forget_secret /* 2131371487 */:
@@ -264,7 +261,7 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
                     return;
                 }
             case R.id.tv_service_center /* 2131372562 */:
-                TerminalActivity.d(getActivity(), HelpCenterFragment.class, null);
+                TerminalActivity.d(getActivity(), HelpCenterFragment.class, (Bundle) null);
                 return;
             case R.id.tv_sign_up /* 2131372597 */:
                 LoginServiceManager.a().a("to_register", getContext(), this.C);
@@ -288,7 +285,6 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
         getActivity().getWindow().setBackgroundDrawable(this.b.getResources().getDrawable(2131237272));
@@ -303,7 +299,6 @@ public class LoginFragment extends KeyBoardFragment implements View.OnClickListe
         return this.m;
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         i();

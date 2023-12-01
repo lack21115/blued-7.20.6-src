@@ -6,17 +6,17 @@ import android.content.Context;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f24737a;
+    public Context f11049a;
     protected boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    protected boolean f24738c;
+    protected boolean f11050c;
     protected String d;
 
     public a(Context context, String str, boolean z) {
-        this.f24737a = context;
+        this.f11049a = context;
         this.d = str;
-        this.f24738c = z;
+        this.f11050c = z;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0059, code lost:
@@ -34,7 +34,7 @@ public class a {
             boolean r0 = r0.b
             if (r0 != 0) goto L77
             r0 = r4
-            boolean r0 = r0.f24738c     // Catch: java.lang.Exception -> L6e
+            boolean r0 = r0.f11050c     // Catch: java.lang.Exception -> L6e
             if (r0 == 0) goto L64
             r0 = r4
             java.lang.String r0 = r0.d     // Catch: java.lang.Exception -> L6e

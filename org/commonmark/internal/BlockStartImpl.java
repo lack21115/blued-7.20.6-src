@@ -5,17 +5,13 @@ import org.commonmark.parser.block.BlockStart;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/BlockStartImpl.class */
 public class BlockStartImpl extends BlockStart {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BlockParser[] f44005a;
+    private final BlockParser[] a;
     private int b = -1;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f44006c = -1;
+    private int c = -1;
     private boolean d = false;
 
     public BlockStartImpl(BlockParser... blockParserArr) {
-        this.f44005a = blockParserArr;
+        this.a = blockParserArr;
     }
 
     @Override // org.commonmark.parser.block.BlockStart
@@ -25,7 +21,7 @@ public class BlockStartImpl extends BlockStart {
     }
 
     public BlockParser[] a() {
-        return this.f44005a;
+        return this.a;
     }
 
     public int b() {
@@ -34,12 +30,12 @@ public class BlockStartImpl extends BlockStart {
 
     @Override // org.commonmark.parser.block.BlockStart
     public BlockStart b(int i) {
-        this.f44006c = i;
+        this.c = i;
         return this;
     }
 
     public int c() {
-        return this.f44006c;
+        return this.c;
     }
 
     public boolean d() {

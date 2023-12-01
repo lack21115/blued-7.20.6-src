@@ -19,11 +19,11 @@ public class e {
     public static final e f = new e();
 
     /* renamed from: a  reason: collision with root package name */
-    public d f39794a;
+    public d f26103a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39795c;
+    public String f26104c;
     public final Object d = new Object();
     public ServiceConnection e = new a();
 
@@ -34,7 +34,7 @@ public class e {
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            e.this.f39794a = d.a.a(iBinder);
+            e.this.f26103a = d.a.a(iBinder);
             synchronized (e.this.d) {
                 e.this.d.notify();
             }
@@ -42,12 +42,12 @@ public class e {
 
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
-            e.this.f39794a = null;
+            e.this.f26103a = null;
         }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x006c, code lost:
-        if (r6.f39794a == null) goto L28;
+        if (r6.f26103a == null) goto L28;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -62,7 +62,7 @@ public class e {
             android.os.Looper r1 = android.os.Looper.getMainLooper()     // Catch: java.lang.Throwable -> L92
             if (r0 == r1) goto L88
             r0 = r6
-            com.tencent.tmsqmsp.sdk.g.g.d r0 = r0.f39794a     // Catch: java.lang.Throwable -> L92
+            com.tencent.tmsqmsp.sdk.g.g.d r0 = r0.f26103a     // Catch: java.lang.Throwable -> L92
             if (r0 != 0) goto L72
             android.content.Intent r0 = new android.content.Intent     // Catch: java.lang.Throwable -> L92
             r1 = r0
@@ -113,7 +113,7 @@ public class e {
             throw r0     // Catch: java.lang.Throwable -> L92
         L66:
             r0 = r6
-            com.tencent.tmsqmsp.sdk.g.g.d r0 = r0.f39794a     // Catch: java.lang.Throwable -> L92
+            com.tencent.tmsqmsp.sdk.g.g.d r0 = r0.f26103a     // Catch: java.lang.Throwable -> L92
             r9 = r0
             r0 = r9
             if (r0 != 0) goto L72
@@ -170,7 +170,7 @@ public class e {
         if (TextUtils.isEmpty(this.b)) {
             this.b = context.getPackageName();
         }
-        if (TextUtils.isEmpty(this.f39795c)) {
+        if (TextUtils.isEmpty(this.f26104c)) {
             try {
                 signatureArr = context.getPackageManager().getPackageInfo(this.b, 64).signatures;
             } catch (PackageManager.NameNotFoundException e) {
@@ -199,9 +199,9 @@ public class e {
                     }
                 }
             }
-            this.f39795c = str2;
+            this.f26104c = str2;
         }
-        String a2 = ((d.a.C1056a) this.f39794a).a(this.b, this.f39795c, str);
+        String a2 = ((d.a.C0886a) this.f26103a).a(this.b, this.f26104c, str);
         String str3 = a2;
         if (TextUtils.isEmpty(a2)) {
             str3 = "";

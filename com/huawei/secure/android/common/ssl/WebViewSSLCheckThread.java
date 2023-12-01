@@ -3,12 +3,12 @@ package com.huawei.secure.android.common.ssl;
 import android.content.Context;
 import android.text.TextUtils;
 import android.webkit.SslErrorHandler;
+import com.blued.das.live.LiveProtos;
 import com.huawei.secure.android.common.ssl.hostname.StrictHostnameVerifier;
 import com.huawei.secure.android.common.ssl.util.f;
 import com.huawei.secure.android.common.ssl.util.g;
 import java.io.IOException;
 import java.io.Reader;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
@@ -41,11 +41,11 @@ public class WebViewSSLCheckThread extends Thread {
     private static final String i = WebViewSSLCheckThread.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    private SSLSocketFactory f23112a;
+    private SSLSocketFactory f9504a;
     private HostnameVerifier b;
 
     /* renamed from: c  reason: collision with root package name */
-    private org.apache.http.conn.ssl.SSLSocketFactory f23113c;
+    private org.apache.http.conn.ssl.SSLSocketFactory f9505c;
     private X509HostnameVerifier d;
     private SslErrorHandler e;
     private String f;
@@ -64,38 +64,36 @@ public class WebViewSSLCheckThread extends Thread {
     public static final class a implements okhttp3.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Callback f23114a;
+        final /* synthetic */ Callback f9506a;
         final /* synthetic */ Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f23115c;
+        final /* synthetic */ String f9507c;
         final /* synthetic */ SslErrorHandler d;
 
         a(Callback callback, Context context, String str, SslErrorHandler sslErrorHandler) {
-            this.f23114a = callback;
+            this.f9506a = callback;
             this.b = context;
-            this.f23115c = str;
+            this.f9507c = str;
             this.d = sslErrorHandler;
         }
 
-        @Override // okhttp3.Callback
         public void onFailure(Call call, IOException iOException) {
             String str = WebViewSSLCheckThread.i;
             g.b(str, "onFailure , IO Exception : " + iOException.getMessage());
-            Callback callback = this.f23114a;
+            Callback callback = this.f9506a;
             if (callback != null) {
-                callback.onCancel(this.b, this.f23115c);
+                callback.onCancel(this.b, this.f9507c);
             } else {
                 this.d.cancel();
             }
         }
 
-        @Override // okhttp3.Callback
         public void onResponse(Call call, Response response) throws IOException {
             g.b(WebViewSSLCheckThread.i, "onResponse . proceed");
-            Callback callback = this.f23114a;
+            Callback callback = this.f9506a;
             if (callback != null) {
-                callback.onProceed(this.b, this.f23115c);
+                callback.onProceed(this.b, this.f9507c);
             } else {
                 this.d.proceed();
             }
@@ -140,7 +138,7 @@ public class WebViewSSLCheckThread extends Thread {
     public WebViewSSLCheckThread(SslErrorHandler sslErrorHandler, String str, org.apache.http.conn.ssl.SSLSocketFactory sSLSocketFactory, X509HostnameVerifier x509HostnameVerifier, Callback callback, Context context) {
         this.e = sslErrorHandler;
         this.f = str;
-        this.f23113c = sSLSocketFactory;
+        this.f9505c = sSLSocketFactory;
         this.d = x509HostnameVerifier;
         this.g = callback;
         this.h = context;
@@ -198,7 +196,7 @@ public class WebViewSSLCheckThread extends Thread {
     }
 
     public org.apache.http.conn.ssl.SSLSocketFactory getApacheSSLSocketFactory() {
-        return this.f23113c;
+        return this.f9505c;
     }
 
     public Callback getCallback() {
@@ -218,7 +216,7 @@ public class WebViewSSLCheckThread extends Thread {
     }
 
     public SSLSocketFactory getSslSocketFactory() {
-        return this.f23112a;
+        return this.f9504a;
     }
 
     public String getUrl() {
@@ -227,11 +225,11 @@ public class WebViewSSLCheckThread extends Thread {
 
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
-        HttpURLConnection httpURLConnection;
         HttpsURLConnection httpsURLConnection;
+        HttpsURLConnection httpsURLConnection2;
         super.run();
-        HttpsURLConnection httpsURLConnection2 = null;
-        if (this.f23113c != null && this.d != null) {
+        HttpsURLConnection httpsURLConnection3 = null;
+        if (this.f9505c != null && this.d != null) {
             if (this.e == null || TextUtils.isEmpty(this.f)) {
                 g.b(i, "sslErrorHandler or url is null");
                 b();
@@ -239,15 +237,15 @@ public class WebViewSSLCheckThread extends Thread {
             }
             try {
                 try {
-                    this.f23113c.setHostnameVerifier(this.d);
-                    if (this.f23113c instanceof SecureApacheSSLSocketFactory) {
-                        ((SecureApacheSSLSocketFactory) this.f23113c).setContext(this.h);
+                    this.f9505c.setHostnameVerifier(this.d);
+                    if (this.f9505c instanceof SecureApacheSSLSocketFactory) {
+                        ((SecureApacheSSLSocketFactory) this.f9505c).setContext(this.h);
                     }
                     BasicHttpParams basicHttpParams = new BasicHttpParams();
                     HttpConnectionParams.setConnectionTimeout(basicHttpParams, 30000);
                     HttpConnectionParams.setSoTimeout(basicHttpParams, 30000);
                     SchemeRegistry schemeRegistry = new SchemeRegistry();
-                    schemeRegistry.register(new Scheme("https", this.f23113c, 443));
+                    schemeRegistry.register(new Scheme("https", this.f9505c, (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
                     schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
                     DefaultHttpClient defaultHttpClient = new DefaultHttpClient(new ThreadSafeClientConnManager(basicHttpParams, schemeRegistry), basicHttpParams);
                     HttpGet httpGet = new HttpGet();
@@ -268,61 +266,61 @@ public class WebViewSSLCheckThread extends Thread {
                 return;
             }
         }
-        if (this.f23112a != null) {
+        if (this.f9504a != null) {
             try {
                 if (this.b != null) {
                     try {
                         URLConnection openConnection = new URL(this.f).openConnection();
                         if (openConnection instanceof HttpsURLConnection) {
-                            httpsURLConnection = (HttpsURLConnection) openConnection;
+                            httpsURLConnection2 = (HttpsURLConnection) openConnection;
                             try {
-                                httpsURLConnection.setSSLSocketFactory(this.f23112a);
-                                httpsURLConnection.setHostnameVerifier(this.b);
-                                httpsURLConnection.setRequestMethod("GET");
-                                httpsURLConnection.setConnectTimeout(10000);
-                                httpsURLConnection.setReadTimeout(20000);
-                                httpsURLConnection.connect();
-                                httpsURLConnection2 = httpsURLConnection;
+                                httpsURLConnection2.setSSLSocketFactory(this.f9504a);
+                                httpsURLConnection2.setHostnameVerifier(this.b);
+                                httpsURLConnection2.setRequestMethod("GET");
+                                httpsURLConnection2.setConnectTimeout(10000);
+                                httpsURLConnection2.setReadTimeout(20000);
+                                httpsURLConnection2.connect();
+                                httpsURLConnection3 = httpsURLConnection2;
                             } catch (Exception e2) {
                                 e = e2;
                                 String str = i;
-                                HttpsURLConnection httpsURLConnection3 = httpsURLConnection;
+                                HttpsURLConnection httpsURLConnection4 = httpsURLConnection2;
                                 StringBuilder sb = new StringBuilder();
-                                HttpsURLConnection httpsURLConnection4 = httpsURLConnection;
+                                HttpsURLConnection httpsURLConnection5 = httpsURLConnection2;
                                 sb.append("exception : ");
-                                HttpsURLConnection httpsURLConnection5 = httpsURLConnection;
+                                HttpsURLConnection httpsURLConnection6 = httpsURLConnection2;
                                 sb.append(e.getMessage());
-                                HttpsURLConnection httpsURLConnection6 = httpsURLConnection;
+                                HttpsURLConnection httpsURLConnection7 = httpsURLConnection2;
                                 g.b(str, sb.toString());
-                                HttpsURLConnection httpsURLConnection7 = httpsURLConnection;
+                                HttpsURLConnection httpsURLConnection8 = httpsURLConnection2;
                                 b();
-                                if (httpsURLConnection != null) {
-                                    httpsURLConnection.disconnect();
+                                if (httpsURLConnection2 != null) {
+                                    httpsURLConnection2.disconnect();
                                     return;
                                 }
                                 return;
                             }
                         }
-                        if (httpsURLConnection2 != null) {
-                            httpsURLConnection2.disconnect();
+                        if (httpsURLConnection3 != null) {
+                            httpsURLConnection3.disconnect();
                         }
                         c();
                         return;
                     } catch (Exception e3) {
                         e = e3;
-                        httpsURLConnection = null;
+                        httpsURLConnection2 = null;
                     } catch (Throwable th2) {
-                        httpURLConnection = null;
+                        httpsURLConnection = null;
                         th = th2;
-                        if (httpURLConnection != null) {
-                            httpURLConnection.disconnect();
+                        if (httpsURLConnection != null) {
+                            httpsURLConnection.disconnect();
                         }
                         throw th;
                     }
                 }
             } catch (Throwable th3) {
                 th = th3;
-                httpURLConnection = null;
+                httpsURLConnection = null;
             }
         }
         b();
@@ -333,7 +331,7 @@ public class WebViewSSLCheckThread extends Thread {
     }
 
     public void setApacheSSLSocketFactory(org.apache.http.conn.ssl.SSLSocketFactory sSLSocketFactory) {
-        this.f23113c = sSLSocketFactory;
+        this.f9505c = sSLSocketFactory;
     }
 
     public void setCallback(Callback callback) {
@@ -353,7 +351,7 @@ public class WebViewSSLCheckThread extends Thread {
     }
 
     public void setSslSocketFactory(SSLSocketFactory sSLSocketFactory) {
-        this.f23112a = sSLSocketFactory;
+        this.f9504a = sSLSocketFactory;
     }
 
     public void setUrl(String str) {

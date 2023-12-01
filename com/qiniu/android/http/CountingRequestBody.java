@@ -28,7 +28,6 @@ public final class CountingRequestBody extends RequestBody {
             this.bytesWritten = 0;
         }
 
-        @Override // okio.ForwardingSink, okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             if (CountingRequestBody.this.cancellationHandler == null && CountingRequestBody.this.progress == null) {
                 super.write(buffer, j);
@@ -56,17 +55,14 @@ public final class CountingRequestBody extends RequestBody {
         this.cancellationHandler = cancellationHandler;
     }
 
-    @Override // okhttp3.RequestBody
     public long contentLength() throws IOException {
         return this.body.contentLength();
     }
 
-    @Override // okhttp3.RequestBody
     public MediaType contentType() {
         return this.body.contentType();
     }
 
-    @Override // okhttp3.RequestBody
     public void writeTo(BufferedSink bufferedSink) throws IOException {
         BufferedSink buffer = Okio.buffer(new CountingSink(bufferedSink));
         this.body.writeTo(buffer);

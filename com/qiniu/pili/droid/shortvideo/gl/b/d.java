@@ -14,11 +14,11 @@ import java.nio.ByteBuffer;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f27705a;
+    private View f14017a;
     private SurfaceTexture b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Surface f27706c;
+    private Surface f14018c;
     private com.qiniu.pili.droid.shortvideo.gl.c.a d;
     private e e;
     private int f;
@@ -42,7 +42,7 @@ public class d {
 
     public void a(View view, int i, int i2) {
         c();
-        this.f27705a = view;
+        this.f14017a = view;
         com.qiniu.pili.droid.shortvideo.gl.c.a aVar = new com.qiniu.pili.droid.shortvideo.gl.c.a();
         this.d = aVar;
         aVar.a(view.getWidth(), view.getHeight());
@@ -56,7 +56,7 @@ public class d {
         SurfaceTexture surfaceTexture = new SurfaceTexture(this.f);
         this.b = surfaceTexture;
         surfaceTexture.setDefaultBufferSize(view.getWidth(), view.getHeight());
-        this.f27706c = new Surface(this.b);
+        this.f14018c = new Surface(this.b);
     }
 
     public void a(float[] fArr) {
@@ -67,13 +67,13 @@ public class d {
         Canvas f = f();
         if (f != null) {
             f.drawColor(0, PorterDuff.Mode.CLEAR);
-            this.f27705a.draw(f);
-            this.f27706c.unlockCanvasAndPost(f);
+            this.f14017a.draw(f);
+            this.f14018c.unlockCanvasAndPost(f);
         }
     }
 
     public void c() {
-        Surface surface = this.f27706c;
+        Surface surface = this.f14018c;
         if (surface != null) {
             surface.release();
         }
@@ -89,7 +89,7 @@ public class d {
         if (eVar != null) {
             eVar.f();
         }
-        this.f27706c = null;
+        this.f14018c = null;
         this.b = null;
         this.d = null;
         this.e = null;
@@ -107,7 +107,7 @@ public class d {
     public int e() {
         int i = this.f;
         a(this.g);
-        float alpha = this.f27705a.getAlpha();
+        float alpha = this.f14017a.getAlpha();
         com.qiniu.pili.droid.shortvideo.gl.c.a aVar = this.d;
         if (aVar != null) {
             i = this.e.a(aVar.b(this.f, this.g), alpha, null, this.h, true);
@@ -116,7 +116,7 @@ public class d {
     }
 
     public Canvas f() {
-        Surface surface = this.f27706c;
+        Surface surface = this.f14018c;
         if (surface != null) {
             try {
                 return surface.lockCanvas(null);

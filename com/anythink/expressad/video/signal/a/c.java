@@ -97,11 +97,11 @@ public class c implements com.anythink.expressad.video.signal.c {
     public static final class b implements c.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.anythink.expressad.video.signal.c f8516a;
+        private com.anythink.expressad.video.signal.c f5676a;
         private c.a b;
 
         public b(com.anythink.expressad.video.signal.c cVar, c.a aVar) {
-            this.f8516a = cVar;
+            this.f5676a = cVar;
             this.b = aVar;
         }
 
@@ -151,7 +151,7 @@ public class c implements com.anythink.expressad.video.signal.c {
             if (aVar != null) {
                 aVar.a(jVar, str);
             }
-            com.anythink.expressad.video.signal.c cVar = this.f8516a;
+            com.anythink.expressad.video.signal.c cVar = this.f5676a;
             if (cVar != null) {
                 cVar.j();
             }
@@ -185,7 +185,7 @@ public class c implements com.anythink.expressad.video.signal.c {
             if (aVar != null) {
                 aVar.b(jVar, str);
             }
-            com.anythink.expressad.video.signal.c cVar = this.f8516a;
+            com.anythink.expressad.video.signal.c cVar = this.f5676a;
             if (cVar != null) {
                 cVar.j();
             }

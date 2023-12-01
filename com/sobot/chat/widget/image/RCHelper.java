@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.image;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -15,7 +16,6 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Checkable;
-import com.sobot.chat.R;
 import java.util.ArrayList;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/image/RCHelper.class */
@@ -45,31 +45,31 @@ public class RCHelper {
         }
         ArrayList arrayList = new ArrayList();
         if (view instanceof Checkable) {
-            arrayList.add(16842911);
+            arrayList.add(Integer.valueOf((int) R.attr.state_checkable));
             if (((Checkable) view).isChecked()) {
-                arrayList.add(16842912);
+                arrayList.add(Integer.valueOf((int) R.attr.state_checked));
             }
         }
         if (view.isEnabled()) {
-            arrayList.add(16842910);
+            arrayList.add(Integer.valueOf((int) R.attr.state_enabled));
         }
         if (view.isFocused()) {
-            arrayList.add(16842908);
+            arrayList.add(Integer.valueOf((int) R.attr.state_focused));
         }
         if (view.isPressed()) {
-            arrayList.add(16842919);
+            arrayList.add(Integer.valueOf((int) R.attr.state_pressed));
         }
         if (view.isHovered()) {
-            arrayList.add(16843623);
+            arrayList.add(Integer.valueOf((int) R.attr.state_hovered));
         }
         if (view.isSelected()) {
-            arrayList.add(16842913);
+            arrayList.add(Integer.valueOf((int) R.attr.state_selected));
         }
         if (view.isActivated()) {
-            arrayList.add(16843518);
+            arrayList.add(Integer.valueOf((int) R.attr.state_activated));
         }
         if (view.hasWindowFocus()) {
-            arrayList.add(16842909);
+            arrayList.add(Integer.valueOf((int) R.attr.state_window_focused));
         }
         ColorStateList colorStateList = this.mStrokeColorStateList;
         if (colorStateList == null || !colorStateList.isStateful()) {
@@ -89,9 +89,9 @@ public class RCHelper {
     }
 
     public void initAttrs(Context context, AttributeSet attributeSet) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SobotRCAttrs);
-        this.mRoundAsCircle = obtainStyledAttributes.getBoolean(R.styleable.SobotRCAttrs_sobot_round_as_circle, false);
-        ColorStateList colorStateList = obtainStyledAttributes.getColorStateList(R.styleable.SobotRCAttrs_sobot_stroke_color);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.sobot.chat.R.styleable.SobotRCAttrs);
+        this.mRoundAsCircle = obtainStyledAttributes.getBoolean(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_round_as_circle, false);
+        ColorStateList colorStateList = obtainStyledAttributes.getColorStateList(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_stroke_color);
         this.mStrokeColorStateList = colorStateList;
         if (colorStateList != null) {
             this.mStrokeColor = colorStateList.getDefaultColor();
@@ -100,13 +100,13 @@ public class RCHelper {
             this.mStrokeColor = -1;
             this.mDefaultStrokeColor = -1;
         }
-        this.mStrokeWidth = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SobotRCAttrs_sobot_stroke_width, 0);
-        this.mClipBackground = obtainStyledAttributes.getBoolean(R.styleable.SobotRCAttrs_sobot_clip_background, false);
-        int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SobotRCAttrs_sobot_round_corner, 0);
-        int dimensionPixelSize2 = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SobotRCAttrs_sobot_round_corner_top_left, dimensionPixelSize);
-        int dimensionPixelSize3 = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SobotRCAttrs_sobot_round_corner_top_right, dimensionPixelSize);
-        int dimensionPixelSize4 = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SobotRCAttrs_sobot_round_corner_bottom_left, dimensionPixelSize);
-        int dimensionPixelSize5 = obtainStyledAttributes.getDimensionPixelSize(R.styleable.SobotRCAttrs_sobot_round_corner_bottom_right, dimensionPixelSize);
+        this.mStrokeWidth = obtainStyledAttributes.getDimensionPixelSize(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_stroke_width, 0);
+        this.mClipBackground = obtainStyledAttributes.getBoolean(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_clip_background, false);
+        int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_round_corner, 0);
+        int dimensionPixelSize2 = obtainStyledAttributes.getDimensionPixelSize(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_round_corner_top_left, dimensionPixelSize);
+        int dimensionPixelSize3 = obtainStyledAttributes.getDimensionPixelSize(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_round_corner_top_right, dimensionPixelSize);
+        int dimensionPixelSize4 = obtainStyledAttributes.getDimensionPixelSize(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_round_corner_bottom_left, dimensionPixelSize);
+        int dimensionPixelSize5 = obtainStyledAttributes.getDimensionPixelSize(com.sobot.chat.R.styleable.SobotRCAttrs_sobot_round_corner_bottom_right, dimensionPixelSize);
         obtainStyledAttributes.recycle();
         float[] fArr = this.radii;
         float f = dimensionPixelSize2;

@@ -3,7 +3,6 @@ package android.media.tv;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/media/tv/TvInputHardwareInfo.class */
 public final class TvInputHardwareInfo implements Parcelable {
@@ -148,7 +147,7 @@ public final class TvInputHardwareInfo implements Parcelable {
         if (this.mType == 9) {
             sb.append(", hdmi_port=").append(this.mHdmiPortId);
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

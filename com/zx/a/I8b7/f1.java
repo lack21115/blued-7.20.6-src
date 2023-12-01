@@ -13,16 +13,16 @@ public abstract class f1 implements Closeable {
     public class a extends f1 {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ n0 f42127a;
+        public final /* synthetic */ n0 f28436a;
         public final /* synthetic */ long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ InputStream f42128c;
+        public final /* synthetic */ InputStream f28437c;
 
         public a(n0 n0Var, long j, InputStream inputStream) {
-            this.f42127a = n0Var;
+            this.f28436a = n0Var;
             this.b = j;
-            this.f42128c = inputStream;
+            this.f28437c = inputStream;
         }
     }
 
@@ -40,7 +40,7 @@ public abstract class f1 implements Closeable {
             throw new IOException("Cannot buffer entire body for content length: " + j);
         }
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        InputStream inputStream = aVar.f42128c;
+        InputStream inputStream = aVar.f28437c;
         byte[] bArr = new byte[1024];
         while (true) {
             try {
@@ -68,6 +68,6 @@ public abstract class f1 implements Closeable {
 
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public void close() {
-        l1.a(((a) this).f42128c);
+        l1.a(((a) this).f28437c);
     }
 }

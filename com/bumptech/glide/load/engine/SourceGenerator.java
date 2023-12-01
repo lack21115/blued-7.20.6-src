@@ -16,11 +16,11 @@ import java.util.List;
 public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerator.FetcherReadyCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final DecodeHelper<?> f20796a;
+    private final DecodeHelper<?> f7190a;
     private final DataFetcherGenerator.FetcherReadyCallback b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f20797c;
+    private int f7191c;
     private DataCacheGenerator d;
     private Object e;
     private volatile ModelLoader.LoadData<?> f;
@@ -28,30 +28,30 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SourceGenerator(DecodeHelper<?> decodeHelper, DataFetcherGenerator.FetcherReadyCallback fetcherReadyCallback) {
-        this.f20796a = decodeHelper;
+        this.f7190a = decodeHelper;
         this.b = fetcherReadyCallback;
     }
 
     private void a(Object obj) {
         long a2 = LogTime.a();
         try {
-            Encoder<X> a3 = this.f20796a.a((DecodeHelper<?>) obj);
-            DataCacheWriter dataCacheWriter = new DataCacheWriter(a3, obj, this.f20796a.e());
-            this.g = new DataCacheKey(this.f.f20890a, this.f20796a.f());
-            this.f20796a.b().a(this.g, dataCacheWriter);
+            Encoder<X> a3 = this.f7190a.a((DecodeHelper<?>) obj);
+            DataCacheWriter dataCacheWriter = new DataCacheWriter(a3, obj, this.f7190a.e());
+            this.g = new DataCacheKey(this.f.f7284a, this.f7190a.f());
+            this.f7190a.b().a(this.g, dataCacheWriter);
             if (Log.isLoggable("SourceGenerator", 2)) {
                 Log.v("SourceGenerator", "Finished encoding source to cache, key: " + this.g + ", data: " + obj + ", encoder: " + a3 + ", duration: " + LogTime.a(a2));
             }
-            this.f.f20891c.a();
-            this.d = new DataCacheGenerator(Collections.singletonList(this.f.f20890a), this.f20796a, this);
+            this.f.f7285c.a();
+            this.d = new DataCacheGenerator(Collections.singletonList(this.f.f7284a), this.f7190a, this);
         } catch (Throwable th) {
-            this.f.f20891c.a();
+            this.f.f7285c.a();
             throw th;
         }
     }
 
     private void b(final ModelLoader.LoadData<?> loadData) {
-        this.f.f20891c.a(this.f20796a.d(), new DataFetcher.DataCallback<Object>() { // from class: com.bumptech.glide.load.engine.SourceGenerator.1
+        this.f.f7285c.a(this.f7190a.d(), new DataFetcher.DataCallback<Object>() { // from class: com.bumptech.glide.load.engine.SourceGenerator.1
             @Override // com.bumptech.glide.load.data.DataFetcher.DataCallback
             public void a(Exception exc) {
                 if (SourceGenerator.this.a(loadData)) {
@@ -69,27 +69,27 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
     }
 
     private boolean d() {
-        return this.f20797c < this.f20796a.n().size();
+        return this.f7191c < this.f7190a.n().size();
     }
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator.FetcherReadyCallback
     public void a(Key key, Exception exc, DataFetcher<?> dataFetcher, DataSource dataSource) {
-        this.b.a(key, exc, dataFetcher, this.f.f20891c.d());
+        this.b.a(key, exc, dataFetcher, this.f.f7285c.d());
     }
 
     @Override // com.bumptech.glide.load.engine.DataFetcherGenerator.FetcherReadyCallback
     public void a(Key key, Object obj, DataFetcher<?> dataFetcher, DataSource dataSource, Key key2) {
-        this.b.a(key, obj, dataFetcher, this.f.f20891c.d(), key);
+        this.b.a(key, obj, dataFetcher, this.f.f7285c.d(), key);
     }
 
     void a(ModelLoader.LoadData<?> loadData, Exception exc) {
-        this.b.a(this.g, exc, loadData.f20891c, loadData.f20891c.d());
+        this.b.a(this.g, exc, loadData.f7285c, loadData.f7285c.d());
     }
 
     void a(ModelLoader.LoadData<?> loadData, Object obj) {
-        DiskCacheStrategy c2 = this.f20796a.c();
-        if (obj == null || !c2.a(loadData.f20891c.d())) {
-            this.b.a(loadData.f20890a, obj, loadData.f20891c, loadData.f20891c.d(), this.g);
+        DiskCacheStrategy c2 = this.f7190a.c();
+        if (obj == null || !c2.a(loadData.f7285c.d())) {
+            this.b.a(loadData.f7284a, obj, loadData.f7285c, loadData.f7285c.d(), this.g);
             return;
         }
         this.e = obj;
@@ -109,11 +109,11 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
             this.f = null;
             boolean z = false;
             while (!z && d()) {
-                List<ModelLoader.LoadData<?>> n = this.f20796a.n();
-                int i = this.f20797c;
-                this.f20797c = i + 1;
+                List<ModelLoader.LoadData<?>> n = this.f7190a.n();
+                int i = this.f7191c;
+                this.f7191c = i + 1;
                 this.f = n.get(i);
-                if (this.f != null && (this.f20796a.c().a(this.f.f20891c.d()) || this.f20796a.a(this.f.f20891c.c()))) {
+                if (this.f != null && (this.f7190a.c().a(this.f.f7285c.d()) || this.f7190a.a(this.f.f7285c.c()))) {
                     b(this.f);
                     z = true;
                 }
@@ -132,7 +132,7 @@ public class SourceGenerator implements DataFetcherGenerator, DataFetcherGenerat
     public void b() {
         ModelLoader.LoadData<?> loadData = this.f;
         if (loadData != null) {
-            loadData.f20891c.b();
+            loadData.f7285c.b();
         }
     }
 

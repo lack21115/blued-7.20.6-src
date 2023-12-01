@@ -18,9 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/manager/TopicMethods.class */
 public final class TopicMethods {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final TopicMethods f20279a = new TopicMethods();
+    public static final TopicMethods a = new TopicMethods();
 
     private TopicMethods() {
     }
@@ -57,7 +55,7 @@ public final class TopicMethods {
         if (z) {
             if (CommunityServiceManager.a().D() != 1) {
                 a(spannableStringBuilder, false, R.drawable.icon_pre_topic, 18, 18);
-            } else if (CommunityManager.f19086a.a().s()) {
+            } else if (CommunityManager.a.a().s()) {
                 a(spannableStringBuilder, false, R.drawable.feed_post_subject_icon, 18, 18);
             } else {
                 a(spannableStringBuilder, false, R.drawable.feed_post_subject_icon_dark, 18, 18);

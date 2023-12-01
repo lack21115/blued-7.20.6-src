@@ -9,21 +9,21 @@ import com.tencent.liteav.base.util.p;
 final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final p<PackageInfo> f36305a = new p<>(b.a());
+    private static final p<PackageInfo> f22614a = new p<>(b.a());
 
     public static String a() {
-        PackageInfo a2 = f36305a.a();
+        PackageInfo a2 = f22614a.a();
         return a2 == null ? "" : a2.packageName;
     }
 
     public static String b() {
         PackageInfo a2;
         Context applicationContext = ContextUtils.getApplicationContext();
-        return (applicationContext == null || (a2 = f36305a.a()) == null) ? "" : applicationContext.getPackageManager().getApplicationLabel(a2.applicationInfo).toString();
+        return (applicationContext == null || (a2 = f22614a.a()) == null) ? "" : applicationContext.getPackageManager().getApplicationLabel(a2.applicationInfo).toString();
     }
 
     public static String c() {
-        PackageInfo a2 = f36305a.a();
+        PackageInfo a2 = f22614a.a();
         return a2 == null ? "" : a2.versionName;
     }
 

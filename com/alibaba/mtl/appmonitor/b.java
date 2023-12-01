@@ -4,11 +4,10 @@ import com.alibaba.mtl.appmonitor.a.e;
 import com.alibaba.mtl.log.e.i;
 import com.alibaba.mtl.log.e.r;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/b.class */
-class b implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static long f4460a = 300000;
+public class b implements Runnable {
+    private static long a = 300000;
 
     /* renamed from: a  reason: collision with other field name */
     private static b f21a;
@@ -31,7 +30,7 @@ class b implements Runnable {
         }
         i.a("CleanTask", "init TimeoutEventManager");
         f21a = new b();
-        r.a().a(5, f21a, f4460a);
+        r.a().a(5, f21a, a);
         j = true;
     }
 
@@ -39,6 +38,6 @@ class b implements Runnable {
     public void run() {
         i.a("CleanTask", "clean TimeoutEvent");
         e.a().h();
-        r.a().a(5, f21a, f4460a);
+        r.a().a(5, f21a, a);
     }
 }

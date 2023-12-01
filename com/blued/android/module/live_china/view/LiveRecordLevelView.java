@@ -19,13 +19,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRecordLevelView.class */
 public class LiveRecordLevelView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f14911a;
+    public int a;
     public EventCallback b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f14912c;
+    private Context c;
     private LayoutInflater d;
     private ImageView e;
     private View f;
@@ -77,7 +73,7 @@ public class LiveRecordLevelView extends LinearLayout implements View.OnClickLis
         this.h = false;
         this.i = false;
         this.j = new AnonymousClass1();
-        this.f14912c = context;
+        this.c = context;
         b();
     }
 
@@ -86,12 +82,12 @@ public class LiveRecordLevelView extends LinearLayout implements View.OnClickLis
         this.h = false;
         this.i = false;
         this.j = new AnonymousClass1();
-        this.f14912c = context;
+        this.c = context;
         b();
     }
 
     private void b() {
-        LayoutInflater from = LayoutInflater.from(this.f14912c);
+        LayoutInflater from = LayoutInflater.from(this.c);
         this.d = from;
         View inflate = from.inflate(R.layout.live_record_progress_view, (ViewGroup) this, true);
         this.e = (ImageView) inflate.findViewById(R.id.live_anchor_level);
@@ -112,7 +108,7 @@ public class LiveRecordLevelView extends LinearLayout implements View.OnClickLis
     }
 
     public void a(int i, int i2, int i3, float f) {
-        this.f14911a = i2;
+        this.a = i2;
         if (LiveRoomManager.a().p() != null) {
             if (LiveRoomManager.a().p().level > i) {
                 return;
@@ -123,15 +119,15 @@ public class LiveRecordLevelView extends LinearLayout implements View.OnClickLis
             LiveRoomManager.a().p().next_level = i2;
         }
         Log.v("pk", "refreshRecordLevel level:" + i + " -- percent:" + i3);
-        LiveUtils.a(this.f14912c, this.e, i, false);
+        LiveUtils.a(this.c, this.e, i, false);
         if (i2 == -1) {
-            this.g.setText(this.f14912c.getResources().getString(R.string.live_record_exp_top));
+            this.g.setText(this.c.getResources().getString(R.string.live_record_exp_top));
         } else {
-            String string = this.f14912c.getResources().getString(R.string.live_record_exp_start);
+            String string = this.c.getResources().getString(R.string.live_record_exp_start);
             String valueOf = String.valueOf(f);
-            String string2 = this.f14912c.getResources().getString(R.string.live_record_exp_end);
+            String string2 = this.c.getResources().getString(R.string.live_record_exp_end);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string + valueOf + string2);
-            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(this.f14912c.getResources().getColor(R.color.nafio_f));
+            ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(this.c.getResources().getColor(R.color.nafio_f));
             int length = string.length();
             spannableStringBuilder.setSpan(foregroundColorSpan, length, (string + valueOf).length(), 33);
             this.g.setText(spannableStringBuilder);

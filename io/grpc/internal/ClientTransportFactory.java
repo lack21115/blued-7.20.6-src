@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import android.provider.ContactsContract;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import io.grpc.Attributes;
@@ -68,11 +67,11 @@ public interface ClientTransportFactory extends Closeable {
         }
 
         public int hashCode() {
-            return Objects.hashCode(this.authority, this.eagAttributes, this.userAgent, this.connectProxiedSocketAddr);
+            return Objects.hashCode(new Object[]{this.authority, this.eagAttributes, this.userAgent, this.connectProxiedSocketAddr});
         }
 
         public ClientTransportOptions setAuthority(String str) {
-            this.authority = (String) Preconditions.checkNotNull(str, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+            this.authority = (String) Preconditions.checkNotNull(str, "authority");
             return this;
         }
 

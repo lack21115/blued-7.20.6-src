@@ -96,7 +96,7 @@ public class MaterialCardViewHelper {
         MaterialShapeDrawable createForegroundShapeDrawable = createForegroundShapeDrawable();
         this.compatRippleDrawable = createForegroundShapeDrawable;
         createForegroundShapeDrawable.setFillColor(this.rippleColor);
-        stateListDrawable.addState(new int[]{16842919}, this.compatRippleDrawable);
+        stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, this.compatRippleDrawable);
         return stateListDrawable;
     }
 

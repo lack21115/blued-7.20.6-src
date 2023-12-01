@@ -1,7 +1,7 @@
 package com.autonavi.aps.amapapi.trans;
 
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.mq;
+import com.amap.api.col.3sl.mq;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -13,11 +13,11 @@ public final class f {
     protected static String K;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f9273a = "1";
+    public String f6433a = "1";
     protected short b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f9274c = null;
+    protected String f6434c = null;
     protected String d = null;
     protected String e = null;
     protected String f = null;
@@ -81,7 +81,7 @@ public final class f {
         bArr[i] = (byte) i3;
         int i4 = i + 1;
         i2 = i4;
-        System.arraycopy((Object) bytes, 0, (Object) bArr, i4, i3);
+        System.arraycopy(bytes, 0, bArr, i4, i3);
         return i4 + i3;
     }
 
@@ -257,8 +257,8 @@ public final class f {
 
     private void b() {
         String[] strArr = new String[27];
-        strArr[0] = this.f9273a;
-        strArr[1] = this.f9274c;
+        strArr[0] = this.f6433a;
+        strArr[1] = this.f6434c;
         strArr[2] = this.d;
         strArr[3] = this.e;
         strArr[4] = this.f;

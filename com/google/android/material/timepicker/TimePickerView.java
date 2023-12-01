@@ -136,16 +136,14 @@ class TimePickerView extends ConstraintLayout implements TimePickerControls {
         this.clockHandView.addOnRotateListener(onRotateListener);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         updateToggleConstraints();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         if (view == this && i == 0) {
             updateToggleConstraints();

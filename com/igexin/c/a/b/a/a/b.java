@@ -10,7 +10,7 @@ import java.net.Socket;
 public final class b extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23222a = -2037;
+    public static final int f9614a = -2037;
     private static final String j = "GS-C";
     private static final int k = 10000;
     private Socket P;
@@ -27,13 +27,13 @@ public final class b extends a {
         super.a();
         com.igexin.c.a.c.a.a("GS-C|sc dispose", new Object[0]);
         if (this.l != null) {
-            if (this.g == a.EnumC0446a.f23221c) {
+            if (this.g == a.EnumC0276a.f9613c) {
                 this.l.a();
-            } else if (this.g == a.EnumC0446a.b) {
+            } else if (this.g == a.EnumC0276a.b) {
                 if (!TextUtils.isEmpty(this.h)) {
                     this.l.a(new Exception(this.h));
                 }
-            } else if (this.g == a.EnumC0446a.f23220a && (socket = this.P) != null) {
+            } else if (this.g == a.EnumC0276a.f9612a && (socket = this.P) != null) {
                 this.l.a(socket);
             }
         }
@@ -62,12 +62,12 @@ public final class b extends a {
                 this.P.getLocalAddress();
                 this.P.getLocalPort();
                 com.igexin.c.a.c.a.a("GS-C|local-" + this.P.getLocalAddress() + ":" + this.P.getLocalPort(), new Object[0]);
-                if (this.g != a.EnumC0446a.f23221c) {
-                    this.g = a.EnumC0446a.f23220a;
+                if (this.g != a.EnumC0276a.f9613c) {
+                    this.g = a.EnumC0276a.f9612a;
                 }
             } catch (Exception e) {
-                if (this.g != a.EnumC0446a.f23221c) {
-                    this.g = a.EnumC0446a.b;
+                if (this.g != a.EnumC0276a.f9613c) {
+                    this.g = a.EnumC0276a.b;
                     this.h = e.toString();
                 }
             }
@@ -88,6 +88,6 @@ public final class b extends a {
     public final void c_() {
         boolean z = this.i;
         boolean z2 = this.f;
-        this.g = a.EnumC0446a.f23221c;
+        this.g = a.EnumC0276a.f9613c;
     }
 }

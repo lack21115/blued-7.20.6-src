@@ -19,7 +19,7 @@ public class DrawerArrowDrawable extends Drawable {
     private static final float b = (float) Math.toRadians(45.0d);
 
     /* renamed from: c  reason: collision with root package name */
-    private float f1632c;
+    private float f1584c;
     private float d;
     private float e;
     private float f;
@@ -29,7 +29,7 @@ public class DrawerArrowDrawable extends Drawable {
     private float l;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Paint f1631a = new Paint();
+    private final Paint f1583a = new Paint();
     private final Path h = new Path();
     private boolean j = false;
     private int m = 2;
@@ -40,10 +40,10 @@ public class DrawerArrowDrawable extends Drawable {
     }
 
     public DrawerArrowDrawable(Context context) {
-        this.f1631a.setStyle(Paint.Style.STROKE);
-        this.f1631a.setStrokeJoin(Paint.Join.MITER);
-        this.f1631a.setStrokeCap(Paint.Cap.BUTT);
-        this.f1631a.setAntiAlias(true);
+        this.f1583a.setStyle(Paint.Style.STROKE);
+        this.f1583a.setStrokeJoin(Paint.Join.MITER);
+        this.f1583a.setStrokeCap(Paint.Cap.BUTT);
+        this.f1583a.setAntiAlias(true);
         TypedArray obtainStyledAttributes = context.getTheme().obtainStyledAttributes(null, R.styleable.DrawerArrowToggle, R.attr.drawerArrowStyle, R.style.Base_Widget_AppCompat_DrawerArrowToggle);
         setColor(obtainStyledAttributes.getColor(R.styleable.DrawerArrowToggle_color, 0));
         setBarThickness(obtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_thickness, 0.0f));
@@ -51,7 +51,7 @@ public class DrawerArrowDrawable extends Drawable {
         setGapSize(Math.round(obtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_gapBetweenBars, 0.0f)));
         this.i = obtainStyledAttributes.getDimensionPixelSize(R.styleable.DrawerArrowToggle_drawableSize, 0);
         this.d = Math.round(obtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_barLength, 0.0f));
-        this.f1632c = Math.round(obtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_arrowHeadLength, 0.0f));
+        this.f1584c = Math.round(obtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_arrowHeadLength, 0.0f));
         this.e = obtainStyledAttributes.getDimension(R.styleable.DrawerArrowToggle_arrowShaftLength, 0.0f);
         obtainStyledAttributes.recycle();
     }
@@ -80,7 +80,7 @@ public class DrawerArrowDrawable extends Drawable {
     }
 
     public float getArrowHeadLength() {
-        return this.f1632c;
+        return this.f1584c;
     }
 
     public float getArrowShaftLength() {
@@ -92,11 +92,11 @@ public class DrawerArrowDrawable extends Drawable {
     }
 
     public float getBarThickness() {
-        return this.f1631a.getStrokeWidth();
+        return this.f1583a.getStrokeWidth();
     }
 
     public int getColor() {
-        return this.f1631a.getColor();
+        return this.f1583a.getColor();
     }
 
     public int getDirection() {
@@ -123,7 +123,7 @@ public class DrawerArrowDrawable extends Drawable {
     }
 
     public final Paint getPaint() {
-        return this.f1631a;
+        return this.f1583a;
     }
 
     public float getProgress() {
@@ -136,15 +136,15 @@ public class DrawerArrowDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void setAlpha(int i) {
-        if (i != this.f1631a.getAlpha()) {
-            this.f1631a.setAlpha(i);
+        if (i != this.f1583a.getAlpha()) {
+            this.f1583a.setAlpha(i);
             invalidateSelf();
         }
     }
 
     public void setArrowHeadLength(float f) {
-        if (this.f1632c != f) {
-            this.f1632c = f;
+        if (this.f1584c != f) {
+            this.f1584c = f;
             invalidateSelf();
         }
     }
@@ -164,23 +164,23 @@ public class DrawerArrowDrawable extends Drawable {
     }
 
     public void setBarThickness(float f) {
-        if (this.f1631a.getStrokeWidth() != f) {
-            this.f1631a.setStrokeWidth(f);
+        if (this.f1583a.getStrokeWidth() != f) {
+            this.f1583a.setStrokeWidth(f);
             this.l = (float) ((f / 2.0f) * Math.cos(b));
             invalidateSelf();
         }
     }
 
     public void setColor(int i) {
-        if (i != this.f1631a.getColor()) {
-            this.f1631a.setColor(i);
+        if (i != this.f1583a.getColor()) {
+            this.f1583a.setColor(i);
             invalidateSelf();
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(ColorFilter colorFilter) {
-        this.f1631a.setColorFilter(colorFilter);
+        this.f1583a.setColorFilter(colorFilter);
         invalidateSelf();
     }
 

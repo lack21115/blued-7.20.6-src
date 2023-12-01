@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.TextPaint;
-import com.amap.api.col.p0003sl.dw;
+import com.amap.api.col.3sl.dw;
 import java.nio.ByteBuffer;
 
 /* loaded from: source-8756600-dex2jar.jar:com/autonavi/base/amap/mapcore/tools/TextTextureGenerator.class */

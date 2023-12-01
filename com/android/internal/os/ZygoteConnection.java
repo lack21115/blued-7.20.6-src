@@ -126,7 +126,7 @@ public class ZygoteConnection {
         if (arguments.invokeWith != null && uid != 0) {
             throw new ZygoteSecurityException("Peer is not permitted to specify an explicit invoke-with wrapper command");
         }
-        if (arguments.invokeWith != null && !SELinux.checkSELinuxAccess(str, str, Process.ZYGOTE_SOCKET, "specifyinvokewith")) {
+        if (arguments.invokeWith != null && !SELinux.checkSELinuxAccess(str, str, "zygote", "specifyinvokewith")) {
             throw new ZygoteSecurityException("Peer is not permitted to specify an explicit invoke-with wrapper command");
         }
     }
@@ -152,7 +152,7 @@ public class ZygoteConnection {
         if (uid != 0 && uid != 1000 && arguments.rlimits != null) {
             throw new ZygoteSecurityException("This UID may not specify rlimits.");
         }
-        if (arguments.rlimits != null && !SELinux.checkSELinuxAccess(str, str, Process.ZYGOTE_SOCKET, "specifyrlimits")) {
+        if (arguments.rlimits != null && !SELinux.checkSELinuxAccess(str, str, "zygote", "specifyrlimits")) {
             throw new ZygoteSecurityException("Peer may not specify rlimits");
         }
     }
@@ -169,7 +169,7 @@ public class ZygoteConnection {
                 throw new ZygoteSecurityException("App UIDs may not specify uid's or gid's");
             }
         }
-        if ((arguments.uidSpecified || arguments.gidSpecified || arguments.gids != null) && !SELinux.checkSELinuxAccess(str, str, Process.ZYGOTE_SOCKET, "specifyids")) {
+        if ((arguments.uidSpecified || arguments.gidSpecified || arguments.gids != null) && !SELinux.checkSELinuxAccess(str, str, "zygote", "specifyids")) {
             throw new ZygoteSecurityException("Peer may not specify uid's or gid's");
         }
         if (!arguments.uidSpecified) {
@@ -191,7 +191,7 @@ public class ZygoteConnection {
         if (uid != 0 && uid != 1000) {
             throw new ZygoteSecurityException("This UID may not specify SELinux info.");
         }
-        if (!SELinux.checkSELinuxAccess(str, str, Process.ZYGOTE_SOCKET, "specifyseinfo")) {
+        if (!SELinux.checkSELinuxAccess(str, str, "zygote", "specifyseinfo")) {
             throw new ZygoteSecurityException("Peer may not specify SELinux info");
         }
     }

@@ -108,7 +108,7 @@ public class d implements com.kwad.components.core.b.c {
 
     /* renamed from: com.kwad.components.core.b.d$d  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/b/d$d.class */
-    public static final class C0512d implements com.kwad.components.core.b.c {
+    public static final class C0342d implements com.kwad.components.core.b.c {
         @Override // com.kwad.components.core.b.c
         public final void c(com.kwad.components.core.n.kwai.a aVar) {
             d.a(aVar, new b(aVar));
@@ -225,7 +225,7 @@ public class d implements com.kwad.components.core.b.c {
         this.HH = sparseArray;
         sparseArray.append(1, new f());
         this.HH.append(2, new e());
-        this.HH.append(0, new C0512d());
+        this.HH.append(0, new C0342d());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

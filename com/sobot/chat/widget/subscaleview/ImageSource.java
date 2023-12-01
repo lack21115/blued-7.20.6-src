@@ -3,7 +3,6 @@ package com.sobot.chat.widget.subscaleview;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -103,7 +102,7 @@ public final class ImageSource {
             String str2 = str;
             if (!str.contains("://")) {
                 String str3 = str;
-                if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (str.startsWith("/")) {
                     str3 = str.substring(1);
                 }
                 str2 = FILE_SCHEME + str3;

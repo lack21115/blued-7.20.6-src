@@ -240,7 +240,7 @@ public abstract class FabTransformationBehavior extends ExpandableTransformation
         Pair<MotionTiming, MotionTiming> calculateMotionTiming = calculateMotionTiming(calculateTranslationX, calculateTranslationY, z, fabTransformationSpec);
         MotionTiming motionTiming = calculateMotionTiming.first;
         MotionTiming motionTiming2 = calculateMotionTiming.second;
-        Property<View, Float> property = View.TRANSLATION_X;
+        Property property = View.TRANSLATION_X;
         if (!z) {
             calculateTranslationX = this.dependencyOriginalTranslationX;
         }

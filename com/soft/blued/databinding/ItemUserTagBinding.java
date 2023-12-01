@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemUserTagBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29338a;
+    private final LinearLayout f15648a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29338a;
+        return this.f15648a;
     }
 }

@@ -10,55 +10,51 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/TakeWhileSequence$iterator$1.class */
 public final class TakeWhileSequence$iterator$1<T> implements Iterator<T>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ TakeWhileSequence<T> f42702a;
+    final /* synthetic */ TakeWhileSequence<T> a;
     private final Iterator<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f42703c;
+    private int c;
     private T d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public TakeWhileSequence$iterator$1(TakeWhileSequence<T> takeWhileSequence) {
         Sequence sequence;
-        this.f42702a = takeWhileSequence;
-        sequence = ((TakeWhileSequence) takeWhileSequence).f42701a;
+        this.a = takeWhileSequence;
+        sequence = ((TakeWhileSequence) takeWhileSequence).a;
         this.b = sequence.iterator();
-        this.f42703c = -1;
+        this.c = -1;
     }
 
     private final void a() {
         Function1 function1;
         if (this.b.hasNext()) {
             T next = this.b.next();
-            function1 = ((TakeWhileSequence) this.f42702a).b;
+            function1 = ((TakeWhileSequence) this.a).b;
             if (((Boolean) function1.invoke(next)).booleanValue()) {
-                this.f42703c = 1;
+                this.c = 1;
                 this.d = next;
                 return;
             }
         }
-        this.f42703c = 0;
+        this.c = 0;
     }
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        if (this.f42703c == -1) {
+        if (this.c == -1) {
             a();
         }
-        return this.f42703c == 1;
+        return this.c == 1;
     }
 
     @Override // java.util.Iterator
     public T next() {
-        if (this.f42703c == -1) {
+        if (this.c == -1) {
             a();
         }
-        if (this.f42703c != 0) {
+        if (this.c != 0) {
             T t = this.d;
             this.d = null;
-            this.f42703c = -1;
+            this.c = -1;
             return t;
         }
         throw new NoSuchElementException();

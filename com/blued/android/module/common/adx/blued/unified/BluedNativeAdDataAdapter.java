@@ -31,14 +31,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/blued/unified/BluedNativeAdDataAdapter.class */
 public final class BluedNativeAdDataAdapter implements NativeUnifiedADData {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10546a;
+    private BluedADExtra a;
 
     public BluedNativeAdDataAdapter(Context context, BluedADExtra adExtra) {
         Intrinsics.e(context, "context");
         Intrinsics.e(adExtra, "adExtra");
-        this.f10546a = adExtra;
+        this.a = adExtra;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -69,17 +67,14 @@ public final class BluedNativeAdDataAdapter implements NativeUnifiedADData {
         viewGroup.callOnClick();
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToCustomVideo(ViewGroup viewGroup, Context context, List<View> list, List<View> list2) {
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToView(Context context, NativeAdContainer nativeAdContainer, FrameLayout.LayoutParams layoutParams, List<View> list) {
         Log.v("adx", "bindAdToView");
         bindAdToView(context, nativeAdContainer, layoutParams, list, null);
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToView(Context context, NativeAdContainer nativeAdContainer, FrameLayout.LayoutParams layoutParams, List<View> list, List<View> list2) {
         ViewParent parent = nativeAdContainer == null ? null : nativeAdContainer.getParent();
         if (parent == null) {
@@ -104,260 +99,211 @@ public final class BluedNativeAdDataAdapter implements NativeUnifiedADData {
         });
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindCTAViews(List<View> list) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindImageViews(List<ImageView> list, int i) {
         a(list);
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindImageViews(List<ImageView> list, byte[] bArr) {
         a(list);
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindMediaView(MediaView mediaView, VideoOption videoOption, NativeADMediaListener nativeADMediaListener) {
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void destroy() {
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean equalsAdData(NativeUnifiedADData nativeUnifiedADData) {
         return false;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAdPatternType() {
         return a() ? 2 : 1;
     }
 
-    @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public String getApkInfoUrl() {
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public NativeUnifiedADAppMiitInfo getAppMiitInfo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public double getAppPrice() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAppScore() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAppStatus() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getButtonText() {
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getCTAText() {
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public CustomizeVideo getCustomizeVideo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getDesc() {
-        if (this.f10546a.nativeModel != null) {
-            String str = this.f10546a.nativeModel.description;
+        if (this.a.nativeModel != null) {
+            String str = this.a.nativeModel.description;
             Intrinsics.c(str, "{\n            adExtra.na…del.description\n        }");
             return str;
         }
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public long getDownloadCount() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public int getECPM() {
         try {
-            return (int) this.f10546a.price;
+            return (int) this.a.price;
         } catch (Exception e) {
             Log.v("adx", Intrinsics.a("直客自渲染广告获取价格异常：", (Object) e));
             return -1;
         }
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public String getECPMLevel() {
         return "";
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public Map<String, Object> getExtraInfo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getIconUrl() {
-        if (this.f10546a.nativeModel != null) {
-            String str = this.f10546a.nativeModel.avatar;
+        if (this.a.nativeModel != null) {
+            String str = this.a.nativeModel.avatar;
             Intrinsics.c(str, "{\n            adExtra.nativeModel.avatar\n        }");
             return str;
         }
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public List<String> getImgList() {
-        String str = this.f10546a.style_material;
+        String str = this.a.style_material;
         Intrinsics.c(str, "adExtra.style_material");
         return CollectionsKt.c(str);
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getImgUrl() {
-        return this.f10546a.nativeModel != null ? !TextUtils.isEmpty(this.f10546a.nativeModel.style_material) ? this.f10546a.nativeModel.style_material : this.f10546a.nativeModel.ads_pics : "";
+        return this.a.nativeModel != null ? !TextUtils.isEmpty(this.a.nativeModel.style_material) ? this.a.nativeModel.style_material : this.a.nativeModel.ads_pics : "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getPictureHeight() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getPictureWidth() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getProgress() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getTitle() {
-        if (this.f10546a.nativeModel != null) {
-            String str = this.f10546a.nativeModel.name;
+        if (this.a.nativeModel != null) {
+            String str = this.a.nativeModel.name;
             Intrinsics.c(str, "{\n            adExtra.nativeModel.name\n        }");
             return str;
         }
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getVideoCurrentPosition() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getVideoDuration() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean isAppAd() {
         return false;
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public boolean isValid() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean isWeChatCanvasAd() {
         return false;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void negativeFeedback() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void pauseAppDownload() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void pauseVideo() {
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resume() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resumeAppDownload() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resumeVideo() {
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(int i, int i2, String str) {
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(Map<String, Object> map) {
         Intrinsics.e(map, "map");
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(int i) {
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(Map<String, Object> map) {
         Intrinsics.e(map, "map");
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void setBidECPM(int i) {
     }
 
-    @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public void setDownloadConfirmListener(DownloadConfirmListener downloadConfirmListener) {
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void setNativeAdEventListener(NativeADEventListener nativeADEventListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.pi.NFBI
     public void setNegativeFeedbackListener(NegativeFeedbackListener negativeFeedbackListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void setVideoMute(boolean z) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void startVideo() {
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void stopVideo() {
     }
 }

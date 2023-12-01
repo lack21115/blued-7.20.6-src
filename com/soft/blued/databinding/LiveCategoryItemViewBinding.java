@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveCategoryItemViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29448a;
+    private final LinearLayout f15758a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29448a;
+        return this.f15758a;
     }
 }

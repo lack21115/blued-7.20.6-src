@@ -3,7 +3,6 @@ package com.blued.android.module.live_china.model;
 import android.graphics.Color;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.utils.TypeUtils;
-import com.igexin.push.core.b;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -110,9 +109,9 @@ public class LiveBubbleBgModel implements Serializable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("LiveBubbleBgModel{chat_frame_frame_color=");
-        sb.append(this.chat_frame_frame_color == null ? b.l : AppInfo.f().toJson(this.chat_frame_frame_color));
+        sb.append(this.chat_frame_frame_color == null ? "null" : AppInfo.f().toJson(this.chat_frame_frame_color));
         sb.append(", chat_frame_border_color=");
-        sb.append(this.chat_frame_border_color == null ? b.l : AppInfo.f().toJson(this.chat_frame_border_color));
+        sb.append(this.chat_frame_border_color == null ? "null" : AppInfo.f().toJson(this.chat_frame_border_color));
         sb.append('}');
         return sb.toString();
     }

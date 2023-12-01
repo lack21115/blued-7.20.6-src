@@ -13,13 +13,9 @@ import java.util.Locale;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/layer/Layer.class */
 public class Layer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<ContentModel> f4384a;
+    private final List<ContentModel> a;
     private final LottieComposition b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f4385c;
+    private final String c;
     private final long d;
     private final LayerType e;
     private final long f;
@@ -60,9 +56,9 @@ public class Layer {
     }
 
     public Layer(List<ContentModel> list, LottieComposition lottieComposition, String str, long j, LayerType layerType, long j2, String str2, List<Mask> list2, AnimatableTransform animatableTransform, int i, int i2, int i3, float f, float f2, int i4, int i5, AnimatableTextFrame animatableTextFrame, AnimatableTextProperties animatableTextProperties, List<Keyframe<Float>> list3, MatteType matteType, AnimatableFloatValue animatableFloatValue, boolean z) {
-        this.f4384a = list;
+        this.a = list;
         this.b = lottieComposition;
-        this.f4385c = str;
+        this.c = str;
         this.d = j;
         this.e = layerType;
         this.f = j2;
@@ -94,19 +90,19 @@ public class Layer {
         sb.append(str);
         sb.append(f());
         sb.append("\n");
-        Layer a2 = this.b.a(m());
-        if (a2 != null) {
+        Layer a = this.b.a(m());
+        if (a != null) {
             sb.append("\t\tParents: ");
-            sb.append(a2.f());
-            Layer a3 = this.b.a(a2.m());
+            sb.append(a.f());
+            Layer a2 = this.b.a(a.m());
             while (true) {
-                Layer layer = a3;
+                Layer layer = a2;
                 if (layer == null) {
                     break;
                 }
                 sb.append("->");
                 sb.append(layer.f());
-                a3 = this.b.a(layer.m());
+                a2 = this.b.a(layer.m());
             }
             sb.append(str);
             sb.append("\n");
@@ -122,10 +118,10 @@ public class Layer {
             sb.append("\tBackground: ");
             sb.append(String.format(Locale.US, "%dx%d %X\n", Integer.valueOf(r()), Integer.valueOf(q()), Integer.valueOf(p())));
         }
-        if (!this.f4384a.isEmpty()) {
+        if (!this.a.isEmpty()) {
             sb.append(str);
             sb.append("\tShapes:\n");
-            for (ContentModel contentModel : this.f4384a) {
+            for (ContentModel contentModel : this.a) {
                 sb.append(str);
                 sb.append("\t\t");
                 sb.append(contentModel);
@@ -156,7 +152,7 @@ public class Layer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public String f() {
-        return this.f4385c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -195,7 +191,7 @@ public class Layer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<ContentModel> n() {
-        return this.f4384a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

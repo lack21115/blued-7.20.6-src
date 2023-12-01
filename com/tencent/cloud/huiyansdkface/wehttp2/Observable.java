@@ -6,13 +6,13 @@ import com.tencent.cloud.huiyansdkface.wehttp2.WeReq;
 public abstract class Observable<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeReq f36096a;
+    private WeReq f22405a;
 
     public Observable() {
     }
 
     public Observable(WeReq weReq) {
-        this.f36096a = weReq;
+        this.f22405a = weReq;
     }
 
     public static <T> Observable<T> error(final int i, final String str) {
@@ -25,7 +25,7 @@ public abstract class Observable<T> {
     }
 
     public void cancel() {
-        WeReq weReq = this.f36096a;
+        WeReq weReq = this.f22405a;
         if (weReq != null) {
             weReq.cancel();
         }

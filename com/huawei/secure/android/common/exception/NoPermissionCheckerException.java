@@ -4,7 +4,7 @@ package com.huawei.secure.android.common.exception;
 public class NoPermissionCheckerException extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f23093a = 894798122053539238L;
+    private static final long f9485a = 894798122053539238L;
 
     public NoPermissionCheckerException() {
     }

@@ -165,9 +165,9 @@ public class CertificateChainValidator {
         }
         if (z) {
             try {
-                X509TrustManager defaultX509TrustManager = SSLParametersImpl.getDefaultX509TrustManager();
+                TrustManagerImpl defaultX509TrustManager = SSLParametersImpl.getDefaultX509TrustManager();
                 if (defaultX509TrustManager instanceof TrustManagerImpl) {
-                    ((TrustManagerImpl) defaultX509TrustManager).checkServerTrusted(x509CertificateArr, str2, str);
+                    defaultX509TrustManager.checkServerTrusted(x509CertificateArr, str2, str);
                     return null;
                 }
                 defaultX509TrustManager.checkServerTrusted(x509CertificateArr, str2);

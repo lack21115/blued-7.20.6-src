@@ -1,6 +1,5 @@
 package com.huawei.hms.framework.common;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
@@ -22,7 +21,7 @@ public class ExecutorsUtils {
 
             @Override // java.util.concurrent.ThreadFactory
             public Thread newThread(Runnable runnable) {
-                return new Thread(runnable, ExecutorsUtils.THREADNAME_HEADER + String.this + BridgeUtil.UNDERLINE_STR + this.threadNumbers.getAndIncrement());
+                return new Thread(runnable, ExecutorsUtils.THREADNAME_HEADER + str + "_" + this.threadNumbers.getAndIncrement());
             }
         };
     }

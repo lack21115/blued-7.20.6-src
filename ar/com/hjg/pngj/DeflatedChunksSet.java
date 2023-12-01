@@ -1,6 +1,5 @@
 package ar.com.hjg.pngj;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
@@ -8,11 +7,11 @@ import java.util.zip.Inflater;
 public class DeflatedChunksSet {
 
     /* renamed from: a  reason: collision with root package name */
-    protected byte[] f3627a;
+    protected byte[] f3579a;
     State b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f3628c;
+    int f3580c;
     int d;
     public final String e;
     private int f;
@@ -51,7 +50,7 @@ public class DeflatedChunksSet {
         this.l = true;
         this.m = 0L;
         this.n = 0L;
-        this.f3628c = -1;
+        this.f3580c = -1;
         this.d = -1;
         this.e = str;
         this.g = i;
@@ -65,7 +64,7 @@ public class DeflatedChunksSet {
             this.i = new Inflater();
             this.j = true;
         }
-        this.f3627a = (bArr == null || bArr.length < i) ? new byte[i2] : bArr;
+        this.f3579a = (bArr == null || bArr.length < i) ? new byte[i2] : bArr;
         this.h = -1;
         this.b = State.WAITING_FOR_INPUT;
         try {
@@ -82,12 +81,12 @@ public class DeflatedChunksSet {
                 if (this.b.a()) {
                     return false;
                 }
-                if (this.f3627a == null || this.f3627a.length < this.g) {
-                    this.f3627a = new byte[this.g];
+                if (this.f3579a == null || this.f3579a.length < this.g) {
+                    this.f3579a = new byte[this.g];
                 }
                 if (this.f < this.g && !this.i.finished()) {
                     try {
-                        int inflate = this.i.inflate(this.f3627a, this.f, this.g - this.f);
+                        int inflate = this.i.inflate(this.f3579a, this.f, this.g - this.f);
                         this.f += inflate;
                         this.n += inflate;
                     } catch (DataFormatException e) {
@@ -134,12 +133,12 @@ public class DeflatedChunksSet {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(DeflatedChunkReader deflatedChunkReader) {
-        if (!this.e.equals(deflatedChunkReader.a().f3660c)) {
-            throw new PngjInputException("Bad chunk inside IdatSet, id:" + deflatedChunkReader.a().f3660c + ", expected:" + this.e);
+        if (!this.e.equals(deflatedChunkReader.a().f3612c)) {
+            throw new PngjInputException("Bad chunk inside IdatSet, id:" + deflatedChunkReader.a().f3612c + ", expected:" + this.e);
         }
         this.k = deflatedChunkReader;
-        int i = this.f3628c + 1;
-        this.f3628c = i;
+        int i = this.f3580c + 1;
+        this.f3580c = i;
         int i2 = this.d;
         if (i2 >= 0) {
             deflatedChunkReader.a(i + i2);
@@ -246,6 +245,6 @@ public class DeflatedChunksSet {
     }
 
     public String toString() {
-        return new StringBuilder("idatSet : " + this.k.a().f3660c + " state=" + this.b + " rows=" + this.h + " bytes=" + this.m + BridgeUtil.SPLIT_MARK + this.n).toString();
+        return new StringBuilder("idatSet : " + this.k.a().f3612c + " state=" + this.b + " rows=" + this.h + " bytes=" + this.m + "/" + this.n).toString();
     }
 }

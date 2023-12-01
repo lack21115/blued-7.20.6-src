@@ -132,7 +132,7 @@ public final class CursorAnchorInfo implements Parcelable {
         this.mSelectionStart = parcel.readInt();
         this.mSelectionEnd = parcel.readInt();
         this.mComposingTextStart = parcel.readInt();
-        this.mComposingText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mComposingText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.mInsertionMarkerFlags = parcel.readInt();
         this.mInsertionMarkerHorizontal = parcel.readFloat();
         this.mInsertionMarkerTop = parcel.readFloat();

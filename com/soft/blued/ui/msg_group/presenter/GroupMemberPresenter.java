@@ -36,7 +36,6 @@ public class GroupMemberPresenter extends MvpPresenter {
     private void c(final IFetchDataListener iFetchDataListener) {
         MsgGroupHttpUtils.a(g(), this.m, this.n, this.i, this.l, "", new BluedUIHttpResponse<BluedEntityA<GroupMemberModel>>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupMemberPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupMemberModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
@@ -45,7 +44,6 @@ public class GroupMemberPresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (!z && GroupMemberPresenter.this.i > 1) {
@@ -54,7 +52,6 @@ public class GroupMemberPresenter extends MvpPresenter {
                 iFetchDataListener.a(z);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 iFetchDataListener.a();
@@ -62,7 +59,6 @@ public class GroupMemberPresenter extends MvpPresenter {
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         if (bundle != null) {
@@ -72,7 +68,6 @@ public class GroupMemberPresenter extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.i = 1;
         c(iFetchDataListener);
@@ -81,12 +76,10 @@ public class GroupMemberPresenter extends MvpPresenter {
     public void a(String str, final int i, final int... iArr) {
         MsgGroupHttpUtils.a(g(), this.m, str, i, new BluedUIHttpResponse<BluedEntityA>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupMemberPresenter.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2) {
                 if (i2 == 40319048) {
                     CommonAlertDialog.a(GroupMemberPresenter.this.h(), GroupMemberPresenter.this.h().getString(R.string.group_transfer_failed), str2, GroupMemberPresenter.this.h().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.presenter.GroupMemberPresenter.2.1
@@ -105,7 +98,6 @@ public class GroupMemberPresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (z) {
@@ -122,19 +114,17 @@ public class GroupMemberPresenter extends MvpPresenter {
                         if (iArr2 == null || iArr2.length <= 0) {
                             return;
                         }
-                        GroupMemberPresenter.this.a("data_set_manager", (String) Integer.valueOf(iArr2[0]));
+                        GroupMemberPresenter.this.a("data_set_manager", Integer.valueOf(iArr2[0]));
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.i++;
         c(iFetchDataListener);
@@ -144,7 +134,6 @@ public class GroupMemberPresenter extends MvpPresenter {
         this.k = str;
         MsgGroupHttpUtils.a(g(), this.m, this.n, this.j, this.l, str, new BluedUIHttpResponse<BluedEntityA<GroupMemberModel>>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupMemberPresenter.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupMemberModel> bluedEntityA) {
                 CommonLiveEventData commonLiveEventData = new CommonLiveEventData();
@@ -158,7 +147,6 @@ public class GroupMemberPresenter extends MvpPresenter {
                 LiveEventBus.get("data_search_has_more", Boolean.class).post(Boolean.valueOf(bluedEntityA.hasMore()));
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (!z && GroupMemberPresenter.this.j > 1) {
@@ -172,18 +160,16 @@ public class GroupMemberPresenter extends MvpPresenter {
     public void e(String str) {
         MsgGroupHttpUtils.a(g(), this.m, str, new BluedUIHttpResponse<BluedEntityA<GroupMemberModel>>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupMemberPresenter.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupMemberModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
-                    GroupMemberPresenter.this.a("data_search", (String) bluedEntityA.data);
+                    GroupMemberPresenter.this.a("data_search", bluedEntityA.data);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                GroupMemberPresenter.this.a("update_no_data_view", (String) new Boolean(z));
+                GroupMemberPresenter.this.a("update_no_data_view", new Boolean(z));
             }
         });
     }

@@ -37,11 +37,11 @@ import java.util.List;
 public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f31318a;
+    private View f17628a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31319c;
+    private Context f17629c;
     private MyPopupWindow d;
     private LayoutInflater e;
     private LinearLayout g;
@@ -79,7 +79,7 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         private List<AnchorMedal> b = new ArrayList();
 
         /* renamed from: c  reason: collision with root package name */
-        private List<AnchorMedal> f31328c = new ArrayList();
+        private List<AnchorMedal> f17638c = new ArrayList();
         private int d = 0;
         private Context e;
         private int f;
@@ -89,11 +89,11 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         class ViewHolder {
 
             /* renamed from: a  reason: collision with root package name */
-            public ImageView f31330a;
+            public ImageView f17640a;
             public TextView b;
 
             /* renamed from: c  reason: collision with root package name */
-            public TextView f31331c;
+            public TextView f17641c;
             public TextView d;
             public TextView e;
             public TextView f;
@@ -118,13 +118,13 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         public void a(int i) {
             int i2;
             int i3;
-            SwipeAnchorBadge.this.k.f28663a = null;
+            SwipeAnchorBadge.this.k.f14973a = null;
             this.d = i;
             if (i < 0 || i >= this.b.size()) {
                 return;
             }
-            this.f31328c.clear();
-            this.f31328c.add(this.b.get(this.d));
+            this.f17638c.clear();
+            this.f17638c.add(this.b.get(this.d));
             int i4 = this.d;
             while (true) {
                 int i5 = i4 + 1;
@@ -134,7 +134,7 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
                 }
                 i4 = i5;
                 if (i5 < this.b.size()) {
-                    this.f31328c.add(this.b.get(i5));
+                    this.f17638c.add(this.b.get(i5));
                     i4 = i5;
                 }
             }
@@ -144,7 +144,7 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
                 if (i2 < i3 - (this.f / 2)) {
                     break;
                 } else if (i2 >= 0) {
-                    this.f31328c.add(this.b.get(i2));
+                    this.f17638c.add(this.b.get(i2));
                 }
             }
             SwipeFlingAdapterView swipeFlingAdapterView = this.g;
@@ -176,11 +176,11 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         @Override // android.widget.Adapter
         /* renamed from: b */
         public AnchorMedal getItem(int i) {
-            List<AnchorMedal> list = this.f31328c;
+            List<AnchorMedal> list = this.f17638c;
             if (list == null || list.size() == 0) {
                 return null;
             }
-            return this.f31328c.get(i);
+            return this.f17638c.get(i);
         }
 
         public void b() {
@@ -192,7 +192,7 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
 
         @Override // android.widget.Adapter
         public int getCount() {
-            return this.f31328c.size();
+            return this.f17638c.size();
         }
 
         @Override // android.widget.Adapter
@@ -206,23 +206,23 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
             if (view == null) {
                 ViewHolder viewHolder2 = new ViewHolder();
                 View inflate = LayoutInflater.from(this.e).inflate(R.layout.item_anchor_badge_swipe, viewGroup, false);
-                viewHolder2.f31330a = (ImageView) inflate.findViewById(2131364445);
-                viewHolder2.b = (TextView) inflate.findViewById(2131370954);
-                viewHolder2.f31331c = (TextView) inflate.findViewById(2131371504);
-                viewHolder2.e = (TextView) inflate.findViewById(2131371897);
-                viewHolder2.d = (TextView) inflate.findViewById(2131372894);
-                viewHolder2.f = (TextView) inflate.findViewById(2131372501);
+                viewHolder2.f17640a = (ImageView) inflate.findViewById(R.id.img_badge);
+                viewHolder2.b = (TextView) inflate.findViewById(R.id.tv_badge_name);
+                viewHolder2.f17641c = (TextView) inflate.findViewById(R.id.tv_gained_cond);
+                viewHolder2.e = (TextView) inflate.findViewById(R.id.tv_lvlup_cond);
+                viewHolder2.d = (TextView) inflate.findViewById(R.id.tv_valid_date);
+                viewHolder2.f = (TextView) inflate.findViewById(R.id.tv_score);
                 viewHolder = viewHolder2;
                 view = inflate;
             } else {
                 viewHolder = (ViewHolder) view.getTag();
             }
-            AnchorMedal anchorMedal = this.f31328c.get(i);
+            AnchorMedal anchorMedal = this.f17638c.get(i);
             if (!StringUtils.d(anchorMedal.pic)) {
-                ImageLoader.a(SwipeAnchorBadge.this.i, anchorMedal.pic).a(viewHolder.f31330a);
+                ImageLoader.a(SwipeAnchorBadge.this.i, anchorMedal.pic).a(viewHolder.f17640a);
             }
             viewHolder.b.setText(anchorMedal.name);
-            viewHolder.f31331c.setText(anchorMedal.title);
+            viewHolder.f17641c.setText(anchorMedal.title);
             if (StringUtils.d(anchorMedal.upgrade_description)) {
                 viewHolder.e.setVisibility(4);
             } else {
@@ -249,13 +249,13 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
             }
             viewHolder.d.setVisibility(0);
             TextView textView2 = viewHolder.d;
-            textView2.setText(this.e.getResources().getString(2131892550) + c2);
+            textView2.setText(this.e.getResources().getString(R.string.valid_to) + c2);
             return view;
         }
     }
 
     public SwipeAnchorBadge(Context context, String str, IRequestHost iRequestHost) {
-        this.f31319c = context;
+        this.f17629c = context;
         this.h = str;
         this.i = iRequestHost;
         d();
@@ -266,31 +266,31 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
     }
 
     private void d() {
-        LayoutInflater from = LayoutInflater.from(this.f31319c);
+        LayoutInflater from = LayoutInflater.from(this.f17629c);
         this.e = from;
         View inflate = from.inflate(R.layout.anchor_badge_swipe, (ViewGroup) null);
-        this.f31318a = inflate.findViewById(2131370973);
-        LinearLayout linearLayout = (LinearLayout) inflate.findViewById(2131367991);
+        this.f17628a = inflate.findViewById(2131370973);
+        LinearLayout linearLayout = (LinearLayout) inflate.findViewById(R.id.ll_loading);
         this.g = linearLayout;
         linearLayout.setVisibility(8);
         SwipeFlingAdapterView swipeFlingAdapterView = (SwipeFlingAdapterView) inflate.findViewById(R.id.swipe_view);
         this.k = swipeFlingAdapterView;
         swipeFlingAdapterView.setFlingListener(this);
-        SwipeAnchorBadgeCardAdapter swipeAnchorBadgeCardAdapter = new SwipeAnchorBadgeCardAdapter(this.f31319c, this.k);
+        SwipeAnchorBadgeCardAdapter swipeAnchorBadgeCardAdapter = new SwipeAnchorBadgeCardAdapter(this.f17629c, this.k);
         this.l = swipeAnchorBadgeCardAdapter;
         this.k.setAdapter(swipeAnchorBadgeCardAdapter);
         this.k.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.live.view.SwipeAnchorBadge.1
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if ((motionEvent.getRawY() < SwipeAnchorBadge.this.k.b || motionEvent.getRawY() > SwipeAnchorBadge.this.k.e) && SwipeAnchorBadge.this.k.f28663a != null && SwipeAnchorBadge.this.k.f28663a.getX() == SwipeAnchorBadge.this.k.f28664c) {
+                if ((motionEvent.getRawY() < SwipeAnchorBadge.this.k.b || motionEvent.getRawY() > SwipeAnchorBadge.this.k.e) && SwipeAnchorBadge.this.k.f14973a != null && SwipeAnchorBadge.this.k.f14973a.getX() == SwipeAnchorBadge.this.k.f14974c) {
                     SwipeAnchorBadge.this.c();
                     return true;
                 }
                 return true;
             }
         });
-        this.f31318a.setBackgroundColor(Color.parseColor("#CC000000"));
-        this.f31318a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.view.SwipeAnchorBadge.2
+        this.f17628a.setBackgroundColor(Color.parseColor("#CC000000"));
+        this.f17628a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.view.SwipeAnchorBadge.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -298,7 +298,7 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         });
         View findViewById = inflate.findViewById(2131367715);
         this.b = findViewById;
-        findViewById.setBackgroundColor(this.f31319c.getResources().getColor(2131102388));
+        findViewById.setBackgroundColor(this.f17629c.getResources().getColor(2131102388));
         this.b.setVisibility(8);
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.view.SwipeAnchorBadge.3
             @Override // android.view.View.OnClickListener
@@ -308,7 +308,7 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         });
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.d = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.f31319c.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.f17629c.getResources().getDrawable(android.R.color.transparent));
         this.d.setTouchable(true);
         this.d.setOutsideTouchable(true);
         this.d.setFocusable(true);
@@ -337,9 +337,8 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         LiveRoomHttpUtils.d(this.h, new BluedUIHttpResponse<BluedEntityA<AnchorMedal>>() { // from class: com.soft.blued.ui.live.view.SwipeAnchorBadge.5
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f31324a = false;
+            boolean f17634a = false;
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<AnchorMedal> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data.size() <= 0) {
@@ -348,9 +347,9 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
                 if (bluedEntityA.data.get(0) != null) {
                     SwipeAnchorBadge.this.f.clear();
                     for (int i = 0; i < bluedEntityA.data.size(); i++) {
-                        SwipeAnchorBadge.this.f.add(bluedEntityA.data.get(i));
+                        SwipeAnchorBadge.this.f.add((AnchorMedal) bluedEntityA.data.get(i));
                         if (bluedEntityA.data.get(i) != null) {
-                            String str = bluedEntityA.data.get(i).pic;
+                            String str = ((AnchorMedal) bluedEntityA.data.get(i)).pic;
                             if (!StringUtils.d(str)) {
                                 ImageFileLoader.a(SwipeAnchorBadge.this.i).a(str).a();
                             }
@@ -361,23 +360,20 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f31324a = true;
+                this.f17634a = true;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 SwipeAnchorBadge.this.g.setVisibility(8);
                 SwipeAnchorBadge.this.k.setVisibility(0);
-                if (this.f31324a) {
-                    this.f31324a = false;
+                if (this.f17634a) {
+                    this.f17634a = false;
                     SwipeAnchorBadge.this.c();
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
             }
         }, this.i);
@@ -387,14 +383,14 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         this.j = i;
         this.k.setVisibility(4);
         this.g.setVisibility(0);
-        this.f31318a.clearAnimation();
+        this.f17628a.clearAnimation();
         this.b.clearAnimation();
         if (this.d.isShowing()) {
             this.d.a();
         }
         this.d.showAtLocation(this.b, 81, 0, 0);
         this.b.setVisibility(0);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f31319c, 2130772112));
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.f17629c, 2130772112));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -412,7 +408,7 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
             public void onAnimationStart(Animation animation) {
             }
         });
-        this.f31318a.startAnimation(alphaAnimation);
+        this.f17628a.startAnimation(alphaAnimation);
     }
 
     @Override // com.soft.blued.customview.swipecard.SwipeFlingAdapterView.onFlingListener
@@ -428,9 +424,9 @@ public class SwipeAnchorBadge implements SwipeFlingAdapterView.onFlingListener {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
-        this.f31318a.startAnimation(alphaAnimation);
+        this.f17628a.startAnimation(alphaAnimation);
         this.b.setVisibility(8);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f31319c, 2130772113));
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.f17629c, 2130772113));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.live.view.SwipeAnchorBadge.6
             @Override // java.lang.Runnable
             public void run() {

@@ -9,11 +9,11 @@ import java.util.List;
 final class b implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.exoplayer.core.f.b[] f25374a;
+    private final com.opos.exoplayer.core.f.b[] f11686a;
     private final long[] b;
 
     public b(com.opos.exoplayer.core.f.b[] bVarArr, long[] jArr) {
-        this.f25374a = bVarArr;
+        this.f11686a = bVarArr;
         this.b = jArr;
     }
 
@@ -46,7 +46,7 @@ final class b implements d {
     public List<com.opos.exoplayer.core.f.b> b(long j) {
         int a2 = u.a(this.b, j, true, false);
         if (a2 != -1) {
-            com.opos.exoplayer.core.f.b[] bVarArr = this.f25374a;
+            com.opos.exoplayer.core.f.b[] bVarArr = this.f11686a;
             if (bVarArr[a2] != null) {
                 return Collections.singletonList(bVarArr[a2]);
             }

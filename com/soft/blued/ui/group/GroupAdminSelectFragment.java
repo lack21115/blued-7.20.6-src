@@ -40,7 +40,7 @@ import java.util.List;
 public class GroupAdminSelectFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f30745a;
+    public static int f17055a;
     private View d;
     private Context e;
     private EditText f;
@@ -62,25 +62,23 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
     private String w;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f30746c = GroupAdminSelectFragment.class.getSimpleName();
+    private String f17056c = GroupAdminSelectFragment.class.getSimpleName();
     private int t = 1;
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<BluedGroupMemberForJson>>() { // from class: com.soft.blued.ui.group.GroupAdminSelectFragment.4
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedGroupMemberForJson> parseData(String str) {
-            Logger.a(GroupAdminSelectFragment.this.f30746c, "onSuccess, content:", str);
-            return (BluedEntityA) super.parseData(str);
+            Logger.a(GroupAdminSelectFragment.this.f17056c, "onSuccess, content:", str);
+            return super.parseData(str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupMemberForJson> bluedEntityA) {
             if (bluedEntityA != null) {
                 try {
                     if (GroupAdminSelectFragment.this.q) {
                         GroupAdminSelectFragment.this.m.p();
-                    } else if (bluedEntityA.extra != 0) {
+                    } else if (bluedEntityA.extra != null) {
                         GroupAdminSelectFragment.this.u = bluedEntityA.extra.hasmore;
                         if (GroupAdminSelectFragment.this.u == 1) {
                             GroupAdminSelectFragment.this.m.o();
@@ -95,7 +93,7 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
                         } else {
                             GroupAdminSelectFragment.k(GroupAdminSelectFragment.this);
                         }
-                        AppMethods.a((CharSequence) GroupAdminSelectFragment.this.e.getResources().getString(2131887275));
+                        AppMethods.a(GroupAdminSelectFragment.this.e.getResources().getString(2131887275));
                         return;
                     }
                     GroupAdminSelectFragment.this.j.clear();
@@ -138,7 +136,7 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
                     GroupAdminSelectFragment.this.o.a(GroupAdminSelectFragment.this.k);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) GroupAdminSelectFragment.this.e.getResources().getString(2131887272));
+                    AppMethods.a(GroupAdminSelectFragment.this.e.getResources().getString(2131887272));
                     if (GroupAdminSelectFragment.this.t != 1) {
                         GroupAdminSelectFragment.k(GroupAdminSelectFragment.this);
                     }
@@ -146,18 +144,16 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             if (GroupAdminSelectFragment.this.t != 1) {
                 GroupAdminSelectFragment.k(GroupAdminSelectFragment.this);
             }
             super.onFailure(th, i, str);
-            Logger.a(GroupAdminSelectFragment.this.f30746c, "onFailure, error:", th);
+            Logger.a(GroupAdminSelectFragment.this.f17056c, "onFailure, error:", th);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
-            Logger.a(GroupAdminSelectFragment.this.f30746c, "onUIFinish");
+            Logger.a(GroupAdminSelectFragment.this.f17056c, "onUIFinish");
             GroupAdminSelectFragment.this.m.j();
             GroupAdminSelectFragment.this.m.q();
         }
@@ -168,11 +164,11 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
     public class CommonOnDoubleClick implements View.OnTouchListener {
 
         /* renamed from: a  reason: collision with root package name */
-        int f30751a = 0;
+        int f17061a = 0;
         int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        int f30752c = 0;
+        int f17062c = 0;
 
         CommonOnDoubleClick() {
         }
@@ -187,20 +183,20 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
                 view.performClick();
                 return true;
             }
-            int i = this.f30751a + 1;
-            this.f30751a = i;
+            int i = this.f17061a + 1;
+            this.f17061a = i;
             if (i == 1) {
                 this.b = (int) System.currentTimeMillis();
                 return true;
             } else if (i == 2) {
                 int currentTimeMillis = (int) System.currentTimeMillis();
-                this.f30752c = currentTimeMillis;
+                this.f17062c = currentTimeMillis;
                 if (currentTimeMillis - this.b < 1000) {
                     GroupAdminSelectFragment.this.n.smoothScrollToPosition(0);
                 }
-                this.f30751a = 0;
+                this.f17061a = 0;
                 this.b = 0;
-                this.f30752c = 0;
+                this.f17062c = 0;
                 return true;
             } else {
                 return true;
@@ -238,7 +234,6 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
             GroupAdminSelectFragment.this.t = 1;
             if (GroupAdminSelectFragment.this.q) {
@@ -248,7 +243,6 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
             }
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
             GroupAdminSelectFragment.f(GroupAdminSelectFragment.this);
             if (GroupAdminSelectFragment.this.q || GroupAdminSelectFragment.this.u != 1) {
@@ -277,9 +271,9 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
     private void c() {
         this.j = new ArrayList();
         this.k = new ArrayList();
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.d.findViewById(R.id.rptrlv_group_member_list);
-        this.m = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.d.findViewById(R.id.rptrlv_group_member_list);
+        this.m = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.m.postDelayed(new Runnable() { // from class: com.soft.blued.ui.group.GroupAdminSelectFragment.1
             @Override // java.lang.Runnable
             public void run() {
@@ -292,9 +286,9 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
         listView.setDivider(null);
         this.n.setSelector(new ColorDrawable(0));
         this.n.setOnItemClickListener(new MyOnItemClickListener());
-        this.g = (LinearLayout) this.d.findViewById(2131367859);
-        this.h = (TextView) this.d.findViewById(2131371941);
-        TextView textView = (TextView) this.d.findViewById(2131371940);
+        this.g = (LinearLayout) this.d.findViewById(R.id.ll_group_members_remove);
+        this.h = (TextView) this.d.findViewById(R.id.tv_members_remove_count);
+        TextView textView = (TextView) this.d.findViewById(R.id.tv_members_remove_confirm);
         this.i = textView;
         textView.setOnClickListener(this);
         Bundle arguments = getArguments();
@@ -309,31 +303,29 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
     }
 
     private void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.group_admins_select));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        ((TextView) commonTopTitleNoTrans.findViewById(2131363108)).setOnTouchListener(new CommonOnDoubleClick());
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.group_admins_select));
+        findViewById.setLeftClickListener(this);
+        ((TextView) findViewById.findViewById(2131363108)).setOnTouchListener(new CommonOnDoubleClick());
     }
 
     private void e() {
         LayoutInflater layoutInflater = (LayoutInflater) this.e.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.r = layoutInflater;
-        SearchView searchView = (SearchView) layoutInflater.inflate(R.layout.search_layout, (ViewGroup) null);
-        this.s = searchView;
-        SearchEditText editView = searchView.getEditView();
+        SearchView inflate = layoutInflater.inflate(R.layout.search_layout, (ViewGroup) null);
+        this.s = inflate;
+        SearchEditText editView = inflate.getEditView();
         this.f = editView;
         editView.setHint(R.string.group_member_search);
         this.s.setDelaymillis(0L);
         this.s.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.group.GroupAdminSelectFragment.2
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 GroupAdminSelectFragment.this.q = false;
                 GroupAdminSelectFragment.this.k.clear();
                 GroupAdminSelectFragment.this.o.notifyDataSetChanged();
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 if (StringUtils.d(str)) {
                     GroupAdminSelectFragment.this.a();
@@ -344,7 +336,6 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
                 GroupAdminSelectFragment.this.q = true;
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -379,7 +370,6 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
         GroupHttpUtils.b(this.e, this.b, this.p, this.f.getText().toString(), "desc", getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().setResult(-1);
         getActivity().finish();
@@ -396,12 +386,10 @@ public class GroupAdminSelectFragment extends BaseFragment implements View.OnCli
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.e = getActivity();
         View view = this.d;

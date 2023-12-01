@@ -11,16 +11,16 @@ import java.util.ArrayList;
 class GhostViewHolder extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private ViewGroup f3448a;
+    private ViewGroup f3400a;
     private boolean b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GhostViewHolder(ViewGroup viewGroup) {
         super(viewGroup.getContext());
         setClipChildren(false);
-        this.f3448a = viewGroup;
+        this.f3400a = viewGroup;
         viewGroup.setTag(R.id.ghost_view_holder, this);
-        ViewGroupUtils.a(this.f3448a).add(this);
+        ViewGroupUtils.a(this.f3400a).add(this);
         this.b = true;
     }
 
@@ -30,7 +30,7 @@ class GhostViewHolder extends FrameLayout {
         int i = 0;
         while (i <= childCount) {
             int i2 = (i + childCount) / 2;
-            a(((GhostViewPort) getChildAt(i2)).f3452c, arrayList2);
+            a(((GhostViewPort) getChildAt(i2)).f3404c, arrayList2);
             if (a(arrayList, arrayList2)) {
                 i = i2 + 1;
             } else {
@@ -116,14 +116,14 @@ class GhostViewHolder extends FrameLayout {
         if (!this.b) {
             throw new IllegalStateException("This GhostViewHolder is detached!");
         }
-        ViewGroupUtils.a(this.f3448a).remove(this);
-        ViewGroupUtils.a(this.f3448a).add(this);
+        ViewGroupUtils.a(this.f3400a).remove(this);
+        ViewGroupUtils.a(this.f3400a).add(this);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(GhostViewPort ghostViewPort) {
         ArrayList<View> arrayList = new ArrayList<>();
-        a(ghostViewPort.f3452c, arrayList);
+        a(ghostViewPort.f3404c, arrayList);
         int a2 = a(arrayList);
         if (a2 < 0 || a2 >= getChildCount()) {
             addView(ghostViewPort);
@@ -144,8 +144,8 @@ class GhostViewHolder extends FrameLayout {
     public void onViewRemoved(View view) {
         super.onViewRemoved(view);
         if ((getChildCount() == 1 && getChildAt(0) == view) || getChildCount() == 0) {
-            this.f3448a.setTag(R.id.ghost_view_holder, null);
-            ViewGroupUtils.a(this.f3448a).remove(this);
+            this.f3400a.setTag(R.id.ghost_view_holder, null);
+            ViewGroupUtils.a(this.f3400a).remove(this);
             this.b = false;
         }
     }

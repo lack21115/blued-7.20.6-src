@@ -41,13 +41,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMultiPKTitle.class */
 public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f14673a;
+    private BaseFragment a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveInviteUserModel f14674c;
+    private LiveInviteUserModel c;
     private CountDownTimer d;
     private CountDownTimer e;
     private boolean f;
@@ -69,7 +65,7 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
     public LiveMultiPKTitle(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14674c = new LiveInviteUserModel();
+        this.c = new LiveInviteUserModel();
         this.g = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LiveMultiConnectionTitleViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveMultiPKTitle$viewBinding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -87,16 +83,17 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveMultiPKTitle this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        if (this$0.f14674c.isGroup()) {
+        if (this$0.c.isGroup()) {
             EventTrackLive.a(LiveProtos.Event.LIVE_PK_MORE_RULE_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         }
         LiveSetDataObserver.a().b(LiveRoomInfo.a().A(), 0);
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.LiveMultiPKTitle$startPkTimer$1] */
     public final void a() {
         d();
         e();
-        final long j = (this.f14674c.durationRemain > 0 ? this.f14674c.durationRemain : this.f14674c.duration) * 1000;
+        final long j = (this.c.durationRemain > 0 ? this.c.durationRemain : this.c.duration) * 1000;
         this.d = new CountDownTimer(j) { // from class: com.blued.android.module.live_china.view.LiveMultiPKTitle$startPkTimer$1
             @Override // android.os.CountDownTimer
             public void onFinish() {
@@ -141,11 +138,12 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.blued.android.module.live_china.view.LiveMultiPKTitle$startPunishTimer$1] */
     public final void b() {
         d();
         e();
-        this.f14674c.status = 2;
-        final long j = (this.f14674c.durationRemainPKEnd > 0 ? this.f14674c.durationRemainPKEnd : this.f14674c.duration) * 1000;
+        this.c.status = 2;
+        final long j = (this.c.durationRemainPKEnd > 0 ? this.c.durationRemainPKEnd : this.c.duration) * 1000;
         this.d = new CountDownTimer(j) { // from class: com.blued.android.module.live_china.view.LiveMultiPKTitle$startPunishTimer$1
             @Override // android.os.CountDownTimer
             public void onFinish() {
@@ -169,6 +167,7 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
         }.start();
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.LiveMultiPKTitle$postExceptionTask$1] */
     public final void c() {
         e();
         this.e = new CountDownTimer(5000L) { // from class: com.blued.android.module.live_china.view.LiveMultiPKTitle$postExceptionTask$1
@@ -261,10 +260,10 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
     public final void g() {
         d();
         e();
-        this.f14674c.status = 0;
-        this.f14674c.durationRemain = 0;
-        this.f14674c.durationRemainPKEnd = 0;
-        setTitle(this.f14674c);
+        this.c.status = 0;
+        this.c.durationRemain = 0;
+        this.c.durationRemainPKEnd = 0;
+        setTitle(this.c);
     }
 
     public final boolean getAttatch() {
@@ -272,11 +271,11 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
     }
 
     public final BaseFragment getBaseFragment() {
-        return this.f14673a;
+        return this.a;
     }
 
     public final LiveInviteUserModel getItem() {
-        return this.f14674c;
+        return this.c;
     }
 
     public final boolean getRecord() {
@@ -290,7 +289,7 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
     public final void h() {
         d();
         e();
-        this.f14673a = null;
+        this.a = null;
         setVisibility(8);
         this.b = false;
     }
@@ -320,16 +319,16 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
     }
 
     public final void setBaseFragment(BaseFragment baseFragment) {
-        this.f14673a = baseFragment;
+        this.a = baseFragment;
     }
 
     public final void setFragment(BaseFragment baseFragment) {
-        this.f14673a = baseFragment;
+        this.a = baseFragment;
     }
 
     public final void setItem(LiveInviteUserModel liveInviteUserModel) {
         Intrinsics.e(liveInviteUserModel, "<set-?>");
-        this.f14674c = liveInviteUserModel;
+        this.c = liveInviteUserModel;
     }
 
     public final void setRecord(boolean z) {
@@ -338,12 +337,12 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
 
     public final void setTitle(LiveInviteUserModel model) {
         Intrinsics.e(model, "model");
-        this.f14674c = model;
+        this.c = model;
         this.f = TextUtils.equals(LiveRoomManager.a().g(), LiveRoomInfo.a().f());
         ViewGroup.LayoutParams layoutParams = getViewBinding().d.getLayoutParams();
         if (LiveRoomManager.a().m() == 10) {
-            this.f14674c.durationRemain = 0;
-            this.f14674c.durationRemainPKEnd = 0;
+            this.c.durationRemain = 0;
+            this.c.durationRemainPKEnd = 0;
             getViewBinding().b.setVisibility(0);
             getViewBinding().b.setImageResource(R.drawable.live_multi_connection_icon_small);
             getViewBinding().d.setText(this.f ? R.string.live_invite_connecting_tip : R.string.live_invite_connecting_live_tip);
@@ -351,7 +350,7 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
                 ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = DensityUtils.a(getContext(), 0.0f);
             }
             d();
-            ImageView imageView = getViewBinding().f12290c;
+            ImageView imageView = getViewBinding().c;
             Intrinsics.c(imageView, "viewBinding.ivInfo");
             BluedViewExKt.a(imageView);
             Space space = getViewBinding().e;
@@ -361,43 +360,43 @@ public final class LiveMultiPKTitle extends FrameLayout implements View.OnClickL
             if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
                 ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = DensityUtils.a(getContext(), 0.5f);
             }
-            if (this.f14674c.status == 1) {
+            if (this.c.status == 1) {
                 getViewBinding().b.setVisibility(0);
-                if (this.f14674c.my_count == 1) {
-                    if (this.f14674c.other_count == 2) {
+                if (this.c.my_count == 1) {
+                    if (this.c.other_count == 2) {
                         getViewBinding().b.setImageResource(R.drawable.live_multi_pk_1v2);
-                    } else if (this.f14674c.other_count == 3) {
+                    } else if (this.c.other_count == 3) {
                         getViewBinding().b.setImageResource(R.drawable.live_multi_pk_1v3);
                     } else {
                         getViewBinding().b.setImageResource(R.drawable.live_multi_pk_icon);
                     }
-                } else if (this.f14674c.my_count == 2) {
-                    if (this.f14674c.other_count == 1) {
+                } else if (this.c.my_count == 2) {
+                    if (this.c.other_count == 1) {
                         getViewBinding().b.setImageResource(R.drawable.live_multi_pk_2v1);
-                    } else if (this.f14674c.other_count == 2) {
+                    } else if (this.c.other_count == 2) {
                         getViewBinding().b.setImageResource(R.drawable.live_multi_pk_2v2);
                     } else {
                         getViewBinding().b.setImageResource(R.drawable.live_multi_pk_icon);
                     }
-                } else if (this.f14674c.my_count != 3) {
+                } else if (this.c.my_count != 3) {
                     getViewBinding().b.setImageResource(R.drawable.live_multi_pk_icon);
-                } else if (this.f14674c.other_count == 1) {
+                } else if (this.c.other_count == 1) {
                     getViewBinding().b.setImageResource(R.drawable.live_multi_pk_3v1);
                 } else {
                     getViewBinding().b.setImageResource(R.drawable.live_multi_pk_icon);
                 }
                 a();
-            } else if (this.f14674c.status == 2) {
+            } else if (this.c.status == 2) {
                 getViewBinding().b.setVisibility(8);
                 b();
             }
-            ImageView imageView2 = getViewBinding().f12290c;
+            ImageView imageView2 = getViewBinding().c;
             Intrinsics.c(imageView2, "viewBinding.ivInfo");
             BluedViewExKt.b(imageView2);
             Space space2 = getViewBinding().e;
             Intrinsics.c(space2, "viewBinding.viewSpace");
             BluedViewExKt.a(space2);
-            getViewBinding().f12290c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKTitle$6OhsZyqRWsuj8viGRzP2G9mgWoY
+            getViewBinding().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKTitle$6OhsZyqRWsuj8viGRzP2G9mgWoY
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveMultiPKTitle.a(LiveMultiPKTitle.this, view);

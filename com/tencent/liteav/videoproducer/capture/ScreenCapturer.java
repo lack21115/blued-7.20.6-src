@@ -52,7 +52,7 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
     public static class ScreenCaptureParams extends CaptureSourceInterface.CaptureParams {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f36849a;
+        public boolean f23158a;
         public MediaProjection f;
 
         public ScreenCaptureParams() {
@@ -60,7 +60,7 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
 
         public ScreenCaptureParams(ScreenCaptureParams screenCaptureParams) {
             super(screenCaptureParams);
-            this.f36849a = screenCaptureParams.f36849a;
+            this.f23158a = screenCaptureParams.f23158a;
             this.f = screenCaptureParams.f;
         }
 
@@ -68,14 +68,14 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
         public boolean equals(Object obj) {
             if (obj instanceof ScreenCaptureParams) {
                 ScreenCaptureParams screenCaptureParams = (ScreenCaptureParams) obj;
-                return super.equals(obj) && this.f36849a == screenCaptureParams.f36849a && this.f == screenCaptureParams.f;
+                return super.equals(obj) && this.f23158a == screenCaptureParams.f23158a && this.f == screenCaptureParams.f;
             }
             return false;
         }
 
         @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.CaptureParams
         public String toString() {
-            return String.format(Locale.ENGLISH, "%s, autoRotate: %b, mediaProjcetion: %s", super.toString(), Boolean.valueOf(this.f36849a), this.f);
+            return String.format(Locale.ENGLISH, "%s, autoRotate: %b, mediaProjcetion: %s", super.toString(), Boolean.valueOf(this.f23158a), this.f);
         }
     }
 
@@ -137,7 +137,7 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(ScreenCapturer screenCapturer, boolean z) {
         LiteavLog.d("ScreenCapturer", "display orientation changed, isPortrait: %b", Boolean.valueOf(z));
-        if (screenCapturer.y || !screenCapturer.l.f36849a) {
+        if (screenCapturer.y || !screenCapturer.l.f23158a) {
             return;
         }
         screenCapturer.g();
@@ -176,7 +176,7 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
             return;
         }
         screenCapturer.u = new com.tencent.liteav.videobase.utils.g(screenCapturer.l.b);
-        com.tencent.liteav.base.util.r rVar = new com.tencent.liteav.base.util.r(screenCapturer.f36880a.getLooper(), screenCapturer);
+        com.tencent.liteav.base.util.r rVar = new com.tencent.liteav.base.util.r(screenCapturer.f23189a.getLooper(), screenCapturer);
         screenCapturer.v = rVar;
         rVar.a(0, 5);
         screenCapturer.n.setOnFrameAvailableListener(null);
@@ -210,12 +210,12 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
             this.f = new com.tencent.liteav.videobase.frame.l();
         }
         if (this.j == 0 || this.k == 0) {
-            this.j = this.l.f36846c;
+            this.j = this.l.f23155c;
             this.k = this.l.d;
         }
         int i = this.j;
         int i2 = this.k;
-        if (this.l.f36849a) {
+        if (this.l.f23158a) {
             int rotation = ((WindowManager) this.g.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRotation();
             if (rotation == 0 || rotation == 2) {
                 i = Math.min(this.j, this.k);
@@ -287,7 +287,7 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
     protected final void a(CaptureSourceInterface.CaptureParams captureParams) {
         if (!this.y) {
             LiteavLog.e("ScreenCapturer", "Start capture %s, capturer already started", captureParams);
-        } else if (this.f36881c == null) {
+        } else if (this.f23190c == null) {
             LiteavLog.e("ScreenCapturer", "Start capture %s, mEGLCore is null", captureParams);
             a(false);
         } else {
@@ -328,12 +328,12 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
         }
         com.tencent.liteav.videobase.utils.g gVar = this.u;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (gVar.f36658a == 0) {
+        if (gVar.f22967a == 0) {
             z = true;
         } else {
             z = true;
             if (gVar.b != -1) {
-                z = elapsedRealtime - gVar.b >= ((gVar.f36659c + 1) * 1000) / ((long) gVar.f36658a);
+                z = elapsedRealtime - gVar.b >= ((gVar.f22968c + 1) * 1000) / ((long) gVar.f22967a);
             }
         }
         if (z) {
@@ -341,9 +341,9 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
             if (gVar2.b == -1) {
                 gVar2.b = SystemClock.elapsedRealtime();
             }
-            gVar2.f36659c++;
-            if (this.f == null || this.l == null || this.f36881c == null) {
-                LiteavLog.w("ScreenCapturer", "onScreenFrameAvailable mTextureHolderPool = " + this.f + ", mCaptureParams = " + this.l + ", mEGLCore = " + this.f36881c);
+            gVar2.f22968c++;
+            if (this.f == null || this.l == null || this.f23190c == null) {
+                LiteavLog.w("ScreenCapturer", "onScreenFrameAvailable mTextureHolderPool = " + this.f + ", mCaptureParams = " + this.l + ", mEGLCore = " + this.f23190c);
                 return;
             }
             l.b bVar = null;
@@ -366,7 +366,7 @@ public final class ScreenCapturer extends ar implements SurfaceTexture.OnFrameAv
                 f = (Math.min(this.s - rect.top, rect.height()) * 1.0f) / this.s;
             }
             bVar.a(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, this.m, this.r, this.s);
-            PixelFrame a2 = bVar.a(this.f36881c.d());
+            PixelFrame a2 = bVar.a(this.f23190c.d());
             if (a2.getMatrix() == null) {
                 a2.setMatrix(new float[16]);
             }

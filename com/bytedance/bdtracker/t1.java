@@ -3,9 +3,11 @@ package com.bytedance.bdtracker;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.media.MediaFormat;
+import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.sina.weibo.sdk.constant.WBPageConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -21,11 +23,11 @@ public abstract class t1 implements Cloneable {
     public static final j2<HashMap<String, t1>> o = new a();
 
     /* renamed from: a  reason: collision with root package name */
-    public long f21308a;
+    public long f7702a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f21309c;
+    public long f7703c;
     public String d;
     public long e;
     public String f;
@@ -52,7 +54,7 @@ public abstract class t1 implements Cloneable {
     public static t1 a(String str) {
         try {
             JSONObject jSONObject = new JSONObject(str);
-            return o.b(new Object[0]).get(jSONObject.optString("k_cls", "")).m5742clone().a(jSONObject);
+            return o.b(new Object[0]).get(jSONObject.optString("k_cls", "")).m2745clone().a(jSONObject);
         } catch (Throwable th) {
             z2.c("U SHALL NOT PASS!", th);
             return null;
@@ -85,9 +87,9 @@ public abstract class t1 implements Cloneable {
     }
 
     public int a(Cursor cursor) {
-        this.f21308a = cursor.getLong(0);
+        this.f7702a = cursor.getLong(0);
         this.b = cursor.getLong(1);
-        this.f21309c = cursor.getLong(2);
+        this.f7703c = cursor.getLong(2);
         this.i = cursor.getInt(3);
         this.e = cursor.getLong(4);
         this.d = cursor.getString(5);
@@ -121,8 +123,8 @@ public abstract class t1 implements Cloneable {
 
     public t1 a(JSONObject jSONObject) {
         this.b = jSONObject.optLong("local_time_ms", 0L);
-        this.f21308a = 0L;
-        this.f21309c = 0L;
+        this.f7702a = 0L;
+        this.f7703c = 0L;
         this.i = 0;
         this.e = 0L;
         this.d = null;
@@ -181,14 +183,14 @@ public abstract class t1 implements Cloneable {
     }
 
     public List<String> b() {
-        return Arrays.asList("_id", "integer primary key autoincrement", "local_time_ms", TypedValues.Custom.S_INT, "tea_event_index", TypedValues.Custom.S_INT, "nt", TypedValues.Custom.S_INT, "user_id", TypedValues.Custom.S_INT, "session_id", "varchar", "user_unique_id", "varchar", "ssid", "varchar", "ab_sdk_version", "varchar", "event_type", TypedValues.Custom.S_INT, "_app_id", "varchar", "properties", "varchar");
+        return Arrays.asList("_id", "integer primary key autoincrement", "local_time_ms", TypedValues.Custom.S_INT, "tea_event_index", TypedValues.Custom.S_INT, "nt", TypedValues.Custom.S_INT, SearchIndexablesContract.RawData.COLUMN_USER_ID, TypedValues.Custom.S_INT, "session_id", "varchar", "user_unique_id", "varchar", "ssid", "varchar", "ab_sdk_version", "varchar", "event_type", TypedValues.Custom.S_INT, "_app_id", "varchar", "properties", "varchar");
     }
 
     public void b(ContentValues contentValues) {
         contentValues.put("local_time_ms", Long.valueOf(this.b));
-        contentValues.put("tea_event_index", Long.valueOf(this.f21309c));
+        contentValues.put("tea_event_index", Long.valueOf(this.f7703c));
         contentValues.put("nt", Integer.valueOf(this.i));
-        contentValues.put("user_id", Long.valueOf(this.e));
+        contentValues.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, Long.valueOf(this.e));
         contentValues.put("session_id", this.d);
         contentValues.put("user_unique_id", this.f);
         contentValues.put("ssid", this.g);
@@ -216,7 +218,7 @@ public abstract class t1 implements Cloneable {
     }
 
     /* renamed from: clone */
-    public t1 m5742clone() {
+    public t1 m2745clone() {
         try {
             return (t1) super.clone();
         } catch (CloneNotSupportedException e) {
@@ -269,14 +271,14 @@ public abstract class t1 implements Cloneable {
         }
         String str3 = this.d;
         if (str3 != null) {
-            int indexOf = str3.indexOf("-");
+            int indexOf = str3.indexOf(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             str = str3;
             if (indexOf >= 0) {
                 str = str3.substring(0, indexOf);
             }
         } else {
-            str = "-";
+            str = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         }
-        return "{" + str2 + ", " + c() + ", " + str + ", " + this.b + com.alipay.sdk.util.i.d;
+        return "{" + str2 + ", " + c() + ", " + str + ", " + this.b + "}";
     }
 }

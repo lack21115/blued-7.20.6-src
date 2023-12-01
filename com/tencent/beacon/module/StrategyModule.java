@@ -12,24 +12,24 @@ import com.tencent.beacon.e.i;
 public class StrategyModule implements BeaconModule {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f35093a = new Object();
+    private static final Object f21402a = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private i f35094c;
+    private i f21403c;
     private boolean e = false;
     private b d = b.a();
     private a b = a.a();
 
     public StrategyModule() {
         h.b().a(this.b);
-        this.f35094c = new i(this);
+        this.f21403c = new i(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
         synchronized (this) {
-            if (!this.f35094c.a()) {
-                com.tencent.beacon.a.b.a.a().a(this.f35094c);
+            if (!this.f21403c.a()) {
+                com.tencent.beacon.a.b.a.a().a(this.f21403c);
             }
         }
     }
@@ -41,13 +41,13 @@ public class StrategyModule implements BeaconModule {
     @Override // com.tencent.beacon.module.BeaconModule
     public void a(Context context) {
         c.a("[module] strategy module > TRUE", new Object[0]);
-        this.f35094c.b();
+        this.f21403c.b();
         d();
         e.a(context, new e.a() { // from class: com.tencent.beacon.module.StrategyModule.1
             @Override // com.tencent.beacon.base.net.b.e.a
             public void a() {
                 synchronized (StrategyModule.this) {
-                    if (!StrategyModule.this.c() && !StrategyModule.this.f35094c.a()) {
+                    if (!StrategyModule.this.c() && !StrategyModule.this.f21403c.a()) {
                         StrategyModule.this.d();
                     }
                 }
@@ -60,7 +60,7 @@ public class StrategyModule implements BeaconModule {
     }
 
     public void a(boolean z) {
-        synchronized (f35093a) {
+        synchronized (f21402a) {
             this.e = z;
         }
     }
@@ -71,7 +71,7 @@ public class StrategyModule implements BeaconModule {
 
     public boolean c() {
         boolean z;
-        synchronized (f35093a) {
+        synchronized (f21402a) {
             z = this.e;
         }
         return z;

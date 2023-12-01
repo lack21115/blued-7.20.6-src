@@ -7,19 +7,19 @@ import java.util.BitSet;
 public class hy implements ir<hy, Object>, Serializable, Cloneable {
 
     /* renamed from: a  reason: collision with other field name */
-    public int f673a;
+    public int f626a;
 
     /* renamed from: a  reason: collision with other field name */
-    private BitSet f674a = new BitSet(2);
+    private BitSet f627a = new BitSet(2);
 
     /* renamed from: b  reason: collision with other field name */
-    public int f675b;
+    public int f628b;
 
     /* renamed from: a  reason: collision with other field name */
-    private static final jh f672a = new jh("XmPushActionCheckClientInfo");
+    private static final jh f625a = new jh("XmPushActionCheckClientInfo");
 
     /* renamed from: a  reason: collision with root package name */
-    private static final iz f41503a = new iz("", (byte) 8, 1);
+    private static final iz f27812a = new iz("", (byte) 8, 1);
     private static final iz b = new iz("", (byte) 8, 2);
 
     @Override // java.lang.Comparable
@@ -28,16 +28,16 @@ public class hy implements ir<hy, Object>, Serializable, Cloneable {
         int a2;
         int a3;
         if (getClass().equals(hyVar.getClass())) {
-            int compareTo = Boolean.valueOf(m11920a()).compareTo(Boolean.valueOf(hyVar.m11920a()));
+            int compareTo = Boolean.valueOf(m8870a()).compareTo(Boolean.valueOf(hyVar.m8870a()));
             if (compareTo != 0) {
                 return compareTo;
             }
-            if (!m11920a() || (a3 = is.a(this.f673a, hyVar.f673a)) == 0) {
+            if (!m8870a() || (a3 = is.a(this.f626a, hyVar.f626a)) == 0) {
                 int compareTo2 = Boolean.valueOf(b()).compareTo(Boolean.valueOf(hyVar.b()));
                 if (compareTo2 != 0) {
                     return compareTo2;
                 }
-                if (!b() || (a2 = is.a(this.f675b, hyVar.f675b)) == 0) {
+                if (!b() || (a2 = is.a(this.f628b, hyVar.f628b)) == 0) {
                     return 0;
                 }
                 return a2;
@@ -48,7 +48,7 @@ public class hy implements ir<hy, Object>, Serializable, Cloneable {
     }
 
     public hy a(int i) {
-        this.f673a = i;
+        this.f626a = i;
         a(true);
         return this;
     }
@@ -58,33 +58,33 @@ public class hy implements ir<hy, Object>, Serializable, Cloneable {
 
     @Override // com.xiaomi.push.ir
     public void a(jc jcVar) {
-        jcVar.mo12036a();
+        jcVar.mo8986a();
         while (true) {
-            iz mo12032a = jcVar.mo12032a();
-            if (mo12032a.f41543a == 0) {
+            iz mo8982a = jcVar.mo8982a();
+            if (mo8982a.f27852a == 0) {
                 break;
             }
-            short s = mo12032a.f887a;
+            short s = mo8982a.f840a;
             if (s != 1) {
-                if (s == 2 && mo12032a.f41543a == 8) {
-                    this.f675b = jcVar.mo12030a();
+                if (s == 2 && mo8982a.f27852a == 8) {
+                    this.f628b = jcVar.mo8980a();
                     b(true);
                     jcVar.g();
                 }
-                jf.a(jcVar, mo12032a.f41543a);
+                jf.a(jcVar, mo8982a.f27852a);
                 jcVar.g();
             } else {
-                if (mo12032a.f41543a == 8) {
-                    this.f673a = jcVar.mo12030a();
+                if (mo8982a.f27852a == 8) {
+                    this.f626a = jcVar.mo8980a();
                     a(true);
                     jcVar.g();
                 }
-                jf.a(jcVar, mo12032a.f41543a);
+                jf.a(jcVar, mo8982a.f27852a);
                 jcVar.g();
             }
         }
         jcVar.f();
-        if (!m11920a()) {
+        if (!m8870a()) {
             throw new jd("Required field 'miscConfigVersion' was not found in serialized data! Struct: " + toString());
         } else if (b()) {
             a();
@@ -94,21 +94,21 @@ public class hy implements ir<hy, Object>, Serializable, Cloneable {
     }
 
     public void a(boolean z) {
-        this.f674a.set(0, z);
+        this.f627a.set(0, z);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m11920a() {
-        return this.f674a.get(0);
+    public boolean m8870a() {
+        return this.f627a.get(0);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public boolean m11921a(hy hyVar) {
-        return hyVar != null && this.f673a == hyVar.f673a && this.f675b == hyVar.f675b;
+    public boolean m8871a(hy hyVar) {
+        return hyVar != null && this.f626a == hyVar.f626a && this.f628b == hyVar.f628b;
     }
 
     public hy b(int i) {
-        this.f675b = i;
+        this.f628b = i;
         b(true);
         return this;
     }
@@ -116,28 +116,28 @@ public class hy implements ir<hy, Object>, Serializable, Cloneable {
     @Override // com.xiaomi.push.ir
     public void b(jc jcVar) {
         a();
-        jcVar.a(f672a);
-        jcVar.a(f41503a);
-        jcVar.mo12041a(this.f673a);
+        jcVar.a(f625a);
+        jcVar.a(f27812a);
+        jcVar.mo8991a(this.f626a);
         jcVar.b();
         jcVar.a(b);
-        jcVar.mo12041a(this.f675b);
+        jcVar.mo8991a(this.f628b);
         jcVar.b();
         jcVar.c();
-        jcVar.mo12040a();
+        jcVar.mo8990a();
     }
 
     public void b(boolean z) {
-        this.f674a.set(1, z);
+        this.f627a.set(1, z);
     }
 
     public boolean b() {
-        return this.f674a.get(1);
+        return this.f627a.get(1);
     }
 
     public boolean equals(Object obj) {
         if (obj != null && (obj instanceof hy)) {
-            return m11921a((hy) obj);
+            return m8871a((hy) obj);
         }
         return false;
     }
@@ -147,6 +147,6 @@ public class hy implements ir<hy, Object>, Serializable, Cloneable {
     }
 
     public String toString() {
-        return "XmPushActionCheckClientInfo(miscConfigVersion:" + this.f673a + ", pluginConfigVersion:" + this.f675b + ")";
+        return "XmPushActionCheckClientInfo(miscConfigVersion:" + this.f626a + ", pluginConfigVersion:" + this.f628b + ")";
     }
 }

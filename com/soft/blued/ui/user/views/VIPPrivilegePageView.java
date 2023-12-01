@@ -11,6 +11,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.common.view.AutoScrollViewPager;
+import com.soft.blued.R;
 import com.soft.blued.ui.user.adapter.VIPPrivilegeAdapter;
 import com.soft.blued.ui.user.model.VIPPrivilegeModel;
 import java.util.ArrayList;
@@ -20,11 +21,11 @@ import java.util.List;
 public class VIPPrivilegePageView extends AutoScrollViewPager {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f34402a;
+    private Context f20711a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<VIPPrivilegeModel> f34403c;
+    private List<VIPPrivilegeModel> f20712c;
     private ViewPagerAdapter d;
     private List<View> e;
     private IViewStateListener f;
@@ -67,23 +68,23 @@ public class VIPPrivilegePageView extends AutoScrollViewPager {
         super(context);
         this.e = new ArrayList();
         this.g = new ArrayList();
-        this.f34402a = context;
+        this.f20711a = context;
     }
 
     public VIPPrivilegePageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.e = new ArrayList();
         this.g = new ArrayList();
-        this.f34402a = context;
+        this.f20711a = context;
     }
 
     public void a(IRequestHost iRequestHost, List<VIPPrivilegeModel> list) {
         this.b = iRequestHost;
-        this.f34403c = list;
+        this.f20712c = list;
     }
 
     public void d() {
-        if (this.f34403c == null) {
+        if (this.f20712c == null) {
             return;
         }
         if (this.d == null) {
@@ -99,22 +100,22 @@ public class VIPPrivilegePageView extends AutoScrollViewPager {
         this.g.clear();
         this.d.notifyDataSetChanged();
         int pageCount = getPageCount();
-        int size = this.f34403c.size();
+        int size = this.f20712c.size();
         int i = 4 > size ? size : 4;
         int i2 = 0;
         int i3 = 0;
         while (i2 < pageCount) {
-            View inflate = LayoutInflater.from(this.f34402a).inflate(2131559410, (ViewGroup) null);
-            GridView gridView = (GridView) inflate.findViewById(2131364131);
+            View inflate = LayoutInflater.from(this.f20711a).inflate(R.layout.gift_gird_view, (ViewGroup) null);
+            GridView gridView = (GridView) inflate.findViewById(R.id.grid_view);
             ArrayList arrayList = new ArrayList();
             while (i3 < i) {
-                arrayList.add(this.f34403c.get(i3));
+                arrayList.add(this.f20712c.get(i3));
                 i3++;
             }
             while (arrayList.size() < 4) {
                 arrayList.add(null);
             }
-            VIPPrivilegeAdapter vIPPrivilegeAdapter = new VIPPrivilegeAdapter(this.f34402a, this.b, arrayList, gridView);
+            VIPPrivilegeAdapter vIPPrivilegeAdapter = new VIPPrivilegeAdapter(this.f20711a, this.b, arrayList, gridView);
             gridView.setNumColumns(4);
             this.g.add(vIPPrivilegeAdapter);
             gridView.setAdapter((ListAdapter) vIPPrivilegeAdapter);
@@ -135,10 +136,9 @@ public class VIPPrivilegePageView extends AutoScrollViewPager {
     }
 
     public int getPageCount() {
-        return (int) Math.ceil(this.f34403c.size() / 4.0d);
+        return (int) Math.ceil(this.f20712c.size() / 4.0d);
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         post(new Runnable() { // from class: com.soft.blued.ui.user.views.VIPPrivilegePageView.1

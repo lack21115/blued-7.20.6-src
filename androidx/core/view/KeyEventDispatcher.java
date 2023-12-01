@@ -16,11 +16,11 @@ import java.lang.reflect.Method;
 public class KeyEventDispatcher {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f2639a = false;
+    private static boolean f2591a = false;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f2640c = false;
+    private static boolean f2592c = false;
     private static Field d;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/KeyEventDispatcher$Component.class */
@@ -32,14 +32,14 @@ public class KeyEventDispatcher {
     }
 
     private static DialogInterface.OnKeyListener a(Dialog dialog) {
-        if (!f2640c) {
+        if (!f2592c) {
             try {
                 Field declaredField = Dialog.class.getDeclaredField("mOnKeyListener");
                 d = declaredField;
                 declaredField.setAccessible(true);
             } catch (NoSuchFieldException e) {
             }
-            f2640c = true;
+            f2592c = true;
         }
         Field field = d;
         if (field != null) {
@@ -53,12 +53,12 @@ public class KeyEventDispatcher {
     }
 
     private static boolean a(ActionBar actionBar, KeyEvent keyEvent) {
-        if (!f2639a) {
+        if (!f2591a) {
             try {
                 b = actionBar.getClass().getMethod("onMenuKeyEvent", KeyEvent.class);
             } catch (NoSuchMethodException e) {
             }
-            f2639a = true;
+            f2591a = true;
         }
         Method method = b;
         if (method != null) {

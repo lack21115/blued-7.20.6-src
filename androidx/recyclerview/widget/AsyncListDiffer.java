@@ -15,11 +15,11 @@ public class AsyncListDiffer<T> {
     private static final Executor e = new MainThreadExecutor();
 
     /* renamed from: a  reason: collision with root package name */
-    final AsyncDifferConfig<T> f3218a;
+    final AsyncDifferConfig<T> f3170a;
     Executor b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f3219c;
+    int f3171c;
     private final ListUpdateCallback d;
     private final List<ListListener<T>> f;
     private List<T> g;
@@ -34,14 +34,14 @@ public class AsyncListDiffer<T> {
     static class MainThreadExecutor implements Executor {
 
         /* renamed from: a  reason: collision with root package name */
-        final Handler f3224a = new Handler(Looper.getMainLooper());
+        final Handler f3176a = new Handler(Looper.getMainLooper());
 
         MainThreadExecutor() {
         }
 
         @Override // java.util.concurrent.Executor
         public void execute(Runnable runnable) {
-            this.f3224a.post(runnable);
+            this.f3176a.post(runnable);
         }
     }
 
@@ -49,7 +49,7 @@ public class AsyncListDiffer<T> {
         this.f = new CopyOnWriteArrayList();
         this.h = Collections.emptyList();
         this.d = listUpdateCallback;
-        this.f3218a = asyncDifferConfig;
+        this.f3170a = asyncDifferConfig;
         if (asyncDifferConfig.getMainThreadExecutor() != null) {
             this.b = asyncDifferConfig.getMainThreadExecutor();
         } else {
@@ -95,8 +95,8 @@ public class AsyncListDiffer<T> {
     }
 
     public void submitList(final List<T> list, final Runnable runnable) {
-        final int i = this.f3219c + 1;
-        this.f3219c = i;
+        final int i = this.f3171c + 1;
+        this.f3171c = i;
         final List<T> list2 = this.g;
         if (list == list2) {
             if (runnable != null) {
@@ -113,7 +113,7 @@ public class AsyncListDiffer<T> {
             this.d.onRemoved(0, size);
             a(list3, runnable);
         } else if (list2 != null) {
-            this.f3218a.getBackgroundThreadExecutor().execute(new Runnable() { // from class: androidx.recyclerview.widget.AsyncListDiffer.1
+            this.f3170a.getBackgroundThreadExecutor().execute(new Runnable() { // from class: androidx.recyclerview.widget.AsyncListDiffer.1
                 @Override // java.lang.Runnable
                 public void run() {
                     final DiffUtil.DiffResult calculateDiff = DiffUtil.calculateDiff(new DiffUtil.Callback() { // from class: androidx.recyclerview.widget.AsyncListDiffer.1.1
@@ -127,14 +127,14 @@ public class AsyncListDiffer<T> {
                                 }
                                 throw new AssertionError();
                             }
-                            return AsyncListDiffer.this.f3218a.getDiffCallback().areContentsTheSame(obj, obj2);
+                            return AsyncListDiffer.this.f3170a.getDiffCallback().areContentsTheSame(obj, obj2);
                         }
 
                         @Override // androidx.recyclerview.widget.DiffUtil.Callback
                         public boolean areItemsTheSame(int i2, int i3) {
                             Object obj = list2.get(i2);
                             Object obj2 = list.get(i3);
-                            return (obj == null || obj2 == null) ? obj == null && obj2 == null : AsyncListDiffer.this.f3218a.getDiffCallback().areItemsTheSame(obj, obj2);
+                            return (obj == null || obj2 == null) ? obj == null && obj2 == null : AsyncListDiffer.this.f3170a.getDiffCallback().areItemsTheSame(obj, obj2);
                         }
 
                         @Override // androidx.recyclerview.widget.DiffUtil.Callback
@@ -144,7 +144,7 @@ public class AsyncListDiffer<T> {
                             if (obj == null || obj2 == null) {
                                 throw new AssertionError();
                             }
-                            return AsyncListDiffer.this.f3218a.getDiffCallback().getChangePayload(obj, obj2);
+                            return AsyncListDiffer.this.f3170a.getDiffCallback().getChangePayload(obj, obj2);
                         }
 
                         @Override // androidx.recyclerview.widget.DiffUtil.Callback
@@ -160,7 +160,7 @@ public class AsyncListDiffer<T> {
                     AsyncListDiffer.this.b.execute(new Runnable() { // from class: androidx.recyclerview.widget.AsyncListDiffer.1.2
                         @Override // java.lang.Runnable
                         public void run() {
-                            if (AsyncListDiffer.this.f3219c == i) {
+                            if (AsyncListDiffer.this.f3171c == i) {
                                 AsyncListDiffer.this.a(list, calculateDiff, runnable);
                             }
                         }

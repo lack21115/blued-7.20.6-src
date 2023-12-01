@@ -13,11 +13,11 @@ import java.util.Map;
 public class PinManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile String f36099a;
+    private volatile String f22408a;
     private Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private List<Pin> f36100c = new ArrayList();
+    private List<Pin> f22409c = new ArrayList();
     private List<Pin> d = new ArrayList();
 
     private PinManager a(List<Pin> list, String str, String[] strArr) {
@@ -60,7 +60,7 @@ public class PinManager {
         if (str == null) {
             return;
         }
-        Iterator<Pin> it = (z ? this.d : this.f36100c).iterator();
+        Iterator<Pin> it = (z ? this.d : this.f22409c).iterator();
         while (it.hasNext()) {
             if (it.next().getPattern().equals(str)) {
                 it.remove();
@@ -82,7 +82,7 @@ public class PinManager {
     }
 
     public PinManager addErrorPins(String... strArr) {
-        return addErrorPins4Host(this.f36099a, strArr);
+        return addErrorPins4Host(this.f22408a, strArr);
     }
 
     public PinManager addErrorPins4Host(String str, String... strArr) {
@@ -90,7 +90,7 @@ public class PinManager {
     }
 
     public PinManager addPemPins(String... strArr) {
-        return addPemPins4Host(this.f36099a, strArr);
+        return addPemPins4Host(this.f22408a, strArr);
     }
 
     public PinManager addPemPins4Host(String str, String... strArr) {
@@ -111,18 +111,18 @@ public class PinManager {
             }
         }
         synchronized (this.b) {
-            this.f36100c.addAll(0, linkedList);
+            this.f22409c.addAll(0, linkedList);
         }
         return this;
     }
 
     @Deprecated
     public PinManager addPins(List<byte[]> list) {
-        return addPins4Host(this.f36099a, list);
+        return addPins4Host(this.f22408a, list);
     }
 
     public PinManager addPins(String... strArr) {
-        return addPins4Host(this.f36099a, strArr);
+        return addPins4Host(this.f22408a, strArr);
     }
 
     @Deprecated
@@ -137,7 +137,7 @@ public class PinManager {
                 if (i >= 0) {
                     byte[] bArr = list.get(i);
                     if (bArr != null) {
-                        List<Pin> list2 = this.f36100c;
+                        List<Pin> list2 = this.f22409c;
                         list2.add(0, new Pin(str, "sha1/" + ByteString.of(bArr).base64()));
                     }
                     size = i;
@@ -148,7 +148,7 @@ public class PinManager {
     }
 
     public PinManager addPins4Host(String str, String... strArr) {
-        return a(this.f36100c, str, strArr);
+        return a(this.f22409c, str, strArr);
     }
 
     public List<Pin> getAllPinErrorList() {
@@ -158,13 +158,13 @@ public class PinManager {
     public List<Pin> getAllPinList() {
         List<Pin> unmodifiableList;
         synchronized (this.b) {
-            unmodifiableList = Collections.unmodifiableList(this.f36100c);
+            unmodifiableList = Collections.unmodifiableList(this.f22409c);
         }
         return unmodifiableList;
     }
 
     public List<String> getErrorPins() {
-        return b(this.d, this.f36099a);
+        return b(this.d, this.f22408a);
     }
 
     public List<String> getErrorPins(String str) {
@@ -172,24 +172,24 @@ public class PinManager {
     }
 
     public String[] getPinArray4HostPattern(String str) {
-        List<String> b = b(this.f36100c, str);
+        List<String> b = b(this.f22409c, str);
         return (String[]) b.toArray(new String[b.size()]);
     }
 
     public String getPinDefHostPattern() {
-        return this.f36099a;
+        return this.f22408a;
     }
 
     public List<String> getPinList4HostPattern(String str) {
-        return b(this.f36100c, str);
+        return b(this.f22409c, str);
     }
 
     public List<String> getPins() {
-        return b(this.f36100c, this.f36099a);
+        return b(this.f22409c, this.f22408a);
     }
 
     public List<String> getPins(String str) {
-        return a(this.f36100c, str);
+        return a(this.f22409c, str);
     }
 
     public String pinListToString() {
@@ -200,15 +200,14 @@ public class PinManager {
         String trim;
         synchronized (this.b) {
             HashMap hashMap = new HashMap();
-            for (Pin pin : this.f36100c) {
+            for (Pin pin : this.f22409c) {
                 String pattern = pin.getPattern();
                 if (str == null || str.equals(pattern)) {
                     List list = (List) hashMap.get(pattern);
                     ArrayList arrayList = list;
                     if (list == null) {
-                        ArrayList arrayList2 = new ArrayList();
-                        hashMap.put(pattern, arrayList2);
-                        arrayList = arrayList2;
+                        arrayList = new ArrayList();
+                        hashMap.put(pattern, arrayList);
                     }
                     arrayList.add(pin.getPin());
                 }
@@ -227,7 +226,7 @@ public class PinManager {
     }
 
     public PinManager setErrorPins(String... strArr) {
-        setErrorPins4Host(this.f36099a, strArr);
+        setErrorPins4Host(this.f22408a, strArr);
         return this;
     }
 
@@ -242,13 +241,13 @@ public class PinManager {
 
     public PinManager setPinDefHostPattern(String str) {
         if (str != null) {
-            this.f36099a = str;
+            this.f22408a = str;
         }
         return this;
     }
 
     public PinManager setPins(String... strArr) {
-        return setPins4Host(this.f36099a, strArr);
+        return setPins4Host(this.f22408a, strArr);
     }
 
     public PinManager setPins4Host(String str, String... strArr) {

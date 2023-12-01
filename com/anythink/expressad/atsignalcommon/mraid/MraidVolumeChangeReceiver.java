@@ -11,11 +11,11 @@ import java.lang.ref.WeakReference;
 public class MraidVolumeChangeReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public static double f7090a = -1.0d;
+    public static double f4252a = -1.0d;
     private static final String b = "android.media.VOLUME_CHANGED_ACTION";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7091c = "android.media.EXTRA_VOLUME_STREAM_TYPE";
+    private static final String f4253c = "android.media.EXTRA_VOLUME_STREAM_TYPE";
     private Context d;
     private AudioManager e;
     private boolean f = false;
@@ -26,17 +26,17 @@ public class MraidVolumeChangeReceiver {
     static class VolumeChangeBroadcastReceiver extends BroadcastReceiver {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<MraidVolumeChangeReceiver> f7092a;
+        private WeakReference<MraidVolumeChangeReceiver> f4254a;
 
         public VolumeChangeBroadcastReceiver(MraidVolumeChangeReceiver mraidVolumeChangeReceiver) {
-            this.f7092a = new WeakReference<>(mraidVolumeChangeReceiver);
+            this.f4254a = new WeakReference<>(mraidVolumeChangeReceiver);
         }
 
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
             MraidVolumeChangeReceiver mraidVolumeChangeReceiver;
             VolumeChangeListener volumeChangeListener;
-            if (!"android.media.VOLUME_CHANGED_ACTION".equals(intent.getAction()) || intent.getIntExtra("android.media.EXTRA_VOLUME_STREAM_TYPE", -1) != 3 || (mraidVolumeChangeReceiver = this.f7092a.get()) == null || (volumeChangeListener = mraidVolumeChangeReceiver.getVolumeChangeListener()) == null) {
+            if (!"android.media.VOLUME_CHANGED_ACTION".equals(intent.getAction()) || intent.getIntExtra("android.media.EXTRA_VOLUME_STREAM_TYPE", -1) != 3 || (mraidVolumeChangeReceiver = this.f4254a.get()) == null || (volumeChangeListener = mraidVolumeChangeReceiver.getVolumeChangeListener()) == null) {
                 return;
             }
             double currentVolume = mraidVolumeChangeReceiver.getCurrentVolume();
@@ -65,7 +65,7 @@ public class MraidVolumeChangeReceiver {
             i = audioManager2.getStreamVolume(3);
         }
         double d = (i * 100.0d) / streamMaxVolume;
-        f7090a = d;
+        f4252a = d;
         return d;
     }
 

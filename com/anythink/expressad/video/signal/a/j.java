@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.expressad.foundation.d.r;
 import com.anythink.expressad.foundation.h.v;
 import com.anythink.expressad.video.signal.a.c;
@@ -297,7 +296,7 @@ public class j extends c {
             jSONObject2.put("instanceId", this.D);
             jSONObject2.put("rootViewInstanceId", this.E);
             jSONObject2.put("isRootTemplateWebView", this.F);
-            jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.SDK_INFO, com.anythink.expressad.out.b.f8067a + ",3.0.1");
+            jSONObject.put("sdk_info", com.anythink.expressad.out.b.f5227a + ",3.0.1");
             jSONObject2.put("playVideoMute", this.s);
             jSONObject.put("sdkSetting", jSONObject2);
             jSONObject.put("device", cVar.a());
@@ -378,7 +377,7 @@ public class j extends c {
     private static JSONObject w() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.SDK_INFO, com.anythink.expressad.out.b.f8067a + ",3.0.1");
+            jSONObject.put("sdk_info", com.anythink.expressad.out.b.f5227a + ",3.0.1");
             return jSONObject;
         } catch (JSONException e) {
             e.printStackTrace();

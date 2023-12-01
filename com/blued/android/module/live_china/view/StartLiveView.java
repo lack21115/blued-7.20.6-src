@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.view;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -54,11 +55,8 @@ import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.android.share.Constants;
 import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.igexin.push.core.b;
-import com.igexin.sdk.PushConsts;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.jeremyliao.liveeventbus.core.Observable;
-import com.soft.blued.constant.EventBusConstant;
 import java.io.File;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/StartLiveView.class */
@@ -86,9 +84,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
     private Dialog U;
     private TextView V;
     private View W;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f15250a;
+    private Context a;
     private View aa;
     private View ab;
     private View ac;
@@ -100,9 +96,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
     private TextWatcher ai;
     private String aj;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15251c;
+    private View c;
     private LinearLayout d;
     private RelativeLayout e;
     private TextView f;
@@ -151,11 +145,11 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                         final String str = singleData.confirm_url;
                         String str2 = singleData.confirm_text;
                         String str3 = singleData.cancel_text;
-                        CommonAlertDialog.a(StartLiveView.this.f15250a, (View) null, StartLiveView.this.f15250a.getResources().getString(R.string.hint), singleData.popup_title, str3, str2, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.StartLiveView.9.1.1
+                        CommonAlertDialog.a(StartLiveView.this.a, (View) null, StartLiveView.this.a.getResources().getString(R.string.hint), singleData.popup_title, str3, str2, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.StartLiveView.9.1.1
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Tracker.onClick(dialogInterface, i);
-                                LiveRoomInfo.a().a(StartLiveView.this.f15250a, str);
+                                LiveRoomInfo.a().a(StartLiveView.this.a, str);
                             }
                         }, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.StartLiveView.9.1.2
                             @Override // android.content.DialogInterface.OnClickListener
@@ -212,15 +206,13 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         this.N = 15;
         this.ai = new TextWatcher() { // from class: com.blued.android.module.live_china.view.StartLiveView.8
             private int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            private int f15264c;
+            private int c;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 int i2;
                 this.b = StartLiveView.this.k.getSelectionStart();
-                this.f15264c = StartLiveView.this.k.getSelectionEnd();
+                this.c = StartLiveView.this.k.getSelectionEnd();
                 StartLiveView.this.k.removeTextChangedListener(StartLiveView.this.ai);
                 String trim = StartLiveView.this.k.getText().toString().trim();
                 int i3 = 20;
@@ -240,9 +232,9 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                 }
                 Logger.a("drb", "mTextMaxLength - ", Integer.valueOf(i3));
                 while (editable.length() > i3) {
-                    editable.delete(this.b - 1, this.f15264c);
+                    editable.delete(this.b - 1, this.c);
                     this.b--;
-                    this.f15264c--;
+                    this.c--;
                 }
                 StartLiveView.this.k.setSelection(this.b);
                 StartLiveView.this.k.addTextChangedListener(StartLiveView.this.ai);
@@ -256,7 +248,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
             public void onTextChanged(CharSequence charSequence, int i2, int i3, int i4) {
             }
         };
-        this.f15250a = context;
+        this.a = context;
     }
 
     private void a(long j) {
@@ -279,8 +271,8 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         this.G.t = liveRoomData.lid;
         this.T = liveRoomData.description;
         LiveRoomManager.a().a(liveRoomData);
-        if (this.G.f13406cn != null) {
-            this.G.f13406cn.c();
+        if (this.G.f50cn != null) {
+            this.G.f50cn.c();
         }
         if (this.G.bv != null) {
             if (LiveRoomManager.a().R()) {
@@ -317,58 +309,59 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         });
     }
 
+    /* JADX WARN: Type inference failed for: r1v208, types: [com.blued.android.module.live_china.view.StartLiveView$1] */
     private void g() {
-        this.U = DialogUtils.a(this.f15250a);
-        LayoutInflater from = LayoutInflater.from(this.f15250a);
+        this.U = DialogUtils.a(this.a);
+        LayoutInflater from = LayoutInflater.from(this.a);
         this.b = from;
         View inflate = from.inflate(R.layout.live_start_view, this);
-        this.f15251c = inflate;
+        this.c = inflate;
         this.d = (LinearLayout) inflate.findViewById(R.id.lay_live_ori_switch);
-        this.e = (RelativeLayout) this.f15251c.findViewById(R.id.lay_portrait);
-        this.f = (TextView) this.f15251c.findViewById(R.id.portrait);
-        this.g = (RelativeLayout) this.f15251c.findViewById(R.id.lay_landscape);
-        this.h = (TextView) this.f15251c.findViewById(R.id.landscape);
-        this.i = (ImageView) this.f15251c.findViewById(R.id.live_start_switch_camera_btn);
-        this.j = (ImageView) this.f15251c.findViewById(R.id.live_start_close_btn);
-        this.k = (EditText) this.f15251c.findViewById(R.id.live_start_edit_view);
-        this.l = this.f15251c.findViewById(R.id.live_start_edit_layout);
-        this.m = this.f15251c.findViewById(R.id.keyboard_view);
-        this.n = (ViewGroup) this.f15251c.findViewById(R.id.bottom_layout);
-        this.o = (LinearLayout) this.f15251c.findViewById(R.id.blued_layout);
-        this.p = (ImageView) this.f15251c.findViewById(R.id.blued_btn);
-        this.q = (Button) this.f15251c.findViewById(R.id.call_friend_num);
-        this.r = (ImageView) this.f15251c.findViewById(R.id.weixin_btn);
-        this.s = (ImageView) this.f15251c.findViewById(R.id.friends_btn);
-        this.t = (ImageView) this.f15251c.findViewById(R.id.qq_btn);
-        this.u = (ImageView) this.f15251c.findViewById(R.id.weibo_btn);
-        this.v = (ImageView) this.f15251c.findViewById(R.id.live_start_beauty_btn);
-        this.w = (Button) this.f15251c.findViewById(R.id.start_live_btn);
-        this.x = (TextView) this.f15251c.findViewById(R.id.live_lover_details);
-        this.y = (LinearLayout) this.f15251c.findViewById(R.id.live_nearby_layout);
-        this.z = (ImageView) this.f15251c.findViewById(R.id.live_nearby_btn);
-        this.A = (TextView) this.f15251c.findViewById(R.id.tv_show_in_nearby);
-        this.B = this.f15251c.findViewById(R.id.live_create_layout);
-        View findViewById = this.f15251c.findViewById(R.id.live_start_error_layout_tips);
+        this.e = (RelativeLayout) this.c.findViewById(R.id.lay_portrait);
+        this.f = (TextView) this.c.findViewById(R.id.portrait);
+        this.g = (RelativeLayout) this.c.findViewById(R.id.lay_landscape);
+        this.h = (TextView) this.c.findViewById(R.id.landscape);
+        this.i = (ImageView) this.c.findViewById(R.id.live_start_switch_camera_btn);
+        this.j = (ImageView) this.c.findViewById(R.id.live_start_close_btn);
+        this.k = (EditText) this.c.findViewById(R.id.live_start_edit_view);
+        this.l = this.c.findViewById(R.id.live_start_edit_layout);
+        this.m = this.c.findViewById(R.id.keyboard_view);
+        this.n = (ViewGroup) this.c.findViewById(R.id.bottom_layout);
+        this.o = (LinearLayout) this.c.findViewById(R.id.blued_layout);
+        this.p = (ImageView) this.c.findViewById(R.id.blued_btn);
+        this.q = (Button) this.c.findViewById(R.id.call_friend_num);
+        this.r = (ImageView) this.c.findViewById(R.id.weixin_btn);
+        this.s = (ImageView) this.c.findViewById(R.id.friends_btn);
+        this.t = (ImageView) this.c.findViewById(R.id.qq_btn);
+        this.u = (ImageView) this.c.findViewById(R.id.weibo_btn);
+        this.v = (ImageView) this.c.findViewById(R.id.live_start_beauty_btn);
+        this.w = (Button) this.c.findViewById(R.id.start_live_btn);
+        this.x = (TextView) this.c.findViewById(R.id.live_lover_details);
+        this.y = (LinearLayout) this.c.findViewById(R.id.live_nearby_layout);
+        this.z = (ImageView) this.c.findViewById(R.id.live_nearby_btn);
+        this.A = (TextView) this.c.findViewById(R.id.tv_show_in_nearby);
+        this.B = this.c.findViewById(R.id.live_create_layout);
+        View findViewById = this.c.findViewById(R.id.live_start_error_layout_tips);
         this.C = findViewById;
         this.V = (TextView) findViewById.findViewById(R.id.error_tips_title);
         this.D = (Button) this.C.findViewById(R.id.error_tips_btn);
         this.E = (TextView) this.C.findViewById(R.id.error_tips_message);
-        this.F = this.f15251c.findViewById(R.id.live_start_beauty_layout);
-        this.W = this.f15251c.findViewById(R.id.ll_live_show);
-        this.aa = this.f15251c.findViewById(R.id.ll_live_lover);
-        this.ab = this.f15251c.findViewById(R.id.tv_line_show);
-        this.ac = this.f15251c.findViewById(R.id.tv_line_lover);
-        this.ae = (TextView) this.f15251c.findViewById(R.id.tv_live_show);
-        this.af = (TextView) this.f15251c.findViewById(R.id.tv_live_lover);
-        this.ad = this.f15251c.findViewById(R.id.rl_lover_tip);
-        this.f15251c.setBackgroundResource(R.drawable.live_start_game_bg);
+        this.F = this.c.findViewById(R.id.live_start_beauty_layout);
+        this.W = this.c.findViewById(R.id.ll_live_show);
+        this.aa = this.c.findViewById(R.id.ll_live_lover);
+        this.ab = this.c.findViewById(R.id.tv_line_show);
+        this.ac = this.c.findViewById(R.id.tv_line_lover);
+        this.ae = (TextView) this.c.findViewById(R.id.tv_live_show);
+        this.af = (TextView) this.c.findViewById(R.id.tv_live_lover);
+        this.ad = this.c.findViewById(R.id.rl_lover_tip);
+        this.c.setBackgroundResource(R.drawable.live_start_game_bg);
         if (LiveRoomInfo.a().i()) {
             this.A.setText(R.string.live_show_up_with_hidden);
         } else {
             this.A.setText(R.string.live_show_up);
         }
         TextView textView = this.x;
-        textView.setText(Html.fromHtml("<u>" + this.f15250a.getString(R.string.live_lover_title) + "</u>"));
+        textView.setText(Html.fromHtml("<u>" + this.a.getString(R.string.live_lover_title) + "</u>"));
         boolean t = LiveRoomPreferences.t();
         this.R = t;
         if (t) {
@@ -419,7 +412,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         loadOptions.d = R.drawable.user_bg_round;
         this.H.b = R.drawable.user_bg_round;
         if (LiveRoomManager.a().J()) {
-            this.f15251c.setBackgroundResource(R.drawable.live_start_game_bg);
+            this.c.setBackgroundResource(R.drawable.live_start_game_bg);
             this.l.setVisibility(4);
             this.k.setHint("");
             this.k.setEnabled(false);
@@ -448,12 +441,12 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
             LiveRoomInfo.a().a(new PermissionCallbacks() { // from class: com.blued.android.module.live_china.view.StartLiveView.2
                 @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void U_() {
-                    StartLiveView.this.f15251c.setBackgroundResource(R.color.transparent);
+                    StartLiveView.this.c.setBackgroundResource(R.color.transparent);
                 }
 
                 @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void a(String[] strArr) {
-                    StartLiveView.this.f15251c.setBackgroundResource(R.drawable.live_start_game_bg);
+                    StartLiveView.this.c.setBackgroundResource(R.drawable.live_start_game_bg);
                 }
             });
         }
@@ -482,7 +475,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         ImageFileLoader.a(this.G.getFragmentActive()).b(LiveRoomInfo.a().d()).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.view.StartLiveView.3
             @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public void onUIFinish(File file, Exception exc) {
-                LiveRoomInfo.a().a(StartLiveView.this.f15250a, LiveRoomManager.a().p(), StartLiveView.this.I, LiveRoomManager.a().J() ? !TextUtils.isEmpty(StartLiveView.this.T) ? StartLiveView.this.T : StartLiveView.this.f15250a.getString(R.string.live_game_share) : "", StartLiveView.this.k.getText().toString(), StartLiveView.this.aj, (file == null || !file.exists()) ? null : BitmapFactory.decodeFile(file.getPath()));
+                LiveRoomInfo.a().a(StartLiveView.this.a, LiveRoomManager.a().p(), StartLiveView.this.I, LiveRoomManager.a().J() ? !TextUtils.isEmpty(StartLiveView.this.T) ? StartLiveView.this.T : StartLiveView.this.a.getString(R.string.live_game_share) : "", StartLiveView.this.k.getText().toString(), StartLiveView.this.aj, (file == null || !file.exists()) ? null : BitmapFactory.decodeFile(file.getPath()));
             }
         }).a();
     }
@@ -537,7 +530,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         if (this.G.cm != null) {
             this.G.cm.setData(LiveRoomManager.a().p().custom_rank);
         }
-        Observable<Object> observable = LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_LUCK_TURNING_BTN);
+        Observable observable = LiveEventBus.get("live_luck_turning_btn");
         if (LiveRoomManager.a().p().entrance_status == 1) {
             z = true;
         }
@@ -588,7 +581,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                     StartLiveView.this.m.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.view.StartLiveView.7.1
                         @Override // android.view.View.OnTouchListener
                         public boolean onTouch(View view, MotionEvent motionEvent) {
-                            KeyboardUtils.a(StartLiveView.this.G.getActivity());
+                            KeyboardUtils.a((Activity) StartLiveView.this.G.getActivity());
                             return true;
                         }
                     });
@@ -659,7 +652,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         }
         InstantLogBody instantLogBody = new InstantLogBody();
         instantLogBody.service = "live_prepare";
-        instantLogBody.event = PushConsts.SETTAG_ERROR_COUNT;
+        instantLogBody.event = 20001;
         InstantLog.a(instantLogBody);
     }
 
@@ -709,9 +702,9 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
         } else if (view.getId() == R.id.blued_btn) {
             EventTrackLive.c(LiveProtos.Event.LIVE_START_SHARE_FEED, LiveRoomInfo.a().f());
             InstantLog.a("live_start_share_feed");
-            LiveRoomInfo.a().a(this.G, 10111, 8, this.f15250a.getResources().getString(R.string.liveVideo_selectFriends_label_description), this.P);
+            LiveRoomInfo.a().a(this.G, 10111, 8, this.a.getResources().getString(R.string.liveVideo_selectFriends_label_description), this.P);
         } else if (view.getId() == R.id.blued_layout) {
-            LiveRoomInfo.a().a(this.G, 10111, 8, this.f15250a.getResources().getString(R.string.liveVideo_selectFriends_label_description), this.P);
+            LiveRoomInfo.a().a(this.G, 10111, 8, this.a.getResources().getString(R.string.liveVideo_selectFriends_label_description), this.P);
         } else if (view.getId() == R.id.error_tips_btn) {
             this.C.setVisibility(8);
         } else if (view.getId() == R.id.start_live_btn) {
@@ -722,7 +715,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                 this.u.setImageResource(R.drawable.share_weibo_default);
                 this.J = false;
                 this.I = "";
-                LiveRoomPreferences.d(b.l);
+                LiveRoomPreferences.d("null");
                 return;
             }
             this.u.setImageResource(R.drawable.share_weibo_selected);
@@ -741,7 +734,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                 this.r.setImageResource(R.drawable.share_weixin_default);
                 this.K = false;
                 this.I = "";
-                LiveRoomPreferences.d(b.l);
+                LiveRoomPreferences.d("null");
                 return;
             }
             this.u.setImageResource(R.drawable.share_weibo_default);
@@ -760,7 +753,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                 this.s.setImageResource(R.drawable.share_friends_default);
                 this.L = false;
                 this.I = "";
-                LiveRoomPreferences.d(b.l);
+                LiveRoomPreferences.d("null");
                 return;
             }
             this.u.setImageResource(R.drawable.share_weibo_default);
@@ -779,7 +772,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                 this.t.setImageResource(R.drawable.share_qq_default);
                 this.M = false;
                 this.I = "";
-                LiveRoomPreferences.d(b.l);
+                LiveRoomPreferences.d("null");
                 return;
             }
             this.u.setImageResource(R.drawable.share_weibo_default);
@@ -805,7 +798,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
             l();
         } else if (view.getId() == R.id.live_nearby_layout) {
             if (this.R) {
-                CommonAlertDialog.a(this.G.getActivity(), "", this.f15250a.getString(R.string.live_show_up_details), this.f15250a.getString(R.string.biao_v4_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.StartLiveView.10
+                CommonAlertDialog.a((Context) this.G.getActivity(), "", this.a.getString(R.string.live_show_up_details), this.a.getString(R.string.biao_v4_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.StartLiveView.10
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Tracker.onClick(dialogInterface, i);
@@ -813,7 +806,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
                         LiveRoomPreferences.a(false);
                         StartLiveView.this.R = false;
                     }
-                }, this.f15250a.getString(R.string.cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                }, this.a.getString(R.string.cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                 return;
             }
             this.z.setVisibility(0);
@@ -821,7 +814,7 @@ public class StartLiveView extends FrameLayout implements View.OnClickListener {
             this.R = true;
         } else if (view.getId() == R.id.live_lover_details) {
             EventTrackLive.a(LiveProtos.Event.ANCHOR_SETTING_BLIND_DATING_CLICK);
-            LiveRoomInfo.a().a(this.G.getActivity(), LiveRoomInfo.a().D());
+            LiveRoomInfo.a().a((Context) this.G.getActivity(), LiveRoomInfo.a().D());
         } else if (view.getId() == R.id.live_start_switch_camera_btn) {
             this.G.switchCamera(view);
         } else if (view.getId() == R.id.live_start_beauty_btn) {

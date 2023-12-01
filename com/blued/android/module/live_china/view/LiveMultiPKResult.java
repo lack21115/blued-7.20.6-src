@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.AlphaAnimation;
 import android.widget.FrameLayout;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.live_china.R;
@@ -28,13 +27,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMultiPKResult.class */
 public final class LiveMultiPKResult extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14663a;
+    private Context a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14664c;
+    private int c;
     private int d;
     private boolean e;
     private int f;
@@ -87,7 +82,7 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
                 LiveMultiPKResult.b(LiveMultiPKResult.this);
             }
         };
-        this.f14663a = context;
+        this.a = context;
         b();
     }
 
@@ -106,14 +101,14 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
         this$0.startAnimation(alphaAnimation);
         this$0.setVisibility(0);
         this$0.getViewBinding().b.setVisibility(8);
-        this$0.getViewBinding().f12301c.setVisibility(8);
-        this$0.getViewBinding().f12300a.setVisibility(8);
+        this$0.getViewBinding().c.setVisibility(8);
+        this$0.getViewBinding().a.setVisibility(8);
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = this$0.getViewBinding().b.getViewTreeObserver();
-        ((ViewTreeObserver) objectRef.f42545a).addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.live_china.view.LiveMultiPKResult$runnable$1$1
+        objectRef.a = this$0.getViewBinding().b.getViewTreeObserver();
+        ((ViewTreeObserver) objectRef.a).addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.live_china.view.LiveMultiPKResult$runnable$1$1
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
-                objectRef.f42545a.removeGlobalOnLayoutListener(this);
+                objectRef.a.removeGlobalOnLayoutListener(this);
                 int width = this$0.getWidth();
                 int height = this$0.getHeight();
                 float iconWidth = (width - this$0.getIconWidth()) / 2;
@@ -122,13 +117,13 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
                 this$0.getViewBinding().b.setY(iconHeight);
                 if (this$0.getResult() == 3) {
                     this$0.getViewBinding().b.setImageResource(R.drawable.live_multi_pk_draw);
-                    this$0.getViewBinding().f12300a.setVisibility(8);
+                    this$0.getViewBinding().a.setVisibility(8);
                 } else if (this$0.getResult() == 1) {
                     this$0.getViewBinding().b.setImageResource(R.drawable.live_multi_pk_fail);
-                    this$0.getViewBinding().f12300a.setVisibility(8);
+                    this$0.getViewBinding().a.setVisibility(8);
                 } else {
                     this$0.getViewBinding().b.setImageResource(R.drawable.live_multi_pk_win);
-                    this$0.getViewBinding().f12300a.setVisibility(0);
+                    this$0.getViewBinding().a.setVisibility(0);
                 }
                 this$0.getViewBinding().b.setVisibility(0);
                 this$0.c();
@@ -171,26 +166,26 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
     }
 
     private final void d() {
-        int i = this.f14664c;
+        int i = this.c;
         if (i == 3 || i == 1) {
-            getViewBinding().f12300a.setVisibility(8);
-            getViewBinding().f12301c.setVisibility(8);
-            getViewBinding().f12300a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKResult$svSbviyoqUVoz-GYkx6R_WjbIZI
+            getViewBinding().a.setVisibility(8);
+            getViewBinding().c.setVisibility(8);
+            getViewBinding().a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKResult$svSbviyoqUVoz-GYkx6R_WjbIZI
                 @Override // java.lang.Runnable
                 public final void run() {
                     LiveMultiPKResult.d(LiveMultiPKResult.this);
                 }
-            }, b.aC);
+            }, 1800L);
             return;
         }
-        getViewBinding().f12301c.setVisibility(0);
-        ImageLoader.c(null, "live_multi_pk_win_star.png").e(((int) System.currentTimeMillis()) / 1000).g(-1).a(getViewBinding().f12301c);
-        getViewBinding().f12300a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKResult$pCLLQgULv7VjfljSkPOuUpBl1qU
+        getViewBinding().c.setVisibility(0);
+        ImageLoader.c(null, "live_multi_pk_win_star.png").e(((int) System.currentTimeMillis()) / 1000).g(-1).a(getViewBinding().c);
+        getViewBinding().a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKResult$pCLLQgULv7VjfljSkPOuUpBl1qU
             @Override // java.lang.Runnable
             public final void run() {
                 LiveMultiPKResult.e(LiveMultiPKResult.this);
             }
-        }, b.aC);
+        }, 1800L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -206,15 +201,15 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
     private final void e() {
         getWidth();
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.f42543a = this.d == 4 ? getHeight() / 2 : getHeight();
+        intRef.a = this.d == 4 ? getHeight() / 2 : getHeight();
         final Ref.FloatRef floatRef = new Ref.FloatRef();
-        floatRef.f42542a = getViewBinding().b.getX();
+        floatRef.a = getViewBinding().b.getX();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
-        floatRef2.f42542a = getViewBinding().b.getY();
+        floatRef2.a = getViewBinding().b.getY();
         final Ref.IntRef intRef2 = new Ref.IntRef();
-        intRef2.f42543a = DensityUtils.a(getContext(), 3.0f);
+        intRef2.a = DensityUtils.a(getContext(), 3.0f);
         final Ref.IntRef intRef3 = new Ref.IntRef();
-        intRef3.f42543a = DensityUtils.a(getContext(), 27.5f);
+        intRef3.a = DensityUtils.a(getContext(), 27.5f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.view.LiveMultiPKResult$translateAnim$1
             @Override // android.animation.Animator.AnimatorListener
@@ -250,8 +245,8 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
                 }
                 float floatValue = ((Float) animatedValue).floatValue();
                 float f = 2;
-                LiveMultiPKResult.this.getViewBinding().b.setX(floatRef.f42542a + (((intRef2.f42543a - floatRef.f42542a) - ((LiveMultiPKResult.this.getScale() * LiveMultiPKResult.this.getIconWidth()) / f)) * floatValue));
-                LiveMultiPKResult.this.getViewBinding().b.setY(floatRef2.f42542a + (((((intRef.f42543a - intRef3.f42543a) - LiveMultiPKResult.this.getIconHeight()) + ((LiveMultiPKResult.this.getScale() * LiveMultiPKResult.this.getIconHeight()) / f)) - floatRef2.f42542a) * floatValue));
+                LiveMultiPKResult.this.getViewBinding().b.setX(floatRef.a + (((intRef2.a - floatRef.a) - ((LiveMultiPKResult.this.getScale() * LiveMultiPKResult.this.getIconWidth()) / f)) * floatValue));
+                LiveMultiPKResult.this.getViewBinding().b.setY(floatRef2.a + (((((intRef.a - intRef3.a) - LiveMultiPKResult.this.getIconHeight()) + ((LiveMultiPKResult.this.getScale() * LiveMultiPKResult.this.getIconHeight()) / f)) - floatRef2.a) * floatValue));
                 float f2 = 1;
                 LiveMultiPKResult.this.getViewBinding().b.setScaleX(f2 - (LiveMultiPKResult.this.getScale() * floatValue));
                 LiveMultiPKResult.this.getViewBinding().b.setScaleY(f2 - (floatValue * LiveMultiPKResult.this.getScale()));
@@ -263,14 +258,14 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
     /* JADX INFO: Access modifiers changed from: private */
     public static final void e(LiveMultiPKResult this$0) {
         Intrinsics.e(this$0, "this$0");
-        this$0.getViewBinding().f12300a.setVisibility(0);
+        this$0.getViewBinding().a.setVisibility(0);
         AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
         alphaAnimation.setDuration(80L);
         alphaAnimation.setFillAfter(false);
-        this$0.getViewBinding().f12300a.clearAnimation();
-        this$0.getViewBinding().f12300a.startAnimation(alphaAnimation);
-        this$0.getViewBinding().f12300a.setVisibility(8);
-        this$0.getViewBinding().f12301c.setVisibility(8);
+        this$0.getViewBinding().a.clearAnimation();
+        this$0.getViewBinding().a.startAnimation(alphaAnimation);
+        this$0.getViewBinding().a.setVisibility(8);
+        this$0.getViewBinding().c.setVisibility(8);
         if (this$0.e) {
             this$0.f();
         } else {
@@ -334,7 +329,7 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
             return;
         }
         this.b = true;
-        this.f14664c = i;
+        this.c = i;
         this.e = z;
         this.d = i2;
         post(this.j);
@@ -361,7 +356,7 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
     }
 
     public final Context getMContext() {
-        return this.f14663a;
+        return this.a;
     }
 
     public final int getPlaySize() {
@@ -369,7 +364,7 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
     }
 
     public final int getResult() {
-        return this.f14664c;
+        return this.c;
     }
 
     public final Runnable getRunnable() {
@@ -422,7 +417,7 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
     }
 
     public final void setMContext(Context context) {
-        this.f14663a = context;
+        this.a = context;
     }
 
     public final void setPlaySize(int i) {
@@ -430,7 +425,7 @@ public final class LiveMultiPKResult extends FrameLayout implements View.OnClick
     }
 
     public final void setResult(int i) {
-        this.f14664c = i;
+        this.c = i;
     }
 
     public final void setRunnable(Runnable runnable) {

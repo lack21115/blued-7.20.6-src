@@ -17,10 +17,10 @@ public class CollectionsKt__CollectionsKt extends CollectionsKt__CollectionsJVMK
         int i3 = i2 - 1;
         while (i <= i3) {
             int i4 = (i + i3) >>> 1;
-            int a2 = ComparisonsKt.a(list.get(i4), t);
-            if (a2 < 0) {
+            int a = ComparisonsKt.a(list.get(i4), t);
+            if (a < 0) {
                 i = i4 + 1;
-            } else if (a2 <= 0) {
+            } else if (a <= 0) {
                 return i4;
             } else {
                 i3 = i4 - 1;
@@ -66,7 +66,7 @@ public class CollectionsKt__CollectionsKt extends CollectionsKt__CollectionsJVMK
     }
 
     public static final <T> List<T> b() {
-        return EmptyList.f42379a;
+        return EmptyList.a;
     }
 
     public static final <T> List<T> b(T... elements) {

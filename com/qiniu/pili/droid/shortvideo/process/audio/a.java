@@ -20,13 +20,13 @@ import java.util.List;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f27794a = h.a().c();
+    private static final boolean f14106a = h.a().c();
     private b D;
     private long E;
     private LinkedList<PLComposeItem> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27795c;
+    private int f14107c;
     private int d;
     private long e;
     private int f;
@@ -34,7 +34,7 @@ public class a {
     private com.qiniu.pili.droid.shortvideo.d.b h;
     private com.qiniu.pili.droid.shortvideo.d.b i;
     private long j;
-    private a.InterfaceC0745a k;
+    private a.InterfaceC0575a k;
     private String l;
     private AudioTransformer m;
     private ByteBuffer n;
@@ -54,19 +54,19 @@ public class a {
     private float B = 1.0f;
     private float C = 1.0f;
     private boolean F = false;
-    private a.InterfaceC0745a G = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.process.audio.a.1
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a G = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.process.audio.a.1
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             if (a.this.k != null) {
                 a.this.k.a(mediaFormat);
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             e eVar = e.t;
             eVar.b("MultiAudioComposer", "muxer write audio: " + bufferInfo.presentationTimeUs);
@@ -75,7 +75,7 @@ public class a {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             if (z) {
                 a aVar = a.this;
@@ -86,7 +86,7 @@ public class a {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             e.t.c("MultiAudioComposer", "audio encode stopped");
             if (a.this.k != null) {
@@ -98,10 +98,10 @@ public class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.qiniu.pili.droid.shortvideo.process.audio.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/process/audio/a$a.class */
-    public class C0751a implements b.c {
+    public class C0581a implements b.c {
         private long b;
 
-        private C0751a() {
+        private C0581a() {
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.d.b.c
@@ -299,11 +299,11 @@ public class a {
             e eVar = e.t;
             eVar.c("MultiAudioComposer", "got src audio decoder format: " + mediaFormat);
             if (!a.this.e()) {
-                a.this.b(mediaFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE), mediaFormat.getInteger(MediaFormat.KEY_CHANNEL_COUNT), a.this.f27795c, a.this.d);
+                a.this.b(mediaFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE), mediaFormat.getInteger(MediaFormat.KEY_CHANNEL_COUNT), a.this.f14107c, a.this.d);
                 return;
             }
             a aVar = a.this;
-            aVar.a(aVar.f27795c, a.this.d, mediaFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE), mediaFormat.getInteger(MediaFormat.KEY_CHANNEL_COUNT));
+            aVar.a(aVar.f14107c, a.this.d, mediaFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE), mediaFormat.getInteger(MediaFormat.KEY_CHANNEL_COUNT));
         }
     }
 
@@ -319,7 +319,7 @@ public class a {
                 f fVar = new f(this.b.get(i2).getFilePath(), false, true);
                 if (fVar.f() != null) {
                     this.p = fVar.f();
-                    this.f27795c = fVar.o();
+                    this.f14107c = fVar.o();
                     this.d = fVar.n();
                     fVar.a();
                     e eVar = e.t;
@@ -405,7 +405,7 @@ public class a {
             this.D = bVar;
             this.h.a(bVar);
         } else {
-            this.h.a(new C0751a());
+            this.h.a(new C0581a());
         }
         this.h.a(new d());
         this.h.a();
@@ -436,7 +436,7 @@ public class a {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d(PLComposeItem pLComposeItem) {
-        int i = this.f27795c;
+        int i = this.f14107c;
         int i2 = this.d;
         a(i, i2, i, i2);
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(this.f);
@@ -477,7 +477,7 @@ public class a {
                 e eVar = e.t;
                 eVar.c("MultiAudioComposer", "got music decoder format: " + mediaFormat);
                 a.this.p = mediaFormat;
-                a.this.f27795c = mediaFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE);
+                a.this.f14107c = mediaFormat.getInteger(MediaFormat.KEY_SAMPLE_RATE);
                 a.this.d = mediaFormat.getInteger(MediaFormat.KEY_CHANNEL_COUNT);
                 synchronized (a.this.A) {
                     a.this.z = true;
@@ -521,8 +521,8 @@ public class a {
         this.C = f2;
     }
 
-    public void a(a.InterfaceC0745a interfaceC0745a) {
-        this.k = interfaceC0745a;
+    public void a(a.InterfaceC0575a interfaceC0575a) {
+        this.k = interfaceC0575a;
     }
 
     public void a(String str) {
@@ -546,15 +546,15 @@ public class a {
     public boolean a() {
         synchronized (this) {
             this.r = false;
-            if (this.p != null && f27794a) {
+            if (this.p != null && f14106a) {
                 if (e() && !g()) {
                     return false;
                 }
                 this.f = 2048 * this.d;
-                this.e = (long) ((1024 * 1000000.0d) / this.f27795c);
+                this.e = (long) ((1024 * 1000000.0d) / this.f14107c);
                 PLAudioEncodeSetting pLAudioEncodeSetting = new PLAudioEncodeSetting();
                 pLAudioEncodeSetting.setChannels(this.d);
-                pLAudioEncodeSetting.setSampleRate(this.f27795c);
+                pLAudioEncodeSetting.setSampleRate(this.f14107c);
                 com.qiniu.pili.droid.shortvideo.encode.c cVar = new com.qiniu.pili.droid.shortvideo.encode.c(pLAudioEncodeSetting);
                 this.g = cVar;
                 cVar.a(this.G);
@@ -586,7 +586,7 @@ public class a {
             if (this.s != null) {
                 this.s.a();
             }
-            this.f27795c = 0;
+            this.f14107c = 0;
             this.d = 0;
             this.e = 0L;
             this.f = 0;

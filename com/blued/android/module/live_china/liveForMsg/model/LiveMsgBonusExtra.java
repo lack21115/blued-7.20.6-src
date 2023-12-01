@@ -1,6 +1,6 @@
 package com.blued.android.module.live_china.liveForMsg.model;
 
-import android.media.MediaFormat;
+import com.android.internal.util.cm.SpamFilter;
 import com.blued.android.chat.data.ProfileData;
 import com.blued.android.chat.utils.MsgPackHelper;
 import java.util.ArrayList;
@@ -32,10 +32,10 @@ public class LiveMsgBonusExtra {
             return;
         }
         this.id = MsgPackHelper.getLongValue(map, "id");
-        this.count = MsgPackHelper.getIntValue(map, "count");
+        this.count = MsgPackHelper.getIntValue(map, SpamFilter.SpamContract.NotificationTable.COUNT);
         this.image = MsgPackHelper.getStringValue(map, "image");
         ProfileData profileData = new ProfileData();
         this.profile = profileData;
-        profileData.parseMsgPackData(MsgPackHelper.getMapValue(map, MediaFormat.KEY_PROFILE));
+        profileData.parseMsgPackData(MsgPackHelper.getMapValue(map, "profile"));
     }
 }

@@ -11,8 +11,7 @@ public abstract class UndoOperation<DATA> implements Parcelable {
         this.mOwner = undoOwner;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public UndoOperation(Parcel parcel, ClassLoader classLoader) {
+    protected UndoOperation(Parcel parcel, ClassLoader classLoader) {
     }
 
     public boolean allowMerge() {

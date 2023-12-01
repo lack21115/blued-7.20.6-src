@@ -47,7 +47,7 @@ public class i1 {
         Bundle b;
         JSONArray jSONArray = new JSONArray();
         try {
-            b = b(t2.f42201a);
+            b = b(t2.f28510a);
         } catch (PackageManager.NameNotFoundException e) {
             z1.a(e);
         }

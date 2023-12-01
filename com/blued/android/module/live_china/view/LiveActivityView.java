@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.view;
 
 import android.content.Context;
-import android.media.AudioSystem;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
@@ -17,7 +16,7 @@ import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import com.anythink.expressad.video.module.a.a.m;
+import com.alipay.sdk.sys.a;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -54,13 +53,9 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveActivityView.class */
 public class LiveActivityView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public LiveBaseFragment f14339a;
+    public LiveBaseFragment a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f14340c;
+    private Context c;
     private LayoutInflater d;
     private View e;
     private LiveActiivtyRecycleView f;
@@ -84,15 +79,12 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
             LogUtils.c("bridgeManager callback: " + str);
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             if (i < 0 || i >= LiveActivityView.this.k.size() || i >= LiveActivityView.this.l.size()) {
                 return;
@@ -116,22 +108,18 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveActivityView$PicAdapter.class */
     public class PicAdapter extends PagerAdapter implements View.OnClickListener {
         private LayoutInflater b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ViewPager f14346c;
+        private ViewPager c;
         private Context d;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.blued.android.module.live_china.view.LiveActivityView$PicAdapter$2  reason: invalid class name */
         /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveActivityView$PicAdapter$2.class */
         public class AnonymousClass2 extends LiveWebCallBack {
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ BridgeManager f14348a;
+            final /* synthetic */ BridgeManager a;
             final /* synthetic */ LiveActivityItemModel b;
 
             AnonymousClass2(BridgeManager bridgeManager, LiveActivityItemModel liveActivityItemModel) {
-                this.f14348a = bridgeManager;
+                this.a = bridgeManager;
                 this.b = liveActivityItemModel;
             }
 
@@ -154,7 +142,7 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
 
             @Override // com.blued.android.module.live_china.web.LiveWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(BluedWebView bluedWebView, String str, boolean z) {
-                BridgeManager bridgeManager = this.f14348a;
+                BridgeManager bridgeManager = this.a;
                 if (bridgeManager != null) {
                     bridgeManager.onLoadPageOverrideLoad(bluedWebView, str, z);
                 }
@@ -168,11 +156,11 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
             @Override // com.blued.android.module.live_china.web.LiveWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void b(BluedWebView bluedWebView, String str, boolean z) {
                 bluedWebView.c().clearHistory();
-                BridgeManager bridgeManager = this.f14348a;
+                BridgeManager bridgeManager = this.a;
                 if (bridgeManager != null) {
                     bridgeManager.onLoadPageFinished(bluedWebView, str);
                     LogUtils.c("onLoadPageFinished set JsData: " + this.b.jsData);
-                    this.f14348a.callHandler(LoaderConstants.NATIVE_TO_JS, this.b.jsData, new CallBackFunction() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveActivityView$PicAdapter$2$6GQgZvY50j6sZXjX_s34s-RtEqY
+                    this.a.callHandler(LoaderConstants.NATIVE_TO_JS, this.b.jsData, new CallBackFunction() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveActivityView$PicAdapter$2$6GQgZvY50j6sZXjX_s34s-RtEqY
                         @Override // com.blued.android.module.common.web.jsbridge.CallBackFunction
                         public final void onCallBack(String str2) {
                             LiveActivityView.PicAdapter.AnonymousClass2.d(str2);
@@ -184,7 +172,7 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
 
         public PicAdapter(Context context, ViewPager viewPager) {
             this.d = context;
-            this.f14346c = viewPager;
+            this.c = viewPager;
             this.b = LayoutInflater.from(context);
         }
 
@@ -193,31 +181,31 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
             WebView webView = (WebView) inflate.findViewById(R.id.live_activity_web_item_wv);
             View findViewById = inflate.findViewById(R.id.iv_click);
             BridgeManager bridgeManager = new BridgeManager();
-            BluedWebView bluedWebView = new BluedWebView(LiveActivityView.this.f14339a, webView, null, new AnonymousClass2(bridgeManager, liveActivityItemModel));
+            BluedWebView bluedWebView = new BluedWebView(LiveActivityView.this.a, webView, null, new AnonymousClass2(bridgeManager, liveActivityItemModel));
             webView.setBackgroundColor(0);
             webView.getBackground().setAlpha(0);
             webView.clearCache(true);
             bridgeManager.registerHandler(LoaderConstants.LIVE_ACTIVITY_ACTION, new BridgeHandler() { // from class: com.blued.android.module.live_china.view.LiveActivityView.PicAdapter.3
                 @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
                 public void handler(String str, CallBackFunction callBackFunction) {
-                    LiveEventBusUtil.a((LiveRoomFunctionItemModel) AppInfo.f().fromJson(str, (Class<Object>) LiveRoomFunctionItemModel.class));
+                    LiveEventBusUtil.a((LiveRoomFunctionItemModel) AppInfo.f().fromJson(str, LiveRoomFunctionItemModel.class));
                 }
             });
             bridgeManager.setBluedWebView(bluedWebView);
-            String a2 = LiveActivityView.this.a(liveActivityItemModel.display_url);
-            bluedWebView.a(a2);
+            String a = LiveActivityView.this.a(liveActivityItemModel.display_url);
+            bluedWebView.a(a);
             LogUtils.c("createView origin url: " + liveActivityItemModel.display_url);
-            LogUtils.c("createView new url: " + a2);
+            LogUtils.c("createView new url: " + a);
             inflate.setTag(R.id.tag_net_url, liveActivityItemModel.display_url);
             inflate.setTag(LiveActivityView.this.getBridgeManagerKey(), bridgeManager);
             boolean z = true;
             if (!TextUtils.isEmpty(liveActivityItemModel.display_url)) {
-                Map<String, String> a3 = BluedUrlUtils.a(liveActivityItemModel.display_url);
+                Map<String, String> a2 = BluedUrlUtils.a(liveActivityItemModel.display_url);
                 z = true;
-                if (a3 != null) {
+                if (a2 != null) {
                     z = true;
-                    if (a3.size() > 0) {
-                        String str = a3.get(AudioSystem.DEVICE_OUT_PROXY_NAME);
+                    if (a2.size() > 0) {
+                        String str = a2.get("proxy");
                         z = true;
                         if (str != null) {
                             z = true;
@@ -327,17 +315,14 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
             }
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return LiveActivityView.this.l.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             Log.i("==ppp", "instantiateItem:" + i);
             View view = (View) LiveActivityView.this.l.get(i);
@@ -350,7 +335,6 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -371,7 +355,7 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
         this.k = new ArrayList();
         this.l = new ArrayList();
         this.m = new ArrayList();
-        this.f14340c = context;
+        this.c = context;
         c();
     }
 
@@ -398,7 +382,7 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
                 String str6 = str3;
                 sb2.append(str3);
                 String str7 = str3;
-                sb2.append("&");
+                sb2.append(a.b);
                 String str8 = str3;
                 sb = sb2.toString();
             } else {
@@ -460,7 +444,7 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
     }
 
     private void c() {
-        LayoutInflater from = LayoutInflater.from(this.f14340c);
+        LayoutInflater from = LayoutInflater.from(this.c);
         this.d = from;
         View inflate = from.inflate(R.layout.live_activity_layout, (ViewGroup) this, true);
         this.b = inflate;
@@ -468,10 +452,8 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
         LiveActiivtyRecycleView liveActiivtyRecycleView = (LiveActiivtyRecycleView) this.b.findViewById(R.id.box_rv);
         this.f = liveActiivtyRecycleView;
         liveActiivtyRecycleView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false) { // from class: com.blued.android.module.live_china.view.LiveActivityView.1
-            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
                 LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: com.blued.android.module.live_china.view.LiveActivityView.1.1
-                    @Override // androidx.recyclerview.widget.LinearSmoothScroller
                     public float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {
                         return 600.0f / displayMetrics.densityDpi;
                     }
@@ -484,8 +466,8 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
         PicAdapter picAdapter = new PicAdapter(getContext(), this.g);
         this.h = picAdapter;
         this.g.setAdapter(picAdapter);
-        this.g.setInterval(m.ag);
-        LiveActivityDotAdapter liveActivityDotAdapter = new LiveActivityDotAdapter(getContext(), new ArrayList(), this.f);
+        this.g.setInterval(3000L);
+        RecyclerView.Adapter liveActivityDotAdapter = new LiveActivityDotAdapter(getContext(), new ArrayList(), this.f);
         this.i = liveActivityDotAdapter;
         this.f.setAdapter(liveActivityDotAdapter);
         setVisibility(8);
@@ -496,17 +478,17 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
     public void c(LiveActivityItemModel liveActivityItemModel) {
         LogUtils.c("onClickModel: " + liveActivityItemModel.url);
         EventTrackLive.b(LiveProtos.Event.LIVE_ACTIVITY_RESOURCE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), liveActivityItemModel.url, liveActivityItemModel.display_url != null ? "h5" : "image");
-        LiveBaseFragment liveBaseFragment = this.f14339a;
+        LiveBaseFragment liveBaseFragment = this.a;
         if (!(liveBaseFragment instanceof PlayingOnliveFragment)) {
             if (liveBaseFragment instanceof RecordingOnliveFragment) {
                 ((RecordingOnliveFragment) liveBaseFragment).d(liveActivityItemModel.url, 0);
             }
         } else if (liveActivityItemModel.page == 0) {
-            LiveRoomInfo.a().a(this.f14340c, liveActivityItemModel.url);
-            ((PlayingOnliveFragment) this.f14339a).b(true);
-        } else if (BluedWebView.a(this.f14340c, liveActivityItemModel.url, new LiveWebCallBack())) {
+            LiveRoomInfo.a().a(this.c, liveActivityItemModel.url);
+            ((PlayingOnliveFragment) this.a).b(true);
+        } else if (BluedWebView.a(this.c, liveActivityItemModel.url, new LiveWebCallBack())) {
         } else {
-            ((PlayingOnliveFragment) this.f14339a).a(liveActivityItemModel.url, 0);
+            ((PlayingOnliveFragment) this.a).a(liveActivityItemModel.url, 0);
         }
     }
 
@@ -516,7 +498,7 @@ public class LiveActivityView extends FrameLayout implements View.OnClickListene
     }
 
     public void a(LiveBaseFragment liveBaseFragment) {
-        this.f14339a = liveBaseFragment;
+        this.a = liveBaseFragment;
     }
 
     public void a(final LiveActivityItemModel liveActivityItemModel) {

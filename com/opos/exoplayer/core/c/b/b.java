@@ -7,11 +7,11 @@ import java.util.Stack;
 final class b implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final byte[] f25095a = new byte[8];
+    private final byte[] f11407a = new byte[8];
     private final Stack<a> b = new Stack<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final f f25096c = new f();
+    private final f f11408c = new f();
     private d d;
     private int e;
     private int f;
@@ -21,20 +21,20 @@ final class b implements c {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f25097a;
+        private final int f11409a;
         private final long b;
 
         private a(int i, long j) {
-            this.f25097a = i;
+            this.f11409a = i;
             this.b = j;
         }
     }
 
     private long a(com.opos.exoplayer.core.c.f fVar, int i) {
-        fVar.b(this.f25095a, 0, i);
+        fVar.b(this.f11407a, 0, i);
         long j = 0;
         for (int i2 = 0; i2 < i; i2++) {
-            j = (j << 8) | (this.f25095a[i2] & 255);
+            j = (j << 8) | (this.f11407a[i2] & 255);
         }
         return j;
     }
@@ -47,10 +47,10 @@ final class b implements c {
     private long b(com.opos.exoplayer.core.c.f fVar) {
         fVar.a();
         while (true) {
-            fVar.c(this.f25095a, 0, 4);
-            int a2 = f.a(this.f25095a[0]);
+            fVar.c(this.f11407a, 0, 4);
+            int a2 = f.a(this.f11407a[0]);
             if (a2 != -1 && a2 <= 4) {
-                int a3 = (int) f.a(this.f25095a, a2, false);
+                int a3 = (int) f.a(this.f11407a, a2, false);
                 if (this.d.b(a3)) {
                     fVar.b(a2);
                     return a3;
@@ -76,7 +76,7 @@ final class b implements c {
     public void a() {
         this.e = 0;
         this.b.clear();
-        this.f25096c.a();
+        this.f11408c.a();
     }
 
     @Override // com.opos.exoplayer.core.c.b.c
@@ -89,11 +89,11 @@ final class b implements c {
         com.opos.exoplayer.core.i.a.b(this.d != null);
         while (true) {
             if (!this.b.isEmpty() && fVar.c() >= this.b.peek().b) {
-                this.d.c(this.b.pop().f25097a);
+                this.d.c(this.b.pop().f11409a);
                 return true;
             }
             if (this.e == 0) {
-                long a2 = this.f25096c.a(fVar, true, false, 4);
+                long a2 = this.f11408c.a(fVar, true, false, 4);
                 long j = a2;
                 if (a2 == -2) {
                     j = b(fVar);
@@ -105,7 +105,7 @@ final class b implements c {
                 this.e = 1;
             }
             if (this.e == 1) {
-                this.g = this.f25096c.a(fVar, false, true, 8);
+                this.g = this.f11408c.a(fVar, false, true, 8);
                 this.e = 2;
             }
             int a3 = this.d.a(this.f);

@@ -12,45 +12,45 @@ import com.xiaomi.push.service.XMPushService;
 final class af extends XMPushService.j {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ic f41597a;
+    final /* synthetic */ ic f27906a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ Cif f960a;
+    final /* synthetic */ Cif f913a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ XMPushService f961a;
+    final /* synthetic */ XMPushService f914a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public af(int i, Cif cif, ic icVar, XMPushService xMPushService) {
         super(i);
-        this.f960a = cif;
-        this.f41597a = icVar;
-        this.f961a = xMPushService;
+        this.f913a = cif;
+        this.f27906a = icVar;
+        this.f914a = xMPushService;
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public final String mo12102a() {
+    public final String mo9052a() {
         return "send ack message for clear push message.";
     }
 
     @Override // com.xiaomi.push.service.XMPushService.j
     /* renamed from: a */
-    public final void mo11743a() {
+    public final void mo8693a() {
         try {
             hx hxVar = new hx();
-            hxVar.c(hq.CancelPushMessageACK.f583a);
-            hxVar.a(this.f960a.m11963a());
-            hxVar.a(this.f960a.a());
-            hxVar.b(this.f960a.b());
-            hxVar.e(this.f960a.c());
+            hxVar.c(hq.CancelPushMessageACK.f536a);
+            hxVar.a(this.f913a.m8913a());
+            hxVar.a(this.f913a.a());
+            hxVar.b(this.f913a.b());
+            hxVar.e(this.f913a.c());
             hxVar.a(0L);
             hxVar.d("success clear push message.");
-            ah.a(this.f961a, ah.b(this.f41597a.b(), this.f41597a.m11946a(), hxVar, hg.Notification));
+            ah.a(this.f914a, ah.b(this.f27906a.b(), this.f27906a.m8896a(), hxVar, hg.Notification));
         } catch (gf e) {
             com.xiaomi.channel.commonutils.logger.b.d("clear push message. ".concat(String.valueOf(e)));
-            this.f961a.a(10, e);
+            this.f914a.a(10, e);
         }
     }
 }

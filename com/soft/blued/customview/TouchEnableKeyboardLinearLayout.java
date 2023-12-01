@@ -9,7 +9,7 @@ import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLay
 public class TouchEnableKeyboardLinearLayout extends KeyboardListenLinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f28532a;
+    private boolean f14842a;
 
     public TouchEnableKeyboardLinearLayout(Context context) {
         super(context);
@@ -23,23 +23,21 @@ public class TouchEnableKeyboardLinearLayout extends KeyboardListenLinearLayout 
         super(context, attributeSet, i);
     }
 
-    @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.f28532a) {
+        if (this.f14842a) {
             return true;
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.f28532a) {
+        if (this.f14842a) {
             return true;
         }
         return super.onTouchEvent(motionEvent);
     }
 
     public void setIntercept(boolean z) {
-        this.f28532a = z;
+        this.f14842a = z;
     }
 }

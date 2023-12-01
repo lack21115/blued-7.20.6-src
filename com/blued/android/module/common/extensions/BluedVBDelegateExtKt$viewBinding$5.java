@@ -12,9 +12,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/extensions/BluedVBDelegateExtKt$viewBinding$5.class */
 public final class BluedVBDelegateExtKt$viewBinding$5<F, V> extends Lambda implements Function1<F, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function1<View, V> f10786a;
+    final /* synthetic */ Function1<View, V> a;
     final /* synthetic */ Function1<F, View> b;
 
     /* JADX WARN: Incorrect return type in method signature: (TF;)TV; */
@@ -22,6 +20,6 @@ public final class BluedVBDelegateExtKt$viewBinding$5<F, V> extends Lambda imple
     /* renamed from: a */
     public final ViewBinding invoke(Fragment fragment) {
         Intrinsics.e(fragment, "fragment");
-        return (ViewBinding) this.f10786a.invoke(this.b.invoke(fragment));
+        return (ViewBinding) this.a.invoke(this.b.invoke(fragment));
     }
 }

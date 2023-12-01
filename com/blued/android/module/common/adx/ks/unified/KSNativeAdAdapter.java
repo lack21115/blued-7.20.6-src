@@ -27,13 +27,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/ks/unified/KSNativeAdAdapter.class */
 public final class KSNativeAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10583a;
+    private BluedADExtra a;
     private ADListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Context f10584c;
+    private final Context c;
     private KSNativeAdDataAdapter d;
     private int e;
 
@@ -41,15 +37,15 @@ public final class KSNativeAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(context, "context");
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(listener, "listener");
-        this.f10583a = adExtra;
+        this.a = adExtra;
         this.b = listener;
-        this.f10584c = context;
+        this.c = context;
         this.e = -1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final ADListener aDListener) {
-        String str = this.f10583a.third_id;
+        String str = this.a.third_id;
         Intrinsics.c(str, "adExtra.third_id");
         KsScene build = new KsScene.Builder(Long.parseLong(str)).build();
         build.setAdNum(1);
@@ -58,7 +54,6 @@ public final class KSNativeAdAdapter extends BaseNativeExpressAd {
             return;
         }
         loadManager.loadNativeAd(build, new KsLoadManager.NativeAdListener() { // from class: com.blued.android.module.common.adx.ks.unified.KSNativeAdAdapter$loadExpressAd$1
-            @Override // com.kwad.sdk.api.KsLoadManager.NativeAdListener
             public void onError(int i, String msg) {
                 Intrinsics.e(msg, "msg");
                 BluedADExtra e = KSNativeAdAdapter.this.e();
@@ -67,7 +62,6 @@ public final class KSNativeAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, KSNativeAdAdapter.this));
             }
 
-            @Override // com.kwad.sdk.api.KsLoadManager.NativeAdListener
             public void onNativeAdLoad(List<? extends KsNativeAd> list) {
                 Context context;
                 ADListener aDListener2;
@@ -80,7 +74,7 @@ public final class KSNativeAdAdapter extends BaseNativeExpressAd {
                     return;
                 }
                 KsNativeAd ksNativeAd = list.get(0);
-                context = KSNativeAdAdapter.this.f10584c;
+                context = KSNativeAdAdapter.this.c;
                 KSNativeAdDataAdapter kSNativeAdDataAdapter = new KSNativeAdDataAdapter(context, ksNativeAd, KSNativeAdAdapter.this.e());
                 KSNativeAdAdapter.this.d = kSNativeAdDataAdapter;
                 aDListener2 = KSNativeAdAdapter.this.b;
@@ -142,10 +136,10 @@ public final class KSNativeAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10583a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10583a;
+        return this.a;
     }
 }

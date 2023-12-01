@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.android.ims.ImsConferenceState;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -30,21 +31,17 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYGiftExhibitionAllFragment.class */
 public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17249a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f17250c;
+    private String c;
     private GiftExhibitionPageAllBinding d;
     private GiftExhibitionAdapter e;
     private YYUserInfo f;
 
     public YYGiftExhibitionAllFragment(String str, String str2, String str3) {
-        this.f17249a = str;
+        this.a = str;
         this.b = str2;
-        this.f17250c = str3;
+        this.c = str3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -55,14 +52,14 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
             Intrinsics.c("bind");
             giftExhibitionPageAllBinding2 = null;
         }
-        giftExhibitionPageAllBinding2.f16555a.setVisibility(z ? 0 : 8);
+        giftExhibitionPageAllBinding2.a.setVisibility(z ? 0 : 8);
         GiftExhibitionPageAllBinding giftExhibitionPageAllBinding3 = this.d;
         GiftExhibitionPageAllBinding giftExhibitionPageAllBinding4 = giftExhibitionPageAllBinding3;
         if (giftExhibitionPageAllBinding3 == null) {
             Intrinsics.c("bind");
             giftExhibitionPageAllBinding4 = null;
         }
-        giftExhibitionPageAllBinding4.f16556c.setVisibility(z ? 0 : 8);
+        giftExhibitionPageAllBinding4.c.setVisibility(z ? 0 : 8);
         GiftExhibitionPageAllBinding giftExhibitionPageAllBinding5 = this.d;
         if (giftExhibitionPageAllBinding5 == null) {
             Intrinsics.c("bind");
@@ -94,9 +91,8 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
             giftExhibitionAdapter2 = null;
         }
         giftExhibitionAdapter2.a(new YYGiftExhibitionAllFragment$initView$2(this));
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4, 1, false);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4, 1, false);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.yy_china.fragment.YYGiftExhibitionAllFragment$initView$3
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 GiftExhibitionAdapter giftExhibitionAdapter3;
                 giftExhibitionAdapter3 = YYGiftExhibitionAllFragment.this.e;
@@ -128,13 +124,13 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
             giftExhibitionPageAllBinding2 = null;
         }
         RecyclerView recyclerView = giftExhibitionPageAllBinding2.b;
-        GiftExhibitionAdapter giftExhibitionAdapter3 = this.e;
-        GiftExhibitionAdapter giftExhibitionAdapter4 = giftExhibitionAdapter3;
-        if (giftExhibitionAdapter3 == null) {
+        RecyclerView.Adapter adapter = this.e;
+        GiftExhibitionAdapter giftExhibitionAdapter3 = adapter;
+        if (adapter == null) {
             Intrinsics.c("adapter");
-            giftExhibitionAdapter4 = null;
+            giftExhibitionAdapter3 = null;
         }
-        recyclerView.setAdapter(giftExhibitionAdapter4);
+        recyclerView.setAdapter(giftExhibitionAdapter3);
         GiftExhibitionPageAllBinding giftExhibitionPageAllBinding3 = this.d;
         if (giftExhibitionPageAllBinding3 == null) {
             Intrinsics.c("bind");
@@ -150,17 +146,17 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
             Intrinsics.c("bind");
             giftExhibitionPageAllBinding2 = null;
         }
-        giftExhibitionPageAllBinding2.f16555a.setImageResource(R.drawable.icon_gift_exhibition_empty_all);
+        giftExhibitionPageAllBinding2.a.setImageResource(R.drawable.icon_gift_exhibition_empty_all);
         GiftExhibitionPageAllBinding giftExhibitionPageAllBinding3 = this.d;
         if (giftExhibitionPageAllBinding3 == null) {
             Intrinsics.c("bind");
             giftExhibitionPageAllBinding3 = null;
         }
-        giftExhibitionPageAllBinding3.f16556c.setText("暂未收到钻石");
+        giftExhibitionPageAllBinding3.c.setText("暂未收到钻石");
     }
 
     private final void g() {
-        String str = this.f17249a;
+        String str = this.a;
         final ActivityFragmentActive fragmentActive = getFragmentActive();
         YYRoomHttpUtils.w(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYGoodsWallListMode>>(fragmentActive) { // from class: com.blued.android.module.yy_china.fragment.YYGiftExhibitionAllFragment$loadData$1
             /* JADX INFO: Access modifiers changed from: protected */
@@ -202,28 +198,28 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
                 yYUserInfo = yYGiftExhibitionAllFragment.f;
                 YYUserInfo yYUserInfo5 = yYUserInfo;
                 if (yYUserInfo == null) {
-                    Intrinsics.c("user");
+                    Intrinsics.c(ImsConferenceState.USER);
                     yYUserInfo5 = null;
                 }
                 yYUserInfo5.setUid(yYGiftExhibitionAllFragment.b());
                 yYUserInfo2 = yYGiftExhibitionAllFragment.f;
                 YYUserInfo yYUserInfo6 = yYUserInfo2;
                 if (yYUserInfo2 == null) {
-                    Intrinsics.c("user");
+                    Intrinsics.c(ImsConferenceState.USER);
                     yYUserInfo6 = null;
                 }
                 yYUserInfo6.setName(yYGiftExhibitionAllFragment.c());
                 yYUserInfo3 = yYGiftExhibitionAllFragment.f;
                 YYUserInfo yYUserInfo7 = yYUserInfo3;
                 if (yYUserInfo3 == null) {
-                    Intrinsics.c("user");
+                    Intrinsics.c(ImsConferenceState.USER);
                     yYUserInfo7 = null;
                 }
                 yYUserInfo7.setAvatar(yYGiftExhibitionAllFragment.d());
                 yYUserInfo4 = yYGiftExhibitionAllFragment.f;
                 YYUserInfo yYUserInfo8 = yYUserInfo4;
                 if (yYUserInfo4 == null) {
-                    Intrinsics.c("user");
+                    Intrinsics.c(ImsConferenceState.USER);
                     yYUserInfo8 = null;
                 }
                 giftWallInfoModel.setUs(yYUserInfo8);
@@ -287,7 +283,7 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
     }
 
     public final String b() {
-        return this.f17249a;
+        return this.a;
     }
 
     public final String c() {
@@ -295,16 +291,16 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
     }
 
     public final String d() {
-        return this.f17250c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.gift_exhibition_page_all, (ViewGroup) null);
-        GiftExhibitionPageAllBinding a2 = GiftExhibitionPageAllBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.d = a2;
+        GiftExhibitionPageAllBinding a = GiftExhibitionPageAllBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.d = a;
         e();
         f();
         YYRoomModel b = YYRoomInfoManager.e().b();
@@ -315,7 +311,7 @@ public final class YYGiftExhibitionAllFragment extends BaseLazyFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseLazyFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseLazyFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         g();

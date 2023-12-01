@@ -18,9 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemLuckyBagTable.class */
 public final class FitemLuckyBagTable extends FreedomItem {
     private final LuckyBagRewardModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12540c;
+    private boolean c;
 
     public FitemLuckyBagTable(LuckyBagRewardModel model) {
         Intrinsics.e(model, "model");
@@ -36,19 +34,19 @@ public final class FitemLuckyBagTable extends FreedomItem {
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(context, "context");
         Intrinsics.e(vh, "vh");
-        BaseViewHolder a2 = vh.a(R.id.iv_gift, this.b.getGoods_image()).a(R.id.tv_name, (CharSequence) this.b.getGoods_name());
+        BaseViewHolder a = vh.a(R.id.iv_gift, this.b.getGoods_image()).a(R.id.tv_name, (CharSequence) this.b.getGoods_name());
         int i2 = R.id.tv_price;
         String format = String.format("%,d", Arrays.copyOf(new Object[]{Long.valueOf(this.b.getGoods_beans())}, 1));
         Intrinsics.c(format, "format(this, *args)");
-        a2.a(i2, (CharSequence) format).a(R.id.tv_probability, (CharSequence) this.b.getRate());
-        View a3 = vh.a(R.id.ll_bg);
-        Intrinsics.c(a3, "vh.getView(R.id.ll_bg)");
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) a3;
+        a.a(i2, (CharSequence) format).a(R.id.tv_probability, (CharSequence) this.b.getRate());
+        View a2 = vh.a(R.id.ll_bg);
+        Intrinsics.c(a2, "vh.getView(R.id.ll_bg)");
+        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) a2;
         shapeLinearLayout.getShapeModel().k = BluedSkinUtils.a(context, R.color.white);
-        if (this.f12540c) {
-            float a4 = DensityUtils.a(context, 12.0f);
-            shapeLinearLayout.getShapeModel().K = a4;
-            shapeLinearLayout.getShapeModel().L = a4;
+        if (this.c) {
+            float a3 = DensityUtils.a(context, 12.0f);
+            shapeLinearLayout.getShapeModel().K = a3;
+            shapeLinearLayout.getShapeModel().L = a3;
         } else {
             shapeLinearLayout.getShapeModel().K = 0.0f;
             shapeLinearLayout.getShapeModel().L = 0.0f;
@@ -57,6 +55,6 @@ public final class FitemLuckyBagTable extends FreedomItem {
     }
 
     public final void a(boolean z) {
-        this.f12540c = z;
+        this.c = z;
     }
 }

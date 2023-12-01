@@ -19,14 +19,14 @@ import android.widget.RelativeLayout;
 public class MBSplashClickView extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8274a = "MBSplashClickView";
+    private static final String f5434a = "MBSplashClickView";
     public final int TYPE_SPLASH_BTN_CLICK;
     public final int TYPE_SPLASH_BTN_GO;
     public final int TYPE_SPLASH_BTN_OPEN;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f8275c;
+    private final String f5435c;
     private final String d;
     private final String e;
     private final String f;
@@ -49,10 +49,10 @@ public class MBSplashClickView extends RelativeLayout {
     final class AnonymousClass1 implements Animation.AnimationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ScaleAnimation f8276a;
+        final /* synthetic */ ScaleAnimation f5436a;
 
         AnonymousClass1(ScaleAnimation scaleAnimation) {
-            this.f8276a = scaleAnimation;
+            this.f5436a = scaleAnimation;
         }
 
         @Override // android.view.animation.Animation.AnimationListener
@@ -61,7 +61,7 @@ public class MBSplashClickView extends RelativeLayout {
             MBSplashClickView.this.p.postDelayed(new Runnable() { // from class: com.anythink.expressad.splash.view.MBSplashClickView.1.1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MBSplashClickView.this.p.startAnimation(AnonymousClass1.this.f8276a);
+                    MBSplashClickView.this.p.startAnimation(AnonymousClass1.this.f5436a);
                 }
             }, 700L);
         }
@@ -81,15 +81,15 @@ public class MBSplashClickView extends RelativeLayout {
     final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ScaleAnimation f8278a;
+        final /* synthetic */ ScaleAnimation f5438a;
 
         AnonymousClass2(ScaleAnimation scaleAnimation) {
-            this.f8278a = scaleAnimation;
+            this.f5438a = scaleAnimation;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            MBSplashClickView.this.p.startAnimation(this.f8278a);
+            MBSplashClickView.this.p.startAnimation(this.f5438a);
         }
     }
 
@@ -123,7 +123,7 @@ public class MBSplashClickView extends RelativeLayout {
     public MBSplashClickView(Context context) {
         super(context);
         this.b = "浏览第三方应用";
-        this.f8275c = "View";
+        this.f5435c = "View";
         this.d = "打开第三方应用";
         this.e = "Open";
         this.f = "下载第三方应用";
@@ -145,7 +145,7 @@ public class MBSplashClickView extends RelativeLayout {
     public MBSplashClickView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = "浏览第三方应用";
-        this.f8275c = "View";
+        this.f5435c = "View";
         this.d = "打开第三方应用";
         this.e = "Open";
         this.f = "下载第三方应用";
@@ -167,7 +167,7 @@ public class MBSplashClickView extends RelativeLayout {
     public MBSplashClickView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = "浏览第三方应用";
-        this.f8275c = "View";
+        this.f5435c = "View";
         this.d = "打开第三方应用";
         this.e = "Open";
         this.f = "下载第三方应用";
@@ -189,7 +189,7 @@ public class MBSplashClickView extends RelativeLayout {
     public MBSplashClickView(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
         this.b = "浏览第三方应用";
-        this.f8275c = "View";
+        this.f5435c = "View";
         this.d = "打开第三方应用";
         this.e = "Open";
         this.f = "下载第三方应用";
@@ -366,9 +366,8 @@ public class MBSplashClickView extends RelativeLayout {
         throw new UnsupportedOperationException("Method not decompiled: com.anythink.expressad.splash.view.MBSplashClickView.initView(java.lang.String):void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i = this.n;
         if (i == 2) {
@@ -396,9 +395,8 @@ public class MBSplashClickView extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         this.q.set(0.0f, 0.0f, getWidth(), getHeight());
     }

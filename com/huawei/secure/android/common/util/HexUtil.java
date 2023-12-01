@@ -9,7 +9,7 @@ import java.util.Locale;
 public final class HexUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23140a = "";
+    private static final String f9532a = "";
     private static final String b = "HexUtil";
 
     private HexUtil() {

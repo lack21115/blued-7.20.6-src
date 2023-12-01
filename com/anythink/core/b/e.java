@@ -85,15 +85,15 @@ public abstract class e extends d {
             this.q = aVar.t.N();
             this.r = aVar.t.t();
             if (this.q == null) {
-                com.anythink.core.common.e.b a2 = com.anythink.core.common.a.a().a(aVar.d, aVar.t);
-                if (a2 != null) {
-                    this.q = a2.e().getUnitGroupInfo().N();
+                com.anythink.core.common.e.b a = com.anythink.core.common.a.a().a(aVar.d, aVar.t);
+                if (a != null) {
+                    this.q = a.e().getUnitGroupInfo().N();
                 } else {
                     this.q = f.a().a(aVar.t);
                 }
             }
         }
-        this.l = aVar.f6612c;
+        this.l = aVar.c;
         this.m = aVar.d;
         this.n = b();
     }
@@ -108,11 +108,11 @@ public abstract class e extends d {
                 if (i2 >= optJSONArray.length()) {
                     break;
                 }
-                m a2 = m.a(optJSONArray.optString(i2));
-                if (a2 != null) {
-                    a2.b(eVar.l);
+                m a = m.a(optJSONArray.optString(i2));
+                if (a != null) {
+                    a.b(eVar.l);
                 }
-                arrayList.add(a2);
+                arrayList.add(a);
                 i = i2 + 1;
             }
         }
@@ -129,11 +129,11 @@ public abstract class e extends d {
                 if (i2 >= optJSONArray.length()) {
                     break;
                 }
-                m a2 = m.a(optJSONArray.optString(i2));
-                if (a2 != null) {
-                    a2.b(this.l);
+                m a = m.a(optJSONArray.optString(i2));
+                if (a != null) {
+                    a.b(this.l);
                 }
-                arrayList.add(a2);
+                arrayList.add(a);
                 i = i2 + 1;
             }
         }
@@ -156,9 +156,9 @@ public abstract class e extends d {
     }
 
     static /* synthetic */ void a(e eVar, ai aiVar) {
-        int c2 = aiVar.c();
-        com.anythink.core.common.j.c.a(aiVar, eVar.d, SystemClock.elapsedRealtime() - eVar.p, true, f.a().b(c2));
-        f.a().a(c2);
+        int c = aiVar.c();
+        com.anythink.core.common.j.c.a(aiVar, eVar.d, SystemClock.elapsedRealtime() - eVar.p, true, f.a().b(c));
+        f.a().a(c);
     }
 
     static /* synthetic */ void a(e eVar, Object obj, List list) {
@@ -184,8 +184,8 @@ public abstract class e extends d {
         int size = arrayList.size();
         if (size == 1) {
             j jVar = (j) arrayList.get(0);
-            if (jVar.f6387c == 0.0d && TextUtils.equals(eVar.r, jVar.b)) {
-                jVar.f6387c = 10000.0d;
+            if (jVar.c == 0.0d && TextUtils.equals(eVar.r, jVar.b)) {
+                jVar.c = 10000.0d;
                 Iterator it = list.iterator();
                 while (true) {
                     if (!it.hasNext()) {
@@ -197,7 +197,7 @@ public abstract class e extends d {
                         if (mVar2 == null || !TextUtils.equals(mVar2.g, jVar.d)) {
                             eVar.q = mVar;
                         }
-                        jVar.f6387c = Math.max(jVar.f6387c, mVar.o);
+                        jVar.c = Math.max(jVar.c, mVar.o);
                     }
                 }
                 f.a().a(jVar.d, jVar.b, jVar);
@@ -212,29 +212,29 @@ public abstract class e extends d {
                 return;
             }
             j jVar2 = (j) arrayList.get(i4);
-            if (jVar2.f6387c == 0.0d && TextUtils.equals(eVar.r, jVar2.b)) {
+            if (jVar2.c == 0.0d && TextUtils.equals(eVar.r, jVar2.b)) {
                 if (i4 == 0) {
                     int i5 = i4 + 1;
-                    if (((j) arrayList.get(i5)).f6387c == 0.0d) {
-                        jVar2.f6387c = 10000.0d;
+                    if (((j) arrayList.get(i5)).c == 0.0d) {
+                        jVar2.c = 10000.0d;
                     } else {
-                        jVar2.f6387c = ((j) arrayList.get(i5)).f6387c + 0.1d;
+                        jVar2.c = ((j) arrayList.get(i5)).c + 0.1d;
                     }
                 } else if (i4 == size - 1) {
                     int i6 = i4 - 1;
-                    if (((j) arrayList.get(i6)).f6387c - 0.1d <= 0.0d) {
-                        jVar2.f6387c = ((j) arrayList.get(i6)).f6387c / 2.0d;
+                    if (((j) arrayList.get(i6)).c - 0.1d <= 0.0d) {
+                        jVar2.c = ((j) arrayList.get(i6)).c / 2.0d;
                     } else {
-                        jVar2.f6387c = ((j) arrayList.get(i6)).f6387c - 0.1d;
+                        jVar2.c = ((j) arrayList.get(i6)).c - 0.1d;
                     }
                 } else {
-                    double d = ((j) arrayList.get(i4 - 1)).f6387c;
+                    double d = ((j) arrayList.get(i4 - 1)).c;
                     double d2 = d - 0.1d;
-                    double d3 = d - ((j) arrayList.get(i4 + 1)).f6387c;
+                    double d3 = d - ((j) arrayList.get(i4 + 1)).c;
                     if (Math.abs(d3) <= 0.1d) {
                         d2 = d - (d3 / 2.0d);
                     }
-                    jVar2.f6387c = d2;
+                    jVar2.c = d2;
                 }
                 Iterator it2 = list.iterator();
                 while (true) {
@@ -247,7 +247,7 @@ public abstract class e extends d {
                         if (mVar4 == null || !TextUtils.equals(mVar4.g, jVar2.d)) {
                             eVar.q = mVar3;
                         }
-                        jVar2.f6387c = Math.max(jVar2.f6387c, mVar3.o);
+                        jVar2.c = Math.max(jVar2.c, mVar3.o);
                     }
                 }
                 f.a().a(jVar2.d, jVar2.b, jVar2);
@@ -260,9 +260,9 @@ public abstract class e extends d {
         if (TextUtils.equals(str, ATBidRequestInfo.NO_ADAPTER_ERROR_TYPE) || TextUtils.equals(str, ATBidRequestInfo.NO_SUPPORT_BIDDING_TYPE)) {
             return;
         }
-        int c2 = aiVar.c();
-        com.anythink.core.common.j.c.a(aiVar, eVar.d, SystemClock.elapsedRealtime() - eVar.p, false, f.a().b(c2));
-        f.a().a(c2);
+        int c = aiVar.c();
+        com.anythink.core.common.j.c.a(aiVar, eVar.d, SystemClock.elapsedRealtime() - eVar.p, false, f.a().b(c));
+        f.a().a(c);
     }
 
     private void a(m mVar) {
@@ -270,15 +270,15 @@ public abstract class e extends d {
             return;
         }
         try {
-            com.anythink.core.common.e.g a2 = com.anythink.core.common.a.c.a(mVar.token, new JSONObject(mVar.i), mVar.d);
-            if (a2 == null) {
+            com.anythink.core.common.e.g a = com.anythink.core.common.a.c.a(mVar.token, new JSONObject(mVar.i), mVar.d);
+            if (a == null) {
                 return;
             }
             if (mVar.d == 67) {
-                com.anythink.core.common.d.c.a(this.d.f6611a).a(a2.p(), a2.P());
-                com.anythink.core.common.d.b.a(this.d.f6611a).a(a2.q(), a2.P());
+                com.anythink.core.common.d.c.a(this.d.a).a(a.p(), a.P());
+                com.anythink.core.common.d.b.a(this.d.a).a(a.q(), a.P());
             }
-            com.anythink.core.common.a.a.a().a(this.d.f6611a, mVar.d, mVar.k, mVar.token, mVar.i);
+            com.anythink.core.common.a.a.a().a(this.d.a, mVar.d, mVar.k, mVar.token, mVar.i);
         } catch (Throwable th) {
         }
     }
@@ -306,8 +306,8 @@ public abstract class e extends d {
         int size = arrayList.size();
         if (size == 1) {
             j jVar = (j) arrayList.get(0);
-            if (jVar.f6387c == 0.0d && TextUtils.equals(this.r, jVar.b)) {
-                jVar.f6387c = 10000.0d;
+            if (jVar.c == 0.0d && TextUtils.equals(this.r, jVar.b)) {
+                jVar.c = 10000.0d;
                 Iterator<m> it = list.iterator();
                 while (true) {
                     if (!it.hasNext()) {
@@ -319,7 +319,7 @@ public abstract class e extends d {
                         if (mVar == null || !TextUtils.equals(mVar.g, jVar.d)) {
                             this.q = next;
                         }
-                        jVar.f6387c = Math.max(jVar.f6387c, next.o);
+                        jVar.c = Math.max(jVar.c, next.o);
                     }
                 }
                 f.a().a(jVar.d, jVar.b, jVar);
@@ -334,29 +334,29 @@ public abstract class e extends d {
                 return;
             }
             j jVar2 = (j) arrayList.get(i4);
-            if (jVar2.f6387c == 0.0d && TextUtils.equals(this.r, jVar2.b)) {
+            if (jVar2.c == 0.0d && TextUtils.equals(this.r, jVar2.b)) {
                 if (i4 == 0) {
                     int i5 = i4 + 1;
-                    if (((j) arrayList.get(i5)).f6387c == 0.0d) {
-                        jVar2.f6387c = 10000.0d;
+                    if (((j) arrayList.get(i5)).c == 0.0d) {
+                        jVar2.c = 10000.0d;
                     } else {
-                        jVar2.f6387c = ((j) arrayList.get(i5)).f6387c + 0.1d;
+                        jVar2.c = ((j) arrayList.get(i5)).c + 0.1d;
                     }
                 } else if (i4 == size - 1) {
                     int i6 = i4 - 1;
-                    if (((j) arrayList.get(i6)).f6387c - 0.1d <= 0.0d) {
-                        jVar2.f6387c = ((j) arrayList.get(i6)).f6387c / 2.0d;
+                    if (((j) arrayList.get(i6)).c - 0.1d <= 0.0d) {
+                        jVar2.c = ((j) arrayList.get(i6)).c / 2.0d;
                     } else {
-                        jVar2.f6387c = ((j) arrayList.get(i6)).f6387c - 0.1d;
+                        jVar2.c = ((j) arrayList.get(i6)).c - 0.1d;
                     }
                 } else {
-                    double d = ((j) arrayList.get(i4 - 1)).f6387c;
+                    double d = ((j) arrayList.get(i4 - 1)).c;
                     double d2 = d - 0.1d;
-                    double d3 = d - ((j) arrayList.get(i4 + 1)).f6387c;
+                    double d3 = d - ((j) arrayList.get(i4 + 1)).c;
                     if (Math.abs(d3) <= 0.1d) {
                         d2 = d - (d3 / 2.0d);
                     }
-                    jVar2.f6387c = d2;
+                    jVar2.c = d2;
                 }
                 Iterator<m> it2 = list.iterator();
                 while (true) {
@@ -369,7 +369,7 @@ public abstract class e extends d {
                         if (mVar2 == null || !TextUtils.equals(mVar2.g, jVar2.d)) {
                             this.q = next2;
                         }
-                        jVar2.f6387c = Math.max(jVar2.f6387c, next2.o);
+                        jVar2.c = Math.max(jVar2.c, next2.o);
                     }
                 }
                 f.a().a(jVar2.d, jVar2.b, jVar2);
@@ -382,9 +382,9 @@ public abstract class e extends d {
         if (TextUtils.equals(str, ATBidRequestInfo.NO_ADAPTER_ERROR_TYPE) || TextUtils.equals(str, ATBidRequestInfo.NO_SUPPORT_BIDDING_TYPE)) {
             return;
         }
-        int c2 = aiVar.c();
-        com.anythink.core.common.j.c.a(aiVar, this.d, SystemClock.elapsedRealtime() - this.p, false, f.a().b(c2));
-        f.a().a(c2);
+        int c = aiVar.c();
+        com.anythink.core.common.j.c.a(aiVar, this.d, SystemClock.elapsedRealtime() - this.p, false, f.a().b(c));
+        f.a().a(c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -513,9 +513,9 @@ public abstract class e extends d {
                             e.this.t.set(false);
                             long elapsedRealtime = SystemClock.elapsedRealtime();
                             long j2 = j;
-                            List a2 = e.a(e.this, obj);
-                            e.a(e.this, obj, a2);
-                            e.this.a(a2, elapsedRealtime - j2, (String) null, concurrentHashMap);
+                            List a = e.a(e.this, obj);
+                            e.a(e.this, obj, a);
+                            e.this.a(a, elapsedRealtime - j2, (String) null, concurrentHashMap);
                             e.this.d();
                         } catch (Throwable th) {
                             throw th;
@@ -630,9 +630,9 @@ public abstract class e extends d {
     }
 
     private void b(ai aiVar) {
-        int c2 = aiVar.c();
-        com.anythink.core.common.j.c.a(aiVar, this.d, SystemClock.elapsedRealtime() - this.p, true, f.a().b(c2));
-        f.a().a(c2);
+        int c = aiVar.c();
+        com.anythink.core.common.j.c.a(aiVar, this.d, SystemClock.elapsedRealtime() - this.p, true, f.a().b(c));
+        f.a().a(c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -821,7 +821,7 @@ public abstract class e extends d {
                     jSONObject.put("S2S HeadBidding Fail List", a(this.j));
                 } catch (Exception e) {
                 }
-                com.anythink.core.common.k.n.a(com.anythink.core.common.k.n.f6818a, jSONObject.toString(), false);
+                com.anythink.core.common.k.n.a(com.anythink.core.common.k.n.a, jSONObject.toString(), false);
             }
         }
     }
@@ -848,7 +848,7 @@ public abstract class e extends d {
                 jSONObject.put("S2S Start HeadBidding List(Directly)", b(this.i));
             } catch (Exception e) {
             }
-            com.anythink.core.common.k.n.a(com.anythink.core.common.k.n.f6818a, jSONObject.toString(), false);
+            com.anythink.core.common.k.n.a(com.anythink.core.common.k.n.a, jSONObject.toString(), false);
         }
         if (this.d.i.size() == 0 && this.d.k != null && this.d.k.size() > 0) {
             b(this.p);
@@ -944,11 +944,11 @@ public abstract class e extends d {
                 }
             };
             iVar.d = aVar2;
-            ATBaseAdAdapter a2 = com.anythink.core.common.k.i.a(value);
-            if (a2 == null) {
+            ATBaseAdAdapter a = com.anythink.core.common.k.i.a(value);
+            if (a == null) {
                 aVar2.a(ATBidRequestInfo.NO_ADAPTER_ERROR_TYPE, value);
             } else {
-                com.anythink.core.common.k.b.a.a().a(new i.AnonymousClass1(a2, value));
+                com.anythink.core.common.k.b.a.a().a(new i.AnonymousClass1(a, value));
             }
         }
     }
@@ -964,13 +964,13 @@ public abstract class e extends d {
             if (mVar.isSuccessWithUseType()) {
                 if (z && !TextUtils.isEmpty(mVar.i)) {
                     try {
-                        com.anythink.core.common.e.g a2 = com.anythink.core.common.a.c.a(mVar.token, new JSONObject(mVar.i), mVar.d);
-                        if (a2 != null) {
+                        com.anythink.core.common.e.g a = com.anythink.core.common.a.c.a(mVar.token, new JSONObject(mVar.i), mVar.d);
+                        if (a != null) {
                             if (mVar.d == 67) {
-                                com.anythink.core.common.d.c.a(this.d.f6611a).a(a2.p(), a2.P());
-                                com.anythink.core.common.d.b.a(this.d.f6611a).a(a2.q(), a2.P());
+                                com.anythink.core.common.d.c.a(this.d.a).a(a.p(), a.P());
+                                com.anythink.core.common.d.b.a(this.d.a).a(a.q(), a.P());
                             }
-                            com.anythink.core.common.a.a.a().a(this.d.f6611a, mVar.d, mVar.k, mVar.token, mVar.i);
+                            com.anythink.core.common.a.a.a().a(this.d.a, mVar.d, mVar.k, mVar.token, mVar.i);
                         }
                     } catch (Throwable th) {
                     }
@@ -992,7 +992,7 @@ public abstract class e extends d {
                 i2 = 1;
                 i = 0;
             } else {
-                str = "errorCode:[" + mVar.f6667a + "],errorMsg:[" + mVar.errorMsg + "]";
+                str = "errorCode:[" + mVar.a + "],errorMsg:[" + mVar.errorMsg + "]";
                 i = -1;
             }
             if (a(aiVar, str, i, i2)) {

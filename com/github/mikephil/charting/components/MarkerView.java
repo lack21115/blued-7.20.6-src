@@ -15,15 +15,15 @@ import java.lang.ref.WeakReference;
 public class MarkerView extends RelativeLayout implements IMarker {
 
     /* renamed from: a  reason: collision with root package name */
-    private MPPointF f22110a;
+    private MPPointF f8503a;
     private MPPointF b;
 
     /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Chart> f22111c;
+    private WeakReference<Chart> f8504c;
 
     public MarkerView(Context context, int i) {
         super(context);
-        this.f22110a = new MPPointF();
+        this.f8503a = new MPPointF();
         this.b = new MPPointF();
         setupLayoutResource(i);
     }
@@ -37,15 +37,15 @@ public class MarkerView extends RelativeLayout implements IMarker {
 
     public MPPointF a(float f, float f2) {
         MPPointF offset = getOffset();
-        this.b.f22204a = offset.f22204a;
+        this.b.f8597a = offset.f8597a;
         this.b.b = offset.b;
         Chart chartView = getChartView();
         float width = getWidth();
         float height = getHeight();
-        if (this.b.f22204a + f < 0.0f) {
-            this.b.f22204a = -f;
-        } else if (chartView != null && f + width + this.b.f22204a > chartView.getWidth()) {
-            this.b.f22204a = (chartView.getWidth() - f) - width;
+        if (this.b.f8597a + f < 0.0f) {
+            this.b.f8597a = -f;
+        } else if (chartView != null && f + width + this.b.f8597a > chartView.getWidth()) {
+            this.b.f8597a = (chartView.getWidth() - f) - width;
         }
         if (this.b.b + f2 < 0.0f) {
             this.b.b = -f2;
@@ -59,7 +59,7 @@ public class MarkerView extends RelativeLayout implements IMarker {
     public void a(Canvas canvas, float f, float f2) {
         MPPointF a2 = a(f, f2);
         int save = canvas.save();
-        canvas.translate(f + a2.f22204a, f2 + a2.b);
+        canvas.translate(f + a2.f8597a, f2 + a2.b);
         draw(canvas);
         canvas.restoreToCount(save);
     }
@@ -71,7 +71,7 @@ public class MarkerView extends RelativeLayout implements IMarker {
     }
 
     public Chart getChartView() {
-        WeakReference<Chart> weakReference = this.f22111c;
+        WeakReference<Chart> weakReference = this.f8504c;
         if (weakReference == null) {
             return null;
         }
@@ -79,17 +79,17 @@ public class MarkerView extends RelativeLayout implements IMarker {
     }
 
     public MPPointF getOffset() {
-        return this.f22110a;
+        return this.f8503a;
     }
 
     public void setChartView(Chart chart) {
-        this.f22111c = new WeakReference<>(chart);
+        this.f8504c = new WeakReference<>(chart);
     }
 
     public void setOffset(MPPointF mPPointF) {
-        this.f22110a = mPPointF;
+        this.f8503a = mPPointF;
         if (mPPointF == null) {
-            this.f22110a = new MPPointF();
+            this.f8503a = new MPPointF();
         }
     }
 }

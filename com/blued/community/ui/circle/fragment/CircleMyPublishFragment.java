@@ -22,26 +22,19 @@ import com.blued.community.ui.circle.adapter.MyCircleTalkAdapter;
 import com.blued.community.ui.circle.model.MyCircleTalkModel;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import java.util.Collection;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleMyPublishFragment.class */
 public class CircleMyPublishFragment extends BaseFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f19222a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public PullToRefreshRecyclerView f19223c;
+    public PullToRefreshRecyclerView c;
     public RecyclerView d;
     public MyCircleTalkAdapter e;
     private NoDataAndLoadFailView g;
     private int h = 1;
     private boolean i = true;
     BluedUIHttpResponse f = new BluedUIHttpResponse<BluedEntity<MyCircleTalkModel, BluedEntityBaseExtra>>(getFragmentActive()) { // from class: com.blued.community.ui.circle.fragment.CircleMyPublishFragment.3
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f19226a = false;
+        boolean a = false;
 
         private void a(BluedEntity<MyCircleTalkModel, BluedEntityBaseExtra> bluedEntity, boolean z) {
             if (bluedEntity == null || bluedEntity.data == null) {
@@ -55,13 +48,13 @@ public class CircleMyPublishFragment extends BaseFragment implements View.OnClic
             if (CircleMyPublishFragment.this.h == 1) {
                 CircleMyPublishFragment.this.e.setNewData(bluedEntity.data);
             } else {
-                CircleMyPublishFragment.this.e.addData((Collection) bluedEntity.data);
+                CircleMyPublishFragment.this.e.addData(bluedEntity.data);
             }
         }
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f19226a = true;
+            this.a = true;
             if (CircleMyPublishFragment.this.h != 1) {
                 CircleMyPublishFragment.b(CircleMyPublishFragment.this);
             }
@@ -72,13 +65,13 @@ public class CircleMyPublishFragment extends BaseFragment implements View.OnClic
         public void onUIFinish() {
             if (CircleMyPublishFragment.this.e.getItemCount() != 1) {
                 CircleMyPublishFragment.this.g.d();
-            } else if (this.f19226a) {
+            } else if (this.a) {
                 CircleMyPublishFragment.this.g.b();
             } else {
                 CircleMyPublishFragment.this.g.a();
             }
-            this.f19226a = false;
-            CircleMyPublishFragment.this.f19223c.j();
+            this.a = false;
+            CircleMyPublishFragment.this.c.j();
             CircleMyPublishFragment.this.e.loadMoreComplete();
             if (CircleMyPublishFragment.this.i) {
                 CircleMyPublishFragment.this.e.setEnableLoadMore(true);
@@ -108,37 +101,36 @@ public class CircleMyPublishFragment extends BaseFragment implements View.OnClic
     }
 
     private void b() {
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f19222a);
+        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.a);
         this.g = noDataAndLoadFailView;
         noDataAndLoadFailView.d();
         this.g.setImageScale(0.7f);
         this.g.setNoDataImg(R.drawable.icon_no_circle);
         this.g.setNoDataStr(R.string.my_new_base_release_no_data);
         PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.b.findViewById(R.id.wrapper);
-        this.f19223c = pullToRefreshRecyclerView;
+        this.c = pullToRefreshRecyclerView;
         pullToRefreshRecyclerView.setRefreshEnabled(true);
-        this.d = this.f19223c.getRefreshableView();
-        MyCircleTalkAdapter myCircleTalkAdapter = new MyCircleTalkAdapter(this.f19222a, getFragmentActive());
+        this.d = this.c.getRefreshableView();
+        MyCircleTalkAdapter myCircleTalkAdapter = new MyCircleTalkAdapter(this.a, getFragmentActive());
         this.e = myCircleTalkAdapter;
         this.d.setAdapter(myCircleTalkAdapter);
         this.e.setEmptyView(this.g);
         this.e.setLoadMoreView(new BluedAdapterLoadMoreView());
-        this.d.setLayoutManager(new GridLayoutManager(this.f19222a, 1));
+        this.d.setLayoutManager(new GridLayoutManager(this.a, 1));
         this.e.setEnableLoadMore(true);
         Log.v("drb", "setEnableLoadMore(true)");
         this.e.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.CircleMyPublishFragment.1
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 CircleMyPublishFragment.this.a(false);
             }
         });
-        this.f19223c.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.blued.community.ui.circle.fragment.CircleMyPublishFragment.2
+        this.c.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.blued.community.ui.circle.fragment.CircleMyPublishFragment.2
             @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 CircleMyPublishFragment.this.a(true);
             }
         });
-        this.f19223c.k();
+        this.c.k();
     }
 
     public void a(boolean z) {
@@ -163,9 +155,9 @@ public class CircleMyPublishFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f19222a = getActivity();
+        this.a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_circle_pubish_respond, viewGroup, false);

@@ -14,7 +14,7 @@ import java.io.OutputStream;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22722a = "c";
+    private static final String f9114a = "c";
 
     public static String a(String str, Context context) {
         if (TextUtils.isEmpty(str)) {
@@ -27,7 +27,7 @@ public class c {
             try {
             } catch (IOException e) {
                 InputStream inputStream3 = inputStream2;
-                Logger.w(f22722a, "local config file is not exist.filename is {%s}", str);
+                Logger.w(f9114a, "local config file is not exist.filename is {%s}", str);
             }
             if (new File(str).isDirectory()) {
                 inputStream2 = null;

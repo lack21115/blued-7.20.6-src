@@ -4,7 +4,7 @@ package com.igexin.push.c.b;
 public final class a extends com.igexin.c.a.d.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23325a = 65545;
+    public static final int f9717a = 65545;
 
     @Override // com.igexin.c.a.d.a.a
     public final void a() {
@@ -12,6 +12,6 @@ public final class a extends com.igexin.c.a.d.b {
 
     @Override // com.igexin.c.a.d.a.e
     public final int c() {
-        return f23325a;
+        return f9717a;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class SwipeRefreshObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SwipeRefreshObserver f30630a = new SwipeRefreshObserver();
+    private static SwipeRefreshObserver f16940a = new SwipeRefreshObserver();
     private ArrayList<IEnableRefeshObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/SwipeRefreshObserver$IEnableRefeshObserver.class */
@@ -19,7 +19,7 @@ public class SwipeRefreshObserver {
     }
 
     public static SwipeRefreshObserver a() {
-        return f30630a;
+        return f16940a;
     }
 
     public void b() {

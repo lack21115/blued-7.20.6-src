@@ -1,6 +1,7 @@
 package java.util;
 
 import com.amap.api.col.p0003sl.iu;
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -459,7 +460,7 @@ public final class Scanner implements Closeable, Iterator<String> {
             sb.delete(sb.length() - positiveSuffix.length(), sb.length());
         }
         boolean z = false;
-        if (sb.indexOf("-") == 0) {
+        if (sb.indexOf(NativeLibraryHelper.CLEAR_ABI_OVERRIDE) == 0) {
             sb.delete(0, 1);
             z = true;
         }

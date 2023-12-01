@@ -60,9 +60,8 @@ public class CalendarView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/CalendarView$CalendarViewDelegate.class */
-    public interface CalendarViewDelegate {
+    private interface CalendarViewDelegate {
         long getDate();
 
         int getDateTextAppearance();
@@ -138,7 +137,7 @@ public class CalendarView extends FrameLayout {
     }
 
     public CalendarView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843613);
+        this(context, attributeSet, R.attr.calendarViewStyle);
     }
 
     public CalendarView(Context context, AttributeSet attributeSet, int i) {

@@ -3,8 +3,9 @@ package com.google.protobuf;
 import com.google.protobuf.MapEntryLite;
 import java.util.Map;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/MapFieldSchema.class */
-interface MapFieldSchema {
+public interface MapFieldSchema {
     Map<?, ?> forMapData(Object obj);
 
     MapEntryLite.Metadata<?, ?> forMapMetadata(Object obj);

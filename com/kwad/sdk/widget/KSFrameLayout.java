@@ -121,7 +121,7 @@ public class KSFrameLayout extends FrameLayout implements e, i {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         this.mViewRCHelper.beforeDraw(canvas);
         super.draw(canvas);
@@ -145,10 +145,9 @@ public class KSFrameLayout extends FrameLayout implements e, i {
         return this.widthBasedRatio;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
     @Deprecated
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         viewAttached();
     }
@@ -189,7 +188,7 @@ public class KSFrameLayout extends FrameLayout implements e, i {
         super.onMeasure(i3, i4);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         this.mViewPvHelper.b(i, i2, i3, i4);
         super.onSizeChanged(i, i2, i3, i4);

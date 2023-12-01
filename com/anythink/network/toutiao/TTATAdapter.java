@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.util.Log;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATBiddingListener;
 import com.anythink.core.api.MediationInitCallback;
 import com.anythink.nativead.unitgroup.api.CustomNativeAd;
@@ -18,6 +17,7 @@ import com.bytedance.sdk.openadsdk.TTDrawFeedAd;
 import com.bytedance.sdk.openadsdk.TTFeedAd;
 import com.bytedance.sdk.openadsdk.TTNativeAd;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
+import com.igexin.assist.sdk.AssistPushConsts;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,11 +27,11 @@ import java.util.Map;
 public class TTATAdapter extends CustomNativeAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    String f9066a;
+    String f6226a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f9067c;
+    String f6227c;
     private final String g = getClass().getSimpleName();
     int d = 0;
     String e = "";
@@ -43,17 +43,17 @@ public class TTATAdapter extends CustomNativeAdapter {
     public final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f9070a;
+        final /* synthetic */ Context f6230a;
         final /* synthetic */ Map b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Map f9071c;
+        final /* synthetic */ Map f6231c;
         final /* synthetic */ int d;
 
         AnonymousClass2(Context context, Map map, Map map2, int i) {
-            this.f9070a = context;
+            this.f6230a = context;
             this.b = map;
-            this.f9071c = map2;
+            this.f6231c = map2;
             this.d = i;
         }
 
@@ -64,12 +64,12 @@ public class TTATAdapter extends CustomNativeAdapter {
             Bitmap bitmap;
             int i2;
             TTAdManager adManager = TTAdSdk.getAdManager();
-            int i3 = this.f9070a.getResources().getDisplayMetrics().widthPixels;
-            int i4 = this.f9070a.getResources().getDisplayMetrics().heightPixels;
+            int i3 = this.f6230a.getResources().getDisplayMetrics().widthPixels;
+            int i4 = this.f6230a.getResources().getDisplayMetrics().heightPixels;
             Map map = this.b;
             if (map != null) {
-                Object obj = map.containsKey(ATAdConst.KEY.AD_WIDTH) ? this.b.get(ATAdConst.KEY.AD_WIDTH) : null;
-                Object obj2 = this.b.containsKey(TTATConst.NATIVE_AD_IMAGE_HEIGHT) ? this.b.get(TTATConst.NATIVE_AD_IMAGE_HEIGHT) : this.b.containsKey(ATAdConst.KEY.AD_HEIGHT) ? this.b.get(ATAdConst.KEY.AD_HEIGHT) : null;
+                Object obj = map.containsKey("key_width") ? this.b.get("key_width") : null;
+                Object obj2 = this.b.containsKey(TTATConst.NATIVE_AD_IMAGE_HEIGHT) ? this.b.get(TTATConst.NATIVE_AD_IMAGE_HEIGHT) : this.b.containsKey("key_height") ? this.b.get("key_height") : null;
                 Object obj3 = this.b.get(TTATConst.NATIVE_AD_INTERRUPT_VIDEOPLAY);
                 Object obj4 = this.b.get(TTATConst.NATIVE_AD_VIDEOPLAY_BTN_BITMAP);
                 Object obj5 = this.b.get(TTATConst.NATIVE_AD_VIDEOPLAY_BTN_SIZE);
@@ -118,13 +118,13 @@ public class TTATAdapter extends CustomNativeAdapter {
                 i = 0;
                 bitmap = null;
             }
-            TTAdNative createAdNative = adManager.createAdNative(this.f9070a);
-            TTATCustomAdSlotBuilder tTATCustomAdSlotBuilder = new TTATCustomAdSlotBuilder(TTATAdapter.this.f9066a, this.f9071c, this.b);
+            TTAdNative createAdNative = adManager.createAdNative(this.f6230a);
+            TTATCustomAdSlotBuilder tTATCustomAdSlotBuilder = new TTATCustomAdSlotBuilder(TTATAdapter.this.f6226a, this.f6231c, this.b);
             tTATCustomAdSlotBuilder.setAdCount(Math.min(this.d, 3));
             tTATCustomAdSlotBuilder.setSupportDeepLink(true);
-            if (TextUtils.equals("0", TTATAdapter.this.f9067c) && TextUtils.equals("0", TTATAdapter.this.b)) {
+            if (TextUtils.equals("0", TTATAdapter.this.f6227c) && TextUtils.equals("0", TTATAdapter.this.b)) {
                 Log.i(TTATAdapter.this.g, "load Native Express Ad");
-                tTATCustomAdSlotBuilder.setExpressViewAcceptedSize(TTATAdapter.a(this.f9070a, i3), TTATAdapter.a(this.f9070a, i4));
+                tTATCustomAdSlotBuilder.setExpressViewAcceptedSize(TTATAdapter.a(this.f6230a, i3), TTATAdapter.a(this.f6230a, i4));
                 final boolean z2 = z;
                 createAdNative.loadNativeExpressAd(tTATCustomAdSlotBuilder.build(), new TTAdNative.NativeExpressAdListener() { // from class: com.anythink.network.toutiao.TTATAdapter.2.1
                     @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeExpressAdListener, com.bytedance.sdk.openadsdk.common.CommonListener
@@ -134,12 +134,12 @@ public class TTATAdapter extends CustomNativeAdapter {
 
                     @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeExpressAdListener
                     public final void onNativeExpressAdLoad(List<TTNativeExpressAd> list) {
-                        TTATAdapter.a(TTATAdapter.this, AnonymousClass2.this.f9070a, (List) list, z2, false);
+                        TTATAdapter.a(TTATAdapter.this, AnonymousClass2.this.f6230a, (List) list, z2, false);
                     }
                 });
-            } else if (TextUtils.equals("1", TTATAdapter.this.f9067c) && TextUtils.equals("0", TTATAdapter.this.b)) {
+            } else if (TextUtils.equals("1", TTATAdapter.this.f6227c) && TextUtils.equals("0", TTATAdapter.this.b)) {
                 Log.i(TTATAdapter.this.g, "load Native Express Video");
-                tTATCustomAdSlotBuilder.setExpressViewAcceptedSize(TTATAdapter.a(this.f9070a, i3), TTATAdapter.a(this.f9070a, i4));
+                tTATCustomAdSlotBuilder.setExpressViewAcceptedSize(TTATAdapter.a(this.f6230a, i3), TTATAdapter.a(this.f6230a, i4));
                 final boolean z3 = z;
                 createAdNative.loadExpressDrawFeedAd(tTATCustomAdSlotBuilder.build(), new TTAdNative.NativeExpressAdListener() { // from class: com.anythink.network.toutiao.TTATAdapter.2.2
                     @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeExpressAdListener, com.bytedance.sdk.openadsdk.common.CommonListener
@@ -149,7 +149,7 @@ public class TTATAdapter extends CustomNativeAdapter {
 
                     @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeExpressAdListener
                     public final void onNativeExpressAdLoad(List<TTNativeExpressAd> list) {
-                        TTATAdapter.a(TTATAdapter.this, AnonymousClass2.this.f9070a, (List) list, z3, true);
+                        TTATAdapter.a(TTATAdapter.this, AnonymousClass2.this.f6230a, (List) list, z3, true);
                     }
                 });
             } else {
@@ -158,7 +158,7 @@ public class TTATAdapter extends CustomNativeAdapter {
                 } else {
                     tTATCustomAdSlotBuilder.setImageAcceptedSize(i3, i4);
                 }
-                String str = TTATAdapter.this.f9067c;
+                String str = TTATAdapter.this.f6227c;
                 boolean z4 = true;
                 switch (str.hashCode()) {
                     case 48:
@@ -206,7 +206,7 @@ public class TTATAdapter extends CustomNativeAdapter {
                         public final void onFeedAdLoad(List<TTFeedAd> list) {
                             ArrayList arrayList = new ArrayList();
                             for (TTFeedAd tTFeedAd : list) {
-                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f9070a, TTATAdapter.this.f9066a, tTFeedAd, z5, bitmap2, i5));
+                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f6230a, TTATAdapter.this.f6226a, tTFeedAd, z5, bitmap2, i5));
                             }
                             TTATAdapter.a(TTATAdapter.this, list, (CustomNativeAd[]) arrayList.toArray(new CustomNativeAd[arrayList.size()]));
                         }
@@ -220,7 +220,7 @@ public class TTATAdapter extends CustomNativeAdapter {
                         public final void onDrawFeedAdLoad(List<TTDrawFeedAd> list) {
                             ArrayList arrayList = new ArrayList();
                             for (TTDrawFeedAd tTDrawFeedAd : list) {
-                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f9070a, TTATAdapter.this.f9066a, tTDrawFeedAd, z6, bitmap3, i6));
+                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f6230a, TTATAdapter.this.f6226a, tTDrawFeedAd, z6, bitmap3, i6));
                             }
                             TTATAdapter.a(TTATAdapter.this, list, (CustomNativeAd[]) arrayList.toArray(new CustomNativeAd[arrayList.size()]));
                         }
@@ -245,7 +245,7 @@ public class TTATAdapter extends CustomNativeAdapter {
                         public final void onNativeAdLoad(List<TTNativeAd> list) {
                             ArrayList arrayList = new ArrayList();
                             for (TTNativeAd tTNativeAd : list) {
-                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f9070a, TTATAdapter.this.f9066a, tTNativeAd, z7, bitmap4, i7));
+                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f6230a, TTATAdapter.this.f6226a, tTNativeAd, z7, bitmap4, i7));
                             }
                             TTATAdapter.a(TTATAdapter.this, list, (CustomNativeAd[]) arrayList.toArray(new CustomNativeAd[arrayList.size()]));
                         }
@@ -265,7 +265,7 @@ public class TTATAdapter extends CustomNativeAdapter {
                         public final void onNativeAdLoad(List<TTNativeAd> list) {
                             ArrayList arrayList = new ArrayList();
                             for (TTNativeAd tTNativeAd : list) {
-                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f9070a, TTATAdapter.this.f9066a, tTNativeAd, z8, bitmap5, i8));
+                                arrayList.add(new TTATNativeAd(AnonymousClass2.this.f6230a, TTATAdapter.this.f6226a, tTNativeAd, z8, bitmap5, i8));
                             }
                             TTATAdapter.a(TTATAdapter.this, list, (CustomNativeAd[]) arrayList.toArray(new CustomNativeAd[arrayList.size()]));
                         }
@@ -290,7 +290,7 @@ public class TTATAdapter extends CustomNativeAdapter {
                             }
                             ArrayList arrayList = new ArrayList();
                             for (TTFeedAd tTFeedAd : list) {
-                                arrayList.add(new TTATNativePatchAd(AnonymousClass2.this.f9070a, TTATAdapter.this.f9066a, tTFeedAd, z9, bitmap6, i9));
+                                arrayList.add(new TTATNativePatchAd(AnonymousClass2.this.f6230a, TTATAdapter.this.f6226a, tTFeedAd, z9, bitmap6, i9));
                             }
                             TTATAdapter.a(TTATAdapter.this, list, (CustomNativeAd[]) arrayList.toArray(new CustomNativeAd[arrayList.size()]));
                         }
@@ -306,16 +306,16 @@ public class TTATAdapter extends CustomNativeAdapter {
     public final class AnonymousClass3 implements TTATNativeExpressHandler.RenderCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f9084a;
+        final /* synthetic */ Context f6244a;
         final /* synthetic */ boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ boolean f9085c;
+        final /* synthetic */ boolean f6245c;
 
         AnonymousClass3(Context context, boolean z, boolean z2) {
-            this.f9084a = context;
+            this.f6244a = context;
             this.b = z;
-            this.f9085c = z2;
+            this.f6245c = z2;
         }
 
         @Override // com.anythink.network.toutiao.TTATNativeExpressHandler.RenderCallback
@@ -327,7 +327,7 @@ public class TTATAdapter extends CustomNativeAdapter {
         public final void onRenderSuccess(List<TTNativeExpressAd> list) {
             ArrayList arrayList = new ArrayList();
             for (TTNativeExpressAd tTNativeExpressAd : list) {
-                arrayList.add(new TTATNativeExpressAd(this.f9084a, TTATAdapter.this.f9066a, tTNativeExpressAd, this.b, this.f9085c));
+                arrayList.add(new TTATNativeExpressAd(this.f6244a, TTATAdapter.this.f6226a, tTNativeExpressAd, this.b, this.f6245c));
             }
             TTATAdapter.a(TTATAdapter.this, list, (CustomNativeAd[]) arrayList.toArray(new CustomNativeAd[arrayList.size()]));
         }
@@ -348,7 +348,7 @@ public class TTATAdapter extends CustomNativeAdapter {
 
     private void a(Context context, Map<String, Object> map, Map<String, Object> map2, int i) {
         Context applicationContext = context.getApplicationContext();
-        if (TextUtils.isEmpty(this.f9067c)) {
+        if (TextUtils.isEmpty(this.f6227c)) {
             notifyATLoadFail("", "nativeType is empty");
         } else {
             runOnNetworkRequestThread(new AnonymousClass2(applicationContext, map2, map, i));
@@ -361,7 +361,7 @@ public class TTATAdapter extends CustomNativeAdapter {
 
     static /* synthetic */ void a(TTATAdapter tTATAdapter, Context context, Map map, Map map2, int i) {
         Context applicationContext = context.getApplicationContext();
-        if (TextUtils.isEmpty(tTATAdapter.f9067c)) {
+        if (TextUtils.isEmpty(tTATAdapter.f6227c)) {
             tTATAdapter.notifyATLoadFail("", "nativeType is empty");
         } else {
             tTATAdapter.runOnNetworkRequestThread(new AnonymousClass2(applicationContext, map2, map, i));
@@ -443,8 +443,8 @@ public class TTATAdapter extends CustomNativeAdapter {
     }
 
     private boolean a(Map<String, Object> map) {
-        this.f9066a = (String) map.get("slot_id");
-        if (TextUtils.isEmpty((String) map.get("app_id")) || TextUtils.isEmpty(this.f9066a)) {
+        this.f6226a = (String) map.get("slot_id");
+        if (TextUtils.isEmpty((String) map.get("app_id")) || TextUtils.isEmpty(this.f6226a)) {
             return false;
         }
         this.b = "1";
@@ -454,7 +454,7 @@ public class TTATAdapter extends CustomNativeAdapter {
             this.b = "0";
         }
         if (map.containsKey("is_video")) {
-            this.f9067c = map.get("is_video").toString();
+            this.f6227c = map.get("is_video").toString();
         }
         try {
             if (map.containsKey("media_size")) {
@@ -462,8 +462,8 @@ public class TTATAdapter extends CustomNativeAdapter {
             }
         } catch (Exception e) {
         }
-        if (map.containsKey("payload")) {
-            this.e = map.get("payload").toString();
+        if (map.containsKey(AssistPushConsts.MSG_TYPE_PAYLOAD)) {
+            this.e = map.get(AssistPushConsts.MSG_TYPE_PAYLOAD).toString();
             return true;
         }
         return true;
@@ -478,35 +478,28 @@ public class TTATAdapter extends CustomNativeAdapter {
         return (int) ((f / f3) + 0.5f);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return TTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f9066a;
+        return this.f6226a;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return TTATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         if (a(map)) {
             TTATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.toutiao.TTATAdapter.1
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     TTATAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     TTATAdapter tTATAdapter = TTATAdapter.this;
                     TTATAdapter.a(tTATAdapter, context, map, map2, tTATAdapter.f ? 1 : TTATAdapter.this.mRequestNum);
@@ -517,7 +510,6 @@ public class TTATAdapter extends CustomNativeAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.f = true;
         loadCustomNetworkAd(context, map, map2);

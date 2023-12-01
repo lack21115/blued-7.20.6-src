@@ -25,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHotTopicTabView.class */
 public final class YYHotTopicTabView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<HotTopicModel> f18253a;
+    private final List<HotTopicModel> a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18254c;
+    private int c;
     private int d;
     private RecyclerView e;
     private HomeTabAdapter f;
@@ -40,24 +36,22 @@ public final class YYHotTopicTabView extends FrameLayout {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYHotTopicTabView$HomeTabAdapter.class */
     public static final class HomeTabAdapter extends CommonRecycleAdapter<HotTopicModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final YYHotTopicTabView f18256a;
+        private final YYHotTopicTabView a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public HomeTabAdapter(Context context, YYHotTopicTabView tabView) {
             super(context);
             Intrinsics.e(context, "context");
             Intrinsics.e(tabView, "tabView");
-            this.f18256a = tabView;
+            this.a = tabView;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final void a(HomeTabAdapter this$0, int i, View view) {
             ViewPager mPage;
             Intrinsics.e(this$0, "this$0");
-            this$0.f18256a.setToolBtnSelect(i);
-            if (i >= this$0.dataList.size() || (mPage = this$0.f18256a.getMPage()) == null) {
+            this$0.a.setToolBtnSelect(i);
+            if (i >= this$0.dataList.size() || (mPage = this$0.a.getMPage()) == null) {
                 return;
             }
             mPage.setCurrentItem(i);
@@ -69,19 +63,19 @@ public final class YYHotTopicTabView extends FrameLayout {
         public void onBindViewHolderData(HotTopicModel model, final int i, CommonRecycleAdapter.CommonAdapterHolder viewHolder) {
             Intrinsics.e(model, "model");
             Intrinsics.e(viewHolder, "viewHolder");
-            ItemYyHotTopicTitleBinding a2 = ItemYyHotTopicTitleBinding.a(viewHolder.a());
-            Intrinsics.c(a2, "bind(viewHolder.convertView)");
+            ItemYyHotTopicTitleBinding a = ItemYyHotTopicTitleBinding.a(viewHolder.a());
+            Intrinsics.c(a, "bind(viewHolder.convertView)");
             if (StringUtils.a("全部", model.getTopic())) {
-                a2.f16743a.setText(String.valueOf(model.getTopic()));
+                a.a.setText(String.valueOf(model.getTopic()));
             } else {
-                a2.f16743a.setText(Intrinsics.a("#", (Object) model.getTopic()));
+                a.a.setText(Intrinsics.a("#", (Object) model.getTopic()));
             }
-            if (this.f18256a.getCurItemIndex() == i) {
-                ShapeHelper.a(a2.f16743a, R.color.syc_4d74EEE7, R.color.syc_4d74EEE7);
-                a2.f16743a.setTextColor(a2.f16743a.getContext().getResources().getColor(BluedSkinUtils.c() ? R.color.syc_dark_222222 : R.color.white));
+            if (this.a.getCurItemIndex() == i) {
+                ShapeHelper.a(a.a, R.color.syc_4d74EEE7, R.color.syc_4d74EEE7);
+                a.a.setTextColor(a.a.getContext().getResources().getColor(BluedSkinUtils.c() ? R.color.syc_dark_222222 : R.color.white));
             } else {
-                ShapeHelper.a(a2.f16743a, R.color.white, R.color.white);
-                a2.f16743a.setTextColor(a2.f16743a.getContext().getResources().getColor(R.color.syc_dark_777777));
+                ShapeHelper.a(a.a, R.color.white, R.color.white);
+                a.a.setTextColor(a.a.getContext().getResources().getColor(R.color.syc_dark_777777));
             }
             viewHolder.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYHotTopicTabView$HomeTabAdapter$S12phOFNMHKApY1gaPfKJD_qEgg
                 @Override // android.view.View.OnClickListener
@@ -113,8 +107,8 @@ public final class YYHotTopicTabView extends FrameLayout {
     public YYHotTopicTabView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f18253a = new ArrayList();
-        this.e = (RecyclerView) LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
+        this.a = new ArrayList();
+        this.e = LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
         this.f = a();
         RecyclerView recyclerView = this.e;
         if (recyclerView != null) {
@@ -123,7 +117,6 @@ public final class YYHotTopicTabView extends FrameLayout {
         RecyclerView recyclerView2 = this.e;
         if (recyclerView2 != null) {
             recyclerView2.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYHotTopicTabView.1
-                @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
                 public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
                     Intrinsics.e(outRect, "outRect");
                     Intrinsics.e(view, "view");
@@ -155,11 +148,11 @@ public final class YYHotTopicTabView extends FrameLayout {
     }
 
     public final List<HotTopicModel> getDataList() {
-        return this.f18253a;
+        return this.a;
     }
 
     public final int getLeftPadding() {
-        return this.f18254c;
+        return this.c;
     }
 
     public final HomeTabAdapter getMAdapter() {
@@ -186,17 +179,17 @@ public final class YYHotTopicTabView extends FrameLayout {
         if (list == null) {
             return;
         }
-        this.f18253a.clear();
-        this.f18253a.addAll(list);
+        this.a.clear();
+        this.a.addAll(list);
         HomeTabAdapter homeTabAdapter = this.f;
         if (homeTabAdapter == null) {
             return;
         }
-        homeTabAdapter.setDataAndNotify(this.f18253a);
+        homeTabAdapter.setDataAndNotify(this.a);
     }
 
     public final void setLeftPadding(int i) {
-        this.f18254c = i;
+        this.c = i;
     }
 
     public final void setMAdapter(HomeTabAdapter homeTabAdapter) {
@@ -216,12 +209,12 @@ public final class YYHotTopicTabView extends FrameLayout {
     }
 
     public final void setToolBtnSelect(int i) {
-        if (i < this.f18253a.size()) {
+        if (i < this.a.size()) {
             this.b = i;
-        } else if (this.b >= this.f18253a.size()) {
+        } else if (this.b >= this.a.size()) {
             this.b = 0;
         }
-        if (i == this.f18253a.size() - 2) {
+        if (i == this.a.size() - 2) {
             RecyclerView recyclerView = this.e;
             if (recyclerView != null) {
                 recyclerView.smoothScrollToPosition(i + 2);

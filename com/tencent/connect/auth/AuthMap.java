@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class AuthMap {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f36166a = !AuthMap.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f22475a = !AuthMap.class.desiredAssertionStatus();
     private static int b = 0;
     public static AuthMap sInstance;
     public HashMap<String, Auth> authMap = new HashMap<>();
@@ -21,7 +21,7 @@ public class AuthMap {
     }
 
     private String a(String str, String str2) {
-        if (f36166a || str.length() % 2 == 0) {
+        if (f22475a || str.length() % 2 == 0) {
             StringBuilder sb = new StringBuilder();
             int length = str2.length();
             int length2 = str.length() / 2;

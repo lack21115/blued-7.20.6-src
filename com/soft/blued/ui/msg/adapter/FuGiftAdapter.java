@@ -13,17 +13,17 @@ import java.util.List;
 public class FuGiftAdapter extends BaseQuickAdapter<FuGiftModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f31976a;
+    private IRequestHost f18286a;
 
     public FuGiftAdapter(List<FuGiftModel> list, IRequestHost iRequestHost) {
         super(R.layout.item_fu_gift, list);
-        this.f31976a = iRequestHost;
+        this.f18286a = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, FuGiftModel fuGiftModel) {
-        ImageLoader.a(this.f31976a, fuGiftModel.image).a((ImageView) baseViewHolder.getView(2131365002));
+        ImageLoader.a(this.f18286a, fuGiftModel.image).a((ImageView) baseViewHolder.getView(R.id.iv));
     }
 }

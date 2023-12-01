@@ -72,7 +72,7 @@ public final class fu extends ft<String, PoiItem> {
     @Override // com.amap.api.col.p0003sl.ew
     protected final ga.b e() {
         ga.b bVar = new ga.b();
-        bVar.f4984a = getURL() + c() + "language=" + ServiceSettings.getInstance().getLanguage();
+        bVar.a = getURL() + c() + "language=" + ServiceSettings.getInstance().getLanguage();
         return bVar;
     }
 

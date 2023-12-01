@@ -9,7 +9,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
 import com.baidu.mobads.sdk.api.IXAdContainerFactory;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,11 +21,11 @@ import java.util.jar.JarFile;
 public class bw {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9362a = "ApkLoader";
+    public static final String f6522a = "ApkLoader";
     protected static Thread.UncaughtExceptionHandler b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9363c = "__badApkVersion__9.26";
+    public static final String f6523c = "__badApkVersion__9.26";
     public static final String d = "previousProxyVersion";
     protected static final String e = "__xadsdk__remote__final__";
     protected static final String f = "bdxadsdk.jar";
@@ -58,7 +57,7 @@ public class bw {
     public static final class a extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final long f9364a = 2978543166232984104L;
+        private static final long f6524a = 2978543166232984104L;
 
         public a(String str) {
             bq.a().c(str);
@@ -69,7 +68,7 @@ public class bw {
     public static final class b extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final long f9365a = -7838296421993681751L;
+        private static final long f6525a = -7838296421993681751L;
 
         public b(String str) {
             bq.a().c(str);
@@ -118,7 +117,7 @@ public class bw {
     public static String a(Context context) {
         if (TextUtils.isEmpty(s)) {
             File dir = context.getDir(x, 0);
-            s = dir.getAbsolutePath() + BridgeUtil.SPLIT_MARK;
+            s = dir.getAbsolutePath() + "/";
         }
         if (TextUtils.isEmpty(s)) {
             return "";
@@ -139,11 +138,11 @@ public class bw {
         if (buVar.a().booleanValue()) {
             bs a2 = bs.a(this.y, buVar, s, this.v);
             if (a2.isAlive()) {
-                this.z.a(f9362a, "XApkDownloadThread already started");
+                this.z.a(f6522a, "XApkDownloadThread already started");
                 a2.a(buVar.c());
                 return;
             }
-            this.z.a(f9362a, "XApkDownloadThread starting ...");
+            this.z.a(f6522a, "XApkDownloadThread starting ...");
             a2.start();
         }
     }
@@ -264,10 +263,10 @@ public class bw {
 
     private void b(bp bpVar) {
         bq bqVar = this.z;
-        bqVar.a(f9362a, "len=" + bpVar.length() + ", path=" + bpVar.getAbsolutePath());
+        bqVar.a(f6522a, "len=" + bpVar.length() + ", path=" + bpVar.getAbsolutePath());
         if (p != null) {
             bq bqVar2 = this.z;
-            bqVar2.a(f9362a, "mApkBuilder already initialized, version: " + p.b);
+            bqVar2.a(f6522a, "mApkBuilder already initialized, version: " + p.b);
             return;
         }
         String a2 = a(this.y);
@@ -284,10 +283,10 @@ public class bw {
         try {
             IXAdContainerFactory a3 = p.a();
             bq bqVar3 = this.z;
-            bqVar3.a(f9362a, "preloaded apk.version=" + a3.getRemoteVersion());
+            bqVar3.a(f6522a, "preloaded apk.version=" + a3.getRemoteVersion());
         } catch (a e3) {
             bq bqVar4 = this.z;
-            bqVar4.a(f9362a, "preload local apk " + bpVar.getAbsolutePath() + " failed, msg:" + e3.getMessage() + ", v=" + p.b);
+            bqVar4.a(f6522a, "preload local apk " + bpVar.getAbsolutePath() + " failed, msg:" + e3.getMessage() + ", v=" + p.b);
             a(e3.getMessage());
             throw e3;
         }
@@ -331,7 +330,7 @@ public class bw {
     private static void c(Context context) {
         if (TextUtils.isEmpty(s)) {
             File dir = context.getDir(x, 0);
-            s = dir.getAbsolutePath() + BridgeUtil.SPLIT_MARK;
+            s = dir.getAbsolutePath() + "/";
         }
     }
 
@@ -354,7 +353,7 @@ public class bw {
         synchronized (this) {
             b(bpVar);
             bq bqVar = this.z;
-            bqVar.a(f9362a, "loaded: " + bpVar.getPath());
+            bqVar.a(f6522a, "loaded: " + bpVar.getPath());
         }
         return true;
     }
@@ -373,7 +372,7 @@ public class bw {
                     String c2 = c();
                     double b2 = b(c2);
                     bq a2 = bq.a();
-                    a2.a(f9362a, "copy assets,compare version=" + Double.valueOf("9.26") + "remote=" + b2);
+                    a2.a(f6522a, "copy assets,compare version=" + Double.valueOf("9.26") + "remote=" + b2);
                     if (Double.valueOf("9.26").doubleValue() != b2) {
                         bp bpVar = new bp(c2, context);
                         if (bpVar.exists()) {
@@ -479,21 +478,21 @@ public class bw {
                 }
                 synchronized (this) {
                     bq bqVar = this.z;
-                    bqVar.a(f9362a, "loadDownloadedOrBuiltInApk len=" + bpVar.length() + ", path=" + bpVar.getAbsolutePath());
+                    bqVar.a(f6522a, "loadDownloadedOrBuiltInApk len=" + bpVar.length() + ", path=" + bpVar.getAbsolutePath());
                     b(bpVar);
-                    double d2 = (double) m().getFloat(f9363c, -1.0f);
+                    double d2 = (double) m().getFloat(f6523c, -1.0f);
                     bq bqVar2 = this.z;
-                    bqVar2.a(f9362a, "downloadedApkFile.getApkVersion(): " + bpVar.c() + ", badApkVersion: " + d2);
+                    bqVar2.a(f6522a, "downloadedApkFile.getApkVersion(): " + bpVar.c() + ", badApkVersion: " + d2);
                     if (bpVar.c() == d2) {
                         throw new a("downloaded file marked bad, drop it and use built-in");
                     }
                     bq bqVar3 = this.z;
-                    bqVar3.a(f9362a, "loaded: " + bpVar.getPath());
+                    bqVar3.a(f6522a, "loaded: " + bpVar.getPath());
                 }
                 return true;
             } catch (a e2) {
                 bq bqVar4 = this.z;
-                bqVar4.a(f9362a, "load downloaded apk failed: " + e2.toString() + ", fallback to built-in");
+                bqVar4.a(f6522a, "load downloaded apk failed: " + e2.toString() + ", fallback to built-in");
                 if (bpVar.exists()) {
                     bpVar.delete();
                 }
@@ -520,7 +519,7 @@ public class bw {
     public void a(String str) {
         if (p != null) {
             SharedPreferences.Editor edit = m().edit();
-            edit.putFloat(f9363c, (float) p.b);
+            edit.putFloat(f6523c, (float) p.b);
             edit.apply();
         }
     }
@@ -531,14 +530,14 @@ public class bw {
     }
 
     protected void e() {
-        this.z.a(f9362a, "start load assets file");
+        this.z.a(f6522a, "start load assets file");
         d(this.y);
         String c2 = c();
         bp bpVar = new bp(c2, this.y);
         if (!bo.a(bpVar)) {
             throw new b("loadBuiltInApk failed: " + c2);
         }
-        this.z.a(f9362a, "assets file can read ,will use it ");
+        this.z.a(f6522a, "assets file can read ,will use it ");
         if (c(bpVar)) {
             b(true);
         }
@@ -546,16 +545,16 @@ public class bw {
 
     protected void g() {
         if (h() != 2 ? p() : false) {
-            this.z.a(f9362a, "load downloaded file success,use it");
+            this.z.a(f6522a, "load downloaded file success,use it");
             b(true);
             return;
         }
-        this.z.a(f9362a, "no downloaded file yet, use built-in apk file");
+        this.z.a(f6522a, "no downloaded file yet, use built-in apk file");
         try {
             e();
         } catch (b e2) {
             bq bqVar = this.z;
-            bqVar.a(f9362a, "loadBuiltInApk failed: " + e2.toString());
+            bqVar.a(f6522a, "loadBuiltInApk failed: " + e2.toString());
             throw new a("load built-in apk failed" + e2.toString());
         }
     }

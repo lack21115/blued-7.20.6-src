@@ -54,7 +54,7 @@ import java.util.Map;
 public class PayAutoChargeActivity extends BaseFragmentActivity {
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f33880c;
+    public Context f20189c;
     private GoodsOptionBasic d;
     private ProgressBar e;
     private IWXAPI f;
@@ -79,11 +79,11 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
     public class AnonymousClass2 extends BluedUIHttpResponse<BluedEntityA<PayRemaining>> {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f33883a;
+        boolean f20192a;
 
         AnonymousClass2(IRequestHost iRequestHost) {
             super(iRequestHost);
-            this.f33883a = true;
+            this.f20192a = true;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -110,12 +110,11 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<PayRemaining> bluedEntityA) {
             try {
                 boolean z = false;
-                VIPAutoChargeOrderForJsonParse vIPAutoChargeOrderForJsonParse = (VIPAutoChargeOrderForJsonParse) AppInfo.f().fromJson(AesCrypto.c(bluedEntityA.data.get(0).encrypted), (Class<Object>) VIPAutoChargeOrderForJsonParse.class);
+                VIPAutoChargeOrderForJsonParse vIPAutoChargeOrderForJsonParse = (VIPAutoChargeOrderForJsonParse) AppInfo.f().fromJson(AesCrypto.c(((PayRemaining) bluedEntityA.data.get(0)).encrypted), (Class<Object>) VIPAutoChargeOrderForJsonParse.class);
                 PayAutoChargeActivity payAutoChargeActivity = PayAutoChargeActivity.this;
                 if (vIPAutoChargeOrderForJsonParse.alipay_type == 1) {
                     z = true;
@@ -141,21 +140,20 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
                     PayAutoChargeActivity.this.c(vIPAutoChargeOrderForJsonParse);
                 }
             } catch (Exception e) {
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 PayAutoChargeActivity.this.finish();
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             if (i == 4032020) {
-                this.f33883a = false;
-                CommonAlertDialog.a(PayAutoChargeActivity.this.f33880c, "", str, PayAutoChargeActivity.this.f33880c.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$2$GE_5M5TUOkh4WMIJqkdAq5nmdJI
+                this.f20192a = false;
+                CommonAlertDialog.a(PayAutoChargeActivity.this.f20189c, "", str, PayAutoChargeActivity.this.f20189c.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$2$GE_5M5TUOkh4WMIJqkdAq5nmdJI
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         PayAutoChargeActivity.AnonymousClass2.this.c(dialogInterface, i2);
                     }
-                }, PayAutoChargeActivity.this.f33880c.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$2$GptYYC7rMHNtAAz2Oq2NEYAT19E
+                }, PayAutoChargeActivity.this.f20189c.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$2$GptYYC7rMHNtAAz2Oq2NEYAT19E
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         PayAutoChargeActivity.AnonymousClass2.this.b(dialogInterface, i2);
@@ -163,7 +161,7 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
                 }, (DialogInterface.OnDismissListener) null).setCancelable(false);
                 return true;
             } else if (i == 4032021) {
-                CommonAlertDialog.a(PayAutoChargeActivity.this.f33880c, "", str, PayAutoChargeActivity.this.f33880c.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$2$aFlqhQBFRnwqxe3e58lJw_Ql5-o
+                CommonAlertDialog.a(PayAutoChargeActivity.this.f20189c, "", str, PayAutoChargeActivity.this.f20189c.getResources().getString(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$2$aFlqhQBFRnwqxe3e58lJw_Ql5-o
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         PayAutoChargeActivity.AnonymousClass2.this.a(dialogInterface, i2);
@@ -174,24 +172,22 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
                         PayAutoChargeActivity.AnonymousClass2.this.a(dialogInterface);
                     }
                 });
-                this.f33883a = false;
+                this.f20192a = false;
                 return true;
             } else {
                 return super.onUIFailure(i, str);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish(boolean z) {
             super.onUIFinish();
             PayAutoChargeActivity.this.e.setVisibility(4);
-            if (z || !this.f33883a) {
+            if (z || !this.f20192a) {
                 return;
             }
             PayAutoChargeActivity.this.finish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             PayAutoChargeActivity.this.e.setVisibility(0);
@@ -225,15 +221,14 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final VIPAutoChargeOrderForJsonParse vIPAutoChargeOrderForJsonParse) {
         this.q = true;
-        OpenAuthTask openAuthTask = new OpenAuthTask((Activity) this.f33880c);
+        OpenAuthTask openAuthTask = new OpenAuthTask((Activity) this.f20189c);
         HashMap hashMap = new HashMap();
         hashMap.put("sign_params", vIPAutoChargeOrderForJsonParse.entrust_url);
         openAuthTask.execute("bluedalipay", OpenAuthTask.BizType.Deduct, hashMap, new OpenAuthTask.Callback() { // from class: com.soft.blued.ui.user.fragment.PayAutoChargeActivity.3
-            @Override // com.alipay.sdk.app.OpenAuthTask.Callback
             public void onResult(int i, String str, Bundle bundle) {
                 if (i != 9000) {
                     VIPBuyResultObserver.a().a(0, false);
-                    AppMethods.a((CharSequence) PayAutoChargeActivity.this.f33880c.getResources().getString(2131886224));
+                    AppMethods.a(PayAutoChargeActivity.this.f20189c.getResources().getString(R.string.Live_setting_rechargeFail));
                     PayAutoChargeActivity.this.finish();
                     return;
                 }
@@ -261,14 +256,14 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
         } catch (Exception e) {
             this.q = false;
             VIPBuyResultObserver.a().a(0, false);
-            AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+            AppMethods.a(AppInfo.d().getResources().getString(2131887272));
             finish();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void d(VIPAutoChargeOrderForJsonParse vIPAutoChargeOrderForJsonParse) {
-        Map<String, String> payV2 = new PayTask((Activity) this.f33880c).payV2(vIPAutoChargeOrderForJsonParse.entrust_url, true);
+        Map payV2 = new PayTask((Activity) this.f20189c).payV2(vIPAutoChargeOrderForJsonParse.entrust_url, true);
         Log.i("msp", payV2.toString());
         if (TextUtils.equals(new AliPayResult(payV2).getResultStatus(), "9000")) {
             this.k = vIPAutoChargeOrderForJsonParse.contract_code;
@@ -278,14 +273,14 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
             }
         } else {
             VIPBuyResultObserver.a().a(0, false);
-            AppMethods.a((CharSequence) this.f33880c.getResources().getString(2131886224));
+            AppMethods.a(this.f20189c.getResources().getString(R.string.Live_setting_rechargeFail));
             finish();
         }
         this.q = false;
     }
 
     private boolean i() {
-        return new Intent("android.intent.action.VIEW", Uri.parse("alipays://platformapi/startApp")).resolveActivity(this.f33880c.getPackageManager()) != null;
+        return new Intent("android.intent.action.VIEW", Uri.parse("alipays://platformapi/startApp")).resolveActivity(this.f20189c.getPackageManager()) != null;
     }
 
     public void a(int i, boolean z) {
@@ -302,10 +297,11 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
         UserHttpUtils.a(new AnonymousClass2(a()), TextUtils.isEmpty(this.t) ? this.d.c_id : Integer.parseInt(this.t), PayHttpUtils.a(this.o), 0.0d, this.d.vip_grade, 0, this.g, this.h, this.i, z, this.r, a());
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public boolean f() {
         boolean z = this.f.getWXAppSupportAPI() >= 570425345;
         if (!z) {
-            Toast.makeText(this, getResources().getString(2131886219), 0).show();
+            Toast.makeText((Context) this, (CharSequence) getResources().getString(R.string.Live_setting_noWechat), 0).show();
             Logger.e("PayAutoChargeActivity", "checkWXPayEnviroment=======");
         }
         return z;
@@ -318,8 +314,8 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: com.soft.blued.ui.user.fragment.PayAutoChargeActivity$1$1  reason: invalid class name and collision with other inner class name */
             /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/fragment/PayAutoChargeActivity$1$1.class */
-            public class C08471 extends BluedUIHttpResponse<BluedEntityA<VIPPayResult>> {
-                C08471(IRequestHost iRequestHost) {
+            public class C06771 extends BluedUIHttpResponse<BluedEntityA<VIPPayResult>> {
+                C06771(IRequestHost iRequestHost) {
                     super(iRequestHost);
                 }
 
@@ -329,11 +325,10 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
                 }
 
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<VIPPayResult> bluedEntityA) {
                     try {
-                        String c2 = AesCrypto.c(bluedEntityA.data.get(0).encrypted);
+                        String c2 = AesCrypto.c(((VIPPayResult) bluedEntityA.data.get(0)).encrypted);
                         AppInfo.m();
                         VIPPayResult vIPPayResult = (VIPPayResult) AppInfo.f().fromJson(c2, (Class<Object>) VIPPayResult.class);
                         Log.v("drb", "result:" + vIPPayResult.toString());
@@ -346,7 +341,7 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
                                 return;
                             }
                             VIPBuyResultObserver.a().a(0, false);
-                            AppMethods.a((CharSequence) PayAutoChargeActivity.this.f33880c.getResources().getString(2131886224));
+                            AppMethods.a(PayAutoChargeActivity.this.f20189c.getResources().getString(R.string.Live_setting_rechargeFail));
                             PayAutoChargeActivity.this.finish();
                             return;
                         }
@@ -354,10 +349,10 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
                         BluedConfig.a().d();
                         DialogUtils.b(PayAutoChargeActivity.this.l);
                         if (PayAutoChargeActivity.this.n == 1) {
-                            PopMenuUtils.a(PayAutoChargeActivity.this.f33880c, new PopMenuFromCenter.DismissListner() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$1$1$jqF5FP7JowNsGqpRXXzpufcpdWk
+                            PopMenuUtils.a(PayAutoChargeActivity.this.f20189c, new PopMenuFromCenter.DismissListner() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$PayAutoChargeActivity$1$1$jqF5FP7JowNsGqpRXXzpufcpdWk
                                 @Override // com.soft.blued.customview.PopMenuFromCenter.DismissListner
                                 public final void dissmiss(boolean z) {
-                                    PayAutoChargeActivity.AnonymousClass1.C08471.this.a(z);
+                                    PayAutoChargeActivity.AnonymousClass1.C06771.this.a(z);
                                 }
                             });
                         } else {
@@ -371,13 +366,11 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str) {
                     PayAutoChargeActivity.this.a(2, false);
                     return super.onUIFailure(i, str);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     super.onUIStart();
                 }
@@ -385,22 +378,22 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
 
             @Override // java.lang.Runnable
             public void run() {
-                UserHttpUtils.a(PayAutoChargeActivity.this.a(), PayAutoChargeActivity.this.k, PayHttpUtils.a(PayAutoChargeActivity.this.o), new C08471(PayAutoChargeActivity.this.a()));
+                UserHttpUtils.a((IRequestHost) PayAutoChargeActivity.this.a(), PayAutoChargeActivity.this.k, PayHttpUtils.a(PayAutoChargeActivity.this.o), (BluedUIHttpResponse) new C06771(PayAutoChargeActivity.this.a()));
             }
         }, c.j);
     }
 
     public void h() {
-        Context context = this.f33880c;
-        this.l = DialogUtils.a(context, context.getResources().getString(2131886090), false);
+        Context context = this.f20189c;
+        this.l = DialogUtils.a(context, context.getResources().getString(R.string.Live_SendPresent_isSearching), false);
         this.e = (ProgressBar) findViewById(R.id.pb_progress);
         a(false);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f33880c = this;
+        this.f20189c = this;
         setContentView(R.layout.dialog_vip_pay_from_link);
         if (getIntent() != null) {
             this.d = (GoodsOptionBasic) getIntent().getSerializableExtra("KEY_ITEM_BUY_OPTION");
@@ -412,18 +405,16 @@ public class PayAutoChargeActivity extends BaseFragmentActivity {
             this.t = getIntent().getStringExtra("KEY_PAY_PRODUCT_ID");
         }
         h();
-        StatusBarHelper.a((Activity) this, false);
-        IWXAPI createWXAPI = WXAPIFactory.createWXAPI(this.f33880c, ShareCoreConstants.a(), false);
+        StatusBarHelper.a(this, false);
+        IWXAPI createWXAPI = WXAPIFactory.createWXAPI(this.f20189c, ShareCoreConstants.a(), false);
         this.f = createWXAPI;
         createWXAPI.registerApp(ShareCoreConstants.a());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onResume() {
         super.onResume();
         if (!this.j) {

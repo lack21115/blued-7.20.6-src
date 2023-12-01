@@ -25,7 +25,7 @@ public class d extends c {
     public boolean Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1252a;
+    public long f1204a;
 
     public d() {
         super(1);
@@ -147,16 +147,16 @@ public class d extends c {
             if (c(j) < 0) {
                 return;
             }
-            if (h.b(j.f1250a)) {
+            if (h.b(j.f1202a)) {
                 e.f.c("PLVideoMuxer", "handling BUFFER_FLAG_CODEC_CONFIG for track " + j.b);
-                if (j.f1250a.size <= 0) {
+                if (j.f1202a.size <= 0) {
                     e.f.e("PLVideoMuxer", "error config buffer");
                     return;
                 }
                 b(j);
             } else {
                 if (g()) {
-                    a(j.f1250a, j.d, j.f1251c, j.b);
+                    a(j.f1202a, j.d, j.f1203c, j.b);
                 } else {
                     int i = -1;
                     long currentTimeMillis = System.currentTimeMillis();
@@ -167,7 +167,7 @@ public class d extends c {
                         i = d(j);
                     }
                     e((int) (System.currentTimeMillis() - currentTimeMillis));
-                    a(j.f1250a, j.d, j.f1251c, j.b);
+                    a(j.f1202a, j.d, j.f1203c, j.b);
                     if (!d(i)) {
                         return;
                     }
@@ -183,17 +183,17 @@ public class d extends c {
     public void b(c.g gVar) {
         if (gVar.b == 1) {
             e.f.b("PLVideoMuxer", "Capture SPS + PPS");
-            c(gVar.d.mBuffer, gVar.f1250a);
+            c(gVar.d.mBuffer, gVar.f1202a);
             PLDroidStreamingCore pLDroidStreamingCore = this.g;
             byte[] bArr = this.p;
-            pLDroidStreamingCore.writeVideoSeqHeader(bArr, bArr.length, gVar.f1250a.presentationTimeUs / 1000);
+            pLDroidStreamingCore.writeVideoSeqHeader(bArr, bArr.length, gVar.f1202a.presentationTimeUs / 1000);
         }
         if (this.p != null) {
             d().a(b.c.CONNECTING, null);
             e eVar = e.f;
             eVar.c("PLVideoMuxer", "writeHeader :mIsNeedUpdateAVOption=" + this.D);
         }
-        a(gVar.f1250a, gVar.d, gVar.f1251c, gVar.b);
+        a(gVar.f1202a, gVar.d, gVar.f1203c, gVar.b);
     }
 
     public final boolean b(int i, int i2, PLAVFrame pLAVFrame, PLBufferInfo pLBufferInfo) {
@@ -259,7 +259,7 @@ public class d extends c {
             if (peekFirst == null || peekLast == null) {
                 return;
             }
-            this.Y = peekLast.f1250a.presentationTimeUs - peekFirst.f1250a.presentationTimeUs;
+            this.Y = peekLast.f1202a.presentationTimeUs - peekFirst.f1202a.presentationTimeUs;
             if (h.b()) {
                 e.f.d("PLVideoMuxer", "Drop frame due to low memory.");
                 d().a(b.c.FRAME_QUEUE_FULL, null);
@@ -296,7 +296,7 @@ public class d extends c {
     }
 
     public void u() {
-        this.f1252a = 0L;
+        this.f1204a = 0L;
         this.S = 0L;
         try {
             StreamingProfile.SendingBufferProfile sendingBufferInfo = d().f().getSendingBufferInfo();
@@ -321,10 +321,10 @@ public class d extends c {
     }
 
     public final void w() {
-        if (System.currentTimeMillis() - this.f1252a < 1000) {
+        if (System.currentTimeMillis() - this.f1204a < 1000) {
             return;
         }
         a.a.a.a.a.m.a.a().a(d());
-        this.f1252a = System.currentTimeMillis();
+        this.f1204a = System.currentTimeMillis();
     }
 }

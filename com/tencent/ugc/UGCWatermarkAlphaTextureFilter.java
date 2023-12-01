@@ -29,7 +29,7 @@ public class UGCWatermarkAlphaTextureFilter extends com.tencent.liteav.beauty.b.
             uGCWatermarkAlphaTextureFilter.mRenderObjects[0] = null;
             return;
         }
-        uGCWatermarkAlphaTextureFilter.mRenderObjects[0].f36396c = i;
+        uGCWatermarkAlphaTextureFilter.mRenderObjects[0].f22705c = i;
         uGCWatermarkAlphaTextureFilter.calculateOffsetMatrix(i2, i3, f, f2, f3, 0);
     }
 
@@ -54,9 +54,9 @@ public class UGCWatermarkAlphaTextureFilter extends com.tencent.liteav.beauty.b.
             }
             if (this.mRenderObjects[i2] != null) {
                 GLES20.glActiveTexture(33984);
-                GLES20.glBindTexture(3553, this.mRenderObjects[i2].f36396c);
+                GLES20.glBindTexture(3553, this.mRenderObjects[i2].f22705c);
                 GLES20.glUniform1i(this.mGLUniformTexture, 0);
-                GLES20.glVertexAttribPointer(this.mGLAttribPosition, 2, 5126, false, 8, (Buffer) this.mRenderObjects[i2].f36395a);
+                GLES20.glVertexAttribPointer(this.mGLAttribPosition, 2, 5126, false, 8, (Buffer) this.mRenderObjects[i2].f22704a);
                 GLES20.glEnableVertexAttribArray(this.mGLAttribPosition);
                 GLES20.glVertexAttribPointer(this.mGLAttribTextureCoord, 2, 5126, false, 0, (Buffer) TEXTURE_COORDS_BUFFER);
                 GLES20.glEnableVertexAttribArray(this.mGLAttribTextureCoord);

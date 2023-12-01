@@ -32,20 +32,20 @@ public final class t extends e {
             SurfaceTexture surfaceTexture;
             Surface surface;
             com.qiniu.pili.droid.shortvideo.a.a.d dVar = new com.qiniu.pili.droid.shortvideo.a.a.d();
-            dVar.a(t.this.f27545c.getVideoEncodingFps());
-            int videoEncodingWidth = t.this.f27545c.getVideoEncodingWidth();
-            int videoEncodingHeight = t.this.f27545c.getVideoEncodingHeight();
+            dVar.a(t.this.f13857c.getVideoEncodingFps());
+            int videoEncodingWidth = t.this.f13857c.getVideoEncodingWidth();
+            int videoEncodingHeight = t.this.f13857c.getVideoEncodingHeight();
             com.qiniu.pili.droid.shortvideo.gl.texread.d dVar2 = null;
-            if (t.this.f27545c.isHWCodecEnabled()) {
+            if (t.this.f13857c.isHWCodecEnabled()) {
                 surfaceTexture = null;
                 surface = null;
             } else {
                 surfaceTexture = new SurfaceTexture(0);
                 surface = new Surface(surfaceTexture);
-                t.this.f27544a = surface;
+                t.this.f13856a = surface;
             }
             com.qiniu.pili.droid.shortvideo.gl.a.d dVar3 = new com.qiniu.pili.droid.shortvideo.gl.a.d(null, 1);
-            com.qiniu.pili.droid.shortvideo.gl.a.f fVar = new com.qiniu.pili.droid.shortvideo.gl.a.f(dVar3, t.this.f27544a, false);
+            com.qiniu.pili.droid.shortvideo.gl.a.f fVar = new com.qiniu.pili.droid.shortvideo.gl.a.f(dVar3, t.this.f13856a, false);
             fVar.b();
             final com.qiniu.pili.droid.shortvideo.gl.b.d dVar4 = new com.qiniu.pili.droid.shortvideo.gl.b.d();
             dVar4.a(t.this.z, videoEncodingWidth, videoEncodingHeight);
@@ -63,7 +63,7 @@ public final class t extends e {
                 long d = dVar4.d();
                 int e = dVar4.e();
                 if (!dVar.a()) {
-                    if (t.this.f27545c.isHWCodecEnabled()) {
+                    if (t.this.f13857c.isHWCodecEnabled()) {
                         GLES20.glClear(16384);
                         a2.b(e);
                         if (t.this.b.a(d)) {
@@ -73,7 +73,7 @@ public final class t extends e {
                     } else {
                         com.qiniu.pili.droid.shortvideo.gl.texread.d dVar5 = dVar2;
                         if (dVar2 == null) {
-                            dVar5 = new com.qiniu.pili.droid.shortvideo.gl.texread.d(t.this.f27545c.getVideoEncodingWidth(), t.this.f27545c.getVideoEncodingHeight());
+                            dVar5 = new com.qiniu.pili.droid.shortvideo.gl.texread.d(t.this.f13857c.getVideoEncodingWidth(), t.this.f13857c.getVideoEncodingHeight());
                         }
                         ByteBuffer a3 = dVar5.a(e);
                         t.this.b.a(a3, a3.capacity(), d);
@@ -85,7 +85,7 @@ public final class t extends e {
             a2.f();
             dVar3.a();
             dVar4.c();
-            if (!t.this.f27545c.isHWCodecEnabled()) {
+            if (!t.this.f13857c.isHWCodecEnabled()) {
                 surfaceTexture.release();
                 surface.release();
                 if (dVar2 != null) {
@@ -133,8 +133,8 @@ public final class t extends e {
         l.a(applicationContext);
         super.a(applicationContext, pLMicrophoneSetting, pLAudioEncodeSetting, pLRecordSetting);
         this.z = view;
-        this.f27545c = pLVideoEncodeSetting;
-        if (this.f27545c.isHWCodecEnabled()) {
+        this.f13857c = pLVideoEncodeSetting;
+        if (this.f13857c.isHWCodecEnabled()) {
             this.b = new com.qiniu.pili.droid.shortvideo.encode.e(pLVideoEncodeSetting);
         } else {
             this.b = new SWVideoEncoder(pLVideoEncodeSetting);

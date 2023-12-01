@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveFansObserver.class */
 public class LiveFansObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveFansObserver f13944a = new LiveFansObserver();
+    private static LiveFansObserver a = new LiveFansObserver();
     private ArrayList<ILiveFansObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveFansObserver$ILiveFansObserver.class */
@@ -25,7 +23,7 @@ public class LiveFansObserver {
     }
 
     public static LiveFansObserver a() {
-        return f13944a;
+        return a;
     }
 
     public void a(int i) {

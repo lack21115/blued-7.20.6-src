@@ -25,15 +25,15 @@ public class AccountItemView extends LinearLayout {
 
     public AccountItemView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.simple_account_item, (ViewGroup) null);
+        View inflate = ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(R.layout.simple_account_item, (ViewGroup) null);
         addView(inflate);
         initViewItem(inflate);
     }
 
     private void initViewItem(View view) {
-        this.mAccountIcon = (ImageView) view.findViewById(16908294);
-        this.mAccountName = (TextView) view.findViewById(16908310);
-        this.mAccountNumber = (TextView) view.findViewById(16908304);
+        this.mAccountIcon = (ImageView) view.findViewById(R.id.icon);
+        this.mAccountName = (TextView) view.findViewById(R.id.title);
+        this.mAccountNumber = (TextView) view.findViewById(R.id.summary);
     }
 
     private void setText(TextView textView, String str) {

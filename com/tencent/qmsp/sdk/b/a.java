@@ -21,11 +21,11 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f38521a = {49, 99, -3, 81, 63, 117, 116, -14, 40};
+    private static final byte[] f24830a = {49, 99, -3, 81, 63, 117, 116, -14, 40};
     private static final byte[] b = {4, 85, Byte.MIN_VALUE};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f38522c = {4, 85, Byte.MIN_VALUE, 15, 13, 25, 84, -78, 21, 91, -112, 115, 123, 11, 118, -7, 33, 121, -67, 71};
+    private static final byte[] f24831c = {4, 85, Byte.MIN_VALUE, 15, 13, 25, 84, -78, 21, 91, -112, 115, 123, 11, 118, -7, 33, 121, -67, 71};
     private static final byte[] d = {-58, -26, -51, -19};
     private static final byte[] e = {-58, -26, -51, -19, 30, -3, -21, -29, 87, 39, 40, 12, -119, -40, -84, 65};
     private static final b f = b.AES;
@@ -34,21 +34,21 @@ public class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.qmsp.sdk.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/b/a$a.class */
-    public static /* synthetic */ class C0985a {
+    public static /* synthetic */ class C0815a {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f38523a;
+        static final /* synthetic */ int[] f24832a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[b.values().length];
-            f38523a = iArr;
+            f24832a = iArr;
             try {
                 iArr[b.AES.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f38523a[b.NONE.ordinal()] = 2;
+                f24832a[b.NONE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -62,11 +62,11 @@ public class a {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private short f38525a;
+        private short f24834a;
         private String b;
 
         b(short s, String str) {
-            this.f38525a = s;
+            this.f24834a = s;
             this.b = str;
         }
 
@@ -75,7 +75,7 @@ public class a {
         }
 
         public int a() {
-            return this.f38525a;
+            return this.f24834a;
         }
 
         @Override // java.lang.Enum
@@ -102,16 +102,16 @@ public class a {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private int f38527a;
+        private int f24836a;
         private String b;
 
         c(int i, String str) {
-            this.f38527a = i;
+            this.f24836a = i;
             this.b = str;
         }
 
         public int a() {
-            return this.f38527a;
+            return this.f24836a;
         }
 
         @Override // java.lang.Enum
@@ -124,11 +124,11 @@ public class a {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public JSONObject f38528a;
+        public JSONObject f24837a;
         public int b;
 
         public d(JSONObject jSONObject, int i) {
-            this.f38528a = jSONObject;
+            this.f24837a = jSONObject;
             this.b = i;
         }
     }
@@ -139,7 +139,7 @@ public class a {
         DataOutputStream dataOutputStream;
         AtomicInteger atomReadTimeOut;
         g.set(Integer.valueOf(c.SUCCESS.a()));
-        InetSocketAddress inetSocketAddress = new InetSocketAddress(h.a(f38521a), 33445);
+        InetSocketAddress inetSocketAddress = new InetSocketAddress(h.a(f24830a), 33445);
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -233,7 +233,7 @@ public class a {
     }
 
     private static JSONObject a(b bVar, byte[] bArr) {
-        int i = C0985a.f38523a[bVar.ordinal()];
+        int i = C0815a.f24832a[bVar.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 return null;
@@ -241,7 +241,7 @@ public class a {
             return new JSONObject(new String(bArr, Charset.forName("UTF-8")));
         }
         SecretKeySpec secretKeySpec = new SecretKeySpec(e, h.a(b));
-        Cipher cipher = Cipher.getInstance(h.a(f38522c));
+        Cipher cipher = Cipher.getInstance(h.a(f24831c));
         cipher.init(2, secretKeySpec, new IvParameterSpec(e));
         return new JSONObject(new String(cipher.doFinal(bArr), Charset.forName("UTF-8")));
     }
@@ -314,7 +314,7 @@ public class a {
 
     private static byte[] a(b bVar, JSONObject jSONObject) {
         byte[] bytes = jSONObject.toString().getBytes("UTF-8");
-        int i = C0985a.f38523a[bVar.ordinal()];
+        int i = C0815a.f24832a[bVar.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return bytes;
@@ -322,7 +322,7 @@ public class a {
             throw new IOException("unsupported");
         }
         SecretKeySpec secretKeySpec = new SecretKeySpec(e, h.a(b));
-        Cipher cipher = Cipher.getInstance(h.a(f38522c));
+        Cipher cipher = Cipher.getInstance(h.a(f24831c));
         cipher.init(1, secretKeySpec, new IvParameterSpec(e));
         return cipher.doFinal(bytes);
     }

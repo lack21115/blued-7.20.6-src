@@ -15,14 +15,10 @@ import skin.support.SkinCompatManager;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/content/res/SkinCompatResources.class */
 public class SkinCompatResources {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile SkinCompatResources f44223a;
+    private static volatile SkinCompatResources a;
     private Resources b;
     private SkinCompatManager.SkinLoaderStrategy e;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f44224c = "";
+    private String c = "";
     private String d = "";
     private boolean f = true;
     private List<SkinResources> g = new ArrayList();
@@ -31,18 +27,18 @@ public class SkinCompatResources {
     }
 
     public static SkinCompatResources a() {
-        if (f44223a == null) {
+        if (a == null) {
             synchronized (SkinCompatResources.class) {
                 try {
-                    if (f44223a == null) {
-                        f44223a = new SkinCompatResources();
+                    if (a == null) {
+                        a = new SkinCompatResources();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f44223a;
+        return a;
     }
 
     public static void a(Context context, int i, TypedValue typedValue, boolean z) {
@@ -87,11 +83,11 @@ public class SkinCompatResources {
 
     private ColorStateList h(Context context, int i) {
         int a2;
-        ColorStateList c2;
+        ColorStateList c;
         ColorStateList a3;
         if (SkinCompatUserThemeManager.b().e() || (a3 = SkinCompatUserThemeManager.b().a(i)) == null) {
             SkinCompatManager.SkinLoaderStrategy skinLoaderStrategy = this.e;
-            return (skinLoaderStrategy == null || (c2 = skinLoaderStrategy.c(context, this.d, i)) == null) ? (this.f || (a2 = a(context, i)) == 0) ? Build.VERSION.SDK_INT >= 23 ? context.getResources().getColorStateList(i, context.getTheme()) : context.getResources().getColorStateList(i) : this.b.getColorStateList(a2) : c2;
+            return (skinLoaderStrategy == null || (c = skinLoaderStrategy.c(context, this.d, i)) == null) ? (this.f || (a2 = a(context, i)) == 0) ? Build.VERSION.SDK_INT >= 23 ? context.getResources().getColorStateList(i, context.getTheme()) : context.getResources().getColorStateList(i) : this.b.getColorStateList(a2) : c;
         }
         return a3;
     }
@@ -126,7 +122,7 @@ public class SkinCompatResources {
             if (TextUtils.isEmpty(str)) {
                 str2 = context.getResources().getResourceEntryName(i);
             }
-            return this.b.getIdentifier(str2, context.getResources().getResourceTypeName(i), this.f44224c);
+            return this.b.getIdentifier(str2, context.getResources().getResourceTypeName(i), this.c);
         } catch (Exception e) {
             return i;
         }
@@ -138,7 +134,7 @@ public class SkinCompatResources {
             return;
         }
         this.b = resources;
-        this.f44224c = str;
+        this.c = str;
         this.d = str2;
         this.e = skinLoaderStrategy;
         this.f = false;
@@ -150,7 +146,7 @@ public class SkinCompatResources {
 
     public void a(SkinCompatManager.SkinLoaderStrategy skinLoaderStrategy) {
         this.b = SkinCompatManager.a().getContext().getResources();
-        this.f44224c = "";
+        this.c = "";
         this.d = "";
         this.e = skinLoaderStrategy;
         this.f = true;

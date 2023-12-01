@@ -9,7 +9,7 @@ public final class d {
         if (context == null || aVar == null) {
             return null;
         }
-        int i = aVar.f26208c;
+        int i = aVar.f12520c;
         if (i != 0) {
             if (i != 1) {
                 if (i != 2) {
@@ -26,7 +26,7 @@ public final class d {
         if (context == null || aVar == null) {
             return null;
         }
-        int i = aVar.f26208c;
+        int i = aVar.f12520c;
         if (i == 0) {
             return new File(aVar.d + ".tmp");
         } else if (i == 1) {
@@ -44,7 +44,7 @@ public final class d {
         if (context == null || aVar == null) {
             return null;
         }
-        int i = aVar.f26208c;
+        int i = aVar.f12520c;
         if (i == 0) {
             return new File(aVar.d + ".pos");
         } else if (i == 1) {

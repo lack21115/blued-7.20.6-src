@@ -12,22 +12,18 @@ import com.blued.android.module.yy_china.view.YYKtvPro2View;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewKtvGiftProBinding.class */
 public final class ViewKtvGiftProBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16860a;
+    public final ConstraintLayout a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16861c;
+    public final TextView c;
     public final ShapeLinearLayout d;
     public final YYKtvPro2View e;
     private final ConstraintLayout f;
 
     private ViewKtvGiftProBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, TextView textView, TextView textView2, ShapeLinearLayout shapeLinearLayout, YYKtvPro2View yYKtvPro2View) {
         this.f = constraintLayout;
-        this.f16860a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = textView;
-        this.f16861c = textView2;
+        this.c = textView2;
         this.d = shapeLinearLayout;
         this.e = yYKtvPro2View;
     }
@@ -42,8 +38,8 @@ public final class ViewKtvGiftProBinding implements ViewBinding {
 
     public static ViewKtvGiftProBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cons);
-        if (constraintLayout != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.cons);
+        if (findViewById != null) {
             TextView textView = (TextView) view.findViewById(R.id.tv_add_ktv_num);
             if (textView != null) {
                 TextView textView2 = (TextView) view.findViewById(R.id.tv_ktv_num);
@@ -52,7 +48,7 @@ public final class ViewKtvGiftProBinding implements ViewBinding {
                     if (shapeLinearLayout != null) {
                         YYKtvPro2View yYKtvPro2View = (YYKtvPro2View) view.findViewById(R.id.yy_pro);
                         if (yYKtvPro2View != null) {
-                            return new ViewKtvGiftProBinding((ConstraintLayout) view, constraintLayout, textView, textView2, shapeLinearLayout, yYKtvPro2View);
+                            return new ViewKtvGiftProBinding((ConstraintLayout) view, findViewById, textView, textView2, shapeLinearLayout, yYKtvPro2View);
                         }
                         str = "yyPro";
                     } else {
@@ -70,7 +66,6 @@ public final class ViewKtvGiftProBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

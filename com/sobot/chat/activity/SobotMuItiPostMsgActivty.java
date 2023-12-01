@@ -19,9 +19,9 @@ import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
+import com.huawei.openalliance.ad.constant.t;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.activity.base.SobotBaseActivity;
 import com.sobot.chat.activity.base.SobotDialogBaseActivity;
@@ -445,7 +445,7 @@ public class SobotMuItiPostMsgActivty extends SobotDialogBaseActivity implements
             }
             String str2 = str;
             if (!TextUtils.isEmpty(picList.get(i2).getFileLocalPath())) {
-                str2 = str + picList.get(i2).getFileLocalPath().substring(picList.get(i2).getFileLocalPath().lastIndexOf(BridgeUtil.SPLIT_MARK) + 1);
+                str2 = str + picList.get(i2).getFileLocalPath().substring(picList.get(i2).getFileLocalPath().lastIndexOf("/") + 1);
             }
             str = str2;
             if (i2 != picList.size() - 1) {
@@ -467,7 +467,7 @@ public class SobotMuItiPostMsgActivty extends SobotDialogBaseActivity implements
             if (i2 >= this.adapter.getPicList().size()) {
                 return str;
             }
-            str = str + picList.get(i2).getFileUrl() + ";";
+            str = str + picList.get(i2).getFileUrl() + t.aE;
             i = i2 + 1;
         }
     }

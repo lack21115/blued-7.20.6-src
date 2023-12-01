@@ -15,12 +15,12 @@ import javax.crypto.spec.SecretKeySpec;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile r0 f22282a;
+    public static volatile r0 f8674a;
     public static final c b = new c();
 
     public final void a(Context context) {
-        if (f22282a == null) {
-            f22282a = new r0(context, "push");
+        if (f8674a == null) {
+            f8674a = new r0(context, "push");
         }
     }
 
@@ -30,7 +30,7 @@ public class c {
         synchronized (this) {
             a(context);
             if (TextUtils.isEmpty(str)) {
-                f22282a.a("key_push_token");
+                f8674a.a("key_push_token");
                 return;
             }
             String a2 = a.a(context, context.getPackageName());
@@ -43,7 +43,7 @@ public class c {
                 bArr = new byte[0];
             }
             String encodeToString = Base64.encodeToString(a.a(a.a(a.a(a.a(a3, -4), a4), 6), bArr), 0);
-            boolean a5 = f22282a.a("key_aes_gcm", encodeToString);
+            boolean a5 = f8674a.a("key_aes_gcm", encodeToString);
             byte[] decode = Base64.decode(encodeToString, 0);
             String str2 = "";
             if (!TextUtils.isEmpty(str)) {
@@ -78,7 +78,7 @@ public class c {
                 }
             }
             if (a5 && !TextUtils.isEmpty(str2)) {
-                f22282a.a("key_push_token", str2);
+                f8674a.a("key_push_token", str2);
             }
         }
     }
@@ -87,14 +87,14 @@ public class c {
         String str;
         synchronized (this) {
             a(context);
-            SharedPreferences sharedPreferences = f22282a.f22323a;
+            SharedPreferences sharedPreferences = f8674a.f8715a;
             str = "";
             if (sharedPreferences != null && sharedPreferences.contains("key_push_token")) {
-                SharedPreferences sharedPreferences2 = f22282a.f22323a;
+                SharedPreferences sharedPreferences2 = f8674a.f8715a;
                 if (sharedPreferences2 != null && sharedPreferences2.contains("key_aes_gcm")) {
-                    SharedPreferences sharedPreferences3 = f22282a.f22323a;
+                    SharedPreferences sharedPreferences3 = f8674a.f8715a;
                     String string = sharedPreferences3 != null ? sharedPreferences3.getString("key_push_token", "") : "";
-                    SharedPreferences sharedPreferences4 = f22282a.f22323a;
+                    SharedPreferences sharedPreferences4 = f8674a.f8715a;
                     byte[] decode = Base64.decode(sharedPreferences4 != null ? sharedPreferences4.getString("key_aes_gcm", "") : "", 0);
                     str = "";
                     if (!TextUtils.isEmpty(string)) {
@@ -123,12 +123,12 @@ public class c {
                         }
                     }
                     if (TextUtils.isEmpty(str)) {
-                        f22282a.a("key_aes_gcm");
-                        f22282a.a("key_push_token");
+                        f8674a.a("key_aes_gcm");
+                        f8674a.a("key_push_token");
                         str = "";
                     }
                 } else {
-                    f22282a.a("key_push_token");
+                    f8674a.a("key_push_token");
                     str = "";
                 }
             }

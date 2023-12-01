@@ -13,13 +13,13 @@ public class TransformUtils {
     }
 
     public static Bitmap a(BitmapPool bitmapPool, Bitmap bitmap) {
-        Bitmap.Config a2 = a(bitmap);
-        if (a2.equals(bitmap.getConfig())) {
+        Bitmap.Config a = a(bitmap);
+        if (a.equals(bitmap.getConfig())) {
             return bitmap;
         }
-        Bitmap a3 = bitmapPool.a(bitmap.getWidth(), bitmap.getHeight(), a2);
-        new Canvas(a3).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
-        return a3;
+        Bitmap a2 = bitmapPool.a(bitmap.getWidth(), bitmap.getHeight(), a);
+        new Canvas(a2).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
+        return a2;
     }
 
     public static void a(Canvas canvas) {

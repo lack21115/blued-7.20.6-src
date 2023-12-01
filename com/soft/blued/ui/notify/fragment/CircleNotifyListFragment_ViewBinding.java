@@ -6,6 +6,7 @@ import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.soft.blued.R;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/notify/fragment/CircleNotifyListFragment_ViewBinding.class */
 public class CircleNotifyListFragment_ViewBinding implements Unbinder {
@@ -15,7 +16,7 @@ public class CircleNotifyListFragment_ViewBinding implements Unbinder {
         this.b = circleNotifyListFragment;
         circleNotifyListFragment.title = (CommonTopTitleNoTrans) Utils.a(view, 2131370694, "field 'title'", CommonTopTitleNoTrans.class);
         circleNotifyListFragment.recyclerView = (RecyclerView) Utils.a(view, 2131369105, "field 'recyclerView'", RecyclerView.class);
-        circleNotifyListFragment.refreshLayout = (SmartRefreshLayout) Utils.a(view, 2131369119, "field 'refreshLayout'", SmartRefreshLayout.class);
+        circleNotifyListFragment.refreshLayout = (SmartRefreshLayout) Utils.a(view, R.id.refresh_layout, "field 'refreshLayout'", SmartRefreshLayout.class);
     }
 
     @Override // butterknife.Unbinder

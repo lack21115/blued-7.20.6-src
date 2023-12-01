@@ -14,13 +14,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemHomeRoomGuideBinding.class */
 public final class ItemHomeRoomGuideBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16621a;
+    public final SquareImageView a;
     public final SquareImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SquareImageView f16622c;
+    public final SquareImageView c;
     public final SquareImageView d;
     public final ImageView e;
     public final RelativeLayout f;
@@ -32,9 +28,9 @@ public final class ItemHomeRoomGuideBinding implements ViewBinding {
 
     private ItemHomeRoomGuideBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, SquareImageView squareImageView2, SquareImageView squareImageView3, SquareImageView squareImageView4, ImageView imageView, RelativeLayout relativeLayout, ShapeFrameLayout shapeFrameLayout, TextView textView, TextView textView2, TextView textView3) {
         this.k = constraintLayout;
-        this.f16621a = squareImageView;
+        this.a = squareImageView;
         this.b = squareImageView2;
-        this.f16622c = squareImageView3;
+        this.c = squareImageView3;
         this.d = squareImageView4;
         this.e = imageView;
         this.f = relativeLayout;
@@ -107,7 +103,6 @@ public final class ItemHomeRoomGuideBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.k;

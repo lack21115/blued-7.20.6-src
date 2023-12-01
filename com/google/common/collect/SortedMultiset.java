@@ -23,7 +23,7 @@ public interface SortedMultiset<E> extends SortedIterable<E>, SortedMultisetBrid
 
     SortedMultiset<E> headMultiset(E e, BoundType boundType);
 
-    @Override // com.google.common.collect.SortedIterable, java.lang.Iterable
+    @Override // com.google.common.collect.SortedIterable, java.util.Collection, java.lang.Iterable, java.util.Set, java.util.NavigableSet
     Iterator<E> iterator();
 
     Multiset.Entry<E> lastEntry();

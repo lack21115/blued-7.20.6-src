@@ -16,22 +16,22 @@ public class TTSplashManager extends SplashAdManagerAdapter {
     class AnonymousClass1 implements TTADUtils.TTGetSplashAdListener {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f34658a = false;
+        boolean f20967a = false;
         final /* synthetic */ SplashAdListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Context f34659c;
+        final /* synthetic */ Context f20968c;
         final /* synthetic */ ViewGroup d;
 
         AnonymousClass1(SplashAdListener splashAdListener, Context context, ViewGroup viewGroup) {
             this.b = splashAdListener;
-            this.f34659c = context;
+            this.f20968c = context;
             this.d = viewGroup;
         }
 
         @Override // com.soft.blued.utils.third.TTADUtils.TTGetSplashAdListener
         public void a() {
-            if (this.f34658a) {
+            if (this.f20967a) {
                 return;
             }
             this.b.a(0, "onNoAD");
@@ -39,7 +39,7 @@ public class TTSplashManager extends SplashAdManagerAdapter {
 
         @Override // com.soft.blued.utils.third.TTADUtils.TTGetSplashAdListener
         public void a(int i, String str) {
-            if (this.f34658a) {
+            if (this.f20967a) {
                 return;
             }
             this.b.a(i, str);
@@ -47,10 +47,10 @@ public class TTSplashManager extends SplashAdManagerAdapter {
 
         @Override // com.soft.blued.utils.third.TTADUtils.TTGetSplashAdListener
         public void a(TTSplashAd tTSplashAd) {
-            this.f34658a = true;
+            this.f20967a = true;
             this.b.a();
             View splashView = tTSplashAd.getSplashView();
-            FragmentActivity fragmentActivity = (FragmentActivity) this.f34659c;
+            FragmentActivity fragmentActivity = (FragmentActivity) this.f20968c;
             if (splashView != null && this.d != null && fragmentActivity != null && !fragmentActivity.isFinishing()) {
                 this.d.removeAllViews();
                 this.d.addView(splashView);
@@ -73,7 +73,7 @@ public class TTSplashManager extends SplashAdManagerAdapter {
 
                 @Override // com.bytedance.sdk.openadsdk.TTSplashAd.AdInteractionListener
                 public void onAdTimeOver() {
-                    if (AnonymousClass1.this.f34658a) {
+                    if (AnonymousClass1.this.f20967a) {
                         return;
                     }
                     AnonymousClass1.this.b.a(0, "");

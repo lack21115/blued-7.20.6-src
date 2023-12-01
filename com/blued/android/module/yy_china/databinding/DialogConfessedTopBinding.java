@@ -16,13 +16,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogConfessedTopBinding.class */
 public final class DialogConfessedTopBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16313a;
+    public final ShapeTextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16314c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -45,9 +41,9 @@ public final class DialogConfessedTopBinding implements ViewBinding {
 
     private DialogConfessedTopBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, Group group, ImageView imageView, SquareImageView squareImageView, ShapeableImageView shapeableImageView, ImageView imageView2, ShapeableImageView shapeableImageView2, ImageView imageView3, YYLivingStreamView yYLivingStreamView, YYLivingStreamView yYLivingStreamView2, LinearLayout linearLayout, RecyclerView recyclerView, TextView textView6, TextView textView7, TextView textView8, TextView textView9) {
         this.v = constraintLayout;
-        this.f16313a = shapeTextView;
+        this.a = shapeTextView;
         this.b = textView;
-        this.f16314c = textView2;
+        this.c = textView2;
         this.d = textView3;
         this.e = textView4;
         this.f = textView5;
@@ -82,18 +78,18 @@ public final class DialogConfessedTopBinding implements ViewBinding {
                         if (textView4 != null) {
                             TextView textView5 = (TextView) view.findViewById(R.id.btn_to_confeefed_null);
                             if (textView5 != null) {
-                                Group group = (Group) view.findViewById(R.id.grp_bottom);
-                                if (group != null) {
+                                Group findViewById = view.findViewById(R.id.grp_bottom);
+                                if (findViewById != null) {
                                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_bg_big);
                                     if (imageView != null) {
                                         SquareImageView squareImageView = (SquareImageView) view.findViewById(R.id.iv_null);
                                         if (squareImageView != null) {
-                                            ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user_1);
-                                            if (shapeableImageView != null) {
+                                            ShapeableImageView findViewById2 = view.findViewById(R.id.iv_user_1);
+                                            if (findViewById2 != null) {
                                                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_user_1_tag);
                                                 if (imageView2 != null) {
-                                                    ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user_2);
-                                                    if (shapeableImageView2 != null) {
+                                                    ShapeableImageView findViewById3 = view.findViewById(R.id.iv_user_2);
+                                                    if (findViewById3 != null) {
                                                         ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_user_2_tag);
                                                         if (imageView3 != null) {
                                                             YYLivingStreamView yYLivingStreamView = (YYLivingStreamView) view.findViewById(R.id.live_1);
@@ -102,8 +98,8 @@ public final class DialogConfessedTopBinding implements ViewBinding {
                                                                 if (yYLivingStreamView2 != null) {
                                                                     LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_null);
                                                                     if (linearLayout != null) {
-                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rec);
-                                                                        if (recyclerView != null) {
+                                                                        RecyclerView findViewById4 = view.findViewById(R.id.rec);
+                                                                        if (findViewById4 != null) {
                                                                             TextView textView6 = (TextView) view.findViewById(R.id.tv_mess);
                                                                             if (textView6 != null) {
                                                                                 TextView textView7 = (TextView) view.findViewById(R.id.tv_my_con_name);
@@ -112,7 +108,7 @@ public final class DialogConfessedTopBinding implements ViewBinding {
                                                                                     if (textView8 != null) {
                                                                                         TextView textView9 = (TextView) view.findViewById(R.id.tv_my_index);
                                                                                         if (textView9 != null) {
-                                                                                            return new DialogConfessedTopBinding((ConstraintLayout) view, shapeTextView, textView, textView2, textView3, textView4, textView5, group, imageView, squareImageView, shapeableImageView, imageView2, shapeableImageView2, imageView3, yYLivingStreamView, yYLivingStreamView2, linearLayout, recyclerView, textView6, textView7, textView8, textView9);
+                                                                                            return new DialogConfessedTopBinding((ConstraintLayout) view, shapeTextView, textView, textView2, textView3, textView4, textView5, findViewById, imageView, squareImageView, findViewById2, imageView2, findViewById3, imageView3, yYLivingStreamView, yYLivingStreamView2, linearLayout, findViewById4, textView6, textView7, textView8, textView9);
                                                                                         }
                                                                                         str = "tvMyIndex";
                                                                                     } else {
@@ -178,7 +174,6 @@ public final class DialogConfessedTopBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.v;

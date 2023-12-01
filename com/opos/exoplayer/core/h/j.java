@@ -6,11 +6,11 @@ import java.util.Arrays;
 public final class j implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f25451a;
+    private final boolean f11763a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final byte[] f25452c;
+    private final byte[] f11764c;
     private final a[] d;
     private int e;
     private int f;
@@ -24,17 +24,17 @@ public final class j implements b {
     public j(boolean z, int i, int i2) {
         com.opos.exoplayer.core.i.a.a(i > 0);
         com.opos.exoplayer.core.i.a.a(i2 >= 0);
-        this.f25451a = z;
+        this.f11763a = z;
         this.b = i;
         this.g = i2;
         this.h = new a[i2 + 100];
         if (i2 > 0) {
-            this.f25452c = new byte[i2 * i];
+            this.f11764c = new byte[i2 * i];
             for (int i3 = 0; i3 < i2; i3++) {
-                this.h[i3] = new a(this.f25452c, i3 * i);
+                this.h[i3] = new a(this.f11764c, i3 * i);
             }
         } else {
-            this.f25452c = null;
+            this.f11764c = null;
         }
         this.d = new a[1];
     }
@@ -88,7 +88,7 @@ public final class j implements b {
                 int i2 = i;
                 if (i2 < length) {
                     a aVar = aVarArr[i2];
-                    if (aVar.f25441a != this.f25452c && aVar.f25441a.length != this.b) {
+                    if (aVar.f11753a != this.f11764c && aVar.f11753a.length != this.b) {
                         z = false;
                         com.opos.exoplayer.core.i.a.a(z);
                         a[] aVarArr2 = this.h;
@@ -135,7 +135,7 @@ public final class j implements b {
 
     public void d() {
         synchronized (this) {
-            if (this.f25451a) {
+            if (this.f11763a) {
                 a(0);
             }
         }

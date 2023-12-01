@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f7060a;
+    private static a f4222a;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/atsignalcommon/b/c$a.class */
     public interface a {
@@ -24,11 +24,11 @@ public final class c {
             private static final long d = 1;
 
             /* renamed from: a  reason: collision with root package name */
-            private Class<?> f7061a;
+            private Class<?> f4223a;
             private String b;
 
             /* renamed from: c  reason: collision with root package name */
-            private String f7062c;
+            private String f4224c;
 
             public a(Exception exc) {
                 super(exc);
@@ -39,19 +39,19 @@ public final class c {
             }
 
             public final Class<?> a() {
-                return this.f7061a;
+                return this.f4223a;
             }
 
             public final void a(Class<?> cls) {
-                this.f7061a = cls;
+                this.f4223a = cls;
             }
 
             public final void a(String str) {
-                this.f7062c = str;
+                this.f4224c = str;
             }
 
             public final String b() {
-                return this.f7062c;
+                return this.f4224c;
             }
 
             public final void b(String str) {
@@ -74,37 +74,37 @@ public final class c {
 
     /* renamed from: com.anythink.expressad.atsignalcommon.b.c$c  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/atsignalcommon/b/c$c.class */
-    public static final class C0115c<C> {
+    public static final class C0044c<C> {
 
         /* renamed from: a  reason: collision with root package name */
-        protected Class<C> f7063a;
+        protected Class<C> f4225a;
 
-        public C0115c(Class<C> cls) {
-            this.f7063a = cls;
+        public C0044c(Class<C> cls) {
+            this.f4225a = cls;
         }
 
         private d a(Class<?>... clsArr) {
-            return new d(this.f7063a, clsArr);
+            return new d(this.f4225a, clsArr);
         }
 
         private e<C, Object> a(String str) {
-            return new e<>(this.f7063a, str, 8);
+            return new e<>(this.f4225a, str, 8);
         }
 
         private Class<C> a() {
-            return this.f7063a;
+            return this.f4225a;
         }
 
         private e<C, Object> b(String str) {
-            return new e<>(this.f7063a, str, 0);
+            return new e<>(this.f4225a, str, 0);
         }
 
         private f b(String str, Class<?>... clsArr) {
-            return new f(this.f7063a, str, clsArr, 8);
+            return new f(this.f4225a, str, clsArr, 8);
         }
 
         public final f a(String str, Class<?>... clsArr) {
-            return new f(this.f7063a, str, clsArr, 0);
+            return new f(this.f4225a, str, clsArr, 0);
         }
     }
 
@@ -112,14 +112,14 @@ public final class c {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        protected Constructor<?> f7064a;
+        protected Constructor<?> f4226a;
 
         d(Class<?> cls, Class<?>[] clsArr) {
             if (cls == null) {
                 return;
             }
             try {
-                this.f7064a = cls.getDeclaredConstructor(clsArr);
+                this.f4226a = cls.getDeclaredConstructor(clsArr);
             } catch (NoSuchMethodException e) {
                 b.a aVar = new b.a(e);
                 aVar.a(cls);
@@ -128,9 +128,9 @@ public final class c {
         }
 
         private Object a(Object... objArr) {
-            this.f7064a.setAccessible(true);
+            this.f4226a.setAccessible(true);
             try {
-                return this.f7064a.newInstance(objArr);
+                return this.f4226a.newInstance(objArr);
             } catch (Exception e) {
                 e.printStackTrace();
                 return null;
@@ -142,7 +142,7 @@ public final class c {
     public static final class e<C, T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private Object f7065a;
+        private Object f4227a;
         private final Field b;
 
         e(Class<C> cls, String str, int i) {
@@ -154,7 +154,7 @@ public final class c {
             Field field2 = null;
             try {
                 try {
-                    this.f7065a = null;
+                    this.f4227a = null;
                     Field declaredField = cls.getDeclaredField(str);
                     if (i > 0 && (declaredField.getModifiers() & i) != i) {
                         StringBuilder sb = new StringBuilder();
@@ -207,20 +207,20 @@ public final class c {
 
         private T a() {
             try {
-                return (T) this.b.get(this.f7065a);
+                return (T) this.b.get(this.f4227a);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
                 return null;
             }
         }
 
-        private void a(b.AbstractC0114b<?> abstractC0114b) {
+        private void a(b.AbstractC0043b<?> abstractC0043b) {
             T a2 = a();
             if (a2 == null) {
                 throw new IllegalStateException("Cannot mapping null");
             }
             try {
-                this.b.set(this.f7065a, com.anythink.expressad.atsignalcommon.b.b.a(a2, abstractC0114b, a2.getClass().getInterfaces()));
+                this.b.set(this.f4227a, com.anythink.expressad.atsignalcommon.b.b.a(a2, abstractC0043b, a2.getClass().getInterfaces()));
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -228,7 +228,7 @@ public final class c {
 
         private void a(Object obj) {
             try {
-                this.b.set(this.f7065a, obj);
+                this.b.set(this.f4227a, obj);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
@@ -244,7 +244,7 @@ public final class c {
         }
 
         private e<C, T> b(C c2) {
-            this.f7065a = c2;
+            this.f4227a = c2;
             return this;
         }
 
@@ -257,14 +257,14 @@ public final class c {
     public static final class f {
 
         /* renamed from: a  reason: collision with root package name */
-        protected final Method f7066a;
+        protected final Method f4228a;
 
         f(Class<?> cls, String str, Class<?>[] clsArr, int i) {
             Method method = null;
             Method method2 = null;
             try {
                 if (cls == null) {
-                    this.f7066a = null;
+                    this.f4228a = null;
                     return;
                 }
                 try {
@@ -279,7 +279,7 @@ public final class c {
                     method2 = declaredMethod;
                     method = declaredMethod;
                     declaredMethod.setAccessible(true);
-                    this.f7066a = declaredMethod;
+                    this.f4228a = declaredMethod;
                 } catch (NoSuchMethodException e) {
                     b.a aVar = new b.a(e);
                     Method method3 = method;
@@ -288,17 +288,17 @@ public final class c {
                     aVar.a(str);
                     Method method5 = method;
                     c.b(aVar);
-                    this.f7066a = method;
+                    this.f4228a = method;
                 }
             } catch (Throwable th) {
-                this.f7066a = method2;
+                this.f4228a = method2;
                 throw th;
             }
         }
 
         public final Object a(Object obj, Object... objArr) {
             try {
-                return this.f7066a.invoke(obj, objArr);
+                return this.f4228a.invoke(obj, objArr);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
                 return null;
@@ -306,42 +306,42 @@ public final class c {
         }
 
         public final Method a() {
-            return this.f7066a;
+            return this.f4228a;
         }
     }
 
     private c() {
     }
 
-    private static <T> C0115c<T> a(Class<T> cls) {
-        return new C0115c<>(cls);
+    private static <T> C0044c<T> a(Class<T> cls) {
+        return new C0044c<>(cls);
     }
 
-    public static <T> C0115c<T> a(ClassLoader classLoader, String str) {
+    public static <T> C0044c<T> a(ClassLoader classLoader, String str) {
         try {
-            return new C0115c<>(classLoader.loadClass(str));
+            return new C0044c<>(classLoader.loadClass(str));
         } catch (Exception e2) {
             b(new b.a(e2));
-            return new C0115c<>(null);
+            return new C0044c<>(null);
         }
     }
 
-    private static <T> C0115c<T> a(String str) {
+    private static <T> C0044c<T> a(String str) {
         try {
-            return new C0115c<>(Class.forName(str));
+            return new C0044c<>(Class.forName(str));
         } catch (ClassNotFoundException e2) {
             b(new b.a(e2));
-            return new C0115c<>(null);
+            return new C0044c<>(null);
         }
     }
 
     private static void a(a aVar) {
-        f7060a = aVar;
+        f4222a = aVar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void b(b.a aVar) {
-        a aVar2 = f7060a;
+        a aVar2 = f4222a;
         if (aVar2 == null || !aVar2.a()) {
             throw aVar;
         }

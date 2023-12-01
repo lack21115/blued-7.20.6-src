@@ -11,11 +11,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class d extends ThreadPoolExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final BlockingQueue<Runnable> f4118a = new LinkedBlockingQueue(256);
+    private static final BlockingQueue<Runnable> f4070a = new LinkedBlockingQueue(256);
     private static final ThreadFactory b = new ThreadFactory() { // from class: cn.com.chinatelecom.account.api.c.d.1
 
         /* renamed from: a  reason: collision with root package name */
-        private final AtomicInteger f4119a = new AtomicInteger(1);
+        private final AtomicInteger f4071a = new AtomicInteger(1);
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
@@ -28,7 +28,7 @@ public class d extends ThreadPoolExecutor {
     }
 
     public d(int i) {
-        this(i, i * 2, 1L, TimeUnit.SECONDS, f4118a, b);
+        this(i, i * 2, 1L, TimeUnit.SECONDS, f4070a, b);
     }
 
     public d(int i, int i2, long j, TimeUnit timeUnit, BlockingQueue<Runnable> blockingQueue, ThreadFactory threadFactory) {

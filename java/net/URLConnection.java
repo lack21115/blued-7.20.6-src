@@ -1,7 +1,5 @@
 package java.net;
 
-import android.content.ClipDescription;
-import com.huawei.openalliance.ad.constant.ax;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -258,11 +256,11 @@ public abstract class URLConnection {
                 return "application/zip";
             }
             if (str6.startsWith("GI")) {
-                return ax.B;
+                return "image/gif";
             }
             String upperCase = str6.trim().toUpperCase(Locale.US);
             if (upperCase.startsWith("<!DOCTYPE HTML") || upperCase.startsWith("<HTML") || upperCase.startsWith("<HEAD") || upperCase.startsWith("<BODY") || upperCase.startsWith("<HEAD")) {
-                return ClipDescription.MIMETYPE_TEXT_HTML;
+                return "text/html";
             }
             if (upperCase.startsWith("<?XML")) {
                 return "application/xml";

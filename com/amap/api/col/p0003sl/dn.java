@@ -5,23 +5,19 @@ import android.graphics.Bitmap;
 /* renamed from: com.amap.api.col.3sl.dn  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dn.class */
 public final class dn {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f4858a = false;
+    private static boolean a = false;
     private static boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f4859c = false;
+    private static boolean c = false;
     private boolean d = false;
     private int e = 0;
     private int f = 20;
 
     public static void a(boolean z) {
-        f4858a = z;
+        a = z;
     }
 
     public static boolean a() {
-        return f4858a;
+        return a;
     }
 
     public static void b(boolean z) {
@@ -33,11 +29,11 @@ public final class dn {
     }
 
     public static void c(boolean z) {
-        f4859c = z;
+        c = z;
     }
 
     public static boolean c() {
-        return f4859c;
+        return c;
     }
 
     public static void g() {

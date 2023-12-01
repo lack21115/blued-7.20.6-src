@@ -6,12 +6,11 @@ import android.os.Build;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.view.WindowManager;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/StvCustomDialog.class */
 public class StvCustomDialog extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private OnBackCallBack f15914a;
+    private OnBackCallBack a;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/StvCustomDialog$OnBackCallBack.class */
     public interface OnBackCallBack {
@@ -25,7 +24,7 @@ public class StvCustomDialog extends Dialog {
     public void a(OnBackCallBack onBackCallBack) {
         Window window = getWindow();
         if (Build.VERSION.SDK_INT >= 21 && window != null && window.getDecorView() != null) {
-            window.getDecorView().setSystemUiVisibility(1280);
+            window.getDecorView().setSystemUiVisibility(GL10.GL_INVALID_ENUM);
             window.addFlags(Integer.MIN_VALUE);
             window.setStatusBarColor(0);
         }
@@ -37,7 +36,7 @@ public class StvCustomDialog extends Dialog {
     }
 
     public void b(OnBackCallBack onBackCallBack) {
-        this.f15914a = onBackCallBack;
+        this.a = onBackCallBack;
     }
 
     @Override // android.app.Dialog
@@ -46,7 +45,7 @@ public class StvCustomDialog extends Dialog {
         if (isShowing()) {
             dismiss();
         }
-        OnBackCallBack onBackCallBack = this.f15914a;
+        OnBackCallBack onBackCallBack = this.a;
         if (onBackCallBack != null) {
             onBackCallBack.a();
         }

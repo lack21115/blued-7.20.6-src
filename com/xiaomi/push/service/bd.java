@@ -6,19 +6,19 @@ import android.text.TextUtils;
 public class bd {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f41627a = 0;
+    private static long f27936a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private static String f999a = "";
+    private static String f952a = "";
 
     public static String a() {
-        if (TextUtils.isEmpty(f999a)) {
-            f999a = com.xiaomi.push.bn.a(4);
+        if (TextUtils.isEmpty(f952a)) {
+            f952a = com.xiaomi.push.bn.a(4);
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(f999a);
-        long j = f41627a;
-        f41627a = 1 + j;
+        sb.append(f952a);
+        long j = f27936a;
+        f27936a = 1 + j;
         sb.append(j);
         return sb.toString();
     }

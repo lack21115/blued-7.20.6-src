@@ -47,11 +47,11 @@ import org.json.JSONObject;
 public class d implements c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40818a = "iucc";
+    private static final String f27127a = "iucc";
     private static final String b = at.b().b(at.C);
 
     /* renamed from: c  reason: collision with root package name */
-    private static JSONObject f40819c = null;
+    private static JSONObject f27128c = null;
     private static final String[] d = {com.umeng.ccg.a.f, com.umeng.ccg.a.g, com.umeng.ccg.a.h};
     private static ArrayList<aa> e = null;
     private static ArrayList<aa> f = null;
@@ -65,11 +65,11 @@ public class d implements c.a {
         private JSONArray b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f40822c;
+        private String f27131c;
 
         public a(JSONArray jSONArray, String str) {
             this.b = jSONArray;
-            this.f40822c = str;
+            this.f27131c = str;
         }
 
         public JSONArray a() {
@@ -77,7 +77,7 @@ public class d implements c.a {
         }
 
         public String b() {
-            return this.f40822c;
+            return this.f27131c;
         }
     }
 
@@ -86,7 +86,7 @@ public class d implements c.a {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final d f40823a = new d();
+        private static final d f27132a = new d();
 
         private b() {
         }
@@ -311,7 +311,7 @@ public class d implements c.a {
     }
 
     public static d a() {
-        return b.f40823a;
+        return b.f27132a;
     }
 
     public static void a(Context context, String str) {
@@ -333,7 +333,7 @@ public class d implements c.a {
             long parseLong = Long.parseLong(split[0]);
             String str2 = split[1];
             SharedPreferences.Editor edit = a2.edit();
-            edit.putLong(aq.f40629c, j2);
+            edit.putLong(aq.f26938c, j2);
             edit.putLong(aq.d, parseLong);
             edit.putString(aq.e, str2).commit();
             UMRTLog.i(UMRTLog.RTLOG_TAG, "updateTsS1S2 : ts = " + j2 + "; s1 = " + parseLong + "; s2 = " + str2);
@@ -379,7 +379,7 @@ public class d implements c.a {
             }
             SharedPreferences a2 = aq.a(UMGlobalContext.getAppContext());
             if (a2 != null) {
-                if (a2.getLong(aq.f40629c, 0L) != parseLong) {
+                if (a2.getLong(aq.f26938c, 0L) != parseLong) {
                     UMRTLog.i(UMRTLog.RTLOG_TAG, "local config ts != iuccS1, send FETCH_NEW_CONFIG msg.");
                     this.h = String.valueOf(parseLong) + "@" + str2;
                     com.umeng.ccg.c.a(UMGlobalContext.getAppContext(), 101, a(), str);
@@ -494,7 +494,7 @@ public class d implements c.a {
     }
 
     private void c(Context context) {
-        ImprintHandler.getImprintService(context).registImprintCallback(f40818a, new UMImprintChangeCallback() { // from class: com.umeng.ccg.d.1
+        ImprintHandler.getImprintService(context).registImprintCallback(f27127a, new UMImprintChangeCallback() { // from class: com.umeng.ccg.d.1
             @Override // com.umeng.commonsdk.statistics.internal.UMImprintChangeCallback
             public void onImprintValueChanged(String str, String str2) {
                 com.umeng.ccg.c.a(UMGlobalContext.getAppContext(), 107, d.a(), str2);
@@ -508,7 +508,7 @@ public class d implements c.a {
                 JSONObject optJSONObject = jSONObject.optJSONObject("cc");
                 z zVar = null;
                 z a2 = optJSONObject.has(com.umeng.ccg.a.b) ? a(com.umeng.ccg.a.b, optJSONObject.optJSONObject(com.umeng.ccg.a.b)) : null;
-                z a3 = optJSONObject.has(com.umeng.ccg.a.f40813c) ? a(com.umeng.ccg.a.f40813c, optJSONObject.optJSONObject(com.umeng.ccg.a.f40813c)) : null;
+                z a3 = optJSONObject.has(com.umeng.ccg.a.f27122c) ? a(com.umeng.ccg.a.f27122c, optJSONObject.optJSONObject(com.umeng.ccg.a.f27122c)) : null;
                 z a4 = optJSONObject.has(com.umeng.ccg.a.d) ? a(com.umeng.ccg.a.d, optJSONObject.optJSONObject(com.umeng.ccg.a.d)) : null;
                 z a5 = optJSONObject.has(com.umeng.ccg.a.e) ? a(com.umeng.ccg.a.e, optJSONObject.optJSONObject(com.umeng.ccg.a.e)) : null;
                 z a6 = optJSONObject.has(com.umeng.ccg.a.f) ? a(com.umeng.ccg.a.f, optJSONObject.optJSONObject(com.umeng.ccg.a.f)) : null;
@@ -636,11 +636,11 @@ public class d implements c.a {
                     JSONObject a2 = al.a(UMGlobalContext.getAppContext(), str);
                     if (a2 != null) {
                         UMRTLog.i(UMRTLog.RTLOG_TAG, "[imprint] send request. body: " + a2.toString());
-                        ar.a(new ao(ao.f40626a, a2, str), 0L, TimeUnit.SECONDS);
+                        ar.a(new ao(ao.f26935a, a2, str), 0L, TimeUnit.SECONDS);
                     }
                     if (g()) {
                         c(UMGlobalContext.getAppContext());
-                        String imprintProperty = UMEnvelopeBuild.imprintProperty(UMGlobalContext.getAppContext(), f40818a, "");
+                        String imprintProperty = UMEnvelopeBuild.imprintProperty(UMGlobalContext.getAppContext(), f27127a, "");
                         UMRTLog.i(UMRTLog.RTLOG_TAG, "manual check iucc value: " + imprintProperty);
                         a(imprintProperty);
                         return;
@@ -732,7 +732,7 @@ public class d implements c.a {
                             z = false;
                             if (jSONObject4.has(com.igexin.push.core.b.U)) {
                                 JSONObject optJSONObject2 = jSONObject4.optJSONObject(com.igexin.push.core.b.U);
-                                f40819c = optJSONObject2;
+                                f27128c = optJSONObject2;
                                 z = false;
                                 if (optJSONObject2 != null) {
                                     CcgAgent.notifyConfigReady(optJSONObject2);
@@ -746,13 +746,13 @@ public class d implements c.a {
                     }
                     if (e()) {
                         UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> 检测到集成的SDK类型集合发生变化，发起云配参数拉取请求(设置本地should fetch标志).");
-                        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(UMGlobalContext.getAppContext(), f40818a, "");
+                        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(UMGlobalContext.getAppContext(), f27127a, "");
                         a(true);
                         com.umeng.ccg.c.a(UMGlobalContext.getAppContext(), 101, a(), imprintProperty2);
                         return;
                     }
                     c(UMGlobalContext.getAppContext());
-                    String imprintProperty3 = UMEnvelopeBuild.imprintProperty(UMGlobalContext.getAppContext(), f40818a, "");
+                    String imprintProperty3 = UMEnvelopeBuild.imprintProperty(UMGlobalContext.getAppContext(), f27127a, "");
                     UMRTLog.i(UMRTLog.RTLOG_TAG, "manual check iucc value: " + imprintProperty3);
                     a(imprintProperty3);
                     return;
@@ -862,7 +862,7 @@ public class d implements c.a {
                                     }
                                     JSONObject a4 = al.a(UMGlobalContext.getAppContext(), 1, aVar.a(), aVar.b());
                                     UMRTLog.i(UMRTLog.RTLOG_TAG, "screen_on event param: " + a4.toString());
-                                    ar.a(new an(an.f40624a, a4), 0L, TimeUnit.SECONDS);
+                                    ar.a(new an(an.f26933a, a4), 0L, TimeUnit.SECONDS);
                                     return;
                                 case 302:
                                     UMRTLog.i(UMRTLog.RTLOG_TAG, "recv REPORT_SCREEN_OFF msg.");
@@ -872,7 +872,7 @@ public class d implements c.a {
                                     }
                                     JSONObject a5 = al.a(UMGlobalContext.getAppContext(), 3, aVar2.a(), aVar2.b());
                                     UMRTLog.i(UMRTLog.RTLOG_TAG, "screen_off event param: " + a5.toString());
-                                    ar.a(new an(an.f40624a, a5), 0L, TimeUnit.SECONDS);
+                                    ar.a(new an(an.f26933a, a5), 0L, TimeUnit.SECONDS);
                                     return;
                                 case 303:
                                     UMRTLog.i(UMRTLog.RTLOG_TAG, "recv REPORT_SCREEN_UNLOCK msg.");
@@ -882,7 +882,7 @@ public class d implements c.a {
                                     }
                                     JSONObject a6 = al.a(UMGlobalContext.getAppContext(), 2, aVar3.a(), aVar3.b());
                                     UMRTLog.i(UMRTLog.RTLOG_TAG, "screen_unlock event param: " + a6.toString());
-                                    ar.a(new an(an.f40624a, a6), 0L, TimeUnit.SECONDS);
+                                    ar.a(new an(an.f26933a, a6), 0L, TimeUnit.SECONDS);
                                     return;
                                 default:
                                     return;

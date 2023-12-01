@@ -4,29 +4,29 @@ package com.tencent.mapsdk.internal;
 public class c6 {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f37348a;
+    private float f23657a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f37349c;
+    private float f23658c;
 
     public c6(float f, float f2, float f3) {
-        this.f37348a = f;
+        this.f23657a = f;
         this.b = f2;
-        this.f37349c = f3;
+        this.f23658c = f3;
         f();
     }
 
     public static c6 a(c6 c6Var, c6 c6Var2) {
-        return new c6(c6Var.f37348a + c6Var2.f37348a, c6Var.b + c6Var2.b, c6Var.f37349c + c6Var2.f37349c);
+        return new c6(c6Var.f23657a + c6Var2.f23657a, c6Var.b + c6Var2.b, c6Var.f23658c + c6Var2.f23658c);
     }
 
     public static c6 b(c6 c6Var) {
-        return new c6(-c6Var.f37348a, -c6Var.b, -c6Var.f37349c);
+        return new c6(-c6Var.f23657a, -c6Var.b, -c6Var.f23658c);
     }
 
     public static c6 c(c6 c6Var) {
-        float f = c6Var.f37348a;
+        float f = c6Var.f23657a;
         float f2 = c6Var.b;
         float b = (float) (f / c6Var.b());
         float b2 = (float) ((-f2) / c6Var.b());
@@ -43,9 +43,9 @@ public class c6 {
         if (b == 0.0d) {
             return;
         }
-        this.f37348a = (float) (this.f37348a / b);
+        this.f23657a = (float) (this.f23657a / b);
         this.b = (float) (this.b / b);
-        this.f37349c = (float) (this.f37349c / b);
+        this.f23658c = (float) (this.f23658c / b);
     }
 
     public double a(c6 c6Var) {
@@ -53,18 +53,18 @@ public class c6 {
     }
 
     public float[] a() {
-        return new float[]{this.f37348a, this.b, this.f37349c};
+        return new float[]{this.f23657a, this.b, this.f23658c};
     }
 
     public double b() {
-        float f = this.f37348a;
+        float f = this.f23657a;
         float f2 = this.b;
-        float f3 = this.f37349c;
+        float f3 = this.f23658c;
         return Math.sqrt((f * f) + (f2 * f2) + (f3 * f3));
     }
 
     public float c() {
-        return this.f37348a;
+        return this.f23657a;
     }
 
     public float d() {
@@ -72,10 +72,10 @@ public class c6 {
     }
 
     public float e() {
-        return this.f37349c;
+        return this.f23658c;
     }
 
     public String toString() {
-        return this.f37348a + "," + this.b + "," + this.f37349c;
+        return this.f23657a + "," + this.b + "," + this.f23658c;
     }
 }

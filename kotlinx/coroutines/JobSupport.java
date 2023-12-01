@@ -53,7 +53,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         public Throwable a(Job job) {
             Throwable d;
             Object l = this.b.l();
-            return (!(l instanceof Finishing) || (d = ((Finishing) l).d()) == null) ? l instanceof CompletedExceptionally ? ((CompletedExceptionally) l).f42791a : job.i() : d;
+            return (!(l instanceof Finishing) || (d = ((Finishing) l).d()) == null) ? l instanceof CompletedExceptionally ? ((CompletedExceptionally) l).a : job.i() : d;
         }
 
         @Override // kotlinx.coroutines.CancellableContinuationImpl
@@ -66,15 +66,13 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/JobSupport$ChildCompletion.class */
     public static final class ChildCompletion extends JobNode {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final JobSupport f42841a;
+        private final JobSupport a;
         private final Finishing b;
         private final ChildHandleNode d;
         private final Object g;
 
         public ChildCompletion(JobSupport jobSupport, Finishing finishing, ChildHandleNode childHandleNode, Object obj) {
-            this.f42841a = jobSupport;
+            this.a = jobSupport;
             this.b = finishing;
             this.d = childHandleNode;
             this.g = obj;
@@ -82,13 +80,13 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
 
         @Override // kotlinx.coroutines.CompletionHandlerBase
         public void a(Throwable th) {
-            this.f42841a.b(this.b, this.d, this.g);
+            this.a.b(this.b, this.d, this.g);
         }
 
         @Override // kotlin.jvm.functions.Function1
         public /* synthetic */ Unit invoke(Throwable th) {
             a(th);
-            return Unit.f42314a;
+            return Unit.a;
         }
     }
 
@@ -99,9 +97,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         private volatile /* synthetic */ Object _exceptionsHolder;
         private volatile /* synthetic */ int _isCompleting;
         private volatile /* synthetic */ Object _rootCause;
-
-        /* renamed from: a  reason: collision with root package name */
-        private final NodeList f42842a;
+        private final NodeList a;
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
         public Finishing(NodeList nodeList, boolean z, Throwable th) {
@@ -136,7 +132,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
 
         @Override // kotlinx.coroutines.Incomplete
         public NodeList at_() {
-            return this.f42842a;
+            return this.a;
         }
 
         public final List<Throwable> b(Throwable th) {
@@ -182,7 +178,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
                     ArrayList<Throwable> h = h();
                     h.add(g);
                     h.add(th);
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     a(h);
                 }
             }
@@ -249,12 +245,12 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         if (h == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return h == IntrinsicsKt.a() ? h : Unit.f42314a;
+        return h == IntrinsicsKt.a() ? h : Unit.a;
     }
 
     private final Object a(Finishing finishing, Object obj) {
         boolean f;
-        Throwable a2;
+        Throwable a;
         if (DebugKt.a()) {
             if (!(l() == finishing)) {
                 throw new AssertionError();
@@ -263,22 +259,22 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         if (!DebugKt.a() || (!finishing.e())) {
             if (!DebugKt.a() || finishing.c()) {
                 CompletedExceptionally completedExceptionally = obj instanceof CompletedExceptionally ? (CompletedExceptionally) obj : null;
-                Throwable th = completedExceptionally == null ? null : completedExceptionally.f42791a;
+                Throwable th = completedExceptionally == null ? null : completedExceptionally.a;
                 synchronized (finishing) {
                     f = finishing.f();
                     List<Throwable> b2 = finishing.b(th);
-                    a2 = a(finishing, (List<? extends Throwable>) b2);
-                    if (a2 != null) {
-                        a(a2, (List<? extends Throwable>) b2);
+                    a = a(finishing, (List<? extends Throwable>) b2);
+                    if (a != null) {
+                        a(a, (List<? extends Throwable>) b2);
                     }
                 }
-                if (a2 != null && a2 != th) {
-                    obj = new CompletedExceptionally(a2, false, 2, null);
+                if (a != null && a != th) {
+                    obj = new CompletedExceptionally(a, false, 2, null);
                 }
-                if (a2 != null) {
+                if (a != null) {
                     boolean z = true;
-                    if (!g(a2)) {
-                        z = f(a2);
+                    if (!g(a)) {
+                        z = f(a);
                     }
                     if (z) {
                         if (obj == null) {
@@ -288,7 +284,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
                     }
                 }
                 if (!f) {
-                    e(a2);
+                    e(a);
                 }
                 b(obj);
                 boolean compareAndSet = b.compareAndSet(this, finishing, JobSupportKt.a(obj));
@@ -496,30 +492,28 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         final JobNode jobNode2 = jobNode;
         LockFreeLinkedListNode.CondAddOp condAddOp = new LockFreeLinkedListNode.CondAddOp(this, obj) { // from class: kotlinx.coroutines.JobSupport$addLastAtomic$$inlined$addLastIf$1
             final /* synthetic */ JobSupport b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ Object f42840c;
+            final /* synthetic */ Object c;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(LockFreeLinkedListNode.this);
                 this.b = this;
-                this.f42840c = obj;
+                this.c = obj;
             }
 
             @Override // kotlinx.coroutines.internal.AtomicOp
             public Object a(LockFreeLinkedListNode lockFreeLinkedListNode) {
-                if (this.b.l() == this.f42840c) {
+                if (this.b.l() == this.c) {
                     return null;
                 }
                 return LockFreeLinkedListKt.a();
             }
         };
         while (true) {
-            int a2 = nodeList2.k().a(jobNode2, nodeList2, condAddOp);
+            int a = nodeList2.k().a(jobNode2, nodeList2, condAddOp);
             z = true;
-            if (a2 != 1) {
-                if (a2 == 2) {
+            if (a != 1) {
+                if (a == 2) {
                     z = false;
                     break;
                 }
@@ -551,12 +545,12 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     private final boolean a(Incomplete incomplete, Throwable th) {
         if (!DebugKt.a() || (!(incomplete instanceof Finishing))) {
             if (!DebugKt.a() || incomplete.as_()) {
-                NodeList a2 = a(incomplete);
-                if (a2 == null) {
+                NodeList a = a(incomplete);
+                if (a == null) {
                     return false;
                 }
-                if (b.compareAndSet(this, incomplete, new Finishing(a2, false, th))) {
-                    a(a2, th);
+                if (b.compareAndSet(this, incomplete, new Finishing(a, false, th))) {
+                    a(a, th);
                     return true;
                 }
                 return false;
@@ -567,10 +561,10 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     }
 
     private final boolean a(Finishing finishing, ChildHandleNode childHandleNode, Object obj) {
-        while (Job.DefaultImpls.a(childHandleNode.f42788a, false, false, new ChildCompletion(this, finishing, childHandleNode, obj), 1, null) == NonDisposableHandle.f42847a) {
-            ChildHandleNode a2 = a((LockFreeLinkedListNode) childHandleNode);
-            childHandleNode = a2;
-            if (a2 == null) {
+        while (Job.DefaultImpls.a(childHandleNode.a, false, false, new ChildCompletion(this, finishing, childHandleNode, obj), 1, null) == NonDisposableHandle.a) {
+            ChildHandleNode a = a((LockFreeLinkedListNode) childHandleNode);
+            childHandleNode = a;
+            if (a == null) {
                 return false;
             }
         }
@@ -593,10 +587,10 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         ChildHandle ax_ = ax_();
         if (ax_ != null) {
             ax_.dispose();
-            a((ChildHandle) NonDisposableHandle.f42847a);
+            a((ChildHandle) NonDisposableHandle.a);
         }
         CompletedExceptionally completedExceptionally = obj instanceof CompletedExceptionally ? (CompletedExceptionally) obj : null;
-        Throwable th = completedExceptionally == null ? null : completedExceptionally.f42791a;
+        Throwable th = completedExceptionally == null ? null : completedExceptionally.a;
         if (!(incomplete instanceof JobNode)) {
             NodeList at_ = incomplete.at_();
             if (at_ == null) {
@@ -624,8 +618,8 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
                 throw new AssertionError();
             }
         }
-        ChildHandleNode a2 = a((LockFreeLinkedListNode) childHandleNode);
-        if (a2 == null || !a(finishing, a2, obj)) {
+        ChildHandleNode a = a((LockFreeLinkedListNode) childHandleNode);
+        if (a == null || !a(finishing, a, obj)) {
             d(a(finishing, obj));
         }
     }
@@ -670,26 +664,26 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     }
 
     private final Object c(Object obj) {
-        Object a2;
+        Object a;
         do {
             Object l = l();
             if (!(l instanceof Incomplete) || ((l instanceof Finishing) && ((Finishing) l).c())) {
                 return JobSupportKt.c();
             }
-            a2 = a(l, new CompletedExceptionally(h(obj), false, 2, null));
-        } while (a2 == JobSupportKt.e());
-        return a2;
+            a = a(l, new CompletedExceptionally(h(obj), false, 2, null));
+        } while (a == JobSupportKt.e());
+        return a;
     }
 
     private final Object c(Incomplete incomplete, Object obj) {
-        NodeList a2 = a(incomplete);
-        if (a2 == null) {
+        NodeList a = a(incomplete);
+        if (a == null) {
             return JobSupportKt.e();
         }
         Incomplete incomplete2 = incomplete instanceof Finishing ? (Finishing) incomplete : null;
         Incomplete incomplete3 = incomplete2;
         if (incomplete2 == null) {
-            incomplete3 = new Finishing(a2, false, null);
+            incomplete3 = new Finishing(a, false, null);
         }
         synchronized (incomplete3) {
             try {
@@ -706,19 +700,19 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
                 boolean f = incomplete3.f();
                 CompletedExceptionally completedExceptionally = obj instanceof CompletedExceptionally ? (CompletedExceptionally) obj : null;
                 if (completedExceptionally != null) {
-                    incomplete3.c(completedExceptionally.f42791a);
+                    incomplete3.c(completedExceptionally.a);
                 }
                 Throwable d = incomplete3.d();
                 Throwable th = null;
                 if (true ^ f) {
                     th = d;
                 }
-                Unit unit = Unit.f42314a;
+                Unit unit = Unit.a;
                 if (incomplete3 != null) {
-                    a(a2, incomplete3);
+                    a(a, incomplete3);
                 }
                 ChildHandleNode b2 = b(incomplete);
-                return (b2 == null || !a((Finishing) incomplete3, b2, obj)) ? a((Finishing) incomplete3, obj) : JobSupportKt.f42845a;
+                return (b2 == null || !a((Finishing) incomplete3, b2, obj)) ? a((Finishing) incomplete3, obj) : JobSupportKt.a;
             } finally {
                 Incomplete incomplete4 = incomplete3;
             }
@@ -743,7 +737,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         }
         boolean z2 = th instanceof CancellationException;
         ChildHandle ax_ = ax_();
-        if (ax_ != null && ax_ != NonDisposableHandle.f42847a) {
+        if (ax_ != null && ax_ != NonDisposableHandle.a) {
             if (!ax_.b(th)) {
                 if (z2) {
                     return true;
@@ -814,12 +808,12 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
                         return JobSupportKt.c();
                     }
                 } else {
-                    Object a2 = a(l, new CompletedExceptionally(th4, false, 2, null));
-                    if (a2 == JobSupportKt.c()) {
+                    Object a = a(l, new CompletedExceptionally(th4, false, 2, null));
+                    if (a == JobSupportKt.c()) {
                         throw new IllegalStateException(Intrinsics.a("Cannot happen in ", l).toString());
                     }
-                    if (a2 != JobSupportKt.e()) {
-                        return a2;
+                    if (a != JobSupportKt.e()) {
+                        return a;
                     }
                     th = th4;
                 }
@@ -832,7 +826,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         if (completedExceptionally == null) {
             return null;
         }
-        return completedExceptionally.f42791a;
+        return completedExceptionally.a;
     }
 
     private final String k(Object obj) {
@@ -887,26 +881,26 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
 
     @Override // kotlinx.coroutines.Job
     public final DisposableHandle a(boolean z, boolean z2, Function1<? super Throwable, Unit> function1) {
-        JobNode a2 = a(function1, z);
+        JobNode a = a(function1, z);
         while (true) {
             Object l = l();
             if (l instanceof Empty) {
                 Empty empty = (Empty) l;
                 if (!empty.as_()) {
                     a(empty);
-                } else if (b.compareAndSet(this, l, a2)) {
-                    return a2;
+                } else if (b.compareAndSet(this, l, a)) {
+                    return a;
                 }
             } else if (!(l instanceof Incomplete)) {
                 if (z2) {
                     CompletedExceptionally completedExceptionally = l instanceof CompletedExceptionally ? (CompletedExceptionally) l : null;
-                    function1.invoke(completedExceptionally == null ? null : completedExceptionally.f42791a);
+                    function1.invoke(completedExceptionally == null ? null : completedExceptionally.a);
                 }
-                return NonDisposableHandle.f42847a;
+                return NonDisposableHandle.a;
             } else {
                 NodeList at_ = ((Incomplete) l).at_();
                 if (at_ != null) {
-                    DisposableHandle disposableHandle = NonDisposableHandle.f42847a;
+                    DisposableHandle disposableHandle = NonDisposableHandle.a;
                     Throwable th = null;
                     DisposableHandle disposableHandle2 = disposableHandle;
                     if (z) {
@@ -922,14 +916,14 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
                                         if (((Finishing) l).c()) {
                                         }
                                     }
-                                    Unit unit = Unit.f42314a;
+                                    Unit unit = Unit.a;
                                 }
-                                if (a(l, at_, a2)) {
+                                if (a(l, at_, a)) {
                                     if (th == null) {
-                                        return a2;
+                                        return a;
                                     }
-                                    disposableHandle2 = a2;
-                                    Unit unit2 = Unit.f42314a;
+                                    disposableHandle2 = a;
+                                    Unit unit2 = Unit.a;
                                 }
                             }
                         }
@@ -939,8 +933,8 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
                             function1.invoke(th);
                         }
                         return disposableHandle2;
-                    } else if (a(l, at_, a2)) {
-                        return a2;
+                    } else if (a(l, at_, a)) {
+                        return a;
                     }
                 } else if (l == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlinx.coroutines.JobNode");
@@ -972,15 +966,15 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
             }
         }
         if (job == null) {
-            a((ChildHandle) NonDisposableHandle.f42847a);
+            a((ChildHandle) NonDisposableHandle.a);
             return;
         }
         job.ay_();
-        ChildHandle a2 = job.a(this);
-        a(a2);
+        ChildHandle a = job.a(this);
+        a(a);
         if (g()) {
-            a2.dispose();
-            a((ChildHandle) NonDisposableHandle.f42847a);
+            a.dispose();
+            a((ChildHandle) NonDisposableHandle.a);
         }
     }
 
@@ -1049,24 +1043,24 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
 
     @Override // kotlinx.coroutines.Job
     public final boolean ay_() {
-        int a2;
+        int a;
         do {
-            a2 = a(l());
-            if (a2 == 0) {
+            a = a(l());
+            if (a == 0) {
                 return false;
             }
-        } while (a2 != 1);
+        } while (a != 1);
         return true;
     }
 
     @Override // kotlinx.coroutines.Job
     public final Object b(Continuation<? super Unit> continuation) {
         if (q()) {
-            Object a2 = a(continuation);
-            return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+            Object a = a(continuation);
+            return a == IntrinsicsKt.a() ? a : Unit.a;
         }
         JobKt.a(continuation.getContext());
-        return Unit.f42314a;
+        return Unit.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -1091,7 +1085,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
             if (!(l instanceof Incomplete)) {
                 if (selectInstance.g()) {
                     if (l instanceof CompletedExceptionally) {
-                        selectInstance.a(((CompletedExceptionally) l).f42791a);
+                        selectInstance.a(((CompletedExceptionally) l).a);
                         return;
                     } else {
                         UndispatchedKt.a(function2, JobSupportKt.b(l), selectInstance.a());
@@ -1110,7 +1104,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
             l = l();
             if (!(l instanceof Incomplete)) {
                 if (l instanceof CompletedExceptionally) {
-                    Throwable th = ((CompletedExceptionally) l).f42791a;
+                    Throwable th = ((CompletedExceptionally) l).a;
                     if (DebugKt.c()) {
                         if (continuation instanceof CoroutineStackFrame) {
                             throw StackTraceRecoveryKt.a(th, (CoroutineStackFrame) continuation);
@@ -1132,7 +1126,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     public final <T, R> void c(SelectInstance<? super R> selectInstance, Function2<? super T, ? super Continuation<? super R>, ? extends Object> function2) {
         Object l = l();
         if (l instanceof CompletedExceptionally) {
-            selectInstance.a(((CompletedExceptionally) l).f42791a);
+            selectInstance.a(((CompletedExceptionally) l).a);
         } else {
             CancellableKt.a(function2, JobSupportKt.b(l), selectInstance.a(), null, 4, null);
         }
@@ -1165,19 +1159,19 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     }
 
     public final boolean e(Object obj) {
-        Symbol c2 = JobSupportKt.c();
+        Symbol c = JobSupportKt.c();
         if (e()) {
-            Object c3 = c(obj);
-            c2 = c3;
-            if (c3 == JobSupportKt.f42845a) {
+            Object c2 = c(obj);
+            c = c2;
+            if (c2 == JobSupportKt.a) {
                 return true;
             }
         }
-        Object obj2 = c2;
-        if (c2 == JobSupportKt.c()) {
+        Object obj2 = c;
+        if (c == JobSupportKt.c()) {
             obj2 = i(obj);
         }
-        if (obj2 == JobSupportKt.c() || obj2 == JobSupportKt.f42845a) {
+        if (obj2 == JobSupportKt.c() || obj2 == JobSupportKt.a) {
             return true;
         }
         if (obj2 == JobSupportKt.d()) {
@@ -1188,17 +1182,17 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     }
 
     public final boolean f(Object obj) {
-        Object a2;
+        Object a;
         do {
-            a2 = a(l(), obj);
-            if (a2 == JobSupportKt.c()) {
+            a = a(l(), obj);
+            if (a == JobSupportKt.c()) {
                 return false;
             }
-            if (a2 == JobSupportKt.f42845a) {
+            if (a == JobSupportKt.a) {
                 return true;
             }
-        } while (a2 == JobSupportKt.e());
-        d(a2);
+        } while (a == JobSupportKt.e());
+        d(a);
         return true;
     }
 
@@ -1212,14 +1206,14 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
     }
 
     public final Object g(Object obj) {
-        Object a2;
+        Object a;
         do {
-            a2 = a(l(), obj);
-            if (a2 == JobSupportKt.c()) {
+            a = a(l(), obj);
+            if (a == JobSupportKt.c()) {
                 throw new IllegalStateException("Job " + this + " is already complete or completing, but is being completed with " + obj, j(obj));
             }
-        } while (a2 == JobSupportKt.e());
-        return a2;
+        } while (a == JobSupportKt.e());
+        return a;
     }
 
     @Override // kotlinx.coroutines.Job
@@ -1253,7 +1247,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
             if (l instanceof Incomplete) {
                 throw new IllegalStateException(Intrinsics.a("Job is still new or active: ", (Object) this).toString());
             }
-            return l instanceof CompletedExceptionally ? a(this, ((CompletedExceptionally) l).f42791a, null, 1, null) : new JobCancellationException(Intrinsics.a(DebugStringsKt.b(this), (Object) " has completed normally"), null, this);
+            return l instanceof CompletedExceptionally ? a(this, ((CompletedExceptionally) l).a, null, 1, null) : new JobCancellationException(Intrinsics.a(DebugStringsKt.b(this), (Object) " has completed normally"), null, this);
         }
         Throwable d = ((Finishing) l).d();
         if (d != null) {
@@ -1288,7 +1282,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         if (l instanceof Finishing) {
             cancellationException = ((Finishing) l).d();
         } else if (l instanceof CompletedExceptionally) {
-            cancellationException = ((CompletedExceptionally) l).f42791a;
+            cancellationException = ((CompletedExceptionally) l).a;
         } else if (l instanceof Incomplete) {
             throw new IllegalStateException(Intrinsics.a("Cannot be cancelling child in this state: ", l).toString());
         } else {
@@ -1312,7 +1306,7 @@ public class JobSupport implements ChildJob, Job, ParentJob, SelectClause0 {
         Object l = l();
         if (!(l instanceof Incomplete)) {
             if (l instanceof CompletedExceptionally) {
-                throw ((CompletedExceptionally) l).f42791a;
+                throw ((CompletedExceptionally) l).a;
             }
             return JobSupportKt.b(l);
         }

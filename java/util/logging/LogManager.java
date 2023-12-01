@@ -1,7 +1,6 @@
 package java.util.logging;
 
-import android.provider.Downloads;
-import com.igexin.push.core.b;
+import com.android.internal.content.NativeLibraryHelper;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.BufferedInputStream;
@@ -19,7 +18,7 @@ import libcore.io.IoUtils;
 public class LogManager {
     public static final String LOGGING_MXBEAN_NAME = "java.util.logging:type=Logging";
     static LogManager manager;
-    private static final LoggingPermission perm = new LoggingPermission(Downloads.Impl.COLUMN_CONTROL, null);
+    private static final LoggingPermission perm = new LoggingPermission("control", null);
     private Hashtable<String, Logger> loggers = new Hashtable<>();
     private Properties props = new Properties();
     private PropertyChangeSupport listeners = new PropertyChangeSupport(this);
@@ -123,7 +122,7 @@ public class LogManager {
             if (logger != null) {
                 logger.setManager(this);
             }
-            String property = this.props.getProperty(b.U);
+            String property = this.props.getProperty("config");
             if (property != null) {
                 StringTokenizer stringTokenizer = new StringTokenizer(property, " ");
                 while (stringTokenizer.hasMoreTokens()) {
@@ -208,7 +207,7 @@ public class LogManager {
             String property2 = System.getProperty("java.util.logging.config.file");
             String str = property2;
             if (property2 == null) {
-                str = System.getProperty("java.home") + File.separator + "lib" + File.separator + "logging.properties";
+                str = System.getProperty("java.home") + File.separator + NativeLibraryHelper.LIB_DIR_NAME + File.separator + "logging.properties";
             }
             try {
                 try {

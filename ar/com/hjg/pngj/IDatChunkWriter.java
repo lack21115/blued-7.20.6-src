@@ -8,11 +8,11 @@ import java.io.OutputStream;
 public class IDatChunkWriter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final OutputStream f3635a;
+    private final OutputStream f3587a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f3636c;
+    private byte[] f3588c;
     private int d;
     private int e;
     private long f;
@@ -31,7 +31,7 @@ public class IDatChunkWriter {
     }
 
     protected byte[] a() {
-        return ChunkHelper.f3655c;
+        return ChunkHelper.f3607c;
     }
 
     public final void b() {
@@ -40,9 +40,9 @@ public class IDatChunkWriter {
             return;
         }
         ChunkRaw chunkRaw = new ChunkRaw(this.d, a(), false);
-        chunkRaw.d = this.f3636c;
-        chunkRaw.a(this.f3635a);
-        this.f += chunkRaw.f3659a + 12;
+        chunkRaw.d = this.f3588c;
+        chunkRaw.a(this.f3587a);
+        this.f += chunkRaw.f3611a + 12;
         this.g++;
         this.d = 0;
         this.e = this.b;
@@ -67,10 +67,10 @@ public class IDatChunkWriter {
     public void g() {
         b();
         this.d = 0;
-        this.f3636c = null;
+        this.f3588c = null;
     }
 
     public byte[] h() {
-        return this.f3636c;
+        return this.f3588c;
     }
 }

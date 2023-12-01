@@ -8,13 +8,13 @@ import java.lang.reflect.Method;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f36418a;
+    private static Method f22727a;
     private static Method b;
 
     static {
         try {
             Method declaredMethod = TXCloudVideoView.class.getDeclaredMethod("setShowLogCallback", WeakReference.class);
-            f36418a = declaredMethod;
+            f22727a = declaredMethod;
             declaredMethod.setAccessible(true);
             Method declaredMethod2 = TXCloudVideoView.class.getDeclaredMethod("isShowLogEnabled", new Class[0]);
             b = declaredMethod2;
@@ -29,7 +29,7 @@ public final class a {
             return;
         }
         try {
-            f36418a.invoke(tXCloudVideoView, weakReference);
+            f22727a.invoke(tXCloudVideoView, weakReference);
         } catch (Exception e) {
             e.printStackTrace();
         }

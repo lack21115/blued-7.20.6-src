@@ -175,9 +175,9 @@ public class FeedbackView extends PPSBaseDialogContentView implements d {
     public void Code() {
         try {
             this.p = dt.Code(getContext()).V();
-            ge.V("FeedbackView", "adapterView mFeedbackViewPaddingLeft = %s, mFeedbackViewPaddingRight= %s", Integer.valueOf(this.f23013a), Integer.valueOf(this.b));
+            ge.V("FeedbackView", "adapterView mFeedbackViewPaddingLeft = %s, mFeedbackViewPaddingRight= %s", Integer.valueOf(this.f9405a), Integer.valueOf(this.b));
             if (V() && this.V != null) {
-                this.V.setPadding(this.f23013a, 0, this.b, 0);
+                this.V.setPadding(this.f9405a, 0, this.b, 0);
                 if (this.q != null) {
                     List<FeedbackInfo> Code = this.q.Code();
                     List<FeedbackInfo> V = this.q.V();

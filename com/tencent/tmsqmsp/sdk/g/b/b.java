@@ -10,7 +10,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public final class b implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f39766a = false;
+    public boolean f26075a = false;
     public final LinkedBlockingQueue b = new LinkedBlockingQueue(1);
 
     @Override // android.content.ServiceConnection

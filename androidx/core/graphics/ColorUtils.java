@@ -7,7 +7,7 @@ import java.util.Objects;
 public final class ColorUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<double[]> f2447a = new ThreadLocal<>();
+    private static final ThreadLocal<double[]> f2399a = new ThreadLocal<>();
 
     private ColorUtils() {
     }
@@ -195,11 +195,11 @@ public final class ColorUtils {
     }
 
     private static double[] a() {
-        double[] dArr = f2447a.get();
+        double[] dArr = f2399a.get();
         double[] dArr2 = dArr;
         if (dArr == null) {
             dArr2 = new double[3];
-            f2447a.set(dArr2);
+            f2399a.set(dArr2);
         }
         return dArr2;
     }

@@ -11,8 +11,8 @@ import com.kwad.sdk.core.response.model.AdTemplate;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/draw/a/a/b.class */
 public final class b extends com.kwad.components.ad.draw.kwai.a {
-    private a.InterfaceC0466a cM = new a.InterfaceC0466a() { // from class: com.kwad.components.ad.draw.a.a.b.1
-        @Override // com.kwad.components.ad.draw.a.a.a.InterfaceC0466a
+    private a.InterfaceC0296a cM = new a.InterfaceC0296a() { // from class: com.kwad.components.ad.draw.a.a.b.1
+        @Override // com.kwad.components.ad.draw.a.a.a.InterfaceC0296a
         public final void ay() {
             b.this.ay();
         }
@@ -98,6 +98,6 @@ public final class b extends com.kwad.components.ad.draw.kwai.a {
         super.onUnbind();
         this.cP.release();
         this.cQ.release();
-        this.bW.co.a((a.InterfaceC0466a) null);
+        this.bW.co.a((a.InterfaceC0296a) null);
     }
 }

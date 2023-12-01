@@ -1,14 +1,10 @@
 package com.amap.api.col.p0003sl;
 
-import com.huawei.openalliance.ad.constant.t;
-
 /* renamed from: com.amap.api.col.3sl.im  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/im.class */
 public final class im extends ky {
     private static int g = 10000000;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f5166a;
+    protected int a;
     protected long b;
     private boolean d;
     private boolean e;
@@ -22,7 +18,7 @@ public final class im extends ky {
         this.f = g;
         this.h = 0L;
         this.d = z;
-        this.f5166a = t.Y;
+        this.a = 600000;
         this.h = j;
         this.f = i;
     }
@@ -52,7 +48,7 @@ public final class im extends ky {
         if (!this.e || this.h > this.f) {
             if (this.d && this.h < this.f) {
                 long currentTimeMillis = System.currentTimeMillis();
-                if (currentTimeMillis - this.b < this.f5166a) {
+                if (currentTimeMillis - this.b < this.a) {
                     return false;
                 }
                 this.b = currentTimeMillis;

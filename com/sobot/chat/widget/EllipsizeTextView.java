@@ -162,9 +162,8 @@ public class EllipsizeTextView extends TextView {
         return layout.getHeight() > (getMeasuredHeight() - getPaddingBottom()) - getPaddingTop();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         this.mIsExactlyMode = View.MeasureSpec.getMode(i) == 1073741824;
         Layout layout = getLayout();

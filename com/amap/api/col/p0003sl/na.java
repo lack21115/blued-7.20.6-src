@@ -12,14 +12,12 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.na  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/na.class */
 public final class na {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ia f5402a;
+    private ia a;
 
     public na(String str) {
-        this.f5402a = null;
+        this.a = null;
         try {
-            this.f5402a = new ia.a(str, "1.0", "1.0.0").a(new String[]{"info"}).a();
+            this.a = new ia.a(str, "1.0", "1.0.0").a(new String[]{"info"}).a();
         } catch (hn e) {
         }
     }
@@ -108,7 +106,7 @@ public final class na {
 
     public final List<ia> a(Context context) {
         try {
-            return a(new JSONArray(ji.a(context, this.f5402a, "rbck")));
+            return a(new JSONArray(ji.a(context, this.a, "rbck")));
         } catch (JSONException e) {
             return new ArrayList();
         }
@@ -124,6 +122,6 @@ public final class na {
         if (TextUtils.isEmpty(jSONArray)) {
             return;
         }
-        ji.a(context, this.f5402a, "rbck", jSONArray);
+        ji.a(context, this.a, "rbck", jSONArray);
     }
 }

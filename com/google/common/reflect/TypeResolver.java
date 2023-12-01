@@ -33,7 +33,7 @@ public final class TypeResolver {
             Preconditions.checkNotNull(type);
             TypeMappingIntrospector typeMappingIntrospector = new TypeMappingIntrospector();
             typeMappingIntrospector.visit(type);
-            return ImmutableMap.copyOf(typeMappingIntrospector.mappings);
+            return ImmutableMap.copyOf((Map) typeMappingIntrospector.mappings);
         }
 
         private void map(TypeVariableKey typeVariableKey, Type type) {
@@ -311,7 +311,7 @@ public final class TypeResolver {
                 }
                 Type componentType = Types.getComponentType(type3);
                 Preconditions.checkArgument(componentType != null, "%s is not an array type.", type2);
-                TypeResolver.populateTypeMappings(Map.this, genericArrayType.getGenericComponentType(), componentType);
+                TypeResolver.populateTypeMappings(map, genericArrayType.getGenericComponentType(), componentType);
             }
 
             @Override // com.google.common.reflect.TypeVisitor
@@ -322,20 +322,20 @@ public final class TypeResolver {
                 }
                 ParameterizedType parameterizedType2 = (ParameterizedType) TypeResolver.expectArgument(ParameterizedType.class, type3);
                 if (parameterizedType.getOwnerType() != null && parameterizedType2.getOwnerType() != null) {
-                    TypeResolver.populateTypeMappings(Map.this, parameterizedType.getOwnerType(), parameterizedType2.getOwnerType());
+                    TypeResolver.populateTypeMappings(map, parameterizedType.getOwnerType(), parameterizedType2.getOwnerType());
                 }
                 Preconditions.checkArgument(parameterizedType.getRawType().equals(parameterizedType2.getRawType()), "Inconsistent raw type: %s vs. %s", parameterizedType, type2);
                 Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
                 Type[] actualTypeArguments2 = parameterizedType2.getActualTypeArguments();
                 Preconditions.checkArgument(actualTypeArguments.length == actualTypeArguments2.length, "%s not compatible with %s", parameterizedType, parameterizedType2);
                 for (int i = 0; i < actualTypeArguments.length; i++) {
-                    TypeResolver.populateTypeMappings(Map.this, actualTypeArguments[i], actualTypeArguments2[i]);
+                    TypeResolver.populateTypeMappings(map, actualTypeArguments[i], actualTypeArguments2[i]);
                 }
             }
 
             @Override // com.google.common.reflect.TypeVisitor
             void visitTypeVariable(TypeVariable<?> typeVariable) {
-                Map.this.put(new TypeVariableKey(typeVariable), type2);
+                map.put(new TypeVariableKey(typeVariable), type2);
             }
 
             @Override // com.google.common.reflect.TypeVisitor
@@ -355,11 +355,11 @@ public final class TypeResolver {
                         if (i3 >= upperBounds.length) {
                             break;
                         }
-                        TypeResolver.populateTypeMappings(Map.this, upperBounds[i3], upperBounds2[i3]);
+                        TypeResolver.populateTypeMappings(map, upperBounds[i3], upperBounds2[i3]);
                         i2 = i3 + 1;
                     }
                     for (i = 0; i < lowerBounds.length; i++) {
-                        TypeResolver.populateTypeMappings(Map.this, lowerBounds[i], lowerBounds2[i]);
+                        TypeResolver.populateTypeMappings(map, lowerBounds[i], lowerBounds2[i]);
                     }
                 }
             }

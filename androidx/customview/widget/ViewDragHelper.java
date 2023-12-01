@@ -35,7 +35,7 @@ public class ViewDragHelper {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private int f2774a;
+    private int f2726a;
     private int b;
     private float[] d;
     private float[] e;
@@ -58,7 +58,7 @@ public class ViewDragHelper {
     private final ViewGroup v;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2775c = -1;
+    private int f2727c = -1;
     private final Runnable x = new Runnable() { // from class: androidx.customview.widget.ViewDragHelper.2
         @Override // java.lang.Runnable
         public void run() {
@@ -222,7 +222,7 @@ public class ViewDragHelper {
         this.u = true;
         this.s.onViewReleased(this.t, f, f2);
         this.u = false;
-        if (this.f2774a == 1) {
+        if (this.f2726a == 1) {
             a(0);
         }
     }
@@ -348,7 +348,7 @@ public class ViewDragHelper {
 
     private void b() {
         this.l.computeCurrentVelocity(1000, this.m);
-        a(a(this.l.getXVelocity(this.f2775c), this.n, this.m), a(this.l.getYVelocity(this.f2775c), this.n, this.m));
+        a(a(this.l.getXVelocity(this.f2727c), this.n, this.m), a(this.l.getYVelocity(this.f2727c), this.n, this.m));
     }
 
     private void b(float f, float f2, int i) {
@@ -421,19 +421,19 @@ public class ViewDragHelper {
             int[] iArr3 = new int[i2];
             float[] fArr6 = this.d;
             if (fArr6 != null) {
-                System.arraycopy((Object) fArr6, 0, (Object) fArr2, 0, fArr6.length);
+                System.arraycopy(fArr6, 0, fArr2, 0, fArr6.length);
                 float[] fArr7 = this.e;
-                System.arraycopy((Object) fArr7, 0, (Object) fArr3, 0, fArr7.length);
+                System.arraycopy(fArr7, 0, fArr3, 0, fArr7.length);
                 float[] fArr8 = this.f;
-                System.arraycopy((Object) fArr8, 0, (Object) fArr4, 0, fArr8.length);
+                System.arraycopy(fArr8, 0, fArr4, 0, fArr8.length);
                 float[] fArr9 = this.g;
-                System.arraycopy((Object) fArr9, 0, (Object) fArr5, 0, fArr9.length);
+                System.arraycopy(fArr9, 0, fArr5, 0, fArr9.length);
                 int[] iArr4 = this.h;
-                System.arraycopy((Object) iArr4, 0, (Object) iArr, 0, iArr4.length);
+                System.arraycopy(iArr4, 0, iArr, 0, iArr4.length);
                 int[] iArr5 = this.i;
-                System.arraycopy((Object) iArr5, 0, (Object) iArr2, 0, iArr5.length);
+                System.arraycopy(iArr5, 0, iArr2, 0, iArr5.length);
                 int[] iArr6 = this.j;
-                System.arraycopy((Object) iArr6, 0, (Object) iArr3, 0, iArr6.length);
+                System.arraycopy(iArr6, 0, iArr3, 0, iArr6.length);
             }
             this.d = fArr2;
             this.e = fArr3;
@@ -465,30 +465,30 @@ public class ViewDragHelper {
 
     void a(int i) {
         this.v.removeCallbacks(this.x);
-        if (this.f2774a != i) {
-            this.f2774a = i;
+        if (this.f2726a != i) {
+            this.f2726a = i;
             this.s.onViewDragStateChanged(i);
-            if (this.f2774a == 0) {
+            if (this.f2726a == 0) {
                 this.t = null;
             }
         }
     }
 
     boolean a(View view, int i) {
-        if (view == this.t && this.f2775c == i) {
+        if (view == this.t && this.f2727c == i) {
             return true;
         }
         if (view == null || !this.s.tryCaptureView(view, i)) {
             return false;
         }
-        this.f2775c = i;
+        this.f2727c = i;
         captureChildView(view, i);
         return true;
     }
 
     public void abort() {
         cancel();
-        if (this.f2774a == 2) {
+        if (this.f2726a == 2) {
             int currX = this.r.getCurrX();
             int currY = this.r.getCurrY();
             this.r.abortAnimation();
@@ -500,7 +500,7 @@ public class ViewDragHelper {
     }
 
     public void cancel() {
-        this.f2775c = -1;
+        this.f2727c = -1;
         a();
         VelocityTracker velocityTracker = this.l;
         if (velocityTracker != null) {
@@ -512,7 +512,7 @@ public class ViewDragHelper {
     public void captureChildView(View view, int i) {
         if (view.getParent() == this.v) {
             this.t = view;
-            this.f2775c = i;
+            this.f2727c = i;
             this.s.onViewCaptured(view, i);
             a(1);
             return;
@@ -569,7 +569,7 @@ public class ViewDragHelper {
     }
 
     public boolean continueSettling(boolean z) {
-        if (this.f2774a == 2) {
+        if (this.f2726a == 2) {
             boolean computeScrollOffset = this.r.computeScrollOffset();
             int currX = this.r.getCurrX();
             int currY = this.r.getCurrY();
@@ -604,7 +604,7 @@ public class ViewDragHelper {
             }
         }
         boolean z3 = false;
-        if (this.f2774a == 2) {
+        if (this.f2726a == 2) {
             z3 = true;
         }
         return z3;
@@ -629,12 +629,12 @@ public class ViewDragHelper {
         if (!this.u) {
             throw new IllegalStateException("Cannot flingCapturedView outside of a call to Callback#onViewReleased");
         }
-        this.r.fling(this.t.getLeft(), this.t.getTop(), (int) this.l.getXVelocity(this.f2775c), (int) this.l.getYVelocity(this.f2775c), i, i3, i2, i4);
+        this.r.fling(this.t.getLeft(), this.t.getTop(), (int) this.l.getXVelocity(this.f2727c), (int) this.l.getYVelocity(this.f2727c), i, i3, i2, i4);
         a(2);
     }
 
     public int getActivePointerId() {
-        return this.f2775c;
+        return this.f2727c;
     }
 
     public View getCapturedView() {
@@ -658,7 +658,7 @@ public class ViewDragHelper {
     }
 
     public int getViewDragState() {
-        return this.f2774a;
+        return this.f2726a;
     }
 
     public boolean isCapturedViewUnder(int i, int i2) {
@@ -733,18 +733,18 @@ public class ViewDragHelper {
                 this.s.onEdgeTouched(i3 & i4, pointerId);
             }
         } else if (actionMasked == 1) {
-            if (this.f2774a == 1) {
+            if (this.f2726a == 1) {
                 b();
             }
             cancel();
         } else if (actionMasked == 2) {
-            if (this.f2774a == 1) {
-                if (d(this.f2775c)) {
-                    int findPointerIndex = motionEvent.findPointerIndex(this.f2775c);
+            if (this.f2726a == 1) {
+                if (d(this.f2727c)) {
+                    int findPointerIndex = motionEvent.findPointerIndex(this.f2727c);
                     float x2 = motionEvent.getX(findPointerIndex);
                     float y2 = motionEvent.getY(findPointerIndex);
                     float[] fArr = this.f;
-                    int i5 = this.f2775c;
+                    int i5 = this.f2727c;
                     int i6 = (int) (x2 - fArr[i5]);
                     int i7 = (int) (y2 - this.g[i5]);
                     b(this.t.getLeft() + i6, this.t.getTop() + i7, i6, i7);
@@ -767,7 +767,7 @@ public class ViewDragHelper {
                     float f = x3 - this.d[pointerId2];
                     float f2 = y3 - this.e[pointerId2];
                     b(f, f2, pointerId2);
-                    if (this.f2774a != 1) {
+                    if (this.f2726a != 1) {
                         View findTopChildUnder2 = findTopChildUnder((int) x3, (int) y3);
                         if (a(findTopChildUnder2, f, f2) && a(findTopChildUnder2, pointerId2)) {
                             break;
@@ -780,7 +780,7 @@ public class ViewDragHelper {
             }
             a(motionEvent);
         } else if (actionMasked == 3) {
-            if (this.f2774a == 1) {
+            if (this.f2726a == 1) {
                 a(0.0f, 0.0f);
             }
             cancel();
@@ -789,7 +789,7 @@ public class ViewDragHelper {
             float x4 = motionEvent.getX(actionIndex);
             float y4 = motionEvent.getY(actionIndex);
             a(x4, y4, pointerId3);
-            if (this.f2774a != 0) {
+            if (this.f2726a != 0) {
                 if (isCapturedViewUnder((int) x4, (int) y4)) {
                     a(this.t, pointerId3);
                     return;
@@ -805,7 +805,7 @@ public class ViewDragHelper {
         } else if (actionMasked != 6) {
         } else {
             int pointerId4 = motionEvent.getPointerId(actionIndex);
-            if (this.f2774a == 1 && pointerId4 == this.f2775c) {
+            if (this.f2726a == 1 && pointerId4 == this.f2727c) {
                 int pointerCount2 = motionEvent.getPointerCount();
                 while (true) {
                     if (i2 >= pointerCount2) {
@@ -813,11 +813,11 @@ public class ViewDragHelper {
                         break;
                     }
                     int pointerId5 = motionEvent.getPointerId(i2);
-                    if (pointerId5 != this.f2775c) {
+                    if (pointerId5 != this.f2727c) {
                         View findTopChildUnder3 = findTopChildUnder((int) motionEvent.getX(i2), (int) motionEvent.getY(i2));
                         View view = this.t;
                         if (findTopChildUnder3 == view && a(view, pointerId5)) {
-                            i = this.f2775c;
+                            i = this.f2727c;
                             break;
                         }
                     }
@@ -845,7 +845,7 @@ public class ViewDragHelper {
 
     public boolean settleCapturedViewAt(int i, int i2) {
         if (this.u) {
-            return a(i, i2, (int) this.l.getXVelocity(this.f2775c), (int) this.l.getYVelocity(this.f2775c));
+            return a(i, i2, (int) this.l.getXVelocity(this.f2727c), (int) this.l.getYVelocity(this.f2727c));
         }
         throw new IllegalStateException("Cannot settleCapturedViewAt outside of a call to Callback#onViewReleased");
     }
@@ -867,9 +867,9 @@ public class ViewDragHelper {
 
     public boolean smoothSlideViewTo(View view, int i, int i2) {
         this.t = view;
-        this.f2775c = -1;
+        this.f2727c = -1;
         boolean a2 = a(i, i2, 0, 0);
-        if (!a2 && this.f2774a == 0 && this.t != null) {
+        if (!a2 && this.f2726a == 0 && this.t != null) {
             this.t = null;
         }
         return a2;

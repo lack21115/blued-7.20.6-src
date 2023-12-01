@@ -49,10 +49,10 @@ public final class ff extends ex<DistanceSearch.DistanceQuery, DistanceResult> {
                 }
                 LatLonPoint latLonPoint = origins.get(i2);
                 if (latLonPoint != null) {
-                    double a2 = fe.a(latLonPoint.getLatitude());
+                    double a = fe.a(latLonPoint.getLatitude());
                     stringBuffer.append(fe.a(latLonPoint.getLongitude()));
                     stringBuffer.append(",");
-                    stringBuffer.append(a2);
+                    stringBuffer.append(a);
                     if (i2 < size) {
                         stringBuffer.append("|");
                     }
@@ -62,12 +62,12 @@ public final class ff extends ex<DistanceSearch.DistanceQuery, DistanceResult> {
         }
         LatLonPoint destination = ((DistanceSearch.DistanceQuery) this.b).getDestination();
         if (destination != null) {
-            double a3 = fe.a(destination.getLatitude());
-            double a4 = fe.a(destination.getLongitude());
+            double a2 = fe.a(destination.getLatitude());
+            double a3 = fe.a(destination.getLongitude());
             stringBuffer.append("&destination=");
-            stringBuffer.append(a4);
-            stringBuffer.append(",");
             stringBuffer.append(a3);
+            stringBuffer.append(",");
+            stringBuffer.append(a2);
         }
         stringBuffer.append("&type=");
         stringBuffer.append(((DistanceSearch.DistanceQuery) this.b).getType());

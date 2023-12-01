@@ -17,8 +17,8 @@ public class TextSizeSettingFragment_ViewBinding implements Unbinder {
         this.b = textSizeSettingFragment;
         textSizeSettingFragment.title = (CommonTopTitleNoTrans) Utils.a(view, 2131370694, "field 'title'", CommonTopTitleNoTrans.class);
         textSizeSettingFragment.ivUserHeader = (ImageView) Utils.a(view, R.id.iv_user_header, "field 'ivUserHeader'", ImageView.class);
-        textSizeSettingFragment.tvRight = (TextView) Utils.a(view, 2131372451, "field 'tvRight'", TextView.class);
-        textSizeSettingFragment.tvLeft = (TextView) Utils.a(view, 2131371781, "field 'tvLeft'", TextView.class);
+        textSizeSettingFragment.tvRight = (TextView) Utils.a(view, R.id.tv_right, "field 'tvRight'", TextView.class);
+        textSizeSettingFragment.tvLeft = (TextView) Utils.a(view, R.id.tv_left, "field 'tvLeft'", TextView.class);
         textSizeSettingFragment.sbTextSize = (TextSizeRaeSeekBar) Utils.a(view, R.id.sb_text_size, "field 'sbTextSize'", TextSizeRaeSeekBar.class);
     }
 

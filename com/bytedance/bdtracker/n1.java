@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class n1 implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    public final v f21266a;
+    public final v f7660a;
     public final Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Map<String, a> f21267c = new HashMap();
+    public final Map<String, a> f7661c = new HashMap();
     public final Set<String> d = new HashSet();
     public String e = "";
 
@@ -29,42 +29,42 @@ public class n1 implements Handler.Callback {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f21268a;
+        public long f7662a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public JSONObject f21269c;
+        public JSONObject f7663c;
 
         public a(long j, String str, JSONObject jSONObject) {
-            this.f21268a = j;
+            this.f7662a = j;
             this.b = str;
-            this.f21269c = jSONObject;
+            this.f7663c = jSONObject;
         }
 
         public String toString() {
             StringBuilder a2 = com.bytedance.bdtracker.a.a("ProfileDataWrapper{timeStamp=");
-            a2.append(this.f21268a);
+            a2.append(this.f7662a);
             a2.append(", apiName='");
             a2.append(this.b);
             a2.append('\'');
             a2.append(", jsonObject=");
-            a2.append(this.f21269c);
+            a2.append(this.f7663c);
             a2.append('}');
             return a2.toString();
         }
     }
 
     public n1(v vVar) {
-        this.f21266a = vVar;
+        this.f7660a = vVar;
         StringBuilder a2 = com.bytedance.bdtracker.a.a("bd_tracker_profile:");
-        a2.append(vVar.f21325c.l);
+        a2.append(vVar.f7719c.l);
         HandlerThread handlerThread = new HandlerThread(a2.toString());
         handlerThread.start();
         this.b = new Handler(handlerThread.getLooper(), this);
     }
 
     public final void a(int i, a aVar) {
-        if (this.f21266a.f21325c.v) {
+        if (this.f7660a.f7719c.v) {
             return;
         }
         Handler handler = this.b;
@@ -72,18 +72,18 @@ public class n1 implements Handler.Callback {
     }
 
     public final void a(a aVar) {
-        if (this.f21266a == null) {
+        if (this.f7660a == null) {
             return;
         }
         StringBuilder a2 = com.bytedance.bdtracker.a.a("__profile_");
         a2.append(aVar.b);
-        d2 d2Var = new d2(a2.toString(), aVar.f21269c.toString());
+        d2 d2Var = new d2(a2.toString(), aVar.f7663c.toString());
         ArrayList<t1> arrayList = new ArrayList<>();
-        v vVar = this.f21266a;
-        vVar.m.a(vVar.f21325c, d2Var);
-        this.f21266a.b(d2Var);
+        v vVar = this.f7660a;
+        vVar.m.a(vVar.f7719c, d2Var);
+        this.f7660a.b(d2Var);
         arrayList.add(d2Var);
-        this.f21266a.b().b(arrayList);
+        this.f7660a.b().b(arrayList);
         this.b.sendMessageDelayed(this.b.obtainMessage(106), 500L);
     }
 
@@ -115,9 +115,9 @@ public class n1 implements Handler.Callback {
             case 100:
                 a aVar = (a) message.obj;
                 String str = this.e;
-                boolean equals = str != null ? str.equals(this.f21266a.f21325c.getSsid()) : false;
-                this.e = this.f21266a.f21325c.getSsid();
-                Iterator<String> keys = aVar.f21269c.keys();
+                boolean equals = str != null ? str.equals(this.f7660a.f7719c.getSsid()) : false;
+                this.e = this.f7660a.f7719c.getSsid();
+                Iterator<String> keys = aVar.f7663c.keys();
                 boolean z3 = false;
                 boolean z4 = true;
                 while (true) {
@@ -131,20 +131,20 @@ public class n1 implements Handler.Callback {
                         return true;
                     }
                     String next = keys.next();
-                    if (!this.f21267c.containsKey(next) || this.f21267c.get(next) == null) {
+                    if (!this.f7661c.containsKey(next) || this.f7661c.get(next) == null) {
                         z3 = true;
                     } else {
-                        a aVar2 = this.f21267c.get(next);
+                        a aVar2 = this.f7661c.get(next);
                         z2 = z3;
                         z = z5;
                         if (aVar2 != null) {
-                            if (System.currentTimeMillis() - aVar2.f21268a >= 60000) {
+                            if (System.currentTimeMillis() - aVar2.f7662a >= 60000) {
                                 z3 = true;
                             }
                             try {
                                 z2 = z3;
                                 z = z5;
-                                if (j1.a(aVar.f21269c, aVar2.f21269c, (String) null)) {
+                                if (j1.a(aVar.f7663c, aVar2.f7663c, (String) null)) {
                                 }
                             } catch (Exception e) {
                                 z2.a(e);
@@ -152,13 +152,13 @@ public class n1 implements Handler.Callback {
                                 z = z5;
                             }
                         }
-                        this.f21267c.put(next, aVar);
+                        this.f7661c.put(next, aVar);
                         z3 = z2;
                         z4 = z;
                     }
                     z = false;
                     z2 = z3;
-                    this.f21267c.put(next, aVar);
+                    this.f7661c.put(next, aVar);
                     z3 = z2;
                     z4 = z;
                 }
@@ -169,9 +169,9 @@ public class n1 implements Handler.Callback {
             case 102:
                 a aVar3 = (a) message.obj;
                 String str2 = this.e;
-                boolean equals2 = str2 != null ? str2.equals(this.f21266a.f21325c.getSsid()) : false;
-                this.e = this.f21266a.f21325c.getSsid();
-                Iterator<String> keys2 = aVar3.f21269c.keys();
+                boolean equals2 = str2 != null ? str2.equals(this.f7660a.f7719c.getSsid()) : false;
+                this.e = this.f7660a.f7719c.getSsid();
+                Iterator<String> keys2 = aVar3.f7663c.keys();
                 boolean z6 = true;
                 while (keys2.hasNext()) {
                     String next2 = keys2.next();
@@ -199,18 +199,18 @@ public class n1 implements Handler.Callback {
                 a((a) message.obj);
                 return true;
             case 106:
-                v vVar = this.f21266a;
+                v vVar = this.f7660a;
                 if (vVar == null || vVar.h.h() == 0) {
                     return true;
                 }
-                ArrayList<t1> b = this.f21266a.b().b(this.f21266a.f21325c.l);
+                ArrayList<t1> b = this.f7660a.b().b(this.f7660a.f7719c.l);
                 if (b.isEmpty()) {
                     return true;
                 }
                 try {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("magic_tag", "ss_app_log");
-                    jSONObject.put("header", this.f21266a.f21325c.getHeader());
+                    jSONObject.put("header", this.f7660a.f7719c.getHeader());
                     jSONObject.put("time_sync", q1.e);
                     jSONObject.put("local_time", System.currentTimeMillis() / 1000);
                     JSONArray jSONArray = new JSONArray();
@@ -219,10 +219,10 @@ public class n1 implements Handler.Callback {
                         jSONArray.put(it.next().h());
                     }
                     jSONObject.put("event_v3", jSONArray);
-                    byte[] b2 = this.f21266a.f21325c.j.f21291c.b(jSONObject.toString());
-                    this.f21266a.b().a(b);
-                    if (this.f21266a.f21325c.j.a(new String[]{this.f21266a.c().getProfileUri()}, b2, this.f21266a.d) != 200) {
-                        this.f21266a.b().b(b);
+                    byte[] b2 = this.f7660a.f7719c.j.f7685c.b(jSONObject.toString());
+                    this.f7660a.b().a(b);
+                    if (this.f7660a.f7719c.j.a(new String[]{this.f7660a.c().getProfileUri()}, b2, this.f7660a.d) != 200) {
+                        this.f7660a.b().b(b);
                         return true;
                     }
                     return true;

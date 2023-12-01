@@ -14,17 +14,17 @@ public final class MapEntryProtoAdapter<K, V> extends ProtoAdapter<Map.Entry<? e
     private final ProtoAdapter<V> valueAdapter;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public MapEntryProtoAdapter(ProtoAdapter<K> keyAdapter, ProtoAdapter<V> valueAdapter) {
-        super(FieldEncoding.LENGTH_DELIMITED, Reflection.b(Map.Entry.class), (String) null, valueAdapter.getSyntax());
-        Intrinsics.e(keyAdapter, "keyAdapter");
-        Intrinsics.e(valueAdapter, "valueAdapter");
-        this.keyAdapter = keyAdapter;
-        this.valueAdapter = valueAdapter;
+    public MapEntryProtoAdapter(ProtoAdapter<K> protoAdapter, ProtoAdapter<V> protoAdapter2) {
+        super(FieldEncoding.LENGTH_DELIMITED, Reflection.b(Map.Entry.class), (String) null, protoAdapter2.getSyntax());
+        Intrinsics.e(protoAdapter, "keyAdapter");
+        Intrinsics.e(protoAdapter2, "valueAdapter");
+        this.keyAdapter = protoAdapter;
+        this.valueAdapter = protoAdapter2;
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public Map.Entry<K, V> decode(ProtoReader reader) {
-        Intrinsics.e(reader, "reader");
+    public Map.Entry<K, V> decode(ProtoReader protoReader) {
+        Intrinsics.e(protoReader, "reader");
         throw new UnsupportedOperationException();
     }
 
@@ -33,11 +33,11 @@ public final class MapEntryProtoAdapter<K, V> extends ProtoAdapter<Map.Entry<? e
         encode(protoWriter, (Map.Entry) ((Map.Entry) obj));
     }
 
-    public void encode(ProtoWriter writer, Map.Entry<? extends K, ? extends V> value) throws IOException {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
-        this.keyAdapter.encodeWithTag(writer, 1, (int) value.getKey());
-        this.valueAdapter.encodeWithTag(writer, 2, (int) value.getValue());
+    public void encode(ProtoWriter protoWriter, Map.Entry<? extends K, ? extends V> entry) throws IOException {
+        Intrinsics.e(protoWriter, "writer");
+        Intrinsics.e(entry, "value");
+        this.keyAdapter.encodeWithTag(protoWriter, 1, (int) entry.getKey());
+        this.valueAdapter.encodeWithTag(protoWriter, 2, (int) entry.getValue());
     }
 
     @Override // com.squareup.wire.ProtoAdapter
@@ -45,11 +45,11 @@ public final class MapEntryProtoAdapter<K, V> extends ProtoAdapter<Map.Entry<? e
         encode(reverseProtoWriter, (Map.Entry) ((Map.Entry) obj));
     }
 
-    public void encode(ReverseProtoWriter writer, Map.Entry<? extends K, ? extends V> value) throws IOException {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
-        this.valueAdapter.encodeWithTag(writer, 2, (int) value.getValue());
-        this.keyAdapter.encodeWithTag(writer, 1, (int) value.getKey());
+    public void encode(ReverseProtoWriter reverseProtoWriter, Map.Entry<? extends K, ? extends V> entry) throws IOException {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        Intrinsics.e(entry, "value");
+        this.valueAdapter.encodeWithTag(reverseProtoWriter, 2, (int) entry.getValue());
+        this.keyAdapter.encodeWithTag(reverseProtoWriter, 1, (int) entry.getKey());
     }
 
     @Override // com.squareup.wire.ProtoAdapter
@@ -57,9 +57,9 @@ public final class MapEntryProtoAdapter<K, V> extends ProtoAdapter<Map.Entry<? e
         return encodedSize((Map.Entry) ((Map.Entry) obj));
     }
 
-    public int encodedSize(Map.Entry<? extends K, ? extends V> value) {
-        Intrinsics.e(value, "value");
-        return this.keyAdapter.encodedSizeWithTag(1, value.getKey()) + this.valueAdapter.encodedSizeWithTag(2, value.getValue());
+    public int encodedSize(Map.Entry<? extends K, ? extends V> entry) {
+        Intrinsics.e(entry, "value");
+        return this.keyAdapter.encodedSizeWithTag(1, entry.getKey()) + this.valueAdapter.encodedSizeWithTag(2, entry.getValue());
     }
 
     public final ProtoAdapter<K> getKeyAdapter$wire_runtime() {
@@ -75,8 +75,8 @@ public final class MapEntryProtoAdapter<K, V> extends ProtoAdapter<Map.Entry<? e
         return redact((Map.Entry) ((Map.Entry) obj));
     }
 
-    public Map.Entry<K, V> redact(Map.Entry<? extends K, ? extends V> value) {
-        Intrinsics.e(value, "value");
+    public Map.Entry<K, V> redact(Map.Entry<? extends K, ? extends V> entry) {
+        Intrinsics.e(entry, "value");
         throw new UnsupportedOperationException();
     }
 }

@@ -1,6 +1,7 @@
 package com.zk_oaction.adengine.lk_command;
 
 import android.graphics.RectF;
+import com.huawei.hms.ads.fw;
 import com.zk_oaction.adengine.lk_expression.a;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,11 +11,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.zk_oaction.adengine.lk_sdk.interfaces.f {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_sdk.c f41907a;
+    protected com.zk_oaction.adengine.lk_sdk.c f28216a;
     protected com.zk_oaction.adengine.lk_expression.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_expression.a f41908c;
+    protected com.zk_oaction.adengine.lk_expression.a f28217c;
     protected com.zk_oaction.adengine.lk_expression.a d;
     protected com.zk_oaction.adengine.lk_expression.a e;
     protected com.zk_oaction.adengine.lk_expression.a f;
@@ -27,17 +28,17 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
     protected boolean m;
 
     public a(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f41907a = cVar;
+        this.f28216a = cVar;
     }
 
     private void a(XmlPullParser xmlPullParser) {
         if ("Trigger".equals(xmlPullParser.getName())) {
-            g gVar = new g(this.f41907a);
+            g gVar = new g(this.f28216a);
             if (gVar.a(xmlPullParser, "Trigger")) {
                 this.h.add(gVar);
             }
         } else if (xmlPullParser.getName().equals("Normal")) {
-            com.zk_oaction.adengine.lk_unlock.c cVar = new com.zk_oaction.adengine.lk_unlock.c(this.f41907a);
+            com.zk_oaction.adengine.lk_unlock.c cVar = new com.zk_oaction.adengine.lk_unlock.c(this.f28216a);
             this.i = cVar;
             cVar.a(this.l);
             if (this.i.a(xmlPullParser, "Normal")) {
@@ -45,7 +46,7 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
             }
             this.i = null;
         } else if (xmlPullParser.getName().equals("Pressed")) {
-            com.zk_oaction.adengine.lk_unlock.c cVar2 = new com.zk_oaction.adengine.lk_unlock.c(this.f41907a);
+            com.zk_oaction.adengine.lk_unlock.c cVar2 = new com.zk_oaction.adengine.lk_unlock.c(this.f28216a);
             this.j = cVar2;
             cVar2.a(this.l);
             if (this.j.a(xmlPullParser, "Pressed")) {
@@ -57,7 +58,7 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
 
     public String a(com.zk_oaction.adengine.lk_expression.a aVar, String str) {
         if (aVar != null) {
-            str = aVar.f41918a;
+            str = aVar.f28227a;
         }
         return str;
     }
@@ -67,7 +68,7 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
         Iterator<g> it = this.h.iterator();
         while (it.hasNext()) {
             g next = it.next();
-            String str = next.f41915a;
+            String str = next.f28224a;
             if (str != null && str.equals("double")) {
                 next.a();
             }
@@ -81,7 +82,7 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
     @Override // com.zk_oaction.adengine.lk_sdk.interfaces.f
     public void a(String str) {
         boolean z;
-        if (str.equals("true")) {
+        if (str.equals(fw.Code)) {
             z = false;
         } else if (str.equals("false")) {
             this.m = true;
@@ -152,10 +153,10 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
 
     public void b() {
         com.zk_oaction.adengine.lk_expression.a aVar = this.b;
-        if (aVar == null || this.f41908c == null || this.d == null || this.e == null) {
+        if (aVar == null || this.f28217c == null || this.d == null || this.e == null) {
             return;
         }
-        this.g.set(aVar.a(), this.f41908c.a(), this.b.a() + this.d.a(), this.f41908c.a() + this.e.a());
+        this.g.set(aVar.a(), this.f28217c.a(), this.b.a() + this.d.a(), this.f28217c.a() + this.e.a());
         com.zk_oaction.adengine.lk_view.f fVar = this.l;
         if (fVar != null) {
             this.g.offset(fVar.i(), this.l.j());
@@ -167,7 +168,7 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
         Iterator<g> it = this.h.iterator();
         while (it.hasNext()) {
             g next = it.next();
-            String str = next.f41915a;
+            String str = next.f28224a;
             if (str != null && str.equals("down")) {
                 next.a();
             }
@@ -216,7 +217,7 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
         Iterator<g> it = this.h.iterator();
         while (it.hasNext()) {
             g next = it.next();
-            String str = next.f41915a;
+            String str = next.f28224a;
             if (str != null && str.equals("click")) {
                 next.a();
             }
@@ -236,7 +237,7 @@ public class a implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a, com.
         Iterator<g> it = this.h.iterator();
         while (it.hasNext()) {
             g next = it.next();
-            String str = next.f41915a;
+            String str = next.f28224a;
             if (str != null && str.equals("up")) {
                 next.a();
             }

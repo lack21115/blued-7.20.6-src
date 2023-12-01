@@ -1,5 +1,6 @@
 package android.media;
 
+import android.app.backup.FullBackup;
 import com.anythink.expressad.d.a.b;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.tencent.qcloud.core.util.IOUtils;
@@ -134,7 +135,7 @@ final class TtmlUtils {
                 d = parseDouble2 * 1000000.0d;
             } else if (group4.equals("ms")) {
                 d = parseDouble2 * 1000.0d;
-            } else if (group4.equals("f")) {
+            } else if (group4.equals(FullBackup.DATA_TREE_TOKEN)) {
                 d = (parseDouble2 / i) * 1000000.0d;
             } else {
                 d = parseDouble2;

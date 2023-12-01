@@ -19,14 +19,10 @@ import com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate;
 /* renamed from: com.amap.api.col.3sl.aa  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/aa.class */
 public final class aa implements IMapFragmentDelegate {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static volatile Context f4728a;
+    public static volatile Context a;
     private static String f;
     public int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    boolean f4729c = true;
+    boolean c = true;
     private IAMap d;
     private int e;
     private AMapOptions g;
@@ -75,7 +71,7 @@ public final class aa implements IMapFragmentDelegate {
 
     private static void a(Context context) {
         if (context != null) {
-            f4728a = context.getApplicationContext();
+            a = context.getApplicationContext();
         }
     }
 
@@ -124,63 +120,58 @@ public final class aa implements IMapFragmentDelegate {
         Log.i("errorLog", f);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final IAMap getMap() throws RemoteException {
         if (this.d == null) {
-            if (f4728a == null) {
+            if (a == null) {
                 Log.w("MapFragmentDelegateImp", "Context 为 null 请在地图调用之前 使用 MapsInitializer.initialize(Context paramContext) 来设置Context");
                 return null;
             }
-            int i = f4728a.getResources().getDisplayMetrics().densityDpi;
+            int i = a.getResources().getDisplayMetrics().densityDpi;
             if (i <= 120) {
-                w.f5439a = 0.5f;
+                w.a = 0.5f;
             } else if (i <= 160) {
-                w.f5439a = 0.8f;
+                w.a = 0.8f;
             } else if (i <= 240) {
-                w.f5439a = 0.87f;
+                w.a = 0.87f;
             } else if (i <= 320) {
-                w.f5439a = 1.0f;
+                w.a = 1.0f;
             } else if (i <= 480) {
-                w.f5439a = 1.5f;
+                w.a = 1.5f;
             } else if (i <= 640) {
-                w.f5439a = 1.8f;
+                w.a = 1.8f;
             } else {
-                w.f5439a = 0.9f;
+                w.a = 0.9f;
             }
             int i2 = this.e;
             if (i2 == 0) {
-                this.d = new n(f4728a, this.f4729c).a();
+                this.d = new n(a, this.c).a();
             } else if (i2 == 1) {
-                this.d = new o(f4728a, this.f4729c).a();
+                this.d = new o(a, this.c).a();
             } else {
-                this.d = new m(f4728a).a();
+                this.d = new m(a).a();
             }
         }
         return this.d;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final boolean isReady() throws RemoteException {
         return false;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void loadWorldVectorMap(boolean z) {
-        this.f4729c = z;
+        this.c = z;
         IAMap iAMap = this.d;
         if (iAMap != null) {
             iAMap.loadWorldVectorMap(z);
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onCreate(Bundle bundle) throws RemoteException {
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) throws RemoteException {
         byte[] byteArray;
-        if (f4728a == null && layoutInflater != null) {
+        if (a == null && layoutInflater != null) {
             setContext(layoutInflater.getContext().getApplicationContext());
         }
         try {
@@ -200,7 +191,6 @@ public final class aa implements IMapFragmentDelegate {
         return this.d.getView();
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onDestroy() throws RemoteException {
         a();
         IAMap iAMap = this.d;
@@ -211,22 +201,18 @@ public final class aa implements IMapFragmentDelegate {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onDestroyView() throws RemoteException {
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onInflate(Activity activity, AMapOptions aMapOptions, Bundle bundle) throws RemoteException {
         setContext(activity.getApplicationContext());
         this.g = aMapOptions;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onLowMemory() throws RemoteException {
         Log.d("onLowMemory", "onLowMemory run");
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onPause() throws RemoteException {
         IAMap iAMap = this.d;
         if (iAMap != null) {
@@ -234,7 +220,6 @@ public final class aa implements IMapFragmentDelegate {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onResume() throws RemoteException {
         IAMap iAMap = this.d;
         if (iAMap != null) {
@@ -242,7 +227,6 @@ public final class aa implements IMapFragmentDelegate {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void onSaveInstanceState(Bundle bundle) throws RemoteException {
         if (this.d != null) {
             if (this.g == null) {
@@ -259,17 +243,14 @@ public final class aa implements IMapFragmentDelegate {
         }
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void setContext(Context context) {
         a(context);
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void setOptions(AMapOptions aMapOptions) {
         this.g = aMapOptions;
     }
 
-    @Override // com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate
     public final void setVisibility(int i) {
         this.b = i;
         IAMap iAMap = this.d;

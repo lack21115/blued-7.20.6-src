@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class HotSplashBottomAreaBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29068a;
+    private final RelativeLayout f15378a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29068a;
+        return this.f15378a;
     }
 }

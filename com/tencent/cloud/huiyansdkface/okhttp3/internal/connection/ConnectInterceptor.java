@@ -11,10 +11,10 @@ import java.io.IOException;
 public final class ConnectInterceptor implements Interceptor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final OkHttpClient f35932a;
+    public final OkHttpClient f22241a;
 
     public ConnectInterceptor(OkHttpClient okHttpClient) {
-        this.f35932a = okHttpClient;
+        this.f22241a = okHttpClient;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor
@@ -22,6 +22,6 @@ public final class ConnectInterceptor implements Interceptor {
         RealInterceptorChain realInterceptorChain = (RealInterceptorChain) chain;
         Request request = realInterceptorChain.request();
         StreamAllocation streamAllocation = realInterceptorChain.streamAllocation();
-        return realInterceptorChain.proceed(request, streamAllocation, streamAllocation.newStream(this.f35932a, chain, !request.method().equals("GET")), streamAllocation.connection());
+        return realInterceptorChain.proceed(request, streamAllocation, streamAllocation.newStream(this.f22241a, chain, !request.method().equals("GET")), streamAllocation.connection());
     }
 }

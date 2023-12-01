@@ -17,10 +17,10 @@ import org.json.JSONObject;
 public class wg {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f38095c = "https://confinfo.map.qq.com/confinfo?";
+    private static final String f24404c = "https://confinfo.map.qq.com/confinfo?";
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38096a;
+    private Context f24405a;
     private WeakReference<b> b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/wg$b.class */
@@ -42,7 +42,7 @@ public class wg {
             byte[] b;
             int a2 = tg.a();
             StringBuilder sb = new StringBuilder();
-            sb.append(wg.f38095c);
+            sb.append(wg.f24404c);
             sb.append("apiKey=");
             boolean z = false;
             if (contextArr != null && contextArr.length > 0) {
@@ -71,11 +71,11 @@ public class wg {
                     if (a2 != tg.a()) {
                         z2 = true;
                     }
-                    if (!z2 || wg.this.f38096a == null) {
+                    if (!z2 || wg.this.f24405a == null) {
                         return null;
                     }
                     i = a2;
-                    tg.a(wg.this.f38096a, i);
+                    tg.a(wg.this.f24405a, i);
                     ((b) wg.this.b.get()).a();
                     return null;
                 } catch (Throwable th3) {
@@ -89,8 +89,8 @@ public class wg {
                     if (a2 != tg.a()) {
                         z3 = true;
                     }
-                    if (z3 && wg.this.f38096a != null) {
-                        tg.a(wg.this.f38096a, a2);
+                    if (z3 && wg.this.f24405a != null) {
+                        tg.a(wg.this.f24405a, a2);
                         ((b) wg.this.b.get()).a();
                     }
                     throw th3;
@@ -105,11 +105,11 @@ public class wg {
                 if (a3 != tg.a()) {
                     z = true;
                 }
-                if (!z || wg.this.f38096a == null) {
+                if (!z || wg.this.f24405a == null) {
                     return null;
                 }
                 i = a3;
-                tg.a(wg.this.f38096a, i);
+                tg.a(wg.this.f24405a, i);
                 ((b) wg.this.b.get()).a();
                 return null;
             }
@@ -121,17 +121,17 @@ public class wg {
             if (a2 != tg.a()) {
                 z4 = true;
             }
-            if (!z4 || wg.this.f38096a == null) {
+            if (!z4 || wg.this.f24405a == null) {
                 return null;
             }
-            tg.a(wg.this.f38096a, a2);
+            tg.a(wg.this.f24405a, a2);
             ((b) wg.this.b.get()).a();
             return null;
         }
     }
 
     public wg(Context context, b bVar) {
-        this.f38096a = context;
+        this.f24405a = context;
         this.b = new WeakReference<>(bVar);
     }
 
@@ -166,6 +166,6 @@ public class wg {
     }
 
     public void a() {
-        new c().execute(this.f38096a);
+        new c().execute(this.f24405a);
     }
 }

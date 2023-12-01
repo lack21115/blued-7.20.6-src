@@ -2,7 +2,6 @@ package com.blued.android.core.net;
 
 import com.blued.android.core.net.http.AbstractHttpResponseHandler;
 import com.blued.android.core.utils.Log;
-import com.igexin.push.core.b;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/HttpResponseHandler.class */
 public abstract class HttpResponseHandler<T> extends AbstractHttpResponseHandler<T> {
@@ -33,7 +32,7 @@ public abstract class HttpResponseHandler<T> extends AbstractHttpResponseHandler
         if (HttpManager.c()) {
             StringBuilder sb = new StringBuilder();
             sb.append("onFailure(), , content: ");
-            sb.append(t != null ? t.toString() : b.l);
+            sb.append(t != null ? t.toString() : "null");
             sb.append(", error: ");
             sb.append(th);
             Log.a(TAG, sb.toString());

@@ -7,22 +7,20 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/KeyPath.class */
 public class KeyPath {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<String> f4323a;
+    private final List<String> a;
     private KeyPathElement b;
 
     private KeyPath(KeyPath keyPath) {
-        this.f4323a = new ArrayList(keyPath.f4323a);
+        this.a = new ArrayList(keyPath.a);
         this.b = keyPath.b;
     }
 
     public KeyPath(String... strArr) {
-        this.f4323a = Arrays.asList(strArr);
+        this.a = Arrays.asList(strArr);
     }
 
     private boolean b() {
-        List<String> list = this.f4323a;
+        List<String> list = this.a;
         return list.get(list.size() - 1).equals("**");
     }
 
@@ -38,7 +36,7 @@ public class KeyPath {
 
     public KeyPath a(String str) {
         KeyPath keyPath = new KeyPath(this);
-        keyPath.f4323a.add(str);
+        keyPath.a.add(str);
         return keyPath;
     }
 
@@ -50,18 +48,18 @@ public class KeyPath {
         if (b(str)) {
             return true;
         }
-        if (i >= this.f4323a.size()) {
+        if (i >= this.a.size()) {
             return false;
         }
-        return this.f4323a.get(i).equals(str) || this.f4323a.get(i).equals("**") || this.f4323a.get(i).equals(PhoneConstants.APN_TYPE_ALL);
+        return this.a.get(i).equals(str) || this.a.get(i).equals("**") || this.a.get(i).equals(PhoneConstants.APN_TYPE_ALL);
     }
 
     public int b(String str, int i) {
         if (b(str)) {
             return 0;
         }
-        if (this.f4323a.get(i).equals("**")) {
-            return (i != this.f4323a.size() - 1 && this.f4323a.get(i + 1).equals(str)) ? 2 : 0;
+        if (this.a.get(i).equals("**")) {
+            return (i != this.a.size() - 1 && this.a.get(i + 1).equals(str)) ? 2 : 0;
         }
         return 1;
     }
@@ -89,8 +87,8 @@ public class KeyPath {
         if ("__container".equals(str)) {
             return true;
         }
-        if (i >= this.f4323a.size() - 1) {
-            if (this.f4323a.get(i).equals("**")) {
+        if (i >= this.a.size() - 1) {
+            if (this.a.get(i).equals("**")) {
                 return true;
             }
             z = false;
@@ -101,7 +99,7 @@ public class KeyPath {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("KeyPath{keys=");
-        sb.append(this.f4323a);
+        sb.append(this.a);
         sb.append(",resolved=");
         sb.append(this.b != null);
         sb.append('}');

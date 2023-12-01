@@ -17,7 +17,7 @@ import org.json.JSONObject;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static g f39613a;
+    private static g f25922a;
 
     public static String a(Context context) {
         g b = b(context);
@@ -59,7 +59,7 @@ public final class e {
     }
 
     public static void a(long j) {
-        a.SharedPreferences$EditorC1031a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
+        a.SharedPreferences$EditorC0861a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
         if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
             edit.putLong("q_i_t", j);
         }
@@ -80,15 +80,15 @@ public final class e {
         g gVar;
         synchronized (e.class) {
             try {
-                if (f39613a == null) {
+                if (f25922a == null) {
                     try {
-                        f39613a = g.a(context, "Q_V3");
+                        f25922a = g.a(context, "Q_V3");
                     } catch (Exception e) {
                         com.tencent.tmsbeacon.base.util.c.a("[qimei] qimeiFile create error: " + e.getMessage(), new Object[0]);
                         d.b().a("511", "getQimeiStoreFile error", e);
                     }
                 }
-                gVar = f39613a;
+                gVar = f25922a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -119,7 +119,7 @@ public final class e {
     }
 
     public static void d() {
-        g gVar = f39613a;
+        g gVar = f25922a;
         if (gVar != null) {
             gVar.c();
         }

@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow;
 
+import java.net.HttpURLConnection;
 import kotlin.Metadata;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -7,16 +8,12 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
-@DebugMetadata(b = "Share.kt", c = {410, 414}, d = "onSubscription", e = "kotlinx.coroutines.flow.SubscribedFlowCollector")
+@DebugMetadata(b = "Share.kt", c = {HttpURLConnection.HTTP_GONE, HttpURLConnection.HTTP_REQ_TOO_LONG}, d = "onSubscription", e = "kotlinx.coroutines.flow.SubscribedFlowCollector")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SubscribedFlowCollector$onSubscription$1.class */
 public final class SubscribedFlowCollector$onSubscription$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43438a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    /* synthetic */ Object f43439c;
+    /* synthetic */ Object c;
     final /* synthetic */ SubscribedFlowCollector<T> d;
     int e;
 
@@ -29,7 +26,7 @@ public final class SubscribedFlowCollector$onSubscription$1 extends Continuation
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        this.f43439c = obj;
+        this.c = obj;
         this.e |= Integer.MIN_VALUE;
         return this.d.a(this);
     }

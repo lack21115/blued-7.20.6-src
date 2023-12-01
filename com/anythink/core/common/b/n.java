@@ -38,7 +38,6 @@ import com.anythink.core.common.u;
 import com.anythink.core.common.v;
 import com.anythink.core.common.w;
 import com.anythink.core.common.x;
-import com.huawei.hms.framework.common.ExceptionCode;
 import dalvik.system.DexFile;
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -59,9 +58,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/n.class */
 public class n {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6533a = 0;
+    public static final int a = 0;
     public static final int b = 1;
     private static volatile n j;
     private String F;
@@ -77,9 +74,7 @@ public class n {
     private ConcurrentHashMap<String, IATAdFilter> W;
     private ATPrivacyConfig Y;
     private ak aa;
-
-    /* renamed from: c  reason: collision with root package name */
-    Boolean f6534c;
+    Boolean c;
     WeakReference<Activity> e;
     private int f;
     private Context k;
@@ -133,16 +128,16 @@ public class n {
             }
             if (n.this.A()) {
                 String d = com.anythink.core.common.k.d.d(n.this.k);
-                Log.i("anythink", "********************************** " + com.anythink.core.common.k.g.a() + " *************************************");
-                Log.i("anythink", "GAID(ADID): " + com.anythink.core.common.k.d.f() + " , AndroidID: " + d);
+                Log.i(g.n, "********************************** " + com.anythink.core.common.k.g.a() + " *************************************");
+                Log.i(g.n, "GAID(ADID): " + com.anythink.core.common.k.d.f() + " , AndroidID: " + d);
                 StringBuilder sb = new StringBuilder("********************************** ");
                 sb.append(com.anythink.core.common.k.g.a());
                 sb.append(" *************************************");
-                Log.i("anythink", sb.toString());
+                Log.i(g.n, sb.toString());
                 if (TextUtils.isEmpty(d)) {
                     return;
                 }
-                Log.i("anythink", "You can use \"ATSDK.setDebuggerConfig(context, \"" + d + "\",new ATDebuggerConfig.Builder(the NetworkFirmId you want to test).build());\" to open the debugger mode.");
+                Log.i(g.n, "You can use \"ATSDK.setDebuggerConfig(context, \"" + d + "\",new ATDebuggerConfig.Builder(the NetworkFirmId you want to test).build());\" to open the debugger mode.");
             }
         }
     }
@@ -181,27 +176,25 @@ public class n {
     /* renamed from: com.anythink.core.common.b.n$11  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/n$11.class */
     final class AnonymousClass11 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f6539a;
+        final /* synthetic */ Context a;
         final /* synthetic */ String b;
 
         AnonymousClass11(Context context, String str) {
-            this.f6539a = context;
+            this.a = context;
             this.b = str;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            com.anythink.core.c.a b = com.anythink.core.c.b.a(this.f6539a.getApplicationContext()).b(this.b);
+            com.anythink.core.c.a b = com.anythink.core.c.b.a(this.a.getApplicationContext()).b(this.b);
             if (b != null) {
                 if (!b.G()) {
                     r.a(n.this.k).a(b);
                 }
-                if (com.anythink.core.c.b.a(this.f6539a.getApplicationContext()).a(this.b)) {
+                if (com.anythink.core.c.b.a(this.a.getApplicationContext()).a(this.b)) {
                     return;
                 }
-                com.anythink.core.c.b.a(this.f6539a.getApplicationContext());
+                com.anythink.core.c.b.a(this.a.getApplicationContext());
             }
         }
     }
@@ -210,13 +203,11 @@ public class n {
     /* renamed from: com.anythink.core.common.b.n$5  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/n$5.class */
     public final class AnonymousClass5 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATInitConfig f6549a;
+        final /* synthetic */ ATInitConfig a;
         final /* synthetic */ Context b;
 
         AnonymousClass5(ATInitConfig aTInitConfig, Context context) {
-            this.f6549a = aTInitConfig;
+            this.a = aTInitConfig;
             this.b = context;
         }
 
@@ -467,10 +458,10 @@ public class n {
             sb.delete(0, 2);
         }
         if (z) {
-            Log.i("anythink", "Activities : VERIFIED");
+            Log.i(g.n, "Activities : VERIFIED");
             return z;
         }
-        Log.e("anythink", "Activities : Missing " + sb.toString() + " declare in AndroidManifest");
+        Log.e(g.n, "Activities : Missing " + sb.toString() + " declare in AndroidManifest");
         return z;
     }
 
@@ -530,10 +521,10 @@ public class n {
             sb.delete(0, 2);
         }
         if (z) {
-            Log.i("anythink", "Services : VERIFIED");
+            Log.i(g.n, "Services : VERIFIED");
             return z;
         }
-        Log.e("anythink", "Services : Missing " + sb.toString() + " declare in AndroidManifest");
+        Log.e(g.n, "Services : Missing " + sb.toString() + " declare in AndroidManifest");
         return z;
     }
 
@@ -554,10 +545,10 @@ public class n {
             sb.delete(0, 2);
         }
         if (z) {
-            Log.i("anythink", "Dependence Plugin: VERIFIED");
+            Log.i(g.n, "Dependence Plugin: VERIFIED");
             return z;
         }
-        Log.e("anythink", "Dependence Plugin: Missing ".concat(String.valueOf(sb)));
+        Log.e(g.n, "Dependence Plugin: Missing ".concat(String.valueOf(sb)));
         return z;
     }
 
@@ -624,10 +615,10 @@ public class n {
             sb.delete(0, 2);
         }
         if (z) {
-            Log.i("anythink", "Providers : VERIFIED");
+            Log.i(g.n, "Providers : VERIFIED");
             return z;
         }
-        Log.e("anythink", "Providers : Missing " + sb.toString() + " declare in AndroidManifest");
+        Log.e(g.n, "Providers : Missing " + sb.toString() + " declare in AndroidManifest");
         return z;
     }
 
@@ -680,10 +671,10 @@ public class n {
             z = false;
         }
         if (z) {
-            Log.i("anythink", "meta-data: VERIFIED");
+            Log.i(g.n, "meta-data: VERIFIED");
             return z;
         }
-        Log.e("anythink", "meta-data: Missing " + sb.toString() + " declare in AndroidManifest");
+        Log.e(g.n, "meta-data: Missing " + sb.toString() + " declare in AndroidManifest");
         return z;
     }
 
@@ -766,35 +757,35 @@ public class n {
             z = false;
         }
         if (z) {
-            Log.i("anythink", "Permission: VERIFIED");
+            Log.i(g.n, "Permission: VERIFIED");
             return z;
         }
-        Log.e("anythink", "Permission: Missing " + sb.toString() + " declare in AndroidManifest");
+        Log.e(g.n, "Permission: Missing " + sb.toString() + " declare in AndroidManifest");
         return z;
     }
 
     static boolean h(String str) {
         try {
             Class.forName(str);
-            Log.i("anythink", "SDK: VERIFIED");
+            Log.i(g.n, "SDK: VERIFIED");
             return true;
         } catch (Throwable th) {
-            Log.i("anythink", "SDK: NOT VERIFIED");
+            Log.i(g.n, "SDK: NOT VERIFIED");
             return false;
         }
     }
 
     public static void n(String str) {
         if (TextUtils.isEmpty(str)) {
-            Log.e("anythink", "AdSourceId is empty");
+            Log.e(g.n, "AdSourceId is empty");
             return;
         }
         try {
             if (Long.parseLong(str) == 0) {
-                Log.e("anythink", "AdSourceId can't set 0");
+                Log.e(g.n, "AdSourceId can't set 0");
             }
         } catch (Exception e) {
-            Log.e("anythink", "AdSourceId '" + str + "' is not compliant");
+            Log.e(g.n, "AdSourceId '" + str + "' is not compliant");
         }
     }
 
@@ -833,7 +824,7 @@ public class n {
                 if (TextUtils.isEmpty(x)) {
                     str3 = com.anythink.core.common.k.d.d(this.k) + com.anythink.core.common.k.d.f();
                     StringBuilder sb2 = new StringBuilder();
-                    sb2.append(new Random().nextInt(ExceptionCode.CRASH_EXCEPTION));
+                    sb2.append(new Random().nextInt(10000000));
                     str2 = sb2.toString();
                 }
                 long currentTimeMillis = System.currentTimeMillis();
@@ -890,17 +881,17 @@ public class n {
     }
 
     public final boolean H() {
-        Boolean bool = this.f6534c;
+        Boolean bool = this.c;
         if (bool != null) {
             return bool.booleanValue();
         }
         try {
             Class.forName("com.reyun.mobdna.MobDNA");
-            this.f6534c = Boolean.TRUE;
+            this.c = Boolean.TRUE;
         } catch (Throwable th) {
-            this.f6534c = Boolean.FALSE;
+            this.c = Boolean.FALSE;
         }
-        return this.f6534c.booleanValue();
+        return this.c.booleanValue();
     }
 
     public final boolean I() {
@@ -960,7 +951,7 @@ public class n {
             String str3 = x;
             if (TextUtils.isEmpty(x)) {
                 str3 = com.anythink.core.common.k.d.d(context) + com.anythink.core.common.k.d.f();
-                str2 = String.valueOf(new Random().nextInt(ExceptionCode.CRASH_EXCEPTION));
+                str2 = String.valueOf(new Random().nextInt(10000000));
             }
             this.t = com.anythink.core.common.k.f.a(str3 + str + str2 + currentTimeMillis);
             this.u = new JSONObject();
@@ -1037,7 +1028,7 @@ public class n {
             });
             return;
         }
-        Log.e("anythink", "You should init SDK first.");
+        Log.e(g.n, "You should init SDK first.");
         if (deviceInfoCallback != null) {
             deviceInfoCallback.deviceInfo("You should init SDK first.");
         }
@@ -1120,7 +1111,7 @@ public class n {
                     this.E = ((a(currentTimeMillis) - a(this.D)) / 86400000) + 1;
                     this.d = 0L;
                     com.anythink.core.a.a.a(context.getApplicationContext()).a();
-                    this.Z = com.anythink.core.common.k.p.b(context, g.o, "r", 1);
+                    this.Z = com.anythink.core.common.k.p.b(context, g.o, g.o.o, 1);
                     final Context applicationContext = context.getApplicationContext();
                     a(applicationContext);
                     this.l = str;
@@ -1199,7 +1190,7 @@ public class n {
 
     public final void a(Context context, final String str, Map<String, Object> map) {
         if (A()) {
-            Log.i("anythink", "Requesting placement(" + str + ") setting Info，please wait a moment.");
+            Log.i(g.n, "Requesting placement(" + str + ") setting Info，please wait a moment.");
             new com.anythink.core.common.g.j(context, a().p(), a().q(), str, "", map, new HashMap(1)).a(0, new com.anythink.core.common.g.i() { // from class: com.anythink.core.common.b.n.13
                 @Override // com.anythink.core.common.g.i
                 public final void onLoadCanceled(int i) {
@@ -1207,37 +1198,37 @@ public class n {
 
                 @Override // com.anythink.core.common.g.i
                 public final void onLoadError(int i, String str2, AdError adError) {
-                    Log.i("anythink", "********************************** Get Splash Config Start(" + str + ") *************************************");
-                    Log.i("anythink", "This placement(" + str + ") request error:" + adError.printStackTrace());
+                    Log.i(g.n, "********************************** Get Splash Config Start(" + str + ") *************************************");
+                    Log.i(g.n, "This placement(" + str + ") request error:" + adError.printStackTrace());
                     StringBuilder sb = new StringBuilder("********************************** Get Splash Config End(");
                     sb.append(str);
                     sb.append(") *************************************");
-                    Log.i("anythink", sb.toString());
+                    Log.i(g.n, sb.toString());
                 }
 
                 @Override // com.anythink.core.common.g.i
                 public final void onLoadFinish(int i, Object obj) {
                     com.anythink.core.c.d b2 = com.anythink.core.c.d.b((String) obj);
                     if (!"4".equals(String.valueOf(b2.X()))) {
-                        Log.i("anythink", "********************************** Get Splash Config Start(" + str + ") *************************************");
-                        Log.i("anythink", "This placement(" + str + ") does not belong to Splash!");
-                        Log.i("anythink", "********************************** Get Splash Config End(" + str + ") *************************************");
+                        Log.i(g.n, "********************************** Get Splash Config Start(" + str + ") *************************************");
+                        Log.i(g.n, "This placement(" + str + ") does not belong to Splash!");
+                        Log.i(g.n, "********************************** Get Splash Config End(" + str + ") *************************************");
                         return;
                     }
-                    Log.i("anythink", "********************************** Get Splash Config Start(" + str + ") *************************************");
+                    Log.i(g.n, "********************************** Get Splash Config Start(" + str + ") *************************************");
                     List<ai> F = b2.F();
                     if (F == null || F.size() == 0) {
-                        Log.i("anythink", ErrorCode.getErrorCode(ErrorCode.noAdsourceConfig, "", "").getDesc());
+                        Log.i(g.n, ErrorCode.getErrorCode(ErrorCode.noAdsourceConfig, "", "").getDesc());
                     } else {
                         for (ai aiVar : F) {
-                            Log.i("anythink", "------------------------------------------------");
-                            Log.i("anythink", "Network Firm Id:" + aiVar.c());
-                            Log.i("anythink", "AdSource Id:" + aiVar.t());
-                            Log.i("anythink", "Network Content:" + aiVar.g());
-                            Log.i("anythink", "------------------------------------------------");
+                            Log.i(g.n, "------------------------------------------------");
+                            Log.i(g.n, "Network Firm Id:" + aiVar.c());
+                            Log.i(g.n, "AdSource Id:" + aiVar.t());
+                            Log.i(g.n, "Network Content:" + aiVar.g());
+                            Log.i(g.n, "------------------------------------------------");
                         }
                     }
-                    Log.i("anythink", "********************************** Get Splash Config End(" + str + ") *************************************");
+                    Log.i(g.n, "********************************** Get Splash Config End(" + str + ") *************************************");
                 }
 
                 @Override // com.anythink.core.common.g.i
@@ -1246,9 +1237,9 @@ public class n {
             });
             return;
         }
-        Log.i("anythink", "********************************** Get Splash Config Start(" + str + ") *************************************");
-        Log.i("anythink", "Only use in debug mode!");
-        Log.i("anythink", "********************************** Get Splash Config End(" + str + ") *************************************");
+        Log.i(g.n, "********************************** Get Splash Config Start(" + str + ") *************************************");
+        Log.i(g.n, "Only use in debug mode!");
+        Log.i(g.n, "********************************** Get Splash Config End(" + str + ") *************************************");
     }
 
     public final void a(Location location) {
@@ -1357,7 +1348,7 @@ public class n {
         }
         map.remove(g.k.h);
         String jSONObject = new JSONObject(map).toString();
-        Log.e("anythink", "Mismatched initialization parameters! server params: [" + str + "], " + jSONObject);
+        Log.e(g.n, "Mismatched initialization parameters! server params: [" + str + "], " + jSONObject);
         com.anythink.core.common.k.p.a(this.k, g.x, str, jSONObject);
         if (eVar == null || strArr == null) {
             return;
@@ -1513,7 +1504,7 @@ public class n {
                     }
                     if (!z) {
                         try {
-                            Log.e("anythink", "Missing: LocalBroadcastManager");
+                            Log.e(g.n, "Missing: LocalBroadcastManager");
                         } catch (Exception e) {
                             return;
                         }
@@ -1526,9 +1517,9 @@ public class n {
                             arrayList.add(nextElement);
                         }
                     }
-                    Log.i("anythink", "********************************** Network Integration Status *************************************");
+                    Log.i(g.n, "********************************** Network Integration Status *************************************");
                     if (arrayList.size() != 0) {
-                        Log.i("anythink", "----------------------------------------");
+                        Log.i(g.n, "----------------------------------------");
                     }
                     for (String str : arrayList) {
                         try {
@@ -1539,30 +1530,30 @@ public class n {
                                 if (!TextUtils.isEmpty(networkName)) {
                                     String networkVersion = aTInitMediation.getNetworkVersion();
                                     if (TextUtils.isEmpty(networkVersion)) {
-                                        Log.i("anythink", "NetworkName: ".concat(String.valueOf(networkName)));
+                                        Log.i(g.n, "NetworkName: ".concat(String.valueOf(networkName)));
                                     } else {
-                                        Log.i("anythink", "NetworkName: " + networkName + "  (v" + networkVersion + ")");
+                                        Log.i(g.n, "NetworkName: " + networkName + "  (v" + networkVersion + ")");
                                     }
                                     boolean h = n.h(aTInitMediation.getNetworkSDKClass());
                                     boolean b2 = n.b(aTInitMediation.getPluginClassStatus());
                                     boolean a2 = n.a(context, aTInitMediation.getActivityStatus());
                                     boolean b3 = n.b(context, aTInitMediation.getServiceStatus());
-                                    boolean c2 = n.c(context, aTInitMediation.getProviderStatus());
+                                    boolean c = n.c(context, aTInitMediation.getProviderStatus());
                                     boolean d = n.d(context, aTInitMediation.getMetaValutStatus());
                                     boolean e2 = n.e(context, aTInitMediation.getPermissionStatus());
                                     aTInitMediation.getResourceStatus();
-                                    if (h && b2 && a2 && b3 && c2 && d && e2) {
-                                        Log.i("anythink", "Status: Success");
+                                    if (h && b2 && a2 && b3 && c && d && e2) {
+                                        Log.i(g.n, "Status: Success");
                                     } else {
-                                        Log.e("anythink", "Status: Fail");
+                                        Log.e(g.n, "Status: Fail");
                                     }
-                                    Log.i("anythink", "----------------------------------------");
+                                    Log.i(g.n, "----------------------------------------");
                                 }
                             }
                         } catch (Throwable th3) {
                         }
                     }
-                    Log.i("anythink", "********************************** Network Integration Status *************************************");
+                    Log.i(g.n, "********************************** Network Integration Status *************************************");
                 }
             });
         }

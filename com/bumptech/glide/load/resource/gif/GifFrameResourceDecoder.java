@@ -12,15 +12,15 @@ import com.bumptech.glide.load.resource.bitmap.BitmapResource;
 public final class GifFrameResourceDecoder implements ResourceDecoder<GifDecoder, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BitmapPool f20999a;
+    private final BitmapPool f7393a;
 
     public GifFrameResourceDecoder(BitmapPool bitmapPool) {
-        this.f20999a = bitmapPool;
+        this.f7393a = bitmapPool;
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> a(GifDecoder gifDecoder, int i, int i2, Options options) {
-        return BitmapResource.a(gifDecoder.i(), this.f20999a);
+        return BitmapResource.a(gifDecoder.i(), this.f7393a);
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder

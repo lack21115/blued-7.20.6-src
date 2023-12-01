@@ -14,21 +14,21 @@ import com.qq.e.comm.util.GDTLogger;
 public class DownloadService extends Service {
 
     /* renamed from: a  reason: collision with root package name */
-    private SVSD f27900a;
+    private SVSD f14212a;
 
     private boolean a() {
-        if (this.f27900a == null) {
+        if (this.f14212a == null) {
             try {
                 if (b.b().d()) {
                     SVSD aPKDownloadServiceDelegate = b.b().c().getPOFactory().getAPKDownloadServiceDelegate(this);
-                    this.f27900a = aPKDownloadServiceDelegate;
+                    this.f14212a = aPKDownloadServiceDelegate;
                     aPKDownloadServiceDelegate.onCreate();
                 }
             } catch (Throwable th) {
                 GDTLogger.e("初始化Service发生异常", th);
             }
         }
-        return this.f27900a != null;
+        return this.f14212a != null;
     }
 
     public static void enterAPPDownloadListPage(Context context) {
@@ -45,7 +45,7 @@ public class DownloadService extends Service {
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
         GDTLogger.d("DownloadService.onBind");
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         if (svsd != null) {
             return svsd.onBind(intent);
         }
@@ -54,12 +54,12 @@ public class DownloadService extends Service {
         if (TextUtils.isEmpty(stringExtra) || !a()) {
             return null;
         }
-        return this.f27900a.onBind(intent);
+        return this.f14212a.onBind(intent);
     }
 
     @Override // android.app.Service, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         if (svsd != null) {
             svsd.onConfigurationChanged(configuration);
         }
@@ -72,7 +72,7 @@ public class DownloadService extends Service {
 
     @Override // android.app.Service
     public void onDestroy() {
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         if (svsd != null) {
             svsd.onDestroy();
         }
@@ -80,7 +80,7 @@ public class DownloadService extends Service {
 
     @Override // android.app.Service, android.content.ComponentCallbacks
     public void onLowMemory() {
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         if (svsd != null) {
             svsd.onLowMemory();
         }
@@ -88,7 +88,7 @@ public class DownloadService extends Service {
 
     @Override // android.app.Service
     public void onRebind(Intent intent) {
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         if (svsd != null) {
             svsd.onRebind(intent);
         }
@@ -103,13 +103,13 @@ public class DownloadService extends Service {
             GDTLogger.w("Service onStartCommand 出现异常");
             return 2;
         } else {
-            return this.f27900a.onStartCommand(intent, i, i2);
+            return this.f14212a.onStartCommand(intent, i, i2);
         }
     }
 
     @Override // android.app.Service
     public void onTaskRemoved(Intent intent) {
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         if (svsd != null) {
             svsd.onTaskRemoved(intent);
         }
@@ -117,7 +117,7 @@ public class DownloadService extends Service {
 
     @Override // android.app.Service, android.content.ComponentCallbacks2
     public void onTrimMemory(int i) {
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         if (svsd != null) {
             svsd.onTrimMemory(i);
         }
@@ -125,7 +125,7 @@ public class DownloadService extends Service {
 
     @Override // android.app.Service
     public boolean onUnbind(Intent intent) {
-        SVSD svsd = this.f27900a;
+        SVSD svsd = this.f14212a;
         return svsd != null ? svsd.onUnbind(intent) : super.onUnbind(intent);
     }
 }

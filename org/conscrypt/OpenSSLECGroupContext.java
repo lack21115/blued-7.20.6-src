@@ -126,10 +126,10 @@ public final class OpenSSLECGroupContext {
         if (str != null) {
             return getCurveByName(str);
         }
-        BigInteger a2 = curve.getA();
+        BigInteger a = curve.getA();
         BigInteger order = eCParameterSpec.getOrder();
         try {
-            long EC_GROUP_new_arbitrary = NativeCrypto.EC_GROUP_new_arbitrary(p.toByteArray(), a2.toByteArray(), b.toByteArray(), affineX.toByteArray(), affineY.toByteArray(), order.toByteArray(), eCParameterSpec.getCofactor());
+            long EC_GROUP_new_arbitrary = NativeCrypto.EC_GROUP_new_arbitrary(p.toByteArray(), a.toByteArray(), b.toByteArray(), affineX.toByteArray(), affineY.toByteArray(), order.toByteArray(), eCParameterSpec.getCofactor());
             if (EC_GROUP_new_arbitrary != 0) {
                 return new OpenSSLECGroupContext(new NativeRef.EC_GROUP(EC_GROUP_new_arbitrary));
             }

@@ -9,12 +9,12 @@ import com.tencent.tinker.lib.util.TinkerLog;
 public class BluedPatchListener extends DefaultPatchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f29780a;
+    private final int f16090a;
 
     public BluedPatchListener(Context context) {
         super(context);
-        this.f29780a = ((ActivityManager) context.getSystemService("activity")).getMemoryClass();
-        TinkerLog.i("Tinker.BluedPatchListener", "application maxMemory:" + this.f29780a, new Object[0]);
+        this.f16090a = ((ActivityManager) context.getSystemService("activity")).getMemoryClass();
+        TinkerLog.i("Tinker.BluedPatchListener", "application maxMemory:" + this.f16090a, new Object[0]);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x00b4, code lost:

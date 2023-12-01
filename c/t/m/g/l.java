@@ -6,7 +6,7 @@ import android.util.Base64;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f3870a = new byte[0];
+    public static final byte[] f3822a = new byte[0];
 
     public static byte[] a(int i) {
         byte[] bArr = new byte[2];
@@ -28,7 +28,7 @@ public class l {
             return a(str.getBytes("UTF-8"), 4);
         } catch (Throwable th) {
             th.toString();
-            return f3870a;
+            return f3822a;
         }
     }
 
@@ -46,18 +46,18 @@ public class l {
                             return encode;
                         }
                     }
-                    return f3870a;
+                    return f3822a;
                 }
-                return f3870a;
+                return f3822a;
             }
             a2 = v2.a(a2, a3);
         }
         if (m3.a(a2)) {
-            return f3870a;
+            return f3822a;
         }
         byte[] bArr2 = new byte[a2.length + 2];
-        System.arraycopy((Object) a(a2.length), 0, (Object) bArr2, 0, 2);
-        System.arraycopy((Object) a2, 0, (Object) bArr2, 2, a2.length);
+        System.arraycopy(a(a2.length), 0, bArr2, 0, 2);
+        System.arraycopy(a2, 0, bArr2, 2, a2.length);
         return bArr2;
     }
 }

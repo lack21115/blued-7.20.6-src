@@ -4,11 +4,11 @@ package com.cmic.gen.sdk.tencent.c.d;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f21648a;
+    private int f8042a;
     private String b;
 
     private a(int i, String str) {
-        this.f21648a = i;
+        this.f8042a = i;
         this.b = str;
     }
 
@@ -32,7 +32,7 @@ public class a {
     }
 
     public int a() {
-        return this.f21648a;
+        return this.f8042a;
     }
 
     public String b() {

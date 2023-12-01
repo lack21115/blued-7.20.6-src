@@ -4,22 +4,22 @@ package com.anythink.expressad.exoplayer.c;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f7220a;
+    private int f4381a;
 
     private void d(int i) {
-        this.f7220a = i & this.f7220a;
+        this.f4381a = i & this.f4381a;
     }
 
     public void a() {
-        this.f7220a = 0;
+        this.f4381a = 0;
     }
 
     public final void a(int i) {
-        this.f7220a = i;
+        this.f4381a = i;
     }
 
     public final void b(int i) {
-        this.f7220a = i | this.f7220a;
+        this.f4381a = i | this.f4381a;
     }
 
     public final boolean b() {
@@ -32,7 +32,7 @@ public abstract class a {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean c(int i) {
-        return (this.f7220a & i) == i;
+        return (this.f4381a & i) == i;
     }
 
     public final boolean d() {

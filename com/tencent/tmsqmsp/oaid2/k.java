@@ -11,26 +11,26 @@ import java.util.concurrent.TimeUnit;
 public final class k implements ServiceConnection {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final ThreadPoolExecutor f39642c = new ThreadPoolExecutor(0, 3, 60, TimeUnit.SECONDS, new LinkedBlockingQueue(2048), new ThreadPoolExecutor.DiscardPolicy());
+    public static final ThreadPoolExecutor f25951c = new ThreadPoolExecutor(0, 3, 60, TimeUnit.SECONDS, new LinkedBlockingQueue(2048), new ThreadPoolExecutor.DiscardPolicy());
     public final LinkedBlockingQueue<IBinder> b = new LinkedBlockingQueue<>(1);
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f39643a = false;
+    public boolean f25952a = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/k$a.class */
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final IBinder f39644a;
+        public final IBinder f25953a;
 
         public a(IBinder iBinder) {
-            this.f39644a = iBinder;
+            this.f25953a = iBinder;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                k.this.b.offer(this.f39644a);
+                k.this.b.offer(this.f25953a);
             } catch (Throwable th) {
             }
         }
@@ -39,7 +39,7 @@ public final class k implements ServiceConnection {
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
         try {
-            f39642c.execute(new a(iBinder));
+            f25951c.execute(new a(iBinder));
         } catch (Throwable th) {
         }
     }

@@ -1419,7 +1419,7 @@ public abstract class CodedInputStream {
             this.bufferSize = 0;
             List<byte[]> readRawBytesSlowPathRemainingChunks = readRawBytesSlowPathRemainingChunks(i - i4);
             byte[] bArr = new byte[i];
-            System.arraycopy((Object) this.buffer, i2, (Object) bArr, 0, i4);
+            System.arraycopy(this.buffer, i2, bArr, 0, i4);
             Iterator<byte[]> it = readRawBytesSlowPathRemainingChunks.iterator();
             int i5 = i4;
             while (true) {
@@ -1428,7 +1428,7 @@ public abstract class CodedInputStream {
                     return ByteString.wrap(bArr);
                 }
                 byte[] next = it.next();
-                System.arraycopy((Object) next, 0, (Object) bArr, i6, next.length);
+                System.arraycopy(next, 0, bArr, i6, next.length);
                 i5 = i6 + next.length;
             }
         }
@@ -1450,7 +1450,7 @@ public abstract class CodedInputStream {
             this.bufferSize = 0;
             List<byte[]> readRawBytesSlowPathRemainingChunks = readRawBytesSlowPathRemainingChunks(i - i4);
             byte[] bArr2 = new byte[i];
-            System.arraycopy((Object) this.buffer, i2, (Object) bArr2, 0, i4);
+            System.arraycopy(this.buffer, i2, bArr2, 0, i4);
             Iterator<byte[]> it = readRawBytesSlowPathRemainingChunks.iterator();
             int i5 = i4;
             while (true) {
@@ -1459,7 +1459,7 @@ public abstract class CodedInputStream {
                     return bArr2;
                 }
                 byte[] next = it.next();
-                System.arraycopy((Object) next, 0, (Object) bArr2, i6, next.length);
+                System.arraycopy(next, 0, bArr2, i6, next.length);
                 i5 = i6 + next.length;
             }
         }
@@ -1480,7 +1480,7 @@ public abstract class CodedInputStream {
                     int i5 = i - i4;
                     if (i5 < 4096 || i5 <= this.input.available()) {
                         byte[] bArr = new byte[i];
-                        System.arraycopy((Object) this.buffer, this.pos, (Object) bArr, 0, i4);
+                        System.arraycopy(this.buffer, this.pos, bArr, 0, i4);
                         this.totalBytesRetired += this.bufferSize;
                         this.pos = 0;
                         this.bufferSize = 0;
@@ -1669,7 +1669,7 @@ public abstract class CodedInputStream {
                     int i6 = this.bufferSize;
                     if (i6 > i5) {
                         byte[] bArr = this.buffer;
-                        System.arraycopy((Object) bArr, i5, (Object) bArr, 0, i6 - i5);
+                        System.arraycopy(bArr, i5, bArr, 0, i6 - i5);
                     }
                     this.totalBytesRetired += i5;
                     this.bufferSize -= i5;

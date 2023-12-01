@@ -2,9 +2,7 @@ package com.anythink.core.common.e;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/g.class */
 public final class g extends aa {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6659a = 1;
+    public static final int a = 1;
     public static final int b = 2;
     private String R;
     private String S;

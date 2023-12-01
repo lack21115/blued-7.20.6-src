@@ -26,7 +26,7 @@ public abstract class a implements m.a {
     public void c() {
     }
 
-    @Override // com.opos.mobad.q.a.a.InterfaceC0724a
+    @Override // com.opos.mobad.q.a.a.InterfaceC0554a
     public void j_() {
     }
 }

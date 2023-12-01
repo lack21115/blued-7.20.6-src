@@ -4,5 +4,5 @@ package com.bun.miitmdid.a.c;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21125a;
+    public String f7519a;
 }

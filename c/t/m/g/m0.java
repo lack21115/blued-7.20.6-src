@@ -15,8 +15,8 @@ public class m0 extends e2 {
     public static Context h;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile boolean f3879c = true;
-    public volatile u1 d = u1.f4005a;
+    public volatile boolean f3831c = true;
+    public volatile u1 d = u1.f3957a;
     public Handler e;
     public volatile String f;
 
@@ -42,24 +42,24 @@ public class m0 extends e2 {
     public class b extends TimerTask {
 
         /* renamed from: a  reason: collision with root package name */
-        public final JSONObject f3880a = new JSONObject();
+        public final JSONObject f3832a = new JSONObject();
         public n0 b;
 
         /* renamed from: c  reason: collision with root package name */
-        public o0 f3881c;
+        public o0 f3833c;
 
         public b() {
             this.b = null;
-            this.f3881c = null;
+            this.f3833c = null;
             this.b = n0.b();
-            this.f3881c = o0.a();
+            this.f3833c = o0.a();
         }
 
         public final void a() {
             boolean b = m0.this.b();
             if (b) {
                 try {
-                    this.f3881c.c();
+                    this.f3833c.c();
                 } catch (Throwable th) {
                     this.b.e();
                     if (!b) {
@@ -68,18 +68,18 @@ public class m0 extends e2 {
                 }
             }
             JSONObject b2 = b();
-            if (b2 != this.f3880a) {
+            if (b2 != this.f3832a) {
                 if (Integer.parseInt(b2.optString("status", "-5")) == 0 && b2.has("version")) {
                     a(b2);
                 }
-                p3.b(this.f3881c.b(), "last_pull_time", (Object) String.valueOf(System.currentTimeMillis()));
+                p3.b(this.f3833c.b(), "last_pull_time", (Object) String.valueOf(System.currentTimeMillis()));
                 Thread.sleep(1000L);
             }
             this.b.e();
             if (!b) {
                 return;
             }
-            this.f3881c.d();
+            this.f3833c.d();
         }
 
         public final void a(SharedPreferences.Editor editor, String str, String str2, JSONObject jSONObject) {
@@ -96,7 +96,7 @@ public class m0 extends e2 {
         public final void a(JSONObject jSONObject) throws JSONException {
             int i;
             long j;
-            SharedPreferences b = this.f3881c.b();
+            SharedPreferences b = this.f3833c.b();
             if (b == null) {
                 return;
             }
@@ -113,7 +113,7 @@ public class m0 extends e2 {
             JSONObject optJSONObject = jSONObject.optJSONObject("data");
             JSONObject jSONObject2 = optJSONObject;
             if (optJSONObject == null) {
-                jSONObject2 = this.f3880a;
+                jSONObject2 = this.f3832a;
             }
             SharedPreferences.Editor edit = b.edit();
             Iterator<String> keys = jSONObject2.keys();

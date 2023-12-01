@@ -8,17 +8,17 @@ import org.json.JSONObject;
 public class ap {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9313a = w.p;
+    private static final String f6473a = w.p;
     private static final String b = "pauseDlByPk";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f9314c = "resumeDownload";
+    private static final String f6474c = "resumeDownload";
     private static final String d = "getDownloadStatus";
     private static ap f;
     private aq e;
 
     private ap(Context context) {
-        this.e = aq.a(context, f9313a);
+        this.e = aq.a(context, f6473a);
     }
 
     public static ap a(Context context) {
@@ -61,7 +61,7 @@ public class ap {
         if (context == null || jSONObject == null) {
             return false;
         }
-        Object b2 = this.e.b(null, f9314c, context, jSONObject, str, str2);
+        Object b2 = this.e.b(null, f6474c, context, jSONObject, str, str2);
         if (b2 instanceof Boolean) {
             return ((Boolean) b2).booleanValue();
         }

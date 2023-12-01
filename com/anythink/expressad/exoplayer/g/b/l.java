@@ -28,18 +28,18 @@ public final class l extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f7363a;
+    public final String f4524a;
     public final String b;
 
     l(Parcel parcel) {
         super(parcel.readString());
-        this.f7363a = parcel.readString();
+        this.f4524a = parcel.readString();
         this.b = parcel.readString();
     }
 
     public l(String str, String str2, String str3) {
         super(str);
-        this.f7363a = str2;
+        this.f4524a = str2;
         this.b = str3;
     }
 
@@ -51,12 +51,12 @@ public final class l extends h {
             return false;
         }
         l lVar = (l) obj;
-        return this.g.equals(lVar.g) && af.a((Object) this.f7363a, (Object) lVar.f7363a) && af.a((Object) this.b, (Object) lVar.b);
+        return this.g.equals(lVar.g) && af.a((Object) this.f4524a, (Object) lVar.f4524a) && af.a((Object) this.b, (Object) lVar.b);
     }
 
     public final int hashCode() {
         int hashCode = this.g.hashCode();
-        String str = this.f7363a;
+        String str = this.f4524a;
         int i = 0;
         int hashCode2 = str != null ? str.hashCode() : 0;
         String str2 = this.b;
@@ -74,7 +74,7 @@ public final class l extends h {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.g);
-        parcel.writeString(this.f7363a);
+        parcel.writeString(this.f4524a);
         parcel.writeString(this.b);
     }
 }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FindSearchMapBottomDialogBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28741a;
+    private final ConstraintLayout f15051a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28741a;
+        return this.f15051a;
     }
 }

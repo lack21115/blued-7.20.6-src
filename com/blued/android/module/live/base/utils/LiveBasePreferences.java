@@ -4,15 +4,13 @@ import com.blued.android.module.common.utils.BluedSharedPreferences;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveBasePreferences.class */
 public class LiveBasePreferences {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f11459a;
+    public static BluedSharedPreferences a;
 
     public static BluedSharedPreferences a() {
-        if (f11459a == null) {
-            f11459a = BluedSharedPreferences.a();
+        if (a == null) {
+            a = BluedSharedPreferences.a();
         }
-        return f11459a;
+        return a;
     }
 
     public static String a(String str) {

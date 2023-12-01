@@ -31,7 +31,7 @@ abstract class DescendingMultiset<E> extends ForwardingMultiset<E> implements So
 
     Set<Multiset.Entry<E>> createEntrySet() {
         return new Multisets.EntrySet<E>() { // from class: com.google.common.collect.DescendingMultiset.1EntrySetImpl
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Multiset.Entry<E>> iterator() {
                 return DescendingMultiset.this.entryIterator();
             }
@@ -41,7 +41,7 @@ abstract class DescendingMultiset<E> extends ForwardingMultiset<E> implements So
                 return DescendingMultiset.this;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return DescendingMultiset.this.forwardMultiset().entrySet().size();
             }
@@ -95,7 +95,7 @@ abstract class DescendingMultiset<E> extends ForwardingMultiset<E> implements So
         return forwardMultiset().tailMultiset(e, boundType).descendingMultiset();
     }
 
-    @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public Iterator<E> iterator() {
         return Multisets.iteratorImpl(this);
     }

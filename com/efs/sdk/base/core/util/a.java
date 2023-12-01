@@ -8,11 +8,11 @@ import java.io.File;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21786a = "efs";
+    private static String f8180a = "efs";
     private static File b;
 
     public static File a(Context context) {
-        File dir = context.getDir(f21786a, 0);
+        File dir = context.getDir(f8180a, 0);
         if (!dir.exists()) {
             dir.mkdirs();
         }
@@ -24,7 +24,7 @@ public class a {
     }
 
     public static void a(String str) {
-        f21786a = str;
+        f8180a = str;
     }
 
     public static File b(Context context, String str) {

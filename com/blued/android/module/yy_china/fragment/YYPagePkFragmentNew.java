@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.BaseDialogFragment;
@@ -22,7 +21,6 @@ import com.blued.android.module.yy_china.model.YYVoteTimeModel;
 import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -99,11 +97,11 @@ public final class YYPagePkFragmentNew extends YYPagePkFragment {
     public void a(View view) {
         Intrinsics.e(view, "view");
         super.a(view);
-        ShapeTextView a2 = a();
-        if (a2 == null) {
+        ShapeTextView a = a();
+        if (a == null) {
             return;
         }
-        a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragmentNew$DuyHWAxp1riIdS0UEJ_fUrtvVy8
+        a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragmentNew$DuyHWAxp1riIdS0UEJ_fUrtvVy8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYPagePkFragmentNew.c(YYPagePkFragmentNew.this, view2);
@@ -118,11 +116,11 @@ public final class YYPagePkFragmentNew extends YYPagePkFragment {
             YYEventMatching yYEventMatching = new YYEventMatching();
             yYEventMatching.matchType = type;
             LiveEventBus.get("show_matching_pk_new").post(yYEventMatching);
-            Fragment parentFragment = getParentFragment();
+            BaseDialogFragment parentFragment = getParentFragment();
             if (parentFragment == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.core.ui.BaseDialogFragment");
             }
-            ((BaseDialogFragment) parentFragment).dismiss();
+            parentFragment.dismiss();
         } catch (Exception e) {
         }
     }
@@ -173,7 +171,7 @@ public final class YYPagePkFragmentNew extends YYPagePkFragment {
                 }
                 List<YYRecommendPkModel> list = bluedEntityA == null ? null : bluedEntityA.data;
                 Intrinsics.a(list);
-                f.addData((Collection) list);
+                f.addData(list);
             }
         }, getFragmentActive());
     }
@@ -198,7 +196,7 @@ public final class YYPagePkFragmentNew extends YYPagePkFragment {
         }, getFragmentActive());
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.YYPagePkFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.YYPagePkFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
@@ -211,11 +209,11 @@ public final class YYPagePkFragmentNew extends YYPagePkFragment {
                 }
             });
         }
-        ShapeTextView c2 = c();
-        if (c2 == null) {
+        ShapeTextView c = c();
+        if (c == null) {
             return;
         }
-        c2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragmentNew$FIZ36PEuwDvdN48c_KQKHqoe20M
+        c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPagePkFragmentNew$FIZ36PEuwDvdN48c_KQKHqoe20M
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYPagePkFragmentNew.b(YYPagePkFragmentNew.this, view2);

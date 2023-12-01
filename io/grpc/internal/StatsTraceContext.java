@@ -25,7 +25,7 @@ public final class StatsTraceContext {
     }
 
     public static StatsTraceContext newClientContext(CallOptions callOptions, Attributes attributes, Metadata metadata) {
-        List<ClientStreamTracer.Factory> streamTracerFactories = callOptions.getStreamTracerFactories();
+        List streamTracerFactories = callOptions.getStreamTracerFactories();
         if (streamTracerFactories.isEmpty()) {
             return NOOP;
         }
@@ -38,7 +38,7 @@ public final class StatsTraceContext {
             if (i2 >= size) {
                 return new StatsTraceContext(streamTracerArr);
             }
-            streamTracerArr[i2] = streamTracerFactories.get(i2).newClientStreamTracer(build, metadata);
+            streamTracerArr[i2] = ((ClientStreamTracer.Factory) streamTracerFactories.get(i2)).newClientStreamTracer(build, metadata);
             i = i2 + 1;
         }
     }
@@ -61,43 +61,43 @@ public final class StatsTraceContext {
     }
 
     public void clientInboundHeaders() {
-        StreamTracer[] streamTracerArr = this.tracers;
-        int length = streamTracerArr.length;
+        ClientStreamTracer[] clientStreamTracerArr = this.tracers;
+        int length = clientStreamTracerArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return;
             }
-            ((ClientStreamTracer) streamTracerArr[i2]).inboundHeaders();
+            clientStreamTracerArr[i2].inboundHeaders();
             i = i2 + 1;
         }
     }
 
     public void clientInboundTrailers(Metadata metadata) {
-        StreamTracer[] streamTracerArr = this.tracers;
-        int length = streamTracerArr.length;
+        ClientStreamTracer[] clientStreamTracerArr = this.tracers;
+        int length = clientStreamTracerArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return;
             }
-            ((ClientStreamTracer) streamTracerArr[i2]).inboundTrailers(metadata);
+            clientStreamTracerArr[i2].inboundTrailers(metadata);
             i = i2 + 1;
         }
     }
 
     public void clientOutboundHeaders() {
-        StreamTracer[] streamTracerArr = this.tracers;
-        int length = streamTracerArr.length;
+        ClientStreamTracer[] clientStreamTracerArr = this.tracers;
+        int length = clientStreamTracerArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return;
             }
-            ((ClientStreamTracer) streamTracerArr[i2]).outboundHeaders();
+            clientStreamTracerArr[i2].outboundHeaders();
             i = i2 + 1;
         }
     }
@@ -219,32 +219,32 @@ public final class StatsTraceContext {
     }
 
     public void serverCallStarted(ServerStreamTracer.ServerCallInfo<?, ?> serverCallInfo) {
-        StreamTracer[] streamTracerArr = this.tracers;
-        int length = streamTracerArr.length;
+        ServerStreamTracer[] serverStreamTracerArr = this.tracers;
+        int length = serverStreamTracerArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return;
             }
-            ((ServerStreamTracer) streamTracerArr[i2]).serverCallStarted(serverCallInfo);
+            serverStreamTracerArr[i2].serverCallStarted(serverCallInfo);
             i = i2 + 1;
         }
     }
 
     public <ReqT, RespT> Context serverFilterContext(Context context) {
         Context context2 = (Context) Preconditions.checkNotNull(context, "context");
-        StreamTracer[] streamTracerArr = this.tracers;
-        int length = streamTracerArr.length;
+        ServerStreamTracer[] serverStreamTracerArr = this.tracers;
+        int length = serverStreamTracerArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return context2;
             }
-            StreamTracer streamTracer = streamTracerArr[i2];
-            context2 = ((ServerStreamTracer) streamTracer).filterContext(context2);
-            Preconditions.checkNotNull(context2, "%s returns null context", streamTracer);
+            ServerStreamTracer serverStreamTracer = serverStreamTracerArr[i2];
+            context2 = serverStreamTracer.filterContext(context2);
+            Preconditions.checkNotNull(context2, "%s returns null context", serverStreamTracer);
             i = i2 + 1;
         }
     }

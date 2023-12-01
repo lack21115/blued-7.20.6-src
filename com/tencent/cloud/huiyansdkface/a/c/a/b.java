@@ -9,12 +9,12 @@ public class b implements com.tencent.cloud.huiyansdkface.a.c.a<a> {
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35451c;
+    private int f21760c;
     private com.tencent.cloud.huiyansdkface.a.e.b e;
     private volatile boolean d = false;
 
     /* renamed from: a  reason: collision with root package name */
-    private f f35450a = new f();
+    private f f21759a = new f();
 
     @Override // com.tencent.cloud.huiyansdkface.a.c.a
     public com.tencent.cloud.huiyansdkface.a.a.a a(com.tencent.cloud.huiyansdkface.a.a.c cVar) {
@@ -23,7 +23,7 @@ public class b implements com.tencent.cloud.huiyansdkface.a.c.a<a> {
 
     @Override // com.tencent.cloud.huiyansdkface.a.c.a
     public void a() {
-        this.f35450a.a();
+        this.f21759a.a();
         this.b = null;
     }
 
@@ -37,7 +37,7 @@ public class b implements com.tencent.cloud.huiyansdkface.a.c.a<a> {
 
     @Override // com.tencent.cloud.huiyansdkface.a.c.a
     public void a(com.tencent.cloud.huiyansdkface.a.a.f fVar, int i) {
-        this.f35451c = i;
+        this.f21760c = i;
         a aVar = this.b;
         if (aVar != null) {
             int i2 = -1;
@@ -78,11 +78,11 @@ public class b implements com.tencent.cloud.huiyansdkface.a.c.a<a> {
     /* renamed from: b */
     public a a(com.tencent.cloud.huiyansdkface.a.a.a.a aVar) {
         try {
-            if (this.f35450a.a(aVar) == null) {
+            if (this.f21759a.a(aVar) == null) {
                 com.tencent.cloud.huiyansdkface.a.b.b.a(com.tencent.cloud.huiyansdkface.a.b.c.b(11, "no camera can use", null));
                 return null;
             }
-            a b = this.f35450a.b();
+            a b = this.f21759a.b();
             this.b = b;
             b.a(f());
             return this.b;
@@ -125,7 +125,7 @@ public class b implements com.tencent.cloud.huiyansdkface.a.c.a<a> {
         com.tencent.cloud.huiyansdkface.a.e.b bVar2 = new com.tencent.cloud.huiyansdkface.a.e.b();
         Camera.Parameters parameters = this.b.a().getParameters();
         Camera.Size previewSize = parameters.getPreviewSize();
-        com.tencent.cloud.huiyansdkface.a.e.b d = bVar2.a(new com.tencent.cloud.huiyansdkface.a.a.a.d(previewSize.width, previewSize.height)).a(this.b.d()).c(this.b.e()).b(this.f35451c).a(com.tencent.cloud.huiyansdkface.a.f.a.a(this.b.d(), this.f35451c, this.b.e())).d(parameters.getPreviewFormat());
+        com.tencent.cloud.huiyansdkface.a.e.b d = bVar2.a(new com.tencent.cloud.huiyansdkface.a.a.a.d(previewSize.width, previewSize.height)).a(this.b.d()).c(this.b.e()).b(this.f21760c).a(com.tencent.cloud.huiyansdkface.a.f.a.a(this.b.d(), this.f21760c, this.b.e())).d(parameters.getPreviewFormat());
         this.e = d;
         return d;
     }

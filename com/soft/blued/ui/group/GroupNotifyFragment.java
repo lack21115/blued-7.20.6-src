@@ -44,7 +44,7 @@ import org.json.JSONException;
 public class GroupNotifyFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static List<String> f30829a = new ArrayList();
+    public static List<String> f17139a = new ArrayList();
     private CommonTopTitleNoTrans d;
     private RenrenPullToRefreshListView e;
     private NoDataAndLoadFailView f;
@@ -59,20 +59,18 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
     private String r;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f30830c = GroupNotifyFragment.class.getSimpleName();
+    private String f17140c = GroupNotifyFragment.class.getSimpleName();
     private int i = 1;
     private int j = 20;
     private boolean k = true;
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<BluedMyGroupNotify>>() { // from class: com.soft.blued.ui.group.GroupNotifyFragment.2
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedMyGroupNotify> parseData(String str) {
-            Logger.a(GroupNotifyFragment.this.f30830c, "onSuccess, content:", str);
-            return (BluedEntityA) super.parseData(str);
+            Logger.a(GroupNotifyFragment.this.f17140c, "onSuccess, content:", str);
+            return super.parseData(str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedMyGroupNotify> bluedEntityA) {
             if (bluedEntityA != null) {
@@ -87,7 +85,7 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
                         }
                         if (GroupNotifyFragment.this.i == 1) {
                             GroupNotifyFragment.this.h.clear();
-                            GroupNotifyFragment.this.r = bluedEntityA.data.get(0).getIid();
+                            GroupNotifyFragment.this.r = ((BluedMyGroupNotify) bluedEntityA.data.get(0)).getIid();
                         }
                         File file = new File(GroupNotifyFragment.this.getActivity().getFilesDir(), "groupnofyalread");
                         JSONArray jSONArray = null;
@@ -119,8 +117,8 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
                                 GroupNotifyFragment.this.l.notifyDataSetChanged();
                                 return;
                             }
-                            BluedMyGroupNotify bluedMyGroupNotify = bluedEntityA.data.get(i2);
-                            String timestamp = bluedEntityA.data.get(i2).getTimestamp();
+                            BluedMyGroupNotify bluedMyGroupNotify = (BluedMyGroupNotify) bluedEntityA.data.get(i2);
+                            String timestamp = ((BluedMyGroupNotify) bluedEntityA.data.get(i2)).getTimestamp();
                             if (jSONArray != null && jSONArray.length() > 0) {
                                 int i3 = 0;
                                 while (true) {
@@ -140,7 +138,7 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
                     }
                 } catch (Exception e3) {
                     e3.printStackTrace();
-                    AppMethods.a((CharSequence) GroupNotifyFragment.this.n.getResources().getString(2131887272));
+                    AppMethods.a(GroupNotifyFragment.this.n.getResources().getString(2131887272));
                     return;
                 }
             }
@@ -157,15 +155,13 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
             GroupNotifyFragment.this.e.p();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
-            Logger.a(GroupNotifyFragment.this.f30830c, "onFailure, error:", th);
+            Logger.a(GroupNotifyFragment.this.f17140c, "onFailure, error:", th);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
-            Logger.a(GroupNotifyFragment.this.f30830c, "onUIFinish");
+            Logger.a(GroupNotifyFragment.this.f17140c, "onUIFinish");
             GroupNotifyFragment.this.e.j();
             GroupNotifyFragment.this.e.q();
         }
@@ -177,13 +173,11 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
             GroupNotifyFragment.this.i = 1;
             GroupNotifyFragment.this.a(false);
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
             GroupNotifyFragment.b(GroupNotifyFragment.this);
             GroupNotifyFragment.this.a(false);
@@ -197,7 +191,7 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
             this.q = arguments.getShort("passby_session_type");
             ChatManager.getInstance().ignoredNoReadNum(this.q, this.p);
             ChatManager.getInstance().deleteLocalChatting(this.q, this.p);
-            DateTodayManager.f32404a.a(false);
+            DateTodayManager.f18714a.a(false);
         }
     }
 
@@ -212,7 +206,7 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
         }
         if (!this.k && (i = this.i) != 1) {
             this.i = i - 1;
-            AppMethods.a((CharSequence) getResources().getString(2131887275));
+            AppMethods.a(getResources().getString(2131887275));
             return;
         }
         GroupHttpUtils.a(this.n, this.b, UserInfo.getInstance().getLoginUserInfo().getUid(), this.i + "", this.j + "", getFragmentActive());
@@ -227,9 +221,9 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
     private void b() {
         this.o = DialogUtils.a(this.n);
         this.h = new ArrayList();
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.m.findViewById(R.id.my_groupnotify_pullrefresh);
-        this.e = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.m.findViewById(R.id.my_groupnotify_pullrefresh);
+        this.e = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.e.setOnPullDownListener(new MyPullDownListener());
         ListView listView = (ListView) this.e.getRefreshableView();
         this.g = listView;
@@ -241,16 +235,16 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
                 GroupNotifyFragment.this.e.k();
             }
         }, 100L);
-        this.f = (NoDataAndLoadFailView) this.m.findViewById(R.id.ll_nodata_chats);
+        this.f = this.m.findViewById(R.id.ll_nodata_chats);
         GroupNotifyAdapter groupNotifyAdapter = new GroupNotifyAdapter(this.n, this.h, getFragmentActive());
         this.l = groupNotifyAdapter;
         this.g.setAdapter((ListAdapter) groupNotifyAdapter);
     }
 
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.m.findViewById(2131370749);
-        this.d = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.m.findViewById(R.id.top_title);
+        this.d = findViewById;
+        findViewById.a();
         this.d.setCenterText(getString(R.string.group_notification));
         this.d.setLeftClickListener(this);
         this.d.setRightClickListener(this);
@@ -261,19 +255,16 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
     public void d() {
         ChatManager.getInstance().deleteSessionAndChatting(Short.valueOf(this.q), this.p);
         GroupHttpUtils.j(getActivity(), new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.GroupNotifyFragment.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(GroupNotifyFragment.this.o);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(GroupNotifyFragment.this.o);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 try {
                     GroupNotifyFragment.this.e.setVisibility(8);
@@ -289,7 +280,6 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
 
     private void e() {
         GroupHttpUtils.i(this.n, new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.GroupNotifyFragment.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), this.r, getFragmentActive());
@@ -337,7 +327,6 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
         return i;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         f();
         return super.onBackPressed();
@@ -355,12 +344,10 @@ public class GroupNotifyFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.n = getActivity();
         View view = this.m;

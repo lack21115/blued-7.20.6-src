@@ -10,19 +10,17 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.amap.api.services.core.AMapException;
 import com.anythink.core.common.e.i;
 import com.anythink.core.common.e.j;
 import com.anythink.core.common.k.h;
 import com.anythink.core.common.res.b;
 import com.anythink.core.common.res.e;
 import com.anythink.core.common.ui.component.RoundImageView;
-import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/AsseblemSplashAdView.class */
 public class AsseblemSplashAdView extends BaseSdkSplashAdView {
-
-    /* renamed from: a  reason: collision with root package name */
-    View f6036a;
+    View a;
 
     public AsseblemSplashAdView(Context context) {
         super(context);
@@ -34,7 +32,7 @@ public class AsseblemSplashAdView extends BaseSdkSplashAdView {
 
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void a() {
-        if (this.f6049c.m.q() == 2) {
+        if (this.c.m.q() == 2) {
             LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_splash_ad_layout_asseblem_vertical_land", "layout"), this);
         } else {
             LayoutInflater.from(getContext()).inflate(h.a(getContext(), "myoffer_splash_ad_layout_asseblem_vertical_port", "layout"), this);
@@ -51,7 +49,7 @@ public class AsseblemSplashAdView extends BaseSdkSplashAdView {
         final FrameLayout frameLayout = (FrameLayout) findViewById(h.a(getContext(), "myoffer_splash_ad_content_image_area", "id"));
         final RoundImageView roundImageView = (RoundImageView) findViewById(h.a(getContext(), "myoffer_splash_bg", "id"));
         final RoundImageView roundImageView2 = (RoundImageView) findViewById(h.a(getContext(), "myoffer_splash_icon", "id"));
-        this.f6036a = textView2;
+        this.a = textView2;
         if (TextUtils.isEmpty(this.d.t())) {
             com.anythink.basead.ui.a.a.a(roundImageView2);
             RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) roundImageView2.getLayoutParams();
@@ -98,7 +96,7 @@ public class AsseblemSplashAdView extends BaseSdkSplashAdView {
         if (TextUtils.isEmpty(this.d.u())) {
             roundImageView.setBackgroundColor(Color.parseColor("#EFEFEF"));
         } else {
-            com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.d.u()), getResources().getDisplayMetrics().widthPixels, (getResources().getDisplayMetrics().widthPixels * LiveProtos.Event.LIVE_BATTLE_PASS_NOTICE_TOP_SHOW_VALUE) / 1200, new b.a() { // from class: com.anythink.basead.ui.AsseblemSplashAdView.2
+            com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.d.u()), getResources().getDisplayMetrics().widthPixels, (getResources().getDisplayMetrics().widthPixels * 627) / AMapException.CODE_AMAP_SERVICE_INVALID_PARAMS, new b.a() { // from class: com.anythink.basead.ui.AsseblemSplashAdView.2
                 @Override // com.anythink.core.common.res.b.a
                 public final void onFail(String str, String str2) {
                 }
@@ -144,7 +142,7 @@ public class AsseblemSplashAdView extends BaseSdkSplashAdView {
 
     @Override // com.anythink.basead.ui.BaseSdkSplashAdView
     protected void c() {
-        super.a(this.f6049c.m.R() < 0 ? 100 : this.f6049c.m.R(), new Runnable() { // from class: com.anythink.basead.ui.AsseblemSplashAdView.3
+        super.a(this.c.m.R() < 0 ? 100 : this.c.m.R(), new Runnable() { // from class: com.anythink.basead.ui.AsseblemSplashAdView.3
             @Override // java.lang.Runnable
             public final void run() {
                 if (AsseblemSplashAdView.this.F == null) {

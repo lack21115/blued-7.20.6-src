@@ -1,6 +1,5 @@
 package com.kwad.sdk.pngencrypt;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.zip.Inflater;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/pngencrypt/DeflatedChunksSet.class */
@@ -191,6 +190,6 @@ public class DeflatedChunksSet {
     }
 
     public String toString() {
-        return new StringBuilder("idatSet : " + this.avr.Bj().awG + " state=" + this.avp + " rows=" + this.avo + " bytes=" + this.avs + BridgeUtil.SPLIT_MARK + this.avt).toString();
+        return new StringBuilder("idatSet : " + this.avr.Bj().awG + " state=" + this.avp + " rows=" + this.avo + " bytes=" + this.avs + "/" + this.avt).toString();
     }
 }

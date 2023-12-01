@@ -15,10 +15,10 @@ import java.util.List;
 public class e {
 
     /* renamed from: a  reason: collision with other field name */
-    private static final int[] f1055a = {1, 2, 4, 8, 16};
+    private static final int[] f1008a = {1, 2, 4, 8, 16};
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SparseArray<ay.a<String, String, String>> f41681a = new f(5);
+    private static final SparseArray<ay.a<String, String, String>> f27990a = new f(5);
     private static final SparseArray<Integer> b = new g(5);
 
     e() {
@@ -55,15 +55,15 @@ public class e {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(Context context, String str) {
-        List<NotificationChannel> m12139a;
-        if (!com.xiaomi.push.j.m12048a(context) || TextUtils.isEmpty(str) || (m12139a = ax.a(context, str).m12139a()) == null) {
+        List<NotificationChannel> m9089a;
+        if (!com.xiaomi.push.j.m8998a(context) || TextUtils.isEmpty(str) || (m9089a = ax.a(context, str).m9089a()) == null) {
             return;
         }
         synchronized (e.class) {
             try {
                 SharedPreferences a2 = a(context);
                 ArrayList arrayList = new ArrayList();
-                for (NotificationChannel notificationChannel : m12139a) {
+                for (NotificationChannel notificationChannel : m9089a) {
                     String str2 = (String) com.xiaomi.push.bi.a(notificationChannel, "mId");
                     if (!TextUtils.isEmpty(str2) && a2.contains(str2)) {
                         arrayList.add(str2);
@@ -79,9 +79,9 @@ public class e {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(Context context, String str, String str2, int i, String str3, boolean z, int i2) {
-        if (!com.xiaomi.push.j.m12048a(context) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
-            if (com.xiaomi.push.j.m12048a(context)) {
-                com.xiaomi.channel.commonutils.logger.b.m11394a("ChannelPC: can`t setup permission with permissionCode:" + String.valueOf(str3) + " channelId:" + String.valueOf(str2) + " targetPkg:" + str);
+        if (!com.xiaomi.push.j.m8998a(context) || TextUtils.isEmpty(str3) || TextUtils.isEmpty(str2) || TextUtils.isEmpty(str)) {
+            if (com.xiaomi.push.j.m8998a(context)) {
+                com.xiaomi.channel.commonutils.logger.b.m8344a("ChannelPC: can`t setup permission with permissionCode:" + String.valueOf(str3) + " channelId:" + String.valueOf(str2) + " targetPkg:" + str);
                 return;
             }
             return;
@@ -141,7 +141,7 @@ public class e {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(String str, String str2, int i, int i2) {
-        int[] iArr = f1055a;
+        int[] iArr = f1008a;
         int length = iArr.length;
         int i3 = 0;
         while (true) {
@@ -153,15 +153,15 @@ public class e {
             if ((b.get(i5).intValue() & i2) == 0) {
                 a(str, str2, i5, (i & i5) > 0);
             } else {
-                com.xiaomi.channel.commonutils.logger.b.m11394a("ChannelPermissions.grantPermission:" + str + ":" + str2 + ": <" + i5 + "> :stoped by userLock");
+                com.xiaomi.channel.commonutils.logger.b.m8344a("ChannelPermissions.grantPermission:" + str + ":" + str2 + ": <" + i5 + "> :stoped by userLock");
             }
             i3 = i4 + 1;
         }
     }
 
     private static void a(String str, String str2, int i, boolean z) {
-        boolean a2 = ay.a(com.xiaomi.push.r.m12066a(), str, str2, f41681a.get(i), z);
-        com.xiaomi.channel.commonutils.logger.b.m11394a("ChannelPermissions.grantPermission:" + str + ":" + str2 + ": <" + i + "=" + z + "> :" + a2);
+        boolean a2 = ay.a(com.xiaomi.push.r.m9016a(), str, str2, f27990a.get(i), z);
+        com.xiaomi.channel.commonutils.logger.b.m8344a("ChannelPermissions.grantPermission:" + str + ":" + str2 + ": <" + i + "=" + z + "> :" + a2);
     }
 
     private static boolean a(int i, int i2) {
@@ -170,10 +170,10 @@ public class e {
 
     private static boolean a(String str, String str2, int i) {
         boolean z = true;
-        if (ay.a(com.xiaomi.push.r.m12066a(), str, str2, f41681a.get(i)) != 1) {
+        if (ay.a(com.xiaomi.push.r.m9016a(), str, str2, f27990a.get(i)) != 1) {
             z = false;
         }
-        com.xiaomi.channel.commonutils.logger.b.m11394a("ChannelPermissions.checkPermission:" + str + ":" + str2 + ": <" + i + "=" + z + SimpleComparison.GREATER_THAN_OPERATION);
+        com.xiaomi.channel.commonutils.logger.b.m8344a("ChannelPermissions.checkPermission:" + str + ":" + str2 + ": <" + i + "=" + z + SimpleComparison.GREATER_THAN_OPERATION);
         return z;
     }
 }

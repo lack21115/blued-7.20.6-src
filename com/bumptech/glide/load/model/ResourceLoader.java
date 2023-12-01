@@ -13,22 +13,22 @@ import java.io.InputStream;
 public class ResourceLoader<Data> implements ModelLoader<Integer, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ModelLoader<Uri, Data> f20902a;
+    private final ModelLoader<Uri, Data> f7296a;
     private final Resources b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/ResourceLoader$AssetFileDescriptorFactory.class */
     public static final class AssetFileDescriptorFactory implements ModelLoaderFactory<Integer, AssetFileDescriptor> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Resources f20903a;
+        private final Resources f7297a;
 
         public AssetFileDescriptorFactory(Resources resources) {
-            this.f20903a = resources;
+            this.f7297a = resources;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Integer, AssetFileDescriptor> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new ResourceLoader(this.f20903a, multiModelLoaderFactory.b(Uri.class, AssetFileDescriptor.class));
+            return new ResourceLoader(this.f7297a, multiModelLoaderFactory.b(Uri.class, AssetFileDescriptor.class));
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -40,15 +40,15 @@ public class ResourceLoader<Data> implements ModelLoader<Integer, Data> {
     public static class FileDescriptorFactory implements ModelLoaderFactory<Integer, ParcelFileDescriptor> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Resources f20904a;
+        private final Resources f7298a;
 
         public FileDescriptorFactory(Resources resources) {
-            this.f20904a = resources;
+            this.f7298a = resources;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Integer, ParcelFileDescriptor> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new ResourceLoader(this.f20904a, multiModelLoaderFactory.b(Uri.class, ParcelFileDescriptor.class));
+            return new ResourceLoader(this.f7298a, multiModelLoaderFactory.b(Uri.class, ParcelFileDescriptor.class));
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -60,15 +60,15 @@ public class ResourceLoader<Data> implements ModelLoader<Integer, Data> {
     public static class StreamFactory implements ModelLoaderFactory<Integer, InputStream> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Resources f20905a;
+        private final Resources f7299a;
 
         public StreamFactory(Resources resources) {
-            this.f20905a = resources;
+            this.f7299a = resources;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Integer, InputStream> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new ResourceLoader(this.f20905a, multiModelLoaderFactory.b(Uri.class, InputStream.class));
+            return new ResourceLoader(this.f7299a, multiModelLoaderFactory.b(Uri.class, InputStream.class));
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -80,15 +80,15 @@ public class ResourceLoader<Data> implements ModelLoader<Integer, Data> {
     public static class UriFactory implements ModelLoaderFactory<Integer, Uri> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Resources f20906a;
+        private final Resources f7300a;
 
         public UriFactory(Resources resources) {
-            this.f20906a = resources;
+            this.f7300a = resources;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<Integer, Uri> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new ResourceLoader(this.f20906a, UnitModelLoader.a());
+            return new ResourceLoader(this.f7300a, UnitModelLoader.a());
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -98,7 +98,7 @@ public class ResourceLoader<Data> implements ModelLoader<Integer, Data> {
 
     public ResourceLoader(Resources resources, ModelLoader<Uri, Data> modelLoader) {
         this.b = resources;
-        this.f20902a = modelLoader;
+        this.f7296a = modelLoader;
     }
 
     private Uri b(Integer num) {
@@ -119,7 +119,7 @@ public class ResourceLoader<Data> implements ModelLoader<Integer, Data> {
         if (b == null) {
             return null;
         }
-        return this.f20902a.a(b, i, i2, options);
+        return this.f7296a.a(b, i, i2, options);
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

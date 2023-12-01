@@ -4,18 +4,18 @@ package a.a.a.a.a.k.d;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public Object f1407a = new Object();
+    public Object f1359a = new Object();
     public StringBuilder b = new StringBuilder();
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/k/d/c$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final c f1408a = new c();
+        public static final c f1360a = new c();
     }
 
     public static c a() {
-        return a.f1408a;
+        return a.f1360a;
     }
 
     public boolean a(String str) {
@@ -23,7 +23,7 @@ public final class c {
             return false;
         }
         try {
-            synchronized (this.f1407a) {
+            synchronized (this.f1359a) {
                 this.b.append(str);
             }
             return true;
@@ -34,7 +34,7 @@ public final class c {
     }
 
     public void b() {
-        synchronized (this.f1407a) {
+        synchronized (this.f1359a) {
             this.b.delete(0, this.b.length());
         }
     }
@@ -45,7 +45,7 @@ public final class c {
         if (sb2 == null || sb2.length() == 0) {
             return null;
         }
-        synchronized (this.f1407a) {
+        synchronized (this.f1359a) {
             sb = this.b.toString();
         }
         return sb;

@@ -13,7 +13,7 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.core.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/f/a$a.class */
-    public static final class C0521a {
+    public static final class C0351a {
         private static final a Ju = new a((byte) 0);
     }
 
@@ -68,7 +68,7 @@ public final class a {
     }
 
     public static a nA() {
-        return C0521a.Ju;
+        return C0351a.Ju;
     }
 
     public final void aa(final Context context) {

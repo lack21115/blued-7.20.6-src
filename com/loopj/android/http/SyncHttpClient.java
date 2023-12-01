@@ -1,6 +1,7 @@
 package com.loopj.android.http;
 
 import android.content.Context;
+import com.blued.das.live.LiveProtos;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -9,11 +10,11 @@ import org.apache.http.protocol.HttpContext;
 /* loaded from: source-7994992-dex2jar.jar:com/loopj/android/http/SyncHttpClient.class */
 public class SyncHttpClient extends AsyncHttpClient {
     public SyncHttpClient() {
-        super(false, 80, 443);
+        super(false, 80, LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE);
     }
 
     public SyncHttpClient(int i) {
-        super(false, i, 443);
+        super(false, i, LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE);
     }
 
     public SyncHttpClient(int i, int i2) {

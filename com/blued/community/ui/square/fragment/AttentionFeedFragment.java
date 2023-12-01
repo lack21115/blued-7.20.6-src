@@ -57,13 +57,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/fragment/AttentionFeedFragment.class */
 public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends MvpFragment<AttentionFeedPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f20126a;
+    private Context a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f20127c;
+    private RecyclerView c;
     private LinearLayoutManager d;
     private CommonMultiItemAdapter<BluedTopic> e;
     private View f;
@@ -84,7 +80,6 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
     private AttentionFeedPostGuideModel y;
     private int x = -1;
     private RecyclerView.OnScrollListener z = new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.square.fragment.AttentionFeedFragment.2
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             if (AttentionFeedFragment.this.t != null && AttentionFeedFragment.this.t.s != null) {
                 AttentionFeedFragment.this.t.s.onScrollStateChanged(recyclerView, i);
@@ -94,7 +89,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
                     AttentionFeedFragment.this.s.startBtmBtnShow();
                 } else if (!recyclerView.canScrollVertically(1)) {
                     if (!AttentionFeedFragment.this.j().n()) {
-                        AppMethods.a((CharSequence) AttentionFeedFragment.this.f20126a.getResources().getString(R.string.no_more_please_try_again));
+                        AppMethods.a((CharSequence) AttentionFeedFragment.this.a.getResources().getString(R.string.no_more_please_try_again));
                     }
                     AttentionFeedFragment.this.s.startBtmBtnHide();
                 }
@@ -110,7 +105,6 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
             }
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
             if (AttentionFeedFragment.this.t != null && AttentionFeedFragment.this.t.s != null) {
                 AttentionFeedFragment.this.t.s.onScrolled(recyclerView, i, i2);
@@ -138,7 +132,6 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.community.view.CommonMultiItemAdapter
         /* renamed from: a */
         public void onConvert(CommonViewHolder commonViewHolder, final BluedTopic bluedTopic, int i) {
             String str;
@@ -164,7 +157,6 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
             bluedTopic.isShowUrlVisited = true;
         }
 
-        @Override // com.blued.community.view.CommonMultiItemAdapter
         public void onAddItemType() {
             addItemType(0, R.layout.item_attention_list_subject);
         }
@@ -179,12 +171,12 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         if (currentTimeMillis - A <= 604800 || TextUtils.equals(B, bluedIngSelfFeed.feed_id) || (viewByPosition = this.t.getViewByPosition(this.q, this.x, R.id.ll_read_num)) == null || TextUtils.isEmpty(bluedIngSelfFeed.recommendation_new)) {
             return;
         }
-        CommonGuidePop commonGuidePop = new CommonGuidePop(this.f20126a, bluedIngSelfFeed.recommendation_new, NinePatchUtils.GuideArrowPosition.RIGHT, R.drawable.guide_blue_bubble_down);
-        final BasePopupView h = new XPopup.Builder(this.f20126a).a(viewByPosition).d((Boolean) false).b(-DensityUtils.a(this.f20126a, 3.0f)).c(DensityUtils.a(this.f20126a, 8.0f)).a(PopupPosition.Top).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) commonGuidePop).h();
+        CommonGuidePop commonGuidePop = new CommonGuidePop(this.a, bluedIngSelfFeed.recommendation_new, NinePatchUtils.GuideArrowPosition.RIGHT, R.drawable.guide_blue_bubble_down);
+        final BasePopupView h = new XPopup.Builder(this.a).a(viewByPosition).d((Boolean) false).b(-DensityUtils.a(this.a, 3.0f)).c(DensityUtils.a(this.a, 8.0f)).a(PopupPosition.Top).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) commonGuidePop).h();
         commonGuidePop.setOnClick(new CommonGuidePop.OnClickListener() { // from class: com.blued.community.ui.square.fragment.AttentionFeedFragment.3
             @Override // com.blued.android.module.common.view.CommonGuidePop.OnClickListener
             public void a() {
-                CommunityServiceManager.b().a(AttentionFeedFragment.this.f20126a, bluedIngSelfFeed.promotion_url);
+                CommunityServiceManager.b().a(AttentionFeedFragment.this.a, bluedIngSelfFeed.promotion_url);
                 if (h.s()) {
                     h.p();
                 }
@@ -210,12 +202,12 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(String str, BluedTopic bluedTopic, String str2, String str3, View view) {
-        FeedAddPostFragment.a(getActivity(), new CommBundleBuilder().b(16).a(str).a(bluedTopic));
+        FeedAddPostFragment.a((Context) getActivity(), new CommBundleBuilder().b(16).a(str).a(bluedTopic));
         EventTrackFeed.l(FeedProtos.Event.FEED_FOLLOW_PAGE_PUBLISH_GUIDE_CLICK, str2, str3);
     }
 
     private void b(boolean z) {
-        this.r.j();
+        this.r.g();
         this.r.h();
         if (z) {
             this.u.a();
@@ -230,43 +222,42 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         this.k = (TextView) this.i.findViewById(R.id.feed_attention_guide_name);
         this.l = this.i.findViewById(R.id.feed_attention_guide_btn);
         this.b = this.i.findViewById(R.id.feed_attention_subject_layout);
-        this.f20127c = (RecyclerView) this.i.findViewById(R.id.feed_attention_subject_rv);
+        this.c = this.i.findViewById(R.id.feed_attention_subject_rv);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), 0, false);
         this.d = linearLayoutManager;
-        this.f20127c.setLayoutManager(linearLayoutManager);
+        this.c.setLayoutManager(linearLayoutManager);
         AnonymousClass1 anonymousClass1 = new AnonymousClass1();
         this.e = anonymousClass1;
-        this.f20127c.setAdapter(anonymousClass1);
-        this.m = (RecyclerView) this.i.findViewById(R.id.rv_live_recommend);
+        this.c.setAdapter(anonymousClass1);
+        this.m = this.i.findViewById(R.id.rv_live_recommend);
         this.n = (FeedSendRecyclerView) this.i.findViewById(R.id.feed_send_list);
         this.o = this.i.findViewById(R.id.view_send_list_cut);
         this.p = (LinearLayout) this.i.findViewById(R.id.ll_live_recommend);
-        this.q = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.r = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
-        this.s = (FloatFooterView) this.i.findViewById(R.id.ll_feed_post);
+        this.q = this.i.findViewById(R.id.recycler_view);
+        this.r = this.i.findViewById(R.id.refresh_layout);
+        this.s = this.i.findViewById(R.id.ll_feed_post);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
         CommunityServiceManager.d().a("feed_post_btn_click", 1);
         EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_BTN_CLICK, FeedProtos.FeedFrom.FOLLOW, FeedMethods.b(), "");
-        FeedAddPostFragment.a(this.f20126a);
+        FeedAddPostFragment.a(this.a);
     }
 
     private void v() {
         this.s.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.square.fragment.AttentionFeedFragment.6
-            @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
             public void onPostFeedClick() {
                 AttentionFeedFragment.this.e();
             }
         });
         this.n.setRequestHost(getFragmentActive());
         this.o.setVisibility(8);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20126a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.a);
         this.w = linearLayoutManager;
         this.q.setLayoutManager(linearLayoutManager);
         if (this.t == null) {
-            this.t = new FeedListAdapterForRecyclerView(this.f20126a, this, this.q, 0);
+            this.t = new FeedListAdapterForRecyclerView(this.a, this, this.q, 0);
             NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
             this.u = noDataAndLoadFailView;
             this.t.setEmptyView(noDataAndLoadFailView);
@@ -275,12 +266,10 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         this.q.setAdapter(this.t);
         this.q.addOnScrollListener(this.z);
         this.r.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.square.fragment.AttentionFeedFragment.7
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 AttentionFeedFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 AttentionFeedFragment.this.j().e();
                 AttentionFeedFragment.this.y();
@@ -292,18 +281,17 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
 
     private void w() {
         if (this.v == null) {
-            AttentionRecommendLiveAdapter attentionRecommendLiveAdapter = new AttentionRecommendLiveAdapter(this.f20126a, getFragmentActive());
+            AttentionRecommendLiveAdapter attentionRecommendLiveAdapter = new AttentionRecommendLiveAdapter(this.a, getFragmentActive());
             this.v = attentionRecommendLiveAdapter;
             attentionRecommendLiveAdapter.setEnableLoadMore(true);
             this.v.setLoadMoreView(new RecommendLoadMoreView());
         }
         this.v.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.square.fragment.AttentionFeedFragment.8
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 AttentionFeedFragment.this.j().a(false);
             }
         }, this.m);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20126a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.a);
         linearLayoutManager.setOrientation(0);
         this.m.setLayoutManager(linearLayoutManager);
         this.m.setAdapter(this.v);
@@ -352,7 +340,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f20126a = getContext();
+        this.a = getContext();
         d();
         v();
         w();
@@ -496,7 +484,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
-        this.q.setAdapter(null);
+        this.q.setAdapter((RecyclerView.Adapter) null);
         super.af_();
         RecyclerView recyclerView = this.q;
         if (recyclerView != null) {
@@ -518,8 +506,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         this.v.setEnableLoadMore(j().n());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void c() {
+    protected void c() {
         RecyclerView recyclerView;
         if (this.r == null || (recyclerView = this.q) == null) {
             return;
@@ -541,10 +528,10 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
-        this.r.l(true);
+        this.r.b(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         FeedSendRecyclerView feedSendRecyclerView = this.n;
         if (feedSendRecyclerView != null) {
@@ -553,7 +540,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         super.onDestroyView();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.t;
@@ -562,7 +549,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (this.t != null && getUserVisibleHint()) {
@@ -575,7 +562,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         this.s.setRedDotVisibility(FeedMethods.b());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         y();
@@ -584,7 +571,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
-        this.r.l(false);
+        this.r.b(false);
         AppMethods.d(R.string.common_nomore_data);
     }
 
@@ -598,7 +585,7 @@ public class AttentionFeedFragment<T extends AttentionFeedPresenter> extends Mvp
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.t;

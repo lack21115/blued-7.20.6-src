@@ -9,27 +9,23 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/a/b.class */
 public class b {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile b f6324c;
-
-    /* renamed from: a  reason: collision with root package name */
-    final String f6325a = b.class.getSimpleName();
+    private static volatile b c;
+    final String a = b.class.getSimpleName();
     ConcurrentHashMap<String, com.anythink.core.common.e.c> b = new ConcurrentHashMap<>();
 
     public static b a() {
-        if (f6324c == null) {
+        if (c == null) {
             synchronized (b.class) {
                 try {
-                    if (f6324c == null) {
-                        f6324c = new b();
+                    if (c == null) {
+                        c = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6324c;
+        return c;
     }
 
     public final boolean a(Context context, String str, d dVar) {
@@ -50,7 +46,7 @@ public class b {
         sb.append(str);
         sb.append(":");
         sb.append(cVar2.toString());
-        return cVar2.f6652a >= dVar.ak() && System.currentTimeMillis() - cVar2.b <= dVar.al();
+        return cVar2.a >= dVar.ak() && System.currentTimeMillis() - cVar2.b <= dVar.al();
     }
 
     public final void b(Context context, String str, d dVar) {
@@ -66,9 +62,9 @@ public class b {
         }
         if (System.currentTimeMillis() - cVar2.b > dVar.al()) {
             cVar2.b = System.currentTimeMillis();
-            cVar2.f6652a = 0;
+            cVar2.a = 0;
         }
-        cVar2.f6652a++;
+        cVar2.a++;
         StringBuilder sb = new StringBuilder("After save load cap:");
         sb.append(str);
         sb.append(":");

@@ -14,22 +14,22 @@ public class c {
     private static final String b = "c";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<String, PLSharedPreferences> f22688c = new ConcurrentHashMap(16);
+    private static final Map<String, PLSharedPreferences> f9080c = new ConcurrentHashMap(16);
 
     /* renamed from: a  reason: collision with root package name */
-    private final PLSharedPreferences f22689a;
+    private final PLSharedPreferences f9081a;
 
     public c(Context context, String str) {
         String packageName = context.getPackageName();
         Logger.d(b, "get pkgname from context is{%s}", packageName);
-        Map<String, PLSharedPreferences> map = f22688c;
+        Map<String, PLSharedPreferences> map = f9080c;
         if (map.containsKey(str + packageName)) {
-            Map<String, PLSharedPreferences> map2 = f22688c;
-            this.f22689a = map2.get(str + packageName);
+            Map<String, PLSharedPreferences> map2 = f9080c;
+            this.f9081a = map2.get(str + packageName);
         } else {
-            this.f22689a = new PLSharedPreferences(context, str + packageName);
-            Map<String, PLSharedPreferences> map3 = f22688c;
-            map3.put(str + packageName, this.f22689a);
+            this.f9081a = new PLSharedPreferences(context, str + packageName);
+            Map<String, PLSharedPreferences> map3 = f9080c;
+            map3.put(str + packageName, this.f9081a);
         }
         a(context);
     }
@@ -56,55 +56,55 @@ public class c {
 
     public String a(String str, String str2) {
         String string;
-        PLSharedPreferences pLSharedPreferences = this.f22689a;
+        PLSharedPreferences pLSharedPreferences = this.f9081a;
         if (pLSharedPreferences == null) {
             return str2;
         }
         synchronized (pLSharedPreferences) {
-            string = this.f22689a.getString(str, str2);
+            string = this.f9081a.getString(str, str2);
         }
         return string;
     }
 
     public Map<String, ?> a() {
         Map<String, ?> all;
-        PLSharedPreferences pLSharedPreferences = this.f22689a;
+        PLSharedPreferences pLSharedPreferences = this.f9081a;
         if (pLSharedPreferences == null) {
             return new HashMap();
         }
         synchronized (pLSharedPreferences) {
-            all = this.f22689a.getAll();
+            all = this.f9081a.getAll();
         }
         return all;
     }
 
     public void a(String str) {
-        PLSharedPreferences pLSharedPreferences = this.f22689a;
+        PLSharedPreferences pLSharedPreferences = this.f9081a;
         if (pLSharedPreferences == null) {
             return;
         }
         synchronized (pLSharedPreferences) {
-            this.f22689a.remove(str);
+            this.f9081a.remove(str);
         }
     }
 
     public void b() {
-        PLSharedPreferences pLSharedPreferences = this.f22689a;
+        PLSharedPreferences pLSharedPreferences = this.f9081a;
         if (pLSharedPreferences == null) {
             return;
         }
         synchronized (pLSharedPreferences) {
-            this.f22689a.clear();
+            this.f9081a.clear();
         }
     }
 
     public void b(String str, String str2) {
-        PLSharedPreferences pLSharedPreferences = this.f22689a;
+        PLSharedPreferences pLSharedPreferences = this.f9081a;
         if (pLSharedPreferences == null) {
             return;
         }
         synchronized (pLSharedPreferences) {
-            this.f22689a.putString(str, str2);
+            this.f9081a.putString(str, str2);
         }
     }
 }

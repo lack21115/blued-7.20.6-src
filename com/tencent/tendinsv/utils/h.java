@@ -8,21 +8,21 @@ import android.os.Build;
 public class h extends com.tencent.tendinsv.tool.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile com.tencent.tendinsv.tool.a f39097a;
+    private static volatile com.tencent.tendinsv.tool.a f25406a;
 
     public static com.tencent.tendinsv.tool.a a() {
-        if (f39097a == null) {
+        if (f25406a == null) {
             synchronized (h.class) {
                 try {
-                    if (f39097a == null) {
-                        f39097a = new h();
+                    if (f25406a == null) {
+                        f25406a = new h();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39097a;
+        return f25406a;
     }
 
     @Override // com.tencent.tendinsv.tool.a

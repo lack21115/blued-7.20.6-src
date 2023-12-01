@@ -6,11 +6,11 @@ import java.util.Map;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f22758a;
+    public boolean f9150a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22759c;
+    public String f9151c;
     public String d;
     public String e;
     public String f;
@@ -53,8 +53,8 @@ public class k {
         this.o = false;
         this.q = 0L;
         this.g = kVar.g;
-        b(kVar.f22758a);
-        a(kVar.f22759c);
+        b(kVar.f9150a);
+        a(kVar.f9151c);
         b(kVar.d);
         e(kVar.e);
         g(kVar.f);
@@ -80,7 +80,7 @@ public class k {
     }
 
     public void a(String str) {
-        this.f22759c = str;
+        this.f9151c = str;
     }
 
     public void a(Map<String, String> map) {
@@ -108,7 +108,7 @@ public class k {
     }
 
     public void b(boolean z) {
-        this.f22758a = z;
+        this.f9150a = z;
     }
 
     public void c(String str) {
@@ -120,7 +120,7 @@ public class k {
     }
 
     public boolean c() {
-        return this.f22758a;
+        return this.f9150a;
     }
 
     public int d() {
@@ -148,7 +148,7 @@ public class k {
     }
 
     public String f() {
-        return this.f22759c;
+        return this.f9151c;
     }
 
     public void f(String str) {

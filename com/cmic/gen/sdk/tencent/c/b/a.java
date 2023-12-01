@@ -6,11 +6,11 @@ import java.net.URLEncoder;
 public abstract class a extends g {
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f21629a = "";
+    protected String f8023a = "";
     protected String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    protected String f21630c = "";
+    protected String f8024c = "";
     protected String d = "";
     protected String e = "";
     protected String f = "";
@@ -34,7 +34,7 @@ public abstract class a extends g {
 
     @Override // com.cmic.gen.sdk.tencent.c.b.g
     public String a() {
-        return this.f21630c;
+        return this.f8024c;
     }
 
     public void a_(String str) {
@@ -42,7 +42,7 @@ public abstract class a extends g {
     }
 
     public void b(String str) {
-        this.f21629a = t(str);
+        this.f8023a = t(str);
     }
 
     public void c(String str) {
@@ -50,7 +50,7 @@ public abstract class a extends g {
     }
 
     public void d(String str) {
-        this.f21630c = t(str);
+        this.f8024c = t(str);
     }
 
     public void e(String str) {

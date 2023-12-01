@@ -15,29 +15,29 @@ import java.util.concurrent.ArrayBlockingQueue;
 public final class AsyncLayoutInflater {
 
     /* renamed from: a  reason: collision with root package name */
-    LayoutInflater f1924a;
+    LayoutInflater f1876a;
     private Handler.Callback d = new Handler.Callback() { // from class: androidx.asynclayoutinflater.view.AsyncLayoutInflater.1
         @Override // android.os.Handler.Callback
         public boolean handleMessage(Message message) {
             InflateRequest inflateRequest = (InflateRequest) message.obj;
             if (inflateRequest.d == null) {
-                inflateRequest.d = AsyncLayoutInflater.this.f1924a.inflate(inflateRequest.f1929c, inflateRequest.b, false);
+                inflateRequest.d = AsyncLayoutInflater.this.f1876a.inflate(inflateRequest.f1881c, inflateRequest.b, false);
             }
-            inflateRequest.e.onInflateFinished(inflateRequest.d, inflateRequest.f1929c, inflateRequest.b);
-            AsyncLayoutInflater.this.f1925c.releaseRequest(inflateRequest);
+            inflateRequest.e.onInflateFinished(inflateRequest.d, inflateRequest.f1881c, inflateRequest.b);
+            AsyncLayoutInflater.this.f1877c.releaseRequest(inflateRequest);
             return true;
         }
     };
     Handler b = new Handler(this.d);
 
     /* renamed from: c  reason: collision with root package name */
-    InflateThread f1925c = InflateThread.getInstance();
+    InflateThread f1877c = InflateThread.getInstance();
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/asynclayoutinflater/view/AsyncLayoutInflater$BasicInflater.class */
     static class BasicInflater extends LayoutInflater {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String[] f1927a = {"android.widget.", "android.webkit.", "android.app."};
+        private static final String[] f1879a = {"android.widget.", "android.webkit.", "android.app."};
 
         BasicInflater(Context context) {
             super(context);
@@ -52,7 +52,7 @@ public final class AsyncLayoutInflater {
         @Override // android.view.LayoutInflater
         public View onCreateView(String str, AttributeSet attributeSet) throws ClassNotFoundException {
             View createView;
-            String[] strArr = f1927a;
+            String[] strArr = f1879a;
             int length = strArr.length;
             int i = 0;
             while (true) {
@@ -77,11 +77,11 @@ public final class AsyncLayoutInflater {
     public static class InflateRequest {
 
         /* renamed from: a  reason: collision with root package name */
-        AsyncLayoutInflater f1928a;
+        AsyncLayoutInflater f1880a;
         ViewGroup b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f1929c;
+        int f1881c;
         View d;
         OnInflateFinishedListener e;
 
@@ -93,15 +93,15 @@ public final class AsyncLayoutInflater {
     static class InflateThread extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final InflateThread f1930a;
+        private static final InflateThread f1882a;
         private ArrayBlockingQueue<InflateRequest> b = new ArrayBlockingQueue<>(10);
 
         /* renamed from: c  reason: collision with root package name */
-        private Pools.SynchronizedPool<InflateRequest> f1931c = new Pools.SynchronizedPool<>(10);
+        private Pools.SynchronizedPool<InflateRequest> f1883c = new Pools.SynchronizedPool<>(10);
 
         static {
             InflateThread inflateThread = new InflateThread();
-            f1930a = inflateThread;
+            f1882a = inflateThread;
             inflateThread.start();
         }
 
@@ -109,7 +109,7 @@ public final class AsyncLayoutInflater {
         }
 
         public static InflateThread getInstance() {
-            return f1930a;
+            return f1882a;
         }
 
         public void enqueue(InflateRequest inflateRequest) {
@@ -121,7 +121,7 @@ public final class AsyncLayoutInflater {
         }
 
         public InflateRequest obtainRequest() {
-            InflateRequest acquire = this.f1931c.acquire();
+            InflateRequest acquire = this.f1883c.acquire();
             InflateRequest inflateRequest = acquire;
             if (acquire == null) {
                 inflateRequest = new InflateRequest();
@@ -131,11 +131,11 @@ public final class AsyncLayoutInflater {
 
         public void releaseRequest(InflateRequest inflateRequest) {
             inflateRequest.e = null;
-            inflateRequest.f1928a = null;
+            inflateRequest.f1880a = null;
             inflateRequest.b = null;
-            inflateRequest.f1929c = 0;
+            inflateRequest.f1881c = 0;
             inflateRequest.d = null;
-            this.f1931c.release(inflateRequest);
+            this.f1883c.release(inflateRequest);
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
@@ -149,11 +149,11 @@ public final class AsyncLayoutInflater {
             try {
                 InflateRequest take = this.b.take();
                 try {
-                    take.d = take.f1928a.f1924a.inflate(take.f1929c, take.b, false);
+                    take.d = take.f1880a.f1876a.inflate(take.f1881c, take.b, false);
                 } catch (RuntimeException e) {
                     Log.w("AsyncLayoutInflater", "Failed to inflate resource in the background! Retrying on the UI thread", e);
                 }
-                Message.obtain(take.f1928a.b, 0, take).sendToTarget();
+                Message.obtain(take.f1880a.b, 0, take).sendToTarget();
             } catch (InterruptedException e2) {
                 Log.w("AsyncLayoutInflater", e2);
             }
@@ -166,18 +166,18 @@ public final class AsyncLayoutInflater {
     }
 
     public AsyncLayoutInflater(Context context) {
-        this.f1924a = new BasicInflater(context);
+        this.f1876a = new BasicInflater(context);
     }
 
     public void inflate(int i, ViewGroup viewGroup, OnInflateFinishedListener onInflateFinishedListener) {
         if (onInflateFinishedListener == null) {
             throw new NullPointerException("callback argument may not be null!");
         }
-        InflateRequest obtainRequest = this.f1925c.obtainRequest();
-        obtainRequest.f1928a = this;
-        obtainRequest.f1929c = i;
+        InflateRequest obtainRequest = this.f1877c.obtainRequest();
+        obtainRequest.f1880a = this;
+        obtainRequest.f1881c = i;
         obtainRequest.b = viewGroup;
         obtainRequest.e = onInflateFinishedListener;
-        this.f1925c.enqueue(obtainRequest);
+        this.f1877c.enqueue(obtainRequest);
     }
 }

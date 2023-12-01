@@ -10,11 +10,11 @@ import java.nio.ByteOrder;
 public class d extends h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static float[] f1321a = {0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f};
+    public static float[] f1273a = {0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f};
     public Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f1322c;
+    public int f1274c;
     public int d;
     public float e;
     public float f;
@@ -44,7 +44,7 @@ public class d extends h {
 
     @Override // a.a.a.a.a.b.i.h
     public boolean a() {
-        this.f1322c = a.a.a.a.a.a.h.f.c();
+        this.f1274c = a.a.a.a.a.a.h.f.c();
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(this.b.getWidth() * this.b.getHeight() * 4);
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
         if (this.b.getConfig() == Bitmap.Config.ARGB_8888) {
@@ -61,7 +61,7 @@ public class d extends h {
         GLES20.glBlendEquationSeparate(32774, 32774);
         GLES20.glBlendFuncSeparate(1, 771, 1, 1);
         GLES20.glEnable(3042);
-        GLES20.glBindFramebuffer(36160, this.f1322c);
+        GLES20.glBindFramebuffer(36160, this.f1274c);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, i, 0);
         c(this.d);
         GLES20.glBindFramebuffer(36160, 0);
@@ -129,16 +129,16 @@ public class d extends h {
 
     @Override // a.a.a.a.a.b.i.h
     public float[] g() {
-        return f1321a;
+        return f1273a;
     }
 
     @Override // a.a.a.a.a.b.i.h
     public void h() {
         super.h();
-        int i = this.f1322c;
+        int i = this.f1274c;
         if (i != 0) {
             GLES20.glDeleteFramebuffers(1, new int[]{i}, 0);
-            this.f1322c = 0;
+            this.f1274c = 0;
         }
         int i2 = this.d;
         if (i2 != 0) {

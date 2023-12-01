@@ -10,30 +10,30 @@ import androidx.constraintlayout.core.widgets.analyzer.WidgetRun;
 public class HorizontalWidgetRun extends WidgetRun {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int[] f2140a = new int[2];
+    private static int[] f2092a = new int[2];
 
     /* renamed from: androidx.constraintlayout.core.widgets.analyzer.HorizontalWidgetRun$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/core/widgets/analyzer/HorizontalWidgetRun$1.class */
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2141a;
+        static final /* synthetic */ int[] f2093a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[WidgetRun.RunType.values().length];
-            f2141a = iArr;
+            f2093a = iArr;
             try {
                 iArr[WidgetRun.RunType.START.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2141a[WidgetRun.RunType.END.ordinal()] = 2;
+                f2093a[WidgetRun.RunType.END.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2141a[WidgetRun.RunType.CENTER.ordinal()] = 3;
+                f2093a[WidgetRun.RunType.CENTER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -88,7 +88,7 @@ public class HorizontalWidgetRun extends WidgetRun {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.constraintlayout.core.widgets.analyzer.WidgetRun
     public void b() {
-        this.f2150c = null;
+        this.f2102c = null;
         this.start.clear();
         this.end.clear();
         this.e.clear();
@@ -136,8 +136,8 @@ public class HorizontalWidgetRun extends WidgetRun {
         if (this.e.resolved && this.b.measured) {
             if (this.b.mListAnchors[0].mTarget != null && this.b.mListAnchors[1].mTarget != null) {
                 if (this.b.isInHorizontalChain()) {
-                    this.start.f2136c = this.b.mListAnchors[0].getMargin();
-                    this.end.f2136c = -this.b.mListAnchors[1].getMargin();
+                    this.start.f2088c = this.b.mListAnchors[0].getMargin();
+                    this.end.f2088c = -this.b.mListAnchors[1].getMargin();
                     return;
                 }
                 DependencyNode a2 = a(this.b.mListAnchors[0]);
@@ -224,8 +224,8 @@ public class HorizontalWidgetRun extends WidgetRun {
         }
         if (this.b.mListAnchors[0].mTarget != null && this.b.mListAnchors[1].mTarget != null) {
             if (this.b.isInHorizontalChain()) {
-                this.start.f2136c = this.b.mListAnchors[0].getMargin();
-                this.end.f2136c = -this.b.mListAnchors[1].getMargin();
+                this.start.f2088c = this.b.mListAnchors[0].getMargin();
+                this.end.f2088c = -this.b.mListAnchors[1].getMargin();
                 return;
             }
             DependencyNode a6 = a(this.b.mListAnchors[0]);

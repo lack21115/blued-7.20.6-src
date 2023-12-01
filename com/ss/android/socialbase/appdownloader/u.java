@@ -24,7 +24,7 @@ import org.json.JSONObject;
 public class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f34890a;
+    private long f21199a;
     private int al;
     private String b;
     private long cd;
@@ -75,7 +75,7 @@ public class u {
     private boolean je = false;
 
     /* renamed from: io  reason: collision with root package name */
-    private String f34891io = AdBaseConstants.MIME_APK;
+    private String f21200io = AdBaseConstants.MIME_APK;
     private int ge = 5;
     private boolean ep = true;
     private EnqueueType bv = EnqueueType.ENQUEUE_NONE;
@@ -126,7 +126,7 @@ public class u {
     }
 
     public long df() {
-        return this.f34890a;
+        return this.f21199a;
     }
 
     public boolean e() {
@@ -171,7 +171,7 @@ public class u {
     }
 
     public u h(String str) {
-        this.f34891io = str;
+        this.f21200io = str;
         return this;
     }
 
@@ -231,7 +231,7 @@ public class u {
     }
 
     public String je() {
-        return this.f34891io;
+        return this.f21200io;
     }
 
     public boolean jq() {
@@ -292,7 +292,7 @@ public class u {
     }
 
     public u mb(long j) {
-        this.f34890a = j;
+        this.f21199a = j;
         return this;
     }
 

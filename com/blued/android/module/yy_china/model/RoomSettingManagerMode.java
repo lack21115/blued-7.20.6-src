@@ -18,7 +18,6 @@ public class RoomSettingManagerMode implements MultiItemEntity {
         return this.avatar_audited;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

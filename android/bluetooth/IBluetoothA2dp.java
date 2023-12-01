@@ -25,9 +25,8 @@ public interface IBluetoothA2dp extends IInterface {
         static final int TRANSACTION_setAvrcpAbsoluteVolume = 10;
         static final int TRANSACTION_setPriority = 6;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothA2dp$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothA2dp {
+        private static class Proxy implements IBluetoothA2dp {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

@@ -19,11 +19,11 @@ public class State {
     public static final Integer PARENT = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    protected HashMap<Object, Reference> f2094a = new HashMap<>();
+    protected HashMap<Object, Reference> f2046a = new HashMap<>();
     protected HashMap<Object, HelperReference> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    HashMap<String, ArrayList<String>> f2095c = new HashMap<>();
+    HashMap<String, ArrayList<String>> f2047c = new HashMap<>();
     private int d;
     public final ConstraintReference mParent;
 
@@ -33,7 +33,7 @@ public class State {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2096a;
+        static final /* synthetic */ int[] f2048a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -41,25 +41,25 @@ public class State {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[Helper.values().length];
-            f2096a = iArr;
+            f2048a = iArr;
             try {
                 iArr[Helper.HORIZONTAL_CHAIN.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2096a[Helper.VERTICAL_CHAIN.ordinal()] = 2;
+                f2048a[Helper.VERTICAL_CHAIN.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2096a[Helper.ALIGN_HORIZONTALLY.ordinal()] = 3;
+                f2048a[Helper.ALIGN_HORIZONTALLY.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2096a[Helper.ALIGN_VERTICALLY.ordinal()] = 4;
+                f2048a[Helper.ALIGN_VERTICALLY.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2096a[Helper.BARRIER.ordinal()] = 5;
+                f2048a[Helper.BARRIER.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -119,7 +119,7 @@ public class State {
         ConstraintReference constraintReference = new ConstraintReference(this);
         this.mParent = constraintReference;
         this.d = 0;
-        this.f2094a.put(PARENT, constraintReference);
+        this.f2046a.put(PARENT, constraintReference);
     }
 
     private String a() {
@@ -134,7 +134,7 @@ public class State {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Reference a(Object obj) {
-        return this.f2094a.get(obj);
+        return this.f2046a.get(obj);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -150,7 +150,7 @@ public class State {
         for (Object obj : this.b.keySet()) {
             HelperWidget helperWidget3 = this.b.get(obj).getHelperWidget();
             if (helperWidget3 != null) {
-                Reference reference = this.f2094a.get(obj);
+                Reference reference = this.f2046a.get(obj);
                 ConstraintReference constraintReference = reference;
                 if (reference == 0) {
                     constraintReference = constraints(obj);
@@ -158,10 +158,10 @@ public class State {
                 constraintReference.setConstraintWidget(helperWidget3);
             }
         }
-        for (Object obj2 : this.f2094a.keySet()) {
-            Reference reference2 = this.f2094a.get(obj2);
+        for (Object obj2 : this.f2046a.keySet()) {
+            Reference reference2 = this.f2046a.get(obj2);
             if (reference2 != this.mParent && (reference2.getFacade() instanceof HelperReference) && (helperWidget2 = ((HelperReference) reference2.getFacade()).getHelperWidget()) != null) {
-                Reference reference3 = this.f2094a.get(obj2);
+                Reference reference3 = this.f2046a.get(obj2);
                 ConstraintReference constraintReference2 = reference3;
                 if (reference3 == 0) {
                     constraintReference2 = constraints(obj2);
@@ -169,8 +169,8 @@ public class State {
                 constraintReference2.setConstraintWidget(helperWidget2);
             }
         }
-        for (Object obj3 : this.f2094a.keySet()) {
-            Reference reference4 = this.f2094a.get(obj3);
+        for (Object obj3 : this.f2046a.keySet()) {
+            Reference reference4 = this.f2046a.get(obj3);
             if (reference4 != this.mParent) {
                 ConstraintWidget constraintWidget = reference4.getConstraintWidget();
                 constraintWidget.setDebugName(reference4.getKey().toString());
@@ -188,20 +188,20 @@ public class State {
             if (helperReference2.getHelperWidget() != null) {
                 Iterator<Object> it = helperReference2.ae.iterator();
                 while (it.hasNext()) {
-                    helperReference2.getHelperWidget().add(this.f2094a.get(it.next()).getConstraintWidget());
+                    helperReference2.getHelperWidget().add(this.f2046a.get(it.next()).getConstraintWidget());
                 }
                 helperReference2.apply();
             } else {
                 helperReference2.apply();
             }
         }
-        for (Object obj5 : this.f2094a.keySet()) {
-            Reference reference5 = this.f2094a.get(obj5);
+        for (Object obj5 : this.f2046a.keySet()) {
+            Reference reference5 = this.f2046a.get(obj5);
             if (reference5 != this.mParent && (reference5.getFacade() instanceof HelperReference) && (helperWidget = (helperReference = (HelperReference) reference5.getFacade()).getHelperWidget()) != null) {
                 Iterator<Object> it2 = helperReference.ae.iterator();
                 while (it2.hasNext()) {
                     Object next = it2.next();
-                    Reference reference6 = this.f2094a.get(next);
+                    Reference reference6 = this.f2046a.get(next);
                     if (reference6 != null) {
                         helperWidget.add(reference6.getConstraintWidget());
                     } else if (next instanceof Reference) {
@@ -214,8 +214,8 @@ public class State {
                 reference5.apply();
             }
         }
-        for (Object obj6 : this.f2094a.keySet()) {
-            Reference reference7 = this.f2094a.get(obj6);
+        for (Object obj6 : this.f2046a.keySet()) {
+            Reference reference7 = this.f2046a.get(obj6);
             reference7.apply();
             ConstraintWidget constraintWidget2 = reference7.getConstraintWidget();
             if (constraintWidget2 != null && obj6 != null) {
@@ -249,11 +249,11 @@ public class State {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v3, types: [androidx.constraintlayout.core.state.Reference] */
     public ConstraintReference constraints(Object obj) {
-        Reference reference = this.f2094a.get(obj);
+        Reference reference = this.f2046a.get(obj);
         ConstraintReference constraintReference = reference;
         if (reference == 0) {
             constraintReference = createConstraintReference(obj);
-            this.f2094a.put(obj, constraintReference);
+            this.f2046a.put(obj, constraintReference);
             constraintReference.setKey(obj);
         }
         if (constraintReference instanceof ConstraintReference) {
@@ -277,7 +277,7 @@ public class State {
     }
 
     public void directMapping() {
-        for (Object obj : this.f2094a.keySet()) {
+        for (Object obj : this.f2046a.keySet()) {
             ConstraintReference constraints = constraints(obj);
             if (constraints instanceof ConstraintReference) {
                 constraints.setView(obj);
@@ -286,8 +286,8 @@ public class State {
     }
 
     public ArrayList<String> getIdsForTag(String str) {
-        if (this.f2095c.containsKey(str)) {
-            return this.f2095c.get(str);
+        if (this.f2047c.containsKey(str)) {
+            return this.f2047c.get(str);
         }
         return null;
     }
@@ -315,7 +315,7 @@ public class State {
         HelperReference helperReference = this.b.get(obj2);
         BarrierReference barrierReference = helperReference;
         if (helperReference == null) {
-            int i = AnonymousClass1.f2096a[helper.ordinal()];
+            int i = AnonymousClass1.f2048a[helper.ordinal()];
             barrierReference = i != 1 ? i != 2 ? i != 3 ? i != 4 ? i != 5 ? new HelperReference(this, helper) : new BarrierReference(this) : new AlignVerticallyReference(this) : new AlignHorizontallyReference(this) : new VerticalChainReference(this) : new HorizontalChainReference(this);
             barrierReference.setKey(obj2);
             this.b.put(obj2, barrierReference);
@@ -346,7 +346,7 @@ public class State {
 
     public void reset() {
         this.b.clear();
-        this.f2095c.clear();
+        this.f2047c.clear();
     }
 
     public boolean sameFixedHeight(int i) {
@@ -367,11 +367,11 @@ public class State {
         ConstraintReference constraints = constraints(str);
         if (constraints instanceof ConstraintReference) {
             constraints.setTag(str2);
-            if (this.f2095c.containsKey(str2)) {
-                arrayList = this.f2095c.get(str2);
+            if (this.f2047c.containsKey(str2)) {
+                arrayList = this.f2047c.get(str2);
             } else {
                 ArrayList<String> arrayList2 = new ArrayList<>();
-                this.f2095c.put(str2, arrayList2);
+                this.f2047c.put(str2, arrayList2);
                 arrayList = arrayList2;
             }
             arrayList.add(str);

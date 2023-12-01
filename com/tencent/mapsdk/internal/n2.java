@@ -45,7 +45,7 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
     private static final f2 j = new g2();
 
     /* renamed from: c  reason: collision with root package name */
-    private f2 f37656c;
+    private f2 f23965c;
     private final Map<String, String> d = new HashMap();
     private TencentMapOptions e;
 
@@ -53,25 +53,25 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
     public static class a implements TencentMapServiceProtocol.IMapService {
 
         /* renamed from: a  reason: collision with root package name */
-        public k2.a f37657a;
+        public k2.a f23966a;
 
         public a(k2.a aVar) {
-            this.f37657a = aVar;
+            this.f23966a = aVar;
         }
 
         @Override // com.tencent.tencentmap.mapsdk.maps.TencentMapServiceProtocol.IMapService
         public void setAllow(boolean z) {
-            this.f37657a.setAllow(z);
+            this.f23966a.setAllow(z);
         }
 
         @Override // com.tencent.tencentmap.mapsdk.maps.TencentMapServiceProtocol.IMapService
         public void setUseHttps(boolean z) {
-            this.f37657a.setUseHttps(z);
+            this.f23966a.setUseHttps(z);
         }
 
         @Override // com.tencent.tencentmap.mapsdk.maps.TencentMapServiceProtocol.IMapService
         public void setUseTest(boolean z) {
-            this.f37657a.setUseTest(z);
+            this.f23966a.setUseTest(z);
         }
     }
 
@@ -80,7 +80,7 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
 
     public n2(TencentMapOptions tencentMapOptions, f2 f2Var) {
         this.e = tencentMapOptions;
-        this.f37656c = f2Var;
+        this.f23965c = f2Var;
     }
 
     private f2 a(q1 q1Var, String str, int i2) {
@@ -143,24 +143,24 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
     private void a(q1 q1Var, TencentMapOptions tencentMapOptions) {
         Object protocolDataDesc = tencentMapOptions.getProtocolDataDesc();
         String g2 = q1Var.q().g();
-        if (this.f37656c == null) {
-            this.f37656c = j;
+        if (this.f23965c == null) {
+            this.f23965c = j;
         }
         if (protocolDataDesc != null) {
             int protocolFrom = tencentMapOptions.getProtocolFrom();
             f2 b = protocolFrom != -1 ? protocolFrom != 1 ? protocolFrom != 3 ? null : b(q1Var, g2, (String) protocolDataDesc) : a(q1Var, g2, ((Integer) protocolDataDesc).intValue()) : a(q1Var, g2, (String) protocolDataDesc);
             if (b != null) {
-                this.f37656c = b;
+                this.f23965c = b;
             }
         }
-        f2 f2Var = this.f37656c;
+        f2 f2Var = this.f23965c;
         if (f2Var != null) {
             f2Var.d(g2);
-            this.f37656c.a(this);
+            this.f23965c.a(this);
         } else {
-            this.f37656c = j;
+            this.f23965c = j;
         }
-        i.push(this.f37656c);
+        i.push(this.f23965c);
     }
 
     public static p2 g() {
@@ -291,7 +291,7 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
     public f2 b(q1 q1Var, String str, String str2) {
         try {
             JSONObject jSONObject = new JSONObject(str2);
-            String optString = jSONObject.optString(h2.f37505a, "-1");
+            String optString = jSONObject.optString(h2.f23814a, "-1");
             String optString2 = jSONObject.optString(h2.b, "_unknown");
             if (!"-1".equals(optString) && optString2.equals(str)) {
                 m2 m2Var = new m2();
@@ -309,7 +309,7 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
                         i2 = i3 + 1;
                     }
                 }
-                JSONObject optJSONObject = jSONObject.optJSONObject(i2.f37544c);
+                JSONObject optJSONObject = jSONObject.optJSONObject(i2.f23853c);
                 if (optJSONObject != null) {
                     m2Var.a(optJSONObject);
                 }
@@ -346,11 +346,11 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
         f2 f2Var;
         super.b(q1Var);
         Stack<f2> stack = i;
-        if (stack.isEmpty() || (f2Var = this.f37656c) == null) {
+        if (stack.isEmpty() || (f2Var = this.f23965c) == null) {
             return;
         }
         stack.remove(f2Var);
-        this.f37656c = null;
+        this.f23965c = null;
     }
 
     @Override // com.tencent.mapsdk.internal.j2
@@ -368,7 +368,7 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
     public TencentMapServiceProtocol.IMapService getMapService(String str) {
         k2.a a2;
         f2 h2 = h();
-        this.f37656c = h2;
+        this.f23965c = h2;
         if (h2 == null || (a2 = h2.a(str)) == null) {
             return null;
         }
@@ -376,14 +376,14 @@ public class n2 extends p1 implements j2, TencentMapProtocol {
     }
 
     public f2 h() {
-        if (this.f37656c == null) {
+        if (this.f23965c == null) {
             Stack<f2> stack = i;
             if (stack.isEmpty()) {
-                this.f37656c = j;
+                this.f23965c = j;
             } else {
-                this.f37656c = stack.peek();
+                this.f23965c = stack.peek();
             }
         }
-        return this.f37656c;
+        return this.f23965c;
     }
 }

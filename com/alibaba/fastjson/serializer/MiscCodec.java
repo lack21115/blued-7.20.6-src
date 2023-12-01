@@ -1,6 +1,5 @@
 package com.alibaba.fastjson.serializer;
 
-import android.security.KeyChain;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONStreamAware;
@@ -9,7 +8,6 @@ import com.alibaba.fastjson.parser.JSONLexer;
 import com.alibaba.fastjson.parser.deserializer.ObjectDeserializer;
 import com.alibaba.fastjson.util.TypeUtils;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.tencent.thumbplayer.tplayer.plugins.report.TPReportParams;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
@@ -47,7 +45,7 @@ public class MiscCodec implements ObjectDeserializer, ObjectSerializer {
                 if (jSONLexer.token() != 4) {
                     throw new JSONException("syntax error");
                 }
-                if (!TPReportParams.JSON_KEY_VAL.equals(jSONLexer.stringVal())) {
+                if (!"val".equals(jSONLexer.stringVal())) {
                     throw new JSONException("syntax error");
                 }
                 jSONLexer.nextToken();
@@ -123,7 +121,7 @@ public class MiscCodec implements ObjectDeserializer, ObjectSerializer {
                 if (stringVal.equals("address")) {
                     defaultJSONParser.accept(17);
                     inetAddress = (InetAddress) defaultJSONParser.parseObject((Class<Object>) InetAddress.class);
-                } else if (stringVal.equals(KeyChain.EXTRA_PORT)) {
+                } else if (stringVal.equals("port")) {
                     defaultJSONParser.accept(17);
                     if (jSONLexer.token() != 2) {
                         throw new JSONException("port is not int");
@@ -166,7 +164,7 @@ public class MiscCodec implements ObjectDeserializer, ObjectSerializer {
                     serializeWriter.write(123);
                     serializeWriter.writeFieldName(JSON.DEFAULT_TYPE_KEY);
                     jSONSerializer.write(obj.getClass().getName());
-                    serializeWriter.writeFieldValue(',', TPReportParams.JSON_KEY_VAL, pattern);
+                    serializeWriter.writeFieldValue(',', "val", pattern);
                     serializeWriter.write(125);
                     return;
                 }
@@ -182,7 +180,7 @@ public class MiscCodec implements ObjectDeserializer, ObjectSerializer {
                 jSONSerializer.write(address);
                 serializeWriter.write(44);
             }
-            serializeWriter.writeFieldName(KeyChain.EXTRA_PORT);
+            serializeWriter.writeFieldName("port");
             serializeWriter.writeInt(inetSocketAddress.getPort());
             serializeWriter.write(125);
             return;

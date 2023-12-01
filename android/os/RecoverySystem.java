@@ -73,7 +73,7 @@ public class RecoverySystem {
                 i = i2 + 1;
             }
             fileWriter.close();
-            ((PowerManager) context.getSystemService("power")).reboot(PowerManager.REBOOT_RECOVERY);
+            ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).reboot(PowerManager.REBOOT_RECOVERY);
             throw new IOException("Reboot failed (no permissions?)");
         } catch (Throwable th) {
             fileWriter.close();
@@ -221,20 +221,20 @@ public class RecoverySystem {
                     if (signedData == null) {
                         throw new IOException("signedData is null");
                     }
-                    List<Certificate> certificates = signedData.getCertificates();
+                    List certificates = signedData.getCertificates();
                     if (certificates.isEmpty()) {
                         throw new IOException("encCerts is empty");
                     }
-                    Iterator<Certificate> it = certificates.iterator();
+                    Iterator it = certificates.iterator();
                     if (!it.hasNext()) {
                         throw new SignatureException("signature contains no certificates");
                     }
-                    X509Certificate x509Certificate = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(it.next().getEncoded()));
-                    List<SignerInfo> signerInfos = signedData.getSignerInfos();
+                    X509Certificate x509Certificate = (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(((Certificate) it.next()).getEncoded()));
+                    List signerInfos = signedData.getSignerInfos();
                     if (signerInfos.isEmpty()) {
                         throw new IOException("no signer infos!");
                     }
-                    SignerInfo signerInfo = signerInfos.get(0);
+                    SignerInfo signerInfo = (SignerInfo) signerInfos.get(0);
                     File file3 = file2;
                     if (file2 == null) {
                         file3 = DEFAULT_KEYSTORE;

@@ -1,8 +1,7 @@
 package java.nio;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:java/nio/IntArrayBuffer.class */
-public final class IntArrayBuffer extends IntBuffer {
+final class IntArrayBuffer extends IntBuffer {
     private final int arrayOffset;
     private final int[] backingArray;
     private final boolean isReadOnly;

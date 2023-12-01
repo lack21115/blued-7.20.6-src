@@ -9,11 +9,11 @@ import com.tencent.liteav.videoconsumer.consumer.j;
 final /* synthetic */ class aa implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36691a;
+    private final j f23000a;
     private final EncodedVideoFrame b;
 
     private aa(j jVar, EncodedVideoFrame encodedVideoFrame) {
-        this.f36691a = jVar;
+        this.f23000a = jVar;
         this.b = encodedVideoFrame;
     }
 
@@ -23,17 +23,17 @@ final /* synthetic */ class aa implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36691a;
+        j jVar = this.f23000a;
         EncodedVideoFrame encodedVideoFrame = this.b;
         if (jVar.p == j.a.STOPPED) {
-            LiteavLog.i(jVar.f36705a, "appendNALPacket ignored packet. status is  stoped.");
+            LiteavLog.i(jVar.f23014a, "appendNALPacket ignored packet. status is  stoped.");
             return;
         }
         if (!jVar.n) {
             jVar.n = true;
-            jVar.f36706c.notifyEvent(h.b.EVT_VIDEO_CONSUMER_RECEIVE_FIRST_FRAME, null, new Object[0]);
+            jVar.f23015c.notifyEvent(h.b.EVT_VIDEO_CONSUMER_RECEIVE_FIRST_FRAME, null, new Object[0]);
         }
-        jVar.f36706c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RECEIVED_FRAME, 0);
+        jVar.f23015c.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RECEIVED_FRAME, 0);
         jVar.o.a();
         if (jVar.f != null) {
             jVar.f.a(encodedVideoFrame);

@@ -7,10 +7,10 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewGcetDividerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f29617a;
+    private final View f15927a;
 
     @Override // androidx.viewbinding.ViewBinding
     public View getRoot() {
-        return this.f29617a;
+        return this.f15927a;
     }
 }

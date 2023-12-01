@@ -1,7 +1,6 @@
 package com.qiniu.android.http;
 
 import android.content.ContentResolver;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.qiniu.android.collect.LogHandler;
 import com.qiniu.android.http.CancellationHandler;
 import com.qiniu.android.http.MultipartBody;
@@ -59,14 +58,12 @@ public final class Client {
             }
         }
         builder.dns(new okhttp3.Dns() { // from class: com.qiniu.android.http.Client.1
-            @Override // okhttp3.Dns
             public List<InetAddress> lookup(String str) throws UnknownHostException {
                 List<InetAddress> inetAddressByHost = DnsPrefetcher.getDnsPrefetcher().getInetAddressByHost(str);
                 return inetAddressByHost != null ? inetAddressByHost : okhttp3.Dns.SYSTEM.lookup(str);
             }
         });
         builder.networkInterceptors().add(new Interceptor() { // from class: com.qiniu.android.http.Client.2
-            @Override // okhttp3.Interceptor
             public Response intercept(Interceptor.Chain chain) throws IOException {
                 String str;
                 Request request = chain.request();
@@ -222,7 +219,7 @@ public final class Client {
         if (contentType == null) {
             return "";
         }
-        return contentType.type() + BridgeUtil.SPLIT_MARK + contentType.subtype();
+        return contentType.type() + "/" + contentType.subtype();
     }
 
     private static long getContentLength(Response response) {
@@ -436,7 +433,6 @@ public final class Client {
         final ResponseTag responseTag = new ResponseTag();
         responseTag.logHandler = logHandler;
         this.httpClient.newCall(builder.tag(responseTag).build()).enqueue(new Callback() { // from class: com.qiniu.android.http.Client.5
-            @Override // okhttp3.Callback
             public void onFailure(Call call, IOException iOException) {
                 iOException.printStackTrace();
                 String message = iOException.getMessage();
@@ -445,7 +441,6 @@ public final class Client {
                 completionHandler.complete(ResponseInfo.create(logHandler, null, i, "", "", "", url.host(), url.encodedPath(), "", url.port(), responseTag.duration, -1L, iOException.getMessage(), upToken, j), null);
             }
 
-            @Override // okhttp3.Callback
             public void onResponse(Call call, Response response) throws IOException {
                 ResponseTag responseTag2 = (ResponseTag) response.request().tag();
                 Client.onRet(logHandler, response, responseTag2.ip, responseTag2.duration, upToken, j, completionHandler);

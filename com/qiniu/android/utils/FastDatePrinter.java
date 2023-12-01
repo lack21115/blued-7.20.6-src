@@ -1,5 +1,6 @@
 package com.qiniu.android.utils;
 
+import com.ss.android.download.api.constant.BaseConstants;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.text.DateFormatSymbols;
@@ -113,7 +114,7 @@ public final class FastDatePrinter {
             } else {
                 appendable.append('+');
             }
-            int i2 = i / 3600000;
+            int i2 = i / BaseConstants.Time.HOUR;
             FastDatePrinter.appendDigits(appendable, i2);
             int i3 = this.length;
             if (i3 < 5) {
@@ -250,7 +251,7 @@ public final class FastDatePrinter {
             } else {
                 appendable.append('+');
             }
-            int i2 = i / 3600000;
+            int i2 = i / BaseConstants.Time.HOUR;
             FastDatePrinter.appendDigits(appendable, i2);
             if (this.mColon) {
                 appendable.append(':');

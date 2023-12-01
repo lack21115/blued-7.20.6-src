@@ -5,13 +5,10 @@ import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLay
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentFeedPostSubjectBinding.class */
 public final class FragmentFeedPostSubjectBinding implements ViewBinding {
+    private final KeyboardListenLinearLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final KeyboardListenLinearLayout f18880a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public KeyboardListenLinearLayout getRoot() {
-        return this.f18880a;
+        return this.a;
     }
 }

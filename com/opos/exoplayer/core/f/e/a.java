@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public final class a extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f25373a = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+),(\\d+))\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+),(\\d+))?\\s*");
+    private static final Pattern f11685a = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+),(\\d+))\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+),(\\d+))?\\s*");
     private final StringBuilder b;
 
     public a() {
@@ -50,7 +50,7 @@ public final class a extends c {
                     com.opos.cmn.an.f.a.c("SubripDecoder", "Unexpected end");
                     break;
                 }
-                Matcher matcher = f25373a.matcher(z2);
+                Matcher matcher = f11685a.matcher(z2);
                 if (matcher.matches()) {
                     boolean z3 = true;
                     hVar.a(a(matcher, 1));

@@ -7,11 +7,11 @@ import java.util.concurrent.TimeUnit;
 public class d implements com.tencent.qimei.v.k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38369a = "d";
+    public static final String f24678a = "d";
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38370c;
+    public String f24679c;
     public com.tencent.qimei.x.b d;
     public com.tencent.qimei.g.c e;
     public String h;
@@ -27,7 +27,7 @@ public class d implements com.tencent.qimei.v.k {
     }
 
     public d(String str, Context context, a aVar, com.tencent.qimei.x.b bVar, com.tencent.qimei.g.c cVar) {
-        this.f38370c = str;
+        this.f24679c = str;
         this.b = context;
         this.j = aVar;
         this.d = bVar;
@@ -35,8 +35,8 @@ public class d implements com.tencent.qimei.v.k {
     }
 
     public final void a() {
-        com.tencent.qimei.k.a.b(f38369a, "oaidTask is running", new Object[0]);
-        com.tencent.qimei.l.d a2 = com.tencent.qimei.l.d.a(this.f38370c);
+        com.tencent.qimei.k.a.b(f24678a, "oaidTask is running", new Object[0]);
+        com.tencent.qimei.l.d a2 = com.tencent.qimei.l.d.a(this.f24679c);
         com.tencent.qimei.b.a.a().a(new com.tencent.qimei.l.a(a2, new c(this)));
         com.tencent.qimei.g.b.a().a(a2.b, a2);
     }
@@ -50,20 +50,20 @@ public class d implements com.tencent.qimei.v.k {
     }
 
     public void b() {
-        com.tencent.qimei.k.a.b(f38369a, "HidBuilder task be notified", new Object[0]);
-        j a2 = j.a(this.f38370c);
+        com.tencent.qimei.k.a.b(f24678a, "HidBuilder task be notified", new Object[0]);
+        j a2 = j.a(this.f24679c);
         if (a2.i == null) {
-            com.tencent.qimei.k.a.a(j.f38376a, "context = null", new Object[0]);
+            com.tencent.qimei.k.a.a(j.f24685a, "context = null", new Object[0]);
             return;
         }
-        a2.e = com.tencent.qimei.v.d.a(a2.f38377c).c();
-        a2.d = com.tencent.qimei.v.d.a(a2.f38377c).k();
-        a2.f = com.tencent.qimei.v.d.a(a2.f38377c).x();
+        a2.e = com.tencent.qimei.v.d.a(a2.f24686c).c();
+        a2.d = com.tencent.qimei.v.d.a(a2.f24686c).k();
+        a2.f = com.tencent.qimei.v.d.a(a2.f24686c).x();
         if (a2.d == 0 && a2.e == 0) {
-            com.tencent.qimei.k.a.a(j.f38376a, "hid close", new Object[0]);
+            com.tencent.qimei.k.a.a(j.f24685a, "hid close", new Object[0]);
             return;
         }
-        String str = j.f38376a;
+        String str = j.f24685a;
         int i = a2.e;
         int i2 = a2.d;
         com.tencent.qimei.b.a.a().a(a2.f * 1000, new f(a2));

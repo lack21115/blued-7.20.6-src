@@ -18,22 +18,22 @@ public class t {
     public z b = new z();
 
     /* renamed from: a  reason: collision with root package name */
-    public u f3986a = new w();
+    public u f3938a = new w();
 
     /* renamed from: c  reason: collision with root package name */
-    public y f3987c = new y(15);
+    public y f3939c = new y(15);
 
     public t() {
-        int i = r.f3953a;
+        int i = r.f3905a;
         this.l = 1.0d / i;
         z1 z1Var = new z1(i, i);
         this.f = z1Var;
         a2.a(z1Var, r.e);
-        this.g = new z1(r.f3953a, 1);
-        this.k = new z1(r.f3953a, 1);
-        this.h = new z1(r.f3953a, 1);
-        this.i = new z1(r.f3953a, 1);
-        this.j = new z1(r.f3953a, 1);
+        this.g = new z1(r.f3905a, 1);
+        this.k = new z1(r.f3905a, 1);
+        this.h = new z1(r.f3905a, 1);
+        this.i = new z1(r.f3905a, 1);
+        this.j = new z1(r.f3905a, 1);
         this.g.a(this.l);
         this.h.a(this.l);
         this.i.a(this.l);
@@ -44,7 +44,7 @@ public class t {
     public void a(long j, double d) {
         this.e = j;
         this.d = d;
-        this.f3987c.a(j, d);
+        this.f3939c.a(j, d);
     }
 
     public final void a(z1 z1Var) {
@@ -135,23 +135,23 @@ public class t {
     public double[] a(long j, double[][] dArr) {
         Arrays.fill(this.m, 0.0d);
         Arrays.fill(s.l, 0.0d);
-        if (!this.f3987c.a()) {
+        if (!this.f3939c.a()) {
             if (r.i) {
                 double[] dArr2 = this.m;
                 dArr2[0] = 1.0d;
                 s.l[0] = 1.0d;
                 return dArr2;
             }
-            this.f3987c.b();
+            this.f3939c.b();
         }
         double[] b = b(j, dArr);
         int a2 = h3.a(s.l);
-        this.f3987c.a(j, a2, s.l[a2]);
+        this.f3939c.a(j, a2, s.l[a2]);
         return b;
     }
 
     public final double[] a(double[] dArr) {
-        double[] a2 = this.f3986a.a(dArr);
+        double[] a2 = this.f3938a.a(dArr);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -165,8 +165,8 @@ public class t {
 
     public void b() {
         j0.a("ArStrategy", "destroy().");
-        this.f3986a.a();
-        this.f3987c.b();
+        this.f3938a.a();
+        this.f3939c.b();
         this.e = 0L;
         this.d = -1.0d;
     }
@@ -209,7 +209,7 @@ public class t {
                 s.l[6] = 1.0d;
                 return this.m;
             } else {
-                double[] a2 = this.f3986a.a(dArr);
+                double[] a2 = this.f3938a.a(dArr);
                 j0.a("DATA_AR", "#DATA,AR," + System.currentTimeMillis() + ",FEA," + k2.a(a2, 4, false));
                 return a(a2);
             }
@@ -220,10 +220,10 @@ public class t {
     }
 
     public void c() {
-        j0.a("ArStrategy", "init start[" + this.f3986a.b() + ", f=" + r.f3954c + ", t=" + String.format("%.2f", Float.valueOf(128.0f / r.f3954c)) + ",size=128,numClass=" + r.f3953a + ",SVM feaLen=141,LR feaLen=141]");
-        this.f3986a.c();
+        j0.a("ArStrategy", "init start[" + this.f3938a.b() + ", f=" + r.f3906c + ", t=" + String.format("%.2f", Float.valueOf(128.0f / r.f3906c)) + ",size=128,numClass=" + r.f3905a + ",SVM feaLen=141,LR feaLen=141]");
+        this.f3938a.c();
         j0.a("ArStrategy", "init finished.");
-        this.f3987c.b();
+        this.f3939c.b();
     }
 
     public void d() {
@@ -234,6 +234,6 @@ public class t {
 
     public final void e() {
         j0.a("ArStrategy", "resetAlgo().");
-        this.f3986a.d();
+        this.f3938a.d();
     }
 }

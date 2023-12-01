@@ -16,13 +16,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYPlayersView.class */
 public class YYPlayersView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f18377a;
+    private TextView a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYPlayerAdapter f18378c;
+    private YYPlayerAdapter c;
 
     public YYPlayersView(Context context) {
         super(context);
@@ -41,13 +37,13 @@ public class YYPlayersView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.yy_set_time_view, (ViewGroup) this, true);
-        this.f18377a = (TextView) findViewById(R.id.tv_time_title);
-        this.b = (RecyclerView) findViewById(R.id.rv_times_lsit);
+        this.a = (TextView) findViewById(R.id.tv_time_title);
+        this.b = findViewById(R.id.rv_times_lsit);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         this.b.setLayoutManager(linearLayoutManager);
         YYPlayerAdapter yYPlayerAdapter = new YYPlayerAdapter();
-        this.f18378c = yYPlayerAdapter;
+        this.c = yYPlayerAdapter;
         this.b.setAdapter(yYPlayerAdapter);
     }
 
@@ -59,14 +55,14 @@ public class YYPlayersView extends LinearLayout {
     }
 
     public void setOnClickTimeItemListener(BaseQuickAdapter.OnItemClickListener onItemClickListener) {
-        this.f18378c.setOnItemClickListener(onItemClickListener);
+        this.c.setOnItemClickListener(onItemClickListener);
     }
 
     public void setPlayerList(List<YYSeatMemberModel> list) {
-        this.f18378c.setNewData(list);
+        this.c.setNewData(list);
     }
 
     public void setPlayerTitle(String str) {
-        this.f18377a.setText(str);
+        this.a.setText(str);
     }
 }

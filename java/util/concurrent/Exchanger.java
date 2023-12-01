@@ -1,6 +1,7 @@
 package java.util.concurrent;
 
 import com.android.internal.telephony.PhoneConstants;
+import dalvik.bytecode.Opcodes;
 import sun.misc.Unsafe;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/Exchanger.class */
@@ -165,7 +166,7 @@ public class Exchanger<V> {
                                     int i11 = i7 - 1;
                                     i6 = i10;
                                     i7 = i11;
-                                    if ((i11 & 511) == 0) {
+                                    if ((i11 & Opcodes.OP_CHECK_CAST_JUMBO) == 0) {
                                         Thread.yield();
                                         i6 = i10;
                                         i7 = i11;
@@ -286,7 +287,7 @@ public class Exchanger<V> {
                                         int i6 = i2 - 1;
                                         i = i5;
                                         i2 = i6;
-                                        if ((i6 & 511) == 0) {
+                                        if ((i6 & Opcodes.OP_CHECK_CAST_JUMBO) == 0) {
                                             Thread.yield();
                                             i = i5;
                                             i2 = i6;

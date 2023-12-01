@@ -8,27 +8,25 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/v.class */
 public class v {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile v f6932a;
+    private static volatile v a;
     private ConcurrentHashMap<String, ad> b = new ConcurrentHashMap<>(4);
 
     private v() {
     }
 
     public static v a() {
-        if (f6932a == null) {
+        if (a == null) {
             synchronized (v.class) {
                 try {
-                    if (f6932a == null) {
-                        f6932a = new v();
+                    if (a == null) {
+                        a = new v();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6932a;
+        return a;
     }
 
     private void a(String str, String str2, Object obj) {
@@ -108,9 +106,9 @@ public class v {
         HashMap hashMap;
         synchronized (this) {
             hashMap = new HashMap(2);
-            Map<String, Object> c2 = h(str).c();
-            if (c2 != null) {
-                hashMap.putAll(c2);
+            Map<String, Object> c = h(str).c();
+            if (c != null) {
+                hashMap.putAll(c);
             }
         }
         return hashMap;

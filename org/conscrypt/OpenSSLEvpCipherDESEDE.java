@@ -1,5 +1,6 @@
 package org.conscrypt;
 
+import com.android.internal.content.NativeLibraryHelper;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
@@ -93,6 +94,6 @@ public abstract class OpenSSLEvpCipherDESEDE extends OpenSSLEvpCipher {
     @Override // org.conscrypt.OpenSSLEvpCipher
     String getCipherName(int i, OpenSSLCipher.Mode mode) {
         String str = i == 16 ? "des-ede" : "des-ede3";
-        return str + "-" + mode.toString().toLowerCase(Locale.US);
+        return str + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + mode.toString().toLowerCase(Locale.US);
     }
 }

@@ -4,11 +4,11 @@ package com.tencent.turingface.sdk.mfa;
 public final class uAnWx {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40000a;
+    public static final String f26309a;
     public static final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40001c;
+    public static final String f26310c;
     public static final String d;
     public static final String e;
     public static final int f;
@@ -18,8 +18,8 @@ public final class uAnWx {
         kC0XR.a(kC0XR.Z);
         kC0XR.a(kC0XR.a0);
         kC0XR.a(kC0XR.b0);
-        f40000a = kC0XR.a(kC0XR.b);
-        kC0XR.a(kC0XR.f39963c);
+        f26309a = kC0XR.a(kC0XR.b);
+        kC0XR.a(kC0XR.f26272c);
         kC0XR.a(kC0XR.d);
         kC0XR.a(kC0XR.e);
         kC0XR.a(kC0XR.f);
@@ -27,7 +27,7 @@ public final class uAnWx {
         kC0XR.a(kC0XR.d0);
         kC0XR.a(kC0XR.e0);
         b = kC0XR.a(kC0XR.f0);
-        f40001c = kC0XR.a(kC0XR.k0);
+        f26310c = kC0XR.a(kC0XR.k0);
         d = kC0XR.a(kC0XR.g0);
         kC0XR.a(kC0XR.l0);
         kC0XR.a(kC0XR.m0);

@@ -9,13 +9,9 @@ import com.alipay.sdk.util.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/ShapeTrimPath.class */
 public class ShapeTrimPath implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4375a;
+    private final String a;
     private final Type b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableFloatValue f4376c;
+    private final AnimatableFloatValue c;
     private final AnimatableFloatValue d;
     private final AnimatableFloatValue e;
     private final boolean f;
@@ -37,9 +33,9 @@ public class ShapeTrimPath implements ContentModel {
     }
 
     public ShapeTrimPath(String str, Type type, AnimatableFloatValue animatableFloatValue, AnimatableFloatValue animatableFloatValue2, AnimatableFloatValue animatableFloatValue3, boolean z) {
-        this.f4375a = str;
+        this.a = str;
         this.b = type;
-        this.f4376c = animatableFloatValue;
+        this.c = animatableFloatValue;
         this.d = animatableFloatValue2;
         this.e = animatableFloatValue3;
         this.f = z;
@@ -51,7 +47,7 @@ public class ShapeTrimPath implements ContentModel {
     }
 
     public String a() {
-        return this.f4375a;
+        return this.a;
     }
 
     public AnimatableFloatValue b() {
@@ -59,7 +55,7 @@ public class ShapeTrimPath implements ContentModel {
     }
 
     public AnimatableFloatValue c() {
-        return this.f4376c;
+        return this.c;
     }
 
     public AnimatableFloatValue d() {
@@ -75,6 +71,6 @@ public class ShapeTrimPath implements ContentModel {
     }
 
     public String toString() {
-        return "Trim Path: {start: " + this.f4376c + ", end: " + this.d + ", offset: " + this.e + i.d;
+        return "Trim Path: {start: " + this.c + ", end: " + this.d + ", offset: " + this.e + i.d;
     }
 }

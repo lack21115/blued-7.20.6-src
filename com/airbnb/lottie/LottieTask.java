@@ -14,13 +14,9 @@ import java.util.concurrent.FutureTask;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieTask.class */
 public class LottieTask<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static Executor f4257a = Executors.newCachedThreadPool();
+    public static Executor a = Executors.newCachedThreadPool();
     private final Set<LottieListener<T>> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Set<LottieListener<Throwable>> f4258c;
+    private final Set<LottieListener<Throwable>> c;
     private final Handler d;
     private volatile LottieResult<T> e;
 
@@ -50,11 +46,11 @@ public class LottieTask<T> {
 
     LottieTask(Callable<LottieResult<T>> callable, boolean z) {
         this.b = new LinkedHashSet(1);
-        this.f4258c = new LinkedHashSet(1);
+        this.c = new LinkedHashSet(1);
         this.d = new Handler(Looper.getMainLooper());
         this.e = null;
         if (!z) {
-            f4257a.execute(new LottieFutureTask(callable));
+            a.execute(new LottieFutureTask(callable));
             return;
         }
         try {
@@ -93,7 +89,7 @@ public class LottieTask<T> {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(Throwable th) {
         synchronized (this) {
-            ArrayList<LottieListener> arrayList = new ArrayList(this.f4258c);
+            ArrayList<LottieListener> arrayList = new ArrayList(this.c);
             if (arrayList.isEmpty()) {
                 Logger.a("Lottie encountered an error but no failure listener was added:", th);
                 return;
@@ -135,14 +131,14 @@ public class LottieTask<T> {
             if (this.e != null && this.e.b() != null) {
                 lottieListener.a(this.e.b());
             }
-            this.f4258c.add(lottieListener);
+            this.c.add(lottieListener);
         }
         return this;
     }
 
     public LottieTask<T> d(LottieListener<Throwable> lottieListener) {
         synchronized (this) {
-            this.f4258c.remove(lottieListener);
+            this.c.remove(lottieListener);
         }
         return this;
     }

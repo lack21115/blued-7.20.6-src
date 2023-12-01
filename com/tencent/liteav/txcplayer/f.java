@@ -8,7 +8,7 @@ import java.lang.reflect.Constructor;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f36489a = f.class.getName();
+    private static final String f22798a = f.class.getName();
 
     public static ITXVCubePlayer a(Context context) {
         return b(context);
@@ -20,7 +20,7 @@ public class f {
             declaredConstructor.setAccessible(true);
             return (ITXVCubePlayer) declaredConstructor.newInstance(context);
         } catch (Exception e) {
-            String str = f36489a;
+            String str = f22798a;
             LiteavLog.e(str, "create thumbplayer exception: " + e.getMessage());
             return null;
         }

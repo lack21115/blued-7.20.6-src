@@ -6,7 +6,7 @@ import com.sdk.tencent.k.a;
 public class MobileKInfo {
 
     /* renamed from: cn  reason: collision with root package name */
-    private String f28021cn;
+    private String f14333cn;
     private String ic;
     private boolean idfd;
     private String ie;
@@ -14,7 +14,7 @@ public class MobileKInfo {
     private String m;
 
     public String getCn() {
-        return this.f28021cn;
+        return this.f14333cn;
     }
 
     public String getIc() {
@@ -38,7 +38,7 @@ public class MobileKInfo {
     }
 
     public void setCn(String str) {
-        this.f28021cn = str;
+        this.f14333cn = str;
     }
 
     public void setIc(String str) {

@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 public class ChangeScroll extends Transition {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f3426a = {"android:changeScroll:x", "android:changeScroll:y"};
+    private static final String[] f3378a = {"android:changeScroll:x", "android:changeScroll:y"};
 
     public ChangeScroll() {
     }
@@ -66,6 +66,6 @@ public class ChangeScroll extends Transition {
 
     @Override // androidx.transition.Transition
     public String[] getTransitionProperties() {
-        return f3426a;
+        return f3378a;
     }
 }

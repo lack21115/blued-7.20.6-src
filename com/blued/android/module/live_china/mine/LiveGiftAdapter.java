@@ -49,17 +49,17 @@ public class LiveGiftAdapter extends LiveGiftBaseAdapter {
             commonAdapterHolder.a(R.id.item_live_gift_expire, Color.parseColor("#8A8A8A"), "永久");
             return;
         }
-        long c2 = (CommonStringUtils.c(liveGiftModel.expire_time) * 1000) - System.currentTimeMillis();
-        if (c2 <= 0) {
+        long c = (CommonStringUtils.c(liveGiftModel.expire_time) * 1000) - System.currentTimeMillis();
+        if (c <= 0) {
             commonAdapterHolder.a(R.id.item_live_gift_expire, -1, "已过期");
-        } else if (c2 < 3600000) {
+        } else if (c < 3600000) {
             commonAdapterHolder.a(R.id.item_live_gift_expire, Color.parseColor("#FF6533"), "1小时内到期");
-        } else if (c2 >= 86400000) {
-            long j = c2 / 86400000;
+        } else if (c >= 86400000) {
+            long j = c / 86400000;
             int i = R.id.item_live_gift_expire;
             commonAdapterHolder.a(i, -1, j + "天后到期");
         } else {
-            long j2 = c2 / 3600000;
+            long j2 = c / 3600000;
             int i2 = R.id.item_live_gift_expire;
             int parseColor = Color.parseColor("#FF6533");
             commonAdapterHolder.a(i2, parseColor, j2 + "小时后到期");

@@ -18,11 +18,11 @@ import java.util.Set;
 public class MsgBoxManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f32431a = MsgBoxManager.class.getSimpleName();
+    public static final String f18741a = MsgBoxManager.class.getSimpleName();
     private static volatile MsgBoxManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Set<Long> f32432c = new HashSet();
+    private Set<Long> f18742c = new HashSet();
     private Set<Long> d = new HashSet();
     private int e;
 
@@ -42,7 +42,7 @@ public class MsgBoxManager {
             if (i2 >= length) {
                 return;
             }
-            this.f32432c.add(Long.valueOf(split[i2]));
+            this.f18742c.add(Long.valueOf(split[i2]));
             i = i2 + 1;
         }
     }
@@ -86,18 +86,18 @@ public class MsgBoxManager {
     }
 
     private void d() {
-        if (this.f32432c.isEmpty()) {
+        if (this.f18742c.isEmpty()) {
             BluedPreferences.b(UserInfo.getInstance().getLoginUserInfo().getUid(), "");
             return;
         }
         StringBuilder sb = new StringBuilder();
-        for (Long l : this.f32432c) {
+        for (Long l : this.f18742c) {
             sb.append(l);
             sb.append(",");
         }
         String sb2 = sb.toString();
         String substring = sb2.substring(0, sb2.length() - 1);
-        String str = f32431a;
+        String str = f18741a;
         Logger.c(str, "saveBoxSessionId : " + substring);
         BluedPreferences.b(UserInfo.getInstance().getLoginUserInfo().getUid(), substring);
     }
@@ -110,7 +110,7 @@ public class MsgBoxManager {
         boolean z = false;
         if (sessionModel.sessionSettingModel != null) {
             z = false;
-            if (((SessionSettingModel) sessionModel.sessionSettingModel).getFollower() == 1) {
+            if (sessionModel.sessionSettingModel.getFollower() == 1) {
                 z = true;
             }
         }
@@ -161,7 +161,7 @@ public class MsgBoxManager {
 
     public List<SessionModel> a(List<SessionModel> list, boolean z) {
         if (c()) {
-            this.f32432c.clear();
+            this.f18742c.clear();
             this.d.clear();
             this.e = 0;
             ArrayList arrayList = new ArrayList();
@@ -173,16 +173,16 @@ public class MsgBoxManager {
                     break;
                 }
                 SessionModel sessionModel = list.get(i2);
-                Logger.c(f32431a, sessionModel.lastMsgContent + "====source==" + sessionModel.sourceFrom);
-                Logger.c(f32431a, sessionModel.lastMsgContent + "====isFriend==" + d(sessionModel));
-                Logger.c(f32431a, sessionModel.lastMsgContent + "====isAttention==" + e(sessionModel));
-                Logger.c(f32431a, sessionModel.lastMsgContent + "====isPurpleV==" + f(sessionModel));
-                Logger.c(f32431a, sessionModel.lastMsgContent + "====isFromExposureOrHellCall==" + g(sessionModel));
-                Logger.c(f32431a, sessionModel.lastMsgContent + "====isBoxMsg==" + h(sessionModel));
+                Logger.c(f18741a, sessionModel.lastMsgContent + "====source==" + sessionModel.sourceFrom);
+                Logger.c(f18741a, sessionModel.lastMsgContent + "====isFriend==" + d(sessionModel));
+                Logger.c(f18741a, sessionModel.lastMsgContent + "====isAttention==" + e(sessionModel));
+                Logger.c(f18741a, sessionModel.lastMsgContent + "====isPurpleV==" + f(sessionModel));
+                Logger.c(f18741a, sessionModel.lastMsgContent + "====isFromExposureOrHellCall==" + g(sessionModel));
+                Logger.c(f18741a, sessionModel.lastMsgContent + "====isBoxMsg==" + h(sessionModel));
                 if (b(sessionModel)) {
                     arrayList2.add(sessionModel);
                 } else {
-                    this.f32432c.add(Long.valueOf(sessionModel.sessionId));
+                    this.f18742c.add(Long.valueOf(sessionModel.sessionId));
                     this.e += sessionModel.noReadMsgCount;
                     if (sessionModel.noReadMsgCount > 0) {
                         this.d.add(Long.valueOf(sessionModel.sessionId));
@@ -221,7 +221,7 @@ public class MsgBoxManager {
     }
 
     public boolean a(long j) {
-        return this.f32432c.contains(Long.valueOf(j));
+        return this.f18742c.contains(Long.valueOf(j));
     }
 
     public boolean a(SessionModel sessionModel) {
@@ -236,7 +236,7 @@ public class MsgBoxManager {
     }
 
     public void b() {
-        this.f32432c.clear();
+        this.f18742c.clear();
         this.d.clear();
     }
 

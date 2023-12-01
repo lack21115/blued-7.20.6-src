@@ -23,13 +23,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/DailyPrizeView.class */
 public final class DailyPrizeView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewDailyPrizeBinding f17916a;
+    private ViewDailyPrizeBinding a;
     private YYTaskRewardModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f17917c;
+    private BaseFragment c;
     private int d;
     private ShapeConstraintLayout e;
     private YYTaskRewardDialog f;
@@ -57,11 +53,11 @@ public final class DailyPrizeView extends FrameLayout {
     public DailyPrizeView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewDailyPrizeBinding a2 = ViewDailyPrizeBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f17916a = a2;
+        ViewDailyPrizeBinding a = ViewDailyPrizeBinding.a(LayoutInflater.from(getContext()), this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
         this.d = 1;
-        a2.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$DailyPrizeView$CvLy0dRQeVoPi7o5jbsbITGmGVQ
+        a.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$DailyPrizeView$CvLy0dRQeVoPi7o5jbsbITGmGVQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DailyPrizeView.a(DailyPrizeView.this, view);
@@ -85,7 +81,7 @@ public final class DailyPrizeView extends FrameLayout {
         if (yYTaskRewardDialog == null) {
             return;
         }
-        yYTaskRewardDialog.a(this.f17917c, this.e, this.b);
+        yYTaskRewardDialog.a(this.c, this.e, this.b);
     }
 
     private final void getPrize() {
@@ -130,9 +126,9 @@ public final class DailyPrizeView extends FrameLayout {
 
     private final void setCircleColor(int i) {
         if (i == 0) {
-            ShapeHelper.b(this.f17916a.f16849c, R.color.syc_202020);
+            ShapeHelper.b(this.a.c, R.color.syc_202020);
         } else {
-            ShapeHelper.b(this.f17916a.f16849c, R.color.syc_00E0AB);
+            ShapeHelper.b(this.a.c, R.color.syc_00E0AB);
         }
     }
 
@@ -141,7 +137,7 @@ public final class DailyPrizeView extends FrameLayout {
     }
 
     public final void a(BaseFragment baseFragment) {
-        this.f17917c = baseFragment;
+        this.c = baseFragment;
     }
 
     public final void a(YYTaskRewardModel yYTaskRewardModel, int i) {
@@ -161,11 +157,11 @@ public final class DailyPrizeView extends FrameLayout {
     }
 
     public final void a(boolean z) {
-        this.f17916a.f16848a.setVisibility(z ? 0 : 8);
+        this.a.a.setVisibility(z ? 0 : 8);
     }
 
     public final ViewDailyPrizeBinding getBinding() {
-        return this.f17916a;
+        return this.a;
     }
 
     public final YYTaskRewardDialog getDV() {
@@ -173,10 +169,9 @@ public final class DailyPrizeView extends FrameLayout {
     }
 
     public final BaseFragment getFragment() {
-        return this.f17917c;
+        return this.c;
     }
 
-    @Override // android.view.View
     public final ShapeConstraintLayout getRootView() {
         return this.e;
     }
@@ -196,11 +191,11 @@ public final class DailyPrizeView extends FrameLayout {
 
     public final void setBinding(ViewDailyPrizeBinding viewDailyPrizeBinding) {
         Intrinsics.e(viewDailyPrizeBinding, "<set-?>");
-        this.f17916a = viewDailyPrizeBinding;
+        this.a = viewDailyPrizeBinding;
     }
 
     public final void setCirclePointVisible(int i) {
-        this.f17916a.f16849c.setVisibility(i);
+        this.a.c.setVisibility(i);
     }
 
     public final void setDV(YYTaskRewardDialog yYTaskRewardDialog) {
@@ -208,7 +203,7 @@ public final class DailyPrizeView extends FrameLayout {
     }
 
     public final void setFragment(BaseFragment baseFragment) {
-        this.f17917c = baseFragment;
+        this.c = baseFragment;
     }
 
     public final void setOpenPrizeListener(OpenPrizeListener openPrizeListener) {
@@ -216,7 +211,7 @@ public final class DailyPrizeView extends FrameLayout {
     }
 
     public final void setPrizeValueVisible(boolean z) {
-        this.f17916a.d.setVisibility(z ? 0 : 8);
+        this.a.d.setVisibility(z ? 0 : 8);
     }
 
     public final void setRootView(ShapeConstraintLayout shapeConstraintLayout) {

@@ -14,7 +14,6 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import com.anythink.expressad.foundation.h.i;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.listener.BluedSkinSupportable;
@@ -27,13 +26,9 @@ import skin.support.widget.SkinCompatBackgroundHelper;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoticon/ui/EmoticonsToolBarView.class */
 public class EmoticonsToolBarView extends LinearLayout implements BluedSkinSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f11184a;
+    private LayoutInflater a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f11185c;
+    private ImageView c;
     private HorizontalScrollView d;
     private LinearLayout e;
     private List<EmoticonPackageModel> f;
@@ -60,18 +55,16 @@ public class EmoticonsToolBarView extends LinearLayout implements BluedSkinSuppo
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoticon/ui/EmoticonsToolBarView$ToolBarAdapter.class */
     public class ToolBarAdapter extends BaseAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ EmoticonsToolBarView f11190a;
+        final /* synthetic */ EmoticonsToolBarView a;
 
         @Override // android.widget.Adapter
         public int getCount() {
-            return this.f11190a.f.size();
+            return this.a.f.size();
         }
 
         @Override // android.widget.Adapter
         public Object getItem(int i) {
-            return this.f11190a.f.get(i);
+            return this.a.f.get(i);
         }
 
         @Override // android.widget.Adapter
@@ -85,23 +78,23 @@ public class EmoticonsToolBarView extends LinearLayout implements BluedSkinSuppo
             ViewHolder viewHolder;
             if (view == null) {
                 viewHolder = new ViewHolder();
-                view2 = this.f11190a.f11184a.inflate(R.layout.toolbar_item, (ViewGroup) null);
-                viewHolder.f11192a = (ImageView) view2.findViewById(R.id.iv_icon);
+                view2 = this.a.a.inflate(R.layout.toolbar_item, (ViewGroup) null);
+                viewHolder.a = (ImageView) view2.findViewById(R.id.iv_icon);
                 viewHolder.b = (FrameLayout) view2.findViewById(R.id.content_view);
                 view2.setTag(viewHolder);
             } else {
                 view2 = view;
                 viewHolder = (ViewHolder) view.getTag();
             }
-            viewHolder.f11192a.setImageResource(this.f11190a.b.getResources().getIdentifier(((EmoticonPackageModel) this.f11190a.f.get(i)).icon, i.f7952c, this.f11190a.b.getPackageName()));
-            viewHolder.f11192a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView.ToolBarAdapter.1
+            viewHolder.a.setImageResource(this.a.b.getResources().getIdentifier(((EmoticonPackageModel) this.a.f.get(i)).icon, "drawable", this.a.b.getPackageName()));
+            viewHolder.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView.ToolBarAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    if (ToolBarAdapter.this.f11190a.n == null || ToolBarAdapter.this.f11190a.n.isEmpty()) {
+                    if (ToolBarAdapter.this.a.n == null || ToolBarAdapter.this.a.n.isEmpty()) {
                         return;
                     }
-                    for (OnToolBarItemClickListener onToolBarItemClickListener : ToolBarAdapter.this.f11190a.n) {
+                    for (OnToolBarItemClickListener onToolBarItemClickListener : ToolBarAdapter.this.a.n) {
                         onToolBarItemClickListener.a(i);
                     }
                 }
@@ -112,9 +105,7 @@ public class EmoticonsToolBarView extends LinearLayout implements BluedSkinSuppo
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoticon/ui/EmoticonsToolBarView$ViewHolder.class */
     class ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public ImageView f11192a;
+        public ImageView a;
         public FrameLayout b;
 
         ViewHolder() {
@@ -131,11 +122,11 @@ public class EmoticonsToolBarView extends LinearLayout implements BluedSkinSuppo
         this.h = new ArrayList<>();
         this.b = context;
         this.m = new SkinCompatBackgroundHelper(this);
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.f11184a = layoutInflater;
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService("layout_inflater");
+        this.a = layoutInflater;
         layoutInflater.inflate(R.layout.emoticon_bottom_view, this);
         this.i = (RelativeLayout) findViewById(R.id.set_view);
-        this.f11185c = (ImageView) findViewById(R.id.iv_icon);
+        this.c = (ImageView) findViewById(R.id.iv_icon);
         this.d = (HorizontalScrollView) findViewById(R.id.hsv_toolbar);
         this.e = (LinearLayout) findViewById(R.id.ly_tool);
         this.g = (int) TypedValue.applyDimension(1, 60.0f, getResources().getDisplayMetrics());
@@ -186,12 +177,12 @@ public class EmoticonsToolBarView extends LinearLayout implements BluedSkinSuppo
                 break;
             }
             EmoticonPackageModel emoticonPackageModel = this.f.get(i3);
-            View inflate = ((LayoutInflater) this.b.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.toolbar_item, (ViewGroup) null);
+            View inflate = ((LayoutInflater) this.b.getSystemService("layout_inflater")).inflate(R.layout.toolbar_item, (ViewGroup) null);
             ImageView imageView = (ImageView) inflate.findViewById(R.id.iv_icon);
             inflate.setLayoutParams(new FrameLayout.LayoutParams(this.g, -1));
             this.e.addView(inflate);
             if (emoticonPackageModel.emoticonType == 0) {
-                imageView.setImageResource(this.b.getResources().getIdentifier(emoticonPackageModel.icon, i.f7952c, this.b.getPackageName()));
+                imageView.setImageResource(this.b.getResources().getIdentifier(emoticonPackageModel.icon, "drawable", this.b.getPackageName()));
             } else if (emoticonPackageModel.icon.startsWith("assets://")) {
                 ImageLoader.c(iRequestHost, emoticonPackageModel.icon.substring(9)).a(imageView);
             } else if (emoticonPackageModel.icon.startsWith("file://")) {
@@ -220,7 +211,7 @@ public class EmoticonsToolBarView extends LinearLayout implements BluedSkinSuppo
         if (this.j) {
             this.i.setVisibility(8);
         } else {
-            View inflate2 = ((LayoutInflater) this.b.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.toolbar_item_set, (ViewGroup) null);
+            View inflate2 = ((LayoutInflater) this.b.getSystemService("layout_inflater")).inflate(R.layout.toolbar_item_set, (ViewGroup) null);
             inflate2.setLayoutParams(new FrameLayout.LayoutParams(this.g, -1));
             this.e.addView(inflate2);
             inflate2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView.3

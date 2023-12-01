@@ -35,13 +35,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYKtvSendGiftSongNumView.class */
 public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogKtvSendGiftNumBinding f18284a;
+    private DialogKtvSendGiftNumBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYKtvCardModel f18285c;
+    private YYKtvCardModel c;
     private long d;
     private long e;
     private int f;
@@ -144,7 +140,7 @@ public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYKtvSendGiftSongNumView this$0, int i, View view) {
         Intrinsics.e(this$0, "this$0");
-        YYKtvCardModel yYKtvCardModel = this$0.f18285c;
+        YYKtvCardModel yYKtvCardModel = this$0.c;
         this$0.a(yYKtvCardModel == null ? null : yYKtvCardModel.goods_info, "", false, i);
     }
 
@@ -152,8 +148,8 @@ public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
         j();
         YYRoomModel b = YYRoomInfoManager.e().b();
         String str = b == null ? null : b.room_id;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.k(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYKtvCardModel>>(a2) { // from class: com.blued.android.module.yy_china.view.YYKtvSendGiftSongNumView$loaData$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.k(str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYKtvCardModel>>(a) { // from class: com.blued.android.module.yy_china.view.YYKtvSendGiftSongNumView$loaData$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -172,31 +168,31 @@ public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
         TextView textView4;
         TextView textView5;
         TextView textView6;
-        YYKtvCardModel yYKtvCardModel = this.f18285c;
+        YYKtvCardModel yYKtvCardModel = this.c;
         if (yYKtvCardModel == null) {
             return;
         }
         if (YYRoomInfoManager.e().y()) {
             DialogKtvSendGiftNumBinding h = h();
             if (h != null && (textView6 = h.f) != null) {
-                textView6.setText(getString(R.string.yy_ktv_available_amount_cont, yYKtvCardModel.goods_info.name, yYKtvCardModel.sing_limit));
+                textView6.setText(getString(R.string.yy_ktv_available_amount_cont, new Object[]{yYKtvCardModel.goods_info.name, yYKtvCardModel.sing_limit}));
             }
         } else {
             DialogKtvSendGiftNumBinding h2 = h();
             if (h2 != null && (textView = h2.f) != null) {
-                textView.setText(getString(R.string.yy_ktv_available_amount_cont_user, yYKtvCardModel.sing_limit));
+                textView.setText(getString(R.string.yy_ktv_available_amount_cont_user, new Object[]{yYKtvCardModel.sing_limit}));
             }
         }
-        ImageWrapper a2 = ImageLoader.a(a(), yYKtvCardModel.goods_info.images_static);
+        ImageWrapper a = ImageLoader.a(a(), yYKtvCardModel.goods_info.images_static);
         DialogKtvSendGiftNumBinding h3 = h();
-        a2.a(h3 == null ? null : h3.f16359a);
+        a.a(h3 == null ? null : h3.a);
         DialogKtvSendGiftNumBinding h4 = h();
         if (h4 != null && (textView5 = h4.h) != null) {
-            textView5.setText(getString(R.string.yy_ktv_available_amount_mess, yYKtvCardModel.goods_info.name));
+            textView5.setText(getString(R.string.yy_ktv_available_amount_mess, new Object[]{yYKtvCardModel.goods_info.name}));
         }
         if (yYKtvCardModel.send_item.size() > 0) {
             DialogKtvSendGiftNumBinding h5 = h();
-            ShapeTextView shapeTextView = h5 == null ? null : h5.f16360c;
+            ShapeTextView shapeTextView = h5 == null ? null : h5.c;
             Integer num = yYKtvCardModel.send_item.get(0);
             Intrinsics.c(num, "it.send_item.get(0)");
             a(shapeTextView, num.intValue());
@@ -223,7 +219,7 @@ public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
             }
             DialogKtvSendGiftNumBinding h9 = h();
             if (h9 != null && (textView4 = h9.g) != null) {
-                textView4.setText(getString(R.string.yy_ktv_available_amount_fell_cont, String.valueOf(yYKtvCardModel.free_sing_limit)));
+                textView4.setText(getString(R.string.yy_ktv_available_amount_fell_cont, new Object[]{String.valueOf(yYKtvCardModel.free_sing_limit)}));
             }
             DialogKtvSendGiftNumBinding h10 = h();
             if (h10 != null && (textView3 = h10.h) != null) {
@@ -233,7 +229,7 @@ public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
             if (h11 == null || (textView2 = h11.i) == null) {
                 return;
             }
-            textView2.setText(getString(R.string.yy_ktv_available_amount_mess, yYKtvCardModel.goods_info.name));
+            textView2.setText(getString(R.string.yy_ktv_available_amount_mess, new Object[]{yYKtvCardModel.goods_info.name}));
         }
     }
 
@@ -242,7 +238,7 @@ public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
     }
 
     public final void a(YYKtvCardModel yYKtvCardModel) {
-        this.f18285c = yYKtvCardModel;
+        this.c = yYKtvCardModel;
     }
 
     @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
@@ -251,15 +247,15 @@ public final class YYKtvSendGiftSongNumView extends BottomSheetDialogFragment {
     }
 
     public final DialogKtvSendGiftNumBinding h() {
-        return this.f18284a;
+        return this.a;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18284a = DialogKtvSendGiftNumBinding.a(inflater.inflate(R.layout.dialog_ktv_send_gift_num, viewGroup, true));
+        this.a = DialogKtvSendGiftNumBinding.a(inflater.inflate(R.layout.dialog_ktv_send_gift_num, viewGroup, true));
         i();
-        DialogKtvSendGiftNumBinding dialogKtvSendGiftNumBinding = this.f18284a;
-        return dialogKtvSendGiftNumBinding == null ? null : dialogKtvSendGiftNumBinding.getRoot();
+        DialogKtvSendGiftNumBinding dialogKtvSendGiftNumBinding = this.a;
+        return (View) (dialogKtvSendGiftNumBinding == null ? null : dialogKtvSendGiftNumBinding.getRoot());
     }
 }

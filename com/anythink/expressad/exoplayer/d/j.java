@@ -8,11 +8,11 @@ import java.util.Map;
 public interface j<T extends i> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7258a = 2;
+    public static final int f4419a = 2;
     public static final int b = 3;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7259c = 1;
+    public static final int f4420c = 1;
     public static final int d = 1;
     public static final int e = 2;
     public static final int f = 3;
@@ -21,17 +21,17 @@ public interface j<T extends i> {
     public static final class a implements d {
 
         /* renamed from: a  reason: collision with root package name */
-        private final byte[] f7260a;
+        private final byte[] f4421a;
         private final String b;
 
         public a(byte[] bArr, String str) {
-            this.f7260a = bArr;
+            this.f4421a = bArr;
             this.b = str;
         }
 
         @Override // com.anythink.expressad.exoplayer.d.j.d
         public final byte[] a() {
-            return this.f7260a;
+            return this.f4421a;
         }
 
         @Override // com.anythink.expressad.exoplayer.d.j.d
@@ -44,18 +44,18 @@ public interface j<T extends i> {
     public static final class b implements e {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f7261a;
+        private final int f4422a;
         private final byte[] b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public b(int i, byte[] bArr) {
-            this.f7261a = i;
+            this.f4422a = i;
             this.b = bArr;
         }
 
         @Override // com.anythink.expressad.exoplayer.d.j.e
         public final int a() {
-            return this.f7261a;
+            return this.f4422a;
         }
 
         @Override // com.anythink.expressad.exoplayer.d.j.e
@@ -68,17 +68,17 @@ public interface j<T extends i> {
     public static final class c implements h {
 
         /* renamed from: a  reason: collision with root package name */
-        private final byte[] f7262a;
+        private final byte[] f4423a;
         private final String b;
 
         public c(byte[] bArr, String str) {
-            this.f7262a = bArr;
+            this.f4423a = bArr;
             this.b = str;
         }
 
         @Override // com.anythink.expressad.exoplayer.d.j.h
         public final byte[] a() {
-            return this.f7262a;
+            return this.f4423a;
         }
 
         @Override // com.anythink.expressad.exoplayer.d.j.h

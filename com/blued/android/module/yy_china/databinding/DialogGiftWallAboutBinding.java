@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogGiftWallAboutBinding.class */
 public final class DialogGiftWallAboutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16342a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f16343c;
+    public final RecyclerView c;
     public final ShapeConstraintLayout d;
     private final ConstraintLayout e;
 
     private DialogGiftWallAboutBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, RecyclerView recyclerView, ShapeConstraintLayout shapeConstraintLayout) {
         this.e = constraintLayout;
-        this.f16342a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16343c = recyclerView;
+        this.c = recyclerView;
         this.d = shapeConstraintLayout;
     }
 
@@ -34,11 +30,11 @@ public final class DialogGiftWallAboutBinding implements ViewBinding {
         if (imageView != null) {
             ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_backg);
             if (imageView2 != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv);
-                if (recyclerView != null) {
+                RecyclerView findViewById = view.findViewById(R.id.rcv);
+                if (findViewById != null) {
                     ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.shap_con);
                     if (shapeConstraintLayout != null) {
-                        return new DialogGiftWallAboutBinding((ConstraintLayout) view, imageView, imageView2, recyclerView, shapeConstraintLayout);
+                        return new DialogGiftWallAboutBinding((ConstraintLayout) view, imageView, imageView2, findViewById, shapeConstraintLayout);
                     }
                     str = "shapCon";
                 } else {
@@ -53,7 +49,6 @@ public final class DialogGiftWallAboutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

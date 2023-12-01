@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 public class h extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f26612a;
+    private float f12924a;
 
     public h(Context context) {
         this(context, null);
@@ -23,7 +23,7 @@ public class h extends RelativeLayout {
 
     public h(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f26612a = 0.0f;
+        this.f12924a = 0.0f;
         setWillNotDraw(false);
     }
 
@@ -32,7 +32,7 @@ public class h extends RelativeLayout {
     }
 
     public void a(float f) {
-        this.f26612a = f;
+        this.f12924a = f;
         invalidate();
     }
 
@@ -41,7 +41,7 @@ public class h extends RelativeLayout {
         int save = canvas.save();
         RectF rectF = new RectF(0.0f, 0.0f, getWidth(), getHeight());
         Path path = new Path();
-        float f = this.f26612a;
+        float f = this.f12924a;
         path.addRoundRect(rectF, f, f, Path.Direction.CW);
         canvas.clipPath(path);
         super.draw(canvas);

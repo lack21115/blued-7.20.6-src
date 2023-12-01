@@ -26,11 +26,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class EventModule implements d, e.a, BeaconModule {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, Map<String, String>> f39593a = new ConcurrentHashMap(3);
+    private static final Map<String, Map<String, String>> f25902a = new ConcurrentHashMap(3);
     private static final Map<String, String> b = new ConcurrentHashMap(3);
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<c> f39594c = new ArrayList(3);
+    private final List<c> f25903c = new ArrayList(3);
     private AtomicInteger d = new AtomicInteger(0);
     private AtomicBoolean e = new AtomicBoolean(false);
     private boolean f = true;
@@ -47,15 +47,15 @@ public class EventModule implements d, e.a, BeaconModule {
     }
 
     private void e() {
-        this.f39594c.add(new b());
-        this.f39594c.add(new a());
+        this.f25903c.add(new b());
+        this.f25903c.add(new a());
         int i = 1;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f39594c.size()) {
+            if (i2 >= this.f25903c.size()) {
                 return;
             }
-            this.f39594c.get(i2 - 1).a(this.f39594c.get(i2));
+            this.f25903c.get(i2 - 1).a(this.f25903c.get(i2));
             i = i2 + 1;
         }
     }
@@ -93,7 +93,7 @@ public class EventModule implements d, e.a, BeaconModule {
             return EventResult.a.a(101);
         } else {
             beaconEvent.setAppKey(c(beaconEvent.getAppKey()));
-            EventBean b2 = this.f39594c.get(0).b(beaconEvent);
+            EventBean b2 = this.f25903c.get(0).b(beaconEvent);
             if (b2 == null) {
                 return EventResult.a.a(105);
             }
@@ -128,7 +128,7 @@ public class EventModule implements d, e.a, BeaconModule {
     }
 
     public Map<String, String> a(String str) {
-        return f39593a.get(c(str));
+        return f25902a.get(c(str));
     }
 
     @Override // com.tencent.tmsbeacon.base.net.b.e.a
@@ -138,7 +138,7 @@ public class EventModule implements d, e.a, BeaconModule {
 
     @Override // com.tencent.tmsbeacon.module.BeaconModule
     public void a(Context context) {
-        this.g = (StrategyModule) BeaconModule.f39592a.get(ModuleName.STRATEGY);
+        this.g = (StrategyModule) BeaconModule.f25901a.get(ModuleName.STRATEGY);
         e();
         f();
         g();
@@ -156,7 +156,7 @@ public class EventModule implements d, e.a, BeaconModule {
             return;
         }
         String c2 = c(str);
-        Map<String, Map<String, String>> map2 = f39593a;
+        Map<String, Map<String, String>> map2 = f25902a;
         Map<String, String> map3 = map2.get(c2);
         if (map3 == null) {
             map2.put(c2, new HashMap(map));
@@ -202,7 +202,7 @@ public class EventModule implements d, e.a, BeaconModule {
 
     @Override // com.tencent.tmsbeacon.a.a.d
     public void onEvent(com.tencent.tmsbeacon.a.a.c cVar) {
-        int i = cVar.f39460a;
+        int i = cVar.f25769a;
         if (i == 1) {
             com.tencent.tmsbeacon.a.a.b.a().a(12, this);
         } else if (i == 12) {

@@ -18,23 +18,21 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/randomgift/FitemRandomGiftHostDrawLottery.class */
 public final class FitemRandomGiftHostDrawLottery extends FreedomItem {
     private ArrayList<RandomGiftItemModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FitemRandomGiftDrawLotteryItem> f12685c;
+    private final ArrayList<FitemRandomGiftDrawLotteryItem> c;
     private FreedomAdapter d;
 
     public FitemRandomGiftHostDrawLottery(ArrayList<RandomGiftItemModel> datas) {
         Intrinsics.e(datas, "datas");
         this.b = datas;
-        this.f12685c = new ArrayList<>();
+        this.c = new ArrayList<>();
     }
 
     private final void e() {
-        RecyclerView recyclerView = (RecyclerView) this.f10935a.a(R.id.rv_list);
-        recyclerView.setLayoutManager(new GridLayoutManager(this.f10935a.f10931a.b, 4));
-        this.d = new FreedomAdapter(this.f10935a.f10931a.b, this.f10935a.b, this.f12685c);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(this.d);
+        RecyclerView a = this.a.a(R.id.rv_list);
+        a.setLayoutManager(new GridLayoutManager(this.a.a.b, 4));
+        this.d = new FreedomAdapter(this.a.a.b, this.a.b, this.c);
+        a.setItemAnimator(new DefaultItemAnimator());
+        a.setAdapter(this.d);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -46,10 +44,10 @@ public final class FitemRandomGiftHostDrawLottery extends FreedomItem {
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(vh, "vh");
         vh.a(R.id.tv_title, true);
-        this.f12685c.clear();
+        this.c.clear();
         for (RandomGiftItemModel randomGiftItemModel : this.b) {
             if (randomGiftItemModel != null) {
-                this.f12685c.add(new FitemRandomGiftDrawLotteryItem(randomGiftItemModel));
+                this.c.add(new FitemRandomGiftDrawLotteryItem(randomGiftItemModel));
             }
         }
         RandomGiftItemModel randomGiftItemModel2 = this.b.get(0);

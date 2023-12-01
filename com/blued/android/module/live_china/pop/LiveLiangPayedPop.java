@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.ui.xpop.XPopup;
 import com.blued.android.framework.ui.xpop.core.BasePopupView;
@@ -17,9 +16,7 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveLiangPayedPop.class */
 public class LiveLiangPayedPop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f13980c;
+    public Context c;
     public final String d;
     private ImageView e;
     private TextView f;
@@ -34,7 +31,7 @@ public class LiveLiangPayedPop extends CenterPopupView {
         super(context);
         this.d = "LiveLiangPayedPop";
         this.k = 0L;
-        this.f13980c = context;
+        this.c = context;
     }
 
     public static void a(final BaseFragment baseFragment, String str, long j, int i) {
@@ -122,18 +119,18 @@ public class LiveLiangPayedPop extends CenterPopupView {
         this.f.setText(this.j);
         long j = this.k;
         int i2 = (int) (j / 86400);
-        int i3 = (int) ((j % 86400) / b.P);
-        int i4 = (int) ((j % b.P) / 60);
+        int i3 = (int) ((j % 86400) / 3600);
+        int i4 = (int) ((j % 3600) / 60);
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f13980c.getString(R.string.live_id_valid_period));
+        sb.append(this.c.getString(R.string.live_id_valid_period));
         if (i2 >= 1) {
-            sb.append(String.format(this.f13980c.getString(R.string.live_id_valid_period_day), Integer.valueOf(i2)));
+            sb.append(String.format(this.c.getString(R.string.live_id_valid_period_day), Integer.valueOf(i2)));
         }
         if (i3 >= 1) {
-            sb.append(String.format(this.f13980c.getString(R.string.live_id_valid_period_hour), Integer.valueOf(i3)));
+            sb.append(String.format(this.c.getString(R.string.live_id_valid_period_hour), Integer.valueOf(i3)));
         }
         if (i4 >= 1) {
-            sb.append(String.format(this.f13980c.getString(R.string.live_id_valid_period_minute), Integer.valueOf(i4)));
+            sb.append(String.format(this.c.getString(R.string.live_id_valid_period_minute), Integer.valueOf(i4)));
         }
         this.g.setText(sb.toString());
     }

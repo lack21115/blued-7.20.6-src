@@ -8,24 +8,22 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/DropSequence$iterator$1.class */
 public final class DropSequence$iterator$1<T> implements Iterator<T>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Iterator<T> f42619a;
+    private final Iterator<T> a;
     private int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DropSequence$iterator$1(DropSequence<T> dropSequence) {
         Sequence sequence;
         int i;
-        sequence = ((DropSequence) dropSequence).f42618a;
-        this.f42619a = sequence.iterator();
+        sequence = ((DropSequence) dropSequence).a;
+        this.a = sequence.iterator();
         i = ((DropSequence) dropSequence).b;
         this.b = i;
     }
 
     private final void a() {
-        while (this.b > 0 && this.f42619a.hasNext()) {
-            this.f42619a.next();
+        while (this.b > 0 && this.a.hasNext()) {
+            this.a.next();
             this.b--;
         }
     }
@@ -33,13 +31,13 @@ public final class DropSequence$iterator$1<T> implements Iterator<T>, KMappedMar
     @Override // java.util.Iterator
     public boolean hasNext() {
         a();
-        return this.f42619a.hasNext();
+        return this.a.hasNext();
     }
 
     @Override // java.util.Iterator
     public T next() {
         a();
-        return this.f42619a.next();
+        return this.a.next();
     }
 
     @Override // java.util.Iterator

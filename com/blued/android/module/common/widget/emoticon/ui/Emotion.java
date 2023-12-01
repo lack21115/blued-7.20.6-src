@@ -6,7 +6,6 @@ import android.os.Build;
 import android.text.SpannableString;
 import android.text.style.ImageSpan;
 import androidx.collection.ArrayMap;
-import com.anythink.expressad.foundation.h.i;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.module.common.widget.emoticon.model.DefaultEmotionModel;
@@ -21,13 +20,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoticon/ui/Emotion.class */
 public class Emotion {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String[] f11194a;
+    public static String[] a;
     public static String[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static int[] f11195c;
+    public static int[] c;
     private static Pattern d;
     private static Map<String, Integer> e;
 
@@ -38,7 +33,7 @@ public class Emotion {
         }
         d = b();
         int length = b.length;
-        f11195c = new int[length];
+        c = new int[length];
         int i = 0;
         while (true) {
             int i2 = i;
@@ -47,7 +42,7 @@ public class Emotion {
                 return;
             }
             try {
-                f11195c[i2] = context.getResources().getIdentifier(b[i2], i.f7952c, context.getPackageName());
+                c[i2] = context.getResources().getIdentifier(b[i2], "drawable", context.getPackageName());
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
@@ -91,12 +86,12 @@ public class Emotion {
         if (d != null) {
             return;
         }
-        if (f11194a == null || b == null) {
+        if (a == null || b == null) {
             d();
         }
         d = b();
         int length = b.length;
-        f11195c = new int[length];
+        c = new int[length];
         int i = 0;
         while (true) {
             int i2 = i;
@@ -105,7 +100,7 @@ public class Emotion {
                 return;
             }
             try {
-                f11195c[i2] = AppInfo.d().getResources().getIdentifier(b[i2], i.f7952c, AppInfo.d().getPackageName());
+                c[i2] = AppInfo.d().getResources().getIdentifier(b[i2], "drawable", AppInfo.d().getPackageName());
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
@@ -114,10 +109,10 @@ public class Emotion {
     }
 
     private static Pattern b() {
-        StringBuilder sb = new StringBuilder(f11194a.length * 3);
+        StringBuilder sb = new StringBuilder(a.length * 3);
         try {
             sb.append('(');
-            String[] strArr = f11194a;
+            String[] strArr = a;
             int length = strArr.length;
             int i = 0;
             while (true) {
@@ -137,15 +132,15 @@ public class Emotion {
     }
 
     private static ArrayMap<String, Integer> c() {
-        ArrayMap<String, Integer> arrayMap = new ArrayMap<>(f11194a.length);
+        ArrayMap<String, Integer> arrayMap = new ArrayMap<>(a.length);
         int i = 0;
         while (true) {
             int i2 = i;
-            String[] strArr = f11194a;
+            String[] strArr = a;
             if (i2 >= strArr.length) {
                 return arrayMap;
             }
-            arrayMap.put(strArr[i2], Integer.valueOf(f11195c[i2]));
+            arrayMap.put(strArr[i2], Integer.valueOf(c[i2]));
             i = i2 + 1;
         }
     }
@@ -176,9 +171,9 @@ public class Emotion {
                     }
                     stringBuffer.append(readLine);
                 }
-                DefaultEmotionModel[] defaultEmotionModelArr = (DefaultEmotionModel[]) AppInfo.f().fromJson(stringBuffer.toString(), (Class<Object>) DefaultEmotionModel[].class);
-                if (f11194a == null) {
-                    f11194a = new String[defaultEmotionModelArr.length];
+                DefaultEmotionModel[] defaultEmotionModelArr = (DefaultEmotionModel[]) AppInfo.f().fromJson(stringBuffer.toString(), DefaultEmotionModel[].class);
+                if (a == null) {
+                    a = new String[defaultEmotionModelArr.length];
                     b = new String[defaultEmotionModelArr.length];
                     int i = 0;
                     while (true) {
@@ -186,7 +181,7 @@ public class Emotion {
                         if (i2 >= defaultEmotionModelArr.length) {
                             break;
                         }
-                        f11194a[i2] = defaultEmotionModelArr[i2].name;
+                        a[i2] = defaultEmotionModelArr[i2].name;
                         b[i2] = defaultEmotionModelArr[i2].pid;
                         i = i2 + 1;
                     }

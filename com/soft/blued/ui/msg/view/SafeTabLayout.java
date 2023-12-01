@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SafeTabLayout extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f32606a;
+    private int f18915a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public SafeTabLayout(Context context) {
@@ -54,7 +54,7 @@ public final class SafeTabLayout extends LinearLayout {
                 throw new NullPointerException("null cannot be cast to non-null type android.widget.TextView");
             }
             TextView textView = (TextView) childAt;
-            if (i2 == this.f32606a) {
+            if (i2 == this.f18915a) {
                 textView.setTextColor(BluedSkinUtils.a(getContext(), 2131102254));
             } else {
                 textView.setTextColor(BluedSkinUtils.a(getContext(), (int) R.color.chat_safe_tab_unselected));
@@ -64,22 +64,22 @@ public final class SafeTabLayout extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ViewPager vp, int i, View view) {
+    public static final void a(ViewPager viewPager, int i, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(vp, "$vp");
-        vp.setCurrentItem(i);
+        Intrinsics.e(viewPager, "$vp");
+        viewPager.setCurrentItem(i);
     }
 
-    public final void a(List<String> data, final ViewPager vp) {
-        Intrinsics.e(data, "data");
-        Intrinsics.e(vp, "vp");
+    public final void a(List<String> list, final ViewPager viewPager) {
+        Intrinsics.e(list, "data");
+        Intrinsics.e(viewPager, "vp");
         removeAllViews();
-        int size = data.size();
+        int size = list.size();
         int i = 0;
         while (true) {
             final int i2 = i;
             if (i2 >= size) {
-                vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.msg.view.SafeTabLayout$setTabList$2
+                viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.msg.view.SafeTabLayout$setTabList$2
                     @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     public void onPageScrollStateChanged(int i3) {
                     }
@@ -90,7 +90,7 @@ public final class SafeTabLayout extends LinearLayout {
 
                     @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     public void onPageSelected(int i3) {
-                        SafeTabLayout.this.f32606a = i3;
+                        SafeTabLayout.this.f18915a = i3;
                         SafeTabLayout.this.a();
                     }
                 });
@@ -98,7 +98,7 @@ public final class SafeTabLayout extends LinearLayout {
                 return;
             }
             TextView textView = new TextView(getContext());
-            textView.setText(data.get(i2));
+            textView.setText(list.get(i2));
             textView.setTextColor(BluedSkinUtils.a(getContext(), (int) R.color.chat_safe_tab_unselected));
             textView.setTextSize(13.0f);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);

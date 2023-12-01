@@ -6,18 +6,18 @@ import android.view.Surface;
 final /* synthetic */ class j implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final g f36830a;
+    private final g f23139a;
     private final Surface b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f36831c;
+    private final int f23140c;
     private final int d;
     private final boolean e;
 
     private j(g gVar, Surface surface, int i, int i2, boolean z) {
-        this.f36830a = gVar;
+        this.f23139a = gVar;
         this.b = surface;
-        this.f36831c = i;
+        this.f23140c = i;
         this.d = i2;
         this.e = z;
     }
@@ -28,6 +28,6 @@ final /* synthetic */ class j implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        g.a(this.f36830a, this.b, this.f36831c, this.d, this.e);
+        g.a(this.f23139a, this.b, this.f23140c, this.d, this.e);
     }
 }

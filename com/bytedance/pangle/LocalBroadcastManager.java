@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import com.alipay.sdk.util.i;
 import com.bytedance.pangle.receiver.PluginBroadcastReceiver;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,11 +30,11 @@ public final class LocalBroadcastManager {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        final Intent f21347a;
+        final Intent f7741a;
         final ArrayList<b> b;
 
         a(Intent intent, ArrayList<b> arrayList) {
-            this.f21347a = intent;
+            this.f7741a = intent;
             this.b = arrayList;
         }
     }
@@ -45,15 +44,15 @@ public final class LocalBroadcastManager {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        final IntentFilter f21348a;
+        final IntentFilter f7742a;
         final PluginBroadcastReceiver b;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f21349c;
+        boolean f7743c;
         boolean d;
 
         b(IntentFilter intentFilter, PluginBroadcastReceiver pluginBroadcastReceiver) {
-            this.f21348a = intentFilter;
+            this.f7742a = intentFilter;
             this.b = pluginBroadcastReceiver;
         }
 
@@ -62,11 +61,11 @@ public final class LocalBroadcastManager {
             sb.append("Receiver{");
             sb.append(this.b);
             sb.append(" filter=");
-            sb.append(this.f21348a);
+            sb.append(this.f7742a);
             if (this.d) {
                 sb.append(" DEAD");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -121,7 +120,7 @@ public final class LocalBroadcastManager {
                         if (i4 < size2) {
                             b bVar = aVar.b.get(i4);
                             if (!bVar.d) {
-                                bVar.b.onReceive(this.mAppContext, aVar.f21347a);
+                                bVar.b.onReceive(this.mAppContext, aVar.f7741a);
                             }
                             i3 = i4 + 1;
                         }
@@ -185,10 +184,10 @@ public final class LocalBroadcastManager {
                     }
                     b bVar = arrayList.get(i2);
                     if (z) {
-                        Log.v(TAG, "Matching against filter " + bVar.f21348a);
+                        Log.v(TAG, "Matching against filter " + bVar.f7742a);
                     }
-                    if (!bVar.f21349c) {
-                        IntentFilter intentFilter = bVar.f21348a;
+                    if (!bVar.f7743c) {
+                        IntentFilter intentFilter = bVar.f7742a;
                         ArrayList arrayList3 = arrayList2;
                         int match = intentFilter.match(action, resolveTypeIfNeeded, scheme, data, categories, TAG);
                         if (match >= 0) {
@@ -197,7 +196,7 @@ public final class LocalBroadcastManager {
                             }
                             arrayList2 = arrayList3 == null ? new ArrayList() : arrayList3;
                             arrayList2.add(bVar);
-                            bVar.f21349c = true;
+                            bVar.f7743c = true;
                         } else if (z) {
                             Log.v(TAG, "  Filter did not match: ".concat(match != -4 ? match != -3 ? match != -2 ? match != -1 ? "unknown reason" : "type" : "data" : "action" : "category"));
                         }
@@ -213,7 +212,7 @@ public final class LocalBroadcastManager {
                         if (i4 >= arrayList2.size()) {
                             break;
                         }
-                        ((b) arrayList2.get(i4)).f21349c = false;
+                        ((b) arrayList2.get(i4)).f7743c = false;
                         i3 = i4 + 1;
                     }
                     this.mPendingBroadcasts.add(new a(intent, arrayList2));
@@ -250,8 +249,8 @@ public final class LocalBroadcastManager {
                 int i2 = 0;
                 while (true) {
                     int i3 = i2;
-                    if (i3 < bVar.f21348a.countActions()) {
-                        String action = bVar.f21348a.getAction(i3);
+                    if (i3 < bVar.f7742a.countActions()) {
+                        String action = bVar.f7742a.getAction(i3);
                         ArrayList<b> arrayList = this.mActions.get(action);
                         if (arrayList != null) {
                             int size2 = arrayList.size();

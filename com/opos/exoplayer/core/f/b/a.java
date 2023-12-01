@@ -7,12 +7,12 @@ import java.util.List;
 public final class a extends com.opos.exoplayer.core.f.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f25346a;
+    private final b f11658a;
 
     public a(List<byte[]> list) {
         super("DvbDecoder");
         m mVar = new m(list.get(0));
-        this.f25346a = new b(mVar.h(), mVar.h());
+        this.f11658a = new b(mVar.h(), mVar.h());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -20,8 +20,8 @@ public final class a extends com.opos.exoplayer.core.f.c {
     /* renamed from: b */
     public c a(byte[] bArr, int i, boolean z) {
         if (z) {
-            this.f25346a.a();
+            this.f11658a.a();
         }
-        return new c(this.f25346a.a(bArr, i));
+        return new c(this.f11658a.a(bArr, i));
     }
 }

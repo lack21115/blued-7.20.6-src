@@ -8,5 +8,5 @@ import java.util.List;
 public class FuGiftListEvent implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<FuGiftModel> f32324a;
+    public List<FuGiftModel> f18634a;
 }

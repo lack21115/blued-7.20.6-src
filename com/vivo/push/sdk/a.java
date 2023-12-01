@@ -28,7 +28,7 @@ import java.util.List;
 public final class a extends q {
 
     /* renamed from: c  reason: collision with root package name */
-    private static a f41121c;
+    private static a f27430c;
     private static final List<Integer> e = Arrays.asList(3);
     private String d;
     private String f = "";
@@ -40,10 +40,10 @@ public final class a extends q {
         a aVar;
         synchronized (a.class) {
             try {
-                if (f41121c == null) {
-                    f41121c = new a();
+                if (f27430c == null) {
+                    f27430c = new a();
                 }
-                aVar = f41121c;
+                aVar = f27430c;
             } catch (Throwable th) {
                 throw th;
             }
@@ -77,7 +77,7 @@ public final class a extends q {
             return true;
         }
         try {
-            String b = com.vivo.push.util.a.a(this.f41115a).b(stringExtra);
+            String b = com.vivo.push.util.a.a(this.f27424a).b(stringExtra);
             if ("com.vivo.pushservice".equals(b)) {
                 return true;
             }
@@ -93,7 +93,7 @@ public final class a extends q {
         if (Build.VERSION.SDK_INT < 18) {
             return true;
         }
-        String c2 = z.c(this.f41115a, "com.vivo.pushservice");
+        String c2 = z.c(this.f27424a, "com.vivo.pushservice");
         p.d("CommandWorker", " 配置的验签参数 = ".concat(String.valueOf(c2)));
         if (TextUtils.equals(c2, "1")) {
             String stringExtra = intent.getStringExtra("security_avoid_pull_rsa");
@@ -103,7 +103,7 @@ public final class a extends q {
                 return false;
             }
             try {
-                if (d.a(this.f41115a).a().a("com.vivo.pushservice".getBytes("UTF-8"), u.a(stringExtra2), Base64.decode(stringExtra, 2))) {
+                if (d.a(this.f27424a).a().a("com.vivo.pushservice".getBytes("UTF-8"), u.a(stringExtra2), Base64.decode(stringExtra, 2))) {
                     p.d("CommandWorker", " RSA验签通过  ");
                     return true;
                 }
@@ -123,7 +123,7 @@ public final class a extends q {
                 return 2151;
             }
         }
-        String packageName = this.f41115a.getPackageName();
+        String packageName = this.f27424a.getPackageName();
         try {
             String stringExtra = intent.getStringExtra("command_type");
             if (!TextUtils.isEmpty(stringExtra) && stringExtra.equals("reflect_receiver")) {
@@ -132,18 +132,18 @@ public final class a extends q {
                 if (intExtra < 0) {
                     i = intent.getIntExtra("method", -1);
                 }
-                if (e.contains(Integer.valueOf(i)) && t.c(this.f41115a, packageName) && !t.c(this.f41115a)) {
+                if (e.contains(Integer.valueOf(i)) && t.c(this.f27424a, packageName) && !t.c(this.f27424a)) {
                     p.a("CommandWorker", "METHOD_ON_MESSAGE is not support");
                     return 2153;
                 }
                 String action = intent.getAction();
                 if (TextUtils.isEmpty(this.d)) {
-                    String a2 = a(this.f41115a, packageName, action);
+                    String a2 = a(this.f27424a, packageName, action);
                     this.d = a2;
                     if (TextUtils.isEmpty(a2)) {
                         p.d("CommandWorker", " reflectReceiver error: receiver for: " + action + " not found, package: " + packageName);
                         intent.setPackage(packageName);
-                        this.f41115a.sendBroadcast(intent);
+                        this.f27424a.sendBroadcast(intent);
                         return 2152;
                     }
                     return 0;
@@ -159,13 +159,13 @@ public final class a extends q {
     }
 
     public final void a(Intent intent) {
-        if (intent != null && this.f41115a != null) {
+        if (intent != null && this.f27424a != null) {
             Message obtain = Message.obtain();
             obtain.obj = intent;
             a(obtain);
             return;
         }
-        p.d("CommandWorker", " sendMessage error: intent : " + intent + ", mContext: " + this.f41115a);
+        p.d("CommandWorker", " sendMessage error: intent : " + intent + ", mContext: " + this.f27424a);
     }
 
     public final void a(String str) {
@@ -179,11 +179,11 @@ public final class a extends q {
     @Override // com.vivo.push.q
     public final void b(Message message) {
         Intent intent = (Intent) message.obj;
-        if (intent == null || this.f41115a == null) {
-            p.d("CommandWorker", " handleMessage error: intent : " + intent + ", mContext: " + this.f41115a);
+        if (intent == null || this.f27424a == null) {
+            p.d("CommandWorker", " handleMessage error: intent : " + intent + ", mContext: " + this.f27424a);
             return;
         }
-        String packageName = this.f41115a.getPackageName();
+        String packageName = this.f27424a.getPackageName();
         int d = d(intent);
         if (d <= 0) {
             try {
@@ -191,7 +191,7 @@ public final class a extends q {
                 Object newInstance = cls.getConstructor(new Class[0]).newInstance(new Object[0]);
                 Method method = cls.getMethod("onReceive", Context.class, Intent.class);
                 intent.setClassName(packageName, this.d);
-                method.invoke(newInstance, ContextDelegate.getContext(this.f41115a).getApplicationContext(), intent);
+                method.invoke(newInstance, ContextDelegate.getContext(this.f27424a).getApplicationContext(), intent);
                 return;
             } catch (Exception e2) {
                 p.b("CommandWorker", "reflect e: ", e2);
@@ -208,7 +208,7 @@ public final class a extends q {
             }
             hashMap.put(IntentConstant.MESSAGE_ID, String.valueOf(j));
         }
-        String b = z.b(this.f41115a, packageName);
+        String b = z.b(this.f27424a, packageName);
         if (!TextUtils.isEmpty(b)) {
             hashMap.put("remoteAppId", b);
         }

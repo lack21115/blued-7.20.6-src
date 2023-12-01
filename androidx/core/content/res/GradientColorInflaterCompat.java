@@ -22,22 +22,22 @@ public final class GradientColorInflaterCompat {
     public static final class ColorStops {
 
         /* renamed from: a  reason: collision with root package name */
-        final int[] f2434a;
+        final int[] f2386a;
         final float[] b;
 
         ColorStops(int i, int i2) {
-            this.f2434a = new int[]{i, i2};
+            this.f2386a = new int[]{i, i2};
             this.b = new float[]{0.0f, 1.0f};
         }
 
         ColorStops(int i, int i2, int i3) {
-            this.f2434a = new int[]{i, i2, i3};
+            this.f2386a = new int[]{i, i2, i3};
             this.b = new float[]{0.0f, 0.5f, 1.0f};
         }
 
         ColorStops(List<Integer> list, List<Float> list2) {
             int size = list.size();
-            this.f2434a = new int[size];
+            this.f2386a = new int[size];
             this.b = new float[size];
             int i = 0;
             while (true) {
@@ -45,7 +45,7 @@ public final class GradientColorInflaterCompat {
                 if (i2 >= size) {
                     return;
                 }
-                this.f2434a[i2] = list.get(i2).intValue();
+                this.f2386a[i2] = list.get(i2).intValue();
                 this.b[i2] = list2.get(i2).floatValue();
                 i = i2 + 1;
             }
@@ -82,9 +82,9 @@ public final class GradientColorInflaterCompat {
         obtainAttributes.recycle();
         ColorStops a2 = a(b(resources, xmlPullParser, attributeSet, theme), namedColor, namedColor3, hasAttribute, namedColor2);
         if (namedInt != 1) {
-            return namedInt != 2 ? new LinearGradient(namedFloat, namedFloat2, namedFloat3, namedFloat4, a2.f2434a, a2.b, a(namedInt2)) : new SweepGradient(namedFloat5, namedFloat6, a2.f2434a, a2.b);
+            return namedInt != 2 ? new LinearGradient(namedFloat, namedFloat2, namedFloat3, namedFloat4, a2.f2386a, a2.b, a(namedInt2)) : new SweepGradient(namedFloat5, namedFloat6, a2.f2386a, a2.b);
         } else if (namedFloat7 > 0.0f) {
-            return new RadialGradient(namedFloat5, namedFloat6, namedFloat7, a2.f2434a, a2.b, a(namedInt2));
+            return new RadialGradient(namedFloat5, namedFloat6, namedFloat7, a2.f2386a, a2.b, a(namedInt2));
         } else {
             throw new XmlPullParserException("<gradient> tag requires 'gradientRadius' attribute with radial type");
         }

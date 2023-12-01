@@ -44,7 +44,7 @@ public class TinkerTestActivity extends Activity {
             sb.append(String.format("[buildConfig MESSSAGE] %s \n", BuildInfo.d));
             sb.append(String.format("[TINKER_ID] %s \n", ShareTinkerInternals.getManifestTinkerID(getApplicationContext())));
         }
-        sb.append(String.format("[BaseBuildInfo Message] %s \n", BaseBuildInfo.f29769a));
+        sb.append(String.format("[BaseBuildInfo Message] %s \n", BaseBuildInfo.f16079a));
         TextView textView = new TextView(context);
         textView.setText(sb.toString());
         textView.setGravity(19);

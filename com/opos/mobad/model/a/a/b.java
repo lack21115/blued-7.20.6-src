@@ -16,7 +16,7 @@ import java.util.List;
 public class b implements com.opos.mobad.model.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<e> f26376a;
+    private List<e> f12688a;
     private Context b;
 
     public b(Context context) {
@@ -24,12 +24,12 @@ public class b implements com.opos.mobad.model.a.b {
             return;
         }
         this.b = context.getApplicationContext();
-        if (com.opos.mobad.cmn.a.f25816a.booleanValue()) {
+        if (com.opos.mobad.cmn.a.f12128a.booleanValue()) {
             com.opos.cmn.an.i.e.a(new Runnable() { // from class: com.opos.mobad.model.a.a.b.1
                 @Override // java.lang.Runnable
                 public void run() {
                     b bVar = b.this;
-                    bVar.f26376a = bVar.a(bVar.b);
+                    bVar.f12688a = bVar.a(bVar.b);
                 }
             });
         }
@@ -55,11 +55,11 @@ public class b implements com.opos.mobad.model.a.b {
     }
 
     private List<e> a() {
-        List<e> list = this.f26376a;
+        List<e> list = this.f12688a;
         if (list == null || list.size() <= 0) {
-            this.f26376a = a(this.b);
+            this.f12688a = a(this.b);
         }
-        return this.f26376a;
+        return this.f12688a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -98,7 +98,7 @@ public class b implements com.opos.mobad.model.a.b {
 
     @Override // com.opos.mobad.model.a.b
     public d a(byte[] bArr) throws IOException {
-        com.opos.mobad.b.a.d a2 = com.opos.mobad.b.a.d.f25722c.a(bArr);
+        com.opos.mobad.b.a.d a2 = com.opos.mobad.b.a.d.f12034c.a(bArr);
         if (a2 != null) {
             com.opos.cmn.an.f.a.a("", "parseResponse = ", a2);
             return new d(a2);

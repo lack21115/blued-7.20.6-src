@@ -15,7 +15,7 @@ import java.util.jar.JarFile;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final AtomicReference<byte[]> f21408a = new AtomicReference<>();
+    private static final AtomicReference<byte[]> f7802a = new AtomicReference<>();
 
     public static o a(String str) {
         JarFile jarFile = null;

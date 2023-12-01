@@ -15,13 +15,11 @@ public class ViewUtils {
     /* renamed from: com.blued.android.module.media.selector.utils.ViewUtils$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/ViewUtils$1.class */
     class AnonymousClass1 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f15594a;
+        final /* synthetic */ View a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            View view = this.f15594a;
+            View view = this.a;
             if (view != null) {
                 view.setVisibility(8);
             }
@@ -39,13 +37,11 @@ public class ViewUtils {
     /* renamed from: com.blued.android.module.media.selector.utils.ViewUtils$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/ViewUtils$3.class */
     class AnonymousClass3 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f15596a;
+        final /* synthetic */ View a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            View view = this.f15596a;
+            View view = this.a;
             if (view != null) {
                 view.setVisibility(8);
             }
@@ -63,16 +59,14 @@ public class ViewUtils {
     /* renamed from: com.blued.android.module.media.selector.utils.ViewUtils$9  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/ViewUtils$9.class */
     class AnonymousClass9 implements ActionSheet.ActionSheetListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f15601a;
+        final /* synthetic */ String a;
 
         @Override // com.blued.android.module.media.selector.view.ActionSheet.ActionSheetListener
         public void a(ActionSheet actionSheet, int i) {
-            if (StringUtils.b(this.f15601a)) {
+            if (StringUtils.b(this.a)) {
                 return;
             }
-            Tools.d(this.f15601a);
+            Tools.d(this.a);
         }
 
         @Override // com.blued.android.module.media.selector.view.ActionSheet.ActionSheetListener

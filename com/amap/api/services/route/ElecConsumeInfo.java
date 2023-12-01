@@ -6,17 +6,13 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/route/ElecConsumeInfo.class */
 public class ElecConsumeInfo {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f5712a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LatLonPoint f5713c;
+    private LatLonPoint c;
     private List<Integer> d = new ArrayList();
 
     public int getConsumeEnergy() {
-        return this.f5712a;
+        return this.a;
     }
 
     public List<Integer> getLeftEnergy() {
@@ -24,7 +20,7 @@ public class ElecConsumeInfo {
     }
 
     public LatLonPoint getRunOutPoint() {
-        return this.f5713c;
+        return this.c;
     }
 
     public int getRunOutStepIndex() {
@@ -32,7 +28,7 @@ public class ElecConsumeInfo {
     }
 
     public void setConsumeEnergy(int i) {
-        this.f5712a = i;
+        this.a = i;
     }
 
     public void setLeftEnergy(List<Integer> list) {
@@ -40,7 +36,7 @@ public class ElecConsumeInfo {
     }
 
     public void setRunOutPoint(LatLonPoint latLonPoint) {
-        this.f5713c = latLonPoint;
+        this.c = latLonPoint;
     }
 
     public void setRunOutStepIndex(int i) {

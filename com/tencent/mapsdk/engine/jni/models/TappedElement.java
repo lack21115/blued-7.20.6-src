@@ -35,20 +35,20 @@ public class TappedElement {
     public static TappedElement fromBytes(byte[] bArr) {
         TappedElement tappedElement = new TappedElement();
         byte[] bArr2 = new byte[4];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, 0, bArr2, 0, 4);
         tappedElement.type = gc.e(bArr2);
-        System.arraycopy((Object) bArr, 4, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, 4, bArr2, 0, 4);
         tappedElement.pixelX = gc.e(bArr2);
-        System.arraycopy((Object) bArr, 8, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, 8, bArr2, 0, 4);
         tappedElement.pixelY = gc.e(bArr2);
-        System.arraycopy((Object) bArr, 12, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, 12, bArr2, 0, 4);
         tappedElement.itemType = gc.e(bArr2);
-        System.arraycopy((Object) bArr, 16, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, 16, bArr2, 0, 4);
         tappedElement.nameLen = gc.e(bArr2);
         int i = 20;
         if (tappedElement.type != 7) {
             byte[] bArr3 = new byte[64];
-            System.arraycopy((Object) bArr, 20, (Object) bArr3, 0, 64);
+            System.arraycopy(bArr, 20, bArr3, 0, 64);
             i = 84;
             if (tappedElement.type != 8) {
                 tappedElement.name = gc.g(bArr3);
@@ -56,26 +56,26 @@ public class TappedElement {
                 tappedElement.name = gc.a(bArr3, "UTF-8");
             }
         }
-        System.arraycopy((Object) bArr, i, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, i, bArr2, 0, 4);
         int e = gc.e(bArr2);
         int i2 = i + 4;
-        System.arraycopy((Object) bArr, i2, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, i2, bArr2, 0, 4);
         tappedElement.itemId = (e << 32) + gc.e(bArr2);
         int i3 = i2 + 4;
         byte[] bArr4 = new byte[64];
-        System.arraycopy((Object) bArr, i3, (Object) bArr4, 0, 64);
+        System.arraycopy(bArr, i3, bArr4, 0, 64);
         tappedElement.poiId = String.valueOf(gc.a(bArr4, "UTF-8"));
         int i4 = i3 + 64;
         if (tappedElement.itemType == 1) {
             byte[] bArr5 = new byte[128];
-            System.arraycopy((Object) bArr, i4, (Object) bArr5, 0, 128);
+            System.arraycopy(bArr, i4, bArr5, 0, 128);
             int i5 = i4 + 128;
             tappedElement.buildingId = gc.a(bArr5, "UTF-8");
             byte[] bArr6 = new byte[68];
-            System.arraycopy((Object) bArr, i5, (Object) bArr6, 0, 68);
+            System.arraycopy(bArr, i5, bArr6, 0, 68);
             tappedElement.buildingName = gc.g(bArr6);
             byte[] bArr7 = new byte[32];
-            System.arraycopy((Object) bArr, i5 + 68, (Object) bArr7, 0, 32);
+            System.arraycopy(bArr, i5 + 68, bArr7, 0, 32);
             tappedElement.floorName = gc.a(bArr7, "UTF-8");
         }
         return tappedElement;

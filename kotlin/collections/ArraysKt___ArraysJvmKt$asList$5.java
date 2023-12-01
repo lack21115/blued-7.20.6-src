@@ -6,18 +6,16 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/ArraysKt___ArraysJvmKt$asList$5.class */
 public final class ArraysKt___ArraysJvmKt$asList$5 extends AbstractList<Float> implements RandomAccess {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ float[] f42340a;
+    final /* synthetic */ float[] a;
 
     @Override // kotlin.collections.AbstractList, java.util.List
     /* renamed from: a */
     public Float get(int i) {
-        return Float.valueOf(this.f42340a[i]);
+        return Float.valueOf(this.a[i]);
     }
 
     public boolean a(float f) {
-        float[] fArr = this.f42340a;
+        float[] fArr = this.a;
         int length = fArr.length;
         int i = 0;
         while (true) {
@@ -33,7 +31,7 @@ public final class ArraysKt___ArraysJvmKt$asList$5 extends AbstractList<Float> i
     }
 
     public int b(float f) {
-        float[] fArr = this.f42340a;
+        float[] fArr = this.a;
         int length = fArr.length;
         int i = 0;
         while (true) {
@@ -49,7 +47,7 @@ public final class ArraysKt___ArraysJvmKt$asList$5 extends AbstractList<Float> i
     }
 
     public int c(float f) {
-        float[] fArr = this.f42340a;
+        float[] fArr = this.a;
         int length = fArr.length - 1;
         if (length < 0) {
             return -1;
@@ -66,7 +64,7 @@ public final class ArraysKt___ArraysJvmKt$asList$5 extends AbstractList<Float> i
         }
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof Float) {
             return a(((Number) obj).floatValue());
@@ -76,7 +74,7 @@ public final class ArraysKt___ArraysJvmKt$asList$5 extends AbstractList<Float> i
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return this.f42340a.length;
+        return this.a.length;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
@@ -87,9 +85,9 @@ public final class ArraysKt___ArraysJvmKt$asList$5 extends AbstractList<Float> i
         return -1;
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return this.f42340a.length == 0;
+        return this.a.length == 0;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List

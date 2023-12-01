@@ -10,11 +10,11 @@ import java.util.List;
 public class AccessibilityRecordCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AccessibilityRecord f2730a;
+    private final AccessibilityRecord f2682a;
 
     @Deprecated
     public AccessibilityRecordCompat(Object obj) {
-        this.f2730a = (AccessibilityRecord) obj;
+        this.f2682a = (AccessibilityRecord) obj;
     }
 
     public static int getMaxScrollX(AccessibilityRecord accessibilityRecord) {
@@ -38,7 +38,7 @@ public class AccessibilityRecordCompat {
 
     @Deprecated
     public static AccessibilityRecordCompat obtain(AccessibilityRecordCompat accessibilityRecordCompat) {
-        return new AccessibilityRecordCompat(AccessibilityRecord.obtain(accessibilityRecordCompat.f2730a));
+        return new AccessibilityRecordCompat(AccessibilityRecord.obtain(accessibilityRecordCompat.f2682a));
     }
 
     public static void setMaxScrollX(AccessibilityRecord accessibilityRecord, int i) {
@@ -66,105 +66,105 @@ public class AccessibilityRecordCompat {
         }
         if (obj instanceof AccessibilityRecordCompat) {
             AccessibilityRecordCompat accessibilityRecordCompat = (AccessibilityRecordCompat) obj;
-            AccessibilityRecord accessibilityRecord = this.f2730a;
-            return accessibilityRecord == null ? accessibilityRecordCompat.f2730a == null : accessibilityRecord.equals(accessibilityRecordCompat.f2730a);
+            AccessibilityRecord accessibilityRecord = this.f2682a;
+            return accessibilityRecord == null ? accessibilityRecordCompat.f2682a == null : accessibilityRecord.equals(accessibilityRecordCompat.f2682a);
         }
         return false;
     }
 
     @Deprecated
     public int getAddedCount() {
-        return this.f2730a.getAddedCount();
+        return this.f2682a.getAddedCount();
     }
 
     @Deprecated
     public CharSequence getBeforeText() {
-        return this.f2730a.getBeforeText();
+        return this.f2682a.getBeforeText();
     }
 
     @Deprecated
     public CharSequence getClassName() {
-        return this.f2730a.getClassName();
+        return this.f2682a.getClassName();
     }
 
     @Deprecated
     public CharSequence getContentDescription() {
-        return this.f2730a.getContentDescription();
+        return this.f2682a.getContentDescription();
     }
 
     @Deprecated
     public int getCurrentItemIndex() {
-        return this.f2730a.getCurrentItemIndex();
+        return this.f2682a.getCurrentItemIndex();
     }
 
     @Deprecated
     public int getFromIndex() {
-        return this.f2730a.getFromIndex();
+        return this.f2682a.getFromIndex();
     }
 
     @Deprecated
     public Object getImpl() {
-        return this.f2730a;
+        return this.f2682a;
     }
 
     @Deprecated
     public int getItemCount() {
-        return this.f2730a.getItemCount();
+        return this.f2682a.getItemCount();
     }
 
     @Deprecated
     public int getMaxScrollX() {
-        return getMaxScrollX(this.f2730a);
+        return getMaxScrollX(this.f2682a);
     }
 
     @Deprecated
     public int getMaxScrollY() {
-        return getMaxScrollY(this.f2730a);
+        return getMaxScrollY(this.f2682a);
     }
 
     @Deprecated
     public Parcelable getParcelableData() {
-        return this.f2730a.getParcelableData();
+        return this.f2682a.getParcelableData();
     }
 
     @Deprecated
     public int getRemovedCount() {
-        return this.f2730a.getRemovedCount();
+        return this.f2682a.getRemovedCount();
     }
 
     @Deprecated
     public int getScrollX() {
-        return this.f2730a.getScrollX();
+        return this.f2682a.getScrollX();
     }
 
     @Deprecated
     public int getScrollY() {
-        return this.f2730a.getScrollY();
+        return this.f2682a.getScrollY();
     }
 
     @Deprecated
     public AccessibilityNodeInfoCompat getSource() {
-        return AccessibilityNodeInfoCompat.wrapNonNullInstance(this.f2730a.getSource());
+        return AccessibilityNodeInfoCompat.wrapNonNullInstance(this.f2682a.getSource());
     }
 
     @Deprecated
     public List<CharSequence> getText() {
-        return this.f2730a.getText();
+        return this.f2682a.getText();
     }
 
     @Deprecated
     public int getToIndex() {
-        return this.f2730a.getToIndex();
+        return this.f2682a.getToIndex();
     }
 
     @Deprecated
     public int getWindowId() {
-        return this.f2730a.getWindowId();
+        return this.f2682a.getWindowId();
     }
 
     @Deprecated
     public int hashCode() {
-        AccessibilityRecord accessibilityRecord = this.f2730a;
+        AccessibilityRecord accessibilityRecord = this.f2682a;
         if (accessibilityRecord == null) {
             return 0;
         }
@@ -173,136 +173,136 @@ public class AccessibilityRecordCompat {
 
     @Deprecated
     public boolean isChecked() {
-        return this.f2730a.isChecked();
+        return this.f2682a.isChecked();
     }
 
     @Deprecated
     public boolean isEnabled() {
-        return this.f2730a.isEnabled();
+        return this.f2682a.isEnabled();
     }
 
     @Deprecated
     public boolean isFullScreen() {
-        return this.f2730a.isFullScreen();
+        return this.f2682a.isFullScreen();
     }
 
     @Deprecated
     public boolean isPassword() {
-        return this.f2730a.isPassword();
+        return this.f2682a.isPassword();
     }
 
     @Deprecated
     public boolean isScrollable() {
-        return this.f2730a.isScrollable();
+        return this.f2682a.isScrollable();
     }
 
     @Deprecated
     public void recycle() {
-        this.f2730a.recycle();
+        this.f2682a.recycle();
     }
 
     @Deprecated
     public void setAddedCount(int i) {
-        this.f2730a.setAddedCount(i);
+        this.f2682a.setAddedCount(i);
     }
 
     @Deprecated
     public void setBeforeText(CharSequence charSequence) {
-        this.f2730a.setBeforeText(charSequence);
+        this.f2682a.setBeforeText(charSequence);
     }
 
     @Deprecated
     public void setChecked(boolean z) {
-        this.f2730a.setChecked(z);
+        this.f2682a.setChecked(z);
     }
 
     @Deprecated
     public void setClassName(CharSequence charSequence) {
-        this.f2730a.setClassName(charSequence);
+        this.f2682a.setClassName(charSequence);
     }
 
     @Deprecated
     public void setContentDescription(CharSequence charSequence) {
-        this.f2730a.setContentDescription(charSequence);
+        this.f2682a.setContentDescription(charSequence);
     }
 
     @Deprecated
     public void setCurrentItemIndex(int i) {
-        this.f2730a.setCurrentItemIndex(i);
+        this.f2682a.setCurrentItemIndex(i);
     }
 
     @Deprecated
     public void setEnabled(boolean z) {
-        this.f2730a.setEnabled(z);
+        this.f2682a.setEnabled(z);
     }
 
     @Deprecated
     public void setFromIndex(int i) {
-        this.f2730a.setFromIndex(i);
+        this.f2682a.setFromIndex(i);
     }
 
     @Deprecated
     public void setFullScreen(boolean z) {
-        this.f2730a.setFullScreen(z);
+        this.f2682a.setFullScreen(z);
     }
 
     @Deprecated
     public void setItemCount(int i) {
-        this.f2730a.setItemCount(i);
+        this.f2682a.setItemCount(i);
     }
 
     @Deprecated
     public void setMaxScrollX(int i) {
-        setMaxScrollX(this.f2730a, i);
+        setMaxScrollX(this.f2682a, i);
     }
 
     @Deprecated
     public void setMaxScrollY(int i) {
-        setMaxScrollY(this.f2730a, i);
+        setMaxScrollY(this.f2682a, i);
     }
 
     @Deprecated
     public void setParcelableData(Parcelable parcelable) {
-        this.f2730a.setParcelableData(parcelable);
+        this.f2682a.setParcelableData(parcelable);
     }
 
     @Deprecated
     public void setPassword(boolean z) {
-        this.f2730a.setPassword(z);
+        this.f2682a.setPassword(z);
     }
 
     @Deprecated
     public void setRemovedCount(int i) {
-        this.f2730a.setRemovedCount(i);
+        this.f2682a.setRemovedCount(i);
     }
 
     @Deprecated
     public void setScrollX(int i) {
-        this.f2730a.setScrollX(i);
+        this.f2682a.setScrollX(i);
     }
 
     @Deprecated
     public void setScrollY(int i) {
-        this.f2730a.setScrollY(i);
+        this.f2682a.setScrollY(i);
     }
 
     @Deprecated
     public void setScrollable(boolean z) {
-        this.f2730a.setScrollable(z);
+        this.f2682a.setScrollable(z);
     }
 
     @Deprecated
     public void setSource(View view) {
-        this.f2730a.setSource(view);
+        this.f2682a.setSource(view);
     }
 
     @Deprecated
     public void setSource(View view, int i) {
-        setSource(this.f2730a, view, i);
+        setSource(this.f2682a, view, i);
     }
 
     @Deprecated
     public void setToIndex(int i) {
-        this.f2730a.setToIndex(i);
+        this.f2682a.setToIndex(i);
     }
 }

@@ -7,9 +7,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/ConcurrentKt.class */
 public final class ConcurrentKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Method f43519a;
+    private static final Method a;
 
     static {
         Method method;
@@ -18,6 +16,6 @@ public final class ConcurrentKt {
         } catch (Throwable th) {
             method = null;
         }
-        f43519a = method;
+        a = method;
     }
 }

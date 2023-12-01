@@ -16,10 +16,10 @@ public abstract class eb implements NetAdapter {
     private static final String h = "NetImpl";
 
     /* renamed from: a  reason: collision with root package name */
-    public Bundle f37408a;
+    public Bundle f23717a;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f37409c;
+    private boolean f23718c;
     private List<HttpProxyRule> d;
     private String g;
     private boolean b = true;
@@ -30,7 +30,7 @@ public abstract class eb implements NetAdapter {
         if (str == null) {
             return "GBK";
         }
-        String[] split = str.split(";");
+        String[] split = str.split(com.huawei.openalliance.ad.constant.t.aE);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -74,7 +74,7 @@ public abstract class eb implements NetAdapter {
     }
 
     public void b(boolean z) {
-        this.f37409c = z;
+        this.f23718c = z;
     }
 
     @Override // com.tencent.map.tools.net.NetAdapter
@@ -117,7 +117,7 @@ public abstract class eb implements NetAdapter {
             b(netConfig.getSecretKey());
             a(netConfig.getProcessor());
             Bundle arguments = netConfig.getArguments();
-            this.f37408a = arguments;
+            this.f23717a = arguments;
             a(context, arguments);
         } catch (Exception e) {
             na.b(h, "initNet error:" + e.toString());
@@ -131,6 +131,6 @@ public abstract class eb implements NetAdapter {
 
     @Override // com.tencent.map.tools.net.NetAdapter
     public boolean isLogEnable() {
-        return this.f37409c;
+        return this.f23718c;
     }
 }

@@ -19,11 +19,11 @@ public class h implements o, com.huawei.openalliance.ad.inter.listeners.i {
     com.huawei.openalliance.ad.inter.m V;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f22488a = false;
+    private boolean f8880a = false;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f22489c;
+    private boolean f8881c;
 
     public h(Context context, String str) {
         this.S = context.getApplicationContext();
@@ -97,7 +97,7 @@ public class h implements o, com.huawei.openalliance.ad.inter.listeners.i {
     public void Code(int i, boolean z) {
         Code(dq.Code(i));
         if (z) {
-            this.f22488a = false;
+            this.f8880a = false;
         }
     }
 
@@ -124,10 +124,10 @@ public class h implements o, com.huawei.openalliance.ad.inter.listeners.i {
         V(this.Code);
         com.huawei.openalliance.ad.inter.m mVar = this.V;
         if (mVar != null) {
-            this.f22488a = true;
+            this.f8880a = true;
             mVar.V(i);
             this.V.Code(this);
-            this.V.I(this.f22489c);
+            this.V.I(this.f8881c);
             this.V.Code(this.b, false);
         }
     }
@@ -145,7 +145,7 @@ public class h implements o, com.huawei.openalliance.ad.inter.listeners.i {
     @Override // com.huawei.openalliance.ad.inter.listeners.i
     public void Code(Map<String, List<com.huawei.openalliance.ad.inter.data.g>> map, boolean z) {
         if (z) {
-            this.f22488a = false;
+            this.f8880a = false;
         }
         if (map == null || map.size() <= 0) {
             ge.V("AdLoadMediator", " ads map is empty.");
@@ -175,11 +175,11 @@ public class h implements o, com.huawei.openalliance.ad.inter.listeners.i {
 
     @Override // com.huawei.hms.ads.o
     public void Code(boolean z) {
-        this.f22489c = z;
+        this.f8881c = z;
     }
 
     @Override // com.huawei.hms.ads.o
     public boolean Code() {
-        return this.f22488a;
+        return this.f8880a;
     }
 }

@@ -27,19 +27,17 @@ public class RideRouteResult extends RouteResult implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<RidePath> f5722a;
+    private List<RidePath> a;
     private RouteSearch.RideRouteQuery b;
 
     public RideRouteResult() {
-        this.f5722a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public RideRouteResult(Parcel parcel) {
         super(parcel);
-        this.f5722a = new ArrayList();
-        this.f5722a = parcel.createTypedArrayList(RidePath.CREATOR);
+        this.a = new ArrayList();
+        this.a = parcel.createTypedArrayList(RidePath.CREATOR);
         this.b = (RouteSearch.RideRouteQuery) parcel.readParcelable(RouteSearch.RideRouteQuery.class.getClassLoader());
     }
 
@@ -49,7 +47,7 @@ public class RideRouteResult extends RouteResult implements Parcelable {
     }
 
     public List<RidePath> getPaths() {
-        return this.f5722a;
+        return this.a;
     }
 
     public RouteSearch.RideRouteQuery getRideQuery() {
@@ -57,7 +55,7 @@ public class RideRouteResult extends RouteResult implements Parcelable {
     }
 
     public void setPaths(List<RidePath> list) {
-        this.f5722a = list;
+        this.a = list;
     }
 
     public void setRideQuery(RouteSearch.RideRouteQuery rideRouteQuery) {
@@ -67,7 +65,7 @@ public class RideRouteResult extends RouteResult implements Parcelable {
     @Override // com.amap.api.services.route.RouteResult, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeTypedList(this.f5722a);
+        parcel.writeTypedList(this.a);
         parcel.writeParcelable(this.b, i);
     }
 }

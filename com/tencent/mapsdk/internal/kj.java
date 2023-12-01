@@ -1,5 +1,6 @@
 package com.tencent.mapsdk.internal;
 
+import android.opengl.EGL14;
 import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,7 +27,7 @@ public class kj extends hj implements ae, hj.n, me, x1 {
 
         @Override // com.tencent.mapsdk.internal.hj.g
         public EGLContext a(EGL10 egl10, EGLDisplay eGLDisplay, EGLConfig eGLConfig) {
-            EGLContext eglCreateContext = egl10.eglCreateContext(eGLDisplay, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, 12344});
+            EGLContext eglCreateContext = egl10.eglCreateContext(eGLDisplay, eGLConfig, EGL10.EGL_NO_CONTEXT, new int[]{12440, 2, EGL14.EGL_NONE});
             if (kj.this.G != null) {
                 kj.this.G.g();
             }
@@ -185,7 +186,7 @@ public class kj extends hj implements ae, hj.n, me, x1 {
         }
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.tencent.mapsdk.internal.x1
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         yi yiVar = this.G;
@@ -198,7 +199,7 @@ public class kj extends hj implements ae, hj.n, me, x1 {
     public void onSurfaceChanged(Object obj, int i, int i2) {
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.tencent.mapsdk.internal.x1
     public boolean onTouchEvent(MotionEvent motionEvent) {
         return false;
     }

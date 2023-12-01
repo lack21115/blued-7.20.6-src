@@ -33,12 +33,10 @@ public final class GroupChatGrpc {
         GroupChatBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return PrivateChatOuterClass.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("GroupChat");
         }
@@ -51,8 +49,8 @@ public final class GroupChatGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public GroupChatBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public GroupChatBlockingStub m2432build(Channel channel, CallOptions callOptions) {
             return new GroupChatBlockingStub(channel, callOptions);
         }
 
@@ -75,8 +73,8 @@ public final class GroupChatGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public GroupChatFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public GroupChatFutureStub m2433build(Channel channel, CallOptions callOptions) {
             return new GroupChatFutureStub(channel, callOptions);
         }
 
@@ -106,7 +104,6 @@ public final class GroupChatGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -119,8 +116,8 @@ public final class GroupChatGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public GroupChatStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public GroupChatStub m2434build(Channel channel, CallOptions callOptions) {
             return new GroupChatStub(channel, callOptions);
         }
 
@@ -139,12 +136,10 @@ public final class GroupChatGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             if (this.methodId != 0) {
                 throw new AssertionError();
@@ -199,30 +194,27 @@ public final class GroupChatGrpc {
     }
 
     public static GroupChatBlockingStub newBlockingStub(Channel channel) {
-        return (GroupChatBlockingStub) GroupChatBlockingStub.newStub(new AbstractStub.StubFactory<GroupChatBlockingStub>() { // from class: com.blued.im.private_chat.GroupChatGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public GroupChatBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return GroupChatBlockingStub.newStub(new AbstractStub.StubFactory<GroupChatBlockingStub>() { // from class: com.blued.im.private_chat.GroupChatGrpc.2
+            /* renamed from: newStub */
+            public GroupChatBlockingStub m2430newStub(Channel channel2, CallOptions callOptions) {
                 return new GroupChatBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static GroupChatFutureStub newFutureStub(Channel channel) {
-        return (GroupChatFutureStub) GroupChatFutureStub.newStub(new AbstractStub.StubFactory<GroupChatFutureStub>() { // from class: com.blued.im.private_chat.GroupChatGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public GroupChatFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return GroupChatFutureStub.newStub(new AbstractStub.StubFactory<GroupChatFutureStub>() { // from class: com.blued.im.private_chat.GroupChatGrpc.3
+            /* renamed from: newStub */
+            public GroupChatFutureStub m2431newStub(Channel channel2, CallOptions callOptions) {
                 return new GroupChatFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static GroupChatStub newStub(Channel channel) {
-        return (GroupChatStub) GroupChatStub.newStub(new AbstractStub.StubFactory<GroupChatStub>() { // from class: com.blued.im.private_chat.GroupChatGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public GroupChatStub newStub(Channel channel2, CallOptions callOptions) {
+        return GroupChatStub.newStub(new AbstractStub.StubFactory<GroupChatStub>() { // from class: com.blued.im.private_chat.GroupChatGrpc.1
+            /* renamed from: newStub */
+            public GroupChatStub m2429newStub(Channel channel2, CallOptions callOptions) {
                 return new GroupChatStub(channel2, callOptions);
             }
         }, channel);

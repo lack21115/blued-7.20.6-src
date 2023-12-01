@@ -1,7 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/RestoreConfigure.class */
 public class RestoreConfigure {
     public CASJobParameters casJobParameters;
@@ -12,7 +10,7 @@ public class RestoreConfigure {
         public String tier = Tier.Standard.getTier();
 
         public String toString() {
-            return "{CASJobParameters:\nTier:" + this.tier + "\n" + i.d;
+            return "{CASJobParameters:\nTier:" + this.tier + "\n}";
         }
     }
 
@@ -43,7 +41,7 @@ public class RestoreConfigure {
             sb.append(cASJobParameters.toString());
             sb.append("\n");
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

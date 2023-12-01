@@ -1,6 +1,5 @@
 package com.soft.blued.ui.setting.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -45,7 +44,7 @@ public class BluedSkinFragment extends MvpFragment<MvpPresenter> implements View
     CheckedTextView tvNomarl;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, BluedSkinFragment.class, null);
+        TerminalActivity.d(context, BluedSkinFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -54,15 +53,12 @@ public class BluedSkinFragment extends MvpFragment<MvpPresenter> implements View
         BluedPreferences.O(z);
         if (z) {
             BluedSkinUtils.a("night.skin", new BluedSkinLoaderListener() { // from class: com.soft.blued.ui.setting.fragment.BluedSkinFragment.3
-                @Override // com.blued.android.core.utils.skin.listener.BluedSkinLoaderListener
                 public void a() {
                 }
 
-                @Override // com.blued.android.core.utils.skin.listener.BluedSkinLoaderListener
                 public void a(String str) {
                 }
 
-                @Override // com.blued.android.core.utils.skin.listener.BluedSkinLoaderListener
                 public void b() {
                 }
             });
@@ -101,7 +97,6 @@ public class BluedSkinFragment extends MvpFragment<MvpPresenter> implements View
         this.tvNomarl.setVisibility(0);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.llTitle.setCenterText(getResources().getString(R.string.blued_dark_mode));
@@ -139,14 +134,12 @@ public class BluedSkinFragment extends MvpFragment<MvpPresenter> implements View
         });
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
-        getActivity().findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
-        StatusBarHelper.a((Activity) getActivity());
+        getActivity().findViewById(android.R.id.content).setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
+        StatusBarHelper.a(getActivity());
         StatusBarHelper.a(getActivity(), BluedSkinUtils.a(getContext(), AppInfo.k()));
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_skin_layout;
     }
@@ -167,13 +160,11 @@ public class BluedSkinFragment extends MvpFragment<MvpPresenter> implements View
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         BluedSkinUtils.b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         BluedSkinUtils.a(this);

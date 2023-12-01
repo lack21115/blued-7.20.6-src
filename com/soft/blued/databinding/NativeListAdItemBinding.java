@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class NativeListAdItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29485a;
+    private final FrameLayout f15795a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29485a;
+        return this.f15795a;
     }
 }

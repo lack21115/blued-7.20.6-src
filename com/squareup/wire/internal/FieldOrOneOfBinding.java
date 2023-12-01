@@ -22,9 +22,8 @@ public abstract class FieldOrOneOfBinding<M, B> {
             this.this$0 = this;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // kotlin.jvm.functions.Function0
-        public final ProtoAdapter<Object> invoke() {
+        /* renamed from: invoke */
+        public final ProtoAdapter<Object> m6710invoke() {
             return this.this$0.isMap() ? ProtoAdapter.Companion.newMapAdapter(this.this$0.getKeyAdapter(), this.this$0.getSingleAdapter()) : this.this$0.getSingleAdapter().withLabel$wire_runtime(this.this$0.getLabel());
         }
     });

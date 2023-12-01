@@ -173,8 +173,8 @@ public class ActionMenuItem implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public MenuItem setAlphabeticShortcut(char c2) {
-        this.mShortcutAlphabeticChar = c2;
+    public MenuItem setAlphabeticShortcut(char c) {
+        this.mShortcutAlphabeticChar = c;
         return this;
     }
 
@@ -222,8 +222,8 @@ public class ActionMenuItem implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public MenuItem setNumericShortcut(char c2) {
-        this.mShortcutNumericChar = c2;
+    public MenuItem setNumericShortcut(char c) {
+        this.mShortcutNumericChar = c;
         return this;
     }
 
@@ -239,9 +239,9 @@ public class ActionMenuItem implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public MenuItem setShortcut(char c2, char c3) {
-        this.mShortcutNumericChar = c2;
-        this.mShortcutAlphabeticChar = c3;
+    public MenuItem setShortcut(char c, char c2) {
+        this.mShortcutNumericChar = c;
+        this.mShortcutAlphabeticChar = c2;
         return this;
     }
 

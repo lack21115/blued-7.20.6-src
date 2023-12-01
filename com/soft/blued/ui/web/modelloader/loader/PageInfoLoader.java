@@ -2,7 +2,6 @@ package com.soft.blued.ui.web.modelloader.loader;
 
 import android.text.TextUtils;
 import androidx.lifecycle.Lifecycle;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.ModelLoaderRegistry;
 import com.blued.android.module.common.web.jsbridge.BridgeManager;
 import com.blued.android.module.common.web.modelloader.loader.ModelLoader;
@@ -23,7 +22,6 @@ public class PageInfoLoader implements ModelLoader<String> {
             this.bridgeManager = bridgeManager;
         }
 
-        @Override // com.blued.android.module.common.web.modelloader.loader.ModelLoader.ModelLoaderFactory
         public ModelLoader<String> build(ModelLoaderRegistry modelLoaderRegistry) {
             return new PageInfoLoader(this.bridgeManager, this.lifecycle);
         }
@@ -34,13 +32,11 @@ public class PageInfoLoader implements ModelLoader<String> {
         this.lifecycle = lifecycle;
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.loader.ModelLoader
     public ModelLoader.LoadData buildData(String str) {
         return new ModelLoader.LoadData(str, new PageInfoFetcher(this.bridgeManager, this.lifecycle));
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.loader.ModelLoader
     public boolean handles(String str) {
-        return TextUtils.equals(str, LoaderConstants.PAGE_INFO);
+        return TextUtils.equals(str, "pageInfo");
     }
 }

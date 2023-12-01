@@ -51,10 +51,10 @@ public final class NotificationManagerCompat {
     private final NotificationManager e;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f2376a = new Object();
+    private static final Object f2328a = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static Set<String> f2377c = new HashSet();
+    private static Set<String> f2329c = new HashSet();
     private static final Object f = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -62,38 +62,38 @@ public final class NotificationManagerCompat {
     public static class CancelTask implements Task {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f2378a;
+        final String f2330a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final String f2379c;
+        final String f2331c;
         final boolean d;
 
         CancelTask(String str) {
-            this.f2378a = str;
+            this.f2330a = str;
             this.b = 0;
-            this.f2379c = null;
+            this.f2331c = null;
             this.d = true;
         }
 
         CancelTask(String str, int i, String str2) {
-            this.f2378a = str;
+            this.f2330a = str;
             this.b = i;
-            this.f2379c = str2;
+            this.f2331c = str2;
             this.d = false;
         }
 
         @Override // androidx.core.app.NotificationManagerCompat.Task
         public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
             if (this.d) {
-                iNotificationSideChannel.cancelAll(this.f2378a);
+                iNotificationSideChannel.cancelAll(this.f2330a);
             } else {
-                iNotificationSideChannel.cancel(this.f2378a, this.b, this.f2379c);
+                iNotificationSideChannel.cancel(this.f2330a, this.b, this.f2331c);
             }
         }
 
         public String toString() {
-            return "CancelTask[packageName:" + this.f2378a + ", id:" + this.b + ", tag:" + this.f2379c + ", all:" + this.d + "]";
+            return "CancelTask[packageName:" + this.f2330a + ", id:" + this.b + ", tag:" + this.f2331c + ", all:" + this.d + "]";
         }
     }
 
@@ -102,27 +102,27 @@ public final class NotificationManagerCompat {
     public static class NotifyTask implements Task {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f2380a;
+        final String f2332a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final String f2381c;
+        final String f2333c;
         final Notification d;
 
         NotifyTask(String str, int i, String str2, Notification notification) {
-            this.f2380a = str;
+            this.f2332a = str;
             this.b = i;
-            this.f2381c = str2;
+            this.f2333c = str2;
             this.d = notification;
         }
 
         @Override // androidx.core.app.NotificationManagerCompat.Task
         public void send(INotificationSideChannel iNotificationSideChannel) throws RemoteException {
-            iNotificationSideChannel.notify(this.f2380a, this.b, this.f2381c, this.d);
+            iNotificationSideChannel.notify(this.f2332a, this.b, this.f2333c, this.d);
         }
 
         public String toString() {
-            return "NotifyTask[packageName:" + this.f2380a + ", id:" + this.b + ", tag:" + this.f2381c + "]";
+            return "NotifyTask[packageName:" + this.f2332a + ", id:" + this.b + ", tag:" + this.f2333c + "]";
         }
     }
 
@@ -130,11 +130,11 @@ public final class NotificationManagerCompat {
     static class ServiceConnectedEvent {
 
         /* renamed from: a  reason: collision with root package name */
-        final ComponentName f2382a;
+        final ComponentName f2334a;
         final IBinder b;
 
         ServiceConnectedEvent(ComponentName componentName, IBinder iBinder) {
-            this.f2382a = componentName;
+            this.f2334a = componentName;
             this.b = iBinder;
         }
     }
@@ -144,11 +144,11 @@ public final class NotificationManagerCompat {
     public static class SideChannelManager implements ServiceConnection, Handler.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f2383a;
+        private final Context f2335a;
         private final HandlerThread b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Handler f2384c;
+        private final Handler f2336c;
         private final Map<ComponentName, ListenerRecord> d = new HashMap();
         private Set<String> e = new HashSet();
 
@@ -157,34 +157,34 @@ public final class NotificationManagerCompat {
         public static class ListenerRecord {
 
             /* renamed from: a  reason: collision with root package name */
-            final ComponentName f2385a;
+            final ComponentName f2337a;
 
             /* renamed from: c  reason: collision with root package name */
-            INotificationSideChannel f2386c;
+            INotificationSideChannel f2338c;
             boolean b = false;
             ArrayDeque<Task> d = new ArrayDeque<>();
             int e = 0;
 
             ListenerRecord(ComponentName componentName) {
-                this.f2385a = componentName;
+                this.f2337a = componentName;
             }
         }
 
         SideChannelManager(Context context) {
-            this.f2383a = context;
+            this.f2335a = context;
             HandlerThread handlerThread = new HandlerThread("NotificationManagerCompat");
             this.b = handlerThread;
             handlerThread.start();
-            this.f2384c = new Handler(this.b.getLooper(), this);
+            this.f2336c = new Handler(this.b.getLooper(), this);
         }
 
         private void a() {
-            Set<String> enabledListenerPackages = NotificationManagerCompat.getEnabledListenerPackages(this.f2383a);
+            Set<String> enabledListenerPackages = NotificationManagerCompat.getEnabledListenerPackages(this.f2335a);
             if (enabledListenerPackages.equals(this.e)) {
                 return;
             }
             this.e = enabledListenerPackages;
-            List<ResolveInfo> queryIntentServices = this.f2383a.getPackageManager().queryIntentServices(new Intent().setAction(NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL), 0);
+            List<ResolveInfo> queryIntentServices = this.f2335a.getPackageManager().queryIntentServices(new Intent().setAction(NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL), 0);
             HashSet<ComponentName> hashSet = new HashSet();
             for (ResolveInfo resolveInfo : queryIntentServices) {
                 if (enabledListenerPackages.contains(resolveInfo.serviceInfo.packageName)) {
@@ -227,7 +227,7 @@ public final class NotificationManagerCompat {
         private void a(ComponentName componentName, IBinder iBinder) {
             ListenerRecord listenerRecord = this.d.get(componentName);
             if (listenerRecord != null) {
-                listenerRecord.f2386c = INotificationSideChannel.Stub.asInterface(iBinder);
+                listenerRecord.f2338c = INotificationSideChannel.Stub.asInterface(iBinder);
                 listenerRecord.e = 0;
                 d(listenerRecord);
             }
@@ -245,12 +245,12 @@ public final class NotificationManagerCompat {
             if (listenerRecord.b) {
                 return true;
             }
-            listenerRecord.b = this.f2383a.bindService(new Intent(NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL).setComponent(listenerRecord.f2385a), this, 33);
+            listenerRecord.b = this.f2335a.bindService(new Intent(NotificationManagerCompat.ACTION_BIND_SIDE_CHANNEL).setComponent(listenerRecord.f2337a), this, 33);
             if (listenerRecord.b) {
                 listenerRecord.e = 0;
             } else {
-                Log.w("NotifManCompat", "Unable to bind to listener " + listenerRecord.f2385a);
-                this.f2383a.unbindService(this);
+                Log.w("NotifManCompat", "Unable to bind to listener " + listenerRecord.f2337a);
+                this.f2335a.unbindService(this);
             }
             return listenerRecord.b;
         }
@@ -264,14 +264,14 @@ public final class NotificationManagerCompat {
 
         private void b(ListenerRecord listenerRecord) {
             if (listenerRecord.b) {
-                this.f2383a.unbindService(this);
+                this.f2335a.unbindService(this);
                 listenerRecord.b = false;
             }
-            listenerRecord.f2386c = null;
+            listenerRecord.f2338c = null;
         }
 
         private void c(ListenerRecord listenerRecord) {
-            if (this.f2384c.hasMessages(3, listenerRecord.f2385a)) {
+            if (this.f2336c.hasMessages(3, listenerRecord.f2337a)) {
                 return;
             }
             listenerRecord.e++;
@@ -280,21 +280,21 @@ public final class NotificationManagerCompat {
                 if (Log.isLoggable("NotifManCompat", 3)) {
                     Log.d("NotifManCompat", "Scheduling retry for " + i + " ms");
                 }
-                this.f2384c.sendMessageDelayed(this.f2384c.obtainMessage(3, listenerRecord.f2385a), i);
+                this.f2336c.sendMessageDelayed(this.f2336c.obtainMessage(3, listenerRecord.f2337a), i);
                 return;
             }
-            Log.w("NotifManCompat", "Giving up on delivering " + listenerRecord.d.size() + " tasks to " + listenerRecord.f2385a + " after " + listenerRecord.e + " retries");
+            Log.w("NotifManCompat", "Giving up on delivering " + listenerRecord.d.size() + " tasks to " + listenerRecord.f2337a + " after " + listenerRecord.e + " retries");
             listenerRecord.d.clear();
         }
 
         private void d(ListenerRecord listenerRecord) {
             if (Log.isLoggable("NotifManCompat", 3)) {
-                Log.d("NotifManCompat", "Processing component " + listenerRecord.f2385a + ", " + listenerRecord.d.size() + " queued tasks");
+                Log.d("NotifManCompat", "Processing component " + listenerRecord.f2337a + ", " + listenerRecord.d.size() + " queued tasks");
             }
             if (listenerRecord.d.isEmpty()) {
                 return;
             }
-            if (!a(listenerRecord) || listenerRecord.f2386c == null) {
+            if (!a(listenerRecord) || listenerRecord.f2338c == null) {
                 c(listenerRecord);
                 return;
             }
@@ -307,14 +307,14 @@ public final class NotificationManagerCompat {
                     if (Log.isLoggable("NotifManCompat", 3)) {
                         Log.d("NotifManCompat", "Sending task " + peek);
                     }
-                    peek.send(listenerRecord.f2386c);
+                    peek.send(listenerRecord.f2338c);
                     listenerRecord.d.remove();
                 } catch (DeadObjectException e) {
                     if (Log.isLoggable("NotifManCompat", 3)) {
-                        Log.d("NotifManCompat", "Remote service has died: " + listenerRecord.f2385a);
+                        Log.d("NotifManCompat", "Remote service has died: " + listenerRecord.f2337a);
                     }
                 } catch (RemoteException e2) {
-                    Log.w("NotifManCompat", "RemoteException communicating with " + listenerRecord.f2385a, e2);
+                    Log.w("NotifManCompat", "RemoteException communicating with " + listenerRecord.f2337a, e2);
                 }
             }
             if (listenerRecord.d.isEmpty()) {
@@ -331,7 +331,7 @@ public final class NotificationManagerCompat {
                 return true;
             } else if (i == 1) {
                 ServiceConnectedEvent serviceConnectedEvent = (ServiceConnectedEvent) message.obj;
-                a(serviceConnectedEvent.f2382a, serviceConnectedEvent.b);
+                a(serviceConnectedEvent.f2334a, serviceConnectedEvent.b);
                 return true;
             } else if (i == 2) {
                 a((ComponentName) message.obj);
@@ -349,7 +349,7 @@ public final class NotificationManagerCompat {
             if (Log.isLoggable("NotifManCompat", 3)) {
                 Log.d("NotifManCompat", "Connected to service " + componentName);
             }
-            this.f2384c.obtainMessage(1, new ServiceConnectedEvent(componentName, iBinder)).sendToTarget();
+            this.f2336c.obtainMessage(1, new ServiceConnectedEvent(componentName, iBinder)).sendToTarget();
         }
 
         @Override // android.content.ServiceConnection
@@ -357,11 +357,11 @@ public final class NotificationManagerCompat {
             if (Log.isLoggable("NotifManCompat", 3)) {
                 Log.d("NotifManCompat", "Disconnected from service " + componentName);
             }
-            this.f2384c.obtainMessage(2, componentName).sendToTarget();
+            this.f2336c.obtainMessage(2, componentName).sendToTarget();
         }
 
         public void queueTask(Task task) {
-            this.f2384c.obtainMessage(0, task).sendToTarget();
+            this.f2336c.obtainMessage(0, task).sendToTarget();
         }
     }
 
@@ -397,7 +397,7 @@ public final class NotificationManagerCompat {
     public static Set<String> getEnabledListenerPackages(Context context) {
         Set<String> set;
         String string = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ENABLED_NOTIFICATION_LISTENERS);
-        synchronized (f2376a) {
+        synchronized (f2328a) {
             if (string != null) {
                 if (!string.equals(b)) {
                     String[] split = string.split(":", -1);
@@ -415,11 +415,11 @@ public final class NotificationManagerCompat {
                         }
                         i = i2 + 1;
                     }
-                    f2377c = hashSet;
+                    f2329c = hashSet;
                     b = string;
                 }
             }
-            set = f2377c;
+            set = f2329c;
         }
         return set;
     }

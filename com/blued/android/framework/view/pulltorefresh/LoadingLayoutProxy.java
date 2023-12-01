@@ -6,19 +6,17 @@ import java.util.Iterator;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/LoadingLayoutProxy.class */
 public class LoadingLayoutProxy implements ILoadingLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final HashSet<LoadingLayout> f10216a = new HashSet<>();
+    private final HashSet<LoadingLayout> a = new HashSet<>();
 
     public void a(LoadingLayout loadingLayout) {
         if (loadingLayout != null) {
-            this.f10216a.add(loadingLayout);
+            this.a.add(loadingLayout);
         }
     }
 
     @Override // com.blued.android.framework.view.pulltorefresh.ILoadingLayout
     public void setLastUpdatedLabel(CharSequence charSequence) {
-        Iterator<LoadingLayout> it = this.f10216a.iterator();
+        Iterator<LoadingLayout> it = this.a.iterator();
         while (it.hasNext()) {
             it.next().setLastUpdatedLabel(charSequence);
         }
@@ -26,7 +24,7 @@ public class LoadingLayoutProxy implements ILoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.ILoadingLayout
     public void setLoadingDrawable(Drawable drawable) {
-        Iterator<LoadingLayout> it = this.f10216a.iterator();
+        Iterator<LoadingLayout> it = this.a.iterator();
         while (it.hasNext()) {
             it.next().setLoadingDrawable(drawable);
         }
@@ -34,7 +32,7 @@ public class LoadingLayoutProxy implements ILoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.ILoadingLayout
     public void setPullLabel(CharSequence charSequence) {
-        Iterator<LoadingLayout> it = this.f10216a.iterator();
+        Iterator<LoadingLayout> it = this.a.iterator();
         while (it.hasNext()) {
             it.next().setPullLabel(charSequence);
         }
@@ -42,7 +40,7 @@ public class LoadingLayoutProxy implements ILoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.ILoadingLayout
     public void setRefreshingLabel(CharSequence charSequence) {
-        Iterator<LoadingLayout> it = this.f10216a.iterator();
+        Iterator<LoadingLayout> it = this.a.iterator();
         while (it.hasNext()) {
             it.next().setRefreshingLabel(charSequence);
         }
@@ -50,7 +48,7 @@ public class LoadingLayoutProxy implements ILoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.ILoadingLayout
     public void setReleaseLabel(CharSequence charSequence) {
-        Iterator<LoadingLayout> it = this.f10216a.iterator();
+        Iterator<LoadingLayout> it = this.a.iterator();
         while (it.hasNext()) {
             it.next().setReleaseLabel(charSequence);
         }

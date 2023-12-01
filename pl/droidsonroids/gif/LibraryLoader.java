@@ -4,9 +4,7 @@ import android.content.Context;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/LibraryLoader.class */
 public class LibraryLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Context f44165a;
+    private static Context a;
 
     private LibraryLoader() {
     }
@@ -25,13 +23,13 @@ public class LibraryLoader {
     }
 
     private static Context getContext() {
-        if (f44165a == null) {
+        if (a == null) {
             try {
-                f44165a = (Context) Class.forName("android.app.ActivityThread").getDeclaredMethod("currentApplication", new Class[0]).invoke(null, new Object[0]);
+                a = (Context) Class.forName("android.app.ActivityThread").getDeclaredMethod("currentApplication", new Class[0]).invoke(null, new Object[0]);
             } catch (Exception e) {
                 throw new IllegalStateException("LibraryLoader not initialized. Call LibraryLoader.initialize() before using library classes.", e);
             }
         }
-        return f44165a;
+        return a;
     }
 }

@@ -16,9 +16,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunityManager.class */
 public final class CommunityManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19086a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final Lazy<CommunityManager> u = LazyKt.a(LazyThreadSafetyMode.SYNCHRONIZED, new Function0<CommunityManager>() { // from class: com.blued.community.manager.CommunityManager$Companion$instance$2
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
@@ -27,9 +25,7 @@ public final class CommunityManager {
         }
     });
     private HomeTabBubbleExtra b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f19087c;
+    private boolean c;
     private int d;
     private int e;
     private boolean f;
@@ -84,7 +80,7 @@ public final class CommunityManager {
     }
 
     public final void a(boolean z) {
-        this.f19087c = z;
+        this.c = z;
     }
 
     public final void b(float f) {
@@ -104,7 +100,7 @@ public final class CommunityManager {
     }
 
     public final boolean b() {
-        return this.f19087c;
+        return this.c;
     }
 
     public final int c() {

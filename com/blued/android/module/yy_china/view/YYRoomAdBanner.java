@@ -33,13 +33,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRoomAdBanner.class */
 public class YYRoomAdBanner extends ShapeFrameLayout implements BGABanner.Adapter<ConstraintLayout, YYBannerModel>, BGABanner.Delegate<ConstraintLayout, YYBannerModel> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BGABanner f18443a;
+    private BGABanner a;
     private KeyBoardFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f18444c;
+    private boolean c;
     private List<YYBannerModel> d;
     private HashMap<String, ItemYyRoomBannerBinding> e;
     private int f;
@@ -54,16 +50,16 @@ public class YYRoomAdBanner extends ShapeFrameLayout implements BGABanner.Adapte
 
     public YYRoomAdBanner(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f18444c = true;
+        this.c = true;
         this.d = new ArrayList();
         this.e = new HashMap<>();
         this.f = 0;
         BGABanner bGABanner = new BGABanner(context, null);
-        this.f18443a = bGABanner;
+        this.a = bGABanner;
         bGABanner.setDelegate(this);
-        this.f18443a.setmWantVisiNum(4);
-        this.f18443a.setAdapter(this);
-        addView(this.f18443a, new FrameLayout.LayoutParams(-1, DisplayUtil.a(getContext(), 50.0f)));
+        this.a.setmWantVisiNum(4);
+        this.a.setAdapter(this);
+        addView(this.a, new FrameLayout.LayoutParams(-1, DisplayUtil.a(getContext(), 50.0f)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -79,18 +75,18 @@ public class YYRoomAdBanner extends ShapeFrameLayout implements BGABanner.Adapte
                     return;
                 }
                 YYRoomAdBanner.this.setVisibility(0);
-                YYRoomAdBanner.this.f18444c = true;
+                YYRoomAdBanner.this.c = true;
                 list.addAll(bluedEntity.data);
                 if (list.size() > 1) {
-                    YYRoomAdBanner.this.f18443a.setAutoPlayAble(true);
-                    FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.f18444c ? 80.0f : 53.0f));
-                    YYRoomAdBanner.this.f18443a.setmContentBottomMargin(DisplayUtil.a(YYRoomAdBanner.this.getContext(), 10.0f));
-                    YYRoomAdBanner.this.f18443a.setLayoutParams(layoutParams);
+                    YYRoomAdBanner.this.a.setAutoPlayAble(true);
+                    FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.c ? 80.0f : 53.0f));
+                    YYRoomAdBanner.this.a.setmContentBottomMargin(DisplayUtil.a(YYRoomAdBanner.this.getContext(), 10.0f));
+                    YYRoomAdBanner.this.a.setLayoutParams(layoutParams);
                 } else {
-                    YYRoomAdBanner.this.f18443a.setLayoutParams(new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.f18444c ? 70.0f : 43.0f)));
-                    YYRoomAdBanner.this.f18443a.setAutoPlayAble(false);
+                    YYRoomAdBanner.this.a.setLayoutParams(new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.c ? 70.0f : 43.0f)));
+                    YYRoomAdBanner.this.a.setAutoPlayAble(false);
                 }
-                YYRoomAdBanner.this.f18443a.a(R.layout.item_yy_room_banner, list, (List<String>) null);
+                YYRoomAdBanner.this.a.a(R.layout.item_yy_room_banner, list, (List<String>) null);
             }
         }, (IRequestHost) keyBoardFragment.getFragmentActive());
     }
@@ -108,17 +104,17 @@ public class YYRoomAdBanner extends ShapeFrameLayout implements BGABanner.Adapte
                     YYRoomAdBanner.this.setVisibility(8);
                 } else {
                     YYRoomAdBanner.this.setVisibility(0);
-                    YYRoomAdBanner.this.f18444c = false;
+                    YYRoomAdBanner.this.c = false;
                     if (bluedEntity.data.size() > 1) {
-                        YYRoomAdBanner.this.f18443a.setAutoPlayAble(true);
-                        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.f18444c ? 80.0f : 53.0f));
-                        YYRoomAdBanner.this.f18443a.setmContentBottomMargin(DisplayUtil.a(YYRoomAdBanner.this.getContext(), 10.0f));
-                        YYRoomAdBanner.this.f18443a.setLayoutParams(layoutParams);
+                        YYRoomAdBanner.this.a.setAutoPlayAble(true);
+                        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.c ? 80.0f : 53.0f));
+                        YYRoomAdBanner.this.a.setmContentBottomMargin(DisplayUtil.a(YYRoomAdBanner.this.getContext(), 10.0f));
+                        YYRoomAdBanner.this.a.setLayoutParams(layoutParams);
                     } else {
-                        YYRoomAdBanner.this.f18443a.setLayoutParams(new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.f18444c ? 70.0f : 43.0f)));
-                        YYRoomAdBanner.this.f18443a.setAutoPlayAble(false);
+                        YYRoomAdBanner.this.a.setLayoutParams(new FrameLayout.LayoutParams(-1, DisplayUtil.a(YYRoomAdBanner.this.getContext(), YYRoomAdBanner.this.c ? 70.0f : 43.0f)));
+                        YYRoomAdBanner.this.a.setAutoPlayAble(false);
                     }
-                    YYRoomAdBanner.this.f18443a.a(R.layout.item_yy_room_banner, bluedEntity.data, (List<String>) null);
+                    YYRoomAdBanner.this.a.a(R.layout.item_yy_room_banner, bluedEntity.data, (List<String>) null);
                 }
                 YYRoomAdBanner.this.d = new ArrayList();
                 YYRoomAdBanner.this.d.addAll(bluedEntity.data);
@@ -202,25 +198,25 @@ public class YYRoomAdBanner extends ShapeFrameLayout implements BGABanner.Adapte
     @Override // com.blued.android.module.yy_china.view.ban.BGABanner.Adapter
     /* renamed from: b  reason: avoid collision after fix types in other method */
     public void a(BGABanner bGABanner, ConstraintLayout constraintLayout, YYBannerModel yYBannerModel, int i) {
-        ItemYyRoomBannerBinding a2 = ItemYyRoomBannerBinding.a(constraintLayout);
-        if (this.f18444c) {
-            a2.f16808a.setVisibility(0);
+        ItemYyRoomBannerBinding a = ItemYyRoomBannerBinding.a(constraintLayout);
+        if (this.c) {
+            a.a.setVisibility(0);
         } else {
-            a2.f16808a.setVisibility(8);
+            a.a.setVisibility(8);
         }
-        a2.g.setVisibility(4);
-        a2.e.setVisibility(4);
-        a2.f.setVisibility(4);
-        a2.d.setVisibility(4);
+        a.g.setVisibility(4);
+        a.e.setVisibility(4);
+        a.f.setVisibility(4);
+        a.d.setVisibility(4);
         if (yYBannerModel.rank != null) {
-            this.e.put(yYBannerModel.rank.getActivity_type(), a2);
-            a2.b.setImageResource(R.color.transparent);
-            ImageLoader.a(this.b.getFragmentActive(), yYBannerModel.ads_pics).a(a2.f16808a);
+            this.e.put(yYBannerModel.rank.getActivity_type(), a);
+            a.b.setImageResource(R.color.transparent);
+            ImageLoader.a(this.b.getFragmentActive(), yYBannerModel.ads_pics).a(a.a);
             a(yYBannerModel.rank);
         } else {
-            a2.f16808a.setImageResource(R.color.transparent);
-            ImageLoader.a(this.b.getFragmentActive(), yYBannerModel.ads_pics).a(a2.b);
-            a2.b.setVisibility(0);
+            a.a.setImageResource(R.color.transparent);
+            ImageLoader.a(this.b.getFragmentActive(), yYBannerModel.ads_pics).a(a.b);
+            a.b.setVisibility(0);
         }
         List<String> list = yYBannerModel.show_url;
         if (yYBannerModel.isShowUrlVisited || list == null) {

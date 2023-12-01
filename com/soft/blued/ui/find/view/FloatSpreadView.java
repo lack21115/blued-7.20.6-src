@@ -32,11 +32,11 @@ import java.util.List;
 public class FloatSpreadView extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f30697a;
+    public Context f17007a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f30698c;
+    private BaseFragment f17008c;
     private long d;
     private LinePageIndicator e;
     private AutoScrollViewPager f;
@@ -47,29 +47,29 @@ public class FloatSpreadView extends RelativeLayout {
     public FloatSpreadView(Context context) {
         super(context);
         this.d = 0L;
-        this.f30697a = context;
+        this.f17007a = context;
         a();
     }
 
     public FloatSpreadView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.d = 0L;
-        this.f30697a = context;
+        this.f17007a = context;
         a();
     }
 
     public FloatSpreadView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.d = 0L;
-        this.f30697a = context;
+        this.f17007a = context;
         a();
     }
 
     private void a() {
-        View inflate = LayoutInflater.from(this.f30697a).inflate(R.layout.live_float_spread_view, this);
+        View inflate = LayoutInflater.from(this.f17007a).inflate(R.layout.live_float_spread_view, this);
         this.b = inflate;
-        this.f = (AutoScrollViewPager) inflate.findViewById(R.id.asvp_banner);
-        this.e = (LinePageIndicator) this.b.findViewById(R.id.lpi_dot);
+        this.f = inflate.findViewById(R.id.asvp_banner);
+        this.e = this.b.findViewById(R.id.lpi_dot);
         this.f.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.find.view.FloatSpreadView.1
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
@@ -101,10 +101,10 @@ public class FloatSpreadView extends RelativeLayout {
             setVisibility(8);
             return;
         }
-        FloatSpreadPagerAdapter floatSpreadPagerAdapter = new FloatSpreadPagerAdapter(this.f30698c, this.g);
+        FloatSpreadPagerAdapter floatSpreadPagerAdapter = new FloatSpreadPagerAdapter(this.f17008c, this.g);
         this.i = floatSpreadPagerAdapter;
         this.f.setAdapter(floatSpreadPagerAdapter);
-        this.f.setInterval(m.ag);
+        this.f.setInterval((long) m.ag);
         if (this.g.size() == 1) {
             this.e.setVisibility(8);
             this.f.b();
@@ -125,7 +125,7 @@ public class FloatSpreadView extends RelativeLayout {
 
     private void b(final boolean z) {
         animate().cancel();
-        animate().rotationX(z ? 0.0f : 90.0f).translationY(z ? 0.0f : -DensityUtils.a(this.f30697a, 54.0f)).setDuration(500L).setStartDelay(z ? 200L : 0L).setInterpolator(z ? new OvershootInterpolator(2.0f) : new AnticipateInterpolator(2.0f)).setListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.ui.find.view.FloatSpreadView.3
+        animate().rotationX(z ? 0.0f : 90.0f).translationY(z ? 0.0f : -DensityUtils.a(this.f17007a, 54.0f)).setDuration(500L).setStartDelay(z ? 200L : 0L).setInterpolator(z ? new OvershootInterpolator(2.0f) : new AnticipateInterpolator(2.0f)).setListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.ui.find.view.FloatSpreadView.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
@@ -165,13 +165,11 @@ public class FloatSpreadView extends RelativeLayout {
             return;
         }
         this.d = currentTimeMillis;
-        LiveRoomHttpUtils.I(new BluedUIHttpResponse<BluedEntity<LiveFloatSpreadModel, BluedEntityBaseExtra>>(this.f30698c.getFragmentActive()) { // from class: com.soft.blued.ui.find.view.FloatSpreadView.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        LiveRoomHttpUtils.I(new BluedUIHttpResponse<BluedEntity<LiveFloatSpreadModel, BluedEntityBaseExtra>>(this.f17008c.getFragmentActive()) { // from class: com.soft.blued.ui.find.view.FloatSpreadView.2
             public boolean onUIFailure(int i, String str) {
                 return false;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<LiveFloatSpreadModel, BluedEntityBaseExtra> bluedEntity) {
                 if (bluedEntity == null || !bluedEntity.hasData()) {
                     FloatSpreadView.this.setVisibility(8);
@@ -205,7 +203,7 @@ public class FloatSpreadView extends RelativeLayout {
     }
 
     public void setFragment(BaseFragment baseFragment) {
-        this.f30698c = baseFragment;
+        this.f17008c = baseFragment;
     }
 
     @Override // android.view.View
@@ -224,10 +222,10 @@ public class FloatSpreadView extends RelativeLayout {
                 return;
             }
         }
-        setPivotX(DensityUtils.a(this.f30697a, 156.0f) / 2);
-        setPivotY(DensityUtils.a(this.f30697a, 54.0f));
+        setPivotX(DensityUtils.a(this.f17007a, 156.0f) / 2);
+        setPivotY(DensityUtils.a(this.f17007a, 54.0f));
         setRotationX(90.0f);
-        setTranslationY(-DensityUtils.a(this.f30697a, 54.0f));
+        setTranslationY(-DensityUtils.a(this.f17007a, 54.0f));
         super.setVisibility(0);
         post(new Runnable() { // from class: com.soft.blued.ui.find.view.-$$Lambda$FloatSpreadView$WGbxgPXBBiTYonDAals1aaKVVZQ
             @Override // java.lang.Runnable

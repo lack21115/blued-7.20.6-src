@@ -9,22 +9,22 @@ import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 public final class GifBitmapProvider implements GifDecoder.BitmapProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BitmapPool f20990a;
+    private final BitmapPool f7384a;
     private final ArrayPool b;
 
     public GifBitmapProvider(BitmapPool bitmapPool, ArrayPool arrayPool) {
-        this.f20990a = bitmapPool;
+        this.f7384a = bitmapPool;
         this.b = arrayPool;
     }
 
     @Override // com.bumptech.glide.gifdecoder.GifDecoder.BitmapProvider
     public Bitmap a(int i, int i2, Bitmap.Config config) {
-        return this.f20990a.b(i, i2, config);
+        return this.f7384a.b(i, i2, config);
     }
 
     @Override // com.bumptech.glide.gifdecoder.GifDecoder.BitmapProvider
     public void a(Bitmap bitmap) {
-        this.f20990a.a(bitmap);
+        this.f7384a.a(bitmap);
     }
 
     @Override // com.bumptech.glide.gifdecoder.GifDecoder.BitmapProvider

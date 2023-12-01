@@ -24,9 +24,7 @@ import java.io.File;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/ShortVideoModule.class */
 public class ShortVideoModule {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static IShortVideo f15686a = new IShortVideo() { // from class: com.blued.android.module.shortvideo.ShortVideoModule.1
+    protected static IShortVideo a = new IShortVideo() { // from class: com.blued.android.module.shortvideo.ShortVideoModule.1
         @Override // com.blued.android.module.base.shortvideo.IShortVideo
         public void a(Bundle bundle, int i, ISaveInterface iSaveInterface) {
             ShortVideoModule.c();
@@ -163,7 +161,7 @@ public class ShortVideoModule {
     private static boolean b = false;
 
     public static void a() {
-        ShortVideoProxy.e().a((ShortVideoProxy) f15686a);
+        ShortVideoProxy.e().a((ShortVideoProxy) a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -4,20 +4,20 @@ package com.tencent.thumbplayer.adapter.a;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39185a;
+    private String f25494a;
     private String b;
 
     public e(String str) {
-        this.f39185a = str;
+        this.f25494a = str;
         this.b = str;
     }
 
     public String a() {
-        return this.f39185a;
+        return this.f25494a;
     }
 
     public void a(String str) {
-        this.f39185a = str;
+        this.f25494a = str;
     }
 
     public String b() {

@@ -20,27 +20,27 @@ import java.util.List;
 public class AppUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f34716a;
+    private static String f21025a;
     private static String b;
 
     public static String a() {
-        if (TextUtils.isEmpty(f34716a)) {
+        if (TextUtils.isEmpty(f21025a)) {
             try {
-                f34716a = AppInfo.d().getExternalCacheDir().getParentFile().getAbsolutePath();
+                f21025a = AppInfo.d().getExternalCacheDir().getParentFile().getAbsolutePath();
             } catch (NullPointerException e) {
                 e.printStackTrace();
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
         }
-        if (f34716a == null) {
-            f34716a = "";
+        if (f21025a == null) {
+            f21025a = "";
         }
-        return f34716a;
+        return f21025a;
     }
 
     public static void a(Context context) {
-        CommonConstants.f28316c = true;
+        CommonConstants.f14626c = true;
         CommonConstants.d = false;
         FirstActivity.a(context);
     }

@@ -17,19 +17,15 @@ import java.nio.channels.FileLock;
 /* renamed from: com.amap.api.col.3sl.if  reason: invalid class name and invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/if.class */
 public final class Cif {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5149a = ib.c("SYmFja3Vwcw");
+    public static final String a = ib.c("SYmFja3Vwcw");
     public static final String b = ib.c("SLmFkaXU");
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f5150c = ib.c("JIw");
+    public static final String c = ib.c("JIw");
 
     private static String a(Context context) {
         if (Build.VERSION.SDK_INT >= 31 || (context.getApplicationInfo().targetSdkVersion >= 30 && Build.VERSION.SDK_INT >= 30)) {
             return context.getApplicationContext().getExternalFilesDir("").getAbsolutePath();
         }
-        StorageManager storageManager = Build.VERSION.SDK_INT >= 9 ? (StorageManager) context.getSystemService(Context.STORAGE_SERVICE) : null;
+        StorageManager storageManager = Build.VERSION.SDK_INT >= 9 ? (StorageManager) context.getSystemService("storage") : null;
         try {
             Class<?> cls = Class.forName(ib.c("SYW5kcm9pZC5vcy5zdG9yYWdlLlN0b3JhZ2VWb2x1bWU"));
             Method method = storageManager.getClass().getMethod(ib.c("FZ2V0Vm9sdW1lTGlzdA"), new Class[0]);
@@ -67,8 +63,8 @@ public final class Cif {
                 if (TextUtils.isEmpty(a2)) {
                     return;
                 }
-                String str3 = str + f5150c + str2;
-                File file = new File(a2 + File.separator + f5149a);
+                String str3 = str + c + str2;
+                File file = new File(a2 + File.separator + a);
                 File file2 = new File(file, b);
                 FileLock fileLock = null;
                 FileLock fileLock2 = null;

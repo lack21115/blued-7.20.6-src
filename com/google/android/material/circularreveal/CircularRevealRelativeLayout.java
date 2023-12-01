@@ -40,7 +40,7 @@ public class CircularRevealRelativeLayout extends RelativeLayout implements Circ
         this.helper.destroyCircularRevealCache();
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.google.android.material.circularreveal.CircularRevealWidget
     public void draw(Canvas canvas) {
         CircularRevealHelper circularRevealHelper = this.helper;
         if (circularRevealHelper != null) {
@@ -65,7 +65,7 @@ public class CircularRevealRelativeLayout extends RelativeLayout implements Circ
         return this.helper.getRevealInfo();
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, com.google.android.material.circularreveal.CircularRevealWidget
     public boolean isOpaque() {
         CircularRevealHelper circularRevealHelper = this.helper;
         return circularRevealHelper != null ? circularRevealHelper.isOpaque() : super.isOpaque();

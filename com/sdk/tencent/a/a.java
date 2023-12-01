@@ -12,32 +12,32 @@ import java.net.URL;
 public class a {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f28001c = "com.sdk.tencent.a.a";
+    public static final String f14313c = "com.sdk.tencent.a.a";
     public static Boolean d = Boolean.valueOf(com.sdk.tencent.f.c.b);
     public static Network e;
     public static boolean f;
     public static ConnectivityManager.NetworkCallback g;
 
     /* renamed from: a  reason: collision with root package name */
-    public HttpURLConnection f28002a;
+    public HttpURLConnection f14314a;
     public ConnectivityManager b;
 
     /* renamed from: com.sdk.tencent.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/a/a$a.class */
-    public class C0756a extends ConnectivityManager.NetworkCallback {
+    public class C0586a extends ConnectivityManager.NetworkCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ URL f28003a;
+        public final /* synthetic */ URL f14315a;
 
-        public C0756a(URL url) {
-            this.f28003a = url;
+        public C0586a(URL url) {
+            this.f14315a = url;
         }
 
         @Override // android.net.ConnectivityManager.NetworkCallback
         public void onAvailable(Network network) {
             a.e = network;
             try {
-                a.this.f28002a = (HttpURLConnection) network.openConnection(this.f28003a);
+                a.this.f14314a = (HttpURLConnection) network.openConnection(this.f14315a);
             } catch (IOException e) {
             }
         }
@@ -52,18 +52,18 @@ public class a {
             Network network = e;
             if (network != null && !f) {
                 try {
-                    this.f28002a = (HttpURLConnection) network.openConnection(url);
+                    this.f14314a = (HttpURLConnection) network.openConnection(url);
                     return;
                 } catch (IOException e2) {
                     return;
                 }
             }
             f = false;
-            C0756a c0756a = new C0756a(url);
-            g = c0756a;
-            a(c0756a);
+            C0586a c0586a = new C0586a(url);
+            g = c0586a;
+            a(c0586a);
         } catch (Exception e3) {
-            com.sdk.tencent.n.b.a(f28001c, e3.toString(), d);
+            com.sdk.tencent.n.b.a(f14313c, e3.toString(), d);
         }
     }
 
@@ -74,7 +74,7 @@ public class a {
             if (System.currentTimeMillis() - currentTimeMillis > 2000) {
                 return null;
             }
-            httpURLConnection = this.f28002a;
+            httpURLConnection = this.f14314a;
         } while (httpURLConnection == null);
         return httpURLConnection;
     }

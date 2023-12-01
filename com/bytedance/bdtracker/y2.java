@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class y2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final x2 f21338a = new x2();
+    public static final x2 f7732a = new x2();
     public static final Map<String, String> b = new ConcurrentHashMap();
 
     public static String a(String str) {
@@ -15,7 +15,7 @@ public class y2 {
         if (str2 != null) {
             return str2;
         }
-        String a2 = f21338a.a(str);
+        String a2 = f7732a.a(str);
         if (a2 != null) {
             b.put(str, a2);
         }

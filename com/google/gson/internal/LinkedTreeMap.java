@@ -29,9 +29,8 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
     Node<K, V> root;
     int size;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/gson/internal/LinkedTreeMap$EntrySet.class */
-    public class EntrySet extends AbstractSet<Map.Entry<K, V>> {
+    class EntrySet extends AbstractSet<Map.Entry<K, V>> {
         EntrySet() {
         }
 
@@ -45,7 +44,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
             return (obj instanceof Map.Entry) && LinkedTreeMap.this.findByEntry((Map.Entry) obj) != null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return new LinkedTreeMap<K, V>.LinkedTreeMapIterator<Map.Entry<K, V>>() { // from class: com.google.gson.internal.LinkedTreeMap.EntrySet.1
                 {
@@ -69,15 +68,14 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return LinkedTreeMap.this.size;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/gson/internal/LinkedTreeMap$KeySet.class */
-    public final class KeySet extends AbstractSet<K> {
+    final class KeySet extends AbstractSet<K> {
         KeySet() {
         }
 
@@ -91,7 +89,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
             return LinkedTreeMap.this.containsKey(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             return new LinkedTreeMap<K, V>.LinkedTreeMapIterator<K>() { // from class: com.google.gson.internal.LinkedTreeMap.KeySet.1
                 {
@@ -110,7 +108,7 @@ public final class LinkedTreeMap<K, V> extends AbstractMap<K, V> implements Seri
             return LinkedTreeMap.this.removeInternalByKey(obj) != null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return LinkedTreeMap.this.size;
         }

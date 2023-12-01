@@ -34,11 +34,11 @@ public class TbsDownloader {
     public static final String TBS_METADATA = "com.tencent.mm.BuildInfo.CLIENT_VERSION";
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f38764a = false;
+    static boolean f25073a = false;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Context f38765c;
+    private static Context f25074c;
     private static Handler d;
     private static String e;
     private static Object f = new byte[0];
@@ -67,11 +67,11 @@ public class TbsDownloader {
                 return file;
             }
             String str2 = coreProviderAppList[i4];
-            if (!str2.equals(f38765c.getApplicationInfo().packageName)) {
-                File file2 = new File(FileUtil.a(f38765c, str2, 4, false), getOverSea(f38765c) ? "x5.oversea.tbs.org" : getBackupFileName(false));
+            if (!str2.equals(f25074c.getApplicationInfo().packageName)) {
+                File file2 = new File(FileUtil.a(f25074c, str2, 4, false), getOverSea(f25074c) ? "x5.oversea.tbs.org" : getBackupFileName(false));
                 if (!file2.exists()) {
                     str = "can not find local backup core file";
-                } else if (com.tencent.smtt.utils.a.a(f38765c, file2) == i2) {
+                } else if (com.tencent.smtt.utils.a.a(f25074c, file2) == i2) {
                     TbsLog.i(LOGTAG, "local tbs version fond,path = " + file2.getAbsolutePath());
                     return file2;
                 } else {
@@ -104,14 +104,14 @@ public class TbsDownloader {
             if (i3 >= length) {
                 return jSONArray;
             }
-            String a2 = FileUtil.a(f38765c, coreProviderAppList[i3], 4, false);
+            String a2 = FileUtil.a(f25074c, coreProviderAppList[i3], 4, false);
             if (z) {
-                file = new File(a2, getOverSea(f38765c) ? "x5.oversea.tbs.org" : getBackupFileName(false));
+                file = new File(a2, getOverSea(f25074c) ? "x5.oversea.tbs.org" : getBackupFileName(false));
             } else {
                 file = new File(a2, "x5.tbs.decouple");
             }
             if (file.exists()) {
-                long a3 = com.tencent.smtt.utils.a.a(f38765c, file);
+                long a3 = com.tencent.smtt.utils.a.a(f25074c, file);
                 if (a3 > 0) {
                     int i4 = 0;
                     while (true) {
@@ -140,15 +140,15 @@ public class TbsDownloader {
         String str;
         int i2;
         TbsLog.i(LOGTAG, "[TbsDownloader.postJsonData]isQuery: " + z + " forDecoupleCore is " + z3);
-        TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(f38765c);
-        String b2 = b(f38765c);
-        String g2 = com.tencent.smtt.utils.b.g(f38765c);
-        String f2 = com.tencent.smtt.utils.b.f(f38765c);
-        String i3 = com.tencent.smtt.utils.b.i(f38765c);
+        TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(f25074c);
+        String b2 = b(f25074c);
+        String g2 = com.tencent.smtt.utils.b.g(f25074c);
+        String f2 = com.tencent.smtt.utils.b.f(f25074c);
+        String i3 = com.tencent.smtt.utils.b.i(f25074c);
         String id = TimeZone.getDefault().getID();
         String str2 = id != null ? id : "";
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) f38765c.getSystemService("phone");
+            TelephonyManager telephonyManager = (TelephonyManager) f25074c.getSystemService("phone");
             str = id;
             if (telephonyManager != null) {
                 str = telephonyManager.getSimCountryIso();
@@ -160,7 +160,7 @@ public class TbsDownloader {
         String str3 = str != null ? str : "";
         JSONObject jSONObject = new JSONObject();
         try {
-            if (m.a(f38765c).c("tpatch_num") < 5) {
+            if (m.a(f25074c).c("tpatch_num") < 5) {
                 jSONObject.put("REQUEST_TPATCH", 1);
             } else {
                 jSONObject.put("REQUEST_TPATCH", 0);
@@ -171,24 +171,24 @@ public class TbsDownloader {
                 jSONObject.put("REQUEST_64", 1);
             }
             jSONObject.put("PROTOCOLVERSION", 1);
-            if (TbsShareManager.isThirdPartyApp(f38765c)) {
-                i2 = QbSdk.f38715c ? TbsShareManager.a(f38765c, false) : TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0);
+            if (TbsShareManager.isThirdPartyApp(f25074c)) {
+                i2 = QbSdk.f25024c ? TbsShareManager.a(f25074c, false) : TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0);
             } else {
-                int i4 = z3 ? o.a().i(f38765c) : o.a().m(f38765c);
+                int i4 = z3 ? o.a().i(f25074c) : o.a().m(f25074c);
                 int i5 = i4;
                 if (i4 == 0) {
                     i5 = i4;
-                    if (o.a().l(f38765c)) {
+                    if (o.a().l(f25074c)) {
                         i5 = -1;
-                        if ("com.tencent.mobileqq".equals(f38765c.getApplicationInfo().packageName)) {
+                        if ("com.tencent.mobileqq".equals(f25074c.getApplicationInfo().packageName)) {
                             TbsDownloadUpload.clear();
-                            TbsDownloadUpload tbsDownloadUpload = TbsDownloadUpload.getInstance(f38765c);
-                            tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_LOCAL_CORE_VERSION, -1);
+                            TbsDownloadUpload tbsDownloadUpload = TbsDownloadUpload.getInstance(f25074c);
+                            tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_LOCAL_CORE_VERSION, -1);
                             tbsDownloadUpload.commit();
                             TbsPVConfig.releaseInstance();
                             i5 = -1;
-                            if (TbsPVConfig.getInstance(f38765c).getLocalCoreVersionMoreTimes() == 1) {
-                                i5 = o.a().i(f38765c);
+                            if (TbsPVConfig.getInstance(f25074c).getLocalCoreVersionMoreTimes() == 1) {
+                                i5 = o.a().i(f25074c);
                             }
                         }
                     }
@@ -196,7 +196,7 @@ public class TbsDownloader {
                 TbsLog.i(LOGTAG, "[TbsDownloader.postJsonData] tbsLocalVersion=" + i5 + " isDownloadForeground=" + z2);
                 i2 = i5;
                 if (z2) {
-                    i2 = o.a().l(f38765c) ? i5 : 0;
+                    i2 = o.a().l(f25074c) ? i5 : 0;
                 }
             }
             if (z) {
@@ -204,21 +204,21 @@ public class TbsDownloader {
             } else {
                 jSONObject.put("FUNCTION", i2 == 0 ? 0 : 1);
             }
-            if (TbsShareManager.isThirdPartyApp(f38765c)) {
+            if (TbsShareManager.isThirdPartyApp(f25074c)) {
                 JSONArray g3 = g();
                 jSONObject.put("TBSVLARR", g3);
                 tbsDownloadConfig.mSyncMap.put(TbsDownloadConfig.TbsConfigKey.KEY_LAST_THIRDAPP_SENDREQUEST_COREVERSION, g3.toString());
                 tbsDownloadConfig.commit();
-                if (QbSdk.f38715c) {
+                if (QbSdk.f25024c) {
                     jSONObject.put("THIRDREQ", 1);
                 }
             } else {
                 JSONArray a2 = a(z3);
-                if (Apn.getApnType(f38765c) != 3 && a2.length() != 0 && i2 == 0 && z) {
+                if (Apn.getApnType(f25074c) != 3 && a2.length() != 0 && i2 == 0 && z) {
                     jSONObject.put("TBSBACKUPARR", a2);
                 }
             }
-            jSONObject.put("APPN", f38765c.getPackageName());
+            jSONObject.put("APPN", f25074c.getPackageName());
             jSONObject.put("APPVN", a(tbsDownloadConfig.mPreferences.getString(TbsDownloadConfig.TbsConfigKey.KEY_APP_VERSIONNAME, null)));
             jSONObject.put("APPVC", tbsDownloadConfig.mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_APP_VERSIONCODE, 0));
             jSONObject.put("APPMETA", a(tbsDownloadConfig.mPreferences.getString(TbsDownloadConfig.TbsConfigKey.KEY_APP_METADATA, null)));
@@ -232,24 +232,24 @@ public class TbsDownloader {
             }
             jSONObject.put("CPU", e);
             jSONObject.put("UA", b2);
-            jSONObject.put("IMSI", a(g2));
-            jSONObject.put(b.a.f38990c, a(f2));
+            jSONObject.put(b.a.d, a(g2));
+            jSONObject.put(b.a.f25299c, a(f2));
             jSONObject.put("ANDROID_ID", a(i3));
-            jSONObject.put("GUID", com.tencent.smtt.utils.b.e(f38765c));
-            if (!TbsShareManager.isThirdPartyApp(f38765c)) {
+            jSONObject.put("GUID", com.tencent.smtt.utils.b.e(f25074c));
+            if (!TbsShareManager.isThirdPartyApp(f25074c)) {
                 if (i2 != 0) {
-                    jSONObject.put("STATUS", QbSdk.a(f38765c, i2) ? 0 : 1);
+                    jSONObject.put("STATUS", QbSdk.a(f25074c, i2) ? 0 : 1);
                 } else {
                     jSONObject.put("STATUS", 0);
                 }
-                jSONObject.put("TBSDV", o.a().h(f38765c));
+                jSONObject.put("TBSDV", o.a().h(f25074c));
             }
-            boolean z4 = TbsDownloadConfig.getInstance(f38765c).mPreferences.getBoolean(TbsDownloadConfig.TbsConfigKey.KEY_FULL_PACKAGE, false);
-            Object a3 = QbSdk.a(f38765c, "can_unlzma", (Bundle) null);
+            boolean z4 = TbsDownloadConfig.getInstance(f25074c).mPreferences.getBoolean(TbsDownloadConfig.TbsConfigKey.KEY_FULL_PACKAGE, false);
+            Object a3 = QbSdk.a(f25074c, "can_unlzma", (Bundle) null);
             if ((a3 == null || !(a3 instanceof Boolean)) ? false : ((Boolean) a3).booleanValue() ? !z4 : false) {
                 jSONObject.put("REQUEST_LZMA", 1);
             }
-            if (getOverSea(f38765c)) {
+            if (getOverSea(f25074c)) {
                 jSONObject.put("OVERSEA", 1);
             }
             if (z2) {
@@ -273,12 +273,12 @@ public class TbsDownloader {
                 break;
             }
             String str = f2[i3];
-            int sharedTbsCoreVersion = TbsShareManager.getSharedTbsCoreVersion(f38765c, str);
+            int sharedTbsCoreVersion = TbsShareManager.getSharedTbsCoreVersion(f25074c, str);
             if (sharedTbsCoreVersion > 0) {
-                Context packageContext = TbsShareManager.getPackageContext(f38765c, str, true);
+                Context packageContext = TbsShareManager.getPackageContext(f25074c, str, true);
                 if (packageContext != null && !o.a().f(packageContext)) {
                     TbsLog.e(LOGTAG, "host check failed,packageName = " + str);
-                } else if (a(f38765c, sharedTbsCoreVersion)) {
+                } else if (a(f25074c, sharedTbsCoreVersion)) {
                     TbsLog.i(LOGTAG, "add CoreVersionToJsonData,version+" + sharedTbsCoreVersion + " is in black list");
                 } else {
                     int i4 = 0;
@@ -310,9 +310,9 @@ public class TbsDownloader {
                 return;
             }
             String str2 = f3[i7];
-            int coreShareDecoupleCoreVersion = TbsShareManager.getCoreShareDecoupleCoreVersion(f38765c, str2);
+            int coreShareDecoupleCoreVersion = TbsShareManager.getCoreShareDecoupleCoreVersion(f25074c, str2);
             if (coreShareDecoupleCoreVersion > 0) {
-                Context packageContext2 = TbsShareManager.getPackageContext(f38765c, str2, true);
+                Context packageContext2 = TbsShareManager.getPackageContext(f25074c, str2, true);
                 if (packageContext2 == null || o.a().f(packageContext2)) {
                     int i8 = 0;
                     while (true) {
@@ -362,7 +362,7 @@ public class TbsDownloader {
         TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(context);
         if (Build.VERSION.SDK_INT < 8) {
             i2 = -102;
-        } else if (!QbSdk.f38715c && TbsShareManager.isThirdPartyApp(f38765c) && !c()) {
+        } else if (!QbSdk.f25024c && TbsShareManager.isThirdPartyApp(f25074c) && !c()) {
             return false;
         } else {
             if (!tbsDownloadConfig.mPreferences.contains(TbsDownloadConfig.TbsConfigKey.KEY_IS_OVERSEA)) {
@@ -462,10 +462,10 @@ public class TbsDownloader {
                 return file;
             }
             String str = coreProviderAppList[i4];
-            file = new File(FileUtil.a(f38765c, str, 4, false), getOverSea(f38765c) ? "x5.oversea.tbs.org" : getBackupFileName(false));
-            if (!file.exists() || com.tencent.smtt.utils.a.a(f38765c, file) != i2) {
-                file = new File(FileUtil.a(f38765c, str, 4, false), "x5.tbs.decouple");
-                if (file.exists() && com.tencent.smtt.utils.a.a(f38765c, file) == i2) {
+            file = new File(FileUtil.a(f25074c, str, 4, false), getOverSea(f25074c) ? "x5.oversea.tbs.org" : getBackupFileName(false));
+            if (!file.exists() || com.tencent.smtt.utils.a.a(f25074c, file) != i2) {
+                file = new File(FileUtil.a(f25074c, str, 4, false), "x5.tbs.decouple");
+                if (file.exists() && com.tencent.smtt.utils.a.a(f25074c, file) == i2) {
                     sb = new StringBuilder();
                     break;
                 }
@@ -562,7 +562,7 @@ public class TbsDownloader {
         boolean z;
         StringBuilder sb;
         boolean z2;
-        if (TbsPVConfig.getInstance(f38765c).isDisableHostBackupCore()) {
+        if (TbsPVConfig.getInstance(f25074c).isDisableHostBackupCore()) {
             return;
         }
         String[] f2 = f();
@@ -574,16 +574,16 @@ public class TbsDownloader {
                 return;
             }
             String str = f2[i3];
-            int backupCoreVersion = TbsShareManager.getBackupCoreVersion(f38765c, str);
+            int backupCoreVersion = TbsShareManager.getBackupCoreVersion(f25074c, str);
             if (backupCoreVersion > 0) {
-                Context packageContext = TbsShareManager.getPackageContext(f38765c, str, false);
+                Context packageContext = TbsShareManager.getPackageContext(f25074c, str, false);
                 if (packageContext != null && !o.a().f(packageContext)) {
                     sb = new StringBuilder();
                     sb.append("host check failed,packageName = ");
                     sb.append(str);
                     TbsLog.e(LOGTAG, sb.toString());
                     i2 = i3 + 1;
-                } else if (a(f38765c, backupCoreVersion)) {
+                } else if (a(f25074c, backupCoreVersion)) {
                     TbsLog.i(LOGTAG, "add addBackupVersionToJsonData,version+" + backupCoreVersion + " is in black list");
                     i2 = i3 + 1;
                 } else {
@@ -605,9 +605,9 @@ public class TbsDownloader {
                     }
                 }
             }
-            int backupDecoupleCoreVersion = TbsShareManager.getBackupDecoupleCoreVersion(f38765c, str);
+            int backupDecoupleCoreVersion = TbsShareManager.getBackupDecoupleCoreVersion(f25074c, str);
             if (backupDecoupleCoreVersion > 0) {
-                Context packageContext2 = TbsShareManager.getPackageContext(f38765c, str, false);
+                Context packageContext2 = TbsShareManager.getPackageContext(f25074c, str, false);
                 if (packageContext2 == null || o.a().f(packageContext2)) {
                     int i6 = 0;
                     while (true) {
@@ -646,7 +646,7 @@ public class TbsDownloader {
                 if (i3 >= length) {
                     return false;
                 }
-                if (TbsShareManager.getSharedTbsCoreVersion(f38765c, coreProviderAppList[i3]) > 0) {
+                if (TbsShareManager.getSharedTbsCoreVersion(f25074c, coreProviderAppList[i3]) > 0) {
                     return true;
                 }
                 i2 = i3 + 1;
@@ -662,7 +662,7 @@ public class TbsDownloader {
             try {
                 if (h == null) {
                     h = n.a();
-                    g = new l(f38765c);
+                    g = new l(f25074c);
                     d = new Handler(h.getLooper()) { // from class: com.tencent.smtt.sdk.TbsDownloader.2
                         @Override // android.os.Handler
                         public void handleMessage(Message message) {
@@ -682,16 +682,16 @@ public class TbsDownloader {
                                         boolean b2 = TbsDownloader.b(true, false, false, message.arg2 == 1);
                                         if (message.obj != null && (message.obj instanceof TbsDownloaderCallback)) {
                                             TbsLog.i(TbsDownloader.LOGTAG, "needDownload-onNeedDownloadFinish needStartDownload=" + b2);
-                                            String str2 = (TbsDownloader.f38765c == null || TbsDownloader.f38765c.getApplicationContext() == null || TbsDownloader.f38765c.getApplicationContext().getApplicationInfo() == null) ? "" : TbsDownloader.f38765c.getApplicationContext().getApplicationInfo().packageName;
+                                            String str2 = (TbsDownloader.f25074c == null || TbsDownloader.f25074c.getApplicationContext() == null || TbsDownloader.f25074c.getApplicationContext().getApplicationInfo() == null) ? "" : TbsDownloader.f25074c.getApplicationContext().getApplicationInfo().packageName;
                                             if (b2 && !z) {
                                                 if ("com.tencent.mm".equals(str2) || "com.tencent.mobileqq".equals(str2)) {
                                                     TbsLog.i(TbsDownloader.LOGTAG, "needDownload-onNeedDownloadFinish in mm or QQ callback needStartDownload = " + b2);
                                                 }
                                             }
-                                            ((TbsDownloaderCallback) message.obj).onNeedDownloadFinish(b2, TbsDownloadConfig.getInstance(TbsDownloader.f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0));
+                                            ((TbsDownloaderCallback) message.obj).onNeedDownloadFinish(b2, TbsDownloadConfig.getInstance(TbsDownloader.f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0));
                                         }
-                                        if (TbsShareManager.isThirdPartyApp(TbsDownloader.f38765c) && b2) {
-                                            TbsDownloader.startDownload(TbsDownloader.f38765c);
+                                        if (TbsShareManager.isThirdPartyApp(TbsDownloader.f25074c) && b2) {
+                                            TbsDownloader.startDownload(TbsDownloader.f25074c);
                                             return;
                                         }
                                         return;
@@ -699,10 +699,10 @@ public class TbsDownloader {
                                         break;
                                     case 102:
                                         TbsLog.i(TbsDownloader.LOGTAG, "[TbsDownloader.handleMessage] MSG_REPORT_DOWNLOAD_STAT");
-                                        int a2 = TbsShareManager.isThirdPartyApp(TbsDownloader.f38765c) ? TbsShareManager.a(TbsDownloader.f38765c, false) : o.a().m(TbsDownloader.f38765c);
+                                        int a2 = TbsShareManager.isThirdPartyApp(TbsDownloader.f25074c) ? TbsShareManager.a(TbsDownloader.f25074c, false) : o.a().m(TbsDownloader.f25074c);
                                         TbsLog.i(TbsDownloader.LOGTAG, "[TbsDownloader.handleMessage] localTbsVersion=" + a2);
                                         TbsDownloader.g.a(a2);
-                                        TbsLogReport.getInstance(TbsDownloader.f38765c).dailyReport();
+                                        TbsLogReport.getInstance(TbsDownloader.f25074c).dailyReport();
                                         return;
                                     case 103:
                                         TbsLog.i(TbsDownloader.LOGTAG, "[TbsDownloader.handleMessage] MSG_CONTINUEINSTALL_TBSCORE");
@@ -715,41 +715,41 @@ public class TbsDownloader {
                                         }
                                     case 104:
                                         TbsLog.i(TbsDownloader.LOGTAG, "[TbsDownloader.handleMessage] MSG_UPLOAD_TBSLOG");
-                                        TbsLogReport.getInstance(TbsDownloader.f38765c).reportTbsLog();
+                                        TbsLogReport.getInstance(TbsDownloader.f25074c).reportTbsLog();
                                         return;
                                     default:
                                         return;
                                 }
                             }
-                            if (Apn.getApnType(TbsDownloader.f38765c) == 3 || QbSdk.getDownloadWithoutWifi()) {
+                            if (Apn.getApnType(TbsDownloader.f25074c) == 3 || QbSdk.getDownloadWithoutWifi()) {
                                 FileOutputStream fileOutputStream = null;
                                 FileLock fileLock = null;
-                                if (TbsShareManager.isThirdPartyApp(TbsDownloader.f38765c)) {
+                                if (TbsShareManager.isThirdPartyApp(TbsDownloader.f25074c)) {
                                     fileLock = null;
                                 } else {
-                                    fileOutputStream = FileUtil.b(TbsDownloader.f38765c, false, "tbs_download_lock_file" + TbsDownloadConfig.getInstance(TbsDownloader.f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0) + ".txt");
+                                    fileOutputStream = FileUtil.b(TbsDownloader.f25074c, false, "tbs_download_lock_file" + TbsDownloadConfig.getInstance(TbsDownloader.f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0) + ".txt");
                                     if (fileOutputStream != null) {
-                                        FileLock a3 = FileUtil.a(TbsDownloader.f38765c, fileOutputStream);
+                                        FileLock a3 = FileUtil.a(TbsDownloader.f25074c, fileOutputStream);
                                         fileLock = a3;
                                         if (a3 == null) {
                                             QbSdk.m.onDownloadFinish(177);
                                             TbsLog.i(TbsDownloader.LOGTAG, "file lock locked,wx or qq is downloading");
-                                            TbsDownloadConfig.getInstance(TbsDownloader.f38765c).setDownloadInterruptCode(-203);
+                                            TbsDownloadConfig.getInstance(TbsDownloader.f25074c).setDownloadInterruptCode(-203);
                                             str = "MSG_START_DOWNLOAD_DECOUPLECORE return #1";
                                         }
-                                    } else if (FileUtil.a(TbsDownloader.f38765c)) {
-                                        TbsDownloadConfig.getInstance(TbsDownloader.f38765c).setDownloadInterruptCode(-204);
+                                    } else if (FileUtil.a(TbsDownloader.f25074c)) {
+                                        TbsDownloadConfig.getInstance(TbsDownloader.f25074c).setDownloadInterruptCode(-204);
                                         str = "MSG_START_DOWNLOAD_DECOUPLECORE return #2";
                                     }
                                 }
                                 boolean z2 = message.arg1 == 1;
-                                TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(TbsDownloader.f38765c);
+                                TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(TbsDownloader.f25074c);
                                 if (TbsDownloader.b(false, z2, 108 == message.what, true)) {
-                                    if (z2 && o.a().b(TbsDownloader.f38765c, TbsDownloadConfig.getInstance(TbsDownloader.f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0))) {
+                                    if (z2 && o.a().b(TbsDownloader.f25074c, TbsDownloadConfig.getInstance(TbsDownloader.f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0))) {
                                         QbSdk.m.onDownloadFinish(122);
                                         tbsDownloadConfig.setDownloadInterruptCode(-213);
                                     } else if (tbsDownloadConfig.mPreferences.getBoolean(TbsDownloadConfig.TbsConfigKey.KEY_NEEDDOWNLOAD, false)) {
-                                        TbsDownloadConfig.getInstance(TbsDownloader.f38765c).setDownloadInterruptCode(-215);
+                                        TbsDownloadConfig.getInstance(TbsDownloader.f25074c).setDownloadInterruptCode(-215);
                                         TbsDownloader.g.b(z2, 108 == message.what);
                                     }
                                     TbsLog.i(TbsDownloader.LOGTAG, "------freeFileLock called :");
@@ -776,7 +776,7 @@ public class TbsDownloader {
 
     private static boolean e() {
         try {
-            return TbsDownloadConfig.getInstance(f38765c).mPreferences.getString(TbsDownloadConfig.TbsConfigKey.KEY_LAST_THIRDAPP_SENDREQUEST_COREVERSION, "").equals(g().toString());
+            return TbsDownloadConfig.getInstance(f25074c).mPreferences.getString(TbsDownloadConfig.TbsConfigKey.KEY_LAST_THIRDAPP_SENDREQUEST_COREVERSION, "").equals(g().toString());
         } catch (Exception e2) {
             return false;
         }
@@ -784,12 +784,12 @@ public class TbsDownloader {
 
     private static String[] f() {
         if (QbSdk.getOnlyDownload()) {
-            return new String[]{f38765c.getApplicationContext().getPackageName()};
+            return new String[]{f25074c.getApplicationContext().getPackageName()};
         }
         String[] coreProviderAppList = TbsShareManager.getCoreProviderAppList();
-        String packageName = f38765c.getApplicationContext().getPackageName();
+        String packageName = f25074c.getApplicationContext().getPackageName();
         String[] strArr = coreProviderAppList;
-        if (packageName.equals(TbsShareManager.f(f38765c))) {
+        if (packageName.equals(TbsShareManager.f(f25074c))) {
             int length = coreProviderAppList.length;
             strArr = new String[length + 1];
             System.arraycopy(coreProviderAppList, 0, strArr, 0, length);
@@ -799,7 +799,7 @@ public class TbsDownloader {
     }
 
     private static JSONArray g() {
-        if (TbsShareManager.isThirdPartyApp(f38765c)) {
+        if (TbsShareManager.isThirdPartyApp(f25074c)) {
             JSONArray jSONArray = new JSONArray();
             a(jSONArray);
             c(jSONArray);
@@ -814,7 +814,7 @@ public class TbsDownloader {
     }
 
     public static int getCoreShareDecoupleCoreVersion() {
-        return o.a().h(f38765c);
+        return o.a().h(f25074c);
     }
 
     public static int getCoreShareDecoupleCoreVersionByContext(Context context) {
@@ -852,14 +852,14 @@ public class TbsDownloader {
 
     private static boolean h() {
         int i2;
-        TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(f38765c);
+        TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(f25074c);
         if (tbsDownloadConfig.mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_DOWNLOAD_SUCCESS_RETRYTIMES, 0) >= tbsDownloadConfig.getDownloadSuccessMaxRetrytimes()) {
             TbsLog.i(LOGTAG, "[TbsDownloader.needStartDownload] out of success retrytimes", true);
             i2 = -115;
         } else if (tbsDownloadConfig.mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_DOWNLOAD_FAILED_RETRYTIMES, 0) >= tbsDownloadConfig.getDownloadFailedMaxRetrytimes()) {
             TbsLog.i(LOGTAG, "[TbsDownloader.needStartDownload] out of failed retrytimes", true);
             i2 = -116;
-        } else if (!FileUtil.b(f38765c)) {
+        } else if (!FileUtil.b(f25074c)) {
             TbsLog.i(LOGTAG, "[TbsDownloader.needStartDownload] local rom freespace limit", true);
             i2 = -117;
         } else if (System.currentTimeMillis() - tbsDownloadConfig.mPreferences.getLong(TbsDownloadConfig.TbsConfigKey.KEY_TBSDOWNLOAD_STARTTIME, 0L) > 86400000) {
@@ -886,8 +886,8 @@ public class TbsDownloader {
         boolean z;
         synchronized (TbsDownloader.class) {
             try {
-                TbsLog.i(LOGTAG, "[TbsDownloader.isDownloading] is " + f38764a);
-                z = f38764a;
+                TbsLog.i(LOGTAG, "[TbsDownloader.isDownloading] is " + f25073a);
+                z = f25073a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -910,7 +910,7 @@ public class TbsDownloader {
         TbsLog.i(LOGTAG, "needDownload,process=" + QbSdk.getCurrentProcessName(context) + "stack=" + Log.getStackTraceString(new Throwable()));
         TbsDownloadUpload.clear();
         TbsDownloadUpload tbsDownloadUpload = TbsDownloadUpload.getInstance(context);
-        tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 140);
+        tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 140);
         tbsDownloadUpload.commit();
         TbsLog.i(LOGTAG, "[TbsDownloader.needDownload] oversea=" + z + ",isDownloadForeground=" + z2);
         TbsLog.initIfNeed(context);
@@ -919,20 +919,20 @@ public class TbsDownloader {
                 tbsDownloaderCallback.onNeedDownloadFinish(false, 0);
             }
             TbsLog.i(LOGTAG, "[TbsDownloader.needDownload]#1,return false");
-            tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 171);
+            tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 171);
             tbsDownloadUpload.commit();
             return false;
         }
         TbsLog.app_extra(LOGTAG, context);
         Context applicationContext = context.getApplicationContext();
-        f38765c = applicationContext;
+        f25074c = applicationContext;
         TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(applicationContext);
         tbsDownloadConfig.setDownloadInterruptCode(-100);
-        if (!a(f38765c, z)) {
+        if (!a(f25074c, z)) {
             TbsLog.i(LOGTAG, "[TbsDownloader.needDownload]#2,return false");
-            tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 141);
+            tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 141);
             tbsDownloadUpload.commit();
-            tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 172);
+            tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 172);
             tbsDownloadUpload.commit();
             if (tbsDownloaderCallback != null) {
                 tbsDownloaderCallback.onNeedDownloadFinish(false, 0);
@@ -947,9 +947,9 @@ public class TbsDownloader {
             }
             tbsDownloadConfig.setDownloadInterruptCode(PackageManager.INSTALL_PARSE_FAILED_CERTIFICATE_ENCODING);
             TbsLog.i(LOGTAG, "[TbsDownloader.needDownload]#3,return false");
-            tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 142);
+            tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 142);
             tbsDownloadUpload.commit();
-            tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 173);
+            tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 173);
             tbsDownloadUpload.commit();
             if (tbsDownloaderCallback != null) {
                 tbsDownloaderCallback.onNeedDownloadFinish(false, 0);
@@ -957,18 +957,18 @@ public class TbsDownloader {
             }
             return false;
         }
-        boolean a2 = a(f38765c, z2, false);
+        boolean a2 = a(f25074c, z2, false);
         TbsLog.i(LOGTAG, "[TbsDownloader.needDownload],needSendRequest=" + a2);
         if (a2) {
             a(z2, tbsDownloaderCallback, z3);
             tbsDownloadConfig.setDownloadInterruptCode(PackageManager.NO_NATIVE_LIBRARIES);
         } else {
-            tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 143);
+            tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 143);
             tbsDownloadUpload.commit();
         }
         d.removeMessages(102);
         Message.obtain(d, 102).sendToTarget();
-        if (QbSdk.f38715c || !TbsShareManager.isThirdPartyApp(context)) {
+        if (QbSdk.f25024c || !TbsShareManager.isThirdPartyApp(context)) {
             contains = tbsDownloadConfig.mPreferences.contains(TbsDownloadConfig.TbsConfigKey.KEY_NEEDDOWNLOAD);
             TbsLog.i(LOGTAG, "[TbsDownloader.needDownload] hasNeedDownloadKey=" + contains);
             z4 = (contains || TbsShareManager.isThirdPartyApp(context)) ? tbsDownloadConfig.mPreferences.getBoolean(TbsDownloadConfig.TbsConfigKey.KEY_NEEDDOWNLOAD, false) : true;
@@ -978,11 +978,11 @@ public class TbsDownloader {
         }
         TbsLog.i(LOGTAG, "[TbsDownloader.needDownload]#4,needDownload=" + z4 + ",hasNeedDownloadKey=" + contains);
         if (!z4) {
-            int m = o.a().m(f38765c);
+            int m = o.a().m(f25074c);
             TbsLog.i(LOGTAG, "[TbsDownloader.needDownload]#7,tbsLocalVersion=" + m + ",needSendRequest=" + a2);
             if (a2 || m <= 0) {
                 d.removeMessages(103);
-                ((m > 0 || a2) ? Message.obtain(d, 103, 1, 0, f38765c) : Message.obtain(d, 103, 0, 0, f38765c)).sendToTarget();
+                ((m > 0 || a2) ? Message.obtain(d, 103, 1, 0, f25074c) : Message.obtain(d, 103, 0, 0, f25074c)).sendToTarget();
                 i2 = -121;
             } else {
                 i2 = -119;
@@ -999,32 +999,32 @@ public class TbsDownloader {
             tbsDownloaderCallback.onNeedDownloadFinish(false, 0);
         }
         TbsLog.i(LOGTAG, "[TbsDownloader.needDownload] needDownload=" + z4);
-        tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, Integer.valueOf(z4 ? 170 : 174));
+        tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, Integer.valueOf(z4 ? 170 : 174));
         tbsDownloadUpload.commit();
         return z4;
     }
 
     public static boolean needDownloadDecoupleCore() {
         int i2;
-        if (TbsShareManager.isThirdPartyApp(f38765c) || a(f38765c)) {
+        if (TbsShareManager.isThirdPartyApp(f25074c) || a(f25074c)) {
             return false;
         }
-        return System.currentTimeMillis() - TbsDownloadConfig.getInstance(f38765c).mPreferences.getLong(TbsDownloadConfig.TbsConfigKey.KEY_LAST_DOWNLOAD_DECOUPLE_CORE, 0L) >= TbsDownloadConfig.getInstance(f38765c).getRetryInterval() * 1000 && (i2 = TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_DECOUPLECOREVERSION, 0)) > 0 && i2 != o.a().h(f38765c) && TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0) != i2;
+        return System.currentTimeMillis() - TbsDownloadConfig.getInstance(f25074c).mPreferences.getLong(TbsDownloadConfig.TbsConfigKey.KEY_LAST_DOWNLOAD_DECOUPLE_CORE, 0L) >= TbsDownloadConfig.getInstance(f25074c).getRetryInterval() * 1000 && (i2 = TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_DECOUPLECOREVERSION, 0)) > 0 && i2 != o.a().h(f25074c) && TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0) != i2;
     }
 
     public static boolean needSendRequest(Context context, boolean z) {
-        f38765c = context.getApplicationContext();
+        f25074c = context.getApplicationContext();
         TbsLog.initIfNeed(context);
-        if (a(f38765c, z)) {
+        if (a(f25074c, z)) {
             int m = o.a().m(context);
             TbsLog.i(LOGTAG, "[TbsDownloader.needSendRequest] localTbsVersion=" + m);
             if (m > 0) {
                 return false;
             }
-            if (a(f38765c, false, true)) {
+            if (a(f25074c, false, true)) {
                 return true;
             }
-            TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(f38765c);
+            TbsDownloadConfig tbsDownloadConfig = TbsDownloadConfig.getInstance(f25074c);
             boolean contains = tbsDownloadConfig.mPreferences.contains(TbsDownloadConfig.TbsConfigKey.KEY_NEEDDOWNLOAD);
             TbsLog.i(LOGTAG, "[TbsDownloader.needSendRequest] hasNeedDownloadKey=" + contains);
             boolean z2 = !contains ? true : tbsDownloadConfig.mPreferences.getBoolean(TbsDownloadConfig.TbsConfigKey.KEY_NEEDDOWNLOAD, false);
@@ -1063,7 +1063,7 @@ public class TbsDownloader {
         if (context == null || context.getApplicationContext() == null) {
             return;
         }
-        f38765c = context.getApplicationContext();
+        f25074c = context.getApplicationContext();
     }
 
     public static void setRetryIntervalInSeconds(Context context, long j2) {
@@ -1080,42 +1080,42 @@ public class TbsDownloader {
         StringBuilder sb;
         int h2;
         TbsLog.i(LOGTAG, "startDecoupleCoreIfNeeded ");
-        if (TbsShareManager.isThirdPartyApp(f38765c)) {
+        if (TbsShareManager.isThirdPartyApp(f25074c)) {
             return false;
         }
         TbsLog.i(LOGTAG, "startDecoupleCoreIfNeeded #1");
-        if (a(f38765c) || d == null) {
+        if (a(f25074c) || d == null) {
             return false;
         }
         TbsLog.i(LOGTAG, "startDecoupleCoreIfNeeded #2");
-        if (System.currentTimeMillis() - TbsDownloadConfig.getInstance(f38765c).mPreferences.getLong(TbsDownloadConfig.TbsConfigKey.KEY_LAST_DOWNLOAD_DECOUPLE_CORE, 0L) < TbsDownloadConfig.getInstance(f38765c).getRetryInterval() * 1000) {
+        if (System.currentTimeMillis() - TbsDownloadConfig.getInstance(f25074c).mPreferences.getLong(TbsDownloadConfig.TbsConfigKey.KEY_LAST_DOWNLOAD_DECOUPLE_CORE, 0L) < TbsDownloadConfig.getInstance(f25074c).getRetryInterval() * 1000) {
             return false;
         }
         TbsLog.i(LOGTAG, "startDecoupleCoreIfNeeded #3");
-        int i2 = TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_DECOUPLECOREVERSION, 0);
-        if (i2 <= 0 || i2 == o.a().h(f38765c)) {
+        int i2 = TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_DECOUPLECOREVERSION, 0);
+        if (i2 <= 0 || i2 == o.a().h(f25074c)) {
             sb = new StringBuilder();
             sb.append("startDecoupleCoreIfNeeded no need, deCoupleCoreVersion is ");
             sb.append(i2);
             sb.append(" getTbsCoreShareDecoupleCoreVersion is ");
-            h2 = o.a().h(f38765c);
-        } else if (TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0) != i2 || TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V_TYPE, 0) == 1) {
+            h2 = o.a().h(f25074c);
+        } else if (TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0) != i2 || TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V_TYPE, 0) == 1) {
             TbsLog.i(LOGTAG, "startDecoupleCoreIfNeeded #4");
-            f38764a = true;
+            f25073a = true;
             d.removeMessages(108);
             Message obtain = Message.obtain(d, 108, QbSdk.m);
             obtain.arg1 = 0;
             obtain.sendToTarget();
-            TbsDownloadConfig.getInstance(f38765c).mSyncMap.put(TbsDownloadConfig.TbsConfigKey.KEY_LAST_DOWNLOAD_DECOUPLE_CORE, Long.valueOf(System.currentTimeMillis()));
+            TbsDownloadConfig.getInstance(f25074c).mSyncMap.put(TbsDownloadConfig.TbsConfigKey.KEY_LAST_DOWNLOAD_DECOUPLE_CORE, Long.valueOf(System.currentTimeMillis()));
             return true;
         } else {
             sb = new StringBuilder();
             sb.append("startDecoupleCoreIfNeeded no need, KEY_TBS_DOWNLOAD_V is ");
-            sb.append(TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0));
+            sb.append(TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0));
             sb.append(" deCoupleCoreVersion is ");
             sb.append(i2);
             sb.append(" KEY_TBS_DOWNLOAD_V_TYPE is ");
-            h2 = TbsDownloadConfig.getInstance(f38765c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V_TYPE, 0);
+            h2 = TbsDownloadConfig.getInstance(f25074c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V_TYPE, 0);
         }
         sb.append(h2);
         TbsLog.i(LOGTAG, sb.toString());
@@ -1130,31 +1130,31 @@ public class TbsDownloader {
         synchronized (TbsDownloader.class) {
             try {
                 TbsDownloadUpload tbsDownloadUpload = TbsDownloadUpload.getInstance(context);
-                tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 160);
+                tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 160);
                 tbsDownloadUpload.commit();
-                TbsLog.i(LOGTAG, "[TbsDownloader.startDownload] sAppContext=" + f38765c);
+                TbsLog.i(LOGTAG, "[TbsDownloader.startDownload] sAppContext=" + f25074c);
                 if (o.b) {
-                    tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 161);
+                    tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 161);
                     tbsDownloadUpload.commit();
                     return;
                 }
                 int i2 = 1;
-                f38764a = true;
+                f25073a = true;
                 Context applicationContext = context.getApplicationContext();
-                f38765c = applicationContext;
+                f25074c = applicationContext;
                 TbsDownloadConfig.getInstance(applicationContext).setDownloadInterruptCode(IOfflineCompo.Priority.HIGHEST);
                 if (Build.VERSION.SDK_INT < 8) {
                     QbSdk.m.onDownloadFinish(110);
-                    TbsDownloadConfig.getInstance(f38765c).setDownloadInterruptCode(-201);
-                    tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 162);
+                    TbsDownloadConfig.getInstance(f25074c).setDownloadInterruptCode(-201);
+                    tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 162);
                     tbsDownloadUpload.commit();
                     return;
                 }
                 d();
                 if (i) {
                     QbSdk.m.onDownloadFinish(121);
-                    TbsDownloadConfig.getInstance(f38765c).setDownloadInterruptCode(-202);
-                    tbsDownloadUpload.f38762a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 163);
+                    TbsDownloadConfig.getInstance(f25074c).setDownloadInterruptCode(-202);
+                    tbsDownloadUpload.f25071a.put(TbsDownloadUpload.TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 163);
                     tbsDownloadUpload.commit();
                     return;
                 }

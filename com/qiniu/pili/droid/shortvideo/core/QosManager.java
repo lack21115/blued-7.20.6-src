@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.provider.Settings;
 import android.util.Base64;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedOutputStream;
 import java.io.PrintWriter;
 import java.net.HttpURLConnection;
@@ -26,11 +27,11 @@ public class QosManager {
     private static boolean o = true;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27529a;
+    private Context f13841a;
     private SharedPreferences b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SharedPreferences.Editor f27530c;
+    private SharedPreferences.Editor f13842c;
     private SharedPreferences d;
     private SharedPreferences.Editor e;
     private SharedPreferences f;
@@ -128,12 +129,11 @@ public class QosManager {
         config
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/core/QosManager$b.class */
-    public static class b {
+    static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        static final QosManager f27533a = new QosManager();
+        static final QosManager f13845a = new QosManager();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -192,15 +192,15 @@ public class QosManager {
     }
 
     public static QosManager a() {
-        return b.f27533a;
+        return b.f13845a;
     }
 
     public static QosManager a(Context context) {
         QosManager qosManager;
         synchronized (QosManager.class) {
             try {
-                b.f27533a.b(context);
-                qosManager = b.f27533a;
+                b.f13845a.b(context);
+                qosManager = b.f13845a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -251,26 +251,26 @@ public class QosManager {
     }
 
     private void e() {
-        SharedPreferences sharedPreferences = this.f27529a.getSharedPreferences("ReportData_BaseInfo", 0);
+        SharedPreferences sharedPreferences = this.f13841a.getSharedPreferences("ReportData_BaseInfo", 0);
         this.b = sharedPreferences;
-        this.f27530c = sharedPreferences.edit();
-        SharedPreferences sharedPreferences2 = this.f27529a.getSharedPreferences("ReportData_FunctionPart1", 0);
+        this.f13842c = sharedPreferences.edit();
+        SharedPreferences sharedPreferences2 = this.f13841a.getSharedPreferences("ReportData_FunctionPart1", 0);
         this.d = sharedPreferences2;
         this.e = sharedPreferences2.edit();
-        SharedPreferences sharedPreferences3 = this.f27529a.getSharedPreferences("ReportData_FunctionPart2", 0);
+        SharedPreferences sharedPreferences3 = this.f13841a.getSharedPreferences("ReportData_FunctionPart2", 0);
         this.f = sharedPreferences3;
         this.g = sharedPreferences3.edit();
-        SharedPreferences sharedPreferences4 = this.f27529a.getSharedPreferences("ReportData_Error", 0);
+        SharedPreferences sharedPreferences4 = this.f13841a.getSharedPreferences("ReportData_Error", 0);
         this.h = sharedPreferences4;
         this.i = sharedPreferences4.edit();
-        SharedPreferences sharedPreferences5 = this.f27529a.getSharedPreferences("ReportData_Config", 0);
+        SharedPreferences sharedPreferences5 = this.f13841a.getSharedPreferences("ReportData_Config", 0);
         this.j = sharedPreferences5;
         this.k = sharedPreferences5.edit();
-        SharedPreferences sharedPreferences6 = this.f27529a.getSharedPreferences("Other", 0);
+        SharedPreferences sharedPreferences6 = this.f13841a.getSharedPreferences("Other", 0);
         this.l = sharedPreferences6;
         this.m = sharedPreferences6.edit();
         if (com.igexin.push.core.b.l.equals(this.l.getString("uuid", com.igexin.push.core.b.l))) {
-            this.m.putString("uuid", UUID.randomUUID().toString().replaceAll("-", ""));
+            this.m.putString("uuid", UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, ""));
             this.m.apply();
         }
     }
@@ -303,24 +303,24 @@ public class QosManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g() {
-        this.f27530c.clear();
-        String string = Settings.System.getString(this.f27529a.getContentResolver(), "android_id");
+        this.f13842c.clear();
+        String string = Settings.System.getString(this.f13841a.getContentResolver(), "android_id");
         String str = string;
         if (string == null) {
             str = this.l.getString("uuid", com.igexin.push.core.b.l);
         }
-        this.f27530c.putString("start_time", String.valueOf(System.currentTimeMillis() / 1000));
-        this.f27530c.putString("os_platform", "android");
-        this.f27530c.putString("bundle_id", this.f27529a.getPackageName());
-        this.f27530c.putString("app_name", com.qiniu.pili.droid.shortvideo.f.j.i(this.f27529a));
-        this.f27530c.putString("app_version", com.qiniu.pili.droid.shortvideo.f.j.h(this.f27529a));
-        this.f27530c.putString("device_id", str);
-        this.f27530c.putString("device_model", com.qiniu.pili.droid.shortvideo.f.j.b());
-        this.f27530c.putString("os_version", Build.VERSION.RELEASE);
-        this.f27530c.putString("sdk_version", "3.1.1");
-        this.f27530c.putString("gl_version", Integer.toString(com.qiniu.pili.droid.shortvideo.f.j.d(this.f27529a)));
-        this.f27530c.putString("qos_version", "2.0");
-        this.f27530c.apply();
+        this.f13842c.putString("start_time", String.valueOf(System.currentTimeMillis() / 1000));
+        this.f13842c.putString("os_platform", "android");
+        this.f13842c.putString("bundle_id", this.f13841a.getPackageName());
+        this.f13842c.putString("app_name", com.qiniu.pili.droid.shortvideo.f.j.i(this.f13841a));
+        this.f13842c.putString("app_version", com.qiniu.pili.droid.shortvideo.f.j.h(this.f13841a));
+        this.f13842c.putString("device_id", str);
+        this.f13842c.putString("device_model", com.qiniu.pili.droid.shortvideo.f.j.b());
+        this.f13842c.putString("os_version", Build.VERSION.RELEASE);
+        this.f13842c.putString("sdk_version", "3.1.1");
+        this.f13842c.putString("gl_version", Integer.toString(com.qiniu.pili.droid.shortvideo.f.j.d(this.f13841a)));
+        this.f13842c.putString("qos_version", "2.0");
+        this.f13842c.apply();
     }
 
     private JSONObject h() {
@@ -333,8 +333,8 @@ public class QosManager {
                 jSONObject.put(entry.getKey(), entry.getValue().toString());
             }
         } catch (JSONException e) {
-            this.f27530c.clear();
-            this.f27530c.apply();
+            this.f13842c.clear();
+            this.f13842c.apply();
         }
         return jSONObject;
     }
@@ -440,8 +440,8 @@ public class QosManager {
                 return;
             }
             n = true;
-            this.f27529a = context.getApplicationContext();
-            String[] strArr = com.qiniu.pili.droid.shortvideo.core.c.f27539a;
+            this.f13841a = context.getApplicationContext();
+            String[] strArr = com.qiniu.pili.droid.shortvideo.core.c.f13851a;
             int length = strArr.length;
             int i = 0;
             while (true) {

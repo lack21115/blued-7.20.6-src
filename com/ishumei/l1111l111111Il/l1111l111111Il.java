@@ -67,16 +67,16 @@ public class l1111l111111Il {
         return l11l111l1lll;
     }
 
-    private static Map<String, Object> l1111l111111Il(Map<String, l111l11111lIl.C0459l111l11111lIl> map) {
+    private static Map<String, Object> l1111l111111Il(Map<String, l111l11111lIl.C0289l111l11111lIl> map) {
         Integer num;
         HashMap hashMap = new HashMap();
         if (map != null) {
             if (map.size() != 0 && l111l1111llIl.l1111l111111Il.l111l11111Il != null) {
                 PackageManager packageManager = l111l1111llIl.l1111l111111Il.l111l11111Il.getPackageManager();
                 HashMap hashMap2 = new HashMap();
-                for (Map.Entry<String, l111l11111lIl.C0459l111l11111lIl> entry : map.entrySet()) {
+                for (Map.Entry<String, l111l11111lIl.C0289l111l11111lIl> entry : map.entrySet()) {
                     String key = entry.getKey();
-                    l111l11111lIl.C0459l111l11111lIl value = entry.getValue();
+                    l111l11111lIl.C0289l111l11111lIl value = entry.getValue();
                     hashMap2.put(value.l111l11111lIl(), key);
                     try {
                         if (packageManager.getLaunchIntentForPackage(value.l111l11111lIl()) != null) {

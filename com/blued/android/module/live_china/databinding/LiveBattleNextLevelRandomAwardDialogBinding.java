@@ -13,13 +13,9 @@ import com.blued.android.module.svgaplayer.SVGAImageView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleNextLevelRandomAwardDialogBinding.class */
 public final class LiveBattleNextLevelRandomAwardDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12140a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12141c;
+    public final ImageView c;
     public final ImageView d;
     public final LinearLayout e;
     public final RelativeLayout f;
@@ -32,9 +28,9 @@ public final class LiveBattleNextLevelRandomAwardDialogBinding implements ViewBi
 
     private LiveBattleNextLevelRandomAwardDialogBinding(RelativeLayout relativeLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, LinearLayout linearLayout, RelativeLayout relativeLayout2, RelativeLayout relativeLayout3, SVGAImageView sVGAImageView, TextView textView, TextView textView2, TextView textView3) {
         this.l = relativeLayout;
-        this.f12140a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12141c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = linearLayout;
         this.f = relativeLayout2;
@@ -117,7 +113,6 @@ public final class LiveBattleNextLevelRandomAwardDialogBinding implements ViewBi
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.l;

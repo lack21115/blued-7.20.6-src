@@ -6,11 +6,11 @@ import com.tencent.cloud.huiyansdkface.facelight.net.model.result.RiskInfo;
 public class WbFaceVerifyResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f35526a;
+    private boolean f21835a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35527c;
+    private String f21836c;
     private String d;
     private String e;
     private String f;
@@ -29,7 +29,7 @@ public class WbFaceVerifyResult {
     }
 
     public String getLiveRate() {
-        return this.f35527c;
+        return this.f21836c;
     }
 
     public String getOrderNo() {
@@ -61,7 +61,7 @@ public class WbFaceVerifyResult {
     }
 
     public boolean isSuccess() {
-        return this.f35526a;
+        return this.f21835a;
     }
 
     public void setCusResult(WbCusFaceVerifyResult wbCusFaceVerifyResult) {
@@ -73,11 +73,11 @@ public class WbFaceVerifyResult {
     }
 
     public void setIsSuccess(boolean z) {
-        this.f35526a = z;
+        this.f21835a = z;
     }
 
     public void setLiveRate(String str) {
-        this.f35527c = str;
+        this.f21836c = str;
     }
 
     public void setOrderNo(String str) {
@@ -113,6 +113,6 @@ public class WbFaceVerifyResult {
         String wbFaceError2 = wbFaceError == null ? "" : wbFaceError.toString();
         WbFaceWillModeResult wbFaceWillModeResult = this.k;
         String wbFaceWillModeResult2 = wbFaceWillModeResult != null ? wbFaceWillModeResult.toString() : "";
-        return "WbFaceVerifyResult{isSuccess=" + this.f35526a + ", sign='" + this.b + "', liveRate='" + this.f35527c + "', similarity='" + this.d + "', orderNo='" + this.f + "', riskInfo=" + this.h + ", error=" + wbFaceError2 + ", willResult=" + wbFaceWillModeResult2 + '}';
+        return "WbFaceVerifyResult{isSuccess=" + this.f21835a + ", sign='" + this.b + "', liveRate='" + this.f21836c + "', similarity='" + this.d + "', orderNo='" + this.f + "', riskInfo=" + this.h + ", error=" + wbFaceError2 + ", willResult=" + wbFaceWillModeResult2 + '}';
     }
 }

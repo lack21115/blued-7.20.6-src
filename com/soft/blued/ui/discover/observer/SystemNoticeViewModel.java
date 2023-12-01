@@ -9,11 +9,11 @@ import com.soft.blued.ui.notify.model.ViewpointNoticeCount;
 public class SystemNoticeViewModel extends AndroidViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f29846a;
+    public int f16156a;
     public ViewpointNoticeCount b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f29847c;
+    public int f16157c;
     public MutableLiveData<Integer> d;
     public MutableLiveData<Integer> e;
     public MutableLiveData<Integer> f;
@@ -22,9 +22,9 @@ public class SystemNoticeViewModel extends AndroidViewModel {
 
     public SystemNoticeViewModel(Application application) {
         super(application);
-        this.f29846a = 0;
+        this.f16156a = 0;
         this.b = new ViewpointNoticeCount();
-        this.f29847c = 0;
+        this.f16157c = 0;
         this.d = new MutableLiveData<>();
         this.e = new MutableLiveData<>();
         this.f = new MutableLiveData<>();

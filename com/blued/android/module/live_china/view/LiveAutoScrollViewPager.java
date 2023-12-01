@@ -13,19 +13,14 @@ import androidx.core.view.MotionEventCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
-import com.igexin.push.config.c;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveAutoScrollViewPager.class */
 public class LiveAutoScrollViewPager extends ViewPager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f14380a;
+    private long a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f14381c;
+    private boolean c;
     private boolean d;
     private int e;
     private boolean f;
@@ -43,23 +38,21 @@ public class LiveAutoScrollViewPager extends ViewPager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveAutoScrollViewPager$MyHandler.class */
     public static class MyHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<LiveAutoScrollViewPager> f14383a;
+        private final WeakReference<LiveAutoScrollViewPager> a;
 
         public MyHandler(LiveAutoScrollViewPager liveAutoScrollViewPager) {
-            this.f14383a = new WeakReference<>(liveAutoScrollViewPager);
+            this.a = new WeakReference<>(liveAutoScrollViewPager);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             LiveAutoScrollViewPager liveAutoScrollViewPager;
             super.handleMessage(message);
-            if (message.what == 0 && (liveAutoScrollViewPager = this.f14383a.get()) != null) {
+            if (message.what == 0 && (liveAutoScrollViewPager = this.a.get()) != null) {
                 liveAutoScrollViewPager.o.a(liveAutoScrollViewPager.g);
                 liveAutoScrollViewPager.c();
                 liveAutoScrollViewPager.o.a(liveAutoScrollViewPager.h);
-                liveAutoScrollViewPager.a(liveAutoScrollViewPager.f14380a + liveAutoScrollViewPager.o.getDuration());
+                liveAutoScrollViewPager.a(liveAutoScrollViewPager.a + liveAutoScrollViewPager.o.getDuration());
             }
         }
     }
@@ -73,9 +66,9 @@ public class LiveAutoScrollViewPager extends ViewPager {
 
     public LiveAutoScrollViewPager(Context context) {
         super(context);
-        this.f14380a = c.j;
+        this.a = 1500L;
         this.b = 1;
-        this.f14381c = true;
+        this.c = true;
         this.d = true;
         this.e = 0;
         this.f = true;
@@ -92,9 +85,9 @@ public class LiveAutoScrollViewPager extends ViewPager {
 
     public LiveAutoScrollViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14380a = c.j;
+        this.a = 1500L;
         this.b = 1;
-        this.f14381c = true;
+        this.c = true;
         this.d = true;
         this.e = 0;
         this.f = true;
@@ -161,7 +154,7 @@ public class LiveAutoScrollViewPager extends ViewPager {
 
     public void a() {
         this.k = true;
-        a((long) (this.f14380a + ((this.o.getDuration() / this.g) * this.h)));
+        a((long) (this.a + ((this.o.getDuration() / this.g) * this.h)));
     }
 
     public void b() {
@@ -183,7 +176,7 @@ public class LiveAutoScrollViewPager extends ViewPager {
         if (i2 < 0) {
             z = true;
             i = i2;
-            if (this.f14381c) {
+            if (this.c) {
                 i = count - 1;
                 z = this.f;
             }
@@ -193,7 +186,7 @@ public class LiveAutoScrollViewPager extends ViewPager {
             if (i2 == count) {
                 z = true;
                 i = i2;
-                if (this.f14381c) {
+                if (this.c) {
                     i = 0;
                     z = this.f;
                 }
@@ -206,7 +199,6 @@ public class LiveAutoScrollViewPager extends ViewPager {
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int actionMasked = MotionEventCompat.getActionMasked(motionEvent);
         if (this.d) {
@@ -257,9 +249,9 @@ public class LiveAutoScrollViewPager extends ViewPager {
                 return true;
             }
             int i2 = this.m > this.n ? currentItem2 - 1 : currentItem2 + 1;
-            if (i2 < 0 && this.f14381c) {
+            if (i2 < 0 && this.c) {
                 i2 = count2 - 1;
-            } else if (i2 == count2 && this.f14381c) {
+            } else if (i2 == count2 && this.c) {
                 i2 = 0;
             }
             ScrollAnimationListener scrollAnimationListener2 = this.p;
@@ -279,7 +271,7 @@ public class LiveAutoScrollViewPager extends ViewPager {
     }
 
     public long getInterval() {
-        return this.f14380a;
+        return this.a;
     }
 
     public int getSlideBorderMode() {
@@ -295,7 +287,7 @@ public class LiveAutoScrollViewPager extends ViewPager {
     }
 
     public void setCycle(boolean z) {
-        this.f14381c = z;
+        this.c = z;
     }
 
     public void setDirection(int i) {
@@ -303,7 +295,7 @@ public class LiveAutoScrollViewPager extends ViewPager {
     }
 
     public void setInterval(long j) {
-        this.f14380a = j;
+        this.a = j;
     }
 
     public void setScrollAnimationFlag(boolean z) {

@@ -11,32 +11,32 @@ public class UTSecuritySDKRequestAuthentication implements IUTRequestAuthenticat
     private String Z;
 
     /* renamed from: b  reason: collision with other field name */
-    private String f82b;
+    private String f35b;
     private Object b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Object f41025c = null;
+    private Object f27334c = null;
 
     /* renamed from: a  reason: collision with root package name */
-    private Class f41024a = null;
+    private Class f27333a = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private Field f80a = null;
+    private Field f33a = null;
 
     /* renamed from: b  reason: collision with other field name */
-    private Field f83b = null;
+    private Field f36b = null;
 
     /* renamed from: c  reason: collision with other field name */
-    private Field f84c = null;
+    private Field f37c = null;
 
     /* renamed from: a  reason: collision with other field name */
-    private Method f81a = null;
+    private Method f34a = null;
     private int z = 1;
     private boolean D = false;
 
     public UTSecuritySDKRequestAuthentication(String str, String str2) {
-        this.f82b = null;
-        this.f82b = str;
+        this.f35b = null;
+        this.f35b = str;
         this.Z = str2;
     }
 
@@ -55,7 +55,7 @@ public class UTSecuritySDKRequestAuthentication implements IUTRequestAuthenticat
 
     @Override // com.ut.mini.core.sign.IUTRequestAuthentication
     public String getAppkey() {
-        return this.f82b;
+        return this.f35b;
     }
 
     public String getAuthCode() {
@@ -68,18 +68,18 @@ public class UTSecuritySDKRequestAuthentication implements IUTRequestAuthenticat
         if (!this.D) {
             F();
         }
-        if (this.f82b == null) {
+        if (this.f35b == null) {
             i.a("UTSecuritySDKRequestAuthentication:getSign", "There is no appkey,please check it!");
             return null;
-        } else if (str == null || this.b == null || (cls = this.f41024a) == null || this.f80a == null || this.f83b == null || this.f84c == null || this.f81a == null || this.f41025c == null) {
+        } else if (str == null || this.b == null || (cls = this.f27333a) == null || this.f33a == null || this.f36b == null || this.f37c == null || this.f34a == null || this.f27334c == null) {
             return null;
         } else {
             try {
                 Object newInstance = cls.newInstance();
-                this.f80a.set(newInstance, this.f82b);
-                ((Map) this.f83b.get(newInstance)).put("INPUT", str);
-                this.f84c.set(newInstance, Integer.valueOf(this.z));
-                return (String) this.f81a.invoke(this.f41025c, newInstance, this.Z);
+                this.f33a.set(newInstance, this.f35b);
+                ((Map) this.f36b.get(newInstance)).put("INPUT", str);
+                this.f37c.set(newInstance, Integer.valueOf(this.z));
+                return (String) this.f34a.invoke(this.f27334c, newInstance, this.Z);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
                 return null;

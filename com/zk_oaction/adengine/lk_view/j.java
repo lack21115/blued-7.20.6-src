@@ -8,11 +8,11 @@ import android.graphics.Rect;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    float f42069a;
+    float f28378a;
     float b;
 
     /* renamed from: c  reason: collision with root package name */
-    float f42070c;
+    float f28379c;
     float d;
     float e;
     float f;

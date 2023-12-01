@@ -7,7 +7,7 @@ import java.util.List;
 public class BluedConfigDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static BluedConfigDataObserver f34705a = new BluedConfigDataObserver();
+    private static BluedConfigDataObserver f21014a = new BluedConfigDataObserver();
     private List<IBluedConfigDataObserver> b = new ArrayList();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/user/Observer/BluedConfigDataObserver$IBluedConfigDataObserver.class */
@@ -19,7 +19,7 @@ public class BluedConfigDataObserver {
     }
 
     public static BluedConfigDataObserver a() {
-        return f34705a;
+        return f21014a;
     }
 
     public void b() {

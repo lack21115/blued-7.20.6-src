@@ -1,19 +1,21 @@
 package com.qiniu.pili.droid.shortvideo.transcoder.audio;
 
+import com.xiaomi.mipush.sdk.Constants;
+
 /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/transcoder/audio/d.class */
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f27815a;
+    private long f14127a;
     private long b;
 
     public d(long j, long j2) {
-        this.f27815a = j;
+        this.f14127a = j;
         this.b = j2;
     }
 
     public long a() {
-        return this.f27815a;
+        return this.f14127a;
     }
 
     public long b() {
@@ -21,10 +23,10 @@ public class d {
     }
 
     public long c() {
-        return this.b - this.f27815a;
+        return this.b - this.f14127a;
     }
 
     public String toString() {
-        return "[" + this.f27815a + "-" + this.b + "]";
+        return "[" + this.f14127a + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.b + "]";
     }
 }

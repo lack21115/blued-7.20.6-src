@@ -14,7 +14,7 @@ import java.net.URL;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f37246a;
+    private static int f23555a;
     private static boolean b;
 
     /* JADX WARN: Removed duplicated region for block: B:88:0x013f A[EXC_TOP_SPLITTER, SYNTHETIC] */
@@ -31,20 +31,15 @@ public final class q {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v10 */
-    /* JADX WARN: Type inference failed for: r6v4 */
-    /* JADX WARN: Type inference failed for: r6v9 */
-    /* JADX WARN: Type inference failed for: r7v16 */
     public static n a(boolean z, String str, String str2, String str3, byte[] bArr, boolean z2, boolean z3) throws Exception {
         HttpURLConnection httpURLConnection;
         DataOutputStream dataOutputStream;
         Throwable th;
-        boolean z4;
         HttpURLConnection httpURLConnection2;
-        boolean z5;
+        DataOutputStream dataOutputStream2;
         HttpURLConnection httpURLConnection3;
         p pVar;
-        boolean z6;
+        DataOutputStream dataOutputStream3;
         if (!l.d()) {
             throw new r();
         }
@@ -69,7 +64,7 @@ public final class q {
                     httpURLConnection.setDoOutput(!z);
                     httpURLConnection.setUseCaches(false);
                     if (z2) {
-                        httpURLConnection.setRequestProperty("Connection", com.anythink.expressad.foundation.g.f.g.c.f7906c);
+                        httpURLConnection.setRequestProperty("Connection", com.anythink.expressad.foundation.g.f.g.c.f5066c);
                     }
                     k.a(httpURLConnection);
                     httpURLConnection.connect();
@@ -82,10 +77,10 @@ public final class q {
                             dataOutputStream.close();
                         } catch (p e) {
                             e = e;
-                            z6 = dataOutputStream;
+                            dataOutputStream3 = dataOutputStream;
                             httpURLConnection3 = httpURLConnection;
                             pVar = e;
-                            z5 = z6;
+                            dataOutputStream2 = dataOutputStream3;
                             HttpURLConnection httpURLConnection4 = httpURLConnection3;
                             k.a(true);
                             HttpURLConnection httpURLConnection5 = httpURLConnection3;
@@ -94,7 +89,6 @@ public final class q {
                             e = e2;
                             httpURLConnection2 = httpURLConnection;
                             e = e;
-                            z4 = dataOutputStream;
                             k.a(false);
                             HttpURLConnection httpURLConnection6 = httpURLConnection2;
                             throw e;
@@ -113,7 +107,7 @@ public final class q {
                     if (responseCode == 200 || responseCode == 206) {
                         k.d();
                         n a2 = a(httpURLConnection, z);
-                        k.a((a2 == null || a2.f37245a == null) ? 0 : a2.f37245a.length);
+                        k.a((a2 == null || a2.f23554a == null) ? 0 : a2.f23554a.length);
                         if (httpURLConnection != null) {
                             httpURLConnection.disconnect();
                         }
@@ -125,21 +119,21 @@ public final class q {
                     }
                 } catch (p e3) {
                     e = e3;
-                    z6 = false;
+                    dataOutputStream3 = null;
                 } catch (Exception e4) {
                     e = e4;
-                    dataOutputStream = 0;
+                    dataOutputStream = null;
                 } catch (Throwable th3) {
                     dataOutputStream = null;
                     th = th3;
                 }
             } catch (p e5) {
-                z5 = false;
+                dataOutputStream2 = null;
                 httpURLConnection3 = null;
                 pVar = e5;
             } catch (Exception e6) {
                 e = e6;
-                z4 = false;
+                dataOutputStream = null;
                 httpURLConnection2 = null;
             } catch (Throwable th4) {
                 httpURLConnection = null;
@@ -206,10 +200,10 @@ public final class q {
     }
 
     private static void a(int i) {
-        if (f37246a == i) {
+        if (f23555a == i) {
             return;
         }
-        f37246a = i;
+        f23555a = i;
     }
 
     private static boolean a(HttpURLConnection httpURLConnection) throws IOException {

@@ -15,10 +15,10 @@ import java.util.Map;
 public class h implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21991a;
+    private String f8384a;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f21992c;
+    private long f8385c;
     private String d;
     private String e;
     private Map<String, String> f;
@@ -73,15 +73,15 @@ public class h implements Serializable {
     }
 
     public String a() {
-        return this.f21991a;
+        return this.f8384a;
     }
 
     public void a(long j) {
-        this.f21992c = j;
+        this.f8385c = j;
     }
 
     public void a(String str) {
-        this.f21991a = str;
+        this.f8384a = str;
     }
 
     public void a(Map<String, String> map) {
@@ -89,7 +89,7 @@ public class h implements Serializable {
     }
 
     public long c() {
-        return this.f21992c;
+        return this.f8385c;
     }
 
     public void c(String str) {

@@ -12,28 +12,24 @@ import skin.support.utils.Slog;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/view/LayoutInflaterCompat.class */
 public final class LayoutInflaterCompat {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f44253a;
+    private static boolean a;
 
     /* loaded from: source-3503164-dex2jar.jar:skin/support/view/LayoutInflaterCompat$Factory2Wrapper.class */
     static class Factory2Wrapper implements LayoutInflater.Factory2 {
-
-        /* renamed from: a  reason: collision with root package name */
-        final LayoutInflaterFactory f44254a;
+        final LayoutInflaterFactory a;
 
         @Override // android.view.LayoutInflater.Factory2
         public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
-            return this.f44254a.a(view, str, context, attributeSet);
+            return this.a.a(view, str, context, attributeSet);
         }
 
         @Override // android.view.LayoutInflater.Factory
         public View onCreateView(String str, Context context, AttributeSet attributeSet) {
-            return this.f44254a.a(null, str, context, attributeSet);
+            return this.a.a(null, str, context, attributeSet);
         }
 
         public String toString() {
-            return getClass().getName() + "{" + this.f44254a + i.d;
+            return getClass().getName() + "{" + this.a + i.d;
         }
     }
 
@@ -59,7 +55,7 @@ public final class LayoutInflaterCompat {
 
     private static void b(LayoutInflater layoutInflater, LayoutInflater.Factory2 factory2) {
         Field field = null;
-        if (!f44253a) {
+        if (!a) {
             field = null;
             try {
                 Field declaredField = LayoutInflater.class.getDeclaredField("mFactory2");
@@ -69,7 +65,7 @@ public final class LayoutInflaterCompat {
             } catch (NoSuchFieldException e) {
                 Log.e("LayoutInflaterCompatHC", "forceSetFactory2 Could not find field 'mFactory2' on class " + LayoutInflater.class.getName() + "; inflation may have unexpected results.", e);
             }
-            f44253a = true;
+            a = true;
         }
         if (field != null) {
             try {

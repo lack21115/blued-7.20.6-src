@@ -20,10 +20,10 @@ import java.io.FileOutputStream;
 public final class c implements PA {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f21857a;
+    private boolean f8250a;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f21858c;
+    private e f8251c;
     private f d;
     private a e;
     private boolean h;
@@ -43,7 +43,7 @@ public final class c implements PA {
         if (fVar == null || str == null || str.trim().length() == 0) {
             return;
         }
-        fVar.f21862c = str;
+        fVar.f8255c = str;
         if (fVar.d == null) {
             try {
                 fileOutputStream = new FileOutputStream(str);
@@ -65,7 +65,7 @@ public final class c implements PA {
 
     @Override // com.efs.sdk.pa.PA
     public final void enableLog(boolean z) {
-        this.f21857a = z;
+        this.f8250a = z;
         this.f.b = z;
         this.g.b = z;
         f fVar = this.d;
@@ -82,14 +82,14 @@ public final class c implements PA {
             int i = 0;
             int i2 = 0;
             if (str != null) {
-                if (str.trim().length() == 0 || (aVar = bVar.f21853a.get(str)) == null) {
+                if (str.trim().length() == 0 || (aVar = bVar.f8246a.get(str)) == null) {
                     return 0;
                 }
-                if (aVar.d != null && aVar.f21855c != null) {
-                    aVar.d.getViewTreeObserver().removeOnPreDrawListener(aVar.f21855c);
+                if (aVar.d != null && aVar.f8248c != null) {
+                    aVar.d.getViewTreeObserver().removeOnPreDrawListener(aVar.f8248c);
                 }
-                bVar.f21853a.remove(str);
-                int currentTimeMillis = (int) (((float) aVar.b) / (((float) (System.currentTimeMillis() - aVar.f21854a)) / 1000.0f));
+                bVar.f8246a.remove(str);
+                int currentTimeMillis = (int) (((float) aVar.b) / (((float) (System.currentTimeMillis() - aVar.f8247a)) / 1000.0f));
                 if (currentTimeMillis > 0) {
                     i2 = currentTimeMillis;
                 }
@@ -111,11 +111,11 @@ public final class c implements PA {
             g gVar = this.g;
             long j = 0;
             if (str != null) {
-                if (str.trim().length() == 0 || (aVar = gVar.f21863a.get(str)) == null) {
+                if (str.trim().length() == 0 || (aVar = gVar.f8256a.get(str)) == null) {
                     return 0L;
                 }
-                gVar.f21863a.remove(str);
-                long currentTimeMillis = System.currentTimeMillis() - aVar.f21864a;
+                gVar.f8256a.remove(str);
+                long currentTimeMillis = System.currentTimeMillis() - aVar.f8257a;
                 j = currentTimeMillis;
                 if (gVar.b) {
                     Log.e("PerformanceAnalyze", "key=" + str + ",consumeTime=" + currentTimeMillis);
@@ -151,24 +151,24 @@ public final class c implements PA {
 
     @Override // com.efs.sdk.pa.PA
     public final void registerPAMsgListener(PAMsgListener pAMsgListener) {
-        if (this.f21858c == null) {
-            this.f21858c = new e();
+        if (this.f8251c == null) {
+            this.f8251c = new e();
         }
-        this.b.setMessageLogging(this.f21858c);
+        this.b.setMessageLogging(this.f8251c);
         if (this.d == null) {
             this.d = new f();
         }
-        this.d.b = this.f21857a;
-        this.d.f21861a = pAMsgListener;
-        e eVar = this.f21858c;
-        eVar.f21859a.add(this.d);
+        this.d.b = this.f8250a;
+        this.d.f8254a = pAMsgListener;
+        e eVar = this.f8251c;
+        eVar.f8252a.add(this.d);
     }
 
     @Override // com.efs.sdk.pa.PA
     public final void start() {
         if (this.i || IntegrationTestingUtil.isIntegrationTestingInPeriod()) {
             this.h = true;
-            e eVar = this.f21858c;
+            e eVar = this.f8251c;
             if (eVar != null) {
                 this.b.setMessageLogging(eVar);
             }
@@ -186,7 +186,7 @@ public final class c implements PA {
     public final void startCalFPS(String str, View view) {
         if (this.h) {
             b bVar = this.f;
-            if (str == null || str.trim().length() == 0 || view == null || bVar.f21853a.get(str) != null) {
+            if (str == null || str.trim().length() == 0 || view == null || bVar.f8246a.get(str) != null) {
                 return;
             }
             final b.a aVar = new b.a((byte) 0);
@@ -199,11 +199,11 @@ public final class c implements PA {
                         return true;
                     }
                 };
-                aVar.f21855c = onPreDrawListener;
+                aVar.f8248c = onPreDrawListener;
                 aVar.d.getViewTreeObserver().addOnPreDrawListener(onPreDrawListener);
-                aVar.f21854a = System.currentTimeMillis();
+                aVar.f8247a = System.currentTimeMillis();
             }
-            bVar.f21853a.put(str, aVar);
+            bVar.f8246a.put(str, aVar);
         }
     }
 
@@ -211,12 +211,12 @@ public final class c implements PA {
     public final void startCalTime(String str) {
         if (this.h) {
             g gVar = this.g;
-            if (str == null || str.trim().length() == 0 || gVar.f21863a.get(str) != null) {
+            if (str == null || str.trim().length() == 0 || gVar.f8256a.get(str) != null) {
                 return;
             }
             g.a aVar = new g.a((byte) 0);
-            aVar.f21864a = System.currentTimeMillis();
-            gVar.f21863a.put(str, aVar);
+            aVar.f8257a = System.currentTimeMillis();
+            gVar.f8256a.put(str, aVar);
         }
     }
 
@@ -228,7 +228,7 @@ public final class c implements PA {
         if (aVar != null) {
             aVar.f = true;
             aVar.g.removeCallbacksAndMessages(null);
-            aVar.f21849a = true;
+            aVar.f8242a = true;
         }
     }
 
@@ -236,11 +236,11 @@ public final class c implements PA {
     public final void unRegisterPAMsgListener() {
         f fVar = this.d;
         if (fVar != null) {
-            fVar.f21861a = null;
+            fVar.f8254a = null;
         }
-        e eVar = this.f21858c;
+        e eVar = this.f8251c;
         if (eVar != null) {
-            eVar.f21859a.remove(this.d);
+            eVar.f8252a.remove(this.d);
         }
     }
 

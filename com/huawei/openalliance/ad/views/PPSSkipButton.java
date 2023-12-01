@@ -25,7 +25,7 @@ public class PPSSkipButton extends FrameLayout {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23026c;
+    private String f9418c;
     private String d;
     private int e;
     private int f;
@@ -65,7 +65,7 @@ public class PPSSkipButton extends FrameLayout {
         this.f = i2;
         this.g = i3;
         this.h = str2 == null ? "tr" : str2;
-        this.f23026c = context.getString(R.string.hiad_default_skip_text);
+        this.f9418c = context.getString(R.string.hiad_default_skip_text);
         this.d = Code(str);
         this.j = z;
         this.n = i4;
@@ -99,7 +99,7 @@ public class PPSSkipButton extends FrameLayout {
         inflate(getContext(), R.layout.hiad_view_skip_button, this);
         TextView textView = (TextView) findViewById(R.id.hiad_skip_text);
         this.l = textView;
-        textView.setText(this.f23026c);
+        textView.setText(this.f9418c);
         if (this.o > 0.0f) {
             if (v.c(this.b)) {
                 this.l.setTextSize(1, 24.0f);
@@ -334,7 +334,7 @@ public class PPSSkipButton extends FrameLayout {
                 ge.Z(Code, "updateLeftTime IllegalFormatException");
             }
         }
-        this.l.setText(this.f23026c);
+        this.l.setText(this.f9418c);
     }
 
     public void setAdMediator(gz gzVar) {

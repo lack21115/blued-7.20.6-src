@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/transition/Explode.class */
 public class Explode extends Visibility {
@@ -115,7 +114,7 @@ public class Explode extends Visibility {
         int i2 = rect.top;
         float translationX = view.getTranslationX();
         float translationY = view.getTranslationY();
-        int[] iArr = (int[]) transitionValues.view.getTag(R.id.transitionPosition);
+        int[] iArr = (int[]) transitionValues.view.getTag(16908357);
         float f = translationX;
         float f2 = translationY;
         if (iArr != null) {

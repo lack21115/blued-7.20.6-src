@@ -104,7 +104,6 @@ import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.android.module.common.view.CommonGuidePop;
 import com.blued.android.module.common.view.LinePageIndicator;
 import com.blued.android.module.common.view.RotateLayout;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.android.module.live_china.model.LiveRoomData;
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
@@ -200,6 +199,7 @@ import com.soft.blued.utils.UserRelationshipUtils;
 import com.soft.blued.view.dialog.CommonAlertDialog2;
 import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -233,7 +233,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     private TextView Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34016a;
+    public Context f20325a;
     private View aA;
     private TextView aB;
     private TextView aC;
@@ -290,7 +290,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     private View bi;
 
     /* renamed from: c  reason: collision with root package name */
-    public List<String> f34018c;
+    public List<String> f20327c;
     public List<Fragment> d;
     public View e;
     public View f;
@@ -320,7 +320,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     private boolean aq = false;
 
     /* renamed from: ar  reason: collision with root package name */
-    private boolean f34017ar = false;
+    private boolean f20326ar = false;
     public boolean W = false;
     private List<View> aX = new ArrayList();
     private boolean bg = false;
@@ -334,16 +334,16 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     public class AnonymousClass15 implements ViewTreeObserver.OnGlobalLayoutListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TextView f34025a;
+        final /* synthetic */ TextView f20334a;
         final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ TextViewFixTouchForDynamic f34026c;
+        final /* synthetic */ TextViewFixTouchForDynamic f20335c;
 
         AnonymousClass15(TextView textView, int i, TextViewFixTouchForDynamic textViewFixTouchForDynamic) {
-            this.f34025a = textView;
+            this.f20334a = textView;
             this.b = i;
-            this.f34026c = textViewFixTouchForDynamic;
+            this.f20335c = textViewFixTouchForDynamic;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -360,16 +360,16 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
 
         @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
         public void onGlobalLayout() {
-            this.f34025a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-            if (this.f34025a.getLineCount() <= this.b) {
-                this.f34025a.setVisibility(0);
-                this.f34026c.setVisibility(8);
+            this.f20334a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            if (this.f20334a.getLineCount() <= this.b) {
+                this.f20334a.setVisibility(0);
+                this.f20335c.setVisibility(8);
                 return;
             }
-            this.f34025a.setVisibility(8);
+            this.f20334a.setVisibility(8);
             View view = UserInfoFragmentNew.this.ab;
-            final TextViewFixTouchForDynamic textViewFixTouchForDynamic = this.f34026c;
-            final TextView textView = this.f34025a;
+            final TextViewFixTouchForDynamic textViewFixTouchForDynamic = this.f20335c;
+            final TextView textView = this.f20334a;
             view.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$15$K9NXdZlSDC-Yn5msH-SpYQdJXm4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -385,19 +385,19 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     public class AnonymousClass18 extends BluedUIHttpResponse<BluedEntityA<UserGift>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ UserInfoEntity f34029a;
+        final /* synthetic */ UserInfoEntity f20338a;
         final /* synthetic */ TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ ImageView f34030c;
+        final /* synthetic */ ImageView f20339c;
         final /* synthetic */ RecyclerView d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass18(IRequestHost iRequestHost, UserInfoEntity userInfoEntity, TextView textView, ImageView imageView, RecyclerView recyclerView) {
             super(iRequestHost);
-            this.f34029a = userInfoEntity;
+            this.f20338a = userInfoEntity;
             this.b = textView;
-            this.f34030c = imageView;
+            this.f20339c = imageView;
             this.d = recyclerView;
         }
 
@@ -417,36 +417,35 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 }, userInfoEntity.relationship, userInfoEntity.name, new int[0]);
                 return;
             }
-            WebViewShowInfoFragment.show(UserInfoFragmentNew.this.f34016a, H5Url.a(44), 0);
+            WebViewShowInfoFragment.show(UserInfoFragmentNew.this.f20325a, H5Url.a(44), 0);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<UserGift> bluedEntityA) {
             if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData() == null) {
                 this.d.setVisibility(8);
                 return;
             }
-            if (bluedEntityA.getSingleData().number != 0) {
-                this.b.setText(StringUtils.a(bluedEntityA.getSingleData().number + ""));
-            } else if (TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, this.f34029a.uid)) {
-                this.b.setText(UserInfoFragmentNew.this.f34016a.getResources().getString(R.string.you_no_gift_yet));
+            if (((UserGift) bluedEntityA.getSingleData()).number != 0) {
+                this.b.setText(StringUtils.a(((UserGift) bluedEntityA.getSingleData()).number + ""));
+            } else if (TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, this.f20338a.uid)) {
+                this.b.setText(UserInfoFragmentNew.this.f20325a.getResources().getString(R.string.you_no_gift_yet));
             } else {
-                this.b.setText(UserInfoFragmentNew.this.f34016a.getResources().getString(R.string.he_no_gift_yet));
+                this.b.setText(UserInfoFragmentNew.this.f20325a.getResources().getString(R.string.he_no_gift_yet));
             }
             ArrayList arrayList = new ArrayList();
-            arrayList.addAll(bluedEntityA.getSingleData().gift_list);
-            UserProfileGiftdapter userProfileGiftdapter = new UserProfileGiftdapter(UserInfoFragmentNew.this.getFragmentActive(), UserInfoFragmentNew.this.f34016a, arrayList);
-            final ImageView imageView = this.f34030c;
-            final UserInfoEntity userInfoEntity = this.f34029a;
+            arrayList.addAll(((UserGift) bluedEntityA.getSingleData()).gift_list);
+            UserProfileGiftdapter userProfileGiftdapter = new UserProfileGiftdapter(UserInfoFragmentNew.this.getFragmentActive(), UserInfoFragmentNew.this.f20325a, arrayList);
+            final ImageView imageView = this.f20339c;
+            final UserInfoEntity userInfoEntity = this.f20338a;
             userProfileGiftdapter.a(new UserProfileGiftdapter.RecyclerViewItemClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$18$ETztGgjAuEdOb4ogExZpn4_DVgo
                 @Override // com.soft.blued.ui.user.adapter.UserProfileGiftdapter.RecyclerViewItemClickListener
                 public final void onItemClick(View view, int i) {
                     UserInfoFragmentNew.AnonymousClass18.this.a(imageView, userInfoEntity, view, i);
                 }
             });
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(UserInfoFragmentNew.this.f34016a);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(UserInfoFragmentNew.this.f20325a);
             linearLayoutManager.setStackFromEnd(true);
             linearLayoutManager.setOrientation(0);
             linearLayoutManager.scrollToPosition(0);
@@ -461,7 +460,6 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             this.d.setVisibility(8);
             return super.onUIFailure(i, str);
@@ -568,7 +566,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return UserInfoFragmentNew.this.f34018c.size();
+            return UserInfoFragmentNew.this.f20327c.size();
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
@@ -595,7 +593,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return UserInfoFragmentNew.this.f34018c.get(i);
+            return UserInfoFragmentNew.this.f20327c.get(i);
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
@@ -739,7 +737,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    WebViewShowInfoFragment.show(UserInfoFragmentNew.this.f34016a, str, -1);
+                    WebViewShowInfoFragment.show(UserInfoFragmentNew.this.f20325a, str, -1);
                 }
             });
         }
@@ -748,19 +746,17 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     private void a(final int i, final String str, final VipProtos.FromType fromType) {
         PayHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<VipUpgradeModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.32
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VipUpgradeModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
-                    PayUtils.a(UserInfoFragmentNew.this.f34016a, i, str, fromType);
+                    PayUtils.a(UserInfoFragmentNew.this.f20325a, i, str, fromType);
                 } else {
-                    VipUpgradeDialogFragment.f34178a.a(UserInfoFragmentNew.this.getContext(), UserInfoFragmentNew.this.getParentFragmentManager(), bluedEntityA.data, 2, str, i);
+                    VipUpgradeDialogFragment.f20487a.a(UserInfoFragmentNew.this.getContext(), UserInfoFragmentNew.this.getParentFragmentManager(), bluedEntityA.data, 2, str, i);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2, String str3) {
-                PayUtils.a(UserInfoFragmentNew.this.f34016a, i, str, fromType);
+                PayUtils.a(UserInfoFragmentNew.this.f20325a, i, str, fromType);
                 return true;
             }
         }, getFragmentActive());
@@ -919,7 +915,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         float f = 1.0f - intValue;
         this.ad.setAlpha(f);
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.e.getLayoutParams();
-        layoutParams3.topMargin = (int) (this.aG - ((DensityUtils.a(this.f34016a, 44.0f) + this.aG) * intValue));
+        layoutParams3.topMargin = (int) (this.aG - ((DensityUtils.a(this.f20325a, 44.0f) + this.aG) * intValue));
         this.e.setLayoutParams(layoutParams3);
         if (this.I) {
             this.aw.setAlpha(f);
@@ -940,7 +936,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     public /* synthetic */ void a(ImageView imageView, View view) {
         Tracker.onClick(view);
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PROFILE_GIFT_LIST_CLICK);
-        WebViewShowInfoFragment.show(this.f34016a, H5Url.a(44), 0);
+        WebViewShowInfoFragment.show(this.f20325a, H5Url.a(44), 0);
         imageView.setVisibility(8);
         if (BluedPreferences.aR()) {
             return;
@@ -950,8 +946,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(TextView textView, AppBarLayout appBarLayout, int i) {
-        int a2 = DensityUtils.a(this.f34016a, 100.0f);
-        int a3 = DensityUtils.a(this.f34016a, 50.0f);
+        int a2 = DensityUtils.a(this.f20325a, 100.0f);
+        int a3 = DensityUtils.a(this.f20325a, 50.0f);
         int abs = Math.abs(i);
         if (abs > 0) {
             if (!this.n.h()) {
@@ -986,11 +982,11 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         FragmentActivity activity = getActivity();
         if (activity != null) {
             if (!BluedSkinUtils.c()) {
-                StatusBarHelper.a((Activity) activity, false);
+                StatusBarHelper.a(activity, false);
             } else if (f > 0.5f) {
-                StatusBarHelper.a((Activity) activity, false);
+                StatusBarHelper.a(activity, false);
             } else {
-                StatusBarHelper.a((Activity) activity, true);
+                StatusBarHelper.a(activity, true);
             }
         }
         this.P = i;
@@ -1007,10 +1003,10 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(ImageSize imageSize, ImageView imageView, UserInfoEntity userInfoEntity, File file, Exception exc) {
-        int a2 = (int) ((imageSize.a() / imageSize.b()) * DensityUtils.a(this.f34016a, 35.0f));
+        int a2 = (int) ((imageSize.a() / imageSize.b()) * DensityUtils.a(this.f20325a, 35.0f));
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageView.getLayoutParams();
         layoutParams.width = a2;
-        layoutParams.height = DensityUtils.a(this.f34016a, 35.0f);
+        layoutParams.height = DensityUtils.a(this.f20325a, 35.0f);
         imageView.setLayoutParams(layoutParams);
         ImageLoader.a(getFragmentActive(), userInfoEntity.match_activity.icon).a(imageView);
     }
@@ -1027,7 +1023,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         } else {
             InstantLog.g("event_access", "2");
         }
-        WebViewShowInfoFragment.show(this.f34016a, userInfoEntity.match_activity.url, -1);
+        WebViewShowInfoFragment.show(this.f20325a, userInfoEntity.match_activity.url, -1);
         ChatHelperV4.a().a(12L);
     }
 
@@ -1066,7 +1062,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 albumForDataTrans.data.add(albumFlow);
                 i4 = i5 + 1;
             }
-            BasePhotoFragment.a(this.f34016a, albumForDataTrans, i, 15, TextUtils.equals(userInfoEntity.uid, UserInfo.getInstance().getLoginUserInfo().uid) ? null : userInfoEntity.name, userInfoEntity.uid, -1);
+            BasePhotoFragment.a(this.f20325a, albumForDataTrans, i, 15, TextUtils.equals(userInfoEntity.uid, UserInfo.getInstance().getLoginUserInfo().uid) ? null : userInfoEntity.name, userInfoEntity.uid, -1);
         }
     }
 
@@ -1087,13 +1083,13 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 this.U.setVisibility(8);
                 BluedPreferences.cU();
             }
-            BasePhotoFragment.a(this.f34016a, new String[]{str}, 0, 1, userInfoEntity.uid, TextUtils.equals(userInfoEntity.uid, UserInfo.getInstance().getLoginUserInfo().uid) ? null : userInfoEntity.name, userInfoEntity.theme_pendant);
+            BasePhotoFragment.a(this.f20325a, new String[]{str}, 0, 1, userInfoEntity.uid, TextUtils.equals(userInfoEntity.uid, UserInfo.getInstance().getLoginUserInfo().uid) ? null : userInfoEntity.name, userInfoEntity.theme_pendant);
         }
     }
 
     private void a(String str) {
         if (Build.VERSION.SDK_INT != 18) {
-            ClipboardManager clipboardManager = (ClipboardManager) this.f34016a.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipboardManager clipboardManager = (ClipboardManager) this.f20325a.getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData newPlainText = ClipData.newPlainText("simple text", RegExpUtils.a(str));
             if (clipboardManager != null) {
                 try {
@@ -1102,14 +1098,14 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 }
             }
         } else {
-            ((android.text.ClipboardManager) this.f34016a.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
+            ((android.text.ClipboardManager) this.f20325a.getSystemService(Context.CLIPBOARD_SERVICE)).setText(RegExpUtils.a(str));
         }
-        AppMethods.a((CharSequence) this.f34016a.getResources().getString(2131887353));
+        AppMethods.a(this.f20325a.getResources().getString(R.string.copy));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(String str, String str2, String str3, String str4, String str5, ShareOptionRecyclerAdapter.ShareOptionsItemClickListener shareOptionsItemClickListener, File file, Exception exc) {
-        ShareEntity a2 = ShareUtils.a().a(this.f34016a, str, this.Q, (file == null || !file.exists()) ? BitmapFactory.decodeResource(this.f34016a.getResources(), 2131237314) : BitmapFactory.decodeFile(file.getPath()), str2, str3, str4, str4, this.n.e());
+        ShareEntity a2 = ShareUtils.a().a(this.f20325a, str, this.Q, (file == null || !file.exists()) ? BitmapFactory.decodeResource(this.f20325a.getResources(), 2131237314) : BitmapFactory.decodeFile(file.getPath()), str2, str3, str4, str4, this.n.e());
         a2.r = str5;
         Log.v("drb", "outShareContent:" + str5);
         UserProfileBtmOptions userProfileBtmOptions = this.aa;
@@ -1134,7 +1130,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         EventLogData eventLogData = new EventLogData();
         eventLogData.setEventId(((EventDetailsModel) list.get(1)).id);
         eventLogData.setSourcePage(FeedProtos.SourcePage.FEED_PERSONAL_FEED);
-        EventDetailsFragment.f19534a.a(this.f34016a, ((EventDetailsModel) list.get(1)).id, eventLogData);
+        EventDetailsFragment.a.a(this.f20325a, ((EventDetailsModel) list.get(1)).id, eventLogData);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1157,12 +1153,12 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     }
 
     public static void b(Context context, String str, String str2) {
-        UserBasicModel userBasicModel = new UserBasicModel();
+        Serializable userBasicModel = new UserBasicModel();
         String str3 = str;
         if (StringUtils.d(str)) {
             str3 = UserInfo.getInstance().getLoginUserInfo().uid;
         }
-        userBasicModel.uid = str3;
+        ((UserBasicModel) userBasicModel).uid = str3;
         Bundle bundle = new Bundle();
         bundle.putSerializable("user", userBasicModel);
         bundle.putString("userfrom", str2);
@@ -1211,7 +1207,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(UserInfoEntity userInfoEntity, View view) {
         Tracker.onClick(view);
-        Context context = this.f34016a;
+        Context context = this.f20325a;
         String str = userInfoEntity.uid;
         String str2 = userInfoEntity.name;
         boolean z = true;
@@ -1267,14 +1263,14 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         EventLogData eventLogData = new EventLogData();
         eventLogData.setEventId(((EventDetailsModel) list.get(0)).id);
         eventLogData.setSourcePage(FeedProtos.SourcePage.FEED_PERSONAL_FEED);
-        EventDetailsFragment.f19534a.a(this.f34016a, ((EventDetailsModel) list.get(0)).id, eventLogData);
+        EventDetailsFragment.a.a(this.f20325a, ((EventDetailsModel) list.get(0)).id, eventLogData);
     }
 
     private boolean b(String str) {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        return SubscribeNumberManager.f32449a.a(str, (Short) 2);
+        return SubscribeNumberManager.f18759a.a(str, (Short) 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1333,8 +1329,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 }
             case 2131888173:
                 EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_PROFILE_MORE_UNFOLLOW_CLICK, this.n.e().uid);
-                Context context = this.f34016a;
-                CommonAlertDialog.a(context, (String) null, context.getResources().getString(2131886888), this.f34016a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$w4F76YXIIgz21iW-dltynqkZ5ns
+                Context context = this.f20325a;
+                CommonAlertDialog.a(context, (String) null, context.getResources().getString(2131886888), this.f20325a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$w4F76YXIIgz21iW-dltynqkZ5ns
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         UserInfoFragmentNew.this.b(dialogInterface, i2);
@@ -1355,7 +1351,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             case 2131891497:
                 InstantLog.b("user_page_options_click", 4);
                 EventTrackPersonalProfile.b(PersonalProfileProtos.Event.USER_PAGE_OPTIONS_CLICK, this.E.uid, 4);
-                Context context2 = this.f34016a;
+                Context context2 = this.f20325a;
                 String str = this.n.e().uid;
                 String str2 = this.n.e().name;
                 if (this.n.e().is_official != 1) {
@@ -1369,12 +1365,12 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     }
 
     public static void c(Context context, String str, String str2) {
-        UserBasicModel userBasicModel = new UserBasicModel();
+        Serializable userBasicModel = new UserBasicModel();
         String str3 = str;
         if (StringUtils.d(str)) {
             str3 = UserInfo.getInstance().getLoginUserInfo().uid;
         }
-        userBasicModel.uid = str3;
+        ((UserBasicModel) userBasicModel).uid = str3;
         Bundle bundle = new Bundle();
         bundle.putSerializable("user", userBasicModel);
         bundle.putString("userfrom", str2);
@@ -1455,8 +1451,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_PROFILE_FOLLOWED_BTN_CLICK, this.N);
             this.aQ.performClick();
         } else if (this.aH) {
-            Context context = this.f34016a;
-            CommonAlertDialog.a(context, context.getResources().getString(R.string.group_notice_title), this.f34016a.getResources().getString(R.string.group_quit_attention_notice), this.f34016a.getResources().getString(R.string.group_dialog_not_attention_confirm), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.34
+            Context context = this.f20325a;
+            CommonAlertDialog.a(context, context.getResources().getString(R.string.group_notice_title), this.f20325a.getResources().getString(R.string.group_quit_attention_notice), this.f20325a.getResources().getString(R.string.group_dialog_not_attention_confirm), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.34
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
@@ -1464,7 +1460,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                     UserInfoFragmentNew.this.N.isAddFollow = false;
                     EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_PROFILE_FOLLOWED_BTN_CLICK, UserInfoFragmentNew.this.N);
                 }
-            }, this.f34016a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.35
+            }, this.f20325a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.35
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
@@ -1472,8 +1468,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 }
             }, (DialogInterface.OnDismissListener) null);
         } else {
-            Context context2 = this.f34016a;
-            CommonAlertDialog.a(context2, context2.getResources().getString(R.string.common_string_notice), this.f34016a.getResources().getString(2131886888), this.f34016a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$XNYg4z6DdZQ5w-MbDsu2S6PNSEM
+            Context context2 = this.f20325a;
+            CommonAlertDialog.a(context2, context2.getResources().getString(R.string.common_string_notice), this.f20325a.getResources().getString(2131886888), this.f20325a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$XNYg4z6DdZQ5w-MbDsu2S6PNSEM
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     UserInfoFragmentNew.this.a(dialogInterface, i);
@@ -1558,7 +1554,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void m(View view) {
         Tracker.onClick(view);
-        WebViewShowInfoFragment.show(this.f34016a, H5Url.a(46), 0);
+        WebViewShowInfoFragment.show(this.f20325a, H5Url.a(46), 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1568,24 +1564,24 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     }
 
     private void n(UserInfoEntity userInfoEntity) {
-        ShapeTextView shapeTextView = (ShapeTextView) this.b.findViewById(R.id.stv_audited_status);
+        ShapeTextView findViewById = this.b.findViewById(R.id.stv_audited_status);
         if (!this.n.e) {
-            shapeTextView.setVisibility(8);
+            findViewById.setVisibility(8);
             return;
         }
         BluedLoginResult loginUserInfo = UserInfo.getInstance().getLoginUserInfo();
         if (loginUserInfo.is_audited == 0) {
-            shapeTextView.setVisibility(0);
+            findViewById.setVisibility(0);
             if (loginUserInfo.avatar_audited == 0) {
-                shapeTextView.setText(R.string.audited_picture_profile_in_review);
+                findViewById.setText((int) R.string.audited_picture_profile_in_review);
             } else {
-                shapeTextView.setText(R.string.audited_profile_in_review);
+                findViewById.setText((int) R.string.audited_profile_in_review);
             }
         } else if (loginUserInfo.avatar_audited != 0) {
-            shapeTextView.setVisibility(8);
+            findViewById.setVisibility(8);
         } else {
-            shapeTextView.setVisibility(0);
-            shapeTextView.setText(R.string.audited_picture_in_review);
+            findViewById.setVisibility(0);
+            findViewById.setText((int) R.string.audited_picture_in_review);
         }
     }
 
@@ -1645,13 +1641,13 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                         }, 1200L);
                     }
                 });
-                supportFragmentManager.beginTransaction().add(R.id.bg_frame_layout, this.ba, "virtualImage").commitAllowingStateLoss();
+                supportFragmentManager.beginTransaction().add(R.id.bg_frame_layout, (Fragment) this.ba, "virtualImage").commitAllowingStateLoss();
             } else {
                 this.aZ.setVisibility(8);
                 this.bf.setVisibility(0);
             }
             if (this.n.s()) {
-                View inflate = View.inflate(this.f34016a, R.layout.userinfo_vip_bg, null);
+                View inflate = View.inflate(this.f20325a, R.layout.userinfo_vip_bg, null);
                 inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.21
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
@@ -1662,7 +1658,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 });
                 this.aX.add(inflate);
             }
-            View inflate2 = View.inflate(this.f34016a, R.layout.userinfo_vip_bg, null);
+            View inflate2 = View.inflate(this.f20325a, R.layout.userinfo_vip_bg, null);
             this.aX.add(inflate2);
             inflate2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.22
                 @Override // android.view.View.OnClickListener
@@ -1745,12 +1741,11 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         if (currentTimeMillis - fD <= 604800 || TextUtils.isEmpty(userInfoEntity.recommendation) || !this.n.e) {
             return;
         }
-        CommonGuidePop commonGuidePop = new CommonGuidePop(this.f34016a, userInfoEntity.recommendation, NinePatchUtils.GuideArrowPosition.RIGHT, 2131232900);
-        final BasePopupView h = new XPopup.Builder(getContext()).a(this.ak).d((Boolean) false).b(DensityUtils.a(this.f34016a, 10.0f)).c(DensityUtils.a(this.f34016a, 5.0f)).a(PopupPosition.Bottom).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) commonGuidePop).h();
+        CommonGuidePop commonGuidePop = new CommonGuidePop(this.f20325a, userInfoEntity.recommendation, NinePatchUtils.GuideArrowPosition.c, 2131232900);
+        final BasePopupView h = new XPopup.Builder(getContext()).a(this.ak).d(false).b(DensityUtils.a(this.f20325a, 10.0f)).c(DensityUtils.a(this.f20325a, 5.0f)).a(PopupPosition.d).a(PopupAnimation.a).a(commonGuidePop).h();
         commonGuidePop.setOnClick(new CommonGuidePop.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.28
-            @Override // com.blued.android.module.common.view.CommonGuidePop.OnClickListener
             public void a() {
-                FeedAddPostFragment.a(UserInfoFragmentNew.this.f34016a);
+                FeedAddPostFragment.a(UserInfoFragmentNew.this.f20325a);
                 if (h.s()) {
                     h.p();
                 }
@@ -1774,13 +1769,14 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     }
 
     private void q(UserInfoEntity userInfoEntity) {
-        if (userInfoEntity.uid.equals(UserInfo.getInstance().getLoginUserInfo().uid) || !ByteDanceLogUtils.f20624a.c()) {
+        if (userInfoEntity.uid.equals(UserInfo.getInstance().getLoginUserInfo().uid) || !ByteDanceLogUtils.f7018a.c()) {
             return;
         }
         this.aQ.setVisibility(0);
         this.aQ.setOnClickListener(this);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void r() {
         LiveEventBus.get("remove_album", String.class).observe(this, new Observer<String>() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.1
             @Override // androidx.lifecycle.Observer
@@ -1824,8 +1820,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     public /* synthetic */ void r(View view) {
         Tracker.onClick(view);
         if (YYRoomInfoManager.e().y()) {
-            AppMethods.a(this.f34016a.getResources().getText(2131893032));
-        } else if (PopMenuUtils.a(this.f34016a)) {
+            AppMethods.a(this.f20325a.getResources().getText(R.string.yy_in_use_owners));
+        } else if (PopMenuUtils.a(this.f20325a)) {
         } else {
             InstantLog.a("modify_user_profile", (Object) 1);
             ModifyUserInfoFragment.a(this, 601);
@@ -1866,7 +1862,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         });
         RecyclerView recyclerView = (RecyclerView) this.b.findViewById(R.id.recycler_list_albums);
         this.aD = recyclerView;
-        recyclerView.setBackgroundColor(BluedSkinUtils.a(this.f34016a, 2131101780));
+        recyclerView.setBackgroundColor(BluedSkinUtils.a(this.f20325a, 2131101780));
         this.am = (FrameLayout) this.b.findViewById(R.id.btm_btn);
         this.al = (ImageView) this.b.findViewById(R.id.img_btm_btn);
         this.am.setOnClickListener(this);
@@ -1874,37 +1870,37 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         LinearLayout linearLayout = (LinearLayout) this.b.findViewById(R.id.btn_chat);
         this.aj = linearLayout;
         linearLayout.setOnClickListener(this);
-        View findViewById2 = this.b.findViewById(2131362623);
+        View findViewById2 = this.b.findViewById(R.id.btn_post_feed);
         this.ak = findViewById2;
         findViewById2.setOnClickListener(this);
-        ShapeTextView shapeTextView = (ShapeTextView) this.b.findViewById(R.id.btn_follow);
-        this.ag = shapeTextView;
-        shapeTextView.setOnClickListener(this);
-        GroupJoinView groupJoinView = (GroupJoinView) this.b.findViewById(R.id.btn_group);
-        this.ai = groupJoinView;
-        groupJoinView.setTextSize(14.0f);
+        ShapeTextView findViewById3 = this.b.findViewById(R.id.btn_follow);
+        this.ag = findViewById3;
+        findViewById3.setOnClickListener(this);
+        GroupJoinView findViewById4 = this.b.findViewById(R.id.btn_group);
+        this.ai = findViewById4;
+        findViewById4.setTextSize(14.0f);
         this.ai.setText(getString(R.string.group_fans_club));
         this.ai.setIconVisibility(8);
         this.ai.setStrokeColor(2131101766);
-        ShapeTextView shapeTextView2 = (ShapeTextView) this.b.findViewById(R.id.btn_bar_follow);
-        this.ah = shapeTextView2;
-        shapeTextView2.setOnClickListener(this);
-        this.aY = (LinearLayout) this.b.findViewById(2131363785);
+        ShapeTextView findViewById5 = this.b.findViewById(R.id.btn_bar_follow);
+        this.ah = findViewById5;
+        findViewById5.setOnClickListener(this);
+        this.aY = (LinearLayout) this.b.findViewById(R.id.fl_content);
         this.aT = (TwoLevelHeader) this.b.findViewById(R.id.two_level_header);
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(2131369119);
+        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.b.findViewById(R.id.refresh_layout);
         this.V = smartRefreshLayout;
         smartRefreshLayout.k(false);
         this.V.f(0.0f);
         a(this.V);
-        this.l = (ShapeTextView) this.b.findViewById(R.id.tv_auditing);
+        this.l = this.b.findViewById(R.id.tv_auditing);
         CustomViewPager customViewPager = (CustomViewPager) this.b.findViewById(2131373100);
         this.g = customViewPager;
         customViewPager.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         this.g.setOffscreenPageLimit(3);
-        this.v = DialogUtils.a(this.f34016a);
-        RotateLayout rotateLayout = (RotateLayout) this.b.findViewById(R.id.rotateLayout);
-        this.p = rotateLayout;
-        rotateLayout.setVisibility(0);
+        this.v = DialogUtils.a(this.f20325a);
+        RotateLayout findViewById6 = this.b.findViewById(R.id.rotateLayout);
+        this.p = findViewById6;
+        findViewById6.setVisibility(0);
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.p.getLayoutParams();
         layoutParams.topMargin = this.aG;
         this.p.setLayoutParams(layoutParams);
@@ -1914,7 +1910,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         this.m.b = R.drawable.vip_userpage_default;
         this.aZ = (FrameLayout) this.b.findViewById(R.id.bg_frame_layout);
         this.aU = (CustomViewPager) this.b.findViewById(R.id.vp_bg);
-        this.aV = (LinePageIndicator) this.b.findViewById(2131364744);
+        this.aV = this.b.findViewById(R.id.indicator);
         this.bf = (LinearLayout) this.b.findViewById(R.id.view_multi_avatars);
         ImageView imageView = (ImageView) this.b.findViewById(R.id.img_vip_bg);
         this.bb = imageView;
@@ -1945,26 +1941,26 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         this.Y = this.b.findViewById(R.id.feed_bubble_profile_guest_poke_guide);
         this.Z = (TextView) this.b.findViewById(R.id.feed_bubble_poke_guide_tv);
         this.A = this.b.findViewById(R.id.ll_in_black);
-        this.B = (TextView) this.b.findViewById(2131372428);
+        this.B = (TextView) this.b.findViewById(R.id.tv_report);
         this.C = (TextView) this.b.findViewById(R.id.tv_black_him);
         this.D = (TextView) this.b.findViewById(R.id.tv_add_comment);
-        this.w = (TextView) this.b.findViewById(2131372876);
-        this.S = (ImageView) this.b.findViewById(2131365108);
+        this.w = (TextView) this.b.findViewById(R.id.tv_user_info);
+        this.S = (ImageView) this.b.findViewById(R.id.iv_avatar_widget);
         this.T = (ImageView) this.b.findViewById(R.id.img_bar_avatar_widget);
-        ((AppBarLayout.Behavior) ((CoordinatorLayout.LayoutParams) ((AppBarLayout) this.b.findViewById(2131362292)).getLayoutParams()).getBehavior()).setDragCallback(new AppBarLayout.Behavior.DragCallback() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.6
+        ((AppBarLayout.Behavior) ((CoordinatorLayout.LayoutParams) ((AppBarLayout) this.b.findViewById(R.id.appbar)).getLayoutParams()).getBehavior()).setDragCallback(new AppBarLayout.Behavior.DragCallback() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.6
             @Override // com.google.android.material.appbar.AppBarLayout.BaseBehavior.BaseDragCallback
             public boolean canDrag(AppBarLayout appBarLayout) {
                 return true;
             }
         });
-        this.an = this.b.findViewById(2131364391);
+        this.an = this.b.findViewById(R.id.icon_red_dot);
         this.ao = this.b.findViewById(R.id.icon_btm_red_dot);
         this.aI = (LinearLayout) this.b.findViewById(R.id.ll_user_gift);
         this.aN = (LinearLayout) this.b.findViewById(R.id.ll_number_collection);
         this.aP = (FrameLayout) this.b.findViewById(R.id.fm_poke);
-        this.aQ = (ShapeRelativeLayout) this.b.findViewById(R.id.btn_recommend_list);
+        this.aQ = this.b.findViewById(R.id.btn_recommend_list);
         this.aR = (ImageView) this.b.findViewById(R.id.iv_recommend_arrow);
-        this.aS = (TextView) this.b.findViewById(2131372124);
+        this.aS = (TextView) this.b.findViewById(R.id.tv_notice);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1972,15 +1968,13 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         Tracker.onClick(view);
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_BACKGROUND_CHANGE_CLICK);
         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-            PayUtils.a(this.f34016a, "personal_background_change", 25, VipProtos.FromType.UNKNOWN_FROM);
+            PayUtils.a(this.f20325a, "personal_background_change", 25, VipProtos.FromType.UNKNOWN_FROM);
         } else {
             PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.11
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void U_() {
                     PhotoSelectFragment.a(UserInfoFragmentNew.this, 14, 178);
                 }
 
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void a(String[] strArr) {
                 }
             });
@@ -2017,15 +2011,15 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             return;
         }
         findViewById.setVisibility(0);
-        ((TextView) this.b.findViewById(2131372877)).setText(userInfoEntity.kol_name);
+        ((TextView) this.b.findViewById(R.id.tv_user_kol)).setText(userInfoEntity.kol_name);
     }
 
     private void u() {
-        this.ac = (AppBarLayout) this.b.findViewById(2131362292);
-        View findViewById = this.b.findViewById(2131370717);
+        this.ac = (AppBarLayout) this.b.findViewById(R.id.appbar);
+        View findViewById = this.b.findViewById(R.id.title_still);
         this.e = findViewById;
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) findViewById.getLayoutParams();
-        layoutParams.topMargin = StatusBarHelper.a(this.f34016a);
+        layoutParams.topMargin = StatusBarHelper.a(this.f20325a);
         this.e.setLayoutParams(layoutParams);
         this.f = this.b.findViewById(R.id.title_scroll);
         this.e.setAlpha(1.0f);
@@ -2048,10 +2042,10 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             }
         });
         this.f.setAlpha(0.0f);
-        final TextView textView = (TextView) this.b.findViewById(2131372815);
+        final TextView textView = (TextView) this.b.findViewById(R.id.tv_top_white);
         textView.setAlpha(0.0f);
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) textView.getLayoutParams();
-        layoutParams2.height = StatusBarHelper.a(this.f34016a);
+        layoutParams2.height = StatusBarHelper.a(this.f20325a);
         textView.setLayoutParams(layoutParams2);
         this.r.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$wCsHwYqTxX6aOXuEt0nvCQ8vti8
             @Override // android.view.View.OnClickListener
@@ -2089,11 +2083,11 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             this.aD.setVisibility(0);
             UserinfoNewAlbumAdapter userinfoNewAlbumAdapter = this.aE;
             if (userinfoNewAlbumAdapter == null) {
-                this.aE = new UserinfoNewAlbumAdapter(getFragmentActive(), this.f34016a, this.E.name, TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, this.E.uid), userInfoEntity.access_private_photos);
+                this.aE = new UserinfoNewAlbumAdapter(getFragmentActive(), this.f20325a, this.E.name, TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, this.E.uid), userInfoEntity.access_private_photos);
             } else {
                 userinfoNewAlbumAdapter.a(userInfoEntity.access_private_photos);
             }
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f34016a);
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20325a);
             linearLayoutManager.setOrientation(0);
             this.aD.setLayoutManager(linearLayoutManager);
             this.aD.setNestedScrollingEnabled(false);
@@ -2137,7 +2131,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.h = myAdapter;
         this.g.setAdapter(myAdapter);
-        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.b.findViewById(2131370555);
+        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.b.findViewById(R.id.tablayout);
         this.i = tabPageIndicatorWithDot;
         tabPageIndicatorWithDot.setIndicatorColor(2131101766);
         this.i.setViewPager(this.g);
@@ -2200,14 +2194,14 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             return;
         }
         if (!"1".equals(userInfoEntity.is_access_follows) && !userInfoEntity.uid.equalsIgnoreCase(UserInfo.getInstance().getLoginUserInfo().uid)) {
-            AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.fans_list_hidden));
+            AppMethods.a(AppInfo.d().getResources().getString(R.string.fans_list_hidden));
             return;
         }
         BluedConstant.d = 0;
         Bundle bundle = new Bundle();
         bundle.putString("followed_or_fan", "followed");
         bundle.putString("uid", userInfoEntity.uid);
-        TerminalActivity.d(this.f34016a, FollowedAndFansFragment.class, bundle);
+        TerminalActivity.d(this.f20325a, FollowedAndFansFragment.class, bundle);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2216,13 +2210,13 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             if (BluedPreferences.fA()) {
                 BluedPreferences.fB();
                 this.be.setVisibility(0);
-                this.bd.setText(this.f34016a.getString(R.string.self_user_virtual_image_guide));
+                this.bd.setText(this.f20325a.getString(R.string.self_user_virtual_image_guide));
                 this.V.a(1500, 700, 1.0f, true);
             }
         } else if (BluedPreferences.fy() && this.n.s()) {
             BluedPreferences.fz();
             this.be.setVisibility(0);
-            this.bd.setText(this.f34016a.getString(R.string.user_virtual_image_guide));
+            this.bd.setText(this.f20325a.getString(R.string.user_virtual_image_guide));
             this.V.a(1500, 700, 1.0f, true);
         }
         if (this.be.getVisibility() == 0) {
@@ -2253,7 +2247,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         Bundle bundle = new Bundle();
         bundle.putString("followed_or_fan", "fans");
         bundle.putString("uid", userInfoEntity.uid);
-        TerminalActivity.d(this.f34016a, FollowedAndFansFragment.class, bundle);
+        TerminalActivity.d(this.f20325a, FollowedAndFansFragment.class, bundle);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2291,7 +2285,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         create.show();
         window.setContentView(R.layout.dialog_my_qr);
         final LinearLayout linearLayout = (LinearLayout) window.findViewById(R.id.sava_view);
-        UserInfoHelper.a((ImageView) window.findViewById(2131364720), this.n.e().vbadge, 3);
+        UserInfoHelper.a((ImageView) window.findViewById(R.id.img_verify), this.n.e().vbadge, 3);
         final ImageView imageView = (ImageView) window.findViewById(R.id.my_qr_img);
         imageView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$bJF5aa3oQqp-EuHFWN8xu_mp2Lc
             @Override // android.view.View.OnLongClickListener
@@ -2307,38 +2301,34 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         ImageLoader.a(getFragmentActive(), AvatarUtils.a(0, this.n.e().avatar)).c().a((ImageView) window.findViewById(R.id.dialog_header_view));
         TextView textView = (TextView) window.findViewById(R.id.dialog_tv_my_name);
         textView.setText(this.n.e().name);
-        UserRelationshipUtils.a(this.f34016a, textView, this.n.e());
+        UserRelationshipUtils.a(this.f20325a, textView, this.n.e());
         UserRelationshipUtils.a((ImageView) window.findViewById(2131364726), this.n.e());
         if (this.n.g()) {
             return;
         }
-        UserHttpUtils.a(this.f34016a, this.n.e().uid, new BinaryHttpResponseHandler(true) { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.33
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
+        UserHttpUtils.a(this.f20325a, this.n.e().uid, new BinaryHttpResponseHandler(true) { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.33
             /* renamed from: a */
             public void onFailure(Throwable th, int i, byte[] bArr) {
                 super.onFailure(th, i, bArr);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             /* renamed from: a */
             public void onSuccess(byte[] bArr) {
                 Bitmap decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, bArr.length);
                 imageView.setImageBitmap(BitmapFactory.decodeByteArray(bArr, 0, bArr.length));
-                BitmapUtils.a(UserInfoFragmentNew.this.f34016a.getFilesDir() + BridgeUtil.SPLIT_MARK + UserInfo.getInstance().getLoginUserInfo().getUid() + ".bmp", decodeByteArray, 100, true);
+                BitmapUtils.a(UserInfoFragmentNew.this.f20325a.getFilesDir() + "/" + UserInfo.getInstance().getLoginUserInfo().getUid() + ".bmp", decodeByteArray, 100, true);
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFinish() {
                 DialogUtils.b(UserInfoFragmentNew.this.v);
                 super.onFinish();
             }
 
-            @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onStart() {
                 super.onStart();
                 DialogUtils.a(UserInfoFragmentNew.this.v);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     public void a(int i) {
@@ -2373,7 +2363,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$UWo8nvwzyVVjiCTGP0EVK6xIEfU
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                UserInfoFragmentNew.b(View.this, valueAnimator);
+                UserInfoFragmentNew.b(view, valueAnimator);
             }
         });
         ValueAnimator ofFloat2 = ObjectAnimator.ofFloat(0.7f, 1.0f);
@@ -2381,7 +2371,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$UhiUuKYTHGXOfcS3jQiRSnvz-38
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                UserInfoFragmentNew.a(View.this, valueAnimator);
+                UserInfoFragmentNew.a(view, valueAnimator);
             }
         });
         ofFloat2.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -2421,7 +2411,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                     return;
                 }
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) UserInfoFragmentNew.this.aZ.getLayoutParams();
-                layoutParams.topMargin = (-DensityUtils.a(UserInfoFragmentNew.this.f34016a, 30.0f)) + (i / 4);
+                layoutParams.topMargin = (-DensityUtils.a(UserInfoFragmentNew.this.f20325a, 30.0f)) + (i / 4);
                 UserInfoFragmentNew.this.aZ.setLayoutParams(layoutParams);
             }
 
@@ -2458,7 +2448,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     @Override // androidx.lifecycle.Observer
     /* renamed from: a */
     public void onChanged(FuGiftListEvent fuGiftListEvent) {
-        if (fuGiftListEvent.f32324a == null) {
+        if (fuGiftListEvent.f18634a == null) {
             return;
         }
         this.ax = fuGiftListEvent;
@@ -2473,7 +2463,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         if (userInfoNewPresenter != null) {
             userInfoNewPresenter.a(giftGivingOptionForJsonParse);
         }
-        UserPagerGiftManager.a().f32451a = giftGivingOptionForJsonParse;
+        UserPagerGiftManager.a().f18761a = giftGivingOptionForJsonParse;
         if (!"chat_setting".equalsIgnoreCase(this.au) && !"private_chatting".equalsIgnoreCase(this.au)) {
             q();
         } else if (getActivity() != null) {
@@ -2502,12 +2492,12 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         ImageView imageView = (ImageView) this.b.findViewById(R.id.iv_chat);
         TextView textView = (TextView) this.b.findViewById(R.id.tv_super_call_guide);
         if (userInfoEntity.super_call_status != 1 || this.n.e) {
-            imageView.setImageDrawable(this.f34016a.getResources().getDrawable(R.drawable.icon_profile_chat));
-            this.aj.setBackground(this.f34016a.getResources().getDrawable(R.drawable.shape_send_msg_btn));
+            imageView.setImageDrawable(this.f20325a.getResources().getDrawable(R.drawable.icon_profile_chat));
+            this.aj.setBackground(this.f20325a.getResources().getDrawable(R.drawable.shape_send_msg_btn));
             textView.setVisibility(8);
         } else {
             ImageLoader.c(getFragmentActive(), "icon_to_chat_privilege.png").f().g(-1).a(imageView);
-            this.aj.setBackground(this.f34016a.getResources().getDrawable(R.drawable.shape_send_msg_super_call_btn));
+            this.aj.setBackground(this.f20325a.getResources().getDrawable(R.drawable.shape_send_msg_super_call_btn));
             textView.setVisibility(0);
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.26
                 @Override // android.view.View.OnClickListener
@@ -2538,7 +2528,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             this.j.setVisibility(8);
         }
         if (userInfoEntity != null) {
-            if (SubscribeNumberManager.f32449a.a(userInfoEntity.uid, (Short) 2)) {
+            if (SubscribeNumberManager.f18759a.a(userInfoEntity.uid, (Short) 2)) {
                 g(userInfoEntity);
             }
             c(userInfoEntity);
@@ -2563,7 +2553,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             this.q.a(userInfoEntity.bubble, userInfoEntity.uid);
             D();
         }
-        this.aa = new UserProfileBtmOptions(this.f34016a, TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, userInfoEntity.uid), this.n.e().is_official == 1, b(userInfoEntity.uid), new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.27
+        this.aa = new UserProfileBtmOptions(this.f20325a, TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, userInfoEntity.uid), this.n.e().is_official == 1, b(userInfoEntity.uid), new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.27
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -2611,42 +2601,42 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 imageView.setImageResource(R.drawable.icon_userinfo_hover_attention);
             }
             shapeTextView.setText(2131888165);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131101766);
+            ShapeHelper.a(shapeTextView, 2131101766);
             ShapeHelper.d(shapeTextView, 2131101766);
         } else if ("0".equals(str)) {
             if (imageView != null) {
                 imageView.setImageResource(R.drawable.icon_userinfo_hover_attention);
             }
             shapeTextView.setText(2131888165);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131101766);
+            ShapeHelper.a(shapeTextView, 2131101766);
             ShapeHelper.d(shapeTextView, 2131101766);
         } else if ("1".equals(str)) {
             if (imageView != null) {
                 imageView.setImageResource(R.drawable.icon_userinfo_hover_followed);
             }
             shapeTextView.setText(2131888173);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131102263);
+            ShapeHelper.a(shapeTextView, 2131102263);
             ShapeHelper.d(shapeTextView, 2131102272);
         } else if ("2".equals(str)) {
             if (imageView != null) {
                 imageView.setImageResource(R.drawable.icon_userinfo_hover_been_followed);
             }
             shapeTextView.setText(2131886577);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131101766);
+            ShapeHelper.a(shapeTextView, 2131101766);
             ShapeHelper.d(shapeTextView, 2131101766);
         } else if ("3".equals(str)) {
             if (imageView != null) {
                 imageView.setImageResource(R.drawable.icon_userinfo_hover_follow_each);
             }
             shapeTextView.setText(2131888166);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131102263);
+            ShapeHelper.a(shapeTextView, 2131102263);
             ShapeHelper.d(shapeTextView, 2131101796);
         } else {
             if (imageView != null) {
                 imageView.setImageResource(R.drawable.icon_userinfo_hover_attention);
             }
             shapeTextView.setText(2131888165);
-            ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, 2131101766);
+            ShapeHelper.a(shapeTextView, 2131101766);
             ShapeHelper.d(shapeTextView, 2131101766);
         }
     }
@@ -2654,21 +2644,21 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     @Override // com.soft.blued.ui.user.contract.IUserInfoNewContract.IView
     public void a(final List<ServiceMenuModel> list) {
         ((ImageView) this.b.findViewById(R.id.iv_chat)).setVisibility(8);
-        ((TextView) this.b.findViewById(2131371080)).setText(this.f34016a.getString(R.string.to_message));
-        if (this.f34018c.contains(this.f34016a.getResources().getString(R.string.album)) && this.f34018c.contains(this.f34016a.getResources().getString(R.string.user_profile))) {
-            this.f34018c.remove(this.f34016a.getResources().getString(R.string.album));
-            this.f34018c.remove(this.f34016a.getResources().getString(R.string.user_profile));
+        ((TextView) this.b.findViewById(R.id.tv_chat)).setText(this.f20325a.getString(R.string.to_message));
+        if (this.f20327c.contains(this.f20325a.getResources().getString(R.string.album)) && this.f20327c.contains(this.f20325a.getResources().getString(R.string.user_profile))) {
+            this.f20327c.remove(this.f20325a.getResources().getString(R.string.album));
+            this.f20327c.remove(this.f20325a.getResources().getString(R.string.user_profile));
         }
-        this.h.b(this.aL);
-        this.h.b(this.aJ);
+        this.h.b((Fragment) this.aL);
+        this.h.b((Fragment) this.aJ);
         boolean z = true;
         if (list == null || list.size() <= 0) {
             this.i.setVisibility(8);
             this.bc.setVisibility(8);
             z = false;
         } else {
-            if (!this.f34018c.contains(this.f34016a.getResources().getString(R.string.service_tab))) {
-                this.f34018c.add(this.f34016a.getResources().getString(R.string.service_tab));
+            if (!this.f20327c.contains(this.f20325a.getResources().getString(R.string.service_tab))) {
+                this.f20327c.add(this.f20325a.getResources().getString(R.string.service_tab));
             }
             Fragment fragment = new Fragment();
             this.aM = fragment;
@@ -2688,7 +2678,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                     UserInfoFragmentNew.this.I();
                 }
             });
-            Drawable drawable = this.f34016a.getResources().getDrawable(R.drawable.icon_service_menu);
+            Drawable drawable = this.f20325a.getResources().getDrawable(R.drawable.icon_service_menu);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             this.i.e(1).setCompoundDrawables(null, null, drawable, null);
             this.bc.e(1).setCompoundDrawables(null, null, drawable, null);
@@ -2711,18 +2701,16 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     @Override // com.soft.blued.ui.user.contract.IUserInfoNewContract.IView
     public void a(List<UserFindResult> list, boolean z) {
         new XPopup.Builder(getContext()).a(new SimpleCallback() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.16
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
             public void c(BasePopupView basePopupView) {
                 super.c(basePopupView);
                 UserInfoFragmentNew.this.aR.setImageResource(R.drawable.icon_arrow_down_half_transparent);
             }
 
-            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
             public void d(BasePopupView basePopupView) {
                 super.d(basePopupView);
                 UserInfoFragmentNew.this.aR.setImageResource(R.drawable.icon_arrow_up_half_transparent);
             }
-        }).a((BasePopupView) new PopUserRecommend(getContext(), n().uid, list, z, this.N, getFragmentActive())).h();
+        }).a(new PopUserRecommend(getContext(), n().uid, list, z, this.N, getFragmentActive())).h();
     }
 
     public void a(boolean z) {
@@ -2770,14 +2758,14 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         this.n.a(this.E);
         this.aq = false;
         this.ap = false;
-        this.f34017ar = false;
+        this.f20326ar = false;
         UserBasicModel userBasicModel = this.E;
         if (userBasicModel == null || StringUtils.d(userBasicModel.uid)) {
             return;
         }
         this.h.a(true);
         this.h.b(true);
-        if (SubscribeNumberManager.f32449a.a(this.E.uid, (Short) 2)) {
+        if (SubscribeNumberManager.f18759a.a(this.E.uid, (Short) 2)) {
             this.n.c(this.E.uid);
         }
     }
@@ -2794,16 +2782,16 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             return;
         }
         TextView textView = (TextView) this.b.findViewById(2131372046);
-        ImageView imageView = (ImageView) this.b.findViewById(2131364613);
+        ImageView imageView = (ImageView) this.b.findViewById(R.id.img_name_verify);
         ImageView imageView2 = (ImageView) this.b.findViewById(2131364726);
         TextView textView2 = (TextView) this.b.findViewById(R.id.tv_note_name);
-        this.x = (TextView) this.b.findViewById(2131371285);
+        this.x = (TextView) this.b.findViewById(R.id.tv_distance);
         this.y = (TextView) this.b.findViewById(R.id.tv_last_operate);
         this.z = (TextView) this.b.findViewById(R.id.user_info_ip_location_tv);
         TextView textView3 = (TextView) this.b.findViewById(R.id.tv_follow_num);
-        TextView textView4 = (TextView) this.b.findViewById(2131371411);
+        TextView textView4 = (TextView) this.b.findViewById(R.id.tv_fans_num);
         TextView textView5 = (TextView) this.b.findViewById(R.id.tv_follow_title);
-        TextView textView6 = (TextView) this.b.findViewById(2131371415);
+        TextView textView6 = (TextView) this.b.findViewById(R.id.tv_fans_title);
         View findViewById = this.b.findViewById(R.id.ll_using_shadow);
         if (userInfoEntity.is_shadow == 1) {
             findViewById.setVisibility(0);
@@ -2843,8 +2831,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             }
         });
         TextView textView7 = (TextView) this.f.findViewById(R.id.tv_bar_username);
-        UserInfoHelper.a(this.f34016a, textView7, userInfoEntity, 2131102254);
-        UserInfoHelper.a(this.f34016a, textView, userInfoEntity, 2131102254);
+        UserInfoHelper.a(this.f20325a, textView7, userInfoEntity, 2131102254);
+        UserInfoHelper.a(this.f20325a, textView, userInfoEntity, 2131102254);
         UserInfoHelper.a(imageView, userInfoEntity.vbadge, 2);
         if (imageView.getVisibility() == 4 || imageView.getVisibility() == 8) {
             if (userInfoEntity.uid.equalsIgnoreCase(UserInfo.getInstance().getLoginUserInfo().uid)) {
@@ -2913,9 +2901,9 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         } else {
             this.w.setVisibility(0);
             if (StringUtils.d(userInfoEntity.age)) {
-                str = "-";
+                str = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
             } else {
-                str = userInfoEntity.age + this.f34016a.getResources().getString(2131886374);
+                str = userInfoEntity.age + this.f20325a.getResources().getString(2131886374);
             }
             String a2 = StringUtils.a(userInfoEntity.height, BlueAppLocal.c(), true);
             String str5 = a2;
@@ -2928,7 +2916,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 str6 = "- kg";
             }
             userInfoEntity.role = "-1".equalsIgnoreCase(userInfoEntity.role) ? Constants.WAVE_SEPARATOR : userInfoEntity.role;
-            String b2 = UserInfoHelper.b(this.f34016a, userInfoEntity.role);
+            String b2 = UserInfoHelper.b(this.f20325a, userInfoEntity.role);
             this.w.setText(str + " • " + str5 + " • " + str6 + " • " + b2);
             StringBuilder sb = new StringBuilder();
             sb.append(str);
@@ -2950,7 +2938,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 this.x.setText(DistanceUtils.a(userInfoEntity.distance, BlueAppLocal.c(), true));
                 this.x.setVisibility(0);
             }
-            DistanceUtils.a(this.f34016a, this.x, userInfoEntity, 1);
+            DistanceUtils.a(this.f20325a, this.x, userInfoEntity, 1);
         }
         if ((userInfoEntity.vbadge == 3 || userInfoEntity.vbadge == 8 || b(userInfoEntity.uid)) && !this.W) {
             this.y.setVisibility(8);
@@ -2961,7 +2949,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 this.y.setVisibility(0);
                 this.y.setText(TimeAndDateUtils.f(getActivity(), TimeAndDateUtils.c(userInfoEntity.last_operate)));
             }
-            TypefaceUtils.a(this.f34016a, this.y, userInfoEntity.is_hide_last_operate, 1);
+            TypefaceUtils.a(this.f20325a, this.y, userInfoEntity.is_hide_last_operate, 1);
         }
         if (TextUtils.isEmpty(userInfoEntity.ip_location)) {
             this.z.setVisibility(8);
@@ -3032,7 +3020,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     }
 
     public void d(boolean z) {
-        this.f34017ar = true;
+        this.f20326ar = true;
         this.at = z;
         o();
     }
@@ -3042,9 +3030,9 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             this.au = getArguments().getString("userfrom");
             this.av = getArguments().getString("user_to");
             try {
-                this.E = (UserBasicModel) getArguments().getSerializable("user");
-                this.F = (BluedIngSelfFeed) getArguments().getSerializable(IAdInterListener.AdProdType.PRODUCT_FEEDS);
-                this.G = (LiveRoomData) getArguments().getSerializable("live");
+                this.E = getArguments().getSerializable("user");
+                this.F = getArguments().getSerializable(IAdInterListener.AdProdType.PRODUCT_FEEDS);
+                this.G = getArguments().getSerializable("live");
                 this.M = (MsgSourceEntity) getArguments().getSerializable("MSG_SOURCE_ENTITY");
             } catch (Exception e) {
             }
@@ -3052,7 +3040,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             this.J = getArguments().getBoolean("is_shadow");
             this.L = getArguments().getBoolean("is_reactive_recommend");
             this.K = getArguments().getBoolean("is_call");
-            this.N = (LogData) getArguments().getSerializable("LOG_DATA");
+            this.N = getArguments().getSerializable("LOG_DATA");
             this.O = getArguments().getInt("tab", -1);
             this.I = getArguments().getBoolean("IF_SHOW_WITH_ECOLOGY_VIEW", false);
         }
@@ -3063,11 +3051,11 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
 
     public void e(UserInfoEntity userInfoEntity) {
         ImageView imageView = (ImageView) this.b.findViewById(R.id.img_avatar_border);
-        ShapeTextView shapeTextView = (ShapeTextView) this.b.findViewById(R.id.img_bar_live_border);
-        ImageView imageView2 = (ImageView) this.b.findViewById(2131364591);
+        ShapeTextView findViewById = this.b.findViewById(R.id.img_bar_live_border);
+        ImageView imageView2 = (ImageView) this.b.findViewById(R.id.img_living_anim);
         ImageView imageView3 = (ImageView) this.b.findViewById(R.id.img_bar_live_anim);
         imageView.setImageResource(R.drawable.bg_profile_header_border);
-        shapeTextView.setVisibility(8);
+        findViewById.setVisibility(8);
         imageView2.setVisibility(8);
         imageView3.setVisibility(8);
         if (userInfoEntity == null || StringUtils.d(userInfoEntity.uid)) {
@@ -3076,8 +3064,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         if (userInfoEntity.liveshow != null && userInfoEntity.liveshow.session_id != null && !userInfoEntity.uid.equals(UserInfo.getInstance().getLoginUserInfo().uid)) {
             EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PROFILE_LIVING_SHOW, userInfoEntity.uid);
             imageView.setImageResource(R.drawable.bg_profile_living_border);
-            shapeTextView.setVisibility(0);
-            ShapeHelper.d(shapeTextView, 2131099651);
+            findViewById.setVisibility(0);
+            ShapeHelper.d(findViewById, 2131099651);
             imageView2.setVisibility(0);
             imageView3.setVisibility(0);
             String str = "anim_live_en";
@@ -3098,8 +3086,8 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         } else {
             EventTrackYY.f(ChatRoomProtos.Event.CHAT_ROOM_PROFILE_ENTER_SHOW, userInfoEntity.voice_broadcast.room_id, userInfoEntity.voice_broadcast.uid, userInfoEntity.voice_broadcast.room_type);
             imageView.setImageResource(R.drawable.bg_profile_chat_border);
-            shapeTextView.setVisibility(0);
-            ShapeHelper.d(shapeTextView, 2131101446);
+            findViewById.setVisibility(0);
+            ShapeHelper.d(findViewById, 2131101446);
             imageView2.setVisibility(0);
             imageView3.setVisibility(0);
             String str3 = "anim_chat_en";
@@ -3187,13 +3175,13 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         }
         textViewFixTouchForDynamic.setVisibility(0);
         ViewGroup.LayoutParams layoutParams = textViewFixTouchForDynamic.getLayoutParams();
-        layoutParams.width = AppInfo.l - DensityUtils.a(this.f34016a, 20.0f);
+        layoutParams.width = AppInfo.l - DensityUtils.a(this.f20325a, 20.0f);
         textViewFixTouchForDynamic.setLayoutParams(layoutParams);
         textViewFixTouchForDynamic.setMaxWidth(layoutParams.width);
         textViewFixTouchForDynamic.setMaxLines(3);
         textViewFixTouchForDynamic.setMovementMethod(LinkMovementClickMethod.a());
-        textViewFixTouchForDynamic.setMoreText(this.f34016a.getResources().getString(2131892582));
-        textViewFixTouchForDynamic.setMoeTextColor(BluedSkinUtils.a(this.f34016a, 2131102254));
+        textViewFixTouchForDynamic.setMoreText(this.f20325a.getResources().getString(R.string.view_more));
+        textViewFixTouchForDynamic.setMoeTextColor(BluedSkinUtils.a(this.f20325a, 2131102254));
         textViewFixTouchForDynamic.setExpandText(str2);
         textView.setVisibility(4);
         textView.setText(str2);
@@ -3290,7 +3278,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             imageView.setVisibility(0);
         }
         if (UserInfo.getInstance().getLoginUserInfo().uid.equals(userInfoEntity.uid)) {
-            textView.setText(this.f34016a.getResources().getString(R.string.my_gift));
+            textView.setText(this.f20325a.getResources().getString(R.string.my_gift));
             this.aI.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$1_HRDjoOXjJfcHul1nlZMpktpJc
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -3298,7 +3286,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 }
             });
         } else {
-            textView.setText(this.f34016a.getResources().getString(R.string.his_gift));
+            textView.setText(this.f20325a.getResources().getString(R.string.his_gift));
             this.aI.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$Ncc-jRA9J9HxkZyvN0hkJSerY8w
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -3306,23 +3294,21 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 }
             });
         }
-        UserHttpUtils.b(new AnonymousClass18(getFragmentActive(), userInfoEntity, textView2, imageView, recyclerView), userInfoEntity.uid, getFragmentActive());
+        UserHttpUtils.b((BluedUIHttpResponse) new AnonymousClass18(getFragmentActive(), userInfoEntity, textView2, imageView, recyclerView), userInfoEntity.uid, (IRequestHost) getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.utils.PageTimeUtils.APMInterface
     public String getPageBizName() {
-        UserBasicModel userBasicModel = (UserBasicModel) getArguments().getSerializable("user");
-        return (userBasicModel == null || !userBasicModel.uid.equalsIgnoreCase(UserInfo.getInstance().getLoginUserInfo().uid)) ? "A57" : "A56";
+        UserBasicModel serializable = getArguments().getSerializable("user");
+        return (serializable == null || !serializable.uid.equalsIgnoreCase(UserInfo.getInstance().getLoginUserInfo().uid)) ? "A57" : "A56";
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public String getSimpleRouterName() {
-        UserBasicModel userBasicModel = (UserBasicModel) getArguments().getSerializable("user");
-        return (userBasicModel == null || !userBasicModel.uid.equalsIgnoreCase(UserInfo.getInstance().getLoginUserInfo().uid)) ? "A57" : "A56";
+        UserBasicModel serializable = getArguments().getSerializable("user");
+        return (serializable == null || !serializable.uid.equalsIgnoreCase(UserInfo.getInstance().getLoginUserInfo().uid)) ? "A57" : "A56";
     }
 
     public void h() {
-        Context context = this.f34016a;
+        Context context = this.f20325a;
         CommonAlertDialog.a(context, context.getResources().getString(R.string.profile_background_del), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$k3_TbMLQ4x1IBoAeDFttGHRo5sE
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
@@ -3382,7 +3368,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         } else {
             this.l.setVisibility(8);
         }
-        ImageLoader.a(getFragmentActive(), AvatarUtils.a(3, userInfoEntity.background_photo)).b(R.drawable.bg_vip_bg_default).d(R.drawable.bg_vip_bg_default).a(this.bb);
+        ImageLoader.a(getFragmentActive(), AvatarUtils.a(3, userInfoEntity.background_photo)).b((int) R.drawable.bg_vip_bg_default).d((int) R.drawable.bg_vip_bg_default).a(this.bb);
         this.U = (TextView) this.b.findViewById(R.id.tv_avatar_widget);
         if (!this.W || UserInfo.getInstance().getLoginUserInfo().vip_grade == 0 || BluedPreferences.cT()) {
             return;
@@ -3415,7 +3401,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     }
 
     public void i(final UserInfoEntity userInfoEntity) {
-        View findViewById = this.b.findViewById(2131363933);
+        View findViewById = this.b.findViewById(R.id.fl_tab_title);
         View findViewById2 = this.b.findViewById(R.id.ll_distance_row);
         View findViewById3 = this.b.findViewById(R.id.ll_followed_and_fans);
         if (userInfoEntity == null || StringUtils.d(userInfoEntity.uid) || !this.n.h()) {
@@ -3431,11 +3417,11 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         findViewById2.setVisibility(8);
         findViewById3.setVisibility(8);
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.A.getLayoutParams();
-        layoutParams.height = (AppInfo.m - StatusBarHelper.a(this.f34016a)) - DensityUtils.a(this.f34016a, 44.0f);
+        layoutParams.height = (AppInfo.m - StatusBarHelper.a(this.f20325a)) - DensityUtils.a(this.f20325a, 44.0f);
         this.A.setLayoutParams(layoutParams);
         this.A.setVisibility(0);
-        this.w.setText(this.f34016a.getResources().getString(2131889158));
-        this.aO = this.f34016a.getResources().getString(2131889158);
+        this.w.setText(this.f20325a.getResources().getString(R.string.liveVideo_livingView_label_userBlockYou));
+        this.aO = this.f20325a.getResources().getString(R.string.liveVideo_livingView_label_userBlockYou);
         this.ab.setVisibility(8);
         findViewById.setVisibility(8);
         this.g.setVisibility(8);
@@ -3446,9 +3432,9 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             }
         });
         if ("4".equals(userInfoEntity.relationship) || "12".equals(userInfoEntity.relationship)) {
-            this.C.setText(this.f34016a.getResources().getString(R.string.remove_from_black));
+            this.C.setText(this.f20325a.getResources().getString(R.string.remove_from_black));
         } else {
-            this.C.setText(this.f34016a.getResources().getString(R.string.add_to_black));
+            this.C.setText(this.f20325a.getResources().getString(R.string.add_to_black));
         }
         this.C.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$b18_RdUw7YZpM_NH5_bkAbZw_9c
             @Override // android.view.View.OnClickListener
@@ -3495,31 +3481,28 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     }
 
     public void k() {
-        Context context = this.f34016a;
+        Context context = this.f20325a;
         CommonAlertDialog.a(context, context.getResources().getString(R.string.confirm_apply_album), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.31
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 MineHttpUtils.a(UserInfoFragmentNew.this.n.e().uid, new BluedUIHttpResponse(UserInfoFragmentNew.this.getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.UserInfoFragmentNew.31.1
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIFinish() {
                         super.onUIFinish();
                         DialogUtils.b(UserInfoFragmentNew.this.v);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIStart() {
                         super.onUIStart();
                         DialogUtils.a(UserInfoFragmentNew.this.v);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIUpdate(BluedEntity bluedEntity) {
                         UserInfoFragmentNew.this.c(true);
                         AppMethods.d((int) R.string.apply_has_been_set);
                         ChatHelperV4.a().b(UserInfoFragmentNew.this.n.e().uid, UserInfoFragmentNew.this.n.e().name, UserInfoFragmentNew.this.n.e().avatar, UserInfoFragmentNew.this.n.e().vbadge, UserInfoFragmentNew.this.n.e().vip_grade, UserInfoFragmentNew.this.n.e().is_vip_annual, UserInfoFragmentNew.this.n.e().vip_exp_lvl, UserInfoFragmentNew.this.n.e().is_hide_vip_look);
                     }
-                }, UserInfoFragmentNew.this.getFragmentActive());
+                }, (IRequestHost) UserInfoFragmentNew.this.getFragmentActive());
             }
         });
     }
@@ -3548,7 +3531,6 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             });
             final ImageSize imageSize = new ImageSize();
             ImageFileLoader.a(getFragmentActive()).a(userInfoEntity.match_activity.icon).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$GxMqQDEmQMZlpSStXWARev23VW8
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public final void onUIFinish(File file, Exception exc) {
                     UserInfoFragmentNew.this.a(imageSize, imageView, userInfoEntity, file, exc);
                 }
@@ -3588,14 +3570,13 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             String str = charSequence;
             if (!str.contains(" ")) {
                 final String a2 = BluedHttpUrl.a(this.n.e().uid);
-                final String str2 = this.f34016a.getResources().getString(2131891701) + this.n.e().name + this.f34016a.getResources().getString(2131891702);
+                final String str2 = this.f20325a.getResources().getString(2131891701) + this.n.e().name + this.f20325a.getResources().getString(2131891702);
                 String str3 = this.n.e().location;
                 Log.v("drb", "citySettled:" + str3);
                 final String str4 = str3 + "\n" + str;
                 final String str5 = str3 + "\n" + this.aO;
                 final String a3 = AvatarUtils.a(0, this.n.e().avatar);
                 ImageFileLoader.a(getFragmentActive()).b(a3).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$cboyANl1iSbfdir3O5xJ8DpTiF8
-                    @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                     public final void onUIFinish(File file, Exception exc) {
                         UserInfoFragmentNew.this.a(a3, a2, str2, str4, str5, shareOptionsItemClickListener, file, exc);
                     }
@@ -3613,12 +3594,12 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                     return;
                 }
                 InstantLog.a(1, userInfoEntity.game_url);
-                WebViewShowInfoFragment.show(this.f34016a, userInfoEntity.game_url, -1);
+                WebViewShowInfoFragment.show(this.f20325a, userInfoEntity.game_url, -1);
             } else if (this.n.g()) {
             } else {
                 EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_PROFILE_PAGE_LIVE_ENTER_CLICK, userInfoEntity.uid);
                 InstantLog.a("live_view_from_userinfo", (Object) this.au);
-                UserRelationshipUtils.a(this.f34016a, userInfoEntity, userInfoEntity.liveshow.session_id.longValue(), MediaFormat.KEY_PROFILE);
+                UserRelationshipUtils.a(this.f20325a, userInfoEntity, userInfoEntity.liveshow.session_id.longValue(), MediaFormat.KEY_PROFILE);
             }
         }
     }
@@ -3629,16 +3610,16 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         }
         if (userInfoEntity.vbadge != 4 || !userInfoEntity.uid.equals(UserInfo.getInstance().getLoginUserInfo().uid)) {
             if (UserInfo.getInstance().getLoginUserInfo().uid.equalsIgnoreCase(userInfoEntity.uid) && userInfoEntity.vbadge == 0) {
-                PersonalVerifyFragment.a(this.f34016a, 1);
+                PersonalVerifyFragment.a(this.f20325a, 1);
             } else {
-                CommonAlertDialog2.a(this.f34016a, userInfoEntity.vbadge);
+                CommonAlertDialog2.a(this.f20325a, userInfoEntity.vbadge);
             }
         } else if (userInfoEntity.verify == null) {
-            ShowVerifyFragment.a(this.f34016a, userInfoEntity.name, userInfoEntity.avatar, "", userInfoEntity.uid, true);
+            ShowVerifyFragment.a(this.f20325a, userInfoEntity.name, userInfoEntity.avatar, "", userInfoEntity.uid, true);
         } else if (userInfoEntity.verify.length > 0) {
-            ShowVerifyFragment.a(this.f34016a, userInfoEntity.name, userInfoEntity.avatar, userInfoEntity.verify[0].verified_time, userInfoEntity.uid, true);
+            ShowVerifyFragment.a(this.f20325a, userInfoEntity.name, userInfoEntity.avatar, userInfoEntity.verify[0].verified_time, userInfoEntity.uid, true);
         } else {
-            ShowVerifyFragment.a(this.f34016a, userInfoEntity.name, userInfoEntity.avatar, "", userInfoEntity.uid, true);
+            ShowVerifyFragment.a(this.f20325a, userInfoEntity.name, userInfoEntity.avatar, "", userInfoEntity.uid, true);
         }
     }
 
@@ -3648,7 +3629,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             x();
             return false;
         }
-        LiveRoomInfoChannel.a(this.f34016a, this.G);
+        LiveRoomInfoChannel.a(this.f20325a, this.G);
         x();
         ActivityChangeAnimationUtils.g(getActivity());
         return true;
@@ -3663,7 +3644,6 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -3678,7 +3658,6 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         x();
         return true;
@@ -3713,7 +3692,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                 }
             case R.id.btn_bar_follow /* 2131362541 */:
             case R.id.btn_follow /* 2131362571 */:
-                a(this.ag, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$ve910mK0UaTVJbJxgYy4WLnYdcU
+                a((View) this.ag, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$ve910mK0UaTVJbJxgYy4WLnYdcU
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         UserInfoFragmentNew.this.g(view2);
@@ -3728,7 +3707,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
                     }
                 });
                 return;
-            case 2131362623:
+            case R.id.btn_post_feed /* 2131362623 */:
                 a(this.ak, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$UserInfoFragmentNew$e4IkozQWs3OM--kGjCRGwICvIW8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
@@ -3747,22 +3726,21 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34016a = getActivity();
-        getActivity().getWindow().setBackgroundDrawable(this.f34016a.getResources().getDrawable(2131237272));
-        this.aG = StatusBarHelper.a(this.f34016a);
-        this.aF = (((int) (AppInfo.l / 2.0f)) - DensityUtils.a(this.f34016a, 74.0f)) - this.aG;
+        this.f20325a = getActivity();
+        getActivity().getWindow().setBackgroundDrawable(this.f20325a.getResources().getDrawable(2131237272));
+        this.aG = StatusBarHelper.a(this.f20325a);
+        this.aF = (((int) (AppInfo.l / 2.0f)) - DensityUtils.a(this.f20325a, 74.0f)) - this.aG;
         View view = this.b;
         if (view == null) {
             e();
-            this.n = new UserInfoNewPresenter(this.f34016a, this, this.au, this.H, this.J, this.K, getFragmentActive(), this.M, this.E);
+            this.n = new UserInfoNewPresenter(this.f20325a, this, this.au, this.H, this.J, this.K, getFragmentActive(), this.M, this.E);
             this.b = layoutInflater.inflate(R.layout.fragment_userinfo_new, viewGroup, false);
-            this.f34018c = new ArrayList();
+            this.f20327c = new ArrayList();
             this.d = new ArrayList();
-            this.f34018c.add(this.f34016a.getResources().getString(R.string.album));
-            this.f34018c.add(this.f34016a.getResources().getString(2131887934));
-            this.f34018c.add(this.f34016a.getResources().getString(R.string.user_profile));
+            this.f20327c.add(this.f20325a.getResources().getString(R.string.album));
+            this.f20327c.add(this.f20325a.getResources().getString(R.string.feed_feeds));
+            this.f20327c.add(this.f20325a.getResources().getString(R.string.user_profile));
             this.aJ = new UserinfoFragmentProfileTab();
             this.aK = UserinfoFragmentFeedTab.a(this.E);
             UserinfoFragmentAlbumTab a2 = UserinfoFragmentAlbumTab.a(this.E);
@@ -3785,7 +3763,6 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         Log.v("finalize", "Userinfo onDestroy");
         UserinfoFeedScrollObserver.a().b(this);
@@ -3793,13 +3770,11 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         LiveEventBus.get(EventBusConstant.KEY_EVENT_BUY_FU, FuGiftListEvent.class).removeObserver(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         LiveEventBus.get(EventBusConstant.KEY_EVENT_BUY_FU, FuGiftListEvent.class).observeForever(this);
@@ -3813,7 +3788,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
     public void p() {
         EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_BTN_CLICK, FeedProtos.FeedFrom.PERSONAL, FeedMethods.b(), "");
         InstantLog.b("feed_post_btn_click", 2);
-        FeedAddPostFragment.a(this.f34016a, new CommBundleBuilder().a(11));
+        FeedAddPostFragment.a(this.f20325a, new CommBundleBuilder().a(11));
     }
 
     public void q() {
@@ -3847,7 +3822,7 @@ public class UserInfoFragmentNew extends BaseFragment implements View.OnClickLis
             return;
         }
         try {
-            ChatHelperV4.a().a(this.f34016a, Long.parseLong(this.n.e().uid), this.n.e().name, this.n.e().avatar, this.n.e().vbadge, this.n.e().vip_grade, this.n.e().is_vip_annual, this.n.e().vip_exp_lvl, this.n.e().distance, false, 0, this.n.e().is_hide_vip_look, logData, this.M, chatBundleExtra);
+            ChatHelperV4.a().a(this.f20325a, Long.parseLong(this.n.e().uid), this.n.e().name, this.n.e().avatar, this.n.e().vbadge, this.n.e().vip_grade, this.n.e().is_vip_annual, this.n.e().vip_exp_lvl, this.n.e().distance, false, 0, this.n.e().is_hide_vip_look, logData, this.M, chatBundleExtra);
         } catch (Exception e) {
         }
     }

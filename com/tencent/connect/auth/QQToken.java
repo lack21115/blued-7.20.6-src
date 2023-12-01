@@ -7,16 +7,16 @@ public class QQToken {
     public static final int AUTH_WEB = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f36168a;
+    private String f22477a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f36169c;
+    private String f22478c;
     private int d = 1;
     private long e = -1;
 
     public QQToken(String str) {
-        this.f36168a = str;
+        this.f22477a = str;
     }
 
     public String getAccessToken() {
@@ -24,7 +24,7 @@ public class QQToken {
     }
 
     public String getAppId() {
-        return this.f36168a;
+        return this.f22477a;
     }
 
     public int getAuthSource() {
@@ -36,7 +36,7 @@ public class QQToken {
     }
 
     public String getOpenId() {
-        return this.f36169c;
+        return this.f22478c;
     }
 
     public boolean isSessionValid() {
@@ -52,7 +52,7 @@ public class QQToken {
     }
 
     public void setAppId(String str) {
-        this.f36168a = str;
+        this.f22477a = str;
     }
 
     public void setAuthSource(int i) {
@@ -60,6 +60,6 @@ public class QQToken {
     }
 
     public void setOpenId(String str) {
-        this.f36169c = str;
+        this.f22478c = str;
     }
 }

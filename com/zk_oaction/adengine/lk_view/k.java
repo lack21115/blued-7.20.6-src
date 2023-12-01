@@ -12,7 +12,7 @@ import java.util.Random;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private Random f42071a = new Random();
+    private Random f28380a = new Random();
     private Paint b;
 
     public k() {
@@ -20,16 +20,16 @@ public class k {
     }
 
     private int a(int i) {
-        return this.f42071a.nextBoolean() ? i : 0 - i;
+        return this.f28380a.nextBoolean() ? i : 0 - i;
     }
 
     private int a(int i, int i2) {
         Random random;
         if (i2 != 0) {
-            random = this.f42071a;
+            random = this.f28380a;
             i /= 4;
         } else {
-            random = this.f42071a;
+            random = this.f28380a;
         }
         return random.nextInt(i);
     }
@@ -64,7 +64,7 @@ public class k {
         if (i3 <= 0) {
             i4 = 1;
         }
-        return new Point(a(this.f42071a.nextInt(i4)) + i, a((int) Math.sqrt((i4 * i4) - (nextInt * nextInt))) + i2);
+        return new Point(a(this.f28380a.nextInt(i4)) + i, a((int) Math.sqrt((i4 * i4) - (nextInt * nextInt))) + i2);
     }
 
     private void b() {
@@ -88,31 +88,31 @@ public class k {
         while (it.hasNext()) {
             j next = it.next();
             if (next.e == 0.0f) {
-                next.e = a(lVar.f / 4, this.f42071a.nextInt(15)) + 1;
+                next.e = a(lVar.f / 4, this.f28380a.nextInt(15)) + 1;
             }
             if (next.f == 0.0f) {
-                int a2 = (int) (lVar.f / lVar.f42073c.a());
-                Point point = new Point((int) next.f42069a, (int) next.b);
+                int a2 = (int) (lVar.f / lVar.f28382c.a());
+                Point point = new Point((int) next.f28378a, (int) next.b);
                 next.i = point;
                 next.j = a(point.x, point.y, (int) next.e);
                 Point point2 = next.i;
-                next.k = a(point2.x, point2.y, this.f42071a.nextInt(a2));
+                next.k = a(point2.x, point2.y, this.f28380a.nextInt(a2));
                 Point point3 = next.j;
-                next.l = a(point3.x, point3.y, this.f42071a.nextInt(a2));
+                next.l = a(point3.x, point3.y, this.f28380a.nextInt(a2));
             }
-            float a3 = next.f + lVar.f42072a.a();
+            float a3 = next.f + lVar.f28381a.a();
             next.f = a3;
             Point a4 = a(a3 / next.e, next.i, next.k, next.l, next.j);
             float f = next.f;
             float f2 = next.e;
             if (f <= f2) {
                 float a5 = lVar.b.a();
-                next.f42070c -= a5;
+                next.f28379c -= a5;
                 next.d -= a5;
             } else if (f >= f2) {
                 next.f = 0.0f;
                 next.e = 0.0f;
-                next.f42070c = 0.0f;
+                next.f28379c = 0.0f;
                 next.d = 0.0f;
             }
             Rect rect = next.g;
@@ -120,7 +120,7 @@ public class k {
             rect.left = i;
             int i2 = a4.y;
             rect.top = i2;
-            float f3 = next.f42070c;
+            float f3 = next.f28379c;
             int i3 = (int) f3;
             rect.right = i + i3;
             rect.bottom = i2 + i3;

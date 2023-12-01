@@ -10,17 +10,17 @@ import com.xiaomi.push.service.ba;
 public final class q extends ba.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f41233a;
+    final /* synthetic */ Context f27542a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public q(int i, String str, Context context) {
         super(i, str);
-        this.f41233a = context;
+        this.f27542a = context;
     }
 
     @Override // com.xiaomi.push.service.ba.a
     public final void onCallback() {
-        eb.a(this.f41233a).a(ba.a(this.f41233a).a(hl.AwakeInfoUploadWaySwitch.a(), 0));
+        eb.a(this.f27542a).a(ba.a(this.f27542a).a(hl.AwakeInfoUploadWaySwitch.a(), 0));
     }
 }

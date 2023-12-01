@@ -6,11 +6,11 @@ import com.anythink.expressad.foundation.d.c;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f6955a = 1;
+    public static int f4117a = 1;
     public static int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f6956c = 1500;
+    public static int f4118c = 1500;
     private static String d = "2000109";
     private static String e = "DspFilterUtils";
 

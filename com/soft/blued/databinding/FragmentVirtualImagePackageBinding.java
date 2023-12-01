@@ -12,29 +12,29 @@ import com.soft.blued.R;
 public final class FragmentVirtualImagePackageBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PageTabLayout f29027a;
+    public final PageTabLayout f15337a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final NoScrollViewPager f29028c;
+    public final NoScrollViewPager f15338c;
     private final FrameLayout d;
 
     private FragmentVirtualImagePackageBinding(FrameLayout frameLayout, PageTabLayout pageTabLayout, LinearLayout linearLayout, NoScrollViewPager noScrollViewPager) {
         this.d = frameLayout;
-        this.f29027a = pageTabLayout;
+        this.f15337a = pageTabLayout;
         this.b = linearLayout;
-        this.f29028c = noScrollViewPager;
+        this.f15338c = noScrollViewPager;
     }
 
     public static FragmentVirtualImagePackageBinding a(View view) {
         String str;
-        PageTabLayout pageTabLayout = (PageTabLayout) view.findViewById(R.id.tabLayout);
-        if (pageTabLayout != null) {
+        PageTabLayout findViewById = view.findViewById(R.id.tabLayout);
+        if (findViewById != null) {
             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.view_no_data);
             if (linearLayout != null) {
-                NoScrollViewPager noScrollViewPager = (NoScrollViewPager) view.findViewById(2131373100);
-                if (noScrollViewPager != null) {
-                    return new FragmentVirtualImagePackageBinding((FrameLayout) view, pageTabLayout, linearLayout, noScrollViewPager);
+                NoScrollViewPager findViewById2 = view.findViewById(2131373100);
+                if (findViewById2 != null) {
+                    return new FragmentVirtualImagePackageBinding((FrameLayout) view, findViewById, linearLayout, findViewById2);
                 }
                 str = "viewPager";
             } else {

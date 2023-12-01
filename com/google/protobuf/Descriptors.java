@@ -1,6 +1,5 @@
 package com.google.protobuf;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.FieldSet;
 import com.google.protobuf.Internal;
@@ -955,7 +954,7 @@ public final class Descriptors {
 
         private EnumValueDescriptor(FileDescriptor fileDescriptor, EnumDescriptor enumDescriptor, Integer num) {
             super(null);
-            DescriptorProtos.EnumValueDescriptorProto build = DescriptorProtos.EnumValueDescriptorProto.newBuilder().setName("UNKNOWN_ENUM_VALUE_" + enumDescriptor.getName() + BridgeUtil.UNDERLINE_STR + num).setNumber(num.intValue()).build();
+            DescriptorProtos.EnumValueDescriptorProto build = DescriptorProtos.EnumValueDescriptorProto.newBuilder().setName("UNKNOWN_ENUM_VALUE_" + enumDescriptor.getName() + "_" + num).setNumber(num.intValue()).build();
             this.index = -1;
             this.proto = build;
             this.file = fileDescriptor;

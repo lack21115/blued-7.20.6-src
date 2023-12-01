@@ -14,13 +14,13 @@ public class ai extends JsonComposer {
     @Json(name = IntentConstant.RULE)
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37298a = 0;
+    private int f23607a = 0;
     @Json(name = "priority")
     private int b = 0;
     @Json(name = "frontier")
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37299c = "default";
+    private String f23608c = "default";
     @Json(name = "logo_name")
     private String d = "";
     @Json(name = TvContract.Channels.Logo.CONTENT_DIRECTORY)
@@ -34,23 +34,23 @@ public class ai extends JsonComposer {
     private boolean i;
 
     private boolean a(w5 w5Var) {
-        if ("default".equals(this.f37299c)) {
+        if ("default".equals(this.f23608c)) {
             return true;
         }
         if (w5Var == null) {
             return false;
         }
-        return th.a(w5Var.b(), th.b().c(this.f37299c));
+        return th.a(w5Var.b(), th.b().c(this.f23608c));
     }
 
     private boolean b(w5 w5Var) {
-        if ("default".equals(this.f37299c)) {
+        if ("default".equals(this.f23608c)) {
             return true;
         }
         if (w5Var == null) {
             return false;
         }
-        x5[] c2 = th.b().c(this.f37299c);
+        x5[] c2 = th.b().c(this.f23608c);
         x5[] c3 = w5Var.c();
         if (c3 == null || c2 == null) {
             return true;
@@ -75,7 +75,7 @@ public class ai extends JsonComposer {
     }
 
     public void a(String str) {
-        this.f37299c = str;
+        this.f23608c = str;
     }
 
     public String b() {
@@ -83,7 +83,7 @@ public class ai extends JsonComposer {
     }
 
     public void b(int i) {
-        this.f37298a = i;
+        this.f23607a = i;
     }
 
     public void b(Bitmap bitmap) {
@@ -107,7 +107,7 @@ public class ai extends JsonComposer {
     }
 
     public boolean c(w5 w5Var) {
-        int i = this.f37298a;
+        int i = this.f23607a;
         boolean b = i != 0 ? i != 1 ? false : b(w5Var) : a(w5Var);
         boolean z = b;
         if (e()) {
@@ -117,7 +117,7 @@ public class ai extends JsonComposer {
     }
 
     public int d() {
-        return (this.f37298a * 10) + this.b;
+        return (this.f23607a * 10) + this.b;
     }
 
     public void d(String str) {

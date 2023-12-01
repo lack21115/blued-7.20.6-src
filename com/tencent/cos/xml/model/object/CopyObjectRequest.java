@@ -1,7 +1,6 @@
 package com.tencent.cos.xml.model.object;
 
 import android.util.Base64;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.CosXmlServiceConfig;
 import com.tencent.cos.xml.common.COSACL;
 import com.tencent.cos.xml.common.COSRequestHeaderKey;
@@ -15,6 +14,7 @@ import com.tencent.cos.xml.utils.DigestUtils;
 import com.tencent.cos.xml.utils.URLEncodeUtils;
 import com.tencent.qcloud.core.auth.STSCredentialScope;
 import com.tencent.qcloud.core.http.RequestBodySerializer;
+import com.xiaomi.mipush.sdk.Constants;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -38,7 +38,7 @@ public class CopyObjectRequest extends ObjectRequest {
 
         @Deprecated
         public CopySourceStruct(String str, String str2, String str3, String str4) {
-            this.bucket = str2.concat("-").concat(str);
+            this.bucket = str2.concat(Constants.ACCEPT_TIME_SEPARATOR_SERVER).concat(str);
             this.region = str3;
             this.cosPath = str4;
         }
@@ -64,8 +64,8 @@ public class CopyObjectRequest extends ObjectRequest {
 
         public String getSource(CosXmlServiceConfig cosXmlServiceConfig) {
             String str = this.cosPath;
-            if (str != null && !str.startsWith(BridgeUtil.SPLIT_MARK)) {
-                this.cosPath = BridgeUtil.SPLIT_MARK + this.cosPath;
+            if (str != null && !str.startsWith("/")) {
+                this.cosPath = "/" + this.cosPath;
             }
             String str2 = cosXmlServiceConfig.getDefaultRequestHost(this.region, this.bucket) + this.cosPath;
             String str3 = str2;

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.FragmentTransaction;
 import butterknife.BindView;
+import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.ui.mvp.MvpFragment;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
@@ -17,7 +18,7 @@ public class DependentVIPSelectedFragment extends MvpFragment {
     CommonTopTitleNoTrans title;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, DependentVIPSelectedFragment.class, null);
+        TerminalActivity.d(context, DependentVIPSelectedFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -26,7 +27,6 @@ public class DependentVIPSelectedFragment extends MvpFragment {
         getActivity().finish();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.title.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$DependentVIPSelectedFragment$vJETfRoMuPgG4wgWdXcYhWAHX3c
@@ -38,15 +38,13 @@ public class DependentVIPSelectedFragment extends MvpFragment {
         this.title.a();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_dependent_vip_selected;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        NearbyPeopleTabPageVIPFragment i = NearbyPeopleTabPageVIPFragment.i();
+        BaseFragment i = NearbyPeopleTabPageVIPFragment.i();
         FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
         beginTransaction.replace(2131363059, i);
         beginTransaction.commitAllowingStateLoss();

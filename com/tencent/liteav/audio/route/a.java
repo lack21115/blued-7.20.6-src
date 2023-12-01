@@ -10,34 +10,33 @@ public enum a {
     
     int mValue;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.liteav.audio.route.a$1  reason: invalid class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/audio/route/a$1.class */
-    public static final /* synthetic */ class AnonymousClass1 {
+    static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36250a;
+        static final /* synthetic */ int[] f22559a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[a.values().length];
-            f36250a = iArr;
+            f22559a = iArr;
             try {
                 iArr[a.VOICE_PLAY_AND_RECORD.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f36250a[a.VOICE_PLAYBACK.ordinal()] = 2;
+                f22559a[a.VOICE_PLAYBACK.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f36250a[a.MEDIA_PLAY_AND_RECORD.ordinal()] = 3;
+                f22559a[a.MEDIA_PLAY_AND_RECORD.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f36250a[a.MEDIA_PLAYBACK.ordinal()] = 4;
+                f22559a[a.MEDIA_PLAYBACK.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -48,7 +47,7 @@ public enum a {
     }
 
     public static int a(a aVar) {
-        int i = AnonymousClass1.f36250a[aVar.ordinal()];
+        int i = AnonymousClass1.f22559a[aVar.ordinal()];
         return (i == 1 || i == 2) ? 3 : 0;
     }
 

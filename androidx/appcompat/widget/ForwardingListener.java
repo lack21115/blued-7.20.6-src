@@ -11,11 +11,11 @@ import androidx.appcompat.view.menu.ShowableListMenu;
 public abstract class ForwardingListener implements View.OnAttachStateChangeListener, View.OnTouchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final float f1823a;
+    private final float f1775a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    final View f1824c;
+    final View f1776c;
     private final int d;
     private Runnable e;
     private Runnable f;
@@ -31,7 +31,7 @@ public abstract class ForwardingListener implements View.OnAttachStateChangeList
 
         @Override // java.lang.Runnable
         public void run() {
-            ViewParent parent = ForwardingListener.this.f1824c.getParent();
+            ViewParent parent = ForwardingListener.this.f1776c.getParent();
             if (parent != null) {
                 parent.requestDisallowInterceptTouchEvent(true);
             }
@@ -51,17 +51,17 @@ public abstract class ForwardingListener implements View.OnAttachStateChangeList
     }
 
     public ForwardingListener(View view) {
-        this.f1824c = view;
+        this.f1776c = view;
         view.setLongClickable(true);
         view.addOnAttachStateChangeListener(this);
-        this.f1823a = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
+        this.f1775a = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
         int tapTimeout = ViewConfiguration.getTapTimeout();
         this.b = tapTimeout;
         this.d = (tapTimeout + ViewConfiguration.getLongPressTimeout()) / 2;
     }
 
     private boolean a(MotionEvent motionEvent) {
-        View view = this.f1824c;
+        View view = this.f1776c;
         if (view.isEnabled()) {
             int actionMasked = motionEvent.getActionMasked();
             if (actionMasked == 0) {
@@ -79,7 +79,7 @@ public abstract class ForwardingListener implements View.OnAttachStateChangeList
             if (actionMasked != 1) {
                 if (actionMasked == 2) {
                     int findPointerIndex = motionEvent.findPointerIndex(this.h);
-                    if (findPointerIndex < 0 || a(view, motionEvent.getX(findPointerIndex), motionEvent.getY(findPointerIndex), this.f1823a)) {
+                    if (findPointerIndex < 0 || a(view, motionEvent.getX(findPointerIndex), motionEvent.getY(findPointerIndex), this.f1775a)) {
                         return false;
                     }
                     b();
@@ -110,16 +110,16 @@ public abstract class ForwardingListener implements View.OnAttachStateChangeList
     private void b() {
         Runnable runnable = this.f;
         if (runnable != null) {
-            this.f1824c.removeCallbacks(runnable);
+            this.f1776c.removeCallbacks(runnable);
         }
         Runnable runnable2 = this.e;
         if (runnable2 != null) {
-            this.f1824c.removeCallbacks(runnable2);
+            this.f1776c.removeCallbacks(runnable2);
         }
     }
 
     private boolean b(MotionEvent motionEvent) {
-        View view = this.f1824c;
+        View view = this.f1776c;
         ShowableListMenu popup = getPopup();
         boolean z = false;
         if (popup != null) {
@@ -160,7 +160,7 @@ public abstract class ForwardingListener implements View.OnAttachStateChangeList
 
     void a() {
         b();
-        View view = this.f1824c;
+        View view = this.f1776c;
         if (view.isEnabled() && !view.isLongClickable() && onForwardingStarted()) {
             view.getParent().requestDisallowInterceptTouchEvent(true);
             long uptimeMillis = SystemClock.uptimeMillis();
@@ -203,7 +203,7 @@ public abstract class ForwardingListener implements View.OnAttachStateChangeList
             if (z3) {
                 long uptimeMillis = SystemClock.uptimeMillis();
                 MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
-                this.f1824c.onTouchEvent(obtain);
+                this.f1776c.onTouchEvent(obtain);
                 obtain.recycle();
                 z = z3;
             }
@@ -229,7 +229,7 @@ public abstract class ForwardingListener implements View.OnAttachStateChangeList
         this.h = -1;
         Runnable runnable = this.e;
         if (runnable != null) {
-            this.f1824c.removeCallbacks(runnable);
+            this.f1776c.removeCallbacks(runnable);
         }
     }
 }

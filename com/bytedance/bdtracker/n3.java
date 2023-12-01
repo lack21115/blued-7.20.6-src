@@ -22,13 +22,13 @@ public class n3 implements a4.b<x3, Pair<String, Boolean>> {
         if (x3Var2 == null) {
             return null;
         }
-        x3.a.C0313a c0313a = (x3.a.C0313a) x3Var2;
+        x3.a.C0143a c0143a = (x3.a.C0143a) x3Var2;
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
             boolean z = true;
-            c0313a.f21337a.transact(1, obtain, obtain2, 0);
+            c0143a.f7731a.transact(1, obtain, obtain2, 0);
             obtain2.readException();
             String readString = obtain2.readString();
             obtain2.recycle();
@@ -37,7 +37,7 @@ public class n3 implements a4.b<x3, Pair<String, Boolean>> {
             obtain2 = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-                c0313a.f21337a.transact(2, obtain, obtain2, 0);
+                c0143a.f7731a.transact(2, obtain, obtain2, 0);
                 obtain2.readException();
                 if (obtain2.readInt() == 0) {
                     z = false;

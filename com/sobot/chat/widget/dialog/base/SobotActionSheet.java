@@ -68,7 +68,7 @@ public abstract class SobotActionSheet extends Dialog {
     protected abstract String getLayoutStrName();
 
     public int getResDrawableId(String str) {
-        return ResourceUtils.getIdByName(getContext(), i.f7952c, str);
+        return ResourceUtils.getIdByName(getContext(), i.f5112c, str);
     }
 
     public int getResId(String str) {

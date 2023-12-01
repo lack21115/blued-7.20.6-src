@@ -10,22 +10,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyMoreMenuRoomBinding.class */
 public final class ItemYyMoreMenuRoomBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16749a;
+    public final SquareImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16750c;
+    public final ShapeTextView c;
     public final TextView d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private ItemYyMoreMenuRoomBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, TextView textView, ShapeTextView shapeTextView, TextView textView2, TextView textView3) {
         this.f = constraintLayout;
-        this.f16749a = squareImageView;
+        this.a = squareImageView;
         this.b = textView;
-        this.f16750c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView2;
         this.e = textView3;
     }
@@ -60,7 +56,6 @@ public final class ItemYyMoreMenuRoomBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

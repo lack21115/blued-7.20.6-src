@@ -10,18 +10,18 @@ public class TbsCoreLoadStat {
     public static volatile int mLoadErrorCode = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    private TbsSequenceQueue f38757a = null;
+    private TbsSequenceQueue f25066a = null;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f38758c = 3;
+    private final int f25067c = 3;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/TbsCoreLoadStat$TbsSequenceQueue.class */
     public class TbsSequenceQueue {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f38760c;
+        private int f25069c;
         private int[] d;
         private int e;
         private int f;
@@ -30,7 +30,7 @@ public class TbsCoreLoadStat {
             this.b = 10;
             this.e = 0;
             this.f = 0;
-            this.f38760c = 10;
+            this.f25069c = 10;
             this.d = new int[10];
         }
 
@@ -38,7 +38,7 @@ public class TbsCoreLoadStat {
             this.b = 10;
             this.e = 0;
             this.f = 0;
-            this.f38760c = i2;
+            this.f25069c = i2;
             int[] iArr = new int[i2];
             this.d = iArr;
             iArr[0] = i;
@@ -47,7 +47,7 @@ public class TbsCoreLoadStat {
 
         public void add(int i) {
             int i2 = this.f;
-            if (i2 > this.f38760c - 1) {
+            if (i2 > this.f25069c - 1) {
                 throw new IndexOutOfBoundsException("sequeue is full");
             }
             int[] iArr = this.d;
@@ -120,7 +120,7 @@ public class TbsCoreLoadStat {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        TbsSequenceQueue tbsSequenceQueue = this.f38757a;
+        TbsSequenceQueue tbsSequenceQueue = this.f25066a;
         if (tbsSequenceQueue != null) {
             tbsSequenceQueue.clear();
         }

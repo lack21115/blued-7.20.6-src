@@ -150,7 +150,7 @@ final class ExtensionSchemaFull extends ExtensionSchema<Descriptors.FieldDescrip
         FieldSet<Descriptors.FieldDescriptor> extensions = getExtensions(obj);
         FieldSet<Descriptors.FieldDescriptor> fieldSet = extensions;
         if (extensions.isImmutable()) {
-            fieldSet = extensions.m6682clone();
+            fieldSet = extensions.m3675clone();
             setExtensions(obj, fieldSet);
         }
         return fieldSet;

@@ -1,6 +1,7 @@
 package java.io;
 
 import android.system.OsConstants;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.CloseGuard;
 import java.nio.NioUtils;
 import java.nio.channels.FileChannel;
@@ -27,7 +28,7 @@ public class FileOutputStream extends OutputStream {
         this.mode = (z ? OsConstants.O_APPEND : OsConstants.O_TRUNC) | OsConstants.O_CREAT | i;
         this.fd = IoBridge.open(file.getPath(), this.mode);
         this.shouldClose = true;
-        this.guard.open("close");
+        this.guard.open(LoaderConstants.CLOSE);
     }
 
     public FileOutputStream(FileDescriptor fileDescriptor) {

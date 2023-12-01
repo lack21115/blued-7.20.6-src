@@ -23,16 +23,12 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/CircleRecommendListAdapter.class */
 public class CircleRecommendListAdapter extends BaseQuickAdapter<MyCircleModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f19122a;
+    private IRequestHost a;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/CircleRecommendListAdapter$MyCircleViewHolder.class */
     public class MyCircleViewHolder {
         private View b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f19127c;
+        private ImageView c;
         private TextView d;
         private TextView e;
         private TextView f;
@@ -46,7 +42,7 @@ public class CircleRecommendListAdapter extends BaseQuickAdapter<MyCircleModel, 
             } else if (i == 2) {
                 this.b = baseViewHolder.getView(R.id.item_recommend3);
             }
-            this.f19127c = (ImageView) this.b.findViewById(R.id.img_cover);
+            this.c = (ImageView) this.b.findViewById(R.id.img_cover);
             this.d = (TextView) this.b.findViewById(R.id.tv_circle_desc);
             this.e = (TextView) this.b.findViewById(R.id.tv_circle_name);
             this.f = (TextView) this.b.findViewById(R.id.tv_circle_member);
@@ -59,7 +55,7 @@ public class CircleRecommendListAdapter extends BaseQuickAdapter<MyCircleModel, 
     public CircleRecommendListAdapter(Context context, IRequestHost iRequestHost) {
         super(R.layout.item_recommend_circle_list, new ArrayList());
         this.mContext = context;
-        this.f19122a = iRequestHost;
+        this.a = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,7 +64,7 @@ public class CircleRecommendListAdapter extends BaseQuickAdapter<MyCircleModel, 
     }
 
     private void a(final MyCircleModel myCircleModel, final MyCircleViewHolder myCircleViewHolder) {
-        ImageLoader.a(this.f19122a, myCircleModel.cover).b(R.drawable.circle_header_default).a(8.0f).a(myCircleViewHolder.f19127c);
+        ImageLoader.a(this.a, myCircleModel.cover).b(R.drawable.circle_header_default).a(8.0f).a(myCircleViewHolder.c);
         myCircleViewHolder.e.setText(myCircleModel.title);
         myCircleViewHolder.d.setText(myCircleModel.description);
         TextView textView = myCircleViewHolder.f;
@@ -108,12 +104,11 @@ public class CircleRecommendListAdapter extends BaseQuickAdapter<MyCircleModel, 
                 circleJoinView.setJoinStatusWithMember(myCircleModel);
                 CircleRecommendListAdapter.this.notifyDataSetChanged();
             }
-        }, myCircleModel.getJoinState(), this.f19122a, this.mContext instanceof AppCompatActivity ? ((AppCompatActivity) this.mContext).getSupportFragmentManager() : null, false, true);
+        }, myCircleModel.getJoinState(), this.a, this.mContext instanceof AppCompatActivity ? this.mContext.getSupportFragmentManager() : null, false, true);
         notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, MyCircleModel myCircleModel) {
         if (baseViewHolder == null || myCircleModel == null) {

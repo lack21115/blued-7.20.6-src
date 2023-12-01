@@ -1,5 +1,6 @@
 package com.sobot.chat.adapter.base;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
@@ -32,7 +33,7 @@ public abstract class SobotBaseGvAdapter<T> extends SobotBaseAdapter {
 
     /* JADX WARN: Type inference failed for: r2v1, types: [int[], int[][]] */
     protected ColorStateList createColorStateList(int i, int i2, int i3, int i4) {
-        return new ColorStateList(new int[]{new int[]{16842919, 16842910}, new int[]{16842910, 16842908}, new int[]{16842910}, new int[]{16842908}, new int[]{16842909}, new int[0]}, new int[]{i2, i3, i, i3, i4, i});
+        return new ColorStateList(new int[]{new int[]{R.attr.state_pressed, R.attr.state_enabled}, new int[]{R.attr.state_enabled, R.attr.state_focused}, new int[]{R.attr.state_enabled}, new int[]{R.attr.state_focused}, new int[]{R.attr.state_window_focused}, new int[0]}, new int[]{i2, i3, i, i3, i4, i});
     }
 
     protected abstract String getContentLayoutName();

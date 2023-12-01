@@ -216,7 +216,7 @@ public final class d extends b {
             aVar.a(this.km);
         }
         aVar.a(dl());
-        aVar.a(m7620do());
+        aVar.a(m4613do());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -407,8 +407,8 @@ public final class d extends b {
         com.kwad.components.ad.f.kwai.kwai.b k = com.kwad.components.ad.f.kwai.kwai.b.k(this.mAdTemplate);
         this.km = k;
         if (k != null) {
-            k.a(new b.InterfaceC0472b() { // from class: com.kwad.components.ad.interstitial.c.d.3
-                @Override // com.kwad.components.ad.f.kwai.kwai.b.InterfaceC0472b
+            k.a(new b.InterfaceC0302b() { // from class: com.kwad.components.ad.interstitial.c.d.3
+                @Override // com.kwad.components.ad.f.kwai.kwai.b.InterfaceC0302b
                 public final void G(int i) {
                     if (i == com.kwad.components.ad.f.kwai.kwai.b.nP) {
                         d.this.jt.b(d.this.getContext(), d.this.mAdTemplate);
@@ -422,10 +422,10 @@ public final class d extends b {
     }
 
     /* renamed from: do  reason: not valid java name */
-    private com.kwad.components.ad.f.kwai.kwai.a m7620do() {
+    private com.kwad.components.ad.f.kwai.kwai.a m4613do() {
         final com.kwad.components.ad.f.kwai.kwai.a aVar = new com.kwad.components.ad.f.kwai.kwai.a();
-        this.jt.jE.add(new c.InterfaceC0484c() { // from class: com.kwad.components.ad.interstitial.c.d.4
-            @Override // com.kwad.components.ad.interstitial.c.c.InterfaceC0484c
+        this.jt.jE.add(new c.InterfaceC0314c() { // from class: com.kwad.components.ad.interstitial.c.d.4
+            @Override // com.kwad.components.ad.interstitial.c.c.InterfaceC0314c
             public final void dg() {
                 aVar.fb();
             }
@@ -665,7 +665,7 @@ public final class d extends b {
         return new ag.a() { // from class: com.kwad.components.ad.interstitial.c.d.11
             @Override // com.kwad.components.core.webview.jshandler.ag.a
             public final void a(com.kwad.components.core.webview.kwai.b bVar) {
-                AdWebViewActivityProxy.launch(d.this.mContext, new AdWebViewActivityProxy.a.C0529a().au(bVar.title).av(bVar.url).aA(true).L(d.this.mAdTemplate).oc());
+                AdWebViewActivityProxy.launch(d.this.mContext, new AdWebViewActivityProxy.a.C0359a().au(bVar.title).av(bVar.url).aA(true).L(d.this.mAdTemplate).oc());
             }
         };
     }

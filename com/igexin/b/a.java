@@ -18,10 +18,10 @@ public final class a {
     private static String b = "GTSDK-thread-pool | ";
 
     /* renamed from: a  reason: collision with root package name */
-    public final ThreadPoolExecutor f23194a;
+    public final ThreadPoolExecutor f9586a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ConcurrentHashMap<String, ThreadPoolExecutor> f23195c;
+    private final ConcurrentHashMap<String, ThreadPoolExecutor> f9587c;
     private ScheduledThreadPoolExecutor d;
     private final AtomicInteger e;
     private final AtomicInteger f;
@@ -30,21 +30,21 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.igexin.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/b/a$a.class */
-    public static final class C0444a {
+    public static final class C0274a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final a f23204a = new a((byte) 0);
+        private static final a f9596a = new a((byte) 0);
 
-        private C0444a() {
+        private C0274a() {
         }
     }
 
     private a() {
-        this.f23195c = new ConcurrentHashMap<>();
+        this.f9587c = new ConcurrentHashMap<>();
         this.e = new AtomicInteger(0);
         this.f = new AtomicInteger(0);
         this.g = 30;
-        this.f23194a = new ThreadPoolExecutor(0, Runtime.getRuntime().availableProcessors() * 2, this.g, TimeUnit.SECONDS, new SynchronousQueue(), new ThreadFactory() { // from class: com.igexin.b.a.1
+        this.f9586a = new ThreadPoolExecutor(0, Runtime.getRuntime().availableProcessors() * 2, this.g, TimeUnit.SECONDS, new SynchronousQueue(), new ThreadFactory() { // from class: com.igexin.b.a.1
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
                 Thread thread = new Thread(runnable, "gt-thread-multiple " + a.this.e.getAndIncrement());
@@ -71,17 +71,17 @@ public final class a {
     }
 
     public static a a() {
-        return C0444a.f23204a;
+        return C0274a.f9596a;
     }
 
     private ThreadPoolExecutor d() {
-        return this.f23194a;
+        return this.f9586a;
     }
 
     public final ThreadPoolExecutor a(String str) {
         String concat = TextUtils.isEmpty(str) ? "gt-thread" : "gt-thread-".concat(String.valueOf(str));
-        if (this.f23195c.containsKey(concat)) {
-            return this.f23195c.get(concat);
+        if (this.f9587c.containsKey(concat)) {
+            return this.f9587c.get(concat);
         }
         final String str2 = concat;
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, this.g, TimeUnit.SECONDS, new LinkedBlockingQueue(), new ThreadFactory() { // from class: com.igexin.b.a.3
@@ -104,7 +104,7 @@ public final class a {
                 }
             }
         });
-        this.f23195c.put(concat, threadPoolExecutor);
+        this.f9587c.put(concat, threadPoolExecutor);
         return threadPoolExecutor;
     }
 

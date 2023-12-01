@@ -10,18 +10,17 @@ import android.view.accessibility.AccessibilityManager;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.ViewConfigurationCompat;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/TooltipCompatHandler.class */
-public class TooltipCompatHandler implements View.OnAttachStateChangeListener, View.OnHoverListener, View.OnLongClickListener {
+class TooltipCompatHandler implements View.OnAttachStateChangeListener, View.OnHoverListener, View.OnLongClickListener {
     private static TooltipCompatHandler j;
     private static TooltipCompatHandler k;
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f1914a;
+    private final View f1866a;
     private final CharSequence b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f1915c;
+    private final int f1867c;
     private final Runnable d = new Runnable() { // from class: androidx.appcompat.widget.TooltipCompatHandler.1
         @Override // java.lang.Runnable
         public void run() {
@@ -40,12 +39,12 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
     private boolean i;
 
     private TooltipCompatHandler(View view, CharSequence charSequence) {
-        this.f1914a = view;
+        this.f1866a = view;
         this.b = charSequence;
-        this.f1915c = ViewConfigurationCompat.getScaledHoverSlop(ViewConfiguration.get(view.getContext()));
+        this.f1867c = ViewConfigurationCompat.getScaledHoverSlop(ViewConfiguration.get(view.getContext()));
         d();
-        this.f1914a.setOnLongClickListener(this);
-        this.f1914a.setOnHoverListener(this);
+        this.f1866a.setOnLongClickListener(this);
+        this.f1866a.setOnHoverListener(this);
     }
 
     private static void a(TooltipCompatHandler tooltipCompatHandler) {
@@ -62,7 +61,7 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
     private boolean a(MotionEvent motionEvent) {
         int x = (int) motionEvent.getX();
         int y = (int) motionEvent.getY();
-        if (Math.abs(x - this.f) > this.f1915c || Math.abs(y - this.g) > this.f1915c) {
+        if (Math.abs(x - this.f) > this.f1867c || Math.abs(y - this.g) > this.f1867c) {
             this.f = x;
             this.g = y;
             return true;
@@ -71,11 +70,11 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
     }
 
     private void b() {
-        this.f1914a.postDelayed(this.d, ViewConfiguration.getLongPressTimeout());
+        this.f1866a.postDelayed(this.d, ViewConfiguration.getLongPressTimeout());
     }
 
     private void c() {
-        this.f1914a.removeCallbacks(this.d);
+        this.f1866a.removeCallbacks(this.d);
     }
 
     private void d() {
@@ -85,7 +84,7 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
 
     public static void setTooltipText(View view, CharSequence charSequence) {
         TooltipCompatHandler tooltipCompatHandler = j;
-        if (tooltipCompatHandler != null && tooltipCompatHandler.f1914a == view) {
+        if (tooltipCompatHandler != null && tooltipCompatHandler.f1866a == view) {
             a((TooltipCompatHandler) null);
         }
         if (!TextUtils.isEmpty(charSequence)) {
@@ -93,7 +92,7 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
             return;
         }
         TooltipCompatHandler tooltipCompatHandler2 = k;
-        if (tooltipCompatHandler2 != null && tooltipCompatHandler2.f1914a == view) {
+        if (tooltipCompatHandler2 != null && tooltipCompatHandler2.f1866a == view) {
             tooltipCompatHandler2.a();
         }
         view.setOnLongClickListener(null);
@@ -109,7 +108,7 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
                 tooltipPopup.a();
                 this.h = null;
                 d();
-                this.f1914a.removeOnAttachStateChangeListener(this);
+                this.f1866a.removeOnAttachStateChangeListener(this);
             } else {
                 Log.e("TooltipCompatHandler", "sActiveHandler.mPopup == null");
             }
@@ -117,14 +116,14 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
         if (j == this) {
             a((TooltipCompatHandler) null);
         }
-        this.f1914a.removeCallbacks(this.e);
+        this.f1866a.removeCallbacks(this.e);
     }
 
     void a(boolean z) {
         long j2;
         int longPressTimeout;
         long j3;
-        if (ViewCompat.isAttachedToWindow(this.f1914a)) {
+        if (ViewCompat.isAttachedToWindow(this.f1866a)) {
             a((TooltipCompatHandler) null);
             TooltipCompatHandler tooltipCompatHandler = k;
             if (tooltipCompatHandler != null) {
@@ -132,14 +131,14 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
             }
             k = this;
             this.i = z;
-            TooltipPopup tooltipPopup = new TooltipPopup(this.f1914a.getContext());
+            TooltipPopup tooltipPopup = new TooltipPopup(this.f1866a.getContext());
             this.h = tooltipPopup;
-            tooltipPopup.a(this.f1914a, this.f, this.g, this.i, this.b);
-            this.f1914a.addOnAttachStateChangeListener(this);
+            tooltipPopup.a(this.f1866a, this.f, this.g, this.i, this.b);
+            this.f1866a.addOnAttachStateChangeListener(this);
             if (this.i) {
                 j3 = 2500;
             } else {
-                if ((ViewCompat.getWindowSystemUiVisibility(this.f1914a) & 1) == 1) {
+                if ((ViewCompat.getWindowSystemUiVisibility(this.f1866a) & 1) == 1) {
                     j2 = 3000;
                     longPressTimeout = ViewConfiguration.getLongPressTimeout();
                 } else {
@@ -148,15 +147,15 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
                 }
                 j3 = j2 - longPressTimeout;
             }
-            this.f1914a.removeCallbacks(this.e);
-            this.f1914a.postDelayed(this.e, j3);
+            this.f1866a.removeCallbacks(this.e);
+            this.f1866a.postDelayed(this.e, j3);
         }
     }
 
     @Override // android.view.View.OnHoverListener
     public boolean onHover(View view, MotionEvent motionEvent) {
         if (this.h == null || !this.i) {
-            AccessibilityManager accessibilityManager = (AccessibilityManager) this.f1914a.getContext().getSystemService(Context.ACCESSIBILITY_SERVICE);
+            AccessibilityManager accessibilityManager = (AccessibilityManager) this.f1866a.getContext().getSystemService(Context.ACCESSIBILITY_SERVICE);
             if (accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled()) {
                 return false;
             }
@@ -168,7 +167,7 @@ public class TooltipCompatHandler implements View.OnAttachStateChangeListener, V
                 d();
                 a();
                 return false;
-            } else if (this.f1914a.isEnabled() && this.h == null && a(motionEvent)) {
+            } else if (this.f1866a.isEnabled() && this.h == null && a(motionEvent)) {
                 a(this);
                 return false;
             } else {

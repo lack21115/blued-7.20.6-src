@@ -7,7 +7,7 @@ import android.content.Context;
 public class ev extends et {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f41386a = 3600000;
+    private static int f27695a = 3600000;
 
     public ev(Context context) {
         super(context);

@@ -8,10 +8,10 @@ import com.youzan.androidsdk.tool.Preference;
 public class Token {
     public static void clear(Context context) {
         Preference.renew(context);
-        m12232(null);
-        m12234(null);
-        m12235(null);
-        m12233(null);
+        m9182(null);
+        m9184(null);
+        m9185(null);
+        m9183(null);
     }
 
     public static String getAccessToken() {
@@ -36,29 +36,29 @@ public class Token {
     }
 
     public static void save(YouzanToken youzanToken) {
-        m12232(youzanToken.getAccessToken());
-        m12234(youzanToken.getCookieKey());
-        m12235(youzanToken.getCookieValue());
-        m12233(youzanToken.getYzOpenId());
+        m9182(youzanToken.getAccessToken());
+        m9184(youzanToken.getCookieKey());
+        m9185(youzanToken.getCookieValue());
+        m9183(youzanToken.getYzOpenId());
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static void m12232(String str) {
+    private static void m9182(String str) {
         Preference.instance().setString("token.access_token", str);
     }
 
     /* renamed from: ˋ  reason: contains not printable characters */
-    private static void m12233(String str) {
+    private static void m9183(String str) {
         Preference.instance().setString("token.yz_open_id", str);
     }
 
     /* renamed from: ˎ  reason: contains not printable characters */
-    private static void m12234(String str) {
+    private static void m9184(String str) {
         Preference.instance().setString("token.cookie_key", str);
     }
 
     /* renamed from: ˏ  reason: contains not printable characters */
-    private static void m12235(String str) {
+    private static void m9185(String str) {
         Preference.instance().setString("token.cookie_value", str);
     }
 }

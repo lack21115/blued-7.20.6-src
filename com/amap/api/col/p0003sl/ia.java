@@ -1,21 +1,18 @@
 package com.amap.api.col.p0003sl;
 
 import android.text.TextUtils;
+import com.alipay.sdk.util.i;
 
 @jb(a = "a")
 /* renamed from: com.amap.api.col.3sl.ia  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ia.class */
 public final class ia {
     @jc(a = "a1", b = 6)
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5134a;
+    private String a;
     @jc(a = "a2", b = 6)
     private String b;
     @jc(a = "a6", b = 2)
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5135c;
+    private int c;
     @jc(a = "a3", b = 6)
     private String d;
     @jc(a = "a4", b = 6)
@@ -32,23 +29,19 @@ public final class ia {
     /* renamed from: com.amap.api.col.3sl.ia$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ia$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f5136a;
+        private String a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5137c;
+        private String c;
         private String d;
         private boolean e = true;
         private String f = "standard";
         private String[] g = null;
 
         public a(String str, String str2, String str3) {
-            this.f5136a = str2;
+            this.a = str2;
             this.b = str2;
             this.d = str3;
-            this.f5137c = str;
+            this.c = str;
         }
 
         public final a a(String str) {
@@ -77,7 +70,7 @@ public final class ia {
     }
 
     private ia() {
-        this.f5135c = 1;
+        this.c = 1;
         this.l = null;
     }
 
@@ -104,7 +97,7 @@ public final class ia {
                     return sb.toString();
                 }
                 sb.append(strArr[i2]);
-                sb.append(";");
+                sb.append(i.b);
                 i = i2 + 1;
             }
         } catch (Throwable th) {
@@ -115,7 +108,7 @@ public final class ia {
 
     private static String[] a(String str) {
         try {
-            return str.split(";");
+            return str.split(i.b);
         } catch (Throwable th) {
             th.printStackTrace();
             return null;
@@ -123,8 +116,8 @@ public final class ia {
     }
 
     public final String a() {
-        if (TextUtils.isEmpty(this.j) && !TextUtils.isEmpty(this.f5134a)) {
-            this.j = ib.c(this.f5134a);
+        if (TextUtils.isEmpty(this.j) && !TextUtils.isEmpty(this.a)) {
+            this.j = ib.c(this.a);
         }
         return this.j;
     }
@@ -156,7 +149,7 @@ public final class ia {
     }
 
     public final boolean e() {
-        return this.f5135c == 1;
+        return this.c == 1;
     }
 
     public final boolean equals(Object obj) {

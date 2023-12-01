@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/h/c.class */
-public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
+public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0517b {
     private Handler l;
 
     public c(Context context, String str, int i, com.opos.mobad.cmn.a.d dVar, com.opos.mobad.ad.c.f fVar) {
@@ -45,7 +45,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
                 }
                 AdItemData next = it.next();
                 if (next != null) {
-                    arrayList2.add(new com.opos.mobad.h.b.a(this.f26159a, this, next));
+                    arrayList2.add(new com.opos.mobad.h.b.a(this.f12471a, this, next));
                 }
             }
         } else {
@@ -71,20 +71,20 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
                     return;
                 }
                 c.this.c().a(materialData.k());
-                com.opos.mobad.cmn.a.b.f.a(c.this.f26159a, materialData.k(), com.opos.cmn.b.a.a.c());
+                com.opos.mobad.cmn.a.b.f.a(c.this.f12471a, materialData.k(), com.opos.cmn.b.a.a.c());
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(a.C0707a c0707a) {
-        if (c0707a != null && c0707a.f26482a.a() == 1) {
-            com.opos.mobad.service.a.a().a(this.b, 4, c0707a.b.f(), c0707a.b.b(), c0707a.f26483c.aa(), c0707a.b.a(), c0707a.b.J());
+    public void a(a.C0537a c0537a) {
+        if (c0537a != null && c0537a.f12794a.a() == 1) {
+            com.opos.mobad.service.a.a().a(this.b, 4, c0537a.b.f(), c0537a.b.b(), c0537a.f12795c.aa(), c0537a.b.a(), c0537a.b.J());
             a(new q(-1, com.opos.cmn.a.a(-1)));
-        } else if (c0707a == null) {
+        } else if (c0537a == null) {
             b().a(new q(-1, "unknown error."));
-        } else if (System.currentTimeMillis() <= c0707a.f26482a.h()) {
-            a(c0707a.f26482a, a(c0707a.f26482a));
+        } else if (System.currentTimeMillis() <= c0537a.f12794a.h()) {
+            a(c0537a.f12794a, a(c0537a.f12794a));
         } else {
             com.opos.cmn.an.f.a.d("InterNativeAd", "now time over ad expire time.");
             a(new q(GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR, "now time over ad expire time."));
@@ -94,16 +94,16 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
     private void b(r rVar) {
         com.opos.cmn.an.f.a.b("InterNativeAd", "fetchNativeAd");
         this.k = com.opos.cmn.i.f.a();
-        com.opos.mobad.model.b.a(this.f26159a).a(this.f26159a, this.b, 4, this.k, (int) (rVar != null ? rVar.f25674a : 30000L), new b.a() { // from class: com.opos.mobad.h.c.1
+        com.opos.mobad.model.b.a(this.f12471a).a(this.f12471a, this.b, 4, this.k, (int) (rVar != null ? rVar.f11986a : 30000L), new b.a() { // from class: com.opos.mobad.h.c.1
             @Override // com.opos.mobad.model.b.a
-            public void a(int i, final a.C0707a c0707a) {
+            public void a(int i, final a.C0537a c0537a) {
                 com.opos.mobad.c.b.b.a(new Runnable() { // from class: com.opos.mobad.h.c.1.1
                     @Override // java.lang.Runnable
                     public void run() {
                         if (c.this.d) {
                             return;
                         }
-                        c.this.a(c0707a);
+                        c.this.a(c0537a);
                     }
                 });
             }
@@ -120,7 +120,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
                     }
                 });
             }
-        }, com.opos.mobad.model.b.f26381a);
+        }, com.opos.mobad.model.b.f12693a);
     }
 
     private boolean e() {
@@ -138,7 +138,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
             return;
         }
         this.i = null;
-        com.opos.mobad.cmn.service.pkginstall.b.a(this.f26159a).a(this);
+        com.opos.mobad.cmn.service.pkginstall.b.a(this.f12471a).a(this);
         if (this.h != null) {
             this.h.a();
         }
@@ -176,7 +176,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
         b.a(qVar);
     }
 
-    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
     public void a(final AdItemData adItemData, final String str) {
         if (adItemData != null) {
             try {
@@ -199,7 +199,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
                                     return;
                                 }
                                 c.this.c().a(str);
-                                com.opos.mobad.cmn.a.b.f.a(c.this.f26159a, str, com.opos.cmn.b.a.a.c());
+                                com.opos.mobad.cmn.a.b.f.a(c.this.f12471a, str, com.opos.cmn.b.a.a.c());
                             }
                         } catch (Exception e) {
                             com.opos.cmn.an.f.a.a("InterNativeAd", "", (Throwable) e);
@@ -230,7 +230,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
                 z = false;
                 try {
                     if (!com.opos.cmn.an.c.a.a(materialData.k())) {
-                        boolean a2 = com.opos.mobad.cmn.a.b.f.a(this.f26159a, adItemData, materialData, (int[]) null);
+                        boolean a2 = com.opos.mobad.cmn.a.b.f.a(this.f12471a, adItemData, materialData, (int[]) null);
                         z = a2;
                         if (a2) {
                             z2 = a2;
@@ -254,7 +254,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0029, code lost:
-        if (com.opos.cmn.b.a.a.c() >= (com.opos.mobad.cmn.a.b.f.d(r7.f26159a, r8) + ((r9 * 60) * 1000))) goto L12;
+        if (com.opos.cmn.b.a.a.c() >= (com.opos.mobad.cmn.a.b.f.d(r7.f12471a, r8) + ((r9 * 60) * 1000))) goto L12;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -265,7 +265,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
             r7 = this;
             r0 = 0
             r1 = r7
-            android.content.Context r1 = r1.f26159a     // Catch: java.lang.Exception -> L32
+            android.content.Context r1 = r1.f12471a     // Catch: java.lang.Exception -> L32
             r2 = r8
             long r1 = com.opos.mobad.cmn.a.b.f.d(r1, r2)     // Catch: java.lang.Exception -> L32
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
@@ -273,7 +273,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
             long r0 = com.opos.cmn.b.a.a.c()     // Catch: java.lang.Exception -> L32
             r10 = r0
             r0 = r7
-            android.content.Context r0 = r0.f26159a     // Catch: java.lang.Exception -> L32
+            android.content.Context r0 = r0.f12471a     // Catch: java.lang.Exception -> L32
             r1 = r8
             long r0 = com.opos.mobad.cmn.a.b.f.d(r0, r1)     // Catch: java.lang.Exception -> L32
             r12 = r0
@@ -332,7 +332,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
         this.g.b(adItemData);
     }
 
-    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
     public void b(AdItemData adItemData, String str) {
         if (adItemData != null && adItemData.i() != null) {
             a(adItemData.i().get(0));
@@ -340,7 +340,7 @@ public class c extends b implements com.opos.mobad.ad.c.c, b.InterfaceC0687b {
         com.opos.cmn.an.f.a.b("InterNativeAd", "notifyLaunchEvent pkgName:" + str);
     }
 
-    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+    @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
     public void c(AdItemData adItemData, String str) {
         if (adItemData != null && adItemData.i() != null) {
             a(adItemData.i().get(0));

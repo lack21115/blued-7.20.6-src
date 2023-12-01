@@ -1,11 +1,13 @@
 package com.blued.android.module.live_china.manager;
 
-import android.app.Instrumentation;
-import android.os.BatteryManager;
+import android.app.Activity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import com.alipay.sdk.tid.b;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.common.l;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
@@ -64,13 +66,9 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/RecordingMsgManager.class */
 public class RecordingMsgManager extends LiveMsgHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    public long f13761a;
+    public long a;
     private RecordingOnliveFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecordingOnliveManager f13762c;
+    private RecordingOnliveManager c;
     private List<LivePKProgressUserModel> f;
     private List<LivePKProgressUserModel> g;
     private List<LivePKPlayerModel> h;
@@ -82,7 +80,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
         this.g = new ArrayList();
         this.h = new ArrayList();
         this.b = recordingOnliveFragment;
-        this.f13762c = recordingOnliveManager;
+        this.c = recordingOnliveManager;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -223,7 +221,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.4
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (RecordingMsgManager.this.f13762c != null) {
+                        if (RecordingMsgManager.this.c != null) {
                             RecordingMsgManager.this.b.L();
                         }
                     }
@@ -263,7 +261,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 });
                 return;
             case 114:
-                final LiveFriendModel liveFriendModel = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+                final LiveFriendModel liveFriendModel = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.6
                     @Override // java.lang.Runnable
                     public void run() {
@@ -277,7 +275,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                             } else if (RecordingMsgManager.this.b.bB.r()) {
                             } else {
                                 if (RecordingMsgManager.this.b.cV) {
-                                    KeyboardUtils.a(RecordingMsgManager.this.b.getActivity());
+                                    KeyboardUtils.a((Activity) RecordingMsgManager.this.b.getActivity());
                                 }
                                 liveFriendModel.model = 0;
                                 if (RecordingMsgManager.this.b.cc != null) {
@@ -289,7 +287,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 });
                 return;
             case 119:
-                final LiveFriendModel liveFriendModel2 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+                final LiveFriendModel liveFriendModel2 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.7
                     @Override // java.lang.Runnable
                     public void run() {
@@ -304,7 +302,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                             } else if (RecordingMsgManager.this.b.bB.r() || RecordingMsgManager.this.b.bb()) {
                             } else {
                                 if (RecordingMsgManager.this.b.cV) {
-                                    KeyboardUtils.a(RecordingMsgManager.this.b.getActivity());
+                                    KeyboardUtils.a((Activity) RecordingMsgManager.this.b.getActivity());
                                 }
                                 liveFriendModel2.model = 1;
                                 if (RecordingMsgManager.this.b.cc != null) {
@@ -320,21 +318,21 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.8
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (RecordingMsgManager.this.f13762c != null) {
+                        if (RecordingMsgManager.this.c != null) {
                             LiveMsgSendManager.a().d("收到连麦开始消息");
                             Logger.a("pk", "开始连麦");
                             Map<String, Object> map2 = liveChattingModel.msgMapExtra;
                             if (map2 != null) {
                                 MsgPackHelper.getStringValue(map2, "conference_id");
                                 MsgPackHelper.getStringValue(map2, "conference_token");
-                                String stringValue = MsgPackHelper.getStringValue(map2, Instrumentation.REPORT_KEY_STREAMRESULT);
+                                String stringValue = MsgPackHelper.getStringValue(map2, "stream");
                                 String stringValue2 = MsgPackHelper.getStringValue(map2, "target_stream");
                                 Log.v("pk", "我的拉流id:" + stringValue2);
                                 Log.v("pk", "我的推流id:" + stringValue);
                                 MsgPackHelper.getStringValue(map2, "name");
                                 long longValue = MsgPackHelper.getLongValue(map2, "uid");
                                 int intValue2 = MsgPackHelper.getIntValue(map2, "type");
-                                RecordingMsgManager.this.f13761a = longValue;
+                                RecordingMsgManager.this.a = longValue;
                                 if (intValue2 == 0) {
                                     if (RecordingMsgManager.this.b.bB.r()) {
                                         AppMethods.d(R.string.live_other_anchor_agreed);
@@ -356,9 +354,9 @@ public class RecordingMsgManager extends LiveMsgHandler {
                                 RecordingMsgManager.this.b.L();
                                 ArrayList arrayList = new ArrayList();
                                 arrayList.add(LiveRoomManager.a().g());
-                                arrayList.add(String.valueOf(RecordingMsgManager.this.f13761a));
+                                arrayList.add(String.valueOf(RecordingMsgManager.this.a));
                                 ZegoMixStreamHelper.a().a(arrayList, new ArrayList());
-                                RecordingMsgManager.this.f13762c.a(2, stringValue2);
+                                RecordingMsgManager.this.c.a(2, stringValue2);
                                 RecordingMsgManager.this.b.g_(8);
                             }
                         }
@@ -370,7 +368,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.9
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (RecordingMsgManager.this.f13762c != null) {
+                        if (RecordingMsgManager.this.c != null) {
                             LiveMsgSendManager.a().d("收到连麦结束消息");
                             Logger.a("pk", "结束连麦");
                             Map<String, Object> map2 = liveChattingModel.msgMapExtra;
@@ -394,7 +392,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.10
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (RecordingMsgManager.this.f13762c != null) {
+                        if (RecordingMsgManager.this.c != null) {
                             LiveMsgSendManager.a().d("收到连麦拒绝消息");
                             Logger.a("pk", "拒绝连麦邀请");
                             RecordingMsgManager.this.b.bB.e();
@@ -413,10 +411,10 @@ public class RecordingMsgManager extends LiveMsgHandler {
                     @Override // java.lang.Runnable
                     public void run() {
                         Map<String, Object> map2 = liveChattingModel.msgMapExtra;
-                        int intValue2 = MsgPackHelper.getIntValue(map2, "count");
+                        int intValue2 = MsgPackHelper.getIntValue(map2, SpamFilter.SpamContract.NotificationTable.COUNT);
                         long longValue = MsgPackHelper.getLongValue(map2, "uid");
-                        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                        a2.d("主播忽略观众申请 uid:" + longValue + " - count:" + intValue2);
+                        LiveMsgSendManager a = LiveMsgSendManager.a();
+                        a.d("主播忽略观众申请 uid:" + longValue + " - count:" + intValue2);
                         String f = LiveRoomInfo.a().f();
                         if (TextUtils.equals(f, longValue + "") && RecordingMsgManager.this.b.cv.c()) {
                             RecordingMsgManager.this.b.cv.h();
@@ -432,8 +430,8 @@ public class RecordingMsgManager extends LiveMsgHandler {
                     public void run() {
                         long longValue = MsgPackHelper.getLongValue(liveChattingModel.msgMapExtra, "uid");
                         int intValue2 = MsgPackHelper.getIntValue(liveChattingModel.msgMapExtra, "enable");
-                        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                        a2.d("麦序管理 uid:" + longValue + " - enable:" + intValue2);
+                        LiveMsgSendManager a = LiveMsgSendManager.a();
+                        a.d("麦序管理 uid:" + longValue + " - enable:" + intValue2);
                         RecordingMsgManager.this.a(longValue, intValue2);
                     }
                 });
@@ -442,15 +440,15 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 if (this.b.aU()) {
                     return;
                 }
-                LiveFriendModel liveFriendModel3 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+                LiveFriendModel liveFriendModel3 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
                 if (liveFriendModel3 != null) {
                     if (liveFriendModel3.fans != null) {
                         int i = 0;
                         while (true) {
                             int i2 = i;
                             if (i2 < liveFriendModel3.fans.size()) {
-                                LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                                a2.d("进入交友模式:" + i2 + "号uid：" + liveFriendModel3.fans.get(i2).uid + "name:" + liveFriendModel3.fans.get(i2).name);
+                                LiveMsgSendManager a = LiveMsgSendManager.a();
+                                a.d("进入交友模式:" + i2 + "号uid：" + liveFriendModel3.fans.get(i2).uid + "name:" + liveFriendModel3.fans.get(i2).name);
                                 i = i2 + 1;
                             } else {
                                 this.b.a_(liveFriendModel3.fans);
@@ -459,13 +457,13 @@ public class RecordingMsgManager extends LiveMsgHandler {
                     }
                     this.b.c(liveFriendModel3);
                     this.b.k.c(liveFriendModel3.count);
-                    LiveMsgSendManager a3 = LiveMsgSendManager.a();
-                    a3.d("进入交友模式 count:" + liveFriendModel3.count);
+                    LiveMsgSendManager a2 = LiveMsgSendManager.a();
+                    a2.d("进入交友模式 count:" + liveFriendModel3.count);
                 }
                 b(liveFriendModel3);
                 return;
             case 134:
-                final LiveFriendModel liveFriendModel4 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+                final LiveFriendModel liveFriendModel4 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
                 if (liveFriendModel4 != null) {
                     this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.12
                         @Override // java.lang.Runnable
@@ -480,8 +478,8 @@ public class RecordingMsgManager extends LiveMsgHandler {
                                         break;
                                     }
                                     arrayList.add(liveFriendModel4.fans.get(i4).uid);
-                                    LiveMsgSendManager a4 = LiveMsgSendManager.a();
-                                    a4.d("直播间上麦:" + i4 + "号uid：" + liveFriendModel4.fans.get(i4).uid + "name:" + liveFriendModel4.fans.get(i4).name);
+                                    LiveMsgSendManager a3 = LiveMsgSendManager.a();
+                                    a3.d("直播间上麦:" + i4 + "号uid：" + liveFriendModel4.fans.get(i4).uid + "name:" + liveFriendModel4.fans.get(i4).name);
                                     i3 = i4 + 1;
                                 }
                                 ZegoMixStreamHelper.a().a(arrayList, new ArrayList());
@@ -494,8 +492,8 @@ public class RecordingMsgManager extends LiveMsgHandler {
                                 }
                             }
                             RecordingMsgManager.this.b.k.b(liveFriendModel4.count);
-                            LiveMsgSendManager a5 = LiveMsgSendManager.a();
-                            a5.d("直播间上麦 count:" + liveFriendModel4.count);
+                            LiveMsgSendManager a4 = LiveMsgSendManager.a();
+                            a4.d("直播间上麦 count:" + liveFriendModel4.count);
                         }
                     });
                     return;
@@ -506,7 +504,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                     @Override // java.lang.Runnable
                     public void run() {
                         Map<String, Object> map2 = liveChattingModel.msgMapExtra;
-                        MsgPackHelper.getIntValue(map2, BatteryManager.EXTRA_LEVEL);
+                        MsgPackHelper.getIntValue(map2, "level");
                         String stringValue = MsgPackHelper.getStringValue(map2, "resource");
                         LiveGiftModel liveGiftModel = new LiveGiftModel();
                         liveGiftModel.images_apng2 = stringValue;
@@ -526,7 +524,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 return;
             case 179:
                 Log.i("==makelover==", "179(申请 取消 同步):" + liveChattingModel.getMsgExtra());
-                final LiveMakeLoverModel liveMakeLoverModel = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveMakeLoverModel.class);
+                final LiveMakeLoverModel liveMakeLoverModel = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveMakeLoverModel.class);
                 if (liveMakeLoverModel != null) {
                     this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.16
                         @Override // java.lang.Runnable
@@ -539,7 +537,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 return;
             case 180:
                 Log.i("==makelover==", "180（join）:" + liveChattingModel.getMsgExtra());
-                final LiveMakeLoverModel liveMakeLoverModel2 = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveMakeLoverModel.class);
+                final LiveMakeLoverModel liveMakeLoverModel2 = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveMakeLoverModel.class);
                 if (liveMakeLoverModel2 != null) {
                     this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.17
                         @Override // java.lang.Runnable
@@ -588,17 +586,17 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 return;
             case 181:
                 Log.i("==makelover==", "181(下麦):" + liveChattingModel.getMsgExtra());
-                final LiveMakeLoverModel liveMakeLoverModel3 = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveMakeLoverModel.class);
+                final LiveMakeLoverModel liveMakeLoverModel3 = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveMakeLoverModel.class);
                 if (liveMakeLoverModel3 != null) {
                     this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.18
                         @Override // java.lang.Runnable
                         public void run() {
                             RecordingMsgManager.this.b.bm.d(liveMakeLoverModel3.uid);
-                            LiveMsgSendManager a4 = LiveMsgSendManager.a();
-                            a4.d("直播间下麦:" + liveMakeLoverModel3.index + "号uid：" + liveMakeLoverModel3.uid + "name:" + liveMakeLoverModel3.name);
+                            LiveMsgSendManager a3 = LiveMsgSendManager.a();
+                            a3.d("直播间下麦:" + liveMakeLoverModel3.index + "号uid：" + liveMakeLoverModel3.uid + "name:" + liveMakeLoverModel3.name);
                             ZegoCommonHelper.b().c().stopPlayingStream(liveMakeLoverModel3.stream);
                             ZegoMixStreamHelper.a().b(liveMakeLoverModel3.uid, "");
-                            ZegoMixStreamHelper.a().a(liveMakeLoverModel3.stream, RecordingMsgManager.this.f13762c.f13795c);
+                            ZegoMixStreamHelper.a().a(liveMakeLoverModel3.stream, RecordingMsgManager.this.c.c);
                             AppMethods.a((CharSequence) String.format(RecordingMsgManager.this.b.getContext().getString(R.string.live_make_friend_has_left), liveMakeLoverModel3.name));
                         }
                     });
@@ -610,7 +608,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 return;
             case 185:
                 Log.i("==makelover==", "185(嘉宾爆照):" + liveChattingModel.getMsgExtra());
-                final LiveMakeLoverFansModel liveMakeLoverFansModel = (LiveMakeLoverFansModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveMakeLoverFansModel.class);
+                final LiveMakeLoverFansModel liveMakeLoverFansModel = (LiveMakeLoverFansModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveMakeLoverFansModel.class);
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.19
                     @Override // java.lang.Runnable
                     public void run() {
@@ -652,7 +650,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 Log.i("==livetask==", "200(主态新主播任务):" + liveChattingModel.getMsgExtra());
                 return;
             case 211:
-                LiveRecordRecommendModel liveRecordRecommendModel = (LiveRecordRecommendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveRecordRecommendModel.class);
+                LiveRecordRecommendModel liveRecordRecommendModel = (LiveRecordRecommendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveRecordRecommendModel.class);
                 if (LiveRoomManager.a().p() != null) {
                     LiveRoomManager.a().p().recommend = liveRecordRecommendModel;
                 }
@@ -665,7 +663,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 return;
             case 215:
                 Log.i("==xpp", "215暴击时刻:" + liveChattingModel.getMsgExtra());
-                final LivePKDoubleModel livePKDoubleModel = (LivePKDoubleModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LivePKDoubleModel.class);
+                final LivePKDoubleModel livePKDoubleModel = (LivePKDoubleModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LivePKDoubleModel.class);
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.RecordingMsgManager.22
                     @Override // java.lang.Runnable
                     public void run() {
@@ -677,7 +675,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 return;
             case 216:
                 Log.i("==wish", "216:" + liveChattingModel.getMsgExtra());
-                LiveWishItemModel liveWishItemModel = (LiveWishItemModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveWishItemModel.class);
+                LiveWishItemModel liveWishItemModel = (LiveWishItemModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveWishItemModel.class);
                 if (liveWishItemModel != null) {
                     this.b.a(liveWishItemModel);
                     return;
@@ -685,7 +683,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 return;
             case 220:
                 Log.i("==wish", "220:" + liveChattingModel.getMsgExtra());
-                LiveWishModel liveWishModel = (LiveWishModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveWishModel.class);
+                LiveWishModel liveWishModel = (LiveWishModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveWishModel.class);
                 if (liveWishModel == null || LiveRoomManager.a().p() == null) {
                     return;
                 }
@@ -700,11 +698,11 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 liveGuideModel.id = MsgPackHelper.getIntValue(map, "id");
                 liveGuideModel.type = MsgPackHelper.getIntValue(map, "type");
                 liveGuideModel.sub_type = MsgPackHelper.getIntValue(map, "sub_type");
-                liveGuideModel.content = MsgPackHelper.getStringValue(map, "content");
+                liveGuideModel.content = MsgPackHelper.getStringValue(map, l.y);
                 liveGuideModel.url = MsgPackHelper.getStringValue(map, "url");
                 liveGuideModel.strategy = MsgPackHelper.getIntValue(map, "strategy");
                 liveGuideModel.frequency = MsgPackHelper.getIntValue(map, "frequency");
-                liveGuideModel.count = MsgPackHelper.getIntValue(map, "count");
+                liveGuideModel.count = MsgPackHelper.getIntValue(map, SpamFilter.SpamContract.NotificationTable.COUNT);
                 liveGuideModel.countdown = MsgPackHelper.getIntValue(map, "countdown");
                 liveGuideModel.show_type = intValue;
                 this.b.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.-$$Lambda$RecordingMsgManager$HwJ71nNoCSIRoFXmb4Koiy0CX80
@@ -727,14 +725,14 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 });
                 return;
             case 228:
-                this.b.a(((Integer) liveChattingModel.msgMapExtra.get("rank")).intValue(), ((Integer) liveChattingModel.msgMapExtra.get("need_score")).intValue());
+                this.b.a(((Integer) liveChattingModel.msgMapExtra.get(ReqAckPackage.REQ_RESPONSE_KEY.RANK)).intValue(), ((Integer) liveChattingModel.msgMapExtra.get("need_score")).intValue());
                 return;
             case 234:
                 Log.i("==xpm", "234:" + liveChattingModel.getMsgExtra());
                 return;
             case 235:
                 Log.i("==xpm", "235:" + liveChattingModel.getMsgExtra());
-                LiveFriendModel liveFriendModel5 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+                LiveFriendModel liveFriendModel5 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
                 if (liveFriendModel5 != null) {
                     if (liveFriendModel5.type == 0) {
                         this.b.cv.h();
@@ -742,7 +740,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                             return;
                         }
                         if (this.b.cV) {
-                            KeyboardUtils.a(this.b.getActivity());
+                            KeyboardUtils.a((Activity) this.b.getActivity());
                         }
                         liveFriendModel5.model = 5;
                         if (this.b.cc != null) {
@@ -761,7 +759,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                             return;
                         }
                         return;
-                    } else if (liveFriendModel5.type != 2 || this.f13762c == null) {
+                    } else if (liveFriendModel5.type != 2 || this.c == null) {
                         return;
                     } else {
                         this.b.bB.e();
@@ -775,7 +773,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 }
                 return;
             case 236:
-                LiveWishingDrawModel liveWishingDrawModel = (LiveWishingDrawModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveWishingDrawModel.class);
+                LiveWishingDrawModel liveWishingDrawModel = (LiveWishingDrawModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveWishingDrawModel.class);
                 if (liveWishingDrawModel == null || LiveRoomManager.a().p() == null) {
                     return;
                 }
@@ -825,7 +823,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
                 if (liveChattingModel.msgMapExtra == null || !liveChattingModel.msgMapExtra.containsKey("bunchLightList") || (listValue = MsgPackHelper.getListValue(liveChattingModel.msgMapExtra, "bunchLightList")) == null || listValue.isEmpty()) {
                     return;
                 }
-                this.b.af.b(listValue, MsgPackHelper.getLongValue(liveChattingModel.msgMapExtra, "timestamp", System.currentTimeMillis() / 1000) / 1000);
+                this.b.af.b(listValue, MsgPackHelper.getLongValue(liveChattingModel.msgMapExtra, b.f, System.currentTimeMillis() / 1000) / 1000);
                 return;
             default:
                 return;
@@ -920,7 +918,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
             }
         }
         if (livePKPlayerModel != null) {
-            this.f13761a = livePKPlayerModel.uid;
+            this.a = livePKPlayerModel.uid;
         }
         if (livePKResultModel.winner != 0) {
             if (TextUtils.equals(livePKResultModel.winner + "", LiveRoomInfo.a().f())) {
@@ -1011,7 +1009,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
         String str3;
         if (this.b.r() && livePkTypeModel != null) {
             if (this.b.cS != null) {
-                str3 = this.b.cS.f13097c;
+                str3 = this.b.cS.c;
                 str2 = this.b.cS.d;
                 str = this.b.cS.e;
             } else {
@@ -1117,7 +1115,7 @@ public class RecordingMsgManager extends LiveMsgHandler {
     public void c(LiveFriendModel liveFriendModel) {
         ZegoCommonHelper.b().c().stopPlayingStream(liveFriendModel.stream);
         ZegoMixStreamHelper.a().b(liveFriendModel.uid, "");
-        ZegoMixStreamHelper.a().a(liveFriendModel.stream, this.f13762c.f13795c);
+        ZegoMixStreamHelper.a().a(liveFriendModel.stream, this.c.c);
         AppMethods.a((CharSequence) String.format(this.b.getContext().getString(R.string.live_make_friend_has_left), liveFriendModel.name));
     }
 

@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 public class bj {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23752a = "/proc/cpuinfo";
+    private static final String f10144a = "/proc/cpuinfo";
 
     public static String a() {
         try {
@@ -20,11 +20,11 @@ public class bj {
             StringBuilder sb = new StringBuilder();
             sb.append(str);
             if (!TextUtils.isEmpty(str2)) {
-                sb.append(";" + str2);
+                sb.append(com.huawei.openalliance.ad.constant.t.aE + str2);
             }
             String a2 = bg.a("ro.product.cpu.abilist");
             if (!TextUtils.isEmpty(a2)) {
-                sb.append(";" + a2);
+                sb.append(com.huawei.openalliance.ad.constant.t.aE + a2);
             }
             return sb.toString();
         } catch (Throwable th) {
@@ -37,7 +37,7 @@ public class bj {
         FileInputStream fileInputStream;
         InputStreamReader inputStreamReader;
         try {
-            fileInputStream = new FileInputStream(new File(f23752a));
+            fileInputStream = new FileInputStream(new File(f10144a));
             try {
                 inputStreamReader = new InputStreamReader(fileInputStream);
                 try {

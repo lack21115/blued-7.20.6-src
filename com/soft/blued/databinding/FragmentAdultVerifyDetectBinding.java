@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentAdultVerifyDetectBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28781a;
+    private final ConstraintLayout f15091a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28781a;
+        return this.f15091a;
     }
 }

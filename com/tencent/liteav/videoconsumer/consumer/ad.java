@@ -6,10 +6,10 @@ import com.tencent.liteav.videoconsumer.consumer.j;
 final /* synthetic */ class ad implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j.AnonymousClass4 f36694a;
+    private final j.AnonymousClass4 f23003a;
 
     private ad(j.AnonymousClass4 anonymousClass4) {
-        this.f36694a = anonymousClass4;
+        this.f23003a = anonymousClass4;
     }
 
     public static Runnable a(j.AnonymousClass4 anonymousClass4) {

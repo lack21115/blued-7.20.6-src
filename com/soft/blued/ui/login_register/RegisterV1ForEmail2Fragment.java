@@ -55,11 +55,11 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
     private TextWatcher v;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f31446c = RegisterV1ForEmail2Fragment.class.getSimpleName();
+    private String f17756c = RegisterV1ForEmail2Fragment.class.getSimpleName();
     private String q = "";
 
     /* renamed from: a  reason: collision with root package name */
-    Runnable f31445a = new Runnable() { // from class: com.soft.blued.ui.login_register.RegisterV1ForEmail2Fragment.3
+    Runnable f17755a = new Runnable() { // from class: com.soft.blued.ui.login_register.RegisterV1ForEmail2Fragment.3
         @Override // java.lang.Runnable
         public void run() {
             if (RegisterV1ForEmail2Fragment.this.u == 0) {
@@ -83,37 +83,35 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
     };
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<BluedLoginResult>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForEmail2Fragment.6
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedLoginResult> parseData(String str) {
             RegisterV1ForEmail2Fragment.this.r = str;
-            BluedEntityA<BluedLoginResult> bluedEntityA = (BluedEntityA) super.parseData(str);
-            if (bluedEntityA != null) {
+            BluedEntityA<BluedLoginResult> parseData = super.parseData(str);
+            if (parseData != null) {
                 try {
-                    if (bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
-                        String a2 = AesCrypto2.a(bluedEntityA.data.get(0).getEncrypted());
-                        Logger.b(RegisterV1ForEmail2Fragment.this.f31446c, "解密：deData===", a2);
-                        bluedEntityA.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class));
-                        return bluedEntityA;
+                    if (parseData.data != null && parseData.data.size() > 0) {
+                        String a2 = AesCrypto2.a(((BluedLoginResult) parseData.data.get(0)).getEncrypted());
+                        Logger.b(RegisterV1ForEmail2Fragment.this.f17756c, "解密：deData===", a2);
+                        parseData.data.set(0, (BluedLoginResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedLoginResult.class));
+                        return parseData;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     AppMethods.d(2131887272);
                 }
             }
-            return bluedEntityA;
+            return parseData;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedLoginResult> bluedEntityA) {
             try {
-                Logger.b(RegisterV1ForEmail2Fragment.this.f31446c, "===success", "加密：responseJson:", bluedEntityA);
+                Logger.b(RegisterV1ForEmail2Fragment.this.f17756c, "===success", "加密：responseJson:", bluedEntityA);
                 if (bluedEntityA.data.size() <= 0 || bluedEntityA.data.get(0) == null) {
                     return;
                 }
-                Logger.b(RegisterV1ForEmail2Fragment.this.f31446c, "===success", "加密：responseJson:", bluedEntityA);
-                UserInfo.getInstance().saveUserInfo(RegisterV1ForEmail2Fragment.this.n, 0, RegisterV1ForEmail2Fragment.this.r, bluedEntityA.data.get(0), new String[0]);
+                Logger.b(RegisterV1ForEmail2Fragment.this.f17756c, "===success", "加密：responseJson:", bluedEntityA);
+                UserInfo.getInstance().saveUserInfo(RegisterV1ForEmail2Fragment.this.n, 0, RegisterV1ForEmail2Fragment.this.r, (BluedLoginResult) bluedEntityA.data.get(0), new String[0]);
                 Bundle bundle = new Bundle();
                 bundle.putString("from_tag_page", "from_tag_register");
                 HomeArgumentHelper.a(RegisterV1ForEmail2Fragment.this.e, (String) null, bundle);
@@ -123,21 +121,19 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             DialogUtils.b(RegisterV1ForEmail2Fragment.this.f);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(RegisterV1ForEmail2Fragment.this.f);
         }
     };
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        this.g = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        this.g = findViewById;
+        findViewById.a();
         this.g.f();
         this.g.setCenterText("");
         this.g.setTitleBackgroundDrawable(2131101191);
@@ -146,7 +142,7 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
 
     private void b() {
         this.f = DialogUtils.a(this.e);
-        this.k = (TextView) this.d.findViewById(2131371262);
+        this.k = (TextView) this.d.findViewById(R.id.tv_desc);
         TextView textView = (TextView) this.d.findViewById(2131371164);
         this.h = textView;
         textView.setOnClickListener(this);
@@ -190,7 +186,7 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
 
     private void c() {
         if (getArguments() != null) {
-            this.m = getArguments().getString(LoginRegisterTools.f31400c);
+            this.m = getArguments().getString(LoginRegisterTools.f17710c);
             this.p = getArguments().getString("original_email");
             this.o = getArguments().getString("secure_email");
             this.s = getArguments().getString("binding_type");
@@ -202,7 +198,7 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
                 this.t = 1;
             }
             if ("change".equals(this.s)) {
-                this.g.setCenterText(this.e.getResources().getString(2131886921));
+                this.g.setCenterText(this.e.getResources().getString(R.string.change_secure_email));
             } else if ("add".equals(this.s)) {
                 this.g.setCenterText(this.e.getResources().getString(2131892292));
             } else {
@@ -233,33 +229,31 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
 
     private void e() {
         this.u = 60;
-        postSafeRunOnUiThread(this.f31445a);
+        postSafeRunOnUiThread(this.f17755a);
     }
 
     private void f() {
         LoginRegisterHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<BindingModel>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForEmail2Fragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<BindingModel> parseData(String str) {
-                BluedEntityA<BindingModel> bluedEntityA = (BluedEntityA) super.parseData(str);
-                if (RegisterV1ForEmail2Fragment.this.t == 0 && bluedEntityA != null) {
+                BluedEntityA<BindingModel> parseData = super.parseData(str);
+                if (RegisterV1ForEmail2Fragment.this.t == 0 && parseData != null) {
                     try {
-                        if (bluedEntityA.hasData()) {
-                            String a2 = AesCrypto2.a(bluedEntityA.data.get(0).getEncrypted());
-                            Logger.b(RegisterV1ForEmail2Fragment.this.f31446c, "解密：deData===", a2);
-                            bluedEntityA.data.set(0, (BindingModel) AppInfo.f().fromJson(a2, (Class<Object>) BindingModel.class));
-                            return bluedEntityA;
+                        if (parseData.hasData()) {
+                            String a2 = AesCrypto2.a(((BindingModel) parseData.data.get(0)).getEncrypted());
+                            Logger.b(RegisterV1ForEmail2Fragment.this.f17756c, "解密：deData===", a2);
+                            parseData.data.set(0, (BindingModel) AppInfo.f().fromJson(a2, (Class<Object>) BindingModel.class));
+                            return parseData;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                         AppMethods.d(2131887272);
                     }
                 }
-                return bluedEntityA;
+                return parseData;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BindingModel> bluedEntityA) {
                 BindingModel bindingModel;
@@ -271,7 +265,7 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
                         RegisterV1ForEmail2Fragment.this.getActivity().finish();
                         return;
                     }
-                    if (bluedEntityA.data.get(0) != null && (bindingModel = bluedEntityA.data.get(0)) != null) {
+                    if (bluedEntityA.data.get(0) != null && (bindingModel = (BindingModel) bluedEntityA.data.get(0)) != null) {
                         UserInfo.getInstance().setBoundMail(bindingModel.getSafeEmail());
                     }
                     AppMethods.d(2131890501);
@@ -282,12 +276,10 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(RegisterV1ForEmail2Fragment.this.f);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(RegisterV1ForEmail2Fragment.this.f);
             }
@@ -297,32 +289,30 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
     private void g() {
         LoginRegisterHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<BindingModel>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForEmail2Fragment.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<BindingModel> parseData(String str) {
-                BluedEntityA<BindingModel> bluedEntityA = (BluedEntityA) super.parseData(str);
-                if (bluedEntityA != null) {
+                BluedEntityA<BindingModel> parseData = super.parseData(str);
+                if (parseData != null) {
                     try {
-                        if (bluedEntityA.hasData()) {
-                            String a2 = AesCrypto2.a(bluedEntityA.data.get(0).getEncrypted());
-                            Logger.b(RegisterV1ForEmail2Fragment.this.f31446c, "解密：deData===", a2);
-                            bluedEntityA.data.set(0, (BindingModel) AppInfo.f().fromJson(a2, (Class<Object>) BindingModel.class));
-                            return bluedEntityA;
+                        if (parseData.hasData()) {
+                            String a2 = AesCrypto2.a(((BindingModel) parseData.data.get(0)).getEncrypted());
+                            Logger.b(RegisterV1ForEmail2Fragment.this.f17756c, "解密：deData===", a2);
+                            parseData.data.set(0, (BindingModel) AppInfo.f().fromJson(a2, (Class<Object>) BindingModel.class));
+                            return parseData;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
                         AppMethods.d(2131887272);
                     }
                 }
-                return bluedEntityA;
+                return parseData;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BindingModel> bluedEntityA) {
                 BindingModel bindingModel;
                 try {
-                    if (bluedEntityA.data.get(0) != null && (bindingModel = bluedEntityA.data.get(0)) != null) {
+                    if (bluedEntityA.data.get(0) != null && (bindingModel = (BindingModel) bluedEntityA.data.get(0)) != null) {
                         UserInfo.getInstance().setBoundMail(bindingModel.getSafeEmail());
                     }
                     AppMethods.d(2131890501);
@@ -332,12 +322,10 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(RegisterV1ForEmail2Fragment.this.f);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(RegisterV1ForEmail2Fragment.this.f);
             }
@@ -355,13 +343,14 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
         this.j.setText(this.e.getResources().getString(2131886708));
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void j() {
         Bundle bundle = new Bundle();
         bundle.putString(LoginRegisterTools.d, this.l);
-        bundle.putString(LoginRegisterTools.f31400c, this.m);
+        bundle.putString(LoginRegisterTools.f17710c, this.m);
         bundle.putString("binding_type", "add");
-        Logger.b(this.f31446c, "tokenVer===", this.l);
-        Logger.b(this.f31446c, "captcha===", this.m);
+        Logger.b(this.f17756c, "tokenVer===", this.l);
+        Logger.b(this.f17756c, "captcha===", this.m);
         TerminalActivity.a(this, RegisterV1ForCaptchaCodeFragment.class, bundle, 1000);
     }
 
@@ -370,19 +359,16 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
             return;
         }
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForEmail2Fragment.8
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 RegisterV1ForEmail2Fragment.this.h();
                 AppMethods.d(2131886716);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(RegisterV1ForEmail2Fragment.this.f);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(RegisterV1ForEmail2Fragment.this.f);
             }
@@ -392,18 +378,16 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
     public void a(String str, int i, String str2) {
         LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.login_register.RegisterV1ForEmail2Fragment.7
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<Object> parseData(String str3) {
-                Logger.b(RegisterV1ForEmail2Fragment.this.f31446c, "===success", "responseJson:", str3);
-                return (BluedEntityA) super.parseData(str3);
+                Logger.b(RegisterV1ForEmail2Fragment.this.f17756c, "===success", "responseJson:", str3);
+                return super.parseData(str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
-                    AppMethods.a((CharSequence) RegisterV1ForEmail2Fragment.this.e.getResources().getString(2131886716));
+                    AppMethods.a(RegisterV1ForEmail2Fragment.this.e.getResources().getString(2131886716));
                     RegisterV1ForEmail2Fragment.this.h();
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -411,7 +395,6 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str3) {
                 if (i2 != 4036001) {
                     if (i2 != 4036204) {
@@ -427,23 +410,20 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(RegisterV1ForEmail2Fragment.this.f);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(RegisterV1ForEmail2Fragment.this.f);
             }
         }, str, i, str2, (IRequestHost) null);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 1000 && intent != null) {
-            String stringExtra = intent.getStringExtra(LoginRegisterTools.f31400c);
+            String stringExtra = intent.getStringExtra(LoginRegisterTools.f17710c);
             if (StringUtils.d(stringExtra)) {
                 return;
             }
@@ -479,7 +459,6 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.e = getActivity();
         View view = this.d;
@@ -494,7 +473,6 @@ public class RegisterV1ForEmail2Fragment extends BaseFragment implements View.On
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         d();

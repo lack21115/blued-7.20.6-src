@@ -32,13 +32,9 @@ public class PkDaredBodyView extends FrameLayout {
     private int D;
     private int E;
     private OvershootInterpolator F;
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f15371a;
+    public int a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f15372c;
+    private IRequestHost c;
     private final int d;
     private final int e;
     private final int f;
@@ -213,7 +209,7 @@ public class PkDaredBodyView extends FrameLayout {
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
-                ImageLoader.c(PkDaredBodyView.this.f15372c, "live_pk_dared_vs.png").e(PkDaredBodyView.this.l.hashCode()).g(-1).a(PkDaredBodyView.this.l);
+                ImageLoader.c(PkDaredBodyView.this.c, "live_pk_dared_vs.png").e(PkDaredBodyView.this.l.hashCode()).g(-1).a(PkDaredBodyView.this.l);
             }
         });
         this.t.animate().translationY(0.0f).setDuration(350L).setStartDelay(200L).setInterpolator(this.F);
@@ -492,6 +488,7 @@ public class PkDaredBodyView extends FrameLayout {
         d();
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.pkdared.PkDaredBodyView$4] */
     public void a(final TextView textView, final int i, int i2) {
         CountDownTimer countDownTimer = this.w;
         if (countDownTimer != null) {
@@ -546,7 +543,7 @@ public class PkDaredBodyView extends FrameLayout {
     }
 
     public void a(String str, int i, int i2, int i3, int i4, IRequestHost iRequestHost) {
-        this.f15372c = iRequestHost;
+        this.c = iRequestHost;
         setAlpha(0.0f);
         a();
         setVisibility(0);
@@ -602,9 +599,9 @@ public class PkDaredBodyView extends FrameLayout {
     }
 
     public void b(int i, int i2) {
-        a(this.f15371a, i, this.o, this.u);
+        a(this.a, i, this.o, this.u);
         a(this.b, i2, this.p, this.v);
-        this.f15371a = i;
+        this.a = i;
         this.b = i2;
         PkDaredProgressView pkDaredProgressView = this.t;
         if (pkDaredProgressView == null) {

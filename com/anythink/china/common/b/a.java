@@ -5,25 +5,21 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import androidx.core.app.NotificationCompat;
 import com.anythink.china.common.NotificationBroadcaseReceiver;
 import com.anythink.china.common.a.e;
 import com.anythink.core.common.k.h;
-import com.anythink.expressad.foundation.h.i;
 import java.util.HashMap;
 import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/common/b/a.class */
 public class a implements b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6307a = a.class.getSimpleName();
+    public static final String a = a.class.getSimpleName();
     public static final String b = "anythink_action_notification_click";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6308c = "anythink_action_notification_cannel";
+    public static final String c = "anythink_action_notification_cannel";
     public static final String d = "anythink_broadcast_receiver_extra_url";
     public static final String e = "anythink_broadcast_receiver_extra_unique_id";
     public static final String f = "anythink_broadcast_receiver_extra_request_status";
@@ -65,16 +61,16 @@ public class a implements b {
             intent.putExtra(e, eVar.n);
             intent.putExtra(d, eVar.b);
             intent.putExtra(f, eVar.a().toString());
-            intent.putExtra(g, cVar.f6309a);
+            intent.putExtra(g, cVar.a);
             intent.setClass(this.k, NotificationBroadcaseReceiver.class);
-            PendingIntent broadcast = PendingIntent.getBroadcast(this.k, cVar.f6309a, intent, 134217728);
-            Intent intent2 = new Intent(f6308c);
+            PendingIntent broadcast = PendingIntent.getBroadcast(this.k, cVar.a, intent, 134217728);
+            Intent intent2 = new Intent(c);
             intent2.putExtra(e, eVar.n);
             intent2.putExtra(d, eVar.b);
             intent2.putExtra(f, eVar.a().toString());
-            intent2.putExtra(g, cVar.f6309a);
+            intent2.putExtra(g, cVar.a);
             intent2.setClass(this.k, NotificationBroadcaseReceiver.class);
-            builder.setContentIntent(broadcast).setDeleteIntent(PendingIntent.getBroadcast(this.k, cVar.f6309a, intent2, 134217728));
+            builder.setContentIntent(broadcast).setDeleteIntent(PendingIntent.getBroadcast(this.k, cVar.a, intent2, 134217728));
         }
     }
 
@@ -99,18 +95,18 @@ public class a implements b {
             this.i.createNotificationChannel(notificationChannel);
         }
         this.l++;
-        builder.setOngoing(true).setSound(null).setPriority(0).setOnlyAlertOnce(true).setAutoCancel(false);
+        builder.setOngoing(true).setSound((Uri) null).setPriority(0).setOnlyAlertOnce(true).setAutoCancel(false);
         try {
             builder.setSmallIcon(this.k.getPackageManager().getApplicationInfo(this.k.getPackageName(), 128).icon);
         } catch (Throwable th) {
             th.printStackTrace();
-            builder.setSmallIcon(h.a(this.k, "core_icon_close", i.f7952c));
+            builder.setSmallIcon(h.a(this.k, "core_icon_close", "drawable"));
         }
-        builder.setContentTitle(eVar.f6303c).setLargeIcon(eVar.d);
+        builder.setContentTitle(eVar.c).setLargeIcon(eVar.d);
         c cVar2 = new c();
-        cVar2.f6309a = this.l;
+        cVar2.a = this.l;
         cVar2.b = builder;
-        cVar2.f6310c = -1;
+        cVar2.c = -1;
         this.h.put(str, cVar2);
         return cVar2;
     }
@@ -174,7 +170,7 @@ public class a implements b {
         if (eVar == null || TextUtils.isEmpty(eVar.b) || this.i == null) {
             return;
         }
-        this.i.cancel(f(eVar).f6309a);
+        this.i.cancel(f(eVar).a);
         this.h.remove(eVar.n);
     }
 }

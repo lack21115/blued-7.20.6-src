@@ -16,47 +16,39 @@ import kotlinx.coroutines.flow.FlowCollector;
 @DebugMetadata(b = "AdxBaseManager.kt", c = {223}, d = "invokeSuspend", e = "com.blued.android.module.common.adx.base.AdxBaseManager$runParallel$$inlined$transform$2")
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallel$$inlined$transform$2.class */
 public final class AdxBaseManager$runParallel$$inlined$transform$2 extends SuspendLambda implements Function2<FlowCollector<? super ADEvent>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10476a;
+    int a;
     final /* synthetic */ Flow b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private /* synthetic */ Object f10477c;
+    private /* synthetic */ Object c;
 
     @Metadata
     /* renamed from: com.blued.android.module.common.adx.base.AdxBaseManager$runParallel$$inlined$transform$2$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallel$$inlined$transform$2$1.class */
     public static final class AnonymousClass1 implements FlowCollector<IBaseAd> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FlowCollector f10478a;
+        final /* synthetic */ FlowCollector a;
 
         @Metadata
         @DebugMetadata(b = "AdxBaseManager.kt", c = {136, 136}, d = "emit", e = "com.blued.android.module.common.adx.base.AdxBaseManager$runParallel$$inlined$transform$2$1")
         /* renamed from: com.blued.android.module.common.adx.base.AdxBaseManager$runParallel$$inlined$transform$2$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallel$$inlined$transform$2$1$1.class */
-        public static final class C02141 extends ContinuationImpl {
-
-            /* renamed from: a  reason: collision with root package name */
-            /* synthetic */ Object f10479a;
+        public static final class C00901 extends ContinuationImpl {
+            /* synthetic */ Object a;
             int b;
             Object d;
 
-            public C02141(Continuation continuation) {
+            public C00901(Continuation continuation) {
                 super(continuation);
             }
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Object invokeSuspend(Object obj) {
-                this.f10479a = obj;
+                this.a = obj;
                 this.b |= Integer.MIN_VALUE;
                 return AnonymousClass1.this.emit(null, this);
             }
         }
 
         public AnonymousClass1(FlowCollector flowCollector) {
-            this.f10478a = flowCollector;
+            this.a = flowCollector;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -85,32 +77,32 @@ public final class AdxBaseManager$runParallel$$inlined$transform$2 extends Suspe
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(FlowCollector<? super ADEvent> flowCollector, Continuation<? super Unit> continuation) {
-        return ((AdxBaseManager$runParallel$$inlined$transform$2) create(flowCollector, continuation)).invokeSuspend(Unit.f42314a);
+        return ((AdxBaseManager$runParallel$$inlined$transform$2) create(flowCollector, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         AdxBaseManager$runParallel$$inlined$transform$2 adxBaseManager$runParallel$$inlined$transform$2 = new AdxBaseManager$runParallel$$inlined$transform$2(this.b, continuation);
-        adxBaseManager$runParallel$$inlined$transform$2.f10477c = obj;
+        adxBaseManager$runParallel$$inlined$transform$2.c = obj;
         return adxBaseManager$runParallel$$inlined$transform$2;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f10476a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            FlowCollector flowCollector = (FlowCollector) this.f10477c;
-            this.f10476a = 1;
-            if (this.b.a(new AnonymousClass1(flowCollector), this) == a2) {
-                return a2;
+            FlowCollector flowCollector = (FlowCollector) this.c;
+            this.a = 1;
+            if (this.b.a(new AnonymousClass1(flowCollector), this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

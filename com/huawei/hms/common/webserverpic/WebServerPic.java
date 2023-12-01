@@ -12,20 +12,20 @@ public class WebServerPic {
     public static final Parcelable.Creator<WebServerPic> CREATOR = new WebServerPicCreator();
 
     /* renamed from: a  reason: collision with root package name */
-    private final Uri f22669a;
+    private final Uri f9061a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f22670c;
+    private final int f9062c;
 
     public WebServerPic(Uri uri) throws IllegalArgumentException {
         this(uri, 0, 0);
     }
 
     public WebServerPic(Uri uri, int i, int i2) throws IllegalArgumentException {
-        this.f22669a = uri;
+        this.f9061a = uri;
         this.b = i;
-        this.f22670c = i2;
+        this.f9062c = i2;
         if (uri == null) {
             throw new IllegalArgumentException("url is not able to be null");
         }
@@ -35,11 +35,11 @@ public class WebServerPic {
     }
 
     public final int getHeight() {
-        return this.f22670c;
+        return this.f9062c;
     }
 
     public final Uri getUrl() {
-        return this.f22669a;
+        return this.f9061a;
     }
 
     public final int getWidth() {
@@ -47,7 +47,7 @@ public class WebServerPic {
     }
 
     public final String toString() {
-        return String.format(Locale.ENGLISH, "Image %dx%d %s", Integer.valueOf(this.b), Integer.valueOf(this.f22670c), this.f22669a.toString());
+        return String.format(Locale.ENGLISH, "Image %dx%d %s", Integer.valueOf(this.b), Integer.valueOf(this.f9062c), this.f9061a.toString());
     }
 
     public final void writeToParcel(Parcel parcel, int i) {

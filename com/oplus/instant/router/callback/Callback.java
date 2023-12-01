@@ -20,11 +20,11 @@ public abstract class Callback {
         public static final String UPDATE_SUCCESS_MESSAGE = "platform update success, please call request again";
 
         /* renamed from: a  reason: collision with root package name */
-        int f24281a;
+        int f10594a;
         String b;
 
         public int getCode() {
-            return this.f24281a;
+            return this.f10594a;
         }
 
         public String getMsg() {
@@ -32,7 +32,7 @@ public abstract class Callback {
         }
 
         public void setCode(int i) {
-            this.f24281a = i;
+            this.f10594a = i;
         }
 
         public void setMsg(String str) {
@@ -40,7 +40,7 @@ public abstract class Callback {
         }
 
         public String toString() {
-            return this.f24281a + "#" + this.b;
+            return this.f10594a + "#" + this.b;
         }
     }
 
@@ -52,10 +52,10 @@ public abstract class Callback {
         Map<String, Object> a2 = f.a(cursor);
         Response response = new Response();
         if (a2 == null || (obj = a2.get("code")) == null) {
-            response.f24281a = -1;
+            response.f10594a = -1;
             str = "fail to get response";
         } else {
-            response.f24281a = Long.valueOf(((Long) obj).longValue()).intValue();
+            response.f10594a = Long.valueOf(((Long) obj).longValue()).intValue();
             str = (String) a2.get("msg");
         }
         response.b = str;

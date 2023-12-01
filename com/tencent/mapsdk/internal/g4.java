@@ -16,56 +16,56 @@ public abstract class g4 extends JsonComposer {
     @Json(name = "info")
 
     /* renamed from: a  reason: collision with root package name */
-    public b f37456a;
+    public b f23765a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$a.class */
     public static class a extends JsonComposer {
         @Json(name = "layerType")
 
         /* renamed from: a  reason: collision with root package name */
-        public String f37457a;
+        public String f23766a;
         @Json(name = "data")
-        public C0957a b;
+        public C0787a b;
 
         /* renamed from: com.tencent.mapsdk.internal.g4$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$a$a.class */
-        public static class C0957a extends JsonComposer {
+        public static class C0787a extends JsonComposer {
             @Json(name = "version")
 
             /* renamed from: a  reason: collision with root package name */
-            public int f37458a;
+            public int f23767a;
             @Json(name = "default")
-            public List<AbstractC0958a> b;
+            public List<AbstractC0788a> b;
 
             @JsonType(deserializer = d4.class)
             /* renamed from: com.tencent.mapsdk.internal.g4$a$a$a  reason: collision with other inner class name */
             /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$a$a$a.class */
-            public static abstract class AbstractC0958a extends JsonComposer {
+            public static abstract class AbstractC0788a extends JsonComposer {
                 @Json(name = "type")
 
                 /* renamed from: a  reason: collision with root package name */
-                public String f37459a;
+                public String f23768a;
                 public String b;
             }
 
             /* renamed from: com.tencent.mapsdk.internal.g4$a$a$b */
             /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$a$a$b.class */
-            public static class b extends AbstractC0958a {
+            public static class b extends AbstractC0788a {
                 @Json(deserializer = LatLngListDeserializer.class, name = "coordinates")
 
                 /* renamed from: c  reason: collision with root package name */
-                public List<LatLng> f37460c;
+                public List<LatLng> f23769c;
                 @Json(name = "weight")
                 public int d;
             }
 
             /* renamed from: com.tencent.mapsdk.internal.g4$a$a$c */
             /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$a$a$c.class */
-            public static class c extends AbstractC0958a {
+            public static class c extends AbstractC0788a {
                 @Json(name = "url")
 
                 /* renamed from: c  reason: collision with root package name */
-                public String f37461c;
+                public String f23770c;
                 @Json(name = "astcUrl")
                 public String d;
                 @Json(name = "format")
@@ -80,33 +80,33 @@ public abstract class g4 extends JsonComposer {
 
             /* renamed from: com.tencent.mapsdk.internal.g4$a$a$d */
             /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$a$a$d.class */
-            public static class d extends AbstractC0958a {
+            public static class d extends AbstractC0788a {
                 @Json(deserializer = LatLngDeserializer.class, name = "coordinates")
 
                 /* renamed from: c  reason: collision with root package name */
-                public LatLng f37462c;
+                public LatLng f23771c;
                 @Json(name = "weight")
                 public int d;
             }
 
             /* renamed from: com.tencent.mapsdk.internal.g4$a$a$e */
             /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$a$a$e.class */
-            public static class e extends AbstractC0958a {
+            public static class e extends AbstractC0788a {
                 @Json(deserializer = j4.class, name = "coordinates")
 
                 /* renamed from: c  reason: collision with root package name */
-                public List<WeightedLatLng> f37463c;
+                public List<WeightedLatLng> f23772c;
             }
 
             public boolean a() {
-                List<AbstractC0958a> list = this.b;
+                List<AbstractC0788a> list = this.b;
                 return list != null && list.size() > 0;
             }
         }
 
         public boolean a() {
-            C0957a c0957a = this.b;
-            return c0957a != null && c0957a.a();
+            C0787a c0787a = this.b;
+            return c0787a != null && c0787a.a();
         }
     }
 
@@ -115,7 +115,7 @@ public abstract class g4 extends JsonComposer {
         @Json(name = "error")
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37464a;
+        public int f23773a;
         @Json(name = "msg")
         public String b;
     }
@@ -125,7 +125,7 @@ public abstract class g4 extends JsonComposer {
         @Json(name = "version")
 
         /* renamed from: a  reason: collision with root package name */
-        public int f37465a;
+        public int f23774a;
         @Json(name = "mapping")
         public b b;
 
@@ -134,13 +134,13 @@ public abstract class g4 extends JsonComposer {
             @Json(name = "displayLevel")
 
             /* renamed from: a  reason: collision with root package name */
-            public int f37466a;
+            public int f23775a;
             @Json(name = "zIndex")
             public int b;
             @Json(name = CallMraidJS.h)
 
             /* renamed from: c  reason: collision with root package name */
-            public boolean f37467c;
+            public boolean f23776c;
             @Json(name = "opacity")
             public double d;
             @Json(name = "maxZoom")
@@ -160,20 +160,20 @@ public abstract class g4 extends JsonComposer {
             @Json(name = IntentConstant.RULE)
 
             /* renamed from: a  reason: collision with root package name */
-            public a f37468a;
+            public a f23777a;
 
             /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$c$b$a.class */
             public static class a extends JsonComposer {
                 @Json(name = "default")
 
                 /* renamed from: a  reason: collision with root package name */
-                public String f37469a;
+                public String f23778a;
             }
         }
 
         /* renamed from: com.tencent.mapsdk.internal.g4$c$c  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$c$c.class */
-        public static abstract class AbstractC0959c extends JsonComposer {
+        public static abstract class AbstractC0789c extends JsonComposer {
         }
 
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/g4$c$d.class */
@@ -181,10 +181,10 @@ public abstract class g4 extends JsonComposer {
             @Json(name = "duration")
 
             /* renamed from: a  reason: collision with root package name */
-            public double f37470a;
+            public double f23779a;
 
             public boolean a() {
-                return this.f37470a >= 0.0d;
+                return this.f23779a >= 0.0d;
             }
         }
 
@@ -193,13 +193,13 @@ public abstract class g4 extends JsonComposer {
             @Json(name = "points")
 
             /* renamed from: a  reason: collision with root package name */
-            public List<Double> f37471a;
+            public List<Double> f23780a;
             @Json(name = "colors")
             public List<Integer> b;
 
             public boolean a() {
                 List<Integer> list;
-                List<Double> list2 = this.f37471a;
+                List<Double> list2 = this.f23780a;
                 return list2 != null && list2.size() > 0 && (list = this.b) != null && list.size() > 0;
             }
         }
@@ -209,7 +209,7 @@ public abstract class g4 extends JsonComposer {
             @Json(name = "type")
 
             /* renamed from: a  reason: collision with root package name */
-            public int f37472a;
+            public int f23781a;
 
             public boolean a() {
                 return true;
@@ -222,8 +222,8 @@ public abstract class g4 extends JsonComposer {
     }
 
     public boolean a() {
-        b bVar = this.f37456a;
-        return bVar != null && bVar.f37464a == 0;
+        b bVar = this.f23765a;
+        return bVar != null && bVar.f23773a == 0;
     }
 
     public abstract int b();

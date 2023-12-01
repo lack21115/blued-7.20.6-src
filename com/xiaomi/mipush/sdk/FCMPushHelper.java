@@ -25,7 +25,7 @@ public class FCMPushHelper {
 
     private static void a(Context context, ic icVar) {
         try {
-            MiPushMessage generateMessage = PushMessageHelper.generateMessage((ij) ai.a(context, icVar), icVar.m11945a(), false);
+            MiPushMessage generateMessage = PushMessageHelper.generateMessage((ij) ai.a(context, icVar), icVar.m8895a(), false);
             PushMessageReceiver a2 = i.a(context);
             if (a2 != null) {
                 a2.onNotificationMessageArrived(context, generateMessage);
@@ -50,7 +50,7 @@ public class FCMPushHelper {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static boolean m11410a(Context context) {
+    private static boolean m8360a(Context context) {
         return ((long) com.xiaomi.push.j.b(context)) >= 50002000 && b(context);
     }
 
@@ -59,7 +59,7 @@ public class FCMPushHelper {
     }
 
     public static void clearToken(Context context) {
-        i.m11480a(context, e.ASSEMBLE_PUSH_FCM);
+        i.m8430a(context, e.ASSEMBLE_PUSH_FCM);
     }
 
     public static void convertMessage(Intent intent) {
@@ -67,7 +67,7 @@ public class FCMPushHelper {
     }
 
     public static boolean isFCMSwitchOpen(Context context) {
-        return i.m11483a(context, e.ASSEMBLE_PUSH_FCM) && MiPushClient.getOpenFCMPush(context);
+        return i.m8433a(context, e.ASSEMBLE_PUSH_FCM) && MiPushClient.getOpenFCMPush(context);
     }
 
     public static void notifyFCMNotificationCome(Context context, Map<String, String> map) {
@@ -113,6 +113,6 @@ public class FCMPushHelper {
     }
 
     public static void uploadToken(Context context, String str) {
-        i.m11481a(context, e.ASSEMBLE_PUSH_FCM, str);
+        i.m8431a(context, e.ASSEMBLE_PUSH_FCM, str);
     }
 }

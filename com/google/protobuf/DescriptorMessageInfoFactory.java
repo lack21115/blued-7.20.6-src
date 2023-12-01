@@ -1,6 +1,5 @@
 package com.google.protobuf;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.Internal;
 import com.google.protobuf.StructuralMessageInfo;
@@ -309,7 +308,7 @@ public final class DescriptorMessageInfoFactory implements MessageInfoFactory {
 
         private static OneofInfo newInfo(Class<?> cls, Descriptors.OneofDescriptor oneofDescriptor) {
             String snakeCaseToCamelCase = DescriptorMessageInfoFactory.snakeCaseToCamelCase(oneofDescriptor.getName());
-            return new OneofInfo(oneofDescriptor.getIndex(), DescriptorMessageInfoFactory.field(cls, snakeCaseToCamelCase + "Case_"), DescriptorMessageInfoFactory.field(cls, snakeCaseToCamelCase + BridgeUtil.UNDERLINE_STR));
+            return new OneofInfo(oneofDescriptor.getIndex(), DescriptorMessageInfoFactory.field(cls, snakeCaseToCamelCase + "Case_"), DescriptorMessageInfoFactory.field(cls, snakeCaseToCamelCase + "_"));
         }
 
         OneofInfo getOneof(Class<?> cls, Descriptors.OneofDescriptor oneofDescriptor) {
@@ -332,7 +331,7 @@ public final class DescriptorMessageInfoFactory implements MessageInfoFactory {
     }
 
     private static java.lang.reflect.Field bitField(Class<?> cls, int i) {
-        return field(cls, "bitField" + i + BridgeUtil.UNDERLINE_STR);
+        return field(cls, "bitField" + i + "_");
     }
 
     private static FieldInfo buildOneofMember(Class<?> cls, Descriptors.FieldDescriptor fieldDescriptor, OneofState oneofState, boolean z, Internal.EnumVerifier enumVerifier) {
@@ -524,7 +523,7 @@ public final class DescriptorMessageInfoFactory implements MessageInfoFactory {
 
     static String getFieldName(Descriptors.FieldDescriptor fieldDescriptor) {
         String name = fieldDescriptor.getType() == Descriptors.FieldDescriptor.Type.GROUP ? fieldDescriptor.getMessageType().getName() : fieldDescriptor.getName();
-        String str = specialFieldNames.contains(name) ? "__" : BridgeUtil.UNDERLINE_STR;
+        String str = specialFieldNames.contains(name) ? "__" : "_";
         return snakeCaseToCamelCase(name) + str;
     }
 

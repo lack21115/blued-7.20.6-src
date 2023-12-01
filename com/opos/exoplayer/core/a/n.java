@@ -1,5 +1,6 @@
 package com.opos.exoplayer.core.a;
 
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.nio.ShortBuffer;
 import java.util.Arrays;
 
@@ -7,11 +8,11 @@ import java.util.Arrays;
 final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f25043a;
+    private final int f11355a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f25044c;
+    private final float f11356c;
     private final float d;
     private final float e;
     private final int f;
@@ -36,7 +37,7 @@ final class n {
     private int v = 0;
 
     public n(int i, int i2, float f, float f2, int i3) {
-        this.f25043a = i;
+        this.f11355a = i;
         this.b = i2;
         this.f = i / 400;
         int i4 = i / 65;
@@ -50,7 +51,7 @@ final class n {
         this.m = new short[i5 * i2];
         this.n = i5;
         this.o = new short[i5 * i2];
-        this.f25044c = f;
+        this.f11356c = f;
         this.d = f2;
         this.e = i / i3;
     }
@@ -108,8 +109,8 @@ final class n {
 
     private int a(short[] sArr, int i, boolean z) {
         int i2;
-        int i3 = this.f25043a;
-        int i4 = i3 > 4000 ? i3 / 4000 : 1;
+        int i3 = this.f11355a;
+        int i4 = i3 > 4000 ? i3 / TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY : 1;
         if (this.b == 1 && i4 == 1) {
             i2 = a(sArr, i, this.f, this.g);
         } else {
@@ -174,7 +175,7 @@ final class n {
         if (this.s == i) {
             return;
         }
-        int i4 = this.f25043a;
+        int i4 = this.f11355a;
         int i5 = (int) (i4 / f);
         while (true) {
             if (i5 <= 16384 && i4 <= 16384) {
@@ -264,7 +265,7 @@ final class n {
     private void a(short[] sArr, int i, int i2) {
         a(i2);
         int i3 = this.b;
-        System.arraycopy((Object) sArr, i * i3, (Object) this.m, this.s * i3, i3 * i2);
+        System.arraycopy(sArr, i * i3, this.m, this.s * i3, i3 * i2);
         this.s += i2;
     }
 
@@ -286,7 +287,7 @@ final class n {
         int i4 = i2 + i3;
         a(i4);
         int i5 = this.b;
-        System.arraycopy((Object) sArr, i5 * i, (Object) this.m, this.s * i5, i5 * i2);
+        System.arraycopy(sArr, i5 * i, this.m, this.s * i5, i5 * i2);
         a(i3, this.b, this.m, this.s + i2, sArr, i + i2, sArr, i);
         this.s += i4;
         return i3;
@@ -334,7 +335,7 @@ final class n {
 
     private void c() {
         int i = this.s;
-        float f = this.f25044c;
+        float f = this.f11356c;
         float f2 = this.d;
         float f3 = f / f2;
         float f4 = this.e * f2;
@@ -354,7 +355,7 @@ final class n {
         int i2 = this.r - i;
         short[] sArr = this.k;
         int i3 = this.b;
-        System.arraycopy((Object) sArr, i * i3, (Object) sArr, 0, i3 * i2);
+        System.arraycopy(sArr, i * i3, sArr, 0, i3 * i2);
         this.r = i2;
     }
 
@@ -376,7 +377,7 @@ final class n {
         }
         short[] sArr = this.m;
         int i6 = this.b;
-        System.arraycopy((Object) sArr, i6 * i, (Object) this.o, this.t * i6, i6 * i2);
+        System.arraycopy(sArr, i6 * i, this.o, this.t * i6, i6 * i2);
         this.s = i;
         this.t = i2 + this.t;
     }
@@ -387,14 +388,14 @@ final class n {
         }
         short[] sArr = this.o;
         int i2 = this.b;
-        System.arraycopy((Object) sArr, i2 * i, (Object) sArr, 0, (this.t - i) * i2);
+        System.arraycopy(sArr, i2 * i, sArr, 0, (this.t - i) * i2);
         this.t -= i;
     }
 
     public void a() {
         int i;
         int i2 = this.r;
-        float f = this.f25044c;
+        float f = this.f11356c;
         float f2 = this.d;
         int i3 = this.s + ((int) ((((i2 / (f / f2)) + this.t) / (this.e * f2)) + 0.5f));
         b((this.h * 2) + i2);
@@ -440,6 +441,6 @@ final class n {
         this.s = i;
         short[] sArr = this.m;
         int i2 = this.b;
-        System.arraycopy((Object) sArr, min * i2, (Object) sArr, 0, i * i2);
+        System.arraycopy(sArr, min * i2, sArr, 0, i * i2);
     }
 }

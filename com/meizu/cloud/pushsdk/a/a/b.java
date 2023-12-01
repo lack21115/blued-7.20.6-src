@@ -2,6 +2,7 @@ package com.meizu.cloud.pushsdk.a.a;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -16,15 +17,15 @@ import java.util.zip.GZIPOutputStream;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23950a = b.class.getSimpleName();
+    private static final String f10339a = b.class.getSimpleName();
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static b f23951c;
+    private static b f10340c;
 
     private b(Context context) {
         try {
-            System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
+            System.setProperty("sun.net.http.allowRestrictedHeaders", fw.Code);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,14 +33,14 @@ public class b {
     }
 
     public static b a(Context context) {
-        if (f23951c == null) {
+        if (f10340c == null) {
             synchronized (b) {
-                if (f23951c == null) {
-                    f23951c = new b(context);
+                if (f10340c == null) {
+                    f10340c = new b(context);
                 }
             }
         }
-        return f23951c;
+        return f10340c;
     }
 
     private Map<String, String> a(Map<String, String> map) {
@@ -50,7 +51,7 @@ public class b {
         byte[] c2 = a.a().c();
         if (c2 != null && c2.length > 0) {
             String str = new String(c2);
-            String str2 = f23950a;
+            String str2 = f10339a;
             DebugLogger.d(str2, "attach x_s_key: " + str);
             hashMap.put("X-S-Key", str);
             return hashMap;
@@ -58,7 +59,7 @@ public class b {
         byte[] b2 = a.a().b();
         if (b2 != null && b2.length > 0) {
             String str3 = new String(a.a().b());
-            String str4 = f23950a;
+            String str4 = f10339a;
             DebugLogger.d(str4, "attach x_a_key: " + str3);
             hashMap.put("X-A-Key", str3);
         }
@@ -96,7 +97,7 @@ public class b {
     private void a(URLConnection uRLConnection) {
         try {
             String headerField = uRLConnection.getHeaderField("X-S-Key");
-            String str = f23950a;
+            String str = f10339a;
             DebugLogger.d(str, "get x_s_key = " + headerField);
             if (TextUtils.isEmpty(headerField)) {
                 return;
@@ -149,7 +150,7 @@ public class b {
     private void b(URLConnection uRLConnection) {
         try {
             String headerField = uRLConnection.getHeaderField("Key-Timeout");
-            String str = f23950a;
+            String str = f10339a;
             DebugLogger.d(str, "get keyTimeout = " + headerField);
         } catch (NullPointerException e) {
         }

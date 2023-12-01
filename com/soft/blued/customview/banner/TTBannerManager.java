@@ -8,7 +8,7 @@ import com.soft.blued.utils.third.TTADUtils;
 public class TTBannerManager<V> extends BannerAdManagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private TTFeedAd f28553a;
+    private TTFeedAd f14863a;
 
     @Override // com.soft.blued.customview.banner.BannerAdManagerAdapter, com.soft.blued.customview.banner.BannerAdManager
     public V a(Context context, String str, final BannerAdListener bannerAdListener) {
@@ -25,10 +25,10 @@ public class TTBannerManager<V> extends BannerAdManagerAdapter {
 
             @Override // com.soft.blued.utils.third.TTADUtils.TTGetAdListener
             public void a(TTFeedAd tTFeedAd) {
-                TTBannerManager.this.f28553a = tTFeedAd;
+                TTBannerManager.this.f14863a = tTFeedAd;
                 bannerAdListener.a(tTFeedAd);
             }
         });
-        return (V) this.f28553a;
+        return (V) this.f14863a;
     }
 }

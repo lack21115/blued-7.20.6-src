@@ -32,11 +32,11 @@ public final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final X509Certificate[][] f21409a;
+        public final X509Certificate[][] f7803a;
         public final byte[] b;
 
         public a(X509Certificate[][] x509CertificateArr, byte[] bArr) {
-            this.f21409a = x509CertificateArr;
+            this.f7803a = x509CertificateArr;
             this.b = bArr;
         }
     }
@@ -48,7 +48,7 @@ public final class b {
         try {
             CertificateFactory certificateFactory = CertificateFactory.getInstance("X.509");
             try {
-                ByteBuffer a2 = f.a(mVar.f21422a);
+                ByteBuffer a2 = f.a(mVar.f7816a);
                 int i = 0;
                 while (a2.hasRemaining()) {
                     i++;

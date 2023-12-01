@@ -24,13 +24,9 @@ import java.lang.ref.WeakReference;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ApplyCloseRoomView.class */
 public class ApplyCloseRoomView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f17889a;
+    public final int a;
     private DialogApplyCloseRoomLayoutBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View.OnClickListener f17890c;
+    private View.OnClickListener c;
     private int d;
     private int e;
     private BaseYYStudioFragment f;
@@ -38,21 +34,19 @@ public class ApplyCloseRoomView extends FrameLayout implements View.OnClickListe
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ApplyCloseRoomView$TimeHandler.class */
     public static class TimeHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private WeakReference<ApplyCloseRoomView> f17892a;
+        private WeakReference<ApplyCloseRoomView> a;
 
         public TimeHandler(ApplyCloseRoomView applyCloseRoomView) {
-            this.f17892a = new WeakReference<>(applyCloseRoomView);
+            this.a = new WeakReference<>(applyCloseRoomView);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             super.handleMessage(message);
-            if (message.what != 1 || this.f17892a.get() == null) {
+            if (message.what != 1 || this.a.get() == null) {
                 return;
             }
-            this.f17892a.get().a();
+            this.a.get().a();
         }
     }
 
@@ -66,12 +60,12 @@ public class ApplyCloseRoomView extends FrameLayout implements View.OnClickListe
 
     public ApplyCloseRoomView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f17889a = 1;
+        this.a = 1;
         this.e = 0;
-        DialogApplyCloseRoomLayoutBinding a2 = DialogApplyCloseRoomLayoutBinding.a(LayoutInflater.from(context), this, true);
-        this.b = a2;
-        a2.f16296c.setOnClickListener(this);
-        this.b.f16295a.setOnClickListener(this);
+        DialogApplyCloseRoomLayoutBinding a = DialogApplyCloseRoomLayoutBinding.a(LayoutInflater.from(context), this, true);
+        this.b = a;
+        a.c.setOnClickListener(this);
+        this.b.a.setOnClickListener(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -79,7 +73,7 @@ public class ApplyCloseRoomView extends FrameLayout implements View.OnClickListe
         int i = this.d - 1;
         this.d = i;
         if (i < 0) {
-            View.OnClickListener onClickListener = this.f17890c;
+            View.OnClickListener onClickListener = this.c;
             if (onClickListener != null) {
                 onClickListener.onClick(null);
                 return;
@@ -109,7 +103,7 @@ public class ApplyCloseRoomView extends FrameLayout implements View.OnClickListe
     }
 
     public void a(View.OnClickListener onClickListener, BaseYYStudioFragment baseYYStudioFragment) {
-        this.f17890c = onClickListener;
+        this.c = onClickListener;
         this.f = baseYYStudioFragment;
     }
 
@@ -119,7 +113,7 @@ public class ApplyCloseRoomView extends FrameLayout implements View.OnClickListe
         int id = view.getId();
         if (id == R.id.ok) {
             this.e = 1;
-            View.OnClickListener onClickListener = this.f17890c;
+            View.OnClickListener onClickListener = this.c;
             if (onClickListener != null) {
                 onClickListener.onClick(null);
             }

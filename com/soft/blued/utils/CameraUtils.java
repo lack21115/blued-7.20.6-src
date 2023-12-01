@@ -14,10 +14,9 @@ public class CameraUtils {
     public static String a(final Fragment fragment) {
         final String e = RecyclingUtils.e("photo");
         PermissionUtils.b(new PermissionCallbacks() { // from class: com.soft.blued.utils.CameraUtils.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, FileUtils.b(String.this));
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, FileUtils.b(e));
                 intent.addFlags(2);
                 intent.addFlags(1);
                 if (AppMethods.a(intent)) {
@@ -27,7 +26,6 @@ public class CameraUtils {
                 }
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });

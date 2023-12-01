@@ -37,11 +37,11 @@ import com.soft.blued.ui.feed.manager.IDispatchTouchEvent;
 public class ClipBgFragment extends BaseFragment implements View.OnTouchListener, IDispatchTouchEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f29877a;
+    private Context f16187a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f29878c;
+    private TextView f16188c;
     private TextView d;
     private View e;
     private View f;
@@ -81,7 +81,7 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
                 getActivity().finish();
             }
         }
-        ((ClipBgActivity) getActivity()).a((IDispatchTouchEvent) this);
+        ((ClipBgActivity) getActivity()).a(this);
     }
 
     public static void a(BaseFragment baseFragment, int i, String str, int i2) {
@@ -93,10 +93,10 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
     }
 
     private void b() {
-        this.f29878c = (TextView) this.b.findViewById(R.id.ok_view);
+        this.f16188c = (TextView) this.b.findViewById(R.id.ok_view);
         this.d = (TextView) this.b.findViewById(R.id.cancel_view);
         this.k = (ClipZoomImageView) this.b.findViewById(R.id.clip_zoom_view);
-        this.l = (ShapeLinearLayout) this.b.findViewById(R.id.clip_zoom_bg);
+        this.l = this.b.findViewById(R.id.clip_zoom_bg);
         this.m = (ImageView) this.b.findViewById(R.id.clip_zoom_inside);
         this.e = this.b.findViewById(R.id.clip_zoom_top);
         this.f = this.b.findViewById(R.id.clip_zoom_bottom);
@@ -111,7 +111,7 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
         this.l.setLayoutParams(layoutParams);
         int c2 = ImageUtils.c(this.n);
         String[] a2 = ImageUtils.a(this.n);
-        int[] a3 = this.o == 8 ? ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue(), DensityUtils.a(this.f29877a, 198.0f) - DensityUtils.a(getActivity())) : ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue());
+        int[] a3 = this.o == 8 ? ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue(), DensityUtils.a(this.f16187a, 198.0f) - DensityUtils.a(getActivity())) : ImageUtils.a(Integer.valueOf(a2[0]).intValue(), Integer.valueOf(a2[1]).intValue());
         if (a3[0] > a3[1]) {
             int i = a3[0];
         } else {
@@ -157,7 +157,7 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
                 ClipBgFragment.this.getActivity().finish();
             }
         });
-        this.f29878c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipBgFragment.2
+        this.f16188c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipBgFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -166,7 +166,7 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
                     float f = ClipBgFragment.this.p;
                     float f2 = ClipBgFragment.this.q;
                     if (f < 300.0f || f2 < 300.0f) {
-                        CommonAlertDialog.a(ClipBgFragment.this.f29877a, (String) null, ClipBgFragment.this.f29877a.getResources().getString(R.string.cropped_image_too_small), ClipBgFragment.this.f29877a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipBgFragment.2.1
+                        CommonAlertDialog.a(ClipBgFragment.this.f16187a, (String) null, ClipBgFragment.this.f16187a.getResources().getString(R.string.cropped_image_too_small), ClipBgFragment.this.f16187a.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipBgFragment.2.1
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i3) {
                                 Tracker.onClick(dialogInterface, i3);
@@ -175,7 +175,7 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
                                 ClipBgFragment.this.getActivity().setResult(0, intent);
                                 ClipBgFragment.this.getActivity().finish();
                             }
-                        }, ClipBgFragment.this.f29877a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipBgFragment.2.2
+                        }, ClipBgFragment.this.f16187a.getResources().getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ClipBgFragment.2.2
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i3) {
                                 Tracker.onClick(dialogInterface, i3);
@@ -245,9 +245,8 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
         AppInfo.n().postDelayed(this.r, 1000L);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29877a = getActivity();
+        this.f16187a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_clip_bg, viewGroup, false);
@@ -259,7 +258,6 @@ public class ClipBgFragment extends BaseFragment implements View.OnTouchListener
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         ((ClipBgActivity) getActivity()).b(this);

@@ -12,11 +12,11 @@ import java.util.concurrent.ExecutorService;
 public final class r {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ExecutorService f25472a;
+    private final ExecutorService f11784a;
     private e<? extends b> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IOException f25473c;
+    private IOException f11785c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/h/r$a.class */
     public interface a<T extends b> {
@@ -52,10 +52,10 @@ public final class r {
     final class e<T extends b> extends Handler implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25474a;
+        public final int f11786a;
 
         /* renamed from: c  reason: collision with root package name */
-        private final T f25475c;
+        private final T f11787c;
         private final a<T> d;
         private final long e;
         private IOException f;
@@ -65,15 +65,15 @@ public final class r {
 
         public e(Looper looper, T t, a<T> aVar, int i, long j) {
             super(looper);
-            this.f25475c = t;
+            this.f11787c = t;
             this.d = aVar;
-            this.f25474a = i;
+            this.f11786a = i;
             this.e = j;
         }
 
         private void a() {
             this.f = null;
-            r.this.f25472a.execute(r.this.b);
+            r.this.f11784a.execute(r.this.b);
         }
 
         private void b() {
@@ -110,7 +110,7 @@ public final class r {
                     sendEmptyMessage(1);
                 }
             } else {
-                this.f25475c.a();
+                this.f11787c.a();
                 if (this.h != null) {
                     this.h.interrupt();
                 }
@@ -118,7 +118,7 @@ public final class r {
             if (z) {
                 b();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                this.d.a((a<T>) this.f25475c, elapsedRealtime, elapsedRealtime - this.e, true);
+                this.d.a((a<T>) this.f11787c, elapsedRealtime, elapsedRealtime - this.e, true);
             }
         }
 
@@ -135,17 +135,17 @@ public final class r {
                 b();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 long j = elapsedRealtime - this.e;
-                if (!this.f25475c.b()) {
+                if (!this.f11787c.b()) {
                     int i = message.what;
                     int i2 = 1;
                     if (i != 1) {
                         if (i == 2) {
                             try {
-                                this.d.a(this.f25475c, elapsedRealtime, j);
+                                this.d.a(this.f11787c, elapsedRealtime, j);
                                 return;
                             } catch (RuntimeException e) {
                                 com.opos.cmn.an.f.a.d("LoadTask", "Unexpected exception handling load completed", e);
-                                r.this.f25473c = new d(e);
+                                r.this.f11785c = new d(e);
                                 return;
                             }
                         } else if (i != 3) {
@@ -153,9 +153,9 @@ public final class r {
                         } else {
                             IOException iOException = (IOException) message.obj;
                             this.f = iOException;
-                            int a2 = this.d.a((a<T>) this.f25475c, elapsedRealtime, j, iOException);
+                            int a2 = this.d.a((a<T>) this.f11787c, elapsedRealtime, j, iOException);
                             if (a2 == 3) {
-                                r.this.f25473c = this.f;
+                                r.this.f11785c = this.f;
                                 return;
                             } else if (a2 != 2) {
                                 if (a2 != 1) {
@@ -170,7 +170,7 @@ public final class r {
                         }
                     }
                 }
-                this.d.a((a<T>) this.f25475c, elapsedRealtime, j, false);
+                this.d.a((a<T>) this.f11787c, elapsedRealtime, j, false);
             }
         }
 
@@ -179,10 +179,10 @@ public final class r {
             IOException e;
             try {
                 this.h = Thread.currentThread();
-                if (!this.f25475c.b()) {
-                    com.opos.exoplayer.core.i.t.a("load:" + this.f25475c.getClass().getSimpleName());
+                if (!this.f11787c.b()) {
+                    com.opos.exoplayer.core.i.t.a("load:" + this.f11787c.getClass().getSimpleName());
                     try {
-                        this.f25475c.c();
+                        this.f11787c.c();
                         com.opos.exoplayer.core.i.t.a();
                     } catch (Throwable th) {
                         com.opos.exoplayer.core.i.t.a();
@@ -206,7 +206,7 @@ public final class r {
                 }
                 throw e3;
             } catch (InterruptedException e4) {
-                com.opos.exoplayer.core.i.a.b(this.f25475c.b());
+                com.opos.exoplayer.core.i.a.b(this.f11787c.b());
                 if (this.i) {
                     return;
                 }
@@ -233,20 +233,20 @@ public final class r {
     static final class f implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final c f25476a;
+        private final c f11788a;
 
         public f(c cVar) {
-            this.f25476a = cVar;
+            this.f11788a = cVar;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f25476a.g();
+            this.f11788a.g();
         }
     }
 
     public r(String str) {
-        this.f25472a = u.a(str);
+        this.f11784a = u.a(str);
     }
 
     public <T extends b> long a(T t, a<T> aVar, int i) {
@@ -258,7 +258,7 @@ public final class r {
     }
 
     public void a(int i) {
-        IOException iOException = this.f25473c;
+        IOException iOException = this.f11785c;
         if (iOException != null) {
             throw iOException;
         }
@@ -266,7 +266,7 @@ public final class r {
         if (eVar != null) {
             int i2 = i;
             if (i == Integer.MIN_VALUE) {
-                i2 = eVar.f25474a;
+                i2 = eVar.f11786a;
             }
             eVar.a(i2);
         }
@@ -278,9 +278,9 @@ public final class r {
             eVar.a(true);
         }
         if (cVar != null) {
-            this.f25472a.execute(new f(cVar));
+            this.f11784a.execute(new f(cVar));
         }
-        this.f25472a.shutdown();
+        this.f11784a.shutdown();
     }
 
     public boolean a() {

@@ -26,7 +26,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class y6 implements x6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f4067a;
+    public final Context f4019a;
     public BufferedWriter d;
     public BufferedWriter e;
     public BufferedWriter f;
@@ -38,7 +38,7 @@ public class y6 implements x6 {
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public GnssRaw f4068c = new GnssRaw();
+    public GnssRaw f4020c = new GnssRaw();
     public int l = 0;
     public int m = 0;
     public int n = 0;
@@ -48,7 +48,7 @@ public class y6 implements x6 {
     public ReentrantLock r = new ReentrantLock();
 
     public y6(Context context) {
-        this.f4067a = context;
+        this.f4019a = context;
     }
 
     public final int a(String str, GnssRaw gnssRaw) {
@@ -170,17 +170,17 @@ public class y6 implements x6 {
                 if (this.p) {
                     a(clock, gnssMeasurement2);
                 }
-                a(clock, gnssMeasurement2, this.f4068c);
+                a(clock, gnssMeasurement2, this.f4020c);
                 i++;
                 if (i == size) {
                     if (this.p) {
                         this.b += ",TXEPOCHEND\n";
                     }
-                    this.f4068c.mEndFlag = 1;
+                    this.f4020c.mEndFlag = 1;
                 } else if (this.p) {
                     this.b += "\n";
                 }
-                a(this.b, this.f4068c);
+                a(this.b, this.f4020c);
             }
         } finally {
             this.r.unlock();
@@ -198,14 +198,14 @@ public class y6 implements x6 {
     public void a(Location location) {
         if (location.getProvider().equals("gps")) {
             String format = this.p ? String.format(Locale.US, "Fix,%s,%f,%f,%f,%f,%f,%f,%d,%d%n", location.getProvider(), Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), Double.valueOf(location.getAltitude()), Float.valueOf(location.getSpeed()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Long.valueOf(System.currentTimeMillis()), Long.valueOf(location.getTime())) : "";
-            this.f4068c.mLatitude = location.getLatitude();
-            this.f4068c.mLongitude = location.getLongitude();
-            this.f4068c.mAltitude = location.getAltitude();
-            this.f4068c.mSpeed = location.getSpeed();
-            this.f4068c.mHorizontalAccuracyMeters = location.getAccuracy();
-            this.f4068c.mBearing = location.getBearing();
-            this.f4068c.mTime = location.getTime();
-            this.f4068c.mProvider = 1;
+            this.f4020c.mLatitude = location.getLatitude();
+            this.f4020c.mLongitude = location.getLongitude();
+            this.f4020c.mAltitude = location.getAltitude();
+            this.f4020c.mSpeed = location.getSpeed();
+            this.f4020c.mHorizontalAccuracyMeters = location.getAccuracy();
+            this.f4020c.mBearing = location.getBearing();
+            this.f4020c.mTime = location.getTime();
+            this.f4020c.mProvider = 1;
             BufferedWriter bufferedWriter = this.e;
             if (bufferedWriter != null && this.m != 0) {
                 try {
@@ -218,20 +218,20 @@ public class y6 implements x6 {
             }
             this.r.lock();
             try {
-                TxRtkSvr.jni_upd_android_data(format.getBytes().length, format.getBytes(), this.f4068c, 1);
+                TxRtkSvr.jni_upd_android_data(format.getBytes().length, format.getBytes(), this.f4020c, 1);
             } finally {
             }
         }
         if (location.getProvider().equals("network")) {
             String format2 = this.p ? String.format(Locale.US, "NLP,%s,%f,%f,%f,%f,%f,%f,%d,%d%n", location.getProvider(), Double.valueOf(location.getLatitude()), Double.valueOf(location.getLongitude()), Double.valueOf(location.getAltitude()), Float.valueOf(location.getSpeed()), Float.valueOf(location.getAccuracy()), Float.valueOf(location.getBearing()), Long.valueOf(System.currentTimeMillis()), Long.valueOf(location.getTime())) : "";
-            this.f4068c.mLatitude = location.getLatitude();
-            this.f4068c.mLongitude = location.getLongitude();
-            this.f4068c.mAltitude = location.getAltitude();
-            this.f4068c.mSpeed = location.getSpeed();
-            this.f4068c.mHorizontalAccuracyMeters = location.getAccuracy();
-            this.f4068c.mBearing = location.getBearing();
-            this.f4068c.mTime = location.getTime();
-            this.f4068c.mProvider = 0;
+            this.f4020c.mLatitude = location.getLatitude();
+            this.f4020c.mLongitude = location.getLongitude();
+            this.f4020c.mAltitude = location.getAltitude();
+            this.f4020c.mSpeed = location.getSpeed();
+            this.f4020c.mHorizontalAccuracyMeters = location.getAccuracy();
+            this.f4020c.mBearing = location.getBearing();
+            this.f4020c.mTime = location.getTime();
+            this.f4020c.mProvider = 0;
             BufferedWriter bufferedWriter2 = this.f;
             if (bufferedWriter2 != null && this.n != 0) {
                 try {
@@ -244,14 +244,14 @@ public class y6 implements x6 {
             }
             this.r.lock();
             try {
-                TxRtkSvr.jni_upd_android_data(format2.getBytes().length, format2.getBytes(), this.f4068c, 0);
+                TxRtkSvr.jni_upd_android_data(format2.getBytes().length, format2.getBytes(), this.f4020c, 0);
             } finally {
             }
         }
     }
 
     public final void a(String str) {
-        if (u6.f4014a) {
+        if (u6.f3966a) {
             u6.a("GnssLogger", str);
         }
     }
@@ -261,7 +261,7 @@ public class y6 implements x6 {
     }
 
     public final void a(String str, Exception exc) {
-        if (u6.f4014a) {
+        if (u6.f3966a) {
             u6.a("GnssLogger", str);
         }
     }
@@ -396,7 +396,7 @@ public class y6 implements x6 {
     }
 
     public final int f() {
-        File file = new File(this.f4067a.getExternalFilesDir("dgnss"), String.format("%s_%s.raw", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
+        File file = new File(this.f4019a.getExternalFilesDir("dgnss"), String.format("%s_%s.raw", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
         String absolutePath = file.getAbsolutePath();
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
@@ -419,7 +419,7 @@ public class y6 implements x6 {
     }
 
     public final int g() {
-        File file = new File(this.f4067a.getExternalFilesDir("dgnss"), String.format("%s_%s.nlp", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
+        File file = new File(this.f4019a.getExternalFilesDir("dgnss"), String.format("%s_%s.nlp", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
         String absolutePath = file.getAbsolutePath();
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
@@ -442,7 +442,7 @@ public class y6 implements x6 {
     }
 
     public final int h() {
-        File file = new File(this.f4067a.getExternalFilesDir("dgnss"), String.format("%s_%s.nma", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
+        File file = new File(this.f4019a.getExternalFilesDir("dgnss"), String.format("%s_%s.nma", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
         String absolutePath = file.getAbsolutePath();
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
@@ -465,7 +465,7 @@ public class y6 implements x6 {
     }
 
     public final int i() {
-        File file = new File(this.f4067a.getExternalFilesDir("dgnss"), String.format("%s_%s.pos", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
+        File file = new File(this.f4019a.getExternalFilesDir("dgnss"), String.format("%s_%s.pos", "gnss_log", new SimpleDateFormat("yyy_MM_dd_HH_mm_ss").format(new Date())));
         String absolutePath = file.getAbsolutePath();
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));

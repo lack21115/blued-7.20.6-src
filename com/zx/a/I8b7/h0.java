@@ -4,11 +4,11 @@ package com.zx.a.I8b7;
 public class h0 implements c0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public e0 f42132a;
+    public e0 f28441a;
     public boolean b = true;
 
     public h0(e0 e0Var) {
-        this.f42132a = (e0) o1.a(e0Var);
+        this.f28441a = (e0) o1.a(e0Var);
     }
 
     @Override // com.zx.a.I8b7.c0
@@ -17,7 +17,7 @@ public class h0 implements c0 {
         if ((i & 240) != 0) {
             i2 = i & 15;
         }
-        this.f42132a.a(i2, str, str2, th);
+        this.f28441a.a(i2, str, str2, th);
     }
 
     @Override // com.zx.a.I8b7.c0

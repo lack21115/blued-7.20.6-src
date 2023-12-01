@@ -16,13 +16,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/StvShineTabsView.class */
 public class StvShineTabsView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f15915a;
+    private View a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15916c;
+    private View c;
     private RelativeLayout d;
     private RelativeLayout e;
     private RelativeLayout f;
@@ -59,37 +55,37 @@ public class StvShineTabsView extends FrameLayout implements View.OnClickListene
         this.g = (TextView) inflate.findViewById(R.id.stv_channel_local);
         this.h = (TextView) inflate.findViewById(R.id.stv_channel_shortvideo);
         this.i = (TextView) inflate.findViewById(R.id.stv_channel_camera);
-        this.f15915a = inflate.findViewById(R.id.stv_channel_local_icon);
+        this.a = inflate.findViewById(R.id.stv_channel_local_icon);
         this.b = inflate.findViewById(R.id.stv_channel_shortvideo_icon);
-        this.f15916c = inflate.findViewById(R.id.stv_channel_camera_icon);
+        this.c = inflate.findViewById(R.id.stv_channel_camera_icon);
         addView(inflate);
     }
 
     private void d() {
         this.g.setSelected(true);
-        this.f15915a.setVisibility(0);
+        this.a.setVisibility(0);
         this.h.setSelected(false);
         this.b.setVisibility(4);
         this.i.setSelected(false);
-        this.f15916c.setVisibility(4);
+        this.c.setVisibility(4);
     }
 
     private void e() {
         this.g.setSelected(false);
-        this.f15915a.setVisibility(4);
+        this.a.setVisibility(4);
         this.h.setSelected(true);
         this.b.setVisibility(0);
         this.i.setSelected(false);
-        this.f15916c.setVisibility(4);
+        this.c.setVisibility(4);
     }
 
     private void f() {
         this.g.setSelected(false);
-        this.f15915a.setVisibility(4);
+        this.a.setVisibility(4);
         this.h.setSelected(false);
         this.b.setVisibility(4);
         this.i.setSelected(true);
-        this.f15916c.setVisibility(0);
+        this.c.setVisibility(0);
     }
 
     public void a() {

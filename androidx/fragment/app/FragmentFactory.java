@@ -8,7 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 public class FragmentFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SimpleArrayMap<ClassLoader, SimpleArrayMap<String, Class<?>>> f2959a = new SimpleArrayMap<>();
+    private static final SimpleArrayMap<ClassLoader, SimpleArrayMap<String, Class<?>>> f2911a = new SimpleArrayMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean a(ClassLoader classLoader, String str) {
@@ -20,11 +20,11 @@ public class FragmentFactory {
     }
 
     private static Class<?> b(ClassLoader classLoader, String str) throws ClassNotFoundException {
-        SimpleArrayMap<String, Class<?>> simpleArrayMap = f2959a.get(classLoader);
+        SimpleArrayMap<String, Class<?>> simpleArrayMap = f2911a.get(classLoader);
         SimpleArrayMap<String, Class<?>> simpleArrayMap2 = simpleArrayMap;
         if (simpleArrayMap == null) {
             simpleArrayMap2 = new SimpleArrayMap<>();
-            f2959a.put(classLoader, simpleArrayMap2);
+            f2911a.put(classLoader, simpleArrayMap2);
         }
         Class<?> cls = simpleArrayMap2.get(str);
         Class<?> cls2 = cls;

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class NodataShowLiveRecommendBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29494a;
+    private final LinearLayout f15804a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29494a;
+        return this.f15804a;
     }
 }

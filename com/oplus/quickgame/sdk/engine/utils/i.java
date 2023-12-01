@@ -6,20 +6,20 @@ import android.util.Log;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f24417a;
+    private static boolean f10730a;
 
     public static void a() {
-        f24417a = true;
+        f10730a = true;
     }
 
     public static void a(String str, String str2) {
-        if (f24417a) {
+        if (f10730a) {
             Log.d(str, str2);
         }
     }
 
     public static void b() {
-        f24417a = false;
+        f10730a = false;
     }
 
     public static void b(String str, String str2) {
@@ -27,7 +27,7 @@ public class i {
     }
 
     public static void c(String str, String str2) {
-        if (f24417a) {
+        if (f10730a) {
             Log.i(str, str2);
         }
     }

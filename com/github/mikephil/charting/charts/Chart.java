@@ -66,11 +66,11 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     protected ArrayList<Runnable> W;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f22069a;
+    private boolean f8462a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22070c;
+    private String f8463c;
     private OnChartGestureListener d;
     private float e;
     private float f;
@@ -84,23 +84,23 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22072a;
+        static final /* synthetic */ int[] f8465a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[Bitmap.CompressFormat.values().length];
-            f22072a = iArr;
+            f8465a = iArr;
             try {
                 iArr[Bitmap.CompressFormat.PNG.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22072a[Bitmap.CompressFormat.WEBP.ordinal()] = 2;
+                f8465a[Bitmap.CompressFormat.WEBP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f22072a[Bitmap.CompressFormat.JPEG.ordinal()] = 3;
+                f8465a[Bitmap.CompressFormat.JPEG.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -111,11 +111,11 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         this.B = false;
         this.C = null;
         this.D = true;
-        this.f22069a = true;
+        this.f8462a = true;
         this.b = 0.9f;
         this.E = new DefaultValueFormatter(0);
         this.I = true;
-        this.f22070c = "No chart data available.";
+        this.f8463c = "No chart data available.";
         this.Q = new ViewPortHandler();
         this.e = 0.0f;
         this.f = 0.0f;
@@ -134,11 +134,11 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         this.B = false;
         this.C = null;
         this.D = true;
-        this.f22069a = true;
+        this.f8462a = true;
         this.b = 0.9f;
         this.E = new DefaultValueFormatter(0);
         this.I = true;
-        this.f22070c = "No chart data available.";
+        this.f8463c = "No chart data available.";
         this.Q = new ViewPortHandler();
         this.e = 0.0f;
         this.f = 0.0f;
@@ -157,11 +157,11 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         this.B = false;
         this.C = null;
         this.D = true;
-        this.f22069a = true;
+        this.f8462a = true;
         this.b = 0.9f;
         this.E = new DefaultValueFormatter(0);
         this.I = true;
-        this.f22070c = "No chart data available.";
+        this.f8463c = "No chart data available.";
         this.Q = new ViewPortHandler();
         this.e = 0.0f;
         this.f = 0.0f;
@@ -300,7 +300,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
             f = (getWidth() - this.Q.b()) - this.J.u();
             f2 = (getHeight() - this.Q.d()) - this.J.v();
         } else {
-            f = b.f22204a;
+            f = b.f8597a;
             f2 = b.b;
         }
         canvas.drawText(this.J.a(), f, f2, this.F);
@@ -494,9 +494,9 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         if (this.C == null) {
-            if (!TextUtils.isEmpty(this.f22070c)) {
+            if (!TextUtils.isEmpty(this.f8463c)) {
                 MPPointF center = getCenter();
-                canvas.drawText(this.f22070c, center.f22204a, center.b, this.G);
+                canvas.drawText(this.f8463c, center.f8597a, center.b, this.G);
             }
         } else if (this.i) {
         } else {
@@ -505,9 +505,8 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5 = 0;
         while (true) {
             int i6 = i5;
@@ -519,9 +518,8 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int a2 = (int) Utils.a(50.0f);
         setMeasuredDimension(Math.max(getSuggestedMinimumWidth(), resolveSize(a2, i)), Math.max(getSuggestedMinimumHeight(), resolveSize(a2, i2)));
@@ -573,7 +571,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     public void setDragDecelerationEnabled(boolean z) {
-        this.f22069a = z;
+        this.f8462a = z;
     }
 
     public void setDragDecelerationFrictionCoef(float f) {
@@ -655,7 +653,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     public void setNoDataText(String str) {
-        this.f22070c = str;
+        this.f8463c = str;
     }
 
     public void setNoDataTextColor(int i) {
@@ -712,7 +710,7 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
     }
 
     public boolean y() {
-        return this.f22069a;
+        return this.f8462a;
     }
 
     public boolean z() {

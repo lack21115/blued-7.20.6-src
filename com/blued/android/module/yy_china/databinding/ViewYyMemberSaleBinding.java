@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyMemberSaleBinding.class */
 public final class ViewYyMemberSaleBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final YYBaseUserHeadView f16936a;
+    public final YYBaseUserHeadView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16937c;
+    public final ShapeTextView c;
     public final TextView d;
     public final TextView e;
     public final ConstraintLayout f;
@@ -26,9 +22,9 @@ public final class ViewYyMemberSaleBinding implements ViewBinding {
 
     private ViewYyMemberSaleBinding(ConstraintLayout constraintLayout, YYBaseUserHeadView yYBaseUserHeadView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, TextView textView, TextView textView2, ConstraintLayout constraintLayout2) {
         this.g = constraintLayout;
-        this.f16936a = yYBaseUserHeadView;
+        this.a = yYBaseUserHeadView;
         this.b = shapeTextView;
-        this.f16937c = shapeTextView2;
+        this.c = shapeTextView2;
         this.d = textView;
         this.e = textView2;
         this.f = constraintLayout2;
@@ -54,9 +50,9 @@ public final class ViewYyMemberSaleBinding implements ViewBinding {
                     if (textView != null) {
                         TextView textView2 = (TextView) view.findViewById(R.id.tv_no_audience);
                         if (textView2 != null) {
-                            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.yy_connectting_root);
-                            if (constraintLayout != null) {
-                                return new ViewYyMemberSaleBinding((ConstraintLayout) view, yYBaseUserHeadView, shapeTextView, shapeTextView2, textView, textView2, constraintLayout);
+                            ConstraintLayout findViewById = view.findViewById(R.id.yy_connectting_root);
+                            if (findViewById != null) {
+                                return new ViewYyMemberSaleBinding((ConstraintLayout) view, yYBaseUserHeadView, shapeTextView, shapeTextView2, textView, textView2, findViewById);
                             }
                             str = "yyConnecttingRoot";
                         } else {
@@ -77,7 +73,6 @@ public final class ViewYyMemberSaleBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

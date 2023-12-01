@@ -32,11 +32,11 @@ public final class e implements Parcelable, Comparator<a> {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f7253a;
+    public final String f4414a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final a[] f7254c;
+    private final a[] f4415c;
     private int d;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/d/e$a.class */
@@ -62,28 +62,28 @@ public final class e implements Parcelable, Comparator<a> {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f7255a;
+        public final String f4416a;
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final byte[] f7256c;
+        public final byte[] f4417c;
         public final boolean d;
         private int e;
         private final UUID f;
 
         a(Parcel parcel) {
             this.f = new UUID(parcel.readLong(), parcel.readLong());
-            this.f7255a = parcel.readString();
+            this.f4416a = parcel.readString();
             this.b = parcel.readString();
-            this.f7256c = parcel.createByteArray();
+            this.f4417c = parcel.createByteArray();
             this.d = parcel.readByte() != 0;
         }
 
         private a(UUID uuid, String str, String str2, byte[] bArr) {
             this.f = (UUID) com.anythink.expressad.exoplayer.k.a.a(uuid);
-            this.f7255a = str;
+            this.f4416a = str;
             this.b = (String) com.anythink.expressad.exoplayer.k.a.a(str2);
-            this.f7256c = bArr;
+            this.f4417c = bArr;
             this.d = false;
         }
 
@@ -100,7 +100,7 @@ public final class e implements Parcelable, Comparator<a> {
         }
 
         public final boolean a() {
-            return this.f7256c != null;
+            return this.f4417c != null;
         }
 
         public final boolean a(UUID uuid) {
@@ -118,7 +118,7 @@ public final class e implements Parcelable, Comparator<a> {
                     return true;
                 }
                 a aVar = (a) obj;
-                return af.a((Object) this.f7255a, (Object) aVar.f7255a) && af.a((Object) this.b, (Object) aVar.b) && af.a(this.f, aVar.f) && Arrays.equals(this.f7256c, aVar.f7256c);
+                return af.a((Object) this.f4416a, (Object) aVar.f4416a) && af.a((Object) this.b, (Object) aVar.b) && af.a(this.f, aVar.f) && Arrays.equals(this.f4417c, aVar.f4417c);
             }
             return false;
         }
@@ -126,8 +126,8 @@ public final class e implements Parcelable, Comparator<a> {
         public final int hashCode() {
             if (this.e == 0) {
                 int hashCode = this.f.hashCode();
-                String str = this.f7255a;
-                this.e = (((((hashCode * 31) + (str == null ? 0 : str.hashCode())) * 31) + this.b.hashCode()) * 31) + Arrays.hashCode(this.f7256c);
+                String str = this.f4416a;
+                this.e = (((((hashCode * 31) + (str == null ? 0 : str.hashCode())) * 31) + this.b.hashCode()) * 31) + Arrays.hashCode(this.f4417c);
             }
             return this.e;
         }
@@ -136,17 +136,17 @@ public final class e implements Parcelable, Comparator<a> {
         public final void writeToParcel(Parcel parcel, int i) {
             parcel.writeLong(this.f.getMostSignificantBits());
             parcel.writeLong(this.f.getLeastSignificantBits());
-            parcel.writeString(this.f7255a);
+            parcel.writeString(this.f4416a);
             parcel.writeString(this.b);
-            parcel.writeByteArray(this.f7256c);
+            parcel.writeByteArray(this.f4417c);
             parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
         }
     }
 
     e(Parcel parcel) {
-        this.f7253a = parcel.readString();
+        this.f4414a = parcel.readString();
         a[] aVarArr = (a[]) parcel.createTypedArray(a.CREATOR);
-        this.f7254c = aVarArr;
+        this.f4415c = aVarArr;
         this.b = aVarArr.length;
     }
 
@@ -155,10 +155,10 @@ public final class e implements Parcelable, Comparator<a> {
     }
 
     private e(String str, boolean z, a... aVarArr) {
-        this.f7253a = str;
+        this.f4414a = str;
         a[] aVarArr2 = z ? (a[]) aVarArr.clone() : aVarArr;
         Arrays.sort(aVarArr2, this);
-        this.f7254c = aVarArr2;
+        this.f4415c = aVarArr2;
         this.b = aVarArr2.length;
     }
 
@@ -180,7 +180,7 @@ public final class e implements Parcelable, Comparator<a> {
 
     @Deprecated
     private a a(UUID uuid) {
-        a[] aVarArr = this.f7254c;
+        a[] aVarArr = this.f4415c;
         int length = aVarArr.length;
         int i = 0;
         while (true) {
@@ -200,8 +200,8 @@ public final class e implements Parcelable, Comparator<a> {
         String str;
         ArrayList arrayList = new ArrayList();
         if (eVar != null) {
-            String str2 = eVar.f7253a;
-            a[] aVarArr = eVar.f7254c;
+            String str2 = eVar.f4414a;
+            a[] aVarArr = eVar.f4415c;
             int length = aVarArr.length;
             int i = 0;
             while (true) {
@@ -223,10 +223,10 @@ public final class e implements Parcelable, Comparator<a> {
         if (eVar2 != null) {
             String str4 = str;
             if (str == null) {
-                str4 = eVar2.f7253a;
+                str4 = eVar2.f4414a;
             }
             int size = arrayList.size();
-            a[] aVarArr2 = eVar2.f7254c;
+            a[] aVarArr2 = eVar2.f4415c;
             int length2 = aVarArr2.length;
             int i3 = 0;
             while (true) {
@@ -263,11 +263,11 @@ public final class e implements Parcelable, Comparator<a> {
     }
 
     public final a a(int i) {
-        return this.f7254c[i];
+        return this.f4415c[i];
     }
 
     public final e a(String str) {
-        return af.a((Object) this.f7253a, (Object) str) ? this : new e(str, false, this.f7254c);
+        return af.a((Object) this.f4414a, (Object) str) ? this : new e(str, false, this.f4415c);
     }
 
     @Override // java.util.Comparator
@@ -291,20 +291,20 @@ public final class e implements Parcelable, Comparator<a> {
             return false;
         }
         e eVar = (e) obj;
-        return af.a((Object) this.f7253a, (Object) eVar.f7253a) && Arrays.equals(this.f7254c, eVar.f7254c);
+        return af.a((Object) this.f4414a, (Object) eVar.f4414a) && Arrays.equals(this.f4415c, eVar.f4415c);
     }
 
     public final int hashCode() {
         if (this.d == 0) {
-            String str = this.f7253a;
-            this.d = ((str == null ? 0 : str.hashCode()) * 31) + Arrays.hashCode(this.f7254c);
+            String str = this.f4414a;
+            this.d = ((str == null ? 0 : str.hashCode()) * 31) + Arrays.hashCode(this.f4415c);
         }
         return this.d;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f7253a);
-        parcel.writeTypedArray(this.f7254c, 0);
+        parcel.writeString(this.f4414a);
+        parcel.writeTypedArray(this.f4415c, 0);
     }
 }

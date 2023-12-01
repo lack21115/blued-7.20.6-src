@@ -31,9 +31,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemGoodsWallTask.class */
 public final class FitemGoodsWallTask extends FreedomItem {
     private GoodsWallTaskItemModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12538c;
+    private boolean c;
     private ArrayList<FitemGoodsWallTaskGoods> d;
     private FreedomAdapter e;
     private final OvershootInterpolator f;
@@ -58,7 +56,7 @@ public final class FitemGoodsWallTask extends FreedomItem {
         float floatValue = ((Float) animatedValue).floatValue();
         view.getLayoutParams().height = (int) (i + ((i2 - i) * floatValue));
         view.setLayoutParams(view.getLayoutParams());
-        this$0.f10935a.a(R.id.iv_adorn).setAlpha(floatValue);
+        this$0.a.a(R.id.iv_adorn).setAlpha(floatValue);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -93,46 +91,46 @@ public final class FitemGoodsWallTask extends FreedomItem {
 
     private final void f() {
         if (!this.b.isExpand()) {
-            this.f10935a.a(R.id.tv_check, R.string.live_goods_wall_check_award).a(R.id.iv_arrows).setRotation(0.0f);
-            this.f10935a.a(R.id.cl_root).getLayoutParams().height = DisplayUtil.a(AppInfo.d(), 48.0f);
+            this.a.a(R.id.tv_check, R.string.live_goods_wall_check_award).a(R.id.iv_arrows).setRotation(0.0f);
+            this.a.a(R.id.cl_root).getLayoutParams().height = DisplayUtil.a(AppInfo.d(), 48.0f);
             return;
         }
-        this.f10935a.a(R.id.tv_check, R.string.live_goods_wall_pack).a(R.id.iv_arrows).setRotation(-180.0f);
+        this.a.a(R.id.tv_check, R.string.live_goods_wall_pack).a(R.id.iv_arrows).setRotation(-180.0f);
         h();
-        this.f10935a.a(R.id.cl_root).getLayoutParams().height = DisplayUtil.a(AppInfo.d(), 163.0f);
+        this.a.a(R.id.cl_root).getLayoutParams().height = DisplayUtil.a(AppInfo.d(), 163.0f);
     }
 
     private final void g() {
         float f = 0.0f;
         if (this.b.isExpand()) {
-            final TextView textView = (TextView) this.f10935a.a(R.id.tv_check);
-            final float a2 = DisplayUtil.a(AppInfo.d(), 5.0f);
-            textView.animate().alpha(0.0f).translationX(a2).setDuration(150L).setInterpolator(null).withEndAction(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallTask$O-Xmcl3Kj8IrFbIxXGIHRkKy5s4
+            final TextView textView = (TextView) this.a.a(R.id.tv_check);
+            final float a = DisplayUtil.a(AppInfo.d(), 5.0f);
+            textView.animate().alpha(0.0f).translationX(a).setDuration(150L).setInterpolator(null).withEndAction(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallTask$O-Xmcl3Kj8IrFbIxXGIHRkKy5s4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FitemGoodsWallTask.a(TextView.this, a2);
+                    FitemGoodsWallTask.a(TextView.this, a);
                 }
             });
-            View a3 = this.f10935a.a(R.id.iv_arrows);
-            a3.setRotation(0.0f);
-            a3.animate().rotation(180.0f).setDuration(500L).setInterpolator(this.g).start();
+            View a2 = this.a.a(R.id.iv_arrows);
+            a2.setRotation(0.0f);
+            a2.animate().rotation(180.0f).setDuration(500L).setInterpolator(this.g).start();
             h();
         } else {
-            final TextView textView2 = (TextView) this.f10935a.a(R.id.tv_check);
-            final float a4 = DisplayUtil.a(AppInfo.d(), 5.0f);
-            textView2.animate().alpha(0.0f).translationX(-a4).setDuration(150L).setInterpolator(null).withEndAction(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallTask$Qc_5_HO_I5WQ-Gpo2NoGgYMyT7E
+            final TextView textView2 = (TextView) this.a.a(R.id.tv_check);
+            final float a3 = DisplayUtil.a(AppInfo.d(), 5.0f);
+            textView2.animate().alpha(0.0f).translationX(-a3).setDuration(150L).setInterpolator(null).withEndAction(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallTask$Qc_5_HO_I5WQ-Gpo2NoGgYMyT7E
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FitemGoodsWallTask.b(TextView.this, a4);
+                    FitemGoodsWallTask.b(TextView.this, a3);
                 }
             });
-            View a5 = this.f10935a.a(R.id.iv_arrows);
-            a5.setRotation(-180.0f);
-            a5.animate().rotation(0.0f).setDuration(500L).setInterpolator(this.g).start();
+            View a4 = this.a.a(R.id.iv_arrows);
+            a4.setRotation(-180.0f);
+            a4.animate().rotation(0.0f).setDuration(500L).setInterpolator(this.g).start();
             DisplayUtil.a(AppInfo.d(), 2.0f);
         }
-        final View a6 = this.f10935a.a(R.id.cl_root);
-        if (a6 == null) {
+        final View a5 = this.a.a(R.id.cl_root);
+        if (a5 == null) {
             return;
         }
         float f2 = e().isExpand() ? 0.0f : 1.0f;
@@ -140,24 +138,24 @@ public final class FitemGoodsWallTask extends FreedomItem {
             f = 1.0f;
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(f2, f);
-        final int a7 = DisplayUtil.a(AppInfo.d(), 48.0f);
-        final int a8 = DisplayUtil.a(AppInfo.d(), 163.0f);
+        final int a6 = DisplayUtil.a(AppInfo.d(), 48.0f);
+        final int a7 = DisplayUtil.a(AppInfo.d(), 163.0f);
         ofFloat.setDuration(500L);
         ofFloat.setInterpolator(this.f);
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemGoodsWallTask$pWNQ6hB2qY1N0BMzG4BfyOi7Kck
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FitemGoodsWallTask.a(View.this, a7, a8, this, valueAnimator);
+                FitemGoodsWallTask.a(View.this, a6, a7, this, valueAnimator);
             }
         });
         ofFloat.start();
     }
 
     private final void h() {
-        if (this.f12538c) {
+        if (this.c) {
             return;
         }
-        this.f12538c = true;
+        this.c = true;
         ArrayList<FitemGoodsWallTaskGoods> arrayList = this.d;
         if (arrayList == null) {
             this.d = new ArrayList<>();
@@ -177,20 +175,20 @@ public final class FitemGoodsWallTask extends FreedomItem {
     }
 
     private final void i() {
-        this.e = new FreedomAdapter(this.f10935a.f10931a.b, this.f10935a.b, this.d);
-        RecyclerView recyclerView = (RecyclerView) this.f10935a.a(R.id.rv_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.f10935a.f10931a.b, 0, false));
-        if (recyclerView != null) {
-            recyclerView.setItemAnimator(new DefaultItemAnimator());
+        this.e = new FreedomAdapter(this.a.a.b, this.a.b, this.d);
+        RecyclerView a = this.a.a(R.id.rv_list);
+        a.setLayoutManager(new LinearLayoutManager(this.a.a.b, 0, false));
+        if (a != null) {
+            a.setItemAnimator(new DefaultItemAnimator());
         }
         FreedomAdapter freedomAdapter = this.e;
         if (freedomAdapter != null) {
-            freedomAdapter.b("BaseFragment", this.f10935a.f10931a.a("BaseFragment", (String) null));
+            freedomAdapter.b("BaseFragment", this.a.a.a("BaseFragment", (String) null));
         }
-        if (recyclerView == null) {
+        if (a == null) {
             return;
         }
-        recyclerView.setAdapter(this.e);
+        a.setAdapter(this.e);
     }
 
     private final void j() {
@@ -206,36 +204,36 @@ public final class FitemGoodsWallTask extends FreedomItem {
     }
 
     private final void k() {
-        ShapeModel shapeModel = ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_shell)).getShapeModel();
-        shapeModel.t = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.transparent);
-        shapeModel.v = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.transparent);
-        ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_shell)).setShapeModel(shapeModel);
-        ShapeModel shapeModel2 = ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_root)).getShapeModel();
-        shapeModel2.t = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_4D37246E);
-        shapeModel2.v = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_4D37246E);
-        ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_root)).setShapeModel(shapeModel2);
+        ShapeModel shapeModel = ((ShapeConstraintLayout) this.a.a(R.id.cl_shell)).getShapeModel();
+        shapeModel.t = ContextCompat.getColor(this.a.a.b, R.color.transparent);
+        shapeModel.v = ContextCompat.getColor(this.a.a.b, R.color.transparent);
+        ((ShapeConstraintLayout) this.a.a(R.id.cl_shell)).setShapeModel(shapeModel);
+        ShapeModel shapeModel2 = ((ShapeConstraintLayout) this.a.a(R.id.cl_root)).getShapeModel();
+        shapeModel2.t = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_4D37246E);
+        shapeModel2.v = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_4D37246E);
+        ((ShapeConstraintLayout) this.a.a(R.id.cl_root)).setShapeModel(shapeModel2);
     }
 
     private final void l() {
-        ShapeModel shapeModel = ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_shell)).getShapeModel();
-        shapeModel.t = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_CC60CB);
-        shapeModel.v = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_8E6BFF);
-        ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_shell)).setShapeModel(shapeModel);
-        ShapeModel shapeModel2 = ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_root)).getShapeModel();
-        shapeModel2.t = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_531E90);
-        shapeModel2.v = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_572BDA);
-        ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_root)).setShapeModel(shapeModel2);
+        ShapeModel shapeModel = ((ShapeConstraintLayout) this.a.a(R.id.cl_shell)).getShapeModel();
+        shapeModel.t = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_CC60CB);
+        shapeModel.v = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_8E6BFF);
+        ((ShapeConstraintLayout) this.a.a(R.id.cl_shell)).setShapeModel(shapeModel);
+        ShapeModel shapeModel2 = ((ShapeConstraintLayout) this.a.a(R.id.cl_root)).getShapeModel();
+        shapeModel2.t = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_531E90);
+        shapeModel2.v = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_572BDA);
+        ((ShapeConstraintLayout) this.a.a(R.id.cl_root)).setShapeModel(shapeModel2);
     }
 
     private final void m() {
-        ShapeModel shapeModel = ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_shell)).getShapeModel();
-        shapeModel.t = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_613CB4);
-        shapeModel.v = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_613CB4);
-        ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_shell)).setShapeModel(shapeModel);
-        ShapeModel shapeModel2 = ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_root)).getShapeModel();
-        shapeModel2.t = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_37246E);
-        shapeModel2.v = ContextCompat.getColor(this.f10935a.f10931a.b, R.color.syc_dark_37246E);
-        ((ShapeConstraintLayout) this.f10935a.a(R.id.cl_root)).setShapeModel(shapeModel2);
+        ShapeModel shapeModel = ((ShapeConstraintLayout) this.a.a(R.id.cl_shell)).getShapeModel();
+        shapeModel.t = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_613CB4);
+        shapeModel.v = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_613CB4);
+        ((ShapeConstraintLayout) this.a.a(R.id.cl_shell)).setShapeModel(shapeModel);
+        ShapeModel shapeModel2 = ((ShapeConstraintLayout) this.a.a(R.id.cl_root)).getShapeModel();
+        shapeModel2.t = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_37246E);
+        shapeModel2.v = ContextCompat.getColor(this.a.a.b, R.color.syc_dark_37246E);
+        ((ShapeConstraintLayout) this.a.a(R.id.cl_root)).setShapeModel(shapeModel2);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -267,7 +265,7 @@ public final class FitemGoodsWallTask extends FreedomItem {
             vh.c(R.id.tv_progress);
             vh.c(R.id.tv_progress_count);
         }
-        this.f12538c = false;
+        this.c = false;
         f();
         j();
     }

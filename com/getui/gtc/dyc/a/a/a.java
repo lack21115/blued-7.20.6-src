@@ -7,40 +7,39 @@ import com.getui.gtc.base.log.Logger;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Logger f21972a;
+    private Logger f8365a;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.getui.gtc.dyc.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dyc/a/a/a$a.class */
-    public static class C0349a {
+    static class C0179a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static a f21973a = new a();
+        private static a f8366a = new a();
     }
 
     private a() {
         Logger logger = new Logger(GtcProvider.context());
-        this.f21972a = logger;
+        this.f8365a = logger;
         logger.setGlobalTag("gtc.dyc");
-        this.f21972a.setFileEnableProperty("dyc.fileLog");
-        this.f21972a.setLogcatEnable(false);
-        this.f21972a.setLogFileNameSuffix("gtc");
-        this.f21972a.setStackOffset(1);
+        this.f8365a.setFileEnableProperty("dyc.fileLog");
+        this.f8365a.setLogcatEnable(false);
+        this.f8365a.setLogFileNameSuffix("gtc");
+        this.f8365a.setStackOffset(1);
     }
 
     public static Logger a() {
-        return C0349a.f21973a.f21972a;
+        return C0179a.f8366a.f8365a;
     }
 
     public static void a(String str) {
-        C0349a.f21973a.f21972a.e(str);
+        C0179a.f8366a.f8365a.e(str);
     }
 
     public static void a(Throwable th) {
-        C0349a.f21973a.f21972a.w(th);
+        C0179a.f8366a.f8365a.w(th);
     }
 
     public static void c(Throwable th) {
-        C0349a.f21973a.f21972a.e(th);
+        C0179a.f8366a.f8365a.e(th);
     }
 }

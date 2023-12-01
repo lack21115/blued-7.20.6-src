@@ -7,11 +7,11 @@ import java.util.RandomAccess;
 final class ImmutableList<T> extends AbstractList<T> implements RandomAccess {
 
     /* renamed from: a  reason: collision with root package name */
-    private final T[] f3729a;
+    private final T[] f3681a;
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean contains(Object obj) {
-        T[] tArr = this.f3729a;
+        T[] tArr = this.f3681a;
         int length = tArr.length;
         int i = 0;
         while (true) {
@@ -28,11 +28,11 @@ final class ImmutableList<T> extends AbstractList<T> implements RandomAccess {
 
     @Override // java.util.AbstractList, java.util.List
     public T get(int i) {
-        return this.f3729a[i];
+        return this.f3681a[i];
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public int size() {
-        return this.f3729a.length;
+        return this.f3681a.length;
     }
 }

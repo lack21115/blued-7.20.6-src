@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35543a = b.class.getSimpleName();
+    private static final String f21852a = b.class.getSimpleName();
 
     private static float a(float f, float f2, float f3, float f4) {
         return (f * f4) - (f3 * f2);
@@ -126,7 +126,7 @@ public class b {
             i10 = i + 1;
         }
         if (i10 > i4) {
-            str = f35543a;
+            str = f21852a;
             sb = new StringBuilder();
             str2 = "左眼部被挡住，count=";
         } else {
@@ -160,7 +160,7 @@ public class b {
             if (i10 <= i4) {
                 return false;
             }
-            str = f35543a;
+            str = f21852a;
             sb = new StringBuilder();
             str2 = "右眼部被挡住，count=";
         }
@@ -204,7 +204,7 @@ public class b {
             i4 = i5;
         }
         if (i > i2) {
-            WLogger.w(f35543a, "鼻子被挡住，count=" + i);
+            WLogger.w(f21852a, "鼻子被挡住，count=" + i);
             return true;
         }
         return false;
@@ -309,7 +309,7 @@ public class b {
             i4 = i5;
         }
         if (i > i2) {
-            WLogger.w(f35543a, "嘴巴被挡住，count=" + i);
+            WLogger.w(f21852a, "嘴巴被挡住，count=" + i);
             return true;
         }
         return false;

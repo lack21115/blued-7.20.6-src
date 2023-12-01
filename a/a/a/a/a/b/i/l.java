@@ -4,10 +4,10 @@ package a.a.a.a.a.b.i;
 public class l extends m {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1329a;
+    public int f1281a;
 
     public boolean a(int i, int i2, int i3) {
-        this.f1329a = i;
+        this.f1281a = i;
         return a(i2, i3);
     }
 
@@ -17,6 +17,6 @@ public class l extends m {
 
     @Override // a.a.a.a.a.b.i.g
     public float[] f() {
-        return c(this.f1329a);
+        return c(this.f1281a);
     }
 }

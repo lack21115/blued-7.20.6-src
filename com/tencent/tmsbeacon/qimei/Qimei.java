@@ -7,11 +7,11 @@ import java.util.Map;
 public final class Qimei {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39607a;
+    private String f25916a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, String> f39608c;
+    private Map<String, String> f25917c;
 
     public Qimei() {
         this("", "", null);
@@ -22,9 +22,9 @@ public final class Qimei {
     }
 
     public Qimei(String str, String str2, Map<String, String> map) {
-        this.f39607a = str == null ? "" : str;
+        this.f25916a = str == null ? "" : str;
         this.b = str2 == null ? "" : str2;
-        this.f39608c = map;
+        this.f25917c = map;
     }
 
     public void a(String str) {
@@ -32,15 +32,15 @@ public final class Qimei {
     }
 
     public void a(Map<String, String> map) {
-        this.f39608c = map;
+        this.f25917c = map;
     }
 
     public void b(String str) {
-        this.f39607a = str;
+        this.f25916a = str;
     }
 
     public Map<String, String> getQimeiMap() {
-        return this.f39608c;
+        return this.f25917c;
     }
 
     public String getQimeiNew() {
@@ -48,11 +48,11 @@ public final class Qimei {
     }
 
     public String getQimeiOld() {
-        return this.f39607a;
+        return this.f25916a;
     }
 
     public boolean isEmpty() {
-        Map<String, String> map = this.f39608c;
+        Map<String, String> map = this.f25917c;
         return map == null || map.isEmpty();
     }
 
@@ -60,7 +60,7 @@ public final class Qimei {
         String str;
         StringBuilder sb = new StringBuilder();
         sb.append("Qimei:");
-        sb.append(this.f39607a);
+        sb.append(this.f25916a);
         if (TextUtils.isEmpty(this.b)) {
             str = "";
         } else {

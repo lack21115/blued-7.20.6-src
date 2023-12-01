@@ -10,7 +10,6 @@ import com.bytedance.sdk.openadsdk.AdSlot;
 import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTAdSdk;
 import com.bytedance.sdk.openadsdk.TTFeedAd;
-import com.cdo.oaps.ad.OapsKey;
 import com.qq.e.ads.nativ.NativeUnifiedADData;
 import java.util.List;
 import java.util.Map;
@@ -28,13 +27,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/tt/unified/TTNativeAdAdapter.class */
 public final class TTNativeAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10606a;
+    private BluedADExtra a;
     private ADListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Context f10607c;
+    private final Context c;
     private TTNativeAdDataAdapter d;
     private int e;
 
@@ -42,16 +37,15 @@ public final class TTNativeAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(context, "context");
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(listener, "listener");
-        this.f10606a = adExtra;
+        this.a = adExtra;
         this.b = listener;
-        this.f10607c = context;
+        this.c = context;
         this.e = -1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final ADListener aDListener) {
-        TTAdSdk.getAdManager().createAdNative(this.f10607c).loadFeedAd(new AdSlot.Builder().setCodeId(this.f10606a.third_id).setSupportDeepLink(true).setImageAcceptedSize(228, 150).setAdCount(1).build(), new TTAdNative.FeedAdListener() { // from class: com.blued.android.module.common.adx.tt.unified.TTNativeAdAdapter$loadExpressAd$1
-            @Override // com.bytedance.sdk.openadsdk.TTAdNative.FeedAdListener, com.bytedance.sdk.openadsdk.common.CommonListener
+        TTAdSdk.getAdManager().createAdNative(this.c).loadFeedAd(new AdSlot.Builder().setCodeId(this.a.third_id).setSupportDeepLink(true).setImageAcceptedSize(228, 150).setAdCount(1).build(), new TTAdNative.FeedAdListener() { // from class: com.blued.android.module.common.adx.tt.unified.TTNativeAdAdapter$loadExpressAd$1
             public void onError(int i, String msg) {
                 Intrinsics.e(msg, "msg");
                 BluedADExtra e = TTNativeAdAdapter.this.e();
@@ -60,7 +54,6 @@ public final class TTNativeAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, TTNativeAdAdapter.this));
             }
 
-            @Override // com.bytedance.sdk.openadsdk.TTAdNative.FeedAdListener
             public void onFeedAdLoad(List<? extends TTFeedAd> adList) {
                 Context context;
                 ADListener aDListener2;
@@ -75,14 +68,14 @@ public final class TTNativeAdAdapter extends BaseNativeExpressAd {
                     return;
                 }
                 TTFeedAd tTFeedAd = adList.get(0);
-                context = TTNativeAdAdapter.this.f10607c;
+                context = TTNativeAdAdapter.this.c;
                 TTNativeAdDataAdapter tTNativeAdDataAdapter = new TTNativeAdDataAdapter(context, tTFeedAd, TTNativeAdAdapter.this.e());
                 TTNativeAdAdapter.this.d = tTNativeAdDataAdapter;
                 aDListener2 = TTNativeAdAdapter.this.b;
                 tTNativeAdDataAdapter.a(aDListener2);
                 try {
                     tTNativeAdAdapter = TTNativeAdAdapter.this;
-                    obj = tTFeedAd.getMediaExtraInfo().get(OapsKey.KEY_PRICE);
+                    obj = tTFeedAd.getMediaExtraInfo().get("price");
                 } catch (Exception e) {
                 }
                 if (obj == null) {
@@ -145,10 +138,10 @@ public final class TTNativeAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10606a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10606a;
+        return this.a;
     }
 }

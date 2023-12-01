@@ -19,7 +19,6 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 import com.blued.android.framework.view.badgeview.Badge;
-import com.google.android.material.badge.BadgeDrawable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,13 +40,9 @@ public class QBadgeView extends View implements Badge {
     protected Badge.OnDragStateChangedListener N;
     protected ViewGroup O;
     public long P;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f10207a;
+    protected int a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f10208c;
+    protected int c;
     protected Drawable d;
     protected Bitmap e;
     protected boolean f;
@@ -220,11 +215,11 @@ public class QBadgeView extends View implements Badge {
         }
         double atan = Math.atan((f4 - f5) / f3);
         int i3 = this.v;
-        float a2 = 360.0f - ((float) MathUtil.a(MathUtil.a(atan, i3 - 1 == 0 ? 4 : i3 - 1)));
+        float a = 360.0f - ((float) MathUtil.a(MathUtil.a(atan, i3 - 1 == 0 ? 4 : i3 - 1)));
         if (Build.VERSION.SDK_INT >= 21) {
-            this.z.addArc(this.D.x - f, this.D.y - f, this.D.x + f, this.D.y + f, a2, 180.0f);
+            this.z.addArc(this.D.x - f, this.D.y - f, this.D.x + f, this.D.y + f, a, 180.0f);
         } else {
-            this.z.addArc(new RectF(this.D.x - f, this.D.y - f, this.D.x + f, this.D.y + f), a2, 180.0f);
+            this.z.addArc(new RectF(this.D.x - f, this.D.y - f, this.D.x + f, this.D.y + f), a, 180.0f);
         }
         canvas.drawPath(this.z, this.L);
     }
@@ -300,12 +295,12 @@ public class QBadgeView extends View implements Badge {
         this.L = paint2;
         paint2.setAntiAlias(true);
         this.L.setStyle(Paint.Style.STROKE);
-        this.f10207a = -1552832;
-        this.f10208c = -1;
+        this.a = -1552832;
+        this.c = -1;
         this.h = DisplayUtil.a(getContext(), 11.0f);
         this.i = DisplayUtil.a(getContext(), 5.0f);
         this.j = 0;
-        this.p = BadgeDrawable.TOP_END;
+        this.p = 8388661;
         this.q = DisplayUtil.a(getContext(), 5.0f);
         this.r = DisplayUtil.a(getContext(), 5.0f);
         this.s = DisplayUtil.a(getContext(), 10.0f);
@@ -327,31 +322,31 @@ public class QBadgeView extends View implements Badge {
     }
 
     private void d(boolean z) {
-        int a2 = DisplayUtil.a(getContext(), 1.0f);
-        int a3 = DisplayUtil.a(getContext(), 1.5f);
+        int a = DisplayUtil.a(getContext(), 1.0f);
+        int a2 = DisplayUtil.a(getContext(), 1.5f);
         int i = this.v;
         if (i == 1) {
-            a2 = DisplayUtil.a(getContext(), 1.0f);
-            a3 = DisplayUtil.a(getContext(), -1.5f);
+            a = DisplayUtil.a(getContext(), 1.0f);
+            a2 = DisplayUtil.a(getContext(), -1.5f);
         } else if (i == 2) {
-            a2 = DisplayUtil.a(getContext(), -1.0f);
-            a3 = DisplayUtil.a(getContext(), -1.5f);
+            a = DisplayUtil.a(getContext(), -1.0f);
+            a2 = DisplayUtil.a(getContext(), -1.5f);
         } else if (i == 3) {
-            a2 = DisplayUtil.a(getContext(), -1.0f);
-            a3 = DisplayUtil.a(getContext(), 1.5f);
+            a = DisplayUtil.a(getContext(), -1.0f);
+            a2 = DisplayUtil.a(getContext(), 1.5f);
         } else if (i == 4) {
-            a2 = DisplayUtil.a(getContext(), 1.0f);
-            a3 = DisplayUtil.a(getContext(), 1.5f);
+            a = DisplayUtil.a(getContext(), 1.0f);
+            a2 = DisplayUtil.a(getContext(), 1.5f);
         }
-        this.K.setShadowLayer(z ? DisplayUtil.a(getContext(), 2.0f) : 0.0f, a2, a3, 855638016);
+        this.K.setShadowLayer(z ? DisplayUtil.a(getContext(), 2.0f) : 0.0f, a, a2, 855638016);
     }
 
     private void e() {
         d(this.o);
-        this.K.setColor(this.f10207a);
+        this.K.setColor(this.a);
         this.L.setColor(this.b);
         this.L.setStrokeWidth(this.g);
-        this.J.setColor(this.f10208c);
+        this.J.setColor(this.c);
         this.J.setTextAlign(Paint.Align.CENTER);
     }
 
@@ -402,19 +397,19 @@ public class QBadgeView extends View implements Badge {
                 this.B.x = this.H - ((this.q + this.i) + (height / 2.0f));
                 this.B.y = this.I / 2.0f;
                 break;
-            case BadgeDrawable.TOP_START /* 8388659 */:
+            case 8388659:
                 this.B.x = this.q + this.i + (height / 2.0f);
                 this.B.y = this.r + this.i + (this.x.height() / 2.0f);
                 break;
-            case BadgeDrawable.TOP_END /* 8388661 */:
+            case 8388661:
                 this.B.x = this.H - ((this.q + this.i) + (height / 2.0f));
                 this.B.y = this.r + this.i + (this.x.height() / 2.0f);
                 break;
-            case BadgeDrawable.BOTTOM_START /* 8388691 */:
+            case 8388691:
                 this.B.x = this.q + this.i + (height / 2.0f);
                 this.B.y = this.I - ((this.r + this.i) + (this.x.height() / 2.0f));
                 break;
-            case BadgeDrawable.BOTTOM_END /* 8388693 */:
+            case 8388693:
                 this.B.x = this.H - ((this.q + this.i) + (height / 2.0f));
                 this.B.y = this.I - ((this.r + this.i) + (this.x.height() / 2.0f));
                 break;
@@ -608,7 +603,7 @@ public class QBadgeView extends View implements Badge {
     }
 
     public Badge b(int i) {
-        this.f10207a = i;
+        this.a = i;
         if (i == 0) {
             this.J.setXfermode(null);
         } else {
@@ -638,7 +633,7 @@ public class QBadgeView extends View implements Badge {
     }
 
     public Badge c(int i) {
-        this.f10208c = i;
+        this.c = i;
         invalidate();
         return this;
     }
@@ -673,7 +668,7 @@ public class QBadgeView extends View implements Badge {
     }
 
     public int getBadgeBackgroundColor() {
-        return this.f10207a;
+        return this.a;
     }
 
     public int getBadgeGravity() {
@@ -689,7 +684,7 @@ public class QBadgeView extends View implements Badge {
     }
 
     public int getBadgeTextColor() {
-        return this.f10208c;
+        return this.c;
     }
 
     public PointF getDragCenter() {

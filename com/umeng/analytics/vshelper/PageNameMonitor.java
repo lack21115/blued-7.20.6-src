@@ -10,7 +10,7 @@ public class PageNameMonitor implements com.umeng.analytics.vshelper.a {
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final PageNameMonitor f40810a = new PageNameMonitor();
+        private static final PageNameMonitor f27119a = new PageNameMonitor();
 
         private a() {
         }
@@ -20,7 +20,7 @@ public class PageNameMonitor implements com.umeng.analytics.vshelper.a {
     }
 
     public static PageNameMonitor getInstance() {
-        return a.f40810a;
+        return a.f27119a;
     }
 
     @Override // com.umeng.analytics.vshelper.a

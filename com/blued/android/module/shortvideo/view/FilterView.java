@@ -27,20 +27,18 @@ public class FilterView extends EditBottomBaseView implements EventObserver {
     /* renamed from: com.blued.android.module.shortvideo.view.FilterView$2  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/view/FilterView$2.class */
     static /* synthetic */ class AnonymousClass2 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15896a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[EventType.VALUE.values().length];
-            f15896a = iArr;
+            a = iArr;
             try {
                 iArr[EventType.VALUE.CONFIG_FILTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15896a[EventType.VALUE.UPDATE_FILTER.ordinal()] = 2;
+                a[EventType.VALUE.UPDATE_FILTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -60,7 +58,7 @@ public class FilterView extends EditBottomBaseView implements EventObserver {
 
     @Override // com.blued.android.module.shortvideo.view.EditBottomBaseView
     public void a() {
-        this.d = (RecyclerView) LayoutInflater.from(getContext()).inflate(R.layout.stv_recyclerview, (ViewGroup) null);
+        this.d = LayoutInflater.from(getContext()).inflate(R.layout.stv_recyclerview, (ViewGroup) null);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         this.d.setLayoutManager(linearLayoutManager);
@@ -105,7 +103,7 @@ public class FilterView extends EditBottomBaseView implements EventObserver {
         if (this.f == null) {
             return;
         }
-        int i = AnonymousClass2.f15896a[value.ordinal()];
+        int i = AnonymousClass2.a[value.ordinal()];
         if (i == 1) {
             c();
         } else if (i != 2) {
@@ -116,7 +114,7 @@ public class FilterView extends EditBottomBaseView implements EventObserver {
 
     @Override // com.blued.android.module.shortvideo.view.EditBottomBaseView
     protected void b() {
-        StvViewUtils.a(this.f15888c, 15, 16, 15, 20);
+        StvViewUtils.a(this.c, 15, 16, 15, 20);
     }
 
     @Override // com.blued.android.module.shortvideo.view.EditBottomBaseView

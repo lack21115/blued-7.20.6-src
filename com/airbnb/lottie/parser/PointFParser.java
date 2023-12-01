@@ -7,9 +7,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/PointFParser.class */
 public class PointFParser implements ValueParser<PointF> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final PointFParser f4406a = new PointFParser();
+    public static final PointFParser a = new PointFParser();
 
     private PointFParser() {
     }

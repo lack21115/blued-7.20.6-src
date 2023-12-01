@@ -12,28 +12,24 @@ import java.io.File;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageLoader.class */
 public class ImageLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f9501a = false;
+    private static boolean a = false;
 
     /* renamed from: com.blued.android.core.image.ImageLoader$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageLoader$1.class */
     class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ OnClearDiskCacheListener f9502a;
+        final /* synthetic */ OnClearDiskCacheListener a;
 
         @Override // java.lang.Runnable
         public void run() {
             if (AppInfo.d() != null) {
                 GlideApp.a(AppInfo.d()).f();
             }
-            if (this.f9502a != null) {
+            if (this.a != null) {
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.core.image.ImageLoader.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (AnonymousClass1.this.f9502a != null) {
-                            AnonymousClass1.this.f9502a.a();
+                        if (AnonymousClass1.this.a != null) {
+                            AnonymousClass1.this.a.a();
                         }
                     }
                 });
@@ -65,7 +61,7 @@ public class ImageLoader {
         if (file == null) {
             file2 = new File("");
         }
-        return new ImageWrapper(iRequestHost, a(iRequestHost).e().b(file2).b(DiskCacheStrategy.f20762a));
+        return new ImageWrapper(iRequestHost, a(iRequestHost).e().b(file2).b(DiskCacheStrategy.a));
     }
 
     public static ImageWrapper a(IRequestHost iRequestHost, String str) {
@@ -73,7 +69,7 @@ public class ImageLoader {
         if (str == null) {
             str2 = "";
         }
-        return new ImageWrapper(iRequestHost, a(iRequestHost).e().b(str2).b(DiskCacheStrategy.f20762a));
+        return new ImageWrapper(iRequestHost, a(iRequestHost).e().b(str2).b(DiskCacheStrategy.a));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -162,7 +158,7 @@ public class ImageLoader {
     }
 
     public static boolean a() {
-        return f9501a;
+        return a;
     }
 
     public static ImageWrapper b(IRequestHost iRequestHost, String str) {
@@ -175,7 +171,7 @@ public class ImageLoader {
                 str2 = "content://" + str;
             }
         }
-        return new ImageWrapper(iRequestHost, a(iRequestHost).e().b(Uri.parse(str2)).b(DiskCacheStrategy.f20762a));
+        return new ImageWrapper(iRequestHost, a(iRequestHost).e().b(Uri.parse(str2)).b(DiskCacheStrategy.a));
     }
 
     public static void b() {
@@ -186,7 +182,7 @@ public class ImageLoader {
 
     public static ImageWrapper c(IRequestHost iRequestHost, String str) {
         String a2 = str == null ? "" : a(str, "assets://");
-        RequestBuilder<Drawable> e = a(iRequestHost).e();
+        RequestBuilder e = a(iRequestHost).e();
         return new ImageWrapper(iRequestHost, e.b(Uri.parse("file:///android_asset/" + a2)).b(DiskCacheStrategy.d));
     }
 

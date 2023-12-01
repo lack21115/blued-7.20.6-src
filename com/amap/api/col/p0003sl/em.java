@@ -12,7 +12,6 @@ import com.amap.api.maps.offlinemap.OfflineMapCity;
 import com.amap.api.maps.offlinemap.OfflineMapManager;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
 import com.bytedance.applog.tracker.Tracker;
-import com.soft.blued.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,30 +19,24 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/em.class */
 public final class em extends BaseExpandableListAdapter implements ExpandableListView.OnGroupCollapseListener, ExpandableListView.OnGroupExpandListener {
     private boolean[] b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f4920c;
+    private Context c;
     private er d;
     private et f;
     private OfflineMapManager g;
     private List<OfflineMapProvince> e = new ArrayList();
-
-    /* renamed from: a  reason: collision with root package name */
-    List<OfflineMapProvince> f4919a = new ArrayList();
+    List<OfflineMapProvince> a = new ArrayList();
 
     /* renamed from: com.amap.api.col.3sl.em$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/em$a.class */
     public final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public er f4922a;
+        public er a;
 
         public a() {
         }
     }
 
     public em(Context context, et etVar, OfflineMapManager offlineMapManager, List<OfflineMapProvince> list) {
-        this.f4920c = context;
+        this.c = context;
         this.f = etVar;
         this.g = offlineMapManager;
         if (list != null && list.size() > 0) {
@@ -51,36 +44,36 @@ public final class em extends BaseExpandableListAdapter implements ExpandableLis
             this.e.addAll(list);
             for (OfflineMapProvince offlineMapProvince : this.e) {
                 if (offlineMapProvince != null && offlineMapProvince.getDownloadedCityList().size() > 0) {
-                    this.f4919a.add(offlineMapProvince);
+                    this.a.add(offlineMapProvince);
                 }
             }
         }
-        this.b = new boolean[this.f4919a.size()];
+        this.b = new boolean[this.a.size()];
     }
 
     public final void a() {
         for (OfflineMapProvince offlineMapProvince : this.e) {
-            if (offlineMapProvince.getDownloadedCityList().size() > 0 && !this.f4919a.contains(offlineMapProvince)) {
-                this.f4919a.add(offlineMapProvince);
+            if (offlineMapProvince.getDownloadedCityList().size() > 0 && !this.a.contains(offlineMapProvince)) {
+                this.a.add(offlineMapProvince);
             }
         }
-        this.b = new boolean[this.f4919a.size()];
+        this.b = new boolean[this.a.size()];
         notifyDataSetChanged();
     }
 
     public final void b() {
         try {
-            int size = this.f4919a.size();
+            int size = this.a.size();
             while (true) {
                 int i = size;
                 if (i <= 0) {
-                    this.b = new boolean[this.f4919a.size()];
+                    this.b = new boolean[this.a.size()];
                     notifyDataSetChanged();
                     return;
                 }
-                OfflineMapProvince offlineMapProvince = this.f4919a.get(i - 1);
+                OfflineMapProvince offlineMapProvince = this.a.get(i - 1);
                 if (offlineMapProvince.getDownloadedCityList().size() == 0) {
-                    this.f4919a.remove(offlineMapProvince);
+                    this.a.remove(offlineMapProvince);
                 }
                 size = i - 1;
             }
@@ -91,7 +84,7 @@ public final class em extends BaseExpandableListAdapter implements ExpandableLis
 
     @Override // android.widget.ExpandableListAdapter
     public final Object getChild(int i, int i2) {
-        return this.f4919a.get(i).getDownloadedCityList().get(i2);
+        return this.a.get(i).getDownloadedCityList().get(i2);
     }
 
     @Override // android.widget.ExpandableListAdapter
@@ -106,17 +99,17 @@ public final class em extends BaseExpandableListAdapter implements ExpandableLis
             aVar = (a) view.getTag();
         } else {
             aVar = new a();
-            er erVar = new er(this.f4920c, this.g);
+            er erVar = new er(this.c, this.g);
             this.d = erVar;
             erVar.a(2);
             view = this.d.a();
-            aVar.f4922a = this.d;
+            aVar.a = this.d;
             view.setTag(aVar);
         }
-        OfflineMapProvince offlineMapProvince = this.f4919a.get(i);
+        OfflineMapProvince offlineMapProvince = this.a.get(i);
         if (i2 < offlineMapProvince.getDownloadedCityList().size()) {
             final OfflineMapCity offlineMapCity = offlineMapProvince.getDownloadedCityList().get(i2);
-            aVar.f4922a.a(offlineMapCity);
+            aVar.a.a(offlineMapCity);
             view.setOnClickListener(new View.OnClickListener() { // from class: com.amap.api.col.3sl.em.1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -130,17 +123,17 @@ public final class em extends BaseExpandableListAdapter implements ExpandableLis
 
     @Override // android.widget.ExpandableListAdapter
     public final int getChildrenCount(int i) {
-        return this.f4919a.get(i).getDownloadedCityList().size();
+        return this.a.get(i).getDownloadedCityList().size();
     }
 
     @Override // android.widget.ExpandableListAdapter
     public final Object getGroup(int i) {
-        return this.f4919a.get(i).getProvinceName();
+        return this.a.get(i).getProvinceName();
     }
 
     @Override // android.widget.ExpandableListAdapter
     public final int getGroupCount() {
-        return this.f4919a.size();
+        return this.a.size();
     }
 
     @Override // android.widget.ExpandableListAdapter
@@ -152,11 +145,11 @@ public final class em extends BaseExpandableListAdapter implements ExpandableLis
     public final View getGroupView(int i, boolean z, View view, ViewGroup viewGroup) {
         RelativeLayout relativeLayout = view;
         if (view == null) {
-            relativeLayout = (RelativeLayout) ev.a(this.f4920c, (int) R.array.animal);
+            relativeLayout = (RelativeLayout) ev.a(this.c, 2130903043);
         }
         TextView textView = (TextView) relativeLayout.findViewById(2131165201);
         ImageView imageView = (ImageView) relativeLayout.findViewById(2131165202);
-        textView.setText(this.f4919a.get(i).getProvinceName());
+        textView.setText(this.a.get(i).getProvinceName());
         if (this.b[i]) {
             imageView.setImageDrawable(ev.a().getDrawable(2130837509));
             return relativeLayout;

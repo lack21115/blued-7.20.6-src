@@ -5,20 +5,14 @@ import com.anythink.core.common.e.o;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/g.class */
 public class g extends com.anythink.core.common.c.a<o> {
     private static final String b = g.class.getName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static g f6581c;
+    private static g c;
     private int d;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/g$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6582a = "request_info";
+        public static final String a = "request_info";
         public static final String b = "id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6583c = "req_type";
+        public static final String c = "req_type";
         public static final String d = "req_url";
         public static final String e = "req_head";
         public static final String f = "req_content";
@@ -33,18 +27,18 @@ public class g extends com.anythink.core.common.c.a<o> {
     }
 
     public static g a(b bVar) {
-        if (f6581c == null) {
+        if (c == null) {
             synchronized (g.class) {
                 try {
-                    if (f6581c == null) {
-                        f6581c = new g(bVar);
+                    if (c == null) {
+                        c = new g(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6581c;
+        return c;
     }
 
     private void d() {
@@ -53,7 +47,7 @@ public class g extends com.anythink.core.common.c.a<o> {
                 if (b() == null) {
                     return;
                 }
-                b().delete(a.f6582a, null, null);
+                b().delete(a.a, null, null);
             } catch (Exception e) {
             }
         }
@@ -86,7 +80,7 @@ public class g extends com.anythink.core.common.c.a<o> {
                 return -1;
             }
             try {
-                return b().delete(a.f6582a, "id=?", new String[]{oVar.f6671a});
+                return b().delete(a.a, "id=?", new String[]{oVar.a});
             } catch (Throwable th) {
                 return -1;
             }

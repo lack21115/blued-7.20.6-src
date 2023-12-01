@@ -47,7 +47,7 @@ public class ActionBarContextView extends AbsActionBarView implements Animator.A
     }
 
     public ActionBarContextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843668);
+        this(context, attributeSet, R.attr.actionModeStyle);
     }
 
     public ActionBarContextView(Context context, AttributeSet attributeSet, int i) {
@@ -157,9 +157,8 @@ public class ActionBarContextView extends AbsActionBarView implements Animator.A
         this.mCurrentAnimation.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new ViewGroup.MarginLayoutParams(-1, -2);
     }
 

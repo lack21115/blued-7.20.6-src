@@ -10,13 +10,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/PushGuideObserver.class */
 public final class PushGuideObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13957a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final PushGuideObserver b = new PushGuideObserver();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final ArrayList<IPushGuideObserver> f13958c = new ArrayList<>();
+    private static final ArrayList<IPushGuideObserver> c = new ArrayList<>();
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/PushGuideObserver$Companion.class */
@@ -51,12 +47,12 @@ public final class PushGuideObserver {
 
     @JvmStatic
     public static final PushGuideObserver d() {
-        return f13957a.a();
+        return a.a();
     }
 
     public final void a(View view) {
         synchronized (this) {
-            Iterator<IPushGuideObserver> it = f13958c.iterator();
+            Iterator<IPushGuideObserver> it = c.iterator();
             while (it.hasNext()) {
                 IPushGuideObserver next = it.next();
                 if (next != null) {
@@ -68,7 +64,7 @@ public final class PushGuideObserver {
 
     public final void a(View view, View view2) {
         synchronized (this) {
-            Iterator<IPushGuideObserver> it = f13958c.iterator();
+            Iterator<IPushGuideObserver> it = c.iterator();
             while (it.hasNext()) {
                 IPushGuideObserver next = it.next();
                 if (next != null) {
@@ -81,26 +77,26 @@ public final class PushGuideObserver {
     public final void a(IPushGuideObserver iPushGuideObserver) {
         synchronized (this) {
             if (iPushGuideObserver != null) {
-                f13958c.add(iPushGuideObserver);
+                c.add(iPushGuideObserver);
             }
         }
     }
 
     public final boolean a() {
-        ArrayList<IPushGuideObserver> arrayList = f13958c;
+        ArrayList<IPushGuideObserver> arrayList = c;
         return !(arrayList == null || arrayList.isEmpty());
     }
 
     public final void b() {
         synchronized (this) {
-            f13958c.removeAll(f13958c);
-            f13958c.clear();
+            c.removeAll(c);
+            c.clear();
         }
     }
 
     public final void b(View view) {
         synchronized (this) {
-            Iterator<IPushGuideObserver> it = f13958c.iterator();
+            Iterator<IPushGuideObserver> it = c.iterator();
             while (it.hasNext()) {
                 IPushGuideObserver next = it.next();
                 if (next != null) {
@@ -113,14 +109,14 @@ public final class PushGuideObserver {
     public final void b(IPushGuideObserver iPushGuideObserver) {
         synchronized (this) {
             if (iPushGuideObserver != null) {
-                f13958c.remove(iPushGuideObserver);
+                c.remove(iPushGuideObserver);
             }
         }
     }
 
     public final void c() {
         synchronized (this) {
-            Iterator<IPushGuideObserver> it = f13958c.iterator();
+            Iterator<IPushGuideObserver> it = c.iterator();
             while (it.hasNext()) {
                 IPushGuideObserver next = it.next();
                 if (next != null) {

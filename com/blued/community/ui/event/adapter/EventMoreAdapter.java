@@ -18,21 +18,18 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/adapter/EventMoreAdapter.class */
 public final class EventMoreAdapter extends BaseQuickAdapter<EventDetailsModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f19514a;
+    private final IRequestHost a;
     private int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EventMoreAdapter(IRequestHost fragmentActive) {
         super(R.layout.item_event_more);
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f19514a = fragmentActive;
+        this.a = fragmentActive;
         this.b = (int) ((AppInfo.l - (BluedViewExtKt.a(12.0f) * 4)) / 3);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, EventDetailsModel item) {
         Intrinsics.e(helper, "helper");
@@ -42,7 +39,7 @@ public final class EventMoreAdapter extends BaseQuickAdapter<EventDetailsModel, 
         ImageView imageView = ivCover;
         int i = this.b;
         BluedViewExtKt.a(imageView, i, i);
-        ImageLoader.a(this.f19514a, item.pic).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(4.0f).a(ivCover);
+        ImageLoader.a(this.a, item.pic).b(R.drawable.defaultpicture).d(R.drawable.defaultpicture).a(4.0f).a(ivCover);
         helper.setGone(R.id.tv_event_tag, !TextUtils.isEmpty(item.recommend_text)).setText(R.id.tv_event_tag, item.recommend_text).setText(R.id.tv_event_name, item.name).addOnClickListener(R.id.iv_cover).addOnClickListener(R.id.tv_event_name);
         EventTrackFeed.b(FeedProtos.Event.ACTIVITY_FEED_DETAIL_SAME_ACTIVITY_SHOW, item.id, helper.getAdapterPosition() + 1);
     }

@@ -1,7 +1,5 @@
 package java.lang;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:java/lang/StringToReal.class */
 public final class StringToReal {
@@ -51,7 +49,7 @@ public final class StringToReal {
     }
 
     private static NumberFormatException invalidReal(String str, boolean z) {
-        throw new NumberFormatException("Invalid " + (z ? "double" : TypedValues.Custom.S_FLOAT) + ": \"" + str + "\"");
+        throw new NumberFormatException("Invalid " + (z ? "double" : "float") + ": \"" + str + "\"");
     }
 
     private static native double parseDblImpl(String str, int i);

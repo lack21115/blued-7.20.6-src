@@ -33,8 +33,8 @@ public class ChoicesView extends ImageView {
 
         /* renamed from: com.huawei.hms.ads.splash.ChoicesView$1$1  reason: invalid class name and collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/splash/ChoicesView$1$1.class */
-        class C04191 implements RemoteCallResultCallback<String> {
-            C04191() {
+        class C02491 implements RemoteCallResultCallback<String> {
+            C02491() {
             }
 
             @Override // com.huawei.openalliance.ad.ipc.RemoteCallResultCallback
@@ -84,7 +84,7 @@ public class ChoicesView extends ImageView {
             JSONObject jSONObject = new JSONObject();
             try {
                 jSONObject.put("content", z.V(sourceParam));
-                g.V(ChoicesView.this.getContext()).Code(p.L, jSONObject.toString(), new C04191(), String.class);
+                g.V(ChoicesView.this.getContext()).Code(p.L, jSONObject.toString(), new C02491(), String.class);
             } catch (JSONException e) {
                 ge.I("ChoicesView", "load ad choice icon jsonex");
             }

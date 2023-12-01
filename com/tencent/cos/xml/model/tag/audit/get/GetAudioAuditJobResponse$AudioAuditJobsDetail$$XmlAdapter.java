@@ -64,6 +64,7 @@ public class GetAudioAuditJobResponse$AudioAuditJobsDetail$$XmlAdapter implement
             }
         });
         this.childElementBinders.put("Section", new ChildElementBinder<GetAudioAuditJobResponse.AudioAuditJobsDetail>() { // from class: com.tencent.cos.xml.model.tag.audit.get.GetAudioAuditJobResponse$AudioAuditJobsDetail$$XmlAdapter.8
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, GetAudioAuditJobResponse.AudioAuditJobsDetail audioAuditJobsDetail, String str) throws IOException, XmlPullParserException {
                 if (audioAuditJobsDetail.section == null) {

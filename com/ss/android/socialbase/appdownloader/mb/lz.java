@@ -3,7 +3,6 @@ package com.ss.android.socialbase.appdownloader.mb;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
-import com.alipay.sdk.sys.a;
 import com.anythink.expressad.foundation.d.c;
 import com.ss.android.socialbase.downloader.setting.DownloadSetting;
 import com.ss.android.socialbase.downloader.setting.DownloadSettingKeys;
@@ -26,7 +25,7 @@ public class lz extends mb {
         String optString = this.ox.optString("s");
         String mb = com.ss.android.socialbase.appdownloader.u.b.mb(this.ox.optString("ak"), optString);
         String mb2 = com.ss.android.socialbase.appdownloader.u.b.mb(this.ox.optString("am"), optString);
-        String mb3 = com.ss.android.socialbase.appdownloader.u.b.mb(this.ox.optString(a.i), optString);
+        String mb3 = com.ss.android.socialbase.appdownloader.u.b.mb(this.ox.optString("an"), optString);
         String str2 = null;
         if (TextUtils.isEmpty(mb3) || mb3.split(",").length != 2) {
             return null;

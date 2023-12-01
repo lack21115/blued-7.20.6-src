@@ -18,7 +18,7 @@ public class PushService extends Service {
     public IBinder onBind(Intent intent) {
         String type = (intent == null || intent.getType() == null) ? "" : intent.getType();
         if (!type.startsWith("GB-") && !type.startsWith("PB-")) {
-            return c.f23254a.equals(type) ? d.a().f23258a.getBinder() : type.startsWith("GTC-") ? ServiceManager.getInstance().a((Service) this, intent) : ServiceManager.getInstance().a((Service) this, intent);
+            return c.f9646a.equals(type) ? d.a().f9650a.getBinder() : type.startsWith("GTC-") ? ServiceManager.getInstance().a((Service) this, intent) : ServiceManager.getInstance().a((Service) this, intent);
         }
         ServiceManager.getInstance().a(this, intent, 0, 0);
         return null;
@@ -41,8 +41,8 @@ public class PushService extends Service {
         super.onDestroy();
         ServiceManager serviceManager = ServiceManager.getInstance();
         a.a("ServiceManager|onDestroy...", new Object[0]);
-        if (serviceManager.f23382a != null) {
-            serviceManager.f23382a.onServiceDestroy();
+        if (serviceManager.f9774a != null) {
+            serviceManager.f9774a.onServiceDestroy();
         }
     }
 

@@ -1,7 +1,7 @@
 package com.kuaishou.weapon.p0;
 
+import android.app.backup.FullBackup;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.iu;
 import java.io.File;
 import java.io.FileInputStream;
 import java.security.MessageDigest;
@@ -10,7 +10,7 @@ import java.security.MessageDigest;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f23833a = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", iu.h, "f"};
+    private static final String[] f10225a = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", FullBackup.DATA_TREE_TOKEN};
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v12, types: [int] */
@@ -19,7 +19,7 @@ public final class f {
         if (b < 0) {
             b2 = b + 256;
         }
-        return f23833a[b2 / 16] + f23833a[b2 % 16];
+        return f10225a[b2 / 16] + f10225a[b2 % 16];
     }
 
     public static String a(File file) {

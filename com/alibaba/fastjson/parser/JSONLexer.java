@@ -66,27 +66,27 @@ public interface JSONLexer {
 
     void resetStringPosition();
 
-    Enum<?> scanEnum(Class<?> cls, SymbolTable symbolTable, char c2);
+    Enum<?> scanEnum(Class<?> cls, SymbolTable symbolTable, char c);
 
-    int scanInt(char c2);
+    int scanInt(char c);
 
-    long scanLong(char c2);
+    long scanLong(char c);
 
     void scanNumber();
 
-    String scanString(char c2);
+    String scanString(char c);
 
     void scanString();
 
-    Collection<String> scanStringArray(Class<?> cls, char c2);
+    Collection<String> scanStringArray(Class<?> cls, char c);
 
     String scanSymbol(SymbolTable symbolTable);
 
-    String scanSymbol(SymbolTable symbolTable, char c2);
+    String scanSymbol(SymbolTable symbolTable, char c);
 
     String scanSymbolUnQuoted(SymbolTable symbolTable);
 
-    String scanSymbolWithSeperator(SymbolTable symbolTable, char c2);
+    String scanSymbolWithSeperator(SymbolTable symbolTable, char c);
 
     void setLocale(Locale locale);
 

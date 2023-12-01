@@ -39,31 +39,31 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39183a = "TPThumbPlayerUtils";
+    private static String f25492a = "TPThumbPlayerUtils";
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/a/b/c$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f39184a;
+        private final int f25493a;
         private final int b;
 
         public a() {
-            this.f39184a = -1;
+            this.f25493a = -1;
             this.b = -1;
         }
 
         public a(int i, int i2) {
-            this.f39184a = i;
+            this.f25493a = i;
             this.b = i2;
         }
 
         public boolean a() {
-            return this.f39184a == -1 || this.b == -1;
+            return this.f25493a == -1 || this.b == -1;
         }
 
         public int b() {
-            return this.f39184a;
+            return this.f25493a;
         }
 
         public int c() {

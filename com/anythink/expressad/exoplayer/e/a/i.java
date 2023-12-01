@@ -6,7 +6,7 @@ import com.anythink.expressad.exoplayer.k.af;
 final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7303a = 4096;
+    private static final int f4464a = 4096;
     private static final int[] b = {af.f("isom"), af.f("iso2"), af.f("iso3"), af.f("iso4"), af.f("iso5"), af.f("iso6"), af.f("avc1"), af.f("hvc1"), af.f("hev1"), af.f("mp41"), af.f("mp42"), af.f("3g2a"), af.f("3g2b"), af.f("3gr6"), af.f("3gs6"), af.f("3ge6"), af.f("3gg6"), af.f("M4V "), af.f("M4A "), af.f("f4v "), af.f("kddi"), af.f("M4VP"), af.f("qt  "), af.f("MSNV")};
 
     private i() {

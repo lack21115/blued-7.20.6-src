@@ -19,11 +19,11 @@ import javax.crypto.spec.SecretKeySpec;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40561a = !c.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26870a = !c.class.desiredAssertionStatus();
     private static String b = "";
 
     public static void a(byte[] bArr, int i, byte[] bArr2) {
-        if (!f40561a && bArr2.length != 4) {
+        if (!f26870a && bArr2.length != 4) {
             throw new AssertionError();
         }
         int i2 = 0;
@@ -205,8 +205,8 @@ public class c {
         FileInputStream fileInputStream2;
         Throwable th;
         byte[] bArr;
-        InputStream inputStream = null;
         BufferedInputStream bufferedInputStream = null;
+        BufferedInputStream bufferedInputStream2 = null;
         try {
             if (!file.isFile()) {
                 return null;
@@ -215,7 +215,7 @@ public class c {
                 int length = (int) file.length();
                 fileInputStream2 = new FileInputStream(file);
                 try {
-                    bufferedInputStream = new BufferedInputStream(fileInputStream2);
+                    bufferedInputStream2 = new BufferedInputStream(fileInputStream2);
                     byte[] bArr2 = null;
                     try {
                         byte[] bArr3 = new byte[length];
@@ -226,26 +226,26 @@ public class c {
                                 break;
                             }
                             bArr2 = bArr3;
-                            int read = bufferedInputStream.read(bArr3, i2, length - i2);
+                            int read = bufferedInputStream2.read(bArr3, i2, length - i2);
                             if (-1 == read) {
                                 break;
                             }
                             i = i2 + read;
                         }
-                        g.a(bufferedInputStream);
+                        g.a(bufferedInputStream2);
                         g.a(fileInputStream2);
                         return bArr3;
                     } catch (Exception e) {
-                        inputStream = bufferedInputStream;
+                        bufferedInputStream = bufferedInputStream2;
                         e = e;
                         bArr = bArr2;
                         g.b(e);
-                        g.a(inputStream);
+                        g.a(bufferedInputStream);
                         g.a(fileInputStream2);
                         return bArr;
                     } catch (Throwable th2) {
                         th = th2;
-                        g.a(bufferedInputStream);
+                        g.a(bufferedInputStream2);
                         g.a(fileInputStream2);
                         throw th;
                     }
@@ -263,7 +263,7 @@ public class c {
             }
         } catch (Throwable th4) {
             fileInputStream2 = fileInputStream;
-            bufferedInputStream = null;
+            bufferedInputStream2 = null;
             th = th4;
         }
     }
@@ -293,7 +293,7 @@ public class c {
         while (true) {
             int i2 = i;
             if (i2 >= 16) {
-                System.arraycopy((Object) bArr, 0, (Object) bArr2, 16, bArr.length);
+                System.arraycopy(bArr, 0, bArr2, 16, bArr.length);
                 return bArr2;
             }
             bArr2[i2] = 0;

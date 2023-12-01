@@ -5,7 +5,7 @@ public class a {
     private static a b;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f21117a = -1;
+    private int f7511a = -1;
 
     private a() {
     }

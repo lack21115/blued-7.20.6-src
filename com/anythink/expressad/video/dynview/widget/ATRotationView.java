@@ -14,11 +14,11 @@ import android.widget.FrameLayout;
 public class ATRotationView extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    Runnable f8409a;
+    Runnable f5569a;
     private Camera b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Matrix f8410c;
+    private Matrix f5570c;
     private int d;
     private int e;
     private int f;
@@ -45,7 +45,7 @@ public class ATRotationView extends FrameLayout {
         this.n = true;
         this.o = false;
         this.p = false;
-        this.f8409a = new Runnable() { // from class: com.anythink.expressad.video.dynview.widget.ATRotationView.1
+        this.f5569a = new Runnable() { // from class: com.anythink.expressad.video.dynview.widget.ATRotationView.1
             @Override // java.lang.Runnable
             public final void run() {
                 ATRotationView.a(ATRotationView.this);
@@ -66,7 +66,7 @@ public class ATRotationView extends FrameLayout {
         this.n = true;
         this.o = false;
         this.p = false;
-        this.f8409a = new Runnable() { // from class: com.anythink.expressad.video.dynview.widget.ATRotationView.1
+        this.f5569a = new Runnable() { // from class: com.anythink.expressad.video.dynview.widget.ATRotationView.1
             @Override // java.lang.Runnable
             public final void run() {
                 ATRotationView.a(ATRotationView.this);
@@ -87,7 +87,7 @@ public class ATRotationView extends FrameLayout {
         this.n = true;
         this.o = false;
         this.p = false;
-        this.f8409a = new Runnable() { // from class: com.anythink.expressad.video.dynview.widget.ATRotationView.1
+        this.f5569a = new Runnable() { // from class: com.anythink.expressad.video.dynview.widget.ATRotationView.1
             @Override // java.lang.Runnable
             public final void run() {
                 ATRotationView.a(ATRotationView.this);
@@ -125,7 +125,7 @@ public class ATRotationView extends FrameLayout {
 
     private void a() {
         this.b = new Camera();
-        this.f8410c = new Matrix();
+        this.f5570c = new Matrix();
         setWillNotDraw(false);
     }
 
@@ -172,7 +172,7 @@ public class ATRotationView extends FrameLayout {
     private void a(Canvas canvas, int i, int i2, int i3) {
         canvas.save();
         this.b.save();
-        this.f8410c.reset();
+        this.f5570c.reset();
         float f = i;
         this.b.translate(0.0f, f, 0.0f);
         this.b.rotateX(this.h);
@@ -188,11 +188,11 @@ public class ATRotationView extends FrameLayout {
         } else if (i < 0) {
             a(-this.d, -this.f, i3);
         }
-        this.b.getMatrix(this.f8410c);
+        this.b.getMatrix(this.f5570c);
         this.b.restore();
-        this.f8410c.preTranslate((-getWidth()) / 2, -i2);
-        this.f8410c.postTranslate(getWidth() / 2, i2);
-        canvas.concat(this.f8410c);
+        this.f5570c.preTranslate((-getWidth()) / 2, -i2);
+        this.f5570c.postTranslate(getWidth() / 2, i2);
+        canvas.concat(this.f5570c);
         View childAt = getChildAt(a(i3));
         if (childAt != null) {
             drawChild(canvas, childAt, 0L);
@@ -217,7 +217,7 @@ public class ATRotationView extends FrameLayout {
             }
             aTRotationView.invalidate();
             if (aTRotationView.n) {
-                aTRotationView.postDelayed(aTRotationView.f8409a, 1000 / aTRotationView.g);
+                aTRotationView.postDelayed(aTRotationView.f5569a, 1000 / aTRotationView.g);
             }
         }
     }
@@ -241,7 +241,7 @@ public class ATRotationView extends FrameLayout {
         }
         invalidate();
         if (this.n) {
-            postDelayed(this.f8409a, 1000 / this.g);
+            postDelayed(this.f5569a, 1000 / this.g);
         }
     }
 
@@ -304,7 +304,7 @@ public class ATRotationView extends FrameLayout {
     private void b(Canvas canvas, int i, int i2, int i3) {
         canvas.save();
         this.b.save();
-        this.f8410c.reset();
+        this.f5570c.reset();
         float f = i;
         this.b.translate(f, 0.0f, 0.0f);
         this.b.rotateY(this.h);
@@ -320,11 +320,11 @@ public class ATRotationView extends FrameLayout {
         } else if (i < 0) {
             b(-this.e, -this.f, i3);
         }
-        this.b.getMatrix(this.f8410c);
+        this.b.getMatrix(this.f5570c);
         this.b.restore();
-        this.f8410c.preTranslate(-i2, (-getHeight()) / 2);
-        this.f8410c.postTranslate(i2, getHeight() / 2);
-        canvas.concat(this.f8410c);
+        this.f5570c.preTranslate(-i2, (-getHeight()) / 2);
+        this.f5570c.postTranslate(i2, getHeight() / 2);
+        canvas.concat(this.f5570c);
         View childAt = getChildAt(a(i3));
         if (childAt != null) {
             drawChild(canvas, childAt, 0L);
@@ -340,9 +340,8 @@ public class ATRotationView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         if (getChildCount() == 0) {
             return;
         }
@@ -378,9 +377,8 @@ public class ATRotationView extends FrameLayout {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5 = i3 - i;
         float f = i5;
         float f2 = this.l;
@@ -415,7 +413,7 @@ public class ATRotationView extends FrameLayout {
 
     public void setAutoscroll(boolean z) {
         if (z) {
-            postDelayed(this.f8409a, 1000 / this.g);
+            postDelayed(this.f5569a, 1000 / this.g);
         }
         this.n = z;
     }

@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Looper;
 import android.os.Parcel;
+import com.anythink.expressad.foundation.h.s;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/g/a/f.class */
@@ -17,16 +18,16 @@ public class f {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f24957a;
+        private final String f11269a;
         private final boolean b;
 
         a(String str, boolean z) {
-            this.f24957a = str;
+            this.f11269a = str;
             this.b = z;
         }
 
         public String a() {
-            return this.f24957a;
+            return this.f11269a;
         }
 
         public boolean b() {
@@ -34,24 +35,23 @@ public class f {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/g/a/f$b.class */
-    public static final class b implements ServiceConnection {
+    static final class b implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f24958a;
+        boolean f11270a;
         private final LinkedBlockingQueue<IBinder> b;
 
         private b() {
-            this.f24958a = false;
+            this.f11270a = false;
             this.b = new LinkedBlockingQueue<>(1);
         }
 
         public IBinder a() {
-            if (this.f24958a) {
+            if (this.f11270a) {
                 throw new IllegalStateException();
             }
-            this.f24958a = true;
+            this.f11270a = true;
             return this.b.take();
         }
 
@@ -68,15 +68,14 @@ public class f {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/g/a/f$c.class */
-    public static final class c implements IInterface {
+    static final class c implements IInterface {
 
         /* renamed from: a  reason: collision with root package name */
-        private IBinder f24959a;
+        private IBinder f11271a;
 
         public c(IBinder iBinder) {
-            this.f24959a = iBinder;
+            this.f11271a = iBinder;
         }
 
         public String a() {
@@ -84,7 +83,7 @@ public class f {
             Parcel obtain2 = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("com.google.android.gms.ads.identifier.internal.IAdvertisingIdService");
-                this.f24959a.transact(1, obtain, obtain2, 0);
+                this.f11271a.transact(1, obtain, obtain2, 0);
                 obtain2.readException();
                 return obtain2.readString();
             } finally {
@@ -100,7 +99,7 @@ public class f {
 
         @Override // android.os.IInterface
         public IBinder asBinder() {
-            return this.f24959a;
+            return this.f11271a;
         }
     }
 
@@ -112,7 +111,7 @@ public class f {
                 if (Looper.getMainLooper() == Looper.myLooper()) {
                     com.opos.cmn.an.f.a.c("GoogleAdIdUtils", "Cannot call in the main thread, You must call in the other thread");
                 } else {
-                    context.getPackageManager().getPackageInfo("com.android.vending", 0);
+                    context.getPackageManager().getPackageInfo(s.a.f5134a, 0);
                     b bVar = new b();
                     Intent intent = new Intent("com.google.android.gms.ads.identifier.service.START");
                     intent.setPackage("com.google.android.gms");

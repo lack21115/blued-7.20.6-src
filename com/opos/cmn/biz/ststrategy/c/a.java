@@ -4,10 +4,10 @@ package com.opos.cmn.biz.ststrategy.c;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24701a = "com." + com.opos.cmn.an.a.a.f24484c + ".union";
-    public static final String b = "com." + com.opos.cmn.an.a.a.f24484c + ".market";
+    public static final String f11013a = "com." + com.opos.cmn.an.a.a.f10797c + ".union";
+    public static final String b = "com." + com.opos.cmn.an.a.a.f10797c + ".market";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f24702c = "com." + com.opos.cmn.an.a.a.f24483a + ".market";
+    public static final String f11014c = "com." + com.opos.cmn.an.a.a.f10796a + ".market";
     public static final String d = "com." + com.opos.cmn.an.a.a.d + ".browser";
 }

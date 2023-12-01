@@ -17,57 +17,46 @@ abstract class ForwardingManagedChannel extends ManagedChannel {
         this.delegate = managedChannel;
     }
 
-    @Override // io.grpc.Channel
     public String authority() {
         return this.delegate.authority();
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean awaitTermination(long j, TimeUnit timeUnit) throws InterruptedException {
         return this.delegate.awaitTermination(j, timeUnit);
     }
 
-    @Override // io.grpc.ManagedChannel
     public void enterIdle() {
         this.delegate.enterIdle();
     }
 
-    @Override // io.grpc.ManagedChannel
     public ConnectivityState getState(boolean z) {
         return this.delegate.getState(z);
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean isShutdown() {
         return this.delegate.isShutdown();
     }
 
-    @Override // io.grpc.ManagedChannel
     public boolean isTerminated() {
         return this.delegate.isTerminated();
     }
 
-    @Override // io.grpc.Channel
     public <RequestT, ResponseT> ClientCall<RequestT, ResponseT> newCall(MethodDescriptor<RequestT, ResponseT> methodDescriptor, CallOptions callOptions) {
         return this.delegate.newCall(methodDescriptor, callOptions);
     }
 
-    @Override // io.grpc.ManagedChannel
     public void notifyWhenStateChanged(ConnectivityState connectivityState, Runnable runnable) {
         this.delegate.notifyWhenStateChanged(connectivityState, runnable);
     }
 
-    @Override // io.grpc.ManagedChannel
     public void resetConnectBackoff() {
         this.delegate.resetConnectBackoff();
     }
 
-    @Override // io.grpc.ManagedChannel
     public ManagedChannel shutdown() {
         return this.delegate.shutdown();
     }
 
-    @Override // io.grpc.ManagedChannel
     public ManagedChannel shutdownNow() {
         return this.delegate.shutdownNow();
     }

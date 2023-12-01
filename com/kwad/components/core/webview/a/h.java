@@ -11,7 +11,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.components.core.page.AdWebViewActivityProxy;
 import com.kwad.components.core.webview.a.a.m;
 import com.kwad.components.core.webview.a.a.n;
@@ -209,7 +208,7 @@ public class h implements com.kwad.sdk.components.i, com.kwad.sdk.core.webview.c
             @Override // com.kwad.sdk.components.j
             public final void b(com.kwad.sdk.components.g gVar) {
                 WeakReference weakReference = (WeakReference) h.mDialogMap.get(Integer.valueOf(gVar.getDialogId()));
-                if (weakReference == null || weakReference.get() == 0) {
+                if (weakReference == null || weakReference.get() == null) {
                     return;
                 }
                 ((com.kwad.components.core.webview.a.b.d) weakReference.get()).dismiss();
@@ -378,7 +377,7 @@ public class h implements com.kwad.sdk.components.i, com.kwad.sdk.core.webview.c
             @Override // com.kwad.sdk.components.j
             public final void b(com.kwad.sdk.components.g gVar) {
                 WeakReference weakReference = (WeakReference) h.mDialogMap.get(Integer.valueOf(gVar.getDialogId()));
-                if (weakReference == null || weakReference.get() == 0) {
+                if (weakReference == null || weakReference.get() == null) {
                     return;
                 }
                 ((com.kwad.components.core.webview.a.b.d) weakReference.get()).dismiss();
@@ -478,7 +477,7 @@ public class h implements com.kwad.sdk.components.i, com.kwad.sdk.core.webview.c
                 registerWebCardHandler(view);
                 File file = new File(this.mTKPlugin.getJsBaseDir(this.mContext, this.mTKLoadInterface.getTkTemplateId()));
                 String str = styleTemplate.jsStr;
-                view.a(str, file.getAbsolutePath() + BridgeUtil.SPLIT_MARK, new k() { // from class: com.kwad.components.core.webview.a.h.17
+                view.a(str, file.getAbsolutePath() + "/", new k() { // from class: com.kwad.components.core.webview.a.h.17
                     @Override // com.kwad.sdk.components.k
                     public final void onFailed(Throwable th) {
                         a aVar2 = aVar;
@@ -857,7 +856,7 @@ public class h implements com.kwad.sdk.components.i, com.kwad.sdk.core.webview.c
             @Override // com.kwad.components.core.webview.a.kwai.j
             public final void a(n nVar) {
                 super.a(nVar);
-                AdWebViewActivityProxy.launch(h.this.mContext, new AdWebViewActivityProxy.a.C0529a().au(nVar.title).av(nVar.url).aA(true).L(h.this.obtainAdTemplate()).oc());
+                AdWebViewActivityProxy.launch(h.this.mContext, new AdWebViewActivityProxy.a.C0359a().au(nVar.title).av(nVar.url).aA(true).L(h.this.obtainAdTemplate()).oc());
             }
         });
         doRegisterHandler(lVar, new com.kwad.components.core.webview.a.kwai.a(obtainAdTemplate()));

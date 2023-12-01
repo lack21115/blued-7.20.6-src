@@ -1,6 +1,9 @@
 package com.anythink.core.common.e;
 
 import android.text.TextUtils;
+import com.anythink.core.api.ATAdConst;
+import com.anythink.core.common.c.m;
+import java.util.Grego;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -29,7 +32,7 @@ public final class u extends k {
                 uVar.b(jSONObject.optLong("ctdown_time"));
                 uVar.n(jSONObject.optInt("sk_able"));
                 uVar.o(jSONObject.optInt("orient"));
-                uVar.a(jSONObject.optString("size"));
+                uVar.a(jSONObject.optString(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE));
                 uVar.p(jSONObject.optInt("cl_btn"));
                 uVar.x(jSONObject.optInt("ec_r"));
                 uVar.y(jSONObject.optInt("ec_s_t"));
@@ -79,7 +82,7 @@ public final class u extends k {
                 if (jSONObject.has("click_cache_time")) {
                     uVar.J(jSONObject.optInt("click_cache_time"));
                 } else {
-                    uVar.J(3600000);
+                    uVar.J(Grego.MILLIS_PER_HOUR);
                 }
                 if (jSONObject.has("click_nt_sw")) {
                     uVar.K(jSONObject.optInt("click_nt_sw"));
@@ -97,8 +100,8 @@ public final class u extends k {
                     uVar.h(2);
                 }
                 uVar.L(jSONObject.optInt("shm_t", -1));
-                if (jSONObject.has("ready_rate")) {
-                    uVar.M(jSONObject.optInt("ready_rate"));
+                if (jSONObject.has(m.a.d)) {
+                    uVar.M(jSONObject.optInt(m.a.d));
                 } else {
                     uVar.M(100);
                 }

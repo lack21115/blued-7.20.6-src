@@ -20,18 +20,18 @@ public class KeyFrames {
     public static final int UNSET = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    static HashMap<String, Constructor<? extends Key>> f2173a;
+    static HashMap<String, Constructor<? extends Key>> f2125a;
     private HashMap<Integer, ArrayList<Key>> b = new HashMap<>();
 
     static {
         HashMap<String, Constructor<? extends Key>> hashMap = new HashMap<>();
-        f2173a = hashMap;
+        f2125a = hashMap;
         try {
             hashMap.put("KeyAttribute", KeyAttributes.class.getConstructor(new Class[0]));
-            f2173a.put(TypedValues.PositionType.NAME, KeyPosition.class.getConstructor(new Class[0]));
-            f2173a.put(TypedValues.CycleType.NAME, KeyCycle.class.getConstructor(new Class[0]));
-            f2173a.put("KeyTimeCycle", KeyTimeCycle.class.getConstructor(new Class[0]));
-            f2173a.put(TypedValues.TriggerType.NAME, KeyTrigger.class.getConstructor(new Class[0]));
+            f2125a.put(TypedValues.PositionType.NAME, KeyPosition.class.getConstructor(new Class[0]));
+            f2125a.put(TypedValues.CycleType.NAME, KeyCycle.class.getConstructor(new Class[0]));
+            f2125a.put("KeyTimeCycle", KeyTimeCycle.class.getConstructor(new Class[0]));
+            f2125a.put(TypedValues.TriggerType.NAME, KeyTrigger.class.getConstructor(new Class[0]));
         } catch (NoSuchMethodException e) {
             Log.e("KeyFrames", "unable to load", e);
         }
@@ -50,9 +50,9 @@ public class KeyFrames {
             while (eventType != 1) {
                 if (eventType == 2) {
                     String name = xmlPullParser.getName();
-                    if (f2173a.containsKey(name)) {
+                    if (f2125a.containsKey(name)) {
                         try {
-                            constructor = f2173a.get(name);
+                            constructor = f2125a.get(name);
                         } catch (Exception e2) {
                             e = e2;
                         }
@@ -122,7 +122,7 @@ public class KeyFrames {
     }
 
     public void addFrames(MotionController motionController) {
-        ArrayList<Key> arrayList = this.b.get(Integer.valueOf(motionController.f2180c));
+        ArrayList<Key> arrayList = this.b.get(Integer.valueOf(motionController.f2132c));
         if (arrayList != null) {
             motionController.a(arrayList);
         }

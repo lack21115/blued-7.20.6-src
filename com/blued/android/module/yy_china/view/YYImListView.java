@@ -30,13 +30,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYImListView.class */
 public class YYImListView extends RelativeLayout implements View.OnClickListener, FollowStatusObserver, IMMessageObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    public YYImMsgAdapter f18257a;
+    public YYImMsgAdapter a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecycleViewCustomer f18258c;
+    private RecycleViewCustomer c;
     private ShapeTextView d;
     private LinearLayoutManager e;
     private boolean f;
@@ -48,11 +44,10 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
         super(context);
         this.f = false;
         this.h = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYImListView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (YYImListView.this.f18257a != null) {
-                    YYImListView.this.f18257a.notifyDataSetChanged();
+                if (YYImListView.this.a != null) {
+                    YYImListView.this.a.notifyDataSetChanged();
                 }
             }
         };
@@ -64,11 +59,10 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
         super(context, attributeSet);
         this.f = false;
         this.h = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYImListView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (YYImListView.this.f18257a != null) {
-                    YYImListView.this.f18257a.notifyDataSetChanged();
+                if (YYImListView.this.a != null) {
+                    YYImListView.this.a.notifyDataSetChanged();
                 }
             }
         };
@@ -80,11 +74,10 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
         super(context, attributeSet, i);
         this.f = false;
         this.h = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYImListView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (YYImListView.this.f18257a != null) {
-                    YYImListView.this.f18257a.notifyDataSetChanged();
+                if (YYImListView.this.a != null) {
+                    YYImListView.this.a.notifyDataSetChanged();
                 }
             }
         };
@@ -94,27 +87,25 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_im_list_view, (ViewGroup) this, true);
-        this.f18258c = (RecycleViewCustomer) findViewById(R.id.im_list_view);
+        this.c = (RecycleViewCustomer) findViewById(R.id.im_list_view);
         ShapeTextView shapeTextView = (ShapeTextView) findViewById(R.id.tv_new_msg);
         this.d = shapeTextView;
         shapeTextView.setOnClickListener(this);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         this.e = linearLayoutManager;
         linearLayoutManager.setOrientation(1);
-        this.f18258c.setLayoutManager(this.e);
-        this.f18258c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYImListView.2
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+        this.c.setLayoutManager(this.e);
+        this.c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYImListView.2
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 rect.bottom = DensityUtils.a(YYImListView.this.getContext(), 4.0f);
             }
         });
-        this.f18258c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.yy_china.view.YYImListView.3
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
+        this.c.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.yy_china.view.YYImListView.3
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 super.onScrolled(recyclerView, i, i2);
-                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+                LinearLayoutManager layoutManager = recyclerView.getLayoutManager();
                 if (layoutManager instanceof LinearLayoutManager) {
-                    LinearLayoutManager linearLayoutManager2 = (LinearLayoutManager) layoutManager;
+                    LinearLayoutManager linearLayoutManager2 = layoutManager;
                     YYImListView.this.g = linearLayoutManager2.findLastVisibleItemPosition();
                     if (recyclerView.canScrollVertically(1) || YYImListView.this.g != YYImListView.this.e.getItemCount() - 1) {
                         YYImListView.this.f = false;
@@ -138,7 +129,7 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(int i) {
-        this.f18258c.scrollToPosition(i);
+        this.c.scrollToPosition(i);
     }
 
     public void a(int i) {
@@ -155,25 +146,25 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
                 break;
             }
         }
-        this.f18257a.notifyDataSetChanged();
+        this.a.notifyDataSetChanged();
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
         this.b = baseYYStudioFragment;
         YYImMsgAdapter yYImMsgAdapter = new YYImMsgAdapter(baseYYStudioFragment);
-        this.f18257a = yYImMsgAdapter;
-        yYImMsgAdapter.bindToRecyclerView(this.f18258c);
-        this.f18258c.setAdapter(this.f18257a);
+        this.a = yYImMsgAdapter;
+        yYImMsgAdapter.bindToRecyclerView(this.c);
+        this.c.setAdapter(this.a);
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null) {
             List<YYImModel> imDatas = b.getImDatas();
-            this.f18257a.setNewData(imDatas);
+            this.a.setNewData(imDatas);
             if (imDatas.size() > 0) {
                 baseYYStudioFragment.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.view.YYImListView.4
                     @Override // java.lang.Runnable
                     public void run() {
                         YYImListView yYImListView = YYImListView.this;
-                        yYImListView.b(yYImListView.f18257a.getItemCount() - 1);
+                        yYImListView.b(yYImListView.a.getItemCount() - 1);
                     }
                 }, 50L);
             }
@@ -193,13 +184,13 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
                 if (size >= YYImListView.this.i) {
                     b.getImDatas().remove(0);
                 }
-                YYImListView.this.f18257a.notifyDataSetChanged();
+                YYImListView.this.a.notifyDataSetChanged();
                 if (!YYImListView.this.f && size > 3) {
                     YYImListView.this.a(true);
                     return;
                 }
                 YYImListView yYImListView = YYImListView.this;
-                yYImListView.b(yYImListView.f18257a.getItemCount() - 1);
+                yYImListView.b(yYImListView.a.getItemCount() - 1);
             }
         });
     }
@@ -217,7 +208,7 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
             return;
         }
         b.getImDatas().remove(yYImModel);
-        this.f18257a.notifyDataSetChanged();
+        this.a.notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -235,7 +226,7 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
         Tracker.onClick(view);
         if (view.getId() == R.id.tv_new_msg) {
             a(false);
-            b(this.f18257a.getItemCount() - 1);
+            b(this.a.getItemCount() - 1);
         }
     }
 
@@ -247,6 +238,6 @@ public class YYImListView extends RelativeLayout implements View.OnClickListener
         YYObserverManager.a().b((IMMessageObserver) this);
         YYObserverManager.a().b((FollowStatusObserver) this);
         LiveEventBus.get("take_off_mask", String.class).removeObserver(this.h);
-        this.f18257a.a();
+        this.a.a();
     }
 }

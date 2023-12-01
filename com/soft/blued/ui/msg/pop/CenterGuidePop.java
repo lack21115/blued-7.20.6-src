@@ -7,7 +7,6 @@ import android.widget.TextView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.ui.xpop.XPopup;
 import com.blued.android.framework.ui.xpop.core.AttachPopupView;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.ui.xpop.enums.PopupPosition;
 import com.blued.android.framework.ui.xpop.interfaces.XPopupCallback;
@@ -26,10 +25,9 @@ public class CenterGuidePop extends AttachPopupView {
     }
 
     public void a(View view, XPopupCallback xPopupCallback) {
-        new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) false).a(PopupPosition.Top).b(true).a(view).a((BasePopupView) this).h();
+        new XPopup.Builder(getContext()).a(xPopupCallback).a(PopupAnimation.a).d(false).a(PopupPosition.c).b(true).a(view).a(this).h();
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         if (!StringUtils.d(this.t)) {
@@ -46,18 +44,15 @@ public class CenterGuidePop extends AttachPopupView {
         }, this.u);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_gift_guide;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         p();
         return false;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void u() {
         super.u();
     }

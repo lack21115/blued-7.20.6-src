@@ -7,19 +7,19 @@ import java.util.Map;
 public class c<K, V> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinkedHashMap<K, V> f28017a;
+    public final LinkedHashMap<K, V> f14329a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f28018c;
+    public int f14330c;
     public b<K, Long> d;
 
     public c(int i) {
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.f28018c = i;
-        this.f28017a = new LinkedHashMap<>(0, 0.75f, true);
+        this.f14330c = i;
+        this.f14329a = new LinkedHashMap<>(0, 0.75f, true);
         this.d = new b<>(0, 0.75f);
     }
 
@@ -29,7 +29,7 @@ public class c<K, V> {
         int length = str2 == null ? 0 : str2.length();
         if (length <= 0) {
             this.b = 0;
-            for (Map.Entry<K, V> entry : this.f28017a.entrySet()) {
+            for (Map.Entry<K, V> entry : this.f14329a.entrySet()) {
                 int i = this.b;
                 K key = entry.getKey();
                 V value = entry.getValue();
@@ -44,13 +44,13 @@ public class c<K, V> {
     public final void a(int i) {
         while (true) {
             synchronized (this) {
-                if (this.b <= i || this.f28017a.isEmpty()) {
+                if (this.b <= i || this.f14329a.isEmpty()) {
                     break;
                 }
-                Map.Entry<K, V> next = this.f28017a.entrySet().iterator().next();
+                Map.Entry<K, V> next = this.f14329a.entrySet().iterator().next();
                 K key = next.getKey();
                 V value = next.getValue();
-                this.f28017a.remove(key);
+                this.f14329a.remove(key);
                 this.d.a(key);
                 this.b -= a(key, value);
             }

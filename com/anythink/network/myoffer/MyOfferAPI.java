@@ -20,6 +20,6 @@ public class MyOfferAPI {
     }
 
     public static void preloadTopOnOffer(Context context, t tVar) {
-        a.a(context).a(tVar.f6677a);
+        a.a(context).a(tVar.a);
     }
 }

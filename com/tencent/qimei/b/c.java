@@ -11,7 +11,7 @@ public class c extends a {
     public static final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f38313c;
+    public static final int f24622c;
     public final ScheduledExecutorService d;
     public boolean e = false;
     public final d f;
@@ -19,14 +19,14 @@ public class c extends a {
     static {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
         b = availableProcessors;
-        f38313c = Math.max(2, Math.min(availableProcessors - 1, 3));
+        f24622c = Math.max(2, Math.min(availableProcessors - 1, 3));
         new AtomicInteger(0);
     }
 
     public c() {
         d dVar = new d();
         this.f = dVar;
-        this.d = Executors.newScheduledThreadPool(f38313c, dVar);
+        this.d = Executors.newScheduledThreadPool(f24622c, dVar);
         new SparseArray();
         new SparseArray();
     }

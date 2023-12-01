@@ -22,11 +22,11 @@ public final class ColorCutQuantizer {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    final int[] f3184a;
+    final int[] f3136a;
     final int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    final List<Palette.Swatch> f3185c;
+    final List<Palette.Swatch> f3137c;
     final Palette.Filter[] e;
     private final float[] f = new float[3];
     final TimingLogger d = null;
@@ -37,7 +37,7 @@ public final class ColorCutQuantizer {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f3187c;
+        private int f3139c;
         private int d;
         private int e;
         private int f;
@@ -48,7 +48,7 @@ public final class ColorCutQuantizer {
 
         Vbox(int i, int i2) {
             this.b = i;
-            this.f3187c = i2;
+            this.f3139c = i2;
             d();
         }
 
@@ -61,11 +61,11 @@ public final class ColorCutQuantizer {
         }
 
         final int c() {
-            return (this.f3187c + 1) - this.b;
+            return (this.f3139c + 1) - this.b;
         }
 
         final void d() {
-            int[] iArr = ColorCutQuantizer.this.f3184a;
+            int[] iArr = ColorCutQuantizer.this.f3136a;
             int[] iArr2 = ColorCutQuantizer.this.b;
             int i = this.b;
             int i2 = Integer.MAX_VALUE;
@@ -77,7 +77,7 @@ public final class ColorCutQuantizer {
             int i8 = 0;
             while (true) {
                 int i9 = i8;
-                if (i > this.f3187c) {
+                if (i > this.f3139c) {
                     this.e = i2;
                     this.f = i5;
                     this.g = i3;
@@ -130,8 +130,8 @@ public final class ColorCutQuantizer {
         final Vbox e() {
             if (b()) {
                 int g = g();
-                Vbox vbox = new Vbox(g + 1, this.f3187c);
-                this.f3187c = g;
+                Vbox vbox = new Vbox(g + 1, this.f3139c);
+                this.f3139c = g;
                 d();
                 return vbox;
             }
@@ -150,16 +150,16 @@ public final class ColorCutQuantizer {
 
         final int g() {
             int f = f();
-            int[] iArr = ColorCutQuantizer.this.f3184a;
+            int[] iArr = ColorCutQuantizer.this.f3136a;
             int[] iArr2 = ColorCutQuantizer.this.b;
-            ColorCutQuantizer.a(iArr, f, this.b, this.f3187c);
-            Arrays.sort(iArr, this.b, this.f3187c + 1);
-            ColorCutQuantizer.a(iArr, f, this.b, this.f3187c);
+            ColorCutQuantizer.a(iArr, f, this.b, this.f3139c);
+            Arrays.sort(iArr, this.b, this.f3139c + 1);
+            ColorCutQuantizer.a(iArr, f, this.b, this.f3139c);
             int i = this.d / 2;
             int i2 = this.b;
             int i3 = 0;
             while (true) {
-                int i4 = this.f3187c;
+                int i4 = this.f3139c;
                 if (i2 > i4) {
                     return this.b;
                 }
@@ -172,13 +172,13 @@ public final class ColorCutQuantizer {
         }
 
         final Palette.Swatch h() {
-            int[] iArr = ColorCutQuantizer.this.f3184a;
+            int[] iArr = ColorCutQuantizer.this.f3136a;
             int[] iArr2 = ColorCutQuantizer.this.b;
             int i = 0;
             int i2 = 0;
             int i3 = 0;
             int i4 = 0;
-            for (int i5 = this.b; i5 <= this.f3187c; i5++) {
+            for (int i5 = this.b; i5 <= this.f3139c; i5++) {
                 int i6 = iArr[i5];
                 int i7 = iArr2[i6];
                 i2 += i7;
@@ -226,7 +226,7 @@ public final class ColorCutQuantizer {
             i6 = i7;
         }
         int[] iArr3 = new int[i2];
-        this.f3184a = iArr3;
+        this.f3136a = iArr3;
         int i8 = 0;
         int i9 = 0;
         while (true) {
@@ -243,10 +243,10 @@ public final class ColorCutQuantizer {
             i9 = i11;
         }
         if (i2 > i) {
-            this.f3185c = d(i);
+            this.f3137c = d(i);
             return;
         }
-        this.f3185c = new ArrayList();
+        this.f3137c = new ArrayList();
         int i12 = 0;
         while (true) {
             int i13 = i12;
@@ -254,7 +254,7 @@ public final class ColorCutQuantizer {
                 return;
             }
             int i14 = iArr3[i13];
-            this.f3185c.add(new Palette.Swatch(g(i14), iArr2[i14]));
+            this.f3137c.add(new Palette.Swatch(g(i14), iArr2[i14]));
             i12 = i13 + 1;
         }
     }
@@ -338,7 +338,7 @@ public final class ColorCutQuantizer {
 
     private List<Palette.Swatch> d(int i) {
         PriorityQueue<Vbox> priorityQueue = new PriorityQueue<>(i, g);
-        priorityQueue.offer(new Vbox(0, this.f3184a.length - 1));
+        priorityQueue.offer(new Vbox(0, this.f3136a.length - 1));
         a(priorityQueue, i);
         return a(priorityQueue);
     }
@@ -359,6 +359,6 @@ public final class ColorCutQuantizer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public List<Palette.Swatch> a() {
-        return this.f3185c;
+        return this.f3137c;
     }
 }

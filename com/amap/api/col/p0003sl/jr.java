@@ -36,21 +36,15 @@ public final class jr implements Closeable {
     private long j;
     private Writer m;
     private int p;
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Pattern f5215a = Pattern.compile("[a-z0-9_-]{1,120}");
+    static final Pattern a = Pattern.compile("[a-z0-9_-]{1,120}");
     public static final Charset b = Charset.forName("US-ASCII");
-
-    /* renamed from: c  reason: collision with root package name */
-    static final Charset f5216c = Charset.forName("UTF-8");
+    static final Charset c = Charset.forName("UTF-8");
     private static final ThreadFactory r = new ThreadFactory() { // from class: com.amap.api.col.3sl.jr.1
-
-        /* renamed from: a  reason: collision with root package name */
-        private final AtomicInteger f5217a = new AtomicInteger(1);
+        private final AtomicInteger a = new AtomicInteger(1);
 
         @Override // java.util.concurrent.ThreadFactory
         public final Thread newThread(Runnable runnable) {
-            return new Thread(runnable, "disklrucache#" + this.f5217a.getAndIncrement());
+            return new Thread(runnable, "disklrucache#" + this.a.getAndIncrement());
         }
     };
     static ThreadPoolExecutor d = new ThreadPoolExecutor(0, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue(), r);
@@ -88,20 +82,18 @@ public final class jr implements Closeable {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jr$a.class */
     public final class a {
         private final c b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final boolean[] f5220c;
+        private final boolean[] c;
         private boolean d;
         private boolean e;
 
         /* renamed from: com.amap.api.col.3sl.jr$a$a  reason: collision with other inner class name */
         /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jr$a$a.class */
-        final class C0058a extends FilterOutputStream {
-            private C0058a(OutputStream outputStream) {
+        final class C0018a extends FilterOutputStream {
+            private C0018a(OutputStream outputStream) {
                 super(outputStream);
             }
 
-            /* synthetic */ C0058a(a aVar, OutputStream outputStream, byte b) {
+            /* synthetic */ C0018a(a aVar, OutputStream outputStream, byte b) {
                 this(outputStream);
             }
 
@@ -144,7 +136,7 @@ public final class jr implements Closeable {
 
         private a(c cVar) {
             this.b = cVar;
-            this.f5220c = cVar.d ? null : new boolean[jr.this.k];
+            this.c = cVar.d ? null : new boolean[jr.this.k];
         }
 
         /* synthetic */ a(jr jrVar, c cVar, byte b) {
@@ -158,7 +150,7 @@ public final class jr implements Closeable {
 
         public final OutputStream a() throws IOException {
             FileOutputStream fileOutputStream;
-            C0058a c0058a;
+            C0018a c0018a;
             if (jr.this.k <= 0) {
                 throw new IllegalArgumentException("Expected index 0 to be greater than 0 and less than the maximum value count of " + jr.this.k);
             }
@@ -167,7 +159,7 @@ public final class jr implements Closeable {
                     throw new IllegalStateException();
                 }
                 if (!this.b.d) {
-                    this.f5220c[0] = true;
+                    this.c[0] = true;
                 }
                 File b = this.b.b(0);
                 try {
@@ -180,9 +172,9 @@ public final class jr implements Closeable {
                         return jr.t;
                     }
                 }
-                c0058a = new C0058a(this, fileOutputStream, (byte) 0);
+                c0018a = new C0018a(this, fileOutputStream, (byte) 0);
             }
-            return c0058a;
+            return c0018a;
         }
 
         public final void b() throws IOException {
@@ -204,15 +196,13 @@ public final class jr implements Closeable {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jr$b.class */
     public final class b implements Closeable {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long f5223c;
+        private final long c;
         private final InputStream[] d;
         private final long[] e;
 
         private b(String str, long j, InputStream[] inputStreamArr, long[] jArr) {
             this.b = str;
-            this.f5223c = j;
+            this.c = j;
             this.d = inputStreamArr;
             this.e = jArr;
         }
@@ -246,16 +236,14 @@ public final class jr implements Closeable {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/jr$c.class */
     public final class c {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long[] f5225c;
+        private final long[] c;
         private boolean d;
         private a e;
         private long f;
 
         private c(String str) {
             this.b = str;
-            this.f5225c = new long[jr.this.k];
+            this.c = new long[jr.this.k];
         }
 
         /* synthetic */ c(jr jrVar, String str, byte b) {
@@ -277,7 +265,7 @@ public final class jr implements Closeable {
                     if (i2 >= strArr.length) {
                         return;
                     }
-                    cVar.f5225c[i2] = Long.parseLong(strArr[i2]);
+                    cVar.c[i2] = Long.parseLong(strArr[i2]);
                     i = i2 + 1;
                 } catch (NumberFormatException e) {
                     throw a(strArr);
@@ -297,7 +285,7 @@ public final class jr implements Closeable {
 
         public final String a() throws IOException {
             StringBuilder sb = new StringBuilder();
-            long[] jArr = this.f5225c;
+            long[] jArr = this.c;
             int length = jArr.length;
             int i = 0;
             while (true) {
@@ -381,7 +369,7 @@ public final class jr implements Closeable {
                         i = 0;
                         if (i3 >= this.k) {
                             break;
-                        } else if (!aVar.f5220c[i3]) {
+                        } else if (!aVar.c[i3]) {
                             aVar.c();
                             throw new IllegalStateException("Newly created entry didn't create value for index ".concat(String.valueOf(i3)));
                         } else if (!cVar.b(i3).exists()) {
@@ -400,9 +388,9 @@ public final class jr implements Closeable {
                 } else if (b2.exists()) {
                     File a2 = cVar.a(i);
                     b2.renameTo(a2);
-                    long j = cVar.f5225c[i];
+                    long j = cVar.c[i];
                     long length = a2.length();
-                    cVar.f5225c[i] = length;
+                    cVar.c[i] = length;
                     this.l = (this.l - j) + length;
                 }
                 i++;
@@ -503,7 +491,7 @@ public final class jr implements Closeable {
     }
 
     private static void e(String str) {
-        if (f5215a.matcher(str).matches()) {
+        if (a.matcher(str).matches()) {
             return;
         }
         throw new IllegalArgumentException("keys must match regex [a-z0-9_-]{1,120}: \"" + str + "\"");
@@ -595,7 +583,7 @@ public final class jr implements Closeable {
             c next = it.next();
             if (next.e == null) {
                 for (int i = 0; i < this.k; i++) {
-                    this.l += next.f5225c[i];
+                    this.l += next.c[i];
                 }
             } else {
                 next.e = null;
@@ -706,7 +694,7 @@ public final class jr implements Closeable {
                 if (j()) {
                     f().submit(this.s);
                 }
-                return new b(this, str, cVar.f, inputStreamArr, cVar.f5225c, (byte) 0);
+                return new b(this, str, cVar.f, inputStreamArr, cVar.c, (byte) 0);
             }
             return null;
         }
@@ -752,8 +740,8 @@ public final class jr implements Closeable {
                     if (a2.exists() && !a2.delete()) {
                         throw new IOException("failed to delete ".concat(String.valueOf(a2)));
                     }
-                    this.l -= cVar.f5225c[i];
-                    cVar.f5225c[i] = 0;
+                    this.l -= cVar.c[i];
+                    cVar.c[i] = 0;
                 }
                 this.p++;
                 this.m.append((CharSequence) ("REMOVE " + str + '\n'));

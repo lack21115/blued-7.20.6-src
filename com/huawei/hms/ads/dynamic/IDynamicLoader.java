@@ -27,7 +27,7 @@ public interface IDynamicLoader extends IInterface {
     public static abstract class Stub extends Binder implements IDynamicLoader {
 
         /* renamed from: a  reason: collision with root package name */
-        static final int f22454a = 1;
+        static final int f8846a = 1;
         private static final String b = "com.huawei.hms.ads.dynamic.IDynamicLoader";
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -36,15 +36,15 @@ public interface IDynamicLoader extends IInterface {
             public static IDynamicLoader sDefaultImpl;
 
             /* renamed from: a  reason: collision with root package name */
-            private IBinder f22455a;
+            private IBinder f8847a;
 
             Proxy(IBinder iBinder) {
-                this.f22455a = iBinder;
+                this.f8847a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f22455a;
+                return this.f8847a;
             }
 
             public String getInterfaceDescriptor() {
@@ -65,7 +65,7 @@ public interface IDynamicLoader extends IInterface {
                         iBinder = iObjectWrapper2.asBinder();
                     }
                     obtain.writeStrongBinder(iBinder);
-                    if (this.f22455a.transact(1, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
+                    if (this.f8847a.transact(1, obtain, obtain2, 0) || Stub.getDefaultImpl() == null) {
                         obtain2.readException();
                         return IObjectWrapper.Stub.asInterface(obtain2.readStrongBinder());
                     }

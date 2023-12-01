@@ -9,18 +9,18 @@ import java.util.LinkedHashMap;
 public final class c implements e<String, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap<String, Bitmap> f7828a;
+    private final LinkedHashMap<String, Bitmap> f4988a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7829c;
+    private int f4989c;
 
     public c(int i) {
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
         this.b = i;
-        this.f7828a = new LinkedHashMap<>(0, 0.75f, true);
+        this.f4988a = new LinkedHashMap<>(0, 0.75f, true);
     }
 
     private static int a(Bitmap bitmap) {
@@ -33,7 +33,7 @@ public final class c implements e<String, Bitmap> {
     public Bitmap b(String str) {
         if (str != null) {
             synchronized (this) {
-                Bitmap bitmap = this.f7828a.get(str);
+                Bitmap bitmap = this.f4988a.get(str);
                 if (bitmap == null || bitmap.isRecycled()) {
                     return null;
                 }
@@ -57,28 +57,28 @@ public final class c implements e<String, Bitmap> {
             r0 = r4
             monitor-enter(r0)
             r0 = r4
-            int r0 = r0.f7829c     // Catch: java.lang.Throwable -> Lb1
+            int r0 = r0.f4989c     // Catch: java.lang.Throwable -> Lb1
             if (r0 < 0) goto L8a
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f7828a     // Catch: java.lang.Throwable -> Lb1
+            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f4988a     // Catch: java.lang.Throwable -> Lb1
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lb1
             if (r0 == 0) goto L1a
             r0 = r4
-            int r0 = r0.f7829c     // Catch: java.lang.Throwable -> Lb1
+            int r0 = r0.f4989c     // Catch: java.lang.Throwable -> Lb1
             if (r0 != 0) goto L8a
         L1a:
             r0 = r4
-            int r0 = r0.f7829c     // Catch: java.lang.Throwable -> Lb1
+            int r0 = r0.f4989c     // Catch: java.lang.Throwable -> Lb1
             r1 = r5
             if (r0 <= r1) goto L87
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f7828a     // Catch: java.lang.Throwable -> Lb1
+            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f4988a     // Catch: java.lang.Throwable -> Lb1
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lb1
             if (r0 == 0) goto L2f
             goto L87
         L2f:
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f7828a     // Catch: java.lang.Throwable -> Lb1
+            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f4988a     // Catch: java.lang.Throwable -> Lb1
             java.util.Set r0 = r0.entrySet()     // Catch: java.lang.Throwable -> Lb1
             java.util.Iterator r0 = r0.iterator()     // Catch: java.lang.Throwable -> Lb1
             java.lang.Object r0 = r0.next()     // Catch: java.lang.Throwable -> Lb1
@@ -102,17 +102,17 @@ public final class c implements e<String, Bitmap> {
             int r0 = a(r0)     // Catch: java.lang.Throwable -> Lb6
             r6 = r0
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f7828a     // Catch: java.lang.Throwable -> Lb6
+            java.util.LinkedHashMap<java.lang.String, android.graphics.Bitmap> r0 = r0.f4988a     // Catch: java.lang.Throwable -> Lb6
             r1 = r7
             java.lang.Object r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> Lb6
             android.graphics.Bitmap r0 = (android.graphics.Bitmap) r0     // Catch: java.lang.Throwable -> Lb6
             r0.recycle()     // Catch: java.lang.Throwable -> Lb6
             r0 = r4
             r1 = r4
-            int r1 = r1.f7829c     // Catch: java.lang.Throwable -> Lb6
+            int r1 = r1.f4989c     // Catch: java.lang.Throwable -> Lb6
             r2 = r6
             int r1 = r1 - r2
-            r0.f7829c = r1     // Catch: java.lang.Throwable -> Lb6
+            r0.f4989c = r1     // Catch: java.lang.Throwable -> Lb6
         L82:
             r0 = r4
             monitor-exit(r0)     // Catch: java.lang.Throwable -> Lb1
@@ -160,10 +160,10 @@ public final class c implements e<String, Bitmap> {
             throw new NullPointerException("key == null || value == null");
         }
         synchronized (this) {
-            this.f7829c += a(bitmap);
-            Bitmap put = this.f7828a.put(str, bitmap);
+            this.f4989c += a(bitmap);
+            Bitmap put = this.f4988a.put(str, bitmap);
             if (put != null) {
-                this.f7829c -= a(put);
+                this.f4989c -= a(put);
             }
         }
         a(this.b);
@@ -176,9 +176,9 @@ public final class c implements e<String, Bitmap> {
             throw new NullPointerException("key == null");
         }
         synchronized (this) {
-            Bitmap remove = this.f7828a.remove(str);
+            Bitmap remove = this.f4988a.remove(str);
             if (remove != null) {
-                this.f7829c -= a(remove);
+                this.f4989c -= a(remove);
             }
         }
     }
@@ -187,7 +187,7 @@ public final class c implements e<String, Bitmap> {
     public final Collection<String> a() {
         HashSet hashSet;
         synchronized (this) {
-            hashSet = new HashSet(this.f7828a.keySet());
+            hashSet = new HashSet(this.f4988a.keySet());
         }
         return hashSet;
     }
@@ -199,9 +199,9 @@ public final class c implements e<String, Bitmap> {
             throw new NullPointerException("key == null");
         }
         synchronized (this) {
-            Bitmap remove = this.f7828a.remove(str2);
+            Bitmap remove = this.f4988a.remove(str2);
             if (remove != null) {
-                this.f7829c -= a(remove);
+                this.f4989c -= a(remove);
             }
         }
     }

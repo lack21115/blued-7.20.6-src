@@ -37,8 +37,6 @@ public final class b {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v21, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r0v32, types: [java.lang.Object] */
     public static void b(Context context, long j) {
         Map hashMap;
         a a2 = a(context, j);

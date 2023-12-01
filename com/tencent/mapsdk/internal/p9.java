@@ -12,7 +12,7 @@ public class p9<D extends n9> extends u9<D> implements k9<D> {
     private ArrayList<m9<D>> b = new ArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f37686c = true;
+    private boolean f23995c = true;
 
     private void a(String str, D d, List<m9<D>> list) {
         for (m9<D> m9Var : list) {
@@ -63,7 +63,7 @@ public class p9<D extends n9> extends u9<D> implements k9<D> {
                     break;
                 }
                 d2 = d;
-                if (this.f37686c) {
+                if (this.f23995c) {
                     ra.b(ma.o, str, (Object) ("back to fill " + next));
                     arrayList.add(next);
                     d2 = d;
@@ -179,7 +179,7 @@ public class p9<D extends n9> extends u9<D> implements k9<D> {
     }
 
     public void a(boolean z) {
-        this.f37686c = z;
+        this.f23995c = z;
     }
 
     public final void a(m9<D>... m9VarArr) {

@@ -7,20 +7,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveOperationChildViewBinding.class */
 public final class LiveOperationChildViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12308a;
+    public final FrameLayout a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f12309c;
+    public final View c;
     private final FrameLayout d;
 
     private LiveOperationChildViewBinding(FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, View view) {
         this.d = frameLayout;
-        this.f12308a = frameLayout2;
+        this.a = frameLayout2;
         this.b = frameLayout3;
-        this.f12309c = view;
+        this.c = view;
     }
 
     public static LiveOperationChildViewBinding a(View view) {
@@ -43,7 +39,6 @@ public final class LiveOperationChildViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

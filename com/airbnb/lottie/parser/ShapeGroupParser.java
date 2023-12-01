@@ -42,9 +42,9 @@ public class ShapeGroupParser {
             } else {
                 jsonReader.beginArray();
                 while (jsonReader.hasNext()) {
-                    ContentModel a2 = ContentModelParser.a(jsonReader, lottieComposition);
-                    if (a2 != null) {
-                        arrayList.add(a2);
+                    ContentModel a = ContentModelParser.a(jsonReader, lottieComposition);
+                    if (a != null) {
+                        arrayList.add(a);
                     }
                 }
                 jsonReader.endArray();

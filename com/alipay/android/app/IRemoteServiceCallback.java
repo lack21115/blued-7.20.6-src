@@ -19,12 +19,10 @@ public interface IRemoteServiceCallback extends IInterface {
 
         /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/app/IRemoteServiceCallback$Stub$a.class */
         static class a implements IRemoteServiceCallback {
-
-            /* renamed from: a  reason: collision with root package name */
-            private IBinder f4508a;
+            private IBinder a;
 
             a(IBinder iBinder) {
-                this.f4508a = iBinder;
+                this.a = iBinder;
             }
 
             public String a() {
@@ -33,7 +31,7 @@ public interface IRemoteServiceCallback extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f4508a;
+                return this.a;
             }
 
             @Override // com.alipay.android.app.IRemoteServiceCallback
@@ -43,7 +41,7 @@ public interface IRemoteServiceCallback extends IInterface {
                 try {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     boolean z = false;
-                    this.f4508a.transact(3, obtain, obtain2, 0);
+                    this.a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -66,7 +64,7 @@ public interface IRemoteServiceCallback extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     obtain.writeInt(z ? 1 : 0);
                     obtain.writeString(str);
-                    this.f4508a.transact(2, obtain, obtain2, 0);
+                    this.a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -89,7 +87,7 @@ public interface IRemoteServiceCallback extends IInterface {
                     } else {
                         obtain.writeInt(0);
                     }
-                    this.f4508a.transact(1, obtain, obtain2, 0);
+                    this.a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();

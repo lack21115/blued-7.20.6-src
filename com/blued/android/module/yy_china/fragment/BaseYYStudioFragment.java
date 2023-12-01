@@ -1,6 +1,6 @@
 package com.blued.android.module.yy_china.fragment;
 
-import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,9 +22,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragmentActivity;
@@ -162,7 +164,6 @@ import com.blued.android.module.yy_china.view.YyFirstMeettingLayout;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.igexin.push.config.c;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.tencent.trtc.TRTCCloudDef;
 import java.lang.ref.WeakReference;
@@ -216,9 +217,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
     private SVGAImageView ao;
     private LiveAnimationView ap;
     private LiveAnimationView aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private TextView f17009ar;
+    private TextView ar;
     private ShapeTextView as;
     private YYFloatVoteView at;
     private YYPkTimerView au;
@@ -227,9 +226,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
     private int ax;
     private int ay;
     public Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f17010c;
+    public View c;
     public RecyclerView j;
     public FrameLayout k;
     public YYImListView l;
@@ -259,12 +256,10 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/BaseYYStudioFragment$BaseRoomHandler.class */
     public static class BaseRoomHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        public WeakReference<BaseYYStudioFragment> f17036a;
+        public WeakReference<BaseYYStudioFragment> a;
 
         public BaseRoomHandler(BaseYYStudioFragment baseYYStudioFragment) {
-            this.f17036a = new WeakReference<>(baseYYStudioFragment);
+            this.a = new WeakReference<>(baseYYStudioFragment);
         }
 
         @Override // android.os.Handler
@@ -273,141 +268,141 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
             super.handleMessage(message);
             int i = message.what;
             if (i != 1) {
-                if (i != 2 || (weakReference = this.f17036a) == null || weakReference.get() == null) {
+                if (i != 2 || (weakReference = this.a) == null || weakReference.get() == null) {
                     return;
                 }
-                this.f17036a.get().T();
+                this.a.get().T();
                 return;
             }
-            WeakReference<BaseYYStudioFragment> weakReference2 = this.f17036a;
+            WeakReference<BaseYYStudioFragment> weakReference2 = this.a;
             if (weakReference2 == null || weakReference2.get() == null) {
                 return;
             }
-            this.f17036a.get().U();
+            this.a.get().U();
         }
     }
 
     private void V() {
         this.aA = new YYGiftAnimManager(this, this.al, this.am, this.an, this.ao);
-        this.J = new YYMountAnimManager(this, this.ap, this.f17009ar);
+        this.J = new YYMountAnimManager(this, this.ap, this.ar);
         this.K = new YYHostUpAnimManager(this, this.aq);
         LiveLogUtils.a("BaseYYStudioFragment --> initManager --> init");
     }
 
     private void W() {
-        this.R = (RelativeLayout) this.f17010c.findViewById(R.id.root_layout);
-        this.S = (FrameLayout) this.f17010c.findViewById(R.id.fra_add_view_layout);
-        final FrameLayout frameLayout = (FrameLayout) this.f17010c.findViewById(R.id.yy_container);
+        this.R = (RelativeLayout) this.c.findViewById(R.id.root_layout);
+        this.S = (FrameLayout) this.c.findViewById(R.id.fra_add_view_layout);
+        final FrameLayout frameLayout = (FrameLayout) this.c.findViewById(R.id.yy_container);
         final ViewGroup.LayoutParams layoutParams = frameLayout.getLayoutParams();
-        this.f17010c.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.4
+        this.c.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.4
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
-                int height = BaseYYStudioFragment.this.f17010c.getHeight();
+                int height = BaseYYStudioFragment.this.c.getHeight();
                 if (height != 0) {
-                    BaseYYStudioFragment.this.f17010c.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    BaseYYStudioFragment.this.c.getViewTreeObserver().removeOnGlobalLayoutListener(this);
                     layoutParams.height = height;
                     Logger.b("==xpf", "params.height:" + layoutParams.height);
                     frameLayout.setLayoutParams(layoutParams);
                 }
             }
         });
-        MarqueeTextImagesView marqueeTextImagesView = (MarqueeTextImagesView) this.f17010c.findViewById(R.id.tv_marq);
+        MarqueeTextImagesView marqueeTextImagesView = (MarqueeTextImagesView) this.c.findViewById(R.id.tv_marq);
         this.t = marqueeTextImagesView;
         marqueeTextImagesView.a(getFragmentActive());
-        YYStudioTitleView yYStudioTitleView = (YYStudioTitleView) this.f17010c.findViewById(R.id.ll_title_view);
+        YYStudioTitleView yYStudioTitleView = (YYStudioTitleView) this.c.findViewById(R.id.ll_title_view);
         this.n = yYStudioTitleView;
         yYStudioTitleView.a(this);
         this.N = (TextView) this.n.findViewById(R.id.tv_host_open_time);
-        YYMagicalBoxView yYMagicalBoxView = (YYMagicalBoxView) this.f17010c.findViewById(R.id.magical_box);
+        YYMagicalBoxView yYMagicalBoxView = (YYMagicalBoxView) this.c.findViewById(R.id.magical_box);
         this.O = yYMagicalBoxView;
         yYMagicalBoxView.a(this);
-        this.P = (FrameLayout) this.f17010c.findViewById(R.id.fl_magical_box_msg);
-        this.Q = (TextView) this.f17010c.findViewById(R.id.tv_notice_text);
-        YYBottomView yYBottomView = (YYBottomView) this.f17010c.findViewById(R.id.ll_bottom);
+        this.P = (FrameLayout) this.c.findViewById(R.id.fl_magical_box_msg);
+        this.Q = (TextView) this.c.findViewById(R.id.tv_notice_text);
+        YYBottomView yYBottomView = (YYBottomView) this.c.findViewById(R.id.ll_bottom);
         this.o = yYBottomView;
         yYBottomView.a(this, this.F);
         if (YYRoomInfoManager.e().b() != null) {
             YYRoomInfoManager.e().b().clientSendMessTask = ClientSendMessTaskNewModel.Companion.a(this, getFragmentActive());
         }
-        YYImListView yYImListView = (YYImListView) this.f17010c.findViewById(R.id.rv_im_list_view);
+        YYImListView yYImListView = (YYImListView) this.c.findViewById(R.id.rv_im_list_view);
         this.l = yYImListView;
         yYImListView.a(this);
-        YYFloatVoteView yYFloatVoteView = (YYFloatVoteView) this.f17010c.findViewById(R.id.vote_time);
+        YYFloatVoteView yYFloatVoteView = (YYFloatVoteView) this.c.findViewById(R.id.vote_time);
         this.at = yYFloatVoteView;
         yYFloatVoteView.a(this);
-        YyEntranceEffectLayout yyEntranceEffectLayout = (YyEntranceEffectLayout) this.f17010c.findViewById(R.id.yy_entras);
+        YyEntranceEffectLayout yyEntranceEffectLayout = (YyEntranceEffectLayout) this.c.findViewById(R.id.yy_entras);
         this.v = yyEntranceEffectLayout;
         yyEntranceEffectLayout.a(this);
-        YyFirstMeettingLayout yyFirstMeettingLayout = (YyFirstMeettingLayout) this.f17010c.findViewById(R.id.yy_first_meet);
+        YyFirstMeettingLayout yyFirstMeettingLayout = (YyFirstMeettingLayout) this.c.findViewById(R.id.yy_first_meet);
         this.w = yyFirstMeettingLayout;
         yyFirstMeettingLayout.a(this);
-        this.x = (GiftTomicItemModeView) this.f17010c.findViewById(R.id.fra_gift_to_mic_layout);
-        this.y = (YYRoomFullSvgaAniView) this.f17010c.findViewById(R.id.full_svga_ani);
-        ClickOneGiftSendView clickOneGiftSendView = (ClickOneGiftSendView) this.f17010c.findViewById(R.id.one_send_gift);
+        this.x = (GiftTomicItemModeView) this.c.findViewById(R.id.fra_gift_to_mic_layout);
+        this.y = (YYRoomFullSvgaAniView) this.c.findViewById(R.id.full_svga_ani);
+        ClickOneGiftSendView clickOneGiftSendView = (ClickOneGiftSendView) this.c.findViewById(R.id.one_send_gift);
         this.z = clickOneGiftSendView;
         if (this instanceof PlayingStudioFragment) {
             clickOneGiftSendView.a(this, (IMJsonContents109Model) null);
         }
-        YYRedPackageView yYRedPackageView = (YYRedPackageView) this.f17010c.findViewById(R.id.iv_yy_red_envelope);
+        YYRedPackageView yYRedPackageView = (YYRedPackageView) this.c.findViewById(R.id.iv_yy_red_envelope);
         this.M = yYRedPackageView;
         yYRedPackageView.a(this);
-        this.r = (FrameLayout) this.f17010c.findViewById(R.id.ll_gift_layout);
-        YYRoomAdBanner yYRoomAdBanner = (YYRoomAdBanner) this.f17010c.findViewById(R.id.banner_adv);
+        this.r = (FrameLayout) this.c.findViewById(R.id.ll_gift_layout);
+        YYRoomAdBanner yYRoomAdBanner = (YYRoomAdBanner) this.c.findViewById(R.id.banner_adv);
         this.L = yYRoomAdBanner;
         yYRoomAdBanner.a(this);
-        YYPkTimerView yYPkTimerView = (YYPkTimerView) this.f17010c.findViewById(R.id.pk_timer_view);
+        YYPkTimerView yYPkTimerView = (YYPkTimerView) this.c.findViewById(R.id.pk_timer_view);
         this.au = yYPkTimerView;
         yYPkTimerView.a(this);
-        YYWishViewPager yYWishViewPager = (YYWishViewPager) this.f17010c.findViewById(R.id.wish_task_view);
+        YYWishViewPager yYWishViewPager = (YYWishViewPager) this.c.findViewById(R.id.wish_task_view);
         this.A = yYWishViewPager;
         yYWishViewPager.a(this);
-        this.B = (ShapeLinearLayout) this.f17010c.findViewById(R.id.ll_topic);
-        this.C = (BluedMarqueeTextView) this.f17010c.findViewById(R.id.tv_marr_topic);
+        this.B = (ShapeLinearLayout) this.c.findViewById(R.id.ll_topic);
+        this.C = (BluedMarqueeTextView) this.c.findViewById(R.id.tv_marr_topic);
         j();
-        YYPKBoardViewNew yYPKBoardViewNew = (YYPKBoardViewNew) this.f17010c.findViewById(R.id.room_pk_view);
+        YYPKBoardViewNew yYPKBoardViewNew = (YYPKBoardViewNew) this.c.findViewById(R.id.room_pk_view);
         this.D = yYPKBoardViewNew;
         yYPKBoardViewNew.a(this);
-        this.j = (RecyclerView) this.f17010c.findViewById(R.id.rv_chatting_list_view);
-        this.k = (FrameLayout) this.f17010c.findViewById(R.id.fl_room_content);
-        this.aj = (KeyboardListenLinearLayout) this.f17010c.findViewById(R.id.keyboard_linear_layout);
-        this.an = (LiveAnimationView) this.f17010c.findViewById(R.id.live_animation_layout);
-        this.ao = (SVGAImageView) this.f17010c.findViewById(R.id.live_animation_svga_layout);
-        this.ap = (LiveAnimationView) this.f17010c.findViewById(R.id.yy_mount_animation_layout);
-        this.aq = (LiveAnimationView) this.f17010c.findViewById(R.id.yy_up_animation_layout);
-        this.f17009ar = (TextView) this.f17010c.findViewById(R.id.tv_mount_marq);
-        this.q = (YYBackgroundView) this.f17010c.findViewById(R.id.yy_backgroud);
-        this.m = (ConstraintLayout) this.f17010c.findViewById(R.id.con_room);
+        this.j = this.c.findViewById(R.id.rv_chatting_list_view);
+        this.k = (FrameLayout) this.c.findViewById(R.id.fl_room_content);
+        this.aj = (KeyboardListenLinearLayout) this.c.findViewById(R.id.keyboard_linear_layout);
+        this.an = (LiveAnimationView) this.c.findViewById(R.id.live_animation_layout);
+        this.ao = (SVGAImageView) this.c.findViewById(R.id.live_animation_svga_layout);
+        this.ap = (LiveAnimationView) this.c.findViewById(R.id.yy_mount_animation_layout);
+        this.aq = (LiveAnimationView) this.c.findViewById(R.id.yy_up_animation_layout);
+        this.ar = (TextView) this.c.findViewById(R.id.tv_mount_marq);
+        this.q = (YYBackgroundView) this.c.findViewById(R.id.yy_backgroud);
+        this.m = this.c.findViewById(R.id.con_room);
         this.q.setFragment(this);
-        this.ak = (RelativeLayout) this.f17010c.findViewById(R.id.ll_hit_view);
-        this.al = (GiftBaseHitView) this.f17010c.findViewById(R.id.hitView1);
-        this.am = (GiftBaseHitView) this.f17010c.findViewById(R.id.hitView2);
-        this.s = (YYGoldListView) this.f17010c.findViewById(R.id.ll_rank);
-        this.as = (ShapeTextView) this.f17010c.findViewById(R.id.tv_broadcast);
-        this.u = (YYGameView) this.f17010c.findViewById(R.id.yy_game_layout);
-        this.p = (YYMusicFloatView) this.f17010c.findViewById(R.id.music_float);
-        this.av = (LinearLayout) this.f17010c.findViewById(R.id.ll_cp_guide);
-        this.aD = (ImageView) this.f17010c.findViewById(R.id.img_ktv_background);
-        this.U = (ImageView) this.f17010c.findViewById(R.id.img_ktv_twinkle);
-        ImageView imageView = (ImageView) this.f17010c.findViewById(R.id.img_ktv_top_lights);
+        this.ak = (RelativeLayout) this.c.findViewById(R.id.ll_hit_view);
+        this.al = (GiftBaseHitView) this.c.findViewById(R.id.hitView1);
+        this.am = (GiftBaseHitView) this.c.findViewById(R.id.hitView2);
+        this.s = (YYGoldListView) this.c.findViewById(R.id.ll_rank);
+        this.as = (ShapeTextView) this.c.findViewById(R.id.tv_broadcast);
+        this.u = (YYGameView) this.c.findViewById(R.id.yy_game_layout);
+        this.p = (YYMusicFloatView) this.c.findViewById(R.id.music_float);
+        this.av = (LinearLayout) this.c.findViewById(R.id.ll_cp_guide);
+        this.aD = (ImageView) this.c.findViewById(R.id.img_ktv_background);
+        this.U = (ImageView) this.c.findViewById(R.id.img_ktv_twinkle);
+        ImageView imageView = (ImageView) this.c.findViewById(R.id.img_ktv_top_lights);
         this.V = imageView;
         imageView.setTag("");
-        ImageView imageView2 = (ImageView) this.f17010c.findViewById(R.id.img_ktv_bottom_lights);
+        ImageView imageView2 = (ImageView) this.c.findViewById(R.id.img_ktv_bottom_lights);
         this.W = imageView2;
         imageView2.setTag("");
-        this.T = (ConstraintLayout) this.f17010c.findViewById(R.id.fl_ktv_background);
-        this.X = (ImageView) this.f17010c.findViewById(R.id.img_ktv_twinkle_arrow);
-        this.Y = (ImageView) this.f17010c.findViewById(R.id.img_ktv_background_highlight);
-        this.Z = (ImageView) this.f17010c.findViewById(R.id.img_bottom_cover);
-        this.aa = (SVGAImageView) this.f17010c.findViewById(R.id.img_room_pk_sgva);
-        this.ab = (YYRobMusicRoomVIew) this.f17010c.findViewById(R.id.img_rob_svga_background);
-        this.ac = (SVGAImageView) this.f17010c.findViewById(R.id.img_room_rob_sgva);
-        YYHolidayActivities yYHolidayActivities = (YYHolidayActivities) this.f17010c.findViewById(R.id.ll_activities);
+        this.T = this.c.findViewById(R.id.fl_ktv_background);
+        this.X = (ImageView) this.c.findViewById(R.id.img_ktv_twinkle_arrow);
+        this.Y = (ImageView) this.c.findViewById(R.id.img_ktv_background_highlight);
+        this.Z = (ImageView) this.c.findViewById(R.id.img_bottom_cover);
+        this.aa = (SVGAImageView) this.c.findViewById(R.id.img_room_pk_sgva);
+        this.ab = (YYRobMusicRoomVIew) this.c.findViewById(R.id.img_rob_svga_background);
+        this.ac = (SVGAImageView) this.c.findViewById(R.id.img_room_rob_sgva);
+        YYHolidayActivities yYHolidayActivities = (YYHolidayActivities) this.c.findViewById(R.id.ll_activities);
         this.ad = yYHolidayActivities;
         yYHolidayActivities.a(this);
-        YYExplorationView yYExplorationView = (YYExplorationView) this.f17010c.findViewById(R.id.ll_exploration_time);
+        YYExplorationView yYExplorationView = (YYExplorationView) this.c.findViewById(R.id.ll_exploration_time);
         this.ae = yYExplorationView;
         yYExplorationView.a(this);
-        this.af = (YYConfessedRoomView) this.f17010c.findViewById(R.id.confessed_view);
+        this.af = (YYConfessedRoomView) this.c.findViewById(R.id.confessed_view);
         X();
         Y();
         D();
@@ -422,7 +417,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
             if (StringUtils.b(b.music_info)) {
                 this.p.setVisibility(8);
             } else {
-                YYMusicMode yYMusicMode = (YYMusicMode) AppInfo.f().fromJson(b.music_info, (Class<Object>) YYMusicMode.class);
+                YYMusicMode yYMusicMode = (YYMusicMode) AppInfo.f().fromJson(b.music_info, YYMusicMode.class);
                 if (yYMusicMode == null) {
                     return;
                 }
@@ -511,7 +506,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                                 }
                                 break;
                             case 54:
-                                if (str.equals("6")) {
+                                if (str.equals(ATAdConst.ATDevFrameworkType.FLUTTER)) {
                                     z = true;
                                     break;
                                 }
@@ -549,7 +544,6 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                 this.j.setAdapter(yYSeatSaleAdapter);
                 this.E.bindToRecyclerView(this.j);
                 gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.9
-                    @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                     public int getSpanSize(int i) {
                         int i2 = 1;
                         if (i == 0 || i == 1) {
@@ -559,7 +553,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                     }
                 });
                 this.j.setBackgroundResource(R.drawable.shape_raduis_18dp_tran50_000000);
-                ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) this.k.getLayoutParams();
+                ConstraintLayout.LayoutParams layoutParams = this.k.getLayoutParams();
                 layoutParams.topMargin = DensityUtils.a(getContext(), 10.0f);
                 layoutParams.leftMargin = DensityUtils.a(getContext(), 10.0f);
                 layoutParams.rightMargin = DensityUtils.a(getContext(), 10.0f);
@@ -573,7 +567,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                 this.E.bindToRecyclerView(this.j);
                 break;
             case true:
-                YYMusicManager.f11418a.c();
+                YYMusicManager.a.c();
                 this.aw = new YYKtvPresenter(this);
                 if (b.stage_info != null && b.stage_info.status == 1) {
                     this.T.setVisibility(0);
@@ -666,7 +660,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                     list.get(1).itemType = 3;
                 }
                 b.setSeatList(list);
-                YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                 if (yYUserInfo == null) {
                     return;
                 }
@@ -728,12 +722,12 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
     }
 
     public static void a(Context context) {
-        if (YYRoomInfoManager.e().f17578a == null || TextUtils.isEmpty(YYRoomInfoManager.e().f17578a.chat_anchor)) {
+        if (YYRoomInfoManager.e().a == null || TextUtils.isEmpty(YYRoomInfoManager.e().a.chat_anchor)) {
             LiveLogUtils.a("BaseYYStudioFragment --> 小窗进入直播间 --> me == null 或者 chat_anchor = null");
             return;
         }
-        LiveLogUtils.a("BaseYYStudioFragment --> 小窗进入直播间 --> " + AppInfo.f().toJson(YYRoomInfoManager.e().f17578a));
-        if (YYRoomInfoManager.e().f17578a.chat_anchor.equals("1")) {
+        LiveLogUtils.a("BaseYYStudioFragment --> 小窗进入直播间 --> " + AppInfo.f().toJson(YYRoomInfoManager.e().a));
+        if (YYRoomInfoManager.e().a.chat_anchor.equals("1")) {
             a(context, true);
         } else {
             b(context, true);
@@ -755,7 +749,6 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
 
     private void a(final BaseConnectingAdapter baseConnectingAdapter) {
         baseConnectingAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.10
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYSeatMemberModel yYSeatMemberModel = (YYSeatMemberModel) baseConnectingAdapter.getData().get(i);
                 BaseYYStudioFragment.this.a(view, yYSeatMemberModel, yYSeatMemberModel.mic_position);
@@ -793,7 +786,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         }
         long currentTimeMillis = System.currentTimeMillis();
         long j = this.az;
-        if (j <= 0 || currentTimeMillis - j < c.l) {
+        if (j <= 0 || currentTimeMillis - j < 120000) {
             return;
         }
         YYRoomHttpUtils.r(str, new BluedUIHttpResponse<BluedEntityA<YYHeartModel>>(null) { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.14
@@ -829,7 +822,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
     private void a(String str, String str2, String str3) {
         LiveEventBus.get(LiveEventBusConstant.d).post("");
         FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
-        this.aC = (YYGiftListFragment) getChildFragmentManager().findFragmentByTag("LiveGift");
+        this.aC = getChildFragmentManager().findFragmentByTag("LiveGift");
         Bundle bundle = new Bundle();
         bundle.putString("from", str);
         bundle.putString("target_uid", str3);
@@ -878,7 +871,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         LiveLogUtils.a("BaseYYStudioFragment --> leaveAndDestroyChannel --> 失去媒体音频焦点，断开连接trtc");
         AudioManagerUtils.a().a(false);
         AudioChannelManager.j().c();
-        YYMusicManager.f11418a.c().f();
+        YYMusicManager.a.c().f();
         this.b.stopService(new Intent(this.b, NotificationService.class));
     }
 
@@ -909,7 +902,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                     BaseYYStudioFragment.this.e(b.publish_url);
                     LiveLogUtils.a("BaseYYStudioFragment --> onSwitchRole -->  主播开始推流 ... publish url: " + b.publish_url);
                 } else {
-                    YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                    YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                     if (yYUserInfo == null) {
                         return;
                     }
@@ -942,10 +935,10 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                     if (YYRoomInfoManager.e().b() == null || YYRoomInfoManager.e().b().music == null) {
                         return;
                     }
-                    YYMusicManager.f11418a.c().a(trtcAudioFrameModel, StringUtils.a(YYRoomInfoManager.e().b().music.uid, YYRoomInfoManager.e().k()));
+                    YYMusicManager.a.c().a(trtcAudioFrameModel, StringUtils.a(YYRoomInfoManager.e().b().music.uid, YYRoomInfoManager.e().k()));
                 } else if (!(BaseYYStudioFragment.this.aw instanceof YYRobMusicPresenter) || YYRoomInfoManager.e().b() == null || YYRoomInfoManager.e().b().robMus == null) {
                 } else {
-                    YYMusicManager.f11418a.c().a(trtcAudioFrameModel, StringUtils.a(YYRoomInfoManager.e().b().robMus.getUid(), YYRoomInfoManager.e().k()));
+                    YYMusicManager.a.c().a(trtcAudioFrameModel, StringUtils.a(YYRoomInfoManager.e().b().robMus.getUid(), YYRoomInfoManager.e().k()));
                 }
             }
 
@@ -972,17 +965,17 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                 LiveLogUtils.a("BaseYYStudioFragment --> onRecvCustomCmdMsg --> userId：" + str + "；cmdID：" + i);
                 if (YYRoomInfoManager.e().b() != null && TextUtils.equals(str, YYRoomInfoManager.e().b().uid)) {
                     if (i == 1) {
-                        if (TextUtils.isEmpty(str2) || (yYAudioConfig = (YYAudioConfig) AppInfo.f().fromJson(str2, (Class<Object>) YYAudioConfig.class)) == null) {
+                        if (TextUtils.isEmpty(str2) || (yYAudioConfig = (YYAudioConfig) AppInfo.f().fromJson(str2, YYAudioConfig.class)) == null) {
                             return;
                         }
-                        AudioChannelManager.j().a(yYAudioConfig.b, yYAudioConfig.f17861a);
+                        AudioChannelManager.j().a(yYAudioConfig.b, yYAudioConfig.a);
                     } else if (i == 2) {
                         AudioChannelManager.j().l();
                     } else if (i == 3) {
                         LiveLogUtils.a("BaseYYStudioFragment --> onRecvCustomCmdMsg --> EXIT_ROOM ... 用户被踢出房间 uid：" + YYRoomInfoManager.e().k());
                         Logger.e("BaseYYStudioFragment", "EXIT_ROOM of the TRTC message: " + str2);
-                        YYAudioConfig yYAudioConfig2 = (YYAudioConfig) AppInfo.f().fromJson(str2, (Class<Object>) YYAudioConfig.class);
-                        if (yYAudioConfig2 != null && TextUtils.equals(YYRoomInfoManager.e().k(), yYAudioConfig2.f17862c)) {
+                        YYAudioConfig yYAudioConfig2 = (YYAudioConfig) AppInfo.f().fromJson(str2, YYAudioConfig.class);
+                        if (yYAudioConfig2 != null && TextUtils.equals(YYRoomInfoManager.e().k(), yYAudioConfig2.c)) {
                             ToastUtils.a("你被房主移出了房间", 0);
                             YYRoomInfoManager.e().x();
                             BaseYYStudioFragment.this.getActivity().finish();
@@ -991,11 +984,11 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                     } else {
                         Logger.e("BaseYYStudioFragment", "LEAVE_MIC of the TRTC message: " + str2);
                         LiveLogUtils.a("BaseYYStudioFragment --> onRecvCustomCmdMsg --> LEAVE_MIC ... 麦上用户被抱下麦 uid：" + YYRoomInfoManager.e().k());
-                        YYAudioConfig yYAudioConfig3 = (YYAudioConfig) AppInfo.f().fromJson(str2, (Class<Object>) YYAudioConfig.class);
-                        if (yYAudioConfig3 != null && TextUtils.equals(yYAudioConfig3.f17862c, YYRoomInfoManager.e().k())) {
-                            if (YYRoomInfoManager.e().f17578a != null) {
-                                YYRoomInfoManager.e().f17578a.is_mic = "0";
-                                YYRoomInfoManager.e().f17578a.is_open_mic = 0;
+                        YYAudioConfig yYAudioConfig3 = (YYAudioConfig) AppInfo.f().fromJson(str2, YYAudioConfig.class);
+                        if (yYAudioConfig3 != null && TextUtils.equals(yYAudioConfig3.c, YYRoomInfoManager.e().k())) {
+                            if (YYRoomInfoManager.e().a != null) {
+                                YYRoomInfoManager.e().a.is_mic = "0";
+                                YYRoomInfoManager.e().a.is_open_mic = 0;
                             }
                             YYObserverManager.a().a("0");
                         }
@@ -1011,7 +1004,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                 TRTCSendLrcMsg tRTCSendLrcMsg2;
                 switch (i) {
                     case 1:
-                        if (TextUtils.isEmpty(str2) || (tRTCSendPKMuteMsg = (TRTCSendPKMuteMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendPKMuteMsg.class)) == null) {
+                        if (TextUtils.isEmpty(str2) || (tRTCSendPKMuteMsg = (TRTCSendPKMuteMsg) AppInfo.f().fromJson(str2, TRTCSendPKMuteMsg.class)) == null) {
                             return;
                         }
                         if (YYRoomInfoManager.e().b() == null || !YYRoomInfoManager.e().b().pk_has_connected) {
@@ -1027,7 +1020,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                     case 3:
                         Logger.e("BaseYYStudioFragment", "EXIT_ROOM of the TRTC message: " + str2);
                         LiveLogUtils.a("BaseYYStudioFragment --> onRecvSEIMsg --> EXIT_ROOM ... 用户被踢出房间 uid：" + YYRoomInfoManager.e().k());
-                        TRTCSendLeaveMsg tRTCSendLeaveMsg = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendLeaveMsg.class);
+                        TRTCSendLeaveMsg tRTCSendLeaveMsg = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, TRTCSendLeaveMsg.class);
                         if (tRTCSendLeaveMsg != null && TextUtils.equals(YYRoomInfoManager.e().k(), tRTCSendLeaveMsg.uid)) {
                             ToastUtils.a("你被房主移出了房间", 0);
                             YYRoomModel b = YYRoomInfoManager.e().b();
@@ -1041,7 +1034,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                         }
                         return;
                     case 4:
-                        if (BaseYYStudioFragment.this.E == null || !(BaseYYStudioFragment.this.E instanceof YYSeatKTVAdapter) || TextUtils.isEmpty(str2) || (tRTCSendLrcMsg = (TRTCSendLrcMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendLrcMsg.class)) == null) {
+                        if (BaseYYStudioFragment.this.E == null || !(BaseYYStudioFragment.this.E instanceof YYSeatKTVAdapter) || TextUtils.isEmpty(str2) || (tRTCSendLrcMsg = (TRTCSendLrcMsg) AppInfo.f().fromJson(str2, TRTCSendLrcMsg.class)) == null) {
                             return;
                         }
                         ((YYSeatKTVAdapter) BaseYYStudioFragment.this.E).a(StringUtils.a(tRTCSendLrcMsg.progressMs, 0));
@@ -1049,11 +1042,11 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                     case 5:
                         Logger.e("BaseYYStudioFragment", "LEAVE_MIC of the SEI message: " + str2);
                         LiveLogUtils.a("BaseYYStudioFragment --> onRecvSEIMsg --> LEAVE_MIC ... 麦上用户被抱下麦 uid：" + YYRoomInfoManager.e().k());
-                        TRTCSendLeaveMsg tRTCSendLeaveMsg2 = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendLeaveMsg.class);
+                        TRTCSendLeaveMsg tRTCSendLeaveMsg2 = (TRTCSendLeaveMsg) AppInfo.f().fromJson(str2, TRTCSendLeaveMsg.class);
                         if (tRTCSendLeaveMsg2 != null && TextUtils.equals(tRTCSendLeaveMsg2.uid, YYRoomInfoManager.e().k())) {
-                            if (YYRoomInfoManager.e().f17578a != null) {
-                                YYRoomInfoManager.e().f17578a.is_mic = "0";
-                                YYRoomInfoManager.e().f17578a.is_open_mic = 0;
+                            if (YYRoomInfoManager.e().a != null) {
+                                YYRoomInfoManager.e().a.is_mic = "0";
+                                YYRoomInfoManager.e().a.is_open_mic = 0;
                             }
                             YYRoomModel b2 = YYRoomInfoManager.e().b();
                             if (b2 != null && b2.music != null && TextUtils.equals(YYRoomInfoManager.e().k(), b2.music.uid)) {
@@ -1066,7 +1059,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                         return;
                     case 6:
                         LogUtils.d("ktv", "KTV_SONG_SCORE: user_id: " + str);
-                        if (!(BaseYYStudioFragment.this.E instanceof YYSeatKTVAdapter) || (trtcSongScoreModel = (TrtcSongScoreModel) AppInfo.f().fromJson(str2, (Class<Object>) TrtcSongScoreModel.class)) == null) {
+                        if (!(BaseYYStudioFragment.this.E instanceof YYSeatKTVAdapter) || (trtcSongScoreModel = (TrtcSongScoreModel) AppInfo.f().fromJson(str2, TrtcSongScoreModel.class)) == null) {
                             return;
                         }
                         LogUtils.d("ktv", "Studio KTV_SONG_SCORE: " + str2);
@@ -1097,7 +1090,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                         BaseYYStudioFragment.this.M();
                         return;
                     case 8:
-                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendPKMicrophoneStatusMsg.class);
+                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, TRTCSendPKMicrophoneStatusMsg.class);
                         if (tRTCSendPKMicrophoneStatusMsg != null && YYRoomInfoManager.e().i()) {
                             YYRoomModel b3 = YYRoomInfoManager.e().b();
                             if (b3 != null) {
@@ -1113,7 +1106,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                         }
                         return;
                     case 9:
-                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg2 = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendPKMicrophoneStatusMsg.class);
+                        TRTCSendPKMicrophoneStatusMsg tRTCSendPKMicrophoneStatusMsg2 = (TRTCSendPKMicrophoneStatusMsg) AppInfo.f().fromJson(str2, TRTCSendPKMicrophoneStatusMsg.class);
                         if (tRTCSendPKMicrophoneStatusMsg2 != null && YYRoomInfoManager.e().i() && TextUtils.equals(tRTCSendPKMicrophoneStatusMsg2.userId, YYRoomInfoManager.e().k())) {
                             LiveLogUtils.a("BaseYYStudioFragment --> onRecvSEIMsg --> MICROPHONE_ENABLE --> 房主禁、解 麦上用户麦克风状态：" + str2);
                             if (tRTCSendPKMicrophoneStatusMsg2.status == 0) {
@@ -1126,7 +1119,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                         }
                         return;
                     case 10:
-                        if (BaseYYStudioFragment.this.E == null || !(BaseYYStudioFragment.this.E instanceof YYRobMusicAdapter) || TextUtils.isEmpty(str2) || (tRTCSendLrcMsg2 = (TRTCSendLrcMsg) AppInfo.f().fromJson(str2, (Class<Object>) TRTCSendLrcMsg.class)) == null || YYRoomInfoManager.e().b() == null || YYRoomInfoManager.e().b().robMus == null || !StringUtils.a(tRTCSendLrcMsg2.musicId, YYRoomInfoManager.e().b().robMus.getMusicId())) {
+                        if (BaseYYStudioFragment.this.E == null || !(BaseYYStudioFragment.this.E instanceof YYRobMusicAdapter) || TextUtils.isEmpty(str2) || (tRTCSendLrcMsg2 = (TRTCSendLrcMsg) AppInfo.f().fromJson(str2, TRTCSendLrcMsg.class)) == null || YYRoomInfoManager.e().b() == null || YYRoomInfoManager.e().b().robMus == null || !StringUtils.a(tRTCSendLrcMsg2.musicId, YYRoomInfoManager.e().b().robMus.getMusicId())) {
                             return;
                         }
                         if (tRTCSendLrcMsg2.type == 1) {
@@ -1163,7 +1156,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                 if (BaseYYStudioFragment.this.D.getVisibility() == 0 && set != null) {
                     BaseYYStudioFragment.this.D.a(set, z);
                 }
-                YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                 if (YYRoomInfoManager.e().i()) {
                     BaseYYStudioFragment.this.a(b.room_id, yYUserInfo);
                 }
@@ -1222,7 +1215,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
     }
 
     public void M() {
-        YYMusicManager.f11418a.c().a((LiveMusicModel) null);
+        YYMusicManager.a.c().a((LiveMusicModel) null);
         K_();
         LiveEventBus.get("live_music_changed").post("");
         LiveEventBus.get("live_music_exit").post("");
@@ -1230,7 +1223,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
 
     public void N() {
         if (getActivity() instanceof BaseFragmentActivity) {
-            ((BaseFragmentActivity) getActivity()).a((BaseFragmentActivity.IOnBackPressedListener) this);
+            getActivity().a((BaseFragmentActivity.IOnBackPressedListener) this);
         }
     }
 
@@ -1449,7 +1442,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
             @Override // com.blued.android.module.yy_china.view.PopYyDialogGetView
             public View a() {
                 YYCardOptionView yYCardOptionView = new YYCardOptionView(BaseYYStudioFragment.this.getContext());
-                yYCardOptionView.f18083a = popYyDialog;
+                yYCardOptionView.a = popYyDialog;
                 yYCardOptionView.a(BaseYYStudioFragment.this, yYUserInfo);
                 return yYCardOptionView;
             }
@@ -1704,14 +1697,13 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         AbstractBasePresenter abstractBasePresenter;
         super.onActivityCreated(bundle);
         LiveLogUtils.a("BaseYYStudioFragment --> onActivityCreated ...");
         AbstractBasePresenter abstractBasePresenter2 = this.aw;
         if (abstractBasePresenter2 != null) {
-            abstractBasePresenter2.a(this);
+            abstractBasePresenter2.a((LifecycleOwner) this);
         }
         this.l.post(new Runnable() { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.3
             @Override // java.lang.Runnable
@@ -1748,7 +1740,6 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         a(YYRoomInfoManager.e().b());
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         AbstractBasePresenter abstractBasePresenter;
         super.onActivityResult(i, i2, intent);
@@ -1761,7 +1752,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                 if (!TextUtils.isEmpty(stringExtra) && yYGiftModel != null && (abstractBasePresenter = this.aw) != null) {
                     abstractBasePresenter.a(yYGiftModel, intExtra, stringExtra, booleanExtra);
                 }
-                KeyboardUtils.a(getActivity());
+                KeyboardUtils.a((Activity) getActivity());
             } else if (i != 4221002 || intent == null) {
             } else {
                 YYGiftModel yYGiftModel2 = (YYGiftModel) intent.getSerializableExtra("selected_model");
@@ -1772,23 +1763,23 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
                 if (abstractBasePresenter2 != null) {
                     abstractBasePresenter2.a(yYGiftModel2, intExtra2, stringExtra2, booleanExtra2);
                 }
-                KeyboardUtils.a(getActivity());
+                KeyboardUtils.a((Activity) getActivity());
             }
         }
     }
 
     @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
-        AudioChannelManager.j().f17847a = true;
+        AudioChannelManager.j().a = true;
         return super.onBackPressed();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        AudioFloatWindow.f17819a++;
+        AudioFloatWindow.a++;
         Logger.e("BaseYYStudioFragment", "onCreate ... ");
-        if (bundle != null && !PermissionHelper.a(Manifest.permission.RECORD_AUDIO)) {
+        if (bundle != null && !PermissionHelper.a("android.permission.RECORD_AUDIO")) {
             String string = bundle.getString("yy_unexpectedly_exit");
             Logger.e("BaseYYStudioFragment", "onCreate ... roomId: " + string);
             d(string);
@@ -1800,16 +1791,16 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         A();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Logger.e("BaseYYStudioFragment", "onCreateView ... ");
         LiveLogUtils.a("BaseYYStudioFragment --> onCreateView ...");
         getActivity().getWindow().setSoftInputMode(16);
-        View view = this.f17010c;
+        View view = this.c;
         if (view == null) {
             LiveLogUtils.a("BaseYYStudioFragment --> onCreateView --> (mRootView == null)");
             this.b = getContext();
-            this.f17010c = layoutInflater.inflate(R.layout.fragment_base_yy_studio_layout, viewGroup, false);
+            this.c = layoutInflater.inflate(R.layout.fragment_base_yy_studio_layout, viewGroup, false);
             this.ax = DensityUtils.a(getContext(), 10.0f);
             this.ay = ((AppInfo.l - (DensityUtils.a(getContext(), 60.0f) * 4)) - (this.ax * 2)) / 3;
             Logger.e("BaseYYStudioFragment", "rightDistance = " + this.ay);
@@ -1819,14 +1810,14 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
             E();
         } else if (view.getParent() != null) {
             LiveLogUtils.a("BaseYYStudioFragment --> onCreateView --> (mRootView.getParent() != null)");
-            ((ViewGroup) this.f17010c.getParent()).removeView(this.f17010c);
+            ((ViewGroup) this.c.getParent()).removeView(this.c);
         }
         J();
         AudioChannelManager.j().a(new IAudioContract.AppHandoverListener() { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.1
             @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.AppHandoverListener
             public void a() {
                 LiveLogUtils.a("BaseYYStudioFragment --> setHandoverListener --> 直播间进入 后台 ... ");
-                NotificationService.a(BaseYYStudioFragment.this.b, YYRoomInfoManager.e().f17578a);
+                NotificationService.a(BaseYYStudioFragment.this.b, YYRoomInfoManager.e().a);
             }
 
             @Override // com.blued.android.module.yy_china.trtc_audio.IAudioContract.AppHandoverListener
@@ -1840,24 +1831,23 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
             }
         });
         requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), new OnBackPressedCallback(true) { // from class: com.blued.android.module.yy_china.fragment.BaseYYStudioFragment.2
-            @Override // androidx.activity.OnBackPressedCallback
             public void handleOnBackPressed() {
                 if (BaseYYStudioFragment.this.aG) {
                     BaseYYStudioFragment.this.n();
                     return;
                 }
-                AudioChannelManager.j().f17847a = true;
+                AudioChannelManager.j().a = true;
                 BaseYYStudioFragment.this.getActivity().finish();
             }
         });
-        return this.f17010c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         LiveLogUtils.a("BaseYYStudioFragment --> onDestroy ... ");
-        AudioFloatWindow.f17819a--;
+        AudioFloatWindow.a--;
         Logger.e("BaseYYStudioFragment", "onDestroy ... ");
         YYObserverManager.a().b();
         YYImMsgManager.a().f();
@@ -1911,7 +1901,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         Logger.e("BaseYYStudioFragment", "onDestroy ... 1");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         BaseConnectingAdapter baseConnectingAdapter = this.E;
@@ -1920,7 +1910,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         BaseConnectingAdapter baseConnectingAdapter = this.E;
@@ -1929,7 +1919,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         Logger.e("BaseYYStudioFragment", "onSaveInstanceState ...  ");
@@ -1940,7 +1930,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         o();
@@ -1968,7 +1958,7 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         } else if (YYRoomInfoManager.e().b().yyPerFirstGiftModel.getType() == 1) {
             this.o.a();
         } else {
-            this.o.a((FrameLayout) this.f17010c.findViewById(R.id.fra_add_view_layout), this.F);
+            this.o.a((FrameLayout) this.c.findViewById(R.id.fra_add_view_layout), this.F);
         }
     }
 
@@ -2042,6 +2032,6 @@ public abstract class BaseYYStudioFragment extends KeyBoardFragment implements B
         if (yYRankFragment != null) {
             yYRankFragment.dismiss();
         }
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
     }
 }

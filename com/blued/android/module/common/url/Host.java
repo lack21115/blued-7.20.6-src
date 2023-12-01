@@ -21,7 +21,7 @@ public final class Host {
         HostConfig.a("DANLAN_LOVE", new String[]{"https://www.danlanlove.com", "https://wealtest.blued.cn/#", "https://www.danlanlove.com"});
         HostConfig.a("DATA", new String[]{"blued.irisdt.cn", "blued-test.irisdt.cn", "blued.irisdt.cn"});
         HostConfig.a("WEB", new String[]{"https://i.blued.cn", "http://test.i.blued.cn", "https://i.blued.cn"});
-        HostConfig.a("M", new String[]{BluedHttpUrl.f10844a, "http://m-test.blued.cn", BluedHttpUrl.f10844a});
+        HostConfig.a("M", new String[]{BluedHttpUrl.a, "http://m-test.blued.cn", BluedHttpUrl.a});
         HostConfig.a("GRPC_CHAT", new String[]{"h8.blued.cn", "h8-test.blued.cn", "h8.blued.cn"});
         HostConfig.a("H5_INVOICE", new String[]{"https://app.blued.cn/home/invoice", "https://app-testenv.blued.cn/home/invoice", "https://app.blued.cn/home/invoice"});
         HostConfig.a("LIVE_IM", new String[]{"https://live-im.blued.cn", "https://test-live-im.blued.cn", "https://pre-live-im.blued.cn"});

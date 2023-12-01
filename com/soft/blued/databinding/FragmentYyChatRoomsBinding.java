@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentYyChatRoomsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29045a;
+    private final RelativeLayout f15355a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29045a;
+        return this.f15355a;
     }
 }

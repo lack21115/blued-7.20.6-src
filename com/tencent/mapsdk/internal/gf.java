@@ -9,10 +9,10 @@ public class gf extends AccessibleTouchItem {
     private o0 b;
 
     /* renamed from: c  reason: collision with root package name */
-    private yi f37490c;
+    private yi f23799c;
 
     public gf(yi yiVar, o0 o0Var) {
-        this.f37490c = yiVar;
+        this.f23799c = yiVar;
         this.b = o0Var;
     }
 
@@ -63,7 +63,7 @@ public class gf extends AccessibleTouchItem {
 
     @Override // com.tencent.map.lib.models.AccessibleTouchItem
     public void onClick() {
-        yi yiVar = this.f37490c;
+        yi yiVar = this.f23799c;
         if (yiVar != null) {
             TencentMap.OnMarkerClickListener onMarkerClickListener = yiVar.a0;
             o0 o0Var = this.b;

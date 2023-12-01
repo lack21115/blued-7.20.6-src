@@ -10,25 +10,24 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatTextView;
+import com.android.internal.R;
 import com.blued.android.module.live_china.same.Logger;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BadgeView.class */
 public class BadgeView extends AppCompatTextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f14213a;
+    private boolean a;
 
     public BadgeView(Context context) {
         this(context, null);
     }
 
     public BadgeView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842884);
+        this(context, attributeSet, R.attr.textViewStyle);
     }
 
     public BadgeView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14213a = true;
+        this.a = true;
         b();
     }
 
@@ -48,8 +47,8 @@ public class BadgeView extends AppCompatTextView {
     }
 
     public void a(int i, int i2) {
-        float a2 = a(i);
-        ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(new float[]{a2, a2, a2, a2, a2, a2, a2, a2}, null, null));
+        float a = a(i);
+        ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(new float[]{a, a, a, a, a, a, a, a}, null, null));
         shapeDrawable.getPaint().setColor(i2);
         setBackgroundDrawable(shapeDrawable);
     }
@@ -64,7 +63,7 @@ public class BadgeView extends AppCompatTextView {
     }
 
     public boolean a() {
-        return this.f14213a;
+        return this.a;
     }
 
     public Integer getBadgeCount() {
@@ -106,10 +105,11 @@ public class BadgeView extends AppCompatTextView {
     }
 
     public void setHideOnNull(boolean z) {
-        this.f14213a = z;
+        this.a = z;
         setText(getText());
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void setTargetView(View view) {
         if (getParent() != null) {
             ((ViewGroup) getParent()).removeView(this);
@@ -137,7 +137,6 @@ public class BadgeView extends AppCompatTextView {
         }
     }
 
-    @Override // android.widget.TextView
     public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
         if (a() && (charSequence == null || charSequence.toString().equalsIgnoreCase("0"))) {
             setVisibility(8);

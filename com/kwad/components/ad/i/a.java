@@ -26,7 +26,7 @@ public final class a {
     private boolean Gp;
     private boolean Gq;
     protected AdBaseFrameLayout Gr;
-    private InterfaceC0478a Gs;
+    private InterfaceC0308a Gs;
     private b Gw;
     private AdBaseFrameLayout dG;
     private FrameLayout df;
@@ -44,7 +44,7 @@ public final class a {
 
     /* renamed from: com.kwad.components.ad.i.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/i/a$a.class */
-    public interface InterfaceC0478a {
+    public interface InterfaceC0308a {
         void V(boolean z);
     }
 
@@ -185,8 +185,8 @@ public final class a {
         this.Gn = false;
     }
 
-    public final void a(InterfaceC0478a interfaceC0478a) {
-        this.Gs = interfaceC0478a;
+    public final void a(InterfaceC0308a interfaceC0308a) {
+        this.Gs = interfaceC0308a;
     }
 
     public final void a(b bVar) {

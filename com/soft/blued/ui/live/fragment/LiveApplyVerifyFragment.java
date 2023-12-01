@@ -18,7 +18,7 @@ import com.soft.blued.ui.live.presenter.LiveApplyVerifyPresenter;
 public class LiveApplyVerifyFragment extends MvpFragment<LiveApplyVerifyPresenter> implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private BluedLiveState f31141a;
+    private BluedLiveState f17451a;
     private Context b;
     @BindView
     CommonTopTitleNoTrans top_title;
@@ -33,23 +33,21 @@ public class LiveApplyVerifyFragment extends MvpFragment<LiveApplyVerifyPresente
         TerminalActivity.d(context, LiveApplyVerifyFragment.class, bundle);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         this.top_title.f();
         this.top_title.a();
         this.top_title.setLeftImgDrawable(BluedSkinUtils.b(this.b, 2131233902));
-        this.top_title.setCenterText(getString(2131886176));
+        this.top_title.setCenterText(getString(R.string.Live_applyHost_title));
         this.top_title.setLeftClickListener(this);
-        BluedLiveState bluedLiveState = this.f31141a;
+        BluedLiveState bluedLiveState = this.f17451a;
         if (bluedLiveState == null || bluedLiveState.is_easy_way != 0) {
-            this.tv_tip_1.setText(getText(2131886156));
+            this.tv_tip_1.setText(getText(R.string.Live_applyHost_simple_applying_des_1));
         } else {
-            this.tv_tip_1.setText(getText(2131886157));
+            this.tv_tip_1.setText(getText(R.string.Live_applyHost_simple_applying_des_1_24));
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live_apply_verify;
     }
@@ -63,13 +61,12 @@ public class LiveApplyVerifyFragment extends MvpFragment<LiveApplyVerifyPresente
         getActivity().finish();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.b = getContext();
         if (getArguments() == null || getArguments().getSerializable("applyState") == null) {
             return;
         }
-        this.f31141a = (BluedLiveState) getArguments().getSerializable("applyState");
+        this.f17451a = getArguments().getSerializable("applyState");
     }
 }

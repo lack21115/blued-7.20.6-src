@@ -21,7 +21,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.security.SecureRandom;
@@ -37,20 +36,20 @@ public class c {
     private static boolean g = false;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40932a = "10.0.0.172";
+    private String f27241a = "10.0.0.172";
     private int b = 80;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f40933c;
+    private Context f27242c;
     private b d;
 
     public c(Context context) {
-        this.f40933c = context;
+        this.f27242c = context;
     }
 
     private void a() {
-        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f40933c, "domain_p", "");
-        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(this.f40933c, "domain_s", "");
+        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f27242c, "domain_p", "");
+        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(this.f27242c, "domain_s", "");
         if (!TextUtils.isEmpty(imprintProperty)) {
             UMServerURL.DEFAULT_URL = DataHelper.assembleURL(imprintProperty);
         }
@@ -61,16 +60,16 @@ public class c {
     }
 
     private void b() {
-        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f40933c, "domain_p", "");
-        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(this.f40933c, "domain_s", "");
+        String imprintProperty = UMEnvelopeBuild.imprintProperty(this.f27242c, "domain_p", "");
+        String imprintProperty2 = UMEnvelopeBuild.imprintProperty(this.f27242c, "domain_s", "");
         if (!TextUtils.isEmpty(imprintProperty)) {
             UMServerURL.DEFAULT_URL = DataHelper.assembleURL(imprintProperty);
         }
         if (!TextUtils.isEmpty(imprintProperty2)) {
             UMServerURL.SECONDARY_URL = DataHelper.assembleURL(imprintProperty2);
         }
-        String imprintProperty3 = UMEnvelopeBuild.imprintProperty(this.f40933c, "oversea_domain_p", "");
-        String imprintProperty4 = UMEnvelopeBuild.imprintProperty(this.f40933c, "oversea_domain_s", "");
+        String imprintProperty3 = UMEnvelopeBuild.imprintProperty(this.f27242c, "oversea_domain_p", "");
+        String imprintProperty4 = UMEnvelopeBuild.imprintProperty(this.f27242c, "oversea_domain_s", "");
         if (!TextUtils.isEmpty(imprintProperty3)) {
             UMServerURL.OVERSEA_DEFAULT_URL = DataHelper.assembleURL(imprintProperty3);
         }
@@ -90,13 +89,13 @@ public class c {
         if (g) {
             return;
         }
-        ImprintHandler.getImprintService(this.f40933c).registImprintCallback(AnalyticsConstants.CFG_FIELD_KEY, new UMImprintChangeCallback() { // from class: com.umeng.commonsdk.statistics.internal.c.1
+        ImprintHandler.getImprintService(this.f27242c).registImprintCallback(AnalyticsConstants.CFG_FIELD_KEY, new UMImprintChangeCallback() { // from class: com.umeng.commonsdk.statistics.internal.c.1
             @Override // com.umeng.commonsdk.statistics.internal.UMImprintChangeCallback
             public void onImprintValueChanged(String str, String str2) {
                 if (FieldManager.b()) {
-                    FieldManager.a().a(c.this.f40933c, str2);
+                    FieldManager.a().a(c.this.f27242c, str2);
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> apply imprint change and exit: key=" + str + "; value= " + str2);
-                    UMWorkDispatch.sendEvent(c.this.f40933c, com.umeng.commonsdk.internal.a.w, com.umeng.commonsdk.internal.b.a(c.this.f40933c).a(), null);
+                    UMWorkDispatch.sendEvent(c.this.f27242c, com.umeng.commonsdk.internal.a.w, com.umeng.commonsdk.internal.b.a(c.this.f27242c).a(), null);
                 }
             }
         });
@@ -108,33 +107,33 @@ public class c {
             return;
         }
         UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> 注册零号报文 imprint 应答处理回调。");
-        ImprintHandler.getImprintService(this.f40933c).registPreProcessCallback(AnalyticsConstants.ZERO_RESPONSE_FLAG, new UMImprintPreProcessCallback() { // from class: com.umeng.commonsdk.statistics.internal.c.2
+        ImprintHandler.getImprintService(this.f27242c).registPreProcessCallback(AnalyticsConstants.ZERO_RESPONSE_FLAG, new UMImprintPreProcessCallback() { // from class: com.umeng.commonsdk.statistics.internal.c.2
             @Override // com.umeng.commonsdk.statistics.internal.UMImprintPreProcessCallback
             public boolean onPreProcessImprintKey(String str, String str2) {
                 UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> onImprintValueChanged: key=" + str + "; value= " + str2);
-                FieldManager.a().a(c.this.f40933c);
-                UMWorkDispatch.sendEvent(c.this.f40933c, com.umeng.commonsdk.internal.a.s, com.umeng.commonsdk.internal.b.a(c.this.f40933c).a(), null);
-                ImprintHandler.getImprintService(c.this.f40933c).a(AnalyticsConstants.ZERO_RESPONSE_FLAG);
+                FieldManager.a().a(c.this.f27242c);
+                UMWorkDispatch.sendEvent(c.this.f27242c, com.umeng.commonsdk.internal.a.s, com.umeng.commonsdk.internal.b.a(c.this.f27242c).a(), null);
+                ImprintHandler.getImprintService(c.this.f27242c).a(AnalyticsConstants.ZERO_RESPONSE_FLAG);
                 return true;
             }
         });
-        ImprintHandler.getImprintService(this.f40933c).registImprintCallback(AnalyticsConstants.CFG_FIELD_KEY, new UMImprintChangeCallback() { // from class: com.umeng.commonsdk.statistics.internal.c.3
+        ImprintHandler.getImprintService(this.f27242c).registImprintCallback(AnalyticsConstants.CFG_FIELD_KEY, new UMImprintChangeCallback() { // from class: com.umeng.commonsdk.statistics.internal.c.3
             @Override // com.umeng.commonsdk.statistics.internal.UMImprintChangeCallback
             public void onImprintValueChanged(String str, String str2) {
                 UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> first onImprintValueChanged: key=" + str + "; value= " + str2);
-                FieldManager.a().a(c.this.f40933c, str2);
-                UMWorkDispatch.sendEvent(c.this.f40933c, com.umeng.commonsdk.internal.a.s, com.umeng.commonsdk.internal.b.a(c.this.f40933c).a(), null);
+                FieldManager.a().a(c.this.f27242c, str2);
+                UMWorkDispatch.sendEvent(c.this.f27242c, com.umeng.commonsdk.internal.a.s, com.umeng.commonsdk.internal.b.a(c.this.f27242c).a(), null);
                 if (FieldManager.allow(com.umeng.commonsdk.utils.d.E)) {
                     UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> recv zcfg response: foregound count timer enabled.");
                     if (!UMWorkDispatch.eventHasExist()) {
-                        UMWorkDispatch.sendEventEx(c.this.f40933c, 8213, CoreProtocol.getInstance(c.this.f40933c), null, 0L);
+                        UMWorkDispatch.sendEventEx(c.this.f27242c, 8213, CoreProtocol.getInstance(c.this.f27242c), null, 0L);
                     }
                 }
                 if (FieldManager.allow(com.umeng.commonsdk.utils.d.F)) {
                     UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> recv zcfg response: FirstResumeTrigger enabled.");
-                    l.a(c.this.f40933c).b(c.this.f40933c);
+                    l.a(c.this.f27242c).b(c.this.f27242c);
                 }
-                ImprintHandler.getImprintService(c.this.f40933c).unregistImprintCallback(AnalyticsConstants.CFG_FIELD_KEY, this);
+                ImprintHandler.getImprintService(c.this.f27242c).unregistImprintCallback(AnalyticsConstants.CFG_FIELD_KEY, this);
             }
         });
         f = true;
@@ -151,82 +150,82 @@ public class c {
         OutputStream outputStream;
         OutputStream outputStream2;
         OutputStream outputStream3;
-        AutoCloseable autoCloseable;
-        HttpURLConnection httpURLConnection;
+        OutputStream outputStream4;
+        HttpsURLConnection httpsURLConnection2;
         try {
             try {
                 if (this.d != null) {
                     this.d.onRequestStart();
                 }
-                httpURLConnection = (HttpsURLConnection) new URL(str).openConnection();
+                httpsURLConnection2 = (HttpsURLConnection) new URL(str).openConnection();
                 try {
                     boolean z = true;
                     if (!e) {
-                        httpURLConnection.setHostnameVerifier(SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
+                        httpsURLConnection2.setHostnameVerifier(SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
                         SSLContext sSLContext = SSLContext.getInstance("TLS");
                         sSLContext.init(null, null, new SecureRandom());
-                        httpURLConnection.setSSLSocketFactory(sSLContext.getSocketFactory());
+                        httpsURLConnection2.setSSLSocketFactory(sSLContext.getSocketFactory());
                         e = true;
                     }
-                    httpURLConnection.setRequestProperty("X-Umeng-UTC", String.valueOf(System.currentTimeMillis()));
-                    httpURLConnection.setRequestProperty("X-Umeng-Sdk", a.a(this.f40933c).b());
-                    httpURLConnection.setRequestProperty("Content-Type", a.a(this.f40933c).a());
-                    httpURLConnection.setRequestProperty("Msg-Type", "envelope/json");
-                    httpURLConnection.setRequestProperty("X-Umeng-Pro-Ver", "1.0.0");
-                    httpURLConnection.setRequestProperty("SM-IMP", "1");
-                    httpURLConnection.setRequestProperty("User-Agent", DeviceConfig.getCustomAgt());
-                    httpURLConnection.setConnectTimeout(30000);
-                    httpURLConnection.setReadTimeout(30000);
-                    httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoOutput(true);
-                    httpURLConnection.setDoInput(true);
-                    httpURLConnection.setUseCaches(false);
-                    autoCloseable = httpURLConnection.getOutputStream();
+                    httpsURLConnection2.setRequestProperty("X-Umeng-UTC", String.valueOf(System.currentTimeMillis()));
+                    httpsURLConnection2.setRequestProperty("X-Umeng-Sdk", a.a(this.f27242c).b());
+                    httpsURLConnection2.setRequestProperty("Content-Type", a.a(this.f27242c).a());
+                    httpsURLConnection2.setRequestProperty("Msg-Type", "envelope/json");
+                    httpsURLConnection2.setRequestProperty("X-Umeng-Pro-Ver", "1.0.0");
+                    httpsURLConnection2.setRequestProperty("SM-IMP", "1");
+                    httpsURLConnection2.setRequestProperty("User-Agent", DeviceConfig.getCustomAgt());
+                    httpsURLConnection2.setConnectTimeout(30000);
+                    httpsURLConnection2.setReadTimeout(30000);
+                    httpsURLConnection2.setRequestMethod("POST");
+                    httpsURLConnection2.setDoOutput(true);
+                    httpsURLConnection2.setDoInput(true);
+                    httpsURLConnection2.setUseCaches(false);
+                    outputStream4 = httpsURLConnection2.getOutputStream();
                     try {
-                        autoCloseable.write(bArr);
-                        autoCloseable.flush();
-                        httpURLConnection.connect();
+                        outputStream4.write(bArr);
+                        outputStream4.flush();
+                        httpsURLConnection2.connect();
                         if (this.d != null) {
                             this.d.onRequestEnd();
                         }
-                        int responseCode = httpURLConnection.getResponseCode();
-                        String headerField = httpURLConnection.getHeaderField("Content-Type");
+                        int responseCode = httpsURLConnection2.getResponseCode();
+                        String headerField = httpsURLConnection2.getHeaderField("Content-Type");
                         if (TextUtils.isEmpty(headerField) || !headerField.equalsIgnoreCase("application/thrift")) {
                             z = false;
                         }
                         boolean z2 = AnalyticsConstants.UM_DEBUG;
                         if (responseCode == 200 && z) {
-                            InputStream inputStream = httpURLConnection.getInputStream();
+                            InputStream inputStream = httpsURLConnection2.getInputStream();
                             try {
                                 return HelperUtils.readStreamToByteArray(inputStream);
                             } finally {
                                 HelperUtils.safeClose(inputStream);
                             }
                         }
-                        if (autoCloseable != null) {
+                        if (outputStream4 != null) {
                             try {
-                                autoCloseable.close();
+                                outputStream4.close();
                             } catch (Exception e2) {
-                                UMCrashManager.reportCrash(this.f40933c, e2);
+                                UMCrashManager.reportCrash(this.f27242c, e2);
                             }
                         }
-                        if (httpURLConnection != null) {
+                        if (httpsURLConnection2 != null) {
                             try {
-                                httpURLConnection.getInputStream().close();
+                                httpsURLConnection2.getInputStream().close();
                             } catch (IOException e3) {
                             }
-                            httpURLConnection.disconnect();
+                            httpsURLConnection2.disconnect();
                             return null;
                         }
                         return null;
                     } catch (UnknownHostException e4) {
-                        outputStream3 = autoCloseable;
+                        outputStream3 = outputStream4;
                         UMLog.aq("A_10200", 2, "\\|");
                         if (outputStream3 != null) {
                             try {
                                 outputStream3.close();
                             } catch (Exception e5) {
-                                UMCrashManager.reportCrash(this.f40933c, e5);
+                                UMCrashManager.reportCrash(this.f27242c, e5);
                             }
                         }
                         if (httpsURLConnection != null) {
@@ -239,13 +238,13 @@ public class c {
                         }
                         return null;
                     } catch (SSLHandshakeException e7) {
-                        outputStream2 = autoCloseable;
+                        outputStream2 = outputStream4;
                         UMLog.aq("A_10201", 2, "\\|");
                         if (outputStream2 != null) {
                             try {
                                 outputStream2.close();
                             } catch (Exception e8) {
-                                UMCrashManager.reportCrash(this.f40933c, e8);
+                                UMCrashManager.reportCrash(this.f27242c, e8);
                             }
                         }
                         if (httpsURLConnection != null) {
@@ -262,7 +261,7 @@ public class c {
                             try {
                                 outputStream.close();
                             } catch (Exception e10) {
-                                UMCrashManager.reportCrash(this.f40933c, e10);
+                                UMCrashManager.reportCrash(this.f27242c, e10);
                             }
                         }
                         if (httpsURLConnection != null) {
@@ -293,19 +292,19 @@ public class c {
                 outputStream = null;
             }
         } finally {
-            if (autoCloseable != null) {
+            if (outputStream4 != null) {
                 try {
-                    autoCloseable.close();
+                    outputStream4.close();
                 } catch (Exception e16) {
-                    UMCrashManager.reportCrash(this.f40933c, e16);
+                    UMCrashManager.reportCrash(this.f27242c, e16);
                 }
             }
-            if (httpURLConnection != null) {
+            if (httpsURLConnection2 != null) {
                 try {
-                    httpURLConnection.getInputStream().close();
+                    httpsURLConnection2.getInputStream().close();
                 } catch (IOException e17) {
                 }
-                httpURLConnection.disconnect();
+                httpsURLConnection2.disconnect();
             }
         }
     }

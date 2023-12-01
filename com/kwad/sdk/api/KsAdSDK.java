@@ -145,7 +145,7 @@ public class KsAdSDK {
                     com.kwad.sdk.api.kwai.a.submit(new Runnable() { // from class: com.kwad.sdk.api.KsAdSDK.1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            t.c(Context.this, "sdkconfig", sdkConfig.toJson());
+                            t.c(Context.this, com.getui.gtc.dyc.b.b.f8367a, sdkConfig.toJson());
                         }
                     });
                     try {

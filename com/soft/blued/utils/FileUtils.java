@@ -11,6 +11,7 @@ import androidx.core.content.FileProvider;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.FileHttpResponseHandler;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.net.http.FileDownloader;
 import com.blued.android.core.utils.Md5;
 import com.blued.android.framework.utils.RegExpUtils;
@@ -43,7 +44,7 @@ public class FileUtils {
     }
 
     public static void a(String str, FileHttpResponseHandler fileHttpResponseHandler) {
-        FileDownloader.a(str, d(str), fileHttpResponseHandler, null);
+        FileDownloader.a(str, d(str), fileHttpResponseHandler, (IRequestHost) null);
     }
 
     public static byte[] a(String str) {

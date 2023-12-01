@@ -11,7 +11,7 @@ public final class hi implements com.kwad.sdk.core.d<b.a> {
             return;
         }
         aVar.auj = jSONObject.optInt("ds");
-        aVar.sdkVersion = jSONObject.optString("sv");
+        aVar.sdkVersion = jSONObject.optString(com.anythink.expressad.foundation.g.a.Z);
         if (aVar.sdkVersion == JSONObject.NULL) {
             aVar.sdkVersion = "";
         }
@@ -31,7 +31,7 @@ public final class hi implements com.kwad.sdk.core.d<b.a> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "ds", aVar.auj);
         }
         if (aVar.sdkVersion != null && !aVar.sdkVersion.equals("")) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "sv", aVar.sdkVersion);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, com.anythink.expressad.foundation.g.a.Z, aVar.sdkVersion);
         }
         if (aVar.auk != null && !aVar.auk.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "spv", aVar.auk);

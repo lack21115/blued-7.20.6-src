@@ -12,18 +12,18 @@ public interface g4 extends IInterface {
 
         /* renamed from: com.bytedance.bdtracker.g4$a$a  reason: collision with other inner class name */
         /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/g4$a$a.class */
-        public static class C0311a implements g4 {
+        public static class C0141a implements g4 {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f21223a;
+            public IBinder f7617a;
 
-            public C0311a(IBinder iBinder) {
-                this.f21223a = iBinder;
+            public C0141a(IBinder iBinder) {
+                this.f7617a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f21223a;
+                return this.f7617a;
             }
         }
 
@@ -32,7 +32,7 @@ public interface g4 extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.heytap.openid.IOpenID");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof g4)) ? new C0311a(iBinder) : (g4) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof g4)) ? new C0141a(iBinder) : (g4) queryLocalInterface;
         }
     }
 }

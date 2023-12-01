@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.text.TextUtils;
+import android.view.Window;
 import com.amap.api.col.p0003sl.ju;
 import java.net.Proxy;
 import java.util.HashMap;
@@ -14,15 +15,11 @@ public abstract class kb {
     private String h;
     private boolean i;
     private boolean j;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f5257c = 20000;
-    int d = 20000;
+    int c = Window.PROGRESS_SECONDARY_START;
+    int d = Window.PROGRESS_SECONDARY_START;
     Proxy e = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f5256a = false;
-    private int b = 20000;
+    private boolean a = false;
+    private int b = Window.PROGRESS_SECONDARY_START;
     private boolean g = true;
     private a k = a.NORMAL;
     private b l = b.FIRST_NONDEGRADE;
@@ -90,12 +87,10 @@ public abstract class kb {
         HTTP(0),
         HTTPS(1);
         
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5263c;
+        private int c;
 
         c(int i) {
-            this.f5263c = i;
+            this.c = i;
         }
     }
 
@@ -140,7 +135,7 @@ public abstract class kb {
     }
 
     public int getConntectionTimeout() {
-        return this.f5257c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -200,7 +195,7 @@ public abstract class kb {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean isBinary() {
-        return this.f5256a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -236,7 +231,7 @@ public abstract class kb {
         String str4 = "";
         try {
             if (!TextUtils.isEmpty(str)) {
-                String[] split = str.split("&");
+                String[] split = str.split(com.alipay.sdk.sys.a.b);
                 str4 = "";
                 if (split.length > 1) {
                     int length = split.length;
@@ -312,7 +307,7 @@ public abstract class kb {
             str2 = str;
             try {
                 if (TextUtils.isEmpty(str)) {
-                    return this.f5256a ? parseSDKNameFromPlatInfo(((jv) this).g()) : parseSdkNameFromHeader(getRequestHead());
+                    return this.a ? parseSDKNameFromPlatInfo(((jv) this).g()) : parseSdkNameFromHeader(getRequestHead());
                 }
             } catch (Throwable th) {
                 th = th;
@@ -328,11 +323,11 @@ public abstract class kb {
     }
 
     public void setBinary(boolean z) {
-        this.f5256a = z;
+        this.a = z;
     }
 
     public final void setConnectionTimeout(int i) {
-        this.f5257c = i;
+        this.c = i;
     }
 
     public void setDegradeAbility(a aVar) {

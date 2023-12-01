@@ -8,13 +8,9 @@ import com.airbnb.lottie.utils.Logger;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/MergePaths.class */
 public class MergePaths implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4348a;
+    private final String a;
     private final MergePathsMode b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final boolean f4349c;
+    private final boolean c;
 
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/MergePaths$MergePathsMode.class */
     public enum MergePathsMode {
@@ -30,9 +26,9 @@ public class MergePaths implements ContentModel {
     }
 
     public MergePaths(String str, MergePathsMode mergePathsMode, boolean z) {
-        this.f4348a = str;
+        this.a = str;
         this.b = mergePathsMode;
-        this.f4349c = z;
+        this.c = z;
     }
 
     @Override // com.airbnb.lottie.model.content.ContentModel
@@ -45,7 +41,7 @@ public class MergePaths implements ContentModel {
     }
 
     public String a() {
-        return this.f4348a;
+        return this.a;
     }
 
     public MergePathsMode b() {
@@ -53,7 +49,7 @@ public class MergePaths implements ContentModel {
     }
 
     public boolean c() {
-        return this.f4349c;
+        return this.c;
     }
 
     public String toString() {

@@ -6,7 +6,7 @@ import android.content.Context;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final com.opos.mobad.n.j.a f27259a = new com.opos.mobad.n.j.a() { // from class: com.opos.mobad.r.a.d.1
+    private static final com.opos.mobad.n.j.a f13571a = new com.opos.mobad.n.j.a() { // from class: com.opos.mobad.r.a.d.1
         @Override // com.opos.mobad.n.j.a
         public com.opos.mobad.c.c.a a(Context context) {
             return new b(context, null);
@@ -24,6 +24,6 @@ public class d {
     }
 
     public static final com.opos.mobad.n.j.a a(int i) {
-        return 1 == i ? f27259a : b;
+        return 1 == i ? f13571a : b;
     }
 }

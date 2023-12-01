@@ -15,13 +15,9 @@ import com.anythink.core.common.k.h;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/SpreadAnimLayout.class */
 public class SpreadAnimLayout extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Paint f6195a;
+    private Paint a;
     private ValueAnimator b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private a f6196c;
+    private a c;
     private RectF d;
     private RectF e;
     private int f;
@@ -34,9 +30,7 @@ public class SpreadAnimLayout extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/SpreadAnimLayout$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        RectF f6199a;
+        RectF a;
         int b;
 
         a() {
@@ -60,10 +54,10 @@ public class SpreadAnimLayout extends FrameLayout {
         this.f = h.a(context, 4.0f);
         this.h = 1000;
         Paint paint = new Paint();
-        this.f6195a = paint;
+        this.a = paint;
         paint.setAntiAlias(true);
-        this.f6195a.setAlpha(255);
-        this.f6195a.setColor(color);
+        this.a.setAlpha(255);
+        this.a.setColor(color);
         Paint paint2 = new Paint(1);
         this.i = paint2;
         paint2.setColor(-1);
@@ -78,10 +72,10 @@ public class SpreadAnimLayout extends FrameLayout {
             return;
         }
         int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null, 31);
-        this.f6195a.setAlpha(this.f6196c.b);
-        RectF rectF = this.f6196c.f6199a;
+        this.a.setAlpha(this.c.b);
+        RectF rectF = this.c.a;
         int i = this.f;
-        canvas.drawRoundRect(rectF, i, i, this.f6195a);
+        canvas.drawRoundRect(rectF, i, i, this.a);
         RectF rectF2 = this.d;
         int i2 = this.f;
         canvas.drawRoundRect(rectF2, i2, i2, this.i);
@@ -138,9 +132,9 @@ public class SpreadAnimLayout extends FrameLayout {
             this.d = new RectF(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
             this.e = new RectF(this.d);
             a aVar = new a();
-            this.f6196c = aVar;
+            this.c = aVar;
             aVar.b = 255;
-            this.f6196c.f6199a = this.e;
+            this.c.a = this.e;
             this.g = Math.min(this.g, Math.min((getWidth() - childAt.getWidth()) / 2, (getHeight() - childAt.getHeight()) / 2));
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.b = ofFloat;
@@ -152,10 +146,10 @@ public class SpreadAnimLayout extends FrameLayout {
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    SpreadAnimLayout.this.f6196c.b = (int) ((1.0f - floatValue) * 255.0f);
-                    SpreadAnimLayout.this.f6196c.f6199a.set(SpreadAnimLayout.this.d);
+                    SpreadAnimLayout.this.c.b = (int) ((1.0f - floatValue) * 255.0f);
+                    SpreadAnimLayout.this.c.a.set(SpreadAnimLayout.this.d);
                     float f = -((int) (SpreadAnimLayout.this.g * floatValue));
-                    SpreadAnimLayout.this.f6196c.f6199a.inset(f, f);
+                    SpreadAnimLayout.this.c.a.inset(f, f);
                     SpreadAnimLayout.this.invalidate();
                 }
             });

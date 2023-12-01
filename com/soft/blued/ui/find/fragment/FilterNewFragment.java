@@ -18,7 +18,10 @@ import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.viewbinding.ViewBinding;
+import com.anythink.expressad.a;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.module.common.base.mvi.MVIBaseFragment;
@@ -36,6 +39,7 @@ import com.blued.community.view.PhotoGridView;
 import com.blued.das.guy.GuyProtos;
 import com.blued.das.vip.VipProtos;
 import com.bytedance.applog.tracker.Tracker;
+import com.cdo.oaps.ad.OapsKey;
 import com.soft.blued.R;
 import com.soft.blued.customview.FilterScrollView;
 import com.soft.blued.databinding.FragmentFilterNewBinding;
@@ -123,7 +127,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     private boolean z;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f30229c = {Reflection.a(new PropertyReference1Impl(FilterNewFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentFilterNewBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f16539c = {(KProperty) Reflection.a(new PropertyReference1Impl(FilterNewFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/FragmentFilterNewBinding;", 0))};
     public static final Companion b = new Companion(null);
 
     @Metadata
@@ -138,18 +142,18 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     public FilterNewFragment() {
-        super(R.layout.fragment_filter_new);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<FilterNewFragment, FragmentFilterNewBinding>() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_filter_new);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<FilterNewFragment, FragmentFilterNewBinding>() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/find/fragment/FilterNewFragment;)Lcom/soft/blued/databinding/FragmentFilterNewBinding; */
             /* renamed from: a */
-            public final FragmentFilterNewBinding invoke(FilterNewFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentFilterNewBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<FilterNewFragment, FragmentFilterNewBinding>() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/find/fragment/FilterNewFragment;)Lcom/soft/blued/databinding/FragmentFilterNewBinding; */
             /* renamed from: a */
-            public final FragmentFilterNewBinding invoke(FilterNewFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentFilterNewBinding.a(fragment.requireView());
             }
@@ -206,7 +210,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         for (UserTag userTag : this.F) {
             if (userTag.checked == 1) {
                 hashSet.add(userTag.id);
-                Logger.e("isModified", Intrinsics.a("isMakeFriendModify=id==", (Object) Integer.valueOf(userTag.id.hashCode())));
+                Logger.e("isModified", Intrinsics.a("isMakeFriendModify=id==", Integer.valueOf(userTag.id.hashCode())));
             }
         }
         if (this.K.size() != hashSet.size()) {
@@ -215,7 +219,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         Logger.e("isModified", "isMakeFriendModify=default==" + this.K + "===curret=:" + hashSet);
         for (String str : this.K) {
             if (!hashSet.contains(str)) {
-                Logger.e("isModified", Intrinsics.a("isMakeFriendModify=tag==", (Object) Integer.valueOf(str.hashCode())));
+                Logger.e("isModified", Intrinsics.a("isMakeFriendModify=tag==", Integer.valueOf(str.hashCode())));
                 return true;
             }
         }
@@ -265,27 +269,27 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         }
         String str = this.m;
         Context context = getContext();
-        return (TextUtils.equals(str, Intrinsics.a("0-", (Object) (context == null ? null : Integer.valueOf(FilterNewHelper.f30593a.a(context).length - 1)))) && TextUtils.equals(BluedPreferences.K(), "0-300")) ? false : true;
+        return (TextUtils.equals(str, Intrinsics.a("0-", context == null ? null : Integer.valueOf(FilterNewHelper.f16903a.a(context).length - 1))) && TextUtils.equals(BluedPreferences.K(), "0-300")) ? false : true;
     }
 
     private final boolean O() {
-        String M = FilterNewHelper.f30593a.a() ? BluedPreferences.M() : BluedPreferences.L();
+        String M = FilterNewHelper.f16903a.a() ? BluedPreferences.M() : BluedPreferences.L();
         if (TextUtils.equals(this.p, M)) {
             return false;
         }
         String str = this.p;
         Context context = getContext();
-        return (TextUtils.equals(str, Intrinsics.a("0-", (Object) (context == null ? null : Integer.valueOf(FilterNewHelper.f30593a.b(context).length - 1)))) && TextUtils.equals(M, "0-500")) ? false : true;
+        return (TextUtils.equals(str, Intrinsics.a("0-", context == null ? null : Integer.valueOf(FilterNewHelper.f16903a.b(context).length - 1))) && TextUtils.equals(M, "0-500")) ? false : true;
     }
 
     private final boolean P() {
-        String O = FilterNewHelper.f30593a.a() ? BluedPreferences.O() : BluedPreferences.N();
+        String O = FilterNewHelper.f16903a.a() ? BluedPreferences.O() : BluedPreferences.N();
         if (TextUtils.equals(this.q, O)) {
             return false;
         }
         String str = this.q;
         Context context = getContext();
-        return (TextUtils.equals(str, Intrinsics.a("0-", (Object) (context == null ? null : Integer.valueOf(FilterNewHelper.f30593a.c(context).length - 1)))) && TextUtils.equals(O, "0-1000")) ? false : true;
+        return (TextUtils.equals(str, Intrinsics.a("0-", context == null ? null : Integer.valueOf(FilterNewHelper.f16903a.c(context).length - 1))) && TextUtils.equals(O, "0-1000")) ? false : true;
     }
 
     private final boolean Q() {
@@ -318,7 +322,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
 
     private final int a(String str, int i) {
         String str2 = str;
-        if (TextUtils.equals(str2, "max") || TextUtils.equals(str2, "300") || TextUtils.equals(str2, "500") || TextUtils.equals(str2, Constants.DEFAULT_UIN) || FilterNewHelper.f30593a.a(str)) {
+        if (TextUtils.equals(str2, "max") || TextUtils.equals(str2, "300") || TextUtils.equals(str2, "500") || TextUtils.equals(str2, Constants.DEFAULT_UIN) || FilterNewHelper.f16903a.a(str)) {
             return i - 1;
         }
         if (TextUtils.isEmpty(str2)) {
@@ -328,26 +332,26 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     private final String a(String str, String[] strArr, String str2) {
-        return TextUtils.isEmpty(str) ? Intrinsics.a(strArr[0], (Object) str2) : (FilterNewHelper.f30593a.a(str) || FilterNewHelper.f30593a.a(strArr[Integer.parseInt(str)])) ? FilterNewHelper.f30593a.b() : Intrinsics.a(strArr[Integer.parseInt(str)], (Object) str2);
+        return TextUtils.isEmpty(str) ? Intrinsics.a(strArr[0], str2) : (FilterNewHelper.f16903a.a(str) || FilterNewHelper.f16903a.a(strArr[Integer.parseInt(str)])) ? FilterNewHelper.f16903a.b() : Intrinsics.a(strArr[Integer.parseInt(str)], str2);
     }
 
     private final void a(Context context, LayoutBasicsFilterBinding layoutBasicsFilterBinding, final UserTagAll userTagAll) {
-        List<UserTag> list = userTagAll.love_type;
+        List list = userTagAll.love_type;
         if (list == null || list.isEmpty()) {
             return;
         }
-        FilterCommonPhotoGridView filterCommonPhotoGridView = layoutBasicsFilterBinding.f29384c;
+        FilterCommonPhotoGridView filterCommonPhotoGridView = layoutBasicsFilterBinding.f15694c;
         String string = context.getString(R.string.my_shape);
         Intrinsics.c(string, "context.getString(R.string.my_shape)");
         filterCommonPhotoGridView.setGridViewTitle(string);
-        layoutBasicsFilterBinding.f29384c.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$setPart1$1
+        layoutBasicsFilterBinding.f15694c.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$setPart1$1
             @Override // com.soft.blued.ui.find.manager.FilterSelectorOpenTwoLevelListener
             public void a() {
                 FilterNewFragment.this.g("HIS_FAVORITE_FILTER");
             }
         });
         final UserTagAdapterNew userTagAdapterNew = new UserTagAdapterNew(context, userTagAll.love_type);
-        final PhotoGridView photoGridView = layoutBasicsFilterBinding.f29384c.getPhotoGridView();
+        final PhotoGridView photoGridView = layoutBasicsFilterBinding.f15694c.getPhotoGridView();
         if (photoGridView == null) {
             return;
         }
@@ -376,11 +380,11 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(View view, boolean z, FilterNewFragment this$0, ValueAnimator valueAnimator) {
+    public static final void a(View view, boolean z, FilterNewFragment filterNewFragment, ValueAnimator valueAnimator) {
         FragmentFilterNewBinding d;
         FilterScrollView filterScrollView;
         Intrinsics.e(view, "$view");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(filterNewFragment, "this$0");
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
@@ -392,7 +396,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         }
         layoutParams2.height = ((Integer) animatedValue).intValue();
         view.setLayoutParams(layoutParams2);
-        if (BluedConfig.a().S() == 1 || !z || (d = this$0.d()) == null || (filterScrollView = d.h) == null) {
+        if (BluedConfig.a().S() == 1 || !z || (d = filterNewFragment.d()) == null || (filterScrollView = d.h) == null) {
             return;
         }
         filterScrollView.scrollTo((int) view.getX(), view.getBottom());
@@ -487,57 +491,57 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(UserTagAll data, FilterNewFragment this$0, UserTagAdapterNew adapterMakeFriends, AdapterView adapterView, View view, int i, long j) {
+    public static final void a(UserTagAll userTagAll, FilterNewFragment filterNewFragment, UserTagAdapterNew userTagAdapterNew, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(data, "$data");
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(adapterMakeFriends, "$adapterMakeFriends");
-        List<UserTag> list = data.i_want;
+        Intrinsics.e(userTagAll, "$data");
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(userTagAdapterNew, "$adapterMakeFriends");
+        List<? extends UserTag> list = userTagAll.i_want;
         if (list.get(i).checked == 1) {
             list.get(i).checked = 0;
         } else {
             list.get(i).checked = 1;
         }
         Intrinsics.c(list, "list");
-        this$0.a(list);
-        adapterMakeFriends.notifyDataSetChanged();
-        this$0.k = true;
+        filterNewFragment.a(list);
+        userTagAdapterNew.notifyDataSetChanged();
+        filterNewFragment.k = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FragmentFilterNewBinding vb, FilterNewFragment this$0, View view) {
+    public static final void a(FragmentFilterNewBinding fragmentFilterNewBinding, FilterNewFragment filterNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(vb, "$vb");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(fragmentFilterNewBinding, "$vb");
+        Intrinsics.e(filterNewFragment, "this$0");
         BluedPreferences.d(!BluedPreferences.H());
         if (BluedPreferences.H()) {
-            vb.g.setImageResource(2131237259);
-            vb.b.setVisibility(8);
+            fragmentFilterNewBinding.g.setImageResource(2131237259);
+            fragmentFilterNewBinding.b.setVisibility(8);
         } else {
-            vb.g.setImageResource(2131237258);
-            vb.b.setVisibility(0);
+            fragmentFilterNewBinding.g.setImageResource(2131237258);
+            fragmentFilterNewBinding.b.setVisibility(0);
         }
-        this$0.k = true;
+        filterNewFragment.k = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(LayoutVipFilterBinding vb, Context context, View view) {
+    public static final void a(LayoutVipFilterBinding layoutVipFilterBinding, Context context, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(vb, "$vb");
+        Intrinsics.e(layoutVipFilterBinding, "$vb");
         Intrinsics.e(context, "$context");
-        if (vb.f29438a.b()) {
-            vb.f.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_up_filter));
+        if (layoutVipFilterBinding.f15748a.b()) {
+            layoutVipFilterBinding.f.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_up_filter));
         } else {
-            vb.f.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_down_filter));
+            layoutVipFilterBinding.f.setImageDrawable(context.getDrawable(R.drawable.icon_arrow_down_filter));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterNewFragment this$0, DialogInterface dialogInterface, int i) {
+    public static final void a(FilterNewFragment filterNewFragment, DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        Intrinsics.e(this$0, "this$0");
-        this$0.C();
-        FilterDialogFragment filterDialogFragment = this$0.g;
+        Intrinsics.e(filterNewFragment, "this$0");
+        filterNewFragment.C();
+        FilterDialogFragment filterDialogFragment = filterNewFragment.g;
         if (filterDialogFragment != null) {
             Intrinsics.a(filterDialogFragment);
             filterDialogFragment.dismiss();
@@ -545,19 +549,19 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final FilterNewFragment this$0, View view) {
+    public static final void a(final FilterNewFragment filterNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        if (this$0.D()) {
-            CommonAlertDialog.a(this$0.getContext(), this$0.getString(R.string.common_string_notice), this$0.getResources().getString(R.string.filter_give_up), this$0.getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$3PPY3x9MKZe1lWX_9kR9VGrmVro
+        Intrinsics.e(filterNewFragment, "this$0");
+        if (filterNewFragment.D()) {
+            CommonAlertDialog.a(filterNewFragment.getContext(), filterNewFragment.getString(R.string.common_string_notice), filterNewFragment.getResources().getString(R.string.filter_give_up), filterNewFragment.getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$3PPY3x9MKZe1lWX_9kR9VGrmVro
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     FilterNewFragment.a(FilterNewFragment.this, dialogInterface, i);
                 }
-            }, this$0.getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+            }, filterNewFragment.getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
             return;
         }
-        FilterDialogFragment filterDialogFragment = this$0.g;
+        FilterDialogFragment filterDialogFragment = filterNewFragment.g;
         if (filterDialogFragment == null) {
             return;
         }
@@ -565,113 +569,113 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterNewFragment this$0, UserTagAll data, FilterConstellationAdapter adapterConstellation, AdapterView adapterView, View view, int i, long j) {
+    public static final void a(FilterNewFragment filterNewFragment, UserTagAll userTagAll, FilterConstellationAdapter filterConstellationAdapter, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(data, "$data");
-        Intrinsics.e(adapterConstellation, "$adapterConstellation");
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(userTagAll, "$data");
+        Intrinsics.e(filterConstellationAdapter, "$adapterConstellation");
         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-            PayUtils.a(this$0.getActivity(), 24, "nearby_filter_constellation", VipProtos.FromType.CONSTELLATION_FILTER);
-            EventTrackGuy.a(GuyProtos.Event.SCREEN_CONSTELLATION_BTN_CLICK, false, data.zodiac.get(i).id);
+            PayUtils.a(filterNewFragment.getActivity(), 24, "nearby_filter_constellation", VipProtos.FromType.CONSTELLATION_FILTER);
+            EventTrackGuy.a(GuyProtos.Event.SCREEN_CONSTELLATION_BTN_CLICK, false, ((ConstellationModel) userTagAll.zodiac.get(i)).id);
             return;
         }
-        ConstellationModel constellationModel = data.zodiac.get(i);
+        ConstellationModel constellationModel = (ConstellationModel) userTagAll.zodiac.get(i);
         if (constellationModel.checked == 1) {
             constellationModel.checked = 0;
         } else {
             constellationModel.checked = 1;
             EventTrackGuy.a(GuyProtos.Event.SCREEN_CONSTELLATION_BTN_CLICK, true, constellationModel.id);
         }
-        List<ConstellationModel> list = data.zodiac;
+        List<ConstellationModel> list = userTagAll.zodiac;
         Intrinsics.c(list, "data.zodiac");
-        this$0.a(list, true, adapterConstellation);
+        filterNewFragment.a(list, true, filterConstellationAdapter);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterNewFragment this$0, PhotoGridView photoGridView, UserTagAll data, UserTagAdapterNew adapterHisFavoriteType, AdapterView adapterView, View view, int i, long j) {
+    public static final void a(FilterNewFragment filterNewFragment, PhotoGridView photoGridView, UserTagAll userTagAll, UserTagAdapterNew userTagAdapterNew, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(data, "$data");
-        Intrinsics.e(adapterHisFavoriteType, "$adapterHisFavoriteType");
-        List<UserTag> list = data.love_type;
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(userTagAll, "$data");
+        Intrinsics.e(userTagAdapterNew, "$adapterHisFavoriteType");
+        List<? extends UserTag> list = userTagAll.love_type;
         Intrinsics.c(list, "data.love_type");
-        this$0.a(photoGridView, list, adapterHisFavoriteType, i, 2);
+        filterNewFragment.a(photoGridView, list, userTagAdapterNew, i, 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterNewFragment this$0, LayoutBasicsFilterBinding vb, View view) {
+    public static final void a(FilterNewFragment filterNewFragment, LayoutBasicsFilterBinding layoutBasicsFilterBinding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(vb, "$vb");
-        this$0.e();
-        LinearLayout linearLayout = vb.m;
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(layoutBasicsFilterBinding, "$vb");
+        filterNewFragment.e();
+        LinearLayout linearLayout = layoutBasicsFilterBinding.m;
         Intrinsics.c(linearLayout, "vb.llMoreFilterView");
         boolean z = true;
         if (!(linearLayout.getVisibility() == 8)) {
-            this$0.g("");
+            filterNewFragment.g("");
         }
-        LinearLayout linearLayout2 = vb.m;
+        LinearLayout linearLayout2 = layoutBasicsFilterBinding.m;
         Intrinsics.c(linearLayout2, "vb.llMoreFilterView");
         if (linearLayout2.getVisibility() != 8) {
             z = false;
         }
-        LinearLayout linearLayout3 = vb.m;
+        LinearLayout linearLayout3 = layoutBasicsFilterBinding.m;
         Intrinsics.c(linearLayout3, "vb.llMoreFilterView");
         LinearLayout linearLayout4 = linearLayout3;
-        ImageView imageView = vb.l;
+        ImageView imageView = layoutBasicsFilterBinding.l;
         Intrinsics.c(imageView, "vb.ivMoreFilterHeaderArrow");
-        this$0.a(z, linearLayout4, imageView);
+        filterNewFragment.a(z, linearLayout4, imageView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterNewFragment this$0, LayoutBasicsFilterBinding vb, UserTagAdapterNew adapterShapes, AdapterView adapterView, View view, int i, long j) {
+    public static final void a(FilterNewFragment filterNewFragment, LayoutBasicsFilterBinding layoutBasicsFilterBinding, UserTagAdapterNew userTagAdapterNew, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(vb, "$vb");
-        Intrinsics.e(adapterShapes, "$adapterShapes");
-        PhotoGridView photoGridView = vb.k;
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(layoutBasicsFilterBinding, "$vb");
+        Intrinsics.e(userTagAdapterNew, "$adapterShapes");
+        PhotoGridView photoGridView = layoutBasicsFilterBinding.k;
         Intrinsics.c(photoGridView, "vb.gvShape");
-        this$0.a(photoGridView, this$0.D, adapterShapes, i, 0);
+        filterNewFragment.a(photoGridView, filterNewFragment.D, userTagAdapterNew, i, 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterNewFragment this$0, UserTagAdapterNew adapterRelations, AdapterView adapterView, View view, int i, long j) {
+    public static final void a(FilterNewFragment filterNewFragment, UserTagAdapterNew userTagAdapterNew, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(adapterRelations, "$adapterRelations");
-        if (this$0.J.get(i).checked == 1) {
-            this$0.J.get(i).checked = 0;
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(userTagAdapterNew, "$adapterRelations");
+        if (filterNewFragment.J.get(i).checked == 1) {
+            filterNewFragment.J.get(i).checked = 0;
         } else {
-            this$0.J.get(i).checked = 1;
+            filterNewFragment.J.get(i).checked = 1;
         }
-        for (UserTag userTag : this$0.J) {
-            if (!Intrinsics.a((Object) userTag.id, (Object) this$0.J.get(i).id)) {
+        for (UserTag userTag : filterNewFragment.J) {
+            if (!Intrinsics.a(userTag.id, filterNewFragment.J.get(i).id)) {
                 userTag.checked = 0;
             }
         }
-        this$0.b(this$0.J);
+        filterNewFragment.b((List<? extends UserTag>) filterNewFragment.J);
         StringBuffer stringBuffer = new StringBuffer();
-        Iterator<UserTag> it = this$0.J.iterator();
+        Iterator<UserTag> it = filterNewFragment.J.iterator();
         while (true) {
             if (!it.hasNext()) {
                 break;
             }
             UserTag next = it.next();
             if (next.checked == 1) {
-                FilterNewHelper filterNewHelper = FilterNewHelper.f30593a;
+                FilterNewHelper filterNewHelper = FilterNewHelper.f16903a;
                 String str = next.name;
                 Intrinsics.c(str, "tag.name");
                 if (filterNewHelper.a(str)) {
                     stringBuffer.append("-1");
                     break;
                 }
-                stringBuffer.append(Intrinsics.a(next.id, (Object) ","));
+                stringBuffer.append(Intrinsics.a(next.id, ","));
             }
         }
         String stringBuffer2 = stringBuffer.toString();
         Intrinsics.c(stringBuffer2, "sbID.toString()");
-        this$0.c(stringBuffer2);
-        adapterRelations.notifyDataSetChanged();
+        filterNewFragment.c(stringBuffer2);
+        userTagAdapterNew.notifyDataSetChanged();
     }
 
     private final void a(List<? extends UserTag> list) {
@@ -705,7 +709,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 if (i != arrayList.size() - 1) {
                     this.x += str2 + ',';
                 } else {
-                    this.x = Intrinsics.a(this.x, (Object) str2);
+                    this.x = Intrinsics.a(this.x, str2);
                 }
                 i++;
             }
@@ -735,25 +739,25 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(List portraitList, FilterNewFragment this$0, AdapterView adapterView, View view, int i, long j) {
+    public static final void a(List list, FilterNewFragment filterNewFragment, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(portraitList, "$portraitList");
-        Intrinsics.e(this$0, "this$0");
-        if (((UserTag) portraitList.get(i)).checked == 1) {
-            ((UserTag) portraitList.get(i)).checked = 0;
+        Intrinsics.e(list, "$portraitList");
+        Intrinsics.e(filterNewFragment, "this$0");
+        if (((UserTag) list.get(i)).checked == 1) {
+            ((UserTag) list.get(i)).checked = 0;
         } else {
-            ((UserTag) portraitList.get(i)).checked = 1;
+            ((UserTag) list.get(i)).checked = 1;
         }
         if (i == 0) {
             BluedPreferences.g(!BluedPreferences.R());
         } else {
             BluedPreferences.e(!BluedPreferences.P());
         }
-        FilterCommonAdapterForGridView filterCommonAdapterForGridView = this$0.i;
+        FilterCommonAdapterForGridView filterCommonAdapterForGridView = filterNewFragment.i;
         if (filterCommonAdapterForGridView != null) {
             filterCommonAdapterForGridView.notifyDataSetChanged();
         }
-        this$0.k = true;
+        filterNewFragment.k = true;
     }
 
     private final void a(List<ConstellationModel> list, boolean z, FilterConstellationAdapter filterConstellationAdapter) {
@@ -778,7 +782,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 }
             }
         }
-        Iterator<E> it = arrayList.iterator();
+        Iterator it = arrayList.iterator();
         String str3 = "";
         int i = 0;
         while (true) {
@@ -791,14 +795,14 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 CollectionsKt.c();
             }
             String str4 = (String) next;
-            str3 = i2 != arrayList.size() - 1 ? str3 + str4 + ',' : Intrinsics.a(str3, (Object) str4);
+            str3 = i2 != arrayList.size() - 1 ? str3 + str4 + ',' : Intrinsics.a(str3, str4);
             i = i2 + 1;
         }
         String str5 = str3;
         if (str3.length() > 18) {
             String substring = str3.substring(0, 18);
             Intrinsics.c(substring, "this as java.lang.String…ing(startIndex, endIndex)");
-            str5 = Intrinsics.a(substring, (Object) "...");
+            str5 = Intrinsics.a(substring, "...");
         }
         if (z) {
             int i3 = 0;
@@ -808,7 +812,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                     CollectionsKt.c();
                 }
                 String str7 = (String) obj;
-                str6 = i3 != arrayList.size() - 1 ? str6 + str7 + ',' : Intrinsics.a(str6, (Object) str7);
+                str6 = i3 != arrayList.size() - 1 ? str6 + str7 + ',' : Intrinsics.a(str6, str7);
                 i3++;
             }
             BluedPreferences.aB(str6);
@@ -834,28 +838,28 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$sv6QAuIFR3GaMR5y2DVNj8p_Ypo
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FilterNewFragment.a(View.this, z, this, valueAnimator);
+                FilterNewFragment.a(view, z, this, valueAnimator);
             }
         });
         ofInt.setDuration(150L);
         ofInt.addListener(new Animator.AnimatorListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$showAnimation$2
             @Override // android.animation.Animator.AnimatorListener
-            public void onAnimationCancel(Animator animation) {
-                Intrinsics.e(animation, "animation");
+            public void onAnimationCancel(Animator animator) {
+                Intrinsics.e(animator, "animation");
             }
 
             @Override // android.animation.Animator.AnimatorListener
-            public void onAnimationEnd(Animator animation) {
+            public void onAnimationEnd(Animator animator) {
                 LayoutBasicsFilterBinding layoutBasicsFilterBinding;
-                Intrinsics.e(animation, "animation");
-                View.this.setVisibility(z ? 0 : 8);
-                ViewGroup.LayoutParams layoutParams = View.this.getLayoutParams();
+                Intrinsics.e(animator, "animation");
+                view.setVisibility(z ? 0 : 8);
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                 if (layoutParams == null) {
                     throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout.LayoutParams");
                 }
                 LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) layoutParams;
                 layoutParams2.height = -2;
-                View.this.setLayoutParams(layoutParams2);
+                view.setLayoutParams(layoutParams2);
                 Drawable drawable = null;
                 if (!z) {
                     this.f();
@@ -879,20 +883,20 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             }
 
             @Override // android.animation.Animator.AnimatorListener
-            public void onAnimationRepeat(Animator animation) {
-                Intrinsics.e(animation, "animation");
+            public void onAnimationRepeat(Animator animator) {
+                Intrinsics.e(animator, "animation");
             }
 
             @Override // android.animation.Animator.AnimatorListener
-            public void onAnimationStart(Animator animation) {
-                Intrinsics.e(animation, "animation");
-                View.this.setVisibility(0);
+            public void onAnimationStart(Animator animator) {
+                Intrinsics.e(animator, "animation");
+                view.setVisibility(0);
             }
         });
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$VB_uiiUVF_YjV2AgLO-0S3gmJfA
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FilterNewFragment.a(View.this, valueAnimator);
+                FilterNewFragment.a(view, valueAnimator);
             }
         });
         ofInt.start();
@@ -904,22 +908,22 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     private final void b(Context context, LayoutBasicsFilterBinding layoutBasicsFilterBinding, final UserTagAll userTagAll) {
-        List<UserTag> list = userTagAll.love_character;
+        List list = userTagAll.love_character;
         if (list == null || list.isEmpty()) {
             return;
         }
-        FilterCommonPhotoGridView filterCommonPhotoGridView = layoutBasicsFilterBinding.f29384c;
+        FilterCommonPhotoGridView filterCommonPhotoGridView = layoutBasicsFilterBinding.f15694c;
         String string = context.getString(R.string.my_personality);
         Intrinsics.c(string, "context.getString(R.string.my_personality)");
         filterCommonPhotoGridView.setGridViewTitle2(string);
-        layoutBasicsFilterBinding.f29384c.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$setPart2$1
+        layoutBasicsFilterBinding.f15694c.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$setPart2$1
             @Override // com.soft.blued.ui.find.manager.FilterSelectorOpenTwoLevelListener
             public void a() {
                 FilterNewFragment.this.g("HIS_FAVORITE_FILTER");
             }
         });
         final UserTagAdapterNew userTagAdapterNew = new UserTagAdapterNew(context, userTagAll.love_character);
-        final PhotoGridView photoGridView2 = layoutBasicsFilterBinding.f29384c.getPhotoGridView2();
+        final PhotoGridView photoGridView2 = layoutBasicsFilterBinding.f15694c.getPhotoGridView2();
         if (photoGridView2 == null) {
             return;
         }
@@ -940,17 +944,17 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FilterNewFragment this$0, View view) {
+    public static final void b(FilterNewFragment filterNewFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.s();
-        String[] a2 = this$0.a();
+        Intrinsics.e(filterNewFragment, "this$0");
+        filterNewFragment.s();
+        String[] a2 = filterNewFragment.a();
         BluedPreferences.s(a2[0]);
         BluedPreferences.t(a2[1]);
-        BluedPreferences.u(this$0.a(true)[2]);
+        BluedPreferences.u(filterNewFragment.a(true)[2]);
         PeopleDataObserver.a().b();
-        EventTrackGuy.a(GuyProtos.Event.NEARBY_FRIEND_FILTER_COMPLETE_BTN_CLICK, NearbyHttpUtils.a(NearbyHttpUtils.a(this$0.getContext(), new FilterEntity())), BluedPreferences.H());
-        FilterDialogFragment filterDialogFragment = this$0.g;
+        EventTrackGuy.a(GuyProtos.Event.NEARBY_FRIEND_FILTER_COMPLETE_BTN_CLICK, NearbyHttpUtils.a(NearbyHttpUtils.a(filterNewFragment.getContext(), new FilterEntity())), BluedPreferences.H());
+        FilterDialogFragment filterDialogFragment = filterNewFragment.g;
         if (filterDialogFragment != null) {
             Intrinsics.a(filterDialogFragment);
             filterDialogFragment.dismiss();
@@ -958,25 +962,25 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FilterNewFragment this$0, PhotoGridView photoGridView, UserTagAll data, UserTagAdapterNew adapterHisFavoriteType, AdapterView adapterView, View view, int i, long j) {
+    public static final void b(FilterNewFragment filterNewFragment, PhotoGridView photoGridView, UserTagAll userTagAll, UserTagAdapterNew userTagAdapterNew, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(data, "$data");
-        Intrinsics.e(adapterHisFavoriteType, "$adapterHisFavoriteType");
-        List<UserTag> list = data.love_character;
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(userTagAll, "$data");
+        Intrinsics.e(userTagAdapterNew, "$adapterHisFavoriteType");
+        List<? extends UserTag> list = userTagAll.love_character;
         Intrinsics.c(list, "data.love_character");
-        this$0.a(photoGridView, list, adapterHisFavoriteType, i, 2);
+        filterNewFragment.a(photoGridView, list, userTagAdapterNew, i, 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(FilterNewFragment this$0, LayoutBasicsFilterBinding vb, UserTagAdapterNew adapterRoles, AdapterView adapterView, View view, int i, long j) {
+    public static final void b(FilterNewFragment filterNewFragment, LayoutBasicsFilterBinding layoutBasicsFilterBinding, UserTagAdapterNew userTagAdapterNew, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(vb, "$vb");
-        Intrinsics.e(adapterRoles, "$adapterRoles");
-        PhotoGridView photoGridView = vb.i;
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(layoutBasicsFilterBinding, "$vb");
+        Intrinsics.e(userTagAdapterNew, "$adapterRoles");
+        PhotoGridView photoGridView = layoutBasicsFilterBinding.i;
         Intrinsics.c(photoGridView, "vb.gvHeIs");
-        this$0.a(photoGridView, this$0.I, adapterRoles, i, 0);
+        filterNewFragment.a(photoGridView, filterNewFragment.I, userTagAdapterNew, i, 0);
     }
 
     private final void b(List<? extends UserTag> list) {
@@ -1026,13 +1030,13 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(List priorityList, FilterNewFragment this$0, AdapterView adapterView, View view, int i, long j) {
+    public static final void b(List list, FilterNewFragment filterNewFragment, AdapterView adapterView, View view, int i, long j) {
         VipProtos.FromType fromType;
         String str;
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(priorityList, "$priorityList");
-        Intrinsics.e(this$0, "this$0");
-        if (((UserTag) priorityList.get(i)).checked == 0) {
+        Intrinsics.e(list, "$priorityList");
+        Intrinsics.e(filterNewFragment, "this$0");
+        if (((UserTag) list.get(i)).checked == 0) {
             if (i == 0) {
                 EventTrackGuy.a(GuyProtos.Event.SCREEN_AUTH_USER_BTN_CLICK, UserInfo.getInstance().getLoginUserInfo().vip_grade != 0);
             } else if (i != 1) {
@@ -1052,13 +1056,13 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 fromType = VipProtos.FromType.VIP_FILTER;
                 str = "nearby_filter_vip_user";
             }
-            PayUtils.a(this$0.getActivity(), 24, str, fromType);
+            PayUtils.a(filterNewFragment.getActivity(), 24, str, fromType);
             return;
         }
-        if (((UserTag) priorityList.get(i)).checked == 1) {
-            ((UserTag) priorityList.get(i)).checked = 0;
+        if (((UserTag) list.get(i)).checked == 1) {
+            ((UserTag) list.get(i)).checked = 0;
         } else {
-            ((UserTag) priorityList.get(i)).checked = 1;
+            ((UserTag) list.get(i)).checked = 1;
         }
         if (i == 0) {
             BluedPreferences.h(!BluedPreferences.S());
@@ -1067,11 +1071,11 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         } else {
             BluedPreferences.i(!BluedPreferences.Y());
         }
-        FilterCommonAdapterForGridView filterCommonAdapterForGridView = this$0.h;
+        FilterCommonAdapterForGridView filterCommonAdapterForGridView = filterNewFragment.h;
         if (filterCommonAdapterForGridView != null) {
             filterCommonAdapterForGridView.notifyDataSetChanged();
         }
-        this$0.k = true;
+        filterNewFragment.k = true;
     }
 
     private final void c(UserTagAll userTagAll) {
@@ -1080,14 +1084,14 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(FilterNewFragment this$0, PhotoGridView photoGridView, UserTagAll data, UserTagAdapterNew adapterHisTag, AdapterView adapterView, View view, int i, long j) {
+    public static final void c(FilterNewFragment filterNewFragment, PhotoGridView photoGridView, UserTagAll userTagAll, UserTagAdapterNew userTagAdapterNew, AdapterView adapterView, View view, int i, long j) {
         Tracker.onItemClick(adapterView, view, i, j);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(data, "$data");
-        Intrinsics.e(adapterHisTag, "$adapterHisTag");
-        List<UserTag> list = data.character;
+        Intrinsics.e(filterNewFragment, "this$0");
+        Intrinsics.e(userTagAll, "$data");
+        Intrinsics.e(userTagAdapterNew, "$adapterHisTag");
+        List<? extends UserTag> list = userTagAll.character;
         Intrinsics.c(list, "data.character");
-        this$0.a(photoGridView, list, adapterHisTag, i, 1);
+        filterNewFragment.a(photoGridView, list, userTagAdapterNew, i, 1);
     }
 
     private final void c(String str) {
@@ -1096,11 +1100,11 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             BluedPreferences.q("");
         } else {
             this.k = true;
-            if (Intrinsics.a((Object) str, (Object) "-1")) {
+            if (Intrinsics.a(str, "-1")) {
                 BluedPreferences.q(str);
             } else {
                 int i = 0;
-                Object[] array = StringsKt.b((CharSequence) str, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
+                Object[] array = StringsKt.b(str, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
                 if (array == null) {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
                 }
@@ -1129,7 +1133,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentFilterNewBinding d() {
-        return (FragmentFilterNewBinding) this.d.b(this, f30229c[0]);
+        return (FragmentFilterNewBinding) this.d.b(this, f16539c[0]);
     }
 
     private final void d(UserTagAll userTagAll) {
@@ -1189,32 +1193,32 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         if (layoutVipFilterBinding == null || (context = getContext()) == null) {
             return;
         }
-        layoutVipFilterBinding.f29438a.setShowItemHeight(250);
+        layoutVipFilterBinding.f15748a.setShowItemHeight(250);
         layoutVipFilterBinding.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$gbFHaBjNGp6Jo-flYGulKEhDEyM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FilterNewFragment.a(LayoutVipFilterBinding.this, context, view);
             }
         });
-        String chosenId = BluedPreferences.fJ();
-        String str = chosenId;
+        String fJ = BluedPreferences.fJ();
+        String str = fJ;
         if (!TextUtils.isEmpty(str)) {
-            Intrinsics.c(chosenId, "chosenId");
-            List<String> b2 = StringsKt.b((CharSequence) str, new String[]{","}, false, 0, 6, (Object) null);
-            List<ConstellationModel> list = userTagAll.zodiac;
+            Intrinsics.c(fJ, "chosenId");
+            List<String> b2 = StringsKt.b(str, new String[]{","}, false, 0, 6, (Object) null);
+            List list = userTagAll.zodiac;
             Intrinsics.c(list, "data.zodiac");
-            Iterator<ConstellationModel> it = list.iterator();
+            Iterator it = list.iterator();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (!it.hasNext()) {
                     break;
                 }
-                ConstellationModel next = it.next();
+                Object next = it.next();
                 if (i2 < 0) {
                     CollectionsKt.c();
                 }
-                ConstellationModel constellationModel = next;
+                ConstellationModel constellationModel = (ConstellationModel) next;
                 for (String str2 : b2) {
                     if (TextUtils.equals(str2, constellationModel.id)) {
                         constellationModel.checked = 1;
@@ -1223,7 +1227,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 i = i2 + 1;
             }
         }
-        List<ConstellationModel> list2 = userTagAll.zodiac;
+        List list2 = userTagAll.zodiac;
         Intrinsics.c(list2, "data.zodiac");
         final FilterConstellationAdapter filterConstellationAdapter = new FilterConstellationAdapter(context, list2);
         List<ConstellationModel> list3 = userTagAll.zodiac;
@@ -1342,13 +1346,13 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         LayoutVipFilterBinding layoutVipFilterBinding2;
         FilterCommonScrollSelectorView filterCommonScrollSelectorView5;
         String str2 = str;
-        if (!TextUtils.equals(str2, "ONLINE_TIME_FILTER") && (layoutVipFilterBinding2 = this.f) != null && (filterCommonScrollSelectorView5 = layoutVipFilterBinding2.f29439c) != null) {
+        if (!TextUtils.equals(str2, "ONLINE_TIME_FILTER") && (layoutVipFilterBinding2 = this.f) != null && (filterCommonScrollSelectorView5 = layoutVipFilterBinding2.f15749c) != null) {
             filterCommonScrollSelectorView5.a();
         }
         if (!TextUtils.equals(str2, "DISTANCE_FILTER") && (layoutVipFilterBinding = this.f) != null && (filterCommonScrollSelectorView4 = layoutVipFilterBinding.b) != null) {
             filterCommonScrollSelectorView4.a();
         }
-        if (!TextUtils.equals(str2, "AGE_FILTER") && (layoutBasicsFilterBinding3 = this.e) != null && (filterCommonScrollSelectorView3 = layoutBasicsFilterBinding3.f29383a) != null) {
+        if (!TextUtils.equals(str2, "AGE_FILTER") && (layoutBasicsFilterBinding3 = this.e) != null && (filterCommonScrollSelectorView3 = layoutBasicsFilterBinding3.f15693a) != null) {
             filterCommonScrollSelectorView3.a();
         }
         if (!TextUtils.equals(str2, "HEIGHT_FILTER") && (layoutBasicsFilterBinding2 = this.e) != null && (filterCommonScrollSelectorView2 = layoutBasicsFilterBinding2.b) != null) {
@@ -1369,13 +1373,13 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         String[] stringArray = getResources().getStringArray(R.array.relation_status_array);
         Intrinsics.c(stringArray, "resources.getStringArray…ay.relation_status_array)");
         stringArray[0] = getResources().getString(R.string.unlimited);
-        String selectedPosition = BluedPreferences.T();
-        String str2 = selectedPosition;
+        String T = BluedPreferences.T();
+        String str2 = T;
         if (TextUtils.isEmpty(str2)) {
             strArr = null;
         } else {
-            Intrinsics.c(selectedPosition, "selectedPosition");
-            Object[] array = StringsKt.b((CharSequence) str2, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
+            Intrinsics.c(T, "selectedPosition");
+            Object[] array = StringsKt.b(str2, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
             if (array == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
@@ -1415,7 +1419,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 i5 = i7 + 1;
             }
         }
-        if (Intrinsics.a((Object) selectedPosition, (Object) "-1") && this.J.size() > 0) {
+        if (Intrinsics.a(T, "-1") && this.J.size() > 0) {
             this.J.get(0).checked = 1;
         } else if (strArr != null && strArr.length > 0) {
             ArrayList arrayList2 = new ArrayList();
@@ -1431,7 +1435,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 }
             }
         }
-        b(this.J);
+        b((List<? extends UserTag>) this.J);
     }
 
     private final void g(UserTagAll userTagAll) {
@@ -1475,7 +1479,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         if (!TextUtils.equals(str2, "HIS_TAG_FILTER") && (layoutBasicsFilterBinding2 = this.e) != null && (filterCommonPhotoGridView2 = layoutBasicsFilterBinding2.d) != null) {
             filterCommonPhotoGridView2.a();
         }
-        if (TextUtils.equals(str2, "HIS_FAVORITE_FILTER") || (layoutBasicsFilterBinding = this.e) == null || (filterCommonPhotoGridView = layoutBasicsFilterBinding.f29384c) == null) {
+        if (TextUtils.equals(str2, "HIS_FAVORITE_FILTER") || (layoutBasicsFilterBinding = this.e) == null || (filterCommonPhotoGridView = layoutBasicsFilterBinding.f15694c) == null) {
             return;
         }
         filterCommonPhotoGridView.a();
@@ -1489,8 +1493,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         if (context == null || (layoutVipFilterBinding = this.f) == null) {
             return;
         }
-        layoutVipFilterBinding.f29439c.setNeedVipPrivilege(true);
-        layoutVipFilterBinding.f29439c.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$initOnlineTimeData$1$1$1
+        layoutVipFilterBinding.f15749c.setNeedVipPrivilege(true);
+        layoutVipFilterBinding.f15749c.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$initOnlineTimeData$1$1$1
             @Override // com.soft.blued.ui.find.manager.FilterSelectorOpenTwoLevelListener
             public void a() {
                 FragmentFilterNewBinding d;
@@ -1500,10 +1504,10 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 if (d == null || (filterScrollView = d.h) == null) {
                     return;
                 }
-                filterScrollView.setOnTouchView(layoutVipFilterBinding.f29439c.getTwoLevelView());
+                filterScrollView.setOnTouchView(layoutVipFilterBinding.f15749c.getTwoLevelView());
             }
         });
-        String[] d = FilterNewHelper.f30593a.d(context);
+        String[] d = FilterNewHelper.f16903a.d(context);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
         int length = d.length;
@@ -1516,17 +1520,17 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             }
             String str = d[i];
             if (i3 != d.length - 1) {
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = context.getString(2131890633);
                 Intrinsics.c(string, "context.getString(R.string.minutes)");
                 String format3 = String.format(string, Arrays.copyOf(new Object[]{str}, 1));
                 Intrinsics.c(format3, "format(format, *args)");
                 linkedHashMap.put(format3, Integer.valueOf(i3));
             }
-            if (FilterNewHelper.f30593a.a(str)) {
+            if (FilterNewHelper.f16903a.a(str)) {
                 linkedHashMap2.put(str, Integer.valueOf(i3));
             } else {
-                StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                 String string2 = context.getString(2131890633);
                 Intrinsics.c(string2, "context.getString(R.string.minutes)");
                 String format4 = String.format(string2, Arrays.copyOf(new Object[]{str}, 1));
@@ -1542,39 +1546,39 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         if (TextUtils.isEmpty(aa)) {
             this.s = "0-max";
             BluedPreferences.w("0-max");
-            layoutVipFilterBinding.f29439c.setRightTextColor(Integer.valueOf(BluedSkinUtils.a(context, 2131102254)));
+            layoutVipFilterBinding.f15749c.setRightTextColor(Integer.valueOf(BluedSkinUtils.a(context, 2131102254)));
         } else {
-            layoutVipFilterBinding.f29439c.setRightTextColor(Integer.valueOf(context.getResources().getColor(2131102182)));
+            layoutVipFilterBinding.f15749c.setRightTextColor(Integer.valueOf(context.getResources().getColor(2131102182)));
         }
-        layoutVipFilterBinding.f29439c.a(linkedHashMap, linkedHashMap2);
-        layoutVipFilterBinding.f29439c.setTag("ONLINE_TIME");
-        List b2 = StringsKt.b((CharSequence) this.s, new String[]{"-"}, false, 0, 6, (Object) null);
-        if (FilterNewHelper.f30593a.a(a((String) b2.get(0), d, ""))) {
-            format = FilterNewHelper.f30593a.b();
+        layoutVipFilterBinding.f15749c.a(linkedHashMap, linkedHashMap2);
+        layoutVipFilterBinding.f15749c.setTag("ONLINE_TIME");
+        List b2 = StringsKt.b(this.s, new String[]{com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER}, false, 0, 6, (Object) null);
+        if (FilterNewHelper.f16903a.a(a((String) b2.get(0), d, ""))) {
+            format = FilterNewHelper.f16903a.b();
         } else {
-            StringCompanionObject stringCompanionObject3 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject3 = StringCompanionObject.a;
             String string3 = context.getString(2131890633);
             Intrinsics.c(string3, "context.getString(R.string.minutes)");
             format = String.format(string3, Arrays.copyOf(new Object[]{a((String) b2.get(0), d, "")}, 1));
             Intrinsics.c(format, "format(format, *args)");
         }
-        if (FilterNewHelper.f30593a.a(d[a((String) b2.get(1), d.length)])) {
-            format2 = FilterNewHelper.f30593a.b();
+        if (FilterNewHelper.f16903a.a(d[a((String) b2.get(1), d.length)])) {
+            format2 = FilterNewHelper.f16903a.b();
         } else {
-            StringCompanionObject stringCompanionObject4 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject4 = StringCompanionObject.a;
             String string4 = context.getString(2131890633);
             Intrinsics.c(string4, "context.getString(R.string.minutes)");
             format2 = String.format(string4, Arrays.copyOf(new Object[]{d[a((String) b2.get(1), d.length)]}, 1));
             Intrinsics.c(format2, "format(format, *args)");
         }
-        FilterCommonScrollSelectorView filterCommonScrollSelectorView = layoutVipFilterBinding.f29439c;
+        FilterCommonScrollSelectorView filterCommonScrollSelectorView = layoutVipFilterBinding.f15749c;
         Integer num = (Integer) linkedHashMap.get(format);
         String str2 = format2;
-        if (FilterNewHelper.f30593a.a(format2)) {
+        if (FilterNewHelper.f16903a.a(format2)) {
             str2 = d[d.length - 1];
         }
         filterCommonScrollSelectorView.a(num, (Integer) linkedHashMap2.get(str2));
-        layoutVipFilterBinding.f29439c.setRightText(false);
+        layoutVipFilterBinding.f15749c.setRightText(false);
     }
 
     private final void h(UserTagAll userTagAll) {
@@ -1590,11 +1594,11 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             String string = context.getString(R.string.filter_new_choose);
             Intrinsics.c(string, "context.getString(R.string.filter_new_choose)");
             this.v = string;
-            layoutBasicsFilterBinding.f29384c.setRightTextColor(BluedSkinUtils.a(context, 2131102254));
+            layoutBasicsFilterBinding.f15694c.setRightTextColor(BluedSkinUtils.a(context, 2131102254));
         } else {
-            layoutBasicsFilterBinding.f29384c.setRightTextColor(BluedSkinUtils.a(context, 2131101766));
+            layoutBasicsFilterBinding.f15694c.setRightTextColor(BluedSkinUtils.a(context, 2131101766));
         }
-        layoutBasicsFilterBinding.f29384c.setRightText(this.v);
+        layoutBasicsFilterBinding.f15694c.setRightText(this.v);
         a(context, layoutBasicsFilterBinding, userTagAll);
         b(context, layoutBasicsFilterBinding, userTagAll);
     }
@@ -1619,7 +1623,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 filterScrollView.setOnTouchView(layoutVipFilterBinding.b.getTwoLevelView());
             }
         });
-        String[] e = FilterNewHelper.f30593a.e(context);
+        String[] e = FilterNewHelper.f16903a.e(context);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
         int length = e.length;
@@ -1632,12 +1636,12 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             }
             String str = e[i];
             if (i3 != e.length - 1) {
-                linkedHashMap.put(Intrinsics.a(str, (Object) context.getString(R.string.distance_unit)), Integer.valueOf(i3));
+                linkedHashMap.put(Intrinsics.a(str, context.getString(R.string.distance_unit)), Integer.valueOf(i3));
             }
-            if (FilterNewHelper.f30593a.a(str)) {
+            if (FilterNewHelper.f16903a.a(str)) {
                 linkedHashMap2.put(str, Integer.valueOf(i3));
             } else {
-                linkedHashMap2.put(Intrinsics.a(str, (Object) context.getString(R.string.distance_unit)), Integer.valueOf(i3));
+                linkedHashMap2.put(Intrinsics.a(str, context.getString(R.string.distance_unit)), Integer.valueOf(i3));
             }
             i++;
             i2 = i3 + 1;
@@ -1654,16 +1658,16 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         }
         layoutVipFilterBinding.b.a(linkedHashMap, linkedHashMap2);
         layoutVipFilterBinding.b.setTag("DISTANCE");
-        List b2 = StringsKt.b((CharSequence) this.r, new String[]{"-"}, false, 0, 6, (Object) null);
+        List b2 = StringsKt.b(this.r, new String[]{com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER}, false, 0, 6, (Object) null);
         String str2 = (String) b2.get(0);
         String string = context.getString(R.string.distance_unit);
         Intrinsics.c(string, "context.getString(R.string.distance_unit)");
         String a2 = a(str2, e, string);
-        String b3 = FilterNewHelper.f30593a.a(e[a((String) b2.get(1), e.length)]) ? FilterNewHelper.f30593a.b() : Intrinsics.a(e[a((String) b2.get(1), e.length)], (Object) context.getString(R.string.distance_unit));
+        String b3 = FilterNewHelper.f16903a.a(e[a((String) b2.get(1), e.length)]) ? FilterNewHelper.f16903a.b() : Intrinsics.a(e[a((String) b2.get(1), e.length)], context.getString(R.string.distance_unit));
         FilterCommonScrollSelectorView filterCommonScrollSelectorView = layoutVipFilterBinding.b;
         Integer num = (Integer) linkedHashMap.get(a2);
         String str3 = b3;
-        if (FilterNewHelper.f30593a.a(b3)) {
+        if (FilterNewHelper.f16903a.a(b3)) {
             str3 = e[e.length - 1];
         }
         filterCommonScrollSelectorView.a(num, (Integer) linkedHashMap2.get(str3));
@@ -1688,7 +1692,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             layoutBasicsFilterBinding.d.setRightTextColor(BluedSkinUtils.a(context, 2131101766));
         }
         layoutBasicsFilterBinding.d.setRightText(this.u);
-        List<UserTag> list = userTagAll.character;
+        List list = userTagAll.character;
         if (list == null || list.isEmpty()) {
             return;
         }
@@ -1740,7 +1744,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             Intrinsics.c(string, "context.getString(R.string.filter_new_choose)");
             this.x = string;
         }
-        List<UserTag> list = userTagAll.i_want;
+        List<? extends UserTag> list = userTagAll.i_want;
         Intrinsics.c(list, "data.i_want");
         a(list);
         final UserTagAdapterNew userTagAdapterNew = new UserTagAdapterNew(context, userTagAll.i_want);
@@ -1754,7 +1758,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         photoGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$WqcSJpSY8fXAXqNDH20BU_mGmMs
             @Override // android.widget.AdapterView.OnItemClickListener
             public final void onItemClick(AdapterView adapterView, View view, int i, long j) {
-                FilterNewFragment.a(UserTagAll.this, this, userTagAdapterNew, adapterView, view, i, j);
+                FilterNewFragment.a(userTagAll, this, userTagAdapterNew, adapterView, view, i, j);
             }
         });
     }
@@ -1785,7 +1789,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 filterScrollView.setOnTouchView(layoutBasicsFilterBinding.h.getTwoLevelView());
             }
         });
-        String[] c2 = FilterNewHelper.f30593a.c(context);
+        String[] c2 = FilterNewHelper.f16903a.c(context);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
         int length = c2.length;
@@ -1798,23 +1802,23 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             }
             String str2 = c2[i];
             if (i3 != c2.length - 1) {
-                if (FilterNewHelper.f30593a.a(str2)) {
-                    linkedHashMap.put(FilterNewHelper.f30593a.b(), Integer.valueOf(i3));
+                if (FilterNewHelper.f16903a.a(str2)) {
+                    linkedHashMap.put(FilterNewHelper.f16903a.b(), Integer.valueOf(i3));
                 } else {
-                    linkedHashMap.put(Intrinsics.a(str2, (Object) FilterNewHelper.f30593a.c()), Integer.valueOf(i3));
+                    linkedHashMap.put(Intrinsics.a(str2, FilterNewHelper.f16903a.c()), Integer.valueOf(i3));
                 }
             }
             if (i3 != 0) {
-                if (FilterNewHelper.f30593a.a(str2)) {
-                    linkedHashMap2.put(FilterNewHelper.f30593a.b(), Integer.valueOf(i3));
+                if (FilterNewHelper.f16903a.a(str2)) {
+                    linkedHashMap2.put(FilterNewHelper.f16903a.b(), Integer.valueOf(i3));
                 } else {
-                    linkedHashMap2.put(Intrinsics.a(str2, (Object) FilterNewHelper.f30593a.c()), Integer.valueOf(i3));
+                    linkedHashMap2.put(Intrinsics.a(str2, FilterNewHelper.f16903a.c()), Integer.valueOf(i3));
                 }
             }
             i++;
             i2 = i3 + 1;
         }
-        if (FilterNewHelper.f30593a.a()) {
+        if (FilterNewHelper.f16903a.a()) {
             N = BluedPreferences.O();
             str = "getWEIGHTCHOICE_LBS()";
         } else {
@@ -1825,8 +1829,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         this.q = N;
         if (TextUtils.isEmpty(N)) {
             layoutBasicsFilterBinding.h.setRightTextColor(Integer.valueOf(BluedSkinUtils.a(context, 2131102254)));
-            this.q = Intrinsics.a("1-", (Object) Integer.valueOf(c2.length - 2));
-            if (FilterNewHelper.f30593a.a()) {
+            this.q = Intrinsics.a("1-", Integer.valueOf(c2.length - 2));
+            if (FilterNewHelper.f16903a.a()) {
                 BluedPreferences.p(this.q);
             } else {
                 BluedPreferences.o(this.q);
@@ -1836,16 +1840,16 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             Resources resources = context.getResources();
             filterCommonScrollSelectorView.setRightTextColor(resources == null ? null : Integer.valueOf(resources.getColor(2131101766)));
         }
-        List b2 = StringsKt.b((CharSequence) this.q, new String[]{"-"}, false, 0, 6, (Object) null);
-        String a2 = a((String) b2.get(0), c2, FilterNewHelper.f30593a.c());
-        String b3 = FilterNewHelper.f30593a.a(c2[a((String) b2.get(1), c2.length)]) ? FilterNewHelper.f30593a.b() : Intrinsics.a(c2[a((String) b2.get(1), c2.length)], (Object) FilterNewHelper.f30593a.c());
+        List b2 = StringsKt.b(this.q, new String[]{com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER}, false, 0, 6, (Object) null);
+        String a2 = a((String) b2.get(0), c2, FilterNewHelper.f16903a.c());
+        String b3 = FilterNewHelper.f16903a.a(c2[a((String) b2.get(1), c2.length)]) ? FilterNewHelper.f16903a.b() : Intrinsics.a(c2[a((String) b2.get(1), c2.length)], FilterNewHelper.f16903a.c());
         layoutBasicsFilterBinding.h.setTag("WEIGHT");
         layoutBasicsFilterBinding.h.a(linkedHashMap, linkedHashMap2);
         FilterCommonScrollSelectorView filterCommonScrollSelectorView2 = layoutBasicsFilterBinding.h;
         Integer num = (Integer) linkedHashMap.get(a2);
-        V v = linkedHashMap2.get(b3);
-        Intrinsics.a(v);
-        filterCommonScrollSelectorView2.a(num, Integer.valueOf(((Number) v).intValue() - 1));
+        Object obj = linkedHashMap2.get(b3);
+        Intrinsics.a(obj);
+        filterCommonScrollSelectorView2.a(num, Integer.valueOf(((Number) obj).intValue() - 1));
         layoutBasicsFilterBinding.h.setRightText(false);
     }
 
@@ -1902,7 +1906,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 filterScrollView.setOnTouchView(layoutBasicsFilterBinding.b.getTwoLevelView());
             }
         });
-        String[] b2 = FilterNewHelper.f30593a.b(context);
+        String[] b2 = FilterNewHelper.f16903a.b(context);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
         int length = b2.length;
@@ -1915,23 +1919,23 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             }
             String str2 = b2[i];
             if (i3 != b2.length - 1) {
-                if (FilterNewHelper.f30593a.a(str2)) {
-                    linkedHashMap.put(FilterNewHelper.f30593a.b(), Integer.valueOf(i3));
+                if (FilterNewHelper.f16903a.a(str2)) {
+                    linkedHashMap.put(FilterNewHelper.f16903a.b(), Integer.valueOf(i3));
                 } else {
-                    linkedHashMap.put(Intrinsics.a(str2, (Object) FilterNewHelper.f30593a.d()), Integer.valueOf(i3));
+                    linkedHashMap.put(Intrinsics.a(str2, FilterNewHelper.f16903a.d()), Integer.valueOf(i3));
                 }
             }
             if (i3 != 0) {
-                if (FilterNewHelper.f30593a.a(str2)) {
-                    linkedHashMap2.put(FilterNewHelper.f30593a.b(), Integer.valueOf(i3));
+                if (FilterNewHelper.f16903a.a(str2)) {
+                    linkedHashMap2.put(FilterNewHelper.f16903a.b(), Integer.valueOf(i3));
                 } else {
-                    linkedHashMap2.put(Intrinsics.a(str2, (Object) FilterNewHelper.f30593a.d()), Integer.valueOf(i3));
+                    linkedHashMap2.put(Intrinsics.a(str2, FilterNewHelper.f16903a.d()), Integer.valueOf(i3));
                 }
             }
             i++;
             i2 = i3 + 1;
         }
-        if (FilterNewHelper.f30593a.a()) {
+        if (FilterNewHelper.f16903a.a()) {
             L = BluedPreferences.M();
             str = "getHEIGHTCHOICE_IN()";
         } else {
@@ -1942,8 +1946,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         this.p = L;
         if (TextUtils.isEmpty(L)) {
             layoutBasicsFilterBinding.b.setRightTextColor(Integer.valueOf(BluedSkinUtils.a(context, 2131102254)));
-            this.p = Intrinsics.a("1-", (Object) Integer.valueOf(b2.length - 2));
-            if (FilterNewHelper.f30593a.a()) {
+            this.p = Intrinsics.a("1-", Integer.valueOf(b2.length - 2));
+            if (FilterNewHelper.f16903a.a()) {
                 BluedPreferences.n(this.p);
             } else {
                 BluedPreferences.m(this.p);
@@ -1951,16 +1955,16 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         } else {
             layoutBasicsFilterBinding.b.setRightTextColor(Integer.valueOf(context.getResources().getColor(2131101766)));
         }
-        List b3 = StringsKt.b((CharSequence) this.p, new String[]{"-"}, false, 0, 6, (Object) null);
-        String a2 = a((String) b3.get(0), b2, FilterNewHelper.f30593a.d());
-        String b4 = FilterNewHelper.f30593a.a(b2[a((String) b3.get(1), b2.length)]) ? FilterNewHelper.f30593a.b() : Intrinsics.a(b2[a((String) b3.get(1), b2.length)], (Object) FilterNewHelper.f30593a.d());
+        List b3 = StringsKt.b(this.p, new String[]{com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER}, false, 0, 6, (Object) null);
+        String a2 = a((String) b3.get(0), b2, FilterNewHelper.f16903a.d());
+        String b4 = FilterNewHelper.f16903a.a(b2[a((String) b3.get(1), b2.length)]) ? FilterNewHelper.f16903a.b() : Intrinsics.a(b2[a((String) b3.get(1), b2.length)], FilterNewHelper.f16903a.d());
         layoutBasicsFilterBinding.b.setTag("HEIGHT");
         layoutBasicsFilterBinding.b.a(linkedHashMap, linkedHashMap2);
         FilterCommonScrollSelectorView filterCommonScrollSelectorView = layoutBasicsFilterBinding.b;
         Integer num = (Integer) linkedHashMap.get(a2);
-        V v = linkedHashMap2.get(b4);
-        Intrinsics.a(v);
-        filterCommonScrollSelectorView.a(num, Integer.valueOf(((Number) v).intValue() - 1));
+        Object obj = linkedHashMap2.get(b4);
+        Intrinsics.a(obj);
+        filterCommonScrollSelectorView.a(num, Integer.valueOf(((Number) obj).intValue() - 1));
         layoutBasicsFilterBinding.b.setRightText(false);
     }
 
@@ -1970,7 +1974,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         if (layoutBasicsFilterBinding == null || (context = getContext()) == null) {
             return;
         }
-        layoutBasicsFilterBinding.f29383a.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$initAgeData$1$1$1
+        layoutBasicsFilterBinding.f15693a.setOpenTwoLevelListener(new FilterSelectorOpenTwoLevelListener() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$initAgeData$1$1$1
             @Override // com.soft.blued.ui.find.manager.FilterSelectorOpenTwoLevelListener
             public void a() {
                 FragmentFilterNewBinding d;
@@ -1980,10 +1984,10 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 if (d == null || (filterScrollView = d.h) == null) {
                     return;
                 }
-                filterScrollView.setOnTouchView(layoutBasicsFilterBinding.f29383a.getTwoLevelView());
+                filterScrollView.setOnTouchView(layoutBasicsFilterBinding.f15693a.getTwoLevelView());
             }
         });
-        String[] a2 = FilterNewHelper.f30593a.a(context);
+        String[] a2 = FilterNewHelper.f16903a.a(context);
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
         int length = a2.length;
@@ -1995,13 +1999,13 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 break;
             }
             String str = a2[i];
-            if (i3 != a2.length - 1 && !FilterNewHelper.f30593a.a(str)) {
-                linkedHashMap.put(Intrinsics.a(str, (Object) context.getString(R.string.old)), Integer.valueOf(i3));
+            if (i3 != a2.length - 1 && !FilterNewHelper.f16903a.a(str)) {
+                linkedHashMap.put(Intrinsics.a(str, context.getString(R.string.old)), Integer.valueOf(i3));
             }
-            if (FilterNewHelper.f30593a.a(str)) {
-                linkedHashMap2.put(FilterNewHelper.f30593a.b(), Integer.valueOf(i3));
+            if (FilterNewHelper.f16903a.a(str)) {
+                linkedHashMap2.put(FilterNewHelper.f16903a.b(), Integer.valueOf(i3));
             } else {
-                linkedHashMap2.put(Intrinsics.a(str, (Object) context.getString(R.string.old)), Integer.valueOf(i3));
+                linkedHashMap2.put(Intrinsics.a(str, context.getString(R.string.old)), Integer.valueOf(i3));
             }
             i++;
             i2 = i3 + 1;
@@ -2010,23 +2014,23 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         Intrinsics.c(K, "getAGECHOICE()");
         this.m = K;
         if (TextUtils.isEmpty(K)) {
-            layoutBasicsFilterBinding.f29383a.setRightTextColor(Integer.valueOf(BluedSkinUtils.a(context, 2131102254)));
-            String a3 = Intrinsics.a("0-", (Object) Integer.valueOf(FilterNewHelper.f30593a.a(context).length - 2));
+            layoutBasicsFilterBinding.f15693a.setRightTextColor(Integer.valueOf(BluedSkinUtils.a(context, 2131102254)));
+            String a3 = Intrinsics.a("0-", Integer.valueOf(FilterNewHelper.f16903a.a(context).length - 2));
             this.m = a3;
             BluedPreferences.l(a3);
         } else {
-            layoutBasicsFilterBinding.f29383a.setRightTextColor(Integer.valueOf(context.getResources().getColor(2131101766)));
+            layoutBasicsFilterBinding.f15693a.setRightTextColor(Integer.valueOf(context.getResources().getColor(2131101766)));
         }
-        List b2 = StringsKt.b((CharSequence) this.m, new String[]{"-"}, false, 0, 6, (Object) null);
+        List b2 = StringsKt.b(this.m, new String[]{com.xiaomi.mipush.sdk.Constants.ACCEPT_TIME_SEPARATOR_SERVER}, false, 0, 6, (Object) null);
         String str2 = (String) b2.get(0);
         String string = context.getString(R.string.old);
         Intrinsics.c(string, "context.getString(R.string.old)");
         String a4 = a(str2, a2, string);
-        String b3 = FilterNewHelper.f30593a.a(a2[a((String) b2.get(1), a2.length)]) ? FilterNewHelper.f30593a.b() : Intrinsics.a(a2[a((String) b2.get(1), a2.length)], (Object) context.getString(R.string.old));
-        layoutBasicsFilterBinding.f29383a.setTag("AGE");
-        layoutBasicsFilterBinding.f29383a.a(linkedHashMap, linkedHashMap2);
-        layoutBasicsFilterBinding.f29383a.a((Integer) linkedHashMap.get(a4), (Integer) linkedHashMap2.get(b3));
-        layoutBasicsFilterBinding.f29383a.setRightText(false);
+        String b3 = FilterNewHelper.f16903a.a(a2[a((String) b2.get(1), a2.length)]) ? FilterNewHelper.f16903a.b() : Intrinsics.a(a2[a((String) b2.get(1), a2.length)], context.getString(R.string.old));
+        layoutBasicsFilterBinding.f15693a.setTag("AGE");
+        layoutBasicsFilterBinding.f15693a.a(linkedHashMap, linkedHashMap2);
+        layoutBasicsFilterBinding.f15693a.a((Integer) linkedHashMap.get(a4), (Integer) linkedHashMap2.get(b3));
+        layoutBasicsFilterBinding.f15693a.setRightText(false);
     }
 
     private final void q() {
@@ -2047,15 +2051,15 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             i3 = i2 + 1;
         }
         int i4 = i3;
-        if (FilterNewHelper.f30593a.j()) {
+        if (FilterNewHelper.f16903a.j()) {
             i4 = i3 + 1;
         }
         int i5 = i4;
-        if (FilterNewHelper.f30593a.i()) {
+        if (FilterNewHelper.f16903a.i()) {
             i5 = i4 + 1;
         }
         int i6 = i5;
-        if (FilterNewHelper.f30593a.h()) {
+        if (FilterNewHelper.f16903a.h()) {
             i6 = i5 + 1;
         }
         int i7 = i6;
@@ -2071,15 +2075,15 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             i9 = i8 + 1;
         }
         int i10 = i9;
-        if (FilterNewHelper.f30593a.f()) {
+        if (FilterNewHelper.f16903a.f()) {
             i10 = i9 + 1;
         }
         int i11 = i10;
-        if (FilterNewHelper.f30593a.g()) {
+        if (FilterNewHelper.f16903a.g()) {
             i11 = i10 + 1;
         }
         int i12 = i11;
-        if (FilterNewHelper.f30593a.e()) {
+        if (FilterNewHelper.f16903a.e()) {
             i12 = i11 + 1;
         }
         if (i12 >= 6) {
@@ -2090,11 +2094,11 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
 
     private final void s() {
         String b2 = b();
-        Logger.e(Intrinsics.a("rolses==", (Object) b2), new Object[0]);
+        Logger.e(Intrinsics.a("rolses==", b2), new Object[0]);
         BluedPreferences.k(b2);
     }
 
-    public final void a(View view, List<? extends UserTag> list, UserTagAdapterNew adapter, int i, int i2) {
+    public final void a(View view, List<? extends UserTag> list, UserTagAdapterNew userTagAdapterNew, int i, int i2) {
         FilterCommonPhotoGridView filterCommonPhotoGridView;
         FilterCommonPhotoGridView filterCommonPhotoGridView2;
         FilterCommonPhotoGridView filterCommonPhotoGridView3;
@@ -2103,9 +2107,9 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         FilterCommonPhotoGridView filterCommonPhotoGridView6;
         FilterCommonPhotoGridView filterCommonPhotoGridView7;
         FilterCommonPhotoGridView filterCommonPhotoGridView8;
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         Intrinsics.e(list, "list");
-        Intrinsics.e(adapter, "adapter");
+        Intrinsics.e(userTagAdapterNew, "adapter");
         Context context = getContext();
         if (context == null) {
             return;
@@ -2115,7 +2119,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         } else {
             list.get(i).checked = 1;
         }
-        adapter.notifyDataSetChanged();
+        userTagAdapterNew.notifyDataSetChanged();
         String[] a2 = a(true);
         if (a2.length > 2) {
             if (i2 == 1) {
@@ -2142,20 +2146,20 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             if (i2 == 2) {
                 if (TextUtils.isEmpty(a2[2])) {
                     LayoutBasicsFilterBinding layoutBasicsFilterBinding5 = this.e;
-                    if (layoutBasicsFilterBinding5 != null && (filterCommonPhotoGridView4 = layoutBasicsFilterBinding5.f29384c) != null) {
+                    if (layoutBasicsFilterBinding5 != null && (filterCommonPhotoGridView4 = layoutBasicsFilterBinding5.f15694c) != null) {
                         filterCommonPhotoGridView4.setRightText("");
                     }
                     LayoutBasicsFilterBinding layoutBasicsFilterBinding6 = this.e;
-                    if (layoutBasicsFilterBinding6 != null && (filterCommonPhotoGridView3 = layoutBasicsFilterBinding6.f29384c) != null) {
+                    if (layoutBasicsFilterBinding6 != null && (filterCommonPhotoGridView3 = layoutBasicsFilterBinding6.f15694c) != null) {
                         filterCommonPhotoGridView3.setRightTextColor(context.getResources().getColor(2131102254));
                     }
                 } else {
                     LayoutBasicsFilterBinding layoutBasicsFilterBinding7 = this.e;
-                    if (layoutBasicsFilterBinding7 != null && (filterCommonPhotoGridView2 = layoutBasicsFilterBinding7.f29384c) != null) {
+                    if (layoutBasicsFilterBinding7 != null && (filterCommonPhotoGridView2 = layoutBasicsFilterBinding7.f15694c) != null) {
                         filterCommonPhotoGridView2.setRightText(a2[2]);
                     }
                     LayoutBasicsFilterBinding layoutBasicsFilterBinding8 = this.e;
-                    if (layoutBasicsFilterBinding8 != null && (filterCommonPhotoGridView = layoutBasicsFilterBinding8.f29384c) != null) {
+                    if (layoutBasicsFilterBinding8 != null && (filterCommonPhotoGridView = layoutBasicsFilterBinding8.f15694c) != null) {
                         filterCommonPhotoGridView.setRightTextColor(context.getResources().getColor(2131101766));
                     }
                 }
@@ -2168,9 +2172,9 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         this.g = filterDialogFragment;
     }
 
-    public final void a(String ids) {
-        Intrinsics.e(ids, "ids");
-        if (StringUtils.d(ids)) {
+    public final void a(String str) {
+        Intrinsics.e(str, OapsKey.KEY_IDS);
+        if (StringUtils.d(str)) {
             List<UserTag> list = this.D;
             if (list == null) {
                 return;
@@ -2186,7 +2190,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 i = i2 + 1;
             }
         } else {
-            Object[] array = StringsKt.b((CharSequence) ids, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
+            Object[] array = StringsKt.b(str, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
             if (array == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
@@ -2206,7 +2210,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                         int i6 = i5;
                         if (i6 >= size2) {
                             break;
-                        } else if (Intrinsics.a((Object) strArr[i4], (Object) this.D.get(i6).id)) {
+                        } else if (Intrinsics.a(strArr[i4], this.D.get(i6).id)) {
                             this.D.get(i6).checked = 1;
                             break;
                         } else {
@@ -2222,7 +2226,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                         int i8 = i7;
                         if (i8 >= size3) {
                             break;
-                        } else if (Intrinsics.a((Object) strArr[i4], (Object) this.E.get(i8).id)) {
+                        } else if (Intrinsics.a(strArr[i4], this.E.get(i8).id)) {
                             this.E.get(i8).checked = 1;
                             break;
                         } else {
@@ -2238,7 +2242,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                         int i10 = i9;
                         if (i10 >= size4) {
                             break;
-                        } else if (Intrinsics.a((Object) strArr[i4], (Object) this.G.get(i10).id)) {
+                        } else if (Intrinsics.a(strArr[i4], this.G.get(i10).id)) {
                             this.G.get(i10).checked = 1;
                             break;
                         } else {
@@ -2254,7 +2258,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                         int i12 = i11;
                         if (i12 >= size5) {
                             break;
-                        } else if (Intrinsics.a((Object) strArr[i4], (Object) this.H.get(i12).id)) {
+                        } else if (Intrinsics.a(strArr[i4], this.H.get(i12).id)) {
                             this.H.get(i12).checked = 1;
                             break;
                         } else {
@@ -2270,12 +2274,12 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                         int i14 = i13;
                         if (i14 >= size6) {
                             break;
-                        } else if (Intrinsics.a((Object) strArr[i4], (Object) this.F.get(i14).id)) {
+                        } else if (Intrinsics.a(strArr[i4], this.F.get(i14).id)) {
                             this.F.get(i14).checked = 1;
                             Set<String> set = this.K;
-                            String str = this.F.get(i14).id;
-                            Intrinsics.c(str, "allLookforWantList[j].id");
-                            set.add(str);
+                            String str2 = this.F.get(i14).id;
+                            Intrinsics.c(str2, "allLookforWantList[j].id");
+                            set.add(str2);
                             break;
                         } else {
                             i13 = i14 + 1;
@@ -2307,7 +2311,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                     break;
                 }
                 if (this.D.get(i2).checked == 1) {
-                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", (Object) this.D.get(i2).id));
+                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", this.D.get(i2).id));
                 }
                 i = i2 + 1;
             }
@@ -2322,8 +2326,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                     break;
                 }
                 if (this.E.get(i4).checked == 1) {
-                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", (Object) this.E.get(i4).id));
-                    stringBuffer2.append(Intrinsics.a(StringUtils.d(stringBuffer2.toString()) ? "" : ",", (Object) this.E.get(i4).name));
+                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", this.E.get(i4).id));
+                    stringBuffer2.append(Intrinsics.a(StringUtils.d(stringBuffer2.toString()) ? "" : ",", this.E.get(i4).name));
                 }
                 i3 = i4 + 1;
             }
@@ -2338,8 +2342,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                     break;
                 }
                 if (this.G.get(i6).checked == 1) {
-                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", (Object) this.G.get(i6).id));
-                    stringBuffer3.append(Intrinsics.a(StringUtils.d(stringBuffer3.toString()) ? "" : ",", (Object) this.G.get(i6).name));
+                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", this.G.get(i6).id));
+                    stringBuffer3.append(Intrinsics.a(StringUtils.d(stringBuffer3.toString()) ? "" : ",", this.G.get(i6).name));
                 }
                 i5 = i6 + 1;
             }
@@ -2354,8 +2358,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                     break;
                 }
                 if (this.H.get(i8).checked == 1) {
-                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", (Object) this.H.get(i8).id));
-                    stringBuffer3.append(Intrinsics.a(StringUtils.d(stringBuffer3.toString()) ? "" : ",", (Object) this.H.get(i8).name));
+                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", this.H.get(i8).id));
+                    stringBuffer3.append(Intrinsics.a(StringUtils.d(stringBuffer3.toString()) ? "" : ",", this.H.get(i8).name));
                 }
                 i7 = i8 + 1;
             }
@@ -2369,8 +2373,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                     break;
                 }
                 if (this.F.get(i10).checked == 1) {
-                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", (Object) this.F.get(i10).id));
-                    stringBuffer3.append(Intrinsics.a(StringUtils.d(stringBuffer3.toString()) ? "" : ",", (Object) this.F.get(i10).name));
+                    stringBuffer.append(Intrinsics.a(StringUtils.d(stringBuffer.toString()) ? "" : ",", this.F.get(i10).id));
+                    stringBuffer3.append(Intrinsics.a(StringUtils.d(stringBuffer3.toString()) ? "" : ",", this.F.get(i10).name));
                 }
                 i9 = i10 + 1;
             }
@@ -2429,16 +2433,16 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 str2 = str3;
             }
         }
-        Log.v("drb", Intrinsics.a("result:", (Object) str));
+        Log.v("drb", Intrinsics.a("result:", str));
         return str;
     }
 
-    public final void b(String roles) {
+    public final void b(String str) {
         Resources resources;
         Resources resources2;
         Resources resources3;
         String string;
-        Intrinsics.e(roles, "roles");
+        Intrinsics.e(str, "roles");
         Context context = getContext();
         UserTag userTag = new UserTag("1", (context == null || (resources = context.getResources()) == null) ? null : resources.getString(2131891552), 0);
         Context context2 = getContext();
@@ -2457,10 +2461,10 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         this.I.add(userTag2);
         this.I.add(userTag3);
         this.I.add(userTag4);
-        if (StringUtils.d(roles)) {
+        if (StringUtils.d(str)) {
             return;
         }
-        Object[] array = StringsKt.b((CharSequence) roles, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
+        Object[] array = StringsKt.b(str, new String[]{","}, false, 0, 6, (Object) null).toArray(new String[0]);
         if (array == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
         }
@@ -2472,14 +2476,14 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
             if (i2 >= length) {
                 return;
             }
-            String str = strArr[i2];
+            String str2 = strArr[i2];
             int size = this.I.size();
             int i3 = 0;
             while (true) {
                 int i4 = i3;
                 if (i4 < size) {
                     UserTag userTag5 = this.I.get(i4);
-                    if (StringsKt.a(userTag5.id, str, true)) {
+                    if (StringsKt.a(userTag5.id, str2, true)) {
                         userTag5.checked = 1;
                     }
                     i3 = i4 + 1;
@@ -2498,9 +2502,8 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         imageView.performClick();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
-        BluedStructureExtKt.a(this, FilterAction.GetFilterData.f30674a);
+        BluedStructureExtKt.a(this, FilterAction.GetFilterData.f16984a);
         final FragmentFilterNewBinding d = d();
         if (d == null) {
             return;
@@ -2549,7 +2552,7 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         String V = BluedPreferences.V();
         Intrinsics.c(V, "getTAGCHOICE()");
         this.t = V;
-        d.f28822a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$9UzqVhv8DZt9OfMDk6_f7GhssFU
+        d.f15132a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.fragment.-$$Lambda$FilterNewFragment$9UzqVhv8DZt9OfMDk6_f7GhssFU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FilterNewFragment.b(FilterNewFragment.this, view);
@@ -2562,12 +2565,10 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
         i();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.find.fragment.FilterNewFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((FilterState) obj).getFilterData();
             }
@@ -2577,20 +2578,18 @@ public final class FilterNewFragment extends MVIBaseFragment<FilterViewModel> {
                 super(1);
             }
 
-            public final void a(UserTagAll data) {
-                Intrinsics.e(data, "data");
-                FilterNewFragment.this.a(data);
+            public final void a(UserTagAll userTagAll) {
+                Intrinsics.e(userTagAll, "data");
+                FilterNewFragment.this.a(userTagAll);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(UserTagAll userTagAll) {
-                a(userTagAll);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((UserTagAll) obj);
+                return Unit.a;
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         C();
         return super.onBackPressed();

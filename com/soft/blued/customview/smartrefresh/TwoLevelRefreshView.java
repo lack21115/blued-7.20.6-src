@@ -16,11 +16,11 @@ import com.soft.blued.R;
 public class TwoLevelRefreshView extends InternalAbstract implements RefreshHeader {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f28653a;
+    public View f14963a;
     public LottieAnimationView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public TextView f28654c;
+    public TextView f14964c;
     public boolean d;
     public boolean e;
 
@@ -29,28 +29,28 @@ public class TwoLevelRefreshView extends InternalAbstract implements RefreshHead
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f28655a;
+        static final /* synthetic */ int[] f14965a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[RefreshState.values().length];
-            f28655a = iArr;
+            f14965a = iArr;
             try {
                 iArr[RefreshState.None.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f28655a[RefreshState.PullDownToRefresh.ordinal()] = 2;
+                f14965a[RefreshState.PullDownToRefresh.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f28655a[RefreshState.ReleaseToRefresh.ordinal()] = 3;
+                f14965a[RefreshState.ReleaseToRefresh.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f28655a[RefreshState.Refreshing.ordinal()] = 4;
+                f14965a[RefreshState.Refreshing.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -69,9 +69,9 @@ public class TwoLevelRefreshView extends InternalAbstract implements RefreshHead
         this.d = false;
         this.e = false;
         View inflate = LayoutInflater.from(context).inflate(R.layout.layout_second_flow_refresh, this);
-        this.f28653a = inflate.findViewById(2131363911);
-        this.b = (LottieAnimationView) inflate.findViewById(2131366703);
-        this.f28654c = (TextView) inflate.findViewById(2131372398);
+        this.f14963a = inflate.findViewById(2131363911);
+        this.b = inflate.findViewById(2131366703);
+        this.f14964c = (TextView) inflate.findViewById(2131372398);
         this.b.setImageAssetsFolder("images/");
         this.b.setAnimation("wave_super_man.json");
     }
@@ -95,7 +95,7 @@ public class TwoLevelRefreshView extends InternalAbstract implements RefreshHead
 
     @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.listener.OnStateChangedListener
     public void a(RefreshLayout refreshLayout, RefreshState refreshState, RefreshState refreshState2) {
-        int i = AnonymousClass1.f28655a[refreshState2.ordinal()];
+        int i = AnonymousClass1.f14965a[refreshState2.ordinal()];
         if (i == 1) {
             LottieAnimationView lottieAnimationView = this.b;
             if (lottieAnimationView != null) {
@@ -104,22 +104,22 @@ public class TwoLevelRefreshView extends InternalAbstract implements RefreshHead
             }
         } else if (i == 2) {
             if (this.e) {
-                this.f28654c.setText(2131890338);
+                this.f14964c.setText(R.string.live_two_level_get);
             } else {
-                this.f28654c.setText(2131891361);
+                this.f14964c.setText(2131891361);
             }
         } else if (i == 3) {
             if (this.e) {
-                this.f28654c.setText(2131890338);
+                this.f14964c.setText(R.string.live_two_level_get);
             } else {
-                this.f28654c.setText(2131891364);
+                this.f14964c.setText(2131891364);
             }
         } else if (i != 4) {
         } else {
             if (this.e) {
-                this.f28654c.setText(2131890338);
+                this.f14964c.setText(R.string.live_two_level_get);
             } else {
-                this.f28654c.setText(2131891363);
+                this.f14964c.setText(2131891363);
             }
         }
     }
@@ -128,8 +128,8 @@ public class TwoLevelRefreshView extends InternalAbstract implements RefreshHead
         this.d = z2;
         this.e = z;
         if (z2) {
-            this.f28654c.setTextSize(12.0f);
-            this.f28654c.setTextColor(getResources().getColor(2131101780));
+            this.f14964c.setTextSize(12.0f);
+            this.f14964c.setTextColor(getResources().getColor(2131101780));
             LottieAnimationView lottieAnimationView = this.b;
             if (lottieAnimationView != null) {
                 lottieAnimationView.setVisibility(4);
@@ -137,8 +137,8 @@ public class TwoLevelRefreshView extends InternalAbstract implements RefreshHead
             }
             return;
         }
-        this.f28654c.setTextSize(10.0f);
-        this.f28654c.setTextColor(getResources().getColor(2131100624));
+        this.f14964c.setTextSize(10.0f);
+        this.f14964c.setTextColor(getResources().getColor(2131100624));
         LottieAnimationView lottieAnimationView2 = this.b;
         if (lottieAnimationView2 != null) {
             lottieAnimationView2.setVisibility(0);

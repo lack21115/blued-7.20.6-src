@@ -14,18 +14,18 @@ public interface n extends IInterface {
 
         /* renamed from: com.tencent.tmsqmsp.oaid2.n$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/n$a$a.class */
-        public static class C1040a implements n {
+        public static class C0870a implements n {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f39652a;
+            public IBinder f25961a;
 
-            public C1040a(IBinder iBinder) {
-                this.f39652a = iBinder;
+            public C0870a(IBinder iBinder) {
+                this.f25961a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f39652a;
+                return this.f25961a;
             }
 
             @Override // com.tencent.tmsqmsp.oaid2.n
@@ -34,7 +34,7 @@ public interface n extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-                    this.f39652a.transact(1, obtain, obtain2, 0);
+                    this.f25961a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -58,7 +58,7 @@ public interface n extends IInterface {
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
                     obtain.writeString(str);
-                    this.f39652a.transact(5, obtain, obtain2, 0);
+                    this.f25961a.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
                     String readString = obtain2.readString();
                     obtain2.recycle();
@@ -82,7 +82,7 @@ public interface n extends IInterface {
                 boolean z = false;
                 try {
                     obtain.writeInterfaceToken("com.zui.deviceidservice.IDeviceidInterface");
-                    this.f39652a.transact(3, obtain, obtain2, 0);
+                    this.f25961a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -104,7 +104,7 @@ public interface n extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.zui.deviceidservice.IDeviceidInterface");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof n)) ? new C1040a(iBinder) : (n) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof n)) ? new C0870a(iBinder) : (n) queryLocalInterface;
         }
     }
 

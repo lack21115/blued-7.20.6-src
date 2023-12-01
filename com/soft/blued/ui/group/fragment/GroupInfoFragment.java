@@ -32,7 +32,6 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.area.AreaUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.android.module.common.view.NoDataAndLoadFailView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.das.message.MessageProtos;
 import com.bytedance.applog.tracker.Tracker;
@@ -64,6 +63,7 @@ import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.CommonDataRefreshObserver;
 import com.soft.blued.utils.PopMenuUtils;
 import com.soft.blued.utils.StringUtils;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -114,14 +114,14 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
     private NoDataAndLoadFailView aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private LinearLayout f30957ar;
+    private LinearLayout f17267ar;
     private LinearLayout as;
     private TextView at;
     private BluedCreatedGroupInfo au;
     private GroupInfoPresenter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f30958c;
+    private Context f17268c;
     private View d;
     private LoadOptions e;
     private String f;
@@ -147,7 +147,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
     private ImageView z;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f30956a = GroupInfoFragment.class.getSimpleName();
+    private String f17266a = GroupInfoFragment.class.getSimpleName();
     private List<BluedGroupAllMembers> av = new ArrayList();
 
     public static void a(Context context, String str) {
@@ -225,12 +225,12 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
         this.am = (ImageView) view.findViewById(R.id.tv_members_count_arrow);
         this.an = (LinearLayout) view.findViewById(R.id.liner_group_admins_set);
         this.ao = (TextView) view.findViewById(R.id.ll_group_intro_line);
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(R.id.iv_group_info_dissolution);
-        this.aq = noDataAndLoadFailView;
-        noDataAndLoadFailView.setNoDataImg(R.drawable.group_dismissed);
-        this.aq.setNoDataStr(R.string.group_info_dissolution);
+        NoDataAndLoadFailView findViewById = view.findViewById(R.id.iv_group_info_dissolution);
+        this.aq = findViewById;
+        findViewById.setNoDataImg((int) R.drawable.group_dismissed);
+        this.aq.setNoDataStr((int) R.string.group_info_dissolution);
         this.aq.d();
-        this.f30957ar = (LinearLayout) view.findViewById(R.id.ll_group_info_bottom);
+        this.f17267ar = (LinearLayout) view.findViewById(R.id.ll_group_info_bottom);
         this.as = (LinearLayout) view.findViewById(R.id.ll_group_intro_top);
         this.at = (TextView) view.findViewById(R.id.tv_group_intro_top_line);
         this.j.setOnClickListener(this);
@@ -315,7 +315,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    if (GroupInfoFragment.this.au == null || !BluedConstant.f28239a) {
+                    if (GroupInfoFragment.this.au == null || !BluedConstant.f14549a) {
                         return;
                     }
                     AppMethods.d((int) R.string.msg_toast_group_function_close);
@@ -356,15 +356,16 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
     }
 
     private void i() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        this.i = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        this.i = findViewById;
+        findViewById.a();
         this.i.setCenterText(getString(R.string.group_info));
         this.i.setLeftClickListener(this);
         this.i.setRightClickListener(this);
-        this.i.setRightImg(R.drawable.icon_title_group_share);
+        this.i.setRightImg((int) R.drawable.icon_title_group_share);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void j() {
         if (this.au != null) {
             String json = AppInfo.f().toJson(this.au);
@@ -406,7 +407,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
             this.m.setVisibility(8);
         } else {
             TextView textView = this.m;
-            textView.setText(" " + StringUtils.a(bluedCreatedGroupInfo.groups_members_count) + BridgeUtil.SPLIT_MARK + StringUtils.a(bluedCreatedGroupInfo.groups_members_total) + " ");
+            textView.setText(" " + StringUtils.a(bluedCreatedGroupInfo.groups_members_count) + "/" + StringUtils.a(bluedCreatedGroupInfo.groups_members_total) + " ");
         }
         if (StringUtils.d(bluedCreatedGroupInfo.groups_description)) {
             this.p.setVisibility(8);
@@ -586,7 +587,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
 
     @Override // com.soft.blued.ui.group.contract.IGroupInfoContract.IView
     public void a(String[] strArr) {
-        BasePhotoFragment.a(this.f30958c, strArr, 0, 2, this.e);
+        BasePhotoFragment.a(this.f17268c, strArr, 0, 2, this.e);
     }
 
     @Override // com.soft.blued.ui.group.contract.IGroupInfoContract.IView
@@ -633,7 +634,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
         }
         LogData logData = new LogData();
         logData.from = "none";
-        ChatHelperV4.a().a(this.f30958c, Long.parseLong(bluedCreatedGroupInfo.groups_gid), bluedCreatedGroupInfo.groups_name, bluedCreatedGroupInfo.groups_avatar, bluedCreatedGroupInfo.vbadge, 0, 0, 0, "", false, 1, 0, logData, new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""));
+        ChatHelperV4.a().a(this.f17268c, Long.parseLong(bluedCreatedGroupInfo.groups_gid), bluedCreatedGroupInfo.groups_name, bluedCreatedGroupInfo.groups_avatar, bluedCreatedGroupInfo.vbadge, 0, 0, 0, "", false, 1, 0, logData, new MsgSourceEntity(MessageProtos.StrangerSource.UNKNOWN_STRANGER_SOURCE, ""));
         getActivity().finish();
     }
 
@@ -643,7 +644,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
             @Override // java.lang.Runnable
             public void run() {
                 GroupInfoFragment.this.ap.setVisibility(8);
-                GroupInfoFragment.this.f30957ar.setVisibility(8);
+                GroupInfoFragment.this.f17267ar.setVisibility(8);
                 GroupInfoFragment.this.aq.a();
                 GroupInfoFragment.this.i.a();
             }
@@ -660,7 +661,6 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i != 22) {
@@ -703,7 +703,6 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         Intent intent = new Intent();
         intent.putExtra("passby_nick_name", this.k.getText().toString());
@@ -712,6 +711,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
         return true;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
@@ -750,24 +750,24 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
                         return;
                     }
                     if (UserInfo.getInstance().getLoginUserInfo().getUid().equals(str)) {
-                        Context context = this.f30958c;
-                        CommonAlertDialog.a(context, context.getResources().getString(R.string.common_string_notice), this.f30958c.getResources().getString(R.string.group_dismiss_dialog), this.f30958c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.4
+                        Context context = this.f17268c;
+                        CommonAlertDialog.a(context, context.getResources().getString(R.string.common_string_notice), this.f17268c.getResources().getString(R.string.group_dismiss_dialog), this.f17268c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.4
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Tracker.onClick(dialogInterface, i);
                                 GroupInfoFragment.this.b.e();
                             }
-                        }, this.f30958c.getResources().getString(2131886885), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                        }, this.f17268c.getResources().getString(2131886885), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                         return;
                     } else if ("1".equals(this.au.groups_in_members)) {
-                        Context context2 = this.f30958c;
-                        CommonAlertDialog.a(context2, context2.getResources().getString(R.string.common_string_notice), this.f30958c.getResources().getString(R.string.group_quit_dialog), this.f30958c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.5
+                        Context context2 = this.f17268c;
+                        CommonAlertDialog.a(context2, context2.getResources().getString(R.string.common_string_notice), this.f17268c.getResources().getString(R.string.group_quit_dialog), this.f17268c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.5
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Tracker.onClick(dialogInterface, i);
                                 GroupInfoFragment.this.b.f();
                             }
-                        }, this.f30958c.getResources().getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.6
+                        }, this.f17268c.getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.6
                             @Override // android.content.DialogInterface.OnClickListener
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Tracker.onClick(dialogInterface, i);
@@ -809,17 +809,17 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
                     if (!StringUtils.d(this.au.groups_admins_count)) {
                         bundle4.putString("admin_amount", this.au.groups_admins_count);
                     }
-                    TerminalActivity.a(this, GroupAdminSetFragment.class, bundle4, 4000);
+                    TerminalActivity.a(this, GroupAdminSetFragment.class, bundle4, (int) TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY);
                     return;
                 case R.id.liner_group_clear_chat /* 2131366884 */:
-                    CommonAlertDialog.a(this.f30958c, getString(R.string.common_string_notice), getString(R.string.biao_v4_chat_clearchat), getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.3
+                    CommonAlertDialog.a(this.f17268c, getString(R.string.common_string_notice), getString(R.string.biao_v4_chat_clearchat), getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.group.fragment.GroupInfoFragment.3
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Tracker.onClick(dialogInterface, i);
                             GroupInfoFragment.this.b.d();
                             AppMethods.d((int) R.string.group_chat_delete_success);
                         }
-                    }, getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                    }, getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
                     return;
                 case R.id.liner_group_count_set /* 2131366885 */:
                     Bundle bundle5 = new Bundle();
@@ -830,13 +830,13 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
                     TerminalActivity.a(this, GroupUpdateCountFragment.class, bundle5, 8000);
                     return;
                 case R.id.ll_group_info_custom_service /* 2131367849 */:
-                    ServiceHelper.f33645a.a(this.f30958c);
+                    ServiceHelper.f19954a.a(this.f17268c);
                     return;
                 case R.id.ll_group_intro /* 2131367850 */:
                     if (StringUtils.d(this.au.groups_is_created) || StringUtils.d(this.au.groups_is_admins)) {
                         return;
                     }
-                    if (("1".equals(this.au.groups_is_created) || "1".equals(this.au.groups_is_admins)) && !PopMenuUtils.a(this.f30958c)) {
+                    if (("1".equals(this.au.groups_is_created) || "1".equals(this.au.groups_is_admins)) && !PopMenuUtils.a(this.f17268c)) {
                         Bundle bundle6 = new Bundle();
                         bundle6.putString(MediaFormat.KEY_PROFILE, this.p.getText().toString());
                         TerminalActivity.a(this, ModifyGroupProfileFragment.class, bundle6, 2000);
@@ -853,7 +853,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
                     if (StringUtils.d(this.au.groups_is_created) || StringUtils.d(this.au.groups_is_admins)) {
                         return;
                     }
-                    if (("1".equals(this.au.groups_is_created) || "1".equals(this.au.groups_is_admins)) && !PopMenuUtils.a(this.f30958c)) {
+                    if (("1".equals(this.au.groups_is_created) || "1".equals(this.au.groups_is_admins)) && !PopMenuUtils.a(this.f17268c)) {
                         Bundle bundle7 = new Bundle();
                         bundle7.putString("icon", this.au.groups_avatar);
                         bundle7.putString("name", this.k.getText().toString());
@@ -863,7 +863,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
                     }
                     return;
                 case R.id.ll_group_term /* 2131367876 */:
-                    WebViewShowInfoFragment.show(this.f30958c, H5Url.a(27), 0);
+                    WebViewShowInfoFragment.show(this.f17268c, H5Url.a(27), 0);
                     return;
                 case R.id.ll_groupinfo_location /* 2131367881 */:
                     if (StringUtils.d(this.au.groups_is_created) || StringUtils.d(this.au.groups_is_admins)) {
@@ -872,7 +872,7 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
                     if ("1".equals(this.au.groups_is_created) || "1".equals(this.au.groups_is_admins)) {
                         Bundle bundle8 = new Bundle();
                         bundle8.putString("currentLoc", this.o.getText().toString());
-                        bundle8.putString("locTitle", this.f30958c.getResources().getString(R.string.group_location_modification));
+                        bundle8.putString("locTitle", this.f17268c.getResources().getString(R.string.group_location_modification));
                         ChooseCountryFragment.a(this, 3000);
                         return;
                     }
@@ -889,13 +889,12 @@ public class GroupInfoFragment extends BaseFragment implements View.OnClickListe
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30958c = getActivity();
+        this.f17268c = getActivity();
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_group_info, (ViewGroup) null);
-            this.b = new GroupInfoPresenter(this.f30958c, this, this.e, getFragmentActive());
+            this.b = new GroupInfoPresenter(this.f17268c, this, this.e, getFragmentActive());
             a(this.d);
             i();
             h();

@@ -11,13 +11,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/ItemLiveOnlineUserBinding.class */
 public final class ItemLiveOnlineUserBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f12067a;
+    public final ShapeConstraintLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LiveFansLevelView f12068c;
+    public final LiveFansLevelView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -30,9 +26,9 @@ public final class ItemLiveOnlineUserBinding implements ViewBinding {
 
     private ItemLiveOnlineUserBinding(ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, ImageView imageView, LiveFansLevelView liveFansLevelView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ShapeTextView shapeTextView, TextView textView) {
         this.l = shapeConstraintLayout;
-        this.f12067a = shapeConstraintLayout2;
+        this.a = shapeConstraintLayout2;
         this.b = imageView;
-        this.f12068c = liveFansLevelView;
+        this.c = liveFansLevelView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -103,7 +99,6 @@ public final class ItemLiveOnlineUserBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeConstraintLayout getRoot() {
         return this.l;

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentMsgChatingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28905a;
+    private final ConstraintLayout f15215a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28905a;
+        return this.f15215a;
     }
 }

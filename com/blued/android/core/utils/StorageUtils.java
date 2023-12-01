@@ -12,26 +12,24 @@ public class StorageUtils {
     /* renamed from: com.blued.android.core.utils.StorageUtils$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/StorageUtils$1.class */
     class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ OnDiskFullListener f9738a;
+        final /* synthetic */ OnDiskFullListener a;
 
         @Override // java.lang.Runnable
         public void run() {
             if (AppInfo.d() != null) {
-                long a2 = StorageUtils.a();
-                long j = a2;
-                if (a2 <= 0) {
+                long a = StorageUtils.a();
+                long j = a;
+                if (a <= 0) {
                     j = StorageUtils.c();
                 }
                 if (j > 0 && 52428800 >= j) {
                     GlideApp.a(AppInfo.d()).f();
-                    if (this.f9738a != null) {
+                    if (this.a != null) {
                         AppInfo.n().post(new Runnable() { // from class: com.blued.android.core.utils.StorageUtils.1.1
                             @Override // java.lang.Runnable
                             public void run() {
-                                if (AnonymousClass1.this.f9738a != null) {
-                                    AnonymousClass1.this.f9738a.a();
+                                if (AnonymousClass1.this.a != null) {
+                                    AnonymousClass1.this.a.a();
                                 }
                             }
                         });
@@ -63,7 +61,7 @@ public class StorageUtils {
     }
 
     public static boolean b() {
-        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+        return Environment.getExternalStorageState().equals("mounted");
     }
 
     public static long c() {

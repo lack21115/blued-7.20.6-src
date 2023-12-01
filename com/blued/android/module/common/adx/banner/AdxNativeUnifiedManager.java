@@ -20,9 +20,7 @@ import kotlinx.coroutines.flow.FlowKt;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/banner/AdxNativeUnifiedManager.class */
 public final class AdxNativeUnifiedManager extends AdxNativeManager {
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10446c;
+    private int c;
     private int d;
     private long e;
     private final ADListener f;
@@ -34,7 +32,7 @@ public final class AdxNativeUnifiedManager extends AdxNativeManager {
         Intrinsics.e(context, "context");
         Intrinsics.e(listener, "listener");
         this.b = i;
-        this.f10446c = i2;
+        this.c = i2;
         this.d = i3;
         this.e = j;
         this.f = listener;
@@ -76,7 +74,7 @@ public final class AdxNativeUnifiedManager extends AdxNativeManager {
 
     @Override // com.blued.android.module.common.adx.banner.AdxNativeManager
     public void a(int i) {
-        this.f10446c = i;
+        this.c = i;
     }
 
     @Override // com.blued.android.module.common.adx.banner.AdxNativeManager
@@ -106,6 +104,6 @@ public final class AdxNativeUnifiedManager extends AdxNativeManager {
 
     @Override // com.blued.android.module.common.adx.banner.AdxNativeManager
     public int getType() {
-        return this.f10446c;
+        return this.c;
     }
 }

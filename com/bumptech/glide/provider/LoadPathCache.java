@@ -12,14 +12,14 @@ import java.util.concurrent.atomic.AtomicReference;
 public class LoadPathCache {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final LoadPath<?, ?, ?> f21031a = new LoadPath<>(Object.class, Object.class, Object.class, Collections.singletonList(new DecodePath(Object.class, Object.class, Object.class, Collections.emptyList(), new UnitTranscoder(), null)), null);
+    private static final LoadPath<?, ?, ?> f7425a = new LoadPath<>(Object.class, Object.class, Object.class, Collections.singletonList(new DecodePath(Object.class, Object.class, Object.class, Collections.emptyList(), new UnitTranscoder(), null)), null);
     private final ArrayMap<MultiClassKey, LoadPath<?, ?, ?>> b = new ArrayMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final AtomicReference<MultiClassKey> f21032c = new AtomicReference<>();
+    private final AtomicReference<MultiClassKey> f7426c = new AtomicReference<>();
 
     private MultiClassKey b(Class<?> cls, Class<?> cls2, Class<?> cls3) {
-        MultiClassKey andSet = this.f21032c.getAndSet(null);
+        MultiClassKey andSet = this.f7426c.getAndSet(null);
         MultiClassKey multiClassKey = andSet;
         if (andSet == null) {
             multiClassKey = new MultiClassKey();
@@ -34,7 +34,7 @@ public class LoadPathCache {
         synchronized (this.b) {
             loadPath = (LoadPath<Data, TResource, Transcode>) this.b.get(b);
         }
-        this.f21032c.set(b);
+        this.f7426c.set(b);
         return loadPath;
     }
 
@@ -43,13 +43,13 @@ public class LoadPathCache {
             ArrayMap<MultiClassKey, LoadPath<?, ?, ?>> arrayMap = this.b;
             MultiClassKey multiClassKey = new MultiClassKey(cls, cls2, cls3);
             if (loadPath == null) {
-                loadPath = f21031a;
+                loadPath = f7425a;
             }
             arrayMap.put(multiClassKey, loadPath);
         }
     }
 
     public boolean a(LoadPath<?, ?, ?> loadPath) {
-        return f21031a.equals(loadPath);
+        return f7425a.equals(loadPath);
     }
 }

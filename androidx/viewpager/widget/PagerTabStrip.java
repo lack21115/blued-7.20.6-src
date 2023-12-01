@@ -61,7 +61,7 @@ public class PagerTabStrip extends PagerTitleStrip {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                PagerTabStrip.this.f3552a.setCurrentItem(PagerTabStrip.this.f3552a.getCurrentItem() - 1);
+                PagerTabStrip.this.f3504a.setCurrentItem(PagerTabStrip.this.f3504a.getCurrentItem() - 1);
             }
         });
         this.d.setFocusable(true);
@@ -69,7 +69,7 @@ public class PagerTabStrip extends PagerTitleStrip {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                PagerTabStrip.this.f3552a.setCurrentItem(PagerTabStrip.this.f3552a.getCurrentItem() + 1);
+                PagerTabStrip.this.f3504a.setCurrentItem(PagerTabStrip.this.f3504a.getCurrentItem() + 1);
             }
         });
         if (getBackground() == null) {
@@ -82,15 +82,15 @@ public class PagerTabStrip extends PagerTitleStrip {
     public void a(int i, float f, boolean z) {
         Rect rect = this.n;
         int height = getHeight();
-        int left = this.f3553c.getLeft();
+        int left = this.f3505c.getLeft();
         int i2 = this.l;
-        int right = this.f3553c.getRight();
+        int right = this.f3505c.getRight();
         int i3 = this.l;
         int i4 = height - this.h;
         rect.set(left - i2, i4, right + i3, height);
         super.a(i, f, z);
         this.o = (int) (Math.abs(f - 0.5f) * 2.0f * 255.0f);
-        rect.union(this.f3553c.getLeft() - this.l, i4, this.f3553c.getRight() + this.l, height);
+        rect.union(this.f3505c.getLeft() - this.l, i4, this.f3505c.getRight() + this.l, height);
         invalidate(rect);
     }
 
@@ -108,14 +108,13 @@ public class PagerTabStrip extends PagerTitleStrip {
         return this.g;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int height = getHeight();
-        int left = this.f3553c.getLeft();
+        int left = this.f3505c.getLeft();
         int i = this.l;
-        int right = this.f3553c.getRight();
+        int right = this.f3505c.getRight();
         int i2 = this.l;
         int i3 = this.h;
         this.m.setColor((this.o << 24) | (this.g & 16777215));
@@ -150,11 +149,11 @@ public class PagerTabStrip extends PagerTitleStrip {
                     return true;
                 }
                 return true;
-            } else if (x < this.f3553c.getLeft() - this.l) {
-                this.f3552a.setCurrentItem(this.f3552a.getCurrentItem() - 1);
+            } else if (x < this.f3505c.getLeft() - this.l) {
+                this.f3504a.setCurrentItem(this.f3504a.getCurrentItem() - 1);
                 return true;
-            } else if (x > this.f3553c.getRight() + this.l) {
-                this.f3552a.setCurrentItem(this.f3552a.getCurrentItem() + 1);
+            } else if (x > this.f3505c.getRight() + this.l) {
+                this.f3504a.setCurrentItem(this.f3504a.getCurrentItem() + 1);
                 return true;
             } else {
                 return true;

@@ -13,11 +13,11 @@ public class j0 {
     public static String f = "SI";
 
     /* renamed from: a  reason: collision with root package name */
-    public b f38480a;
+    public b f24789a;
     public ServiceConnection b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f38481c;
+    public Context f24790c;
     public i0 d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/oaid2/j0$a.class */
@@ -29,8 +29,8 @@ public class j0 {
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             synchronized (this) {
                 j0.this.d = i0.a.a(iBinder);
-                if (j0.this.f38480a != null) {
-                    j0.this.f38480a.a(j0.this);
+                if (j0.this.f24789a != null) {
+                    j0.this.f24789a.a(j0.this);
                 }
                 c.c(j0.f + " Service onServiceConnected");
             }
@@ -49,18 +49,18 @@ public class j0 {
     }
 
     public j0(Context context, b bVar) {
-        this.f38480a = null;
-        this.f38481c = null;
+        this.f24789a = null;
+        this.f24790c = null;
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f38481c = context;
-        this.f38480a = bVar;
+        this.f24790c = context;
+        this.f24789a = bVar;
         this.b = new a();
     }
 
     public String a() {
-        Context context = this.f38481c;
+        Context context = this.f24790c;
         if (context == null) {
             c.c(f + " Context is null.");
             throw new IllegalArgumentException("Context is null, must be new SxCore first");
@@ -85,7 +85,7 @@ public class j0 {
     }
 
     public String b() {
-        if (this.f38481c == null) {
+        if (this.f24790c == null) {
             c.c(f + " Context is null.");
             throw new IllegalArgumentException("Context is null, must be new SxCore first");
         }
@@ -106,11 +106,11 @@ public class j0 {
     public void c() {
         Intent intent = new Intent();
         intent.setClassName("com.samsung.android.deviceidservice", "com.samsung.android.deviceidservice.DeviceIdService");
-        if (this.f38481c.bindService(intent, this.b, 1)) {
+        if (this.f24790c.bindService(intent, this.b, 1)) {
             c.c(f + " bindService Successful!");
             return;
         }
-        this.f38480a.a(this);
+        this.f24789a.a(this);
         c.c(f + " bindService Failed!");
     }
 
@@ -130,7 +130,7 @@ public class j0 {
 
     public void e() {
         try {
-            this.f38481c.unbindService(this.b);
+            this.f24790c.unbindService(this.b);
             c.c(f + " unBind Service successful");
         } catch (IllegalArgumentException e2) {
             c.c(f + " unBind Service exception");

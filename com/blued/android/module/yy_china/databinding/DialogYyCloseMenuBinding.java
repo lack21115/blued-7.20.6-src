@@ -11,22 +11,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYyCloseMenuBinding.class */
 public final class DialogYyCloseMenuBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16423a;
+    public final View a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f16424c;
+    public final ConstraintLayout c;
     public final LinearLayout d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private DialogYyCloseMenuBinding(ConstraintLayout constraintLayout, View view, LinearLayout linearLayout, ConstraintLayout constraintLayout2, LinearLayout linearLayout2, TextView textView) {
         this.f = constraintLayout;
-        this.f16423a = view;
+        this.a = view;
         this.b = linearLayout;
-        this.f16424c = constraintLayout2;
+        this.c = constraintLayout2;
         this.d = linearLayout2;
         this.e = textView;
     }
@@ -45,13 +41,13 @@ public final class DialogYyCloseMenuBinding implements ViewBinding {
         if (findViewById != null) {
             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_fold_room);
             if (linearLayout != null) {
-                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_menu);
-                if (constraintLayout != null) {
+                ConstraintLayout findViewById2 = view.findViewById(R.id.ll_menu);
+                if (findViewById2 != null) {
                     LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_shutdown);
                     if (linearLayout2 != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_shutdown_name);
                         if (textView != null) {
-                            return new DialogYyCloseMenuBinding((ConstraintLayout) view, findViewById, linearLayout, constraintLayout, linearLayout2, textView);
+                            return new DialogYyCloseMenuBinding((ConstraintLayout) view, findViewById, linearLayout, findViewById2, linearLayout2, textView);
                         }
                         str = "tvShutdownName";
                     } else {
@@ -69,7 +65,6 @@ public final class DialogYyCloseMenuBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

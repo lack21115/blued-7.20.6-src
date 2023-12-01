@@ -32,7 +32,7 @@ public final class d implements a.c, x, x.a, x.b {
     public interface a {
         com.kwai.filedownloader.c.b GL();
 
-        a.InterfaceC0583a GM();
+        a.InterfaceC0413a GM();
 
         ArrayList<Object> GN();
 
@@ -177,7 +177,7 @@ public final class d implements a.c, x, x.a, x.b {
                 return;
             }
             c((byte) 10);
-            a.InterfaceC0583a GM = this.aFr.GM();
+            a.InterfaceC0413a GM = this.aFr.GM();
             com.kwai.filedownloader.a Gy = GM.Gy();
             if (com.kwai.filedownloader.e.d.aJq) {
                 com.kwai.filedownloader.e.d.i(this, "call start Url[%s], Path[%s] Listener[%s], Tag[%s]", Gy.getUrl(), Gy.getPath(), Gy.Gn(), Gy.getTag());
@@ -323,7 +323,7 @@ public final class d implements a.c, x, x.a, x.b {
             return false;
         }
         c((byte) -2);
-        a.InterfaceC0583a GM = this.aFr.GM();
+        a.InterfaceC0413a GM = this.aFr.GM();
         com.kwai.filedownloader.a Gy = GM.Gy();
         q.Hn().b(this);
         if (com.kwai.filedownloader.e.d.aJq) {
@@ -367,7 +367,7 @@ public final class d implements a.c, x, x.a, x.b {
             com.kwai.filedownloader.e.d.h(this, "High concurrent cause, this task %d will not start, because the of status isn't toLaunchPool: %d", Integer.valueOf(getId()), Byte.valueOf(this.aFs));
             return;
         }
-        a.InterfaceC0583a GM = this.aFr.GM();
+        a.InterfaceC0413a GM = this.aFr.GM();
         com.kwai.filedownloader.a Gy = GM.Gy();
         v Ht = r.Hp().Ht();
         try {

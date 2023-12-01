@@ -4,10 +4,10 @@ package com.tencent.cloud.huiyansdkface.okhttp3.internal;
 public abstract class NamedRunnable implements Runnable {
 
     /* renamed from: c  reason: collision with root package name */
-    protected final String f35903c;
+    protected final String f22212c;
 
     public NamedRunnable(String str, Object... objArr) {
-        this.f35903c = Util.format(str, objArr);
+        this.f22212c = Util.format(str, objArr);
     }
 
     protected abstract void execute();
@@ -15,7 +15,7 @@ public abstract class NamedRunnable implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         String name = Thread.currentThread().getName();
-        Thread.currentThread().setName(this.f35903c);
+        Thread.currentThread().setName(this.f22212c);
         try {
             execute();
             Thread.currentThread().setName(name);

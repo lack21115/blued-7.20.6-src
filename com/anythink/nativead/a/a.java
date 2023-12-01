@@ -6,6 +6,7 @@ import com.anythink.core.api.BaseAd;
 import com.anythink.core.common.e.e;
 import com.anythink.core.common.f;
 import com.anythink.core.common.h;
+import com.anythink.core.common.j;
 import com.anythink.core.common.k.s;
 import com.anythink.nativead.unitgroup.api.CustomNativeAdapter;
 import java.util.Map;
@@ -14,14 +15,13 @@ import java.util.Map;
 public class a extends f<d> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8825a = a.class.getSimpleName();
+    public static final String f5985a = a.class.getSimpleName();
 
     private a(Context context, String str) {
         super(context, str);
     }
 
-    /* renamed from: a  reason: avoid collision after fix types in other method */
-    private static h a2(d dVar) {
+    private static h a(d dVar) {
         c cVar = new c(dVar.a());
         cVar.a(dVar.d);
         return cVar;
@@ -67,30 +67,28 @@ public class a extends f<d> {
     }
 
     public final com.anythink.core.common.e.b a(String str, Map<String, Object> map) {
-        com.anythink.core.common.e.b a2 = com.anythink.core.common.a.a().a(this.b, this.f6687c);
+        com.anythink.core.common.e.b a2 = com.anythink.core.common.a.a().a(this.b, this.c);
         if (a2 != null && (a2.f() instanceof com.anythink.nativead.unitgroup.a) && (a2.e() instanceof CustomNativeAdapter)) {
             BaseAd f = a2.f();
             ATBaseAdAdapter e = a2.e();
             e detail = f.getDetail();
             detail.C = str;
-            com.anythink.core.common.a.a().a(this.f6687c, detail.x(), a2);
+            com.anythink.core.common.a.a().a(this.c, detail.x(), a2);
             com.anythink.core.common.a.a();
-            com.anythink.core.common.a.b(this.f6687c, e.getUnitGroupInfo());
+            com.anythink.core.common.a.b(this.c, e.getUnitGroupInfo());
             s.a(map, detail);
             return a2;
         }
         return null;
     }
 
-    @Override // com.anythink.core.common.f
-    public final /* synthetic */ h a(d dVar) {
-        d dVar2 = dVar;
-        c cVar = new c(dVar2.a());
-        cVar.a(dVar2.d);
+    public final /* synthetic */ h a(j jVar) {
+        d dVar = (d) jVar;
+        c cVar = new c(dVar.a());
+        cVar.a(dVar.d);
         return cVar;
     }
 
-    @Override // com.anythink.core.common.f
     public final String a() {
         return "0";
     }
@@ -101,6 +99,6 @@ public class a extends f<d> {
         dVar.e = bVar;
         dVar.d = 0;
         dVar.g = map;
-        super.a(this.b, "0", this.f6687c, (String) dVar, aVar);
+        super.a(this.b, "0", this.c, dVar, aVar);
     }
 }

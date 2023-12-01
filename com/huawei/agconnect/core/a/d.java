@@ -14,11 +14,11 @@ import java.util.Map;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<Class<?>, Service> f22351a = new HashMap();
+    private static Map<Class<?>, Service> f8743a = new HashMap();
     private static Map<Class<?>, Object> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<Class<?>, Service> f22352c = new HashMap();
+    private Map<Class<?>, Service> f8744c = new HashMap();
     private Map<Class<?>, Object> d = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -110,10 +110,10 @@ public final class d {
 
     public <T> T a(AGConnectInstance aGConnectInstance, Class<?> cls) {
         T t;
-        Service service = this.f22352c.get(cls);
+        Service service = this.f8744c.get(cls);
         Service service2 = service;
         if (service == null) {
-            Service service3 = f22351a.get(cls);
+            Service service3 = f8743a.get(cls);
             service2 = service3;
             if (service3 != null) {
                 return (T) b.get(cls);
@@ -159,17 +159,17 @@ public final class d {
             r0 = r9
             boolean r0 = r0.isSharedInstance()
             if (r0 == 0) goto L3f
-            java.util.Map<java.lang.Class<?>, com.huawei.agconnect.core.Service> r0 = com.huawei.agconnect.core.a.d.f22351a
+            java.util.Map<java.lang.Class<?>, com.huawei.agconnect.core.Service> r0 = com.huawei.agconnect.core.a.d.f8743a
             r1 = r9
             java.lang.Class r1 = r1.getInterface()
             boolean r0 = r0.containsKey(r1)
             if (r0 != 0) goto L50
-            java.util.Map<java.lang.Class<?>, com.huawei.agconnect.core.Service> r0 = com.huawei.agconnect.core.a.d.f22351a
+            java.util.Map<java.lang.Class<?>, com.huawei.agconnect.core.Service> r0 = com.huawei.agconnect.core.a.d.f8743a
             r7 = r0
             goto L44
         L3f:
             r0 = r6
-            java.util.Map<java.lang.Class<?>, com.huawei.agconnect.core.Service> r0 = r0.f22352c
+            java.util.Map<java.lang.Class<?>, com.huawei.agconnect.core.Service> r0 = r0.f8744c
             r7 = r0
         L44:
             r0 = r7

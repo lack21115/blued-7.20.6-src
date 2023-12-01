@@ -16,13 +16,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMakeLoverOkFragment.class */
 public class LiveMakeLoverOkFragment extends MvpFragment<LiveMakeLoverOkPresent> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    View f13045a;
+    View a;
     ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    ImageView f13046c;
+    ImageView c;
     View d;
     View e;
     TextView f;
@@ -40,9 +36,9 @@ public class LiveMakeLoverOkFragment extends MvpFragment<LiveMakeLoverOkPresent>
     }
 
     private void d() {
-        this.f13045a = this.i.findViewById(R.id.fl_make_lover_dialog);
+        this.a = this.i.findViewById(R.id.fl_make_lover_dialog);
         this.b = (ImageView) this.i.findViewById(R.id.iv_avatar_left);
-        this.f13046c = (ImageView) this.i.findViewById(R.id.iv_avatar_right);
+        this.c = (ImageView) this.i.findViewById(R.id.iv_avatar_right);
         this.d = this.i.findViewById(R.id.tv_make_lover_cancel);
         this.e = this.i.findViewById(R.id.tv_make_lover_confirm);
         this.f = (TextView) this.i.findViewById(R.id.iv_avatar_index_left);
@@ -58,7 +54,7 @@ public class LiveMakeLoverOkFragment extends MvpFragment<LiveMakeLoverOkPresent>
             liveMakeLoverFansModel2.avatar = liveMakeLoverFansModel2.pic;
         }
         ImageLoader.a(getFragmentActive(), this.l.avatar).b(R.drawable.user_bg_round).c().a(this.b);
-        ImageLoader.a(getFragmentActive(), this.m.avatar).b(R.drawable.user_bg_round).c().a(this.f13046c);
+        ImageLoader.a(getFragmentActive(), this.m.avatar).b(R.drawable.user_bg_round).c().a(this.c);
         this.d.setOnClickListener(this);
         this.e.setOnClickListener(this);
     }
@@ -84,7 +80,7 @@ public class LiveMakeLoverOkFragment extends MvpFragment<LiveMakeLoverOkPresent>
 
     public LiveMakeLoverOkDialogFragment b() {
         if (getParentFragment() instanceof LiveMakeLoverOkDialogFragment) {
-            return (LiveMakeLoverOkDialogFragment) getParentFragment();
+            return getParentFragment();
         }
         return null;
     }
@@ -112,13 +108,13 @@ public class LiveMakeLoverOkFragment extends MvpFragment<LiveMakeLoverOkPresent>
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
     }

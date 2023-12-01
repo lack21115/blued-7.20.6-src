@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/GoodsWallProgressView.class */
 public class GoodsWallProgressView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f14277a;
+    protected int a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f14278c;
+    private float c;
     private float d;
     private int e;
     private int f;
@@ -27,7 +23,7 @@ public class GoodsWallProgressView extends View {
 
     public GoodsWallProgressView(Context context) {
         super(context);
-        this.f14277a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = -1;
         this.f = -1;
@@ -36,7 +32,7 @@ public class GoodsWallProgressView extends View {
 
     public GoodsWallProgressView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14277a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = -1;
         this.f = -1;
@@ -45,7 +41,7 @@ public class GoodsWallProgressView extends View {
 
     public GoodsWallProgressView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14277a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = -1;
         this.f = -1;
@@ -57,15 +53,15 @@ public class GoodsWallProgressView extends View {
         float f2 = f / 2.0f;
         float f3 = f / 2.0f;
         paint.setColor(this.h);
-        canvas.drawLine(f2, f3, this.f14278c - (f / 2.0f), f3, paint);
+        canvas.drawLine(f2, f3, this.c - (f / 2.0f), f3, paint);
     }
 
     private void b(Canvas canvas, Paint paint) {
         int i;
         float f = this.d;
         if (f > 0.0f) {
-            float f2 = this.f14278c;
-            if (f2 <= 0.0f || (i = this.f14277a) == 0) {
+            float f2 = this.c;
+            if (f2 <= 0.0f || (i = this.a) == 0) {
                 return;
             }
             float f3 = i / this.b;
@@ -108,7 +104,7 @@ public class GoodsWallProgressView extends View {
     }
 
     public int getProgress() {
-        return this.f14277a;
+        return this.a;
     }
 
     public int getProgressMax() {
@@ -128,7 +124,7 @@ public class GoodsWallProgressView extends View {
     @Override // android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f14278c = getMeasuredWidth();
+        this.c = getMeasuredWidth();
         this.d = getMeasuredHeight();
     }
 
@@ -146,7 +142,7 @@ public class GoodsWallProgressView extends View {
         if (i2 > i3) {
             i4 = i3;
         }
-        this.f14277a = i4;
+        this.a = i4;
         invalidate();
     }
 

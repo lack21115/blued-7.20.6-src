@@ -15,7 +15,6 @@ public abstract class BGAPageTransformer implements ViewPager.PageTransformer {
 
     public abstract void c(View view, float f);
 
-    @Override // androidx.viewpager.widget.ViewPager.PageTransformer
     public void transformPage(View view, float f) {
         if (f < -1.0f) {
             a(view, f);

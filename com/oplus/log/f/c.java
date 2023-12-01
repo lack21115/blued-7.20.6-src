@@ -9,10 +9,10 @@ import java.util.Map;
 public final class c implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.oplus.log.a.a f24369a;
+    private final com.oplus.log.a.a f10682a;
 
     public c(com.oplus.log.a.a aVar) {
-        this.f24369a = aVar;
+        this.f10682a = aVar;
     }
 
     private static String a(String str) {
@@ -27,8 +27,8 @@ public final class c implements d {
 
     private static String c(com.oplus.log.b.b bVar) {
         StringBuilder sb = new StringBuilder();
-        if (!TextUtils.isEmpty(bVar.f24324c)) {
-            sb.append(bVar.f24324c);
+        if (!TextUtils.isEmpty(bVar.f10637c)) {
+            sb.append(bVar.f10637c);
             sb.append("|");
         }
         sb.append(d(bVar));
@@ -81,17 +81,17 @@ public final class c implements d {
 
     @Override // com.oplus.log.f.d
     public final void a(com.oplus.log.b.b bVar) {
-        if (this.f24369a == null || !(bVar.b instanceof String)) {
+        if (this.f10682a == null || !(bVar.b instanceof String)) {
             return;
         }
-        this.f24369a.a(bVar.e, c(bVar), bVar.d, a());
+        this.f10682a.a(bVar.e, c(bVar), bVar.d, a());
     }
 
     @Override // com.oplus.log.f.d
     public final void b(com.oplus.log.b.b bVar) {
-        if (this.f24369a == null || !(bVar.b instanceof String)) {
+        if (this.f10682a == null || !(bVar.b instanceof String)) {
             return;
         }
-        this.f24369a.a(bVar.e, c(bVar), bVar.d, a());
+        this.f10682a.a(bVar.e, c(bVar), bVar.d, a());
     }
 }

@@ -4,17 +4,17 @@ package com.igexin.c.a.d;
 public abstract class a implements com.igexin.c.a.d.a.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f23260a;
+    private long f9652a;
 
     @Override // com.igexin.c.a.d.a.c
     public final void a(long j) {
-        if (this.f23260a != 0) {
-            this.f23260a = j;
+        if (this.f9652a != 0) {
+            this.f9652a = j;
         }
     }
 
     @Override // com.igexin.c.a.d.a.c
     public final long h() {
-        return this.f23260a;
+        return this.f9652a;
     }
 }

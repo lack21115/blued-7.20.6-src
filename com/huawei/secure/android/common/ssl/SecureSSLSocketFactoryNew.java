@@ -23,11 +23,11 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     private static volatile SecureSSLSocketFactoryNew j = null;
 
     /* renamed from: a  reason: collision with root package name */
-    protected SSLContext f23106a;
+    protected SSLContext f9498a;
     protected SSLSocket b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Context f23107c;
+    protected Context f9499c;
     protected String[] d;
     protected X509TrustManager e;
     protected String[] f;
@@ -35,7 +35,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     protected String[] h;
 
     private SecureSSLSocketFactoryNew(Context context) throws NoSuchAlgorithmException, CertificateException, KeyStoreException, IOException, KeyManagementException {
-        this.f23106a = null;
+        this.f9498a = null;
         this.b = null;
         if (context == null) {
             g.b(i, "SecureSSLSocketFactory: context is null");
@@ -45,24 +45,24 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
         setSslContext(SSLUtil.setSSLContext());
         SecureX509TrustManager secureX509SingleInstance = SecureX509SingleInstance.getInstance(context);
         this.e = secureX509SingleInstance;
-        this.f23106a.init(null, new X509TrustManager[]{secureX509SingleInstance}, null);
+        this.f9498a.init(null, new X509TrustManager[]{secureX509SingleInstance}, null);
     }
 
     public SecureSSLSocketFactoryNew(InputStream inputStream, String str) throws IOException, NoSuchAlgorithmException, CertificateException, KeyStoreException, KeyManagementException, IllegalArgumentException {
-        this.f23106a = null;
+        this.f9498a = null;
         this.b = null;
-        this.f23106a = SSLUtil.setSSLContext();
+        this.f9498a = SSLUtil.setSSLContext();
         HiCloudX509TrustManager hiCloudX509TrustManager = new HiCloudX509TrustManager(inputStream, str);
         setX509TrustManager(hiCloudX509TrustManager);
-        this.f23106a.init(null, new X509TrustManager[]{hiCloudX509TrustManager}, null);
+        this.f9498a.init(null, new X509TrustManager[]{hiCloudX509TrustManager}, null);
     }
 
     public SecureSSLSocketFactoryNew(X509TrustManager x509TrustManager) throws NoSuchAlgorithmException, KeyManagementException, IllegalArgumentException {
-        this.f23106a = null;
+        this.f9498a = null;
         this.b = null;
-        this.f23106a = SSLUtil.setSSLContext();
+        this.f9498a = SSLUtil.setSSLContext();
         setX509TrustManager(x509TrustManager);
-        this.f23106a.init(null, new X509TrustManager[]{x509TrustManager}, null);
+        this.f9498a.init(null, new X509TrustManager[]{x509TrustManager}, null);
     }
 
     private void a(Socket socket) {
@@ -112,7 +112,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
                 }
             }
         }
-        if (j.f23107c == null && context != null) {
+        if (j.f9499c == null && context != null) {
             j.setContext(context);
         }
         String str = i;
@@ -123,7 +123,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     @Override // javax.net.SocketFactory
     public Socket createSocket(String str, int i2) throws IOException {
         g.c(i, "createSocket: host , port");
-        Socket createSocket = this.f23106a.getSocketFactory().createSocket(str, i2);
+        Socket createSocket = this.f9498a.getSocketFactory().createSocket(str, i2);
         if (createSocket instanceof SSLSocket) {
             a(createSocket);
             SSLSocket sSLSocket = (SSLSocket) createSocket;
@@ -151,7 +151,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     @Override // javax.net.ssl.SSLSocketFactory
     public Socket createSocket(Socket socket, String str, int i2, boolean z) throws IOException {
         g.c(i, "createSocket s host port autoClose");
-        Socket createSocket = this.f23106a.getSocketFactory().createSocket(socket, str, i2, z);
+        Socket createSocket = this.f9498a.getSocketFactory().createSocket(socket, str, i2, z);
         if (createSocket instanceof SSLSocket) {
             a(createSocket);
             SSLSocket sSLSocket = (SSLSocket) createSocket;
@@ -171,7 +171,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     }
 
     public Context getContext() {
-        return this.f23107c;
+        return this.f9499c;
     }
 
     @Override // javax.net.ssl.SSLSocketFactory
@@ -184,7 +184,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     }
 
     public SSLContext getSslContext() {
-        return this.f23106a;
+        return this.f9498a;
     }
 
     public SSLSocket getSslSocket() {
@@ -210,7 +210,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     }
 
     public void setContext(Context context) {
-        this.f23107c = context.getApplicationContext();
+        this.f9499c = context.getApplicationContext();
     }
 
     public void setProtocols(String[] strArr) {
@@ -218,7 +218,7 @@ public class SecureSSLSocketFactoryNew extends SSLSocketFactory {
     }
 
     public void setSslContext(SSLContext sSLContext) {
-        this.f23106a = sSLContext;
+        this.f9498a = sSLContext;
     }
 
     public void setWhiteCiphers(String[] strArr) {

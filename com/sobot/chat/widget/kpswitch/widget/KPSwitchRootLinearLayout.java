@@ -34,9 +34,8 @@ public class KPSwitchRootLinearLayout extends LinearLayout {
         this.conflictHandler = new KPSwitchRootLayoutHandler(this);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         try {
             this.conflictHandler.handleBeforeMeasure(View.MeasureSpec.getSize(i), View.MeasureSpec.getSize(i2));
             super.onMeasure(i, i2);

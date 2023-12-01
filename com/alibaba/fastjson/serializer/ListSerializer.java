@@ -1,6 +1,5 @@
 package com.alibaba.fastjson.serializer;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -77,7 +76,7 @@ public final class ListSerializer implements ObjectSerializer {
                         serializeWriter.append(',');
                     }
                     if (obj3 == null) {
-                        serializeWriter.append((CharSequence) b.l);
+                        serializeWriter.append((CharSequence) "null");
                     } else {
                         Class<?> cls = obj3.getClass();
                         if (cls == Integer.class) {

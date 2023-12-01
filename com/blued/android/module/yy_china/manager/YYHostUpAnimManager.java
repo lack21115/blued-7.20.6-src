@@ -20,13 +20,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYHostUpAnimManager.class */
 public final class YYHostUpAnimManager implements LiveAnimationListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BaseYYStudioFragment f17547a;
+    private final BaseYYStudioFragment a;
     private final LiveAnimationView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<YYMountModel> f17548c;
+    private final ArrayList<YYMountModel> c;
     private final ArrayList<YYMountModel> d;
     private YYMountModel e;
     private YYMountModel f;
@@ -36,9 +32,9 @@ public final class YYHostUpAnimManager implements LiveAnimationListener {
     public YYHostUpAnimManager(BaseYYStudioFragment fragment, LiveAnimationView mAniView) {
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(mAniView, "mAniView");
-        this.f17547a = fragment;
+        this.a = fragment;
         this.b = mAniView;
-        this.f17548c = new ArrayList<>();
+        this.c = new ArrayList<>();
         this.d = new ArrayList<>();
     }
 
@@ -81,7 +77,7 @@ public final class YYHostUpAnimManager implements LiveAnimationListener {
             hostUpView2.setAlpha(0.0f);
         }
         LiveAnimationView liveAnimationView = this.b;
-        ActivityFragmentActive fragmentActive = this.f17547a.getFragmentActive();
+        ActivityFragmentActive fragmentActive = this.a.getFragmentActive();
         YYHostUpMode upHost = yYMountModel.getUpHost();
         liveAnimationView.a(fragmentActive, "", "", upHost == null ? null : upHost.getMaterial(), "", LiveAnimationViewFactory.ScaleType.FIT_CENTER, this);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
@@ -111,7 +107,7 @@ public final class YYHostUpAnimManager implements LiveAnimationListener {
             hostUpView2.setAlpha(0.0f);
         }
         LiveAnimationView liveAnimationView2 = this.b;
-        ActivityFragmentActive fragmentActive = this.f17547a.getFragmentActive();
+        ActivityFragmentActive fragmentActive = this.a.getFragmentActive();
         YYHostUpMode upHost = yYMountModel.getUpHost();
         liveAnimationView2.a(fragmentActive, "", "", upHost == null ? null : upHost.getMaterial(), "", LiveAnimationViewFactory.ScaleType.FIT_CENTER, this);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
@@ -141,8 +137,8 @@ public final class YYHostUpAnimManager implements LiveAnimationListener {
             return yYMountModel;
         }
         try {
-            if (this.f17548c.size() > 0) {
-                return this.f17548c.remove(0);
+            if (this.c.size() > 0) {
+                return this.c.remove(0);
             }
             return null;
         } catch (Exception e) {
@@ -169,7 +165,7 @@ public final class YYHostUpAnimManager implements LiveAnimationListener {
 
     public final void a(YYMountModel model) {
         Intrinsics.e(model, "model");
-        this.f17548c.add(model);
+        this.c.add(model);
         a(false);
     }
 

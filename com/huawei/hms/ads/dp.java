@@ -86,7 +86,7 @@ public class dp {
     }
 
     public static String Code(String str, String str2) {
-        return (TextUtils.isEmpty(str) || (!(com.huawei.openalliance.ad.utils.ay.B() && "zh-CN".equalsIgnoreCase(c.V())) && com.huawei.openalliance.ad.utils.ay.B())) ? str2 : str;
+        return (TextUtils.isEmpty(str) || (!(com.huawei.openalliance.ad.utils.ay.B() && com.huawei.openalliance.ad.utils.ay.Code.equalsIgnoreCase(c.V())) && com.huawei.openalliance.ad.utils.ay.B())) ? str2 : str;
     }
 
     public static boolean Code(AppInfo appInfo) {

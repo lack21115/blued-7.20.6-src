@@ -9,10 +9,10 @@ public abstract class EmojiSpan extends ReplacementSpan {
     private final EmojiMetadata b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Paint.FontMetricsInt f2832a = new Paint.FontMetricsInt();
+    private final Paint.FontMetricsInt f2784a = new Paint.FontMetricsInt();
 
     /* renamed from: c  reason: collision with root package name */
-    private short f2833c = -1;
+    private short f2785c = -1;
     private short d = -1;
     private float e = 1.0f;
 
@@ -24,7 +24,7 @@ public abstract class EmojiSpan extends ReplacementSpan {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final int a() {
-        return this.f2833c;
+        return this.f2785c;
     }
 
     public final int getHeight() {
@@ -41,16 +41,16 @@ public abstract class EmojiSpan extends ReplacementSpan {
 
     @Override // android.text.style.ReplacementSpan
     public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
-        paint.getFontMetricsInt(this.f2832a);
-        this.e = (Math.abs(this.f2832a.descent - this.f2832a.ascent) * 1.0f) / this.b.getHeight();
+        paint.getFontMetricsInt(this.f2784a);
+        this.e = (Math.abs(this.f2784a.descent - this.f2784a.ascent) * 1.0f) / this.b.getHeight();
         this.d = (short) (this.b.getHeight() * this.e);
-        this.f2833c = (short) (this.b.getWidth() * this.e);
+        this.f2785c = (short) (this.b.getWidth() * this.e);
         if (fontMetricsInt != null) {
-            fontMetricsInt.ascent = this.f2832a.ascent;
-            fontMetricsInt.descent = this.f2832a.descent;
-            fontMetricsInt.top = this.f2832a.top;
-            fontMetricsInt.bottom = this.f2832a.bottom;
+            fontMetricsInt.ascent = this.f2784a.ascent;
+            fontMetricsInt.descent = this.f2784a.descent;
+            fontMetricsInt.top = this.f2784a.top;
+            fontMetricsInt.bottom = this.f2784a.bottom;
         }
-        return this.f2833c;
+        return this.f2785c;
     }
 }

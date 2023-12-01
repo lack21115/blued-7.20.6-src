@@ -17,11 +17,11 @@ import java.util.Set;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f39360a = {"csd-0", "csd-1", "csd-2"};
+    public static final String[] f25669a = {"csd-0", "csd-1", "csd-2"};
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f39361c;
+    private static boolean f25670c;
     private static final Set<String> d;
 
     static {
@@ -162,12 +162,12 @@ public final class c {
     public static int a(f fVar, e eVar) {
         if (eVar.i != -1) {
             int i = 0;
-            for (int i2 = 0; i2 < eVar.f39326a.size(); i2++) {
-                i += eVar.f39326a.get(i2).length;
+            for (int i2 = 0; i2 < eVar.f25635a.size(); i2++) {
+                i += eVar.f25635a.get(i2).length;
             }
             return eVar.i + i;
         }
-        return a(eVar.j, eVar.b, eVar.f39327c, fVar.d);
+        return a(eVar.j, eVar.b, eVar.f25636c, fVar.d);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -267,7 +267,7 @@ public final class c {
         int i = 0;
         while (true) {
             int i2 = i;
-            String[] strArr = f39360a;
+            String[] strArr = f25669a;
             if (i2 >= strArr.length) {
                 return arrayList;
             }
@@ -313,7 +313,7 @@ public final class c {
             boolean r0 = r0.contains(r1)     // Catch: java.lang.Throwable -> Lc5
             if (r0 == 0) goto L43
             r0 = 1
-            com.tencent.thumbplayer.g.h.c.f39361c = r0     // Catch: java.lang.Throwable -> Lc5
+            com.tencent.thumbplayer.g.h.c.f25670c = r0     // Catch: java.lang.Throwable -> Lc5
         L43:
             java.lang.String r0 = com.tencent.thumbplayer.core.common.TPSystemInfo.getDeviceName()     // Catch: java.lang.Throwable -> Lc5 java.lang.Throwable -> Lc5
             r6 = r0
@@ -358,7 +358,7 @@ public final class c {
             goto Lcb
         L93:
             r0 = 1
-            com.tencent.thumbplayer.g.h.c.f39361c = r0     // Catch: java.lang.Throwable -> Lc5
+            com.tencent.thumbplayer.g.h.c.f25670c = r0     // Catch: java.lang.Throwable -> Lc5
         L97:
             boolean r0 = com.tencent.thumbplayer.g.h.b.a()     // Catch: java.lang.Throwable -> Lc5 java.lang.Throwable -> Lc5
             if (r0 == 0) goto Lba
@@ -368,7 +368,7 @@ public final class c {
             r1.<init>(r2)     // Catch: java.lang.Throwable -> Lc5
             r6 = r0
             r0 = r6
-            boolean r1 = com.tencent.thumbplayer.g.h.c.f39361c     // Catch: java.lang.Throwable -> Lc5
+            boolean r1 = com.tencent.thumbplayer.g.h.c.f25670c     // Catch: java.lang.Throwable -> Lc5
             java.lang.StringBuilder r0 = r0.append(r1)     // Catch: java.lang.Throwable -> Lc5
             java.lang.String r0 = "TUtils"
             r1 = r6
@@ -380,7 +380,7 @@ public final class c {
         Lbe:
             java.lang.Class<com.tencent.thumbplayer.g.h.c> r0 = com.tencent.thumbplayer.g.h.c.class
             monitor-exit(r0)     // Catch: java.lang.Throwable -> Lc5
-            boolean r0 = com.tencent.thumbplayer.g.h.c.f39361c     // Catch: java.lang.Throwable -> Lc5
+            boolean r0 = com.tencent.thumbplayer.g.h.c.f25670c     // Catch: java.lang.Throwable -> Lc5
             return r0
         Lc5:
             r6 = move-exception

@@ -17,11 +17,11 @@ import com.soft.blued.R;
 public class UserLikeToolBarView extends FrameLayout implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33269a;
+    private Context f19578a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f33270c;
+    private LinearLayout f19579c;
     private FrameLayout d;
     private TextView e;
     private View f;
@@ -47,19 +47,19 @@ public class UserLikeToolBarView extends FrameLayout implements View.OnClickList
 
     public UserLikeToolBarView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f33269a = context;
+        this.f19578a = context;
         LayoutInflater from = LayoutInflater.from(context);
         this.b = from;
         from.inflate(R.layout.user_like_tool_bar_view, this);
-        this.f33270c = (LinearLayout) findViewById(2131369470);
-        this.d = (FrameLayout) findViewById(2131366743);
+        this.f19579c = (LinearLayout) findViewById(2131369470);
+        this.d = (FrameLayout) findViewById(R.id.layout1);
         this.e = (TextView) findViewById(2131370607);
         this.f = findViewById(2131373095);
-        this.g = (ImageView) findViewById(2131368911);
-        this.h = (FrameLayout) findViewById(2131366744);
+        this.g = (ImageView) findViewById(R.id.point1);
+        this.h = (FrameLayout) findViewById(R.id.layout2);
         this.i = (TextView) findViewById(2131370608);
-        this.j = findViewById(2131373096);
-        this.k = (ImageView) findViewById(2131368912);
+        this.j = findViewById(R.id.view2);
+        this.k = (ImageView) findViewById(R.id.point2);
         setToolBtnSelect(0);
         this.d.setOnClickListener(this);
         this.h.setOnClickListener(this);
@@ -67,11 +67,11 @@ public class UserLikeToolBarView extends FrameLayout implements View.OnClickList
     }
 
     private int a(int i) {
-        return BluedSkinUtils.a(this.f33269a, i);
+        return BluedSkinUtils.a(this.f19578a, i);
     }
 
     public void a() {
-        String[] stringArray = this.f33269a.getResources().getStringArray(R.array.user_like_title);
+        String[] stringArray = this.f19578a.getResources().getStringArray(R.array.user_like_title);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -91,8 +91,8 @@ public class UserLikeToolBarView extends FrameLayout implements View.OnClickList
     public void onClick(View view) {
         Tracker.onClick(view);
         switch (view.getId()) {
-            case 2131366743:
-            case 2131366744:
+            case R.id.layout1 /* 2131366743 */:
+            case R.id.layout2 /* 2131366744 */:
                 if (this.l != null) {
                     int i = 0;
                     if (view.getId() != 2131366743 && view.getId() == 2131366744) {

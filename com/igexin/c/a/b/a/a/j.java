@@ -4,11 +4,11 @@ package com.igexin.c.a.b.a.a;
 public final class j extends Enum<j> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23236a = 1;
+    public static final int f9628a = 1;
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f23237c = 3;
+    public static final int f9629c = 3;
     public static final int d = 4;
     public static final int e = 5;
     public static final int f = 6;

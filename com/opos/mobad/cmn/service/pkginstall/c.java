@@ -11,12 +11,12 @@ import java.util.concurrent.ExecutorService;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f25934a = new byte[0];
+    private static final byte[] f12246a = new byte[0];
     private static volatile c b;
     private SystemBR g;
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<Integer, a> f25935c = null;
+    private Map<Integer, a> f12247c = null;
     private Map<Integer, a> d = null;
     private Map<Integer, a> e = null;
     private volatile ExecutorService f = null;
@@ -30,7 +30,7 @@ public class c {
         c cVar;
         c cVar2 = b;
         if (cVar2 == null) {
-            synchronized (f25934a) {
+            synchronized (f12246a) {
                 c cVar3 = b;
                 cVar = cVar3;
                 if (cVar3 == null) {
@@ -59,13 +59,13 @@ public class c {
     }
 
     private void b() {
-        this.f25935c = new ConcurrentHashMap();
+        this.f12247c = new ConcurrentHashMap();
         this.d = new ConcurrentHashMap();
         this.e = new ConcurrentHashMap();
     }
 
     private void c() {
-        this.f25935c.clear();
+        this.f12247c.clear();
         this.d.clear();
         this.e.clear();
     }
@@ -86,7 +86,7 @@ public class c {
         ExecutorService executorService;
         ExecutorService executorService2 = this.f;
         if (executorService2 == null) {
-            synchronized (f25934a) {
+            synchronized (f12246a) {
                 ExecutorService executorService3 = this.f;
                 executorService = executorService3;
                 if (executorService3 == null) {
@@ -116,10 +116,10 @@ public class c {
             try {
                 int hashCode = aVar.hashCode();
                 if (i == 0) {
-                    this.f25935c.put(Integer.valueOf(hashCode), aVar);
+                    this.f12247c.put(Integer.valueOf(hashCode), aVar);
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append("addISystemBRListener sPkgAddedBRListenerMap.size=");
-                    sb2.append(this.f25935c.size());
+                    sb2.append(this.f12247c.size());
                     sb = sb2.toString();
                 } else if (i == 1) {
                     this.d.put(Integer.valueOf(hashCode), aVar);
@@ -154,9 +154,9 @@ public class c {
             com.opos.cmn.an.f.a.a("SystemBRMgr", "", (Throwable) e);
         }
         if (i == 0) {
-            if (this.f25935c.containsKey(Integer.valueOf(i2))) {
-                this.f25935c.remove(Integer.valueOf(i2));
-                str = "removeISystemBRListener sPkgAddedBRListenerMap.size=" + this.f25935c.size();
+            if (this.f12247c.containsKey(Integer.valueOf(i2))) {
+                this.f12247c.remove(Integer.valueOf(i2));
+                str = "removeISystemBRListener sPkgAddedBRListenerMap.size=" + this.f12247c.size();
             }
             com.opos.cmn.an.f.a.b("SystemBRMgr", "removeISystemBRListener systemEventId=" + i + ",listenerId=" + i2);
         } else if (i == 1) {
@@ -184,7 +184,7 @@ public class c {
                     int i2 = i;
                     if (i2 == 0) {
                         c cVar = c.this;
-                        cVar.a(cVar.f25935c, objArr);
+                        cVar.a(cVar.f12247c, objArr);
                     } else if (i2 == 1) {
                         c cVar2 = c.this;
                         cVar2.a(cVar2.d, objArr);

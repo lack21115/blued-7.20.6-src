@@ -23,13 +23,9 @@ import kotlinx.coroutines.Dispatchers;
 @DebugMetadata(b = "CommunitySampleViewModel.kt", c = {33, 52}, d = "invokeSuspend", e = "com.blued.community.manager.CommunitySampleViewModel$requestDataWithContext$1")
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunitySampleViewModel$requestDataWithContext$1.class */
 public final class CommunitySampleViewModel$requestDataWithContext$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f19103a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f19104c;
+    int c;
     final /* synthetic */ CommunitySampleViewModel d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,45 +34,41 @@ public final class CommunitySampleViewModel$requestDataWithContext$1 extends Sus
     /* renamed from: com.blued.community.manager.CommunitySampleViewModel$requestDataWithContext$1$1  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunitySampleViewModel$requestDataWithContext$1$1.class */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f19105a;
+        int a;
         final /* synthetic */ Ref.ObjectRef<BluedEntityA<BluedIngSelfFeed>> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ CommunitySampleViewModel f19106c;
+        final /* synthetic */ CommunitySampleViewModel c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass1(Ref.ObjectRef<BluedEntityA<BluedIngSelfFeed>> objectRef, CommunitySampleViewModel communitySampleViewModel, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
             this.b = objectRef;
-            this.f19106c = communitySampleViewModel;
+            this.c = communitySampleViewModel;
         }
 
         @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.b, this.f19106c, continuation);
+            return new AnonymousClass1(this.b, this.c, continuation);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             IntrinsicsKt.a();
-            if (this.f19105a == 0) {
+            if (this.a == 0) {
                 ResultKt.a(obj);
                 LogUtils.c(Intrinsics.a("ui start, ", (Object) Boxing.a(Thread.currentThread().getId())));
-                if (this.b.f42545a != null) {
-                    LogUtils.c(Intrinsics.a("ui hasMore, ", (Object) Boxing.a(this.b.f42545a.hasMore())));
-                    this.f19106c.loadListSucceed(this.b.f42545a.data, this.b.f42545a.hasMore());
+                if (this.b.a != null) {
+                    LogUtils.c(Intrinsics.a("ui hasMore, ", (Object) Boxing.a(this.b.a.hasMore())));
+                    this.c.loadListSucceed(this.b.a.data, this.b.a.hasMore());
                 } else {
-                    this.f19106c.loadListFailed();
+                    this.c.loadListFailed();
                 }
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -92,7 +84,7 @@ public final class CommunitySampleViewModel$requestDataWithContext$1 extends Sus
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((CommunitySampleViewModel$requestDataWithContext$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((CommunitySampleViewModel$requestDataWithContext$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -103,42 +95,42 @@ public final class CommunitySampleViewModel$requestDataWithContext$1 extends Sus
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2;
+        Object a;
         Ref.ObjectRef objectRef;
         Ref.ObjectRef objectRef2;
-        Object a3 = IntrinsicsKt.a();
-        int i = this.f19104c;
+        Object a2 = IntrinsicsKt.a();
+        int i = this.c;
         if (i == 0) {
             ResultKt.a(obj);
             Ref.ObjectRef objectRef3 = new Ref.ObjectRef();
-            this.f19103a = objectRef3;
+            this.a = objectRef3;
             this.b = objectRef3;
-            this.f19104c = 1;
-            a2 = BuildersKt.a(Dispatchers.c(), new CommunitySampleViewModel$requestDataWithContext$1$entityA$1(this.d, null), this);
-            if (a2 == a3) {
-                return a3;
+            this.c = 1;
+            a = BuildersKt.a(Dispatchers.c(), new CommunitySampleViewModel$requestDataWithContext$1$entityA$1(this.d, null), this);
+            if (a == a2) {
+                return a2;
             }
             objectRef = objectRef3;
             objectRef2 = objectRef3;
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.a(obj);
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             objectRef2 = (Ref.ObjectRef) this.b;
-            objectRef = (Ref.ObjectRef) this.f19103a;
+            objectRef = (Ref.ObjectRef) this.a;
             ResultKt.a(obj);
-            a2 = obj;
+            a = obj;
         }
-        objectRef2.f42545a = a2;
-        this.f19103a = null;
+        objectRef2.a = a;
+        this.a = null;
         this.b = null;
-        this.f19104c = 2;
-        if (BuildersKt.a(Dispatchers.b(), new AnonymousClass1(objectRef, this.d, null), this) == a3) {
-            return a3;
+        this.c = 2;
+        if (BuildersKt.a(Dispatchers.b(), new AnonymousClass1(objectRef, this.d, null), this) == a2) {
+            return a2;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

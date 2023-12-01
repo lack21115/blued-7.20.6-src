@@ -14,9 +14,8 @@ public interface IAppOpsCallback extends IInterface {
         private static final String DESCRIPTOR = "com.android.internal.app.IAppOpsCallback";
         static final int TRANSACTION_opChanged_0 = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/IAppOpsCallback$Stub$Proxy.class */
-        public static class Proxy implements IAppOpsCallback {
+        private static class Proxy implements IAppOpsCallback {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -70,7 +69,7 @@ public interface IAppOpsCallback extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     opChanged(parcel.readInt(), parcel.readString());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

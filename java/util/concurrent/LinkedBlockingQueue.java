@@ -273,7 +273,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         }
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         fullyLock();
         try {
@@ -297,7 +297,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
@@ -648,7 +648,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         return this.capacity - this.count.get();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         if (obj == null) {
             return false;
@@ -672,7 +672,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.count.get();
     }
@@ -702,7 +702,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         return dequeue;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         fullyLock();
         try {
@@ -725,7 +725,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v30, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         int i;
         fullyLock();

@@ -7,9 +7,7 @@ import mtopsdk.mtop.global.SDKConfig;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/a/a/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f43656a = false;
+    private static volatile boolean a = false;
     private static CookieManager b;
 
     static {
@@ -19,7 +17,7 @@ public final class a {
     public static String a(String str) {
         synchronized (a.class) {
             try {
-                if (f43656a) {
+                if (a) {
                     return b.getCookie(str);
                 }
                 return null;
@@ -32,7 +30,7 @@ public final class a {
     private static void a(Context context) {
         synchronized (a.class) {
             try {
-                if (f43656a || context == null) {
+                if (a || context == null) {
                     return;
                 }
                 CookieSyncManager.createInstance(context);
@@ -40,7 +38,7 @@ public final class a {
                 b = cookieManager;
                 cookieManager.setAcceptCookie(true);
                 b.removeExpiredCookie();
-                f43656a = true;
+                a = true;
             } finally {
             }
         }
@@ -49,7 +47,7 @@ public final class a {
     public static void a(String str, String str2) {
         synchronized (a.class) {
             try {
-                if (f43656a) {
+                if (a) {
                     b.setCookie(str, str2);
                     CookieSyncManager.getInstance().sync();
                 }

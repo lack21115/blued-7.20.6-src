@@ -112,15 +112,12 @@ public class DdmHandleHeap extends ChunkHandler {
         DdmServer.registerHandler(CHUNK_REAL, mInstance);
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void connected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void disconnected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public Chunk handleChunk(Chunk chunk) {
         int i = chunk.type;
         if (i == CHUNK_HPIF) {

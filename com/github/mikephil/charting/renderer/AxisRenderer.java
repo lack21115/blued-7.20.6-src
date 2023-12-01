@@ -11,11 +11,11 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 public abstract class AxisRenderer extends Renderer {
 
     /* renamed from: a  reason: collision with root package name */
-    protected AxisBase f22168a;
+    protected AxisBase f8561a;
     protected Transformer b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Paint f22169c;
+    protected Paint f8562c;
     protected Paint d;
     protected Paint e;
     protected Paint f;
@@ -23,15 +23,15 @@ public abstract class AxisRenderer extends Renderer {
     public AxisRenderer(ViewPortHandler viewPortHandler, Transformer transformer, AxisBase axisBase) {
         super(viewPortHandler);
         this.b = transformer;
-        this.f22168a = axisBase;
+        this.f8561a = axisBase;
         if (this.o != null) {
             this.d = new Paint(1);
             Paint paint = new Paint();
-            this.f22169c = paint;
+            this.f8562c = paint;
             paint.setColor(Color.GRAY);
-            this.f22169c.setStrokeWidth(1.0f);
-            this.f22169c.setStyle(Paint.Style.STROKE);
-            this.f22169c.setAlpha(90);
+            this.f8562c.setStrokeWidth(1.0f);
+            this.f8562c.setStyle(Paint.Style.STROKE);
+            this.f8562c.setAlpha(90);
             Paint paint2 = new Paint();
             this.e = paint2;
             paint2.setColor(-16777216);

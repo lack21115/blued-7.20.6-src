@@ -14,13 +14,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyRedEnvelopeLayoutBinding.class */
 public final class FragmentYyRedEnvelopeLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16537a;
+    public final View a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeableImageView f16538c;
+    public final ShapeableImageView c;
     public final LinearLayout d;
     public final ImageView e;
     public final FrameLayout f;
@@ -32,9 +28,9 @@ public final class FragmentYyRedEnvelopeLayoutBinding implements ViewBinding {
 
     private FragmentYyRedEnvelopeLayoutBinding(ConstraintLayout constraintLayout, View view, ImageView imageView, ShapeableImageView shapeableImageView, LinearLayout linearLayout, ImageView imageView2, FrameLayout frameLayout, RecyclerView recyclerView, ShapeTextView shapeTextView, TextView textView, TextView textView2) {
         this.k = constraintLayout;
-        this.f16537a = view;
+        this.a = view;
         this.b = imageView;
-        this.f16538c = shapeableImageView;
+        this.c = shapeableImageView;
         this.d = linearLayout;
         this.e = imageView2;
         this.f = frameLayout;
@@ -50,23 +46,23 @@ public final class FragmentYyRedEnvelopeLayoutBinding implements ViewBinding {
         if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_close_btn);
             if (imageView != null) {
-                ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_poster_img);
-                if (shapeableImageView != null) {
+                ShapeableImageView findViewById2 = view.findViewById(R.id.iv_poster_img);
+                if (findViewById2 != null) {
                     LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_poster_view);
                     if (linearLayout != null) {
                         ImageView imageView2 = (ImageView) view.findViewById(R.id.red_envelope_img);
                         if (imageView2 != null) {
                             FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.rv_list_bg);
                             if (frameLayout != null) {
-                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_prize_list);
-                                if (recyclerView != null) {
+                                RecyclerView findViewById3 = view.findViewById(R.id.rv_prize_list);
+                                if (findViewById3 != null) {
                                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_get_prize);
                                     if (shapeTextView != null) {
                                         TextView textView = (TextView) view.findViewById(R.id.tv_limit_time);
                                         if (textView != null) {
                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_poster);
                                             if (textView2 != null) {
-                                                return new FragmentYyRedEnvelopeLayoutBinding((ConstraintLayout) view, findViewById, imageView, shapeableImageView, linearLayout, imageView2, frameLayout, recyclerView, shapeTextView, textView, textView2);
+                                                return new FragmentYyRedEnvelopeLayoutBinding((ConstraintLayout) view, findViewById, imageView, findViewById2, linearLayout, imageView2, frameLayout, findViewById3, shapeTextView, textView, textView2);
                                             }
                                             str = "tvPoster";
                                         } else {
@@ -99,7 +95,6 @@ public final class FragmentYyRedEnvelopeLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.k;

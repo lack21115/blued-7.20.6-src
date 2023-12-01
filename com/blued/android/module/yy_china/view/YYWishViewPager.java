@@ -25,13 +25,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYWishViewPager.class */
 public class YYWishViewPager extends FrameLayout implements View.OnClickListener, BGABanner.Adapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18578a;
+    private BaseYYStudioFragment a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BGABanner f18579c;
+    private BGABanner c;
 
     public YYWishViewPager(Context context) {
         super(context);
@@ -52,15 +48,15 @@ public class YYWishViewPager extends FrameLayout implements View.OnClickListener
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_wish_viewpager, (ViewGroup) this, true);
         this.b = (ImageView) findViewById(R.id.iv_set_wish);
         BGABanner bGABanner = (BGABanner) findViewById(R.id.wish_banner);
-        this.f18579c = bGABanner;
+        this.c = bGABanner;
         bGABanner.setAdapter(this);
-        this.f18579c.setAutoPlayAble(true);
-        this.f18579c.setmIsNeedShowIndicator(true);
+        this.c.setAutoPlayAble(true);
+        this.c.setmIsNeedShowIndicator(true);
         this.b.setOnClickListener(this);
     }
 
     public void a(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18578a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         setItems(null);
     }
 
@@ -71,7 +67,7 @@ public class YYWishViewPager extends FrameLayout implements View.OnClickListener
         ImageView imageView = (ImageView) view.findViewById(R.id.iv_gift_icon);
         TextView textView = (TextView) view.findViewById(R.id.tv_reveive_count);
         TextView textView2 = (TextView) view.findViewById(R.id.tv_total_count);
-        ImageLoader.a(this.f18578a.getFragmentActive(), yYWishGoodsModel.images_static).a(imageView);
+        ImageLoader.a(this.a.getFragmentActive(), yYWishGoodsModel.images_static).a(imageView);
         textView.setText(yYWishGoodsModel.wish_current);
         textView2.setText(yYWishGoodsModel.wish_total);
         progressBar.setMax(StringUtils.a(yYWishGoodsModel.wish_total, 1));
@@ -94,7 +90,7 @@ public class YYWishViewPager extends FrameLayout implements View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
         if (view.getId() == R.id.iv_set_wish) {
-            BaseYYStudioFragment baseYYStudioFragment = this.f18578a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a;
             if (baseYYStudioFragment != null) {
                 baseYYStudioFragment.y();
             }
@@ -112,16 +108,16 @@ public class YYWishViewPager extends FrameLayout implements View.OnClickListener
                 return;
             }
             this.b.setVisibility(0);
-            this.f18579c.setVisibility(8);
+            this.c.setVisibility(8);
             return;
         }
         if (list.size() > 1) {
-            this.f18579c.setAutoPlayAble(true);
+            this.c.setAutoPlayAble(true);
         } else {
-            this.f18579c.setAutoPlayAble(false);
+            this.c.setAutoPlayAble(false);
         }
         this.b.setVisibility(8);
-        this.f18579c.setVisibility(0);
-        this.f18579c.a(R.layout.item_wish_pager_layout, list, (List<String>) null);
+        this.c.setVisibility(0);
+        this.c.a(R.layout.item_wish_pager_layout, list, (List<String>) null);
     }
 }

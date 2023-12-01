@@ -17,7 +17,7 @@ import java.util.Set;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f26413a = y.e.APP_INSTALLED.a();
+    private static final int f12725a = y.e.APP_INSTALLED.a();
     private static final int b = y.e.APP_UNINSTALLED.a();
 
     private static com.opos.mobad.model.b.e a(Context context, x xVar) {
@@ -143,7 +143,7 @@ public class d {
         boolean z = true;
         if (yVar.aL != null) {
             int intValue = yVar.aL.intValue();
-            int i = f26413a;
+            int i = f12725a;
             if (i == (i & intValue) && !TextUtils.isEmpty(yVar.X) && com.opos.cmn.an.h.d.a.d(context, yVar.X)) {
                 com.opos.cmn.an.f.a.b("AdLoader", "filter install");
                 if (qVar != null) {

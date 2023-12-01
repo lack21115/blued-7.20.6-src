@@ -13,13 +13,9 @@ import java.net.URI;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/misc/FetchChineseWorkdayTask.class */
 public class FetchChineseWorkdayTask extends AsyncTask<Void, Void, Void> implements Response.Listener<String>, Response.ErrorListener {
     private static final String[] d = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private SharedPreferences f24216a;
+    private SharedPreferences a;
     private RequestQueue b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f24217c;
+    private String c;
 
     static {
         String[] strArr = new String[5];
@@ -28,9 +24,9 @@ public class FetchChineseWorkdayTask extends AsyncTask<Void, Void, Void> impleme
 
     public FetchChineseWorkdayTask(SharedPreferences sharedPreferences, RequestQueue requestQueue, int i) {
         boolean z = CloudUtils.b;
-        this.f24216a = sharedPreferences;
+        this.a = sharedPreferences;
         this.b = requestQueue;
-        this.f24217c = String.valueOf(i);
+        this.c = String.valueOf(i);
         if (z) {
             VolleyError.b = !VolleyError.b;
         }
@@ -45,7 +41,7 @@ public class FetchChineseWorkdayTask extends AsyncTask<Void, Void, Void> impleme
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.os.AsyncTask
     public Void doInBackground(Void... voidArr) {
-        a(this.f24216a, this.b);
+        a(this.a, this.b);
         return null;
     }
 

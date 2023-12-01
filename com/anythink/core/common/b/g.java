@@ -6,13 +6,9 @@ public final class g {
     public static final String B = "anythink_wt_cache_info";
     public static final String C = "anythink_log_agent";
     public static final String D = "anythink_log_agent_data";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6495a = "UA_6.1.68";
+    public static final String a = "UA_6.1.68";
     public static final int b = 9;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6496c = 0;
+    public static final int c = 0;
     public static final boolean d = false;
     public static final String e = "local_ua";
     public static final String f = "local_os";
@@ -39,13 +35,9 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6497a = 0;
+        public static final int a = 0;
         public static final int b = 1;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6498c = 3;
+        public static final int c = 3;
         public static final int d = 4;
         public static final int e = 5;
         public static final int f = 6;
@@ -55,13 +47,9 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6499a = 0;
+        public static final int a = 0;
         public static final int b = 1;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6500c = 2;
+        public static final int c = 2;
         public static final int d = 3;
         public static final int e = 4;
         public static final int f = 5;
@@ -73,13 +61,9 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$c.class */
     public static final class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6501a = "1.0";
+        public static final String a = "1.0";
         public static final String b = "code";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6502c = 0;
+        public static final int c = 0;
         public static String d = "data";
         public static final String e = "anythinktech.com";
         public static final String f = "toponadss.com";
@@ -110,67 +94,47 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$d.class */
     public static final class d {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static int f6503a = 1;
+        public static int a = 1;
         public static int b = 2;
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$e.class */
     public static final class e {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final long f6504a = 7200000;
+        public static final long a = 7200000;
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$f.class */
     public static final class f {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6505a = "0";
+        public static final String a = "0";
         public static final String b = "1";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6506c = "2";
+        public static final String c = "2";
         public static final String d = "3";
         public static final String e = "4";
     }
 
     /* renamed from: com.anythink.core.common.b.g$g  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$g.class */
-    public static final class C0100g {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6507a = "Native";
+    public static final class C0060g {
+        public static final String a = "Native";
         public static final String b = "RewardedVideo";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6508c = "Banner";
+        public static final String c = "Banner";
         public static final String d = "Interstitial";
         public static final String e = "Splash";
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$h.class */
     public static final class h {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6509a = -1;
+        public static final int a = -1;
         public static final int b = 5;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6510c = 9;
+        public static final int c = 9;
         public static final int d = 10;
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$i.class */
     public static final class i {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static String f6511a = "request";
+        public static String a = "request";
         public static String b = "request_result";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static String f6512c = "impression";
+        public static String c = "impression";
         public static String d = "click";
         public static String e = "close";
         public static String f = "success";
@@ -196,13 +160,9 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$j.class */
     public static final class j {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6513a = 66;
+        public static final int a = 66;
         public static final int b = 41;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6514c = 42;
+        public static final int c = 42;
         public static final int d = 67;
         public static final int e = 47;
         public static final int f = 28;
@@ -220,13 +180,9 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$k.class */
     public static final class k {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6515a = "basead_params";
+        public static final String a = "basead_params";
         public static final String b = "payload";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6516c = "app_ccpa_switch";
+        public static final String c = "app_ccpa_switch";
         public static final String d = "app_coppa_switch";
         public static final String e = "gdpr_consent";
         public static final String f = "custom_inhouse_bid_result";
@@ -246,43 +202,29 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$l.class */
     public static final class l {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6517a = 1;
+        public static final int a = 1;
         public static final int b = 2;
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$m.class */
     public static final class m {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6518a = 0;
+        public static final int a = 0;
         public static final int b = 1;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6519c = 2;
+        public static final int c = 2;
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$n.class */
     public static final class n {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final int f6520a = 1;
+        public static final int a = 1;
         public static final int b = 2;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final int f6521c = 3;
+        public static final int c = 3;
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$o.class */
     public static final class o {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6522a = "AP_SY";
+        public static final String a = "AP_SY";
         public static final String b = "PL_SY";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6523c = "SPU_PLACE_ID_TYPE";
+        public static final String c = "SPU_PLACE_ID_TYPE";
         public static final String d = "UPLOAD_DATA_LEVEL";
         public static final String e = "NETWORK_VERSION_NAME";
         public static final String f = "SPU_PSID_KEY";
@@ -304,9 +246,7 @@ public final class g {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/g$q.class */
     public static final class q {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6524a = "https://img." + com.anythink.core.common.b.n.a().c() + "/gdpr/PrivacyPolicySetting.html";
+        public static final String a = "https://img." + com.anythink.core.common.b.n.a().c() + "/gdpr/PrivacyPolicySetting.html";
         public static final String b = "https://img." + com.anythink.core.common.b.n.a().c() + "/gdpr/PrivacyPolicySetting.html";
     }
 }

@@ -75,13 +75,13 @@ public final class CircleViewDialog extends AttachPopupView {
         vb.getRoot().getLayoutParams().width = AppInfo.l;
         ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, this.u.cover)).b(R.drawable.circle_header_default).d(R.drawable.circle_header_default).a(6.0f).a(vb.b);
         vb.d.setText(this.u.circle_title);
-        vb.f18792a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.dialog.-$$Lambda$CircleViewDialog$tl3qzaQHVQslSETIblrwwAkRgYY
+        vb.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.dialog.-$$Lambda$CircleViewDialog$tl3qzaQHVQslSETIblrwwAkRgYY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CircleViewDialog.a(CircleViewDialog.this, view);
             }
         });
-        vb.f18793c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.dialog.-$$Lambda$CircleViewDialog$lef5gf6lGJk3TWPfWdN_x-gB6cM
+        vb.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.dialog.-$$Lambda$CircleViewDialog$lef5gf6lGJk3TWPfWdN_x-gB6cM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CircleViewDialog.b(CircleViewDialog.this, view);

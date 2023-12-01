@@ -6,7 +6,7 @@ import java.io.IOException;
 public interface Authenticator {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Authenticator f35806a = new Authenticator() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Authenticator.1
+    public static final Authenticator f22115a = new Authenticator() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Authenticator.1
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.Authenticator
         public Request authenticate(Route route, Response response) {
             return null;

@@ -7,11 +7,11 @@ import android.content.SharedPreferences;
 public final class b implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23208a;
+    private Context f9600a;
     private SharedPreferences b;
 
     public b(Context context, String str) {
-        this.f23208a = context;
+        this.f9600a = context;
         this.b = context.getSharedPreferences(str, 0);
     }
 

@@ -19,9 +19,7 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveFinishRecommendAdapter.class */
 public class LiveFinishRecommendAdapter extends BaseMultiItemQuickAdapter<LiverecommendListData, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveClickCallBack f11635a;
+    private LiveClickCallBack a;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveFinishRecommendAdapter$LiveClickCallBack.class */
     public interface LiveClickCallBack {
@@ -31,13 +29,13 @@ public class LiveFinishRecommendAdapter extends BaseMultiItemQuickAdapter<Livere
     public LiveFinishRecommendAdapter(Context context, LiveClickCallBack liveClickCallBack) {
         super(new ArrayList());
         this.mContext = context;
-        this.f11635a = liveClickCallBack;
+        this.a = liveClickCallBack;
         addItemType(0, R.layout.item_live_finish_recommend);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(LiverecommendListData liverecommendListData, View view) {
-        LiveClickCallBack liveClickCallBack = this.f11635a;
+        LiveClickCallBack liveClickCallBack = this.a;
         if (liveClickCallBack != null) {
             liveClickCallBack.addDesireSuccess(liverecommendListData);
         }
@@ -104,7 +102,6 @@ public class LiveFinishRecommendAdapter extends BaseMultiItemQuickAdapter<Livere
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final LiverecommendListData liverecommendListData) {
         EventTrackLive.c(LiveProtos.Event.USER_END_PAGE_RECOMMEND_ROOM_SHOW, LiveRoomManager.a().g(), LiveRoomManager.a().e(), liverecommendListData.lid, liverecommendListData.uid);

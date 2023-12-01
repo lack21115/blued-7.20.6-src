@@ -16,8 +16,7 @@ public abstract class HardwareCanvas extends Canvas {
 
     public abstract void drawCircle(CanvasProperty<Float> canvasProperty, CanvasProperty<Float> canvasProperty2, CanvasProperty<Float> canvasProperty3, CanvasProperty<Paint> canvasProperty4);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public abstract void drawHardwareLayer(HardwareLayer hardwareLayer, float f, float f2, Paint paint);
+    abstract void drawHardwareLayer(HardwareLayer hardwareLayer, float f, float f2, Paint paint);
 
     public abstract int drawRenderNode(RenderNode renderNode, Rect rect, int i);
 

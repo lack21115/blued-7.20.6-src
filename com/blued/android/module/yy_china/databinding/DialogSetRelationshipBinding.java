@@ -11,20 +11,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogSetRelationshipBinding.class */
 public final class DialogSetRelationshipBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RecyclerView f16411a;
+    public final RecyclerView a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16412c;
+    public final ShapeTextView c;
     private final LinearLayout d;
 
     private DialogSetRelationshipBinding(LinearLayout linearLayout, RecyclerView recyclerView, RecyclerView recyclerView2, ShapeTextView shapeTextView) {
         this.d = linearLayout;
-        this.f16411a = recyclerView;
+        this.a = recyclerView;
         this.b = recyclerView2;
-        this.f16412c = shapeTextView;
+        this.c = shapeTextView;
     }
 
     public static DialogSetRelationshipBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -37,13 +33,13 @@ public final class DialogSetRelationshipBinding implements ViewBinding {
 
     public static DialogSetRelationshipBinding a(View view) {
         String str;
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_relation_type);
-        if (recyclerView != null) {
-            RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rcv_time);
-            if (recyclerView2 != null) {
+        RecyclerView findViewById = view.findViewById(R.id.rcv_relation_type);
+        if (findViewById != null) {
+            RecyclerView findViewById2 = view.findViewById(R.id.rcv_time);
+            if (findViewById2 != null) {
                 ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_ok);
                 if (shapeTextView != null) {
-                    return new DialogSetRelationshipBinding((LinearLayout) view, recyclerView, recyclerView2, shapeTextView);
+                    return new DialogSetRelationshipBinding((LinearLayout) view, findViewById, findViewById2, shapeTextView);
                 }
                 str = "tvOk";
             } else {
@@ -55,7 +51,6 @@ public final class DialogSetRelationshipBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.d;

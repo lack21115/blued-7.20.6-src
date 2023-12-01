@@ -3,7 +3,6 @@ package com.amap.api.col.p0003sl;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -12,7 +11,6 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.RemoteException;
-import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
@@ -34,7 +32,6 @@ import com.autonavi.amap.mapcore.DPoint;
 import com.autonavi.amap.mapcore.IPoint;
 import com.autonavi.amap.mapcore.VirtualEarthProjection;
 import com.autonavi.amap.mapcore.interfaces.IMapConfig;
-import com.autonavi.base.amap.mapcore.AeUtil;
 import com.autonavi.base.amap.mapcore.FPoint;
 import com.autonavi.base.amap.mapcore.FileUtil;
 import java.io.BufferedReader;
@@ -53,13 +50,9 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.dw  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dw.class */
 public final class dw {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static FPoint[] f4869a = {FPoint.obtain(), FPoint.obtain(), FPoint.obtain(), FPoint.obtain()};
+    private static FPoint[] a = {FPoint.obtain(), FPoint.obtain(), FPoint.obtain(), FPoint.obtain()};
     private static List<Float> b = new ArrayList(4);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static List<Float> f4870c = new ArrayList(4);
+    private static List<Float> c = new ArrayList(4);
     private static int d = 0;
 
     private static double a(double d2, double d3, double d4, double d5, double d6, double d7) {
@@ -247,7 +240,7 @@ public final class dw {
                     if (i6 < i) {
                         int i7 = (i4 * i) + i6;
                         int i8 = iArr[i7];
-                        int i9 = (i8 & Color.GREEN) | ((i8 << 16) & Spanned.SPAN_PRIORITY) | ((i8 >> 16) & 255);
+                        int i9 = (i8 & (-16711936)) | ((i8 << 16) & 16711680) | ((i8 >> 16) & 255);
                         if (z) {
                             iArr2[(((i2 - i4) - 1) * i) + i6] = i9;
                         } else {
@@ -297,8 +290,8 @@ public final class dw {
                 i12 = 1;
             }
             Pair<Float, Boolean> b2 = b(iMapConfig, latLongToPixels.x, latLongToPixels.y, latLongToPixels2.x, latLongToPixels2.y, i11, i12);
-            float floatValue = b2.first.floatValue();
-            boolean booleanValue = b2.second.booleanValue();
+            float floatValue = ((Float) b2.first).floatValue();
+            boolean booleanValue = ((Boolean) b2.second).booleanValue();
             float a2 = a(iMapConfig.getMapZoomScale(), floatValue, i9);
             float a3 = a(iMapConfig.getMapZoomScale(), floatValue, i10);
             if (floatValue >= iMapConfig.getMaxZoomLevel()) {
@@ -325,7 +318,7 @@ public final class dw {
     public static ia a() {
         try {
             if (w.e == null) {
-                w.e = new ia.a("3dmap", "9.3.1", w.f5440c).a(new String[]{"com.amap.api.maps", "com.amap.api.mapcore", "com.autonavi.amap.mapcore", "com.autonavi.amap", "com.autonavi.ae", "com.autonavi.base", "com.autonavi.patch", "com.amap.api.3dmap.admic", "com.amap.api.trace", "com.amap.api.trace.core"}).a("9.3.1").a();
+                w.e = new ia.a("3dmap", "9.3.1", w.c).a(new String[]{"com.amap.api.maps", "com.amap.api.mapcore", "com.autonavi.amap.mapcore", "com.autonavi.amap", "com.autonavi.ae", "com.autonavi.base", "com.autonavi.patch", "com.amap.api.3dmap.admic", "com.amap.api.trace", "com.amap.api.trace.core"}).a("9.3.1").a();
             }
             return w.e;
         } catch (Throwable th) {
@@ -347,7 +340,7 @@ public final class dw {
     }
 
     public static String a(Context context) {
-        File file = new File(FileUtil.getMapBaseStorage(context), AeUtil.ROOT_DATA_PATH_NAME);
+        File file = new File(FileUtil.getMapBaseStorage(context), "data_v6");
         if (!file.exists()) {
             file.mkdir();
         }
@@ -1134,7 +1127,7 @@ public final class dw {
                 arrayList2.clear();
                 arrayList2.add(arrayList.get(i4));
                 arrayList2.add(arrayList.get(i5));
-                if (circleHoleOptions.getRadius() >= ((double) AMapUtils.calculateLineDistance(circleHoleOptions.getCenter(), SpatialRelationUtil.calShortestDistancePoint(arrayList2, circleHoleOptions.getCenter()).second))) {
+                if (circleHoleOptions.getRadius() >= ((double) AMapUtils.calculateLineDistance(circleHoleOptions.getCenter(), (LatLng) SpatialRelationUtil.calShortestDistancePoint(arrayList2, circleHoleOptions.getCenter()).second))) {
                     return true;
                 }
                 i3 = i5;
@@ -1347,7 +1340,7 @@ public final class dw {
         ConnectivityManager connectivityManager;
         NetworkInfo activeNetworkInfo;
         NetworkInfo.State state;
-        return (context == null || (connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)) == null || (activeNetworkInfo = connectivityManager.getActiveNetworkInfo()) == null || (state = activeNetworkInfo.getState()) == null || state == NetworkInfo.State.DISCONNECTED || state == NetworkInfo.State.DISCONNECTING) ? false : true;
+        return (context == null || (connectivityManager = (ConnectivityManager) context.getSystemService("connectivity")) == null || (activeNetworkInfo = connectivityManager.getActiveNetworkInfo()) == null || (state = activeNetworkInfo.getState()) == null || state == NetworkInfo.State.DISCONNECTED || state == NetworkInfo.State.DISCONNECTING) ? false : true;
     }
 
     public static boolean e(Context context) {

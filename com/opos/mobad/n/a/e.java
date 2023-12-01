@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class e implements com.opos.mobad.n.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private d.a f26500a;
+    private d.a f12812a;
 
     public e(List<View> list) {
         if (list == null || list.isEmpty()) {
@@ -18,8 +18,8 @@ public abstract class e implements com.opos.mobad.n.d {
             com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.a.e.1
                 @Override // com.opos.mobad.n.c.g
                 public void a(View view2, int[] iArr) {
-                    if (e.this.f26500a != null) {
-                        e.this.f26500a.a(view2, iArr);
+                    if (e.this.f12812a != null) {
+                        e.this.f12812a.a(view2, iArr);
                     }
                 }
             };
@@ -30,6 +30,6 @@ public abstract class e implements com.opos.mobad.n.d {
 
     @Override // com.opos.mobad.n.d
     public void a(d.a aVar) {
-        this.f26500a = aVar;
+        this.f12812a = aVar;
     }
 }

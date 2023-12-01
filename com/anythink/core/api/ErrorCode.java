@@ -1,5 +1,7 @@
 package com.anythink.core.api;
 
+import com.android.internal.telephony.SmsConstants;
+
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/api/ErrorCode.class */
 public class ErrorCode {
     public static final String adShowError = "4006";
@@ -363,7 +365,7 @@ public class ErrorCode {
             case true:
                 return new AdError(noAdsourceConfigInDebugerMode, "AdSource filter by network firm id.", str2, str3);
             default:
-                return new AdError("-9999", "unknown", str2, str3);
+                return new AdError("-9999", SmsConstants.FORMAT_UNKNOWN, str2, str3);
         }
     }
 }

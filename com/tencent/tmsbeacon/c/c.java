@@ -16,31 +16,31 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f39537a;
+    public final Context f25846a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f39538c = false;
+    private boolean f25847c = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/c/c$a.class */
     public class a implements Runnable {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ com.tencent.tmsbeacon.a.d.a f39539c;
+        public final /* synthetic */ com.tencent.tmsbeacon.a.d.a f25848c;
 
         public a(String str, com.tencent.tmsbeacon.a.d.a aVar) {
             this.b = str;
-            this.f39539c = aVar;
+            this.f25848c = aVar;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             if (d.d()) {
                 boolean c2 = c.this.c();
-                if (c.this.f39538c && c2) {
+                if (c.this.f25847c && c2) {
                     com.tencent.tmsbeacon.base.util.c.a("[event] rqd_heartbeat A85=Y report success : " + this.b, new Object[0]);
-                    a.SharedPreferences$EditorC1031a edit = this.f39539c.edit();
+                    a.SharedPreferences$EditorC0861a edit = this.f25848c.edit();
                     if (b.a((SharedPreferences.Editor) edit)) {
                         edit.putString("active_user_date", this.b).commit();
                         edit.putString("HEART_DENGTA", this.b).commit();
@@ -51,19 +51,19 @@ public class c {
     }
 
     public c(Context context) {
-        this.f39537a = context;
+        this.f25846a = context;
         this.b = com.tencent.tmsbeacon.a.c.b.e(context);
     }
 
     private Map<String, String> b() {
-        this.f39538c = com.tencent.tmsbeacon.a.c.b.d;
+        this.f25847c = com.tencent.tmsbeacon.a.c.b.d;
         HashMap hashMap = new HashMap(8);
         e l = e.l();
         f e = f.e();
         hashMap.put("A19", l.q());
-        hashMap.put("A66", com.tencent.tmsbeacon.a.c.b.e(this.f39537a) ? "F" : "B");
-        hashMap.put("A68", "" + com.tencent.tmsbeacon.a.c.b.b(this.f39537a));
-        hashMap.put("A85", this.f39538c ? "Y" : "N");
+        hashMap.put("A66", com.tencent.tmsbeacon.a.c.b.e(this.f25846a) ? "F" : "B");
+        hashMap.put("A68", "" + com.tencent.tmsbeacon.a.c.b.b(this.f25846a));
+        hashMap.put("A85", this.f25847c ? "Y" : "N");
         hashMap.put("A20", e.j());
         hashMap.put("A69", e.k());
         return hashMap;
@@ -83,7 +83,7 @@ public class c {
         com.tencent.tmsbeacon.base.util.c.a("[event] recover a heart beat for active user.", new Object[0]);
         if (c()) {
             com.tencent.tmsbeacon.base.util.c.a("[event] rqd_heartbeat A85=Y report success", new Object[0]);
-            a.SharedPreferences$EditorC1031a edit = a2.edit();
+            a.SharedPreferences$EditorC0861a edit = a2.edit();
             if (b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("active_user_date", b.d()).apply();
             }

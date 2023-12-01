@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class HeaderPrivacyPhotoAlbumBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29060a;
+    private final RelativeLayout f15370a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29060a;
+        return this.f15370a;
     }
 }

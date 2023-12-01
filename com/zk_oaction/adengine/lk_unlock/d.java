@@ -16,11 +16,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class d implements a.w, a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.zk_oaction.adengine.lk_unlock.a f41994a;
+    public com.zk_oaction.adengine.lk_unlock.a f28303a;
     public com.zk_oaction.adengine.lk_command.g b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Intent f41995c;
+    public Intent f28304c;
     private com.zk_oaction.adengine.lk_sdk.c d;
     private com.zk_oaction.adengine.lk_unlock.c e;
     private com.zk_oaction.adengine.lk_unlock.c f;
@@ -86,8 +86,8 @@ public class d implements a.w, a.b {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.lk_unlock.d$d  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_unlock/d$d.class */
-    public class C1112d implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
-        C1112d() {
+    public class C0942d implements com.zk_oaction.adengine.lk_sdk.interfaces.c<XmlPullParser, Void> {
+        C0942d() {
         }
 
         @Override // com.zk_oaction.adengine.lk_sdk.interfaces.c
@@ -132,7 +132,7 @@ public class d implements a.w, a.b {
         @Override // java.lang.Runnable
         public void run() {
             try {
-                d.this.d.k.a(d.this.f41995c);
+                d.this.d.k.a(d.this.f28304c);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -177,11 +177,11 @@ public class d implements a.w, a.b {
     /* JADX INFO: Access modifiers changed from: private */
     public void d(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_unlock.a aVar = new com.zk_oaction.adengine.lk_unlock.a(this.d);
-        this.f41994a = aVar;
+        this.f28303a = aVar;
         if (aVar.a(xmlPullParser, "Path")) {
             return;
         }
-        this.f41994a = null;
+        this.f28303a = null;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -196,7 +196,7 @@ public class d implements a.w, a.b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f(XmlPullParser xmlPullParser) {
-        this.f41995c = new Intent();
+        this.f28304c = new Intent();
         g(xmlPullParser);
         h(xmlPullParser);
     }
@@ -205,7 +205,7 @@ public class d implements a.w, a.b {
         String attributeValue = xmlPullParser.getAttributeValue(null, "name");
         try {
             if (attributeValue != null) {
-                this.f41995c = (Intent) Intent.parseUri(attributeValue, 0).clone();
+                this.f28304c = (Intent) Intent.parseUri(attributeValue, 0).clone();
                 return;
             }
             String attributeValue2 = xmlPullParser.getAttributeValue(null, "selectIntent");
@@ -216,7 +216,7 @@ public class d implements a.w, a.b {
                 if (this.d.j.getPackageManager().queryIntentActivities(parseUri, 0).isEmpty()) {
                     intent = Intent.parseUri(attributeValue2.substring(lastIndexOf), 0);
                 }
-                this.f41995c = (Intent) intent.clone();
+                this.f28304c = (Intent) intent.clone();
             }
         } catch (URISyntaxException e2) {
             e2.printStackTrace();
@@ -224,29 +224,29 @@ public class d implements a.w, a.b {
     }
 
     private void h(XmlPullParser xmlPullParser) {
-        this.f41995c.addFlags(270532608);
+        this.f28304c.addFlags(270532608);
         String attributeValue = xmlPullParser.getAttributeValue(null, "action");
         if (attributeValue != null) {
-            this.f41995c.setAction(attributeValue);
+            this.f28304c.setAction(attributeValue);
         }
         String attributeValue2 = xmlPullParser.getAttributeValue(null, "uri");
         if (attributeValue2 != null) {
-            this.f41995c.setData(Uri.parse(attributeValue2));
+            this.f28304c.setData(Uri.parse(attributeValue2));
         }
         String attributeValue3 = xmlPullParser.getAttributeValue(null, "type");
         if (attributeValue3 != null) {
-            this.f41995c.setType(attributeValue3);
+            this.f28304c.setType(attributeValue3);
         }
         String attributeValue4 = xmlPullParser.getAttributeValue(null, "category");
         if (attributeValue4 != null) {
-            this.f41995c.addCategory(attributeValue4);
+            this.f28304c.addCategory(attributeValue4);
         }
         String attributeValue5 = xmlPullParser.getAttributeValue(null, "package");
         String attributeValue6 = xmlPullParser.getAttributeValue(null, "class");
         if (attributeValue5 == null || attributeValue6 == null) {
             return;
         }
-        this.f41995c.setClassName(attributeValue5, attributeValue6);
+        this.f28304c.setClassName(attributeValue5, attributeValue6);
     }
 
     private void i() {
@@ -255,7 +255,7 @@ public class d implements a.w, a.b {
         hashMap.put("NormalState", new a());
         this.u.put("PressedState", new b());
         this.u.put("ReachedState", new c());
-        this.u.put("Path", new C1112d());
+        this.u.put("Path", new C0942d());
         this.u.put("Trigger", new e());
         this.u.put("Intent", new f());
     }
@@ -380,7 +380,7 @@ public class d implements a.w, a.b {
         this.o = f4;
         float f5 = f3 - this.n;
         this.p = f5;
-        com.zk_oaction.adengine.lk_unlock.a aVar = this.f41994a;
+        com.zk_oaction.adengine.lk_unlock.a aVar = this.f28303a;
         if (aVar != null) {
             aVar.a(f4, f5, z);
         }
@@ -476,12 +476,12 @@ public class d implements a.w, a.b {
     }
 
     public float c() {
-        com.zk_oaction.adengine.lk_unlock.a aVar = this.f41994a;
+        com.zk_oaction.adengine.lk_unlock.a aVar = this.f28303a;
         return aVar != null ? aVar.a() - this.h.a() : this.o;
     }
 
     public float d() {
-        com.zk_oaction.adengine.lk_unlock.a aVar = this.f41994a;
+        com.zk_oaction.adengine.lk_unlock.a aVar = this.f28303a;
         return aVar != null ? aVar.b() - this.i.a() : this.p;
     }
 
@@ -509,7 +509,7 @@ public class d implements a.w, a.b {
     }
 
     public void h() {
-        if (this.f41995c != null) {
+        if (this.f28304c != null) {
             new Handler(Looper.getMainLooper()).post(new g());
         }
         com.zk_oaction.adengine.lk_command.g gVar = this.b;

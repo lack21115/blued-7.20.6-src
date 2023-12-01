@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class NodataShowLiveFollowlistBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29493a;
+    private final LinearLayout f15803a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29493a;
+        return this.f15803a;
     }
 }

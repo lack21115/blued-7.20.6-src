@@ -10,11 +10,11 @@ import java.io.Serializable;
 public final class b implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f7865a;
+    private byte[] f5025a;
     private InputStream b;
 
     /* renamed from: c  reason: collision with root package name */
-    private File f7866c;
+    private File f5026c;
     private long d;
     private String e;
     private String f;
@@ -42,14 +42,14 @@ public final class b implements Serializable {
         if (str3 != null) {
             this.g = str3;
         }
-        this.f7866c = file;
+        this.f5026c = file;
     }
 
     private b(String str, byte[] bArr, long j, String str2, String str3) {
         this.g = "application/octet-stream";
         this.e = str;
         this.f = str2;
-        this.f7865a = bArr;
+        this.f5025a = bArr;
         this.d = j;
         if (str3 != null) {
             this.g = str3;
@@ -73,7 +73,7 @@ public final class b implements Serializable {
     }
 
     public final File b() {
-        return this.f7866c;
+        return this.f5026c;
     }
 
     public final InputStream c() {
@@ -81,7 +81,7 @@ public final class b implements Serializable {
     }
 
     public final byte[] d() {
-        return this.f7865a;
+        return this.f5025a;
     }
 
     public final String e() {

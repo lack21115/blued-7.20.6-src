@@ -6,17 +6,17 @@ import com.tencent.liteav.videoproducer.capture.CaptureSourceInterface;
 final /* synthetic */ class w implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s f36948a;
+    private final s f23257a;
     private final CaptureSourceInterface.CaptureParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final CaptureSourceInterface.a f36949c;
+    private final CaptureSourceInterface.a f23258c;
     private final Object d;
 
     private w(s sVar, CaptureSourceInterface.CaptureParams captureParams, CaptureSourceInterface.a aVar, Object obj) {
-        this.f36948a = sVar;
+        this.f23257a = sVar;
         this.b = captureParams;
-        this.f36949c = aVar;
+        this.f23258c = aVar;
         this.d = obj;
     }
 
@@ -26,14 +26,14 @@ final /* synthetic */ class w implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        s sVar = this.f36948a;
+        s sVar = this.f23257a;
         CaptureSourceInterface.CaptureParams captureParams = this.b;
-        CaptureSourceInterface.a aVar = this.f36949c;
+        CaptureSourceInterface.a aVar = this.f23258c;
         Object obj = this.d;
         sVar.d = false;
         sVar.f = new CameraCaptureParams((CameraCaptureParams) captureParams);
-        sVar.f36943c = aVar;
+        sVar.f23252c = aVar;
         CameraCaptureSingleton.getInstance().start(obj, sVar.f, sVar.g);
-        sVar.f.f36842a = null;
+        sVar.f.f23151a = null;
     }
 }

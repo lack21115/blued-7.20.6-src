@@ -54,7 +54,7 @@ public class RemoteAuth {
         if (iRemoteAuth2 == null || iRemoteAuth2.isAuthorizing()) {
             return;
         }
-        if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+        if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
             TBSdkLog.b(TAG, "call auth. bizId=" + str + " apiInfo=" + str2 + " failInfo=" + str3);
         }
         iRemoteAuth.authorize(str, str2, str3, z, AuthHandler.instance());

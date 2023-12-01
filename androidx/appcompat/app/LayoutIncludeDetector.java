@@ -11,7 +11,7 @@ import org.xmlpull.v1.XmlPullParserException;
 class LayoutIncludeDetector {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Deque<WeakReference<XmlPullParser>> f1593a = new ArrayDeque();
+    private final Deque<WeakReference<XmlPullParser>> f1545a = new ArrayDeque();
 
     private static XmlPullParser a(Deque<WeakReference<XmlPullParser>> deque) {
         while (!deque.isEmpty()) {
@@ -61,8 +61,8 @@ class LayoutIncludeDetector {
         if (attributeSet instanceof XmlPullParser) {
             XmlPullParser xmlPullParser = (XmlPullParser) attributeSet;
             if (xmlPullParser.getDepth() == 1) {
-                XmlPullParser a2 = a(this.f1593a);
-                this.f1593a.push(new WeakReference<>(xmlPullParser));
+                XmlPullParser a2 = a(this.f1545a);
+                this.f1545a.push(new WeakReference<>(xmlPullParser));
                 return a(xmlPullParser, a2);
             }
             return false;

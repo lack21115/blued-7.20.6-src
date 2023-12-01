@@ -25,13 +25,9 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieAnimationView.class */
 public class LottieAnimationView extends AppCompatImageView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f4206a = LottieAnimationView.class.getSimpleName();
+    private static final String a = LottieAnimationView.class.getSimpleName();
     private final LottieListener<LottieComposition> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final LottieListener<Throwable> f4207c;
+    private final LottieListener<Throwable> c;
     private final LottieDrawable d;
     private String e;
     private int f;
@@ -47,13 +43,11 @@ public class LottieAnimationView extends AppCompatImageView {
     /* renamed from: com.airbnb.lottie.LottieAnimationView$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieAnimationView$3.class */
     class AnonymousClass3<T> extends LottieValueCallback<T> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SimpleLottieValueCallback f4210a;
+        final /* synthetic */ SimpleLottieValueCallback a;
 
         @Override // com.airbnb.lottie.value.LottieValueCallback
         public T a(LottieFrameInfo<T> lottieFrameInfo) {
-            return (T) this.f4210a.a(lottieFrameInfo);
+            return (T) this.a.a(lottieFrameInfo);
         }
     }
 
@@ -61,25 +55,23 @@ public class LottieAnimationView extends AppCompatImageView {
     /* renamed from: com.airbnb.lottie.LottieAnimationView$4  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieAnimationView$4.class */
     public static /* synthetic */ class AnonymousClass4 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4211a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[RenderMode.values().length];
-            f4211a = iArr;
+            a = iArr;
             try {
                 iArr[RenderMode.HARDWARE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4211a[RenderMode.SOFTWARE.ordinal()] = 2;
+                a[RenderMode.SOFTWARE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f4211a[RenderMode.AUTOMATIC.ordinal()] = 3;
+                a[RenderMode.AUTOMATIC.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -101,13 +93,9 @@ public class LottieAnimationView extends AppCompatImageView {
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        String f4212a;
+        String a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        float f4213c;
+        float c;
         boolean d;
         String e;
         int f;
@@ -115,8 +103,8 @@ public class LottieAnimationView extends AppCompatImageView {
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f4212a = parcel.readString();
-            this.f4213c = parcel.readFloat();
+            this.a = parcel.readString();
+            this.c = parcel.readFloat();
             this.d = parcel.readInt() != 1 ? false : true;
             this.e = parcel.readString();
             this.f = parcel.readInt();
@@ -142,7 +130,7 @@ public class LottieAnimationView extends AppCompatImageView {
                 LottieAnimationView.this.setComposition(lottieComposition);
             }
         };
-        this.f4207c = new LottieListener<Throwable>() { // from class: com.airbnb.lottie.LottieAnimationView.2
+        this.c = new LottieListener<Throwable>() { // from class: com.airbnb.lottie.LottieAnimationView.2
             @Override // com.airbnb.lottie.LottieListener
             public void a(Throwable th) {
                 throw new IllegalStateException("Unable to parse composition", th);
@@ -165,7 +153,7 @@ public class LottieAnimationView extends AppCompatImageView {
                 LottieAnimationView.this.setComposition(lottieComposition);
             }
         };
-        this.f4207c = new LottieListener<Throwable>() { // from class: com.airbnb.lottie.LottieAnimationView.2
+        this.c = new LottieListener<Throwable>() { // from class: com.airbnb.lottie.LottieAnimationView.2
             @Override // com.airbnb.lottie.LottieListener
             public void a(Throwable th) {
                 throw new IllegalStateException("Unable to parse composition", th);
@@ -188,7 +176,7 @@ public class LottieAnimationView extends AppCompatImageView {
                 LottieAnimationView.this.setComposition(lottieComposition);
             }
         };
-        this.f4207c = new LottieListener<Throwable>() { // from class: com.airbnb.lottie.LottieAnimationView.2
+        this.c = new LottieListener<Throwable>() { // from class: com.airbnb.lottie.LottieAnimationView.2
             @Override // com.airbnb.lottie.LottieListener
             public void a(Throwable th) {
                 throw new IllegalStateException("Unable to parse composition", th);
@@ -266,7 +254,7 @@ public class LottieAnimationView extends AppCompatImageView {
         LottieTask<LottieComposition> lottieTask = this.l;
         if (lottieTask != null) {
             lottieTask.b(this.b);
-            this.l.d(this.f4207c);
+            this.l.d(this.c);
         }
     }
 
@@ -277,7 +265,7 @@ public class LottieAnimationView extends AppCompatImageView {
 
     private void h() {
         LottieComposition lottieComposition;
-        int i = AnonymousClass4.f4211a[this.j.ordinal()];
+        int i = AnonymousClass4.a[this.j.ordinal()];
         if (i == 1) {
             setLayerType(2, null);
         } else if (i == 2) {
@@ -296,7 +284,7 @@ public class LottieAnimationView extends AppCompatImageView {
     private void setCompositionTask(LottieTask<LottieComposition> lottieTask) {
         g();
         f();
-        this.l = lottieTask.a(this.b).c(this.f4207c);
+        this.l = lottieTask.a(this.b).c(this.c);
     }
 
     public void a() {
@@ -337,7 +325,6 @@ public class LottieAnimationView extends AppCompatImageView {
         h();
     }
 
-    @Override // android.view.View
     public void buildDrawingCache(boolean z) {
         super.buildDrawingCache(z);
         if (getLayerType() == 1 && getDrawingCache(z) == null) {
@@ -414,7 +401,6 @@ public class LottieAnimationView extends AppCompatImageView {
         return this.d.j();
     }
 
-    @Override // android.widget.ImageView, android.view.View, android.graphics.drawable.Drawable.Callback
     public void invalidateDrawable(Drawable drawable) {
         Drawable drawable2 = getDrawable();
         LottieDrawable lottieDrawable = this.d;
@@ -425,18 +411,14 @@ public class LottieAnimationView extends AppCompatImageView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.ImageView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.i && this.h) {
             a();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.ImageView, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         if (c()) {
             d();
             this.h = true;
@@ -444,16 +426,14 @@ public class LottieAnimationView extends AppCompatImageView {
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        String str = savedState.f4212a;
+        String str = savedState.a;
         this.e = str;
         if (!TextUtils.isEmpty(str)) {
             setAnimation(this.e);
@@ -463,7 +443,7 @@ public class LottieAnimationView extends AppCompatImageView {
         if (i != 0) {
             setAnimation(i);
         }
-        setProgress(savedState.f4213c);
+        setProgress(savedState.c);
         if (savedState.d) {
             a();
         }
@@ -472,13 +452,11 @@ public class LottieAnimationView extends AppCompatImageView {
         setRepeatCount(savedState.g);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f4212a = this.e;
+        savedState.a = this.e;
         savedState.b = this.f;
-        savedState.f4213c = this.d.u();
+        savedState.c = this.d.u();
         savedState.d = this.d.n();
         savedState.e = this.d.b();
         savedState.f = this.d.l();
@@ -486,9 +464,7 @@ public class LottieAnimationView extends AppCompatImageView {
         return savedState;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         if (this.d == null) {
             return;
         }
@@ -524,9 +500,10 @@ public class LottieAnimationView extends AppCompatImageView {
         setCompositionTask(LottieCompositionFactory.a(getContext(), str));
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void setComposition(LottieComposition lottieComposition) {
-        if (L.f4204a) {
-            String str = f4206a;
+        if (L.a) {
+            String str = a;
             Log.v(str, "Set Composition \n" + lottieComposition);
         }
         this.d.setCallback(this);
@@ -559,19 +536,16 @@ public class LottieAnimationView extends AppCompatImageView {
         this.d.a(str);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         f();
         super.setImageBitmap(bitmap);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
         f();
         super.setImageDrawable(drawable);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageResource(int i) {
         f();
         super.setImageResource(i);

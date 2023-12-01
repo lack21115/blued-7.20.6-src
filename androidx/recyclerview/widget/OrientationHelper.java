@@ -10,86 +10,86 @@ public abstract class OrientationHelper {
     public static final int VERTICAL = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    protected final RecyclerView.LayoutManager f3311a;
+    protected final RecyclerView.LayoutManager f3263a;
     final Rect b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f3312c;
+    private int f3264c;
 
     private OrientationHelper(RecyclerView.LayoutManager layoutManager) {
-        this.f3312c = Integer.MIN_VALUE;
+        this.f3264c = Integer.MIN_VALUE;
         this.b = new Rect();
-        this.f3311a = layoutManager;
+        this.f3263a = layoutManager;
     }
 
     public static OrientationHelper createHorizontalHelper(RecyclerView.LayoutManager layoutManager) {
         return new OrientationHelper(layoutManager) { // from class: androidx.recyclerview.widget.OrientationHelper.1
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedEnd(View view) {
-                return this.f3311a.getDecoratedRight(view) + ((RecyclerView.LayoutParams) view.getLayoutParams()).rightMargin;
+                return this.f3263a.getDecoratedRight(view) + ((RecyclerView.LayoutParams) view.getLayoutParams()).rightMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedMeasurement(View view) {
                 RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
-                return this.f3311a.getDecoratedMeasuredWidth(view) + layoutParams.leftMargin + layoutParams.rightMargin;
+                return this.f3263a.getDecoratedMeasuredWidth(view) + layoutParams.leftMargin + layoutParams.rightMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedMeasurementInOther(View view) {
                 RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
-                return this.f3311a.getDecoratedMeasuredHeight(view) + layoutParams.topMargin + layoutParams.bottomMargin;
+                return this.f3263a.getDecoratedMeasuredHeight(view) + layoutParams.topMargin + layoutParams.bottomMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedStart(View view) {
-                return this.f3311a.getDecoratedLeft(view) - ((RecyclerView.LayoutParams) view.getLayoutParams()).leftMargin;
+                return this.f3263a.getDecoratedLeft(view) - ((RecyclerView.LayoutParams) view.getLayoutParams()).leftMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getEnd() {
-                return this.f3311a.getWidth();
+                return this.f3263a.getWidth();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getEndAfterPadding() {
-                return this.f3311a.getWidth() - this.f3311a.getPaddingRight();
+                return this.f3263a.getWidth() - this.f3263a.getPaddingRight();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getEndPadding() {
-                return this.f3311a.getPaddingRight();
+                return this.f3263a.getPaddingRight();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getMode() {
-                return this.f3311a.getWidthMode();
+                return this.f3263a.getWidthMode();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getModeInOther() {
-                return this.f3311a.getHeightMode();
+                return this.f3263a.getHeightMode();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getStartAfterPadding() {
-                return this.f3311a.getPaddingLeft();
+                return this.f3263a.getPaddingLeft();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getTotalSpace() {
-                return (this.f3311a.getWidth() - this.f3311a.getPaddingLeft()) - this.f3311a.getPaddingRight();
+                return (this.f3263a.getWidth() - this.f3263a.getPaddingLeft()) - this.f3263a.getPaddingRight();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getTransformedEndWithDecoration(View view) {
-                this.f3311a.getTransformedBoundingBox(view, true, this.b);
+                this.f3263a.getTransformedBoundingBox(view, true, this.b);
                 return this.b.right;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getTransformedStartWithDecoration(View view) {
-                this.f3311a.getTransformedBoundingBox(view, true, this.b);
+                this.f3263a.getTransformedBoundingBox(view, true, this.b);
                 return this.b.left;
             }
 
@@ -100,7 +100,7 @@ public abstract class OrientationHelper {
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public void offsetChildren(int i) {
-                this.f3311a.offsetChildrenHorizontal(i);
+                this.f3263a.offsetChildrenHorizontal(i);
             }
         };
     }
@@ -119,70 +119,70 @@ public abstract class OrientationHelper {
         return new OrientationHelper(layoutManager) { // from class: androidx.recyclerview.widget.OrientationHelper.2
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedEnd(View view) {
-                return this.f3311a.getDecoratedBottom(view) + ((RecyclerView.LayoutParams) view.getLayoutParams()).bottomMargin;
+                return this.f3263a.getDecoratedBottom(view) + ((RecyclerView.LayoutParams) view.getLayoutParams()).bottomMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedMeasurement(View view) {
                 RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
-                return this.f3311a.getDecoratedMeasuredHeight(view) + layoutParams.topMargin + layoutParams.bottomMargin;
+                return this.f3263a.getDecoratedMeasuredHeight(view) + layoutParams.topMargin + layoutParams.bottomMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedMeasurementInOther(View view) {
                 RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) view.getLayoutParams();
-                return this.f3311a.getDecoratedMeasuredWidth(view) + layoutParams.leftMargin + layoutParams.rightMargin;
+                return this.f3263a.getDecoratedMeasuredWidth(view) + layoutParams.leftMargin + layoutParams.rightMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getDecoratedStart(View view) {
-                return this.f3311a.getDecoratedTop(view) - ((RecyclerView.LayoutParams) view.getLayoutParams()).topMargin;
+                return this.f3263a.getDecoratedTop(view) - ((RecyclerView.LayoutParams) view.getLayoutParams()).topMargin;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getEnd() {
-                return this.f3311a.getHeight();
+                return this.f3263a.getHeight();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getEndAfterPadding() {
-                return this.f3311a.getHeight() - this.f3311a.getPaddingBottom();
+                return this.f3263a.getHeight() - this.f3263a.getPaddingBottom();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getEndPadding() {
-                return this.f3311a.getPaddingBottom();
+                return this.f3263a.getPaddingBottom();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getMode() {
-                return this.f3311a.getHeightMode();
+                return this.f3263a.getHeightMode();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getModeInOther() {
-                return this.f3311a.getWidthMode();
+                return this.f3263a.getWidthMode();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getStartAfterPadding() {
-                return this.f3311a.getPaddingTop();
+                return this.f3263a.getPaddingTop();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getTotalSpace() {
-                return (this.f3311a.getHeight() - this.f3311a.getPaddingTop()) - this.f3311a.getPaddingBottom();
+                return (this.f3263a.getHeight() - this.f3263a.getPaddingTop()) - this.f3263a.getPaddingBottom();
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getTransformedEndWithDecoration(View view) {
-                this.f3311a.getTransformedBoundingBox(view, true, this.b);
+                this.f3263a.getTransformedBoundingBox(view, true, this.b);
                 return this.b.bottom;
             }
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public int getTransformedStartWithDecoration(View view) {
-                this.f3311a.getTransformedBoundingBox(view, true, this.b);
+                this.f3263a.getTransformedBoundingBox(view, true, this.b);
                 return this.b.top;
             }
 
@@ -193,7 +193,7 @@ public abstract class OrientationHelper {
 
             @Override // androidx.recyclerview.widget.OrientationHelper
             public void offsetChildren(int i) {
-                this.f3311a.offsetChildrenVertical(i);
+                this.f3263a.offsetChildrenVertical(i);
             }
         };
     }
@@ -213,7 +213,7 @@ public abstract class OrientationHelper {
     public abstract int getEndPadding();
 
     public RecyclerView.LayoutManager getLayoutManager() {
-        return this.f3311a;
+        return this.f3263a;
     }
 
     public abstract int getMode();
@@ -225,10 +225,10 @@ public abstract class OrientationHelper {
     public abstract int getTotalSpace();
 
     public int getTotalSpaceChange() {
-        if (Integer.MIN_VALUE == this.f3312c) {
+        if (Integer.MIN_VALUE == this.f3264c) {
             return 0;
         }
-        return getTotalSpace() - this.f3312c;
+        return getTotalSpace() - this.f3264c;
     }
 
     public abstract int getTransformedEndWithDecoration(View view);
@@ -240,6 +240,6 @@ public abstract class OrientationHelper {
     public abstract void offsetChildren(int i);
 
     public void onLayoutComplete() {
-        this.f3312c = getTotalSpace();
+        this.f3264c = getTotalSpace();
     }
 }

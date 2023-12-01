@@ -5,8 +5,8 @@ import android.net.wifi.WifiInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.telephony.TelephonyManager;
-import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -26,7 +26,7 @@ public class NetworkTemplate implements Parcelable {
     private final String[] mMatchSubscriberIds;
     private final String mNetworkId;
     private final String mSubscriberId;
-    private static final int[] DATA_USAGE_NETWORK_TYPES = Resources.getSystem().getIntArray(R.array.config_data_usage_network_types);
+    private static final int[] DATA_USAGE_NETWORK_TYPES = Resources.getSystem().getIntArray(17235994);
     private static boolean sForceAllNetworkTypes = false;
     public static final Parcelable.Creator<NetworkTemplate> CREATOR = new Parcelable.Creator<NetworkTemplate>() { // from class: android.net.NetworkTemplate.1
         /* JADX WARN: Can't rename method to resolve collision */
@@ -126,7 +126,7 @@ public class NetworkTemplate implements Parcelable {
             case 8:
                 return "BLUETOOTH";
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 

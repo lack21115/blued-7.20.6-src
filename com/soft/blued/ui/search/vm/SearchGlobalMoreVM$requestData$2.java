@@ -16,7 +16,7 @@ import kotlinx.coroutines.CoroutineScope;
 final class SearchGlobalMoreVM$requestData$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f33180a;
+    int f19489a;
     final /* synthetic */ SearchGlobalMoreVM b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -26,37 +26,34 @@ final class SearchGlobalMoreVM$requestData$2 extends SuspendLambda implements Fu
         this.b = searchGlobalMoreVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((SearchGlobalMoreVM$requestData$2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new SearchGlobalMoreVM$requestData$2(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2;
         Object b;
         Object a3 = IntrinsicsKt.a();
-        int i = this.f33180a;
+        int i = this.f19489a;
         if (i == 0) {
             ResultKt.a(obj);
             int a4 = this.b.a();
             if (a4 == 1) {
                 this.b.d();
             } else if (a4 == 2) {
-                this.f33180a = 1;
-                a2 = this.b.a(this);
+                this.f19489a = 1;
+                a2 = this.b.a((Continuation) this);
                 if (a2 == a3) {
                     return a3;
                 }
             } else if (a4 == 3) {
-                this.f33180a = 2;
-                b = this.b.b(this);
+                this.f19489a = 2;
+                b = this.b.b((Continuation) this);
                 if (b == a3) {
                     return a3;
                 }
@@ -66,6 +63,6 @@ final class SearchGlobalMoreVM$requestData$2 extends SuspendLambda implements Fu
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

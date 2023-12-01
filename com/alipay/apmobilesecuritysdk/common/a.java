@@ -50,7 +50,7 @@ public final class a {
         int random = (int) (Math.random() * 24.0d * 60.0d * 60.0d);
         try {
             for (String str : list) {
-                String[] split = str.split("&");
+                String[] split = str.split(com.alipay.sdk.sys.a.b);
                 if (split != null && split.length == 2) {
                     Date date = new Date();
                     Date parse = simpleDateFormat.parse(split[0] + " 00:00:00");

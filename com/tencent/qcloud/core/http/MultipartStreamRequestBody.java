@@ -18,8 +18,8 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.internal.Util;
 import okio.BufferedSink;
-import okio.BufferedSource;
 import okio.Okio;
+import okio.Source;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/http/MultipartStreamRequestBody.class */
 public class MultipartStreamRequestBody extends RequestBody implements QCloudDigistListener, ProgressBody, ReactiveBody {
@@ -105,25 +105,25 @@ public class MultipartStreamRequestBody extends RequestBody implements QCloudDig
             return exStreamingRequestBody;
         }
 
-        @Override // com.tencent.qcloud.core.http.StreamingRequestBody, okhttp3.RequestBody
+        @Override // com.tencent.qcloud.core.http.StreamingRequestBody
         public void writeTo(BufferedSink bufferedSink) throws IOException {
             InputStream inputStream;
-            BufferedSource bufferedSource = null;
-            BufferedSource bufferedSource2 = null;
+            Source source = null;
+            Source source2 = null;
             try {
                 InputStream stream = getStream();
                 if (stream != null) {
                     try {
-                        bufferedSource = Okio.buffer(Okio.source(stream));
+                        source = Okio.buffer(Okio.source(stream));
                         long contentLength = contentLength();
                         this.countingSink = new CountingSink(bufferedSink, contentLength, this.progressListener);
                         BufferedSink buffer = Okio.buffer(this.countingSink);
                         if (contentLength > 0) {
-                            buffer.write(bufferedSource, contentLength);
+                            buffer.write(source, contentLength);
                         } else {
-                            buffer.writeAll(bufferedSource);
+                            buffer.writeAll(source);
                         }
-                        bufferedSource2 = bufferedSource;
+                        source2 = source;
                         buffer.flush();
                     } catch (Throwable th) {
                         th = th;
@@ -131,8 +131,8 @@ public class MultipartStreamRequestBody extends RequestBody implements QCloudDig
                         if (inputStream != null) {
                             Util.a(inputStream);
                         }
-                        if (bufferedSource2 != null) {
-                            Util.a(bufferedSource2);
+                        if (source2 != null) {
+                            Util.a(source2);
                         }
                         throw th;
                     }
@@ -140,12 +140,12 @@ public class MultipartStreamRequestBody extends RequestBody implements QCloudDig
                 if (stream != null) {
                     Util.a(stream);
                 }
-                if (bufferedSource != null) {
-                    Util.a(bufferedSource);
+                if (source != null) {
+                    Util.a(source);
                 }
             } catch (Throwable th2) {
                 th = th2;
-                bufferedSource2 = null;
+                source2 = null;
                 inputStream = null;
             }
         }
@@ -159,12 +159,10 @@ public class MultipartStreamRequestBody extends RequestBody implements QCloudDig
         }
     }
 
-    @Override // okhttp3.RequestBody
     public long contentLength() throws IOException {
         return this.multipartBody.contentLength();
     }
 
-    @Override // okhttp3.RequestBody
     public MediaType contentType() {
         return this.multipartBody.contentType();
     }
@@ -252,7 +250,6 @@ public class MultipartStreamRequestBody extends RequestBody implements QCloudDig
         }
     }
 
-    @Override // okhttp3.RequestBody
     public void writeTo(BufferedSink bufferedSink) throws IOException {
         try {
             this.multipartBody.writeTo(bufferedSink);

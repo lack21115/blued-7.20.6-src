@@ -25,7 +25,6 @@ import kotlin.reflect.KProperty1;
 public final class BluedStructureExtKt {
     private static final <T, A> void a(BluedLiveData<T> bluedLiveData, LifecycleOwner lifecycleOwner, final KProperty1<T, ? extends A> kProperty1, final Function1<? super A, Unit> function1) {
         LiveData map = Transformations.map(bluedLiveData, new Function() { // from class: com.blued.android.module.common.extensions.BluedStructureExtKt$observeState$$inlined$map$1
-            @Override // androidx.arch.core.util.Function
             public final StateTuple1<A> apply(T t) {
                 return new StateTuple1<>(KProperty1.this.a(t));
             }
@@ -34,7 +33,6 @@ public final class BluedStructureExtKt {
         LiveData distinctUntilChanged = Transformations.distinctUntilChanged(map);
         Intrinsics.c(distinctUntilChanged, "distinctUntilChanged(this)");
         distinctUntilChanged.observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.common.extensions.-$$Lambda$BluedStructureExtKt$E3HjaTLJhANzYGOkj7bzuby0STQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 BluedStructureExtKt.a(Function1.this, (StateTuple1) obj);
             }
@@ -54,18 +52,18 @@ public final class BluedStructureExtKt {
                 super(1);
             }
 
-            public final void a(A a2) {
-                if (a2 == null) {
+            public final void a(A a) {
+                if (a == null) {
                     return;
                 }
-                action.invoke(a2);
+                action.invoke(a);
             }
 
             /* JADX WARN: Multi-variable type inference failed */
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Object obj) {
                 a(obj);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -79,9 +77,9 @@ public final class BluedStructureExtKt {
     public static final <State extends UiState, Action extends UiAction, Event extends UiEvent> void a(MVIBaseViewModel<State, Action> mVIBaseViewModel, final Event event) {
         Intrinsics.e(mVIBaseViewModel, "<this>");
         Intrinsics.e(event, "event");
-        final SingleLiveEvent singleLiveEvent = (SingleLiveEvent) mVIBaseViewModel.getUiEvent();
+        final SingleLiveEvent uiEvent = mVIBaseViewModel.getUiEvent();
         if (ThreadUtils.a()) {
-            singleLiveEvent.setValue(event);
+            uiEvent.setValue(event);
         } else {
             ThreadUtils.b(new Runnable() { // from class: com.blued.android.module.common.extensions.-$$Lambda$BluedStructureExtKt$NQ2Lv_T0hPnBuKsIwMS1AlxHt5E
                 @Override // java.lang.Runnable
@@ -100,15 +98,15 @@ public final class BluedStructureExtKt {
             ThreadUtils.b(new Runnable() { // from class: com.blued.android.module.common.extensions.BluedStructureExtKt$setState$1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    LiveData liveData = bluedMutableLiveData;
-                    Object value = liveData.getValue();
-                    liveData.setValue(value == null ? null : reducer.invoke(value));
+                    BluedMutableLiveData<T> bluedMutableLiveData2 = bluedMutableLiveData;
+                    Object value = bluedMutableLiveData2.getValue();
+                    bluedMutableLiveData2.setValue(value == null ? null : reducer.invoke(value));
                 }
             });
             return;
         }
-        Object obj = (Object) bluedMutableLiveData.getValue();
-        bluedMutableLiveData.setValue(obj == 0 ? null : reducer.invoke(obj));
+        Object value = bluedMutableLiveData.getValue();
+        bluedMutableLiveData.setValue(value == null ? null : reducer.invoke(value));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

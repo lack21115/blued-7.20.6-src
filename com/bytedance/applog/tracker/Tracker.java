@@ -41,11 +41,11 @@ import java.util.Map;
 public class Tracker {
 
     /* renamed from: a  reason: collision with root package name */
-    public static float f21181a;
+    public static float f7575a;
     public static float b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int[] f21182c = new int[2];
+    public static int[] f7576c = new int[2];
     public static final LruCache<String, Long> d = new LruCache<>(100);
 
     public static /* synthetic */ String a(View view, v1 v1Var) {
@@ -63,7 +63,7 @@ public class Tracker {
     public static /* synthetic */ void a(View view, v1 v1Var, c cVar) {
         if (cVar.isBavEnabled() && !cVar.isAutoTrackClickIgnored(view)) {
             v1Var.m = cVar.getViewProperties(view);
-            cVar.receive(v1Var.m5742clone());
+            cVar.receive(v1Var.m2745clone());
         }
     }
 
@@ -93,7 +93,7 @@ public class Tracker {
     }
 
     public static boolean a() {
-        return b.b(b.f21195c);
+        return b.b(b.f7589c);
     }
 
     public static void dismiss(Dialog dialog) {
@@ -102,7 +102,7 @@ public class Tracker {
     public static void dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 1) {
             z2.a("tracker:enter dispatchTouchEvent");
-            f21181a = motionEvent.getRawX();
+            f7575a = motionEvent.getRawX();
             b = motionEvent.getRawY();
         }
     }
@@ -156,7 +156,7 @@ public class Tracker {
     }
 
     public static void onClick(final View view) {
-        if (view == null || !(!b.a(b.f21194a).isEmpty())) {
+        if (view == null || !(!b.a(b.f7588a).isEmpty())) {
             return;
         }
         final v1 a2 = b3.a(view, true);
@@ -164,28 +164,28 @@ public class Tracker {
             z2.c("U SHALL NOT PASS!", (Throwable) null);
             return;
         }
-        view.getLocationOnScreen(f21182c);
-        int[] iArr = f21182c;
+        view.getLocationOnScreen(f7576c);
+        int[] iArr = f7576c;
         int i = iArr[0];
         int i2 = iArr[1];
-        int i3 = (int) (f21181a - i);
+        int i3 = (int) (f7575a - i);
         int i4 = (int) (b - i2);
         if (i3 >= 0 && i3 <= view.getWidth() && i4 >= 0 && i4 <= view.getHeight()) {
             a2.B = i3;
             a2.C = i4;
         }
-        f21181a = 0.0f;
+        f7575a = 0.0f;
         b = 0.0f;
         z2.a(new z2.a() { // from class: com.bytedance.applog.tracker.-$$Lambda$y5ZEH3t5GjRTMxiF4hKwewwAnoY
             @Override // com.bytedance.bdtracker.z2.a
             public final String a() {
-                return Tracker.a(View.this, a2);
+                return Tracker.a(view, a2);
             }
         });
         b.a aVar = new b.a() { // from class: com.bytedance.applog.tracker.-$$Lambda$fFi8SMZSARk6ywxC6NpkVjS7p4w
             @Override // com.bytedance.bdtracker.b.a
             public final void a(c cVar) {
-                Tracker.a(View.this, a2, cVar);
+                Tracker.a(view, a2, cVar);
             }
         };
         for (c cVar : c.D) {

@@ -1,7 +1,5 @@
 package org.apache.harmony.security.x501;
 
-import androidx.exifinterface.media.ExifInterface;
-import com.tencent.mapsdk.internal.ma;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
@@ -31,7 +29,7 @@ public final class AttributeTypeAndValue {
     private static final HashMap<String, ObjectIdentifier> RFC2459_NAMES = new HashMap<>(10);
     private static final ObjectIdentifier C = new ObjectIdentifier(new int[]{2, 5, 4, 6}, "C", RFC1779_NAMES);
     private static final ObjectIdentifier CN = new ObjectIdentifier(new int[]{2, 5, 4, 3}, "CN", RFC1779_NAMES);
-    public static final ObjectIdentifier DC = new ObjectIdentifier(new int[]{0, 9, 2342, 19200300, 100, 1, 25}, ma.p, RFC2253_NAMES);
+    public static final ObjectIdentifier DC = new ObjectIdentifier(new int[]{0, 9, 2342, 19200300, 100, 1, 25}, "DC", RFC2253_NAMES);
     private static final ObjectIdentifier DNQ = new ObjectIdentifier(new int[]{2, 5, 4, 46}, "DNQ", RFC2459_NAMES);
     private static final ObjectIdentifier DNQUALIFIER = new ObjectIdentifier(new int[]{2, 5, 4, 46}, "DNQUALIFIER", RFC2459_NAMES);
     public static final ObjectIdentifier EMAILADDRESS = new ObjectIdentifier(new int[]{1, 2, DatatypeConstants.MIN_TIMEZONE_OFFSET, 113549, 1, 9, 1}, "EMAILADDRESS", RFC2459_NAMES);
@@ -45,7 +43,7 @@ public final class AttributeTypeAndValue {
     private static final ObjectIdentifier ST = new ObjectIdentifier(new int[]{2, 5, 4, 8}, "ST", RFC1779_NAMES);
     private static final ObjectIdentifier STREET = new ObjectIdentifier(new int[]{2, 5, 4, 9}, "STREET", RFC1779_NAMES);
     private static final ObjectIdentifier SURNAME = new ObjectIdentifier(new int[]{2, 5, 4, 4}, "SURNAME", RFC2459_NAMES);
-    private static final ObjectIdentifier T = new ObjectIdentifier(new int[]{2, 5, 4, 12}, ExifInterface.GPS_DIRECTION_TRUE, RFC2459_NAMES);
+    private static final ObjectIdentifier T = new ObjectIdentifier(new int[]{2, 5, 4, 12}, "T", RFC2459_NAMES);
     private static final ObjectIdentifier UID = new ObjectIdentifier(new int[]{0, 9, 2342, 19200300, 100, 1, 1}, "UID", RFC2253_NAMES);
     private static final ObjectIdentifier[][] KNOWN_OIDS = (ObjectIdentifier[][]) Array.newInstance(ObjectIdentifier.class, 10, 10);
 

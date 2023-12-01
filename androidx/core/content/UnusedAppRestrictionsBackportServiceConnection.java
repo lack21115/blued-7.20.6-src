@@ -17,15 +17,15 @@ public class UnusedAppRestrictionsBackportServiceConnection implements ServiceCo
     ResolvableFuture<Integer> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f2413c;
+    private final Context f2365c;
 
     /* renamed from: a  reason: collision with root package name */
-    IUnusedAppRestrictionsBackportService f2412a = null;
+    IUnusedAppRestrictionsBackportService f2364a = null;
     private boolean d = false;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public UnusedAppRestrictionsBackportServiceConnection(Context context) {
-        this.f2413c = context;
+        this.f2365c = context;
     }
 
     private IUnusedAppRestrictionsBackportCallback a() {
@@ -50,7 +50,7 @@ public class UnusedAppRestrictionsBackportServiceConnection implements ServiceCo
         }
         this.d = true;
         this.b = resolvableFuture;
-        this.f2413c.bindService(new Intent(UnusedAppRestrictionsBackportService.ACTION_UNUSED_APP_RESTRICTIONS_BACKPORT_CONNECTION).setPackage(PackageManagerCompat.getPermissionRevocationVerifierApp(this.f2413c.getPackageManager())), this, 1);
+        this.f2365c.bindService(new Intent(UnusedAppRestrictionsBackportService.ACTION_UNUSED_APP_RESTRICTIONS_BACKPORT_CONNECTION).setPackage(PackageManagerCompat.getPermissionRevocationVerifierApp(this.f2365c.getPackageManager())), this, 1);
     }
 
     public void disconnectFromService() {
@@ -58,13 +58,13 @@ public class UnusedAppRestrictionsBackportServiceConnection implements ServiceCo
             throw new IllegalStateException("bindService must be called before unbind");
         }
         this.d = false;
-        this.f2413c.unbindService(this);
+        this.f2365c.unbindService(this);
     }
 
     @Override // android.content.ServiceConnection
     public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
         IUnusedAppRestrictionsBackportService asInterface = IUnusedAppRestrictionsBackportService.Stub.asInterface(iBinder);
-        this.f2412a = asInterface;
+        this.f2364a = asInterface;
         try {
             asInterface.isPermissionRevocationEnabledForApp(a());
         } catch (RemoteException e) {
@@ -74,6 +74,6 @@ public class UnusedAppRestrictionsBackportServiceConnection implements ServiceCo
 
     @Override // android.content.ServiceConnection
     public void onServiceDisconnected(ComponentName componentName) {
-        this.f2412a = null;
+        this.f2364a = null;
     }
 }

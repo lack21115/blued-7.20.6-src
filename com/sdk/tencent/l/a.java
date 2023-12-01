@@ -8,7 +8,7 @@ import java.net.HttpURLConnection;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28060a = "com.sdk.tencent.l.a";
+    public static final String f14372a = "com.sdk.tencent.l.a";
     public static final Boolean b = Boolean.valueOf(c.b);
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0049 A[Catch: all -> 0x00a1, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x00a1, blocks: (B:6:0x001c, B:9:0x0026, B:11:0x0034, B:11:0x0034, B:12:0x0037, B:16:0x0049, B:22:0x005e, B:23:0x0068, B:24:0x0081, B:10:0x002e), top: B:35:0x001c }] */
@@ -134,7 +134,7 @@ public class a {
             }
             return null;
         } catch (Throwable th) {
-            b.a(f28060a, th.getMessage(), b);
+            b.a(f14372a, th.getMessage(), b);
             return null;
         }
     }

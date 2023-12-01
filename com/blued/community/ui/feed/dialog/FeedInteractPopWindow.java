@@ -42,6 +42,7 @@ import com.blued.community.utils.CommEventBusUtil;
 import com.blued.community.utils.UserInfoUtils;
 import com.blued.das.client.feed.FeedProtos;
 import com.blued.track.trackUtils.EventTrackUtils;
+import com.google.protobuf.Message;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.util.ArrayList;
 import kotlin.Metadata;
@@ -166,7 +167,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
         FrameLayout frameLayout;
         FrameLayout frameLayout2;
         FragmentFeedInteractBinding viewBinding = getViewBinding();
-        if (viewBinding != null && (frameLayout2 = viewBinding.f18872c) != null) {
+        if (viewBinding != null && (frameLayout2 = viewBinding.c) != null) {
             frameLayout2.setVisibility(0);
             TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 0.0f, 1, 1.0f);
             translateAnimation.setDuration(200L);
@@ -213,7 +214,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
         if (this.w.isFromFeedDetail) {
             f = FeedProtos.SourcePage.FEED_DETAIL_PAGE;
         }
-        FeedProtos.FeedProto build = EventTrackFeed.a(FeedProtos.Event.MORE_EMOJI_PANEL_ONE_CLICK, this.v, this.w.feedFrom).setSourcePage(f).setId(EventTrackFeed.a(String.valueOf(feedInteractItemModel.getId()))).build();
+        Message build = EventTrackFeed.a(FeedProtos.Event.MORE_EMOJI_PANEL_ONE_CLICK, this.v, this.w.feedFrom).setSourcePage(f).setId(EventTrackFeed.a(String.valueOf(feedInteractItemModel.getId()))).build();
         boolean z = true;
         if (i == 0) {
             if (1 == this.v.iliked) {
@@ -251,7 +252,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
                         busFeedInteractModel.setInteraction_count(0);
                     }
                     busFeedInteractModel.setAdd(false);
-                    CommEventBusUtil.f20461a.a(busFeedInteractModel);
+                    CommEventBusUtil.a.a(busFeedInteractModel);
                     FeedInteractPopWindow.this.E();
                 }
             }, this.v.feed_id, feedInteractItemModel.getId(), this.v.interaction_id, this.y);
@@ -268,7 +269,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
                     BusFeedInteractModel singleData = parseData.getSingleData();
                     singleData.setFeedId(FeedInteractPopWindow.this.getFeedData().feed_id);
                     singleData.setAdd(true);
-                    CommEventBusUtil.f20461a.a(singleData);
+                    CommEventBusUtil.a.a(singleData);
                     FeedInteractPopWindow.this.b(view, feedInteractItemModel, i);
                 }
             }
@@ -298,7 +299,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
         view.getLocationInWindow(iArr);
         int[] iArr2 = new int[2];
         FragmentFeedInteractBinding viewBinding = getViewBinding();
-        if (viewBinding != null && (view2 = viewBinding.f18871a) != null) {
+        if (viewBinding != null && (view2 = viewBinding.a) != null) {
             view2.getLocationInWindow(iArr2);
         }
         int[] iArr3 = new int[2];
@@ -327,7 +328,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedInteractPopWindow$JISzB6j_Ri7ow6b-Kvjj1UKR_Vo
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FeedInteractPopWindow.a(PathMeasure.this, this, imageView, valueAnimator);
+                FeedInteractPopWindow.a(pathMeasure, this, imageView, valueAnimator);
             }
         });
         ofFloat.start();
@@ -374,7 +375,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
         FrameLayout frameLayout2;
         Intrinsics.e(this$0, "this$0");
         FragmentFeedInteractBinding viewBinding = this$0.getViewBinding();
-        if (viewBinding != null && (frameLayout2 = viewBinding.f18872c) != null) {
+        if (viewBinding != null && (frameLayout2 = viewBinding.c) != null) {
             frameLayout2.setVisibility(0);
             TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 1.0f, 1, 0.0f);
             translateAnimation.setDuration(200L);
@@ -420,7 +421,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
         FrameLayout frameLayout;
         FrameLayout frameLayout2;
         super.b();
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             FragmentFeedInteractBinding viewBinding = getViewBinding();
             if (viewBinding != null && (frameLayout2 = viewBinding.b) != null) {
                 frameLayout2.setBackgroundResource(R.drawable.feed_interact_pop_bg_dark);
@@ -445,7 +446,7 @@ public final class FeedInteractPopWindow extends AttachPopupView {
     @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView
     public void c() {
         super.c();
-        PartShadowContainer partShadowContainer = this.f9959c;
+        PartShadowContainer partShadowContainer = this.c;
         if (partShadowContainer == null) {
             return;
         }

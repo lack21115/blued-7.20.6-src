@@ -17,11 +17,11 @@ import androidx.core.view.ViewCompat;
 public class k extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Paint f26617a;
+    private Paint f12929a;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f26618c;
+    private int f12930c;
     private int d;
     private int e;
     private int f;
@@ -33,11 +33,11 @@ public class k extends Drawable {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f26619a = 1;
+        private int f12931a = 1;
         private int b = 12;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f26620c = Color.parseColor("#4d000000");
+        private int f12932c = Color.parseColor("#4d000000");
         private int d = 18;
         private int e;
         private int f;
@@ -58,11 +58,11 @@ public class k extends Drawable {
         }
 
         public k a() {
-            return new k(this.f26619a, this.g, this.b, this.f26620c, this.d, this.e, this.f);
+            return new k(this.f12931a, this.g, this.b, this.f12932c, this.d, this.e, this.f);
         }
 
         public a b(int i) {
-            this.f26620c = i;
+            this.f12932c = i;
             return this;
         }
 
@@ -91,15 +91,15 @@ public class k extends Drawable {
         this.d = i;
         this.h = iArr;
         this.e = i2;
-        this.f26618c = i4;
+        this.f12930c = i4;
         this.f = i5;
         this.g = i6;
         Paint paint = new Paint();
-        this.f26617a = paint;
+        this.f12929a = paint;
         paint.setColor(0);
-        this.f26617a.setAntiAlias(true);
-        this.f26617a.setShadowLayer(i4, i5, i6, i3);
-        this.f26617a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP));
+        this.f12929a.setAntiAlias(true);
+        this.f12929a.setShadowLayer(i4, i5, i6, i3);
+        this.f12929a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_ATOP));
         Paint paint2 = new Paint();
         this.b = paint2;
         paint2.setAntiAlias(true);
@@ -122,13 +122,13 @@ public class k extends Drawable {
             }
         }
         if (this.d != 1) {
-            canvas.drawCircle(this.i.centerX(), this.i.centerY(), Math.min(this.i.width(), this.i.height()) / 2.0f, this.f26617a);
+            canvas.drawCircle(this.i.centerX(), this.i.centerY(), Math.min(this.i.width(), this.i.height()) / 2.0f, this.f12929a);
             canvas.drawCircle(this.i.centerX(), this.i.centerY(), Math.min(this.i.width(), this.i.height()) / 2.0f, this.b);
             return;
         }
         RectF rectF = this.i;
         int i = this.e;
-        canvas.drawRoundRect(rectF, i, i, this.f26617a);
+        canvas.drawRoundRect(rectF, i, i, this.f12929a);
         RectF rectF2 = this.i;
         int i2 = this.e;
         canvas.drawRoundRect(rectF2, i2, i2, this.b);
@@ -141,14 +141,14 @@ public class k extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void setAlpha(int i) {
-        this.f26617a.setAlpha(i);
+        this.f12929a.setAlpha(i);
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setBounds(int i, int i2, int i3, int i4) {
         int i5;
         super.setBounds(i, i2, i3, i4);
-        int i6 = this.f26618c;
+        int i6 = this.f12930c;
         float f = (i + i6) - this.f;
         int i7 = this.g;
         this.i = new RectF(f, (i2 + i6) - i7, (i3 - i6) - i5, (i4 - i6) - i7);
@@ -156,6 +156,6 @@ public class k extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(ColorFilter colorFilter) {
-        this.f26617a.setColorFilter(colorFilter);
+        this.f12929a.setColorFilter(colorFilter);
     }
 }

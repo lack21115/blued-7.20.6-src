@@ -234,7 +234,7 @@ public interface IInputMethodSession extends IInterface {
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
-                    updateCursor(parcel.readInt() != 0 ? Rect.CREATOR.createFromParcel(parcel) : null);
+                    updateCursor(parcel.readInt() != 0 ? (Rect) Rect.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -242,7 +242,7 @@ public interface IInputMethodSession extends IInterface {
                     return true;
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
-                    appPrivateCommand(parcel.readString(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    appPrivateCommand(parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 8:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -256,7 +256,7 @@ public interface IInputMethodSession extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     updateCursorAnchorInfo(parcel.readInt() != 0 ? CursorAnchorInfo.CREATOR.createFromParcel(parcel) : null);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

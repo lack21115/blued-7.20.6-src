@@ -14,16 +14,16 @@ import android.widget.TextView;
 public class n implements com.opos.mobad.ad.e.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26320a;
+    private Context f12632a;
     private ViewGroup b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26321c;
+    private String f12633c;
     private String d;
 
     public n(Context context, String str, String str2) {
-        this.f26320a = context.getApplicationContext();
-        this.f26321c = str;
+        this.f12632a = context.getApplicationContext();
+        this.f12633c = str;
         this.d = str2;
         b();
     }
@@ -44,21 +44,21 @@ public class n implements com.opos.mobad.ad.e.d {
     }
 
     private void a(RelativeLayout relativeLayout) {
-        ImageView imageView = new ImageView(this.f26320a);
+        ImageView imageView = new ImageView(this.f12632a);
         imageView.setId(2);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        Context context = this.f26320a;
+        Context context = this.f12632a;
         Drawable f = com.opos.cmn.an.h.d.a.f(context, context.getPackageName());
         if (f != null) {
             imageView.setImageDrawable(f);
         }
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f26320a, 40.0f), com.opos.cmn.an.h.f.a.a(this.f26320a, 40.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12632a, 40.0f), com.opos.cmn.an.h.f.a.a(this.f12632a, 40.0f));
         layoutParams.addRule(15);
         relativeLayout.addView(imageView, layoutParams);
     }
 
     private void a(RelativeLayout relativeLayout, String str) {
-        TextView textView = new TextView(this.f26320a);
+        TextView textView = new TextView(this.f12632a);
         textView.setText(str);
         textView.setId(3);
         textView.setGravity(17);
@@ -74,29 +74,29 @@ public class n implements com.opos.mobad.ad.e.d {
     }
 
     private void a(RelativeLayout relativeLayout, String str, String str2) {
-        RelativeLayout relativeLayout2 = new RelativeLayout(this.f26320a);
+        RelativeLayout relativeLayout2 = new RelativeLayout(this.f12632a);
         a(relativeLayout2, str);
         b(relativeLayout2, str2);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(1, 2);
-        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f26320a, 10.0f);
+        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f12632a, 10.0f);
         relativeLayout.addView(relativeLayout2, layoutParams);
     }
 
     private void b() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f26320a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f12632a);
         this.b = relativeLayout;
         relativeLayout.setBackgroundColor(Color.parseColor("#ffffff"));
-        RelativeLayout relativeLayout2 = new RelativeLayout(this.f26320a);
+        RelativeLayout relativeLayout2 = new RelativeLayout(this.f12632a);
         a(relativeLayout2);
-        a(relativeLayout2, this.f26321c, this.d);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f26320a, 55.0f));
+        a(relativeLayout2, this.f12633c, this.d);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f12632a, 55.0f));
         layoutParams.addRule(13);
         this.b.addView(relativeLayout2, layoutParams);
     }
 
     private void b(RelativeLayout relativeLayout, String str) {
-        TextView textView = new TextView(this.f26320a);
+        TextView textView = new TextView(this.f12632a);
         textView.setText(str);
         textView.setGravity(17);
         textView.setTextColor(Color.parseColor("#aaaaaa"));

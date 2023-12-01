@@ -14,28 +14,24 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ULongArray.class */
 public final class ULongArray implements Collection<ULong>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final long[] f42308a;
+    private final long[] a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/ULongArray$Iterator.class */
     public static final class Iterator extends ULongIterator {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final long[] f42309a;
+        private final long[] a;
         private int b;
 
         public Iterator(long[] array) {
             Intrinsics.e(array, "array");
-            this.f42309a = array;
+            this.a = array;
         }
 
         @Override // kotlin.collections.ULongIterator
         public long a() {
             int i = this.b;
-            long[] jArr = this.f42309a;
+            long[] jArr = this.a;
             if (i < jArr.length) {
                 this.b = i + 1;
                 return ULong.c(jArr[i]);
@@ -45,7 +41,7 @@ public final class ULongArray implements Collection<ULong>, KMappedMarker {
 
         @Override // java.util.Iterator
         public boolean hasNext() {
-            return this.b < this.f42309a.length;
+            return this.b < this.a.length;
         }
     }
 
@@ -95,36 +91,36 @@ public final class ULongArray implements Collection<ULong>, KMappedMarker {
         return Arrays.hashCode(jArr);
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     /* renamed from: a */
     public int size() {
-        return a(this.f42308a);
+        return a(this.a);
     }
 
     public boolean a(long j) {
-        return a(this.f42308a, j);
+        return a(this.a, j);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public /* synthetic */ boolean add(ULong uLong) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean addAll(Collection<? extends ULong> collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
     public final /* synthetic */ long[] b() {
-        return this.f42308a;
+        return this.a;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public void clear() {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof ULong) {
             return a(((ULong) obj).a());
@@ -132,59 +128,59 @@ public final class ULongArray implements Collection<ULong>, KMappedMarker {
         return false;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean containsAll(Collection<? extends Object> elements) {
         Intrinsics.e(elements, "elements");
-        return a(this.f42308a, (Collection<ULong>) elements);
+        return a(this.a, (Collection<ULong>) elements);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean equals(Object obj) {
-        return a(this.f42308a, obj);
+        return a(this.a, obj);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public int hashCode() {
-        return e(this.f42308a);
+        return e(this.a);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean isEmpty() {
-        return c(this.f42308a);
+        return c(this.a);
     }
 
     @Override // java.util.Collection, java.lang.Iterable
     public java.util.Iterator<ULong> iterator() {
-        return b(this.f42308a);
+        return b(this.a);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean remove(Object obj) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean removeAll(Collection<? extends Object> collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean retainAll(Collection<? extends Object> collection) {
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public Object[] toArray() {
         return CollectionToArray.a(this);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public <T> T[] toArray(T[] array) {
         Intrinsics.e(array, "array");
         return (T[]) CollectionToArray.a(this, array);
     }
 
     public String toString() {
-        return d(this.f42308a);
+        return d(this.a);
     }
 }

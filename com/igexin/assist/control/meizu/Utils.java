@@ -8,7 +8,7 @@ import com.igexin.push.core.b;
 public class Utils {
     public static String getAppIdByBuildConfig(ApplicationInfo applicationInfo) {
         try {
-            String string = applicationInfo.metaData.getString(b.f23426a);
+            String string = applicationInfo.metaData.getString(b.f9818a);
             String str = string;
             if (TextUtils.isEmpty(string)) {
                 str = applicationInfo.packageName;
@@ -23,7 +23,7 @@ public class Utils {
 
     public static String getAppKeyByBuildConfig(ApplicationInfo applicationInfo) {
         try {
-            String string = applicationInfo.metaData.getString(b.f23426a);
+            String string = applicationInfo.metaData.getString(b.f9818a);
             String str = string;
             if (TextUtils.isEmpty(string)) {
                 str = applicationInfo.packageName;

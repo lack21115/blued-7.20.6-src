@@ -6,11 +6,11 @@ import java.util.List;
 final /* synthetic */ class r implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40442a;
+    private final TXVideoEditer f26751a;
     private final List b;
 
     private r(TXVideoEditer tXVideoEditer, List list) {
-        this.f40442a = tXVideoEditer;
+        this.f26751a = tXVideoEditer;
         this.b = list;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class r implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setRepeatPlay$24(this.f40442a, this.b);
+        TXVideoEditer.lambda$setRepeatPlay$24(this.f26751a, this.b);
     }
 }

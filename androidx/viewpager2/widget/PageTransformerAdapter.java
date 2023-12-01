@@ -5,16 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.viewpager2.widget.ViewPager2;
 import java.util.Locale;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/viewpager2/widget/PageTransformerAdapter.class */
-final class PageTransformerAdapter extends ViewPager2.OnPageChangeCallback {
+public final class PageTransformerAdapter extends ViewPager2.OnPageChangeCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayoutManager f3588a;
+    private final LinearLayoutManager f3540a;
     private ViewPager2.PageTransformer b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PageTransformerAdapter(LinearLayoutManager linearLayoutManager) {
-        this.f3588a = linearLayoutManager;
+        this.f3540a = linearLayoutManager;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -40,14 +41,14 @@ final class PageTransformerAdapter extends ViewPager2.OnPageChangeCallback {
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            if (i4 >= this.f3588a.getChildCount()) {
+            if (i4 >= this.f3540a.getChildCount()) {
                 return;
             }
-            View childAt = this.f3588a.getChildAt(i4);
+            View childAt = this.f3540a.getChildAt(i4);
             if (childAt == null) {
-                throw new IllegalStateException(String.format(Locale.US, "LayoutManager returned a null child at pos %d/%d while transforming pages", Integer.valueOf(i4), Integer.valueOf(this.f3588a.getChildCount())));
+                throw new IllegalStateException(String.format(Locale.US, "LayoutManager returned a null child at pos %d/%d while transforming pages", Integer.valueOf(i4), Integer.valueOf(this.f3540a.getChildCount())));
             }
-            this.b.transformPage(childAt, (this.f3588a.getPosition(childAt) - i) + f2);
+            this.b.transformPage(childAt, (this.f3540a.getPosition(childAt) - i) + f2);
             i3 = i4 + 1;
         }
     }

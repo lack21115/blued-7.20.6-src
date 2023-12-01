@@ -27,39 +27,36 @@ public class UserInfoUtils {
             return;
         }
         ThreadManager.a().a(new ThreadExecutor("getUnreadMsgCnt") { // from class: com.soft.blued.user.UserInfoUtils.1
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
-                CopyOnWriteArrayList<UserAccountsModel> h = UserAccountsVDao.a().h();
+                CopyOnWriteArrayList h = UserAccountsVDao.a().h();
                 if (h == null || h.size() <= 1) {
                     return;
                 }
-                UserAccountsModel userAccountsModel = h.get(1);
+                UserAccountsModel userAccountsModel = (UserAccountsModel) h.get(1);
                 if (userAccountsModel.getUid().equals(UserInfo.getInstance().getLoginUserInfo().uid)) {
                     return;
                 }
                 UserHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<UserUnreadMsgModel>>(null) { // from class: com.soft.blued.user.UserInfoUtils.1.1
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<UserUnreadMsgModel> bluedEntityA) {
-                        if (!bluedEntityA.hasData() || bluedEntityA.data.get(0).has_unread == 0) {
+                        if (!bluedEntityA.hasData() || ((UserUnreadMsgModel) bluedEntityA.data.get(0)).has_unread == 0) {
                             tabItem.i.setVisibility(4);
                             BluedPreferences.Z(false);
                             return;
                         }
-                        BluedPreferences.t(bluedEntityA.data.get(0).has_unread);
+                        BluedPreferences.t(((UserUnreadMsgModel) bluedEntityA.data.get(0)).has_unread);
                         BluedPreferences.Z(true);
                         CommonPreferences.a(true);
                         tabItem.i.setVisibility(0);
                         if (BluedPreferences.dJ()) {
                             return;
                         }
-                        new XPopup.Builder(tabItem.f31010a.getContext()).a(new SimpleCallback() { // from class: com.soft.blued.user.UserInfoUtils.1.1.1
-                            @Override // com.blued.android.framework.ui.xpop.interfaces.SimpleCallback, com.blued.android.framework.ui.xpop.interfaces.XPopupCallback
+                        new XPopup.Builder(tabItem.f17320a.getContext()).a(new SimpleCallback() { // from class: com.soft.blued.user.UserInfoUtils.1.1.1
                             public void c(BasePopupView basePopupView) {
                                 BluedPreferences.dK();
                             }
-                        }).a(PopupAnimation.ScaleAlphaFromCenter).a(PopupPosition.Top).d((Boolean) false).b(false).a(tabItem.f31010a).a((BasePopupView) new UnreadMsgPop(tabItem.f31010a.getContext())).h();
+                        }).a(PopupAnimation.a).a(PopupPosition.c).d(false).b(false).a(tabItem.f17320a).a(new UnreadMsgPop(tabItem.f17320a.getContext())).h();
                     }
                 }, userAccountsModel.getUid(), null);
             }

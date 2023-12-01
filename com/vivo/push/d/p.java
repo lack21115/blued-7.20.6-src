@@ -18,22 +18,22 @@ public final class p extends z {
     public final void a(com.vivo.push.o oVar) {
         com.vivo.push.b.o oVar2 = (com.vivo.push.b.o) oVar;
         com.vivo.push.e.a().a(new com.vivo.push.b.h(String.valueOf(oVar2.f())));
-        if (!ClientConfigManagerImpl.getInstance(this.f41105a).isEnablePush()) {
+        if (!ClientConfigManagerImpl.getInstance(this.f27414a).isEnablePush()) {
             com.vivo.push.util.p.d("OnMessageTask", "command  " + oVar + " is ignore by disable push ");
             com.vivo.push.b.x xVar = new com.vivo.push.b.x(1020L);
             HashMap<String, String> hashMap = new HashMap<>();
             hashMap.put(IntentConstant.MESSAGE_ID, String.valueOf(oVar2.f()));
-            String b = com.vivo.push.util.z.b(this.f41105a, this.f41105a.getPackageName());
+            String b = com.vivo.push.util.z.b(this.f27414a, this.f27414a.getPackageName());
             if (!TextUtils.isEmpty(b)) {
                 hashMap.put("remoteAppId", b);
             }
             xVar.a(hashMap);
             com.vivo.push.e.a().a(xVar);
-        } else if (com.vivo.push.e.a().g() && !a(com.vivo.push.util.z.c(this.f41105a), oVar2.d(), oVar2.i())) {
+        } else if (com.vivo.push.e.a().g() && !a(com.vivo.push.util.z.c(this.f27414a), oVar2.d(), oVar2.i())) {
             com.vivo.push.b.x xVar2 = new com.vivo.push.b.x(1021L);
             HashMap<String, String> hashMap2 = new HashMap<>();
             hashMap2.put(IntentConstant.MESSAGE_ID, String.valueOf(oVar2.f()));
-            String b2 = com.vivo.push.util.z.b(this.f41105a, this.f41105a.getPackageName());
+            String b2 = com.vivo.push.util.z.b(this.f27414a, this.f27414a.getPackageName());
             if (!TextUtils.isEmpty(b2)) {
                 hashMap2.put("remoteAppId", b2);
             }

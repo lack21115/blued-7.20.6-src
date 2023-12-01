@@ -11,18 +11,18 @@ final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25154a;
+        public final int f11466a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long[] f25155c;
+        public final long[] f11467c;
         public final int d;
         public final boolean e;
 
         public a(int i, int i2, long[] jArr, int i3, boolean z) {
-            this.f25154a = i;
+            this.f11466a = i;
             this.b = i2;
-            this.f25155c = jArr;
+            this.f11467c = jArr;
             this.d = i3;
             this.e = z;
         }
@@ -30,19 +30,19 @@ final class b {
 
     /* renamed from: com.opos.exoplayer.core.c.e.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/e/b$b.class */
-    public static final class C0653b {
+    public static final class C0483b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f25156a;
+        public final String f11468a;
         public final String[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25157c;
+        public final int f11469c;
 
-        public C0653b(String str, String[] strArr, int i) {
-            this.f25156a = str;
+        public C0483b(String str, String[] strArr, int i) {
+            this.f11468a = str;
             this.b = strArr;
-            this.f25157c = i;
+            this.f11469c = i;
         }
     }
 
@@ -50,17 +50,17 @@ final class b {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final boolean f25158a;
+        public final boolean f11470a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25159c;
+        public final int f11471c;
         public final int d;
 
         public c(boolean z, int i, int i2, int i3) {
-            this.f25158a = z;
+            this.f11470a = z;
             this.b = i;
-            this.f25159c = i2;
+            this.f11471c = i2;
             this.d = i3;
         }
     }
@@ -69,11 +69,11 @@ final class b {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f25160a;
+        public final long f11472a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long f25161c;
+        public final long f11473c;
         public final int d;
         public final int e;
         public final int f;
@@ -83,9 +83,9 @@ final class b {
         public final byte[] j;
 
         public d(long j, int i, long j2, int i2, int i3, int i4, int i5, int i6, boolean z, byte[] bArr) {
-            this.f25160a = j;
+            this.f11472a = j;
             this.b = i;
-            this.f25161c = j2;
+            this.f11473c = j2;
             this.d = i2;
             this.e = i3;
             this.f = i4;
@@ -118,7 +118,7 @@ final class b {
         int p2 = mVar.p();
         int p3 = mVar.p();
         int g2 = mVar.g();
-        return new d(n, g, n2, p, p2, p3, (int) Math.pow(2.0d, g2 & 15), (int) Math.pow(2.0d, (g2 & 240) >> 4), (mVar.g() & 1) > 0, Arrays.copyOf(mVar.f25496a, mVar.c()));
+        return new d(n, g, n2, p, p2, p3, (int) Math.pow(2.0d, g2 & 15), (int) Math.pow(2.0d, (g2 & 240) >> 4), (mVar.g() & 1) > 0, Arrays.copyOf(mVar.f11808a, mVar.c()));
     }
 
     private static void a(int i, j jVar) {
@@ -215,7 +215,7 @@ final class b {
     public static c[] a(m mVar, int i) {
         a(5, mVar, false);
         int g = mVar.g();
-        j jVar = new j(mVar.f25496a);
+        j jVar = new j(mVar.f11808a);
         jVar.b(mVar.d() * 8);
         int i2 = 0;
         while (true) {
@@ -247,7 +247,7 @@ final class b {
         }
     }
 
-    public static C0653b b(m mVar) {
+    public static C0483b b(m mVar) {
         a(3, mVar, false);
         String e = mVar.e((int) mVar.n());
         int length = e.length();
@@ -259,7 +259,7 @@ final class b {
             i = i + 4 + strArr[i2].length();
         }
         if ((mVar.g() & 1) != 0) {
-            return new C0653b(e, strArr, i + 1);
+            return new C0483b(e, strArr, i + 1);
         }
         throw new o("framing bit expected to be set");
     }

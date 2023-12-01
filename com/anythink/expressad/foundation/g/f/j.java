@@ -15,14 +15,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7922a = j.class.getSimpleName();
+    private static final String f5082a = j.class.getSimpleName();
     private Context b;
     private Set<i> d = new HashSet();
     private ExecutorService e = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS, new SynchronousQueue());
     private AtomicInteger f = new AtomicInteger();
 
     /* renamed from: c  reason: collision with root package name */
-    private c f7923c = new d(new Handler(Looper.getMainLooper()));
+    private c f5083c = new d(new Handler(Looper.getMainLooper()));
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/g/f/j$a.class */
     public interface a {
@@ -69,7 +69,7 @@ public class j {
             @Override // java.lang.Runnable
             public final void run() {
                 Context unused = j.this.b;
-                new h(null, j.this.f7923c).a(iVar);
+                new h(null, j.this.f5083c).a(iVar);
             }
         });
     }

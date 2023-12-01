@@ -9,14 +9,14 @@ import android.net.Uri;
 public class bb implements au {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40650a = "content://cn.nubia.provider.deviceid.dataid/oaid";
+    private static final String f26959a = "content://cn.nubia.provider.deviceid.dataid/oaid";
 
     @Override // com.umeng.analytics.pro.au
     public String a(Context context) {
         if (context == null) {
             return null;
         }
-        Cursor query = context.getContentResolver().query(Uri.parse(f40650a), null, null, null, null);
+        Cursor query = context.getContentResolver().query(Uri.parse(f26959a), null, null, null, null);
         String str = null;
         if (query != null) {
             str = null;

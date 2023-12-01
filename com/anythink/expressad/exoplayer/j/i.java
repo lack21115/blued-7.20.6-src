@@ -6,6 +6,6 @@ import java.io.IOException;
 public final class i extends IOException {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7580a = 0;
+    public static final int f4741a = 0;
     public final int b = 0;
 }

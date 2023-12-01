@@ -9,9 +9,7 @@ import java.util.LinkedHashSet;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageFileLoader.class */
 public class ImageFileLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static HashMap<Integer, LinkedHashSet<ImageFileWrapper>> f9494a = new HashMap<>();
+    private static HashMap<Integer, LinkedHashSet<ImageFileWrapper>> a = new HashMap<>();
     private static HashMap<Integer, LinkedHashSet<ImageFileWrapper>> b = new HashMap<>();
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/ImageFileLoader$OnLoadFileListener.class */
@@ -28,11 +26,11 @@ public class ImageFileLoader {
     }
 
     public static ImageFileWrapper a(IRequestHost iRequestHost) {
-        return new ImageFileWrapper(iRequestHost, ImageLoader.a((IRequestHost) null).d().b(DiskCacheStrategy.f20763c).e(Integer.MIN_VALUE).d(true));
+        return new ImageFileWrapper(iRequestHost, ImageLoader.a((IRequestHost) null).d().b(DiskCacheStrategy.c).e(Integer.MIN_VALUE).d(true));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static HashMap<Integer, LinkedHashSet<ImageFileWrapper>> a(boolean z) {
-        return z ? f9494a : b;
+        return z ? a : b;
     }
 }

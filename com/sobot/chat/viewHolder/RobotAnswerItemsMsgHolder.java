@@ -5,7 +5,6 @@ import android.os.BatteryManager;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.blued.android.chat.data.MsgType;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.api.apiUtils.GsonUtil;
 import com.sobot.chat.api.model.SobotMultiDiaRespInfo;
@@ -58,7 +57,7 @@ public class RobotAnswerItemsMsgHolder extends MessageHolderBase implements View
         }
         SobotMultiDiaRespInfo multiDiaRespInfo = zhiChiMessageBase.getAnswer().getMultiDiaRespInfo();
         HtmlTools.getInstance(context).setRichText(this.tv_msg, ChatUtils.getMultiMsgTitle(multiDiaRespInfo).replaceAll("\n", "<br/>"), getLinkTextColor());
-        if (!MsgType.UID_GROUP_AT_ALL.equals(multiDiaRespInfo.getRetCode())) {
+        if (!"000000".equals(multiDiaRespInfo.getRetCode())) {
             this.answersListView.setVisibility(8);
             return;
         }

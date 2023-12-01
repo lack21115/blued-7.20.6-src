@@ -4,9 +4,9 @@ package com.huawei.hms.push;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f22842a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f9234a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static String a(byte[] bArr) {
-        return bArr == null ? "" : new String(bArr, k.f22848a);
+        return bArr == null ? "" : new String(bArr, k.f9240a);
     }
 }

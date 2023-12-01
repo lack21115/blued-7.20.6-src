@@ -10,11 +10,11 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f1455a = true;
+    public static boolean f1407a = true;
     public static int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f1456c = 10;
+    public static int f1408c = 10;
     public static float d = 0.85f;
     public static float e = 0.25f;
     public static float f = 0.6f;
@@ -39,23 +39,23 @@ public final class a {
     public static /* synthetic */ class C0020a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f1457a;
+        public static final /* synthetic */ int[] f1409a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[b.values().length];
-            f1457a = iArr;
+            f1409a = iArr;
             try {
                 iArr[b.PLNetworkQualityShiftTrendingNone.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1457a[b.PLNetworkQualityShiftTrendingUp.ordinal()] = 2;
+                f1409a[b.PLNetworkQualityShiftTrendingUp.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f1457a[b.PLNetworkQualityShiftTrendingDown.ordinal()] = 3;
+                f1409a[b.PLNetworkQualityShiftTrendingDown.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -79,11 +79,11 @@ public final class a {
     public static class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f1462a = new a();
+        public static final a f1414a = new a();
     }
 
     public static a a() {
-        return d.f1462a;
+        return d.f1414a;
     }
 
     public void a(float f2) {
@@ -144,7 +144,7 @@ public final class a {
         if (f2 == 0.0f) {
             return f2;
         }
-        if (f1455a) {
+        if (f1407a) {
             c c2 = c(f2);
             if (c2 == c.PLSampleDetectionResultTypeOutlier) {
                 return this.m;
@@ -179,7 +179,7 @@ public final class a {
         } else {
             d2 = floatValue;
         }
-        if (this.u.size() == f1456c) {
+        if (this.u.size() == f1408c) {
             list = this.u;
             i2 = list.size() - 1;
         } else {
@@ -224,7 +224,7 @@ public final class a {
             return c.PLSampleDetectionResultTypeLevelShift;
         }
         if (f2 > this.r) {
-            int i2 = C0020a.f1457a[this.l.ordinal()];
+            int i2 = C0020a.f1409a[this.l.ordinal()];
             if (i2 == 1) {
                 this.o.add(Float.valueOf(f2));
                 this.l = b.PLNetworkQualityShiftTrendingDown;
@@ -252,7 +252,7 @@ public final class a {
                 }
             }
         } else if (f2 < this.q) {
-            int i3 = C0020a.f1457a[this.l.ordinal()];
+            int i3 = C0020a.f1409a[this.l.ordinal()];
             if (i3 == 1) {
                 this.o.add(Float.valueOf(f2));
                 this.l = b.PLNetworkQualityShiftTrendingUp;
@@ -316,7 +316,7 @@ public final class a {
     }
 
     public final void e(float f2) {
-        a(this.n, f2, f1456c);
+        a(this.n, f2, f1408c);
         if (!this.n.contains(Float.valueOf(this.q))) {
             this.q = ((Float) Collections.min(this.n)).floatValue();
         } else if (f2 < this.q) {

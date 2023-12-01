@@ -346,7 +346,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                 return DirectedGraphConnections.this.adjacentNodeValues.containsKey(obj);
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<N> iterator() {
                 final Iterator it = DirectedGraphConnections.this.orderedNodeConnections.iterator();
                 final HashSet hashSet = new HashSet();
@@ -364,7 +364,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return DirectedGraphConnections.this.adjacentNodeValues.size();
             }
@@ -460,7 +460,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                 return DirectedGraphConnections.isPredecessor(DirectedGraphConnections.this.adjacentNodeValues.get(obj));
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<N> iterator() {
                 if (DirectedGraphConnections.this.orderedNodeConnections == null) {
                     final Iterator it = DirectedGraphConnections.this.adjacentNodeValues.entrySet().iterator();
@@ -492,7 +492,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return DirectedGraphConnections.this.predecessorCount;
             }
@@ -605,7 +605,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                 return DirectedGraphConnections.isSuccessor(DirectedGraphConnections.this.adjacentNodeValues.get(obj));
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<N> iterator() {
                 if (DirectedGraphConnections.this.orderedNodeConnections == null) {
                     final Iterator it = DirectedGraphConnections.this.adjacentNodeValues.entrySet().iterator();
@@ -637,7 +637,7 @@ public final class DirectedGraphConnections<N, V> implements GraphConnections<N,
                 };
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return DirectedGraphConnections.this.successorCount;
             }

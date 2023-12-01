@@ -35,7 +35,7 @@ public final class Http2Connection implements Closeable {
     private static final ExecutorService s = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp Http2Connection", true));
 
     /* renamed from: a  reason: collision with root package name */
-    final boolean f35983a;
+    final boolean f22292a;
     final Listener b;
     final String d;
     int e;
@@ -51,7 +51,7 @@ public final class Http2Connection implements Closeable {
     private boolean v;
 
     /* renamed from: c  reason: collision with root package name */
-    final Map<Integer, Http2Stream> f35984c = new LinkedHashMap();
+    final Map<Integer, Http2Stream> f22293c = new LinkedHashMap();
     long i = 0;
     Settings k = new Settings();
     final Settings l = new Settings();
@@ -62,14 +62,14 @@ public final class Http2Connection implements Closeable {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        Socket f35991a;
+        Socket f22300a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        BufferedSource f35992c;
+        BufferedSource f22301c;
         BufferedSink d;
         Listener e = Listener.f;
-        PushObserver f = PushObserver.f36015a;
+        PushObserver f = PushObserver.f22324a;
         boolean g;
         int h;
 
@@ -101,9 +101,9 @@ public final class Http2Connection implements Closeable {
         }
 
         public Builder socket(Socket socket, String str, BufferedSource bufferedSource, BufferedSink bufferedSink) {
-            this.f35991a = socket;
+            this.f22300a = socket;
             this.b = str;
-            this.f35992c = bufferedSource;
+            this.f22301c = bufferedSource;
             this.d = bufferedSink;
             return this;
         }
@@ -128,20 +128,20 @@ public final class Http2Connection implements Closeable {
     final class PingRunnable extends NamedRunnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final boolean f35993a;
+        final boolean f22302a;
         final int b;
         final int d;
 
         PingRunnable(boolean z, int i, int i2) {
             super("OkHttp %s ping %08x%08x", Http2Connection.this.d, Integer.valueOf(i), Integer.valueOf(i2));
-            this.f35993a = z;
+            this.f22302a = z;
             this.b = i;
             this.d = i2;
         }
 
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.NamedRunnable
         public void execute() {
-            Http2Connection.this.a(this.f35993a, this.b, this.d);
+            Http2Connection.this.a(this.f22302a, this.b, this.d);
         }
     }
 
@@ -150,11 +150,11 @@ public final class Http2Connection implements Closeable {
     public class ReaderRunnable extends NamedRunnable implements Http2Reader.Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        final Http2Reader f35994a;
+        final Http2Reader f22303a;
 
         ReaderRunnable(Http2Reader http2Reader) {
             super("OkHttp %s", Http2Connection.this.d);
-            this.f35994a = http2Reader;
+            this.f22303a = http2Reader;
         }
 
         private void a(final Settings settings) {
@@ -213,8 +213,8 @@ public final class Http2Connection implements Closeable {
             try {
                 try {
                     try {
-                        this.f35994a.readConnectionPreface(this);
-                        while (this.f35994a.nextFrame(false, this)) {
+                        this.f22303a.readConnectionPreface(this);
+                        while (this.f22303a.nextFrame(false, this)) {
                         }
                         ErrorCode errorCode7 = ErrorCode.NO_ERROR;
                         errorCode6 = errorCode7;
@@ -226,7 +226,7 @@ public final class Http2Connection implements Closeable {
                             Http2Connection.this.a(errorCode5, errorCode4);
                         } catch (IOException e) {
                         }
-                        Util.closeQuietly(this.f35994a);
+                        Util.closeQuietly(this.f22303a);
                         throw th;
                     }
                 } catch (IOException e2) {
@@ -239,7 +239,7 @@ public final class Http2Connection implements Closeable {
                 http2Connection.a(errorCode, errorCode2);
             } catch (IOException e3) {
             }
-            Util.closeQuietly(this.f35994a);
+            Util.closeQuietly(this.f22303a);
         }
 
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.http2.Http2Reader.Handler
@@ -247,7 +247,7 @@ public final class Http2Connection implements Closeable {
             Http2Stream[] http2StreamArr;
             byteString.size();
             synchronized (Http2Connection.this) {
-                http2StreamArr = (Http2Stream[]) Http2Connection.this.f35984c.values().toArray(new Http2Stream[Http2Connection.this.f35984c.size()]);
+                http2StreamArr = (Http2Stream[]) Http2Connection.this.f22293c.values().toArray(new Http2Stream[Http2Connection.this.f22293c.size()]);
                 Http2Connection.this.g = true;
             }
             int length = http2StreamArr.length;
@@ -289,7 +289,7 @@ public final class Http2Connection implements Closeable {
                     }
                     final Http2Stream http2Stream = new Http2Stream(i, Http2Connection.this, false, z, Util.toHeaders(list));
                     Http2Connection.this.e = i;
-                    Http2Connection.this.f35984c.put(Integer.valueOf(i), http2Stream);
+                    Http2Connection.this.f22293c.put(Integer.valueOf(i), http2Stream);
                     Http2Connection.s.execute(new NamedRunnable("OkHttp %s stream %d", new Object[]{Http2Connection.this.d, Integer.valueOf(i)}) { // from class: com.tencent.cloud.huiyansdkface.okhttp3.internal.http2.Http2Connection.ReaderRunnable.1
                         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.NamedRunnable
                         public void execute() {
@@ -368,8 +368,8 @@ public final class Http2Connection implements Closeable {
                         Http2Connection.this.m = true;
                     }
                     j = j2;
-                    if (!Http2Connection.this.f35984c.isEmpty()) {
-                        http2StreamArr = (Http2Stream[]) Http2Connection.this.f35984c.values().toArray(new Http2Stream[Http2Connection.this.f35984c.size()]);
+                    if (!Http2Connection.this.f22293c.isEmpty()) {
+                        http2StreamArr = (Http2Stream[]) Http2Connection.this.f22293c.values().toArray(new Http2Stream[Http2Connection.this.f22293c.size()]);
                         j = j2;
                     }
                 }
@@ -411,7 +411,7 @@ public final class Http2Connection implements Closeable {
 
     Http2Connection(Builder builder) {
         this.h = builder.f;
-        this.f35983a = builder.g;
+        this.f22292a = builder.g;
         this.b = builder.e;
         this.f = builder.g ? 1 : 2;
         if (builder.g) {
@@ -429,9 +429,9 @@ public final class Http2Connection implements Closeable {
         this.l.a(7, 65535);
         this.l.a(5, 16384);
         this.j = this.l.d();
-        this.n = builder.f35991a;
-        this.o = new Http2Writer(builder.d, this.f35983a);
-        this.p = new ReaderRunnable(new Http2Reader(builder.f35992c, this.f35983a));
+        this.n = builder.f22300a;
+        this.o = new Http2Writer(builder.d, this.f22292a);
+        this.p = new ReaderRunnable(new Http2Reader(builder.f22301c, this.f22292a));
     }
 
     private void a(NamedRunnable namedRunnable) {
@@ -466,7 +466,7 @@ public final class Http2Connection implements Closeable {
     Http2Stream a(int i) {
         Http2Stream http2Stream;
         synchronized (this) {
-            http2Stream = this.f35984c.get(Integer.valueOf(i));
+            http2Stream = this.f22293c.get(Integer.valueOf(i));
         }
         return http2Stream;
     }
@@ -666,7 +666,7 @@ public final class Http2Connection implements Closeable {
     public Http2Stream b(int i) {
         Http2Stream remove;
         synchronized (this) {
-            remove = this.f35984c.remove(Integer.valueOf(i));
+            remove = this.f22293c.remove(Integer.valueOf(i));
             notifyAll();
         }
         return remove;
@@ -729,13 +729,13 @@ public final class Http2Connection implements Closeable {
     public int openStreamCount() {
         int size;
         synchronized (this) {
-            size = this.f35984c.size();
+            size = this.f22293c.size();
         }
         return size;
     }
 
     public Http2Stream pushStream(int i, List<Header> list, boolean z) throws IOException {
-        if (this.f35983a) {
+        if (this.f22292a) {
             throw new IllegalStateException("Client cannot push requests.");
         }
         return b(i, list, z);
@@ -760,7 +760,7 @@ public final class Http2Connection implements Closeable {
                     return;
                 }
                 this.g = true;
-                this.o.goAway(this.e, errorCode, Util.f35904a);
+                this.o.goAway(this.e, errorCode, Util.f22213a);
             }
         }
     }
@@ -781,7 +781,7 @@ public final class Http2Connection implements Closeable {
             synchronized (this) {
                 while (this.j <= 0) {
                     try {
-                        if (!this.f35984c.containsKey(Integer.valueOf(i))) {
+                        if (!this.f22293c.containsKey(Integer.valueOf(i))) {
                             throw new IOException("stream closed");
                         }
                         wait();

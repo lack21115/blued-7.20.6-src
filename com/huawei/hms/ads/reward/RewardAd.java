@@ -34,7 +34,7 @@ public class RewardAd {
     private String Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22522a;
+    private String f8914a;
     private String b;
     private int d;
     private boolean e;
@@ -42,7 +42,7 @@ public class RewardAd {
     private Bundle D = new Bundle();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f22523c = false;
+    private boolean f8915c = false;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/reward/RewardAd$a.class */
     class a implements o {
@@ -224,7 +224,7 @@ public class RewardAd {
             return;
         }
         sVar.V(this.b);
-        this.S.Code(this.f22522a);
+        this.S.Code(this.f8914a);
         b bVar = new b(null, this.L);
         this.S.Code((g) bVar);
         this.S.Code(context, bVar);
@@ -261,7 +261,7 @@ public class RewardAd {
     }
 
     public String getData() {
-        return this.f22522a;
+        return this.f8914a;
     }
 
     public Bundle getMetadata() {
@@ -316,11 +316,11 @@ public class RewardAd {
     }
 
     public void setData(String str) {
-        this.f22522a = str;
+        this.f8914a = str;
     }
 
     public void setImmersive(boolean z) {
-        this.f22523c = z;
+        this.f8915c = z;
     }
 
     public void setMobileDataAlertSwitch(boolean z) {

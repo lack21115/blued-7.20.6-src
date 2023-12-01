@@ -17,13 +17,9 @@ import com.blued.android.module.player.media.utils.Utils;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/view/AbsPlayerView.class */
 public class AbsPlayerView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f15662a;
+    protected Context a;
     protected LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected View f15663c;
+    protected View c;
     protected AbBaseVideoView d;
     protected View e;
     protected ImageView f;
@@ -44,7 +40,7 @@ public class AbsPlayerView extends LinearLayout {
 
     public AbsPlayerView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15662a = context;
+        this.a = context;
         BLVideoViewCache bLVideoViewCache = new BLVideoViewCache();
         this.l = bLVideoViewCache;
         bLVideoViewCache.a(Utils.a(context));
@@ -120,9 +116,9 @@ public class AbsPlayerView extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public AbBaseVideoView b(String str) {
-        AbBaseVideoView a2 = this.l.a(str);
-        AbBaseVideoView abBaseVideoView = a2;
-        if (a2 == null) {
+        AbBaseVideoView a = this.l.a(str);
+        AbBaseVideoView abBaseVideoView = a;
+        if (a == null) {
             abBaseVideoView = this.l.a(str, getContext());
         }
         if (abBaseVideoView.getParent() != null) {

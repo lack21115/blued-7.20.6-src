@@ -12,27 +12,27 @@ import androidx.core.view.ViewCompat;
 public class ViewUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Property<View, Float> f3501a;
+    static final Property<View, Float> f3453a;
     static final Property<View, Rect> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final ViewUtilsBase f3502c;
+    private static final ViewUtilsBase f3454c;
 
     static {
         if (Build.VERSION.SDK_INT >= 29) {
-            f3502c = new ViewUtilsApi29();
+            f3454c = new ViewUtilsApi29();
         } else if (Build.VERSION.SDK_INT >= 23) {
-            f3502c = new ViewUtilsApi23();
+            f3454c = new ViewUtilsApi23();
         } else if (Build.VERSION.SDK_INT >= 22) {
-            f3502c = new ViewUtilsApi22();
+            f3454c = new ViewUtilsApi22();
         } else if (Build.VERSION.SDK_INT >= 21) {
-            f3502c = new ViewUtilsApi21();
+            f3454c = new ViewUtilsApi21();
         } else if (Build.VERSION.SDK_INT >= 19) {
-            f3502c = new ViewUtilsApi19();
+            f3454c = new ViewUtilsApi19();
         } else {
-            f3502c = new ViewUtilsBase();
+            f3454c = new ViewUtilsBase();
         }
-        f3501a = new Property<View, Float>(Float.class, "translationAlpha") { // from class: androidx.transition.ViewUtils.1
+        f3453a = new Property<View, Float>(Float.class, "translationAlpha") { // from class: androidx.transition.ViewUtils.1
             @Override // android.util.Property
             public Float get(View view) {
                 return Float.valueOf(ViewUtils.c(view));
@@ -66,22 +66,22 @@ public class ViewUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(View view, float f) {
-        f3502c.setTransitionAlpha(view, f);
+        f3454c.setTransitionAlpha(view, f);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(View view, int i) {
-        f3502c.setTransitionVisibility(view, i);
+        f3454c.setTransitionVisibility(view, i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(View view, int i, int i2, int i3, int i4) {
-        f3502c.setLeftTopRightBottom(view, i, i2, i3, i4);
+        f3454c.setLeftTopRightBottom(view, i, i2, i3, i4);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(View view, Matrix matrix) {
-        f3502c.transformMatrixToGlobal(view, matrix);
+        f3454c.transformMatrixToGlobal(view, matrix);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -91,26 +91,26 @@ public class ViewUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void b(View view, Matrix matrix) {
-        f3502c.transformMatrixToLocal(view, matrix);
+        f3454c.transformMatrixToLocal(view, matrix);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static float c(View view) {
-        return f3502c.getTransitionAlpha(view);
+        return f3454c.getTransitionAlpha(view);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void c(View view, Matrix matrix) {
-        f3502c.setAnimationMatrix(view, matrix);
+        f3454c.setAnimationMatrix(view, matrix);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void d(View view) {
-        f3502c.saveNonTransitionAlpha(view);
+        f3454c.saveNonTransitionAlpha(view);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void e(View view) {
-        f3502c.clearNonTransitionAlpha(view);
+        f3454c.clearNonTransitionAlpha(view);
     }
 }

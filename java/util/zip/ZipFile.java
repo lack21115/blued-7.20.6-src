@@ -1,6 +1,9 @@
 package java.util.zip;
 
 import android.widget.ExpandableListView;
+import com.android.org.conscrypt.NativeCrypto;
+import com.anythink.core.common.b.g;
+import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import dalvik.system.CloseGuard;
 import java.io.BufferedInputStream;
@@ -151,13 +154,13 @@ public class ZipFile implements Closeable, ZipConstants {
         } else {
             this.fileToDeleteOnClose = null;
         }
-        this.raf = new RandomAccessFile(this.filename, "r");
+        this.raf = new RandomAccessFile(this.filename, g.o.o);
         try {
             readCentralDir();
             if (0 != 0) {
                 IoUtils.closeQuietly(this.raf);
             }
-            this.guard.open("close");
+            this.guard.open(LoaderConstants.CLOSE);
         } catch (Throwable th) {
             if (1 != 0) {
                 IoUtils.closeQuietly(this.raf);
@@ -185,13 +188,13 @@ public class ZipFile implements Closeable, ZipConstants {
         }
         this.raf.seek(0L);
         int reverseBytes = Integer.reverseBytes(this.raf.readInt());
-        if (reverseBytes == 101010256) {
+        if (reverseBytes == ZipConstants.ENDSIG) {
             throw new ZipException("Empty zip archive not supported");
         }
-        if (reverseBytes != 67324752) {
+        if (reverseBytes != ZipConstants.LOCSIG) {
             throw new ZipException("Not a zip archive");
         }
-        long j2 = length - 65536;
+        long j2 = length - NativeCrypto.SSL_OP_NO_SESSION_RESUMPTION_ON_RENEGOTIATION;
         long j3 = length;
         long j4 = j2;
         if (j2 < 0) {
@@ -200,7 +203,7 @@ public class ZipFile implements Closeable, ZipConstants {
         }
         do {
             this.raf.seek(j3);
-            if (Integer.reverseBytes(this.raf.readInt()) == 101010256) {
+            if (Integer.reverseBytes(this.raf.readInt()) == ZipConstants.ENDSIG) {
                 byte[] bArr = new byte[18];
                 this.raf.readFully(bArr);
                 BufferIterator it = HeapBufferIterator.iterator(bArr, 0, bArr.length, ByteOrder.LITTLE_ENDIAN);
@@ -331,7 +334,7 @@ public class ZipFile implements Closeable, ZipConstants {
             RAFStream rAFStream = new RAFStream(randomAccessFile, entry.localHeaderRelOffset);
             DataInputStream dataInputStream = new DataInputStream(rAFStream);
             int reverseBytes = Integer.reverseBytes(dataInputStream.readInt());
-            if (reverseBytes != 67324752) {
+            if (reverseBytes != ZipConstants.LOCSIG) {
                 throwZipException("Local File Header", reverseBytes);
             }
             dataInputStream.skipBytes(2);

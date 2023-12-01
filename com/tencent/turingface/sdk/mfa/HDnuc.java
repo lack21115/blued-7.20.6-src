@@ -4,8 +4,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
-import com.anythink.core.api.ErrorCode;
-import com.anythink.core.common.g.g;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -13,30 +11,30 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class HDnuc {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final AtomicBoolean f39879a = new AtomicBoolean(false);
+    public static final AtomicBoolean f26188a = new AtomicBoolean(false);
     public static final AtomicBoolean b = new AtomicBoolean(false);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Object f39880c = new Object();
+    public static final Object f26189c = new Object();
     public static final AtomicBoolean d = new AtomicBoolean(false);
     public static CvowV e;
 
     public static int a() {
-        if (f39879a.get()) {
-            if (com.tencent.turingcam.oqKCa.f39831a == 0) {
+        if (f26188a.get()) {
+            if (com.tencent.turingcam.oqKCa.f26140a == 0) {
                 return -10018;
             }
             if (b.get()) {
-                spXPg spxpg = e.f39866c;
+                spXPg spxpg = e.f26175c;
                 spXPg spxpg2 = spxpg;
                 if (spxpg == null) {
-                    spxpg2 = CvowV.f39865a;
+                    spxpg2 = CvowV.f26174a;
                 }
                 return !spxpg2.a() ? -10019 : 0;
             }
-            return g.k;
+            return -10002;
         }
-        return g.j;
+        return -10001;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -45,7 +43,7 @@ public final class HDnuc {
     }
 
     public static int b(CvowV cvowV) {
-        AtomicBoolean atomicBoolean = f39879a;
+        AtomicBoolean atomicBoolean = f26188a;
         if (atomicBoolean.get()) {
             return 0;
         }
@@ -63,27 +61,24 @@ public final class HDnuc {
                 Log.w("TuringFdJava", th);
                 z = false;
             }
-            f39879a.set(z);
+            f26188a.set(z);
             if (!z) {
                 Log.e("TuringFdJava", "load so failure");
             }
         } else {
             atomicBoolean.set(true);
         }
-        if (f39879a.get()) {
-            return 0;
-        }
-        return g.j;
+        return f26188a.get() ? 0 : -10001;
     }
 
     public static int c(CvowV cvowV) {
         Context context = cvowV.e;
         HashMap hashMap = new HashMap();
         G1g37 g1g37 = G1g37.b;
-        hashMap.put(ErrorCode.loadFailInPacingError, g1g37.a(context, "e_w_d", false) ? "1" : "0");
-        hashMap.put(ErrorCode.loadCappingError, g1g37.a(context, "e_r_d", true) ? "1" : "0");
-        hashMap.put(ErrorCode.filterSourceError, g1g37.a(context, "e_w_nd", true) ? "1" : "0");
-        hashMap.put(ErrorCode.loadInShowingFilter, g1g37.a(context, "e_r_nd", true) ? "1" : "0");
+        hashMap.put("2008", g1g37.a(context, "e_w_d", false) ? "1" : "0");
+        hashMap.put("2009", g1g37.a(context, "e_r_d", true) ? "1" : "0");
+        hashMap.put("2010", g1g37.a(context, "e_w_nd", true) ? "1" : "0");
+        hashMap.put("2011", g1g37.a(context, "e_r_nd", true) ? "1" : "0");
         try {
             return com.tencent.turingcam.oqKCa.b(TNative$aa.i77(new SparseArray(), context, hashMap)) != 0 ? -10020 : 0;
         } catch (Throwable th) {

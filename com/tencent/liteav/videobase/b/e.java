@@ -12,10 +12,10 @@ public final class e {
     private static final j b = new j();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final AtomicInteger f36594c = new AtomicInteger();
+    private static final AtomicInteger f22903c = new AtomicInteger();
 
     /* renamed from: a  reason: collision with root package name */
-    public h<?> f36595a;
+    public h<?> f22904a;
     private boolean d = false;
 
     public static void a(e eVar) {
@@ -34,11 +34,11 @@ public final class e {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void b(e eVar) {
         try {
-            if (eVar.f36595a != null) {
-                eVar.f36595a.c();
-                eVar.f36595a = null;
+            if (eVar.f22904a != null) {
+                eVar.f22904a.c();
+                eVar.f22904a = null;
             }
-            f36594c.decrementAndGet();
+            f22903c.decrementAndGet();
             LiteavLog.i("EGLCore", "EGLCore destroy success. ".concat(String.valueOf(eVar)));
         } catch (g e) {
             LiteavLog.e("EGLCore", "EGLCore destroy failed.", e);
@@ -46,7 +46,7 @@ public final class e {
     }
 
     public final void a() throws g {
-        h<?> hVar = this.f36595a;
+        h<?> hVar = this.f22904a;
         if (hVar != null) {
             hVar.b();
         }
@@ -56,37 +56,37 @@ public final class e {
         this.d = surface == null;
         if (obj == null) {
             if (LiteavSystemInfo.getSystemOSVersionInt() >= 17) {
-                this.f36595a = b.a((EGLContext) null, surface, i, i2);
+                this.f22904a = b.a((EGLContext) null, surface, i, i2);
             } else {
-                this.f36595a = a.a((javax.microedition.khronos.egl.EGLContext) null, surface, i, i2);
+                this.f22904a = a.a((javax.microedition.khronos.egl.EGLContext) null, surface, i, i2);
             }
         } else if (obj instanceof javax.microedition.khronos.egl.EGLContext) {
-            this.f36595a = a.a((javax.microedition.khronos.egl.EGLContext) obj, surface, i, i2);
+            this.f22904a = a.a((javax.microedition.khronos.egl.EGLContext) obj, surface, i, i2);
         } else if (LiteavSystemInfo.getSystemOSVersionInt() < 17 || !(obj instanceof EGLContext)) {
             throw new g(0, "sharedContext isn't EGLContext");
         } else {
-            this.f36595a = b.a((EGLContext) obj, surface, i, i2);
+            this.f22904a = b.a((EGLContext) obj, surface, i, i2);
         }
-        f36594c.incrementAndGet();
+        f22903c.incrementAndGet();
         LiteavLog.i("EGLCore", "EGLCore created in thread " + Thread.currentThread().getId() + ", sharedContext: " + obj + ", Surface: " + surface + ", width: " + i + ", height:" + i2);
     }
 
     public final void b() {
-        h<?> hVar = this.f36595a;
+        h<?> hVar = this.f22904a;
         if (hVar != null) {
             hVar.d();
         }
     }
 
     public final void c() throws g {
-        h<?> hVar = this.f36595a;
+        h<?> hVar = this.f22904a;
         if (hVar != null) {
             hVar.a();
         }
     }
 
     public final Object d() {
-        h<?> hVar = this.f36595a;
+        h<?> hVar = this.f22904a;
         if (hVar == null) {
             return null;
         }

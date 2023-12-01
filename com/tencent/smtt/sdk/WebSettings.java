@@ -14,11 +14,11 @@ public class WebSettings {
     public static final int LOAD_NO_CACHE = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    private IX5WebSettings f38801a;
+    private IX5WebSettings f25110a;
     private android.webkit.WebSettings b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f38802c;
+    private boolean f25111c;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/WebSettings$LayoutAlgorithm.class */
     public enum LayoutAlgorithm {
@@ -71,22 +71,22 @@ public class WebSettings {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public WebSettings(android.webkit.WebSettings webSettings) {
-        this.f38801a = null;
+        this.f25110a = null;
         this.b = null;
-        this.f38802c = false;
-        this.f38801a = null;
+        this.f25111c = false;
+        this.f25110a = null;
         this.b = webSettings;
-        this.f38802c = false;
+        this.f25111c = false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public WebSettings(IX5WebSettings iX5WebSettings) {
-        this.f38801a = null;
+        this.f25110a = null;
         this.b = null;
-        this.f38802c = false;
-        this.f38801a = iX5WebSettings;
+        this.f25111c = false;
+        this.f25110a = iX5WebSettings;
         this.b = null;
-        this.f38802c = true;
+        this.f25111c = true;
     }
 
     public static String getDefaultUserAgent(Context context) {
@@ -103,9 +103,9 @@ public class WebSettings {
     @Deprecated
     public boolean enableSmoothTransition() {
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
             boolean z = false;
-            if (!this.f38802c) {
+            if (!this.f25111c) {
                 z = false;
                 if (this.b != null) {
                     z = false;
@@ -125,9 +125,9 @@ public class WebSettings {
 
     public boolean getAllowContentAccess() {
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
             boolean z = false;
-            if (!this.f38802c) {
+            if (!this.f25111c) {
                 z = false;
                 if (this.b != null) {
                     z = false;
@@ -148,8 +148,8 @@ public class WebSettings {
     public boolean getAllowFileAccess() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return false;
             }
             return webSettings.getAllowFileAccess();
@@ -159,9 +159,9 @@ public class WebSettings {
 
     public boolean getBlockNetworkImage() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getBlockNetworkImage();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getBlockNetworkImage();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.getBlockNetworkImage();
@@ -171,9 +171,9 @@ public class WebSettings {
 
     public boolean getBlockNetworkLoads() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getBlockNetworkLoads();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getBlockNetworkLoads();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 if (Build.VERSION.SDK_INT >= 8) {
@@ -187,8 +187,8 @@ public class WebSettings {
     public boolean getBuiltInZoomControls() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return false;
             }
             return webSettings.getBuiltInZoomControls();
@@ -199,8 +199,8 @@ public class WebSettings {
     public int getCacheMode() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return 0;
             }
             return webSettings.getCacheMode();
@@ -210,9 +210,9 @@ public class WebSettings {
 
     public String getCursiveFontFamily() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getCursiveFontFamily();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getCursiveFontFamily();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getCursiveFontFamily();
@@ -222,9 +222,9 @@ public class WebSettings {
 
     public boolean getDatabaseEnabled() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getDatabaseEnabled();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getDatabaseEnabled();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.getDatabaseEnabled();
@@ -235,9 +235,9 @@ public class WebSettings {
     @Deprecated
     public String getDatabasePath() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getDatabasePath();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getDatabasePath();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getDatabasePath();
@@ -247,9 +247,9 @@ public class WebSettings {
 
     public int getDefaultFixedFontSize() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getDefaultFixedFontSize();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getDefaultFixedFontSize();
+            } else if (this.f25111c || this.b == null) {
                 return 0;
             } else {
                 return this.b.getDefaultFixedFontSize();
@@ -259,9 +259,9 @@ public class WebSettings {
 
     public int getDefaultFontSize() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getDefaultFontSize();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getDefaultFontSize();
+            } else if (this.f25111c || this.b == null) {
                 return 0;
             } else {
                 return this.b.getDefaultFontSize();
@@ -271,9 +271,9 @@ public class WebSettings {
 
     public String getDefaultTextEncodingName() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getDefaultTextEncodingName();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getDefaultTextEncodingName();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getDefaultTextEncodingName();
@@ -286,9 +286,9 @@ public class WebSettings {
         android.webkit.WebSettings webSettings;
         String name;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             name = iX5WebSettings.getDefaultZoom().name();
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
             return null;
         } else {
             name = webSettings.getDefaultZoom().name();
@@ -298,9 +298,9 @@ public class WebSettings {
 
     public boolean getDisplayZoomControls() {
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
             boolean z = false;
-            if (!this.f38802c) {
+            if (!this.f25111c) {
                 z = false;
                 if (this.b != null) {
                     z = false;
@@ -320,9 +320,9 @@ public class WebSettings {
 
     public boolean getDomStorageEnabled() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getDomStorageEnabled();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getDomStorageEnabled();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.getDomStorageEnabled();
@@ -332,9 +332,9 @@ public class WebSettings {
 
     public String getFantasyFontFamily() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getFantasyFontFamily();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getFantasyFontFamily();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getFantasyFontFamily();
@@ -344,9 +344,9 @@ public class WebSettings {
 
     public String getFixedFontFamily() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getFixedFontFamily();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getFixedFontFamily();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getFixedFontFamily();
@@ -356,9 +356,9 @@ public class WebSettings {
 
     public boolean getJavaScriptCanOpenWindowsAutomatically() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getJavaScriptCanOpenWindowsAutomatically();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getJavaScriptCanOpenWindowsAutomatically();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.getJavaScriptCanOpenWindowsAutomatically();
@@ -368,9 +368,9 @@ public class WebSettings {
 
     public boolean getJavaScriptEnabled() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getJavaScriptEnabled();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getJavaScriptEnabled();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.getJavaScriptEnabled();
@@ -380,9 +380,9 @@ public class WebSettings {
 
     public LayoutAlgorithm getLayoutAlgorithm() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return LayoutAlgorithm.valueOf(this.f38801a.getLayoutAlgorithm().name());
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return LayoutAlgorithm.valueOf(this.f25110a.getLayoutAlgorithm().name());
+            } else if (this.f25111c || this.b == null) {
                 return null;
             } else {
                 return LayoutAlgorithm.valueOf(this.b.getLayoutAlgorithm().name());
@@ -394,8 +394,8 @@ public class WebSettings {
     public boolean getLightTouchEnabled() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return false;
             }
             return webSettings.getLightTouchEnabled();
@@ -406,8 +406,8 @@ public class WebSettings {
     public boolean getLoadWithOverviewMode() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return false;
             }
             return webSettings.getLoadWithOverviewMode();
@@ -417,9 +417,9 @@ public class WebSettings {
 
     public boolean getLoadsImagesAutomatically() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getLoadsImagesAutomatically();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getLoadsImagesAutomatically();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.getLoadsImagesAutomatically();
@@ -430,9 +430,9 @@ public class WebSettings {
     public boolean getMediaPlaybackRequiresUserGesture() {
         Object a2;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
             boolean z = false;
-            if (!this.f38802c) {
+            if (!this.f25111c) {
                 z = false;
                 if (this.b != null) {
                     if (Build.VERSION.SDK_INT < 17 || (a2 = com.tencent.smtt.utils.i.a(this.b, "getMediaPlaybackRequiresUserGesture")) == null) {
@@ -448,9 +448,9 @@ public class WebSettings {
 
     public int getMinimumFontSize() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getMinimumFontSize();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getMinimumFontSize();
+            } else if (this.f25111c || this.b == null) {
                 return 0;
             } else {
                 return this.b.getMinimumFontSize();
@@ -460,9 +460,9 @@ public class WebSettings {
 
     public int getMinimumLogicalFontSize() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getMinimumLogicalFontSize();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getMinimumLogicalFontSize();
+            } else if (this.f25111c || this.b == null) {
                 return 0;
             } else {
                 return this.b.getMinimumLogicalFontSize();
@@ -473,8 +473,8 @@ public class WebSettings {
     public int getMixedContentMode() {
         synchronized (this) {
             int i = -1;
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getMixedContentMode();
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getMixedContentMode();
             } else if (Build.VERSION.SDK_INT < 21) {
                 return -1;
             } else {
@@ -490,9 +490,9 @@ public class WebSettings {
     @Deprecated
     public boolean getNavDump() {
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
             boolean z = false;
-            if (!this.f38802c) {
+            if (!this.f25111c) {
                 android.webkit.WebSettings webSettings = this.b;
                 z = false;
                 if (webSettings != null) {
@@ -511,9 +511,9 @@ public class WebSettings {
     @Deprecated
     public PluginState getPluginState() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return PluginState.valueOf(this.f38801a.getPluginState().name());
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return PluginState.valueOf(this.f25110a.getPluginState().name());
+            } else if (this.f25111c || this.b == null) {
                 return null;
             } else {
                 if (Build.VERSION.SDK_INT >= 8) {
@@ -531,11 +531,11 @@ public class WebSettings {
     @Deprecated
     public boolean getPluginsEnabled() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getPluginsEnabled();
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getPluginsEnabled();
             }
             boolean z = false;
-            if (this.f38802c || this.b == null) {
+            if (this.f25111c || this.b == null) {
                 return false;
             }
             if (Build.VERSION.SDK_INT <= 17) {
@@ -559,9 +559,9 @@ public class WebSettings {
     @Deprecated
     public String getPluginsPath() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getPluginsPath();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getPluginsPath();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 if (Build.VERSION.SDK_INT <= 17) {
@@ -575,12 +575,12 @@ public class WebSettings {
 
     public boolean getSafeBrowsingEnabled() {
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c && this.b != null) {
+        if (!this.f25111c && this.b != null) {
             if (Build.VERSION.SDK_INT >= 26) {
                 return this.b.getSafeBrowsingEnabled();
             }
             return false;
-        } else if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        } else if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
             return false;
         } else {
             try {
@@ -594,9 +594,9 @@ public class WebSettings {
 
     public String getSansSerifFontFamily() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getSansSerifFontFamily();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getSansSerifFontFamily();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getSansSerifFontFamily();
@@ -608,8 +608,8 @@ public class WebSettings {
     public boolean getSaveFormData() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return false;
             }
             return webSettings.getSaveFormData();
@@ -621,8 +621,8 @@ public class WebSettings {
     public boolean getSavePassword() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return false;
             }
             return webSettings.getSavePassword();
@@ -632,9 +632,9 @@ public class WebSettings {
 
     public String getSerifFontFamily() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getSerifFontFamily();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getSerifFontFamily();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getSerifFontFamily();
@@ -644,9 +644,9 @@ public class WebSettings {
 
     public String getStandardFontFamily() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getStandardFontFamily();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getStandardFontFamily();
+            } else if (this.f25111c || this.b == null) {
                 return "";
             } else {
                 return this.b.getStandardFontFamily();
@@ -659,9 +659,9 @@ public class WebSettings {
         android.webkit.WebSettings webSettings;
         String name;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             name = iX5WebSettings.getTextSize().name();
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
             return null;
         } else {
             name = webSettings.getTextSize().name();
@@ -671,11 +671,11 @@ public class WebSettings {
 
     public int getTextZoom() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getTextZoom();
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getTextZoom();
             }
             int i = 0;
-            if (this.f38802c || this.b == null) {
+            if (this.f25111c || this.b == null) {
                 return 0;
             }
             if (Build.VERSION.SDK_INT < 14) {
@@ -696,9 +696,9 @@ public class WebSettings {
     @Deprecated
     public boolean getUseWebViewBackgroundForOverscrollBackground() {
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
             boolean z = false;
-            if (!this.f38802c) {
+            if (!this.f25111c) {
                 android.webkit.WebSettings webSettings = this.b;
                 z = false;
                 if (webSettings != null) {
@@ -716,9 +716,9 @@ public class WebSettings {
 
     public boolean getUseWideViewPort() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.getUseWideViewPort();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.getUseWideViewPort();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.getUseWideViewPort();
@@ -729,14 +729,14 @@ public class WebSettings {
     public String getUserAgentString() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        return (!this.f38802c || (iX5WebSettings = this.f38801a) == null) ? (this.f38802c || (webSettings = this.b) == null) ? "" : webSettings.getUserAgentString() : iX5WebSettings.getUserAgentString();
+        return (!this.f25111c || (iX5WebSettings = this.f25110a) == null) ? (this.f25111c || (webSettings = this.b) == null) ? "" : webSettings.getUserAgentString() : iX5WebSettings.getUserAgentString();
     }
 
     public void setAllowContentAccess(boolean z) {
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setAllowContentAccess(z);
-        } else if (this.f38802c || this.b == null || Build.VERSION.SDK_INT < 11) {
+        } else if (this.f25111c || this.b == null || Build.VERSION.SDK_INT < 11) {
         } else {
             com.tencent.smtt.utils.i.a(this.b, "setAllowContentAccess", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -745,9 +745,9 @@ public class WebSettings {
     public void setAllowFileAccess(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setAllowFileAccess(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setAllowFileAccess(z);
         }
@@ -756,9 +756,9 @@ public class WebSettings {
     public void setAllowFileAccessFromFileURLs(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setAllowFileAccessFromFileURLs(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             com.tencent.smtt.utils.i.a(webSettings, "setAllowFileAccessFromFileURLs", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -767,9 +767,9 @@ public class WebSettings {
     public void setAllowUniversalAccessFromFileURLs(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setAllowUniversalAccessFromFileURLs(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             com.tencent.smtt.utils.i.a(webSettings, "setAllowUniversalAccessFromFileURLs", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -778,9 +778,9 @@ public class WebSettings {
     public void setAppCacheEnabled(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setAppCacheEnabled(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setAppCacheEnabled(z);
         }
@@ -790,9 +790,9 @@ public class WebSettings {
     public void setAppCacheMaxSize(long j) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setAppCacheMaxSize(j);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setAppCacheMaxSize(j);
         }
@@ -801,9 +801,9 @@ public class WebSettings {
     public void setAppCachePath(String str) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setAppCachePath(str);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setAppCachePath(str);
         }
@@ -812,9 +812,9 @@ public class WebSettings {
     public void setBlockNetworkImage(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setBlockNetworkImage(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setBlockNetworkImage(z);
         }
@@ -822,9 +822,9 @@ public class WebSettings {
 
     public void setBlockNetworkLoads(boolean z) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setBlockNetworkLoads(z);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setBlockNetworkLoads(z);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 if (Build.VERSION.SDK_INT >= 8) {
                     this.b.setBlockNetworkLoads(z);
@@ -836,9 +836,9 @@ public class WebSettings {
     public void setBuiltInZoomControls(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setBuiltInZoomControls(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setBuiltInZoomControls(z);
         }
@@ -847,9 +847,9 @@ public class WebSettings {
     public void setCacheMode(int i) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setCacheMode(i);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setCacheMode(i);
         }
@@ -857,9 +857,9 @@ public class WebSettings {
 
     public void setCursiveFontFamily(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setCursiveFontFamily(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setCursiveFontFamily(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setCursiveFontFamily(str);
             }
@@ -869,9 +869,9 @@ public class WebSettings {
     public void setDatabaseEnabled(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setDatabaseEnabled(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setDatabaseEnabled(z);
         }
@@ -881,9 +881,9 @@ public class WebSettings {
     public void setDatabasePath(String str) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setDatabasePath(str);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             com.tencent.smtt.utils.i.a(webSettings, "setDatabasePath", new Class[]{String.class}, str);
         }
@@ -891,9 +891,9 @@ public class WebSettings {
 
     public void setDefaultFixedFontSize(int i) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setDefaultFixedFontSize(i);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setDefaultFixedFontSize(i);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setDefaultFixedFontSize(i);
             }
@@ -902,9 +902,9 @@ public class WebSettings {
 
     public void setDefaultFontSize(int i) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setDefaultFontSize(i);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setDefaultFontSize(i);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setDefaultFontSize(i);
             }
@@ -913,9 +913,9 @@ public class WebSettings {
 
     public void setDefaultTextEncodingName(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setDefaultTextEncodingName(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setDefaultTextEncodingName(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setDefaultTextEncodingName(str);
             }
@@ -926,9 +926,9 @@ public class WebSettings {
     public void setDefaultZoom(ZoomDensity zoomDensity) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setDefaultZoom(IX5WebSettings.ZoomDensity.valueOf(zoomDensity.name()));
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setDefaultZoom(WebSettings.ZoomDensity.valueOf(zoomDensity.name()));
         }
@@ -936,9 +936,9 @@ public class WebSettings {
 
     public void setDisplayZoomControls(boolean z) {
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setDisplayZoomControls(z);
-        } else if (this.f38802c || this.b == null || Build.VERSION.SDK_INT < 11) {
+        } else if (this.f25111c || this.b == null || Build.VERSION.SDK_INT < 11) {
         } else {
             com.tencent.smtt.utils.i.a(this.b, "setDisplayZoomControls", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -947,9 +947,9 @@ public class WebSettings {
     public void setDomStorageEnabled(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setDomStorageEnabled(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setDomStorageEnabled(z);
         }
@@ -958,9 +958,9 @@ public class WebSettings {
     @Deprecated
     public void setEnableSmoothTransition(boolean z) {
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setEnableSmoothTransition(z);
-        } else if (this.f38802c || this.b == null || Build.VERSION.SDK_INT < 11) {
+        } else if (this.f25111c || this.b == null || Build.VERSION.SDK_INT < 11) {
         } else {
             com.tencent.smtt.utils.i.a(this.b, "setEnableSmoothTransition", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -968,9 +968,9 @@ public class WebSettings {
 
     public void setFantasyFontFamily(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setFantasyFontFamily(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setFantasyFontFamily(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setFantasyFontFamily(str);
             }
@@ -979,9 +979,9 @@ public class WebSettings {
 
     public void setFixedFontFamily(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setFixedFontFamily(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setFixedFontFamily(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setFixedFontFamily(str);
             }
@@ -992,9 +992,9 @@ public class WebSettings {
     public void setGeolocationDatabasePath(String str) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setGeolocationDatabasePath(str);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setGeolocationDatabasePath(str);
         }
@@ -1003,9 +1003,9 @@ public class WebSettings {
     public void setGeolocationEnabled(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setGeolocationEnabled(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setGeolocationEnabled(z);
         }
@@ -1013,9 +1013,9 @@ public class WebSettings {
 
     public void setJavaScriptCanOpenWindowsAutomatically(boolean z) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setJavaScriptCanOpenWindowsAutomatically(z);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setJavaScriptCanOpenWindowsAutomatically(z);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setJavaScriptCanOpenWindowsAutomatically(z);
             }
@@ -1025,9 +1025,9 @@ public class WebSettings {
     @Deprecated
     public void setJavaScriptEnabled(boolean z) {
         try {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setJavaScriptEnabled(z);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setJavaScriptEnabled(z);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setJavaScriptEnabled(z);
             }
@@ -1039,9 +1039,9 @@ public class WebSettings {
     public void setLayoutAlgorithm(LayoutAlgorithm layoutAlgorithm) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setLayoutAlgorithm(IX5WebSettings.LayoutAlgorithm.valueOf(layoutAlgorithm.name()));
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.valueOf(layoutAlgorithm.name()));
         }
@@ -1051,9 +1051,9 @@ public class WebSettings {
     public void setLightTouchEnabled(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setLightTouchEnabled(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setLightTouchEnabled(z);
         }
@@ -1062,9 +1062,9 @@ public class WebSettings {
     public void setLoadWithOverviewMode(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setLoadWithOverviewMode(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setLoadWithOverviewMode(z);
         }
@@ -1073,9 +1073,9 @@ public class WebSettings {
     public void setLoadsImagesAutomatically(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setLoadsImagesAutomatically(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setLoadsImagesAutomatically(z);
         }
@@ -1083,9 +1083,9 @@ public class WebSettings {
 
     public void setMediaPlaybackRequiresUserGesture(boolean z) {
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setMediaPlaybackRequiresUserGesture(z);
-        } else if (this.f38802c || this.b == null || Build.VERSION.SDK_INT < 17) {
+        } else if (this.f25111c || this.b == null || Build.VERSION.SDK_INT < 17) {
         } else {
             com.tencent.smtt.utils.i.a(this.b, "setMediaPlaybackRequiresUserGesture", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -1093,9 +1093,9 @@ public class WebSettings {
 
     public void setMinimumFontSize(int i) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setMinimumFontSize(i);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setMinimumFontSize(i);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setMinimumFontSize(i);
             }
@@ -1104,9 +1104,9 @@ public class WebSettings {
 
     public void setMinimumLogicalFontSize(int i) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setMinimumLogicalFontSize(i);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setMinimumLogicalFontSize(i);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setMinimumLogicalFontSize(i);
             }
@@ -1114,7 +1114,7 @@ public class WebSettings {
     }
 
     public void setMixedContentMode(int i) {
-        if ((!this.f38802c || this.f38801a == null) && !this.f38802c && this.b != null && Build.VERSION.SDK_INT >= 21) {
+        if ((!this.f25111c || this.f25110a == null) && !this.f25111c && this.b != null && Build.VERSION.SDK_INT >= 21) {
             com.tencent.smtt.utils.i.a(this.b, "setMixedContentMode", new Class[]{Integer.TYPE}, Integer.valueOf(i));
         }
     }
@@ -1123,9 +1123,9 @@ public class WebSettings {
     public void setNavDump(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setNavDump(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             com.tencent.smtt.utils.i.a(webSettings, "setNavDump", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -1134,9 +1134,9 @@ public class WebSettings {
     public void setNeedInitialFocus(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setNeedInitialFocus(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setNeedInitialFocus(z);
         }
@@ -1145,9 +1145,9 @@ public class WebSettings {
     @Deprecated
     public void setPluginState(PluginState pluginState) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setPluginState(IX5WebSettings.PluginState.valueOf(pluginState.name()));
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setPluginState(IX5WebSettings.PluginState.valueOf(pluginState.name()));
+            } else if (this.f25111c || this.b == null) {
             } else {
                 if (Build.VERSION.SDK_INT >= 8) {
                     com.tencent.smtt.utils.i.a(this.b, "setPluginState", new Class[]{WebSettings.PluginState.class}, WebSettings.PluginState.valueOf(pluginState.name()));
@@ -1160,9 +1160,9 @@ public class WebSettings {
     public void setPluginsEnabled(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setPluginsEnabled(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             com.tencent.smtt.utils.i.a(webSettings, "setPluginsEnabled", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -1171,9 +1171,9 @@ public class WebSettings {
     @Deprecated
     public void setPluginsPath(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setPluginsPath(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setPluginsPath(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 com.tencent.smtt.utils.i.a(this.b, "setPluginsPath", new Class[]{String.class}, str);
             }
@@ -1184,9 +1184,9 @@ public class WebSettings {
     public void setRenderPriority(RenderPriority renderPriority) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setRenderPriority(IX5WebSettings.RenderPriority.valueOf(renderPriority.name()));
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setRenderPriority(WebSettings.RenderPriority.valueOf(renderPriority.name()));
         }
@@ -1194,11 +1194,11 @@ public class WebSettings {
 
     public void setSafeBrowsingEnabled(boolean z) {
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c && this.b != null) {
+        if (!this.f25111c && this.b != null) {
             if (Build.VERSION.SDK_INT >= 26) {
                 this.b.setSafeBrowsingEnabled(z);
             }
-        } else if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
+        } else if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
         } else {
             try {
                 iX5WebSettings.setSafeBrowsingEnabled(z);
@@ -1210,9 +1210,9 @@ public class WebSettings {
 
     public void setSansSerifFontFamily(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setSansSerifFontFamily(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setSansSerifFontFamily(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setSansSerifFontFamily(str);
             }
@@ -1223,9 +1223,9 @@ public class WebSettings {
     public void setSaveFormData(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setSaveFormData(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setSaveFormData(z);
         }
@@ -1235,9 +1235,9 @@ public class WebSettings {
     public void setSavePassword(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setSavePassword(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setSavePassword(z);
         }
@@ -1245,9 +1245,9 @@ public class WebSettings {
 
     public void setSerifFontFamily(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setSerifFontFamily(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setSerifFontFamily(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setSerifFontFamily(str);
             }
@@ -1256,9 +1256,9 @@ public class WebSettings {
 
     public void setStandardFontFamily(String str) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setStandardFontFamily(str);
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setStandardFontFamily(str);
+            } else if (this.f25111c || this.b == null) {
             } else {
                 this.b.setStandardFontFamily(str);
             }
@@ -1268,9 +1268,9 @@ public class WebSettings {
     public void setSupportMultipleWindows(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setSupportMultipleWindows(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setSupportMultipleWindows(z);
         }
@@ -1279,9 +1279,9 @@ public class WebSettings {
     public void setSupportZoom(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setSupportZoom(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setSupportZoom(z);
         }
@@ -1291,9 +1291,9 @@ public class WebSettings {
     public void setTextSize(TextSize textSize) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setTextSize(IX5WebSettings.TextSize.valueOf(textSize.name()));
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setTextSize(WebSettings.TextSize.valueOf(textSize.name()));
         }
@@ -1301,9 +1301,9 @@ public class WebSettings {
 
     public void setTextZoom(int i) {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                this.f38801a.setTextZoom(i);
-            } else if (!this.f38802c && this.b != null) {
+            if (this.f25111c && this.f25110a != null) {
+                this.f25110a.setTextZoom(i);
+            } else if (!this.f25111c && this.b != null) {
                 if (Build.VERSION.SDK_INT < 14) {
                     return;
                 }
@@ -1320,9 +1320,9 @@ public class WebSettings {
     public void setUseWebViewBackgroundForOverscrollBackground(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setUseWebViewBackgroundForOverscrollBackground(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             com.tencent.smtt.utils.i.a(webSettings, "setUseWebViewBackgroundForOverscrollBackground", new Class[]{Boolean.TYPE}, Boolean.valueOf(z));
         }
@@ -1331,9 +1331,9 @@ public class WebSettings {
     public void setUseWideViewPort(boolean z) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setUseWideViewPort(z);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setUseWideViewPort(z);
         }
@@ -1342,9 +1342,9 @@ public class WebSettings {
     public void setUserAgent(String str) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setUserAgent(str);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setUserAgentString(str);
         }
@@ -1353,9 +1353,9 @@ public class WebSettings {
     public void setUserAgentString(String str) {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (this.f38802c && (iX5WebSettings = this.f38801a) != null) {
+        if (this.f25111c && (iX5WebSettings = this.f25110a) != null) {
             iX5WebSettings.setUserAgentString(str);
-        } else if (this.f38802c || (webSettings = this.b) == null) {
+        } else if (this.f25111c || (webSettings = this.b) == null) {
         } else {
             webSettings.setUserAgentString(str);
         }
@@ -1363,9 +1363,9 @@ public class WebSettings {
 
     public boolean supportMultipleWindows() {
         synchronized (this) {
-            if (this.f38802c && this.f38801a != null) {
-                return this.f38801a.supportMultipleWindows();
-            } else if (this.f38802c || this.b == null) {
+            if (this.f25111c && this.f25110a != null) {
+                return this.f25110a.supportMultipleWindows();
+            } else if (this.f25111c || this.b == null) {
                 return false;
             } else {
                 return this.b.supportMultipleWindows();
@@ -1376,8 +1376,8 @@ public class WebSettings {
     public boolean supportZoom() {
         android.webkit.WebSettings webSettings;
         IX5WebSettings iX5WebSettings;
-        if (!this.f38802c || (iX5WebSettings = this.f38801a) == null) {
-            if (this.f38802c || (webSettings = this.b) == null) {
+        if (!this.f25111c || (iX5WebSettings = this.f25110a) == null) {
+            if (this.f25111c || (webSettings = this.b) == null) {
                 return false;
             }
             return webSettings.supportZoom();

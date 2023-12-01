@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemShowVerfiyHeadBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29320a;
+    private final LinearLayout f15630a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29320a;
+        return this.f15630a;
     }
 }

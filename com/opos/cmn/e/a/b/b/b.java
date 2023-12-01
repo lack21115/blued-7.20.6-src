@@ -9,23 +9,23 @@ import android.widget.RelativeLayout;
 public abstract class b {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f24760a;
+    protected Context f11072a;
     protected com.opos.cmn.e.a.b.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected RelativeLayout f24761c;
+    protected RelativeLayout f11073c;
     protected ImageView d;
 
     public b(Context context) {
-        this.f24760a = context;
+        this.f11072a = context;
         f();
         b();
         g();
     }
 
     private void f() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f24760a);
-        this.f24761c = relativeLayout;
+        RelativeLayout relativeLayout = new RelativeLayout(this.f11072a);
+        this.f11073c = relativeLayout;
         relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
         a();
     }
@@ -39,7 +39,7 @@ public abstract class b {
     protected abstract void b();
 
     public View c() {
-        return this.f24761c;
+        return this.f11073c;
     }
 
     public void d() {

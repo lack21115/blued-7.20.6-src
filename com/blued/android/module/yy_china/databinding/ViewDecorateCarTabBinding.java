@@ -11,20 +11,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewDecorateCarTabBinding.class */
 public final class ViewDecorateCarTabBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16850a;
+    public final ImageView a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16851c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private ViewDecorateCarTabBinding(ConstraintLayout constraintLayout, ImageView imageView, View view, TextView textView) {
         this.d = constraintLayout;
-        this.f16850a = imageView;
+        this.a = imageView;
         this.b = view;
-        this.f16851c = textView;
+        this.c = textView;
     }
 
     public static ViewDecorateCarTabBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -55,7 +51,6 @@ public final class ViewDecorateCarTabBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

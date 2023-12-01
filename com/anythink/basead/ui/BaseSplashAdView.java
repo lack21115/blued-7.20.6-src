@@ -33,9 +33,7 @@ public abstract class BaseSplashAdView extends BaseAdView {
     boolean M;
     boolean N;
     boolean O;
-
-    /* renamed from: a  reason: collision with root package name */
-    private f.b f6090a;
+    private f.b a;
     private long t;
 
     /* renamed from: com.anythink.basead.ui.BaseSplashAdView$2  reason: invalid class name */
@@ -47,7 +45,7 @@ public abstract class BaseSplashAdView extends BaseAdView {
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             Tracker.onClick(view);
-            if (BaseSplashAdView.this.f6049c.m.p() == 0 || BaseSplashAdView.this.N) {
+            if (BaseSplashAdView.this.c.m.p() == 0 || BaseSplashAdView.this.N) {
                 BaseSplashAdView.this.s();
             }
         }
@@ -74,7 +72,7 @@ public abstract class BaseSplashAdView extends BaseAdView {
         @Override // java.util.TimerTask, java.lang.Runnable
         public final void run() {
             BaseSplashAdView baseSplashAdView = BaseSplashAdView.this;
-            if (u.a(baseSplashAdView, baseSplashAdView.f6090a)) {
+            if (u.a(baseSplashAdView, baseSplashAdView.a)) {
                 BaseSplashAdView.this.post(new Runnable() { // from class: com.anythink.basead.ui.-$$Lambda$BaseSplashAdView$3$g5QDjz7a3LvOuZp9rawwPnrQZow
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -117,19 +115,19 @@ public abstract class BaseSplashAdView extends BaseAdView {
         this.L = false;
         this.M = false;
         this.N = false;
-        this.f6090a = new f.b();
+        this.a = new f.b();
         this.F = aVar;
         this.C = getResources().getString(h.a(getContext(), "myoffer_splash_skip_text", "string"));
         this.A = (TextView) findViewById(h.a(getContext(), "myoffer_splash_skip", "id"));
         this.B = (CloseFrameLayout) findViewById(h.a(getContext(), "myoffer_splash_skip_area", "id"));
-        this.t = this.f6049c.m.n();
-        a(this.B, this.f6049c.m.h());
+        this.t = this.c.m.n();
+        a(this.B, this.c.m.h());
         this.E = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(long j) {
-        if (this.f6049c.m.p() != 0) {
+        if (this.c.m.p() != 0) {
             TextView textView = this.A;
             textView.setText((j / 1000) + " s");
             return;
@@ -337,7 +335,7 @@ public abstract class BaseSplashAdView extends BaseAdView {
                     BaseSplashAdView.this.b(4);
                     return true;
                 }
-            }, this.f6049c.m);
+            }, this.c.m);
             this.r.add(this.I);
         }
     }
@@ -346,7 +344,7 @@ public abstract class BaseSplashAdView extends BaseAdView {
     public final void r() {
         GuideToClickView guideToClickView;
         this.J = (GuideToClickView) findViewById(h.a(getContext(), "myoffer_guide_to_click_view", "id"));
-        if (this.f6049c.m.i() != 1 || (guideToClickView = this.J) == null) {
+        if (this.c.m.i() != 1 || (guideToClickView = this.J) == null) {
             return;
         }
         guideToClickView.setVisibility(0);

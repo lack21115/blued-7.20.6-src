@@ -6,11 +6,11 @@ import android.content.Context;
 public class aj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f26797a;
+    public final int f13109a;
     public final int b;
 
     public aj(int i, int i2) {
-        this.f26797a = i;
+        this.f13109a = i;
         this.b = i2;
     }
 

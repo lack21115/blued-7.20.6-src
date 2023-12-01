@@ -5,10 +5,10 @@ package com.tencent.liteav.videoconsumer.decoder;
 public final /* synthetic */ class af implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDecodeController f36750a;
+    private final VideoDecodeController f23059a;
 
     private af(VideoDecodeController videoDecodeController) {
-        this.f36750a = videoDecodeController;
+        this.f23059a = videoDecodeController;
     }
 
     public static Runnable a(VideoDecodeController videoDecodeController) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class af implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36750a.c();
+        this.f23059a.c();
     }
 }

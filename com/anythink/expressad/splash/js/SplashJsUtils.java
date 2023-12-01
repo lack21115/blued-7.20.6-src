@@ -21,11 +21,11 @@ import org.json.JSONObject;
 public class SplashJsUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8245a = "onSystemPause";
+    public static final String f5405a = "onSystemPause";
     public static final String b = "onSystemResume";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f8246c = "onSystemDestory";
+    public static final String f5406c = "onSystemDestory";
     private static String d = "SplashJsUtils";
     private static int e = 0;
     private static int f = 1;

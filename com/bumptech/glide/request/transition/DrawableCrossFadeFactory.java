@@ -7,17 +7,17 @@ import com.bumptech.glide.load.DataSource;
 public class DrawableCrossFadeFactory implements TransitionFactory<Drawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f21079a;
+    private final int f7473a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private DrawableCrossFadeTransition f21080c;
+    private DrawableCrossFadeTransition f7474c;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/request/transition/DrawableCrossFadeFactory$Builder.class */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f21081a;
+        private final int f7475a;
         private boolean b;
 
         public Builder() {
@@ -25,7 +25,7 @@ public class DrawableCrossFadeFactory implements TransitionFactory<Drawable> {
         }
 
         public Builder(int i) {
-            this.f21081a = i;
+            this.f7475a = i;
         }
 
         public Builder a(boolean z) {
@@ -34,20 +34,20 @@ public class DrawableCrossFadeFactory implements TransitionFactory<Drawable> {
         }
 
         public DrawableCrossFadeFactory a() {
-            return new DrawableCrossFadeFactory(this.f21081a, this.b);
+            return new DrawableCrossFadeFactory(this.f7475a, this.b);
         }
     }
 
     protected DrawableCrossFadeFactory(int i, boolean z) {
-        this.f21079a = i;
+        this.f7473a = i;
         this.b = z;
     }
 
     private Transition<Drawable> a() {
-        if (this.f21080c == null) {
-            this.f21080c = new DrawableCrossFadeTransition(this.f21079a, this.b);
+        if (this.f7474c == null) {
+            this.f7474c = new DrawableCrossFadeTransition(this.f7473a, this.b);
         }
-        return this.f21080c;
+        return this.f7474c;
     }
 
     @Override // com.bumptech.glide.request.transition.TransitionFactory

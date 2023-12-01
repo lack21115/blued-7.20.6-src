@@ -25,12 +25,12 @@ public abstract class SobotDialogBaseActivity extends SobotBaseActivity {
             public void onResult(INotchScreen.NotchScreenInfo notchScreenInfo) {
                 if (notchScreenInfo.hasNotch) {
                     for (Rect rect : notchScreenInfo.notchRects) {
-                        View view2 = View.this;
+                        View view2 = view;
                         int i = 110;
                         if (rect.right <= 110) {
                             i = rect.right;
                         }
-                        view2.setPadding(i, View.this.getPaddingTop(), View.this.getPaddingRight(), View.this.getPaddingBottom());
+                        view2.setPadding(i, view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
                     }
                 }
             }

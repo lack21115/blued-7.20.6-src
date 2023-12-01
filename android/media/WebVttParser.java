@@ -2,8 +2,10 @@ package android.media;
 
 import android.provider.BrowserContract;
 import android.util.Log;
+import com.cdo.oaps.ad.OapsKey;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.tencent.qcloud.core.util.IOUtils;
+import com.tencent.tinker.android.dex.DexFormat;
 import java.util.Vector;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -233,7 +235,7 @@ public class WebVttParser {
                         } catch (NumberFormatException e2) {
                             WebVttParser.this.log_warning("cue setting", substring3, "is not numeric or percentage", substring4);
                         }
-                    } else if (substring3.equals("size")) {
+                    } else if (substring3.equals(OapsKey.KEY_SIZE)) {
                         try {
                             WebVttParser.this.mCue.mSize = WebVttParser.parseIntPercentage(substring4);
                         } catch (NumberFormatException e3) {
@@ -372,7 +374,7 @@ public class WebVttParser {
 
     public void parse(String str) {
         boolean z = false;
-        this.mBuffer = (this.mBuffer + str.replace("��", "�")).replace(IOUtils.LINE_SEPARATOR_WINDOWS, "\n");
+        this.mBuffer = (this.mBuffer + str.replace(DexFormat.MAGIC_SUFFIX, "�")).replace(IOUtils.LINE_SEPARATOR_WINDOWS, "\n");
         if (this.mBuffer.endsWith("\r")) {
             z = true;
             this.mBuffer = this.mBuffer.substring(0, this.mBuffer.length() - 1);

@@ -16,9 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/kbswitch/CustomTransition.class */
 public final class CustomTransition extends Transition {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10409a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/kbswitch/CustomTransition$Companion.class */
@@ -47,10 +45,9 @@ public final class CustomTransition extends Transition {
         view.setPaddingRelative(a2, ((Integer) animatedValue).intValue(), a(rect.right, i2, animatedFraction), a(rect.bottom, i3, animatedFraction));
     }
 
-    @Override // androidx.transition.Transition
     public void captureEndValues(TransitionValues transitionValues) {
         Intrinsics.e(transitionValues, "transitionValues");
-        Map<String, Object> map = transitionValues.values;
+        Map map = transitionValues.values;
         Intrinsics.c(map, "transitionValues.values");
         View it = transitionValues.view;
         Intrinsics.c(it, "it");
@@ -62,17 +59,15 @@ public final class CustomTransition extends Transition {
         map.put("com.blued.kbSwitch:transition:padding", rect);
     }
 
-    @Override // androidx.transition.Transition
     public void captureStartValues(TransitionValues transitionValues) {
         Intrinsics.e(transitionValues, "transitionValues");
-        Map<String, Object> map = transitionValues.values;
+        Map map = transitionValues.values;
         Intrinsics.c(map, "transitionValues.values");
         View view = transitionValues.view;
         Intrinsics.c(view, "transitionValues.view");
         map.put("com.blued.kbSwitch:transition:padding", UtilsKt.a(view, 0, 0, 0, 0, 15, (Object) null));
     }
 
-    @Override // androidx.transition.Transition
     public Animator createAnimator(ViewGroup sceneRoot, TransitionValues transitionValues, TransitionValues transitionValues2) {
         Intrinsics.e(sceneRoot, "sceneRoot");
         if (transitionValues == null || transitionValues2 == null) {
@@ -113,7 +108,7 @@ public final class CustomTransition extends Transition {
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator2) {
                 Intrinsics.e(animator2, "animator");
-                Rect rect3 = Rect.this;
+                Rect rect3 = rect;
                 view.setPaddingRelative(rect3.left, rect3.top, rect3.right, rect3.bottom);
             }
         });
@@ -135,7 +130,7 @@ public final class CustomTransition extends Transition {
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator2) {
                 Intrinsics.e(animator2, "animator");
-                Rect rect3 = Rect.this;
+                Rect rect3 = rect2;
                 view.setPaddingRelative(rect3.left, rect3.top, rect3.right, rect3.bottom);
             }
 

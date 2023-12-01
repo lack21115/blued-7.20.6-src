@@ -21,7 +21,6 @@ public class HttpEventListener extends EventListener {
     public static final EventListener.Factory FACTORY = new EventListener.Factory() { // from class: com.qiniu.android.http.HttpEventListener.2
         final AtomicLong nextCallId = new AtomicLong(1);
 
-        @Override // okhttp3.EventListener.Factory
         public EventListener create(Call call) {
             return new HttpEventListener(this.nextCallId.getAndIncrement(), (Client.ResponseTag) call.request().tag(), System.nanoTime());
         }
@@ -65,7 +64,6 @@ public class HttpEventListener extends EventListener {
         }
     }
 
-    @Override // okhttp3.EventListener
     public void callEnd(Call call) {
         super.callEnd(call);
         long currentTimeMillis = System.currentTimeMillis() - this.start_total_elapsed_time;
@@ -73,18 +71,15 @@ public class HttpEventListener extends EventListener {
         this.logHandler.send("total_elapsed_time", Long.valueOf(currentTimeMillis));
     }
 
-    @Override // okhttp3.EventListener
     public void callFailed(Call call, IOException iOException) {
         super.callFailed(call, iOException);
     }
 
-    @Override // okhttp3.EventListener
     public void callStart(Call call) {
         super.callStart(call);
         this.start_total_elapsed_time = System.currentTimeMillis();
     }
 
-    @Override // okhttp3.EventListener
     public void connectEnd(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol) {
         super.connectEnd(call, inetSocketAddress, proxy, protocol);
         long currentTimeMillis = System.currentTimeMillis() - this.start_connect_elapsed_time;
@@ -92,28 +87,23 @@ public class HttpEventListener extends EventListener {
         this.logHandler.send("connect_elapsed_time", Long.valueOf(currentTimeMillis));
     }
 
-    @Override // okhttp3.EventListener
     public void connectFailed(Call call, InetSocketAddress inetSocketAddress, Proxy proxy, Protocol protocol, IOException iOException) {
         super.connectFailed(call, inetSocketAddress, proxy, protocol, iOException);
     }
 
-    @Override // okhttp3.EventListener
     public void connectStart(Call call, InetSocketAddress inetSocketAddress, Proxy proxy) {
         super.connectStart(call, inetSocketAddress, proxy);
         this.start_connect_elapsed_time = System.currentTimeMillis();
     }
 
-    @Override // okhttp3.EventListener
     public void connectionAcquired(Call call, Connection connection) {
         super.connectionAcquired(call, connection);
     }
 
-    @Override // okhttp3.EventListener
     public void connectionReleased(Call call, Connection connection) {
         super.connectionReleased(call, connection);
     }
 
-    @Override // okhttp3.EventListener
     public void dnsEnd(Call call, String str, List<InetAddress> list) {
         super.dnsEnd(call, str, list);
         long currentTimeMillis = System.currentTimeMillis() - this.start_dns_elapsed_time;
@@ -121,13 +111,11 @@ public class HttpEventListener extends EventListener {
         this.logHandler.send("dns_elapsed_time", Long.valueOf(currentTimeMillis));
     }
 
-    @Override // okhttp3.EventListener
     public void dnsStart(Call call, String str) {
         super.dnsStart(call, str);
         this.start_dns_elapsed_time = System.currentTimeMillis();
     }
 
-    @Override // okhttp3.EventListener
     public void requestBodyEnd(Call call, long j) {
         super.requestBodyEnd(call, j);
         long currentTimeMillis = System.currentTimeMillis() - this.start_request_elapsed_time;
@@ -135,23 +123,19 @@ public class HttpEventListener extends EventListener {
         this.logHandler.send("request_elapsed_time", Long.valueOf(currentTimeMillis));
     }
 
-    @Override // okhttp3.EventListener
     public void requestBodyStart(Call call) {
         super.requestBodyStart(call);
     }
 
-    @Override // okhttp3.EventListener
     public void requestHeadersEnd(Call call, Request request) {
         super.requestHeadersEnd(call, request);
     }
 
-    @Override // okhttp3.EventListener
     public void requestHeadersStart(Call call) {
         super.requestHeadersStart(call);
         this.start_request_elapsed_time = System.currentTimeMillis();
     }
 
-    @Override // okhttp3.EventListener
     public void responseBodyEnd(Call call, long j) {
         super.responseBodyEnd(call, j);
         this.response_elapsed_time = System.currentTimeMillis() - this.start_response_elapsed_time;
@@ -160,23 +144,19 @@ public class HttpEventListener extends EventListener {
         this.logHandler.send("wait_elapsed_time", Long.valueOf(this.wait_elapsed_time));
     }
 
-    @Override // okhttp3.EventListener
     public void responseBodyStart(Call call) {
         super.responseBodyStart(call);
     }
 
-    @Override // okhttp3.EventListener
     public void responseHeadersEnd(Call call, Response response) {
         super.responseHeadersEnd(call, response);
     }
 
-    @Override // okhttp3.EventListener
     public void responseHeadersStart(Call call) {
         super.responseHeadersStart(call);
         this.start_response_elapsed_time = System.currentTimeMillis();
     }
 
-    @Override // okhttp3.EventListener
     public void secureConnectEnd(Call call, Handshake handshake) {
         super.secureConnectEnd(call, handshake);
         long currentTimeMillis = System.currentTimeMillis() - this.start_tls_connect_elapsed_time;
@@ -184,7 +164,6 @@ public class HttpEventListener extends EventListener {
         this.logHandler.send("tls_connect_elapsed_time", Long.valueOf(currentTimeMillis));
     }
 
-    @Override // okhttp3.EventListener
     public void secureConnectStart(Call call) {
         super.secureConnectStart(call);
         this.start_tls_connect_elapsed_time = System.currentTimeMillis();

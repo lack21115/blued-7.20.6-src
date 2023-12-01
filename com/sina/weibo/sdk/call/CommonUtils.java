@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import java.util.HashMap;
 
@@ -17,13 +18,13 @@ class CommonUtils {
         for (String str : hashMap.keySet()) {
             String str2 = hashMap.get(str);
             if (str2 != null) {
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
                 sb.append(str);
                 sb.append("=");
                 sb.append(str2);
             }
         }
-        return sb.toString().replaceFirst("&", "?");
+        return sb.toString().replaceFirst(ContainerUtils.FIELD_DELIMITER, "?");
     }
 
     public static void openWeiboActivity(Context context, String str, String str2) throws WeiboNotInstalledException {

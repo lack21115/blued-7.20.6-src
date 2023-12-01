@@ -90,20 +90,20 @@ public abstract class BluedUIHttpResponse<T extends BluedEntity> extends StringH
     public void onFailure(Throwable th, int i, final String str) {
         super.onFailure(th, i, (int) str);
         this.httpResult = false;
-        final Pair<Integer, String> a2 = BluedHttpUtils.a(th, i, str);
+        final Pair<Integer, String> a = BluedHttpUtils.a(th, i, str);
         if (this.runUiThread) {
             AppInfo.n().post(new Runnable() { // from class: com.blued.android.framework.http.BluedUIHttpResponse.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (!BluedUIHttpResponse.this.isActive() || BluedUIHttpResponse.this.onUIFailure(((Integer) a2.first).intValue(), (String) a2.second, str)) {
+                    if (!BluedUIHttpResponse.this.isActive() || BluedUIHttpResponse.this.onUIFailure(((Integer) a.first).intValue(), (String) a.second, str)) {
                         return;
                     }
-                    BluedHttpUtils.b.a(((Integer) a2.first).intValue(), (String) a2.second);
+                    BluedHttpUtils.b.a(((Integer) a.first).intValue(), (String) a.second);
                 }
             });
-        } else if (!isActive() || onUIFailure(a2.first.intValue(), a2.second, str)) {
+        } else if (!isActive() || onUIFailure(((Integer) a.first).intValue(), (String) a.second, str)) {
         } else {
-            BluedHttpUtils.b.a(a2.first.intValue(), a2.second);
+            BluedHttpUtils.b.a(((Integer) a.first).intValue(), (String) a.second);
         }
     }
 

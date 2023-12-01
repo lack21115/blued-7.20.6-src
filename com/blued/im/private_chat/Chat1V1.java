@@ -1,6 +1,5 @@
 package com.blued.im.private_chat;
 
-import com.alipay.sdk.packet.e;
 import com.blued.im.CommonOuterClass;
 import com.blued.im.private_chat.CodeOuterClass;
 import com.blued.im.private_chat.MsgTypeOuterClass;
@@ -233,8 +232,8 @@ public final class Chat1V1 {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.Chat1V1.Chat1v1AckBodyOrBuilder
@@ -1350,8 +1349,8 @@ public final class Chat1V1 {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.Chat1V1.Chat1v1ReceiveOrBuilder
@@ -2636,8 +2635,8 @@ public final class Chat1V1 {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.Chat1V1.Chat1v1ReqBodyOrBuilder
@@ -3499,8 +3498,8 @@ public final class Chat1V1 {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.Chat1V1.Chat1v1RequestOrBuilder
@@ -4526,8 +4525,8 @@ public final class Chat1V1 {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.im.private_chat.Chat1V1.Chat1v1ResponseOrBuilder
@@ -5341,7 +5340,7 @@ public final class Chat1V1 {
         internal_static_com_blued_im_private_chat_Chat1v1Response_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor4, new String[]{"Code", "Message", "MsgId", "LocalId", "Body", "RequestId", "RequestTime", "ResponseTime"});
         Descriptors.Descriptor descriptor5 = getDescriptor().getMessageTypes().get(3);
         internal_static_com_blued_im_private_chat_Chat1v1AckBody_descriptor = descriptor5;
-        internal_static_com_blued_im_private_chat_Chat1v1AckBody_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor5, new String[]{"ReqType", "Error", "ErrorContents", "OwnTime", "RemainingCallCount", "ChatSdkType", "SwitchSdk", "UserSig", e.f, TXCopyrightedMedia.EXT_INFO_ROOM_ID});
+        internal_static_com_blued_im_private_chat_Chat1v1AckBody_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor5, new String[]{"ReqType", "Error", "ErrorContents", "OwnTime", "RemainingCallCount", "ChatSdkType", "SwitchSdk", "UserSig", "AppId", TXCopyrightedMedia.EXT_INFO_ROOM_ID});
         Descriptors.Descriptor descriptor6 = getDescriptor().getMessageTypes().get(4);
         internal_static_com_blued_im_private_chat_Chat1v1Receive_descriptor = descriptor6;
         internal_static_com_blued_im_private_chat_Chat1v1Receive_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor6, new String[]{HttpHeaders.FROM, "To", "MsgType", "MsgId", "Timestamp", "Distance", "Coords", "SessionStatus", "IsDeleted", "IsRead", "Body", "SessionType", "PhoneSessionId", "SessionCommonStatus"});

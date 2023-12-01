@@ -7,16 +7,16 @@ import android.view.ViewTreeObserver;
 public final class OneShotPreDrawListener implements View.OnAttachStateChangeListener, ViewTreeObserver.OnPreDrawListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f2652a;
+    private final View f2604a;
     private ViewTreeObserver b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Runnable f2653c;
+    private final Runnable f2605c;
 
     private OneShotPreDrawListener(View view, Runnable runnable) {
-        this.f2652a = view;
+        this.f2604a = view;
         this.b = view.getViewTreeObserver();
-        this.f2653c = runnable;
+        this.f2605c = runnable;
     }
 
     public static OneShotPreDrawListener add(View view, Runnable runnable) {
@@ -35,7 +35,7 @@ public final class OneShotPreDrawListener implements View.OnAttachStateChangeLis
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
     public boolean onPreDraw() {
         removeListener();
-        this.f2653c.run();
+        this.f2605c.run();
         return true;
     }
 
@@ -53,8 +53,8 @@ public final class OneShotPreDrawListener implements View.OnAttachStateChangeLis
         if (this.b.isAlive()) {
             this.b.removeOnPreDrawListener(this);
         } else {
-            this.f2652a.getViewTreeObserver().removeOnPreDrawListener(this);
+            this.f2604a.getViewTreeObserver().removeOnPreDrawListener(this);
         }
-        this.f2652a.removeOnAttachStateChangeListener(this);
+        this.f2604a.removeOnAttachStateChangeListener(this);
     }
 }

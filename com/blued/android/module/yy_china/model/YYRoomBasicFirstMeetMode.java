@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 
 @Metadata
@@ -38,7 +39,7 @@ public final class YYRoomBasicFirstMeetMode {
     }
 
     public int hashCode() {
-        return C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.show_delay);
+        return $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.show_delay);
     }
 
     public String toString() {

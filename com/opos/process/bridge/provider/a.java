@@ -11,11 +11,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f27427a;
+    protected Context f13739a;
     protected IBridgeTargetIdentify b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AtomicInteger f27428c = new AtomicInteger(-1);
+    private AtomicInteger f13740c = new AtomicInteger(-1);
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0011, code lost:
         if (r0 == 1) goto L8;
@@ -28,7 +28,7 @@ public class a {
         /*
             r4 = this;
             r0 = r4
-            java.util.concurrent.atomic.AtomicInteger r0 = r0.f27428c
+            java.util.concurrent.atomic.AtomicInteger r0 = r0.f13740c
             int r0 = r0.get()
             r7 = r0
             r0 = 0
@@ -62,7 +62,7 @@ public class a {
             boolean r0 = r0.equals(r1)     // Catch: java.lang.Exception -> L64
             if (r0 == 0) goto L54
             r0 = r4
-            java.util.concurrent.atomic.AtomicInteger r0 = r0.f27428c     // Catch: java.lang.Exception -> L64
+            java.util.concurrent.atomic.AtomicInteger r0 = r0.f13740c     // Catch: java.lang.Exception -> L64
             r1 = -1
             r2 = 0
             boolean r0 = r0.compareAndSet(r1, r2)     // Catch: java.lang.Exception -> L64
@@ -70,7 +70,7 @@ public class a {
             return r0
         L54:
             r0 = r4
-            java.util.concurrent.atomic.AtomicInteger r0 = r0.f27428c
+            java.util.concurrent.atomic.AtomicInteger r0 = r0.f13740c
             r1 = -1
             r2 = 1
             boolean r0 = r0.compareAndSet(r1, r2)

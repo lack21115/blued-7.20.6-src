@@ -7,14 +7,14 @@ import android.text.TextUtils;
 public class c implements k {
 
     /* renamed from: a  reason: collision with root package name */
-    private Class f39001a = null;
+    private Class f25310a = null;
     private String b;
 
     @Override // com.tencent.tendinsv.b.k
     public String b(Context context) {
         if (TextUtils.isEmpty(this.b)) {
             try {
-                this.b = String.valueOf(this.f39001a.getMethod("getOAID", Context.class).invoke(this.f39001a.newInstance(), context));
+                this.b = String.valueOf(this.f25310a.getMethod("getOAID", Context.class).invoke(this.f25310a.newInstance(), context));
             } catch (Throwable th) {
                 this.b = null;
             }
@@ -25,7 +25,7 @@ public class c implements k {
     @Override // com.tencent.tendinsv.b.k
     public boolean b_(Context context) {
         try {
-            this.f39001a = Class.forName("com.android.id.impl.IdProviderImpl");
+            this.f25310a = Class.forName("com.android.id.impl.IdProviderImpl");
             return true;
         } catch (Throwable th) {
             return false;

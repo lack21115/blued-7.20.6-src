@@ -7,16 +7,16 @@ import java.util.List;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f35456a;
+    private a f21765a;
 
     public g(a aVar) {
-        this.f35456a = aVar;
+        this.f21765a = aVar;
     }
 
     public com.tencent.cloud.huiyansdkface.a.a.d a() {
         try {
             com.tencent.cloud.huiyansdkface.a.a.d dVar = new com.tencent.cloud.huiyansdkface.a.a.d();
-            Camera.Parameters parameters = this.f35456a.a().getParameters();
+            Camera.Parameters parameters = this.f21765a.a().getParameters();
             List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
             List<Camera.Size> supportedVideoSizes = parameters.getSupportedVideoSizes();
             List<Camera.Size> supportedPictureSizes = parameters.getSupportedPictureSizes();
@@ -30,7 +30,7 @@ public class g {
             dVar.d(com.tencent.cloud.huiyansdkface.a.a.c.a.b(supportedVideoSizes));
             dVar.a(com.tencent.cloud.huiyansdkface.a.a.c.a.a(parameters.getPreferredPreviewSizeForVideo()));
             dVar.a(com.tencent.cloud.huiyansdkface.a.a.c.a.a(parameters.getSupportedPreviewFpsRange()));
-            this.f35456a.a(dVar);
+            this.f21765a.a(dVar);
             com.tencent.cloud.huiyansdkface.a.d.a.a("V1FeatureCollector", "get camera features success", new Object[0]);
             return dVar;
         } catch (Throwable th) {

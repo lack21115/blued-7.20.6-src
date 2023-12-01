@@ -1,6 +1,5 @@
 package com.tencent.txcopyrightedmedia.impl.utils;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -33,7 +32,7 @@ public final class d {
         if (b == null) {
             return;
         }
-        if (b.exists() && (bbVar.o().f40089c == null || bbVar.o().d == 0)) {
+        if (b.exists() && (bbVar.o().f26398c == null || bbVar.o().d == 0)) {
             b.delete();
         } else {
             File parentFile = b.getParentFile();
@@ -41,11 +40,11 @@ public final class d {
                 parentFile.mkdirs();
             }
         }
-        byte[] bArr2 = bbVar.o().f40089c;
+        byte[] bArr2 = bbVar.o().f26398c;
         boolean z = false;
         String absolutePath = b.getAbsolutePath();
         if (bArr2 != null) {
-            byte[] bArr3 = bbVar.o().f40089c;
+            byte[] bArr3 = bbVar.o().f26398c;
             z = true;
             length = (int) bbVar.o().e;
             bArr = bArr3;
@@ -77,10 +76,10 @@ public final class d {
         FileInputStream fileInputStream;
         FileInputStream fileInputStream2;
         Throwable th;
-        AutoCloseable autoCloseable;
         ByteArrayOutputStream byteArrayOutputStream;
-        FileInputStream fileInputStream3;
         ByteArrayOutputStream byteArrayOutputStream2;
+        FileInputStream fileInputStream3;
+        ByteArrayOutputStream byteArrayOutputStream3;
         FileInputStream fileInputStream4;
         if (file == null || !file.exists()) {
             return null;
@@ -91,45 +90,45 @@ public final class d {
                 try {
                     fileInputStream2 = new FileInputStream(file);
                     try {
-                        ByteArrayOutputStream byteArrayOutputStream3 = new ByteArrayOutputStream();
+                        ByteArrayOutputStream byteArrayOutputStream4 = new ByteArrayOutputStream();
                         while (true) {
                             try {
                                 int read = fileInputStream2.read(bArr);
                                 if (read == -1) {
-                                    byte[] byteArray = byteArrayOutputStream3.toByteArray();
+                                    byte[] byteArray = byteArrayOutputStream4.toByteArray();
                                     try {
                                         fileInputStream2.close();
-                                        byteArrayOutputStream3.close();
+                                        byteArrayOutputStream4.close();
                                         return byteArray;
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                         return byteArray;
                                     }
                                 }
-                                byteArrayOutputStream3.write(bArr, 0, read);
+                                byteArrayOutputStream4.write(bArr, 0, read);
                             } catch (FileNotFoundException e2) {
                                 e = e2;
                                 fileInputStream4 = fileInputStream2;
-                                byteArrayOutputStream2 = byteArrayOutputStream3;
+                                byteArrayOutputStream3 = byteArrayOutputStream4;
                                 e.printStackTrace();
                                 if (fileInputStream4 != null) {
                                     fileInputStream4.close();
                                 }
-                                if (byteArrayOutputStream2 != null) {
-                                    byteArrayOutputStream2.close();
+                                if (byteArrayOutputStream3 != null) {
+                                    byteArrayOutputStream3.close();
                                     return null;
                                 }
                                 return null;
                             } catch (IOException e3) {
                                 e = e3;
                                 fileInputStream3 = fileInputStream2;
-                                byteArrayOutputStream = byteArrayOutputStream3;
+                                byteArrayOutputStream2 = byteArrayOutputStream4;
                                 e.printStackTrace();
                                 if (fileInputStream3 != null) {
                                     fileInputStream3.close();
                                 }
-                                if (byteArrayOutputStream != null) {
-                                    byteArrayOutputStream.close();
+                                if (byteArrayOutputStream2 != null) {
+                                    byteArrayOutputStream2.close();
                                     return null;
                                 }
                                 return null;
@@ -138,14 +137,14 @@ public final class d {
                     } catch (FileNotFoundException e4) {
                         e = e4;
                         fileInputStream4 = fileInputStream2;
-                        byteArrayOutputStream2 = null;
+                        byteArrayOutputStream3 = null;
                     } catch (IOException e5) {
                         e = e5;
                         fileInputStream3 = fileInputStream2;
-                        byteArrayOutputStream = null;
+                        byteArrayOutputStream2 = null;
                     } catch (Throwable th2) {
                         th = th2;
-                        autoCloseable = null;
+                        byteArrayOutputStream = null;
                         if (fileInputStream2 != null) {
                             try {
                                 fileInputStream2.close();
@@ -154,23 +153,23 @@ public final class d {
                                 throw th;
                             }
                         }
-                        if (autoCloseable != null) {
-                            autoCloseable.close();
+                        if (byteArrayOutputStream != null) {
+                            byteArrayOutputStream.close();
                         }
                         throw th;
                     }
                 } catch (FileNotFoundException e7) {
                     e = e7;
-                    byteArrayOutputStream2 = null;
+                    byteArrayOutputStream3 = null;
                     fileInputStream4 = null;
                 } catch (IOException e8) {
                     e = e8;
-                    byteArrayOutputStream = null;
+                    byteArrayOutputStream2 = null;
                     fileInputStream3 = null;
                 } catch (Throwable th3) {
                     th = th3;
                     fileInputStream2 = null;
-                    autoCloseable = null;
+                    byteArrayOutputStream = null;
                 }
             } catch (Exception e9) {
                 e9.printStackTrace();
@@ -201,6 +200,6 @@ public final class d {
             e.printStackTrace();
         }
         File b2 = b(bbVar.i());
-        return new File(b2, System.currentTimeMillis() + BridgeUtil.UNDERLINE_STR + (Math.random() * 10000.0d));
+        return new File(b2, System.currentTimeMillis() + "_" + (Math.random() * 10000.0d));
     }
 }

@@ -8,11 +8,11 @@ import java.util.Collections;
 public class Pin {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f36098a;
+    private String f22407a;
     private String b;
 
     public Pin(String str, String str2) {
-        this.f36098a = str;
+        this.f22407a = str;
         this.b = str2;
     }
 
@@ -40,7 +40,7 @@ public class Pin {
     }
 
     public String getPattern() {
-        return this.f36098a;
+        return this.f22407a;
     }
 
     public String getPin() {
@@ -48,6 +48,6 @@ public class Pin {
     }
 
     public boolean match(String str) {
-        return this.f36098a.startsWith("**.") ? str.endsWith(this.f36098a.substring(2)) : this.f36098a.startsWith("*.") ? this.f36098a.substring(1).equals(str.substring(str.indexOf("."))) : this.f36098a.equals(str);
+        return this.f22407a.startsWith("**.") ? str.endsWith(this.f22407a.substring(2)) : this.f22407a.startsWith("*.") ? this.f22407a.substring(1).equals(str.substring(str.indexOf("."))) : this.f22407a.equals(str);
     }
 }

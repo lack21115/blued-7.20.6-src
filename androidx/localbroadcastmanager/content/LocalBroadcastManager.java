@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -19,11 +18,11 @@ public final class LocalBroadcastManager {
     private static LocalBroadcastManager g;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f3094a;
+    private final Context f3046a;
     private final HashMap<BroadcastReceiver, ArrayList<ReceiverRecord>> b = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final HashMap<String, ArrayList<ReceiverRecord>> f3095c = new HashMap<>();
+    private final HashMap<String, ArrayList<ReceiverRecord>> f3047c = new HashMap<>();
     private final ArrayList<BroadcastRecord> d = new ArrayList<>();
     private final Handler e;
 
@@ -32,11 +31,11 @@ public final class LocalBroadcastManager {
     public static final class BroadcastRecord {
 
         /* renamed from: a  reason: collision with root package name */
-        final Intent f3097a;
+        final Intent f3049a;
         final ArrayList<ReceiverRecord> b;
 
         BroadcastRecord(Intent intent, ArrayList<ReceiverRecord> arrayList) {
-            this.f3097a = intent;
+            this.f3049a = intent;
             this.b = arrayList;
         }
     }
@@ -46,15 +45,15 @@ public final class LocalBroadcastManager {
     public static final class ReceiverRecord {
 
         /* renamed from: a  reason: collision with root package name */
-        final IntentFilter f3098a;
+        final IntentFilter f3050a;
         final BroadcastReceiver b;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f3099c;
+        boolean f3051c;
         boolean d;
 
         ReceiverRecord(IntentFilter intentFilter, BroadcastReceiver broadcastReceiver) {
-            this.f3098a = intentFilter;
+            this.f3050a = intentFilter;
             this.b = broadcastReceiver;
         }
 
@@ -63,17 +62,17 @@ public final class LocalBroadcastManager {
             sb.append("Receiver{");
             sb.append(this.b);
             sb.append(" filter=");
-            sb.append(this.f3098a);
+            sb.append(this.f3050a);
             if (this.d) {
                 sb.append(" DEAD");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
 
     private LocalBroadcastManager(Context context) {
-        this.f3094a = context;
+        this.f3046a = context;
         this.e = new Handler(context.getMainLooper()) { // from class: androidx.localbroadcastmanager.content.LocalBroadcastManager.1
             @Override // android.os.Handler
             public void handleMessage(Message message) {
@@ -122,7 +121,7 @@ public final class LocalBroadcastManager {
                         if (i4 < size2) {
                             ReceiverRecord receiverRecord = broadcastRecord.b.get(i4);
                             if (!receiverRecord.d) {
-                                receiverRecord.b.onReceive(this.f3094a, broadcastRecord.f3097a);
+                                receiverRecord.b.onReceive(this.f3046a, broadcastRecord.f3049a);
                             }
                             i3 = i4 + 1;
                         }
@@ -148,11 +147,11 @@ public final class LocalBroadcastManager {
                 int i2 = i;
                 if (i2 < intentFilter.countActions()) {
                     String action = intentFilter.getAction(i2);
-                    ArrayList<ReceiverRecord> arrayList3 = this.f3095c.get(action);
+                    ArrayList<ReceiverRecord> arrayList3 = this.f3047c.get(action);
                     ArrayList<ReceiverRecord> arrayList4 = arrayList3;
                     if (arrayList3 == null) {
                         arrayList4 = new ArrayList<>(1);
-                        this.f3095c.put(action, arrayList4);
+                        this.f3047c.put(action, arrayList4);
                     }
                     arrayList4.add(receiverRecord);
                     i = i2 + 1;
@@ -164,7 +163,7 @@ public final class LocalBroadcastManager {
     public boolean sendBroadcast(Intent intent) {
         synchronized (this.b) {
             String action = intent.getAction();
-            String resolveTypeIfNeeded = intent.resolveTypeIfNeeded(this.f3094a.getContentResolver());
+            String resolveTypeIfNeeded = intent.resolveTypeIfNeeded(this.f3046a.getContentResolver());
             Uri data = intent.getData();
             String scheme = intent.getScheme();
             Set<String> categories = intent.getCategories();
@@ -172,7 +171,7 @@ public final class LocalBroadcastManager {
             if (z) {
                 Log.v("LocalBroadcastManager", "Resolving type " + resolveTypeIfNeeded + " scheme " + scheme + " of intent " + intent);
             }
-            ArrayList<ReceiverRecord> arrayList = this.f3095c.get(intent.getAction());
+            ArrayList<ReceiverRecord> arrayList = this.f3047c.get(intent.getAction());
             if (arrayList != null) {
                 if (z) {
                     Log.v("LocalBroadcastManager", "Action list: " + arrayList);
@@ -186,10 +185,10 @@ public final class LocalBroadcastManager {
                     }
                     ReceiverRecord receiverRecord = arrayList.get(i2);
                     if (z) {
-                        Log.v("LocalBroadcastManager", "Matching against filter " + receiverRecord.f3098a);
+                        Log.v("LocalBroadcastManager", "Matching against filter " + receiverRecord.f3050a);
                     }
-                    if (!receiverRecord.f3099c) {
-                        IntentFilter intentFilter = receiverRecord.f3098a;
+                    if (!receiverRecord.f3051c) {
+                        IntentFilter intentFilter = receiverRecord.f3050a;
                         ArrayList arrayList3 = arrayList2;
                         int match = intentFilter.match(action, resolveTypeIfNeeded, scheme, data, categories, "LocalBroadcastManager");
                         if (match >= 0) {
@@ -198,7 +197,7 @@ public final class LocalBroadcastManager {
                             }
                             arrayList2 = arrayList3 == null ? new ArrayList() : arrayList3;
                             arrayList2.add(receiverRecord);
-                            receiverRecord.f3099c = true;
+                            receiverRecord.f3051c = true;
                         } else if (z) {
                             Log.v("LocalBroadcastManager", "  Filter did not match: " + (match != -4 ? match != -3 ? match != -2 ? match != -1 ? "unknown reason" : "type" : "data" : "action" : "category"));
                         }
@@ -214,7 +213,7 @@ public final class LocalBroadcastManager {
                         if (i4 >= arrayList2.size()) {
                             break;
                         }
-                        ((ReceiverRecord) arrayList2.get(i4)).f3099c = false;
+                        ((ReceiverRecord) arrayList2.get(i4)).f3051c = false;
                         i3 = i4 + 1;
                     }
                     this.d.add(new BroadcastRecord(intent, arrayList2));
@@ -251,9 +250,9 @@ public final class LocalBroadcastManager {
                 int i2 = 0;
                 while (true) {
                     int i3 = i2;
-                    if (i3 < receiverRecord.f3098a.countActions()) {
-                        String action = receiverRecord.f3098a.getAction(i3);
-                        ArrayList<ReceiverRecord> arrayList = this.f3095c.get(action);
+                    if (i3 < receiverRecord.f3050a.countActions()) {
+                        String action = receiverRecord.f3050a.getAction(i3);
+                        ArrayList<ReceiverRecord> arrayList = this.f3047c.get(action);
                         if (arrayList != null) {
                             int size2 = arrayList.size();
                             while (true) {
@@ -269,7 +268,7 @@ public final class LocalBroadcastManager {
                                 size2 = i4;
                             }
                             if (arrayList.size() <= 0) {
-                                this.f3095c.remove(action);
+                                this.f3047c.remove(action);
                             }
                         }
                         i2 = i3 + 1;

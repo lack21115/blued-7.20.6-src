@@ -18,9 +18,7 @@ public final class FitemAutoLoadFootText extends FreedomItem {
     private static final int h = 2;
     private static final int i = 3;
     private static final int j = 4;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f12523c;
+    private Context c;
     private TextView d;
     private int e = h;
     private String f = "";
@@ -44,7 +42,7 @@ public final class FitemAutoLoadFootText extends FreedomItem {
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i2) {
         Intrinsics.e(vh, "vh");
-        this.f12523c = context;
+        this.c = context;
         this.d = (TextView) vh.a(R.id.tv_text);
     }
 

@@ -2,7 +2,6 @@ package com.anythink.expressad.videocommon.e;
 
 import android.text.TextUtils;
 import com.anythink.expressad.videocommon.b.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,10 +13,10 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8769a = "reward";
+    public static final String f5929a = "reward";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8770c = "RewardSettingManager";
+    private static final String f5930c = "RewardSettingManager";
     private static Map<String, d> e = new HashMap(3);
     private static volatile c f;
     public a b;
@@ -143,7 +142,7 @@ public class c {
 
     public final d a(String str, String str2) {
         synchronized (this.d) {
-            String str3 = "reward_" + str + BridgeUtil.UNDERLINE_STR + str2;
+            String str3 = "reward_" + str + "_" + str2;
             if (e.containsKey(str3)) {
                 return e.get(str3);
             }
@@ -156,7 +155,7 @@ public class c {
     public final d a(String str, String str2, boolean z) {
         d dVar;
         synchronized (this.d) {
-            String str3 = "reward_" + str + BridgeUtil.UNDERLINE_STR + str2;
+            String str3 = "reward_" + str + "_" + str2;
             d dVar2 = e.get(str3);
             dVar = dVar2;
             if (dVar2 == null) {

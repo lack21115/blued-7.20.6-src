@@ -7,15 +7,15 @@ import java.util.Locale;
 public final class al {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f35238a = "CrashReportInfo";
+    public static String f21547a = "CrashReportInfo";
     public static String b = "CrashReport";
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f35239c = false;
+    public static boolean f21548c = false;
 
     private static boolean a(int i, String str, Object... objArr) {
         String str2;
-        if (f35239c) {
+        if (f21548c) {
             if (str == null) {
                 str2 = com.igexin.push.core.b.l;
             } else {
@@ -39,7 +39,7 @@ public final class al {
             } else if (i != 5) {
                 return false;
             } else {
-                Log.i(f35238a, str2);
+                Log.i(f21547a, str2);
                 return true;
             }
         }
@@ -47,7 +47,7 @@ public final class al {
     }
 
     private static boolean a(int i, Throwable th) {
-        if (f35239c) {
+        if (f21548c) {
             return a(i, ap.a(th), new Object[0]);
         }
         return false;

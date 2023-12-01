@@ -7,11 +7,11 @@ import java.util.Locale;
 public final class x {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f35414a = "CrashReport";
+    public static String f21723a = "CrashReport";
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f35415c = "CrashReportInfo";
+    private static String f21724c = "CrashReportInfo";
 
     private static boolean a(int i, String str, Object... objArr) {
         String str2;
@@ -25,21 +25,21 @@ public final class x {
                 }
             }
             if (i == 0) {
-                Log.i(f35414a, str2);
+                Log.i(f21723a, str2);
                 return true;
             } else if (i == 1) {
-                Log.d(f35414a, str2);
+                Log.d(f21723a, str2);
                 return true;
             } else if (i == 2) {
-                Log.w(f35414a, str2);
+                Log.w(f21723a, str2);
                 return true;
             } else if (i == 3) {
-                Log.e(f35414a, str2);
+                Log.e(f21723a, str2);
                 return true;
             } else if (i != 5) {
                 return false;
             } else {
-                Log.i(f35415c, str2);
+                Log.i(f21724c, str2);
                 return true;
             }
         }

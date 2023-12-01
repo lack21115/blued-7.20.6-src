@@ -21,11 +21,11 @@ public class f implements InvocationHandler {
     private static final Map<String, Class> f;
 
     /* renamed from: a  reason: collision with root package name */
-    private d f39202a;
+    private d f25511a;
     private com.tencent.thumbplayer.tplayer.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private g f39203c = new g("TPPlayerAdapterProxy");
+    private g f25512c = new g("TPPlayerAdapterProxy");
     private a d;
     private Object e;
 
@@ -40,7 +40,7 @@ public class f implements InvocationHandler {
         }
 
         private void b(long j, long j2, Object obj) {
-            f.this.b.b().a(new b.C1018b());
+            f.this.b.b().a(new b.C0848b());
         }
 
         private void c(long j, long j2, Object obj) {
@@ -53,10 +53,10 @@ public class f implements InvocationHandler {
         @Override // com.tencent.thumbplayer.adapter.a.c.i
         public void a() {
             b.o oVar = new b.o();
-            oVar.b(f.this.f39202a.d());
-            oVar.a(f.this.f39202a.m());
+            oVar.b(f.this.f25511a.d());
+            oVar.a(f.this.f25511a.m());
             f.this.b.b().a(oVar);
-            f.this.f39203c.a();
+            f.this.f25512c.a();
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.f
@@ -64,20 +64,20 @@ public class f implements InvocationHandler {
             b.i iVar = new b.i();
             iVar.c(i2);
             iVar.b(i);
-            TPGeneralPlayFlowParams u = f.this.f39202a.u();
+            TPGeneralPlayFlowParams u = f.this.f25511a.u();
             TPGeneralPlayFlowParams tPGeneralPlayFlowParams = u;
             if (u == null) {
                 tPGeneralPlayFlowParams = new TPGeneralPlayFlowParams();
             }
             iVar.a(tPGeneralPlayFlowParams);
-            TPDynamicStatisticParams c2 = f.this.f39202a.c(false);
+            TPDynamicStatisticParams c2 = f.this.f25511a.c(false);
             TPDynamicStatisticParams tPDynamicStatisticParams = c2;
             if (c2 == null) {
                 tPDynamicStatisticParams = new TPDynamicStatisticParams();
             }
             iVar.a(tPDynamicStatisticParams);
             f.this.b.b().a(iVar);
-            f.this.f39203c.a(i, i2, j, j2);
+            f.this.f25512c.a(i, i2, j, j2);
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.h
@@ -89,7 +89,7 @@ public class f implements InvocationHandler {
             } else if (i == 201) {
                 b(j, j2, obj);
             }
-            f.this.f39203c.a(i, j, j2, obj);
+            f.this.f25512c.a(i, j, j2, obj);
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.g
@@ -97,13 +97,13 @@ public class f implements InvocationHandler {
             b.h hVar = new b.h();
             hVar.a(tPDrmInfo);
             f.this.b.b().a(hVar);
-            f.this.f39203c.a(tPDrmInfo);
+            f.this.f25512c.a(tPDrmInfo);
         }
 
         @Override // com.tencent.thumbplayer.adapter.a.c.j
         public void c() {
             f.this.b.b().a(new b.q());
-            f.this.f39203c.c();
+            f.this.f25512c.c();
         }
     }
 
@@ -119,7 +119,7 @@ public class f implements InvocationHandler {
     public f(d dVar, com.tencent.thumbplayer.tplayer.a aVar) {
         a aVar2 = new a();
         this.d = aVar2;
-        this.f39202a = dVar;
+        this.f25511a = dVar;
         this.b = aVar;
         dVar.a((c.g) aVar2);
     }
@@ -252,7 +252,7 @@ public class f implements InvocationHandler {
     private void b(Method method, Object[] objArr) {
         if (f.containsKey(method.getName())) {
             try {
-                this.f39203c.getClass().getMethod(method.getName(), f.get(method.getName())).invoke(this.f39203c, objArr[0]);
+                this.f25512c.getClass().getMethod(method.getName(), f.get(method.getName())).invoke(this.f25512c, objArr[0]);
                 objArr[0] = this.d;
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
@@ -274,13 +274,13 @@ public class f implements InvocationHandler {
 
     private void d(Object[] objArr) {
         b.n nVar = new b.n();
-        TPGeneralPlayFlowParams u = this.f39202a.u();
+        TPGeneralPlayFlowParams u = this.f25511a.u();
         TPGeneralPlayFlowParams tPGeneralPlayFlowParams = u;
         if (u == null) {
             tPGeneralPlayFlowParams = new TPGeneralPlayFlowParams();
         }
         nVar.a(tPGeneralPlayFlowParams);
-        TPDynamicStatisticParams c2 = this.f39202a.c(false);
+        TPDynamicStatisticParams c2 = this.f25511a.c(false);
         TPDynamicStatisticParams tPDynamicStatisticParams = c2;
         if (c2 == null) {
             tPDynamicStatisticParams = new TPDynamicStatisticParams();
@@ -291,13 +291,13 @@ public class f implements InvocationHandler {
 
     private void e(Object[] objArr) {
         b.l lVar = new b.l();
-        TPGeneralPlayFlowParams u = this.f39202a.u();
+        TPGeneralPlayFlowParams u = this.f25511a.u();
         TPGeneralPlayFlowParams tPGeneralPlayFlowParams = u;
         if (u == null) {
             tPGeneralPlayFlowParams = new TPGeneralPlayFlowParams();
         }
         lVar.a(tPGeneralPlayFlowParams);
-        TPDynamicStatisticParams c2 = this.f39202a.c(false);
+        TPDynamicStatisticParams c2 = this.f25511a.c(false);
         TPDynamicStatisticParams tPDynamicStatisticParams = c2;
         if (c2 == null) {
             tPDynamicStatisticParams = new TPDynamicStatisticParams();
@@ -324,7 +324,7 @@ public class f implements InvocationHandler {
         b.t tVar = new b.t();
         tVar.b(((Integer) objArr[0]).intValue());
         tVar.a(((Long) objArr[1]).longValue());
-        tVar.a(this.f39202a.r()[((Integer) objArr[0]).intValue()]);
+        tVar.a(this.f25511a.r()[((Integer) objArr[0]).intValue()]);
         this.b.b().a(tVar);
     }
 
@@ -332,7 +332,7 @@ public class f implements InvocationHandler {
         Object obj;
         synchronized (this) {
             if (this.e == null) {
-                this.e = Proxy.newProxyInstance(this.f39202a.getClass().getClassLoader(), this.f39202a.getClass().getInterfaces(), this);
+                this.e = Proxy.newProxyInstance(this.f25511a.getClass().getClassLoader(), this.f25511a.getClass().getInterfaces(), this);
             }
             obj = this.e;
         }
@@ -346,7 +346,7 @@ public class f implements InvocationHandler {
         try {
             a(method, objArr);
             b(method, objArr);
-            return method.invoke(this.f39202a, objArr);
+            return method.invoke(this.f25511a, objArr);
         } catch (InvocationTargetException e) {
             if (e.getTargetException() == null) {
                 sb = new StringBuilder("invokeMethod ");

@@ -12,11 +12,11 @@ import java.nio.FloatBuffer;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27717a;
+    private int f14029a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27718c;
+    private int f14030c;
     private int f;
     protected int g;
     protected int h;
@@ -35,7 +35,7 @@ public class g {
     private float d = 1.0f;
     private float e = 1.0f;
     private float[] r = com.qiniu.pili.droid.shortvideo.f.d.b;
-    private float[] s = com.qiniu.pili.droid.shortvideo.f.d.f27671c;
+    private float[] s = com.qiniu.pili.droid.shortvideo.f.d.f13983c;
 
     private void a(float f, float f2, float f3, float f4) {
         float f5 = (this.i * 1.0f) / this.j;
@@ -70,7 +70,7 @@ public class g {
     private void c(int i, int i2) {
         float f;
         float f2;
-        this.s = com.qiniu.pili.droid.shortvideo.f.d.f27671c;
+        this.s = com.qiniu.pili.droid.shortvideo.f.d.f13983c;
         int i3 = this.i;
         float f3 = i3;
         float f4 = 1.0f;
@@ -98,7 +98,7 @@ public class g {
         GLES20.glBindBuffer(34962, this.b);
         GLES20.glEnableVertexAttribArray(this.f);
         GLES20.glVertexAttribPointer(this.f, 2, 5126, false, 0, 0);
-        GLES20.glBindBuffer(34962, this.f27718c);
+        GLES20.glBindBuffer(34962, this.f14030c);
         GLES20.glEnableVertexAttribArray(this.o);
         GLES20.glVertexAttribPointer(this.o, 2, 5126, false, 0, 0);
     }
@@ -123,7 +123,7 @@ public class g {
         GLES20.glActiveTexture(33984);
         GLES20.glBindTexture(g(), i);
         if (com.qiniu.pili.droid.shortvideo.f.d.a()) {
-            GLES30.glBindVertexArray(this.f27717a);
+            GLES30.glBindVertexArray(this.f14029a);
         } else {
             h();
         }
@@ -293,19 +293,19 @@ public class g {
             GLES20.glDeleteBuffers(1, new int[]{i}, 0);
             this.b = 0;
         }
-        int i2 = this.f27718c;
+        int i2 = this.f14030c;
         if (i2 != 0) {
             GLES20.glDeleteBuffers(1, new int[]{i2}, 0);
-            this.f27718c = 0;
+            this.f14030c = 0;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void r() {
-        int i = this.f27717a;
+        int i = this.f14029a;
         if (i != 0) {
             GLES30.glDeleteVertexArrays(1, new int[]{i}, 0);
-            this.f27717a = 0;
+            this.f14029a = 0;
         }
     }
 
@@ -327,15 +327,15 @@ public class g {
         GLES20.glGenBuffers(2, iArr, 0);
         int i2 = iArr[0];
         this.b = i2;
-        this.f27718c = iArr[1];
+        this.f14030c = iArr[1];
         GLES20.glBindBuffer(34962, i2);
         GLES20.glBufferData(34962, 32, asFloatBuffer, 35044);
-        GLES20.glBindBuffer(34962, this.f27718c);
+        GLES20.glBindBuffer(34962, this.f14030c);
         GLES20.glBufferData(34962, 32, asFloatBuffer2, 35044);
         GLES20.glBindBuffer(34962, 0);
         if (com.qiniu.pili.droid.shortvideo.f.d.a()) {
             int d = com.qiniu.pili.droid.shortvideo.f.d.d();
-            this.f27717a = d;
+            this.f14029a = d;
             GLES30.glBindVertexArray(d);
         }
         h();

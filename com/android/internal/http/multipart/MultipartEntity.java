@@ -27,7 +27,7 @@ public class MultipartEntity extends AbstractHttpEntity {
     private static byte[] MULTIPART_CHARS = EncodingUtils.getAsciiBytes("-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
 
     public MultipartEntity(Part[] partArr) {
-        setContentType("multipart/form-data");
+        setContentType(MULTIPART_FORM_CONTENT_TYPE);
         if (partArr == null) {
             throw new IllegalArgumentException("parts cannot be null");
         }
@@ -80,7 +80,7 @@ public class MultipartEntity extends AbstractHttpEntity {
     }
 
     public Header getContentType() {
-        StringBuffer stringBuffer = new StringBuffer("multipart/form-data");
+        StringBuffer stringBuffer = new StringBuffer(MULTIPART_FORM_CONTENT_TYPE);
         stringBuffer.append("; boundary=");
         stringBuffer.append(EncodingUtils.getAsciiString(getMultipartBoundary()));
         return new BasicHeader("Content-Type", stringBuffer.toString());

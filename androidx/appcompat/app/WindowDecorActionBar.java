@@ -1,5 +1,6 @@
 package androidx.appcompat.app;
 
+import android.R;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -20,7 +21,6 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.SpinnerAdapter;
-import androidx.appcompat.R;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.ActionBarPolicy;
@@ -57,11 +57,11 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
     private boolean G;
 
     /* renamed from: a  reason: collision with root package name */
-    Context f1609a;
+    Context f1561a;
     ActionBarOverlayLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    ActionBarContainer f1610c;
+    ActionBarContainer f1562c;
     DecorToolbar d;
     ActionBarContextView e;
     View f;
@@ -88,10 +88,10 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         public void onAnimationEnd(View view) {
             if (WindowDecorActionBar.this.k && WindowDecorActionBar.this.f != null) {
                 WindowDecorActionBar.this.f.setTranslationY(0.0f);
-                WindowDecorActionBar.this.f1610c.setTranslationY(0.0f);
+                WindowDecorActionBar.this.f1562c.setTranslationY(0.0f);
             }
-            WindowDecorActionBar.this.f1610c.setVisibility(8);
-            WindowDecorActionBar.this.f1610c.setTransitioning(false);
+            WindowDecorActionBar.this.f1562c.setVisibility(8);
+            WindowDecorActionBar.this.f1562c.setTransitioning(false);
             WindowDecorActionBar.this.n = null;
             WindowDecorActionBar.this.b();
             if (WindowDecorActionBar.this.b != null) {
@@ -103,13 +103,13 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         @Override // androidx.core.view.ViewPropertyAnimatorListenerAdapter, androidx.core.view.ViewPropertyAnimatorListener
         public void onAnimationEnd(View view) {
             WindowDecorActionBar.this.n = null;
-            WindowDecorActionBar.this.f1610c.requestLayout();
+            WindowDecorActionBar.this.f1562c.requestLayout();
         }
     };
     final ViewPropertyAnimatorUpdateListener r = new ViewPropertyAnimatorUpdateListener() { // from class: androidx.appcompat.app.WindowDecorActionBar.3
         @Override // androidx.core.view.ViewPropertyAnimatorUpdateListener
         public void onAnimationUpdate(View view) {
-            ((View) WindowDecorActionBar.this.f1610c.getParent()).invalidate();
+            ((View) WindowDecorActionBar.this.f1562c.getParent()).invalidate();
         }
     };
 
@@ -118,7 +118,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         private final Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final MenuBuilder f1615c;
+        private final MenuBuilder f1567c;
         private ActionMode.Callback d;
         private WeakReference<View> e;
 
@@ -126,16 +126,16 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
             this.b = context;
             this.d = callback;
             MenuBuilder defaultShowAsAction = new MenuBuilder(context).setDefaultShowAsAction(1);
-            this.f1615c = defaultShowAsAction;
+            this.f1567c = defaultShowAsAction;
             defaultShowAsAction.setCallback(this);
         }
 
         public boolean dispatchOnCreate() {
-            this.f1615c.stopDispatchingItemsChanged();
+            this.f1567c.stopDispatchingItemsChanged();
             try {
-                return this.d.onCreateActionMode(this, this.f1615c);
+                return this.d.onCreateActionMode(this, this.f1567c);
             } finally {
-                this.f1615c.startDispatchingItemsChanged();
+                this.f1567c.startDispatchingItemsChanged();
             }
         }
 
@@ -168,7 +168,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
         @Override // androidx.appcompat.view.ActionMode
         public Menu getMenu() {
-            return this.f1615c;
+            return this.f1567c;
         }
 
         @Override // androidx.appcompat.view.ActionMode
@@ -191,11 +191,11 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
             if (WindowDecorActionBar.this.h != this) {
                 return;
             }
-            this.f1615c.stopDispatchingItemsChanged();
+            this.f1567c.stopDispatchingItemsChanged();
             try {
-                this.d.onPrepareActionMode(this, this.f1615c);
+                this.d.onPrepareActionMode(this, this.f1567c);
             } finally {
-                this.f1615c.startDispatchingItemsChanged();
+                this.f1567c.startDispatchingItemsChanged();
             }
         }
 
@@ -247,7 +247,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
         @Override // androidx.appcompat.view.ActionMode
         public void setSubtitle(int i) {
-            setSubtitle(WindowDecorActionBar.this.f1609a.getResources().getString(i));
+            setSubtitle(WindowDecorActionBar.this.f1561a.getResources().getString(i));
         }
 
         @Override // androidx.appcompat.view.ActionMode
@@ -257,7 +257,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
         @Override // androidx.appcompat.view.ActionMode
         public void setTitle(int i) {
-            setTitle(WindowDecorActionBar.this.f1609a.getResources().getString(i));
+            setTitle(WindowDecorActionBar.this.f1561a.getResources().getString(i));
         }
 
         @Override // androidx.appcompat.view.ActionMode
@@ -277,7 +277,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         private ActionBar.TabListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Object f1617c;
+        private Object f1569c;
         private Drawable d;
         private CharSequence e;
         private CharSequence f;
@@ -313,7 +313,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
         @Override // androidx.appcompat.app.ActionBar.Tab
         public Object getTag() {
-            return this.f1617c;
+            return this.f1569c;
         }
 
         @Override // androidx.appcompat.app.ActionBar.Tab
@@ -328,7 +328,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
         @Override // androidx.appcompat.app.ActionBar.Tab
         public ActionBar.Tab setContentDescription(int i) {
-            return setContentDescription(WindowDecorActionBar.this.f1609a.getResources().getText(i));
+            return setContentDescription(WindowDecorActionBar.this.f1561a.getResources().getText(i));
         }
 
         @Override // androidx.appcompat.app.ActionBar.Tab
@@ -356,7 +356,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
         @Override // androidx.appcompat.app.ActionBar.Tab
         public ActionBar.Tab setIcon(int i) {
-            return setIcon(AppCompatResources.getDrawable(WindowDecorActionBar.this.f1609a, i));
+            return setIcon(AppCompatResources.getDrawable(WindowDecorActionBar.this.f1561a, i));
         }
 
         @Override // androidx.appcompat.app.ActionBar.Tab
@@ -380,13 +380,13 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
         @Override // androidx.appcompat.app.ActionBar.Tab
         public ActionBar.Tab setTag(Object obj) {
-            this.f1617c = obj;
+            this.f1569c = obj;
             return this;
         }
 
         @Override // androidx.appcompat.app.ActionBar.Tab
         public ActionBar.Tab setText(int i) {
-            return setText(WindowDecorActionBar.this.f1609a.getResources().getText(i));
+            return setText(WindowDecorActionBar.this.f1561a.getResources().getText(i));
         }
 
         @Override // androidx.appcompat.app.ActionBar.Tab
@@ -406,7 +406,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         if (z) {
             return;
         }
-        this.f = decorView.findViewById(16908290);
+        this.f = decorView.findViewById(R.id.content);
     }
 
     public WindowDecorActionBar(Dialog dialog) {
@@ -418,32 +418,32 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
     }
 
     private void a(View view) {
-        ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) view.findViewById(R.id.decor_content_parent);
+        ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) view.findViewById(androidx.appcompat.R.id.decor_content_parent);
         this.b = actionBarOverlayLayout;
         if (actionBarOverlayLayout != null) {
             actionBarOverlayLayout.setActionBarVisibilityCallback(this);
         }
-        this.d = b(view.findViewById(R.id.action_bar));
-        this.e = (ActionBarContextView) view.findViewById(R.id.action_context_bar);
-        ActionBarContainer actionBarContainer = (ActionBarContainer) view.findViewById(R.id.action_bar_container);
-        this.f1610c = actionBarContainer;
+        this.d = b(view.findViewById(androidx.appcompat.R.id.action_bar));
+        this.e = (ActionBarContextView) view.findViewById(androidx.appcompat.R.id.action_context_bar);
+        ActionBarContainer actionBarContainer = (ActionBarContainer) view.findViewById(androidx.appcompat.R.id.action_bar_container);
+        this.f1562c = actionBarContainer;
         DecorToolbar decorToolbar = this.d;
         if (decorToolbar == null || this.e == null || actionBarContainer == null) {
             throw new IllegalStateException(getClass().getSimpleName() + " can only be used with a compatible window decor layout");
         }
-        this.f1609a = decorToolbar.getContext();
+        this.f1561a = decorToolbar.getContext();
         boolean z = (this.d.getDisplayOptions() & 4) != 0;
         if (z) {
             this.z = true;
         }
-        ActionBarPolicy actionBarPolicy = ActionBarPolicy.get(this.f1609a);
+        ActionBarPolicy actionBarPolicy = ActionBarPolicy.get(this.f1561a);
         setHomeButtonEnabled(actionBarPolicy.enableHomeButtonByDefault() || z);
         a(actionBarPolicy.hasEmbeddedTabs());
-        TypedArray obtainStyledAttributes = this.f1609a.obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
-        if (obtainStyledAttributes.getBoolean(R.styleable.ActionBar_hideOnContentScroll, false)) {
+        TypedArray obtainStyledAttributes = this.f1561a.obtainStyledAttributes(null, androidx.appcompat.R.styleable.ActionBar, androidx.appcompat.R.attr.actionBarStyle, 0);
+        if (obtainStyledAttributes.getBoolean(androidx.appcompat.R.styleable.ActionBar_hideOnContentScroll, false)) {
             setHideOnContentScrollEnabled(true);
         }
-        int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.ActionBar_elevation, 0);
+        int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(androidx.appcompat.R.styleable.ActionBar_elevation, 0);
         if (dimensionPixelSize != 0) {
             setElevation(dimensionPixelSize);
         }
@@ -470,11 +470,11 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
     private void a(boolean z) {
         this.C = z;
         if (z) {
-            this.f1610c.setTabContainer(null);
+            this.f1562c.setTabContainer(null);
             this.d.setEmbeddedTabView(this.g);
         } else {
             this.d.setEmbeddedTabView(null);
-            this.f1610c.setTabContainer(this.g);
+            this.f1562c.setTabContainer(this.g);
         }
         boolean z2 = getNavigationMode() == 2;
         ScrollingTabContainerView scrollingTabContainerView = this.g;
@@ -530,7 +530,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         if (this.g != null) {
             return;
         }
-        ScrollingTabContainerView scrollingTabContainerView = new ScrollingTabContainerView(this.f1609a);
+        ScrollingTabContainerView scrollingTabContainerView = new ScrollingTabContainerView(this.f1561a);
         if (this.C) {
             scrollingTabContainerView.setVisibility(0);
             this.d.setEmbeddedTabView(scrollingTabContainerView);
@@ -544,7 +544,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
             } else {
                 scrollingTabContainerView.setVisibility(8);
             }
-            this.f1610c.setTabContainer(scrollingTabContainerView);
+            this.f1562c.setTabContainer(scrollingTabContainerView);
         }
         this.g = scrollingTabContainerView;
     }
@@ -585,7 +585,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
     }
 
     private boolean g() {
-        return ViewCompat.isLaidOut(this.f1610c);
+        return ViewCompat.isLaidOut(this.f1562c);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -701,16 +701,16 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
             this.p.onAnimationEnd(null);
             return;
         }
-        this.f1610c.setAlpha(1.0f);
-        this.f1610c.setTransitioning(true);
+        this.f1562c.setAlpha(1.0f);
+        this.f1562c.setTransitioning(true);
         ViewPropertyAnimatorCompatSet viewPropertyAnimatorCompatSet2 = new ViewPropertyAnimatorCompatSet();
-        float f = -this.f1610c.getHeight();
+        float f = -this.f1562c.getHeight();
         float f2 = f;
         if (z) {
-            this.f1610c.getLocationInWindow(new int[]{0, 0});
+            this.f1562c.getLocationInWindow(new int[]{0, 0});
             f2 = f - iArr[1];
         }
-        ViewPropertyAnimatorCompat translationY = ViewCompat.animate(this.f1610c).translationY(f2);
+        ViewPropertyAnimatorCompat translationY = ViewCompat.animate(this.f1562c).translationY(f2);
         translationY.setUpdateListener(this.r);
         viewPropertyAnimatorCompatSet2.play(translationY);
         if (this.k && (view = this.f) != null) {
@@ -731,18 +731,18 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
         if (viewPropertyAnimatorCompatSet != null) {
             viewPropertyAnimatorCompatSet.cancel();
         }
-        this.f1610c.setVisibility(0);
+        this.f1562c.setVisibility(0);
         if (this.D == 0 && (this.G || z)) {
-            this.f1610c.setTranslationY(0.0f);
-            float f = -this.f1610c.getHeight();
+            this.f1562c.setTranslationY(0.0f);
+            float f = -this.f1562c.getHeight();
             float f2 = f;
             if (z) {
-                this.f1610c.getLocationInWindow(new int[]{0, 0});
+                this.f1562c.getLocationInWindow(new int[]{0, 0});
                 f2 = f - iArr[1];
             }
-            this.f1610c.setTranslationY(f2);
+            this.f1562c.setTranslationY(f2);
             ViewPropertyAnimatorCompatSet viewPropertyAnimatorCompatSet2 = new ViewPropertyAnimatorCompatSet();
-            ViewPropertyAnimatorCompat translationY = ViewCompat.animate(this.f1610c).translationY(0.0f);
+            ViewPropertyAnimatorCompat translationY = ViewCompat.animate(this.f1562c).translationY(0.0f);
             translationY.setUpdateListener(this.r);
             viewPropertyAnimatorCompatSet2.play(translationY);
             if (this.k && (view2 = this.f) != null) {
@@ -755,8 +755,8 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
             this.n = viewPropertyAnimatorCompatSet2;
             viewPropertyAnimatorCompatSet2.start();
         } else {
-            this.f1610c.setAlpha(1.0f);
-            this.f1610c.setTranslationY(0.0f);
+            this.f1562c.setAlpha(1.0f);
+            this.f1562c.setTranslationY(0.0f);
             if (this.k && (view = this.f) != null) {
                 view.setTranslationY(0.0f);
             }
@@ -785,12 +785,12 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
     @Override // androidx.appcompat.app.ActionBar
     public float getElevation() {
-        return ViewCompat.getElevation(this.f1610c);
+        return ViewCompat.getElevation(this.f1562c);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public int getHeight() {
-        return this.f1610c.getHeight();
+        return this.f1562c.getHeight();
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -856,12 +856,12 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
     public Context getThemedContext() {
         if (this.u == null) {
             TypedValue typedValue = new TypedValue();
-            this.f1609a.getTheme().resolveAttribute(R.attr.actionBarWidgetTheme, typedValue, true);
+            this.f1561a.getTheme().resolveAttribute(androidx.appcompat.R.attr.actionBarWidgetTheme, typedValue, true);
             int i = typedValue.resourceId;
             if (i != 0) {
-                this.u = new ContextThemeWrapper(this.f1609a, i);
+                this.u = new ContextThemeWrapper(this.f1561a, i);
             } else {
-                this.u = this.f1609a;
+                this.u = this.f1561a;
             }
         }
         return this.u;
@@ -925,7 +925,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
     @Override // androidx.appcompat.app.ActionBar
     public void onConfigurationChanged(Configuration configuration) {
-        a(ActionBarPolicy.get(this.f1609a).hasEmbeddedTabs());
+        a(ActionBarPolicy.get(this.f1561a).hasEmbeddedTabs());
     }
 
     @Override // androidx.appcompat.widget.ActionBarOverlayLayout.ActionBarVisibilityCallback
@@ -1052,7 +1052,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
     @Override // androidx.appcompat.app.ActionBar
     public void setBackgroundDrawable(Drawable drawable) {
-        this.f1610c.setPrimaryBackground(drawable);
+        this.f1562c.setPrimaryBackground(drawable);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -1124,7 +1124,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
     @Override // androidx.appcompat.app.ActionBar
     public void setElevation(float f) {
-        ViewCompat.setElevation(this.f1610c, f);
+        ViewCompat.setElevation(this.f1562c, f);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -1256,12 +1256,12 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
     @Override // androidx.appcompat.app.ActionBar
     public void setStackedBackgroundDrawable(Drawable drawable) {
-        this.f1610c.setStackedBackground(drawable);
+        this.f1562c.setStackedBackground(drawable);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setSubtitle(int i) {
-        setSubtitle(this.f1609a.getString(i));
+        setSubtitle(this.f1561a.getString(i));
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -1271,7 +1271,7 @@ public class WindowDecorActionBar extends ActionBar implements ActionBarOverlayL
 
     @Override // androidx.appcompat.app.ActionBar
     public void setTitle(int i) {
-        setTitle(this.f1609a.getString(i));
+        setTitle(this.f1561a.getString(i));
     }
 
     @Override // androidx.appcompat.app.ActionBar

@@ -12,16 +12,14 @@ import mtopsdk.mtop.domain.MtopResponse;
 import mtopsdk.mtop.util.MtopConvert;
 import mtopsdk.mtop.util.MtopStatistics;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/taobao/tao/remotebusiness/listener/MtopFinishListenerImpl.class */
-public class MtopFinishListenerImpl extends b implements MtopCallback.MtopFinishListener {
+class MtopFinishListenerImpl extends b implements MtopCallback.MtopFinishListener {
     private static final String TAG = "mtop.rb-FinishListener";
 
     public MtopFinishListenerImpl(MtopBusiness mtopBusiness, MtopListener mtopListener) {
         super(mtopBusiness, mtopListener);
     }
 
-    @Override // mtopsdk.mtop.common.MtopCallback.MtopFinishListener
     public void onFinished(MtopFinishEvent mtopFinishEvent, Object obj) {
         long j;
         TBSdkLog.b(TAG, this.mtopBusiness.getSeqNo(), "Mtop onFinish event received.");
@@ -58,7 +56,7 @@ public class MtopFinishListenerImpl extends b implements MtopCallback.MtopFinish
                 if (!a2.i() || this.mtopBusiness.clazz == null) {
                     j = currentTimeMillis2;
                 } else {
-                    a4.f34912c = MtopConvert.a(a2, this.mtopBusiness.clazz);
+                    a4.f21221c = MtopConvert.a(a2, this.mtopBusiness.clazz);
                     j = System.currentTimeMillis();
                 }
                 MtopStatistics g = a2.g();
@@ -74,8 +72,8 @@ public class MtopFinishListenerImpl extends b implements MtopCallback.MtopFinish
             if (mtopStatistics != null) {
                 MtopStatistics.RbStatisticData i = mtopStatistics.i();
                 i.b = this.mtopBusiness.sendStartTime - this.mtopBusiness.reqStartTime;
-                i.f43792a = currentTimeMillis - this.mtopBusiness.sendStartTime;
-                i.f43793c = this.mtopBusiness.onBgFinishTime - currentTimeMillis;
+                i.a = currentTimeMillis - this.mtopBusiness.sendStartTime;
+                i.c = this.mtopBusiness.onBgFinishTime - currentTimeMillis;
                 i.f = currentTimeMillis2 - currentTimeMillis;
                 i.e = j - currentTimeMillis2;
                 i.d = this.mtopBusiness.onBgFinishTime - this.mtopBusiness.reqStartTime;

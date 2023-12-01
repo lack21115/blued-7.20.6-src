@@ -11,7 +11,7 @@ import java.util.Collection;
 public final class Detail extends MapJceStruct {
 
     /* renamed from: c  reason: collision with root package name */
-    public static Basic f37273c = new Basic();
+    public static Basic f23582c = new Basic();
     public static ArrayList<Float> d = new ArrayList<>();
     public Basic basic;
     public ArrayList<Float> coord;
@@ -34,7 +34,7 @@ public final class Detail extends MapJceStruct {
 
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
-        this.basic = (Basic) mVar.b((p) f37273c, 0, true);
+        this.basic = (Basic) mVar.b((p) f23582c, 0, true);
         this.coord = (ArrayList) mVar.a((m) d, 1, false);
     }
 

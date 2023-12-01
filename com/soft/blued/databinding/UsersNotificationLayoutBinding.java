@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class UsersNotificationLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f29610a;
+    public final ConstraintLayout f15920a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f29611c;
+    public final FrameLayout f15921c;
     public final FrameLayout d;
     public final FrameLayout e;
     public final ImageView f;
@@ -33,9 +33,9 @@ public final class UsersNotificationLayoutBinding implements ViewBinding {
 
     private UsersNotificationLayoutBinding(ShapeConstraintLayout shapeConstraintLayout, ConstraintLayout constraintLayout, ImageView imageView, FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, TextView textView, TextView textView2) {
         this.o = shapeConstraintLayout;
-        this.f29610a = constraintLayout;
+        this.f15920a = constraintLayout;
         this.b = imageView;
-        this.f29611c = frameLayout;
+        this.f15921c = frameLayout;
         this.d = frameLayout2;
         this.e = frameLayout3;
         this.f = imageView2;
@@ -65,11 +65,11 @@ public final class UsersNotificationLayoutBinding implements ViewBinding {
                             if (imageView2 != null) {
                                 ImageView imageView3 = (ImageView) view.findViewById(R.id.img_chat);
                                 if (imageView3 != null) {
-                                    ImageView imageView4 = (ImageView) view.findViewById(2131364588);
+                                    ImageView imageView4 = (ImageView) view.findViewById(R.id.img_live_new_icon);
                                     if (imageView4 != null) {
                                         ImageView imageView5 = (ImageView) view.findViewById(R.id.img_notification_bg);
                                         if (imageView5 != null) {
-                                            ImageView imageView6 = (ImageView) view.findViewById(2131364720);
+                                            ImageView imageView6 = (ImageView) view.findViewById(R.id.img_verify);
                                             if (imageView6 != null) {
                                                 ImageView imageView7 = (ImageView) view.findViewById(R.id.tv_bg_1);
                                                 if (imageView7 != null) {

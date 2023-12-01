@@ -16,7 +16,7 @@ public class fa {
     private static final int Z = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f22477a = 62914560;
+    private static final long f8869a = 62914560;
     private static final String b = fa.class.getSimpleName();
     public int Code;
     private int[] E;
@@ -34,7 +34,7 @@ public class fa {
     private int W;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f22478c;
+    private final int f8870c;
     private InputStream d;
     private boolean j;
     private boolean k;
@@ -66,7 +66,7 @@ public class fa {
 
     public fa(InputStream inputStream, int i) {
         this.d = inputStream;
-        this.f22478c = i;
+        this.f8870c = i;
         Z();
     }
 
@@ -106,7 +106,7 @@ public class fa {
     private Bitmap Code(int[] iArr, int i, int i2, Bitmap bitmap) {
         Bitmap bitmap2 = bitmap;
         if (bitmap == null) {
-            Bitmap.Config config = com.huawei.openalliance.ad.utils.v.V() > f22477a ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
+            Bitmap.Config config = com.huawei.openalliance.ad.utils.v.V() > f8869a ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
             if (ge.Code()) {
                 ge.Code(b, "create image with config %s", config);
             }
@@ -427,7 +427,7 @@ public class fa {
         this.i = z;
         int F2 = F() * 10;
         this.s = F2;
-        int i2 = this.f22478c;
+        int i2 = this.f8870c;
         if (i2 > F2) {
             this.s = i2;
         }
@@ -531,7 +531,7 @@ public class fa {
         this.i = false;
         this.t = 0;
         this.A = null;
-        this.s = this.f22478c;
+        this.s = this.f8870c;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0064  */

@@ -21,11 +21,11 @@ public class a9 {
     public static final int x = 120;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f37291a;
+    public int f23600a;
     public double[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f37292c;
+    public long f23601c;
     public boolean d;
     public boolean e;
     public Runnable f;
@@ -35,7 +35,7 @@ public class a9 {
     public static final a9 A = new a9(104, null);
 
     public a9() {
-        this.f37292c = -1L;
+        this.f23601c = -1L;
         this.d = false;
     }
 
@@ -44,27 +44,27 @@ public class a9 {
     }
 
     public a9(int i2, double[] dArr, boolean z2) {
-        this.f37292c = -1L;
+        this.f23601c = -1L;
         this.d = false;
-        this.f37291a = i2;
+        this.f23600a = i2;
         this.b = dArr;
         this.e = z2;
     }
 
     public a9(Runnable runnable) {
-        this.f37292c = -1L;
+        this.f23601c = -1L;
         this.d = false;
-        this.f37291a = 6;
+        this.f23600a = 6;
         this.f = runnable;
     }
 
     public long a() {
-        long j2 = this.f37292c;
+        long j2 = this.f23601c;
         long j3 = 0;
         if (j2 >= 0) {
             return j2;
         }
-        if (this.f37291a >= 100) {
+        if (this.f23600a >= 100) {
             j3 = 20;
         }
         return j3;

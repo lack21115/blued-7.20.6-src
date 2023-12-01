@@ -18,9 +18,9 @@ public class e extends i {
         com.alibaba.mtl.log.e.i.a("AlarmMonitorPointSampling", "samplingSeed:", Integer.valueOf(i), "isSuccess:", bool, "successSampling:", Integer.valueOf(this.o), "failSampling:", Integer.valueOf(this.p));
         if (this.e != null && map != null) {
             for (c cVar : this.e) {
-                Boolean a2 = cVar.a(i, map);
-                if (a2 != null) {
-                    return a2.booleanValue();
+                Boolean a = cVar.a(i, map);
+                if (a != null) {
+                    return a.booleanValue();
                 }
             }
         }

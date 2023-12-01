@@ -11,11 +11,11 @@ public abstract class a {
     private static final int e = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f40959a;
+    private final long f27268a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f40960c;
+    private long f27269c;
     private HandlerThread f;
     private Handler g;
     private boolean d = false;
@@ -26,7 +26,7 @@ public abstract class a {
                 if (a.this.d) {
                     return true;
                 }
-                long elapsedRealtime = a.this.f40960c - SystemClock.elapsedRealtime();
+                long elapsedRealtime = a.this.f27269c - SystemClock.elapsedRealtime();
                 if (elapsedRealtime <= 0) {
                     a.this.c();
                     if (a.this.f != null) {
@@ -49,7 +49,7 @@ public abstract class a {
     };
 
     public a(long j, long j2) {
-        this.f40959a = j;
+        this.f27268a = j;
         this.b = j2;
         if (d()) {
             this.g = new Handler(this.h);
@@ -77,11 +77,11 @@ public abstract class a {
     public final a b() {
         synchronized (this) {
             this.d = false;
-            if (this.f40959a <= 0) {
+            if (this.f27268a <= 0) {
                 c();
                 return this;
             }
-            this.f40960c = SystemClock.elapsedRealtime() + this.f40959a;
+            this.f27269c = SystemClock.elapsedRealtime() + this.f27268a;
             this.g.sendMessage(this.g.obtainMessage(1));
             return this;
         }

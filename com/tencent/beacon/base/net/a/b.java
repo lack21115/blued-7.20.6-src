@@ -10,8 +10,8 @@ import com.tencent.beacon.pack.ResponsePackageV2;
 public class b extends c.a<byte[], AbstractJceStruct> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f34962a = new a();
-    private final C0897b b = new C0897b();
+    private final a f21271a = new a();
+    private final C0727b b = new C0727b();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/base/net/a/b$a.class */
@@ -49,8 +49,8 @@ public class b extends c.a<byte[], AbstractJceStruct> {
 
     /* renamed from: com.tencent.beacon.base.net.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/base/net/a/b$b.class */
-    static final class C0897b implements c<byte[], ResponsePackageV2> {
-        C0897b() {
+    static final class C0727b implements c<byte[], ResponsePackageV2> {
+        C0727b() {
         }
 
         private byte[] b(byte[] bArr) {
@@ -78,6 +78,6 @@ public class b extends c.a<byte[], AbstractJceStruct> {
     }
 
     public c<RequestPackageV2, byte[]> c() {
-        return this.f34962a;
+        return this.f21271a;
     }
 }

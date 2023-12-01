@@ -8,14 +8,14 @@ import java.lang.reflect.Method;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f24363a = false;
+    public static boolean f10676a = false;
     private static String b = "ReflectHelp";
 
     public static Class a(String str) {
         try {
             return Class.forName(str);
         } catch (Throwable th) {
-            if (f24363a) {
+            if (f10676a) {
                 String str2 = b;
                 Log.w(str2, "reflect:" + th.getMessage());
                 return null;
@@ -36,7 +36,7 @@ public final class j {
             }
             return null;
         } catch (Throwable th) {
-            if (f24363a) {
+            if (f10676a) {
                 String str2 = b;
                 Log.w(str2, "reflect:" + th.getMessage());
                 return null;

@@ -44,13 +44,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYCreatePKView.class */
 public class YYCreatePKView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYSetTimeView f18112a;
+    private YYSetTimeView a;
     private YYPlayersView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f18113c;
+    private RecyclerView c;
     private YYPkGiftAdapter d;
     private TextView e;
     private TextView f;
@@ -84,17 +80,16 @@ public class YYCreatePKView extends LinearLayout implements View.OnClickListener
 
     private View a(final boolean z, List<YYRewardModel> list) {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.pop_pk_reward_layout, (ViewGroup) null);
-        RecyclerView recyclerView = (RecyclerView) inflate.findViewById(R.id.rv_reward_list);
+        RecyclerView findViewById = inflate.findViewById(R.id.rv_reward_list);
         TextView textView = (TextView) inflate.findViewById(R.id.tv_create_title);
         final ShapeTextView shapeTextView = (ShapeTextView) inflate.findViewById(R.id.tv_ok_reward);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        findViewById.setLayoutManager(linearLayoutManager);
         textView.setText(String.format(getResources().getString(R.string.yy_pk_reward_title), z ? "A" : "B"));
         final YYRewardAdapter yYRewardAdapter = new YYRewardAdapter();
-        recyclerView.setAdapter(yYRewardAdapter);
+        findViewById.setAdapter(yYRewardAdapter);
         yYRewardAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYCreatePKView.4
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int i2 = 0;
                 while (true) {
@@ -120,13 +115,13 @@ public class YYCreatePKView extends LinearLayout implements View.OnClickListener
             public void onClick(View view) {
                 YYRewardModel yYRewardModel;
                 Tracker.onClick(view);
-                Iterator<YYRewardModel> it = yYRewardAdapter.getData().iterator();
+                Iterator it = yYRewardAdapter.getData().iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         yYRewardModel = null;
                         break;
                     }
-                    yYRewardModel = it.next();
+                    yYRewardModel = (YYRewardModel) it.next();
                     if (yYRewardModel.selected) {
                         break;
                     }
@@ -152,8 +147,8 @@ public class YYCreatePKView extends LinearLayout implements View.OnClickListener
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_create_pk, (ViewGroup) this, true);
-        this.f18112a = (YYSetTimeView) findViewById(R.id.set_time_layout);
-        this.f18113c = (RecyclerView) findViewById(R.id.rv_pkgift_list);
+        this.a = (YYSetTimeView) findViewById(R.id.set_time_layout);
+        this.c = findViewById(R.id.rv_pkgift_list);
         this.b = (YYPlayersView) findViewById(R.id.player_choose_layout);
         this.e = (TextView) findViewById(R.id.tv_reward_left);
         this.f = (TextView) findViewById(R.id.tv_reward_right);
@@ -190,7 +185,6 @@ public class YYCreatePKView extends LinearLayout implements View.OnClickListener
         this.b.setPlayerTitle(getResources().getString(R.string.yy_pk_user));
         this.b.setMarginTop(DensityUtils.a(getContext(), 8.0f));
         this.b.setOnClickTimeItemListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYCreatePKView.1
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int i2 = 0;
                 while (true) {
@@ -223,10 +217,9 @@ public class YYCreatePKView extends LinearLayout implements View.OnClickListener
         this.d = new YYPkGiftAdapter(getContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        this.f18113c.setLayoutManager(linearLayoutManager);
-        this.f18113c.setAdapter(this.d);
+        this.c.setLayoutManager(linearLayoutManager);
+        this.c.setAdapter(this.d);
         this.d.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYCreatePKView.2
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int i2 = 0;
                 while (true) {
@@ -250,11 +243,10 @@ public class YYCreatePKView extends LinearLayout implements View.OnClickListener
     }
 
     private void d() {
-        this.f18112a.setTimeTitle(getResources().getString(R.string.yy_pk_duration));
-        this.f18112a.setMarginTop(DensityUtils.a(getContext(), 8.0f));
-        this.f18112a.setTimeRangeList(getTimeList());
-        this.f18112a.setOnClickTimeItemListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYCreatePKView.3
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        this.a.setTimeTitle(getResources().getString(R.string.yy_pk_duration));
+        this.a.setMarginTop(DensityUtils.a(getContext(), 8.0f));
+        this.a.setTimeRangeList(getTimeList());
+        this.a.setOnClickTimeItemListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYCreatePKView.3
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int i2 = 0;
                 while (true) {

@@ -3,7 +3,6 @@ package com.opos.exoplayer.core.h;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.net.Uri;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,11 +11,11 @@ import java.io.InputStream;
 public final class c implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AssetManager f25442a;
+    private final AssetManager f11754a;
     private final t<? super c> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Uri f25443c;
+    private Uri f11755c;
     private InputStream d;
     private long e;
     private boolean f;
@@ -29,7 +28,7 @@ public final class c implements g {
     }
 
     public c(Context context, t<? super c> tVar) {
-        this.f25442a = context.getAssets();
+        this.f11754a = context.getAssets();
         this.b = tVar;
     }
 
@@ -71,18 +70,18 @@ public final class c implements g {
     public long a(i iVar) {
         String str;
         try {
-            Uri uri = iVar.f25449a;
-            this.f25443c = uri;
+            Uri uri = iVar.f11761a;
+            this.f11755c = uri;
             String path = uri.getPath();
             if (path.startsWith("/android_asset/")) {
                 str = path.substring(15);
             } else {
                 str = path;
-                if (path.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (path.startsWith("/")) {
                     str = path.substring(1);
                 }
             }
-            InputStream open = this.f25442a.open(str, 1);
+            InputStream open = this.f11754a.open(str, 1);
             this.d = open;
             if (open.skip(iVar.d) >= iVar.d) {
                 if (iVar.e != -1) {
@@ -109,12 +108,12 @@ public final class c implements g {
 
     @Override // com.opos.exoplayer.core.h.g
     public Uri a() {
-        return this.f25443c;
+        return this.f11755c;
     }
 
     @Override // com.opos.exoplayer.core.h.g
     public void b() {
-        this.f25443c = null;
+        this.f11755c = null;
         try {
             try {
                 if (this.d != null) {

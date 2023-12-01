@@ -358,7 +358,7 @@ public class Thread implements Runnable {
     }
 
     public final void join(long j, int i) throws InterruptedException {
-        if (j < 0 || i < 0 || i >= 1000000) {
+        if (j < 0 || i < 0 || i >= NANOS_PER_MILLI) {
             throw new IllegalArgumentException("bad timeout: millis=" + j + ",nanos=" + i);
         }
         if (((((long) i) | j) == 0) || ((j > ((Long.MAX_VALUE - ((long) i)) / 1000000) ? 1 : (j == ((Long.MAX_VALUE - ((long) i)) / 1000000) ? 0 : -1)) >= 0)) {
@@ -450,7 +450,7 @@ public class Thread implements Runnable {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.lang.Runnable
+    @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         if (this.target != null) {
             this.target.run();

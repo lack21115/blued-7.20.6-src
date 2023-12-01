@@ -17,11 +17,11 @@ import java.util.LinkedList;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f40891a = 273;
+    public static final int f27200a = 273;
     private static Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static HandlerThread f40892c;
+    private static HandlerThread f27201c;
     private static Handler d;
     private static final int f = 274;
     private static final int g = 275;
@@ -55,9 +55,9 @@ public class b {
                 try {
                     Context applicationContext = context.getApplicationContext();
                     b = applicationContext;
-                    if (applicationContext != null && f40892c == null) {
+                    if (applicationContext != null && f27201c == null) {
                         HandlerThread handlerThread = new HandlerThread("SL-NetWorkSender");
-                        f40892c = handlerThread;
+                        f27201c = handlerThread;
                         handlerThread.start();
                         if (i == null) {
                             String str = b.getFilesDir() + File.separator + com.umeng.commonsdk.stateless.a.f;
@@ -72,7 +72,7 @@ public class b {
                             UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> 2号数据仓File Monitor启动.");
                         }
                         if (d == null) {
-                            d = new Handler(f40892c.getLooper()) { // from class: com.umeng.commonsdk.stateless.b.1
+                            d = new Handler(f27201c.getLooper()) { // from class: com.umeng.commonsdk.stateless.b.1
                                 @Override // android.os.Handler
                                 public void handleMessage(Message message) {
                                     int i2 = message.what;
@@ -214,7 +214,7 @@ public class b {
                     String name = file.getName();
                     String substring = !TextUtils.isEmpty(name) ? name.substring(0, 1) : "u";
                     String c2 = d.c(d.d(name));
-                    if (cVar.a(bArr, c2, com.umeng.commonsdk.vchannel.a.f40970c.equalsIgnoreCase(c2) ? com.umeng.commonsdk.vchannel.a.f40969a : "", substring) && !file.delete()) {
+                    if (cVar.a(bArr, c2, com.umeng.commonsdk.vchannel.a.f27279c.equalsIgnoreCase(c2) ? com.umeng.commonsdk.vchannel.a.f27278a : "", substring) && !file.delete()) {
                         file.delete();
                     }
                 } else {

@@ -22,7 +22,7 @@ public final class EvictingQueue<E> extends ForwardingQueue<E> implements Serial
         return new EvictingQueue<>(i);
     }
 
-    @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Queue
     public boolean add(E e) {
         Preconditions.checkNotNull(e);
         if (this.maxSize == 0) {
@@ -35,7 +35,7 @@ public final class EvictingQueue<E> extends ForwardingQueue<E> implements Serial
         return true;
     }
 
-    @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.ForwardingCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         int size = collection.size();
         if (size >= this.maxSize) {
@@ -56,7 +56,7 @@ public final class EvictingQueue<E> extends ForwardingQueue<E> implements Serial
         return this.delegate;
     }
 
-    @Override // com.google.common.collect.ForwardingQueue, java.util.Queue, java.util.concurrent.BlockingQueue
+    @Override // com.google.common.collect.ForwardingQueue, java.util.Queue
     public boolean offer(E e) {
         return add(e);
     }

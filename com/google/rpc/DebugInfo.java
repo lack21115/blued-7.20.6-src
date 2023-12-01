@@ -86,7 +86,7 @@ public final class DebugInfo extends GeneratedMessageV3 implements DebugInfoOrBu
         public Builder addStackEntries(String str) {
             if (str != null) {
                 ensureStackEntriesIsMutable();
-                this.stackEntries_.add((LazyStringList) str);
+                this.stackEntries_.add(str);
                 onChanged();
                 return this;
             }
@@ -161,8 +161,8 @@ public final class DebugInfo extends GeneratedMessageV3 implements DebugInfoOrBu
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -199,7 +199,7 @@ public final class DebugInfo extends GeneratedMessageV3 implements DebugInfoOrBu
 
         @Override // com.google.rpc.DebugInfoOrBuilder
         public String getStackEntries(int i) {
-            return this.stackEntries_.get(i);
+            return (String) this.stackEntries_.get(i);
         }
 
         @Override // com.google.rpc.DebugInfoOrBuilder
@@ -350,7 +350,7 @@ public final class DebugInfo extends GeneratedMessageV3 implements DebugInfoOrBu
         public Builder setStackEntries(int i, String str) {
             if (str != null) {
                 ensureStackEntriesIsMutable();
-                this.stackEntries_.set(i, (int) str);
+                this.stackEntries_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -390,7 +390,7 @@ public final class DebugInfo extends GeneratedMessageV3 implements DebugInfoOrBu
                                 this.stackEntries_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.stackEntries_.add((LazyStringList) readStringRequireUtf8);
+                            this.stackEntries_.add(readStringRequireUtf8);
                             z2 = z4;
                         } else if (readTag == 18) {
                             this.detail_ = codedInputStream.readStringRequireUtf8();
@@ -558,7 +558,7 @@ public final class DebugInfo extends GeneratedMessageV3 implements DebugInfoOrBu
 
     @Override // com.google.rpc.DebugInfoOrBuilder
     public String getStackEntries(int i) {
-        return this.stackEntries_.get(i);
+        return (String) this.stackEntries_.get(i);
     }
 
     @Override // com.google.rpc.DebugInfoOrBuilder

@@ -16,27 +16,27 @@ import androidx.media.MediaSessionManager;
 public class MediaSessionManagerImplBase implements MediaSessionManager.MediaSessionManagerImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f3165a = MediaSessionManager.f3160a;
+    private static final boolean f3117a = MediaSessionManager.f3112a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    ContentResolver f3166c;
+    ContentResolver f3118c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/media/MediaSessionManagerImplBase$RemoteUserInfoImplBase.class */
     static class RemoteUserInfoImplBase implements MediaSessionManager.RemoteUserInfoImpl {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f3167a;
+        private String f3119a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f3168c;
+        private int f3120c;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public RemoteUserInfoImplBase(String str, int i, int i2) {
-            this.f3167a = str;
+            this.f3119a = str;
             this.b = i;
-            this.f3168c = i2;
+            this.f3120c = i2;
         }
 
         public boolean equals(Object obj) {
@@ -45,14 +45,14 @@ public class MediaSessionManagerImplBase implements MediaSessionManager.MediaSes
             }
             if (obj instanceof RemoteUserInfoImplBase) {
                 RemoteUserInfoImplBase remoteUserInfoImplBase = (RemoteUserInfoImplBase) obj;
-                return TextUtils.equals(this.f3167a, remoteUserInfoImplBase.f3167a) && this.b == remoteUserInfoImplBase.b && this.f3168c == remoteUserInfoImplBase.f3168c;
+                return TextUtils.equals(this.f3119a, remoteUserInfoImplBase.f3119a) && this.b == remoteUserInfoImplBase.b && this.f3120c == remoteUserInfoImplBase.f3120c;
             }
             return false;
         }
 
         @Override // androidx.media.MediaSessionManager.RemoteUserInfoImpl
         public String getPackageName() {
-            return this.f3167a;
+            return this.f3119a;
         }
 
         @Override // androidx.media.MediaSessionManager.RemoteUserInfoImpl
@@ -62,18 +62,18 @@ public class MediaSessionManagerImplBase implements MediaSessionManager.MediaSes
 
         @Override // androidx.media.MediaSessionManager.RemoteUserInfoImpl
         public int getUid() {
-            return this.f3168c;
+            return this.f3120c;
         }
 
         public int hashCode() {
-            return ObjectsCompat.hash(this.f3167a, Integer.valueOf(this.b), Integer.valueOf(this.f3168c));
+            return ObjectsCompat.hash(this.f3119a, Integer.valueOf(this.b), Integer.valueOf(this.f3120c));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MediaSessionManagerImplBase(Context context) {
         this.b = context;
-        this.f3166c = context.getContentResolver();
+        this.f3118c = context.getContentResolver();
     }
 
     private boolean a(MediaSessionManager.RemoteUserInfoImpl remoteUserInfoImpl, String str) {
@@ -81,7 +81,7 @@ public class MediaSessionManagerImplBase implements MediaSessionManager.MediaSes
     }
 
     boolean a(MediaSessionManager.RemoteUserInfoImpl remoteUserInfoImpl) {
-        String string = Settings.Secure.getString(this.f3166c, Settings.Secure.ENABLED_NOTIFICATION_LISTENERS);
+        String string = Settings.Secure.getString(this.f3118c, Settings.Secure.ENABLED_NOTIFICATION_LISTENERS);
         if (string == null) {
             return false;
         }
@@ -114,14 +114,14 @@ public class MediaSessionManagerImplBase implements MediaSessionManager.MediaSes
                     z = true;
                 }
                 return z;
-            } else if (f3165a) {
+            } else if (f3117a) {
                 Log.d("MediaSessionManager", "Package name " + remoteUserInfoImpl.getPackageName() + " doesn't match with the uid " + remoteUserInfoImpl.getUid());
                 return false;
             } else {
                 return false;
             }
         } catch (PackageManager.NameNotFoundException e) {
-            if (f3165a) {
+            if (f3117a) {
                 Log.d("MediaSessionManager", "Package " + remoteUserInfoImpl.getPackageName() + " doesn't exist");
                 return false;
             }

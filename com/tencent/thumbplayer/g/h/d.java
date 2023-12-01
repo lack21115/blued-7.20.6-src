@@ -10,18 +10,18 @@ import java.util.concurrent.Executors;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Handler f39362a = new Handler(Looper.getMainLooper());
+    private static final Handler f25671a = new Handler(Looper.getMainLooper());
     private static final ExecutorService b = Executors.newCachedThreadPool();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final HandlerThread f39363c;
+    private static final HandlerThread f25672c;
     private static Handler d;
 
     static {
         HandlerThread handlerThread = new HandlerThread("tmediacodec-sub");
-        f39363c = handlerThread;
+        f25672c = handlerThread;
         handlerThread.start();
-        d = new Handler(f39363c.getLooper());
+        d = new Handler(f25672c.getLooper());
     }
 
     public static void a(Runnable runnable) {

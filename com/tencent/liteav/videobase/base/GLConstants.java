@@ -4,11 +4,11 @@ package com.tencent.liteav.videobase.base;
 public interface GLConstants {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final float[] f36597a = {1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f};
+    public static final float[] f22906a = {1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f};
     public static final float[] b = {-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final float[] f36598c = {-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f};
+    public static final float[] f22907c = {-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f};
     public static final float[] d = {0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f};
     public static final float[] e = {1.0f, 0.0f, 1.0f, 1.0f, 0.0f, 0.0f, 0.0f, 1.0f};
     public static final float[] f = {0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f};
@@ -83,7 +83,7 @@ public interface GLConstants {
         
 
         /* renamed from: c  reason: collision with root package name */
-        private static final Orientation[] f36604c = values();
+        private static final Orientation[] f22913c = values();
         int mValue;
 
         Orientation(int i) {
@@ -91,7 +91,7 @@ public interface GLConstants {
         }
 
         public static Orientation a(int i) {
-            Orientation[] orientationArr = f36604c;
+            Orientation[] orientationArr = f22913c;
             int length = orientationArr.length;
             int i2 = 0;
             while (true) {

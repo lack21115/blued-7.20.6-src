@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cloud.huiyansdkface.facelight.a.b.b;
 import com.tencent.cloud.huiyansdkface.facelight.api.listeners.WbCloudFaceVerifyLoginListener;
 import com.tencent.cloud.huiyansdkface.facelight.api.listeners.WbCloudFaceVerifyResultListener;
@@ -42,11 +41,11 @@ import java.util.Properties;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile d f35631a;
+    private static volatile d f21940a;
     private WbCloudFaceVerifyResultListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private WbCloudFaceVerifyLoginListener f35632c;
+    private WbCloudFaceVerifyLoginListener f21941c;
     private WbFaceVerifyInitCusSdkCallback d;
     private boolean e;
     private boolean f;
@@ -128,7 +127,7 @@ public class d {
     private void a(final Context context, long j) {
         WLogger.d("WbFaceVerifyControl", "startLoginRequest");
         this.o = true;
-        new com.tencent.cloud.huiyansdkface.facelight.process.d.a(f35631a, this.x).a(context, j, new ProcessCallback<LoginResult>() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.d.1
+        new com.tencent.cloud.huiyansdkface.facelight.process.d.a(f21940a, this.x).a(context, j, new ProcessCallback<LoginResult>() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.d.1
             @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
             /* renamed from: a */
             public void onSuccess(LoginResult loginResult) {
@@ -171,7 +170,7 @@ public class d {
         } else {
             KycWaSDK.getInstance().trackCustomKVEvent(context, "faceservice_login_fail", wbFaceError.getReason(), Z);
         }
-        WbCloudFaceVerifyLoginListener wbCloudFaceVerifyLoginListener = this.f35632c;
+        WbCloudFaceVerifyLoginListener wbCloudFaceVerifyLoginListener = this.f21941c;
         if (wbCloudFaceVerifyLoginListener != null) {
             wbCloudFaceVerifyLoginListener.onLoginFailed(wbFaceError);
         }
@@ -206,13 +205,13 @@ public class d {
             properties.setProperty("isStartSdk", String.valueOf(this.f));
             KycWaSDK.getInstance().trackCustomKVEvent(context, "faceservice_params_invalid", str3, properties);
         }
-        if (this.f35632c != null) {
+        if (this.f21941c != null) {
             WbFaceError wbFaceError = new WbFaceError();
             wbFaceError.setDomain(WbFaceError.WBFaceErrorDomainParams);
             wbFaceError.setCode(str);
             wbFaceError.setDesc(str2);
             wbFaceError.setReason(str3);
-            this.f35632c.onLoginFailed(wbFaceError);
+            this.f21941c.onLoginFailed(wbFaceError);
         }
         if (this.d != null) {
             WbFaceError wbFaceError2 = new WbFaceError();
@@ -273,10 +272,10 @@ public class d {
                 this.j = a2;
                 if (wbFaceVerifyInitCusSdkCallback != null) {
                     this.d = wbFaceVerifyInitCusSdkCallback;
-                    this.f35632c = null;
+                    this.f21941c = null;
                 } else {
                     this.d = null;
-                    this.f35632c = wbCloudFaceVerifyLoginListener;
+                    this.f21941c = wbCloudFaceVerifyLoginListener;
                 }
                 B();
                 a(applicationContext);
@@ -458,7 +457,7 @@ public class d {
         if (a2.c()) {
             return true;
         }
-        if (a2.f35519a == 1) {
+        if (a2.f21828a == 1) {
             a(context, WbFaceError.WBFaceErrorCodeInputParaNull, "传入参数有误", a2.b);
             return false;
         }
@@ -481,7 +480,7 @@ public class d {
         WLogger.d("WbFaceVerifyControl", "deviceModel=" + deviceModel);
         String a2 = f.a(context);
         String a3 = f.a(this.j.H());
-        String str = Build.BRAND + BridgeUtil.SPLIT_MARK + com.tencent.cloud.huiyansdkface.facelight.c.a.a(Build.BRAND);
+        String str = Build.BRAND + "/" + com.tencent.cloud.huiyansdkface.facelight.c.a.a(Build.BRAND);
         String str2 = this.j.f() ? "uni" : "nor";
         Param.setDeviceInfo("di=;dt=Android;dv=" + String.valueOf(i) + ";dm=" + deviceModel + ";rom=" + str + ";st=" + a2 + ";wv=" + BuildConfig.VERSION_NAME + ";lang=" + a3 + ";apt=" + str2 + com.tencent.cloud.huiyansdkface.facelight.c.d.d.b(context));
         StringBuilder sb = new StringBuilder();
@@ -519,9 +518,9 @@ public class d {
                 cloudFaceCountDownTimer.cancel();
                 this.w = null;
             }
-            if (this.f35632c != null) {
+            if (this.f21941c != null) {
                 KycWaSDK.getInstance().trackCustomKVEvent(context, "faceservice_login_success", null, this.j.Z());
-                this.f35632c.onLoginSuccess();
+                this.f21941c.onLoginSuccess();
                 this.u = false;
                 this.v = false;
             }
@@ -529,25 +528,25 @@ public class d {
     }
 
     public static d z() {
-        if (f35631a == null) {
+        if (f21940a == null) {
             synchronized (d.class) {
                 try {
-                    if (f35631a == null) {
-                        f35631a = new d();
+                    if (f21940a == null) {
+                        f21940a = new d();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f35631a;
+        return f21940a;
     }
 
     public void A() {
         WLogger.d("WbFaceVerifyControl", "release");
         h();
-        if (this.f35632c != null) {
-            this.f35632c = null;
+        if (this.f21941c != null) {
+            this.f21941c = null;
         }
         if (this.d != null) {
             this.d = null;

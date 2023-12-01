@@ -9,9 +9,8 @@ public final class FinalizerReference<T> extends Reference<T> {
     private static final Object LIST_LOCK = new Object();
     private static FinalizerReference<?> head = null;
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/lang/ref/FinalizerReference$Sentinel.class */
-    public static class Sentinel {
+    private static class Sentinel {
         boolean finalized;
 
         private Sentinel() {

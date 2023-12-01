@@ -20,20 +20,20 @@ public class dn {
     }
 
     public static byte[] a(String str, byte[] bArr) {
-        byte[] m11546a = bk.m11546a(str);
+        byte[] m8496a = bk.m8496a(str);
         try {
-            a(m11546a);
-            return h.a(m11546a, bArr);
+            a(m8496a);
+            return h.a(m8496a, bArr);
         } catch (Exception e) {
             return null;
         }
     }
 
     public static byte[] b(String str, byte[] bArr) {
-        byte[] m11546a = bk.m11546a(str);
+        byte[] m8496a = bk.m8496a(str);
         try {
-            a(m11546a);
-            return h.b(m11546a, bArr);
+            a(m8496a);
+            return h.b(m8496a, bArr);
         } catch (Exception e) {
             return null;
         }

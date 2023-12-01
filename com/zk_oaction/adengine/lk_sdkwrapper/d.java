@@ -15,11 +15,11 @@ import java.util.Map;
 public class d implements com.zk_oaction.adengine.lk_interfaces.a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected g f41967a;
+    protected g f28276a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f41968c;
+    public int f28277c;
     private Context d;
     private com.zk_oaction.adengine.lk_sdk.b e;
     private SoundPool f;
@@ -61,7 +61,7 @@ public class d implements com.zk_oaction.adengine.lk_interfaces.a {
             com.zk_oaction.adengine.bitmap.g r1 = new com.zk_oaction.adengine.bitmap.g
             r2 = r1
             r2.<init>()
-            r0.f41967a = r1
+            r0.f28276a = r1
             r0 = r8
             if (r0 == 0) goto L34
             r0 = r9
@@ -75,20 +75,20 @@ public class d implements com.zk_oaction.adengine.lk_interfaces.a {
             int r0 = r0.b
             r8 = r0
             r0 = r5
-            int r0 = r0.f41968c
+            int r0 = r0.f28277c
             r7 = r0
         L42:
             r0 = r5
-            com.zk_oaction.adengine.bitmap.g r0 = r0.f41967a
+            com.zk_oaction.adengine.bitmap.g r0 = r0.f28276a
             r1 = r8
             r2 = r7
             r0.a(r1, r2)
             r0 = r5
-            com.zk_oaction.adengine.bitmap.g r0 = r0.f41967a
+            com.zk_oaction.adengine.bitmap.g r0 = r0.f28276a
             r1 = 0
             r0.a(r1)
             r0 = r5
-            com.zk_oaction.adengine.bitmap.g r0 = r0.f41967a
+            com.zk_oaction.adengine.bitmap.g r0 = r0.f28276a
             r1 = r5
             r0.a(r1)
             return
@@ -138,7 +138,7 @@ public class d implements com.zk_oaction.adengine.lk_interfaces.a {
 
     @Override // com.zk_oaction.adengine.lk_interfaces.a
     public com.zk_oaction.adengine.lk_interfaces.b a(int i, int i2, Bitmap.Config config) {
-        g gVar = this.f41967a;
+        g gVar = this.f28276a;
         if (gVar != null) {
             return gVar.a(i, i2, config);
         }
@@ -147,7 +147,7 @@ public class d implements com.zk_oaction.adengine.lk_interfaces.a {
 
     @Override // com.zk_oaction.adengine.lk_interfaces.a
     public com.zk_oaction.adengine.lk_interfaces.b a(String str, float f, int i) {
-        g gVar = this.f41967a;
+        g gVar = this.f28276a;
         if (gVar != null) {
             return gVar.b(str, f, i);
         }
@@ -301,7 +301,7 @@ public class d implements com.zk_oaction.adengine.lk_interfaces.a {
 
     @Override // com.zk_oaction.adengine.lk_interfaces.a
     public void b() {
-        this.f41967a.a(300L);
+        this.f28276a.a(300L);
     }
 
     @Override // com.zk_oaction.adengine.lk_interfaces.a
@@ -318,7 +318,7 @@ public class d implements com.zk_oaction.adengine.lk_interfaces.a {
 
     @Override // com.zk_oaction.adengine.lk_interfaces.a
     public void c() {
-        g gVar = this.f41967a;
+        g gVar = this.f28276a;
         if (gVar == null) {
             return;
         }
@@ -378,10 +378,10 @@ public class d implements com.zk_oaction.adengine.lk_interfaces.a {
     public void h() {
         try {
             this.e.c();
-            g gVar = this.f41967a;
+            g gVar = this.f28276a;
             if (gVar != null) {
                 gVar.d();
-                this.f41967a = null;
+                this.f28276a = null;
             }
             SoundPool soundPool = this.f;
             if (soundPool != null) {

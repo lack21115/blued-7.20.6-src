@@ -96,9 +96,9 @@ public class AppWidgetProviderInfo implements Parcelable {
     }
 
     /* renamed from: clone */
-    public AppWidgetProviderInfo m152clone() {
+    public AppWidgetProviderInfo m150clone() {
         AppWidgetProviderInfo appWidgetProviderInfo = new AppWidgetProviderInfo();
-        appWidgetProviderInfo.provider = this.provider == null ? null : this.provider.m182clone();
+        appWidgetProviderInfo.provider = this.provider == null ? null : this.provider.m180clone();
         appWidgetProviderInfo.minWidth = this.minWidth;
         appWidgetProviderInfo.minHeight = this.minHeight;
         appWidgetProviderInfo.minResizeWidth = this.minResizeHeight;
@@ -106,7 +106,7 @@ public class AppWidgetProviderInfo implements Parcelable {
         appWidgetProviderInfo.updatePeriodMillis = this.updatePeriodMillis;
         appWidgetProviderInfo.initialLayout = this.initialLayout;
         appWidgetProviderInfo.initialKeyguardLayout = this.initialKeyguardLayout;
-        appWidgetProviderInfo.configure = this.configure == null ? null : this.configure.m182clone();
+        appWidgetProviderInfo.configure = this.configure == null ? null : this.configure.m180clone();
         appWidgetProviderInfo.label = this.label == null ? null : this.label.substring(0);
         appWidgetProviderInfo.icon = this.icon;
         appWidgetProviderInfo.previewImage = this.previewImage;

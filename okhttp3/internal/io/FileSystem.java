@@ -9,9 +9,7 @@ import okio.Source;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/io/FileSystem.class */
 public interface FileSystem {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final FileSystem f43964a = new FileSystem() { // from class: okhttp3.internal.io.FileSystem.1
+    public static final FileSystem a = new FileSystem() { // from class: okhttp3.internal.io.FileSystem.1
         @Override // okhttp3.internal.io.FileSystem
         public Source a(File file) throws FileNotFoundException {
             return Okio.source(file);

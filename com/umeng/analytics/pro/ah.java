@@ -7,12 +7,12 @@ import java.util.ArrayList;
 public class ah {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f40617a;
+    private String f26926a;
     private ArrayList<ai> b = new ArrayList<>();
 
     public ah(String str) {
-        this.f40617a = "";
-        this.f40617a = str;
+        this.f26926a = "";
+        this.f26926a = str;
         if (TextUtils.isEmpty(str)) {
             return;
         }
@@ -21,8 +21,8 @@ public class ah {
 
     private void a() {
         try {
-            if (!this.f40617a.contains(",")) {
-                String str = this.f40617a;
+            if (!this.f26926a.contains(",")) {
+                String str = this.f26926a;
                 if (TextUtils.isEmpty(str)) {
                     return;
                 }
@@ -33,7 +33,7 @@ public class ah {
                 }
                 return;
             }
-            String[] split = this.f40617a.split(",");
+            String[] split = this.f26926a.split(",");
             int length = split.length;
             int i = 0;
             while (true) {

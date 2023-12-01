@@ -1,6 +1,5 @@
 package io.grpc.okhttp.internal.framed;
 
-import com.blued.das.live.LiveProtos;
 import okio.ByteString;
 
 /* loaded from: source-3503164-dex2jar.jar:io/grpc/okhttp/internal/framed/Header.class */
@@ -46,7 +45,7 @@ public final class Header {
     }
 
     public int hashCode() {
-        return ((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.name.hashCode()) * 31) + this.value.hashCode();
+        return ((527 + this.name.hashCode()) * 31) + this.value.hashCode();
     }
 
     public String toString() {

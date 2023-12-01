@@ -44,13 +44,9 @@ import java.util.Map;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleNewFragment.class */
 public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<CirclePresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected CommonTopTitleNoTrans f19230a;
+    protected CommonTopTitleNoTrans a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f19231c;
+    private RecyclerView c;
     private SmartRefreshLayout d;
     private View e;
     private NoDataAndLoadFailView f;
@@ -61,13 +57,9 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleNewFragment$HeaderHolder.class */
     public static class HeaderHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        LinearLayout f19248a;
+        LinearLayout a;
         ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        RecyclerView f19249c;
+        RecyclerView c;
         View d;
         LinearLayout e;
         RecyclerView f;
@@ -86,12 +78,12 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
         ImageView s;
 
         public HeaderHolder(View view) {
-            this.f19248a = (LinearLayout) view.findViewById(R.id.my_new_base_all);
+            this.a = (LinearLayout) view.findViewById(R.id.my_new_base_all);
             this.b = (ImageView) view.findViewById(R.id.my_new_base_join_image);
-            this.f19249c = (RecyclerView) view.findViewById(R.id.my_new_base_recycler_view);
+            this.c = view.findViewById(R.id.my_new_base_recycler_view);
             this.d = view.findViewById(R.id.new_base_title);
             this.e = (LinearLayout) view.findViewById(R.id.my_new_base_recommend_more);
-            this.f = (RecyclerView) view.findViewById(R.id.my_new_base_recommend_recycler_view);
+            this.f = view.findViewById(R.id.my_new_base_recommend_recycler_view);
             this.g = (RelativeLayout) view.findViewById(R.id.my_new_base_layout);
             this.h = (RelativeLayout) view.findViewById(R.id.my_new_base_recommend_layout);
             this.i = (LinearLayout) view.findViewById(R.id.ll_rank_layout);
@@ -117,9 +109,9 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
     }
 
     private void d() {
-        this.f19230a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
-        this.f19231c = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.d = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.a = (CommonTopTitleNoTrans) this.i.findViewById(R.id.title);
+        this.c = this.i.findViewById(R.id.recycler_view);
+        this.d = this.i.findViewById(R.id.refresh_layout);
         this.e = this.i.findViewById(R.id.skeleton);
     }
 
@@ -128,18 +120,17 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
     }
 
     private void v() {
-        this.d.l(false);
+        this.d.b(false);
         this.d.a(new OnRefreshListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.2
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 CircleNewFragment.this.j().e();
             }
         });
-        this.f19231c.setLayoutManager(new LinearLayoutManager(this.b));
+        this.c.setLayoutManager(new LinearLayoutManager(this.b));
         CircleTalkAdapter circleTalkAdapter = new CircleTalkAdapter(this.b, getFragmentActive());
         this.g = circleTalkAdapter;
         circleTalkAdapter.a(false);
-        this.f19231c.setAdapter(this.g);
+        this.c.setAdapter(this.g);
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.b);
         this.f = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(R.drawable.icon_no_circle);
@@ -148,26 +139,23 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
         this.g.setHeaderAndEmpty(true);
         this.g.setLoadMoreView(new BluedAdapterLoadMoreView());
         this.g.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.3
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
                 CircleNewFragment.this.j().f();
             }
-        }, this.f19231c);
+        }, this.c);
         this.g.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.4
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int id = view.getId();
                 if (id == R.id.new_base_header || id == R.id.new_base_name) {
-                    BluedIngSelfFeed bluedIngSelfFeed = CircleNewFragment.this.g.getData().get(i);
+                    BluedIngSelfFeed bluedIngSelfFeed = (BluedIngSelfFeed) CircleNewFragment.this.g.getData().get(i);
                     CircleDetailsFragment.a(CircleNewFragment.this.b, bluedIngSelfFeed.circle_id, bluedIngSelfFeed.feed_id, CircleConstants.CIRCLE_FROM_PAGE.FIND_CIRCLE_DISCUSS_LIST);
                 }
             }
         });
         this.g.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.5
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 ((TextView) view.findViewById(R.id.new_base_content)).setTextColor(BluedSkinUtils.a(CircleNewFragment.this.b, R.color.syc_j));
-                BluedIngSelfFeed bluedIngSelfFeed = CircleNewFragment.this.g.getData().get(i);
+                BluedIngSelfFeed bluedIngSelfFeed = (BluedIngSelfFeed) CircleNewFragment.this.g.getData().get(i);
                 CircleNewFragment.this.g.a(bluedIngSelfFeed.feed_id);
                 CirclePostDetailsFragment.a(CircleNewFragment.this.b, bluedIngSelfFeed, FeedProtos.NoteSource.NOTE_LIST);
             }
@@ -180,16 +168,15 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
         this.g.addHeaderView(inflate);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.b);
         linearLayoutManager.setOrientation(0);
-        this.k.f19249c.setLayoutManager(linearLayoutManager);
+        this.k.c.setLayoutManager(linearLayoutManager);
         this.l = new MyCircleAdapter(getFragmentActive());
-        this.k.f19249c.setAdapter(this.l);
+        this.k.c.setAdapter(this.l);
         this.l.setLoadMoreView(new RecommendLoadMoreView());
         this.l.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.6
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                List<MyCircleModel> data = CircleNewFragment.this.l.getData();
+                List data = CircleNewFragment.this.l.getData();
                 if (data != null) {
-                    MyCircleModel myCircleModel = data.get(i);
+                    MyCircleModel myCircleModel = (MyCircleModel) data.get(i);
                     if (!myCircleModel.isHotBase) {
                         CircleDetailsFragment.a(CircleNewFragment.this.b, myCircleModel, CircleConstants.CIRCLE_FROM_PAGE.FIND_CIRCLE_MINE);
                         return;
@@ -199,7 +186,7 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
                 }
             }
         });
-        this.k.f19248a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.7
+        this.k.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.7
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -226,7 +213,7 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
                 Tracker.onClick(view);
                 EventTrackFeed.b(FeedProtos.Event.FIND_CIRCLE_RECOMMEND_MORE_CLICK);
                 EventTrackFeed.a(FeedProtos.Event.CIRCLE_FIND_PAGE_SHOW, FeedProtos.CircleSource.FIND_CIRCLE_RECOMMEND);
-                CircleTypeListFragment.f19307a.a(CircleNewFragment.this.b, FeedProtos.SourcePage.CIRCLE_HOME_RECOMMEND);
+                CircleTypeListFragment.a.a(CircleNewFragment.this.b, FeedProtos.SourcePage.CIRCLE_HOME_RECOMMEND);
             }
         });
         this.k.i.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.10
@@ -497,7 +484,7 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
             z2 = true;
         }
         if (!z2 || z2) {
-            this.d.j();
+            this.d.g();
             this.g.loadMoreComplete();
             if (this.g.getItemCount() == 2) {
                 if (z) {
@@ -514,13 +501,12 @@ public class CircleNewFragment<T extends CirclePresenter> extends MvpFragment<Ci
         super.af_();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void b() {
+    protected void b() {
         this.d.i();
     }
 
     public void c() {
-        this.f19230a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.1
+        this.a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleNewFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);

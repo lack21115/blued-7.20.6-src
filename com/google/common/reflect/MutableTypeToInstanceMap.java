@@ -43,10 +43,10 @@ public final class MutableTypeToInstanceMap<B> extends ForwardingMap<TypeToken<?
             return new ForwardingSet<Map.Entry<K, V>>() { // from class: com.google.common.reflect.MutableTypeToInstanceMap.UnmodifiableEntry.1
                 @Override // com.google.common.collect.ForwardingSet, com.google.common.collect.ForwardingCollection, com.google.common.collect.ForwardingObject
                 public Set<Map.Entry<K, V>> delegate() {
-                    return Set.this;
+                    return set;
                 }
 
-                @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+                @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<Map.Entry<K, V>> iterator() {
                     return UnmodifiableEntry.transformEntries(super.iterator());
                 }
@@ -114,13 +114,13 @@ public final class MutableTypeToInstanceMap<B> extends ForwardingMap<TypeToken<?
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     @Deprecated
     public /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
         return put((TypeToken<? extends TypeToken<? extends B>>) obj, (TypeToken<? extends B>) obj2);
     }
 
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     @Deprecated
     public void putAll(Map<? extends TypeToken<? extends B>, ? extends B> map) {
         throw new UnsupportedOperationException("Please use putInstance() instead.");

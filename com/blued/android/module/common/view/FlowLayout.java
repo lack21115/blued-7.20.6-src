@@ -13,13 +13,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/FlowLayout.class */
 public class FlowLayout extends ViewGroup {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f10986a = FlowLayout.class.getSimpleName();
+    private static final String a = FlowLayout.class.getSimpleName();
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f10987c;
+    private int c;
     private int d;
     private int e;
     private float f;
@@ -46,7 +42,7 @@ public class FlowLayout extends ViewGroup {
     public FlowLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = true;
-        this.f10987c = 0;
+        this.c = 0;
         this.d = 0;
         this.e = -65538;
         this.f = 0.0f;
@@ -63,9 +59,9 @@ public class FlowLayout extends ViewGroup {
         try {
             this.b = obtainStyledAttributes.getBoolean(R.styleable.FlowLayout_flFlow, true);
             try {
-                this.f10987c = obtainStyledAttributes.getInt(R.styleable.FlowLayout_flChildSpacing, 0);
+                this.c = obtainStyledAttributes.getInt(R.styleable.FlowLayout_flChildSpacing, 0);
             } catch (NumberFormatException e) {
-                this.f10987c = obtainStyledAttributes.getDimensionPixelSize(R.styleable.FlowLayout_flChildSpacing, (int) a(0.0f));
+                this.c = obtainStyledAttributes.getDimensionPixelSize(R.styleable.FlowLayout_flChildSpacing, (int) a(0.0f));
             }
             try {
                 this.d = obtainStyledAttributes.getInt(R.styleable.FlowLayout_flMinChildSpacing, 0);
@@ -97,7 +93,7 @@ public class FlowLayout extends ViewGroup {
 
     private int a(int i, int i2, int i3, int i4) {
         int i5 = 0;
-        if (this.f10987c != -65536) {
+        if (this.c != -65536) {
             i5 = 0;
             if (i4 < this.o.size()) {
                 i5 = 0;
@@ -133,14 +129,13 @@ public class FlowLayout extends ViewGroup {
         return new ViewGroup.MarginLayoutParams(getContext(), attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new ViewGroup.MarginLayoutParams(layoutParams);
     }
 
     public int getChildSpacing() {
-        return this.f10987c;
+        return this.c;
     }
 
     public int getChildSpacingForLastRow() {
@@ -197,7 +192,7 @@ public class FlowLayout extends ViewGroup {
         int childCount = getChildCount();
         int paddingLeft = (size - getPaddingLeft()) - getPaddingRight();
         boolean z = mode != 0 && this.b;
-        int i10 = (this.f10987c == -65536 && mode == 0) ? 0 : this.f10987c;
+        int i10 = (this.c == -65536 && mode == 0) ? 0 : this.c;
         float f = i10 == -65536 ? this.d : i10;
         int i11 = 0;
         int i12 = 0;
@@ -317,7 +312,7 @@ public class FlowLayout extends ViewGroup {
     }
 
     public void setChildSpacing(int i) {
-        this.f10987c = i;
+        this.c = i;
         requestLayout();
     }
 

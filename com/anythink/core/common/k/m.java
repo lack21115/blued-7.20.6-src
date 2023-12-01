@@ -10,13 +10,9 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/m.class */
 public final class m {
     public static final String A = "it_src";
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6816a = "platform";
+    public static final String a = "platform";
     public static final String b = "os_vn";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6817c = "os_vc";
+    public static final String c = "os_vc";
     public static final String d = "package_name";
     public static final String e = "app_vn";
     public static final String f = "app_vc";

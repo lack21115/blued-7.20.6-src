@@ -9,15 +9,13 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/d/b.class */
 public final class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private File f4710a;
+    private File a;
     private com.alipay.security.mobile.module.http.v2.a b;
 
     public b(String str, com.alipay.security.mobile.module.http.v2.a aVar) {
-        this.f4710a = null;
+        this.a = null;
         this.b = null;
-        this.f4710a = new File(str);
+        this.a = new File(str);
         this.b = aVar;
     }
 
@@ -35,12 +33,12 @@ public final class b {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         synchronized (this) {
-            if (this.f4710a == null) {
+            if (this.a == null) {
                 return;
             }
-            if (this.f4710a.exists() && this.f4710a.isDirectory() && this.f4710a.list().length != 0) {
+            if (this.a.exists() && this.a.isDirectory() && this.a.list().length != 0) {
                 ArrayList arrayList = new ArrayList();
-                String[] list = this.f4710a.list();
+                String[] list = this.a.list();
                 int length = list.length;
                 int i = 0;
                 while (true) {
@@ -65,12 +63,12 @@ public final class b {
                 }
                 int i4 = i3;
                 int i5 = 0;
-                if (!this.b.a(a(com.alipay.security.mobile.module.a.b.a(this.f4710a.getAbsolutePath(), str2)))) {
+                if (!this.b.a(a(com.alipay.security.mobile.module.a.b.a(this.a.getAbsolutePath(), str2)))) {
                     i4 = i3 - 1;
                     i5 = 0;
                 }
                 while (i5 < i4) {
-                    new File(this.f4710a, (String) arrayList.get(i5)).delete();
+                    new File(this.a, (String) arrayList.get(i5)).delete();
                     i5++;
                 }
             }

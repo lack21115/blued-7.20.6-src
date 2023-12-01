@@ -70,8 +70,8 @@ public class g6 {
                 if (read > 0) {
                     i2 = i + read;
                     bArr2 = new byte[i2];
-                    System.arraycopy((Object) bArr3, 0, (Object) bArr2, 0, bArr3.length);
-                    System.arraycopy((Object) bArr4, 0, (Object) bArr2, bArr3.length, read);
+                    System.arraycopy(bArr3, 0, bArr2, 0, bArr3.length);
+                    System.arraycopy(bArr4, 0, bArr2, bArr3.length, read);
                 }
                 bArr3 = bArr2;
                 i = i2;

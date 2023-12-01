@@ -37,10 +37,9 @@ public class Space extends View {
     public void draw(Canvas canvas) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     @Deprecated
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(a(getSuggestedMinimumWidth(), i), a(getSuggestedMinimumHeight(), i2));
     }
 }

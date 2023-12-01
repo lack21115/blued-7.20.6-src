@@ -7,11 +7,11 @@ import com.tencent.liteav.videobase.videobase.h;
 public final /* synthetic */ class aw implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ai f36998a;
+    private final ai f23307a;
     private final h.a b;
 
     private aw(ai aiVar, h.a aVar) {
-        this.f36998a = aiVar;
+        this.f23307a = aiVar;
         this.b = aVar;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class aw implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ai.a(this.f36998a, this.b);
+        ai.a(this.f23307a, this.b);
     }
 }

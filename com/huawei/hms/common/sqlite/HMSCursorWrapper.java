@@ -10,7 +10,7 @@ import android.database.CursorWrapper;
 public class HMSCursorWrapper extends CursorWrapper implements CrossProcessCursor {
 
     /* renamed from: a  reason: collision with root package name */
-    private AbstractWindowedCursor f22668a;
+    private AbstractWindowedCursor f9060a;
 
     public HMSCursorWrapper(Cursor cursor) {
         super(cursor);
@@ -25,7 +25,7 @@ public class HMSCursorWrapper extends CursorWrapper implements CrossProcessCurso
             throw new IllegalArgumentException("getWrappedCursor cannot be null");
         }
         if (wrappedCursor instanceof AbstractWindowedCursor) {
-            this.f22668a = (AbstractWindowedCursor) wrappedCursor;
+            this.f9060a = (AbstractWindowedCursor) wrappedCursor;
             return;
         }
         throw new IllegalArgumentException("getWrappedCursor:" + wrappedCursor + " is not a subclass for CursorWrapper");
@@ -33,25 +33,25 @@ public class HMSCursorWrapper extends CursorWrapper implements CrossProcessCurso
 
     @Override // android.database.CrossProcessCursor
     public void fillWindow(int i, CursorWindow cursorWindow) {
-        this.f22668a.fillWindow(i, cursorWindow);
+        this.f9060a.fillWindow(i, cursorWindow);
     }
 
     @Override // android.database.CrossProcessCursor
     public CursorWindow getWindow() {
-        return this.f22668a.getWindow();
+        return this.f9060a.getWindow();
     }
 
     @Override // android.database.CursorWrapper
     public Cursor getWrappedCursor() {
-        return this.f22668a;
+        return this.f9060a;
     }
 
     @Override // android.database.CrossProcessCursor
     public boolean onMove(int i, int i2) {
-        return this.f22668a.onMove(i, i2);
+        return this.f9060a.onMove(i, i2);
     }
 
     public void setWindow(CursorWindow cursorWindow) {
-        this.f22668a.setWindow(cursorWindow);
+        this.f9060a.setWindow(cursorWindow);
     }
 }

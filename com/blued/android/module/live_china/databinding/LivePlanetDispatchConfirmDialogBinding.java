@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePlanetDispatchConfirmDialogBinding.class */
 public final class LivePlanetDispatchConfirmDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12364a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12365c;
+    public final ImageView c;
     public final RelativeLayout d;
     public final ShapeTextView e;
     public final TextView f;
@@ -30,9 +26,9 @@ public final class LivePlanetDispatchConfirmDialogBinding implements ViewBinding
 
     private LivePlanetDispatchConfirmDialogBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, RelativeLayout relativeLayout, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.j = frameLayout;
-        this.f12364a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f12365c = imageView2;
+        this.c = imageView2;
         this.d = relativeLayout;
         this.e = shapeTextView;
         this.f = textView;
@@ -103,7 +99,6 @@ public final class LivePlanetDispatchConfirmDialogBinding implements ViewBinding
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.j;

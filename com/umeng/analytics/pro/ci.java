@@ -7,12 +7,12 @@ import java.nio.ByteBuffer;
 public class ci extends cp {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final int f40690a = -65536;
+    protected static final int f26999a = -65536;
     protected static final int b = -2147418112;
     private static final cu h = new cu();
 
     /* renamed from: c  reason: collision with root package name */
-    protected boolean f40691c;
+    protected boolean f27000c;
     protected boolean d;
     protected int e;
     protected boolean f;
@@ -29,11 +29,11 @@ public class ci extends cp {
     public static class a implements cr {
 
         /* renamed from: a  reason: collision with root package name */
-        protected boolean f40692a;
+        protected boolean f27001a;
         protected boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        protected int f40693c;
+        protected int f27002c;
 
         public a() {
             this(false, true);
@@ -44,17 +44,17 @@ public class ci extends cp {
         }
 
         public a(boolean z, boolean z2, int i) {
-            this.f40692a = false;
+            this.f27001a = false;
             this.b = true;
-            this.f40692a = z;
+            this.f27001a = z;
             this.b = z2;
-            this.f40693c = i;
+            this.f27002c = i;
         }
 
         @Override // com.umeng.analytics.pro.cr
         public cp a(dd ddVar) {
-            ci ciVar = new ci(ddVar, this.f40692a, this.b);
-            int i = this.f40693c;
+            ci ciVar = new ci(ddVar, this.f27001a, this.b);
+            int i = this.f27002c;
             if (i != 0) {
                 ciVar.c(i);
             }
@@ -68,7 +68,7 @@ public class ci extends cp {
 
     public ci(dd ddVar, boolean z, boolean z2) {
         super(ddVar);
-        this.f40691c = false;
+        this.f27000c = false;
         this.d = true;
         this.f = false;
         this.i = new byte[1];
@@ -79,7 +79,7 @@ public class ci extends cp {
         this.n = new byte[2];
         this.o = new byte[4];
         this.p = new byte[8];
-        this.f40691c = z;
+        this.f27000c = z;
         this.d = z2;
     }
 
@@ -144,38 +144,38 @@ public class ci extends cp {
     @Override // com.umeng.analytics.pro.cp
     public void a(ck ckVar) throws bw {
         a(ckVar.b);
-        a(ckVar.f40700c);
+        a(ckVar.f27009c);
     }
 
     @Override // com.umeng.analytics.pro.cp
     public void a(cl clVar) throws bw {
-        a(clVar.f40701a);
+        a(clVar.f27010a);
         a(clVar.b);
     }
 
     @Override // com.umeng.analytics.pro.cp
     public void a(cm cmVar) throws bw {
-        a(cmVar.f40702a);
+        a(cmVar.f27011a);
         a(cmVar.b);
-        a(cmVar.f40703c);
+        a(cmVar.f27012c);
     }
 
     @Override // com.umeng.analytics.pro.cp
     public void a(cn cnVar) throws bw {
         if (this.d) {
             a((-2147418112) | cnVar.b);
-            a(cnVar.f40704a);
-            a(cnVar.f40705c);
+            a(cnVar.f27013a);
+            a(cnVar.f27014c);
             return;
         }
-        a(cnVar.f40704a);
+        a(cnVar.f27013a);
         a(cnVar.b);
-        a(cnVar.f40705c);
+        a(cnVar.f27014c);
     }
 
     @Override // com.umeng.analytics.pro.cp
     public void a(ct ctVar) throws bw {
-        a(ctVar.f40711a);
+        a(ctVar.f27020a);
         a(ctVar.b);
     }
 
@@ -277,7 +277,7 @@ public class ci extends cp {
                 return new cn(z(), (byte) (w & 255), w());
             }
             throw new cq(4, "Bad version in readMessageBegin");
-        } else if (this.f40691c) {
+        } else if (this.f27000c) {
             throw new cq(4, "Missing version in readMessageBegin, old client?");
         } else {
             return new cn(b(w), u(), w());

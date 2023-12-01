@@ -12,11 +12,11 @@ public abstract class VolumeProviderCompat {
     public static final int VOLUME_CONTROL_RELATIVE = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f3169a;
+    private final int f3121a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f3170c;
+    private int f3122c;
     private Callback d;
     private Object e;
 
@@ -31,13 +31,13 @@ public abstract class VolumeProviderCompat {
     }
 
     public VolumeProviderCompat(int i, int i2, int i3) {
-        this.f3169a = i;
+        this.f3121a = i;
         this.b = i2;
-        this.f3170c = i3;
+        this.f3122c = i3;
     }
 
     public final int getCurrentVolume() {
-        return this.f3170c;
+        return this.f3122c;
     }
 
     public final int getMaxVolume() {
@@ -45,12 +45,12 @@ public abstract class VolumeProviderCompat {
     }
 
     public final int getVolumeControl() {
-        return this.f3169a;
+        return this.f3121a;
     }
 
     public Object getVolumeProvider() {
         if (this.e == null && Build.VERSION.SDK_INT >= 21) {
-            this.e = VolumeProviderCompatApi21.createVolumeProvider(this.f3169a, this.b, this.f3170c, new VolumeProviderCompatApi21.Delegate() { // from class: androidx.media.VolumeProviderCompat.1
+            this.e = VolumeProviderCompatApi21.createVolumeProvider(this.f3121a, this.b, this.f3122c, new VolumeProviderCompatApi21.Delegate() { // from class: androidx.media.VolumeProviderCompat.1
                 @Override // androidx.media.VolumeProviderCompatApi21.Delegate
                 public void onAdjustVolume(int i) {
                     VolumeProviderCompat.this.onAdjustVolume(i);
@@ -76,7 +76,7 @@ public abstract class VolumeProviderCompat {
     }
 
     public final void setCurrentVolume(int i) {
-        this.f3170c = i;
+        this.f3122c = i;
         Object volumeProvider = getVolumeProvider();
         if (volumeProvider != null && Build.VERSION.SDK_INT >= 21) {
             VolumeProviderCompatApi21.setCurrentVolume(volumeProvider, i);

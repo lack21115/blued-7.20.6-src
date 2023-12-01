@@ -8,18 +8,16 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/ConstrainedOnceSequence.class */
 public final class ConstrainedOnceSequence<T> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final AtomicReference<Sequence<T>> f42614a;
+    private final AtomicReference<Sequence<T>> a;
 
     public ConstrainedOnceSequence(Sequence<? extends T> sequence) {
         Intrinsics.e(sequence, "sequence");
-        this.f42614a = new AtomicReference<>(sequence);
+        this.a = new AtomicReference<>(sequence);
     }
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
-        Sequence<T> andSet = this.f42614a.getAndSet(null);
+        Sequence<T> andSet = this.a.getAndSet(null);
         if (andSet != null) {
             return andSet.iterator();
         }

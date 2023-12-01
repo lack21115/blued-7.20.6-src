@@ -8,11 +8,11 @@ import java.util.Map;
 public class ActiveWrapper extends IDWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    final String f21523a;
+    final String f7917a;
 
     protected ActiveWrapper(Map<String, Object> map) {
         super(map);
-        this.f21523a = "ac";
+        this.f7917a = "ac";
     }
 
     public static ActiveWrapper wrapper(Map<String, Object> map) {

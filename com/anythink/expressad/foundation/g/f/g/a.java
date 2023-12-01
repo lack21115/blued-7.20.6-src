@@ -4,11 +4,11 @@ package com.anythink.expressad.foundation.g.f.g;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7901a = -2;
+    public static final int f5061a = -2;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7902c = 2;
+    public static final int f5062c = 2;
     public static final int d = 3;
     public static final int e = 4;
     public static final int f = 5;
@@ -26,10 +26,10 @@ public final class a {
     public static String a(com.anythink.expressad.foundation.g.f.a.a aVar) {
         if (aVar != null) {
             try {
-                int i2 = aVar.f7858a;
+                int i2 = aVar.f5018a;
                 int i3 = 0;
                 if (aVar.b != null) {
-                    i3 = aVar.b.f7899a;
+                    i3 = aVar.b.f5059a;
                 }
                 if (i2 != -2) {
                     if (i2 != 1) {

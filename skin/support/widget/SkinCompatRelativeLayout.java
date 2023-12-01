@@ -6,9 +6,7 @@ import android.widget.RelativeLayout;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatRelativeLayout.class */
 public class SkinCompatRelativeLayout extends RelativeLayout implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f44283a;
+    private SkinCompatBackgroundHelper a;
 
     public SkinCompatRelativeLayout(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
@@ -17,13 +15,13 @@ public class SkinCompatRelativeLayout extends RelativeLayout implements SkinComp
     public SkinCompatRelativeLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f44283a = skinCompatBackgroundHelper;
+        this.a = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
     }
 
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44283a;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.a;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }
@@ -32,7 +30,7 @@ public class SkinCompatRelativeLayout extends RelativeLayout implements SkinComp
     @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44283a;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.a;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a(i);
         }

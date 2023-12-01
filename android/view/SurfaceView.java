@@ -85,11 +85,9 @@ public class SurfaceView extends View {
             this.mSurfaceView = new WeakReference<>(surfaceView);
         }
 
-        @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
         public void dispatchAppVisibility(boolean z) {
         }
 
-        @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
         public void dispatchGetNewSurface() {
             SurfaceView surfaceView = this.mSurfaceView.get();
             if (surfaceView != null) {
@@ -97,11 +95,9 @@ public class SurfaceView extends View {
             }
         }
 
-        @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
         public void executeCommand(String str, String str2, ParcelFileDescriptor parcelFileDescriptor) {
         }
 
-        @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
         public void resized(Rect rect, Rect rect2, Rect rect3, Rect rect4, Rect rect5, boolean z, Configuration configuration) {
             SurfaceView surfaceView = this.mSurfaceView.get();
             if (surfaceView != null) {
@@ -121,7 +117,6 @@ public class SurfaceView extends View {
             }
         }
 
-        @Override // com.android.internal.view.BaseIWindow, android.view.IWindow
         public void windowFocusChanged(boolean z, boolean z2) {
             Log.w(SurfaceView.TAG, "Unexpected focus in surface: focus=" + z + ", touchEnabled=" + z2);
         }
@@ -972,9 +967,8 @@ public class SurfaceView extends View {
         setWillNotDraw(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         if (this.mWindowType != 1000 && (this.mPrivateFlags & 128) == 128) {
             canvas.drawColor(0, PorterDuff.Mode.CLEAR);
         }
@@ -1076,24 +1070,20 @@ public class SurfaceView extends View {
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(this.mRequestedWidth >= 0 ? resolveSizeAndState(this.mRequestedWidth, i, 0) : getDefaultSize(0, i), this.mRequestedHeight >= 0 ? resolveSizeAndState(this.mRequestedHeight, i2, 0) : getDefaultSize(0, i2));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onWindowVisibilityChanged(int i) {
+    protected void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
         this.mWindowVisibility = i == 0;
         this.mRequestedVisible = this.mWindowVisibility && this.mViewVisibility;
         updateWindow(false, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public boolean setFrame(int i, int i2, int i3, int i4) {
+    protected boolean setFrame(int i, int i2, int i3, int i4) {
         boolean frame = super.setFrame(i, i2, i3, i4);
         updateWindow(false, false);
         return frame;

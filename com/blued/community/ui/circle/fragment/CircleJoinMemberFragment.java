@@ -30,13 +30,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleJoinMemberFragment.class */
 public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> extends MvpFragment<CircleJoinMemberPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected CircleMemberAdapter f19201a;
+    protected CircleMemberAdapter a;
     protected NoDataAndLoadFailView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f19202c;
+    private RecyclerView c;
     private SmartRefreshLayout d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -87,8 +83,8 @@ public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> exten
     }
 
     private void b() {
-        this.f19202c = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.d = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.c = this.i.findViewById(R.id.recycler_view);
+        this.d = this.i.findViewById(R.id.refresh_layout);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -110,9 +106,9 @@ public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> exten
     }
 
     private void b(boolean z) {
-        this.d.j();
+        this.d.g();
         this.d.h();
-        if (this.f19201a.getData().size() <= 0) {
+        if (this.a.getData().size() <= 0) {
             if (z) {
                 this.b.a();
             } else {
@@ -125,27 +121,24 @@ public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> exten
     public void a(Bundle bundle) {
         super.a(bundle);
         b();
-        this.f19201a = new CircleMemberAdapter(getFragmentActive(), j().n());
+        this.a = new CircleMemberAdapter(getFragmentActive(), j().n());
         this.b = new NoDataAndLoadFailView(getContext());
-        j().a(this.f19201a);
-        this.f19201a.setEmptyView(this.b);
+        j().a(this.a);
+        this.a.setEmptyView(this.b);
         this.d.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.circle.fragment.CircleJoinMemberFragment.1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 CircleJoinMemberFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 CircleJoinMemberFragment.this.j().e();
             }
         });
-        this.f19202c.setLayoutManager(new StickyLayoutManager(getContext(), this.f19201a));
-        this.f19202c.setAdapter(this.f19201a);
-        this.f19201a.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleJoinMemberFragment.2
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
+        this.c.setLayoutManager(new StickyLayoutManager(getContext(), this.a));
+        this.c.setAdapter(this.a);
+        this.a.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.circle.fragment.CircleJoinMemberFragment.2
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                CircleBaseMember.Member member = (CircleBaseMember.Member) CircleJoinMemberFragment.this.f19201a.getItem(i);
+                CircleBaseMember.Member member = (CircleBaseMember.Member) CircleJoinMemberFragment.this.a.getItem(i);
                 int id = view.getId();
                 if (id == R.id.cl_root) {
                     if (member.is_locked == 1) {
@@ -168,30 +161,30 @@ public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> exten
     protected void a(final CircleBaseMember.Member member, final int i) {
         final String str = member.uid;
         ArrayList arrayList = new ArrayList();
-        final BasePopupView a2 = CommonShowBottomWindow.a(getContext(), arrayList);
+        final BasePopupView a = CommonShowBottomWindow.a(getContext(), arrayList);
         BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo.f11214a = getResources().getString(member.isManager() ? R.string.circle_member_relieve_asst_manager : R.string.circle_member_appoint_asst_manager);
+        menuItemInfo.a = getResources().getString(member.isManager() ? R.string.circle_member_relieve_asst_manager : R.string.circle_member_appoint_asst_manager);
         BottomMenuPop.MenuItemInfo menuItemInfo2 = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo2.f11214a = getResources().getString(R.string.circle_member_remove);
+        menuItemInfo2.a = getResources().getString(R.string.circle_member_remove);
         BottomMenuPop.MenuItemInfo menuItemInfo3 = new BottomMenuPop.MenuItemInfo();
-        menuItemInfo3.f11214a = getResources().getString(member.is_mute == 1 ? R.string.circle_member_mute_cancel : R.string.circle_member_mute);
+        menuItemInfo3.a = getResources().getString(member.is_mute == 1 ? R.string.circle_member_mute_cancel : R.string.circle_member_mute);
         menuItemInfo3.b = R.color.syc_g;
         menuItemInfo.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleJoinMemberFragment$PpeZayo77J082GKeiFtN2Q2eOf4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CircleJoinMemberFragment.this.b(member, str, a2, i, view);
+                CircleJoinMemberFragment.this.b(member, str, a, i, view);
             }
         };
         menuItemInfo2.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleJoinMemberFragment$ZwwbBrRzfGcOnhLGRwbVAEqQF00
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CircleJoinMemberFragment.this.a(str, a2, member, i, view);
+                CircleJoinMemberFragment.this.a(str, a, member, i, view);
             }
         };
         menuItemInfo3.d = new View.OnClickListener() { // from class: com.blued.community.ui.circle.fragment.-$$Lambda$CircleJoinMemberFragment$yMaGEB6-Lg7vQltR82K2JzoSmrM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CircleJoinMemberFragment.this.a(member, str, a2, i, view);
+                CircleJoinMemberFragment.this.a(member, str, a, i, view);
             }
         };
         if (j().n() == 1) {
@@ -203,7 +196,7 @@ public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> exten
             arrayList.add(menuItemInfo2);
             arrayList.add(menuItemInfo3);
         }
-        a2.h();
+        a.h();
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
@@ -219,7 +212,7 @@ public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> exten
 
             @Override // com.blued.android.framework.ui.mvp.MvpUtils.DataListHandler
             public void a(List<CircleBaseMember.Member> list2) {
-                CircleJoinMemberFragment.this.f19201a.setNewData(list2);
+                CircleJoinMemberFragment.this.a.setNewData(list2);
             }
         });
     }
@@ -268,13 +261,13 @@ public class CircleJoinMemberFragment<T extends CircleJoinMemberPresenter> exten
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
-        this.d.l(true);
+        this.d.b(true);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
-        this.d.l(false);
+        this.d.b(false);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment

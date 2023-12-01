@@ -10,27 +10,25 @@ import kotlin.collections.ArraysKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/unsigned/UArraysKt___UArraysJvmKt$asList$4.class */
 public final class UArraysKt___UArraysJvmKt$asList$4 extends AbstractList<UShort> implements RandomAccess {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ short[] f42420a;
+    final /* synthetic */ short[] a;
 
     public short a(int i) {
-        return UShortArray.a(this.f42420a, i);
+        return UShortArray.a(this.a, i);
     }
 
     public boolean a(short s) {
-        return UShortArray.a(this.f42420a, s);
+        return UShortArray.a(this.a, s);
     }
 
     public int b(short s) {
-        return ArraysKt.b(this.f42420a, s);
+        return ArraysKt.b(this.a, s);
     }
 
     public int c(short s) {
-        return ArraysKt.c(this.f42420a, s);
+        return ArraysKt.c(this.a, s);
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof UShort) {
             return a(((UShort) obj).a());
@@ -45,7 +43,7 @@ public final class UArraysKt___UArraysJvmKt$asList$4 extends AbstractList<UShort
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return UShortArray.a(this.f42420a);
+        return UShortArray.a(this.a);
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
@@ -56,9 +54,9 @@ public final class UArraysKt___UArraysJvmKt$asList$4 extends AbstractList<UShort
         return -1;
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return UShortArray.c(this.f42420a);
+        return UShortArray.c(this.a);
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List

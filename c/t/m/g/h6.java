@@ -17,11 +17,11 @@ import java.util.List;
 public class h6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f3833a = false;
+    public static boolean f3785a = false;
     public static long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f3834c = false;
+    public static boolean f3786c = false;
     public static volatile boolean d = false;
     public static List<ScanResult> e;
     public static long f;
@@ -49,7 +49,7 @@ public class h6 {
 
     public static String a(t3 t3Var) {
         String bssid;
-        Context context = t3Var.f3992a;
+        Context context = t3Var.f3944a;
         if (context == null) {
             return "{}";
         }
@@ -100,9 +100,9 @@ public class h6 {
                     f = System.currentTimeMillis();
                     list3.size();
                     list = list3;
-                    f3833a = false;
+                    f3785a = false;
                 } catch (Exception e2) {
-                    f3833a = true;
+                    f3785a = true;
                     s3.a("WIFI", NetworkUtil.NETWORK_CLASS_DENIED);
                     list3 = list;
                 }
@@ -124,15 +124,15 @@ public class h6 {
                 try {
                     try {
                         if (d || System.currentTimeMillis() - b <= com.anythink.expressad.video.module.a.a.m.ag) {
-                            z = f3834c;
+                            z = f3786c;
                         } else {
                             boolean startScan = wifiManager.startScan();
-                            f3834c = startScan;
+                            f3786c = startScan;
                             b = System.currentTimeMillis();
                             z = startScan;
                         }
                     } catch (Exception e2) {
-                        f3833a = true;
+                        f3785a = true;
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -164,7 +164,7 @@ public class h6 {
         if (f2 != null) {
             boolean z2 = false;
             try {
-                if (Build.VERSION.SDK_INT >= 23 && Settings.Secure.getInt(t3Var.f3992a.getContentResolver(), Settings.Secure.LOCATION_MODE) == 0) {
+                if (Build.VERSION.SDK_INT >= 23 && Settings.Secure.getInt(t3Var.f3944a.getContentResolver(), Settings.Secure.LOCATION_MODE) == 0) {
                     return false;
                 }
                 boolean isWifiEnabled = f2.isWifiEnabled();
@@ -179,7 +179,7 @@ public class h6 {
             } catch (Throwable th) {
                 z = z2;
                 if (th instanceof SecurityException) {
-                    f3833a = true;
+                    f3785a = true;
                     z = z2;
                 }
             }

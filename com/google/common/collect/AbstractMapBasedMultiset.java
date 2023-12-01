@@ -119,7 +119,7 @@ public abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E> im
         }
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public final void clear() {
         this.backingMap.clear();
         this.size = 0L;
@@ -158,7 +158,7 @@ public abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E> im
 
     abstract void init(int i);
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, com.google.common.collect.Multiset
     public final Iterator<E> iterator() {
         return Multisets.iteratorImpl(this);
     }
@@ -222,7 +222,7 @@ public abstract class AbstractMapBasedMultiset<E> extends AbstractMultiset<E> im
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public final int size() {
         return Ints.saturatedCast(this.size);
     }

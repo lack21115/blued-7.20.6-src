@@ -10,7 +10,7 @@ import java.io.InputStream;
 public class bo {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9350a = "IOUtils";
+    public static final String f6510a = "IOUtils";
 
     public static void a(Context context, String str, String str2) {
         try {

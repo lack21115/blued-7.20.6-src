@@ -42,8 +42,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
     private int status_;
     private static final HongbaoExtra DEFAULT_INSTANCE = new HongbaoExtra();
     private static final Parser<HongbaoExtra> PARSER = new AbstractParser<HongbaoExtra>() { // from class: cn.irisgw.live.HongbaoExtra.1
-        @Override // com.google.protobuf.Parser
-        public HongbaoExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public HongbaoExtra m3284parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new HongbaoExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -86,22 +86,22 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             boolean unused = HongbaoExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3286addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public HongbaoExtra build() {
-            HongbaoExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public HongbaoExtra m3288build() {
+            HongbaoExtra m3290buildPartial = m3290buildPartial();
+            if (m3290buildPartial.isInitialized()) {
+                return m3290buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3290buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public HongbaoExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public HongbaoExtra m3290buildPartial() {
             HongbaoExtra hongbaoExtra = new HongbaoExtra(this);
             hongbaoExtra.hongbaoId_ = this.hongbaoId_;
             hongbaoExtra.startSecond_ = this.startSecond_;
@@ -117,24 +117,24 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return hongbaoExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3294clear() {
             super.clear();
             this.hongbaoId_ = "";
             this.startSecond_ = 0;
             this.endSecond_ = 0;
             this.status_ = 0;
             this.size_ = "";
-            this.beans_ = 0L;
+            this.beans_ = HongbaoExtra.serialVersionUID;
             this.isAnim_ = false;
-            this.remainingMillisecond_ = 0L;
+            this.remainingMillisecond_ = HongbaoExtra.serialVersionUID;
             this.condition_ = "";
             this.pwd_ = "";
             return this;
         }
 
         public Builder clearBeans() {
-            this.beans_ = 0L;
+            this.beans_ = HongbaoExtra.serialVersionUID;
             onChanged();
             return this;
         }
@@ -151,8 +151,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3296clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -168,8 +168,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3299clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -180,7 +180,7 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         }
 
         public Builder clearRemainingMillisecond() {
-            this.remainingMillisecond_ = 0L;
+            this.remainingMillisecond_ = HongbaoExtra.serialVersionUID;
             onChanged();
             return this;
         }
@@ -203,10 +203,9 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3305clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.HongbaoExtraOrBuilder
@@ -236,12 +235,11 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public HongbaoExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public HongbaoExtra m3307getDefaultInstanceForType() {
             return HongbaoExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_HongbaoExtra_descriptor;
         }
@@ -337,12 +335,10 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this.status_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_HongbaoExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(HongbaoExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -368,13 +364,13 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
                 this.size_ = hongbaoExtra.size_;
                 onChanged();
             }
-            if (hongbaoExtra.getBeans() != 0) {
+            if (hongbaoExtra.getBeans() != HongbaoExtra.serialVersionUID) {
                 setBeans(hongbaoExtra.getBeans());
             }
             if (hongbaoExtra.getIsAnim()) {
                 setIsAnim(hongbaoExtra.getIsAnim());
             }
-            if (hongbaoExtra.getRemainingMillisecond() != 0) {
+            if (hongbaoExtra.getRemainingMillisecond() != HongbaoExtra.serialVersionUID) {
                 setRemainingMillisecond(hongbaoExtra.getRemainingMillisecond());
             }
             if (!hongbaoExtra.getCondition().isEmpty()) {
@@ -385,18 +381,18 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
                 this.pwd_ = hongbaoExtra.pwd_;
                 onChanged();
             }
-            mergeUnknownFields(hongbaoExtra.unknownFields);
+            m3316mergeUnknownFields(hongbaoExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.HongbaoExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.HongbaoExtra.Builder m3313mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -441,11 +437,11 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.HongbaoExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.HongbaoExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.HongbaoExtra.Builder.m3313mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.HongbaoExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3312mergeFrom(Message message) {
             if (message instanceof HongbaoExtra) {
                 return mergeFrom((HongbaoExtra) message);
             }
@@ -453,8 +449,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3316mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -489,8 +485,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3318setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -544,8 +540,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3320setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -580,8 +576,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3322setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -646,10 +642,10 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
                             }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } finally {
                 this.unknownFields = newBuilder.build();
@@ -672,66 +668,65 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3283toBuilder();
     }
 
     public static Builder newBuilder(HongbaoExtra hongbaoExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(hongbaoExtra);
+        return DEFAULT_INSTANCE.m3283toBuilder().mergeFrom(hongbaoExtra);
     }
 
     public static HongbaoExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (HongbaoExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static HongbaoExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HongbaoExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static HongbaoExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (HongbaoExtra) PARSER.parseFrom(byteString);
     }
 
     public static HongbaoExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (HongbaoExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static HongbaoExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (HongbaoExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static HongbaoExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HongbaoExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static HongbaoExtra parseFrom(InputStream inputStream) throws IOException {
-        return (HongbaoExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static HongbaoExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (HongbaoExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static HongbaoExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (HongbaoExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static HongbaoExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (HongbaoExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static HongbaoExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (HongbaoExtra) PARSER.parseFrom(bArr);
     }
 
     public static HongbaoExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (HongbaoExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<HongbaoExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -770,8 +765,8 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public HongbaoExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public HongbaoExtra m3278getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -807,7 +802,6 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         return this.isAnim_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<HongbaoExtra> getParserForType() {
         return PARSER;
     }
@@ -839,7 +833,6 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         return this.remainingMillisecond_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -870,7 +863,7 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         }
         long j = this.beans_;
         int i10 = i9;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             i10 = i9 + CodedOutputStream.computeUInt64Size(6, j);
         }
         boolean z = this.isAnim_;
@@ -880,7 +873,7 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         }
         long j2 = this.remainingMillisecond_;
         int i12 = i11;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             i12 = i11 + CodedOutputStream.computeUInt64Size(8, j2);
         }
         int i13 = i12;
@@ -928,12 +921,10 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         return this.status_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -943,12 +934,10 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_HongbaoExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(HongbaoExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -961,28 +950,26 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3281newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3280newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new HongbaoExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3283toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getHongbaoIdBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.hongbaoId_);
@@ -1003,7 +990,7 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             GeneratedMessageV3.writeString(codedOutputStream, 5, this.size_);
         }
         long j = this.beans_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(6, j);
         }
         boolean z = this.isAnim_;
@@ -1011,7 +998,7 @@ public final class HongbaoExtra extends GeneratedMessageV3 implements HongbaoExt
             codedOutputStream.writeBool(7, z);
         }
         long j2 = this.remainingMillisecond_;
-        if (j2 != 0) {
+        if (j2 != serialVersionUID) {
             codedOutputStream.writeUInt64(8, j2);
         }
         if (!getConditionBytes().isEmpty()) {

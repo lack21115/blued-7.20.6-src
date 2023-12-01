@@ -81,8 +81,8 @@ public class e {
                 drawable = null;
                 if (dVar.j != null) {
                     drawable = null;
-                    if (!com.opos.cmn.an.c.a.a(dVar.j.f26633a)) {
-                        drawable = a(context, dVar.j.f26633a);
+                    if (!com.opos.cmn.an.c.a.a(dVar.j.f12945a)) {
+                        drawable = a(context, dVar.j.f12945a);
                     }
                 }
             }

@@ -32,6 +32,7 @@ import com.soft.blued.utils.ADClosePopOptionsUtils;
 import com.soft.blued.utils.AppUtils;
 import com.soft.blued.utils.WeChatUtils;
 import java.io.File;
+import java.io.Serializable;
 import kotlin.Metadata;
 import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -43,11 +44,11 @@ import kotlin.text.StringsKt;
 public final class BluedInterstitialFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34518a = new Companion(null);
+    public static final Companion f20827a = new Companion(null);
     private FragmentBluedInterstitialBinding b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TwoFloorModel f34519c;
+    private TwoFloorModel f20828c;
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/welcome/BluedInterstitialFragment$Companion.class */
@@ -60,17 +61,17 @@ public final class BluedInterstitialFragment extends BaseFragment {
         }
 
         @JvmStatic
-        public final void a(Context context, TwoFloorModel model) {
+        public final void a(Context context, TwoFloorModel twoFloorModel) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(model, "model");
+            Intrinsics.e(twoFloorModel, "model");
             Bundle bundle = new Bundle();
-            bundle.putSerializable("AD_MODEL", model);
+            bundle.putSerializable("AD_MODEL", (Serializable) twoFloorModel);
             TerminalActivity.d(context, BluedInterstitialFragment.class, bundle);
         }
     }
 
     private final void a() {
-        final TwoFloorModel twoFloorModel = this.f34519c;
+        final TwoFloorModel twoFloorModel = this.f20828c;
         if (twoFloorModel == null) {
             return;
         }
@@ -78,7 +79,6 @@ public final class BluedInterstitialFragment extends BaseFragment {
             d();
         } else {
             ImageFileLoader.a(getFragmentActive()).a(twoFloorModel.master_image).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$BluedInterstitialFragment$PwY4sLuwI52WFp8hfFcYY1phRIA
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public final void onUIFinish(File file, Exception exc) {
                     BluedInterstitialFragment.a(BluedInterstitialFragment.this, twoFloorModel, file, exc);
                 }
@@ -88,27 +88,27 @@ public final class BluedInterstitialFragment extends BaseFragment {
 
     @JvmStatic
     public static final void a(Context context, TwoFloorModel twoFloorModel) {
-        f34518a.a(context, twoFloorModel);
+        f20827a.a(context, twoFloorModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(BluedInterstitialFragment this$0, View view) {
+    public static final void a(BluedInterstitialFragment bluedInterstitialFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.b();
-        this$0.d();
+        Intrinsics.e(bluedInterstitialFragment, "this$0");
+        bluedInterstitialFragment.b();
+        bluedInterstitialFragment.d();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final BluedInterstitialFragment this$0, final TwoFloorModel it) {
+    public static final void a(final BluedInterstitialFragment bluedInterstitialFragment, final TwoFloorModel twoFloorModel) {
         ShapeTextView shapeTextView;
         ImageView imageView;
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(it, "$it");
-        ImageWrapper a2 = ImageLoader.a(this$0.getFragmentActive(), it.master_image).a(new BluedInterstitialFragment$loadPic$1$1$1$1(this$0, it, this$0.getFragmentActive()));
-        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding = this$0.b;
+        Intrinsics.e(bluedInterstitialFragment, "this$0");
+        Intrinsics.e(twoFloorModel, "$it");
+        ImageWrapper a2 = ImageLoader.a(bluedInterstitialFragment.getFragmentActive(), twoFloorModel.master_image).a(new BluedInterstitialFragment$loadPic$1$1$1$1(bluedInterstitialFragment, twoFloorModel, bluedInterstitialFragment.getFragmentActive()));
+        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding = bluedInterstitialFragment.b;
         a2.a(fragmentBluedInterstitialBinding == null ? null : fragmentBluedInterstitialBinding.b);
-        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding2 = this$0.b;
+        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding2 = bluedInterstitialFragment.b;
         if (fragmentBluedInterstitialBinding2 != null && (imageView = fragmentBluedInterstitialBinding2.b) != null) {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$BluedInterstitialFragment$iotsYRdja5hyoO82QSroYubG1_k
                 @Override // android.view.View.OnClickListener
@@ -117,27 +117,27 @@ public final class BluedInterstitialFragment extends BaseFragment {
                 }
             });
         }
-        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding3 = this$0.b;
-        if (fragmentBluedInterstitialBinding3 == null || (shapeTextView = fragmentBluedInterstitialBinding3.f28788a) == null) {
+        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding3 = bluedInterstitialFragment.b;
+        if (fragmentBluedInterstitialBinding3 == null || (shapeTextView = fragmentBluedInterstitialBinding3.f15098a) == null) {
             return;
         }
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$BluedInterstitialFragment$l_LYgzqit6oAl7sg6_O3SjT_wqw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                BluedInterstitialFragment.a(BluedInterstitialFragment.this, it, view);
+                BluedInterstitialFragment.a(BluedInterstitialFragment.this, twoFloorModel, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final BluedInterstitialFragment this$0, TwoFloorModel it, View view) {
+    public static final void a(final BluedInterstitialFragment bluedInterstitialFragment, TwoFloorModel twoFloorModel, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(it, "$it");
-        FragmentActivity activity = this$0.getActivity();
-        TwoFloorModel twoFloorModel = it;
-        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding = this$0.b;
-        ADClosePopOptionsUtils.a(activity, twoFloorModel, fragmentBluedInterstitialBinding == null ? null : fragmentBluedInterstitialBinding.f28788a, ADConstants.AD_POSITION.NONE, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$BluedInterstitialFragment$ZmVIJfU94IQCddx3SSPDFJ6Fyeo
+        Intrinsics.e(bluedInterstitialFragment, "this$0");
+        Intrinsics.e(twoFloorModel, "$it");
+        FragmentActivity activity = bluedInterstitialFragment.getActivity();
+        TwoFloorModel twoFloorModel2 = twoFloorModel;
+        FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding = bluedInterstitialFragment.b;
+        ADClosePopOptionsUtils.a(activity, twoFloorModel2, fragmentBluedInterstitialBinding == null ? null : fragmentBluedInterstitialBinding.f15098a, ADConstants.AD_POSITION.NONE, new ADClosePopOptionsUtils.ADRemovedListener() { // from class: com.soft.blued.ui.welcome.-$$Lambda$BluedInterstitialFragment$ZmVIJfU94IQCddx3SSPDFJ6Fyeo
             @Override // com.soft.blued.utils.ADClosePopOptionsUtils.ADRemovedListener
             public final void onRemoved() {
                 BluedInterstitialFragment.c(BluedInterstitialFragment.this);
@@ -146,23 +146,23 @@ public final class BluedInterstitialFragment extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final BluedInterstitialFragment this$0, final TwoFloorModel it, File file, Exception exc) {
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(it, "$it");
+    public static final void a(final BluedInterstitialFragment bluedInterstitialFragment, final TwoFloorModel twoFloorModel, File file, Exception exc) {
+        Intrinsics.e(bluedInterstitialFragment, "this$0");
+        Intrinsics.e(twoFloorModel, "$it");
         if (file == null || !file.exists()) {
-            this$0.d();
+            bluedInterstitialFragment.d();
         } else {
-            this$0.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.welcome.-$$Lambda$BluedInterstitialFragment$DQKTW9Mi-Pt0eJGKZZ95kPe5Lww
+            bluedInterstitialFragment.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.welcome.-$$Lambda$BluedInterstitialFragment$DQKTW9Mi-Pt0eJGKZZ95kPe5Lww
                 @Override // java.lang.Runnable
                 public final void run() {
-                    BluedInterstitialFragment.a(BluedInterstitialFragment.this, it);
+                    BluedInterstitialFragment.a(BluedInterstitialFragment.this, twoFloorModel);
                 }
             });
         }
     }
 
     private final void b() {
-        TwoFloorModel twoFloorModel = this.f34519c;
+        TwoFloorModel twoFloorModel = this.f20828c;
         if (twoFloorModel == null) {
             return;
         }
@@ -172,7 +172,7 @@ public final class BluedInterstitialFragment extends BaseFragment {
                 WeChatUtils.a(getContext(), twoFloorModel.wx.id, twoFloorModel.wx.path);
                 return;
             }
-            AdMiniAppDialogFragment.Companion companion = AdMiniAppDialogFragment.f34510a;
+            AdMiniAppDialogFragment.Companion companion = AdMiniAppDialogFragment.f20819a;
             FragmentManager childFragmentManager = getChildFragmentManager();
             Intrinsics.c(childFragmentManager, "childFragmentManager");
             String str = twoFloorModel.wx.id;
@@ -225,14 +225,14 @@ public final class BluedInterstitialFragment extends BaseFragment {
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.soft.blued.ui.welcome.model.TwoFloorModel");
         }
-        this.f34519c = (TwoFloorModel) obj;
+        this.f20828c = (TwoFloorModel) obj;
         LiveEventBus.get("live_back_to_two_level").post("");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(BluedInterstitialFragment this$0) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.d();
+    public static final void c(BluedInterstitialFragment bluedInterstitialFragment) {
+        Intrinsics.e(bluedInterstitialFragment, "this$0");
+        bluedInterstitialFragment.d();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -244,23 +244,20 @@ public final class BluedInterstitialFragment extends BaseFragment {
         ActivityChangeAnimationUtils.d(getActivity());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         ShapeTextView shapeTextView;
         FragmentBluedInterstitialBinding fragmentBluedInterstitialBinding = this.b;
-        return (fragmentBluedInterstitialBinding == null || (shapeTextView = fragmentBluedInterstitialBinding.f28788a) == null || !shapeTextView.performClick()) ? false : true;
+        return (fragmentBluedInterstitialBinding == null || (shapeTextView = fragmentBluedInterstitialBinding.f15098a) == null || !shapeTextView.performClick()) ? false : true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         ActivityChangeAnimationUtils.b(getActivity());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
-        Intrinsics.e(inflater, "inflater");
-        View inflate = inflater.inflate(R.layout.fragment_blued_interstitial, (ViewGroup) null);
+    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        Intrinsics.e(layoutInflater, "inflater");
+        View inflate = layoutInflater.inflate(R.layout.fragment_blued_interstitial, (ViewGroup) null);
         this.b = FragmentBluedInterstitialBinding.a(inflate);
         c();
         a();

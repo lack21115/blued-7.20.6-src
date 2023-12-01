@@ -17,13 +17,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYKtvPro2View.class */
 public final class YYKtvPro2View extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Paint f18280a;
+    private final Paint a;
     private final Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18281c;
+    private int c;
     private int d;
     private int e;
     private OnKtvProChangeNumHeightListening f;
@@ -54,14 +50,14 @@ public final class YYKtvPro2View extends View {
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.FILL);
         paint.setStrokeCap(Paint.Cap.ROUND);
-        this.f18280a = paint;
+        this.a = paint;
         Paint paint2 = new Paint();
         paint2.setColor(getResources().getColor(R.color.purple_200));
         paint2.setAntiAlias(true);
         paint2.setStyle(Paint.Style.FILL);
         paint2.setStrokeCap(Paint.Cap.ROUND);
         this.b = paint2;
-        this.f18281c = 20;
+        this.c = 20;
         this.d = 20;
         this.g = 100;
         this.j = R.color.syc_ffd000;
@@ -82,7 +78,7 @@ public final class YYKtvPro2View extends View {
             Bitmap bitmap2 = this.i;
             Integer valueOf2 = bitmap2 == null ? null : Integer.valueOf(bitmap2.getWidth());
             Intrinsics.a(valueOf2);
-            this.d = (((intValue - valueOf2.intValue()) - this.f18281c) + 20) - this.e;
+            this.d = (((intValue - valueOf2.intValue()) - this.c) + 20) - this.e;
             return;
         }
         this.i = BitmapFactory.decodeResource(getResources(), R.drawable.icon_bg_yy_ktv_music_pro);
@@ -96,7 +92,7 @@ public final class YYKtvPro2View extends View {
         Bitmap bitmap4 = this.i;
         Integer valueOf4 = bitmap4 == null ? null : Integer.valueOf(bitmap4.getWidth());
         Intrinsics.a(valueOf4);
-        this.d = (((intValue2 - valueOf4.intValue()) - this.f18281c) + 20) - this.e;
+        this.d = (((intValue2 - valueOf4.intValue()) - this.c) + 20) - this.e;
     }
 
     public final int getMaxPro() {
@@ -130,12 +126,12 @@ public final class YYKtvPro2View extends View {
         super.onDraw(canvas);
         Bitmap bitmap = this.i;
         if (bitmap != null) {
-            this.f18280a.setColor(getResources().getColor(R.color.black));
+            this.a.setColor(getResources().getColor(R.color.black));
             if (canvas != null) {
-                canvas.drawBitmap(bitmap, 0.0f, 0.0f, this.f18280a);
+                canvas.drawBitmap(bitmap, 0.0f, 0.0f, this.a);
             }
         }
-        float f = (((i - this.h) / (this.g * 1.0f)) * this.d) + this.f18281c;
+        float f = (((i - this.h) / (this.g * 1.0f)) * this.d) + this.c;
         Bitmap bitmap2 = this.i;
         Integer valueOf2 = bitmap2 == null ? null : Integer.valueOf(bitmap2.getWidth());
         Intrinsics.a(valueOf2);

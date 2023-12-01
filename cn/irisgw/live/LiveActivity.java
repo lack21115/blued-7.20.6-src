@@ -31,8 +31,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
     public static final int ACTIVITY_FIELD_NUMBER = 1;
     private static final LiveActivity DEFAULT_INSTANCE = new LiveActivity();
     private static final Parser<LiveActivity> PARSER = new AbstractParser<LiveActivity>() { // from class: cn.irisgw.live.LiveActivity.1
-        @Override // com.google.protobuf.Parser
-        public LiveActivity parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LiveActivity m4328parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LiveActivity(codedInputStream, extensionRegistryLite);
         }
     };
@@ -62,8 +62,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         private volatile Object url_;
         private static final Activity DEFAULT_INSTANCE = new Activity();
         private static final Parser<Activity> PARSER = new AbstractParser<Activity>() { // from class: cn.irisgw.live.LiveActivity.Activity.1
-            @Override // com.google.protobuf.Parser
-            public Activity parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Activity m4338parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Activity(codedInputStream, extensionRegistryLite);
             }
         };
@@ -141,14 +141,14 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                     return this;
                 }
                 ensureDisplayUrlsIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.displayUrls_);
+                AbstractMessageLite.Builder.addAll(iterable, this.displayUrls_);
                 onChanged();
                 return this;
             }
 
             public Builder addAllList(Iterable<String> iterable) {
                 ensureListIsMutable();
-                AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.list_);
+                AbstractMessageLite.Builder.addAll(iterable, this.list_);
                 onChanged();
                 return this;
             }
@@ -156,11 +156,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             public Builder addDisplayUrls(int i, DisplayUrl.Builder builder) {
                 RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.addMessage(i, builder.build());
+                    repeatedFieldBuilderV3.addMessage(i, builder.m4427build());
                     return this;
                 }
                 ensureDisplayUrlsIsMutable();
-                this.displayUrls_.add(i, builder.build());
+                this.displayUrls_.add(i, builder.m4427build());
                 onChanged();
                 return this;
             }
@@ -183,11 +183,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             public Builder addDisplayUrls(DisplayUrl.Builder builder) {
                 RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.addMessage(builder.build());
+                    repeatedFieldBuilderV3.addMessage(builder.m4427build());
                     return this;
                 }
                 ensureDisplayUrlsIsMutable();
-                this.displayUrls_.add(builder.build());
+                this.displayUrls_.add(builder.m4427build());
                 onChanged();
                 return this;
             }
@@ -218,7 +218,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             public Builder addList(String str) {
                 if (str != null) {
                     ensureListIsMutable();
-                    this.list_.add((LazyStringList) str);
+                    this.list_.add(str);
                     onChanged();
                     return this;
                 }
@@ -236,22 +236,22 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m4340addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Activity build() {
-                Activity buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Activity m4342build() {
+                Activity m4344buildPartial = m4344buildPartial();
+                if (m4344buildPartial.isInitialized()) {
+                    return m4344buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m4344buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Activity buildPartial() {
+            /* renamed from: buildPartial */
+            public Activity m4344buildPartial() {
                 Activity activity = new Activity(this);
                 activity.id_ = this.id_;
                 activity.rank_ = this.rank_;
@@ -278,11 +278,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return activity;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m4348clear() {
                 super.clear();
-                this.id_ = 0L;
-                this.rank_ = 0L;
+                this.id_ = Activity.serialVersionUID;
+                this.rank_ = Activity.serialVersionUID;
                 this.icon_ = "";
                 this.url_ = "";
                 this.page_ = 0;
@@ -311,8 +311,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m4350clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -323,7 +323,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             }
 
             public Builder clearId() {
-                this.id_ = 0L;
+                this.id_ = Activity.serialVersionUID;
                 onChanged();
                 return this;
             }
@@ -335,8 +335,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m4353clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -347,7 +347,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             }
 
             public Builder clearRank() {
-                this.rank_ = 0L;
+                this.rank_ = Activity.serialVersionUID;
                 onChanged();
                 return this;
             }
@@ -364,18 +364,16 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m4359clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Activity getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Activity m4361getDefaultInstanceForType() {
                 return Activity.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_Activity_descriptor;
             }
@@ -409,7 +407,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
             public DisplayUrlOrBuilder getDisplayUrlsOrBuilder(int i) {
                 RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
-                return repeatedFieldBuilderV3 == null ? this.displayUrls_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+                return repeatedFieldBuilderV3 == null ? this.displayUrls_.get(i) : (DisplayUrlOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
             }
 
             @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
@@ -447,7 +445,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
 
             @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
             public String getList(int i) {
-                return this.list_.get(i);
+                return (String) this.list_.get(i);
             }
 
             @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
@@ -461,7 +459,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             }
 
             @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
-            public ProtocolStringList getListList() {
+            /* renamed from: getListList */
+            public ProtocolStringList mo4332getListList() {
                 return this.list_.getUnmodifiableView();
             }
 
@@ -529,12 +528,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_Activity_fieldAccessorTable.ensureFieldAccessorsInitialized(Activity.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -543,10 +540,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 if (activity == Activity.getDefaultInstance()) {
                     return this;
                 }
-                if (activity.getId() != 0) {
+                if (activity.getId() != Activity.serialVersionUID) {
                     setId(activity.getId());
                 }
-                if (activity.getRank() != 0) {
+                if (activity.getRank() != Activity.serialVersionUID) {
                     setRank(activity.getRank());
                 }
                 if (!activity.getIcon().isEmpty()) {
@@ -600,18 +597,18 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                         this.displayUrlsBuilder_.addAllMessages(activity.displayUrls_);
                     }
                 }
-                mergeUnknownFields(activity.unknownFields);
+                m4370mergeUnknownFields(activity.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.LiveActivity.Activity.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.LiveActivity.Activity.Builder m4367mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -656,11 +653,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveActivity.Activity.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveActivity$Activity$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveActivity.Activity.Builder.m4367mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveActivity$Activity$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m4366mergeFrom(Message message) {
                 if (message instanceof Activity) {
                     return mergeFrom((Activity) message);
                 }
@@ -668,8 +665,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m4370mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -688,11 +685,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             public Builder setDisplayUrls(int i, DisplayUrl.Builder builder) {
                 RepeatedFieldBuilderV3<DisplayUrl, DisplayUrl.Builder, DisplayUrlOrBuilder> repeatedFieldBuilderV3 = this.displayUrlsBuilder_;
                 if (repeatedFieldBuilderV3 != null) {
-                    repeatedFieldBuilderV3.setMessage(i, builder.build());
+                    repeatedFieldBuilderV3.setMessage(i, builder.m4427build());
                     return this;
                 }
                 ensureDisplayUrlsIsMutable();
-                this.displayUrls_.set(i, builder.build());
+                this.displayUrls_.set(i, builder.m4427build());
                 onChanged();
                 return this;
             }
@@ -712,8 +709,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 }
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m4372setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -745,7 +742,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             public Builder setList(int i, String str) {
                 if (str != null) {
                     ensureListIsMutable();
-                    this.list_.set(i, (int) str);
+                    this.list_.set(i, str);
                     onChanged();
                     return this;
                 }
@@ -773,8 +770,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m4374setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -797,8 +794,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m4376setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -865,7 +862,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                                     this.list_ = new LazyStringArrayList();
                                     z4 = z2 | true;
                                 }
-                                this.list_.add((LazyStringList) readStringRequireUtf8);
+                                this.list_.add(readStringRequireUtf8);
                                 z2 = z4;
                             } else if (readTag == 66) {
                                 boolean z5 = z2;
@@ -920,79 +917,78 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m4337toBuilder();
         }
 
         public static Builder newBuilder(Activity activity) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(activity);
+            return DEFAULT_INSTANCE.m4337toBuilder().mergeFrom(activity);
         }
 
         public static Activity parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Activity) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Activity parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Activity) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Activity parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Activity) PARSER.parseFrom(byteString);
         }
 
         public static Activity parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Activity) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Activity parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Activity) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Activity parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Activity) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Activity parseFrom(InputStream inputStream) throws IOException {
-            return (Activity) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Activity parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Activity) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Activity parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Activity) PARSER.parseFrom(byteBuffer);
         }
 
         public static Activity parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Activity) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Activity parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Activity) PARSER.parseFrom(bArr);
         }
 
         public static Activity parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Activity) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Activity> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
             }
             if (obj instanceof Activity) {
                 Activity activity = (Activity) obj;
-                return getId() == activity.getId() && getRank() == activity.getRank() && getIcon().equals(activity.getIcon()) && getUrl().equals(activity.getUrl()) && this.page_ == activity.page_ && getTitle().equals(activity.getTitle()) && getListList().equals(activity.getListList()) && getDisplayUrlsList().equals(activity.getDisplayUrlsList()) && this.unknownFields.equals(activity.unknownFields);
+                return getId() == activity.getId() && getRank() == activity.getRank() && getIcon().equals(activity.getIcon()) && getUrl().equals(activity.getUrl()) && this.page_ == activity.page_ && getTitle().equals(activity.getTitle()) && mo4332getListList().equals(activity.mo4332getListList()) && getDisplayUrlsList().equals(activity.getDisplayUrlsList()) && this.unknownFields.equals(activity.unknownFields);
             }
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Activity getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Activity m4331getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1050,7 +1046,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
 
         @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
         public String getList(int i) {
-            return this.list_.get(i);
+            return (String) this.list_.get(i);
         }
 
         @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
@@ -1064,7 +1060,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         }
 
         @Override // cn.irisgw.live.LiveActivity.ActivityOrBuilder
-        public ProtocolStringList getListList() {
+        /* renamed from: getListList */
+        public ProtocolStringList mo4332getListList() {
             return this.list_;
         }
 
@@ -1083,7 +1080,6 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return this.page_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Activity> getParserForType() {
             return PARSER;
         }
@@ -1093,17 +1089,16 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return this.rank_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
                 return i;
             }
             long j = this.id_;
-            int computeInt64Size = j != 0 ? CodedOutputStream.computeInt64Size(1, j) + 0 : 0;
+            int computeInt64Size = j != serialVersionUID ? CodedOutputStream.computeInt64Size(1, j) + 0 : 0;
             long j2 = this.rank_;
             int i2 = computeInt64Size;
-            if (j2 != 0) {
+            if (j2 != serialVersionUID) {
                 i2 = computeInt64Size + CodedOutputStream.computeInt64Size(2, j2);
             }
             int i3 = i2;
@@ -1126,7 +1121,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             for (int i8 = 0; i8 < this.list_.size(); i8++) {
                 i7 += computeStringSizeNoTag(this.list_.getRaw(i8));
             }
-            int size = i6 + i7 + (getListList().size() * 1);
+            int size = i6 + i7 + (mo4332getListList().size() * 1);
             int i9 = 0;
             while (true) {
                 int i10 = i9;
@@ -1162,7 +1157,6 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -1189,7 +1183,6 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1197,7 +1190,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             int hashCode = ((((((((((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + Internal.hashLong(getId())) * 37) + 2) * 53) + Internal.hashLong(getRank())) * 37) + 3) * 53) + getIcon().hashCode()) * 37) + 4) * 53) + getUrl().hashCode()) * 37) + 5) * 53) + this.page_) * 37) + 6) * 53) + getTitle().hashCode();
             int i = hashCode;
             if (getListCount() > 0) {
-                i = (((hashCode * 37) + 7) * 53) + getListList().hashCode();
+                i = (((hashCode * 37) + 7) * 53) + mo4332getListList().hashCode();
             }
             int i2 = i;
             if (getDisplayUrlsCount() > 0) {
@@ -1208,12 +1201,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return hashCode2;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_Activity_fieldAccessorTable.ensureFieldAccessorsInitialized(Activity.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1226,36 +1217,34 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m4335newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m4334newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Activity();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m4337toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i;
             long j = this.id_;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 codedOutputStream.writeInt64(1, j);
             }
             long j2 = this.rank_;
-            if (j2 != 0) {
+            if (j2 != serialVersionUID) {
                 codedOutputStream.writeInt64(2, j2);
             }
             if (!getIconBytes().isEmpty()) {
@@ -1310,7 +1299,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
 
         int getListCount();
 
-        List<String> getListList();
+        /* renamed from: getListList */
+        List<String> mo4332getListList();
 
         Page getPage();
 
@@ -1377,11 +1367,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         public Builder addActivity(int i, Activity.Builder builder) {
             RepeatedFieldBuilderV3<Activity, Activity.Builder, ActivityOrBuilder> repeatedFieldBuilderV3 = this.activityBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m4342build());
                 return this;
             }
             ensureActivityIsMutable();
-            this.activity_.add(i, builder.build());
+            this.activity_.add(i, builder.m4342build());
             onChanged();
             return this;
         }
@@ -1404,11 +1394,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         public Builder addActivity(Activity.Builder builder) {
             RepeatedFieldBuilderV3<Activity, Activity.Builder, ActivityOrBuilder> repeatedFieldBuilderV3 = this.activityBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m4342build());
                 return this;
             }
             ensureActivityIsMutable();
-            this.activity_.add(builder.build());
+            this.activity_.add(builder.m4342build());
             onChanged();
             return this;
         }
@@ -1443,27 +1433,27 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
             ensureActivityIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.activity_);
+            AbstractMessageLite.Builder.addAll(iterable, this.activity_);
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m4378addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveActivity build() {
-            LiveActivity buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LiveActivity m4380build() {
+            LiveActivity m4382buildPartial = m4382buildPartial();
+            if (m4382buildPartial.isInitialized()) {
+                return m4382buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m4382buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveActivity buildPartial() {
+        /* renamed from: buildPartial */
+        public LiveActivity m4382buildPartial() {
             LiveActivity liveActivity = new LiveActivity(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<Activity, Activity.Builder, ActivityOrBuilder> repeatedFieldBuilderV3 = this.activityBuilder_;
@@ -1480,8 +1470,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return liveActivity;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m4386clear() {
             super.clear();
             RepeatedFieldBuilderV3<Activity, Activity.Builder, ActivityOrBuilder> repeatedFieldBuilderV3 = this.activityBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -1505,20 +1495,19 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m4388clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m4391clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m4397clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.LiveActivityOrBuilder
@@ -1550,7 +1539,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         @Override // cn.irisgw.live.LiveActivityOrBuilder
         public ActivityOrBuilder getActivityOrBuilder(int i) {
             RepeatedFieldBuilderV3<Activity, Activity.Builder, ActivityOrBuilder> repeatedFieldBuilderV3 = this.activityBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.activity_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.activity_.get(i) : (ActivityOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.LiveActivityOrBuilder
@@ -1559,22 +1548,19 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.activity_);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LiveActivity getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LiveActivity m4399getDefaultInstanceForType() {
             return LiveActivity.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_descriptor;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveActivity.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1609,18 +1595,18 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                     this.activityBuilder_.addAllMessages(liveActivity.activity_);
                 }
             }
-            mergeUnknownFields(liveActivity.unknownFields);
+            m4408mergeUnknownFields(liveActivity.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LiveActivity.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LiveActivity.Builder m4405mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1665,11 +1651,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveActivity.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveActivity$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveActivity.Builder.m4405mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveActivity$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m4404mergeFrom(Message message) {
             if (message instanceof LiveActivity) {
                 return mergeFrom((LiveActivity) message);
             }
@@ -1677,8 +1663,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m4408mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1697,11 +1683,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         public Builder setActivity(int i, Activity.Builder builder) {
             RepeatedFieldBuilderV3<Activity, Activity.Builder, ActivityOrBuilder> repeatedFieldBuilderV3 = this.activityBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m4342build());
                 return this;
             }
             ensureActivityIsMutable();
-            this.activity_.set(i, builder.build());
+            this.activity_.set(i, builder.m4342build());
             onChanged();
             return this;
         }
@@ -1721,18 +1707,18 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m4410setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m4412setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m4414setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1742,8 +1728,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         public static final int DATA_FIELD_NUMBER = 2;
         private static final DisplayUrl DEFAULT_INSTANCE = new DisplayUrl();
         private static final Parser<DisplayUrl> PARSER = new AbstractParser<DisplayUrl>() { // from class: cn.irisgw.live.LiveActivity.DisplayUrl.1
-            @Override // com.google.protobuf.Parser
-            public DisplayUrl parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public DisplayUrl m4423parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new DisplayUrl(codedInputStream, extensionRegistryLite);
             }
         };
@@ -1779,22 +1765,22 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 boolean unused = DisplayUrl.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m4425addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public DisplayUrl build() {
-                DisplayUrl buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public DisplayUrl m4427build() {
+                DisplayUrl m4429buildPartial = m4429buildPartial();
+                if (m4429buildPartial.isInitialized()) {
+                    return m4429buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m4429buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public DisplayUrl buildPartial() {
+            /* renamed from: buildPartial */
+            public DisplayUrl m4429buildPartial() {
                 DisplayUrl displayUrl = new DisplayUrl(this);
                 displayUrl.url_ = this.url_;
                 displayUrl.data_ = this.data_;
@@ -1802,8 +1788,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return displayUrl;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m4433clear() {
                 super.clear();
                 this.url_ = "";
                 this.data_ = "";
@@ -1816,13 +1802,13 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m4435clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m4438clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -1832,10 +1818,9 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m4444clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.LiveActivity.DisplayUrlOrBuilder
@@ -1860,12 +1845,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public DisplayUrl getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public DisplayUrl m4446getDefaultInstanceForType() {
                 return DisplayUrl.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_DisplayUrl_descriptor;
             }
@@ -1892,12 +1876,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_DisplayUrl_fieldAccessorTable.ensureFieldAccessorsInitialized(DisplayUrl.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1914,18 +1896,18 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                     this.data_ = displayUrl.data_;
                     onChanged();
                 }
-                mergeUnknownFields(displayUrl.unknownFields);
+                m4455mergeUnknownFields(displayUrl.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.LiveActivity.DisplayUrl.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.LiveActivity.DisplayUrl.Builder m4452mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1970,11 +1952,11 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveActivity.DisplayUrl.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveActivity$DisplayUrl$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveActivity.DisplayUrl.Builder.m4452mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveActivity$DisplayUrl$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m4451mergeFrom(Message message) {
                 if (message instanceof DisplayUrl) {
                     return mergeFrom((DisplayUrl) message);
                 }
@@ -1982,8 +1964,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m4455mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -2006,18 +1988,18 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m4457setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m4459setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m4461setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -2095,66 +2077,65 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m4422toBuilder();
         }
 
         public static Builder newBuilder(DisplayUrl displayUrl) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(displayUrl);
+            return DEFAULT_INSTANCE.m4422toBuilder().mergeFrom(displayUrl);
         }
 
         public static DisplayUrl parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static DisplayUrl parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (DisplayUrl) PARSER.parseFrom(byteString);
         }
 
         public static DisplayUrl parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (DisplayUrl) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static DisplayUrl parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(InputStream inputStream) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static DisplayUrl parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (DisplayUrl) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (DisplayUrl) PARSER.parseFrom(byteBuffer);
         }
 
         public static DisplayUrl parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (DisplayUrl) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static DisplayUrl parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (DisplayUrl) PARSER.parseFrom(bArr);
         }
 
         public static DisplayUrl parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (DisplayUrl) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<DisplayUrl> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -2188,17 +2169,15 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public DisplayUrl getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public DisplayUrl m4417getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<DisplayUrl> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -2217,7 +2196,6 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -2244,7 +2222,6 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -2254,12 +2231,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_DisplayUrl_fieldAccessorTable.ensureFieldAccessorsInitialized(DisplayUrl.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -2272,28 +2247,26 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m4420newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m4419newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new DisplayUrl();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m4422toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getUrlBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.url_);
@@ -2326,9 +2299,8 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         public static final int Half_VALUE = 1;
         private final int value;
         private static final Internal.EnumLiteMap<Page> internalValueMap = new Internal.EnumLiteMap<Page>() { // from class: cn.irisgw.live.LiveActivity.Page.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // com.google.protobuf.Internal.EnumLiteMap
-            public Page findValueByNumber(int i) {
+            /* renamed from: findValueByNumber */
+            public Page m4463findValueByNumber(int i) {
                 return Page.forNumber(i);
             }
         };
@@ -2349,7 +2321,7 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         }
 
         public static final Descriptors.EnumDescriptor getDescriptor() {
-            return LiveActivity.getDescriptor().getEnumTypes().get(0);
+            return (Descriptors.EnumDescriptor) LiveActivity.getDescriptor().getEnumTypes().get(0);
         }
 
         public static Internal.EnumLiteMap<Page> internalGetValueMap() {
@@ -2368,12 +2340,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             throw new IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumDescriptor getDescriptorForType() {
             return getDescriptor();
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum, com.google.protobuf.Internal.EnumLite
         public final int getNumber() {
             if (this != UNRECOGNIZED) {
                 return this.value;
@@ -2381,10 +2351,9 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
             throw new IllegalArgumentException("Can't get the number of an unknown enum value.");
         }
 
-        @Override // com.google.protobuf.ProtocolMessageEnum
         public final Descriptors.EnumValueDescriptor getValueDescriptor() {
             if (this != UNRECOGNIZED) {
-                return getDescriptor().getValues().get(ordinal());
+                return (Descriptors.EnumValueDescriptor) getDescriptor().getValues().get(ordinal());
             }
             throw new IllegalStateException("Can't get the descriptor of an unrecognized enum value.");
         }
@@ -2456,66 +2425,65 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m4327toBuilder();
     }
 
     public static Builder newBuilder(LiveActivity liveActivity) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(liveActivity);
+        return DEFAULT_INSTANCE.m4327toBuilder().mergeFrom(liveActivity);
     }
 
     public static LiveActivity parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LiveActivity) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LiveActivity parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveActivity) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveActivity parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LiveActivity) PARSER.parseFrom(byteString);
     }
 
     public static LiveActivity parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LiveActivity) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LiveActivity parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LiveActivity) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LiveActivity parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveActivity) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LiveActivity parseFrom(InputStream inputStream) throws IOException {
-        return (LiveActivity) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LiveActivity parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveActivity) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveActivity parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LiveActivity) PARSER.parseFrom(byteBuffer);
     }
 
     public static LiveActivity parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LiveActivity) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LiveActivity parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LiveActivity) PARSER.parseFrom(bArr);
     }
 
     public static LiveActivity parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LiveActivity) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LiveActivity> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -2552,17 +2520,15 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         return this.activity_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LiveActivity getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LiveActivity m4322getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LiveActivity> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -2577,12 +2543,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -2597,12 +2561,10 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LiveActivity_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveActivity.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -2615,28 +2577,26 @@ public final class LiveActivity extends GeneratedMessageV3 implements LiveActivi
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m4325newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m4324newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LiveActivity();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m4327toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

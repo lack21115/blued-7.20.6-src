@@ -4,10 +4,10 @@ package com.tencent.open.utils;
 public final class ZipShort implements Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38292a;
+    private int f24601a;
 
     public ZipShort(int i) {
-        this.f38292a = i;
+        this.f24601a = i;
     }
 
     public ZipShort(byte[] bArr) {
@@ -16,8 +16,8 @@ public final class ZipShort implements Cloneable {
 
     public ZipShort(byte[] bArr, int i) {
         int i2 = (bArr[i + 1] << 8) & 65280;
-        this.f38292a = i2;
-        this.f38292a = i2 + (bArr[i] & 255);
+        this.f24601a = i2;
+        this.f24601a = i2 + (bArr[i] & 255);
     }
 
     public boolean equals(Object obj) {
@@ -27,7 +27,7 @@ public final class ZipShort implements Cloneable {
                 return false;
             }
             z = false;
-            if (this.f38292a == ((ZipShort) obj).getValue()) {
+            if (this.f24601a == ((ZipShort) obj).getValue()) {
                 z = true;
             }
         }
@@ -35,15 +35,15 @@ public final class ZipShort implements Cloneable {
     }
 
     public byte[] getBytes() {
-        int i = this.f38292a;
+        int i = this.f24601a;
         return new byte[]{(byte) (i & 255), (byte) ((i & 65280) >> 8)};
     }
 
     public int getValue() {
-        return this.f38292a;
+        return this.f24601a;
     }
 
     public int hashCode() {
-        return this.f38292a;
+        return this.f24601a;
     }
 }

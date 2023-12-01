@@ -21,9 +21,7 @@ public class RouteBusWalkItem extends WalkPath implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private LatLonPoint f5727a;
+    private LatLonPoint a;
     private LatLonPoint b;
 
     public RouteBusWalkItem() {
@@ -31,7 +29,7 @@ public class RouteBusWalkItem extends WalkPath implements Parcelable {
 
     public RouteBusWalkItem(Parcel parcel) {
         super(parcel);
-        this.f5727a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
+        this.a = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
         this.b = (LatLonPoint) parcel.readParcelable(LatLonPoint.class.getClassLoader());
     }
 
@@ -45,7 +43,7 @@ public class RouteBusWalkItem extends WalkPath implements Parcelable {
     }
 
     public LatLonPoint getOrigin() {
-        return this.f5727a;
+        return this.a;
     }
 
     public void setDestination(LatLonPoint latLonPoint) {
@@ -53,13 +51,13 @@ public class RouteBusWalkItem extends WalkPath implements Parcelable {
     }
 
     public void setOrigin(LatLonPoint latLonPoint) {
-        this.f5727a = latLonPoint;
+        this.a = latLonPoint;
     }
 
     @Override // com.amap.api.services.route.WalkPath, com.amap.api.services.route.Path, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeParcelable(this.f5727a, i);
+        parcel.writeParcelable(this.a, i);
         parcel.writeParcelable(this.b, i);
     }
 }

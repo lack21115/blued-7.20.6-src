@@ -23,13 +23,9 @@ import okhttp3.internal.http2.StreamResetException;
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/connection/StreamAllocation.class */
 public final class StreamAllocation {
     static final /* synthetic */ boolean d = !StreamAllocation.class.desiredAssertionStatus();
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Address f43879a;
+    public final Address a;
     public final Call b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final EventListener f43880c;
+    public final EventListener c;
     private RouteSelector.Selection e;
     private Route f;
     private final ConnectionPool g;
@@ -44,27 +40,25 @@ public final class StreamAllocation {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/connection/StreamAllocation$StreamAllocationReference.class */
     public static final class StreamAllocationReference extends WeakReference<StreamAllocation> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Object f43881a;
+        public final Object a;
 
         StreamAllocationReference(StreamAllocation streamAllocation, Object obj) {
             super(streamAllocation);
-            this.f43881a = obj;
+            this.a = obj;
         }
     }
 
     public StreamAllocation(ConnectionPool connectionPool, Address address, Call call, EventListener eventListener, Object obj) {
         this.g = connectionPool;
-        this.f43879a = address;
+        this.a = address;
         this.b = call;
-        this.f43880c = eventListener;
+        this.c = eventListener;
         this.i = new RouteSelector(address, i(), call, eventListener);
         this.h = obj;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x0066, code lost:
-        if (r4.k.f43871a != false) goto L25;
+        if (r4.k.a != false) goto L25;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -111,7 +105,7 @@ public final class StreamAllocation {
             if (r0 == 0) goto L49
             r0 = r10
             r1 = 1
-            r0.f43871a = r1
+            r0.a = r1
         L49:
             r0 = r9
             r8 = r0
@@ -125,7 +119,7 @@ public final class StreamAllocation {
             r8 = r0
             r0 = r4
             okhttp3.internal.connection.RealConnection r0 = r0.k
-            boolean r0 = r0.f43871a
+            boolean r0 = r0.a
             if (r0 == 0) goto Laf
         L69:
             r0 = r4
@@ -202,7 +196,7 @@ public final class StreamAllocation {
                 realConnection2 = null;
             }
             if (realConnection == null) {
-                Internal.instance.get(this.g, this.f43879a, this, null);
+                Internal.instance.get(this.g, this.a, this, null);
                 if (this.k != null) {
                     realConnection = this.k;
                     route = null;
@@ -217,10 +211,10 @@ public final class StreamAllocation {
         }
         Util.a(h);
         if (realConnection2 != null) {
-            this.f43880c.connectionReleased(this.b, realConnection2);
+            this.c.connectionReleased(this.b, realConnection2);
         }
         if (z2) {
-            this.f43880c.connectionAcquired(this.b, realConnection);
+            this.c.connectionAcquired(this.b, realConnection);
         }
         if (realConnection != null) {
             this.f = this.k.route();
@@ -239,8 +233,8 @@ public final class StreamAllocation {
             RealConnection realConnection6 = realConnection;
             z4 = z2;
             if (z3) {
-                List<Route> c2 = this.e.c();
-                int size = c2.size();
+                List<Route> c = this.e.c();
+                int size = c.size();
                 int i5 = 0;
                 while (true) {
                     int i6 = i5;
@@ -249,8 +243,8 @@ public final class StreamAllocation {
                     if (i6 >= size) {
                         break;
                     }
-                    Route route2 = c2.get(i6);
-                    Internal.instance.get(this.g, this.f43879a, this, route2);
+                    Route route2 = c.get(i6);
+                    Internal.instance.get(this.g, this.a, this, route2);
                     if (this.k != null) {
                         realConnection6 = this.k;
                         this.f = route2;
@@ -273,10 +267,10 @@ public final class StreamAllocation {
             }
         }
         if (z4) {
-            this.f43880c.connectionAcquired(this.b, realConnection3);
+            this.c.connectionAcquired(this.b, realConnection3);
             return realConnection3;
         }
-        realConnection3.a(i, i2, i3, i4, z, this.b, this.f43880c);
+        realConnection3.a(i, i2, i3, i4, z, this.b, this.c);
         i().b(realConnection3.route());
         synchronized (this.g) {
             this.l = true;
@@ -284,24 +278,24 @@ public final class StreamAllocation {
             realConnection4 = realConnection3;
             socket = null;
             if (realConnection3.b()) {
-                socket = Internal.instance.deduplicate(this.g, this.f43879a, this);
+                socket = Internal.instance.deduplicate(this.g, this.a, this);
                 realConnection4 = this.k;
             }
         }
         Util.a(socket);
-        this.f43880c.connectionAcquired(this.b, realConnection4);
+        this.c.connectionAcquired(this.b, realConnection4);
         return realConnection4;
     }
 
     private RealConnection a(int i, int i2, int i3, int i4, boolean z, boolean z2) throws IOException {
         while (true) {
-            RealConnection a2 = a(i, i2, i3, i4, z);
+            RealConnection a = a(i, i2, i3, i4, z);
             synchronized (this.g) {
-                if (a2.b == 0 && !a2.b()) {
-                    return a2;
+                if (a.b == 0 && !a.b()) {
+                    return a;
                 }
-                if (a2.a(z2)) {
-                    return a2;
+                if (a.a(z2)) {
+                    return a;
                 }
                 e();
             }
@@ -327,7 +321,7 @@ public final class StreamAllocation {
     private Socket h() {
         if (d || Thread.holdsLock(this.g)) {
             RealConnection realConnection = this.k;
-            if (realConnection == null || !realConnection.f43871a) {
+            if (realConnection == null || !realConnection.a) {
                 return null;
             }
             return a(false, false, true);
@@ -343,10 +337,10 @@ public final class StreamAllocation {
         if (d || Thread.holdsLock(this.g)) {
             if (this.o == null && this.k.d.size() == 1) {
                 Reference<StreamAllocation> reference = this.k.d.get(0);
-                Socket a2 = a(true, false, false);
+                Socket a = a(true, false, false);
                 this.k = realConnection;
                 realConnection.d.add(reference);
-                return a2;
+                return a;
             }
             throw new IllegalStateException();
         }
@@ -363,11 +357,11 @@ public final class StreamAllocation {
 
     public HttpCodec a(OkHttpClient okHttpClient, Interceptor.Chain chain, boolean z) {
         try {
-            HttpCodec a2 = a(chain.connectTimeoutMillis(), chain.readTimeoutMillis(), chain.writeTimeoutMillis(), okHttpClient.pingIntervalMillis(), okHttpClient.retryOnConnectionFailure(), z).a(okHttpClient, chain, this);
+            HttpCodec a = a(chain.connectTimeoutMillis(), chain.readTimeoutMillis(), chain.writeTimeoutMillis(), okHttpClient.pingIntervalMillis(), okHttpClient.retryOnConnectionFailure(), z).a(okHttpClient, chain, this);
             synchronized (this.g) {
-                this.o = a2;
+                this.o = a;
             }
-            return a2;
+            return a;
         } catch (IOException e) {
             throw new RouteException(e);
         }
@@ -375,11 +369,11 @@ public final class StreamAllocation {
 
     public void a(IOException iOException) {
         boolean z;
-        Socket a2;
+        Socket a;
         RealConnection realConnection;
         synchronized (this.g) {
             if (iOException instanceof StreamResetException) {
-                ErrorCode errorCode = ((StreamResetException) iOException).f43963a;
+                ErrorCode errorCode = ((StreamResetException) iOException).a;
                 if (errorCode == ErrorCode.REFUSED_STREAM) {
                     int i = this.j + 1;
                     this.j = i;
@@ -408,15 +402,15 @@ public final class StreamAllocation {
                 z = false;
             }
             RealConnection realConnection2 = this.k;
-            a2 = a(z, false, true);
+            a = a(z, false, true);
             realConnection = null;
             if (this.k == null) {
                 realConnection = !this.l ? null : realConnection2;
             }
         }
-        Util.a(a2);
+        Util.a(a);
         if (realConnection != null) {
-            this.f43880c.connectionReleased(this.b, realConnection);
+            this.c.connectionReleased(this.b, realConnection);
         }
     }
 
@@ -434,9 +428,9 @@ public final class StreamAllocation {
 
     public void a(boolean z, HttpCodec httpCodec, long j, IOException iOException) {
         RealConnection realConnection;
-        Socket a2;
+        Socket a;
         boolean z2;
-        this.f43880c.responseBodyEnd(this.b, j);
+        this.c.responseBodyEnd(this.b, j);
         synchronized (this.g) {
             if (httpCodec != null) {
                 if (httpCodec == this.o) {
@@ -444,7 +438,7 @@ public final class StreamAllocation {
                         this.k.b++;
                     }
                     realConnection = this.k;
-                    a2 = a(z, false, true);
+                    a = a(z, false, true);
                     if (this.k != null) {
                         realConnection = null;
                     }
@@ -453,15 +447,15 @@ public final class StreamAllocation {
             }
             throw new IllegalStateException("expected " + this.o + " but was " + httpCodec);
         }
-        Util.a(a2);
+        Util.a(a);
         if (realConnection != null) {
-            this.f43880c.connectionReleased(this.b, realConnection);
+            this.c.connectionReleased(this.b, realConnection);
         }
         if (iOException != null) {
-            this.f43880c.callFailed(this.b, Internal.instance.timeoutExit(this.b, iOException));
+            this.c.callFailed(this.b, Internal.instance.timeoutExit(this.b, iOException));
         } else if (z2) {
             Internal.instance.timeoutExit(this.b, null);
-            this.f43880c.callEnd(this.b);
+            this.c.callEnd(this.b);
         }
     }
 
@@ -479,35 +473,35 @@ public final class StreamAllocation {
 
     public void d() {
         RealConnection realConnection;
-        Socket a2;
+        Socket a;
         synchronized (this.g) {
             realConnection = this.k;
-            a2 = a(false, true, false);
+            a = a(false, true, false);
             if (this.k != null) {
                 realConnection = null;
             }
         }
-        Util.a(a2);
+        Util.a(a);
         if (realConnection != null) {
             Internal.instance.timeoutExit(this.b, null);
-            this.f43880c.connectionReleased(this.b, realConnection);
-            this.f43880c.callEnd(this.b);
+            this.c.connectionReleased(this.b, realConnection);
+            this.c.callEnd(this.b);
         }
     }
 
     public void e() {
         RealConnection realConnection;
-        Socket a2;
+        Socket a;
         synchronized (this.g) {
             realConnection = this.k;
-            a2 = a(true, false, false);
+            a = a(true, false, false);
             if (this.k != null) {
                 realConnection = null;
             }
         }
-        Util.a(a2);
+        Util.a(a);
         if (realConnection != null) {
-            this.f43880c.connectionReleased(this.b, realConnection);
+            this.c.connectionReleased(this.b, realConnection);
         }
     }
 
@@ -535,7 +529,7 @@ public final class StreamAllocation {
     }
 
     public String toString() {
-        RealConnection c2 = c();
-        return c2 != null ? c2.toString() : this.f43879a.toString();
+        RealConnection c = c();
+        return c != null ? c.toString() : this.a.toString();
     }
 }

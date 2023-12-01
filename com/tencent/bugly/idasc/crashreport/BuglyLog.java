@@ -17,7 +17,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (p.f35328c) {
+        if (p.f21637c) {
             Log.d(str3, str4);
         }
         ao.a("D", str3, str4);
@@ -32,7 +32,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (p.f35328c) {
+        if (p.f21637c) {
             Log.e(str3, str4);
         }
         ao.a(ExifInterface.LONGITUDE_EAST, str3, str4);
@@ -47,7 +47,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (p.f35328c) {
+        if (p.f21637c) {
             Log.e(str3, str4, th);
         }
         ao.a(ExifInterface.LONGITUDE_EAST, str3, th);
@@ -62,7 +62,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (p.f35328c) {
+        if (p.f21637c) {
             Log.i(str3, str4);
         }
         ao.a("I", str3, str4);
@@ -81,7 +81,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (p.f35328c) {
+        if (p.f21637c) {
             Log.v(str3, str4);
         }
         ao.a(ExifInterface.GPS_MEASUREMENT_INTERRUPTED, str3, str4);
@@ -96,7 +96,7 @@ public class BuglyLog {
         if (str2 == null) {
             str4 = b.l;
         }
-        if (p.f35328c) {
+        if (p.f21637c) {
             Log.w(str3, str4);
         }
         ao.a("W", str3, str4);

@@ -10,10 +10,10 @@ import androidx.core.provider.FontsContractCompat;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final f f40096a;
+    public final f f26405a;
 
     public c(f fVar) {
-        this.f40096a = fVar;
+        this.f26405a = fVar;
     }
 
     public final int a() {
@@ -24,7 +24,7 @@ public final class c {
         int i2 = 0;
         try {
             try {
-                rawQuery = this.f40096a.getReadableDatabase().rawQuery("SELECT count( * ) AS count FROM m4a_file_id_cache;", null);
+                rawQuery = this.f26405a.getReadableDatabase().rawQuery("SELECT count( * ) AS count FROM m4a_file_id_cache;", null);
                 i = 0;
                 if (rawQuery != null) {
                     i = 0;
@@ -70,16 +70,16 @@ public final class c {
     }
 
     public final void a(ax axVar) {
-        SQLiteDatabase writableDatabase = this.f40096a.getWritableDatabase();
+        SQLiteDatabase writableDatabase = this.f26405a.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        if (axVar.f40078a != null) {
-            contentValues.put("music_id", axVar.f40078a);
+        if (axVar.f26387a != null) {
+            contentValues.put("music_id", axVar.f26387a);
         }
         if (axVar.b != null) {
             contentValues.put(FontsContractCompat.Columns.FILE_ID, axVar.b);
         }
-        if (axVar.f40079c != null) {
-            contentValues.put("url", axVar.f40079c);
+        if (axVar.f26388c != null) {
+            contentValues.put("url", axVar.f26388c);
         }
         if (axVar.d != null) {
             contentValues.put("music_ext_id", axVar.d);
@@ -92,7 +92,7 @@ public final class c {
             contentValues.put("overlay_iv", axVar.g);
         }
         contentValues.put("date", Long.valueOf(System.currentTimeMillis()));
-        writableDatabase.update("m4a_file_id_cache", contentValues, "music_id=? AND music_ext_id=?", new String[]{axVar.f40078a, axVar.d});
+        writableDatabase.update("m4a_file_id_cache", contentValues, "music_id=? AND music_ext_id=?", new String[]{axVar.f26387a, axVar.d});
         axVar.h = false;
     }
 
@@ -106,7 +106,7 @@ public final class c {
         Cursor cursor3 = null;
         try {
             try {
-                Cursor rawQuery = this.f40096a.getReadableDatabase().rawQuery("SELECT music_id, music_ext_id FROM m4a_file_id_cache ORDER BY date DESC LIMIT ?,?;", new String[]{String.valueOf(i), String.valueOf(i2)});
+                Cursor rawQuery = this.f26405a.getReadableDatabase().rawQuery("SELECT music_id, music_ext_id FROM m4a_file_id_cache ORDER BY date DESC LIMIT ?,?;", new String[]{String.valueOf(i), String.valueOf(i2)});
                 Cursor cursor4 = null;
                 if (rawQuery != null) {
                     Cursor cursor5 = null;
@@ -161,10 +161,10 @@ public final class c {
     }
 
     public final void b() {
-        this.f40096a.getWritableDatabase().execSQL("DELETE FROM m4a_file_id_cache");
+        this.f26405a.getWritableDatabase().execSQL("DELETE FROM m4a_file_id_cache");
     }
 
     public final void b(String str, String str2) {
-        this.f40096a.getWritableDatabase().delete("m4a_file_id_cache", "music_id=? AND music_ext_id=?", new String[]{str, str2});
+        this.f26405a.getWritableDatabase().delete("m4a_file_id_cache", "music_id=? AND music_ext_id=?", new String[]{str, str2});
     }
 }

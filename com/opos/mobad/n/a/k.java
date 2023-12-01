@@ -17,15 +17,15 @@ import com.opos.mobad.n.a;
 public class k extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    com.opos.mobad.n.c.g f26528a;
+    com.opos.mobad.n.c.g f12840a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f26529c;
+    private View f12841c;
     private TextView d;
     private TextView e;
     private FrameLayout f;
-    private a.InterfaceC0708a g;
+    private a.InterfaceC0538a g;
     private a h;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -33,11 +33,11 @@ public class k extends LinearLayout {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f26531a;
+        public final int f12843a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f26532c;
+        public final int f12844c;
         public final int d;
         public final int e;
         public final int f;
@@ -49,10 +49,10 @@ public class k extends LinearLayout {
         public final float l;
 
         public a(int i, int i2, int i3, int i4, int i5, int i6, float f, int i7, boolean z, int i8, float f2, float f3) {
-            this.f26531a = i;
+            this.f12843a = i;
             this.d = i4;
             this.b = i2;
-            this.f26532c = i3;
+            this.f12844c = i3;
             this.e = i5;
             this.f = i6;
             this.g = f;
@@ -66,7 +66,7 @@ public class k extends LinearLayout {
 
     public k(Context context, a aVar) {
         super(context);
-        this.f26528a = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.a.k.1
+        this.f12840a = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.a.k.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
                 com.opos.cmn.an.f.a.b("LogoTipBar", "onFeedBackClick");
@@ -93,7 +93,7 @@ public class k extends LinearLayout {
         TextView textView = new TextView(getContext());
         this.d = textView;
         textView.setTextColor(Color.parseColor("#FFFFFF"));
-        this.d.setTextSize(1, this.h.f26531a);
+        this.d.setTextSize(1, this.h.f12843a);
         this.d.setGravity(17);
         this.d.setMaxEms(6);
         this.d.setEllipsize(TextUtils.TruncateAt.END);
@@ -116,15 +116,15 @@ public class k extends LinearLayout {
         addView(this.f, layoutParams3);
         if (this.h.i) {
             TextView textView3 = new TextView(getContext());
-            this.f26529c = textView3;
+            this.f12841c = textView3;
             textView3.setBackgroundColor(-1);
             LinearLayout.LayoutParams layoutParams4 = new LinearLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), 1.0f), com.opos.cmn.an.h.f.a.a(getContext(), 12.0f));
             layoutParams4.setMargins(com.opos.cmn.an.h.f.a.a(getContext(), 4.0f), com.opos.cmn.an.h.f.a.a(getContext(), 8.0f), 0, com.opos.cmn.an.h.f.a.a(getContext(), 8.0f));
             layoutParams4.gravity = 16;
-            addView(this.f26529c, layoutParams4);
+            addView(this.f12841c, layoutParams4);
             TextView textView4 = new TextView(getContext());
             this.b = textView4;
-            textView4.setTextSize(1, this.h.f26531a);
+            textView4.setTextSize(1, this.h.f12843a);
             this.b.setTextColor(-1);
             this.b.setGravity(17);
             this.b.setMinWidth(com.opos.cmn.an.h.f.a.a(getContext(), 28.0f));
@@ -139,21 +139,21 @@ public class k extends LinearLayout {
         return new k(context, new a(10, 21, 30, 14, 4, 0, 3.0f, -1308622848, false, 12, 6.36f, 3.56f));
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        com.opos.cmn.an.f.a.b("LogoTipBar", "setListener " + interfaceC0708a);
-        this.g = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        com.opos.cmn.an.f.a.b("LogoTipBar", "setListener " + interfaceC0538a);
+        this.g = interfaceC0538a;
     }
 
     public void a(boolean z, String str, boolean z2, com.opos.mobad.n.d.g gVar, String str2) {
         if (this.b != null) {
             if (TextUtils.isEmpty(str)) {
                 this.b.setVisibility(8);
-                this.f26529c.setVisibility(8);
+                this.f12841c.setVisibility(8);
             } else {
                 this.b.setText(str);
                 this.b.setVisibility(0);
                 if (!TextUtils.isEmpty(str)) {
-                    this.f26529c.setVisibility(0);
+                    this.f12841c.setVisibility(0);
                 }
             }
         }
@@ -164,10 +164,10 @@ public class k extends LinearLayout {
         int i;
         if (z) {
             this.f.setVisibility(0);
-            this.f.setOnClickListener(this.f26528a);
-            this.f.setOnTouchListener(this.f26528a);
-            this.d.setOnClickListener(this.f26528a);
-            this.d.setOnTouchListener(this.f26528a);
+            this.f.setOnClickListener(this.f12840a);
+            this.f.setOnTouchListener(this.f12840a);
+            this.d.setOnClickListener(this.f12840a);
+            this.d.setOnTouchListener(this.f12840a);
         } else {
             if (this.h.f == 0) {
                 setPadding(com.opos.cmn.an.h.f.a.a(getContext(), this.h.e), 0, com.opos.cmn.an.h.f.a.a(getContext(), this.h.e), 0);
@@ -182,8 +182,8 @@ public class k extends LinearLayout {
         Drawable drawable = null;
         if (gVar != null) {
             drawable = null;
-            if (!TextUtils.isEmpty(gVar.f26633a)) {
-                drawable = com.opos.mobad.n.e.a(getContext(), gVar.f26633a);
+            if (!TextUtils.isEmpty(gVar.f12945a)) {
+                drawable = com.opos.mobad.n.e.a(getContext(), gVar.f12945a);
             }
         }
         StringBuilder sb = new StringBuilder();
@@ -194,7 +194,7 @@ public class k extends LinearLayout {
         TextView textView = this.d;
         if (drawable != null) {
             com.opos.mobad.n.e.a(textView, drawable);
-            i = com.opos.cmn.an.h.f.a.a(getContext(), this.h.f26532c);
+            i = com.opos.cmn.an.h.f.a.a(getContext(), this.h.f12844c);
         } else {
             textView.setText(str);
             this.d.setMinWidth(com.opos.cmn.an.h.f.a.a(getContext(), this.h.b));

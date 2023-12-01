@@ -7,34 +7,34 @@ import com.opos.cmn.func.dl.base.exception.DlException;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f24875a = a.class.getSimpleName();
+    static final String f11187a = a.class.getSimpleName();
     b b;
 
     /* renamed from: c  reason: collision with root package name */
-    Context f24876c;
+    Context f11188c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.cmn.func.dl.base.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/func/dl/base/a/a$a.class */
-    public static final class C0640a {
+    public static final class C0470a {
 
         /* renamed from: a  reason: collision with root package name */
-        String f24877a;
+        String f11189a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f24878c;
+        String f11190c;
         long d;
         boolean e;
         boolean f;
 
-        C0640a() {
+        C0470a() {
         }
     }
 
     public a(b bVar) {
         this.b = bVar;
-        this.f24876c = bVar.f24889a;
+        this.f11188c = bVar.f11201a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x0100  */
@@ -50,7 +50,7 @@ public class a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public final com.opos.cmn.func.dl.base.a.a.C0640a a() {
+    public final com.opos.cmn.func.dl.base.a.a.C0470a a() {
         /*
             Method dump skipped, instructions count: 873
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -70,7 +70,7 @@ public class a {
                 z2 = bVar.q.i;
             }
         }
-        if (!z2 && com.opos.cmn.an.h.c.a.c(this.f24876c)) {
+        if (!z2 && com.opos.cmn.an.h.c.a.c(this.f11188c)) {
             throw new DlException(1013);
         }
     }

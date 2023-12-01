@@ -7,7 +7,7 @@ import java.io.UnsupportedEncodingException;
 public abstract class e<T> extends i<T> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7887c = e.class.getSimpleName();
+    private static final String f5047c = e.class.getSimpleName();
     private final String d;
 
     public e(int i, String str, String str2, com.anythink.expressad.foundation.g.f.e<T> eVar) {

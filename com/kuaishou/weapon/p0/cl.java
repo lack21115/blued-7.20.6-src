@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public class cl {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f23786a;
+    private String f10178a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23787c;
+    private String f10179c;
     private String d;
     private String e;
     private String f;
@@ -28,7 +28,7 @@ public class cl {
         StringBuilder sb = new StringBuilder();
         sb.append(System.currentTimeMillis());
         this.i = sb.toString();
-        this.f23787c = str;
+        this.f10179c = str;
         this.g = str2;
     }
 
@@ -69,9 +69,9 @@ public class cl {
     private JSONObject n() {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("1", this.f23786a);
+            jSONObject.put("1", this.f10178a);
             jSONObject.put("2", this.b);
-            jSONObject.put("3", this.f23787c);
+            jSONObject.put("3", this.f10179c);
             jSONObject.put("4", this.d);
             jSONObject.put("5", this.e);
             jSONObject.put("6", this.f);
@@ -89,7 +89,7 @@ public class cl {
     }
 
     public String a() {
-        return this.f23786a;
+        return this.f10178a;
     }
 
     public JSONObject a(Context context) {
@@ -109,7 +109,7 @@ public class cl {
     }
 
     public void a(String str) {
-        this.f23786a = str;
+        this.f10178a = str;
     }
 
     public String b() {
@@ -121,11 +121,11 @@ public class cl {
     }
 
     public String c() {
-        return this.f23787c;
+        return this.f10179c;
     }
 
     public void c(String str) {
-        this.f23787c = str;
+        this.f10179c = str;
     }
 
     public String d() {

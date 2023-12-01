@@ -2,7 +2,6 @@ package com.tencent.liteav.videoproducer.encoder;
 
 import android.os.Looper;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.base.util.r;
 import com.tencent.liteav.videobase.common.CodecType;
@@ -16,7 +15,6 @@ import com.tencent.liteav.videoproducer.encoder.w;
 import com.tencent.liteav.videoproducer.producer.VideoProducerDef;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/encoder/c.class */
 public final class c implements r.a, w.a {
@@ -25,7 +23,7 @@ public final class c implements r.a, w.a {
     private boolean B;
 
     /* renamed from: a  reason: collision with root package name */
-    final String f37010a;
+    final String f23319a;
     VideoEncodeParams o;
     VideoEncodeParams p;
     final IVideoReporter q;
@@ -38,7 +36,7 @@ public final class c implements r.a, w.a {
     private long y = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    long f37011c = 0;
+    long f23320c = 0;
     float d = 0.0f;
     float e = 0.0f;
     float f = 0.0f;
@@ -53,8 +51,9 @@ public final class c implements r.a, w.a {
     boolean s = false;
     int t = 0;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/encoder/c$a.class */
-    interface a {
+    public interface a {
         b a();
     }
 
@@ -63,27 +62,28 @@ public final class c implements r.a, w.a {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final d f37012a;
+        public final d f23321a;
         public final e b;
 
         public b(d dVar, e eVar) {
-            this.f37012a = dVar;
+            this.f23321a = dVar;
             this.b = eVar;
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.liteav.videoproducer.encoder.c$c  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/encoder/c$c.class */
-    static final class C0942c {
+    public static final class C0772c {
 
         /* renamed from: a  reason: collision with root package name */
-        public VideoEncoderDef.EncoderProfile f37013a;
+        public VideoEncoderDef.EncoderProfile f23322a;
 
-        private C0942c() {
-            this.f37013a = VideoEncoderDef.EncoderProfile.PROFILE_BASELINE;
+        private C0772c() {
+            this.f23322a = VideoEncoderDef.EncoderProfile.PROFILE_BASELINE;
         }
 
-        /* synthetic */ C0942c(byte b) {
+        /* synthetic */ C0772c(byte b) {
             this();
         }
     }
@@ -132,7 +132,7 @@ public final class c implements r.a, w.a {
         this.B = false;
         this.r = streamType;
         this.u = new w(this, streamType);
-        this.f37010a = "EncoderSupervisor_" + streamType + BridgeUtil.UNDERLINE_STR + hashCode();
+        this.f23319a = "EncoderSupervisor_" + streamType + "_" + hashCode();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -209,7 +209,7 @@ public final class c implements r.a, w.a {
         if (cVar.k == VideoEncoderDef.a.SOFTWARE || cVar.w - cVar.b <= 30) {
             return v;
         }
-        String str = cVar.f37010a;
+        String str = cVar.f23319a;
         LiteavLog.i(str, "checkFrameInOutDifference in frame:" + cVar.w + " out frame " + cVar.b);
         return new b(d.RESTART_ENCODER, e.INPUT_OUTPUT_DIFFERENCE);
     }
@@ -217,13 +217,13 @@ public final class c implements r.a, w.a {
     private void e() {
         com.tencent.liteav.videoproducer.encoder.a aVar;
         com.tencent.liteav.videoproducer.encoder.a aVar2;
-        aVar = a.C0941a.f36968a;
-        aVar.f36967a.f36956c = false;
+        aVar = a.C0771a.f23277a;
+        aVar.f23276a.f23265c = false;
         IVideoReporter iVideoReporter = this.q;
         com.tencent.liteav.videobase.videobase.i iVar = com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_ENCODER_ABILITY;
         int i = this.r.mValue;
-        aVar2 = a.C0941a.f36968a;
-        iVideoReporter.updateStatus(iVar, i, aVar2.f36967a);
+        aVar2 = a.C0771a.f23277a;
+        iVideoReporter.updateStatus(iVar, i, aVar2.f23276a);
     }
 
     private boolean f() {
@@ -447,7 +447,7 @@ public final class c implements r.a, w.a {
             }
             bVar2 = bVar;
             if (isEnablesRps) {
-                String str = cVar.f37010a;
+                String str = cVar.f23319a;
                 LiteavLog.e(str, "checkRpsStatus, enable rps failed while current encode strategy is " + cVar.j);
                 bVar2 = new b(d.REPORT_ENCODE_FAILED, e.RPS_SCENE);
                 cVar.p.setReferenceStrategy(VideoEncoderDef.ReferenceStrategy.FIX_GOP);
@@ -472,7 +472,7 @@ public final class c implements r.a, w.a {
             }
             bVar2 = bVar;
             if (isEnablesSvc) {
-                LiteavLog.e(cVar.f37010a, "Can't use svc mode in use hardware only strategy!");
+                LiteavLog.e(cVar.f23319a, "Can't use svc mode in use hardware only strategy!");
                 bVar2 = new b(d.CONTINUE_ENCODE, e.SVC_SCENE);
                 cVar.p.setReferenceStrategy(VideoEncoderDef.ReferenceStrategy.FIX_GOP);
             }
@@ -480,202 +480,204 @@ public final class c implements r.a, w.a {
         return bVar2;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v97, types: [java.util.List] */
     public final d a(PixelFrame pixelFrame) {
         if (pixelFrame != null) {
             this.w++;
         }
-        Collection arrayList = new ArrayList(Arrays.asList(new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.d
+        ArrayList arrayList = new ArrayList(Arrays.asList(new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.d
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37018a;
+            private final c f23327a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37018a = this;
+                this.f23327a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
-                return c.a(this.f37018a);
+                return c.a(this.f23327a);
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.h
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37022a;
+            private final c f23331a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37022a = this;
+                this.f23331a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
-                return c.b(this.f37022a);
+                return c.b(this.f23331a);
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.i
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37023a;
+            private final c f23332a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37023a = this;
+                this.f23332a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
-                return c.c(this.f37023a);
+                return c.c(this.f23332a);
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.j
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37024a;
+            private final c f23333a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37024a = this;
+                this.f23333a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
                 c.b i;
-                i = this.f37024a.i();
+                i = this.f23333a.i();
                 return i;
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.k
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37025a;
+            private final c f23334a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37025a = this;
+                this.f23334a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
-                return c.e(this.f37025a);
+                return c.e(this.f23334a);
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.l
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37026a;
+            private final c f23335a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37026a = this;
+                this.f23335a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
                 c.b h;
-                h = this.f37026a.h();
+                h = this.f23335a.h();
                 return h;
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.m
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37027a;
+            private final c f23336a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37027a = this;
+                this.f23336a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
-                return c.g(this.f37027a);
+                return c.g(this.f23336a);
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.n
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37028a;
+            private final c f23337a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37028a = this;
+                this.f23337a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
-                return c.h(this.f37028a);
+                return c.h(this.f23337a);
             }
         }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.o
 
             /* renamed from: a  reason: collision with root package name */
-            private final c f37029a;
+            private final c f23338a;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             {
-                this.f37029a = this;
+                this.f23338a = this;
             }
 
             @Override // com.tencent.liteav.videoproducer.encoder.c.a
             public final c.b a() {
-                return c.i(this.f37029a);
+                return c.i(this.f23338a);
             }
         }));
         if (this.j != VideoEncoderDef.EncodeStrategy.USE_HARDWARE_ONLY) {
             arrayList.addAll(Arrays.asList(new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.e
 
                 /* renamed from: a  reason: collision with root package name */
-                private final c f37019a;
+                private final c f23328a;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
-                    this.f37019a = this;
+                    this.f23328a = this;
                 }
 
                 @Override // com.tencent.liteav.videoproducer.encoder.c.a
                 public final c.b a() {
-                    return c.j(this.f37019a);
+                    return c.j(this.f23328a);
                 }
             }, new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.f
 
                 /* renamed from: a  reason: collision with root package name */
-                private final c f37020a;
+                private final c f23329a;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
-                    this.f37020a = this;
+                    this.f23329a = this;
                 }
 
                 @Override // com.tencent.liteav.videoproducer.encoder.c.a
                 public final c.b a() {
-                    return c.k(this.f37020a);
+                    return c.k(this.f23329a);
                 }
             }));
         }
         VideoEncodeParams videoEncodeParams = this.o;
-        Collection<a> collection = arrayList;
+        ArrayList<a> arrayList2 = arrayList;
         if (videoEncodeParams != null) {
-            collection = arrayList;
+            arrayList2 = arrayList;
             if (videoEncodeParams.isTranscodingMode()) {
-                collection = Arrays.asList(new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.g
+                arrayList2 = Arrays.asList(new a(this) { // from class: com.tencent.liteav.videoproducer.encoder.g
 
                     /* renamed from: a  reason: collision with root package name */
-                    private final c f37021a;
+                    private final c f23330a;
 
                     /* JADX INFO: Access modifiers changed from: package-private */
                     {
-                        this.f37021a = this;
+                        this.f23330a = this;
                     }
 
                     @Override // com.tencent.liteav.videoproducer.encoder.c.a
                     public final c.b a() {
                         c.b h;
-                        h = this.f37021a.h();
+                        h = this.f23330a.h();
                         return h;
                     }
                 });
             }
         }
         b bVar = null;
-        for (a aVar : collection) {
+        for (a aVar : arrayList2) {
             b a2 = aVar.a();
             if (a2 != null) {
                 if (bVar != null) {
-                    if (a2.f37012a.mPriority > bVar.f37012a.mPriority || (a2.f37012a == bVar.f37012a && a2.b.mPriority > bVar.b.mPriority)) {
+                    if (a2.f23321a.mPriority > bVar.f23321a.mPriority || (a2.f23321a == bVar.f23321a && a2.b.mPriority > bVar.b.mPriority)) {
                     }
                 }
                 bVar = a2;
@@ -693,7 +695,7 @@ public final class c implements r.a, w.a {
         if (bVar == null) {
             bVar2 = new b(d.USE_HARDWARE, e.NONE);
         }
-        if (bVar2.f37012a == d.USE_HARDWARE) {
+        if (bVar2.f23321a == d.USE_HARDWARE) {
             if (this.k == VideoEncoderDef.a.HARDWARE || this.l.mPriority > bVar2.b.mPriority) {
                 return d.CONTINUE_ENCODE;
             }
@@ -703,7 +705,7 @@ public final class c implements r.a, w.a {
             if (eVar == e.CPU_USAGE) {
                 this.q.notifyEvent(h.b.EVT_VIDEO_ENCODE_SW_TO_HW_CPU_USAGE, null, new Object[0]);
             }
-        } else if (bVar2.f37012a == d.USE_SOFTWARE) {
+        } else if (bVar2.f23321a == d.USE_SOFTWARE) {
             if (this.k == VideoEncoderDef.a.SOFTWARE || this.l.mPriority > bVar2.b.mPriority) {
                 return d.CONTINUE_ENCODE;
             }
@@ -715,13 +717,13 @@ public final class c implements r.a, w.a {
             }
             d();
         }
-        if (bVar2.f37012a != d.CONTINUE_ENCODE) {
-            LiteavLog.i(this.f37010a, "instruction: " + bVar2.f37012a + ", reason: " + bVar2.b);
+        if (bVar2.f23321a != d.CONTINUE_ENCODE) {
+            LiteavLog.i(this.f23319a, "instruction: " + bVar2.f23321a + ", reason: " + bVar2.b);
         }
-        if (bVar2.f37012a == d.RESTART_ENCODER) {
+        if (bVar2.f23321a == d.RESTART_ENCODER) {
             c();
         }
-        return bVar2.f37012a;
+        return bVar2.f23321a;
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.w.a
@@ -737,16 +739,16 @@ public final class c implements r.a, w.a {
 
     public final void a(VideoEncodeParams videoEncodeParams) {
         VideoEncodeParams videoEncodeParams2 = new VideoEncodeParams(videoEncodeParams);
-        C0942c c0942c = new C0942c((byte) 0);
+        C0772c c0772c = new C0772c((byte) 0);
         if (this.j == VideoEncoderDef.EncodeStrategy.USE_HARDWARE_ONLY || videoEncodeParams2.referenceStrategy != VideoEncoderDef.ReferenceStrategy.RPS) {
             if (!videoEncodeParams2.enableBFrame && (this.r == VideoProducerDef.StreamType.STREAM_TYPE_BIG_VIDEO || this.r == VideoProducerDef.StreamType.STREAM_TYPE_SUB_VIDEO)) {
-                c0942c.f37013a = VideoEncoderDef.EncoderProfile.PROFILE_HIGH;
+                c0772c.f23322a = VideoEncoderDef.EncoderProfile.PROFILE_HIGH;
             }
         } else if (this.r == VideoProducerDef.StreamType.STREAM_TYPE_BIG_VIDEO || this.r == VideoProducerDef.StreamType.STREAM_TYPE_SUB_VIDEO) {
-            c0942c.f37013a = VideoEncoderDef.EncoderProfile.PROFILE_HIGHRPS;
+            c0772c.f23322a = VideoEncoderDef.EncoderProfile.PROFILE_HIGHRPS;
         }
         if (videoEncodeParams2.encoderProfile == null) {
-            videoEncodeParams2.encoderProfile = c0942c.f37013a;
+            videoEncodeParams2.encoderProfile = c0772c.f23322a;
         }
         if (this.s) {
             videoEncodeParams2.fps = this.t;
@@ -757,9 +759,9 @@ public final class c implements r.a, w.a {
     @Override // com.tencent.liteav.base.util.r.a
     public final void a_() {
         long a2 = com.tencent.liteav.base.a.a.a().a("Video", "SWToHWThreshold_CheckCount");
-        if (this.f37011c < a2) {
+        if (this.f23320c < a2) {
             int[] a3 = com.tencent.liteav.base.util.q.a();
-            this.f37011c++;
+            this.f23320c++;
             this.d += a3[0] / 10;
             this.e += a3[1] / 10;
             VideoEncodeParams videoEncodeParams = this.o;
@@ -781,7 +783,7 @@ public final class c implements r.a, w.a {
             rVar.a();
             this.z = null;
         }
-        this.f37011c = 0L;
+        this.f23320c = 0L;
         this.d = 0.0f;
         this.e = 0.0f;
         this.f = 0.0f;

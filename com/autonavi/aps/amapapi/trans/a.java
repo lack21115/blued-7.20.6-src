@@ -3,11 +3,11 @@ package com.autonavi.aps.amapapi.trans;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.hp;
-import com.amap.api.col.p0003sl.ju;
-import com.amap.api.col.p0003sl.kb;
-import com.amap.api.col.p0003sl.lb;
-import com.amap.api.col.p0003sl.lc;
+import com.amap.api.col.3sl.hp;
+import com.amap.api.col.3sl.ju;
+import com.amap.api.col.3sl.kb;
+import com.amap.api.col.3sl.lb;
+import com.amap.api.col.3sl.lc;
 import com.autonavi.aps.amapapi.utils.g;
 import com.autonavi.aps.amapapi.utils.h;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -21,14 +21,14 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f9266a = 1;
+    public static int f6426a = 1;
     public static int b = 2;
     private static a e;
     private Context j;
     private String k;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f9267c = 0;
+    private long f6427c = 0;
     private boolean d = false;
     private ArrayList<String> f = new ArrayList<>();
     private com.autonavi.aps.amapapi.d g = new com.autonavi.aps.amapapi.d();
@@ -67,16 +67,16 @@ public final class a {
                     return;
                 }
             }
-            if (this.f9267c != 0) {
+            if (this.f6427c != 0) {
                 long currentTimeMillis = System.currentTimeMillis();
-                if (currentTimeMillis - this.f9267c < this.i) {
+                if (currentTimeMillis - this.f6427c < this.i) {
                     return;
                 }
-                if (currentTimeMillis - this.f9267c < 60000) {
+                if (currentTimeMillis - this.f6427c < 60000) {
                     return;
                 }
             }
-            this.f9267c = System.currentTimeMillis();
+            this.f6427c = System.currentTimeMillis();
             this.l = true;
             StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
             StringBuffer stringBuffer = new StringBuffer();
@@ -86,7 +86,6 @@ public final class a {
                 int i3 = i2;
                 if (i3 >= length) {
                     lb.a().a(new lc() { // from class: com.autonavi.aps.amapapi.trans.a.1
-                        @Override // com.amap.api.col.p0003sl.lc
                         public final void runTask() {
                             StringBuilder sb = new StringBuilder("http://");
                             sb.append(com.autonavi.aps.amapapi.utils.a.q());
@@ -96,15 +95,15 @@ public final class a {
                             b bVar = new b();
                             bVar.a(sb2);
                             bVar.b(sb2);
-                            bVar.setDegradeAbility(kb.a.SINGLE);
-                            bVar.setHttpProtocol(kb.c.HTTP);
+                            bVar.setDegradeAbility(kb.a.e);
+                            bVar.setHttpProtocol(kb.c.a);
                             try {
                                 ju.a();
-                                JSONObject jSONObject = new JSONObject(new String(ju.a(bVar).f5264a));
-                                String[] b2 = a.b(jSONObject.optJSONArray("ips"), a.f9266a);
-                                if (b2 != null && b2.length > 0 && !a.b(b2, a.this.b(a.f9266a).a())) {
-                                    a.this.b(a.f9266a).a(b2);
-                                    a.this.f(a.f9266a);
+                                JSONObject jSONObject = new JSONObject(new String(ju.a(bVar).a));
+                                String[] b2 = a.b(jSONObject.optJSONArray("ips"), a.f6426a);
+                                if (b2 != null && b2.length > 0 && !a.b(b2, a.this.b(a.f6426a).a())) {
+                                    a.this.b(a.f6426a).a(b2);
+                                    a.this.f(a.f6426a);
                                 }
                                 String[] b3 = a.b(jSONObject.optJSONArray("ipsv6"), a.b);
                                 if (b3 != null && b3.length > 0 && !a.b(b3, a.this.b(a.b).a())) {

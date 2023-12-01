@@ -21,6 +21,6 @@ public class APNGWriter extends ByteBufferWriter {
     @Override // com.blued.android.core.image.apng.io.ByteBufferWriter
     public void c(int i) {
         super.c(i);
-        this.f9550a.order(ByteOrder.BIG_ENDIAN);
+        this.a.order(ByteOrder.BIG_ENDIAN);
     }
 }

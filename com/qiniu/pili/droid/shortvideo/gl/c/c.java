@@ -21,10 +21,10 @@ public class c extends g {
     private volatile long J;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27708a;
+    private int f14020a;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27709c;
+    private int f14021c;
     private int d;
     private k e;
     private String f;
@@ -99,7 +99,7 @@ public class c extends g {
         GLES20.glBlendEquationSeparate(32774, 32774);
         GLES20.glBlendFuncSeparate(1, 771, 1, 1);
         GLES20.glEnable(3042);
-        GLES20.glBindFramebuffer(36160, this.f27708a);
+        GLES20.glBindFramebuffer(36160, this.f14020a);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, a2, 0);
         b(this.s);
         GLES20.glBindFramebuffer(36160, 0);
@@ -175,13 +175,13 @@ public class c extends g {
         if (this.q == null) {
             a aVar = new a();
             this.q = aVar;
-            aVar.a(this.f27709c, this.d);
+            aVar.a(this.f14021c, this.d);
             this.q.b();
         }
         if (this.w == null) {
             a aVar2 = new a();
             this.w = aVar2;
-            aVar2.a(this.f27709c, this.d);
+            aVar2.a(this.f14021c, this.d);
             this.w.b();
         }
         try {
@@ -282,14 +282,14 @@ public class c extends g {
     }
 
     public boolean b(int i, int i2) {
-        this.f27708a = com.qiniu.pili.droid.shortvideo.f.d.e();
+        this.f14020a = com.qiniu.pili.droid.shortvideo.f.d.e();
         this.r = com.qiniu.pili.droid.shortvideo.f.d.c();
         this.y = com.qiniu.pili.droid.shortvideo.f.d.c();
-        this.f27709c = com.qiniu.pili.droid.shortvideo.f.g.b(this.f);
+        this.f14021c = com.qiniu.pili.droid.shortvideo.f.g.b(this.f);
         this.d = com.qiniu.pili.droid.shortvideo.f.g.c(this.f);
         k kVar = new k();
         this.e = kVar;
-        kVar.a(this.f27709c, this.d);
+        kVar.a(this.f14021c, this.d);
         this.e.a(i, i2, PLDisplayMode.FIT);
         HandlerThread handlerThread = new HandlerThread("MVEffect");
         this.G = handlerThread;

@@ -43,13 +43,9 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYWishListView.class */
 public class YYWishListView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewPager f18562a;
+    private ViewPager a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WishPagerAdapter f18563c;
+    private WishPagerAdapter c;
     private LiveGiftIndicatorView d;
     private BaseYYStudioFragment e;
     private int f;
@@ -72,7 +68,6 @@ public class YYWishListView extends ConstraintLayout {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYGiftModel yYGiftModel) {
             TextView textView = (TextView) baseViewHolder.getView(R.id.item_live_gift_price);
@@ -100,13 +95,11 @@ public class YYWishListView extends ConstraintLayout {
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYWishListView$WishPagerAdapter.class */
     public class WishPagerAdapter extends PagerAdapter {
         private List<List<YYGiftModel>> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private Context f18569c;
+        private Context c;
         private HashMap<Integer, WishItemAdapter> d = new HashMap<>();
 
         public WishPagerAdapter(Context context) {
-            this.f18569c = context;
+            this.c = context;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -128,12 +121,10 @@ public class YYWishListView extends ConstraintLayout {
             notifyDataSetChanged();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             List<List<YYGiftModel>> list = this.b;
             if (list == null) {
@@ -142,23 +133,20 @@ public class YYWishListView extends ConstraintLayout {
             return list.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
-            RecyclerView recyclerView = (RecyclerView) LayoutInflater.from(this.f18569c).inflate(R.layout.yy_recycler_view_layout, (ViewGroup) null);
-            recyclerView.setLayoutManager(new GridLayoutManager(YYWishListView.this.getContext(), YYWishListView.this.getColumn()));
+            RecyclerView inflate = LayoutInflater.from(this.c).inflate(R.layout.yy_recycler_view_layout, (ViewGroup) null);
+            inflate.setLayoutManager(new GridLayoutManager(YYWishListView.this.getContext(), YYWishListView.this.getColumn()));
             final WishItemAdapter wishItemAdapter = new WishItemAdapter();
-            recyclerView.setAdapter(wishItemAdapter);
-            recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYWishListView.WishPagerAdapter.1
-                @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
-                public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView2, RecyclerView.State state) {
+            inflate.setAdapter(wishItemAdapter);
+            inflate.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYWishListView.WishPagerAdapter.1
+                public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                     rect.right = DensityUtils.a(YYWishListView.this.getContext(), 5.0f);
                 }
             });
             wishItemAdapter.setNewData(this.b.get(i));
             wishItemAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYWishListView.WishPagerAdapter.2
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
                 public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i2) {
-                    YYGiftModel yYGiftModel = wishItemAdapter.getData().get(i2);
+                    YYGiftModel yYGiftModel = (YYGiftModel) wishItemAdapter.getData().get(i2);
                     for (List<YYGiftModel> list : WishPagerAdapter.this.b) {
                         for (YYGiftModel yYGiftModel2 : list) {
                             if (TextUtils.equals(yYGiftModel.goods_id, yYGiftModel2.goods_id)) {
@@ -174,11 +162,10 @@ public class YYWishListView extends ConstraintLayout {
             });
             this.d.put(Integer.valueOf(i), wishItemAdapter);
             LogUtils.d("YYWishListView", "RecyclerView list size = " + this.b.get(i).size());
-            viewGroup.addView(recyclerView);
-            return recyclerView;
+            viewGroup.addView(inflate);
+            return inflate;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -205,24 +192,22 @@ public class YYWishListView extends ConstraintLayout {
         a();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_wish_list, (ViewGroup) this, true);
-        this.f18562a = (ViewPager) findViewById(R.id.gift_view_pager);
+        this.a = findViewById(R.id.gift_view_pager);
         this.d = (LiveGiftIndicatorView) findViewById(R.id.gift_indicator_view);
         this.b = (ShapeTextView) findViewById(R.id.ll_ok);
         WishPagerAdapter wishPagerAdapter = new WishPagerAdapter(getContext());
-        this.f18563c = wishPagerAdapter;
-        this.f18562a.setAdapter(wishPagerAdapter);
-        this.f18562a.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.view.YYWishListView.1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
+        this.c = wishPagerAdapter;
+        this.a.setAdapter(wishPagerAdapter);
+        this.a.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.view.YYWishListView.1
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 YYWishListView.this.d.b(i);
             }
@@ -249,8 +234,8 @@ public class YYWishListView extends ConstraintLayout {
         while (true) {
             int i2 = i;
             if (i2 >= list.size()) {
-                this.f18563c.a(arrayList);
-                this.f18562a.setOffscreenPageLimit(arrayList.size());
+                this.c.a(arrayList);
+                this.a.setOffscreenPageLimit(arrayList.size());
                 b();
                 return;
             }
@@ -270,8 +255,8 @@ public class YYWishListView extends ConstraintLayout {
 
     private void b() {
         this.d.setSelectedImgRes(R.drawable.icon_gift_page_selected);
-        this.d.a(this.f18563c.getCount());
-        this.d.setIndicatorCount(this.f18563c.getCount());
+        this.d.a(this.c.getCount());
+        this.d.setIndicatorCount(this.c.getCount());
     }
 
     private void getWishList() {

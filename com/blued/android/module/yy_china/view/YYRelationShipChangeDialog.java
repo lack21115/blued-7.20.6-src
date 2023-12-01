@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -25,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipChangeDialog.class */
 public final class YYRelationShipChangeDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogRelationshipChangeBinding f18393a;
+    private DialogRelationshipChangeBinding a;
     private YYRelationShipRoomUserCardInfoMode b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18394c;
+    private int c;
     private View.OnClickListener d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -57,18 +54,18 @@ public final class YYRelationShipChangeDialog extends BaseFullScreenDialog {
         if (yYRelationShipRoomUserCardInfoMode != null && yYRelationShipRoomUserCardInfoMode.is_hidden() == 1) {
             z = true;
         }
-        if (z && this$0.f18394c == 1) {
+        if (z && this$0.c == 1) {
             ToastUtils.a("关系已隐藏");
             return;
         }
-        if (this$0.f18394c == 4) {
-            this$0.f18394c = 2;
+        if (this$0.c == 4) {
+            this$0.c = 2;
         }
         YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode2 = this$0.b;
         String id = yYRelationShipRoomUserCardInfoMode2 == null ? null : yYRelationShipRoomUserCardInfoMode2.getId();
-        String valueOf = String.valueOf(this$0.f18394c);
-        final ActivityFragmentActive a2 = this$0.a();
-        YYRoomHttpUtils.v(id, valueOf, new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.view.YYRelationShipChangeDialog$initView$4$1
+        String valueOf = String.valueOf(this$0.c);
+        final ActivityFragmentActive a = this$0.a();
+        YYRoomHttpUtils.v(id, valueOf, new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.view.YYRelationShipChangeDialog$initView$4$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -86,7 +83,7 @@ public final class YYRelationShipChangeDialog extends BaseFullScreenDialog {
     }
 
     private final DialogRelationshipChangeBinding g() {
-        DialogRelationshipChangeBinding dialogRelationshipChangeBinding = this.f18393a;
+        DialogRelationshipChangeBinding dialogRelationshipChangeBinding = this.a;
         Intrinsics.a(dialogRelationshipChangeBinding);
         return dialogRelationshipChangeBinding;
     }
@@ -95,8 +92,8 @@ public final class YYRelationShipChangeDialog extends BaseFullScreenDialog {
         YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode = this.b;
         if (yYRelationShipRoomUserCardInfoMode != null) {
             YYRelationShipRoomUserInfoMode targe_uid_profile = StringUtils.a(yYRelationShipRoomUserCardInfoMode.getUid_profile().getUid(), YYRoomInfoManager.e().k()) ? yYRelationShipRoomUserCardInfoMode.getTarge_uid_profile() : yYRelationShipRoomUserCardInfoMode.getUid_profile();
-            ImageLoader.a(a(), yYRelationShipRoomUserCardInfoMode.getUid_profile().getAvatar()).c().b(R.drawable.user_bg_round).a(g().e);
-            ImageLoader.a(a(), yYRelationShipRoomUserCardInfoMode.getTarge_uid_profile().getAvatar()).c().b(R.drawable.user_bg_round).a(g().f);
+            ImageLoader.a(a(), yYRelationShipRoomUserCardInfoMode.getUid_profile().getAvatar()).c().b(R.drawable.user_bg_round).a((ImageView) g().e);
+            ImageLoader.a(a(), yYRelationShipRoomUserCardInfoMode.getTarge_uid_profile().getAvatar()).c().b(R.drawable.user_bg_round).a((ImageView) g().f);
             int type = getType();
             if (type == 1) {
                 g().g.setText("隐藏关系");
@@ -121,7 +118,7 @@ public final class YYRelationShipChangeDialog extends BaseFullScreenDialog {
                 YYRelationShipChangeDialog.a(YYRelationShipChangeDialog.this, view);
             }
         });
-        g().f16388a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipChangeDialog$Fz8be01kdggOxsafN-b8lbcA55g
+        g().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipChangeDialog$Fz8be01kdggOxsafN-b8lbcA55g
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRelationShipChangeDialog.b(YYRelationShipChangeDialog.this, view);
@@ -136,7 +133,7 @@ public final class YYRelationShipChangeDialog extends BaseFullScreenDialog {
     }
 
     public final void a(int i) {
-        this.f18394c = i;
+        this.c = i;
     }
 
     public final void a(View.OnClickListener onClickListener) {
@@ -152,13 +149,13 @@ public final class YYRelationShipChangeDialog extends BaseFullScreenDialog {
     }
 
     public final int getType() {
-        return this.f18394c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18393a = DialogRelationshipChangeBinding.a(inflater.inflate(R.layout.dialog_relationship_change, viewGroup, true));
+        this.a = DialogRelationshipChangeBinding.a(inflater.inflate(R.layout.dialog_relationship_change, viewGroup, true));
         h();
         return g().getRoot();
     }

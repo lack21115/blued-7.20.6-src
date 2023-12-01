@@ -18,13 +18,9 @@ import com.blued.android.module.live_china.model.LiveSyntheticFragmentSuccessMod
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftFragmentDialogFragment.class */
 public class LiveGiftFragmentDialogFragment extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public ImageView f12900a;
+    public ImageView a;
     public TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public TextView f12901c;
+    public TextView c;
     public TextView d;
     public TextView e;
     private Context f;
@@ -59,17 +55,17 @@ public class LiveGiftFragmentDialogFragment extends Dialog {
     }
 
     private void a(LiveSyntheticFragmentSuccessModel liveSyntheticFragmentSuccessModel) {
-        this.f12901c.setText(liveSyntheticFragmentSuccessModel.getGoods_name());
+        this.c.setText(liveSyntheticFragmentSuccessModel.getGoods_name());
         TextView textView = this.d;
         textView.setText(" x" + liveSyntheticFragmentSuccessModel.getCount());
-        ImageLoader.a((IRequestHost) null, liveSyntheticFragmentSuccessModel.getImage()).b(R.drawable.defaultpicture).a(this.f12900a);
+        ImageLoader.a((IRequestHost) null, liveSyntheticFragmentSuccessModel.getImage()).b(R.drawable.defaultpicture).a(this.a);
     }
 
     private void b() {
         this.b = (TextView) findViewById(R.id.tv_title);
-        this.f12901c = (TextView) findViewById(R.id.tv_gift_fragment_name);
+        this.c = (TextView) findViewById(R.id.tv_gift_fragment_name);
         this.d = (TextView) findViewById(R.id.tv_gift_fragment_count);
-        this.f12900a = (ImageView) findViewById(R.id.iv_gift_fragment_icon);
+        this.a = (ImageView) findViewById(R.id.iv_gift_fragment_icon);
         this.e = (TextView) findViewById(R.id.tv_confirm);
         this.b.getPaint().setFakeBoldText(true);
         this.e.getPaint().setFakeBoldText(true);
@@ -111,7 +107,7 @@ public class LiveGiftFragmentDialogFragment extends Dialog {
         window.getDecorView().setMinimumHeight(getContext().getResources().getDisplayMetrics().heightPixels);
         window.getDecorView().setBackgroundColor(0);
         window.setDimAmount(0.0f);
-        View inflate = ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.dialog_live_gift_fragment, (ViewGroup) null);
+        View inflate = ((LayoutInflater) getContext().getSystemService("layout_inflater")).inflate(R.layout.dialog_live_gift_fragment, (ViewGroup) null);
         addContentView(inflate, new ViewGroup.LayoutParams(-1, -1));
         setContentView(inflate);
         a(inflate);

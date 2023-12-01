@@ -12,14 +12,10 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/cache/SVGAVideoDataCache.class */
 public final class SVGAVideoDataCache {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f15986a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static SVGAVideoDataCache d;
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LruCache<String, SVGAVideoData> f15987c;
+    private LruCache<String, SVGAVideoData> c;
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/cache/SVGAVideoDataCache$Companion.class */
@@ -46,10 +42,10 @@ public final class SVGAVideoDataCache {
         Intrinsics.c(simpleName, "this::class.java.simpleName");
         this.b = simpleName;
         float a2 = a(context) * 0.4f;
-        LogUtils logUtils = LogUtils.f16034a;
+        LogUtils logUtils = LogUtils.a;
         String str = this.b;
         logUtils.a(str, "cacheSize = " + a2);
-        this.f15987c = new LruCache<String, SVGAVideoData>((int) a2) { // from class: com.blued.android.module.svgaplayer.cache.SVGAVideoDataCache.1
+        this.c = new LruCache<String, SVGAVideoData>((int) a2) { // from class: com.blued.android.module.svgaplayer.cache.SVGAVideoDataCache.1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // android.util.LruCache
             /* renamed from: a */
@@ -64,7 +60,7 @@ public final class SVGAVideoDataCache {
             @Override // android.util.LruCache
             /* renamed from: a */
             public void entryRemoved(boolean z, String str2, SVGAVideoData sVGAVideoData, SVGAVideoData sVGAVideoData2) {
-                LogUtils logUtils2 = LogUtils.f16034a;
+                LogUtils logUtils2 = LogUtils.a;
                 String str3 = SVGAVideoDataCache.this.b;
                 logUtils2.a(str3, "entryRemoved:: evicted=" + z + ", key=" + str2);
                 if (!z || sVGAVideoData == null) {
@@ -91,8 +87,8 @@ public final class SVGAVideoDataCache {
     }
 
     public final SVGAVideoData a(String str) {
-        SVGAVideoData sVGAVideoData = this.f15987c.get(str);
-        LogUtils logUtils = LogUtils.f16034a;
+        SVGAVideoData sVGAVideoData = this.c.get(str);
+        LogUtils logUtils = LogUtils.a;
         String str2 = this.b;
         StringBuilder sb = new StringBuilder();
         sb.append("getVideoEntity key=");
@@ -105,14 +101,14 @@ public final class SVGAVideoDataCache {
 
     public final void a(String str, SVGAVideoData sVGAVideoData) {
         boolean z;
-        LogUtils.f16034a.a(this.b, "addVideoEntityToMemory:: key=" + str);
+        LogUtils.a.a(this.b, "addVideoEntityToMemory:: key=" + str);
         if (sVGAVideoData != null) {
             if (str != null) {
                 if (str.length() > 0) {
                     z = true;
                     if (z || a(str) != null) {
                     }
-                    this.f15987c.put(str, sVGAVideoData);
+                    this.c.put(str, sVGAVideoData);
                     return;
                 }
             }

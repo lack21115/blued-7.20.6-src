@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.security.Credentials;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.ByteArrayInputStream;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
@@ -254,7 +253,7 @@ public class WifiEnterpriseConfig implements Parcelable {
         if (TextUtils.isEmpty(str2)) {
             str4 = wifiEnterpriseConfig.mFields.get(PHASE2_KEY);
         }
-        return str3 + BridgeUtil.UNDERLINE_STR + str4;
+        return str3 + "_" + str4;
     }
 
     public String getPassword() {

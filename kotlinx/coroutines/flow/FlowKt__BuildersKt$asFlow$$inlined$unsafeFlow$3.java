@@ -9,18 +9,14 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3.class */
 public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3<T> implements Flow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Iterable f43063a;
+    final /* synthetic */ Iterable a;
 
     @Metadata
     @DebugMetadata(b = "Builders.kt", c = {115}, d = "collect", e = "kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3")
     /* renamed from: kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43064a;
+        /* synthetic */ Object a;
         int b;
         Object d;
         Object e;
@@ -31,14 +27,14 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3<T> implements
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43064a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3.this.a(null, this);
         }
     }
 
     public FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3(Iterable iterable) {
-        this.f43063a = iterable;
+        this.a = iterable;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -81,7 +77,7 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3<T> implements
             r7 = r0
         L35:
             r0 = r7
-            java.lang.Object r0 = r0.f43064a
+            java.lang.Object r0 = r0.a
             r10 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r11 = r0
@@ -117,7 +113,7 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3<T> implements
             kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
             r9 = r0
             r0 = r5
-            java.lang.Iterable r0 = r0.f43063a
+            java.lang.Iterable r0 = r0.a
             java.util.Iterator r0 = r0.iterator()
             r10 = r0
             r0 = r6
@@ -149,7 +145,7 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3<T> implements
             r0 = r11
             return r0
         Lc0:
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$3.a(kotlinx.coroutines.flow.FlowCollector, kotlin.coroutines.Continuation):java.lang.Object");

@@ -34,7 +34,7 @@ public class ox {
             @Override // com.ss.android.downloadlib.exception.ox.mb
             /* renamed from: mb */
             public Void ox() {
-                Runnable.this.run();
+                runnable.run();
                 return null;
             }
         });

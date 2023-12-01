@@ -8,7 +8,6 @@ import com.blued.android.module.chat.model.SessionSetting;
 import com.blued.android.module.common.db.DataTransform;
 import com.blued.android.module.common.db.SessionSettingDao;
 import com.blued.android.module.common.db.model.SessionSettingModel;
-import com.soft.blued.ui.find.model.UserFindResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,15 +17,15 @@ import java.util.Map;
 public class SessionSettingDBImpl implements SessionSettingDBOper {
     @Override // com.blued.android.module.chat.db.SessionSettingDBOper
     public SessionSetting createSessionSetting(short s, long j, SessionSetting sessionSetting) {
-        SessionSettingModel a2;
+        SessionSettingModel a;
         if (sessionSetting == null) {
-            a2 = new SessionSettingModel();
-            a2.setSessionType(s);
-            a2.setSessionId(j);
+            a = new SessionSettingModel();
+            a.setSessionType(s);
+            a.setSessionId(j);
         } else {
-            a2 = DataTransform.a(sessionSetting);
+            a = DataTransform.a(sessionSetting);
         }
-        return DataTransform.a(SessionSettingDao.a().a(a2));
+        return DataTransform.a(SessionSettingDao.a().a(a));
     }
 
     @Override // com.blued.android.module.chat.db.SessionSettingDBOper
@@ -62,9 +61,9 @@ public class SessionSettingDBImpl implements SessionSettingDBOper {
     @Override // com.blued.android.module.chat.db.SessionSettingDBOper
     public Map<String, SessionSetting> getSessionSettingMap() {
         HashMap hashMap = new HashMap();
-        Map<String, SessionSettingModel> c2 = SessionSettingDao.a().c();
-        if (c2 != null) {
-            for (Map.Entry<String, SessionSettingModel> entry : c2.entrySet()) {
+        Map<String, SessionSettingModel> c = SessionSettingDao.a().c();
+        if (c != null) {
+            for (Map.Entry<String, SessionSettingModel> entry : c.entrySet()) {
                 hashMap.put(entry.getKey(), DataTransform.a(entry.getValue()));
             }
         }
@@ -94,8 +93,8 @@ public class SessionSettingDBImpl implements SessionSettingDBOper {
     public void updateRelationSessionSettingList(List<SessionSetting> list) {
         for (SessionSetting sessionSetting : list) {
             HashMap hashMap = new HashMap();
-            hashMap.put(UserFindResult.USER_SORT_BY.NEARBY, Integer.valueOf(sessionSetting.getNearby()));
-            hashMap.put(UserFindResult.USER_SORT_BY.ONLINE, Integer.valueOf(sessionSetting.getOnline()));
+            hashMap.put("nearby", Integer.valueOf(sessionSetting.getNearby()));
+            hashMap.put("online", Integer.valueOf(sessionSetting.getOnline()));
             hashMap.put("follower", Integer.valueOf(sessionSetting.getFollower()));
             hashMap.put("initiator", Integer.valueOf(sessionSetting.getInitiator()));
             ChatManager.getInstance().updateRelationSessionSetting(sessionSetting.getSessionType(), sessionSetting.getSessionId(), hashMap);
@@ -120,8 +119,8 @@ public class SessionSettingDBImpl implements SessionSettingDBOper {
     @Override // com.blued.android.module.chat.db.SessionSettingDBOper
     public void updateSessionSetting(SessionSetting sessionSetting) {
         HashMap hashMap = new HashMap();
-        hashMap.put(UserFindResult.USER_SORT_BY.NEARBY, Integer.valueOf(sessionSetting.getNearby()));
-        hashMap.put(UserFindResult.USER_SORT_BY.ONLINE, Integer.valueOf(sessionSetting.getOnline()));
+        hashMap.put("nearby", Integer.valueOf(sessionSetting.getNearby()));
+        hashMap.put("online", Integer.valueOf(sessionSetting.getOnline()));
         hashMap.put("follower", Integer.valueOf(sessionSetting.getFollower()));
         hashMap.put("initiator", Integer.valueOf(sessionSetting.getInitiator()));
         ChatManager.getInstance().updateSessionSetting(sessionSetting.getSessionType(), sessionSetting.getSessionId(), hashMap);

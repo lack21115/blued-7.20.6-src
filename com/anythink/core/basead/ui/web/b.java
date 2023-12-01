@@ -9,17 +9,13 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/basead/ui/web/b.class */
 public final class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    i f6409a;
+    i a;
     JSONObject b;
-
-    /* renamed from: c  reason: collision with root package name */
-    HashMap<String, Boolean> f6410c = new HashMap<>(3);
+    HashMap<String, Boolean> c = new HashMap<>(3);
 
     public b(i iVar) {
         JSONObject jSONObject;
-        this.f6409a = iVar;
+        this.a = iVar;
         if (iVar != null) {
             try {
                 jSONObject = new JSONObject(iVar.M());
@@ -41,8 +37,8 @@ public final class b {
             Iterator<String> keys = jSONObject.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                if (next != null && str != null && str.contains(next) && this.f6410c.get(next) == null) {
-                    this.f6410c.put(next, Boolean.TRUE);
+                if (next != null && str != null && str.contains(next) && this.c.get(next) == null) {
+                    this.c.put(next, Boolean.TRUE);
                     Tracker.loadUrl(webView, this.b.optString(next));
                 }
             }

@@ -8,26 +8,22 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/aj.class */
 public final class aj {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f6636a;
+    public int a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<b> f6637c;
+    private List<b> c;
 
     public final b a() {
         b next;
         synchronized (this) {
-            if (this.f6637c != null) {
-                Iterator<b> it = this.f6637c.iterator();
+            if (this.c != null) {
+                Iterator<b> it = this.c.iterator();
                 do {
                     if (it.hasNext()) {
                         next = it.next();
                     }
                 } while (next.d() > 0);
                 boolean z = true;
-                if (this.f6637c.indexOf(next) < this.f6637c.size() - 1) {
+                if (this.c.indexOf(next) < this.c.size() - 1) {
                     z = false;
                 }
                 next.a(z);
@@ -39,8 +35,8 @@ public final class aj {
 
     public final void a(b bVar) {
         synchronized (this) {
-            if (this.f6637c != null && this.f6637c.size() > 0) {
-                this.f6637c.remove(bVar);
+            if (this.c != null && this.c.size() > 0) {
+                this.c.remove(bVar);
             }
         }
     }
@@ -48,10 +44,10 @@ public final class aj {
     public final void a(e eVar) {
         synchronized (this) {
             ArrayList arrayList = new ArrayList();
-            this.f6636a = -1;
+            this.a = -1;
             this.b = eVar.X();
-            if (this.f6637c != null) {
-                for (b bVar : this.f6637c) {
+            if (this.c != null) {
+                for (b bVar : this.c) {
                     if (bVar.j()) {
                         ATBaseAdAdapter e = bVar.e();
                         e.setTrackingInfo(eVar);
@@ -65,14 +61,14 @@ public final class aj {
                     }
                 }
             }
-            this.f6637c = arrayList;
+            this.c = arrayList;
         }
     }
 
     public final void a(List<b> list) {
         synchronized (this) {
             synchronized (this) {
-                this.f6637c = list;
+                this.c = list;
             }
         }
     }
@@ -80,8 +76,8 @@ public final class aj {
     public final List<b> b() {
         synchronized (this) {
             ArrayList arrayList = null;
-            if (this.f6637c != null) {
-                for (b bVar : this.f6637c) {
+            if (this.c != null) {
+                for (b bVar : this.c) {
                     if (bVar.d() <= 0) {
                         ArrayList arrayList2 = arrayList;
                         if (arrayList == null) {
@@ -99,15 +95,15 @@ public final class aj {
 
     public final void c() {
         synchronized (this) {
-            if (this.f6637c != null) {
-                this.f6637c.clear();
-                this.f6637c = null;
+            if (this.c != null) {
+                this.c.clear();
+                this.c = null;
             }
         }
     }
 
     public final boolean d() {
-        List<b> list = this.f6637c;
+        List<b> list = this.c;
         return list != null && list.size() > 0;
     }
 }

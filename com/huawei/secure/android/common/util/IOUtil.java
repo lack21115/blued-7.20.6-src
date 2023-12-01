@@ -17,7 +17,7 @@ import java.io.Writer;
 public class IOUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23141a = "IOUtil";
+    private static final String f9533a = "IOUtil";
     private static final int b = 4096;
 
     public static void close(Cursor cursor) {
@@ -31,7 +31,7 @@ public class IOUtil {
             try {
                 closeable.close();
             } catch (IOException e) {
-                Log.e(f23141a, "closeSecure IOException");
+                Log.e(f9533a, "closeSecure IOException");
             }
         }
     }
@@ -73,7 +73,7 @@ public class IOUtil {
         if (file == null || !file.exists() || file.delete()) {
             return;
         }
-        Log.e(f23141a, "deleteSecure exception");
+        Log.e(f9533a, "deleteSecure exception");
     }
 
     public static void deleteSecure(String str) {

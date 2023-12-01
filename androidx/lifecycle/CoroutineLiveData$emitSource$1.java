@@ -23,10 +23,9 @@ public final class CoroutineLiveData$emitSource$1 extends ContinuationImpl {
         this.this$0 = coroutineLiveData;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.emitSource$lifecycle_livedata_ktx_release(null, this);
+        return this.this$0.emitSource$lifecycle_livedata_ktx_release(null, (Continuation) this);
     }
 }

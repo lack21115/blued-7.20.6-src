@@ -12,10 +12,10 @@ public class WebViewProgressBar extends ProgressBar {
     private static int b = 95;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f28541c = 100;
+    private static int f14851c = 100;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f28542a;
+    private Context f14852a;
     private ValueAnimator d;
 
     public WebViewProgressBar(Context context) {
@@ -39,7 +39,7 @@ public class WebViewProgressBar extends ProgressBar {
     }
 
     public void a(Context context) {
-        this.f28542a = context;
+        this.f14852a = context;
         ValueAnimator ofInt = ValueAnimator.ofInt(0, b);
         this.d = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.customview.WebViewProgressBar.1
@@ -52,21 +52,19 @@ public class WebViewProgressBar extends ProgressBar {
         this.d.setInterpolator(new DecelerateInterpolator());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        setMax(f28541c);
+        setMax(f14851c);
         try {
-            setProgressDrawable(this.f28542a.getResources().getDrawable(R.drawable.color_progress_bar));
+            setProgressDrawable(this.f14852a.getResources().getDrawable(R.drawable.color_progress_bar));
         } catch (Exception e) {
         }
         this.d.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d.cancel();
     }
@@ -86,7 +84,7 @@ public class WebViewProgressBar extends ProgressBar {
                     public void onAnimationUpdate(ValueAnimator valueAnimator) {
                         int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                         WebViewProgressBar.this.setRealProgress(intValue);
-                        if (intValue != WebViewProgressBar.f28541c) {
+                        if (intValue != WebViewProgressBar.f14851c) {
                             WebViewProgressBar.this.setVisibility(0);
                             return;
                         }

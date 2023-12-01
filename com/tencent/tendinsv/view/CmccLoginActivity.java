@@ -1,5 +1,6 @@
 package com.tencent.tendinsv.view;
 
+import android.R;
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -18,7 +19,7 @@ public class CmccLoginActivity extends GenLoginAuthActivity {
         attributes.width = 0;
         attributes.height = 0;
         window.setAttributes(attributes);
-        ViewGroup viewGroup = (ViewGroup) ((ViewGroup) window.getDecorView().findViewById(16908290)).getChildAt(0);
+        ViewGroup viewGroup = (ViewGroup) ((ViewGroup) window.getDecorView().findViewById(R.id.content)).getChildAt(0);
         if (viewGroup == null || (relativeLayout = (RelativeLayout) viewGroup.findViewById(17476)) == null) {
             return;
         }

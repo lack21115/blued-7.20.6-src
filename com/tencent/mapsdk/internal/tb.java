@@ -7,10 +7,10 @@ import com.tencent.map.tools.net.processor.RequestProcessor;
 public class tb implements RequestProcessor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f38023a;
+    private final boolean f24332a;
 
     private tb(boolean z) {
-        this.f38023a = z;
+        this.f24332a = z;
     }
 
     public static tb a(boolean z) {
@@ -19,7 +19,7 @@ public class tb implements RequestProcessor {
 
     @Override // com.tencent.map.tools.net.processor.RequestProcessor
     public void onRequest(NetRequest netRequest) {
-        if (this.f38023a) {
+        if (this.f24332a) {
             String str = netRequest.url;
             String str2 = str;
             if (str.startsWith("http://")) {

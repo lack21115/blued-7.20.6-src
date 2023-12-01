@@ -33,9 +33,9 @@ public final class h extends a {
             if (this.n == 0) {
                 b c2 = c();
                 c2.a(this.l);
-                this.m.a(c2, this.f7422a == com.anythink.expressad.exoplayer.b.b ? 0L : this.f7422a - this.l);
+                this.m.a(c2, this.f4583a == com.anythink.expressad.exoplayer.b.b ? 0L : this.f4583a - this.l);
             }
-            com.anythink.expressad.exoplayer.e.e eVar = this.m.f7426a;
+            com.anythink.expressad.exoplayer.e.e eVar = this.m.f4587a;
             boolean z = false;
             int i = 0;
             while (i == 0 && !this.o) {

@@ -8,18 +8,18 @@ import java.util.Map;
 public class DynamicLoaderAnalysis {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f22438a = new byte[0];
+    private static final byte[] f8830a = new byte[0];
     private static DynamicLoaderAnalysis b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<String, IDynamicLoaderAnalysis> f22439c;
+    private HashMap<String, IDynamicLoaderAnalysis> f8831c;
 
     private DynamicLoaderAnalysis() {
     }
 
     public static DynamicLoaderAnalysis getInstance() {
         DynamicLoaderAnalysis dynamicLoaderAnalysis;
-        synchronized (f22438a) {
+        synchronized (f8830a) {
             if (b == null) {
                 b = new DynamicLoaderAnalysis();
             }
@@ -29,7 +29,7 @@ public class DynamicLoaderAnalysis {
     }
 
     public void onLoaderException(String str, int i, String str2) {
-        HashMap<String, IDynamicLoaderAnalysis> hashMap = this.f22439c;
+        HashMap<String, IDynamicLoaderAnalysis> hashMap = this.f8831c;
         if (hashMap == null) {
             return;
         }
@@ -42,7 +42,7 @@ public class DynamicLoaderAnalysis {
     }
 
     public void onLoaderSuccess(String str, long j) {
-        HashMap<String, IDynamicLoaderAnalysis> hashMap = this.f22439c;
+        HashMap<String, IDynamicLoaderAnalysis> hashMap = this.f8831c;
         if (hashMap == null) {
             return;
         }
@@ -58,12 +58,12 @@ public class DynamicLoaderAnalysis {
         if (TextUtils.isEmpty(str) || iDynamicLoaderAnalysis == null) {
             return;
         }
-        if (this.f22439c == null) {
-            this.f22439c = new HashMap<>();
+        if (this.f8831c == null) {
+            this.f8831c = new HashMap<>();
         }
-        if (this.f22439c.containsKey(str)) {
+        if (this.f8831c.containsKey(str)) {
             return;
         }
-        this.f22439c.put(str, iDynamicLoaderAnalysis);
+        this.f8831c.put(str, iDynamicLoaderAnalysis);
     }
 }

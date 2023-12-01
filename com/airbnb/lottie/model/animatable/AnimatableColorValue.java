@@ -13,7 +13,7 @@ public class AnimatableColorValue extends BaseAnimatableValue<Integer, Integer> 
 
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     public BaseKeyframeAnimation<Integer, Integer> a() {
-        return new ColorKeyframeAnimation(this.f4334a);
+        return new ColorKeyframeAnimation(this.a);
     }
 
     @Override // com.airbnb.lottie.model.animatable.BaseAnimatableValue, com.airbnb.lottie.model.animatable.AnimatableValue

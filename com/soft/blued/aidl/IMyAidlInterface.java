@@ -30,7 +30,7 @@ public interface IMyAidlInterface extends IInterface {
         public static class Proxy implements IMyAidlInterface {
 
             /* renamed from: a  reason: collision with root package name */
-            public static IMyAidlInterface f28241a;
+            public static IMyAidlInterface f14551a;
             private IBinder b;
 
             @Override // com.soft.blued.aidl.IMyAidlInterface
@@ -61,7 +61,7 @@ public interface IMyAidlInterface extends IInterface {
         }
 
         public static IMyAidlInterface b() {
-            return Proxy.f28241a;
+            return Proxy.f14551a;
         }
 
         @Override // android.os.IInterface

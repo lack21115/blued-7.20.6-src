@@ -13,13 +13,9 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(b = "LiveHostFinishDetailViewModel.kt", c = {43, 52, 61, 70, 79, 88, 97, 106, 115}, d = "invokeSuspend", e = "com.blued.android.module.live_china.view_model.LiveHostFinishDetailViewModel$getInfo$1")
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveHostFinishDetailViewModel$getInfo$1.class */
 final class LiveHostFinishDetailViewModel$getInfo$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f15472a;
+    int a;
     final /* synthetic */ LiveHostFinishDetailViewModel.ApiState b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ int f15473c;
+    final /* synthetic */ int c;
     final /* synthetic */ LiveHostFinishDetailViewModel d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,19 +23,19 @@ final class LiveHostFinishDetailViewModel$getInfo$1 extends SuspendLambda implem
     public LiveHostFinishDetailViewModel$getInfo$1(LiveHostFinishDetailViewModel.ApiState apiState, int i, LiveHostFinishDetailViewModel liveHostFinishDetailViewModel, Continuation<? super LiveHostFinishDetailViewModel$getInfo$1> continuation) {
         super(2, continuation);
         this.b = apiState;
-        this.f15473c = i;
+        this.c = i;
         this.d = liveHostFinishDetailViewModel;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((LiveHostFinishDetailViewModel$getInfo$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((LiveHostFinishDetailViewModel$getInfo$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new LiveHostFinishDetailViewModel$getInfo$1(this.b, this.f15473c, this.d, continuation);
+        return new LiveHostFinishDetailViewModel$getInfo$1(this.b, this.c, this.d, continuation);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:102:0x0472  */
@@ -68,8 +64,6 @@ final class LiveHostFinishDetailViewModel$getInfo$1 extends SuspendLambda implem
     /* JADX WARN: Removed duplicated region for block: B:85:0x03ac  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x0416  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x0449  */
-    /* JADX WARN: Type inference failed for: r1v50, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r1v53, types: [java.lang.Object] */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.

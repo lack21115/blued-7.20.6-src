@@ -9,11 +9,11 @@ import java.security.MessageDigest;
 public class l implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f39646a;
+    public Context f25955a;
     public IVendorCallback b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39647c = null;
+    public String f25956c = null;
     public boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/l$a.class */
@@ -24,28 +24,28 @@ public class l implements b {
         @Override // java.lang.Runnable
         public void run() {
             try {
-                j.a a2 = j.a(l.this.f39646a);
-                l.this.f39647c = a2.a();
+                j.a a2 = j.a(l.this.f25955a);
+                l.this.f25956c = a2.a();
                 a2.b();
-                if (!TextUtils.isEmpty(l.this.f39647c)) {
+                if (!TextUtils.isEmpty(l.this.f25956c)) {
                     l.this.d = true;
                 }
                 if (l.this.b != null) {
                     IVendorCallback iVendorCallback = l.this.b;
                     boolean z = l.this.d;
                     l lVar = l.this;
-                    iVendorCallback.onResult(z, lVar.a(e.a(lVar.f39646a)), l.this.f39647c);
+                    iVendorCallback.onResult(z, lVar.a(e.a(lVar.f25955a)), l.this.f25956c);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                if (TextUtils.isEmpty(l.this.f39647c)) {
+                if (TextUtils.isEmpty(l.this.f25956c)) {
                     l.this.d = false;
                 }
                 if (l.this.b != null) {
                     IVendorCallback iVendorCallback2 = l.this.b;
                     boolean z2 = l.this.d;
                     l lVar2 = l.this;
-                    iVendorCallback2.onResult(z2, lVar2.a(e.a(lVar2.f39646a)), l.this.f39647c);
+                    iVendorCallback2.onResult(z2, lVar2.a(e.a(lVar2.f25955a)), l.this.f25956c);
                 }
             }
         }
@@ -53,7 +53,7 @@ public class l implements b {
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public String a() {
-        return this.f39647c;
+        return this.f25956c;
     }
 
     public final String a(String str) {
@@ -69,7 +69,7 @@ public class l implements b {
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f39646a = context;
+        this.f25955a = context;
         this.b = iVendorCallback;
     }
 
@@ -96,7 +96,7 @@ public class l implements b {
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public String d() {
-        return a(e.a(this.f39646a));
+        return a(e.a(this.f25955a));
     }
 
     @Override // com.tencent.tmsqmsp.oaid2.b

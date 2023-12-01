@@ -14,25 +14,25 @@ import java.lang.ref.WeakReference;
 public class c extends f {
 
     /* renamed from: a  reason: collision with root package name */
-    public e f1259a;
+    public e f1211a;
     public volatile a b;
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/a/j/c$a.class */
     public static class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<c> f1260a;
+        public WeakReference<c> f1212a;
 
         public a(Looper looper, c cVar) {
             super(looper);
-            this.f1260a = new WeakReference<>(cVar);
+            this.f1212a = new WeakReference<>(cVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             int i = message.what;
             Object obj = message.obj;
-            c cVar = this.f1260a.get();
+            c cVar = this.f1212a.get();
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f;
             eVar.c("ScreenDataTransfer", "EncoderHandler what:" + i + ",encoder=" + cVar);
             if (cVar == null) {
@@ -48,7 +48,7 @@ public class c extends f {
     }
 
     public final void a() {
-        a(this.w.f1271a);
+        a(this.w.f1223a);
         a.a.a.a.a.a.c cVar = this.v;
         if (cVar != null) {
             cVar.d();
@@ -64,7 +64,7 @@ public class c extends f {
     @Override // a.a.a.a.a.a.j.f
     public void a(int i) {
         synchronized (this) {
-            e eVar = this.f1259a;
+            e eVar = this.f1211a;
             if (eVar != null) {
                 eVar.a(i);
             }
@@ -73,7 +73,7 @@ public class c extends f {
 
     public final void a(a.a.a.a.a.a.i.c cVar) {
         try {
-            this.f1259a = new e(cVar);
+            this.f1211a = new e(cVar);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -111,7 +111,7 @@ public class c extends f {
     @Override // a.a.a.a.a.a.j.f
     public Surface b(f.a aVar) {
         a(aVar);
-        e eVar = this.f1259a;
+        e eVar = this.f1211a;
         if (eVar != null) {
             return eVar.e();
         }
@@ -119,7 +119,7 @@ public class c extends f {
     }
 
     public final void b() {
-        e eVar = this.f1259a;
+        e eVar = this.f1211a;
         if (eVar != null) {
             eVar.a(false);
         }
@@ -147,7 +147,7 @@ public class c extends f {
     }
 
     public final void c() {
-        e eVar = this.f1259a;
+        e eVar = this.f1211a;
         if (eVar != null) {
             eVar.b();
         }
@@ -162,8 +162,8 @@ public class c extends f {
                     a.a.a.a.a.e.e.f.c("ScreenDataTransfer", "Drop the in frame");
                     f.a aVar = this.w;
                     if (aVar != null) {
-                        aVar.f1271a.e().l++;
-                        this.w.f1271a.e().w++;
+                        aVar.f1223a.e().l++;
+                        this.w.f1223a.e().w++;
                     }
                 }
                 this.b.sendMessage(this.b.obtainMessage(2));
@@ -173,10 +173,10 @@ public class c extends f {
 
     public final void d(boolean z) {
         Looper.myLooper().quit();
-        e eVar = this.f1259a;
+        e eVar = this.f1211a;
         if (eVar != null && z) {
             eVar.a();
-            this.f1259a.a(true);
+            this.f1211a.a(true);
         }
         c();
         a.a.a.a.a.a.c cVar = this.v;

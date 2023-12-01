@@ -22,11 +22,11 @@ import java.util.Stack;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.qiniu.pili.droid.shortvideo.muxer.b f27554a;
+    private com.qiniu.pili.droid.shortvideo.muxer.b f13866a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Stack<h> f27555c;
+    private Stack<h> f13867c;
     private h d;
     private File e;
     private MediaFormat f;
@@ -58,7 +58,7 @@ public class i {
     }
 
     public i(Context context, PLRecordSetting pLRecordSetting, PLAudioEncodeSetting pLAudioEncodeSetting) {
-        this.f27555c = new Stack<>();
+        this.f13867c = new Stack<>();
         this.h = false;
         this.l = 0L;
         this.m = 0L;
@@ -107,7 +107,7 @@ public class i {
     private boolean a(h hVar) {
         MediaExtractor mediaExtractor = new MediaExtractor();
         try {
-            mediaExtractor.setDataSource(hVar.f27552a.getAbsolutePath());
+            mediaExtractor.setDataSource(hVar.f13864a.getAbsolutePath());
             MediaFormat a2 = a(mediaExtractor, "audio/");
             MediaFormat a3 = a(mediaExtractor, "video/");
             if (a2 == null) {
@@ -195,7 +195,7 @@ public class i {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
                 eVar.b("SectionManager", "video write to muxer size:" + bufferInfo.size + " ts:" + bufferInfo.presentationTimeUs);
                 b(bufferInfo.presentationTimeUs / 1000);
-                this.f27554a.a(byteBuffer, bufferInfo);
+                this.f13866a.a(byteBuffer, bufferInfo);
                 h hVar = this.d;
                 hVar.g = hVar.g + 1;
             }
@@ -212,22 +212,22 @@ public class i {
     public boolean a(com.qiniu.pili.droid.shortvideo.f.b bVar) {
         this.u = bVar.a();
         Stack<h> b = bVar.b();
-        this.f27555c = b;
+        this.f13867c = b;
         Iterator<h> it = b.iterator();
         while (it.hasNext()) {
-            if (!it.next().f27552a.exists()) {
-                this.f27555c.clear();
+            if (!it.next().f13864a.exists()) {
+                this.f13867c.clear();
                 return false;
             }
         }
-        h lastElement = this.f27555c.lastElement();
+        h lastElement = this.f13867c.lastElement();
         this.d = lastElement;
         if (!a(lastElement)) {
-            this.f27555c.clear();
+            this.f13867c.clear();
             this.d = null;
             return false;
         }
-        Iterator<h> it2 = this.f27555c.iterator();
+        Iterator<h> it2 = this.f13867c.iterator();
         while (it2.hasNext()) {
             this.m += it2.next().e;
         }
@@ -254,16 +254,16 @@ public class i {
             }
             File file2 = new File(file, str);
             com.qiniu.pili.droid.shortvideo.muxer.b bVar = new com.qiniu.pili.droid.shortvideo.muxer.b();
-            this.f27554a = bVar;
+            this.f13866a = bVar;
             if (!bVar.a(file2.getAbsolutePath(), this.g, this.f, i())) {
                 com.qiniu.pili.droid.shortvideo.f.e.n.e("SectionManager", "beginSection failed, start failed !");
                 return false;
             }
             h hVar = new h();
             this.d = hVar;
-            hVar.f27552a = file2;
-            this.d.f27553c = this.f27554a.b();
-            this.d.b = this.f27554a.c();
+            hVar.f13864a = file2;
+            this.d.f13865c = this.f13866a.b();
+            this.d.b = this.f13866a.c();
             this.h = true;
             com.qiniu.pili.droid.shortvideo.f.e.n.c("SectionManager", "begin section - " + file2);
             return true;
@@ -271,13 +271,13 @@ public class i {
     }
 
     public boolean a(String str, PLCameraSetting pLCameraSetting, PLMicrophoneSetting pLMicrophoneSetting, PLVideoEncodeSetting pLVideoEncodeSetting, PLAudioEncodeSetting pLAudioEncodeSetting, PLFaceBeautySetting pLFaceBeautySetting, PLRecordSetting pLRecordSetting) {
-        if (this.f27555c.size() == 0 || str == null || str.isEmpty()) {
+        if (this.f13867c.size() == 0 || str == null || str.isEmpty()) {
             return false;
         }
         this.u = str;
         com.qiniu.pili.droid.shortvideo.f.b bVar = new com.qiniu.pili.droid.shortvideo.f.b(str);
         bVar.a(str);
-        bVar.a(this.f27555c);
+        bVar.a(this.f13867c);
         bVar.a(pLCameraSetting);
         bVar.a(pLMicrophoneSetting);
         bVar.a(pLVideoEncodeSetting);
@@ -295,20 +295,20 @@ public class i {
             }
             Stack<h> stack = this.u == null ? new Stack<>() : com.qiniu.pili.droid.shortvideo.f.c.a(this.b).a(this.u).b();
             com.qiniu.pili.droid.shortvideo.f.e.n.c("SectionManager", "clear sections +");
-            Iterator<h> it = this.f27555c.iterator();
+            Iterator<h> it = this.f13867c.iterator();
             while (it.hasNext()) {
                 h next = it.next();
                 if (!stack.contains(next)) {
-                    if (next.f27552a.delete()) {
+                    if (next.f13864a.delete()) {
                         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
-                        eVar.c("SectionManager", "deleted section:" + next.f27552a);
+                        eVar.c("SectionManager", "deleted section:" + next.f13864a);
                     } else {
                         com.qiniu.pili.droid.shortvideo.f.e eVar2 = com.qiniu.pili.droid.shortvideo.f.e.n;
-                        eVar2.e("SectionManager", "deleted section failed:" + next.f27552a);
+                        eVar2.e("SectionManager", "deleted section failed:" + next.f13864a);
                     }
                 }
             }
-            this.f27555c.clear();
+            this.f13867c.clear();
             if (z && this.r != null) {
                 this.r.b(this.l, 0L, 0);
             }
@@ -328,7 +328,7 @@ public class i {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.n;
                 eVar.b("SectionManager", "audio write to muxer size:" + bufferInfo.size + " ts:" + bufferInfo.presentationTimeUs);
                 b(bufferInfo.presentationTimeUs / 1000);
-                this.f27554a.b(byteBuffer, bufferInfo);
+                this.f13866a.b(byteBuffer, bufferInfo);
                 h hVar = this.d;
                 hVar.f = hVar.f + 1;
             }
@@ -353,19 +353,19 @@ public class i {
             if (this.h) {
                 com.qiniu.pili.droid.shortvideo.f.e.n.d("SectionManager", "mIsWorking, cannot delete !!!");
                 return false;
-            } else if (this.f27555c.isEmpty()) {
+            } else if (this.f13867c.isEmpty()) {
                 com.qiniu.pili.droid.shortvideo.f.e.n.e("SectionManager", "no sections, delete failed !");
                 return false;
             } else {
-                h pop = this.f27555c.pop();
-                if (pop.f27552a.delete()) {
-                    com.qiniu.pili.droid.shortvideo.f.e.n.c("SectionManager", "deleted section: " + pop.f27552a + ", " + pop.e + "Ms");
+                h pop = this.f13867c.pop();
+                if (pop.f13864a.delete()) {
+                    com.qiniu.pili.droid.shortvideo.f.e.n.c("SectionManager", "deleted section: " + pop.f13864a + ", " + pop.e + "Ms");
                 } else {
-                    com.qiniu.pili.droid.shortvideo.f.e.n.e("SectionManager", "deleted section failed:" + pop.f27552a);
+                    com.qiniu.pili.droid.shortvideo.f.e.n.e("SectionManager", "deleted section failed:" + pop.f13864a);
                 }
                 this.l -= pop.e;
                 if (this.r != null) {
-                    this.r.b(pop.e, this.l, this.f27555c.size());
+                    this.r.b(pop.e, this.l, this.f13867c.size());
                 }
                 return true;
             }
@@ -387,7 +387,7 @@ public class i {
         long j2;
         StringBuilder sb;
         synchronized (this) {
-            if (this.f27555c.isEmpty()) {
+            if (this.f13867c.isEmpty()) {
                 com.qiniu.pili.droid.shortvideo.f.e.n.d("SectionManager", "no section exist to concat");
                 if (this.s != null) {
                     this.s.onSaveVideoFailed(2);
@@ -406,7 +406,7 @@ public class i {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f27555c.size()) {
+                if (i2 >= this.f13867c.size()) {
                     if (this.s != null) {
                         this.s.onProgressUpdate(1.0f);
                     }
@@ -421,11 +421,11 @@ public class i {
                     com.qiniu.pili.droid.shortvideo.f.e.n.c("SectionManager", "concat sections - total transferred audio frames: " + this.n + " video frames: " + this.o);
                     return;
                 }
-                h hVar = this.f27555c.get(i2);
-                com.qiniu.pili.droid.shortvideo.f.e.n.c("SectionManager", "concating section:" + hVar.f27552a);
+                h hVar = this.f13867c.get(i2);
+                com.qiniu.pili.droid.shortvideo.f.e.n.c("SectionManager", "concating section:" + hVar.f13864a);
                 MediaExtractor mediaExtractor = new MediaExtractor();
                 try {
-                    mediaExtractor.setDataSource(hVar.f27552a.getAbsolutePath());
+                    mediaExtractor.setDataSource(hVar.f13864a.getAbsolutePath());
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
@@ -434,7 +434,7 @@ public class i {
                         }
                         String string = mediaExtractor.getTrackFormat(i4).getString(MediaFormat.KEY_MIME);
                         if (string.startsWith("video")) {
-                            hVar.f27553c = i4;
+                            hVar.f13865c = i4;
                         } else if (string.startsWith("audio")) {
                             hVar.b = i4;
                         } else {
@@ -443,8 +443,8 @@ public class i {
                         i3 = i4 + 1;
                     }
                     mediaExtractor.selectTrack(hVar.b);
-                    if (hVar.f27553c >= 0) {
-                        mediaExtractor.selectTrack(hVar.f27553c);
+                    if (hVar.f13865c >= 0) {
+                        mediaExtractor.selectTrack(hVar.f13865c);
                     }
                     j = j3;
                     j2 = -1;
@@ -467,7 +467,7 @@ public class i {
                         }
                         j2 = bufferInfo.presentationTimeUs;
                         if (((float) j2) < ((float) ((this.m + this.w) * 1000)) * 1.01f) {
-                            boolean z = mediaExtractor.getSampleTrackIndex() == hVar.f27553c;
+                            boolean z = mediaExtractor.getSampleTrackIndex() == hVar.f13865c;
                             bVar.a(z ? bVar.b() : bVar.c(), allocateDirect, bufferInfo);
                             if (this.s != null && (z || !h())) {
                                 this.s.onProgressUpdate((((float) bufferInfo.presentationTimeUs) / 1000.0f) / ((float) this.l));

@@ -27,13 +27,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKUserBanner.class */
 public class LivePKUserBanner extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f14836a;
+    private View a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14837c;
+    private View c;
     private View d;
     private ImageView e;
     private RecyclerView f;
@@ -136,10 +132,10 @@ public class LivePKUserBanner extends FrameLayout implements View.OnClickListene
     private void e() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_user_banner, this);
         this.e = (ImageView) findViewById(R.id.iv_vs);
-        this.f14837c = findViewById(R.id.fl_left);
+        this.c = findViewById(R.id.fl_left);
         this.d = findViewById(R.id.fl_right);
-        this.f = (RecyclerView) findViewById(R.id.rv_pk_left);
-        this.g = (RecyclerView) findViewById(R.id.rv_pk_right);
+        this.f = findViewById(R.id.rv_pk_left);
+        this.g = findViewById(R.id.rv_pk_right);
         this.h = findViewById(R.id.fl_left_fail);
         this.i = findViewById(R.id.fl_right_fail);
         this.f.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
@@ -148,11 +144,11 @@ public class LivePKUserBanner extends FrameLayout implements View.OnClickListene
         this.o = new LivePkAdapter(getContext(), 1);
         this.f.setAdapter(this.n);
         this.g.setAdapter(this.o);
-        this.f14836a = findViewById(R.id.view_left);
+        this.a = findViewById(R.id.view_left);
         this.b = findViewById(R.id.view_right);
-        this.f14837c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.d.setOnClickListener(this);
-        this.f14836a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
         this.b.setOnClickListener(this);
     }
 

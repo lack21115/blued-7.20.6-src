@@ -18,18 +18,14 @@ public class MtopNetworkResultParser {
 
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/common/MtopNetworkResultParser$ParseParameter.class */
     public class ParseParameter {
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f43711a;
+        public int a;
         public Map b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public i f43712c;
+        public i c;
 
         public ParseParameter(int i, Map map, i iVar) {
-            this.f43711a = i;
+            this.a = i;
             this.b = map;
-            this.f43712c = iVar;
+            this.c = iVar;
         }
     }
 
@@ -50,9 +46,9 @@ public class MtopNetworkResultParser {
             if (mtopResponse.e() == null) {
                 return mtopResponse;
             }
-            String a2 = c.a(mtopResponse.e(), "x-retcode");
-            if (StringUtils.a(a2)) {
-                mtopResponse.a(a2);
+            String a = c.a(mtopResponse.e(), "x-retcode");
+            if (StringUtils.a(a)) {
+                mtopResponse.a(a);
                 return mtopResponse;
             }
             mtopResponse.h();
@@ -77,11 +73,11 @@ public class MtopNetworkResultParser {
             mtopResponse3.b("网络错误");
             return mtopResponse3;
         }
-        int i = parseParameter.f43711a;
+        int i = parseParameter.a;
         Map map = parseParameter.b;
         mtopResponse3.a(i);
         mtopResponse3.a(map);
-        i iVar = parseParameter.f43712c;
+        i iVar = parseParameter.c;
         if (iVar != null) {
             try {
                 mtopResponse3.a(iVar.c());
@@ -116,27 +112,27 @@ public class MtopNetworkResultParser {
         UnitConfigManager.a(map, str);
         Result b = ResponseHandlerUtil.b(mtopResponse3, mtopProxy);
         if (b == null || !b.d()) {
-            Result a2 = ResponseHandlerUtil.a(mtopResponse3, mtopResponse2);
-            if (a2 == null || !a2.d()) {
+            Result a = ResponseHandlerUtil.a(mtopResponse3, mtopResponse2);
+            if (a == null || !a.d()) {
                 if (mtopResponse3.d() == null) {
                     mtopResponse3.a("ANDROID_SYS_JSONDATA_BLANK");
                     mtopResponse3.b("返回JSONDATA为空");
                     return mtopResponse3;
                 }
-                MtopResponse a3 = a(mtopResponse3);
-                MtopResponse mtopResponse4 = a3;
-                if (a3.j()) {
-                    mtopResponse4 = a3;
+                MtopResponse a2 = a(mtopResponse3);
+                MtopResponse mtopResponse4 = a2;
+                if (a2.j()) {
+                    mtopResponse4 = a2;
                     if (mtopProxy != null) {
-                        mtopResponse4 = a3;
+                        mtopResponse4 = a2;
                         if (!mtopProxy.e().f) {
-                            mtopResponse4 = ResponseHandlerUtil.a(a3, mtopProxy);
+                            mtopResponse4 = ResponseHandlerUtil.a(a2, mtopProxy);
                         }
                     }
                 }
                 return mtopResponse4;
             }
-            return (MtopResponse) a2.a();
+            return (MtopResponse) a.a();
         }
         return (MtopResponse) b.a();
     }

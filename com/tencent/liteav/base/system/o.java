@@ -3,12 +3,11 @@ package com.tencent.liteav.base.system;
 import com.tencent.liteav.base.Log;
 import java.security.MessageDigest;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/base/system/o.class */
-public final class o {
+final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f36319a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    private static final char[] f22628a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     /* JADX WARN: Code restructure failed: missing block: B:103:0x032e, code lost:
         if (r10 == null) goto L41;
@@ -43,9 +42,9 @@ public final class o {
             int i = 0;
             for (int i2 = 0; i2 < digest.length; i2++) {
                 int i3 = i + 1;
-                cArr[i] = f36319a[(digest[i2] & 240) >>> 4];
+                cArr[i] = f22628a[(digest[i2] & 240) >>> 4];
                 i = i3 + 1;
-                cArr[i3] = f36319a[digest[i2] & 15];
+                cArr[i3] = f22628a[digest[i2] & 15];
             }
             return new String(cArr);
         } catch (Exception e) {

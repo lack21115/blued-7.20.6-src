@@ -331,8 +331,8 @@ public final class Character implements Serializable, Comparable<Character> {
             return BLOCKS[unicodeBlockForName];
         }
 
-        public static UnicodeBlock of(char c2) {
-            return of((int) c2);
+        public static UnicodeBlock of(char c) {
+            return of((int) c);
         }
 
         public static UnicodeBlock of(int i) {
@@ -349,8 +349,8 @@ public final class Character implements Serializable, Comparable<Character> {
         throw new VerifyError("bad dex opcode");
     }
 
-    public Character(char c2) {
-        this.value = c2;
+    public Character(char c) {
+        this.value = c;
     }
 
     public static int charCount(int i) {
@@ -392,14 +392,14 @@ public final class Character implements Serializable, Comparable<Character> {
             throw new IndexOutOfBoundsException();
         }
         int i2 = i + 1;
-        char c2 = cArr[i];
+        char c = cArr[i];
         if (i2 < length) {
-            char c3 = cArr[i2];
-            if (isSurrogatePair(c2, c3)) {
-                return toCodePoint(c2, c3);
+            char c2 = cArr[i2];
+            if (isSurrogatePair(c, c2)) {
+                return toCodePoint(c, c2);
             }
         }
-        return c2;
+        return c;
     }
 
     public static int codePointAt(char[] cArr, int i, int i2) {
@@ -407,14 +407,14 @@ public final class Character implements Serializable, Comparable<Character> {
             throw new IndexOutOfBoundsException();
         }
         int i3 = i + 1;
-        char c2 = cArr[i];
+        char c = cArr[i];
         if (i3 < i2) {
-            char c3 = cArr[i3];
-            if (isSurrogatePair(c2, c3)) {
-                return toCodePoint(c2, c3);
+            char c2 = cArr[i3];
+            if (isSurrogatePair(c, c2)) {
+                return toCodePoint(c, c2);
             }
         }
-        return c2;
+        return c;
     }
 
     public static int codePointBefore(CharSequence charSequence, int i) {
@@ -446,15 +446,15 @@ public final class Character implements Serializable, Comparable<Character> {
             throw new IndexOutOfBoundsException();
         }
         int i2 = i - 1;
-        char c2 = cArr[i2];
+        char c = cArr[i2];
         int i3 = i2 - 1;
         if (i3 >= 0) {
-            char c3 = cArr[i3];
-            if (isSurrogatePair(c3, c2)) {
-                return toCodePoint(c3, c2);
+            char c2 = cArr[i3];
+            if (isSurrogatePair(c2, c)) {
+                return toCodePoint(c2, c);
             }
         }
-        return c2;
+        return c;
     }
 
     public static int codePointBefore(char[] cArr, int i, int i2) {
@@ -466,15 +466,15 @@ public final class Character implements Serializable, Comparable<Character> {
             throw new IndexOutOfBoundsException();
         }
         int i3 = i - 1;
-        char c2 = cArr[i3];
+        char c = cArr[i3];
         int i4 = i3 - 1;
         if (i4 >= i2) {
-            char c3 = cArr[i4];
-            if (isSurrogatePair(c3, c2)) {
-                return toCodePoint(c3, c2);
+            char c2 = cArr[i4];
+            if (isSurrogatePair(c2, c)) {
+                return toCodePoint(c2, c);
             }
         }
-        return c2;
+        return c;
     }
 
     public static int codePointCount(CharSequence charSequence, int i, int i2) {
@@ -536,12 +536,12 @@ public final class Character implements Serializable, Comparable<Character> {
         return i5;
     }
 
-    public static int compare(char c2, char c3) {
-        return c2 - c3;
+    public static int compare(char c, char c2) {
+        return c - c2;
     }
 
-    public static int digit(char c2, int i) {
-        return digit((int) c2, i);
+    public static int digit(char c, int i) {
+        return digit((int) c, i);
     }
 
     public static int digit(int i, int i2) {
@@ -582,8 +582,8 @@ public final class Character implements Serializable, Comparable<Character> {
         return (char) (i < 10 ? i + 48 : (i + 97) - 10);
     }
 
-    public static byte getDirectionality(char c2) {
-        return getDirectionality((int) c2);
+    public static byte getDirectionality(char c) {
+        return getDirectionality((int) c);
     }
 
     public static byte getDirectionality(int i) {
@@ -613,8 +613,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native String getNameImpl(int i);
 
-    public static int getNumericValue(char c2) {
-        return getNumericValue((int) c2);
+    public static int getNumericValue(char c) {
+        return getNumericValue((int) c);
     }
 
     public static int getNumericValue(int i) {
@@ -635,8 +635,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native int getNumericValueImpl(int i);
 
-    public static int getType(char c2) {
-        return getType((int) c2);
+    public static int getType(char c) {
+        return getType((int) c);
     }
 
     public static int getType(int i) {
@@ -656,8 +656,8 @@ public final class Character implements Serializable, Comparable<Character> {
         return i >= 0 && i <= 65535;
     }
 
-    public static boolean isDefined(char c2) {
-        return isDefinedImpl(c2);
+    public static boolean isDefined(char c) {
+        return isDefinedImpl(c);
     }
 
     public static boolean isDefined(int i) {
@@ -666,8 +666,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isDefinedImpl(int i);
 
-    public static boolean isDigit(char c2) {
-        return isDigit((int) c2);
+    public static boolean isDigit(char c) {
+        return isDigit((int) c);
     }
 
     public static boolean isDigit(int i) {
@@ -682,12 +682,12 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isDigitImpl(int i);
 
-    public static boolean isHighSurrogate(char c2) {
-        return 55296 <= c2 && 56319 >= c2;
+    public static boolean isHighSurrogate(char c) {
+        return 55296 <= c && 56319 >= c;
     }
 
-    public static boolean isISOControl(char c2) {
-        return isISOControl((int) c2);
+    public static boolean isISOControl(char c) {
+        return isISOControl((int) c);
     }
 
     public static boolean isISOControl(int i) {
@@ -697,8 +697,8 @@ public final class Character implements Serializable, Comparable<Character> {
         return true;
     }
 
-    public static boolean isIdentifierIgnorable(char c2) {
-        return isIdentifierIgnorable((int) c2);
+    public static boolean isIdentifierIgnorable(char c) {
+        return isIdentifierIgnorable((int) c);
     }
 
     public static boolean isIdentifierIgnorable(int i) {
@@ -718,8 +718,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     public static native boolean isIdeographic(int i);
 
-    public static boolean isJavaIdentifierPart(char c2) {
-        return isJavaIdentifierPart((int) c2);
+    public static boolean isJavaIdentifierPart(char c) {
+        return isJavaIdentifierPart((int) c);
     }
 
     public static boolean isJavaIdentifierPart(int i) {
@@ -745,8 +745,8 @@ public final class Character implements Serializable, Comparable<Character> {
         }
     }
 
-    public static boolean isJavaIdentifierStart(char c2) {
-        return isJavaIdentifierStart((int) c2);
+    public static boolean isJavaIdentifierStart(char c) {
+        return isJavaIdentifierStart((int) c);
     }
 
     public static boolean isJavaIdentifierStart(int i) {
@@ -761,17 +761,17 @@ public final class Character implements Serializable, Comparable<Character> {
     }
 
     @Deprecated
-    public static boolean isJavaLetter(char c2) {
-        return isJavaIdentifierStart(c2);
+    public static boolean isJavaLetter(char c) {
+        return isJavaIdentifierStart(c);
     }
 
     @Deprecated
-    public static boolean isJavaLetterOrDigit(char c2) {
-        return isJavaIdentifierPart(c2);
+    public static boolean isJavaLetterOrDigit(char c) {
+        return isJavaIdentifierPart(c);
     }
 
-    public static boolean isLetter(char c2) {
-        return isLetter((int) c2);
+    public static boolean isLetter(char c) {
+        return isLetter((int) c);
     }
 
     public static boolean isLetter(int i) {
@@ -789,8 +789,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isLetterImpl(int i);
 
-    public static boolean isLetterOrDigit(char c2) {
-        return isLetterOrDigit((int) c2);
+    public static boolean isLetterOrDigit(char c) {
+        return isLetterOrDigit((int) c);
     }
 
     public static boolean isLetterOrDigit(int i) {
@@ -811,12 +811,12 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isLetterOrDigitImpl(int i);
 
-    public static boolean isLowSurrogate(char c2) {
-        return 56320 <= c2 && 57343 >= c2;
+    public static boolean isLowSurrogate(char c) {
+        return 56320 <= c && 57343 >= c;
     }
 
-    public static boolean isLowerCase(char c2) {
-        return isLowerCase((int) c2);
+    public static boolean isLowerCase(char c) {
+        return isLowerCase((int) c);
     }
 
     public static boolean isLowerCase(int i) {
@@ -831,8 +831,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isLowerCaseImpl(int i);
 
-    public static boolean isMirrored(char c2) {
-        return isMirrored((int) c2);
+    public static boolean isMirrored(char c) {
+        return isMirrored((int) c);
     }
 
     public static boolean isMirrored(int i) {
@@ -842,12 +842,12 @@ public final class Character implements Serializable, Comparable<Character> {
     private static native boolean isMirroredImpl(int i);
 
     @Deprecated
-    public static boolean isSpace(char c2) {
-        return c2 == '\n' || c2 == '\t' || c2 == '\f' || c2 == '\r' || c2 == ' ';
+    public static boolean isSpace(char c) {
+        return c == '\n' || c == '\t' || c == '\f' || c == '\r' || c == ' ';
     }
 
-    public static boolean isSpaceChar(char c2) {
-        return isSpaceChar((int) c2);
+    public static boolean isSpaceChar(char c) {
+        return isSpaceChar((int) c);
     }
 
     public static boolean isSpaceChar(int i) {
@@ -884,16 +884,16 @@ public final class Character implements Serializable, Comparable<Character> {
         return 65536 <= i && 1114111 >= i;
     }
 
-    public static boolean isSurrogate(char c2) {
-        return c2 >= 55296 && c2 <= 57343;
+    public static boolean isSurrogate(char c) {
+        return c >= 55296 && c <= 57343;
     }
 
-    public static boolean isSurrogatePair(char c2, char c3) {
-        return isHighSurrogate(c2) && isLowSurrogate(c3);
+    public static boolean isSurrogatePair(char c, char c2) {
+        return isHighSurrogate(c) && isLowSurrogate(c2);
     }
 
-    public static boolean isTitleCase(char c2) {
-        return isTitleCaseImpl(c2);
+    public static boolean isTitleCase(char c) {
+        return isTitleCaseImpl(c);
     }
 
     public static boolean isTitleCase(int i) {
@@ -902,8 +902,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isTitleCaseImpl(int i);
 
-    public static boolean isUnicodeIdentifierPart(char c2) {
-        return isUnicodeIdentifierPartImpl(c2);
+    public static boolean isUnicodeIdentifierPart(char c) {
+        return isUnicodeIdentifierPartImpl(c);
     }
 
     public static boolean isUnicodeIdentifierPart(int i) {
@@ -912,8 +912,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isUnicodeIdentifierPartImpl(int i);
 
-    public static boolean isUnicodeIdentifierStart(char c2) {
-        return isUnicodeIdentifierStartImpl(c2);
+    public static boolean isUnicodeIdentifierStart(char c) {
+        return isUnicodeIdentifierStartImpl(c);
     }
 
     public static boolean isUnicodeIdentifierStart(int i) {
@@ -922,8 +922,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native boolean isUnicodeIdentifierStartImpl(int i);
 
-    public static boolean isUpperCase(char c2) {
-        return isUpperCase((int) c2);
+    public static boolean isUpperCase(char c) {
+        return isUpperCase((int) c);
     }
 
     public static boolean isUpperCase(int i) {
@@ -942,8 +942,8 @@ public final class Character implements Serializable, Comparable<Character> {
         return i >= 0 && 1114111 >= i;
     }
 
-    public static boolean isWhitespace(char c2) {
-        return isWhitespace((int) c2);
+    public static boolean isWhitespace(char c) {
+        return isWhitespace((int) c);
     }
 
     public static boolean isWhitespace(int i) {
@@ -1121,8 +1121,8 @@ public final class Character implements Serializable, Comparable<Character> {
         return i3;
     }
 
-    public static char reverseBytes(char c2) {
-        return (char) ((c2 << '\b') | (c2 >> '\b'));
+    public static char reverseBytes(char c) {
+        return (char) ((c << '\b') | (c >> '\b'));
     }
 
     public static int toChars(int i, char[] cArr, int i2) {
@@ -1155,35 +1155,35 @@ public final class Character implements Serializable, Comparable<Character> {
         return new char[]{(char) i};
     }
 
-    public static int toCodePoint(char c2, char c3) {
-        return (((c2 & 1023) << 10) | (c3 & 1023)) + 65536;
+    public static int toCodePoint(char c, char c2) {
+        return (((c & 1023) << 10) | (c2 & 1023)) + 65536;
     }
 
-    public static char toLowerCase(char c2) {
-        return (char) toLowerCase((int) c2);
+    public static char toLowerCase(char c) {
+        return (char) toLowerCase((int) c);
     }
 
     public static int toLowerCase(int i) {
-        char c2;
+        char c;
         if (65 > i || i > 90) {
-            c2 = i;
+            c = i;
             if (i >= 192) {
                 return toLowerCaseImpl(i);
             }
         } else {
-            c2 = (char) (i + 32);
+            c = (char) (i + 32);
         }
-        return c2;
+        return c;
     }
 
     private static native int toLowerCaseImpl(int i);
 
-    public static String toString(char c2) {
-        return String.valueOf(c2);
+    public static String toString(char c) {
+        return String.valueOf(c);
     }
 
-    public static char toTitleCase(char c2) {
-        return (char) toTitleCaseImpl(c2);
+    public static char toTitleCase(char c) {
+        return (char) toTitleCaseImpl(c);
     }
 
     public static int toTitleCase(int i) {
@@ -1192,21 +1192,21 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native int toTitleCaseImpl(int i);
 
-    public static char toUpperCase(char c2) {
-        return (char) toUpperCase((int) c2);
+    public static char toUpperCase(char c) {
+        return (char) toUpperCase((int) c);
     }
 
     public static int toUpperCase(int i) {
-        char c2;
+        char c;
         if (97 > i || i > 122) {
-            c2 = i;
+            c = i;
             if (i >= 181) {
                 return toUpperCaseImpl(i);
             }
         } else {
-            c2 = (char) (i - 32);
+            c = (char) (i - 32);
         }
-        return c2;
+        return c;
     }
 
     private static native int toUpperCaseImpl(int i);
@@ -1221,8 +1221,8 @@ public final class Character implements Serializable, Comparable<Character> {
 
     private static native int unicodeScriptForName(String str);
 
-    public static Character valueOf(char c2) {
-        return c2 < 128 ? SMALL_VALUES[c2] : new Character(c2);
+    public static Character valueOf(char c) {
+        return c < 128 ? SMALL_VALUES[c] : new Character(c);
     }
 
     public char charValue() {

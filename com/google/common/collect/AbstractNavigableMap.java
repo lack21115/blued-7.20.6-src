@@ -84,7 +84,7 @@ public abstract class AbstractNavigableMap<K, V> extends Maps.IteratorBasedAbstr
     @NullableDecl
     public abstract V get(@NullableDecl Object obj);
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public SortedMap<K, V> headMap(K k) {
         return headMap(k, false);
     }
@@ -100,7 +100,7 @@ public abstract class AbstractNavigableMap<K, V> extends Maps.IteratorBasedAbstr
         return (K) Maps.keyOrNull(higherEntry(k));
     }
 
-    @Override // java.util.AbstractMap, java.util.Map
+    @Override // java.util.AbstractMap, java.util.Map, java.util.SortedMap
     public Set<K> keySet() {
         return navigableKeySet();
     }
@@ -148,12 +148,12 @@ public abstract class AbstractNavigableMap<K, V> extends Maps.IteratorBasedAbstr
         return (Map.Entry) Iterators.pollNext(descendingEntryIterator());
     }
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public SortedMap<K, V> subMap(K k, K k2) {
         return subMap(k, true, k2, false);
     }
 
-    @Override // java.util.NavigableMap
+    @Override // java.util.NavigableMap, java.util.SortedMap
     public SortedMap<K, V> tailMap(K k) {
         return tailMap(k, true);
     }

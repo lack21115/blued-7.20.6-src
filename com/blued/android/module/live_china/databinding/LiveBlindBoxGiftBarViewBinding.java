@@ -9,13 +9,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBlindBoxGiftBarViewBinding.class */
 public final class LiveBlindBoxGiftBarViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12153a;
+    public final ImageView a;
     public final RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LiveBlindBoxGiftBarOpenViewBinding f12154c;
+    public final LiveBlindBoxGiftBarOpenViewBinding c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -24,9 +20,9 @@ public final class LiveBlindBoxGiftBarViewBinding implements ViewBinding {
 
     private LiveBlindBoxGiftBarViewBinding(RelativeLayout relativeLayout, ImageView imageView, RelativeLayout relativeLayout2, LiveBlindBoxGiftBarOpenViewBinding liveBlindBoxGiftBarOpenViewBinding, ImageView imageView2, ImageView imageView3, ImageView imageView4, TextView textView) {
         this.h = relativeLayout;
-        this.f12153a = imageView;
+        this.a = imageView;
         this.b = relativeLayout2;
-        this.f12154c = liveBlindBoxGiftBarOpenViewBinding;
+        this.c = liveBlindBoxGiftBarOpenViewBinding;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -41,7 +37,7 @@ public final class LiveBlindBoxGiftBarViewBinding implements ViewBinding {
             if (relativeLayout != null) {
                 View findViewById = view.findViewById(R.id.blind_box_open_view);
                 if (findViewById != null) {
-                    LiveBlindBoxGiftBarOpenViewBinding a2 = LiveBlindBoxGiftBarOpenViewBinding.a(findViewById);
+                    LiveBlindBoxGiftBarOpenViewBinding a = LiveBlindBoxGiftBarOpenViewBinding.a(findViewById);
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_blind_box_gift_bg);
                     if (imageView2 != null) {
                         ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_left_gift_img);
@@ -50,7 +46,7 @@ public final class LiveBlindBoxGiftBarViewBinding implements ViewBinding {
                             if (imageView4 != null) {
                                 TextView textView = (TextView) view.findViewById(R.id.tv_normal_title);
                                 if (textView != null) {
-                                    return new LiveBlindBoxGiftBarViewBinding((RelativeLayout) view, imageView, relativeLayout, a2, imageView2, imageView3, imageView4, textView);
+                                    return new LiveBlindBoxGiftBarViewBinding((RelativeLayout) view, imageView, relativeLayout, a, imageView2, imageView3, imageView4, textView);
                                 }
                                 str = "tvNormalTitle";
                             } else {
@@ -74,7 +70,6 @@ public final class LiveBlindBoxGiftBarViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.h;

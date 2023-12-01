@@ -18,13 +18,9 @@ public final class OpenAuthTask {
     public static final int NOT_INSTALLED = 4001;
     public static final int OK = 9000;
     public static final int SYS_ERR = 4000;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, Callback> f4577a = new ConcurrentHashMap();
+    private static final Map<String, Callback> a = new ConcurrentHashMap();
     private static long b = -1;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final int f4578c = 122;
+    private static final int c = 122;
     private final Activity e;
     private Callback f;
     private volatile boolean d = false;
@@ -51,18 +47,14 @@ public final class OpenAuthTask {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/OpenAuthTask$a.class */
     public final class a implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final int f4579a;
+        final int a;
         final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final Bundle f4580c;
+        final Bundle c;
 
         private a(int i, String str, Bundle bundle) {
-            this.f4579a = i;
+            this.a = i;
             this.b = str;
-            this.f4580c = bundle;
+            this.c = bundle;
         }
 
         /* synthetic */ a(OpenAuthTask openAuthTask, int i, String str, Bundle bundle, e eVar) {
@@ -72,7 +64,7 @@ public final class OpenAuthTask {
         @Override // java.lang.Runnable
         public void run() {
             if (OpenAuthTask.this.f != null) {
-                OpenAuthTask.this.f.onResult(this.f4579a, this.b, this.f4580c);
+                OpenAuthTask.this.f.onResult(this.a, this.b, this.c);
             }
         }
     }
@@ -85,7 +77,7 @@ public final class OpenAuthTask {
     private String a(long j, String str, BizType bizType, String str2) throws JSONException {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("startTime", String.valueOf(j));
-        jSONObject.put(com.umeng.analytics.pro.d.aw, str);
+        jSONObject.put("session", str);
         jSONObject.put("package", this.e.getPackageName());
         if (bizType != null) {
             jSONObject.put("appId", bizType.appId);
@@ -97,8 +89,8 @@ public final class OpenAuthTask {
 
     private String a(BizType bizType, Map<String, String> map) {
         if (bizType != null) {
-            Uri.Builder appendQueryParameter = new Uri.Builder().scheme("alipays").authority("platformapi").path(com.igexin.push.core.b.p).appendQueryParameter("appId", bizType.appId);
-            if (e.f4594a[bizType.ordinal()] == 1) {
+            Uri.Builder appendQueryParameter = new Uri.Builder().scheme("alipays").authority("platformapi").path("startapp").appendQueryParameter("appId", bizType.appId);
+            if (e.a[bizType.ordinal()] == 1) {
                 appendQueryParameter.appendQueryParameter("appClearTop", "false").appendQueryParameter("startMultApp", "YES");
             }
             for (Map.Entry<String, String> entry : map.entrySet()) {
@@ -111,7 +103,7 @@ public final class OpenAuthTask {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(String str, int i, String str2, Bundle bundle) {
-        Callback remove = f4577a.remove(str);
+        Callback remove = a.remove(str);
         if (remove != null) {
             try {
                 remove.onResult(i, str2, bundle);

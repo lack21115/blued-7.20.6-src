@@ -9,11 +9,11 @@ import java.lang.reflect.Method;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23637a = "com.igexin.assist.control.stp.ManufacturePushManager";
+    private static final String f10029a = "com.igexin.assist.control.stp.ManufacturePushManager";
 
     public static boolean a(Context context) {
         try {
-            Method declaredMethod = Class.forName(f23637a).getDeclaredMethod("checkDevice", Context.class);
+            Method declaredMethod = Class.forName(f10029a).getDeclaredMethod("checkDevice", Context.class);
             declaredMethod.setAccessible(true);
             boolean booleanValue = ((Boolean) declaredMethod.invoke(null, context)).booleanValue();
             com.igexin.c.a.c.a.b("Assist_UPS", "isSupportStp: ".concat(String.valueOf(booleanValue)));
@@ -21,7 +21,7 @@ public final class b {
         } catch (Exception e) {
             e.getMessage();
             try {
-                Class<?> cls = Class.forName(f23637a);
+                Class<?> cls = Class.forName(f10029a);
                 Object newInstance = cls.getConstructor(Context.class).newInstance(context);
                 Method declaredMethod2 = cls.getDeclaredMethod("isSupport", new Class[0]);
                 declaredMethod2.setAccessible(true);

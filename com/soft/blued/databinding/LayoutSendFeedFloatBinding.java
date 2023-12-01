@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutSendFeedFloatBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29431a;
+    private final LinearLayout f15741a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29431a;
+        return this.f15741a;
     }
 }

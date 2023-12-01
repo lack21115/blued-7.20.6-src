@@ -6,8 +6,9 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/EmptyContiguousSet.class */
-final class EmptyContiguousSet<C extends Comparable> extends ContiguousSet<C> {
+public final class EmptyContiguousSet<C extends Comparable> extends ContiguousSet<C> {
 
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/EmptyContiguousSet$SerializedForm.class */
     static final class SerializedForm<C extends Comparable> implements Serializable {
@@ -71,9 +72,10 @@ final class EmptyContiguousSet<C extends Comparable> extends ContiguousSet<C> {
         return this;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: Multi-variable type inference failed */
     @Override // com.google.common.collect.ContiguousSet, com.google.common.collect.ImmutableSortedSet
-    /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
+    public /* bridge */ /* synthetic */ ImmutableSortedSet headSetImpl(Object obj, boolean z) {
         return headSetImpl((EmptyContiguousSet<C>) ((Comparable) obj), z);
     }
 
@@ -104,7 +106,7 @@ final class EmptyContiguousSet<C extends Comparable> extends ContiguousSet<C> {
         return false;
     }
 
-    @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableSortedSet, com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<C> iterator() {
         return Iterators.emptyIterator();
     }
@@ -124,7 +126,7 @@ final class EmptyContiguousSet<C extends Comparable> extends ContiguousSet<C> {
         throw new NoSuchElementException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         return 0;
     }

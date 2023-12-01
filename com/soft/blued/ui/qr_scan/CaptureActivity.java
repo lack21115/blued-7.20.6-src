@@ -1,6 +1,5 @@
 package com.soft.blued.ui.qr_scan;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
@@ -87,28 +86,29 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(String str) {
         if (!StringUtils.h(str)) {
             Bundle bundle = new Bundle();
-            bundle.putString(ScanResultFragment.f33130a, str);
+            bundle.putString(ScanResultFragment.f19439a, str);
             TerminalActivity.d(this, ScanResultFragment.class, bundle);
         } else if (str.contains(BluedHttpUrl.a())) {
             Bundle bundle2 = new Bundle();
-            bundle2.putString(ScanLoginFragment.f33125a, str);
+            bundle2.putString(ScanLoginFragment.f19434a, str);
             TerminalActivity.d(this, ScanLoginFragment.class, bundle2);
         } else {
             if (str.contains("https://app.blued.cn/user") || str.contains("https://common.blued.com/user")) {
-                Map<String, String> a2 = BluedUrlUtils.a(str);
+                Map a2 = BluedUrlUtils.a(str);
                 String str2 = null;
                 if (a2 != null) {
-                    str2 = a2.get("id");
+                    str2 = (String) a2.get("id");
                 }
                 String str3 = str2;
                 if (!TextUtils.isEmpty(str2)) {
                     str3 = EncryptTool.a(str2);
                 }
                 if (!TextUtils.isEmpty(str3)) {
-                    UserInfoFragmentNew.a(this, str3, "");
+                    UserInfoFragmentNew.a((Context) this, str3, "");
                     return;
                 }
             }
@@ -170,7 +170,7 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                TerminalActivity.d(CaptureActivity.this, UserQrFragment.class, null);
+                TerminalActivity.d(CaptureActivity.this, UserQrFragment.class, (Bundle) null);
             }
         });
         this.p = (RelativeLayout) findViewById(R.id.capture_crop_view);
@@ -195,6 +195,7 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void f() {
         PhotoSelectFragment.a((Context) this, 6, 6, false);
     }
@@ -269,9 +270,7 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
         this.g.setImageResource(R.drawable.icon_scan_flashlight_off);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.app.Activity
-    public void onActivityResult(int i, int i2, Intent intent) {
+    protected void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1 && i == 6 && intent != null) {
             String stringExtra = intent.getStringExtra("photo_path");
@@ -293,10 +292,10 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        StatusBarHelper.a((Activity) this, false);
+        StatusBarHelper.a(this, false);
         setContentView(R.layout.mo_scanner_main);
         CameraManager.a(getApplication());
         d();
@@ -310,13 +309,11 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
         PermissionUtils.b((PermissionCallbacks) null);
     }
 
-    @Override // com.blued.android.core.ui.BaseActivity, android.app.Activity
     public void onDestroy() {
         this.k.b();
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseActivity, android.app.Activity
     public void onPause() {
         super.onPause();
         CaptureActivityHandler captureActivityHandler = this.f;
@@ -327,7 +324,6 @@ public class CaptureActivity extends BaseActivity implements SurfaceHolder.Callb
         CameraManager.a().b();
     }
 
-    @Override // com.blued.android.core.ui.BaseActivity, android.app.Activity
     public void onResume() {
         super.onResume();
         SurfaceHolder holder = ((SurfaceView) findViewById(R.id.mo_scanner_preview_view)).getHolder();

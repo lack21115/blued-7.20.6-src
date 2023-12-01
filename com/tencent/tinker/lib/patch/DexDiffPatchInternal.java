@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.commons.dexpatcher.DexPatchApplier;
 import com.tencent.tinker.commons.util.IOHelper;
 import com.tencent.tinker.lib.service.PatchResult;
@@ -220,7 +219,7 @@ public class DexDiffPatchInternal extends BasePatchInternal {
                             if (next.path.equals("")) {
                                 str3 = next.rawName;
                             } else {
-                                str3 = next.path + BridgeUtil.SPLIT_MARK + next.rawName;
+                                str3 = next.path + "/" + next.rawName;
                             }
                             String str4 = next.dexDiffMd5;
                             String str5 = next.oldDexCrC;
@@ -425,7 +424,7 @@ public class DexDiffPatchInternal extends BasePatchInternal {
     }
 
     private static boolean patchDexExtractViaDexDiff(Context context, String str, String str2, File file, PatchResult patchResult) {
-        String str3 = str + BridgeUtil.SPLIT_MARK + ShareConstants.DEX_PATH + BridgeUtil.SPLIT_MARK;
+        String str3 = str + "/" + ShareConstants.DEX_PATH + "/";
         if (!extractDexDiffInternals(context, str3, str2, file, 3)) {
             ShareTinkerLog.w(TAG, "patch recover, extractDiffInternals fail", new Object[0]);
             return false;
@@ -449,7 +448,7 @@ public class DexDiffPatchInternal extends BasePatchInternal {
             }
         }
         ShareTinkerLog.i(TAG, "legal files to do dexopt: " + arrayList, new Object[0]);
-        return dexOptimizeDexFiles(context, arrayList, str + BridgeUtil.SPLIT_MARK + "odex" + BridgeUtil.SPLIT_MARK, file, patchResult);
+        return dexOptimizeDexFiles(context, arrayList, str + "/odex/", file, patchResult);
     }
 
     private static void patchDexFile(ZipFile zipFile, ZipFile zipFile2, ZipEntry zipEntry, ZipEntry zipEntry2, ShareDexDiffPatchInfo shareDexDiffPatchInfo, File file) throws IOException {

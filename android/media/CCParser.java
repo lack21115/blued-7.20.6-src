@@ -5,9 +5,6 @@ import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.accessibility.CaptioningManager;
-import com.alipay.sdk.util.i;
-import com.android.internal.telephony.PhoneConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,8 +53,8 @@ class CCParser {
         private final byte mType;
         private static final String[] mCtrlCodeMap = {"RCL", "BS", "AOF", "AON", "DER", "RU2", "RU3", "RU4", "FON", "RDC", "TR", "RTD", "EDM", "CR", "ENM", "EOC"};
         private static final String[] mSpecialCharMap = {"®", "°", "½", "¿", "™", "¢", "£", "♪", "à", " ", "è", "â", "ê", "î", "ô", "û"};
-        private static final String[] mSpanishCharMap = {"Á", "É", "Ó", "Ú", "Ü", "ü", "‘", "¡", PhoneConstants.APN_TYPE_ALL, "'", "—", "©", "℠", "•", "“", "”", "À", "Â", "Ç", "È", "Ê", "Ë", "ë", "Î", "Ï", "ï", "Ô", "Ù", "ù", "Û", "«", "»"};
-        private static final String[] mProtugueseCharMap = {"Ã", "ã", "Í", "Ì", "ì", "Ò", "ò", "Õ", "õ", "{", i.d, "\\", "^", BridgeUtil.UNDERLINE_STR, "|", Constants.WAVE_SEPARATOR, "Ä", "ä", "Ö", "ö", "ß", "¥", "¤", "│", "Å", "å", "Ø", "ø", "┌", "┐", "└", "┘"};
+        private static final String[] mSpanishCharMap = {"Á", "É", "Ó", "Ú", "Ü", "ü", "‘", "¡", "*", "'", "—", "©", "℠", "•", "“", "”", "À", "Â", "Ç", "È", "Ê", "Ë", "ë", "Î", "Ï", "ï", "Ô", "Ù", "ù", "Û", "«", "»"};
+        private static final String[] mProtugueseCharMap = {"Ã", "ã", "Í", "Ì", "ì", "Ò", "ò", "Õ", "õ", "{", "}", "\\", "^", "_", "|", Constants.WAVE_SEPARATOR, "Ä", "ä", "Ö", "ö", "ß", "¥", "¤", "│", "Å", "å", "Ø", "ø", "┌", "┐", "└", "┘"};
 
         CCData(byte b, byte b2, byte b3) {
             this.mType = b;
@@ -617,7 +614,7 @@ class CCParser {
             if ((this.mStyle & 2) != 0) {
                 sb.append(", UNDERLINE");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }

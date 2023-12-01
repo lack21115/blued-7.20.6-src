@@ -24,7 +24,6 @@ public class CountingRequestBody extends RequestBody {
             this.bytesWritten = 0L;
         }
 
-        @Override // okio.ForwardingSink, okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             super.write(buffer, j);
             this.bytesWritten += j;
@@ -42,7 +41,6 @@ public class CountingRequestBody extends RequestBody {
         this.listener = listener;
     }
 
-    @Override // okhttp3.RequestBody
     public long contentLength() {
         try {
             return this.delegate.contentLength();
@@ -52,12 +50,10 @@ public class CountingRequestBody extends RequestBody {
         }
     }
 
-    @Override // okhttp3.RequestBody
     public MediaType contentType() {
         return this.delegate.contentType();
     }
 
-    @Override // okhttp3.RequestBody
     public void writeTo(BufferedSink bufferedSink) throws IOException {
         CountingSink countingSink = new CountingSink(bufferedSink);
         this.countingSink = countingSink;

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MapAvatarSelfBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29462a;
+    private final ConstraintLayout f15772a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29462a;
+        return this.f15772a;
     }
 }

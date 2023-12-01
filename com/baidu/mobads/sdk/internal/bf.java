@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
-import com.anythink.core.common.c.k;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.baidu.mobads.sdk.api.IOAdEvent;
 import com.baidu.mobads.sdk.api.IOAdEventListener;
@@ -24,11 +23,11 @@ import org.json.JSONObject;
 public abstract class bf extends Observable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9335a = "b_f";
+    private static final String f6495a = "b_f";
     public static final String b = "XAbstractProdTemplate";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9336c = "error_message";
+    public static final String f6496c = "error_message";
     public static final String d = "error_code";
     protected static final String e = "instanceInfo";
     protected static final String f = "showState";
@@ -287,7 +286,7 @@ public abstract class bf extends Observable {
             return;
         }
         try {
-            jSONObject.put(f9335a, i);
+            jSONObject.put(f6495a, i);
         } catch (Throwable th) {
             this.i.a(th);
         }
@@ -314,7 +313,7 @@ public abstract class bf extends Observable {
             return;
         }
         HashMap hashMap = new HashMap();
-        hashMap.put(k.a.b, str);
+        hashMap.put("bid_id", str);
         a("load_bidding_ad", (Map<String, Object>) hashMap);
     }
 

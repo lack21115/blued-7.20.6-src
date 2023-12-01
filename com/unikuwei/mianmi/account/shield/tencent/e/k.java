@@ -3,6 +3,7 @@ package com.unikuwei.mianmi.account.shield.tencent.e;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.UUID;
 
 /* loaded from: source-8829756-dex2jar.jar:com/unikuwei/mianmi/account/shield/tencent/e/k.class */
@@ -11,7 +12,7 @@ public class k {
         String b = b(context, "auth02");
         String str = b;
         if (TextUtils.isEmpty(b)) {
-            str = j.a(UUID.randomUUID().toString().replace("-", "") + System.currentTimeMillis());
+            str = j.a(UUID.randomUUID().toString().replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "") + System.currentTimeMillis());
             a(context, str);
         }
         return str;

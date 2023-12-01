@@ -20,11 +20,11 @@ public final class GroupStatusManager {
     private static OnSyncGroupStatusListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static IRequestHost f32420c;
+    private static IRequestHost f18730c;
     private static long d;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final GroupStatusManager f32419a = new GroupStatusManager();
+    public static final GroupStatusManager f18729a = new GroupStatusManager();
     private static final HashMap<String, GroupStatusInfo> e = new HashMap<>();
     private static String f = "";
     private static final GroupStatusManager$syncRunnable$1 g = new Runnable() { // from class: com.soft.blued.ui.msg.manager.GroupStatusManager$syncRunnable$1
@@ -34,7 +34,7 @@ public final class GroupStatusManager {
             List<String> a2;
             onSyncGroupStatusListener = GroupStatusManager.b;
             if (onSyncGroupStatusListener != null && (a2 = onSyncGroupStatusListener.a()) != null && (!a2.isEmpty())) {
-                GroupStatusManager.f32419a.a(a2);
+                GroupStatusManager.f18729a.a(a2);
             }
             AppInfo.n().postDelayed(this, 300000L);
         }
@@ -53,10 +53,9 @@ public final class GroupStatusManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<String> list) {
-        final IRequestHost iRequestHost = f32420c;
+        final IRequestHost iRequestHost = f18730c;
         ChatHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<GroupStatusInfo>>(iRequestHost) { // from class: com.soft.blued.ui.msg.manager.GroupStatusManager$syncOnlineStatusFromNetwork$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupStatusInfo> bluedEntityA) {
                 GroupStatusManager.OnSyncGroupStatusListener onSyncGroupStatusListener;
@@ -64,18 +63,18 @@ public final class GroupStatusManager {
                 if (bluedEntityA == null) {
                     return;
                 }
-                List<GroupStatusInfo> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
-                if (!data.isEmpty()) {
-                    List<GroupStatusInfo> data2 = bluedEntityA.data;
-                    Intrinsics.c(data2, "data");
-                    for (GroupStatusInfo it : data2) {
-                        if (it.getGroup_id().length() > 0) {
+                List list2 = bluedEntityA.data;
+                Intrinsics.c(list2, "data");
+                if (!list2.isEmpty()) {
+                    List<GroupStatusInfo> list3 = bluedEntityA.data;
+                    Intrinsics.c(list3, "data");
+                    for (GroupStatusInfo groupStatusInfo : list3) {
+                        if (groupStatusInfo.getGroup_id().length() > 0) {
                             hashMap = GroupStatusManager.e;
                             HashMap hashMap2 = hashMap;
-                            String group_id = it.getGroup_id();
-                            Intrinsics.c(it, "it");
-                            hashMap2.put(group_id, it);
+                            String group_id = groupStatusInfo.getGroup_id();
+                            Intrinsics.c(groupStatusInfo, "it");
+                            hashMap2.put(group_id, groupStatusInfo);
                         }
                     }
                     onSyncGroupStatusListener = GroupStatusManager.b;
@@ -86,11 +85,10 @@ public final class GroupStatusManager {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
-        }, list, f32420c);
+        }, list, f18730c);
     }
 
     private final void c() {
@@ -118,10 +116,10 @@ public final class GroupStatusManager {
     }
 
     public final void a(IRequestHost iRequestHost, OnSyncGroupStatusListener onSyncGroupStatusListener, boolean z) {
-        if (!Intrinsics.a((Object) f, (Object) UserInfo.getInstance().getLoginUserInfo().uid)) {
+        if (!Intrinsics.a(f, UserInfo.getInstance().getLoginUserInfo().uid)) {
             c();
         }
-        f32420c = iRequestHost;
+        f18730c = iRequestHost;
         b = onSyncGroupStatusListener;
         if (d + 300000 <= System.currentTimeMillis() || z) {
             d = System.currentTimeMillis();

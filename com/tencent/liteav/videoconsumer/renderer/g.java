@@ -23,10 +23,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videoconsumer/renderer/g.class */
-public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
+public final class g extends VideoRenderInterface implements a.InterfaceC0769a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.tencent.liteav.base.util.b f36825a;
+    private final com.tencent.liteav.base.util.b f23134a;
     private final IVideoReporter b;
     private DisplayTarget d;
     private Object h;
@@ -50,10 +50,10 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
     private boolean w = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private final a f36826c = new a(this);
+    private final a f23135c = new a(this);
 
     public g(Looper looper, IVideoReporter iVideoReporter) {
-        this.f36825a = new com.tencent.liteav.base.util.b(looper);
+        this.f23134a = new com.tencent.liteav.base.util.b(looper);
         this.b = iVideoReporter;
     }
 
@@ -96,7 +96,7 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(g gVar, Surface surface, int i, int i2, boolean z) {
         LiteavLog.i("VideoRenderer", "setDisplaySurface %s size: %dx%d, old_surface: %s", surface, Integer.valueOf(i), Integer.valueOf(i2), gVar.e);
-        if (gVar.e == surface && i == gVar.f.f36340a && i2 == gVar.f.b) {
+        if (gVar.e == surface && i == gVar.f.f22649a && i2 == gVar.f.b) {
             LiteavLog.d("VideoRenderer", "setDisplaySurface same surface!");
             return;
         }
@@ -137,7 +137,7 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
         if (displayTarget != null) {
             displayTarget.showAll();
         }
-        gVar.f36826c.a(displayTarget);
+        gVar.f23135c.a(displayTarget);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -165,10 +165,10 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
     }
 
     private void a(Runnable runnable) {
-        if (Looper.myLooper() == this.f36825a.getLooper()) {
+        if (Looper.myLooper() == this.f23134a.getLooper()) {
             runnable.run();
         } else {
-            this.f36825a.post(runnable);
+            this.f23134a.post(runnable);
         }
     }
 
@@ -185,7 +185,7 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
             return;
         }
         Surface surface = this.e;
-        LiteavLog.i("VideoRenderer", "uninitializeEGL %d %d*%d", Integer.valueOf(surface != null ? surface.hashCode() : 0), Integer.valueOf(this.f.f36340a), Integer.valueOf(this.f.b));
+        LiteavLog.i("VideoRenderer", "uninitializeEGL %d %d*%d", Integer.valueOf(surface != null ? surface.hashCode() : 0), Integer.valueOf(this.f.f22649a), Integer.valueOf(this.f.b));
         try {
             this.i.a();
         } catch (com.tencent.liteav.videobase.b.g e) {
@@ -215,7 +215,7 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
         }
         this.e = surface;
         this.f.b = i2;
-        this.f.f36340a = i;
+        this.f.f22649a = i;
         if (this.e != null) {
             this.b.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_RESOLUTION, Integer.valueOf((i << 16) | i2));
         }
@@ -240,11 +240,11 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
                     LiteavLog.i("VideoRenderer", "initializeEGL surface = " + gVar.e + " ,mSurfaceSize = " + gVar.f);
                     com.tencent.liteav.videobase.b.e eVar = new com.tencent.liteav.videobase.b.e();
                     gVar.i = eVar;
-                    eVar.a(gLContext, gVar.e, gVar.f.f36340a, gVar.f.b);
+                    eVar.a(gLContext, gVar.e, gVar.f.f22649a, gVar.f.b);
                     gVar.h = gLContext;
                     gVar.i.a();
                     if (gVar.k == null) {
-                        gVar.k = new com.tencent.liteav.videobase.frame.j(gVar.f.f36340a, gVar.f.b);
+                        gVar.k = new com.tencent.liteav.videobase.frame.j(gVar.f.f22649a, gVar.f.b);
                     }
                     if (gVar.m == null) {
                         gVar.m = new com.tencent.liteav.videobase.frame.e();
@@ -270,11 +270,11 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
         } catch (com.tencent.liteav.videobase.b.g e2) {
             LiteavLog.e("VideoRenderer", "EGLCore makeCurrent failed.".concat(String.valueOf(e2)));
         }
-        OpenGlUtils.glViewport(0, 0, gVar.f.f36340a, gVar.f.b);
+        OpenGlUtils.glViewport(0, 0, gVar.f.f22649a, gVar.f.b);
         if (gVar.t == null) {
             gVar.a(a2, null, gVar.p, gVar.q, gVar.o, gVar.n);
         } else {
-            com.tencent.liteav.videobase.frame.d a3 = gVar.m.a(gVar.f.f36340a, gVar.f.b);
+            com.tencent.liteav.videobase.frame.d a3 = gVar.m.a(gVar.f.f22649a, gVar.f.b);
             if (a3 == null) {
                 gVar.a(a2);
                 LiteavLog.w("VideoRenderer", "get FrameBuffer from pool return null!");
@@ -283,11 +283,11 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
             }
             gVar.j.a(a3.a());
             gVar.a(a2, a3, gVar.p, gVar.q, gVar.o, gVar.n);
-            if (gVar.f.f36340a == 0 || gVar.f.b == 0) {
+            if (gVar.f.f22649a == 0 || gVar.f.b == 0) {
                 LiteavLog.w("VideoRenderer", "snapshot when surface height or width is zero!");
             } else {
                 gVar.j.b();
-                int i = gVar.f.f36340a;
+                int i = gVar.f.f22649a;
                 int i2 = gVar.f.b;
                 TakeSnapshotListener takeSnapshotListener = gVar.t;
                 if (takeSnapshotListener != null && gVar.u != null) {
@@ -345,7 +345,7 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
         }
         gVar.r = false;
         gVar.t = null;
-        gVar.f36826c.a((DisplayTarget) null);
+        gVar.f23135c.a((DisplayTarget) null);
         DisplayTarget displayTarget = gVar.d;
         if (displayTarget != null && z) {
             displayTarget.hideAll();
@@ -359,7 +359,7 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
         gVar.e = null;
         com.tencent.liteav.base.util.n nVar = gVar.f;
         nVar.b = 0;
-        nVar.f36340a = 0;
+        nVar.f22649a = 0;
         ExecutorService executorService = gVar.u;
         if (executorService != null) {
             executorService.shutdown();
@@ -368,12 +368,12 @@ public final class g extends VideoRenderInterface implements a.InterfaceC0939a {
         gVar.s = false;
     }
 
-    @Override // com.tencent.liteav.videoconsumer.renderer.a.InterfaceC0939a
+    @Override // com.tencent.liteav.videoconsumer.renderer.a.InterfaceC0769a
     public final void a() {
-        this.f36825a.a(k.a(this));
+        this.f23134a.a(k.a(this));
     }
 
-    @Override // com.tencent.liteav.videoconsumer.renderer.a.InterfaceC0939a
+    @Override // com.tencent.liteav.videoconsumer.renderer.a.InterfaceC0769a
     public final void a(Surface surface, int i, int i2, boolean z) {
         a(j.a(this, surface, i, i2, z));
     }

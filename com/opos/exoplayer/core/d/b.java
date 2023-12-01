@@ -36,10 +36,10 @@ public abstract class b extends com.opos.exoplayer.core.a {
     private boolean N;
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.opos.exoplayer.core.b.d f25258a;
+    protected com.opos.exoplayer.core.b.d f11570a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final c f25259c;
+    private final c f11571c;
     private final com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> d;
     private final boolean e;
     private final e f;
@@ -68,27 +68,27 @@ public abstract class b extends com.opos.exoplayer.core.a {
     public static class a extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f25260a;
+        public final String f11572a;
         public final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final String f25261c;
+        public final String f11573c;
         public final String d;
 
         public a(Format format, Throwable th, boolean z, int i) {
             super("Decoder init failed: [" + i + "], " + format, th);
-            this.f25260a = format.f;
+            this.f11572a = format.f;
             this.b = z;
-            this.f25261c = null;
+            this.f11573c = null;
             this.d = a(i);
         }
 
         public a(Format format, Throwable th, boolean z, String str) {
             super("Decoder init failed: " + str + ", " + format, th);
-            this.f25260a = format.f;
+            this.f11572a = format.f;
             this.b = z;
-            this.f25261c = str;
-            this.d = u.f25510a >= 21 ? a(th) : null;
+            this.f11573c = str;
+            this.d = u.f11822a >= 21 ? a(th) : null;
         }
 
         private static String a(int i) {
@@ -106,8 +106,8 @@ public abstract class b extends com.opos.exoplayer.core.a {
 
     public b(int i, c cVar, com.opos.exoplayer.core.drm.b<com.opos.exoplayer.core.drm.d> bVar, boolean z) {
         super(i);
-        com.opos.exoplayer.core.i.a.b(u.f25510a >= 16);
-        this.f25259c = (c) com.opos.exoplayer.core.i.a.a(cVar);
+        com.opos.exoplayer.core.i.a.b(u.f11822a >= 16);
+        this.f11571c = (c) com.opos.exoplayer.core.i.a.a(cVar);
         this.d = bVar;
         this.e = z;
         this.f = new e(0);
@@ -120,14 +120,14 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private void D() {
-        if (u.f25510a < 21) {
+        if (u.f11822a < 21) {
             this.y = this.n.getInputBuffers();
             this.z = this.n.getOutputBuffers();
         }
     }
 
     private void E() {
-        if (u.f25510a < 21) {
+        if (u.f11822a < 21) {
             this.y = null;
             this.z = null;
         }
@@ -160,7 +160,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private void J() {
-        if (u.f25510a < 21) {
+        if (u.f11822a < 21) {
             this.z = this.n.getOutputBuffers();
         }
     }
@@ -176,7 +176,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private static MediaCodec.CryptoInfo a(e eVar, int i) {
-        MediaCodec.CryptoInfo a2 = eVar.f25073a.a();
+        MediaCodec.CryptoInfo a2 = eVar.f11385a.a();
         if (i == 0) {
             return a2;
         }
@@ -197,11 +197,11 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private static boolean a(String str) {
-        if (u.f25510a >= 18) {
-            if (u.f25510a == 18 && ("OMX.SEC.avc.dec".equals(str) || "OMX.SEC.avc.dec.secure".equals(str))) {
+        if (u.f11822a >= 18) {
+            if (u.f11822a == 18 && ("OMX.SEC.avc.dec".equals(str) || "OMX.SEC.avc.dec.secure".equals(str))) {
                 return true;
             }
-            if (u.f25510a == 19 && u.d.startsWith("SM-G800")) {
+            if (u.f11822a == 19 && u.d.startsWith("SM-G800")) {
                 return "OMX.Exynos.avc.dec".equals(str) || "OMX.Exynos.avc.dec.secure".equals(str);
             }
             return false;
@@ -210,14 +210,14 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private static boolean a(String str, Format format) {
-        return u.f25510a < 21 && format.h.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str);
+        return u.f11822a < 21 && format.h.isEmpty() && "OMX.MTK.VIDEO.DECODER.AVC".equals(str);
     }
 
     private int b(String str) {
-        if (u.f25510a <= 25 && "OMX.Exynos.avc.dec.secure".equals(str) && (u.d.startsWith("SM-T585") || u.d.startsWith("SM-A510") || u.d.startsWith("SM-A520") || u.d.startsWith("SM-J700"))) {
+        if (u.f11822a <= 25 && "OMX.Exynos.avc.dec.secure".equals(str) && (u.d.startsWith("SM-T585") || u.d.startsWith("SM-A510") || u.d.startsWith("SM-A520") || u.d.startsWith("SM-J700"))) {
             return 2;
         }
-        if (u.f25510a < 24) {
+        if (u.f11822a < 24) {
             if ("OMX.Nvidia.h264.decode".equals(str) || "OMX.Nvidia.h264.decode.secure".equals(str)) {
                 return ("flounder".equals(u.b) || "flounder_lte".equals(u.b) || "grouper".equals(u.b) || "tilapia".equals(u.b)) ? 1 : 0;
             }
@@ -227,7 +227,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private ByteBuffer b(int i) {
-        return u.f25510a >= 21 ? this.n.getInputBuffer(i) : this.y[i];
+        return u.f11822a >= 21 ? this.n.getInputBuffer(i) : this.y[i];
     }
 
     private boolean b(long j, long j2) {
@@ -302,7 +302,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private static boolean b(String str, Format format) {
-        return u.f25510a <= 18 && format.r == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str);
+        return u.f11822a <= 18 && format.r == 1 && "OMX.MTK.AUDIO.DECODER.MP3".equals(str);
     }
 
     private boolean b(boolean z) {
@@ -320,11 +320,11 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private ByteBuffer c(int i) {
-        return u.f25510a >= 21 ? this.n.getOutputBuffer(i) : this.z[i];
+        return u.f11822a >= 21 ? this.n.getOutputBuffer(i) : this.z[i];
     }
 
     private static boolean c(String str) {
-        if (u.f25510a <= 17) {
+        if (u.f11822a <= 17) {
             return "OMX.rk.video_decoder.avc".equals(str) || "OMX.allwinner.video.decoder.avc".equals(str);
         }
         return false;
@@ -347,8 +347,8 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private static boolean d(String str) {
-        if (u.f25510a > 23 || !"OMX.google.vorbis.decoder".equals(str)) {
-            if (u.f25510a > 19 || !"hb2000".equals(u.b)) {
+        if (u.f11822a > 23 || !"OMX.google.vorbis.decoder".equals(str)) {
+            if (u.f11822a > 19 || !"hb2000".equals(u.b)) {
                 return false;
             }
             return "OMX.amlogic.avc.decoder.awesome".equals(str) || "OMX.amlogic.avc.decoder.awesome.secure".equals(str);
@@ -357,7 +357,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
     }
 
     private static boolean e(String str) {
-        return u.f25510a == 21 && "OMX.google.aac.decoder".equals(str);
+        return u.f11822a == 21 && "OMX.google.aac.decoder".equals(str);
     }
 
     private boolean v() {
@@ -417,7 +417,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
                         this.f.a();
                         this.G = 1;
                     }
-                    b(this.h.f25515a);
+                    b(this.h.f11827a);
                     return true;
                 } else if (this.f.c()) {
                     if (this.G == 2) {
@@ -463,7 +463,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
                         this.q = false;
                     }
                     try {
-                        long j = this.f.f25074c;
+                        long j = this.f.f11386c;
                         if (this.f.d_()) {
                             this.i.add(Long.valueOf(j));
                         }
@@ -477,7 +477,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
                         G();
                         this.I = true;
                         this.G = 0;
-                        this.f25258a.f25072c++;
+                        this.f11570a.f11384c++;
                         return true;
                     } catch (MediaCodec.CryptoException e2) {
                         throw h.a(e2, r());
@@ -511,7 +511,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
         this.G = 0;
         this.H = 0;
         if (this.n != null) {
-            this.f25258a.b++;
+            this.f11570a.b++;
             try {
                 this.n.stop();
                 try {
@@ -593,7 +593,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
     @Override // com.opos.exoplayer.core.t
     public final int a(Format format) {
         try {
-            return a(this.f25259c, this.d, format);
+            return a(this.f11571c, this.d, format);
         } catch (d.a e) {
             throw h.a(e, r());
         }
@@ -623,7 +623,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
                 }
                 return;
             }
-            b(this.h.f25515a);
+            b(this.h.f11827a);
         }
         x();
         if (this.n != null) {
@@ -634,18 +634,18 @@ public abstract class b extends com.opos.exoplayer.core.a {
             } while (v());
             t.a();
         } else {
-            this.f25258a.d += b(j);
+            this.f11570a.d += b(j);
             this.g.a();
             int a3 = a(this.h, this.g, false);
             if (a3 == -5) {
-                b(this.h.f25515a);
+                b(this.h.f11827a);
             } else if (a3 == -4) {
                 com.opos.exoplayer.core.i.a.b(this.g.c());
                 this.K = true;
                 K();
             }
         }
-        this.f25258a.a();
+        this.f11570a.a();
     }
 
     @Override // com.opos.exoplayer.core.a
@@ -670,7 +670,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
 
     @Override // com.opos.exoplayer.core.a
     public void a(boolean z) {
-        this.f25258a = new com.opos.exoplayer.core.b.d();
+        this.f11570a = new com.opos.exoplayer.core.b.d();
     }
 
     protected abstract boolean a(long j, long j2, MediaCodec mediaCodec, ByteBuffer byteBuffer, int i, int i2, long j3, boolean z);
@@ -724,7 +724,7 @@ public abstract class b extends com.opos.exoplayer.core.a {
     /* JADX INFO: Access modifiers changed from: protected */
     public final MediaFormat c(Format format) {
         MediaFormat b2 = format.b();
-        if (u.f25510a >= 23) {
+        if (u.f11822a >= 23) {
             a(b2);
         }
         return b2;

@@ -6,6 +6,7 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewParent;
+import androidx.appcompat.widget.ContentFrameLayout;
 import androidx.appcompat.widget.TintContextWrapper;
 import androidx.appcompat.widget.VectorEnabledTintResources;
 import androidx.core.view.ViewCompat;
@@ -309,7 +310,7 @@ public class SkinAppCompatViewInflater implements SkinLayoutInflater, SkinWrappe
 
     private View c(Context context, String str, AttributeSet attributeSet) {
         boolean z;
-        View skinCompatToolbar;
+        ContentFrameLayout skinCompatToolbar;
         int hashCode = str.hashCode();
         if (hashCode != -543350792) {
             if (hashCode == 171496577 && str.equals("androidx.appcompat.widget.Toolbar")) {
@@ -357,10 +358,10 @@ public class SkinAppCompatViewInflater implements SkinLayoutInflater, SkinWrappe
                 context3 = view.getContext();
             }
         }
-        Context a2 = a(context3, attributeSet, z, true);
-        Context context4 = a2;
+        Context a = a(context3, attributeSet, z, true);
+        Context context4 = a;
         if (shouldBeUsed) {
-            context4 = TintContextWrapper.wrap(a2);
+            context4 = TintContextWrapper.wrap(a);
         }
         return context4;
     }

@@ -4,16 +4,16 @@ package com.tencent.liteav.sdkcommon;
 final /* synthetic */ class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final DashboardManager f36431a;
+    private final DashboardManager f22740a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f36432c;
+    private final String f22741c;
 
     private e(DashboardManager dashboardManager, String str, String str2) {
-        this.f36431a = dashboardManager;
+        this.f22740a = dashboardManager;
         this.b = str;
-        this.f36432c = str2;
+        this.f22741c = str2;
     }
 
     public static Runnable a(DashboardManager dashboardManager, String str, String str2) {
@@ -22,6 +22,6 @@ final /* synthetic */ class e implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36431a.setStatusInternal(this.b, this.f36432c);
+        this.f22740a.setStatusInternal(this.b, this.f22741c);
     }
 }

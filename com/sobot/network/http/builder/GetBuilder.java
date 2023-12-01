@@ -1,5 +1,6 @@
 package com.sobot.network.http.builder;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.sobot.network.http.request.GetRequest;
 import com.sobot.network.http.request.RequestCall;
 import java.util.LinkedHashMap;
@@ -33,7 +34,7 @@ public class GetBuilder extends OkHttpRequestBuilder implements HasParamsable {
                 sb.append(str2);
                 sb.append("=");
                 sb.append(map.get(str2));
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
             }
         }
         return sb.deleteCharAt(sb.length() - 1).toString();

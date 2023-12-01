@@ -23,15 +23,15 @@ import java.io.IOException;
 public class SaveImageProcessor {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static final String f1180 = "YouZan";
+    private static final String f1133 = "YouZan";
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private File m12265(Context context) {
+    private File m9215(Context context) {
         String str;
         File externalStoragePublicDirectory;
         try {
             if (PermissionUtil.hasExtStroragePermision(context) && Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) && (externalStoragePublicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)) != null) {
-                str = externalStoragePublicDirectory.getAbsolutePath() + File.separator + f1180;
+                str = externalStoragePublicDirectory.getAbsolutePath() + File.separator + f1133;
             } else {
                 str = null;
             }
@@ -51,9 +51,9 @@ public class SaveImageProcessor {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ˊ  reason: contains not printable characters */
-    public void m12266(final Context context, final WebView webView) {
-        File m12265 = m12265(context);
-        if (m12265 == null) {
+    public void m9216(final Context context, final WebView webView) {
+        File m9215 = m9215(context);
+        if (m9215 == null) {
             Toast.makeText(context, R.string.yzappsdk_save_image_failed, 0).show();
             return;
         }
@@ -71,7 +71,7 @@ public class SaveImageProcessor {
             if (TextUtils.isEmpty(lastPathSegment)) {
                 str = MD5Utils.getStringMd5(extra);
             }
-            final File file = new File(m12265, str);
+            final File file = new File(m9215, str);
             OkHttpUtil.downloadFile(context, extra, file, new FileCallback() { // from class: com.youzan.androidsdkx5.plugin.SaveImageProcessor.2
                 @Override // com.youzan.spiderman.utils.FileCallback
                 public void fail(int i, Exception exc) {
@@ -85,7 +85,7 @@ public class SaveImageProcessor {
 
                 @Override // com.youzan.spiderman.utils.FileCallback
                 public void success() {
-                    SaveImageProcessor.this.m12267(context, file);
+                    SaveImageProcessor.this.m9217(context, file);
                     webView.post(new Runnable() { // from class: com.youzan.androidsdkx5.plugin.SaveImageProcessor.2.1
                         @Override // java.lang.Runnable
                         public void run() {
@@ -97,12 +97,12 @@ public class SaveImageProcessor {
         } else {
             String replaceFirst = extra.replaceFirst("data:image\\/\\w+;base64,", "");
             byte[] decode = Base64.decode(replaceFirst, 0);
-            File file2 = new File(m12265, MD5Utils.getStringMd5(replaceFirst) + ".png");
+            File file2 = new File(m9215, MD5Utils.getStringMd5(replaceFirst) + ".png");
             try {
                 FileOutputStream fileOutputStream = new FileOutputStream(file2);
                 fileOutputStream.write(decode);
                 fileOutputStream.close();
-                m12267(context, file2);
+                m9217(context, file2);
                 Toast.makeText(context, R.string.yzappsdk_save_image_succeed, 0).show();
             } catch (IOException e) {
                 Toast.makeText(context, R.string.yzappsdk_save_image_succeed, 0).show();
@@ -113,7 +113,7 @@ public class SaveImageProcessor {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: ˊ  reason: contains not printable characters */
-    public void m12267(Context context, File file) {
+    public void m9217(Context context, File file) {
         Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         intent.setData(Uri.fromFile(file));
         context.sendBroadcast(intent);
@@ -128,7 +128,7 @@ public class SaveImageProcessor {
         builder.setItems(new CharSequence[]{context.getString(R.string.yzappsdk_save_image)}, new DialogInterface.OnClickListener() { // from class: com.youzan.androidsdkx5.plugin.SaveImageProcessor.1
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
-                SaveImageProcessor.this.m12266(context, webView);
+                SaveImageProcessor.this.m9216(context, webView);
             }
         });
         builder.create().show();

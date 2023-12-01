@@ -14,11 +14,11 @@ import java.util.Set;
 public final class i implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f36331a;
+    public volatile boolean f22640a;
     private final Set<Integer> b = new HashSet();
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<Integer> f36332c = new HashSet();
+    private final Set<Integer> f22641c = new HashSet();
 
     public i(Context context) {
         if (context == null) {
@@ -26,12 +26,12 @@ public final class i implements Application.ActivityLifecycleCallbacks {
             return;
         }
         ((Application) context.getApplicationContext()).registerActivityLifecycleCallbacks(this);
-        this.f36331a = a(context);
+        this.f22640a = a(context);
     }
 
     private void a(int i) {
         this.b.add(Integer.valueOf(i));
-        this.f36331a = false;
+        this.f22640a = false;
     }
 
     private static boolean a(Context context) {
@@ -68,7 +68,7 @@ public final class i implements Application.ActivityLifecycleCallbacks {
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityPaused(Activity activity) {
-        this.f36332c.add(Integer.valueOf(activity.hashCode()));
+        this.f22641c.add(Integer.valueOf(activity.hashCode()));
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -94,12 +94,12 @@ public final class i implements Application.ActivityLifecycleCallbacks {
             if (this.b.size() != 0) {
                 z = false;
             }
-            this.f36331a = z;
+            this.f22640a = z;
         } else if (this.b.size() != 0) {
-            this.f36331a = false;
-        } else if (this.f36332c.contains(Integer.valueOf(hashCode))) {
-            this.f36331a = true;
+            this.f22640a = false;
+        } else if (this.f22641c.contains(Integer.valueOf(hashCode))) {
+            this.f22640a = true;
         }
-        this.f36332c.remove(Integer.valueOf(hashCode));
+        this.f22641c.remove(Integer.valueOf(hashCode));
     }
 }

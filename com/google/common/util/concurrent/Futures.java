@@ -339,27 +339,27 @@ public final class Futures extends GwtFuturesCatchingSpecialization {
 
             @Override // java.util.concurrent.Future
             public boolean cancel(boolean z) {
-                return Future.this.cancel(z);
+                return future.cancel(z);
             }
 
             @Override // java.util.concurrent.Future
             public O get() throws InterruptedException, ExecutionException {
-                return applyTransformation(Future.this.get());
+                return applyTransformation(future.get());
             }
 
             @Override // java.util.concurrent.Future
             public O get(long j, TimeUnit timeUnit) throws InterruptedException, ExecutionException, TimeoutException {
-                return applyTransformation(Future.this.get(j, timeUnit));
+                return applyTransformation(future.get(j, timeUnit));
             }
 
             @Override // java.util.concurrent.Future
             public boolean isCancelled() {
-                return Future.this.isCancelled();
+                return future.isCancelled();
             }
 
             @Override // java.util.concurrent.Future
             public boolean isDone() {
-                return Future.this.isDone();
+                return future.isDone();
             }
         };
     }
@@ -379,7 +379,7 @@ public final class Futures extends GwtFuturesCatchingSpecialization {
         create.addListener(new Runnable() { // from class: com.google.common.util.concurrent.Futures.1
             @Override // java.lang.Runnable
             public void run() {
-                Future.this.cancel(false);
+                schedule.cancel(false);
             }
         }, MoreExecutors.directExecutor());
         return create;

@@ -16,9 +16,7 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/utils/YYCommonStringUtils.class */
 public class YYCommonStringUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Pattern f17874a = Pattern.compile("\\S*[?]\\S*");
+    static final Pattern a = Pattern.compile("\\S*[?]\\S*");
 
     public static SpannableStringBuilder a(Context context, TextView textView, YYImModel yYImModel, String str, int i, String str2, String str3) {
         return a(context, textView, yYImModel, str, i, str2, str3, true);

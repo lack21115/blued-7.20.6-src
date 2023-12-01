@@ -6,11 +6,11 @@ import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 public final class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22576a = "EmuiUtil";
+    private static final String f8968a = "EmuiUtil";
     private static final String b = "EMUI_SDK_INT";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22577c = "com.huawei.android.os.BuildEx$VERSION";
+    private static final String f8969c = "com.huawei.android.os.BuildEx$VERSION";
     private static final int d = -1;
     private static final int e = 7;
     private static final int f = 8;
@@ -38,7 +38,7 @@ public final class w {
             Method dump skipped, instructions count: 337
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.huawei.hms.ads.uiengineloader.w.m7135clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.huawei.hms.ads.uiengineloader.w.m4128clinit():void");
     }
 
     public static boolean a() {
@@ -63,7 +63,7 @@ public final class w {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             String str = (String) cls.getDeclaredMethod(MonitorConstants.CONNECT_TYPE_GET, String.class).invoke(cls, "ro.build.version.emui");
-            aa.a(f22576a, "isNeed2UseHwEmui :");
+            aa.a(f8968a, "isNeed2UseHwEmui :");
             if (str != null) {
                 if (str.contains("EmotionUI_3.0")) {
                     u = 30;
@@ -82,7 +82,7 @@ public final class w {
                 }
             }
         } catch (Throwable th) {
-            aa.d(f22576a, "dealTypeUnknow Exception:" + th.getClass().getSimpleName());
+            aa.d(f8968a, "dealTypeUnknow Exception:" + th.getClass().getSimpleName());
         }
     }
 

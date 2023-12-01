@@ -13,11 +13,11 @@ import com.heytap.msp.mobad.api.R;
 public class o implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f26538a = false;
+    private boolean f12850a = false;
     private com.opos.mobad.n.c.h b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.n.c.e f26539c;
+    private com.opos.mobad.n.c.e f12851c;
     private Context d;
     private RelativeLayout e;
     private TextView f;
@@ -48,14 +48,14 @@ public class o implements f {
         layoutParams.addRule(13);
         this.e.addView(this.f, layoutParams);
         if (this.k == m.BREATH) {
-            this.f26539c = new com.opos.mobad.n.c.e(this.d);
+            this.f12851c = new com.opos.mobad.n.c.e(this.d);
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.d, 346.0f), com.opos.cmn.an.h.f.a.a(this.d, 88.0f));
             layoutParams2.addRule(13);
-            this.f26539c.setImageResource(R.drawable.opos_mobad_btn_fading);
-            this.f26539c.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.f26539c.b(com.opos.cmn.an.h.f.a.a(this.d, 88.0f));
-            this.f26539c.a(com.opos.cmn.an.h.f.a.a(this.d, 30.0f));
-            this.e.addView(this.f26539c, layoutParams2);
+            this.f12851c.setImageResource(R.drawable.opos_mobad_btn_fading);
+            this.f12851c.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            this.f12851c.b(com.opos.cmn.an.h.f.a.a(this.d, 88.0f));
+            this.f12851c.a(com.opos.cmn.an.h.f.a.a(this.d, 30.0f));
+            this.e.addView(this.f12851c, layoutParams2);
         }
     }
 
@@ -78,7 +78,7 @@ public class o implements f {
     /* JADX INFO: Access modifiers changed from: private */
     public void i() {
         if (this.i == null) {
-            Animator a2 = n.a(this.f26539c);
+            Animator a2 = n.a(this.f12851c);
             this.i = a2;
             a2.start();
         }
@@ -124,10 +124,10 @@ public class o implements f {
 
     @Override // com.opos.mobad.n.a.f
     public void c() {
-        if (Build.VERSION.SDK_INT < 21 || this.k == m.NONE || this.f26538a) {
+        if (Build.VERSION.SDK_INT < 21 || this.k == m.NONE || this.f12850a) {
             return;
         }
-        this.f26538a = true;
+        this.f12850a = true;
         Animator a2 = n.a((View) this.l);
         this.g = a2;
         a2.addListener(new Animator.AnimatorListener() { // from class: com.opos.mobad.n.a.o.1

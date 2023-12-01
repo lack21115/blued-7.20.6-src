@@ -15,32 +15,32 @@ public abstract class HelloCallAction implements UiAction {
     public static final class GetHelloCallData extends HelloCallAction {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f32595a;
+        private int f18904a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f32596c;
+        private String f18905c;
         private String d;
         private String e;
         private ActivityFragmentActive f;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public GetHelloCallData(int i, int i2, String rankBy, String role, String filters, ActivityFragmentActive fragmentActive) {
+        public GetHelloCallData(int i, int i2, String str, String str2, String str3, ActivityFragmentActive activityFragmentActive) {
             super(null);
-            Intrinsics.e(rankBy, "rankBy");
-            Intrinsics.e(role, "role");
-            Intrinsics.e(filters, "filters");
-            Intrinsics.e(fragmentActive, "fragmentActive");
-            this.f32595a = i;
+            Intrinsics.e(str, "rankBy");
+            Intrinsics.e(str2, "role");
+            Intrinsics.e(str3, "filters");
+            Intrinsics.e(activityFragmentActive, "fragmentActive");
+            this.f18904a = i;
             this.b = i2;
-            this.f32596c = rankBy;
-            this.d = role;
-            this.e = filters;
-            this.f = fragmentActive;
+            this.f18905c = str;
+            this.d = str2;
+            this.e = str3;
+            this.f = activityFragmentActive;
         }
 
         public final int a() {
-            return this.f32595a;
+            return this.f18904a;
         }
 
         public final int b() {
@@ -48,7 +48,7 @@ public abstract class HelloCallAction implements UiAction {
         }
 
         public final String c() {
-            return this.f32596c;
+            return this.f18905c;
         }
 
         public final String d() {
@@ -65,7 +65,7 @@ public abstract class HelloCallAction implements UiAction {
             }
             if (obj instanceof GetHelloCallData) {
                 GetHelloCallData getHelloCallData = (GetHelloCallData) obj;
-                return this.f32595a == getHelloCallData.f32595a && this.b == getHelloCallData.b && Intrinsics.a((Object) this.f32596c, (Object) getHelloCallData.f32596c) && Intrinsics.a((Object) this.d, (Object) getHelloCallData.d) && Intrinsics.a((Object) this.e, (Object) getHelloCallData.e) && Intrinsics.a(this.f, getHelloCallData.f);
+                return this.f18904a == getHelloCallData.f18904a && this.b == getHelloCallData.b && Intrinsics.a(this.f18905c, getHelloCallData.f18905c) && Intrinsics.a(this.d, getHelloCallData.d) && Intrinsics.a(this.e, getHelloCallData.e) && Intrinsics.a(this.f, getHelloCallData.f);
             }
             return false;
         }
@@ -75,11 +75,11 @@ public abstract class HelloCallAction implements UiAction {
         }
 
         public int hashCode() {
-            return (((((((((this.f32595a * 31) + this.b) * 31) + this.f32596c.hashCode()) * 31) + this.d.hashCode()) * 31) + this.e.hashCode()) * 31) + this.f.hashCode();
+            return (((((((((this.f18904a * 31) + this.b) * 31) + this.f18905c.hashCode()) * 31) + this.d.hashCode()) * 31) + this.e.hashCode()) * 31) + this.f.hashCode();
         }
 
         public String toString() {
-            return "GetHelloCallData(page=" + this.f32595a + ", size=" + this.b + ", rankBy=" + this.f32596c + ", role=" + this.d + ", filters=" + this.e + ", fragmentActive=" + this.f + ')';
+            return "GetHelloCallData(page=" + this.f18904a + ", size=" + this.b + ", rankBy=" + this.f18905c + ", role=" + this.d + ", filters=" + this.e + ", fragmentActive=" + this.f + ')';
         }
     }
 

@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.android.internal.R;
 import com.android.internal.view.ActionBarPolicy;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/ScrollingTabContainerView.class */
@@ -106,7 +107,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         private TextView mTextView;
 
         public TabView(Context context, ActionBar.Tab tab, boolean z) {
-            super(context, null, 16843507);
+            super(context, null, R.attr.actionBarTabStyle);
             this.mTab = tab;
             if (z) {
                 setGravity(8388627);
@@ -213,7 +214,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             boolean z = !TextUtils.isEmpty(text);
             if (z) {
                 if (this.mTextView == null) {
-                    TextView textView = new TextView(getContext(), null, 16843509);
+                    TextView textView = new TextView(getContext(), null, R.attr.actionBarTabTextStyle);
                     textView.setEllipsize(TextUtils.TruncateAt.END);
                     LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
                     layoutParams2.gravity = 16;
@@ -290,14 +291,14 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     }
 
     private Spinner createSpinner() {
-        Spinner spinner = new Spinner(getContext(), null, 16843479);
+        Spinner spinner = new Spinner(getContext(), null, R.attr.actionDropDownStyle);
         spinner.setLayoutParams(new LinearLayout.LayoutParams(-2, -1));
         spinner.setOnItemClickListenerInt(this);
         return spinner;
     }
 
     private LinearLayout createTabLayout() {
-        LinearLayout linearLayout = new LinearLayout(getContext(), null, 16843508);
+        LinearLayout linearLayout = new LinearLayout(getContext(), null, R.attr.actionBarTabBarStyle);
         linearLayout.setMeasureWithLargestChildEnabled(true);
         linearLayout.setGravity(17);
         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(-2, -1));

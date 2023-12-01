@@ -12,16 +12,16 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f39341a;
+    private c f25650a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f39342c;
+    private final String f25651c;
     private final CopyOnWriteArraySet<f> d = new CopyOnWriteArraySet<>();
 
     public b(int i, String str) {
         this.b = i;
-        this.f39342c = str;
+        this.f25651c = str;
     }
 
     private f a(f fVar, Iterator it) {
@@ -82,7 +82,7 @@ public final class b {
     }
 
     public final void a(c cVar) {
-        this.f39341a = cVar;
+        this.f25650a = cVar;
     }
 
     public final boolean a() {
@@ -91,14 +91,14 @@ public final class b {
 
     public final void b(f fVar) {
         if (this.d.remove(fVar)) {
-            c cVar = this.f39341a;
+            c cVar = this.f25650a;
             if (cVar != null) {
                 cVar.a(fVar);
                 return;
             }
             return;
         }
-        com.tencent.thumbplayer.g.h.b.d("CodecWrapperPool", "pool:" + this.f39342c + " remove " + fVar + " not found");
+        com.tencent.thumbplayer.g.h.b.d("CodecWrapperPool", "pool:" + this.f25651c + " remove " + fVar + " not found");
     }
 
     public final String toString() {

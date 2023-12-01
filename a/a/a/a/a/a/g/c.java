@@ -15,7 +15,7 @@ public class c extends b {
     public MediaCodec b;
 
     /* renamed from: c  reason: collision with root package name */
-    public MediaCodec.BufferInfo f1229c;
+    public MediaCodec.BufferInfo f1181c;
     public ByteBuffer d;
     public int e;
     public volatile boolean f;
@@ -38,7 +38,7 @@ public class c extends b {
         this.j = new ArrayDeque<>();
         this.g = z;
         try {
-            this.f1229c = new MediaCodec.BufferInfo();
+            this.f1181c = new MediaCodec.BufferInfo();
             MediaCodec createEncoderByType = MediaCodec.createEncoderByType(str);
             this.b = createEncoderByType;
             createEncoderByType.configure(mediaFormat, null, null, 1);
@@ -152,8 +152,8 @@ public class c extends b {
     }
 
     public void f() {
-        PLBufferInfo pLBufferInfo = this.f1228a;
-        MediaCodec.BufferInfo bufferInfo = this.f1229c;
+        PLBufferInfo pLBufferInfo = this.f1180a;
+        MediaCodec.BufferInfo bufferInfo = this.f1181c;
         pLBufferInfo.flags = bufferInfo.flags;
         pLBufferInfo.offset = bufferInfo.offset;
         pLBufferInfo.size = bufferInfo.size;

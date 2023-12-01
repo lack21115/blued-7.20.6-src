@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ArrayList<WeakReference<Activity>> f21709a;
+    private static ArrayList<WeakReference<Activity>> f8103a;
 
     public static int a(Context context) {
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);

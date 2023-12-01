@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemPrivilegePayOptionDialogBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29290a;
+    private final LinearLayout f15600a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29290a;
+        return this.f15600a;
     }
 }

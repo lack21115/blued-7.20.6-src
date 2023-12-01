@@ -12,21 +12,17 @@ import kotlinx.coroutines.flow.internal.CombineKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ZipKt$combine$$inlined$unsafeFlow$1.class */
 public final class FlowKt__ZipKt$combine$$inlined$unsafeFlow$1<R> implements Flow<R> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43349a;
+    final /* synthetic */ Flow a;
     final /* synthetic */ Flow b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Function3 f43350c;
+    final /* synthetic */ Function3 c;
 
     @Override // kotlinx.coroutines.flow.Flow
     public Object a(FlowCollector<? super R> flowCollector, Continuation<? super Unit> continuation) {
         Function0 b;
-        Flow flow = this.f43349a;
+        Flow flow = this.a;
         Flow flow2 = this.b;
         b = FlowKt__ZipKt.b();
-        Object a2 = CombineKt.a(flowCollector, new Flow[]{flow, flow2}, b, new FlowKt__ZipKt$combine$1$1(this.f43350c, null), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = CombineKt.a(flowCollector, new Flow[]{flow, flow2}, b, new FlowKt__ZipKt$combine$1$1(this.c, null), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

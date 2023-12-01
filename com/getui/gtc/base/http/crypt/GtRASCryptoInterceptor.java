@@ -52,14 +52,14 @@ public class GtRASCryptoInterceptor implements Interceptor {
                 SecretKey generateKey = CryptTools.generateKey("AES", 128);
                 byte[] encrypt = CryptTools.encrypt("RSA/NONE/OAEPWithSHA1AndMGF1Padding", parsePublicKey, generateKey.getEncoded());
                 byte[] bArr2 = new byte[encrypt.length + 16];
-                System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 16);
-                System.arraycopy((Object) encrypt, 0, (Object) bArr2, 16, encrypt.length);
+                System.arraycopy(bArr, 0, bArr2, 0, 16);
+                System.arraycopy(encrypt, 0, bArr2, 16, encrypt.length);
                 newBuilder.addHeader("GT_C_V", Base64.encodeToString(bArr2, 2));
                 byte[] bytes = valueOf.getBytes();
                 byte[] byteArray = byteArrayOutputStream.toByteArray();
                 byte[] bArr3 = new byte[bytes.length + byteArray.length];
-                System.arraycopy((Object) bytes, 0, (Object) bArr3, 0, bytes.length);
-                System.arraycopy((Object) byteArray, 0, (Object) bArr3, bytes.length, byteArray.length);
+                System.arraycopy(bytes, 0, bArr3, 0, bytes.length);
+                System.arraycopy(byteArray, 0, bArr3, bytes.length, byteArray.length);
                 String encodeToString = Base64.encodeToString(CryptTools.digest(AppSigning.SHA1, bArr3), 2);
                 newBuilder.addHeader("GT_C_S", encodeToString);
                 newBuilder.body(RequestBody.create(body.contentType(), CryptTools.encrypt("AES/CFB/NoPadding", generateKey, new IvParameterSpec(CryptTools.digest("MD5", encodeToString.getBytes())), byteArray)));
@@ -85,8 +85,8 @@ public class GtRASCryptoInterceptor implements Interceptor {
                     byte[] decode = Base64.decode(list3.get(0), 2);
                     byte[] decrypt = CryptTools.decrypt("AES/CFB/NoPadding", generateKey, ivParameterSpec, proceed.body().bytes());
                     byte[] bArr4 = new byte[decrypt.length + bytes2.length];
-                    System.arraycopy((Object) bytes2, 0, (Object) bArr4, 0, bytes2.length);
-                    System.arraycopy((Object) decrypt, 0, (Object) bArr4, bytes2.length, decrypt.length);
+                    System.arraycopy(bytes2, 0, bArr4, 0, bytes2.length);
+                    System.arraycopy(decrypt, 0, bArr4, bytes2.length, decrypt.length);
                     if (Arrays.equals(CryptTools.digest(AppSigning.SHA1, bArr4), decode)) {
                         request2.removeHeader("GT_C_S");
                         request2.body(ResponseBody.create(proceed.body().contentType(), decrypt));

@@ -10,20 +10,16 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/ShapeFill.class */
 public class ShapeFill implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final boolean f4362a;
+    private final boolean a;
     private final Path.FillType b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f4363c;
+    private final String c;
     private final AnimatableColorValue d;
     private final AnimatableIntegerValue e;
     private final boolean f;
 
     public ShapeFill(String str, boolean z, Path.FillType fillType, AnimatableColorValue animatableColorValue, AnimatableIntegerValue animatableIntegerValue, boolean z2) {
-        this.f4363c = str;
-        this.f4362a = z;
+        this.c = str;
+        this.a = z;
         this.b = fillType;
         this.d = animatableColorValue;
         this.e = animatableIntegerValue;
@@ -36,7 +32,7 @@ public class ShapeFill implements ContentModel {
     }
 
     public String a() {
-        return this.f4363c;
+        return this.c;
     }
 
     public AnimatableColorValue b() {
@@ -56,6 +52,6 @@ public class ShapeFill implements ContentModel {
     }
 
     public String toString() {
-        return "ShapeFill{color=, fillEnabled=" + this.f4362a + '}';
+        return "ShapeFill{color=, fillEnabled=" + this.a + '}';
     }
 }

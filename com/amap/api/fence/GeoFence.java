@@ -53,13 +53,9 @@ public class GeoFence implements Parcelable {
     public static final int TYPE_DISTRICT = 3;
     public static final int TYPE_POLYGON = 1;
     public static final int TYPE_ROUND = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5466a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5467c;
+    private String c;
     private PendingIntent d;
     private int e;
     private PoiItem f;
@@ -109,9 +105,9 @@ public class GeoFence implements Parcelable {
         this.p = -1L;
         this.q = true;
         this.r = null;
-        this.f5466a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5467c = parcel.readString();
+        this.c = parcel.readString();
         this.d = (PendingIntent) parcel.readParcelable(PendingIntent.class.getClassLoader());
         this.e = parcel.readInt();
         this.f = (PoiItem) parcel.readParcelable(PoiItem.class.getClassLoader());
@@ -202,7 +198,7 @@ public class GeoFence implements Parcelable {
     }
 
     public String getFenceId() {
-        return this.f5466a;
+        return this.a;
     }
 
     public float getMaxDis2Center() {
@@ -218,7 +214,7 @@ public class GeoFence implements Parcelable {
     }
 
     public String getPendingIntentAction() {
-        return this.f5467c;
+        return this.c;
     }
 
     public PoiItem getPoiItem() {
@@ -262,7 +258,7 @@ public class GeoFence implements Parcelable {
     }
 
     public void setCurrentLocation(AMapLocation aMapLocation) {
-        this.r = aMapLocation.m2371clone();
+        this.r = aMapLocation.m8814clone();
     }
 
     public void setCustomId(String str) {
@@ -286,7 +282,7 @@ public class GeoFence implements Parcelable {
     }
 
     public void setFenceId(String str) {
-        this.f5466a = str;
+        this.a = str;
     }
 
     public void setMaxDis2Center(float f) {
@@ -302,7 +298,7 @@ public class GeoFence implements Parcelable {
     }
 
     public void setPendingIntentAction(String str) {
-        this.f5467c = str;
+        this.c = str;
     }
 
     public void setPoiItem(PoiItem poiItem) {

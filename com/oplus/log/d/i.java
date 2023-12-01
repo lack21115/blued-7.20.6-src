@@ -4,5 +4,5 @@ package com.oplus.log.d;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f24362a;
+    public static String f10675a;
 }

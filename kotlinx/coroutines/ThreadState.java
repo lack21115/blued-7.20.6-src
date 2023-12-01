@@ -11,17 +11,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/ThreadState.class */
 final class ThreadState implements Function1<Throwable, Unit> {
     private static final /* synthetic */ AtomicIntegerFieldUpdater b = AtomicIntegerFieldUpdater.newUpdater(ThreadState.class, "_state");
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Job f42856a;
+    private final Job a;
     private DisposableHandle d;
     private volatile /* synthetic */ int _state = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Thread f42857c = Thread.currentThread();
+    private final Thread c = Thread.currentThread();
 
     public ThreadState(Job job) {
-        this.f42856a = job;
+        this.a = job;
     }
 
     private final Void a(int i) {
@@ -30,7 +26,7 @@ final class ThreadState implements Function1<Throwable, Unit> {
 
     public final void a() {
         int i;
-        this.d = this.f42856a.a(true, true, this);
+        this.d = this.a.a(true, true, this);
         do {
             i = this._state;
             if (i != 0) {
@@ -55,7 +51,7 @@ final class ThreadState implements Function1<Throwable, Unit> {
                 throw new KotlinNothingValueException();
             }
         } while (!b.compareAndSet(this, i, 2));
-        this.f42857c.interrupt();
+        this.c.interrupt();
         this._state = 3;
     }
 
@@ -86,6 +82,6 @@ final class ThreadState implements Function1<Throwable, Unit> {
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(Throwable th) {
         a(th);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -59,12 +59,12 @@ public class g extends BroadcastReceiver implements Comparator<f> {
     public final class AnonymousClass1 extends IntentFilter {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f23270a;
+        final /* synthetic */ Context f9662a;
 
         public AnonymousClass1(Context context) {
-            this.f23270a = context;
-            addAction(g.E + this.f23270a.getPackageName());
-            addAction(g.F + this.f23270a.getPackageName());
+            this.f9662a = context;
+            addAction(g.E + this.f9662a.getPackageName());
+            addAction(g.F + this.f9662a.getPackageName());
             addAction(Intent.ACTION_SCREEN_OFF);
             addAction(Intent.ACTION_SCREEN_ON);
         }
@@ -76,11 +76,11 @@ public class g extends BroadcastReceiver implements Comparator<f> {
         volatile int g;
 
         /* renamed from: c  reason: collision with root package name */
-        final ReentrantLock f23272c = new ReentrantLock();
+        final ReentrantLock f9664c = new ReentrantLock();
 
         /* renamed from: a  reason: collision with root package name */
-        final BlockingQueue<f> f23271a = new SynchronousQueue();
-        final HashMap<Integer, RunnableC0447a> b = new HashMap<>();
+        final BlockingQueue<f> f9663a = new SynchronousQueue();
+        final HashMap<Integer, RunnableC0277a> b = new HashMap<>();
         volatile long e = TimeUnit.SECONDS.toNanos(60);
         volatile int f = 0;
         ThreadFactory d = new b();
@@ -89,24 +89,24 @@ public class g extends BroadcastReceiver implements Comparator<f> {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.igexin.c.a.d.g$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/igexin/c/a/d/g$a$a.class */
-        public final class RunnableC0447a implements Runnable {
+        public final class RunnableC0277a implements Runnable {
 
             /* renamed from: a  reason: collision with root package name */
-            final BlockingQueue<f> f23273a = new LinkedBlockingQueue();
+            final BlockingQueue<f> f9665a = new LinkedBlockingQueue();
             f b;
 
             /* renamed from: c  reason: collision with root package name */
-            f f23274c;
+            f f9666c;
             volatile int d;
             volatile boolean e;
 
-            public RunnableC0447a(f fVar) {
+            public RunnableC0277a(f fVar) {
                 this.b = fVar;
             }
 
             private void a() {
-                this.f23273a.clear();
-                this.f23274c = null;
+                this.f9665a.clear();
+                this.f9666c = null;
             }
 
             private void a(f fVar) {
@@ -156,17 +156,17 @@ public class g extends BroadcastReceiver implements Comparator<f> {
                 f poll;
                 while (this.d != 0) {
                     try {
-                        poll = this.f23273a.poll(a.this.e, TimeUnit.NANOSECONDS);
+                        poll = this.f9665a.poll(a.this.e, TimeUnit.NANOSECONDS);
                     } catch (InterruptedException e) {
                         com.igexin.c.a.c.a.a(e);
                     }
                     if (poll != null) {
                         return poll;
                     }
-                    if (this.f23273a.isEmpty()) {
-                        ReentrantLock reentrantLock = a.this.f23272c;
+                    if (this.f9665a.isEmpty()) {
+                        ReentrantLock reentrantLock = a.this.f9664c;
                         reentrantLock.lock();
-                        if (this.f23273a.isEmpty()) {
+                        if (this.f9665a.isEmpty()) {
                             a.this.b.remove(Integer.valueOf(this.d));
                             this.d = 0;
                             reentrantLock.unlock();
@@ -204,7 +204,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
                                         }
                                     }
                                 }
-                                this.f23274c = null;
+                                this.f9666c = null;
                                 if (this.d == 0) {
                                     this.d = fVar2.C;
                                 }
@@ -256,7 +256,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
                                     fVar3 = null;
                                     z2 = false;
                                 }
-                                this.f23274c = fVar2;
+                                this.f9666c = fVar2;
                                 fVar = null;
                             }
                             throw th;
@@ -286,14 +286,14 @@ public class g extends BroadcastReceiver implements Comparator<f> {
         final class b implements ThreadFactory {
 
             /* renamed from: a  reason: collision with root package name */
-            final AtomicInteger f23275a = new AtomicInteger(0);
+            final AtomicInteger f9667a = new AtomicInteger(0);
 
             public b() {
             }
 
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                return new Thread(runnable, "TS-pool-" + this.f23275a.incrementAndGet());
+                return new Thread(runnable, "TS-pool-" + this.f9667a.incrementAndGet());
             }
         }
 
@@ -305,12 +305,12 @@ public class g extends BroadcastReceiver implements Comparator<f> {
                 throw null;
             }
             if (fVar.C != 0) {
-                ReentrantLock reentrantLock = this.f23272c;
+                ReentrantLock reentrantLock = this.f9664c;
                 reentrantLock.lock();
                 try {
-                    RunnableC0447a runnableC0447a = this.b.get(Integer.valueOf(fVar.C));
-                    if (runnableC0447a != null) {
-                        runnableC0447a.f23273a.offer(fVar);
+                    RunnableC0277a runnableC0277a = this.b.get(Integer.valueOf(fVar.C));
+                    if (runnableC0277a != null) {
+                        runnableC0277a.f9665a.offer(fVar);
                         return;
                     }
                 } finally {
@@ -318,7 +318,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
                 }
             }
             if (this.g >= this.f || !a(fVar)) {
-                if (!this.f23271a.offer(fVar)) {
+                if (!this.f9663a.offer(fVar)) {
                     b(fVar);
                 } else if (this.g == 0) {
                     a();
@@ -328,7 +328,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
 
         private void d(f fVar) {
             if (this.g >= this.f || !a(fVar)) {
-                if (!this.f23271a.offer(fVar)) {
+                if (!this.f9663a.offer(fVar)) {
                     if (!b(fVar)) {
                     }
                 } else if (this.g == 0) {
@@ -338,11 +338,11 @@ public class g extends BroadcastReceiver implements Comparator<f> {
         }
 
         private Thread e(f fVar) {
-            RunnableC0447a runnableC0447a = new RunnableC0447a(fVar);
+            RunnableC0277a runnableC0277a = new RunnableC0277a(fVar);
             if (fVar != null && fVar.C != 0) {
-                this.b.put(Integer.valueOf(fVar.C), runnableC0447a);
+                this.b.put(Integer.valueOf(fVar.C), runnableC0277a);
             }
-            Thread newThread = this.d.newThread(runnableC0447a);
+            Thread newThread = this.d.newThread(runnableC0277a);
             if (newThread != null) {
                 this.g++;
             }
@@ -350,13 +350,13 @@ public class g extends BroadcastReceiver implements Comparator<f> {
         }
 
         final void a() {
-            ReentrantLock reentrantLock = this.f23272c;
+            ReentrantLock reentrantLock = this.f9664c;
             reentrantLock.lock();
             try {
                 Thread thread = null;
                 if (this.g < Math.max(this.f, 1)) {
                     thread = null;
-                    if (!this.f23271a.isEmpty()) {
+                    if (!this.f9663a.isEmpty()) {
                         thread = e(null);
                     }
                 }
@@ -371,7 +371,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
         }
 
         final boolean a(f fVar) {
-            ReentrantLock reentrantLock = this.f23272c;
+            ReentrantLock reentrantLock = this.f9664c;
             reentrantLock.lock();
             try {
                 Thread e = this.g < this.f ? e(fVar) : null;
@@ -387,22 +387,22 @@ public class g extends BroadcastReceiver implements Comparator<f> {
             }
         }
 
-        final boolean a(RunnableC0447a runnableC0447a) {
-            ReentrantLock reentrantLock = this.f23272c;
+        final boolean a(RunnableC0277a runnableC0277a) {
+            ReentrantLock reentrantLock = this.f9664c;
             reentrantLock.lock();
             try {
                 int i = this.g - 1;
                 this.g = i;
-                if (i == 0 && !this.f23271a.isEmpty()) {
+                if (i == 0 && !this.f9663a.isEmpty()) {
                     Thread e = e(null);
                     if (e != null) {
                         e.start();
                     }
-                } else if (!runnableC0447a.f23273a.isEmpty()) {
+                } else if (!runnableC0277a.f9665a.isEmpty()) {
                     reentrantLock.unlock();
                     return true;
                 }
-                this.b.remove(Integer.valueOf(runnableC0447a.d));
+                this.b.remove(Integer.valueOf(runnableC0277a.d));
                 reentrantLock.unlock();
                 return false;
             } catch (Throwable th) {
@@ -415,21 +415,21 @@ public class g extends BroadcastReceiver implements Comparator<f> {
             f poll;
             while (true) {
                 try {
-                    poll = this.g > this.f ? this.f23271a.poll(this.e, TimeUnit.NANOSECONDS) : this.f23271a.take();
+                    poll = this.g > this.f ? this.f9663a.poll(this.e, TimeUnit.NANOSECONDS) : this.f9663a.take();
                 } catch (InterruptedException e) {
                     com.igexin.c.a.c.a.a(e);
                 }
                 if (poll != null) {
                     return poll;
                 }
-                if (this.f23271a.isEmpty()) {
+                if (this.f9663a.isEmpty()) {
                     return null;
                 }
             }
         }
 
         final boolean b(f fVar) {
-            ReentrantLock reentrantLock = this.f23272c;
+            ReentrantLock reentrantLock = this.f9664c;
             reentrantLock.lock();
             try {
                 Thread e = this.g < this.h ? e(fVar) : null;
@@ -450,11 +450,11 @@ public class g extends BroadcastReceiver implements Comparator<f> {
     public final class b extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        volatile boolean f23276a = true;
+        volatile boolean f9668a = true;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f23277c;
+        long f9669c;
         a d;
 
         public b() {
@@ -469,7 +469,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
             if (r11.C == 0) goto L135;
          */
         /* JADX WARN: Code restructure failed: missing block: B:26:0x0095, code lost:
-            r0 = r0.f23272c;
+            r0 = r0.f9664c;
             r0.lock();
          */
         /* JADX WARN: Code restructure failed: missing block: B:28:0x00a3, code lost:
@@ -479,7 +479,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
             if (r0 == null) goto L106;
          */
         /* JADX WARN: Code restructure failed: missing block: B:30:0x00bb, code lost:
-            r0.f23273a.offer(r11);
+            r0.f9665a.offer(r11);
          */
         /* JADX WARN: Code restructure failed: missing block: B:32:0x00ca, code lost:
             r0.unlock();
@@ -494,7 +494,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
             if (r0.a(r11) != false) goto L128;
          */
         /* JADX WARN: Code restructure failed: missing block: B:44:0x0105, code lost:
-            if (r0.f23271a.offer(r11) == false) goto L117;
+            if (r0.f9663a.offer(r11) == false) goto L117;
          */
         /* JADX WARN: Code restructure failed: missing block: B:46:0x010d, code lost:
             if (r0.g != 0) goto L127;
@@ -594,7 +594,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
             return;
         }
         if (!n.m()) {
-            this.u = (PowerManager) context.getSystemService("power");
+            this.u = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
             this.C = true;
             this.v = (AlarmManager) context.getSystemService("alarm");
             context.registerReceiver(this, new AnonymousClass1(context), com.igexin.push.core.e.ac, null);
@@ -692,7 +692,7 @@ public class g extends BroadcastReceiver implements Comparator<f> {
     private boolean b() {
         e<f> eVar = this.s;
         if (eVar != null) {
-            eVar.f23268c.clear();
+            eVar.f9660c.clear();
             return true;
         }
         return false;

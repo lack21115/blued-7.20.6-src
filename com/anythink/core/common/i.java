@@ -5,26 +5,24 @@ import com.anythink.core.common.b.g;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/i.class */
 public class i {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile i f6759a;
+    private static volatile i a;
 
     private i() {
     }
 
     public static i a() {
-        if (f6759a == null) {
+        if (a == null) {
             synchronized (i.class) {
                 try {
-                    if (f6759a == null) {
-                        f6759a = new i();
+                    if (a == null) {
+                        a = new i();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6759a;
+        return a;
     }
 
     public static String a(com.anythink.core.c.d dVar) {
@@ -115,7 +113,7 @@ public class i {
 
     public static String l() {
         com.anythink.core.c.a b = com.anythink.core.c.b.a(com.anythink.core.common.b.n.a().g()).b(com.anythink.core.common.b.n.a().p());
-        return b != null ? a(b.T(), g.q.f6524a) : g.q.f6524a;
+        return b != null ? a(b.T(), g.q.a) : g.q.a;
     }
 
     private static boolean m() {

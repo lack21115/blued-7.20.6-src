@@ -10,15 +10,13 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$minus$1.class */
 public final class SequencesKt___SequencesKt$minus$1<T> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Sequence<T> f42670a;
+    final /* synthetic */ Sequence<T> a;
     final /* synthetic */ T b;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
         final Ref.BooleanRef booleanRef = new Ref.BooleanRef();
-        Sequence<T> sequence = this.f42670a;
+        Sequence<T> sequence = this.a;
         final T t = this.b;
         return SequencesKt.a((Sequence) sequence, (Function1) new Function1<T, Boolean>() { // from class: kotlin.sequences.SequencesKt___SequencesKt$minus$1$iterator$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,10 +27,10 @@ public final class SequencesKt___SequencesKt$minus$1<T> implements Sequence<T> {
 
             public final Boolean a(T t2) {
                 boolean z = true;
-                if (!Ref.BooleanRef.this.f42538a) {
+                if (!Ref.BooleanRef.this.a) {
                     z = true;
                     if (Intrinsics.a(t2, t)) {
-                        Ref.BooleanRef.this.f42538a = true;
+                        Ref.BooleanRef.this.a = true;
                         z = false;
                     }
                 }

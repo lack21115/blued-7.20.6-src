@@ -1,13 +1,12 @@
 package mtopsdk.a.b;
 
+import java.net.SocketOptions;
 import java.util.HashMap;
 import java.util.Map;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/a/b/c.class */
 public class c {
-
-    /* renamed from: a */
-    private String f43661a;
+    private String a;
     private d d;
     private String e;
     private int h;
@@ -15,12 +14,10 @@ public class c {
     private int f = 15000;
     private int g = 15000;
     private String b = "GET";
-
-    /* renamed from: c */
-    private Map f43662c = new HashMap();
+    private Map c = new HashMap();
 
     public b a() {
-        if (this.f43661a != null) {
+        if (this.a != null) {
             return new b(this, (byte) 0);
         }
         throw new IllegalStateException("url == null");
@@ -35,7 +32,7 @@ public class c {
 
     public c a(String str) {
         if (str != null) {
-            this.f43661a = str;
+            this.a = str;
             return this;
         }
         throw new IllegalArgumentException("url == null");
@@ -60,7 +57,7 @@ public class c {
 
     public c a(Map map) {
         if (map != null) {
-            this.f43662c = map;
+            this.c = map;
         }
         return this;
     }
@@ -83,7 +80,7 @@ public class c {
     }
 
     public c d(int i) {
-        this.i = 4099;
+        this.i = SocketOptions.SO_OOBINLINE;
         return this;
     }
 }

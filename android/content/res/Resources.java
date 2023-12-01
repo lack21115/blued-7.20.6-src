@@ -1,5 +1,6 @@
 package android.content.res;
 
+import android.R;
 import android.animation.Animator;
 import android.animation.StateListAnimator;
 import android.app.ComposedIconInfo;
@@ -23,7 +24,6 @@ import android.util.Pools;
 import android.util.SparseArray;
 import android.util.TypedValue;
 import android.view.ViewDebug;
-import com.android.internal.R;
 import com.android.internal.util.XmlUtils;
 import com.anythink.expressad.foundation.h.i;
 import com.j256.ormlite.stmt.query.SimpleComparison;
@@ -31,7 +31,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.util.Locale;
-import javax.xml.XMLConstants;
 import libcore.icu.NativePluralRules;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -321,10 +320,10 @@ public class Resources {
         }
         int changingConfigurations = constantState.getChangingConfigurations();
         if (z) {
-            if (verifyPreloadConfig(changingConfigurations, 0, typedValue.resourceId, i.f7952c)) {
+            if (verifyPreloadConfig(changingConfigurations, 0, typedValue.resourceId, i.f5112c)) {
                 sPreloadedColorDrawables.put(j, constantState);
             }
-        } else if (verifyPreloadConfig(changingConfigurations, LAYOUT_DIR_CONFIG, typedValue.resourceId, i.f7952c)) {
+        } else if (verifyPreloadConfig(changingConfigurations, LAYOUT_DIR_CONFIG, typedValue.resourceId, i.f5112c)) {
             if ((LAYOUT_DIR_CONFIG & changingConfigurations) != 0) {
                 sPreloadedDrawables[this.mConfiguration.getLayoutDirection()].put(j, constantState);
                 return;
@@ -470,7 +469,7 @@ public class Resources {
         Trace.traceBegin(8192L, charSequence);
         try {
             if (charSequence.endsWith(".xml")) {
-                XmlResourceParser loadXmlResourceParser = loadXmlResourceParser(charSequence, i, typedValue.assetCookie, i.f7952c);
+                XmlResourceParser loadXmlResourceParser = loadXmlResourceParser(charSequence, i, typedValue.assetCookie, i.f5112c);
                 createFromResourceStream = Drawable.createFromXml(this, loadXmlResourceParser, theme);
                 loadXmlResourceParser.close();
             } else {
@@ -493,7 +492,7 @@ public class Resources {
     }
 
     public static int selectDefaultTheme(int i, int i2) {
-        return selectSystemTheme(i, i2, 16973829, 16973931, 16974120, 16974143);
+        return selectSystemTheme(i, i2, R.style.Theme, R.style.Theme_Holo, R.style.Theme_DeviceDefault, R.style.Theme_DeviceDefault_Light_DarkActionBar);
     }
 
     public static int selectSystemTheme(int i, int i2, int i3, int i4, int i5, int i6) {
@@ -1063,7 +1062,7 @@ public class Resources {
     }
 
     public XmlResourceParser getXml(int i) throws NotFoundException {
-        return loadXmlResourceParser(i, XMLConstants.XML_NS_PREFIX);
+        return loadXmlResourceParser(i, "xml");
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1305,7 +1304,7 @@ public class Resources {
 
     public void parseBundleExtra(String str, AttributeSet attributeSet, Bundle bundle) throws XmlPullParserException {
         boolean z = true;
-        TypedArray obtainAttributes = obtainAttributes(attributeSet, R.styleable.Extra);
+        TypedArray obtainAttributes = obtainAttributes(attributeSet, com.android.internal.R.styleable.Extra);
         String string = obtainAttributes.getString(0);
         if (string == null) {
             obtainAttributes.recycle();

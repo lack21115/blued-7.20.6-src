@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutMsgDeletedHintBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29409a;
+    private final RelativeLayout f15719a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29409a;
+        return this.f15719a;
     }
 }

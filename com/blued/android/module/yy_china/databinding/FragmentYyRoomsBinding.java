@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyRoomsBinding.class */
 public final class FragmentYyRoomsBinding implements ViewBinding {
+    private final ConstraintLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f16551a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16551a;
+        return this.a;
     }
 }

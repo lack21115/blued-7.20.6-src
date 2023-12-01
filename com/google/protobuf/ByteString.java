@@ -83,7 +83,7 @@ public abstract class ByteString implements Serializable, Iterable<Byte> {
 
         @Override // com.google.protobuf.ByteString.LiteralByteString, com.google.protobuf.ByteString
         protected void copyToInternal(byte[] bArr, int i, int i2, int i3) {
-            System.arraycopy((Object) this.bytes, getOffsetIntoBytes() + i, (Object) bArr, i2, i3);
+            System.arraycopy(this.bytes, getOffsetIntoBytes() + i, bArr, i2, i3);
         }
 
         @Override // com.google.protobuf.ByteString.LiteralByteString
@@ -117,9 +117,8 @@ public abstract class ByteString implements Serializable, Iterable<Byte> {
         byte nextByte();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/ByteString$CodedBuilder.class */
-    public static final class CodedBuilder {
+    static final class CodedBuilder {
         private final byte[] buffer;
         private final CodedOutputStream output;
 
@@ -200,7 +199,7 @@ public abstract class ByteString implements Serializable, Iterable<Byte> {
 
         @Override // com.google.protobuf.ByteString
         protected void copyToInternal(byte[] bArr, int i, int i2, int i3) {
-            System.arraycopy((Object) this.bytes, i, (Object) bArr, i2, i3);
+            System.arraycopy(this.bytes, i, bArr, i2, i3);
         }
 
         @Override // com.google.protobuf.ByteString
@@ -348,7 +347,7 @@ public abstract class ByteString implements Serializable, Iterable<Byte> {
 
         private byte[] copyArray(byte[] bArr, int i) {
             byte[] bArr2 = new byte[i];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, Math.min(bArr.length, i));
+            System.arraycopy(bArr, 0, bArr2, 0, Math.min(bArr.length, i));
             return bArr2;
         }
 
@@ -421,14 +420,14 @@ public abstract class ByteString implements Serializable, Iterable<Byte> {
         public void write(byte[] bArr, int i, int i2) {
             synchronized (this) {
                 if (i2 <= this.buffer.length - this.bufferPos) {
-                    System.arraycopy((Object) bArr, i, (Object) this.buffer, this.bufferPos, i2);
+                    System.arraycopy(bArr, i, this.buffer, this.bufferPos, i2);
                     this.bufferPos += i2;
                 } else {
                     int length = this.buffer.length - this.bufferPos;
-                    System.arraycopy((Object) bArr, i, (Object) this.buffer, this.bufferPos, length);
+                    System.arraycopy(bArr, i, this.buffer, this.bufferPos, length);
                     int i3 = i2 - length;
                     flushFullBuffer(i3);
-                    System.arraycopy((Object) bArr, i + length, (Object) this.buffer, 0, i3);
+                    System.arraycopy(bArr, i + length, this.buffer, 0, i3);
                     this.bufferPos = i3;
                 }
             }
@@ -466,7 +465,7 @@ public abstract class ByteString implements Serializable, Iterable<Byte> {
         @Override // com.google.protobuf.ByteString.ByteArrayCopier
         public byte[] copyFrom(byte[] bArr, int i, int i2) {
             byte[] bArr2 = new byte[i2];
-            System.arraycopy((Object) bArr, i, (Object) bArr2, 0, i2);
+            System.arraycopy(bArr, i, bArr2, 0, i2);
             return bArr2;
         }
     }

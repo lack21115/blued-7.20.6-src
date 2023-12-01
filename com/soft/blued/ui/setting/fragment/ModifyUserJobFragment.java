@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
@@ -30,11 +31,11 @@ import java.util.List;
 public class ModifyUserJobFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33485a;
+    private Context f19794a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33486c;
+    private Dialog f19795c;
     private FlowLayout d;
     private LayoutInflater e;
     private ArrayList<String> f = new ArrayList<>();
@@ -55,18 +56,18 @@ public class ModifyUserJobFragment extends BaseFragment implements View.OnClickL
     }
 
     private void e() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.job_industry));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        commonTopTitleNoTrans.setRightText(R.string.done);
-        commonTopTitleNoTrans.setRightTextColor(2131102254);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.job_industry));
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        findViewById.setRightText((int) R.string.done);
+        findViewById.setRightTextColor(2131102254);
     }
 
     private void f() {
-        this.e = LayoutInflater.from(this.f33485a);
-        this.f33486c = DialogUtils.a(getActivity());
-        this.d = (FlowLayout) this.b.findViewById(R.id.user_job_flow_layout);
+        this.e = LayoutInflater.from(this.f19794a);
+        this.f19795c = DialogUtils.a(getActivity());
+        this.d = this.b.findViewById(R.id.user_job_flow_layout);
     }
 
     public ArrayList<String> a() {
@@ -128,7 +129,6 @@ public class ModifyUserJobFragment extends BaseFragment implements View.OnClickL
             int i2 = i;
             if (i2 >= list.size()) {
                 this.d.setOnItemClickListener(new FlowLayout.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserJobFragment.1
-                    @Override // com.blued.android.module.common.view.FlowLayout.OnItemClickListener
                     public void onItemClick(View view, int i3) {
                         Logger.a("drb", "mFlowLayout onItemClick");
                         UserTag userTag = (UserTag) list.get(i3);
@@ -142,18 +142,18 @@ public class ModifyUserJobFragment extends BaseFragment implements View.OnClickL
                                 ((UserTag) list.get(i5)).checked = 0;
                                 TextView textView = (TextView) ModifyUserJobFragment.this.d.getChildAt(i5).findViewById(2131372684);
                                 textView.setBackgroundResource(R.drawable.user_job_text_bg);
-                                textView.setTextColor(BluedSkinUtils.a(ModifyUserJobFragment.this.f33485a, 2131102254));
+                                textView.setTextColor(BluedSkinUtils.a(ModifyUserJobFragment.this.f19794a, 2131102254));
                                 i4 = i5 + 1;
                             }
                             userTag.checked = 1;
                             TextView textView2 = (TextView) view.findViewById(2131372684);
-                            textView2.setBackground(BluedSkinUtils.b(ModifyUserJobFragment.this.f33485a, R.drawable.user_job_text_select_bg));
-                            textView2.setTextColor(BluedSkinUtils.a(ModifyUserJobFragment.this.f33485a, 2131101780));
+                            textView2.setBackground(BluedSkinUtils.b(ModifyUserJobFragment.this.f19794a, (int) R.drawable.user_job_text_select_bg));
+                            textView2.setTextColor(BluedSkinUtils.a(ModifyUserJobFragment.this.f19794a, 2131101780));
                         } else {
                             userTag.checked = 0;
                             TextView textView3 = (TextView) view.findViewById(2131372684);
-                            textView3.setBackground(BluedSkinUtils.b(ModifyUserJobFragment.this.f33485a, R.drawable.user_job_text_bg));
-                            textView3.setTextColor(BluedSkinUtils.a(ModifyUserJobFragment.this.f33485a, 2131102254));
+                            textView3.setBackground(BluedSkinUtils.b(ModifyUserJobFragment.this.f19794a, (int) R.drawable.user_job_text_bg));
+                            textView3.setTextColor(BluedSkinUtils.a(ModifyUserJobFragment.this.f19794a, 2131102254));
                         }
                         Log.v("drb", "userTag.checked = " + userTag.checked);
                     }
@@ -165,11 +165,11 @@ public class ModifyUserJobFragment extends BaseFragment implements View.OnClickL
             textView.setText(list.get(i2).name);
             Log.v("drb", "name:" + list.get(i2).name);
             if (list.get(i2).checked == 0) {
-                textView.setBackground(BluedSkinUtils.b(this.f33485a, R.drawable.user_job_text_bg));
-                textView.setTextColor(BluedSkinUtils.a(this.f33485a, 2131102254));
+                textView.setBackground(BluedSkinUtils.b(this.f19794a, (int) R.drawable.user_job_text_bg));
+                textView.setTextColor(BluedSkinUtils.a(this.f19794a, 2131102254));
             } else {
-                textView.setBackground(BluedSkinUtils.b(this.f33485a, R.drawable.user_job_text_select_bg));
-                textView.setTextColor(BluedSkinUtils.a(this.f33485a, 2131101780));
+                textView.setBackground(BluedSkinUtils.b(this.f19794a, (int) R.drawable.user_job_text_select_bg));
+                textView.setTextColor(BluedSkinUtils.a(this.f19794a, 2131101780));
             }
             this.d.addView(inflate);
             i = i2 + 1;
@@ -192,32 +192,29 @@ public class ModifyUserJobFragment extends BaseFragment implements View.OnClickL
     }
 
     public void c() {
-        FindHttpUtils.a(this.f33485a, new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserJobFragment.2
+        FindHttpUtils.a(this.f19794a, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserJobFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserTagAll> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                ModifyUserJobFragment.this.g = bluedEntityA.data.get(0).work;
+                ModifyUserJobFragment.this.g = ((UserTagAll) bluedEntityA.data.get(0)).work;
                 ModifyUserJobFragment modifyUserJobFragment = ModifyUserJobFragment.this;
                 modifyUserJobFragment.a(modifyUserJobFragment.f, ModifyUserJobFragment.this.g);
                 ModifyUserJobFragment modifyUserJobFragment2 = ModifyUserJobFragment.this;
                 modifyUserJobFragment2.a(modifyUserJobFragment2.g);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                DialogUtils.b(ModifyUserJobFragment.this.f33486c);
+                DialogUtils.b(ModifyUserJobFragment.this.f19795c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                DialogUtils.a(ModifyUserJobFragment.this.f33486c);
+                DialogUtils.a(ModifyUserJobFragment.this.f19795c);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     @Override // android.view.View.OnClickListener
@@ -237,9 +234,8 @@ public class ModifyUserJobFragment extends BaseFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33485a = getActivity();
+        this.f19794a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_user_job_for_modify, viewGroup, false);

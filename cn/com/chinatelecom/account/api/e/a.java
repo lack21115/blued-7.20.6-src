@@ -6,6 +6,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import cn.com.chinatelecom.account.api.CtAuth;
 import cn.com.chinatelecom.account.api.d.g;
+import com.huawei.openalliance.ad.constant.t;
 import com.ss.android.socialbase.downloader.constants.DBDefinition;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4136a = a.class.getSimpleName();
+    private static final String f4088a = a.class.getSimpleName();
     private static HashMap<String, String> b = new HashMap<>();
 
     public static long a(Context context) {
@@ -34,7 +35,7 @@ public final class a {
                 List<String> list = headerFields.get("p");
                 if (list != null && list.size() > 0) {
                     String str = list.get(0);
-                    String str2 = f4136a;
+                    String str2 = f4088a;
                     CtAuth.info(str2, "request protocol : " + str);
                     dVar.b = false;
                 }
@@ -48,7 +49,7 @@ public final class a {
                         }
                         String str3 = list2.get(0);
                         if (!TextUtils.isEmpty(str3) && str3.contains("gw_auth")) {
-                            dVar.f4127a = a(str3, "gw_auth");
+                            dVar.f4079a = a(str3, "gw_auth");
                             break;
                         }
                         i = i2 + 1;
@@ -80,7 +81,7 @@ public final class a {
                 if (list5 != null && !list5.isEmpty()) {
                     String str6 = list5.get(0);
                     if (!TextUtils.isEmpty(str6)) {
-                        dVar.f4128c = str6;
+                        dVar.f4080c = str6;
                         g.d = str6;
                         return dVar;
                     }
@@ -100,14 +101,14 @@ public final class a {
             List<String> list = headerFields.get("rdt_allow");
             if (list != null && list.size() > 0) {
                 dVar.d = list.get(0);
-                String str = f4136a;
+                String str = f4088a;
                 CtAuth.info(str, "request method : " + dVar.d);
             }
             List<String> list2 = headerFields.get("p-ikgx");
             if (list2 != null && !list2.isEmpty()) {
                 String str2 = list2.get(0);
                 if (!TextUtils.isEmpty(str2)) {
-                    dVar.f4128c = str2;
+                    dVar.f4080c = str2;
                     return dVar;
                 }
             }
@@ -128,7 +129,7 @@ public final class a {
 
     private static String a(String str, String str2) {
         try {
-            String[] split = str.split(";");
+            String[] split = str.split(t.aE);
             int i = 0;
             while (true) {
                 int i2 = i;
@@ -155,13 +156,13 @@ public final class a {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (hVar.f4134a != -1 && !TextUtils.isEmpty(str)) {
+        if (hVar.f4086a != -1 && !TextUtils.isEmpty(str)) {
             int optInt = jSONObject.optInt("result");
             String optString = jSONObject.optString("data");
             if (!TextUtils.isEmpty(optString)) {
                 JSONObject jSONObject2 = new JSONObject(h.a(optString, str));
                 if (optInt == 0) {
-                    jSONObject2.put("gwAuth", hVar.f4135c);
+                    jSONObject2.put("gwAuth", hVar.f4087c);
                 }
                 if (optInt == -10020) {
                     jSONObject.put(DBDefinition.TASK_ID, str);

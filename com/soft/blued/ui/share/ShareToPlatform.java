@@ -41,7 +41,7 @@ import java.util.Arrays;
 public class ShareToPlatform extends BaseShareToPlatform {
 
     /* renamed from: c  reason: collision with root package name */
-    private ShareEntity f33695c;
+    private ShareEntity f20004c;
 
     public ShareToPlatform(Context context, ShareCoreUtils.ShareBackLister shareBackLister, BaseShareToPlatform.PopWindowSetting popWindowSetting, ShareOptionRecyclerAdapter.ShareOptionsItemClickListener shareOptionsItemClickListener) {
         super(context, shareBackLister, popWindowSetting, shareOptionsItemClickListener);
@@ -50,7 +50,7 @@ public class ShareToPlatform extends BaseShareToPlatform {
     private Bitmap a(View view) {
         view.setDrawingCacheEnabled(true);
         view.buildDrawingCache();
-        return Bitmap.createBitmap(view.getDrawingCache(), 0, 0, AppInfo.l, DensityUtils.a(this.f33704a, 189.0f), (Matrix) null, false);
+        return Bitmap.createBitmap(view.getDrawingCache(), 0, 0, AppInfo.l, DensityUtils.a(this.f20013a, 189.0f), (Matrix) null, false);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:76:0x015b  */
@@ -97,34 +97,34 @@ public class ShareToPlatform extends BaseShareToPlatform {
     }
 
     public static BluedIngSelfFeed c(ShareEntity shareEntity) {
-        if (shareEntity == null || !(shareEntity.f9215a instanceof BluedIngSelfFeed)) {
+        if (shareEntity == null || !(shareEntity.f6375a instanceof BluedIngSelfFeed)) {
             return null;
         }
-        return (BluedIngSelfFeed) shareEntity.f9215a;
+        return (BluedIngSelfFeed) shareEntity.f6375a;
     }
 
     private void c() {
-        if (PopMenuUtils.a(this.f33704a)) {
+        if (PopMenuUtils.a(this.f20013a)) {
             return;
         }
-        if (this.f33695c.shareFrom != 6) {
-            ShareEntity shareEntity = this.f33695c;
+        if (this.f20004c.shareFrom != 6) {
+            ShareEntity shareEntity = this.f20004c;
             shareEntity.title = shareEntity.content;
         }
-        if (this.f33695c.shareFrom != 8) {
-            FeedAddPostFragment.a(this.f33704a, this.f33695c);
+        if (this.f20004c.shareFrom != 8) {
+            FeedAddPostFragment.a(this.f20013a, this.f20004c);
             return;
         }
-        this.f33695c.g.setDrawingCacheEnabled(false);
+        this.f20004c.g.setDrawingCacheEnabled(false);
         String e = RecyclingUtils.e("photo");
-        BitmapUtils.a(a(this.f33695c.g), e, 100);
+        BitmapUtils.a(a(this.f20004c.g), e, 100);
         ChildImageInfo childImageInfo = new ChildImageInfo();
         childImageInfo.mImagePath = e;
         SelectPhotoManager.a().a(childImageInfo);
         ShareEntity shareEntity2 = new ShareEntity();
-        shareEntity2.title = AppInfo.d().getString(2131888047);
+        shareEntity2.title = AppInfo.d().getString(R.string.feed_share_text);
         shareEntity2.shareType = 1;
-        FeedAddPostFragment.a(this.f33704a, shareEntity2);
+        FeedAddPostFragment.a(this.f20013a, shareEntity2);
     }
 
     public static int d(ShareEntity shareEntity) {
@@ -172,80 +172,80 @@ public class ShareToPlatform extends BaseShareToPlatform {
     }
 
     private static MyCircleModel f(ShareEntity shareEntity) {
-        if (shareEntity == null || !(shareEntity.f9215a instanceof MyCircleModel)) {
+        if (shareEntity == null || !(shareEntity.f6375a instanceof MyCircleModel)) {
             return null;
         }
-        return (MyCircleModel) shareEntity.f9215a;
+        return (MyCircleModel) shareEntity.f6375a;
     }
 
     private static EventDetailsModel g(ShareEntity shareEntity) {
-        if (shareEntity == null || !(shareEntity.f9215a instanceof EventDetailsModel)) {
+        if (shareEntity == null || !(shareEntity.f6375a instanceof EventDetailsModel)) {
             return null;
         }
-        return (EventDetailsModel) shareEntity.f9215a;
+        return (EventDetailsModel) shareEntity.f6375a;
     }
 
     private static UserBasicModel h(ShareEntity shareEntity) {
-        if (shareEntity == null || !(shareEntity.f9215a instanceof UserBasicModel)) {
+        if (shareEntity == null || !(shareEntity.f6375a instanceof UserBasicModel)) {
             return null;
         }
-        return (UserBasicModel) shareEntity.f9215a;
+        return (UserBasicModel) shareEntity.f6375a;
     }
 
     private static BluedTopic i(ShareEntity shareEntity) {
-        if (shareEntity == null || !(shareEntity.f9215a instanceof BluedTopic)) {
+        if (shareEntity == null || !(shareEntity.f6375a instanceof BluedTopic)) {
             return null;
         }
-        return (BluedTopic) shareEntity.f9215a;
+        return (BluedTopic) shareEntity.f6375a;
     }
 
     private static BluedGroupLists j(ShareEntity shareEntity) {
-        if (shareEntity == null || !(shareEntity.f9215a instanceof BluedGroupLists)) {
+        if (shareEntity == null || !(shareEntity.f6375a instanceof BluedGroupLists)) {
             return null;
         }
-        return (BluedGroupLists) shareEntity.f9215a;
+        return (BluedGroupLists) shareEntity.f6375a;
     }
 
     public void a() {
-        if (PopMenuUtils.a(this.f33704a)) {
+        if (PopMenuUtils.a(this.f20013a)) {
             return;
         }
-        if (c(this.f33695c) == null) {
-            if (i(this.f33695c) != null) {
-                FeedAddPostFragment.b(this.f33704a, i(this.f33695c));
+        if (c(this.f20004c) == null) {
+            if (i(this.f20004c) != null) {
+                FeedAddPostFragment.b(this.f20013a, i(this.f20004c));
                 return;
-            } else if (f(this.f33695c) != null) {
-                FeedAddPostFragment.a(this.f33704a, f(this.f33695c));
+            } else if (f(this.f20004c) != null) {
+                FeedAddPostFragment.a(this.f20013a, f(this.f20004c));
                 return;
-            } else if (g(this.f33695c) != null) {
-                FeedAddPostFragment.a(this.f33704a, g(this.f33695c));
+            } else if (g(this.f20004c) != null) {
+                FeedAddPostFragment.a(this.f20013a, g(this.f20004c));
                 return;
             } else {
                 return;
             }
         }
         BluedIngSelfFeed bluedIngSelfFeed = new BluedIngSelfFeed();
-        if (c(this.f33695c).repost == null || c(this.f33695c).repost.feed_is_delete != 1) {
-            if (c(this.f33695c).is_repost == 1) {
-                bluedIngSelfFeed.feed_id = c(this.f33695c).feed_id;
-                bluedIngSelfFeed.repost = c(this.f33695c).repost;
-                if (c(this.f33695c).is_feed_anonym == 1) {
-                    bluedIngSelfFeed.feed_content = "//" + c(this.f33695c).user_name + "：" + c(this.f33695c).feed_content;
+        if (c(this.f20004c).repost == null || c(this.f20004c).repost.feed_is_delete != 1) {
+            if (c(this.f20004c).is_repost == 1) {
+                bluedIngSelfFeed.feed_id = c(this.f20004c).feed_id;
+                bluedIngSelfFeed.repost = c(this.f20004c).repost;
+                if (c(this.f20004c).is_feed_anonym == 1) {
+                    bluedIngSelfFeed.feed_content = "//" + c(this.f20004c).user_name + "：" + c(this.f20004c).feed_content;
                 } else {
-                    bluedIngSelfFeed.feed_content = "//" + StringUtils.b(c(this.f33695c).user_name, c(this.f33695c).feed_uid) + "：" + c(this.f33695c).feed_content;
+                    bluedIngSelfFeed.feed_content = "//" + StringUtils.b(c(this.f20004c).user_name, c(this.f20004c).feed_uid) + "：" + c(this.f20004c).feed_content;
                 }
             } else {
-                bluedIngSelfFeed.feed_id = c(this.f33695c).feed_id;
-                bluedIngSelfFeed.repost = c(this.f33695c);
+                bluedIngSelfFeed.feed_id = c(this.f20004c).feed_id;
+                bluedIngSelfFeed.repost = c(this.f20004c);
                 bluedIngSelfFeed.feed_content = "";
-                if (this.f33695c.shareFrom == 11) {
+                if (this.f20004c.shareFrom == 11) {
                     bluedIngSelfFeed.is_share_posting = 1;
                 }
-                if (this.f33695c.shareFrom == 13) {
+                if (this.f20004c.shareFrom == 13) {
                     bluedIngSelfFeed.is_share_circle = 1;
                 }
             }
-            FeedAddPostFragment.a(this.f33704a, bluedIngSelfFeed);
+            FeedAddPostFragment.a(this.f20013a, bluedIngSelfFeed);
         }
     }
 
@@ -258,17 +258,17 @@ public class ShareToPlatform extends BaseShareToPlatform {
         } else if (i == 2131891709) {
             b();
         }
-        a(this.f33695c, i);
+        a(this.f20004c, i);
         super.a(i, shareBackLister, popWindowSetting);
     }
 
     public void a(ShareEntity shareEntity) {
-        this.f33695c = shareEntity;
-        if (!TextUtils.isEmpty(shareEntity.platFormName) && this.f33695c.platFormName.equals(Constants.BLUED_FEED)) {
+        this.f20004c = shareEntity;
+        if (!TextUtils.isEmpty(shareEntity.platFormName) && this.f20004c.platFormName.equals(Constants.BLUED_FEED)) {
             c();
-        } else if (!TextUtils.isEmpty(this.f33695c.platFormName) && this.f33695c.platFormName.equals(Constants.REPOST_FEED)) {
+        } else if (!TextUtils.isEmpty(this.f20004c.platFormName) && this.f20004c.platFormName.equals(Constants.REPOST_FEED)) {
             a();
-        } else if (!TextUtils.isEmpty(this.f33695c.platFormName) && this.f33695c.platFormName.equals(Constants.BLUED_GROUP_AND_PEOPLE)) {
+        } else if (!TextUtils.isEmpty(this.f20004c.platFormName) && this.f20004c.platFormName.equals(Constants.BLUED_GROUP_AND_PEOPLE)) {
             b();
         }
         super.b((BaseShareEntity) shareEntity);
@@ -276,7 +276,7 @@ public class ShareToPlatform extends BaseShareToPlatform {
 
     @Override // com.soft.blued.ui.share_custom.BaseShareToPlatform
     public void a(String str) {
-        String str2 = this.f33695c.shareFrom == 6 ? this.f33695c.linkUrl : "";
+        String str2 = this.f20004c.shareFrom == 6 ? this.f20004c.linkUrl : "";
         int i = -1;
         if (TextUtils.equals(str, Constants.SinaWeiboNAME)) {
             i = 2;
@@ -287,89 +287,89 @@ public class ShareToPlatform extends BaseShareToPlatform {
         } else if (TextUtils.equals(str, Constants.WechatMomentsNAME)) {
             i = 4;
         }
-        InstantLog.b(d(this.f33695c), i, str2, e(this.f33695c));
+        InstantLog.b(d(this.f20004c), i, str2, e(this.f20004c));
         super.a(str);
     }
 
     protected void b() {
-        ShareEventToMsgEntity shareEventToMsgEntity;
+        ShareToMsgEntity shareToMsgEntity;
         String str;
-        if ((this.f33695c.shareFrom == 6 || this.f33695c.shareFrom == 9) && PopMenuUtils.a(this.f33704a)) {
+        if ((this.f20004c.shareFrom == 6 || this.f20004c.shareFrom == 9) && PopMenuUtils.a(this.f20013a)) {
             return;
         }
-        ShareToMsgEntity shareToMsgEntity = new ShareToMsgEntity();
-        switch (this.f33695c.shareFrom) {
+        ShareToMsgEntity shareToMsgEntity2 = new ShareToMsgEntity();
+        switch (this.f20004c.shareFrom) {
             case 1:
-                shareToMsgEntity.title = this.f33704a.getResources().getString(R.string.biao_im_msg_share_person);
-                shareEventToMsgEntity = shareToMsgEntity;
-                if (h(this.f33695c) != null) {
-                    shareToMsgEntity.name = h(this.f33695c).name;
-                    shareToMsgEntity.description = h(this.f33695c).description;
-                    shareToMsgEntity.url = "http://native.blued.cn/?action=profile&uid=" + h(this.f33695c).uid;
-                    shareToMsgEntity.image = this.f33695c.netImgUrl;
-                    shareToMsgEntity.shareUserInfo = new ShareUserInfo();
-                    shareToMsgEntity.shareUserInfo.age = h(this.f33695c).age;
-                    shareToMsgEntity.shareUserInfo.height = h(this.f33695c).height;
-                    shareToMsgEntity.shareUserInfo.weight = h(this.f33695c).weight;
-                    shareToMsgEntity.shareUserInfo.role = h(this.f33695c).role;
-                    shareToMsgEntity.shareUserInfo.badge = h(this.f33695c).vbadge;
-                    shareToMsgEntity.shareUserInfo.vip_grade = h(this.f33695c).vip_grade;
-                    shareToMsgEntity.shareUserInfo.vip_exp_lvl = h(this.f33695c).vip_exp_lvl;
-                    shareToMsgEntity.shareUserInfo.expire_type = h(this.f33695c).expire_type;
-                    shareToMsgEntity.shareUserInfo.is_hide_vip_look = h(this.f33695c).is_hide_vip_look;
-                    shareToMsgEntity.shareUserInfo.is_vip_annual = h(this.f33695c).is_vip_annual;
-                    shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.title = this.f20013a.getResources().getString(R.string.biao_im_msg_share_person);
+                shareToMsgEntity = shareToMsgEntity2;
+                if (h(this.f20004c) != null) {
+                    shareToMsgEntity2.name = h(this.f20004c).name;
+                    shareToMsgEntity2.description = h(this.f20004c).description;
+                    shareToMsgEntity2.url = "http://native.blued.cn/?action=profile&uid=" + h(this.f20004c).uid;
+                    shareToMsgEntity2.image = this.f20004c.netImgUrl;
+                    shareToMsgEntity2.shareUserInfo = new ShareUserInfo();
+                    shareToMsgEntity2.shareUserInfo.age = h(this.f20004c).age;
+                    shareToMsgEntity2.shareUserInfo.height = h(this.f20004c).height;
+                    shareToMsgEntity2.shareUserInfo.weight = h(this.f20004c).weight;
+                    shareToMsgEntity2.shareUserInfo.role = h(this.f20004c).role;
+                    shareToMsgEntity2.shareUserInfo.badge = h(this.f20004c).vbadge;
+                    shareToMsgEntity2.shareUserInfo.vip_grade = h(this.f20004c).vip_grade;
+                    shareToMsgEntity2.shareUserInfo.vip_exp_lvl = h(this.f20004c).vip_exp_lvl;
+                    shareToMsgEntity2.shareUserInfo.expire_type = h(this.f20004c).expire_type;
+                    shareToMsgEntity2.shareUserInfo.is_hide_vip_look = h(this.f20004c).is_hide_vip_look;
+                    shareToMsgEntity2.shareUserInfo.is_vip_annual = h(this.f20004c).is_vip_annual;
+                    shareToMsgEntity = shareToMsgEntity2;
                     break;
                 }
                 break;
             case 2:
-                if (j(this.f33695c) != null) {
-                    shareToMsgEntity.image = j(this.f33695c).groups_avatar;
-                    shareToMsgEntity.gid = j(this.f33695c).groups_gid;
-                    shareToMsgEntity.isCreatorOrAdmin = "1".equals(j(this.f33695c).groups_is_admins) ? "1" : "1".equals(j(this.f33695c).groups_is_created) ? "1" : "0";
-                    shareToMsgEntity.name = j(this.f33695c).groups_name;
-                    shareToMsgEntity.description = j(this.f33695c).groups_city;
+                if (j(this.f20004c) != null) {
+                    shareToMsgEntity2.image = j(this.f20004c).groups_avatar;
+                    shareToMsgEntity2.gid = j(this.f20004c).groups_gid;
+                    shareToMsgEntity2.isCreatorOrAdmin = "1".equals(j(this.f20004c).groups_is_admins) ? "1" : "1".equals(j(this.f20004c).groups_is_created) ? "1" : "0";
+                    shareToMsgEntity2.name = j(this.f20004c).groups_name;
+                    shareToMsgEntity2.description = j(this.f20004c).groups_city;
                 }
-                shareToMsgEntity.url = this.f33695c.linkUrl;
-                shareToMsgEntity.title = this.f33704a.getResources().getString(R.string.biao_im_msg_share_toone);
-                shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.url = this.f20004c.linkUrl;
+                shareToMsgEntity2.title = this.f20013a.getResources().getString(R.string.biao_im_msg_share_toone);
+                shareToMsgEntity = shareToMsgEntity2;
                 break;
             case 3:
-                shareToMsgEntity.title = this.f33695c.title;
-                shareToMsgEntity.name = this.f33695c.content;
-                shareToMsgEntity.image = this.f33695c.netImgUrl;
-                shareToMsgEntity.description = this.f33695c.mainBody;
-                shareToMsgEntity.url = this.f33695c.linkUrl;
-                shareToMsgEntity.sessionId = Long.valueOf(this.f33695c.f.h).longValue();
-                shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.title = this.f20004c.title;
+                shareToMsgEntity2.name = this.f20004c.content;
+                shareToMsgEntity2.image = this.f20004c.netImgUrl;
+                shareToMsgEntity2.description = this.f20004c.mainBody;
+                shareToMsgEntity2.url = this.f20004c.linkUrl;
+                shareToMsgEntity2.sessionId = Long.valueOf(this.f20004c.f.h).longValue();
+                shareToMsgEntity = shareToMsgEntity2;
                 break;
             case 4:
             case 15:
-                shareToMsgEntity.title = this.f33704a.getResources().getString(R.string.biao_im_msg_share_feed);
-                shareEventToMsgEntity = shareToMsgEntity;
-                if (c(this.f33695c) != null) {
-                    shareToMsgEntity.gid = c(this.f33695c).feed_id;
-                    if (TextUtils.isEmpty(c(this.f33695c).feed_content)) {
-                        shareToMsgEntity.name = c(this.f33695c).user_name + this.f33704a.getResources().getString(R.string.biao_im_msg_feed_of_someone);
+                shareToMsgEntity2.title = this.f20013a.getResources().getString(R.string.biao_im_msg_share_feed);
+                shareToMsgEntity = shareToMsgEntity2;
+                if (c(this.f20004c) != null) {
+                    shareToMsgEntity2.gid = c(this.f20004c).feed_id;
+                    if (TextUtils.isEmpty(c(this.f20004c).feed_content)) {
+                        shareToMsgEntity2.name = c(this.f20004c).user_name + this.f20013a.getResources().getString(R.string.biao_im_msg_feed_of_someone);
                     } else {
-                        shareToMsgEntity.name = c(this.f33695c).feed_content;
+                        shareToMsgEntity2.name = c(this.f20004c).feed_content;
                     }
-                    shareToMsgEntity.url = "http://native.blued.cn/?action=feed&fid=" + EncryptTool.b(c(this.f33695c).feed_id) + "&ads=" + c(this.f33695c).is_ads;
-                    a(c(this.f33695c), shareToMsgEntity, "1".equals(c(this.f33695c).is_videos));
-                    shareEventToMsgEntity = shareToMsgEntity;
-                    if (c(this.f33695c).is_repost == 1) {
-                        shareEventToMsgEntity = shareToMsgEntity;
-                        if (c(this.f33695c).repost != null) {
-                            shareToMsgEntity.repost = new ShareToMsgEntity();
-                            if (TextUtils.isEmpty(c(this.f33695c).repost.feed_content)) {
-                                shareToMsgEntity.repost.name = c(this.f33695c).repost.user_name + this.f33704a.getResources().getString(R.string.biao_im_msg_feed_of_someone);
+                    shareToMsgEntity2.url = "http://native.blued.cn/?action=feed&fid=" + EncryptTool.b(c(this.f20004c).feed_id) + "&ads=" + c(this.f20004c).is_ads;
+                    a(c(this.f20004c), shareToMsgEntity2, "1".equals(c(this.f20004c).is_videos));
+                    shareToMsgEntity = shareToMsgEntity2;
+                    if (c(this.f20004c).is_repost == 1) {
+                        shareToMsgEntity = shareToMsgEntity2;
+                        if (c(this.f20004c).repost != null) {
+                            shareToMsgEntity2.repost = new ShareToMsgEntity();
+                            if (TextUtils.isEmpty(c(this.f20004c).repost.feed_content)) {
+                                shareToMsgEntity2.repost.name = c(this.f20004c).repost.user_name + this.f20013a.getResources().getString(R.string.biao_im_msg_feed_of_someone);
                             } else {
-                                ShareToMsgEntity shareToMsgEntity2 = shareToMsgEntity.repost;
-                                shareToMsgEntity2.name = ("@(name:" + c(this.f33695c).repost.user_name + ",id:" + EncryptTool.b(c(this.f33695c).repost.feed_uid) + ")") + "：" + c(this.f33695c).repost.feed_content;
+                                ShareToMsgEntity shareToMsgEntity3 = shareToMsgEntity2.repost;
+                                shareToMsgEntity3.name = ("@(name:" + c(this.f20004c).repost.user_name + ",id:" + EncryptTool.b(c(this.f20004c).repost.feed_uid) + ")") + "：" + c(this.f20004c).repost.feed_content;
                             }
-                            a(c(this.f33695c).repost, shareToMsgEntity.repost, "1".equals(c(this.f33695c).repost.is_videos));
-                            a(c(this.f33695c).repost, shareToMsgEntity.repost);
-                            shareEventToMsgEntity = shareToMsgEntity;
+                            a(c(this.f20004c).repost, shareToMsgEntity2.repost, "1".equals(c(this.f20004c).repost.is_videos));
+                            a(c(this.f20004c).repost, shareToMsgEntity2.repost);
+                            shareToMsgEntity = shareToMsgEntity2;
                             break;
                         }
                     }
@@ -379,129 +379,129 @@ public class ShareToPlatform extends BaseShareToPlatform {
             case 7:
             case 8:
             default:
-                shareToMsgEntity.title = this.f33695c.title;
-                shareToMsgEntity.name = this.f33695c.content;
-                shareToMsgEntity.image = this.f33695c.netImgUrl;
-                shareToMsgEntity.description = this.f33695c.mainBody;
-                shareToMsgEntity.url = this.f33695c.linkUrl;
-                shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.title = this.f20004c.title;
+                shareToMsgEntity2.name = this.f20004c.content;
+                shareToMsgEntity2.image = this.f20004c.netImgUrl;
+                shareToMsgEntity2.description = this.f20004c.mainBody;
+                shareToMsgEntity2.url = this.f20004c.linkUrl;
+                shareToMsgEntity = shareToMsgEntity2;
                 break;
             case 6:
-                shareToMsgEntity.title = this.f33695c.title;
-                shareToMsgEntity.name = this.f33695c.title;
-                if (this.f33695c.flag == 0) {
-                    shareToMsgEntity.image = this.f33695c.fileUrl;
+                shareToMsgEntity2.title = this.f20004c.title;
+                shareToMsgEntity2.name = this.f20004c.title;
+                if (this.f20004c.flag == 0) {
+                    shareToMsgEntity2.image = this.f20004c.fileUrl;
                 } else {
-                    shareToMsgEntity.image = this.f33695c.netImgUrl;
+                    shareToMsgEntity2.image = this.f20004c.netImgUrl;
                 }
-                shareToMsgEntity.description = this.f33695c.content;
-                shareToMsgEntity.url = this.f33695c.linkUrl;
-                shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.description = this.f20004c.content;
+                shareToMsgEntity2.url = this.f20004c.linkUrl;
+                shareToMsgEntity = shareToMsgEntity2;
                 break;
             case 9:
-                if (this.f33695c.flag != 0) {
-                    shareToMsgEntity.image = this.f33695c.netImgUrl;
-                    shareEventToMsgEntity = shareToMsgEntity;
+                if (this.f20004c.flag != 0) {
+                    shareToMsgEntity2.image = this.f20004c.netImgUrl;
+                    shareToMsgEntity = shareToMsgEntity2;
                     break;
                 } else {
-                    shareToMsgEntity.image = this.f33695c.fileUrl;
-                    shareEventToMsgEntity = shareToMsgEntity;
+                    shareToMsgEntity2.image = this.f20004c.fileUrl;
+                    shareToMsgEntity = shareToMsgEntity2;
                     break;
                 }
             case 10:
-                shareToMsgEntity.url = "http://native.blued.cn/?action=topic&id=" + i(this.f33695c).super_did + "&from=msg";
-                shareToMsgEntity.title = this.f33704a.getResources().getString(2131891686);
-                shareToMsgEntity.name = i(this.f33695c).name;
-                shareToMsgEntity.image = i(this.f33695c).avatar;
-                shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.url = "http://native.blued.cn/?action=topic&id=" + i(this.f20004c).super_did + "&from=msg";
+                shareToMsgEntity2.title = this.f20013a.getResources().getString(R.string.share_a_topic_to_you);
+                shareToMsgEntity2.name = i(this.f20004c).name;
+                shareToMsgEntity2.image = i(this.f20004c).avatar;
+                shareToMsgEntity = shareToMsgEntity2;
                 break;
             case 11:
                 boolean z = false;
-                shareToMsgEntity.title = String.format(this.f33704a.getResources().getString(R.string.biao_im_msg_share_circle_post), this.f33695c.title);
-                shareEventToMsgEntity = shareToMsgEntity;
-                if (c(this.f33695c) != null) {
-                    shareToMsgEntity.name = c(this.f33695c).feed_pure_content;
-                    shareToMsgEntity.gid = c(this.f33695c).feed_id;
-                    shareToMsgEntity.url = "http://native.blued.cn/?action=base_post_detail&post_id=" + c(this.f33695c).feed_id + "&base_id=" + c(this.f33695c).circle_id;
-                    BluedIngSelfFeed c2 = c(this.f33695c);
-                    if (c(this.f33695c).is_video_posts == 1) {
+                shareToMsgEntity2.title = String.format(this.f20013a.getResources().getString(R.string.biao_im_msg_share_circle_post), this.f20004c.title);
+                shareToMsgEntity = shareToMsgEntity2;
+                if (c(this.f20004c) != null) {
+                    shareToMsgEntity2.name = c(this.f20004c).feed_pure_content;
+                    shareToMsgEntity2.gid = c(this.f20004c).feed_id;
+                    shareToMsgEntity2.url = "http://native.blued.cn/?action=base_post_detail&post_id=" + c(this.f20004c).feed_id + "&base_id=" + c(this.f20004c).circle_id;
+                    BluedIngSelfFeed c2 = c(this.f20004c);
+                    if (c(this.f20004c).is_video_posts == 1) {
                         z = true;
                     }
-                    a(c2, shareToMsgEntity, z);
-                    shareEventToMsgEntity = shareToMsgEntity;
-                    if (c(this.f33695c).is_repost == 1) {
-                        shareEventToMsgEntity = shareToMsgEntity;
-                        if (c(this.f33695c).repost != null) {
-                            shareToMsgEntity.repost = new ShareToMsgEntity();
-                            shareToMsgEntity.repost.name = c(this.f33695c).repost.feed_pure_content;
-                            shareToMsgEntity.repost.gid = c(this.f33695c).repost.feed_id;
-                            shareToMsgEntity.repost.url = "http://native.blued.cn/?action=base_post_detail&post_id=" + c(this.f33695c).repost.feed_id + "&base_id=" + c(this.f33695c).repost.circle_id;
-                            a(c(this.f33695c).repost, shareToMsgEntity.repost, "1".equals(c(this.f33695c).repost.is_videos));
-                            a(c(this.f33695c).repost, shareToMsgEntity.repost);
-                            shareEventToMsgEntity = shareToMsgEntity;
+                    a(c2, shareToMsgEntity2, z);
+                    shareToMsgEntity = shareToMsgEntity2;
+                    if (c(this.f20004c).is_repost == 1) {
+                        shareToMsgEntity = shareToMsgEntity2;
+                        if (c(this.f20004c).repost != null) {
+                            shareToMsgEntity2.repost = new ShareToMsgEntity();
+                            shareToMsgEntity2.repost.name = c(this.f20004c).repost.feed_pure_content;
+                            shareToMsgEntity2.repost.gid = c(this.f20004c).repost.feed_id;
+                            shareToMsgEntity2.repost.url = "http://native.blued.cn/?action=base_post_detail&post_id=" + c(this.f20004c).repost.feed_id + "&base_id=" + c(this.f20004c).repost.circle_id;
+                            a(c(this.f20004c).repost, shareToMsgEntity2.repost, "1".equals(c(this.f20004c).repost.is_videos));
+                            a(c(this.f20004c).repost, shareToMsgEntity2.repost);
+                            shareToMsgEntity = shareToMsgEntity2;
                             break;
                         }
                     }
                 }
                 break;
             case 12:
-                shareToMsgEntity.title = this.f33695c.title;
-                shareToMsgEntity.name = this.f33695c.content;
-                shareToMsgEntity.image = this.f33695c.netImgUrl;
-                shareToMsgEntity.description = this.f33695c.mainBody;
-                shareToMsgEntity.url = this.f33695c.linkUrl;
-                shareToMsgEntity.sessionId = Long.valueOf(this.f33695c.f.h).longValue();
-                shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.title = this.f20004c.title;
+                shareToMsgEntity2.name = this.f20004c.content;
+                shareToMsgEntity2.image = this.f20004c.netImgUrl;
+                shareToMsgEntity2.description = this.f20004c.mainBody;
+                shareToMsgEntity2.url = this.f20004c.linkUrl;
+                shareToMsgEntity2.sessionId = Long.valueOf(this.f20004c.f.h).longValue();
+                shareToMsgEntity = shareToMsgEntity2;
                 break;
             case 13:
-                shareToMsgEntity.title = this.f33704a.getResources().getString(R.string.biao_im_msg_share_circle);
-                shareEventToMsgEntity = shareToMsgEntity;
-                if (f(this.f33695c) != null) {
-                    shareToMsgEntity.name = this.f33695c.title;
-                    shareToMsgEntity.description = this.f33695c.content;
-                    shareToMsgEntity.gid = f(this.f33695c).circle_id;
-                    shareToMsgEntity.url = "http://native.blued.cn/?action=base_detail&base_id=" + EncryptTool.b(f(this.f33695c).circle_id) + "&normal_back=1";
-                    shareToMsgEntity.image = this.f33695c.netImgUrl;
-                    shareEventToMsgEntity = shareToMsgEntity;
+                shareToMsgEntity2.title = this.f20013a.getResources().getString(R.string.biao_im_msg_share_circle);
+                shareToMsgEntity = shareToMsgEntity2;
+                if (f(this.f20004c) != null) {
+                    shareToMsgEntity2.name = this.f20004c.title;
+                    shareToMsgEntity2.description = this.f20004c.content;
+                    shareToMsgEntity2.gid = f(this.f20004c).circle_id;
+                    shareToMsgEntity2.url = "http://native.blued.cn/?action=base_detail&base_id=" + EncryptTool.b(f(this.f20004c).circle_id) + "&normal_back=1";
+                    shareToMsgEntity2.image = this.f20004c.netImgUrl;
+                    shareToMsgEntity = shareToMsgEntity2;
                     break;
                 }
                 break;
             case 14:
-                EventDetailsModel g = g(this.f33695c);
-                shareEventToMsgEntity = shareToMsgEntity;
+                EventDetailsModel g = g(this.f20004c);
+                shareToMsgEntity = shareToMsgEntity2;
                 if (g != null) {
-                    ShareEventToMsgEntity shareEventToMsgEntity2 = new ShareEventToMsgEntity();
-                    shareEventToMsgEntity2.activityName = g.name;
-                    shareEventToMsgEntity2.isActivity = 1;
-                    shareEventToMsgEntity2.activityTime = TimeAndDateUtils.c(TimeAndDateUtils.j(g.activity_date), true);
+                    ShareToMsgEntity shareEventToMsgEntity = new ShareEventToMsgEntity();
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).activityName = g.name;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).isActivity = 1;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).activityTime = TimeAndDateUtils.c(TimeAndDateUtils.j(g.activity_date), true);
                     if (g.mode_id == 2) {
-                        shareEventToMsgEntity2.activityLocation = AppInfo.d().getResources().getString(2131887774);
+                        ((ShareEventToMsgEntity) shareEventToMsgEntity).activityLocation = AppInfo.d().getResources().getString(R.string.event_online_event);
                     } else if (g.mode_id == 1) {
                         if (TextUtils.isEmpty(g.city) || TextUtils.isEmpty(g.location)) {
                             str = !TextUtils.isEmpty(g.city) ? g.city : !TextUtils.isEmpty(g.location) ? g.location : "";
                         } else {
                             str = g.city + "·" + g.location;
                         }
-                        shareEventToMsgEntity2.activityLocation = str;
+                        ((ShareEventToMsgEntity) shareEventToMsgEntity).activityLocation = str;
                     }
-                    shareEventToMsgEntity2.gid = g.id;
-                    shareEventToMsgEntity2.url = "http://native.blued.cn/?action=event_details&event_id=" + g.id;
-                    shareEventToMsgEntity2.title = g(this.f33695c).name;
-                    shareEventToMsgEntity2.name = this.f33695c.content;
-                    shareEventToMsgEntity2.description = this.f33695c.mainBody;
-                    shareEventToMsgEntity2.image = AvatarUtils.a(g.pic);
-                    shareEventToMsgEntity = shareEventToMsgEntity2;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).gid = g.id;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).url = "http://native.blued.cn/?action=event_details&event_id=" + g.id;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).title = g(this.f20004c).name;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).name = this.f20004c.content;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).description = this.f20004c.mainBody;
+                    ((ShareEventToMsgEntity) shareEventToMsgEntity).image = AvatarUtils.a(g.pic);
+                    shareToMsgEntity = shareEventToMsgEntity;
                     break;
                 }
                 break;
         }
-        shareEventToMsgEntity.type = this.f33695c.shareType;
-        shareEventToMsgEntity.share_from = this.f33695c.shareFrom;
-        ChatHelperV4.a().a(this.f33704a, shareEventToMsgEntity);
+        shareToMsgEntity.type = this.f20004c.shareType;
+        shareToMsgEntity.share_from = this.f20004c.shareFrom;
+        ChatHelperV4.a().a(this.f20013a, shareToMsgEntity);
     }
 
     public void b(ShareEntity shareEntity) {
-        this.f33695c = shareEntity;
+        this.f20004c = shareEntity;
         super.a((BaseShareEntity) shareEntity);
     }
 }

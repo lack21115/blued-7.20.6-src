@@ -12,16 +12,16 @@ final class c {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25244a;
+        public final int f11556a;
         public final long b;
 
         private a(int i, long j) {
-            this.f25244a = i;
+            this.f11556a = i;
             this.b = j;
         }
 
         public static a a(f fVar, m mVar) {
-            fVar.c(mVar.f25496a, 0, 8);
+            fVar.c(mVar.f11808a, 0, 8);
             mVar.c(0);
             return new a(mVar.o(), mVar.n());
         }
@@ -48,18 +48,18 @@ final class c {
         m mVar = new m(8);
         while (true) {
             a a2 = a.a(fVar, mVar);
-            if (a2.f25244a == u.f("data")) {
+            if (a2.f11556a == u.f("data")) {
                 fVar.b(8);
                 bVar.a(fVar.c(), a2.b);
                 return;
             }
-            com.opos.cmn.an.f.a.c("WavHeaderReader", "Ignoring unknown WAV chunk: " + a2.f25244a);
+            com.opos.cmn.an.f.a.c("WavHeaderReader", "Ignoring unknown WAV chunk: " + a2.f11556a);
             long j = a2.b + 8;
-            if (a2.f25244a == u.f("RIFF")) {
+            if (a2.f11556a == u.f("RIFF")) {
                 j = 12;
             }
             if (j > 2147483647L) {
-                throw new o("Chunk is too large (~2GB+) to skip; id: " + a2.f25244a);
+                throw new o("Chunk is too large (~2GB+) to skip; id: " + a2.f11556a);
             }
             fVar.b((int) j);
         }

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.android.internal.telephony.RILConstants;
-import com.android.internal.util.cm.QSConstants;
 import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 import java.net.URLDecoder;
 import java.util.Arrays;
@@ -15,11 +13,11 @@ import org.json.JSONObject;
 public final class bf implements aw, Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f40094a;
+    private long f26403a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f40095c;
+    private String f26404c;
     private String d;
     private String e;
     private String f;
@@ -34,8 +32,8 @@ public final class bf implements aw, Cloneable {
     }
 
     public bf(String str, String str2, long j) {
-        this.f40094a = System.currentTimeMillis() / 1000;
-        this.f40095c = str;
+        this.f26403a = System.currentTimeMillis() / 1000;
+        this.f26404c = str;
         this.b = j;
         if (str2 == null) {
             this.l = true;
@@ -44,7 +42,7 @@ public final class bf implements aw, Cloneable {
         Uri parse = Uri.parse(str2);
         this.d = parse.getQueryParameter("mid");
         this.e = parse.getQueryParameter("aid");
-        this.f = parse.getQueryParameter(QSConstants.TILE_BLUETOOTH);
+        this.f = parse.getQueryParameter("bt");
         if (TextUtils.isEmpty(this.d) || TextUtils.isEmpty(this.e) || TextUtils.isEmpty(this.f)) {
             this.l = true;
             return;
@@ -55,7 +53,7 @@ public final class bf implements aw, Cloneable {
         j jVar = new j(URLDecoder.decode(queryParameter));
         this.g = jVar.b == 1 ? "Chorus" : "Complete";
         this.h = aj.d(TXCopyrightedMedia.instance().getApplicationContext());
-        this.i = jVar.f40105c;
+        this.i = jVar.f26414c;
         this.j = parse.getQueryParameter("roomId");
         this.k = parse.getQueryParameter("roomUserId");
     }
@@ -68,8 +66,8 @@ public final class bf implements aw, Cloneable {
         Context applicationContext = TXCopyrightedMedia.instance().getApplicationContext();
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put(com.alipay.sdk.packet.e.f, ap.a().b);
-            jSONObject.put("LicenseExtAppName", ap.a().d.f40063c);
+            jSONObject.put("AppId", ap.a().b);
+            jSONObject.put("LicenseExtAppName", ap.a().d.f26372c);
             jSONObject.put("ExpireTime", (System.currentTimeMillis() / 1000) + 300);
             byte[] bytes = jSONObject.toString().getBytes("UTF-8");
             byte[] bytes2 = ap.a().d.b.getBytes("UTF-8");
@@ -77,21 +75,21 @@ public final class bf implements aw, Cloneable {
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put("Action", "CreateReport");
             jSONObject2.put("Sign", replace);
-            jSONObject2.put(com.alipay.sdk.packet.e.f, TXCopyrightedMedia.instance().getAppID());
-            jSONObject2.put("LicenseExtAppName", ap.a().d.f40063c);
+            jSONObject2.put("AppId", TXCopyrightedMedia.instance().getAppID());
+            jSONObject2.put("LicenseExtAppName", ap.a().d.f26372c);
             jSONObject2.put("PlayToken", aj.d());
             jSONObject2.put("MusicId", this.d);
             jSONObject2.put("MusicType", this.f);
             jSONObject2.put("AppName", aj.b(applicationContext));
-            jSONObject2.put("ReportTime", this.f40094a);
+            jSONObject2.put("ReportTime", this.f26403a);
             jSONObject2.put("DeviceType", "Android");
             jSONObject2.put("DeviceId", aj.c(applicationContext));
             jSONObject2.put("DeviceSystem", aj.b());
             jSONObject2.put("ActivityId", this.e);
-            jSONObject2.put("ReportType", this.f40095c);
+            jSONObject2.put("ReportType", this.f26404c);
             jSONObject2.put("PlayPosition", this.b);
             jSONObject2.put("PackageName", applicationContext.getPackageName());
-            jSONObject2.put(RILConstants.SETUP_DATA_PROTOCOL_IP, "");
+            jSONObject2.put("IP", "");
             jSONObject2.put("SdkType", "TRTC");
             jSONObject2.put("PlayFragmentType", this.g);
             jSONObject2.put("AppVersion", this.h);

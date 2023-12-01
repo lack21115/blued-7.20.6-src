@@ -300,7 +300,7 @@ public class BSDiff {
         dataOutputStream3.close();
         byte[] byteArray = byteArrayOutputStream.toByteArray();
         byte[] byteArray2 = byteArrayOutputStream2.toByteArray();
-        System.arraycopy((Object) byteArray2, 0, (Object) byteArray, 0, byteArray2.length);
+        System.arraycopy(byteArray2, 0, byteArray, 0, byteArray2.length);
         return byteArray;
     }
 

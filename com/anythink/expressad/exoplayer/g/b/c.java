@@ -29,20 +29,20 @@ public final class c extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7346a = "CHAP";
+    public static final String f4507a = "CHAP";
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f7347c;
+    public final int f4508c;
     public final int d;
     public final long e;
     public final long f;
     private final h[] h;
 
     c(Parcel parcel) {
-        super(f7346a);
+        super(f4507a);
         this.b = parcel.readString();
-        this.f7347c = parcel.readInt();
+        this.f4508c = parcel.readInt();
         this.d = parcel.readInt();
         this.e = parcel.readLong();
         this.f = parcel.readLong();
@@ -60,9 +60,9 @@ public final class c extends h {
     }
 
     public c(String str, int i, int i2, long j, long j2, h[] hVarArr) {
-        super(f7346a);
+        super(f4507a);
         this.b = str;
-        this.f7347c = i;
+        this.f4508c = i;
         this.d = i2;
         this.e = j;
         this.f = j2;
@@ -90,11 +90,11 @@ public final class c extends h {
             return false;
         }
         c cVar = (c) obj;
-        return this.f7347c == cVar.f7347c && this.d == cVar.d && this.e == cVar.e && this.f == cVar.f && af.a((Object) this.b, (Object) cVar.b) && Arrays.equals(this.h, cVar.h);
+        return this.f4508c == cVar.f4508c && this.d == cVar.d && this.e == cVar.e && this.f == cVar.f && af.a((Object) this.b, (Object) cVar.b) && Arrays.equals(this.h, cVar.h);
     }
 
     public final int hashCode() {
-        int i = this.f7347c;
+        int i = this.f4508c;
         int i2 = this.d;
         int i3 = (int) this.e;
         int i4 = (int) this.f;
@@ -105,7 +105,7 @@ public final class c extends h {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.b);
-        parcel.writeInt(this.f7347c);
+        parcel.writeInt(this.f4508c);
         parcel.writeInt(this.d);
         parcel.writeLong(this.e);
         parcel.writeLong(this.f);

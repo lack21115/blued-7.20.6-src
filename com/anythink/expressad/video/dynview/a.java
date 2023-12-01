@@ -7,18 +7,18 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f8345a;
+    private View f5505a;
     private List<View> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f8346c;
+    private boolean f5506c;
 
     public final View a() {
-        return this.f8345a;
+        return this.f5505a;
     }
 
     public final void a(View view) {
-        this.f8345a = view;
+        this.f5505a = view;
     }
 
     public final void a(List<View> list) {
@@ -30,10 +30,10 @@ public final class a {
     }
 
     public final boolean c() {
-        return this.f8346c;
+        return this.f5506c;
     }
 
     public final void d() {
-        this.f8346c = false;
+        this.f5506c = false;
     }
 }

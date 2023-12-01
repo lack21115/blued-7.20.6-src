@@ -16,11 +16,11 @@ import java.lang.annotation.RetentionPolicy;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7731a = 0;
+    public static final int f4892a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7732c = 2;
+    public static final int f4893c = 2;
     public static final int d = 3;
     public static final int e = 4;
     private static final int f = 8;
@@ -33,7 +33,7 @@ public final class a {
     @Retention(RetentionPolicy.SOURCE)
     /* renamed from: com.anythink.expressad.exoplayer.scheduler.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/scheduler/a$a.class */
-    public @interface InterfaceC0140a {
+    public @interface InterfaceC0069a {
     }
 
     public a(int i2) {
@@ -45,7 +45,7 @@ public final class a {
     }
 
     private static boolean a(ConnectivityManager connectivityManager) {
-        if (af.f7632a < 23) {
+        if (af.f4793a < 23) {
             return true;
         }
         Network activeNetwork = connectivityManager.getActiveNetwork();
@@ -57,7 +57,7 @@ public final class a {
     }
 
     private static boolean a(ConnectivityManager connectivityManager, NetworkInfo networkInfo) {
-        if (af.f7632a >= 16) {
+        if (af.f4793a >= 16) {
             return connectivityManager.isActiveNetworkMetered();
         }
         int type = networkInfo.getType();
@@ -95,8 +95,8 @@ public final class a {
 
     private boolean d(Context context) {
         if (c()) {
-            PowerManager powerManager = (PowerManager) context.getSystemService("power");
-            return af.f7632a >= 23 ? !powerManager.isDeviceIdleMode() : af.f7632a >= 20 ? !powerManager.isInteractive() : !powerManager.isScreenOn();
+            PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            return af.f4793a >= 23 ? !powerManager.isDeviceIdleMode() : af.f4793a >= 20 ? !powerManager.isInteractive() : !powerManager.isScreenOn();
         }
         return true;
     }

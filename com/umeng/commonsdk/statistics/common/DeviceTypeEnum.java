@@ -1,8 +1,10 @@
 package com.umeng.commonsdk.statistics.common;
 
+import com.anythink.pd.ExHandler;
+
 /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/common/DeviceTypeEnum.class */
 public enum DeviceTypeEnum {
-    IMEI("imei", "imei"),
+    IMEI(ExHandler.JSON_REQUEST_IMEI, ExHandler.JSON_REQUEST_IMEI),
     OAID("oaid", "oaid"),
     ANDROIDID("android_id", "android_id"),
     MAC("mac", "mac"),

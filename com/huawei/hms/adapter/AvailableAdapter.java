@@ -22,12 +22,12 @@ import com.huawei.hms.utils.UIUtil;
 public class AvailableAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f22409a;
+    public final int f8801a;
     public AvailableCallBack b;
     public SystemObserver d = new a();
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f22410c = false;
+    public boolean f8802c = false;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/adapter/AvailableAdapter$AvailableCallBack.class */
     public interface AvailableCallBack {
@@ -68,7 +68,7 @@ public class AvailableAdapter {
     }
 
     public AvailableAdapter(int i) {
-        this.f22409a = i;
+        this.f8801a = i;
     }
 
     public final int a(Context context) {
@@ -128,7 +128,7 @@ public class AvailableAdapter {
         if (a2 != 0) {
             return a2;
         }
-        if (HMSPackageManager.getInstance(context).isApkNeedUpdate(this.f22409a)) {
+        if (HMSPackageManager.getInstance(context).isApkNeedUpdate(this.f8801a)) {
             HMSLog.i("AvailableAdapter", "The current version does not meet the target version requirements");
             a2 = 2;
         }
@@ -141,7 +141,7 @@ public class AvailableAdapter {
         if (a2 != 0) {
             return a2;
         }
-        if (HMSPackageManager.getInstance(context).isApkUpdateNecessary(this.f22409a)) {
+        if (HMSPackageManager.getInstance(context).isApkUpdateNecessary(this.f8801a)) {
             HMSLog.i("AvailableAdapter", "The current version does not meet the minimum version requirements");
             a2 = 2;
         }
@@ -157,7 +157,7 @@ public class AvailableAdapter {
     }
 
     public void setCalledBySolutionInstallHms(boolean z) {
-        this.f22410c = z;
+        this.f8802c = z;
     }
 
     public void startNotice(Activity activity, AvailableCallBack availableCallBack) {
@@ -194,8 +194,8 @@ public class AvailableAdapter {
         this.b = availableCallBack;
         SystemManager.getSystemNotifier().registerObserver(this.d);
         Intent intentStartBridgeActivity = BridgeActivity.getIntentStartBridgeActivity(activity, UpdateAdapter.class.getName());
-        intentStartBridgeActivity.putExtra("update_version", this.f22409a);
-        if (this.f22410c) {
+        intentStartBridgeActivity.putExtra("update_version", this.f8801a);
+        if (this.f8802c) {
             intentStartBridgeActivity.putExtra("installHMS", "installHMS");
         }
         intentStartBridgeActivity.putExtra(CommonCode.MapKey.NEW_UPDATE, a2);

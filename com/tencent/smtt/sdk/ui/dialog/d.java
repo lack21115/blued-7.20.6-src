@@ -1,5 +1,6 @@
 package com.tencent.smtt.sdk.ui.dialog;
 
+import android.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -38,11 +39,11 @@ import java.util.List;
 public class d extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    static WeakReference<ValueCallback<String>> f38897a;
+    static WeakReference<ValueCallback<String>> f25206a;
     protected List<b> b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final String f38898c;
+    protected final String f25207c;
     protected final String d;
     protected final String e;
     protected final String f;
@@ -62,11 +63,11 @@ public class d extends Dialog {
     private LinearLayout t;
 
     public d(Context context, String str, Intent intent, Bundle bundle, ValueCallback<String> valueCallback, String str2, String str3) {
-        super(context, 16973835);
+        super(context, R.style.Theme_Dialog);
         List<b> list;
         List<b> list2;
         this.j = "TBSActivityPicker";
-        this.f38898c = "extraMenu";
+        this.f25207c = "extraMenu";
         this.d = "name";
         this.e = "resource_id";
         this.f = "value";
@@ -104,7 +105,7 @@ public class d extends Dialog {
         }
         this.k = str;
         this.o = intent;
-        f38897a = new WeakReference<>(valueCallback);
+        f25206a = new WeakReference<>(valueCallback);
         this.p = context.getSharedPreferences(QbSdk.SHARE_PREFERENCES_NAME, 0);
         if (!TextUtils.isEmpty(str2)) {
             this.m = str2;
@@ -180,8 +181,8 @@ public class d extends Dialog {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(b bVar) {
         if (bVar.f()) {
-            if (c() && f38897a.get() != null) {
-                f38897a.get().onReceiveValue("https://mdc.html5.qq.com/d/directdown.jsp?channel_id=11047");
+            if (c() && f25206a.get() != null) {
+                f25206a.get().onReceiveValue("https://mdc.html5.qq.com/d/directdown.jsp?channel_id=11047");
                 return;
             }
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("https://mdc.html5.qq.com/d/directdown.jsp?channel_id=11041"));
@@ -202,13 +203,13 @@ public class d extends Dialog {
         }
         b a2 = this.l.a();
         ResolveInfo a3 = this.l.a(a2);
-        if (f38897a.get() != null) {
+        if (f25206a.get() != null) {
             if (a2 != null && a3 != null && a3.activityInfo != null && a3.activityInfo.packageName != null) {
-                valueCallback = f38897a.get();
+                valueCallback = f25206a.get();
                 str2 = str + a3.activityInfo.packageName;
             } else if (a2 != null) {
                 if (a2.e()) {
-                    ValueCallback<String> valueCallback3 = f38897a.get();
+                    ValueCallback<String> valueCallback3 = f25206a.get();
                     sb = new StringBuilder();
                     sb.append(str);
                     d = a2.g();
@@ -216,7 +217,7 @@ public class d extends Dialog {
                 } else if (!a2.f()) {
                     return;
                 } else {
-                    ValueCallback<String> valueCallback4 = f38897a.get();
+                    ValueCallback<String> valueCallback4 = f25206a.get();
                     sb = new StringBuilder();
                     sb.append(str);
                     valueCallback2 = valueCallback4;
@@ -227,7 +228,7 @@ public class d extends Dialog {
                 return;
             } else {
                 str2 = str + "other";
-                valueCallback = f38897a.get();
+                valueCallback = f25206a.get();
             }
             valueCallback.onReceiveValue(str2);
         }
@@ -385,8 +386,8 @@ public class d extends Dialog {
                 }
                 if (a2.e()) {
                     String g = a2.g();
-                    if (d.f38897a.get() != null) {
-                        ValueCallback<String> valueCallback = d.f38897a.get();
+                    if (d.f25206a.get() != null) {
+                        ValueCallback<String> valueCallback = d.f25206a.get();
                         valueCallback.onReceiveValue("extraMenuEvent:" + g);
                     }
                     d dVar = d.this;
@@ -413,8 +414,8 @@ public class d extends Dialog {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    if (d.f38897a.get() != null) {
-                        d.f38897a.get().onReceiveValue("always");
+                    if (d.f25206a.get() != null) {
+                        d.f25206a.get().onReceiveValue("always");
                     }
                     d.this.a(str);
                 }
@@ -432,8 +433,8 @@ public class d extends Dialog {
                     return;
                 }
                 if (a2.e()) {
-                    if (d.this.c() && d.f38897a.get() != null) {
-                        ValueCallback<String> valueCallback = d.f38897a.get();
+                    if (d.this.c() && d.f25206a.get() != null) {
+                        ValueCallback<String> valueCallback = d.f25206a.get();
                         valueCallback.onReceiveValue("extraMenuEvent:" + a2.g());
                     }
                 } else if (a3 == null) {
@@ -458,8 +459,8 @@ public class d extends Dialog {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    if (d.f38897a.get() != null) {
-                        d.f38897a.get().onReceiveValue("once");
+                    if (d.f25206a.get() != null) {
+                        d.f25206a.get().onReceiveValue("once");
                     }
                 }
                 d.this.dismiss();

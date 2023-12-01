@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class LiveFloatRedBagViewScrollObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static LiveFloatRedBagViewScrollObserver f31243a = new LiveFloatRedBagViewScrollObserver();
+    private static LiveFloatRedBagViewScrollObserver f17553a = new LiveFloatRedBagViewScrollObserver();
     private ArrayList<IFloatRedBagViewScrollObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/live/manager/LiveFloatRedBagViewScrollObserver$IFloatRedBagViewScrollObserver.class */
@@ -17,7 +17,7 @@ public class LiveFloatRedBagViewScrollObserver {
     }
 
     public static LiveFloatRedBagViewScrollObserver a() {
-        return f31243a;
+        return f17553a;
     }
 
     public void a(RecyclerView recyclerView, int i, int i2) {

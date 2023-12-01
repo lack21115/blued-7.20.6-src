@@ -33,11 +33,11 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f1464a = true;
+    public static boolean f1416a = true;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static b f1465c = new b("https://pili-zeus.qiniuapi.com");
+    public static b f1417c = new b("https://pili-zeus.qiniuapi.com");
     public String e;
     public CountDownLatch j;
     public a.a.a.a.a.n.c f = new a.a.a.a.a.n.c();
@@ -50,15 +50,15 @@ public final class b {
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f1466a;
+        public final /* synthetic */ String f1418a;
 
         public a(String str) {
-            this.f1466a = str;
+            this.f1418a = str;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            b.this.g(this.f1466a);
+            b.this.g(this.f1418a);
         }
     }
 
@@ -79,15 +79,15 @@ public final class b {
     public class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ PLAuthenticationResultCallback f1468a;
+        public final /* synthetic */ PLAuthenticationResultCallback f1420a;
 
         public c(PLAuthenticationResultCallback pLAuthenticationResultCallback) {
-            this.f1468a = pLAuthenticationResultCallback;
+            this.f1420a = pLAuthenticationResultCallback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            b.this.b(this.f1468a);
+            b.this.b(this.f1420a);
         }
     }
 
@@ -95,20 +95,20 @@ public final class b {
     public class d implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ PLAuthenticationResultCallback f1469a;
+        public final /* synthetic */ PLAuthenticationResultCallback f1421a;
 
         public d(PLAuthenticationResultCallback pLAuthenticationResultCallback) {
-            this.f1469a = pLAuthenticationResultCallback;
+            this.f1421a = pLAuthenticationResultCallback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             if (b.this.h == e.Authorized) {
-                this.f1469a.onAuthorizationResult(1);
+                this.f1421a.onAuthorizationResult(1);
             } else if (b.this.h == e.UnAuthorized) {
-                this.f1469a.onAuthorizationResult(0);
+                this.f1421a.onAuthorizationResult(0);
             } else {
-                this.f1469a.onAuthorizationResult(-1);
+                this.f1421a.onAuthorizationResult(-1);
             }
         }
     }
@@ -125,11 +125,11 @@ public final class b {
         public int d = 3600;
 
         /* renamed from: a  reason: collision with root package name */
-        public final ArrayList<String> f1472a = new ArrayList<>();
+        public final ArrayList<String> f1424a = new ArrayList<>();
         public final HashMap<String, ArrayList<String>> b = new HashMap<>();
 
         /* renamed from: c  reason: collision with root package name */
-        public final HashMap<String, Integer[]> f1473c = new HashMap<>();
+        public final HashMap<String, Integer[]> f1425c = new HashMap<>();
     }
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/n/b$g.class */
@@ -142,7 +142,7 @@ public final class b {
     }
 
     public static b a() {
-        return f1465c;
+        return f1417c;
     }
 
     public static String a(Context context, String str) throws Exception {
@@ -172,14 +172,14 @@ public final class b {
         URI uri = new URI(str);
         String host = uri.getHost();
         if (DnsManager.validIP(host) && (a2 = h.a(uri)) != null && !a2.isEmpty()) {
-            int length = a.a.a.a.a.n.c.f1474a.length;
+            int length = a.a.a.a.a.n.c.f1426a.length;
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
                     break;
                 }
-                String str2 = a2.get(a.a.a.a.a.n.c.f1474a[i2]);
+                String str2 = a2.get(a.a.a.a.a.n.c.f1426a[i2]);
                 if (h.c(str2)) {
                     return str2;
                 }
@@ -193,18 +193,18 @@ public final class b {
         String str2;
         URI uri = new URI(str);
         String host = uri.getHost();
-        a.a.a.a.a.k.e.c.a().a(host, aVar.f1463a);
+        a.a.a.a.a.k.e.c.a().a(host, aVar.f1415a);
         c.e a2 = a.a.a.a.a.k.e.c.a().a(host, 0);
-        if (a2 == null || (str2 = a2.f1434a) == null || str2.equals("")) {
-            a.a.a.a.a.e.e.f1361c.b("SpeedMeasure failed", "" + a2);
+        if (a2 == null || (str2 = a2.f1386a) == null || str2.equals("")) {
+            a.a.a.a.a.e.e.f1313c.b("SpeedMeasure failed", "" + a2);
             return str;
         }
-        a.a.a.a.a.e.e.f1361c.b("SpeedMeasure", "the fasetest server " + host + " " + a2.f1434a + " time " + a2.f1435c);
+        a.a.a.a.a.e.e.f1313c.b("SpeedMeasure", "the fasetest server " + host + " " + a2.f1386a + " time " + a2.f1387c);
         String str3 = "";
         if (uri.getPort() > 0) {
             str3 = ":" + Integer.toString(uri.getPort());
         }
-        return String.format("rtmp://%s%s%s?%s&domain=%s", a2.f1434a, str3, uri.getPath(), uri.getQuery(), host);
+        return String.format("rtmp://%s%s%s?%s&domain=%s", a2.f1386a, str3, uri.getPath(), uri.getQuery(), host);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0038 A[RETURN] */
@@ -228,7 +228,7 @@ public final class b {
         b = true;
         a().b(context);
         a().e();
-        String[] strArr = a.a.a.a.a.e.d.f1358a;
+        String[] strArr = a.a.a.a.a.e.d.f1310a;
         int length = strArr.length;
         int i = 0;
         while (true) {
@@ -274,7 +274,7 @@ public final class b {
     }
 
     public final void a(boolean z) {
-        f1464a = z;
+        f1416a = z;
     }
 
     public String b(String str) throws URISyntaxException, a.a.a.a.a.f.d {
@@ -309,7 +309,7 @@ public final class b {
     public final void b(PLAuthenticationResultCallback pLAuthenticationResultCallback) {
         String c2 = c(this.g);
         if ("".equals(c2)) {
-            a.a.a.a.a.e.e.f1361c.e("Zeus", "Invalid package name!");
+            a.a.a.a.a.e.e.f1313c.e("Zeus", "Invalid package name!");
             CountDownLatch countDownLatch = this.j;
             if (countDownLatch != null) {
                 countDownLatch.countDown();
@@ -326,7 +326,7 @@ public final class b {
                 this.h = e.Authorized;
             } else if (responseCode == 401) {
                 this.h = e.UnAuthorized;
-                a.a.a.a.a.e.e.f1361c.e("Zeus", "鉴权失败! ! ! 请参阅 https://developer.qiniu.com/pili/sdk/3716/PLDroidMediaStreaming-preparation-before-development#2 前置条件说明并按照流程获取相应鉴权！");
+                a.a.a.a.a.e.e.f1313c.e("Zeus", "鉴权失败! ! ! 请参阅 https://developer.qiniu.com/pili/sdk/3716/PLDroidMediaStreaming-preparation-before-development#2 前置条件说明并按照流程获取相应鉴权！");
             } else {
                 this.h = e.UnCheck;
             }
@@ -350,7 +350,7 @@ public final class b {
         boolean z = false;
         if (!h()) {
             if (this.h == e.UnAuthorized) {
-                a.a.a.a.a.e.e.f1361c.e("Zeus", "鉴权失败! ! ! 请参阅 https://developer.qiniu.com/pili/sdk/3716/PLDroidMediaStreaming-preparation-before-development#2 前置条件说明并按照流程获取相应鉴权！");
+                a.a.a.a.a.e.e.f1313c.e("Zeus", "鉴权失败! ! ! 请参阅 https://developer.qiniu.com/pili/sdk/3716/PLDroidMediaStreaming-preparation-before-development#2 前置条件说明并按照流程获取相应鉴权！");
             }
             if (this.h != e.UnAuthorized) {
                 z = true;
@@ -362,7 +362,7 @@ public final class b {
         try {
             this.j.await();
         } catch (InterruptedException e2) {
-            a.a.a.a.a.e.e.f1361c.e("Zeus", "Authorize failed : " + e2.getMessage());
+            a.a.a.a.a.e.e.f1313c.e("Zeus", "Authorize failed : " + e2.getMessage());
         }
         this.j = null;
         boolean z2 = false;
@@ -383,7 +383,7 @@ public final class b {
         }
         try {
             f d2 = d(a(context, "pili_config.json"));
-            this.f.a(d2.f1472a, d2.b, d2.f1473c, d2.d);
+            this.f.a(d2.f1424a, d2.b, d2.f1425c, d2.d);
         } catch (Exception e2) {
         }
         d();
@@ -409,7 +409,7 @@ public final class b {
                 if (i2 >= optJSONArray.length()) {
                     break;
                 }
-                fVar.f1472a.add(optJSONArray.getString(i2));
+                fVar.f1424a.add(optJSONArray.getString(i2));
                 i = i2 + 1;
             }
         }
@@ -446,7 +446,7 @@ public final class b {
                     int optInt = optJSONObject3.optInt("publishQuic", 2);
                     JSONArray optJSONArray2 = optJSONObject3.optJSONArray("quicPort");
                     if (optJSONArray2 != null && optJSONArray2.length() == 2) {
-                        fVar.f1473c.put(next2, new Integer[]{Integer.valueOf(optInt), Integer.valueOf(h.d(optJSONArray2.optInt(0), optJSONArray2.optInt(1)))});
+                        fVar.f1425c.put(next2, new Integer[]{Integer.valueOf(optInt), Integer.valueOf(h.d(optJSONArray2.optInt(0), optJSONArray2.optInt(1)))});
                     }
                 }
             }
@@ -524,7 +524,7 @@ public final class b {
         if (h()) {
             a((PLAuthenticationResultCallback) null);
         } else if (this.h == e.UnAuthorized) {
-            a.a.a.a.a.e.e.f1361c.e("Zeus", "鉴权失败! ! ! 请参阅 https://developer.qiniu.com/pili/sdk/3716/PLDroidMediaStreaming-preparation-before-development#2 前置条件说明并按照流程获取相应鉴权！");
+            a.a.a.a.a.e.e.f1313c.e("Zeus", "鉴权失败! ! ! 请参阅 https://developer.qiniu.com/pili/sdk/3716/PLDroidMediaStreaming-preparation-before-development#2 前置条件说明并按照流程获取相应鉴权！");
         }
     }
 
@@ -548,7 +548,7 @@ public final class b {
         try {
             f d2 = d(a2);
             e(a2);
-            this.f.a(d2.f1472a, d2.b, d2.f1473c, d2.d);
+            this.f.a(d2.f1424a, d2.b, d2.f1425c, d2.d);
             d();
         } catch (JSONException e2) {
             e2.printStackTrace();

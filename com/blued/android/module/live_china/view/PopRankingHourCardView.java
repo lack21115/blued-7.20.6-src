@@ -41,13 +41,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRankingHourCardView.class */
 public final class PopRankingHourCardView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f15126a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AttributeSet f15127c;
+    private final AttributeSet c;
     private final int d;
     private BaseFragment e;
     private IRequestHost f;
@@ -71,13 +67,9 @@ public final class PopRankingHourCardView extends FrameLayout {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopRankingHourCardView$HourPagerAdapter.class */
     public static final class HourPagerAdapter extends PagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f15128a;
+        private final Context a;
         private final BaseFragment b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final IRequestHost f15129c;
+        private final IRequestHost c;
         private boolean d;
         private int e;
         private final Map<String, View> f;
@@ -86,33 +78,30 @@ public final class PopRankingHourCardView extends FrameLayout {
             Intrinsics.e(mContext, "mContext");
             Intrinsics.e(fragment, "fragment");
             Intrinsics.e(requestHost, "requestHost");
-            this.f15128a = mContext;
+            this.a = mContext;
             this.b = fragment;
-            this.f15129c = requestHost;
+            this.c = requestHost;
             this.d = z;
             this.e = i;
             this.f = new HashMap();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             container.removeView((View) object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.e;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             View view = this.f.get(String.valueOf(i));
             PopRankingHourPreviousView popRankingHourPreviousView = view;
             if (view == null) {
-                popRankingHourPreviousView = i != 0 ? i != 1 ? i != 2 ? new PopRankingHourPreviousView(this.f15128a, this.b, this.f15129c) : new PopRankingHourPreviousView(this.f15128a, this.b, this.f15129c) : new PopRankingHourTopPotentialRoadView(this.f15128a, this.b, this.f15129c, 2, this.d) : new PopRankingHourTopPotentialRoadView(this.f15128a, this.b, this.f15129c, 1, this.d);
+                popRankingHourPreviousView = i != 0 ? i != 1 ? i != 2 ? new PopRankingHourPreviousView(this.a, this.b, this.c) : new PopRankingHourPreviousView(this.a, this.b, this.c) : new PopRankingHourTopPotentialRoadView(this.a, this.b, this.c, 2, this.d) : new PopRankingHourTopPotentialRoadView(this.a, this.b, this.c, 1, this.d);
                 this.f.put(String.valueOf(i), popRankingHourPreviousView);
             }
             if (popRankingHourPreviousView.getParent() != null) {
@@ -126,7 +115,6 @@ public final class PopRankingHourCardView extends FrameLayout {
             return popRankingHourPreviousView;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object object) {
             Intrinsics.e(view, "view");
             Intrinsics.e(object, "object");
@@ -151,7 +139,7 @@ public final class PopRankingHourCardView extends FrameLayout {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
         this.b = mContext;
-        this.f15127c = attributeSet;
+        this.c = attributeSet;
         this.d = i;
         this.g = true;
         this.h = 3;
@@ -178,7 +166,7 @@ public final class PopRankingHourCardView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(PopRankingHourCardView this$0, int i) {
         Intrinsics.e(this$0, "this$0");
-        CustomViewPager customViewPager = this$0.getVb().f12495c;
+        CustomViewPager customViewPager = this$0.getVb().c;
         int i2 = i;
         if (i >= this$0.h) {
             i2 = 0;
@@ -189,7 +177,7 @@ public final class PopRankingHourCardView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(PopRankingHourCardView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.getVb().f12495c.setCurrentItem(0);
+        this$0.getVb().c.setCurrentItem(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -200,23 +188,23 @@ public final class PopRankingHourCardView extends FrameLayout {
         Intrinsics.e(requestHost, "$requestHost");
         EventTrackLive.a(LiveProtos.Event.LIVE_HOUR_LIST_LAST_HOUR_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = new PopRankingHourCardView(this$0.b, null, 0, 6, null);
+        objectRef.a = new PopRankingHourCardView(this$0.b, null, 0, 6, null);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
         int a2 = DensityUtils.a(this$0.getContext(), 5.0f);
         layoutParams.leftMargin = a2;
         layoutParams.rightMargin = a2;
-        ((PopRankingHourCardView) objectRef.f42545a).setLayoutParams(layoutParams);
-        ((PopRankingHourCardView) objectRef.f42545a).setTranslationX(this$0.getWidth());
+        ((PopRankingHourCardView) objectRef.a).setLayoutParams(layoutParams);
+        ((PopRankingHourCardView) objectRef.a).setTranslationX(this$0.getWidth());
         ViewParent parent = this$0.getParent();
         if (parent == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup");
         }
-        ((ViewGroup) parent).addView((View) objectRef.f42545a);
-        ((PopRankingHourCardView) objectRef.f42545a).a(fragment, requestHost, false, this$0.getVb().f12495c.getCurrentItem());
-        ((PopRankingHourCardView) objectRef.f42545a).post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$PopRankingHourCardView$uS0NtgFqfrQAtk8TP1yeLqWK-KQ
+        ((ViewGroup) parent).addView((View) objectRef.a);
+        ((PopRankingHourCardView) objectRef.a).a(fragment, requestHost, false, this$0.getVb().c.getCurrentItem());
+        ((PopRankingHourCardView) objectRef.a).post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$PopRankingHourCardView$uS0NtgFqfrQAtk8TP1yeLqWK-KQ
             @Override // java.lang.Runnable
             public final void run() {
-                PopRankingHourCardView.m4268setInfo$lambda5$lambda4(Ref.ObjectRef.this);
+                PopRankingHourCardView.m10346setInfo$lambda5$lambda4(Ref.ObjectRef.this);
             }
         });
     }
@@ -235,7 +223,7 @@ public final class PopRankingHourCardView extends FrameLayout {
                 if (parent == null) {
                     throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup");
                 }
-                ((ViewGroup) parent).removeView(view.f42545a);
+                ((ViewGroup) parent).removeView(view.a);
             }
         });
         ofFloat.start();
@@ -244,13 +232,13 @@ public final class PopRankingHourCardView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(PopRankingHourCardView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.getVb().f12495c.setCurrentItem(1);
+        this$0.getVb().c.setCurrentItem(1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(PopRankingHourCardView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.getVb().f12495c.setCurrentItem(2);
+        this$0.getVb().c.setCurrentItem(2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -260,9 +248,9 @@ public final class PopRankingHourCardView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setInfo$lambda-5$lambda-4  reason: not valid java name */
-    public static final void m4268setInfo$lambda5$lambda4(Ref.ObjectRef previous) {
+    public static final void m10346setInfo$lambda5$lambda4(Ref.ObjectRef previous) {
         Intrinsics.e(previous, "$previous");
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(previous.f42545a, "translationX", ((PopRankingHourCardView) previous.f42545a).getTranslationX(), 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(previous.a, "translationX", ((PopRankingHourCardView) previous.a).getTranslationX(), 0.0f);
         ofFloat.setDuration(700L);
         ofFloat.setInterpolator(new DecelerateInterpolator(2.5f));
         ofFloat.start();
@@ -281,13 +269,13 @@ public final class PopRankingHourCardView extends FrameLayout {
             getVb().h.setTextColor(color);
             getVb().f.setTextColor(color);
             getVb().g.setVisibility(8);
-            ViewGroup.LayoutParams layoutParams = getVb().f12494a.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = getVb().a.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.widget.RelativeLayout.LayoutParams");
             }
             RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) layoutParams;
             layoutParams2.addRule(14, -1);
-            getVb().f12494a.setLayoutParams(layoutParams2);
+            getVb().a.setLayoutParams(layoutParams2);
             getVb().d.setVisibility(8);
             this.h = 2;
         }
@@ -301,17 +289,14 @@ public final class PopRankingHourCardView extends FrameLayout {
         getVb().h.setTextColor(color2);
         getVb().h.getPaint().setFakeBoldText(true);
         this.i = new HourPagerAdapter(this.b, fragment, requestHost, z, this.h);
-        getVb().f12495c.setAdapter(this.i);
-        getVb().f12495c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.view.PopRankingHourCardView$setInfo$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
+        getVb().c.setAdapter(this.i);
+        getVb().c.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.view.PopRankingHourCardView$setInfo$1
             public void onPageScrollStateChanged(int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i2, float f, int i3) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i2) {
                 TextView textView;
                 PopWindowRankingHourCardBinding vb;
@@ -404,7 +389,7 @@ public final class PopRankingHourCardView extends FrameLayout {
             }
         });
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = this;
+        objectRef.a = this;
         getVb().b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$PopRankingHourCardView$JQSqj0D2uJkvfYFfidyiwL2ybiE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -414,7 +399,7 @@ public final class PopRankingHourCardView extends FrameLayout {
     }
 
     public final AttributeSet getAttrs() {
-        return this.f15127c;
+        return this.c;
     }
 
     public final int getDefStyleAttr() {

@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyMoreMenuLayoutBinding.class */
 public final class ViewYyMoreMenuLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16942a;
+    public final ImageView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f16943c;
+    public final LinearLayout c;
     public final RecyclerView d;
     public final TextView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class ViewYyMoreMenuLayoutBinding implements ViewBinding {
 
     private ViewYyMoreMenuLayoutBinding(LinearLayout linearLayout, ImageView imageView, LinearLayout linearLayout2, LinearLayout linearLayout3, RecyclerView recyclerView, TextView textView, TextView textView2) {
         this.g = linearLayout;
-        this.f16942a = imageView;
+        this.a = imageView;
         this.b = linearLayout2;
-        this.f16943c = linearLayout3;
+        this.c = linearLayout3;
         this.d = recyclerView;
         this.e = textView;
         this.f = textView2;
@@ -50,13 +46,13 @@ public final class ViewYyMoreMenuLayoutBinding implements ViewBinding {
             if (linearLayout != null) {
                 LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_shutdown);
                 if (linearLayout2 != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv);
-                    if (recyclerView != null) {
+                    RecyclerView findViewById = view.findViewById(R.id.rcv);
+                    if (findViewById != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_shutdown_name);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_title);
                             if (textView2 != null) {
-                                return new ViewYyMoreMenuLayoutBinding((LinearLayout) view, imageView, linearLayout, linearLayout2, recyclerView, textView, textView2);
+                                return new ViewYyMoreMenuLayoutBinding((LinearLayout) view, imageView, linearLayout, linearLayout2, findViewById, textView, textView2);
                             }
                             str = "tvTitle";
                         } else {
@@ -77,7 +73,6 @@ public final class ViewYyMoreMenuLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.g;

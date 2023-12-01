@@ -1,6 +1,5 @@
 package com.google.common.primitives;
 
-import android.widget.ExpandableListView;
 import com.google.common.base.Preconditions;
 import java.math.BigInteger;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
@@ -21,7 +20,7 @@ public final class UnsignedInteger extends Number implements Comparable<Unsigned
     }
 
     public static UnsignedInteger valueOf(long j) {
-        Preconditions.checkArgument((ExpandableListView.PACKED_POSITION_VALUE_NULL & j) == j, "value (%s) is outside the range for an unsigned integer value", j);
+        Preconditions.checkArgument((4294967295L & j) == j, "value (%s) is outside the range for an unsigned integer value", j);
         return fromIntBits((int) j);
     }
 

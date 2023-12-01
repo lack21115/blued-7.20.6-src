@@ -7,7 +7,7 @@ import java.util.List;
 public class MusicChoosedObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MusicChoosedObserver f20428a = new MusicChoosedObserver();
+    private static MusicChoosedObserver f6822a = new MusicChoosedObserver();
     private List<IMusicDownloadObserver> b = new ArrayList();
 
     /* loaded from: source-7206380-dex2jar.jar:com/blued/community/ui/video/observer/MusicChoosedObserver$IMusicDownloadObserver.class */
@@ -23,7 +23,7 @@ public class MusicChoosedObserver {
     }
 
     public static MusicChoosedObserver a() {
-        return f20428a;
+        return f6822a;
     }
 
     public void a(String str, String str2) {

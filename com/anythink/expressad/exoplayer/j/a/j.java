@@ -6,25 +6,25 @@ import android.net.Uri;
 final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7567a = "exo_";
+    private static final String f4728a = "exo_";
     private static final String b = "exo_redir";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7568c = "exo_len";
+    private static final String f4729c = "exo_len";
 
     private j() {
     }
 
     public static long a(i iVar) {
-        return iVar.a(f7568c);
+        return iVar.a(f4729c);
     }
 
     private static void a(k kVar) {
-        kVar.a(f7568c);
+        kVar.a(f4729c);
     }
 
     public static void a(k kVar, long j) {
-        kVar.a(f7568c, j);
+        kVar.a(f4729c, j);
     }
 
     public static void a(k kVar, Uri uri) {

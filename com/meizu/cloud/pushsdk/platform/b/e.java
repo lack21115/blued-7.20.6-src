@@ -3,6 +3,7 @@ package com.meizu.cloud.pushsdk.platform.b;
 import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
+import com.igexin.sdk.PushConsts;
 import com.meizu.cloud.pushinternal.DebugLogger;
 import com.meizu.cloud.pushsdk.constants.PushConstants;
 import com.meizu.cloud.pushsdk.platform.PlatformMessageSender;
@@ -41,7 +42,7 @@ public class e extends c<SubTagsStatus> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     public void a(SubTagsStatus subTagsStatus) {
-        PlatformMessageSender.a(this.f24187a, !TextUtils.isEmpty(this.d) ? this.d : this.f24187a.getPackageName(), subTagsStatus);
+        PlatformMessageSender.a(this.f10572a, !TextUtils.isEmpty(this.d) ? this.d : this.f10572a.getPackageName(), subTagsStatus);
     }
 
     public void a(String str) {
@@ -50,15 +51,15 @@ public class e extends c<SubTagsStatus> {
 
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     protected boolean a() {
-        return (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f24188c) || TextUtils.isEmpty(this.h)) ? false : true;
+        return (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f10573c) || TextUtils.isEmpty(this.h)) ? false : true;
     }
 
     @Override // com.meizu.cloud.pushsdk.platform.b.c
     protected Intent c() {
         Intent intent = new Intent();
         intent.putExtra("app_id", this.b);
-        intent.putExtra("app_key", this.f24188c);
-        intent.putExtra("strategy_package_name", this.f24187a.getPackageName());
+        intent.putExtra("app_key", this.f10573c);
+        intent.putExtra("strategy_package_name", this.f10572a.getPackageName());
         intent.putExtra(PushConstants.REGISTER_STATUS_PUSH_ID, this.h);
         intent.putExtra("strategy_type", g());
         intent.putExtra("strategy_child_type", this.i);
@@ -81,10 +82,10 @@ public class e extends c<SubTagsStatus> {
     public SubTagsStatus b() {
         String str;
         SubTagsStatus subTagsStatus = new SubTagsStatus();
-        subTagsStatus.setCode("20001");
+        subTagsStatus.setCode(PushConsts.SEND_MESSAGE_ERROR_GENERAL);
         if (TextUtils.isEmpty(this.b)) {
             str = "appId not empty";
-        } else if (TextUtils.isEmpty(this.f24188c)) {
+        } else if (TextUtils.isEmpty(this.f10573c)) {
             str = "appKey not empty";
         } else if (!TextUtils.isEmpty(this.h)) {
             return subTagsStatus;
@@ -104,7 +105,7 @@ public class e extends c<SubTagsStatus> {
         StringBuilder sb;
         SubTagsStatus subTagsStatus2 = new SubTagsStatus();
         int i = this.i;
-        com.meizu.cloud.pushsdk.c.a.c e = i != 0 ? i != 1 ? i != 2 ? i != 3 ? null : this.e.e(this.b, this.f24188c, this.h) : this.e.d(this.b, this.f24188c, this.h) : this.e.b(this.b, this.f24188c, this.h, this.j) : this.e.a(this.b, this.f24188c, this.h, this.j);
+        com.meizu.cloud.pushsdk.c.a.c e = i != 0 ? i != 1 ? i != 2 ? i != 3 ? null : this.e.e(this.b, this.f10573c, this.h) : this.e.d(this.b, this.f10573c, this.h) : this.e.b(this.b, this.f10573c, this.h, this.j) : this.e.a(this.b, this.f10573c, this.h, this.j);
         if (e == null) {
             DebugLogger.e("Strategy", "network anResponse is null");
             return null;

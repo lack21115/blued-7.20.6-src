@@ -24,17 +24,17 @@ public class c extends com.meizu.cloud.pushsdk.notification.a {
         if ((!MzSystemUtils.isInternational() || MzSystemUtils.isMeizuAndFlyme()) && (appIconSetting = messageV3.getAppIconSetting()) != null) {
             if (appIconSetting.isDefaultLargeIcon()) {
                 if (this.b != null && this.b.getLargeIcon() != 0) {
-                    a2 = BitmapFactory.decodeResource(this.f24165a.getResources(), this.b.getLargeIcon());
+                    a2 = BitmapFactory.decodeResource(this.f10550a.getResources(), this.b.getLargeIcon());
                     str = "set largeIcon by resource id";
                 } else if (this.b == null || this.b.getAppLargeIcon() == null) {
-                    a2 = a(this.f24165a, messageV3.getUploadDataPackageName());
+                    a2 = a(this.f10550a, messageV3.getUploadDataPackageName());
                     str = "set largeIcon by package default large icon";
                 } else {
                     a2 = this.b.getAppLargeIcon();
                     str = "set largeIcon by bitmap provided by user setting";
                 }
                 DebugLogger.i("AbstractPushNotification", str);
-            } else if (Thread.currentThread() == this.f24165a.getMainLooper().getThread()) {
+            } else if (Thread.currentThread() == this.f10550a.getMainLooper().getThread()) {
                 return;
             } else {
                 Bitmap a3 = a(appIconSetting.getLargeIconUrl());
@@ -43,7 +43,7 @@ public class c extends com.meizu.cloud.pushsdk.notification.a {
                     builder.setLargeIcon(a3);
                     return;
                 }
-                a2 = a(this.f24165a, messageV3.getUploadDataPackageName());
+                a2 = a(this.f10550a, messageV3.getUploadDataPackageName());
             }
             builder.setLargeIcon(a2);
         }

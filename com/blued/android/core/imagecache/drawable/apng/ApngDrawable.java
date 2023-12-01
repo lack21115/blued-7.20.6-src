@@ -22,13 +22,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/drawable/apng/ApngDrawable.class */
 public class ApngDrawable extends Drawable implements Animatable {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected final Uri f9626a;
+    protected final Uri a;
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f9627c;
+    int c;
     int d;
     ApngInvalidationHandler i;
     Bitmap j;
@@ -47,30 +43,28 @@ public class ApngDrawable extends Drawable implements Animatable {
     /* renamed from: com.blued.android.core.imagecache.drawable.apng.ApngDrawable$5  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/drawable/apng/ApngDrawable$5.class */
     public static /* synthetic */ class AnonymousClass5 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9633a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f9633a = iArr;
+            a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER_CROP.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9633a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 2;
+                a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9633a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 3;
+                a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9633a[ImageView.ScaleType.FIT_XY.ordinal()] = 4;
+                a[ImageView.ScaleType.FIT_XY.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -82,11 +76,11 @@ public class ApngDrawable extends Drawable implements Animatable {
         this.k = paint;
         paint.setAntiAlias(true);
         this.b = RecyclingUtils.a();
-        this.f9626a = uri;
+        this.a = uri;
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(this.f9626a.getPath(), options);
-        this.f9627c = options.outWidth;
+        BitmapFactory.decodeFile(this.a.getPath(), options);
+        this.c = options.outWidth;
         this.d = options.outHeight;
         this.i = new ApngInvalidationHandler(this);
     }
@@ -101,10 +95,10 @@ public class ApngDrawable extends Drawable implements Animatable {
         float f7;
         int width = canvas.getWidth();
         float f8 = width;
-        float f9 = f8 / this.f9627c;
+        float f9 = f8 / this.c;
         float height = canvas.getHeight();
         float f10 = height / this.d;
-        int i = AnonymousClass5.f9633a[this.l.ordinal()];
+        int i = AnonymousClass5.a[this.l.ordinal()];
         float f11 = 0.0f;
         if (i != 1) {
             if (i != 2 && i != 3) {
@@ -113,7 +107,7 @@ public class ApngDrawable extends Drawable implements Animatable {
                 f7 = f11;
                 f3 = height;
             } else if (f9 > f10) {
-                f = this.f9627c * f10;
+                f = this.c * f10;
                 f2 = (f8 - f) / 2.0f;
                 float f12 = f2;
                 f5 = f;
@@ -137,7 +131,7 @@ public class ApngDrawable extends Drawable implements Animatable {
             f6 = f132;
             f7 = 0.0f;
         } else {
-            f = this.f9627c * f10;
+            f = this.c * f10;
             f2 = 0.0f - ((f - f8) / 2.0f);
             float f122 = f2;
             f5 = f;
@@ -171,7 +165,7 @@ public class ApngDrawable extends Drawable implements Animatable {
     }
 
     public void a(int i) {
-        this.g.f9635c = i;
+        this.g.c = i;
     }
 
     public void a(ApngPlayListener apngPlayListener) {
@@ -215,7 +209,7 @@ public class ApngDrawable extends Drawable implements Animatable {
     public boolean h() {
         int i = this.p + 1;
         this.p = i;
-        if (i < this.g.f9635c || this.g.f9635c == 0) {
+        if (i < this.g.c || this.g.c == 0) {
             this.i.post(new Runnable() { // from class: com.blued.android.core.imagecache.drawable.apng.ApngDrawable.1
                 @Override // java.lang.Runnable
                 public void run() {
@@ -238,14 +232,14 @@ public class ApngDrawable extends Drawable implements Animatable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public String i() {
-        Uri uri = this.f9626a;
+        Uri uri = this.a;
         if (uri == null) {
             return null;
         }
         try {
             File file = new File(this.b, uri.getLastPathSegment());
             if (!file.exists()) {
-                AppMethods.a(this.f9626a.getPath(), file.getPath(), false);
+                AppMethods.a(this.a.getPath(), file.getPath(), false);
             }
             return file.getPath();
         } catch (Exception e) {
@@ -281,7 +275,7 @@ public class ApngDrawable extends Drawable implements Animatable {
             scheduledThreadPoolExecutor.shutdownNow();
         }
         this.f = new ScheduledThreadPoolExecutor(1, new ThreadPoolExecutor.DiscardPolicy());
-        if (!this.g.f9634a) {
+        if (!this.g.a) {
             this.f.execute(new Runnable() { // from class: com.blued.android.core.imagecache.drawable.apng.ApngDrawable.3
                 @Override // java.lang.Runnable
                 public void run() {
@@ -296,7 +290,7 @@ public class ApngDrawable extends Drawable implements Animatable {
                 ApngDrawable.this.i.post(new Runnable() { // from class: com.blued.android.core.imagecache.drawable.apng.ApngDrawable.4.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (!ApngDrawable.this.g.f9634a) {
+                        if (!ApngDrawable.this.g.a) {
                             ApngDrawable.this.stop();
                             return;
                         }

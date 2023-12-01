@@ -354,6 +354,7 @@ public final class InternalChannelz {
             private long lastCallStartedNanos;
             public List<InternalInstrumented<SocketStats>> listenSockets = new ArrayList();
 
+            /* JADX WARN: Multi-variable type inference failed */
             public Builder addListenSockets(List<InternalInstrumented<SocketStats>> list) {
                 Preconditions.checkNotNull(list, "listenSockets");
                 for (InternalInstrumented<SocketStats> internalInstrumented : list) {
@@ -861,16 +862,16 @@ public final class InternalChannelz {
 
     @Nullable
     public InternalInstrumented<ChannelStats> getChannel(long j) {
-        return this.rootChannels.get(Long.valueOf(j));
+        return (InternalInstrumented) this.rootChannels.get(Long.valueOf(j));
     }
 
     public InternalInstrumented<ChannelStats> getRootChannel(long j) {
-        return this.rootChannels.get(Long.valueOf(j));
+        return (InternalInstrumented) this.rootChannels.get(Long.valueOf(j));
     }
 
     public RootChannelList getRootChannels(long j, int i) {
         ArrayList arrayList = new ArrayList();
-        Iterator<InternalInstrumented<ChannelStats>> it = this.rootChannels.tailMap((ConcurrentNavigableMap<Long, InternalInstrumented<ChannelStats>>) Long.valueOf(j)).values().iterator();
+        Iterator it = this.rootChannels.tailMap((ConcurrentNavigableMap<Long, InternalInstrumented<ChannelStats>>) Long.valueOf(j)).values().iterator();
         while (it.hasNext() && arrayList.size() < i) {
             arrayList.add(it.next());
         }
@@ -884,7 +885,7 @@ public final class InternalChannelz {
             return null;
         }
         ArrayList arrayList = new ArrayList(i);
-        Iterator it = serverSocketMap.tailMap((Object) Long.valueOf(j2)).values().iterator();
+        Iterator it = serverSocketMap.tailMap((ServerSocketMap) Long.valueOf(j2)).values().iterator();
         while (arrayList.size() < i && it.hasNext()) {
             arrayList.add(it.next());
         }
@@ -893,7 +894,7 @@ public final class InternalChannelz {
 
     public ServerList getServers(long j, int i) {
         ArrayList arrayList = new ArrayList(i);
-        Iterator<InternalInstrumented<ServerStats>> it = this.servers.tailMap((ConcurrentNavigableMap<Long, InternalInstrumented<ServerStats>>) Long.valueOf(j)).values().iterator();
+        Iterator it = this.servers.tailMap((ConcurrentNavigableMap<Long, InternalInstrumented<ServerStats>>) Long.valueOf(j)).values().iterator();
         while (it.hasNext() && arrayList.size() < i) {
             arrayList.add(it.next());
         }

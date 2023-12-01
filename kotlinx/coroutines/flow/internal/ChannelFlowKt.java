@@ -14,12 +14,12 @@ import kotlinx.coroutines.internal.ThreadContextKt;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/ChannelFlowKt.class */
 public final class ChannelFlowKt {
     public static final <T, V> Object a(CoroutineContext coroutineContext, V v, Object obj, Function2<? super V, ? super Continuation<? super T>, ? extends Object> function2, Continuation<? super T> continuation) {
-        Object a2 = ThreadContextKt.a(coroutineContext, obj);
+        Object a = ThreadContextKt.a(coroutineContext, obj);
         try {
             StackFrameContinuation stackFrameContinuation = new StackFrameContinuation(continuation, coroutineContext);
             if (function2 != null) {
                 Object invoke = ((Function2) TypeIntrinsics.b(function2, 2)).invoke(v, stackFrameContinuation);
-                ThreadContextKt.b(coroutineContext, a2);
+                ThreadContextKt.b(coroutineContext, a);
                 if (invoke == IntrinsicsKt.a()) {
                     DebugProbesKt.c(continuation);
                 }
@@ -27,7 +27,7 @@ public final class ChannelFlowKt {
             }
             throw new NullPointerException("null cannot be cast to non-null type (R, kotlin.coroutines.Continuation<T>) -> kotlin.Any?");
         } catch (Throwable th) {
-            ThreadContextKt.b(coroutineContext, a2);
+            ThreadContextKt.b(coroutineContext, a);
             throw th;
         }
     }

@@ -13,9 +13,7 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/HeadingParser.class */
 public class HeadingParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Heading f44017a;
+    private final Heading a;
     private final String b;
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/HeadingParser$Factory.class */
@@ -23,14 +21,14 @@ public class HeadingParser extends AbstractBlockParser {
         @Override // org.commonmark.parser.block.BlockParserFactory
         public BlockStart a(ParserState parserState, MatchedBlockParser matchedBlockParser) {
             CharSequence b;
-            if (parserState.f() >= Parsing.f44049a) {
+            if (parserState.f() >= Parsing.a) {
                 return BlockStart.f();
             }
             CharSequence b2 = parserState.b();
             int d = parserState.d();
-            HeadingParser c2 = HeadingParser.c(b2, d);
-            if (c2 != null) {
-                return BlockStart.a(c2).a(b2.length());
+            HeadingParser c = HeadingParser.c(b2, d);
+            if (c != null) {
+                return BlockStart.a(c).a(b2.length());
             }
             int d2 = HeadingParser.d(b2, d);
             return (d2 <= 0 || (b = matchedBlockParser.b()) == null) ? BlockStart.f() : BlockStart.a(new HeadingParser(d2, b.toString())).a(b2.length()).e();
@@ -39,31 +37,31 @@ public class HeadingParser extends AbstractBlockParser {
 
     public HeadingParser(int i, String str) {
         Heading heading = new Heading();
-        this.f44017a = heading;
+        this.a = heading;
         heading.a(i);
         this.b = str;
     }
 
-    private static boolean a(CharSequence charSequence, int i, char c2) {
-        return Parsing.a(charSequence, Parsing.a(c2, charSequence, i, charSequence.length()), charSequence.length()) >= charSequence.length();
+    private static boolean a(CharSequence charSequence, int i, char c) {
+        return Parsing.a(charSequence, Parsing.a(c, charSequence, i, charSequence.length()), charSequence.length()) >= charSequence.length();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static HeadingParser c(CharSequence charSequence, int i) {
-        int a2 = Parsing.a('#', charSequence, i, charSequence.length()) - i;
-        if (a2 == 0 || a2 > 6) {
+        int a = Parsing.a('#', charSequence, i, charSequence.length()) - i;
+        if (a == 0 || a > 6) {
             return null;
         }
-        int i2 = i + a2;
+        int i2 = i + a;
         if (i2 >= charSequence.length()) {
-            return new HeadingParser(a2, "");
+            return new HeadingParser(a, "");
         }
         char charAt = charSequence.charAt(i2);
         if (charAt == ' ' || charAt == '\t') {
             int b = Parsing.b(charSequence, charSequence.length() - 1, i2);
             int b2 = Parsing.b('#', charSequence, b, i2);
             int b3 = Parsing.b(charSequence, b2, i2);
-            return b3 != b2 ? new HeadingParser(a2, charSequence.subSequence(i2, b3 + 1).toString()) : new HeadingParser(a2, charSequence.subSequence(i2, b + 1).toString());
+            return b3 != b2 ? new HeadingParser(a, charSequence.subSequence(i2, b3 + 1).toString()) : new HeadingParser(a, charSequence.subSequence(i2, b + 1).toString());
         }
         return null;
     }
@@ -89,11 +87,11 @@ public class HeadingParser extends AbstractBlockParser {
 
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
     public void a(InlineParser inlineParser) {
-        inlineParser.parse(this.b, this.f44017a);
+        inlineParser.parse(this.b, this.a);
     }
 
     @Override // org.commonmark.parser.block.BlockParser
     public Block c() {
-        return this.f44017a;
+        return this.a;
     }
 }

@@ -8,15 +8,15 @@ import java.util.HashMap;
 public class dl {
 
     /* renamed from: a  reason: collision with root package name */
-    private Boolean f9423a;
+    private Boolean f6583a;
 
     public dl(Context context, Activity activity, Boolean bool) {
-        this.f9423a = bool;
+        this.f6583a = bool;
         a().booleanValue();
     }
 
     public Boolean a() {
-        return this.f9423a;
+        return this.f6583a;
     }
 
     protected HashMap<String, String> b() {

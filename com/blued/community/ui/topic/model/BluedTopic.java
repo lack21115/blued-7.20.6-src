@@ -84,7 +84,6 @@ public class BluedTopic extends DiscoverRecommendModel implements MultiItemEntit
         this.is_anonym = i;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

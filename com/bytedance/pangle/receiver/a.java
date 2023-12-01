@@ -9,7 +9,7 @@ import com.bytedance.pangle.d.e;
 public final class a extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public final void onReceive(final Context context, final Intent intent) {
-        if (c.a().f21466c.contains(Integer.valueOf(hashCode()))) {
+        if (c.a().f7860c.contains(Integer.valueOf(hashCode()))) {
             c.a().a(context, intent);
         } else {
             e.b(new Runnable() { // from class: com.bytedance.pangle.receiver.a.1

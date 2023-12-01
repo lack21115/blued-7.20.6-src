@@ -1,5 +1,6 @@
 package com.google.android.material.card;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -13,7 +14,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Checkable;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.cardview.widget.CardView;
-import com.google.android.material.R;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.shape.MaterialShapeUtils;
 import com.google.android.material.shape.ShapeAppearanceModel;
@@ -29,10 +29,10 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
     private boolean dragged;
     private boolean isParentCardViewDoneInitializing;
     private OnCheckedChangeListener onCheckedChangeListener;
-    private static final int[] CHECKABLE_STATE_SET = {16842911};
-    private static final int[] CHECKED_STATE_SET = {16842912};
-    private static final int[] DRAGGED_STATE_SET = {R.attr.state_dragged};
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_CardView;
+    private static final int[] CHECKABLE_STATE_SET = {R.attr.state_checkable};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
+    private static final int[] DRAGGED_STATE_SET = {com.google.android.material.R.attr.state_dragged};
+    private static final int DEF_STYLE_RES = com.google.android.material.R.style.Widget_MaterialComponents_CardView;
 
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/card/MaterialCardView$OnCheckedChangeListener.class */
     public interface OnCheckedChangeListener {
@@ -44,7 +44,7 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
     }
 
     public MaterialCardView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.materialCardViewStyle);
+        this(context, attributeSet, com.google.android.material.R.attr.materialCardViewStyle);
     }
 
     public MaterialCardView(Context context, AttributeSet attributeSet, int i) {
@@ -52,7 +52,7 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
         this.checked = false;
         this.dragged = false;
         this.isParentCardViewDoneInitializing = true;
-        TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(getContext(), attributeSet, R.styleable.MaterialCardView, i, DEF_STYLE_RES, new int[0]);
+        TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(getContext(), attributeSet, com.google.android.material.R.styleable.MaterialCardView, i, DEF_STYLE_RES, new int[0]);
         MaterialCardViewHelper materialCardViewHelper = new MaterialCardViewHelper(this, attributeSet, i, DEF_STYLE_RES);
         this.cardViewHelper = materialCardViewHelper;
         materialCardViewHelper.setCardBackgroundColor(super.getCardBackgroundColor());
@@ -168,16 +168,14 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
         return this.dragged;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this, this.cardViewHelper.getBackground());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public int[] onCreateDrawableState(int i) {
+    protected int[] onCreateDrawableState(int i) {
         int[] onCreateDrawableState = super.onCreateDrawableState(i + 3);
         if (isCheckable()) {
             mergeDrawableStates(onCreateDrawableState, CHECKABLE_STATE_SET);
@@ -191,14 +189,14 @@ public class MaterialCardView extends CardView implements Checkable, Shapeable {
         return onCreateDrawableState;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         super.onInitializeAccessibilityEvent(accessibilityEvent);
         accessibilityEvent.setClassName(ACCESSIBILITY_CLASS_NAME);
         accessibilityEvent.setChecked(isChecked());
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(ACCESSIBILITY_CLASS_NAME);

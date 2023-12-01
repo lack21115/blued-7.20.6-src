@@ -21,11 +21,11 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
     private ArrayList<ChangeInfo> m = new ArrayList<>();
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<ArrayList<RecyclerView.ViewHolder>> f3235a = new ArrayList<>();
+    ArrayList<ArrayList<RecyclerView.ViewHolder>> f3187a = new ArrayList<>();
     ArrayList<ArrayList<MoveInfo>> b = new ArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    ArrayList<ArrayList<ChangeInfo>> f3236c = new ArrayList<>();
+    ArrayList<ArrayList<ChangeInfo>> f3188c = new ArrayList<>();
     ArrayList<RecyclerView.ViewHolder> d = new ArrayList<>();
     ArrayList<RecyclerView.ViewHolder> e = new ArrayList<>();
     ArrayList<RecyclerView.ViewHolder> f = new ArrayList<>();
@@ -378,16 +378,16 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             view.setAlpha(1.0f);
             dispatchAddFinished(viewHolder);
         }
-        int size2 = this.f3236c.size();
+        int size2 = this.f3188c.size();
         while (true) {
             int i3 = size2 - 1;
             if (i3 < 0) {
                 break;
             }
-            ArrayList<ChangeInfo> arrayList = this.f3236c.get(i3);
+            ArrayList<ChangeInfo> arrayList = this.f3188c.get(i3);
             a(arrayList, viewHolder);
             if (arrayList.isEmpty()) {
-                this.f3236c.remove(i3);
+                this.f3188c.remove(i3);
             }
             size2 = i3;
         }
@@ -417,7 +417,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             }
             size3 = i4;
         }
-        int size5 = this.f3235a.size();
+        int size5 = this.f3187a.size();
         while (true) {
             int i6 = size5 - 1;
             if (i6 < 0) {
@@ -428,12 +428,12 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                 a();
                 return;
             }
-            ArrayList<RecyclerView.ViewHolder> arrayList3 = this.f3235a.get(i6);
+            ArrayList<RecyclerView.ViewHolder> arrayList3 = this.f3187a.get(i6);
             if (arrayList3.remove(viewHolder)) {
                 view.setAlpha(1.0f);
                 dispatchAddFinished(viewHolder);
                 if (arrayList3.isEmpty()) {
-                    this.f3235a.remove(i6);
+                    this.f3187a.remove(i6);
                 }
             }
             size5 = i6;
@@ -516,13 +516,13 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             }
             size5 = i6;
         }
-        int size7 = this.f3235a.size();
+        int size7 = this.f3187a.size();
         while (true) {
             int i8 = size7 - 1;
             if (i8 < 0) {
                 break;
             }
-            ArrayList<RecyclerView.ViewHolder> arrayList2 = this.f3235a.get(i8);
+            ArrayList<RecyclerView.ViewHolder> arrayList2 = this.f3187a.get(i8);
             int size8 = arrayList2.size();
             while (true) {
                 int i9 = size8 - 1;
@@ -532,14 +532,14 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                     dispatchAddFinished(viewHolder2);
                     arrayList2.remove(i9);
                     if (arrayList2.isEmpty()) {
-                        this.f3235a.remove(arrayList2);
+                        this.f3187a.remove(arrayList2);
                     }
                     size8 = i9;
                 }
             }
             size7 = i8;
         }
-        int size9 = this.f3236c.size();
+        int size9 = this.f3188c.size();
         while (true) {
             int i10 = size9 - 1;
             if (i10 < 0) {
@@ -550,14 +550,14 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                 dispatchAnimationsFinished();
                 return;
             }
-            ArrayList<ChangeInfo> arrayList3 = this.f3236c.get(i10);
+            ArrayList<ChangeInfo> arrayList3 = this.f3188c.get(i10);
             int size10 = arrayList3.size();
             while (true) {
                 int i11 = size10 - 1;
                 if (i11 >= 0) {
                     b(arrayList3.get(i11));
                     if (arrayList3.isEmpty()) {
-                        this.f3236c.remove(arrayList3);
+                        this.f3188c.remove(arrayList3);
                     }
                     size10 = i11;
                 }
@@ -568,7 +568,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public boolean isRunning() {
-        return (this.k.isEmpty() && this.m.isEmpty() && this.l.isEmpty() && this.j.isEmpty() && this.e.isEmpty() && this.f.isEmpty() && this.d.isEmpty() && this.g.isEmpty() && this.b.isEmpty() && this.f3235a.isEmpty() && this.f3236c.isEmpty()) ? false : true;
+        return (this.k.isEmpty() && this.m.isEmpty() && this.l.isEmpty() && this.j.isEmpty() && this.e.isEmpty() && this.f.isEmpty() && this.d.isEmpty() && this.g.isEmpty() && this.b.isEmpty() && this.f3187a.isEmpty() && this.f3188c.isEmpty()) ? false : true;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.ItemAnimator
@@ -609,7 +609,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             if (z3) {
                 final ArrayList<ChangeInfo> arrayList2 = new ArrayList<>();
                 arrayList2.addAll(this.m);
-                this.f3236c.add(arrayList2);
+                this.f3188c.add(arrayList2);
                 this.m.clear();
                 Runnable runnable2 = new Runnable() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.2
                     @Override // java.lang.Runnable
@@ -619,7 +619,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                             DefaultItemAnimator.this.a((ChangeInfo) it2.next());
                         }
                         arrayList2.clear();
-                        DefaultItemAnimator.this.f3236c.remove(arrayList2);
+                        DefaultItemAnimator.this.f3188c.remove(arrayList2);
                     }
                 };
                 if (z) {
@@ -631,7 +631,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
             if (z4) {
                 final ArrayList<RecyclerView.ViewHolder> arrayList3 = new ArrayList<>();
                 arrayList3.addAll(this.k);
-                this.f3235a.add(arrayList3);
+                this.f3187a.add(arrayList3);
                 this.k.clear();
                 Runnable runnable3 = new Runnable() { // from class: androidx.recyclerview.widget.DefaultItemAnimator.3
                     @Override // java.lang.Runnable
@@ -641,7 +641,7 @@ public class DefaultItemAnimator extends SimpleItemAnimator {
                             DefaultItemAnimator.this.a((RecyclerView.ViewHolder) it2.next());
                         }
                         arrayList3.clear();
-                        DefaultItemAnimator.this.f3235a.remove(arrayList3);
+                        DefaultItemAnimator.this.f3187a.remove(arrayList3);
                     }
                 };
                 if (!z && !z2 && !z3) {

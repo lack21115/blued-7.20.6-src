@@ -12,6 +12,6 @@ public final class c extends com.vivo.push.l {
 
     @Override // com.vivo.push.l
     public final void a(com.vivo.push.o oVar) {
-        com.vivo.push.util.p.a(ClientConfigManagerImpl.getInstance(this.f41105a).isDebug());
+        com.vivo.push.util.p.a(ClientConfigManagerImpl.getInstance(this.f27414a).isDebug());
     }
 }

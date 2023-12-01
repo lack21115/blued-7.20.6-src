@@ -3,7 +3,6 @@ package com.tencent.tinker.loader;
 import android.content.Intent;
 import android.os.Build;
 import android.os.SystemClock;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.loader.app.TinkerApplication;
 import com.tencent.tinker.loader.hotplug.ComponentHotplug;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
@@ -95,7 +94,7 @@ public class TinkerLoader extends AbstractTinkerLoader {
                         this.patchInfo.newVersion = str4;
                         this.patchInfo.isRemoveNewVersion = false;
                         SharePatchInfo.rewritePatchInfoFileWithLock(patchInfoFile, this.patchInfo, patchInfoLockFile);
-                        SharePatchFileUtil.deleteDir(absolutePath + BridgeUtil.SPLIT_MARK + patchVersionDirectory);
+                        SharePatchFileUtil.deleteDir(absolutePath + "/" + patchVersionDirectory);
                         if (equals) {
                             ShareTinkerInternals.killProcessExceptMain(tinkerApplication);
                             ShareIntentUtil.setIntentReturnCode(intent, -2);
@@ -111,7 +110,7 @@ public class TinkerLoader extends AbstractTinkerLoader {
                     this.patchInfo.isRemoveInterpretOATDir = false;
                     SharePatchInfo.rewritePatchInfoFileWithLock(patchInfoFile, this.patchInfo, patchInfoLockFile);
                     ShareTinkerInternals.killProcessExceptMain(tinkerApplication);
-                    SharePatchFileUtil.deleteDir((absolutePath + BridgeUtil.SPLIT_MARK + patchVersionDirectory) + BridgeUtil.SPLIT_MARK + ShareConstants.INTERPRET_DEX_OPTIMIZE_PATH);
+                    SharePatchFileUtil.deleteDir((absolutePath + "/" + patchVersionDirectory) + "/" + ShareConstants.INTERPRET_DEX_OPTIMIZE_PATH);
                     str = str4;
                     str2 = str5;
                 }
@@ -140,7 +139,7 @@ public class TinkerLoader extends AbstractTinkerLoader {
                 ShareIntentUtil.setIntentReturnCode(intent, -6);
                 return;
             }
-            String str7 = absolutePath + BridgeUtil.SPLIT_MARK + patchVersionDirectory2;
+            String str7 = absolutePath + "/" + patchVersionDirectory2;
             File file = new File(str7);
             if (!file.exists()) {
                 ShareTinkerLog.w(TAG, "tryLoadPatchFiles:onPatchVersionDirectoryNotFound", new Object[0]);
@@ -199,7 +198,7 @@ public class TinkerLoader extends AbstractTinkerLoader {
                         this.patchInfo.isRemoveNewVersion = false;
                         SharePatchInfo.rewritePatchInfoFileWithLock(patchInfoFile, this.patchInfo, patchInfoLockFile);
                         ShareTinkerInternals.killProcessExceptMain(tinkerApplication);
-                        SharePatchFileUtil.deleteDir(absolutePath + BridgeUtil.SPLIT_MARK + patchVersionDirectory2);
+                        SharePatchFileUtil.deleteDir(absolutePath + "/" + patchVersionDirectory2);
                         intent.putExtra(ShareIntentUtil.INTENT_PATCH_EXCEPTION, new TinkerRuntimeException("checkSafeModeCount fail"));
                         ShareIntentUtil.setIntentReturnCode(intent, -25);
                         ShareTinkerLog.w(TAG, "tryLoadPatchFiles:checkSafeModeCount fail, patch was deleted.", new Object[0]);

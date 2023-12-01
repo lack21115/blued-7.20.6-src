@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FmSwitchAccountBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28769a;
+    private final ConstraintLayout f15079a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28769a;
+        return this.f15079a;
     }
 }

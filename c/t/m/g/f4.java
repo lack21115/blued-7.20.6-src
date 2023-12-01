@@ -8,11 +8,11 @@ public class f4 {
     public static volatile f4 e;
 
     /* renamed from: a  reason: collision with root package name */
-    public float f3809a = 0.0f;
+    public float f3761a = 0.0f;
     public float b = 0.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    public float f3810c = 100.0f;
+    public float f3762c = 100.0f;
     public boolean d = false;
 
     public static f4 a() {
@@ -60,14 +60,14 @@ public class f4 {
             if (this.b < f4) {
                 this.b = f4;
             }
-            if (this.f3810c > f4) {
-                this.f3810c = f4;
+            if (this.f3762c > f4) {
+                this.f3762c = f4;
             }
-            this.f3809a = f4;
+            this.f3761a = f4;
             if (f4 - f4 > 2.0f) {
                 this.d = false;
             }
-            if (f4 > (this.b + this.f3810c) / 2.0f) {
+            if (f4 > (this.b + this.f3762c) / 2.0f) {
                 this.d = true;
             } else if (f4 < 22.0f) {
                 this.d = false;

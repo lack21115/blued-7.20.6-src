@@ -9,7 +9,7 @@ import android.view.View;
 public abstract class ActionMode {
 
     /* renamed from: a  reason: collision with root package name */
-    private Object f1636a;
+    private Object f1588a;
     private boolean b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/view/ActionMode$Callback.class */
@@ -34,7 +34,7 @@ public abstract class ActionMode {
     public abstract CharSequence getSubtitle();
 
     public Object getTag() {
-        return this.f1636a;
+        return this.f1588a;
     }
 
     public abstract CharSequence getTitle();
@@ -60,7 +60,7 @@ public abstract class ActionMode {
     public abstract void setSubtitle(CharSequence charSequence);
 
     public void setTag(Object obj) {
-        this.f1636a = obj;
+        this.f1588a = obj;
     }
 
     public abstract void setTitle(int i);

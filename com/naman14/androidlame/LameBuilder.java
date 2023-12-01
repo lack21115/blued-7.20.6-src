@@ -9,12 +9,12 @@ public class LameBuilder {
     public String q = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f24274a = 44100;
+    public int f10587a = 44100;
     public int b = 0;
     public int d = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f24275c = 128;
+    public int f10588c = 128;
     public float j = 1.0f;
     public int e = 5;
     public Mode k = Mode.DEFAULT;
@@ -46,7 +46,7 @@ public class LameBuilder {
     }
 
     public LameBuilder a(int i) {
-        this.f24274a = i;
+        this.f10587a = i;
         return this;
     }
 
@@ -56,7 +56,7 @@ public class LameBuilder {
     }
 
     public LameBuilder c(int i) {
-        this.f24275c = i;
+        this.f10588c = i;
         return this;
     }
 

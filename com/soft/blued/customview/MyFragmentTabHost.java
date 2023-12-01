@@ -14,7 +14,7 @@ public class MyFragmentTabHost extends FragmentTabHost {
         super(context, attributeSet);
     }
 
-    @Override // androidx.fragment.app.FragmentTabHost, android.widget.TabHost, android.view.ViewGroup, android.view.View
+    @Override // androidx.fragment.app.FragmentTabHost, android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
         try {
             super.onAttachedToWindow();

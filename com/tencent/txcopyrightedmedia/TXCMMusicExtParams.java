@@ -7,40 +7,40 @@ import com.tencent.txcopyrightedmedia.impl.utils.j;
 public class TXCMMusicExtParams {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f40016a;
+    private final j f26325a;
 
     public TXCMMusicExtParams() {
-        this.f40016a = new j();
+        this.f26325a = new j();
     }
 
     public TXCMMusicExtParams(String str) {
-        this.f40016a = new j(str);
+        this.f26325a = new j(str);
     }
 
     public String getBitrateDefinition() {
-        return this.f40016a.f40104a;
+        return this.f26325a.f26413a;
     }
 
     public int getClipType() {
-        return this.f40016a.b;
+        return this.f26325a.b;
     }
 
     public TXCMMusicExtParams setBitrateDefinition(String str) {
-        this.f40016a.f40104a = aj.e();
+        this.f26325a.f26413a = aj.e();
         return this;
     }
 
     public TXCMMusicExtParams setChorusToken(String str) {
-        this.f40016a.f40105c = str;
+        this.f26325a.f26414c = str;
         return this;
     }
 
     public TXCMMusicExtParams setClipType(int i) {
-        this.f40016a.b = i;
+        this.f26325a.b = i;
         return this;
     }
 
     public String toString() {
-        return this.f40016a.a();
+        return this.f26325a.a();
     }
 }

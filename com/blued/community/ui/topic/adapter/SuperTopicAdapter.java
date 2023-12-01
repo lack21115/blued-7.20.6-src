@@ -22,13 +22,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/topic/adapter/SuperTopicAdapter.class */
 public class SuperTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f20250a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f20251c;
+    private int c;
     private String d;
     private boolean e;
     private boolean f;
@@ -42,19 +38,19 @@ public class SuperTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewHold
     }
 
     public SuperTopicAdapter(Context context, IRequestHost iRequestHost) {
-        super(R.layout.item_super_topic, null);
+        super(R.layout.item_super_topic, (List) null);
         this.f = true;
-        this.f20250a = context;
+        this.a = context;
         this.b = iRequestHost;
-        this.f20251c = context.getResources().getDisplayMetrics().widthPixels;
+        this.c = context.getResources().getDisplayMetrics().widthPixels;
     }
 
     public SuperTopicAdapter(Context context, IRequestHost iRequestHost, int i) {
-        super(i, null);
+        super(i, (List) null);
         this.f = true;
-        this.f20250a = context;
+        this.a = context;
         this.b = iRequestHost;
-        this.f20251c = context.getResources().getDisplayMetrics().widthPixels;
+        this.c = context.getResources().getDisplayMetrics().widthPixels;
     }
 
     public void a(OnShowListener onShowListener) {
@@ -62,7 +58,7 @@ public class SuperTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewHold
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
+    @Override // 
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, BluedTopic bluedTopic) {
         int indexOf;
@@ -139,13 +135,13 @@ public class SuperTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewHold
         if (!TextUtils.isEmpty(str) && !TextUtils.isEmpty(this.d) && !bluedTopic.is_local_2b_created && str.contains(this.d)) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             while (i < str.length() && (indexOf = str.indexOf(this.d, i)) >= 0) {
-                spannableStringBuilder.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this.f20250a, R.color.nafio_a)), indexOf, this.d.length() + indexOf, 33);
+                spannableStringBuilder.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this.a, R.color.nafio_a)), indexOf, this.d.length() + indexOf, 33);
                 i = Math.max(i + 1, indexOf);
             }
             textView.setText(TopicMethods.a(bluedTopic, spannableStringBuilder));
         }
-        textView2.setText(CommonStringUtils.b(bluedTopic.ticktocks_total) + this.f20250a.getString(R.string.subject_feed_count));
-        textView4.setText(CommonStringUtils.b((long) bluedTopic.visited_total) + this.f20250a.getString(R.string.subject_visit_count));
+        textView2.setText(CommonStringUtils.b(bluedTopic.ticktocks_total) + this.a.getString(R.string.subject_feed_count));
+        textView4.setText(CommonStringUtils.b((long) bluedTopic.visited_total) + this.a.getString(R.string.subject_visit_count));
     }
 
     public void a(String str) {
@@ -160,10 +156,9 @@ public class SuperTopicAdapter extends BaseQuickAdapter<BluedTopic, BaseViewHold
         this.f = z;
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<BluedTopic> list) {
         if (list == null) {
-            super.setNewData(null);
+            super.setNewData((List) null);
         } else {
             super.setNewData(TopicMethods.a(list, this.f));
         }

@@ -16,6 +16,7 @@ import com.amap.api.trace.LBSTraceClient;
 import com.amap.api.trace.TraceListener;
 import com.amap.api.trace.TraceLocation;
 import com.amap.api.trace.TraceStatusListener;
+import com.android.internal.widget.LockPatternUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -26,9 +27,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hk.class */
 public final class hk implements LocationSource.OnLocationChangedListener, LBSTraceBase {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CoordinateConverter f5065c;
+    private CoordinateConverter c;
     private lb d;
     private lb e;
     private TraceStatusListener h;
@@ -44,9 +43,7 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
     private List<LatLng> p = new ArrayList();
     private List<LatLng> q = new ArrayList();
     private List<LatLng> r = new ArrayList();
-
-    /* renamed from: a  reason: collision with root package name */
-    int f5064a = Runtime.getRuntime().availableProcessors();
+    int a = Runtime.getRuntime().availableProcessors();
     private BlockingQueue<Runnable> s = new LinkedBlockingQueue();
     private BlockingQueue<Runnable> t = new LinkedBlockingQueue();
 
@@ -54,9 +51,7 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
     /* renamed from: com.amap.api.col.3sl.hk$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hk$a.class */
     public final class a extends lc {
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5067c;
+        private int c;
         private int d;
         private List<TraceLocation> e;
         private TraceListener h;
@@ -64,7 +59,7 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
         private String g = Cdo.a();
 
         public a(int i, List<TraceLocation> list, int i2, TraceListener traceListener) {
-            this.f5067c = i2;
+            this.c = i2;
             this.d = i;
             this.e = list;
             this.h = traceListener;
@@ -127,7 +122,7 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
         public final void runTask() {
             try {
                 hk.this.n.a(this.h);
-                int a2 = a();
+                int a = a();
                 if (this.e != null && this.e.size() >= 2) {
                     for (TraceLocation traceLocation : this.e) {
                         TraceLocation copy = traceLocation.copy();
@@ -136,7 +131,7 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
                         }
                     }
                     int size = (this.b.size() - 2) / 500;
-                    hl.a().a(this.g, this.d, size, a2);
+                    hl.a().a(this.g, this.d, size, a);
                     int i = 500;
                     int i2 = 0;
                     while (true) {
@@ -156,14 +151,14 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
                             }
                             TraceLocation remove = this.b.remove(0);
                             if (remove != null) {
-                                if (this.f5067c != 1) {
-                                    if (this.f5067c == 3) {
-                                        hk.this.f5065c.from(CoordinateConverter.CoordType.BAIDU);
-                                    } else if (this.f5067c == 2) {
-                                        hk.this.f5065c.from(CoordinateConverter.CoordType.GPS);
+                                if (this.c != 1) {
+                                    if (this.c == 3) {
+                                        hk.this.c.from(CoordinateConverter.CoordType.BAIDU);
+                                    } else if (this.c == 2) {
+                                        hk.this.c.from(CoordinateConverter.CoordType.GPS);
                                     }
-                                    hk.this.f5065c.coord(new LatLng(remove.getLatitude(), remove.getLongitude()));
-                                    LatLng convert = hk.this.f5065c.convert();
+                                    hk.this.c.coord(new LatLng(remove.getLatitude(), remove.getLongitude()));
+                                    LatLng convert = hk.this.c.convert();
                                     if (convert != null) {
                                         remove.setLatitude(convert.latitude);
                                         remove.setLongitude(convert.longitude);
@@ -272,35 +267,33 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
     /* renamed from: com.amap.api.col.3sl.hk$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hk$c.class */
     static final class c extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private TraceListener f5070a;
+        private TraceListener a;
 
         public c(Looper looper) {
             super(looper);
         }
 
         public final void a(TraceListener traceListener) {
-            this.f5070a = traceListener;
+            this.a = traceListener;
         }
 
         @Override // android.os.Handler
         public final void handleMessage(Message message) {
             Bundle data;
             try {
-                if (this.f5070a == null || (data = message.getData()) == null) {
+                if (this.a == null || (data = message.getData()) == null) {
                     return;
                 }
                 int i = data.getInt("lineID");
                 switch (message.what) {
                     case 100:
-                        this.f5070a.onTraceProcessing(i, message.arg1, (List) message.obj);
+                        this.a.onTraceProcessing(i, message.arg1, (List) message.obj);
                         return;
                     case 101:
-                        this.f5070a.onFinished(i, (List) message.obj, message.arg1, message.arg2);
+                        this.a.onFinished(i, (List) message.obj, message.arg1, message.arg2);
                         return;
                     case 102:
-                        this.f5070a.onRequestFailed(i, (String) message.obj);
+                        this.a.onRequestFailed(i, (String) message.obj);
                         return;
                     default:
                         return;
@@ -314,11 +307,11 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
     public hk(Context context) {
         Context applicationContext = context.getApplicationContext();
         this.b = applicationContext;
-        this.f5065c = new CoordinateConverter(applicationContext);
+        this.c = new CoordinateConverter(applicationContext);
         this.n = new c(Looper.getMainLooper());
         hu.a().a(this.b);
-        this.d = dv.a(this.f5064a * 2, this.s, "AMapTraceManagerProcess");
-        this.e = dv.a(this.f5064a * 2, this.t, "AMapTraceManagerRequest");
+        this.d = dv.a(this.a * 2, this.s, "AMapTraceManagerProcess");
+        this.e = dv.a(this.a * 2, this.t, "AMapTraceManagerRequest");
     }
 
     private static double a(double d, double d2, double d3, double d4) {
@@ -450,7 +443,7 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
             th.printStackTrace();
         }
         this.b = null;
-        this.f5065c = null;
+        this.c = null;
     }
 
     @Override // com.amap.api.maps.LocationSource.OnLocationChangedListener
@@ -458,11 +451,11 @@ public final class hk implements LocationSource.OnLocationChangedListener, LBSTr
         Bundle extras;
         if (this.h != null) {
             try {
-                if (System.currentTimeMillis() - this.m >= 30000 && this.h != null) {
+                if (System.currentTimeMillis() - this.m >= LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS && this.h != null) {
                     this.h.onTraceStatus(null, null, LBSTraceClient.LOCATE_TIMEOUT_ERROR);
                 }
                 this.m = System.currentTimeMillis();
-                int i = location.getExtras().getInt("errorCode");
+                int i = location.getExtras().getInt(MyLocationStyle.ERROR_CODE);
                 if (i != 0) {
                     Log.w("LBSTraceClient", "Locate failed [errorCode:\"" + i + "\"  errorInfo:" + extras.getString(MyLocationStyle.ERROR_INFO) + "\"]");
                     return;

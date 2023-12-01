@@ -1,7 +1,5 @@
 package com.amap.api.col.p0003sl;
 
-import android.provider.CalendarContract;
-
 /* renamed from: com.amap.api.col.3sl.cw  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/cw.class */
 public enum cw {
@@ -16,7 +14,7 @@ public enum cw {
     STYLE_ELEMENT_GEOMETRYFILL1("color", 3),
     STYLE_ELEMENT_GEOMETRYFILL2("textureName", 3),
     STYLE_ELEMENT_BACKGROUNDFILL("backgroundColor", 4),
-    STYLE_ELEMENT_VISIBLE(CalendarContract.CalendarColumns.VISIBLE, 5);
+    STYLE_ELEMENT_VISIBLE("visible", 5);
     
     private String m;
     private int n;

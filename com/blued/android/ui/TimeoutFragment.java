@@ -3,6 +3,7 @@ package com.blued.android.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -29,8 +30,6 @@ import com.blued.android.framework.view.shape.ShapeModel;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.das.login.LoginAndRegisterProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.igexin.push.config.c;
-import com.soft.blued.R;
 import com.soft.blued.log.track.EventTrackLoginAndRegister;
 import com.soft.blued.ui.welcome.model.ADClickCoordinate;
 import com.soft.blued.ui.welcome.model.SplashEntity;
@@ -59,9 +58,7 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
     private SensorManager R;
     private Sensor S;
     private Sensor T;
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f18739a;
+    public boolean a;
     public SplashEntity.ShowEntity j;
     private int o;
     private CountDownTimerSupport p;
@@ -79,9 +76,7 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
     private static int U = 50;
     private int n = 0;
     public ADTimeoutTask b = new ADTimeoutTask();
-
-    /* renamed from: c  reason: collision with root package name */
-    public Handler f18740c = new Handler();
+    public Handler c = new Handler();
     public boolean d = false;
     public boolean e = false;
     public boolean f = false;
@@ -89,7 +84,7 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
     float[] h = new float[3];
     float[] i = new float[3];
     boolean k = false;
-    GestureDetector l = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.ui.TimeoutFragment.11
+    GestureDetector l = new GestureDetector((Context) getActivity(), (GestureDetector.OnGestureListener) new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.ui.TimeoutFragment.11
         @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
         public boolean onDoubleTap(MotionEvent motionEvent) {
             return super.onDoubleTap(motionEvent);
@@ -127,7 +122,7 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
         @Override // java.lang.Runnable
         public void run() {
             Log.v("drb", "开机图广告_请求超时----------->");
-            TimeoutFragment.this.f18739a = true;
+            TimeoutFragment.this.a = true;
             EventTrackLoginAndRegister.c(LoginAndRegisterProtos.Event.OPEN_AD_TIMEOUT, TimeoutFragment.this.j);
             TimeoutFragment.this.g();
         }
@@ -146,17 +141,14 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
         CountDownTimerSupport countDownTimerSupport2 = new CountDownTimerSupport(i, i);
         this.p = countDownTimerSupport2;
         countDownTimerSupport2.a(new OnCountDownTimerListener() { // from class: com.blued.android.ui.TimeoutFragment.12
-            @Override // in.xiandan.countdowntimer.OnCountDownTimerListener
             public void a() {
                 Log.v("drb", "广告安全时间totalTimeoutMs：" + TimeoutFragment.this.n + "已到，关闭广告页面");
                 TimeoutFragment.this.g();
             }
 
-            @Override // in.xiandan.countdowntimer.OnCountDownTimerListener
             public void a(long j) {
             }
 
-            @Override // in.xiandan.countdowntimer.OnCountDownTimerListener
             public void b() {
             }
         });
@@ -181,30 +173,30 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
         this.o = i;
         View h = h();
         if (h != null) {
-            this.u = h.findViewById(R.id.ll_jump);
-            this.v = h.findViewById(R.id.fl_intercept);
-            this.w = h.findViewById(R.id.fl_intercept_top);
-            this.y = h.findViewById(R.id.fl_intercept_bottom);
-            this.x = h.findViewById(R.id.view_btm_bar);
-            this.z = (ShapeLinearLayout) h.findViewById(R.id.ll_jump_anim);
-            this.A = (TextView) h.findViewById(R.id.ad_jump_text);
-            this.B = (ViewGroup) h.findViewById(R.id.ll_jump_anim1);
-            this.C = (ImageView) h.findViewById(R.id.ad_anim_light1);
-            this.D = (ImageView) h.findViewById(R.id.ad_anim_hand1);
-            this.E = (CardView) h.findViewById(R.id.ad_anim_layout1);
-            this.F = (TextView) h.findViewById(R.id.ad_anim_text1);
-            this.G = h.findViewById(R.id.ad_jump_icon);
-            this.H = h.findViewById(R.id.ll_jump_anim3);
-            this.I = (ImageView) h.findViewById(R.id.ad_anim_slide_image);
-            this.J = (TextView) h.findViewById(R.id.ad_anim_slide_text1);
-            this.K = (TextView) h.findViewById(R.id.ad_anim_slide_text2);
-            this.L = h.findViewById(R.id.ll_jump_anim4);
-            this.M = (ImageView) h.findViewById(R.id.ad_anim_shake_image);
-            this.N = (TextView) h.findViewById(R.id.ad_anim_shake_text1);
-            this.O = (TextView) h.findViewById(R.id.ad_anim_shake_text2);
-            this.P = (ShapeLinearLayout) h.findViewById(R.id.ad_anim_shake_jump_layout);
-            this.Q = (TextView) h.findViewById(R.id.ad_anim_shake_jump_text);
-            this.t = (ImageView) h.findViewById(R.id.iv_pictrue);
+            this.u = h.findViewById(2131367947);
+            this.v = h.findViewById(2131363827);
+            this.w = h.findViewById(2131363829);
+            this.y = h.findViewById(2131363828);
+            this.x = h.findViewById(2131373123);
+            this.z = (ShapeLinearLayout) h.findViewById(2131367948);
+            this.A = (TextView) h.findViewById(2131361990);
+            this.B = (ViewGroup) h.findViewById(2131367949);
+            this.C = (ImageView) h.findViewById(2131361978);
+            this.D = (ImageView) h.findViewById(2131361976);
+            this.E = h.findViewById(2131361977);
+            this.F = (TextView) h.findViewById(2131361987);
+            this.G = h.findViewById(2131361989);
+            this.H = h.findViewById(2131367950);
+            this.I = (ImageView) h.findViewById(2131361984);
+            this.J = (TextView) h.findViewById(2131361985);
+            this.K = (TextView) h.findViewById(2131361986);
+            this.L = h.findViewById(2131367951);
+            this.M = (ImageView) h.findViewById(2131361979);
+            this.N = (TextView) h.findViewById(2131361982);
+            this.O = (TextView) h.findViewById(2131361983);
+            this.P = (ShapeLinearLayout) h.findViewById(2131361980);
+            this.Q = (TextView) h.findViewById(2131361981);
+            this.t = (ImageView) h.findViewById(2131365720);
             this.u.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.ui.TimeoutFragment.1
                 @Override // android.view.View.OnTouchListener
                 public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -319,7 +311,7 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
 
     public void a(long j) {
         Log.v("drb", "开启广告请求超时任务 :" + j);
-        this.f18740c.postDelayed(this.b, j);
+        this.c.postDelayed(this.b, j);
     }
 
     public void a(ADClickCoordinate aDClickCoordinate) {
@@ -373,10 +365,10 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
         ofFloat.setDuration(1000L);
         ofFloat.setRepeatCount(-1);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this.D, "ScaleX", 1.0f, 1.2f, 1.0f);
-        ofFloat2.setDuration(c.j);
+        ofFloat2.setDuration(1500L);
         ofFloat2.setRepeatCount(-1);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(this.D, "ScaleY", 1.0f, 1.2f, 1.0f);
-        ofFloat3.setDuration(c.j);
+        ofFloat3.setDuration(1500L);
         ofFloat3.setRepeatCount(-1);
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: com.blued.android.ui.TimeoutFragment.5
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -488,12 +480,12 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
 
     public void e() {
         Log.v("drb", "startADTimeoutTask:" + this.q);
-        this.f18740c.postDelayed(this.b, (long) (this.q * 1000));
+        this.c.postDelayed(this.b, (long) (this.q * 1000));
     }
 
     public void f() {
         Log.v("drb", "关闭广告请求超时任务");
-        this.f18740c.removeCallbacks(this.b);
+        this.c.removeCallbacks(this.b);
     }
 
     protected abstract void g();
@@ -504,7 +496,7 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
     public void onAccuracyChanged(Sensor sensor, int i) {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Bundle arguments = getArguments();
@@ -533,13 +525,13 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
         this.T = this.R.getDefaultSensor(2);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         k();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         d();
@@ -550,7 +542,7 @@ public abstract class TimeoutFragment extends BaseFragment implements SensorEven
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         j();

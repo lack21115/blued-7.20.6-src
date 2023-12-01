@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveHotListNewContentBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CoordinatorLayout f29451a;
+    private final CoordinatorLayout f15761a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CoordinatorLayout getRoot() {
-        return this.f29451a;
+        return this.f15761a;
     }
 }

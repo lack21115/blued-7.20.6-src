@@ -144,14 +144,14 @@ public class HalfScreenAdView extends BaseScreenAdView {
         if (this.t == 2) {
             int i18 = (this.D - i9) - i10;
             i2 = (int) (i18 * 1.75f);
-            int a2 = h.a(getContext(), 120.0f);
+            int a = h.a(getContext(), 120.0f);
             if (i9 < i11) {
                 layoutParams2.topMargin = (int) (i11 * 1.1f);
             }
             layoutParams2.width = i2;
             this.w.setLayoutParams(layoutParams2);
             i = i18;
-            i3 = a2;
+            i3 = a;
         } else if (L()) {
             i2 = (this.C - i7) - i8;
             i = (int) (i2 / 0.5714286f);
@@ -328,14 +328,14 @@ public class HalfScreenAdView extends BaseScreenAdView {
         if (this.t == 2) {
             int i19 = (this.D - i3) - i4;
             i7 = (int) (i19 * 1.75f);
-            int a2 = h.a(getContext(), 120.0f);
+            int a = h.a(getContext(), 120.0f);
             if (i3 < i5) {
                 layoutParams2.topMargin = (int) (i5 * 1.1f);
             }
             layoutParams2.width = i7;
             this.w.setLayoutParams(layoutParams2);
             i6 = i19;
-            i8 = a2;
+            i8 = a;
         } else if (L()) {
             i7 = (this.C - i) - i2;
             i6 = (int) (i7 / 0.5714286f);
@@ -407,7 +407,7 @@ public class HalfScreenAdView extends BaseScreenAdView {
             this.Q = this.ae;
             this.y.setLayoutType(this.Q);
             if (this.ae == 7) {
-                if (this.f6049c.m.x() == 0) {
+                if (this.c.m.x() == 0) {
                     this.y.getCTAButton().setVisibility(8);
                 }
                 if (m()) {

@@ -37,7 +37,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
     private final ac A;
     private final s B;
     private final byte[] C;
-    private final ArrayDeque<a.C0125a> D;
+    private final ArrayDeque<a.C0054a> D;
     private final ArrayDeque<b> E;
     private final com.anythink.expressad.exoplayer.e.m F;
     private int G;
@@ -86,11 +86,11 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
     static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f7293a;
+        public final long f4454a;
         public final int b;
 
         public b(long j, int i) {
-            this.f7293a = j;
+            this.f4454a = j;
             this.b = i;
         }
     }
@@ -100,10 +100,10 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final com.anythink.expressad.exoplayer.e.m f7294a;
+        public final com.anythink.expressad.exoplayer.e.m f4455a;
 
         /* renamed from: c  reason: collision with root package name */
-        public j f7295c;
+        public j f4456c;
         public com.anythink.expressad.exoplayer.e.a.c d;
         public int e;
         public int f;
@@ -114,7 +114,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         private final s j = new s();
 
         public c(com.anythink.expressad.exoplayer.e.m mVar) {
-            this.f7294a = mVar;
+            this.f4455a = mVar;
         }
 
         static /* synthetic */ void a(c cVar) {
@@ -144,7 +144,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         }
 
         private k e() {
-            return this.b.o != null ? this.b.o : this.f7295c.a(this.b.f7308a.f7288a);
+            return this.b.o != null ? this.b.o : this.f4456c.a(this.b.f4469a.f4449a);
         }
 
         public final void a() {
@@ -171,14 +171,14 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         }
 
         public final void a(com.anythink.expressad.exoplayer.d.e eVar) {
-            k a2 = this.f7295c.a(this.b.f7308a.f7288a);
-            this.f7294a.a(this.f7295c.h.a(eVar.a(a2 != null ? a2.b : null)));
+            k a2 = this.f4456c.a(this.b.f4469a.f4449a);
+            this.f4455a.a(this.f4456c.h.a(eVar.a(a2 != null ? a2.b : null)));
         }
 
         public final void a(j jVar, com.anythink.expressad.exoplayer.e.a.c cVar) {
-            this.f7295c = (j) com.anythink.expressad.exoplayer.k.a.a(jVar);
+            this.f4456c = (j) com.anythink.expressad.exoplayer.k.a.a(jVar);
             this.d = (com.anythink.expressad.exoplayer.e.a.c) com.anythink.expressad.exoplayer.k.a.a(cVar);
-            this.f7294a.a(jVar.h);
+            this.f4455a.a(jVar.h);
             a();
         }
 
@@ -211,16 +211,16 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
                     length = bArr.length;
                 }
                 boolean z = this.b.n[this.e];
-                this.i.f7674a[0] = (byte) ((z ? 128 : 0) | length);
+                this.i.f4835a[0] = (byte) ((z ? 128 : 0) | length);
                 this.i.c(0);
-                this.f7294a.a(this.i, 1);
-                this.f7294a.a(sVar, length);
+                this.f4455a.a(this.i, 1);
+                this.f4455a.a(sVar, length);
                 if (z) {
                     s sVar2 = this.b.q;
                     int e2 = sVar2.e();
                     sVar2.d(-2);
                     int i = (e2 * 6) + 2;
-                    this.f7294a.a(sVar2, i);
+                    this.f4455a.a(sVar2, i);
                     return length + 1 + i;
                 }
                 return length + 1;
@@ -257,7 +257,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         this.u = Collections.unmodifiableList(list);
         this.F = mVar;
         this.B = new s(16);
-        this.x = new s(p.f7664a);
+        this.x = new s(p.f4825a);
         this.y = new s(5);
         this.z = new s();
         this.C = new byte[16];
@@ -273,11 +273,11 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
     private static int a(c cVar, int i2, long j2, int i3, s sVar, int i4) {
         sVar.c(8);
         int b2 = com.anythink.expressad.exoplayer.e.a.a.b(sVar.i());
-        j jVar = cVar.f7295c;
+        j jVar = cVar.f4456c;
         l lVar = cVar.b;
-        com.anythink.expressad.exoplayer.e.a.c cVar2 = lVar.f7308a;
+        com.anythink.expressad.exoplayer.e.a.c cVar2 = lVar.f4469a;
         lVar.h[i2] = sVar.m();
-        lVar.g[i2] = lVar.f7309c;
+        lVar.g[i2] = lVar.f4470c;
         if ((b2 & 1) != 0) {
             long[] jArr = lVar.g;
             jArr[i2] = jArr[i2] + sVar.i();
@@ -314,7 +314,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         long j5 = j2;
         while (i4 < i6) {
             int m2 = z2 ? sVar.m() : cVar2.b;
-            int m3 = z3 ? sVar.m() : cVar2.f7289c;
+            int m3 = z3 ? sVar.m() : cVar2.f4450c;
             int i7 = (i4 == 0 && z) ? i5 : z4 ? sVar.i() : cVar2.d;
             if (z5) {
                 iArr2[i4] = (int) ((sVar.i() * 1000) / j4);
@@ -394,7 +394,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
                 if (arrayList == null) {
                     arrayList3 = new ArrayList();
                 }
-                byte[] bArr = bVar.aV.f7674a;
+                byte[] bArr = bVar.aV.f4835a;
                 UUID a2 = h.a(bArr);
                 if (a2 == null) {
                     Log.w(j, "Skipped pssh atom (failed to extract uuid)");
@@ -449,11 +449,11 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         }
         if ((b2 & 1) != 0) {
             long n2 = sVar.n();
-            b3.b.f7309c = n2;
+            b3.b.f4470c = n2;
             b3.b.d = n2;
         }
         com.anythink.expressad.exoplayer.e.a.c cVar = b3.d;
-        b3.b.f7308a = new com.anythink.expressad.exoplayer.e.a.c((b2 & 2) != 0 ? sVar.m() - 1 : cVar.f7288a, (b2 & 8) != 0 ? sVar.m() : cVar.b, (b2 & 16) != 0 ? sVar.m() : cVar.f7289c, (b2 & 32) != 0 ? sVar.m() : cVar.d);
+        b3.b.f4469a = new com.anythink.expressad.exoplayer.e.a.c((b2 & 2) != 0 ? sVar.m() - 1 : cVar.f4449a, (b2 & 8) != 0 ? sVar.m() : cVar.b, (b2 & 16) != 0 ? sVar.m() : cVar.f4450c, (b2 & 32) != 0 ? sVar.m() : cVar.d);
         return b3;
     }
 
@@ -469,36 +469,36 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         a();
     }
 
-    private void a(a.C0125a c0125a) {
-        if (c0125a.aU == com.anythink.expressad.exoplayer.e.a.a.G) {
-            b(c0125a);
-        } else if (c0125a.aU == com.anythink.expressad.exoplayer.e.a.a.P) {
-            c(c0125a);
+    private void a(a.C0054a c0054a) {
+        if (c0054a.aU == com.anythink.expressad.exoplayer.e.a.a.G) {
+            b(c0054a);
+        } else if (c0054a.aU == com.anythink.expressad.exoplayer.e.a.a.P) {
+            c(c0054a);
         } else if (this.D.isEmpty()) {
         } else {
-            this.D.peek().a(c0125a);
+            this.D.peek().a(c0054a);
         }
     }
 
-    private static void a(a.C0125a c0125a, SparseArray<c> sparseArray, int i2, byte[] bArr) {
-        int size = c0125a.aX.size();
+    private static void a(a.C0054a c0054a, SparseArray<c> sparseArray, int i2, byte[] bArr) {
+        int size = c0054a.aX.size();
         int i3 = 0;
         while (true) {
             int i4 = i3;
             if (i4 >= size) {
                 return;
             }
-            a.C0125a c0125a2 = c0125a.aX.get(i4);
-            if (c0125a2.aU == com.anythink.expressad.exoplayer.e.a.a.Q) {
-                b(c0125a2, sparseArray, i2, bArr);
+            a.C0054a c0054a2 = c0054a.aX.get(i4);
+            if (c0054a2.aU == com.anythink.expressad.exoplayer.e.a.a.Q) {
+                b(c0054a2, sparseArray, i2, bArr);
             }
             i3 = i4 + 1;
         }
     }
 
-    private static void a(a.C0125a c0125a, c cVar, long j2, int i2) {
+    private static void a(a.C0054a c0054a, c cVar, long j2, int i2) {
         int i3;
-        List<a.b> list = c0125a.aW;
+        List<a.b> list = c0054a.aW;
         int size = list.size();
         int i4 = 0;
         int i5 = 0;
@@ -878,7 +878,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         while (!this.E.isEmpty()) {
             b removeFirst = this.E.removeFirst();
             this.M -= removeFirst.b;
-            long j3 = removeFirst.f7293a + j2;
+            long j3 = removeFirst.f4454a + j2;
             ac acVar = this.A;
             long j4 = j3;
             if (acVar != null) {
@@ -897,13 +897,13 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         }
     }
 
-    private void b(a.C0125a c0125a) {
+    private void b(a.C0054a c0054a) {
         com.anythink.expressad.exoplayer.k.a.b(this.t == null, "Unexpected moov box.");
         com.anythink.expressad.exoplayer.d.e eVar = this.v;
         if (eVar == null) {
-            eVar = a(c0125a.aW);
+            eVar = a(c0054a.aW);
         }
-        a.C0125a e2 = c0125a.e(com.anythink.expressad.exoplayer.e.a.a.R);
+        a.C0054a e2 = c0054a.e(com.anythink.expressad.exoplayer.e.a.a.R);
         SparseArray sparseArray = new SparseArray();
         int size = e2.aW.size();
         long j2 = -9223372036854775807L;
@@ -923,18 +923,18 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
             i2 = i3 + 1;
         }
         SparseArray sparseArray2 = new SparseArray();
-        int size2 = c0125a.aX.size();
+        int size2 = c0054a.aX.size();
         int i4 = 0;
         while (true) {
             int i5 = i4;
             if (i5 >= size2) {
                 break;
             }
-            a.C0125a c0125a2 = c0125a.aX.get(i5);
-            if (c0125a2.aU == com.anythink.expressad.exoplayer.e.a.a.I) {
-                j a2 = com.anythink.expressad.exoplayer.e.a.b.a(c0125a2, c0125a.d(com.anythink.expressad.exoplayer.e.a.a.H), j2, eVar, (this.s & 16) != 0, false);
+            a.C0054a c0054a2 = c0054a.aX.get(i5);
+            if (c0054a2.aU == com.anythink.expressad.exoplayer.e.a.a.I) {
+                j a2 = com.anythink.expressad.exoplayer.e.a.b.a(c0054a2, c0054a.d(com.anythink.expressad.exoplayer.e.a.a.H), j2, eVar, (this.s & 16) != 0, false);
                 if (a2 != null) {
-                    sparseArray2.put(a2.f7305c, a2);
+                    sparseArray2.put(a2.f4466c, a2);
                 }
             }
             i4 = i5 + 1;
@@ -951,8 +951,8 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
                 }
                 j jVar = (j) sparseArray2.valueAt(i7);
                 c cVar = new c(this.V.a(i7, jVar.d));
-                cVar.a(jVar, a(sparseArray, jVar.f7305c));
-                this.w.put(jVar.f7305c, cVar);
+                cVar.a(jVar, a(sparseArray, jVar.f4466c));
+                this.w.put(jVar.f4466c, cVar);
                 this.O = Math.max(this.O, jVar.g);
                 i6 = i7 + 1;
             }
@@ -965,14 +965,14 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
                     return;
                 }
                 j jVar2 = (j) sparseArray2.valueAt(i9);
-                this.w.get(jVar2.f7305c).a(jVar2, a(sparseArray, jVar2.f7305c));
+                this.w.get(jVar2.f4466c).a(jVar2, a(sparseArray, jVar2.f4466c));
                 i8 = i9 + 1;
             }
         }
     }
 
-    private static void b(a.C0125a c0125a, SparseArray<c> sparseArray, int i2, byte[] bArr) {
-        c a2 = a(c0125a.d(com.anythink.expressad.exoplayer.e.a.a.C).aV, sparseArray);
+    private static void b(a.C0054a c0054a, SparseArray<c> sparseArray, int i2, byte[] bArr) {
+        c a2 = a(c0054a.d(com.anythink.expressad.exoplayer.e.a.a.C).aV, sparseArray);
         if (a2 == null) {
             return;
         }
@@ -980,34 +980,34 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         long j2 = lVar.s;
         a2.a();
         long j3 = j2;
-        if (c0125a.d(com.anythink.expressad.exoplayer.e.a.a.B) != null) {
+        if (c0054a.d(com.anythink.expressad.exoplayer.e.a.a.B) != null) {
             j3 = j2;
             if ((i2 & 2) == 0) {
-                j3 = d(c0125a.d(com.anythink.expressad.exoplayer.e.a.a.B).aV);
+                j3 = d(c0054a.d(com.anythink.expressad.exoplayer.e.a.a.B).aV);
             }
         }
-        a(c0125a, a2, j3, i2);
-        k a3 = a2.f7295c.a(lVar.f7308a.f7288a);
-        a.b d2 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.ah);
+        a(c0054a, a2, j3, i2);
+        k a3 = a2.f4456c.a(lVar.f4469a.f4449a);
+        a.b d2 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.ah);
         if (d2 != null) {
             a(a3, d2.aV, lVar);
         }
-        a.b d3 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.ai);
+        a.b d3 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.ai);
         if (d3 != null) {
             a(d3.aV, lVar);
         }
-        a.b d4 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.am);
+        a.b d4 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.am);
         if (d4 != null) {
             a(d4.aV, 0, lVar);
         }
-        a.b d5 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.aj);
-        a.b d6 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.ak);
+        a.b d5 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.aj);
+        a.b d6 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.ak);
         if (d5 != null && d6 != null) {
             a(d5.aV, d6.aV, a3 != null ? a3.b : null, lVar);
         }
-        int size = c0125a.aW.size();
+        int size = c0054a.aW.size();
         for (int i3 = 0; i3 < size; i3++) {
-            a.b bVar = c0125a.aW.get(i3);
+            a.b bVar = c0054a.aW.get(i3);
             if (bVar.aU == com.anythink.expressad.exoplayer.e.a.a.al) {
                 a(bVar.aV, lVar, bArr);
             }
@@ -1024,7 +1024,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
 
     private boolean b(com.anythink.expressad.exoplayer.e.f fVar) {
         if (this.J == 0) {
-            if (!fVar.a(this.B.f7674a, 0, 8, true)) {
+            if (!fVar.a(this.B.f4835a, 0, 8, true)) {
                 return false;
             }
             this.J = 8;
@@ -1034,7 +1034,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         }
         long j2 = this.I;
         if (j2 == 1) {
-            fVar.b(this.B.f7674a, 8, 8);
+            fVar.b(this.B.f4835a, 8, 8);
             this.J += 8;
             this.I = this.B.n();
         } else if (j2 == 0) {
@@ -1063,7 +1063,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
                     l lVar = this.w.valueAt(i3).b;
                     lVar.b = c2;
                     lVar.d = c2;
-                    lVar.f7309c = c2;
+                    lVar.f4470c = c2;
                     i2 = i3 + 1;
                 }
             }
@@ -1080,7 +1080,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
             int i4 = this.H;
             if (i4 == com.anythink.expressad.exoplayer.e.a.a.G || i4 == com.anythink.expressad.exoplayer.e.a.a.I || i4 == com.anythink.expressad.exoplayer.e.a.a.J || i4 == com.anythink.expressad.exoplayer.e.a.a.K || i4 == com.anythink.expressad.exoplayer.e.a.a.L || i4 == com.anythink.expressad.exoplayer.e.a.a.P || i4 == com.anythink.expressad.exoplayer.e.a.a.Q || i4 == com.anythink.expressad.exoplayer.e.a.a.R || i4 == com.anythink.expressad.exoplayer.e.a.a.U) {
                 long c3 = (fVar.c() + this.I) - 8;
-                this.D.push(new a.C0125a(this.H, c3));
+                this.D.push(new a.C0054a(this.H, c3));
                 if (this.I == this.J) {
                     a(c3);
                     return true;
@@ -1100,7 +1100,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
                 long j4 = this.I;
                 if (j4 <= 2147483647L) {
                     this.K = new s((int) j4);
-                    System.arraycopy((Object) this.B.f7674a, 0, (Object) this.K.f7674a, 0, 8);
+                    System.arraycopy(this.B.f4835a, 0, this.K.f4835a, 0, 8);
                     this.G = 1;
                     return true;
                 }
@@ -1117,9 +1117,9 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         return com.anythink.expressad.exoplayer.e.a.a.a(sVar.i()) == 0 ? sVar.h() : sVar.n();
     }
 
-    private void c(a.C0125a c0125a) {
-        a(c0125a, this.w, this.s, this.C);
-        com.anythink.expressad.exoplayer.d.e a2 = this.v != null ? null : a(c0125a.aW);
+    private void c(a.C0054a c0054a) {
+        a(c0054a, this.w, this.s, this.C);
+        com.anythink.expressad.exoplayer.d.e a2 = this.v != null ? null : a(c0054a.aW);
         if (a2 != null) {
             int size = this.w.size();
             int i2 = 0;
@@ -1155,7 +1155,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         int i2 = ((int) this.I) - this.J;
         s sVar = this.K;
         if (sVar != null) {
-            fVar.b(sVar.f7674a, 8, i2);
+            fVar.b(sVar.f4835a, 8, i2);
             a.b bVar = new a.b(this.H, this.K);
             long c2 = fVar.c();
             if (!this.D.isEmpty()) {
@@ -1292,7 +1292,7 @@ public final class e implements com.anythink.expressad.exoplayer.e.e {
         }
         fVar.c(c2);
         l lVar2 = cVar.b;
-        fVar.b(lVar2.q.f7674a, 0, lVar2.p);
+        fVar.b(lVar2.q.f4835a, 0, lVar2.p);
         lVar2.q.c(0);
         lVar2.r = false;
     }

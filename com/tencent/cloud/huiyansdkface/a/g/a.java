@@ -8,7 +8,7 @@ public interface a {
 
     /* renamed from: com.tencent.cloud.huiyansdkface.a.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/a/g/a$a.class */
-    public interface InterfaceC0905a {
+    public interface InterfaceC0735a {
         void a();
 
         void b();
@@ -18,7 +18,7 @@ public interface a {
 
     void a(com.tencent.cloud.huiyansdkface.a.c.a.a aVar);
 
-    void a(InterfaceC0905a interfaceC0905a);
+    void a(InterfaceC0735a interfaceC0735a);
 
     boolean b();
 }

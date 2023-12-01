@@ -29,13 +29,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopGrabBoxView.class */
 public class PopGrabBoxView {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15038a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f15039c;
+    public Context c;
     public BaseFragment d;
     public LinearLayout e;
     public LinearLayout f;
@@ -57,14 +53,12 @@ public class PopGrabBoxView {
     /* renamed from: com.blued.android.module.live_china.view.PopGrabBoxView$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopGrabBoxView$1.class */
     class AnonymousClass1 implements View.OnClickListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopGrabBoxView f15040a;
+        final /* synthetic */ PopGrabBoxView a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f15040a.b();
+            this.a.b();
         }
     }
 
@@ -80,13 +74,11 @@ public class PopGrabBoxView {
     /* renamed from: com.blued.android.module.live_china.view.PopGrabBoxView$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopGrabBoxView$3.class */
     class AnonymousClass3 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopGrabBoxView f15041a;
+        final /* synthetic */ PopGrabBoxView a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            this.f15041a.c();
+            this.a.c();
         }
 
         @Override // android.view.animation.Animation.AnimationListener
@@ -105,9 +97,7 @@ public class PopGrabBoxView {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopGrabBoxView$MyPopupWindow.class */
     class MyPopupWindow extends PopupWindow {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopGrabBoxView f15045a;
+        final /* synthetic */ PopGrabBoxView a;
 
         public void a() {
             super.dismiss();
@@ -116,7 +106,7 @@ public class PopGrabBoxView {
         @Override // android.widget.PopupWindow
         public void dismiss() {
             try {
-                this.f15045a.b();
+                this.a.b();
             } catch (Exception e) {
                 a();
             }
@@ -127,8 +117,8 @@ public class PopGrabBoxView {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
-        this.f15038a.startAnimation(alphaAnimation);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f15039c, R.anim.push_bottom_out));
+        this.a.startAnimation(alphaAnimation);
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_bottom_out));
     }
 
     public void b() {
@@ -147,13 +137,11 @@ public class PopGrabBoxView {
 
     public void c() {
         LiveRoomHttpUtils.a(new BluedUIHttpResponse<BluedEntity<GrabBoxDetailModel, GrabBoxDetailModel>>(this.k) { // from class: com.blued.android.module.live_china.view.PopGrabBoxView.5
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f15043a = false;
+            boolean a = false;
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f15043a = true;
+                this.a = true;
                 return super.onUIFailure(i, str);
             }
 
@@ -161,8 +149,8 @@ public class PopGrabBoxView {
             public void onUIFinish() {
                 PopGrabBoxView.this.e.setVisibility(8);
                 PopGrabBoxView.this.t.setVisibility(0);
-                if (this.f15043a) {
-                    this.f15043a = false;
+                if (this.a) {
+                    this.a = false;
                     PopGrabBoxView.this.b();
                 }
             }
@@ -181,12 +169,12 @@ public class PopGrabBoxView {
                 PopGrabBoxView.this.p.setText(CommonStringUtils.a(grabBoxDetailModel.total_wish));
                 if (TextUtils.equals(LiveRoomInfo.a().f(), PopGrabBoxView.this.i)) {
                     PopGrabBoxView.this.s.setVisibility(8);
-                    PopGrabBoxView.this.f.setPadding(PopGrabBoxView.this.f.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.f15039c, 14.0f), PopGrabBoxView.this.f.getPaddingRight(), DensityUtils.a(PopGrabBoxView.this.f15039c, 14.0f));
-                    PopGrabBoxView.this.g.setPadding(PopGrabBoxView.this.g.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.f15039c, 14.0f), PopGrabBoxView.this.g.getPaddingRight(), PopGrabBoxView.this.g.getPaddingBottom());
+                    PopGrabBoxView.this.f.setPadding(PopGrabBoxView.this.f.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.c, 14.0f), PopGrabBoxView.this.f.getPaddingRight(), DensityUtils.a(PopGrabBoxView.this.c, 14.0f));
+                    PopGrabBoxView.this.g.setPadding(PopGrabBoxView.this.g.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.c, 14.0f), PopGrabBoxView.this.g.getPaddingRight(), PopGrabBoxView.this.g.getPaddingBottom());
                 } else {
                     PopGrabBoxView.this.s.setVisibility(0);
-                    PopGrabBoxView.this.f.setPadding(PopGrabBoxView.this.f.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.f15039c, 30.0f), PopGrabBoxView.this.f.getPaddingRight(), DensityUtils.a(PopGrabBoxView.this.f15039c, 30.0f));
-                    PopGrabBoxView.this.g.setPadding(PopGrabBoxView.this.g.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.f15039c, 30.0f), PopGrabBoxView.this.g.getPaddingRight(), PopGrabBoxView.this.g.getPaddingBottom());
+                    PopGrabBoxView.this.f.setPadding(PopGrabBoxView.this.f.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.c, 30.0f), PopGrabBoxView.this.f.getPaddingRight(), DensityUtils.a(PopGrabBoxView.this.c, 30.0f));
+                    PopGrabBoxView.this.g.setPadding(PopGrabBoxView.this.g.getPaddingLeft(), DensityUtils.a(PopGrabBoxView.this.c, 30.0f), PopGrabBoxView.this.g.getPaddingRight(), PopGrabBoxView.this.g.getPaddingBottom());
                 }
                 PopGrabBoxView.this.s.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopGrabBoxView.5.1
                     @Override // android.view.View.OnClickListener
@@ -195,7 +183,7 @@ public class PopGrabBoxView {
                         if (LiveRefreshUIObserver.a().f()) {
                             if (!TextUtils.equals(LiveRoomInfo.a().f(), PopGrabBoxView.this.i)) {
                                 InstantLog.a("live_activity_link_click");
-                                LiveRoomInfo.a().a(PopGrabBoxView.this.f15039c, grabBoxDetailModel.url);
+                                LiveRoomInfo.a().a(PopGrabBoxView.this.c, grabBoxDetailModel.url);
                             }
                             if (PopGrabBoxView.this.d instanceof PlayingOnliveFragment) {
                                 LiveRefreshUIObserver.a().b(true);

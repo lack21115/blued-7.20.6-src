@@ -61,7 +61,7 @@ public class AnythinkVideoEndCoverView extends AnythinkBaseView implements f {
     private void b() {
         View view = this.o;
         if (view == null) {
-            init(this.f8440a);
+            init(this.f5600a);
             preLoadData(this.u);
             return;
         }
@@ -77,7 +77,7 @@ public class AnythinkVideoEndCoverView extends AnythinkBaseView implements f {
         ImageView imageView;
         if (this.b != null) {
             if (!TextUtils.isEmpty(this.b.bd()) && (imageView = this.p) != null) {
-                com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(this.b.bd(), new j(imageView, t.b(n.a().g(), 8.0f)));
+                com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(this.b.bd(), new j(imageView, t.b(n.a().g(), 8.0f)));
             }
             TextView textView = this.r;
             if (textView != null) {
@@ -173,7 +173,7 @@ public class AnythinkVideoEndCoverView extends AnythinkBaseView implements f {
     public void init(Context context) {
         int findLayout = findLayout("anythink_reward_videoend_cover");
         if (findLayout >= 0) {
-            View inflate = this.f8441c.inflate(findLayout, (ViewGroup) null);
+            View inflate = this.f5601c.inflate(findLayout, (ViewGroup) null);
             this.o = inflate;
             if (inflate != null) {
                 this.f = a(inflate);
@@ -197,7 +197,7 @@ public class AnythinkVideoEndCoverView extends AnythinkBaseView implements f {
         removeView(this.o);
         View view = this.o;
         if (view == null) {
-            init(this.f8440a);
+            init(this.f5600a);
             preLoadData(this.u);
             return;
         }
@@ -217,7 +217,7 @@ public class AnythinkVideoEndCoverView extends AnythinkBaseView implements f {
                 return;
             }
             if (!TextUtils.isEmpty(this.b.bd()) && this.p != null) {
-                com.anythink.expressad.foundation.g.d.b.a(this.f8440a.getApplicationContext()).a(this.b.bd(), new j(this.p, t.b(n.a().g(), 8.0f)));
+                com.anythink.expressad.foundation.g.d.b.a(this.f5600a.getApplicationContext()).a(this.b.bd(), new j(this.p, t.b(n.a().g(), 8.0f)));
             }
             if (this.r != null) {
                 this.r.setText(this.b.bb());

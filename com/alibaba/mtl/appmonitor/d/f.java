@@ -1,6 +1,5 @@
 package com.alibaba.mtl.appmonitor.d;
 
-import com.umeng.analytics.pro.bh;
 import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -81,7 +80,7 @@ public class f extends g {
                     return;
                 }
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i2);
-                String string = jSONObject2.getString(bh.e);
+                String string = jSONObject2.getString("module");
                 if (com.alibaba.mtl.appmonitor.f.b.c(string)) {
                     h hVar = this.o.get(string);
                     d dVar = hVar;

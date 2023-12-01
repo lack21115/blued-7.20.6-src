@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public final class dc extends dd {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f40719a;
+    private byte[] f27028a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f40720c;
+    private int f27029c;
 
     public dc() {
     }
@@ -29,7 +29,7 @@ public final class dc extends dd {
             i3 = h;
         }
         if (i3 > 0) {
-            System.arraycopy((Object) this.f40719a, this.b, (Object) bArr, i, i3);
+            System.arraycopy(this.f27028a, this.b, bArr, i, i3);
             a(i3);
         }
         return i3;
@@ -63,18 +63,18 @@ public final class dc extends dd {
     }
 
     public void c(byte[] bArr, int i, int i2) {
-        this.f40719a = bArr;
+        this.f27028a = bArr;
         this.b = i;
-        this.f40720c = i + i2;
+        this.f27029c = i + i2;
     }
 
     public void e() {
-        this.f40719a = null;
+        this.f27028a = null;
     }
 
     @Override // com.umeng.analytics.pro.dd
     public byte[] f() {
-        return this.f40719a;
+        return this.f27028a;
     }
 
     @Override // com.umeng.analytics.pro.dd
@@ -84,6 +84,6 @@ public final class dc extends dd {
 
     @Override // com.umeng.analytics.pro.dd
     public int h() {
-        return this.f40720c - this.b;
+        return this.f27029c - this.b;
     }
 }

@@ -7,7 +7,7 @@ public class RootKeyUtil {
     private static final String b = "RootKeyUtil";
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f23090a = null;
+    private byte[] f9482a = null;
 
     private RootKeyUtil() {
     }
@@ -19,11 +19,11 @@ public class RootKeyUtil {
     private void a(String str, String str2, String str3, byte[] bArr) {
         if (Build.VERSION.SDK_INT < 26) {
             b.c(b, "initRootKey: sha1");
-            this.f23090a = BaseKeyUtil.exportRootKey(str, str2, str3, bArr, false);
+            this.f9482a = BaseKeyUtil.exportRootKey(str, str2, str3, bArr, false);
             return;
         }
         b.c(b, "initRootKey: sha256");
-        this.f23090a = BaseKeyUtil.exportRootKey(str, str2, str3, bArr, true);
+        this.f9482a = BaseKeyUtil.exportRootKey(str, str2, str3, bArr, true);
     }
 
     public static RootKeyUtil newInstance(String str, String str2, String str3, String str4) {
@@ -39,10 +39,10 @@ public class RootKeyUtil {
     }
 
     public byte[] getRootKey() {
-        return (byte[]) this.f23090a.clone();
+        return (byte[]) this.f9482a.clone();
     }
 
     public String getRootKeyHex() {
-        return HexUtil.byteArray2HexStr(this.f23090a);
+        return HexUtil.byteArray2HexStr(this.f9482a);
     }
 }

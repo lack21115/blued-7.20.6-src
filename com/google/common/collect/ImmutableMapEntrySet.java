@@ -48,7 +48,7 @@ public abstract class ImmutableMapEntrySet<K, V> extends ImmutableSet<Map.Entry<
             return this.entries;
         }
 
-        @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ImmutableSet, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
         public UnmodifiableIterator<Map.Entry<K, V>> iterator() {
             return this.entries.iterator();
         }
@@ -94,7 +94,7 @@ public abstract class ImmutableMapEntrySet<K, V> extends ImmutableSet<Map.Entry<
 
     abstract ImmutableMap<K, V> map();
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         return map().size();
     }

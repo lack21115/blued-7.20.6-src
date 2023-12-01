@@ -10,20 +10,16 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/CircleShape.class */
 public class CircleShape implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4335a;
+    private final String a;
     private final AnimatableValue<PointF, PointF> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatablePointValue f4336c;
+    private final AnimatablePointValue c;
     private final boolean d;
     private final boolean e;
 
     public CircleShape(String str, AnimatableValue<PointF, PointF> animatableValue, AnimatablePointValue animatablePointValue, boolean z, boolean z2) {
-        this.f4335a = str;
+        this.a = str;
         this.b = animatableValue;
-        this.f4336c = animatablePointValue;
+        this.c = animatablePointValue;
         this.d = z;
         this.e = z2;
     }
@@ -34,7 +30,7 @@ public class CircleShape implements ContentModel {
     }
 
     public String a() {
-        return this.f4335a;
+        return this.a;
     }
 
     public AnimatableValue<PointF, PointF> b() {
@@ -42,7 +38,7 @@ public class CircleShape implements ContentModel {
     }
 
     public AnimatablePointValue c() {
-        return this.f4336c;
+        return this.c;
     }
 
     public boolean d() {

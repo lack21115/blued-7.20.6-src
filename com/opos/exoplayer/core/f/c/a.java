@@ -13,20 +13,20 @@ import java.util.Collections;
 public final class a extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final m f25366a;
-    private final C0663a b;
+    private final m f11678a;
+    private final C0493a b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.f.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/f/c/a$a.class */
-    public static final class C0663a {
+    public static final class C0493a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final m f25367a = new m();
+        private final m f11679a = new m();
         private final int[] b = new int[256];
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f25368c;
+        private boolean f11680c;
         private int d;
         private int e;
         private int f;
@@ -46,7 +46,7 @@ public final class a extends c {
             while (true) {
                 int i4 = i3;
                 if (i4 >= i2) {
-                    this.f25368c = true;
+                    this.f11680c = true;
                     return;
                 }
                 int g = mVar.g();
@@ -80,17 +80,17 @@ public final class a extends c {
                 }
                 this.h = mVar.h();
                 this.i = mVar.h();
-                this.f25367a.a(k - 4);
+                this.f11679a.a(k - 4);
                 i3 = i2 - 7;
             }
-            int d = this.f25367a.d();
-            int c2 = this.f25367a.c();
+            int d = this.f11679a.d();
+            int c2 = this.f11679a.c();
             if (d >= c2 || i3 <= 0) {
                 return;
             }
             int min = Math.min(i3, c2 - d);
-            mVar.a(this.f25367a.f25496a, d, min);
-            this.f25367a.c(min + d);
+            mVar.a(this.f11679a.f11808a, d, min);
+            this.f11679a.c(min + d);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -106,23 +106,23 @@ public final class a extends c {
         }
 
         public com.opos.exoplayer.core.f.b a() {
-            if (this.d == 0 || this.e == 0 || this.h == 0 || this.i == 0 || this.f25367a.c() == 0 || this.f25367a.d() != this.f25367a.c() || !this.f25368c) {
+            if (this.d == 0 || this.e == 0 || this.h == 0 || this.i == 0 || this.f11679a.c() == 0 || this.f11679a.d() != this.f11679a.c() || !this.f11680c) {
                 return null;
             }
-            this.f25367a.c(0);
+            this.f11679a.c(0);
             int i = this.h * this.i;
             int[] iArr = new int[i];
             int i2 = 0;
             while (i2 < i) {
-                int g = this.f25367a.g();
+                int g = this.f11679a.g();
                 if (g != 0) {
                     iArr[i2] = this.b[g];
                     i2++;
                 } else {
-                    int g2 = this.f25367a.g();
+                    int g2 = this.f11679a.g();
                     if (g2 != 0) {
-                        int g3 = (g2 & 64) == 0 ? g2 & 63 : ((g2 & 63) << 8) | this.f25367a.g();
-                        int i3 = (g2 & 128) == 0 ? 0 : this.b[this.f25367a.g()];
+                        int g3 = (g2 & 64) == 0 ? g2 & 63 : ((g2 & 63) << 8) | this.f11679a.g();
+                        int i3 = (g2 & 128) == 0 ? 0 : this.b[this.f11679a.g()];
                         int i4 = g3 + i2;
                         Arrays.fill(iArr, i2, i4, i3);
                         i2 = i4;
@@ -145,18 +145,18 @@ public final class a extends c {
             this.g = 0;
             this.h = 0;
             this.i = 0;
-            this.f25367a.a(0);
-            this.f25368c = false;
+            this.f11679a.a(0);
+            this.f11680c = false;
         }
     }
 
     public a() {
         super("PgsDecoder");
-        this.f25366a = new m();
-        this.b = new C0663a();
+        this.f11678a = new m();
+        this.b = new C0493a();
     }
 
-    private static com.opos.exoplayer.core.f.b a(m mVar, C0663a c0663a) {
+    private static com.opos.exoplayer.core.f.b a(m mVar, C0493a c0493a) {
         com.opos.exoplayer.core.f.b bVar;
         int c2 = mVar.c();
         int g = mVar.g();
@@ -169,15 +169,15 @@ public final class a extends c {
         if (g != 128) {
             switch (g) {
                 case 20:
-                    c0663a.a(mVar, h);
+                    c0493a.a(mVar, h);
                     bVar = null;
                     break;
                 case 21:
-                    c0663a.b(mVar, h);
+                    c0493a.b(mVar, h);
                     bVar = null;
                     break;
                 case 22:
-                    c0663a.c(mVar, h);
+                    c0493a.c(mVar, h);
                     bVar = null;
                     break;
                 default:
@@ -185,8 +185,8 @@ public final class a extends c {
                     break;
             }
         } else {
-            com.opos.exoplayer.core.f.b a2 = c0663a.a();
-            c0663a.b();
+            com.opos.exoplayer.core.f.b a2 = c0493a.a();
+            c0493a.b();
             bVar = a2;
         }
         mVar.c(d);
@@ -195,11 +195,11 @@ public final class a extends c {
 
     @Override // com.opos.exoplayer.core.f.c
     public d a(byte[] bArr, int i, boolean z) {
-        this.f25366a.a(bArr, i);
+        this.f11678a.a(bArr, i);
         this.b.b();
         ArrayList arrayList = new ArrayList();
-        while (this.f25366a.b() >= 3) {
-            com.opos.exoplayer.core.f.b a2 = a(this.f25366a, this.b);
+        while (this.f11678a.b() >= 3) {
+            com.opos.exoplayer.core.f.b a2 = a(this.f11678a, this.b);
             if (a2 != null) {
                 arrayList.add(a2);
             }

@@ -13,13 +13,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewVipMarriageNoticeBinding.class */
 public final class ViewVipMarriageNoticeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SVGAImageView f16884a;
+    public final SVGAImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16885c;
+    public final ImageView c;
     public final ShapeableImageView d;
     public final ConstraintLayout e;
     public final BluedMarqueeTextView f;
@@ -27,9 +23,9 @@ public final class ViewVipMarriageNoticeBinding implements ViewBinding {
 
     private ViewVipMarriageNoticeBinding(ConstraintLayout constraintLayout, SVGAImageView sVGAImageView, ImageView imageView, ImageView imageView2, ShapeableImageView shapeableImageView, ConstraintLayout constraintLayout2, BluedMarqueeTextView bluedMarqueeTextView) {
         this.g = constraintLayout;
-        this.f16884a = sVGAImageView;
+        this.a = sVGAImageView;
         this.b = imageView;
-        this.f16885c = imageView2;
+        this.c = imageView2;
         this.d = shapeableImageView;
         this.e = constraintLayout2;
         this.f = bluedMarqueeTextView;
@@ -51,13 +47,13 @@ public final class ViewVipMarriageNoticeBinding implements ViewBinding {
             if (imageView != null) {
                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_md);
                 if (imageView2 != null) {
-                    ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user);
-                    if (shapeableImageView != null) {
-                        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.notify_view);
-                        if (constraintLayout != null) {
+                    ShapeableImageView findViewById = view.findViewById(R.id.iv_user);
+                    if (findViewById != null) {
+                        ConstraintLayout findViewById2 = view.findViewById(R.id.notify_view);
+                        if (findViewById2 != null) {
                             BluedMarqueeTextView bluedMarqueeTextView = (BluedMarqueeTextView) view.findViewById(R.id.tv_notice_text);
                             if (bluedMarqueeTextView != null) {
-                                return new ViewVipMarriageNoticeBinding((ConstraintLayout) view, sVGAImageView, imageView, imageView2, shapeableImageView, constraintLayout, bluedMarqueeTextView);
+                                return new ViewVipMarriageNoticeBinding((ConstraintLayout) view, sVGAImageView, imageView, imageView2, findViewById, findViewById2, bluedMarqueeTextView);
                             }
                             str = "tvNoticeText";
                         } else {
@@ -78,7 +74,6 @@ public final class ViewVipMarriageNoticeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

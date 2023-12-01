@@ -5,28 +5,25 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView;
-import skin.support.appcompat.R;
+import com.android.internal.R;
 import skin.support.content.res.SkinCompatVectorResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatMultiAutoCompleteTextView.class */
 public class SkinCompatMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int[] f44274a = {16843126};
+    private static final int[] a = {R.attr.popupBackground};
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private SkinCompatTextHelper f44275c;
+    private SkinCompatTextHelper c;
     private SkinCompatBackgroundHelper d;
 
     public SkinCompatMultiAutoCompleteTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.editTextStyle);
+        this(context, attributeSet, skin.support.appcompat.R.attr.editTextStyle);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinCompatMultiAutoCompleteTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f44274a, i, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a, i, 0);
         if (obtainStyledAttributes.hasValue(0)) {
             this.b = obtainStyledAttributes.getResourceId(0, 0);
         }
@@ -36,7 +33,7 @@ public class SkinCompatMultiAutoCompleteTextView extends AppCompatMultiAutoCompl
         this.d = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
         SkinCompatTextHelper a2 = SkinCompatTextHelper.a(this);
-        this.f44275c = a2;
+        this.c = a2;
         a2.a(attributeSet, i);
     }
 
@@ -56,14 +53,13 @@ public class SkinCompatMultiAutoCompleteTextView extends AppCompatMultiAutoCompl
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }
-        SkinCompatTextHelper skinCompatTextHelper = this.f44275c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.d();
         }
         a();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView, android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.d;
@@ -72,25 +68,22 @@ public class SkinCompatMultiAutoCompleteTextView extends AppCompatMultiAutoCompl
         }
     }
 
-    @Override // android.widget.TextView
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(int i, int i2, int i3, int i4) {
         super.setCompoundDrawablesRelativeWithIntrinsicBounds(i, i2, i3, i4);
-        SkinCompatTextHelper skinCompatTextHelper = this.f44275c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.a(i, i2, i3, i4);
         }
     }
 
-    @Override // android.widget.TextView
     public void setCompoundDrawablesWithIntrinsicBounds(int i, int i2, int i3, int i4) {
         super.setCompoundDrawablesWithIntrinsicBounds(i, i2, i3, i4);
-        SkinCompatTextHelper skinCompatTextHelper = this.f44275c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.b(i, i2, i3, i4);
         }
     }
 
-    @Override // androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView, android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i) {
         super.setDropDownBackgroundResource(i);
         this.b = i;
@@ -101,10 +94,9 @@ public class SkinCompatMultiAutoCompleteTextView extends AppCompatMultiAutoCompl
         setTextAppearance(getContext(), i);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatMultiAutoCompleteTextView, android.widget.TextView
     public void setTextAppearance(Context context, int i) {
         super.setTextAppearance(context, i);
-        SkinCompatTextHelper skinCompatTextHelper = this.f44275c;
+        SkinCompatTextHelper skinCompatTextHelper = this.c;
         if (skinCompatTextHelper != null) {
             skinCompatTextHelper.a(context, i);
         }

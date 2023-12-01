@@ -5,13 +5,9 @@ import com.airbnb.lottie.model.animatable.AnimatableShapeValue;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/Mask.class */
 public class Mask {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final MaskMode f4344a;
+    private final MaskMode a;
     private final AnimatableShapeValue b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableIntegerValue f4345c;
+    private final AnimatableIntegerValue c;
     private final boolean d;
 
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/Mask$MaskMode.class */
@@ -22,14 +18,14 @@ public class Mask {
     }
 
     public Mask(MaskMode maskMode, AnimatableShapeValue animatableShapeValue, AnimatableIntegerValue animatableIntegerValue, boolean z) {
-        this.f4344a = maskMode;
+        this.a = maskMode;
         this.b = animatableShapeValue;
-        this.f4345c = animatableIntegerValue;
+        this.c = animatableIntegerValue;
         this.d = z;
     }
 
     public MaskMode a() {
-        return this.f4344a;
+        return this.a;
     }
 
     public AnimatableShapeValue b() {
@@ -37,7 +33,7 @@ public class Mask {
     }
 
     public AnimatableIntegerValue c() {
-        return this.f4345c;
+        return this.c;
     }
 
     public boolean d() {

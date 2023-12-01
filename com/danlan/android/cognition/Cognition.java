@@ -3,7 +3,6 @@ package com.danlan.android.cognition;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.danlan.android.cognition.collector.TotalInfoCollector;
 import com.danlan.android.cognition.collector.base.BaseDeviceInfoCollector;
 import com.danlan.android.cognition.collector.listener.CollectorStateObserver;
@@ -219,7 +218,7 @@ public final class Cognition implements CollectorStateObserver {
             e.printStackTrace();
         }
         SafeJSONObject safeJSONObject3 = new SafeJSONObject();
-        safeJSONObject3.put(BridgeUtil.UNDERLINE_STR, str2);
+        safeJSONObject3.put("_", str2);
         return new HttpTask(context, str, deviceInfoDependency.setApi().get("data_upload"), safeJSONObject3, deviceInfoDependency.setSpecialUserAgent(), deviceInfoDependency.setHeaderData());
     }
 

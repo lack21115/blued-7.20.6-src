@@ -8,11 +8,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class d extends f {
 
     /* renamed from: a */
-    public static final int f23609a = 20160629;
+    public static final int f10001a = 20160629;
     public static final long b = 604800000;
 
     /* renamed from: c */
-    private static final String f23610c = "PollingTimerTask";
+    private static final String f10002c = "PollingTimerTask";
     private long e;
     private AtomicBoolean f;
 
@@ -20,7 +20,7 @@ public final class d extends f {
     public static final class a {
 
         /* renamed from: a */
-        private static final d f23611a = new d();
+        private static final d f10003a = new d();
 
         private a() {
         }
@@ -38,7 +38,7 @@ public final class d extends f {
     }
 
     private static d p() {
-        return a.f23611a;
+        return a.f10003a;
     }
 
     @Override // com.igexin.push.e.b.f
@@ -47,7 +47,7 @@ public final class d extends f {
         boolean a2 = com.igexin.push.f.c.a(System.currentTimeMillis());
         if (!com.igexin.push.core.e.u && com.igexin.push.core.e.n && com.igexin.push.core.e.p && com.igexin.push.core.e.s && !a2 && com.igexin.push.f.c.a()) {
             com.igexin.c.a.c.a.a("PollingTimerTask|run = true", new Object[0]);
-            com.igexin.push.c.c cVar = c.b.f23335a;
+            com.igexin.push.c.c cVar = c.b.f9727a;
             if (cVar.b && cVar.e != null && !(cVar.e instanceof com.igexin.push.c.d)) {
                 cVar.e = new com.igexin.push.c.d();
             }
@@ -58,7 +58,7 @@ public final class d extends f {
 
     @Override // com.igexin.c.a.d.a.e
     public final int c() {
-        return f23609a;
+        return f10001a;
     }
 
     public final void g() {

@@ -16,7 +16,7 @@ public class j extends h {
     private a H;
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile boolean f27068a;
+    private volatile boolean f13380a;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/o/b/j$a.class */
     interface a {
@@ -25,7 +25,7 @@ public class j extends h {
 
     public j(Context context, d dVar, FrameLayout frameLayout) {
         super(context, dVar, frameLayout, false);
-        this.f27068a = false;
+        this.f13380a = false;
         this.H = new a() { // from class: com.opos.mobad.o.b.j.4
             @Override // com.opos.mobad.o.b.j.a
             public void a(final ImageView imageView, final Bitmap bitmap) {
@@ -95,13 +95,13 @@ public class j extends h {
     public void a(final AdItemData adItemData, final String str) {
         com.opos.cmn.an.f.a.b("MediaCreative", "playVideo url:" + str);
         if (adItemData != null) {
-            this.f27042c = adItemData;
+            this.f13354c = adItemData;
             this.A = str;
             if (adItemData.i().get(0) != null) {
                 com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.o.b.j.2
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (j.this.f27068a) {
+                        if (j.this.f13380a) {
                             return;
                         }
                         j jVar = j.this;
@@ -133,7 +133,7 @@ public class j extends h {
 
     public void b() {
         com.opos.cmn.an.f.a.b("MediaCreative", "release video and ad");
-        this.f27068a = true;
+        this.f13380a = true;
         W();
         S();
         T();
@@ -169,7 +169,7 @@ public class j extends h {
     public void b(AdItemData adItemData, String str) {
         com.opos.cmn.an.f.a.b("MediaCreative", "playVideoWithoutCheckPlaying url:" + str);
         if (adItemData != null) {
-            this.f27042c = adItemData;
+            this.f13354c = adItemData;
             this.A = str;
             if (adItemData.i().get(0) != null) {
                 a(this.l, 5);

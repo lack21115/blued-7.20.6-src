@@ -16,10 +16,10 @@ import java.io.InputStreamReader;
 public final class p extends com.anythink.expressad.atsignalcommon.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7116a = "WindVaneWebViewClient";
+    public static final String f4278a = "WindVaneWebViewClient";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7117c = 0;
+    public static final int f4279c = 0;
     public static final int d = 1;
     public static final String e = "mmusdk_cache";
     public static final String f = "1";

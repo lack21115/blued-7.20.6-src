@@ -16,7 +16,7 @@ import java.util.Locale;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f35029a;
+    private static String f21338a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/e/k$a.class */
     public static class a extends SQLiteOpenHelper {
@@ -176,25 +176,25 @@ public final class k {
         }
         com.tencent.beacon.base.util.c.a("[db] parse bean.", new Object[0]);
         j jVar = new j();
-        jVar.f35027a = cursor.getLong(cursor.getColumnIndex("_id"));
+        jVar.f21336a = cursor.getLong(cursor.getColumnIndex("_id"));
         jVar.b = cursor.getInt(cursor.getColumnIndex("_key"));
-        jVar.f35028c = cursor.getBlob(cursor.getColumnIndex("_datas"));
+        jVar.f21337c = cursor.getBlob(cursor.getColumnIndex("_datas"));
         return jVar;
     }
 
     public static String a() {
-        if (TextUtils.isEmpty(f35029a)) {
+        if (TextUtils.isEmpty(f21338a)) {
             com.tencent.beacon.a.d.a a2 = com.tencent.beacon.a.d.a.a();
-            f35029a = a2.getString("initsdkdate", "");
-            if (!com.tencent.beacon.base.util.b.d().equals(f35029a)) {
-                a.SharedPreferences$EditorC0895a edit = a2.edit();
+            f21338a = a2.getString("initsdkdate", "");
+            if (!com.tencent.beacon.base.util.b.d().equals(f21338a)) {
+                a.SharedPreferences$EditorC0725a edit = a2.edit();
                 if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                     edit.putString("initsdkdate", com.tencent.beacon.base.util.b.d());
                 }
             }
-            return f35029a;
+            return f21338a;
         }
-        return f35029a;
+        return f21338a;
     }
 
     public static boolean b() {
@@ -202,7 +202,7 @@ public final class k {
         boolean z = false;
         int i = com.tencent.beacon.base.util.b.d().equals(a()) ? a2.getInt("QUERY_TIMES_KEY", 0) : 0;
         if (i <= com.tencent.beacon.e.a.a().c()) {
-            a.SharedPreferences$EditorC0895a edit = a2.edit();
+            a.SharedPreferences$EditorC0725a edit = a2.edit();
             if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putInt("QUERY_TIMES_KEY", i + 1);
                 return false;
@@ -228,7 +228,7 @@ public final class k {
                     }
                     return z;
                 }
-                a.SharedPreferences$EditorC0895a edit = a2.edit();
+                a.SharedPreferences$EditorC0725a edit = a2.edit();
                 if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                     edit.putInt("today_success_strategy_query_times", 0);
                     return false;
@@ -247,7 +247,7 @@ public final class k {
         }
         com.tencent.beacon.a.d.a a2 = com.tencent.beacon.a.d.a.a();
         int i = a2.getInt("today_success_strategy_query_times", 0);
-        a.SharedPreferences$EditorC0895a edit = a2.edit();
+        a.SharedPreferences$EditorC0725a edit = a2.edit();
         if (com.tencent.beacon.base.util.b.a((SharedPreferences.Editor) edit)) {
             edit.putInt("today_success_strategy_query_times", i + 1).putLong("last_success_strategy_query_time", System.currentTimeMillis());
         }

@@ -3,7 +3,6 @@ package android.print;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/print/PrintDocumentInfo.class */
 public final class PrintDocumentInfo implements Parcelable {
@@ -137,7 +136,7 @@ public final class PrintDocumentInfo implements Parcelable {
         sb.append(", pageCount=").append(this.mPageCount);
         sb.append(", contentType=").append(contentTyepToString(this.mContentType));
         sb.append(", dataSize=").append(this.mDataSize);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

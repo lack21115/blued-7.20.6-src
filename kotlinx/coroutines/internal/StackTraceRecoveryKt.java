@@ -15,27 +15,25 @@ import kotlinx.coroutines.DebugKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/StackTraceRecoveryKt.class */
 public final class StackTraceRecoveryKt {
-
-    /* renamed from: a */
-    private static final String f43562a;
+    private static final String a;
     private static final String b;
 
     static {
         Object f;
         Object f2;
         try {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             f = Result.f(Class.forName("kotlin.coroutines.jvm.internal.BaseContinuationImpl").getCanonicalName());
         } catch (Throwable th) {
-            Result.Companion companion2 = Result.f42293a;
+            Result.Companion companion2 = Result.a;
             f = Result.f(ResultKt.a(th));
         }
-        f43562a = Result.c(f) == null ? f : "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
+        a = Result.c(f) == null ? f : "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
         try {
-            Result.Companion companion3 = Result.f42293a;
+            Result.Companion companion3 = Result.a;
             f2 = Result.f(Class.forName("kotlinx.coroutines.internal.StackTraceRecoveryKt").getCanonicalName());
         } catch (Throwable th2) {
-            Result.Companion companion4 = Result.f42293a;
+            Result.Companion companion4 = Result.a;
             f2 = Result.f(ResultKt.a(th2));
         }
         b = Result.c(f2) == null ? f2 : "kotlinx.coroutines.internal.StackTraceRecoveryKt";
@@ -71,7 +69,7 @@ public final class StackTraceRecoveryKt {
     private static final <E extends Throwable> E a(E e, E e2, ArrayDeque<StackTraceElement> arrayDeque) {
         arrayDeque.addFirst(a("Coroutine boundary"));
         StackTraceElement[] stackTrace = e.getStackTrace();
-        int a2 = a(stackTrace, f43562a);
+        int a2 = a(stackTrace, a);
         if (a2 == -1) {
             Object[] array = arrayDeque.toArray(new StackTraceElement[0]);
             if (array != null) {
@@ -222,7 +220,7 @@ public final class StackTraceRecoveryKt {
         StackTraceElement[] stackTrace = e.getStackTrace();
         int length = stackTrace.length;
         int a2 = a(stackTrace, b);
-        int a3 = a(stackTrace, f43562a);
+        int a3 = a(stackTrace, a);
         int i = (length - a2) - (a3 == -1 ? 0 : length - a3);
         StackTraceElement[] stackTraceElementArr = new StackTraceElement[i];
         int i2 = 0;

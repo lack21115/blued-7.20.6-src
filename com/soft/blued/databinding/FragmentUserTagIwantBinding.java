@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentUserTagIwantBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29003a;
+    private final LinearLayout f15313a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29003a;
+        return this.f15313a;
     }
 }

@@ -8,36 +8,36 @@ import java.io.OutputStream;
 public class db extends dd {
 
     /* renamed from: a  reason: collision with root package name */
-    protected InputStream f40718a;
+    protected InputStream f27027a;
     protected OutputStream b;
 
     protected db() {
-        this.f40718a = null;
+        this.f27027a = null;
         this.b = null;
     }
 
     public db(InputStream inputStream) {
-        this.f40718a = null;
+        this.f27027a = null;
         this.b = null;
-        this.f40718a = inputStream;
+        this.f27027a = inputStream;
     }
 
     public db(InputStream inputStream, OutputStream outputStream) {
-        this.f40718a = null;
+        this.f27027a = null;
         this.b = null;
-        this.f40718a = inputStream;
+        this.f27027a = inputStream;
         this.b = outputStream;
     }
 
     public db(OutputStream outputStream) {
-        this.f40718a = null;
+        this.f27027a = null;
         this.b = null;
         this.b = outputStream;
     }
 
     @Override // com.umeng.analytics.pro.dd
     public int a(byte[] bArr, int i, int i2) throws de {
-        InputStream inputStream = this.f40718a;
+        InputStream inputStream = this.f27027a;
         if (inputStream != null) {
             try {
                 int read = inputStream.read(bArr, i, i2);
@@ -76,14 +76,14 @@ public class db extends dd {
 
     @Override // com.umeng.analytics.pro.dd
     public void c() {
-        InputStream inputStream = this.f40718a;
+        InputStream inputStream = this.f27027a;
         if (inputStream != null) {
             try {
                 inputStream.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            this.f40718a = null;
+            this.f27027a = null;
         }
         OutputStream outputStream = this.b;
         if (outputStream != null) {

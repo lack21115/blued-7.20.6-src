@@ -17,7 +17,7 @@ import java.util.Iterator;
 public final class TaskStackBuilder implements Iterable<Intent> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<Intent> f2400a = new ArrayList<>();
+    private final ArrayList<Intent> f2352a = new ArrayList<>();
     private final Context b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/TaskStackBuilder$SupportParentable.class */
@@ -39,7 +39,7 @@ public final class TaskStackBuilder implements Iterable<Intent> {
     }
 
     public TaskStackBuilder addNextIntent(Intent intent) {
-        this.f2400a.add(intent);
+        this.f2352a.add(intent);
         return this;
     }
 
@@ -75,11 +75,11 @@ public final class TaskStackBuilder implements Iterable<Intent> {
     }
 
     public TaskStackBuilder addParentStack(ComponentName componentName) {
-        int size = this.f2400a.size();
+        int size = this.f2352a.size();
         try {
             Intent parentActivityIntent = NavUtils.getParentActivityIntent(this.b, componentName);
             while (parentActivityIntent != null) {
-                this.f2400a.add(size, parentActivityIntent);
+                this.f2352a.add(size, parentActivityIntent);
                 parentActivityIntent = NavUtils.getParentActivityIntent(this.b, parentActivityIntent.getComponent());
             }
             return this;
@@ -94,7 +94,7 @@ public final class TaskStackBuilder implements Iterable<Intent> {
     }
 
     public Intent editIntentAt(int i) {
-        return this.f2400a.get(i);
+        return this.f2352a.get(i);
     }
 
     @Deprecated
@@ -103,23 +103,23 @@ public final class TaskStackBuilder implements Iterable<Intent> {
     }
 
     public int getIntentCount() {
-        return this.f2400a.size();
+        return this.f2352a.size();
     }
 
     public Intent[] getIntents() {
-        int size = this.f2400a.size();
+        int size = this.f2352a.size();
         Intent[] intentArr = new Intent[size];
         if (size == 0) {
             return intentArr;
         }
-        intentArr[0] = new Intent(this.f2400a.get(0)).addFlags(268484608);
+        intentArr[0] = new Intent(this.f2352a.get(0)).addFlags(268484608);
         int i = 1;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return intentArr;
             }
-            intentArr[i2] = new Intent(this.f2400a.get(i2));
+            intentArr[i2] = new Intent(this.f2352a.get(i2));
             i = i2 + 1;
         }
     }
@@ -129,10 +129,10 @@ public final class TaskStackBuilder implements Iterable<Intent> {
     }
 
     public PendingIntent getPendingIntent(int i, int i2, Bundle bundle) {
-        if (this.f2400a.isEmpty()) {
+        if (this.f2352a.isEmpty()) {
             throw new IllegalStateException("No intents added to TaskStackBuilder; cannot getPendingIntent");
         }
-        ArrayList<Intent> arrayList = this.f2400a;
+        ArrayList<Intent> arrayList = this.f2352a;
         Intent[] intentArr = (Intent[]) arrayList.toArray(new Intent[arrayList.size()]);
         intentArr[0] = new Intent(intentArr[0]).addFlags(268484608);
         return Build.VERSION.SDK_INT >= 16 ? PendingIntent.getActivities(this.b, i, intentArr, i2, bundle) : PendingIntent.getActivities(this.b, i, intentArr, i2);
@@ -141,7 +141,7 @@ public final class TaskStackBuilder implements Iterable<Intent> {
     @Override // java.lang.Iterable
     @Deprecated
     public Iterator<Intent> iterator() {
-        return this.f2400a.iterator();
+        return this.f2352a.iterator();
     }
 
     public void startActivities() {
@@ -149,10 +149,10 @@ public final class TaskStackBuilder implements Iterable<Intent> {
     }
 
     public void startActivities(Bundle bundle) {
-        if (this.f2400a.isEmpty()) {
+        if (this.f2352a.isEmpty()) {
             throw new IllegalStateException("No intents added to TaskStackBuilder; cannot startActivities");
         }
-        ArrayList<Intent> arrayList = this.f2400a;
+        ArrayList<Intent> arrayList = this.f2352a;
         Intent[] intentArr = (Intent[]) arrayList.toArray(new Intent[arrayList.size()]);
         intentArr[0] = new Intent(intentArr[0]).addFlags(268484608);
         if (ContextCompat.startActivities(this.b, intentArr, bundle)) {

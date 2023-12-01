@@ -7,21 +7,21 @@ import java.nio.ByteOrder;
 public class ByteBufferReadWriteBuf implements ReadWriteBuf {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ByteBuffer f2851a;
+    private final ByteBuffer f2803a;
 
     public ByteBufferReadWriteBuf(ByteBuffer byteBuffer) {
-        this.f2851a = byteBuffer;
+        this.f2803a = byteBuffer;
         byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public byte[] data() {
-        return this.f2851a.array();
+        return this.f2803a.array();
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public byte get(int i) {
-        return this.f2851a.get(i);
+        return this.f2803a.get(i);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
@@ -31,47 +31,47 @@ public class ByteBufferReadWriteBuf implements ReadWriteBuf {
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public double getDouble(int i) {
-        return this.f2851a.getDouble(i);
+        return this.f2803a.getDouble(i);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public float getFloat(int i) {
-        return this.f2851a.getFloat(i);
+        return this.f2803a.getFloat(i);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public int getInt(int i) {
-        return this.f2851a.getInt(i);
+        return this.f2803a.getInt(i);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public long getLong(int i) {
-        return this.f2851a.getLong(i);
+        return this.f2803a.getLong(i);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public short getShort(int i) {
-        return this.f2851a.getShort(i);
+        return this.f2803a.getShort(i);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadBuf
     public String getString(int i, int i2) {
-        return Utf8Safe.decodeUtf8Buffer(this.f2851a, i, i2);
+        return Utf8Safe.decodeUtf8Buffer(this.f2803a, i, i2);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf, androidx.emoji2.text.flatbuffer.ReadBuf
     public int limit() {
-        return this.f2851a.limit();
+        return this.f2803a.limit();
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void put(byte b) {
-        this.f2851a.put(b);
+        this.f2803a.put(b);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void put(byte[] bArr, int i, int i2) {
-        this.f2851a.put(bArr, i, i2);
+        this.f2803a.put(bArr, i, i2);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -82,47 +82,47 @@ public class ByteBufferReadWriteBuf implements ReadWriteBuf {
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void putDouble(double d) {
-        this.f2851a.putDouble(d);
+        this.f2803a.putDouble(d);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void putFloat(float f) {
-        this.f2851a.putFloat(f);
+        this.f2803a.putFloat(f);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void putInt(int i) {
-        this.f2851a.putInt(i);
+        this.f2803a.putInt(i);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void putLong(long j) {
-        this.f2851a.putLong(j);
+        this.f2803a.putLong(j);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void putShort(short s) {
-        this.f2851a.putShort(s);
+        this.f2803a.putShort(s);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public boolean requestCapacity(int i) {
-        return i <= this.f2851a.limit();
+        return i <= this.f2803a.limit();
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void set(int i, byte b) {
         requestCapacity(i + 1);
-        this.f2851a.put(i, b);
+        this.f2803a.put(i, b);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void set(int i, byte[] bArr, int i2, int i3) {
         requestCapacity((i3 - i2) + i);
-        int position = this.f2851a.position();
-        this.f2851a.position(i);
-        this.f2851a.put(bArr, i2, i3);
-        this.f2851a.position(position);
+        int position = this.f2803a.position();
+        this.f2803a.position(i);
+        this.f2803a.put(bArr, i2, i3);
+        this.f2803a.position(position);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -134,35 +134,35 @@ public class ByteBufferReadWriteBuf implements ReadWriteBuf {
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void setDouble(int i, double d) {
         requestCapacity(i + 8);
-        this.f2851a.putDouble(i, d);
+        this.f2803a.putDouble(i, d);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void setFloat(int i, float f) {
         requestCapacity(i + 4);
-        this.f2851a.putFloat(i, f);
+        this.f2803a.putFloat(i, f);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void setInt(int i, int i2) {
         requestCapacity(i + 4);
-        this.f2851a.putInt(i, i2);
+        this.f2803a.putInt(i, i2);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void setLong(int i, long j) {
         requestCapacity(i + 8);
-        this.f2851a.putLong(i, j);
+        this.f2803a.putLong(i, j);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public void setShort(int i, short s) {
         requestCapacity(i + 2);
-        this.f2851a.putShort(i, s);
+        this.f2803a.putShort(i, s);
     }
 
     @Override // androidx.emoji2.text.flatbuffer.ReadWriteBuf
     public int writePosition() {
-        return this.f2851a.position();
+        return this.f2803a.position();
     }
 }

@@ -7,21 +7,20 @@ import com.qq.e.comm.util.AdErrorConvertor;
 import com.qq.e.comm.util.a;
 import java.util.HashMap;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/qq/e/ads/interstitial2/ADListenerAdapter.class */
-public class ADListenerAdapter implements ADListener {
+class ADListenerAdapter implements ADListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UnifiedInterstitialADListener f27876a;
+    private final UnifiedInterstitialADListener f14188a;
     private UnifiedInterstitialMediaListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.qq.e.comm.listeners.ADRewardListener f27877c;
+    private com.qq.e.comm.listeners.ADRewardListener f14189c;
     private NegativeFeedbackListener d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ADListenerAdapter(UnifiedInterstitialADListener unifiedInterstitialADListener) {
-        this.f27876a = unifiedInterstitialADListener;
+        this.f14188a = unifiedInterstitialADListener;
     }
 
     @Override // com.qq.e.comm.adevent.ADListener
@@ -33,19 +32,19 @@ public class ADListenerAdapter implements ADListener {
         }
         int type = aDEvent.getType();
         if (type == 109) {
-            UnifiedInterstitialADListener unifiedInterstitialADListener2 = this.f27876a;
+            UnifiedInterstitialADListener unifiedInterstitialADListener2 = this.f14188a;
             if (unifiedInterstitialADListener2 == null || !a.b(unifiedInterstitialADListener2)) {
                 return;
             }
-            this.f27876a.onRenderSuccess();
+            this.f14188a.onRenderSuccess();
         } else if (type == 110) {
-            UnifiedInterstitialADListener unifiedInterstitialADListener3 = this.f27876a;
+            UnifiedInterstitialADListener unifiedInterstitialADListener3 = this.f14188a;
             if (unifiedInterstitialADListener3 == null || !a.a(unifiedInterstitialADListener3)) {
                 return;
             }
-            this.f27876a.onRenderFail();
+            this.f14188a.onRenderFail();
         } else if (type == 201) {
-            UnifiedInterstitialADListener unifiedInterstitialADListener4 = this.f27876a;
+            UnifiedInterstitialADListener unifiedInterstitialADListener4 = this.f14188a;
             if (unifiedInterstitialADListener4 != null) {
                 unifiedInterstitialADListener4.onVideoCached();
             }
@@ -74,7 +73,7 @@ public class ADListenerAdapter implements ADListener {
         } else {
             switch (type) {
                 case 100:
-                    UnifiedInterstitialADListener unifiedInterstitialADListener5 = this.f27876a;
+                    UnifiedInterstitialADListener unifiedInterstitialADListener5 = this.f14188a;
                     if (unifiedInterstitialADListener5 != null) {
                         unifiedInterstitialADListener5.onADReceive();
                         return;
@@ -82,42 +81,42 @@ public class ADListenerAdapter implements ADListener {
                     return;
                 case 101:
                     Integer num2 = (Integer) aDEvent.getParam(Integer.class);
-                    if (num2 == null || (unifiedInterstitialADListener = this.f27876a) == null) {
+                    if (num2 == null || (unifiedInterstitialADListener = this.f14188a) == null) {
                         return;
                     }
                     unifiedInterstitialADListener.onNoAD(AdErrorConvertor.formatErrorCode(num2.intValue()));
                     return;
                 case 102:
-                    UnifiedInterstitialADListener unifiedInterstitialADListener6 = this.f27876a;
+                    UnifiedInterstitialADListener unifiedInterstitialADListener6 = this.f14188a;
                     if (unifiedInterstitialADListener6 != null) {
                         unifiedInterstitialADListener6.onADOpened();
                         return;
                     }
                     return;
                 case 103:
-                    UnifiedInterstitialADListener unifiedInterstitialADListener7 = this.f27876a;
+                    UnifiedInterstitialADListener unifiedInterstitialADListener7 = this.f14188a;
                     if (unifiedInterstitialADListener7 != null) {
                         unifiedInterstitialADListener7.onADExposure();
                         return;
                     }
                     return;
                 case 104:
-                    if (this.f27877c == null || (str = (String) aDEvent.getParam(String.class)) == null) {
+                    if (this.f14189c == null || (str = (String) aDEvent.getParam(String.class)) == null) {
                         return;
                     }
                     HashMap hashMap = new HashMap();
                     hashMap.put("transId", str);
-                    this.f27877c.onReward(hashMap);
+                    this.f14189c.onReward(hashMap);
                     return;
                 case 105:
-                    UnifiedInterstitialADListener unifiedInterstitialADListener8 = this.f27876a;
+                    UnifiedInterstitialADListener unifiedInterstitialADListener8 = this.f14188a;
                     if (unifiedInterstitialADListener8 != null) {
                         unifiedInterstitialADListener8.onADClicked();
                         return;
                     }
                     return;
                 case 106:
-                    UnifiedInterstitialADListener unifiedInterstitialADListener9 = this.f27876a;
+                    UnifiedInterstitialADListener unifiedInterstitialADListener9 = this.f14188a;
                     if (unifiedInterstitialADListener9 != null) {
                         unifiedInterstitialADListener9.onADClosed();
                         return;
@@ -164,7 +163,7 @@ public class ADListenerAdapter implements ADListener {
                                     }
                                     return;
                                 case 303:
-                                    UnifiedInterstitialADListener unifiedInterstitialADListener10 = this.f27876a;
+                                    UnifiedInterstitialADListener unifiedInterstitialADListener10 = this.f14188a;
                                     if (unifiedInterstitialADListener10 != null) {
                                         unifiedInterstitialADListener10.onADLeftApplication();
                                         return;
@@ -186,7 +185,7 @@ public class ADListenerAdapter implements ADListener {
     }
 
     public void setAdRewardListener(com.qq.e.comm.listeners.ADRewardListener aDRewardListener) {
-        this.f27877c = aDRewardListener;
+        this.f14189c = aDRewardListener;
     }
 
     public void setMediaListener(UnifiedInterstitialMediaListener unifiedInterstitialMediaListener) {

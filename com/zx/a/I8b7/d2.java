@@ -9,24 +9,24 @@ import com.zx.sdk.api.PermissionCallback;
 public class d2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PermissionCallback f42115a;
+    public final /* synthetic */ PermissionCallback f28424a;
     public final /* synthetic */ Activity b;
 
     public d2(e2 e2Var, PermissionCallback permissionCallback, Activity activity) {
-        this.f42115a = permissionCallback;
+        this.f28424a = permissionCallback;
         this.b = activity;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            r0 r0Var = new r0(this.f42115a);
-            Handler handler = r2.f42192a;
-            r2 r2Var = r2.a.f42193a;
+            r0 r0Var = new r0(this.f28424a);
+            Handler handler = r2.f28501a;
+            r2 r2Var = r2.a.f28502a;
             if (r2Var.b()) {
                 Activity activity = this.b;
                 r2Var.getClass();
-                r2.f42192a.post(new q2(r2Var, activity, r0Var));
+                r2.f28501a.post(new q2(r2Var, activity, r0Var));
             } else if (r2Var.a()) {
                 r0Var.onAuthorized();
             } else {

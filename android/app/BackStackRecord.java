@@ -13,11 +13,9 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import com.alipay.sdk.util.i;
 import com.android.internal.util.FastPrintWriter;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -268,7 +266,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
     private static Transition cloneTransition(Transition transition) {
         Transition transition2 = transition;
         if (transition != null) {
-            transition2 = transition.mo1000clone();
+            transition2 = transition.mo996clone();
         }
         return transition2;
     }
@@ -833,7 +831,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         }
         if (FragmentManagerImpl.DEBUG) {
             Log.v(TAG, "Commit: " + this);
-            FastPrintWriter fastPrintWriter = new FastPrintWriter((Writer) new LogWriter(2, TAG), false, 1024);
+            FastPrintWriter fastPrintWriter = new FastPrintWriter(new LogWriter(2, TAG), false, 1024);
             dump("  ", null, fastPrintWriter, null);
             fastPrintWriter.flush();
         }
@@ -1330,7 +1328,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
             sb.append(" ");
             sb.append(this.mName);
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

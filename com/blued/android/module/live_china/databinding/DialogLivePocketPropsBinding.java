@@ -12,21 +12,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLivePocketPropsBinding.class */
 public final class DialogLivePocketPropsBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f11805a;
+    public final LinearLayout a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f11806c;
+    public final RecyclerView c;
     public final ShapeTextView d;
     private final FrameLayout e;
 
     private DialogLivePocketPropsBinding(FrameLayout frameLayout, LinearLayout linearLayout, LinearLayout linearLayout2, RecyclerView recyclerView, ShapeTextView shapeTextView) {
         this.e = frameLayout;
-        this.f11805a = linearLayout;
+        this.a = linearLayout;
         this.b = linearLayout2;
-        this.f11806c = recyclerView;
+        this.c = recyclerView;
         this.d = shapeTextView;
     }
 
@@ -44,11 +40,11 @@ public final class DialogLivePocketPropsBinding implements ViewBinding {
         if (linearLayout != null) {
             LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_main);
             if (linearLayout2 != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
+                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                if (findViewById != null) {
                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_use);
                     if (shapeTextView != null) {
-                        return new DialogLivePocketPropsBinding((FrameLayout) view, linearLayout, linearLayout2, recyclerView, shapeTextView);
+                        return new DialogLivePocketPropsBinding((FrameLayout) view, linearLayout, linearLayout2, findViewById, shapeTextView);
                     }
                     str = "tvUse";
                 } else {
@@ -63,7 +59,6 @@ public final class DialogLivePocketPropsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

@@ -1,9 +1,10 @@
 package com.anythink.core.c;
 
 import android.text.TextUtils;
+import com.android.internal.widget.LockPatternUtils;
+import com.anythink.core.common.b.g;
 import com.anythink.core.common.e.n;
 import com.anythink.core.common.e.v;
-import com.cdo.oaps.ad.OapsKey;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -13,9 +14,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/c/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6411a = a.class.getSimpleName();
+    public static final String a = a.class.getSimpleName();
     private Map A;
     private String B;
     private String C;
@@ -60,9 +59,7 @@ public class a {
     private String ap;
     private String aq;
     protected boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Map<String, Object> f6412c;
+    Map<String, Object> c;
     private long d;
     private String e;
     private long f;
@@ -89,7 +86,7 @@ public class a {
 
     /* renamed from: com.anythink.core.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/c/a$a.class */
-    static final class C0093a {
+    static final class C0053a {
         private static String A = "t_c";
         private static String B = "data_level";
         private static String C = "psid_hl";
@@ -116,9 +113,7 @@ public class a {
         private static String X = "tk_no_nt_t";
         private static String Y = "da_no_nt_k";
         private static String Z = "s2s_addr";
-
-        /* renamed from: a  reason: collision with root package name */
-        public static String f6413a = "pil";
+        public static String a = "pil";
         private static String aa = "cn_gdpr_nu";
         private static String ab = "cn_s2s_addr";
         private static String ac = "cn_req_addr";
@@ -136,14 +131,10 @@ public class a {
         private static String ao = "store_wakup";
         private static String ap = "mdna_capi_sw";
         private static String aq = "mdna_s_sw";
-
-        /* renamed from: ar  reason: collision with root package name */
-        private static String f6414ar = "mdna_c_sw";
+        private static String ar = "mdna_c_sw";
         private static String as = "admob_m_sw";
         public static String b = "tk_rt_sp_ft";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static String f6415c = "da_rt_sp_ft";
+        public static String c = "da_rt_sp_ft";
         public static String d = "lrqf_interval";
         private static String e = "scet";
         private static String f = "req_ver";
@@ -168,7 +159,7 @@ public class a {
         private static String y = "preinit";
         private static String z = "nw_eu_def";
 
-        C0093a() {
+        C0053a() {
         }
     }
 
@@ -321,7 +312,7 @@ public class a {
     }
 
     private Map<String, Object> az() {
-        return this.f6412c;
+        return this.c;
     }
 
     private void b(int i) {
@@ -353,7 +344,7 @@ public class a {
     }
 
     private void e(Map<String, Object> map) {
-        this.f6412c = map;
+        this.c = map;
     }
 
     public static a f(String str) {
@@ -366,67 +357,67 @@ public class a {
         a aVar = new a();
         try {
             JSONObject jSONObject2 = new JSONObject(str);
-            if (jSONObject2.isNull(C0093a.f)) {
+            if (jSONObject2.isNull(C0053a.f)) {
                 aVar.e = "unkown";
             } else {
-                aVar.e = jSONObject2.optString(C0093a.f);
+                aVar.e = jSONObject2.optString(C0053a.f);
             }
-            if (jSONObject2.isNull(C0093a.e)) {
-                aVar.d = 7200000L;
+            if (jSONObject2.isNull(C0053a.e)) {
+                aVar.d = g.e.a;
             } else {
-                aVar.d = jSONObject2.optLong(C0093a.e);
+                aVar.d = jSONObject2.optLong(C0053a.e);
             }
-            if (jSONObject2.isNull(C0093a.g)) {
+            if (jSONObject2.isNull(C0053a.g)) {
                 aVar.g = 0;
             } else {
-                aVar.g = jSONObject2.optInt(C0093a.g);
+                aVar.g = jSONObject2.optInt(C0053a.g);
             }
-            if (jSONObject2.isNull(C0093a.h)) {
+            if (jSONObject2.isNull(C0053a.h)) {
                 aVar.h = 0;
             } else {
-                aVar.h = jSONObject2.optInt(C0093a.h);
+                aVar.h = jSONObject2.optInt(C0053a.h);
             }
-            if (jSONObject2.isNull(C0093a.i)) {
+            if (jSONObject2.isNull(C0053a.i)) {
                 aVar.i = "";
             } else {
-                aVar.i = jSONObject2.optString(C0093a.i);
+                aVar.i = jSONObject2.optString(C0053a.i);
             }
-            if (jSONObject2.isNull(C0093a.j)) {
+            if (jSONObject2.isNull(C0053a.j)) {
                 aVar.j = "[\"AT\",\"BE\",\"BG\",\"HR\",\"CY\",\"CZ\",\"DK\",\"EE\",\"FI\",\"FR\",\"DE\",\"GR\",\"HU\",\"IS\",\"IE\",\"IT\",\"LV\",\"LI\",\"LT\",\"LU\",\"MT\",\"NL\",\"NO\",\"PL\",\"PT\",\"RO\",\"SK\",\"SI\",\"ES\",\"SE\",\"GB\",\"UK\"]";
             } else {
-                aVar.j = jSONObject2.optString(C0093a.j);
+                aVar.j = jSONObject2.optString(C0053a.j);
             }
-            if (jSONObject2.isNull(C0093a.k)) {
+            if (jSONObject2.isNull(C0053a.k)) {
                 aVar.k = 0;
             } else {
-                aVar.k = jSONObject2.optInt(C0093a.k);
+                aVar.k = jSONObject2.optInt(C0053a.k);
             }
-            if (jSONObject2.isNull(C0093a.l)) {
+            if (jSONObject2.isNull(C0053a.l)) {
                 aVar.l = 5000L;
             } else {
-                aVar.l = jSONObject2.optLong(C0093a.l);
+                aVar.l = jSONObject2.optLong(C0053a.l);
             }
-            if (!jSONObject2.isNull(C0093a.n)) {
-                JSONObject optJSONObject = jSONObject2.optJSONObject(C0093a.n);
+            if (!jSONObject2.isNull(C0053a.n)) {
+                JSONObject optJSONObject = jSONObject2.optJSONObject(C0053a.n);
                 aVar.n = optJSONObject.toString();
-                aVar.o = optJSONObject.optString(C0093a.o);
-                aVar.p = optJSONObject.optInt(C0093a.p);
-                aVar.q = optJSONObject.optLong(C0093a.q);
-                aVar.s = optJSONObject.optString(C0093a.r);
-                aVar.t = optJSONObject.optInt(C0093a.s);
-                aVar.u = optJSONObject.optLong(C0093a.t);
+                aVar.o = optJSONObject.optString(C0053a.o);
+                aVar.p = optJSONObject.optInt(C0053a.p);
+                aVar.q = optJSONObject.optLong(C0053a.q);
+                aVar.s = optJSONObject.optString(C0053a.r);
+                aVar.t = optJSONObject.optInt(C0053a.s);
+                aVar.u = optJSONObject.optLong(C0053a.t);
                 ConcurrentHashMap<String, v> concurrentHashMap = new ConcurrentHashMap<>();
                 try {
-                    if (!optJSONObject.isNull(C0093a.w)) {
-                        JSONObject jSONObject3 = new JSONObject(optJSONObject.optString(C0093a.w));
+                    if (!optJSONObject.isNull(C0053a.w)) {
+                        JSONObject jSONObject3 = new JSONObject(optJSONObject.optString(C0053a.w));
                         Iterator<String> keys2 = jSONObject3.keys();
                         while (keys2.hasNext()) {
                             String next = keys2.next();
                             v vVar = new v();
                             JSONObject optJSONObject2 = jSONObject3.optJSONObject(next);
-                            vVar.f6678a = optJSONObject2.optInt("tk_fi_re_sw");
+                            vVar.a = optJSONObject2.optInt("tk_fi_re_sw");
                             vVar.b = optJSONObject2.optInt("tk_im_sw");
-                            vVar.f6679c = optJSONObject2.optInt("tk_sh_sw");
+                            vVar.c = optJSONObject2.optInt("tk_sh_sw");
                             vVar.d = optJSONObject2.optInt("tk_ck_sw");
                             vVar.e = optJSONObject2.optString("pg_m_li");
                             concurrentHashMap.put(next, vVar);
@@ -435,10 +426,10 @@ public class a {
                 } catch (Exception e) {
                 }
                 aVar.F = concurrentHashMap;
-                if (optJSONObject.isNull(C0093a.E)) {
+                if (optJSONObject.isNull(C0053a.E)) {
                     aVar.I = null;
                 } else {
-                    JSONObject jSONObject4 = new JSONObject(optJSONObject.optString(C0093a.E));
+                    JSONObject jSONObject4 = new JSONObject(optJSONObject.optString(C0053a.E));
                     Iterator<String> keys3 = jSONObject4.keys();
                     HashMap hashMap2 = new HashMap();
                     while (keys3.hasNext()) {
@@ -447,10 +438,10 @@ public class a {
                     }
                     aVar.I = hashMap2;
                 }
-                if (optJSONObject.isNull(C0093a.G)) {
+                if (optJSONObject.isNull(C0053a.G)) {
                     aVar.K = null;
                 } else {
-                    JSONObject jSONObject5 = new JSONObject(optJSONObject.optString(C0093a.G));
+                    JSONObject jSONObject5 = new JSONObject(optJSONObject.optString(C0053a.G));
                     Iterator<String> keys4 = jSONObject5.keys();
                     HashMap hashMap3 = new HashMap();
                     while (keys4.hasNext()) {
@@ -459,10 +450,10 @@ public class a {
                     }
                     aVar.K = hashMap3;
                 }
-                if (optJSONObject.isNull(C0093a.F)) {
+                if (optJSONObject.isNull(C0053a.F)) {
                     aVar.J = null;
                 } else {
-                    JSONObject jSONObject6 = new JSONObject(optJSONObject.optString(C0093a.F));
+                    JSONObject jSONObject6 = new JSONObject(optJSONObject.optString(C0053a.F));
                     Iterator<String> keys5 = jSONObject6.keys();
                     HashMap hashMap4 = new HashMap();
                     while (keys5.hasNext()) {
@@ -471,37 +462,37 @@ public class a {
                     }
                     aVar.J = hashMap4;
                 }
-                aVar.Q = optJSONObject.optString(C0093a.K);
-                aVar.R = optJSONObject.optInt(C0093a.L);
-                aVar.P = optJSONObject.optInt(C0093a.M);
-                aVar.S = optJSONObject.optString(C0093a.N);
-                if (optJSONObject.isNull(C0093a.X)) {
+                aVar.Q = optJSONObject.optString(C0053a.K);
+                aVar.R = optJSONObject.optInt(C0053a.L);
+                aVar.P = optJSONObject.optInt(C0053a.M);
+                aVar.S = optJSONObject.optString(C0053a.N);
+                if (optJSONObject.isNull(C0053a.X)) {
                     aVar.Z = null;
                 } else {
-                    aVar.Z = optJSONObject.optString(C0093a.X);
+                    aVar.Z = optJSONObject.optString(C0053a.X);
                 }
-                if (optJSONObject.isNull(C0093a.Y)) {
+                if (optJSONObject.isNull(C0053a.Y)) {
                     aVar.aa = null;
                 } else {
-                    aVar.aa = optJSONObject.optString(C0093a.Y);
+                    aVar.aa = optJSONObject.optString(C0053a.Y);
                 }
-                if (!optJSONObject.isNull(C0093a.ag)) {
-                    aVar.ae = optJSONObject.optString(C0093a.ag);
+                if (!optJSONObject.isNull(C0053a.ag)) {
+                    aVar.ae = optJSONObject.optString(C0053a.ag);
                 }
-                if (!optJSONObject.isNull(C0093a.ah)) {
-                    aVar.af = optJSONObject.optString(C0093a.ah);
+                if (!optJSONObject.isNull(C0053a.ah)) {
+                    aVar.af = optJSONObject.optString(C0053a.ah);
                 }
-                if (!optJSONObject.isNull(C0093a.ai)) {
-                    aVar.ag = optJSONObject.optString(C0093a.ai);
+                if (!optJSONObject.isNull(C0053a.ai)) {
+                    aVar.ag = optJSONObject.optString(C0053a.ai);
                 }
-                if (!optJSONObject.isNull(C0093a.aj)) {
-                    aVar.ah = optJSONObject.optInt(C0093a.aj);
+                if (!optJSONObject.isNull(C0053a.aj)) {
+                    aVar.ah = optJSONObject.optInt(C0053a.aj);
                 }
-                if (optJSONObject.isNull(C0093a.b)) {
+                if (optJSONObject.isNull(C0053a.b)) {
                     aVar.L = null;
                 } else {
                     try {
-                        jSONObject = new JSONObject(optJSONObject.optString(C0093a.b));
+                        jSONObject = new JSONObject(optJSONObject.optString(C0053a.b));
                         keys = jSONObject.keys();
                         hashMap = new HashMap();
                     } catch (Throwable th) {
@@ -513,7 +504,7 @@ public class a {
                         String next5 = keys.next();
                         HashMap hashMap5 = new HashMap();
                         JSONObject jSONObject7 = new JSONObject(jSONObject.optString(next5));
-                        JSONArray optJSONArray = jSONObject7.optJSONArray(OapsKey.KEY_IDS);
+                        JSONArray optJSONArray = jSONObject7.optJSONArray("ids");
                         String optString = jSONObject7.optString("formats");
                         if (optJSONArray.length() > 0 && !TextUtils.isEmpty(optString)) {
                             for (int i = 0; i < optJSONArray.length(); i++) {
@@ -528,17 +519,17 @@ public class a {
                     }
                     aVar.L = hashMap;
                 }
-                if (optJSONObject.isNull(C0093a.f6415c)) {
+                if (optJSONObject.isNull(C0053a.c)) {
                     aVar.M = null;
                 } else {
-                    JSONObject jSONObject8 = new JSONObject(optJSONObject.optString(C0093a.f6415c));
+                    JSONObject jSONObject8 = new JSONObject(optJSONObject.optString(C0053a.c));
                     Iterator<String> keys6 = jSONObject8.keys();
                     HashMap hashMap6 = new HashMap();
                     while (keys6.hasNext()) {
                         String next6 = keys6.next();
                         HashMap hashMap7 = new HashMap();
                         JSONObject jSONObject9 = new JSONObject(jSONObject8.optString(next6));
-                        JSONArray optJSONArray2 = jSONObject9.optJSONArray(OapsKey.KEY_IDS);
+                        JSONArray optJSONArray2 = jSONObject9.optJSONArray("ids");
                         String optString2 = jSONObject9.optString("formats");
                         if (optJSONArray2.length() > 0 && !TextUtils.isEmpty(optString2)) {
                             int i2 = 0;
@@ -555,14 +546,14 @@ public class a {
                     aVar.M = hashMap6;
                 }
             }
-            if (!jSONObject2.isNull(C0093a.u)) {
-                aVar.x = jSONObject2.optLong(C0093a.u);
+            if (!jSONObject2.isNull(C0053a.u)) {
+                aVar.x = jSONObject2.optLong(C0053a.u);
             }
-            if (!jSONObject2.isNull(C0093a.v)) {
-                aVar.y = jSONObject2.optLong(C0093a.v);
+            if (!jSONObject2.isNull(C0053a.v)) {
+                aVar.y = jSONObject2.optLong(C0053a.v);
             }
-            if (!jSONObject2.isNull(C0093a.x)) {
-                JSONObject jSONObject10 = new JSONObject(jSONObject2.optString(C0093a.x));
+            if (!jSONObject2.isNull(C0053a.x)) {
+                JSONObject jSONObject10 = new JSONObject(jSONObject2.optString(C0053a.x));
                 Iterator<String> keys7 = jSONObject10.keys();
                 HashMap hashMap8 = new HashMap();
                 while (keys7.hasNext()) {
@@ -571,71 +562,71 @@ public class a {
                 }
                 aVar.A = hashMap8;
             }
-            if (!jSONObject2.isNull(C0093a.A)) {
-                aVar.C = jSONObject2.optString(C0093a.A);
+            if (!jSONObject2.isNull(C0053a.A)) {
+                aVar.C = jSONObject2.optString(C0053a.A);
             }
-            if (!jSONObject2.isNull(C0093a.z)) {
-                aVar.z = jSONObject2.optInt(C0093a.z);
+            if (!jSONObject2.isNull(C0053a.z)) {
+                aVar.z = jSONObject2.optInt(C0053a.z);
             }
-            if (!jSONObject2.isNull(C0093a.B)) {
-                aVar.D = jSONObject2.optString(C0093a.B);
+            if (!jSONObject2.isNull(C0053a.B)) {
+                aVar.D = jSONObject2.optString(C0053a.B);
             }
-            if (jSONObject2.isNull(C0093a.C)) {
+            if (jSONObject2.isNull(C0053a.C)) {
                 aVar.G = 60000;
             } else {
-                aVar.G = jSONObject2.optInt(C0093a.C);
+                aVar.G = jSONObject2.optInt(C0053a.C);
             }
-            if (jSONObject2.isNull(C0093a.D)) {
+            if (jSONObject2.isNull(C0053a.D)) {
                 aVar.H = 0;
             } else {
-                aVar.H = jSONObject2.optInt(C0093a.D);
+                aVar.H = jSONObject2.optInt(C0053a.D);
             }
-            if (jSONObject2.isNull(C0093a.H)) {
+            if (jSONObject2.isNull(C0053a.H)) {
                 aVar.E = "";
             } else {
-                aVar.E = jSONObject2.optString(C0093a.H);
+                aVar.E = jSONObject2.optString(C0053a.H);
             }
-            if (jSONObject2.isNull(C0093a.I)) {
+            if (jSONObject2.isNull(C0053a.I)) {
                 aVar.N = 1;
             } else {
-                aVar.N = jSONObject2.optInt(C0093a.I);
+                aVar.N = jSONObject2.optInt(C0053a.I);
             }
-            if (jSONObject2.isNull(C0093a.J)) {
+            if (jSONObject2.isNull(C0053a.J)) {
                 aVar.O = "";
             } else {
-                aVar.O = jSONObject2.optString(C0093a.J);
+                aVar.O = jSONObject2.optString(C0053a.J);
             }
-            if (jSONObject2.isNull(C0093a.O)) {
+            if (jSONObject2.isNull(C0053a.O)) {
                 aVar.T = "";
             } else {
-                aVar.T = jSONObject2.optString(C0093a.O);
+                aVar.T = jSONObject2.optString(C0053a.O);
             }
-            if (jSONObject2.isNull(C0093a.P)) {
+            if (jSONObject2.isNull(C0053a.P)) {
                 aVar.W = null;
             } else {
                 n nVar = new n();
-                JSONObject optJSONObject3 = jSONObject2.optJSONObject(C0093a.P);
-                nVar.b(optJSONObject3.optString(C0093a.Q));
-                nVar.c(optJSONObject3.optString(C0093a.R));
-                nVar.d(optJSONObject3.optString(C0093a.S));
-                nVar.a(optJSONObject3.optString(C0093a.T));
-                if (!jSONObject2.isNull(C0093a.ac)) {
-                    nVar.e(optJSONObject3.optString(C0093a.ac));
+                JSONObject optJSONObject3 = jSONObject2.optJSONObject(C0053a.P);
+                nVar.b(optJSONObject3.optString(C0053a.Q));
+                nVar.c(optJSONObject3.optString(C0053a.R));
+                nVar.d(optJSONObject3.optString(C0053a.S));
+                nVar.a(optJSONObject3.optString(C0053a.T));
+                if (!jSONObject2.isNull(C0053a.ac)) {
+                    nVar.e(optJSONObject3.optString(C0053a.ac));
                 }
-                if (!jSONObject2.isNull(C0093a.ad)) {
-                    nVar.f(optJSONObject3.optString(C0093a.ad));
+                if (!jSONObject2.isNull(C0053a.ad)) {
+                    nVar.f(optJSONObject3.optString(C0053a.ad));
                 }
-                if (!jSONObject2.isNull(C0093a.ae)) {
-                    nVar.g(optJSONObject3.optString(C0093a.ae));
+                if (!jSONObject2.isNull(C0053a.ae)) {
+                    nVar.g(optJSONObject3.optString(C0053a.ae));
                 }
-                if (!jSONObject2.isNull(C0093a.af)) {
-                    nVar.h(optJSONObject3.optString(C0093a.af));
+                if (!jSONObject2.isNull(C0053a.af)) {
+                    nVar.h(optJSONObject3.optString(C0053a.af));
                 }
                 aVar.W = nVar;
             }
-            aVar.V = c.a(jSONObject2.optString(C0093a.U));
+            aVar.V = c.a(jSONObject2.optString(C0053a.U));
             if (jSONObject2.isNull("custom")) {
-                aVar.f6412c = null;
+                aVar.c = null;
             } else {
                 try {
                     JSONObject jSONObject11 = new JSONObject(jSONObject2.optString("custom"));
@@ -645,49 +636,49 @@ public class a {
                         String next8 = keys8.next();
                         hashMap9.put(next8, jSONObject11.opt(next8));
                     }
-                    aVar.f6412c = hashMap9;
+                    aVar.c = hashMap9;
                 } catch (Throwable th3) {
                 }
             }
-            aVar.X = jSONObject2.optInt(C0093a.V);
-            aVar.Y = jSONObject2.optInt(C0093a.W);
-            aVar.ab = jSONObject2.optString(C0093a.Z);
-            if (!jSONObject2.isNull(C0093a.aa)) {
-                aVar.ac = jSONObject2.optString(C0093a.aa);
+            aVar.X = jSONObject2.optInt(C0053a.V);
+            aVar.Y = jSONObject2.optInt(C0053a.W);
+            aVar.ab = jSONObject2.optString(C0053a.Z);
+            if (!jSONObject2.isNull(C0053a.aa)) {
+                aVar.ac = jSONObject2.optString(C0053a.aa);
             }
-            if (!jSONObject2.isNull(C0093a.ab)) {
-                aVar.ad = jSONObject2.optString(C0093a.ab);
+            if (!jSONObject2.isNull(C0053a.ab)) {
+                aVar.ad = jSONObject2.optString(C0053a.ab);
             }
-            if (!jSONObject2.isNull(C0093a.am)) {
-                aVar.ai = jSONObject2.optString(C0093a.am);
+            if (!jSONObject2.isNull(C0053a.am)) {
+                aVar.ai = jSONObject2.optString(C0053a.am);
             }
-            if (!jSONObject2.isNull(C0093a.an)) {
-                aVar.aj = jSONObject2.optString(C0093a.an);
+            if (!jSONObject2.isNull(C0053a.an)) {
+                aVar.aj = jSONObject2.optString(C0053a.an);
             }
-            if (jSONObject2.isNull(C0093a.ao)) {
+            if (jSONObject2.isNull(C0053a.ao)) {
                 aVar.ak = "1";
             } else {
-                aVar.ak = jSONObject2.optString(C0093a.ao);
+                aVar.ak = jSONObject2.optString(C0053a.ao);
             }
-            if (!jSONObject2.isNull(C0093a.ap)) {
-                aVar.al = jSONObject2.optInt(C0093a.ap);
+            if (!jSONObject2.isNull(C0053a.ap)) {
+                aVar.al = jSONObject2.optInt(C0053a.ap);
             }
-            if (!jSONObject2.isNull(C0093a.aq)) {
-                aVar.an = jSONObject2.optInt(C0093a.aq);
+            if (!jSONObject2.isNull(C0053a.aq)) {
+                aVar.an = jSONObject2.optInt(C0053a.aq);
             }
-            if (!jSONObject2.isNull(C0093a.f6414ar)) {
-                aVar.am = jSONObject2.optInt(C0093a.f6414ar);
+            if (!jSONObject2.isNull(C0053a.ar)) {
+                aVar.am = jSONObject2.optInt(C0053a.ar);
             }
-            if (jSONObject2.isNull(C0093a.as)) {
+            if (jSONObject2.isNull(C0053a.as)) {
                 aVar.ao = 1;
             } else {
-                aVar.ao = jSONObject2.optInt(C0093a.as);
+                aVar.ao = jSONObject2.optInt(C0053a.as);
             }
-            if (!jSONObject2.isNull(C0093a.f6413a)) {
-                aVar.ap = jSONObject2.optString(C0093a.f6413a);
+            if (!jSONObject2.isNull(C0053a.a)) {
+                aVar.ap = jSONObject2.optString(C0053a.a);
             }
-            if (!jSONObject2.isNull(C0093a.d)) {
-                aVar.aq = jSONObject2.optString(C0093a.d);
+            if (!jSONObject2.isNull(C0053a.d)) {
+                aVar.aq = jSONObject2.optString(C0053a.d);
             }
             return aVar;
         } catch (Exception e2) {
@@ -960,7 +951,7 @@ public class a {
     }
 
     public final void O() {
-        this.x = 30000L;
+        this.x = LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS;
     }
 
     public final long P() {
@@ -968,7 +959,7 @@ public class a {
     }
 
     public final void Q() {
-        this.d = 7200000L;
+        this.d = g.e.a;
     }
 
     public final int R() {

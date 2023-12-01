@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentMusicVideoCollectBinding.class */
 public final class FragmentMusicVideoCollectBinding implements ViewBinding {
+    private final RelativeLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f18899a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f18899a;
+        return this.a;
     }
 }

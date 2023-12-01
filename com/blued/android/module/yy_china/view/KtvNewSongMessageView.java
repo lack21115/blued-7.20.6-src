@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -26,13 +27,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/KtvNewSongMessageView.class */
 public final class KtvNewSongMessageView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17951a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final ViewKtvNewSongMessageBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final NewSongMessHandler f17952c;
+    private final NewSongMessHandler c;
     private final int d;
     private NewSongMessageModel e;
     private BaseYYStudioFragment f;
@@ -81,7 +78,7 @@ public final class KtvNewSongMessageView extends FrameLayout {
         ViewKtvNewSongMessageBinding a2 = ViewKtvNewSongMessageBinding.a(LayoutInflater.from(getContext()), this, true);
         Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
         this.b = a2;
-        this.f17952c = new NewSongMessHandler(this);
+        this.c = new NewSongMessHandler(this);
         this.d = getResources().getDimensionPixelOffset(R.dimen.dp_10);
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$KtvNewSongMessageView$DrshxCxZRas7AeOxOwWLU7zdlMc
             @Override // android.view.View.OnClickListener
@@ -102,8 +99,8 @@ public final class KtvNewSongMessageView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(KtvNewSongMessageView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f17952c.removeCallbacksAndMessages(null);
-        this$0.f17952c.sendEmptyMessage(1);
+        this$0.c.removeCallbacksAndMessages(null);
+        this$0.c.sendEmptyMessage(1);
         this$0.d();
     }
 
@@ -132,11 +129,11 @@ public final class KtvNewSongMessageView extends FrameLayout {
 
     public final void a(String con) {
         Intrinsics.e(con, "con");
-        this.b.f16864a.setText(con);
+        this.b.a.setText(con);
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "translationX", -((getWidth() * 1.0f) + this.d), 0.0f);
         ofFloat.setDuration(500L);
         ofFloat.start();
-        this.f17952c.sendEmptyMessageDelayed(1, 5000L);
+        this.c.sendEmptyMessageDelayed(1, 5000L);
     }
 
     public final void b() {
@@ -150,7 +147,7 @@ public final class KtvNewSongMessageView extends FrameLayout {
             public void onUIUpdate(BluedEntityA<NewSongMessageModel> bluedEntityA) {
                 YYRoomModel b;
                 String musicName;
-                if ((bluedEntityA == null ? null : bluedEntityA.getSingleData()) == null || (b = YYRoomInfoManager.e().b()) == null || !TextUtils.equals("6", b.type_id)) {
+                if ((bluedEntityA == null ? null : bluedEntityA.getSingleData()) == null || (b = YYRoomInfoManager.e().b()) == null || !TextUtils.equals(ATAdConst.ATDevFrameworkType.FLUTTER, b.type_id)) {
                     return;
                 }
                 KtvNewSongMessageView.this.setSingle(bluedEntityA == null ? null : bluedEntityA.getSingleData());
@@ -189,7 +186,7 @@ public final class KtvNewSongMessageView extends FrameLayout {
 
     @Override // android.view.View
     public final NewSongMessHandler getHandler() {
-        return this.f17952c;
+        return this.c;
     }
 
     public final NewSongMessageModel getSingle() {

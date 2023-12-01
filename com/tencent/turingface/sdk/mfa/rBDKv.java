@@ -6,12 +6,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.text.TextUtils;
-import com.anythink.core.api.ErrorCode;
-import com.anythink.core.common.g.g;
 import com.cdo.oaps.ad.p;
 import com.igexin.assist.sdk.AssistPushConsts;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.turingface.sdk.mfa.LJPko;
+import com.tencent.turingface.sdk.mfa.vqARY;
 import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -22,11 +21,11 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class rBDKv {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final rBDKv f39985a = new rBDKv();
+    public static final rBDKv f26294a = new rBDKv();
     public static long b = TimeUnit.MINUTES.toMillis(30);
 
     /* renamed from: c  reason: collision with root package name */
-    public static int[] f39986c = {0, 15, 30, 90, 240, 360, 600, 1200, 2400, 3200, 4800, p.j};
+    public static int[] f26295c = {0, 15, 30, 90, 240, 360, 600, 1200, 2400, 3200, 4800, p.j};
     public CvowV d;
     public spXPg e;
     public fenkF g;
@@ -39,11 +38,11 @@ public final class rBDKv {
     public final class spXPg extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public Context f39987a;
+        public Context f26296a;
 
         public spXPg(Looper looper, Context context) {
             super(looper);
-            this.f39987a = context;
+            this.f26296a = context;
         }
 
         @Override // android.os.Handler
@@ -51,10 +50,10 @@ public final class rBDKv {
             System.currentTimeMillis();
             int i = message.what;
             if (i == 1) {
-                rBDKv.this.a(this.f39987a, true, 3);
+                rBDKv.this.a(this.f26296a, true, 3);
             } else if (i != 2) {
             } else {
-                rBDKv.this.a(rBDKv.this.a(this.f39987a, true, false, ((Integer) message.obj).intValue()), false);
+                rBDKv.this.a(rBDKv.this.a(this.f26296a, true, false, ((Integer) message.obj).intValue()), false);
                 synchronized (rBDKv.this.j) {
                     rBDKv.this.j.set(Boolean.FALSE);
                     rBDKv.this.j.notifyAll();
@@ -63,6 +62,8 @@ public final class rBDKv {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v84, types: [java.util.concurrent.ConcurrentHashMap, java.util.Map<java.lang.String, com.tencent.turingface.sdk.mfa.vqARY$spXPg>] */
+    /* JADX WARN: Type inference failed for: r2v3, types: [java.util.concurrent.ConcurrentHashMap, java.util.Map<java.lang.String, com.tencent.turingface.sdk.mfa.vqARY$spXPg>] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:172:0x0410 -> B:8:0x0023). Please submit an issue!!! */
     public static void a(rBDKv rbdkv) {
         Context context;
@@ -76,7 +77,7 @@ public final class rBDKv {
         rbdkv.getClass();
         synchronized (i3cNc.class) {
             try {
-                context = i3cNc.f39958a;
+                context = i3cNc.f26267a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -86,7 +87,7 @@ public final class rBDKv {
             Thread.sleep(rbdkv.d.w);
         } catch (InterruptedException e) {
         }
-        DO0IX do0ix = DO0IX.f39867a;
+        DO0IX do0ix = DO0IX.f26176a;
         synchronized (do0ix) {
             try {
                 System.currentTimeMillis();
@@ -154,13 +155,13 @@ public final class rBDKv {
             } catch (Throwable th5) {
                 j2 = 0;
             }
-            if (Math.abs(j2 - System.currentTimeMillis()) >= z5VDt.f40015a) {
-                if (TextUtils.isEmpty(fenkF.b(context, "901")) ? true : Math.abs(j2 - System.currentTimeMillis()) >= G1g37.b.a(context, "sid_refresh_period", G1g37.f39876a, 3600000L)) {
+            if (Math.abs(j2 - System.currentTimeMillis()) >= z5VDt.f26324a) {
+                if (TextUtils.isEmpty(fenkF.b(context, "901")) ? true : Math.abs(j2 - System.currentTimeMillis()) >= G1g37.b.a(context, "sid_refresh_period", G1g37.f26185a, 3600000L)) {
                     Bi3eT b2 = kWj12.b(context);
-                    if (b2.f39859a != 0) {
+                    if (b2.f26168a != 0) {
                         b2 = kWj12.a(context);
                     }
-                    if (b2.f39859a == 0) {
+                    if (b2.f26168a == 0) {
                         String str2 = b2.d;
                         HashMap hashMap = new HashMap();
                         hashMap.put("901", str2);
@@ -176,20 +177,20 @@ public final class rBDKv {
         }
         CvowV cvowV = rbdkv.d;
         if (cvowV.p) {
-            com.tencent.turingface.sdk.mfa.spXPg spxpg = cvowV.f39866c;
+            com.tencent.turingface.sdk.mfa.spXPg spxpg = cvowV.f26175c;
             com.tencent.turingface.sdk.mfa.spXPg spxpg2 = spxpg;
             if (spxpg == null) {
-                spxpg2 = CvowV.f39865a;
+                spxpg2 = CvowV.f26174a;
             }
             if (spxpg2.a()) {
-                if (do0ix.a(41) && vqARY.f40006a.containsKey(vqARY.f40007c)) {
-                    new X7aJM(vqARY.f40006a.get(vqARY.f40007c), context).start();
+                if (do0ix.a(41) && vqARY.f26315a.containsKey(vqARY.f26316c)) {
+                    new X7aJM((vqARY.spXPg) vqARY.f26315a.get(vqARY.f26316c), context).start();
                 }
                 rbdkv.a(rbdkv.d.e, false, 0);
-                CvowV cvowV2 = LJPko.f39893a;
+                CvowV cvowV2 = LJPko.f26202a;
                 synchronized (i3cNc.class) {
                     try {
-                        context2 = i3cNc.f39958a;
+                        context2 = i3cNc.f26267a;
                     } catch (Throwable th6) {
                         throw th6;
                     }
@@ -199,12 +200,12 @@ public final class rBDKv {
                     YaDRx yaDRx2 = atomicReference.get();
                     yaDRx = yaDRx2;
                     if (yaDRx2 == null) {
-                        String b3 = fenkF.b(context2, ErrorCode.networkError);
+                        String b3 = fenkF.b(context2, "1001");
                         if (TextUtils.isEmpty(b3)) {
                             yaDRx = null;
                         } else {
                             try {
-                                j = Long.parseLong(fenkF.b(context2, ErrorCode.serverError));
+                                j = Long.parseLong(fenkF.b(context2, "1002"));
                             } catch (Throwable th7) {
                                 j = 0;
                             }
@@ -232,7 +233,7 @@ public final class rBDKv {
                         return;
                     }
                     atomicReference2.set(new AtomicReference<>(null));
-                    LJPko.spXPg.f39894a.post(spxpg3);
+                    LJPko.spXPg.f26203a.post(spxpg3);
                 }
             }
         }
@@ -242,7 +243,7 @@ public final class rBDKv {
         Context context;
         long j;
         Context context2;
-        if (this.d.q || vnerm.f40003c != 0 || TextUtils.isEmpty(vnerm.f40002a)) {
+        if (this.d.q || vnerm.f26312c != 0 || TextUtils.isEmpty(vnerm.f26311a)) {
             return 2;
         }
         long currentTimeMillis = System.currentTimeMillis() / 1000;
@@ -253,7 +254,7 @@ public final class rBDKv {
         fenkF fenkf = this.g;
         synchronized (i3cNc.class) {
             try {
-                context = i3cNc.f39958a;
+                context = i3cNc.f26267a;
             } finally {
             }
         }
@@ -266,7 +267,7 @@ public final class rBDKv {
         fenkF fenkf2 = this.g;
         synchronized (i3cNc.class) {
             try {
-                context2 = i3cNc.f39958a;
+                context2 = i3cNc.f26267a;
             } finally {
             }
         }
@@ -295,7 +296,7 @@ public final class rBDKv {
     public final vneRm a(Context context, boolean z, int i) {
         vneRm a2 = a(context);
         if (this.d == null) {
-            return vneRm.a(g.k);
+            return vneRm.a(-10002);
         }
         int a3 = a(a2);
         if (a3 == 1) {
@@ -352,7 +353,7 @@ public final class rBDKv {
     public final void a(vneRm vnerm, boolean z) {
         synchronized (this.i) {
             if (!z) {
-                if (vnerm.f40003c != 0) {
+                if (vnerm.f26312c != 0) {
                     return;
                 }
             }

@@ -1,7 +1,6 @@
 package com.android.internal.util;
 
 import android.util.Printer;
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -117,14 +116,14 @@ public class FastPrintWriter extends PrintWriter {
         initDefaultEncoder();
     }
 
-    private void appendLocked(char c2) throws IOException {
+    private void appendLocked(char c) throws IOException {
         int i = this.mPos;
         int i2 = i;
         if (i >= this.mBufferLen - 1) {
             flushLocked();
             i2 = this.mPos;
         }
-        this.mText[i2] = c2;
+        this.mText[i2] = c;
         this.mPos = i2 + 1;
     }
 
@@ -240,7 +239,7 @@ public class FastPrintWriter extends PrintWriter {
     public PrintWriter append(CharSequence charSequence, int i, int i2) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         String charSequence3 = charSequence2.subSequence(i, i2).toString();
         write(charSequence3, 0, charSequence3.length());
@@ -297,10 +296,10 @@ public class FastPrintWriter extends PrintWriter {
     }
 
     @Override // java.io.PrintWriter
-    public void print(char c2) {
+    public void print(char c) {
         synchronized (this.lock) {
             try {
-                appendLocked(c2);
+                appendLocked(c);
             } catch (IOException e) {
             }
         }
@@ -364,8 +363,8 @@ public class FastPrintWriter extends PrintWriter {
     }
 
     @Override // java.io.PrintWriter
-    public void println(char c2) {
-        print(c2);
+    public void println(char c) {
+        print(c);
         println();
     }
 

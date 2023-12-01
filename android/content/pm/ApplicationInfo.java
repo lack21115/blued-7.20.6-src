@@ -6,9 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
-import com.alipay.sdk.util.i;
-import com.android.internal.R;
 import com.android.internal.util.ArrayUtils;
+import com.huawei.hms.ads.fw;
 import java.text.Collator;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -298,7 +297,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
         if (this.uiOptions != 0) {
             printer.println(str + "uiOptions=0x" + Integer.toHexString(this.uiOptions));
         }
-        printer.println(str + "supportsRtl=" + (hasRtlSupport() ? "true" : "false"));
+        printer.println(str + "supportsRtl=" + (hasRtlSupport() ? fw.Code : "false"));
         super.dumpBack(printer, str);
     }
 
@@ -337,7 +336,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
 
     @Override // android.content.pm.PackageItemInfo
     public Drawable loadDefaultIcon(PackageManager packageManager) {
-        return ((this.flags & 262144) == 0 || !isPackageUnavailable(packageManager)) ? packageManager.getDefaultActivityIcon() : Resources.getSystem().getDrawable(R.drawable.sym_app_on_sd_unavailable_icon);
+        return ((this.flags & 262144) == 0 || !isPackageUnavailable(packageManager)) ? packageManager.getDefaultActivityIcon() : Resources.getSystem().getDrawable(17303241);
     }
 
     public CharSequence loadDescription(PackageManager packageManager) {
@@ -373,7 +372,7 @@ public class ApplicationInfo extends PackageItemInfo implements Parcelable {
     }
 
     public String toString() {
-        return "ApplicationInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.packageName + i.d;
+        return "ApplicationInfo{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.packageName + "}";
     }
 
     @Override // android.content.pm.PackageItemInfo, android.os.Parcelable

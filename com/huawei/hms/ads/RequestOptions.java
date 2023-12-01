@@ -45,11 +45,11 @@ public class RequestOptions {
         private Integer V;
 
         /* renamed from: a  reason: collision with root package name */
-        private String f22433a;
+        private String f8825a;
         private Map<String, Bundle> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f22434c;
+        private String f8826c;
         private SearchInfo d;
         private String e;
         private String f;
@@ -124,7 +124,7 @@ public class RequestOptions {
         }
 
         public Builder setConsent(String str) {
-            this.f22434c = str;
+            this.f8826c = str;
             return this;
         }
 
@@ -168,7 +168,7 @@ public class RequestOptions {
                 ge.V(RequestOptions.TAG, "Invalid value setSearchTerm");
                 return this;
             }
-            this.f22433a = str;
+            this.f8825a = str;
             return this;
         }
 
@@ -226,11 +226,11 @@ public class RequestOptions {
         this.appCountry = builder.F;
         this.app = builder.D;
         this.requestLocation = builder.L;
-        this.searchTerm = builder.f22433a;
+        this.searchTerm = builder.f8825a;
         Map<String, Bundle> map = builder.b;
         this.extras = map;
         this.impEXs = Code(map);
-        this.consent = builder.f22434c;
+        this.consent = builder.f8826c;
         this.searchInfo = builder.d;
         this.acString = builder.e;
         this.hwACString = builder.f;

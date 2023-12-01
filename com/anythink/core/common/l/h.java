@@ -2,13 +2,9 @@ package com.anythink.core.common.l;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/l/h.class */
 public final class h {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6853a = com.anythink.core.common.h.class.getSimpleName();
+    public static final String a = com.anythink.core.common.h.class.getSimpleName();
     boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    boolean f6854c = false;
+    boolean c = false;
     boolean d = false;
     boolean e = false;
     boolean f = false;
@@ -39,11 +35,11 @@ public final class h {
     }
 
     public final boolean c() {
-        return this.f6854c;
+        return this.c;
     }
 
     public final void d() {
-        this.f6854c = true;
+        this.c = true;
     }
 
     public final boolean e() {

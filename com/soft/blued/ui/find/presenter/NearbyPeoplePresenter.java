@@ -26,7 +26,6 @@ import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
 import com.blued.android.framework.ui.mvp.MvpPresenter;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.utils.TypeUtils;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.CommonPreferences;
@@ -119,42 +118,37 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     };
     private boolean B = true;
     public BluedUIHttpResponse s = new BluedUIHttpResponse<BluedEntity<JoyEntryModel, ShortEntranceExtra>>("joy_enter_btest", w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.10
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onSuccess(String str) {
             super.onSuccess(str);
             Logger.a("drb", "content:" + str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUICache(BluedEntity<JoyEntryModel, ShortEntranceExtra> bluedEntity) {
             super.onUICache(bluedEntity);
             if (bluedEntity != null) {
-                NearbyPeoplePresenter.this.a("entry_data_cache", (String) bluedEntity.extra, false);
+                NearbyPeoplePresenter.this.a("entry_data_cache", (Object) ((ShortEntranceExtra) bluedEntity.extra), false);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<JoyEntryModel, ShortEntranceExtra> bluedEntity) {
             if (bluedEntity != null) {
-                NearbyPeoplePresenter.this.a("entry_data", (String) bluedEntity.extra, false);
+                NearbyPeoplePresenter.this.a("entry_data", (Object) ((ShortEntranceExtra) bluedEntity.extra), false);
             }
         }
     };
     private BluedUIHttpResponse<BluedEntityA<NearbyTwoFloorModel>> C = new BluedUIHttpResponse<BluedEntityA<NearbyTwoFloorModel>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.15
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<NearbyTwoFloorModel> bluedEntityA) {
             if (bluedEntityA == null) {
                 NearbyPeoplePresenter.this.f_("two_level_no_data");
             } else if (bluedEntityA.hasData()) {
-                NearbyPeoplePresenter.this.a("two_level", (String) bluedEntityA.data);
+                NearbyPeoplePresenter.this.a("two_level", bluedEntityA.data);
             } else {
                 NearbyPeoplePresenter.this.f_("two_level_no_data");
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             Log.v("drb", "getBaseTwoLevel onUIFailure：" + str);
             return super.onUIFailure(i, str);
@@ -167,7 +161,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     /* JADX INFO: Access modifiers changed from: private */
     public void A() {
         FindHttpUtils.b(new BluedUIHttpResponse<BluedEntity<FindRecommendData, FindRecommendExtra>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.14
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<FindRecommendData, FindRecommendExtra> bluedEntity) {
                 if (bluedEntity.hasData() || bluedEntity.extra != null) {
                     ArrayList arrayList = new ArrayList();
@@ -183,7 +176,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
         String simpleName = getClass().getSimpleName();
         Logger.c(simpleName, "KEY_EVENT_MAP_FIND_CLICK=====" + bool);
         if (g().isActive()) {
-            a("map_find", (String) bool, false);
+            a("map_find", (Object) bool, false);
         } else {
             e();
         }
@@ -208,7 +201,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     /* JADX INFO: Access modifiers changed from: private */
     public IRequestHost w() {
         if (h() instanceof BaseFragmentActivity) {
-            return ((BaseFragmentActivity) h()).a();
+            return h().a();
         }
         return null;
     }
@@ -216,12 +209,10 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     /* JADX INFO: Access modifiers changed from: private */
     public void x() {
         FeedHttpUtils.b(new BluedUIHttpResponse<BluedEntity<NearbyTransformersModel, NearbyTransformersExtra>>(g()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.7
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 NearbyPeoplePresenter.this.u();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<NearbyTransformersModel, NearbyTransformersExtra> bluedEntity) {
                 if (bluedEntity == null || bluedEntity.extra == null) {
                     return;
@@ -234,11 +225,10 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     /* JADX INFO: Access modifiers changed from: private */
     public void y() {
         NearbyHttpUtils.d(new BluedUIHttpResponse<BluedEntity<HomeTabBubble, HomeTabBubbleExtra>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.9
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<HomeTabBubble, HomeTabBubbleExtra> bluedEntity) {
-                HomeTabBubble singleData = (bluedEntity == null || !bluedEntity.hasData()) ? null : bluedEntity.getSingleData();
-                CommunityManager.f19086a.a().a(bluedEntity.extra);
-                LiveEventBus.get("home_tab_bubble").postDelay(singleData, NearbyPeoplePresenter.this.i != null ? 2000L : 0L);
+                HomeTabBubble homeTabBubble = (bluedEntity == null || !bluedEntity.hasData()) ? null : (HomeTabBubble) bluedEntity.getSingleData();
+                CommunityManager.a.a().a(bluedEntity.extra);
+                LiveEventBus.get("home_tab_bubble").postDelay(homeTabBubble, NearbyPeoplePresenter.this.i != null ? 2000L : 0L);
             }
         }, w());
     }
@@ -247,37 +237,33 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     public void z() {
         FindHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<UsersNewCallBubbleModel>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.13
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UsersNewCallBubbleModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                NearbyPeoplePresenter.this.a("sho_new_call_bubble", (String) bluedEntityA.getSingleData());
+                NearbyPeoplePresenter.this.a("sho_new_call_bubble", (UsersNewCallBubbleModel) bluedEntityA.getSingleData());
             }
         }, w(), UserInfo.getInstance().getLoginUserInfo().uid);
     }
 
     public BluedUIHttpResponse a(final IFetchDataListener iFetchDataListener, final String str) {
         return new BluedUIHttpResponse<BluedEntity<UserFindResult, FindDataExtra>>("nearby_user_" + this.j, w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.11
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUICache(BluedEntity<UserFindResult, FindDataExtra> bluedEntity) {
                 super.onUICache(bluedEntity);
                 if (bluedEntity != null) {
-                    NearbyPeoplePresenter.this.a("people_data", (String) bluedEntity.data, false);
-                    if (bluedEntity.extra != null && !TypeUtils.a((List<?>) bluedEntity.extra.nearby_dating) && bluedEntity.extra.nearby_dating.get(0) != null) {
-                        bluedEntity.extra.nearby_dating.get(0).popup = null;
+                    NearbyPeoplePresenter.this.a("people_data", (Object) bluedEntity.data, false);
+                    if (bluedEntity.extra != null && !TypeUtils.a(((FindDataExtra) bluedEntity.extra).nearby_dating) && ((FindDataExtra) bluedEntity.extra).nearby_dating.get(0) != null) {
+                        ((FindDataExtra) bluedEntity.extra).nearby_dating.get(0).popup = null;
                     }
-                    NearbyPeoplePresenter.this.a("people_data_extra_cache", (String) bluedEntity.extra, false);
+                    NearbyPeoplePresenter.this.a("people_data_extra_cache", (Object) ((FindDataExtra) bluedEntity.extra), false);
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2) {
                 return super.onUIFailure(i, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str2, String str3) {
                 if (i != -2011 && (i < 499 || i > 599)) {
                     NearbyPeoplePresenter.this.f("people");
@@ -285,7 +271,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                 return super.onUIFailure(i, str2, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 if (!z) {
                     NearbyPeoplePresenter.this.n--;
@@ -300,13 +285,11 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 NearbyPeoplePresenter.this.m++;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<UserFindResult, FindDataExtra> bluedEntity) {
                 NearbyPeoplePresenter.this.f("people");
                 String simpleName = NearbyPeoplePresenter.class.getSimpleName();
@@ -319,10 +302,10 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                         bluedEntity.data.addAll(0, NearbyPeoplePresenter.this.x);
                         NearbyPeoplePresenter.this.x.clear();
                     }
-                    NearbyPeoplePresenter.this.a("people_data", (String) bluedEntity.data, false);
-                    NearbyPeoplePresenter.this.a("people_data_extra", (String) bluedEntity.extra, false);
+                    NearbyPeoplePresenter.this.a("people_data", (Object) bluedEntity.data, false);
+                    NearbyPeoplePresenter.this.a("people_data_extra", (Object) ((FindDataExtra) bluedEntity.extra), false);
                     NearbyPeoplePresenter.this.a("refresh_num_plus", false);
-                    NearbyPeoplePresenter.this.a(" show_chat_room", (String) 10);
+                    NearbyPeoplePresenter.this.a(" show_chat_room", (Object) 10);
                     NearbyPeoplePresenter.this.p = bluedEntity.hasMore();
                     IFetchDataListener iFetchDataListener2 = iFetchDataListener;
                     if (iFetchDataListener2 != null) {
@@ -337,7 +320,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                 NearbyPeoplePresenter.this.r = bluedEntity.data;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<UserFindResult, FindDataExtra> parseData(String str2) {
                 BluedEntity<UserFindResult, FindDataExtra> parseData = super.parseData(str2);
                 if (parseData != null && parseData.hasData()) {
@@ -347,27 +329,27 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                         if (i2 >= parseData.data.size()) {
                             break;
                         }
-                        parseData.data.get(i2).distanceStr = DistanceUtils.a(parseData.data.get(i2).distance, BlueAppLocal.c(), false);
-                        parseData.data.get(i2).last_operate_time_stamp = parseData.data.get(i2).last_operate;
-                        parseData.data.get(i2).last_operate_str = TimeAndDateUtils.a(NearbyPeoplePresenter.this.h(), TimeAndDateUtils.c(parseData.data.get(i2).last_operate));
-                        if (TextUtils.isEmpty(parseData.data.get(i2).last_operate_str)) {
-                            parseData.data.get(i2).last_operate_str = AppInfo.d().getString(R.string.unknown);
+                        ((UserFindResult) parseData.data.get(i2)).distanceStr = DistanceUtils.a(((UserFindResult) parseData.data.get(i2)).distance, BlueAppLocal.c(), false);
+                        ((UserFindResult) parseData.data.get(i2)).last_operate_time_stamp = ((UserFindResult) parseData.data.get(i2)).last_operate;
+                        ((UserFindResult) parseData.data.get(i2)).last_operate_str = TimeAndDateUtils.a(NearbyPeoplePresenter.this.h(), TimeAndDateUtils.c(((UserFindResult) parseData.data.get(i2)).last_operate));
+                        if (TextUtils.isEmpty(((UserFindResult) parseData.data.get(i2)).last_operate_str)) {
+                            ((UserFindResult) parseData.data.get(i2)).last_operate_str = AppInfo.d().getString(R.string.unknown);
                         }
-                        if (NearbyPeoplePresenter.this.d(parseData.data.get(i2).last_operate_str)) {
-                            BluedStatistics.c().a("NEARBY_TIME", 0L, 0, "my_uid:" + UserInfo.getInstance().getLoginUserInfo().uid + " --uid:" + parseData.data.get(i2).uid + " --last_operate:" + parseData.data.get(i2).last_operate);
+                        if (NearbyPeoplePresenter.this.d(((UserFindResult) parseData.data.get(i2)).last_operate_str)) {
+                            BluedStatistics.c().a("NEARBY_TIME", 0L, 0, "my_uid:" + UserInfo.getInstance().getLoginUserInfo().uid + " --uid:" + ((UserFindResult) parseData.data.get(i2)).uid + " --last_operate:" + ((UserFindResult) parseData.data.get(i2)).last_operate);
                         }
                         i = i2 + 1;
                     }
                 }
-                if (parseData != null && parseData.extra != null && !TypeUtils.a((List<?>) parseData.extra.nearby_dating) && parseData.extra.nearby_dating.size() > 0) {
+                if (parseData != null && parseData.extra != null && !TypeUtils.a(((FindDataExtra) parseData.extra).nearby_dating) && ((FindDataExtra) parseData.extra).nearby_dating.size() > 0) {
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
-                        if (i4 >= parseData.extra.nearby_dating.size()) {
+                        if (i4 >= ((FindDataExtra) parseData.extra).nearby_dating.size()) {
                             break;
                         }
-                        if (parseData.extra.nearby_dating.get(i4).show_layer == 3 && parseData.extra.nearby_dating.get(i4).popup != null) {
-                            parseData.extra.nearby_dating.get(i4).popup.setSourcePage(str);
+                        if (((FindDataExtra) parseData.extra).nearby_dating.get(i4).show_layer == 3 && ((FindDataExtra) parseData.extra).nearby_dating.get(i4).popup != null) {
+                            ((FindDataExtra) parseData.extra).nearby_dating.get(i4).popup.setSourcePage(str);
                         }
                         i3 = i4 + 1;
                     }
@@ -379,7 +361,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
 
     @Override // com.soft.blued.ui.find.observer.SetModelObserver.ISetModelObserver
     public void a(int i) {
-        a("notify_model", (String) Integer.valueOf(i), false);
+        a("notify_model", (Object) Integer.valueOf(i), false);
     }
 
     public void a(int i, List<UserFindResult> list, String str) {
@@ -406,14 +388,12 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
         }
         FindHttpUtils.a(str.replace("_CTX_", AppInfo.f().toJson(arrayList2)), new BluedUIHttpResponse<BluedEntityA>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.17
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA bluedEntityA) {
             }
         }, w());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         this.l = PeopleGridQuickAdapter.a(h());
@@ -424,7 +404,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
         GuyEventUtils.a("NEARBY_FRIEND_SHOW");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(final LifecycleOwner lifecycleOwner) {
         super.a(lifecycleOwner);
         PeopleDataObserver.a().a(this);
@@ -447,8 +426,8 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                 lifecycleOwner.getLifecycle().removeObserver(this);
             }
         });
-        if (HomeActivity.f30985c != null) {
-            NearbyViewModel nearbyViewModel = (NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class);
+        if (HomeActivity.f17295c != null) {
+            NearbyViewModel nearbyViewModel = (NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class);
             LiveEventBus.get(EventBusConstant.KEY_EVENT_MAP_FIND_CLICK, Boolean.class).observeForever(new Observer() { // from class: com.soft.blued.ui.find.presenter.-$$Lambda$NearbyPeoplePresenter$Wrn0Xt9Re5IRXWgEJmCQF51meMw
                 @Override // androidx.lifecycle.Observer
                 public final void onChanged(Object obj) {
@@ -481,7 +460,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
-                NearbyPeoplePresenter.this.a(EventBusConstant.KEY_EVENT_REFRESH_RED_PACK_GUIDE_STATE, (String) bool, false);
+                NearbyPeoplePresenter.this.a(EventBusConstant.KEY_EVENT_REFRESH_RED_PACK_GUIDE_STATE, (Object) bool, false);
             }
         });
         LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_USER_VIP_INFO, Boolean.class).observe(lifecycleOwner, new Observer<Boolean>() { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.5
@@ -497,7 +476,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     public void a(RecyclerView recyclerView, int i, int i2) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         Log.v("drb", "onFetchData");
         this.n = 1;
@@ -517,7 +495,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
 
     @Override // com.soft.blued.ui.find.observer.CallHelloObserver.ICallHelloObserver
     public void a(CallMeStatusData callMeStatusData) {
-        a("set_call_data_update", (String) callMeStatusData);
+        a("set_call_data_update", callMeStatusData);
     }
 
     @Override // com.soft.blued.ui.find.observer.NearbyPeoplePushTypeObserver.INearbyPeoplePushTypeObserver
@@ -529,18 +507,16 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     public void a(final boolean z) {
         FindHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<NearbyChatRoomModel>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.16
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<NearbyChatRoomModel> bluedEntityA) {
-                NearbyChatRoomModel singleData = bluedEntityA.getSingleData();
-                NearbyPeoplePresenter.this.a(" show_chat_room", (String) singleData);
-                if (z && singleData != null && singleData.show) {
+                NearbyChatRoomModel nearbyChatRoomModel = (NearbyChatRoomModel) bluedEntityA.getSingleData();
+                NearbyPeoplePresenter.this.a(" show_chat_room", nearbyChatRoomModel);
+                if (z && nearbyChatRoomModel != null && nearbyChatRoomModel.show) {
                     EventTrackGuy.b(GuyProtos.Event.NEARBY_CHATROOM_ENTRY_SHOW);
                     Log.v("drb", "上抛埋点");
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
             }
@@ -552,7 +528,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
         CallHelloModel callHelloModel = new CallHelloModel();
         callHelloModel.isShowCount = z;
         callHelloModel.count = str;
-        a("count_update", (String) callHelloModel);
+        a("count_update", callHelloModel);
     }
 
     @Override // com.soft.blued.ui.find.observer.PeopleDataObserver.IFriendsDataRefreshObserver
@@ -569,10 +545,9 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     public void b(int i) {
         CallHelloModel callHelloModel = new CallHelloModel();
         callHelloModel.countDown = i;
-        a("set_time_update", (String) callHelloModel);
+        a("set_time_update", callHelloModel);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.n++;
         c(iFetchDataListener);
@@ -593,7 +568,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
         int i2 = this.n;
         this.v.sort_by = this.j;
         if (MapFindManager.a().b()) {
-            this.v.longitude = MapFindManager.a().c().f30599a;
+            this.v.longitude = MapFindManager.a().c().f16909a;
             this.v.latitude = MapFindManager.a().c().b;
             this.v.source = "map";
         } else {
@@ -641,7 +616,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
         return false;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void k() {
         Log.v("drb", "onFetchCache");
         this.s.refresh();
@@ -650,27 +624,24 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
 
     public void m() {
         NearbyHttpUtils.a(new BluedUIHttpResponse<BluedEntity<AdvertFloatModel, AdvertFloatExtra>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.8
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 NearbyPeoplePresenter.this.y();
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<AdvertFloatModel, AdvertFloatExtra> bluedEntity) {
                 boolean z = true;
                 if (bluedEntity != null && bluedEntity.extra != null) {
-                    if (bluedEntity.extra.is_after_splash != 1 && BluedPreferences.bp()) {
+                    if (((AdvertFloatExtra) bluedEntity.extra).is_after_splash != 1 && BluedPreferences.bp()) {
                         BluedPreferences.I(false);
                     }
                     if (z || bluedEntity == null || bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                         return;
                     }
-                    NearbyPeoplePresenter.this.i = bluedEntity.data.get(0);
+                    NearbyPeoplePresenter.this.i = (AdvertFloatModel) bluedEntity.data.get(0);
                     if (NearbyPeoplePresenter.this.i == null || NearbyPeoplePresenter.this.i.images == null) {
                         return;
                     }
@@ -680,7 +651,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                         NearbyPeoplePresenter.this.i.advert_pic = NearbyPeoplePresenter.this.i.images._530x680;
                     }
                     ImageFileLoader.a(NearbyPeoplePresenter.this.w()).a(NearbyPeoplePresenter.this.i.advert_pic).a(new ImageLoadResult(NearbyPeoplePresenter.this.w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.8.1
-                        @Override // com.blued.android.core.image.ImageLoadResult
                         public void a() {
                             if (NearbyPeoplePresenter.this.i != null) {
                                 NearbyPeoplePresenter.this.h = true;
@@ -707,7 +677,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
             f_("make_friend_recommend");
         } else {
             FindHttpUtils.b(new BluedUIHttpResponse<BluedEntity<FindRecommendData, FindRecommendExtra>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.12
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str, String str2) {
                     if (i != -2011 && (i < 499 || i > 599)) {
                         NearbyPeoplePresenter.this.f("live");
@@ -715,13 +684,11 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                     return super.onUIFailure(i, str, str2);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     NearbyPeoplePresenter.this.f_("make_friend_recommend");
                     super.onUIFinish();
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<FindRecommendData, FindRecommendExtra> bluedEntity) {
                     NearbyPeoplePresenter.this.f("live");
                     if (bluedEntity.hasData() || bluedEntity.extra != null) {
@@ -754,7 +721,6 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     public void t() {
         FindHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<UserFindResult>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.18
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserFindResult> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
@@ -772,7 +738,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                     if (i2 >= bluedEntityA.data.size()) {
                         return;
                     }
-                    UserFindResult userFindResult = bluedEntityA.data.get(i2);
+                    UserFindResult userFindResult = (UserFindResult) bluedEntityA.data.get(i2);
                     userFindResult.distanceStr = DistanceUtils.a(userFindResult.distance, BlueAppLocal.c(), false);
                     userFindResult.last_operate_time_stamp = userFindResult.last_operate;
                     userFindResult.last_operate_str = TimeAndDateUtils.a(AppInfo.d(), TimeAndDateUtils.c(userFindResult.last_operate));
@@ -794,7 +760,7 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.19
             @Override // java.lang.Runnable
             public void run() {
-                if (CommunityManager.f19086a.a().m()) {
+                if (CommunityManager.a.a().m()) {
                     return;
                 }
                 int fK = BluedPreferences.fK();
@@ -805,17 +771,15 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
                 BluedPreferences.A(i);
                 NearbyHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<RecommendPopModel>>(NearbyPeoplePresenter.this.w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.19.1
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<RecommendPopModel> bluedEntityA) {
                         if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || NearbyPeoplePresenter.this.h() == null) {
                             return;
                         }
                         EventTrackGuy.b(GuyProtos.Event.PICK_FOR_YOU_POP_SHOW);
-                        new XPopup.Builder(NearbyPeoplePresenter.this.h()).a((BasePopupView) new RecommendPopView(NearbyPeoplePresenter.this.h(), bluedEntityA.data)).h();
+                        new XPopup.Builder(NearbyPeoplePresenter.this.h()).a(new RecommendPopView(NearbyPeoplePresenter.this.h(), bluedEntityA.data)).h();
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public boolean onUIFailure(int i2, String str) {
                         return true;
                     }
@@ -827,20 +791,19 @@ public class NearbyPeoplePresenter extends MvpPresenter implements CallHelloObse
     public void v() {
         FeedHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<FeedTopBannerModel>>(w()) { // from class: com.soft.blued.ui.find.presenter.NearbyPeoplePresenter.20
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<FeedTopBannerModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                FeedTopBannerModel singleData = bluedEntityA.getSingleData();
+                FeedTopBannerModel feedTopBannerModel = (FeedTopBannerModel) bluedEntityA.getSingleData();
                 ChattingModel chattingModel = new ChattingModel();
                 chattingModel.msgType = (short) 274;
                 FriendsNotificationExtra friendsNotificationExtra = new FriendsNotificationExtra();
                 friendsNotificationExtra.push_type = 5;
-                friendsNotificationExtra.extra = AppInfo.f().toJson(singleData);
+                friendsNotificationExtra.extra = AppInfo.f().toJson(feedTopBannerModel);
                 chattingModel.setMsgExtra(AppInfo.f().toJson(friendsNotificationExtra));
-                FollowedUsersNotificationManager.f29698a.a(chattingModel);
+                FollowedUsersNotificationManager.f16008a.a(chattingModel);
             }
         }, w());
     }

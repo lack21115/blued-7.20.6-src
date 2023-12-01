@@ -4,5 +4,5 @@ package com.anythink.expressad.exoplayer.e;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f7320a;
+    public long f4481a;
 }

@@ -26,7 +26,6 @@ import com.blued.android.module.live_china.model.LivePocketModel;
 import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -42,9 +41,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePocketRecordDialogFragment.class */
 public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13160a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogLivePocketRecordBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePocketRecordDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -57,9 +54,7 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
             return DialogLivePocketRecordBinding.a(LayoutInflater.from(LivePocketRecordDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LivePocketModel> f13161c = new ArrayList();
+    private List<LivePocketModel> c = new ArrayList();
     private CommonAdapter<LivePocketModel> d;
     private int e;
 
@@ -116,24 +111,24 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
                 if (LivePocketRecordDialogFragment.this.d() == 1) {
                     f4 = LivePocketRecordDialogFragment.this.f();
                     if (f4 != null && (smartRefreshLayout4 = f4.e) != null) {
-                        smartRefreshLayout4.l(true);
+                        smartRefreshLayout4.b(true);
                     }
-                    list2 = LivePocketRecordDialogFragment.this.f13161c;
+                    list2 = LivePocketRecordDialogFragment.this.c;
                     list2.clear();
                 }
                 if (entity.data == null || entity.data.size() <= 0) {
                     f = LivePocketRecordDialogFragment.this.f();
                     if (f != null && (smartRefreshLayout = f.e) != null) {
-                        smartRefreshLayout.l(false);
+                        smartRefreshLayout.b(false);
                     }
                     LivePocketRecordDialogFragment livePocketRecordDialogFragment = LivePocketRecordDialogFragment.this;
                     livePocketRecordDialogFragment.a(livePocketRecordDialogFragment.d() - 1);
                 } else {
                     f3 = LivePocketRecordDialogFragment.this.f();
                     if (f3 != null && (smartRefreshLayout3 = f3.e) != null) {
-                        smartRefreshLayout3.l(true);
+                        smartRefreshLayout3.b(true);
                     }
-                    list = LivePocketRecordDialogFragment.this.f13161c;
+                    list = LivePocketRecordDialogFragment.this.c;
                     List<LivePocketModel> list3 = entity.data;
                     Intrinsics.c(list3, "entity.data");
                     list.addAll(list3);
@@ -164,10 +159,10 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void h() {
-        List<LivePocketModel> list = this.f13161c;
+        List<LivePocketModel> list = this.c;
         if (list == null || list.size() == 0) {
             DialogLivePocketRecordBinding f = f();
-            LinearLayout linearLayout = f == null ? null : f.f11808c;
+            LinearLayout linearLayout = f == null ? null : f.c;
             if (linearLayout != null) {
                 linearLayout.setVisibility(0);
             }
@@ -180,7 +175,7 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
             return;
         }
         DialogLivePocketRecordBinding f3 = f();
-        LinearLayout linearLayout2 = f3 == null ? null : f3.f11808c;
+        LinearLayout linearLayout2 = f3 == null ? null : f3.c;
         if (linearLayout2 != null) {
             linearLayout2.setVisibility(8);
         }
@@ -193,7 +188,7 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
         if (commonAdapter == null) {
             return;
         }
-        commonAdapter.a(this.f13161c);
+        commonAdapter.a(this.c);
     }
 
     public final void a(int i) {
@@ -214,7 +209,6 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 398.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -236,19 +230,18 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         SmartRefreshLayout smartRefreshLayout;
         SmartRefreshLayout smartRefreshLayout2;
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
         dialog.setContentView(f().getRoot());
-        f().f11807a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketRecordDialogFragment$xX955wuGYkDgCZlP39_3hW-wxoc
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketRecordDialogFragment$xX955wuGYkDgCZlP39_3hW-wxoc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePocketRecordDialogFragment.a(LivePocketRecordDialogFragment.this, view);
@@ -264,8 +257,7 @@ public final class LivePocketRecordDialogFragment extends BaseDialogFragment {
         (f2 == null ? null : f2.e).a(bluedLoadMoreView);
         DialogLivePocketRecordBinding f3 = f();
         if (f3 != null && (smartRefreshLayout = f3.e) != null) {
-            smartRefreshLayout.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LivePocketRecordDialogFragment$setupDialog$2
-                @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+            smartRefreshLayout.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live_china.fragment.LivePocketRecordDialogFragment$setupDialog$2
                 public void onLoadMore(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     LivePocketRecordDialogFragment.this.g();

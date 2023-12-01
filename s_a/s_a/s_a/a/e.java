@@ -2,13 +2,11 @@ package s_a.s_a.s_a.a;
 
 /* loaded from: source-3503164-dex2jar.jar:s_a/s_a/s_a/a/e.class */
 public class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f44182a;
+    public String a;
     public long b;
 
     public e(String str, long j) {
-        this.f44182a = str;
+        this.a = str;
         this.b = j;
     }
 

@@ -8,11 +8,11 @@ import java.nio.channels.FileChannel;
 final class FileOperator {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FileChannel f35927a;
+    private final FileChannel f22236a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FileOperator(FileChannel fileChannel) {
-        this.f35927a = fileChannel;
+        this.f22236a = fileChannel;
     }
 
     public void read(long j, Buffer buffer, long j2) throws IOException {
@@ -20,7 +20,7 @@ final class FileOperator {
             throw new IndexOutOfBoundsException();
         }
         while (j2 > 0) {
-            long transferTo = this.f35927a.transferTo(j, j2, buffer);
+            long transferTo = this.f22236a.transferTo(j, j2, buffer);
             j += transferTo;
             j2 -= transferTo;
         }
@@ -37,7 +37,7 @@ final class FileOperator {
             if (j5 <= 0) {
                 return;
             }
-            long transferFrom = this.f35927a.transferFrom(buffer, j3, j5);
+            long transferFrom = this.f22236a.transferFrom(buffer, j3, j5);
             j3 += transferFrom;
             j4 = j5 - transferFrom;
         }

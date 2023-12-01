@@ -13,7 +13,7 @@ import javax.crypto.IllegalBlockSizeException;
 public class w2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f4036a = new byte[0];
+    public byte[] f3988a = new byte[0];
     public PublicKey b;
 
     public static String a(String str) {
@@ -25,7 +25,7 @@ public class w2 {
     }
 
     public final void a(ByteArrayOutputStream byteArrayOutputStream, Cipher cipher, byte[] bArr, int i, int i2, int i3) throws BadPaddingException, IllegalBlockSizeException, IOException {
-        synchronized (this.f4036a) {
+        synchronized (this.f3988a) {
             while (i2 > 0) {
                 int min = Math.min(i2, i3);
                 byteArrayOutputStream.write(cipher.doFinal(bArr, i, min));
@@ -40,7 +40,7 @@ public class w2 {
     }
 
     public void a(ByteArrayOutputStream byteArrayOutputStream, byte[] bArr, int i, int i2) {
-        synchronized (this.f4036a) {
+        synchronized (this.f3988a) {
             try {
                 Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
                 cipher.init(1, this.b);
@@ -51,7 +51,7 @@ public class w2 {
     }
 
     public void a(byte[] bArr) {
-        synchronized (this.f4036a) {
+        synchronized (this.f3988a) {
             try {
                 this.b = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(bArr));
             } catch (Throwable th) {

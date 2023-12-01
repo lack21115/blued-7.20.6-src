@@ -25,19 +25,19 @@ public final class dl {
 
     private static Bitmap a(InputStream inputStream) throws Exception {
         Bitmap decodeStream = BitmapFactory.decodeStream(inputStream);
-        byte[] a2 = a(decodeStream);
-        if (NinePatch.isNinePatchChunk(a2)) {
+        byte[] a = a(decodeStream);
+        if (NinePatch.isNinePatchChunk(a)) {
             Bitmap createBitmap = Bitmap.createBitmap(decodeStream, 1, 1, decodeStream.getWidth() - 2, decodeStream.getHeight() - 2);
             dw.a(decodeStream);
             if (Build.VERSION.SDK_INT >= 28) {
                 Method declaredMethod = createBitmap.getClass().getDeclaredMethod("setNinePatchChunk", byte[].class);
                 declaredMethod.setAccessible(true);
-                declaredMethod.invoke(createBitmap, a2);
+                declaredMethod.invoke(createBitmap, a);
                 return createBitmap;
             }
             Field declaredField = createBitmap.getClass().getDeclaredField("mNinePatchChunk");
             declaredField.setAccessible(true);
-            declaredField.set(createBitmap, a2);
+            declaredField.set(createBitmap, a);
             return createBitmap;
         }
         return decodeStream;
@@ -242,8 +242,8 @@ public final class dl {
 
     private static Bitmap b(Context context, String str) throws Exception {
         InputStream open = dq.a(context).open(str);
-        Bitmap a2 = a(open);
+        Bitmap a = a(open);
         open.close();
-        return a2;
+        return a;
     }
 }

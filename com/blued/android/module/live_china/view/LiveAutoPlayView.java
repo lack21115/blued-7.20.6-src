@@ -18,13 +18,9 @@ import com.blued.android.module.player.txplayer.view.BlLiveView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveAutoPlayView.class */
 public class LiveAutoPlayView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    ImageView f14372a;
+    ImageView a;
     boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Runnable f14373c;
+    Runnable c;
     Runnable d;
     private long e;
     private int f;
@@ -55,9 +51,9 @@ public class LiveAutoPlayView extends FrameLayout {
         this.l = true;
         this.m = false;
         this.o = true;
-        this.f14372a = null;
+        this.a = null;
         this.b = true;
-        this.f14373c = new Runnable() { // from class: com.blued.android.module.live_china.view.LiveAutoPlayView.2
+        this.c = new Runnable() { // from class: com.blued.android.module.live_china.view.LiveAutoPlayView.2
             @Override // java.lang.Runnable
             public void run() {
                 Log.i("LiveAutoPlayView", "resumeRunnable");
@@ -122,7 +118,7 @@ public class LiveAutoPlayView extends FrameLayout {
 
             @Override // com.blued.android.module.live_china.view.LiveAutoPlayManager.OnMediaPlayerConnectListener
             public void a(Bitmap bitmap) {
-                LiveAutoPlayView.this.f14372a.setImageBitmap(bitmap);
+                LiveAutoPlayView.this.a.setImageBitmap(bitmap);
             }
         });
         LiveRoomData liveRoomData = new LiveRoomData(CommonTools.a(this.g.lid), this.g.screen_pattern, this.h, this.g.uid, this.g.anchor.name, this.g.anchor.avatar, this.g.anchor.vbadge);
@@ -133,9 +129,9 @@ public class LiveAutoPlayView extends FrameLayout {
 
     void a() {
         ImageView imageView = new ImageView(getContext());
-        this.f14372a = imageView;
+        this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        addView(this.f14372a, new FrameLayout.LayoutParams(-1, -1));
+        addView(this.a, new FrameLayout.LayoutParams(-1, -1));
     }
 
     public void a(LiveListAutoPlay liveListAutoPlay, BluedLiveListData bluedLiveListData, String str, int i, int i2) {
@@ -165,18 +161,18 @@ public class LiveAutoPlayView extends FrameLayout {
     public void a(boolean z) {
         this.m = z;
         if (z) {
-            removeCallbacks(this.f14373c);
+            removeCallbacks(this.c);
         }
     }
 
     public void b() {
-        removeCallbacks(this.f14373c);
-        AppInfo.n().postDelayed(this.f14373c, 300L);
+        removeCallbacks(this.c);
+        AppInfo.n().postDelayed(this.c, 300L);
     }
 
     public void c() {
         Log.i("LiveAutoPlayView", "autoplay pause");
-        removeCallbacks(this.f14373c);
+        removeCallbacks(this.c);
         LiveAutoPlayManager.a().f();
     }
 
@@ -234,8 +230,8 @@ public class LiveAutoPlayView extends FrameLayout {
         if (this.f == 0) {
             Log.i("LiveAutoPlayView", "onDetachedFromWindow： " + this.g.title + this.g.description);
         }
-        removeCallbacks(this.f14373c);
-        if (LiveAutoPlayManager.a().f14368a != null && LiveAutoPlayManager.a().f14368a.getParent() == this) {
+        removeCallbacks(this.c);
+        if (LiveAutoPlayManager.a().a != null && LiveAutoPlayManager.a().a.getParent() == this) {
             c();
             d();
         }

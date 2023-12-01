@@ -37,13 +37,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ClickOneGiftSendView.class */
 public class ClickOneGiftSendView extends ConstraintLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f17908a;
+    public final String a;
     private ViewClickOneGiftSendBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYGiftModel f17909c;
+    private YYGiftModel c;
     private YYRoomModel d;
     private KeyBoardFragment e;
     private long f;
@@ -61,24 +57,25 @@ public class ClickOneGiftSendView extends ConstraintLayout implements View.OnCli
         this(context, attributeSet, 0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public ClickOneGiftSendView(final Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f17908a = "SP_ONE_SEND_GIFT";
+        this.a = "SP_ONE_SEND_GIFT";
         this.f = 0L;
         this.g = 0L;
         this.h = 0;
         this.d = YYRoomInfoManager.e().b();
-        ViewClickOneGiftSendBinding a2 = ViewClickOneGiftSendBinding.a(LayoutInflater.from(context), this);
-        this.b = a2;
-        a2.d.setImageResource(R.color.color_5731D1);
-        this.b.f16844a.setOnClickListener(this);
+        ViewClickOneGiftSendBinding a = ViewClickOneGiftSendBinding.a(LayoutInflater.from(context), this);
+        this.b = a;
+        a.d.setImageResource(R.color.color_5731D1);
+        this.b.a.setOnClickListener(this);
         this.b.b.setOnClickListener(this);
-        this.b.f16845c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.ClickOneGiftSendView.1
+        this.b.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.ClickOneGiftSendView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 int[] iArr = new int[2];
-                ClickOneGiftSendView.this.b.f16845c.getLocationOnScreen(iArr);
+                ClickOneGiftSendView.this.b.c.getLocationOnScreen(iArr);
                 ClickOneGiftSendView.this.k = new BluedGuideDialog(context);
                 BluedGuideDialog.GuideBuilder guideBuilder = new BluedGuideDialog.GuideBuilder();
                 guideBuilder.b(1);
@@ -94,7 +91,7 @@ public class ClickOneGiftSendView extends ConstraintLayout implements View.OnCli
                     guideBuilder.a(ClickOneGiftSendView.this.j.getGoods_desc());
                 }
                 ClickOneGiftSendView.this.k.a(guideBuilder);
-                ClickOneGiftSendView.this.k.showAtLocation(ClickOneGiftSendView.this.b.f16845c, 0, DensityUtils.a(context, 32.0f), (iArr[1] - ClickOneGiftSendView.this.k.a()) - DensityUtils.a(context, 5.0f));
+                ClickOneGiftSendView.this.k.showAtLocation(ClickOneGiftSendView.this.b.c, 0, DensityUtils.a(context, 32.0f), (iArr[1] - ClickOneGiftSendView.this.k.a()) - DensityUtils.a(context, 5.0f));
             }
         });
     }
@@ -177,11 +174,11 @@ public class ClickOneGiftSendView extends ConstraintLayout implements View.OnCli
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.isEmpty()) {
                     return;
                 }
-                ClickOneGiftSendView.this.f17909c = bluedEntityA.data.get(0);
-                ImageLoader.a(ClickOneGiftSendView.this.e.getFragmentActive(), ClickOneGiftSendView.this.f17909c.images_static).a(ClickOneGiftSendView.this.b.d);
+                ClickOneGiftSendView.this.c = bluedEntityA.data.get(0);
+                ImageLoader.a(ClickOneGiftSendView.this.e.getFragmentActive(), ClickOneGiftSendView.this.c.images_static).a(ClickOneGiftSendView.this.b.d);
                 ClickOneGiftSendView.this.setVisibility(0);
                 if (yYRoomModel != null) {
-                    EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_SHOW, yYRoomModel.room_id, yYRoomModel.uid, ClickOneGiftSendView.this.f17909c.goods_id);
+                    EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_SHOW, yYRoomModel.room_id, yYRoomModel.uid, ClickOneGiftSendView.this.c.goods_id);
                 }
             }
         }, (IRequestHost) this.e.getFragmentActive());
@@ -195,19 +192,19 @@ public class ClickOneGiftSendView extends ConstraintLayout implements View.OnCli
                 if (ClickOneGiftSendView.this.d == null || ClickOneGiftSendView.this.j != null) {
                     return;
                 }
-                EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_POP_CANCEL_CLICK, ClickOneGiftSendView.this.d.room_id, ClickOneGiftSendView.this.d.uid, ClickOneGiftSendView.this.f17909c.goods_id);
+                EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_POP_CANCEL_CLICK, ClickOneGiftSendView.this.d.room_id, ClickOneGiftSendView.this.d.uid, ClickOneGiftSendView.this.c.goods_id);
             }
         }, new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.ClickOneGiftSendView.4
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 ClickOneGiftSendView clickOneGiftSendView = ClickOneGiftSendView.this;
-                clickOneGiftSendView.a(clickOneGiftSendView.f17909c, "", false);
+                clickOneGiftSendView.a(clickOneGiftSendView.c, "", false);
                 BluedSharedPreferences.a().c().a("SP_ONE_SEND_GIFT", true).a();
                 if (ClickOneGiftSendView.this.d == null || ClickOneGiftSendView.this.j != null) {
                     return;
                 }
-                EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_POP_SEND_CLICK, ClickOneGiftSendView.this.d.room_id, ClickOneGiftSendView.this.d.uid, ClickOneGiftSendView.this.f17909c.goods_id);
+                EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_POP_SEND_CLICK, ClickOneGiftSendView.this.d.room_id, ClickOneGiftSendView.this.d.uid, ClickOneGiftSendView.this.c.goods_id);
             }
         }, true, false);
     }
@@ -229,11 +226,11 @@ public class ClickOneGiftSendView extends ConstraintLayout implements View.OnCli
         this.b.f.setVisibility(8);
         this.b.g.setVisibility(0);
         YYGiftModel yYGiftModel = new YYGiftModel();
-        this.f17909c = yYGiftModel;
+        this.c = yYGiftModel;
         yYGiftModel.goods_id = iMJsonContents109Model.getAndroid_goods_id();
-        this.f17909c.images_static = iMJsonContents109Model.getGoods_image();
+        this.c.images_static = iMJsonContents109Model.getGoods_image();
         this.b.h.setText(iMJsonContents109Model.getCount());
-        this.b.f16844a.setVisibility(YYRoomInfoManager.e().y() ? 8 : 0);
+        this.b.a.setVisibility(YYRoomInfoManager.e().y() ? 8 : 0);
         if (StringUtils.a(iMJsonContents109Model.getCount(), 0) > StringUtils.a(iMJsonContents109Model.getTotal_count(), 0)) {
             this.b.i.setVisibility(8);
         } else {
@@ -254,21 +251,19 @@ public class ClickOneGiftSendView extends ConstraintLayout implements View.OnCli
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
-        if ((view.getId() == R.id.btn_pay || view.getId() == R.id.btn_sent) && this.f17909c != null) {
+        if ((view.getId() == R.id.btn_pay || view.getId() == R.id.btn_sent) && this.c != null) {
             if (this.d != null && view.getId() == R.id.btn_sent) {
-                EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_CLICK, this.d.room_id, this.d.uid, this.f17909c.goods_id);
+                EventTrackYY.o(ChatRoomProtos.Event.CHAT_ROOM_OUT_GOODS_CLICK, this.d.room_id, this.d.uid, this.c.goods_id);
             }
             if (BluedSharedPreferences.a().a("SP_ONE_SEND_GIFT", false)) {
-                a(this.f17909c, "", false);
+                a(this.c, "", false);
             } else {
                 a();
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         BluedGuideDialog bluedGuideDialog = this.k;
         if (bluedGuideDialog != null) {

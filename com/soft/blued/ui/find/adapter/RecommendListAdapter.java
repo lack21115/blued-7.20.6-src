@@ -44,11 +44,11 @@ import java.util.List;
 public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    protected List<T> f30116a = new ArrayList();
+    protected List<T> f16426a = new ArrayList();
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f30117c;
+    private LayoutInflater f16427c;
     private int d;
     private Dialog e;
     private LoadOptions f;
@@ -65,11 +65,11 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f30124a;
+        public ImageView f16434a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f30125c;
+        public TextView f16435c;
         public TextView d;
         public TextView e;
         public TextView f;
@@ -93,7 +93,7 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
         this.j = iRequestHost;
         this.b = context;
         this.g = i;
-        this.f30117c = LayoutInflater.from(context);
+        this.f16427c = LayoutInflater.from(context);
         this.d = context.getResources().getDisplayMetrics().widthPixels;
         this.e = DialogUtils.a(context);
     }
@@ -104,7 +104,7 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
         this.b = context;
         this.g = i;
         this.h = z;
-        this.f30117c = LayoutInflater.from(context);
+        this.f16427c = LayoutInflater.from(context);
         this.d = context.getResources().getDisplayMetrics().widthPixels;
         this.e = DialogUtils.a(context);
         LoadOptions loadOptions = new LoadOptions();
@@ -145,7 +145,7 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
             public void c() {
                 DialogUtils.b(RecommendListAdapter.this.e);
             }
-        }, t.uid, "", this.j);
+        }, ((UserBasicModel) t).uid, "", this.j);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -176,7 +176,7 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
                         t.relationship = str;
                         LiveEventBus.get("feed_relation_ship").post(t);
                         if (RecommendListAdapter.this.g != 1 && RecommendListAdapter.this.g != 4) {
-                            RecommendListAdapter.this.f30116a.remove(t);
+                            RecommendListAdapter.this.f16426a.remove(t);
                         }
                         if (RecommendListAdapter.this.i != null) {
                             SecretlyFollowedObserver a2 = SecretlyFollowedObserver.a();
@@ -202,7 +202,7 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
     }
 
     public void a(List<T> list) {
-        this.f30116a.clear();
+        this.f16426a.clear();
         if (list != null && list.size() > 0) {
             int i = 0;
             while (true) {
@@ -211,15 +211,15 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
                     break;
                 }
                 if (BlueAppLocal.d()) {
-                    list.get(i2).height = StringUtils.a(list.get(i2).height, BlueAppLocal.c(), false);
-                    list.get(i2).weight = StringUtils.b(list.get(i2).weight, BlueAppLocal.c(), false);
+                    ((UserBasicModel) list.get(i2)).height = StringUtils.a(((UserBasicModel) list.get(i2)).height, BlueAppLocal.c(), false);
+                    ((UserBasicModel) list.get(i2)).weight = StringUtils.b(((UserBasicModel) list.get(i2)).weight, BlueAppLocal.c(), false);
                 } else {
-                    list.get(i2).height = StringUtils.a(list.get(i2).height, BlueAppLocal.c(), true);
-                    list.get(i2).weight = StringUtils.b(list.get(i2).weight, BlueAppLocal.c(), true);
+                    ((UserBasicModel) list.get(i2)).height = StringUtils.a(((UserBasicModel) list.get(i2)).height, BlueAppLocal.c(), true);
+                    ((UserBasicModel) list.get(i2)).weight = StringUtils.b(((UserBasicModel) list.get(i2)).weight, BlueAppLocal.c(), true);
                 }
                 i = i2 + 1;
             }
-            this.f30116a.addAll(list);
+            this.f16426a.addAll(list);
         }
         notifyDataSetChanged();
     }
@@ -232,16 +232,16 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
         while (true) {
             int i2 = i;
             if (i2 >= list.size()) {
-                this.f30116a.addAll(list);
+                this.f16426a.addAll(list);
                 notifyDataSetChanged();
                 return;
             }
             if (BlueAppLocal.d()) {
-                list.get(i2).height = StringUtils.a(list.get(i2).height, BlueAppLocal.c(), false);
-                list.get(i2).weight = StringUtils.b(list.get(i2).weight, BlueAppLocal.c(), false);
+                ((UserBasicModel) list.get(i2)).height = StringUtils.a(((UserBasicModel) list.get(i2)).height, BlueAppLocal.c(), false);
+                ((UserBasicModel) list.get(i2)).weight = StringUtils.b(((UserBasicModel) list.get(i2)).weight, BlueAppLocal.c(), false);
             } else {
-                list.get(i2).height = StringUtils.a(list.get(i2).height, BlueAppLocal.c(), true);
-                list.get(i2).weight = StringUtils.b(list.get(i2).weight, BlueAppLocal.c(), true);
+                ((UserBasicModel) list.get(i2)).height = StringUtils.a(((UserBasicModel) list.get(i2)).height, BlueAppLocal.c(), true);
+                ((UserBasicModel) list.get(i2)).weight = StringUtils.b(((UserBasicModel) list.get(i2)).weight, BlueAppLocal.c(), true);
             }
             i = i2 + 1;
         }
@@ -249,7 +249,7 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f30116a.size();
+        return this.f16426a.size();
     }
 
     @Override // android.widget.Adapter
@@ -268,21 +268,21 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
         ViewHolder viewHolder;
         if (view == null) {
             viewHolder = new ViewHolder();
-            view2 = this.f30117c.inflate(R.layout.fragment_recommend_list_item, viewGroup, false);
-            viewHolder.f30124a = (ImageView) view2.findViewById(2131364232);
-            viewHolder.g = (TextView) view2.findViewById(2131369448);
-            viewHolder.f30125c = (TextView) view2.findViewById(2131368652);
-            viewHolder.b = (TextView) view2.findViewById(2131368391);
-            viewHolder.d = (TextView) view2.findViewById(2131362003);
-            viewHolder.e = (TextView) view2.findViewById(2131364242);
-            viewHolder.f = (TextView) view2.findViewById(2131373390);
-            viewHolder.h = (FollowStatusView) view2.findViewById(2131364011);
-            viewHolder.i = (ImageView) view2.findViewById(2131364720);
-            viewHolder.j = (ImageView) view2.findViewById(2131364459);
-            viewHolder.k = view2.findViewById(2131372167);
+            view2 = this.f16427c.inflate(R.layout.fragment_recommend_list_item, viewGroup, false);
+            viewHolder.f16434a = (ImageView) view2.findViewById(2131364232);
+            viewHolder.g = (TextView) view2.findViewById(R.id.role_view);
+            viewHolder.f16435c = (TextView) view2.findViewById(R.id.name_view);
+            viewHolder.b = (TextView) view2.findViewById(R.id.location_view);
+            viewHolder.d = (TextView) view2.findViewById(R.id.age_view);
+            viewHolder.e = (TextView) view2.findViewById(R.id.height_view);
+            viewHolder.f = (TextView) view2.findViewById(R.id.weight_view);
+            viewHolder.h = view2.findViewById(R.id.follow_status_view);
+            viewHolder.i = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.j = (ImageView) view2.findViewById(R.id.img_blued_medal);
+            viewHolder.k = view2.findViewById(R.id.tv_online);
             viewHolder.l = (LinearLayout) view2.findViewById(R.id.ll_personal_info);
             viewHolder.m = (LinearLayout) view2.findViewById(R.id.ll_distance);
-            viewHolder.n = (ShapeTextView) view2.findViewById(R.id.tv_identity);
+            viewHolder.n = view2.findViewById(R.id.tv_identity);
             viewHolder.o = (ImageView) view2.findViewById(R.id.cb_member_remove);
             viewHolder.p = view2.findViewById(R.id.item_line);
             view2.setTag(viewHolder);
@@ -290,66 +290,66 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
-        final T t = this.f30116a.get(i);
+        final T t = this.f16426a.get(i);
         if (this.g == 3) {
-            t.relationship = "1";
+            ((UserBasicModel) t).relationship = "1";
         }
-        UserInfoHelper.a(viewHolder.i, t.vbadge, 3);
-        ImageLoader.a(this.j, AvatarUtils.a(0, t.avatar)).c().b(2131237310).a(viewHolder.f30124a);
+        UserInfoHelper.a(viewHolder.i, ((UserBasicModel) t).vbadge, 3);
+        ImageLoader.a(this.j, AvatarUtils.a(0, ((UserBasicModel) t).avatar)).c().b(2131237310).a(viewHolder.f16434a);
         UserRelationshipUtils.a(viewHolder.j, t);
-        if (t.is_official != 1) {
-            UserInfoHelper.a(this.b, viewHolder.g, t.role);
+        if (((UserBasicModel) t).is_official != 1) {
+            UserInfoHelper.a(this.b, viewHolder.g, ((UserBasicModel) t).role);
         }
-        if (!TextUtils.isEmpty(t.note)) {
-            viewHolder.f30125c.setText(t.note);
-        } else if (TextUtils.isEmpty(t.name)) {
-            viewHolder.f30125c.setText("");
+        if (!TextUtils.isEmpty(((UserBasicModel) t).note)) {
+            viewHolder.f16435c.setText(((UserBasicModel) t).note);
+        } else if (TextUtils.isEmpty(((UserBasicModel) t).name)) {
+            viewHolder.f16435c.setText("");
         } else {
-            viewHolder.f30125c.setText(t.name);
+            viewHolder.f16435c.setText(((UserBasicModel) t).name);
         }
-        UserRelationshipUtils.a(this.b, viewHolder.f30125c, t);
-        if (t.online_state == 1) {
+        UserRelationshipUtils.a(this.b, viewHolder.f16435c, t);
+        if (((UserBasicModel) t).online_state == 1) {
             viewHolder.k.setVisibility(0);
         } else {
             viewHolder.k.setVisibility(8);
         }
-        if (UserInfoHelper.c(t.vbadge)) {
+        if (UserInfoHelper.c(((UserBasicModel) t).vbadge)) {
             viewHolder.l.setVisibility(8);
         } else {
             viewHolder.l.setVisibility(0);
-            if (TextUtils.isEmpty(t.age)) {
+            if (TextUtils.isEmpty(((UserBasicModel) t).age)) {
                 viewHolder.d.setText("");
             } else {
                 TextView textView = viewHolder.d;
-                textView.setText(t.age + this.b.getResources().getString(2131886374));
+                textView.setText(((UserBasicModel) t).age + this.b.getResources().getString(2131886374));
             }
-            if (TextUtils.isEmpty(t.height)) {
+            if (TextUtils.isEmpty(((UserBasicModel) t).height)) {
                 viewHolder.e.setText("");
             } else {
-                viewHolder.e.setText(t.height);
+                viewHolder.e.setText(((UserBasicModel) t).height);
             }
-            if (TextUtils.isEmpty(t.weight)) {
+            if (TextUtils.isEmpty(((UserBasicModel) t).weight)) {
                 viewHolder.f.setText("");
             } else {
-                viewHolder.f.setText(t.weight);
+                viewHolder.f.setText(((UserBasicModel) t).weight);
             }
         }
-        if (t.vbadge == 3) {
+        if (((UserBasicModel) t).vbadge == 3) {
             viewHolder.m.setVisibility(8);
         } else {
             viewHolder.m.setVisibility(0);
         }
-        if (TextUtils.isEmpty(t.location) || t.vbadge == 3) {
+        if (TextUtils.isEmpty(((UserBasicModel) t).location) || ((UserBasicModel) t).vbadge == 3) {
             viewHolder.b.setText("");
         } else {
-            viewHolder.b.setText(t.location);
+            viewHolder.b.setText(((UserBasicModel) t).location);
         }
-        if (t.uid == null || !t.uid.equals(UserInfo.getInstance().getLoginUserInfo().getUid())) {
+        if (((UserBasicModel) t).uid == null || !((UserBasicModel) t).uid.equals(UserInfo.getInstance().getLoginUserInfo().getUid())) {
             viewHolder.h.setVisibility(0);
         } else {
             viewHolder.h.setVisibility(8);
         }
-        viewHolder.h.setRelationShip(t.relationship);
+        viewHolder.h.setRelationShip(((UserBasicModel) t).relationship);
         viewHolder.h.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.RecommendListAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {
@@ -377,7 +377,7 @@ public class RecommendListAdapter<T extends UserBasicModel> extends BaseAdapter 
                 EventTrackFeed.a(FeedProtos.Event.OTHER_FOLLOW_CLICK, t.uid, "", "", followLocation, z, false);
             }
         });
-        final ImageView imageView = viewHolder.f30124a;
+        final ImageView imageView = viewHolder.f16434a;
         view2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.RecommendListAdapter.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {

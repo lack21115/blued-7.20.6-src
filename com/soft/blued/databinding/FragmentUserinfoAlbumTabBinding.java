@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentUserinfoAlbumTabBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29004a;
+    private final FrameLayout f15314a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29004a;
+        return this.f15314a;
     }
 }

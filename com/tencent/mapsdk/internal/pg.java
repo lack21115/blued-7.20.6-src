@@ -23,11 +23,11 @@ public class pg {
     public static final int n = 100;
 
     /* renamed from: a  reason: collision with root package name */
-    private ri f37695a;
+    private ri f24004a;
     private Map<Integer, kg> b = new Hashtable(4);
 
     /* renamed from: c  reason: collision with root package name */
-    private rg f37696c;
+    private rg f24005c;
     private Context d;
     private rc e;
     public String f;
@@ -35,7 +35,7 @@ public class pg {
     public pg(Context context, rc rcVar) {
         this.d = context;
         this.e = rcVar;
-        this.f37695a = rcVar.S();
+        this.f24004a = rcVar.S();
         this.f = mc.b(context).c().getPath();
     }
 
@@ -90,11 +90,11 @@ public class pg {
     }
 
     public int a(TileOverlayCallback tileOverlayCallback, boolean z) {
-        if (this.f37695a == null) {
+        if (this.f24004a == null) {
             return -1;
         }
         ra.d(ma.b, "内部addTileOverlay");
-        return this.f37695a.a(tileOverlayCallback, z);
+        return this.f24004a.a(tileOverlayCallback, z);
     }
 
     public Context a() {
@@ -115,7 +115,7 @@ public class pg {
     }
 
     public void a(int i2, int i3) {
-        ri riVar = this.f37695a;
+        ri riVar = this.f24004a;
         if (riVar == null) {
             return;
         }
@@ -123,7 +123,7 @@ public class pg {
     }
 
     public void a(int i2, int i3, int i4) {
-        ri riVar = this.f37695a;
+        ri riVar = this.f24004a;
         if (riVar == null) {
             return;
         }
@@ -139,7 +139,7 @@ public class pg {
     }
 
     public void a(boolean z) {
-        this.f37695a.p(z);
+        this.f24004a.p(z);
     }
 
     public byte[] a(String str) {
@@ -161,10 +161,10 @@ public class pg {
     }
 
     public kg b(TileOverlayOptions tileOverlayOptions) {
-        if (this.f37696c == null) {
-            this.f37696c = new rg(this);
+        if (this.f24005c == null) {
+            this.f24005c = new rg(this);
         }
-        return this.f37696c.a(tileOverlayOptions);
+        return this.f24005c.a(tileOverlayOptions);
     }
 
     public rc b() {
@@ -172,7 +172,7 @@ public class pg {
     }
 
     public void b(int i2) {
-        ri riVar = this.f37695a;
+        ri riVar = this.f24004a;
         if (riVar == null) {
             return;
         }
@@ -180,16 +180,16 @@ public class pg {
     }
 
     public void c(int i2) {
-        if (this.f37695a == null) {
+        if (this.f24004a == null) {
             return;
         }
         this.b.remove(Integer.valueOf(i2));
-        this.f37695a.g(i2);
+        this.f24004a.g(i2);
         ra.i(ma.b);
     }
 
     public boolean c() {
-        return this.f37695a.Q();
+        return this.f24004a.Q();
     }
 
     public void d() {

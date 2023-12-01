@@ -7,7 +7,7 @@ public final class f {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final f f7910a = new f((byte) 0);
+        private static final f f5070a = new f((byte) 0);
 
         private a() {
         }
@@ -21,6 +21,6 @@ public final class f {
     }
 
     private static f a() {
-        return a.f7910a;
+        return a.f5070a;
     }
 }

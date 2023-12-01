@@ -41,11 +41,11 @@ public class FindSearchMapBottomDialog extends Dialog {
     private DismissListener P;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f30685a;
+    private int f16995a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CardView f30686c;
+    private CardView f16996c;
     private ConstraintLayout d;
     private ConstraintLayout e;
     private ShapeConstraintLayout f;
@@ -74,14 +74,14 @@ public class FindSearchMapBottomDialog extends Dialog {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final FindSearchMapBottomDialog f30690a;
+        private final FindSearchMapBottomDialog f17000a;
 
         public Builder(Context context) {
-            this.f30690a = new FindSearchMapBottomDialog(context);
+            this.f17000a = new FindSearchMapBottomDialog(context);
         }
 
         public Builder a(int i) {
-            this.f30690a.f30685a = i;
+            this.f17000a.f16995a = i;
             return this;
         }
 
@@ -89,21 +89,21 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (drawable == null) {
                 return this;
             }
-            this.f30690a.K = drawable;
+            this.f17000a.K = drawable;
             return this;
         }
 
         public Builder a(DismissListener dismissListener) {
-            this.f30690a.P = dismissListener;
+            this.f17000a.P = dismissListener;
             return this;
         }
 
         public Builder a(Boolean bool) {
             if (bool == null) {
-                this.f30690a.setCanceledOnTouchOutside(false);
+                this.f17000a.setCanceledOnTouchOutside(false);
                 return this;
             }
-            this.f30690a.setCanceledOnTouchOutside(bool.booleanValue());
+            this.f17000a.setCanceledOnTouchOutside(bool.booleanValue());
             return this;
         }
 
@@ -112,7 +112,7 @@ public class FindSearchMapBottomDialog extends Dialog {
                 if (StringUtils.d(charSequence.toString())) {
                     return this;
                 }
-                this.f30690a.w = charSequence.toString();
+                this.f17000a.w = charSequence.toString();
             }
             return this;
         }
@@ -121,8 +121,8 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.F = charSequence;
-            this.f30690a.L = onClickListener;
+            this.f17000a.F = charSequence;
+            this.f17000a.L = onClickListener;
             return this;
         }
 
@@ -130,20 +130,20 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.G = charSequence;
-            this.f30690a.M = confirmBtnListener;
+            this.f17000a.G = charSequence;
+            this.f17000a.M = confirmBtnListener;
             return this;
         }
 
         public FindSearchMapBottomDialog a() {
-            return this.f30690a;
+            return this.f17000a;
         }
 
         public Builder b(Boolean bool) {
             if (bool == null) {
                 return this;
             }
-            this.f30690a.I = bool.booleanValue();
+            this.f17000a.I = bool.booleanValue();
             return this;
         }
 
@@ -151,7 +151,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.x = charSequence;
+            this.f17000a.x = charSequence;
             return this;
         }
 
@@ -159,8 +159,8 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.H = charSequence;
-            this.f30690a.N = onClickListener;
+            this.f17000a.H = charSequence;
+            this.f17000a.N = onClickListener;
             return this;
         }
 
@@ -168,7 +168,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (bool == null) {
                 return this;
             }
-            this.f30690a.J = bool.booleanValue();
+            this.f17000a.J = bool.booleanValue();
             return this;
         }
 
@@ -176,7 +176,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.y = charSequence;
+            this.f17000a.y = charSequence;
             return this;
         }
 
@@ -184,7 +184,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.z = charSequence;
+            this.f17000a.z = charSequence;
             return this;
         }
 
@@ -192,7 +192,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.A = charSequence;
+            this.f17000a.A = charSequence;
             return this;
         }
 
@@ -200,7 +200,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.B = charSequence;
+            this.f17000a.B = charSequence;
             return this;
         }
 
@@ -208,7 +208,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.C = charSequence;
+            this.f17000a.C = charSequence;
             return this;
         }
 
@@ -216,7 +216,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.D = charSequence;
+            this.f17000a.D = charSequence;
             return this;
         }
 
@@ -224,7 +224,7 @@ public class FindSearchMapBottomDialog extends Dialog {
             if (charSequence == null) {
                 return this;
             }
-            this.f30690a.E = charSequence;
+            this.f17000a.E = charSequence;
             return this;
         }
     }
@@ -254,15 +254,15 @@ public class FindSearchMapBottomDialog extends Dialog {
     }
 
     private void a() {
-        this.f30686c = (CardView) findViewById(2131362728);
+        this.f16996c = (CardView) findViewById(R.id.card);
         this.d = (ConstraintLayout) findViewById(R.id.cl_dialog_center);
         this.h = (TextView) findViewById(R.id.tv_shadow_title);
         this.i = (TextView) findViewById(R.id.tv_shadow_subtitle);
-        this.f = (ShapeConstraintLayout) findViewById(R.id.cl_shadow_card);
-        this.j = (TextView) findViewById(2131371285);
-        this.k = (TextView) findViewById(2131371868);
+        this.f = findViewById(R.id.cl_shadow_card);
+        this.j = (TextView) findViewById(R.id.tv_distance);
+        this.k = (TextView) findViewById(R.id.tv_location);
         this.s = (ToggleButton) findViewById(R.id.tglbtn_setting_shadow);
-        this.g = (ShapeConstraintLayout) findViewById(R.id.open_location_card);
+        this.g = findViewById(R.id.open_location_card);
         this.l = (TextView) findViewById(R.id.tv_open_location_card_title);
         this.m = (TextView) findViewById(R.id.tv_open_location_card_subtitle);
         this.t = (ToggleButton) findViewById(R.id.tglbtn_open_location);
@@ -305,7 +305,7 @@ public class FindSearchMapBottomDialog extends Dialog {
     }
 
     private void b() {
-        int i = this.f30685a;
+        int i = this.f16995a;
         if (i == 0) {
             this.e.setPadding(0, 220, 0, 100);
             c();
@@ -443,7 +443,7 @@ public class FindSearchMapBottomDialog extends Dialog {
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     if (FindSearchMapBottomDialog.this.M != null) {
-                        int i = FindSearchMapBottomDialog.this.f30685a;
+                        int i = FindSearchMapBottomDialog.this.f16995a;
                         if (i == 0) {
                             ConfirmBtnListener confirmBtnListener = FindSearchMapBottomDialog.this.M;
                             FindSearchMapBottomDialog findSearchMapBottomDialog = FindSearchMapBottomDialog.this;
@@ -504,7 +504,7 @@ public class FindSearchMapBottomDialog extends Dialog {
         Window window = getWindow();
         window.setGravity(80);
         if (window != null) {
-            window.setBackgroundDrawableResource(17170445);
+            window.setBackgroundDrawableResource(android.R.color.transparent);
         }
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;

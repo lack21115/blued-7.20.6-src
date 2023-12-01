@@ -18,13 +18,9 @@ import com.blued.android.module.live.base.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/ProgressWheel.class */
 public class ProgressWheel extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f11486a = ProgressWheel.class.getSimpleName();
+    private static final String a = ProgressWheel.class.getSimpleName();
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f11487c;
+    private final int c;
     private final long d;
     private int e;
     private int f;
@@ -70,13 +66,9 @@ public class ProgressWheel extends View {
                 return new WheelSavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        float f11488a;
+        float a;
         float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f11489c;
+        boolean c;
         float d;
         int e;
         int f;
@@ -88,9 +80,9 @@ public class ProgressWheel extends View {
 
         private WheelSavedState(Parcel parcel) {
             super(parcel);
-            this.f11488a = parcel.readFloat();
+            this.a = parcel.readFloat();
             this.b = parcel.readFloat();
-            this.f11489c = parcel.readByte() != 0;
+            this.c = parcel.readByte() != 0;
             this.d = parcel.readFloat();
             this.e = parcel.readInt();
             this.f = parcel.readInt();
@@ -108,9 +100,9 @@ public class ProgressWheel extends View {
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeFloat(this.f11488a);
+            parcel.writeFloat(this.a);
             parcel.writeFloat(this.b);
-            parcel.writeByte(this.f11489c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(this.c ? (byte) 1 : (byte) 0);
             parcel.writeFloat(this.d);
             parcel.writeInt(this.e);
             parcel.writeInt(this.f);
@@ -125,7 +117,7 @@ public class ProgressWheel extends View {
     public ProgressWheel(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 16;
-        this.f11487c = 270;
+        this.c = 270;
         this.d = 200L;
         this.e = 28;
         this.f = 4;
@@ -373,9 +365,9 @@ public class ProgressWheel extends View {
         }
         WheelSavedState wheelSavedState = (WheelSavedState) parcelable;
         super.onRestoreInstanceState(wheelSavedState.getSuperState());
-        this.v = wheelSavedState.f11488a;
+        this.v = wheelSavedState.a;
         this.w = wheelSavedState.b;
-        this.x = wheelSavedState.f11489c;
+        this.x = wheelSavedState.c;
         this.s = wheelSavedState.d;
         this.f = wheelSavedState.e;
         this.n = wheelSavedState.f;
@@ -390,9 +382,9 @@ public class ProgressWheel extends View {
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         WheelSavedState wheelSavedState = new WheelSavedState(super.onSaveInstanceState());
-        wheelSavedState.f11488a = this.v;
+        wheelSavedState.a = this.v;
         wheelSavedState.b = this.w;
-        wheelSavedState.f11489c = this.x;
+        wheelSavedState.c = this.x;
         wheelSavedState.d = this.s;
         wheelSavedState.e = this.f;
         wheelSavedState.f = this.n;

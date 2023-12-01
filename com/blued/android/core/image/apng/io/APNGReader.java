@@ -40,20 +40,20 @@ public class APNGReader extends FilterReader {
     }
 
     public short c() throws IOException {
-        byte[] a2 = a();
-        read(a2, 0, 2);
-        return (short) (((a2[0] & 255) << 8) | (a2[1] & 255));
+        byte[] a = a();
+        read(a, 0, 2);
+        return (short) (((a[0] & 255) << 8) | (a[1] & 255));
     }
 
     public int d() throws IOException {
-        byte[] a2 = a();
-        read(a2, 0, 4);
-        return ((a2[3] & 255) << 24) | (a2[0] & 255) | ((a2[1] & 255) << 8) | ((a2[2] & 255) << 16);
+        byte[] a = a();
+        read(a, 0, 4);
+        return ((a[3] & 255) << 24) | (a[0] & 255) | ((a[1] & 255) << 8) | ((a[2] & 255) << 16);
     }
 
     public int m_() throws IOException {
-        byte[] a2 = a();
-        read(a2, 0, 4);
-        return ((a2[0] & 255) << 24) | (a2[3] & 255) | ((a2[2] & 255) << 8) | ((a2[1] & 255) << 16);
+        byte[] a = a();
+        read(a, 0, 4);
+        return ((a[0] & 255) << 24) | (a[3] & 255) | ((a[2] & 255) << 8) | ((a[1] & 255) << 16);
     }
 }

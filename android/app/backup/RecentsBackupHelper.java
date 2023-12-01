@@ -1,6 +1,7 @@
 package android.app.backup;
 
 import android.content.Context;
+import android.content.res.ThemeConfig;
 import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import java.io.File;
@@ -18,7 +19,7 @@ public class RecentsBackupHelper implements BackupHelper {
     final String[] mRecentFiles;
     final String[] mRecentKeys;
     FileBackupHelperBase mTaskFileHelper;
-    final File mSystemDir = new File(Environment.getDataDirectory(), "system");
+    final File mSystemDir = new File(Environment.getDataDirectory(), ThemeConfig.SYSTEM_DEFAULT);
     final File mTasksDir = new File(this.mSystemDir, RECENTS_TASK_DIR);
     final File mRestoredTasksDir = new File(this.mSystemDir, RECENTS_TASK_RESTORE_DIR);
     final File mRestoredImagesDir = new File(this.mSystemDir, RECENTS_IMAGE_RESTORE_DIR);

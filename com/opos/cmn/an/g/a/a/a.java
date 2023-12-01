@@ -19,14 +19,14 @@ import javax.net.ssl.SSLSocketFactory;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f24541a;
+    protected Context f10854a;
     protected f b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected HttpURLConnection f24542c = a();
+    protected HttpURLConnection f10855c = a();
 
     public a(Context context, f fVar) {
-        this.f24541a = context;
+        this.f10854a = context;
         this.b = fVar;
         com.opos.cmn.an.f.a.b("HttpURLBaseTask", "init HttpURLBaseTask");
     }
@@ -35,11 +35,11 @@ public abstract class a {
         com.opos.cmn.an.f.a.b("HttpURLBaseTask", "start openConnection");
         c();
         HttpURLConnection httpURLConnection = null;
-        if (!com.opos.cmn.an.c.a.a(this.b.f24550c)) {
+        if (!com.opos.cmn.an.c.a.a(this.b.f10863c)) {
             httpURLConnection = null;
             try {
-                URL url = new URL(this.b.f24550c);
-                HttpURLConnection openConnection = com.opos.cmn.an.h.c.a.c(this.f24541a) ? !com.opos.cmn.an.c.a.a(Proxy.getDefaultHost()) ? url.openConnection(b()) : url.openConnection() : url.openConnection();
+                URL url = new URL(this.b.f10863c);
+                HttpURLConnection openConnection = com.opos.cmn.an.h.c.a.c(this.f10854a) ? !com.opos.cmn.an.c.a.a(Proxy.getDefaultHost()) ? url.openConnection(b()) : url.openConnection() : url.openConnection();
                 c(openConnection);
                 a(openConnection);
                 httpURLConnection = openConnection;

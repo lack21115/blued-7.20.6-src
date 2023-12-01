@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredEggProgressView.class */
 public class PkDaredEggProgressView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f15378a;
+    protected int a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f15379c;
+    private float c;
     private float d;
     private int e;
     private int f;
@@ -27,7 +23,7 @@ public class PkDaredEggProgressView extends View {
 
     public PkDaredEggProgressView(Context context) {
         super(context);
-        this.f15378a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = -1;
         this.f = -1;
@@ -36,7 +32,7 @@ public class PkDaredEggProgressView extends View {
 
     public PkDaredEggProgressView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15378a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = -1;
         this.f = -1;
@@ -45,7 +41,7 @@ public class PkDaredEggProgressView extends View {
 
     public PkDaredEggProgressView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15378a = 0;
+        this.a = 0;
         this.b = 100;
         this.e = -1;
         this.f = -1;
@@ -57,17 +53,17 @@ public class PkDaredEggProgressView extends View {
         float f2 = f / 2.0f;
         float f3 = f / 2.0f;
         paint.setColor(this.h);
-        canvas.drawLine(f2, f3, this.f15379c - (f / 2.0f), f3, paint);
+        canvas.drawLine(f2, f3, this.c - (f / 2.0f), f3, paint);
     }
 
     private void b(Canvas canvas, Paint paint) {
         float f = this.d;
         if (f > 0.0f) {
-            float f2 = this.f15379c;
+            float f2 = this.c;
             if (f2 <= 0.0f) {
                 return;
             }
-            float f3 = this.f15378a / this.b;
+            float f3 = this.a / this.b;
             float f4 = f / 2.0f;
             float f5 = f / 2.0f;
             float f6 = f3 == 0.0f ? 0.0f : ((f2 - f) * f3) + f4;
@@ -107,7 +103,7 @@ public class PkDaredEggProgressView extends View {
     }
 
     public int getProgress() {
-        return this.f15378a;
+        return this.a;
     }
 
     public int getProgressMax() {
@@ -127,7 +123,7 @@ public class PkDaredEggProgressView extends View {
     @Override // android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f15379c = getMeasuredWidth();
+        this.c = getMeasuredWidth();
         this.d = getMeasuredHeight();
     }
 
@@ -145,7 +141,7 @@ public class PkDaredEggProgressView extends View {
         if (i2 > i3) {
             i4 = i3;
         }
-        this.f15378a = i4;
+        this.a = i4;
         invalidate();
     }
 

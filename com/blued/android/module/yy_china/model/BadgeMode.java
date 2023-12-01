@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -200,7 +201,7 @@ public final class BadgeMode {
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((this.pic.hashCode() * 31) + this.name.hashCode()) * 31) + this.bid.hashCode()) * 31) + this.title.hashCode()) * 31) + this.upgrade_description.hashCode()) * 31) + this.image_dym.hashCode()) * 31) + this.type) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.start_time)) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.end_time)) * 31) + this.show) * 31) + this.condition.hashCode()) * 31) + this.score;
+        return (((((((((((((((((((((this.pic.hashCode() * 31) + this.name.hashCode()) * 31) + this.bid.hashCode()) * 31) + this.title.hashCode()) * 31) + this.upgrade_description.hashCode()) * 31) + this.image_dym.hashCode()) * 31) + this.type) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.start_time)) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.end_time)) * 31) + this.show) * 31) + this.condition.hashCode()) * 31) + this.score;
     }
 
     public final void setBid(String str) {

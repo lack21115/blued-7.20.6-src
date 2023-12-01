@@ -185,7 +185,7 @@ public class b {
                     httpsURLConnection.setRequestProperty(str3, hashMap.get(str3));
                 }
             }
-            httpsURLConnection.addRequestProperty("Connection", str.startsWith("https://opencloud.wostore.cn/openapi/netauth/precheck/wp?") ? com.anythink.expressad.foundation.g.f.g.c.f7906c : "close");
+            httpsURLConnection.addRequestProperty("Connection", str.startsWith("https://opencloud.wostore.cn/openapi/netauth/precheck/wp?") ? com.anythink.expressad.foundation.g.f.g.c.f5066c : "close");
             httpsURLConnection.connect();
             if (httpsURLConnection.getResponseCode() == 200) {
                 String a2 = a(httpsURLConnection.getInputStream());
@@ -289,7 +289,7 @@ public class b {
                     httpsURLConnection.setRequestProperty(str3, hashMap.get(str3));
                 }
             }
-            httpsURLConnection.addRequestProperty("Connection", str.startsWith("https://opencloud.wostore.cn/openapi/netauth/precheck/wp?") ? com.anythink.expressad.foundation.g.f.g.c.f7906c : "close");
+            httpsURLConnection.addRequestProperty("Connection", str.startsWith("https://opencloud.wostore.cn/openapi/netauth/precheck/wp?") ? com.anythink.expressad.foundation.g.f.g.c.f5066c : "close");
             httpsURLConnection.connect();
             if (httpsURLConnection.getResponseCode() == 200) {
                 String a2 = a(httpsURLConnection.getInputStream());

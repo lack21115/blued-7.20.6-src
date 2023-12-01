@@ -2,6 +2,7 @@ package com.kwad.sdk.api.loader;
 
 import android.text.TextUtils;
 import com.google.common.net.HttpHeaders;
+import com.huawei.openalliance.ad.utils.ay;
 import com.kwad.sdk.api.core.RequestParamsUtils;
 import com.kwad.sdk.api.core.TLSConnectionUtils;
 import com.kwad.sdk.api.loader.a;
@@ -101,7 +102,7 @@ class f {
 
     private static Map<String, String> to() {
         HashMap hashMap = new HashMap();
-        hashMap.put(HttpHeaders.ACCEPT_LANGUAGE, "zh-CN");
+        hashMap.put(HttpHeaders.ACCEPT_LANGUAGE, ay.Code);
         hashMap.put("Connection", "keep-alive");
         hashMap.put("Charset", "UTF-8");
         hashMap.put("Content-Type", "application/json; charset=UTF-8");

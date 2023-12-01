@@ -5,9 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/customview/widget/FocusStrategy.class */
-public class FocusStrategy {
+class FocusStrategy {
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/customview/widget/FocusStrategy$BoundsAdapter.class */
     public interface BoundsAdapter<T> {
@@ -21,26 +20,25 @@ public class FocusStrategy {
         int size(T t);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/customview/widget/FocusStrategy$SequentialComparator.class */
-    public static class SequentialComparator<T> implements Comparator<T> {
+    static class SequentialComparator<T> implements Comparator<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Rect f2772a = new Rect();
+        private final Rect f2724a = new Rect();
         private final Rect b = new Rect();
 
         /* renamed from: c  reason: collision with root package name */
-        private final boolean f2773c;
+        private final boolean f2725c;
         private final BoundsAdapter<T> d;
 
         SequentialComparator(boolean z, BoundsAdapter<T> boundsAdapter) {
-            this.f2773c = z;
+            this.f2725c = z;
             this.d = boundsAdapter;
         }
 
         @Override // java.util.Comparator
         public int compare(T t, T t2) {
-            Rect rect = this.f2772a;
+            Rect rect = this.f2724a;
             Rect rect2 = this.b;
             this.d.obtainBounds(t, rect);
             this.d.obtainBounds(t2, rect2);
@@ -52,12 +50,12 @@ public class FocusStrategy {
                 return 1;
             }
             if (rect.left < rect2.left) {
-                if (this.f2773c) {
+                if (this.f2725c) {
                     i = 1;
                 }
                 return i;
             } else if (rect.left > rect2.left) {
-                return this.f2773c ? -1 : 1;
+                return this.f2725c ? -1 : 1;
             } else if (rect.bottom < rect2.bottom) {
                 return -1;
             } else {
@@ -65,12 +63,12 @@ public class FocusStrategy {
                     return 1;
                 }
                 if (rect.right < rect2.right) {
-                    if (this.f2773c) {
+                    if (this.f2725c) {
                         i = 1;
                     }
                     return i;
                 } else if (rect.right > rect2.right) {
-                    return this.f2773c ? -1 : 1;
+                    return this.f2725c ? -1 : 1;
                 } else {
                     return 0;
                 }

@@ -21,7 +21,7 @@ public class TbsDownloadConfig {
     public static final int ERROR_VERIFY = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    private static TbsDownloadConfig f38761a;
+    private static TbsDownloadConfig f25070a;
     private Context b;
     public SharedPreferences mPreferences;
     public Map<String, Object> mSyncMap = new HashMap();
@@ -89,7 +89,7 @@ public class TbsDownloadConfig {
         TbsDownloadConfig tbsDownloadConfig;
         synchronized (TbsDownloadConfig.class) {
             try {
-                tbsDownloadConfig = f38761a;
+                tbsDownloadConfig = f25070a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -101,10 +101,10 @@ public class TbsDownloadConfig {
         TbsDownloadConfig tbsDownloadConfig;
         synchronized (TbsDownloadConfig.class) {
             try {
-                if (f38761a == null) {
-                    f38761a = new TbsDownloadConfig(context);
+                if (f25070a == null) {
+                    f25070a = new TbsDownloadConfig(context);
                 }
-                tbsDownloadConfig = f38761a;
+                tbsDownloadConfig = f25070a;
             } catch (Throwable th) {
                 throw th;
             }

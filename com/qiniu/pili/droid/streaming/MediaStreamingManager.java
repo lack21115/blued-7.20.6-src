@@ -36,11 +36,11 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
     public volatile long G;
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f27818a;
+    public volatile boolean f14130a;
     public a.a.a.a.a.a.i.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    public a.a.a.a.a.a.e.a f27819c;
+    public a.a.a.a.a.a.e.a f14131c;
     public a.a.a.a.a.a.b d;
     public CameraStreamingSetting e;
     public MicrophoneStreamingSetting f;
@@ -69,7 +69,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f27820a;
+        public static final /* synthetic */ int[] f14132a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:33:0x00b9 -> B:79:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x00bd -> B:91:0x001f). Please submit an issue!!! */
@@ -87,65 +87,65 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:59:0x00ed -> B:73:0x00ac). Please submit an issue!!! */
         static {
             int[] iArr = new int[b.c.values().length];
-            f27820a = iArr;
+            f14132a = iArr;
             try {
                 iArr[b.c.READY.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27820a[b.c.PREPARING.ordinal()] = 2;
+                f14132a[b.c.PREPARING.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f27820a[b.c.CONNECTING.ordinal()] = 3;
+                f14132a[b.c.CONNECTING.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f27820a[b.c.STREAMING.ordinal()] = 4;
+                f14132a[b.c.STREAMING.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f27820a[b.c.SHUTDOWN.ordinal()] = 5;
+                f14132a[b.c.SHUTDOWN.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f27820a[b.c.IOERROR.ordinal()] = 6;
+                f14132a[b.c.IOERROR.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f27820a[b.c.FRAME_QUEUE_EMPTY.ordinal()] = 7;
+                f14132a[b.c.FRAME_QUEUE_EMPTY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f27820a[b.c.FRAME_QUEUE_FULL.ordinal()] = 8;
+                f14132a[b.c.FRAME_QUEUE_FULL.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f27820a[b.c.FRAME_QUEUE_HAS_FEW_ELEMENTS.ordinal()] = 9;
+                f14132a[b.c.FRAME_QUEUE_HAS_FEW_ELEMENTS.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f27820a[b.c.FRAME_QUEUE_HAS_MANY_ELEMENTS.ordinal()] = 10;
+                f14132a[b.c.FRAME_QUEUE_HAS_MANY_ELEMENTS.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f27820a[b.c.ADJUST_BITRATE.ordinal()] = 11;
+                f14132a[b.c.ADJUST_BITRATE.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f27820a[b.c.DISCONNECTED.ordinal()] = 12;
+                f14132a[b.c.DISCONNECTED.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f27820a[b.c.AUDIO_RECORDING_EXCEPTION.ordinal()] = 13;
+                f14132a[b.c.AUDIO_RECORDING_EXCEPTION.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f27820a[b.c.UNAUTHORIZED_URL.ordinal()] = 14;
+                f14132a[b.c.UNAUTHORIZED_URL.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f27820a[b.c.INVALID_FORMAT.ordinal()] = 15;
+                f14132a[b.c.INVALID_FORMAT.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
         }
@@ -270,7 +270,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         intent.putExtra("audioEncoderType", this.d.n());
         intent.putExtra("videoFps", this.b.e().b ? this.d.r() : 0);
         int i = 0;
-        if (this.b.e().f1243a) {
+        if (this.b.e().f1195a) {
             i = this.d.j().b() / 1000;
         }
         intent.putExtra("audioFps", i);
@@ -327,7 +327,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
             if (streamStatusCallback != null) {
                 this.b.a(streamStatusCallback);
             }
-            this.f27818a = true;
+            this.f14130a = true;
             if (q()) {
                 G();
                 E();
@@ -429,7 +429,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
 
     public final void P() {
         e.f.c("MediaStreamingManager", "tryResumeStreaming");
-        if (!this.f27818a) {
+        if (!this.f14130a) {
             e.f.d("MediaStreamingManager", "not recording, no need try resuming stream.");
             return;
         }
@@ -461,7 +461,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         e eVar = e.f;
         eVar.c("MediaStreamingManager", "buildTransferSessionConfig width:" + i + ",height:" + i2 + ",rotation:" + i3 + ",mirror:" + z + ",fmt:" + i4);
         if (v()) {
-            aVar = new f.a(this.b, i, i2, i5, z, i3, i4, this.j.b() ? this.j.j().f1301c : null, this.j.i(), this.d.k());
+            aVar = new f.a(this.b, i, i2, i5, z, i3, i4, this.j.b() ? this.j.j().f1253c : null, this.j.i(), this.d.k());
             aVar.a(this.j.a());
         } else {
             aVar = new f.a(this.b, i, i2, i5, z, i3, i4, this.j.i(), this.d.k());
@@ -494,7 +494,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         StreamingState streamingState2 = StreamingState.UNKNOWN;
         e eVar = e.f;
         eVar.c("MediaStreamingManager", "onStateChanged:" + cVar + ",mNeedUpdateProfile:" + this.y);
-        switch (a.f27820a[cVar.ordinal()]) {
+        switch (a.f14132a[cVar.ordinal()]) {
             case 1:
                 StreamingState streamingState3 = StreamingState.READY;
                 return;
@@ -629,7 +629,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
 
     @Override // a.a.a.a.a.g.b.a
     public void a(ByteBuffer byteBuffer, int i, long j, boolean z) {
-        if (this.b != null && this.f27818a) {
+        if (this.b != null && this.f14130a) {
             this.b.c(false);
         }
         AudioMixer audioMixer = this.o;
@@ -640,7 +640,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         if (audioSourceCallback != null) {
             audioSourceCallback.onAudioSourceAvailable(byteBuffer, i, j * 1000, z);
         }
-        if (this.v != null && this.f27818a) {
+        if (this.v != null && this.f14130a) {
             this.v.a(byteBuffer.array(), byteBuffer.arrayOffset(), i);
         }
         if (this.f.c() || this.h == null || !r()) {
@@ -759,7 +759,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
     @Override // a.a.a.a.a.b.c.j
     public void c() {
         e.f.c("MediaStreamingManager", "doResumeStreaming");
-        if (this.f27818a) {
+        if (this.f14130a) {
             h();
             P();
             return;
@@ -790,7 +790,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
 
     public final boolean c(int i, int i2, int i3, boolean z, int i4) {
         f.a aVar = this.C;
-        return (aVar != null && aVar.b * aVar.f1272c == i * i2 && aVar.e == i3 && aVar.f == i4) ? false : true;
+        return (aVar != null && aVar.b * aVar.f1224c == i * i2 && aVar.e == i3 && aVar.f == i4) ? false : true;
     }
 
     public void captureFrame(int i, int i2, FrameCapturedCallback frameCapturedCallback) {
@@ -989,7 +989,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
     public void inputVideoFrame(ByteBuffer byteBuffer, int i, int i2, int i3, int i4, boolean z, int i5, long j) {
         if (!this.e.f()) {
             e.d.d("MediaStreamingManager", "inputVideoFrame must be called in CaptureCameraFrameOnly");
-        } else if (this.i != null && this.f27818a && b(i2, i3, i4, z, i5)) {
+        } else if (this.i != null && this.f14130a && b(i2, i3, i4, z, i5)) {
             setEncodingMirror(z);
             this.i.a(byteBuffer, i, j);
         }
@@ -1015,7 +1015,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
 
     public final CameraStreamingSetting j() {
         CameraStreamingSetting cameraStreamingSetting = new CameraStreamingSetting();
-        cameraStreamingSetting.setContinuousFocusModeEnabled(true).setCameraId(0).setCameraPrvSizeRatio(a.a.a.a.a.e.d.f1359c).setCameraPrvSizeLevel(a.a.a.a.a.e.d.d);
+        cameraStreamingSetting.setContinuousFocusModeEnabled(true).setCameraId(0).setCameraPrvSizeRatio(a.a.a.a.a.e.d.f1311c).setCameraPrvSizeLevel(a.a.a.a.a.e.d.d);
         return cameraStreamingSetting;
     }
 
@@ -1071,12 +1071,12 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         if (microphoneStreamingSetting != null && microphoneStreamingSetting.getChannelConfig() == 12) {
             audioProfile.channelNumber = 2;
         }
-        this.f27819c = a.a.a.a.a.a.e.a.a(audioProfile);
+        this.f14131c = a.a.a.a.a.a.e.a.a(audioProfile);
         a.a.a.a.a.a.b bVar = new a.a.a.a.a.a.b(this.p, this);
         this.d = bVar;
         bVar.a(this.e.getPrvSizeRatio());
         this.d.a(this.g);
-        this.d.a(this.f27819c);
+        this.d.a(this.f14131c);
         this.d.a(this.l);
     }
 
@@ -1096,20 +1096,20 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         if (q()) {
             a.a.a.a.a.a.i.b bVar = new a.a.a.a.a.a.i.b();
             this.b = bVar;
-            bVar.e().f1243a = true;
+            bVar.e().f1195a = true;
             this.b.e().b = false;
         } else if (x()) {
             a.a.a.a.a.a.i.d dVar = new a.a.a.a.a.a.i.d();
             this.b = dVar;
-            dVar.e().f1243a = false;
+            dVar.e().f1195a = false;
             this.b.e().b = true;
         } else {
             a.a.a.a.a.a.i.a aVar = new a.a.a.a.a.a.i.a();
             this.b = aVar;
-            aVar.e().f1243a = true;
+            aVar.e().f1195a = true;
             this.b.e().b = true;
         }
-        this.b.e().f1244c = System.currentTimeMillis();
+        this.b.e().f1196c = System.currentTimeMillis();
         StreamStatusCallback streamStatusCallback = this.t;
         if (streamStatusCallback != null) {
             this.b.a(streamStatusCallback);
@@ -1171,7 +1171,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
                 dVar.a(this.B);
                 ((a.a.a.a.a.a.j.d) this.i).a(this.F);
             }
-            this.f27818a = this.i.f();
+            this.f14130a = this.i.f();
             this.i.a(this);
             a.a.a.a.a.a.j.a.a().a(this.g.d());
         }
@@ -1186,7 +1186,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         synchronized (this) {
             this.x = false;
             stopStreaming();
-            this.f27818a = false;
+            this.f14130a = false;
             if (this.j != null) {
                 this.j.k();
                 a.a.a.a.a.d.b.l();
@@ -1262,7 +1262,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
     }
 
     public final boolean r() {
-        if (this.f27818a) {
+        if (this.f14130a) {
             if (q()) {
                 return true;
             }
@@ -1677,7 +1677,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
                 sb.append("startStreaming  mIsInitialized ");
                 sb.append(this.x);
                 sb.append(" mRecordingEnabled=");
-                sb.append(this.f27818a);
+                sb.append(this.f14130a);
                 sb.append(",mIsPreviewReady=");
                 a.a.a.a.a.b.c cVar2 = this.j;
                 sb.append(cVar2 != null && cVar2.b());
@@ -1686,7 +1686,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
                 sb.append(",mIsOnlyAudioStreaming=");
                 sb.append(this.j == null);
                 eVar.c("MediaStreamingManager", sb.toString());
-                if (this.x && !this.f27818a && this.d.i() && ((cVar = this.j) == null || cVar.b() || this.A)) {
+                if (this.x && !this.f14130a && this.d.i() && ((cVar = this.j) == null || cVar.b() || this.A)) {
                     a.a.a.a.a.d.b.d();
                     return I();
                 }
@@ -1722,15 +1722,15 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
         a.a.a.a.a.b.c cVar = this.j;
         boolean z = cVar != null && cVar.c();
         e eVar = e.d;
-        eVar.c("MediaStreamingManager", "stopStreaming mRecordingEnabled:" + this.f27818a + ",isCamSwitching=" + z + ",mIsInitialized:" + this.x);
+        eVar.c("MediaStreamingManager", "stopStreaming mRecordingEnabled:" + this.f14130a + ",isCamSwitching=" + z + ",mIsInitialized:" + this.x);
         if (isPictureStreaming()) {
             this.A = true;
         }
-        if (this.f27818a) {
+        if (this.f14130a) {
             if (!q() && z && this.x) {
                 return false;
             }
-            this.f27818a = false;
+            this.f14130a = false;
             L();
             a.a.a.a.a.d.b.e();
             return true;
@@ -1767,8 +1767,8 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
             return false;
         } else {
             e eVar2 = e.d;
-            eVar2.c("MediaStreamingManager", "switchCamera facingId = " + camera_facing_id + "mRecordingEnabled:" + this.f27818a);
-            if (this.f27818a) {
+            eVar2.c("MediaStreamingManager", "switchCamera facingId = " + camera_facing_id + "mRecordingEnabled:" + this.f14130a);
+            if (this.f14130a) {
                 this.j.b(true);
             }
             if (this.j.a(this.d, camera_facing_id)) {
@@ -1802,7 +1802,7 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
             } else if (!t() || !this.x) {
                 e.d.d("MediaStreamingManager", "toggle picture streaming failed cause in invalid state");
                 return false;
-            } else if (!this.f27818a && v()) {
+            } else if (!this.f14130a && v()) {
                 e.d.d("MediaStreamingManager", "toggle picture streaming failed cause no recording enabled in TextureMovieVideoType.");
                 return false;
             } else {
@@ -1810,12 +1810,12 @@ public final class MediaStreamingManager implements b.InterfaceC0000b, c, c.j, b
                     if (v()) {
                         this.n = new a.a.a.a.a.a.j.h.b(this.p, this.j, this.d, (a.a.a.a.a.a.j.d) this.i);
                     } else {
-                        if (!this.f27818a) {
+                        if (!this.f14130a) {
                             h();
                         }
                         a.a.a.a.a.a.j.h.c cVar = new a.a.a.a.a.a.j.h.c(this.p, this.j, this.d, (g) this.i, this.C, this.s);
                         this.n = cVar;
-                        cVar.a(this.f27818a);
+                        cVar.a(this.f14130a);
                     }
                     if (pictureStreamingFilePath != null) {
                         this.n.a(pictureStreamingFilePath);

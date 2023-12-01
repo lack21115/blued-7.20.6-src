@@ -4,7 +4,7 @@ package cn.com.chinatelecom.account.api.e;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4150a = l.class.getSimpleName();
+    private static final String f4102a = l.class.getSimpleName();
     private static byte[] b = {68, 64, 94, 49, 69, 35, 50, 83};
 
     public static String a(byte[] bArr) {

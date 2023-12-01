@@ -1,7 +1,6 @@
 package android.filterfw.core;
 
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.alipay.sdk.util.i;
 import com.anythink.expressad.foundation.g.a.f;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import java.util.Arrays;
@@ -129,7 +128,7 @@ public class FrameFormat {
         for (Map.Entry<String, Object> entry : keyValueMap.entrySet()) {
             stringBuffer.append(entry.getKey() + ": " + entry.getValue() + " ");
         }
-        stringBuffer.append(i.d);
+        stringBuffer.append("}");
         return stringBuffer.toString();
     }
 
@@ -159,7 +158,7 @@ public class FrameFormat {
             case 1:
                 return "simple";
             case 2:
-                return f.f7832a;
+                return f.f4992a;
             case 3:
                 return "gpu";
             case 4:

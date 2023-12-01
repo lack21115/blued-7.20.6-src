@@ -1,7 +1,5 @@
 package java.io;
 
-import com.igexin.push.core.b;
-
 /* loaded from: source-2895416-dex2jar.jar:java/io/Writer.class */
 public abstract class Writer implements Appendable, Closeable, Flushable {
     protected Object lock;
@@ -20,8 +18,8 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     }
 
     @Override // java.lang.Appendable
-    public Writer append(char c2) throws IOException {
-        write(c2);
+    public Writer append(char c) throws IOException {
+        write(c);
         return this;
     }
 
@@ -29,7 +27,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public Writer append(CharSequence charSequence) throws IOException {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         write(charSequence2.toString());
         return this;
@@ -39,7 +37,7 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
     public Writer append(CharSequence charSequence, int i, int i2) throws IOException {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         write(charSequence2.subSequence(i, i2).toString());
         return this;

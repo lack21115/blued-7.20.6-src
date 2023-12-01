@@ -14,7 +14,7 @@ public class Location {
     private Double latitude;
     @d
     private com.huawei.openalliance.ad.beans.inner.b locationSwitches;
-    @c(Code = com.anythink.core.common.g.c.C)
+    @c(Code = "lon")
     @com.huawei.openalliance.ad.annotations.a
     private Double longitude;
 

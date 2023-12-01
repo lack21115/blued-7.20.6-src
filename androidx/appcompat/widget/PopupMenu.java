@@ -16,11 +16,11 @@ import androidx.appcompat.view.menu.ShowableListMenu;
 public class PopupMenu {
 
     /* renamed from: a  reason: collision with root package name */
-    final MenuPopupHelper f1843a;
+    final MenuPopupHelper f1795a;
     OnMenuItemClickListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    OnDismissListener f1844c;
+    OnDismissListener f1796c;
     private final Context d;
     private final MenuBuilder e;
     private final View f;
@@ -63,20 +63,20 @@ public class PopupMenu {
             }
         });
         MenuPopupHelper menuPopupHelper = new MenuPopupHelper(context, this.e, view, false, i2, i3);
-        this.f1843a = menuPopupHelper;
+        this.f1795a = menuPopupHelper;
         menuPopupHelper.setGravity(i);
-        this.f1843a.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: androidx.appcompat.widget.PopupMenu.2
+        this.f1795a.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: androidx.appcompat.widget.PopupMenu.2
             @Override // android.widget.PopupWindow.OnDismissListener
             public void onDismiss() {
-                if (PopupMenu.this.f1844c != null) {
-                    PopupMenu.this.f1844c.onDismiss(PopupMenu.this);
+                if (PopupMenu.this.f1796c != null) {
+                    PopupMenu.this.f1796c.onDismiss(PopupMenu.this);
                 }
             }
         });
     }
 
     public void dismiss() {
-        this.f1843a.dismiss();
+        this.f1795a.dismiss();
     }
 
     public View.OnTouchListener getDragToOpenListener() {
@@ -84,7 +84,7 @@ public class PopupMenu {
             this.g = new ForwardingListener(this.f) { // from class: androidx.appcompat.widget.PopupMenu.3
                 @Override // androidx.appcompat.widget.ForwardingListener
                 public ShowableListMenu getPopup() {
-                    return PopupMenu.this.f1843a.getPopup();
+                    return PopupMenu.this.f1795a.getPopup();
                 }
 
                 @Override // androidx.appcompat.widget.ForwardingListener
@@ -104,7 +104,7 @@ public class PopupMenu {
     }
 
     public int getGravity() {
-        return this.f1843a.getGravity();
+        return this.f1795a.getGravity();
     }
 
     public Menu getMenu() {
@@ -120,15 +120,15 @@ public class PopupMenu {
     }
 
     public void setForceShowIcon(boolean z) {
-        this.f1843a.setForceShowIcon(z);
+        this.f1795a.setForceShowIcon(z);
     }
 
     public void setGravity(int i) {
-        this.f1843a.setGravity(i);
+        this.f1795a.setGravity(i);
     }
 
     public void setOnDismissListener(OnDismissListener onDismissListener) {
-        this.f1844c = onDismissListener;
+        this.f1796c = onDismissListener;
     }
 
     public void setOnMenuItemClickListener(OnMenuItemClickListener onMenuItemClickListener) {
@@ -136,6 +136,6 @@ public class PopupMenu {
     }
 
     public void show() {
-        this.f1843a.show();
+        this.f1795a.show();
     }
 }

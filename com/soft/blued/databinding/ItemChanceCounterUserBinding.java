@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemChanceCounterUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29078a;
+    private final ConstraintLayout f15388a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29078a;
+        return this.f15388a;
     }
 }

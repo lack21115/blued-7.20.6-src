@@ -12,13 +12,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/FansFontSpan.class */
 public final class FansFontSpan extends ReplacementSpan {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f17927a;
+    private final Context a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f17928c;
+    private final String c;
     private final boolean d;
     private Paint e;
     private Paint f;
@@ -28,33 +24,33 @@ public final class FansFontSpan extends ReplacementSpan {
     public FansFontSpan(Context mContext, int i, String levelName, boolean z) {
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(levelName, "levelName");
-        this.f17927a = mContext;
+        this.a = mContext;
         this.b = i;
-        this.f17928c = levelName;
+        this.c = levelName;
         this.d = z;
         this.e = new Paint();
         this.f = new Paint();
-        this.e.setTextSize(this.f17927a.getResources().getDimensionPixelOffset(R.dimen.sp_8));
-        this.e.setColor(this.f17927a.getResources().getColor(R.color.white));
-        this.f.setTextSize(this.f17927a.getResources().getDimensionPixelOffset(R.dimen.sp_11));
+        this.e.setTextSize(this.a.getResources().getDimensionPixelOffset(R.dimen.sp_8));
+        this.e.setColor(this.a.getResources().getColor(R.color.white));
+        this.f.setTextSize(this.a.getResources().getDimensionPixelOffset(R.dimen.sp_11));
         if (this.d) {
-            this.f.setColor(this.f17927a.getResources().getColor(c(this.b)));
-            this.g = this.f17927a.getResources().getDrawable(a(this.b));
-            this.h = this.f17927a.getResources().getDrawable(b(this.b));
+            this.f.setColor(this.a.getResources().getColor(c(this.b)));
+            this.g = this.a.getResources().getDrawable(a(this.b));
+            this.h = this.a.getResources().getDrawable(b(this.b));
         } else {
-            this.f.setColor(this.f17927a.getResources().getColor(R.color.syc_dark_777777));
-            this.g = this.f17927a.getResources().getDrawable(R.drawable.icon_yy_fans_unavailable);
-            this.h = this.f17927a.getResources().getDrawable(R.drawable.icon_yy_fans_heart_unavailable);
+            this.f.setColor(this.a.getResources().getColor(R.color.syc_dark_777777));
+            this.g = this.a.getResources().getDrawable(R.drawable.icon_yy_fans_unavailable);
+            this.h = this.a.getResources().getDrawable(R.drawable.icon_yy_fans_heart_unavailable);
         }
         Drawable drawable = this.g;
         if (drawable != null) {
-            drawable.setBounds(0, 0, this.f17927a.getResources().getDimensionPixelSize(R.dimen.dp_57), this.f17927a.getResources().getDimensionPixelSize(R.dimen.dp_16));
+            drawable.setBounds(0, 0, this.a.getResources().getDimensionPixelSize(R.dimen.dp_57), this.a.getResources().getDimensionPixelSize(R.dimen.dp_16));
         }
         Drawable drawable2 = this.h;
         if (drawable2 == null) {
             return;
         }
-        drawable2.setBounds(0, 0, this.f17927a.getResources().getDimensionPixelSize(R.dimen.dp_12), this.f17927a.getResources().getDimensionPixelSize(R.dimen.dp_12));
+        drawable2.setBounds(0, 0, this.a.getResources().getDimensionPixelSize(R.dimen.dp_12), this.a.getResources().getDimensionPixelSize(R.dimen.dp_12));
     }
 
     private final int a(int i) {
@@ -70,7 +66,7 @@ public final class FansFontSpan extends ReplacementSpan {
     }
 
     public final Context a() {
-        return this.f17927a;
+        return this.a;
     }
 
     public final int b() {
@@ -78,11 +74,11 @@ public final class FansFontSpan extends ReplacementSpan {
     }
 
     public final String c() {
-        return this.f17928c;
+        return this.c;
     }
 
     public final int d() {
-        return this.f17927a.getResources().getDimensionPixelSize(R.dimen.dp_57);
+        return this.a.getResources().getDimensionPixelSize(R.dimen.dp_57);
     }
 
     @Override // android.text.style.ReplacementSpan
@@ -93,7 +89,7 @@ public final class FansFontSpan extends ReplacementSpan {
         Intrinsics.e(paint, "paint");
         Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
         int i6 = (i4 + fontMetricsInt.descent) - ((fontMetricsInt.descent - fontMetricsInt.ascent) / 2);
-        int dimensionPixelOffset = this.f17927a.getResources().getDimensionPixelOffset(R.dimen.dp_12);
+        int dimensionPixelOffset = this.a.getResources().getDimensionPixelOffset(R.dimen.dp_12);
         Drawable drawable = this.g;
         if (drawable == null) {
             f2 = f;
@@ -127,6 +123,6 @@ public final class FansFontSpan extends ReplacementSpan {
     @Override // android.text.style.ReplacementSpan
     public int getSize(Paint paint, CharSequence charSequence, int i, int i2, Paint.FontMetricsInt fontMetricsInt) {
         Intrinsics.e(paint, "paint");
-        return this.f17927a.getResources().getDimensionPixelSize(R.dimen.dp_57);
+        return this.a.getResources().getDimensionPixelSize(R.dimen.dp_57);
     }
 }

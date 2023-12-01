@@ -25,12 +25,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/vm/SelectTopicViewModel.class */
 public final class SelectTopicViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f20107a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f20108c;
+    private int a;
+    private String c;
     private int d;
     private int e;
     private boolean b = true;
@@ -65,8 +61,8 @@ public final class SelectTopicViewModel extends BaseViewModel {
         public void onUIUpdate(BluedEntity<BluedTopic, BluedTopicExtra> bluedEntity) {
             int i;
             List list;
-            List<BluedTopic> list2;
-            List<BluedTopic> list3;
+            List list2;
+            List list3;
             if (bluedEntity == null || !bluedEntity.hasData()) {
                 return;
             }
@@ -114,12 +110,12 @@ public final class SelectTopicViewModel extends BaseViewModel {
         public void onUIUpdate(BluedEntity<BluedTopic, BluedTopicExtra> bluedEntity) {
             int i;
             List list;
-            List<BluedTopic> list2;
+            List list2;
             List list3;
             int i2;
             List list4;
-            List<BluedTopic> list5;
-            List<BluedTopic> list6;
+            List list5;
+            List list6;
             List list7;
             if (bluedEntity != null) {
                 BluedTopicExtra bluedTopicExtra = bluedEntity.extra;
@@ -179,11 +175,11 @@ public final class SelectTopicViewModel extends BaseViewModel {
     };
 
     public final void a(int i) {
-        this.f20107a = i;
+        this.a = i;
     }
 
     public final void a(String str) {
-        this.f20108c = str;
+        this.c = str;
     }
 
     public final void a(boolean z, SuperTopicAdapter superTopicAdapter) {
@@ -242,7 +238,7 @@ public final class SelectTopicViewModel extends BaseViewModel {
     }
 
     public final int d() {
-        int i = this.f20107a;
+        int i = this.a;
         return i > 0 ? i : AppInfo.m - StatusBarHelper.a(AppInfo.d());
     }
 
@@ -255,7 +251,7 @@ public final class SelectTopicViewModel extends BaseViewModel {
     }
 
     public final String f() {
-        return this.f20108c;
+        return this.c;
     }
 
     public final int g() {

@@ -16,19 +16,16 @@ import com.alipay.android.app.IRemoteServiceCallback;
 import com.alipay.sdk.app.AlipayResultActivity;
 import com.alipay.sdk.sys.a;
 import com.alipay.sdk.util.n;
+import com.android.internal.telephony.SmsConstants;
 import java.util.HashMap;
 import java.util.concurrent.CountDownLatch;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/util/e.class */
 public class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4661a = "failed";
+    public static final String a = "failed";
     public static final String b = "scheme_failed";
-
-    /* renamed from: c  reason: collision with root package name */
-    private Activity f4662c;
+    private Activity c;
     private volatile IAlixPay d;
     private boolean f;
     private a g;
@@ -46,7 +43,7 @@ public class e {
     }
 
     public e(Activity activity, com.alipay.sdk.sys.a aVar, a aVar2) {
-        this.f4662c = activity;
+        this.c = activity;
         this.h = aVar;
         this.g = aVar2;
     }
@@ -64,15 +61,15 @@ public class e {
         com.alipay.sdk.app.statistic.a.b(this.h, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.P, str2 + "|" + str8);
         String a2 = a(str7, str2, this.h);
         c.b(com.alipay.sdk.cons.a.x, "pay bind result: " + a2);
-        Activity activity = this.f4662c;
+        Activity activity = this.c;
         com.alipay.sdk.sys.a aVar = this.h;
         com.alipay.sdk.app.statistic.a.a(activity, aVar, str7, aVar.p);
-        boolean c2 = com.alipay.sdk.data.a.j().c();
-        if (f4661a.equals(a2) && "com.eg.android.AlipayGphone".equals(str2) && i > 125 && !c2) {
+        boolean c = com.alipay.sdk.data.a.j().c();
+        if (a.equals(a2) && "com.eg.android.AlipayGphone".equals(str2) && i > 125 && !c) {
             com.alipay.sdk.app.statistic.a.a(this.h, com.alipay.sdk.app.statistic.c.b, "BSPNotStartByConfig");
         }
-        if (f4661a.equals(a2) && "com.eg.android.AlipayGphone".equals(str2) && i > 125 && c2) {
-            Activity activity2 = this.f4662c;
+        if (a.equals(a2) && "com.eg.android.AlipayGphone".equals(str2) && i > 125 && c) {
+            Activity activity2 = this.c;
             String str9 = b;
             if (activity2 != null) {
                 if (a(str2, activity2, this.h)) {
@@ -80,11 +77,11 @@ public class e {
                     String a3 = n.a(32);
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     com.alipay.sdk.app.statistic.a.b(this.h, com.alipay.sdk.app.statistic.c.b, "BSPStart", a3 + "|" + elapsedRealtime);
-                    a.C0050a.a(this.h, a3);
-                    AlipayResultActivity.f4571a.put(a3, new g(this, countDownLatch));
+                    a.C0010a.a(this.h, a3);
+                    AlipayResultActivity.a.put(a3, new g(this, countDownLatch));
                     try {
                         try {
-                            String[] split = str7.split("&", -1);
+                            String[] split = str7.split(com.alipay.sdk.sys.a.b, -1);
                             int length = split.length;
                             int i2 = 0;
                             while (true) {
@@ -129,10 +126,10 @@ public class e {
                             JSONObject jSONObject2 = new JSONObject();
                             jSONObject2.put("sourcePid", Binder.getCallingPid());
                             jSONObject2.put(com.alipay.sdk.cons.b.d, str7);
-                            jSONObject2.put("pkgName", this.f4662c.getPackageName());
-                            jSONObject2.put(com.umeng.analytics.pro.d.aw, a3);
+                            jSONObject2.put("pkgName", this.c.getPackageName());
+                            jSONObject2.put("session", a3);
                             String encodeToString = Base64.encodeToString(jSONObject2.toString().getBytes("UTF-8"), 2);
-                            Uri.Builder appendQueryParameter = new Uri.Builder().scheme("alipays").authority("platformapi").path(com.igexin.push.core.b.p).appendQueryParameter("appId", "20000125");
+                            Uri.Builder appendQueryParameter = new Uri.Builder().scheme("alipays").authority("platformapi").path("startapp").appendQueryParameter("appId", "20000125");
                             appendQueryParameter.appendQueryParameter("mqpSchemePay", encodeToString);
                             try {
                                 HashMap<String, String> a4 = com.alipay.sdk.sys.a.a(this.h);
@@ -146,21 +143,21 @@ public class e {
                             intent.setPackage(str2);
                             intent.addFlags(268435456);
                             intent.setData(Uri.parse(uri));
-                            com.alipay.sdk.app.statistic.a.a(this.f4662c, this.h, str7, this.h.p);
-                            this.f4662c.startActivity(intent);
-                            com.alipay.sdk.data.a.j().a(this.h, this.f4662c.getApplicationContext());
+                            com.alipay.sdk.app.statistic.a.a(this.c, this.h, str7, this.h.p);
+                            this.c.startActivity(intent);
+                            com.alipay.sdk.data.a.j().a(this.h, this.c.getApplicationContext());
                             c.b(com.alipay.sdk.cons.a.x, "pay scheme waiting " + uri);
                             countDownLatch.await();
                             String str11 = this.j;
                             try {
-                                String str12 = l.a(this.h, str11).get(l.f4671a);
+                                String str12 = l.a(this.h, str11).get(l.a);
                                 str3 = str12;
                                 if (str12 == null) {
-                                    str3 = com.igexin.push.core.b.l;
+                                    str3 = "null";
                                 }
                             } catch (Throwable th2) {
                                 com.alipay.sdk.app.statistic.a.a(this.h, com.alipay.sdk.app.statistic.c.b, "BSPStatEx", th2);
-                                str3 = "unknown";
+                                str3 = SmsConstants.FORMAT_UNKNOWN;
                             }
                             com.alipay.sdk.app.statistic.a.a(this.h, com.alipay.sdk.app.statistic.c.b, "BSPDone-" + str3);
                             if (TextUtils.isEmpty(str11)) {
@@ -184,13 +181,13 @@ public class e {
 
     private String a(String str, String str2, com.alipay.sdk.sys.a aVar) {
         Activity activity;
-        String c2;
+        String c;
         String str3;
         Activity activity2;
         Intent intent = new Intent();
         intent.setPackage(str2);
         intent.setAction(n.a(str2));
-        String a2 = n.a(this.f4662c, str2);
+        String a2 = n.a(this.c, str2);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         StringBuilder sb = new StringBuilder();
         sb.append("");
@@ -198,15 +195,15 @@ public class e {
         sb.append("|");
         sb.append(str != null ? str.length() : 0);
         com.alipay.sdk.app.statistic.a.b(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.K, sb.toString());
-        com.alipay.sdk.app.statistic.a.a(this.f4662c, aVar, str, aVar.p);
+        com.alipay.sdk.app.statistic.a.a(this.c, aVar, str, aVar.p);
         try {
             if (com.alipay.sdk.data.a.j().h()) {
                 com.alipay.sdk.app.statistic.a.b(aVar, com.alipay.sdk.app.statistic.c.b, "stSrv", "skipped");
             } else {
-                ComponentName startService = this.f4662c.getApplication().startService(intent);
-                com.alipay.sdk.app.statistic.a.b(aVar, com.alipay.sdk.app.statistic.c.b, "stSrv", startService != null ? startService.getPackageName() : com.igexin.push.core.b.l);
+                ComponentName startService = this.c.getApplication().startService(intent);
+                com.alipay.sdk.app.statistic.a.b(aVar, com.alipay.sdk.app.statistic.c.b, "stSrv", startService != null ? startService.getPackageName() : "null");
             }
-            if (!this.f4662c.getApplicationContext().bindService(intent, this.i, 1)) {
+            if (!this.c.getApplicationContext().bindService(intent, this.i, 1)) {
                 throw new Throwable("bindService fail");
             }
             synchronized (this.e) {
@@ -222,27 +219,27 @@ public class e {
             } catch (Throwable th) {
                 try {
                     com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.A, th);
-                    c2 = com.alipay.sdk.app.j.c();
+                    c = com.alipay.sdk.app.j.c();
                     try {
                         this.d.unregisterCallback(this.k);
                     } catch (Throwable th2) {
                         c.a(th2);
                     }
                     try {
-                        this.f4662c.getApplicationContext().unbindService(this.i);
+                        this.c.getApplicationContext().unbindService(this.i);
                     } catch (Throwable th3) {
                         c.a(th3);
                     }
                     com.alipay.sdk.app.statistic.a.b(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.M, "" + SystemClock.elapsedRealtime());
-                    com.alipay.sdk.app.statistic.a.a(this.f4662c, aVar, str, aVar.p);
+                    com.alipay.sdk.app.statistic.a.a(this.c, aVar, str, aVar.p);
                     this.g = null;
                     this.k = null;
                     this.i = null;
                     this.d = null;
-                    str3 = c2;
+                    str3 = c;
                     if (this.f) {
-                        Activity activity3 = this.f4662c;
-                        str3 = c2;
+                        Activity activity3 = this.c;
+                        str3 = c;
                         if (activity3 != null) {
                             activity2 = activity3;
                         }
@@ -254,24 +251,24 @@ public class e {
                         c.a(th4);
                     }
                     try {
-                        this.f4662c.getApplicationContext().unbindService(this.i);
+                        this.c.getApplicationContext().unbindService(this.i);
                     } catch (Throwable th5) {
                         c.a(th5);
                     }
                     com.alipay.sdk.app.statistic.a.b(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.M, "" + SystemClock.elapsedRealtime());
-                    com.alipay.sdk.app.statistic.a.a(this.f4662c, aVar, str, aVar.p);
+                    com.alipay.sdk.app.statistic.a.a(this.c, aVar, str, aVar.p);
                     this.g = null;
                     this.k = null;
                     this.i = null;
                     this.d = null;
-                    if (this.f && (activity = this.f4662c) != null) {
+                    if (this.f && (activity = this.c) != null) {
                         activity.setRequestedOrientation(0);
                         this.f = false;
                     }
                 }
             }
             if (this.d == null) {
-                String a3 = n.a(this.f4662c, str2);
+                String a3 = n.a(this.c, str2);
                 com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.x, a2 + "|" + a3);
             }
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
@@ -279,8 +276,8 @@ public class e {
             if (this.g != null) {
                 this.g.a();
             }
-            if (this.f4662c.getRequestedOrientation() == 0) {
-                this.f4662c.setRequestedOrientation(1);
+            if (this.c.getRequestedOrientation() == 0) {
+                this.c.setRequestedOrientation(1);
                 this.f = true;
             }
             int version = this.d.getVersion();
@@ -292,9 +289,9 @@ public class e {
                 a4.put("ts_bind", String.valueOf(elapsedRealtime));
                 a4.put("ts_bend", String.valueOf(elapsedRealtime2));
                 a4.put("ts_pay", String.valueOf(elapsedRealtime3));
-                c2 = this.d.pay02(str, a4);
+                c = this.d.pay02(str, a4);
             } else {
-                c2 = this.d.Pay(str);
+                c = this.d.Pay(str);
             }
             try {
                 this.d.unregisterCallback(this.k);
@@ -302,25 +299,25 @@ public class e {
                 c.a(th6);
             }
             try {
-                this.f4662c.getApplicationContext().unbindService(this.i);
+                this.c.getApplicationContext().unbindService(this.i);
             } catch (Throwable th7) {
                 c.a(th7);
             }
             com.alipay.sdk.app.statistic.a.b(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.M, "" + SystemClock.elapsedRealtime());
-            com.alipay.sdk.app.statistic.a.a(this.f4662c, aVar, str, aVar.p);
+            com.alipay.sdk.app.statistic.a.a(this.c, aVar, str, aVar.p);
             this.g = null;
             this.k = null;
             this.i = null;
             this.d = null;
-            str3 = c2;
+            str3 = c;
             if (this.f) {
-                Activity activity4 = this.f4662c;
-                str3 = c2;
+                Activity activity4 = this.c;
+                str3 = c;
                 if (activity4 != null) {
                     activity2 = activity4;
                     activity2.setRequestedOrientation(0);
                     this.f = false;
-                    return c2;
+                    return c;
                 }
             }
             return str3;
@@ -329,14 +326,14 @@ public class e {
 
     private void a(n.a aVar) throws InterruptedException {
         PackageInfo packageInfo;
-        if (aVar == null || (packageInfo = aVar.f4676a) == null) {
+        if (aVar == null || (packageInfo = aVar.a) == null) {
             return;
         }
         String str = packageInfo.packageName;
         Intent intent = new Intent();
         intent.setClassName(str, "com.alipay.android.app.TransProcessPayActivity");
         try {
-            this.f4662c.startActivity(intent);
+            this.c.startActivity(intent);
         } catch (Throwable th) {
             com.alipay.sdk.app.statistic.a.a(this.h, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.V, th);
         }
@@ -345,7 +342,7 @@ public class e {
 
     private static boolean a(String str, Context context, com.alipay.sdk.sys.a aVar) {
         try {
-            Intent intent = new Intent(Intent.ACTION_MAIN, (Uri) null);
+            Intent intent = new Intent("android.intent.action.MAIN", (Uri) null);
             intent.setClassName(str, "com.alipay.android.msp.ui.views.MspContainerActivity");
             if (intent.resolveActivityInfo(context.getPackageManager(), 0) == null) {
                 com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, "BSPDetectFail");
@@ -375,6 +372,6 @@ public class e {
     }
 
     public void a() {
-        this.f4662c = null;
+        this.c = null;
     }
 }

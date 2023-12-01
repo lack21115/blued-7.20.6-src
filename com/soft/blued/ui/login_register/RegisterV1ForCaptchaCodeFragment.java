@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.utils.KeyboardUtils;
@@ -26,11 +27,11 @@ import com.soft.blued.utils.StringUtils;
 public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f31442a = RegisterV1ForCaptchaCodeFragment.class.getSimpleName();
+    private String f17752a = RegisterV1ForCaptchaCodeFragment.class.getSimpleName();
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31443c;
+    private Context f17753c;
     private CommonTopTitleNoTrans d;
     private TextView e;
     private LinearLayout f;
@@ -41,9 +42,9 @@ public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements Vi
     private TextWatcher k;
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        this.d = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        this.d = findViewById;
+        findViewById.a();
         this.d.setCenterText(getString(2131886632));
         this.d.setLeftClickListener(this);
     }
@@ -79,7 +80,7 @@ public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements Vi
         imageView.setOnClickListener(this);
         EditText editText = (EditText) this.b.findViewById(R.id.et_img_ver_code);
         this.h = editText;
-        editText.setTextColor(BluedSkinUtils.a(this.f31443c, 2131102254));
+        editText.setTextColor(BluedSkinUtils.a(this.f17753c, 2131102254));
         this.k = new TextWatcher() { // from class: com.soft.blued.ui.login_register.RegisterV1ForCaptchaCodeFragment.1
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
@@ -99,25 +100,24 @@ public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements Vi
     private void f() {
         if (getArguments() != null) {
             this.i = getArguments().getString(LoginRegisterTools.d);
-            this.j = getArguments().getString(LoginRegisterTools.f31400c);
+            this.j = getArguments().getString(LoginRegisterTools.f17710c);
             if ("add".equals(getArguments().getString("binding_type"))) {
-                this.d.setCenterText(this.f31443c.getResources().getString(2131892292));
+                this.d.setCenterText(this.f17753c.getResources().getString(2131892292));
             }
             if (StringUtils.d(this.j)) {
                 return;
             }
-            LoginRegisterTools.a(getFragmentActive(), this.g, this.j);
+            LoginRegisterTools.a((IRequestHost) getFragmentActive(), this.g, this.j);
         }
     }
 
     private void g() {
         Intent intent = new Intent();
-        intent.putExtra(LoginRegisterTools.f31400c, "");
+        intent.putExtra(LoginRegisterTools.f17710c, "");
         getActivity().setResult(-1, intent);
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         g();
         return super.onBackPressed();
@@ -131,7 +131,7 @@ public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements Vi
                 if (StringUtils.d(this.j)) {
                     return;
                 }
-                LoginRegisterTools.a(getFragmentActive(), this.g, this.j);
+                LoginRegisterTools.a((IRequestHost) getFragmentActive(), this.g, this.j);
                 return;
             case 2131363120:
                 g();
@@ -146,7 +146,7 @@ public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements Vi
                     return;
                 }
                 Intent intent = new Intent();
-                intent.putExtra(LoginRegisterTools.f31400c, this.h.getText().toString());
+                intent.putExtra(LoginRegisterTools.f17710c, this.h.getText().toString());
                 getActivity().setResult(-1, intent);
                 getActivity().finish();
                 return;
@@ -155,9 +155,8 @@ public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements Vi
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f31443c = getActivity();
+        this.f17753c = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_register_v1_forphone_step2_1, viewGroup, false);
@@ -170,14 +169,12 @@ public class RegisterV1ForCaptchaCodeFragment extends BaseFragment implements Vi
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         b();
         c();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         d();
         super.onStop();

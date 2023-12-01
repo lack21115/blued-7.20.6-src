@@ -19,13 +19,11 @@ public class AttentionFeedHomeFragment extends AttentionFeedFragment<AttentionFe
         c(str);
     }
 
-    @Override // com.blued.community.ui.square.fragment.AttentionFeedFragment, com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         HomeTabClick.b(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);
         super.onDestroyView();
     }
 
-    @Override // com.blued.community.ui.square.fragment.AttentionFeedFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         if (getUserVisibleHint()) {
             HomeTabClick.a(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);
@@ -33,7 +31,6 @@ public class AttentionFeedHomeFragment extends AttentionFeedFragment<AttentionFe
         super.onResume();
     }
 
-    @Override // com.blued.community.ui.square.fragment.AttentionFeedFragment, com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         if (z) {
             HomeTabClick.a(IAdInterListener.AdProdType.PRODUCT_FEEDS, this);

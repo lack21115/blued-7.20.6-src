@@ -6,50 +6,50 @@ import java.util.HashMap;
 public class x9<Key, Value> {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38105a;
+    private int f24414a;
     private x9<Key, Value>.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private x9<Key, Value>.b f38106c;
+    private x9<Key, Value>.b f24415c;
     private HashMap<Key, x9<Key, Value>.b> d = new HashMap<>();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/x9$b.class */
     public class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private Key f38107a;
+        private Key f24416a;
         private Value b;
 
         /* renamed from: c  reason: collision with root package name */
-        private x9<Key, Value>.b f38108c;
+        private x9<Key, Value>.b f24417c;
         private x9<Key, Value>.b d;
 
         private b(Key key, Value value) {
-            this.f38107a = key;
+            this.f24416a = key;
             this.b = value;
         }
     }
 
     public x9(int i) {
-        this.f38105a = i;
+        this.f24414a = i;
     }
 
     private void a(x9<Key, Value>.b bVar) {
-        if (bVar == null || this.f38106c == bVar) {
+        if (bVar == null || this.f24415c == bVar) {
             return;
         }
         x9<Key, Value>.b bVar2 = this.b;
         if (bVar2 == bVar) {
             x9<Key, Value>.b bVar3 = ((b) bVar2).d;
             this.b = bVar3;
-            ((b) bVar3).f38108c = null;
+            ((b) bVar3).f24417c = null;
         } else {
-            ((b) bVar).f38108c.d = ((b) bVar).d;
-            ((b) bVar).d.f38108c = ((b) bVar).f38108c;
+            ((b) bVar).f24417c.d = ((b) bVar).d;
+            ((b) bVar).d.f24417c = ((b) bVar).f24417c;
         }
-        ((b) this.f38106c).d = bVar;
-        ((b) bVar).f38108c = this.f38106c;
-        this.f38106c = bVar;
+        ((b) this.f24415c).d = bVar;
+        ((b) bVar).f24417c = this.f24415c;
+        this.f24415c = bVar;
         ((b) bVar).d = null;
     }
 
@@ -60,7 +60,7 @@ public class x9<Key, Value> {
             if (bVar2 == null) {
                 return null;
             }
-            if (((b) bVar2).f38107a.equals(key)) {
+            if (((b) bVar2).f24416a.equals(key)) {
                 return bVar2;
             }
             bVar = ((b) bVar2).d;
@@ -71,8 +71,8 @@ public class x9<Key, Value> {
         x9<Key, Value>.b bVar = this.b;
         x9<Key, Value>.b bVar2 = ((b) bVar).d;
         this.b = bVar2;
-        ((b) bVar2).f38108c = null;
-        Object obj = ((b) bVar).f38107a;
+        ((b) bVar2).f24417c = null;
+        Object obj = ((b) bVar).f24416a;
         boolean z = false;
         if (obj == null) {
             return false;
@@ -94,7 +94,7 @@ public class x9<Key, Value> {
 
     public void a() {
         this.d.clear();
-        this.f38106c = null;
+        this.f24415c = null;
         this.b = null;
     }
 
@@ -107,18 +107,18 @@ public class x9<Key, Value> {
             }
             return;
         }
-        if (this.d.size() >= this.f38105a) {
+        if (this.d.size() >= this.f24414a) {
             d();
         }
         x9<Key, Value>.b bVar = new b(key, value);
-        x9<Key, Value>.b bVar2 = this.f38106c;
+        x9<Key, Value>.b bVar2 = this.f24415c;
         if (bVar2 == null) {
-            this.f38106c = bVar;
+            this.f24415c = bVar;
             this.b = bVar;
         } else {
             ((b) bVar2).d = bVar;
-            ((b) bVar).f38108c = this.f38106c;
-            this.f38106c = bVar;
+            ((b) bVar).f24417c = this.f24415c;
+            this.f24415c = bVar;
         }
         this.d.put(key, bVar);
     }
@@ -142,24 +142,24 @@ public class x9<Key, Value> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         x9<Key, Value>.b bVar = this.b;
-        if (((b) bVar).f38108c != null) {
+        if (((b) bVar).f24417c != null) {
             System.out.println("header的pre不为NULL!");
         }
         sb.append("header: \n");
         while (bVar != null) {
-            sb.append(((b) bVar).f38107a + "->");
+            sb.append(((b) bVar).f24416a + "->");
             bVar = ((b) bVar).d;
         }
         sb.append("\ntail: \n");
-        x9<Key, Value>.b bVar2 = this.f38106c;
+        x9<Key, Value>.b bVar2 = this.f24415c;
         x9<Key, Value>.b bVar3 = bVar2;
         if (((b) bVar2).d != null) {
             System.out.println("tail的next不为NULL!");
             bVar3 = bVar2;
         }
         while (bVar3 != null) {
-            sb.append(((b) bVar3).f38107a + "<-");
-            bVar3 = ((b) bVar3).f38108c;
+            sb.append(((b) bVar3).f24416a + "<-");
+            bVar3 = ((b) bVar3).f24417c;
         }
         sb.append("\n");
         return sb.toString();

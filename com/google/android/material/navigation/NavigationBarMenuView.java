@@ -1,5 +1,6 @@
 package com.google.android.material.navigation;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
@@ -20,7 +21,6 @@ import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 import androidx.transition.TransitionSet;
 import com.bytedance.applog.tracker.Tracker;
-import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.internal.TextScale;
@@ -31,7 +31,7 @@ import java.util.HashSet;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/navigation/NavigationBarMenuView.class */
 public abstract class NavigationBarMenuView extends ViewGroup implements MenuView {
-    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private static final int[] DISABLED_STATE_SET = {-16842910};
     private static final int ITEM_POOL_SIZE = 5;
     private static final int NO_PADDING = -1;
@@ -74,12 +74,12 @@ public abstract class NavigationBarMenuView extends ViewGroup implements MenuVie
         this.itemPaddingTop = -1;
         this.itemPaddingBottom = -1;
         this.itemActiveIndicatorResizeable = false;
-        this.itemTextColorDefault = createDefaultColorStateList(16842808);
+        this.itemTextColorDefault = createDefaultColorStateList(R.attr.textColorSecondary);
         AutoTransition autoTransition = new AutoTransition();
         this.set = autoTransition;
         autoTransition.setOrdering(0);
-        this.set.setDuration(MotionUtils.resolveThemeDuration(getContext(), R.attr.motionDurationLong1, getResources().getInteger(R.integer.material_motion_duration_long_1)));
-        this.set.setInterpolator(MotionUtils.resolveThemeInterpolator(getContext(), R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
+        this.set.setDuration(MotionUtils.resolveThemeDuration(getContext(), com.google.android.material.R.attr.motionDurationLong1, getResources().getInteger(com.google.android.material.R.integer.material_motion_duration_long_1)));
+        this.set.setInterpolator(MotionUtils.resolveThemeInterpolator(getContext(), com.google.android.material.R.attr.motionEasingStandard, AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR));
         this.set.addTransition(new TextScale());
         this.onClickListener = new View.OnClickListener() { // from class: com.google.android.material.navigation.NavigationBarMenuView.1
             @Override // android.view.View.OnClickListener

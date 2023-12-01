@@ -9,10 +9,10 @@ import com.xiaomi.push.fv;
 public class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private static t f41703a;
+    private static t f28012a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static a f1081a;
+    private static a f1034a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/u$a.class */
     public interface a {
@@ -24,11 +24,11 @@ public class u {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static t m12210a(Context context) {
+    public static t m9160a(Context context) {
         synchronized (u.class) {
             try {
-                if (f41703a != null) {
-                    return f41703a;
+                if (f28012a != null) {
+                    return f28012a;
                 }
                 SharedPreferences sharedPreferences = context.getSharedPreferences("mipush_account", 0);
                 String string = sharedPreferences.getString("uuid", null);
@@ -52,10 +52,10 @@ public class u {
                 }
                 String g = com.xiaomi.push.i.g(context);
                 if (!"com.xiaomi.xmsf".equals(context.getPackageName()) && !TextUtils.isEmpty(g) && !TextUtils.isEmpty(str) && !str.equals(g)) {
-                    com.xiaomi.channel.commonutils.logger.b.m11394a("read_phone_state permission changes.");
+                    com.xiaomi.channel.commonutils.logger.b.m8344a("read_phone_state permission changes.");
                 }
                 t tVar = new t(string, string2, string3, string4, string5, string6, i);
-                f41703a = tVar;
+                f28012a = tVar;
                 return tVar;
             } finally {
             }
@@ -97,12 +97,12 @@ public class u {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static String m12211a(Context context) {
-        t m12210a = m12210a(context);
-        if (m12210a == null || TextUtils.isEmpty(m12210a.f1080a)) {
+    public static String m9161a(Context context) {
+        t m9160a = m9160a(context);
+        if (m9160a == null || TextUtils.isEmpty(m9160a.f1033a)) {
             return null;
         }
-        String[] split = m12210a.f1080a.split("@");
+        String[] split = m9160a.f1033a.split("@");
         if (split.length > 0) {
             return split[0];
         }
@@ -122,16 +122,16 @@ public class u {
     }
 
     public static void a() {
-        a aVar = f1081a;
+        a aVar = f1034a;
         if (aVar != null) {
             aVar.a();
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static void m12212a(Context context) {
+    public static void m9162a(Context context) {
         context.getSharedPreferences("mipush_account", 0).edit().clear().commit();
-        f41703a = null;
+        f28012a = null;
         a();
     }
 
@@ -143,24 +143,24 @@ public class u {
 
     public static void a(Context context, t tVar) {
         SharedPreferences.Editor edit = context.getSharedPreferences("mipush_account", 0).edit();
-        edit.putString("uuid", tVar.f1080a);
-        edit.putString("security", tVar.f41702c);
+        edit.putString("uuid", tVar.f1033a);
+        edit.putString("security", tVar.f28011c);
         edit.putString("token", tVar.b);
         edit.putString("app_id", tVar.d);
         edit.putString("package_name", tVar.f);
         edit.putString("app_token", tVar.e);
         edit.putString("device_id", com.xiaomi.push.i.g(context));
-        edit.putInt("env_type", tVar.f41701a);
+        edit.putInt("env_type", tVar.f28010a);
         edit.commit();
         a();
     }
 
     public static void a(a aVar) {
-        f1081a = aVar;
+        f1034a = aVar;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static boolean m12213a(Context context) {
+    private static boolean m9163a(Context context) {
         return context.getPackageName().equals("com.xiaomi.xmsf");
     }
 }

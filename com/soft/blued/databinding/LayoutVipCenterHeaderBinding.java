@@ -15,11 +15,11 @@ import com.soft.blued.ui.user.views.VipGradeProgress;
 public final class LayoutVipCenterHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f29434a;
+    public final LinearLayout f15744a;
     public final ItemVipCenterBannerBinding b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f29435c;
+    public final LinearLayout f15745c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -34,9 +34,9 @@ public final class LayoutVipCenterHeaderBinding implements ViewBinding {
 
     private LayoutVipCenterHeaderBinding(LinearLayout linearLayout, LinearLayout linearLayout2, ItemVipCenterBannerBinding itemVipCenterBannerBinding, LinearLayout linearLayout3, ImageView imageView, ImageView imageView2, ImageView imageView3, VipGradeProgress vipGradeProgress, ShapeLinearLayout shapeLinearLayout, RecyclerView recyclerView, HorizontalScrollView horizontalScrollView, TextView textView, TextView textView2, LinearLayout linearLayout4) {
         this.n = linearLayout;
-        this.f29434a = linearLayout2;
+        this.f15744a = linearLayout2;
         this.b = itemVipCenterBannerBinding;
-        this.f29435c = linearLayout3;
+        this.f15745c = linearLayout3;
         this.d = imageView;
         this.e = imageView2;
         this.f = imageView3;
@@ -56,29 +56,29 @@ public final class LayoutVipCenterHeaderBinding implements ViewBinding {
             View findViewById = view.findViewById(R.id.banner_view);
             if (findViewById != null) {
                 ItemVipCenterBannerBinding a2 = ItemVipCenterBannerBinding.a(findViewById);
-                LinearLayout linearLayout2 = (LinearLayout) view.findViewById(2131364224);
+                LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.header);
                 if (linearLayout2 != null) {
                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_header_bg);
                     if (imageView != null) {
-                        ImageView imageView2 = (ImageView) view.findViewById(2131366006);
+                        ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_user_avatar);
                         if (imageView2 != null) {
                             ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_vip_gradle);
                             if (imageView3 != null) {
-                                VipGradeProgress vipGradeProgress = (VipGradeProgress) view.findViewById(2131368972);
+                                VipGradeProgress vipGradeProgress = (VipGradeProgress) view.findViewById(R.id.progress);
                                 if (vipGradeProgress != null) {
-                                    ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.recycler_parent_view);
-                                    if (shapeLinearLayout != null) {
+                                    ShapeLinearLayout findViewById2 = view.findViewById(R.id.recycler_parent_view);
+                                    if (findViewById2 != null) {
                                         RecyclerView recyclerView = (RecyclerView) view.findViewById(2131369105);
                                         if (recyclerView != null) {
-                                            HorizontalScrollView horizontalScrollView = (HorizontalScrollView) view.findViewById(2131369645);
+                                            HorizontalScrollView horizontalScrollView = (HorizontalScrollView) view.findViewById(R.id.scroll_view);
                                             if (horizontalScrollView != null) {
-                                                TextView textView = (TextView) view.findViewById(2131372879);
+                                                TextView textView = (TextView) view.findViewById(R.id.tv_user_name);
                                                 if (textView != null) {
                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_vip_state);
                                                     if (textView2 != null) {
                                                         LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.user_info_view);
                                                         if (linearLayout3 != null) {
-                                                            return new LayoutVipCenterHeaderBinding((LinearLayout) view, linearLayout, a2, linearLayout2, imageView, imageView2, imageView3, vipGradeProgress, shapeLinearLayout, recyclerView, horizontalScrollView, textView, textView2, linearLayout3);
+                                                            return new LayoutVipCenterHeaderBinding((LinearLayout) view, linearLayout, a2, linearLayout2, imageView, imageView2, imageView3, vipGradeProgress, findViewById2, recyclerView, horizontalScrollView, textView, textView2, linearLayout3);
                                                         }
                                                         str = "userInfoView";
                                                     } else {

@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 public class cs {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f23797a;
+    private static int f10189a;
     private static boolean b;
 
     public cs() {
@@ -17,10 +17,10 @@ public class cs {
 
     private int a(Method method) {
         try {
-            if (f23797a <= 1 || method == null) {
+            if (f10189a <= 1 || method == null) {
                 return 0;
             }
-            return Engine.mmo(method, f23797a, method.getModifiers());
+            return Engine.mmo(method, f10189a, method.getModifiers());
         } catch (Exception e) {
             return 0;
         }
@@ -33,20 +33,20 @@ public class cs {
         boolean b2 = cq.b();
         int i = Build.VERSION.SDK_INT;
         if (b2 && i < 29 && i > 22) {
-            f23797a = Engine.off();
+            f10189a = Engine.off();
         }
         b = true;
     }
 
     private boolean c() {
-        return b && f23797a > 1;
+        return b && f10189a > 1;
     }
 
     public int a() {
         if (c()) {
             long a2 = cp.b.a();
-            long a3 = cp.f23791a.a();
-            if (f23797a == a2) {
+            long a3 = cp.f10183a.a();
+            if (f10189a == a2) {
                 return (int) a3;
             }
             return -1;

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogMyQrBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28709a;
+    private final LinearLayout f15019a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28709a;
+        return this.f15019a;
     }
 }

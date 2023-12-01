@@ -12,18 +12,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/grpc/ConnectManager.class */
 public class ConnectManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ManagedChannel f18694a;
+    private static ManagedChannel a;
     private static OkHttpChannelBuilder b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static ConcurrentHashMap<String, String> f18695c = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, String> c = new ConcurrentHashMap<>();
     private static Metadata d = new Metadata();
     private static DnsResolver e = null;
 
     public static Channel a() {
-        return f18694a;
+        return a;
     }
 
     public static <T extends AbstractStub<T>> T a(T t) {
@@ -39,14 +35,14 @@ public class ConnectManager {
         }
         OkHttpChannelBuilder a2 = Utils.a(str, i);
         b = a2;
-        f18694a = a2.build();
+        a = a2.build();
     }
 
     public static void a(String str, String str2) {
-        d = Utils.a(f18695c, d, str, str2);
+        d = Utils.a(c, d, str, str2);
     }
 
     public static boolean b() {
-        return f18694a != null;
+        return a != null;
     }
 }

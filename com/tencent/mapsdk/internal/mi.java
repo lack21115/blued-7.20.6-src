@@ -2,6 +2,7 @@ package com.tencent.mapsdk.internal;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -12,11 +13,11 @@ import java.util.Properties;
 public class mi {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f37649a = "txmapengine";
+    public static final String f23958a = "txmapengine";
     public static String b = "release";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f37650c = "undefined";
+    public static String f23959c = "undefined";
     public static boolean d = false;
     public static boolean e = false;
     public static boolean f = false;
@@ -57,7 +58,7 @@ public class mi {
     }
 
     public static String a() {
-        return f37650c + "-" + b;
+        return f23959c + Constants.ACCEPT_TIME_SEPARATOR_SERVER + b;
     }
 
     public static String a(String str) {
@@ -210,8 +211,8 @@ public class mi {
                         na.a(ma.w, "[BUGLY]:" + e);
                         break;
                     case true:
-                        f37650c = (String) field.get(cls);
-                        na.a(ma.w, "[FLAVOR]:" + f37650c);
+                        f23959c = (String) field.get(cls);
+                        na.a(ma.w, "[FLAVOR]:" + f23959c);
                         break;
                     case true:
                         f = ((Boolean) field.get(cls)).booleanValue();
@@ -272,6 +273,6 @@ public class mi {
     }
 
     public static String b() {
-        return j + "-" + o;
+        return j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + o;
     }
 }

@@ -2,9 +2,7 @@ package pl.droidsonroids.gif;
 
 /* loaded from: source-3503164-dex2jar.jar:pl/droidsonroids/gif/GifOptions.class */
 public class GifOptions {
-
-    /* renamed from: a  reason: collision with root package name */
-    char f44141a;
+    char a;
     boolean b;
 
     public GifOptions() {
@@ -12,7 +10,7 @@ public class GifOptions {
     }
 
     private void a() {
-        this.f44141a = (char) 1;
+        this.a = (char) 1;
         this.b = false;
     }
 }

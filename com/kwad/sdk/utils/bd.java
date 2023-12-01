@@ -609,7 +609,7 @@ public final class bd {
                                 aAU = connectionInfo.getMacAddress();
                             }
                             if (eR(aAU)) {
-                                Iterator<E> it = Collections.list(NetworkInterface.getNetworkInterfaces()).iterator();
+                                Iterator it = Collections.list(NetworkInterface.getNetworkInterfaces()).iterator();
                                 while (true) {
                                     if (!it.hasNext()) {
                                         break;

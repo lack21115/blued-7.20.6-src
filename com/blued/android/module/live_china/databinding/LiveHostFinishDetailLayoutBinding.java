@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveHostFinishDetailLayoutBinding.class */
 public final class LiveHostFinishDetailLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TabPageIndicatorWithDot f12247a;
+    public final TabPageIndicatorWithDot a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f12248c;
+    public final ShapeTextView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class LiveHostFinishDetailLayoutBinding implements ViewBinding {
 
     private LiveHostFinishDetailLayoutBinding(LinearLayout linearLayout, TabPageIndicatorWithDot tabPageIndicatorWithDot, ShapeLinearLayout shapeLinearLayout, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3, ViewPager viewPager) {
         this.h = linearLayout;
-        this.f12247a = tabPageIndicatorWithDot;
+        this.a = tabPageIndicatorWithDot;
         this.b = shapeLinearLayout;
-        this.f12248c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -50,9 +46,9 @@ public final class LiveHostFinishDetailLayoutBinding implements ViewBinding {
                         if (textView2 != null) {
                             TextView textView3 = (TextView) view.findViewById(R.id.tv_tip);
                             if (textView3 != null) {
-                                ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                                if (viewPager != null) {
-                                    return new LiveHostFinishDetailLayoutBinding((LinearLayout) view, tabPageIndicatorWithDot, shapeLinearLayout, shapeTextView, textView, textView2, textView3, viewPager);
+                                ViewPager findViewById = view.findViewById(R.id.view_pager);
+                                if (findViewById != null) {
+                                    return new LiveHostFinishDetailLayoutBinding((LinearLayout) view, tabPageIndicatorWithDot, shapeLinearLayout, shapeTextView, textView, textView2, textView3, findViewById);
                                 }
                                 str = "viewPager";
                             } else {
@@ -76,7 +72,6 @@ public final class LiveHostFinishDetailLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.h;

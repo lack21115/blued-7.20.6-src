@@ -9,12 +9,12 @@ import android.widget.TextView;
 public class l extends TextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f26621a;
+    private float f12933a;
     private CharSequence b;
 
     public l(Context context) {
         super(context);
-        this.f26621a = 0.2f;
+        this.f12933a = 0.2f;
         this.b = "";
     }
 
@@ -36,7 +36,7 @@ public class l extends TextView {
         SpannableString spannableString = new SpannableString(sb.toString());
         if (sb.toString().length() > 1) {
             for (int i3 = 1; i3 < sb.toString().length(); i3 += 2) {
-                spannableString.setSpan(new ScaleXSpan((this.f26621a + 1.0f) / 10.0f), i3, i3 + 1, 33);
+                spannableString.setSpan(new ScaleXSpan((this.f12933a + 1.0f) / 10.0f), i3, i3 + 1, 33);
             }
         }
         super.setText(spannableString, TextView.BufferType.SPANNABLE);
@@ -44,7 +44,7 @@ public class l extends TextView {
 
     @Override // android.widget.TextView
     public float getLetterSpacing() {
-        return this.f26621a;
+        return this.f12933a;
     }
 
     @Override // android.widget.TextView
@@ -54,7 +54,7 @@ public class l extends TextView {
 
     @Override // android.widget.TextView
     public void setLetterSpacing(float f) {
-        this.f26621a = f;
+        this.f12933a = f;
         a();
     }
 

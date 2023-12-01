@@ -18,11 +18,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class l extends View implements a.w, com.zk_oaction.adengine.lk_sdk.interfaces.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.zk_oaction.adengine.lk_expression.a f42072a;
+    public com.zk_oaction.adengine.lk_expression.a f28381a;
     public com.zk_oaction.adengine.lk_expression.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    public com.zk_oaction.adengine.lk_expression.a f42073c;
+    public com.zk_oaction.adengine.lk_expression.a f28382c;
     public com.zk_oaction.adengine.lk_expression.a d;
     protected com.zk_oaction.adengine.lk_sdk.c e;
     public int f;
@@ -126,7 +126,7 @@ public class l extends View implements a.w, com.zk_oaction.adengine.lk_sdk.inter
         this.i = false;
         this.r = false;
         this.e = cVar;
-        this.f = com.zk_oaction.adengine.lk_sdk.c.f41930a;
+        this.f = com.zk_oaction.adengine.lk_sdk.c.f28239a;
         b();
     }
 
@@ -210,11 +210,11 @@ public class l extends View implements a.w, com.zk_oaction.adengine.lk_sdk.inter
                 int i2 = i;
                 if (i2 < ((int) this.l.a())) {
                     j jVar = new j();
-                    jVar.f42069a = f;
+                    jVar.f28378a = f;
                     jVar.b = f2;
-                    jVar.f42070c = this.j.a();
+                    jVar.f28379c = this.j.a();
                     jVar.d = this.k.a();
-                    jVar.g = new Rect((int) f, (int) f2, (int) (jVar.f42070c + f), (int) (jVar.d + f2));
+                    jVar.g = new Rect((int) f, (int) f2, (int) (jVar.f28379c + f), (int) (jVar.d + f2));
                     jVar.h = this.n.a();
                     this.g.add(jVar);
                     i = i2 + 1;
@@ -261,8 +261,8 @@ public class l extends View implements a.w, com.zk_oaction.adengine.lk_sdk.inter
         this.j = new com.zk_oaction.adengine.lk_expression.a(this.e, IAdInterListener.AdReqParam.WIDTH, attributeValue, 60.0f, this, true);
         this.k = new com.zk_oaction.adengine.lk_expression.a(this.e, "h", attributeValue2, 60.0f, this, true);
         this.l = new com.zk_oaction.adengine.lk_expression.a(this.e, "count", attributeValue3, 6.0f, this, false);
-        this.f42072a = new com.zk_oaction.adengine.lk_expression.a(this.e, "speek_sec", attributeValue5, 2.5f, this, true);
-        this.f42073c = new com.zk_oaction.adengine.lk_expression.a(this.e, "move_radius", attributeValue4, 16.0f, this, true);
+        this.f28381a = new com.zk_oaction.adengine.lk_expression.a(this.e, "speek_sec", attributeValue5, 2.5f, this, true);
+        this.f28382c = new com.zk_oaction.adengine.lk_expression.a(this.e, "move_radius", attributeValue4, 16.0f, this, true);
         this.b = new com.zk_oaction.adengine.lk_expression.a(this.e, "reduce_size", attributeValue6, 3.0f, this, true);
         this.d = new com.zk_oaction.adengine.lk_expression.a(this.e, "set_path", attributeValue7, 0.0f, this, false);
         if (!TextUtils.isEmpty(attributeValue8)) {
@@ -304,17 +304,15 @@ public class l extends View implements a.w, com.zk_oaction.adengine.lk_sdk.inter
     public void e(float f, float f2) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.g.clear();
         this.o = null;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         synchronized (this.g) {
             Bitmap b2 = this.m.b();
             if (b2 != null && !b2.isRecycled()) {

@@ -4,11 +4,11 @@ package com.tencent.liteav.txcplayer.b;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f36475a;
+    public int f22784a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f36476c;
+    public int f22785c;
     public int d;
     public int e;
     public int f;

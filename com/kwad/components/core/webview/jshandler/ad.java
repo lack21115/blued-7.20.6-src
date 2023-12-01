@@ -54,7 +54,7 @@ public final class ad implements com.kwad.sdk.core.webview.b.a {
                     public final void run() {
                         y.b bVar = new y.b();
                         bVar.Ts = aVar.TD.Ts;
-                        com.kwad.components.core.d.b.a.a(new a.C0519a(ad.this.mBridgeContext.LD.getContext()).I(adTemplate).b(cVar3).ap(aVar.TC).ao(true).a(bVar).aq(true).a(new a.b() { // from class: com.kwad.components.core.webview.jshandler.ad.1.1
+                        com.kwad.components.core.d.b.a.a(new a.C0349a(ad.this.mBridgeContext.LD.getContext()).I(adTemplate).b(cVar3).ap(aVar.TC).ao(true).a(bVar).aq(true).a(new a.b() { // from class: com.kwad.components.core.webview.jshandler.ad.1.1
                             @Override // com.kwad.components.core.d.b.a.b
                             public final void onAdClicked() {
                             }

@@ -21,18 +21,18 @@ public class PLCameraSetting {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f27491a;
+        static final /* synthetic */ int[] f13803a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[CAMERA_PREVIEW_SIZE_RATIO.values().length];
-            f27491a = iArr;
+            f13803a = iArr;
             try {
                 iArr[CAMERA_PREVIEW_SIZE_RATIO.RATIO_4_3.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f27491a[CAMERA_PREVIEW_SIZE_RATIO.RATIO_16_9.ordinal()] = 2;
+                f13803a[CAMERA_PREVIEW_SIZE_RATIO.RATIO_16_9.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -68,7 +68,7 @@ public class PLCameraSetting {
     }
 
     public static double calcCameraPreviewSizeRatio(CAMERA_PREVIEW_SIZE_RATIO camera_preview_size_ratio) {
-        int i = AnonymousClass1.f27491a[camera_preview_size_ratio.ordinal()];
+        int i = AnonymousClass1.f13803a[camera_preview_size_ratio.ordinal()];
         if (i != 1) {
             if (i == 2) {
                 return 1.7777777777777777d;

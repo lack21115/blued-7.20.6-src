@@ -3,7 +3,6 @@ package com.bytedance.android.openliveplugin.material;
 import android.app.Application;
 import android.content.Context;
 import android.text.TextUtils;
-import com.alipay.sdk.tid.b;
 import com.bytedance.android.openliveplugin.net.NetApi;
 import com.ss.android.socialbase.downloader.depend.AbsDownloadListener;
 import com.ss.android.socialbase.downloader.downloader.Downloader;
@@ -128,7 +127,7 @@ public class LiveInitMaterialManager {
                         configParams.appID = jSONObject.optLong("appid");
                         configParams.webcastAppID = jSONObject.optLong("webcast_appid");
                         configParams.ttsdkAppID = jSONObject.optLong("ttsdk_appid");
-                        configParams.clientKey = jSONObject.optString(b.e);
+                        configParams.clientKey = jSONObject.optString("client_key");
                         configParams.version = jSONObject.optLong("version");
                         if (file2 != null) {
                             configParams.ttSDKLicensePath = file2.getAbsolutePath();

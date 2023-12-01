@@ -11,11 +11,11 @@ public final class AndroidResourceSignature implements Key {
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Key f21090c;
+    private final Key f7484c;
 
     private AndroidResourceSignature(int i, Key key) {
         this.b = i;
-        this.f21090c = key;
+        this.f7484c = key;
     }
 
     public static Key a(Context context) {
@@ -24,7 +24,7 @@ public final class AndroidResourceSignature implements Key {
 
     @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
-        this.f21090c.a(messageDigest);
+        this.f7484c.a(messageDigest);
         messageDigest.update(ByteBuffer.allocate(4).putInt(this.b).array());
     }
 
@@ -36,7 +36,7 @@ public final class AndroidResourceSignature implements Key {
             z = false;
             if (this.b == androidResourceSignature.b) {
                 z = false;
-                if (this.f21090c.equals(androidResourceSignature.f21090c)) {
+                if (this.f7484c.equals(androidResourceSignature.f7484c)) {
                     z = true;
                 }
             }
@@ -46,6 +46,6 @@ public final class AndroidResourceSignature implements Key {
 
     @Override // com.bumptech.glide.load.Key
     public int hashCode() {
-        return Util.a(this.f21090c, this.b);
+        return Util.a(this.f7484c, this.b);
     }
 }

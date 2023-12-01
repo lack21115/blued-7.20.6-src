@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVisitorShowVipBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29374a;
+    private final LinearLayout f15684a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29374a;
+        return this.f15684a;
     }
 }

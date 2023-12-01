@@ -57,7 +57,7 @@ public class LockGestureView extends GestureOverlayView implements GestureOverla
         setGestureVisible(true);
         addOnGesturingListener(this);
         addOnGesturePerformedListener(this);
-        setGestureColor(-3355444);
+        setGestureColor(CORRECT_COLOR);
         this.mClearPerformedGesture = false;
     }
 
@@ -119,10 +119,10 @@ public class LockGestureView extends GestureOverlayView implements GestureOverla
         this.mGestureDisplayMode = displayMode;
         switch (AnonymousClass1.$SwitchMap$com$android$internal$widget$LockGestureView$DisplayMode[displayMode.ordinal()]) {
             case 1:
-                setGestureColor(-3355444);
+                setGestureColor(CORRECT_COLOR);
                 break;
             case 2:
-                setGestureColor(-65536);
+                setGestureColor(WRONG_COLOR);
                 break;
         }
         invalidate();

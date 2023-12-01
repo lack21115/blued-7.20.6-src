@@ -21,9 +21,8 @@ public interface IInputContextCallback extends IInterface {
         static final int TRANSACTION_setTextAfterCursor = 2;
         static final int TRANSACTION_setTextBeforeCursor = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/view/IInputContextCallback$Stub$Proxy.class */
-        public static class Proxy implements IInputContextCallback {
+        private static class Proxy implements IInputContextCallback {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -164,11 +163,11 @@ public interface IInputContextCallback extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setTextBeforeCursor(parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    setTextBeforeCursor(parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setTextAfterCursor(parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    setTextAfterCursor(parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -180,13 +179,13 @@ public interface IInputContextCallback extends IInterface {
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setSelectedText(parcel.readInt() != 0 ? TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    setSelectedText(parcel.readInt() != 0 ? (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
                     setRequestUpdateCursorAnchorInfoResult(parcel.readInt() != 0, parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -6,9 +6,7 @@ import java.util.UUID;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/e/h.class */
 public class h {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f4555a = "";
+    private static String a = "";
 
     public static long a(Context context) {
         String a2 = com.alipay.security.mobile.module.c.a.a(context, "vkeyid_settings", "update_time_interval");
@@ -77,19 +75,19 @@ public class h {
         SharedPreferences.Editor edit;
         synchronized (h.class) {
             try {
-                if (com.alipay.security.mobile.module.a.a.a(f4555a)) {
+                if (com.alipay.security.mobile.module.a.a.a(a)) {
                     String a2 = com.alipay.security.mobile.module.c.e.a(context, "alipay_vkey_random", "random", "");
-                    f4555a = a2;
+                    a = a2;
                     if (com.alipay.security.mobile.module.a.a.a(a2)) {
                         String a3 = com.alipay.security.mobile.module.a.a.b.a(UUID.randomUUID().toString());
-                        f4555a = a3;
+                        a = a3;
                         if (a3 != null && (edit = context.getSharedPreferences("alipay_vkey_random", 0).edit()) != null) {
                             edit.putString("random", a3);
                             edit.commit();
                         }
                     }
                 }
-                str = f4555a;
+                str = a;
             } catch (Throwable th) {
                 throw th;
             }

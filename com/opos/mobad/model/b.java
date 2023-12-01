@@ -22,16 +22,16 @@ public class b {
     private static String e = b.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f26381a = 0;
+    public static int f12693a = 0;
     public static int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f26382c = 2;
+    public static int f12694c = 2;
     public static int d = 3;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/model/b$a.class */
     public interface a {
-        void a(int i, a.C0707a c0707a);
+        void a(int i, a.C0537a c0537a);
 
         void a(int i, String str, AdData adData);
     }
@@ -125,7 +125,7 @@ public class b {
         boolean z;
         c a2 = com.opos.mobad.cmn.a.b.f.a(context, str, i, str2);
         int i5 = 1;
-        if (i3 == f26381a || i3 == b) {
+        if (i3 == f12693a || i3 == b) {
             if (i3 == b) {
                 i5 = 2;
             }
@@ -181,11 +181,11 @@ public class b {
             aVar.a(i, str2, adData);
             return;
         }
-        a.C0707a a2 = com.opos.mobad.model.e.a.a(adData);
+        a.C0537a a2 = com.opos.mobad.model.e.a.a(adData);
         if (a2 != null) {
             int c2 = adData.c();
-            a2.f26482a.a(i2);
-            com.opos.mobad.service.c.b.a().a(a2.f26483c.b());
+            a2.f12794a.a(i2);
+            com.opos.mobad.service.c.b.a().a(a2.f12795c.b());
             aVar.a(c2, a2);
             return;
         }

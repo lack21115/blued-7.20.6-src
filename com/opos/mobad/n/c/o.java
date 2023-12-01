@@ -8,24 +8,24 @@ import android.widget.Scroller;
 public class o extends Scroller {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f26625a;
+    private int f12937a;
 
     public o(Context context, Interpolator interpolator) {
         super(context, interpolator);
-        this.f26625a = 1000;
+        this.f12937a = 1000;
     }
 
     public void a(int i) {
-        this.f26625a = i;
+        this.f12937a = i;
     }
 
     @Override // android.widget.Scroller
     public void startScroll(int i, int i2, int i3, int i4) {
-        super.startScroll(i, i2, i3, i4, this.f26625a);
+        super.startScroll(i, i2, i3, i4, this.f12937a);
     }
 
     @Override // android.widget.Scroller
     public void startScroll(int i, int i2, int i3, int i4, int i5) {
-        super.startScroll(i, i2, i3, i4, this.f26625a);
+        super.startScroll(i, i2, i3, i4, this.f12937a);
     }
 }

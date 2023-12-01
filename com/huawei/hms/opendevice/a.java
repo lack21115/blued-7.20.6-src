@@ -9,16 +9,16 @@ import java.util.concurrent.Callable;
 public class a implements Callable<AAIDResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22810a;
+    private Context f9202a;
 
     public a(Context context) {
-        this.f22810a = context;
+        this.f9202a = context;
     }
 
     @Override // java.util.concurrent.Callable
     /* renamed from: a */
     public AAIDResult call() throws Exception {
-        Context context = this.f22810a;
+        Context context = this.f9202a;
         if (context != null) {
             String c2 = b.c(context);
             AAIDResult aAIDResult = new AAIDResult();

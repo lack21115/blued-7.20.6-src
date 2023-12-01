@@ -29,26 +29,26 @@ public abstract class Visibility extends Transition {
     public static class DisappearListener extends AnimatorListenerAdapter implements AnimatorUtils.AnimatorPauseListenerCompat, Transition.TransitionListener {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f3512a = false;
+        boolean f3464a = false;
         private final View b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f3513c;
+        private final int f3465c;
         private final ViewGroup d;
         private final boolean e;
         private boolean f;
 
         DisappearListener(View view, int i, boolean z) {
             this.b = view;
-            this.f3513c = i;
+            this.f3465c = i;
             this.d = (ViewGroup) view.getParent();
             this.e = z;
             a(true);
         }
 
         private void a() {
-            if (!this.f3512a) {
-                ViewUtils.a(this.b, this.f3513c);
+            if (!this.f3464a) {
+                ViewUtils.a(this.b, this.f3465c);
                 ViewGroup viewGroup = this.d;
                 if (viewGroup != null) {
                     viewGroup.invalidate();
@@ -68,7 +68,7 @@ public abstract class Visibility extends Transition {
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationCancel(Animator animator) {
-            this.f3512a = true;
+            this.f3464a = true;
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -78,10 +78,10 @@ public abstract class Visibility extends Transition {
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorPauseListener
         public void onAnimationPause(Animator animator) {
-            if (this.f3512a) {
+            if (this.f3464a) {
                 return;
             }
-            ViewUtils.a(this.b, this.f3513c);
+            ViewUtils.a(this.b, this.f3465c);
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -90,7 +90,7 @@ public abstract class Visibility extends Transition {
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorPauseListener
         public void onAnimationResume(Animator animator) {
-            if (this.f3512a) {
+            if (this.f3464a) {
                 return;
             }
             ViewUtils.a(this.b, 0);
@@ -135,11 +135,11 @@ public abstract class Visibility extends Transition {
     public static class VisibilityInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f3514a;
+        boolean f3466a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f3515c;
+        int f3467c;
         int d;
         ViewGroup e;
         ViewGroup f;
@@ -173,13 +173,13 @@ public abstract class Visibility extends Transition {
 
     private VisibilityInfo getVisibilityChangeInfo(TransitionValues transitionValues, TransitionValues transitionValues2) {
         VisibilityInfo visibilityInfo = new VisibilityInfo();
-        visibilityInfo.f3514a = false;
+        visibilityInfo.f3466a = false;
         visibilityInfo.b = false;
         if (transitionValues == null || !transitionValues.values.containsKey(PROPNAME_VISIBILITY)) {
-            visibilityInfo.f3515c = -1;
+            visibilityInfo.f3467c = -1;
             visibilityInfo.e = null;
         } else {
-            visibilityInfo.f3515c = ((Integer) transitionValues.values.get(PROPNAME_VISIBILITY)).intValue();
+            visibilityInfo.f3467c = ((Integer) transitionValues.values.get(PROPNAME_VISIBILITY)).intValue();
             visibilityInfo.e = (ViewGroup) transitionValues.values.get(PROPNAME_PARENT);
         }
         if (transitionValues2 == null || !transitionValues2.values.containsKey(PROPNAME_VISIBILITY)) {
@@ -192,32 +192,32 @@ public abstract class Visibility extends Transition {
         if (transitionValues == null || transitionValues2 == null) {
             if (transitionValues == null && visibilityInfo.d == 0) {
                 visibilityInfo.b = true;
-                visibilityInfo.f3514a = true;
+                visibilityInfo.f3466a = true;
                 return visibilityInfo;
-            } else if (transitionValues2 == null && visibilityInfo.f3515c == 0) {
+            } else if (transitionValues2 == null && visibilityInfo.f3467c == 0) {
                 visibilityInfo.b = false;
-                visibilityInfo.f3514a = true;
+                visibilityInfo.f3466a = true;
             }
-        } else if (visibilityInfo.f3515c == visibilityInfo.d && visibilityInfo.e == visibilityInfo.f) {
+        } else if (visibilityInfo.f3467c == visibilityInfo.d && visibilityInfo.e == visibilityInfo.f) {
             return visibilityInfo;
         } else {
-            if (visibilityInfo.f3515c != visibilityInfo.d) {
-                if (visibilityInfo.f3515c == 0) {
+            if (visibilityInfo.f3467c != visibilityInfo.d) {
+                if (visibilityInfo.f3467c == 0) {
                     visibilityInfo.b = false;
-                    visibilityInfo.f3514a = true;
+                    visibilityInfo.f3466a = true;
                     return visibilityInfo;
                 } else if (visibilityInfo.d == 0) {
                     visibilityInfo.b = true;
-                    visibilityInfo.f3514a = true;
+                    visibilityInfo.f3466a = true;
                     return visibilityInfo;
                 }
             } else if (visibilityInfo.f == null) {
                 visibilityInfo.b = false;
-                visibilityInfo.f3514a = true;
+                visibilityInfo.f3466a = true;
                 return visibilityInfo;
             } else if (visibilityInfo.e == null) {
                 visibilityInfo.b = true;
-                visibilityInfo.f3514a = true;
+                visibilityInfo.f3466a = true;
                 return visibilityInfo;
             }
         }
@@ -237,11 +237,11 @@ public abstract class Visibility extends Transition {
     @Override // androidx.transition.Transition
     public Animator createAnimator(ViewGroup viewGroup, TransitionValues transitionValues, TransitionValues transitionValues2) {
         VisibilityInfo visibilityChangeInfo = getVisibilityChangeInfo(transitionValues, transitionValues2);
-        if (visibilityChangeInfo.f3514a) {
+        if (visibilityChangeInfo.f3466a) {
             if (visibilityChangeInfo.e == null && visibilityChangeInfo.f == null) {
                 return null;
             }
-            return visibilityChangeInfo.b ? onAppear(viewGroup, transitionValues, visibilityChangeInfo.f3515c, transitionValues2, visibilityChangeInfo.d) : onDisappear(viewGroup, transitionValues, visibilityChangeInfo.f3515c, transitionValues2, visibilityChangeInfo.d);
+            return visibilityChangeInfo.b ? onAppear(viewGroup, transitionValues, visibilityChangeInfo.f3467c, transitionValues2, visibilityChangeInfo.d) : onDisappear(viewGroup, transitionValues, visibilityChangeInfo.f3467c, transitionValues2, visibilityChangeInfo.d);
         }
         return null;
     }
@@ -299,10 +299,10 @@ public abstract class Visibility extends Transition {
             r0 = r8
             r7 = r0
             r0 = r5
-            boolean r0 = r0.f3514a
+            boolean r0 = r0.f3466a
             if (r0 == 0) goto L54
             r0 = r5
-            int r0 = r0.f3515c
+            int r0 = r0.f3467c
             if (r0 == 0) goto L52
             r0 = r8
             r7 = r0
@@ -345,7 +345,7 @@ public abstract class Visibility extends Transition {
         }
         if (transitionValues == null) {
             View view = (View) transitionValues2.view.getParent();
-            if (getVisibilityChangeInfo(getMatchedTransitionValues(view, false), getTransitionValues(view, false)).f3514a) {
+            if (getVisibilityChangeInfo(getMatchedTransitionValues(view, false), getTransitionValues(view, false)).f3466a) {
                 return null;
             }
         }

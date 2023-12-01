@@ -18,24 +18,20 @@ public class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.alipay.sdk.app.statistic.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/statistic/a$a.class */
-    public static final class C0046a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final String f4604a = "RecordPref";
+    public static final class C0006a {
+        private static final String a = "RecordPref";
         private static final String b = "alipay_cashier_statistic_record";
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.alipay.sdk.app.statistic.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/statistic/a$a$a.class */
-        public static final class C0047a {
+        public static final class C0007a {
+            final LinkedHashMap<String, String> a = new LinkedHashMap<>();
 
-            /* renamed from: a  reason: collision with root package name */
-            final LinkedHashMap<String, String> f4605a = new LinkedHashMap<>();
-
-            C0047a() {
+            C0007a() {
             }
 
-            C0047a(String str) {
+            C0007a(String str) {
                 try {
                     JSONArray jSONArray = new JSONArray(str);
                     int i = 0;
@@ -45,7 +41,7 @@ public class a {
                             return;
                         }
                         JSONArray jSONArray2 = jSONArray.getJSONArray(i2);
-                        this.f4605a.put(jSONArray2.getString(0), jSONArray2.getString(1));
+                        this.a.put(jSONArray2.getString(0), jSONArray2.getString(1));
                         i = i2 + 1;
                     }
                 } catch (Throwable th) {
@@ -56,7 +52,7 @@ public class a {
             String a() {
                 try {
                     JSONArray jSONArray = new JSONArray();
-                    for (Map.Entry<String, String> entry : this.f4605a.entrySet()) {
+                    for (Map.Entry<String, String> entry : this.a.entrySet()) {
                         JSONArray jSONArray2 = new JSONArray();
                         jSONArray2.put(entry.getKey()).put(entry.getValue());
                         jSONArray.put(jSONArray2);
@@ -69,27 +65,27 @@ public class a {
             }
         }
 
-        private C0046a() {
+        private C0006a() {
         }
 
         static int a(Context context, String str) {
-            synchronized (C0046a.class) {
+            synchronized (C0006a.class) {
                 try {
-                    com.alipay.sdk.util.c.a(f4604a, "stat remove " + str);
+                    com.alipay.sdk.util.c.a(a, "stat remove " + str);
                     if (context != null && !TextUtils.isEmpty(str)) {
-                        C0047a b2 = b(context);
-                        if (b2.f4605a.isEmpty()) {
+                        C0007a b2 = b(context);
+                        if (b2.a.isEmpty()) {
                             return 0;
                         }
                         ArrayList arrayList = new ArrayList();
-                        for (Map.Entry<String, String> entry : b2.f4605a.entrySet()) {
+                        for (Map.Entry<String, String> entry : b2.a.entrySet()) {
                             if (str.equals(entry.getValue())) {
                                 arrayList.add(entry.getKey());
                             }
                         }
                         Iterator it = arrayList.iterator();
                         while (it.hasNext()) {
-                            b2.f4605a.remove((String) it.next());
+                            b2.a.remove((String) it.next());
                         }
                         a(context, b2);
                         return arrayList.size();
@@ -102,17 +98,17 @@ public class a {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static String a(Context context) {
-            synchronized (C0046a.class) {
+            synchronized (C0006a.class) {
                 try {
-                    com.alipay.sdk.util.c.a(f4604a, "stat peek");
+                    com.alipay.sdk.util.c.a(a, "stat peek");
                     if (context == null) {
                         return null;
                     }
-                    C0047a b2 = b(context);
-                    if (b2.f4605a.isEmpty()) {
+                    C0007a b2 = b(context);
+                    if (b2.a.isEmpty()) {
                         return null;
                     }
-                    return b2.f4605a.entrySet().iterator().next().getValue();
+                    return b2.a.entrySet().iterator().next().getValue();
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -120,19 +116,19 @@ public class a {
         }
 
         static String a(Context context, String str, String str2) {
-            synchronized (C0046a.class) {
+            synchronized (C0006a.class) {
                 try {
-                    com.alipay.sdk.util.c.a(f4604a, "stat append " + str2 + " , " + str);
+                    com.alipay.sdk.util.c.a(a, "stat append " + str2 + " , " + str);
                     if (context != null && !TextUtils.isEmpty(str)) {
                         String str3 = str2;
                         if (TextUtils.isEmpty(str2)) {
                             str3 = UUID.randomUUID().toString();
                         }
-                        C0047a b2 = b(context);
-                        if (b2.f4605a.size() > 20) {
-                            b2.f4605a.clear();
+                        C0007a b2 = b(context);
+                        if (b2.a.size() > 20) {
+                            b2.a.clear();
                         }
-                        b2.f4605a.put(str3, str);
+                        b2.a.put(str3, str);
                         a(context, b2);
                         return str3;
                     }
@@ -142,34 +138,34 @@ public class a {
             }
         }
 
-        private static void a(Context context, C0047a c0047a) {
-            synchronized (C0046a.class) {
-                C0047a c0047a2 = c0047a;
-                if (c0047a == null) {
+        private static void a(Context context, C0007a c0007a) {
+            synchronized (C0006a.class) {
+                C0007a c0007a2 = c0007a;
+                if (c0007a == null) {
                     try {
-                        c0047a2 = new C0047a();
+                        c0007a2 = new C0007a();
                     } finally {
                         try {
                         } finally {
                         }
                     }
                 }
-                j.a(null, context, b, c0047a2.a());
+                j.a(null, context, b, c0007a2.a());
             }
         }
 
-        private static C0047a b(Context context) {
-            synchronized (C0046a.class) {
+        private static C0007a b(Context context) {
+            synchronized (C0006a.class) {
                 try {
                     String b2 = j.b(null, context, b, null);
                     if (TextUtils.isEmpty(b2)) {
-                        return new C0047a();
+                        return new C0007a();
                     }
-                    return new C0047a(b2);
+                    return new C0007a(b2);
                 } catch (Throwable th) {
                     try {
                         com.alipay.sdk.util.c.a(th);
-                        return new C0047a();
+                        return new C0007a();
                     } finally {
                     }
                 }
@@ -212,7 +208,7 @@ public class a {
                 }
                 try {
                     if (!TextUtils.isEmpty(str)) {
-                        C0046a.a(context, str, str2);
+                        C0006a.a(context, str, str2);
                     }
                     new Thread(new com.alipay.sdk.app.statistic.b(str, context)).start();
                 } finally {
@@ -226,7 +222,7 @@ public class a {
                 try {
                     com.alipay.sdk.util.c.a(com.alipay.sdk.cons.a.x, "stat sub " + str);
                     if ((com.alipay.sdk.data.a.j().g() ? new d() : new e()).a((com.alipay.sdk.sys.a) null, context, str) != null) {
-                        C0046a.a(context, str);
+                        C0006a.a(context, str);
                         return true;
                     }
                     return false;
@@ -239,9 +235,7 @@ public class a {
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/statistic/a$c.class */
     static final class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final String f4606a = "alipay_cashier_statistic_v";
+        private static final String a = "alipay_cashier_statistic_v";
 
         c() {
         }
@@ -252,7 +246,7 @@ public class a {
             long j2;
             synchronized (c.class) {
                 try {
-                    String b = j.b(null, context, f4606a, null);
+                    String b = j.b(null, context, a, null);
                     j = 0;
                     if (!TextUtils.isEmpty(b)) {
                         j = Long.parseLong(b);
@@ -262,7 +256,7 @@ public class a {
                 }
                 j2 = j + 1;
                 try {
-                    j.a(null, context, f4606a, Long.toString(j2));
+                    j.a(null, context, a, Long.toString(j2));
                 } catch (Throwable th2) {
                 }
             }
@@ -289,7 +283,7 @@ public class a {
                 return;
             }
             try {
-                C0046a.a(context, aVar.s.a(str), str2);
+                C0006a.a(context, aVar.s.a(str), str2);
             } catch (Throwable th) {
                 try {
                     com.alipay.sdk.util.c.a(th);

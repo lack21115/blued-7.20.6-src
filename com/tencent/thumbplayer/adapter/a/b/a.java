@@ -18,7 +18,7 @@ import java.util.Set;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Set<String> f39165a = new HashSet();
+    private static Set<String> f25474a = new HashSet();
     private static Set<String> b = new HashSet();
 
     public static void a(Context context) {
@@ -28,11 +28,11 @@ public class a {
                 TPLogUtil.i("TPDrmCapability", "TPDrmCapability, get shared preferences.");
                 SharedPreferences sharedPreferences = context.getSharedPreferences("TP_DRM_CAPABILITY", 0);
                 try {
-                    f39165a = sharedPreferences.getStringSet("DRM_CAPABILITY_LIST", f39165a);
+                    f25474a = sharedPreferences.getStringSet("DRM_CAPABILITY_LIST", f25474a);
                 } catch (ClassCastException e) {
                     TPLogUtil.e("TPDrmCapability", e);
                 }
-                f39165a.removeAll(b);
+                f25474a.removeAll(b);
                 a(sharedPreferences);
             } catch (Throwable th) {
                 throw th;
@@ -63,8 +63,8 @@ public class a {
                 edit.apply();
                 synchronized (a.class) {
                     try {
-                        Set unused = a.f39165a = hashSet;
-                        a.f39165a.removeAll(a.b);
+                        Set unused = a.f25474a = hashSet;
+                        a.f25474a.removeAll(a.b);
                     } catch (Throwable th) {
                         throw th;
                     }
@@ -79,7 +79,7 @@ public class a {
                 return false;
             }
             try {
-                Iterator<String> it = f39165a.iterator();
+                Iterator<String> it = f25474a.iterator();
                 do {
                     if (!it.hasNext()) {
                         return false;
@@ -95,9 +95,9 @@ public class a {
         int[] iArr;
         synchronized (a.class) {
             try {
-                iArr = new int[f39165a.size()];
+                iArr = new int[f25474a.size()];
                 int i = 0;
-                for (String str : f39165a) {
+                for (String str : f25474a) {
                     iArr[i] = com.tencent.thumbplayer.utils.b.a(str, -1);
                     i++;
                 }
@@ -115,7 +115,7 @@ public class a {
             }
             try {
                 b.add(String.valueOf(i));
-                f39165a.removeAll(b);
+                f25474a.removeAll(b);
             } finally {
             }
         }

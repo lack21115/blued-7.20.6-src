@@ -4,7 +4,7 @@ package com.tencent.bugly.idasc.proguard;
 public final class bh {
 
     /* renamed from: a  reason: collision with root package name */
-    private static bj f35296a;
+    private static bj f21605a;
     private static bk b;
 
     public static bi a() {

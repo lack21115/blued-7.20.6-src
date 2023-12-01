@@ -1,7 +1,6 @@
 package com.tencent.mapsdk.internal;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.map.tools.json.JsonUtils;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
@@ -15,11 +14,11 @@ public class f6 {
     private static final String l = "stData";
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37430a;
+    private int f23739a;
     private List<w6> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37431c;
+    private String f23740c;
     private String d;
     private String e;
     private String f;
@@ -96,11 +95,11 @@ public class f6 {
         public final /* synthetic */ byte[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ e f37435c;
+        public final /* synthetic */ e f23744c;
 
         public c(byte[] bArr, e eVar) {
             this.b = bArr;
-            this.f37435c = eVar;
+            this.f23744c = eVar;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:16:0x0116  */
@@ -164,18 +163,18 @@ public class f6 {
     public static class i {
 
         /* renamed from: a  reason: collision with root package name */
-        private g f37439a;
+        private g f23748a;
         private f b;
 
         /* renamed from: c  reason: collision with root package name */
-        private i f37440c;
+        private i f23749c;
         private boolean d;
         private byte[] e;
         private Object f;
 
         public static i a(g gVar) {
             i iVar = new i();
-            iVar.f37439a = gVar;
+            iVar.f23748a = gVar;
             return iVar;
         }
 
@@ -192,7 +191,7 @@ public class f6 {
         }
 
         public i a(i iVar) {
-            this.f37440c = iVar;
+            this.f23749c = iVar;
             return this;
         }
 
@@ -212,7 +211,7 @@ public class f6 {
         }
 
         public boolean a(g gVar, f fVar) {
-            i iVar = this.f37440c;
+            i iVar = this.f23749c;
             if (iVar != null) {
                 return iVar.b(gVar, fVar);
             }
@@ -228,7 +227,7 @@ public class f6 {
         }
 
         public boolean b(g gVar) {
-            i iVar = this.f37440c;
+            i iVar = this.f23749c;
             if (iVar != null) {
                 return iVar.c(gVar);
             }
@@ -236,15 +235,15 @@ public class f6 {
         }
 
         public boolean b(g gVar, f fVar) {
-            return fVar == this.b && gVar == this.f37439a;
+            return fVar == this.b && gVar == this.f23748a;
         }
 
         public g c() {
-            return this.f37439a;
+            return this.f23748a;
         }
 
         public boolean c(g gVar) {
-            return gVar == this.f37439a;
+            return gVar == this.f23748a;
         }
 
         public Object d() {
@@ -258,11 +257,11 @@ public class f6 {
         public String toString() {
             StringBuffer stringBuffer = new StringBuffer("StatisticState{");
             stringBuffer.append("mState=");
-            stringBuffer.append(this.f37439a);
+            stringBuffer.append(this.f23748a);
             stringBuffer.append(", mStage=");
             stringBuffer.append(this.b);
             stringBuffer.append(", mParentState=");
-            stringBuffer.append(this.f37440c);
+            stringBuffer.append(this.f23749c);
             stringBuffer.append(", mResult=");
             stringBuffer.append(this.d);
             stringBuffer.append(", mData=");
@@ -303,11 +302,11 @@ public class f6 {
             this.e = q1Var.r().getSubKey();
             this.f = q1Var.r().getSubId();
         }
-        String str = q1Var.getContext().getFilesDir().getAbsolutePath() + File.separator + l + BridgeUtil.UNDERLINE_STR + wa.a(this.d);
-        this.f37431c = str;
+        String str = q1Var.getContext().getFilesDir().getAbsolutePath() + File.separator + l + "_" + wa.a(this.d);
+        this.f23740c = str;
         ga.a(str);
-        this.g = new File(this.f37431c);
-        this.h = new File(this.f37431c + com.anythink.china.common.a.a.e);
+        this.g = new File(this.f23740c);
+        this.h = new File(this.f23740c + ".temp");
     }
 
     private List<w6> a(File file) {
@@ -422,25 +421,25 @@ public class f6 {
     }
 
     public void a(w6 w6Var) {
-        this.f37430a--;
+        this.f23739a--;
         if (w6Var != null) {
             synchronized (this) {
                 this.b.add(w6Var);
             }
         }
-        if (this.f37430a == 0 && !this.b.isEmpty()) {
+        if (this.f23739a == 0 && !this.b.isEmpty()) {
             a(a(this.b, (i) null), new d());
         }
     }
 
     public String b() {
-        return this.f37431c;
+        return this.f23740c;
     }
 
     public void c() {
-        if (this.f37430a == 0) {
+        if (this.f23739a == 0) {
             d();
         }
-        this.f37430a++;
+        this.f23739a++;
     }
 }

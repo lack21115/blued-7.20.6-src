@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MsgSourceBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29480a;
+    private final FrameLayout f15790a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29480a;
+        return this.f15790a;
     }
 }

@@ -15,9 +15,8 @@ public interface IResultReceiver extends IInterface {
         private static final String DESCRIPTOR = "com.android.internal.os.IResultReceiver";
         static final int TRANSACTION_send_0 = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/os/IResultReceiver$Stub$Proxy.class */
-        public static class Proxy implements IResultReceiver {
+        private static class Proxy implements IResultReceiver {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -74,9 +73,9 @@ public interface IResultReceiver extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    send(parcel.readInt(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    send(parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -29,7 +29,7 @@ public final class g extends com.anythink.expressad.exoplayer.a implements Handl
     }
 
     public g(f fVar, Looper looper) {
-        this(fVar, looper, d.f7377a);
+        this(fVar, looper, d.f4538a);
     }
 
     private g(f fVar, Looper looper, d dVar) {
@@ -78,7 +78,7 @@ public final class g extends com.anythink.expressad.exoplayer.a implements Handl
                 if (this.t.c()) {
                     this.z = true;
                 } else if (!this.t.b()) {
-                    this.t.g = this.s.f7721a.l;
+                    this.t.g = this.s.f4882a.l;
                     this.t.h();
                     try {
                         int i = (this.w + this.x) % 5;

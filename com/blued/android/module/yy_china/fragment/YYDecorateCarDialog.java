@@ -9,6 +9,7 @@ import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.module.svgaplayer.SVGACallback;
 import com.blued.android.module.svgaplayer.SVGADrawable;
@@ -29,13 +30,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateCarDialog.class */
 public final class YYDecorateCarDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogDecorateCarLayoutBinding f17199a;
+    private DialogDecorateCarLayoutBinding a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f17200c;
+    private BaseFragment c;
     private String d;
     private String e;
 
@@ -43,26 +40,22 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateCarDialog$DecoratePageAdapter.class */
     public final class DecoratePageAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYDecorateCarDialog f17201a;
+        final /* synthetic */ YYDecorateCarDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public DecoratePageAdapter(YYDecorateCarDialog this$0, FragmentManager manager) {
             super(manager, 1);
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(manager, "manager");
-            this.f17201a = this$0;
+            this.a = this$0;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return 2;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            return i == 0 ? new YYDecorateCarFragment() : new YYDecorateExhibitionFragment(this.f17201a.d, this.f17201a.e);
+            return i == 0 ? new YYDecorateCarFragment() : new YYDecorateExhibitionFragment(this.a.d, this.a.e);
         }
     }
 
@@ -127,28 +120,28 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
             r0.b = r1
             r0 = r3
             r1 = r7
-            r0.f17200c = r1
+            r0.c = r1
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.module.yy_china.fragment.YYDecorateCarDialog.<init>(java.lang.String, java.lang.String, int, com.blued.android.core.ui.BaseFragment):void");
     }
 
     private final void a(int i, String str) {
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding2 = null;
         }
         dialogDecorateCarLayoutBinding2.g.setVisibility(8);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.a;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding3 = null;
         }
         dialogDecorateCarLayoutBinding3.f.setVisibility(8);
         YYWebViewDialogFragment yYWebViewDialogFragment = new YYWebViewDialogFragment();
-        yYWebViewDialogFragment.a(this.f17200c, YYRoomInfoManager.e().c().a(i));
+        yYWebViewDialogFragment.a(this.c, YYRoomInfoManager.e().c().a(i));
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         yYWebViewDialogFragment.show(childFragmentManager, str);
@@ -206,21 +199,21 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
             EventTrackYY.d(ChatRoomProtos.Event.YY_MADE_CAR_PAGE_CAR_TAB_CLICK, b.room_id, b.uid);
         }
         this$0.getChildFragmentManager().setFragmentResult("close_keyboard", BundleKt.bundleOf(new Pair[0]));
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding2 = null;
         }
         dialogDecorateCarLayoutBinding2.k.a(true);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding4 = dialogDecorateCarLayoutBinding3;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding4 = null;
         }
         dialogDecorateCarLayoutBinding4.k.setImageResource(R.drawable.icon_decorate_exhibition_tab_normal);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding6 = dialogDecorateCarLayoutBinding5;
         if (dialogDecorateCarLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -229,7 +222,7 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
         SVGAImageView sVGAImageView = dialogDecorateCarLayoutBinding6.j;
         Intrinsics.c(sVGAImageView, "mBinding.tabLeftSvga");
         this$0.a(sVGAImageView, "decorate_car.svga", R.drawable.icon_decorate_car_tab_selected);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this$0.a;
         if (dialogDecorateCarLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding7 = null;
@@ -245,21 +238,21 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
             EventTrackYY.d(ChatRoomProtos.Event.YY_MADE_CAR_PAGE_HALL_TAB_CLICK, b.room_id, b.uid);
         }
         this$0.getChildFragmentManager().setFragmentResult("close_keyboard", BundleKt.bundleOf(new Pair[0]));
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding2 = null;
         }
         dialogDecorateCarLayoutBinding2.j.a(true);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding4 = dialogDecorateCarLayoutBinding3;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding4 = null;
         }
         dialogDecorateCarLayoutBinding4.j.setImageResource(R.drawable.icon_decorate_car_tab_normal);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding6 = dialogDecorateCarLayoutBinding5;
         if (dialogDecorateCarLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
@@ -268,7 +261,7 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
         SVGAImageView sVGAImageView = dialogDecorateCarLayoutBinding6.k;
         Intrinsics.c(sVGAImageView, "mBinding.tabRightSvga");
         this$0.a(sVGAImageView, "decorate_exhibition.svga", R.drawable.icon_decorate_exhibition_tab_selected);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this$0.a;
         if (dialogDecorateCarLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding7 = null;
@@ -284,28 +277,28 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
             EventTrackYY.d(ChatRoomProtos.Event.YY_MADE_CAR_PAGE_MORE_CLICK, b.room_id, b.uid);
         }
         this$0.getChildFragmentManager().setFragmentResult("close_keyboard", BundleKt.bundleOf(new Pair[0]));
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding2 = null;
         }
         ConstraintLayout constraintLayout = dialogDecorateCarLayoutBinding2.g;
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding4 = dialogDecorateCarLayoutBinding3;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding4 = null;
         }
         constraintLayout.setVisibility(dialogDecorateCarLayoutBinding4.g.getVisibility() == 0 ? 8 : 0);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding6 = dialogDecorateCarLayoutBinding5;
         if (dialogDecorateCarLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding6 = null;
         }
         View view2 = dialogDecorateCarLayoutBinding6.f;
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this$0.a;
         if (dialogDecorateCarLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding7 = null;
@@ -320,14 +313,14 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void e(YYDecorateCarDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this$0.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding2 = null;
         }
         dialogDecorateCarLayoutBinding2.g.setVisibility(8);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this$0.a;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding3 = null;
@@ -336,7 +329,7 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
     }
 
     private final void f() {
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
@@ -345,15 +338,15 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
         dialogDecorateCarLayoutBinding2.l.a(false);
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        DecoratePageAdapter decoratePageAdapter = new DecoratePageAdapter(this, childFragmentManager);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.f17199a;
+        PagerAdapter decoratePageAdapter = new DecoratePageAdapter(this, childFragmentManager);
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding4 = dialogDecorateCarLayoutBinding3;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding4 = null;
         }
         dialogDecorateCarLayoutBinding4.l.setAdapter(decoratePageAdapter);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this.a;
         if (dialogDecorateCarLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding5 = null;
@@ -372,7 +365,7 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
     }
 
     private final void g() {
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
@@ -384,7 +377,7 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
                 YYDecorateCarDialog.b(YYDecorateCarDialog.this, view);
             }
         });
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.a;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding3 = null;
@@ -408,7 +401,7 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
     }
 
     private final void h() {
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
@@ -420,7 +413,7 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
                 YYDecorateCarDialog.d(YYDecorateCarDialog.this, view);
             }
         });
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding4 = dialogDecorateCarLayoutBinding3;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -432,19 +425,19 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
                 YYDecorateCarDialog.e(YYDecorateCarDialog.this, view);
             }
         });
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding6 = dialogDecorateCarLayoutBinding5;
         if (dialogDecorateCarLayoutBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding6 = null;
         }
-        dialogDecorateCarLayoutBinding6.f16326a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarDialog$yKiOFZcNtmFfa6rIpE-KYLU9V34
+        dialogDecorateCarLayoutBinding6.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarDialog$yKiOFZcNtmFfa6rIpE-KYLU9V34
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYDecorateCarDialog.f(YYDecorateCarDialog.this, view);
             }
         });
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this.a;
         if (dialogDecorateCarLayoutBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding7 = null;
@@ -457,36 +450,36 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_decorate_car_layout, (ViewGroup) null);
-        DialogDecorateCarLayoutBinding a2 = DialogDecorateCarLayoutBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.f17199a = a2;
+        DialogDecorateCarLayoutBinding a = DialogDecorateCarLayoutBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.a = a;
         f();
         g();
         h();
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding2 = dialogDecorateCarLayoutBinding;
         if (dialogDecorateCarLayoutBinding == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding2 = null;
         }
-        dialogDecorateCarLayoutBinding2.f16327c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarDialog$CLkgcSpMBvFApgn6iOqB32B8t5I
+        dialogDecorateCarLayoutBinding2.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateCarDialog$CLkgcSpMBvFApgn6iOqB32B8t5I
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYDecorateCarDialog.a(YYDecorateCarDialog.this, view2);
             }
         });
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding3 = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding4 = dialogDecorateCarLayoutBinding3;
         if (dialogDecorateCarLayoutBinding3 == null) {
             Intrinsics.c("mBinding");
@@ -494,14 +487,14 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
         }
         dialogDecorateCarLayoutBinding4.l.setCurrentItem(this.b);
         if (this.b == 1) {
-            DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this.f17199a;
+            DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding5 = this.a;
             DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding6 = dialogDecorateCarLayoutBinding5;
             if (dialogDecorateCarLayoutBinding5 == null) {
                 Intrinsics.c("mBinding");
                 dialogDecorateCarLayoutBinding6 = null;
             }
             dialogDecorateCarLayoutBinding6.j.setImageResource(R.drawable.icon_decorate_car_tab_normal);
-            DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this.f17199a;
+            DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding7 = this.a;
             if (dialogDecorateCarLayoutBinding7 == null) {
                 Intrinsics.c("mBinding");
                 dialogDecorateCarLayoutBinding7 = null;
@@ -509,14 +502,14 @@ public final class YYDecorateCarDialog extends BaseFullScreenDialog {
             dialogDecorateCarLayoutBinding7.k.setImageResource(R.drawable.icon_decorate_exhibition_tab_selected);
             return;
         }
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding8 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding8 = this.a;
         DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding9 = dialogDecorateCarLayoutBinding8;
         if (dialogDecorateCarLayoutBinding8 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding9 = null;
         }
         dialogDecorateCarLayoutBinding9.j.setImageResource(R.drawable.icon_decorate_car_tab_selected);
-        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding10 = this.f17199a;
+        DialogDecorateCarLayoutBinding dialogDecorateCarLayoutBinding10 = this.a;
         if (dialogDecorateCarLayoutBinding10 == null) {
             Intrinsics.c("mBinding");
             dialogDecorateCarLayoutBinding10 = null;

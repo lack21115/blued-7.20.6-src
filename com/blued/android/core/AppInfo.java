@@ -10,7 +10,9 @@ import android.os.Looper;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import com.android.internal.R;
 import com.android.internal.telephony.PhoneConstants;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.core.ui.AppLifecycleCallbacks;
 import com.blued.android.core.ui.UIPageCallback;
 import com.blued.android.core.utils.Log;
@@ -27,13 +29,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class AppInfo {
     private static String G;
     private static List<String> H = new CopyOnWriteArrayList();
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f9486a = "";
+    public static String a = "";
     public static String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static String f9487c = "";
+    public static String c = "";
     public static String d = "";
     public static String e = "";
     public static String f = "";
@@ -72,7 +70,7 @@ public class AppInfo {
         this.y = new AppLifecycleCallbacks(application);
         this.B = z;
         this.C = new Handler(Looper.getMainLooper());
-        f9486a = application.getPackageName();
+        a = application.getPackageName();
         this.F = new Gson();
         if (z) {
             try {
@@ -151,7 +149,7 @@ public class AppInfo {
 
     private void a(Application application, boolean z) {
         if (z) {
-            f = ((TelephonyManager) application.getSystemService("phone")).getSimOperator();
+            f = ((TelephonyManager) application.getSystemService(PhoneConstants.PHONE_KEY)).getSimOperator();
         }
     }
 
@@ -172,11 +170,11 @@ public class AppInfo {
     }
 
     public static void a(String str) {
-        f9487c = str;
+        c = str;
     }
 
     public static void a(boolean z, int i2, int i3) {
-        a(z, i2, 17170445, i3);
+        a(z, i2, (int) R.color.transparent, i3);
     }
 
     public static void a(boolean z, int i2, int i3, int i4) {
@@ -287,24 +285,15 @@ public class AppInfo {
     }
 
     public static int j() {
-        if (c()) {
-            return r;
-        }
-        return 17170445;
+        return !c() ? R.color.transparent : r;
     }
 
     public static int k() {
-        if (c()) {
-            return p;
-        }
-        return 17170445;
+        return !c() ? R.color.transparent : p;
     }
 
     public static int l() {
-        if (c()) {
-            return q;
-        }
-        return 17170445;
+        return !c() ? R.color.transparent : q;
     }
 
     public static boolean m() {
@@ -326,7 +315,7 @@ public class AppInfo {
     }
 
     public static boolean p() {
-        return TextUtils.equals("1", w.z) || TextUtils.equals("6", w.z) || TextUtils.equals("7", w.z);
+        return TextUtils.equals("1", w.z) || TextUtils.equals(ATAdConst.ATDevFrameworkType.FLUTTER, w.z) || TextUtils.equals(ATAdConst.ATDevFrameworkType.ADOBIE_AIR, w.z);
     }
 
     public static void q() {
@@ -350,7 +339,7 @@ public class AppInfo {
 
     public static void s() {
         try {
-            f = ((TelephonyManager) w.x.getSystemService("phone")).getSimOperator();
+            f = ((TelephonyManager) w.x.getSystemService(PhoneConstants.PHONE_KEY)).getSimOperator();
         } catch (Exception e2) {
             e2.printStackTrace();
         }

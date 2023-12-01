@@ -5,6 +5,7 @@ import android.os.ServiceManager;
 import android.util.Log;
 import com.android.net.IProxyService;
 import com.google.android.collect.Lists;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
@@ -28,12 +29,12 @@ public class PacProxySelector extends ProxySelector {
         if (this.mProxyService == null) {
             Log.e(TAG, "PacManager: no proxy service");
         }
-        this.mDefaultList = Lists.newArrayList(java.net.Proxy.NO_PROXY);
+        this.mDefaultList = Lists.newArrayList(new java.net.Proxy[]{java.net.Proxy.NO_PROXY});
     }
 
     private static List<java.net.Proxy> parseResponse(String str) {
         java.net.Proxy proxyFromHostPort;
-        String[] split = str.split(";");
+        String[] split = str.split(t.aE);
         ArrayList newArrayList = Lists.newArrayList();
         int length = split.length;
         int i = 0;
@@ -84,7 +85,7 @@ public class PacProxySelector extends ProxySelector {
         }
         if (this.mProxyService == null) {
             Log.e(TAG, "select: no proxy service return NO_PROXY");
-            return Lists.newArrayList(java.net.Proxy.NO_PROXY);
+            return Lists.newArrayList(new java.net.Proxy[]{java.net.Proxy.NO_PROXY});
         }
         try {
             host = uri.toURL().toString();

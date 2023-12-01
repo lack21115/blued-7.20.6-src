@@ -44,7 +44,7 @@ import com.umeng.analytics.MobclickAgent;
 public class ShowPositionActivity extends BaseFragmentActivity implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    public int f31938c;
+    public int f18248c;
     PopActionSheet d;
     private String e;
     private String f;
@@ -58,6 +58,7 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
     private String n;
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(int i) {
         if (i == 1) {
             try {
@@ -90,7 +91,6 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
 
     public static void a(final Context context, final String str, final String str2, final String str3, final int i) {
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.ShowPositionActivity.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 Intent intent = new Intent(Context.this, ShowPositionActivity.class);
                 intent.putExtra("lot", str);
@@ -100,7 +100,6 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
                 Context.this.startActivity(intent);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -108,7 +107,6 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
 
     public static void a(final Context context, final String str, final String str2, final String str3, final int i, final String str4) {
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.msg.ShowPositionActivity.2
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 Intent intent = new Intent(Context.this, ShowPositionActivity.class);
                 intent.putExtra("lot", str);
@@ -119,7 +117,6 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
                 Context.this.startActivity(intent);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -134,7 +131,7 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
         this.e = intent.getStringExtra("lot");
         this.f = intent.getStringExtra("lat");
         this.g = intent.getStringExtra("address");
-        this.f31938c = intent.getIntExtra("from", 0);
+        this.f18248c = intent.getIntExtra("from", 0);
         this.n = intent.getStringExtra("uid");
         if (!StringUtils.d(this.e) && !StringUtils.d(this.f)) {
             try {
@@ -142,13 +139,14 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
             } catch (Exception e) {
             }
         }
-        if (this.f31938c == 1) {
+        if (this.f18248c == 1) {
             textView.setVisibility(4);
         } else {
             textView.setVisibility(0);
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void h() {
         PopActionSheet.MyPopupWindow e;
         synchronized (this) {
@@ -194,7 +192,6 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
                 }
                 if (this.l.size() > 0) {
                     PopActionSheet popActionSheet = new PopActionSheet(this, strArr, iArr, true, new PopActionSheet.PopSheetClickListner() { // from class: com.soft.blued.ui.msg.ShowPositionActivity.3
-                        @Override // com.blued.android.module.live_china.view.PopActionSheet.PopSheetClickListner
                         public void onClick(int i6, String str) {
                             ShowPositionActivity showPositionActivity = ShowPositionActivity.this;
                             showPositionActivity.a(((Integer) showPositionActivity.k.get(i6)).intValue());
@@ -218,6 +215,7 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
         return view.getDrawingCache(true);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(String str) {
         CustomDialog customDialog = this.m;
         if (customDialog == null || !customDialog.isShowing()) {
@@ -227,7 +225,7 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
             inflate.findViewById(2131371289).setVisibility(8);
             ((TextView) inflate.findViewById(2131371259)).setText(str);
             TextView textView = (TextView) inflate.findViewById(2131372161);
-            textView.setText(getString(2131890371));
+            textView.setText(getString(R.string.live_window_indicate_know));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.ShowPositionActivity.4
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -237,10 +235,11 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
             });
             CustomDialog customDialog2 = new CustomDialog(this, 2131952378);
             this.m = customDialog2;
-            customDialog2.a(inflate, null);
+            customDialog2.a(inflate, (CustomDialog.OnBackCallBack) null);
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void f() {
         if (this.j != null) {
             View inflate = LayoutInflater.from(this).inflate(R.layout.item_position_overlay, (ViewGroup) null);
@@ -267,7 +266,6 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         TencentMapInitializer.setAgreePrivacy(true);
@@ -285,13 +283,12 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onDestroy() {
         super.onDestroy();
         this.h.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onPause() {
         super.onPause();
         MobclickAgent.onPageEnd(ShowPositionActivity.class.getSimpleName());
@@ -299,7 +296,7 @@ public class ShowPositionActivity extends BaseFragmentActivity implements View.O
         this.h.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onResume() {
         super.onResume();
         MobclickAgent.onPageStart(ShowPositionActivity.class.getSimpleName());

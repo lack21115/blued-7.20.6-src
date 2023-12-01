@@ -57,24 +57,24 @@ public class KeyTrigger extends Key {
     static class Loader {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2176a;
+        private static SparseIntArray f2128a;
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2176a = sparseIntArray;
+            f2128a = sparseIntArray;
             sparseIntArray.append(R.styleable.KeyTrigger_framePosition, 8);
-            f2176a.append(R.styleable.KeyTrigger_onCross, 4);
-            f2176a.append(R.styleable.KeyTrigger_onNegativeCross, 1);
-            f2176a.append(R.styleable.KeyTrigger_onPositiveCross, 2);
-            f2176a.append(R.styleable.KeyTrigger_motionTarget, 7);
-            f2176a.append(R.styleable.KeyTrigger_triggerId, 6);
-            f2176a.append(R.styleable.KeyTrigger_triggerSlack, 5);
-            f2176a.append(R.styleable.KeyTrigger_motion_triggerOnCollision, 9);
-            f2176a.append(R.styleable.KeyTrigger_motion_postLayoutCollision, 10);
-            f2176a.append(R.styleable.KeyTrigger_triggerReceiver, 11);
-            f2176a.append(R.styleable.KeyTrigger_viewTransitionOnCross, 12);
-            f2176a.append(R.styleable.KeyTrigger_viewTransitionOnNegativeCross, 13);
-            f2176a.append(R.styleable.KeyTrigger_viewTransitionOnPositiveCross, 14);
+            f2128a.append(R.styleable.KeyTrigger_onCross, 4);
+            f2128a.append(R.styleable.KeyTrigger_onNegativeCross, 1);
+            f2128a.append(R.styleable.KeyTrigger_onPositiveCross, 2);
+            f2128a.append(R.styleable.KeyTrigger_motionTarget, 7);
+            f2128a.append(R.styleable.KeyTrigger_triggerId, 6);
+            f2128a.append(R.styleable.KeyTrigger_triggerSlack, 5);
+            f2128a.append(R.styleable.KeyTrigger_motion_triggerOnCollision, 9);
+            f2128a.append(R.styleable.KeyTrigger_motion_postLayoutCollision, 10);
+            f2128a.append(R.styleable.KeyTrigger_triggerReceiver, 11);
+            f2128a.append(R.styleable.KeyTrigger_viewTransitionOnCross, 12);
+            f2128a.append(R.styleable.KeyTrigger_viewTransitionOnNegativeCross, 13);
+            f2128a.append(R.styleable.KeyTrigger_viewTransitionOnPositiveCross, 14);
         }
 
         private Loader() {
@@ -89,7 +89,7 @@ public class KeyTrigger extends Key {
                     return;
                 }
                 int index = typedArray.getIndex(i2);
-                switch (f2176a.get(index)) {
+                switch (f2128a.get(index)) {
                     case 1:
                         keyTrigger.p = typedArray.getString(index);
                         break;
@@ -98,7 +98,7 @@ public class KeyTrigger extends Key {
                         break;
                     case 3:
                     default:
-                        Log.e(TypedValues.TriggerType.NAME, "unused attribute 0x" + Integer.toHexString(index) + "   " + f2176a.get(index));
+                        Log.e(TypedValues.TriggerType.NAME, "unused attribute 0x" + Integer.toHexString(index) + "   " + f2128a.get(index));
                         break;
                     case 4:
                         keyTrigger.n = typedArray.getString(index);
@@ -115,7 +115,7 @@ public class KeyTrigger extends Key {
                                 keyTrigger.b = typedArray.getResourceId(index, keyTrigger.b);
                                 break;
                             } else {
-                                keyTrigger.f2170c = typedArray.getString(index);
+                                keyTrigger.f2122c = typedArray.getString(index);
                                 break;
                             }
                         } else {
@@ -123,13 +123,13 @@ public class KeyTrigger extends Key {
                             if (keyTrigger.b != -1) {
                                 break;
                             } else {
-                                keyTrigger.f2170c = typedArray.getString(index);
+                                keyTrigger.f2122c = typedArray.getString(index);
                                 break;
                             }
                         }
                     case 8:
-                        keyTrigger.f2169a = typedArray.getInteger(index, keyTrigger.f2169a);
-                        keyTrigger.x = (keyTrigger.f2169a + 0.5f) / 100.0f;
+                        keyTrigger.f2121a = typedArray.getInteger(index, keyTrigger.f2121a);
+                        keyTrigger.x = (keyTrigger.f2121a + 0.5f) / 100.0f;
                         break;
                     case 9:
                         keyTrigger.s = typedArray.getResourceId(index, keyTrigger.s);
@@ -229,7 +229,7 @@ public class KeyTrigger extends Key {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo1365clone() {
+    public Key mo1228clone() {
         return new KeyTrigger().copy(this);
     }
 

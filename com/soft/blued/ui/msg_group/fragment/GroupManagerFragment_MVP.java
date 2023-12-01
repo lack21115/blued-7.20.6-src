@@ -8,7 +8,6 @@ import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/fragment/GroupManagerFragment_MVP.class */
 public final class GroupManagerFragment_MVP implements MvpDispatcher {
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         GroupManagerFragment groupManagerFragment = (GroupManagerFragment) mvpFragment;
         if (list == null || list.size() <= 0) {

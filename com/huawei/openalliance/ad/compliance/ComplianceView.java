@@ -57,7 +57,7 @@ public class ComplianceView extends PPSBaseDialogContentView {
     private void I() {
         if (this.f == null || this.h == null) {
             ge.V(e, "partingLine or whyThisAdClick view not init");
-        } else if (this.f23014c != null && !this.f23014c.booleanValue()) {
+        } else if (this.f9406c != null && !this.f9406c.booleanValue()) {
             ge.V(e, "not need show why this ad");
         } else {
             this.f.setVisibility(0);
@@ -112,9 +112,9 @@ public class ComplianceView extends PPSBaseDialogContentView {
     @Override // com.huawei.openalliance.ad.views.PPSBaseDialogContentView
     public void Code() {
         try {
-            ge.V(e, "adapterView mFeedbackViewPaddingLeft = %s, mFeedbackViewPaddingRight= %s", Integer.valueOf(this.f23013a), Integer.valueOf(this.b));
+            ge.V(e, "adapterView mFeedbackViewPaddingLeft = %s, mFeedbackViewPaddingRight= %s", Integer.valueOf(this.f9405a), Integer.valueOf(this.b));
             if (V()) {
-                this.V.setPadding(this.f23013a, 0, this.b, 0);
+                this.V.setPadding(this.f9405a, 0, this.b, 0);
                 this.V.requestLayout();
                 this.V.getViewTreeObserver().addOnGlobalLayoutListener(this.d);
             }

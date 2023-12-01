@@ -26,30 +26,30 @@ public class AppCompatCheckBox extends CheckBox implements EmojiCompatConfigurat
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatCheckBox> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1743a = false;
+        private boolean f1695a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1744c;
+        private int f1696c;
         private int d;
         private int e;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1744c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.f1696c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
             this.d = propertyMapper.mapObject("buttonTint", R.attr.buttonTint);
             this.e = propertyMapper.mapObject("buttonTintMode", R.attr.buttonTintMode);
-            this.f1743a = true;
+            this.f1695a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatCheckBox appCompatCheckBox, PropertyReader propertyReader) {
-            if (!this.f1743a) {
+            if (!this.f1695a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatCheckBox.getBackgroundTintList());
-            propertyReader.readObject(this.f1744c, appCompatCheckBox.getBackgroundTintMode());
+            propertyReader.readObject(this.f1696c, appCompatCheckBox.getBackgroundTintMode());
             propertyReader.readObject(this.d, appCompatCheckBox.getButtonTintList());
             propertyReader.readObject(this.e, appCompatCheckBox.getButtonTintMode());
         }

@@ -13,13 +13,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/FastIndexView.class */
 public class FastIndexView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f10984a;
+    private String a;
     private OnLetterUpdateListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Paint f10985c;
+    private Paint c;
     private int d;
     private int e;
     private float f;
@@ -41,18 +37,18 @@ public class FastIndexView extends View {
 
     public FastIndexView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10984a = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        this.a = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         this.h = -1;
         Paint paint = new Paint();
-        this.f10985c = paint;
+        this.c = paint;
         paint.setTextSize(DensityUtils.a(context, 12.0f));
-        this.f10985c.setAntiAlias(true);
+        this.c.setAntiAlias(true);
         this.d = BluedSkinUtils.a(context, R.color.syc_m);
         this.e = BluedSkinUtils.a(context, R.color.syc_w);
     }
 
     public String getIndexName() {
-        return this.f10984a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -61,19 +57,19 @@ public class FastIndexView extends View {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f10984a.length()) {
+            if (i2 >= this.a.length()) {
                 return;
             }
             int i3 = i2 + 1;
-            String substring = this.f10984a.substring(i2, i3);
-            int measureText = (int) ((this.g / 2.0f) - (this.f10985c.measureText(substring) / 2.0f));
+            String substring = this.a.substring(i2, i3);
+            int measureText = (int) ((this.g / 2.0f) - (this.c.measureText(substring) / 2.0f));
             Rect rect = new Rect();
-            this.f10985c.getTextBounds(substring, 0, substring.length(), rect);
+            this.c.getTextBounds(substring, 0, substring.length(), rect);
             int height = rect.height();
             float f = this.f;
             int i4 = (int) ((f / 2.0f) + (height / 2.0f) + (i2 * f));
-            this.f10985c.setColor(this.h == i2 ? this.e : this.d);
-            canvas.drawText(substring, measureText, i4, this.f10985c);
+            this.c.setColor(this.h == i2 ? this.e : this.d);
+            canvas.drawText(substring, measureText, i4, this.c);
             i = i3;
         }
     }
@@ -83,7 +79,7 @@ public class FastIndexView extends View {
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.g = getMeasuredWidth();
-        this.f = (getMeasuredHeight() * 1.0f) / this.f10984a.length();
+        this.f = (getMeasuredHeight() * 1.0f) / this.a.length();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x001a, code lost:
@@ -127,7 +123,7 @@ public class FastIndexView extends View {
             if (r0 < 0) goto La5
             r0 = r8
             r1 = r6
-            java.lang.String r1 = r1.f10984a
+            java.lang.String r1 = r1.a
             int r1 = r1.length()
             if (r0 >= r1) goto La5
             r0 = r8
@@ -141,7 +137,7 @@ public class FastIndexView extends View {
             if (r0 == 0) goto L5c
             r0 = r7
             r1 = r6
-            java.lang.String r1 = r1.f10984a
+            java.lang.String r1 = r1.a
             r2 = r8
             r3 = r8
             r4 = 1
@@ -170,7 +166,7 @@ public class FastIndexView extends View {
             if (r0 < 0) goto La5
             r0 = r8
             r1 = r6
-            java.lang.String r1 = r1.f10984a
+            java.lang.String r1 = r1.a
             int r1 = r1.length()
             if (r0 >= r1) goto La5
             r0 = r6
@@ -180,7 +176,7 @@ public class FastIndexView extends View {
             if (r0 == 0) goto La0
             r0 = r7
             r1 = r6
-            java.lang.String r1 = r1.f10984a
+            java.lang.String r1 = r1.a
             r2 = r8
             r3 = r8
             r4 = 1
@@ -204,7 +200,7 @@ public class FastIndexView extends View {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        this.f10984a = str;
+        this.a = str;
         invalidate();
     }
 

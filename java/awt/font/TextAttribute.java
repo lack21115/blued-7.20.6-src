@@ -1,6 +1,6 @@
 package java.awt.font;
 
-import com.sobot.chat.widget.html.SobotCustomTagHandler;
+import com.anythink.core.api.ATAdConst;
 import java.text.AttributedCharacterIterator;
 
 /* loaded from: source-2895416-dex2jar.jar:java/awt/font/TextAttribute.class */
@@ -10,7 +10,7 @@ public final class TextAttribute extends AttributedCharacterIterator.Attribute {
     public static final TextAttribute BIDI_EMBEDDING = new TextAttribute("bidi_embedding");
     public static final TextAttribute CHAR_REPLACEMENT = new TextAttribute("char_replacement");
     public static final TextAttribute FAMILY = new TextAttribute("family");
-    public static final TextAttribute FONT = new TextAttribute(SobotCustomTagHandler.HTML_FONT);
+    public static final TextAttribute FONT = new TextAttribute("font");
     public static final TextAttribute FOREGROUND = new TextAttribute("foreground");
     public static final TextAttribute INPUT_METHOD_HIGHLIGHT = new TextAttribute("input method highlight");
     public static final TextAttribute INPUT_METHOD_UNDERLINE = new TextAttribute("input method underline");
@@ -28,7 +28,7 @@ public final class TextAttribute extends AttributedCharacterIterator.Attribute {
     public static final TextAttribute RUN_DIRECTION = new TextAttribute("run_direction");
     public static final Boolean RUN_DIRECTION_LTR = false;
     public static final Boolean RUN_DIRECTION_RTL = true;
-    public static final TextAttribute SIZE = new TextAttribute("size");
+    public static final TextAttribute SIZE = new TextAttribute(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE);
     public static final TextAttribute STRIKETHROUGH = new TextAttribute("strikethrough");
     public static final Boolean STRIKETHROUGH_ON = true;
     public static final TextAttribute SUPERSCRIPT = new TextAttribute("superscript");

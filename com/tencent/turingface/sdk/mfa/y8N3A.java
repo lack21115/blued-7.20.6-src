@@ -4,11 +4,11 @@ package com.tencent.turingface.sdk.mfa;
 public final class y8N3A extends ucT3w {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40013a = "";
+    public String f26322a = "";
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40014c = "";
+    public String f26323c = "";
     public int d = 0;
     public String e = "";
     public String f = "";
@@ -17,12 +17,12 @@ public final class y8N3A extends ucT3w {
 
     @Override // com.tencent.turingface.sdk.mfa.ucT3w
     public final void a(d5HOq d5hoq) {
-        d5hoq.a(this.f40013a, 0);
+        d5hoq.a(this.f26322a, 0);
         String str = this.b;
         if (str != null) {
             d5hoq.a(str, 1);
         }
-        d5hoq.a(this.f40014c, 2);
+        d5hoq.a(this.f26323c, 2);
         d5hoq.a(this.d, 3);
         d5hoq.a(this.e, 4);
         d5hoq.a(this.f, 5);
@@ -38,9 +38,9 @@ public final class y8N3A extends ucT3w {
 
     @Override // com.tencent.turingface.sdk.mfa.ucT3w
     public final void a(nyvKz nyvkz) {
-        this.f40013a = nyvkz.b(0, true);
+        this.f26322a = nyvkz.b(0, true);
         this.b = nyvkz.b(1, false);
-        this.f40014c = nyvkz.b(2, true);
+        this.f26323c = nyvkz.b(2, true);
         this.d = nyvkz.a(this.d, 3, true);
         this.e = nyvkz.b(4, true);
         this.f = nyvkz.b(5, true);

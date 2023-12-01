@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.parsers;
 
-import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.alipay.sdk.sys.a;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -160,13 +160,13 @@ class DocumentBuilderImpl extends DocumentBuilder {
             return resolveCharacterReference(str.substring(1), 10);
         }
         if ("lt".equals(str)) {
-            return SimpleComparison.LESS_THAN_OPERATION;
+            return "<";
         }
         if ("gt".equals(str)) {
-            return SimpleComparison.GREATER_THAN_OPERATION;
+            return ">";
         }
         if ("amp".equals(str)) {
-            return "&";
+            return a.b;
         }
         if ("apos".equals(str)) {
             return "'";

@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveVipUpgradeBinding.class */
 public final class DialogLiveVipUpgradeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f11830a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11831c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -28,9 +24,9 @@ public final class DialogLiveVipUpgradeBinding implements ViewBinding {
 
     private DialogLiveVipUpgradeBinding(ConstraintLayout constraintLayout, FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, TextView textView, TextView textView2) {
         this.i = constraintLayout;
-        this.f11830a = frameLayout;
+        this.a = frameLayout;
         this.b = imageView;
-        this.f11831c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = imageView5;
@@ -95,7 +91,6 @@ public final class DialogLiveVipUpgradeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.i;

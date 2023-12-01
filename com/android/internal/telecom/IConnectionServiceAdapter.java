@@ -128,12 +128,12 @@ public interface IConnectionServiceAdapter extends IInterface {
             }
 
             @Override // com.android.internal.telecom.IConnectionServiceAdapter
-            public void onPostDialChar(String str, char c2) throws RemoteException {
+            public void onPostDialChar(String str, char c) throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     obtain.writeString(str);
-                    obtain.writeInt(c2);
+                    obtain.writeInt(c);
                     this.mRemote.transact(14, obtain, null, 1);
                 } finally {
                     obtain.recycle();
@@ -487,7 +487,7 @@ public interface IConnectionServiceAdapter extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    handleCreateConnectionComplete(parcel.readString(), parcel.readInt() != 0 ? ConnectionRequest.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? ParcelableConnection.CREATOR.createFromParcel(parcel) : null);
+                    handleCreateConnectionComplete(parcel.readString(), parcel.readInt() != 0 ? (ConnectionRequest) ConnectionRequest.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (ParcelableConnection) ParcelableConnection.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -503,7 +503,7 @@ public interface IConnectionServiceAdapter extends IInterface {
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setDisconnected(parcel.readString(), parcel.readInt() != 0 ? DisconnectCause.CREATOR.createFromParcel(parcel) : null);
+                    setDisconnected(parcel.readString(), parcel.readInt() != 0 ? (DisconnectCause) DisconnectCause.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -531,7 +531,7 @@ public interface IConnectionServiceAdapter extends IInterface {
                     return true;
                 case 11:
                     parcel.enforceInterface(DESCRIPTOR);
-                    addConferenceCall(parcel.readString(), parcel.readInt() != 0 ? ParcelableConference.CREATOR.createFromParcel(parcel) : null);
+                    addConferenceCall(parcel.readString(), parcel.readInt() != 0 ? (ParcelableConference) ParcelableConference.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 12:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -568,11 +568,11 @@ public interface IConnectionServiceAdapter extends IInterface {
                     return true;
                 case 19:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setStatusHints(parcel.readString(), parcel.readInt() != 0 ? StatusHints.CREATOR.createFromParcel(parcel) : null);
+                    setStatusHints(parcel.readString(), parcel.readInt() != 0 ? (StatusHints) StatusHints.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 20:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setAddress(parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
+                    setAddress(parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt());
                     return true;
                 case 21:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -584,7 +584,7 @@ public interface IConnectionServiceAdapter extends IInterface {
                     return true;
                 case 23:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setPhoneAccountHandle(parcel.readString(), parcel.readInt() != 0 ? PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
+                    setPhoneAccountHandle(parcel.readString(), parcel.readInt() != 0 ? (PhoneAccountHandle) PhoneAccountHandle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 24:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -592,13 +592,13 @@ public interface IConnectionServiceAdapter extends IInterface {
                     return true;
                 case 25:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setExtras(parcel.readString(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    setExtras(parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 26:
                     parcel.enforceInterface(DESCRIPTOR);
-                    addExistingConnection(parcel.readString(), parcel.readInt() != 0 ? ParcelableConnection.CREATOR.createFromParcel(parcel) : null);
+                    addExistingConnection(parcel.readString(), parcel.readInt() != 0 ? (ParcelableConnection) ParcelableConnection.CREATOR.createFromParcel(parcel) : null);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:
@@ -613,7 +613,7 @@ public interface IConnectionServiceAdapter extends IInterface {
 
     void handleCreateConnectionComplete(String str, ConnectionRequest connectionRequest, ParcelableConnection parcelableConnection) throws RemoteException;
 
-    void onPostDialChar(String str, char c2) throws RemoteException;
+    void onPostDialChar(String str, char c) throws RemoteException;
 
     void onPostDialWait(String str, String str2) throws RemoteException;
 

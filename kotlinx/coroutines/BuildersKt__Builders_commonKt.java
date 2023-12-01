@@ -26,13 +26,13 @@ public final /* synthetic */ class BuildersKt__Builders_commonKt {
         if (plus == context) {
             ScopeCoroutine scopeCoroutine = new ScopeCoroutine(plus, continuation);
             f = UndispatchedKt.a(scopeCoroutine, scopeCoroutine, (Function2<? super ScopeCoroutine, ? super Continuation<? super T>, ? extends Object>) function2);
-        } else if (Intrinsics.a(plus.get(ContinuationInterceptor.f42453a), context.get(ContinuationInterceptor.f42453a))) {
+        } else if (Intrinsics.a(plus.get(ContinuationInterceptor.a), context.get(ContinuationInterceptor.a))) {
             UndispatchedCoroutine undispatchedCoroutine = new UndispatchedCoroutine(plus, continuation);
-            Object a2 = ThreadContextKt.a(plus, null);
+            Object a = ThreadContextKt.a(plus, null);
             try {
                 f = UndispatchedKt.a((ScopeCoroutine) undispatchedCoroutine, undispatchedCoroutine, (Function2<? super UndispatchedCoroutine, ? super Continuation<? super T>, ? extends Object>) function2);
             } finally {
-                ThreadContextKt.b(plus, a2);
+                ThreadContextKt.b(plus, a);
             }
         } else {
             DispatchedCoroutine dispatchedCoroutine = new DispatchedCoroutine(plus, continuation);
@@ -46,15 +46,15 @@ public final /* synthetic */ class BuildersKt__Builders_commonKt {
     }
 
     public static final Job a(CoroutineScope coroutineScope, CoroutineContext coroutineContext, CoroutineStart coroutineStart, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2) {
-        CoroutineContext a2 = CoroutineContextKt.a(coroutineScope, coroutineContext);
-        LazyStandaloneCoroutine lazyStandaloneCoroutine = coroutineStart.a() ? new LazyStandaloneCoroutine(a2, function2) : new StandaloneCoroutine(a2, true);
+        CoroutineContext a = CoroutineContextKt.a(coroutineScope, coroutineContext);
+        LazyStandaloneCoroutine lazyStandaloneCoroutine = coroutineStart.a() ? new LazyStandaloneCoroutine(a, function2) : new StandaloneCoroutine(a, true);
         lazyStandaloneCoroutine.a(coroutineStart, (CoroutineStart) lazyStandaloneCoroutine, (Function2<? super CoroutineStart, ? super Continuation<? super T>, ? extends Object>) function2);
         return lazyStandaloneCoroutine;
     }
 
     public static /* synthetic */ Job a(CoroutineScope coroutineScope, CoroutineContext coroutineContext, CoroutineStart coroutineStart, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {
-            coroutineContext = EmptyCoroutineContext.f42457a;
+            coroutineContext = EmptyCoroutineContext.a;
         }
         if ((i & 2) != 0) {
             coroutineStart = CoroutineStart.DEFAULT;
@@ -63,15 +63,15 @@ public final /* synthetic */ class BuildersKt__Builders_commonKt {
     }
 
     public static final <T> Deferred<T> b(CoroutineScope coroutineScope, CoroutineContext coroutineContext, CoroutineStart coroutineStart, Function2<? super CoroutineScope, ? super Continuation<? super T>, ? extends Object> function2) {
-        CoroutineContext a2 = CoroutineContextKt.a(coroutineScope, coroutineContext);
-        LazyDeferredCoroutine lazyDeferredCoroutine = coroutineStart.a() ? new LazyDeferredCoroutine(a2, function2) : new DeferredCoroutine(a2, true);
+        CoroutineContext a = CoroutineContextKt.a(coroutineScope, coroutineContext);
+        LazyDeferredCoroutine lazyDeferredCoroutine = coroutineStart.a() ? new LazyDeferredCoroutine(a, function2) : new DeferredCoroutine(a, true);
         lazyDeferredCoroutine.a(coroutineStart, (CoroutineStart) lazyDeferredCoroutine, (Function2<? super CoroutineStart, ? super Continuation<? super T>, ? extends Object>) function2);
         return lazyDeferredCoroutine;
     }
 
     public static /* synthetic */ Deferred b(CoroutineScope coroutineScope, CoroutineContext coroutineContext, CoroutineStart coroutineStart, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {
-            coroutineContext = EmptyCoroutineContext.f42457a;
+            coroutineContext = EmptyCoroutineContext.a;
         }
         if ((i & 2) != 0) {
             coroutineStart = CoroutineStart.DEFAULT;

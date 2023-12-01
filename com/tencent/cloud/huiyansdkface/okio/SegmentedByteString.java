@@ -273,7 +273,7 @@ public final class SegmentedByteString extends ByteString {
             int[] iArr2 = this.directory;
             int i4 = iArr2[length + i];
             int i5 = iArr2[i];
-            System.arraycopy((Object) this.segments[i], i4, (Object) bArr2, i3, i5 - i3);
+            System.arraycopy(this.segments[i], i4, bArr2, i3, i5 - i3);
             i++;
             i2 = i5;
         }

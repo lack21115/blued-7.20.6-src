@@ -3,6 +3,7 @@ package com.tencent.liteav.txcvodplayer.b;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.liteav.base.util.LiteavLog;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,11 +17,11 @@ import org.json.JSONObject;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected e f36533a;
+    protected e f22842a;
     protected f b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f36534c;
+    public boolean f22843c;
     private Thread h;
     private final String d = "http://playvideo.qcloud.com/getplayinfo/v2";
     private final String e = "https://playvideo.qcloud.com/getplayinfo/v2";
@@ -29,15 +30,15 @@ public final class d {
     private Handler i = new Handler(Looper.getMainLooper()) { // from class: com.tencent.liteav.txcvodplayer.b.d.1
         @Override // android.os.Handler
         public final void handleMessage(Message message) {
-            if (d.this.f36533a == null) {
+            if (d.this.f22842a == null) {
                 return;
             }
             int i = message.what;
             if (i == 0) {
-                d.this.f36533a.a(d.this);
+                d.this.f22842a.a(d.this);
             } else if (i != 1) {
             } else {
-                d.this.f36533a.a(d.this, (String) message.obj, message.arg1);
+                d.this.f22842a.a(d.this, (String) message.obj, message.arg1);
             }
         }
     };
@@ -76,7 +77,7 @@ public final class d {
                 try {
                     try {
                         Looper.prepare();
-                        String format = d.this.f36534c ? String.format("%s/%d/%s", "https://playvideo.qcloud.com/getplayinfo/v2", Integer.valueOf(i), str) : String.format("%s/%d/%s", "http://playvideo.qcloud.com/getplayinfo/v2", Integer.valueOf(i), str);
+                        String format = d.this.f22843c ? String.format("%s/%d/%s", "https://playvideo.qcloud.com/getplayinfo/v2", Integer.valueOf(i), str) : String.format("%s/%d/%s", "http://playvideo.qcloud.com/getplayinfo/v2", Integer.valueOf(i), str);
                         String str5 = str2;
                         String str6 = str3;
                         int i3 = i2;
@@ -85,25 +86,25 @@ public final class d {
                         if (str5 != null) {
                             StringBuilder sb2 = new StringBuilder("t=");
                             sb2.append(str5);
-                            sb2.append("&");
+                            sb2.append(ContainerUtils.FIELD_DELIMITER);
                             sb.append(sb2.toString());
                         }
                         if (str6 != null) {
                             StringBuilder sb3 = new StringBuilder("us=");
                             sb3.append(str6);
-                            sb3.append("&");
+                            sb3.append(ContainerUtils.FIELD_DELIMITER);
                             sb.append(sb3.toString());
                         }
                         if (str7 != null) {
                             StringBuilder sb4 = new StringBuilder("sign=");
                             sb4.append(str7);
-                            sb4.append("&");
+                            sb4.append(ContainerUtils.FIELD_DELIMITER);
                             sb.append(sb4.toString());
                         }
                         if (i3 >= 0) {
                             StringBuilder sb5 = new StringBuilder("exper=");
                             sb5.append(i3);
-                            sb5.append("&");
+                            sb5.append(ContainerUtils.FIELD_DELIMITER);
                             sb.append(sb5.toString());
                         }
                         if (sb.length() > 1) {
@@ -205,7 +206,7 @@ public final class d {
     }
 
     public final void a(e eVar) {
-        this.f36533a = eVar;
+        this.f22842a = eVar;
     }
 
     protected final void a(String str, int i) {

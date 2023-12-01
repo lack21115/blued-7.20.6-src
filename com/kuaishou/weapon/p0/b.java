@@ -12,11 +12,11 @@ import javax.crypto.spec.SecretKeySpec;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23739a = "AES/CBC/NoPadding";
+    public static final String f10131a = "AES/CBC/NoPadding";
     public static final int b = 16;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23740c = "a3NyaXNrY3RsYnVzaW5zc3Z4cHprd3NwYWlvcXBrc3M=";
+    public static final String f10132c = "a3NyaXNrY3RsYnVzaW5zc3Z4cHprd3NwYWlvcXBrc3M=";
     private static final String d = "AES/CBC/PKCS5Padding";
     private static final String e = "AES";
     private static final String f = "AES/CBC/PKCS7Padding";
@@ -46,7 +46,7 @@ public final class b {
             byte[] bArr4 = bArr2;
             if (z) {
                 bArr4 = new byte[bArr2.length - 16];
-                System.arraycopy((Object) bArr2, 0, (Object) bArr4, 0, bArr2.length - 16);
+                System.arraycopy(bArr2, 0, bArr4, 0, bArr2.length - 16);
             }
             return cipher.doFinal(bArr4);
         } catch (Throwable th) {

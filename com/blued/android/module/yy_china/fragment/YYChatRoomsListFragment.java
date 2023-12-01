@@ -1,8 +1,10 @@
 package com.blued.android.module.yy_china.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,6 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -63,7 +66,6 @@ import com.blued.android.module.yy_china.view.YYNewUserGiftDialog;
 import com.blued.android.module.yy_china.view.ban.BGABanner;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.RoundedCornerTreatment;
 import com.google.android.material.shape.ShapeAppearanceModel;
@@ -88,9 +90,7 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChatRoomsListFragment.class */
 public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsListViewModel> implements View.OnClickListener, OnCLickRoomItemToGoRoomListener, OnClickHintFragmentLister, BGABanner.Adapter<View, Object> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f17121c;
+    private final ViewBindingProperty c;
     private final String d;
     private GuideHandler e;
     private YYRoomExtraModel f;
@@ -104,9 +104,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
     private YYRoomPagerAdapter n;
     private boolean o;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(YYChatRoomsListFragment.class, "vb", "getVb()Lcom/blued/android/module/yy_china/databinding/FragmentYyChatRoomListBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17120a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static String p = "";
 
     @Metadata
@@ -154,7 +152,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
             Bundle bundle = new Bundle();
             bundle.putString("from_source", fromSource);
             bundle.putString("type_id", typeId);
-            bundle.putString(TTLiveConstants.ROOMID_KEY, room_id);
+            bundle.putString("room_id", room_id);
             TerminalActivity.a(bundle);
             TerminalActivity.d(context, YYHomeRoomsFragment.class, bundle);
         }
@@ -169,43 +167,41 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChatRoomsListFragment$GuideHandler.class */
     public static final class GuideHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<YYChatRoomsListFragment> f17122a;
+        private final WeakReference<YYChatRoomsListFragment> a;
 
         public GuideHandler(YYChatRoomsListFragment yYChatRoomsListFragment) {
-            this.f17122a = new WeakReference<>(yYChatRoomsListFragment);
+            this.a = new WeakReference<>(yYChatRoomsListFragment);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message msg) {
             ActivityFragmentActive fragmentActive;
             YYChatRoomsListFragment yYChatRoomsListFragment;
-            YYChatRoomsListViewModel a2;
+            YYChatRoomsListViewModel a;
             FragmentYyChatRoomListBinding v;
             Intrinsics.e(msg, "msg");
             super.handleMessage(msg);
-            if (this.f17122a.get() == null) {
+            if (this.a.get() == null) {
                 removeMessages(msg.what);
                 return;
             }
             int i = msg.what;
             if (i == 1) {
                 removeMessages(1);
-                YYChatRoomsListFragment yYChatRoomsListFragment2 = this.f17122a.get();
-                if (yYChatRoomsListFragment2 == null || (fragmentActive = yYChatRoomsListFragment2.getFragmentActive()) == null || (yYChatRoomsListFragment = this.f17122a.get()) == null || (a2 = yYChatRoomsListFragment.a()) == null) {
+                YYChatRoomsListFragment yYChatRoomsListFragment2 = this.a.get();
+                if (yYChatRoomsListFragment2 == null || (fragmentActive = yYChatRoomsListFragment2.getFragmentActive()) == null || (yYChatRoomsListFragment = this.a.get()) == null || (a = yYChatRoomsListFragment.a()) == null) {
                     return;
                 }
-                a2.c(fragmentActive);
+                a.c(fragmentActive);
             } else if (i == 2) {
-                YYChatRoomsListFragment yYChatRoomsListFragment3 = this.f17122a.get();
+                YYChatRoomsListFragment yYChatRoomsListFragment3 = this.a.get();
                 if (yYChatRoomsListFragment3 == null) {
                     return;
                 }
                 yYChatRoomsListFragment3.s();
             } else if (i != 3) {
             } else {
-                YYChatRoomsListFragment yYChatRoomsListFragment4 = this.f17122a.get();
+                YYChatRoomsListFragment yYChatRoomsListFragment4 = this.a.get();
                 FrameLayout frameLayout = null;
                 if (yYChatRoomsListFragment4 != null && (v = yYChatRoomsListFragment4.v()) != null) {
                     frameLayout = v.d;
@@ -220,7 +216,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
 
     public YYChatRoomsListFragment() {
         super(R.layout.fragment_yy_chat_room_list);
-        this.f17121c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<YYChatRoomsListFragment, FragmentYyChatRoomListBinding>() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<YYChatRoomsListFragment, FragmentYyChatRoomListBinding>() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentYyChatRoomListBinding invoke(YYChatRoomsListFragment fragment) {
@@ -352,7 +348,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
 
     private final void a(String str, int i) {
         Intrinsics.a((Object) str);
-        YYCreateRoomFragment.f17181a.a(this, str, this.i, i);
+        YYCreateRoomFragment.a.a(this, str, this.i, i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -364,12 +360,12 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         }
         List<String> list = banner.click_url;
         if (list != null) {
-            IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+            IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
             Object[] array = list.toArray(new String[0]);
             if (array == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
-            c2.a((String[]) array);
+            c.a((String[]) array);
         }
         EventTrackYY.b(ChatRoomProtos.Event.CHAT_ROOM_BANNER_CLICK, banner.ads_id);
         YYRoomInfoManager.e().c().a(this$0.getContext(), str, 9);
@@ -385,7 +381,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
             ToastUtils.b("房间名不能为空");
         } else {
             EventTrackYY.f(ChatRoomProtos.Event.CHAT_ROOM_CREATE_CONFIRM_CLICK, str, str2, str4, j().e());
-            FragmentActivity activity = getActivity();
+            Activity activity = getActivity();
             if (activity == null) {
                 return;
             }
@@ -428,18 +424,15 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
             FragmentYyChatRoomListBinding v2 = v();
             if (v2 != null && (viewPager2 = v2.i) != null) {
                 viewPager2.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment$initRoomPager$1
-                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     public void onPageScrollStateChanged(int i2) {
                     }
 
-                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     public void onPageScrolled(int i2, float f, int i3) {
                     }
 
                     /* JADX WARN: Code restructure failed: missing block: B:59:0x0129, code lost:
                         r0 = r5.e;
                      */
-                    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -457,9 +450,8 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
             if (v3 != null && (yYHomeTabView = v3.k) != null) {
                 yYHomeTabView.a(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment$initRoomPager$2
                     /* JADX WARN: Code restructure failed: missing block: B:6:0x0021, code lost:
-                        r0 = r5.f17126a.e;
+                        r0 = r5.a.e;
                      */
-                    @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
                     /*
                         Code decompiled incorrectly, please refer to instructions dump.
                         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -502,7 +494,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
                 });
             }
         } else {
-            Observable<Object> observable = LiveEventBus.get("refresh_or_loadmore");
+            Observable observable = LiveEventBus.get("refresh_or_loadmore");
             FragmentYyChatRoomListBinding v4 = v();
             if (v4 != null && (viewPager = v4.i) != null) {
                 int currentItem = viewPager.getCurrentItem();
@@ -551,7 +543,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
 
     private final void b(YYLiveState yYLiveState) {
         this.h = yYLiveState;
-        YYCodeOfConductKoDialogFragment.Companion companion = YYCodeOfConductKoDialogFragment.f17160a;
+        YYCodeOfConductKoDialogFragment.Companion companion = YYCodeOfConductKoDialogFragment.a;
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager).a(this);
@@ -694,7 +686,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
             goto L6c
         L67:
             r0 = r5
-            com.scwang.smartrefresh.layout.SmartRefreshLayout r0 = r0.j()
+            com.scwang.smartrefresh.layout.SmartRefreshLayout r0 = r0.g()
         L6c:
             r0 = r3
             com.blued.android.module.yy_china.databinding.FragmentYyChatRoomListBinding r0 = r0.v()
@@ -712,7 +704,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         L80:
             r0 = r5
             r1 = 0
-            com.scwang.smartrefresh.layout.SmartRefreshLayout r0 = r0.l(r1)
+            com.scwang.smartrefresh.layout.SmartRefreshLayout r0 = r0.b(r1)
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment.c(boolean):void");
@@ -758,7 +750,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentYyChatRoomListBinding v() {
-        return (FragmentYyChatRoomListBinding) this.f17121c.b(this, b[0]);
+        return (FragmentYyChatRoomListBinding) this.c.b(this, b[0]);
     }
 
     private final void w() {
@@ -810,7 +802,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         SmartRefreshLayout smartRefreshLayout2;
         FragmentYyChatRoomListBinding v = v();
         if (v != null && (smartRefreshLayout2 = v.g) != null) {
-            smartRefreshLayout2.j();
+            smartRefreshLayout2.g();
         }
         FragmentYyChatRoomListBinding v2 = v();
         if (v2 == null || (smartRefreshLayout = v2.g) == null) {
@@ -834,12 +826,12 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         }
         ImageLoader.a(getFragmentActive(), yYBannerModel.ads_pics).b(R.drawable.defaultpicture).a(imageView);
         if (!yYBannerModel.isShowUrlVisited && list != null) {
-            IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+            IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
             Object[] array = list.toArray(new String[0]);
             if (array == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
             }
-            c2.a((String[]) array);
+            c.a((String[]) array);
             yYBannerModel.isShowUrlVisited = true;
             EventTrackYY.b(ChatRoomProtos.Event.CHAT_ROOM_BANNER_SHOW, yYBannerModel.ads_id);
         }
@@ -877,15 +869,13 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         shapeTextView.setOnClickListener(yYChatRoomsListFragment);
         v.l.setOnClickListener(yYChatRoomsListFragment);
         v.n.setOnClickListener(yYChatRoomsListFragment);
-        v.g.l(false);
+        v.g.b(false);
         v.e.setOnClickListener(yYChatRoomsListFragment);
         v.g.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment$initView$1$1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 String str;
                 YYChatRoomsListViewModel j;
@@ -904,15 +894,13 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void k() {
         EventTrackYY.e(ChatRoomProtos.Event.CHAT_ROOM_ENTER_CLICK, "", "", "", j().e());
-        YYChatRoomsListFragment yYChatRoomsListFragment = this;
-        LiveEventBus.get("refresh_or_loadmore_finish", String.class).observe(yYChatRoomsListFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChatRoomsListFragment$Vb6YY2KdhvTRmOA76VfZiKG8JL0
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("refresh_or_loadmore_finish", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChatRoomsListFragment$Vb6YY2KdhvTRmOA76VfZiKG8JL0
             public final void onChanged(Object obj) {
                 YYChatRoomsListFragment.a(YYChatRoomsListFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("create_entertainment_room", String.class).observe(yYChatRoomsListFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChatRoomsListFragment$F9JjtsJVpDvojltuDthnZ-hVlRQ
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("create_entertainment_room", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYChatRoomsListFragment$F9JjtsJVpDvojltuDthnZ-hVlRQ
             public final void onChanged(Object obj) {
                 YYChatRoomsListFragment.b(YYChatRoomsListFragment.this, (String) obj);
             }
@@ -921,24 +909,23 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        YYChatRoomsListFragment yYChatRoomsListFragment = this;
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().l(), new YYChatRoomsListFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().g(), new YYChatRoomsListFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().f(), new YYChatRoomsListFragment$liveDataObserver$3(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().h(), new YYChatRoomsListFragment$liveDataObserver$4(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().k(), new YYChatRoomsListFragment$liveDataObserver$5(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().o(), new YYChatRoomsListFragment$liveDataObserver$6(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().m(), new YYChatRoomsListFragment$liveDataObserver$7(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().p(), new YYChatRoomsListFragment$liveDataObserver$8(this));
-        LifecycleExtKt.a(yYChatRoomsListFragment, j().n(), new YYChatRoomsListFragment$liveDataObserver$9(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, j().l(), new YYChatRoomsListFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().g(), new YYChatRoomsListFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, j().f(), new YYChatRoomsListFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, j().h(), new YYChatRoomsListFragment$liveDataObserver$4(this));
+        LifecycleExtKt.a(lifecycleOwner, j().k(), new YYChatRoomsListFragment$liveDataObserver$5(this));
+        LifecycleExtKt.a(lifecycleOwner, j().o(), new YYChatRoomsListFragment$liveDataObserver$6(this));
+        LifecycleExtKt.a(lifecycleOwner, j().m(), new YYChatRoomsListFragment$liveDataObserver$7(this));
+        LifecycleExtKt.a(lifecycleOwner, j().p(), new YYChatRoomsListFragment$liveDataObserver$8(this));
+        LifecycleExtKt.a(lifecycleOwner, j().n(), new YYChatRoomsListFragment$liveDataObserver$9(this));
         GuideHandler guideHandler = this.e;
         if (guideHandler != null) {
             guideHandler.sendEmptyMessageDelayed(1, 10000L);
         }
-        YYNewUserGiftDialog.f18336a.a(this);
+        YYNewUserGiftDialog.a.a(this);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == 0) {
@@ -1023,7 +1010,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         YYRoomPagerAdapter yYRoomPagerAdapter = this.n;
@@ -1040,7 +1027,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         p = "";
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         SmartRefreshLayout smartRefreshLayout;
         super.onResume();
@@ -1079,7 +1066,6 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         builder.setAllCornerSizes(a(R.dimen.dp_7));
         final float a2 = a(R.dimen.dp_7);
         builder.setTopEdge(new TriangleEdgeTreatment(a2) { // from class: com.blued.android.module.yy_china.fragment.YYChatRoomsListFragment$addMyGuide$shapeAppearanceModel3$1$1
-            @Override // com.google.android.material.shape.TriangleEdgeTreatment, com.google.android.material.shape.EdgeTreatment
             public void getEdgePath(float f, float f2, float f3, ShapePath shapePath) {
                 int a3;
                 Intrinsics.e(shapePath, "shapePath");
@@ -1089,7 +1075,7 @@ public final class YYChatRoomsListFragment extends MVVMBaseFragment<YYChatRoomsL
         });
         ShapeAppearanceModel build = builder.build();
         Intrinsics.c(build, "builder().apply {\n      …     })\n        }.build()");
-        MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable(build);
+        Drawable materialShapeDrawable = new MaterialShapeDrawable(build);
         materialShapeDrawable.setTint(ContextCompat.getColor(requireContext(), R.color.syc_474D55));
         materialShapeDrawable.setPaintStyle(Paint.Style.FILL);
         TextView textView = new TextView(getContext());

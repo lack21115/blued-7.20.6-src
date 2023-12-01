@@ -38,6 +38,7 @@ import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.CustomTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.google.android.material.imageview.ShapeableImageView;
 import java.util.ArrayList;
@@ -48,13 +49,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYShareAchievementDialog.class */
 public final class YYShareAchievementDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17453a = "";
+    private String a = "";
     private DialogShareAchievementBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private AchievementAdapter f17454c;
+    private AchievementAdapter c;
     private YYThemeEventEndInfo d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -72,8 +69,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
         if (yYEventsThemeModel == null) {
             return;
         }
-        ImageLoader.a(a(), yYEventsThemeModel.getActivity_detail_bg()).a(new CustomTarget<Drawable>() { // from class: com.blued.android.module.yy_china.fragment.YYShareAchievementDialog$initResource$1
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(a(), yYEventsThemeModel.getActivity_detail_bg()).a((Target) new CustomTarget<Drawable>() { // from class: com.blued.android.module.yy_china.fragment.YYShareAchievementDialog$initResource$1
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 DialogShareAchievementBinding dialogShareAchievementBinding;
@@ -89,50 +85,49 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                 }
             }
 
-            @Override // com.bumptech.glide.request.target.Target
             public void onLoadCleared(Drawable drawable) {
             }
         });
-        ImageWrapper a2 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_first());
+        ImageWrapper a = ImageLoader.a(a(), yYEventsThemeModel.getWinner_first());
         DialogShareAchievementBinding dialogShareAchievementBinding = this.b;
         DialogShareAchievementBinding dialogShareAchievementBinding2 = dialogShareAchievementBinding;
         if (dialogShareAchievementBinding == null) {
             Intrinsics.c("mBinding");
             dialogShareAchievementBinding2 = null;
         }
-        a2.a(dialogShareAchievementBinding2.e);
-        ImageWrapper a3 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_second());
+        a.a(dialogShareAchievementBinding2.e);
+        ImageWrapper a2 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_second());
         DialogShareAchievementBinding dialogShareAchievementBinding3 = this.b;
         DialogShareAchievementBinding dialogShareAchievementBinding4 = dialogShareAchievementBinding3;
         if (dialogShareAchievementBinding3 == null) {
             Intrinsics.c("mBinding");
             dialogShareAchievementBinding4 = null;
         }
-        a3.a(dialogShareAchievementBinding4.f);
-        ImageWrapper a4 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_third());
+        a2.a(dialogShareAchievementBinding4.f);
+        ImageWrapper a3 = ImageLoader.a(a(), yYEventsThemeModel.getWinner_third());
         DialogShareAchievementBinding dialogShareAchievementBinding5 = this.b;
         DialogShareAchievementBinding dialogShareAchievementBinding6 = dialogShareAchievementBinding5;
         if (dialogShareAchievementBinding5 == null) {
             Intrinsics.c("mBinding");
             dialogShareAchievementBinding6 = null;
         }
-        a4.a(dialogShareAchievementBinding6.g);
-        ImageWrapper a5 = ImageLoader.a(a(), yYEventsThemeModel.getThanks_giving_icon());
+        a3.a(dialogShareAchievementBinding6.g);
+        ImageWrapper a4 = ImageLoader.a(a(), yYEventsThemeModel.getThanks_giving_icon());
         DialogShareAchievementBinding dialogShareAchievementBinding7 = this.b;
         DialogShareAchievementBinding dialogShareAchievementBinding8 = dialogShareAchievementBinding7;
         if (dialogShareAchievementBinding7 == null) {
             Intrinsics.c("mBinding");
             dialogShareAchievementBinding8 = null;
         }
-        a5.a(dialogShareAchievementBinding8.i);
-        ImageWrapper a6 = ImageLoader.a(a(), yYEventsThemeModel.getActivity_end_icon());
+        a4.a(dialogShareAchievementBinding8.i);
+        ImageWrapper a5 = ImageLoader.a(a(), yYEventsThemeModel.getActivity_end_icon());
         DialogShareAchievementBinding dialogShareAchievementBinding9 = this.b;
         DialogShareAchievementBinding dialogShareAchievementBinding10 = dialogShareAchievementBinding9;
         if (dialogShareAchievementBinding9 == null) {
             Intrinsics.c("mBinding");
             dialogShareAchievementBinding10 = null;
         }
-        a6.a(dialogShareAchievementBinding10.d);
+        a5.a(dialogShareAchievementBinding10.d);
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setCornerRadius(DensityUtils.a(getContext(), 22.0f));
         gradientDrawable.setColor(Color.parseColor(yYEventsThemeModel.getButton_color()));
@@ -162,7 +157,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
         if (!TextUtils.isEmpty(yYThemeEventEndInfo.getValue())) {
             arrayList.add(new YYShareAchievementModel("庆典值", yYThemeEventEndInfo.getValue(), yYThemeEventEndInfo.getValue_desc(), true));
         }
-        AchievementAdapter achievementAdapter = this.f17454c;
+        AchievementAdapter achievementAdapter = this.c;
         AchievementAdapter achievementAdapter2 = achievementAdapter;
         if (achievementAdapter == null) {
             Intrinsics.c("mAdapter");
@@ -221,7 +216,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                 }
                 ShapeableImageView shapeableImageView = dialogShareAchievementBinding7.j;
                 Intrinsics.c(shapeableImageView, "mBinding.imgUser1");
-                ShapeableImageView shapeableImageView2 = shapeableImageView;
+                ImageView imageView = (ImageView) shapeableImageView;
                 DialogShareAchievementBinding dialogShareAchievementBinding8 = this.b;
                 DialogShareAchievementBinding dialogShareAchievementBinding9 = dialogShareAchievementBinding8;
                 if (dialogShareAchievementBinding8 == null) {
@@ -230,7 +225,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                 }
                 TextView textView2 = dialogShareAchievementBinding9.s;
                 Intrinsics.c(textView2, "mBinding.tvFirstUnit");
-                a(yYThemeRankList, textView, shapeableImageView2, textView2);
+                a(yYThemeRankList, textView, imageView, textView2);
             } else if (i2 == 1) {
                 DialogShareAchievementBinding dialogShareAchievementBinding10 = this.b;
                 DialogShareAchievementBinding dialogShareAchievementBinding11 = dialogShareAchievementBinding10;
@@ -246,9 +241,9 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                     Intrinsics.c("mBinding");
                     dialogShareAchievementBinding13 = null;
                 }
-                ShapeableImageView shapeableImageView3 = dialogShareAchievementBinding13.k;
-                Intrinsics.c(shapeableImageView3, "mBinding.imgUser2");
-                ShapeableImageView shapeableImageView4 = shapeableImageView3;
+                ShapeableImageView shapeableImageView2 = dialogShareAchievementBinding13.k;
+                Intrinsics.c(shapeableImageView2, "mBinding.imgUser2");
+                ImageView imageView2 = (ImageView) shapeableImageView2;
                 DialogShareAchievementBinding dialogShareAchievementBinding14 = this.b;
                 DialogShareAchievementBinding dialogShareAchievementBinding15 = dialogShareAchievementBinding14;
                 if (dialogShareAchievementBinding14 == null) {
@@ -257,7 +252,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                 }
                 TextView textView4 = dialogShareAchievementBinding15.v;
                 Intrinsics.c(textView4, "mBinding.tvSecondUnit");
-                a(yYThemeRankList, textView3, shapeableImageView4, textView4);
+                a(yYThemeRankList, textView3, imageView2, textView4);
             } else if (i2 == 2) {
                 DialogShareAchievementBinding dialogShareAchievementBinding16 = this.b;
                 DialogShareAchievementBinding dialogShareAchievementBinding17 = dialogShareAchievementBinding16;
@@ -273,9 +268,9 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                     Intrinsics.c("mBinding");
                     dialogShareAchievementBinding19 = null;
                 }
-                ShapeableImageView shapeableImageView5 = dialogShareAchievementBinding19.l;
-                Intrinsics.c(shapeableImageView5, "mBinding.imgUser3");
-                ShapeableImageView shapeableImageView6 = shapeableImageView5;
+                ShapeableImageView shapeableImageView3 = dialogShareAchievementBinding19.l;
+                Intrinsics.c(shapeableImageView3, "mBinding.imgUser3");
+                ImageView imageView3 = (ImageView) shapeableImageView3;
                 DialogShareAchievementBinding dialogShareAchievementBinding20 = this.b;
                 DialogShareAchievementBinding dialogShareAchievementBinding21 = dialogShareAchievementBinding20;
                 if (dialogShareAchievementBinding20 == null) {
@@ -284,7 +279,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                 }
                 TextView textView6 = dialogShareAchievementBinding21.x;
                 Intrinsics.c(textView6, "mBinding.tvThirdUnit");
-                a(yYThemeRankList, textView5, shapeableImageView6, textView6);
+                a(yYThemeRankList, textView5, imageView3, textView6);
             }
             i = i2 + 1;
         }
@@ -300,7 +295,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
             Intrinsics.c("mBinding");
             dialogShareAchievementBinding2 = null;
         }
-        if (!dialogShareAchievementBinding2.f16413a.isChecked()) {
+        if (!dialogShareAchievementBinding2.a.isChecked()) {
             this$0.dismissAllowingStateLoss();
             return;
         }
@@ -323,21 +318,21 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
                 Intrinsics.c("mBinding");
                 dialogShareAchievementBinding2 = null;
             }
-            ViewGroup.LayoutParams layoutParams = dialogShareAchievementBinding2.i.getLayoutParams();
+            ConstraintLayout.LayoutParams layoutParams = dialogShareAchievementBinding2.i.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
             }
-            ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+            ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
             DialogShareAchievementBinding dialogShareAchievementBinding3 = this.b;
             if (dialogShareAchievementBinding3 == null) {
                 Intrinsics.c("mBinding");
                 dialogShareAchievementBinding3 = null;
             }
-            ViewGroup.LayoutParams layoutParams3 = dialogShareAchievementBinding3.n.getLayoutParams();
+            ConstraintLayout.LayoutParams layoutParams3 = dialogShareAchievementBinding3.n.getLayoutParams();
             if (layoutParams3 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
             }
-            ConstraintLayout.LayoutParams layoutParams4 = (ConstraintLayout.LayoutParams) layoutParams3;
+            ConstraintLayout.LayoutParams layoutParams4 = layoutParams3;
             if (valueOf.floatValue() < 3.0d) {
                 layoutParams2.topMargin = DensityUtils.a(getContext(), 81.0f);
                 layoutParams4.topMargin = DensityUtils.a(getContext(), 84.0f);
@@ -349,9 +344,9 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
     }
 
     private final void g() {
-        String str = this.f17453a;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.Z(str, new BluedUIHttpResponse<BluedEntityA<YYThemeEventEndInfo>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYShareAchievementDialog$loadThemeEventInfo$1
+        String str = this.a;
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.Z(str, new BluedUIHttpResponse<BluedEntityA<YYThemeEventEndInfo>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYShareAchievementDialog$loadThemeEventInfo$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -399,7 +394,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
     }
 
     private final void h() {
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
         DialogShareAchievementBinding dialogShareAchievementBinding = this.b;
         DialogShareAchievementBinding dialogShareAchievementBinding2 = dialogShareAchievementBinding;
         if (dialogShareAchievementBinding == null) {
@@ -407,7 +402,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
             dialogShareAchievementBinding2 = null;
         }
         dialogShareAchievementBinding2.q.setLayoutManager(gridLayoutManager);
-        this.f17454c = new AchievementAdapter();
+        this.c = new AchievementAdapter();
         DialogShareAchievementBinding dialogShareAchievementBinding3 = this.b;
         DialogShareAchievementBinding dialogShareAchievementBinding4 = dialogShareAchievementBinding3;
         if (dialogShareAchievementBinding3 == null) {
@@ -415,7 +410,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
             dialogShareAchievementBinding4 = null;
         }
         RecyclerView recyclerView = dialogShareAchievementBinding4.q;
-        AchievementAdapter achievementAdapter = this.f17454c;
+        AchievementAdapter achievementAdapter = this.c;
         if (achievementAdapter == null) {
             Intrinsics.c("mAdapter");
             achievementAdapter = null;
@@ -425,10 +420,10 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f17453a = str;
+        this.a = str;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         Resources resources;
         super.onActivityCreated(bundle);
@@ -440,19 +435,19 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
         LogUtils.d("屏幕密度", "density：" + valueOf + "; dpi：" + valueOf2);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_share_achievement, (ViewGroup) null);
-        DialogShareAchievementBinding a2 = DialogShareAchievementBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.b = a2;
+        DialogShareAchievementBinding a = DialogShareAchievementBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.b = a;
         f();
         h();
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
@@ -462,7 +457,7 @@ public final class YYShareAchievementDialog extends BaseFullScreenDialog {
             Intrinsics.c("mBinding");
             dialogShareAchievementBinding2 = null;
         }
-        dialogShareAchievementBinding2.f16414c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYShareAchievementDialog$5Dqk76CtkeAds_jzCdWHqF-Y1CY
+        dialogShareAchievementBinding2.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYShareAchievementDialog$5Dqk76CtkeAds_jzCdWHqF-Y1CY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYShareAchievementDialog.a(YYShareAchievementDialog.this, view2);

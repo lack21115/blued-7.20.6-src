@@ -19,7 +19,7 @@ import org.json.JSONObject;
 public final class d5HOq {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final d5HOq f39820a = new d5HOq();
+    private static final d5HOq f26129a = new d5HOq();
     private final List<wmqhz> b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingcam/d5HOq$ShGzN.class */
@@ -105,7 +105,7 @@ public final class d5HOq {
     }
 
     public static d5HOq a() {
-        return f39820a;
+        return f26129a;
     }
 
     public JSONObject a(Context context) {

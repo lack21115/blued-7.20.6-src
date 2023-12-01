@@ -6,7 +6,7 @@ import android.os.Looper;
 public abstract class f2 extends n3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f3808a = false;
+    public volatile boolean f3760a = false;
     public byte[] b = new byte[0];
 
     public abstract int a(Looper looper);
@@ -16,7 +16,7 @@ public abstract class f2 extends n3 {
     public boolean b() {
         boolean z;
         synchronized (this.b) {
-            z = this.f3808a;
+            z = this.f3760a;
         }
         return z;
     }

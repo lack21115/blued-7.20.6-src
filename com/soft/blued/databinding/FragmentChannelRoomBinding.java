@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentChannelRoomBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28791a;
+    private final RelativeLayout f15101a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28791a;
+        return this.f15101a;
     }
 }

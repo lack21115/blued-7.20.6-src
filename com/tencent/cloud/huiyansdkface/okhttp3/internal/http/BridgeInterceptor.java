@@ -20,10 +20,10 @@ import java.util.List;
 public final class BridgeInterceptor implements Interceptor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CookieJar f35946a;
+    private final CookieJar f22255a;
 
     public BridgeInterceptor(CookieJar cookieJar) {
-        this.f35946a = cookieJar;
+        this.f22255a = cookieJar;
     }
 
     private String a(List<Cookie> list) {
@@ -69,7 +69,7 @@ public final class BridgeInterceptor implements Interceptor {
             newBuilder.header("Host", Util.hostHeader(request.url(), false));
         }
         if (request.header("Connection") == null) {
-            newBuilder.header("Connection", c.f7906c);
+            newBuilder.header("Connection", c.f5066c);
         }
         boolean z = false;
         if (request.header("Accept-Encoding") == null) {
@@ -79,7 +79,7 @@ public final class BridgeInterceptor implements Interceptor {
                 newBuilder.header("Accept-Encoding", "gzip");
             }
         }
-        List<Cookie> loadForRequest = this.f35946a.loadForRequest(request.url());
+        List<Cookie> loadForRequest = this.f22255a.loadForRequest(request.url());
         if (!loadForRequest.isEmpty()) {
             newBuilder.header("Cookie", a(loadForRequest));
         }
@@ -87,7 +87,7 @@ public final class BridgeInterceptor implements Interceptor {
             newBuilder.header("User-Agent", Version.userAgent());
         }
         Response proceed = chain.proceed(newBuilder.build());
-        HttpHeaders.receiveHeaders(this.f35946a, request.url(), proceed.headers());
+        HttpHeaders.receiveHeaders(this.f22255a, request.url(), proceed.headers());
         Response.Builder request2 = proceed.newBuilder().request(request);
         if (z && "gzip".equalsIgnoreCase(proceed.header("Content-Encoding")) && HttpHeaders.hasBody(proceed)) {
             GzipSource gzipSource = new GzipSource(proceed.body().source());

@@ -1,8 +1,7 @@
 package com.sina.weibo.sdk.component;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sina/weibo/sdk/component/BrowserLauncher.class */
-public enum BrowserLauncher {
+enum BrowserLauncher {
     AUTH,
     SHARE,
     WIDGET,

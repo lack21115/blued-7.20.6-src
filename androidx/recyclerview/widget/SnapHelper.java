@@ -14,13 +14,13 @@ public abstract class SnapHelper extends RecyclerView.OnFlingListener {
     private final RecyclerView.OnScrollListener mScrollListener = new RecyclerView.OnScrollListener() { // from class: androidx.recyclerview.widget.SnapHelper.1
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f3339a = false;
+        boolean f3291a = false;
 
         @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             super.onScrollStateChanged(recyclerView, i);
-            if (i == 0 && this.f3339a) {
-                this.f3339a = false;
+            if (i == 0 && this.f3291a) {
+                this.f3291a = false;
                 SnapHelper.this.snapToTargetExistingView();
             }
         }
@@ -30,7 +30,7 @@ public abstract class SnapHelper extends RecyclerView.OnFlingListener {
             if (i == 0 && i2 == 0) {
                 return;
             }
-            this.f3339a = true;
+            this.f3291a = true;
         }
     };
 

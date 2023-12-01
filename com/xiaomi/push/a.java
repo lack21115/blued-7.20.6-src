@@ -4,16 +4,16 @@ package com.xiaomi.push;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final a f41241a = new a(new byte[0]);
+    public static final a f27550a = new a(new byte[0]);
 
     /* renamed from: a  reason: collision with other field name */
-    private volatile int f167a = 0;
+    private volatile int f120a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private final byte[] f168a;
+    private final byte[] f121a;
 
     private a(byte[] bArr) {
-        this.f168a = bArr;
+        this.f121a = bArr;
     }
 
     public static a a(byte[] bArr) {
@@ -22,20 +22,20 @@ public final class a {
 
     public static a a(byte[] bArr, int i, int i2) {
         byte[] bArr2 = new byte[i2];
-        System.arraycopy((Object) bArr, i, (Object) bArr2, 0, i2);
+        System.arraycopy(bArr, i, bArr2, 0, i2);
         return new a(bArr2);
     }
 
     public final int a() {
-        return this.f168a.length;
+        return this.f121a.length;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public final byte[] m11493a() {
-        byte[] bArr = this.f168a;
+    public final byte[] m8443a() {
+        byte[] bArr = this.f121a;
         int length = bArr.length;
         byte[] bArr2 = new byte[length];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, length);
+        System.arraycopy(bArr, 0, bArr2, 0, length);
         return bArr2;
     }
 
@@ -46,9 +46,9 @@ public final class a {
         if (!(obj instanceof a)) {
             return false;
         }
-        byte[] bArr = this.f168a;
+        byte[] bArr = this.f121a;
         int length = bArr.length;
-        byte[] bArr2 = ((a) obj).f168a;
+        byte[] bArr2 = ((a) obj).f121a;
         if (length != bArr2.length) {
             return false;
         }
@@ -66,10 +66,10 @@ public final class a {
     }
 
     public final int hashCode() {
-        int i = this.f167a;
+        int i = this.f120a;
         int i2 = i;
         if (i == 0) {
-            byte[] bArr = this.f168a;
+            byte[] bArr = this.f121a;
             i2 = bArr.length;
             for (byte b : bArr) {
                 i2 = (i2 * 31) + b;
@@ -77,7 +77,7 @@ public final class a {
             if (i2 == 0) {
                 i2 = 1;
             }
-            this.f167a = i2;
+            this.f120a = i2;
         }
         return i2;
     }

@@ -22,28 +22,28 @@ import com.tencent.smtt.sdk.WebView;
 public class h extends X5ProxyWebChromeClient {
 
     /* renamed from: a  reason: collision with root package name */
-    private WebView f38846a;
+    private WebView f25155a;
     private WebChromeClient b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/h$a.class */
     class a implements WebStorage.QuotaUpdater {
 
         /* renamed from: a  reason: collision with root package name */
-        QuotaUpdater f38852a;
+        QuotaUpdater f25161a;
 
         a(QuotaUpdater quotaUpdater) {
-            this.f38852a = quotaUpdater;
+            this.f25161a = quotaUpdater;
         }
 
         @Override // com.tencent.smtt.sdk.WebStorage.QuotaUpdater
         public void updateQuota(long j) {
-            this.f38852a.updateQuota(j);
+            this.f25161a.updateQuota(j);
         }
     }
 
     public h(IX5WebChromeClient iX5WebChromeClient, WebView webView, WebChromeClient webChromeClient) {
         super(iX5WebChromeClient);
-        this.f38846a = webView;
+        this.f25155a = webView;
         this.b = webChromeClient;
     }
 
@@ -58,8 +58,8 @@ public class h extends X5ProxyWebChromeClient {
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public void onCloseWindow(IX5WebViewBase iX5WebViewBase) {
-        this.f38846a.a(iX5WebViewBase);
-        this.b.onCloseWindow(this.f38846a);
+        this.f25155a.a(iX5WebViewBase);
+        this.b.onCloseWindow(this.f25155a);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
@@ -73,7 +73,7 @@ public class h extends X5ProxyWebChromeClient {
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public boolean onCreateWindow(IX5WebViewBase iX5WebViewBase, boolean z, boolean z2, final Message message) {
-        WebView webView = this.f38846a;
+        WebView webView = this.f25155a;
         webView.getClass();
         final WebView.WebViewTransport webViewTransport = new WebView.WebViewTransport();
         Message obtain = Message.obtain(message.getTarget(), new Runnable() { // from class: com.tencent.smtt.sdk.h.1
@@ -87,7 +87,7 @@ public class h extends X5ProxyWebChromeClient {
             }
         });
         obtain.obj = webViewTransport;
-        return this.b.onCreateWindow(this.f38846a, z, z2, obtain);
+        return this.b.onCreateWindow(this.f25155a, z, z2, obtain);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
@@ -112,26 +112,26 @@ public class h extends X5ProxyWebChromeClient {
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public boolean onJsAlert(IX5WebViewBase iX5WebViewBase, String str, String str2, JsResult jsResult) {
-        this.f38846a.a(iX5WebViewBase);
-        return this.b.onJsAlert(this.f38846a, str, str2, jsResult);
+        this.f25155a.a(iX5WebViewBase);
+        return this.b.onJsAlert(this.f25155a, str, str2, jsResult);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public boolean onJsBeforeUnload(IX5WebViewBase iX5WebViewBase, String str, String str2, JsResult jsResult) {
-        this.f38846a.a(iX5WebViewBase);
-        return this.b.onJsBeforeUnload(this.f38846a, str, str2, jsResult);
+        this.f25155a.a(iX5WebViewBase);
+        return this.b.onJsBeforeUnload(this.f25155a, str, str2, jsResult);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public boolean onJsConfirm(IX5WebViewBase iX5WebViewBase, String str, String str2, JsResult jsResult) {
-        this.f38846a.a(iX5WebViewBase);
-        return this.b.onJsConfirm(this.f38846a, str, str2, jsResult);
+        this.f25155a.a(iX5WebViewBase);
+        return this.b.onJsConfirm(this.f25155a, str, str2, jsResult);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public boolean onJsPrompt(IX5WebViewBase iX5WebViewBase, String str, String str2, String str3, JsPromptResult jsPromptResult) {
-        this.f38846a.a(iX5WebViewBase);
-        return this.b.onJsPrompt(this.f38846a, str, str2, str3, jsPromptResult);
+        this.f25155a.a(iX5WebViewBase);
+        return this.b.onJsPrompt(this.f25155a, str, str2, str3, jsPromptResult);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
@@ -141,8 +141,8 @@ public class h extends X5ProxyWebChromeClient {
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public void onProgressChanged(IX5WebViewBase iX5WebViewBase, int i) {
-        this.f38846a.a(iX5WebViewBase);
-        this.b.onProgressChanged(this.f38846a, i);
+        this.f25155a.a(iX5WebViewBase);
+        this.b.onProgressChanged(this.f25155a, i);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
@@ -152,26 +152,26 @@ public class h extends X5ProxyWebChromeClient {
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public void onReceivedIcon(IX5WebViewBase iX5WebViewBase, Bitmap bitmap) {
-        this.f38846a.a(iX5WebViewBase);
-        this.b.onReceivedIcon(this.f38846a, bitmap);
+        this.f25155a.a(iX5WebViewBase);
+        this.b.onReceivedIcon(this.f25155a, bitmap);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public void onReceivedTitle(IX5WebViewBase iX5WebViewBase, String str) {
-        this.f38846a.a(iX5WebViewBase);
-        this.b.onReceivedTitle(this.f38846a, str);
+        this.f25155a.a(iX5WebViewBase);
+        this.b.onReceivedTitle(this.f25155a, str);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public void onReceivedTouchIconUrl(IX5WebViewBase iX5WebViewBase, String str, boolean z) {
-        this.f38846a.a(iX5WebViewBase);
-        this.b.onReceivedTouchIconUrl(this.f38846a, str, z);
+        this.f25155a.a(iX5WebViewBase);
+        this.b.onReceivedTouchIconUrl(this.f25155a, str, z);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
     public void onRequestFocus(IX5WebViewBase iX5WebViewBase) {
-        this.f38846a.a(iX5WebViewBase);
-        this.b.onRequestFocus(this.f38846a);
+        this.f25155a.a(iX5WebViewBase);
+        this.b.onRequestFocus(this.f25155a);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
@@ -224,8 +224,8 @@ public class h extends X5ProxyWebChromeClient {
                 return fileChooserParams.isCaptureEnabled();
             }
         };
-        this.f38846a.a(iX5WebViewBase);
-        return this.b.onShowFileChooser(this.f38846a, valueCallback2, fileChooserParams2);
+        this.f25155a.a(iX5WebViewBase);
+        return this.b.onShowFileChooser(this.f25155a, valueCallback2, fileChooserParams2);
     }
 
     @Override // com.tencent.smtt.export.external.proxy.ProxyWebChromeClient, com.tencent.smtt.export.external.interfaces.IX5WebChromeClient

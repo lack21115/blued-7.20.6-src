@@ -7,10 +7,10 @@ import android.os.Message;
 final /* synthetic */ class t implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36726a;
+    private final j f23035a;
 
     private t(j jVar) {
-        this.f36726a = jVar;
+        this.f23035a = jVar;
     }
 
     public static Handler.Callback a(j jVar) {
@@ -19,6 +19,6 @@ final /* synthetic */ class t implements Handler.Callback {
 
     @Override // android.os.Handler.Callback
     public final boolean handleMessage(Message message) {
-        return this.f36726a.a(message);
+        return this.f23035a.a(message);
     }
 }

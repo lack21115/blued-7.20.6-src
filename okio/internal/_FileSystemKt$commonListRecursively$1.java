@@ -45,7 +45,7 @@ public final class _FileSystemKt$commonListRecursively$1 extends RestrictedSuspe
 
     @Override // kotlin.jvm.functions.Function2
     public final Object invoke(SequenceScope<? super Path> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((_FileSystemKt$commonListRecursively$1) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((_FileSystemKt$commonListRecursively$1) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -53,7 +53,7 @@ public final class _FileSystemKt$commonListRecursively$1 extends RestrictedSuspe
         SequenceScope sequenceScope;
         ArrayDeque arrayDeque;
         Iterator<Path> it;
-        Object a2 = IntrinsicsKt.a();
+        Object a = IntrinsicsKt.a();
         int i = this.label;
         if (i == 0) {
             ResultKt.a(obj);
@@ -76,10 +76,10 @@ public final class _FileSystemKt$commonListRecursively$1 extends RestrictedSuspe
             this.L$1 = arrayDeque;
             this.L$2 = it;
             this.label = 1;
-            if (_FileSystemKt.collectRecursively(sequenceScope, this.$this_commonListRecursively, arrayDeque, next, this.$followSymlinks, false, this) == a2) {
-                return a2;
+            if (_FileSystemKt.collectRecursively(sequenceScope, this.$this_commonListRecursively, arrayDeque, next, this.$followSymlinks, false, this) == a) {
+                return a;
             }
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

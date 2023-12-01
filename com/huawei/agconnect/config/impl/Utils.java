@@ -1,7 +1,6 @@
 package com.huawei.agconnect.config.impl;
 
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.agconnect.AGCRoutePolicy;
 import java.io.Closeable;
 import java.io.IOException;
@@ -64,7 +63,7 @@ public final class Utils {
                 i2++;
             }
         }
-        return BridgeUtil.SPLIT_MARK + str.substring(i);
+        return "/" + str.substring(i);
     }
 
     public static AGCRoutePolicy getRoutePolicyFromJson(String str, String str2) {

@@ -292,7 +292,7 @@ public class Toolbar extends ViewGroup {
     }
 
     public Toolbar(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843946);
+        this(context, attributeSet, R.attr.toolbarStyle);
     }
 
     public Toolbar(Context context, AttributeSet attributeSet, int i) {

@@ -37,13 +37,9 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYCreateWishView.class */
 public class YYCreateWishView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f18123a;
+    private RecyclerView a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18124c;
+    private TextView c;
     private YYWishAdapter d;
     private BaseYYStudioFragment e;
     private PopupWindow f;
@@ -64,11 +60,12 @@ public class YYCreateWishView extends ConstraintLayout {
         a();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_create_wish, (ViewGroup) this, true);
-        this.f18123a = (RecyclerView) findViewById(R.id.rv_wish_list);
+        this.a = findViewById(R.id.rv_wish_list);
         this.b = (ShapeTextView) findViewById(R.id.tv_create_wish);
-        this.f18124c = (TextView) findViewById(R.id.tv_wish_descript);
+        this.c = (TextView) findViewById(R.id.tv_wish_descript);
         this.b.setText(getResources().getString(R.string.yy_create_wish));
         b();
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYCreateWishView.1
@@ -84,14 +81,16 @@ public class YYCreateWishView extends ConstraintLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v0, types: [android.view.View, com.blued.android.module.yy_china.view.YYWishListView] */
     public void a(final int i) {
-        YYWishListView yYWishListView = new YYWishListView(getContext());
+        ?? yYWishListView = new YYWishListView(getContext());
         yYWishListView.a(this.e, this.g);
         yYWishListView.setOkListener(new YYWishListView.OnConfirmListener() { // from class: com.blued.android.module.yy_china.view.YYCreateWishView.4
             @Override // com.blued.android.module.yy_china.view.YYWishListView.OnConfirmListener
             public void a(YYGiftModel yYGiftModel, int i2) {
                 YYWishGoodsModel yYWishGoodsModel;
-                if (yYGiftModel == null || (yYWishGoodsModel = YYCreateWishView.this.d.getData().get(i)) == null) {
+                if (yYGiftModel == null || (yYWishGoodsModel = (YYWishGoodsModel) YYCreateWishView.this.d.getData().get(i)) == null) {
                     return;
                 }
                 YYCreateWishView.this.g.add(yYGiftModel.goods_id);
@@ -106,13 +105,13 @@ public class YYCreateWishView extends ConstraintLayout {
                 YYCreateWishView.this.f.dismiss();
             }
         });
-        this.f = new PopupwindowFactory.Builder(getContext()).a(yYWishListView).a(80).c(-2).b(-1).d(R.color.transparent).h();
+        this.f = new PopupwindowFactory.Builder(getContext()).a((View) yYWishListView).a(80).c(-2).b(-1).d(R.color.transparent).h();
     }
 
     private void b() {
         this.d = new YYWishAdapter();
-        this.f18123a.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        this.f18123a.setAdapter(this.d);
+        this.a.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        this.a.setAdapter(this.d);
         this.d.a(new YYWishAdapter.OnAddOrDeleteGiftListener() { // from class: com.blued.android.module.yy_china.view.YYCreateWishView.2
             @Override // com.blued.android.module.yy_china.adapter.YYWishAdapter.OnAddOrDeleteGiftListener
             public void a(int i) {
@@ -121,7 +120,7 @@ public class YYCreateWishView extends ConstraintLayout {
 
             @Override // com.blued.android.module.yy_china.adapter.YYWishAdapter.OnAddOrDeleteGiftListener
             public void b(int i) {
-                YYWishGoodsModel yYWishGoodsModel = YYCreateWishView.this.d.getData().get(i);
+                YYWishGoodsModel yYWishGoodsModel = (YYWishGoodsModel) YYCreateWishView.this.d.getData().get(i);
                 if (YYCreateWishView.this.g.contains(yYWishGoodsModel.goods_id)) {
                     YYCreateWishView.this.g.remove(yYWishGoodsModel.goods_id);
                 }
@@ -139,7 +138,7 @@ public class YYCreateWishView extends ConstraintLayout {
                 new YYTypingDialogFragment("", new YYTypingDialogFragment.IEditorCallback() { // from class: com.blued.android.module.yy_china.view.YYCreateWishView.2.1
                     @Override // com.blued.android.module.yy_china.fragment.YYTypingDialogFragment.IEditorCallback
                     public void a(String str, String str2) {
-                        YYCreateWishView.this.d.getData().get(i).wish_total = str2;
+                        ((YYWishGoodsModel) YYCreateWishView.this.d.getData().get(i)).wish_total = str2;
                         YYCreateWishView.this.d.notifyItemChanged(i);
                     }
                 }).show(YYCreateWishView.this.e.getParentFragmentManager(), "wish_count");
@@ -155,17 +154,17 @@ public class YYCreateWishView extends ConstraintLayout {
         if (yYWishAdapter == null) {
             return;
         }
-        Iterator<YYWishGoodsModel> it = yYWishAdapter.getData().iterator();
+        Iterator it = yYWishAdapter.getData().iterator();
         while (true) {
             z = false;
             if (!it.hasNext()) {
                 break;
-            } else if (!TextUtils.isEmpty(it.next().goods_id)) {
+            } else if (!TextUtils.isEmpty(((YYWishGoodsModel) it.next()).goods_id)) {
                 z = true;
                 break;
             }
         }
-        this.f18124c.setText(z ? "最少可添加1个礼物，最多可添加3个礼物" : "礼物未添加，添加后用户打赏礼物即可达成心愿");
+        this.c.setText(z ? "最少可添加1个礼物，最多可添加3个礼物" : "礼物未添加，添加后用户打赏礼物即可达成心愿");
         this.b.setEnabled(z);
         this.b.setAlpha(z ? 1.0f : 0.45f);
         ShapeHelper.b(this.b, z ? R.color.syc_tran70_151515 : R.color.syc_272727);

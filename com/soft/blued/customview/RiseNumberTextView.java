@@ -13,11 +13,11 @@ import java.text.DecimalFormat;
 public class RiseNumberTextView extends TextView {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int[] f28496a = {9, 99, 999, 9999, Process.LAST_ISOLATED_UID, 999999, 9999999, 99999999, 999999999, Integer.MAX_VALUE};
+    static final int[] f14806a = {9, 99, 999, 9999, Process.LAST_ISOLATED_UID, 999999, 9999999, 99999999, 999999999, Integer.MAX_VALUE};
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f28497c;
+    private float f14807c;
     private float d;
     private float e;
     private long f;
@@ -58,7 +58,7 @@ public class RiseNumberTextView extends TextView {
     }
 
     private void c() {
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, this.f28497c);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, this.f14807c);
         ofFloat.setDuration(this.f);
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.customview.RiseNumberTextView.1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -78,7 +78,7 @@ public class RiseNumberTextView extends TextView {
     }
 
     private void d() {
-        ValueAnimator ofInt = ValueAnimator.ofInt((int) this.d, (int) this.f28497c);
+        ValueAnimator ofInt = ValueAnimator.ofInt((int) this.d, (int) this.f14807c);
         ofInt.setDuration(this.f);
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.customview.RiseNumberTextView.2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -97,13 +97,13 @@ public class RiseNumberTextView extends TextView {
     }
 
     public void a(float f, float f2) {
-        this.f28497c = f;
+        this.f14807c = f;
         this.d = f2;
         this.g = 2;
     }
 
     public void a(int i, int i2) {
-        this.f28497c = i;
+        this.f14807c = i;
         this.d = i2;
         this.g = 1;
     }

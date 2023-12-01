@@ -18,8 +18,6 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.anythink.expressad.foundation.h.i;
-import com.blued.android.chat.data.MsgType;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sobot.chat.R;
 import com.sobot.chat.SobotUIConfig;
 import com.sobot.chat.ZCSobotApi;
@@ -54,6 +52,7 @@ import com.sobot.chat.widget.dialog.SobotTicketEvaluateDialog;
 import com.sobot.network.http.callback.StringResultCallBack;
 import com.sobot.pictureframe.SobotBitmapUtil;
 import com.tencent.connect.common.Constants;
+import com.tencent.smtt.sdk.WebView;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -78,7 +77,7 @@ public class ChatUtils {
             Intent intent = new Intent();
             intent.setAction("android.intent.action.VIEW");
             intent.addFlags(268435456);
-            intent.setData(Uri.parse("tel:" + str));
+            intent.setData(Uri.parse(WebView.SCHEME_TEL + str));
             context.startActivity(intent);
         } catch (Exception e) {
             ToastUtil.showCustomToast(context, context.getString(R.string.sobot_no_support_call));
@@ -92,17 +91,17 @@ public class ChatUtils {
             LogUtils.i("appkey发生了变化，重新初始化..............");
             return true;
         }
-        String stringData = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_partnerId, "");
-        String stringData2 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.SOBOT_RECEPTIONISTID, "");
-        String stringData3 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.SOBOT_ROBOT_CODE, "");
-        String stringData4 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_remark, "");
-        String stringData5 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_groupid, "");
-        int intData = SharedPreferencesUtil.getIntData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_service_mode, -1);
-        String stringData6 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_customer_fields, "");
-        String stringData7 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_isvip, "");
-        String stringData8 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_vip_level, "");
-        String stringData9 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_user_label, "");
-        String stringData10 = SharedPreferencesUtil.getStringData(context, str + BridgeUtil.UNDERLINE_STR + ZhiChiConstant.sobot_last_current_robot_alias, "");
+        String stringData = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_partnerId, "");
+        String stringData2 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.SOBOT_RECEPTIONISTID, "");
+        String stringData3 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.SOBOT_ROBOT_CODE, "");
+        String stringData4 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_remark, "");
+        String stringData5 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_groupid, "");
+        int intData = SharedPreferencesUtil.getIntData(context, str + "_" + ZhiChiConstant.sobot_last_current_service_mode, -1);
+        String stringData6 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_customer_fields, "");
+        String stringData7 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_isvip, "");
+        String stringData8 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_vip_level, "");
+        String stringData9 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_user_label, "");
+        String stringData10 = SharedPreferencesUtil.getStringData(context, str + "_" + ZhiChiConstant.sobot_last_current_robot_alias, "");
         if (!stringData.equals(information.getPartnerid() == null ? "" : information.getPartnerid())) {
             LogUtils.i("uid发生了变化，重新初始化..............");
             return true;
@@ -240,25 +239,25 @@ public class ChatUtils {
         }
         switch (i) {
             case 13:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_doc");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_doc");
             case 14:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_ppt");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_ppt");
             case 15:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_xls");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_xls");
             case 16:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_pdf");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_pdf");
             case 17:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_mp3");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_mp3");
             case 18:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_mp4");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_mp4");
             case 19:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_rar");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_rar");
             case 20:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_txt");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_txt");
             case 21:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_unknow");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_unknow");
             default:
-                return ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_file_unknow");
+                return ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_file_unknow");
         }
     }
 
@@ -401,7 +400,7 @@ public class ChatUtils {
     }
 
     public static String getMultiMsgTitle(SobotMultiDiaRespInfo sobotMultiDiaRespInfo) {
-        return sobotMultiDiaRespInfo == null ? "" : MsgType.UID_GROUP_AT_ALL.equals(sobotMultiDiaRespInfo.getRetCode()) ? sobotMultiDiaRespInfo.getEndFlag() ? !TextUtils.isEmpty(sobotMultiDiaRespInfo.getAnswerStrip()) ? sobotMultiDiaRespInfo.getAnswerStrip() : sobotMultiDiaRespInfo.getAnswer() : sobotMultiDiaRespInfo.getRemindQuestion() : sobotMultiDiaRespInfo.getRetErrorMsg();
+        return sobotMultiDiaRespInfo == null ? "" : "000000".equals(sobotMultiDiaRespInfo.getRetCode()) ? sobotMultiDiaRespInfo.getEndFlag() ? !TextUtils.isEmpty(sobotMultiDiaRespInfo.getAnswerStrip()) ? sobotMultiDiaRespInfo.getAnswerStrip() : sobotMultiDiaRespInfo.getAnswer() : sobotMultiDiaRespInfo.getRemindQuestion() : sobotMultiDiaRespInfo.getRetErrorMsg();
     }
 
     public static ZhiChiMessageBase getNoticeModel(Context context, ZhiChiInitModeBase zhiChiInitModeBase) {
@@ -434,7 +433,7 @@ public class ChatUtils {
     }
 
     public static int getResDrawableId(Context context, String str) {
-        return ResourceUtils.getIdByName(context, i.f7952c, str);
+        return ResourceUtils.getIdByName(context, i.f5112c, str);
     }
 
     public static int getResId(Context context, String str) {
@@ -808,7 +807,7 @@ public class ChatUtils {
             return;
         }
         ZhiChiMessageBase zhiChiMessageBase = new ZhiChiMessageBase();
-        String str = "{\"interfaceRetList\":[" + GsonUtil.map2Json(map) + "],\"template\":" + sobotMultiDiaRespInfo.getTemplate() + com.alipay.sdk.util.i.d;
+        String str = "{\"interfaceRetList\":[" + GsonUtil.map2Json(map) + "],\"template\":" + sobotMultiDiaRespInfo.getTemplate() + "}";
         zhiChiMessageBase.setContent(formatQuestionStr(sobotMultiDiaRespInfo.getOutPutParamList(), map, sobotMultiDiaRespInfo));
         zhiChiMessageBase.setId(System.currentTimeMillis() + "");
         if (sobotMsgCallBack != null) {
@@ -968,10 +967,10 @@ public class ChatUtils {
             @Override // com.sobot.chat.api.ResultCallBack
             public void onFailure(Exception exc, String str5) {
                 LogUtils.i("发送图片error:" + str5 + "exception:" + exc);
-                if (String.this != null) {
+                if (str4 != null) {
                     Message obtainMessage = handler.obtainMessage();
                     obtainMessage.what = 401;
-                    obtainMessage.obj = String.this;
+                    obtainMessage.obj = str4;
                     handler.sendMessage(obtainMessage);
                 }
             }
@@ -979,7 +978,7 @@ public class ChatUtils {
             @Override // com.sobot.chat.api.ResultCallBack
             public void onLoading(long j, long j2, boolean z) {
                 LogUtils.i("发送图片 进度:" + j2);
-                String str5 = String.this;
+                String str5 = str4;
                 if (str5 != null) {
                     int msgInfoPosition = sobotMsgAdapter.getMsgInfoPosition(str5);
                     LogUtils.i("发送图片 position:" + msgInfoPosition);
@@ -989,12 +988,12 @@ public class ChatUtils {
 
             @Override // com.sobot.chat.api.ResultCallBack
             public void onSuccess(ZhiChiMessage zhiChiMessage) {
-                if (1 != Integer.parseInt(zhiChiMessage.getCode()) || String.this == null) {
+                if (1 != Integer.parseInt(zhiChiMessage.getCode()) || str4 == null) {
                     return;
                 }
                 Message obtainMessage = handler.obtainMessage();
                 obtainMessage.what = 402;
-                obtainMessage.obj = String.this;
+                obtainMessage.obj = str4;
                 handler.sendMessage(obtainMessage);
             }
         });

@@ -49,11 +49,11 @@ import java.util.List;
 public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> implements View.OnClickListener, LiveListPositionObserver.ILiveListPositionObserver, HomeTabClick.TabClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f31186a;
+    public long f17496a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LiveFollowItemAdapter f31187c;
+    private LiveFollowItemAdapter f17497c;
     private LiveFollowRecommendAdapter d;
     private boolean f;
     private boolean g;
@@ -89,10 +89,10 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         /* renamed from: a */
         public void onChanged(String str) {
             Log.i("xpm", "KEY_EVENT_LIVE_FLOAT_DISMISS");
-            if (LiveListFollowFragmentNew.this.f31187c == null || !LiveListFollowFragmentNew.this.k) {
+            if (LiveListFollowFragmentNew.this.f17497c == null || !LiveListFollowFragmentNew.this.k) {
                 return;
             }
-            LiveListFollowFragmentNew.this.f31187c.c();
+            LiveListFollowFragmentNew.this.f17497c.c();
         }
     };
 
@@ -107,7 +107,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         String str;
         String str2;
         String str3;
-        if (this.f31187c.getData() == null || i >= this.f31187c.getData().size() || (bluedLiveListData = (BluedLiveListData) this.f31187c.getData().get(i)) == null) {
+        if (this.f17497c.getData() == null || i >= this.f17497c.getData().size() || (bluedLiveListData = (BluedLiveListData) this.f17497c.getData().get(i)) == null) {
             return;
         }
         if (bluedLiveListData.anchor != null) {
@@ -130,7 +130,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         LiveRoomData liveRoomData = new LiveRoomData(StringUtils.a(bluedLiveListData.lid, 0L), bluedLiveListData.screen_pattern, "followed", str3, str, str2, 0);
         liveRoomData.live_url = bluedLiveListData.live_play;
         liveRoomData.details = "";
-        LiveRoomInfoChannel.a(this.b, liveRoomData, -1, LiveRoomInfoChannel.a(this.f31187c.a(), "followed"));
+        LiveRoomInfoChannel.a(this.b, liveRoomData, -1, LiveRoomInfoChannel.a(this.f17497c.a(), "followed"));
     }
 
     private void d(List<BluedLiveListData> list) {
@@ -157,7 +157,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         EventTrackLive.g(LiveProtos.Event.LIVE_FIRST_TAB_SHOW, "follow");
         this.rvFollowList.setLayoutManager(new GridLayoutManager(this.b, 2));
         LiveFollowItemAdapter liveFollowItemAdapter = new LiveFollowItemAdapter(this);
-        this.f31187c = liveFollowItemAdapter;
+        this.f17497c = liveFollowItemAdapter;
         liveFollowItemAdapter.setSpanSizeLookup(new BaseQuickAdapter.SpanSizeLookup() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$LiveListFollowFragmentNew$GhBJw81wLIshWWsASf0AKTMglQM
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.SpanSizeLookup
             public final int getSpanSize(GridLayoutManager gridLayoutManager, int i) {
@@ -166,7 +166,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
                 return a2;
             }
         });
-        this.rvFollowList.setAdapter(this.f31187c);
+        this.rvFollowList.setAdapter(this.f17497c);
         this.rvFollowList.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.1
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
@@ -200,13 +200,13 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 super.onScrollStateChanged(recyclerView, i);
                 if (i == 0) {
-                    if (LiveListFollowFragmentNew.this.f31187c != null) {
-                        LiveListFollowFragmentNew.this.f31187c.c(false);
-                        LiveListFollowFragmentNew.this.f31187c.e();
+                    if (LiveListFollowFragmentNew.this.f17497c != null) {
+                        LiveListFollowFragmentNew.this.f17497c.c(false);
+                        LiveListFollowFragmentNew.this.f17497c.e();
                     }
-                } else if (i != 1 || LiveListFollowFragmentNew.this.f31187c == null) {
+                } else if (i != 1 || LiveListFollowFragmentNew.this.f17497c == null) {
                 } else {
-                    LiveListFollowFragmentNew.this.f31187c.c(true);
+                    LiveListFollowFragmentNew.this.f17497c.c(true);
                 }
             }
         });
@@ -228,7 +228,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
                 }
             }
         });
-        this.d.addHeaderView(LayoutInflater.from(this.b).inflate(2131559723, (ViewGroup) null));
+        this.d.addHeaderView(LayoutInflater.from(this.b).inflate(R.layout.item_follow_recommend_head_view, (ViewGroup) null));
         w();
         PushChecker.a().a(this.msg_toast, 1, MessageProtos.WarnTime.TOAST_LIVE);
     }
@@ -237,15 +237,15 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         this.refreshFollowList.a(new OnRefreshLoadMoreListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.4
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                LiveListFollowFragmentNew.this.j().f();
+                ((LiveFollowPresenter) LiveListFollowFragmentNew.this.j()).f();
             }
 
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
-                if (LiveListFollowFragmentNew.this.f31187c != null) {
-                    LiveListFollowFragmentNew.this.f31187c.d();
+                if (LiveListFollowFragmentNew.this.f17497c != null) {
+                    LiveListFollowFragmentNew.this.f17497c.d();
                 }
-                LiveListFollowFragmentNew.this.j().e();
+                ((LiveFollowPresenter) LiveListFollowFragmentNew.this.j()).e();
                 LiveListRefreshObserver.a().b();
             }
         });
@@ -254,13 +254,13 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 super.onScrollStateChanged(recyclerView, i);
                 if (i == 0) {
-                    if (LiveListFollowFragmentNew.this.f31187c != null) {
-                        LiveListFollowFragmentNew.this.f31187c.c(false);
-                        LiveListFollowFragmentNew.this.f31187c.e();
+                    if (LiveListFollowFragmentNew.this.f17497c != null) {
+                        LiveListFollowFragmentNew.this.f17497c.c(false);
+                        LiveListFollowFragmentNew.this.f17497c.e();
                     }
-                } else if (i != 1 || LiveListFollowFragmentNew.this.f31187c == null) {
+                } else if (i != 1 || LiveListFollowFragmentNew.this.f17497c == null) {
                 } else {
-                    LiveListFollowFragmentNew.this.f31187c.c(true);
+                    LiveListFollowFragmentNew.this.f17497c.c(true);
                 }
             }
         });
@@ -268,7 +268,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         this.refreshNewUserList.a(new OnRefreshLoadMoreListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.6
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                LiveListFollowFragmentNew.this.j().m();
+                ((LiveFollowPresenter) LiveListFollowFragmentNew.this.j()).m();
             }
 
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
@@ -276,22 +276,22 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
                 if (LiveListFollowFragmentNew.this.d != null) {
                     LiveListFollowFragmentNew.this.d.d();
                 }
-                LiveListFollowFragmentNew.this.j().e();
+                ((LiveFollowPresenter) LiveListFollowFragmentNew.this.j()).e();
             }
         });
-        this.f31187c.a(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.7
+        this.f17497c.a(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.7
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public void onLoadMoreRequested() {
-                LiveListFollowFragmentNew.this.j().m();
+                ((LiveFollowPresenter) LiveListFollowFragmentNew.this.j()).m();
             }
         });
-        this.f31187c.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.8
+        this.f17497c.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.8
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemLongClickListener
             public boolean onItemLongClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 return true;
             }
         });
-        this.f31187c.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.9
+        this.f17497c.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.9
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 LiveListFollowFragmentNew.this.a(i);
@@ -300,7 +300,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
     }
 
     private void x() {
-        if (this.f31187c.b().size() < 5) {
+        if (this.f17497c.b().size() < 5) {
             PushChecker.a().a(getContext(), 2, MessageProtos.WarnTime.LIVE_FIRST);
         } else {
             this.rvFollowList.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.11
@@ -328,13 +328,12 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         LiveEventBus.get("live_float_dismiss", String.class).removeObserver(this.m);
     }
 
-    @Override // com.blued.android.module.live_china.observer.LiveListPositionObserver.ILiveListPositionObserver
     public void a(int i, long j) {
         Logger.e("LiveListFollowFragmentNew", "notifyLiveListPosition position = " + i + " ; sessionId = " + j);
         if (this.rvFollowList == null || i == -1) {
             return;
         }
-        final int a2 = LiveListDataUtils.a(j, this.f31187c.a());
+        final int a2 = LiveListDataUtils.a(j, this.f17497c.a());
         this.rvFollowList.post(new Runnable() { // from class: com.soft.blued.ui.live.fragment.LiveListFollowFragmentNew.12
             @Override // java.lang.Runnable
             public void run() {
@@ -344,22 +343,20 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         e();
         v();
         y();
-        j().e();
+        ((LiveFollowPresenter) j()).e();
     }
 
     public void a(BluedLiveListData bluedLiveListData) {
-        this.f31187c.getData().remove(bluedLiveListData);
-        d(this.f31187c.getData());
-        this.f31187c.notifyDataSetChanged();
+        this.f17497c.getData().remove(bluedLiveListData);
+        d(this.f17497c.getData());
+        this.f17497c.notifyDataSetChanged();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (str == null) {
@@ -393,15 +390,14 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
                 this.live_no_follow_banner.setVisibility(0);
             }
             LiveDataListManager.a().c(LiveRoomInfoChannel.a(list, "followed"));
-            this.f31187c.a(list);
+            this.f17497c.a(list);
         }
-        if (list == null || j().h != 1) {
+        if (list == null || ((LiveFollowPresenter) j()).h != 1) {
             return;
         }
         x();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         z();
@@ -411,7 +407,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         this.refreshFollowList.j();
         this.refreshNewUserList.j();
         this.refreshNewUserList.h();
-        this.f31187c.a(true);
+        this.f17497c.a(true);
         this.refreshNewUserList.l(true);
         if (this.d.getData() != null && this.d.getData().size() > 0) {
             this.liveRecommendEmpty.setVisibility(8);
@@ -433,7 +429,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
     }
 
     public void b(List<LiveRecommendModel> list) {
-        EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOW_PAGE_SHOW, (Boolean) false);
+        EventTrackLive.a(LiveProtos.Event.LIVE_FOLLOW_PAGE_SHOW, false);
         if (this.d == null) {
             return;
         }
@@ -443,7 +439,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         this.liveRecommendEmpty.setVisibility(8);
         this.d.getData().clear();
         this.d.b();
-        this.d.a(list);
+        this.d.a((List<? extends LiveRecommendModel>) list);
         this.refreshNewUserList.j();
         this.refreshNewUserList.l(true);
     }
@@ -451,7 +447,7 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
     public void c() {
         this.refreshNewUserList.j();
         this.refreshNewUserList.h();
-        this.f31187c.a(false);
+        this.f17497c.a(false);
         this.refreshNewUserList.l(false);
     }
 
@@ -469,11 +465,11 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
     }
 
     public void c(List<LiveRecommendModel> list) {
-        if (this.f31187c == null || list == null || list.isEmpty()) {
+        if (this.f17497c == null || list == null || list.isEmpty()) {
             return;
         }
-        this.f31187c.b(list);
-        this.d.a(list);
+        this.f17497c.b(list);
+        this.d.a((List<? extends LiveRecommendModel>) list);
     }
 
     public void d() {
@@ -496,12 +492,10 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_live_follow_list_new;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
         this.refreshFollowList.l(true);
@@ -516,47 +510,42 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         LiveListSetSelectedTab.a().a(1);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         HomeTabClick.b("live", this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         LiveFollowItemAdapter liveFollowItemAdapter;
         super.onPause();
-        this.f31186a = System.currentTimeMillis();
-        if (this.k && (liveFollowItemAdapter = this.f31187c) != null) {
+        this.f17496a = System.currentTimeMillis();
+        if (this.k && (liveFollowItemAdapter = this.f17497c) != null) {
             liveFollowItemAdapter.d();
         }
         d();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         LiveFollowItemAdapter liveFollowItemAdapter;
         SmartRefreshLayout smartRefreshLayout;
         super.onResume();
-        if (this.f31186a != 0 && this.k) {
-            if (System.currentTimeMillis() - this.f31186a > 300000 && (smartRefreshLayout = this.refreshFollowList) != null) {
+        if (this.f17496a != 0 && this.k) {
+            if (System.currentTimeMillis() - this.f17496a > 300000 && (smartRefreshLayout = this.refreshFollowList) != null) {
                 smartRefreshLayout.i();
             }
-            this.f31186a = 0L;
+            this.f17496a = 0L;
         }
-        if (this.k && (liveFollowItemAdapter = this.f31187c) != null) {
+        if (this.k && (liveFollowItemAdapter = this.f17497c) != null) {
             liveFollowItemAdapter.c();
         }
         d();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         if (this.f) {
@@ -568,23 +557,19 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.refreshFollowList.l(false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean r() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.k = z;
@@ -597,13 +582,13 @@ public class LiveListFollowFragmentNew extends MvpFragment<LiveFollowPresenter> 
         } else {
             LiveListPositionObserver.a().b(this);
         }
-        LiveFollowItemAdapter liveFollowItemAdapter = this.f31187c;
+        LiveFollowItemAdapter liveFollowItemAdapter = this.f17497c;
         if (liveFollowItemAdapter != null) {
             liveFollowItemAdapter.b(z);
             if (z) {
-                this.f31187c.c();
+                this.f17497c.c();
             } else {
-                this.f31187c.d();
+                this.f17497c.d();
             }
         }
         d();

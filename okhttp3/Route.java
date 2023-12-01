@@ -1,7 +1,6 @@
 package okhttp3;
 
 import com.alipay.sdk.util.i;
-import com.blued.das.live.LiveProtos;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import javax.annotation.Nullable;
@@ -40,7 +39,7 @@ public final class Route {
     }
 
     public int hashCode() {
-        return ((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.address.hashCode()) * 31) + this.proxy.hashCode()) * 31) + this.inetSocketAddress.hashCode();
+        return ((((527 + this.address.hashCode()) * 31) + this.proxy.hashCode()) * 31) + this.inetSocketAddress.hashCode();
     }
 
     public Proxy proxy() {

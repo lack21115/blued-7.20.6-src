@@ -53,7 +53,7 @@ public class NearbyHomeTabIndicator extends TabPageIndicatorWithDot {
     @Override // com.soft.blued.customview.TabPageIndicatorWithDot
     public void a() {
         super.a();
-        this.G = LayoutInflater.from(this.f28520a);
+        this.G = LayoutInflater.from(this.f14830a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -64,49 +64,49 @@ public class NearbyHomeTabIndicator extends TabPageIndicatorWithDot {
 
     @Override // com.soft.blued.customview.TabPageIndicatorWithDot
     protected void a(final int i, String str) {
-        QBadgeContainer qBadgeContainer = (QBadgeContainer) this.G.inflate(R.layout.item_nearby_tab_indicator, (ViewGroup) null);
-        View findViewById = qBadgeContainer.findViewById(2131367999);
+        QBadgeContainer inflate = this.G.inflate(R.layout.item_nearby_tab_indicator, (ViewGroup) null);
+        View findViewById = inflate.findViewById(2131367999);
         findViewById.setTag(str + i);
-        TextView textView = (TextView) qBadgeContainer.findViewById(R.id.item_nearby_tab_indicator_tv);
+        TextView textView = (TextView) inflate.findViewById((int) R.id.item_nearby_tab_indicator_tv);
         textView.setTextSize(0, this.w);
         textView.setText(str);
         int min = Math.min((int) (textView.getPaint().measureText(str) + 0.5f), FeedMethods.c(110));
-        View findViewById2 = qBadgeContainer.findViewById(R.id.item_nearby_tab_indicator_content_ly);
+        View findViewById2 = inflate.findViewById((int) R.id.item_nearby_tab_indicator_content_ly);
         ViewGroup.LayoutParams layoutParams = findViewById2.getLayoutParams();
         layoutParams.width = min + FeedMethods.c(25);
         findViewById2.setLayoutParams(layoutParams);
         if (this.C != null) {
             this.C.add(textView);
         }
-        ShapeTextView shapeTextView = (ShapeTextView) qBadgeContainer.findViewById(R.id.item_nearby_tab_indicator_dot);
-        shapeTextView.setVisibility(8);
+        View view = (ShapeTextView) inflate.findViewById((int) R.id.item_nearby_tab_indicator_dot);
+        view.setVisibility(8);
         if (this.D != null) {
-            this.D.add(shapeTextView);
+            this.D.add(view);
         }
-        qBadgeContainer.b(BluedSkinUtils.a(this.f28520a, 2131102251));
-        qBadgeContainer.d(BadgeDrawable.TOP_END);
-        qBadgeContainer.b(5.0f, true);
-        qBadgeContainer.a(10.0f, true);
-        qBadgeContainer.a(3.0f, 0.0f, true);
-        qBadgeContainer.a("");
+        inflate.b(BluedSkinUtils.a(this.f14830a, 2131102251));
+        inflate.d((int) BadgeDrawable.TOP_END);
+        inflate.b(5.0f, true);
+        inflate.a(10.0f, true);
+        inflate.a(3.0f, 0.0f, true);
+        inflate.a("");
         if (this.E != null) {
-            this.E.add(qBadgeContainer);
+            this.E.add(inflate);
         }
         findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.-$$Lambda$NearbyHomeTabIndicator$FIO7Kh8HZuDW3FV4tc-W0B5X1NA
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                NearbyHomeTabIndicator.this.a(i, view);
+            public final void onClick(View view2) {
+                NearbyHomeTabIndicator.this.a(i, view2);
             }
         });
-        this.d.addView(qBadgeContainer);
+        this.d.addView(inflate);
     }
 
     public void a(int i, String str, int i2) {
         if (this.E == null || i < 0 || i >= this.E.size()) {
             return;
         }
-        ImageView imageView = (ImageView) this.E.get(i).findViewById(R.id.item_nearby_tab_indicator_avatar);
-        final TextView textView = (TextView) this.E.get(i).findViewById(R.id.item_nearby_tab_indicator_tv);
+        ImageView imageView = (ImageView) this.E.get(i).findViewById((int) R.id.item_nearby_tab_indicator_avatar);
+        final TextView textView = (TextView) this.E.get(i).findViewById((int) R.id.item_nearby_tab_indicator_tv);
         if (imageView == null || textView == null) {
             return;
         }
@@ -167,8 +167,8 @@ public class NearbyHomeTabIndicator extends TabPageIndicatorWithDot {
         if (this.E == null || i < 0 || i >= this.E.size()) {
             return;
         }
-        final ImageView imageView = (ImageView) this.E.get(i).findViewById(R.id.item_nearby_tab_indicator_avatar);
-        TextView textView = (TextView) this.E.get(i).findViewById(R.id.item_nearby_tab_indicator_tv);
+        final ImageView imageView = (ImageView) this.E.get(i).findViewById((int) R.id.item_nearby_tab_indicator_avatar);
+        TextView textView = (TextView) this.E.get(i).findViewById((int) R.id.item_nearby_tab_indicator_tv);
         if (imageView == null || textView == null || textView.getVisibility() == 0) {
             return;
         }

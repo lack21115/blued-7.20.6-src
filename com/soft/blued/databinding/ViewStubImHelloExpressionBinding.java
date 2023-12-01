@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewStubImHelloExpressionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29632a;
+    private final LinearLayout f15942a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29632a;
+        return this.f15942a;
     }
 }

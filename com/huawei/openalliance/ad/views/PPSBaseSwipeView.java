@@ -54,9 +54,8 @@ public class PPSBaseSwipeView extends PPSBaseStyleView {
         return "PPSSplashSwipeClickView";
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         ge.V(getViewTag(), "w=%s, h=%s, oldw=%s, oldh=%s", Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4));
         this.S.post(new Runnable() { // from class: com.huawei.openalliance.ad.views.PPSBaseSwipeView.1

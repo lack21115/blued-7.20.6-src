@@ -69,9 +69,8 @@ public class AsyncWeiboRunner {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.AsyncTask
-        public void onPreExecute() {
+        protected void onPreExecute() {
         }
     }
 
@@ -89,6 +88,7 @@ public class AsyncWeiboRunner {
         new RequestRunner(this.mContext, str, weiboParameters, str2, requestListener).execute(new Void[1]);
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.sina.weibo.sdk.net.AsyncWeiboRunner$1] */
     @Deprecated
     public void requestByThread(final String str, final WeiboParameters weiboParameters, final String str2, final RequestListener requestListener) {
         new Thread() { // from class: com.sina.weibo.sdk.net.AsyncWeiboRunner.1

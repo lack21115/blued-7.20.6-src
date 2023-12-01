@@ -291,8 +291,8 @@ public class DrmHelper {
             handler.postDelayed(new Runnable() { // from class: android.drm.DrmHelper.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (DrmHelper.isDrmFile(String.this) && DrmHelper.validateLicense(context, String.this, str2)) {
-                        DrmHelper.consumeDrmRights(String.this, str2);
+                    if (DrmHelper.isDrmFile(str) && DrmHelper.validateLicense(context, str, str2)) {
+                        DrmHelper.consumeDrmRights(str, str2);
                     }
                 }
             }, 1000L);

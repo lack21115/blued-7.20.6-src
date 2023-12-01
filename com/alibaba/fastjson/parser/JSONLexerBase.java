@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.util.IOUtils;
 import com.alibaba.fastjson.util.TypeUtils;
-import com.igexin.push.core.b;
 import java.io.Closeable;
 import java.lang.ref.SoftReference;
 import java.math.BigDecimal;
@@ -85,9 +84,9 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         }
     }
 
-    public static boolean isWhitespace(char c2) {
-        if (c2 <= ' ') {
-            return c2 == ' ' || c2 == '\n' || c2 == '\r' || c2 == '\t' || c2 == '\f' || c2 == '\b';
+    public static boolean isWhitespace(char c) {
+        if (c <= ' ') {
+            return c == ' ' || c == '\n' || c == '\r' || c == '\t' || c == '\f' || c == '\b';
         }
         return false;
     }
@@ -277,7 +276,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         return this.timeZone;
     }
 
-    public abstract int indexOf(char c2, int i);
+    public abstract int indexOf(char c, int i);
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
     public String info() {
@@ -544,8 +543,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         while (isWhitespace(this.ch)) {
             next();
         }
-        char c2 = this.ch;
-        if (c2 == '_' || Character.isLetter(c2)) {
+        char c = this.ch;
+        if (c == '_' || Character.isLetter(c)) {
             scanIdent();
         } else {
             nextToken();
@@ -557,75 +556,75 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         this.sp = 0;
         while (true) {
             this.pos = this.bp;
-            char c2 = this.ch;
-            if (c2 == '/') {
+            char c = this.ch;
+            if (c == '/') {
                 skipComment();
-            } else if (c2 == '\"') {
+            } else if (c == '\"') {
                 scanString();
                 return;
-            } else if (c2 == ',') {
+            } else if (c == ',') {
                 next();
                 this.token = 16;
                 return;
-            } else if (c2 >= '0' && c2 <= '9') {
+            } else if (c >= '0' && c <= '9') {
                 scanNumber();
                 return;
             } else {
-                char c3 = this.ch;
-                if (c3 == '-') {
+                char c2 = this.ch;
+                if (c2 == '-') {
                     scanNumber();
                     return;
                 }
-                if (c3 != '\f' && c3 != '\r' && c3 != ' ') {
-                    if (c3 == ':') {
+                if (c2 != '\f' && c2 != '\r' && c2 != ' ') {
+                    if (c2 == ':') {
                         next();
                         this.token = 17;
                         return;
-                    } else if (c3 == 'N') {
+                    } else if (c2 == 'N') {
                         scanNULL();
                         return;
-                    } else if (c3 == '[') {
+                    } else if (c2 == '[') {
                         next();
                         this.token = 14;
                         return;
-                    } else if (c3 == ']') {
+                    } else if (c2 == ']') {
                         next();
                         this.token = 15;
                         return;
-                    } else if (c3 == 'f') {
+                    } else if (c2 == 'f') {
                         scanFalse();
                         return;
-                    } else if (c3 == 'n') {
+                    } else if (c2 == 'n') {
                         scanNullOrNew();
                         return;
-                    } else if (c3 == '{') {
+                    } else if (c2 == '{') {
                         next();
                         this.token = 12;
                         return;
-                    } else if (c3 == '}') {
+                    } else if (c2 == '}') {
                         next();
                         this.token = 13;
                         return;
-                    } else if (c3 == 'S') {
+                    } else if (c2 == 'S') {
                         scanSet();
                         return;
-                    } else if (c3 == 'T') {
+                    } else if (c2 == 'T') {
                         scanTreeSet();
                         return;
-                    } else if (c3 == 't') {
+                    } else if (c2 == 't') {
                         scanTrue();
                         return;
-                    } else if (c3 == 'u') {
+                    } else if (c2 == 'u') {
                         scanUndefined();
                         return;
                     } else {
-                        switch (c3) {
+                        switch (c2) {
                             case '\b':
                             case '\t':
                             case '\n':
                                 break;
                             default:
-                                switch (c3) {
+                                switch (c2) {
                                     case '\'':
                                         if (!isEnabled(Feature.AllowSingleQuotes)) {
                                             throw new JSONException("Feature.AllowSingleQuotes is false");
@@ -651,9 +650,9 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                                             this.pos = i;
                                             return;
                                         }
-                                        char c4 = this.ch;
-                                        if (c4 > 31 && c4 != 127) {
-                                            lexError("illegal.char", String.valueOf((int) c4));
+                                        char c3 = this.ch;
+                                        if (c3 > 31 && c3 != 127) {
+                                            lexError("illegal.char", String.valueOf((int) c3));
                                             next();
                                             return;
                                         }
@@ -673,55 +672,55 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         this.sp = 0;
         while (true) {
             if (i == 2) {
-                char c2 = this.ch;
-                if (c2 >= '0' && c2 <= '9') {
+                char c = this.ch;
+                if (c >= '0' && c <= '9') {
                     this.pos = this.bp;
                     scanNumber();
                     return;
                 }
-                char c3 = this.ch;
-                if (c3 == '\"') {
+                char c2 = this.ch;
+                if (c2 == '\"') {
                     this.pos = this.bp;
                     scanString();
                     return;
-                } else if (c3 == '[') {
+                } else if (c2 == '[') {
                     this.token = 14;
                     next();
                     return;
-                } else if (c3 == '{') {
+                } else if (c2 == '{') {
                     this.token = 12;
                     next();
                     return;
                 }
             } else if (i == 4) {
-                char c4 = this.ch;
-                if (c4 == '\"') {
+                char c3 = this.ch;
+                if (c3 == '\"') {
                     this.pos = this.bp;
                     scanString();
                     return;
-                } else if (c4 >= '0' && c4 <= '9') {
+                } else if (c3 >= '0' && c3 <= '9') {
                     this.pos = this.bp;
                     scanNumber();
                     return;
                 } else {
-                    char c5 = this.ch;
-                    if (c5 == '[') {
+                    char c4 = this.ch;
+                    if (c4 == '[') {
                         this.token = 14;
                         next();
                         return;
-                    } else if (c5 == '{') {
+                    } else if (c4 == '{') {
                         this.token = 12;
                         next();
                         return;
                     }
                 }
             } else if (i == 12) {
-                char c6 = this.ch;
-                if (c6 == '{') {
+                char c5 = this.ch;
+                if (c5 == '{') {
                     this.token = 12;
                     next();
                     return;
-                } else if (c6 == '[') {
+                } else if (c5 == '[') {
                     this.token = 14;
                     next();
                     return;
@@ -733,12 +732,12 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                 if (i != 20) {
                     switch (i) {
                         case 14:
-                            char c7 = this.ch;
-                            if (c7 == '[') {
+                            char c6 = this.ch;
+                            if (c6 == '[') {
                                 this.token = 14;
                                 next();
                                 return;
-                            } else if (c7 == '{') {
+                            } else if (c6 == '{') {
                                 this.token = 12;
                                 next();
                                 return;
@@ -752,20 +751,20 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                             }
                             break;
                         case 16:
-                            char c8 = this.ch;
-                            if (c8 == ',') {
+                            char c7 = this.ch;
+                            if (c7 == ',') {
                                 this.token = 16;
                                 next();
                                 return;
-                            } else if (c8 == '}') {
+                            } else if (c7 == '}') {
                                 this.token = 13;
                                 next();
                                 return;
-                            } else if (c8 == ']') {
+                            } else if (c7 == ']') {
                                 this.token = 15;
                                 next();
                                 return;
-                            } else if (c8 == 26) {
+                            } else if (c7 == 26) {
                                 this.token = 20;
                                 return;
                             }
@@ -777,8 +776,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                     return;
                 }
             }
-            char c9 = this.ch;
-            if (c9 != ' ' && c9 != '\n' && c9 != '\r' && c9 != '\t' && c9 != '\f' && c9 != '\b') {
+            char c8 = this.ch;
+            if (c8 != ' ' && c8 != '\n' && c8 != '\r' && c8 != '\t' && c8 != '\f' && c8 != '\b') {
                 nextToken();
                 return;
             }
@@ -786,16 +785,16 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         }
     }
 
-    public final void nextTokenWithChar(char c2) {
+    public final void nextTokenWithChar(char c) {
         this.sp = 0;
         while (true) {
-            char c3 = this.ch;
-            if (c3 == c2) {
+            char c2 = this.ch;
+            if (c2 == c) {
                 next();
                 nextToken();
                 return;
-            } else if (c3 != ' ' && c3 != '\n' && c3 != '\r' && c3 != '\t' && c3 != '\f' && c3 != '\b') {
-                throw new JSONException("not match " + c2 + " - " + this.ch);
+            } else if (c2 != ' ' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != '\f' && c2 != '\b') {
+                throw new JSONException("not match " + c + " - " + this.ch);
             } else {
                 next();
             }
@@ -824,7 +823,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         return this.pos;
     }
 
-    protected final void putChar(char c2) {
+    protected final void putChar(char c) {
         int i = this.sp;
         char[] cArr = this.sbuf;
         if (i == cArr.length) {
@@ -835,7 +834,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         char[] cArr3 = this.sbuf;
         int i2 = this.sp;
         this.sp = i2 + 1;
-        cArr3[i2] = c2;
+        cArr3[i2] = c;
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
@@ -843,7 +842,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         this.sp = 0;
     }
 
-    public boolean scanBoolean(char c2) {
+    public boolean scanBoolean(char c) {
         boolean z = false;
         this.matchStat = 0;
         char charAt = charAt(this.bp + 0);
@@ -864,7 +863,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             charAt = charAt(this.bp + 5);
             i = 6;
         }
-        if (charAt != c2) {
+        if (charAt != c) {
             this.matchStat = -1;
             return z;
         }
@@ -875,8 +874,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
-    public Enum<?> scanEnum(Class<?> cls, SymbolTable symbolTable, char c2) {
-        String scanSymbolWithSeperator = scanSymbolWithSeperator(symbolTable, c2);
+    public Enum<?> scanEnum(Class<?> cls, SymbolTable symbolTable, char c) {
+        String scanSymbolWithSeperator = scanSymbolWithSeperator(symbolTable, c);
         if (scanSymbolWithSeperator == null) {
             return null;
         }
@@ -904,8 +903,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse false");
         }
         next();
-        char c2 = this.ch;
-        if (c2 != ' ' && c2 != ',' && c2 != '}' && c2 != ']' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != 26 && c2 != '\f' && c2 != '\b' && c2 != ':') {
+        char c = this.ch;
+        if (c != ' ' && c != ',' && c != '}' && c != ']' && c != '\n' && c != '\r' && c != '\t' && c != 26 && c != '\f' && c != '\b' && c != ':') {
             throw new JSONException("scan false error");
         }
         this.token = 7;
@@ -1062,7 +1061,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             }
             i2 = i;
         }
-        char c2 = charAt;
+        char c = charAt;
         int i3 = i;
         if (charAt == '.') {
             int i4 = i + 1;
@@ -1071,12 +1070,12 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                 while (true) {
                     int i5 = i4 + 1;
                     char charAt4 = charAt(this.bp + i4);
-                    c2 = charAt4;
+                    c = charAt4;
                     i3 = i5;
                     if (charAt4 < '0') {
                         break;
                     }
-                    c2 = charAt4;
+                    c = charAt4;
                     i3 = i5;
                     if (charAt4 > '9') {
                         break;
@@ -1091,13 +1090,13 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         int i6 = this.bp;
         int length2 = cArr.length + i6;
         float parseFloat = Float.parseFloat(subString(length2, ((i6 + i3) - length2) - 1));
-        if (c2 == ',') {
+        if (c == ',') {
             this.bp += i3 - 1;
             next();
             this.matchStat = 3;
             this.token = 16;
             return parseFloat;
-        } else if (c2 != '}') {
+        } else if (c != '}') {
             this.matchStat = -1;
             return 0.0f;
         } else {
@@ -1512,7 +1511,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         }
     }
 
-    public final float scanFloat(char c2) {
+    public final float scanFloat(char c) {
         int i;
         char charAt;
         this.matchStat = 0;
@@ -1531,7 +1530,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             }
             i2 = i;
         }
-        char c3 = charAt;
+        char c2 = charAt;
         int i4 = i;
         if (charAt == '.') {
             int i5 = i + 1;
@@ -1540,12 +1539,12 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                 while (true) {
                     int i6 = i5 + 1;
                     char charAt4 = charAt(this.bp + i5);
-                    c3 = charAt4;
+                    c2 = charAt4;
                     i4 = i6;
                     if (charAt4 < '0') {
                         break;
                     }
-                    c3 = charAt4;
+                    c2 = charAt4;
                     i4 = i6;
                     if (charAt4 > '9') {
                         break;
@@ -1559,7 +1558,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         }
         int i7 = this.bp;
         float parseFloat = Float.parseFloat(subString(i7, ((i7 + i4) - i7) - 1));
-        if (c3 != c2) {
+        if (c2 != c) {
             this.matchStat = -1;
             return parseFloat;
         }
@@ -1578,7 +1577,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             next();
         } while (Character.isLetterOrDigit(this.ch));
         String stringVal = stringVal();
-        if (b.l.equals(stringVal)) {
+        if ("null".equals(stringVal)) {
             this.token = 8;
         } else if ("new".equals(stringVal)) {
             this.token = 9;
@@ -1594,7 +1593,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
-    public int scanInt(char c2) {
+    public int scanInt(char c) {
         int i;
         char charAt;
         this.matchStat = 0;
@@ -1621,7 +1620,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         } else if (i2 < 0) {
             this.matchStat = -1;
             return 0;
-        } else if (charAt != c2) {
+        } else if (charAt != c) {
             this.matchStat = -1;
             return i2;
         } else {
@@ -1634,7 +1633,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
-    public long scanLong(char c2) {
+    public long scanLong(char c) {
         int i;
         char charAt;
         this.matchStat = 0;
@@ -1661,7 +1660,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         } else if (j < 0) {
             this.matchStat = -1;
             return 0L;
-        } else if (charAt != c2) {
+        } else if (charAt != c) {
             this.matchStat = -1;
             return j;
         } else {
@@ -1690,8 +1689,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse NULL");
         }
         next();
-        char c2 = this.ch;
-        if (c2 != ' ' && c2 != ',' && c2 != '}' && c2 != ']' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != 26 && c2 != '\f' && c2 != '\b') {
+        char c = this.ch;
+        if (c != ' ' && c != ',' && c != '}' && c != ']' && c != '\n' && c != '\r' && c != '\t' && c != 26 && c != '\f' && c != '\b') {
             throw new JSONException("scan NULL error");
         }
         this.token = 8;
@@ -1702,9 +1701,9 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse null or new");
         }
         next();
-        char c2 = this.ch;
-        if (c2 != 'u') {
-            if (c2 != 'e') {
+        char c = this.ch;
+        if (c != 'u') {
+            if (c != 'e') {
                 throw new JSONException("error parse new");
             }
             next();
@@ -1712,8 +1711,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                 throw new JSONException("error parse new");
             }
             next();
-            char c3 = this.ch;
-            if (c3 != ' ' && c3 != ',' && c3 != '}' && c3 != ']' && c3 != '\n' && c3 != '\r' && c3 != '\t' && c3 != 26 && c3 != '\f' && c3 != '\b') {
+            char c2 = this.ch;
+            if (c2 != ' ' && c2 != ',' && c2 != '}' && c2 != ']' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != 26 && c2 != '\f' && c2 != '\b') {
                 throw new JSONException("scan new error");
             }
             this.token = 9;
@@ -1728,8 +1727,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse null");
         }
         next();
-        char c4 = this.ch;
-        if (c4 != ' ' && c4 != ',' && c4 != '}' && c4 != ']' && c4 != '\n' && c4 != '\r' && c4 != '\t' && c4 != 26 && c4 != '\f' && c4 != '\b') {
+        char c3 = this.ch;
+        if (c3 != ' ' && c3 != ',' && c3 != '}' && c3 != ']' && c3 != '\n' && c3 != '\r' && c3 != '\t' && c3 != 26 && c3 != '\f' && c3 != '\b') {
             throw new JSONException("scan null error");
         }
         this.token = 8;
@@ -1764,15 +1763,15 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse set");
         }
         next();
-        char c2 = this.ch;
-        if (c2 != ' ' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != '\f' && c2 != '\b' && c2 != '[' && c2 != '(') {
+        char c = this.ch;
+        if (c != ' ' && c != '\n' && c != '\r' && c != '\t' && c != '\f' && c != '\b' && c != '[' && c != '(') {
             throw new JSONException("scan set error");
         }
         this.token = 21;
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
-    public String scanString(char c2) {
+    public String scanString(char c) {
         boolean z;
         this.matchStat = 0;
         char charAt = charAt(this.bp + 0);
@@ -1780,7 +1779,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             if (charAt(this.bp + 1) != 'u' || charAt(this.bp + 1 + 1) != 'l' || charAt(this.bp + 1 + 2) != 'l') {
                 this.matchStat = -1;
                 return null;
-            } else if (charAt(this.bp + 4) != c2) {
+            } else if (charAt(this.bp + 4) != c) {
                 this.matchStat = -1;
                 return null;
             } else {
@@ -1816,7 +1815,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                 }
                 int i4 = this.bp;
                 int i5 = (indexOf - (i4 + 1)) + 1 + 1;
-                if (charAt(i4 + i5) != c2) {
+                if (charAt(i4 + i5) != c) {
                     this.matchStat = -1;
                     return subString;
                 }
@@ -1949,7 +1948,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
-    public Collection<String> scanStringArray(Class<?> cls, char c2) {
+    public Collection<String> scanStringArray(Class<?> cls, char c) {
         int i;
         char charAt;
         Collection<String> createCollection = TypeUtils.createCollection(cls);
@@ -1959,7 +1958,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             if (charAt(this.bp + 1) != 'u' || charAt(this.bp + 1 + 1) != 'l' || charAt(this.bp + 1 + 2) != 'l') {
                 this.matchStat = -1;
                 return null;
-            } else if (charAt(this.bp + 4) != c2) {
+            } else if (charAt(this.bp + 4) != c) {
                 this.matchStat = -1;
                 return null;
             } else {
@@ -2008,7 +2007,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                     if (charAt != ']') {
                         this.matchStat = -1;
                         return null;
-                    } else if (charAt(this.bp + i) != c2) {
+                    } else if (charAt(this.bp + i) != c) {
                         this.matchStat = -1;
                         return createCollection;
                     } else {
@@ -2027,24 +2026,24 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     @Override // com.alibaba.fastjson.parser.JSONLexer
     public final String scanSymbol(SymbolTable symbolTable) {
         skipWhitespace();
-        char c2 = this.ch;
-        if (c2 == '\"') {
+        char c = this.ch;
+        if (c == '\"') {
             return scanSymbol(symbolTable, '\"');
         }
-        if (c2 == '\'') {
+        if (c == '\'') {
             if (isEnabled(Feature.AllowSingleQuotes)) {
                 return scanSymbol(symbolTable, '\'');
             }
             throw new JSONException("syntax error");
-        } else if (c2 == '}') {
+        } else if (c == '}') {
             next();
             this.token = 13;
             return null;
-        } else if (c2 == ',') {
+        } else if (c == ',') {
             next();
             this.token = 16;
             return null;
-        } else if (c2 == 26) {
+        } else if (c == 26) {
             this.token = 20;
             return null;
         } else if (isEnabled(Feature.AllowUnQuotedFieldNames)) {
@@ -2055,7 +2054,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
-    public final String scanSymbol(SymbolTable symbolTable, char c2) {
+    public final String scanSymbol(SymbolTable symbolTable, char c) {
         String addSymbol;
         this.np = this.bp;
         this.sp = 0;
@@ -2063,7 +2062,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
         int i = 0;
         while (true) {
             char next = next();
-            if (next == c2) {
+            if (next == c) {
                 this.token = 4;
                 if (z) {
                     addSymbol = symbolTable.addSymbol(this.sbuf, 0, this.sp, i);
@@ -2196,9 +2195,9 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                                     char next4 = next();
                                     this.ch = next4;
                                     int[] iArr = digits;
-                                    char c3 = (char) ((iArr[next3] * 16) + iArr[next4]);
-                                    i = (i * 31) + c3;
-                                    putChar(c3);
+                                    char c2 = (char) ((iArr[next3] * 16) + iArr[next4]);
+                                    i = (i * 31) + c2;
+                                    putChar(c2);
                                     z = z2;
                                 }
                             }
@@ -2233,32 +2232,32 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     @Override // com.alibaba.fastjson.parser.JSONLexer
     public final String scanSymbolUnQuoted(SymbolTable symbolTable) {
         boolean[] zArr = IOUtils.firstIdentifierFlags;
-        char c2 = this.ch;
-        if (!(c2 >= zArr.length || zArr[c2])) {
+        char c = this.ch;
+        if (!(c >= zArr.length || zArr[c])) {
             throw new JSONException("illegal identifier : " + this.ch + info());
         }
         boolean[] zArr2 = IOUtils.identifierFlags;
         this.np = this.bp;
         this.sp = 1;
-        char c3 = c2;
+        char c2 = c;
         while (true) {
             char next = next();
             if (next < zArr2.length && !zArr2[next]) {
                 break;
             }
-            c3 = (c3 * 31) + next;
+            c2 = (c2 * 31) + next;
             this.sp++;
         }
         this.ch = charAt(this.bp);
         this.token = 18;
-        if (this.sp == 4 && c3 == 3392903 && charAt(this.np) == 'n' && charAt(this.np + 1) == 'u' && charAt(this.np + 2) == 'l' && charAt(this.np + 3) == 'l') {
+        if (this.sp == 4 && c2 == 3392903 && charAt(this.np) == 'n' && charAt(this.np + 1) == 'u' && charAt(this.np + 2) == 'l' && charAt(this.np + 3) == 'l') {
             return null;
         }
-        return addSymbol(this.np, this.sp, c3, symbolTable);
+        return addSymbol(this.np, this.sp, c2, symbolTable);
     }
 
     @Override // com.alibaba.fastjson.parser.JSONLexer
-    public String scanSymbolWithSeperator(SymbolTable symbolTable, char c2) {
+    public String scanSymbolWithSeperator(SymbolTable symbolTable, char c) {
         int i = 0;
         this.matchStat = 0;
         char charAt = charAt(this.bp + 0);
@@ -2266,7 +2265,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             if (charAt(this.bp + 1) != 'u' || charAt(this.bp + 1 + 1) != 'l' || charAt(this.bp + 1 + 2) != 'l') {
                 this.matchStat = -1;
                 return null;
-            } else if (charAt(this.bp + 4) != c2) {
+            } else if (charAt(this.bp + 4) != c) {
                 this.matchStat = -1;
                 return null;
             } else {
@@ -2288,7 +2287,7 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
                     int i5 = this.bp;
                     int i6 = i5 + 0 + 1;
                     String addSymbol = addSymbol(i6, ((i5 + i4) - i6) - 1, i, symbolTable);
-                    if (charAt(this.bp + i4) != c2) {
+                    if (charAt(this.bp + i4) != c) {
                         this.matchStat = -1;
                         return addSymbol;
                     }
@@ -2336,8 +2335,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse treeSet");
         }
         next();
-        char c2 = this.ch;
-        if (c2 != ' ' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != '\f' && c2 != '\b' && c2 != '[' && c2 != '(') {
+        char c = this.ch;
+        if (c != ' ' && c != '\n' && c != '\r' && c != '\t' && c != '\f' && c != '\b' && c != '[' && c != '(') {
             throw new JSONException("scan treeSet error");
         }
         this.token = 22;
@@ -2360,8 +2359,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse true");
         }
         next();
-        char c2 = this.ch;
-        if (c2 != ' ' && c2 != ',' && c2 != '}' && c2 != ']' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != 26 && c2 != '\f' && c2 != '\b' && c2 != ':') {
+        char c = this.ch;
+        if (c != ' ' && c != ',' && c != '}' && c != ']' && c != '\n' && c != '\r' && c != '\t' && c != 26 && c != '\f' && c != '\b' && c != ':') {
             throw new JSONException("scan true error");
         }
         this.token = 6;
@@ -2458,8 +2457,8 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
             throw new JSONException("error parse undefined");
         }
         next();
-        char c2 = this.ch;
-        if (c2 != ' ' && c2 != ',' && c2 != '}' && c2 != ']' && c2 != '\n' && c2 != '\r' && c2 != '\t' && c2 != 26 && c2 != '\f' && c2 != '\b') {
+        char c = this.ch;
+        if (c != ' ' && c != ',' && c != '}' && c != ']' && c != '\n' && c != '\r' && c != '\t' && c != 26 && c != '\f' && c != '\b') {
             throw new JSONException("scan undefined error");
         }
         this.token = 23;
@@ -2477,13 +2476,13 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
 
     protected void skipComment() {
         next();
-        char c2 = this.ch;
-        if (c2 == '/') {
+        char c = this.ch;
+        if (c == '/') {
             do {
                 next();
             } while (this.ch != '\n');
             next();
-        } else if (c2 != '*') {
+        } else if (c != '*') {
             throw new JSONException("invalid comment");
         } else {
             while (true) {
@@ -2502,13 +2501,13 @@ public abstract class JSONLexerBase implements JSONLexer, Closeable {
     @Override // com.alibaba.fastjson.parser.JSONLexer
     public final void skipWhitespace() {
         while (true) {
-            char c2 = this.ch;
-            if (c2 > '/') {
+            char c = this.ch;
+            if (c > '/') {
                 return;
             }
-            if (c2 == ' ' || c2 == '\r' || c2 == '\n' || c2 == '\t' || c2 == '\f' || c2 == '\b') {
+            if (c == ' ' || c == '\r' || c == '\n' || c == '\t' || c == '\f' || c == '\b') {
                 next();
-            } else if (c2 != '/') {
+            } else if (c != '/') {
                 return;
             } else {
                 skipComment();

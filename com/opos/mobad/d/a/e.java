@@ -4,11 +4,11 @@ package com.opos.mobad.d.a;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25959a;
+    public final int f12271a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f25960c;
+    public final String f12272c;
     public final String d;
     public final int e;
 
@@ -16,21 +16,21 @@ public class e {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f25961a;
+        public int f12273a;
         public boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f25962c;
+        public String f12274c;
         public String d;
         public int e;
 
         public a a(int i) {
-            this.f25961a = i;
+            this.f12273a = i;
             return this;
         }
 
         public a a(String str) {
-            this.f25962c = str;
+            this.f12274c = str;
             return this;
         }
 
@@ -54,14 +54,14 @@ public class e {
         }
 
         public String toString() {
-            return "Builder{iconId=" + this.f25961a + ", autoCancel=" + this.b + ", notificationChannelId=" + this.f25962c + ", notificationChannelName='" + this.d + "', notificationChannelImportance=" + this.e + '}';
+            return "Builder{iconId=" + this.f12273a + ", autoCancel=" + this.b + ", notificationChannelId=" + this.f12274c + ", notificationChannelName='" + this.d + "', notificationChannelImportance=" + this.e + '}';
         }
     }
 
     public e(a aVar) {
-        this.f25959a = aVar.f25961a;
+        this.f12271a = aVar.f12273a;
         this.b = aVar.b;
-        this.f25960c = aVar.f25962c;
+        this.f12272c = aVar.f12274c;
         this.d = aVar.d;
         this.e = aVar.e;
     }

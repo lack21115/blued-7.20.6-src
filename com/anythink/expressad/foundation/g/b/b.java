@@ -4,11 +4,11 @@ package com.anythink.expressad.foundation.g.b;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7836a = "context is null";
+    public static final String f4996a = "context is null";
     public static final String b = "can't show because unknow error";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7837c = "campaing is loading";
+    public static final String f4997c = "campaing is loading";
     public static final String d = "network exception";
     public static final String e = "Play more than limit";
     public static final String f = "Campaign data is NULL";

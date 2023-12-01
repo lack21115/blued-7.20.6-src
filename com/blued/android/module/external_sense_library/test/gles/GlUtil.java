@@ -9,13 +9,11 @@ import java.nio.FloatBuffer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/test/gles/GlUtil.class */
 public class GlUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final float[] f11297a;
+    public static final float[] a;
 
     static {
         float[] fArr = new float[16];
-        f11297a = fArr;
+        a = fArr;
         Matrix.setIdentityM(fArr, 0);
     }
 
@@ -28,7 +26,7 @@ public class GlUtil {
         GLES20.glShaderSource(glCreateShader, str);
         GLES20.glCompileShader(glCreateShader);
         int[] iArr = new int[1];
-        GLES20.glGetShaderiv(glCreateShader, GLES20.GL_COMPILE_STATUS, iArr, 0);
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
         int i2 = glCreateShader;
         if (iArr[0] == 0) {
             Log.e("Grafika", "Could not compile shader " + i + ":");
@@ -44,8 +42,8 @@ public class GlUtil {
 
     public static int a(String str, String str2) {
         int a2;
-        int a3 = a((int) GLES20.GL_VERTEX_SHADER, str);
-        if (a3 == 0 || (a2 = a((int) GLES20.GL_FRAGMENT_SHADER, str2)) == 0) {
+        int a3 = a(35633, str);
+        if (a3 == 0 || (a2 = a(35632, str2)) == 0) {
             return 0;
         }
         int glCreateProgram = GLES20.glCreateProgram();
@@ -59,7 +57,7 @@ public class GlUtil {
         a("glAttachShader");
         GLES20.glLinkProgram(glCreateProgram);
         int[] iArr = new int[1];
-        GLES20.glGetProgramiv(glCreateProgram, GLES20.GL_LINK_STATUS, iArr, 0);
+        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
         if (iArr[0] != 1) {
             Log.e("Grafika", "Could not link program: ");
             Log.e("Grafika", GLES20.glGetProgramInfoLog(glCreateProgram));

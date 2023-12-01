@@ -1,11 +1,10 @@
 package com.amap.api.col.p0003sl;
 
+import android.view.Window;
 import com.amap.api.maps.AMapUtils;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.services.core.AMapException;
 import com.android.ims.ImsReasonInfo;
-import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
-import com.igexin.sdk.PushConsts;
 import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,9 +12,7 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.hi  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hi.class */
 public final class hi {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String[] f5063a = {"com.amap.api.trace", "com.amap.api.trace.core"};
+    private static String[] a = {"com.amap.api.trace", "com.amap.api.trace.core"};
 
     public static int a(List<LatLng> list) {
         int i;
@@ -52,19 +49,19 @@ public final class hi {
                     throw new hf(AMapException.AMAP_INVALID_USER_KEY);
                 case 10002:
                     throw new hf(AMapException.AMAP_SERVICE_NOT_AVAILBALE);
-                case GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR /* 10003 */:
+                case 10003:
                     throw new hf(AMapException.AMAP_DAILY_QUERY_OVER_LIMIT);
                 case ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE /* 10004 */:
                     throw new hf(AMapException.AMAP_ACCESS_TOO_FREQUENT);
-                case PushConsts.CHECK_CLIENTID /* 10005 */:
+                case 10005:
                     throw new hf(AMapException.AMAP_INVALID_USER_IP);
-                case PushConsts.THIRDPART_FEEDBACK /* 10006 */:
+                case 10006:
                     throw new hf(AMapException.AMAP_INVALID_USER_DOMAIN);
-                case PushConsts.GET_SDKONLINESTATE /* 10007 */:
+                case 10007:
                     throw new hf("用户签名未通过");
-                case PushConsts.GET_SDKSERVICEPID /* 10008 */:
+                case 10008:
                     throw new hf(AMapException.AMAP_INVALID_USER_SCODE);
-                case PushConsts.SET_TAG_RESULT /* 10009 */:
+                case 10009:
                     throw new hf(AMapException.AMAP_USERKEY_PLAT_NOMATCH);
                 case 10010:
                     throw new hf(AMapException.AMAP_IP_QUERY_OVER_LIMIT);
@@ -76,23 +73,23 @@ public final class hi {
                     throw new hf(AMapException.AMAP_USER_KEY_RECYCLED);
                 default:
                     switch (i) {
-                        case 20000:
+                        case Window.PROGRESS_SECONDARY_START /* 20000 */:
                             throw new hf(AMapException.AMAP_SERVICE_INVALID_PARAMS);
-                        case PushConsts.SETTAG_ERROR_COUNT /* 20001 */:
+                        case 20001:
                             throw new hf(AMapException.AMAP_SERVICE_MISSING_REQUIRED_PARAMS);
                         case 20002:
                             throw new hf(AMapException.AMAP_SERVICE_ILLEGAL_REQUEST);
-                        case PushConsts.SETTAG_ERROR_REPEAT /* 20003 */:
+                        case 20003:
                             throw new hf(AMapException.AMAP_SERVICE_UNKNOWN_ERROR);
                         default:
                             switch (i) {
                                 case 30000:
                                     throw new hf(AMapException.AMAP_ENGINE_RESPONSE_ERROR);
-                                case PushConsts.ALIAS_ERROR_FREQUENCY /* 30001 */:
+                                case 30001:
                                     throw new hf(AMapException.AMAP_ENGINE_RESPONSE_DATA_ERROR);
-                                case PushConsts.ALIAS_OPERATE_PARAM_ERROR /* 30002 */:
+                                case 30002:
                                     throw new hf(AMapException.AMAP_ENGINE_CONNECT_TIMEOUT);
-                                case PushConsts.ALIAS_REQUEST_FILTER /* 30003 */:
+                                case 30003:
                                     throw new hf(AMapException.AMAP_ENGINE_RETURN_TIMEOUT);
                                 default:
                                     throw new hf(str);

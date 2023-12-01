@@ -13,22 +13,18 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogSelectLocationBinding.class */
 public final class DialogSelectLocationBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f18807a;
+    public final ImageView a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f18808c;
+    public final RecyclerView c;
     public final FrameLayout d;
     public final SearchView e;
     private final FrameLayout f;
 
     private DialogSelectLocationBinding(FrameLayout frameLayout, ImageView imageView, ShapeLinearLayout shapeLinearLayout, RecyclerView recyclerView, FrameLayout frameLayout2, SearchView searchView) {
         this.f = frameLayout;
-        this.f18807a = imageView;
+        this.a = imageView;
         this.b = shapeLinearLayout;
-        this.f18808c = recyclerView;
+        this.c = recyclerView;
         this.d = frameLayout2;
         this.e = searchView;
     }
@@ -51,13 +47,13 @@ public final class DialogSelectLocationBinding implements ViewBinding {
         if (imageView != null) {
             ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.layoutLocation);
             if (shapeLinearLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
-                if (recyclerView != null) {
+                RecyclerView findViewById = view.findViewById(R.id.recycleView);
+                if (findViewById != null) {
                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.rootLayout);
                     if (frameLayout != null) {
                         SearchView searchView = (SearchView) view.findViewById(R.id.searchBar);
                         if (searchView != null) {
-                            return new DialogSelectLocationBinding((FrameLayout) view, imageView, shapeLinearLayout, recyclerView, frameLayout, searchView);
+                            return new DialogSelectLocationBinding((FrameLayout) view, imageView, shapeLinearLayout, findViewById, frameLayout, searchView);
                         }
                         str = "searchBar";
                     } else {
@@ -75,7 +71,6 @@ public final class DialogSelectLocationBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

@@ -12,17 +12,17 @@ abstract class AllocatedBuffer {
         return new AllocatedBuffer() { // from class: com.google.protobuf.AllocatedBuffer.1
             @Override // com.google.protobuf.AllocatedBuffer
             public byte[] array() {
-                return ByteBuffer.this.array();
+                return byteBuffer.array();
             }
 
             @Override // com.google.protobuf.AllocatedBuffer
             public int arrayOffset() {
-                return ByteBuffer.this.arrayOffset();
+                return byteBuffer.arrayOffset();
             }
 
             @Override // com.google.protobuf.AllocatedBuffer
             public boolean hasArray() {
-                return ByteBuffer.this.hasArray();
+                return byteBuffer.hasArray();
             }
 
             @Override // com.google.protobuf.AllocatedBuffer
@@ -32,28 +32,28 @@ abstract class AllocatedBuffer {
 
             @Override // com.google.protobuf.AllocatedBuffer
             public int limit() {
-                return ByteBuffer.this.limit();
+                return byteBuffer.limit();
             }
 
             @Override // com.google.protobuf.AllocatedBuffer
             public ByteBuffer nioBuffer() {
-                return ByteBuffer.this;
+                return byteBuffer;
             }
 
             @Override // com.google.protobuf.AllocatedBuffer
             public int position() {
-                return ByteBuffer.this.position();
+                return byteBuffer.position();
             }
 
             @Override // com.google.protobuf.AllocatedBuffer
             public AllocatedBuffer position(int i) {
-                ByteBuffer.this.position(i);
+                byteBuffer.position(i);
                 return this;
             }
 
             @Override // com.google.protobuf.AllocatedBuffer
             public int remaining() {
-                return ByteBuffer.this.remaining();
+                return byteBuffer.remaining();
             }
         };
     }

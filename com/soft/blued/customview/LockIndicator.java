@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public class LockIndicator extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28446a;
+    private int f14756a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28447c;
+    private int f14757c;
     private int d;
     private int e;
     private int f;
@@ -29,9 +29,9 @@ public class LockIndicator extends View {
 
     public LockIndicator(Context context) {
         super(context);
-        this.f28446a = 3;
+        this.f14756a = 3;
         this.b = 3;
-        this.f28447c = 60;
+        this.f14757c = 60;
         this.d = 60;
         this.e = 5;
         this.f = 5;
@@ -43,9 +43,9 @@ public class LockIndicator extends View {
 
     public LockIndicator(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
-        this.f28446a = 3;
+        this.f14756a = 3;
         this.b = 3;
-        this.f28447c = 60;
+        this.f14757c = 60;
         this.d = 60;
         this.e = 5;
         this.f = 5;
@@ -62,27 +62,26 @@ public class LockIndicator extends View {
         Drawable drawable = getResources().getDrawable(R.drawable.circle_small_solid_blue);
         this.j = drawable;
         if (drawable != null) {
-            this.f28447c = drawable.getIntrinsicWidth();
+            this.f14757c = drawable.getIntrinsicWidth();
             int intrinsicHeight = this.j.getIntrinsicHeight();
             this.d = intrinsicHeight;
-            int i = this.f28447c;
+            int i = this.f14757c;
             this.e = i / 4;
             this.f = intrinsicHeight / 4;
             this.j.setBounds(0, 0, i, intrinsicHeight);
-            this.i.setBounds(0, 0, this.f28447c, this.d);
+            this.i.setBounds(0, 0, this.f14757c, this.d);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (this.j == null || this.i == null) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f28446a) {
+            if (i2 >= this.f14756a) {
                 return;
             }
             int i3 = 0;
@@ -90,7 +89,7 @@ public class LockIndicator extends View {
                 this.h.setColor(-16777216);
                 int i4 = this.d;
                 int i5 = this.f;
-                int i6 = this.f28447c;
+                int i6 = this.f14757c;
                 int i7 = this.e;
                 canvas.save();
                 canvas.translate((i4 * i3) + (i5 * i3), (i6 * i2) + (i7 * i2));
@@ -109,15 +108,14 @@ public class LockIndicator extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (this.j != null) {
             int i3 = this.b;
             int i4 = this.d;
             int i5 = this.f;
-            int i6 = this.f28446a;
-            setMeasuredDimension((i4 * i3) + (i5 * (i3 - 1)), (this.f28447c * i6) + (this.e * (i6 - 1)));
+            int i6 = this.f14756a;
+            setMeasuredDimension((i4 * i3) + (i5 * (i3 - 1)), (this.f14757c * i6) + (this.e * (i6 - 1)));
         }
     }
 

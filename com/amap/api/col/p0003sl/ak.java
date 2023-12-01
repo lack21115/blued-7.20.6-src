@@ -13,54 +13,54 @@ import com.autonavi.amap.mapcore.VirtualEarthProjection;
 public final class ak {
     public static AbstractCameraUpdateMessage a() {
         aj ajVar = new aj();
-        ajVar.nowType = AbstractCameraUpdateMessage.Type.zoomBy;
-        ajVar.amount = 1.0f;
+        ((AbstractCameraUpdateMessage) ajVar).nowType = AbstractCameraUpdateMessage.Type.zoomBy;
+        ((AbstractCameraUpdateMessage) ajVar).amount = 1.0f;
         return ajVar;
     }
 
     public static AbstractCameraUpdateMessage a(float f) {
         ah ahVar = new ah();
-        ahVar.nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
-        ahVar.zoom = f;
+        ((AbstractCameraUpdateMessage) ahVar).nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
+        ((AbstractCameraUpdateMessage) ahVar).zoom = f;
         return ahVar;
     }
 
     public static AbstractCameraUpdateMessage a(float f, float f2) {
         ai aiVar = new ai();
-        aiVar.nowType = AbstractCameraUpdateMessage.Type.scrollBy;
-        aiVar.xPixel = f;
-        aiVar.yPixel = f2;
+        ((AbstractCameraUpdateMessage) aiVar).nowType = AbstractCameraUpdateMessage.Type.scrollBy;
+        ((AbstractCameraUpdateMessage) aiVar).xPixel = f;
+        ((AbstractCameraUpdateMessage) aiVar).yPixel = f2;
         return aiVar;
     }
 
     public static AbstractCameraUpdateMessage a(float f, Point point) {
         aj ajVar = new aj();
-        ajVar.nowType = AbstractCameraUpdateMessage.Type.zoomBy;
-        ajVar.amount = f;
-        ajVar.focus = point;
+        ((AbstractCameraUpdateMessage) ajVar).nowType = AbstractCameraUpdateMessage.Type.zoomBy;
+        ((AbstractCameraUpdateMessage) ajVar).amount = f;
+        ((AbstractCameraUpdateMessage) ajVar).focus = point;
         return ajVar;
     }
 
     public static AbstractCameraUpdateMessage a(Point point) {
         ah ahVar = new ah();
-        ahVar.nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
-        ahVar.geoPoint = new DPoint(point.x, point.y);
+        ((AbstractCameraUpdateMessage) ahVar).nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
+        ((AbstractCameraUpdateMessage) ahVar).geoPoint = new DPoint(point.x, point.y);
         return ahVar;
     }
 
     public static AbstractCameraUpdateMessage a(CameraPosition cameraPosition) {
         ah ahVar = new ah();
-        ahVar.nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
+        ((AbstractCameraUpdateMessage) ahVar).nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
         if (cameraPosition != null) {
             if (cameraPosition.target == null) {
                 return ahVar;
             }
             DPoint latLongToPixelsDouble = VirtualEarthProjection.latLongToPixelsDouble(cameraPosition.target.latitude, cameraPosition.target.longitude, 20);
-            ahVar.geoPoint = new DPoint(latLongToPixelsDouble.x, latLongToPixelsDouble.y);
-            ahVar.zoom = cameraPosition.zoom;
-            ahVar.bearing = cameraPosition.bearing;
-            ahVar.tilt = cameraPosition.tilt;
-            ahVar.cameraPosition = cameraPosition;
+            ((AbstractCameraUpdateMessage) ahVar).geoPoint = new DPoint(latLongToPixelsDouble.x, latLongToPixelsDouble.y);
+            ((AbstractCameraUpdateMessage) ahVar).zoom = cameraPosition.zoom;
+            ((AbstractCameraUpdateMessage) ahVar).bearing = cameraPosition.bearing;
+            ((AbstractCameraUpdateMessage) ahVar).tilt = cameraPosition.tilt;
+            ((AbstractCameraUpdateMessage) ahVar).cameraPosition = cameraPosition;
         }
         return ahVar;
     }
@@ -75,43 +75,43 @@ public final class ak {
 
     public static AbstractCameraUpdateMessage a(LatLngBounds latLngBounds, int i) {
         ag agVar = new ag();
-        agVar.nowType = AbstractCameraUpdateMessage.Type.newLatLngBounds;
-        agVar.bounds = latLngBounds;
-        agVar.paddingLeft = i;
-        agVar.paddingRight = i;
-        agVar.paddingTop = i;
-        agVar.paddingBottom = i;
+        ((AbstractCameraUpdateMessage) agVar).nowType = AbstractCameraUpdateMessage.Type.newLatLngBounds;
+        ((AbstractCameraUpdateMessage) agVar).bounds = latLngBounds;
+        ((AbstractCameraUpdateMessage) agVar).paddingLeft = i;
+        ((AbstractCameraUpdateMessage) agVar).paddingRight = i;
+        ((AbstractCameraUpdateMessage) agVar).paddingTop = i;
+        ((AbstractCameraUpdateMessage) agVar).paddingBottom = i;
         return agVar;
     }
 
     public static AbstractCameraUpdateMessage a(LatLngBounds latLngBounds, int i, int i2, int i3) {
         ag agVar = new ag();
-        agVar.nowType = AbstractCameraUpdateMessage.Type.newLatLngBoundsWithSize;
-        agVar.bounds = latLngBounds;
-        agVar.paddingLeft = i3;
-        agVar.paddingRight = i3;
-        agVar.paddingTop = i3;
-        agVar.paddingBottom = i3;
-        agVar.width = i;
-        agVar.height = i2;
+        ((AbstractCameraUpdateMessage) agVar).nowType = AbstractCameraUpdateMessage.Type.newLatLngBoundsWithSize;
+        ((AbstractCameraUpdateMessage) agVar).bounds = latLngBounds;
+        ((AbstractCameraUpdateMessage) agVar).paddingLeft = i3;
+        ((AbstractCameraUpdateMessage) agVar).paddingRight = i3;
+        ((AbstractCameraUpdateMessage) agVar).paddingTop = i3;
+        ((AbstractCameraUpdateMessage) agVar).paddingBottom = i3;
+        ((AbstractCameraUpdateMessage) agVar).width = i;
+        ((AbstractCameraUpdateMessage) agVar).height = i2;
         return agVar;
     }
 
     public static AbstractCameraUpdateMessage a(LatLngBounds latLngBounds, int i, int i2, int i3, int i4) {
         ag agVar = new ag();
-        agVar.nowType = AbstractCameraUpdateMessage.Type.newLatLngBounds;
-        agVar.bounds = latLngBounds;
-        agVar.paddingLeft = i;
-        agVar.paddingRight = i2;
-        agVar.paddingTop = i3;
-        agVar.paddingBottom = i4;
+        ((AbstractCameraUpdateMessage) agVar).nowType = AbstractCameraUpdateMessage.Type.newLatLngBounds;
+        ((AbstractCameraUpdateMessage) agVar).bounds = latLngBounds;
+        ((AbstractCameraUpdateMessage) agVar).paddingLeft = i;
+        ((AbstractCameraUpdateMessage) agVar).paddingRight = i2;
+        ((AbstractCameraUpdateMessage) agVar).paddingTop = i3;
+        ((AbstractCameraUpdateMessage) agVar).paddingBottom = i4;
         return agVar;
     }
 
     public static AbstractCameraUpdateMessage b() {
         aj ajVar = new aj();
-        ajVar.nowType = AbstractCameraUpdateMessage.Type.zoomBy;
-        ajVar.amount = -1.0f;
+        ((AbstractCameraUpdateMessage) ajVar).nowType = AbstractCameraUpdateMessage.Type.zoomBy;
+        ((AbstractCameraUpdateMessage) ajVar).amount = -1.0f;
         return ajVar;
     }
 
@@ -121,9 +121,9 @@ public final class ak {
 
     public static AbstractCameraUpdateMessage b(float f, Point point) {
         ah ahVar = new ah();
-        ahVar.nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
-        ahVar.geoPoint = new DPoint(point.x, point.y);
-        ahVar.bearing = f;
+        ((AbstractCameraUpdateMessage) ahVar).nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
+        ((AbstractCameraUpdateMessage) ahVar).geoPoint = new DPoint(point.x, point.y);
+        ((AbstractCameraUpdateMessage) ahVar).bearing = f;
         return ahVar;
     }
 
@@ -133,15 +133,15 @@ public final class ak {
 
     public static AbstractCameraUpdateMessage c(float f) {
         ah ahVar = new ah();
-        ahVar.nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
-        ahVar.tilt = f;
+        ((AbstractCameraUpdateMessage) ahVar).nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
+        ((AbstractCameraUpdateMessage) ahVar).tilt = f;
         return ahVar;
     }
 
     public static AbstractCameraUpdateMessage d(float f) {
         ah ahVar = new ah();
-        ahVar.nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
-        ahVar.bearing = f;
+        ((AbstractCameraUpdateMessage) ahVar).nowType = AbstractCameraUpdateMessage.Type.newCameraPosition;
+        ((AbstractCameraUpdateMessage) ahVar).bearing = f;
         return ahVar;
     }
 }

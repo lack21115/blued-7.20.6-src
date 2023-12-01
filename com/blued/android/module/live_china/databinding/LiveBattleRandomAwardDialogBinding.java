@@ -14,22 +14,18 @@ import com.blued.android.module.svgaplayer.SVGAImageView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleRandomAwardDialogBinding.class */
 public final class LiveBattleRandomAwardDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12143a;
+    public final ImageView a;
     public final ProgressBar b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f12144c;
+    public final RelativeLayout c;
     public final RecyclerView d;
     public final SVGAImageView e;
     private final FrameLayout f;
 
     private LiveBattleRandomAwardDialogBinding(FrameLayout frameLayout, ImageView imageView, ProgressBar progressBar, RelativeLayout relativeLayout, RecyclerView recyclerView, SVGAImageView sVGAImageView) {
         this.f = frameLayout;
-        this.f12143a = imageView;
+        this.a = imageView;
         this.b = progressBar;
-        this.f12144c = relativeLayout;
+        this.c = relativeLayout;
         this.d = recyclerView;
         this.e = sVGAImageView;
     }
@@ -54,11 +50,11 @@ public final class LiveBattleRandomAwardDialogBinding implements ViewBinding {
             if (progressBar != null) {
                 RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_root);
                 if (relativeLayout != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                    if (recyclerView != null) {
+                    RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                    if (findViewById != null) {
                         SVGAImageView sVGAImageView = (SVGAImageView) view.findViewById(R.id.svg_float);
                         if (sVGAImageView != null) {
-                            return new LiveBattleRandomAwardDialogBinding((FrameLayout) view, imageView, progressBar, relativeLayout, recyclerView, sVGAImageView);
+                            return new LiveBattleRandomAwardDialogBinding((FrameLayout) view, imageView, progressBar, relativeLayout, findViewById, sVGAImageView);
                         }
                         str = "svgFloat";
                     } else {
@@ -76,7 +72,6 @@ public final class LiveBattleRandomAwardDialogBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

@@ -1,6 +1,5 @@
 package androidx.concurrent.futures;
 
-import com.amap.api.col.p0003sl.iu;
 import com.google.common.util.concurrent.ListenableFuture;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -21,12 +20,12 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     private static final Object g;
 
     /* renamed from: c  reason: collision with root package name */
-    volatile Object f1969c;
+    volatile Object f1921c;
     volatile Listener d;
     volatile Waiter e;
 
     /* renamed from: a  reason: collision with root package name */
-    static final boolean f1968a = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+    static final boolean f1920a = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     private static final Logger f = Logger.getLogger(AbstractResolvableFuture.class.getName());
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -51,25 +50,25 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     public static final class Cancellation {
 
         /* renamed from: a  reason: collision with root package name */
-        static final Cancellation f1970a;
+        static final Cancellation f1922a;
         static final Cancellation b;
 
         /* renamed from: c  reason: collision with root package name */
-        final boolean f1971c;
+        final boolean f1923c;
         final Throwable d;
 
         static {
-            if (AbstractResolvableFuture.f1968a) {
+            if (AbstractResolvableFuture.f1920a) {
                 b = null;
-                f1970a = null;
+                f1922a = null;
                 return;
             }
             b = new Cancellation(false, null);
-            f1970a = new Cancellation(true, null);
+            f1922a = new Cancellation(true, null);
         }
 
         Cancellation(boolean z, Throwable th) {
-            this.f1971c = z;
+            this.f1923c = z;
             this.d = th;
         }
     }
@@ -79,7 +78,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     public static final class Failure {
 
         /* renamed from: a  reason: collision with root package name */
-        static final Failure f1972a = new Failure(new Throwable("Failure occurred while trying to finish a future.") { // from class: androidx.concurrent.futures.AbstractResolvableFuture.Failure.1
+        static final Failure f1924a = new Failure(new Throwable("Failure occurred while trying to finish a future.") { // from class: androidx.concurrent.futures.AbstractResolvableFuture.Failure.1
             @Override // java.lang.Throwable
             public Throwable fillInStackTrace() {
                 synchronized (this) {
@@ -99,16 +98,16 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     public static final class Listener {
 
         /* renamed from: a  reason: collision with root package name */
-        static final Listener f1973a = new Listener(null, null);
+        static final Listener f1925a = new Listener(null, null);
         final Runnable b;
 
         /* renamed from: c  reason: collision with root package name */
-        final Executor f1974c;
+        final Executor f1926c;
         Listener d;
 
         Listener(Runnable runnable, Executor executor) {
             this.b = runnable;
-            this.f1974c = executor;
+            this.f1926c = executor;
         }
     }
 
@@ -116,19 +115,19 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     static final class SafeAtomicHelper extends AtomicHelper {
 
         /* renamed from: a  reason: collision with root package name */
-        final AtomicReferenceFieldUpdater<Waiter, Thread> f1975a;
+        final AtomicReferenceFieldUpdater<Waiter, Thread> f1927a;
         final AtomicReferenceFieldUpdater<Waiter, Waiter> b;
 
         /* renamed from: c  reason: collision with root package name */
-        final AtomicReferenceFieldUpdater<AbstractResolvableFuture, Waiter> f1976c;
+        final AtomicReferenceFieldUpdater<AbstractResolvableFuture, Waiter> f1928c;
         final AtomicReferenceFieldUpdater<AbstractResolvableFuture, Listener> d;
         final AtomicReferenceFieldUpdater<AbstractResolvableFuture, Object> e;
 
         SafeAtomicHelper(AtomicReferenceFieldUpdater<Waiter, Thread> atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater<Waiter, Waiter> atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater<AbstractResolvableFuture, Waiter> atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater<AbstractResolvableFuture, Listener> atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater<AbstractResolvableFuture, Object> atomicReferenceFieldUpdater5) {
             super();
-            this.f1975a = atomicReferenceFieldUpdater;
+            this.f1927a = atomicReferenceFieldUpdater;
             this.b = atomicReferenceFieldUpdater2;
-            this.f1976c = atomicReferenceFieldUpdater3;
+            this.f1928c = atomicReferenceFieldUpdater3;
             this.d = atomicReferenceFieldUpdater4;
             this.e = atomicReferenceFieldUpdater5;
         }
@@ -140,7 +139,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
 
         @Override // androidx.concurrent.futures.AbstractResolvableFuture.AtomicHelper
         void a(Waiter waiter, Thread thread) {
-            this.f1975a.lazySet(waiter, thread);
+            this.f1927a.lazySet(waiter, thread);
         }
 
         @Override // androidx.concurrent.futures.AbstractResolvableFuture.AtomicHelper
@@ -150,7 +149,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
 
         @Override // androidx.concurrent.futures.AbstractResolvableFuture.AtomicHelper
         boolean a(AbstractResolvableFuture<?> abstractResolvableFuture, Waiter waiter, Waiter waiter2) {
-            return this.f1976c.compareAndSet(abstractResolvableFuture, waiter, waiter2);
+            return this.f1928c.compareAndSet(abstractResolvableFuture, waiter, waiter2);
         }
 
         @Override // androidx.concurrent.futures.AbstractResolvableFuture.AtomicHelper
@@ -164,21 +163,21 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     public static final class SetFuture<V> implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final AbstractResolvableFuture<V> f1977a;
+        final AbstractResolvableFuture<V> f1929a;
         final ListenableFuture<? extends V> b;
 
         SetFuture(AbstractResolvableFuture<V> abstractResolvableFuture, ListenableFuture<? extends V> listenableFuture) {
-            this.f1977a = abstractResolvableFuture;
+            this.f1929a = abstractResolvableFuture;
             this.b = listenableFuture;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f1977a.f1969c != this) {
+            if (this.f1929a.f1921c != this) {
                 return;
             }
-            if (AbstractResolvableFuture.b.a((AbstractResolvableFuture<?>) this.f1977a, (Object) this, AbstractResolvableFuture.a((ListenableFuture<?>) this.b))) {
-                AbstractResolvableFuture.a((AbstractResolvableFuture<?>) this.f1977a);
+            if (AbstractResolvableFuture.b.a((AbstractResolvableFuture<?>) this.f1929a, (Object) this, AbstractResolvableFuture.a((ListenableFuture<?>) this.b))) {
+                AbstractResolvableFuture.a((AbstractResolvableFuture<?>) this.f1929a);
             }
         }
     }
@@ -191,7 +190,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
 
         @Override // androidx.concurrent.futures.AbstractResolvableFuture.AtomicHelper
         void a(Waiter waiter, Waiter waiter2) {
-            waiter.f1979c = waiter2;
+            waiter.f1931c = waiter2;
         }
 
         @Override // androidx.concurrent.futures.AbstractResolvableFuture.AtomicHelper
@@ -224,8 +223,8 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         @Override // androidx.concurrent.futures.AbstractResolvableFuture.AtomicHelper
         boolean a(AbstractResolvableFuture<?> abstractResolvableFuture, Object obj, Object obj2) {
             synchronized (abstractResolvableFuture) {
-                if (abstractResolvableFuture.f1969c == obj) {
-                    abstractResolvableFuture.f1969c = obj2;
+                if (abstractResolvableFuture.f1921c == obj) {
+                    abstractResolvableFuture.f1921c = obj2;
                     return true;
                 }
                 return false;
@@ -238,11 +237,11 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     public static final class Waiter {
 
         /* renamed from: a  reason: collision with root package name */
-        static final Waiter f1978a = new Waiter(false);
+        static final Waiter f1930a = new Waiter(false);
         volatile Thread b;
 
         /* renamed from: c  reason: collision with root package name */
-        volatile Waiter f1979c;
+        volatile Waiter f1931c;
 
         Waiter() {
             AbstractResolvableFuture.b.a(this, Thread.currentThread());
@@ -267,7 +266,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     static {
         AtomicHelper synchronizedHelper;
         try {
-            synchronizedHelper = new SafeAtomicHelper(AtomicReferenceFieldUpdater.newUpdater(Waiter.class, Thread.class, "b"), AtomicReferenceFieldUpdater.newUpdater(Waiter.class, Waiter.class, "c"), AtomicReferenceFieldUpdater.newUpdater(AbstractResolvableFuture.class, Waiter.class, iu.h), AtomicReferenceFieldUpdater.newUpdater(AbstractResolvableFuture.class, Listener.class, "d"), AtomicReferenceFieldUpdater.newUpdater(AbstractResolvableFuture.class, Object.class, "c"));
+            synchronizedHelper = new SafeAtomicHelper(AtomicReferenceFieldUpdater.newUpdater(Waiter.class, Thread.class, "b"), AtomicReferenceFieldUpdater.newUpdater(Waiter.class, Waiter.class, "c"), AtomicReferenceFieldUpdater.newUpdater(AbstractResolvableFuture.class, Waiter.class, "e"), AtomicReferenceFieldUpdater.newUpdater(AbstractResolvableFuture.class, Listener.class, "d"), AtomicReferenceFieldUpdater.newUpdater(AbstractResolvableFuture.class, Object.class, "c"));
             th = null;
         } catch (Throwable th) {
             th = th;
@@ -284,7 +283,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         Listener listener2;
         do {
             listener2 = this.d;
-        } while (!b.a((AbstractResolvableFuture<?>) this, listener2, Listener.f1973a));
+        } while (!b.a((AbstractResolvableFuture<?>) this, listener2, Listener.f1925a));
         while (true) {
             Listener listener3 = listener;
             listener = listener2;
@@ -298,12 +297,12 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
 
     static Object a(ListenableFuture<?> listenableFuture) {
         if (listenableFuture instanceof AbstractResolvableFuture) {
-            Object obj = ((AbstractResolvableFuture) listenableFuture).f1969c;
+            Object obj = ((AbstractResolvableFuture) listenableFuture).f1921c;
             Cancellation cancellation = obj;
             if (obj instanceof Cancellation) {
                 Cancellation cancellation2 = (Cancellation) obj;
                 cancellation = obj;
-                if (cancellation2.f1971c) {
+                if (cancellation2.f1923c) {
                     if (cancellation2.d != null) {
                         return new Cancellation(false, cancellation2.d);
                     }
@@ -313,7 +312,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
             return cancellation;
         }
         boolean isCancelled = listenableFuture.isCancelled();
-        if ((!f1968a) && isCancelled) {
+        if ((!f1920a) && isCancelled) {
             return Cancellation.b;
         }
         try {
@@ -377,7 +376,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         waiter.b = null;
         while (true) {
             Waiter waiter3 = this.e;
-            if (waiter3 == Waiter.f1978a) {
+            if (waiter3 == Waiter.f1930a) {
                 return;
             }
             Waiter waiter4 = null;
@@ -386,11 +385,11 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                 if (waiter3 == null) {
                     return;
                 }
-                Waiter waiter6 = waiter3.f1979c;
+                Waiter waiter6 = waiter3.f1931c;
                 if (waiter3.b != null) {
                     waiter2 = waiter3;
                 } else if (waiter5 != null) {
-                    waiter5.f1979c = waiter6;
+                    waiter5.f1931c = waiter6;
                     waiter2 = waiter5;
                     if (waiter5.b == null) {
                         break;
@@ -425,8 +424,8 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                 Runnable runnable = listener2.b;
                 if (runnable instanceof SetFuture) {
                     SetFuture setFuture = (SetFuture) runnable;
-                    abstractResolvableFuture2 = setFuture.f1977a;
-                    if (abstractResolvableFuture2.f1969c == setFuture) {
+                    abstractResolvableFuture2 = setFuture.f1929a;
+                    if (abstractResolvableFuture2.f1921c == setFuture) {
                         if (b.a(abstractResolvableFuture2, setFuture, a((ListenableFuture<?>) setFuture.b))) {
                             break;
                         }
@@ -434,7 +433,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                         continue;
                     }
                 } else {
-                    a(runnable, listener2.f1974c);
+                    a(runnable, listener2.f1926c);
                 }
                 a2 = listener;
             }
@@ -492,10 +491,10 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         Waiter waiter;
         do {
             waiter = this.e;
-        } while (!b.a((AbstractResolvableFuture<?>) this, waiter, Waiter.f1978a));
+        } while (!b.a((AbstractResolvableFuture<?>) this, waiter, Waiter.f1930a));
         while (waiter != null) {
             waiter.a();
-            waiter = waiter.f1979c;
+            waiter = waiter.f1931c;
         }
     }
 
@@ -508,7 +507,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         a(runnable);
         a(executor);
         Listener listener2 = this.d;
-        if (listener2 == Listener.f1973a) {
+        if (listener2 == Listener.f1925a) {
             a(runnable, executor);
         }
         Listener listener3 = new Listener(runnable, executor);
@@ -519,7 +518,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
             }
             listener = this.d;
             listener2 = listener;
-        } while (listener != Listener.f1973a);
+        } while (listener != Listener.f1925a);
         a(runnable, executor);
     }
 
@@ -527,7 +526,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     }
 
     protected String c() {
-        Object obj = this.f1969c;
+        Object obj = this.f1921c;
         if (obj instanceof SetFuture) {
             return "setFuture=[" + c(((SetFuture) obj).b) + "]";
         } else if (this instanceof ScheduledFuture) {
@@ -540,9 +539,9 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     @Override // java.util.concurrent.Future
     public final boolean cancel(boolean z) {
         boolean z2;
-        Object obj = this.f1969c;
+        Object obj = this.f1921c;
         if ((obj == null) || (obj instanceof SetFuture)) {
-            Cancellation cancellation = f1968a ? new Cancellation(z, new CancellationException("Future.cancel() was called.")) : z ? Cancellation.f1970a : Cancellation.b;
+            Cancellation cancellation = f1920a ? new Cancellation(z, new CancellationException("Future.cancel() was called.")) : z ? Cancellation.f1922a : Cancellation.b;
             boolean z3 = false;
             AbstractResolvableFuture<V> abstractResolvableFuture = this;
             while (true) {
@@ -561,14 +560,14 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                         return true;
                     }
                     abstractResolvableFuture = (AbstractResolvableFuture) listenableFuture;
-                    obj = abstractResolvableFuture.f1969c;
+                    obj = abstractResolvableFuture.f1921c;
                     z2 = true;
                     if (!(obj == null) && !(obj instanceof SetFuture)) {
                         break;
                     }
                     z3 = true;
                 } else {
-                    Object obj2 = abstractResolvableFuture.f1969c;
+                    Object obj2 = abstractResolvableFuture.f1921c;
                     obj = obj2;
                     if (!(obj2 instanceof SetFuture)) {
                         return z3;
@@ -588,12 +587,12 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         if (Thread.interrupted()) {
             throw new InterruptedException();
         }
-        Object obj2 = this.f1969c;
+        Object obj2 = this.f1921c;
         if ((obj2 != null) && (!(obj2 instanceof SetFuture))) {
             return b(obj2);
         }
         Waiter waiter2 = this.e;
-        if (waiter2 != Waiter.f1978a) {
+        if (waiter2 != Waiter.f1930a) {
             Waiter waiter3 = new Waiter();
             do {
                 waiter3.a(waiter2);
@@ -604,16 +603,16 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                             a(waiter3);
                             throw new InterruptedException();
                         }
-                        obj = this.f1969c;
+                        obj = this.f1921c;
                     } while (!((obj != null) & (!(obj instanceof SetFuture))));
                     return b(obj);
                 }
                 waiter = this.e;
                 waiter2 = waiter;
-            } while (waiter != Waiter.f1978a);
-            return b(this.f1969c);
+            } while (waiter != Waiter.f1930a);
+            return b(this.f1921c);
         }
-        return b(this.f1969c);
+        return b(this.f1921c);
     }
 
     @Override // java.util.concurrent.Future
@@ -623,7 +622,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         if (Thread.interrupted()) {
             throw new InterruptedException();
         }
-        Object obj = this.f1969c;
+        Object obj = this.f1921c;
         if ((obj != null) && (!(obj instanceof SetFuture))) {
             return b(obj);
         }
@@ -631,7 +630,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
         long j2 = nanos;
         if (nanos >= 1000) {
             Waiter waiter2 = this.e;
-            if (waiter2 != Waiter.f1978a) {
+            if (waiter2 != Waiter.f1930a) {
                 Waiter waiter3 = new Waiter();
                 do {
                     waiter3.a(waiter2);
@@ -642,7 +641,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                                 a(waiter3);
                                 throw new InterruptedException();
                             }
-                            Object obj2 = this.f1969c;
+                            Object obj2 = this.f1921c;
                             if ((obj2 != null) && (!(obj2 instanceof SetFuture))) {
                                 return b(obj2);
                             }
@@ -654,13 +653,13 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                         waiter = this.e;
                         waiter2 = waiter;
                     }
-                } while (waiter != Waiter.f1978a);
-                return b(this.f1969c);
+                } while (waiter != Waiter.f1930a);
+                return b(this.f1921c);
             }
-            return b(this.f1969c);
+            return b(this.f1921c);
         }
         while (j2 > 0) {
-            Object obj3 = this.f1969c;
+            Object obj3 = this.f1921c;
             if ((obj3 != null) && (!(obj3 instanceof SetFuture))) {
                 return b(obj3);
             }
@@ -703,12 +702,12 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
 
     @Override // java.util.concurrent.Future
     public final boolean isCancelled() {
-        return this.f1969c instanceof Cancellation;
+        return this.f1921c instanceof Cancellation;
     }
 
     @Override // java.util.concurrent.Future
     public final boolean isDone() {
-        Object obj = this.f1969c;
+        Object obj = this.f1921c;
         return (!(obj instanceof SetFuture)) & (obj != null);
     }
 
@@ -739,7 +738,7 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
     public boolean setFuture(ListenableFuture<? extends V> listenableFuture) {
         Failure failure;
         a(listenableFuture);
-        Object obj = this.f1969c;
+        Object obj = this.f1921c;
         Object obj2 = obj;
         if (obj == null) {
             if (listenableFuture.isDone()) {
@@ -758,16 +757,16 @@ public abstract class AbstractResolvableFuture<V> implements ListenableFuture<V>
                     try {
                         failure = new Failure(th);
                     } catch (Throwable th2) {
-                        failure = Failure.f1972a;
+                        failure = Failure.f1924a;
                     }
                     b.a((AbstractResolvableFuture<?>) this, (Object) setFuture, (Object) failure);
                     return true;
                 }
             }
-            obj2 = this.f1969c;
+            obj2 = this.f1921c;
         }
         if (obj2 instanceof Cancellation) {
-            listenableFuture.cancel(((Cancellation) obj2).f1971c);
+            listenableFuture.cancel(((Cancellation) obj2).f1923c);
             return false;
         }
         return false;

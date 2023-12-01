@@ -10,12 +10,12 @@ import com.blued.login.R;
 public final class PopOtherLoginBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TextView f20533a;
+    public final TextView f6927a;
     private final FrameLayout b;
 
     private PopOtherLoginBinding(FrameLayout frameLayout, TextView textView) {
         this.b = frameLayout;
-        this.f20533a = textView;
+        this.f6927a = textView;
     }
 
     public static PopOtherLoginBinding a(View view) {

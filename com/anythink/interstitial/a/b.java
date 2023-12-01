@@ -20,10 +20,10 @@ import java.util.Map;
 public class b {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile b f8806c;
+    private static volatile b f5966c;
 
     /* renamed from: a  reason: collision with root package name */
-    String f8807a = "InterstitialAuto";
+    String f5967a = "InterstitialAuto";
     ATInterstitialAutoLoadListener b = new ATInterstitialAutoLoadListener() { // from class: com.anythink.interstitial.a.b.1
         @Override // com.anythink.interstitial.api.ATInterstitialAutoLoadListener
         public final void onInterstitialAutoLoadFail(final String str, final AdError adError) {
@@ -52,18 +52,18 @@ public class b {
     private ATInterstitialAutoLoadListener d;
 
     public static b a() {
-        if (f8806c == null) {
+        if (f5966c == null) {
             synchronized (b.class) {
                 try {
-                    if (f8806c == null) {
-                        f8806c = new b();
+                    if (f5966c == null) {
+                        f5966c = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f8806c;
+        return f5966c;
     }
 
     private void a(Activity activity, String str, ATInterstitialAutoEventListener aTInterstitialAutoEventListener) {
@@ -138,7 +138,7 @@ public class b {
 
     private ATAdStatusInfo d(String str) {
         if (n.a().g() == null || TextUtils.isEmpty(n.a().p()) || TextUtils.isEmpty(n.a().q())) {
-            Log.e(this.f8807a, "SDK init error!");
+            Log.e(this.f5967a, "SDK init error!");
             return null;
         }
         a a2 = a.a(n.a().E(), str);
@@ -151,12 +151,12 @@ public class b {
     public final void a(Activity activity, String str, String str2, ATInterstitialAutoEventListener aTInterstitialAutoEventListener) {
         com.anythink.core.common.k.n.b(str, g.i.n, g.i.s, g.i.h, "");
         if (TextUtils.isEmpty(str)) {
-            Log.e(this.f8807a, "PlacementId is Empty!");
+            Log.e(this.f5967a, "PlacementId is Empty!");
         } else if (n.a().g() == null || TextUtils.isEmpty(n.a().p()) || TextUtils.isEmpty(n.a().q())) {
-            Log.e(this.f8807a, "Show error: SDK init error!");
+            Log.e(this.f5967a, "Show error: SDK init error!");
         } else {
             if (activity == null) {
-                Log.e(this.f8807a, "Interstitial Show Activity is null.");
+                Log.e(this.f5967a, "Interstitial Show Activity is null.");
             }
             a.a(activity, str).a(activity, str2, new c(aTInterstitialAutoEventListener), (ATEventInterface) null, (Map<String, Object>) null);
         }
@@ -201,12 +201,12 @@ public class b {
     public final ATAdStatusInfo b(String str) {
         ATAdStatusInfo aTAdStatusInfo;
         if (TextUtils.isEmpty(str)) {
-            aTAdStatusInfo = new ATAdStatusInfo(false, false, null);
+            aTAdStatusInfo = new ATAdStatusInfo(false, false, (ATAdInfo) null);
         } else {
             ATAdStatusInfo d = d(str);
             aTAdStatusInfo = d;
             if (d == null) {
-                aTAdStatusInfo = new ATAdStatusInfo(false, false, null);
+                aTAdStatusInfo = new ATAdStatusInfo(false, false, (ATAdInfo) null);
             }
         }
         com.anythink.core.common.k.n.b(str, g.i.n, g.i.u, aTAdStatusInfo.toString(), "");

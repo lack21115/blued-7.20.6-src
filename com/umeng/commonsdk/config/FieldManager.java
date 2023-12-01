@@ -10,11 +10,11 @@ import java.util.ArrayList;
 public class FieldManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40839a = "cfgfd";
+    private static final String f27148a = "cfgfd";
     private static b b = b.b();
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f40840c = false;
+    private static boolean f27149c = false;
     private static Object d = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -22,7 +22,7 @@ public class FieldManager {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final FieldManager f40841a = new FieldManager();
+        private static final FieldManager f27150a = new FieldManager();
 
         private a() {
         }
@@ -48,12 +48,12 @@ public class FieldManager {
     }
 
     public static FieldManager a() {
-        return a.f40841a;
+        return a.f27150a;
     }
 
     public static boolean allow(String str) {
         synchronized (d) {
-            if (f40840c) {
+            if (f27149c) {
                 return b.a(str);
             }
             return false;
@@ -63,7 +63,7 @@ public class FieldManager {
     public static boolean b() {
         boolean z;
         synchronized (d) {
-            z = f40840c;
+            z = f27149c;
         }
         return z;
     }
@@ -72,7 +72,7 @@ public class FieldManager {
         String name = d.a.class.getName();
         String name2 = d.b.class.getName();
         String name3 = d.c.class.getName();
-        String name4 = d.EnumC1080d.class.getName();
+        String name4 = d.EnumC0910d.class.getName();
         String imprintProperty = UMEnvelopeBuild.imprintProperty(context, "cfgfd", "1001@3749699455,2130669566,262139,1983");
         synchronized (d) {
             Pair<Long, String> a2 = a(imprintProperty);
@@ -97,7 +97,7 @@ public class FieldManager {
                     ((e) arrayList.get(i)).a(split[i], b, d.b(new String[]{name, name2, name3, name4}[i]));
                 }
             }
-            f40840c = true;
+            f27149c = true;
         }
     }
 

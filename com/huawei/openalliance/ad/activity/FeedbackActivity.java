@@ -61,7 +61,7 @@ public class FeedbackActivity extends a implements com.huawei.openalliance.ad.co
             Code2.getLocationOnScreen(iArr2);
             int measuredWidth = Code2.getMeasuredWidth();
             int measuredHeight = Code2.getMeasuredHeight();
-            Code2.getViewTreeObserver().addOnGlobalLayoutListener(new a.ViewTreeObserver$OnGlobalLayoutListenerC0429a(Code2, context, iArr2));
+            Code2.getViewTreeObserver().addOnGlobalLayoutListener(new a.ViewTreeObserver$OnGlobalLayoutListenerC0259a(Code2, context, iArr2));
             Intent intent = new Intent(context, FeedbackActivity.class);
             intent.putExtra(at.ao, iArr);
             intent.putExtra(at.ap, new int[]{measuredWidth, measuredHeight});
@@ -79,8 +79,8 @@ public class FeedbackActivity extends a implements com.huawei.openalliance.ad.co
 
     private void Code(List<FeedbackInfo> list) {
         Toast.makeText(getApplicationContext(), R.string.hiad_feedback_had_feedback, 0).show();
-        ko.Code(this, this.f22933c, list, 2);
-        eh.Code(this, this.f22933c, "1");
+        ko.Code(this, this.f9325c, list, 2);
+        eh.Code(this, this.f9325c, "1");
         AdFeedbackListener adFeedbackListener = p;
         if (adFeedbackListener != null) {
             adFeedbackListener.onAdLiked();
@@ -109,7 +109,7 @@ public class FeedbackActivity extends a implements com.huawei.openalliance.ad.co
             public void onClick(View view) {
                 Tracker.onClick(view);
                 try {
-                    eh.Code(FeedbackActivity.this, FeedbackActivity.this.f22933c, "3");
+                    eh.Code(FeedbackActivity.this, FeedbackActivity.this.f9325c, "3");
                 } catch (Throwable th) {
                     ge.I("FeedbackActivity", "onClick error: %s", th.getClass().getSimpleName());
                 }
@@ -120,8 +120,8 @@ public class FeedbackActivity extends a implements com.huawei.openalliance.ad.co
 
     private void V(List<FeedbackInfo> list) {
         Toast.makeText(getApplicationContext(), R.string.hiad_feedback_reduce_such_content, 0).show();
-        ko.Code(this, this.f22933c, list, 1);
-        eh.Code(this, this.f22933c, "2");
+        ko.Code(this, this.f9325c, list, 1);
+        eh.Code(this, this.f9325c, "2");
         AdFeedbackListener adFeedbackListener = p;
         if (adFeedbackListener != null) {
             adFeedbackListener.onAdDisliked();
@@ -138,7 +138,7 @@ public class FeedbackActivity extends a implements com.huawei.openalliance.ad.co
         if (Code == null) {
             return false;
         }
-        this.f22933c = Code.l();
+        this.f9325c = Code.l();
         return super.B();
     }
 
@@ -177,8 +177,8 @@ public class FeedbackActivity extends a implements com.huawei.openalliance.ad.co
     @Override // com.huawei.openalliance.ad.activity.a
     protected void I() {
         C();
-        this.f.Code(this.f22932a, this.b);
-        this.f.setAdContentData(this.f22933c);
+        this.f.Code(this.f9324a, this.b);
+        this.f.setAdContentData(this.f9325c);
         this.f.setFeedbackListener(this);
     }
 
@@ -206,7 +206,7 @@ public class FeedbackActivity extends a implements com.huawei.openalliance.ad.co
         try {
             super.onCreate(bundle);
             S();
-            eh.Code(this, this.f22933c, "0");
+            eh.Code(this, this.f9325c, "0");
         } catch (Throwable th) {
             ge.I("FeedbackActivity", "onCreate error: %s", th.getClass().getSimpleName());
             D();

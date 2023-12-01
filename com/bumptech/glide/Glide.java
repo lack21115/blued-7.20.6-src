@@ -100,11 +100,11 @@ import java.util.Set;
 public class Glide implements ComponentCallbacks2 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile Glide f20645a;
+    private static volatile Glide f7039a;
     private static volatile boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Engine f20646c;
+    private final Engine f7040c;
     private final BitmapPool d;
     private final MemoryCache e;
     private final GlideContext f;
@@ -128,7 +128,7 @@ public class Glide implements ComponentCallbacks2 {
     public Glide(Context context, Engine engine, MemoryCache memoryCache, BitmapPool bitmapPool, ArrayPool arrayPool, RequestManagerRetriever requestManagerRetriever, ConnectivityMonitorFactory connectivityMonitorFactory, int i, RequestOptionsFactory requestOptionsFactory, Map<Class<?>, TransitionOptions<?, ?>> map, List<RequestListener<Object>> list, boolean z, boolean z2) {
         ByteBufferBitmapDecoder byteBufferBitmapDecoder;
         StreamBitmapDecoder streamBitmapDecoder;
-        this.f20646c = engine;
+        this.f7040c = engine;
         this.d = bitmapPool;
         this.h = arrayPool;
         this.e = memoryCache;
@@ -185,11 +185,11 @@ public class Glide implements ComponentCallbacks2 {
     }
 
     public static Glide a(Context context) {
-        if (f20645a == null) {
+        if (f7039a == null) {
             GeneratedAppGlideModule c2 = c(context.getApplicationContext());
             synchronized (Glide.class) {
                 try {
-                    if (f20645a == null) {
+                    if (f7039a == null) {
                         a(context, c2);
                     }
                 } catch (Throwable th) {
@@ -197,7 +197,7 @@ public class Glide implements ComponentCallbacks2 {
                 }
             }
         }
-        return f20645a;
+        return f7039a;
     }
 
     public static RequestManager a(Activity activity) {
@@ -264,7 +264,7 @@ public class Glide implements ComponentCallbacks2 {
             generatedAppGlideModule.a(applicationContext, a3, a3.g);
         }
         applicationContext.registerComponentCallbacks(a3);
-        f20645a = a3;
+        f7039a = a3;
     }
 
     private static void a(Exception exc) {
@@ -378,7 +378,7 @@ public class Glide implements ComponentCallbacks2 {
 
     public void f() {
         Util.b();
-        this.f20646c.a();
+        this.f7040c.a();
     }
 
     public RequestManagerRetriever g() {

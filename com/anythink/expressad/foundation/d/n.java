@@ -8,11 +8,11 @@ import java.util.Map;
 public final class n implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    private String[] f7797a;
+    private String[] f4957a;
     private String[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String[] f7798c;
+    private String[] f4958c;
     private String[] d;
     private String[] e;
     private String[] f;
@@ -99,7 +99,7 @@ public final class n implements Serializable {
     }
 
     public final String[] e() {
-        return this.f7798c;
+        return this.f4958c;
     }
 
     public final void f(String[] strArr) {
@@ -119,7 +119,7 @@ public final class n implements Serializable {
     }
 
     public final void h(String[] strArr) {
-        this.f7798c = strArr;
+        this.f4958c = strArr;
     }
 
     public final String[] h() {
@@ -179,7 +179,7 @@ public final class n implements Serializable {
     }
 
     public final String[] o() {
-        return this.f7797a;
+        return this.f4957a;
     }
 
     public final void p(String[] strArr) {
@@ -199,7 +199,7 @@ public final class n implements Serializable {
     }
 
     public final void r(String[] strArr) {
-        this.f7797a = strArr;
+        this.f4957a = strArr;
     }
 
     public final void s(String[] strArr) {

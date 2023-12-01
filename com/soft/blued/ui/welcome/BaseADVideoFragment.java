@@ -27,11 +27,11 @@ public class BaseADVideoFragment extends BaseFragment {
     private static PayVIPPopupWindow.OnVideoSuccessListener g;
 
     /* renamed from: a  reason: collision with root package name */
-    public Dialog f34513a;
+    public Dialog f20822a;
     public BluedADExtra b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f34514c;
+    public int f20823c;
     public boolean d;
     public String e;
     public boolean f;
@@ -61,10 +61,9 @@ public class BaseADVideoFragment extends BaseFragment {
     }
 
     public void a() {
-        int i = this.f34514c;
+        int i = this.f20823c;
         if (i == 0) {
             LoginRegisterHttpUtils.a(new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.welcome.BaseADVideoFragment.1
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity bluedEntity) {
                 }
             });
@@ -72,7 +71,6 @@ public class BaseADVideoFragment extends BaseFragment {
         } else {
             LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Excitation>>(getFragmentActive()) { // from class: com.soft.blued.ui.welcome.BaseADVideoFragment.2
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<Excitation> bluedEntityA) {
                     if (bluedEntityA.hasData()) {
@@ -80,7 +78,6 @@ public class BaseADVideoFragment extends BaseFragment {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i2, String str) {
                     BaseADVideoFragment.this.e = str;
                     return true;
@@ -102,22 +99,22 @@ public class BaseADVideoFragment extends BaseFragment {
     }
 
     public void e() {
-        int i = this.f34514c;
+        int i = this.f20823c;
         if (i != 1) {
             if (i != 2) {
                 return;
             }
-            AppMethods.a((CharSequence) CommunityPreferences.k());
+            AppMethods.a(CommunityPreferences.k());
         } else if (this.d) {
             AppMethods.d((int) R.string.ad_video_success);
         } else if (TextUtils.isEmpty(this.e)) {
         } else {
-            AppMethods.a((CharSequence) this.e);
+            AppMethods.a(this.e);
         }
     }
 
     public void f() {
-        if (this.f34514c != 2) {
+        if (this.f20823c != 2) {
             return;
         }
         LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.FLASH_AD_VIDEO_SUCCESS;
@@ -126,26 +123,26 @@ public class BaseADVideoFragment extends BaseFragment {
             @Override // com.soft.blued.ui.msg.manager.FlashPhotoManager.FlashPhotoModelSuccessListener
             public void onSuccess(BluedEntityA<FlashNumberModel> bluedEntityA) {
                 if (BaseADVideoFragment.g != null) {
-                    BaseADVideoFragment.g.a((bluedEntityA == null || bluedEntityA.getSingleData() == null || bluedEntityA.getSingleData().flash_left_times <= 0) ? false : true);
+                    BaseADVideoFragment.g.a((bluedEntityA == null || bluedEntityA.getSingleData() == null || ((FlashNumberModel) bluedEntityA.getSingleData()).flash_left_times <= 0) ? false : true);
                 }
             }
         });
     }
 
     public void g() {
-        int i = this.f34514c;
+        int i = this.f20823c;
         if (i == 0) {
             AppMethods.d((int) R.string.ad_video_failed);
         } else if (i == 1) {
             AppMethods.d((int) R.string.ad_video_banner_failed);
         } else if (i != 2) {
         } else {
-            AppMethods.d(2131890735);
+            AppMethods.d((int) R.string.msg_flash_stimulate_failed);
         }
     }
 
     public void h() {
-        if (this.f34514c != 2) {
+        if (this.f20823c != 2) {
             return;
         }
         LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.FLASH_AD_VIDEO_REQUEST;
@@ -153,24 +150,23 @@ public class BaseADVideoFragment extends BaseFragment {
     }
 
     public void i() {
-        if (this.f34514c != 2) {
+        if (this.f20823c != 2) {
             return;
         }
         LoginAndRegisterProtos.Event event = LoginAndRegisterProtos.Event.FLASH_AD_VIDEO_RESPONSE;
         EventTrackLoginAndRegister.c(event, this.b.aid + "");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
-            BluedADExtra bluedADExtra = (BluedADExtra) getArguments().getSerializable("AD_DATA");
-            this.b = bluedADExtra;
-            if (bluedADExtra == null) {
+            BluedADExtra serializable = getArguments().getSerializable("AD_DATA");
+            this.b = serializable;
+            if (serializable == null) {
                 b();
             }
-            this.f34514c = getArguments().getInt("AD_FROM");
+            this.f20823c = getArguments().getInt("AD_FROM");
         }
-        this.f34513a = DialogUtils.a(getContext());
+        this.f20822a = DialogUtils.a(getContext());
     }
 }

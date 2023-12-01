@@ -18,16 +18,12 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYCloseMenuDialog.class */
 public final class YYCloseMenuDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f17157a;
+    private BaseYYStudioFragment a;
     private View.OnClickListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogYyCloseMenuBinding f17158c;
+    private DialogYyCloseMenuBinding c;
 
     public YYCloseMenuDialog(BaseYYStudioFragment baseYYStudioFragment, View.OnClickListener onClickListener) {
-        this.f17157a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.b = onClickListener;
     }
 
@@ -45,7 +41,7 @@ public final class YYCloseMenuDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYCloseMenuDialog this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f17157a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -68,7 +64,7 @@ public final class YYCloseMenuDialog extends BaseFullScreenDialog {
         View view;
         LinearLayout linearLayout;
         LinearLayout linearLayout2;
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.f17158c;
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.c;
         if (dialogYyCloseMenuBinding != null && (linearLayout2 = dialogYyCloseMenuBinding.d) != null) {
             linearLayout2.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYCloseMenuDialog$Jo6RLadeSkxiJFkZy4uz6RtQbJs
                 @Override // android.view.View.OnClickListener
@@ -77,7 +73,7 @@ public final class YYCloseMenuDialog extends BaseFullScreenDialog {
                 }
             }));
         }
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding2 = this.f17158c;
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding2 = this.c;
         if (dialogYyCloseMenuBinding2 != null && (linearLayout = dialogYyCloseMenuBinding2.b) != null) {
             linearLayout.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYCloseMenuDialog$TuBspoAOsNaZFMcAp9Q11Pp4Y0w
                 @Override // android.view.View.OnClickListener
@@ -86,8 +82,8 @@ public final class YYCloseMenuDialog extends BaseFullScreenDialog {
                 }
             }));
         }
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding3 = this.f17158c;
-        if (dialogYyCloseMenuBinding3 == null || (view = dialogYyCloseMenuBinding3.f16423a) == null) {
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding3 = this.c;
+        if (dialogYyCloseMenuBinding3 == null || (view = dialogYyCloseMenuBinding3.a) == null) {
             return;
         }
         view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYCloseMenuDialog$lxnk2uHsKU3AyAjTNI22ynmsL7o
@@ -102,8 +98,8 @@ public final class YYCloseMenuDialog extends BaseFullScreenDialog {
         ConstraintLayout constraintLayout;
         Animation loadAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.push_top_out2);
         loadAnimation.setFillAfter(true);
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.f17158c;
-        ConstraintLayout constraintLayout2 = dialogYyCloseMenuBinding == null ? null : dialogYyCloseMenuBinding.f16424c;
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.c;
+        ConstraintLayout constraintLayout2 = dialogYyCloseMenuBinding == null ? null : dialogYyCloseMenuBinding.c;
         if (constraintLayout2 != null) {
             constraintLayout2.setVisibility(8);
         }
@@ -121,36 +117,36 @@ public final class YYCloseMenuDialog extends BaseFullScreenDialog {
             public void onAnimationStart(Animation animation) {
             }
         });
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding2 = this.f17158c;
-        if (dialogYyCloseMenuBinding2 == null || (constraintLayout = dialogYyCloseMenuBinding2.f16424c) == null) {
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding2 = this.c;
+        if (dialogYyCloseMenuBinding2 == null || (constraintLayout = dialogYyCloseMenuBinding2.c) == null) {
             return;
         }
         constraintLayout.startAnimation(loadAnimation);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f17158c = DialogYyCloseMenuBinding.a(inflater, viewGroup, false);
+        this.c = DialogYyCloseMenuBinding.a(inflater, viewGroup, false);
         f();
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.f17158c;
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.c;
         return dialogYyCloseMenuBinding == null ? null : dialogYyCloseMenuBinding.getRoot();
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         ConstraintLayout constraintLayout;
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
         Animation loadAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.push_top_in2);
         loadAnimation.setFillAfter(true);
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.f17158c;
-        ConstraintLayout constraintLayout2 = dialogYyCloseMenuBinding == null ? null : dialogYyCloseMenuBinding.f16424c;
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding = this.c;
+        ConstraintLayout constraintLayout2 = dialogYyCloseMenuBinding == null ? null : dialogYyCloseMenuBinding.c;
         if (constraintLayout2 != null) {
             constraintLayout2.setVisibility(0);
         }
-        DialogYyCloseMenuBinding dialogYyCloseMenuBinding2 = this.f17158c;
-        if (dialogYyCloseMenuBinding2 == null || (constraintLayout = dialogYyCloseMenuBinding2.f16424c) == null) {
+        DialogYyCloseMenuBinding dialogYyCloseMenuBinding2 = this.c;
+        if (dialogYyCloseMenuBinding2 == null || (constraintLayout = dialogYyCloseMenuBinding2.c) == null) {
             return;
         }
         constraintLayout.startAnimation(loadAnimation);

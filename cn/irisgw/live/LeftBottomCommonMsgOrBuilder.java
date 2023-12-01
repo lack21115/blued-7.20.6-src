@@ -14,7 +14,8 @@ public interface LeftBottomCommonMsgOrBuilder extends MessageOrBuilder {
 
     int getChatFrameBorderColorCount();
 
-    List<String> getChatFrameBorderColorList();
+    /* renamed from: getChatFrameBorderColorList */
+    List<String> mo3843getChatFrameBorderColorList();
 
     ByteString getChatFrameBytes();
 
@@ -26,7 +27,8 @@ public interface LeftBottomCommonMsgOrBuilder extends MessageOrBuilder {
 
     int getChatFrameFrameColorCount();
 
-    List<String> getChatFrameFrameColorList();
+    /* renamed from: getChatFrameFrameColorList */
+    List<String> mo3844getChatFrameFrameColorList();
 
     int getChatFrameGradientType();
 

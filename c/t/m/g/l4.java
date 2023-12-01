@@ -2,16 +2,17 @@ package c.t.m.g;
 
 import android.location.Location;
 import android.os.Bundle;
+import com.huawei.hms.framework.common.ContainerUtils;
 
 /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/l4.class */
 public class l4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Location f3873a;
+    public static final Location f3825a;
 
     static {
         new Bundle();
-        f3873a = new Location("EMPTY");
+        f3825a = new Location("EMPTY");
     }
 
     public static String a(int i, int i2, int i3) {
@@ -31,10 +32,10 @@ public class l4 {
         sb.append("?");
         sb.append("c=");
         sb.append(i);
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append("mars=");
         sb.append(i2);
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append("obs=");
         sb.append(i3);
         return sb.toString();

@@ -49,11 +49,11 @@ public class FragmentAnim {
     public static class EndViewTransitionAnimation extends AnimationSet implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ViewGroup f2954a;
+        private final ViewGroup f2906a;
         private final View b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f2955c;
+        private boolean f2907c;
         private boolean d;
         private boolean e;
 
@@ -61,49 +61,49 @@ public class FragmentAnim {
         public EndViewTransitionAnimation(Animation animation, ViewGroup viewGroup, View view) {
             super(false);
             this.e = true;
-            this.f2954a = viewGroup;
+            this.f2906a = viewGroup;
             this.b = view;
             addAnimation(animation);
-            this.f2954a.post(this);
+            this.f2906a.post(this);
         }
 
         @Override // android.view.animation.AnimationSet, android.view.animation.Animation
         public boolean getTransformation(long j, Transformation transformation) {
             this.e = true;
-            if (this.f2955c) {
+            if (this.f2907c) {
                 return !this.d;
             }
             if (super.getTransformation(j, transformation)) {
                 return true;
             }
-            this.f2955c = true;
-            OneShotPreDrawListener.add(this.f2954a, this);
+            this.f2907c = true;
+            OneShotPreDrawListener.add(this.f2906a, this);
             return true;
         }
 
         @Override // android.view.animation.Animation
         public boolean getTransformation(long j, Transformation transformation, float f) {
             this.e = true;
-            if (this.f2955c) {
+            if (this.f2907c) {
                 return !this.d;
             }
             if (super.getTransformation(j, transformation, f)) {
                 return true;
             }
-            this.f2955c = true;
-            OneShotPreDrawListener.add(this.f2954a, this);
+            this.f2907c = true;
+            OneShotPreDrawListener.add(this.f2906a, this);
             return true;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f2955c || !this.e) {
-                this.f2954a.endViewTransition(this.b);
+            if (this.f2907c || !this.e) {
+                this.f2906a.endViewTransition(this.b);
                 this.d = true;
                 return;
             }
             this.e = false;
-            this.f2954a.post(this);
+            this.f2906a.post(this);
         }
     }
 
@@ -215,7 +215,7 @@ public class FragmentAnim {
             endViewTransitionAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: androidx.fragment.app.FragmentAnim.2
                 @Override // android.view.animation.Animation.AnimationListener
                 public void onAnimationEnd(Animation animation) {
-                    ViewGroup.this.post(new Runnable() { // from class: androidx.fragment.app.FragmentAnim.2.1
+                    viewGroup.post(new Runnable() { // from class: androidx.fragment.app.FragmentAnim.2.1
                         @Override // java.lang.Runnable
                         public void run() {
                             if (fragment.getAnimatingAway() != null) {
@@ -242,10 +242,10 @@ public class FragmentAnim {
         animator.addListener(new AnimatorListenerAdapter() { // from class: androidx.fragment.app.FragmentAnim.3
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator2) {
-                ViewGroup.this.endViewTransition(view);
+                viewGroup.endViewTransition(view);
                 Animator animator3 = fragment.getAnimator();
                 fragment.setAnimator(null);
-                if (animator3 == null || ViewGroup.this.indexOfChild(view) >= 0) {
+                if (animator3 == null || viewGroup.indexOfChild(view) >= 0) {
                     return;
                 }
                 callback.onComplete(fragment, cancellationSignal);

@@ -93,7 +93,7 @@ public class ListPopupWindow {
         private AutoScrollHelper.AbsListViewAutoScroller mScrollHelper;
 
         public DropDownListView(Context context, boolean z) {
-            super(context, null, 16842861);
+            super(context, null, R.attr.dropDownListViewStyle);
             this.mHijackFocus = z;
             setCacheColorHint(0);
         }
@@ -115,7 +115,7 @@ public class ListPopupWindow {
         private void clickPressedItem(final View view, final int i) {
             final long itemIdAtPosition = getItemIdAtPosition(i);
             ObjectAnimator ofInt = ObjectAnimator.ofInt(this.mSelector, DRAWABLE_ALPHA, 255, 128, 255);
-            ofInt.setDuration(150L);
+            ofInt.setDuration(CLICK_ANIM_DURATION);
             ofInt.setInterpolator(new AccelerateDecelerateInterpolator());
             ofInt.addListener(new AnimatorListenerAdapter() { // from class: android.widget.ListPopupWindow.DropDownListView.2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -511,9 +511,8 @@ public class ListPopupWindow {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/ListPopupWindow$PopupDataSetObserver.class */
-    public class PopupDataSetObserver extends DataSetObserver {
+    private class PopupDataSetObserver extends DataSetObserver {
         private PopupDataSetObserver() {
         }
 
@@ -590,11 +589,11 @@ public class ListPopupWindow {
     }
 
     public ListPopupWindow(Context context) {
-        this(context, null, 16843519, 0);
+        this(context, null, R.attr.listPopupWindowStyle, 0);
     }
 
     public ListPopupWindow(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843519, 0);
+        this(context, attributeSet, R.attr.listPopupWindowStyle, 0);
     }
 
     public ListPopupWindow(Context context, AttributeSet attributeSet, int i) {

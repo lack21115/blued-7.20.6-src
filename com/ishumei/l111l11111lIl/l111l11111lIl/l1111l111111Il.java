@@ -20,10 +20,10 @@ public class l1111l111111Il {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ishumei.l111l11111lIl.l111l11111lIl.l1111l111111Il$l1111l111111Il  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l111l11111lIl/l111l11111lIl/l1111l111111Il$l1111l111111Il.class */
-    public static final class C0458l1111l111111Il {
+    public static final class C0288l1111l111111Il {
         private static final l1111l111111Il l1111l111111Il = new l1111l111111Il((byte) 0);
 
-        private C0458l1111l111111Il() {
+        private C0288l1111l111111Il() {
         }
     }
 
@@ -51,7 +51,7 @@ public class l1111l111111Il {
     }
 
     public static l1111l111111Il l1111l111111Il() {
-        return C0458l1111l111111Il.l1111l111111Il;
+        return C0288l1111l111111Il.l1111l111111Il;
     }
 
     private void l111l11111Il() {

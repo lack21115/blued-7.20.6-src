@@ -28,10 +28,10 @@ public class a {
 
     /* renamed from: com.umeng.commonsdk.internal.utils.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/internal/utils/a$a.class */
-    public static class C1082a {
+    public static class C0912a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f40870a;
+        public String f27179a;
         public String b;
     }
 
@@ -199,7 +199,7 @@ public class a {
         return inputMethodManager.getInputMethodList();
     }
 
-    public static List<C1082a> g(Context context) {
+    public static List<C0912a> g(Context context) {
         String[] list;
         if (context == null) {
             return null;
@@ -218,10 +218,10 @@ public class a {
                     String str = list[i2];
                     if (str != null) {
                         if (!str.startsWith(".")) {
-                            C1082a c1082a = new C1082a();
-                            c1082a.f40870a = str;
-                            c1082a.b = e(context, str);
-                            arrayList.add(c1082a);
+                            C0912a c0912a = new C0912a();
+                            c0912a.f27179a = str;
+                            c0912a.b = e(context, str);
+                            arrayList.add(c0912a);
                         }
                     }
                     i = i2 + 1;

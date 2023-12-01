@@ -6,6 +6,7 @@ import android.util.FloatMath;
 import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
+import com.android.internal.util.cm.PowerMenuConstants;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/Scroller.class */
 public class Scroller {
@@ -49,15 +50,14 @@ public class Scroller {
     private static final float[] SPLINE_POSITION = new float[101];
     private static final float[] SPLINE_TIME = new float[101];
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/Scroller$ViscousFluidInterpolator.class */
-    public static class ViscousFluidInterpolator implements Interpolator {
+    static class ViscousFluidInterpolator implements Interpolator {
         private static final float VISCOUS_FLUID_NORMALIZE = 1.0f / viscousFluid(1.0f);
         private static final float VISCOUS_FLUID_OFFSET = 1.0f - (VISCOUS_FLUID_NORMALIZE * viscousFluid(1.0f));
         private static final float VISCOUS_FLUID_SCALE = 8.0f;
 
         private static float viscousFluid(float f) {
-            float f2 = f * 8.0f;
+            float f2 = f * VISCOUS_FLUID_SCALE;
             return f2 < 1.0f ? f2 - (1.0f - ((float) Math.exp(-f2))) : 0.36787945f + ((1.0f - 0.36787945f) * (1.0f - ((float) Math.exp(1.0f - f2))));
         }
 
@@ -93,7 +93,7 @@ public class Scroller {
             while (true) {
                 f = f5 + ((f8 - f5) / 2.0f);
                 f2 = 3.0f * f * (1.0f - f);
-                float f9 = ((((1.0f - f) * 0.175f) + (P2 * f)) * f2) + (f * f * f);
+                float f9 = ((((1.0f - f) * P1) + (P2 * f)) * f2) + (f * f * f);
                 if (Math.abs(f9 - f7) < 1.0E-5d) {
                     break;
                 } else if (f9 > f7) {
@@ -102,12 +102,12 @@ public class Scroller {
                     f5 = f;
                 }
             }
-            SPLINE_POSITION[i2] = ((((1.0f - f) * 0.5f) + f) * f2) + (f * f * f);
+            SPLINE_POSITION[i2] = ((((1.0f - f) * START_TENSION) + f) * f2) + (f * f * f);
             float f10 = 1.0f;
             while (true) {
                 f3 = f6 + ((f10 - f6) / 2.0f);
                 f4 = 3.0f * f3 * (1.0f - f3);
-                float f11 = ((((1.0f - f3) * 0.5f) + f3) * f4) + (f3 * f3 * f3);
+                float f11 = ((((1.0f - f3) * START_TENSION) + f3) * f4) + (f3 * f3 * f3);
                 if (Math.abs(f11 - f7) < 1.0E-5d) {
                     break;
                 } else if (f11 > f7) {
@@ -116,7 +116,7 @@ public class Scroller {
                     f6 = f3;
                 }
             }
-            SPLINE_TIME[i2] = ((((1.0f - f3) * 0.175f) + (P2 * f3)) * f4) + (f3 * f3 * f3);
+            SPLINE_TIME[i2] = ((((1.0f - f3) * P1) + (P2 * f3)) * f4) + (f3 * f3 * f3);
             i = i2 + 1;
         }
     }
@@ -141,7 +141,7 @@ public class Scroller {
         this.mDeceleration = computeDeceleration(ViewConfiguration.getScrollFriction());
         this.mFlywheel = z;
         this.mPhysicalCoeff = computeDeceleration(0.84f);
-        this.mPm = (PowerManager) context.getSystemService("power");
+        this.mPm = (PowerManager) context.getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER);
     }
 
     private float computeDeceleration(float f) {

@@ -1,6 +1,7 @@
 package com.zego.zegoavkit2.screencapture.ve_gl;
 
 import android.graphics.SurfaceTexture;
+import android.opengl.EGL14;
 import android.view.Surface;
 import com.zego.zegoavkit2.screencapture.ve_gl.EglBase10;
 import com.zego.zegoavkit2.screencapture.ve_gl.EglBase14;
@@ -9,12 +10,12 @@ import com.zego.zegoavkit2.screencapture.ve_gl.EglBase14;
 public abstract class EglBase {
     private static final int EGL_OPENGL_ES2_BIT = 4;
     public static final Object lock = new Object();
-    public static final int[] CONFIG_PLAIN = {12324, 8, 12323, 8, 12322, 8, 12352, 4, 12344};
-    public static final int[] CONFIG_RGBA = {12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 4, 12344};
-    public static final int[] CONFIG_PIXEL_BUFFER = {12324, 8, 12323, 8, 12322, 8, 12352, 4, 12339, 1, 12344};
-    public static final int[] CONFIG_PIXEL_RGBA_BUFFER = {12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 4, 12339, 1, 12344};
+    public static final int[] CONFIG_PLAIN = {EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_NONE};
+    public static final int[] CONFIG_RGBA = {EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_NONE};
+    public static final int[] CONFIG_PIXEL_BUFFER = {EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_SURFACE_TYPE, 1, EGL14.EGL_NONE};
+    public static final int[] CONFIG_PIXEL_RGBA_BUFFER = {EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_SURFACE_TYPE, 1, EGL14.EGL_NONE};
     private static final int EGL_RECORDABLE_ANDROID = 12610;
-    public static final int[] CONFIG_RECORDABLE = {12324, 8, 12323, 8, 12322, 8, 12352, 4, EGL_RECORDABLE_ANDROID, 1, 12344};
+    public static final int[] CONFIG_RECORDABLE = {EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL_RECORDABLE_ANDROID, 1, EGL14.EGL_NONE};
 
     /* loaded from: source-8829756-dex2jar.jar:com/zego/zegoavkit2/screencapture/ve_gl/EglBase$Context.class */
     public static class Context {

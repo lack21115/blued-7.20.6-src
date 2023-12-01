@@ -18,11 +18,11 @@ import com.soft.blued.R;
 public class LiveHotPullToRefreshLayout extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f28439a;
+    public boolean f14749a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f28440c;
+    public int f14750c;
     public AppBarLayout d;
     public View e;
     public View f;
@@ -37,11 +37,11 @@ public class LiveHotPullToRefreshLayout extends FrameLayout {
     class AnonymousClass3 implements Animation.AnimationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveHotPullToRefreshLayout f28443a;
+        final /* synthetic */ LiveHotPullToRefreshLayout f14753a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            this.f28443a.k.clearAnimation();
+            this.f14753a.k.clearAnimation();
         }
 
         @Override // android.view.animation.Animation.AnimationListener
@@ -98,25 +98,25 @@ public class LiveHotPullToRefreshLayout extends FrameLayout {
     private void b() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.live_hot_list_new_content, this);
         this.b = inflate;
-        this.e = inflate.findViewById(2131368267);
+        this.e = inflate.findViewById(R.id.ll_tab);
         this.f = this.b.findViewById(R.id.ll_top);
         this.j = (FrameLayout) this.b.findViewById(R.id.fl_up_tab);
         this.k = (FrameLayout) this.b.findViewById(R.id.fl_down_tab);
-        AppBarLayout appBarLayout = (AppBarLayout) this.b.findViewById(2131362292);
+        AppBarLayout appBarLayout = (AppBarLayout) this.b.findViewById(R.id.appbar);
         this.d = appBarLayout;
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() { // from class: com.soft.blued.customview.LiveHotPullToRefreshLayout.1
             @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
             public void onOffsetChanged(AppBarLayout appBarLayout2, int i) {
                 if (i >= 0) {
-                    LiveHotPullToRefreshLayout.this.f28439a = true;
+                    LiveHotPullToRefreshLayout.this.f14749a = true;
                 } else {
-                    LiveHotPullToRefreshLayout.this.f28439a = false;
+                    LiveHotPullToRefreshLayout.this.f14749a = false;
                 }
                 if (i == 0) {
                     LiveTabNewObserver.a().c();
                 }
-                int i2 = LiveHotPullToRefreshLayout.this.f28440c;
-                LiveHotPullToRefreshLayout.this.f28440c = i;
+                int i2 = LiveHotPullToRefreshLayout.this.f14750c;
+                LiveHotPullToRefreshLayout.this.f14750c = i;
             }
         });
         getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: com.soft.blued.customview.LiveHotPullToRefreshLayout.2

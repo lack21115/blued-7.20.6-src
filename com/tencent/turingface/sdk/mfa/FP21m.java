@@ -12,16 +12,16 @@ import java.util.HashMap;
 public final class FP21m implements ViewTreeObserver.OnPreDrawListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Window f39873a;
+    public final /* synthetic */ Window f26182a;
     public final /* synthetic */ String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final /* synthetic */ Ww1Z6 f39874c;
+    public final /* synthetic */ Ww1Z6 f26183c;
 
     public FP21m(Window window, String str, Ww1Z6 ww1Z6) {
-        this.f39873a = window;
+        this.f26182a = window;
         this.b = str;
-        this.f39874c = ww1Z6;
+        this.f26183c = ww1Z6;
     }
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -29,7 +29,7 @@ public final class FP21m implements ViewTreeObserver.OnPreDrawListener {
         Object obj;
         Object a2;
         try {
-            View decorView = this.f39873a.getDecorView();
+            View decorView = this.f26182a.getDecorView();
             decorView.getViewTreeObserver().removeOnPreDrawListener(this);
             try {
                 Method declaredMethod = View.class.getDeclaredMethod("getViewRootImpl", new Class[0]);
@@ -42,7 +42,7 @@ public final class FP21m implements ViewTreeObserver.OnPreDrawListener {
                 return true;
             }
             Class<?> cls = obj.getClass();
-            HashMap<Class<?>, HashMap<String, Field>> hashMap = JF943.f39887a;
+            HashMap<Class<?>, HashMap<String, Field>> hashMap = JF943.f26196a;
             Method a3 = JF943.a(cls);
             Object invoke = a3 == null ? null : a3.invoke(obj, null);
             if (invoke == null || (a2 = JF943.a(invoke.getClass(), "mHandler", invoke)) == null) {
@@ -54,7 +54,7 @@ public final class FP21m implements ViewTreeObserver.OnPreDrawListener {
             if (callback instanceof IyjbE) {
                 return true;
             }
-            declaredField.set(a2, new IyjbE(callback, this.f39874c, this.b));
+            declaredField.set(a2, new IyjbE(callback, this.f26183c, this.b));
             return true;
         } catch (Throwable th2) {
             return true;

@@ -12,13 +12,11 @@ import skin.support.content.res.SkinCompatVectorResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatBackgroundHelper.class */
 public class SkinCompatBackgroundHelper extends SkinCompatHelper {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final View f44257a;
+    private final View a;
     private int b = 0;
 
     public SkinCompatBackgroundHelper(View view) {
-        this.f44257a = view;
+        this.a = view;
     }
 
     public void a() {
@@ -30,21 +28,21 @@ public class SkinCompatBackgroundHelper extends SkinCompatHelper {
         ColorFilter colorFilter = null;
         if (Build.VERSION.SDK_INT >= 21) {
             colorFilter = null;
-            if (this.f44257a.getBackground() != null) {
-                colorFilter = this.f44257a.getBackground().getColorFilter();
+            if (this.a.getBackground() != null) {
+                colorFilter = this.a.getBackground().getColorFilter();
             }
         }
-        Drawable a2 = SkinCompatVectorResources.a(this.f44257a.getContext(), this.b);
-        if (a2 != null) {
-            int paddingLeft = this.f44257a.getPaddingLeft();
-            int paddingTop = this.f44257a.getPaddingTop();
-            int paddingRight = this.f44257a.getPaddingRight();
-            int paddingBottom = this.f44257a.getPaddingBottom();
-            ViewCompat.setBackground(this.f44257a, a2);
-            this.f44257a.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
+        Drawable a = SkinCompatVectorResources.a(this.a.getContext(), this.b);
+        if (a != null) {
+            int paddingLeft = this.a.getPaddingLeft();
+            int paddingTop = this.a.getPaddingTop();
+            int paddingRight = this.a.getPaddingRight();
+            int paddingBottom = this.a.getPaddingBottom();
+            ViewCompat.setBackground(this.a, a);
+            this.a.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
         }
         if (colorFilter != null) {
-            this.f44257a.getBackground().setColorFilter(colorFilter);
+            this.a.getBackground().setColorFilter(colorFilter);
         }
     }
 
@@ -54,7 +52,7 @@ public class SkinCompatBackgroundHelper extends SkinCompatHelper {
     }
 
     public void a(AttributeSet attributeSet, int i) {
-        TypedArray obtainStyledAttributes = this.f44257a.getContext().obtainStyledAttributes(attributeSet, R.styleable.SkinBackgroundHelper, i, 0);
+        TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, R.styleable.SkinBackgroundHelper, i, 0);
         try {
             if (obtainStyledAttributes.hasValue(R.styleable.SkinBackgroundHelper_android_background)) {
                 this.b = obtainStyledAttributes.getResourceId(R.styleable.SkinBackgroundHelper_android_background, 0);

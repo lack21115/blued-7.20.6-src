@@ -10,13 +10,9 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ListItemParser.class */
 public class ListItemParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ListItem f44035a = new ListItem();
+    private final ListItem a = new ListItem();
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f44036c;
+    private boolean c;
 
     public ListItemParser(int i) {
         this.b = i;
@@ -26,11 +22,11 @@ public class ListItemParser extends AbstractBlockParser {
     public BlockContinue a(ParserState parserState) {
         if (!parserState.g()) {
             return parserState.f() >= this.b ? BlockContinue.b(parserState.e() + this.b) : BlockContinue.d();
-        } else if (this.f44035a.j() == null) {
+        } else if (this.a.j() == null) {
             return BlockContinue.d();
         } else {
-            Block c2 = parserState.h().c();
-            this.f44036c = (c2 instanceof Paragraph) || (c2 instanceof ListItem);
+            Block c = parserState.h().c();
+            this.c = (c instanceof Paragraph) || (c instanceof ListItem);
             return BlockContinue.a(parserState.d());
         }
     }
@@ -42,10 +38,10 @@ public class ListItemParser extends AbstractBlockParser {
 
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
     public boolean a(Block block) {
-        if (this.f44036c) {
-            Block a2 = this.f44035a.b();
-            if (a2 instanceof ListBlock) {
-                ((ListBlock) a2).a(false);
+        if (this.c) {
+            Block a = this.a.b();
+            if (a instanceof ListBlock) {
+                ((ListBlock) a).a(false);
                 return true;
             }
             return true;
@@ -55,6 +51,6 @@ public class ListItemParser extends AbstractBlockParser {
 
     @Override // org.commonmark.parser.block.BlockParser
     public Block c() {
-        return this.f44035a;
+        return this.a;
     }
 }

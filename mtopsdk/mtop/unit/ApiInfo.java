@@ -6,16 +6,14 @@ import mtopsdk.mtop.domain.IMTOPDataObject;
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/unit/ApiInfo.class */
 public class ApiInfo implements Serializable, IMTOPDataObject {
     private static final long serialVersionUID = -1408374287101501181L;
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f43774a;
+    public String a;
     public String b;
 
     public ApiInfo() {
     }
 
     public ApiInfo(String str, String str2) {
-        this.f43774a = str;
+        this.a = str;
         this.b = str2;
     }
 
@@ -25,12 +23,12 @@ public class ApiInfo implements Serializable, IMTOPDataObject {
         }
         if (obj != null && getClass() == obj.getClass()) {
             ApiInfo apiInfo = (ApiInfo) obj;
-            String str = this.f43774a;
+            String str = this.a;
             if (str == null) {
-                if (apiInfo.f43774a != null) {
+                if (apiInfo.a != null) {
                     return false;
                 }
-            } else if (!str.equalsIgnoreCase(apiInfo.f43774a)) {
+            } else if (!str.equalsIgnoreCase(apiInfo.a)) {
                 return false;
             }
             String str2 = this.b;
@@ -41,7 +39,7 @@ public class ApiInfo implements Serializable, IMTOPDataObject {
     }
 
     public int hashCode() {
-        String str = this.f43774a;
+        String str = this.a;
         int i = 0;
         int hashCode = str == null ? 0 : str.hashCode();
         String str2 = this.b;
@@ -52,6 +50,6 @@ public class ApiInfo implements Serializable, IMTOPDataObject {
     }
 
     public String toString() {
-        return "ApiInfo [api=" + this.f43774a + ", v=" + this.b + "]";
+        return "ApiInfo [api=" + this.a + ", v=" + this.b + "]";
     }
 }

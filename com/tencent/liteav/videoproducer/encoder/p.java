@@ -8,7 +8,6 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.util.Pair;
 import android.view.Surface;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.videobase.base.TakeSnapshotListener;
 import com.tencent.liteav.videobase.common.EncodedVideoFrame;
@@ -24,7 +23,7 @@ import com.tencent.ugc.UGCTransitionRules;
 public final class p implements bf, bf.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f37030a;
+    private final String f23339a;
     private final IVideoReporter b;
     private final x d;
     private Surface e;
@@ -36,14 +35,14 @@ public final class p implements bf, bf.a {
     private com.tencent.liteav.videobase.b.c l;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.tencent.liteav.base.util.n f37031c = new com.tencent.liteav.base.util.n(0, 0);
+    private final com.tencent.liteav.base.util.n f23340c = new com.tencent.liteav.base.util.n(0, 0);
     private long i = 0;
     private final com.tencent.liteav.videobase.utils.k m = new com.tencent.liteav.videobase.utils.k("hwEn" + hashCode());
 
     public p(Bundle bundle, IVideoReporter iVideoReporter, VideoProducerDef.StreamType streamType) {
         this.d = new x(bundle, iVideoReporter, streamType);
         this.b = iVideoReporter;
-        this.f37030a = "HardwareVideoEncoder_" + streamType + BridgeUtil.UNDERLINE_STR + hashCode();
+        this.f23339a = "HardwareVideoEncoder_" + streamType + "_" + hashCode();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -99,24 +98,24 @@ public final class p implements bf, bf.a {
 
     private boolean a(Object obj, Surface surface) {
         if (surface == null) {
-            LiteavLog.w(this.f37030a, "init opengl: surface is null.");
+            LiteavLog.w(this.f23339a, "init opengl: surface is null.");
             return false;
         }
-        LiteavLog.d(this.f37030a, "initOpenGLComponents");
+        LiteavLog.d(this.f23339a, "initOpenGLComponents");
         com.tencent.liteav.videobase.b.e eVar = new com.tencent.liteav.videobase.b.e();
         this.f = eVar;
         try {
-            eVar.a(obj, surface, this.f37031c.f36340a, this.f37031c.b);
+            eVar.a(obj, surface, this.f23340c.f22649a, this.f23340c.b);
             this.m.a((com.tencent.liteav.videobase.frame.e) null);
-            this.m.a(this.f37031c.f36340a, this.f37031c.b);
-            this.g = new com.tencent.liteav.videobase.frame.j(this.f37031c.f36340a, this.f37031c.b);
+            this.m.a(this.f23340c.f22649a, this.f23340c.b);
+            this.g = new com.tencent.liteav.videobase.frame.j(this.f23340c.f22649a, this.f23340c.b);
             return true;
         } catch (com.tencent.liteav.videobase.b.g e) {
             IVideoReporter iVideoReporter = this.b;
             h.c cVar = h.c.WARNING_VIDEO_ENCODE_EGL_CORE_CREATE_FAILED;
             iVideoReporter.notifyWarning(cVar, "VideoEncode: create EGLCore failed, EGLCode:" + e.mErrorCode + " message:" + e.getMessage(), new Object[0]);
             this.d.a(e.getMessage());
-            LiteavLog.e(this.f37030a, "create EGLCore failed.", e);
+            LiteavLog.e(this.f23339a, "create EGLCore failed.", e);
             this.f = null;
             return false;
         }
@@ -126,7 +125,7 @@ public final class p implements bf, bf.a {
         if (this.f == null) {
             return;
         }
-        LiteavLog.d(this.f37030a, "uninitOpenGLComponents");
+        LiteavLog.d(this.f23339a, "uninitOpenGLComponents");
         try {
             this.f.a();
             if (this.g != null) {
@@ -135,7 +134,7 @@ public final class p implements bf, bf.a {
             }
             this.m.a();
         } catch (com.tencent.liteav.videobase.b.g e) {
-            LiteavLog.e(this.f37030a, "makeCurrent failed.", e);
+            LiteavLog.e(this.f23339a, "makeCurrent failed.", e);
         }
         com.tencent.liteav.videobase.b.e.a(this.f);
         this.f = null;
@@ -192,14 +191,14 @@ public final class p implements bf, bf.a {
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final void initialize() {
-        LiteavLog.d(this.f37030a, ContentResolver.SYNC_EXTRAS_INITIALIZE);
+        LiteavLog.d(this.f23339a, ContentResolver.SYNC_EXTRAS_INITIALIZE);
         this.j = new Handler(Looper.myLooper() == null ? Looper.getMainLooper() : Looper.myLooper());
         this.l = new com.tencent.liteav.videobase.b.c(this.j.getLooper());
         x xVar = this.d;
-        LiteavLog.d(xVar.f37043a, ContentResolver.SYNC_EXTRAS_INITIALIZE);
+        LiteavLog.d(xVar.f23352a, ContentResolver.SYNC_EXTRAS_INITIALIZE);
         HandlerThread handlerThread = new HandlerThread("hw-video-encoder");
         handlerThread.start();
-        xVar.f37044c = new com.tencent.liteav.base.util.b(handlerThread.getLooper());
+        xVar.f23353c = new com.tencent.liteav.base.util.b(handlerThread.getLooper());
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.VideoEncoderDef.VideoEncoderDataListener
@@ -223,13 +222,13 @@ public final class p implements bf, bf.a {
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final void setBitrate(int i) {
-        LiteavLog.i(this.f37030a, "SetBitrate ".concat(String.valueOf(i)));
+        LiteavLog.i(this.f23339a, "SetBitrate ".concat(String.valueOf(i)));
         VideoEncodeParams videoEncodeParams = this.h;
         if (videoEncodeParams != null) {
             videoEncodeParams.bitrate = i;
         }
         x xVar = this.d;
-        xVar.f37044c.post(ae.a(xVar, i));
+        xVar.f23353c.post(ae.a(xVar, i));
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
@@ -247,41 +246,41 @@ public final class p implements bf, bf.a {
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final void setServerConfig(ServerVideoProducerConfig serverVideoProducerConfig) {
         x xVar = this.d;
-        xVar.f37044c.post(ab.a(xVar, serverVideoProducerConfig));
+        xVar.f23353c.post(ab.a(xVar, serverVideoProducerConfig));
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final void signalEndOfStream() {
         x xVar = this.d;
-        xVar.f37044c.post(af.a(xVar));
+        xVar.f23353c.post(af.a(xVar));
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final boolean start(VideoEncodeParams videoEncodeParams, bf.a aVar) {
         if (this.e != null) {
-            LiteavLog.e(this.f37030a, "Encoder has started");
+            LiteavLog.e(this.f23339a, "Encoder has started");
             return false;
         }
-        LiteavLog.i(this.f37030a, "Start hw video encoder. %s", videoEncodeParams);
+        LiteavLog.i(this.f23339a, "Start hw video encoder. %s", videoEncodeParams);
         this.k = aVar;
         x xVar = this.d;
-        LiteavLog.d(xVar.f37043a, "start");
+        LiteavLog.d(xVar.f23352a, "start");
         Surface[] surfaceArr = new Surface[1];
-        LiteavLog.i(xVar.f37043a, "startCodecInternal success: ".concat(String.valueOf(xVar.f37044c.a(ac.a(xVar, this, surfaceArr, videoEncodeParams), 5000L))));
+        LiteavLog.i(xVar.f23352a, "startCodecInternal success: ".concat(String.valueOf(xVar.f23353c.a(ac.a(xVar, this, surfaceArr, videoEncodeParams), 5000L))));
         com.tencent.liteav.base.util.n nVar = new com.tencent.liteav.base.util.n(UGCTransitionRules.DEFAULT_IMAGE_WIDTH, 1280);
         if (xVar.f != null) {
             nVar.a(xVar.f.width, xVar.f.height);
         }
         Pair pair = new Pair(surfaceArr[0], nVar);
         this.e = (Surface) pair.first;
-        this.f37031c.a((com.tencent.liteav.base.util.n) pair.second);
+        this.f23340c.a((com.tencent.liteav.base.util.n) pair.second);
         this.h = new VideoEncodeParams(videoEncodeParams);
         return this.e != null;
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final void stop() {
-        LiteavLog.d(this.f37030a, "stop");
+        LiteavLog.d(this.f23339a, "stop");
         b();
         Surface surface = this.e;
         if (surface != null) {
@@ -289,24 +288,24 @@ public final class p implements bf, bf.a {
             this.e = null;
         }
         x xVar = this.d;
-        LiteavLog.d(xVar.f37043a, "stop");
-        xVar.f37044c.post(ah.a(xVar));
+        LiteavLog.d(xVar.f23352a, "stop");
+        xVar.f23353c.post(ah.a(xVar));
         this.k = null;
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final void takeSnapshot(TakeSnapshotListener takeSnapshotListener) {
-        this.m.f36662a = takeSnapshotListener;
+        this.m.f22971a = takeSnapshotListener;
     }
 
     @Override // com.tencent.liteav.videoproducer.encoder.bf
     public final void uninitialize() {
-        LiteavLog.d(this.f37030a, "uninitialize");
+        LiteavLog.d(this.f23339a, "uninitialize");
         x xVar = this.d;
-        LiteavLog.d(xVar.f37043a, "uninitialize");
-        xVar.f37044c.a();
+        LiteavLog.d(xVar.f23352a, "uninitialize");
+        xVar.f23353c.a();
         com.tencent.liteav.videobase.b.c cVar = this.l;
-        cVar.f36591a.post(com.tencent.liteav.videobase.b.d.a(cVar));
+        cVar.f22900a.post(com.tencent.liteav.videobase.b.d.a(cVar));
         this.j = null;
     }
 }

@@ -18,10 +18,10 @@ public enum ew {
     
 
     /* renamed from: a  reason: collision with other field name */
-    public final String f411a;
+    public final String f364a;
 
     ew(String str) {
-        this.f411a = str;
+        this.f364a = str;
     }
 
     public static int a(String str) {
@@ -38,7 +38,7 @@ public enum ew {
                 return i;
             }
             ew ewVar = values[i3];
-            if (ewVar.f411a.equals(str)) {
+            if (ewVar.f364a.equals(str)) {
                 i = el.a(ewVar);
             }
             i2 = i3 + 1;

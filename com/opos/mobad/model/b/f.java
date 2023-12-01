@@ -6,17 +6,17 @@ import java.util.concurrent.ConcurrentHashMap;
 public class f extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private ConcurrentHashMap<String, com.opos.mobad.i.a> f26396a;
+    private ConcurrentHashMap<String, com.opos.mobad.i.a> f12708a;
 
     public ConcurrentHashMap<String, com.opos.mobad.i.a> a() {
-        return this.f26396a;
+        return this.f12708a;
     }
 
     public void a(ConcurrentHashMap<String, com.opos.mobad.i.a> concurrentHashMap) {
-        this.f26396a = concurrentHashMap;
+        this.f12708a = concurrentHashMap;
     }
 
     public String toString() {
-        return "FetchMaterialRequest{downloadRequestMap=" + this.f26396a + '}';
+        return "FetchMaterialRequest{downloadRequestMap=" + this.f12708a + '}';
     }
 }

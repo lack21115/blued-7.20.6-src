@@ -23,19 +23,19 @@ public enum Syntax {
             this();
         }
 
-        public final Syntax get(String string) {
-            Intrinsics.e(string, "string");
+        public final Syntax get(String str) {
+            Intrinsics.e(str, "string");
             Syntax[] values = Syntax.values();
             int length = values.length;
             int i = 0;
             while (i < length) {
                 Syntax syntax = values[i];
                 i++;
-                if (Intrinsics.a((Object) syntax.string, (Object) string)) {
+                if (Intrinsics.a(syntax.string, str)) {
                     return syntax;
                 }
             }
-            throw new IllegalArgumentException(Intrinsics.a("unexpected syntax: ", (Object) string));
+            throw new IllegalArgumentException(Intrinsics.a("unexpected syntax: ", str));
         }
     }
 

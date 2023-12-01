@@ -12,11 +12,11 @@ import com.tencent.youtu.ytagreflectlivecheck.jni.YTAGReflectLiveCheckJNIInterfa
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35548a = c.class.getSimpleName();
+    private static final String f21857a = c.class.getSimpleName();
     private SensorManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f35549c;
+    private a f21858c;
     private b d;
     private boolean e;
 
@@ -49,10 +49,10 @@ public class c {
 
     /* renamed from: com.tencent.cloud.huiyansdkface.facelight.c.b.c$c  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/c/b/c$c.class */
-    static class C0908c {
+    static class C0738c {
 
         /* renamed from: a  reason: collision with root package name */
-        private static c f35551a = new c();
+        private static c f21860a = new c();
     }
 
     private c() {
@@ -60,7 +60,7 @@ public class c {
     }
 
     public static c a() {
-        return C0908c.f35551a;
+        return C0738c.f21860a;
     }
 
     public int a(Context context, b bVar) {
@@ -77,16 +77,16 @@ public class c {
             return 1;
         }
         a aVar = new a();
-        this.f35549c = aVar;
+        this.f21858c = aVar;
         this.b.registerListener(aVar, defaultSensor, 3);
         this.d = bVar;
         return 0;
     }
 
     public float b() {
-        if (this.f35549c != null) {
-            Log.d("MicroMsg.LightSensor", "Light lux: " + this.f35549c.b);
-            return this.f35549c.b;
+        if (this.f21858c != null) {
+            Log.d("MicroMsg.LightSensor", "Light lux: " + this.f21858c.b);
+            return this.f21858c.b;
         }
         return -1.0f;
     }
@@ -97,6 +97,6 @@ public class c {
             return;
         }
         this.e = false;
-        sensorManager.unregisterListener(this.f35549c);
+        sensorManager.unregisterListener(this.f21858c);
     }
 }

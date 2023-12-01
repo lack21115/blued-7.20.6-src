@@ -35,13 +35,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/SurfaceRhythmView.class */
 public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolder.Callback, Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final float f18002a;
+    private final float a;
     private final float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final float f18003c;
+    private final float c;
     private final int d;
     private Bitmap e;
     private CopyOnWriteArrayList<YYTXSongScoreNoteItem> f;
@@ -64,13 +60,9 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/SurfaceRhythmView$DrawInfo.class */
     public final class DrawInfo {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ SurfaceRhythmView f18004a;
+        final /* synthetic */ SurfaceRhythmView a;
         private float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private float f18005c;
+        private float c;
         private float d;
         private float e;
         private float f;
@@ -84,7 +76,7 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
 
         public DrawInfo(SurfaceRhythmView this$0) {
             Intrinsics.e(this$0, "this$0");
-            this.f18004a = this$0;
+            this.a = this$0;
             this.i = new Path();
             this.j = new Path();
         }
@@ -98,7 +90,7 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
         }
 
         public final float b() {
-            return this.f18005c;
+            return this.c;
         }
 
         public final void b(float f) {
@@ -153,20 +145,20 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
             Bitmap selBitmap;
             Bitmap selBitmap2;
             Bitmap selBitmap3;
-            this.b = this.f18004a.getHeight() - ((this.f18004a.getSelBitmap() == null ? 0 : selBitmap.getHeight()) / 2.0f);
+            this.b = this.a.getHeight() - ((this.a.getSelBitmap() == null ? 0 : selBitmap.getHeight()) / 2.0f);
             float f = 5;
-            this.f18005c = (this.f18004a.getWidth() * 2.0f) / f;
-            float width = (this.f18004a.getWidth() * 2.0f) / f;
+            this.c = (this.a.getWidth() * 2.0f) / f;
+            float width = (this.a.getWidth() * 2.0f) / f;
             float f2 = 2;
             this.d = width + f2;
             this.e = this.b - 3;
             this.i = new Path();
             this.j = new Path();
-            this.f18004a.a(this.i, (int) this.b);
-            this.f18004a.b(this.j, (int) this.b);
-            YYUserSongScoreNoteItem yYUserSongScoreNoteItem = this.f18004a.k;
+            this.a.a(this.i, (int) this.b);
+            this.a.b(this.j, (int) this.b);
+            YYUserSongScoreNoteItem yYUserSongScoreNoteItem = this.a.k;
             if (yYUserSongScoreNoteItem != null) {
-                SurfaceRhythmView surfaceRhythmView = this.f18004a;
+                SurfaceRhythmView surfaceRhythmView = this.a;
                 a(((((a() - (surfaceRhythmView.p * f2)) - surfaceRhythmView.o) * yYUserSongScoreNoteItem.c()) / 100.0f) + surfaceRhythmView.o + surfaceRhythmView.p);
                 if (yYUserSongScoreNoteItem.c() == 0) {
                     a(a());
@@ -175,21 +167,17 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
                 c(e() - ((surfaceRhythmView.getSelBitmap() == null ? 0 : selBitmap3.getHeight()) / 2.0f));
             }
             this.k = this.b / 2.0f;
-            this.l = (this.f18004a.getWidth() * 2.0f) / f;
-            this.m = (this.f18004a.getWidth() * 2.0f) / f;
+            this.l = (this.a.getWidth() * 2.0f) / f;
+            this.m = (this.a.getWidth() * 2.0f) / f;
         }
     }
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/SurfaceRhythmView$RhythmViewHanlder.class */
     public static final class RhythmViewHanlder extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private boolean f18006a;
+        private boolean a;
         private boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final WeakReference<SurfaceRhythmView> f18007c;
+        private final WeakReference<SurfaceRhythmView> c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public RhythmViewHanlder(SurfaceRhythmView view, Looper looper) {
@@ -198,15 +186,15 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
             Intrinsics.e(looper, "looper");
             view.d();
             this.b = true;
-            this.f18007c = new WeakReference<>(view);
+            this.c = new WeakReference<>(view);
         }
 
         public final WeakReference<SurfaceRhythmView> a() {
-            return this.f18007c;
+            return this.c;
         }
 
         public final void a(boolean z) {
-            this.f18006a = z;
+            this.a = z;
         }
 
         public final void b(boolean z) {
@@ -223,20 +211,20 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
             if (msg.what == 3 || msg.obj == null) {
                 return;
             }
-            SurfaceRhythmView surfaceRhythmView = this.f18007c.get();
+            SurfaceRhythmView surfaceRhythmView = this.c.get();
             if ((surfaceRhythmView == null ? null : surfaceRhythmView.getSelBitmap()) == null) {
                 return;
             }
-            SurfaceRhythmView surfaceRhythmView2 = this.f18007c.get();
+            SurfaceRhythmView surfaceRhythmView2 = this.c.get();
             if (surfaceRhythmView2 != null) {
                 surfaceRhythmView2.a(msg);
             }
-            SurfaceRhythmView surfaceRhythmView3 = this.f18007c.get();
+            SurfaceRhythmView surfaceRhythmView3 = this.c.get();
             if (surfaceRhythmView3 != null && (info = surfaceRhythmView3.getInfo()) != null) {
                 info.m();
             }
-            if (!this.f18006a && this.b) {
-                SurfaceRhythmView surfaceRhythmView4 = this.f18007c.get();
+            if (!this.a && this.b) {
+                SurfaceRhythmView surfaceRhythmView4 = this.c.get();
                 if (surfaceRhythmView4 == null) {
                     lockCanvas = null;
                 } else {
@@ -257,9 +245,9 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
                         return;
                     }
                     surfaceHolder.unlockCanvasAndPost(lockCanvas);
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                 } catch (Exception e) {
-                    Unit unit2 = Unit.f42314a;
+                    Unit unit2 = Unit.a;
                 }
             }
         }
@@ -275,9 +263,9 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
 
     public SurfaceRhythmView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f18002a = 2000.0f;
+        this.a = 2000.0f;
         this.b = 3000.0f;
-        this.f18003c = 5000.0f;
+        this.c = 5000.0f;
         this.d = 3;
         this.e = BitmapFactory.decodeResource(getResources(), R.drawable.icon_yy_ktv_select);
         this.f = new CopyOnWriteArrayList<>();
@@ -335,7 +323,7 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(Path path, int i) {
         for (YYTXSongScoreNoteItem yYTXSongScoreNoteItem : this.f) {
-            a(path, (getWidth() * (yYTXSongScoreNoteItem.f11447a - this.j)) / this.f18003c, (getWidth() * (yYTXSongScoreNoteItem.f11448c - this.j)) / this.f18003c, ((((i - (this.p * 2)) - this.o) * yYTXSongScoreNoteItem.d) / 100.0f) + this.o);
+            a(path, (getWidth() * (yYTXSongScoreNoteItem.a - this.j)) / this.c, (getWidth() * (yYTXSongScoreNoteItem.c - this.j)) / this.c, ((((i - (this.p * 2)) - this.o) * yYTXSongScoreNoteItem.d) / 100.0f) + this.o);
         }
     }
 
@@ -352,7 +340,7 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
     /* JADX INFO: Access modifiers changed from: private */
     public final void b(Path path, int i) {
         for (YYTXSongScoreNoteItem yYTXSongScoreNoteItem : this.h) {
-            a(path, (getWidth() * (yYTXSongScoreNoteItem.f11447a - this.j)) / this.f18003c, (getWidth() * (yYTXSongScoreNoteItem.f11448c - this.j)) / this.f18003c, ((((i - (this.p * 2)) - this.o) * yYTXSongScoreNoteItem.d) / 100.0f) + this.o);
+            a(path, (getWidth() * (yYTXSongScoreNoteItem.a - this.j)) / this.c, (getWidth() * (yYTXSongScoreNoteItem.c - this.j)) / this.c, ((((i - (this.p * 2)) - this.o) * yYTXSongScoreNoteItem.d) / 100.0f) + this.o);
         }
     }
 
@@ -460,7 +448,7 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
             Intrinsics.c(userData, "it.userData");
             this.h = userData;
             this.g.addAll(arrayList);
-            this.j = 0 - this.f18002a;
+            this.j = 0 - this.a;
         } else if (i == 2) {
             YYRoomModel b2 = YYRoomInfoManager.e().b();
             if (b2 != null && (yYMsgKtvMusic2 = b2.music) != null) {
@@ -477,7 +465,7 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live.base.music.model.YYUserSongScoreNoteItem");
             }
             YYUserSongScoreNoteItem yYUserSongScoreNoteItem2 = (YYUserSongScoreNoteItem) obj2;
-            float b3 = yYUserSongScoreNoteItem2.b() - this.f18002a;
+            float b3 = yYUserSongScoreNoteItem2.b() - this.a;
             float b4 = yYUserSongScoreNoteItem2.b();
             float f = this.b;
             this.j = b3;
@@ -487,12 +475,12 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
                 Iterator<YYTXSongScoreNoteItem> it = this.g.iterator();
                 while (it.hasNext()) {
                     YYTXSongScoreNoteItem next = it.next();
-                    if (next.f11448c < b3) {
+                    if (next.c < b3) {
                         this.g.remove(next);
                     }
                 }
                 for (YYTXSongScoreNoteItem yYTXSongScoreNoteItem : this.g) {
-                    if (b4 + f > yYTXSongScoreNoteItem.f11447a) {
+                    if (b4 + f > yYTXSongScoreNoteItem.a) {
                         this.f.add(yYTXSongScoreNoteItem);
                     }
                 }
@@ -503,8 +491,8 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
                     return;
                 }
                 YYTXSongScoreNoteItem yYTXSongScoreNoteItem2 = new YYTXSongScoreNoteItem();
-                yYTXSongScoreNoteItem2.f11447a = (int) yYUserSongScoreNoteItem2.b();
-                yYTXSongScoreNoteItem2.f11448c = (int) yYUserSongScoreNoteItem2.b();
+                yYTXSongScoreNoteItem2.a = (int) yYUserSongScoreNoteItem2.b();
+                yYTXSongScoreNoteItem2.c = (int) yYUserSongScoreNoteItem2.b();
                 yYTXSongScoreNoteItem2.d = yYUserSongScoreNoteItem2.c();
                 this.h.add(yYTXSongScoreNoteItem2);
                 this.t = -1.0f;
@@ -515,22 +503,22 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
             if (yYUserSongScoreNoteItem2.a()) {
                 if (yYTXSongScoreNoteItem3.d == yYUserSongScoreNoteItem2.c()) {
                     if (this.t == -1.0f) {
-                        yYTXSongScoreNoteItem3.f11448c = (int) yYUserSongScoreNoteItem2.b();
+                        yYTXSongScoreNoteItem3.c = (int) yYUserSongScoreNoteItem2.b();
                     } else {
                         YYTXSongScoreNoteItem yYTXSongScoreNoteItem4 = new YYTXSongScoreNoteItem();
-                        yYTXSongScoreNoteItem4.f11447a = (int) yYUserSongScoreNoteItem2.b();
-                        yYTXSongScoreNoteItem4.f11448c = (int) yYUserSongScoreNoteItem2.b();
+                        yYTXSongScoreNoteItem4.a = (int) yYUserSongScoreNoteItem2.b();
+                        yYTXSongScoreNoteItem4.c = (int) yYUserSongScoreNoteItem2.b();
                         yYTXSongScoreNoteItem4.d = yYUserSongScoreNoteItem2.c();
                         this.h.add(yYTXSongScoreNoteItem4);
                     }
                 } else {
                     YYTXSongScoreNoteItem yYTXSongScoreNoteItem5 = new YYTXSongScoreNoteItem();
                     if (!(this.t == -1.0f)) {
-                        yYTXSongScoreNoteItem5.f11447a = (int) this.t;
+                        yYTXSongScoreNoteItem5.a = (int) this.t;
                     } else if (yYUserSongScoreNoteItem != null) {
-                        yYTXSongScoreNoteItem5.f11447a = (int) yYUserSongScoreNoteItem.b();
+                        yYTXSongScoreNoteItem5.a = (int) yYUserSongScoreNoteItem.b();
                     }
-                    yYTXSongScoreNoteItem5.f11448c = (int) yYUserSongScoreNoteItem2.b();
+                    yYTXSongScoreNoteItem5.c = (int) yYUserSongScoreNoteItem2.b();
                     yYTXSongScoreNoteItem5.d = yYUserSongScoreNoteItem2.c();
                     this.h.add(yYTXSongScoreNoteItem5);
                 }
@@ -538,7 +526,7 @@ public final class SurfaceRhythmView extends SurfaceView implements SurfaceHolde
             } else {
                 this.t = yYUserSongScoreNoteItem2.b();
             }
-            if (this.h.get(0).f11448c < b3) {
+            if (this.h.get(0).c < b3) {
                 this.h.remove(0);
             }
         }

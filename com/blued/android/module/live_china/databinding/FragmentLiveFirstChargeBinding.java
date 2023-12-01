@@ -15,13 +15,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLiveFirstChargeBinding.class */
 public final class FragmentLiveFirstChargeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f11922a;
+    public final FrameLayout a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f11923c;
+    public final FrameLayout c;
     public final FrameLayout d;
     public final ImageView e;
     public final ImageView f;
@@ -48,9 +44,9 @@ public final class FragmentLiveFirstChargeBinding implements ViewBinding {
 
     private FragmentLiveFirstChargeBinding(FrameLayout frameLayout, FrameLayout frameLayout2, FrameLayout frameLayout3, FrameLayout frameLayout4, FrameLayout frameLayout5, ImageView imageView, ImageView imageView2, ImageView imageView3, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, ShapeLinearLayout shapeLinearLayout, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, FrameLayout frameLayout6, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, ShapeTextView shapeTextView, TextView textView6, TextView textView7, ImageView imageView4, ImageView imageView5, View view) {
         this.z = frameLayout;
-        this.f11922a = frameLayout2;
+        this.a = frameLayout2;
         this.b = frameLayout3;
-        this.f11923c = frameLayout4;
+        this.c = frameLayout4;
         this.d = frameLayout5;
         this.e = imageView;
         this.f = imageView2;
@@ -213,7 +209,6 @@ public final class FragmentLiveFirstChargeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.z;

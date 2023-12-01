@@ -7,20 +7,18 @@ import kotlin.collections.ShortIterator;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/ArrayShortIterator.class */
 final class ArrayShortIterator extends ShortIterator {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final short[] f42523a;
+    private final short[] a;
     private int b;
 
     public ArrayShortIterator(short[] array) {
         Intrinsics.e(array, "array");
-        this.f42523a = array;
+        this.a = array;
     }
 
     @Override // kotlin.collections.ShortIterator
     public short a() {
         try {
-            short[] sArr = this.f42523a;
+            short[] sArr = this.a;
             int i = this.b;
             this.b = i + 1;
             return sArr[i];
@@ -32,6 +30,6 @@ final class ArrayShortIterator extends ShortIterator {
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        return this.b < this.f42523a.length;
+        return this.b < this.a.length;
     }
 }

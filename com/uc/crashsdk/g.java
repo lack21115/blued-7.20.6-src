@@ -2,10 +2,11 @@ package com.uc.crashsdk;
 
 import android.os.Build;
 import android.os.Bundle;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.sensetime.stmobile.STMobileHumanActionNative;
 import com.uc.crashsdk.a.h;
 import com.uc.crashsdk.export.CustomInfo;
 import com.uc.crashsdk.export.VersionInfo;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.zip.ZipFile;
@@ -14,12 +15,12 @@ import java.util.zip.ZipFile;
 public class g {
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ boolean f40590c = !g.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26899c = !g.class.desiredAssertionStatus();
     private static CustomInfo d = null;
     private static VersionInfo e = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public static RuntimeException f40589a = null;
+    public static RuntimeException f26898a = null;
     public static RuntimeException b = null;
     private static final Object f = new Object();
     private static String g = null;
@@ -231,8 +232,8 @@ public class g {
         String str2 = str;
         if (str != null) {
             str2 = str;
-            if (str.contains(BridgeUtil.UNDERLINE_STR)) {
-                str2 = str.replaceAll(BridgeUtil.UNDERLINE_STR, "-");
+            if (str.contains("_")) {
+                str2 = str.replaceAll("_", Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             }
         }
         return str2;
@@ -252,10 +253,10 @@ public class g {
     }
 
     public static void a(CustomInfo customInfo) {
-        if (!f40590c && customInfo.mTagFilesFolderName == null) {
+        if (!f26899c && customInfo.mTagFilesFolderName == null) {
             throw new AssertionError();
         }
-        if (!f40590c && customInfo.mCrashLogsFolderName == null) {
+        if (!f26899c && customInfo.mCrashLogsFolderName == null) {
             throw new AssertionError();
         }
         if (customInfo.mTagFilesFolderName.equals(customInfo.mCrashLogsFolderName)) {
@@ -268,7 +269,7 @@ public class g {
         d = customInfo2;
         c(customInfo2);
         if (!d.mZipLog) {
-            f40589a = new RuntimeException("initialize set mZipLog to false, info.mZipLog: " + customInfo.mZipLog);
+            f26898a = new RuntimeException("initialize set mZipLog to false, info.mZipLog: " + customInfo.mZipLog);
         }
         if (d.mEncryptLog) {
             b = new RuntimeException("initialize set mEncryptLog to true, info.mEncryptLog: " + customInfo.mEncryptLog);
@@ -504,7 +505,7 @@ public class g {
                     customInfo2.mZipLog = customInfo.mZipLog;
                     if (!customInfo2.mZipLog) {
                         com.uc.crashsdk.a.a.d("DEBUG", "updateCustomInfoImpl set mZipLog to false");
-                        f40589a = new RuntimeException("updateCustomInfoImpl set mZipLog to false");
+                        f26898a = new RuntimeException("updateCustomInfoImpl set mZipLog to false");
                     }
                     i4 = i17 + 1;
                     z2 = true;
@@ -843,7 +844,7 @@ public class g {
         if (b2 >= 1) {
             customInfo.mMaxBuiltinLogFilesCount = 200;
             customInfo.mMaxCustomLogFilesCount = 100;
-            customInfo.mMaxUploadBytesPerDay = 268435456L;
+            customInfo.mMaxUploadBytesPerDay = STMobileHumanActionNative.ST_MOBILE_BODY_CONTOUR;
             customInfo.mMaxUploadBuiltinLogCountPerDay = 2000;
             customInfo.mMaxUploadCustomLogCountPerDay = 2000;
             customInfo.mMaxCustomLogCountPerTypePerDay = 100;
@@ -877,7 +878,7 @@ public class g {
         a.g();
         a.i();
         a.k();
-        JNIBridge.set(113, a.f40557a);
+        JNIBridge.set(113, a.f26866a);
         JNIBridge.cmd(1);
         JNIBridge.set(22, d.mThreadsDumpMinLimit);
         JNIBridge.set(122, a.a());

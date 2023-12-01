@@ -18,11 +18,11 @@ import org.json.JSONObject;
 public class c extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f6992a = c.class.getSimpleName();
+    private static final String f4154a = c.class.getSimpleName();
     private WebView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f6993c;
+    private int f4155c;
 
     public c(WebView webView) {
         this.b = webView;
@@ -36,7 +36,7 @@ public class c extends BroadcastReceiver {
                 j.a();
                 j.a(webView, NativeAdvancedJsUtils.l, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
             } catch (Throwable th) {
-                o.a(f6992a, th.getMessage());
+                o.a(f4154a, th.getMessage());
             }
         }
     }
@@ -69,14 +69,14 @@ public class c extends BroadcastReceiver {
                         return;
                     }
                     int networkType = telephonyManager.getNetworkType();
-                    this.f6993c = networkType;
+                    this.f4155c = networkType;
                     int a2 = k.a(networkType);
-                    this.f6993c = a2;
+                    this.f4155c = a2;
                     a(this.b, a2);
                 }
             }
         } catch (Throwable th) {
-            o.a(f6992a, th.getMessage());
+            o.a(f4154a, th.getMessage());
         }
     }
 }

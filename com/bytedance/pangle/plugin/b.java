@@ -11,6 +11,7 @@ import com.bytedance.pangle.h;
 import com.bytedance.pangle.log.ZeusLogger;
 import com.bytedance.pangle.util.g;
 import com.bytedance.pangle.util.i;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final h f21443a = h.a();
+    private static final h f7837a = h.a();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/plugin/b$a.class */
     public static final class a extends IOException {
@@ -56,16 +57,16 @@ public final class b {
                 }
                 stringBuffer.append("checkSignature cost:");
                 stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-                stringBuffer.append(";");
+                stringBuffer.append(t.aE);
             } catch (Exception e) {
                 a(com.bytedance.pangle.c.b.f, b.a.q, str, i, -1L, null);
-                f21443a.a(1100, -3, str, i, e);
+                f7837a.a(1100, -3, str, i, e);
                 throw new a(e.getMessage(), e, (byte) 0);
             }
         } catch (Throwable th) {
             stringBuffer.append("checkSignature cost:");
             stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             throw th;
         }
     }
@@ -93,16 +94,16 @@ public final class b {
                 com.bytedance.pangle.d.b.a(new File(com.bytedance.pangle.d.c.b(str, i)), new File(com.bytedance.pangle.d.c.d(str, i)), str, map);
                 stringBuffer.append("copySo cost:");
                 stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-                stringBuffer.append(";");
+                stringBuffer.append(t.aE);
             } catch (Exception e) {
                 a(com.bytedance.pangle.c.b.f, b.a.t, str, i, -1L, null);
-                f21443a.a(1100, -7, str, i, e);
+                f7837a.a(1100, -7, str, i, e);
                 throw new a("安装包动态库拷贝失败", e, (byte) 0);
             }
         } catch (Throwable th) {
             stringBuffer.append("copySo cost:");
             stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             throw th;
         }
     }
@@ -114,13 +115,13 @@ public final class b {
         stringBuffer.append(a2 == 100 ? "modifyRes" : "noModifyRes");
         stringBuffer.append(" cost:");
         stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-        stringBuffer.append(";");
+        stringBuffer.append(t.aE);
         if (a2 == 100 || a2 == 200) {
             return;
         }
         String sb2 = sb.toString();
         a(com.bytedance.pangle.c.b.f, b.a.x, str2, i, -1L, sb2);
-        f21443a.a(1100, -2, str2, i, null);
+        f7837a.a(1100, -2, str2, i, null);
         throw new a("modifyRes failed. result = " + a2 + ", errorLog = " + sb2, (byte) 0);
     }
 
@@ -129,43 +130,43 @@ public final class b {
         final StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append("useOpt;");
         try {
-            f21443a.a(1000, 0, str, i, null);
+            f7837a.a(1000, 0, str, i, null);
             com.bytedance.pangle.log.a a2 = com.bytedance.pangle.log.a.a(ZeusLogger.TAG_INSTALL, "PluginInstaller", "install:".concat(String.valueOf(str)));
             a(com.bytedance.pangle.c.b.e, b.a.n, str, i, -1L, null);
             g.a(com.bytedance.pangle.d.c.a(str, i));
-            com.bytedance.pangle.a.a.a(new a.InterfaceC0314a() { // from class: com.bytedance.pangle.plugin.b.1
-                @Override // com.bytedance.pangle.a.a.InterfaceC0314a
+            com.bytedance.pangle.a.a.a(new a.InterfaceC0144a() { // from class: com.bytedance.pangle.plugin.b.1
+                @Override // com.bytedance.pangle.a.a.InterfaceC0144a
                 public final void a() {
-                    b.a(File.this, str, i, stringBuffer);
+                    b.a(file, str, i, stringBuffer);
                 }
-            }, new a.InterfaceC0314a() { // from class: com.bytedance.pangle.plugin.b.2
-                @Override // com.bytedance.pangle.a.a.InterfaceC0314a
+            }, new a.InterfaceC0144a() { // from class: com.bytedance.pangle.plugin.b.2
+                @Override // com.bytedance.pangle.a.a.InterfaceC0144a
                 public final void a() {
-                    final Map f = b.f(File.this, str, i, stringBuffer);
-                    b.c(File.this, str, i, stringBuffer);
-                    b.a(b.g(File.this, str, i, stringBuffer), str, i, stringBuffer);
+                    final Map f = b.f(file, str, i, stringBuffer);
+                    b.c(file, str, i, stringBuffer);
+                    b.a(b.g(file, str, i, stringBuffer), str, i, stringBuffer);
                     if (i.e() || i.b()) {
-                        com.bytedance.pangle.a.a.a(new a.InterfaceC0314a() { // from class: com.bytedance.pangle.plugin.b.2.1
-                            @Override // com.bytedance.pangle.a.a.InterfaceC0314a
+                        com.bytedance.pangle.a.a.a(new a.InterfaceC0144a() { // from class: com.bytedance.pangle.plugin.b.2.1
+                            @Override // com.bytedance.pangle.a.a.InterfaceC0144a
                             public final void a() {
                                 b.a(str, i, f, stringBuffer);
                             }
-                        }, new a.InterfaceC0314a() { // from class: com.bytedance.pangle.plugin.b.2.2
-                            @Override // com.bytedance.pangle.a.a.InterfaceC0314a
+                        }, new a.InterfaceC0144a() { // from class: com.bytedance.pangle.plugin.b.2.2
+                            @Override // com.bytedance.pangle.a.a.InterfaceC0144a
                             public final void a() {
-                                b.e(File.this, str, i, stringBuffer);
+                                b.e(file, str, i, stringBuffer);
                             }
                         });
                         return;
                     }
                     b.a(str, i, f, stringBuffer);
-                    b.e(File.this, str, i, stringBuffer);
+                    b.e(file, str, i, stringBuffer);
                 }
             });
             g.a(file);
             a(com.bytedance.pangle.c.b.f, b.a.o, str, i, a2.a(), stringBuffer.toString());
             a2.a(bw.o);
-            f21443a.a(1100, 0, str, i, null);
+            f7837a.a(1100, 0, str, i, null);
             return true;
         } catch (Throwable th) {
             if (th instanceof a) {
@@ -174,7 +175,7 @@ public final class b {
             }
             ZeusLogger.w(ZeusLogger.TAG_INSTALL, "PluginInstaller " + str + " install failed unknown error.", th);
             a(com.bytedance.pangle.c.b.f, b.a.p, str, i, -1L, stringBuffer.toString());
-            f21443a.a(1100, -1, str, i, th);
+            f7837a.a(1100, -1, str, i, th);
             return false;
         }
     }
@@ -211,13 +212,13 @@ public final class b {
                 }
             } catch (Exception e) {
                 a(com.bytedance.pangle.c.b.f, b.a.r, str, i, -1L, null);
-                f21443a.a(1100, -4, str, i, e);
+                f7837a.a(1100, -4, str, i, e);
                 throw new a("安装包权限校验失败", e, (byte) 0);
             }
         } finally {
             stringBuffer.append("checkPermissions cost:");
             stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
         }
     }
 
@@ -243,24 +244,24 @@ public final class b {
             try {
                 try {
                     com.bytedance.pangle.util.e<Boolean, Map<String, List<ZipEntry>>> a2 = com.bytedance.pangle.d.b.a(file);
-                    boolean booleanValue = a2.f21501a.booleanValue();
+                    boolean booleanValue = a2.f7895a.booleanValue();
                     Map<String, List<ZipEntry>> map = a2.b;
                     if (!booleanValue) {
                         throw new a("插件包包含so不符合宿主ABI类型", (byte) 0);
                     }
                     stringBuffer.append("checkMatchHostAbi cost:");
                     stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-                    stringBuffer.append(";");
+                    stringBuffer.append(t.aE);
                     return map;
                 } catch (Exception e) {
                     a(com.bytedance.pangle.c.b.f, b.a.w, str, i, -1L, null);
-                    f21443a.a(1100, -5, str, i, e);
+                    f7837a.a(1100, -5, str, i, e);
                     throw new a("插件包包含so不符合宿主ABI类型", e, (byte) 0);
                 }
             } catch (Throwable th) {
                 stringBuffer.append("checkMatchHostAbi cost:");
                 stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-                stringBuffer.append(";");
+                stringBuffer.append(t.aE);
                 throw th;
             }
         }
@@ -276,17 +277,17 @@ public final class b {
                 com.bytedance.pangle.util.h.a(file.getAbsolutePath(), b);
                 stringBuffer.append("copyApk cost:");
                 stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-                stringBuffer.append(";");
+                stringBuffer.append(t.aE);
                 return b;
             } catch (Exception e) {
                 a(com.bytedance.pangle.c.b.f, b.a.s, str, i, -1L, null);
-                f21443a.a(1100, -6, str, i, e);
+                f7837a.a(1100, -6, str, i, e);
                 throw new a("安装包拷贝失败", e, (byte) 0);
             }
         } catch (Throwable th) {
             stringBuffer.append("copyApk cost:");
             stringBuffer.append(System.currentTimeMillis() - currentTimeMillis);
-            stringBuffer.append(";");
+            stringBuffer.append(t.aE);
             throw th;
         }
     }

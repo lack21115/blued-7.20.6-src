@@ -13,7 +13,7 @@ public class d {
     protected c b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected b f27213c;
+    protected b f13525c;
     protected com.opos.cmn.e.a.a.a d;
     private Context g;
     private com.opos.mobad.q.a.c.a h;
@@ -21,7 +21,7 @@ public class d {
     private final String f = "TipBarTemplate";
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f27212a = 0;
+    protected int f13524a = 0;
     protected int[] e = new int[4];
 
     public d(Context context, com.opos.mobad.q.a.c.a aVar) {
@@ -48,22 +48,22 @@ public class d {
     private View b(AdItemData adItemData) {
         try {
             if (!c(adItemData)) {
-                this.f27212a = 0;
+                this.f13524a = 0;
                 this.d.setText(g.a(this.g, this.i, false));
                 a(this.d, adItemData, com.opos.mobad.cmn.a.b.a.ClickBt);
                 return this.d;
             } else if (adItemData != null) {
                 int G = adItemData.i().get(0).G();
                 if (G == 0) {
-                    this.f27212a = 2;
+                    this.f13524a = 2;
                     this.b.d(adItemData);
                     return this.b.a();
                 } else if (G != 1) {
                     return null;
                 } else {
-                    this.f27212a = 1;
-                    this.f27213c.d(adItemData);
-                    return this.f27213c.a();
+                    this.f13524a = 1;
+                    this.f13525c.d(adItemData);
+                    return this.f13525c.a();
                 }
             } else {
                 return null;
@@ -76,7 +76,7 @@ public class d {
 
     private void b() {
         this.b = new c(this.g, this.h);
-        this.f27213c = new b(this.g, this.h);
+        this.f13525c = new b(this.g, this.h);
         com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.g, "opos_module_biz_ui_reward_video_click_bn_normal_img.png", "opos_module_biz_ui_reward_video_click_bn_pressed_img.png");
         this.d = aVar;
         aVar.setGravity(17);
@@ -210,13 +210,13 @@ public class d {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        int i = this.f27212a;
+        int i = this.f13524a;
         if (i == 0) {
             aVar = this.d;
-        } else if (i != 1 || (bVar = this.f27213c) == null || bVar.b() == null) {
+        } else if (i != 1 || (bVar = this.f13525c) == null || bVar.b() == null) {
             return;
         } else {
-            aVar = this.f27213c.b();
+            aVar = this.f13525c.b();
         }
         aVar.setText(str);
     }

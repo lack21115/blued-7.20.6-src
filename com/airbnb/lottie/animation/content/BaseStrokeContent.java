@@ -29,9 +29,7 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/BaseStrokeContent.class */
 public abstract class BaseStrokeContent implements DrawingContent, KeyPathElementContent, BaseKeyframeAnimation.AnimationListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected final BaseLayer f4268a;
+    protected final BaseLayer a;
     final Paint b;
     private final LottieDrawable g;
     private final float[] i;
@@ -40,9 +38,7 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
     private final List<BaseKeyframeAnimation<?, Float>> l;
     private final BaseKeyframeAnimation<?, Float> m;
     private BaseKeyframeAnimation<ColorFilter, ColorFilter> n;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final PathMeasure f4269c = new PathMeasure();
+    private final PathMeasure c = new PathMeasure();
     private final Path d = new Path();
     private final Path e = new Path();
     private final RectF f = new RectF();
@@ -51,13 +47,11 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/BaseStrokeContent$PathGroup.class */
     public static final class PathGroup {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<PathContent> f4270a;
+        private final List<PathContent> a;
         private final TrimPathContent b;
 
         private PathGroup(TrimPathContent trimPathContent) {
-            this.f4270a = new ArrayList();
+            this.a = new ArrayList();
             this.b = trimPathContent;
         }
     }
@@ -67,7 +61,7 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
         LPaint lPaint = new LPaint(1);
         this.b = lPaint;
         this.g = lottieDrawable;
-        this.f4268a = baseLayer;
+        this.a = baseLayer;
         lPaint.setStyle(Paint.Style.STROKE);
         this.b.setStrokeCap(cap);
         this.b.setStrokeJoin(join);
@@ -130,33 +124,33 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
             return;
         }
         this.d.reset();
-        int size = pathGroup.f4270a.size();
+        int size = pathGroup.a.size();
         while (true) {
             int i = size - 1;
             if (i < 0) {
                 break;
             }
-            this.d.addPath(((PathContent) pathGroup.f4270a.get(i)).e(), matrix);
+            this.d.addPath(((PathContent) pathGroup.a.get(i)).e(), matrix);
             size = i;
         }
-        this.f4269c.setPath(this.d, false);
-        float length = this.f4269c.getLength();
+        this.c.setPath(this.d, false);
+        float length = this.c.getLength();
         while (true) {
             f = length;
-            if (!this.f4269c.nextContour()) {
+            if (!this.c.nextContour()) {
                 break;
             }
-            length = f + this.f4269c.getLength();
+            length = f + this.c.getLength();
         }
         float floatValue = (pathGroup.b.e().g().floatValue() * f) / 360.0f;
         float floatValue2 = ((pathGroup.b.c().g().floatValue() * f) / 100.0f) + floatValue;
         float floatValue3 = ((pathGroup.b.d().g().floatValue() * f) / 100.0f) + floatValue;
         float f2 = 0.0f;
-        for (int size2 = pathGroup.f4270a.size() - 1; size2 >= 0; size2--) {
-            this.e.set(((PathContent) pathGroup.f4270a.get(size2)).e());
+        for (int size2 = pathGroup.a.size() - 1; size2 >= 0; size2--) {
+            this.e.set(((PathContent) pathGroup.a.get(size2)).e());
             this.e.transform(matrix);
-            this.f4269c.setPath(this.e, false);
-            float length2 = this.f4269c.getLength();
+            this.c.setPath(this.e, false);
+            float length2 = this.c.getLength();
             if (floatValue3 > f) {
                 float f3 = floatValue3 - f;
                 if (f3 < f2 + length2 && f2 < f3) {
@@ -185,7 +179,7 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
             L.b("StrokeContent#applyDashPattern");
             return;
         }
-        float a2 = Utils.a(matrix);
+        float a = Utils.a(matrix);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -205,7 +199,7 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
                 }
             }
             float[] fArr3 = this.i;
-            fArr3[i2] = fArr3[i2] * a2;
+            fArr3[i2] = fArr3[i2] * a;
             i = i2 + 1;
         }
         BaseKeyframeAnimation<?, Float> baseKeyframeAnimation = this.m;
@@ -245,13 +239,13 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
             } else {
                 L.a("StrokeContent#buildPath");
                 this.d.reset();
-                int size = pathGroup.f4270a.size();
+                int size = pathGroup.a.size();
                 while (true) {
                     int i3 = size - 1;
                     if (i3 < 0) {
                         break;
                     }
-                    this.d.addPath(((PathContent) pathGroup.f4270a.get(i3)).e(), matrix);
+                    this.d.addPath(((PathContent) pathGroup.a.get(i3)).e(), matrix);
                     size = i3;
                 }
                 L.b("StrokeContent#buildPath");
@@ -287,8 +281,8 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
             int i4 = 0;
             while (true) {
                 int i5 = i4;
-                if (i5 < pathGroup.f4270a.size()) {
-                    this.d.addPath(((PathContent) pathGroup.f4270a.get(i5)).e(), matrix);
+                if (i5 < pathGroup.a.size()) {
+                    this.d.addPath(((PathContent) pathGroup.a.get(i5)).e(), matrix);
                     i4 = i5 + 1;
                 }
             }
@@ -315,7 +309,7 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
             ValueCallbackKeyframeAnimation valueCallbackKeyframeAnimation = new ValueCallbackKeyframeAnimation(lottieValueCallback);
             this.n = valueCallbackKeyframeAnimation;
             valueCallbackKeyframeAnimation.a(this);
-            this.f4268a.a(this.n);
+            this.a.a(this.n);
         }
     }
 
@@ -372,7 +366,7 @@ public abstract class BaseStrokeContent implements DrawingContent, KeyPathElemen
                 if (pathGroup == null) {
                     pathGroup2 = new PathGroup(trimPathContent);
                 }
-                pathGroup2.f4270a.add((PathContent) content2);
+                pathGroup2.a.add((PathContent) content2);
             }
             size2--;
             pathGroup3 = pathGroup2;

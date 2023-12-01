@@ -9,11 +9,11 @@ import com.tencent.liteav.videoconsumer.decoder.VideoDecodeController;
 public final /* synthetic */ class as implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDecodeController f36764a;
+    private final VideoDecodeController f23073a;
     private final VideoDecodeController.a b;
 
     private as(VideoDecodeController videoDecodeController, VideoDecodeController.a aVar) {
-        this.f36764a = videoDecodeController;
+        this.f23073a = videoDecodeController;
         this.b = aVar;
     }
 
@@ -23,7 +23,7 @@ public final /* synthetic */ class as implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        final VideoDecodeController videoDecodeController = this.f36764a;
+        final VideoDecodeController videoDecodeController = this.f23073a;
         VideoDecodeController.a aVar = this.b;
         if (videoDecodeController.j) {
             return;
@@ -31,22 +31,22 @@ public final /* synthetic */ class as implements Runnable {
         videoDecodeController.j = true;
         videoDecodeController.g = aVar;
         videoDecodeController.m.set(0);
-        videoDecodeController.f36735c.b();
+        videoDecodeController.f23044c.b();
         videoDecodeController.d.a();
         if (videoDecodeController.f == null) {
             videoDecodeController.f = new com.tencent.liteav.base.util.r(Looper.myLooper(), new r.a(videoDecodeController) { // from class: com.tencent.liteav.videoconsumer.decoder.at
 
                 /* renamed from: a  reason: collision with root package name */
-                private final VideoDecodeController f36765a;
+                private final VideoDecodeController f23074a;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
-                    this.f36765a = videoDecodeController;
+                    this.f23074a = videoDecodeController;
                 }
 
                 @Override // com.tencent.liteav.base.util.r.a
                 public final void a_() {
-                    VideoDecodeController videoDecodeController2 = this.f36765a;
+                    VideoDecodeController videoDecodeController2 = this.f23074a;
                     if (videoDecodeController2.e() > 0) {
                         videoDecodeController2.d();
                     } else if (!videoDecodeController2.e || videoDecodeController2.m.get() <= 0 || videoDecodeController2.k == null) {

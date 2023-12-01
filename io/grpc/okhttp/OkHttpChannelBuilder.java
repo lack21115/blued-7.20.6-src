@@ -249,7 +249,7 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
         int i = AnonymousClass2.$SwitchMap$io$grpc$okhttp$OkHttpChannelBuilder$NegotiationType[this.negotiationType.ordinal()];
         if (i != 1) {
             if (i == 2) {
-                return 443;
+                return GrpcUtil.DEFAULT_PORT_SSL;
             }
             throw new AssertionError(this.negotiationType + " not handled");
         }
@@ -261,7 +261,6 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public OkHttpChannelBuilder keepAliveTime(long j, TimeUnit timeUnit) {
         Preconditions.checkArgument(j > 0, "keepalive time must be positive");
         long nanos = timeUnit.toNanos(j);
@@ -274,7 +273,6 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public OkHttpChannelBuilder keepAliveTimeout(long j, TimeUnit timeUnit) {
         Preconditions.checkArgument(j > 0, "keepalive timeout must be positive");
         long nanos = timeUnit.toNanos(j);
@@ -283,13 +281,11 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public OkHttpChannelBuilder keepAliveWithoutCalls(boolean z) {
         this.keepAliveWithoutCalls = z;
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public OkHttpChannelBuilder maxInboundMetadataSize(int i) {
         Preconditions.checkArgument(i > 0, "maxInboundMetadataSize must be > 0");
         this.maxInboundMetadataSize = i;
@@ -337,13 +333,11 @@ public class OkHttpChannelBuilder extends AbstractManagedChannelImplBuilder<OkHt
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final OkHttpChannelBuilder usePlaintext() {
         this.negotiationType = NegotiationType.PLAINTEXT;
         return this;
     }
 
-    @Override // io.grpc.ManagedChannelBuilder
     public final OkHttpChannelBuilder useTransportSecurity() {
         this.negotiationType = NegotiationType.TLS;
         return this;

@@ -5,9 +5,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveTagsSetSelectedTab.class */
 public class LiveTagsSetSelectedTab {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveTagsSetSelectedTab f13955a = new LiveTagsSetSelectedTab();
+    private static LiveTagsSetSelectedTab a = new LiveTagsSetSelectedTab();
     private List<iLiveTagsSetSelectedTab> b = new ArrayList();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveTagsSetSelectedTab$iLiveTagsSetSelectedTab.class */
@@ -16,7 +14,7 @@ public class LiveTagsSetSelectedTab {
     }
 
     public static LiveTagsSetSelectedTab a() {
-        return f13955a;
+        return a;
     }
 
     public void a(iLiveTagsSetSelectedTab ilivetagssetselectedtab) {

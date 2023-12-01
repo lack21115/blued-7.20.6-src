@@ -14,7 +14,6 @@ import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.pangle.plugin.Plugin;
 import com.bytedance.pangle.transform.ZeusTransformUtils;
 import com.cdo.oaps.ad.OapsWrapper;
@@ -28,11 +27,11 @@ import org.xmlpull.v1.XmlPullParserException;
 public class FileProvider extends ContentProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f21343a = {"_display_name", "_size"};
-    private static final File b = new File(BridgeUtil.SPLIT_MARK);
+    private static final String[] f7737a = {"_display_name", "_size"};
+    private static final File b = new File("/");
 
     /* renamed from: c  reason: collision with root package name */
-    private static a f21344c;
+    private static a f7738c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/FileProvider$a.class */
@@ -47,7 +46,7 @@ public class FileProvider extends ContentProvider {
     public static final class b implements a {
 
         /* renamed from: a  reason: collision with root package name */
-        final HashMap<String, File> f21345a = new HashMap<>();
+        final HashMap<String, File> f7739a = new HashMap<>();
         private final String b;
 
         b(String str) {
@@ -59,7 +58,7 @@ public class FileProvider extends ContentProvider {
             try {
                 String canonicalPath = file.getCanonicalPath();
                 Map.Entry<String, File> entry = null;
-                for (Map.Entry<String, File> entry2 : this.f21345a.entrySet()) {
+                for (Map.Entry<String, File> entry2 : this.f7739a.entrySet()) {
                     String path = entry2.getValue().getPath();
                     if (canonicalPath.startsWith(path) && (entry == null || path.length() > entry.getValue().getPath().length())) {
                         entry = entry2;
@@ -67,8 +66,8 @@ public class FileProvider extends ContentProvider {
                 }
                 if (entry != null) {
                     String path2 = entry.getValue().getPath();
-                    String substring = path2.endsWith(BridgeUtil.SPLIT_MARK) ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1);
-                    return new Uri.Builder().scheme("content").authority(this.b).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, BridgeUtil.SPLIT_MARK)).build();
+                    String substring = path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1);
+                    return new Uri.Builder().scheme("content").authority(this.b).encodedPath(Uri.encode(entry.getKey()) + '/' + Uri.encode(substring, "/")).build();
                 }
                 throw new IllegalArgumentException("Failed to find configured root that contains ".concat(String.valueOf(canonicalPath)));
             } catch (IOException e) {
@@ -82,7 +81,7 @@ public class FileProvider extends ContentProvider {
             int indexOf = encodedPath.indexOf(47, 1);
             String decode = Uri.decode(encodedPath.substring(1, indexOf));
             String decode2 = Uri.decode(encodedPath.substring(indexOf + 1));
-            File file = this.f21345a.get(decode);
+            File file = this.f7739a.get(decode);
             if (file != null) {
                 File file2 = new File(file, decode2);
                 try {
@@ -119,7 +118,7 @@ public class FileProvider extends ContentProvider {
             try {
                 String str = plugin.mPkgName;
                 Context wrapperContext = ZeusTransformUtils.wrapperContext(Zeus.getAppApplication(), plugin.mPkgName);
-                b bVar = (b) f21344c;
+                b bVar = (b) f7738c;
                 while (true) {
                     int next = xmlResourceParser.next();
                     if (next == 1) {
@@ -163,13 +162,13 @@ public class FileProvider extends ContentProvider {
                             }
                         }
                         if (file != null) {
-                            String str2 = str + BridgeUtil.UNDERLINE_STR + attributeValue;
+                            String str2 = str + "_" + attributeValue;
                             File a2 = a(file, attributeValue2);
                             if (TextUtils.isEmpty(str2)) {
                                 throw new IllegalArgumentException("Name must not be empty");
                             }
                             try {
-                                bVar.f21345a.put(str2, a2.getCanonicalFile());
+                                bVar.f7739a.put(str2, a2.getCanonicalFile());
                             } catch (IOException e) {
                                 throw new IllegalArgumentException("Failed to resolve canonical path for ".concat(String.valueOf(a2)), e);
                             }
@@ -189,7 +188,7 @@ public class FileProvider extends ContentProvider {
     }
 
     public static Uri getUriForFile(File file) {
-        return f21344c.a(file);
+        return f7738c.a(file);
     }
 
     @Override // android.content.ContentProvider
@@ -201,20 +200,20 @@ public class FileProvider extends ContentProvider {
         if (!providerInfo.grantUriPermissions) {
             throw new SecurityException("Provider must grant uri permissions");
         }
-        if (f21344c != null) {
+        if (f7738c != null) {
             throw new SecurityException("仅允许定义一个FileProvider");
         }
-        f21344c = new b(providerInfo.authority);
+        f7738c = new b(providerInfo.authority);
     }
 
     @Override // android.content.ContentProvider
     public int delete(Uri uri, String str, String[] strArr) {
-        return f21344c.a(uri).delete() ? 1 : 0;
+        return f7738c.a(uri).delete() ? 1 : 0;
     }
 
     @Override // android.content.ContentProvider
     public String getType(Uri uri) {
-        File a2 = f21344c.a(uri);
+        File a2 = f7738c.a(uri);
         int lastIndexOf = a2.getName().lastIndexOf(46);
         if (lastIndexOf >= 0) {
             String mimeTypeFromExtension = MimeTypeMap.getSingleton().getMimeTypeFromExtension(a2.getName().substring(lastIndexOf + 1));
@@ -236,7 +235,7 @@ public class FileProvider extends ContentProvider {
     @Override // android.content.ContentProvider
     public ParcelFileDescriptor openFile(Uri uri, String str) {
         int i;
-        File a2 = f21344c.a(uri);
+        File a2 = f7738c.a(uri);
         if ("r".equals(str)) {
             i = 268435456;
         } else if (IAdInterListener.AdReqParam.WIDTH.equals(str) || com.anythink.expressad.d.a.b.R.equals(str)) {
@@ -257,10 +256,10 @@ public class FileProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
         int i;
         int i2;
-        File a2 = f21344c.a(uri);
+        File a2 = f7738c.a(uri);
         String[] strArr3 = strArr;
         if (strArr == null) {
-            strArr3 = f21343a;
+            strArr3 = f7737a;
         }
         String[] strArr4 = new String[strArr3.length];
         Object[] objArr = new Object[strArr3.length];

@@ -2,9 +2,7 @@ package com.blued.android.framework.provider;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/provider/IAppInfoProvider.class */
 public interface IAppInfoProvider {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final EmptyImpl f9837a = new EmptyImpl();
+    public static final EmptyImpl a = new EmptyImpl();
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/provider/IAppInfoProvider$EmptyImpl.class */
     public static class EmptyImpl implements IAppInfoProvider {

@@ -1,6 +1,5 @@
 package kotlinx.coroutines.internal;
 
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -23,9 +22,7 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/FastServiceLoader.class */
 public final class FastServiceLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final FastServiceLoader f43534a = new FastServiceLoader();
+    public static final FastServiceLoader a = new FastServiceLoader();
 
     private FastServiceLoader() {
     }
@@ -81,14 +78,14 @@ public final class FastServiceLoader {
 
     private final List<String> a(URL url) {
         String url2 = url.toString();
-        if (StringsKt.a(url2, ShareConstants.DEXMODE_JAR, false, 2, (Object) null)) {
+        if (StringsKt.a(url2, "jar", false, 2, (Object) null)) {
             String a2 = StringsKt.a(StringsKt.b(url2, "jar:file:", (String) null, 2, (Object) null), '!', (String) null, 2, (Object) null);
             String b = StringsKt.b(url2, "!/", (String) null, 2, (Object) null);
             JarFile jarFile = new JarFile(a2, false);
             try {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(jarFile.getInputStream(new ZipEntry(b)), "UTF-8"));
                 Throwable th = null;
-                List<String> a3 = f43534a.a(bufferedReader);
+                List<String> a3 = a.a(bufferedReader);
                 CloseableKt.a(bufferedReader, th);
                 jarFile.close();
                 return a3;
@@ -109,7 +106,7 @@ public final class FastServiceLoader {
         BufferedReader bufferedReader2 = new BufferedReader(new InputStreamReader(url.openStream()));
         Throwable th5 = null;
         try {
-            List<String> a4 = f43534a.a(bufferedReader2);
+            List<String> a4 = a.a(bufferedReader2);
             CloseableKt.a(bufferedReader2, th5);
             return a4;
         } finally {
@@ -160,14 +157,14 @@ public final class FastServiceLoader {
         ArrayList<URL> arrayList = list;
         ArrayList arrayList2 = new ArrayList();
         for (URL url : arrayList) {
-            CollectionsKt.a((Collection) arrayList2, (Iterable) f43534a.a(url));
+            CollectionsKt.a((Collection) arrayList2, (Iterable) a.a(url));
         }
         Set h = CollectionsKt.h((Iterable) arrayList2);
         if (!h.isEmpty()) {
             Set<String> set = h;
             ArrayList arrayList3 = new ArrayList(CollectionsKt.a(set, 10));
             for (String str : set) {
-                arrayList3.add(f43534a.a(str, classLoader, cls));
+                arrayList3.add(a.a(str, classLoader, cls));
             }
             return arrayList3;
         }

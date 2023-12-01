@@ -6,14 +6,14 @@ import android.text.TextUtils;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f9428a = {48, 75, 97, 106, 68, 55, 65, 90, 99, 70, 50, 81, 110, 80, 114, 53, 102, 119, 105, 72, 82, 78, 121, 103, 109, 117, 112, 85, 84, 73, 88, 120, 54, 57, 66, 87, 98, 45, 104, 77, 67, 71, 74, 111, 95, 86, 56, 69, 115, 107, 122, 49, 89, 100, 118, 76, 51, 52, 108, 101, 116, 113, 83, 79};
+    private static final byte[] f6588a = {48, 75, 97, 106, 68, 55, 65, 90, 99, 70, 50, 81, 110, 80, 114, 53, 102, 119, 105, 72, 82, 78, 121, 103, 109, 117, 112, 85, 84, 73, 88, 120, 54, 57, 66, 87, 98, 45, 104, 77, 67, 71, 74, 111, 95, 86, 56, 69, 115, 107, 122, 49, 89, 100, 118, 76, 51, 52, 108, 101, 116, 113, 83, 79};
     private static final byte[] b = new byte[128];
 
     static {
         int i = 0;
         while (true) {
             int i2 = i;
-            byte[] bArr = f9428a;
+            byte[] bArr = f6588a;
             if (i2 >= bArr.length) {
                 return;
             }
@@ -127,7 +127,7 @@ public class g {
             if (i2 >= bytes.length) {
                 return new String(bArr);
             }
-            byte[] bArr2 = f9428a;
+            byte[] bArr2 = f6588a;
             bArr[i4] = bArr2[(bytes[i2] & 252) >> 2];
             byte b2 = bytes[i2];
             int i5 = i2 + 1;

@@ -11,17 +11,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLivePocketExpBinding.class */
 public final class DialogLivePocketExpBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ListView f11801a;
+    public final ListView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f11802c;
+    private final FrameLayout c;
 
     private DialogLivePocketExpBinding(FrameLayout frameLayout, ListView listView, LinearLayout linearLayout) {
-        this.f11802c = frameLayout;
-        this.f11801a = listView;
+        this.c = frameLayout;
+        this.a = listView;
         this.b = linearLayout;
     }
 
@@ -48,9 +44,8 @@ public final class DialogLivePocketExpBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f11802c;
+        return this.c;
     }
 }

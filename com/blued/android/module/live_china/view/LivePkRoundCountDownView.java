@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePkRoundCountDownView.class */
 public class LivePkRoundCountDownView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageView f14852a;
+    private ImageView a;
     private ValueAnimator b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f14853c;
+    private long c;
     private int d;
 
     public LivePkRoundCountDownView(Context context) {
@@ -27,7 +23,7 @@ public class LivePkRoundCountDownView extends FrameLayout {
 
     public LivePkRoundCountDownView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14853c = 600L;
+        this.c = 600L;
         this.d = 5;
         c();
     }
@@ -40,7 +36,7 @@ public class LivePkRoundCountDownView extends FrameLayout {
 
     private void c() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_round_count_down_view, this);
-        this.f14852a = (ImageView) findViewById(R.id.iv_round_time);
+        this.a = (ImageView) findViewById(R.id.iv_round_time);
         setVisibility(8);
     }
 
@@ -49,7 +45,7 @@ public class LivePkRoundCountDownView extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.3f, 1.2f, 1.0f);
         this.b = ofFloat;
         ofFloat.setInterpolator(new AccelerateDecelerateInterpolator());
-        this.b.setDuration(this.f14853c);
+        this.b.setDuration(this.c);
         this.b.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.view.LivePkRoundCountDownView.1
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
@@ -80,15 +76,15 @@ public class LivePkRoundCountDownView extends FrameLayout {
             public void onAnimationStart(Animator animator) {
                 LivePkRoundCountDownView.this.setVisibility(0);
                 if (LivePkRoundCountDownView.this.d == 1) {
-                    LivePkRoundCountDownView.this.f14852a.setImageResource(R.drawable.live_pk_round_down1);
+                    LivePkRoundCountDownView.this.a.setImageResource(R.drawable.live_pk_round_down1);
                 } else if (LivePkRoundCountDownView.this.d == 2) {
-                    LivePkRoundCountDownView.this.f14852a.setImageResource(R.drawable.live_pk_round_down2);
+                    LivePkRoundCountDownView.this.a.setImageResource(R.drawable.live_pk_round_down2);
                 } else if (LivePkRoundCountDownView.this.d == 3) {
-                    LivePkRoundCountDownView.this.f14852a.setImageResource(R.drawable.live_pk_round_down3);
+                    LivePkRoundCountDownView.this.a.setImageResource(R.drawable.live_pk_round_down3);
                 } else if (LivePkRoundCountDownView.this.d == 4) {
-                    LivePkRoundCountDownView.this.f14852a.setImageResource(R.drawable.live_pk_round_down4);
+                    LivePkRoundCountDownView.this.a.setImageResource(R.drawable.live_pk_round_down4);
                 } else if (LivePkRoundCountDownView.this.d == 5) {
-                    LivePkRoundCountDownView.this.f14852a.setImageResource(R.drawable.live_pk_round_down5);
+                    LivePkRoundCountDownView.this.a.setImageResource(R.drawable.live_pk_round_down5);
                 }
             }
         });
@@ -96,8 +92,8 @@ public class LivePkRoundCountDownView extends FrameLayout {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                LivePkRoundCountDownView.this.f14852a.setScaleX(floatValue);
-                LivePkRoundCountDownView.this.f14852a.setScaleY(floatValue);
+                LivePkRoundCountDownView.this.a.setScaleX(floatValue);
+                LivePkRoundCountDownView.this.a.setScaleY(floatValue);
             }
         });
     }

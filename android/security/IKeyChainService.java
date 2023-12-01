@@ -28,8 +28,9 @@ public interface IKeyChainService extends IInterface {
         static final int TRANSACTION_reset = 6;
         static final int TRANSACTION_setGrant = 12;
 
+        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/security/IKeyChainService$Stub$Proxy.class */
-        private static class Proxy implements IKeyChainService {
+        public static class Proxy implements IKeyChainService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

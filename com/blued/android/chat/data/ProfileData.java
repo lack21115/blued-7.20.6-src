@@ -4,7 +4,6 @@ import com.anythink.core.api.ATCustomRuleKeys;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.utils.MsgPackHelper;
-import com.soft.blued.ui.mine.model.MineEntryInfo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,7 +82,7 @@ public class ProfileData implements Serializable {
         this.vBadge = MsgPackHelper.getIntValue(map, ReqAckPackage.REQ_RESPONSE_KEY.VBADGE);
         this.bluedBadgeImage = MsgPackHelper.getStringValue(map, ReqAckPackage.REQ_RESPONSE_KEY.BLUED_BADGE_PIC);
         if (ChatManager.clientType == ChatManager.ClientType.CHINA) {
-            this.richLevel = MsgPackHelper.getIntValue(map, MineEntryInfo.ColumnsExtra.TYPE_RICH_LEVEL);
+            this.richLevel = MsgPackHelper.getIntValue(map, "rich_level");
         } else if (ChatManager.clientType == ChatManager.ClientType.INTERNATIONAL) {
             this.richLevel = MsgPackHelper.getIntValue(map, "o_rich_level");
         }

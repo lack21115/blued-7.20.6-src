@@ -2,9 +2,8 @@ package com.sobot.chat.widget.zxing.aztec.encoder;
 
 import com.sobot.chat.widget.zxing.common.BitArray;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/zxing/aztec/encoder/SimpleToken.class */
-public final class SimpleToken extends Token {
+final class SimpleToken extends Token {
     private final short bitCount;
     private final short value;
 
@@ -15,9 +14,8 @@ public final class SimpleToken extends Token {
         this.bitCount = (short) i2;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.sobot.chat.widget.zxing.aztec.encoder.Token
-    public void appendTo(BitArray bitArray, byte[] bArr) {
+    void appendTo(BitArray bitArray, byte[] bArr) {
         bitArray.appendBits(this.value, this.bitCount);
     }
 

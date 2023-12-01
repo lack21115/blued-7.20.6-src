@@ -6,39 +6,39 @@ import com.huawei.hms.framework.common.Logger;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22725a = "e";
+    private static final String f9117a = "e";
 
     public static boolean a(Long l) {
         if (l == null) {
-            Logger.v(f22725a, "Method isTimeExpire input param expireTime is null.");
+            Logger.v(f9117a, "Method isTimeExpire input param expireTime is null.");
             return true;
         }
         try {
             if (l.longValue() - System.currentTimeMillis() >= 0) {
-                Logger.i(f22725a, "isSpExpire false.");
+                Logger.i(f9117a, "isSpExpire false.");
                 return false;
             }
-            Logger.i(f22725a, "isSpExpire true.");
+            Logger.i(f9117a, "isSpExpire true.");
             return true;
         } catch (NumberFormatException e) {
-            Logger.v(f22725a, "isSpExpire spValue NumberFormatException.");
+            Logger.v(f9117a, "isSpExpire spValue NumberFormatException.");
             return true;
         }
     }
 
     public static boolean a(Long l, long j) {
         if (l == null) {
-            Logger.v(f22725a, "Method isTimeWillExpire input param expireTime is null.");
+            Logger.v(f9117a, "Method isTimeWillExpire input param expireTime is null.");
             return true;
         }
         try {
             if (l.longValue() - (System.currentTimeMillis() + j) >= 0) {
-                Logger.v(f22725a, "isSpExpire false.");
+                Logger.v(f9117a, "isSpExpire false.");
                 return false;
             }
             return true;
         } catch (NumberFormatException e) {
-            Logger.v(f22725a, "isSpExpire spValue NumberFormatException.");
+            Logger.v(f9117a, "isSpExpire spValue NumberFormatException.");
             return true;
         }
     }

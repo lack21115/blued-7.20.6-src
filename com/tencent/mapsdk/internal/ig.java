@@ -192,7 +192,7 @@ public class ig extends ze {
                     p5 p5Var = new p5(0.0d, 0.0d);
                     if (R != null) {
                         p5Var.b = R.getLongitudeE6();
-                        p5Var.f37683c = R.getLatitudeE6();
+                        p5Var.f23992c = R.getLatitudeE6();
                     }
                     this.G = p5Var;
                 } else {
@@ -210,28 +210,28 @@ public class ig extends ze {
                 p5 p5Var4 = this.G;
                 p5Var2.b = p5Var4.b;
                 p5Var3.b = p5Var4.b + width;
-                p5Var2.f37683c = p5Var4.f37683c;
-                p5Var3.f37683c = p5Var4.f37683c + height;
+                p5Var2.f23992c = p5Var4.f23992c;
+                p5Var3.f23992c = p5Var4.f23992c + height;
                 int c2 = (int) (this.D.c() * width);
                 int d = (int) (this.D.d() * height);
                 double d2 = p5Var2.b;
                 double d3 = c2;
                 p5Var2.b = d2 - d3;
                 p5Var3.b -= d3;
-                double d4 = p5Var2.f37683c;
+                double d4 = p5Var2.f23992c;
                 double d5 = d;
-                p5Var2.f37683c = d4 - d5;
-                p5Var3.f37683c -= d5;
+                p5Var2.f23992c = d4 - d5;
+                p5Var3.f23992c -= d5;
                 int i = this.D.i();
                 int j = this.D.j();
                 double d6 = p5Var2.b;
                 double d7 = i;
                 p5Var2.b = d6 + d7;
                 p5Var3.b += d7;
-                double d8 = p5Var2.f37683c;
+                double d8 = p5Var2.f23992c;
                 double d9 = j;
-                p5Var2.f37683c = d8 + d9;
-                p5Var3.f37683c += d9;
+                p5Var2.f23992c = d8 + d9;
+                p5Var3.f23992c += d9;
                 GeoPoint a3 = t4Var.a(p5Var2);
                 GeoPoint a4 = t4Var.a(p5Var3);
                 rect = new Rect(a3.getLongitudeE6(), a3.getLatitudeE6(), a4.getLongitudeE6(), a4.getLatitudeE6());
@@ -293,7 +293,7 @@ public class ig extends ze {
             p5 p5Var = new p5(0.0d, 0.0d);
             if (R != null) {
                 p5Var.b = R.getLongitudeE6();
-                p5Var.f37683c = R.getLatitudeE6();
+                p5Var.f23992c = R.getLatitudeE6();
             }
             this.G = p5Var;
         } else {
@@ -313,29 +313,29 @@ public class ig extends ze {
         p5 p5Var4 = this.G;
         p5Var2.b = p5Var4.b;
         p5Var3.b = p5Var4.b + i2;
-        p5Var2.f37683c = p5Var4.f37683c;
-        p5Var3.f37683c = p5Var4.f37683c + i;
+        p5Var2.f23992c = p5Var4.f23992c;
+        p5Var3.f23992c = p5Var4.f23992c + i;
         int c2 = (int) (this.D.c() * i2);
         int d = (int) (this.D.d() * i);
         double d2 = p5Var2.b;
         double d3 = c2;
         p5Var2.b = d2 - d3;
         p5Var3.b -= d3;
-        double d4 = p5Var2.f37683c;
+        double d4 = p5Var2.f23992c;
         double d5 = d;
-        p5Var2.f37683c = d4 - d5;
-        p5Var3.f37683c -= d5;
+        p5Var2.f23992c = d4 - d5;
+        p5Var3.f23992c -= d5;
         int i3 = this.D.i();
         int j = this.D.j();
         double d6 = p5Var2.b;
         double d7 = i3;
         p5Var2.b = d6 + d7;
         p5Var3.b += d7;
-        double d8 = p5Var2.f37683c;
+        double d8 = p5Var2.f23992c;
         double d9 = j;
-        p5Var2.f37683c = d8 + d9;
-        p5Var3.f37683c += d9;
-        return new Rect((int) p5Var2.b, (int) p5Var2.f37683c, (int) p5Var3.b, (int) p5Var3.f37683c);
+        p5Var2.f23992c = d8 + d9;
+        p5Var3.f23992c += d9;
+        return new Rect((int) p5Var2.b, (int) p5Var2.f23992c, (int) p5Var3.b, (int) p5Var3.f23992c);
     }
 
     public void b(int i) {

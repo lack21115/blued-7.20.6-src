@@ -20,8 +20,8 @@ public class z extends e {
         String str;
         b1.a aVar = new b1.a();
         HashMap<String, String> b = a0.b(e.a());
-        aVar.f42107c.clear();
-        aVar.f42107c.putAll(b);
+        aVar.f28416c.clear();
+        aVar.f28416c.putAll(b);
         b1.a a2 = aVar.a("https://zxid-m.mobileservice.cn/sdk/module/getCoreModule");
         a2.b = "POST";
         n0 b2 = n0.b("application/json; charset=utf-8");
@@ -31,9 +31,9 @@ public class z extends e {
         jSONObject2.put(bh.al, t2.i);
         jSONObject.put("ctx", jSONObject2);
         jSONObject.put("sdkInfo", a0.d());
-        a2.d = d1.a(b2, new String(Base64.encode(k.a(jSONObject.toString(), e.f42118a, "UDID_ENC_AUTHTAG"), 2), StandardCharsets.UTF_8));
+        a2.d = d1.a(b2, new String(Base64.encode(k.a(jSONObject.toString(), e.f28427a, "UDID_ENC_AUTHTAG"), 2), StandardCharsets.UTF_8));
         a2.e = "request getCoreModule api";
-        w1 w1Var = a0.f42098a;
+        w1 w1Var = a0.f28407a;
         b1 b1Var = new b1(aVar);
         w1Var.getClass();
         e1 a3 = new u0(w1Var, b1Var).a();
@@ -42,9 +42,9 @@ public class z extends e {
             String a5 = a3.a("Udid-Error-Message");
             throw new RuntimeException("response errCode: " + a4 + ", errMsg: " + a5);
         }
-        JSONObject jSONObject3 = new JSONObject(k.a(Base64.decode(new JSONObject(a3.e.b()).getString("data"), 2), e.f42118a, "UDID_ENC_AUTHTAG"));
+        JSONObject jSONObject3 = new JSONObject(k.a(Base64.decode(new JSONObject(a3.e.b()).getString("data"), 2), e.f28427a, "UDID_ENC_AUTHTAG"));
         if (!jSONObject3.getBoolean("enable")) {
-            b3 b3Var = u1.a.f42208a.f42207a;
+            b3 b3Var = u1.a.f28517a.f28516a;
             if (b3Var.b == null) {
                 b3Var.b = b3Var.d();
             }
@@ -73,7 +73,7 @@ public class z extends e {
         jSONObject5.put("mainVersion", t2.b);
         jSONObject5.put("coreVersion", t2.d);
         jSONObject5.put("checksum", string);
-        u1.a.f42208a.f42207a.getClass();
+        u1.a.f28517a.f28516a.getClass();
         String string2 = jSONObject5.getString("coreVersion");
         try {
             str = t2.C.getString("coreVersion");
@@ -81,7 +81,7 @@ public class z extends e {
             str = "";
         }
         if (!TextUtils.isEmpty(string2) && !TextUtils.equals(string2, str)) {
-            b3 b3Var2 = u1.a.f42208a.f42207a;
+            b3 b3Var2 = u1.a.f28517a.f28516a;
             if (b3Var2.b == null) {
                 b3Var2.b = b3Var2.d();
             }
@@ -95,7 +95,7 @@ public class z extends e {
             } catch (Exception e3) {
                 z1.b("ZXID updateDBValue valueID:17,value:" + decode + ",error:" + e3.toString());
             }
-            u1.a.f42208a.f42207a.a(18, jSONObject5.toString(), true);
+            u1.a.f28517a.f28516a.a(18, jSONObject5.toString(), true);
             t2.C = jSONObject5;
         }
         z1.a("decrypt and checksum finished");

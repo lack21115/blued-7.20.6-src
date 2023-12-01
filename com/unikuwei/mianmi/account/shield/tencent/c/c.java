@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f40995a;
+    private static volatile c f27304a;
 
     private c() {
     }
@@ -42,18 +42,18 @@ public class c {
     }
 
     public static c a() {
-        if (f40995a == null) {
+        if (f27304a == null) {
             synchronized (c.class) {
                 try {
-                    if (f40995a == null) {
-                        f40995a = new c();
+                    if (f27304a == null) {
+                        f27304a = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f40995a;
+        return f27304a;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x00bb  */
@@ -79,7 +79,7 @@ public class c {
 
     private void b(Context context, String str, String str2) {
         try {
-            Class<?> loadClass = i.a().loadClass(new String(m.b("Y29tLnVuaWNvbS54aWFvd28ubG9naW5jb3JlLlVuaUF1dGhIZWxwZXI=")));
+            Class loadClass = i.a().loadClass(new String(m.b("Y29tLnVuaWNvbS54aWFvd28ubG9naW5jb3JlLlVuaUF1dGhIZWxwZXI=")));
             loadClass.getMethod("init", Context.class, String.class, String.class).invoke(loadClass.getMethod("getInstance", new Class[0]).invoke(loadClass, new Object[0]), context, str, str2);
         } catch (Exception e) {
             e.printStackTrace();
@@ -88,8 +88,8 @@ public class c {
     }
 
     public void a(Context context, int i, int i2, final ResultListener resultListener) {
-        new a().a(context, i, i2, new a.InterfaceC1091a() { // from class: com.unikuwei.mianmi.account.shield.tencent.c.c.1
-            @Override // com.unikuwei.mianmi.account.shield.tencent.c.a.InterfaceC1091a
+        new a().a(context, i, i2, new a.InterfaceC0921a() { // from class: com.unikuwei.mianmi.account.shield.tencent.c.c.1
+            @Override // com.unikuwei.mianmi.account.shield.tencent.c.a.InterfaceC0921a
             public void a(String str) {
                 try {
                     JSONObject jSONObject = new JSONObject(str);

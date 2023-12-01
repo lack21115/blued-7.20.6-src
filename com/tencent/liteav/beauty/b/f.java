@@ -6,18 +6,18 @@ import android.opengl.GLES20;
 public final class f extends com.tencent.liteav.videobase.a.h {
 
     /* renamed from: a  reason: collision with root package name */
-    public final a f36379a;
+    public final a f22688a;
     public final a b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/beauty/b/f$a.class */
     public static final class a extends com.tencent.liteav.videobase.a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        int f36380a;
+        int f22689a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        float f36381c;
+        float f22690c;
         float d;
 
         public a() {
@@ -29,7 +29,7 @@ public final class f extends com.tencent.liteav.videobase.a.h {
         }
 
         public final void a(float f, float f2) {
-            this.f36381c = f;
+            this.f22690c = f;
             this.d = f2;
             a();
         }
@@ -37,7 +37,7 @@ public final class f extends com.tencent.liteav.videobase.a.h {
         @Override // com.tencent.liteav.videobase.a.b
         public final void onInit(com.tencent.liteav.videobase.frame.e eVar) {
             super.onInit(eVar);
-            this.f36380a = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
+            this.f22689a = GLES20.glGetUniformLocation(getProgramId(), "texelWidthOffset");
             this.b = GLES20.glGetUniformLocation(getProgramId(), "texelHeightOffset");
         }
 
@@ -53,11 +53,11 @@ public final class f extends com.tencent.liteav.videobase.a.h {
     }
 
     public f(float f) {
-        this.f36379a = new a();
+        this.f22688a = new a();
         this.b = new a();
-        this.f36379a.a(f, 0.0f);
+        this.f22688a.a(f, 0.0f);
         this.b.a(0.0f, f);
-        addFilter(this.f36379a);
+        addFilter(this.f22688a);
         addFilter(this.b);
     }
 }

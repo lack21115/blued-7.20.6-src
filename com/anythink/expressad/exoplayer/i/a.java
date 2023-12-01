@@ -10,11 +10,11 @@ import java.util.List;
 public final class a extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7521a = 10000;
+    public static final int f4682a = 10000;
     public static final int b = 25000;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7522c = 25000;
+    public static final int f4683c = 25000;
     public static final float d = 0.75f;
     public static final float e = 0.75f;
     public static final long f = 2000;
@@ -33,32 +33,32 @@ public final class a extends b {
 
     /* renamed from: com.anythink.expressad.exoplayer.i.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/i/a$a.class */
-    public static final class C0135a implements f.a {
+    public static final class C0064a implements f.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final com.anythink.expressad.exoplayer.j.d f7523a;
+        private final com.anythink.expressad.exoplayer.j.d f4684a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7524c;
+        private final int f4685c;
         private final int d;
         private final float e;
         private final float f;
         private final long g;
         private final com.anythink.expressad.exoplayer.k.c h;
 
-        public C0135a(com.anythink.expressad.exoplayer.j.d dVar) {
-            this(dVar, 10000, 25000, 25000, 0.75f, com.anythink.expressad.exoplayer.k.c.f7640a);
+        public C0064a(com.anythink.expressad.exoplayer.j.d dVar) {
+            this(dVar, 10000, 25000, 25000, 0.75f, com.anythink.expressad.exoplayer.k.c.f4801a);
         }
 
-        private C0135a(com.anythink.expressad.exoplayer.j.d dVar, int i, int i2, int i3, float f) {
-            this(dVar, i, i2, i3, f, com.anythink.expressad.exoplayer.k.c.f7640a);
+        private C0064a(com.anythink.expressad.exoplayer.j.d dVar, int i, int i2, int i3, float f) {
+            this(dVar, i, i2, i3, f, com.anythink.expressad.exoplayer.k.c.f4801a);
         }
 
-        private C0135a(com.anythink.expressad.exoplayer.j.d dVar, int i, int i2, int i3, float f, com.anythink.expressad.exoplayer.k.c cVar) {
-            this.f7523a = dVar;
+        private C0064a(com.anythink.expressad.exoplayer.j.d dVar, int i, int i2, int i3, float f, com.anythink.expressad.exoplayer.k.c cVar) {
+            this.f4684a = dVar;
             this.b = i;
-            this.f7524c = i2;
+            this.f4685c = i2;
             this.d = i3;
             this.e = f;
             this.f = 0.75f;
@@ -67,17 +67,17 @@ public final class a extends b {
         }
 
         private a b(ae aeVar, int... iArr) {
-            return new a(aeVar, iArr, this.f7523a, this.b, this.f7524c, this.d, this.e, this.f, this.g, this.h);
+            return new a(aeVar, iArr, this.f4684a, this.b, this.f4685c, this.d, this.e, this.f, this.g, this.h);
         }
 
         @Override // com.anythink.expressad.exoplayer.i.f.a
         public final /* synthetic */ f a(ae aeVar, int[] iArr) {
-            return new a(aeVar, iArr, this.f7523a, this.b, this.f7524c, this.d, this.e, this.f, this.g, this.h);
+            return new a(aeVar, iArr, this.f4684a, this.b, this.f4685c, this.d, this.e, this.f, this.g, this.h);
         }
     }
 
     private a(ae aeVar, int[] iArr, com.anythink.expressad.exoplayer.j.d dVar) {
-        this(aeVar, iArr, dVar, 10000L, 25000L, 25000L, 0.75f, 0.75f, 2000L, com.anythink.expressad.exoplayer.k.c.f7640a);
+        this(aeVar, iArr, dVar, 10000L, 25000L, 25000L, 0.75f, 0.75f, 2000L, com.anythink.expressad.exoplayer.k.c.f4801a);
     }
 
     public a(ae aeVar, int[] iArr, com.anythink.expressad.exoplayer.j.d dVar, long j, long j2, long j3, float f2, float f3, long j4, com.anythink.expressad.exoplayer.k.c cVar) {

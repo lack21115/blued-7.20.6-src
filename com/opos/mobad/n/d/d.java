@@ -35,9 +35,9 @@ public class d {
     public final int z;
 
     public d(h hVar) {
-        this.e = hVar.f26634a;
+        this.e = hVar.f12946a;
         this.f = hVar.b;
-        this.g = hVar.f26635c;
+        this.g = hVar.f12947c;
         this.h = hVar.d;
         this.i = hVar.f;
         this.j = hVar.g;

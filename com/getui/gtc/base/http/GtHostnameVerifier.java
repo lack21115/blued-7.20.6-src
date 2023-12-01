@@ -1,6 +1,5 @@
 package com.getui.gtc.base.http;
 
-import com.android.internal.telephony.PhoneConstants;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -92,7 +91,7 @@ public class GtHostnameVerifier implements HostnameVerifier {
             str4 = str2 + '.';
         }
         String lowerCase = str4.toLowerCase(Locale.US);
-        if (lowerCase.contains(PhoneConstants.APN_TYPE_ALL)) {
+        if (lowerCase.contains("*")) {
             if (!lowerCase.startsWith("*.") || lowerCase.indexOf(42, 1) != -1 || str3.length() < lowerCase.length() || "*.".equals(lowerCase)) {
                 return false;
             }

@@ -6,11 +6,11 @@ import android.content.SharedPreferences;
 class cg implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ cf f9377a;
+    final /* synthetic */ cf f6537a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cg(cf cfVar) {
-        this.f9377a = cfVar;
+        this.f6537a = cfVar;
     }
 
     @Override // android.content.SharedPreferences.OnSharedPreferenceChangeListener

@@ -75,7 +75,7 @@ public interface IRemoteViewDelegate extends IInterface {
         static final int Z = 4;
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String f22528a = "com.huawei.hms.ads.uiengine.IRemoteViewDelegate";
+        private static final String f8920a = "com.huawei.hms.ads.uiengine.IRemoteViewDelegate";
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/uiengine/IRemoteViewDelegate$b$a.class */
@@ -88,7 +88,7 @@ public interface IRemoteViewDelegate extends IInterface {
             }
 
             public String Code() {
-                return b.f22528a;
+                return b.f8920a;
             }
 
             @Override // android.os.IInterface
@@ -101,7 +101,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (this.V.transact(1, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
                         return IObjectWrapper.Stub.asInterface(obtain2.readStrongBinder());
@@ -118,7 +118,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (bundle != null) {
                         obtain.writeInt(1);
                         bundle.writeToParcel(obtain, 0);
@@ -141,7 +141,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (this.V.transact(3, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
                     } else {
@@ -158,7 +158,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (this.V.transact(4, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
                     } else {
@@ -175,7 +175,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (this.V.transact(8, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
                     } else {
@@ -192,7 +192,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (this.V.transact(5, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
                     } else {
@@ -209,7 +209,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (this.V.transact(6, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
                     } else {
@@ -226,7 +226,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     if (this.V.transact(7, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
                     } else {
@@ -243,7 +243,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     obtain.writeString(str);
                     if (bundle != null) {
                         obtain.writeInt(1);
@@ -270,7 +270,7 @@ public interface IRemoteViewDelegate extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(b.f22528a);
+                    obtain.writeInterfaceToken(b.f8920a);
                     obtain.writeStrongBinder(iPPSUiEngineCallback != null ? iPPSUiEngineCallback.asBinder() : null);
                     if (this.V.transact(9, obtain, obtain2, 0) || b.Code() == null) {
                         obtain2.readException();
@@ -285,7 +285,7 @@ public interface IRemoteViewDelegate extends IInterface {
         }
 
         public b() {
-            attachInterface(this, f22528a);
+            attachInterface(this, f8920a);
         }
 
         public static IRemoteViewDelegate Code() {
@@ -296,7 +296,7 @@ public interface IRemoteViewDelegate extends IInterface {
             if (iBinder == null) {
                 return null;
             }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(f22528a);
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(f8920a);
             return (queryLocalInterface == null || !(queryLocalInterface instanceof IRemoteViewDelegate)) ? new a(iBinder) : (IRemoteViewDelegate) queryLocalInterface;
         }
 
@@ -319,13 +319,13 @@ public interface IRemoteViewDelegate extends IInterface {
         @Override // android.os.Binder
         public boolean onTransact(int i, Parcel parcel, Parcel parcel2, int i2) {
             if (i == 1598968902) {
-                parcel2.writeString(f22528a);
+                parcel2.writeString(f8920a);
                 return true;
             }
             Bundle bundle = null;
             switch (i) {
                 case 1:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     IObjectWrapper view = getView();
                     parcel2.writeNoException();
                     IBinder iBinder = null;
@@ -335,7 +335,7 @@ public interface IRemoteViewDelegate extends IInterface {
                     parcel2.writeStrongBinder(iBinder);
                     return true;
                 case 2:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     Bundle bundle2 = null;
                     if (parcel.readInt() != 0) {
                         bundle2 = Bundle.CREATOR.createFromParcel(parcel);
@@ -343,35 +343,35 @@ public interface IRemoteViewDelegate extends IInterface {
                     onCreate(bundle2);
                     break;
                 case 3:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     onDestroy();
                     break;
                 case 4:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     onPause();
                     break;
                 case 5:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     onResume();
                     break;
                 case 6:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     onStart();
                     break;
                 case 7:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     onStop();
                     break;
                 case 8:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     onRestart();
                     break;
                 case 9:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     setCallback(IPPSUiEngineCallback.b.Code(parcel.readStrongBinder()));
                     break;
                 case 10:
-                    parcel.enforceInterface(f22528a);
+                    parcel.enforceInterface(f8920a);
                     String readString = parcel.readString();
                     if (parcel.readInt() != 0) {
                         bundle = Bundle.CREATOR.createFromParcel(parcel);

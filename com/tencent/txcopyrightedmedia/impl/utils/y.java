@@ -19,11 +19,11 @@ import org.json.JSONObject;
 public final class y implements ITXSongScore {
 
     /* renamed from: a  reason: collision with root package name */
-    private TXSongScoreConfig f40188a;
+    private TXSongScoreConfig f26497a;
     private KGKTVScore b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ITXSongScoreCallback f40189c;
+    private ITXSongScoreCallback f26498c;
     private boolean d;
     private int e;
     private TXSongScoreNoteItem[] h;
@@ -36,7 +36,7 @@ public final class y implements ITXSongScore {
         if (tXSongScoreConfig == null) {
             return;
         }
-        this.f40188a = tXSongScoreConfig;
+        this.f26497a = tXSongScoreConfig;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -45,29 +45,29 @@ public final class y implements ITXSongScore {
         try {
             JSONObject jSONObject = new JSONObject();
             JSONObject jSONObject2 = new JSONObject();
-            jSONObject2.put(com.alipay.sdk.packet.e.f, ap.a().b);
-            jSONObject2.put("LicenseExtAppName", ap.a().d.f40063c);
+            jSONObject2.put("AppId", ap.a().b);
+            jSONObject2.put("LicenseExtAppName", ap.a().d.f26372c);
             jSONObject2.put("ExpireTime", (System.currentTimeMillis() / 1000) + 300);
             byte[] bytes = jSONObject2.toString().getBytes("UTF-8");
             byte[] bytes2 = ap.a().d.b.getBytes("UTF-8");
             String replace = new String(Base64.encode(ac.a(bytes, bytes2, Arrays.copyOf(bytes2, 16)), 0), "UTF-8").replace("\n", "");
-            String a2 = this.b.a(ap.a().d.f40062a);
+            String a2 = this.b.a(ap.a().d.f26371a);
             jSONObject.put("Sign", replace);
             jSONObject.put("Action", "DescribeSDKScoreConfig");
             jSONObject.put("PlayToken", aj.d());
-            jSONObject.put("LicenseExtAppName", ap.a().d.f40063c);
-            jSONObject.put(com.alipay.sdk.packet.e.f, ap.a().b);
+            jSONObject.put("LicenseExtAppName", ap.a().d.f26372c);
+            jSONObject.put("AppId", ap.a().b);
             jSONObject.put("VerifyData", a2);
             String jSONObject3 = jSONObject.toString();
             if (TextUtils.isEmpty(jSONObject3)) {
                 return new i(-5, "Build active code request error.");
             }
-            w wVar = w.c.f40184a;
+            w wVar = w.c.f26493a;
             w.d a3 = w.a("https://play.yinsuda.qcloud.com/v1/playapi", jSONObject3.getBytes(), "application/json");
             if (a3 == null || a3.b == null) {
                 return new i(-5, "Request KtvScore active code fail.");
             }
-            if (a3.f40185a >= 200 && a3.f40185a < 300) {
+            if (a3.f26494a >= 200 && a3.f26494a < 300) {
                 try {
                     str = new JSONObject(new String(a3.b, "UTF-8")).optJSONObject("Response").optString("ConfigData");
                 } catch (Exception e) {
@@ -76,9 +76,9 @@ public final class y implements ITXSongScore {
                 }
                 return TextUtils.isEmpty(str) ? new i(-5, "ActivationCode is null.") : !this.b.b(str) ? new i(-8, "SongScore license fail.") : new i(0, null);
             }
-            i iVar = new i(-4, "Request KtvScore active code fail. Status: " + a3.f40185a);
-            i.a aVar = iVar.f40101a;
-            aVar.b = String.valueOf(a3.f40185a);
+            i iVar = new i(-4, "Request KtvScore active code fail. Status: " + a3.f26494a);
+            i.a aVar = iVar.f26410a;
+            aVar.b = String.valueOf(a3.f26494a);
             aVar.a(a3.e);
             return iVar;
         } catch (Exception e2) {
@@ -89,7 +89,7 @@ public final class y implements ITXSongScore {
 
     private boolean b() {
         if (this.b == null) {
-            ITXSongScoreCallback iTXSongScoreCallback = this.f40189c;
+            ITXSongScoreCallback iTXSongScoreCallback = this.f26498c;
             if (iTXSongScoreCallback != null) {
                 iTXSongScoreCallback.onMIDIScoreError(-1, "SongScore init fail.");
                 return false;
@@ -98,7 +98,7 @@ public final class y implements ITXSongScore {
         } else if (this.d) {
             return true;
         } else {
-            ITXSongScoreCallback iTXSongScoreCallback2 = this.f40189c;
+            ITXSongScoreCallback iTXSongScoreCallback2 = this.f26498c;
             if (iTXSongScoreCallback2 != null) {
                 iTXSongScoreCallback2.onMIDIScoreError(-9, "SongScore not prepared.");
                 return false;
@@ -128,7 +128,7 @@ public final class y implements ITXSongScore {
             if (this.b != null) {
                 this.b.e();
             }
-            this.f40189c = null;
+            this.f26498c = null;
             this.d = false;
         }
     }
@@ -139,7 +139,7 @@ public final class y implements ITXSongScore {
             if (b()) {
                 int c2 = this.b.c(this.e);
                 this.b.d();
-                if (this.f40189c != null) {
+                if (this.f26498c != null) {
                     int size = this.g.size();
                     int[] iArr = new int[size];
                     int i = 0;
@@ -151,7 +151,7 @@ public final class y implements ITXSongScore {
                         iArr[i2] = this.g.get(i2).intValue();
                         i = i2 + 1;
                     }
-                    this.f40189c.onMIDIScoreFinish(iArr, c2);
+                    this.f26498c.onMIDIScoreFinish(iArr, c2);
                 }
             }
         }
@@ -204,25 +204,25 @@ public final class y implements ITXSongScore {
                             y.this.b = new KGKTVScore();
                             i a2 = y.this.a();
                             if (a2.code != 0) {
-                                if (y.this.f40189c != null) {
-                                    y.this.f40189c.onMIDIScoreError(a2.code, a2.msg);
+                                if (y.this.f26498c != null) {
+                                    y.this.f26498c.onMIDIScoreError(a2.code, a2.msg);
                                 }
                                 return;
                             }
-                            i a3 = y.this.b.a(y.this.f40188a.sampleRate, y.this.f40188a.channel, y.this.f40188a.noteFilePath, y.this.f40188a.lyricFilePath);
+                            i a3 = y.this.b.a(y.this.f26497a.sampleRate, y.this.f26497a.channel, y.this.f26497a.noteFilePath, y.this.f26497a.lyricFilePath);
                             if (a3.code == 0) {
                                 y.f(y.this);
-                                if (y.this.f40189c != null) {
-                                    y.this.f40189c.onMIDIScorePrepared();
+                                if (y.this.f26498c != null) {
+                                    y.this.f26498c.onMIDIScorePrepared();
                                 }
-                            } else if (y.this.f40189c != null) {
-                                y.this.f40189c.onMIDIScoreError(a3.code, a3.msg);
+                            } else if (y.this.f26498c != null) {
+                                y.this.f26498c.onMIDIScoreError(a3.code, a3.msg);
                             }
                             return;
                         }
                     }
-                    if (y.this.f40189c != null) {
-                        y.this.f40189c.onMIDIScoreError(-8, "License fail. ".concat(String.valueOf(i)));
+                    if (y.this.f26498c != null) {
+                        y.this.f26498c.onMIDIScoreError(-8, "License fail. ".concat(String.valueOf(i)));
                     }
                 }
             }
@@ -259,6 +259,6 @@ public final class y implements ITXSongScore {
 
     @Override // com.tencent.txcopyrightedmedia.ITXSongScore
     public final void setSongScoreCallback(ITXSongScoreCallback iTXSongScoreCallback) {
-        this.f40189c = new s(iTXSongScoreCallback);
+        this.f26498c = new s(iTXSongScoreCallback);
     }
 }

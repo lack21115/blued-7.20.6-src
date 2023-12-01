@@ -29,11 +29,11 @@ import java.util.Map;
 public class b extends AGConnectInstance {
 
     /* renamed from: a  reason: collision with root package name */
-    private static List<Service> f22346a;
+    private static List<Service> f8738a;
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<String, AGConnectInstance> f22347c = new HashMap();
+    private static final Map<String, AGConnectInstance> f8739c = new HashMap();
     private static String d;
     private final AGConnectOptions e;
     private final d f;
@@ -41,10 +41,10 @@ public class b extends AGConnectInstance {
 
     public b(AGConnectOptions aGConnectOptions) {
         this.e = aGConnectOptions;
-        if (f22346a == null) {
+        if (f8738a == null) {
             Log.e("AGConnectInstance", "please call `initialize()` first");
         }
-        this.f = new d(f22346a, aGConnectOptions.getContext());
+        this.f = new d(f8738a, aGConnectOptions.getContext());
         d dVar = new d(null, aGConnectOptions.getContext());
         this.g = dVar;
         if (aGConnectOptions instanceof com.huawei.agconnect.config.impl.b) {
@@ -68,10 +68,10 @@ public class b extends AGConnectInstance {
     private static AGConnectInstance a(AGConnectOptions aGConnectOptions, boolean z) {
         b bVar;
         synchronized (b) {
-            bVar = f22347c.get(aGConnectOptions.getIdentifier());
+            bVar = f8739c.get(aGConnectOptions.getIdentifier());
             if (bVar == null || z) {
                 bVar = new b(aGConnectOptions);
-                f22347c.put(aGConnectOptions.getIdentifier(), bVar);
+                f8739c.put(aGConnectOptions.getIdentifier(), bVar);
             }
         }
         return bVar;
@@ -80,7 +80,7 @@ public class b extends AGConnectInstance {
     public static AGConnectInstance a(String str) {
         AGConnectInstance aGConnectInstance;
         synchronized (b) {
-            aGConnectInstance = f22347c.get(str);
+            aGConnectInstance = f8739c.get(str);
             if (aGConnectInstance == null) {
                 if (Utils.DEFAULT_NAME.equals(str)) {
                     Log.w("AGC_Instance", "please call `initialize()` first");
@@ -95,7 +95,7 @@ public class b extends AGConnectInstance {
     public static void a(Context context) {
         synchronized (b.class) {
             try {
-                if (f22347c.size() > 0) {
+                if (f8739c.size() > 0) {
                     Log.w("AGC_Instance", "Repeated invoking initialize");
                 } else {
                     a(context, AGConnectServicesConfig.fromContext(context));
@@ -118,8 +118,8 @@ public class b extends AGConnectInstance {
                 b();
                 c();
                 com.huawei.agconnect.config.impl.a.a(context);
-                if (f22346a == null) {
-                    f22346a = new c(context).a();
+                if (f8738a == null) {
+                    f8738a = new c(context).a();
                 }
                 a(aGConnectOptions, true);
                 d = aGConnectOptions.getIdentifier();

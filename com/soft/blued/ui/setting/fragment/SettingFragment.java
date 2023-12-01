@@ -1,6 +1,5 @@
 package com.soft.blued.ui.setting.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -50,11 +49,11 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
     private ShapeTextView A;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33600a;
+    private Context f19909a;
     private SettingContract.IPresenter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33601c;
+    private View f19910c;
     private Dialog d;
     private LinearLayout e;
     private LinearLayout f;
@@ -80,42 +79,43 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
     private ShapeTextView z;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, SettingFragment.class, null);
+        TerminalActivity.d(context, SettingFragment.class, (Bundle) null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33601c.findViewById(2131370749);
-        this.q = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.f();
+        CommonTopTitleNoTrans findViewById = this.f19910c.findViewById(R.id.top_title);
+        this.q = findViewById;
+        findViewById.f();
         this.q.a();
         this.q.setLeftImg(2131233902);
-        this.q.setCenterText(getString(2131891641));
+        this.q.setCenterText(getString(R.string.setting));
         this.q.setLeftClickListener(this);
         this.q.f();
         this.q.setCenterTextColor(2131102254);
-        this.e = (LinearLayout) this.f33601c.findViewById(R.id.ll_about_blued);
-        this.f = (LinearLayout) this.f33601c.findViewById(R.id.ll_face_verify);
-        this.g = (LinearLayout) this.f33601c.findViewById(R.id.ll_live_setting);
-        this.h = (LinearLayout) this.f33601c.findViewById(R.id.ll_general_setting);
-        this.i = (LinearLayout) this.f33601c.findViewById(R.id.ll_privacy_setting);
-        this.j = (LinearLayout) this.f33601c.findViewById(R.id.ll_scan_setting);
-        this.k = (LinearLayout) this.f33601c.findViewById(R.id.ll_remind_setting);
-        this.l = (LinearLayout) this.f33601c.findViewById(R.id.ll_safe_center);
-        this.m = (LinearLayout) this.f33601c.findViewById(R.id.ll_account_and_safety);
-        this.n = (LinearLayout) this.f33601c.findViewById(R.id.ll_debug);
-        this.r = (TextView) this.f33601c.findViewById(R.id.tv_quit_login);
-        this.s = (TextView) this.f33601c.findViewById(R.id.tv_verify_status);
-        this.u = this.f33601c.findViewById(R.id.tv_verify_warning);
-        this.o = (LinearLayout) this.f33601c.findViewById(R.id.ll_privacy_clause);
-        this.p = (LinearLayout) this.f33601c.findViewById(R.id.ll_information_gathering);
-        this.w = (ShapeTextView) this.f33601c.findViewById(R.id.iv_live_setting_dot);
-        this.x = (ShapeTextView) this.f33601c.findViewById(R.id.iv_sync_common_dot);
-        this.t = (TextView) this.f33601c.findViewById(R.id.tv_version);
-        this.v = (RelativeLayout) this.f33601c.findViewById(R.id.rl_switch_account);
-        this.y = (ShapeTextView) this.f33601c.findViewById(R.id.iv_switch_dot);
-        this.d = DialogUtils.a(this.f33600a);
-        this.z = (ShapeTextView) this.f33601c.findViewById(R.id.tv_unread_tips);
-        this.A = (ShapeTextView) this.f33601c.findViewById(R.id.tv_new_function);
+        this.e = (LinearLayout) this.f19910c.findViewById(R.id.ll_about_blued);
+        this.f = (LinearLayout) this.f19910c.findViewById(R.id.ll_face_verify);
+        this.g = (LinearLayout) this.f19910c.findViewById(R.id.ll_live_setting);
+        this.h = (LinearLayout) this.f19910c.findViewById(R.id.ll_general_setting);
+        this.i = (LinearLayout) this.f19910c.findViewById(R.id.ll_privacy_setting);
+        this.j = (LinearLayout) this.f19910c.findViewById(R.id.ll_scan_setting);
+        this.k = (LinearLayout) this.f19910c.findViewById(R.id.ll_remind_setting);
+        this.l = (LinearLayout) this.f19910c.findViewById(R.id.ll_safe_center);
+        this.m = (LinearLayout) this.f19910c.findViewById(R.id.ll_account_and_safety);
+        this.n = (LinearLayout) this.f19910c.findViewById(R.id.ll_debug);
+        this.r = (TextView) this.f19910c.findViewById(R.id.tv_quit_login);
+        this.s = (TextView) this.f19910c.findViewById(R.id.tv_verify_status);
+        this.u = this.f19910c.findViewById(R.id.tv_verify_warning);
+        this.o = (LinearLayout) this.f19910c.findViewById(R.id.ll_privacy_clause);
+        this.p = (LinearLayout) this.f19910c.findViewById(R.id.ll_information_gathering);
+        this.w = this.f19910c.findViewById(R.id.iv_live_setting_dot);
+        this.x = this.f19910c.findViewById(R.id.iv_sync_common_dot);
+        this.t = (TextView) this.f19910c.findViewById(R.id.tv_version);
+        this.v = (RelativeLayout) this.f19910c.findViewById(R.id.rl_switch_account);
+        this.y = this.f19910c.findViewById(R.id.iv_switch_dot);
+        this.d = DialogUtils.a(this.f19909a);
+        this.z = this.f19910c.findViewById(R.id.tv_unread_tips);
+        this.A = this.f19910c.findViewById(R.id.tv_new_function);
         if (!BluedPreferences.cf()) {
             this.w.setVisibility(0);
         }
@@ -130,16 +130,16 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
             BluedPreferences.Z(false);
             int dH = BluedPreferences.dH();
             if (dH == 1) {
-                this.z.setText(R.string.account_unread);
+                this.z.setText((int) R.string.account_unread);
             } else if (dH == 2) {
-                this.z.setText(R.string.setting_switch_unread_follower);
+                this.z.setText((int) R.string.setting_switch_unread_follower);
             } else if (dH == 3) {
-                this.z.setText(R.string.setting_switch_unread_visitor);
+                this.z.setText((int) R.string.setting_switch_unread_visitor);
             }
         }
         String str = "v" + DeviceUtils.c();
         String str2 = str;
-        if ("a8888a".equals(AppInfo.f9487c)) {
+        if ("a8888a".equals(AppInfo.c)) {
             str2 = str + " beta";
         }
         this.t.setText(str2);
@@ -172,18 +172,17 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
 
     @Override // com.soft.blued.ui.setting.Contract.SettingContract.IView
     public void a() {
-        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
     }
 
-    @Override // skin.support.observe.SkinObserver
     public void a(SkinObservable skinObservable, Object obj) {
         Log.e("skin", "SettingFragment updateSkin");
         CommonTopTitleNoTrans commonTopTitleNoTrans = this.q;
         if (commonTopTitleNoTrans != null) {
             commonTopTitleNoTrans.setCenterTextColor(2131102254);
-            getActivity().findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
+            getActivity().findViewById(android.R.id.content).setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
         }
-        StatusBarHelper.a((Activity) getActivity());
+        StatusBarHelper.a(getActivity());
         StatusBarHelper.a(getActivity(), BluedSkinUtils.a(getContext(), AppInfo.k()));
     }
 
@@ -193,7 +192,7 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
             return;
         }
         String str = verifyStatusArr[0].has_audited;
-        this.s.setTextColor(BluedSkinUtils.a(this.f33600a, 2131102254));
+        this.s.setTextColor(BluedSkinUtils.a(this.f19909a, 2131102254));
         if ("1".equals(str)) {
             this.s.setText(getResources().getString(2131892551));
         } else if (!"2".equals(str)) {
@@ -237,7 +236,6 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         }, getString(2131886718), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
     }
@@ -251,14 +249,14 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
                 return;
             case R.id.ll_about_blued /* 2131367606 */:
                 InstantLog.b("my_model", 10);
-                TerminalActivity.d(getActivity(), AboutBluedFragment.class, null);
+                TerminalActivity.d(getActivity(), AboutBluedFragment.class, (Bundle) null);
                 return;
             case R.id.ll_account_and_safety /* 2131367607 */:
                 InstantLog.b("my_model", 5);
-                AccountAndSafetyFragment.a(this.f33600a);
+                AccountAndSafetyFragment.a(this.f19909a);
                 return;
             case R.id.ll_debug /* 2131367734 */:
-                DebugFragment.a(this.f33600a);
+                DebugFragment.a(this.f19909a);
                 return;
             case R.id.ll_face_verify /* 2131367785 */:
                 InstantLog.b("my_model", 4);
@@ -274,7 +272,7 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
                 this.x.setVisibility(8);
                 return;
             case R.id.ll_information_gathering /* 2131367928 */:
-                WebViewShowInfoFragment.show(this.f33600a, H5Url.a(92), -1);
+                WebViewShowInfoFragment.show(this.f19909a, H5Url.a(92), -1);
                 return;
             case R.id.ll_live_setting /* 2131367980 */:
                 EventTrackSettings.a(SettingsProtos.Event.MINE_SETTINGS_LIVE_CLICK);
@@ -290,15 +288,15 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
                 return;
             case R.id.ll_privacy_setting /* 2131368144 */:
                 InstantLog.b("my_model", 7);
-                TerminalActivity.d(this.f33600a, PrivacySettingFragment.class, null);
+                TerminalActivity.d(this.f19909a, PrivacySettingFragment.class, (Bundle) null);
                 return;
             case R.id.ll_remind_setting /* 2131368183 */:
                 InstantLog.b("my_model", 6);
-                TerminalActivity.d(getActivity(), RemindSettingFragment.class, null);
+                TerminalActivity.d(getActivity(), RemindSettingFragment.class, (Bundle) null);
                 return;
             case R.id.ll_safe_center /* 2131368213 */:
                 InstantLog.b("my_model", 9);
-                WebViewShowInfoFragment.show(this.f33600a, BluedHttpUrl.f(), -1);
+                WebViewShowInfoFragment.show(this.f19909a, BluedHttpUrl.f(), -1);
                 return;
             case R.id.ll_scan_setting /* 2131368216 */:
                 getActivity().startActivity(new Intent(getActivity(), CaptureActivity.class));
@@ -321,27 +319,24 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33600a = getActivity();
-        getActivity().findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(this.f33600a, 2131101780));
-        View view = this.f33601c;
+        this.f19909a = getActivity();
+        getActivity().findViewById(android.R.id.content).setBackgroundColor(BluedSkinUtils.a(this.f19909a, 2131101780));
+        View view = this.f19910c;
         if (view == null) {
-            this.f33601c = layoutInflater.inflate(R.layout.fragment_settings, viewGroup, false);
+            this.f19910c = layoutInflater.inflate(R.layout.fragment_settings, viewGroup, false);
             c();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33601c.getParent()).removeView(this.f33601c);
+            ((ViewGroup) this.f19910c.getParent()).removeView(this.f19910c);
         }
-        return this.f33601c;
+        return this.f19910c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         BluedSkinUtils.b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         BluedSkinUtils.a(this);
@@ -352,16 +347,14 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         this.b.ar_();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         d();
-        this.b = new SettingPresenter(this, this.f33600a, getFragmentActive());
+        this.b = new SettingPresenter(this, this.f19909a, getFragmentActive());
     }
 }

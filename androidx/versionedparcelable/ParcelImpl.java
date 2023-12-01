@@ -20,14 +20,14 @@ public class ParcelImpl implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private final VersionedParcelable f3543a;
+    private final VersionedParcelable f3495a;
 
     protected ParcelImpl(Parcel parcel) {
-        this.f3543a = new VersionedParcelParcel(parcel).i();
+        this.f3495a = new VersionedParcelParcel(parcel).i();
     }
 
     public ParcelImpl(VersionedParcelable versionedParcelable) {
-        this.f3543a = versionedParcelable;
+        this.f3495a = versionedParcelable;
     }
 
     @Override // android.os.Parcelable
@@ -36,11 +36,11 @@ public class ParcelImpl implements Parcelable {
     }
 
     public <T extends VersionedParcelable> T getVersionedParcel() {
-        return (T) this.f3543a;
+        return (T) this.f3495a;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        new VersionedParcelParcel(parcel).a(this.f3543a);
+        new VersionedParcelParcel(parcel).a(this.f3495a);
     }
 }

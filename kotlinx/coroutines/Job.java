@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/Job.class */
 public interface Job extends CoroutineContext.Element {
-    public static final Key C_ = Key.f42835a;
+    public static final Key C_ = Key.a;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/Job$DefaultImpls.class */
@@ -59,9 +59,7 @@ public interface Job extends CoroutineContext.Element {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/Job$Key.class */
     public static final class Key implements CoroutineContext.Key<Job> {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ Key f42835a = new Key();
+        static final /* synthetic */ Key a = new Key();
 
         private Key() {
         }

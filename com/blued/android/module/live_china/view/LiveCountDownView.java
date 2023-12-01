@@ -23,13 +23,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveCountDownView.class */
 public class LiveCountDownView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14436a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public TextView f14437c;
+    public TextView c;
     public TextView d;
     public ImageView e;
     Runnable f;
@@ -67,10 +63,10 @@ public class LiveCountDownView extends FrameLayout {
                     return;
                 }
                 LiveCountDownView.this.l = true;
-                LiveCountDownView.this.f14437c.setText(String.valueOf(LiveCountDownView.this.j));
-                LiveCountDownView.this.f14437c.setVisibility(4);
-                LiveCountDownView.this.f14437c.clearAnimation();
-                LiveCountDownView.this.f14437c.startAnimation(LiveCountDownView.this.b());
+                LiveCountDownView.this.c.setText(String.valueOf(LiveCountDownView.this.j));
+                LiveCountDownView.this.c.setVisibility(4);
+                LiveCountDownView.this.c.clearAnimation();
+                LiveCountDownView.this.c.startAnimation(LiveCountDownView.this.b());
                 LiveCountDownView.c(LiveCountDownView.this);
             }
         };
@@ -97,7 +93,7 @@ public class LiveCountDownView extends FrameLayout {
     public void a(boolean z) {
         EventCallBack eventCallBack;
         setVisibility(8);
-        this.f14436a.setVisibility(8);
+        this.a.setVisibility(8);
         this.b.setVisibility(0);
         EventCallBack eventCallBack2 = this.h;
         if (eventCallBack2 != null) {
@@ -124,9 +120,9 @@ public class LiveCountDownView extends FrameLayout {
 
     private void e() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_record_button_view, this);
-        this.f14436a = findViewById(R.id.ll_record);
+        this.a = findViewById(R.id.ll_record);
         this.b = findViewById(R.id.ll_recording);
-        this.f14437c = (TextView) findViewById(R.id.tv_count_time);
+        this.c = (TextView) findViewById(R.id.tv_count_time);
         this.d = (TextView) findViewById(R.id.tv_record_time);
         ImageView imageView = (ImageView) findViewById(R.id.iv_record_pause);
         this.e = imageView;
@@ -145,7 +141,7 @@ public class LiveCountDownView extends FrameLayout {
     public void f() {
         this.l = false;
         this.j = 3;
-        this.f14436a.setVisibility(8);
+        this.a.setVisibility(8);
         this.b.setVisibility(0);
         EventCallBack eventCallBack = this.h;
         if (eventCallBack != null) {
@@ -160,13 +156,13 @@ public class LiveCountDownView extends FrameLayout {
             return;
         }
         setVisibility(0);
-        this.f14436a.setVisibility(0);
+        this.a.setVisibility(0);
         this.b.setVisibility(8);
         Log.i("xpm", "recordTime:" + this.k);
         this.k = 0;
         Log.i("xpm", "recordTime:" + this.k);
         this.j = 3;
-        this.f14437c.setText(String.valueOf(3));
+        this.c.setText(String.valueOf(3));
         post(this.f);
     }
 
@@ -197,7 +193,7 @@ public class LiveCountDownView extends FrameLayout {
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 Log.i("xpm", "onAnimationEnd");
-                LiveCountDownView.this.f14437c.setVisibility(4);
+                LiveCountDownView.this.c.setVisibility(4);
                 LiveCountDownView liveCountDownView = LiveCountDownView.this;
                 liveCountDownView.postDelayed(liveCountDownView.f, 500L);
             }
@@ -210,7 +206,7 @@ public class LiveCountDownView extends FrameLayout {
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationStart(Animation animation) {
                 Log.i("xpm", "onAnimationStart:");
-                LiveCountDownView.this.f14437c.setVisibility(0);
+                LiveCountDownView.this.c.setVisibility(0);
             }
         });
         animationSet.setDuration(500L);

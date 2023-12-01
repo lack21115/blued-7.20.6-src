@@ -5,14 +5,14 @@ public final class aa {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f40038c;
+    private int f26347c;
     private boolean d;
     private boolean e;
     private boolean g;
     private final Object f = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f40037a = new byte[0];
+    public byte[] f26346a = new byte[0];
 
     public final int a(byte[] bArr) {
         int i;
@@ -21,11 +21,11 @@ public final class aa {
             if (this.e) {
                 if (this.b <= bArr.length) {
                     i2 = this.b;
-                    System.arraycopy((Object) this.f40037a, 0, (Object) bArr, 0, i2);
+                    System.arraycopy(this.f26346a, 0, bArr, 0, i2);
                     this.b = 0;
                 } else {
                     int length = bArr.length;
-                    System.arraycopy((Object) this.f40037a, 0, (Object) bArr, 0, bArr.length);
+                    System.arraycopy(this.f26346a, 0, bArr, 0, bArr.length);
                     int length2 = bArr.length;
                     int i3 = 0;
                     while (true) {
@@ -33,7 +33,7 @@ public final class aa {
                         if (length2 >= this.b) {
                             break;
                         }
-                        this.f40037a[i] = this.f40037a[length2];
+                        this.f26346a[i] = this.f26346a[length2];
                         length2++;
                         i3 = i + 1;
                     }
@@ -87,11 +87,11 @@ public final class aa {
                 if (i2 >= i || i2 >= this.b) {
                     break;
                 }
-                bArr[i2] = this.f40037a[i2];
+                bArr[i2] = this.f26346a[i2];
                 i3 = i2 + 1;
             }
             this.b = i2;
-            this.f40037a = bArr;
+            this.f26346a = bArr;
             new StringBuilder("resize finish. pid: ").append(Thread.currentThread().getId());
             this.f.notifyAll();
         }
@@ -101,17 +101,17 @@ public final class aa {
         StringBuilder sb;
         long id;
         synchronized (this.f) {
-            if (i > this.f40037a.length) {
+            if (i > this.f26346a.length) {
                 return -1;
             }
             do {
-                if (!this.e && !this.d && this.b + i <= this.f40037a.length) {
+                if (!this.e && !this.d && this.b + i <= this.f26346a.length) {
                     this.d = true;
                     new StringBuilder("set writeMode. pid: ").append(Thread.currentThread().getId());
-                    this.f40038c = i;
+                    this.f26347c = i;
                     return this.b;
                 }
-                if (this.b + i > this.f40037a.length) {
+                if (this.b + i > this.f26346a.length) {
                     if (this.g) {
                         new StringBuilder("write fail cause by no space and no read anymore. pid: ").append(Thread.currentThread().getId());
                         return -1;
@@ -132,7 +132,7 @@ public final class aa {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            } while (i <= this.f40037a.length);
+            } while (i <= this.f26346a.length);
             return -1;
         }
     }
@@ -140,7 +140,7 @@ public final class aa {
     public final void b() {
         synchronized (this.f) {
             if (this.d) {
-                this.b += this.f40038c;
+                this.b += this.f26347c;
                 this.d = false;
                 new StringBuilder("flushWrite. pid: ").append(Thread.currentThread().getId());
                 this.f.notifyAll();

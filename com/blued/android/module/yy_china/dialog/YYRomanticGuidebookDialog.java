@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.core.os.BundleKt;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -30,40 +31,32 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/dialog/YYRomanticGuidebookDialog.class */
 public final class YYRomanticGuidebookDialog extends BaseFullScreenDialog {
     private DialogRomanticGuidebookBinding b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f16990a = "https://web.bldimg.com/image-manager/1687695915_34082.png";
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f16991c = "";
+    private final String a = "https://web.bldimg.com/image-manager/1687695915_34082.png";
+    private String c = "";
     private String d = "";
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/dialog/YYRomanticGuidebookDialog$GuidebookPageAdapter.class */
     public final class GuidebookPageAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRomanticGuidebookDialog f16992a;
+        final /* synthetic */ YYRomanticGuidebookDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public GuidebookPageAdapter(YYRomanticGuidebookDialog this$0) {
             super(this$0.getChildFragmentManager(), 1);
             Intrinsics.e(this$0, "this$0");
-            this.f16992a = this$0;
+            this.a = this$0;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return 2;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i == 0) {
                 Bundle bundleOf = BundleKt.bundleOf(new Pair[0]);
                 bundleOf.putString("type", "1");
-                bundleOf.putString("user_id", this.f16992a.f16991c);
+                bundleOf.putString("user_id", this.a.c);
                 YYGuidebookWeekFragment yYGuidebookWeekFragment = new YYGuidebookWeekFragment();
                 yYGuidebookWeekFragment.setArguments(bundleOf);
                 return yYGuidebookWeekFragment;
@@ -72,14 +65,13 @@ public final class YYRomanticGuidebookDialog extends BaseFullScreenDialog {
             } else {
                 Bundle bundleOf2 = BundleKt.bundleOf(new Pair[0]);
                 bundleOf2.putString("type", "2");
-                bundleOf2.putString("user_id", this.f16992a.f16991c);
+                bundleOf2.putString("user_id", this.a.c);
                 YYGuidebookWeekFragment yYGuidebookWeekFragment2 = new YYGuidebookWeekFragment();
                 yYGuidebookWeekFragment2.setArguments(bundleOf2);
                 return yYGuidebookWeekFragment2;
             }
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             return i != 0 ? i != 1 ? "" : "全部" : "一周内";
         }
@@ -115,7 +107,7 @@ public final class YYRomanticGuidebookDialog extends BaseFullScreenDialog {
     }
 
     private final void f() {
-        GuidebookPageAdapter guidebookPageAdapter = new GuidebookPageAdapter(this);
+        PagerAdapter guidebookPageAdapter = new GuidebookPageAdapter(this);
         DialogRomanticGuidebookBinding dialogRomanticGuidebookBinding = this.b;
         DialogRomanticGuidebookBinding dialogRomanticGuidebookBinding2 = dialogRomanticGuidebookBinding;
         if (dialogRomanticGuidebookBinding == null) {
@@ -129,15 +121,12 @@ public final class YYRomanticGuidebookDialog extends BaseFullScreenDialog {
             dialogRomanticGuidebookBinding3 = null;
         }
         dialogRomanticGuidebookBinding3.g.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.dialog.YYRomanticGuidebookDialog$initViewPager$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 DialogRomanticGuidebookBinding dialogRomanticGuidebookBinding4;
                 dialogRomanticGuidebookBinding4 = YYRomanticGuidebookDialog.this.b;
@@ -211,7 +200,7 @@ public final class YYRomanticGuidebookDialog extends BaseFullScreenDialog {
             Intrinsics.c("mBinding");
             dialogRomanticGuidebookBinding2 = null;
         }
-        dialogRomanticGuidebookBinding2.f16397a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticGuidebookDialog$ki5b34Zzug6xGT_lKXGh1WSceTU
+        dialogRomanticGuidebookBinding2.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticGuidebookDialog$ki5b34Zzug6xGT_lKXGh1WSceTU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRomanticGuidebookDialog.a(YYRomanticGuidebookDialog.this, view);
@@ -223,7 +212,7 @@ public final class YYRomanticGuidebookDialog extends BaseFullScreenDialog {
             Intrinsics.c("mBinding");
             dialogRomanticGuidebookBinding4 = null;
         }
-        dialogRomanticGuidebookBinding4.f16398c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticGuidebookDialog$vpjYazeJRa8wteEQem8zMksoge4
+        dialogRomanticGuidebookBinding4.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.dialog.-$$Lambda$YYRomanticGuidebookDialog$vpjYazeJRa8wteEQem8zMksoge4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYRomanticGuidebookDialog.b(YYRomanticGuidebookDialog.this, view);
@@ -273,38 +262,38 @@ public final class YYRomanticGuidebookDialog extends BaseFullScreenDialog {
         dialogRomanticGuidebookBinding11.j.setText(this.d);
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Bundle arguments = getArguments();
-        this.f16991c = String.valueOf(arguments == null ? null : arguments.getString("user_id"));
+        this.c = String.valueOf(arguments == null ? null : arguments.getString("user_id"));
         Bundle arguments2 = getArguments();
         this.d = String.valueOf(arguments2 == null ? null : arguments2.getString("user_name"));
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_romantic_guidebook, (ViewGroup) null);
-        DialogRomanticGuidebookBinding a2 = DialogRomanticGuidebookBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.b = a2;
+        DialogRomanticGuidebookBinding a = DialogRomanticGuidebookBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.b = a;
         h();
         g();
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        ImageWrapper a2 = ImageLoader.a(a(), this.f16990a).a(12.0f, 12.0f, 0.0f, 0.0f);
+        ImageWrapper a = ImageLoader.a(a(), this.a).a(12.0f, 12.0f, 0.0f, 0.0f);
         DialogRomanticGuidebookBinding dialogRomanticGuidebookBinding = this.b;
         DialogRomanticGuidebookBinding dialogRomanticGuidebookBinding2 = dialogRomanticGuidebookBinding;
         if (dialogRomanticGuidebookBinding == null) {
             Intrinsics.c("mBinding");
             dialogRomanticGuidebookBinding2 = null;
         }
-        a2.a(dialogRomanticGuidebookBinding2.b);
+        a.a(dialogRomanticGuidebookBinding2.b);
     }
 }

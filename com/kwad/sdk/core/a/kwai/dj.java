@@ -12,6 +12,6 @@ public final class dj {
         ev.vP().put(com.kwad.sdk.core.webview.c.a.b.class, new bh());
         ev.vP().put(com.kwad.sdk.core.webview.a.kwai.b.class, new fe());
         ev.vP().put(com.kwad.sdk.core.webview.c.a.a.class, new e());
-        ev.vP().put(a.C0569a.class, new dx());
+        ev.vP().put(a.C0399a.class, new dx());
     }
 }

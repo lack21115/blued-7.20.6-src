@@ -7,7 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, Long> f27282a = new ConcurrentHashMap();
+    private Map<String, Long> f13594a = new ConcurrentHashMap();
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x004f  */
     /*
@@ -21,12 +21,12 @@ public class b {
             boolean r0 = com.opos.cmn.an.c.a.a(r0)     // Catch: java.lang.Exception -> L28
             if (r0 != 0) goto L33
             r0 = r4
-            java.util.Map<java.lang.String, java.lang.Long> r0 = r0.f27282a     // Catch: java.lang.Exception -> L28
+            java.util.Map<java.lang.String, java.lang.Long> r0 = r0.f13594a     // Catch: java.lang.Exception -> L28
             r1 = r5
             boolean r0 = r0.containsKey(r1)     // Catch: java.lang.Exception -> L28
             if (r0 == 0) goto L33
             r0 = r4
-            java.util.Map<java.lang.String, java.lang.Long> r0 = r0.f27282a     // Catch: java.lang.Exception -> L28
+            java.util.Map<java.lang.String, java.lang.Long> r0 = r0.f13594a     // Catch: java.lang.Exception -> L28
             r1 = r5
             java.lang.Object r0 = r0.get(r1)     // Catch: java.lang.Exception -> L28
             java.lang.Long r0 = (java.lang.Long) r0     // Catch: java.lang.Exception -> L28
@@ -79,7 +79,7 @@ public class b {
     public void a(String str, int i) {
         try {
             if (!com.opos.cmn.an.c.a.a(str) && i > 0) {
-                this.f27282a.put(str, Long.valueOf(i * 1000));
+                this.f13594a.put(str, Long.valueOf(i * 1000));
             }
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("CommonConfig", "", (Throwable) e);

@@ -7,20 +7,14 @@ import com.anythink.core.common.e.p;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/h.class */
 public class h extends com.anythink.core.common.c.a<p> {
     private static final String b = h.class.getName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile h f6584c;
+    private static volatile h c;
     private int d;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/h$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6585a = "inspect_info";
+        public static final String a = "inspect_info";
         public static final String b = "inspect_id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6586c = "update_time";
+        public static final String c = "update_time";
         public static final String d = "CREATE TABLE IF NOT EXISTS inspect_info(inspect_id TEXT, update_time INTEGER )";
     }
 
@@ -30,18 +24,18 @@ public class h extends com.anythink.core.common.c.a<p> {
     }
 
     public static h a(b bVar) {
-        if (f6584c == null) {
+        if (c == null) {
             synchronized (h.class) {
                 try {
-                    if (f6584c == null) {
-                        f6584c = new h(bVar);
+                    if (c == null) {
+                        c = new h(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6584c;
+        return c;
     }
 
     private boolean b(String str) {
@@ -49,7 +43,7 @@ public class h extends com.anythink.core.common.c.a<p> {
             if (str == null) {
                 return false;
             }
-            Cursor query = a().query(a.f6585a, new String[]{a.b}, "inspect_id=?", new String[]{str}, null, null, null);
+            Cursor query = a().query(a.a, new String[]{a.b}, "inspect_id=?", new String[]{str}, null, null, null);
             if (query != null && query.getCount() > 0) {
                 query.close();
                 return true;
@@ -71,9 +65,9 @@ public class h extends com.anythink.core.common.c.a<p> {
                 contentValues.put(a.b, str);
                 contentValues.put("update_time", Long.valueOf(System.currentTimeMillis()));
                 if (b(str)) {
-                    return b().update(a.f6585a, contentValues, "inspect_id = ? ", new String[]{str});
+                    return b().update(a.a, contentValues, "inspect_id = ? ", new String[]{str});
                 }
-                return b().insert(a.f6585a, null, contentValues);
+                return b().insert(a.a, null, contentValues);
             } catch (Exception e) {
                 return -1L;
             }
@@ -92,7 +86,7 @@ public class h extends com.anythink.core.common.c.a<p> {
             long j4 = -1;
             long j5 = -1;
             try {
-                cursor = a().query(a.f6585a, null, null, null, null, null, "update_time DESC", String.valueOf(this.d));
+                cursor = a().query(a.a, null, null, null, null, null, "update_time DESC", String.valueOf(this.d));
                 j2 = -1;
                 if (cursor != null) {
                     j2 = -1;
@@ -135,7 +129,7 @@ public class h extends com.anythink.core.common.c.a<p> {
             }
             if (j > 0) {
                 try {
-                    b().delete(a.f6585a, "update_time<?", new String[]{String.valueOf(j)});
+                    b().delete(a.a, "update_time<?", new String[]{String.valueOf(j)});
                 } catch (Throwable th2) {
                 }
             }

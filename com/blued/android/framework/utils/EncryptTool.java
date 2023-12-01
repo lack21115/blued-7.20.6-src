@@ -8,13 +8,13 @@ public class EncryptTool {
         String str2;
         String str3 = "";
         try {
-            long[] a2 = new Hashids("1766", 6).a(str);
+            long[] a = new Hashids("1766", 6).a(str);
             int i = 0;
             String str4 = "";
             while (true) {
                 str3 = str4;
                 str2 = str4;
-                if (i >= a2.length) {
+                if (i >= a.length) {
                     break;
                 }
                 String str5 = str4;
@@ -22,7 +22,7 @@ public class EncryptTool {
                 String str6 = str4;
                 sb.append(str4);
                 String str7 = str4;
-                sb.append(Long.toString(a2[i]));
+                sb.append(Long.toString(a[i]));
                 String str8 = str4;
                 str4 = sb.toString();
                 i++;

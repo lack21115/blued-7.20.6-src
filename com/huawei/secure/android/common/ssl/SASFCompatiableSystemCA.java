@@ -22,11 +22,11 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
     private static volatile SASFCompatiableSystemCA j = null;
 
     /* renamed from: a  reason: collision with root package name */
-    private SSLContext f23095a;
+    private SSLContext f9487a;
     private SSLSocket b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f23096c;
+    private Context f9488c;
     private String[] d;
     private X509TrustManager e;
     private String[] f;
@@ -49,15 +49,15 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
         setSslContext(SSLUtil.setSSLContext());
         SecureX509TrustManager sSFSecureX509SingleInstance = SSFSecureX509SingleInstance.getInstance(context);
         this.e = sSFSecureX509SingleInstance;
-        this.f23095a.init(null, new X509TrustManager[]{sSFSecureX509SingleInstance}, null);
+        this.f9487a.init(null, new X509TrustManager[]{sSFSecureX509SingleInstance}, null);
     }
 
     public SASFCompatiableSystemCA(KeyStore keyStore, X509TrustManager x509TrustManager) throws NoSuchAlgorithmException, KeyManagementException, IllegalArgumentException, UnrecoverableKeyException, KeyStoreException {
         super(keyStore);
         this.b = null;
-        this.f23095a = SSLUtil.setSSLContext();
+        this.f9487a = SSLUtil.setSSLContext();
         setX509TrustManager(x509TrustManager);
-        this.f23095a.init(null, new X509TrustManager[]{x509TrustManager}, null);
+        this.f9487a.init(null, new X509TrustManager[]{x509TrustManager}, null);
     }
 
     private void a(Socket socket) {
@@ -131,7 +131,7 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
     @Override // org.apache.http.conn.ssl.SSLSocketFactory, org.apache.http.conn.scheme.SocketFactory
     public Socket createSocket() throws IOException {
         g.c(i, "createSocket: ");
-        Socket createSocket = this.f23095a.getSocketFactory().createSocket();
+        Socket createSocket = this.f9487a.getSocketFactory().createSocket();
         if (createSocket instanceof SSLSocket) {
             a(createSocket);
             SSLSocket sSLSocket = (SSLSocket) createSocket;
@@ -144,7 +144,7 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
     @Override // org.apache.http.conn.ssl.SSLSocketFactory, org.apache.http.conn.scheme.LayeredSocketFactory
     public Socket createSocket(Socket socket, String str, int i2, boolean z) throws IOException {
         g.c(i, "createSocket: socket host port autoClose");
-        Socket createSocket = this.f23095a.getSocketFactory().createSocket(socket, str, i2, z);
+        Socket createSocket = this.f9487a.getSocketFactory().createSocket(socket, str, i2, z);
         if (createSocket instanceof SSLSocket) {
             a(createSocket);
             SSLSocket sSLSocket = (SSLSocket) createSocket;
@@ -164,7 +164,7 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public Context getContext() {
-        return this.f23096c;
+        return this.f9488c;
     }
 
     public String[] getProtocols() {
@@ -172,7 +172,7 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public SSLContext getSslContext() {
-        return this.f23095a;
+        return this.f9487a;
     }
 
     public SSLSocket getSslSocket() {
@@ -197,7 +197,7 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public void setContext(Context context) {
-        this.f23096c = context.getApplicationContext();
+        this.f9488c = context.getApplicationContext();
     }
 
     public void setProtocols(String[] strArr) {
@@ -205,7 +205,7 @@ public class SASFCompatiableSystemCA extends SSLSocketFactory {
     }
 
     public void setSslContext(SSLContext sSLContext) {
-        this.f23095a = sSLContext;
+        this.f9487a = sSLContext;
     }
 
     public void setSslSocket(SSLSocket sSLSocket) {

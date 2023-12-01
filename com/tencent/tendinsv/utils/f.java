@@ -8,7 +8,7 @@ import java.io.OutputStream;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f39094a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".toCharArray();
+    private static final char[] f25403a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".toCharArray();
 
     private static int a(char c2) {
         int i;
@@ -47,10 +47,10 @@ public class f {
                     break loop0;
                 }
                 int i4 = ((bArr[i] & 255) << 16) | ((bArr[i + 1] & 255) << 8) | (bArr[i + 2] & 255);
-                stringBuffer.append(f39094a[(i4 >> 18) & 63]);
-                stringBuffer.append(f39094a[(i4 >> 12) & 63]);
-                stringBuffer.append(f39094a[(i4 >> 6) & 63]);
-                stringBuffer.append(f39094a[i4 & 63]);
+                stringBuffer.append(f25403a[(i4 >> 18) & 63]);
+                stringBuffer.append(f25403a[(i4 >> 12) & 63]);
+                stringBuffer.append(f25403a[(i4 >> 6) & 63]);
+                stringBuffer.append(f25403a[i4 & 63]);
                 i += 3;
                 if (i3 >= 14) {
                     break;
@@ -63,16 +63,16 @@ public class f {
         if (i != i5 - 2) {
             if (i == i5 - 1) {
                 int i6 = (bArr[i] & 255) << 16;
-                stringBuffer.append(f39094a[(i6 >> 18) & 63]);
-                stringBuffer.append(f39094a[(i6 >> 12) & 63]);
+                stringBuffer.append(f25403a[(i6 >> 18) & 63]);
+                stringBuffer.append(f25403a[(i6 >> 12) & 63]);
                 str = "==";
             }
             return stringBuffer.toString();
         }
         int i7 = ((bArr[i + 1] & 255) << 8) | ((bArr[i] & 255) << 16);
-        stringBuffer.append(f39094a[(i7 >> 18) & 63]);
-        stringBuffer.append(f39094a[(i7 >> 12) & 63]);
-        stringBuffer.append(f39094a[(i7 >> 6) & 63]);
+        stringBuffer.append(f25403a[(i7 >> 18) & 63]);
+        stringBuffer.append(f25403a[(i7 >> 12) & 63]);
+        stringBuffer.append(f25403a[(i7 >> 6) & 63]);
         str = "=";
         stringBuffer.append(str);
         return stringBuffer.toString();

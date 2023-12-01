@@ -7,11 +7,11 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f38356a = "";
+    public String f24665a = "";
     public Map<String, Object> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38357c = "";
+    public String f24666c = "";
 
     public c a(String str, Object obj) {
         this.b.put(str, obj);
@@ -19,6 +19,6 @@ public class c {
     }
 
     public void a(String str) {
-        i.a().b(this.f38357c, this.b, str, this.f38356a);
+        i.a().b(this.f24666c, this.b, str, this.f24665a);
     }
 }

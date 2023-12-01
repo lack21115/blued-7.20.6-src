@@ -9,19 +9,19 @@ import android.os.SystemClock;
 public class HandlerPoster extends Handler implements Poster {
 
     /* renamed from: a  reason: collision with root package name */
-    private final PendingPostQueue f28299a;
+    private final PendingPostQueue f14609a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final BluedBus f28300c;
+    private final BluedBus f14610c;
     private boolean d;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public HandlerPoster(BluedBus bluedBus, Looper looper, int i) {
         super(looper);
-        this.f28300c = bluedBus;
+        this.f14610c = bluedBus;
         this.b = i;
-        this.f28299a = new PendingPostQueue();
+        this.f14609a = new PendingPostQueue();
     }
 
     @Override // android.os.Handler
@@ -29,18 +29,18 @@ public class HandlerPoster extends Handler implements Poster {
         try {
             long uptimeMillis = SystemClock.uptimeMillis();
             do {
-                PendingPost a2 = this.f28299a.a();
+                PendingPost a2 = this.f14609a.a();
                 PendingPost pendingPost = a2;
                 if (a2 == null) {
                     synchronized (this) {
-                        pendingPost = this.f28299a.a();
+                        pendingPost = this.f14609a.a();
                         if (pendingPost == null) {
                             this.d = false;
                             return;
                         }
                     }
                 }
-                this.f28300c.a(pendingPost);
+                this.f14610c.a(pendingPost);
             } while (SystemClock.uptimeMillis() - uptimeMillis < this.b);
             if (!sendMessage(obtainMessage())) {
                 throw new RuntimeException("Could not send handler message");

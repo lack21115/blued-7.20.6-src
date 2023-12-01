@@ -19,13 +19,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopLiveCenterWebView.class */
 public class PopLiveCenterWebView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15078a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f15079c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     private boolean f;
@@ -36,28 +32,24 @@ public class PopLiveCenterWebView extends FrameLayout {
     /* renamed from: com.blued.android.module.live_china.view.PopLiveCenterWebView$4  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopLiveCenterWebView$4.class */
     class AnonymousClass4 extends LiveWebCallBack {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopLiveCenterWebView f15083a;
+        final /* synthetic */ PopLiveCenterWebView a;
 
         @Override // com.blued.android.module.live_china.web.LiveWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
         public void b(BluedWebView bluedWebView, String str, boolean z) {
-            this.f15083a.f = true;
-            DialogUtils.b(this.f15083a.g);
+            this.a.f = true;
+            DialogUtils.b(this.a.g);
         }
     }
 
     /* renamed from: com.blued.android.module.live_china.view.PopLiveCenterWebView$5  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/PopLiveCenterWebView$5.class */
     class AnonymousClass5 implements Animation.AnimationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f15084a;
+        final /* synthetic */ String a;
         final /* synthetic */ PopLiveCenterWebView b;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            this.b.h.a(this.f15084a);
+            this.b.h.a(this.a);
             DialogUtils.a(this.b.g);
         }
 
@@ -84,7 +76,7 @@ public class PopLiveCenterWebView extends FrameLayout {
     private void c() {
         this.e = LayoutInflater.from(this.d);
         a();
-        View findViewById = this.f15078a.findViewById(R.id.tv_bg);
+        View findViewById = this.a.findViewById(R.id.tv_bg);
         this.b = findViewById;
         findViewById.setBackgroundColor(this.d.getResources().getColor(R.color.transparent));
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveCenterWebView.1
@@ -94,15 +86,15 @@ public class PopLiveCenterWebView extends FrameLayout {
                 PopLiveCenterWebView.this.b();
             }
         });
-        View findViewById2 = this.f15078a.findViewById(R.id.ll_content);
-        this.f15079c = findViewById2;
+        View findViewById2 = this.a.findViewById(R.id.ll_content);
+        this.c = findViewById2;
         findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveCenterWebView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        ImageView imageView = (ImageView) this.f15078a.findViewById(R.id.live_pk_center_explain_close);
+        ImageView imageView = (ImageView) this.a.findViewById(R.id.live_pk_center_explain_close);
         this.i = imageView;
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.PopLiveCenterWebView.3
             @Override // android.view.View.OnClickListener
@@ -119,15 +111,15 @@ public class PopLiveCenterWebView extends FrameLayout {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f15079c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
     }
 
     public void a() {
-        this.f15078a = this.e.inflate(R.layout.pop_live_pk_center, this);
+        this.a = this.e.inflate(R.layout.pop_live_pk_center, this);
     }
 
     public void b() {
-        if (this.f15079c.getVisibility() == 8) {
+        if (this.c.getVisibility() == 8) {
             return;
         }
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.PopLiveCenterWebView.6
@@ -137,6 +129,6 @@ public class PopLiveCenterWebView extends FrameLayout {
             }
         }, 320L);
         d();
-        this.f15079c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 }

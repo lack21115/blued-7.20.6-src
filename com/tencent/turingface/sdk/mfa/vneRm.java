@@ -4,11 +4,11 @@ package com.tencent.turingface.sdk.mfa;
 public final class vneRm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f40002a;
+    public final String f26311a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f40003c;
+    public final int f26312c;
     public final String d;
     public final String e;
     public final String f;
@@ -20,11 +20,11 @@ public final class vneRm {
     public static final class spXPg {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f40004a;
+        public String f26313a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f40005c;
+        public String f26314c;
         public String d;
         public String e;
         public String f;
@@ -36,9 +36,9 @@ public final class vneRm {
     }
 
     public vneRm(int i, int i2, int i3) {
-        this.f40002a = "";
+        this.f26311a = "";
         this.b = 0L;
-        this.f40003c = i;
+        this.f26312c = i;
         this.d = "";
         this.e = "";
         this.f = "";
@@ -50,11 +50,11 @@ public final class vneRm {
     public vneRm(spXPg spxpg) {
         this.h = 0;
         this.i = 0;
-        this.f40002a = spxpg.f40004a;
+        this.f26311a = spxpg.f26313a;
         this.b = spxpg.b;
         spXPg.c(spxpg);
-        this.f40003c = 0;
-        this.d = spxpg.f40005c;
+        this.f26312c = 0;
+        this.d = spxpg.f26314c;
         this.e = spxpg.d;
         this.f = spxpg.e;
         this.g = spxpg.f;

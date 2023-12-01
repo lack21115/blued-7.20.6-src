@@ -6,9 +6,7 @@ import com.alipay.sdk.sys.a;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/H5OpenAuthActivity.class */
 public class H5OpenAuthActivity extends H5PayActivity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f4574a = false;
+    private boolean a = false;
 
     @Override // com.alipay.sdk.app.H5PayActivity
     public void a() {
@@ -17,11 +15,11 @@ public class H5OpenAuthActivity extends H5PayActivity {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.alipay.sdk.app.H5PayActivity, android.app.Activity
     public void onDestroy() {
-        if (this.f4574a) {
+        if (this.a) {
             try {
-                com.alipay.sdk.sys.a a2 = a.C0050a.a(getIntent());
-                if (a2 != null) {
-                    com.alipay.sdk.app.statistic.a.b(this, a2, "", a2.p);
+                com.alipay.sdk.sys.a a = a.C0010a.a(getIntent());
+                if (a != null) {
+                    com.alipay.sdk.app.statistic.a.b(this, a, "", a.p);
                 }
             } catch (Throwable th) {
             }
@@ -32,8 +30,8 @@ public class H5OpenAuthActivity extends H5PayActivity {
     @Override // android.app.Activity, android.content.ContextWrapper, android.content.Context
     public void startActivity(Intent intent) {
         try {
-            com.alipay.sdk.sys.a a2 = a.C0050a.a(intent);
-            if (a2 == null) {
+            com.alipay.sdk.sys.a a = a.C0010a.a(intent);
+            if (a == null) {
                 finish();
                 return;
             }
@@ -45,8 +43,8 @@ public class H5OpenAuthActivity extends H5PayActivity {
                 }
                 finish();
             } catch (Throwable th) {
-                com.alipay.sdk.app.statistic.a.a(a2, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.ai, th, (intent == null || intent.getData() == null) ? com.igexin.push.core.b.l : intent.getData().toString());
-                this.f4574a = true;
+                com.alipay.sdk.app.statistic.a.a(a, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.ai, th, (intent == null || intent.getData() == null) ? "null" : intent.getData().toString());
+                this.a = true;
                 throw th;
             }
         } catch (Throwable th2) {

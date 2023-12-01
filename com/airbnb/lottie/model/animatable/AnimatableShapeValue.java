@@ -15,7 +15,7 @@ public class AnimatableShapeValue extends BaseAnimatableValue<ShapeData, Path> {
 
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     public BaseKeyframeAnimation<ShapeData, Path> a() {
-        return new ShapeKeyframeAnimation(this.f4334a);
+        return new ShapeKeyframeAnimation(this.a);
     }
 
     @Override // com.airbnb.lottie.model.animatable.BaseAnimatableValue, com.airbnb.lottie.model.animatable.AnimatableValue

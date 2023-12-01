@@ -51,13 +51,13 @@ public final class b implements i, j {
     public final Object a(Object obj, Type type) {
         if (obj.getClass().equals(org.json.alipay.a.class)) {
             org.json.alipay.a aVar = (org.json.alipay.a) obj;
-            Collection<Object> a2 = a(com.alipay.a.b.a.a(type), type);
+            Collection<Object> a = a(com.alipay.a.b.a.a(type), type);
             if (type instanceof ParameterizedType) {
                 Type type2 = ((ParameterizedType) type).getActualTypeArguments()[0];
                 for (int i = 0; i < aVar.a(); i++) {
-                    a2.add(e.a(aVar.a(i), type2));
+                    a.add(e.a(aVar.a(i), type2));
                 }
-                return a2;
+                return a;
             }
             throw new IllegalArgumentException("Does not support the implement for generics.");
         }

@@ -10,13 +10,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/b/e.class */
 public class e implements Application.ActivityLifecycleCallbacks {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6487a = "start_time";
+    public static final String a = "start_time";
     public static final String b = "end_time";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f6488c = "psid";
+    public static final String c = "psid";
     public static final String d = "launch_mode";
     public static final int e = 0;
     public static final int f = 1;
@@ -49,9 +45,9 @@ public class e implements Application.ActivityLifecycleCallbacks {
                 com.anythink.core.common.k.p.a(g, g.o, n.a().p() + "playRecord", "");
                 this.g = 0L;
                 JSONObject jSONObject = this.i;
-                long optLong = jSONObject.optLong("start_time");
-                long optLong2 = jSONObject.optLong("end_time");
-                String optString = jSONObject.optString(f6488c);
+                long optLong = jSONObject.optLong(a);
+                long optLong2 = jSONObject.optLong(b);
+                String optString = jSONObject.optString(c);
                 int optInt = jSONObject.optInt(d);
                 this.i = null;
                 com.anythink.core.common.j.c.a(optInt == 1 ? 3 : 1, optLong, optLong2, optString);
@@ -67,9 +63,9 @@ public class e implements Application.ActivityLifecycleCallbacks {
             com.anythink.core.c.a b2 = com.anythink.core.c.b.a(n.a().g()).b(n.a().p());
             if (this.i != null) {
                 JSONObject jSONObject = this.i;
-                long optLong = jSONObject.optLong("start_time");
-                long optLong2 = jSONObject.optLong("end_time");
-                String optString = jSONObject.optString(f6488c);
+                long optLong = jSONObject.optLong(a);
+                long optLong2 = jSONObject.optLong(b);
+                String optString = jSONObject.optString(c);
                 int optInt = jSONObject.optInt(d);
                 if (System.currentTimeMillis() - optLong2 > b2.B()) {
                     new StringBuilder("onActivityResumed : Time countdown is closed, time up to send agent and create new psid, playtime:").append((optLong2 - optLong) / 1000);
@@ -106,9 +102,9 @@ public class e implements Application.ActivityLifecycleCallbacks {
             String p = n.a().p();
             try {
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put(f6488c, n.a().r());
-                jSONObject.put("start_time", this.g);
-                jSONObject.put("end_time", System.currentTimeMillis());
+                jSONObject.put(c, n.a().r());
+                jSONObject.put(a, this.g);
+                jSONObject.put(b, System.currentTimeMillis());
                 jSONObject.put(d, this.h);
                 this.i = jSONObject;
                 Context g = n.a().g();

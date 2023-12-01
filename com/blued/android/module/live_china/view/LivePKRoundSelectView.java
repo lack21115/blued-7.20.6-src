@@ -18,13 +18,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundSelectView.class */
 public class LivePKRoundSelectView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public OnEventCallbck f14808a;
+    public OnEventCallbck a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14809c;
+    private View c;
     private View d;
     private ImageView e;
     private ImageView f;
@@ -55,7 +51,7 @@ public class LivePKRoundSelectView extends FrameLayout {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_round_select_view, this);
         this.d = findViewById(R.id.tv_confirm);
         this.b = findViewById(R.id.sl_one);
-        this.f14809c = findViewById(R.id.sl_three);
+        this.c = findViewById(R.id.sl_three);
         this.e = (ImageView) findViewById(R.id.iv_one_checked);
         this.f = (ImageView) findViewById(R.id.iv_three_checked);
         this.i = (TextView) findViewById(R.id.tv_progress);
@@ -77,7 +73,7 @@ public class LivePKRoundSelectView extends FrameLayout {
                 LivePKRoundSelectView.this.f.setImageResource(LivePKRoundSelectView.this.g ? R.drawable.live_pk_round_unchecked : R.drawable.live_pk_round_checked);
             }
         });
-        this.f14809c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LivePKRoundSelectView.2
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LivePKRoundSelectView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -90,8 +86,8 @@ public class LivePKRoundSelectView extends FrameLayout {
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (LivePKRoundSelectView.this.f14808a != null) {
-                    LivePKRoundSelectView.this.f14808a.a(!LivePKRoundSelectView.this.g ? 1 : 0);
+                if (LivePKRoundSelectView.this.a != null) {
+                    LivePKRoundSelectView.this.a.a(!LivePKRoundSelectView.this.g ? 1 : 0);
                 }
             }
         });
@@ -108,8 +104,8 @@ public class LivePKRoundSelectView extends FrameLayout {
         CountDownTimer countDownTimer = new CountDownTimer(j * 1000, 1000L) { // from class: com.blued.android.module.live_china.view.LivePKRoundSelectView.4
             @Override // android.os.CountDownTimer
             public void onFinish() {
-                if (LivePKRoundSelectView.this.f14808a != null) {
-                    LivePKRoundSelectView.this.f14808a.a();
+                if (LivePKRoundSelectView.this.a != null) {
+                    LivePKRoundSelectView.this.a.a();
                 }
             }
 
@@ -125,7 +121,7 @@ public class LivePKRoundSelectView extends FrameLayout {
 
     public void a(ActivityFragmentActive activityFragmentActive, OnEventCallbck onEventCallbck) {
         this.k = activityFragmentActive;
-        this.f14808a = onEventCallbck;
+        this.a = onEventCallbck;
     }
 
     public void b(final long j) {

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MsgSafeCommonContentItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29475a;
+    private final RelativeLayout f15785a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29475a;
+        return this.f15785a;
     }
 }

@@ -11,7 +11,7 @@ public abstract class RestrictedContinuationImpl extends BaseContinuationImpl {
     public RestrictedContinuationImpl(Continuation<Object> continuation) {
         super(continuation);
         if (continuation != null) {
-            if (!(continuation.getContext() == EmptyCoroutineContext.f42457a)) {
+            if (!(continuation.getContext() == EmptyCoroutineContext.a)) {
                 throw new IllegalArgumentException("Coroutines with restricted suspension must have EmptyCoroutineContext".toString());
             }
         }
@@ -19,6 +19,6 @@ public abstract class RestrictedContinuationImpl extends BaseContinuationImpl {
 
     @Override // kotlin.coroutines.Continuation
     public CoroutineContext getContext() {
-        return EmptyCoroutineContext.f42457a;
+        return EmptyCoroutineContext.a;
     }
 }

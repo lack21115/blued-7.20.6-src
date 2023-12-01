@@ -21,11 +21,11 @@ public interface f {
     public static final class b extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25024a;
+        public final int f11336a;
 
         public b(int i, int i2, int i3, int i4) {
             super("AudioTrack init failed: " + i + ", Config(" + i2 + ", " + i3 + ", " + i4 + ")");
-            this.f25024a = i;
+            this.f11336a = i;
         }
     }
 
@@ -42,11 +42,11 @@ public interface f {
     public static final class d extends Exception {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25025a;
+        public final int f11337a;
 
         public d(int i) {
             super("AudioTrack write failed: " + i);
-            this.f25025a = i;
+            this.f11337a = i;
         }
     }
 

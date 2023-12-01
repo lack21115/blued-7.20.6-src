@@ -7,10 +7,10 @@ import com.bumptech.glide.util.Preconditions;
 public class BytesResource implements Resource<byte[]> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final byte[] f20984a;
+    private final byte[] f7378a;
 
     public BytesResource(byte[] bArr) {
-        this.f20984a = (byte[]) Preconditions.a(bArr);
+        this.f7378a = (byte[]) Preconditions.a(bArr);
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
@@ -20,7 +20,7 @@ public class BytesResource implements Resource<byte[]> {
 
     @Override // com.bumptech.glide.load.engine.Resource
     public int b() {
-        return this.f20984a.length;
+        return this.f7378a.length;
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
@@ -30,6 +30,6 @@ public class BytesResource implements Resource<byte[]> {
     @Override // com.bumptech.glide.load.engine.Resource
     /* renamed from: d */
     public byte[] f() {
-        return this.f20984a;
+        return this.f7378a;
     }
 }

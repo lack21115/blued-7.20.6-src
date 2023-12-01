@@ -9,17 +9,17 @@ import java.io.File;
 class a extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private File f38988a;
+    private File f25297a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(Context context, String str, SQLiteDatabase.CursorFactory cursorFactory, int i, boolean z) {
         super(context, str, cursorFactory, i);
-        this.f38988a = z ? null : c.a(c.a(), str);
+        this.f25297a = z ? null : c.a(c.a(), str);
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public SQLiteDatabase getReadableDatabase() {
-        File file = this.f38988a;
+        File file = this.f25297a;
         SQLiteDatabase readableDatabase = file == null ? super.getReadableDatabase() : SQLiteDatabase.openOrCreateDatabase(file, (SQLiteDatabase.CursorFactory) null);
         onCreate(readableDatabase);
         return readableDatabase;
@@ -27,7 +27,7 @@ class a extends SQLiteOpenHelper {
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public SQLiteDatabase getWritableDatabase() {
-        File file = this.f38988a;
+        File file = this.f25297a;
         SQLiteDatabase writableDatabase = file == null ? super.getWritableDatabase() : SQLiteDatabase.openOrCreateDatabase(file, (SQLiteDatabase.CursorFactory) null);
         onCreate(writableDatabase);
         return writableDatabase;

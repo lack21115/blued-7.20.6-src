@@ -18,13 +18,9 @@ public class Measure implements Parcelable {
             return Measure.a(parcel);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Double f4472a;
+    protected Double a;
     protected Double b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected Double f4473c;
+    protected Double c;
     protected String name;
 
     public Measure(String str) {
@@ -38,13 +34,13 @@ public class Measure implements Parcelable {
     public Measure(String str, Double d, Double d2, Double d3) {
         double d4 = 0.0d;
         Double valueOf = Double.valueOf(0.0d);
-        this.f4472a = valueOf;
+        this.a = valueOf;
         this.b = valueOf;
-        this.f4473c = valueOf;
-        this.f4472a = d2;
+        this.c = valueOf;
+        this.a = d2;
         this.b = d3;
         this.name = str;
-        this.f4473c = Double.valueOf(d != null ? d.doubleValue() : d4);
+        this.c = Double.valueOf(d != null ? d.doubleValue() : d4);
     }
 
     static Measure a(Parcel parcel) {
@@ -75,7 +71,7 @@ public class Measure implements Parcelable {
     }
 
     public Double getConstantValue() {
-        return this.f4473c;
+        return this.c;
     }
 
     public Double getMax() {
@@ -83,7 +79,7 @@ public class Measure implements Parcelable {
     }
 
     public Double getMin() {
-        return this.f4472a;
+        return this.a;
     }
 
     public String getName() {
@@ -96,7 +92,7 @@ public class Measure implements Parcelable {
     }
 
     public void setConstantValue(Double d) {
-        this.f4473c = d;
+        this.c = d;
     }
 
     public void setMax(Double d) {
@@ -104,18 +100,18 @@ public class Measure implements Parcelable {
     }
 
     public void setMin(Double d) {
-        this.f4472a = d;
+        this.a = d;
     }
 
     public void setRange(Double d, Double d2) {
-        this.f4472a = d;
+        this.a = d;
         this.b = d2;
     }
 
     public boolean valid(MeasureValue measureValue) {
         Double valueOf = Double.valueOf(measureValue.getValue());
         if (valueOf != null) {
-            if (this.f4472a == null || valueOf.doubleValue() >= this.f4472a.doubleValue()) {
+            if (this.a == null || valueOf.doubleValue() >= this.a.doubleValue()) {
                 return this.b == null || valueOf.doubleValue() <= this.b.doubleValue();
             }
             return false;
@@ -130,14 +126,14 @@ public class Measure implements Parcelable {
             if (this.b != null) {
                 parcel.writeDouble(this.b.doubleValue());
             }
-            parcel.writeInt(this.f4472a == null ? 0 : 1);
-            if (this.f4472a != null) {
-                parcel.writeDouble(this.f4472a.doubleValue());
+            parcel.writeInt(this.a == null ? 0 : 1);
+            if (this.a != null) {
+                parcel.writeDouble(this.a.doubleValue());
             }
             parcel.writeString(this.name);
-            parcel.writeInt(this.f4473c == null ? 0 : 1);
-            if (this.f4473c != null) {
-                parcel.writeDouble(this.f4473c.doubleValue());
+            parcel.writeInt(this.c == null ? 0 : 1);
+            if (this.c != null) {
+                parcel.writeDouble(this.c.doubleValue());
             }
         } catch (Throwable th) {
         }

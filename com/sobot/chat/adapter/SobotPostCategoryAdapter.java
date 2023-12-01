@@ -82,11 +82,11 @@ public class SobotPostCategoryAdapter extends SobotBaseAdapter<SobotTypeModel> {
             this.myViewHolder.categoryIshave.setVisibility(8);
         } else {
             this.myViewHolder.categoryIshave.setVisibility(0);
-            this.myViewHolder.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_right_arrow_icon"));
+            this.myViewHolder.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_right_arrow_icon"));
         }
         if (((SobotTypeModel) this.list.get(i)).isChecked()) {
             this.myViewHolder.categoryIshave.setVisibility(0);
-            this.myViewHolder.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_work_order_selected_mark"));
+            this.myViewHolder.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_work_order_selected_mark"));
         }
         if (this.list.size() < 2) {
             this.myViewHolder.work_order_category_line.setVisibility(8);

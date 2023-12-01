@@ -7,7 +7,6 @@ import android.view.View;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.ui.xpop.enums.PopupPosition;
 import com.blued.android.module.common.log.oldtrack.LogData;
@@ -62,16 +61,16 @@ public class CommRouteUtil {
         }
         int[] iArr = new int[2];
         view.getLocationInWindow(iArr);
-        PopupPosition popupPosition = PopupPosition.Top;
+        PopupPosition popupPosition = PopupPosition.c;
         if (iArr[1] < FeedMethods.c(152)) {
-            popupPosition = PopupPosition.Bottom;
+            popupPosition = PopupPosition.d;
             c2 = FeedMethods.c(-32);
             z = false;
         } else {
             c2 = FeedMethods.c(22);
             z = true;
         }
-        new XPopup.Builder(baseFragment.getContext()).a(PopupAnimation.NoAnimation).c((Boolean) false).d((Boolean) false).a(popupPosition).b((Boolean) true).a((Boolean) true).a(false).c(c2).b(FeedMethods.c(-10)).a(view).a((BasePopupView) new FeedInteractPopWindow(baseFragment.getContext(), bluedIngSelfFeed, logData2, z, baseFragment.getFragmentActive())).h();
+        new XPopup.Builder(baseFragment.getContext()).a(PopupAnimation.v).c(false).d(false).a(popupPosition).b(true).a(true).a(false).c(c2).b(FeedMethods.c(-10)).a(view).a(new FeedInteractPopWindow(baseFragment.getContext(), bluedIngSelfFeed, logData2, z, baseFragment.getFragmentActive())).h();
     }
 
     public static void a(BaseFragment baseFragment, BluedIngSelfFeed bluedIngSelfFeed, int[] iArr) {
@@ -119,20 +118,20 @@ public class CommRouteUtil {
         if (context == null) {
             return;
         }
-        TerminalActivity.d(context, FeedSubjectListFragment.class, null);
+        TerminalActivity.d(context, FeedSubjectListFragment.class, (Bundle) null);
     }
 
     public static void c(Context context) {
         if (context == null) {
             return;
         }
-        TerminalActivity.d(context, FeedSubjectSearchFragment.class, null);
+        TerminalActivity.d(context, FeedSubjectSearchFragment.class, (Bundle) null);
     }
 
     public static void d(Context context) {
         if (context == null) {
             return;
         }
-        TerminalActivity.d(context, MySubjectFragment.class, null);
+        TerminalActivity.d(context, MySubjectFragment.class, (Bundle) null);
     }
 }

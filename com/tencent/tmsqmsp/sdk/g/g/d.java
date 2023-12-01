@@ -14,13 +14,13 @@ public interface d extends IInterface {
 
         /* renamed from: com.tencent.tmsqmsp.sdk.g.g.d$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/g/d$a$a.class */
-        public static class C1056a implements d {
+        public static class C0886a implements d {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f39793a;
+            public IBinder f26102a;
 
-            public C1056a(IBinder iBinder) {
-                this.f39793a = iBinder;
+            public C0886a(IBinder iBinder) {
+                this.f26102a = iBinder;
             }
 
             public String a(String str, String str2, String str3) {
@@ -32,7 +32,7 @@ public interface d extends IInterface {
                     obtain.writeString(str);
                     obtain.writeString(str2);
                     obtain.writeString(str3);
-                    this.f39793a.transact(1, obtain, obtain2, 0);
+                    this.f26102a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     str4 = obtain2.readString();
                     obtain2.recycle();
@@ -52,7 +52,7 @@ public interface d extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f39793a;
+                return this.f26102a;
             }
         }
 
@@ -61,7 +61,7 @@ public interface d extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.heytap.openid.IOpenID");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof d)) ? new C1056a(iBinder) : (d) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof d)) ? new C0886a(iBinder) : (d) queryLocalInterface;
         }
     }
 }

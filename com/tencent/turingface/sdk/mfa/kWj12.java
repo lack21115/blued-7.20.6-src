@@ -16,17 +16,17 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class kWj12 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39964a = kC0XR.a(kC0XR.H0);
+    public static final String f26273a = kC0XR.a(kC0XR.H0);
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingface/sdk/mfa/kWj12$ShGzN.class */
     public static final class ShGzN {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f39965a;
+        public int f26274a;
         public F2BEC b;
 
         public ShGzN(int i, F2BEC f2bec) {
-            this.f39965a = i;
+            this.f26274a = i;
             this.b = f2bec;
         }
     }
@@ -35,65 +35,65 @@ public final class kWj12 {
     public final class spXPg implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ AtomicReference f39966a;
+        public final /* synthetic */ AtomicReference f26275a;
         public final /* synthetic */ long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Object f39967c;
+        public final /* synthetic */ Object f26276c;
         public final /* synthetic */ Context d;
 
         /* renamed from: com.tencent.turingface.sdk.mfa.kWj12$spXPg$spXPg  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingface/sdk/mfa/kWj12$spXPg$spXPg.class */
-        public final class C1062spXPg extends Thread {
+        public final class C0892spXPg extends Thread {
 
             /* renamed from: a  reason: collision with root package name */
-            public final /* synthetic */ IBinder f39968a;
+            public final /* synthetic */ IBinder f26277a;
 
-            public C1062spXPg(IBinder iBinder) {
-                this.f39968a = iBinder;
+            public C0892spXPg(IBinder iBinder) {
+                this.f26277a = iBinder;
             }
 
             /* JADX WARN: Multi-variable type inference failed */
             /* JADX WARN: Type inference failed for: r0v11, types: [com.tencent.turingface.sdk.mfa.s5pTT] */
             @Override // java.lang.Thread, java.lang.Runnable
             public final void run() {
-                s5pTT.spXPg.C1063spXPg c1063spXPg;
+                s5pTT.spXPg.C0893spXPg c0893spXPg;
                 int i;
-                IBinder iBinder = this.f39968a;
-                String str = s5pTT.spXPg.f39988a;
+                IBinder iBinder = this.f26277a;
+                String str = s5pTT.spXPg.f26297a;
                 if (iBinder == null) {
-                    c1063spXPg = null;
+                    c0893spXPg = null;
                 } else {
                     IInterface queryLocalInterface = iBinder.queryLocalInterface(str);
-                    c1063spXPg = (queryLocalInterface == null || !(queryLocalInterface instanceof s5pTT)) ? new s5pTT.spXPg.C1063spXPg(iBinder) : (s5pTT) queryLocalInterface;
+                    c0893spXPg = (queryLocalInterface == null || !(queryLocalInterface instanceof s5pTT)) ? new s5pTT.spXPg.C0893spXPg(iBinder) : (s5pTT) queryLocalInterface;
                 }
                 try {
-                    if (c1063spXPg.a()) {
+                    if (c0893spXPg.a()) {
                         i = 0;
                     } else {
-                        c1063spXPg.e();
+                        c0893spXPg.e();
                         i = 1;
                     }
-                    ShGzN a2 = kWj12.a(c1063spXPg.d().b);
+                    ShGzN a2 = kWj12.a(c0893spXPg.d().b);
                     int i2 = i;
-                    int i3 = a2.f39965a;
+                    int i3 = a2.f26274a;
                     if (i3 != 0) {
-                        spXPg.this.f39966a.set(Bi3eT.a(i3, i));
+                        spXPg.this.f26275a.set(Bi3eT.a(i3, i));
                     } else {
                         F2BEC f2bec = a2.b;
                         int i4 = i;
                         int i5 = i;
-                        spXPg.this.f39966a.set(new Bi3eT(0, 200, System.currentTimeMillis() - spXPg.this.b, f2bec.h, c1063spXPg.b(), i));
+                        spXPg.this.f26275a.set(new Bi3eT(0, 200, System.currentTimeMillis() - spXPg.this.b, f2bec.h, c0893spXPg.b(), i));
                     }
                 } catch (Throwable th) {
-                    spXPg.this.f39966a.set(Bi3eT.a(UGCConstants.ERR_BGM_UNSUPPORT_AUDIO_CHANNEL, -1));
+                    spXPg.this.f26275a.set(Bi3eT.a(UGCConstants.ERR_BGM_UNSUPPORT_AUDIO_CHANNEL, -1));
                 }
-                synchronized (spXPg.this.f39967c) {
-                    spXPg.this.f39967c.notify();
+                synchronized (spXPg.this.f26276c) {
+                    spXPg.this.f26276c.notify();
                 }
                 if (G1g37.b.a(spXPg.this.d, "s_t_d_ask", false)) {
                     try {
-                        c1063spXPg.c();
+                        c0893spXPg.c();
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
@@ -102,22 +102,22 @@ public final class kWj12 {
         }
 
         public spXPg(AtomicReference atomicReference, long j, Object obj, Context context) {
-            this.f39966a = atomicReference;
+            this.f26275a = atomicReference;
             this.b = j;
-            this.f39967c = obj;
+            this.f26276c = obj;
             this.d = context;
         }
 
         @Override // android.content.ServiceConnection
         public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            new C1062spXPg(iBinder).start();
+            new C0892spXPg(iBinder).start();
         }
 
         @Override // android.content.ServiceConnection
         public final void onServiceDisconnected(ComponentName componentName) {
-            this.f39966a.set(Bi3eT.a(-2004, -3));
-            synchronized (this.f39967c) {
-                this.f39967c.notify();
+            this.f26275a.set(Bi3eT.a(-2004, -3));
+            synchronized (this.f26276c) {
+                this.f26276c.notify();
             }
         }
     }
@@ -143,7 +143,7 @@ public final class kWj12 {
     public static ShGzN a(byte[] bArr) {
         if (bArr != null && bArr.length >= 4) {
             byte[] bArr2 = new byte[4];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 4);
+            System.arraycopy(bArr, 0, bArr2, 0, 4);
             int i = 0;
             for (int i2 = 0; i2 < 4; i2++) {
                 i += (bArr2[i2] & 255) << (i2 * 8);
@@ -156,12 +156,12 @@ public final class kWj12 {
             if (bArr.length < i3) {
                 return new ShGzN(-3004, null);
             }
-            System.arraycopy((Object) bArr, 4, (Object) bArr3, 0, i);
+            System.arraycopy(bArr, 4, bArr3, 0, i);
             F2BEC f2bec = new F2BEC(new String(bArr3));
             int length = bArr.length - i3;
             if (length != 0) {
                 byte[] bArr4 = new byte[length];
-                System.arraycopy((Object) bArr, i3, (Object) bArr4, 0, length);
+                System.arraycopy(bArr, i3, bArr4, 0, length);
                 Base64.encodeToString(bArr4, 2);
                 return new ShGzN(0, f2bec);
             }

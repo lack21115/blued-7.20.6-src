@@ -13,12 +13,12 @@ public class h1 extends p {
     public JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("_rom_ver", this.h);
-        jSONObject.put("_emui_ver", this.f22779a);
+        jSONObject.put("_emui_ver", this.f9171a);
         jSONObject.put("_model", Build.MODEL);
         jSONObject.put("_mcc", this.f);
         jSONObject.put("_mnc", this.g);
         jSONObject.put("_package_name", this.b);
-        jSONObject.put("_app_ver", this.f22780c);
+        jSONObject.put("_app_ver", this.f9172c);
         jSONObject.put("_lib_ver", "2.2.0.313");
         jSONObject.put("_channel", this.d);
         jSONObject.put("_lib_name", "hianalytics");

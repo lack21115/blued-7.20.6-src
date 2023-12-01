@@ -9,11 +9,11 @@ import com.tencent.open.c;
 public class d extends com.tencent.map.a.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private c.a f38265a;
+    private c.a f24574a;
 
     public d(c.a aVar) {
         super(1, 0, 0, 8);
-        this.f38265a = aVar;
+        this.f24574a = aVar;
     }
 
     @Override // com.tencent.map.a.a.b
@@ -31,8 +31,8 @@ public class d extends com.tencent.map.a.a.b {
         }
         Location location = new Location(LocationManager.PASSIVE_PROVIDER);
         location.setLatitude(dVar.b);
-        location.setLongitude(dVar.f37199c);
-        c.a aVar = this.f38265a;
+        location.setLongitude(dVar.f23508c);
+        c.a aVar = this.f24574a;
         if (aVar != null) {
             aVar.onLocationUpdate(location);
         }

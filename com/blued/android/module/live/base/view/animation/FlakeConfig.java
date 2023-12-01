@@ -7,13 +7,9 @@ import android.util.SparseArray;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/FlakeConfig.class */
 public class FlakeConfig {
     static SparseArray<Bitmap> i = new SparseArray<>();
-
-    /* renamed from: a  reason: collision with root package name */
-    int f11494a;
+    int a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    float f11495c;
+    float c;
     float d;
     float e;
     float f;
@@ -35,20 +31,20 @@ public class FlakeConfig {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         int random = width - ((int) ((Math.random() * width) / 2.0d));
-        this.f11494a = random;
+        this.a = random;
         this.b = (height * random) / width;
         b();
-        Bitmap bitmap2 = i.get(this.f11494a);
+        Bitmap bitmap2 = i.get(this.a);
         this.h = bitmap2;
         if (bitmap2 == null) {
-            Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmap, this.f11494a, this.b, true);
+            Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmap, this.a, this.b, true);
             this.h = createScaledBitmap;
-            i.put(this.f11494a, createScaledBitmap);
+            i.put(this.a, createScaledBitmap);
         }
     }
 
     private void b() {
-        this.f11495c = ((float) Math.random()) * (this.p - this.f11494a);
+        this.c = ((float) Math.random()) * (this.p - this.a);
         this.d = 0.0f - (this.b + (((float) Math.random()) * this.q));
         this.f = this.j + (((float) Math.random()) * (this.k - this.j));
         float random = (float) Math.random();

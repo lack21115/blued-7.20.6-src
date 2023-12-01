@@ -7,7 +7,7 @@ import android.os.Message;
 public final class MessageCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f2514a = true;
+    private static boolean f2466a = true;
     private static boolean b = true;
 
     private MessageCompat() {
@@ -31,12 +31,12 @@ public final class MessageCompat {
     public static void setAsynchronous(Message message, boolean z) {
         if (Build.VERSION.SDK_INT >= 22) {
             message.setAsynchronous(z);
-        } else if (!f2514a || Build.VERSION.SDK_INT < 16) {
+        } else if (!f2466a || Build.VERSION.SDK_INT < 16) {
         } else {
             try {
                 message.setAsynchronous(z);
             } catch (NoSuchMethodError e) {
-                f2514a = false;
+                f2466a = false;
             }
         }
     }

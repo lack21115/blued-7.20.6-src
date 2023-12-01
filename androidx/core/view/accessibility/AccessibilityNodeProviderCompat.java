@@ -12,21 +12,21 @@ public class AccessibilityNodeProviderCompat {
     public static final int HOST_VIEW_ID = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f2728a;
+    private final Object f2680a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderApi16.class */
     static class AccessibilityNodeProviderApi16 extends AccessibilityNodeProvider {
 
         /* renamed from: a  reason: collision with root package name */
-        final AccessibilityNodeProviderCompat f2729a;
+        final AccessibilityNodeProviderCompat f2681a;
 
         AccessibilityNodeProviderApi16(AccessibilityNodeProviderCompat accessibilityNodeProviderCompat) {
-            this.f2729a = accessibilityNodeProviderCompat;
+            this.f2681a = accessibilityNodeProviderCompat;
         }
 
         @Override // android.view.accessibility.AccessibilityNodeProvider
         public AccessibilityNodeInfo createAccessibilityNodeInfo(int i) {
-            AccessibilityNodeInfoCompat createAccessibilityNodeInfo = this.f2729a.createAccessibilityNodeInfo(i);
+            AccessibilityNodeInfoCompat createAccessibilityNodeInfo = this.f2681a.createAccessibilityNodeInfo(i);
             if (createAccessibilityNodeInfo == null) {
                 return null;
             }
@@ -35,7 +35,7 @@ public class AccessibilityNodeProviderCompat {
 
         @Override // android.view.accessibility.AccessibilityNodeProvider
         public List<AccessibilityNodeInfo> findAccessibilityNodeInfosByText(String str, int i) {
-            List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText = this.f2729a.findAccessibilityNodeInfosByText(str, i);
+            List<AccessibilityNodeInfoCompat> findAccessibilityNodeInfosByText = this.f2681a.findAccessibilityNodeInfosByText(str, i);
             if (findAccessibilityNodeInfosByText == null) {
                 return null;
             }
@@ -54,7 +54,7 @@ public class AccessibilityNodeProviderCompat {
 
         @Override // android.view.accessibility.AccessibilityNodeProvider
         public boolean performAction(int i, int i2, Bundle bundle) {
-            return this.f2729a.performAction(i, i2, bundle);
+            return this.f2681a.performAction(i, i2, bundle);
         }
     }
 
@@ -66,7 +66,7 @@ public class AccessibilityNodeProviderCompat {
 
         @Override // android.view.accessibility.AccessibilityNodeProvider
         public AccessibilityNodeInfo findFocus(int i) {
-            AccessibilityNodeInfoCompat findFocus = this.f2729a.findFocus(i);
+            AccessibilityNodeInfoCompat findFocus = this.f2681a.findFocus(i);
             if (findFocus == null) {
                 return null;
             }
@@ -80,25 +80,26 @@ public class AccessibilityNodeProviderCompat {
             super(accessibilityNodeProviderCompat);
         }
 
+        @Override // android.view.accessibility.AccessibilityNodeProvider
         public void addExtraDataToAccessibilityNodeInfo(int i, AccessibilityNodeInfo accessibilityNodeInfo, String str, Bundle bundle) {
-            this.f2729a.addExtraDataToAccessibilityNodeInfo(i, AccessibilityNodeInfoCompat.wrap(accessibilityNodeInfo), str, bundle);
+            this.f2681a.addExtraDataToAccessibilityNodeInfo(i, AccessibilityNodeInfoCompat.wrap(accessibilityNodeInfo), str, bundle);
         }
     }
 
     public AccessibilityNodeProviderCompat() {
         if (Build.VERSION.SDK_INT >= 26) {
-            this.f2728a = new AccessibilityNodeProviderApi26(this);
+            this.f2680a = new AccessibilityNodeProviderApi26(this);
         } else if (Build.VERSION.SDK_INT >= 19) {
-            this.f2728a = new AccessibilityNodeProviderApi19(this);
+            this.f2680a = new AccessibilityNodeProviderApi19(this);
         } else if (Build.VERSION.SDK_INT >= 16) {
-            this.f2728a = new AccessibilityNodeProviderApi16(this);
+            this.f2680a = new AccessibilityNodeProviderApi16(this);
         } else {
-            this.f2728a = null;
+            this.f2680a = null;
         }
     }
 
     public AccessibilityNodeProviderCompat(Object obj) {
-        this.f2728a = obj;
+        this.f2680a = obj;
     }
 
     public void addExtraDataToAccessibilityNodeInfo(int i, AccessibilityNodeInfoCompat accessibilityNodeInfoCompat, String str, Bundle bundle) {
@@ -117,7 +118,7 @@ public class AccessibilityNodeProviderCompat {
     }
 
     public Object getProvider() {
-        return this.f2728a;
+        return this.f2680a;
     }
 
     public boolean performAction(int i, int i2, Bundle bundle) {

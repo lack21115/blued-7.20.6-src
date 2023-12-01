@@ -19,26 +19,20 @@ import java.util.TimerTask;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/widget/PopMenu.class */
 public class PopMenu {
     private static boolean f = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewGroup f15615a;
+    private ViewGroup a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15616c;
+    private View c;
     private Context d;
     private MyPopupWindow e;
 
     /* renamed from: com.blued.android.module.media.selector.widget.PopMenu$3  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/widget/PopMenu$3.class */
     class AnonymousClass3 extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopMenu f15619a;
+        final /* synthetic */ PopMenu a;
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            this.f15619a.a();
+            this.a.a();
             boolean unused = PopMenu.f = false;
             super.handleMessage(message);
         }
@@ -47,15 +41,13 @@ public class PopMenu {
     /* renamed from: com.blued.android.module.media.selector.widget.PopMenu$4  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/widget/PopMenu$4.class */
     class AnonymousClass4 extends TimerTask {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Handler f15620a;
+        final /* synthetic */ Handler a;
 
         @Override // java.util.TimerTask, java.lang.Runnable
         public void run() {
             Message message = new Message();
             message.what = 1;
-            this.f15620a.sendMessage(message);
+            this.a.sendMessage(message);
         }
     }
 
@@ -82,10 +74,10 @@ public class PopMenu {
 
     public PopMenu(Context context, View view) {
         this.d = context;
-        this.f15615a = new FrameLayout(context);
+        this.a = new FrameLayout(context);
         View view2 = new View(context);
         this.b = view2;
-        view2.setBackgroundColor(-16777216);
+        view2.setBackgroundColor(View.MEASURED_STATE_MASK);
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.media.selector.widget.PopMenu.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {
@@ -93,14 +85,14 @@ public class PopMenu {
                 PopMenu.this.a();
             }
         });
-        this.f15616c = view;
+        this.c = view;
         view.setBackgroundColor(this.d.getResources().getColor(R.color.window_bg_color));
-        this.f15616c.setVisibility(8);
-        this.f15615a.addView(this.b, -1, -1);
-        this.f15615a.addView(this.f15616c, -1, -2);
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f15615a, -1, -1, true);
+        this.c.setVisibility(8);
+        this.a.addView(this.b, -1, -1);
+        this.a.addView(this.c, -1, -2);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.e = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.e.setTouchable(true);
         this.e.setOutsideTouchable(true);
         this.e.setFocusable(true);
@@ -113,8 +105,8 @@ public class PopMenu {
         alphaAnimation.setDuration(200L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f15616c.setVisibility(8);
-        this.f15616c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_top_out2));
+        this.c.setVisibility(8);
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_top_out2));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.media.selector.widget.PopMenu.5
             @Override // java.lang.Runnable
             public void run() {
@@ -125,7 +117,7 @@ public class PopMenu {
 
     public void a(View view) {
         this.b.clearAnimation();
-        this.f15616c.clearAnimation();
+        this.c.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();
         }
@@ -136,11 +128,11 @@ public class PopMenu {
             view.getLocationOnScreen(iArr);
             int height = iArr[1] + view.getHeight();
             if (Build.VERSION.SDK_INT >= 25) {
-                this.e.setHeight(((WindowManager) this.d.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getHeight() - height);
+                this.e.setHeight(((WindowManager) this.d.getSystemService("window")).getDefaultDisplay().getHeight() - height);
             }
             this.e.showAtLocation(view, 0, 0, height);
         }
-        this.f15616c.setVisibility(8);
+        this.c.setVisibility(8);
         this.b.setVisibility(8);
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.media.selector.widget.PopMenu.2
             @Override // java.lang.Runnable
@@ -150,8 +142,8 @@ public class PopMenu {
                 alphaAnimation.setFillAfter(true);
                 PopMenu.this.b.startAnimation(alphaAnimation);
                 PopMenu.this.b.setVisibility(0);
-                PopMenu.this.f15616c.startAnimation(AnimationUtils.loadAnimation(PopMenu.this.d, R.anim.push_top_in2));
-                PopMenu.this.f15616c.setVisibility(0);
+                PopMenu.this.c.startAnimation(AnimationUtils.loadAnimation(PopMenu.this.d, R.anim.push_top_in2));
+                PopMenu.this.c.setVisibility(0);
             }
         }, 50L);
     }

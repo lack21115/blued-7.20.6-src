@@ -31,7 +31,7 @@ public class GifDecoder extends Thread {
     private Bitmap image;
 
     /* renamed from: in  reason: collision with root package name */
-    private InputStream f28236in;
+    private InputStream f14547in;
     private boolean interlace;
     private boolean isShow;
     private int iw;
@@ -70,7 +70,7 @@ public class GifDecoder extends Thread {
         this.delay = 0;
         this.action = null;
         this.gifData = null;
-        this.f28236in = inputStream;
+        this.f14547in = inputStream;
         this.action = gifAction;
     }
 
@@ -243,7 +243,7 @@ public class GifDecoder extends Thread {
 
     private int read() {
         try {
-            return this.f28236in.read();
+            return this.f14547in.read();
         } catch (Exception e) {
             this.status = 1;
             return 0;
@@ -258,7 +258,7 @@ public class GifDecoder extends Thread {
         if (read > 0) {
             while (i2 < this.blockSize) {
                 try {
-                    int read2 = this.f28236in.read(this.block, i2, this.blockSize - i2);
+                    int read2 = this.f14547in.read(this.block, i2, this.blockSize - i2);
                     if (read2 == -1) {
                         break;
                     }
@@ -277,7 +277,7 @@ public class GifDecoder extends Thread {
     }
 
     private int readByte() {
-        this.f28236in = new ByteArrayInputStream(this.gifData);
+        this.f14547in = new ByteArrayInputStream(this.gifData);
         this.gifData = null;
         return readStream();
     }
@@ -287,7 +287,7 @@ public class GifDecoder extends Thread {
         int i3 = i * 3;
         byte[] bArr = new byte[i3];
         try {
-            i2 = this.f28236in.read(bArr);
+            i2 = this.f14547in.read(bArr);
         } catch (Exception e) {
             e.printStackTrace();
             i2 = 0;
@@ -484,7 +484,7 @@ public class GifDecoder extends Thread {
 
     private int readStream() {
         init();
-        if (this.f28236in != null) {
+        if (this.f14547in != null) {
             readHeader();
             if (!err()) {
                 readContents();
@@ -497,7 +497,7 @@ public class GifDecoder extends Thread {
                 }
             }
             try {
-                this.f28236in.close();
+                this.f14547in.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -647,13 +647,13 @@ public class GifDecoder extends Thread {
             gifFrame = this.gifFrame.nextFrame;
             this.gifFrame = gifFrame;
         }
-        InputStream inputStream = this.f28236in;
+        InputStream inputStream = this.f14547in;
         if (inputStream != null) {
             try {
                 inputStream.close();
             } catch (Exception e) {
             }
-            this.f28236in = null;
+            this.f14547in = null;
         }
         this.gifData = null;
     }
@@ -754,7 +754,7 @@ public class GifDecoder extends Thread {
 
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
-        if (this.f28236in != null) {
+        if (this.f14547in != null) {
             readStream();
         } else if (this.gifData != null) {
             readByte();

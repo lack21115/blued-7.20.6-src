@@ -8,11 +8,11 @@ import org.json.JSONException;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23429a;
+    public String f9821a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f23430c;
+    public String f9822c;
     public String d;
     public String e;
     public String f = "open";
@@ -32,9 +32,9 @@ public final class a {
         }
         this.e = "3.2.14.0";
         this.b = com.igexin.push.core.e.E;
-        this.f23430c = com.igexin.push.core.e.D;
+        this.f9822c = com.igexin.push.core.e.D;
         this.d = com.igexin.push.f.n.c();
-        this.f23429a = com.igexin.push.core.e.F;
+        this.f9821a = com.igexin.push.core.e.F;
         this.h = "ANDROID";
         this.j = "android" + Build.VERSION.RELEASE;
         this.k = "MDP";

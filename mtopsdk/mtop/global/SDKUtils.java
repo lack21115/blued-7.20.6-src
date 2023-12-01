@@ -8,9 +8,7 @@ import mtopsdk.xstate.a;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/global/SDKUtils.class */
 public class SDKUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SDKConfig f43765a = SDKConfig.a();
+    private static SDKConfig a = SDKConfig.a();
 
     public static long a() {
         return b() + (System.currentTimeMillis() / 1000);
@@ -18,7 +16,7 @@ public class SDKUtils {
 
     public static void a(String str) {
         if (str != null) {
-            f43765a.b(str);
+            a.b(str);
         }
     }
 
@@ -37,13 +35,13 @@ public class SDKUtils {
     }
 
     public static long b() {
-        String c2 = a.c();
-        if (!StringUtils.a(c2)) {
+        String c = a.c();
+        if (!StringUtils.a(c)) {
             a.a("t_offset", "0");
             return 0L;
         }
         try {
-            return Long.parseLong(c2);
+            return Long.parseLong(c);
         } catch (NumberFormatException e) {
             TBSdkLog.d("mtopsdk.SDKUtils", "[getTimeOffset]parse t_offset failed");
             return 0L;
@@ -52,7 +50,7 @@ public class SDKUtils {
 
     public static void b(String str) {
         if (str != null) {
-            f43765a.c(str);
+            a.c(str);
         }
     }
 }

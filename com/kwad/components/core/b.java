@@ -167,7 +167,7 @@ public final class b implements KsLoadManager {
 
     @Override // com.kwad.sdk.api.KsLoadManager
     public final void loadNativeAd(KsScene ksScene, final KsLoadManager.NativeAdListener nativeAdListener) {
-        com.kwad.sdk.g.a.U(com.anythink.expressad.foundation.g.a.f.f7832a, "request");
+        com.kwad.sdk.g.a.U(com.anythink.expressad.foundation.g.a.f.f4992a, "request");
         KSLoggerReporter.ReportClient.CORE_CONVERT.buildMethodCheck(BusinessType.AD_NATIVE, "loadRequest").bw(ksScene.getAdNum()).report();
         com.kwad.components.ad.a.f fVar = (com.kwad.components.ad.a.f) c.f(com.kwad.components.ad.a.f.class);
         if (fVar != null) {
@@ -182,7 +182,7 @@ public final class b implements KsLoadManager {
                     nativeAdListener.onNativeAdLoad(list);
                 }
             });
-            com.kwad.sdk.g.a.V(com.anythink.expressad.foundation.g.a.f.f7832a, "request");
+            com.kwad.sdk.g.a.V(com.anythink.expressad.foundation.g.a.f.f4992a, "request");
         } else if (com.kwad.components.ad.d.a.bI.booleanValue()) {
             f fVar2 = f.agk;
             nativeAdListener.onError(fVar2.errorCode, fVar2.msg);

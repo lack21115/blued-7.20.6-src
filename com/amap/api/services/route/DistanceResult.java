@@ -26,9 +26,7 @@ public class DistanceResult implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private DistanceSearch.DistanceQuery f5688a;
+    private DistanceSearch.DistanceQuery a;
     private List<DistanceItem> b;
 
     public DistanceResult() {
@@ -46,7 +44,7 @@ public class DistanceResult implements Parcelable {
     }
 
     public DistanceSearch.DistanceQuery getDistanceQuery() {
-        return this.f5688a;
+        return this.a;
     }
 
     public List<DistanceItem> getDistanceResults() {
@@ -54,7 +52,7 @@ public class DistanceResult implements Parcelable {
     }
 
     public void setDistanceQuery(DistanceSearch.DistanceQuery distanceQuery) {
-        this.f5688a = distanceQuery;
+        this.a = distanceQuery;
     }
 
     public void setDistanceResults(List<DistanceItem> list) {

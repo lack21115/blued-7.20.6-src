@@ -10,24 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatTextView;
+import com.android.internal.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BackgroundTextView.class */
 public class BackgroundTextView extends AppCompatTextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f14212a;
+    private boolean a;
 
     public BackgroundTextView(Context context) {
         this(context, null);
     }
 
     public BackgroundTextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842884);
+        this(context, attributeSet, R.attr.textViewStyle);
     }
 
     public BackgroundTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14212a = true;
+        this.a = true;
         a();
     }
 
@@ -47,8 +46,8 @@ public class BackgroundTextView extends AppCompatTextView {
     }
 
     public void a(int i, int i2) {
-        float a2 = a(i);
-        ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(new float[]{a2, a2, a2, a2, a2, a2, a2, a2}, null, null));
+        float a = a(i);
+        ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(new float[]{a, a, a, a, a, a, a, a}, null, null));
         shapeDrawable.getPaint().setColor(i2);
         setBackgroundDrawable(shapeDrawable);
     }
@@ -101,10 +100,11 @@ public class BackgroundTextView extends AppCompatTextView {
     }
 
     public void setHideOnNull(boolean z) {
-        this.f14212a = z;
+        this.a = z;
         setText(getText());
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void setTargetView(View view) {
         if (getParent() != null) {
             ((ViewGroup) getParent()).removeView(this);

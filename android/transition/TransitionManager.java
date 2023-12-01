@@ -107,17 +107,17 @@ public class TransitionManager {
         if (transition == null) {
             transition2 = sDefaultTransition;
         }
-        Transition mo1000clone = transition2.mo1000clone();
-        sceneChangeSetup(viewGroup, mo1000clone);
+        Transition mo996clone = transition2.mo996clone();
+        sceneChangeSetup(viewGroup, mo996clone);
         Scene.setCurrentScene(viewGroup, null);
-        sceneChangeRunTransition(viewGroup, mo1000clone);
+        sceneChangeRunTransition(viewGroup, mo996clone);
     }
 
     private static void changeScene(Scene scene, Transition transition) {
         ViewGroup sceneRoot = scene.getSceneRoot();
         Transition transition2 = null;
         if (transition != null) {
-            transition2 = transition.mo1000clone();
+            transition2 = transition.mo996clone();
             transition2.setSceneRoot(sceneRoot);
         }
         Scene currentScene = Scene.getCurrentScene(sceneRoot);

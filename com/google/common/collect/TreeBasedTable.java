@@ -105,13 +105,13 @@ public class TreeBasedTable<R, C, V> extends StandardRowSortedTable<R, C, V> {
             throw new NoSuchElementException();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<C, V> headMap(C c2) {
             Preconditions.checkArgument(rangeContains(Preconditions.checkNotNull(c2)));
             return new TreeRow(this.rowKey, this.lowerBound, c2);
         }
 
-        @Override // java.util.AbstractMap, java.util.Map
+        @Override // java.util.AbstractMap, java.util.Map, java.util.SortedMap
         public SortedSet<C> keySet() {
             return new Maps.SortedKeySet(this);
         }
@@ -152,13 +152,13 @@ public class TreeBasedTable<R, C, V> extends StandardRowSortedTable<R, C, V> {
             return false;
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<C, V> subMap(C c2, C c3) {
             Preconditions.checkArgument(rangeContains(Preconditions.checkNotNull(c2)) && rangeContains(Preconditions.checkNotNull(c3)));
             return new TreeRow(this.rowKey, c2, c3);
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<C, V> tailMap(C c2) {
             Preconditions.checkArgument(rangeContains(Preconditions.checkNotNull(c2)));
             return new TreeRow(this.rowKey, c2, this.upperBound);

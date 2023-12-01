@@ -11,8 +11,8 @@ public class a extends com.meizu.cloud.pushsdk.d.e.a {
     private static final String n = a.class.getSimpleName();
     private static ScheduledExecutorService o;
 
-    public a(a.C0611a c0611a) {
-        super(c0611a);
+    public a(a.C0441a c0441a) {
+        super(c0441a);
         b.a(this.k);
         c();
     }

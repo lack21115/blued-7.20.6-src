@@ -1,8 +1,9 @@
 package com.blued.android.module.live_china.utils.log;
 
-import android.provider.BrowserContract;
 import android.text.TextUtils;
-import com.anythink.expressad.foundation.d.l;
+import com.amap.api.fence.GeoFence;
+import com.anythink.core.common.c.g;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -17,24 +18,24 @@ import java.util.Map;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/log/InstantLog.class */
 public class InstantLog {
     public static void a(int i, int i2, int i3) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("whitening", String.valueOf(i));
-        a2.put("pinky", String.valueOf(i2));
-        a2.put("buffing", String.valueOf(i3));
-        a("filters_type_score", a2);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("whitening", String.valueOf(i));
+        a.put("pinky", String.valueOf(i2));
+        a.put("buffing", String.valueOf(i3));
+        a("filters_type_score", a);
     }
 
     public static void a(int i, String str, String str2, String str3, String str4, String str5) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("from", i + "");
-        a2.put("uid", str);
-        a2.put("item_id", str2);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("from", i + "");
+        a.put("uid", str);
+        a.put("item_id", str2);
         if (!TextUtils.isEmpty(str3)) {
-            a2.put("type", str3);
+            a.put("type", str3);
         }
-        a2.put("status", str4);
-        a2.put(l.d, str5);
-        a("live_item_show", a2);
+        a.put("status", str4);
+        a.put("num", str5);
+        a("live_item_show", a);
     }
 
     public static void a(InstantLogBody instantLogBody) {
@@ -53,76 +54,76 @@ public class InstantLog {
                 if (logData2 == null || TextUtils.isEmpty(logData2.D)) {
                     return;
                 }
-                Map<String, String> a2 = BluedHttpTools.a();
-                if (!TextUtils.isEmpty(logData.f14209a)) {
-                    a2.put(l.d, logData.f14209a);
+                Map<String, String> a = BluedHttpTools.a();
+                if (!TextUtils.isEmpty(logData.a)) {
+                    a.put("num", logData.a);
                 }
                 if (!TextUtils.isEmpty(logData.b)) {
-                    a2.put("target_uid", logData.b);
+                    a.put("target_uid", logData.b);
                 }
-                if (!TextUtils.isEmpty(logData.f14210c)) {
-                    a2.put("uid", logData.f14210c);
+                if (!TextUtils.isEmpty(logData.c)) {
+                    a.put("uid", logData.c);
                 }
                 if (!TextUtils.isEmpty(logData.d)) {
-                    a2.put("url", logData.d);
+                    a.put("url", logData.d);
                 }
                 if (!TextUtils.isEmpty(logData.e)) {
-                    a2.put("platform", logData.e);
+                    a.put("platform", logData.e);
                 }
                 if (!TextUtils.isEmpty(logData.f)) {
-                    a2.put("destination", logData.f);
+                    a.put("destination", logData.f);
                 }
                 if (!TextUtils.isEmpty(logData.g)) {
-                    a2.put("from", logData.g);
+                    a.put("from", logData.g);
                 }
                 if (!TextUtils.isEmpty(logData.h)) {
-                    a2.put("topic_category", logData.h);
+                    a.put("topic_category", logData.h);
                 }
                 if (!TextUtils.isEmpty(logData.i)) {
-                    a2.put("db_id", logData.i);
+                    a.put("db_id", logData.i);
                 }
                 if (!TextUtils.isEmpty(logData.j)) {
-                    a2.put("document_id", logData.j);
+                    a.put("document_id", logData.j);
                 }
                 if (!TextUtils.isEmpty(logData.k)) {
-                    a2.put("type", logData.k);
+                    a.put("type", logData.k);
                 }
                 if (!TextUtils.isEmpty(logData.l)) {
-                    a2.put(BrowserContract.Bookmarks.POSITION, logData.l);
+                    a.put("position", logData.l);
                 }
                 if (!TextUtils.isEmpty(logData.m)) {
-                    a2.put("time", logData.m);
+                    a.put(g.a.g, logData.m);
                 }
                 if (!TextUtils.isEmpty(logData.n)) {
-                    a2.put("id", logData.n);
+                    a.put("id", logData.n);
                 }
                 if (!TextUtils.isEmpty(logData.o)) {
-                    a2.put("content", logData.o);
+                    a.put(l.y, logData.o);
                 }
                 if (!TextUtils.isEmpty(logData.p)) {
-                    a2.put("to", logData.p);
+                    a.put("to", logData.p);
                 }
                 if (!TextUtils.isEmpty(logData.q)) {
-                    a2.put("is_self", logData.q);
+                    a.put("is_self", logData.q);
                 }
                 if (!TextUtils.isEmpty(logData.s)) {
-                    a2.put("pid", logData.s);
+                    a.put("pid", logData.s);
                 }
                 if (!TextUtils.isEmpty(logData.r)) {
-                    a2.put("item_id", logData.r);
+                    a.put("item_id", logData.r);
                 }
                 if (!TextUtils.isEmpty(logData.t)) {
-                    a2.put("topic_id", logData.t);
+                    a.put("topic_id", logData.t);
                 }
                 if (!TextUtils.isEmpty(logData.u)) {
-                    a2.put("is_hello", logData.u);
+                    a.put("is_hello", logData.u);
                 }
                 if (!TextUtils.isEmpty(logData.v)) {
-                    a2.put("status", logData.v);
+                    a.put("status", logData.v);
                 }
                 InstantLogBody instantLogBody = new InstantLogBody();
                 instantLogBody.service = logData.D;
-                InstantLog.d(instantLogBody, a2);
+                InstantLog.d(instantLogBody, a);
             }
         });
     }
@@ -138,9 +139,9 @@ public class InstantLog {
     }
 
     public static void a(String str, String str2) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("type", str2);
-        a(str, a2);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("type", str2);
+        a(str, a);
     }
 
     public static void a(String str, Map<String, String> map) {
@@ -150,15 +151,15 @@ public class InstantLog {
     }
 
     public static void b(String str, int i) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put(BrowserContract.Bookmarks.POSITION, i + "");
-        a(str, a2);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("position", i + "");
+        a(str, a);
     }
 
     public static void b(String str, String str2) {
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("id", str2);
-        a(str, a2);
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("id", str2);
+        a(str, a);
     }
 
     private static void c(final InstantLogBody instantLogBody, final Map<String, String> map) {
@@ -174,29 +175,29 @@ public class InstantLog {
     public static void d(InstantLogBody instantLogBody, Map<String, String> map) {
         if (instantLogBody != null) {
             try {
-                Map<String, String> a2 = BluedHttpTools.a();
-                a2.put("service", instantLogBody.service);
+                Map<String, String> a = BluedHttpTools.a();
+                a.put("service", instantLogBody.service);
                 if (!TextUtils.isEmpty(instantLogBody.from)) {
-                    a2.put("from", instantLogBody.from);
+                    a.put("from", instantLogBody.from);
                 }
                 if (!TextUtils.isEmpty(instantLogBody.pn)) {
-                    a2.put("pn", instantLogBody.pn);
+                    a.put("pn", instantLogBody.pn);
                 }
                 String json = AppInfo.f().toJson(map);
                 if (!TextUtils.isEmpty(json)) {
-                    a2.put("event_info", json);
+                    a.put("event_info", json);
                 }
-                a2.put("event", instantLogBody.event + "");
+                a.put(GeoFence.BUNDLE_KEY_FENCESTATUS, instantLogBody.event + "");
                 String o = LiveRoomInfo.a().o();
                 if (!TextUtils.isEmpty(o)) {
-                    a2.put("network", o);
+                    a.put("network", o);
                 }
                 if (TextUtils.isEmpty(instantLogBody.operator)) {
-                    a2.put("operator", LiveRoomInfo.a().p());
+                    a.put("operator", LiveRoomInfo.a().p());
                 } else {
-                    a2.put("operator", instantLogBody.operator);
+                    a.put("operator", instantLogBody.operator);
                 }
-                HttpManager.b(LiveRoomInfo.a().k() + "/live/log", null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).f().h();
+                HttpManager.b(LiveRoomInfo.a().k() + "/live/log", null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a)).f().h();
             } catch (Exception e) {
             }
         }

@@ -23,35 +23,35 @@ public class RequestExecutor {
     static class DefaultThreadFactory implements ThreadFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f2543a;
+        private String f2495a;
         private int b;
 
         /* loaded from: source-8756600-dex2jar.jar:androidx/core/provider/RequestExecutor$DefaultThreadFactory$ProcessPriorityThread.class */
         static class ProcessPriorityThread extends Thread {
 
             /* renamed from: a  reason: collision with root package name */
-            private final int f2544a;
+            private final int f2496a;
 
             ProcessPriorityThread(Runnable runnable, String str, int i) {
                 super(runnable, str);
-                this.f2544a = i;
+                this.f2496a = i;
             }
 
             @Override // java.lang.Thread, java.lang.Runnable
             public void run() {
-                Process.setThreadPriority(this.f2544a);
+                Process.setThreadPriority(this.f2496a);
                 super.run();
             }
         }
 
         DefaultThreadFactory(String str, int i) {
-            this.f2543a = str;
+            this.f2495a = str;
             this.b = i;
         }
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
-            return new ProcessPriorityThread(runnable, this.f2543a, this.b);
+            return new ProcessPriorityThread(runnable, this.f2495a, this.b);
         }
     }
 
@@ -60,18 +60,18 @@ public class RequestExecutor {
     public static class HandlerExecutor implements Executor {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Handler f2545a;
+        private final Handler f2497a;
 
         HandlerExecutor(Handler handler) {
-            this.f2545a = (Handler) Preconditions.checkNotNull(handler);
+            this.f2497a = (Handler) Preconditions.checkNotNull(handler);
         }
 
         @Override // java.util.concurrent.Executor
         public void execute(Runnable runnable) {
-            if (this.f2545a.post((Runnable) Preconditions.checkNotNull(runnable))) {
+            if (this.f2497a.post((Runnable) Preconditions.checkNotNull(runnable))) {
                 return;
             }
-            throw new RejectedExecutionException(this.f2545a + " is shutting down");
+            throw new RejectedExecutionException(this.f2497a + " is shutting down");
         }
     }
 
@@ -79,29 +79,29 @@ public class RequestExecutor {
     static class ReplyRunnable<T> implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private Callable<T> f2546a;
+        private Callable<T> f2498a;
         private Consumer<T> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Handler f2547c;
+        private Handler f2499c;
 
         ReplyRunnable(Handler handler, Callable<T> callable, Consumer<T> consumer) {
-            this.f2546a = callable;
+            this.f2498a = callable;
             this.b = consumer;
-            this.f2547c = handler;
+            this.f2499c = handler;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             T t;
             try {
-                t = this.f2546a.call();
+                t = this.f2498a.call();
             } catch (Exception e) {
                 t = null;
             }
             final Consumer<T> consumer = this.b;
             final T t2 = t;
-            this.f2547c.post(new Runnable() { // from class: androidx.core.provider.RequestExecutor.ReplyRunnable.1
+            this.f2499c.post(new Runnable() { // from class: androidx.core.provider.RequestExecutor.ReplyRunnable.1
                 /* JADX WARN: Multi-variable type inference failed */
                 @Override // java.lang.Runnable
                 public void run() {

@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
@@ -85,8 +84,8 @@ public class dk {
             str2 = str.replace("https://", "").replace("http://", "");
         }
         String str3 = str2;
-        if (str2.contains(BridgeUtil.SPLIT_MARK)) {
-            str3 = str2.substring(0, str2.indexOf(BridgeUtil.SPLIT_MARK));
+        if (str2.contains("/")) {
+            str3 = str2.substring(0, str2.indexOf("/"));
         }
         return str3;
     }
@@ -137,7 +136,7 @@ public class dk {
             List<InputMethodInfo> inputMethodList = ((InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE)).getInputMethodList();
             HashSet hashSet = new HashSet();
             for (InputMethodInfo inputMethodInfo : inputMethodList) {
-                hashSet.add(inputMethodInfo.getId().split(BridgeUtil.SPLIT_MARK)[0]);
+                hashSet.add(inputMethodInfo.getId().split("/")[0]);
             }
             if (hashSet.size() <= 0) {
                 return null;

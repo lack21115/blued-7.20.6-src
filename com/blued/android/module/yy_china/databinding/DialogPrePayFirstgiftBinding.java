@@ -10,13 +10,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogPrePayFirstgiftBinding.class */
 public final class DialogPrePayFirstgiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16377a;
+    public final SquareImageView a;
     public final SquareImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f16378c;
+    public final RelativeLayout c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class DialogPrePayFirstgiftBinding implements ViewBinding {
 
     private DialogPrePayFirstgiftBinding(RelativeLayout relativeLayout, SquareImageView squareImageView, SquareImageView squareImageView2, RelativeLayout relativeLayout2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, ShapeTextView shapeTextView) {
         this.j = relativeLayout;
-        this.f16377a = squareImageView;
+        this.a = squareImageView;
         this.b = squareImageView2;
-        this.f16378c = relativeLayout2;
+        this.c = relativeLayout2;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -88,7 +84,6 @@ public final class DialogPrePayFirstgiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.j;

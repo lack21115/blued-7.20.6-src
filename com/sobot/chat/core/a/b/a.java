@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    final a f28219a = this;
+    final a f14530a = this;
     private final byte[] b;
 
     public a(byte[] bArr) {

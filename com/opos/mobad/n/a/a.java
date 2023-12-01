@@ -13,11 +13,11 @@ import android.widget.TextView;
 public class a extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.n.c.f f26489a;
+    private com.opos.mobad.n.c.f f12801a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26490c;
+    private TextView f12802c;
 
     public a(Context context) {
         super(context);
@@ -27,17 +27,17 @@ public class a extends LinearLayout {
     private void a() {
         setGravity(1);
         setOrientation(1);
-        this.f26489a = new com.opos.mobad.n.c.f(getContext(), com.opos.cmn.an.h.f.a.a(getContext(), 14.0f));
+        this.f12801a = new com.opos.mobad.n.c.f(getContext(), com.opos.cmn.an.h.f.a.a(getContext(), 14.0f));
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), 70.0f), com.opos.cmn.an.h.f.a.a(getContext(), 70.0f));
-        this.f26489a.setScaleType(ImageView.ScaleType.FIT_START);
-        this.f26489a.setLayoutParams(layoutParams);
+        this.f12801a.setScaleType(ImageView.ScaleType.FIT_START);
+        this.f12801a.setLayoutParams(layoutParams);
         TextView textView = new TextView(getContext());
-        this.f26490c = textView;
+        this.f12802c = textView;
         textView.setTextSize(1, 24.0f);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         layoutParams2.topMargin = com.opos.cmn.an.h.f.a.c(getContext(), 6.0f);
-        this.f26490c.setTextColor(Color.parseColor("#000000"));
-        this.f26490c.setLayoutParams(layoutParams2);
+        this.f12802c.setTextColor(Color.parseColor("#000000"));
+        this.f12802c.setLayoutParams(layoutParams2);
         TextView textView2 = new TextView(getContext());
         this.b = textView2;
         textView2.setTextSize(1, 14.0f);
@@ -45,8 +45,8 @@ public class a extends LinearLayout {
         layoutParams3.topMargin = com.opos.cmn.an.h.f.a.a(getContext(), 2.0f);
         this.b.setTextColor(Color.parseColor("#80000000"));
         this.b.setLayoutParams(layoutParams3);
-        addView(this.f26489a);
-        addView(this.f26490c);
+        addView(this.f12801a);
+        addView(this.f12802c);
         addView(this.b);
         setVisibility(4);
     }
@@ -68,9 +68,9 @@ public class a extends LinearLayout {
     }
 
     public void a(int i, Bitmap bitmap, String str, String str2) {
-        this.f26489a.setImageBitmap(bitmap);
+        this.f12801a.setImageBitmap(bitmap);
         if (!TextUtils.isEmpty(str)) {
-            this.f26490c.setText(str);
+            this.f12802c.setText(str);
         }
         if (!TextUtils.isEmpty(str2)) {
             this.b.setText(str2);

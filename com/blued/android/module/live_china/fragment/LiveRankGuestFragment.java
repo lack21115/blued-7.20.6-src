@@ -29,13 +29,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRankGuestFragment.class */
 public class LiveRankGuestFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f13197a = "ISCOMEHOT";
+    public static String a = "ISCOMEHOT";
     public static String b = "LID";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static String f13198c = "IF_USER_ANCHOR";
+    public static String c = "IF_USER_ANCHOR";
     private boolean A;
     private ProgressBar B;
     private View g;
@@ -119,7 +115,7 @@ public class LiveRankGuestFragment extends BaseFragment {
             if (bluedEntity.extra == null || LiveRankGuestFragment.this.getParentFragment() == null) {
                 return;
             }
-            ((LiveRankGuestDialogFragment) LiveRankGuestFragment.this.getParentFragment()).a(bluedEntity.extra.notice_text, bluedEntity.extra.notice_title);
+            LiveRankGuestFragment.this.getParentFragment().a(bluedEntity.extra.notice_text, bluedEntity.extra.notice_title);
         }
     };
     public BluedUIHttpResponse e = new BluedUIHttpResponse<BluedEntity<BluedLiveRankListData, BluedLiveRankListExtra>>(getFragmentActive()) { // from class: com.blued.android.module.live_china.fragment.LiveRankGuestFragment.4
@@ -182,7 +178,7 @@ public class LiveRankGuestFragment extends BaseFragment {
             if (bluedEntity.extra == null || LiveRankGuestFragment.this.getParentFragment() == null) {
                 return;
             }
-            ((LiveRankGuestDialogFragment) LiveRankGuestFragment.this.getParentFragment()).a(bluedEntity.extra.notice_text, bluedEntity.extra.notice_title);
+            LiveRankGuestFragment.this.getParentFragment().a(bluedEntity.extra.notice_text, bluedEntity.extra.notice_title);
         }
     };
 
@@ -212,15 +208,15 @@ public class LiveRankGuestFragment extends BaseFragment {
 
     private void c() {
         if (getArguments() != null) {
-            this.y = getArguments().getBoolean(f13197a);
+            this.y = getArguments().getBoolean(a);
             this.w = getArguments().getString("UID");
             this.v = getArguments().getLong(b);
-            this.x = getArguments().getBoolean(f13198c);
+            this.x = getArguments().getBoolean(c);
         }
     }
 
     private void d() {
-        LayoutInflater layoutInflater = (LayoutInflater) this.h.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater) this.h.getSystemService("layout_inflater");
         this.k = layoutInflater;
         this.l = layoutInflater.inflate(R.layout.fragment_live_list_header, (ViewGroup) null);
         this.B = (ProgressBar) this.g.findViewById(R.id.loading_view);
@@ -286,12 +282,12 @@ public class LiveRankGuestFragment extends BaseFragment {
         a();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.h = getActivity();
         View view = this.g;
@@ -306,13 +302,13 @@ public class LiveRankGuestFragment extends BaseFragment {
         return this.g;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         this.u = System.currentTimeMillis();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (!this.z || this.u == 0) {
@@ -324,7 +320,7 @@ public class LiveRankGuestFragment extends BaseFragment {
         this.u = 0L;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.z = z;

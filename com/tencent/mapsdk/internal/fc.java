@@ -95,7 +95,7 @@ public class fc implements hc {
         int i = this.g;
         int i2 = length - i;
         byte[] bArr2 = new byte[i2];
-        System.arraycopy((Object) bArr, i, (Object) bArr2, 0, i2);
+        System.arraycopy(bArr, i, bArr2, 0, i2);
         return bArr2;
     }
 

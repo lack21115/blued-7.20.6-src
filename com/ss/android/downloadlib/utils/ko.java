@@ -70,22 +70,22 @@ public class ko {
                 String mb = com.ss.android.socialbase.appdownloader.u.b.mb(lz.optString("x"), optString);
                 JSONObject jSONObject2 = new JSONObject();
                 jb.mb(jSONObject2, "t", "v");
-                jb.mb(jSONObject2, "p", String.this);
+                jb.mb(jSONObject2, "p", str);
                 byte[] bytes = jSONObject2.toString().getBytes();
                 com.ss.android.downloadlib.addownload.x.hj().mb(mb, com.ss.android.downloadlib.addownload.x.e().mb(bytes, bytes.length), "application/octet-stream;tt-data=a", 0, new l() { // from class: com.ss.android.downloadlib.utils.ko.3.1
                     @Override // com.ss.android.download.api.config.l
                     public void mb(String str2) {
-                        ko.ox(context, String.this, str2, hVar, jSONObject);
+                        ko.ox(context, str, str2, hVar, jSONObject);
                     }
 
                     @Override // com.ss.android.download.api.config.l
                     public void mb(Throwable th) {
                         Context context2 = context;
-                        com.ss.android.downloadlib.ox.mb.mb(ko.mb(context2, Uri.parse(BaseConstants.MARKET_PREFIX + String.this)), hVar, true);
+                        com.ss.android.downloadlib.ox.mb.mb(ko.mb(context2, Uri.parse(BaseConstants.MARKET_PREFIX + str)), hVar, true);
                         jb.mb(jSONObject, EventConstants.ExtraJson.KEY_MESSAGE, th != null ? th.getMessage() : com.igexin.push.core.b.l);
                         com.ss.android.downloadlib.addownload.model.h hVar2 = hVar;
                         JSONObject jSONObject3 = jSONObject;
-                        ko.ox(hVar2, jSONObject3, 7, 5, BaseConstants.MARKET_PREFIX + String.this);
+                        ko.ox(hVar2, jSONObject3, 7, 5, BaseConstants.MARKET_PREFIX + str);
                     }
                 });
             }
@@ -296,7 +296,7 @@ public class ko {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        String mb = com.ss.android.socialbase.appdownloader.u.b.mb(jSONObject.optString("g"), str2);
+        String mb = com.ss.android.socialbase.appdownloader.u.b.mb(jSONObject.optString(OapsKey.KEY_GRADE), str2);
         String mb2 = com.ss.android.socialbase.appdownloader.u.b.mb(jSONObject.optString("h"), str2);
         String str3 = str;
         if (!TextUtils.isEmpty(mb)) {
@@ -456,7 +456,7 @@ public class ko {
                 final JSONObject jSONObject = new JSONObject();
                 String mb = com.ss.android.socialbase.appdownloader.u.b.mb(lz.optString("x"), optString);
                 JSONObject jSONObject2 = new JSONObject();
-                jb.mb(jSONObject2, "p", String.this);
+                jb.mb(jSONObject2, "p", str);
                 jb.mb(jSONObject2, "i", Build.VERSION.INCREMENTAL);
                 jb.mb(jSONObject2, "m", Build.MODEL);
                 jb.mb(jSONObject2, "im", com.ss.android.downloadlib.mb.mb.ox.mb(context));
@@ -466,17 +466,17 @@ public class ko {
                 com.ss.android.downloadlib.addownload.x.hj().mb(mb, com.ss.android.downloadlib.addownload.x.e().mb(bytes, bytes.length), "application/octet-stream;tt-data=a", 0, new l() { // from class: com.ss.android.downloadlib.utils.ko.1.1
                     @Override // com.ss.android.download.api.config.l
                     public void mb(String str2) {
-                        ko.ox(context, String.this, str2, hVar, jSONObject, lz, optString);
+                        ko.ox(context, str, str2, hVar, jSONObject, lz, optString);
                     }
 
                     @Override // com.ss.android.download.api.config.l
                     public void mb(Throwable th) {
                         Context context2 = context;
-                        com.ss.android.downloadlib.ox.mb.mb(ko.mb(context2, Uri.parse(BaseConstants.MARKET_PREFIX + String.this)), hVar, true);
+                        com.ss.android.downloadlib.ox.mb.mb(ko.mb(context2, Uri.parse(BaseConstants.MARKET_PREFIX + str)), hVar, true);
                         jb.mb(jSONObject, EventConstants.ExtraJson.KEY_MESSAGE, th != null ? th.getMessage() : com.igexin.push.core.b.l);
                         com.ss.android.downloadlib.addownload.model.h hVar2 = hVar;
                         JSONObject jSONObject3 = jSONObject;
-                        ko.ox(hVar2, jSONObject3, 4, 1, BaseConstants.MARKET_PREFIX + String.this);
+                        ko.ox(hVar2, jSONObject3, 4, 1, BaseConstants.MARKET_PREFIX + str);
                     }
                 });
             }

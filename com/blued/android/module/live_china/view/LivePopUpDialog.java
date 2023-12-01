@@ -24,13 +24,9 @@ import com.bytedance.applog.tracker.Tracker;
 public class LivePopUpDialog {
     private static String B = "";
     private int A;
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f14871a;
+    private View a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f14872c;
+    private Context c;
     private MyPopupWindow d;
     private LayoutInflater e;
     private FrameLayout f;
@@ -56,20 +52,18 @@ public class LivePopUpDialog {
     private String g = " / ";
     private TextWatcher C = new TextWatcher() { // from class: com.blued.android.module.live_china.view.LivePopUpDialog.1
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f14874c;
+        private int c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             try {
                 LivePopUpDialog.this.u.removeTextChangedListener(LivePopUpDialog.this.C);
                 this.b = LivePopUpDialog.this.u.getSelectionStart();
-                this.f14874c = LivePopUpDialog.this.u.getSelectionEnd();
+                this.c = LivePopUpDialog.this.u.getSelectionEnd();
                 while (editable.length() > LivePopUpDialog.this.A) {
-                    editable.delete(this.b - 1, this.f14874c);
+                    editable.delete(this.b - 1, this.c);
                     this.b--;
-                    this.f14874c--;
+                    this.c--;
                 }
                 int length = editable.length();
                 LivePopUpDialog.this.r.setText(length + BridgeUtil.SPLIT_MARK + LivePopUpDialog.this.A);
@@ -115,7 +109,7 @@ public class LivePopUpDialog {
         this.i = "";
         this.j = "";
         this.k = "";
-        this.f14872c = context;
+        this.c = context;
         this.h = str;
         this.i = str2;
         this.j = str3;
@@ -148,18 +142,18 @@ public class LivePopUpDialog {
         livePopUpDialog.s.setLayoutParams(layoutParams);
         livePopUpDialog.s.setBackgroundColor(context.getResources().getColor(R.color.white));
         livePopUpDialog.q.setTextColor(context.getResources().getColor(R.color.white));
-        livePopUpDialog.f14871a.setBackgroundColor(context.getResources().getColor(R.color.transparent));
+        livePopUpDialog.a.setBackgroundColor(context.getResources().getColor(R.color.transparent));
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) livePopUpDialog.y.getLayoutParams();
         layoutParams2.width = DensityUtils.a(context, 333.0f);
         livePopUpDialog.y.setLayoutParams(layoutParams2);
         livePopUpDialog.o.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
-        livePopUpDialog.f14871a.setBackgroundColor(context.getResources().getColor(R.color.sub_transparent));
+        livePopUpDialog.a.setBackgroundColor(context.getResources().getColor(R.color.sub_transparent));
         livePopUpDialog.a();
     }
 
     private void a(boolean z) {
         this.d.setOutsideTouchable(z);
-        this.f14871a.setOnClickListener(null);
+        this.a.setOnClickListener(null);
     }
 
     private void b(int i) {
@@ -167,11 +161,11 @@ public class LivePopUpDialog {
     }
 
     private void c() {
-        LayoutInflater from = LayoutInflater.from(this.f14872c);
+        LayoutInflater from = LayoutInflater.from(this.c);
         this.e = from;
         View inflate = from.inflate(R.layout.item_pop_dialog, (ViewGroup) null);
         this.f = (FrameLayout) inflate.findViewById(R.id.ll_main);
-        this.f14871a = inflate.findViewById(R.id.tv_bg);
+        this.a = inflate.findViewById(R.id.tv_bg);
         EditText editText = (EditText) inflate.findViewById(R.id.et_message);
         this.u = editText;
         editText.addTextChangedListener(this.C);
@@ -183,8 +177,8 @@ public class LivePopUpDialog {
         this.s = (TextView) inflate.findViewById(R.id.tv_buttons_top_line);
         this.x = (LinearLayout) inflate.findViewById(R.id.ll_bottom_buttons);
         this.t = (TextView) inflate.findViewById(R.id.tv_button_cut);
-        this.f14871a.setBackgroundColor(-16777216);
-        this.f14871a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LivePopUpDialog.2
+        this.a.setBackgroundColor(View.MEASURED_STATE_MASK);
+        this.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LivePopUpDialog.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -236,11 +230,11 @@ public class LivePopUpDialog {
                 }
             });
         }
-        this.b.setBackgroundColor(this.f14872c.getResources().getColor(R.color.window_bg_color));
+        this.b.setBackgroundColor(this.c.getResources().getColor(R.color.window_bg_color));
         this.b.setVisibility(8);
         MyPopupWindow myPopupWindow = new MyPopupWindow(inflate, -1, -1, true);
         this.d = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.f14872c.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.c.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.d.setTouchable(true);
         this.d.setOutsideTouchable(true);
         this.d.setFocusable(true);
@@ -262,7 +256,7 @@ public class LivePopUpDialog {
     }
 
     public void a() {
-        this.f14871a.clearAnimation();
+        this.a.clearAnimation();
         this.b.clearAnimation();
         if (this.d.isShowing()) {
             this.d.a();
@@ -271,18 +265,18 @@ public class LivePopUpDialog {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(400L);
         alphaAnimation.setFillAfter(true);
-        this.f14871a.startAnimation(alphaAnimation);
+        this.a.startAnimation(alphaAnimation);
         this.b.setVisibility(0);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f14872c, R.anim.push_center_in));
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_center_in));
     }
 
     public void b() {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(200L);
         alphaAnimation.setFillAfter(true);
-        this.f14871a.startAnimation(alphaAnimation);
+        this.a.startAnimation(alphaAnimation);
         this.b.setVisibility(8);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f14872c, R.anim.push_center_out));
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.c, R.anim.push_center_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.LivePopUpDialog.5
             @Override // java.lang.Runnable
             public void run() {

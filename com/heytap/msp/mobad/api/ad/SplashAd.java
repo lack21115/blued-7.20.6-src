@@ -29,10 +29,10 @@ public class SplashAd {
     public static class a implements c {
 
         /* renamed from: a  reason: collision with root package name */
-        private ISplashAdListener f22251a;
+        private ISplashAdListener f8643a;
 
         public a(ISplashAdListener iSplashAdListener) {
-            this.f22251a = iSplashAdListener;
+            this.f8643a = iSplashAdListener;
         }
 
         @Override // com.opos.mobad.ad.b.a
@@ -41,7 +41,7 @@ public class SplashAd {
 
         @Override // com.opos.mobad.ad.b.a
         public void a(int i, String str) {
-            ISplashAdListener iSplashAdListener = this.f22251a;
+            ISplashAdListener iSplashAdListener = this.f8643a;
             if (iSplashAdListener != null) {
                 StringBuilder sb = new StringBuilder();
                 sb.append("code=");
@@ -49,13 +49,13 @@ public class SplashAd {
                 sb.append(",msg=");
                 sb.append(str != null ? str : "");
                 iSplashAdListener.onAdFailed(sb.toString());
-                this.f22251a.onAdFailed(i, str);
+                this.f8643a.onAdFailed(i, str);
             }
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(long j) {
-            ISplashAdListener iSplashAdListener = this.f22251a;
+            ISplashAdListener iSplashAdListener = this.f8643a;
             if (iSplashAdListener != null) {
                 iSplashAdListener.onAdClick();
             }
@@ -63,16 +63,16 @@ public class SplashAd {
 
         @Override // com.opos.mobad.ad.i.b
         public void a(String str) {
-            ISplashAdListener iSplashAdListener = this.f22251a;
+            ISplashAdListener iSplashAdListener = this.f8643a;
             if (iSplashAdListener != null) {
                 iSplashAdListener.onAdShow(str);
-                this.f22251a.onAdShow();
+                this.f8643a.onAdShow();
             }
         }
 
         @Override // com.opos.mobad.ad.b.a
         public void b() {
-            ISplashAdListener iSplashAdListener = this.f22251a;
+            ISplashAdListener iSplashAdListener = this.f8643a;
             if (iSplashAdListener != null) {
                 iSplashAdListener.onAdDismissed();
             }

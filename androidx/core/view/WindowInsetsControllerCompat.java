@@ -1,5 +1,6 @@
 package androidx.core.view;
 
+import android.R;
 import android.content.Context;
 import android.opengl.GLES30;
 import android.os.Build;
@@ -20,7 +21,7 @@ public final class WindowInsetsControllerCompat {
     public static final int BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Impl f2710a;
+    private final Impl f2662a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/WindowInsetsControllerCompat$Impl.class */
     static class Impl {
@@ -68,11 +69,11 @@ public final class WindowInsetsControllerCompat {
     static class Impl20 extends Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        protected final Window f2711a;
+        protected final Window f2663a;
         private final View b;
 
         Impl20(Window window, View view) {
-            this.f2711a = window;
+            this.f2663a = window;
             this.b = view;
         }
 
@@ -86,13 +87,13 @@ public final class WindowInsetsControllerCompat {
             } else {
                 View view = this.b;
                 if (view == null || !(view.isInEditMode() || view.onCheckIsTextEditor())) {
-                    view = this.f2711a.getCurrentFocus();
+                    view = this.f2663a.getCurrentFocus();
                 } else {
                     view.requestFocus();
                 }
                 View view2 = view;
                 if (view == null) {
-                    view2 = this.f2711a.findViewById(16908290);
+                    view2 = this.f2663a.findViewById(R.id.content);
                 }
                 if (view2 == null || !view2.hasWindowFocus()) {
                     return;
@@ -114,7 +115,7 @@ public final class WindowInsetsControllerCompat {
                 d(2);
             } else if (i != 8) {
             } else {
-                ((InputMethodManager) this.f2711a.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(this.f2711a.getDecorView().getWindowToken(), 0);
+                ((InputMethodManager) this.f2663a.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(this.f2663a.getDecorView().getWindowToken(), 0);
             }
         }
 
@@ -180,21 +181,21 @@ public final class WindowInsetsControllerCompat {
         }
 
         protected void d(int i) {
-            View decorView = this.f2711a.getDecorView();
+            View decorView = this.f2663a.getDecorView();
             decorView.setSystemUiVisibility(i | decorView.getSystemUiVisibility());
         }
 
         protected void e(int i) {
-            View decorView = this.f2711a.getDecorView();
+            View decorView = this.f2663a.getDecorView();
             decorView.setSystemUiVisibility(i & decorView.getSystemUiVisibility());
         }
 
         protected void f(int i) {
-            this.f2711a.addFlags(i);
+            this.f2663a.addFlags(i);
         }
 
         protected void g(int i) {
-            this.f2711a.clearFlags(i);
+            this.f2663a.clearFlags(i);
         }
     }
 
@@ -206,7 +207,7 @@ public final class WindowInsetsControllerCompat {
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
         public boolean isAppearanceLightStatusBars() {
-            return (this.f2711a.getDecorView().getSystemUiVisibility() & 8192) != 0;
+            return (this.f2663a.getDecorView().getSystemUiVisibility() & 8192) != 0;
         }
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
@@ -229,7 +230,7 @@ public final class WindowInsetsControllerCompat {
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
         public boolean isAppearanceLightNavigationBars() {
-            return (this.f2711a.getDecorView().getSystemUiVisibility() & 16) != 0;
+            return (this.f2663a.getDecorView().getSystemUiVisibility() & 16) != 0;
         }
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
@@ -248,22 +249,22 @@ public final class WindowInsetsControllerCompat {
     static class Impl30 extends Impl {
 
         /* renamed from: a  reason: collision with root package name */
-        final WindowInsetsControllerCompat f2713a;
+        final WindowInsetsControllerCompat f2665a;
         final WindowInsetsController b;
 
         /* renamed from: c  reason: collision with root package name */
-        protected Window f2714c;
+        protected Window f2666c;
         private final SimpleArrayMap<OnControllableInsetsChangedListener, WindowInsetsController.OnControllableInsetsChangedListener> d;
 
         Impl30(Window window, WindowInsetsControllerCompat windowInsetsControllerCompat) {
             this(window.getInsetsController(), windowInsetsControllerCompat);
-            this.f2714c = window;
+            this.f2666c = window;
         }
 
         Impl30(WindowInsetsController windowInsetsController, WindowInsetsControllerCompat windowInsetsControllerCompat) {
             this.d = new SimpleArrayMap<>();
             this.b = windowInsetsController;
-            this.f2713a = windowInsetsControllerCompat;
+            this.f2665a = windowInsetsControllerCompat;
         }
 
         @Override // androidx.core.view.WindowInsetsControllerCompat.Impl
@@ -281,22 +282,22 @@ public final class WindowInsetsControllerCompat {
             this.b.controlWindowInsetsAnimation(i, j, interpolator, cancellationSignal, new WindowInsetsAnimationControlListener() { // from class: androidx.core.view.WindowInsetsControllerCompat.Impl30.1
 
                 /* renamed from: c  reason: collision with root package name */
-                private WindowInsetsAnimationControllerCompat f2716c = null;
+                private WindowInsetsAnimationControllerCompat f2668c = null;
 
                 @Override // android.view.WindowInsetsAnimationControlListener
                 public void onCancelled(WindowInsetsAnimationController windowInsetsAnimationController) {
-                    windowInsetsAnimationControlListenerCompat.onCancelled(windowInsetsAnimationController == null ? null : this.f2716c);
+                    windowInsetsAnimationControlListenerCompat.onCancelled(windowInsetsAnimationController == null ? null : this.f2668c);
                 }
 
                 @Override // android.view.WindowInsetsAnimationControlListener
                 public void onFinished(WindowInsetsAnimationController windowInsetsAnimationController) {
-                    windowInsetsAnimationControlListenerCompat.onFinished(this.f2716c);
+                    windowInsetsAnimationControlListenerCompat.onFinished(this.f2668c);
                 }
 
                 @Override // android.view.WindowInsetsAnimationControlListener
                 public void onReady(WindowInsetsAnimationController windowInsetsAnimationController, int i2) {
                     WindowInsetsAnimationControllerCompat windowInsetsAnimationControllerCompat = new WindowInsetsAnimationControllerCompat(windowInsetsAnimationController);
-                    this.f2716c = windowInsetsAnimationControllerCompat;
+                    this.f2668c = windowInsetsAnimationControllerCompat;
                     windowInsetsAnimationControlListenerCompat.onReady(windowInsetsAnimationControllerCompat, i2);
                 }
             });
@@ -311,7 +312,7 @@ public final class WindowInsetsControllerCompat {
                 @Override // android.view.WindowInsetsController.OnControllableInsetsChangedListener
                 public void onControllableInsetsChanged(WindowInsetsController windowInsetsController, int i) {
                     if (Impl30.this.b == windowInsetsController) {
-                        onControllableInsetsChangedListener.onControllableInsetsChanged(Impl30.this.f2713a, i);
+                        onControllableInsetsChangedListener.onControllableInsetsChanged(Impl30.this.f2665a, i);
                     }
                 }
             };
@@ -338,7 +339,7 @@ public final class WindowInsetsControllerCompat {
         }
 
         protected void d(int i) {
-            View decorView = this.f2714c.getDecorView();
+            View decorView = this.f2666c.getDecorView();
             decorView.setSystemUiVisibility(i & decorView.getSystemUiVisibility());
         }
 
@@ -367,7 +368,7 @@ public final class WindowInsetsControllerCompat {
                 this.b.setSystemBarsAppearance(0, 8);
                 return;
             }
-            if (this.f2714c != null) {
+            if (this.f2666c != null) {
                 d(8192);
             }
             this.b.setSystemBarsAppearance(8, 8);
@@ -381,23 +382,23 @@ public final class WindowInsetsControllerCompat {
 
     public WindowInsetsControllerCompat(Window window, View view) {
         if (Build.VERSION.SDK_INT >= 30) {
-            this.f2710a = new Impl30(window, this);
+            this.f2662a = new Impl30(window, this);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            this.f2710a = new Impl26(window, view);
+            this.f2662a = new Impl26(window, view);
         } else if (Build.VERSION.SDK_INT >= 23) {
-            this.f2710a = new Impl23(window, view);
+            this.f2662a = new Impl23(window, view);
         } else if (Build.VERSION.SDK_INT >= 20) {
-            this.f2710a = new Impl20(window, view);
+            this.f2662a = new Impl20(window, view);
         } else {
-            this.f2710a = new Impl();
+            this.f2662a = new Impl();
         }
     }
 
     private WindowInsetsControllerCompat(WindowInsetsController windowInsetsController) {
         if (Build.VERSION.SDK_INT >= 30) {
-            this.f2710a = new Impl30(windowInsetsController, this);
+            this.f2662a = new Impl30(windowInsetsController, this);
         } else {
-            this.f2710a = new Impl();
+            this.f2662a = new Impl();
         }
     }
 
@@ -406,46 +407,46 @@ public final class WindowInsetsControllerCompat {
     }
 
     public void addOnControllableInsetsChangedListener(OnControllableInsetsChangedListener onControllableInsetsChangedListener) {
-        this.f2710a.a(onControllableInsetsChangedListener);
+        this.f2662a.a(onControllableInsetsChangedListener);
     }
 
     public void controlWindowInsetsAnimation(int i, long j, Interpolator interpolator, CancellationSignal cancellationSignal, WindowInsetsAnimationControlListenerCompat windowInsetsAnimationControlListenerCompat) {
-        this.f2710a.a(i, j, interpolator, cancellationSignal, windowInsetsAnimationControlListenerCompat);
+        this.f2662a.a(i, j, interpolator, cancellationSignal, windowInsetsAnimationControlListenerCompat);
     }
 
     public int getSystemBarsBehavior() {
-        return this.f2710a.a();
+        return this.f2662a.a();
     }
 
     public void hide(int i) {
-        this.f2710a.b(i);
+        this.f2662a.b(i);
     }
 
     public boolean isAppearanceLightNavigationBars() {
-        return this.f2710a.isAppearanceLightNavigationBars();
+        return this.f2662a.isAppearanceLightNavigationBars();
     }
 
     public boolean isAppearanceLightStatusBars() {
-        return this.f2710a.isAppearanceLightStatusBars();
+        return this.f2662a.isAppearanceLightStatusBars();
     }
 
     public void removeOnControllableInsetsChangedListener(OnControllableInsetsChangedListener onControllableInsetsChangedListener) {
-        this.f2710a.b(onControllableInsetsChangedListener);
+        this.f2662a.b(onControllableInsetsChangedListener);
     }
 
     public void setAppearanceLightNavigationBars(boolean z) {
-        this.f2710a.setAppearanceLightNavigationBars(z);
+        this.f2662a.setAppearanceLightNavigationBars(z);
     }
 
     public void setAppearanceLightStatusBars(boolean z) {
-        this.f2710a.setAppearanceLightStatusBars(z);
+        this.f2662a.setAppearanceLightStatusBars(z);
     }
 
     public void setSystemBarsBehavior(int i) {
-        this.f2710a.c(i);
+        this.f2662a.c(i);
     }
 
     public void show(int i) {
-        this.f2710a.a(i);
+        this.f2662a.a(i);
     }
 }

@@ -4,7 +4,7 @@ package com.oplus.log.core;
 public abstract class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    j f24349a;
+    j f10662a;
     a b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/log/core/k$a.class */

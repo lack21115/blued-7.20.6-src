@@ -5,18 +5,14 @@ import android.content.Context;
 /* renamed from: com.amap.api.col.3sl.kh  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/kh.class */
 public final class kh {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5270a;
+    private Context a;
     private ia b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5271c;
+    private String c;
 
     public kh(Context context, ia iaVar, String str) {
-        this.f5270a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.b = iaVar;
-        this.f5271c = str;
+        this.c = str;
     }
 
     private static String a(Context context, ia iaVar, String str) {
@@ -38,6 +34,6 @@ public final class kh {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final byte[] a() {
-        return ib.a(a(this.f5270a, this.b, this.f5271c));
+        return ib.a(a(this.a, this.b, this.c));
     }
 }

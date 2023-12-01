@@ -7,9 +7,8 @@ import java.util.HashMap;
 public final class AdVideoPlayerViewCache {
     private HashMap<String, WeakReference<a>> BF;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/video/videoview/AdVideoPlayerViewCache$Holder.class */
-    public enum Holder {
+    enum Holder {
         INSTANCE;
         
         private AdVideoPlayerViewCache mInstance = new AdVideoPlayerViewCache((byte) 0);

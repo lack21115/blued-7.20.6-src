@@ -1,7 +1,6 @@
 package com.opos.exoplayer.core.c.f;
 
 import android.util.SparseArray;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,16 +11,16 @@ public interface u {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f25231a;
+        public final String f11543a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final byte[] f25232c;
+        public final byte[] f11544c;
 
         public a(String str, int i, byte[] bArr) {
-            this.f25231a = str;
+            this.f11543a = str;
             this.b = i;
-            this.f25232c = bArr;
+            this.f11544c = bArr;
         }
     }
 
@@ -29,17 +28,17 @@ public interface u {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25233a;
+        public final int f11545a;
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final List<a> f25234c;
+        public final List<a> f11546c;
         public final byte[] d;
 
         public b(int i, String str, List<a> list, byte[] bArr) {
-            this.f25233a = i;
+            this.f11545a = i;
             this.b = str;
-            this.f25234c = list == null ? Collections.emptyList() : Collections.unmodifiableList(list);
+            this.f11546c = list == null ? Collections.emptyList() : Collections.unmodifiableList(list);
             this.d = bArr;
         }
     }
@@ -55,11 +54,11 @@ public interface u {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f25235a;
+        private final String f11547a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f25236c;
+        private final int f11548c;
         private int d;
         private String e;
 
@@ -70,13 +69,13 @@ public interface u {
         public d(int i, int i2, int i3) {
             String str;
             if (i != Integer.MIN_VALUE) {
-                str = i + BridgeUtil.SPLIT_MARK;
+                str = i + "/";
             } else {
                 str = "";
             }
-            this.f25235a = str;
+            this.f11547a = str;
             this.b = i2;
-            this.f25236c = i3;
+            this.f11548c = i3;
             this.d = Integer.MIN_VALUE;
         }
 
@@ -88,8 +87,8 @@ public interface u {
 
         public void a() {
             int i = this.d;
-            this.d = i == Integer.MIN_VALUE ? this.b : i + this.f25236c;
-            this.e = this.f25235a + this.d;
+            this.d = i == Integer.MIN_VALUE ? this.b : i + this.f11548c;
+            this.e = this.f11547a + this.d;
         }
 
         public int b() {

@@ -12,15 +12,13 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/backpack/LiveGiftBackpackFragment$syntheticFragment$1.class */
 public final class LiveGiftBackpackFragment$syntheticFragment$1 extends BluedUIHttpResponse<BluedEntityA<LiveSyntheticFragmentSuccessModel>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LiveGiftBackpackFragment f13910a;
+    final /* synthetic */ LiveGiftBackpackFragment a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveGiftBackpackFragment$syntheticFragment$1(LiveGiftBackpackFragment liveGiftBackpackFragment, ActivityFragmentActive activityFragmentActive) {
         super(activityFragmentActive);
-        this.f13910a = liveGiftBackpackFragment;
+        this.a = liveGiftBackpackFragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -42,7 +40,7 @@ public final class LiveGiftBackpackFragment$syntheticFragment$1 extends BluedUIH
         if (bluedEntityA == null || (singleData = bluedEntityA.getSingleData()) == null) {
             return;
         }
-        final LiveGiftBackpackFragment liveGiftBackpackFragment = this.f13910a;
+        final LiveGiftBackpackFragment liveGiftBackpackFragment = this.a;
         liveGiftBackpackFragment.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.mine.backpack.-$$Lambda$LiveGiftBackpackFragment$syntheticFragment$1$N2wYRgu6t3sQni_P1qw8S19aTNc
             @Override // java.lang.Runnable
             public final void run() {

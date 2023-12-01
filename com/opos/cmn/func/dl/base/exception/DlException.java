@@ -21,59 +21,59 @@ public final class DlException extends Exception implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24921a;
+    private int f11233a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f24922c;
+    private int f11234c;
 
     public DlException() {
-        this.f24922c = -1;
-        this.f24921a = 1000;
+        this.f11234c = -1;
+        this.f11233a = 1000;
         this.b = a.a(1000);
     }
 
     public DlException(int i) {
-        this.f24922c = -1;
-        this.f24921a = i;
+        this.f11234c = -1;
+        this.f11233a = i;
         this.b = a.a(i);
     }
 
     public DlException(int i, int i2) {
-        this.f24922c = -1;
-        this.f24921a = i;
-        this.f24922c = i2;
+        this.f11234c = -1;
+        this.f11233a = i;
+        this.f11234c = i2;
         this.b = a.a(i);
     }
 
     public DlException(int i, int i2, String str) {
-        this.f24922c = -1;
-        this.f24921a = i;
-        this.f24922c = i2;
+        this.f11234c = -1;
+        this.f11233a = i;
+        this.f11234c = i2;
         this.b = TextUtils.isEmpty(str) ? a.a(i) : str;
     }
 
     public DlException(int i, Throwable th) {
         super(th);
-        this.f24922c = -1;
-        this.f24921a = i;
+        this.f11234c = -1;
+        this.f11233a = i;
         this.b = th.getMessage();
     }
 
     public DlException(int i, Object... objArr) {
-        this.f24922c = -1;
-        this.f24921a = i;
+        this.f11234c = -1;
+        this.f11233a = i;
         this.b = String.format(a.a(i), objArr);
     }
 
     private DlException(Parcel parcel) {
-        this.f24922c = -1;
-        this.f24921a = parcel.readInt();
+        this.f11234c = -1;
+        this.f11233a = parcel.readInt();
         this.b = parcel.readString();
     }
 
     public final int a() {
-        return this.f24921a;
+        return this.f11233a;
     }
 
     public final String b() {
@@ -87,13 +87,13 @@ public final class DlException extends Exception implements Parcelable {
 
     @Override // java.lang.Throwable
     public final String toString() {
-        return "DlException{code=" + this.f24921a + ", msg='" + this.b + "', httpCode=" + this.f24922c + '}';
+        return "DlException{code=" + this.f11233a + ", msg='" + this.b + "', httpCode=" + this.f11234c + '}';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f24921a);
+        parcel.writeInt(this.f11233a);
         parcel.writeString(this.b);
-        parcel.writeInt(this.f24922c);
+        parcel.writeInt(this.f11234c);
     }
 }

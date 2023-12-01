@@ -30,20 +30,18 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/live_info/LiveRoomInfo.class */
 public class LiveRoomInfo {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static LiveRoomInfo f13565a;
+    public static LiveRoomInfo a;
     private ILiveRoomInfoCallBack b;
 
     public static LiveRoomInfo a() {
-        if (f13565a == null) {
-            f13565a = new LiveRoomInfo();
+        if (a == null) {
+            a = new LiveRoomInfo();
         }
-        return f13565a;
+        return a;
     }
 
     public static boolean b() {
-        LiveRoomInfo liveRoomInfo = f13565a;
+        LiveRoomInfo liveRoomInfo = a;
         return (liveRoomInfo == null || liveRoomInfo.b == null) ? false : true;
     }
 

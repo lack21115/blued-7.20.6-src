@@ -3,9 +3,8 @@ package com.google.common.collect;
 import java.io.Serializable;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/ImmutableEntry.class */
-public class ImmutableEntry<K, V> extends AbstractMapEntry<K, V> implements Serializable {
+class ImmutableEntry<K, V> extends AbstractMapEntry<K, V> implements Serializable {
     private static final long serialVersionUID = 0;
     @NullableDecl
     final K key;

@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveCreateLayoutBinding.class */
 public final class LiveCreateLayoutBinding implements ViewBinding {
+    private final FrameLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f12175a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f12175a;
+        return this.a;
     }
 }

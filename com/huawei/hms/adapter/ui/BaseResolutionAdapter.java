@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference;
 public class BaseResolutionAdapter implements IBridgeActivityDelegate {
 
     /* renamed from: a  reason: collision with root package name */
-    public WeakReference<Activity> f22426a;
+    public WeakReference<Activity> f8818a;
     public String b = "";
 
     public final void a() {
@@ -30,7 +30,7 @@ public class BaseResolutionAdapter implements IBridgeActivityDelegate {
     }
 
     public final Activity b() {
-        WeakReference<Activity> weakReference = this.f22426a;
+        WeakReference<Activity> weakReference = this.f8818a;
         if (weakReference == null) {
             return null;
         }
@@ -49,7 +49,7 @@ public class BaseResolutionAdapter implements IBridgeActivityDelegate {
 
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
     public void onBridgeActivityCreate(Activity activity) {
-        this.f22426a = new WeakReference<>(activity);
+        this.f8818a = new WeakReference<>(activity);
         Intent intent = activity.getIntent();
         if (intent == null) {
             c();
@@ -84,7 +84,7 @@ public class BaseResolutionAdapter implements IBridgeActivityDelegate {
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
     public void onBridgeActivityDestroy() {
         HMSLog.i("BaseResolutionAdapter", "onBridgeActivityDestroy");
-        this.f22426a = null;
+        this.f8818a = null;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x003a, code lost:

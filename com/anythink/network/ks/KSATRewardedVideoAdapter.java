@@ -10,8 +10,8 @@ import com.anythink.core.api.ATBiddingResult;
 import com.anythink.core.api.ATInitMediation;
 import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.MediationInitCallback;
-import com.anythink.core.common.b.g;
 import com.anythink.rewardvideo.unitgroup.api.CustomRewardVideoAdapter;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.kwad.sdk.api.KsAdSDK;
 import com.kwad.sdk.api.KsLoadManager;
 import com.kwad.sdk.api.KsRewardVideoAd;
@@ -26,7 +26,7 @@ import java.util.Map;
 public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    long f9007a;
+    long f6167a;
     int b;
     boolean d;
     String e;
@@ -34,7 +34,7 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     KsRewardVideoAd g;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f9008c = false;
+    boolean f6168c = false;
     boolean h = false;
     boolean i = false;
 
@@ -70,7 +70,7 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                 ATBiddingListener aTBiddingListener = KSATRewardedVideoAdapter.this.mBiddingListener;
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(d, sb.toString(), kSATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
             }
         }
 
@@ -85,15 +85,15 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     static /* synthetic */ void A(KSATRewardedVideoAdapter kSATRewardedVideoAdapter) {
         HashMap hashMap = new HashMap();
         hashMap.put("thirdUserId", kSATRewardedVideoAdapter.mUserId);
-        if (!TextUtils.isEmpty(kSATRewardedVideoAdapter.mUserData) && kSATRewardedVideoAdapter.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
+        if (!TextUtils.isEmpty(kSATRewardedVideoAdapter.mUserData) && kSATRewardedVideoAdapter.mUserData.contains("{network_placement_id}")) {
             String str = kSATRewardedVideoAdapter.mUserData;
             StringBuilder sb = new StringBuilder();
-            sb.append(kSATRewardedVideoAdapter.f9007a);
-            kSATRewardedVideoAdapter.mUserData = str.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, sb.toString());
+            sb.append(kSATRewardedVideoAdapter.f6167a);
+            kSATRewardedVideoAdapter.mUserData = str.replace("{network_placement_id}", sb.toString());
         }
         hashMap.put("extraData", kSATRewardedVideoAdapter.mUserData);
         int i = 1;
-        KsScene.Builder adNum = new KsScene.Builder(kSATRewardedVideoAdapter.f9007a).adNum(1);
+        KsScene.Builder adNum = new KsScene.Builder(kSATRewardedVideoAdapter.f6167a).adNum(1);
         if (kSATRewardedVideoAdapter.b == 2) {
             i = 2;
         }
@@ -107,15 +107,15 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
     private void a() {
         HashMap hashMap = new HashMap();
         hashMap.put("thirdUserId", this.mUserId);
-        if (!TextUtils.isEmpty(this.mUserData) && this.mUserData.contains(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME)) {
+        if (!TextUtils.isEmpty(this.mUserData) && this.mUserData.contains("{network_placement_id}")) {
             String str = this.mUserData;
             StringBuilder sb = new StringBuilder();
-            sb.append(this.f9007a);
-            this.mUserData = str.replace(ATAdConst.REWARD_EXTRA_REPLACE_HODLER_KEY.NETWORK_PLACEMENT_ID_HOLDER_NAME, sb.toString());
+            sb.append(this.f6167a);
+            this.mUserData = str.replace("{network_placement_id}", sb.toString());
         }
         hashMap.put("extraData", this.mUserData);
         int i = 1;
-        KsScene.Builder adNum = new KsScene.Builder(this.f9007a).adNum(1);
+        KsScene.Builder adNum = new KsScene.Builder(this.f6167a).adNum(1);
         if (this.b == 2) {
             i = 2;
         }
@@ -133,7 +133,7 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             return false;
         }
         try {
-            this.f9007a = Long.parseLong(stringFromMap2);
+            this.f6167a = Long.parseLong(stringFromMap2);
         } catch (NumberFormatException e) {
         }
         if (map.containsKey("orientation")) {
@@ -144,13 +144,13 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
             this.d = TextUtils.equals("0", ATInitMediation.getStringFromMap(map, "video_muted"));
         }
         if (map2.containsKey(KSATConst.REWARDEDVIDEO_SKIP_AFTER_THIRTY_SECOND)) {
-            this.f9008c = ATInitMediation.getBooleanFromMap(map2, KSATConst.REWARDEDVIDEO_SKIP_AFTER_THIRTY_SECOND);
+            this.f6168c = ATInitMediation.getBooleanFromMap(map2, KSATConst.REWARDEDVIDEO_SKIP_AFTER_THIRTY_SECOND);
         }
-        if (map.containsKey(g.k.o)) {
-            this.f = ATInitMediation.getDoubleFromMap(map, g.k.o);
+        if (map.containsKey("anythink_gsp")) {
+            this.f = ATInitMediation.getDoubleFromMap(map, "anythink_gsp");
         }
-        if (map.containsKey("payload")) {
-            this.e = KSATInitManager.getInstance().getPayloadInfo(ATInitMediation.getStringFromMap(map, "payload"), this.f);
+        if (map.containsKey(AssistPushConsts.MSG_TYPE_PAYLOAD)) {
+            this.e = KSATInitManager.getInstance().getPayloadInfo(ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD), this.f);
             return true;
         }
         return true;
@@ -166,7 +166,6 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         return 2;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         KsRewardVideoAd ksRewardVideoAd = this.g;
         if (ksRewardVideoAd != null) {
@@ -176,48 +175,40 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
-        this.f9007a = ATInitMediation.getLongFromMap(map, "position_id");
+        this.f6167a = ATInitMediation.getLongFromMap(map, "position_id");
         KSATInitManager.getInstance().a(context, map, map2, aTBidRequestInfoListener);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return KSATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         try {
-            return String.valueOf(this.f9007a);
+            return String.valueOf(this.f6167a);
         } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return KSATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         KsRewardVideoAd ksRewardVideoAd = this.g;
         return ksRewardVideoAd != null && ksRewardVideoAd.isAdEnable();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, Map<String, Object> map, Map<String, Object> map2) {
         if (a(map, map2)) {
             KSATInitManager.getInstance().initSDK(context.getApplicationContext(), map, new MediationInitCallback() { // from class: com.anythink.network.ks.KSATRewardedVideoAdapter.3
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     KSATRewardedVideoAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     KSATRewardedVideoAdapter.A(KSATRewardedVideoAdapter.this);
                 }
@@ -358,7 +349,7 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
                     KSATRewardedVideoAdapter.v(KSATRewardedVideoAdapter.this);
                 }
             });
-            KsVideoPlayConfig build = new KsVideoPlayConfig.Builder().showLandscape(this.b == 2).skipThirtySecond(this.f9008c).videoSoundEnable(this.d).build();
+            KsVideoPlayConfig build = new KsVideoPlayConfig.Builder().showLandscape(this.b == 2).skipThirtySecond(this.f6168c).videoSoundEnable(this.d).build();
             this.i = false;
             this.g.showRewardVideoAd(activity, build);
         } catch (Exception e) {
@@ -366,7 +357,6 @@ public class KSATRewardedVideoAdapter extends CustomRewardVideoAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.h = true;
         loadCustomNetworkAd(context, map, map2);

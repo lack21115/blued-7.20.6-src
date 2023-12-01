@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemRelationshipToInviteGiftBinding.class */
 public final class ItemRelationshipToInviteGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16650a;
+    public final SquareImageView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16651c;
+    public final TextView c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private ItemRelationshipToInviteGiftBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, LinearLayout linearLayout, TextView textView, TextView textView2) {
         this.e = constraintLayout;
-        this.f16650a = squareImageView;
+        this.a = squareImageView;
         this.b = linearLayout;
-        this.f16651c = textView;
+        this.c = textView;
         this.d = textView2;
     }
 
@@ -53,7 +49,6 @@ public final class ItemRelationshipToInviteGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

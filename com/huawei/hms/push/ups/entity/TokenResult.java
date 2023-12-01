@@ -4,7 +4,7 @@ package com.huawei.hms.push.ups.entity;
 public class TokenResult extends CodeResult {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22865c;
+    private String f9257c;
 
     public TokenResult() {
     }
@@ -18,14 +18,14 @@ public class TokenResult extends CodeResult {
     }
 
     public TokenResult(String str) {
-        this.f22865c = str;
+        this.f9257c = str;
     }
 
     public String getToken() {
-        return this.f22865c;
+        return this.f9257c;
     }
 
     public void setToken(String str) {
-        this.f22865c = str;
+        this.f9257c = str;
     }
 }

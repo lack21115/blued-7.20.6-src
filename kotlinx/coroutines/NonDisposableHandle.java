@@ -5,9 +5,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/NonDisposableHandle.class */
 public final class NonDisposableHandle implements ChildHandle, DisposableHandle {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final NonDisposableHandle f42847a = new NonDisposableHandle();
+    public static final NonDisposableHandle a = new NonDisposableHandle();
 
     private NonDisposableHandle() {
     }

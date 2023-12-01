@@ -4,11 +4,11 @@ package com.tencent.liteav.audio.earmonitor;
 final /* synthetic */ class g implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36244a;
+    private final a f22553a;
     private final int b;
 
     private g(a aVar, int i) {
-        this.f36244a = aVar;
+        this.f22553a = aVar;
         this.b = i;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class g implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.a(this.f36244a, this.b);
+        a.a(this.f22553a, this.b);
     }
 }

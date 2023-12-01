@@ -14,18 +14,18 @@ import java.util.List;
 class ThumbnailStreamOpener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final FileService f20732a = new FileService();
+    private static final FileService f7126a = new FileService();
     private final FileService b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ThumbnailQuery f20733c;
+    private final ThumbnailQuery f7127c;
     private final ArrayPool d;
     private final ContentResolver e;
     private final List<ImageHeaderParser> f;
 
     ThumbnailStreamOpener(List<ImageHeaderParser> list, FileService fileService, ThumbnailQuery thumbnailQuery, ArrayPool arrayPool, ContentResolver contentResolver) {
         this.b = fileService;
-        this.f20733c = thumbnailQuery;
+        this.f7127c = thumbnailQuery;
         this.d = arrayPool;
         this.e = contentResolver;
         this.f = list;
@@ -33,7 +33,7 @@ class ThumbnailStreamOpener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ThumbnailStreamOpener(List<ImageHeaderParser> list, ThumbnailQuery thumbnailQuery, ArrayPool arrayPool, ContentResolver contentResolver) {
-        this(list, f20732a, thumbnailQuery, arrayPool, contentResolver);
+        this(list, f7126a, thumbnailQuery, arrayPool, contentResolver);
     }
 
     private boolean a(File file) {
@@ -51,7 +51,7 @@ class ThumbnailStreamOpener {
             r0 = 0
             r6 = r0
             r0 = r4
-            com.bumptech.glide.load.data.mediastore.ThumbnailQuery r0 = r0.f20733c     // Catch: java.lang.Throwable -> L45 java.lang.SecurityException -> L49
+            com.bumptech.glide.load.data.mediastore.ThumbnailQuery r0 = r0.f7127c     // Catch: java.lang.Throwable -> L45 java.lang.SecurityException -> L49
             r1 = r5
             android.database.Cursor r0 = r0.query(r1)     // Catch: java.lang.Throwable -> L45 java.lang.SecurityException -> L49
             r7 = r0

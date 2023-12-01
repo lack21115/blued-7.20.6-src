@@ -12,11 +12,11 @@ import java.util.Set;
 public class g implements com.tencent.beacon.a.a.d, Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f35055a;
+    private final String f21364a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.tencent.beacon.event.a.a f35056c;
+    private final com.tencent.beacon.event.a.a f21365c;
     private final Set<Long> d = new HashSet();
     private final Set<Long> e = new HashSet();
     private final List<Long> f = new ArrayList();
@@ -28,17 +28,17 @@ public class g implements com.tencent.beacon.a.a.d, Runnable {
 
     public g(int i, com.tencent.beacon.event.a.a aVar, boolean z) {
         this.b = i;
-        this.f35056c = aVar;
+        this.f21365c = aVar;
         this.h = z;
-        this.f35055a = z ? "t_r_e" : "t_n_e";
+        this.f21364a = z ? "t_r_e" : "t_n_e";
         this.i = z ? com.tencent.beacon.e.b.a().d() : com.tencent.beacon.e.b.a().c();
-        this.g = "[EventReport (" + this.f35055a + ")]";
+        this.g = "[EventReport (" + this.f21364a + ")]";
     }
 
     private void a(List<EventBean> list, Set<Long> set) {
         JceRequestEntity a2 = com.tencent.beacon.event.c.d.a(list, this.h);
         com.tencent.beacon.base.util.c.a(this.g, 2, "event request entity: %s", a2.toString());
-        com.tencent.beacon.base.net.c.c().b(a2).a(new f(this, this.f35055a, this.f35056c, set, this.k));
+        com.tencent.beacon.base.net.c.c().b(a2).a(new f(this, this.f21364a, this.f21365c, set, this.k));
     }
 
     private List<EventBean> b() {
@@ -47,7 +47,7 @@ public class g implements com.tencent.beacon.a.a.d, Runnable {
             sb.append(l);
             sb.append(",");
         }
-        return this.f35056c.a(this.f35055a, sb.length() > 0 ? sb.substring(0, sb.lastIndexOf(",")) : "", this.i);
+        return this.f21365c.a(this.f21364a, sb.length() > 0 ? sb.substring(0, sb.lastIndexOf(",")) : "", this.i);
     }
 
     private void c() {
@@ -78,7 +78,7 @@ public class g implements com.tencent.beacon.a.a.d, Runnable {
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
         Map map;
-        if (cVar.f34920a != 2 || (map = (Map) cVar.b.get("d_m")) == null) {
+        if (cVar.f21229a != 2 || (map = (Map) cVar.b.get("d_m")) == null) {
             return;
         }
         if (this.h) {

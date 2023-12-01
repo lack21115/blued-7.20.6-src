@@ -12,7 +12,7 @@ import skin.support.widget.SkinCompatBackgroundHelper;
 public class NearbyHomeViewPager extends ViewPager implements BluedSkinSupportable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f28458a;
+    private Rect f14768a;
     private SkinCompatBackgroundHelper b;
 
     public NearbyHomeViewPager(Context context) {
@@ -26,7 +26,6 @@ public class NearbyHomeViewPager extends ViewPager implements BluedSkinSupportab
         skinCompatBackgroundHelper.a(attributeSet, 0);
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.b;
         if (skinCompatBackgroundHelper != null) {
@@ -37,7 +36,7 @@ public class NearbyHomeViewPager extends ViewPager implements BluedSkinSupportab
     @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         try {
-            if (getCurrentItem() == 0 && this.f28458a != null && this.f28458a.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+            if (getCurrentItem() == 0 && this.f14768a != null && this.f14768a.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 return false;
             }
             return super.onInterceptTouchEvent(motionEvent);
@@ -56,6 +55,6 @@ public class NearbyHomeViewPager extends ViewPager implements BluedSkinSupportab
     }
 
     public void setIgnoreRect(Rect rect) {
-        this.f28458a = rect;
+        this.f14768a = rect;
     }
 }

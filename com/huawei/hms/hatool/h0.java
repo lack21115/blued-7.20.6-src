@@ -3,7 +3,6 @@ package com.huawei.hms.hatool;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Map;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/hatool/h0.class */
@@ -107,8 +106,8 @@ public class h0 {
         String packageName = context.getPackageName();
         String n = c.n("_hms_config_tag", "oper");
         if (TextUtils.isEmpty(n)) {
-            return "hms_" + str + BridgeUtil.UNDERLINE_STR + packageName;
+            return "hms_" + str + "_" + packageName;
         }
-        return "hms_" + str + BridgeUtil.UNDERLINE_STR + packageName + BridgeUtil.UNDERLINE_STR + n;
+        return "hms_" + str + "_" + packageName + "_" + n;
     }
 }

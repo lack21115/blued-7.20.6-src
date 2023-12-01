@@ -6,10 +6,10 @@ import com.tencent.liteav.videoproducer.capture.ah;
 final /* synthetic */ class ap implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ah.AnonymousClass1 f36878a;
+    private final ah.AnonymousClass1 f23187a;
 
     private ap(ah.AnonymousClass1 anonymousClass1) {
-        this.f36878a = anonymousClass1;
+        this.f23187a = anonymousClass1;
     }
 
     public static Runnable a(ah.AnonymousClass1 anonymousClass1) {

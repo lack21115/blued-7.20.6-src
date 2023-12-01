@@ -1,6 +1,5 @@
 package com.soft.blued.ui.user.fragment;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.text.SpannableString;
 import android.text.TextPaint;
@@ -44,11 +43,11 @@ import kotlin.text.StringsKt;
 public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment implements VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f34178a = new Companion(null);
+    public static final Companion f20487a = new Companion(null);
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<VipUpgradeModel> f34179c;
+    private final List<VipUpgradeModel> f20488c;
     private final int d;
     private final Lazy e;
     private boolean f;
@@ -69,41 +68,41 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
             this();
         }
 
-        public final VipUpgradeDialogFragment a(Context context, FragmentManager manager, List<? extends VipUpgradeModel> data, int i, String vipDetail, int i2) {
+        public final VipUpgradeDialogFragment a(Context context, FragmentManager fragmentManager, List<? extends VipUpgradeModel> list, int i, String str, int i2) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(manager, "manager");
-            Intrinsics.e(data, "data");
-            Intrinsics.e(vipDetail, "vipDetail");
-            return a(context, manager, data, i, vipDetail, i2, VipProtos.FromType.UNKNOWN_FROM);
+            Intrinsics.e(fragmentManager, "manager");
+            Intrinsics.e(list, "data");
+            Intrinsics.e(str, "vipDetail");
+            return a(context, fragmentManager, list, i, str, i2, VipProtos.FromType.UNKNOWN_FROM);
         }
 
-        public final VipUpgradeDialogFragment a(Context context, FragmentManager manager, List<? extends VipUpgradeModel> data, int i, String vipDetail, int i2, VipProtos.FromType fromType) {
+        public final VipUpgradeDialogFragment a(Context context, FragmentManager fragmentManager, List<? extends VipUpgradeModel> list, int i, String str, int i2, VipProtos.FromType fromType) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(manager, "manager");
-            Intrinsics.e(data, "data");
-            Intrinsics.e(vipDetail, "vipDetail");
+            Intrinsics.e(fragmentManager, "manager");
+            Intrinsics.e(list, "data");
+            Intrinsics.e(str, "vipDetail");
             Intrinsics.e(fromType, "fromType");
-            VipUpgradeDialogFragment vipUpgradeDialogFragment = new VipUpgradeDialogFragment(context, data, i, vipDetail, i2, fromType);
-            vipUpgradeDialogFragment.show(manager, VipUpgradeDialogFragment.class.getSimpleName());
+            VipUpgradeDialogFragment vipUpgradeDialogFragment = new VipUpgradeDialogFragment(context, list, i, str, i2, fromType);
+            vipUpgradeDialogFragment.show(fragmentManager, VipUpgradeDialogFragment.class.getSimpleName());
             return vipUpgradeDialogFragment;
         }
 
-        public final VipUpgradeDialogFragment a(Context context, FragmentManager manager, List<? extends VipUpgradeModel> data, boolean z) {
+        public final VipUpgradeDialogFragment a(Context context, FragmentManager fragmentManager, List<? extends VipUpgradeModel> list, boolean z) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(manager, "manager");
-            Intrinsics.e(data, "data");
-            VipUpgradeDialogFragment vipUpgradeDialogFragment = new VipUpgradeDialogFragment(context, data, z ? 3 : 1);
-            vipUpgradeDialogFragment.show(manager, VipUpgradeDialogFragment.class.getSimpleName());
+            Intrinsics.e(fragmentManager, "manager");
+            Intrinsics.e(list, "data");
+            VipUpgradeDialogFragment vipUpgradeDialogFragment = new VipUpgradeDialogFragment(context, list, z ? 3 : 1);
+            vipUpgradeDialogFragment.show(fragmentManager, VipUpgradeDialogFragment.class.getSimpleName());
             return vipUpgradeDialogFragment;
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public VipUpgradeDialogFragment(Context mContext, List<? extends VipUpgradeModel> data, int i) {
-        Intrinsics.e(mContext, "mContext");
-        Intrinsics.e(data, "data");
-        this.b = mContext;
-        this.f34179c = data;
+    public VipUpgradeDialogFragment(Context context, List<? extends VipUpgradeModel> list, int i) {
+        Intrinsics.e(context, "mContext");
+        Intrinsics.e(list, "data");
+        this.b = context;
+        this.f20488c = list;
         this.d = i;
         this.e = LazyKt.a(new Function0<DialogVipUpgradeBinding>() { // from class: com.soft.blued.ui.user.fragment.VipUpgradeDialogFragment$viewBinding$2
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -111,7 +110,6 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
                 super(0);
             }
 
-            @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final DialogVipUpgradeBinding invoke() {
                 return DialogVipUpgradeBinding.a(LayoutInflater.from(VipUpgradeDialogFragment.this.getContext()));
@@ -124,73 +122,74 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public VipUpgradeDialogFragment(Context context, List<? extends VipUpgradeModel> data, int i, String vipDetail, int i2, VipProtos.FromType fromType) {
-        this(context, data, 2);
+    public VipUpgradeDialogFragment(Context context, List<? extends VipUpgradeModel> list, int i, String str, int i2, VipProtos.FromType fromType) {
+        this(context, list, 2);
         Intrinsics.e(context, "context");
-        Intrinsics.e(data, "data");
-        Intrinsics.e(vipDetail, "vipDetail");
+        Intrinsics.e(list, "data");
+        Intrinsics.e(str, "vipDetail");
         Intrinsics.e(fromType, "fromType");
         this.h = i;
-        this.i = vipDetail;
+        this.i = str;
         this.j = i2;
         this.k = fromType;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(DialogVipUpgradeBinding this_apply, VipUpgradeDialogFragment this$0, View view) {
+    public static final void a(DialogVipUpgradeBinding dialogVipUpgradeBinding, VipUpgradeDialogFragment vipUpgradeDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this_apply, "$this_apply");
-        Intrinsics.e(this$0, "this$0");
-        this_apply.f28733c.setImageResource(R.drawable.icon_pay_type_select);
-        this_apply.d.setImageResource(R.drawable.icon_agreement_unselect);
-        this$0.l = true;
+        Intrinsics.e(dialogVipUpgradeBinding, "$this_apply");
+        Intrinsics.e(vipUpgradeDialogFragment, "this$0");
+        dialogVipUpgradeBinding.f15043c.setImageResource(R.drawable.icon_pay_type_select);
+        dialogVipUpgradeBinding.d.setImageResource(R.drawable.icon_agreement_unselect);
+        vipUpgradeDialogFragment.l = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VipUpgradeOptionAdapter optionAdapter, VipUpgradeDialogFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(optionAdapter, "$optionAdapter");
-        Intrinsics.e(this$0, "this$0");
-        List<VipUpgradeModel> data = optionAdapter.getData();
+    public static final void a(VipUpgradeOptionAdapter vipUpgradeOptionAdapter, VipUpgradeDialogFragment vipUpgradeDialogFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(vipUpgradeOptionAdapter, "$optionAdapter");
+        Intrinsics.e(vipUpgradeDialogFragment, "this$0");
+        List<VipUpgradeModel> data = vipUpgradeOptionAdapter.getData();
         Intrinsics.c(data, "optionAdapter.data");
-        Iterator<VipUpgradeModel> it = data.iterator();
+        Iterator<T> it = data.iterator();
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (!it.hasNext()) {
                 return;
             }
-            it.next();
+            Object next = it.next();
             if (i3 < 0) {
                 CollectionsKt.c();
             }
-            optionAdapter.getData().get(i3).choose = i3 == i;
-            VipUpgradeModel vipUpgradeModel = optionAdapter.getData().get(i);
-            Intrinsics.c(vipUpgradeModel, "optionAdapter.data[position]");
-            this$0.a(vipUpgradeModel);
-            optionAdapter.notifyDataSetChanged();
+            VipUpgradeModel vipUpgradeModel = (VipUpgradeModel) next;
+            vipUpgradeOptionAdapter.getData().get(i3).choose = i3 == i;
+            VipUpgradeModel vipUpgradeModel2 = vipUpgradeOptionAdapter.getData().get(i);
+            Intrinsics.c(vipUpgradeModel2, "optionAdapter.data[position]");
+            vipUpgradeDialogFragment.a(vipUpgradeModel2);
+            vipUpgradeOptionAdapter.notifyDataSetChanged();
             i2 = i3 + 1;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VipUpgradeDialogFragment this$0, View view) {
+    public static final void a(VipUpgradeDialogFragment vipUpgradeDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        PayUtils.a(this$0.getContext(), this$0.h, this$0.i, this$0.j, this$0.k, false);
-        this$0.dismiss();
+        Intrinsics.e(vipUpgradeDialogFragment, "this$0");
+        PayUtils.a(vipUpgradeDialogFragment.getContext(), vipUpgradeDialogFragment.h, vipUpgradeDialogFragment.i, vipUpgradeDialogFragment.j, vipUpgradeDialogFragment.k, false);
+        vipUpgradeDialogFragment.dismiss();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(VipUpgradeDialogFragment this$0, DialogVipUpgradeBinding this_apply, View view) {
+    public static final void a(VipUpgradeDialogFragment vipUpgradeDialogFragment, DialogVipUpgradeBinding dialogVipUpgradeBinding, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        Intrinsics.e(this_apply, "$this_apply");
-        boolean z = !this$0.f;
-        this$0.f = z;
+        Intrinsics.e(vipUpgradeDialogFragment, "this$0");
+        Intrinsics.e(dialogVipUpgradeBinding, "$this_apply");
+        boolean z = !vipUpgradeDialogFragment.f;
+        vipUpgradeDialogFragment.f = z;
         if (z) {
-            this_apply.e.setImageResource(R.drawable.icon_agreement_select);
+            dialogVipUpgradeBinding.e.setImageResource(R.drawable.icon_agreement_select);
         } else {
-            this_apply.e.setImageResource(R.drawable.icon_agreement_unselect);
+            dialogVipUpgradeBinding.e.setImageResource(R.drawable.icon_agreement_unselect);
         }
     }
 
@@ -262,20 +261,20 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(DialogVipUpgradeBinding this_apply, VipUpgradeDialogFragment this$0, View view) {
+    public static final void b(DialogVipUpgradeBinding dialogVipUpgradeBinding, VipUpgradeDialogFragment vipUpgradeDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this_apply, "$this_apply");
-        Intrinsics.e(this$0, "this$0");
-        this_apply.f28733c.setImageResource(R.drawable.icon_agreement_unselect);
-        this_apply.d.setImageResource(R.drawable.icon_pay_type_select);
-        this$0.l = false;
+        Intrinsics.e(dialogVipUpgradeBinding, "$this_apply");
+        Intrinsics.e(vipUpgradeDialogFragment, "this$0");
+        dialogVipUpgradeBinding.f15043c.setImageResource(R.drawable.icon_agreement_unselect);
+        dialogVipUpgradeBinding.d.setImageResource(R.drawable.icon_pay_type_select);
+        vipUpgradeDialogFragment.l = false;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(VipUpgradeDialogFragment this$0, View view) {
+    public static final void b(VipUpgradeDialogFragment vipUpgradeDialogFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        WebViewShowInfoFragment.show(this$0.b, H5Url.a(95));
+        Intrinsics.e(vipUpgradeDialogFragment, "this$0");
+        WebViewShowInfoFragment.show(vipUpgradeDialogFragment.b, H5Url.a(95));
     }
 
     private final void q() {
@@ -318,32 +317,32 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
             k.n.setMovementMethod(LinkMovementMethod.getInstance());
             spannableString.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.user.fragment.VipUpgradeDialogFragment$setAgreement$1$1$1
                 @Override // android.text.style.ClickableSpan
-                public void onClick(View widget) {
-                    Intrinsics.e(widget, "widget");
+                public void onClick(View view) {
+                    Intrinsics.e(view, "widget");
                     WebViewShowInfoFragment.show(VipUpgradeDialogFragment.this.getActivity(), H5Url.a(35), 7);
                 }
 
                 @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-                public void updateDrawState(TextPaint ds) {
-                    Intrinsics.e(ds, "ds");
-                    ds.setColor(ContextCompat.getColor(context, 2131102203));
-                    ds.setFakeBoldText(true);
+                public void updateDrawState(TextPaint textPaint) {
+                    Intrinsics.e(textPaint, "ds");
+                    textPaint.setColor(ContextCompat.getColor(context, 2131102203));
+                    textPaint.setFakeBoldText(true);
                 }
-            }, StringsKt.a((CharSequence) str2, string2, 0, false, 6, (Object) null), Intrinsics.a(string, (Object) string2).length(), 33);
+            }, StringsKt.a(str2, string2, 0, false, 6, (Object) null), Intrinsics.a(string, string2).length(), 33);
             spannableString.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.user.fragment.VipUpgradeDialogFragment$setAgreement$1$1$2
                 @Override // android.text.style.ClickableSpan
-                public void onClick(View widget) {
-                    Intrinsics.e(widget, "widget");
+                public void onClick(View view) {
+                    Intrinsics.e(view, "widget");
                     WebViewShowInfoFragment.show(Context.this, H5Url.a(22), 0);
                 }
 
                 @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-                public void updateDrawState(TextPaint ds) {
-                    Intrinsics.e(ds, "ds");
-                    ds.setColor(ContextCompat.getColor(Context.this, 2131102203));
-                    ds.setFakeBoldText(true);
+                public void updateDrawState(TextPaint textPaint) {
+                    Intrinsics.e(textPaint, "ds");
+                    textPaint.setColor(ContextCompat.getColor(Context.this, 2131102203));
+                    textPaint.setFakeBoldText(true);
                 }
-            }, StringsKt.a((CharSequence) str2, string4, 0, false, 6, (Object) null), str.length(), 33);
+            }, StringsKt.a(str2, string4, 0, false, 6, (Object) null), str.length(), 33);
             k.n.setText(spannableString);
         }
         k.e.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VipUpgradeDialogFragment$9-w1hMdJSk4b_zsgLajND82h-Oo
@@ -364,7 +363,7 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
     }
 
     public final List<VipUpgradeModel> i() {
-        return this.f34179c;
+        return this.f20488c;
     }
 
     public final int j() {
@@ -392,7 +391,6 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
         return this.l;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         VIPBuyResultObserver.a().b(this);
@@ -403,18 +401,18 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
         if (k == null) {
             return;
         }
-        Iterator<VipUpgradeModel> it = i().iterator();
+        Iterator<T> it = i().iterator();
         int i = 0;
         while (true) {
             int i2 = i;
             if (!it.hasNext()) {
                 break;
             }
-            VipUpgradeModel next = it.next();
+            Object next = it.next();
             if (i2 < 0) {
                 CollectionsKt.c();
             }
-            next.choose = i2 == 0;
+            ((VipUpgradeModel) next).choose = i2 == 0;
             i = i2 + 1;
         }
         if (j() == 2) {
@@ -454,11 +452,11 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
                 VipUpgradeDialogFragment.a(VipUpgradeDialogFragment.this, vipUpgradeOptionAdapter, view);
             }
         });
-        Dialog dialog = getDialog();
+        BottomSheetDialog dialog = getDialog();
         if (dialog == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialog");
         }
-        ((BottomSheetDialog) dialog).a().a(l());
+        dialog.a().a(l());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x00bd, code lost:
@@ -500,7 +498,6 @@ public final class VipUpgradeDialogFragment extends BottomSheetDialogFragment im
     /* JADX WARN: Code restructure failed: missing block: B:9:0x00b1, code lost:
         if (r0.equals("chat_msg_quiet_singe") == false) goto L32;
      */
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

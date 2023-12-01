@@ -25,11 +25,11 @@ import com.soft.blued.R;
 public class NearbyChatRoomView extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public TextView f30708a;
+    public TextView f17018a;
     public ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LinearLayout f30709c;
+    public LinearLayout f17019c;
     public LinearLayout d;
     public View e;
     public Context f;
@@ -59,15 +59,15 @@ public class NearbyChatRoomView extends FrameLayout {
     private void a(Context context) {
         View inflate = LayoutInflater.from(context).inflate(R.layout.nearby_chat_room_view, this);
         this.e = inflate;
-        this.f30708a = (TextView) inflate.findViewById(R.id.nearby_chat_room_num);
+        this.f17018a = (TextView) inflate.findViewById(R.id.nearby_chat_room_num);
         this.b = (ImageView) this.e.findViewById(R.id.iv_notice);
-        this.f30709c = (LinearLayout) this.e.findViewById(R.id.nearby_chat_room_long_layout);
+        this.f17019c = (LinearLayout) this.e.findViewById(R.id.nearby_chat_room_long_layout);
         this.d = (LinearLayout) this.e.findViewById(R.id.nearby_chat_room_short_layout);
         this.e.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.NearbyChatRoomView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                YYChatRoomsListFragment.f17120a.a(NearbyChatRoomView.this.getContext(), "home_chat_room");
+                YYChatRoomsListFragment.a.a(NearbyChatRoomView.this.getContext(), "home_chat_room");
             }
         });
     }
@@ -84,7 +84,7 @@ public class NearbyChatRoomView extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = this.e.getLayoutParams();
         layoutParams.width = DensityUtils.a(this.f, 164.0f);
         this.e.setLayoutParams(layoutParams);
-        this.f30709c.setVisibility(0);
+        this.f17019c.setVisibility(0);
         this.d.setVisibility(8);
         Log.v("drb", " -- showLongChatRoom GONE");
     }
@@ -93,13 +93,13 @@ public class NearbyChatRoomView extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = this.e.getLayoutParams();
         layoutParams.width = DensityUtils.a(this.f, 47.0f);
         this.e.setLayoutParams(layoutParams);
-        this.f30709c.setVisibility(8);
+        this.f17019c.setVisibility(8);
         this.d.setVisibility(0);
         Log.v("drb", " -- showShortChatRoom VISIBLE");
     }
 
     public void c() {
-        this.f30709c.setVisibility(0);
+        this.f17019c.setVisibility(0);
         this.d.setVisibility(8);
         Log.v("drb", " -- openChatRoom GONE");
         new ObjectAnimator();
@@ -119,7 +119,7 @@ public class NearbyChatRoomView extends FrameLayout {
     }
 
     public void d() {
-        this.f30709c.setVisibility(8);
+        this.f17019c.setVisibility(8);
         this.d.setVisibility(0);
         Log.v("drb", " -- retractChatRoom VISIBLE");
         new ObjectAnimator();
@@ -139,8 +139,8 @@ public class NearbyChatRoomView extends FrameLayout {
     }
 
     public void setText(String str) {
-        this.f30708a.setText(str);
-        this.f30708a.setSelected(true);
+        this.f17018a.setText(str);
+        this.f17018a.setSelected(true);
     }
 
     public void setTextNotice(String str) {

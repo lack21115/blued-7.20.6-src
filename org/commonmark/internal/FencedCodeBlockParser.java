@@ -14,42 +14,38 @@ import org.commonmark.parser.block.ParserState;
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/FencedCodeBlockParser.class */
 public class FencedCodeBlockParser extends AbstractBlockParser {
     private String b;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final FencedCodeBlock f44015a = new FencedCodeBlock();
-
-    /* renamed from: c  reason: collision with root package name */
-    private StringBuilder f44016c = new StringBuilder();
+    private final FencedCodeBlock a = new FencedCodeBlock();
+    private StringBuilder c = new StringBuilder();
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/FencedCodeBlockParser$Factory.class */
     public static class Factory extends AbstractBlockParserFactory {
         @Override // org.commonmark.parser.block.BlockParserFactory
         public BlockStart a(ParserState parserState, MatchedBlockParser matchedBlockParser) {
             int f = parserState.f();
-            if (f >= Parsing.f44049a) {
+            if (f >= Parsing.a) {
                 return BlockStart.f();
             }
             int d = parserState.d();
             FencedCodeBlockParser b = FencedCodeBlockParser.b(parserState.b(), d, f);
-            return b != null ? BlockStart.a(b).a(d + b.f44015a.d()) : BlockStart.f();
+            return b != null ? BlockStart.a(b).a(d + b.a.d()) : BlockStart.f();
         }
     }
 
-    public FencedCodeBlockParser(char c2, int i, int i2) {
-        this.f44015a.a(c2);
-        this.f44015a.a(i);
-        this.f44015a.b(i2);
+    public FencedCodeBlockParser(char c, int i, int i2) {
+        this.a.a(c);
+        this.a.a(i);
+        this.a.b(i2);
     }
 
     private boolean a(CharSequence charSequence, int i) {
-        char c2 = this.f44015a.c();
-        int d = this.f44015a.d();
-        int a2 = Parsing.a(c2, charSequence, i, charSequence.length()) - i;
+        char c = this.a.c();
+        int d = this.a.d();
+        int a = Parsing.a(c, charSequence, i, charSequence.length()) - i;
         boolean z = false;
-        if (a2 < d) {
+        if (a < d) {
             return false;
         }
-        if (Parsing.a(charSequence, i + a2, charSequence.length()) == charSequence.length()) {
+        if (Parsing.a(charSequence, i + a, charSequence.length()) == charSequence.length()) {
             z = true;
         }
         return z;
@@ -85,16 +81,16 @@ public class FencedCodeBlockParser extends AbstractBlockParser {
     @Override // org.commonmark.parser.block.BlockParser
     public BlockContinue a(ParserState parserState) {
         int d = parserState.d();
-        int c2 = parserState.c();
+        int c = parserState.c();
         CharSequence b = parserState.b();
-        if (parserState.f() < Parsing.f44049a && a(b, d)) {
+        if (parserState.f() < Parsing.a && a(b, d)) {
             return BlockContinue.e();
         }
         int length = b.length();
-        for (int e = this.f44015a.e(); e > 0 && c2 < length && b.charAt(c2) == ' '; e--) {
-            c2++;
+        for (int e = this.a.e(); e > 0 && c < length && b.charAt(c) == ' '; e--) {
+            c++;
         }
-        return BlockContinue.a(c2);
+        return BlockContinue.a(c);
     }
 
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
@@ -103,18 +99,18 @@ public class FencedCodeBlockParser extends AbstractBlockParser {
             this.b = charSequence.toString();
             return;
         }
-        this.f44016c.append(charSequence);
-        this.f44016c.append('\n');
+        this.c.append(charSequence);
+        this.c.append('\n');
     }
 
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
     public void b() {
-        this.f44015a.a(Escaping.b(this.b.trim()));
-        this.f44015a.b(this.f44016c.toString());
+        this.a.a(Escaping.b(this.b.trim()));
+        this.a.b(this.c.toString());
     }
 
     @Override // org.commonmark.parser.block.BlockParser
     public Block c() {
-        return this.f44015a;
+        return this.a;
     }
 }

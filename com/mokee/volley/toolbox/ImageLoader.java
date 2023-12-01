@@ -15,16 +15,12 @@ import java.util.LinkedList;
 public class ImageLoader {
     public static boolean h;
     private static final String[] i = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final RequestQueue f24261a;
+    private final RequestQueue a;
     private Runnable d;
     private final ImageCache f;
     private int g = 100;
     private final HashMap<String, c> b = new HashMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final HashMap<String, c> f24262c = new HashMap<>();
+    private final HashMap<String, c> c = new HashMap<>();
     private final Handler e = new Handler(Looper.getMainLooper());
 
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/ImageLoader$ImageCache.class */
@@ -36,19 +32,15 @@ public class ImageLoader {
 
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/ImageLoader$ImageContainer.class */
     public class ImageContainer {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Bitmap f24263a;
+        private Bitmap a;
         private final ImageListener b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final String f24264c;
+        private final String c;
         private final String d;
 
         public ImageContainer(Bitmap bitmap, String str, String str2, ImageListener imageListener) {
-            this.f24263a = bitmap;
+            this.a = bitmap;
             this.d = str;
-            this.f24264c = str2;
+            this.c = str2;
             this.b = imageListener;
         }
 
@@ -56,27 +48,27 @@ public class ImageLoader {
             if (this.b == null) {
                 return;
             }
-            c cVar = (c) ImageLoader.this.b.get(this.f24264c);
+            c cVar = (c) ImageLoader.this.b.get(this.c);
             if (cVar != null) {
                 if (!cVar.removeContainerAndCancelIfNecessary(this)) {
                     return;
                 }
-                ImageLoader.this.b.remove(this.f24264c);
+                ImageLoader.this.b.remove(this.c);
                 if (!ImageLoader.h) {
                     return;
                 }
             }
-            c cVar2 = (c) ImageLoader.this.f24262c.get(this.f24264c);
+            c cVar2 = (c) ImageLoader.this.c.get(this.c);
             if (cVar2 != null) {
                 cVar2.removeContainerAndCancelIfNecessary(this);
                 if (cVar2.b.size() == 0) {
-                    ImageLoader.this.f24262c.remove(this.f24264c);
+                    ImageLoader.this.c.remove(this.c);
                 }
             }
         }
 
         public Bitmap getBitmap() {
-            return this.f24263a;
+            return this.a;
         }
 
         public String getRequestUrl() {
@@ -140,13 +132,9 @@ public class ImageLoader {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/ImageLoader$c.class */
     public class c {
-
-        /* renamed from: a  reason: collision with root package name */
-        private VolleyError f24265a;
+        private VolleyError a;
         private final LinkedList<ImageContainer> b = new LinkedList<>();
-
-        /* renamed from: c  reason: collision with root package name */
-        private Bitmap f24266c;
+        private Bitmap c;
         private final Request<?> d;
 
         public c(Request<?> request, ImageContainer imageContainer) {
@@ -159,7 +147,7 @@ public class ImageLoader {
         }
 
         public VolleyError getError() {
-            return this.f24265a;
+            return this.a;
         }
 
         public boolean removeContainerAndCancelIfNecessary(ImageContainer imageContainer) {
@@ -172,7 +160,7 @@ public class ImageLoader {
         }
 
         public void setError(VolleyError volleyError) {
-            this.f24265a = volleyError;
+            this.a = volleyError;
         }
     }
 
@@ -201,7 +189,7 @@ public class ImageLoader {
             if (r0.getError() != null) goto L13;
          */
         /* JADX WARN: Code restructure failed: missing block: B:12:0x004e, code lost:
-            r0.f24263a = r0.f24266c;
+            r0.a = r0.c;
             r0.b.onResponse(r0, false);
          */
         /* JADX WARN: Code restructure failed: missing block: B:13:0x0065, code lost:
@@ -217,7 +205,7 @@ public class ImageLoader {
             if (r0.hasNext() != false) goto L3;
          */
         /* JADX WARN: Code restructure failed: missing block: B:19:0x0089, code lost:
-            r4.this$0.f24262c.clear();
+            r4.this$0.c.clear();
             r4.this$0.d = null;
          */
         /* JADX WARN: Code restructure failed: missing block: B:20:0x009b, code lost:
@@ -332,7 +320,7 @@ public class ImageLoader {
     }
 
     public ImageLoader(RequestQueue requestQueue, ImageCache imageCache) {
-        this.f24261a = requestQueue;
+        this.a = requestQueue;
         this.f = imageCache;
     }
 
@@ -356,7 +344,7 @@ public class ImageLoader {
         c remove = this.b.remove(str);
         if (remove != null) {
             try {
-                remove.f24266c = bitmap;
+                remove.c = bitmap;
                 a(str, remove);
             } catch (IllegalStateException e2) {
                 throw e2;
@@ -379,7 +367,7 @@ public class ImageLoader {
 
     private void a(String str, c cVar) {
         try {
-            this.f24262c.put(str, cVar);
+            this.c.put(str, cVar);
             if (this.d == null) {
                 this.d = new e();
                 this.e.postDelayed(this.d, this.g);
@@ -418,7 +406,7 @@ public class ImageLoader {
             }
         }
         ImageRequest imageRequest = new ImageRequest(str, new a(a2), i2, i3, Bitmap.Config.RGB_565, new d(a2));
-        this.f24261a.add(imageRequest);
+        this.a.add(imageRequest);
         this.b.put(a2, new c(imageRequest, imageContainer2));
         return imageContainer2;
     }

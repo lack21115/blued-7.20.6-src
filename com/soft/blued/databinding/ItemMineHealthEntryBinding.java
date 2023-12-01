@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class ItemMineHealthEntryBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f29223a;
+    public final ShapeConstraintLayout f15533a;
     public final ShapeTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29224c;
+    public final ImageView f15534c;
     public final ImageView d;
     public final LinearLayout e;
     public final TextView f;
@@ -26,9 +26,9 @@ public final class ItemMineHealthEntryBinding implements ViewBinding {
 
     private ItemMineHealthEntryBinding(ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, ShapeTextView shapeTextView, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, TextView textView, TextView textView2) {
         this.h = shapeConstraintLayout;
-        this.f29223a = shapeConstraintLayout2;
+        this.f15533a = shapeConstraintLayout2;
         this.b = shapeTextView;
-        this.f29224c = imageView;
+        this.f15534c = imageView;
         this.d = imageView2;
         this.e = linearLayout;
         this.f = textView;
@@ -37,10 +37,10 @@ public final class ItemMineHealthEntryBinding implements ViewBinding {
 
     public static ItemMineHealthEntryBinding a(View view) {
         String str;
-        ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131363075);
-        if (shapeConstraintLayout != null) {
-            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131365270);
-            if (shapeTextView != null) {
+        ShapeConstraintLayout findViewById = view.findViewById(2131363075);
+        if (findViewById != null) {
+            ShapeTextView findViewById2 = view.findViewById(R.id.iv_dot);
+            if (findViewById2 != null) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.iv_icon1);
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_icon2);
@@ -51,7 +51,7 @@ public final class ItemMineHealthEntryBinding implements ViewBinding {
                             if (textView != null) {
                                 TextView textView2 = (TextView) view.findViewById(2131372754);
                                 if (textView2 != null) {
-                                    return new ItemMineHealthEntryBinding((ShapeConstraintLayout) view, shapeConstraintLayout, shapeTextView, imageView, imageView2, linearLayout, textView, textView2);
+                                    return new ItemMineHealthEntryBinding((ShapeConstraintLayout) view, findViewById, findViewById2, imageView, imageView2, linearLayout, textView, textView2);
                                 }
                                 str = "tvTitle";
                             } else {

@@ -1,6 +1,5 @@
 package com.soft.blued.ui.user.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -30,7 +29,7 @@ import java.util.List;
 public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f34134a;
+    public int f20443a;
     public String b;
     private View d;
     private List<String> e;
@@ -47,7 +46,7 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
     private float p = 0.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f34135c = false;
+    public boolean f20444c = false;
     private int q = -1;
     private int r = -14540254;
 
@@ -132,7 +131,7 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
         if (i != 0) {
             this.i.setImageResource(2131233902);
             this.n.setAlpha(this.p);
-            StatusBarHelper.a((Activity) getActivity(), true);
+            StatusBarHelper.a(getActivity(), true);
             this.k.setTextColor(2131102203);
             this.k.setTabTextColorUnfocused(2131101975);
             this.k.setIndicatorColor(2131102203);
@@ -148,9 +147,9 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
         this.i.setImageResource(2131233903);
         this.n.setAlpha(this.o);
         if (this.n.getAlpha() < 0.5f) {
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
         } else {
-            StatusBarHelper.a((Activity) getActivity(), true);
+            StatusBarHelper.a(getActivity(), true);
         }
         this.k.setTextColor(2131102170);
         this.k.setTabTextColorUnfocused(2131101977);
@@ -202,7 +201,7 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
                 VIPCenterNewFragment.this.a(view);
             }
         });
-        this.k = (TabPageIndicatorWithDot) this.d.findViewById(2131373299);
+        this.k = (TabPageIndicatorWithDot) this.d.findViewById(R.id.vp_indicator);
         this.l = (TabPageIndicatorWithDot) this.d.findViewById(R.id.vp_indicator_hover);
         this.m = this.d.findViewById(R.id.fl_title);
         this.n = this.d.findViewById(R.id.fl_title_hover);
@@ -218,9 +217,9 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
         this.n.setAlpha(0.0f);
         this.m.setPadding(0, StatusBarHelper.a(this.f), 0, 0);
         this.n.setPadding(0, StatusBarHelper.a(this.f), 0, 0);
-        int i2 = this.f34134a;
+        int i2 = this.f20443a;
         if (i2 == 0 || i2 == 1) {
-            this.h.setCurrentItem(this.f34134a);
+            this.h.setCurrentItem(this.f20443a);
         } else {
             this.h.setCurrentItem(0);
         }
@@ -241,7 +240,7 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
     }
 
     public void b(int i) {
-        int i2 = this.f34134a;
+        int i2 = this.f20443a;
         if (i2 == 0 || i2 == 1) {
             return;
         }
@@ -254,16 +253,15 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
         return this.h.getCurrentItem() == 0 ? 2 : 1;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.f = getActivity();
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_vip_center_new, viewGroup, false);
-            this.f34134a = getArguments().getInt("KEY_TAB_INDEX", -1);
+            this.f20443a = getArguments().getInt("KEY_TAB_INDEX", -1);
             this.b = getArguments().getString("KEY_VIP_DETAIL", "");
             b();
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
             VIPBuyResultObserver.a().a(this, getLifecycle());
         } else if (view.getParent() != null) {
             ((ViewGroup) this.d.getParent()).removeView(this.d);
@@ -271,13 +269,11 @@ public class VIPCenterNewFragment extends BaseFragment implements VIPBuyResultOb
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         BluedConfig.a().b = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnKeyListener
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (i == 4 || i == 3) {
             a();

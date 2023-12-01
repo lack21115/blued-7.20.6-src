@@ -21,7 +21,7 @@ public class cv extends bf {
     private static final String G = cv.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9404a = "enter_refresh_bookstore";
+    public static final String f6564a = "enter_refresh_bookstore";
     public static final String q = "enter_reader";
     public static final String r = "notify_impression";
     public static final String s = "request_int_ad_view";

@@ -6,11 +6,11 @@ import java.util.HashMap;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static byte[] f39758a;
+    public static byte[] f26067a;
 
     static {
         new HashMap();
-        f39758a = new byte[]{6, 120, -74, 67, 37, 123, 99, -11, 32, 48, -93, 65, 60, 58, 122, -8, 49, 117, -95, 83, 111};
+        f26067a = new byte[]{6, 120, -74, 67, 37, 123, 99, -11, 32, 48, -93, 65, 60, 58, 122, -8, 49, 117, -95, 83, 111};
     }
 
     public static String a(byte[] bArr) {

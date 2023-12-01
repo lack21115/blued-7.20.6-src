@@ -25,11 +25,11 @@ import java.util.List;
 public class LockPatternSetupFragment extends BaseFragment implements View.OnClickListener, LockPatternView.OnPatternListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33398a;
+    private View f19707a;
     private LockPatternView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LockIndicator f33399c;
+    private LockIndicator f19708c;
     private TextView d;
     private int e;
     private List<LockPatternView.Cell> f;
@@ -38,22 +38,22 @@ public class LockPatternSetupFragment extends BaseFragment implements View.OnCli
     private boolean i = true;
 
     private void a(String str) {
-        this.f33399c.setPath(str);
+        this.f19708c.setPath(str);
     }
 
     private void c() {
-        LockPatternView lockPatternView = (LockPatternView) this.f33398a.findViewById(R.id.lock_pattern);
+        LockPatternView lockPatternView = (LockPatternView) this.f19707a.findViewById(R.id.lock_pattern);
         this.b = lockPatternView;
         lockPatternView.setOnPatternListener(this);
-        this.f33399c = (LockIndicator) this.f33398a.findViewById(R.id.lock_indicator);
-        this.d = (TextView) this.f33398a.findViewById(R.id.lock_pattern_hint);
+        this.f19708c = (LockIndicator) this.f19707a.findViewById(R.id.lock_indicator);
+        this.d = (TextView) this.f19707a.findViewById(R.id.lock_pattern_hint);
     }
 
     private void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33398a.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.gesture_pwd));
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.f19707a.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.gesture_pwd));
+        findViewById.setLeftClickListener(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -77,7 +77,7 @@ public class LockPatternSetupFragment extends BaseFragment implements View.OnCli
                 return;
             }
             this.b.b();
-            AppMethods.a((CharSequence) getResources().getString(R.string.lock_pattern_success_set));
+            AppMethods.a(getResources().getString(R.string.lock_pattern_success_set));
             BluedPreferences.F(LockPatternView.a(this.f));
             postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.LockPatternSetupFragment.1
                 @Override // java.lang.Runnable
@@ -86,10 +86,10 @@ public class LockPatternSetupFragment extends BaseFragment implements View.OnCli
                     if (arguments != null) {
                         String string = arguments.getString("FRAGMENT_NAME_KEY");
                         if (!StringUtils.d(string) && string.equals(GestureLockSettingFragment.class.getSimpleName())) {
-                            TerminalActivity.d(LockPatternSetupFragment.this.getActivity(), GestureLockSettingFragment.class, null);
+                            TerminalActivity.d(LockPatternSetupFragment.this.getActivity(), GestureLockSettingFragment.class, (Bundle) null);
                         }
                     } else {
-                        CommonConstants.f28315a = false;
+                        CommonConstants.f14625a = false;
                         BluedPreferences.F(true);
                     }
                     LockPatternSetupFragment.this.getActivity().finish();
@@ -164,9 +164,8 @@ public class LockPatternSetupFragment extends BaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
-        CommonConstants.f28315a = false;
+        CommonConstants.f14625a = false;
         getActivity().finish();
         return false;
     }
@@ -177,27 +176,25 @@ public class LockPatternSetupFragment extends BaseFragment implements View.OnCli
         if (view.getId() != 2131363120) {
             return;
         }
-        CommonConstants.f28315a = false;
+        CommonConstants.f14625a = false;
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f33398a;
+        View view = this.f19707a;
         if (view == null) {
-            this.f33398a = layoutInflater.inflate(R.layout.fragment_lock_pattern_setup, viewGroup, false);
+            this.f19707a = layoutInflater.inflate(R.layout.fragment_lock_pattern_setup, viewGroup, false);
             c();
             d();
             this.e = 1;
             e();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33398a.getParent()).removeView(this.f33398a);
+            ((ViewGroup) this.f19707a.getParent()).removeView(this.f19707a);
         }
-        return this.f33398a;
+        return this.f19707a;
     }
 }

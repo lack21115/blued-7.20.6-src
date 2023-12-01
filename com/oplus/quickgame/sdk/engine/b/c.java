@@ -6,23 +6,23 @@ import java.nio.charset.Charset;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private byte[] f24391a;
+    private byte[] f10704a;
 
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/b/c$b.class */
     public static class b {
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ boolean f24392c = !c.class.desiredAssertionStatus();
+        static final /* synthetic */ boolean f10705c = !c.class.desiredAssertionStatus();
 
         /* renamed from: a  reason: collision with root package name */
-        private int f24393a;
+        private int f10706a;
         private byte[] b;
 
         private b() {
         }
 
         public b a(int i) {
-            this.f24393a = i;
+            this.f10706a = i;
             return this;
         }
 
@@ -32,7 +32,7 @@ public class c {
         }
 
         public c a() {
-            if (f24392c || this.f24393a <= 0 || this.b == null) {
+            if (f10705c || this.f10706a <= 0 || this.b == null) {
                 return new c(this);
             }
             throw new AssertionError();
@@ -40,8 +40,8 @@ public class c {
     }
 
     private c(b bVar) {
-        int unused = bVar.f24393a;
-        this.f24391a = bVar.b;
+        int unused = bVar.f10706a;
+        this.f10704a = bVar.b;
     }
 
     public static b b() {
@@ -49,6 +49,6 @@ public class c {
     }
 
     public String a() {
-        return new String(this.f24391a, Charset.defaultCharset());
+        return new String(this.f10704a, Charset.defaultCharset());
     }
 }

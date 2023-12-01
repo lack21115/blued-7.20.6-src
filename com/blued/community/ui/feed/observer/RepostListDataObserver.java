@@ -6,9 +6,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/feed/observer/RepostListDataObserver.class */
 public class RepostListDataObserver extends CommentListDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static RepostListDataObserver f19867a = new RepostListDataObserver();
+    private static RepostListDataObserver a = new RepostListDataObserver();
     private List<IRepostListDataObserver> b = new ArrayList();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/feed/observer/RepostListDataObserver$IRepostListDataObserver.class */
@@ -20,7 +18,7 @@ public class RepostListDataObserver extends CommentListDataObserver {
     }
 
     public static RepostListDataObserver b() {
-        return f19867a;
+        return a;
     }
 
     public void a(FeedRepost feedRepost) {

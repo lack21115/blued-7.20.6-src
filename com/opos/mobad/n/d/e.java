@@ -4,10 +4,10 @@ package com.opos.mobad.n.d;
 public class e extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final g f26630a;
+    public final g f12942a;
 
     public e(h hVar) {
         super(hVar);
-        this.f26630a = hVar.k;
+        this.f12942a = hVar.k;
     }
 }

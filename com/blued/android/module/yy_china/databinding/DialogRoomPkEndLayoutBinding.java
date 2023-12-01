@@ -11,13 +11,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogRoomPkEndLayoutBinding.class */
 public final class DialogRoomPkEndLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16401a;
+    public final View a;
     public final HollowView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final HollowView f16402c;
+    public final HollowView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -29,9 +25,9 @@ public final class DialogRoomPkEndLayoutBinding implements ViewBinding {
 
     private DialogRoomPkEndLayoutBinding(ConstraintLayout constraintLayout, View view, HollowView hollowView, HollowView hollowView2, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, RecyclerView recyclerView, RecyclerView recyclerView2) {
         this.k = constraintLayout;
-        this.f16401a = view;
+        this.a = view;
         this.b = hollowView;
-        this.f16402c = hollowView2;
+        this.c = hollowView2;
         this.d = imageView;
         this.e = imageView2;
         this.f = imageView3;
@@ -55,15 +51,15 @@ public final class DialogRoomPkEndLayoutBinding implements ViewBinding {
                         if (imageView2 != null) {
                             ImageView imageView3 = (ImageView) view.findViewById(R.id.img_right_pk_result);
                             if (imageView3 != null) {
-                                ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.pk_left);
-                                if (shapeableImageView != null) {
-                                    ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.pk_right);
-                                    if (shapeableImageView2 != null) {
-                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_blue_rank);
-                                        if (recyclerView != null) {
-                                            RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_red_rank);
-                                            if (recyclerView2 != null) {
-                                                return new DialogRoomPkEndLayoutBinding((ConstraintLayout) view, findViewById, hollowView, hollowView2, imageView, imageView2, imageView3, shapeableImageView, shapeableImageView2, recyclerView, recyclerView2);
+                                ShapeableImageView findViewById2 = view.findViewById(R.id.pk_left);
+                                if (findViewById2 != null) {
+                                    ShapeableImageView findViewById3 = view.findViewById(R.id.pk_right);
+                                    if (findViewById3 != null) {
+                                        RecyclerView findViewById4 = view.findViewById(R.id.rv_blue_rank);
+                                        if (findViewById4 != null) {
+                                            RecyclerView findViewById5 = view.findViewById(R.id.rv_red_rank);
+                                            if (findViewById5 != null) {
+                                                return new DialogRoomPkEndLayoutBinding((ConstraintLayout) view, findViewById, hollowView, hollowView2, imageView, imageView2, imageView3, findViewById2, findViewById3, findViewById4, findViewById5);
                                             }
                                             str = "rvRedRank";
                                         } else {
@@ -96,7 +92,6 @@ public final class DialogRoomPkEndLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.k;

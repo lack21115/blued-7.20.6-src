@@ -1,14 +1,12 @@
 package com.igexin.c.a.b;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-
 /* loaded from: source-7994992-dex2jar.jar:com/igexin/c/a/b/f.class */
 public abstract class f extends com.igexin.c.a.d.f {
     protected static final int e = -2048;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public d f23247c;
+    public d f9639c;
     public Object d;
 
     private f(int i, d dVar) {
@@ -33,7 +31,7 @@ public abstract class f extends com.igexin.c.a.d.f {
             }
             if (!a2[3].equals("")) {
                 sb.append(a2[3]);
-                if (!a2[3].equals(BridgeUtil.SPLIT_MARK)) {
+                if (!a2[3].equals("/")) {
                     sb.append('/');
                 }
             }
@@ -46,7 +44,7 @@ public abstract class f extends com.igexin.c.a.d.f {
             }
             this.b = sb.toString();
         }
-        this.f23247c = dVar;
+        this.f9639c = dVar;
     }
 
     public f(String str, d dVar) {
@@ -69,7 +67,7 @@ public abstract class f extends com.igexin.c.a.d.f {
         }
         if (!a2[3].equals("")) {
             sb.append(a2[3]);
-            if (!a2[3].equals(BridgeUtil.SPLIT_MARK)) {
+            if (!a2[3].equals("/")) {
                 sb.append('/');
             }
         }
@@ -86,12 +84,12 @@ public abstract class f extends com.igexin.c.a.d.f {
     private void a(f fVar) {
         super.a((com.igexin.c.a.d.f) fVar);
         this.b = fVar.b;
-        this.f23247c = fVar.f23247c;
+        this.f9639c = fVar.f9639c;
     }
 
     @Override // com.igexin.c.a.d.f, com.igexin.c.a.d.a.a
     public void a() {
-        d dVar = this.f23247c;
+        d dVar = this.f9639c;
         if (dVar != null) {
             dVar.b();
         }

@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -109,7 +110,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
             int i2 = i;
             if (i == 0) {
                 TypedValue typedValue = new TypedValue();
-                context.getTheme().resolveAttribute(16843528, typedValue, true);
+                context.getTheme().resolveAttribute(R.attr.dialogTheme, typedValue, true);
                 i2 = typedValue.resourceId;
             }
             this.mContext = new ContextThemeWrapper(context, i2);
@@ -263,7 +264,7 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         accessibilityEvent.setClassName(getClass().getName());
         accessibilityEvent.setPackageName(this.mContext.getPackageName());
         WindowManager.LayoutParams attributes = getWindow().getAttributes();
-        accessibilityEvent.setFullScreen(attributes.width == -1 && attributes.height == -1);
+        accessibilityEvent.setFullScreen(((ViewGroup.LayoutParams) attributes).width == -1 && ((ViewGroup.LayoutParams) attributes).height == -1);
         return false;
     }
 
@@ -540,7 +541,6 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
         }
     }
 
-    @Override // android.view.Window.OnWindowDismissedCallback
     public void onWindowDismissed() {
         dismiss();
     }

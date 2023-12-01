@@ -1,5 +1,6 @@
 package java.util;
 
+import com.anythink.core.common.c.g;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -68,7 +69,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
     protected long time;
     private TimeZone zone;
     private static final String[] FIELD_NAMES = {"ERA", "YEAR", "MONTH", "WEEK_OF_YEAR", "WEEK_OF_MONTH", "DAY_OF_MONTH", "DAY_OF_YEAR", "DAY_OF_WEEK", "DAY_OF_WEEK_IN_MONTH", "AM_PM", "HOUR", "HOUR_OF_DAY", "MINUTE", "SECOND", "MILLISECOND", "ZONE_OFFSET", "DST_OFFSET"};
-    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("areFieldsSet", Boolean.TYPE), new ObjectStreamField("fields", int[].class), new ObjectStreamField("firstDayOfWeek", Integer.TYPE), new ObjectStreamField("isSet", boolean[].class), new ObjectStreamField("isTimeSet", Boolean.TYPE), new ObjectStreamField("lenient", Boolean.TYPE), new ObjectStreamField("minimalDaysInFirstWeek", Integer.TYPE), new ObjectStreamField("nextStamp", Integer.TYPE), new ObjectStreamField("serialVersionOnStream", Integer.TYPE), new ObjectStreamField("time", Long.TYPE), new ObjectStreamField("zone", TimeZone.class)};
+    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("areFieldsSet", Boolean.TYPE), new ObjectStreamField("fields", int[].class), new ObjectStreamField("firstDayOfWeek", Integer.TYPE), new ObjectStreamField("isSet", boolean[].class), new ObjectStreamField("isTimeSet", Boolean.TYPE), new ObjectStreamField("lenient", Boolean.TYPE), new ObjectStreamField("minimalDaysInFirstWeek", Integer.TYPE), new ObjectStreamField("nextStamp", Integer.TYPE), new ObjectStreamField("serialVersionOnStream", Integer.TYPE), new ObjectStreamField(g.a.g, Long.TYPE), new ObjectStreamField("zone", TimeZone.class)};
 
     protected Calendar() {
         this(TimeZone.getDefault(), Locale.getDefault());
@@ -204,7 +205,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
         this.isTimeSet = readFields.get("isTimeSet", false);
         this.lenient = readFields.get("lenient", true);
         this.minimalDaysInFirstWeek = readFields.get("minimalDaysInFirstWeek", 1);
-        this.time = readFields.get("time", 0L);
+        this.time = readFields.get(g.a.g, 0L);
         this.zone = (TimeZone) readFields.get("zone", (Object) null);
     }
 
@@ -220,7 +221,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
         putFields.put("minimalDaysInFirstWeek", this.minimalDaysInFirstWeek);
         putFields.put("nextStamp", 2);
         putFields.put("serialVersionOnStream", 1);
-        putFields.put("time", this.time);
+        putFields.put(g.a.g, this.time);
         putFields.put("zone", this.zone);
         objectOutputStream.writeFields();
     }

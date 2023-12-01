@@ -8,10 +8,10 @@ import java.io.File;
 public class f implements com.opos.mobad.d.f {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f27322a;
+    public Context f13634a;
 
     public f(Context context) {
-        this.f27322a = context;
+        this.f13634a = context;
     }
 
     public static final File a(Context context, String str) {
@@ -46,10 +46,10 @@ public class f implements com.opos.mobad.d.f {
 
     @Override // com.opos.mobad.d.f
     public File a(String str) {
-        if (this.f27322a == null || TextUtils.isEmpty(str) || !com.opos.cmn.an.d.b.a.a()) {
+        if (this.f13634a == null || TextUtils.isEmpty(str) || !com.opos.cmn.an.d.b.a.a()) {
             return null;
         }
-        String a2 = a(this.f27322a);
+        String a2 = a(this.f13634a);
         if (TextUtils.isEmpty(a2)) {
             return null;
         }
@@ -67,10 +67,10 @@ public class f implements com.opos.mobad.d.f {
 
     @Override // com.opos.mobad.d.f
     public File a(String str, String str2) {
-        if (this.f27322a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !com.opos.cmn.an.d.b.a.a()) {
+        if (this.f13634a == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2) || !com.opos.cmn.an.d.b.a.a()) {
             return null;
         }
-        String a2 = a(this.f27322a);
+        String a2 = a(this.f13634a);
         if (TextUtils.isEmpty(a2)) {
             return null;
         }

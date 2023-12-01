@@ -12,18 +12,14 @@ import com.blued.android.framework.ui.xpop.util.XPopupUtils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/widget/PartShadowContainer.class */
 public class PartShadowContainer extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f10036a;
+    public boolean a;
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f10037c;
+    private float c;
     private OnClickOutsideListener d;
 
     public PartShadowContainer(Context context) {
         super(context);
-        this.f10036a = true;
+        this.a = true;
     }
 
     public PartShadowContainer(Context context, AttributeSet attributeSet) {
@@ -32,7 +28,7 @@ public class PartShadowContainer extends FrameLayout {
 
     public PartShadowContainer(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10036a = true;
+        this.a = true;
     }
 
     @Override // android.view.View
@@ -47,16 +43,16 @@ public class PartShadowContainer extends FrameLayout {
         int action = motionEvent.getAction();
         if (action == 0) {
             this.b = motionEvent.getX();
-            this.f10037c = motionEvent.getY();
+            this.c = motionEvent.getY();
             return true;
         } else if (action != 1) {
             return true;
         } else {
-            if (((float) Math.sqrt(Math.pow(motionEvent.getX() - this.b, 2.0d) + Math.pow(motionEvent.getY() - this.f10037c, 2.0d))) < ViewConfiguration.get(getContext()).getScaledTouchSlop() && this.f10036a && (onClickOutsideListener = this.d) != null) {
+            if (((float) Math.sqrt(Math.pow(motionEvent.getX() - this.b, 2.0d) + Math.pow(motionEvent.getY() - this.c, 2.0d))) < ViewConfiguration.get(getContext()).getScaledTouchSlop() && this.a && (onClickOutsideListener = this.d) != null) {
                 onClickOutsideListener.a();
             }
             this.b = 0.0f;
-            this.f10037c = 0.0f;
+            this.c = 0.0f;
             return true;
         }
     }

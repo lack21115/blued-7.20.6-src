@@ -1,5 +1,6 @@
 package com.anythink.expressad.video.module;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -37,9 +38,9 @@ public class AnythinkClickMiniCardView extends AnythinkH5EndCardView {
     }
 
     private void a(View view) {
-        int f = t.f(this.f8440a);
+        int f = t.f(this.f5600a);
         int i = (int) ((f * 0.7f) + 0.5f);
-        int e = (int) ((t.e(this.f8440a) * 0.7f) + 0.5f);
+        int e = (int) ((t.e(this.f5600a) * 0.7f) + 0.5f);
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         layoutParams.width = i;
         layoutParams.height = e;
@@ -52,7 +53,7 @@ public class AnythinkClickMiniCardView extends AnythinkH5EndCardView {
         String str = null;
         String str2 = null;
         if (this.b != null) {
-            c.C0143c M = this.b.M();
+            c.C0072c M = this.b.M();
             if (M != null) {
                 str2 = M.d();
             }
@@ -107,7 +108,7 @@ public class AnythinkClickMiniCardView extends AnythinkH5EndCardView {
         if (Build.VERSION.SDK_INT < 11) {
             return;
         }
-        View findViewById = ((Activity) this.f8440a).getWindow().findViewById(16908290);
+        View findViewById = ((Activity) this.f5600a).getWindow().findViewById(R.id.content);
         int width = findViewById.getWidth();
         int height = findViewById.getHeight();
         if (i <= 0 || i2 <= 0 || i > width || i2 > height) {

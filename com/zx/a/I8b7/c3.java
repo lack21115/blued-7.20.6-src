@@ -12,10 +12,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class c3 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final AtomicInteger f42112c = new AtomicInteger(1);
+    public static final AtomicInteger f28421c = new AtomicInteger(1);
 
     /* renamed from: a  reason: collision with root package name */
-    public ScheduledThreadPoolExecutor f42113a = new ScheduledThreadPoolExecutor(2, new a(this));
+    public ScheduledThreadPoolExecutor f28422a = new ScheduledThreadPoolExecutor(2, new a(this));
     public ThreadPoolExecutor b = new ThreadPoolExecutor(1, 1, 0, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new b(this));
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/c3$a.class */
@@ -23,8 +23,8 @@ public class c3 {
 
         /* renamed from: com.zx.a.I8b7.c3$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/c3$a$a.class */
-        public class C1119a implements Thread.UncaughtExceptionHandler {
-            public C1119a(a aVar) {
+        public class C0949a implements Thread.UncaughtExceptionHandler {
+            public C0949a(a aVar) {
             }
 
             @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -42,9 +42,9 @@ public class c3 {
         public Thread newThread(Runnable runnable) {
             Thread thread = new Thread(runnable);
             StringBuilder a2 = m2.a("ZX-Thread-");
-            a2.append(c3.f42112c.getAndIncrement());
+            a2.append(c3.f28421c.getAndIncrement());
             thread.setName(a2.toString());
-            thread.setUncaughtExceptionHandler(new C1119a(this));
+            thread.setUncaughtExceptionHandler(new C0949a(this));
             return thread;
         }
     }
@@ -81,6 +81,6 @@ public class c3 {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final c3 f42114a = new c3();
+        public static final c3 f28423a = new c3();
     }
 }

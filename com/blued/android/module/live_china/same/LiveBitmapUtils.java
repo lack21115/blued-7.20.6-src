@@ -45,9 +45,9 @@ public class LiveBitmapUtils {
     }
 
     public static Drawable a(Context context, int i) {
-        int a2 = BitmapUtils.a(context, (ImageView) null, i);
-        if (a2 != -1) {
-            return context.getResources().getDrawable(a2);
+        int a = BitmapUtils.a(context, (ImageView) null, i);
+        if (a != -1) {
+            return context.getResources().getDrawable(a);
         }
         return null;
     }

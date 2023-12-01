@@ -7,13 +7,9 @@ import android.view.MotionEvent;
 /* renamed from: com.amap.api.col.3sl.ap  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ap.class */
 public final class ap extends an {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final PointF f4744a = new PointF();
+    private static final PointF a = new PointF();
     private final a b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private PointF f4745c;
+    private PointF c;
     private PointF d;
     private PointF n;
     private PointF o;
@@ -78,10 +74,10 @@ public final class ap extends an {
     public final void a(MotionEvent motionEvent) {
         super.a(motionEvent);
         MotionEvent motionEvent2 = this.g;
-        this.f4745c = b(motionEvent);
+        this.c = b(motionEvent);
         this.d = b(motionEvent2);
         boolean z = this.g.getPointerCount() != motionEvent.getPointerCount();
-        this.o = z ? f4744a : new PointF(this.f4745c.x - this.d.x, this.f4745c.y - this.d.y);
+        this.o = z ? a : new PointF(this.c.x - this.d.x, this.c.y - this.d.y);
         if (z) {
             this.g.recycle();
             this.g = MotionEvent.obtain(motionEvent);

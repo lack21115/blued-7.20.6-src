@@ -14,9 +14,7 @@ import java.io.File;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/mraid/d.class */
 public class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f6027a = d.class.getSimpleName();
+    public static String a = d.class.getSimpleName();
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/mraid/d$a.class */
     public interface a {
@@ -32,10 +30,10 @@ public class d {
             }
             File b = com.anythink.core.common.res.d.a(n.a().g()).b(jVar, iVar);
             if (b == null) {
-                Log.e(f6027a, "loadMraidResource: html no exists: ");
+                Log.e(a, "loadMraidResource: html no exists: ");
                 return com.anythink.core.common.res.d.a(n.a().g()).a(iVar.h(), jVar, iVar);
             }
-            String str = f6027a;
+            String str = a;
             Log.e(str, "loadMraidResource: html exists: " + b.toURI().toString());
             return b.toURI().toString();
         }
@@ -47,26 +45,25 @@ public class d {
             return;
         }
         n.a().a(new Runnable() { // from class: com.anythink.basead.mraid.d.1
+            /* JADX WARN: Multi-variable type inference failed */
+            /* JADX WARN: Type inference failed for: r0v7, types: [android.webkit.WebViewClient, com.anythink.basead.mraid.e] */
             @Override // java.lang.Runnable
             public final void run() {
-                String str3 = d.f6027a;
+                String str3 = d.a;
                 StringBuilder sb = new StringBuilder();
                 sb.append(String.this);
                 sb.append(", start load mraid webview");
                 com.anythink.basead.mraid.a aVar2 = new com.anythink.basead.mraid.a();
-                e eVar = new e(String.this);
+                ?? eVar = new e(String.this);
                 eVar.a(new com.anythink.expressad.atsignalcommon.a.b() { // from class: com.anythink.basead.mraid.d.1.1
+                    boolean a = false;
 
-                    /* renamed from: a  reason: collision with root package name */
-                    boolean f6030a = false;
-
-                    @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
                     public final void onPageFinished(WebView webView, String str4) {
-                        if (this.f6030a) {
+                        if (this.a) {
                             return;
                         }
-                        this.f6030a = true;
-                        if (com.anythink.core.common.res.d.f6907a.equals(str4)) {
+                        this.a = true;
+                        if (com.anythink.core.common.res.d.a.equals(str4)) {
                             StringBuilder sb2 = new StringBuilder();
                             sb2.append(String.this);
                             sb2.append(", about:blank");
@@ -88,12 +85,11 @@ public class d {
                         }
                     }
 
-                    @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
                     public final void onReceivedError(WebView webView, int i, String str4, String str5) {
-                        if (this.f6030a) {
+                        if (this.a) {
                             return;
                         }
-                        this.f6030a = true;
+                        this.a = true;
                         super.onReceivedError(webView, i, str4, str5);
                         com.anythink.basead.c.e a2 = f.a("10000", i + BridgeUtil.UNDERLINE_STR + str4);
                         StringBuilder sb2 = new StringBuilder();
@@ -105,12 +101,11 @@ public class d {
                         }
                     }
 
-                    @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
                     public final void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-                        if (this.f6030a) {
+                        if (this.a) {
                             return;
                         }
-                        this.f6030a = true;
+                        this.a = true;
                         super.onReceivedSslError(webView, sslErrorHandler, sslError);
                         com.anythink.basead.c.e a2 = f.a("10000", sslError != null ? sslError.toString() : "onReceivedSslError");
                         StringBuilder sb2 = new StringBuilder();

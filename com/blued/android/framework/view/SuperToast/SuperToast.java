@@ -13,17 +13,12 @@ import android.widget.TextView;
 import com.blued.android.framework.R;
 import com.blued.android.framework.view.SuperToast.utils.AccessibilityUtils;
 import com.blued.android.framework.view.SuperToast.utils.BackgroundUtils;
-import com.google.android.material.badge.BadgeDrawable;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/SuperToast/SuperToast.class */
 public class SuperToast {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f10194a;
+    private final Context a;
     private final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final TextView f10195c;
+    private final TextView c;
     private Style d;
     private OnDismissListener e;
 
@@ -34,31 +29,31 @@ public class SuperToast {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public SuperToast(Context context, int i) {
-        this.f10194a = context;
+        this.a = context;
         Style style = new Style();
         this.d = style;
         style.w = i;
-        View a2 = a(context, (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE), i);
-        this.b = a2;
-        this.f10195c = (TextView) a2.findViewById(R.id.message);
+        View a = a(context, (LayoutInflater) context.getSystemService("layout_inflater"), i);
+        this.b = a;
+        this.c = (TextView) a.findViewById(R.id.message);
     }
 
     public SuperToast(Context context, Style style) {
-        this.f10194a = context;
+        this.a = context;
         this.d = style;
-        View a2 = a(context, (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE), this.d.w);
-        this.b = a2;
-        this.f10195c = (TextView) a2.findViewById(R.id.message);
+        View a = a(context, (LayoutInflater) context.getSystemService("layout_inflater"), this.d.w);
+        this.b = a;
+        this.c = (TextView) a.findViewById(R.id.message);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public SuperToast(Context context, Style style, int i) {
-        this.f10194a = context;
+        this.a = context;
         this.d = style;
         style.w = i;
-        View a2 = a(context, (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE), i);
-        this.b = a2;
-        this.f10195c = (TextView) a2.findViewById(R.id.message);
+        View a = a(context, (LayoutInflater) context.getSystemService("layout_inflater"), i);
+        this.b = a;
+        this.c = (TextView) a.findViewById(R.id.message);
     }
 
     protected View a(Context context, LayoutInflater layoutInflater, int i) {
@@ -85,50 +80,50 @@ public class SuperToast {
     /* JADX INFO: Access modifiers changed from: protected */
     public void f() {
         int i = Build.VERSION.SDK_INT;
-        TextView textView = this.f10195c;
+        TextView textView = this.c;
         if (textView != null) {
-            textView.setText(this.d.f10189a);
-            TextView textView2 = this.f10195c;
+            textView.setText(this.d.a);
+            TextView textView2 = this.c;
             textView2.setTypeface(textView2.getTypeface(), this.d.q);
-            this.f10195c.setTextColor(this.d.r);
-            this.f10195c.setTextSize(this.d.s);
+            this.c.setTextColor(this.d.r);
+            this.c.setTextSize(this.d.s);
             if (this.d.u > 0) {
                 if (this.d.t == 1) {
-                    this.f10195c.setCompoundDrawablesWithIntrinsicBounds(this.d.u, 0, 0, 0);
+                    this.c.setCompoundDrawablesWithIntrinsicBounds(this.d.u, 0, 0, 0);
                 } else if (this.d.t == 4) {
-                    this.f10195c.setCompoundDrawablesWithIntrinsicBounds(0, this.d.u, 0, 0);
+                    this.c.setCompoundDrawablesWithIntrinsicBounds(0, this.d.u, 0, 0);
                 } else if (this.d.t == 2) {
-                    this.f10195c.setCompoundDrawablesWithIntrinsicBounds(0, 0, this.d.u, 0);
+                    this.c.setCompoundDrawablesWithIntrinsicBounds(0, 0, this.d.u, 0);
                 } else if (this.d.t == 3) {
-                    this.f10195c.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, this.d.u);
+                    this.c.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, this.d.u);
                 }
             }
         }
         if (i >= 16) {
             View view = this.b;
             Style style = this.d;
-            view.setBackground(BackgroundUtils.a(style, style.f10190c));
+            view.setBackground(BackgroundUtils.a(style, style.c));
             if (i >= 21) {
                 this.b.setElevation(3.0f);
             }
         } else {
             View view2 = this.b;
             Style style2 = this.d;
-            view2.setBackgroundDrawable(BackgroundUtils.a(style2, style2.f10190c));
+            view2.setBackgroundDrawable(BackgroundUtils.a(style2, style2.c));
         }
         if (this.d.e == 3) {
-            TextView textView3 = this.f10195c;
+            TextView textView3 = this.c;
             if (textView3 != null) {
                 textView3.setGravity(8388611);
             }
-            if ((this.f10194a.getResources().getConfiguration().screenLayout & 15) >= 3) {
+            if ((this.a.getResources().getConfiguration().screenLayout & 15) >= 3) {
                 this.d.h = BackgroundUtils.b(12);
                 this.d.i = BackgroundUtils.b(12);
                 this.d.j = BackgroundUtils.b(288);
-                this.d.g = BadgeDrawable.BOTTOM_START;
+                this.d.g = 8388691;
                 GradientDrawable gradientDrawable = new GradientDrawable();
                 gradientDrawable.setCornerRadius(BackgroundUtils.b(2));
-                gradientDrawable.setColor(this.d.f10190c);
+                gradientDrawable.setColor(this.d.c);
                 if (i >= 16) {
                     this.b.setBackground(gradientDrawable);
                 } else {
@@ -147,7 +142,7 @@ public class SuperToast {
     }
 
     public Context getContext() {
-        return this.f10194a;
+        return this.a;
     }
 
     public int h() {
@@ -178,7 +173,7 @@ public class SuperToast {
         layoutParams.width = this.d.j;
         layoutParams.flags = 152;
         layoutParams.format = -3;
-        layoutParams.windowAnimations = 16973826;
+        layoutParams.windowAnimations = com.android.internal.R.style.Animation_Dialog;
         layoutParams.type = 2005;
         layoutParams.gravity = this.d.g;
         layoutParams.x = 0;

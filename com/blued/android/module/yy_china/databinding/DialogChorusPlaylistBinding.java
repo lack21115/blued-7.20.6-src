@@ -11,22 +11,18 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogChorusPlaylistBinding.class */
 public final class DialogChorusPlaylistBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16307a;
+    public final View a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SmartRefreshLayout f16308c;
+    public final SmartRefreshLayout c;
     public final TextView d;
     public final ShapeTextView e;
     private final ConstraintLayout f;
 
     private DialogChorusPlaylistBinding(ConstraintLayout constraintLayout, View view, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, TextView textView, ShapeTextView shapeTextView) {
         this.f = constraintLayout;
-        this.f16307a = view;
+        this.a = view;
         this.b = recyclerView;
-        this.f16308c = smartRefreshLayout;
+        this.c = smartRefreshLayout;
         this.d = textView;
         this.e = shapeTextView;
     }
@@ -35,15 +31,15 @@ public final class DialogChorusPlaylistBinding implements ViewBinding {
         String str;
         View findViewById = view.findViewById(R.id.cover_view);
         if (findViewById != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_playlist_view);
-            if (recyclerView != null) {
-                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.srl_layout);
-                if (smartRefreshLayout != null) {
+            RecyclerView findViewById2 = view.findViewById(R.id.rv_playlist_view);
+            if (findViewById2 != null) {
+                SmartRefreshLayout findViewById3 = view.findViewById(R.id.srl_layout);
+                if (findViewById3 != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_dialog_title);
                     if (textView != null) {
                         ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_playlist_amount);
                         if (shapeTextView != null) {
-                            return new DialogChorusPlaylistBinding((ConstraintLayout) view, findViewById, recyclerView, smartRefreshLayout, textView, shapeTextView);
+                            return new DialogChorusPlaylistBinding((ConstraintLayout) view, findViewById, findViewById2, findViewById3, textView, shapeTextView);
                         }
                         str = "tvPlaylistAmount";
                     } else {
@@ -61,7 +57,6 @@ public final class DialogChorusPlaylistBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

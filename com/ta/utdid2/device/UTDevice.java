@@ -7,11 +7,11 @@ import com.ta.utdid2.a.a.g;
 public class UTDevice {
     private static String d(Context context) {
         a b = b.b(context);
-        return (b == null || g.m9885a(b.f())) ? "ffffffffffffffffffffffff" : b.f();
+        return (b == null || g.m6840a(b.f())) ? "ffffffffffffffffffffffff" : b.f();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0012, code lost:
-        if (com.ta.utdid2.a.a.g.m9885a(r0) != false) goto L8;
+        if (com.ta.utdid2.a.a.g.m6840a(r0) != false) goto L8;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -28,7 +28,7 @@ public class UTDevice {
             r0 = r3
             r2 = r0
             r0 = r3
-            boolean r0 = com.ta.utdid2.a.a.g.m9885a(r0)
+            boolean r0 = com.ta.utdid2.a.a.g.m6840a(r0)
             if (r0 == 0) goto L18
         L15:
             java.lang.String r0 = "ffffffffffffffffffffffff"

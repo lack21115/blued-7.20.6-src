@@ -22,20 +22,20 @@ public class a extends c {
             return;
         }
         if (TextUtils.isEmpty(messageV3.getNotificationStyle().getExpandableImageUrl()) || (a2 = a(messageV3.getNotificationStyle().getExpandableImageUrl())) == null) {
-            remoteViews.setViewVisibility(com.meizu.cloud.pushsdk.notification.c.c.g(this.f24165a), 8);
+            remoteViews.setViewVisibility(com.meizu.cloud.pushsdk.notification.c.c.g(this.f10550a), 8);
             return;
         }
-        remoteViews.setViewVisibility(com.meizu.cloud.pushsdk.notification.c.c.g(this.f24165a), 0);
-        remoteViews.setImageViewBitmap(com.meizu.cloud.pushsdk.notification.c.c.g(this.f24165a), a2);
+        remoteViews.setViewVisibility(com.meizu.cloud.pushsdk.notification.c.c.g(this.f10550a), 0);
+        remoteViews.setImageViewBitmap(com.meizu.cloud.pushsdk.notification.c.c.g(this.f10550a), a2);
     }
 
     @Override // com.meizu.cloud.pushsdk.notification.a
     public void a(Notification notification, MessageV3 messageV3, PendingIntent pendingIntent) {
         if (MinSdkChecker.isSupportNotificationBuild()) {
-            RemoteViews remoteViews = new RemoteViews(this.f24165a.getPackageName(), com.meizu.cloud.pushsdk.notification.c.c.a(this.f24165a));
-            remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.d(this.f24165a), messageV3.getTitle());
-            remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.e(this.f24165a), messageV3.getContent());
-            remoteViews.setLong(com.meizu.cloud.pushsdk.notification.c.c.f(this.f24165a), "setTime", System.currentTimeMillis());
+            RemoteViews remoteViews = new RemoteViews(this.f10550a.getPackageName(), com.meizu.cloud.pushsdk.notification.c.c.a(this.f10550a));
+            remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.d(this.f10550a), messageV3.getTitle());
+            remoteViews.setTextViewText(com.meizu.cloud.pushsdk.notification.c.c.e(this.f10550a), messageV3.getContent());
+            remoteViews.setLong(com.meizu.cloud.pushsdk.notification.c.c.f(this.f10550a), "setTime", System.currentTimeMillis());
             a(remoteViews, messageV3);
             b(remoteViews, messageV3);
             notification.bigContentView = remoteViews;

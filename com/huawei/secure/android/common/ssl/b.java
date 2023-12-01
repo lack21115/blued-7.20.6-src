@@ -4,7 +4,7 @@ package com.huawei.secure.android.common.ssl;
 public class b extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f23118a = 1;
+    private static final long f9510a = 1;
 
     public b(String str) {
         super(str);

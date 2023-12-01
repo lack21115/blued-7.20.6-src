@@ -338,9 +338,8 @@ public class TabLayout extends HorizontalScrollView {
             return this.selectedPosition + this.selectionOffset;
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-        public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
             super.onLayout(z, i, i2, i3, i4);
             ValueAnimator valueAnimator = this.indicatorAnimator;
             if (valueAnimator == null || !valueAnimator.isRunning()) {
@@ -350,9 +349,8 @@ public class TabLayout extends HorizontalScrollView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.LinearLayout, android.view.View
-        public void onMeasure(int i, int i2) {
+        protected void onMeasure(int i, int i2) {
             int i3;
             boolean z;
             super.onMeasure(i, i2);
@@ -406,7 +404,7 @@ public class TabLayout extends HorizontalScrollView {
             }
         }
 
-        @Override // android.view.View
+        @Override // android.widget.LinearLayout, android.view.View
         public void onRtlPropertiesChanged(int i) {
             super.onRtlPropertiesChanged(i);
             if (Build.VERSION.SDK_INT >= 23 || this.layoutDirection == i) {
@@ -977,9 +975,8 @@ public class TabLayout extends HorizontalScrollView {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.view.ViewGroup, android.view.View
-        public void drawableStateChanged() {
+        protected void drawableStateChanged() {
             super.drawableStateChanged();
             int[] drawableState = getDrawableState();
             Drawable drawable = this.baseBackgroundDrawable;
@@ -1070,7 +1067,7 @@ public class TabLayout extends HorizontalScrollView {
             return this.tab;
         }
 
-        @Override // android.widget.LinearLayout, android.view.View
+        @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
             BadgeDrawable badgeDrawable = this.badgeDrawable;
@@ -1174,12 +1171,12 @@ public class TabLayout extends HorizontalScrollView {
                     imageView.setVisibility(8);
                     this.iconView.setImageDrawable(null);
                 }
-                TextView textView2 = (TextView) customView.findViewById(16908308);
+                TextView textView2 = (TextView) customView.findViewById(android.R.id.text1);
                 this.customTextView = textView2;
                 if (textView2 != null) {
                     this.defaultMaxLines = TextViewCompat.getMaxLines(textView2);
                 }
-                this.customIconView = (ImageView) customView.findViewById(16908294);
+                this.customIconView = (ImageView) customView.findViewById(android.R.id.icon);
             } else {
                 View view = this.customView;
                 if (view != null) {
@@ -1797,9 +1794,8 @@ public class TabLayout extends HorizontalScrollView {
         return createTabFromPool;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         MaterialShapeUtils.setParentAbsoluteElevation(this);
         if (this.viewPager == null) {
@@ -1810,9 +1806,8 @@ public class TabLayout extends HorizontalScrollView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (this.setupViewPagerImplicitly) {
             setupWithViewPager(null);
@@ -1820,9 +1815,8 @@ public class TabLayout extends HorizontalScrollView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int i = 0;
         while (true) {
             int i2 = i;
@@ -1838,13 +1832,12 @@ public class TabLayout extends HorizontalScrollView {
         }
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         AccessibilityNodeInfoCompat.wrap(accessibilityNodeInfo).setCollectionInfo(AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(1, getTabCount(), false, 1));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:30:0x00c6, code lost:
         if (r0.getMeasuredWidth() != getMeasuredWidth()) goto L29;
      */
@@ -1859,7 +1852,7 @@ public class TabLayout extends HorizontalScrollView {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onMeasure(int r5, int r6) {
+    protected void onMeasure(int r5, int r6) {
         /*
             Method dump skipped, instructions count: 267
             To view this dump change 'Code comments level' option to 'DEBUG'

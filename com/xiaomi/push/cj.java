@@ -8,15 +8,15 @@ import com.xiaomi.push.ch;
 class cj implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f41310a;
+    final /* synthetic */ Context f27619a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ ch.a f254a;
+    final /* synthetic */ ch.a f207a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cj(ch.a aVar, Context context) {
-        this.f254a = aVar;
-        this.f41310a = context;
+        this.f207a = aVar;
+        this.f27619a = context;
     }
 
     @Override // java.lang.Runnable
@@ -25,10 +25,10 @@ class cj implements Runnable {
         SQLiteDatabase sQLiteDatabase2 = null;
         try {
             try {
-                SQLiteDatabase a2 = this.f254a.a();
+                SQLiteDatabase a2 = this.f207a.a();
                 if (a2 != null && a2.isOpen()) {
                     a2.beginTransaction();
-                    this.f254a.a(this.f41310a, a2);
+                    this.f207a.a(this.f27619a, a2);
                     sQLiteDatabase2 = a2;
                     sQLiteDatabase = a2;
                     a2.setTransactionSuccessful();
@@ -39,11 +39,11 @@ class cj implements Runnable {
                     } catch (Exception e) {
                         e = e;
                         com.xiaomi.channel.commonutils.logger.b.a(e);
-                        this.f254a.a(this.f41310a);
+                        this.f207a.a(this.f27619a);
                     }
                 }
-                if (this.f254a.f245a != null) {
-                    this.f254a.f245a.close();
+                if (this.f207a.f198a != null) {
+                    this.f207a.f198a.close();
                 }
             } catch (Throwable th) {
                 if (sQLiteDatabase2 != null) {
@@ -51,14 +51,14 @@ class cj implements Runnable {
                         sQLiteDatabase2.endTransaction();
                     } catch (Exception e2) {
                         com.xiaomi.channel.commonutils.logger.b.a(e2);
-                        this.f254a.a(this.f41310a);
+                        this.f207a.a(this.f27619a);
                         throw th;
                     }
                 }
-                if (this.f254a.f245a != null) {
-                    this.f254a.f245a.close();
+                if (this.f207a.f198a != null) {
+                    this.f207a.f198a.close();
                 }
-                this.f254a.a(this.f41310a);
+                this.f207a.a(this.f27619a);
                 throw th;
             }
         } catch (Exception e3) {
@@ -70,13 +70,13 @@ class cj implements Runnable {
                 } catch (Exception e4) {
                     e = e4;
                     com.xiaomi.channel.commonutils.logger.b.a(e);
-                    this.f254a.a(this.f41310a);
+                    this.f207a.a(this.f27619a);
                 }
             }
-            if (this.f254a.f245a != null) {
-                this.f254a.f245a.close();
+            if (this.f207a.f198a != null) {
+                this.f207a.f198a.close();
             }
         }
-        this.f254a.a(this.f41310a);
+        this.f207a.a(this.f27619a);
     }
 }

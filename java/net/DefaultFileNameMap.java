@@ -1,6 +1,5 @@
 package java.net;
 
-import com.baidu.mobads.sdk.internal.a;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Locale;
 import libcore.net.MimeUtils;
@@ -11,7 +10,7 @@ public class DefaultFileNameMap implements FileNameMap {
     @Override // java.net.FileNameMap
     public String getContentTypeFor(String str) {
         if (str.endsWith(BridgeUtil.SPLIT_MARK)) {
-            return MimeUtils.guessMimeTypeFromExtension(a.f);
+            return MimeUtils.guessMimeTypeFromExtension("html");
         }
         int lastIndexOf = str.lastIndexOf(35);
         int i = lastIndexOf;

@@ -24,11 +24,11 @@ public class PendantData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private MaterialFileData f26479a;
+    private MaterialFileData f12791a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f26480c;
+    private int f12792c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.mobad.model.data.PendantData$2  reason: invalid class name */
@@ -36,18 +36,18 @@ public class PendantData extends a implements Parcelable {
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f26481a;
+        static final /* synthetic */ int[] f12793a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[y.i.b.values().length];
-            f26481a = iArr;
+            f12793a = iArr;
             try {
                 iArr[y.i.b.UPPER_LEFT_CORNER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f26481a[y.i.b.BOTTOM_RIGHT_CORNER.ordinal()] = 2;
+                f12793a[y.i.b.BOTTOM_RIGHT_CORNER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -57,23 +57,23 @@ public class PendantData extends a implements Parcelable {
     }
 
     public PendantData(MaterialFileData materialFileData, int i, int i2) {
-        this.f26479a = materialFileData;
+        this.f12791a = materialFileData;
         this.b = i;
-        this.f26480c = i2;
+        this.f12792c = i2;
     }
 
     public PendantData(MaterialFileData materialFileData, y.i iVar) {
-        this.f26479a = materialFileData;
+        this.f12791a = materialFileData;
         this.b = MaterialData.a(iVar.h);
-        this.f26480c = a(iVar.f);
+        this.f12792c = a(iVar.f);
     }
 
     private int a(y.i.b bVar) {
-        return (bVar == null || AnonymousClass2.f26481a[bVar.ordinal()] != 2) ? 1 : 0;
+        return (bVar == null || AnonymousClass2.f12793a[bVar.ordinal()] != 2) ? 1 : 0;
     }
 
     public MaterialFileData a() {
-        return this.f26479a;
+        return this.f12791a;
     }
 
     public int b() {
@@ -81,7 +81,7 @@ public class PendantData extends a implements Parcelable {
     }
 
     public int c() {
-        return this.f26480c;
+        return this.f12792c;
     }
 
     @Override // android.os.Parcelable
@@ -90,13 +90,13 @@ public class PendantData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "PendantData{imgFile=" + this.f26479a + ", actionType=" + this.b + ", pendantPosition=" + this.f26480c + '}';
+        return "PendantData{imgFile=" + this.f12791a + ", actionType=" + this.b + ", pendantPosition=" + this.f12792c + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f26479a, i);
+        parcel.writeParcelable(this.f12791a, i);
         parcel.writeInt(this.b);
-        parcel.writeInt(this.f26480c);
+        parcel.writeInt(this.f12792c);
     }
 }

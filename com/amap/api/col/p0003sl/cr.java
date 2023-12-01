@@ -13,13 +13,9 @@ import org.json.JSONObject;
 /* renamed from: com.amap.api.col.3sl.cr  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/cr.class */
 public final class cr extends lc {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f4819a;
+    private Context a;
     private IAMapDelegate b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private cq f4820c;
+    private cq c;
     private String d;
     private String e;
     private String g;
@@ -40,13 +36,13 @@ public final class cr extends lc {
         this.g = null;
         boolean z = false;
         this.i = 0;
-        this.f4819a = context;
+        this.a = context;
         this.h = aVar;
         this.i = i;
-        if (this.f4820c == null) {
-            this.f4820c = new cq(context, "", i != 0 ? true : z);
+        if (this.c == null) {
+            this.c = new cq(context, "", i != 0 ? true : z);
         }
-        this.f4820c.a(str);
+        this.c.a(str);
         StringBuilder sb = new StringBuilder();
         sb.append(i);
         sb.append(str == null ? "" : str);
@@ -60,10 +56,10 @@ public final class cr extends lc {
         this.e = null;
         this.g = null;
         this.i = 0;
-        this.f4819a = context;
+        this.a = context;
         this.b = iAMapDelegate;
-        if (this.f4820c == null) {
-            this.f4820c = new cq(context, "");
+        if (this.c == null) {
+            this.c = new cq(context, "");
         }
     }
 
@@ -71,7 +67,7 @@ public final class cr extends lc {
         if (str == null || str2 == null) {
             return;
         }
-        ds.a(this.f4819a, "amap_style_config", "lastModified".concat(String.valueOf(str)), str2);
+        ds.a(this.a, "amap_style_config", "lastModified".concat(String.valueOf(str)), str2);
     }
 
     private void a(String str, byte[] bArr) {
@@ -92,7 +88,7 @@ public final class cr extends lc {
         if (str == null) {
             return null;
         }
-        Object b = ds.b(this.f4819a, "amap_style_config", "lastModified".concat(String.valueOf(str)), "");
+        Object b = ds.b(this.a, "amap_style_config", "lastModified".concat(String.valueOf(str)), "");
         if (!(b instanceof String) || b == "") {
             return null;
         }
@@ -100,14 +96,14 @@ public final class cr extends lc {
     }
 
     public final void a() {
-        this.f4819a = null;
-        if (this.f4820c != null) {
-            this.f4820c = null;
+        this.a = null;
+        if (this.c != null) {
+            this.c = null;
         }
     }
 
     public final void a(String str) {
-        cq cqVar = this.f4820c;
+        cq cqVar = this.c;
         if (cqVar != null) {
             cqVar.b(str);
         }
@@ -122,37 +118,37 @@ public final class cr extends lc {
     public final void runTask() {
         try {
             if (MapsInitializer.getNetWorkEnable()) {
-                if (this.f4820c != null) {
+                if (this.c != null) {
                     String str = this.g + this.d;
-                    String c2 = c(str);
-                    if (c2 != null) {
-                        this.f4820c.c(c2);
+                    String c = c(str);
+                    if (c != null) {
+                        this.c.c(c);
                     }
                     byte[] b = b(str);
                     if (this.h != null && b != null) {
                         this.h.b(b, this.i);
                     }
-                    cq.a d = this.f4820c.d();
-                    if (d != null && d.f4817a != null) {
+                    cq.a d = this.c.d();
+                    if (d != null && d.a != null) {
                         JSONObject jSONObject = null;
                         try {
-                            jSONObject = new JSONObject(new String(d.f4817a));
+                            jSONObject = new JSONObject(new String(d.a));
                         } catch (JSONException e) {
                         }
                         if (jSONObject == null) {
                             if (this.h != null) {
-                                if (!Arrays.equals(d.f4817a, b)) {
-                                    this.h.a(d.f4817a, this.i);
+                                if (!Arrays.equals(d.a, b)) {
+                                    this.h.a(d.a, this.i);
                                 }
                             } else if (this.b != null) {
-                                this.b.setCustomMapStyle(this.b.getMapConfig().isCustomStyleEnable(), d.f4817a);
+                                this.b.setCustomMapStyle(this.b.getMapConfig().isCustomStyleEnable(), d.a);
                             }
-                            a(str, d.f4817a);
-                            a(str, d.f4818c);
+                            a(str, d.a);
+                            a(str, d.c);
                         }
                     }
                 }
-                iw.a(this.f4819a, dw.a());
+                iw.a(this.a, dw.a());
                 if (this.b != null) {
                     this.b.setRunLowFrame(false);
                 }

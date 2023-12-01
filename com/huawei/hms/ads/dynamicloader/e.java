@@ -16,11 +16,11 @@ import java.util.Arrays;
 public class e extends a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22470c = "DynamicContext";
+    private static final String f8862c = "DynamicContext";
     private static final ThreadLocal<ApplicationInfo> d = new ThreadLocal<>();
 
     /* renamed from: a  reason: collision with root package name */
-    final PackageInfo f22471a;
+    final PackageInfo f8863a;
     final String b;
     private final ClassLoader e;
     private final Resources f;
@@ -28,25 +28,25 @@ public class e extends a {
 
     public e(Context context, String str, int i) {
         super(context);
-        this.f22471a = getBaseContext().getPackageManager().getPackageArchiveInfo(str, 128);
-        this.e = (Build.VERSION.SDK_INT < 21 ? new com.huawei.hms.ads.uiengineloader.h() : (w.a() && com.huawei.hms.ads.uiengineloader.i.a(context)) ? new com.huawei.hms.ads.uiengineloader.i() : new com.huawei.hms.ads.uiengineloader.j()).a(context, str, i, this.f22471a);
+        this.f8863a = getBaseContext().getPackageManager().getPackageArchiveInfo(str, 128);
+        this.e = (Build.VERSION.SDK_INT < 21 ? new com.huawei.hms.ads.uiengineloader.h() : (w.a() && com.huawei.hms.ads.uiengineloader.i.a(context)) ? new com.huawei.hms.ads.uiengineloader.i() : new com.huawei.hms.ads.uiengineloader.j()).a(context, str, i, this.f8863a);
         this.g = a(str);
         this.f = context.getResources();
         this.b = str;
-        aa.b(f22470c, "Create dynamicContext success.");
+        aa.b(f8862c, "Create dynamicContext success.");
     }
 
     private PackageInfo a() {
-        return this.f22471a;
+        return this.f8863a;
     }
 
     private Resources a(String str) {
-        this.f22471a.applicationInfo.publicSourceDir = str;
-        this.f22471a.applicationInfo.sourceDir = str;
+        this.f8863a.applicationInfo.publicSourceDir = str;
+        this.f8863a.applicationInfo.sourceDir = str;
         try {
-            return getBaseContext().getPackageManager().getResourcesForApplication(this.f22471a.applicationInfo);
+            return getBaseContext().getPackageManager().getResourcesForApplication(this.f8863a.applicationInfo);
         } catch (PackageManager.NameNotFoundException e) {
-            aa.c(f22470c, "NameNotFoundException:" + e.getLocalizedMessage());
+            aa.c(f8862c, "NameNotFoundException:" + e.getLocalizedMessage());
             return null;
         }
     }
@@ -72,7 +72,7 @@ public class e extends a {
 
     @Override // android.content.ContextWrapper, android.content.Context
     public String getPackageName() {
-        PackageInfo packageInfo = this.f22471a;
+        PackageInfo packageInfo = this.f8863a;
         if (packageInfo != null) {
             String str = packageInfo.packageName;
             if (!TextUtils.isEmpty(str)) {

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.provider.Settings;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Map;
 import java.util.UUID;
 
@@ -11,11 +12,11 @@ import java.util.UUID;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static f f1347a;
+    public static f f1299a;
     public SharedPreferences b;
 
     /* renamed from: c  reason: collision with root package name */
-    public SharedPreferences.Editor f1348c;
+    public SharedPreferences.Editor f1300c;
     public SharedPreferences d;
     public SharedPreferences.Editor e;
     public SharedPreferences f;
@@ -24,10 +25,10 @@ public class f {
     public boolean i;
 
     public static f a() {
-        if (f1347a == null) {
-            f1347a = new f();
+        if (f1299a == null) {
+            f1299a = new f();
         }
-        return f1347a;
+        return f1299a;
     }
 
     public long a(String str) {
@@ -64,7 +65,7 @@ public class f {
     public final void e() {
         SharedPreferences sharedPreferences = this.h.getSharedPreferences("StreamingReportData_Base", 0);
         this.b = sharedPreferences;
-        this.f1348c = sharedPreferences.edit();
+        this.f1300c = sharedPreferences.edit();
         SharedPreferences sharedPreferences2 = this.h.getSharedPreferences("StreamingReportData_Function", 0);
         this.d = sharedPreferences2;
         this.e = sharedPreferences2.edit();
@@ -82,16 +83,16 @@ public class f {
         String string = Settings.System.getString(this.h.getContentResolver(), "android_id");
         String str = string;
         if (string == null) {
-            str = UUID.randomUUID().toString().replaceAll("-", "");
+            str = UUID.randomUUID().toString().replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
         }
-        this.f1348c.putString("os_platform", "android");
-        this.f1348c.putString("bundle_id", this.h.getPackageName());
-        this.f1348c.putString("app_name", h.a(this.h));
-        this.f1348c.putString("device_id", str);
-        this.f1348c.putString("device_model", h.a());
-        this.f1348c.putString("os_version", Build.VERSION.RELEASE);
-        this.f1348c.putString("sdk_version", "3.0.0");
-        this.f1348c.apply();
+        this.f1300c.putString("os_platform", "android");
+        this.f1300c.putString("bundle_id", this.h.getPackageName());
+        this.f1300c.putString("app_name", h.a(this.h));
+        this.f1300c.putString("device_id", str);
+        this.f1300c.putString("device_model", h.a());
+        this.f1300c.putString("os_version", Build.VERSION.RELEASE);
+        this.f1300c.putString("sdk_version", "3.0.0");
+        this.f1300c.apply();
         this.g.putLong("method_report_last_time_ms", System.currentTimeMillis());
         this.g.apply();
     }
@@ -102,9 +103,9 @@ public class f {
     }
 
     public final void h() {
-        this.f1348c.putString("os_version", Build.VERSION.RELEASE);
-        this.f1348c.putString("sdk_version", "3.0.0");
-        this.f1348c.apply();
+        this.f1300c.putString("os_version", Build.VERSION.RELEASE);
+        this.f1300c.putString("sdk_version", "3.0.0");
+        this.f1300c.apply();
     }
 
     public final void i() {

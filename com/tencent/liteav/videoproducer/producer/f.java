@@ -6,7 +6,6 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.opengl.GLES20;
 import android.os.Looper;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.das.live.LiveProtos;
 import com.tencent.liteav.base.util.CommonUtil;
 import com.tencent.liteav.base.util.LiteavLog;
@@ -53,7 +52,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     final IVideoReporter b;
 
     /* renamed from: c  reason: collision with root package name */
-    final VideoPreprocessor f37156c;
+    final VideoPreprocessor f23465c;
     final BeautyProcessor d;
     com.tencent.liteav.base.util.b e;
     private final Context g;
@@ -68,7 +67,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     private final ConcurrentHashMap<VideoProducerDef.StreamType, com.tencent.liteav.videoproducer.encoder.ai> z;
 
     /* renamed from: a  reason: collision with root package name */
-    String f37155a = "VideoProducer";
+    String f23464a = "VideoProducer";
     volatile boolean f = false;
     private Object i = null;
     private VideoProducerDef.GSensorMode k = VideoProducerDef.GSensorMode.UI_FIX_LAYOUT;
@@ -125,7 +124,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     public static final /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f37159a;
+        static final /* synthetic */ int[] f23468a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -133,25 +132,25 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[VideoProducerDef.HomeOrientation.values().length];
-            f37159a = iArr;
+            f23468a = iArr;
             try {
                 iArr[VideoProducerDef.HomeOrientation.RIGHT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f37159a[VideoProducerDef.HomeOrientation.UP.ordinal()] = 2;
+                f23468a[VideoProducerDef.HomeOrientation.UP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f37159a[VideoProducerDef.HomeOrientation.LEFT.ordinal()] = 3;
+                f23468a[VideoProducerDef.HomeOrientation.LEFT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f37159a[VideoProducerDef.HomeOrientation.DOWN.ordinal()] = 4;
+                f23468a[VideoProducerDef.HomeOrientation.DOWN.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f37159a[VideoProducerDef.HomeOrientation.UNSET.ordinal()] = 5;
+                f23468a[VideoProducerDef.HomeOrientation.UNSET.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -162,11 +161,11 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         this.b = iVideoReporter;
         BeautyProcessor beautyProcessor = new BeautyProcessor(this.g, z, this.b);
         this.d = beautyProcessor;
-        this.f37156c = new VideoPreprocessor(this.g, beautyProcessor, iVideoReporter);
+        this.f23465c = new VideoPreprocessor(this.g, beautyProcessor, iVideoReporter);
         this.z = new ConcurrentHashMap<>();
         this.u = new ConcurrentHashMap<>();
         this.s = new ax(this.g);
-        this.f37155a += BridgeUtil.UNDERLINE_STR + hashCode();
+        this.f23464a += "_" + hashCode();
     }
 
     private Rotation a(VideoProducerDef.StreamType streamType) {
@@ -192,7 +191,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     private static com.tencent.liteav.videoproducer.capture.s a(CaptureSourceInterface captureSourceInterface) {
         if (captureSourceInterface instanceof com.tencent.liteav.videoproducer.capture.ah) {
-            CaptureSourceInterface captureSourceInterface2 = ((com.tencent.liteav.videoproducer.capture.ah) captureSourceInterface).f36865c;
+            CaptureSourceInterface captureSourceInterface2 = ((com.tencent.liteav.videoproducer.capture.ah) captureSourceInterface).f23174c;
             if (captureSourceInterface2 instanceof com.tencent.liteav.videoproducer.capture.s) {
                 return (com.tencent.liteav.videoproducer.capture.s) captureSourceInterface2;
             }
@@ -205,14 +204,14 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         com.tencent.liteav.base.util.n d = this.s.d();
         this.s.b(new com.tencent.liteav.base.util.n(videoEncodeParams.width, videoEncodeParams.height));
         com.tencent.liteav.base.util.n d2 = this.s.d();
-        if (videoEncodeParams.width != d2.f36340a || videoEncodeParams.height != d2.b) {
-            String str = this.f37155a;
-            LiteavLog.i(str, "update encode size from " + videoEncodeParams.width + "x" + videoEncodeParams.height + " to " + d2.f36340a + "x" + d2.b);
-            videoEncodeParams.width = d2.f36340a;
+        if (videoEncodeParams.width != d2.f22649a || videoEncodeParams.height != d2.b) {
+            String str = this.f23464a;
+            LiteavLog.i(str, "update encode size from " + videoEncodeParams.width + "x" + videoEncodeParams.height + " to " + d2.f22649a + "x" + d2.b);
+            videoEncodeParams.width = d2.f22649a;
             videoEncodeParams.height = d2.b;
         }
         if (!d.equals(d2)) {
-            LiteavLog.i(this.f37155a, "producer with encoder ".concat(String.valueOf(d2)));
+            LiteavLog.i(this.f23464a, "producer with encoder ".concat(String.valueOf(d2)));
         }
         return videoEncodeParams;
     }
@@ -223,8 +222,8 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         com.tencent.liteav.base.util.n b = this.s.b();
         boolean z2 = false;
         if (this.r != null) {
-            if (b.f36340a != this.r.f36846c || b.b != this.r.d) {
-                this.r.f36846c = b.f36340a;
+            if (b.f22649a != this.r.f23155c || b.b != this.r.d) {
+                this.r.f23155c = b.f22649a;
                 this.r.d = b.b;
                 z2 = true;
             }
@@ -235,7 +234,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
                 z = z2;
             }
         } else {
-            LiteavLog.w(this.f37155a, "updateCapturePreviewSizeFromSupervisor mCaptureParams==null!");
+            LiteavLog.w(this.f23464a, "updateCapturePreviewSizeFromSupervisor mCaptureParams==null!");
             z = false;
         }
         if (z && (captureSourceInterface = this.q) != null) {
@@ -249,13 +248,13 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(PixelFrame pixelFrame) {
-        if (pixelFrame != null && (pixelFrame.getWidth() != this.Q.f36340a || pixelFrame.getHeight() != this.Q.b)) {
+        if (pixelFrame != null && (pixelFrame.getWidth() != this.Q.f22649a || pixelFrame.getHeight() != this.Q.b)) {
             this.Q.a(pixelFrame.getWidth(), pixelFrame.getHeight());
-            this.b.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME_WIDTH, Integer.valueOf(this.Q.f36340a));
+            this.b.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME_WIDTH, Integer.valueOf(this.Q.f22649a));
             this.b.updateStatus(com.tencent.liteav.videobase.videobase.i.STATUS_VIDEO_RENDER_FRAME_HEIGHT, Integer.valueOf(this.Q.b));
         }
         if (!this.N) {
-            LiteavLog.d(this.f37155a, "rendered first frame!");
+            LiteavLog.d(this.f23464a, "rendered first frame!");
             this.b.notifyEvent(h.b.EVT_VIDEO_RENDER_FIRST_FRAME, "rendered first frame", new Object[0]);
             this.N = true;
         }
@@ -269,21 +268,21 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         e eVar = this.M;
         long timestamp = pixelFrame.getTimestamp();
         e.b bVar = new e.b();
-        if (eVar.f37150c == CaptureSourceInterface.SourceType.CUSTOM || (eVar.f37150c == CaptureSourceInterface.SourceType.CAMERA && eVar.e != VideoProducerDef.HomeOrientation.UNSET)) {
-            bVar.f37154a = eVar.c(timestamp);
+        if (eVar.f23459c == CaptureSourceInterface.SourceType.CUSTOM || (eVar.f23459c == CaptureSourceInterface.SourceType.CAMERA && eVar.e != VideoProducerDef.HomeOrientation.UNSET)) {
+            bVar.f23463a = eVar.c(timestamp);
             e.b a2 = eVar.a(timestamp);
-            if (a2.f37154a || a2.b) {
-                bVar.f37154a = !bVar.f37154a;
+            if (a2.f23463a || a2.b) {
+                bVar.f23463a = !bVar.f23463a;
             }
-        } else if (eVar.f37150c == CaptureSourceInterface.SourceType.CAMERA) {
+        } else if (eVar.f23459c == CaptureSourceInterface.SourceType.CAMERA) {
             boolean z = false;
             if (eVar.d == Rotation.NORMAL || eVar.d == Rotation.ROTATION_180) {
-                bVar.f37154a = eVar.c(timestamp);
+                bVar.f23463a = eVar.c(timestamp);
             } else {
                 boolean c2 = eVar.c(timestamp);
                 e.a b = eVar.b(timestamp);
-                bVar.f37154a = b.f37152a;
-                if (!b.f37152a) {
+                bVar.f23463a = b.f23461a;
+                if (!b.f23461a) {
                     z = c2;
                 } else if (!c2) {
                     z = true;
@@ -291,20 +290,20 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
             }
             bVar.b = z;
             e.b a3 = eVar.a(timestamp);
-            if (a3.f37154a) {
-                bVar.f37154a = !bVar.f37154a;
+            if (a3.f23463a) {
+                bVar.f23463a = !bVar.f23463a;
             }
             if (a3.b) {
                 bVar.b = !bVar.b;
             }
         }
-        videoRenderInterface.setHorizontalMirror(bVar.f37154a);
+        videoRenderInterface.setHorizontalMirror(bVar.f23463a);
         videoRenderInterface.setVerticalMirror(bVar.b);
         videoRenderInterface.renderFrame(pixelFrame);
     }
 
     private void a(DisplayTarget displayTarget, boolean z) {
-        String str = this.f37155a;
+        String str = this.f23464a;
         LiteavLog.i(str, "setDisplayView " + displayTarget + ",clearLastImage=" + z);
         this.A = displayTarget;
         if ((displayTarget != null ? displayTarget.getTXCloudVideoView() : null) != null) {
@@ -329,18 +328,18 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     private static void a(CaptureSourceInterface.CaptureParams captureParams) {
         if (captureParams instanceof CameraCaptureParams) {
-            ((CameraCaptureParams) captureParams).f36842a = null;
+            ((CameraCaptureParams) captureParams).f23151a = null;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar) {
-        LiteavLog.i(fVar.f37155a, "Stop custom capture");
+        LiteavLog.i(fVar.f23464a, "Stop custom capture");
         fVar.c();
         fVar.p = CaptureSourceInterface.SourceType.NONE;
-        fVar.f37156c.setSourceType(fVar.p);
+        fVar.f23465c.setSourceType(fVar.p);
         fVar.M.a(fVar.p);
-        fVar.s.f37141a = fVar.p;
+        fVar.s.f23450a = fVar.p;
         fVar.f();
     }
 
@@ -357,7 +356,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         DisplayTarget displayTarget = fVar.A;
         if (displayTarget != null) {
             com.tencent.liteav.base.util.n size = displayTarget.getSize();
-            fVar.a(i, i2, size.f36340a, size.b);
+            fVar.a(i, i2, size.f22649a, size.b);
         }
     }
 
@@ -379,7 +378,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
                 e eVar = fVar.M;
                 long timestamp = pixelFrame.getTimestamp();
                 if (eVar.b != -1) {
-                    eVar.f37149a.remove(eVar.b);
+                    eVar.f23458a.remove(eVar.b);
                 }
                 eVar.b = timestamp;
             }
@@ -389,10 +388,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, int i, VideoProducerDef.StreamType streamType) {
-        LiteavLog.i(fVar.f37155a, "setRPSNearestREFSize: %d", Integer.valueOf(i));
+        LiteavLog.i(fVar.f23464a, "setRPSNearestREFSize: %d", Integer.valueOf(i));
         com.tencent.liteav.videoproducer.encoder.ai aiVar = fVar.z.get(streamType);
         if (aiVar == null) {
-            LiteavLog.w(fVar.f37155a, "setRPSNearestREFSize with stream type: %s, but can't find matched videoEncodeController.", streamType);
+            LiteavLog.w(fVar.f23464a, "setRPSNearestREFSize with stream type: %s, but can't find matched videoEncodeController.", streamType);
         } else {
             aiVar.a(com.tencent.liteav.videoproducer.encoder.an.a(aiVar, i), "setRPSNearestREFSize");
         }
@@ -412,9 +411,9 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         if (captureSourceInterface instanceof com.tencent.liteav.videoproducer.capture.ah) {
             ((com.tencent.liteav.videoproducer.capture.ah) captureSourceInterface).a(bitmap, i, width, i2);
         } else if (captureSourceInterface instanceof VirtualCamera) {
-            LiteavLog.w(fVar.f37155a, "setPausedImage in Start param.");
+            LiteavLog.w(fVar.f23464a, "setPausedImage in Start param.");
         } else {
-            LiteavLog.w(fVar.f37155a, "setPausedImage failed!");
+            LiteavLog.w(fVar.f23464a, "setPausedImage failed!");
         }
     }
 
@@ -431,7 +430,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
                     declaredMethod.setAccessible(true);
                     declaredMethod.invoke(tXCloudVideoView, Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4));
                 } catch (Exception e) {
-                    LiteavLog.e(fVar.f37155a, "showFocusViewInternal Exception:".concat(String.valueOf(e)));
+                    LiteavLog.e(fVar.f23464a, "showFocusViewInternal Exception:".concat(String.valueOf(e)));
                 }
             }
         }
@@ -439,7 +438,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, GLConstants.GLScaleType gLScaleType) {
-        LiteavLog.i(fVar.f37155a, "setRenderScaleType: %s", gLScaleType.name());
+        LiteavLog.i(fVar.f23464a, "setRenderScaleType: %s", gLScaleType.name());
         fVar.D = gLScaleType;
         for (VideoRenderInterface videoRenderInterface : fVar.h()) {
             if (videoRenderInterface != null) {
@@ -450,13 +449,13 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, GLConstants.MirrorMode mirrorMode) {
-        LiteavLog.i(fVar.f37155a, "setRenderMirrorMode: %s", mirrorMode.name());
+        LiteavLog.i(fVar.f23464a, "setRenderMirrorMode: %s", mirrorMode.name());
         fVar.C = mirrorMode;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, GLConstants.PixelFormatType pixelFormatType, GLConstants.PixelBufferType pixelBufferType, VideoRenderListener videoRenderListener) {
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "setCustomRenderListener PixelFormatType = " + pixelFormatType + ",  PixelBufferType = " + pixelBufferType + " listener= " + videoRenderListener);
         fVar.E = videoRenderListener;
         if (fVar.E != null) {
@@ -477,7 +476,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, GLConstants.PixelFormatType pixelFormatType, GLConstants.PixelBufferType pixelBufferType, CustomVideoProcessListener customVideoProcessListener) {
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "setCustomVideoProcessListener PixelFormatType = " + pixelFormatType + ",  PixelBufferType = " + pixelBufferType + " listener= " + customVideoProcessListener);
         if (fVar.J == null) {
             fVar.J = new a(fVar.b);
@@ -485,13 +484,13 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         a aVar = fVar.J;
         LiteavLog.i("CustomVideoProcessListenerAdapter", "setCustomVideoProcessListener PixelFormatType = " + pixelFormatType + ",  PixelBufferType = " + pixelBufferType + " listener= " + customVideoProcessListener);
         aVar.b.a(b.a(aVar, pixelFormatType, pixelBufferType, customVideoProcessListener));
-        fVar.f37156c.setInterceptorBeforeWatermark(fVar.J);
+        fVar.f23465c.setInterceptorBeforeWatermark(fVar.J);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, TakeSnapshotListener takeSnapshotListener, SnapshotSourceType snapshotSourceType) {
         VideoRenderInterface videoRenderInterface;
-        LiteavLog.i(fVar.f37155a, "takeSnapshot: ".concat(String.valueOf(takeSnapshotListener)));
+        LiteavLog.i(fVar.f23464a, "takeSnapshot: ".concat(String.valueOf(takeSnapshotListener)));
         if (snapshotSourceType == SnapshotSourceType.STREAM) {
             for (com.tencent.liteav.videoproducer.encoder.ai aiVar : fVar.z.values()) {
                 if (aiVar != null) {
@@ -509,7 +508,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
                 videoRenderInterface2.takeSnapshot(takeSnapshotListener);
                 return;
             }
-            LiteavLog.w(fVar.f37155a, "takeSnapshot return null, no match render.");
+            LiteavLog.w(fVar.f23464a, "takeSnapshot return null, no match render.");
             if (takeSnapshotListener != null) {
                 takeSnapshotListener.onComplete(null);
             }
@@ -530,7 +529,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         fVar.M.a(pixelFrame.getTimestamp(), fVar.C);
         fVar.M.a(pixelFrame.getTimestamp(), fVar.w);
         boolean z = false;
-        if (fVar.K.f36340a == i) {
+        if (fVar.K.f22649a == i) {
             z = false;
             if (fVar.K.b == i2) {
                 z = true;
@@ -547,12 +546,12 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
             fVar.a(pixelFrame.getGLContext());
         }
         e.b a2 = fVar.M.a(pixelFrame.getTimestamp());
-        if ((pixelFrame.getRotation() == Rotation.ROTATION_90 || pixelFrame.getRotation() == Rotation.ROTATION_270) && a2.f37154a != a2.b) {
-            boolean z2 = a2.f37154a;
-            a2.f37154a = a2.b;
+        if ((pixelFrame.getRotation() == Rotation.ROTATION_90 || pixelFrame.getRotation() == Rotation.ROTATION_270) && a2.f23463a != a2.b) {
+            boolean z2 = a2.f23463a;
+            a2.f23463a = a2.b;
             a2.b = z2;
         }
-        if (a2.f37154a) {
+        if (a2.f23463a) {
             pixelFrame.setMirrorHorizontal(!pixelFrame.isMirrorHorizontal());
         }
         if (a2.b) {
@@ -561,7 +560,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         if (pixelFrame.getGLContext() == null) {
             pixelFrame.setGLContext(fVar.h.d());
         }
-        fVar.f37156c.processFrame(pixelFrame);
+        fVar.f23465c.processFrame(pixelFrame);
         pixelFrame.release();
     }
 
@@ -571,10 +570,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         if (!fVar.O) {
             fVar.O = true;
             fVar.b.notifyEvent(h.b.EVT_VIDEO_CAPTURE_FIRST_FRAME, "capture first frame", new Object[0]);
-            LiteavLog.d(fVar.f37155a, "receive first capture frame! ");
+            LiteavLog.d(fVar.f23464a, "receive first capture frame! ");
         }
         com.tencent.liteav.base.util.n nVar = fVar.s.f;
-        if (!fVar.o || nVar.f36340a != pixelFrame.getWidth() || nVar.b != pixelFrame.getHeight()) {
+        if (!fVar.o || nVar.f22649a != pixelFrame.getWidth() || nVar.b != pixelFrame.getHeight()) {
             ax axVar = fVar.s;
             axVar.f.a(new com.tencent.liteav.base.util.n(pixelFrame.getWidth(), pixelFrame.getHeight()));
             axVar.g.a(0, 0);
@@ -593,12 +592,12 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
             PixelFrame pixelFrame2 = new PixelFrame(pixelFrame);
             fVar.t = pixelFrame2;
             pixelFrame2.setRotation(CameraCaptureSingleton.getInstance().getCameraRotation());
-            fVar.M.b(pixelFrame.getTimestamp()).f37152a = CameraCaptureSingleton.getInstance().isFrontCamera();
+            fVar.M.b(pixelFrame.getTimestamp()).f23461a = CameraCaptureSingleton.getInstance().isFrontCamera();
             fVar.M.a(pixelFrame.getTimestamp(), fVar.C);
             fVar.M.a(pixelFrame.getTimestamp(), fVar.w);
             Rotation cameraRotation = CameraCaptureSingleton.getInstance().getCameraRotation();
             int i = cameraRotation != null ? cameraRotation.mValue : 0;
-            int i2 = AnonymousClass4.f37159a[fVar.s.a().ordinal()];
+            int i2 = AnonymousClass4.f23468a[fVar.s.a().ordinal()];
             if (i2 == 1) {
                 pixelFrame.setRotation(Rotation.a(360 - i));
                 pixelFrame.swapWidthHeight();
@@ -609,7 +608,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
                 pixelFrame.swapWidthHeight();
             }
             e.b a3 = fVar.M.a(pixelFrame.getTimestamp());
-            if (a3.f37154a) {
+            if (a3.f23463a) {
                 pixelFrame.setMirrorHorizontal(!pixelFrame.isMirrorHorizontal());
             }
             if (a3.b) {
@@ -619,20 +618,20 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         if (pixelFrame.getGLContext() == null) {
             pixelFrame.setGLContext(fVar.h.d());
         }
-        fVar.f37156c.processFrame(pixelFrame);
+        fVar.f23465c.processFrame(pixelFrame);
         pixelFrame.release();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, Rotation rotation) {
-        LiteavLog.i(fVar.f37155a, "setRenderRotation: %s, GSensorMode is %s", rotation.name(), fVar.k.name());
+        LiteavLog.i(fVar.f23464a, "setRenderRotation: %s, GSensorMode is %s", rotation.name(), fVar.k.name());
         fVar.B = rotation;
         fVar.g();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, Rotation rotation, int i) {
-        LiteavLog.i(fVar.f37155a, "onOrientationChanged: %s, displayRotation:%d", rotation, Integer.valueOf(i));
+        LiteavLog.i(fVar.f23464a, "onOrientationChanged: %s, displayRotation:%d", rotation, Integer.valueOf(i));
         fVar.l = rotation;
         fVar.m = i;
         e eVar = fVar.M;
@@ -655,23 +654,23 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, CaptureSourceInterface.SourceType sourceType, VideoProducerDef.ProducerMode producerMode, CaptureSourceInterface.CaptureParams captureParams) {
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "setCaptureParams " + sourceType + " ,mode = " + producerMode + " , " + captureParams.toString());
-        LiteavLog.d(fVar.f37155a, "setCaptureParamInternal ".concat(String.valueOf(sourceType)));
+        LiteavLog.d(fVar.f23464a, "setCaptureParamInternal ".concat(String.valueOf(sourceType)));
         if (fVar.p != sourceType) {
-            String str2 = fVar.f37155a;
+            String str2 = fVar.f23464a;
             LiteavLog.i(str2, "setCaptureParamInternal sourcetype not match: " + sourceType + " , current is " + fVar.p);
         } else if (fVar.q == null || fVar.r == null) {
-            String str3 = fVar.f37155a;
+            String str3 = fVar.f23464a;
             LiteavLog.i(str3, "setCaptureParamInternal capturesource is " + fVar.q + ", " + fVar.r);
         } else if (producerMode == fVar.s.b && fVar.r.equals(captureParams)) {
         } else {
             fVar.d.setPerformanceMode(producerMode == VideoProducerDef.ProducerMode.PERFORMANCE);
             fVar.s.a(producerMode);
-            fVar.s.a(new com.tencent.liteav.base.util.n(captureParams.f36846c, captureParams.d));
+            fVar.s.a(new com.tencent.liteav.base.util.n(captureParams.f23155c, captureParams.d));
             fVar.s.a(captureParams.e);
             com.tencent.liteav.base.util.n b = fVar.s.b();
-            captureParams.f36846c = b.f36340a;
+            captureParams.f23155c = b.f22649a;
             captureParams.d = b.b;
             if (!fVar.s.c().equals(fVar.L)) {
                 fVar.e();
@@ -692,7 +691,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, ServerVideoProducerConfig serverVideoProducerConfig) {
-        LiteavLog.i(fVar.f37155a, "setServerConfig=".concat(String.valueOf(serverVideoProducerConfig)));
+        LiteavLog.i(fVar.f23464a, "setServerConfig=".concat(String.valueOf(serverVideoProducerConfig)));
         fVar.j = serverVideoProducerConfig;
         for (com.tencent.liteav.videoproducer.encoder.ai aiVar : fVar.z.values()) {
             if (aiVar != null) {
@@ -705,28 +704,28 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, VideoProducerDef.GSensorMode gSensorMode) {
         if (fVar.p == CaptureSourceInterface.SourceType.SCREEN) {
-            LiteavLog.i(fVar.f37155a, "setGSensorMode has been ignored for screen capturing");
+            LiteavLog.i(fVar.f23464a, "setGSensorMode has been ignored for screen capturing");
             return;
         }
         fVar.k = gSensorMode;
         fVar.M.f = gSensorMode;
-        LiteavLog.i(fVar.f37155a, "set GSensor mode to %s", gSensorMode);
+        LiteavLog.i(fVar.f23464a, "set GSensor mode to %s", gSensorMode);
         fVar.i();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, VideoProducerDef.HomeOrientation homeOrientation) {
         if (fVar.p == CaptureSourceInterface.SourceType.SCREEN) {
-            LiteavLog.i(fVar.f37155a, "setHomeOrientation has been ignored for screen capturing");
+            LiteavLog.i(fVar.f23464a, "setHomeOrientation has been ignored for screen capturing");
             return;
         }
         d dVar = fVar.n;
         if (dVar != null) {
             dVar.disable();
         }
-        fVar.s.f37142c = homeOrientation;
+        fVar.s.f23451c = homeOrientation;
         fVar.M.e = homeOrientation == null ? VideoProducerDef.HomeOrientation.UNSET : homeOrientation;
-        LiteavLog.i(fVar.f37155a, "set HomeOrientation to %s", homeOrientation);
+        LiteavLog.i(fVar.f23464a, "set HomeOrientation to %s", homeOrientation);
         if (!fVar.s.c().equals(fVar.L)) {
             fVar.e();
         }
@@ -735,10 +734,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, VideoProducerDef.StreamType streamType) {
-        LiteavLog.i(fVar.f37155a, "requestKeyFrame");
+        LiteavLog.i(fVar.f23464a, "requestKeyFrame");
         com.tencent.liteav.videoproducer.encoder.ai aiVar = fVar.z.get(streamType);
         if (aiVar == null) {
-            LiteavLog.w(fVar.f37155a, "requestKeyFrame with stream type: %s, but can't find matched videoEncodeController.", streamType);
+            LiteavLog.w(fVar.f23464a, "requestKeyFrame with stream type: %s, but can't find matched videoEncodeController.", streamType);
         } else {
             aiVar.a(com.tencent.liteav.videoproducer.encoder.al.a(aiVar), "restartIDRFrame");
         }
@@ -748,7 +747,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     public static /* synthetic */ void a(f fVar, VideoProducerDef.StreamType streamType, int i, int i2) {
         com.tencent.liteav.videoproducer.encoder.ai aiVar = fVar.z.get(streamType);
         if (aiVar == null) {
-            LiteavLog.w(fVar.f37155a, "ackRPSRecvFrameIndex with stream type: %s, but can't find matched videoEncodeController.", streamType);
+            LiteavLog.w(fVar.f23464a, "ackRPSRecvFrameIndex with stream type: %s, but can't find matched videoEncodeController.", streamType);
         } else {
             aiVar.a(com.tencent.liteav.videoproducer.encoder.ao.a(aiVar, i, i2), "ackRPSRecvFrameIndex");
         }
@@ -756,7 +755,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, VideoProducerDef.StreamType streamType, GLConstants.Orientation orientation, VideoEncodeParams videoEncodeParams) {
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "setEncodeParams:  streamType:" + streamType + " orientation:" + orientation + " params:" + videoEncodeParams);
         if (orientation != null) {
             GLConstants.Orientation orientation2 = fVar.u.get(streamType);
@@ -779,10 +778,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, VideoProducerDef.StreamType streamType, VideoEncodeParams videoEncodeParams, VideoEncoderDef.VideoEncoderDataListener videoEncoderDataListener) {
         if (fVar.z.get(streamType) != null) {
-            LiteavLog.w(fVar.f37155a, "%s video encoder is started", streamType.toString());
+            LiteavLog.w(fVar.f23464a, "%s video encoder is started", streamType.toString());
             return;
         }
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "startEncodeStreamInternal: " + streamType + "; " + videoEncodeParams);
         videoEncodeParams.fps = Math.min(20, videoEncodeParams.fps);
         VideoEncodeParams a2 = fVar.a(videoEncodeParams);
@@ -805,7 +804,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         if (streamType == VideoProducerDef.StreamType.STREAM_TYPE_SMALL_VIDEO || (encodeStrategy2 = fVar.y.get(streamType)) == null || encodeStrategy2 == encodeStrategy) {
             return;
         }
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "setEncodeStrategy: " + streamType + " " + encodeStrategy);
         fVar.y.put(streamType, encodeStrategy);
         com.tencent.liteav.videoproducer.encoder.ai aiVar = fVar.z.get(streamType);
@@ -817,10 +816,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(f fVar, String str) {
         try {
-            LiteavLog.i(fVar.f37155a, "setHWEncoderDeviceRelatedParams: ".concat(String.valueOf(str)));
+            LiteavLog.i(fVar.f23464a, "setHWEncoderDeviceRelatedParams: ".concat(String.valueOf(str)));
             fVar.x = new JSONArray(str);
         } catch (JSONException e) {
-            LiteavLog.e(fVar.f37155a, "setHWEncoderDeviceRelatedParams error ".concat(String.valueOf(e)));
+            LiteavLog.e(fVar.f23464a, "setHWEncoderDeviceRelatedParams error ".concat(String.valueOf(e)));
         }
     }
 
@@ -833,7 +832,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     }
 
     private void a(Object obj) {
-        LiteavLog.i(this.f37155a, "initOpenGLComponents");
+        LiteavLog.i(this.f23464a, "initOpenGLComponents");
         if (!CommonUtil.equals(this.i, obj)) {
             f();
         }
@@ -847,14 +846,14 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
             eVar.a(obj, null, 128, 128);
         } catch (com.tencent.liteav.videobase.b.g e) {
             this.h = null;
-            LiteavLog.e(this.f37155a, "EGLCore create failed.", e);
+            LiteavLog.e(this.f23464a, "EGLCore create failed.", e);
         }
     }
 
     public static VideoEncoderDef.EncodeAbility b() {
         com.tencent.liteav.videoproducer.encoder.a aVar;
-        aVar = a.C0941a.f36968a;
-        return aVar.f36967a;
+        aVar = a.C0771a.f23277a;
+        return aVar.f23276a;
     }
 
     private void b(VideoProducerDef.StreamType streamType) {
@@ -868,7 +867,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void b(f fVar) {
-        LiteavLog.i(fVar.f37155a, "uninitialize");
+        LiteavLog.i(fVar.f23464a, "uninitialize");
         fVar.c();
         for (com.tencent.liteav.videoproducer.encoder.ai aiVar : fVar.z.values()) {
             if (aiVar != null) {
@@ -881,13 +880,13 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         fVar.s.b(new com.tencent.liteav.base.util.n());
         synchronized (fVar) {
             if (!fVar.f) {
-                LiteavLog.w(fVar.f37155a, "videoproducer already uninitialize.");
+                LiteavLog.w(fVar.f23464a, "videoproducer already uninitialize.");
                 return;
             }
             com.tencent.liteav.base.util.b bVar = fVar.e;
             fVar.e = null;
             fVar.f = false;
-            fVar.f37156c.uninitialize();
+            fVar.f23465c.uninitialize();
             fVar.F = null;
             fVar.H = null;
             fVar.f();
@@ -899,10 +898,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void b(f fVar, int i, VideoProducerDef.StreamType streamType) {
-        LiteavLog.i(fVar.f37155a, "setRPSIFrameFPS: %d", Integer.valueOf(i));
+        LiteavLog.i(fVar.f23464a, "setRPSIFrameFPS: %d", Integer.valueOf(i));
         com.tencent.liteav.videoproducer.encoder.ai aiVar = fVar.z.get(streamType);
         if (aiVar == null) {
-            LiteavLog.w(fVar.f37155a, "setRPSIFrameFPS with stream type: %s, but can't find matched videoEncodeController.", streamType);
+            LiteavLog.w(fVar.f23464a, "setRPSIFrameFPS with stream type: %s, but can't find matched videoEncodeController.", streamType);
         } else {
             aiVar.a(com.tencent.liteav.videoproducer.encoder.am.a(aiVar, i), "setRPSIFrameFPS");
         }
@@ -917,7 +916,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void b(f fVar, Rotation rotation) {
-        LiteavLog.i(fVar.f37155a, "setEncodeRotation rotation: %s, GSensor mode: %s", rotation, fVar.k);
+        LiteavLog.i(fVar.f23464a, "setEncodeRotation rotation: %s, GSensor mode: %s", rotation, fVar.k);
         if (fVar.v == rotation) {
             return;
         }
@@ -927,10 +926,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void b(f fVar, CaptureSourceInterface.SourceType sourceType, VideoProducerDef.ProducerMode producerMode, CaptureSourceInterface.CaptureParams captureParams) {
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "startCaptureInternal sourceType:" + sourceType + ",mode:" + producerMode + ",captureParams:" + captureParams);
         if (fVar.p != CaptureSourceInterface.SourceType.NONE || fVar.p == CaptureSourceInterface.SourceType.CUSTOM) {
-            String str2 = fVar.f37155a;
+            String str2 = fVar.f23464a;
             LiteavLog.w(str2, "can't Start when sourceType isn't NONE. current is " + fVar.p.name());
             return;
         }
@@ -938,14 +937,14 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         fVar.p = sourceType;
         fVar.r = captureParams;
         fVar.d.setPerformanceMode(producerMode == VideoProducerDef.ProducerMode.PERFORMANCE);
-        fVar.f37156c.setSourceType(fVar.p);
+        fVar.f23465c.setSourceType(fVar.p);
         fVar.M.a(fVar.p);
-        fVar.s.f37141a = fVar.p;
+        fVar.s.f23450a = fVar.p;
         fVar.s.a(producerMode);
         fVar.s.a(fVar.r.e);
-        fVar.s.a(new com.tencent.liteav.base.util.n(fVar.r.f36846c, fVar.r.d));
+        fVar.s.a(new com.tencent.liteav.base.util.n(fVar.r.f23155c, fVar.r.d));
         com.tencent.liteav.base.util.n b = fVar.s.b();
-        fVar.r.f36846c = b.f36340a;
+        fVar.r.f23155c = b.f22649a;
         fVar.r.d = b.b;
         fVar.e();
         if (sourceType == CaptureSourceInterface.SourceType.CAMERA) {
@@ -996,10 +995,10 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        LiteavLog.i(this.f37155a, "stopCaptureInternal");
+        LiteavLog.i(this.f23464a, "stopCaptureInternal");
         this.o = false;
-        this.f37156c.unregisterVideoProcessedListener(1, this);
-        this.f37156c.unregisterVideoProcessedListener(2, this);
+        this.f23465c.unregisterVideoProcessedListener(1, this);
+        this.f23465c.unregisterVideoProcessedListener(2, this);
         for (VideoRenderInterface videoRenderInterface : h()) {
             if (videoRenderInterface != null) {
                 videoRenderInterface.stop(true);
@@ -1012,9 +1011,9 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
             this.n = null;
         }
         this.p = CaptureSourceInterface.SourceType.NONE;
-        this.f37156c.setSourceType(this.p);
+        this.f23465c.setSourceType(this.p);
         this.M.a(this.p);
-        this.s.f37141a = this.p;
+        this.s.f23450a = this.p;
         this.s.a(new com.tencent.liteav.base.util.n());
         this.s.a((Rect) null);
         this.O = false;
@@ -1025,7 +1024,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void c(f fVar) {
-        fVar.f37156c.initialize();
+        fVar.f23465c.initialize();
         fVar.F = new com.tencent.liteav.videoconsumer.renderer.g(fVar.e.getLooper(), fVar.b);
     }
 
@@ -1041,7 +1040,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void d(f fVar, boolean z) {
-        String str = fVar.f37155a;
+        String str = fVar.f23464a;
         LiteavLog.i(str, "setEncodeMirrorEnabled : " + z + ", old is " + fVar.w);
         if (fVar.w == z) {
             return;
@@ -1054,25 +1053,25 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         com.tencent.liteav.base.util.n c2 = this.s.c();
         if (!c2.equals(this.L)) {
             com.tencent.liteav.base.util.n b = this.s.b();
-            String str = this.f37155a;
+            String str = this.f23464a;
             LiteavLog.i(str, "producer with capture " + b + " preview " + c2 + " mode:" + this.s.b);
         }
-        this.L.a(c2.f36340a, c2.b);
+        this.L.a(c2.f22649a, c2.b);
         if (this.o) {
-            this.f37156c.unregisterVideoProcessedListener(1, this);
-            this.f37156c.unregisterVideoProcessedListener(2, this);
+            this.f23465c.unregisterVideoProcessedListener(1, this);
+            this.f23465c.unregisterVideoProcessedListener(2, this);
         }
-        com.tencent.liteav.videobase.videobase.a aVar = new com.tencent.liteav.videobase.videobase.a(c2.f36340a, c2.b);
-        this.f37156c.registerVideoProcessedListener(1, aVar, GLConstants.PixelBufferType.TEXTURE_2D, GLConstants.PixelFormatType.RGBA, true, this);
-        this.f37156c.registerVideoProcessedListener(2, aVar, GLConstants.PixelBufferType.TEXTURE_2D, GLConstants.PixelFormatType.RGBA, false, this);
+        com.tencent.liteav.videobase.videobase.a aVar = new com.tencent.liteav.videobase.videobase.a(c2.f22649a, c2.b);
+        this.f23465c.registerVideoProcessedListener(1, aVar, GLConstants.PixelBufferType.TEXTURE_2D, GLConstants.PixelFormatType.RGBA, true, this);
+        this.f23465c.registerVideoProcessedListener(2, aVar, GLConstants.PixelBufferType.TEXTURE_2D, GLConstants.PixelFormatType.RGBA, false, this);
         this.o = true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void e(f fVar) {
-        LiteavLog.i(fVar.f37155a, "pauseCaptureInternal");
+        LiteavLog.i(fVar.f23464a, "pauseCaptureInternal");
         if (fVar.p == CaptureSourceInterface.SourceType.CUSTOM) {
-            LiteavLog.w(fVar.f37155a, "ignore invoking pauseCapture() when using custom input");
+            LiteavLog.w(fVar.f23464a, "ignore invoking pauseCapture() when using custom input");
             return;
         }
         CaptureSourceInterface captureSourceInterface = fVar.q;
@@ -1086,7 +1085,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         f fVar = null;
         TXCloudVideoView tXCloudVideoView = displayTarget == null ? null : displayTarget.getTXCloudVideoView();
         if (tXCloudVideoView == null) {
-            LiteavLog.e(this.f37155a, "setTouchToFocusEnableInternal mDisplayTarget is null.");
+            LiteavLog.e(this.f23464a, "setTouchToFocusEnableInternal mDisplayTarget is null.");
             return;
         }
         try {
@@ -1097,21 +1096,21 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
             }
             declaredMethod.invoke(tXCloudVideoView, Boolean.valueOf(z), fVar);
         } catch (Exception e) {
-            LiteavLog.e(this.f37155a, "setTouchToFocusEnableInternal Exception:".concat(String.valueOf(e)));
+            LiteavLog.e(this.f23464a, "setTouchToFocusEnableInternal Exception:".concat(String.valueOf(e)));
         }
     }
 
     private void f() {
-        LiteavLog.i(this.f37155a, "uninitOpenGLComponents");
+        LiteavLog.i(this.f23464a, "uninitOpenGLComponents");
         com.tencent.liteav.videobase.b.e.a(this.h);
         this.h = null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void f(f fVar) {
-        LiteavLog.i(fVar.f37155a, "resumeCaptureInternal");
+        LiteavLog.i(fVar.f23464a, "resumeCaptureInternal");
         if (fVar.p == CaptureSourceInterface.SourceType.CUSTOM) {
-            LiteavLog.w(fVar.f37155a, "ignore invoking resumeCapture() when using custom input");
+            LiteavLog.w(fVar.f23464a, "ignore invoking resumeCapture() when using custom input");
             return;
         }
         CaptureSourceInterface captureSourceInterface = fVar.q;
@@ -1125,7 +1124,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         f fVar = null;
         TXCloudVideoView tXCloudVideoView = displayTarget == null ? null : displayTarget.getTXCloudVideoView();
         if (tXCloudVideoView == null) {
-            LiteavLog.e(this.f37155a, "setZoomEnabledInternal mDisplayTarget is null.");
+            LiteavLog.e(this.f23464a, "setZoomEnabledInternal mDisplayTarget is null.");
             return;
         }
         try {
@@ -1136,7 +1135,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
             }
             declaredMethod.invoke(tXCloudVideoView, Boolean.valueOf(z), fVar);
         } catch (Exception e) {
-            LiteavLog.e(this.f37155a, "setZoomEnabledInternal Exception:".concat(String.valueOf(e)));
+            LiteavLog.e(this.f23464a, "setZoomEnabledInternal Exception:".concat(String.valueOf(e)));
         }
     }
 
@@ -1153,18 +1152,18 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void g(f fVar) {
         if (fVar.p != CaptureSourceInterface.SourceType.NONE) {
-            LiteavLog.w(fVar.f37155a, "can't Start when sourceType isn't NONE");
+            LiteavLog.w(fVar.f23464a, "can't Start when sourceType isn't NONE");
             return;
         }
-        LiteavLog.i(fVar.f37155a, "Start custom capture");
+        LiteavLog.i(fVar.f23464a, "Start custom capture");
         fVar.a(com.tencent.liteav.videoproducer.capture.au.a().b());
         fVar.d();
         fVar.s.a(VideoProducerDef.ProducerMode.AUTO);
         fVar.K.a(0, 0);
         fVar.p = CaptureSourceInterface.SourceType.CUSTOM;
-        fVar.f37156c.setSourceType(fVar.p);
+        fVar.f23465c.setSourceType(fVar.p);
         fVar.M.a(fVar.p);
-        fVar.s.f37141a = fVar.p;
+        fVar.s.f23450a = fVar.p;
         fVar.a(fVar.F, fVar.G);
     }
 
@@ -1190,7 +1189,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.a
     public final void a() {
-        LiteavLog.i(this.f37155a, "onCaptureError");
+        LiteavLog.i(this.f23464a, "onCaptureError");
     }
 
     @Override // com.tencent.rtmp.ui.b
@@ -1214,7 +1213,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
         }
         if (!this.P) {
             this.P = true;
-            LiteavLog.d(this.f37155a, "preprocess first frame out!");
+            LiteavLog.d(this.f23464a, "preprocess first frame out!");
         }
         GLES20.glFinish();
         pixelFrame.retain();
@@ -1245,7 +1244,7 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.a
     public final void a(boolean z) {
-        LiteavLog.i(this.f37155a, "onStartFinish success:".concat(String.valueOf(z)));
+        LiteavLog.i(this.f23464a, "onStartFinish success:".concat(String.valueOf(z)));
         a(ai.a(this));
     }
 
@@ -1264,19 +1263,19 @@ public final class f implements CaptureSourceInterface.a, com.tencent.liteav.vid
 
     @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.a
     public final void b(boolean z) {
-        LiteavLog.i(this.f37155a, "onScreenDisplayOrientationChanged isPortrait:".concat(String.valueOf(z)));
+        LiteavLog.i(this.f23464a, "onScreenDisplayOrientationChanged isPortrait:".concat(String.valueOf(z)));
         a(aj.a(this, z));
     }
 
     @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.a
     public final void c(boolean z) {
-        LiteavLog.i(this.f37155a, "onCameraTouchEnable enableTouch:".concat(String.valueOf(z)));
+        LiteavLog.i(this.f23464a, "onCameraTouchEnable enableTouch:".concat(String.valueOf(z)));
         a(ak.a(this, z));
     }
 
     @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.a
     public final void d(boolean z) {
-        LiteavLog.i(this.f37155a, "onCameraZoomEnable enableZoom:".concat(String.valueOf(z)));
+        LiteavLog.i(this.f23464a, "onCameraZoomEnable enableZoom:".concat(String.valueOf(z)));
         a(al.a(this, z));
     }
 }

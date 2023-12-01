@@ -15,12 +15,11 @@ import com.chad.library.adapter.base.BaseItemDraggableAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.util.ArrayList;
+import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/AddPostImageAdapter.class */
 public class AddPostImageAdapter extends BaseItemDraggableAdapter<ChildImageInfo, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f19886a;
+    public boolean a;
     public IRequestHost b;
     private int l;
     private boolean m;
@@ -37,8 +36,8 @@ public class AddPostImageAdapter extends BaseItemDraggableAdapter<ChildImageInfo
     }
 
     public AddPostImageAdapter(IRequestHost iRequestHost, int i, boolean z) {
-        super(R.layout.item_add_post_image, null);
-        this.f19886a = true;
+        super(R.layout.item_add_post_image, (List) null);
+        this.a = true;
         this.n = false;
         this.o = new ChildImageInfo();
         ChildImageInfo childImageInfo = new ChildImageInfo();
@@ -56,13 +55,12 @@ public class AddPostImageAdapter extends BaseItemDraggableAdapter<ChildImageInfo
     public void a() {
         setNewData(new ArrayList());
         for (ChildImageInfo childImageInfo : SelectPhotoManager.a().c()) {
-            addData((AddPostImageAdapter) childImageInfo);
+            addData(childImageInfo);
         }
         b();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, ChildImageInfo childImageInfo) {
         View view = baseViewHolder.getView(R.id.root_view);
@@ -85,7 +83,7 @@ public class AddPostImageAdapter extends BaseItemDraggableAdapter<ChildImageInfo
         baseViewHolder.setGone(R.id.add_post_audit_layout, false);
         baseViewHolder.setGone(R.id.add_post_img_layout, true);
         a(baseViewHolder, childImageInfo, (ImageView) baseViewHolder.getView(R.id.img_image));
-        baseViewHolder.setGone(R.id.iv_image_delete, this.f19886a);
+        baseViewHolder.setGone(R.id.iv_image_delete, this.a);
         baseViewHolder.addOnClickListener(R.id.iv_image_delete);
         if (!TextUtils.isEmpty(childImageInfo.mImagePath)) {
             baseViewHolder.setGone(R.id.img_add, false);

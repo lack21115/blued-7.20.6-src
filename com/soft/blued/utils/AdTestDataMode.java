@@ -11,15 +11,15 @@ import kotlin.Metadata;
 public final class AdTestDataMode implements MultiItemEntity {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f34711a;
+    private int f21020a;
     private BannerAdExtra b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BluedADExtra f34712c;
+    private BluedADExtra f21021c;
     private ArrayList<BluedADExtra> d = new ArrayList<>();
 
     public AdTestDataMode(int i) {
-        this.f34711a = i;
+        this.f21020a = i;
     }
 
     public final BannerAdExtra a() {
@@ -27,7 +27,7 @@ public final class AdTestDataMode implements MultiItemEntity {
     }
 
     public final void a(BluedADExtra bluedADExtra) {
-        this.f34712c = bluedADExtra;
+        this.f21021c = bluedADExtra;
     }
 
     public final void a(BannerAdExtra bannerAdExtra) {
@@ -35,7 +35,7 @@ public final class AdTestDataMode implements MultiItemEntity {
     }
 
     public final BluedADExtra b() {
-        return this.f34712c;
+        return this.f21021c;
     }
 
     public final ArrayList<BluedADExtra> c() {
@@ -48,6 +48,6 @@ public final class AdTestDataMode implements MultiItemEntity {
     }
 
     public final int getType() {
-        return this.f34711a;
+        return this.f21020a;
     }
 }

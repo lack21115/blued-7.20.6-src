@@ -6,6 +6,7 @@ import android.util.Pair;
 import androidx.collection.ArrayMap;
 import androidx.collection.LongSparseArray;
 import com.alipay.sdk.util.e;
+import com.android.internal.widget.LockPatternUtils;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.core.pack.BasePackage;
 import com.blued.android.chat.core.pack.DeleteAckPackage;
@@ -63,8 +64,6 @@ import com.blued.im.sync.SyncOuterClass;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.protobuf.GeneratedMessageV3;
-import com.igexin.push.core.b;
-import com.tencent.txcopyrightedmedia.TXCopyrightedMedia;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -211,7 +210,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         synchronized (this.sessionList) {
             z4 = false;
             for (Pair<Short, Long> pair : list) {
-                String sessionKey = SessionHeader.getSessionKey(pair.first.shortValue(), pair.second.longValue());
+                String sessionKey = SessionHeader.getSessionKey(((Short) pair.first).shortValue(), ((Long) pair.second).longValue());
                 SessionModel remove = this.sessionList.remove(sessionKey);
                 synchronized (this.snapSessionList) {
                     this.snapSessionList.remove(sessionKey);
@@ -220,23 +219,23 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
                     z4 = true;
                 }
                 if (z) {
-                    ChatManager.dbOperImpl.deleteSessionAndChattingForOne(pair.first.shortValue(), pair.second.longValue());
+                    ChatManager.dbOperImpl.deleteSessionAndChattingForOne(((Short) pair.first).shortValue(), ((Long) pair.second).longValue());
                 } else {
-                    ChatManager.dbOperImpl.deleteSessionForOne(pair.first.shortValue(), pair.second.longValue());
+                    ChatManager.dbOperImpl.deleteSessionForOne(((Short) pair.first).shortValue(), ((Long) pair.second).longValue());
                 }
                 if (z3) {
-                    ChatManager.dbOperImpl.deleteSessionSetting(pair.first.shortValue(), pair.second.longValue());
+                    ChatManager.dbOperImpl.deleteSessionSetting(((Short) pair.first).shortValue(), ((Long) pair.second).longValue());
                 } else {
-                    ChatManager.dbOperImpl.deleteNoGroupSessionSetting(pair.first.shortValue(), pair.second.longValue());
+                    ChatManager.dbOperImpl.deleteNoGroupSessionSetting(((Short) pair.first).shortValue(), ((Long) pair.second).longValue());
                 }
             }
         }
         if (z4) {
             if (list.size() == 1) {
                 if (z) {
-                    notifyMsgListChanged(list.get(0).first.shortValue(), list.get(0).second.longValue());
+                    notifyMsgListChanged(((Short) list.get(0).first).shortValue(), ((Long) list.get(0).second).longValue());
                 }
-                notifySessionRemoved(list.get(0).first.shortValue(), list.get(0).second.longValue());
+                notifySessionRemoved(((Short) list.get(0).first).shortValue(), ((Long) list.get(0).second).longValue());
             } else {
                 notifySessionListChanged();
             }
@@ -244,7 +243,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         if (z2) {
             ArrayList arrayList = new ArrayList();
             for (Pair<Short, Long> pair2 : list) {
-                if (pair2.second.longValue() > 0) {
+                if (((Long) pair2.second).longValue() > 0) {
                     arrayList.add(pair2);
                 }
             }
@@ -520,7 +519,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         if (ChatManager.debug) {
             StringBuilder sb = new StringBuilder();
             sb.append("get msg list from db size:");
-            sb.append(oldMsgListFromDB == null ? b.l : Integer.valueOf(oldMsgListFromDB.size()));
+            sb.append(oldMsgListFromDB == null ? "null" : Integer.valueOf(oldMsgListFromDB.size()));
             Log.v(TAG, sb.toString());
         }
         if (oldMsgListFromDB == null || oldMsgListFromDB.size() <= 0) {
@@ -678,7 +677,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
                     Pair<Short, Long> sessionTypeAndId = ChatHelper.getSessionTypeAndId(key);
                     if (sessionTypeAndId != null) {
                         for (SingleSessionListener singleSessionListener : value) {
-                            singleSessionListener.onSessionRemoved(sessionTypeAndId.first.shortValue(), sessionTypeAndId.second.longValue());
+                            singleSessionListener.onSessionRemoved(((Short) sessionTypeAndId.first).shortValue(), ((Long) sessionTypeAndId.second).longValue());
                         }
                     }
                 }
@@ -1400,7 +1399,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
     private boolean recvSendAckPackage(SendAckPackage sendAckPackage) {
         SendMsgPackage sendMsgPackage;
         synchronized (this.sendingPackageList) {
-            sendMsgPackage = this.sendingPackageList.get(sendAckPackage.localId);
+            sendMsgPackage = (SendMsgPackage) this.sendingPackageList.get(sendAckPackage.localId);
             if (sendMsgPackage != null) {
                 this.sendingPackageList.remove(sendAckPackage.localId);
             }
@@ -1455,7 +1454,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
                     }
                     JsonObject asJsonObject = JsonParser.parseString(str).getAsJsonObject();
                     asJsonObject.remove("played");
-                    asJsonObject.addProperty("played", (Number) 1);
+                    asJsonObject.addProperty("played", 1);
                     chattingModel4.setMsgExtra(asJsonObject.toString());
                     chattingModel2 = chattingModel;
                 } catch (Exception e) {
@@ -1516,7 +1515,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         if (syncResponse.getError() != SyncErrorCode.ErrorCode.ErrorCodeOK) {
             if (list == null) {
                 if (loadListener != null) {
-                    loadListener.onLoadFailed(e.f4661a);
+                    loadListener.onLoadFailed(e.a);
                     return;
                 }
                 return;
@@ -1530,7 +1529,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         }
         ArrayList arrayList = new ArrayList();
         for (SyncMessageOuterClass.SyncMessage syncMessage : syncResponse.getMessagesList()) {
-            SyncChattingModel syncChattingModel = TextUtils.isEmpty(syncMessage.getBody()) ? null : (SyncChattingModel) ChatHelper.getGson().fromJson(syncMessage.getBody(), (Class<Object>) SyncChattingModel.class);
+            SyncChattingModel syncChattingModel = TextUtils.isEmpty(syncMessage.getBody()) ? null : (SyncChattingModel) ChatHelper.getGson().fromJson(syncMessage.getBody(), SyncChattingModel.class);
             if (syncChattingModel != null) {
                 syncChattingModel.sessionId = syncMessage.getSessionId();
                 syncChattingModel.sessionType = (short) syncMessage.getSessionType();
@@ -1659,7 +1658,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         synchronized (this.sendingPackageList) {
             this.sendingPackageList.put(sendMsgPackageFromChattingModel.localId, sendMsgPackageFromChattingModel);
         }
-        TimeoutUtils.addTimeoutPackage(sendMsgPackageFromChattingModel.localId, sendMsgPackageFromChattingModel, 30000L, this);
+        TimeoutUtils.addTimeoutPackage(sendMsgPackageFromChattingModel.localId, sendMsgPackageFromChattingModel, LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS, this);
         this.connector.sendPackage(sendMsgPackageFromChattingModel);
     }
 
@@ -1732,7 +1731,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
                     SyncOuterClass.SyncResponse syncResponse = (SyncOuterClass.SyncResponse) generatedMessageV3;
                     if (Chat.this.initMaxMsgId == 0) {
                         if (syncResponse.getMessagesList().size() > 0) {
-                            Chat.this.initMaxMsgId = syncResponse.getMessagesList().get(0).getMsgId();
+                            Chat.this.initMaxMsgId = ((SyncMessageOuterClass.SyncMessage) syncResponse.getMessagesList().get(0)).getMsgId();
                         } else {
                             Chat.this.initMaxMsgId = 1L;
                         }
@@ -1761,8 +1760,8 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         }
         Pair<Long, Long> checkSyncRange = checkSyncRange(s, j, j3);
         if (checkSyncRange != null) {
-            j2 = checkSyncRange.first.longValue();
-            j4 = checkSyncRange.second.longValue();
+            j2 = ((Long) checkSyncRange.first).longValue();
+            j4 = ((Long) checkSyncRange.second).longValue();
         } else {
             j4 = j3;
         }
@@ -1815,7 +1814,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
     public void sendSyncPackageFailed(LoadListener loadListener, List<ChattingModel> list) {
         if (list == null) {
             if (loadListener != null) {
-                loadListener.onLoadFailed(e.f4661a);
+                loadListener.onLoadFailed(e.a);
                 return;
             }
             return;
@@ -2217,7 +2216,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
 
     @Override // com.blued.android.chat.core.worker.BaseWorker
     public String getWorkerName() {
-        return TXCopyrightedMedia.PLAY_SCENE_CHAT;
+        return "Chat";
     }
 
     public void ignoredNoReadNumAll() {
@@ -2248,7 +2247,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         HashSet hashSet = new HashSet();
         synchronized (this.sessionList) {
             for (Pair<Short, Long> pair : list) {
-                SessionModel sessionModel = this.sessionList.get(SessionHeader.getSessionKey(pair.first.shortValue(), pair.second.longValue()));
+                SessionModel sessionModel = this.sessionList.get(SessionHeader.getSessionKey(((Short) pair.first).shortValue(), ((Long) pair.second).longValue()));
                 if (sessionModel != null && removeSessionUnreadMsg(sessionModel)) {
                     ChatManager.dbOperImpl.updateSession(sessionModel);
                     hashSet.add(sessionModel);
@@ -2372,7 +2371,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         if (ChatManager.debug) {
             StringBuilder sb = new StringBuilder();
             sb.append("get msg list from db size:");
-            sb.append(msgList == null ? b.l : Integer.valueOf(msgList.size()));
+            sb.append(msgList == null ? "null" : Integer.valueOf(msgList.size()));
             Log.v(TAG, sb.toString());
         }
         if (msgList != null && msgList.size() > 0) {
@@ -2392,7 +2391,7 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         if (ChatManager.debug) {
             StringBuilder sb = new StringBuilder();
             sb.append("get msg list from db size:");
-            sb.append(serviceMsgFromDB == null ? b.l : Integer.valueOf(serviceMsgFromDB.size()));
+            sb.append(serviceMsgFromDB == null ? "null" : Integer.valueOf(serviceMsgFromDB.size()));
             Log.v(TAG, sb.toString());
         }
     }
@@ -3445,9 +3444,9 @@ public class Chat extends BaseWorker implements PackageHandler, TimeoutUtils.Tim
         }
         synchronized (this.sessionList) {
             for (Pair<Long, Integer> pair : list) {
-                SessionModel sessionModel = this.sessionList.get(SessionHeader.getSessionKey(2, pair.first.longValue()));
+                SessionModel sessionModel = this.sessionList.get(SessionHeader.getSessionKey(2, ((Long) pair.first).longValue()));
                 if (sessionModel != null) {
-                    sessionModel.onLineState = pair.second.intValue();
+                    sessionModel.onLineState = ((Integer) pair.second).intValue();
                     ChatManager.dbOperImpl.updateSession(sessionModel);
                 }
             }

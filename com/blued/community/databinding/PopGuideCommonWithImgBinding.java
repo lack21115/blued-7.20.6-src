@@ -9,13 +9,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/PopGuideCommonWithImgBinding.class */
 public final class PopGuideCommonWithImgBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f19060a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f19061c;
+    public final LinearLayout c;
     public final ImageView d;
     public final LinearLayout e;
     public final TextView f;
@@ -23,9 +19,9 @@ public final class PopGuideCommonWithImgBinding implements ViewBinding {
 
     private PopGuideCommonWithImgBinding(LinearLayout linearLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout2, ImageView imageView3, LinearLayout linearLayout3, TextView textView) {
         this.g = linearLayout;
-        this.f19060a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f19061c = linearLayout2;
+        this.c = linearLayout2;
         this.d = imageView3;
         this.e = linearLayout3;
         this.f = textView;
@@ -66,7 +62,6 @@ public final class PopGuideCommonWithImgBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.g;

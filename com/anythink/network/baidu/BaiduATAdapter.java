@@ -17,6 +17,7 @@ import com.baidu.mobads.sdk.api.ExpressResponse;
 import com.baidu.mobads.sdk.api.NativeResponse;
 import com.baidu.mobads.sdk.api.RequestParameters;
 import com.baidu.mobads.sdk.api.StyleParams;
+import com.igexin.assist.sdk.AssistPushConsts;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -26,11 +27,11 @@ import java.util.Map;
 public class BaiduATAdapter extends CustomNativeAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    String f8849a;
+    String f6009a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f8850c;
+    String f6010c;
     private BaiduNativeManager i;
     private double h = 0.0d;
     StyleParams.Builder d = new StyleParams.Builder();
@@ -44,10 +45,10 @@ public class BaiduATAdapter extends CustomNativeAdapter {
     public final class AnonymousClass2 implements BaiduATNativePortraitVideoAd.LoadCallbackListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f8852a;
+        final /* synthetic */ Context f6012a;
 
         AnonymousClass2(Context context) {
-            this.f8852a = context;
+            this.f6012a = context;
         }
 
         @Override // com.anythink.network.baidu.BaiduATNativePortraitVideoAd.LoadCallbackListener
@@ -59,7 +60,7 @@ public class BaiduATAdapter extends CustomNativeAdapter {
         public final void onSuccess(NativeResponse nativeResponse, CustomNativeAd customNativeAd) {
             ArrayList arrayList = new ArrayList();
             arrayList.add(nativeResponse);
-            BaiduATAdapter.a(BaiduATAdapter.this, arrayList, this.f8852a, customNativeAd);
+            BaiduATAdapter.a(BaiduATAdapter.this, arrayList, this.f6012a, customNativeAd);
         }
     }
 
@@ -284,9 +285,9 @@ public class BaiduATAdapter extends CustomNativeAdapter {
     }
 
     private void a(Map<String, Object> map, Map<String, Object> map2) {
-        this.f8849a = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6009a = ATInitMediation.getStringFromMap(map, "app_id");
         this.b = ATInitMediation.getStringFromMap(map, "ad_place_id");
-        this.f8850c = ATInitMediation.getStringFromMap(map, "payload");
+        this.f6010c = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         this.e = ATInitMediation.getIntFromMap(map, "unit_type");
         this.h = ATInitMediation.getDoubleFromMap(map, "bid_floor");
         try {
@@ -315,30 +316,25 @@ public class BaiduATAdapter extends CustomNativeAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return BaiduATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         return this.b;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return BaiduATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(Context context, Map<String, Object> map, Map<String, Object> map2) {
-        this.f8849a = ATInitMediation.getStringFromMap(map, "app_id");
+        this.f6009a = ATInitMediation.getStringFromMap(map, "app_id");
         this.b = ATInitMediation.getStringFromMap(map, "ad_place_id");
-        this.f8850c = ATInitMediation.getStringFromMap(map, "payload");
+        this.f6010c = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         this.e = ATInitMediation.getIntFromMap(map, "unit_type");
         this.h = ATInitMediation.getDoubleFromMap(map, "bid_floor");
         try {
@@ -365,18 +361,16 @@ public class BaiduATAdapter extends CustomNativeAdapter {
         } catch (Exception e) {
             BaiduATInitManager.printLog("initRequestParams() >>> " + e.getMessage());
         }
-        if (TextUtils.isEmpty(this.f8849a) || TextUtils.isEmpty(this.b)) {
+        if (TextUtils.isEmpty(this.f6009a) || TextUtils.isEmpty(this.b)) {
             notifyATLoadFail("", "app_id or ad_place_id is empty.");
             return;
         }
         final Context applicationContext = context.getApplicationContext();
         BaiduATInitManager.getInstance().initSDK(applicationContext, map, new MediationInitCallback() { // from class: com.anythink.network.baidu.BaiduATAdapter.1
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onFail(String str) {
                 BaiduATAdapter.this.notifyATLoadFail("", str);
             }
 
-            @Override // com.anythink.core.api.MediationInitCallback
             public final void onSuccess() {
                 try {
                     BaiduATAdapter.a(BaiduATAdapter.this, applicationContext);
@@ -388,7 +382,6 @@ public class BaiduATAdapter extends CustomNativeAdapter {
         });
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.f = true;
         loadCustomNetworkAd(context, map, map2);

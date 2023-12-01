@@ -7,6 +7,7 @@ import android.util.Log;
 import com.android.internal.os.RuntimeInit;
 import com.android.internal.os.ZygoteInit;
 import com.android.internal.telephony.PhoneConstants;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import dalvik.system.PathClassLoader;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.callbacks.XC_InitPackageResources;
@@ -279,7 +280,7 @@ public final class XposedBridge {
         File ensureSuperDexFile = ensureSuperDexFile("XResources", system.getClass(), Resources.class);
         Class<?> cls = TypedArray.class;
         try {
-            TypedArray obtainTypedArray = system.obtainTypedArray(system.getIdentifier("preloaded_drawables", "array", "android"));
+            TypedArray obtainTypedArray = system.obtainTypedArray(system.getIdentifier("preloaded_drawables", "array", MsgBackupManager.PLATFORM_ANDROID));
             Class<?> cls2 = obtainTypedArray.getClass();
             cls = cls2;
             obtainTypedArray.recycle();

@@ -12,10 +12,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.sina.weibo.sdk.constant.WBConstants;
 import com.sina.weibo.sdk.statistic.WBAgent;
 import com.sina.weibo.sdk.utils.AidTask;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -41,7 +42,7 @@ public class Utility {
         if (str == null) {
             return bundle;
         }
-        String[] split = str.split("&");
+        String[] split = str.split(ContainerUtils.FIELD_DELIMITER);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -60,23 +61,23 @@ public class Utility {
     }
 
     public static String generateGUID() {
-        return UUID.randomUUID().toString().replace("-", "");
+        return UUID.randomUUID().toString().replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
     }
 
     public static String generateUA(Context context) {
-        return Build.MANUFACTURER + "-" + Build.MODEL + BridgeUtil.UNDERLINE_STR + Build.VERSION.RELEASE + BridgeUtil.UNDERLINE_STR + "weibosdk" + BridgeUtil.UNDERLINE_STR + WBConstants.WEIBO_SDK_VERSION_CODE + "_android";
+        return Build.MANUFACTURER + Constants.ACCEPT_TIME_SEPARATOR_SERVER + Build.MODEL + "_" + Build.VERSION.RELEASE + "_weibosdk_" + WBConstants.WEIBO_SDK_VERSION_CODE + "_android";
     }
 
     public static String generateUAAid(Context context) {
         StringBuilder sb = new StringBuilder();
         sb.append(Build.MANUFACTURER);
-        sb.append("-");
+        sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
         sb.append(Build.MODEL);
         sb.append("__");
         sb.append("weibosdk");
         sb.append("__");
         try {
-            sb.append(WBConstants.WEIBO_SDK_VERSION_CODE.replaceAll("\\s+", BridgeUtil.UNDERLINE_STR));
+            sb.append(WBConstants.WEIBO_SDK_VERSION_CODE.replaceAll("\\s+", "_"));
         } catch (Exception e) {
             sb.append("unknown");
         }

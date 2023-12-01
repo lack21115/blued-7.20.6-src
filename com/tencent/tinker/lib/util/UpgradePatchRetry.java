@@ -29,9 +29,8 @@ public class UpgradePatchRetry {
     private File retryInfoFile;
     private File tempPatchFile;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tinker/lib/util/UpgradePatchRetry$RetryInfo.class */
-    public static class RetryInfo {
+    static class RetryInfo {
         String md5;
         String times;
 

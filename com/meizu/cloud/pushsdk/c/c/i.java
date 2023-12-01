@@ -7,11 +7,11 @@ import com.sobot.network.http.SobotOkHttpUtils;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f24038a;
+    private final f f10427a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final c f24039c;
+    private final c f10428c;
     private final j d;
     private final Object e;
 
@@ -19,11 +19,11 @@ public class i {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private f f24040a;
+        private f f10429a;
         private String b = "GET";
 
         /* renamed from: c  reason: collision with root package name */
-        private c.a f24041c = new c.a();
+        private c.a f10430c = new c.a();
         private j d;
         private Object e;
 
@@ -32,13 +32,13 @@ public class i {
         }
 
         public a a(c cVar) {
-            this.f24041c = cVar.c();
+            this.f10430c = cVar.c();
             return this;
         }
 
         public a a(f fVar) {
             if (fVar != null) {
-                this.f24040a = fVar;
+                this.f10429a = fVar;
                 return this;
             }
             throw new IllegalArgumentException("url == null");
@@ -160,7 +160,7 @@ public class i {
         }
 
         public a a(String str, String str2) {
-            this.f24041c.a(str, str2);
+            this.f10430c.a(str, str2);
             return this;
         }
 
@@ -177,7 +177,7 @@ public class i {
         }
 
         public i c() {
-            if (this.f24040a != null) {
+            if (this.f10429a != null) {
                 return new i(this);
             }
             throw new IllegalStateException("url == null");
@@ -189,19 +189,19 @@ public class i {
     }
 
     private i(a aVar) {
-        this.f24038a = aVar.f24040a;
+        this.f10427a = aVar.f10429a;
         this.b = aVar.b;
-        this.f24039c = aVar.f24041c.a();
+        this.f10428c = aVar.f10430c.a();
         this.d = aVar.d;
         this.e = aVar.e != null ? aVar.e : this;
     }
 
     public f a() {
-        return this.f24038a;
+        return this.f10427a;
     }
 
     public String a(String str) {
-        return this.f24039c.a(str);
+        return this.f10428c.a(str);
     }
 
     public String b() {
@@ -225,7 +225,7 @@ public class i {
     }
 
     public c d() {
-        return this.f24039c;
+        return this.f10428c;
     }
 
     public j e() {
@@ -237,7 +237,7 @@ public class i {
         sb.append("Request{method=");
         sb.append(this.b);
         sb.append(", url=");
-        sb.append(this.f24038a);
+        sb.append(this.f10427a);
         sb.append(", tag=");
         Object obj = this.e;
         if (obj == this) {

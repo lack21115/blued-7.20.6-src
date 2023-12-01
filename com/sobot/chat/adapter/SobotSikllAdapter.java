@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.hms.ads.fw;
 import com.sobot.chat.api.model.ZhiChiGroupBase;
 import com.sobot.chat.utils.ResourceUtils;
 import com.sobot.chat.widget.horizontalgridpage.SobotRecyclerCallBack;
@@ -96,7 +97,7 @@ public class SobotSikllAdapter extends RecyclerView.Adapter<ViewHolder> {
                 SobotBitmapUtil.display(this.mContext, zhiChiGroupBase.getGroupPic(), viewHolder.sobot_iv_group_img);
             } else {
                 viewHolder.sobot_tv_group_name.setText(zhiChiGroupBase.getGroupName());
-                if ("true".equals(zhiChiGroupBase.isOnline())) {
+                if (fw.Code.equals(zhiChiGroupBase.isOnline())) {
                     viewHolder.sobot_tv_group_desc.setVisibility(8);
                     viewHolder.sobot_tv_group_name.setTextSize(14.0f);
                     return;

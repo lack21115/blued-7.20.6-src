@@ -18,13 +18,9 @@ import java.text.DecimalFormat;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredProgressView.class */
 public class PkDaredProgressView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private PkDaredScoreProgressView f15403a;
+    private PkDaredScoreProgressView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f15404c;
+    private View c;
     private PkDaredTimeProgressView d;
     private TextView e;
     private int f;
@@ -86,7 +82,7 @@ public class PkDaredProgressView extends FrameLayout {
     }
 
     public void a(final int i) {
-        this.f15404c.animate().alpha(1.0f).setDuration(200L).setStartDelay(0L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredProgressView.2
+        this.c.animate().alpha(1.0f).setDuration(200L).setStartDelay(0L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredProgressView.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
@@ -96,7 +92,7 @@ public class PkDaredProgressView extends FrameLayout {
     }
 
     public void a(int i, int i2) {
-        if (this.f15403a == null) {
+        if (this.a == null) {
             return;
         }
         float f = i;
@@ -108,7 +104,7 @@ public class PkDaredProgressView extends FrameLayout {
                 f3 = 0.5f;
             }
         }
-        PkDaredScoreProgressView pkDaredScoreProgressView = this.f15403a;
+        PkDaredScoreProgressView pkDaredScoreProgressView = this.a;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(pkDaredScoreProgressView, "progress", pkDaredScoreProgressView.getProgress(), f3);
         ofFloat.setDuration(700L);
         ofFloat.setInterpolator(new DecelerateInterpolator(1.5f));
@@ -137,9 +133,9 @@ public class PkDaredProgressView extends FrameLayout {
 
     protected void a(Context context) {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_dared_progress_view, this);
-        this.f15403a = (PkDaredScoreProgressView) findViewById(R.id.ppsv_score);
+        this.a = (PkDaredScoreProgressView) findViewById(R.id.ppsv_score);
         this.b = (TextView) findViewById(R.id.tv_score);
-        this.f15404c = findViewById(R.id.view_mask);
+        this.c = findViewById(R.id.view_mask);
         this.d = (PkDaredTimeProgressView) findViewById(R.id.pptv_time);
         this.e = (TextView) findViewById(R.id.tv_time);
         this.b.getPaint().setFakeBoldText(true);
@@ -149,14 +145,15 @@ public class PkDaredProgressView extends FrameLayout {
         valueAnimator.setDuration(700L);
         this.g.setInterpolator(new DecelerateInterpolator(2.0f));
         this.g.setEvaluator(null);
-        this.f15403a.setProgress(50);
-        this.f15403a.setProgressMax(100);
+        this.a.setProgress(50);
+        this.a.setProgressMax(100);
     }
 
     public void b(int i) {
-        this.f15404c.animate().alpha(0.0f).setDuration(200L).setStartDelay(i);
+        this.c.animate().alpha(0.0f).setDuration(200L).setStartDelay(i);
     }
 
+    /* JADX WARN: Type inference failed for: r1v3, types: [com.blued.android.module.live_china.view.pkdared.PkDaredProgressView$1] */
     public void setTimeProgress(int i) {
         this.d.setProgress(i);
         this.e.setText(String.valueOf(i));

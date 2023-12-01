@@ -15,7 +15,7 @@ import java.util.HashSet;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23547a = "NotificationExecutor";
+    private static final String f9939a = "NotificationExecutor";
     private static a b;
 
     public static a a() {

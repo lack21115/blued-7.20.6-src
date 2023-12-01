@@ -15,10 +15,10 @@ public class ug implements wg.b {
     private TileOverlayOptions d;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f38051a = new Object();
+    private final Object f24360a = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private TileOverlay f38052c = null;
+    private TileOverlay f24361c = null;
 
     public ug(yi yiVar) {
         this.b = null;
@@ -36,7 +36,7 @@ public class ug implements wg.b {
 
     public void b() {
         yi yiVar;
-        if (this.f38052c != null || (yiVar = this.b) == null || yiVar.getMap() == null) {
+        if (this.f24361c != null || (yiVar = this.b) == null || yiVar.getMap() == null) {
             return;
         }
         VectorMap map = this.b.getMap();
@@ -45,12 +45,12 @@ public class ug implements wg.b {
             this.d.tileProvider(new vg(this.d)).diskCacheDir(e).zIndex(2);
         }
         map.k(19);
-        this.f38052c = map.addTileOverlay(this.d);
+        this.f24361c = map.addTileOverlay(this.d);
         f();
     }
 
     public boolean c() {
-        return this.f38052c != null;
+        return this.f24361c != null;
     }
 
     public void d() {
@@ -58,29 +58,29 @@ public class ug implements wg.b {
         if (tileOverlayOptions != null) {
             ((vg) tileOverlayOptions.getTileProvider()).b();
         }
-        synchronized (this.f38051a) {
-            TileOverlay tileOverlay = this.f38052c;
+        synchronized (this.f24360a) {
+            TileOverlay tileOverlay = this.f24361c;
             if (tileOverlay != null) {
                 tileOverlay.clearTileCache();
-                this.f38052c.reload();
+                this.f24361c.reload();
             }
         }
     }
 
     public void e() {
-        synchronized (this.f38051a) {
-            TileOverlay tileOverlay = this.f38052c;
+        synchronized (this.f24360a) {
+            TileOverlay tileOverlay = this.f24361c;
             if (tileOverlay == null) {
                 return;
             }
             tileOverlay.remove();
-            this.f38052c = null;
+            this.f24361c = null;
         }
     }
 
     public void f() {
-        synchronized (this.f38051a) {
-            TileOverlay tileOverlay = this.f38052c;
+        synchronized (this.f24360a) {
+            TileOverlay tileOverlay = this.f24361c;
             if (tileOverlay == null) {
                 return;
             }
@@ -96,7 +96,7 @@ public class ug implements wg.b {
                 if (field.getType() == kg.class) {
                     try {
                         field.setAccessible(true);
-                        ((kg) field.get(this.f38052c)).b(4, 20);
+                        ((kg) field.get(this.f24361c)).b(4, 20);
                         field.setAccessible(false);
                         return;
                     } catch (IllegalAccessException e2) {

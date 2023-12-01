@@ -10,22 +10,18 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/FilteringSequence$iterator$1.class */
 public final class FilteringSequence$iterator$1<T> implements Iterator<T>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FilteringSequence<T> f42626a;
+    final /* synthetic */ FilteringSequence<T> a;
     private final Iterator<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f42627c;
+    private int c;
     private T d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FilteringSequence$iterator$1(FilteringSequence<T> filteringSequence) {
         Sequence sequence;
-        this.f42626a = filteringSequence;
-        sequence = ((FilteringSequence) filteringSequence).f42624a;
+        this.a = filteringSequence;
+        sequence = ((FilteringSequence) filteringSequence).a;
         this.b = sequence.iterator();
-        this.f42627c = -1;
+        this.c = -1;
     }
 
     private final void a() {
@@ -33,35 +29,35 @@ public final class FilteringSequence$iterator$1<T> implements Iterator<T>, KMapp
         boolean z;
         while (this.b.hasNext()) {
             T next = this.b.next();
-            function1 = ((FilteringSequence) this.f42626a).f42625c;
+            function1 = ((FilteringSequence) this.a).c;
             boolean booleanValue = ((Boolean) function1.invoke(next)).booleanValue();
-            z = ((FilteringSequence) this.f42626a).b;
+            z = ((FilteringSequence) this.a).b;
             if (booleanValue == z) {
                 this.d = next;
-                this.f42627c = 1;
+                this.c = 1;
                 return;
             }
         }
-        this.f42627c = 0;
+        this.c = 0;
     }
 
     @Override // java.util.Iterator
     public boolean hasNext() {
-        if (this.f42627c == -1) {
+        if (this.c == -1) {
             a();
         }
-        return this.f42627c == 1;
+        return this.c == 1;
     }
 
     @Override // java.util.Iterator
     public T next() {
-        if (this.f42627c == -1) {
+        if (this.c == -1) {
             a();
         }
-        if (this.f42627c != 0) {
+        if (this.c != 0) {
             T t = this.d;
             this.d = null;
-            this.f42627c = -1;
+            this.c = -1;
             return t;
         }
         throw new NoSuchElementException();

@@ -7,21 +7,21 @@ public class d extends b {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int[] f39216c;
+    private int[] f25525c;
 
     public d(com.tencent.thumbplayer.adapter.strategy.a.a aVar) {
         super(aVar);
         this.b = 0;
         int[] c2 = aVar.c();
-        this.f39216c = c2;
+        this.f25525c = c2;
         if (c2 == null || c2.length == 0) {
-            this.f39216c = new int[1];
+            this.f25525c = new int[1];
         }
     }
 
     @Override // com.tencent.thumbplayer.adapter.strategy.b, com.tencent.thumbplayer.adapter.strategy.a
     public int a(com.tencent.thumbplayer.adapter.b bVar) {
-        int[] iArr = this.f39216c;
+        int[] iArr = this.f25525c;
         int length = iArr.length;
         int i = this.b;
         int i2 = length > i ? iArr[i] : 0;
@@ -36,7 +36,7 @@ public class d extends b {
     public int a(com.tencent.thumbplayer.adapter.b bVar, com.tencent.thumbplayer.adapter.strategy.a.b bVar2) {
         int i;
         if (bVar2 == null || bVar2.a() != 0) {
-            int[] iArr = this.f39216c;
+            int[] iArr = this.f25525c;
             int length = iArr.length;
             int i2 = this.b;
             if (length - 1 > i2) {
@@ -61,7 +61,7 @@ public class d extends b {
         int i;
         int[] iArr = {-1};
         int i2 = this.b;
-        int[] iArr2 = this.f39216c;
+        int[] iArr2 = this.f25525c;
         if (i2 >= iArr2.length) {
             sb = new StringBuilder("strategyForDec error, decType:");
             i = iArr[0];

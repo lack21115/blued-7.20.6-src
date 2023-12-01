@@ -1,7 +1,5 @@
 package java.lang;
 
-import com.sensetime.stmobile.STMobileHumanActionNative;
-
 /* loaded from: source-2895416-dex2jar.jar:java/lang/StrictMath.class */
 public final class StrictMath {
     public static final double E = 2.718281828459045d;
@@ -229,7 +227,7 @@ public final class StrictMath {
         }
         if (j3 < -1023) {
             long j4 = 1023 + j3 + i2;
-            j = Math.abs(d) < Double.MIN_NORMAL ? shiftLongBits(4503599627370495L & doubleToLongBits, j4) : shiftLongBits((4503599627370495L & doubleToLongBits) | STMobileHumanActionNative.ST_MOBILE_HAND_THREE, j4 - 1);
+            j = Math.abs(d) < Double.MIN_NORMAL ? shiftLongBits(4503599627370495L & doubleToLongBits, j4) : shiftLongBits((4503599627370495L & doubleToLongBits) | 4503599627370496L, j4 - 1);
         } else {
             j = Math.abs(d) >= Double.MIN_NORMAL ? ((1023 + j3) << 52) | (4503599627370495L & doubleToLongBits) : ((1023 + j3) << 52) | ((doubleToLongBits << (i2 + 1)) & 4503599627370495L);
         }

@@ -14,19 +14,19 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final GrsBaseInfo f22717a;
+    private final GrsBaseInfo f9109a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<String> f22718c = new HashSet();
+    private final Set<String> f9110c = new HashSet();
 
     public c(GrsBaseInfo grsBaseInfo, Context context) {
-        this.f22717a = grsBaseInfo;
+        this.f9109a = grsBaseInfo;
         this.b = context;
     }
 
     private String e() {
-        Set<String> b = com.huawei.hms.framework.network.grs.f.b.a(this.b.getPackageName(), this.f22717a).b();
+        Set<String> b = com.huawei.hms.framework.network.grs.f.b.a(this.b.getPackageName(), this.f9109a).b();
         if (b.isEmpty()) {
             return "";
         }
@@ -48,7 +48,7 @@ public class c {
         Logger.v("GrsRequestInfo", "getGeoipService enter");
         JSONObject jSONObject = new JSONObject();
         JSONArray jSONArray = new JSONArray();
-        for (String str : this.f22718c) {
+        for (String str : this.f9110c) {
             jSONArray.put(str);
         }
         try {
@@ -65,18 +65,18 @@ public class c {
     }
 
     public void a(String str) {
-        this.f22718c.add(str);
+        this.f9110c.add(str);
     }
 
     public GrsBaseInfo b() {
-        return this.f22717a;
+        return this.f9109a;
     }
 
     public String c() {
-        return this.f22718c.size() == 0 ? e() : f();
+        return this.f9110c.size() == 0 ? e() : f();
     }
 
     public Set<String> d() {
-        return this.f22718c;
+        return this.f9110c;
     }
 }

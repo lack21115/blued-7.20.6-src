@@ -13,21 +13,17 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewHostUpBinding.class */
 public final class ViewHostUpBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeableImageView f16856a;
+    public final ShapeableImageView a;
     public final ShapeConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f16857c;
+    public final LinearLayout c;
     public final TextView d;
     private final ConstraintLayout e;
 
     private ViewHostUpBinding(ConstraintLayout constraintLayout, ShapeableImageView shapeableImageView, ShapeConstraintLayout shapeConstraintLayout, LinearLayout linearLayout, TextView textView) {
         this.e = constraintLayout;
-        this.f16856a = shapeableImageView;
+        this.a = shapeableImageView;
         this.b = shapeConstraintLayout;
-        this.f16857c = linearLayout;
+        this.c = linearLayout;
         this.d = textView;
     }
 
@@ -41,15 +37,15 @@ public final class ViewHostUpBinding implements ViewBinding {
 
     public static ViewHostUpBinding a(View view) {
         String str;
-        ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv);
-        if (shapeableImageView != null) {
+        ShapeableImageView findViewById = view.findViewById(R.id.iv);
+        if (findViewById != null) {
             ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.sha_con);
             if (shapeConstraintLayout != null) {
                 LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.sha_con_add);
                 if (linearLayout != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_name);
                     if (textView != null) {
-                        return new ViewHostUpBinding((ConstraintLayout) view, shapeableImageView, shapeConstraintLayout, linearLayout, textView);
+                        return new ViewHostUpBinding((ConstraintLayout) view, findViewById, shapeConstraintLayout, linearLayout, textView);
                     }
                     str = "tvName";
                 } else {
@@ -64,7 +60,6 @@ public final class ViewHostUpBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.e;

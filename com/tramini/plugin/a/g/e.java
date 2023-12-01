@@ -9,11 +9,11 @@ import android.text.TextUtils;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f40546a = "";
+    private static String f26855a = "";
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f40547c = "";
+    private static String f26856c = "";
     private static String d = "";
     private static int e;
     private static String f;
@@ -55,10 +55,10 @@ public final class e {
         if (com.tramini.plugin.a.a.c.a().a("os_vn")) {
             return "";
         }
-        if (TextUtils.isEmpty(f40546a)) {
-            f40546a = Build.VERSION.RELEASE;
+        if (TextUtils.isEmpty(f26855a)) {
+            f26855a = Build.VERSION.RELEASE;
         }
-        return f40546a;
+        return f26855a;
     }
 
     public static String b(Context context) {
@@ -83,12 +83,12 @@ public final class e {
             return "";
         }
         try {
-            if (TextUtils.isEmpty(f40547c)) {
+            if (TextUtils.isEmpty(f26856c)) {
                 String str = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).packageName;
-                f40547c = str;
+                f26856c = str;
                 return str;
             }
-            return f40547c;
+            return f26856c;
         } catch (Exception e2) {
             e2.printStackTrace();
             return "";

@@ -54,9 +54,8 @@ public interface ITelephonyRegistry extends IInterface {
         static final int TRANSACTION_notifyVoLteServiceStateChanged = 28;
         static final int TRANSACTION_removeOnSubscriptionsChangedListener = 2;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/telephony/ITelephonyRegistry$Stub$Proxy.class */
-        public static class Proxy implements ITelephonyRegistry {
+        private static class Proxy implements ITelephonyRegistry {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -697,17 +696,17 @@ public interface ITelephonyRegistry extends IInterface {
                     return true;
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifyServiceStateForPhoneId(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? ServiceState.CREATOR.createFromParcel(parcel) : null);
+                    notifyServiceStateForPhoneId(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0 ? (ServiceState) ServiceState.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 8:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifySignalStrength(parcel.readInt() != 0 ? SignalStrength.CREATOR.createFromParcel(parcel) : null);
+                    notifySignalStrength(parcel.readInt() != 0 ? (SignalStrength) SignalStrength.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 9:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifySignalStrengthForSubscriber(parcel.readInt(), parcel.readInt() != 0 ? SignalStrength.CREATOR.createFromParcel(parcel) : null);
+                    notifySignalStrengthForSubscriber(parcel.readInt(), parcel.readInt() != 0 ? (SignalStrength) SignalStrength.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 10:
@@ -737,12 +736,12 @@ public interface ITelephonyRegistry extends IInterface {
                     return true;
                 case 15:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifyDataConnection(parcel.readInt(), parcel.readInt() != 0, parcel.readString(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? LinkProperties.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? NetworkCapabilities.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readInt() != 0);
+                    notifyDataConnection(parcel.readInt(), parcel.readInt() != 0, parcel.readString(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? (LinkProperties) LinkProperties.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (NetworkCapabilities) NetworkCapabilities.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readInt() != 0);
                     parcel2.writeNoException();
                     return true;
                 case 16:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifyDataConnectionForSubscriber(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0, parcel.readString(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? LinkProperties.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? NetworkCapabilities.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readInt() != 0);
+                    notifyDataConnectionForSubscriber(parcel.readInt(), parcel.readInt(), parcel.readInt() != 0, parcel.readString(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? (LinkProperties) LinkProperties.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (NetworkCapabilities) NetworkCapabilities.CREATOR.createFromParcel(parcel) : null, parcel.readInt(), parcel.readInt() != 0);
                     parcel2.writeNoException();
                     return true;
                 case 17:
@@ -757,12 +756,12 @@ public interface ITelephonyRegistry extends IInterface {
                     return true;
                 case 19:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifyCellLocation(parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    notifyCellLocation(parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 20:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifyCellLocationForSubscriber(parcel.readInt(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    notifyCellLocationForSubscriber(parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 21:
@@ -797,12 +796,12 @@ public interface ITelephonyRegistry extends IInterface {
                     return true;
                 case 27:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifyDataConnectionRealTimeInfo(parcel.readInt() != 0 ? DataConnectionRealTimeInfo.CREATOR.createFromParcel(parcel) : null);
+                    notifyDataConnectionRealTimeInfo(parcel.readInt() != 0 ? (DataConnectionRealTimeInfo) DataConnectionRealTimeInfo.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 28:
                     parcel.enforceInterface(DESCRIPTOR);
-                    notifyVoLteServiceStateChanged(parcel.readInt() != 0 ? VoLteServiceState.CREATOR.createFromParcel(parcel) : null);
+                    notifyVoLteServiceStateChanged(parcel.readInt() != 0 ? (VoLteServiceState) VoLteServiceState.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 29:
@@ -815,7 +814,7 @@ public interface ITelephonyRegistry extends IInterface {
                     notifySubscriptionInfoChanged();
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -9,7 +9,7 @@ import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f22547a = 27;
+    private static final int f8939a = 27;
     private static final String b = "DeviceUtil";
 
     public static String a(String str) {

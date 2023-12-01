@@ -24,11 +24,11 @@ public class OkHttpAdapter extends AbstractNetAdapter {
     public class a implements Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ com.tencent.tmsbeacon.base.net.call.Callback f39494a;
+        public final /* synthetic */ com.tencent.tmsbeacon.base.net.call.Callback f25803a;
         public final /* synthetic */ String b;
 
         public a(com.tencent.tmsbeacon.base.net.call.Callback callback, String str) {
-            this.f39494a = callback;
+            this.f25803a = callback;
             this.b = str;
         }
     }
@@ -37,11 +37,11 @@ public class OkHttpAdapter extends AbstractNetAdapter {
     public class b implements Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ com.tencent.tmsbeacon.base.net.call.Callback f39496a;
+        public final /* synthetic */ com.tencent.tmsbeacon.base.net.call.Callback f25805a;
         public final /* synthetic */ String b;
 
         public b(com.tencent.tmsbeacon.base.net.call.Callback callback, String str) {
-            this.f39496a = callback;
+            this.f25805a = callback;
             this.b = str;
         }
     }
@@ -50,25 +50,25 @@ public class OkHttpAdapter extends AbstractNetAdapter {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f39498a;
+        public static final /* synthetic */ int[] f25807a;
 
         static {
             BodyType.values();
             int[] iArr = new int[3];
-            f39498a = iArr;
+            f25807a = iArr;
             try {
                 BodyType bodyType = BodyType.FORM;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f39498a;
+                int[] iArr2 = f25807a;
                 BodyType bodyType2 = BodyType.JSON;
                 iArr2[0] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f39498a;
+                int[] iArr3 = f25807a;
                 BodyType bodyType3 = BodyType.DATA;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {
@@ -94,7 +94,7 @@ public class OkHttpAdapter extends AbstractNetAdapter {
 
     private RequestBody buildBody(e eVar) {
         BodyType a2 = eVar.a();
-        int i = c.f39498a[a2.ordinal()];
+        int i = c.f25807a[a2.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {

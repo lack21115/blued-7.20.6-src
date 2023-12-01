@@ -32,7 +32,7 @@ public class DimManager implements Subscriber {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final DimManager f21929a = new DimManager();
+        private static final DimManager f8322a = new DimManager();
     }
 
     private DimManager() {
@@ -47,11 +47,13 @@ public class DimManager implements Subscriber {
 
     public static DimManager getInstance() {
         methodName = Thread.currentThread().getStackTrace()[2].getMethodName();
-        return a.f21929a;
+        return a.f8322a;
     }
 
     private void notifyGdiLoadSuccess(Class<?> cls) {
-        e eVar = a.C0343a.a().f21931c;
+        com.getui.gtc.dim.a aVar;
+        aVar = a.C0173a.f8325a;
+        e eVar = aVar.f8324c;
         if (cls != null) {
             try {
                 if (cls.getName().equals(new String(Base64.decode("Y29tLmlnZXhpbi5wdXNoLmV4dGVuc2lvbi5kaXN0cmlidXRpb24uZ2RpLnN0dWIuUHVzaEV4dGVuc2lvbg==", 2)))) {
@@ -68,8 +70,10 @@ public class DimManager implements Subscriber {
     }
 
     public Object get(DimRequest dimRequest) {
+        com.getui.gtc.dim.a aVar;
         if (CommonUtil.isGtcProcess()) {
-            return a.C0343a.a().a(dimRequest, true);
+            aVar = a.C0173a.f8325a;
+            return aVar.a(dimRequest, true);
         }
         Bundle createBundle = createBundle();
         createBundle.putString(ProcessSwitchContract.METHOD_NAME, "dim-1-1-1");
@@ -153,6 +157,7 @@ public class DimManager implements Subscriber {
     }
 
     public void set(String str, String str2, String str3) {
+        com.getui.gtc.dim.a aVar;
         if (!CommonUtil.isGtcProcess()) {
             Bundle createBundle = createBundle();
             createBundle.putString(ProcessSwitchContract.METHOD_NAME, "dim-1-2-1");
@@ -162,7 +167,7 @@ public class DimManager implements Subscriber {
             Broker.getInstance().subscribe(createBundle);
             return;
         }
-        com.getui.gtc.dim.a a2 = a.C0343a.a();
+        aVar = a.C0173a.f8325a;
         boolean z = true;
         try {
             boolean z2 = false;
@@ -193,28 +198,28 @@ public class DimManager implements Subscriber {
                     break;
             }
             if (!z) {
-                com.getui.gtc.dim.b.a aVar = a2.f21930a;
+                com.getui.gtc.dim.b.a aVar2 = aVar.f8323a;
                 long parseLong = Long.parseLong(str3);
                 if (TextUtils.isEmpty(str2)) {
                     return;
                 }
-                aVar.f21934a.put(str2, Long.valueOf(parseLong));
+                aVar2.f8327a.put(str2, Long.valueOf(parseLong));
                 b.a("dim ram globalValidTime set: " + str2 + " : " + parseLong);
             } else if (z) {
-                com.getui.gtc.dim.b.b bVar = a2.b;
+                com.getui.gtc.dim.b.b bVar = aVar.b;
                 long parseLong2 = Long.parseLong(str3);
                 if (TextUtils.isEmpty(str2)) {
                     return;
                 }
-                bVar.f21936a.put(str2, Long.valueOf(parseLong2));
+                bVar.f8329a.put(str2, Long.valueOf(parseLong2));
                 b.a("dim storage globalValidTime set: " + str2 + " : " + parseLong2);
             } else if (z) {
-                a2.a(str2, str3);
+                aVar.a(str2, str3);
             } else if (!z) {
-                a2.f21931c.a(str, str2, str3);
+                aVar.f8324c.a(str, str2, str3);
             } else {
                 int parseInt = Integer.parseInt(str3);
-                Map<String, Boolean> map = a2.d;
+                Map<String, Boolean> map = aVar.d;
                 if (parseInt != 0) {
                     z2 = true;
                 }
@@ -227,12 +232,14 @@ public class DimManager implements Subscriber {
     }
 
     public boolean setAppDataProvider(Context context, AppDataProvider appDataProvider) {
+        com.getui.gtc.dim.a aVar;
         if (context == null) {
             Log.e("DimManager", "setAppDataProvider failed,because context==null");
             return false;
         }
         GtcProvider.setContext(context);
-        a.C0343a.a().f21931c.a(appDataProvider);
+        aVar = a.C0173a.f8325a;
+        aVar.f8324c.a(appDataProvider);
         return true;
     }
 }

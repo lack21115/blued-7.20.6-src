@@ -2,6 +2,7 @@ package com.bytedance.bdtracker;
 
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.bytedance.bdtracker.s2;
@@ -99,11 +100,11 @@ public class z1 extends t1 {
     public JSONObject i() {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("local_time_ms", this.b);
-        jSONObject.put("tea_event_index", this.f21309c);
+        jSONObject.put("tea_event_index", this.f7703c);
         jSONObject.put("session_id", this.d);
         long j = this.e;
         if (j > 0) {
-            jSONObject.put("user_id", j);
+            jSONObject.put(SearchIndexablesContract.RawData.COLUMN_USER_ID, j);
         }
         jSONObject.put("user_unique_id", TextUtils.isEmpty(this.f) ? JSONObject.NULL : this.f);
         if (!TextUtils.isEmpty(this.g)) {
@@ -118,7 +119,7 @@ public class z1 extends t1 {
         }
         a(jSONObject, this.p);
         int i = this.i;
-        if (i != s2.a.UNKNOWN.f21304a) {
+        if (i != s2.a.UNKNOWN.f7698a) {
             jSONObject.put("nt", i);
         }
         jSONObject.put("datetime", this.l);

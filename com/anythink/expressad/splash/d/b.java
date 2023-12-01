@@ -6,11 +6,11 @@ import java.util.ArrayList;
 public final class b implements com.anythink.expressad.splash.b.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.anythink.expressad.out.d f8226a;
+    private com.anythink.expressad.out.d f5386a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8227c;
+    private String f5387c;
     private String d;
 
     public b(c cVar) {
@@ -18,8 +18,8 @@ public final class b implements com.anythink.expressad.splash.b.c {
     }
 
     private void a() {
-        if (this.f8226a != null) {
-            this.f8226a = null;
+        if (this.f5386a != null) {
+            this.f5386a = null;
         }
     }
 
@@ -30,7 +30,7 @@ public final class b implements com.anythink.expressad.splash.b.c {
         if (cVar3 == null || !cVar3.a() || cVar == null) {
             return;
         }
-        com.anythink.expressad.out.d dVar = this.f8226a;
+        com.anythink.expressad.out.d dVar = this.f5386a;
         if (dVar != null) {
             dVar.a();
             cVar.t();
@@ -44,7 +44,7 @@ public final class b implements com.anythink.expressad.splash.b.c {
     }
 
     public final void a(com.anythink.expressad.out.d dVar) {
-        this.f8226a = dVar;
+        this.f5386a = dVar;
     }
 
     @Override // com.anythink.expressad.splash.b.c
@@ -53,7 +53,7 @@ public final class b implements com.anythink.expressad.splash.b.c {
         if (cVar == null || !cVar.a()) {
             return;
         }
-        com.anythink.expressad.out.d dVar = this.f8226a;
+        com.anythink.expressad.out.d dVar = this.f5386a;
         if (dVar != null) {
             dVar.a(str);
         }

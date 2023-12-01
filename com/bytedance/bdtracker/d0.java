@@ -9,23 +9,23 @@ import org.json.JSONObject;
 public class d0 implements IDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArraySet<IDataObserver> f21206a = new CopyOnWriteArraySet<>();
+    public final CopyOnWriteArraySet<IDataObserver> f7600a = new CopyOnWriteArraySet<>();
 
     public void a(IDataObserver iDataObserver) {
         if (iDataObserver != null) {
-            this.f21206a.add(iDataObserver);
+            this.f7600a.add(iDataObserver);
         }
     }
 
     public void b(IDataObserver iDataObserver) {
         if (iDataObserver != null) {
-            this.f21206a.remove(iDataObserver);
+            this.f7600a.remove(iDataObserver);
         }
     }
 
     @Override // com.bytedance.applog.IDataObserver
     public void onAbVidsChange(String str, String str2) {
-        Iterator<IDataObserver> it = this.f21206a.iterator();
+        Iterator<IDataObserver> it = this.f7600a.iterator();
         while (it.hasNext()) {
             it.next().onAbVidsChange(str, str2);
         }
@@ -33,7 +33,7 @@ public class d0 implements IDataObserver {
 
     @Override // com.bytedance.applog.IDataObserver
     public void onIdLoaded(String str, String str2, String str3) {
-        Iterator<IDataObserver> it = this.f21206a.iterator();
+        Iterator<IDataObserver> it = this.f7600a.iterator();
         while (it.hasNext()) {
             it.next().onIdLoaded(str, str2, str3);
         }
@@ -41,7 +41,7 @@ public class d0 implements IDataObserver {
 
     @Override // com.bytedance.applog.IDataObserver
     public void onRemoteAbConfigGet(boolean z, JSONObject jSONObject) {
-        Iterator<IDataObserver> it = this.f21206a.iterator();
+        Iterator<IDataObserver> it = this.f7600a.iterator();
         while (it.hasNext()) {
             it.next().onRemoteAbConfigGet(z, jSONObject);
         }
@@ -49,7 +49,7 @@ public class d0 implements IDataObserver {
 
     @Override // com.bytedance.applog.IDataObserver
     public void onRemoteConfigGet(boolean z, JSONObject jSONObject) {
-        Iterator<IDataObserver> it = this.f21206a.iterator();
+        Iterator<IDataObserver> it = this.f7600a.iterator();
         while (it.hasNext()) {
             it.next().onRemoteConfigGet(z, jSONObject);
         }
@@ -57,7 +57,7 @@ public class d0 implements IDataObserver {
 
     @Override // com.bytedance.applog.IDataObserver
     public void onRemoteIdGet(boolean z, String str, String str2, String str3, String str4, String str5, String str6) {
-        Iterator<IDataObserver> it = this.f21206a.iterator();
+        Iterator<IDataObserver> it = this.f7600a.iterator();
         while (it.hasNext()) {
             it.next().onRemoteIdGet(z, str, str2, str3, str4, str5, str6);
         }

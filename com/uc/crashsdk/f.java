@@ -14,11 +14,11 @@ import java.util.Map;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40587a = !f.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26896a = !f.class.desiredAssertionStatus();
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final SparseArray<String> f40588c = new SparseArray<>();
+    private static final SparseArray<String> f26897c = new SparseArray<>();
     private static final Object d = new Object();
     private static boolean e = false;
 
@@ -216,17 +216,17 @@ public class f {
     public static boolean a(int i, Object[] objArr) {
         switch (i) {
             case TbsMediaPlayer.TbsMediaPlayerListener.MEDIA_INFO_NO_VIDEO_DATA /* 751 */:
-                if (f40587a || objArr != null) {
+                if (f26896a || objArr != null) {
                     return b(((Integer) objArr[0]).intValue(), ((Integer) objArr[1]).intValue());
                 }
                 throw new AssertionError();
             case TbsMediaPlayer.TbsMediaPlayerListener.MEDIA_INFO_HAVE_VIDEO_DATA /* 752 */:
-                if (f40587a || objArr != null) {
+                if (f26896a || objArr != null) {
                     return b((String) objArr[0]);
                 }
                 throw new AssertionError();
             case 753:
-                if (f40587a || objArr != null) {
+                if (f26896a || objArr != null) {
                     File file = new File((String) objArr[0]);
                     if (file.exists()) {
                         file.delete();
@@ -236,18 +236,18 @@ public class f {
                 }
                 throw new AssertionError();
             case 754:
-                if (f40587a || objArr != null) {
+                if (f26896a || objArr != null) {
                     b((String) objArr[0], (HashMap) objArr[1], (String) objArr[2]);
                     return true;
                 }
                 throw new AssertionError();
             case 755:
-                if (f40587a || objArr != null) {
+                if (f26896a || objArr != null) {
                     return d((String) objArr[0]);
                 }
                 throw new AssertionError();
             case 756:
-                if (f40587a || objArr != null) {
+                if (f26896a || objArr != null) {
                     File file2 = new File((String) objArr[0]);
                     if (file2.exists()) {
                         file2.delete();
@@ -510,8 +510,8 @@ public class f {
     private static String c(int i) {
         String str;
         f();
-        synchronized (f40588c) {
-            str = f40588c.get(i);
+        synchronized (f26897c) {
+            str = f26897c.get(i);
         }
         return str;
     }
@@ -629,7 +629,7 @@ public class f {
 
     private static boolean d(String str) {
         boolean z;
-        if (f40587a || str != null) {
+        if (f26896a || str != null) {
             File file = new File(str);
             StringBuffer a2 = a(file);
             if (com.uc.crashsdk.a.g.a(a2)) {
@@ -717,12 +717,12 @@ public class f {
     }
 
     private static SparseArray<String> e() {
-        SparseArray<String> m1029clone;
+        SparseArray<String> m1025clone;
         f();
-        synchronized (f40588c) {
-            m1029clone = f40588c.m1029clone();
+        synchronized (f26897c) {
+            m1025clone = f26897c.m1025clone();
         }
-        return m1029clone;
+        return m1025clone;
     }
 
     private static boolean e(String str) {
@@ -733,49 +733,49 @@ public class f {
     }
 
     private static void f() {
-        synchronized (f40588c) {
-            if (f40588c.size() != 0) {
+        synchronized (f26897c) {
+            if (f26897c.size() != 0) {
                 return;
             }
-            f40588c.put(100, "start_pv");
-            f40588c.put(102, "start_hpv");
-            f40588c.put(1, "all_all");
-            f40588c.put(2, "all_fg");
-            f40588c.put(101, "all_bg");
-            f40588c.put(3, "java_fg");
-            f40588c.put(4, "java_bg");
-            f40588c.put(7, "native_fg");
-            f40588c.put(8, "native_bg");
-            f40588c.put(27, "native_anr_fg");
-            f40588c.put(28, "native_anr_bg");
-            f40588c.put(9, "native_ok");
-            f40588c.put(10, "unexp_anr");
-            f40588c.put(29, "unexp_lowmem");
-            f40588c.put(30, "unexp_killed");
-            f40588c.put(31, "unexp_exit");
-            f40588c.put(32, "unexp_restart");
-            f40588c.put(11, "unexp_fg");
-            f40588c.put(12, "unexp_bg");
-            f40588c.put(40, "anr_fg");
-            f40588c.put(41, "anr_bg");
-            f40588c.put(42, "anr_cr_fg");
-            f40588c.put(43, "anr_cr_bg");
-            f40588c.put(13, "log_up_succ");
-            f40588c.put(14, "log_up_fail");
-            f40588c.put(15, "log_empty");
-            f40588c.put(200, "log_tmp");
-            f40588c.put(16, "log_abd_all");
-            f40588c.put(22, "log_abd_builtin");
-            f40588c.put(23, "log_abd_custom");
-            f40588c.put(17, "log_large");
-            f40588c.put(18, "log_up_all");
-            f40588c.put(19, "log_up_bytes");
-            f40588c.put(20, "log_up_crash");
-            f40588c.put(21, "log_up_custom");
-            f40588c.put(24, "log_zipped");
-            f40588c.put(201, "log_enced");
-            f40588c.put(25, "log_renamed");
-            f40588c.put(26, "log_safe_skip");
+            f26897c.put(100, "start_pv");
+            f26897c.put(102, "start_hpv");
+            f26897c.put(1, "all_all");
+            f26897c.put(2, "all_fg");
+            f26897c.put(101, "all_bg");
+            f26897c.put(3, "java_fg");
+            f26897c.put(4, "java_bg");
+            f26897c.put(7, "native_fg");
+            f26897c.put(8, "native_bg");
+            f26897c.put(27, "native_anr_fg");
+            f26897c.put(28, "native_anr_bg");
+            f26897c.put(9, "native_ok");
+            f26897c.put(10, "unexp_anr");
+            f26897c.put(29, "unexp_lowmem");
+            f26897c.put(30, "unexp_killed");
+            f26897c.put(31, "unexp_exit");
+            f26897c.put(32, "unexp_restart");
+            f26897c.put(11, "unexp_fg");
+            f26897c.put(12, "unexp_bg");
+            f26897c.put(40, "anr_fg");
+            f26897c.put(41, "anr_bg");
+            f26897c.put(42, "anr_cr_fg");
+            f26897c.put(43, "anr_cr_bg");
+            f26897c.put(13, "log_up_succ");
+            f26897c.put(14, "log_up_fail");
+            f26897c.put(15, "log_empty");
+            f26897c.put(200, "log_tmp");
+            f26897c.put(16, "log_abd_all");
+            f26897c.put(22, "log_abd_builtin");
+            f26897c.put(23, "log_abd_custom");
+            f26897c.put(17, "log_large");
+            f26897c.put(18, "log_up_all");
+            f26897c.put(19, "log_up_bytes");
+            f26897c.put(20, "log_up_crash");
+            f26897c.put(21, "log_up_custom");
+            f26897c.put(24, "log_zipped");
+            f26897c.put(201, "log_enced");
+            f26897c.put(25, "log_renamed");
+            f26897c.put(26, "log_safe_skip");
         }
     }
 }

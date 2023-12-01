@@ -11,42 +11,42 @@ import com.xiaomi.push.service.XMPushService;
 public class fe implements fx {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41401a;
+    private int f27710a;
 
     /* renamed from: a  reason: collision with other field name */
-    fu f437a;
+    fu f390a;
 
     /* renamed from: a  reason: collision with other field name */
-    XMPushService f438a;
+    XMPushService f391a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Exception f439a;
+    private Exception f392a;
     private long e;
     private long f;
 
     /* renamed from: a  reason: collision with other field name */
-    private long f436a = 0;
+    private long f389a = 0;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41402c = 0;
+    private long f27711c = 0;
     private long d = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private String f440a = "";
+    private String f393a = "";
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public fe(XMPushService xMPushService) {
         this.e = 0L;
         this.f = 0L;
-        this.f438a = xMPushService;
+        this.f391a = xMPushService;
         b();
         int myUid = Process.myUid();
         try {
             this.f = TrafficStats.getUidRxBytes(myUid);
             this.e = TrafficStats.getUidTxBytes(myUid);
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("Failed to obtain traffic data during initialization: ".concat(String.valueOf(e)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("Failed to obtain traffic data during initialization: ".concat(String.valueOf(e)));
             this.f = -1L;
             this.e = -1L;
         }
@@ -55,64 +55,64 @@ public class fe implements fx {
     private void b() {
         this.b = 0L;
         this.d = 0L;
-        this.f436a = 0L;
-        this.f41402c = 0L;
+        this.f389a = 0L;
+        this.f27711c = 0L;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (bh.b(this.f438a)) {
-            this.f436a = elapsedRealtime;
+        if (bh.b(this.f391a)) {
+            this.f389a = elapsedRealtime;
         }
-        if (this.f438a.m12100c()) {
-            this.f41402c = elapsedRealtime;
+        if (this.f391a.m9050c()) {
+            this.f27711c = elapsedRealtime;
         }
     }
 
     private void c() {
         synchronized (this) {
-            com.xiaomi.channel.commonutils.logger.b.c("stat connpt = " + this.f440a + " netDuration = " + this.b + " ChannelDuration = " + this.d + " channelConnectedTime = " + this.f41402c);
+            com.xiaomi.channel.commonutils.logger.b.c("stat connpt = " + this.f393a + " netDuration = " + this.b + " ChannelDuration = " + this.d + " channelConnectedTime = " + this.f27711c);
             ey eyVar = new ey();
-            eyVar.f415a = (byte) 0;
+            eyVar.f368a = (byte) 0;
             eyVar.a(ex.CHANNEL_ONLINE_RATE.a());
-            eyVar.a(this.f440a);
+            eyVar.a(this.f393a);
             eyVar.d((int) (System.currentTimeMillis() / 1000));
             eyVar.b((int) (this.b / 1000));
             eyVar.c((int) (this.d / 1000));
-            ff.m11747a().a(eyVar);
+            ff.m8697a().a(eyVar);
             b();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Exception a() {
-        return this.f439a;
+        return this.f392a;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m11746a() {
+    public void m8696a() {
         synchronized (this) {
-            if (this.f438a == null) {
+            if (this.f391a == null) {
                 return;
             }
-            String m11535a = bh.m11535a((Context) this.f438a);
-            boolean c2 = bh.c(this.f438a);
+            String m8485a = bh.m8485a((Context) this.f391a);
+            boolean c2 = bh.c(this.f391a);
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            if (this.f436a > 0) {
-                this.b += elapsedRealtime - this.f436a;
-                this.f436a = 0L;
+            if (this.f389a > 0) {
+                this.b += elapsedRealtime - this.f389a;
+                this.f389a = 0L;
             }
-            if (this.f41402c != 0) {
-                this.d += elapsedRealtime - this.f41402c;
-                this.f41402c = 0L;
+            if (this.f27711c != 0) {
+                this.d += elapsedRealtime - this.f27711c;
+                this.f27711c = 0L;
             }
             if (c2) {
-                if ((!TextUtils.equals(this.f440a, m11535a) && this.b > 30000) || this.b > 5400000) {
+                if ((!TextUtils.equals(this.f393a, m8485a) && this.b > 30000) || this.b > 5400000) {
                     c();
                 }
-                this.f440a = m11535a;
-                if (this.f436a == 0) {
-                    this.f436a = elapsedRealtime;
+                this.f393a = m8485a;
+                if (this.f389a == 0) {
+                    this.f389a = elapsedRealtime;
                 }
-                if (this.f438a.m12100c()) {
-                    this.f41402c = elapsedRealtime;
+                if (this.f391a.m9050c()) {
+                    this.f27711c = elapsedRealtime;
                 }
             }
         }
@@ -120,31 +120,31 @@ public class fe implements fx {
 
     @Override // com.xiaomi.push.fx
     public void a(fu fuVar) {
-        this.f41401a = 0;
-        this.f439a = null;
-        this.f437a = fuVar;
-        this.f440a = bh.m11535a((Context) this.f438a);
+        this.f27710a = 0;
+        this.f392a = null;
+        this.f390a = fuVar;
+        this.f393a = bh.m8485a((Context) this.f391a);
         fh.a(0, ex.CONN_SUCCESS.a());
     }
 
     @Override // com.xiaomi.push.fx
     public void a(fu fuVar, int i, Exception exc) {
         long j;
-        if (this.f41401a == 0 && this.f439a == null) {
-            this.f41401a = i;
-            this.f439a = exc;
-            fh.b(fuVar.mo11785a(), exc);
+        if (this.f27710a == 0 && this.f392a == null) {
+            this.f27710a = i;
+            this.f392a = exc;
+            fh.b(fuVar.mo8735a(), exc);
         }
-        if (i == 22 && this.f41402c != 0) {
-            long m11783a = fuVar.m11783a() - this.f41402c;
-            long j2 = m11783a;
-            if (m11783a < 0) {
+        if (i == 22 && this.f27711c != 0) {
+            long m8733a = fuVar.m8733a() - this.f27711c;
+            long j2 = m8733a;
+            if (m8733a < 0) {
                 j2 = 0;
             }
             this.d += j2 + (ga.b() / 2);
-            this.f41402c = 0L;
+            this.f27711c = 0L;
         }
-        m11746a();
+        m8696a();
         int myUid = Process.myUid();
         long j3 = -1;
         try {
@@ -152,7 +152,7 @@ public class fe implements fx {
             j = TrafficStats.getUidTxBytes(myUid);
             j3 = uidRxBytes;
         } catch (Exception e) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("Failed to obtain traffic data: ".concat(String.valueOf(e)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("Failed to obtain traffic data: ".concat(String.valueOf(e)));
             j = -1;
         }
         com.xiaomi.channel.commonutils.logger.b.c("Stats rx=" + (j3 - this.f) + ", tx=" + (j - this.e));
@@ -168,8 +168,8 @@ public class fe implements fx {
 
     @Override // com.xiaomi.push.fx
     public void b(fu fuVar) {
-        m11746a();
-        this.f41402c = SystemClock.elapsedRealtime();
-        fh.a(0, ex.CONN_SUCCESS.a(), fuVar.mo11785a(), fuVar.a());
+        m8696a();
+        this.f27711c = SystemClock.elapsedRealtime();
+        fh.a(0, ex.CONN_SUCCESS.a(), fuVar.mo8735a(), fuVar.a());
     }
 }

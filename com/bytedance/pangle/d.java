@@ -16,13 +16,13 @@ public interface d extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.bytedance.pangle.d$a$a  reason: collision with other inner class name */
         /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/d$a$a.class */
-        public static final class C0316a implements d {
+        public static final class C0146a implements d {
 
             /* renamed from: a  reason: collision with root package name */
-            public static d f21368a;
+            public static d f7762a;
             private IBinder b;
 
-            C0316a(IBinder iBinder) {
+            C0146a(IBinder iBinder) {
                 this.b = iBinder;
             }
 
@@ -144,7 +144,7 @@ public interface d extends IInterface {
         }
 
         public static d a() {
-            return C0316a.f21368a;
+            return C0146a.f7762a;
         }
 
         public static d a(IBinder iBinder) {
@@ -152,7 +152,7 @@ public interface d extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.bytedance.pangle.IServiceManager");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof d)) ? new C0316a(iBinder) : (d) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof d)) ? new C0146a(iBinder) : (d) queryLocalInterface;
         }
 
         @Override // android.os.IInterface

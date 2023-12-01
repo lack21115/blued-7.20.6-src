@@ -1,6 +1,5 @@
 package com.huawei.hms.support.api.entity.push;
 
-import com.alipay.sdk.util.i;
 import com.huawei.hms.core.aidl.IMessageEntity;
 import com.huawei.hms.core.aidl.annotation.Packed;
 
@@ -88,6 +87,6 @@ public class AttributionReportReq implements IMessageEntity {
     }
 
     public String toString() {
-        return " { eventId:" + this.eventId + " pkgName:" + this.pkgName + i.d;
+        return " { eventId:" + this.eventId + " pkgName:" + this.pkgName + "}";
     }
 }

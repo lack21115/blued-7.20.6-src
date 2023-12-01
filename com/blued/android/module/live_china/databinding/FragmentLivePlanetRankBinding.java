@@ -12,21 +12,17 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLivePlanetRankBinding.class */
 public final class FragmentLivePlanetRankBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11960a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f11961c;
+    public final TextView c;
     public final ViewPager d;
     private final FrameLayout e;
 
     private FragmentLivePlanetRankBinding(FrameLayout frameLayout, ImageView imageView, TextView textView, TextView textView2, ViewPager viewPager) {
         this.e = frameLayout;
-        this.f11960a = imageView;
+        this.a = imageView;
         this.b = textView;
-        this.f11961c = textView2;
+        this.c = textView2;
         this.d = viewPager;
     }
 
@@ -50,9 +46,9 @@ public final class FragmentLivePlanetRankBinding implements ViewBinding {
             if (textView != null) {
                 TextView textView2 = (TextView) view.findViewById(R.id.tv_user);
                 if (textView2 != null) {
-                    ViewPager viewPager = (ViewPager) view.findViewById(R.id.view_pager);
-                    if (viewPager != null) {
-                        return new FragmentLivePlanetRankBinding((FrameLayout) view, imageView, textView, textView2, viewPager);
+                    ViewPager findViewById = view.findViewById(R.id.view_pager);
+                    if (findViewById != null) {
+                        return new FragmentLivePlanetRankBinding((FrameLayout) view, imageView, textView, textView2, findViewById);
                     }
                     str = "viewPager";
                 } else {
@@ -67,7 +63,6 @@ public final class FragmentLivePlanetRankBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

@@ -131,7 +131,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
     private float aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private int[] f23020ar;
+    private int[] f9412ar;
     private boolean as;
     private boolean at;
     private k au;
@@ -163,7 +163,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
     private View.OnClickListener bu;
 
     /* renamed from: c  reason: collision with root package name */
-    private ih f23021c;
+    private ih f9413c;
     private m d;
     private PPSAdvertiserInfoDialog e;
     private Context f;
@@ -391,7 +391,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
 
     public PPSLinkedView(Context context) {
         super(context);
-        this.f23021c = new hv();
+        this.f9413c = new hv();
         this.j = true;
         this.n = 1;
         this.M = true;
@@ -404,7 +404,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         this.ag = 0;
         this.ah = 0;
         this.an = 3500;
-        this.f23020ar = new int[2];
+        this.f9412ar = new int[2];
         this.as = false;
         this.at = false;
         this.av = false;
@@ -452,7 +452,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                     PPSLinkedView.this.t.Code(i, i2);
                 }
                 if (PPSLinkedView.this.W) {
-                    PPSLinkedView.this.f23021c.Code(i);
+                    PPSLinkedView.this.f9413c.Code(i);
                 }
                 if (PPSLinkedView.this.p != null) {
                     PPSLinkedView.this.p.Code(PPSLinkedView.this.f, i2, PPSLinkedView.this.o == null ? 0L : PPSLinkedView.this.o.I());
@@ -475,12 +475,12 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 }
                 if (i > 0) {
                     PPSLinkedView.this.p.S();
-                    PPSLinkedView.this.f23021c.f();
+                    PPSLinkedView.this.f9413c.f();
                 } else {
                     PPSLinkedView.this.p.C();
-                    if (PPSLinkedView.this.f23021c != null && PPSLinkedView.this.o != null) {
+                    if (PPSLinkedView.this.f9413c != null && PPSLinkedView.this.o != null) {
                         ge.V("PPSLinkedView", "om start");
-                        PPSLinkedView.this.f23021c.Code(PPSLinkedView.this.o.I(), true ^ "y".equals(PPSLinkedView.this.o.a()));
+                        PPSLinkedView.this.f9413c.Code(PPSLinkedView.this.o.I(), true ^ "y".equals(PPSLinkedView.this.o.a()));
                     }
                 }
                 if (PPSLinkedView.this.l != null && PPSLinkedView.this.l.I()) {
@@ -665,7 +665,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 if (PPSLinkedView.this.u != null) {
                     PPSLinkedView.this.u.Code();
                 }
-                PPSLinkedView.this.f23021c.V(0.0f);
+                PPSLinkedView.this.f9413c.V(0.0f);
             }
 
             @Override // com.huawei.hms.ads.gs
@@ -674,13 +674,13 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 if (PPSLinkedView.this.u != null) {
                     PPSLinkedView.this.u.V();
                 }
-                PPSLinkedView.this.f23021c.V(1.0f);
+                PPSLinkedView.this.f9413c.V(1.0f);
             }
         };
         this.bt = new gn() { // from class: com.huawei.openalliance.ad.views.PPSLinkedView.10
             @Override // com.huawei.hms.ads.gn
             public void Code() {
-                PPSLinkedView.this.f23021c.b();
+                PPSLinkedView.this.f9413c.b();
             }
 
             @Override // com.huawei.hms.ads.gn
@@ -689,7 +689,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
 
             @Override // com.huawei.hms.ads.gn
             public void V() {
-                PPSLinkedView.this.f23021c.c();
+                PPSLinkedView.this.f9413c.c();
             }
         };
         this.bu = new View.OnClickListener() { // from class: com.huawei.openalliance.ad.views.PPSLinkedView.11
@@ -704,7 +704,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
 
     public PPSLinkedView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f23021c = new hv();
+        this.f9413c = new hv();
         this.j = true;
         this.n = 1;
         this.M = true;
@@ -717,7 +717,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         this.ag = 0;
         this.ah = 0;
         this.an = 3500;
-        this.f23020ar = new int[2];
+        this.f9412ar = new int[2];
         this.as = false;
         this.at = false;
         this.av = false;
@@ -765,7 +765,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                     PPSLinkedView.this.t.Code(i, i2);
                 }
                 if (PPSLinkedView.this.W) {
-                    PPSLinkedView.this.f23021c.Code(i);
+                    PPSLinkedView.this.f9413c.Code(i);
                 }
                 if (PPSLinkedView.this.p != null) {
                     PPSLinkedView.this.p.Code(PPSLinkedView.this.f, i2, PPSLinkedView.this.o == null ? 0L : PPSLinkedView.this.o.I());
@@ -788,12 +788,12 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 }
                 if (i > 0) {
                     PPSLinkedView.this.p.S();
-                    PPSLinkedView.this.f23021c.f();
+                    PPSLinkedView.this.f9413c.f();
                 } else {
                     PPSLinkedView.this.p.C();
-                    if (PPSLinkedView.this.f23021c != null && PPSLinkedView.this.o != null) {
+                    if (PPSLinkedView.this.f9413c != null && PPSLinkedView.this.o != null) {
                         ge.V("PPSLinkedView", "om start");
-                        PPSLinkedView.this.f23021c.Code(PPSLinkedView.this.o.I(), true ^ "y".equals(PPSLinkedView.this.o.a()));
+                        PPSLinkedView.this.f9413c.Code(PPSLinkedView.this.o.I(), true ^ "y".equals(PPSLinkedView.this.o.a()));
                     }
                 }
                 if (PPSLinkedView.this.l != null && PPSLinkedView.this.l.I()) {
@@ -978,7 +978,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 if (PPSLinkedView.this.u != null) {
                     PPSLinkedView.this.u.Code();
                 }
-                PPSLinkedView.this.f23021c.V(0.0f);
+                PPSLinkedView.this.f9413c.V(0.0f);
             }
 
             @Override // com.huawei.hms.ads.gs
@@ -987,13 +987,13 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 if (PPSLinkedView.this.u != null) {
                     PPSLinkedView.this.u.V();
                 }
-                PPSLinkedView.this.f23021c.V(1.0f);
+                PPSLinkedView.this.f9413c.V(1.0f);
             }
         };
         this.bt = new gn() { // from class: com.huawei.openalliance.ad.views.PPSLinkedView.10
             @Override // com.huawei.hms.ads.gn
             public void Code() {
-                PPSLinkedView.this.f23021c.b();
+                PPSLinkedView.this.f9413c.b();
             }
 
             @Override // com.huawei.hms.ads.gn
@@ -1002,7 +1002,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
 
             @Override // com.huawei.hms.ads.gn
             public void V() {
-                PPSLinkedView.this.f23021c.c();
+                PPSLinkedView.this.f9413c.c();
             }
         };
         this.bu = new View.OnClickListener() { // from class: com.huawei.openalliance.ad.views.PPSLinkedView.11
@@ -1017,7 +1017,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
 
     public PPSLinkedView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f23021c = new hv();
+        this.f9413c = new hv();
         this.j = true;
         this.n = 1;
         this.M = true;
@@ -1030,7 +1030,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         this.ag = 0;
         this.ah = 0;
         this.an = 3500;
-        this.f23020ar = new int[2];
+        this.f9412ar = new int[2];
         this.as = false;
         this.at = false;
         this.av = false;
@@ -1078,7 +1078,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                     PPSLinkedView.this.t.Code(i2, i22);
                 }
                 if (PPSLinkedView.this.W) {
-                    PPSLinkedView.this.f23021c.Code(i2);
+                    PPSLinkedView.this.f9413c.Code(i2);
                 }
                 if (PPSLinkedView.this.p != null) {
                     PPSLinkedView.this.p.Code(PPSLinkedView.this.f, i22, PPSLinkedView.this.o == null ? 0L : PPSLinkedView.this.o.I());
@@ -1101,12 +1101,12 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 }
                 if (i2 > 0) {
                     PPSLinkedView.this.p.S();
-                    PPSLinkedView.this.f23021c.f();
+                    PPSLinkedView.this.f9413c.f();
                 } else {
                     PPSLinkedView.this.p.C();
-                    if (PPSLinkedView.this.f23021c != null && PPSLinkedView.this.o != null) {
+                    if (PPSLinkedView.this.f9413c != null && PPSLinkedView.this.o != null) {
                         ge.V("PPSLinkedView", "om start");
-                        PPSLinkedView.this.f23021c.Code(PPSLinkedView.this.o.I(), true ^ "y".equals(PPSLinkedView.this.o.a()));
+                        PPSLinkedView.this.f9413c.Code(PPSLinkedView.this.o.I(), true ^ "y".equals(PPSLinkedView.this.o.a()));
                     }
                 }
                 if (PPSLinkedView.this.l != null && PPSLinkedView.this.l.I()) {
@@ -1291,7 +1291,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 if (PPSLinkedView.this.u != null) {
                     PPSLinkedView.this.u.Code();
                 }
-                PPSLinkedView.this.f23021c.V(0.0f);
+                PPSLinkedView.this.f9413c.V(0.0f);
             }
 
             @Override // com.huawei.hms.ads.gs
@@ -1300,13 +1300,13 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 if (PPSLinkedView.this.u != null) {
                     PPSLinkedView.this.u.V();
                 }
-                PPSLinkedView.this.f23021c.V(1.0f);
+                PPSLinkedView.this.f9413c.V(1.0f);
             }
         };
         this.bt = new gn() { // from class: com.huawei.openalliance.ad.views.PPSLinkedView.10
             @Override // com.huawei.hms.ads.gn
             public void Code() {
-                PPSLinkedView.this.f23021c.b();
+                PPSLinkedView.this.f9413c.b();
             }
 
             @Override // com.huawei.hms.ads.gn
@@ -1315,7 +1315,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
 
             @Override // com.huawei.hms.ads.gn
             public void V() {
-                PPSLinkedView.this.f23021c.c();
+                PPSLinkedView.this.f9413c.c();
             }
         };
         this.bu = new View.OnClickListener() { // from class: com.huawei.openalliance.ad.views.PPSLinkedView.11
@@ -1407,10 +1407,10 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
             long j3 = i;
             if (z) {
                 kbVar.Code(j, currentTimeMillis, j2, j3);
-                this.f23021c.a();
+                this.f9413c.a();
             } else {
                 kbVar.V(j, currentTimeMillis, j2, j3);
-                this.f23021c.e();
+                this.f9413c.e();
             }
         }
         setPlaying(false);
@@ -1495,7 +1495,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
             ge.Code("PPSLinkedView", "report imp. ");
             this.p.Code(l, num, num2, z);
         }
-        this.f23021c.D();
+        this.f9413c.D();
     }
 
     private void Code(boolean z) {
@@ -1610,7 +1610,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         setPlaying(false);
         J();
         ba.Code(this.aO);
-        this.f23021c.I();
+        this.f9413c.I();
         com.huawei.openalliance.ad.inter.d.Code(this.f).Code(false);
     }
 
@@ -1715,7 +1715,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
             }
         }
         this.d = null;
-        this.f23021c.Code(jd.CLICK);
+        this.f9413c.Code(jd.CLICK);
         int i2 = this.am;
         int i3 = 1;
         if (i2 == 1) {
@@ -1888,10 +1888,10 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         }
         boolean F2 = ay.F(this.f);
         ge.V("PPSLinkedView", "calculateScaleAndTrans, MultiWindow:%s, screenHeight:%s,  screenWidth:%s", Boolean.valueOf(F2), Float.valueOf(this.ai), Float.valueOf(this.aj));
-        this.z.getLocationOnScreen(this.f23020ar);
+        this.z.getLocationOnScreen(this.f9412ar);
         this.ak = this.z.getHeight();
         this.al = this.z.getWidth();
-        ge.V("PPSLinkedView", "calculateScaleAndTrans, destViewHeight:%s, destViewWidth:%s, locationX:%s, locationY:%s", Integer.valueOf(this.ak), Integer.valueOf(this.al), Integer.valueOf(this.f23020ar[0]), Integer.valueOf(this.f23020ar[1]));
+        ge.V("PPSLinkedView", "calculateScaleAndTrans, destViewHeight:%s, destViewWidth:%s, locationX:%s, locationY:%s", Integer.valueOf(this.ak), Integer.valueOf(this.al), Integer.valueOf(this.f9412ar[0]), Integer.valueOf(this.f9412ar[1]));
         Point point = new Point();
         this.G.getDefaultDisplay().getRealSize(point);
         ge.Code("PPSLinkedView", "calculateScaleAndTrans, screenHeight:%s, point.y:%s", Float.valueOf(this.ai), Integer.valueOf(point.y));
@@ -1911,7 +1911,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 f5 = this.ai;
                 int i2 = this.ag;
                 this.ao = (f7 * 1.0f) / (i2 + f5);
-                f4 = this.f23020ar[1] + ((i * 1.0f) / 2.0f);
+                f4 = this.f9412ar[1] + ((i * 1.0f) / 2.0f);
                 f6 = i2;
             } else {
                 float f8 = i;
@@ -1920,7 +1920,7 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 float f10 = i3;
                 int i4 = this.ah;
                 this.ao = (f8 * 1.0f) / ((f10 + f9) + i4);
-                f4 = this.f23020ar[1] + ((i * 1.0f) / 2.0f);
+                f4 = this.f9412ar[1] + ((i * 1.0f) / 2.0f);
                 f5 = f9 + i3;
                 f6 = i4;
             }
@@ -1931,14 +1931,14 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
                 float f11 = i5;
                 float f12 = this.ai;
                 this.ao = (f11 * 1.0f) / f12;
-                f2 = (this.f23020ar[1] + ((i5 * 1.0f) / 2.0f)) - ((f12 * 1.0f) / 2.0f);
+                f2 = (this.f9412ar[1] + ((i5 * 1.0f) / 2.0f)) - ((f12 * 1.0f) / 2.0f);
             } else {
                 float f13 = i5;
                 int i6 = this.ah;
                 float f14 = i6;
                 float f15 = this.ai;
                 this.ao = (f13 * 1.0f) / (f14 + f15);
-                f2 = (this.f23020ar[1] + ((i5 * 1.0f) / 2.0f)) - (((f15 + i6) * 1.0f) / 2.0f);
+                f2 = (this.f9412ar[1] + ((i5 * 1.0f) / 2.0f)) - (((f15 + i6) * 1.0f) / 2.0f);
             }
             f3 = f2 - this.ag;
         }
@@ -2552,9 +2552,8 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         return super.onApplyWindowInsets(windowInsets);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         ge.Code("PPSLinkedView", "onAttachedToWindow");
         hc hcVar = this.k;
@@ -2563,9 +2562,8 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ge.Code("PPSLinkedView", "onDetechedFromWindow");
         hc hcVar = this.k;
@@ -2575,15 +2573,13 @@ public class PPSLinkedView extends RelativeLayout implements hc.a, le {
         ba.Code(this.aO);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         ge.Code("PPSLinkedView", "onVisibilityChanged:");
         hc hcVar = this.k;

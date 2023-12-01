@@ -9,19 +9,14 @@ import android.view.animation.Interpolator;
 import androidx.core.view.MotionEventCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import com.igexin.push.config.c;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/BluedAutoScrollViewPager.class */
 public class BluedAutoScrollViewPager extends ViewPager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f10945a;
+    private long a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10946c;
+    private boolean c;
     private boolean d;
     private int e;
     private boolean f;
@@ -37,32 +32,30 @@ public class BluedAutoScrollViewPager extends ViewPager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/BluedAutoScrollViewPager$MyHandler.class */
     public static class MyHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<BluedAutoScrollViewPager> f10947a;
+        private final WeakReference<BluedAutoScrollViewPager> a;
 
         public MyHandler(BluedAutoScrollViewPager bluedAutoScrollViewPager) {
-            this.f10947a = new WeakReference<>(bluedAutoScrollViewPager);
+            this.a = new WeakReference<>(bluedAutoScrollViewPager);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             BluedAutoScrollViewPager bluedAutoScrollViewPager;
             super.handleMessage(message);
-            if (message.what == 0 && (bluedAutoScrollViewPager = this.f10947a.get()) != null) {
+            if (message.what == 0 && (bluedAutoScrollViewPager = this.a.get()) != null) {
                 bluedAutoScrollViewPager.n.a(bluedAutoScrollViewPager.g);
                 bluedAutoScrollViewPager.c();
                 bluedAutoScrollViewPager.n.a(bluedAutoScrollViewPager.h);
-                bluedAutoScrollViewPager.a(bluedAutoScrollViewPager.f10945a + bluedAutoScrollViewPager.n.getDuration());
+                bluedAutoScrollViewPager.a(bluedAutoScrollViewPager.a + bluedAutoScrollViewPager.n.getDuration());
             }
         }
     }
 
     public BluedAutoScrollViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10945a = c.j;
+        this.a = 1500L;
         this.b = 1;
-        this.f10946c = true;
+        this.c = true;
         this.d = true;
         this.e = 0;
         this.f = true;
@@ -103,7 +96,7 @@ public class BluedAutoScrollViewPager extends ViewPager {
 
     public void a() {
         this.j = true;
-        a((long) (this.f10945a + ((this.n.getDuration() / this.g) * this.h)));
+        a((long) (this.a + ((this.n.getDuration() / this.g) * this.h)));
     }
 
     public void b() {
@@ -120,17 +113,16 @@ public class BluedAutoScrollViewPager extends ViewPager {
         }
         int i = this.b == 0 ? currentItem - 1 : currentItem + 1;
         if (i < 0) {
-            if (this.f10946c) {
+            if (this.c) {
                 setCurrentItem(count - 1, this.f);
             }
         } else if (i != count) {
             setCurrentItem(i, true);
-        } else if (this.f10946c) {
+        } else if (this.c) {
             setCurrentItem(0, this.f);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int actionMasked = MotionEventCompat.getActionMasked(motionEvent);
         if (this.d) {
@@ -170,7 +162,7 @@ public class BluedAutoScrollViewPager extends ViewPager {
     }
 
     public long getInterval() {
-        return this.f10945a;
+        return this.a;
     }
 
     public int getSlideBorderMode() {
@@ -186,7 +178,7 @@ public class BluedAutoScrollViewPager extends ViewPager {
     }
 
     public void setCycle(boolean z) {
-        this.f10946c = z;
+        this.c = z;
     }
 
     public void setDirection(int i) {
@@ -194,7 +186,7 @@ public class BluedAutoScrollViewPager extends ViewPager {
     }
 
     public void setInterval(long j) {
-        this.f10945a = j;
+        this.a = j;
     }
 
     public void setSlideBorderMode(int i) {

@@ -1,12 +1,11 @@
 package com.blued.login.model;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.gson.annotations.SerializedName;
 
 /* loaded from: source-7206380-dex2jar.jar:com/blued/login/model/BluedCheckResult.class */
 public class BluedCheckResult {
     private String captcha;
-    @SerializedName(BridgeUtil.UNDERLINE_STR)
+    @SerializedName("_")
     private String encrypted;
     public int health_test_info_show;
     private int is_sm_captcha;

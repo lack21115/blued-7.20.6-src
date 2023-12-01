@@ -10,27 +10,21 @@ public interface c extends IInterface {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/c$a.class */
     public static abstract class a extends Binder implements c {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final int f6220a = 1;
+        static final int a = 1;
         static final int b = 2;
-
-        /* renamed from: c  reason: collision with root package name */
-        private static final String f6221c = "com.uodis.opendevice.aidl.OpenDeviceIdentifierService";
+        private static final String c = "com.uodis.opendevice.aidl.OpenDeviceIdentifierService";
 
         /* renamed from: com.anythink.china.a.a.c$a$a  reason: collision with other inner class name */
         /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/c$a$a.class */
-        static final class C0083a implements c {
+        static final class C0043a implements c {
+            private IBinder a;
 
-            /* renamed from: a  reason: collision with root package name */
-            private IBinder f6222a;
-
-            C0083a(IBinder iBinder) {
-                this.f6222a = iBinder;
+            C0043a(IBinder iBinder) {
+                this.a = iBinder;
             }
 
             private static String c() {
-                return a.f6221c;
+                return a.c;
             }
 
             @Override // com.anythink.china.a.a.c
@@ -38,8 +32,8 @@ public interface c extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(a.f6221c);
-                    this.f6222a.transact(1, obtain, obtain2, 0);
+                    obtain.writeInterfaceToken(a.c);
+                    this.a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -50,7 +44,7 @@ public interface c extends IInterface {
 
             @Override // android.os.IInterface
             public final IBinder asBinder() {
-                return this.f6222a;
+                return this.a;
             }
 
             @Override // com.anythink.china.a.a.c
@@ -58,9 +52,9 @@ public interface c extends IInterface {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
-                    obtain.writeInterfaceToken(a.f6221c);
+                    obtain.writeInterfaceToken(a.c);
                     boolean z = false;
-                    this.f6222a.transact(2, obtain, obtain2, 0);
+                    this.a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                     if (obtain2.readInt() != 0) {
                         z = true;
@@ -77,15 +71,15 @@ public interface c extends IInterface {
         }
 
         public a() {
-            attachInterface(this, f6221c);
+            attachInterface(this, c);
         }
 
         public static c a(IBinder iBinder) {
             if (iBinder == null) {
                 return null;
             }
-            IInterface queryLocalInterface = iBinder.queryLocalInterface(f6221c);
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof c)) ? new C0083a(iBinder) : (c) queryLocalInterface;
+            IInterface queryLocalInterface = iBinder.queryLocalInterface(c);
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof c)) ? new C0043a(iBinder) : (c) queryLocalInterface;
         }
 
         @Override // android.os.IInterface

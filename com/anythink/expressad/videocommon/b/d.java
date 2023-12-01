@@ -10,11 +10,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class d implements i.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f8732a = "DownLoadH5SourceListener";
+    private static String f5892a = "DownLoadH5SourceListener";
     private ConcurrentMap<String, d> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private m f8733c;
+    private m f5893c;
     private CopyOnWriteArrayList<i.d> d;
     private String e;
 
@@ -22,7 +22,7 @@ public final class d implements i.c {
         CopyOnWriteArrayList<i.d> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
         this.d = copyOnWriteArrayList;
         this.b = concurrentMap;
-        this.f8733c = mVar;
+        this.f5893c = mVar;
         copyOnWriteArrayList.add(dVar);
         this.e = str;
     }
@@ -40,13 +40,13 @@ public final class d implements i.c {
         String str2;
         try {
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
             try {
                 str2 = e.getMessage();
             } catch (Throwable th) {
-                com.anythink.expressad.foundation.h.o.b(f8732a, th.getMessage(), th);
+                com.anythink.expressad.foundation.h.o.b(f5892a, th.getMessage(), th);
                 str2 = str;
             }
         }
@@ -81,13 +81,13 @@ public final class d implements i.c {
         String str2;
         try {
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
             try {
                 str2 = e.getMessage();
             } catch (Throwable th) {
-                com.anythink.expressad.foundation.h.o.b(f8732a, th.getMessage(), th);
+                com.anythink.expressad.foundation.h.o.b(f5892a, th.getMessage(), th);
                 str2 = "";
             }
         }
@@ -108,7 +108,7 @@ public final class d implements i.c {
         if (bArr == null || bArr.length <= 0) {
             str2 = "response data is error";
         } else {
-            String a2 = this.f8733c.a(str, bArr);
+            String a2 = this.f5893c.a(str, bArr);
             if (TextUtils.isEmpty(a2)) {
                 Iterator<i.d> it2 = this.d.iterator();
                 while (it2.hasNext()) {

@@ -7,21 +7,22 @@ import android.os.Build;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Base64;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
+import com.alipay.sdk.util.i;
+import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.telephony.SmsConstants;
+import com.android.internal.util.cm.QSConstants;
 import mtopsdk.common.util.ConfigStoreManager;
 import mtopsdk.common.util.StringUtils;
 import mtopsdk.common.util.TBSdkLog;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/xstate/util/PhoneInfo.class */
 public class PhoneInfo {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ConfigStoreManager f43801a = ConfigStoreManager.a();
+    private static ConfigStoreManager a = ConfigStoreManager.a();
 
     public static String a() {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            return (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(cls, "ro.serialno", "unknown");
+            return (String) cls.getMethod("get", String.class, String.class).invoke(cls, "ro.serialno", SmsConstants.FORMAT_UNKNOWN);
         } catch (Throwable th) {
             TBSdkLog.d("mtopsdk.PhoneInfo", "[getSerialNum]error ---" + th.toString());
             return null;
@@ -33,7 +34,7 @@ public class PhoneInfo {
             String str = Build.VERSION.RELEASE;
             String str2 = Build.MANUFACTURER;
             String str3 = Build.MODEL;
-            return "MTOPSDK/open_1.0.0 (Android;" + str + ";" + str2 + ";" + str3 + ")";
+            return "MTOPSDK/open_1.0.0 (Android" + i.b + str + i.b + str2 + i.b + str3 + ")";
         } catch (Throwable th) {
             TBSdkLog.d("mtopsdk.PhoneInfo", "[getPhoneBaseInfo] error ---" + th.toString());
             return "";
@@ -46,7 +47,7 @@ public class PhoneInfo {
             return null;
         }
         try {
-            String deviceId = ((TelephonyManager) context.getSystemService("phone")).getDeviceId();
+            String deviceId = ((TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY)).getDeviceId();
             str = deviceId;
             if (deviceId != null) {
                 str = deviceId;
@@ -64,7 +65,7 @@ public class PhoneInfo {
             return null;
         }
         try {
-            String subscriberId = ((TelephonyManager) context.getSystemService("phone")).getSubscriberId();
+            String subscriberId = ((TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY)).getSubscriberId();
             str = subscriberId;
             if (subscriberId != null) {
                 str = subscriberId;
@@ -95,7 +96,7 @@ public class PhoneInfo {
             return "";
         }
         try {
-            a2 = f43801a.a(context, "MtopConfigStore", "PHONE_INFO_STORE.", "mtopsdk_mac_address");
+            a2 = a.a(context, "MtopConfigStore", "PHONE_INFO_STORE.", "mtopsdk_mac_address");
         } catch (Throwable th) {
             TBSdkLog.d("mtopsdk.PhoneInfo", "[getLocalMacAddress]error ---" + th.toString());
             str = "";
@@ -103,7 +104,7 @@ public class PhoneInfo {
         if (StringUtils.a(a2)) {
             return new String(Base64.decode(a2, 0));
         }
-        WifiManager wifiManager = (WifiManager) context.getSystemService("wifi");
+        WifiManager wifiManager = (WifiManager) context.getSystemService(QSConstants.TILE_WIFI);
         String str2 = a2;
         if (wifiManager != null) {
             WifiInfo connectionInfo = wifiManager.getConnectionInfo();
@@ -116,7 +117,7 @@ public class PhoneInfo {
         str = str2;
         if (StringUtils.a(str2)) {
             String str4 = str2;
-            f43801a.a(context, "MtopConfigStore", "PHONE_INFO_STORE.", "mtopsdk_mac_address", Base64.encodeToString(str2.getBytes(), 0));
+            a.a(context, "MtopConfigStore", "PHONE_INFO_STORE.", "mtopsdk_mac_address", Base64.encodeToString(str2.getBytes(), 0));
             return str2;
         }
         return str;

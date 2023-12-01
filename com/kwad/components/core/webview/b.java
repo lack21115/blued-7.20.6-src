@@ -225,7 +225,7 @@ public final class b {
             @Override // com.kwad.components.core.webview.a.kwai.j
             public final void a(n nVar) {
                 super.a(nVar);
-                AdWebViewActivityProxy.launch(b.this.cV.Lc.getContext(), new AdWebViewActivityProxy.a.C0529a().au(nVar.title).av(nVar.url).aA(true).L(b.this.mAdTemplate).oc());
+                AdWebViewActivityProxy.launch(b.this.cV.Lc.getContext(), new AdWebViewActivityProxy.a.C0359a().au(nVar.title).av(nVar.url).aA(true).L(b.this.mAdTemplate).oc());
             }
         });
         aVar.a(new com.kwad.components.core.webview.jshandler.b());

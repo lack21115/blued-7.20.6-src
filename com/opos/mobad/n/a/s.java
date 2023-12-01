@@ -14,14 +14,14 @@ import com.opos.mobad.n.a;
 public class s extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f26556a;
+    private TextView f12868a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26557c;
+    private TextView f12869c;
     private LinearLayout d;
     private LinearLayout e;
-    private a.InterfaceC0708a f;
+    private a.InterfaceC0538a f;
 
     public s(Context context) {
         super(context);
@@ -34,11 +34,11 @@ public class s extends RelativeLayout {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
         linearLayout.setOrientation(0);
         TextView textView = new TextView(getContext());
-        this.f26557c = textView;
+        this.f12869c = textView;
         textView.setTextSize(1, 13.0f);
-        this.f26557c.setTextColor(-1);
-        this.f26557c.setPadding(com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f), com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f));
-        linearLayout.addView(this.f26557c, layoutParams);
+        this.f12869c.setTextColor(-1);
+        this.f12869c.setPadding(com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f), com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f));
+        linearLayout.addView(this.f12869c, layoutParams);
         TextView textView2 = new TextView(getContext());
         this.b = textView2;
         textView2.setBackgroundColor(-1);
@@ -46,11 +46,11 @@ public class s extends RelativeLayout {
         layoutParams2.setMargins(0, com.opos.cmn.an.h.f.a.a(getContext(), 6.0f), 0, com.opos.cmn.an.h.f.a.a(getContext(), 6.0f));
         linearLayout.addView(this.b, layoutParams2);
         TextView textView3 = new TextView(getContext());
-        this.f26556a = textView3;
+        this.f12868a = textView3;
         textView3.setTextSize(1, 13.0f);
-        this.f26556a.setTextColor(-17650);
-        this.f26556a.setPadding(com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f), com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f));
-        linearLayout.addView(this.f26556a, layoutParams);
+        this.f12868a.setTextColor(-17650);
+        this.f12868a.setPadding(com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f), com.opos.cmn.an.h.f.a.a(getContext(), 10.0f), com.opos.cmn.an.h.f.a.a(getContext(), 6.0f));
+        linearLayout.addView(this.f12868a, layoutParams);
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.a.s.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
@@ -59,8 +59,8 @@ public class s extends RelativeLayout {
                 }
             }
         };
-        this.f26556a.setOnClickListener(gVar);
-        this.f26556a.setOnTouchListener(gVar);
+        this.f12868a.setOnClickListener(gVar);
+        this.f12868a.setOnTouchListener(gVar);
         linearLayout.setVisibility(8);
         this.d = linearLayout;
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(-2, -2);
@@ -103,30 +103,30 @@ public class s extends RelativeLayout {
             return;
         }
         this.d.setVisibility(0);
-        this.f26557c.setText(str);
+        this.f12869c.setText(str);
         this.b.setVisibility(0);
         if (TextUtils.isEmpty(str)) {
-            this.f26557c.setVisibility(8);
+            this.f12869c.setVisibility(8);
             this.b.setVisibility(8);
         } else {
-            this.f26557c.setVisibility(0);
+            this.f12869c.setVisibility(0);
         }
         if (i == 1) {
-            textView = this.f26556a;
+            textView = this.f12868a;
             charSequence = "跳过广告";
         } else if (i != 2) {
-            this.f26556a.setVisibility(8);
+            this.f12868a.setVisibility(8);
             this.b.setVisibility(8);
             return;
         } else {
-            textView = this.f26556a;
+            textView = this.f12868a;
             charSequence = "VIP免广告";
         }
         textView.setText(charSequence);
-        this.f26556a.setVisibility(0);
+        this.f12868a.setVisibility(0);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.f = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.f = interfaceC0538a;
     }
 }

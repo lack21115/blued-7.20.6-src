@@ -3,7 +3,6 @@ package com.blued.android.module.live_china.fragment;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,12 +27,8 @@ import com.blued.das.live.LiveProtos;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansGuestDialogFragment.class */
 public class LiveFansGuestDialogFragment extends BaseDialogFragment {
     public static int d;
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12847a;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f12848c;
+    public Context a;
+    public View c;
     public LiveFansWebDialogFragment e;
     private ViewPager f;
     private MyAdapter g;
@@ -46,15 +41,12 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
     private ILiveFansGuestDialog n;
     public int b = 2;
     private ViewPager.OnPageChangeListener o = new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveFansGuestDialogFragment.1
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
             LiveFansGuestDialogFragment.this.h = i;
             int unused = LiveFansGuestDialogFragment.this.h;
@@ -70,26 +62,21 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansGuestDialogFragment$MyAdapter.class */
     public class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        FragmentManager f12850a;
+        FragmentManager a;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f12850a = fragmentManager;
+            this.a = fragmentManager;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             super.destroyItem(viewGroup, i, obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return LiveFansGuestDialogFragment.this.b;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i != 0) {
                 if (i != 1) {
@@ -106,7 +93,7 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
             LiveFansGuestFragment liveFansGuestFragment = new LiveFansGuestFragment();
             bundle2.putString("uid", LiveFansGuestDialogFragment.this.k);
             bundle2.putLong("lid", LiveFansGuestDialogFragment.this.i);
-            bundle2.putInt(BatteryManager.EXTRA_LEVEL, LiveFansGuestDialogFragment.this.l);
+            bundle2.putInt("level", LiveFansGuestDialogFragment.this.l);
             bundle2.putShort(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE, LiveFansGuestDialogFragment.this.j);
             bundle2.putBoolean("DefaultTagFansGroup", LiveFansGuestDialogFragment.this.m);
             liveFansGuestFragment.setArguments(bundle2);
@@ -118,7 +105,7 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
         if (getArguments() != null) {
             this.k = getArguments().getString("uid");
             this.i = getArguments().getLong("lid");
-            this.l = getArguments().getInt(BatteryManager.EXTRA_LEVEL);
+            this.l = getArguments().getInt("level");
             this.m = getArguments().getBoolean("DefaultTagFansGroup");
             this.j = getArguments().getShort(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE);
             if (LiveRoomManager.a().s()) {
@@ -160,9 +147,8 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
         this.e.show(getFragmentManager(), "webDialog");
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12847a = getActivity();
+        this.a = getActivity();
         int i = AppInfo.m;
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
@@ -179,12 +165,12 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_fans_guest, viewGroup);
-        this.f12848c = inflate;
-        this.f = (ViewPager) inflate.findViewById(R.id.fans_view_pager);
+        this.c = inflate;
+        this.f = inflate.findViewById(R.id.fans_view_pager);
         MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.g = myAdapter;
         this.f.setAdapter(myAdapter);
@@ -199,10 +185,10 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
             this.f.setCurrentItem(d);
         }
         EventTrackLive.a(LiveProtos.Event.LIVE_FANS_ENTER_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-        return this.f12848c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         ILiveFansGuestDialog iLiveFansGuestDialog = this.n;
@@ -211,7 +197,7 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onPause() {
         Dialog dialog;
         super.onPause();
@@ -222,7 +208,7 @@ public class LiveFansGuestDialogFragment extends BaseDialogFragment {
         this.e.dismiss();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

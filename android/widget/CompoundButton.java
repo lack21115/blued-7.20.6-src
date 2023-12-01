@@ -18,7 +18,7 @@ import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/CompoundButton.class */
 public abstract class CompoundButton extends Button implements Checkable {
-    private static final int[] CHECKED_STATE_SET = {16842912};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
     private boolean mBroadcasting;
     private Drawable mButtonDrawable;
     private int mButtonResource;

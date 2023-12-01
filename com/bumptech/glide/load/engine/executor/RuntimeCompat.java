@@ -32,7 +32,7 @@ public final class RuntimeCompat {
             fileArr = file.listFiles(new FilenameFilter() { // from class: com.bumptech.glide.load.engine.executor.RuntimeCompat.1
                 @Override // java.io.FilenameFilter
                 public boolean accept(File file2, String str) {
-                    return Pattern.this.matcher(str).matches();
+                    return compile.matcher(str).matches();
                 }
             });
         } catch (Throwable th) {

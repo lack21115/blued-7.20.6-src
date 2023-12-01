@@ -411,10 +411,10 @@ public interface IConnectivityManager extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(44, obtain, obtain2, 0);
                     obtain2.readException();
-                    LegacyVpnInfo createFromParcel = obtain2.readInt() != 0 ? LegacyVpnInfo.CREATOR.createFromParcel(obtain2) : null;
+                    LegacyVpnInfo legacyVpnInfo = obtain2.readInt() != 0 ? (LegacyVpnInfo) LegacyVpnInfo.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return legacyVpnInfo;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -750,10 +750,10 @@ public interface IConnectivityManager extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(42, obtain, obtain2, 0);
                     obtain2.readException();
-                    VpnConfig createFromParcel = obtain2.readInt() != 0 ? VpnConfig.CREATOR.createFromParcel(obtain2) : null;
+                    VpnConfig vpnConfig = obtain2.readInt() != 0 ? (VpnConfig) VpnConfig.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return vpnConfig;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -1780,7 +1780,7 @@ public interface IConnectivityManager extends IInterface {
                     return true;
                 case 41:
                     parcel.enforceInterface(DESCRIPTOR);
-                    ParcelFileDescriptor establishVpn = establishVpn(parcel.readInt() != 0 ? VpnConfig.CREATOR.createFromParcel(parcel) : null);
+                    ParcelFileDescriptor establishVpn = establishVpn(parcel.readInt() != 0 ? (VpnConfig) VpnConfig.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     if (establishVpn == null) {
                         parcel2.writeInt(0);
@@ -1802,7 +1802,7 @@ public interface IConnectivityManager extends IInterface {
                     return true;
                 case 43:
                     parcel.enforceInterface(DESCRIPTOR);
-                    startLegacyVpn(parcel.readInt() != 0 ? VpnProfile.CREATOR.createFromParcel(parcel) : null);
+                    startLegacyVpn(parcel.readInt() != 0 ? (VpnProfile) VpnProfile.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 44:

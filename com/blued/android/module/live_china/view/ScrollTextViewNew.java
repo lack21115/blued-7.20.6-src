@@ -23,13 +23,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/ScrollTextViewNew.class */
 public class ScrollTextViewNew extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static Pattern f15246a = Pattern.compile("@\\(word:([\\s\\S]*?)\\)");
+    public static Pattern a = Pattern.compile("@\\(word:([\\s\\S]*?)\\)");
     public boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f15247c;
+    private Context c;
     private LayoutInflater d;
     private TextView e;
     private float f;
@@ -49,7 +45,7 @@ public class ScrollTextViewNew extends LinearLayout {
         this.g = 0.0f;
         this.h = 0.0f;
         this.b = false;
-        this.f15247c = context;
+        this.c = context;
         c();
     }
 
@@ -59,7 +55,7 @@ public class ScrollTextViewNew extends LinearLayout {
         this.g = 0.0f;
         this.h = 0.0f;
         this.b = false;
-        this.f15247c = context;
+        this.c = context;
         c();
     }
 
@@ -69,7 +65,7 @@ public class ScrollTextViewNew extends LinearLayout {
         this.g = 0.0f;
         this.h = 0.0f;
         this.b = false;
-        this.f15247c = context;
+        this.c = context;
         c();
     }
 
@@ -79,7 +75,7 @@ public class ScrollTextViewNew extends LinearLayout {
             return charSequence;
         }
         SpannableStringBuilder spannableStringBuilder = null;
-        Matcher matcher = f15246a.matcher(charSequence);
+        Matcher matcher = a.matcher(charSequence);
         int i = 0;
         while (matcher.find()) {
             SpannableStringBuilder spannableStringBuilder2 = spannableStringBuilder;
@@ -109,7 +105,7 @@ public class ScrollTextViewNew extends LinearLayout {
     }
 
     private void c() {
-        LayoutInflater from = LayoutInflater.from(this.f15247c);
+        LayoutInflater from = LayoutInflater.from(this.c);
         this.d = from;
         View inflate = from.inflate(R.layout.scroll_text_layout_new, (ViewGroup) null);
         this.e = (TextView) inflate.findViewById(R.id.scroll_text);

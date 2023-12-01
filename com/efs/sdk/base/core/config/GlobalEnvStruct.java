@@ -18,14 +18,14 @@ import java.util.concurrent.ConcurrentHashMap;
 public class GlobalEnvStruct {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21745a;
+    private String f8139a;
     private String b;
     private String h;
     private ILogEncryptAction m;
     public Context mAppContext;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f21746c = true;
+    private boolean f8140c = true;
     private boolean d = true;
     private boolean e = false;
     private Boolean f = null;
@@ -55,7 +55,7 @@ public class GlobalEnvStruct {
     }
 
     public String getAppid() {
-        return this.f21745a;
+        return this.f8139a;
     }
 
     public List<ValueCallback<Pair<Message, Message>>> getCallback(int i) {
@@ -104,7 +104,7 @@ public class GlobalEnvStruct {
     }
 
     public boolean isEnableWaStat() {
-        return this.f21746c;
+        return this.f8140c;
     }
 
     public boolean isIntl() {
@@ -129,7 +129,7 @@ public class GlobalEnvStruct {
     }
 
     public void setAppid(String str) {
-        this.f21745a = str;
+        this.f8139a = str;
     }
 
     public void setDebug(boolean z) {
@@ -141,7 +141,7 @@ public class GlobalEnvStruct {
     }
 
     public void setEnableWaStat(boolean z) {
-        this.f21746c = z;
+        this.f8140c = z;
     }
 
     public void setIsIntl(boolean z) {

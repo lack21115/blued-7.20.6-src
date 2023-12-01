@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
+import com.android.internal.util.cm.QSConstants;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,50 +16,38 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/net/a.class */
 public final class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f4632a = "msp";
+    private static final String a = "msp";
     private static final String b = "application/octet-stream;binary/octet-stream";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final CookieManager f4633c = new CookieManager();
+    private static final CookieManager c = new CookieManager();
 
     /* renamed from: com.alipay.sdk.net.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/net/a$a.class */
-    public static final class C0049a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final String f4634a;
+    public static final class C0009a {
+        public final String a;
         public final byte[] b;
+        public final Map<String, String> c;
 
-        /* renamed from: c  reason: collision with root package name */
-        public final Map<String, String> f4635c;
-
-        public C0049a(String str, Map<String, String> map, byte[] bArr) {
-            this.f4634a = str;
+        public C0009a(String str, Map<String, String> map, byte[] bArr) {
+            this.a = str;
             this.b = bArr;
-            this.f4635c = map;
+            this.c = map;
         }
 
         public String toString() {
-            return String.format("<UrlConnectionConfigure url=%s headers=%s>", this.f4634a, this.f4635c);
+            return String.format("<UrlConnectionConfigure url=%s headers=%s>", this.a, this.c);
         }
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/net/a$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        public final Map<String, List<String>> f4636a;
+        public final Map<String, List<String>> a;
         public final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public final byte[] f4637c;
+        public final byte[] c;
 
         public b(Map<String, List<String>> map, String str, byte[] bArr) {
-            this.f4636a = map;
+            this.a = map;
             this.b = str;
-            this.f4637c = bArr;
+            this.c = bArr;
         }
     }
 
@@ -70,7 +59,7 @@ public final class a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static com.alipay.sdk.net.a.b a(android.content.Context r6, com.alipay.sdk.net.a.C0049a r7) {
+    public static com.alipay.sdk.net.a.b a(android.content.Context r6, com.alipay.sdk.net.a.C0009a r7) {
         /*
             Method dump skipped, instructions count: 766
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -114,7 +103,7 @@ public final class a {
             return null;
         }
         try {
-            return ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+            return ((ConnectivityManager) context.getSystemService("connectivity")).getActiveNetworkInfo();
         } catch (Exception e) {
             return null;
         }
@@ -123,7 +112,7 @@ public final class a {
     private static String c(Context context) {
         try {
             NetworkInfo b2 = b(context);
-            return (b2 == null || !b2.isAvailable()) ? "none" : b2.getType() == 1 ? "wifi" : b2.getExtraInfo().toLowerCase();
+            return (b2 == null || !b2.isAvailable()) ? "none" : b2.getType() == 1 ? QSConstants.TILE_WIFI : b2.getExtraInfo().toLowerCase();
         } catch (Exception e) {
             return "none";
         }

@@ -11,21 +11,21 @@ import android.os.Build;
 public final class WrappedDrawableState extends Drawable.ConstantState {
 
     /* renamed from: a  reason: collision with root package name */
-    int f2475a;
+    int f2427a;
     Drawable.ConstantState b;
 
     /* renamed from: c  reason: collision with root package name */
-    ColorStateList f2476c;
+    ColorStateList f2428c;
     PorterDuff.Mode d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public WrappedDrawableState(WrappedDrawableState wrappedDrawableState) {
-        this.f2476c = null;
-        this.d = WrappedDrawableApi14.f2473a;
+        this.f2428c = null;
+        this.d = WrappedDrawableApi14.f2425a;
         if (wrappedDrawableState != null) {
-            this.f2475a = wrappedDrawableState.f2475a;
+            this.f2427a = wrappedDrawableState.f2427a;
             this.b = wrappedDrawableState.b;
-            this.f2476c = wrappedDrawableState.f2476c;
+            this.f2428c = wrappedDrawableState.f2428c;
             this.d = wrappedDrawableState.d;
         }
     }
@@ -37,7 +37,7 @@ public final class WrappedDrawableState extends Drawable.ConstantState {
 
     @Override // android.graphics.drawable.Drawable.ConstantState
     public int getChangingConfigurations() {
-        int i = this.f2475a;
+        int i = this.f2427a;
         Drawable.ConstantState constantState = this.b;
         return i | (constantState != null ? constantState.getChangingConfigurations() : 0);
     }

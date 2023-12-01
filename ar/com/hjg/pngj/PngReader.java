@@ -10,11 +10,11 @@ import java.util.logging.Logger;
 public class PngReader {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ImageInfo f3647a;
+    public final ImageInfo f3599a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final ChunkSeqReaderPng f3648c;
+    protected final ChunkSeqReaderPng f3600c;
     protected final BufferedStreamFeeder d;
     protected final PngMetadata e;
     protected int f;
@@ -29,50 +29,50 @@ public class PngReader {
         BufferedStreamFeeder bufferedStreamFeeder = new BufferedStreamFeeder(inputStream);
         this.d = bufferedStreamFeeder;
         bufferedStreamFeeder.a(z);
-        this.f3648c = f();
+        this.f3600c = f();
         try {
             boolean z2 = true;
             this.d.b(true);
-            if (!this.d.b(this.f3648c, 36)) {
+            if (!this.d.b(this.f3600c, 36)) {
                 throw new PngjInputException("error reading first 21 bytes");
             }
-            this.f3647a = this.f3648c.k();
-            if (this.f3648c.l() == null) {
+            this.f3599a = this.f3600c.k();
+            if (this.f3600c.l() == null) {
                 z2 = false;
             }
             this.b = z2;
             b(5024024L);
             a(901001001L);
             c(2024024L);
-            this.f3648c.c("fdAT");
-            this.f3648c.c("fcTL");
-            this.e = new PngMetadata(this.f3648c.f);
+            this.f3600c.c("fdAT");
+            this.f3600c.c("fcTL");
+            this.e = new PngMetadata(this.f3600c.f);
             a(ImageLineSetDefault.a());
             this.f = -1;
         } catch (RuntimeException e) {
             this.d.b();
-            this.f3648c.d();
+            this.f3600c.d();
             throw e;
         }
     }
 
     public ChunksList a(boolean z) {
-        if (z && this.f3648c.h()) {
+        if (z && this.f3600c.h()) {
             a();
         }
-        return this.f3648c.f;
+        return this.f3600c.f;
     }
 
     protected void a() {
-        while (this.f3648c.e < 4) {
-            if (this.d.a(this.f3648c) <= 0) {
+        while (this.f3600c.e < 4) {
+            if (this.d.a(this.f3600c) <= 0) {
                 throw new PngjInputException("premature ending reading first chunks");
             }
         }
     }
 
     public void a(long j) {
-        this.f3648c.a(j);
+        this.f3600c.a(j);
     }
 
     public void a(IImageLineSetFactory<? extends IImageLine> iImageLineSetFactory) {
@@ -80,7 +80,7 @@ public class PngReader {
     }
 
     public void a(String str) {
-        this.f3648c.d(str);
+        this.f3600c.d(str);
     }
 
     public ChunksList b() {
@@ -88,38 +88,38 @@ public class PngReader {
     }
 
     public void b(long j) {
-        this.f3648c.c(j);
+        this.f3600c.c(j);
     }
 
     public void c() {
         try {
-            if (this.f3648c.h()) {
+            if (this.f3600c.h()) {
                 a();
             }
-            if (this.f3648c.i() != null && !this.f3648c.i().d()) {
-                this.f3648c.i().h();
+            if (this.f3600c.i() != null && !this.f3600c.i().d()) {
+                this.f3600c.i().h();
             }
             do {
-                if (this.f3648c.a()) {
+                if (this.f3600c.a()) {
                     break;
                 }
-            } while (this.d.a(this.f3648c) > 0);
+            } while (this.d.a(this.f3600c) > 0);
         } finally {
             d();
         }
     }
 
     public void c(long j) {
-        this.f3648c.b(j);
+        this.f3600c.b(j);
     }
 
     public void d() {
         try {
-            if (this.f3648c != null) {
-                this.f3648c.d();
+            if (this.f3600c != null) {
+                this.f3600c.d();
             }
         } catch (Exception e) {
-            Logger logger = PngHelperInternal.f3645a;
+            Logger logger = PngHelperInternal.f3597a;
             logger.warning("error closing chunk sequence:" + e.getMessage());
         }
         BufferedStreamFeeder bufferedStreamFeeder = this.d;
@@ -129,7 +129,7 @@ public class PngReader {
     }
 
     public ChunkSeqReaderPng e() {
-        return this.f3648c;
+        return this.f3600c;
     }
 
     protected ChunkSeqReaderPng f() {
@@ -137,6 +137,6 @@ public class PngReader {
     }
 
     public String toString() {
-        return this.f3647a.toString() + " interlaced=" + this.b;
+        return this.f3599a.toString() + " interlaced=" + this.b;
     }
 }

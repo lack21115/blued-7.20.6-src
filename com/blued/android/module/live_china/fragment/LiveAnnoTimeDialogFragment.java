@@ -14,6 +14,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.ui.BaseDialogFragment;
@@ -33,19 +34,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Grego;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveAnnoTimeDialogFragment.class */
 public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements View.OnClickListener, OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    List<CharSequence> f12702a;
+    List<CharSequence> a;
     List<CharSequence> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    List<CharSequence> f12703c;
+    List<CharSequence> c;
     IEventCallback d;
     private View e;
     private StringScrollPicker f;
@@ -100,7 +98,7 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
 
     private void b(long j) {
         int i;
-        String[] split = d(j).split("-");
+        String[] split = d(j).split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         int parseInt = Integer.parseInt(split[0]);
         int parseInt2 = Integer.parseInt(split[1]);
         int i2 = 0;
@@ -117,8 +115,8 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
                 i2 = i3 + 1;
             }
         }
-        while (i < this.f12703c.size()) {
-            if (Integer.parseInt(this.f12703c.get(i).toString()) >= parseInt2) {
+        while (i < this.c.size()) {
+            if (Integer.parseInt(this.c.get(i).toString()) >= parseInt2) {
                 this.h.setSelectedPosition(i);
                 return;
             }
@@ -158,7 +156,7 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
         this.f = (StringScrollPicker) this.e.findViewById(R.id.sp_day);
         this.g = (StringScrollPicker) this.e.findViewById(R.id.sp_hour);
         this.h = (StringScrollPicker) this.e.findViewById(R.id.sp_min);
-        this.i = (RecyclerView) this.e.findViewById(R.id.rv_weekly);
+        this.i = this.e.findViewById(R.id.rv_weekly);
         this.e.findViewById(R.id.tv_cancel).setOnClickListener(this);
         this.e.findViewById(R.id.tv_save).setOnClickListener(this);
         this.p = System.currentTimeMillis();
@@ -168,17 +166,17 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
 
     private void g() {
         String valueOf;
-        this.f12702a = new ArrayList();
+        this.a = new ArrayList();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= 7) {
                 break;
             }
-            this.f12702a.add(c(this.p + (86400000 * i2)));
+            this.a.add(c(this.p + (Grego.MILLIS_PER_DAY * i2)));
             i = i2 + 1;
         }
-        this.f.setData(this.f12702a);
+        this.f.setData(this.a);
         this.f.setSelectedPosition(0);
         this.b = new ArrayList();
         int i3 = 0;
@@ -197,17 +195,17 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
             i3 = i4 + 1;
         }
         this.g.setData(this.b);
-        this.f12703c = new ArrayList();
+        this.c = new ArrayList();
         int i5 = 0;
         while (true) {
             int i6 = i5;
             if (i6 >= 6) {
                 break;
             }
-            this.f12703c.add(i6 + "0");
+            this.c.add(i6 + "0");
             i5 = i6 + 1;
         }
-        this.h.setData(this.f12703c);
+        this.h.setData(this.c);
         if (this.o > 86400000) {
             h();
         } else if (TextUtils.isEmpty(this.n) || this.n.length() < 7 || this.n.equals("0000000")) {
@@ -218,13 +216,13 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
     }
 
     private void h() {
-        String c2 = c(this.o);
+        String c = c(this.o);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f12702a.size()) {
+            if (i2 >= this.a.size()) {
                 break;
-            } else if (this.f12702a.get(i2).equals(c2)) {
+            } else if (this.a.get(i2).equals(c)) {
                 this.f.setSelectedPosition(i2);
                 break;
             } else {
@@ -236,16 +234,16 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
 
     private void i() {
         boolean z;
-        String[] split = d(this.p + 600000).split("-");
+        String[] split = d(this.p + 600000).split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
         int parseInt = Integer.parseInt(split[0]);
         int parseInt2 = Integer.parseInt(split[1]);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f12703c.size()) {
+            if (i2 >= this.c.size()) {
                 z = false;
                 break;
-            } else if (Integer.parseInt(this.f12703c.get(i2).toString()) >= parseInt2) {
+            } else if (Integer.parseInt(this.c.get(i2).toString()) >= parseInt2) {
                 this.h.setSelectedPosition(i2);
                 z = true;
                 break;
@@ -290,7 +288,6 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
         this.k.add(new FitemAnnounceWeekly("每周日", this.n.charAt(0) == '1'));
         final GridLayoutManager gridLayoutManager = new GridLayoutManager(this.l, 4);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveAnnoTimeDialogFragment.2
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 return ((FreedomItem) LiveAnnoTimeDialogFragment.this.k.get(i)).a(gridLayoutManager.getSpanCount());
             }
@@ -326,10 +323,10 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
                 stringBuffer.insert(0, fitemAnnounceWeekly.e() ? "1" : "0");
             }
             this.n = stringBuffer.toString();
-            this.o = (Integer.parseInt((String) this.h.getSelectedItem()) * 60000) + (Integer.parseInt((String) this.g.getSelectedItem()) * 3600000);
+            this.o = (Integer.parseInt((String) this.h.getSelectedItem()) * 60000) + (Integer.parseInt((String) this.g.getSelectedItem()) * Grego.MILLIS_PER_HOUR);
         } else {
             int parseInt = Integer.parseInt((String) this.g.getSelectedItem());
-            long parseInt2 = (Integer.parseInt((String) this.h.getSelectedItem()) * 60000) + (parseInt * 3600000) + (this.f.getSelectedPosition() * 86400000) + a(this.p);
+            long parseInt2 = (Integer.parseInt((String) this.h.getSelectedItem()) * 60000) + (parseInt * Grego.MILLIS_PER_HOUR) + (this.f.getSelectedPosition() * Grego.MILLIS_PER_DAY) + a(this.p);
             if (parseInt2 < System.currentTimeMillis() + 600000) {
                 ToastUtils.a(R.string.live_announce_toast_select_time_error);
                 return false;
@@ -381,29 +378,28 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
         a(true);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         this.l = getContext();
         this.m = true;
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_announce_time, (ViewGroup) null);
-        int a2 = DensityUtils.a(this.l, 364.0f);
+        int a = DensityUtils.a(this.l, 364.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a));
         Window window = dialog.getWindow();
         window.setWindowAnimations(R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
-        attributes.height = a2;
+        attributes.height = a;
         attributes.x = 0;
-        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a2;
+        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a;
         dialog.onWindowAttributesChanged(attributes);
         e();
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.e;
         if (view == null) {
@@ -415,7 +411,7 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveAnnoTimeDialogFragment.1
@@ -426,7 +422,7 @@ public class LiveAnnoTimeDialogFragment extends BaseDialogFragment implements Vi
         }, 300L);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

@@ -4,12 +4,12 @@ package com.kuaishou.weapon.p0;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f23714a = false;
+    public static final boolean f10106a = false;
     public static final String b = "com.kuaishou.weapon";
     @Deprecated
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23715c = "com.kuaishou.weapon";
+    public static final String f10107c = "com.kuaishou.weapon";
     public static final String d = "release";
     public static final String e = "";
     public static final int f = 1;

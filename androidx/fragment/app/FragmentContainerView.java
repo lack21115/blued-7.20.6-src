@@ -20,11 +20,11 @@ import java.util.ArrayList;
 public final class FragmentContainerView extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private ArrayList<View> f2956a;
+    private ArrayList<View> f2908a;
     private ArrayList<View> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View.OnApplyWindowInsetsListener f2957c;
+    private View.OnApplyWindowInsetsListener f2909c;
     private boolean d;
 
     public FragmentContainerView(Context context) {
@@ -92,10 +92,10 @@ public final class FragmentContainerView extends FrameLayout {
         if (arrayList == null || !arrayList.contains(view)) {
             return;
         }
-        if (this.f2956a == null) {
-            this.f2956a = new ArrayList<>();
+        if (this.f2908a == null) {
+            this.f2908a = new ArrayList<>();
         }
-        this.f2956a.add(view);
+        this.f2908a.add(view);
     }
 
     @Override // android.view.ViewGroup
@@ -107,9 +107,8 @@ public final class FragmentContainerView extends FrameLayout {
         throw new IllegalStateException("Views added to a FragmentContainerView must be associated with a Fragment. View " + view + " is not associated with a Fragment.");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean addViewInLayout(View view, int i, ViewGroup.LayoutParams layoutParams, boolean z) {
+    protected boolean addViewInLayout(View view, int i, ViewGroup.LayoutParams layoutParams, boolean z) {
         if (FragmentManager.a(view) != null) {
             return super.addViewInLayout(view, i, layoutParams, z);
         }
@@ -119,7 +118,7 @@ public final class FragmentContainerView extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public WindowInsets dispatchApplyWindowInsets(WindowInsets windowInsets) {
         WindowInsetsCompat windowInsetsCompat = WindowInsetsCompat.toWindowInsetsCompat(windowInsets);
-        View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.f2957c;
+        View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.f2909c;
         WindowInsetsCompat windowInsetsCompat2 = onApplyWindowInsetsListener != null ? WindowInsetsCompat.toWindowInsetsCompat(onApplyWindowInsetsListener.onApplyWindowInsets(this, windowInsets)) : ViewCompat.onApplyWindowInsets(this, windowInsetsCompat);
         if (!windowInsetsCompat2.isConsumed()) {
             int childCount = getChildCount();
@@ -136,28 +135,26 @@ public final class FragmentContainerView extends FrameLayout {
         return windowInsets;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        if (this.d && this.f2956a != null) {
+    protected void dispatchDraw(Canvas canvas) {
+        if (this.d && this.f2908a != null) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f2956a.size()) {
+                if (i2 >= this.f2908a.size()) {
                     break;
                 }
-                super.drawChild(canvas, this.f2956a.get(i2), getDrawingTime());
+                super.drawChild(canvas, this.f2908a.get(i2), getDrawingTime());
                 i = i2 + 1;
             }
         }
         super.dispatchDraw(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j) {
+    protected boolean drawChild(Canvas canvas, View view, long j) {
         ArrayList<View> arrayList;
-        if (!this.d || (arrayList = this.f2956a) == null || arrayList.size() <= 0 || !this.f2956a.contains(view)) {
+        if (!this.d || (arrayList = this.f2908a) == null || arrayList.size() <= 0 || !this.f2908a.contains(view)) {
             return super.drawChild(canvas, view, j);
         }
         return false;
@@ -168,7 +165,7 @@ public final class FragmentContainerView extends FrameLayout {
         ArrayList<View> arrayList = this.b;
         if (arrayList != null) {
             arrayList.remove(view);
-            ArrayList<View> arrayList2 = this.f2956a;
+            ArrayList<View> arrayList2 = this.f2908a;
             if (arrayList2 != null && arrayList2.remove(view)) {
                 this.d = true;
             }
@@ -196,9 +193,8 @@ public final class FragmentContainerView extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public void removeDetachedView(View view, boolean z) {
+    protected void removeDetachedView(View view, boolean z) {
         if (z) {
             a(view);
         }
@@ -268,7 +264,7 @@ public final class FragmentContainerView extends FrameLayout {
 
     @Override // android.view.View
     public void setOnApplyWindowInsetsListener(View.OnApplyWindowInsetsListener onApplyWindowInsetsListener) {
-        this.f2957c = onApplyWindowInsetsListener;
+        this.f2909c = onApplyWindowInsetsListener;
     }
 
     @Override // android.view.ViewGroup

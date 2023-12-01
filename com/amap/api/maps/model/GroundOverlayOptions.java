@@ -119,7 +119,7 @@ public final class GroundOverlayOptions extends BaseOptions implements Parcelabl
     }
 
     /* renamed from: clone */
-    public final GroundOverlayOptions m2403clone() {
+    public final GroundOverlayOptions m8846clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {

@@ -44,9 +44,7 @@ public class CircleProgressView extends View {
     private int U;
     private boolean V;
     private Handler W;
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f10953a;
+    private float a;
     private AnimationState aa;
     private AccelerateDecelerateInterpolator ab;
     private String ac;
@@ -59,9 +57,7 @@ public class CircleProgressView extends View {
     private boolean aj;
     private float ak;
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f10954c;
+    private float c;
     private float d;
     private float e;
     private float f;
@@ -89,9 +85,7 @@ public class CircleProgressView extends View {
     /* renamed from: com.blued.android.module.common.view.CircleProgressView$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CircleProgressView$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10955a;
+        static final /* synthetic */ int[] a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x0081 -> B:56:0x0014). Please submit an issue!!! */
@@ -127,25 +121,25 @@ public class CircleProgressView extends View {
             } catch (NoSuchFieldError e5) {
             }
             int[] iArr2 = new int[AnimationMsg.values().length];
-            f10955a = iArr2;
+            a = iArr2;
             try {
                 iArr2[AnimationMsg.START_SPINNING.ordinal()] = 1;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f10955a[AnimationMsg.STOP_SPINNING.ordinal()] = 2;
+                a[AnimationMsg.STOP_SPINNING.ordinal()] = 2;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f10955a[AnimationMsg.SET_VALUE.ordinal()] = 3;
+                a[AnimationMsg.SET_VALUE.ordinal()] = 3;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f10955a[AnimationMsg.SET_VALUE_ANIMATED.ordinal()] = 4;
+                a[AnimationMsg.SET_VALUE_ANIMATED.ordinal()] = 4;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f10955a[AnimationMsg.TICK.ordinal()] = 5;
+                a[AnimationMsg.TICK.ordinal()] = 5;
             } catch (NoSuchFieldError e10) {
             }
         }
@@ -153,13 +147,9 @@ public class CircleProgressView extends View {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CircleProgressView$AnimationHandler.class */
     static class AnimationHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<CircleProgressView> f10956a;
+        private final WeakReference<CircleProgressView> a;
         private float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private long f10957c;
+        private long c;
         private long d;
         private DecelerateInterpolator e;
         private double f;
@@ -167,13 +157,13 @@ public class CircleProgressView extends View {
         AnimationHandler(CircleProgressView circleProgressView) {
             super(circleProgressView.getContext().getMainLooper());
             this.e = new DecelerateInterpolator();
-            this.f10956a = new WeakReference<>(circleProgressView);
+            this.a = new WeakReference<>(circleProgressView);
         }
 
         private void a(Message message, CircleProgressView circleProgressView) {
-            circleProgressView.f10954c = ((float[]) message.obj)[0];
+            circleProgressView.c = ((float[]) message.obj)[0];
             circleProgressView.b = ((float[]) message.obj)[1];
-            this.f10957c = System.currentTimeMillis();
+            this.c = System.currentTimeMillis();
             circleProgressView.aa = AnimationState.ANIMATING;
             circleProgressView.W.sendEmptyMessageDelayed(AnimationMsg.TICK.ordinal(), circleProgressView.U);
         }
@@ -186,7 +176,7 @@ public class CircleProgressView extends View {
 
         private void a(CircleProgressView circleProgressView, Message message) {
             circleProgressView.aa = AnimationState.END_SPINNING_START_ANIMATING;
-            circleProgressView.f10954c = 0.0f;
+            circleProgressView.c = 0.0f;
             circleProgressView.b = ((float[]) message.obj)[1];
             this.d = System.currentTimeMillis();
             this.b = circleProgressView.e;
@@ -194,8 +184,8 @@ public class CircleProgressView extends View {
         }
 
         private void b(Message message, CircleProgressView circleProgressView) {
-            circleProgressView.f10954c = circleProgressView.b;
-            circleProgressView.f10953a = circleProgressView.b = ((float[]) message.obj)[0];
+            circleProgressView.c = circleProgressView.b;
+            circleProgressView.a = circleProgressView.b = ((float[]) message.obj)[0];
             circleProgressView.aa = AnimationState.IDLE;
             circleProgressView.invalidate();
         }
@@ -208,8 +198,8 @@ public class CircleProgressView extends View {
 
         private void c(CircleProgressView circleProgressView) {
             circleProgressView.aa = AnimationState.SPINNING;
-            circleProgressView.e = (360.0f / circleProgressView.d) * circleProgressView.f10953a;
-            circleProgressView.g = (360.0f / circleProgressView.d) * circleProgressView.f10953a;
+            circleProgressView.e = (360.0f / circleProgressView.d) * circleProgressView.a;
+            circleProgressView.g = (360.0f / circleProgressView.d) * circleProgressView.a;
             this.d = System.currentTimeMillis();
             this.b = circleProgressView.e;
             this.f = (circleProgressView.f / circleProgressView.S) * circleProgressView.U * 2.0f;
@@ -217,18 +207,18 @@ public class CircleProgressView extends View {
         }
 
         private boolean d(CircleProgressView circleProgressView) {
-            float currentTimeMillis = (float) ((System.currentTimeMillis() - this.f10957c) / circleProgressView.T);
+            float currentTimeMillis = (float) ((System.currentTimeMillis() - this.c) / circleProgressView.T);
             float f = currentTimeMillis;
             if (currentTimeMillis > 1.0f) {
                 f = 1.0f;
             }
-            circleProgressView.f10953a = circleProgressView.f10954c + ((circleProgressView.b - circleProgressView.f10954c) * circleProgressView.ab.getInterpolation(f));
+            circleProgressView.a = circleProgressView.c + ((circleProgressView.b - circleProgressView.c) * circleProgressView.ab.getInterpolation(f));
             return f >= 1.0f;
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            CircleProgressView circleProgressView = this.f10956a.get();
+            CircleProgressView circleProgressView = this.a.get();
             if (circleProgressView == null) {
                 return;
             }
@@ -238,7 +228,7 @@ public class CircleProgressView extends View {
             }
             int i = AnonymousClass1.b[circleProgressView.aa.ordinal()];
             if (i == 1) {
-                int i2 = AnonymousClass1.f10955a[animationMsg.ordinal()];
+                int i2 = AnonymousClass1.a[animationMsg.ordinal()];
                 if (i2 == 1) {
                     c(circleProgressView);
                 } else if (i2 == 3) {
@@ -250,7 +240,7 @@ public class CircleProgressView extends View {
                     removeMessages(AnimationMsg.TICK.ordinal());
                 }
             } else if (i == 2) {
-                int i3 = AnonymousClass1.f10955a[animationMsg.ordinal()];
+                int i3 = AnonymousClass1.a[animationMsg.ordinal()];
                 if (i3 == 2) {
                     a(circleProgressView);
                 } else if (i3 == 3) {
@@ -283,7 +273,7 @@ public class CircleProgressView extends View {
                     circleProgressView.invalidate();
                 }
             } else if (i == 3) {
-                int i4 = AnonymousClass1.f10955a[animationMsg.ordinal()];
+                int i4 = AnonymousClass1.a[animationMsg.ordinal()];
                 if (i4 == 1) {
                     circleProgressView.aa = AnimationState.SPINNING;
                     circleProgressView.W.sendEmptyMessageDelayed(AnimationMsg.TICK.ordinal(), circleProgressView.U);
@@ -310,26 +300,26 @@ public class CircleProgressView extends View {
                 if (i != 5) {
                     return;
                 }
-                int i5 = AnonymousClass1.f10955a[animationMsg.ordinal()];
+                int i5 = AnonymousClass1.a[animationMsg.ordinal()];
                 if (i5 == 1) {
                     c(circleProgressView);
                 } else if (i5 == 3) {
                     b(message, circleProgressView);
                 } else if (i5 == 4) {
-                    this.f10957c = System.currentTimeMillis();
-                    circleProgressView.f10954c = circleProgressView.f10953a;
+                    this.c = System.currentTimeMillis();
+                    circleProgressView.c = circleProgressView.a;
                     circleProgressView.b = ((float[]) message.obj)[1];
                 } else if (i5 != 5) {
                 } else {
                     if (d(circleProgressView)) {
                         circleProgressView.aa = AnimationState.IDLE;
-                        circleProgressView.f10953a = circleProgressView.b;
+                        circleProgressView.a = circleProgressView.b;
                     }
                     circleProgressView.W.sendEmptyMessageDelayed(AnimationMsg.TICK.ordinal(), circleProgressView.U);
                     circleProgressView.invalidate();
                 }
             } else {
-                int i6 = AnonymousClass1.f10955a[animationMsg.ordinal()];
+                int i6 = AnonymousClass1.a[animationMsg.ordinal()];
                 if (i6 == 1) {
                     circleProgressView.V = false;
                     c(circleProgressView);
@@ -337,7 +327,7 @@ public class CircleProgressView extends View {
                     circleProgressView.V = false;
                     b(message, circleProgressView);
                 } else if (i6 == 4) {
-                    circleProgressView.f10954c = 0.0f;
+                    circleProgressView.c = 0.0f;
                     circleProgressView.b = ((float[]) message.obj)[1];
                     circleProgressView.W.sendEmptyMessageDelayed(AnimationMsg.TICK.ordinal(), circleProgressView.U);
                 } else if (i6 != 5) {
@@ -352,7 +342,7 @@ public class CircleProgressView extends View {
                     }
                     CircleProgressView.b(circleProgressView, circleProgressView.S);
                     if (circleProgressView.g > 360.0f && !circleProgressView.V) {
-                        this.f10957c = System.currentTimeMillis();
+                        this.c = System.currentTimeMillis();
                         circleProgressView.V = true;
                         b(circleProgressView);
                     }
@@ -403,9 +393,9 @@ public class CircleProgressView extends View {
 
     public CircleProgressView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10953a = 0.0f;
+        this.a = 0.0f;
         this.b = 0.0f;
-        this.f10954c = 0.0f;
+        this.c = 0.0f;
         this.d = 100.0f;
         this.e = 0.0f;
         this.f = 42.0f;
@@ -429,8 +419,8 @@ public class CircleProgressView extends View {
         this.x = -1871679376;
         this.y = 0;
         this.z = -1342177281;
-        this.A = -16777216;
-        this.B = -16777216;
+        this.A = View.MEASURED_STATE_MASK;
+        this.B = View.MEASURED_STATE_MASK;
         this.C = new int[]{-1871679376, -1871679376};
         this.D = Paint.Cap.BUTT;
         this.E = Paint.Cap.BUTT;
@@ -613,7 +603,7 @@ public class CircleProgressView extends View {
         this.T = j;
         Message obtain = Message.obtain();
         obtain.what = AnimationMsg.SET_VALUE_ANIMATED.ordinal();
-        obtain.obj = new float[]{this.f10953a, f};
+        obtain.obj = new float[]{this.a, f};
         this.W.sendMessage(obtain);
     }
 
@@ -767,7 +757,7 @@ public class CircleProgressView extends View {
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        float f = (360.0f / this.d) * this.f10953a;
+        float f = (360.0f / this.d) * this.a;
         canvas.drawArc(this.M, 360.0f, 360.0f, false, this.H);
         if (this.m > 0) {
             canvas.drawArc(this.M, 360.0f, 360.0f, false, this.I);
@@ -962,7 +952,7 @@ public class CircleProgressView extends View {
         this.T = 1200.0d;
         Message obtain = Message.obtain();
         obtain.what = AnimationMsg.SET_VALUE_ANIMATED.ordinal();
-        obtain.obj = new float[]{this.f10953a, f};
+        obtain.obj = new float[]{this.a, f};
         this.W.sendMessage(obtain);
     }
 }

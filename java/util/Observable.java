@@ -16,8 +16,7 @@ public class Observable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void clearChanged() {
+    protected void clearChanged() {
         this.changed = false;
     }
 
@@ -69,8 +68,7 @@ public class Observable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void setChanged() {
+    protected void setChanged() {
         this.changed = true;
     }
 }

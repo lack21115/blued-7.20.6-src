@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import com.app.share.MoreOptionFromBtm;
-import com.soft.blued.R;
+import com.blued.android.module.common.web.LoaderConstants;
 import com.soft.blued.ui.share_custom.Model.ShareOption;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -16,20 +16,18 @@ public class WebBtmOptions extends MoreOptionFromBtm {
         super(context, true, true, false, onClickListener);
     }
 
-    @Override // com.soft.blued.customview.BaseMoreOptionFromBtm
     public List<ShareOption> a() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new ShareOption(R.drawable.icon_option_copy_link, R.string.copy_link));
-        arrayList.add(new ShareOption(R.drawable.icon_option_open_in_browser, R.string.open_in_browser));
-        arrayList.add(new ShareOption(R.drawable.icon_option_refresh, R.string.refresh));
+        arrayList.add(new ShareOption(2131233669, 2131887355));
+        arrayList.add(new ShareOption(2131233674, 2131891181));
+        arrayList.add(new ShareOption(2131233676, 2131891459));
         return arrayList;
     }
 
-    @Override // com.app.share.MoreOptionFromBtm, com.soft.blued.customview.BaseMoreOptionFromBtm
     public void a(List<ShareOption> list, List<ShareOption> list2) {
         boolean z;
-        if (!TextUtils.equals(this.f9210a.q, "open")) {
-            if (TextUtils.equals(this.f9210a.q, "close")) {
+        if (!TextUtils.equals(this.a.q, "open")) {
+            if (TextUtils.equals(this.a.q, LoaderConstants.CLOSE)) {
                 Iterator<ShareOption> it = list.iterator();
                 while (it.hasNext()) {
                     if (it.next().iconResourceId == 2131233825) {
@@ -53,6 +51,6 @@ public class WebBtmOptions extends MoreOptionFromBtm {
         if (z) {
             return;
         }
-        list.add(0, new ShareOption(R.drawable.icon_share_to_code, 2131891705));
+        list.add(0, new ShareOption(2131233825, 2131891705));
     }
 }

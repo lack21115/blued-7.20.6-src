@@ -9,11 +9,11 @@ public class h<K, V> {
     private static final String h = h.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap<K, V> f41731a;
+    private final LinkedHashMap<K, V> f28040a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41732c;
+    private long f28041c;
     private int d;
     private int e;
     private int f;
@@ -23,8 +23,8 @@ public class h<K, V> {
         if (j <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.f41732c = j;
-        this.f41731a = new LinkedHashMap<>(0, 0.75f, true);
+        this.f28041c = j;
+        this.f28040a = new LinkedHashMap<>(0, 0.75f, true);
         this.b = 0L;
         String str = h;
         Logger.i(str, "size: " + String.valueOf(this.b / 1024), new Object[0]);
@@ -49,7 +49,7 @@ public class h<K, V> {
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 < 0) goto L8f
             r0 = r7
-            java.util.LinkedHashMap<K, V> r0 = r0.f41731a     // Catch: java.lang.Throwable -> Lb6
+            java.util.LinkedHashMap<K, V> r0 = r0.f28040a     // Catch: java.lang.Throwable -> Lb6
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lb6
             if (r0 == 0) goto L1e
             r0 = r7
@@ -64,13 +64,13 @@ public class h<K, V> {
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 <= 0) goto L8c
             r0 = r7
-            java.util.LinkedHashMap<K, V> r0 = r0.f41731a     // Catch: java.lang.Throwable -> Lb6
+            java.util.LinkedHashMap<K, V> r0 = r0.f28040a     // Catch: java.lang.Throwable -> Lb6
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> Lb6
             if (r0 == 0) goto L34
             goto L8c
         L34:
             r0 = r7
-            java.util.LinkedHashMap<K, V> r0 = r0.f41731a     // Catch: java.lang.Throwable -> Lb6
+            java.util.LinkedHashMap<K, V> r0 = r0.f28040a     // Catch: java.lang.Throwable -> Lb6
             java.util.Set r0 = r0.entrySet()     // Catch: java.lang.Throwable -> Lb6
             java.util.Iterator r0 = r0.iterator()     // Catch: java.lang.Throwable -> Lb6
             java.lang.Object r0 = r0.next()     // Catch: java.lang.Throwable -> Lb6
@@ -83,7 +83,7 @@ public class h<K, V> {
             java.lang.Object r0 = r0.getValue()     // Catch: java.lang.Throwable -> Lb6
             r11 = r0
             r0 = r7
-            java.util.LinkedHashMap<K, V> r0 = r0.f41731a     // Catch: java.lang.Throwable -> Lb6
+            java.util.LinkedHashMap<K, V> r0 = r0.f28040a     // Catch: java.lang.Throwable -> Lb6
             r1 = r10
             java.lang.Object r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> Lb6
             r0 = r7
@@ -163,13 +163,13 @@ public class h<K, V> {
                     V value = entry.getValue();
                     this.d++;
                     this.b += c(key, value);
-                    V put = this.f41731a.put(key, value);
+                    V put = this.f28040a.put(key, value);
                     if (put != null) {
                         this.b -= c(key, put);
                     }
                 }
             }
-            a(this.f41732c);
+            a(this.f28041c);
         }
     }
 
@@ -179,7 +179,7 @@ public class h<K, V> {
 
     public final boolean a(K k) {
         if (k != null) {
-            return this.f41731a.containsKey(k);
+            return this.f28040a.containsKey(k);
         }
         throw new NullPointerException("key == null");
     }
@@ -187,7 +187,7 @@ public class h<K, V> {
     public final V b(K k) {
         if (k != null) {
             synchronized (this) {
-                V v = this.f41731a.get(k);
+                V v = this.f28040a.get(k);
                 if (v != null) {
                     this.f++;
                     return v;
@@ -207,7 +207,7 @@ public class h<K, V> {
         synchronized (this) {
             this.d++;
             this.b += c(k, v);
-            put = this.f41731a.put(k, v);
+            put = this.f28040a.put(k, v);
             if (put != null) {
                 this.b -= c(k, put);
             }
@@ -215,20 +215,20 @@ public class h<K, V> {
         if (put != null) {
             a(false, k, put, v);
         }
-        a(this.f41732c);
-        Logger.i(h, "map size:" + this.f41731a.size(), new Object[0]);
+        a(this.f28041c);
+        Logger.i(h, "map size:" + this.f28040a.size(), new Object[0]);
         return put;
     }
 
     public final LinkedHashMap<K, V> b() {
-        return this.f41731a;
+        return this.f28040a;
     }
 
     public final String toString() {
         String format;
         synchronized (this) {
             int i = this.f + this.g;
-            format = String.format("ZanLruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Long.valueOf(this.f41732c), Integer.valueOf(this.f), Integer.valueOf(this.g), Integer.valueOf(i != 0 ? (this.f * 100) / i : 0));
+            format = String.format("ZanLruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Long.valueOf(this.f28041c), Integer.valueOf(this.f), Integer.valueOf(this.g), Integer.valueOf(i != 0 ? (this.f * 100) / i : 0));
         }
         return format;
     }

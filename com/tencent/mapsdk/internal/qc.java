@@ -9,15 +9,15 @@ import java.util.Map;
 public class qc {
 
     /* renamed from: a  reason: collision with root package name */
-    private e1 f37719a;
+    private e1 f24028a;
     private ri b;
 
     /* renamed from: c  reason: collision with root package name */
-    private HashMap<Integer, ue> f37720c = new HashMap<>();
+    private HashMap<Integer, ue> f24029c = new HashMap<>();
     private HashMap<Integer, ue> d = new HashMap<>();
 
     public qc(e1 e1Var, cc ccVar, ri riVar) {
-        this.f37719a = e1Var;
+        this.f24028a = e1Var;
         this.b = riVar;
     }
 
@@ -27,7 +27,7 @@ public class qc {
 
     private void d() {
         ArrayList arrayList = new ArrayList();
-        for (Map.Entry<Integer, ue> entry : this.f37720c.entrySet()) {
+        for (Map.Entry<Integer, ue> entry : this.f24029c.entrySet()) {
             Integer key = entry.getKey();
             entry.getValue();
             if (!this.d.containsKey(key)) {
@@ -53,18 +53,18 @@ public class qc {
     }
 
     private void e() {
-        this.f37720c.clear();
-        this.f37720c.putAll(this.d);
+        this.f24029c.clear();
+        this.f24029c.putAll(this.d);
         this.d.clear();
     }
 
     public e1 a() {
-        return this.f37719a;
+        return this.f24028a;
     }
 
     public void a(ue ueVar) {
         int i = ueVar.w;
-        if (i > 0 && this.f37720c.containsKey(Integer.valueOf(i))) {
+        if (i > 0 && this.f24029c.containsKey(Integer.valueOf(i))) {
             if (ueVar.y()) {
                 this.b.b(ueVar);
                 if (ueVar.C()) {
@@ -87,7 +87,7 @@ public class qc {
     }
 
     public float b() {
-        return this.f37719a.h().q();
+        return this.f24028a.h().q();
     }
 
     public void c() {

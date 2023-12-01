@@ -16,11 +16,11 @@ public final class EnumJsonFormatter<E extends WireEnum> implements JsonFormatte
     private final Map<String, E> stringToValue;
     private final Map<E, String> valueToString;
 
-    public EnumJsonFormatter(EnumAdapter<E> adapter) {
-        Intrinsics.e(adapter, "adapter");
+    public EnumJsonFormatter(EnumAdapter<E> enumAdapter) {
+        Intrinsics.e(enumAdapter, "adapter");
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
-        KClass<?> type = adapter.getType();
+        KClass<?> type = enumAdapter.getType();
         Intrinsics.a(type);
         Class a2 = JvmClassMappingKt.a(type);
         Object[] enumConstants = a2.getEnumConstants();
@@ -54,9 +54,9 @@ public final class EnumJsonFormatter<E extends WireEnum> implements JsonFormatte
     }
 
     @Override // com.squareup.wire.internal.JsonFormatter
-    public E fromString(String value) {
-        Intrinsics.e(value, "value");
-        return this.stringToValue.get(value);
+    public E fromString(String str) {
+        Intrinsics.e(str, "value");
+        return this.stringToValue.get(str);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -65,10 +65,10 @@ public final class EnumJsonFormatter<E extends WireEnum> implements JsonFormatte
         return toStringOrNumber((EnumJsonFormatter<E>) ((WireEnum) obj));
     }
 
-    public String toStringOrNumber(E value) {
-        Intrinsics.e(value, "value");
-        String str = this.valueToString.get(value);
-        Intrinsics.a((Object) str);
+    public String toStringOrNumber(E e) {
+        Intrinsics.e(e, "value");
+        String str = this.valueToString.get(e);
+        Intrinsics.a(str);
         return str;
     }
 }

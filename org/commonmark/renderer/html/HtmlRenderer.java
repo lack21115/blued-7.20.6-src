@@ -12,13 +12,9 @@ import org.commonmark.renderer.Renderer;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/html/HtmlRenderer.class */
 public class HtmlRenderer implements Renderer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f44076a;
+    private final String a;
     private final boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final boolean f44077c;
+    private final boolean c;
 
     /* renamed from: org.commonmark.renderer.html.HtmlRenderer$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/html/HtmlRenderer$1.class */
@@ -27,13 +23,9 @@ public class HtmlRenderer implements Renderer {
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/html/HtmlRenderer$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f44078a = "\n";
+        private String a = "\n";
         private boolean b = false;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f44079c = false;
+        private boolean c = false;
         private List<AttributeProviderFactory> d = new ArrayList();
         private List<HtmlNodeRendererFactory> e = new ArrayList();
     }
@@ -44,13 +36,9 @@ public class HtmlRenderer implements Renderer {
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/html/HtmlRenderer$RendererContext.class */
     class RendererContext implements AttributeProviderContext, HtmlNodeRendererContext {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ HtmlRenderer f44080a;
+        final /* synthetic */ HtmlRenderer a;
         private final List<AttributeProvider> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final NodeRendererMap f44081c;
+        private final NodeRendererMap c;
 
         private void b(Node node, String str, Map<String, String> map) {
             for (AttributeProvider attributeProvider : this.b) {
@@ -60,13 +48,13 @@ public class HtmlRenderer implements Renderer {
 
         @Override // org.commonmark.renderer.html.HtmlNodeRendererContext
         public String a() {
-            return this.f44080a.f44076a;
+            return this.a.a;
         }
 
         @Override // org.commonmark.renderer.html.HtmlNodeRendererContext
         public String a(String str) {
             String str2 = str;
-            if (this.f44080a.f44077c) {
+            if (this.a.c) {
                 str2 = Escaping.c(str);
             }
             return str2;
@@ -81,12 +69,12 @@ public class HtmlRenderer implements Renderer {
 
         @Override // org.commonmark.renderer.html.HtmlNodeRendererContext
         public void a(Node node) {
-            this.f44081c.a(node);
+            this.c.a(node);
         }
 
         @Override // org.commonmark.renderer.html.HtmlNodeRendererContext
         public boolean b() {
-            return this.f44080a.b;
+            return this.a.b;
         }
     }
 }

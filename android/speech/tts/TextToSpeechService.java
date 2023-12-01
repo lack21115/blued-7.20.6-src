@@ -722,9 +722,8 @@ public abstract class TextToSpeechService extends Service {
             TextToSpeechService.this.sendBroadcast(new Intent(TextToSpeech.ACTION_TTS_QUEUE_PROCESSING_COMPLETED));
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.os.HandlerThread
-        public void onLooperPrepared() {
+        protected void onLooperPrepared() {
             getLooper().getQueue().addIdleHandler(this);
         }
 

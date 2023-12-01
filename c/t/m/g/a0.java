@@ -7,11 +7,11 @@ public class a0 {
     public static final a0 o = new a0();
 
     /* renamed from: a  reason: collision with root package name */
-    public double[] f3733a = new double[141];
+    public double[] f3685a = new double[141];
     public double[] b = new double[8];
 
     /* renamed from: c  reason: collision with root package name */
-    public double[] f3734c = new double[7];
+    public double[] f3686c = new double[7];
     public double[] d = new double[36];
     public double[] e = new double[128];
     public double[] f = new double[128];
@@ -68,11 +68,11 @@ public class a0 {
         if (aVar == a.TIME) {
             b(this.b, dArr2);
             double[] dArr3 = this.b;
-            System.arraycopy((Object) dArr3, 0, (Object) dArr, i, dArr3.length);
+            System.arraycopy(dArr3, 0, dArr, i, dArr3.length);
         } else if (aVar == a.FFT) {
-            a(this.f3734c, dArr2, d);
-            double[] dArr4 = this.f3734c;
-            System.arraycopy((Object) dArr4, 0, (Object) dArr, i, dArr4.length);
+            a(this.f3686c, dArr2, d);
+            double[] dArr4 = this.f3686c;
+            System.arraycopy(dArr4, 0, dArr, i, dArr4.length);
         }
     }
 
@@ -80,7 +80,7 @@ public class a0 {
         int i;
         int length = dArr2.length;
         Arrays.fill(dArr, 0.0d);
-        System.arraycopy((Object) dArr2, 0, (Object) this.f, 0, dArr2.length);
+        System.arraycopy(dArr2, 0, this.f, 0, dArr2.length);
         Arrays.sort(this.f);
         if (length % 2 == 0) {
             double[] dArr3 = this.f;
@@ -94,7 +94,7 @@ public class a0 {
         int i3 = length - 1;
         dArr[1] = (d + dArr4[i3]) / 2.0d;
         double b = h3.b(dArr2);
-        double d2 = 1.0d / r.f3954c;
+        double d2 = 1.0d / r.f3906c;
         Arrays.fill(this.g, 0.0d);
         double d3 = 0.0d;
         int i4 = 0;
@@ -121,10 +121,10 @@ public class a0 {
         a(this.b, dArr5, length2, length2 + i5);
         dArr[2] = i5;
         double[] dArr6 = this.b;
-        System.arraycopy((Object) dArr6, 0, (Object) dArr, 3, dArr6.length);
-        a(this.f3734c, this.g, d2);
-        double[] dArr7 = this.f3734c;
-        System.arraycopy((Object) dArr7, 0, (Object) dArr, 11, dArr7.length);
+        System.arraycopy(dArr6, 0, dArr, 3, dArr6.length);
+        a(this.f3686c, this.g, d2);
+        double[] dArr7 = this.f3686c;
+        System.arraycopy(dArr7, 0, dArr, 11, dArr7.length);
         Arrays.fill(this.g, 0.0d);
         double d6 = 0.0d;
         int i7 = 0;
@@ -155,10 +155,10 @@ public class a0 {
         a(this.b, dArr8, length3, length3 + i);
         dArr[18] = i;
         double[] dArr9 = this.b;
-        System.arraycopy((Object) dArr9, 0, (Object) dArr, 19, dArr9.length);
-        a(this.f3734c, this.g, d2);
-        double[] dArr10 = this.f3734c;
-        System.arraycopy((Object) dArr10, 0, (Object) dArr, 27, dArr10.length);
+        System.arraycopy(dArr9, 0, dArr, 19, dArr9.length);
+        a(this.f3686c, this.g, d2);
+        double[] dArr10 = this.f3686c;
+        System.arraycopy(dArr10, 0, dArr, 27, dArr10.length);
         double[] dArr11 = this.f;
         dArr[34] = dArr11[i3] - b;
         dArr[35] = b - dArr11[0];
@@ -191,7 +191,7 @@ public class a0 {
             }
         }
         Arrays.fill(dArr, 0.0d);
-        System.arraycopy((Object) dArr2, 0, (Object) this.h, 0, length);
+        System.arraycopy(dArr2, 0, this.h, 0, length);
         Arrays.fill(this.i, 0.0d);
         double b = h3.b(this.h);
         double[] dArr7 = this.h;
@@ -331,7 +331,7 @@ public class a0 {
     public final double[] a(double[][] dArr) {
         double[] dArr2;
         synchronized (this) {
-            Arrays.fill(this.f3733a, 0.0d);
+            Arrays.fill(this.f3685a, 0.0d);
             double[] dArr3 = dArr[3];
             double[] dArr4 = dArr[4];
             double[] dArr5 = dArr[5];
@@ -342,25 +342,25 @@ public class a0 {
                     this.e[i2] = dArr5[i2] - dArr5[0];
                     i = i2 + 1;
                 } else {
-                    double d = 1.0d / r.f3954c;
-                    a(this.f3733a, 0, a.TIME, dArr3, d);
-                    a(this.f3733a, 8, a.FFT, dArr3, d);
-                    a(this.f3733a, 15, a.TIME, dArr4, d);
-                    a(this.f3733a, 23, a.FFT, dArr4, d);
-                    a(this.f3733a, 30, a.TIME, this.e, d);
-                    a(this.f3733a, 38, a.FFT, this.e, d);
+                    double d = 1.0d / r.f3906c;
+                    a(this.f3685a, 0, a.TIME, dArr3, d);
+                    a(this.f3685a, 8, a.FFT, dArr3, d);
+                    a(this.f3685a, 15, a.TIME, dArr4, d);
+                    a(this.f3685a, 23, a.FFT, dArr4, d);
+                    a(this.f3685a, 30, a.TIME, this.e, d);
+                    a(this.f3685a, 38, a.FFT, this.e, d);
                     a(this.d, dArr3);
                     double[] dArr6 = this.d;
-                    System.arraycopy((Object) dArr6, 0, (Object) this.f3733a, 45, dArr6.length);
-                    a(this.f3733a, 81, a.TIME, dArr[6], d);
-                    a(this.f3733a, 89, a.FFT, dArr[6], d);
-                    a(this.f3733a, 96, a.TIME, dArr[7], d);
-                    a(this.f3733a, 104, a.FFT, dArr[7], d);
-                    a(this.f3733a, 111, a.TIME, dArr[8], d);
-                    a(this.f3733a, 119, a.FFT, dArr[8], d);
-                    a(this.f3733a, 126, a.TIME, dArr[9], d);
-                    a(this.f3733a, 134, a.FFT, dArr[9], d);
-                    dArr2 = this.f3733a;
+                    System.arraycopy(dArr6, 0, this.f3685a, 45, dArr6.length);
+                    a(this.f3685a, 81, a.TIME, dArr[6], d);
+                    a(this.f3685a, 89, a.FFT, dArr[6], d);
+                    a(this.f3685a, 96, a.TIME, dArr[7], d);
+                    a(this.f3685a, 104, a.FFT, dArr[7], d);
+                    a(this.f3685a, 111, a.TIME, dArr[8], d);
+                    a(this.f3685a, 119, a.FFT, dArr[8], d);
+                    a(this.f3685a, 126, a.TIME, dArr[9], d);
+                    a(this.f3685a, 134, a.FFT, dArr[9], d);
+                    dArr2 = this.f3685a;
                 }
             }
         }

@@ -15,11 +15,11 @@ import com.soft.blued.ui.user.views.NonVIPRightView;
 public class NonVIPRightAdapter extends BaseQuickAdapter<VIPCenterForJsonParse.NonVIPPriviledge, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    Context f33743a;
+    Context f20052a;
     IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f33744c;
+    int f20053c;
     FragmentManager d;
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -38,10 +38,10 @@ public class NonVIPRightAdapter extends BaseQuickAdapter<VIPCenterForJsonParse.N
             nonVIPRightView.b();
         }
         if (adapterPosition == this.mData.size()) {
-            view.setBackground(BluedSkinUtils.b(this.f33743a, R.drawable.shape_round_white_vip_center_card_btmhalf));
+            view.setBackground(BluedSkinUtils.b(this.f20052a, (int) R.drawable.shape_round_white_vip_center_card_btmhalf));
         } else {
-            view.setBackgroundColor(BluedSkinUtils.a(this.f33743a, 2131101780));
+            view.setBackgroundColor(BluedSkinUtils.a(this.f20052a, 2131101780));
         }
-        nonVIPRightView.a(this.b, nonVIPPriviledge, this.f33744c, this.d);
+        nonVIPRightView.a(this.b, nonVIPPriviledge, this.f20053c, this.d);
     }
 }

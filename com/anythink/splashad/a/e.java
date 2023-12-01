@@ -19,24 +19,20 @@ public final class e extends h {
         this.T = i;
     }
 
-    @Override // com.anythink.core.common.h
     public final void a(ATBaseAdAdapter aTBaseAdAdapter) {
         if (aTBaseAdAdapter instanceof CustomSplashAdapter) {
             ((CustomSplashAdapter) aTBaseAdAdapter).setFetchAdTimeout(this.T);
         }
     }
 
-    @Override // com.anythink.core.common.h
     public final void a(AdError adError) {
         super.a(adError);
     }
 
-    @Override // com.anythink.core.common.h
     public final void a(String str, com.anythink.core.common.l.a aVar) {
         super.a(str, aVar);
     }
 
-    @Override // com.anythink.core.common.h
     public final void g() {
         if (this.j != null) {
             this.j.f = null;
@@ -44,7 +40,6 @@ public final class e extends h {
         super.g();
     }
 
-    @Override // com.anythink.core.common.h
     public final void h() {
         super.h();
     }

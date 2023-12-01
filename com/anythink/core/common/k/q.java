@@ -10,13 +10,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/q.class */
 public class q {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int f6822a = 1;
+    private static final int a = 1;
     private static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final int f6823c = 3;
+    private static final int c = 3;
     private static volatile q e;
     private final SparseBooleanArray d = new SparseBooleanArray(3);
 

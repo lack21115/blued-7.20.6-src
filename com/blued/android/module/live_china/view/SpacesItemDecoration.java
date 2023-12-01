@@ -8,13 +8,9 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/SpacesItemDecoration.class */
 public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f15248a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f15249c;
+    private int c;
     private int d;
     private int i;
     private int j;
@@ -31,9 +27,9 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     public SpacesItemDecoration(int i, int i2, int i3, int i4) {
-        this.f15248a = i;
+        this.a = i;
         this.b = i2;
-        this.f15249c = i3;
+        this.c = i3;
         this.d = i4;
     }
 
@@ -59,9 +55,9 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     private int a(RecyclerView recyclerView) {
-        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        GridLayoutManager layoutManager = recyclerView.getLayoutManager();
         if (layoutManager instanceof GridLayoutManager) {
-            return ((GridLayoutManager) layoutManager).getSpanCount();
+            return layoutManager.getSpanCount();
         }
         if (layoutManager instanceof StaggeredGridLayoutManager) {
             return ((StaggeredGridLayoutManager) layoutManager).getSpanCount();
@@ -71,14 +67,14 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
 
     private void a(Rect rect, boolean z, boolean z2, boolean z3, boolean z4) {
         if (!z) {
-            rect.left = this.f15248a;
+            rect.left = this.a;
         } else if (this.e) {
-            rect.left = this.f15248a + this.i;
+            rect.left = this.a + this.i;
         }
         if (!z2) {
-            rect.right = this.f15249c;
+            rect.right = this.c;
         } else if (this.g) {
-            rect.right = this.f15249c + this.j;
+            rect.right = this.c + this.j;
         }
         if (!z3) {
             rect.top = this.b;
@@ -123,7 +119,6 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
         this.h = z4;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
     public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
         boolean z;
         boolean z2;
@@ -135,14 +130,14 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
         RecyclerView.Adapter adapter = recyclerView.getAdapter();
         if (adapter != null) {
             int itemCount = adapter.getItemCount();
-            int a2 = a(recyclerView);
+            int a = a(recyclerView);
             int childAdapterPosition = recyclerView.getChildAdapterPosition(view);
             int i = this.m;
             boolean z8 = false;
             if (i == 5) {
-                switch (a(childAdapterPosition, a2, itemCount)) {
+                switch (a(childAdapterPosition, a, itemCount)) {
                     case 5:
-                        int b = b(childAdapterPosition, a2, itemCount);
+                        int b = b(childAdapterPosition, a, itemCount);
                         if (b == 1) {
                             z = true;
                         } else if (b == 2) {
@@ -159,12 +154,12 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
                         z5 = true;
                     case 6:
                         z3 = false;
-                        z4 = b(childAdapterPosition, a2, itemCount) == 3;
+                        z4 = b(childAdapterPosition, a, itemCount) == 3;
                         z = true;
                         z5 = false;
                         break;
                     case 7:
-                        z4 = b(childAdapterPosition, a2, itemCount) == 4;
+                        z4 = b(childAdapterPosition, a, itemCount) == 4;
                         z = false;
                         z3 = true;
                         z5 = false;
@@ -177,7 +172,7 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
                         z4 = true;
                         break;
                     case 9:
-                        int b2 = b(childAdapterPosition, a2, itemCount);
+                        int b2 = b(childAdapterPosition, a, itemCount);
                         if (b2 != 1) {
                             z6 = b2 == 2;
                         } else {

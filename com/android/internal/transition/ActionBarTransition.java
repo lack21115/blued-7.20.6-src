@@ -19,7 +19,7 @@ public class ActionBarTransition {
             sTransition = null;
             return;
         }
-        ChangeText changeText = new ChangeText();
+        Transition changeText = new ChangeText();
         changeText.setChangeBehavior(3);
         TransitionSet transitionSet = new TransitionSet();
         transitionSet.addTransition(changeText).addTransition(new ChangeBounds());

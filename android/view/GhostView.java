@@ -2,7 +2,6 @@ package android.view;
 
 import android.graphics.Canvas;
 import android.graphics.Matrix;
-import android.view.ViewOverlay;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 
@@ -30,18 +29,18 @@ public class GhostView extends View {
         GhostView ghostView;
         if (view.getParent() instanceof ViewGroup) {
             ViewGroupOverlay overlay = viewGroup.getOverlay();
-            ViewOverlay.OverlayViewGroup overlayViewGroup = overlay.mOverlayViewGroup;
+            ViewGroup viewGroup2 = overlay.mOverlayViewGroup;
             GhostView ghostView2 = view.mGhostView;
             GhostView ghostView3 = ghostView2;
             int i = 0;
             if (ghostView2 != null) {
                 View view2 = (View) ghostView2.getParent();
-                ViewGroup viewGroup2 = (ViewGroup) view2.getParent();
+                ViewGroup viewGroup3 = (ViewGroup) view2.getParent();
                 ghostView3 = ghostView2;
                 i = 0;
-                if (viewGroup2 != overlayViewGroup) {
+                if (viewGroup3 != viewGroup2) {
                     i = ghostView2.mReferences;
-                    viewGroup2.removeView(view2);
+                    viewGroup3.removeView(view2);
                     ghostView3 = null;
                 }
             }
@@ -148,7 +147,7 @@ public class GhostView extends View {
         boolean z;
         ViewGroup viewGroup = (ViewGroup) view.getParent();
         int childCount = viewGroup.getChildCount();
-        ArrayList<View> buildOrderedChildList = viewGroup.buildOrderedChildList();
+        ArrayList buildOrderedChildList = viewGroup.buildOrderedChildList();
         boolean z2 = buildOrderedChildList == null && viewGroup.isChildrenDrawingOrderEnabled();
         int i = 0;
         while (true) {
@@ -158,7 +157,7 @@ public class GhostView extends View {
                 break;
             }
             int childDrawingOrder = z2 ? viewGroup.getChildDrawingOrder(childCount, i2) : i2;
-            View childAt = buildOrderedChildList == null ? viewGroup.getChildAt(childDrawingOrder) : buildOrderedChildList.get(childDrawingOrder);
+            View childAt = buildOrderedChildList == null ? viewGroup.getChildAt(childDrawingOrder) : (View) buildOrderedChildList.get(childDrawingOrder);
             if (childAt == view) {
                 z = false;
                 break;
@@ -270,9 +269,8 @@ public class GhostView extends View {
         this.mView.mViewFlags = (this.mView.mViewFlags & (-13)) | i;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (this.mBeingMoved) {
             return;
@@ -286,9 +284,8 @@ public class GhostView extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         if (canvas instanceof HardwareCanvas) {
             HardwareCanvas hardwareCanvas = (HardwareCanvas) canvas;
             this.mView.mRecreateDisplayList = true;

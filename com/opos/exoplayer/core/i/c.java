@@ -6,11 +6,11 @@ import android.util.Pair;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f25480a = {0, 0, 0, 1};
+    private static final byte[] f11792a = {0, 0, 0, 1};
     private static final int[] b = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, 16000, 12000, 11025, 8000, 7350};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f25481c = {0, 1, 2, 3, 4, 5, 6, 8, -1, -1, -1, 7, 8, -1, 8, -1};
+    private static final int[] f11793c = {0, 1, 2, 3, 4, 5, 6, 8, -1, -1, -1, 7, 8, -1, 8, -1};
 
     private static int a(l lVar) {
         int c2 = lVar.c(5);
@@ -68,10 +68,10 @@ public final class c {
     }
 
     public static byte[] a(byte[] bArr, int i, int i2) {
-        byte[] bArr2 = f25480a;
+        byte[] bArr2 = f11792a;
         byte[] bArr3 = new byte[bArr2.length + i2];
-        System.arraycopy((Object) bArr2, 0, (Object) bArr3, 0, bArr2.length);
-        System.arraycopy((Object) bArr, i, (Object) bArr3, f25480a.length, i2);
+        System.arraycopy(bArr2, 0, bArr3, 0, bArr2.length);
+        System.arraycopy(bArr, i, bArr3, f11792a.length, i2);
         return bArr3;
     }
 

@@ -36,10 +36,10 @@ public class a {
     private TimerTask D;
 
     /* renamed from: a  reason: collision with root package name */
-    final a f28172a;
+    final a f14483a;
 
     /* renamed from: c  reason: collision with root package name */
-    private ExecutorService f28173c;
+    private ExecutorService f14484c;
     private com.sobot.chat.core.a.a.a d;
     private String e;
     private i f;
@@ -56,7 +56,7 @@ public class a {
     private h r;
     private j s;
     private long t;
-    private C0768a u;
+    private C0598a u;
     private b v;
     private d w;
     private c x;
@@ -66,36 +66,36 @@ public class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.sobot.chat.core.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/core/a/a$a.class */
-    public class C0768a extends Thread {
-        private C0768a() {
+    public class C0598a extends Thread {
+        private C0598a() {
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
         public void run() {
             super.run();
             try {
-                com.sobot.chat.core.a.a.a b = a.this.f28172a.n().b();
+                com.sobot.chat.core.a.a.a b = a.this.f14483a.n().b();
                 if (Thread.interrupted()) {
                     return;
                 }
-                a.this.f28172a.l().setTcpNoDelay(true);
-                a.this.f28172a.l().setKeepAlive(true);
-                a.this.f28172a.l().setSoTimeout(50000);
-                a.this.f28172a.l().connect(b.d(), b.h());
+                a.this.f14483a.l().setTcpNoDelay(true);
+                a.this.f14483a.l().setKeepAlive(true);
+                a.this.f14483a.l().setSoTimeout(50000);
+                a.this.f14483a.l().connect(b.d(), b.h());
                 if (Thread.interrupted()) {
                     return;
                 }
-                a.this.f28172a.a(e.Connected);
-                a.this.f28172a.a(System.currentTimeMillis());
-                a.this.f28172a.b(System.currentTimeMillis());
-                a.this.f28172a.c(-1L);
-                a.this.f28172a.c((h) null);
-                a.this.f28172a.a((j) null);
-                a.this.f28172a.a((C0768a) null);
-                a.this.f28172a.H();
+                a.this.f14483a.a(e.Connected);
+                a.this.f14483a.a(System.currentTimeMillis());
+                a.this.f14483a.b(System.currentTimeMillis());
+                a.this.f14483a.c(-1L);
+                a.this.f14483a.c((h) null);
+                a.this.f14483a.a((j) null);
+                a.this.f14483a.a((C0598a) null);
+                a.this.f14483a.H();
             } catch (Exception e) {
                 e.printStackTrace();
-                a.this.f28172a.c();
+                a.this.f14483a.c();
             }
         }
     }
@@ -138,44 +138,44 @@ public class a {
             int i2;
             super.run();
             try {
-                if (a.this.f28172a.n().c().k() == i.a.Manually) {
+                if (a.this.f14483a.n().c().k() == i.a.Manually) {
                     return;
                 }
-                while (a.this.f28172a.d() && a.this.f28172a.m() != null && !Thread.interrupted()) {
+                while (a.this.f14483a.d() && a.this.f14483a.m() != null && !Thread.interrupted()) {
                     j jVar = new j();
-                    a.this.f28172a.a(jVar);
-                    byte[] l = a.this.f28172a.n().c().l();
+                    a.this.f14483a.a(jVar);
+                    byte[] l = a.this.f14483a.n().c().l();
                     int length = l == null ? 0 : l.length;
-                    byte[] o = a.this.f28172a.n().c().o();
+                    byte[] o = a.this.f14483a.n().c().o();
                     int length2 = o == null ? 0 : o.length;
-                    int m = a.this.f28172a.n().c().m();
-                    a.this.f28172a.c(jVar);
+                    int m = a.this.f14483a.n().c().m();
+                    a.this.f14483a.c(jVar);
                     if (length > 0) {
-                        byte[] a2 = a.this.f28172a.m().a(l, true);
-                        a.this.f28172a.b(System.currentTimeMillis());
+                        byte[] a2 = a.this.f14483a.m().a(l, true);
+                        a.this.f14483a.b(System.currentTimeMillis());
                         jVar.c(a2);
                         i = length + 0;
                     } else {
                         i = 0;
                     }
-                    if (a.this.f28172a.n().c().k() == i.a.AutoReadByLength) {
+                    if (a.this.f14483a.n().c().k() == i.a.AutoReadByLength) {
                         if (m < 0) {
-                            a.this.f28172a.e(jVar);
-                            a.this.f28172a.a((j) null);
+                            a.this.f14483a.e(jVar);
+                            a.this.f14483a.a((j) null);
                         } else if (m == 0) {
-                            a.this.f28172a.d(jVar);
-                            a.this.f28172a.a((j) null);
+                            a.this.f14483a.d(jVar);
+                            a.this.f14483a.a((j) null);
                         }
-                        byte[] a3 = a.this.f28172a.m().a(m);
-                        a.this.f28172a.b(System.currentTimeMillis());
+                        byte[] a3 = a.this.f14483a.m().a(m);
+                        a.this.f14483a.b(System.currentTimeMillis());
                         jVar.d(a3);
                         int i3 = i + m;
-                        int a4 = a.this.f28172a.n().c().a(a3) - length2;
+                        int a4 = a.this.f14483a.n().c().a(a3) - length2;
                         if (a4 > 0) {
-                            int receiveBufferSize = a.this.f28172a.l().getReceiveBufferSize();
+                            int receiveBufferSize = a.this.f14483a.l().getReceiveBufferSize();
                             int i4 = receiveBufferSize;
-                            if (a.this.f28172a.n().c().q()) {
-                                i4 = Math.min(receiveBufferSize, a.this.f28172a.n().c().p());
+                            if (a.this.f14483a.n().c().q()) {
+                                i4 = Math.min(receiveBufferSize, a.this.f14483a.n().c().p());
                             }
                             int i5 = 0;
                             while (true) {
@@ -186,59 +186,59 @@ public class a {
                                 }
                                 int min = Math.min(i6 + i4, a4);
                                 int i7 = min - i6;
-                                byte[] a5 = a.this.f28172a.m().a(i7);
-                                a.this.f28172a.b(System.currentTimeMillis());
+                                byte[] a5 = a.this.f14483a.m().a(i7);
+                                a.this.f14483a.b(System.currentTimeMillis());
                                 if (jVar.a() == null) {
                                     jVar.b(a5);
                                 } else {
                                     byte[] bArr = new byte[jVar.a().length + a5.length];
-                                    System.arraycopy((Object) jVar.a(), 0, (Object) bArr, 0, jVar.a().length);
-                                    System.arraycopy((Object) a5, 0, (Object) bArr, jVar.a().length, a5.length);
+                                    System.arraycopy(jVar.a(), 0, bArr, 0, jVar.a().length);
+                                    System.arraycopy(a5, 0, bArr, jVar.a().length, a5.length);
                                     jVar.b(bArr);
                                 }
                                 i3 += i7;
-                                a.this.f28172a.a(jVar, i3, length, m, a4, length2);
+                                a.this.f14483a.a(jVar, i3, length, m, a4, length2);
                                 i5 = min;
                             }
                         } else {
                             i2 = i3;
                             if (a4 < 0) {
-                                a.this.f28172a.e(jVar);
-                                a.this.f28172a.a((j) null);
+                                a.this.f14483a.e(jVar);
+                                a.this.f14483a.a((j) null);
                                 i2 = i3;
                             }
                         }
                         if (length2 > 0) {
-                            byte[] a6 = a.this.f28172a.m().a(length2);
-                            a.this.f28172a.b(System.currentTimeMillis());
+                            byte[] a6 = a.this.f14483a.m().a(length2);
+                            a.this.f14483a.b(System.currentTimeMillis());
                             jVar.e(a6);
-                            a.this.f28172a.a(jVar, i2 + length2, length, m, a4, length2);
+                            a.this.f14483a.a(jVar, i2 + length2, length, m, a4, length2);
                         }
-                    } else if (a.this.f28172a.n().c().k() == i.a.AutoReadToTrailer) {
+                    } else if (a.this.f14483a.n().c().k() == i.a.AutoReadToTrailer) {
                         if (length2 > 0) {
-                            byte[] a7 = a.this.f28172a.m().a(o, false);
-                            a.this.f28172a.b(System.currentTimeMillis());
+                            byte[] a7 = a.this.f14483a.m().a(o, false);
+                            a.this.f14483a.b(System.currentTimeMillis());
                             jVar.b(a7);
                             jVar.e(o);
                             int length3 = a7.length;
                         } else {
-                            a.this.f28172a.e(jVar);
-                            a.this.f28172a.a((j) null);
+                            a.this.f14483a.e(jVar);
+                            a.this.f14483a.a((j) null);
                         }
                     }
-                    jVar.a(a.this.f28172a.n().d().a(jVar));
-                    if (a.this.f28172a.n().a() != null) {
-                        jVar.a(a.this.f28172a.n().a());
+                    jVar.a(a.this.f14483a.n().d().a(jVar));
+                    if (a.this.f14483a.n().a() != null) {
+                        jVar.a(a.this.f14483a.n().a());
                     }
-                    a.this.f28172a.d(jVar);
-                    a.this.f28172a.b(jVar);
-                    a.this.f28172a.a((j) null);
+                    a.this.f14483a.d(jVar);
+                    a.this.f14483a.b(jVar);
+                    a.this.f14483a.a((j) null);
                 }
             } catch (Exception e) {
-                a.this.f28172a.c();
-                if (a.this.f28172a.v() != null) {
-                    a.this.f28172a.e(a.this.f28172a.v());
-                    a.this.f28172a.a((j) null);
+                a.this.f14483a.c();
+                if (a.this.f14483a.v() != null) {
+                    a.this.f14483a.e(a.this.f14483a.v());
+                    a.this.f14483a.a((j) null);
                 }
             }
         }
@@ -255,48 +255,48 @@ public class a {
             h take;
             int i;
             super.run();
-            while (a.this.f28172a.d() && !Thread.interrupted() && (take = a.this.f28172a.q().take()) != null) {
+            while (a.this.f14483a.d() && !Thread.interrupted() && (take = a.this.f14483a.q().take()) != null) {
                 try {
-                    a.this.f28172a.c(take);
-                    a.this.f28172a.c(System.currentTimeMillis());
+                    a.this.f14483a.c(take);
+                    a.this.f14483a.c(System.currentTimeMillis());
                     if (take.b() == null && take.c() != null) {
-                        if (a.this.f28172a.n().a() == null) {
+                        if (a.this.f14483a.n().a() == null) {
                             throw new IllegalArgumentException("we need string charset to send string type message");
                         }
-                        take.a(a.this.f28172a.n().a());
+                        take.a(a.this.f14483a.n().a());
                     }
                     if (take.b() == null) {
-                        a.this.f28172a.g(take);
-                        a.this.f28172a.c((h) null);
+                        a.this.f14483a.g(take);
+                        a.this.f14483a.c((h) null);
                     } else {
-                        byte[] d = a.this.f28172a.n().c().d();
+                        byte[] d = a.this.f14483a.n().c().d();
                         int i2 = 0;
                         int length = d == null ? 0 : d.length;
-                        byte[] f = a.this.f28172a.n().c().f();
+                        byte[] f = a.this.f14483a.n().c().f();
                         int length2 = f == null ? 0 : f.length;
-                        byte[] a2 = a.this.f28172a.n().c().a(take.b().length + length2);
+                        byte[] a2 = a.this.f14483a.n().c().a(take.b().length + length2);
                         int length3 = a2 == null ? 0 : a2.length;
                         take.a(d);
                         take.c(f);
                         take.b(a2);
                         if (length + length3 + take.b().length + length2 <= 0) {
-                            a.this.f28172a.g(take);
-                            a.this.f28172a.c((h) null);
+                            a.this.f14483a.g(take);
+                            a.this.f14483a.c((h) null);
                         } else {
-                            a.this.f28172a.e(take);
-                            a.this.f28172a.a(take, 0, length, length3, take.b().length, length2);
+                            a.this.f14483a.e(take);
+                            a.this.f14483a.a(take, 0, length, length3, take.b().length, length2);
                             if (length > 0) {
                                 try {
-                                    a.this.f28172a.l().getOutputStream().write(d);
-                                    a.this.f28172a.l().getOutputStream().flush();
-                                    a.this.f28172a.c(System.currentTimeMillis());
+                                    a.this.f14483a.l().getOutputStream().write(d);
+                                    a.this.f14483a.l().getOutputStream().flush();
+                                    a.this.f14483a.c(System.currentTimeMillis());
                                     i = length + 0;
-                                    a.this.f28172a.a(take, i, length, length3, take.b().length, length2);
+                                    a.this.f14483a.a(take, i, length, length3, take.b().length, length2);
                                 } catch (Exception e) {
                                     e.printStackTrace();
-                                    if (a.this.f28172a.u() != null) {
-                                        a.this.f28172a.g(a.this.f28172a.u());
-                                        a.this.f28172a.c((h) null);
+                                    if (a.this.f14483a.u() != null) {
+                                        a.this.f14483a.g(a.this.f14483a.u());
+                                        a.this.f14483a.c((h) null);
                                     }
                                 }
                             } else {
@@ -304,18 +304,18 @@ public class a {
                             }
                             int i3 = i;
                             if (length3 > 0) {
-                                a.this.f28172a.l().getOutputStream().write(a2);
-                                a.this.f28172a.l().getOutputStream().flush();
-                                a.this.f28172a.c(System.currentTimeMillis());
+                                a.this.f14483a.l().getOutputStream().write(a2);
+                                a.this.f14483a.l().getOutputStream().flush();
+                                a.this.f14483a.c(System.currentTimeMillis());
                                 i3 = i + length3;
-                                a.this.f28172a.a(take, i3, length, length3, take.b().length, length2);
+                                a.this.f14483a.a(take, i3, length, length3, take.b().length, length2);
                             }
                             int i4 = i3;
                             if (take.b().length > 0) {
-                                int sendBufferSize = a.this.f28172a.l().getSendBufferSize();
+                                int sendBufferSize = a.this.f14483a.l().getSendBufferSize();
                                 int i5 = sendBufferSize;
-                                if (a.this.f28172a.n().c().h()) {
-                                    i5 = Math.min(sendBufferSize, a.this.f28172a.n().c().g());
+                                if (a.this.f14483a.n().c().h()) {
+                                    i5 = Math.min(sendBufferSize, a.this.f14483a.n().c().g());
                                 }
                                 while (true) {
                                     i4 = i3;
@@ -323,41 +323,41 @@ public class a {
                                         break;
                                     }
                                     int min = Math.min(i2 + i5, take.b().length);
-                                    OutputStream outputStream = a.this.f28172a.l().getOutputStream();
+                                    OutputStream outputStream = a.this.f14483a.l().getOutputStream();
                                     byte[] b = take.b();
                                     int i6 = min - i2;
                                     outputStream.write(b, i2, i6);
-                                    a.this.f28172a.l().getOutputStream().flush();
-                                    a.this.f28172a.c(System.currentTimeMillis());
+                                    a.this.f14483a.l().getOutputStream().flush();
+                                    a.this.f14483a.c(System.currentTimeMillis());
                                     i3 += i6;
-                                    a.this.f28172a.a(take, i3, length, length3, take.b().length, length2);
+                                    a.this.f14483a.a(take, i3, length, length3, take.b().length, length2);
                                     i2 = min;
                                 }
                             }
                             if (length2 > 0) {
-                                a.this.f28172a.l().getOutputStream().write(f);
-                                a.this.f28172a.l().getOutputStream().flush();
-                                a.this.f28172a.c(System.currentTimeMillis());
-                                a.this.f28172a.a(take, i4 + length2, length, length3, take.b().length, length2);
+                                a.this.f14483a.l().getOutputStream().write(f);
+                                a.this.f14483a.l().getOutputStream().flush();
+                                a.this.f14483a.c(System.currentTimeMillis());
+                                a.this.f14483a.a(take, i4 + length2, length, length3, take.b().length, length2);
                             }
-                            a.this.f28172a.f(take);
-                            a.this.f28172a.c((h) null);
-                            a.this.f28172a.c(-1L);
+                            a.this.f14483a.f(take);
+                            a.this.f14483a.c((h) null);
+                            a.this.f14483a.c(-1L);
                         }
                     }
                 } catch (IllegalMonitorStateException e2) {
                     a.this.m = null;
-                    a.this.f28172a.c();
-                    if (a.this.f28172a.u() != null) {
-                        a.this.f28172a.g(a.this.f28172a.u());
-                        a.this.f28172a.c((h) null);
+                    a.this.f14483a.c();
+                    if (a.this.f14483a.u() != null) {
+                        a.this.f14483a.g(a.this.f14483a.u());
+                        a.this.f14483a.c((h) null);
                         return;
                     }
                     return;
                 } catch (InterruptedException e3) {
-                    if (a.this.f28172a.u() != null) {
-                        a.this.f28172a.g(a.this.f28172a.u());
-                        a.this.f28172a.c((h) null);
+                    if (a.this.f14483a.u() != null) {
+                        a.this.f14483a.g(a.this.f14483a.u());
+                        a.this.f14483a.c((h) null);
                         return;
                     }
                     return;
@@ -378,11 +378,11 @@ public class a {
     public static class f extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<a> f28206a;
+        private WeakReference<a> f14517a;
 
         public f(a aVar) {
             super(Looper.getMainLooper());
-            this.f28206a = new WeakReference<>(aVar);
+            this.f14517a = new WeakReference<>(aVar);
         }
 
         @Override // android.os.Handler
@@ -396,7 +396,7 @@ public class a {
     }
 
     public a(com.sobot.chat.core.a.a.a aVar) {
-        this.f28172a = this;
+        this.f14483a = this;
         this.q = -1L;
         this.C = null;
         this.D = null;
@@ -409,7 +409,7 @@ public class a {
             a().execute(new Runnable() { // from class: com.sobot.chat.core.a.a.15
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.d(hVar);
+                    a.this.f14483a.d(hVar);
                 }
             });
         }
@@ -421,7 +421,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.16
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.H();
+                    a.this.f14483a.H();
                 }
             });
             return;
@@ -438,7 +438,7 @@ public class a {
                     I();
                     return;
                 } catch (Exception e2) {
-                    this.f28172a.c();
+                    this.f14483a.c();
                     return;
                 }
             }
@@ -480,7 +480,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.18
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.K();
+                    a.this.f14483a.K();
                 }
             });
             return;
@@ -519,7 +519,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.6
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.a(hVar, i, i2, i3, i4, i5);
+                    a.this.f14483a.a(hVar, i, i2, i3, i4, i5);
                 }
             });
             return;
@@ -550,7 +550,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.10
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.a(jVar, i, i2, i3, i4, i5);
+                    a.this.f14483a.a(jVar, i, i2, i3, i4, i5);
                 }
             });
             return;
@@ -578,7 +578,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.b(jVar);
+                    a.this.f14483a.b(jVar);
                 }
             });
             return;
@@ -606,7 +606,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.7
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.c(jVar);
+                    a.this.f14483a.c(jVar);
                 }
             });
         } else if (D().size() <= 0) {
@@ -644,7 +644,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.8
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.d(jVar);
+                    a.this.f14483a.d(jVar);
                 }
             });
         } else if (D().size() <= 0) {
@@ -669,7 +669,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.3
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.e(hVar);
+                    a.this.f14483a.e(hVar);
                 }
             });
         } else if (B().size() <= 0) {
@@ -694,7 +694,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.9
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.e(jVar);
+                    a.this.f14483a.e(jVar);
                 }
             });
         } else if (D().size() <= 0) {
@@ -719,7 +719,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.4
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.f(hVar);
+                    a.this.f14483a.f(hVar);
                 }
             });
         } else if (B().size() <= 0) {
@@ -744,7 +744,7 @@ public class a {
             E().post(new Runnable() { // from class: com.sobot.chat.core.a.a.5
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.g(hVar);
+                    a.this.f14483a.g(hVar);
                 }
             });
         } else if (B().size() <= 0) {
@@ -813,7 +813,7 @@ public class a {
             a().execute(new Runnable() { // from class: com.sobot.chat.core.a.a.11
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.d(hVar);
+                    a.this.f14483a.d(hVar);
                 }
             });
             return hVar;
@@ -845,20 +845,20 @@ public class a {
             a().execute(new Runnable() { // from class: com.sobot.chat.core.a.a.13
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (a.this.f28172a.d()) {
-                        a.this.f28172a.c(a.this.f28172a.v());
+                    if (a.this.f14483a.d()) {
+                        a.this.f14483a.c(a.this.f14483a.v());
                         try {
-                            a.this.f28172a.v().b(a.this.f28172a.m().a(i));
-                            if (a.this.f28172a.n().a() != null) {
-                                a.this.f28172a.v().a(a.this.f28172a.n().a());
+                            a.this.f14483a.v().b(a.this.f14483a.m().a(i));
+                            if (a.this.f14483a.n().a() != null) {
+                                a.this.f14483a.v().a(a.this.f14483a.n().a());
                             }
-                            a.this.f28172a.d(a.this.f28172a.v());
-                            a.this.f28172a.b(a.this.f28172a.v());
+                            a.this.f14483a.d(a.this.f14483a.v());
+                            a.this.f14483a.b(a.this.f14483a.v());
                         } catch (Exception e2) {
                             e2.printStackTrace();
-                            if (a.this.f28172a.v() != null) {
-                                a.this.f28172a.e(a.this.f28172a.v());
-                                a.this.f28172a.a((j) null);
+                            if (a.this.f14483a.v() != null) {
+                                a.this.f14483a.e(a.this.f14483a.v());
+                                a.this.f14483a.a((j) null);
                             }
                         }
                     }
@@ -875,19 +875,19 @@ public class a {
             a().execute(new Runnable() { // from class: com.sobot.chat.core.a.a.14
                 @Override // java.lang.Runnable
                 public void run() {
-                    a.this.f28172a.c(a.this.f28172a.v());
+                    a.this.f14483a.c(a.this.f14483a.v());
                     try {
-                        a.this.f28172a.v().b(a.this.f28172a.m().a(bArr, z));
-                        if (a.this.f28172a.n().a() != null) {
-                            a.this.f28172a.v().a(a.this.f28172a.n().a());
+                        a.this.f14483a.v().b(a.this.f14483a.m().a(bArr, z));
+                        if (a.this.f14483a.n().a() != null) {
+                            a.this.f14483a.v().a(a.this.f14483a.n().a());
                         }
-                        a.this.f28172a.d(a.this.f28172a.v());
-                        a.this.f28172a.b(a.this.f28172a.v());
+                        a.this.f14483a.d(a.this.f14483a.v());
+                        a.this.f14483a.b(a.this.f14483a.v());
                     } catch (Exception e2) {
                         e2.printStackTrace();
-                        if (a.this.f28172a.v() != null) {
-                            a.this.f28172a.e(a.this.f28172a.v());
-                            a.this.f28172a.a((j) null);
+                        if (a.this.f14483a.v() != null) {
+                            a.this.f14483a.e(a.this.f14483a.v());
+                            a.this.f14483a.a((j) null);
                         }
                     }
                 }
@@ -902,8 +902,8 @@ public class a {
         return this;
     }
 
-    protected a a(C0768a c0768a) {
-        this.u = c0768a;
+    protected a a(C0598a c0598a) {
+        this.u = c0598a;
         return this;
     }
 
@@ -989,18 +989,18 @@ public class a {
     }
 
     public ExecutorService a() {
-        if (this.f28173c == null) {
+        if (this.f14484c == null) {
             synchronized (a.class) {
                 try {
-                    if (this.f28173c == null) {
-                        this.f28173c = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue(), a("sobot SocketClient", false));
+                    if (this.f14484c == null) {
+                        this.f14484c = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue(), a("sobot SocketClient", false));
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return this.f28173c;
+        return this.f14484c;
     }
 
     public ThreadFactory a(final String str, final boolean z) {
@@ -1063,9 +1063,9 @@ public class a {
             @Override // java.lang.Runnable
             public void run() {
                 synchronized (a.this.q()) {
-                    if (a.this.f28172a.q().contains(hVar)) {
-                        a.this.f28172a.q().remove(hVar);
-                        a.this.f28172a.g(hVar);
+                    if (a.this.f14483a.q().contains(hVar)) {
+                        a.this.f14483a.q().remove(hVar);
+                        a.this.f14483a.g(hVar);
                     }
                 }
             }
@@ -1201,9 +1201,9 @@ public class a {
         return this.t;
     }
 
-    protected C0768a x() {
+    protected C0598a x() {
         if (this.u == null) {
-            this.u = new C0768a();
+            this.u = new C0598a();
         }
         return this.u;
     }

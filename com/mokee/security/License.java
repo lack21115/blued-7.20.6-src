@@ -10,9 +10,7 @@ import java.io.FileWriter;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/security/License.class */
 public class License {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24225a = null;
+    private static final String[] a = null;
 
     static {
         String[] strArr = new String[3];
@@ -21,8 +19,8 @@ public class License {
 
     public static void genLicense(Context context, String str, String str2, String str3, String str4) throws Exception {
         try {
-            if (ActivityThread.currentPackageName().equals(f24225a[0])) {
-                if (getPayAppSignature(context).equals(f24225a[1])) {
+            if (ActivityThread.currentPackageName().equals(a[0])) {
+                if (getPayAppSignature(context).equals(a[1])) {
                     BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(str, false));
                     StringBuffer stringBuffer = new StringBuffer();
                     stringBuffer.append(Build.getUniqueID(context)).append(" ").append(str2).append(" ").append(str3).append(" ").append(str4);
@@ -68,7 +66,7 @@ public class License {
             r8 = r0
             r0 = r4
             android.content.pm.PackageManager r0 = r0.getPackageManager()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4b
-            java.lang.String[] r1 = com.mokee.security.License.f24225a     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4b
+            java.lang.String[] r1 = com.mokee.security.License.a     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4b
             r2 = 2
             r1 = r1[r2]     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4b
             r2 = 64

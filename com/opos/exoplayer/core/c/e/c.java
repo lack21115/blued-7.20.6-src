@@ -10,11 +10,11 @@ import java.io.IOException;
 public final class c implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f25162a = new f();
+    private final f f11474a = new f();
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25163c;
+    private final long f11475c;
     private final i d;
     private int e;
     private long f;
@@ -56,7 +56,7 @@ public final class c implements g {
         com.opos.exoplayer.core.i.a.a(j >= 0 && j2 > j);
         this.d = iVar;
         this.b = j;
-        this.f25163c = j2;
+        this.f11475c = j2;
         if (i != j2 - j) {
             this.e = 0;
             return;
@@ -67,13 +67,13 @@ public final class c implements g {
 
     /* JADX INFO: Access modifiers changed from: private */
     public long a(long j, long j2, long j3) {
-        long j4 = this.f25163c;
+        long j4 = this.f11475c;
         long j5 = this.b;
         long j6 = ((((j4 - j5) * j2) / this.f) - j3) + j;
         if (j6 < j5) {
             j6 = j5;
         }
-        long j7 = this.f25163c;
+        long j7 = this.f11475c;
         long j8 = j6;
         if (j6 >= j7) {
             j8 = j7 - 1;
@@ -102,23 +102,23 @@ public final class c implements g {
                 }
                 throw new IOException("No ogg page can be found.");
             }
-            this.f25162a.a(fVar, false);
+            this.f11474a.a(fVar, false);
             fVar.a();
-            long j4 = j - this.f25162a.f25171c;
-            int i = this.f25162a.h + this.f25162a.i;
+            long j4 = j - this.f11474a.f11483c;
+            int i = this.f11474a.h + this.f11474a.i;
             int i2 = (j4 > 0L ? 1 : (j4 == 0L ? 0 : -1));
             if (i2 >= 0 && j4 <= 72000) {
                 fVar.b(i);
-                j2 = this.f25162a.f25171c;
+                j2 = this.f11474a.f11483c;
                 return -(j2 + 2);
             }
             if (i2 < 0) {
                 this.j = c2;
-                this.l = this.f25162a.f25171c;
+                this.l = this.f11474a.f11483c;
             } else {
                 long j5 = i;
                 this.i = fVar.c() + j5;
-                this.k = this.f25162a.f25171c;
+                this.k = this.f11474a.f11483c;
                 if ((this.j - this.i) + j5 < 100000) {
                     fVar.b(i);
                 }
@@ -226,7 +226,7 @@ public final class c implements g {
             r1 = 1
             r0.e = r1
             r0 = r9
-            long r0 = r0.f25163c
+            long r0 = r0.f11475c
             r1 = 65307(0xff1b, double:3.2266E-319)
             long r0 = r0 - r1
             r14 = r0
@@ -256,16 +256,16 @@ public final class c implements g {
     }
 
     long a(com.opos.exoplayer.core.c.f fVar, long j, long j2) {
-        f fVar2 = this.f25162a;
+        f fVar2 = this.f11474a;
         while (true) {
             fVar2.a(fVar, false);
-            if (this.f25162a.f25171c >= j) {
+            if (this.f11474a.f11483c >= j) {
                 fVar.a();
                 return j2;
             }
-            fVar.b(this.f25162a.h + this.f25162a.i);
-            j2 = this.f25162a.f25171c;
-            fVar2 = this.f25162a;
+            fVar.b(this.f11474a.h + this.f11474a.i);
+            j2 = this.f11474a.f11483c;
+            fVar2 = this.f11474a;
         }
     }
 
@@ -281,7 +281,7 @@ public final class c implements g {
 
     boolean a(com.opos.exoplayer.core.c.f fVar, long j) {
         int i;
-        long min = Math.min(j + 3, this.f25163c);
+        long min = Math.min(j + 3, this.f11475c);
         int i2 = 2048;
         byte[] bArr = new byte[2048];
         while (true) {
@@ -310,24 +310,24 @@ public final class c implements g {
 
     public void b() {
         this.i = this.b;
-        this.j = this.f25163c;
+        this.j = this.f11475c;
         this.k = 0L;
         this.l = this.f;
     }
 
     void b(com.opos.exoplayer.core.c.f fVar) {
-        if (!a(fVar, this.f25163c)) {
+        if (!a(fVar, this.f11475c)) {
             throw new EOFException();
         }
     }
 
     long c(com.opos.exoplayer.core.c.f fVar) {
         b(fVar);
-        this.f25162a.a();
-        while ((this.f25162a.b & 4) != 4 && fVar.c() < this.f25163c) {
-            this.f25162a.a(fVar, false);
-            fVar.b(this.f25162a.h + this.f25162a.i);
+        this.f11474a.a();
+        while ((this.f11474a.b & 4) != 4 && fVar.c() < this.f11475c) {
+            this.f11474a.a(fVar, false);
+            fVar.b(this.f11474a.h + this.f11474a.i);
         }
-        return this.f25162a.f25171c;
+        return this.f11474a.f11483c;
     }
 }

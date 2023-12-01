@@ -5,6 +5,7 @@ import android.util.JsonToken;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.animation.keyframe.PathKeyframe;
 import com.airbnb.lottie.value.Keyframe;
+import com.amap.api.col.p0003sl.iu;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ class KeyframesParser {
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             boolean z = true;
-            if (nextName.hashCode() == 107 && nextName.equals("k")) {
+            if (nextName.hashCode() == 107 && nextName.equals(iu.k)) {
                 z = false;
             }
             if (z) {
@@ -65,8 +66,8 @@ class KeyframesParser {
             i2 = i3;
             if (keyframe.b == null) {
                 i2 = i3;
-                if (keyframe2.f4418a != null) {
-                    keyframe.b = keyframe2.f4418a;
+                if (keyframe2.a != null) {
+                    keyframe.b = keyframe2.a;
                     i2 = i3;
                     if (keyframe instanceof PathKeyframe) {
                         ((PathKeyframe) keyframe).a();
@@ -76,7 +77,7 @@ class KeyframesParser {
             }
         }
         Keyframe<T> keyframe3 = list.get(i);
-        if ((keyframe3.f4418a == null || keyframe3.b == null) && list.size() > 1) {
+        if ((keyframe3.a == null || keyframe3.b == null) && list.size() > 1) {
             list.remove(keyframe3);
         }
     }

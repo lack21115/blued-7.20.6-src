@@ -12,11 +12,11 @@ import com.tencent.rtmp.ui.TXCloudVideoView;
 public final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36816a;
+    private final a f23125a;
     private final DisplayTarget b;
 
     private b(a aVar, DisplayTarget displayTarget) {
-        this.f36816a = aVar;
+        this.f23125a = aVar;
         this.b = displayTarget;
     }
 
@@ -26,7 +26,7 @@ public final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a aVar = this.f36816a;
+        a aVar = this.f23125a;
         DisplayTarget displayTarget = this.b;
         if (displayTarget == null) {
             if (aVar.a()) {
@@ -37,8 +37,8 @@ public final /* synthetic */ class b implements Runnable {
                 } else if (aVar.e.getType() == DisplayTarget.a.TEXTUREVIEW) {
                     aVar.a((TextureView) null);
                 } else if (aVar.e.getType() == DisplayTarget.a.TXCLOUDVIEW) {
-                    if (aVar.f36813a != null) {
-                        aVar.f36813a.a();
+                    if (aVar.f23122a != null) {
+                        aVar.f23122a.a();
                     }
                     aVar.b();
                     aVar.c();
@@ -59,8 +59,8 @@ public final /* synthetic */ class b implements Runnable {
             TXCloudVideoView tXCloudVideoView = displayTarget.getTXCloudVideoView();
             if (tXCloudVideoView == null) {
                 if (aVar.a()) {
-                    if (aVar.f36813a != null) {
-                        aVar.f36813a.a();
+                    if (aVar.f23122a != null) {
+                        aVar.f23122a.a();
                     }
                     aVar.b();
                     aVar.c();

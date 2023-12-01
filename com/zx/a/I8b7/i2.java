@@ -4,10 +4,10 @@ package com.zx.a.I8b7;
 public class i2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ boolean f42134a;
+    public final /* synthetic */ boolean f28443a;
 
     public i2(e2 e2Var, boolean z) {
-        this.f42134a = z;
+        this.f28443a = z;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */

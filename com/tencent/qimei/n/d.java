@@ -8,11 +8,11 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final d f38358a = new d();
+    public static final d f24667a = new d();
     public int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38359c = "";
+    public String f24668c = "";
     public String d = "";
 
     public String a(String str, String str2) {
@@ -28,15 +28,15 @@ public class d {
             this.b = 1;
         }
         com.tencent.qimei.u.a aVar = new com.tencent.qimei.u.a(str);
-        if (TextUtils.isEmpty(this.f38359c)) {
-            this.f38359c = aVar.N();
+        if (TextUtils.isEmpty(this.f24668c)) {
+            this.f24668c = aVar.N();
         }
         if (TextUtils.isEmpty(this.d)) {
             this.d = aVar.H();
         }
         String sdkVersion = com.tencent.qimei.u.d.b().getSdkVersion();
         jSONObject.put(e.REPORT_PLATFORM_ID.K, this.b);
-        jSONObject.put(e.REPORT_DATA_Q16.K, this.f38359c);
+        jSONObject.put(e.REPORT_DATA_Q16.K, this.f24668c);
         jSONObject.put(e.REPORT_DATA_Q36.K, this.d);
         jSONObject.put(e.REPORT_APPKEY.K, str);
         jSONObject.put(e.REPORT_SDKVERSION.K, sdkVersion);

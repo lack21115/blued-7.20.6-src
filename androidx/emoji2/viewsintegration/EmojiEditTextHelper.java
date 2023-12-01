@@ -11,15 +11,14 @@ import androidx.core.util.Preconditions;
 public final class EmojiEditTextHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final HelperInternal f2878a;
+    private final HelperInternal f2830a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2879c;
+    private int f2831c;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/emoji2/viewsintegration/EmojiEditTextHelper$HelperInternal.class */
-    public static class HelperInternal {
+    static class HelperInternal {
         HelperInternal() {
         }
 
@@ -49,15 +48,15 @@ public final class EmojiEditTextHelper {
     static class HelperInternal19 extends HelperInternal {
 
         /* renamed from: a  reason: collision with root package name */
-        private final EditText f2880a;
+        private final EditText f2832a;
         private final EmojiTextWatcher b;
 
         HelperInternal19(EditText editText, boolean z) {
-            this.f2880a = editText;
+            this.f2832a = editText;
             EmojiTextWatcher emojiTextWatcher = new EmojiTextWatcher(editText, z);
             this.b = emojiTextWatcher;
-            this.f2880a.addTextChangedListener(emojiTextWatcher);
-            this.f2880a.setEditableFactory(EmojiEditableFactory.getInstance());
+            this.f2832a.addTextChangedListener(emojiTextWatcher);
+            this.f2832a.setEditableFactory(EmojiEditableFactory.getInstance());
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiEditTextHelper.HelperInternal
@@ -73,7 +72,7 @@ public final class EmojiEditTextHelper {
 
         @Override // androidx.emoji2.viewsintegration.EmojiEditTextHelper.HelperInternal
         InputConnection a(InputConnection inputConnection, EditorInfo editorInfo) {
-            return inputConnection instanceof EmojiInputConnection ? inputConnection : new EmojiInputConnection(this.f2880a, inputConnection, editorInfo);
+            return inputConnection instanceof EmojiInputConnection ? inputConnection : new EmojiInputConnection(this.f2832a, inputConnection, editorInfo);
         }
 
         @Override // androidx.emoji2.viewsintegration.EmojiEditTextHelper.HelperInternal
@@ -103,21 +102,21 @@ public final class EmojiEditTextHelper {
 
     public EmojiEditTextHelper(EditText editText, boolean z) {
         this.b = Integer.MAX_VALUE;
-        this.f2879c = 0;
+        this.f2831c = 0;
         Preconditions.checkNotNull(editText, "editText cannot be null");
         if (Build.VERSION.SDK_INT < 19) {
-            this.f2878a = new HelperInternal();
+            this.f2830a = new HelperInternal();
         } else {
-            this.f2878a = new HelperInternal19(editText, z);
+            this.f2830a = new HelperInternal19(editText, z);
         }
     }
 
     public int getEmojiReplaceStrategy() {
-        return this.f2879c;
+        return this.f2831c;
     }
 
     public KeyListener getKeyListener(KeyListener keyListener) {
-        return this.f2878a.a(keyListener);
+        return this.f2830a.a(keyListener);
     }
 
     public int getMaxEmojiCount() {
@@ -125,28 +124,28 @@ public final class EmojiEditTextHelper {
     }
 
     public boolean isEnabled() {
-        return this.f2878a.a();
+        return this.f2830a.a();
     }
 
     public InputConnection onCreateInputConnection(InputConnection inputConnection, EditorInfo editorInfo) {
         if (inputConnection == null) {
             return null;
         }
-        return this.f2878a.a(inputConnection, editorInfo);
+        return this.f2830a.a(inputConnection, editorInfo);
     }
 
     public void setEmojiReplaceStrategy(int i) {
-        this.f2879c = i;
-        this.f2878a.b(i);
+        this.f2831c = i;
+        this.f2830a.b(i);
     }
 
     public void setEnabled(boolean z) {
-        this.f2878a.a(z);
+        this.f2830a.a(z);
     }
 
     public void setMaxEmojiCount(int i) {
         Preconditions.checkArgumentNonnegative(i, "maxEmojiCount should be greater than 0");
         this.b = i;
-        this.f2878a.a(i);
+        this.f2830a.a(i);
     }
 }

@@ -16,7 +16,7 @@ public class DependencyGraph {
     private ConstraintWidgetContainer e;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f2134c = true;
+    private boolean f2086c = true;
     private boolean d = true;
     private ArrayList<WidgetRun> f = new ArrayList<>();
     private ArrayList<RunGroup> g = new ArrayList<>();
@@ -24,7 +24,7 @@ public class DependencyGraph {
     private BasicMeasure.Measure i = new BasicMeasure.Measure();
 
     /* renamed from: a  reason: collision with root package name */
-    ArrayList<RunGroup> f2133a = new ArrayList<>();
+    ArrayList<RunGroup> f2085a = new ArrayList<>();
 
     public DependencyGraph(ConstraintWidgetContainer constraintWidgetContainer) {
         this.b = constraintWidgetContainer;
@@ -32,7 +32,7 @@ public class DependencyGraph {
     }
 
     private int a(ConstraintWidgetContainer constraintWidgetContainer, int i) {
-        int size = this.f2133a.size();
+        int size = this.f2085a.size();
         long j = 0;
         int i2 = 0;
         while (true) {
@@ -40,7 +40,7 @@ public class DependencyGraph {
             if (i3 >= size) {
                 return (int) j;
             }
-            j = Math.max(j, this.f2133a.get(i3).computeWrapSize(constraintWidgetContainer, i));
+            j = Math.max(j, this.f2085a.get(i3).computeWrapSize(constraintWidgetContainer, i));
             i2 = i3 + 1;
         }
     }
@@ -58,8 +58,8 @@ public class DependencyGraph {
     }
 
     private void a(DependencyNode dependencyNode, int i, int i2, DependencyNode dependencyNode2, ArrayList<RunGroup> arrayList, RunGroup runGroup) {
-        WidgetRun widgetRun = dependencyNode.f2135a;
-        if (widgetRun.f2150c != null || widgetRun == this.b.horizontalRun || widgetRun == this.b.verticalRun) {
+        WidgetRun widgetRun = dependencyNode.f2087a;
+        if (widgetRun.f2102c != null || widgetRun == this.b.horizontalRun || widgetRun == this.b.verticalRun) {
             return;
         }
         RunGroup runGroup2 = runGroup;
@@ -67,7 +67,7 @@ public class DependencyGraph {
             runGroup2 = new RunGroup(widgetRun, i2);
             arrayList.add(runGroup2);
         }
-        widgetRun.f2150c = runGroup2;
+        widgetRun.f2102c = runGroup2;
         runGroup2.add(widgetRun);
         for (Dependency dependency : widgetRun.start.f) {
             if (dependency instanceof DependencyNode) {
@@ -146,11 +146,11 @@ public class DependencyGraph {
 
     public void buildGraph() {
         buildGraph(this.f);
-        this.f2133a.clear();
+        this.f2085a.clear();
         RunGroup.index = 0;
-        a(this.b.horizontalRun, 0, this.f2133a);
-        a(this.b.verticalRun, 1, this.f2133a);
-        this.f2134c = false;
+        a(this.b.horizontalRun, 0, this.f2085a);
+        a(this.b.verticalRun, 1, this.f2085a);
+        this.f2086c = false;
     }
 
     public void buildGraph(ArrayList<WidgetRun> arrayList) {
@@ -217,7 +217,7 @@ public class DependencyGraph {
     }
 
     public void defineTerminalWidgets(ConstraintWidget.DimensionBehaviour dimensionBehaviour, ConstraintWidget.DimensionBehaviour dimensionBehaviour2) {
-        if (this.f2134c) {
+        if (this.f2086c) {
             buildGraph();
             Iterator<ConstraintWidget> it = this.b.mChildren.iterator();
             boolean z = false;
@@ -232,7 +232,7 @@ public class DependencyGraph {
             if (z) {
                 return;
             }
-            Iterator<RunGroup> it2 = this.f2133a.iterator();
+            Iterator<RunGroup> it2 = this.f2085a.iterator();
             while (it2.hasNext()) {
                 it2.next().defineTerminalWidgets(dimensionBehaviour == ConstraintWidget.DimensionBehaviour.WRAP_CONTENT, dimensionBehaviour2 == ConstraintWidget.DimensionBehaviour.WRAP_CONTENT);
             }
@@ -243,7 +243,7 @@ public class DependencyGraph {
         boolean z2;
         boolean z3;
         boolean z4 = z & true;
-        if (this.f2134c || this.d) {
+        if (this.f2086c || this.d) {
             Iterator<ConstraintWidget> it = this.b.mChildren.iterator();
             while (it.hasNext()) {
                 ConstraintWidget next = it.next();
@@ -265,7 +265,7 @@ public class DependencyGraph {
         this.b.setY(0);
         ConstraintWidget.DimensionBehaviour dimensionBehaviour = this.b.getDimensionBehaviour(0);
         ConstraintWidget.DimensionBehaviour dimensionBehaviour2 = this.b.getDimensionBehaviour(1);
-        if (this.f2134c) {
+        if (this.f2086c) {
             buildGraph();
         }
         int x = this.b.getX();
@@ -342,7 +342,7 @@ public class DependencyGraph {
     }
 
     public boolean directMeasureSetup(boolean z) {
-        if (this.f2134c) {
+        if (this.f2086c) {
             Iterator<ConstraintWidget> it = this.b.mChildren.iterator();
             while (it.hasNext()) {
                 ConstraintWidget next = it.next();
@@ -456,7 +456,7 @@ public class DependencyGraph {
     }
 
     public void invalidateGraph() {
-        this.f2134c = true;
+        this.f2086c = true;
     }
 
     public void invalidateMeasures() {

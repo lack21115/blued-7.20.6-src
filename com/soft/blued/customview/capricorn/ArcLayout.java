@@ -16,11 +16,11 @@ public class ArcLayout extends ViewGroup {
     private static int f = 100;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28563a;
+    private int f14873a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28564c;
+    private int f14874c;
     private float d;
     private float e;
     private int g;
@@ -36,7 +36,7 @@ public class ArcLayout extends ViewGroup {
     public ArcLayout(Context context) {
         super(context);
         this.b = 5;
-        this.f28564c = 10;
+        this.f14874c = 10;
         this.d = 270.0f;
         this.e = 360.0f;
         this.h = false;
@@ -45,7 +45,7 @@ public class ArcLayout extends ViewGroup {
     public ArcLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 5;
-        this.f28564c = 10;
+        this.f14874c = 10;
         this.d = 270.0f;
         this.e = 360.0f;
         this.h = false;
@@ -53,7 +53,7 @@ public class ArcLayout extends ViewGroup {
             TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ArcLayout, 0, 0);
             this.d = obtainStyledAttributes.getFloat(1, 270.0f);
             this.e = obtainStyledAttributes.getFloat(2, 360.0f);
-            this.f28563a = Math.max(obtainStyledAttributes.getDimensionPixelSize(0, 0), 0);
+            this.f14873a = Math.max(obtainStyledAttributes.getDimensionPixelSize(0, 0), 0);
             f = DensityUtils.a(context, 100.0f);
             obtainStyledAttributes.recycle();
         }
@@ -213,12 +213,11 @@ public class ArcLayout extends ViewGroup {
     }
 
     public int getChildSize() {
-        return this.f28563a;
+        return this.f14873a;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int width = getWidth() / 2;
         int height = getHeight() / 2;
         int i5 = this.h ? this.g : 0;
@@ -232,7 +231,7 @@ public class ArcLayout extends ViewGroup {
             if (i7 >= childCount) {
                 return;
             }
-            Rect a2 = a(width, height, i5, f3, this.f28563a);
+            Rect a2 = a(width, height, i5, f3, this.f14873a);
             f3 += f4;
             if (childCount != 2 || !this.h) {
                 getChildAt(i7).layout(a2.left, a2.top, a2.right, a2.bottom);
@@ -246,12 +245,11 @@ public class ArcLayout extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
-        int a2 = a(Math.abs(this.e - this.d), getChildCount(), this.f28563a, this.b, f);
+    protected void onMeasure(int i, int i2) {
+        int a2 = a(Math.abs(this.e - this.d), getChildCount(), this.f14873a, this.b, f);
         this.g = a2;
-        int i3 = (a2 * 2) + this.f28563a + this.b + (this.f28564c * 2);
+        int i3 = (a2 * 2) + this.f14873a + this.b + (this.f14874c * 2);
         setMeasuredDimension(i3, i3);
         int childCount = getChildCount();
         int i4 = 0;
@@ -260,16 +258,16 @@ public class ArcLayout extends ViewGroup {
             if (i5 >= childCount) {
                 return;
             }
-            getChildAt(i5).measure(View.MeasureSpec.makeMeasureSpec(this.f28563a, 1073741824), View.MeasureSpec.makeMeasureSpec(this.f28563a, 1073741824));
+            getChildAt(i5).measure(View.MeasureSpec.makeMeasureSpec(this.f14873a, 1073741824), View.MeasureSpec.makeMeasureSpec(this.f14873a, 1073741824));
             i4 = i5 + 1;
         }
     }
 
     public void setChildSize(int i) {
-        if (this.f28563a == i || i < 0) {
+        if (this.f14873a == i || i < 0) {
             return;
         }
-        this.f28563a = i;
+        this.f14873a = i;
         requestLayout();
     }
 }

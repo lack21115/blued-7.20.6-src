@@ -8,17 +8,12 @@ import androidx.viewbinding.ViewBinding;
 import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.view.ItemKtvPrizeView;
 import com.google.android.material.imageview.ShapeableImageView;
-import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyKtvGorgeousPrizeDialogBinding.class */
 public final class FragmentYyKtvGorgeousPrizeDialogBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16515a;
+    public final View a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16516c;
+    public final ImageView c;
     public final ImageView d;
     public final ShapeableImageView e;
     public final TextView f;
@@ -30,9 +25,9 @@ public final class FragmentYyKtvGorgeousPrizeDialogBinding implements ViewBindin
 
     private FragmentYyKtvGorgeousPrizeDialogBinding(ConstraintLayout constraintLayout, View view, TextView textView, ImageView imageView, ImageView imageView2, ShapeableImageView shapeableImageView, TextView textView2, ItemKtvPrizeView itemKtvPrizeView, ItemKtvPrizeView itemKtvPrizeView2, ItemKtvPrizeView itemKtvPrizeView3, TextView textView3) {
         this.k = constraintLayout;
-        this.f16515a = view;
+        this.a = view;
         this.b = textView;
-        this.f16516c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = shapeableImageView;
         this.f = textView2;
@@ -52,8 +47,8 @@ public final class FragmentYyKtvGorgeousPrizeDialogBinding implements ViewBindin
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_score_level);
                     if (imageView2 != null) {
-                        ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_singer_header);
-                        if (shapeableImageView != null) {
+                        ShapeableImageView findViewById2 = view.findViewById(R.id.iv_singer_header);
+                        if (findViewById2 != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.iv_singer_name);
                             if (textView2 != null) {
                                 ItemKtvPrizeView itemKtvPrizeView = (ItemKtvPrizeView) view.findViewById(R.id.ll_item_applaud);
@@ -64,7 +59,7 @@ public final class FragmentYyKtvGorgeousPrizeDialogBinding implements ViewBindin
                                         if (itemKtvPrizeView3 != null) {
                                             TextView textView3 = (TextView) view.findViewById(R.id.tv_send_gift_title);
                                             if (textView3 != null) {
-                                                return new FragmentYyKtvGorgeousPrizeDialogBinding((ConstraintLayout) view, findViewById, textView, imageView, imageView2, shapeableImageView, textView2, itemKtvPrizeView, itemKtvPrizeView2, itemKtvPrizeView3, textView3);
+                                                return new FragmentYyKtvGorgeousPrizeDialogBinding((ConstraintLayout) view, findViewById, textView, imageView, imageView2, findViewById2, textView2, itemKtvPrizeView, itemKtvPrizeView2, itemKtvPrizeView3, textView3);
                                             }
                                             str = "tvSendGiftTitle";
                                         } else {
@@ -89,7 +84,7 @@ public final class FragmentYyKtvGorgeousPrizeDialogBinding implements ViewBindin
                     str = "imgBgView";
                 }
             } else {
-                str = WbCloudFaceContant.DIALOG_TITLE;
+                str = "dialogTitle";
             }
         } else {
             str = "coverView";
@@ -97,7 +92,6 @@ public final class FragmentYyKtvGorgeousPrizeDialogBinding implements ViewBindin
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.k;

@@ -4,13 +4,13 @@ package com.anythink.expressad.exoplayer;
 public final class ac {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ac f7157a = new ac(0, 0);
+    public static final ac f4318a = new ac(0, 0);
     public static final ac b = new ac(Long.MAX_VALUE, Long.MAX_VALUE);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final ac f7158c = new ac(Long.MAX_VALUE, 0);
+    public static final ac f4319c = new ac(Long.MAX_VALUE, 0);
     public static final ac d = new ac(0, Long.MAX_VALUE);
-    public static final ac e = f7157a;
+    public static final ac e = f4318a;
     public final long f;
     public final long g;
 

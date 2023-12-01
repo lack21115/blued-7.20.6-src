@@ -18,18 +18,18 @@ import java.util.List;
 public class AreaCodeSelectorSearchAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LayoutInflater f31358a;
+    private final LayoutInflater f17668a;
     private List<AreaCode> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31359c;
+    private Context f17669c;
     private String d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/login_register/AreaCode/AreaCodeSelectorSearchAdapter$ViewHolder.class */
     static class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        TextView f31360a;
+        TextView f17670a;
         TextView b;
 
         ViewHolder() {
@@ -38,8 +38,8 @@ public class AreaCodeSelectorSearchAdapter extends BaseAdapter {
 
     public AreaCodeSelectorSearchAdapter(Context context, List<AreaCode> list) {
         this.b = list;
-        this.f31359c = context;
-        this.f31358a = LayoutInflater.from(context);
+        this.f17669c = context;
+        this.f17668a = LayoutInflater.from(context);
     }
 
     public void a(List<AreaCode> list, String str) {
@@ -69,9 +69,9 @@ public class AreaCodeSelectorSearchAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         int indexOf;
         if (view == null) {
-            view = this.f31358a.inflate(R.layout.areacode_list_search_item, viewGroup, false);
+            view = this.f17668a.inflate(R.layout.areacode_list_search_item, viewGroup, false);
             viewHolder = new ViewHolder();
-            viewHolder.f31360a = (TextView) view.findViewById(2131370806);
+            viewHolder.f17670a = (TextView) view.findViewById(R.id.tvName);
             viewHolder.b = (TextView) view.findViewById(R.id.tvCode);
             view.setTag(viewHolder);
         } else {
@@ -81,10 +81,10 @@ public class AreaCodeSelectorSearchAdapter extends BaseAdapter {
         viewHolder.b.setText(areaCode.getCode());
         String name = areaCode.getName();
         if (StringUtils.d(name) || StringUtils.d(this.d)) {
-            viewHolder.f31360a.setText(name);
+            viewHolder.f17670a.setText(name);
             return view;
         } else if (!name.toLowerCase().contains(this.d.toLowerCase())) {
-            viewHolder.f31360a.setText(name);
+            viewHolder.f17670a.setText(name);
             return view;
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(name);
@@ -99,7 +99,7 @@ public class AreaCodeSelectorSearchAdapter extends BaseAdapter {
                 spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.parseColor("#f46200")), indexOf, this.d.length() + indexOf, 33);
                 i2 = Math.max(i3 + 1, indexOf);
             }
-            viewHolder.f31360a.setText(spannableStringBuilder);
+            viewHolder.f17670a.setText(spannableStringBuilder);
             return view;
         }
     }

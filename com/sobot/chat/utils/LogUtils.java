@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sobot.chat.api.apiUtils.GsonUtil;
 import com.sobot.chat.api.apiUtils.SobotApp;
 import com.sobot.chat.core.channel.Const;
@@ -244,7 +243,7 @@ public class LogUtils {
             return null;
         }
         File file2 = file;
-        File file3 = new File(file2, mAppName + BridgeUtil.UNDERLINE_STR + str + "_log.txt");
+        File file3 = new File(file2, mAppName + "_" + str + "_log.txt");
         if (file3.exists()) {
             return file3.getAbsolutePath();
         }

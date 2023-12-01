@@ -26,13 +26,9 @@ public class RouteRailwayItem extends Railway implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5729a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5730c;
+    private float c;
     private String d;
     private RailwayStationItem e;
     private RailwayStationItem f;
@@ -51,9 +47,9 @@ public class RouteRailwayItem extends Railway implements Parcelable {
         this.g = new ArrayList();
         this.h = new ArrayList();
         this.i = new ArrayList();
-        this.f5729a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5730c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.d = parcel.readString();
         this.e = (RailwayStationItem) parcel.readParcelable(RailwayStationItem.class.getClassLoader());
         this.f = (RailwayStationItem) parcel.readParcelable(RailwayStationItem.class.getClassLoader());
@@ -80,7 +76,7 @@ public class RouteRailwayItem extends Railway implements Parcelable {
     }
 
     public float getDistance() {
-        return this.f5730c;
+        return this.c;
     }
 
     public List<RailwaySpace> getSpaces() {
@@ -88,7 +84,7 @@ public class RouteRailwayItem extends Railway implements Parcelable {
     }
 
     public String getTime() {
-        return this.f5729a;
+        return this.a;
     }
 
     public String getTrip() {
@@ -116,7 +112,7 @@ public class RouteRailwayItem extends Railway implements Parcelable {
     }
 
     public void setDistance(float f) {
-        this.f5730c = f;
+        this.c = f;
     }
 
     public void setSpaces(List<RailwaySpace> list) {
@@ -124,7 +120,7 @@ public class RouteRailwayItem extends Railway implements Parcelable {
     }
 
     public void setTime(String str) {
-        this.f5729a = str;
+        this.a = str;
     }
 
     public void setTrip(String str) {
@@ -142,9 +138,9 @@ public class RouteRailwayItem extends Railway implements Parcelable {
     @Override // com.amap.api.services.route.Railway, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeString(this.f5729a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeFloat(this.f5730c);
+        parcel.writeFloat(this.c);
         parcel.writeString(this.d);
         parcel.writeParcelable(this.e, i);
         parcel.writeParcelable(this.f, i);

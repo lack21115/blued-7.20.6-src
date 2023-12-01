@@ -22,9 +22,7 @@ import kotlinx.coroutines.selects.SelectKt;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ArrayChannel.class */
 public class ArrayChannel<E> extends AbstractChannel<E> {
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BufferOverflow f42892c;
+    private final BufferOverflow c;
     private final ReentrantLock d;
     private Object[] e;
     private int f;
@@ -33,30 +31,28 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ArrayChannel$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f42893a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[BufferOverflow.valuesCustom().length];
             iArr[BufferOverflow.SUSPEND.ordinal()] = 1;
             iArr[BufferOverflow.DROP_LATEST.ordinal()] = 2;
             iArr[BufferOverflow.DROP_OLDEST.ordinal()] = 3;
-            f42893a = iArr;
+            a = iArr;
         }
     }
 
     public ArrayChannel(int i, BufferOverflow bufferOverflow, Function1<? super E, Unit> function1) {
         super(function1);
         this.b = i;
-        this.f42892c = bufferOverflow;
+        this.c = bufferOverflow;
         if (!(i >= 1)) {
             throw new IllegalArgumentException(("ArrayChannel capacity must be at least 1, but " + this.b + " was specified").toString());
         }
         this.d = new ReentrantLock();
         Object[] objArr = new Object[Math.min(this.b, 8)];
-        ArraysKt.a(objArr, AbstractChannelKt.f42881a, 0, 0, 6, null);
-        Unit unit = Unit.f42314a;
+        ArraysKt.a(objArr, AbstractChannelKt.a, 0, 0, 6, null);
+        Unit unit = Unit.a;
         this.e = objArr;
         this.size = 0;
     }
@@ -66,7 +62,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
             this.size = i + 1;
             return null;
         }
-        int i2 = WhenMappings.f42893a[this.f42892c.ordinal()];
+        int i2 = WhenMappings.a[this.c.ordinal()];
         if (i2 != 1) {
             if (i2 != 2) {
                 if (i2 == 3) {
@@ -76,7 +72,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
             }
             return AbstractChannelKt.b;
         }
-        return AbstractChannelKt.f42882c;
+        return AbstractChannelKt.c;
     }
 
     private final void a(int i, E e) {
@@ -87,7 +83,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
             return;
         }
         if (DebugKt.a()) {
-            if (!(this.f42892c == BufferOverflow.DROP_OLDEST)) {
+            if (!(this.c == BufferOverflow.DROP_OLDEST)) {
                 throw new AssertionError();
             }
         }
@@ -116,7 +112,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
                     i2 = i4;
                 }
             }
-            ArraysKt.a((Symbol[]) objArr2, AbstractChannelKt.f42881a, i, min);
+            ArraysKt.a((Symbol[]) objArr2, AbstractChannelKt.a, i, min);
             this.e = objArr2;
             this.f = 0;
         }
@@ -126,15 +122,15 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
     @Override // kotlinx.coroutines.channels.AbstractSendChannel
     public Object a(E e) {
         ReceiveOrClosed<E> l;
-        Symbol a2;
+        Symbol a;
         ReentrantLock reentrantLock = this.d;
         reentrantLock.lock();
         try {
             int i = this.size;
             Closed<?> r = r();
             if (r == null) {
-                Symbol a3 = a(i);
-                if (a3 == null) {
+                Symbol a2 = a(i);
+                if (a2 == null) {
                     if (i == 0) {
                         do {
                             l = l();
@@ -143,16 +139,16 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
                                     this.size = i;
                                     return l;
                                 }
-                                a2 = l.a(e, null);
+                                a = l.a(e, null);
                             }
-                        } while (a2 == null);
+                        } while (a == null);
                         if (DebugKt.a()) {
-                            if (!(a2 == CancellableContinuationImplKt.f42786a)) {
+                            if (!(a == CancellableContinuationImplKt.a)) {
                                 throw new AssertionError();
                             }
                         }
                         this.size = i;
-                        Unit unit = Unit.f42314a;
+                        Unit unit = Unit.a;
                         reentrantLock.unlock();
                         l.b(e);
                         return l.h();
@@ -160,7 +156,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
                     a(i, (int) e);
                     return AbstractChannelKt.b;
                 }
-                return a3;
+                return a2;
             }
             return r;
         } finally {
@@ -177,29 +173,29 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
             int i = this.size;
             Closed<?> r = r();
             if (r == null) {
-                Symbol a2 = a(i);
-                if (a2 == null) {
+                Symbol a = a(i);
+                if (a == null) {
                     if (i == 0) {
                         while (true) {
                             AbstractSendChannel.TryOfferDesc<E> e2 = e(e);
-                            Object a3 = selectInstance.a(e2);
-                            if (a3 == null) {
+                            Object a2 = selectInstance.a(e2);
+                            if (a2 == null) {
                                 this.size = i;
                                 ReceiveOrClosed<? super E> d = e2.d();
-                                Unit unit = Unit.f42314a;
+                                Unit unit = Unit.a;
                                 reentrantLock.unlock();
                                 Intrinsics.a(d);
                                 ReceiveOrClosed<? super E> receiveOrClosed = d;
                                 receiveOrClosed.b(e);
                                 return receiveOrClosed.h();
-                            } else if (a3 == AbstractChannelKt.f42882c) {
+                            } else if (a2 == AbstractChannelKt.c) {
                                 break;
-                            } else if (a3 != AtomicKt.b) {
-                                if (a3 != SelectKt.b() && !(a3 instanceof Closed)) {
-                                    throw new IllegalStateException(Intrinsics.a("performAtomicTrySelect(describeTryOffer) returned ", a3).toString());
+                            } else if (a2 != AtomicKt.b) {
+                                if (a2 != SelectKt.b() && !(a2 instanceof Closed)) {
+                                    throw new IllegalStateException(Intrinsics.a("performAtomicTrySelect(describeTryOffer) returned ", a2).toString());
                                 }
                                 this.size = i;
-                                return a3;
+                                return a2;
                             }
                         }
                     }
@@ -210,7 +206,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
                     this.size = i;
                     return SelectKt.b();
                 }
-                return a2;
+                return a;
             }
             return r;
         } finally {
@@ -261,17 +257,17 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
                 UndeliveredElementException undeliveredElementException2 = undeliveredElementException;
                 if (function1 != null) {
                     undeliveredElementException2 = undeliveredElementException;
-                    if (obj != AbstractChannelKt.f42881a) {
+                    if (obj != AbstractChannelKt.a) {
                         undeliveredElementException2 = OnUndeliveredElementKt.a((Function1<? super Object, Unit>) function1, obj, undeliveredElementException);
                     }
                 }
-                this.e[this.f] = AbstractChannelKt.f42881a;
+                this.e[this.f] = AbstractChannelKt.a;
                 this.f = (this.f + 1) % this.e.length;
                 i2++;
                 undeliveredElementException = undeliveredElementException2;
             }
             this.size = 0;
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
             reentrantLock.unlock();
             super.a(z);
             if (undeliveredElementException != null) {
@@ -338,11 +334,11 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
                         z = false;
                         break;
                     }
-                    Symbol a2 = t.a((LockFreeLinkedListNode.PrepareOp) null);
-                    if (a2 != null) {
+                    Symbol a = t.a((LockFreeLinkedListNode.PrepareOp) null);
+                    if (a != null) {
                         if (DebugKt.a()) {
                             boolean z2 = false;
-                            if (a2 == CancellableContinuationImplKt.f42786a) {
+                            if (a == CancellableContinuationImplKt.a) {
                                 z2 = true;
                             }
                             if (!z2) {
@@ -363,7 +359,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
                 this.e[(this.f + i) % this.e.length] = symbol2;
             }
             this.f = (this.f + 1) % this.e.length;
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
             reentrantLock.unlock();
             if (z) {
                 Intrinsics.a(send);
@@ -395,7 +391,7 @@ public class ArrayChannel<E> extends AbstractChannel<E> {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlinx.coroutines.channels.AbstractSendChannel
     public final boolean q() {
-        return this.size == this.b && this.f42892c == BufferOverflow.SUSPEND;
+        return this.size == this.b && this.c == BufferOverflow.SUSPEND;
     }
 
     @Override // kotlinx.coroutines.channels.AbstractSendChannel

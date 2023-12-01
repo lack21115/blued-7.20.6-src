@@ -3,7 +3,6 @@ package android.util;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.os.SystemClock;
-import com.android.internal.R;
 import com.android.internal.util.XmlUtils;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -188,7 +187,7 @@ public class TimeUtils {
             }
             ArrayList<TimeZone> arrayList2 = new ArrayList<>();
             if (str != null) {
-                XmlResourceParser xml = Resources.getSystem().getXml(R.xml.time_zones_by_country);
+                XmlResourceParser xml = Resources.getSystem().getXml(17891347);
                 try {
                     XmlUtils.beginDocument(xml, "timezones");
                     while (true) {

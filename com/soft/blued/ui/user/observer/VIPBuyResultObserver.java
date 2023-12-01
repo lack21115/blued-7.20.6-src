@@ -11,7 +11,7 @@ import java.util.Iterator;
 public class VIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static VIPBuyResultObserver f34248a = new VIPBuyResultObserver();
+    private static VIPBuyResultObserver f20557a = new VIPBuyResultObserver();
     private ArrayList<IVIPBuyResultObserver> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/observer/VIPBuyResultObserver$IVIPBuyResultObserver.class */
@@ -23,7 +23,7 @@ public class VIPBuyResultObserver {
     }
 
     public static VIPBuyResultObserver a() {
-        return f34248a;
+        return f20557a;
     }
 
     public void a(int i, boolean z) {

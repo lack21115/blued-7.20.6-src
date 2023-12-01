@@ -1,8 +1,7 @@
 package android.media;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/media/AudioHandle.class */
-public class AudioHandle {
+class AudioHandle {
     private final int mId;
 
     AudioHandle(int i) {

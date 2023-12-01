@@ -4,17 +4,17 @@ package com.opos.exoplayer.core.c.d;
 final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25143a;
+    public final int f11455a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f25144c;
+    public final int f11456c;
     public final int d;
 
     public i(int i, int i2, int i3, int i4) {
-        this.f25143a = i;
+        this.f11455a = i;
         this.b = i2;
-        this.f25144c = i3;
+        this.f11456c = i3;
         this.d = i4;
     }
 }

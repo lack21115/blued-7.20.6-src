@@ -12,7 +12,7 @@ public class t extends a {
     private com.opos.mobad.model.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26452c;
+    private String f12764c;
     private List<y> d;
     private Context e;
 
@@ -20,7 +20,7 @@ public class t extends a {
         super(context, str, cVar, z, new i(str, str2, false), aVar);
         this.d = new ArrayList();
         this.e = context;
-        this.f26452c = str;
+        this.f12764c = str;
         this.b = new com.opos.mobad.model.a.a.a(context, bVar);
     }
 
@@ -28,7 +28,7 @@ public class t extends a {
         com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.model.d.t.1
             @Override // java.lang.Runnable
             public void run() {
-                com.opos.mobad.model.b.d a2 = t.this.b.a(str, cVar, t.this.f26398a);
+                com.opos.mobad.model.b.d a2 = t.this.b.a(str, cVar, t.this.f12710a);
                 com.opos.cmn.an.f.a.b("sLoader", "response:" + a2);
                 com.opos.mobad.model.e.d.a(t.this.e, str, a2.d());
                 if (a2.p()) {
@@ -74,7 +74,7 @@ public class t extends a {
 
     @Override // com.opos.mobad.model.d.a
     public void a(com.opos.mobad.model.b.c cVar) {
-        a(this.f26452c, cVar);
+        a(this.f12764c, cVar);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

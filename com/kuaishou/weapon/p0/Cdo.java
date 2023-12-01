@@ -8,11 +8,11 @@ import android.content.SharedPreferences;
 public class Cdo {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23829a = "plc001_t_re";
+    public static final String f10221a = "plc001_t_re";
     public static final String b = "wlpauct2";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23830c = "plc001_pd_ptip_pi";
+    public static final String f10222c = "plc001_pd_ptip_pi";
     public static final String d = "wiipaot";
     public static final int e = 1;
     public static final String f = "a1_p_s_p_s";

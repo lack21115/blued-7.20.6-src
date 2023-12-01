@@ -6,11 +6,11 @@ import android.graphics.SurfaceTexture;
 final /* synthetic */ class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CameraCaptureSingleton f36926a;
+    private final CameraCaptureSingleton f23235a;
     private final SurfaceTexture b;
 
     private e(CameraCaptureSingleton cameraCaptureSingleton, SurfaceTexture surfaceTexture) {
-        this.f36926a = cameraCaptureSingleton;
+        this.f23235a = cameraCaptureSingleton;
         this.b = surfaceTexture;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class e implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        CameraCaptureSingleton.lambda$onFrameAvailable$11(this.f36926a, this.b);
+        CameraCaptureSingleton.lambda$onFrameAvailable$11(this.f23235a, this.b);
     }
 }

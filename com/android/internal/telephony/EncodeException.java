@@ -5,8 +5,8 @@ public class EncodeException extends Exception {
     public EncodeException() {
     }
 
-    public EncodeException(char c2) {
-        super("Unencodable char: '" + c2 + "'");
+    public EncodeException(char c) {
+        super("Unencodable char: '" + c + "'");
     }
 
     public EncodeException(String str) {

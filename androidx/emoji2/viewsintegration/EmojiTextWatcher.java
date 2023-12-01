@@ -13,11 +13,11 @@ import java.lang.ref.WeakReference;
 final class EmojiTextWatcher implements TextWatcher {
 
     /* renamed from: a  reason: collision with root package name */
-    private final EditText f2891a;
+    private final EditText f2843a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private EmojiCompat.InitCallback f2892c;
+    private EmojiCompat.InitCallback f2844c;
     private int d = Integer.MAX_VALUE;
     private int e = 0;
     private boolean f = true;
@@ -27,22 +27,22 @@ final class EmojiTextWatcher implements TextWatcher {
     public static class InitCallbackImpl extends EmojiCompat.InitCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Reference<EditText> f2893a;
+        private final Reference<EditText> f2845a;
 
         InitCallbackImpl(EditText editText) {
-            this.f2893a = new WeakReference(editText);
+            this.f2845a = new WeakReference(editText);
         }
 
         @Override // androidx.emoji2.text.EmojiCompat.InitCallback
         public void onInitialized() {
             super.onInitialized();
-            EmojiTextWatcher.a(this.f2893a.get(), 1);
+            EmojiTextWatcher.a(this.f2845a.get(), 1);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EmojiTextWatcher(EditText editText, boolean z) {
-        this.f2891a = editText;
+        this.f2843a = editText;
         this.b = z;
     }
 
@@ -64,10 +64,10 @@ final class EmojiTextWatcher implements TextWatcher {
     }
 
     private EmojiCompat.InitCallback b() {
-        if (this.f2892c == null) {
-            this.f2892c = new InitCallbackImpl(this.f2891a);
+        if (this.f2844c == null) {
+            this.f2844c = new InitCallbackImpl(this.f2843a);
         }
-        return this.f2892c;
+        return this.f2844c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -94,7 +94,7 @@ final class EmojiTextWatcher implements TextWatcher {
 
     @Override // android.text.TextWatcher
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (this.f2891a.isInEditMode() || a() || i2 > i3 || !(charSequence instanceof Spannable)) {
+        if (this.f2843a.isInEditMode() || a() || i2 > i3 || !(charSequence instanceof Spannable)) {
             return;
         }
         int loadState = EmojiCompat.get().getLoadState();
@@ -111,12 +111,12 @@ final class EmojiTextWatcher implements TextWatcher {
 
     public void setEnabled(boolean z) {
         if (this.f != z) {
-            if (this.f2892c != null) {
-                EmojiCompat.get().unregisterInitCallback(this.f2892c);
+            if (this.f2844c != null) {
+                EmojiCompat.get().unregisterInitCallback(this.f2844c);
             }
             this.f = z;
             if (z) {
-                a(this.f2891a, EmojiCompat.get().getLoadState());
+                a(this.f2843a, EmojiCompat.get().getLoadState());
             }
         }
     }

@@ -29,9 +29,7 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/BluedActionSheet.class */
 public class BluedActionSheet extends BottomSheetDialog implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener, DialogInterface.OnShowListener, LifecycleOwner {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ListenersWrapper<BluedActionSheet> f11208c;
+    private final ListenersWrapper<BluedActionSheet> c;
     private final LifecycleRegistry d;
     private List<OnShowListener> e;
     private List<OnCancelListener> f;
@@ -44,13 +42,9 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/BluedActionSheet$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        protected DialogActionSheetBluedBinding f11209a;
+        protected DialogActionSheetBluedBinding a;
         ArrayList<ActionSheetItem> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final Context f11210c;
+        private final Context c;
         private ActionSheetAdapter d;
         private BluedActionSheet e;
         private View f;
@@ -71,7 +65,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         private OnClickActionSheetListener u;
 
         public Builder(Context context) {
-            this.f11210c = context;
+            this.c = context;
             a();
             g();
         }
@@ -96,19 +90,19 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         }
 
         private void g() {
-            this.f11209a.b.setLayoutManager(new LinearLayoutManager(getContext()));
+            this.a.b.setLayoutManager(new LinearLayoutManager(getContext()));
             this.d = new ActionSheetAdapter(null);
-            this.f11209a.b.setAdapter(this.d);
-            ShapeHelper.b(this.f11209a.f10713c, R.color.syc_b);
-            ShapeHelper.c(this.f11209a.f10713c, R.color.syc_c);
-            this.f11209a.f10713c.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_h));
-            this.f11209a.f10713c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.menu.-$$Lambda$BluedActionSheet$Builder$73DTjMTm1WXOHsn3urFA517uPWU
+            this.a.b.setAdapter(this.d);
+            ShapeHelper.b(this.a.c, R.color.syc_b);
+            ShapeHelper.c(this.a.c, R.color.syc_c);
+            this.a.c.setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_h));
+            this.a.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.menu.-$$Lambda$BluedActionSheet$Builder$73DTjMTm1WXOHsn3urFA517uPWU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     BluedActionSheet.Builder.this.c(view);
                 }
             });
-            View inflate = LayoutInflater.from(this.f11210c).inflate(R.layout.dialog_action_sheet_blued_title, (ViewGroup) null, false);
+            View inflate = LayoutInflater.from(this.c).inflate(R.layout.dialog_action_sheet_blued_title, (ViewGroup) null, false);
             this.g = inflate;
             ShapeTextView shapeTextView = (ShapeTextView) inflate.findViewById(R.id.stv_title);
             this.h = shapeTextView;
@@ -122,9 +116,9 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
 
         private BluedActionSheet h() {
             if (this.f != null) {
-                BluedActionSheet a2 = a(this.f11210c, this.i);
-                this.e = a2;
-                a2.setContentView(this.f);
+                BluedActionSheet a = a(this.c, this.i);
+                this.e = a;
+                a.setContentView(this.f);
                 this.e.setCancelable(this.l);
                 if (this.l) {
                     this.e.setCanceledOnTouchOutside(this.n);
@@ -161,9 +155,9 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         }
 
         public Builder a() {
-            DialogActionSheetBluedBinding a2 = DialogActionSheetBluedBinding.a(LayoutInflater.from(this.f11210c), new FrameLayout(this.f11210c), false);
-            this.f11209a = a2;
-            return a(a2.getRoot());
+            DialogActionSheetBluedBinding a = DialogActionSheetBluedBinding.a(LayoutInflater.from(this.c), new FrameLayout(this.c), false);
+            this.a = a;
+            return a((View) a.getRoot());
         }
 
         public Builder a(View view) {
@@ -215,7 +209,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
                     }
                     int i3 = i2 + 1;
                     arrayList.get(i2).b = i3;
-                    arrayList.get(i2).f11205c = this;
+                    arrayList.get(i2).c = this;
                     i = i3;
                 }
                 this.d.setNewData(arrayList);
@@ -255,7 +249,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         }
 
         public Context getContext() {
-            return this.f11210c;
+            return this.c;
         }
     }
 
@@ -265,6 +259,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
             super(onCancelListener);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnCancelListener
         public void a(BluedActionSheet bluedActionSheet) {
             if (get() != null) {
@@ -279,6 +274,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
             super(onDismissListener);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnDismissListener
         public void a(BluedActionSheet bluedActionSheet) {
             if (get() != null) {
@@ -290,17 +286,15 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/BluedActionSheet$KeyListenerWrapper.class */
     public static final class KeyListenerWrapper implements DialogInterface.OnKeyListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final OnKeyListener f11211a;
+        private final OnKeyListener a;
 
         private KeyListenerWrapper(OnKeyListener onKeyListener) {
-            this.f11211a = onKeyListener;
+            this.a = onKeyListener;
         }
 
         @Override // android.content.DialogInterface.OnKeyListener
         public boolean onKey(DialogInterface dialogInterface, int i, KeyEvent keyEvent) {
-            OnKeyListener onKeyListener = this.f11211a;
+            OnKeyListener onKeyListener = this.a;
             if (onKeyListener == null || !(dialogInterface instanceof BluedActionSheet)) {
                 return false;
             }
@@ -373,6 +367,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
             super(onShowListener);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnShowListener
         public void a(BluedActionSheet bluedActionSheet) {
             if (get() != null) {
@@ -383,32 +378,32 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
 
     public BluedActionSheet(Context context, int i) {
         super(context, i);
-        this.f11208c = new ListenersWrapper<>(this);
+        this.c = new ListenersWrapper<>(this);
         this.d = new LifecycleRegistry(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(List<OnShowListener> list) {
-        super.setOnShowListener(this.f11208c);
+        super.setOnShowListener(this.c);
         this.e = list;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(List<OnCancelListener> list) {
-        super.setOnCancelListener(this.f11208c);
+        super.setOnCancelListener(this.c);
         this.f = list;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c(List<OnDismissListener> list) {
-        super.setOnDismissListener(this.f11208c);
+        super.setOnDismissListener(this.c);
         this.g = list;
     }
 
     public void a(OnCancelListener onCancelListener) {
         if (this.f == null) {
             this.f = new ArrayList();
-            super.setOnCancelListener(this.f11208c);
+            super.setOnCancelListener(this.c);
         }
         this.f.add(onCancelListener);
     }
@@ -416,7 +411,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
     public void a(OnDismissListener onDismissListener) {
         if (this.g == null) {
             this.g = new ArrayList();
-            super.setOnDismissListener(this.f11208c);
+            super.setOnDismissListener(this.c);
         }
         this.g.add(onDismissListener);
     }
@@ -428,12 +423,11 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
     public void a(OnShowListener onShowListener) {
         if (this.e == null) {
             this.e = new ArrayList();
-            super.setOnShowListener(this.f11208c);
+            super.setOnShowListener(this.c);
         }
         this.e.add(onShowListener);
     }
 
-    @Override // androidx.appcompat.app.AppCompatDialog, android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         View currentFocus = getCurrentFocus();
         if (currentFocus != null) {
@@ -442,7 +436,6 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         super.dismiss();
     }
 
-    @Override // androidx.lifecycle.LifecycleOwner
     public Lifecycle getLifecycle() {
         return this.d;
     }
@@ -463,7 +456,7 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         }
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialog, androidx.appcompat.app.AppCompatDialog, android.app.Dialog
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialog
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.d.handleLifecycleEvent(Lifecycle.Event.ON_CREATE);
@@ -503,19 +496,17 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         }
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialog, android.app.Dialog
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialog
     public void onStart() {
         super.onStart();
         this.d.handleLifecycleEvent(Lifecycle.Event.ON_START);
     }
 
-    @Override // androidx.appcompat.app.AppCompatDialog, android.app.Dialog
     public void onStop() {
         super.onStop();
         this.d.handleLifecycleEvent(Lifecycle.Event.ON_STOP);
     }
 
-    @Override // android.app.Dialog
     @Deprecated
     public void setOnCancelListener(DialogInterface.OnCancelListener onCancelListener) {
         if (onCancelListener == null) {
@@ -524,7 +515,6 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         a(new CancelListenerWrapper(onCancelListener));
     }
 
-    @Override // android.app.Dialog
     @Deprecated
     public void setOnDismissListener(DialogInterface.OnDismissListener onDismissListener) {
         if (onDismissListener == null) {
@@ -533,13 +523,11 @@ public class BluedActionSheet extends BottomSheetDialog implements DialogInterfa
         a(new DismissListenerWrapper(onDismissListener));
     }
 
-    @Override // android.app.Dialog
     @Deprecated
     public void setOnKeyListener(DialogInterface.OnKeyListener onKeyListener) {
         super.setOnKeyListener(onKeyListener);
     }
 
-    @Override // android.app.Dialog
     @Deprecated
     public void setOnShowListener(DialogInterface.OnShowListener onShowListener) {
         if (onShowListener == null) {

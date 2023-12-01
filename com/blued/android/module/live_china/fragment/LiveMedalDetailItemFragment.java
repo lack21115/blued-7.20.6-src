@@ -28,16 +28,16 @@ public final class LiveMedalDetailItemFragment extends MvpFragment<LiveMedalWall
     }
 
     public final void b() {
-        FragmentLiveMedalDetailItemBinding fragmentLiveMedalDetailItemBinding = (FragmentLiveMedalDetailItemBinding) this.f16037a;
+        FragmentLiveMedalDetailItemBinding fragmentLiveMedalDetailItemBinding = (FragmentLiveMedalDetailItemBinding) this.a;
         if (fragmentLiveMedalDetailItemBinding == null) {
             return;
         }
         ActivityFragmentActive fragmentActive = getFragmentActive();
         String icon = a().getIcon();
         Intrinsics.a((Object) icon);
-        ImageLoader.a(fragmentActive, icon).b(R.drawable.anchor_badge_default).f().g(-1).a(fragmentLiveMedalDetailItemBinding.f11956a);
+        ImageLoader.a(fragmentActive, icon).b(R.drawable.anchor_badge_default).f().g(-1).a(fragmentLiveMedalDetailItemBinding.a);
         fragmentLiveMedalDetailItemBinding.d.setText(a().getName());
-        fragmentLiveMedalDetailItemBinding.f11957c.setText(a().getDescription());
+        fragmentLiveMedalDetailItemBinding.c.setText(a().getDescription());
         long j = 1000;
         fragmentLiveMedalDetailItemBinding.b.setText(Intrinsics.a(getString(R.string.live_get_medal_time), (Object) LiveTimeAndDateUtils.b(a().getCreated_time() * j)));
         fragmentLiveMedalDetailItemBinding.e.setText(Intrinsics.a(getString(R.string.live_valid_time), (Object) LiveTimeAndDateUtils.b(a().getExpire_time() * j)));

@@ -8,14 +8,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class UpdateSourceFromEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f32329a;
+    private final String f18639a;
 
-    public UpdateSourceFromEvent(String source) {
-        Intrinsics.e(source, "source");
-        this.f32329a = source;
+    public UpdateSourceFromEvent(String str) {
+        Intrinsics.e(str, "source");
+        this.f18639a = str;
     }
 
     public final String a() {
-        return this.f32329a;
+        return this.f18639a;
     }
 }

@@ -7,11 +7,11 @@ import android.content.pm.PackageInfo;
 public final class j implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22555a = "PathClassLoaderStrategy";
+    private static final String f8947a = "PathClassLoaderStrategy";
 
     @Override // com.huawei.hms.ads.uiengineloader.f
     public final ClassLoader a(Context context, String str, int i, PackageInfo packageInfo) {
-        aa.b(f22555a, "begin to new classloader, armeabiType:".concat(String.valueOf(i)));
+        aa.b(f8947a, "begin to new classloader, armeabiType:".concat(String.valueOf(i)));
         return new com.huawei.hms.ads.dynamicloader.d(e.a(context, str, packageInfo), e.b(context, str, packageInfo), context.getClassLoader());
     }
 }

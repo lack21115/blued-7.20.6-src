@@ -4,9 +4,9 @@ package com.soft.blued.ui.live.utils;
 public class NearbyLiveSourceModel {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f31310a;
+    public String f17620a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f31311c;
+    public int f17621c;
 }

@@ -29,12 +29,12 @@ public final class ChannelLimitedFlowMerge<T> extends ChannelFlow<T> {
         for (Flow<T> flow : this.d) {
             BuildersKt__Builders_commonKt.a(producerScope, null, null, new ChannelLimitedFlowMerge$collectTo$2$1(flow, sendingCollector, null), 3, null);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow
     public ReceiveChannel<T> a(CoroutineScope coroutineScope) {
-        return FlowCoroutineKt.a(coroutineScope, this.f43446a, this.b, b());
+        return FlowCoroutineKt.a(coroutineScope, this.a, this.b, b());
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow

@@ -124,7 +124,6 @@ public class CirclePresenter extends MvpPresenter {
     public void a(LifecycleOwner lifecycleOwner) {
         super.a(lifecycleOwner);
         LiveEventBus.get("circle_delete_feed", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.community.ui.circle.presenter.CirclePresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 CirclePresenter.this.a("data_delete_feed", str, false);

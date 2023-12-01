@@ -23,6 +23,6 @@ final /* synthetic */ class YYChatRoomsListFragment$liveDataObserver$6 extends F
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(YYMatchRoomModel yYMatchRoomModel) {
         a(yYMatchRoomModel);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

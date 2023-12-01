@@ -8,7 +8,7 @@ import java.io.IOException;
 public interface l extends Closeable, Flushable {
     void a(b bVar, long j) throws IOException;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @Override // java.io.Closeable, java.lang.AutoCloseable, com.meizu.cloud.pushsdk.c.g.m
     void close() throws IOException;
 
     void flush() throws IOException;

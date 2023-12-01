@@ -1,6 +1,7 @@
 package com.tencent.cos.xml.model;
 
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.cos.xml.CosXmlServiceConfig;
 import com.tencent.cos.xml.exception.CosXmlClientException;
 import com.tencent.cos.xml.utils.URLEncodeUtils;
@@ -254,7 +255,7 @@ public abstract class CosXmlRequest {
 
     public void setSignKeyTime(int i) {
         long deviceTimeWithOffset = HttpConfiguration.getDeviceTimeWithOffset();
-        this.keyTime = deviceTimeWithOffset + ";" + (i + deviceTimeWithOffset);
+        this.keyTime = deviceTimeWithOffset + t.aE + (i + deviceTimeWithOffset);
     }
 
     public void setSignParamsAndHeaders(Set<String> set, Set<String> set2) {

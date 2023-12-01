@@ -29,13 +29,9 @@ import org.apache.http.impl.cookie.DateUtils;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/BasicNetwork.class */
 public class BasicNetwork implements Network {
     protected static final boolean DEBUG = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static int f24248a;
+    private static int a;
     private static int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String[] f24249c = null;
+    private static final String[] c = null;
     protected final HttpStack mHttpStack;
     protected final ByteArrayPool mPool;
 
@@ -133,11 +129,11 @@ public class BasicNetwork implements Network {
             try {
                 try {
                     if (!DEBUG) {
-                        if (j <= f24248a) {
+                        if (j <= a) {
                             return;
                         }
                     }
-                    VolleyLog.d(f24249c[11], request, Long.valueOf(j), bArr != null ? Integer.valueOf(bArr.length) : f24249c[12], Integer.valueOf(statusLine.getStatusCode()), Integer.valueOf(request.getRetryPolicy().getCurrentRetryCount()));
+                    VolleyLog.d(c[11], request, Long.valueOf(j), bArr != null ? Integer.valueOf(bArr.length) : c[12], Integer.valueOf(statusLine.getStatusCode()), Integer.valueOf(request.getRetryPolicy().getCurrentRetryCount()));
                 } catch (RuntimeException e) {
                     throw e;
                 }
@@ -154,9 +150,9 @@ public class BasicNetwork implements Network {
         int timeoutMs = request.getTimeoutMs();
         try {
             retryPolicy.retry(volleyError);
-            request.addMarker(String.format(f24249c[5], str, Integer.valueOf(timeoutMs)));
+            request.addMarker(String.format(c[5], str, Integer.valueOf(timeoutMs)));
         } catch (VolleyError e) {
-            request.addMarker(String.format(f24249c[4], str, Integer.valueOf(timeoutMs)));
+            request.addMarker(String.format(c[4], str, Integer.valueOf(timeoutMs)));
             throw e;
         }
     }
@@ -167,10 +163,10 @@ public class BasicNetwork implements Network {
         }
         try {
             if (entry.etag != null) {
-                map.put(f24249c[0], entry.etag);
+                map.put(c[0], entry.etag);
             }
             if (entry.serverDate > 0) {
-                map.put(f24249c[1], DateUtils.formatDate(new Date(entry.serverDate)));
+                map.put(c[1], DateUtils.formatDate(new Date(entry.serverDate)));
             }
         } catch (RuntimeException e) {
             throw e;
@@ -202,7 +198,7 @@ public class BasicNetwork implements Network {
             try {
                 httpEntity.consumeContent();
             } catch (IOException e2) {
-                VolleyLog.v(f24249c[3], new Object[0]);
+                VolleyLog.v(c[3], new Object[0]);
             }
             this.mPool.returnBuf(buf);
             poolingByteArrayOutputStream.close();
@@ -211,7 +207,7 @@ public class BasicNetwork implements Network {
             try {
                 httpEntity.consumeContent();
             } catch (IOException e3) {
-                VolleyLog.v(f24249c[2], new Object[0]);
+                VolleyLog.v(c[2], new Object[0]);
             }
             this.mPool.returnBuf(bArr);
             poolingByteArrayOutputStream.close();
@@ -220,7 +216,7 @@ public class BasicNetwork implements Network {
     }
 
     protected void logError(String str, String str2, long j) {
-        VolleyLog.v(f24249c[13], str, Long.valueOf(SystemClock.elapsedRealtime() - j), str2);
+        VolleyLog.v(c[13], str, Long.valueOf(SystemClock.elapsedRealtime() - j), str2);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -256,9 +252,9 @@ public class BasicNetwork implements Network {
                             hashMap = null;
                         }
                     } catch (MalformedURLException e2) {
-                        throw new RuntimeException(f24249c[9] + request.getUrl(), e2);
+                        throw new RuntimeException(c[9] + request.getUrl(), e2);
                     } catch (ConnectTimeoutException e3) {
-                        a(f24249c[10], request, new TimeoutError());
+                        a(c[10], request, new TimeoutError());
                     }
                     try {
                         if (statusCode == 304) {
@@ -292,14 +288,14 @@ public class BasicNetwork implements Network {
                         if (httpResponse != null) {
                             int statusCode2 = httpResponse.getStatusLine().getStatusCode();
                             if (!z) {
-                                VolleyLog.e(f24249c[6], Integer.valueOf(statusCode2), request.getUrl());
+                                VolleyLog.e(c[6], Integer.valueOf(statusCode2), request.getUrl());
                                 if (hashMap != null) {
                                     NetworkResponse networkResponse = new NetworkResponse(statusCode2, hashMap, map, false);
                                     if (statusCode2 != 401 && statusCode2 != 403) {
                                         break;
                                     }
                                     try {
-                                        a(f24249c[8], request, new AuthFailureError(networkResponse));
+                                        a(c[8], request, new AuthFailureError(networkResponse));
                                         if (z) {
                                             break;
                                         }
@@ -323,7 +319,7 @@ public class BasicNetwork implements Network {
                     hashMap = null;
                 }
             } catch (SocketTimeoutException e11) {
-                a(f24249c[7], request, new TimeoutError());
+                a(c[7], request, new TimeoutError());
             }
         }
         throw new ServerError(networkResponse);

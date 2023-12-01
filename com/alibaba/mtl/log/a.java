@@ -12,9 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/a.class */
 public class a {
     public static String B;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static IRequestAuth f4476a;
+    public static IRequestAuth a;
 
     /* renamed from: a  reason: collision with other field name */
     private static boolean f26a = false;
@@ -33,22 +31,22 @@ public class a {
         B = String.valueOf(System.currentTimeMillis());
         d = new AtomicInteger(0);
         r = true;
-        f4476a = null;
+        a = null;
     }
 
     public static IRequestAuth a() {
-        IRequestAuth iRequestAuth = f4476a;
+        IRequestAuth iRequestAuth = a;
         if (iRequestAuth == null || TextUtils.isEmpty(iRequestAuth.getAppkey())) {
             if (i.n()) {
                 throw new RuntimeException("please Set <meta-data android:value=\"YOU KEY\" android:name=\"com.alibaba.apmplus.app_key\"></meta-data> in app AndroidManifest.xml ");
             }
             Log.w("UTDC", "please Set <meta-data android:value=\"YOU KEY\" android:name=\"com.alibaba.apmplus.app_key\"></meta-data> in app AndroidManifest.xml ");
         }
-        return f4476a;
+        return a;
     }
 
     public static void a(IRequestAuth iRequestAuth) {
-        f4476a = iRequestAuth;
+        a = iRequestAuth;
         if (iRequestAuth != null) {
             com.alibaba.mtl.log.e.b.o(iRequestAuth.getAppkey());
         }
@@ -57,7 +55,7 @@ public class a {
     public static void a(String str, String str2, String str3, String str4, String str5, Map<String, String> map) {
         if (mContext == null) {
             i.a("UTDC", "please call UTDC.init(context) before commit log,and this log will be discarded");
-        } else if (f4476a == null) {
+        } else if (a == null) {
             i.a("UTDC", "please call UTDC.setRequestAuthentication(auth) before commit log,and this log will be discarded");
         } else {
             i.a("UTDC", "[commit] page:", str, "eventId:", str2, "arg1:", str3, "arg2:", str4, "arg3:", str5, "args:", map);

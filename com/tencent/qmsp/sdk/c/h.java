@@ -8,7 +8,7 @@ import android.os.Build;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SharedPreferences f38558a;
+    private static SharedPreferences f24867a;
     private static final int b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -94,9 +94,9 @@ public class h {
     public static void a(Context context) {
         try {
             StringBuilder sb = new StringBuilder();
-            sb.append(com.tencent.qmsp.sdk.c.b.f38547a);
+            sb.append(com.tencent.qmsp.sdk.c.b.f24856a);
             sb.append("qmsp_cbid_time");
-            f38558a = context.getSharedPreferences(sb.toString(), 0);
+            f24867a = context.getSharedPreferences(sb.toString(), 0);
             b();
         } catch (Exception e) {
             e.printStackTrace();
@@ -110,13 +110,13 @@ public class h {
             taskStatus = com.tencent.qmsp.sdk.app.a.getTaskStatus();
             if (!taskStatus) {
                 com.tencent.qmsp.sdk.f.g.a("cbid", 1, "Cbid Task Finish！");
-            } else if (f38558a != null) {
+            } else if (f24867a != null) {
                 if (!f.i().a(1002).booleanValue()) {
                     a(28800000L);
                     return;
                 }
                 long j2 = 0;
-                long j3 = f38558a.getLong("cbid_last_time", 0L);
+                long j3 = f24867a.getLong("cbid_last_time", 0L);
                 long currentTimeMillis = System.currentTimeMillis();
                 long j4 = currentTimeMillis - j3;
                 if (j4 >= 0) {
@@ -124,7 +124,7 @@ public class h {
                 }
                 if (j2 > 28800000) {
                     a();
-                    SharedPreferences.Editor edit = f38558a.edit();
+                    SharedPreferences.Editor edit = f24867a.edit();
                     edit.putLong("cbid_last_time", currentTimeMillis);
                     edit.commit();
                     j = 28800000;

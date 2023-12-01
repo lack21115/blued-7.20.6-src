@@ -8,14 +8,14 @@ import com.j256.ormlite.stmt.query.SimpleComparison;
 public class gk extends gl {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f41441a;
+    private boolean f27750a;
     private String b;
 
     /* renamed from: b  reason: collision with other field name */
-    private boolean f515b;
+    private boolean f468b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41442c;
+    private String f27751c;
     private String d;
     private String e;
     private String f;
@@ -28,34 +28,34 @@ public class gk extends gl {
 
     public gk() {
         this.b = null;
-        this.f41442c = null;
-        this.f41441a = false;
+        this.f27751c = null;
+        this.f27750a = false;
         this.i = "";
         this.j = "";
         this.k = "";
         this.l = "";
-        this.f515b = false;
+        this.f468b = false;
     }
 
     public gk(Bundle bundle) {
         super(bundle);
         this.b = null;
-        this.f41442c = null;
-        this.f41441a = false;
+        this.f27751c = null;
+        this.f27750a = false;
         this.i = "";
         this.j = "";
         this.k = "";
         this.l = "";
-        this.f515b = false;
+        this.f468b = false;
         this.b = bundle.getString("ext_msg_type");
         this.d = bundle.getString("ext_msg_lang");
-        this.f41442c = bundle.getString("ext_msg_thread");
+        this.f27751c = bundle.getString("ext_msg_thread");
         this.e = bundle.getString("ext_msg_sub");
         this.f = bundle.getString("ext_msg_body");
         this.g = bundle.getString("ext_body_encode");
         this.h = bundle.getString("ext_msg_appid");
-        this.f41441a = bundle.getBoolean("ext_msg_trans", false);
-        this.f515b = bundle.getBoolean("ext_msg_encrypt", false);
+        this.f27750a = bundle.getBoolean("ext_msg_trans", false);
+        this.f468b = bundle.getBoolean("ext_msg_encrypt", false);
         this.i = bundle.getString("ext_msg_seq");
         this.j = bundle.getString("ext_msg_mseq");
         this.k = bundle.getString("ext_msg_fseq");
@@ -83,7 +83,7 @@ public class gk extends gl {
         if (!TextUtils.isEmpty(this.g)) {
             a2.putString("ext_body_encode", this.g);
         }
-        String str4 = this.f41442c;
+        String str4 = this.f27751c;
         if (str4 != null) {
             a2.putString("ext_msg_thread", str4);
         }
@@ -91,7 +91,7 @@ public class gk extends gl {
         if (str5 != null) {
             a2.putString("ext_msg_appid", str5);
         }
-        if (this.f41441a) {
+        if (this.f27750a) {
             a2.putBoolean("ext_msg_trans", true);
         }
         if (!TextUtils.isEmpty(this.i)) {
@@ -103,7 +103,7 @@ public class gk extends gl {
         if (!TextUtils.isEmpty(this.k)) {
             a2.putString("ext_msg_fseq", this.k);
         }
-        if (this.f515b) {
+        if (this.f468b) {
             a2.putBoolean("ext_msg_encrypt", true);
         }
         if (!TextUtils.isEmpty(this.l)) {
@@ -114,7 +114,7 @@ public class gk extends gl {
 
     @Override // com.xiaomi.push.gl
     /* renamed from: a */
-    public String mo11814a() {
+    public String mo8764a() {
         gp a2;
         StringBuilder sb = new StringBuilder();
         sb.append("<message");
@@ -168,7 +168,7 @@ public class gk extends gl {
             sb.append(gw.a(k()));
             sb.append("\"");
         }
-        if (this.f41441a) {
+        if (this.f27750a) {
             sb.append(" transient=\"true\"");
         }
         if (!TextUtils.isEmpty(this.h)) {
@@ -181,7 +181,7 @@ public class gk extends gl {
             sb.append(this.b);
             sb.append("\"");
         }
-        if (this.f515b) {
+        if (this.f468b) {
             sb.append(" s=\"1\"");
         }
         sb.append(SimpleComparison.GREATER_THAN_OPERATION);
@@ -201,13 +201,13 @@ public class gk extends gl {
             sb.append(gw.a(this.f));
             sb.append("</body>");
         }
-        if (this.f41442c != null) {
+        if (this.f27751c != null) {
             sb.append("<thread>");
-            sb.append(this.f41442c);
+            sb.append(this.f27751c);
             sb.append("</thread>");
         }
         if ("error".equalsIgnoreCase(this.b) && (a2 = a()) != null) {
-            sb.append(a2.m11822a());
+            sb.append(a2.m8772a());
         }
         sb.append(o());
         sb.append("</message>");
@@ -224,7 +224,7 @@ public class gk extends gl {
     }
 
     public void a(boolean z) {
-        this.f41441a = z;
+        this.f27750a = z;
     }
 
     public String b() {
@@ -236,7 +236,7 @@ public class gk extends gl {
     }
 
     public void b(boolean z) {
-        this.f515b = z;
+        this.f468b = z;
     }
 
     public String c() {
@@ -297,12 +297,12 @@ public class gk extends gl {
             } else if (gkVar.e != null) {
                 return false;
             }
-            String str4 = this.f41442c;
+            String str4 = this.f27751c;
             if (str4 != null) {
-                if (!str4.equals(gkVar.f41442c)) {
+                if (!str4.equals(gkVar.f27751c)) {
                     return false;
                 }
-            } else if (gkVar.f41442c != null) {
+            } else if (gkVar.f27751c != null) {
                 return false;
             }
             return this.b == gkVar.b;
@@ -341,7 +341,7 @@ public class gk extends gl {
         int hashCode = str != null ? str.hashCode() : 0;
         String str2 = this.f;
         int hashCode2 = str2 != null ? str2.hashCode() : 0;
-        String str3 = this.f41442c;
+        String str3 = this.f27751c;
         int hashCode3 = str3 != null ? str3.hashCode() : 0;
         String str4 = this.d;
         int hashCode4 = str4 != null ? str4.hashCode() : 0;
@@ -353,7 +353,7 @@ public class gk extends gl {
     }
 
     public void i(String str) {
-        this.f41442c = str;
+        this.f27751c = str;
     }
 
     public void j(String str) {

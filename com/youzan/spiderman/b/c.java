@@ -4,22 +4,22 @@ package com.youzan.spiderman.b;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f41718a = 52428800;
+    private static int f28027a = 52428800;
     private static int b = 31457280;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f41719c = 20971520;
+    private static int f28028c = 20971520;
 
     public static void a() {
         if (com.youzan.spiderman.cache.g.a()) {
-            f41718a = 26214400;
+            f28027a = 26214400;
             b = 15728640;
-            f41719c = 10485760;
+            f28028c = 10485760;
         }
     }
 
     public static int b() {
-        return f41718a;
+        return f28027a;
     }
 
     public static int c() {
@@ -27,6 +27,6 @@ public final class c {
     }
 
     public static int d() {
-        return f41719c;
+        return f28028c;
     }
 }

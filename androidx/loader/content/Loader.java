@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.ContentObserver;
 import android.os.Handler;
 import androidx.core.util.DebugUtils;
-import com.alipay.sdk.util.i;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
@@ -75,7 +74,7 @@ public class Loader<D> {
     public String dataToString(D d) {
         StringBuilder sb = new StringBuilder(64);
         DebugUtils.buildShortClassTag(d, sb);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 
@@ -217,7 +216,7 @@ public class Loader<D> {
         DebugUtils.buildShortClassTag(this, sb);
         sb.append(" id=");
         sb.append(this.n);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

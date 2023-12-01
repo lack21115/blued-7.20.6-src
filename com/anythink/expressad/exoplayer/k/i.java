@@ -5,7 +5,6 @@ import android.net.NetworkInfo;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Surface;
-import com.android.internal.telephony.IccCardConstants;
 import com.anythink.expressad.exoplayer.a.b;
 import com.anythink.expressad.exoplayer.ae;
 import com.anythink.expressad.exoplayer.h.t;
@@ -13,17 +12,16 @@ import com.anythink.expressad.exoplayer.i.e;
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.util.Locale;
-import org.apache.commons.codec.language.bm.Rule;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/k/i.class */
 public final class i implements com.anythink.expressad.exoplayer.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7652a = "EventLogger";
+    private static final String f4813a = "EventLogger";
     private static final int b = 3;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final NumberFormat f7653c;
+    private static final NumberFormat f4814c;
     private final com.anythink.expressad.exoplayer.i.e d;
     private final ae.b e = new ae.b();
     private final ae.a f = new ae.a();
@@ -31,10 +29,10 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
 
     static {
         NumberFormat numberFormat = NumberFormat.getInstance(Locale.US);
-        f7653c = numberFormat;
+        f4814c = numberFormat;
         numberFormat.setMinimumFractionDigits(2);
-        f7653c.setMaximumFractionDigits(2);
-        f7653c.setGroupingUsed(false);
+        f4814c.setMaximumFractionDigits(2);
+        f4814c.setGroupingUsed(false);
     }
 
     private i(com.anythink.expressad.exoplayer.i.e eVar) {
@@ -42,7 +40,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
     }
 
     private static String a(int i) {
-        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? "?" : "ENDED" : IccCardConstants.INTENT_VALUE_ICC_READY : "BUFFERING" : "IDLE";
+        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? "?" : "ENDED" : "READY" : "BUFFERING" : "IDLE";
     }
 
     private static String a(int i, int i2) {
@@ -50,7 +48,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
     }
 
     private static String a(long j) {
-        return j == com.anythink.expressad.exoplayer.b.b ? "?" : f7653c.format(((float) j) / 1000.0f);
+        return j == com.anythink.expressad.exoplayer.b.b ? "?" : f4814c.format(((float) j) / 1000.0f);
     }
 
     private static String a(com.anythink.expressad.exoplayer.i.f fVar, com.anythink.expressad.exoplayer.h.ae aeVar, int i) {
@@ -62,7 +60,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
     }
 
     private void a(b.a aVar, String str) {
-        Log.d(f7652a, b(aVar, str));
+        Log.d(f4813a, b(aVar, str));
     }
 
     private void a(b.a aVar, String str, Exception exc) {
@@ -70,7 +68,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
     }
 
     private void a(b.a aVar, String str, String str2) {
-        Log.d(f7652a, b(aVar, str, str2));
+        Log.d(f4813a, b(aVar, str, str2));
     }
 
     private void a(b.a aVar, String str, String str2, Throwable th) {
@@ -88,17 +86,17 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
             if (i2 >= aVar.a()) {
                 return;
             }
-            Log.d(f7652a, str + aVar.a(i2));
+            Log.d(f4813a, str + aVar.a(i2));
             i = i2 + 1;
         }
     }
 
     private static void a(String str) {
-        Log.d(f7652a, str);
+        Log.d(f4813a, str);
     }
 
     private static void a(String str, Throwable th) {
-        Log.e(f7652a, str, th);
+        Log.e(f4813a, str, th);
     }
 
     private static String b(int i) {
@@ -114,7 +112,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
     }
 
     private static String c(int i) {
-        return i != 0 ? i != 1 ? i != 2 ? "?" : Rule.ALL : "ONE" : "OFF";
+        return i != 0 ? i != 1 ? i != 2 ? "?" : "ALL" : "ONE" : "OFF";
     }
 
     private static String d(int i) {
@@ -151,16 +149,16 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
     }
 
     private String i(b.a aVar) {
-        String str = "window=" + aVar.f7155c;
+        String str = "window=" + aVar.f4316c;
         String str2 = str;
         if (aVar.d != null) {
-            String str3 = str + ", period=" + aVar.d.f7484a;
+            String str3 = str + ", period=" + aVar.d.f4645a;
             str2 = str3;
             if (aVar.d.a()) {
-                str2 = (str3 + ", adGroup=" + aVar.d.b) + ", ad=" + aVar.d.f7485c;
+                str2 = (str3 + ", adGroup=" + aVar.d.b) + ", ad=" + aVar.d.f4646c;
             }
         }
-        return a(aVar.f7154a - this.g) + ", " + a(aVar.f) + ", " + str2;
+        return a(aVar.f4315a - this.g) + ", " + a(aVar.f) + ", " + str2;
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b
@@ -184,7 +182,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
         sb.append(b2);
         sb.append(", reason=");
         sb.append(i != 0 ? i != 1 ? i != 2 ? "?" : "DYNAMIC" : "RESET" : "PREPARED");
-        Log.d(f7652a, sb.toString());
+        Log.d(f4813a, sb.toString());
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -192,11 +190,11 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
                 break;
             }
             aVar.b.a(i3, this.f, false);
-            Log.d(f7652a, "  period [" + a(com.anythink.expressad.exoplayer.b.a(this.f.d)) + "]");
+            Log.d(f4813a, "  period [" + a(com.anythink.expressad.exoplayer.b.a(this.f.d)) + "]");
             i2 = i3 + 1;
         }
         if (c2 > 3) {
-            Log.d(f7652a, "  ...");
+            Log.d(f4813a, "  ...");
         }
         int i4 = 0;
         while (true) {
@@ -205,13 +203,13 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
                 break;
             }
             aVar.b.a(i5, this.e, false);
-            Log.d(f7652a, "  window [" + a(com.anythink.expressad.exoplayer.b.a(this.e.i)) + ", " + this.e.d + ", " + this.e.e + "]");
+            Log.d(f4813a, "  window [" + a(com.anythink.expressad.exoplayer.b.a(this.e.i)) + ", " + this.e.d + ", " + this.e.e + "]");
             i4 = i5 + 1;
         }
         if (b2 > 3) {
-            Log.d(f7652a, "  ...");
+            Log.d(f4813a, "  ...");
         }
-        Log.d(f7652a, "]");
+        Log.d(f4813a, "]");
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b
@@ -246,9 +244,9 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
 
     @Override // com.anythink.expressad.exoplayer.a.b
     public final void a(b.a aVar, com.anythink.expressad.exoplayer.g.a aVar2) {
-        Log.d(f7652a, "metadata [" + i(aVar) + ", ");
+        Log.d(f4813a, "metadata [" + i(aVar) + ", ");
         a(aVar2, "  ");
-        Log.d(f7652a, "]");
+        Log.d(f4813a, "]");
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b
@@ -258,7 +256,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
 
     @Override // com.anythink.expressad.exoplayer.a.b
     public final void a(b.a aVar, t.c cVar) {
-        a(aVar, "downstreamFormatChanged", com.anythink.expressad.exoplayer.m.c(cVar.f7507c));
+        a(aVar, "downstreamFormatChanged", com.anythink.expressad.exoplayer.m.c(cVar.f4668c));
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b
@@ -269,7 +267,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
             a(aVar, "tracksChanged", "[]");
             return;
         }
-        Log.d(f7652a, "tracksChanged [" + i(aVar) + ", ");
+        Log.d(f4813a, "tracksChanged [" + i(aVar) + ", ");
         int a3 = a2.a();
         int i = 0;
         while (true) {
@@ -280,7 +278,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
             com.anythink.expressad.exoplayer.h.af b2 = a2.b(i2);
             com.anythink.expressad.exoplayer.i.f a4 = gVar.a(i2);
             if (b2.b > 0) {
-                Log.d(f7652a, "  Renderer:" + i2 + " [");
+                Log.d(f4813a, "  Renderer:" + i2 + " [");
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
@@ -288,21 +286,21 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
                         break;
                     }
                     com.anythink.expressad.exoplayer.h.ae a5 = b2.a(i4);
-                    int i5 = a5.f7417a;
+                    int i5 = a5.f4578a;
                     int a6 = a2.a(i2, i4);
                     String str = i5 < 2 ? "N/A" : a6 != 0 ? a6 != 8 ? a6 != 16 ? "?" : "YES" : "YES_NOT_SEAMLESS" : "NO";
-                    Log.d(f7652a, "    Group:" + i4 + ", adaptive_supported=" + str + " [");
+                    Log.d(f4813a, "    Group:" + i4 + ", adaptive_supported=" + str + " [");
                     int i6 = 0;
                     while (true) {
                         int i7 = i6;
-                        if (i7 < a5.f7417a) {
+                        if (i7 < a5.f4578a) {
                             String a7 = a((a4 == null || a4.f() != a5 || a4.c(i7) == -1) ? false : true);
                             String b3 = b(a2.a(i2, i4, i7));
-                            Log.d(f7652a, "      " + a7 + " Track:" + i7 + ", " + com.anythink.expressad.exoplayer.m.c(a5.a(i7)) + ", supported=" + b3);
+                            Log.d(f4813a, "      " + a7 + " Track:" + i7 + ", " + com.anythink.expressad.exoplayer.m.c(a5.a(i7)) + ", supported=" + b3);
                             i6 = i7 + 1;
                         }
                     }
-                    Log.d(f7652a, "    ]");
+                    Log.d(f4813a, "    ]");
                     i3 = i4 + 1;
                 }
                 if (a4 != null) {
@@ -314,50 +312,50 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
                         }
                         com.anythink.expressad.exoplayer.g.a aVar2 = a4.a(i9).f;
                         if (aVar2 != null) {
-                            Log.d(f7652a, "    Metadata [");
+                            Log.d(f4813a, "    Metadata [");
                             a(aVar2, "      ");
-                            Log.d(f7652a, "    ]");
+                            Log.d(f4813a, "    ]");
                             break;
                         }
                         i8 = i9 + 1;
                     }
                 }
-                Log.d(f7652a, "  ]");
+                Log.d(f4813a, "  ]");
             }
             i = i2 + 1;
         }
         com.anythink.expressad.exoplayer.h.af b4 = a2.b();
         if (b4.b > 0) {
-            Log.d(f7652a, "  Renderer:None [");
+            Log.d(f4813a, "  Renderer:None [");
             int i10 = 0;
             while (true) {
                 int i11 = i10;
                 if (i11 >= b4.b) {
                     break;
                 }
-                Log.d(f7652a, "    Group:" + i11 + " [");
+                Log.d(f4813a, "    Group:" + i11 + " [");
                 com.anythink.expressad.exoplayer.h.ae a8 = b4.a(i11);
                 int i12 = 0;
                 while (true) {
                     int i13 = i12;
-                    if (i13 < a8.f7417a) {
+                    if (i13 < a8.f4578a) {
                         String a9 = a(false);
                         String b5 = b(0);
-                        Log.d(f7652a, "      " + a9 + " Track:" + i13 + ", " + com.anythink.expressad.exoplayer.m.c(a8.a(i13)) + ", supported=" + b5);
+                        Log.d(f4813a, "      " + a9 + " Track:" + i13 + ", " + com.anythink.expressad.exoplayer.m.c(a8.a(i13)) + ", supported=" + b5);
                         i12 = i13 + 1;
                     }
                 }
-                Log.d(f7652a, "    ]");
+                Log.d(f4813a, "    ]");
                 i10 = i11 + 1;
             }
-            Log.d(f7652a, "  ]");
+            Log.d(f4813a, "  ]");
         }
-        Log.d(f7652a, "]");
+        Log.d(f4813a, "]");
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b
     public final void a(b.a aVar, com.anythink.expressad.exoplayer.v vVar) {
-        a(aVar, "playbackParameters", af.a("speed=%.2f, pitch=%.2f, skipSilence=%s", Float.valueOf(vVar.b), Float.valueOf(vVar.f7741c), Boolean.valueOf(vVar.d)));
+        a(aVar, "playbackParameters", af.a("speed=%.2f, pitch=%.2f, skipSilence=%s", Float.valueOf(vVar.b), Float.valueOf(vVar.f4902c), Boolean.valueOf(vVar.d)));
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b
@@ -380,7 +378,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
         StringBuilder sb = new StringBuilder();
         sb.append(z);
         sb.append(", ");
-        sb.append(i != 1 ? i != 2 ? i != 3 ? i != 4 ? "?" : "ENDED" : IccCardConstants.INTENT_VALUE_ICC_READY : "BUFFERING" : "IDLE");
+        sb.append(i != 1 ? i != 2 ? i != 3 ? i != 4 ? "?" : "ENDED" : "READY" : "BUFFERING" : "IDLE");
         a(aVar, "state", sb.toString());
     }
 
@@ -405,7 +403,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
 
     @Override // com.anythink.expressad.exoplayer.a.b
     public final void b(b.a aVar, t.c cVar) {
-        a(aVar, "upstreamDiscarded", com.anythink.expressad.exoplayer.m.c(cVar.f7507c));
+        a(aVar, "upstreamDiscarded", com.anythink.expressad.exoplayer.m.c(cVar.f4668c));
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b
@@ -424,7 +422,7 @@ public final class i implements com.anythink.expressad.exoplayer.a.b {
 
     @Override // com.anythink.expressad.exoplayer.a.b
     public final void c(b.a aVar, int i) {
-        a(aVar, "repeatMode", i != 0 ? i != 1 ? i != 2 ? "?" : Rule.ALL : "ONE" : "OFF");
+        a(aVar, "repeatMode", i != 0 ? i != 1 ? i != 2 ? "?" : "ALL" : "ONE" : "OFF");
     }
 
     @Override // com.anythink.expressad.exoplayer.a.b

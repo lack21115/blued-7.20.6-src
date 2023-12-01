@@ -12,12 +12,10 @@ import kotlinx.coroutines.internal.ThreadSafeHeapNode;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/ThreadSafeHeap.class */
 public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>> {
     private volatile /* synthetic */ int _size = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    private T[] f43573a;
+    private T[] a;
 
     private final void a(int i, int i2) {
-        T[] tArr = this.f43573a;
+        T[] tArr = this.a;
         Intrinsics.a(tArr);
         T t = tArr[i2];
         Intrinsics.a(t);
@@ -35,7 +33,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
 
     private final void c(int i) {
         while (i > 0) {
-            T[] tArr = this.f43573a;
+            T[] tArr = this.a;
             Intrinsics.a(tArr);
             int i2 = (i - 1) / 2;
             T t = tArr[i2];
@@ -58,7 +56,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
             if (i3 >= a()) {
                 return;
             }
-            T[] tArr = this.f43573a;
+            T[] tArr = this.a;
             Intrinsics.a(tArr);
             int i4 = i3 + 1;
             i = i3;
@@ -88,10 +86,10 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v11, types: [kotlinx.coroutines.internal.ThreadSafeHeapNode[]] */
     private final T[] f() {
-        T[] tArr = this.f43573a;
+        T[] tArr = this.a;
         if (tArr == null) {
             T[] tArr2 = (T[]) new ThreadSafeHeapNode[4];
-            this.f43573a = tArr2;
+            this.a = tArr2;
             return tArr2;
         }
         T[] tArr3 = tArr;
@@ -99,7 +97,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
             Object[] copyOf = Arrays.copyOf(tArr, a() * 2);
             Intrinsics.c(copyOf, "java.util.Arrays.copyOf(this, newSize)");
             tArr3 = (ThreadSafeHeapNode[]) copyOf;
-            this.f43573a = tArr3;
+            this.a = tArr3;
         }
         return tArr3;
     }
@@ -114,7 +112,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
                 throw new AssertionError();
             }
         }
-        T[] tArr = this.f43573a;
+        T[] tArr = this.a;
         Intrinsics.a(tArr);
         b(a() - 1);
         if (i < a()) {
@@ -153,7 +151,7 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
     public final void a(T t) {
         synchronized (this) {
             c((ThreadSafeHeap<T>) t);
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
     }
 
@@ -200,25 +198,25 @@ public class ThreadSafeHeap<T extends ThreadSafeHeapNode & Comparable<? super T>
         }
         t.a(this);
         T[] f = f();
-        int a2 = a();
-        b(a2 + 1);
-        f[a2] = t;
-        t.a(a2);
-        c(a2);
+        int a = a();
+        b(a + 1);
+        f[a] = t;
+        t.a(a);
+        c(a);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v6, types: [kotlinx.coroutines.internal.ThreadSafeHeapNode] */
     public final T d() {
-        T a2;
+        T a;
         synchronized (this) {
-            a2 = a() > 0 ? a(0) : (ThreadSafeHeapNode) 0;
+            a = a() > 0 ? a(0) : (ThreadSafeHeapNode) 0;
         }
-        return a2;
+        return a;
     }
 
     public final T e() {
-        T[] tArr = this.f43573a;
+        T[] tArr = this.a;
         if (tArr == null) {
             return null;
         }

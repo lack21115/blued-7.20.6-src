@@ -11,7 +11,7 @@ import android.os.Looper;
 import android.provider.DocumentsContract;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.openalliance.ad.constant.t;
 import com.zego.zegoavkit2.ZegoStreamExtraPlayInfo;
 import com.zego.zegoavkit2.entities.ZegoCDNPublishTarget;
 import com.zego.zegoavkit2.entities.ZegoStreamRelayCDNInfo;
@@ -171,7 +171,7 @@ public final class ZegoLiveRoom implements ZegoLiveRoomJNI.IJniZegoIMCallback, Z
         Uri uri2 = uri;
         if (str != null) {
             if (!str.isEmpty()) {
-                String[] split = str.split(BridgeUtil.SPLIT_MARK);
+                String[] split = str.split("/");
                 int length = split.length;
                 int i = 0;
                 while (true) {
@@ -877,7 +877,7 @@ public final class ZegoLiveRoom implements ZegoLiveRoomJNI.IJniZegoIMCallback, Z
         if (videoCodecCapabilityList == null || videoCodecCapabilityList.length() == 0) {
             return new ZegoCodecCapabilityInfo[0];
         }
-        String[] split = videoCodecCapabilityList.split(";");
+        String[] split = videoCodecCapabilityList.split(t.aE);
         ZegoCodecCapabilityInfo[] zegoCodecCapabilityInfoArr = new ZegoCodecCapabilityInfo[split.length];
         int i = 0;
         while (true) {

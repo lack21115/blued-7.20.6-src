@@ -30,12 +30,8 @@ import org.commonmark.parser.Parser;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/MarkdownView.class */
 public class MarkdownView extends AppCompatTextView {
     private static final Pattern b = Pattern.compile("\n *\n");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f9895c = Pattern.compile("([^ \n]) *(\\!\\[[^\\]]*\\]\\([^\\)]*)");
-
-    /* renamed from: a  reason: collision with root package name */
-    public OnShowTextListener f9896a;
+    private static final Pattern c = Pattern.compile("([^ \n]) *(\\!\\[[^\\]]*\\]\\([^\\)]*)");
+    public OnShowTextListener a;
     private Builder d;
     private Markwon e;
     private int f;
@@ -44,12 +40,8 @@ public class MarkdownView extends AppCompatTextView {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/markdown/MarkdownView$Builder.class */
     public static final class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        IRequestHost f9899a;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f9900c;
+        IRequestHost a;
+        int c;
         int d;
         OnClickAtUserListener i;
         OnClickLinkListener j;
@@ -66,7 +58,7 @@ public class MarkdownView extends AppCompatTextView {
         }
 
         public Builder a(IRequestHost iRequestHost) {
-            this.f9899a = iRequestHost;
+            this.a = iRequestHost;
             return this;
         }
 
@@ -124,9 +116,9 @@ public class MarkdownView extends AppCompatTextView {
 
     private void a() {
         if (this.e == null) {
-            MarkdownGlideImagesPlugin markdownGlideImagesPlugin = new MarkdownGlideImagesPlugin(this.d.f9899a, this.h);
+            MarkdownGlideImagesPlugin markdownGlideImagesPlugin = new MarkdownGlideImagesPlugin(this.d.a, this.h);
             markdownGlideImagesPlugin.a(this.d.d);
-            markdownGlideImagesPlugin.b(this.d.f9900c);
+            markdownGlideImagesPlugin.b(this.d.c);
             markdownGlideImagesPlugin.c(this.d.b);
             markdownGlideImagesPlugin.d(this.d.e);
             markdownGlideImagesPlugin.a(this.d.k);
@@ -150,10 +142,11 @@ public class MarkdownView extends AppCompatTextView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(String str) {
         a();
         String b2 = b(str);
-        OnShowTextListener onShowTextListener = this.f9896a;
+        OnShowTextListener onShowTextListener = this.a;
         if (onShowTextListener == null) {
             this.e.setMarkdown(this, b2);
             return;
@@ -162,7 +155,7 @@ public class MarkdownView extends AppCompatTextView {
     }
 
     private String b(String str) {
-        return AtUserProcessor.f9907a.matcher(f9895c.matcher(b.matcher(str).replaceAll("\n\u3000\n")).replaceAll("$1\n$2")).replaceAll(" $0");
+        return AtUserProcessor.a.matcher(c.matcher(b.matcher(str).replaceAll("\n\u3000\n")).replaceAll("$1\n$2")).replaceAll(" $0");
     }
 
     public void a(Builder builder, final String str) {
@@ -189,18 +182,14 @@ public class MarkdownView extends AppCompatTextView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (AppInfo.m()) {
             Log.v("Markdown", "onAttachedToWindow ");
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         MarkdownGlideImagesPlugin markdownGlideImagesPlugin;
         super.onDetachedFromWindow();
         if (AppInfo.m()) {
@@ -214,6 +203,6 @@ public class MarkdownView extends AppCompatTextView {
     }
 
     public void setOnShowTextListener(OnShowTextListener onShowTextListener) {
-        this.f9896a = onShowTextListener;
+        this.a = onShowTextListener;
     }
 }

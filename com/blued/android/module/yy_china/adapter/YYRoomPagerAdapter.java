@@ -7,6 +7,7 @@ import com.blued.android.module.yy_china.fragment.YYHomeMineFragment;
 import com.blued.android.module.yy_china.fragment.YYRoomListItemFragment;
 import com.blued.android.module.yy_china.listener.OnCLickRoomItemToGoRoomListener;
 import com.blued.android.module.yy_china.model.HomeTopicModel;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import com.blued.android.module.yy_china.model.YYRoomExtraModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +15,14 @@ import java.util.List;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYRoomPagerAdapter.class */
 public class YYRoomPagerAdapter extends BaseFragmentPagerAdapter {
     private List<HomeTopicModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f16233c;
+    private String c;
     private OnCLickRoomItemToGoRoomListener d;
     private YYRoomExtraModel e;
 
     public YYRoomPagerAdapter(FragmentManager fragmentManager, String str, OnCLickRoomItemToGoRoomListener onCLickRoomItemToGoRoomListener) {
         super(fragmentManager, 1);
         this.b = new ArrayList();
-        this.f16233c = str;
+        this.c = str;
         this.d = onCLickRoomItemToGoRoomListener;
     }
 
@@ -59,13 +58,13 @@ public class YYRoomPagerAdapter extends BaseFragmentPagerAdapter {
     }
 
     public void b() {
-        this.f16113a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public void b(List<HomeTopicModel> list) {
         Fragment fragment;
         if (!c(list)) {
-            if (this.f16113a != null && this.f16113a.size() >= 2 && (fragment = this.f16113a.get(1)) != null && (fragment instanceof YYRoomListItemFragment)) {
+            if (this.a != null && this.a.size() >= 2 && (fragment = this.a.get(1)) != null && (fragment instanceof YYRoomListItemFragment)) {
                 ((YYRoomListItemFragment) fragment).a(this.e);
                 return;
             }
@@ -75,10 +74,10 @@ public class YYRoomPagerAdapter extends BaseFragmentPagerAdapter {
         for (HomeTopicModel homeTopicModel : this.b) {
             Bundle bundle = new Bundle();
             bundle.putString("room_type", homeTopicModel.getLabel_id() + "");
-            bundle.putString("from_source", this.f16233c);
+            bundle.putString("from_source", this.c);
             String str = homeTopicModel.getLabel_id() + "";
             boolean z = true;
-            if (str.hashCode() == 1444 && str.equals("-1")) {
+            if (str.hashCode() == 1444 && str.equals(YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID)) {
                 z = false;
             }
             if (z) {
@@ -98,7 +97,6 @@ public class YYRoomPagerAdapter extends BaseFragmentPagerAdapter {
         a(arrayList);
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public CharSequence getPageTitle(int i) {
         return this.b.get(i).getLabel_name();
     }

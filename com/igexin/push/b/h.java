@@ -26,15 +26,15 @@ import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/igexin/push/b/h.class */
 public abstract class h {
-    private static final String e = b.f23300a + h.class.getName();
+    private static final String e = b.f9692a + h.class.getName();
 
     /* renamed from: a  reason: collision with root package name */
-    protected long f23315a;
+    protected long f9707a;
     private Handler i;
     protected final Map<String, e> b = new LinkedHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    protected final Map<String, d> f23316c = new HashMap();
+    protected final Map<String, d> f9708c = new HashMap();
     private final Object f = new Object();
     private final Object g = new Object();
     protected a d = new a();
@@ -72,10 +72,10 @@ public abstract class h {
                 dVar.b = jSONObject.getInt(KeyChain.EXTRA_PORT);
             }
             if (jSONObject.has(b.a.q)) {
-                dVar.f23308a = jSONObject.getString(b.a.q);
+                dVar.f9700a = jSONObject.getString(b.a.q);
             }
             if (jSONObject.has("consumeTime")) {
-                dVar.f23309c = jSONObject.getLong("consumeTime");
+                dVar.f9701c = jSONObject.getLong("consumeTime");
             }
             if (jSONObject.has("detectSuccessTime")) {
                 dVar.d = jSONObject.getLong("detectSuccessTime");
@@ -107,7 +107,7 @@ public abstract class h {
     }
 
     private void a() {
-        this.f23315a = 0L;
+        this.f9707a = 0L;
         if (r()) {
             if (com.igexin.push.core.e.ap != null) {
                 com.igexin.push.core.e.f.a().b(com.igexin.push.core.b.l, true);
@@ -134,7 +134,7 @@ public abstract class h {
 
     private void b(d dVar) {
         e eVar = new e();
-        eVar.d = c() == b.EnumC0449b.f23304a;
+        eVar.d = c() == b.EnumC0279b.f9696a;
         eVar.a(d());
         eVar.b = dVar;
         synchronized (this.g) {
@@ -160,12 +160,12 @@ public abstract class h {
         }
         if (jSONObject.has("lastDetectTime")) {
             try {
-                this.f23315a = jSONObject.getLong("lastDetectTime");
+                this.f9707a = jSONObject.getLong("lastDetectTime");
             } catch (JSONException e3) {
                 com.igexin.c.a.c.a.a(e3);
             }
         }
-        if (Math.abs(System.currentTimeMillis() - this.f23315a) >= b.f23301c) {
+        if (Math.abs(System.currentTimeMillis() - this.f9707a) >= b.f9693c) {
             a();
             return;
         }
@@ -223,10 +223,10 @@ public abstract class h {
                         dVar2.b = jSONObject.getInt(KeyChain.EXTRA_PORT);
                     }
                     if (jSONObject.has(b.a.q)) {
-                        dVar2.f23308a = jSONObject.getString(b.a.q);
+                        dVar2.f9700a = jSONObject.getString(b.a.q);
                     }
                     if (jSONObject.has("consumeTime")) {
-                        dVar2.f23309c = jSONObject.getLong("consumeTime");
+                        dVar2.f9701c = jSONObject.getLong("consumeTime");
                     }
                     if (jSONObject.has("detectSuccessTime")) {
                         dVar2.d = jSONObject.getLong("detectSuccessTime");
@@ -240,14 +240,14 @@ public abstract class h {
                     dVar = null;
                 }
                 if (dVar != null) {
-                    this.f23316c.put(dVar.a(), dVar);
+                    this.f9708c.put(dVar.a(), dVar);
                 } else {
                     try {
                         dVar = d(jSONObject.getString("domain"));
                     } catch (Exception e2) {
                         com.igexin.c.a.c.a.a(e2);
                         com.igexin.c.a.c.a.a(e + "|initWithCacheData exception " + e2.toString(), new Object[0]);
-                        this.f23316c.clear();
+                        this.f9708c.clear();
                         a();
                         return;
                     }
@@ -302,8 +302,8 @@ public abstract class h {
         }
         if (jSONObject.has("domainType")) {
             try {
-                this.d.e = a.EnumC0448a.a(jSONObject.getInt("domainType"));
-                if (this.d.e == a.EnumC0448a.BACKUP) {
+                this.d.e = a.EnumC0278a.a(jSONObject.getInt("domainType"));
+                if (this.d.e == a.EnumC0278a.BACKUP) {
                     this.d.f.set(true);
                 }
             } catch (JSONException e6) {
@@ -328,21 +328,21 @@ public abstract class h {
 
     private void p() {
         synchronized (this.f) {
-            this.f23316c.clear();
+            this.f9708c.clear();
         }
     }
 
     private boolean q() {
-        long abs = Math.abs(System.currentTimeMillis() - this.f23315a);
-        if (abs >= (b.f23301c * 2) - com.anythink.expressad.d.a.b.P) {
-            long j = b.f23301c;
-            com.igexin.c.a.c.a.a(e + "|current time - last detect time > " + (b.f23301c / 1000) + " s, detect = true", new Object[0]);
-            f.f23313a.set(true);
+        long abs = Math.abs(System.currentTimeMillis() - this.f9707a);
+        if (abs >= (b.f9693c * 2) - com.anythink.expressad.d.a.b.P) {
+            long j = b.f9693c;
+            com.igexin.c.a.c.a.a(e + "|current time - last detect time > " + (b.f9693c / 1000) + " s, detect = true", new Object[0]);
+            f.f9705a.set(true);
             return true;
-        } else if (f.f23313a.getAndSet(true)) {
+        } else if (f.f9705a.getAndSet(true)) {
             return false;
         } else {
-            long abs2 = Math.abs(b.f23301c - abs);
+            long abs2 = Math.abs(b.f9693c - abs);
             f.g().a(abs2, TimeUnit.MILLISECONDS);
             com.igexin.c.a.c.a.a(e + "|set next detect time = " + abs2, new Object[0]);
             return false;
@@ -350,7 +350,7 @@ public abstract class h {
     }
 
     private boolean r() {
-        return c() == b.EnumC0449b.b;
+        return c() == b.EnumC0279b.b;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -371,12 +371,12 @@ public abstract class h {
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(d dVar) {
         synchronized (this.f) {
-            this.f23316c.put(dVar.a(), dVar);
+            this.f9708c.put(dVar.a(), dVar);
         }
         a aVar = this.d;
         synchronized (aVar.d) {
             aVar.b = 0;
-            Collections.sort(aVar.f23294c, aVar.k);
+            Collections.sort(aVar.f9686c, aVar.k);
         }
     }
 
@@ -385,15 +385,15 @@ public abstract class h {
     public abstract i d();
 
     public final void e() {
-        long abs = Math.abs(System.currentTimeMillis() - this.f23315a);
+        long abs = Math.abs(System.currentTimeMillis() - this.f9707a);
         boolean z = true;
-        if (abs >= (b.f23301c * 2) - com.anythink.expressad.d.a.b.P) {
-            long j = b.f23301c;
-            com.igexin.c.a.c.a.a(e + "|current time - last detect time > " + (b.f23301c / 1000) + " s, detect = true", new Object[0]);
-            f.f23313a.set(true);
+        if (abs >= (b.f9693c * 2) - com.anythink.expressad.d.a.b.P) {
+            long j = b.f9693c;
+            com.igexin.c.a.c.a.a(e + "|current time - last detect time > " + (b.f9693c / 1000) + " s, detect = true", new Object[0]);
+            f.f9705a.set(true);
         } else {
-            if (!f.f23313a.getAndSet(true)) {
-                long abs2 = Math.abs(b.f23301c - abs);
+            if (!f.f9705a.getAndSet(true)) {
+                long abs2 = Math.abs(b.f9693c - abs);
                 f.g().a(abs2, TimeUnit.MILLISECONDS);
                 com.igexin.c.a.c.a.a(e + "|set next detect time = " + abs2, new Object[0]);
             }
@@ -484,7 +484,7 @@ public abstract class h {
     }
 
     public final void i() {
-        this.f23315a = System.currentTimeMillis();
+        this.f9707a = System.currentTimeMillis();
         synchronized (this.g) {
             for (Map.Entry<String, e> entry : this.b.entrySet()) {
                 entry.getValue().a(d());
@@ -493,8 +493,8 @@ public abstract class h {
                 }
                 e value = entry.getValue();
                 synchronized (i.class) {
-                    if (value.f23311c != null) {
-                        value.f23310a = com.igexin.b.a.a().f23194a.submit(new e.AnonymousClass1());
+                    if (value.f9703c != null) {
+                        value.f9702a = com.igexin.b.a.a().f9586a.submit(new e.AnonymousClass1());
                     }
                 }
             }
@@ -503,12 +503,12 @@ public abstract class h {
 
     public final void j() {
         synchronized (this) {
-            this.f23315a = System.currentTimeMillis();
+            this.f9707a = System.currentTimeMillis();
             JSONObject jSONObject = new JSONObject();
             JSONArray jSONArray = new JSONArray();
             synchronized (this.g) {
                 try {
-                    jSONObject.put("lastDetectTime", this.f23315a);
+                    jSONObject.put("lastDetectTime", this.f9707a);
                     jSONObject.put("list", jSONArray);
                     for (Map.Entry<String, e> entry : this.b.entrySet()) {
                         JSONObject f = entry.getValue().b.f();
@@ -534,11 +534,11 @@ public abstract class h {
     public final void l() {
         synchronized (this) {
             a aVar = this.d;
-            a.EnumC0448a enumC0448a = aVar.e;
-            com.igexin.c.a.c.a.a(a.f23293a + "|detect success, current type = " + aVar.e, new Object[0]);
-            if (aVar.e == a.EnumC0448a.BACKUP) {
-                aVar.a(a.EnumC0448a.TRY_NORMAL);
-                com.igexin.push.core.d unused = d.a.f23474a;
+            a.EnumC0278a enumC0278a = aVar.e;
+            com.igexin.c.a.c.a.a(a.f9685a + "|detect success, current type = " + aVar.e, new Object[0]);
+            if (aVar.e == a.EnumC0278a.BACKUP) {
+                aVar.a(a.EnumC0278a.TRY_NORMAL);
+                d.a.a();
                 com.igexin.push.d.a.a(true);
             }
         }

@@ -1,7 +1,7 @@
 package com.blued.android.statistics.util;
 
-import android.provider.MediaStore;
 import android.text.TextUtils;
+import com.anythink.core.common.c.d;
 import com.blued.android.statistics.StatConfig;
 import com.blued.das.client.abtest.AbClientProtos;
 import java.io.File;
@@ -17,10 +17,10 @@ public class AbtestStorageUtils {
         synchronized (AbtestStorageUtils.class) {
             try {
                 concurrentHashMap = new ConcurrentHashMap<>();
-                String a2 = FileUtils.a(b(str));
-                if (!TextUtils.isEmpty(a2)) {
+                String a = FileUtils.a(b(str));
+                if (!TextUtils.isEmpty(a)) {
                     try {
-                        JSONArray jSONArray = new JSONArray(a2);
+                        JSONArray jSONArray = new JSONArray(a);
                         int i = 0;
                         while (true) {
                             int i2 = i;
@@ -28,7 +28,7 @@ public class AbtestStorageUtils {
                                 break;
                             }
                             JSONObject optJSONObject = jSONArray.optJSONObject(i2);
-                            concurrentHashMap.put(optJSONObject.optString("key"), AbClientProtos.AbResult.newBuilder().setGid(optJSONObject.optLong("gid")).setParamType(optJSONObject.optInt("type")).setParamValue(optJSONObject.optString("value")).setIsTrack(optJSONObject.optBoolean(MediaStore.Audio.AudioColumns.TRACK)).setIsGroupFreeze(optJSONObject.optBoolean("group_freeze")).setIsFreeze(optJSONObject.optBoolean("freeze")).build());
+                            concurrentHashMap.put(optJSONObject.optString(d.a.b), AbClientProtos.AbResult.newBuilder().setGid(optJSONObject.optLong("gid")).setParamType(optJSONObject.optInt("type")).setParamValue(optJSONObject.optString(d.a.d)).setIsTrack(optJSONObject.optBoolean("track")).setIsGroupFreeze(optJSONObject.optBoolean("group_freeze")).setIsFreeze(optJSONObject.optBoolean("freeze")).build());
                             i = i2 + 1;
                         }
                     } catch (Exception e) {
@@ -49,11 +49,11 @@ public class AbtestStorageUtils {
                     String key = entry.getKey();
                     AbClientProtos.AbResult value = entry.getValue();
                     JSONObject jSONObject = new JSONObject();
-                    jSONObject.put("key", key);
+                    jSONObject.put(d.a.b, key);
                     jSONObject.put("gid", value.getGid());
                     jSONObject.put("type", value.getParamType());
-                    jSONObject.put("value", value.getParamValue());
-                    jSONObject.put(MediaStore.Audio.AudioColumns.TRACK, value.getIsTrack());
+                    jSONObject.put(d.a.d, value.getParamValue());
+                    jSONObject.put("track", value.getIsTrack());
                     jSONObject.put("group_freeze", value.getIsGroupFreeze());
                     jSONObject.put("freeze", value.getIsFreeze());
                     jSONArray.put(jSONObject);

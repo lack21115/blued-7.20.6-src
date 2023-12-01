@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 public final class Option<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final CacheKeyUpdater<Object> f20707a = new CacheKeyUpdater<Object>() { // from class: com.bumptech.glide.load.Option.1
+    private static final CacheKeyUpdater<Object> f7101a = new CacheKeyUpdater<Object>() { // from class: com.bumptech.glide.load.Option.1
         @Override // com.bumptech.glide.load.Option.CacheKeyUpdater
         public void update(byte[] bArr, Object obj, MessageDigest messageDigest) {
         }
@@ -15,7 +15,7 @@ public final class Option<T> {
     private final T b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final CacheKeyUpdater<T> f20708c;
+    private final CacheKeyUpdater<T> f7102c;
     private final String d;
     private volatile byte[] e;
 
@@ -27,7 +27,7 @@ public final class Option<T> {
     private Option(String str, T t, CacheKeyUpdater<T> cacheKeyUpdater) {
         this.d = Preconditions.a(str);
         this.b = t;
-        this.f20708c = (CacheKeyUpdater) Preconditions.a(cacheKeyUpdater);
+        this.f7102c = (CacheKeyUpdater) Preconditions.a(cacheKeyUpdater);
     }
 
     public static <T> Option<T> a(String str) {
@@ -44,13 +44,13 @@ public final class Option<T> {
 
     private byte[] b() {
         if (this.e == null) {
-            this.e = this.d.getBytes(Key.f20706a);
+            this.e = this.d.getBytes(Key.f7100a);
         }
         return this.e;
     }
 
     private static <T> CacheKeyUpdater<T> c() {
-        return (CacheKeyUpdater<T>) f20707a;
+        return (CacheKeyUpdater<T>) f7101a;
     }
 
     public T a() {
@@ -73,6 +73,6 @@ public final class Option<T> {
     }
 
     public void update(T t, MessageDigest messageDigest) {
-        this.f20708c.update(b(), t, messageDigest);
+        this.f7102c.update(b(), t, messageDigest);
     }
 }

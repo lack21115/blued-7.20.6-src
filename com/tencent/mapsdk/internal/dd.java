@@ -22,10 +22,10 @@ public class dd extends uc<ed> {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f38045c.size()) {
+                if (i2 >= this.f24354c.size()) {
                     break;
                 }
-                fd fdVar = (fd) this.f38045c.valueAt(i2);
+                fd fdVar = (fd) this.f24354c.valueAt(i2);
                 if (fdVar.x() == j) {
                     uc.a aVar = new uc.a(latLng, str, str2);
                     fdVar.a(aVar);
@@ -72,10 +72,10 @@ public class dd extends uc<ed> {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f38045c.size()) {
+            if (i3 >= this.f24354c.size()) {
                 return;
             }
-            if (((fd) this.f38045c.valueAt(i3)).x() == j) {
+            if (((fd) this.f24354c.valueAt(i3)).x() == j) {
                 this.b.a(j, i, f, z);
             }
             i2 = i3 + 1;
@@ -96,10 +96,10 @@ public class dd extends uc<ed> {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f38045c.size()) {
+            if (i2 >= this.f24354c.size()) {
                 return;
             }
-            if (((fd) this.f38045c.valueAt(i2)).x() == j) {
+            if (((fd) this.f24354c.valueAt(i2)).x() == j) {
                 this.b.g(j);
             }
             i = i2 + 1;
@@ -111,10 +111,10 @@ public class dd extends uc<ed> {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f38045c.size()) {
+            if (i2 >= this.f24354c.size()) {
                 return false;
             }
-            if (((fd) this.f38045c.valueAt(i2)).isClickEnabled()) {
+            if (((fd) this.f24354c.valueAt(i2)).isClickEnabled()) {
                 return true;
             }
             i = i2 + 1;

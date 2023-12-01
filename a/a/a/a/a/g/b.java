@@ -21,11 +21,11 @@ public final class b implements Runnable {
     public int q;
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile a.a.a.a.a.f.c f1377a = a.a.a.a.a.f.c.IDLE;
+    public volatile a.a.a.a.a.f.c f1329a = a.a.a.a.a.f.c.IDLE;
     public volatile a.a.a.a.a.f.a b = a.a.a.a.a.f.a.NONE;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f1378c = 0;
+    public long f1330c = 0;
     public long d = 0;
     public long e = 0;
     public int f = 0;
@@ -73,18 +73,18 @@ public final class b implements Runnable {
 
     public void a(Context context) {
         synchronized (this) {
-            if (this.f1377a == a.a.a.a.a.f.c.RUNNING) {
+            if (this.f1329a == a.a.a.a.a.f.c.RUNNING) {
                 e.g.d("AudioManager", "startRecording failed as already being running");
-            } else if (this.f1377a == a.a.a.a.a.f.c.STOPPING) {
+            } else if (this.f1329a == a.a.a.a.a.f.c.STOPPING) {
                 e.g.c("AudioManager", "set pending action as START");
                 this.p = context;
                 this.b = a.a.a.a.a.f.a.START;
-            } else if (this.f1377a == a.a.a.a.a.f.c.STARTING) {
+            } else if (this.f1329a == a.a.a.a.a.f.c.STARTING) {
                 e.g.d("AudioManager", "startRecording failed as it is starting");
             } else {
                 e.g.c("AudioManager", "startRecording +");
-                this.f1377a = a.a.a.a.a.f.c.STARTING;
-                this.f1378c = 0L;
+                this.f1329a = a.a.a.a.a.f.c.STARTING;
+                this.f1330c = 0L;
                 this.e = 0L;
                 this.d = 0L;
                 int i = 1;
@@ -119,17 +119,17 @@ public final class b implements Runnable {
 
     public void b(Context context) {
         synchronized (this) {
-            if (this.f1377a == a.a.a.a.a.f.c.IDLE) {
+            if (this.f1329a == a.a.a.a.a.f.c.IDLE) {
                 e.g.d("AudioManager", "stopRecording failed as not being running");
-            } else if (this.f1377a == a.a.a.a.a.f.c.STARTING) {
+            } else if (this.f1329a == a.a.a.a.a.f.c.STARTING) {
                 e.g.c("AudioManager", "set pending action as STOP");
                 this.p = context;
                 this.b = a.a.a.a.a.f.a.STOP;
-            } else if (this.f1377a == a.a.a.a.a.f.c.STOPPING) {
+            } else if (this.f1329a == a.a.a.a.a.f.c.STOPPING) {
                 e.g.d("AudioManager", "stopRecording failed as it is stopping");
             } else {
                 e.g.c("AudioManager", "stopRecording +");
-                this.f1377a = a.a.a.a.a.f.c.STOPPING;
+                this.f1329a = a.a.a.a.a.f.c.STOPPING;
                 if (e()) {
                     e.g.c("AudioManager", "SCO enabled. unregister");
                     this.l.b(context);
@@ -152,7 +152,7 @@ public final class b implements Runnable {
                 this.k.c(read < 0);
             }
             if (read < 0) {
-                this.f1377a = a.a.a.a.a.f.c.IDLE;
+                this.f1329a = a.a.a.a.a.f.c.IDLE;
                 this.k.b(read);
             } else if (read <= 0) {
                 e.g.d("AudioManager", "AudioRecord read audioDataLength: 0");
@@ -171,9 +171,9 @@ public final class b implements Runnable {
                     this.h = null;
                 }
                 long nanoTime = System.nanoTime() / 1000;
-                this.f1378c = nanoTime;
+                this.f1330c = nanoTime;
                 long a2 = a(nanoTime, (read / this.q) / 2);
-                this.f1378c = a2;
+                this.f1330c = a2;
                 this.k.a(this.n, read, a2, z);
             }
         }
@@ -233,18 +233,18 @@ public final class b implements Runnable {
                 this.m.startRecording();
                 this.n = ByteBuffer.allocateDirect(this.f * 4);
                 synchronized (this) {
-                    this.f1377a = a.a.a.a.a.f.c.RUNNING;
+                    this.f1329a = a.a.a.a.a.f.c.RUNNING;
                     b();
                 }
                 e.g.c("AudioManager", "startRecording -");
-                while (this.f1377a == a.a.a.a.a.f.c.RUNNING) {
+                while (this.f1329a == a.a.a.a.a.f.c.RUNNING) {
                     b(false);
                 }
                 b(true);
                 d();
                 e.g.c("AudioManager", "stopRecording -");
                 synchronized (this) {
-                    this.f1377a = a.a.a.a.a.f.c.IDLE;
+                    this.f1329a = a.a.a.a.a.f.c.IDLE;
                     b();
                 }
             } catch (Throwable th) {
@@ -258,7 +258,7 @@ public final class b implements Runnable {
                 this.k.b(-100);
             }
             synchronized (this) {
-                this.f1377a = a.a.a.a.a.f.c.IDLE;
+                this.f1329a = a.a.a.a.a.f.c.IDLE;
                 b();
                 e.g.c("AudioManager", "startRecording -");
             }

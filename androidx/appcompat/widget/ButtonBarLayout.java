@@ -12,21 +12,21 @@ import androidx.core.view.ViewCompat;
 public class ButtonBarLayout extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f1810a;
+    private boolean f1762a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f1811c;
+    private int f1763c;
 
     public ButtonBarLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f1811c = -1;
+        this.f1763c = -1;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ButtonBarLayout);
         ViewCompat.saveAttributeDataForStyleable(this, context, R.styleable.ButtonBarLayout, attributeSet, obtainStyledAttributes, 0, 0);
-        this.f1810a = obtainStyledAttributes.getBoolean(R.styleable.ButtonBarLayout_allowStacking, true);
+        this.f1762a = obtainStyledAttributes.getBoolean(R.styleable.ButtonBarLayout_allowStacking, true);
         obtainStyledAttributes.recycle();
         if (getOrientation() == 1) {
-            setStacked(this.f1810a);
+            setStacked(this.f1762a);
         }
     }
 
@@ -50,17 +50,16 @@ public class ButtonBarLayout extends LinearLayout {
         throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         boolean z;
         int size = View.MeasureSpec.getSize(i);
-        if (this.f1810a) {
-            if (size > this.f1811c && a()) {
+        if (this.f1762a) {
+            if (size > this.f1763c && a()) {
                 setStacked(false);
             }
-            this.f1811c = size;
+            this.f1763c = size;
         }
         if (a() || View.MeasureSpec.getMode(i) != 1073741824) {
             i3 = i;
@@ -71,7 +70,7 @@ public class ButtonBarLayout extends LinearLayout {
         }
         super.onMeasure(i3, i2);
         boolean z2 = z;
-        if (this.f1810a) {
+        if (this.f1762a) {
             z2 = z;
             if (!a()) {
                 z2 = z;
@@ -109,8 +108,8 @@ public class ButtonBarLayout extends LinearLayout {
     }
 
     public void setAllowStacking(boolean z) {
-        if (this.f1810a != z) {
-            this.f1810a = z;
+        if (this.f1762a != z) {
+            this.f1762a = z;
             if (!z && a()) {
                 setStacked(false);
             }

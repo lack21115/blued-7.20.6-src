@@ -9,9 +9,7 @@ import javax.security.auth.x500.X500Principal;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/tls/BasicTrustRootIndex.class */
 public final class BasicTrustRootIndex implements TrustRootIndex {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Map<X500Principal, Set<X509Certificate>> f43982a = new LinkedHashMap();
+    private final Map<X500Principal, Set<X509Certificate>> a = new LinkedHashMap();
 
     public BasicTrustRootIndex(X509Certificate... x509CertificateArr) {
         int length = x509CertificateArr.length;
@@ -23,11 +21,11 @@ public final class BasicTrustRootIndex implements TrustRootIndex {
             }
             X509Certificate x509Certificate = x509CertificateArr[i2];
             X500Principal subjectX500Principal = x509Certificate.getSubjectX500Principal();
-            Set<X509Certificate> set = this.f43982a.get(subjectX500Principal);
+            Set<X509Certificate> set = this.a.get(subjectX500Principal);
             LinkedHashSet linkedHashSet = set;
             if (set == null) {
                 linkedHashSet = new LinkedHashSet(1);
-                this.f43982a.put(subjectX500Principal, linkedHashSet);
+                this.a.put(subjectX500Principal, linkedHashSet);
             }
             linkedHashSet.add(x509Certificate);
             i = i2 + 1;
@@ -36,7 +34,7 @@ public final class BasicTrustRootIndex implements TrustRootIndex {
 
     @Override // okhttp3.internal.tls.TrustRootIndex
     public X509Certificate a(X509Certificate x509Certificate) {
-        Set<X509Certificate> set = this.f43982a.get(x509Certificate.getIssuerX500Principal());
+        Set<X509Certificate> set = this.a.get(x509Certificate.getIssuerX500Principal());
         if (set == null) {
             return null;
         }
@@ -54,10 +52,10 @@ public final class BasicTrustRootIndex implements TrustRootIndex {
         if (obj == this) {
             return true;
         }
-        return (obj instanceof BasicTrustRootIndex) && ((BasicTrustRootIndex) obj).f43982a.equals(this.f43982a);
+        return (obj instanceof BasicTrustRootIndex) && ((BasicTrustRootIndex) obj).a.equals(this.a);
     }
 
     public int hashCode() {
-        return this.f43982a.hashCode();
+        return this.a.hashCode();
     }
 }

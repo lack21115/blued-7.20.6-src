@@ -6,13 +6,9 @@ import com.airbnb.lottie.LottieComposition;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/value/Keyframe.class */
 public class Keyframe<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final T f4418a;
+    public final T a;
     public T b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final Interpolator f4419c;
+    public final Interpolator c;
     public final float d;
     public Float e;
     public PointF f;
@@ -35,9 +31,9 @@ public class Keyframe<T> {
         this.f = null;
         this.g = null;
         this.h = lottieComposition;
-        this.f4418a = t;
+        this.a = t;
         this.b = t2;
-        this.f4419c = interpolator;
+        this.c = interpolator;
         this.d = f;
         this.e = f2;
     }
@@ -52,9 +48,9 @@ public class Keyframe<T> {
         this.f = null;
         this.g = null;
         this.h = null;
-        this.f4418a = t;
+        this.a = t;
         this.b = t;
-        this.f4419c = null;
+        this.c = null;
         this.d = Float.MIN_VALUE;
         this.e = Float.valueOf(Float.MAX_VALUE);
     }
@@ -89,12 +85,12 @@ public class Keyframe<T> {
     }
 
     public boolean e() {
-        return this.f4419c == null;
+        return this.c == null;
     }
 
     public float f() {
         if (this.i == -3987645.8f) {
-            this.i = ((Float) this.f4418a).floatValue();
+            this.i = ((Float) this.a).floatValue();
         }
         return this.i;
     }
@@ -108,7 +104,7 @@ public class Keyframe<T> {
 
     public int h() {
         if (this.k == 784923401) {
-            this.k = ((Integer) this.f4418a).intValue();
+            this.k = ((Integer) this.a).intValue();
         }
         return this.k;
     }
@@ -121,6 +117,6 @@ public class Keyframe<T> {
     }
 
     public String toString() {
-        return "Keyframe{startValue=" + this.f4418a + ", endValue=" + this.b + ", startFrame=" + this.d + ", endFrame=" + this.e + ", interpolator=" + this.f4419c + '}';
+        return "Keyframe{startValue=" + this.a + ", endValue=" + this.b + ", startFrame=" + this.d + ", endFrame=" + this.e + ", interpolator=" + this.c + '}';
     }
 }

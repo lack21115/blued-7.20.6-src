@@ -12,7 +12,7 @@ public class PieHighlighter extends PieRadarHighlighter<PieChart> {
 
     @Override // com.github.mikephil.charting.highlight.PieRadarHighlighter
     protected Highlight a(int i, float f, float f2) {
-        IPieDataSet a2 = ((PieData) ((PieChart) this.f22152a).getData()).a();
+        IPieDataSet a2 = ((PieData) ((PieChart) this.f8545a).getData()).a();
         return new Highlight(i, a2.e(i).b(), f, f2, 0, a2.C());
     }
 }

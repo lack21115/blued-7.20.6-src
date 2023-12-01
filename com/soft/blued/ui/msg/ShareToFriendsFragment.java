@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.share.ShareUtils;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.activity.PreloadFragment;
-import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLayout;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.utils.KeyboardUtils;
@@ -78,7 +78,7 @@ public class ShareToFriendsFragment extends PreloadFragment {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f31931c;
+        private ImageView f18241c;
         private ImageView d;
 
         private FriendListAdapter() {
@@ -93,12 +93,12 @@ public class ShareToFriendsFragment extends PreloadFragment {
                 return;
             }
             this.b = (TextView) baseViewHolder.getView(2131372046);
-            this.f31931c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
+            this.f18241c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
             this.d = (ImageView) baseViewHolder.getView(2131364726);
             this.b.setText(ShareToFriendsFragment.this.a(bluedBlackList));
             UserRelationshipUtils.a(this.mContext, this.b, bluedBlackList);
             UserRelationshipUtils.a(this.d, bluedBlackList);
-            ImageLoader.a(ShareToFriendsFragment.this.getFragmentActive(), bluedBlackList.avatar).b(2131237310).c().a(this.f31931c);
+            ImageLoader.a(ShareToFriendsFragment.this.getFragmentActive(), bluedBlackList.avatar).b(2131237310).c().a(this.f18241c);
         }
     }
 
@@ -163,7 +163,7 @@ public class ShareToFriendsFragment extends PreloadFragment {
             return;
         }
         if (this.t.getData().size() > 0) {
-            AppMethods.a((CharSequence) this.s.getResources().getString(2131887275));
+            AppMethods.a(this.s.getResources().getString(2131887275));
         }
     }
 
@@ -175,22 +175,20 @@ public class ShareToFriendsFragment extends PreloadFragment {
         if (this.C.data.size() > 0 && !TextUtils.isEmpty(str)) {
             if (!i()) {
                 this.u.a();
-                this.t.setEmptyView(this.u);
+                this.t.setEmptyView((View) this.u);
             }
-            ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>() { // from class: com.soft.blued.ui.msg.ShareToFriendsFragment.6
+            ChatHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>() { // from class: com.soft.blued.ui.msg.ShareToFriendsFragment.6
 
                 /* renamed from: a  reason: collision with root package name */
-                boolean f31928a = false;
+                boolean f18238a = false;
 
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<BluedBlackList> bluedEntityA) {
-                    this.f31928a = false;
+                    this.f18238a = false;
                     ShareToFriendsFragment.this.a(bluedEntityA, true);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str2) {
                     if (ShareToFriendsFragment.this.l != 1) {
                         ShareToFriendsFragment.this.t.loadMoreFail();
@@ -199,17 +197,16 @@ public class ShareToFriendsFragment extends PreloadFragment {
                     return super.onUIFailure(i, str2);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     super.onUIFinish();
-                    if (!ShareToFriendsFragment.this.p && !this.f31928a) {
+                    if (!ShareToFriendsFragment.this.p && !this.f18238a) {
                         if (ShareToFriendsFragment.this.r) {
                             ShareToFriendsFragment.this.t.loadMoreComplete();
                         } else {
                             ShareToFriendsFragment.this.t.loadMoreEnd();
                         }
                     }
-                    if (!ShareToFriendsFragment.this.p || this.f31928a) {
+                    if (!ShareToFriendsFragment.this.p || this.f18238a) {
                         return;
                     }
                     if (ShareToFriendsFragment.this.l != 1) {
@@ -220,13 +217,12 @@ public class ShareToFriendsFragment extends PreloadFragment {
                     ShareToFriendsFragment.this.t.loadMoreEnd();
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     super.onUIStart();
                     ShareToFriendsFragment.this.p = false;
                     ShareToFriendsFragment.this.r = false;
                 }
-            }, UserInfo.getInstance().getLoginUserInfo().getUid(), str, this.l, getFragmentActive());
+            }, UserInfo.getInstance().getLoginUserInfo().getUid(), str, this.l, (IRequestHost) getFragmentActive());
         }
         try {
             if (this.C.data.size() <= 0 || !TextUtils.isEmpty(str)) {
@@ -276,21 +272,19 @@ public class ShareToFriendsFragment extends PreloadFragment {
         BluedUIHttpResponse<BluedEntityA<BluedBlackList>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<BluedBlackList>>() { // from class: com.soft.blued.ui.msg.ShareToFriendsFragment.7
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f31929a = false;
+            boolean f18239a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedBlackList> bluedEntityA) {
-                this.f31929a = false;
+                this.f18239a = false;
                 ShareToFriendsFragment.this.a(bluedEntityA, false);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (ShareToFriendsFragment.this.k == 1 && ShareToFriendsFragment.this.t.getData().size() == 0) {
                     ShareToFriendsFragment.this.u.b();
-                    ShareToFriendsFragment.this.t.setEmptyView(ShareToFriendsFragment.this.u);
+                    ShareToFriendsFragment.this.t.setEmptyView((View) ShareToFriendsFragment.this.u);
                     ShareToFriendsFragment.this.t.setNewData(null);
                 } else if (ShareToFriendsFragment.this.k != 1) {
                     ShareToFriendsFragment.this.t.loadMoreFail();
@@ -301,24 +295,23 @@ public class ShareToFriendsFragment extends PreloadFragment {
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 ShareToFriendsFragment.this.y.setVisibility(8);
                 ShareToFriendsFragment.this.B.j();
-                if (!ShareToFriendsFragment.this.o && !this.f31929a) {
+                if (!ShareToFriendsFragment.this.o && !this.f18239a) {
                     if (ShareToFriendsFragment.this.q) {
                         ShareToFriendsFragment.this.t.loadMoreComplete();
                     } else {
                         ShareToFriendsFragment.this.t.loadMoreEnd();
                     }
                 }
-                if (ShareToFriendsFragment.this.o && !this.f31929a) {
+                if (ShareToFriendsFragment.this.o && !this.f18239a) {
                     if (ShareToFriendsFragment.this.k != 1) {
                         ShareToFriendsFragment.r(ShareToFriendsFragment.this);
                     } else {
                         ShareToFriendsFragment.this.u.a();
-                        ShareToFriendsFragment.this.t.setEmptyView(ShareToFriendsFragment.this.u);
+                        ShareToFriendsFragment.this.t.setEmptyView((View) ShareToFriendsFragment.this.u);
                         ShareToFriendsFragment.this.t.setNewData(null);
                     }
                     ShareToFriendsFragment.this.t.loadMoreEnd();
@@ -327,7 +320,6 @@ public class ShareToFriendsFragment extends PreloadFragment {
                 shareToFriendsFragment.a(shareToFriendsFragment.t.getData());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 ShareToFriendsFragment.this.o = false;
@@ -378,20 +370,19 @@ public class ShareToFriendsFragment extends PreloadFragment {
         return i;
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         this.C = new FriendsModel();
         View inflate = LayoutInflater.from(this.s).inflate(R.layout.fragment_share_to_single, (ViewGroup) view, true);
-        SearchView searchView = (SearchView) LayoutInflater.from(this.s).inflate(R.layout.layout_msg_search_view, (ViewGroup) null);
-        this.A = searchView;
-        this.w = searchView.getEditView();
+        SearchView inflate2 = LayoutInflater.from(this.s).inflate(R.layout.layout_msg_search_view, (ViewGroup) null);
+        this.A = inflate2;
+        this.w = inflate2.getEditView();
         this.x = (FrameLayout) inflate.findViewById(2131363911);
         this.y = (ProgressBar) inflate.findViewById(2131368973);
-        this.v = inflate.findViewById(2131366095);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) inflate.findViewById(R.id.ptrrv_list);
-        this.B = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(true);
-        this.z = this.B.getRefreshableView();
+        this.v = inflate.findViewById(R.id.keyboard_view);
+        PullToRefreshRecyclerView findViewById = inflate.findViewById(R.id.ptrrv_list);
+        this.B = findViewById;
+        findViewById.setRefreshEnabled(true);
+        this.z = (RecyclerView) this.B.getRefreshableView();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.s);
         this.t = new FriendListAdapter();
         this.z.setLayoutManager(linearLayoutManager);
@@ -406,21 +397,18 @@ public class ShareToFriendsFragment extends PreloadFragment {
         noDataAndLoadFailView.setNoDataStr(2131892287);
         this.u.setNoDataImg(2131233641);
         this.u.d();
-        this.d = (KeyboardListenLinearLayout) inflate.findViewById(2131366092);
+        this.d = inflate.findViewById(R.id.keyboard_layout);
         super.a(this.d);
         this.A.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.msg.ShareToFriendsFragment.1
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 KeyboardUtils.a((Activity) ShareToFriendsFragment.this.s);
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 ShareToFriendsFragment.this.l = 1;
                 ShareToFriendsFragment.this.a(str);
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -465,7 +453,6 @@ public class ShareToFriendsFragment extends PreloadFragment {
             }
         }, this.z);
         this.B.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.msg.ShareToFriendsFragment.5
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 ShareToFriendsFragment.this.k = 1;
                 ShareToFriendsFragment.this.h();
@@ -474,7 +461,6 @@ public class ShareToFriendsFragment extends PreloadFragment {
         h();
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         if (i == -3) {
             this.m = false;
@@ -499,7 +485,6 @@ public class ShareToFriendsFragment extends PreloadFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
         this.s = context;

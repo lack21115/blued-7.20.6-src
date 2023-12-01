@@ -16,7 +16,7 @@ import java.io.InputStream;
 public class StreamBitmapDecoder implements ResourceDecoder<InputStream, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Downsampler f20970a;
+    private final Downsampler f7364a;
     private final ArrayPool b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -24,17 +24,17 @@ public class StreamBitmapDecoder implements ResourceDecoder<InputStream, Bitmap>
     public static class UntrustedCallbacks implements Downsampler.DecodeCallbacks {
 
         /* renamed from: a  reason: collision with root package name */
-        private final RecyclableBufferedInputStream f20971a;
+        private final RecyclableBufferedInputStream f7365a;
         private final ExceptionCatchingInputStream b;
 
         UntrustedCallbacks(RecyclableBufferedInputStream recyclableBufferedInputStream, ExceptionCatchingInputStream exceptionCatchingInputStream) {
-            this.f20971a = recyclableBufferedInputStream;
+            this.f7365a = recyclableBufferedInputStream;
             this.b = exceptionCatchingInputStream;
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.Downsampler.DecodeCallbacks
         public void a() {
-            this.f20971a.a();
+            this.f7365a.a();
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.Downsampler.DecodeCallbacks
@@ -50,7 +50,7 @@ public class StreamBitmapDecoder implements ResourceDecoder<InputStream, Bitmap>
     }
 
     public StreamBitmapDecoder(Downsampler downsampler, ArrayPool arrayPool) {
-        this.f20970a = downsampler;
+        this.f7364a = downsampler;
         this.b = arrayPool;
     }
 
@@ -67,7 +67,7 @@ public class StreamBitmapDecoder implements ResourceDecoder<InputStream, Bitmap>
         }
         ExceptionCatchingInputStream a2 = ExceptionCatchingInputStream.a(recyclableBufferedInputStream);
         try {
-            return this.f20970a.a(new MarkEnforcingInputStream(a2), i, i2, options, new UntrustedCallbacks(recyclableBufferedInputStream, a2));
+            return this.f7364a.a(new MarkEnforcingInputStream(a2), i, i2, options, new UntrustedCallbacks(recyclableBufferedInputStream, a2));
         } finally {
             a2.b();
             if (z) {
@@ -78,6 +78,6 @@ public class StreamBitmapDecoder implements ResourceDecoder<InputStream, Bitmap>
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean a(InputStream inputStream, Options options) {
-        return this.f20970a.a(inputStream);
+        return this.f7364a.a(inputStream);
     }
 }

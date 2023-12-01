@@ -6,11 +6,11 @@ import android.util.Log;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f1360a = "PLDroidMediaStreaming";
+    public static String f1312a = "PLDroidMediaStreaming";
     public static int b = 4;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final e f1361c = new e("");
+    public static final e f1313c = new e("");
     public static final e d = new e("Pili-Interface");
     public static final e e = new e("Pili-System");
     public static final e f = new e("Pili-Streaming");
@@ -56,7 +56,7 @@ public class e {
         if (b > 2) {
             return;
         }
-        String str3 = f1360a;
+        String str3 = f1312a;
         Log.v(str3, c(str) + str2);
     }
 
@@ -68,7 +68,7 @@ public class e {
         if (b > 3) {
             return;
         }
-        String str3 = f1360a;
+        String str3 = f1312a;
         Log.d(str3, c(str) + str2);
     }
 
@@ -94,7 +94,7 @@ public class e {
         if (b > 4) {
             return;
         }
-        String str3 = f1360a;
+        String str3 = f1312a;
         Log.i(str3, c(str) + str2);
     }
 
@@ -102,7 +102,7 @@ public class e {
         if (b > 5) {
             return;
         }
-        String str3 = f1360a;
+        String str3 = f1312a;
         Log.w(str3, c(str) + str2);
     }
 
@@ -110,7 +110,7 @@ public class e {
         if (b > 6) {
             return;
         }
-        String str3 = f1360a;
+        String str3 = f1312a;
         Log.e(str3, c(str) + str2);
     }
 }

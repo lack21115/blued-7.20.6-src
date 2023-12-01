@@ -19,11 +19,11 @@ public class ConstraintAnchor {
     public final Type mType;
 
     /* renamed from: c  reason: collision with root package name */
-    private HashSet<ConstraintAnchor> f2116c = null;
+    private HashSet<ConstraintAnchor> f2068c = null;
     public int mMargin = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    int f2115a = Integer.MIN_VALUE;
+    int f2067a = Integer.MIN_VALUE;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.constraintlayout.core.widgets.ConstraintAnchor$1  reason: invalid class name */
@@ -31,7 +31,7 @@ public class ConstraintAnchor {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2117a;
+        static final /* synthetic */ int[] f2069a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0071 -> B:49:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0075 -> B:45:0x001f). Please submit an issue!!! */
@@ -43,41 +43,41 @@ public class ConstraintAnchor {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x008d -> B:51:0x0064). Please submit an issue!!! */
         static {
             int[] iArr = new int[Type.values().length];
-            f2117a = iArr;
+            f2069a = iArr;
             try {
                 iArr[Type.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2117a[Type.LEFT.ordinal()] = 2;
+                f2069a[Type.LEFT.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2117a[Type.RIGHT.ordinal()] = 3;
+                f2069a[Type.RIGHT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2117a[Type.TOP.ordinal()] = 4;
+                f2069a[Type.TOP.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2117a[Type.BOTTOM.ordinal()] = 5;
+                f2069a[Type.BOTTOM.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2117a[Type.BASELINE.ordinal()] = 6;
+                f2069a[Type.BASELINE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2117a[Type.CENTER_X.ordinal()] = 7;
+                f2069a[Type.CENTER_X.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f2117a[Type.CENTER_Y.ordinal()] = 8;
+                f2069a[Type.CENTER_Y.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f2117a[Type.NONE.ordinal()] = 9;
+                f2069a[Type.NONE.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
         }
@@ -135,15 +135,15 @@ public class ConstraintAnchor {
             return true;
         } else if (z || isValidConnection(constraintAnchor)) {
             this.mTarget = constraintAnchor;
-            if (constraintAnchor.f2116c == null) {
-                constraintAnchor.f2116c = new HashSet<>();
+            if (constraintAnchor.f2068c == null) {
+                constraintAnchor.f2068c = new HashSet<>();
             }
-            HashSet<ConstraintAnchor> hashSet = this.mTarget.f2116c;
+            HashSet<ConstraintAnchor> hashSet = this.mTarget.f2068c;
             if (hashSet != null) {
                 hashSet.add(this);
             }
             this.mMargin = i;
-            this.f2115a = i2;
+            this.f2067a = i2;
             return true;
         } else {
             return false;
@@ -153,7 +153,7 @@ public class ConstraintAnchor {
     public void copyFrom(ConstraintAnchor constraintAnchor, HashMap<ConstraintWidget, ConstraintWidget> hashMap) {
         HashSet<ConstraintAnchor> hashSet;
         ConstraintAnchor constraintAnchor2 = this.mTarget;
-        if (constraintAnchor2 != null && (hashSet = constraintAnchor2.f2116c) != null) {
+        if (constraintAnchor2 != null && (hashSet = constraintAnchor2.f2068c) != null) {
             hashSet.remove(this);
         }
         ConstraintAnchor constraintAnchor3 = constraintAnchor.mTarget;
@@ -164,17 +164,17 @@ public class ConstraintAnchor {
         }
         ConstraintAnchor constraintAnchor4 = this.mTarget;
         if (constraintAnchor4 != null) {
-            if (constraintAnchor4.f2116c == null) {
-                constraintAnchor4.f2116c = new HashSet<>();
+            if (constraintAnchor4.f2068c == null) {
+                constraintAnchor4.f2068c = new HashSet<>();
             }
-            this.mTarget.f2116c.add(this);
+            this.mTarget.f2068c.add(this);
         }
         this.mMargin = constraintAnchor.mMargin;
-        this.f2115a = constraintAnchor.f2115a;
+        this.f2067a = constraintAnchor.f2067a;
     }
 
     public void findDependents(int i, ArrayList<WidgetGroup> arrayList, WidgetGroup widgetGroup) {
-        HashSet<ConstraintAnchor> hashSet = this.f2116c;
+        HashSet<ConstraintAnchor> hashSet = this.f2068c;
         if (hashSet != null) {
             Iterator<ConstraintAnchor> it = hashSet.iterator();
             while (it.hasNext()) {
@@ -184,7 +184,7 @@ public class ConstraintAnchor {
     }
 
     public HashSet<ConstraintAnchor> getDependents() {
-        return this.f2116c;
+        return this.f2068c;
     }
 
     public int getFinalValue() {
@@ -199,11 +199,11 @@ public class ConstraintAnchor {
         if (this.mOwner.getVisibility() == 8) {
             return 0;
         }
-        return (this.f2115a == Integer.MIN_VALUE || (constraintAnchor = this.mTarget) == null || constraintAnchor.mOwner.getVisibility() != 8) ? this.mMargin : this.f2115a;
+        return (this.f2067a == Integer.MIN_VALUE || (constraintAnchor = this.mTarget) == null || constraintAnchor.mOwner.getVisibility() != 8) ? this.mMargin : this.f2067a;
     }
 
     public final ConstraintAnchor getOpposite() {
-        switch (AnonymousClass1.f2117a[this.mType.ordinal()]) {
+        switch (AnonymousClass1.f2069a[this.mType.ordinal()]) {
             case 1:
             case 6:
             case 7:
@@ -240,7 +240,7 @@ public class ConstraintAnchor {
     }
 
     public boolean hasCenteredDependents() {
-        HashSet<ConstraintAnchor> hashSet = this.f2116c;
+        HashSet<ConstraintAnchor> hashSet = this.f2068c;
         if (hashSet == null) {
             return false;
         }
@@ -254,7 +254,7 @@ public class ConstraintAnchor {
     }
 
     public boolean hasDependents() {
-        HashSet<ConstraintAnchor> hashSet = this.f2116c;
+        HashSet<ConstraintAnchor> hashSet = this.f2068c;
         boolean z = false;
         if (hashSet == null) {
             return false;
@@ -286,7 +286,7 @@ public class ConstraintAnchor {
     }
 
     public boolean isSideAnchor() {
-        switch (AnonymousClass1.f2117a[this.mType.ordinal()]) {
+        switch (AnonymousClass1.f2069a[this.mType.ordinal()]) {
             case 1:
             case 6:
             case 7:
@@ -308,7 +308,7 @@ public class ConstraintAnchor {
         if (type == this.mType) {
             return true;
         }
-        switch (AnonymousClass1.f2117a[this.mType.ordinal()]) {
+        switch (AnonymousClass1.f2069a[this.mType.ordinal()]) {
             case 1:
                 return type != Type.BASELINE;
             case 2:
@@ -369,7 +369,7 @@ public class ConstraintAnchor {
     }
 
     public boolean isVerticalAnchor() {
-        switch (AnonymousClass1.f2117a[this.mType.ordinal()]) {
+        switch (AnonymousClass1.f2069a[this.mType.ordinal()]) {
             case 1:
             case 2:
             case 3:
@@ -389,16 +389,16 @@ public class ConstraintAnchor {
     public void reset() {
         HashSet<ConstraintAnchor> hashSet;
         ConstraintAnchor constraintAnchor = this.mTarget;
-        if (constraintAnchor != null && (hashSet = constraintAnchor.f2116c) != null) {
+        if (constraintAnchor != null && (hashSet = constraintAnchor.f2068c) != null) {
             hashSet.remove(this);
-            if (this.mTarget.f2116c.size() == 0) {
-                this.mTarget.f2116c = null;
+            if (this.mTarget.f2068c.size() == 0) {
+                this.mTarget.f2068c = null;
             }
         }
-        this.f2116c = null;
+        this.f2068c = null;
         this.mTarget = null;
         this.mMargin = 0;
-        this.f2115a = Integer.MIN_VALUE;
+        this.f2067a = Integer.MIN_VALUE;
         this.e = false;
         this.d = 0;
     }
@@ -424,7 +424,7 @@ public class ConstraintAnchor {
 
     public void setGoneMargin(int i) {
         if (isConnected()) {
-            this.f2115a = i;
+            this.f2067a = i;
         }
     }
 

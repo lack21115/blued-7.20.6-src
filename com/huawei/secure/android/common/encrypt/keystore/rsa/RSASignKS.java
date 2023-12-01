@@ -26,11 +26,11 @@ import java.security.cert.CertificateException;
 public abstract class RSASignKS {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23079a = "RSASignKS";
+    private static final String f9471a = "RSASignKS";
     private static final String b = "AndroidKeyStore";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23080c = "SHA256withRSA/PSS";
+    private static final String f9472c = "SHA256withRSA/PSS";
     private static final String d = "";
     private static final int e = 2048;
     private static final int f = 3072;
@@ -40,7 +40,7 @@ public abstract class RSASignKS {
         synchronized (RSASignKS.class) {
             try {
                 if (a(str)) {
-                    b.b(f23079a, "Key pair exits");
+                    b.b(f9471a, "Key pair exits");
                     return null;
                 }
                 try {
@@ -54,15 +54,15 @@ public abstract class RSASignKS {
                             }
                             keyPair = keyPairGenerator.generateKeyPair();
                         } catch (NoSuchAlgorithmException e2) {
-                            b.b(f23079a, "NoSuchAlgorithmException: " + e2.getMessage());
+                            b.b(f9471a, "NoSuchAlgorithmException: " + e2.getMessage());
                             keyPair = null;
                         }
                     } catch (NoSuchProviderException e3) {
-                        b.b(f23079a, "NoSuchProviderException: " + e3.getMessage());
+                        b.b(f9471a, "NoSuchProviderException: " + e3.getMessage());
                         keyPair = null;
                     }
                 } catch (InvalidAlgorithmParameterException e4) {
-                    b.b(f23079a, "InvalidAlgorithmParameterException: " + e4.getMessage());
+                    b.b(f9471a, "InvalidAlgorithmParameterException: " + e4.getMessage());
                     keyPair = null;
                 }
                 return keyPair;
@@ -81,55 +81,55 @@ public abstract class RSASignKS {
             }
             return z;
         } catch (IOException e2) {
-            b.b(f23079a, "IOException: " + e2.getMessage());
+            b.b(f9471a, "IOException: " + e2.getMessage());
             return false;
         } catch (KeyStoreException e3) {
-            b.b(f23079a, "KeyStoreException: " + e3.getMessage());
+            b.b(f9471a, "KeyStoreException: " + e3.getMessage());
             return false;
         } catch (NoSuchAlgorithmException e4) {
-            b.b(f23079a, "NoSuchAlgorithmException: " + e4.getMessage());
+            b.b(f9471a, "NoSuchAlgorithmException: " + e4.getMessage());
             return false;
         } catch (UnrecoverableKeyException e5) {
-            b.b(f23079a, "UnrecoverableKeyException: " + e5.getMessage());
+            b.b(f9471a, "UnrecoverableKeyException: " + e5.getMessage());
             return false;
         } catch (CertificateException e6) {
-            b.b(f23079a, "CertificateException: " + e6.getMessage());
+            b.b(f9471a, "CertificateException: " + e6.getMessage());
             return false;
         }
     }
 
     private static boolean a(String str, byte[] bArr, byte[] bArr2, boolean z) {
         if (TextUtils.isEmpty(str) || bArr == null || bArr2 == null) {
-            b.b(f23079a, "alias or content or sign value is null");
+            b.b(f9471a, "alias or content or sign value is null");
             return false;
         } else if (!isBuildVersionHigherThan22()) {
-            b.b(f23079a, "sdk version is too low");
+            b.b(f9471a, "sdk version is too low");
             return false;
         } else {
             KeyStore.Entry b2 = b(str, z);
             if (!(b2 instanceof KeyStore.PrivateKeyEntry)) {
-                b.b(f23079a, "Not an instance of a PrivateKeyEntry");
+                b.b(f9471a, "Not an instance of a PrivateKeyEntry");
                 return false;
             }
             try {
-                Signature signature = Signature.getInstance(f23080c);
+                Signature signature = Signature.getInstance(f9472c);
                 signature.initVerify(((KeyStore.PrivateKeyEntry) b2).getCertificate());
                 signature.update(bArr);
                 return signature.verify(bArr2);
             } catch (InvalidKeyException e2) {
-                String str2 = f23079a;
+                String str2 = f9471a;
                 b.b(str2, "InvalidKeyException: " + e2.getMessage());
                 return false;
             } catch (NoSuchAlgorithmException e3) {
-                String str3 = f23079a;
+                String str3 = f9471a;
                 b.b(str3, "NoSuchAlgorithmException: " + e3.getMessage());
                 return false;
             } catch (SignatureException e4) {
-                String str4 = f23079a;
+                String str4 = f9471a;
                 b.b(str4, "SignatureException: " + e4.getMessage());
                 return false;
             } catch (Exception e5) {
-                String str5 = f23079a;
+                String str5 = f9471a;
                 b.b(str5, "Exception: " + e5.getMessage());
                 return false;
             }
@@ -139,36 +139,36 @@ public abstract class RSASignKS {
     private static byte[] a(String str, byte[] bArr, boolean z) {
         byte[] bArr2 = new byte[0];
         if (TextUtils.isEmpty(str) || bArr == null) {
-            b.b(f23079a, "alias or content is null");
+            b.b(f9471a, "alias or content is null");
             return bArr2;
         } else if (!isBuildVersionHigherThan22()) {
-            b.b(f23079a, "sdk version is too low");
+            b.b(f9471a, "sdk version is too low");
             return bArr2;
         } else {
             KeyStore.Entry b2 = b(str, z);
             if (!(b2 instanceof KeyStore.PrivateKeyEntry)) {
-                b.b(f23079a, "Not an instance of a PrivateKeyEntry");
+                b.b(f9471a, "Not an instance of a PrivateKeyEntry");
                 return bArr2;
             }
             try {
-                Signature signature = Signature.getInstance(f23080c);
+                Signature signature = Signature.getInstance(f9472c);
                 signature.initSign(((KeyStore.PrivateKeyEntry) b2).getPrivateKey());
                 signature.update(bArr);
                 return signature.sign();
             } catch (InvalidKeyException e2) {
-                String str2 = f23079a;
+                String str2 = f9471a;
                 b.b(str2, "InvalidKeyException: " + e2.getMessage());
                 return bArr2;
             } catch (NoSuchAlgorithmException e3) {
-                String str3 = f23079a;
+                String str3 = f9471a;
                 b.b(str3, "NoSuchAlgorithmException: " + e3.getMessage());
                 return bArr2;
             } catch (SignatureException e4) {
-                String str4 = f23079a;
+                String str4 = f9471a;
                 b.b(str4, "SignatureException: " + e4.getMessage());
                 return bArr2;
             } catch (Exception e5) {
-                String str5 = f23079a;
+                String str5 = f9471a;
                 b.b(str5, "Exception: " + e5.getMessage());
                 return bArr2;
             }
@@ -184,23 +184,23 @@ public abstract class RSASignKS {
             keyStore.load(null);
             return keyStore.getEntry(str, null);
         } catch (IOException e2) {
-            String str2 = f23079a;
+            String str2 = f9471a;
             b.b(str2, "IOException: " + e2.getMessage());
             return null;
         } catch (KeyStoreException e3) {
-            String str3 = f23079a;
+            String str3 = f9471a;
             b.b(str3, "KeyStoreException: " + e3.getMessage());
             return null;
         } catch (NoSuchAlgorithmException e4) {
-            String str4 = f23079a;
+            String str4 = f9471a;
             b.b(str4, "NoSuchAlgorithmException: " + e4.getMessage());
             return null;
         } catch (UnrecoverableEntryException e5) {
-            String str5 = f23079a;
+            String str5 = f9471a;
             b.b(str5, "UnrecoverableEntryException: " + e5.getMessage());
             return null;
         } catch (CertificateException e6) {
-            String str6 = f23079a;
+            String str6 = f9471a;
             b.b(str6, "CertificateException: " + e6.getMessage());
             return null;
         }
@@ -215,7 +215,7 @@ public abstract class RSASignKS {
         try {
             return Base64.encodeToString(sign(str, str2.getBytes("UTF-8")), 0);
         } catch (UnsupportedEncodingException e2) {
-            String str3 = f23079a;
+            String str3 = f9471a;
             Log.e(str3, "sign UnsupportedEncodingException : " + e2.getMessage());
             return "";
         }
@@ -230,7 +230,7 @@ public abstract class RSASignKS {
         try {
             return Base64.encodeToString(signNew(str, str2.getBytes("UTF-8")), 0);
         } catch (UnsupportedEncodingException e2) {
-            String str3 = f23079a;
+            String str3 = f9471a;
             Log.e(str3, "sign UnsupportedEncodingException : " + e2.getMessage());
             return "";
         }
@@ -245,11 +245,11 @@ public abstract class RSASignKS {
         try {
             return verifySign(str, str2.getBytes("UTF-8"), Base64.decode(str3, 0));
         } catch (UnsupportedEncodingException e2) {
-            String str4 = f23079a;
+            String str4 = f9471a;
             Log.e(str4, "verifySign UnsupportedEncodingException: " + e2.getMessage());
             return false;
         } catch (Exception e3) {
-            String str5 = f23079a;
+            String str5 = f9471a;
             b.b(str5, "base64 decode Exception" + e3.getMessage());
             return false;
         }
@@ -264,11 +264,11 @@ public abstract class RSASignKS {
         try {
             return verifySignNew(str, str2.getBytes("UTF-8"), Base64.decode(str3, 0));
         } catch (UnsupportedEncodingException e2) {
-            String str4 = f23079a;
+            String str4 = f9471a;
             Log.e(str4, "verifySign UnsupportedEncodingException: " + e2.getMessage());
             return false;
         } catch (Exception e3) {
-            String str5 = f23079a;
+            String str5 = f9471a;
             b.b(str5, "base64 decode Exception" + e3.getMessage());
             return false;
         }

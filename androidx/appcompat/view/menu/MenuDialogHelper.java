@@ -15,11 +15,11 @@ import com.bytedance.applog.tracker.Tracker;
 class MenuDialogHelper implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, DialogInterface.OnKeyListener, MenuPresenter.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    ListMenuPresenter f1677a;
+    ListMenuPresenter f1629a;
     private MenuBuilder b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AlertDialog f1678c;
+    private AlertDialog f1630c;
     private MenuPresenter.Callback d;
 
     public MenuDialogHelper(MenuBuilder menuBuilder) {
@@ -27,7 +27,7 @@ class MenuDialogHelper implements DialogInterface.OnClickListener, DialogInterfa
     }
 
     public void dismiss() {
-        AlertDialog alertDialog = this.f1678c;
+        AlertDialog alertDialog = this.f1630c;
         if (alertDialog != null) {
             alertDialog.dismiss();
         }
@@ -36,7 +36,7 @@ class MenuDialogHelper implements DialogInterface.OnClickListener, DialogInterfa
     @Override // android.content.DialogInterface.OnClickListener
     public void onClick(DialogInterface dialogInterface, int i) {
         Tracker.onClick(dialogInterface, i);
-        this.b.performItemAction((MenuItemImpl) this.f1677a.getAdapter().getItem(i), 0);
+        this.b.performItemAction((MenuItemImpl) this.f1629a.getAdapter().getItem(i), 0);
     }
 
     @Override // androidx.appcompat.view.menu.MenuPresenter.Callback
@@ -52,7 +52,7 @@ class MenuDialogHelper implements DialogInterface.OnClickListener, DialogInterfa
 
     @Override // android.content.DialogInterface.OnDismissListener
     public void onDismiss(DialogInterface dialogInterface) {
-        this.f1677a.onCloseMenu(this.b, true);
+        this.f1629a.onCloseMenu(this.b, true);
     }
 
     @Override // android.content.DialogInterface.OnKeyListener
@@ -64,12 +64,12 @@ class MenuDialogHelper implements DialogInterface.OnClickListener, DialogInterfa
         KeyEvent.DispatcherState keyDispatcherState2;
         if (i == 82 || i == 4) {
             if (keyEvent.getAction() == 0 && keyEvent.getRepeatCount() == 0) {
-                Window window2 = this.f1678c.getWindow();
+                Window window2 = this.f1630c.getWindow();
                 if (window2 != null && (decorView2 = window2.getDecorView()) != null && (keyDispatcherState2 = decorView2.getKeyDispatcherState()) != null) {
                     keyDispatcherState2.startTracking(keyEvent, this);
                     return true;
                 }
-            } else if (keyEvent.getAction() == 1 && !keyEvent.isCanceled() && (window = this.f1678c.getWindow()) != null && (decorView = window.getDecorView()) != null && (keyDispatcherState = decorView.getKeyDispatcherState()) != null && keyDispatcherState.isTracking(keyEvent)) {
+            } else if (keyEvent.getAction() == 1 && !keyEvent.isCanceled() && (window = this.f1630c.getWindow()) != null && (decorView = window.getDecorView()) != null && (keyDispatcherState = decorView.getKeyDispatcherState()) != null && keyDispatcherState.isTracking(keyEvent)) {
                 this.b.close(true);
                 dialogInterface.dismiss();
                 return true;
@@ -95,10 +95,10 @@ class MenuDialogHelper implements DialogInterface.OnClickListener, DialogInterfa
         MenuBuilder menuBuilder = this.b;
         AlertDialog.Builder builder = new AlertDialog.Builder(menuBuilder.getContext());
         ListMenuPresenter listMenuPresenter = new ListMenuPresenter(builder.getContext(), R.layout.abc_list_menu_item_layout);
-        this.f1677a = listMenuPresenter;
+        this.f1629a = listMenuPresenter;
         listMenuPresenter.setCallback(this);
-        this.b.addMenuPresenter(this.f1677a);
-        builder.setAdapter(this.f1677a.getAdapter(), this);
+        this.b.addMenuPresenter(this.f1629a);
+        builder.setAdapter(this.f1629a.getAdapter(), this);
         View headerView = menuBuilder.getHeaderView();
         if (headerView != null) {
             builder.setCustomTitle(headerView);
@@ -107,14 +107,14 @@ class MenuDialogHelper implements DialogInterface.OnClickListener, DialogInterfa
         }
         builder.setOnKeyListener(this);
         AlertDialog create = builder.create();
-        this.f1678c = create;
+        this.f1630c = create;
         create.setOnDismissListener(this);
-        WindowManager.LayoutParams attributes = this.f1678c.getWindow().getAttributes();
+        WindowManager.LayoutParams attributes = this.f1630c.getWindow().getAttributes();
         attributes.type = 1003;
         if (iBinder != null) {
             attributes.token = iBinder;
         }
         attributes.flags |= 131072;
-        this.f1678c.show();
+        this.f1630c.show();
     }
 }

@@ -7,14 +7,14 @@ import android.text.TextUtils;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f24485a;
+    private static String f10798a;
 
     public static String a(Context context) {
-        return !TextUtils.isEmpty(f24485a) ? f24485a : com.opos.cmn.biz.a.b.a(context);
+        return !TextUtils.isEmpty(f10798a) ? f10798a : com.opos.cmn.biz.a.b.a(context);
     }
 
     public static void a(final Context context, final String str) {
-        f24485a = str;
+        f10798a = str;
         com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.cmn.an.b.a.1
             @Override // java.lang.Runnable
             public void run() {

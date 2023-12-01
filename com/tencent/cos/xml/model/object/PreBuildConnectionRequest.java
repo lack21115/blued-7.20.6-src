@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.object;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.CosXmlServiceConfig;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
@@ -27,7 +26,7 @@ public final class PreBuildConnectionRequest extends CosXmlRequest {
 
     @Override // com.tencent.cos.xml.model.CosXmlRequest
     public String getPath(CosXmlServiceConfig cosXmlServiceConfig) {
-        return cosXmlServiceConfig.getUrlPath(this.bucket, BridgeUtil.SPLIT_MARK);
+        return cosXmlServiceConfig.getUrlPath(this.bucket, "/");
     }
 
     @Override // com.tencent.cos.xml.model.CosXmlRequest

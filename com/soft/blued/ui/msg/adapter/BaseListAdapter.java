@@ -14,11 +14,11 @@ import java.util.Map;
 public abstract class BaseListAdapter<E> extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<E> f31961a;
+    public List<E> f18271a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LayoutInflater f31962c;
+    public LayoutInflater f18272c;
     public Map<Integer, onInternalClickListener> d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/adapter/BaseListAdapter$onInternalClickListener.class */
@@ -28,8 +28,8 @@ public abstract class BaseListAdapter<E> extends BaseAdapter {
 
     public BaseListAdapter(Context context, List<E> list) {
         this.b = context;
-        this.f31961a = list;
-        this.f31962c = LayoutInflater.from(context);
+        this.f18271a = list;
+        this.f18272c = LayoutInflater.from(context);
     }
 
     private void a(final View view, final Integer num, final Object obj) {
@@ -55,7 +55,7 @@ public abstract class BaseListAdapter<E> extends BaseAdapter {
     public abstract View a(int i, View view, ViewGroup viewGroup);
 
     public List<E> a() {
-        return this.f31961a;
+        return this.f18271a;
     }
 
     public void a(Integer num, onInternalClickListener oninternalclicklistener) {
@@ -67,12 +67,12 @@ public abstract class BaseListAdapter<E> extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f31961a.size();
+        return this.f18271a.size();
     }
 
     @Override // android.widget.Adapter
     public Object getItem(int i) {
-        return this.f31961a.get(i);
+        return this.f18271a.get(i);
     }
 
     @Override // android.widget.Adapter
@@ -83,7 +83,7 @@ public abstract class BaseListAdapter<E> extends BaseAdapter {
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
         View a2 = a(i, view, viewGroup);
-        a(a2, Integer.valueOf(i), this.f31961a.get(i));
+        a(a2, Integer.valueOf(i), this.f18271a.get(i));
         return a2;
     }
 }

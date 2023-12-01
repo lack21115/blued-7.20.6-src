@@ -6,12 +6,12 @@ import android.opengl.GLES20;
 public class e extends k {
 
     /* renamed from: c  reason: collision with root package name */
-    private float f27715c = 1.0f;
+    private float f14027c = 1.0f;
     private int d;
 
     public int a(int i, float f, float[] fArr, int i2, boolean z) {
-        this.f27715c = f;
-        GLES20.glBindFramebuffer(36160, this.f27721a);
+        this.f14027c = f;
+        GLES20.glBindFramebuffer(36160, this.f14033a);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, i2, 0);
         if (z) {
             GLES20.glClear(16384);
@@ -36,6 +36,6 @@ public class e extends k {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.g
     public void d() {
-        GLES20.glUniform1f(this.d, this.f27715c);
+        GLES20.glUniform1f(this.d, this.f14027c);
     }
 }

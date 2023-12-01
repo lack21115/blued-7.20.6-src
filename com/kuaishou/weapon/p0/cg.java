@@ -8,18 +8,18 @@ import org.json.JSONObject;
 public class cg {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23779a;
+    private Context f10171a;
     private int b;
 
     public cg(Context context, int i) {
-        this.f23779a = context;
+        this.f10171a = context;
         this.b = i;
     }
 
     public String a(String str) {
         JSONObject a2;
         try {
-            JSONObject a3 = new cl(str, cj.j).a(this.f23779a);
+            JSONObject a3 = new cl(str, cj.j).a(this.f10171a);
             if (a3 == null || (a2 = a()) == null) {
                 return null;
             }
@@ -35,7 +35,7 @@ public class cg {
         try {
             System.currentTimeMillis();
             JSONObject jSONObject = new JSONObject();
-            if (h.a(this.f23779a, "re_po_rt").b(de.w, 1) != 1 || (a2 = new x().a(this.f23779a)) == null || a2.length() <= 0) {
+            if (h.a(this.f10171a, "re_po_rt").b(de.w, 1) != 1 || (a2 = new x().a(this.f10171a)) == null || a2.length() <= 0) {
                 return null;
             }
             jSONObject.put("10000", a2);

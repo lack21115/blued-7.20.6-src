@@ -20,7 +20,7 @@ public class a {
         if (appPrivacyData == null) {
             return null;
         }
-        return new com.opos.mobad.n.d.a(appPrivacyData.d, appPrivacyData.f26469c);
+        return new com.opos.mobad.n.d.a(appPrivacyData.d, appPrivacyData.f12781c);
     }
 
     public static final h a(Context context, AdItemData adItemData, MaterialData materialData, boolean z) {
@@ -69,8 +69,8 @@ public class a {
         return hVar;
     }
 
-    public static final h a(Context context, a.C0707a c0707a, boolean z, boolean z2) {
-        return a(context, c0707a.b, c0707a.f26483c, z, z2);
+    public static final h a(Context context, a.C0537a c0537a, boolean z, boolean z2) {
+        return a(context, c0537a.b, c0537a.f12795c, z, z2);
     }
 
     private static String a(long j) {

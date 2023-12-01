@@ -1,14 +1,13 @@
 package com.tencent.liteav.videoproducer.encoder;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/liteav/videoproducer/encoder/ad.class */
-public final /* synthetic */ class ad implements Runnable {
+final /* synthetic */ class ad implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final x f36973a;
+    private final x f23282a;
 
     private ad(x xVar) {
-        this.f36973a = xVar;
+        this.f23282a = xVar;
     }
 
     public static Runnable a(x xVar) {
@@ -17,7 +16,7 @@ public final /* synthetic */ class ad implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        x xVar = this.f36973a;
+        x xVar = this.f23282a;
         if (xVar.f.fullIFrame) {
             xVar.b();
         }

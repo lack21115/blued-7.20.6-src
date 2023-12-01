@@ -21,7 +21,6 @@ import com.blued.android.module.yy_china.databinding.DialogFansClubHostViewBindi
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
 import com.blued.android.module.yy_china.model.YYClubGroupInfoModel;
 import com.blued.android.module.yy_china.model.YYClubHostModel;
-import com.blued.android.module.yy_china.model.YYClubRankMemberModel;
 import com.blued.android.module.yy_china.model.YYRoomModel;
 import com.blued.android.module.yy_china.model.YYUserInfo;
 import com.blued.android.module.yy_china.utils.YYRoomHttpUtils;
@@ -39,13 +38,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYFansClubHostViewDialog.class */
 public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f17230a;
+    private BaseFragment a;
     private final YYUserInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogFansClubHostViewBinding f17231c;
+    private DialogFansClubHostViewBinding c;
     private FansClubAdapter d;
     private int e;
     private int f;
@@ -56,7 +51,7 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
         super(fragment, us);
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(us, "us");
-        this.f17230a = fragment;
+        this.a = fragment;
         this.b = us;
         this.e = 1;
         this.g = "";
@@ -78,16 +73,14 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
     private final void l() {
         TextView textView;
         SmartRefreshLayout smartRefreshLayout;
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.c;
         if (dialogFansClubHostViewBinding != null && (smartRefreshLayout = dialogFansClubHostViewBinding.e) != null) {
             smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYFansClubHostViewDialog$initView$1
-                @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
                 public void onLoadMore(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     YYFansClubHostViewDialog.this.p();
                 }
 
-                @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
                 public void onRefresh(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     YYFansClubHostViewDialog.this.e = 1;
@@ -95,7 +88,7 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
                 }
             });
         }
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding2 = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding2 = this.c;
         if (dialogFansClubHostViewBinding2 != null && (textView = dialogFansClubHostViewBinding2.j) != null) {
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFansClubHostViewDialog$nMS3uUilMIJENSaOKI5sVZcwjWw
                 @Override // android.view.View.OnClickListener
@@ -111,9 +104,9 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
     private final void m() {
         YYUserInfo g = g();
         ImageWrapper b = ImageLoader.a(a(), g.getAvatar()).b(R.drawable.user_bg_round);
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.c;
         b.a(dialogFansClubHostViewBinding == null ? null : dialogFansClubHostViewBinding.b);
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding2 = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding2 = this.c;
         TextView textView = dialogFansClubHostViewBinding2 == null ? null : dialogFansClubHostViewBinding2.i;
         if (textView == null) {
             return;
@@ -122,27 +115,27 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
     }
 
     private final void n() {
-        List<YYClubRankMemberModel> data;
+        List data;
         ActivityFragmentActive fragmentActive = a();
         Intrinsics.c(fragmentActive, "fragmentActive");
         this.d = new FansClubAdapter(fragmentActive);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.c;
         Integer num = null;
         RecyclerView recyclerView = dialogFansClubHostViewBinding == null ? null : dialogFansClubHostViewBinding.h;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(linearLayoutManager);
         }
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding2 = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding2 = this.c;
         RecyclerView recyclerView2 = dialogFansClubHostViewBinding2 == null ? null : dialogFansClubHostViewBinding2.h;
         if (recyclerView2 != null) {
             recyclerView2.setAdapter(this.d);
         }
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding3 = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding3 = this.c;
         TextView textView = dialogFansClubHostViewBinding3 == null ? null : dialogFansClubHostViewBinding3.l;
         if (textView != null) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = getString(R.string.yy_fans_member_list);
             Intrinsics.c(string, "getString(R.string.yy_fans_member_list)");
             FansClubAdapter fansClubAdapter = this.d;
@@ -163,8 +156,8 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
     private final void o() {
         YYUserInfo g = g();
         String uid = g == null ? null : g.getUid();
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.n(uid, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYClubHostModel>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYFansClubHostViewDialog$getClubInfoByHost$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.n(uid, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYClubHostModel>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYFansClubHostViewDialog$getClubInfoByHost$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -182,25 +175,25 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
                 if (singleData != null) {
                     YYFansClubHostViewDialog yYFansClubHostViewDialog = YYFansClubHostViewDialog.this;
                     yYFansClubHostViewDialog.f = StringUtils.a(singleData.fans_count, 0);
-                    dialogFansClubHostViewBinding = yYFansClubHostViewDialog.f17231c;
+                    dialogFansClubHostViewBinding = yYFansClubHostViewDialog.c;
                     TextView textView = dialogFansClubHostViewBinding == null ? null : dialogFansClubHostViewBinding.k;
                     if (textView != null) {
                         textView.setText(singleData.fans_count);
                     }
-                    dialogFansClubHostViewBinding2 = yYFansClubHostViewDialog.f17231c;
+                    dialogFansClubHostViewBinding2 = yYFansClubHostViewDialog.c;
                     TextView textView2 = dialogFansClubHostViewBinding2 == null ? null : dialogFansClubHostViewBinding2.l;
                     if (textView2 != null) {
-                        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                         String string = yYFansClubHostViewDialog.getString(R.string.yy_fans_member_list);
                         Intrinsics.c(string, "getString(R.string.yy_fans_member_list)");
                         String format = String.format(string, Arrays.copyOf(new Object[]{singleData.fans_count}, 1));
                         Intrinsics.c(format, "format(format, *args)");
                         textView2.setText(format);
                     }
-                    dialogFansClubHostViewBinding3 = yYFansClubHostViewDialog.f17231c;
+                    dialogFansClubHostViewBinding3 = yYFansClubHostViewDialog.c;
                     TextView textView3 = dialogFansClubHostViewBinding3 == null ? null : dialogFansClubHostViewBinding3.j;
                     if (textView3 != null) {
-                        StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                        StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                         String string2 = yYFansClubHostViewDialog.getString(R.string.yy_club_name);
                         Intrinsics.c(string2, "getString(R.string.yy_club_name)");
                         YYClubGroupInfoModel yYClubGroupInfoModel = singleData.group_info;
@@ -211,13 +204,13 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
                     YYClubGroupInfoModel yYClubGroupInfoModel2 = singleData.group_info;
                     yYFansClubHostViewDialog.g = String.valueOf(yYClubGroupInfoModel2 == null ? null : yYClubGroupInfoModel2.name);
                     if (StringUtils.a(singleData.fans_count, 0) >= 50) {
-                        dialogFansClubHostViewBinding5 = yYFansClubHostViewDialog.f17231c;
+                        dialogFansClubHostViewBinding5 = yYFansClubHostViewDialog.c;
                         TextView textView4 = dialogFansClubHostViewBinding5 == null ? null : dialogFansClubHostViewBinding5.j;
                         if (textView4 != null) {
                             textView4.setVisibility(0);
                         }
                     } else {
-                        dialogFansClubHostViewBinding4 = yYFansClubHostViewDialog.f17231c;
+                        dialogFansClubHostViewBinding4 = yYFansClubHostViewDialog.c;
                         TextView textView5 = dialogFansClubHostViewBinding4 == null ? null : dialogFansClubHostViewBinding4.j;
                         if (textView5 != null) {
                             textView5.setVisibility(8);
@@ -251,7 +244,7 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
     public BaseFragment f() {
-        return this.f17230a;
+        return this.a;
     }
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
@@ -261,32 +254,32 @@ public final class YYFansClubHostViewDialog extends YYBaseFansDialog {
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
     public View j() {
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.f17231c;
-        return dialogFansClubHostViewBinding == null ? null : dialogFansClubHostViewBinding.f16333c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.c;
+        return dialogFansClubHostViewBinding == null ? null : dialogFansClubHostViewBinding.c;
     }
 
     @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog
     public View k() {
-        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.f17231c;
+        DialogFansClubHostViewBinding dialogFansClubHostViewBinding = this.c;
         if (dialogFansClubHostViewBinding == null) {
             return null;
         }
-        return dialogFansClubHostViewBinding.f16332a;
+        return dialogFansClubHostViewBinding.a;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog, com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.YYBaseFansDialog, com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         o();
         p();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_fans_club_host_view, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…st_view, container, true)");
-        this.f17231c = DialogFansClubHostViewBinding.a(inflate);
+        this.c = DialogFansClubHostViewBinding.a(inflate);
         l();
         return inflate;
     }

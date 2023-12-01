@@ -4,16 +4,16 @@ package com.tencent.liteav.videoproducer.producer;
 final /* synthetic */ class o implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37171a;
+    private final f f23480a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f37172c;
+    private final int f23481c;
 
     private o(f fVar, int i, int i2) {
-        this.f37171a = fVar;
+        this.f23480a = fVar;
         this.b = i;
-        this.f37172c = i2;
+        this.f23481c = i2;
     }
 
     public static Runnable a(f fVar, int i, int i2) {
@@ -22,6 +22,6 @@ final /* synthetic */ class o implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37171a, this.b, this.f37172c);
+        f.a(this.f23480a, this.b, this.f23481c);
     }
 }

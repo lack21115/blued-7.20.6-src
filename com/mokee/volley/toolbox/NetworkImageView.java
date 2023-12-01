@@ -9,13 +9,9 @@ import com.mokee.volley.toolbox.ImageLoader;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/NetworkImageView.class */
 public class NetworkImageView extends ImageView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ImageLoader.ImageContainer f24267a;
+    private ImageLoader.ImageContainer a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f24268c;
+    private int c;
     private String d;
     private ImageLoader e;
 
@@ -45,8 +41,8 @@ public class NetworkImageView extends ImageView {
 
         @Override // com.mokee.volley.Response.ErrorListener
         public void onErrorResponse(VolleyError volleyError) {
-            if (NetworkImageView.this.f24268c != 0) {
-                NetworkImageView.this.setImageResource(NetworkImageView.this.f24268c);
+            if (NetworkImageView.this.c != 0) {
+                NetworkImageView.this.setImageResource(NetworkImageView.this.c);
             }
         }
 
@@ -110,21 +106,21 @@ public class NetworkImageView extends ImageView {
             return;
         }
         if (TextUtils.isEmpty(this.d)) {
-            if (this.f24267a != null) {
-                this.f24267a.cancelRequest();
-                this.f24267a = null;
+            if (this.a != null) {
+                this.a.cancelRequest();
+                this.a = null;
             }
             a();
             return;
         }
-        if (this.f24267a != null && this.f24267a.getRequestUrl() != null) {
-            if (this.f24267a.getRequestUrl().equals(this.d)) {
+        if (this.a != null && this.a.getRequestUrl() != null) {
+            if (this.a.getRequestUrl().equals(this.d)) {
                 return;
             }
-            this.f24267a.cancelRequest();
+            this.a.cancelRequest();
             a();
         }
-        this.f24267a = this.e.get(this.d, new a(z), z3 ? 0 : width, z2 ? 0 : height);
+        this.a = this.e.get(this.d, new a(z), z3 ? 0 : width, z2 ? 0 : height);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -137,10 +133,10 @@ public class NetworkImageView extends ImageView {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
     public void onDetachedFromWindow() {
-        if (this.f24267a != null) {
-            this.f24267a.cancelRequest();
+        if (this.a != null) {
+            this.a.cancelRequest();
             setImageBitmap(null);
-            this.f24267a = null;
+            this.a = null;
         }
         super.onDetachedFromWindow();
     }
@@ -157,7 +153,7 @@ public class NetworkImageView extends ImageView {
     }
 
     public void setErrorImageResId(int i) {
-        this.f24268c = i;
+        this.c = i;
     }
 
     public void setImageUrl(String str, ImageLoader imageLoader) {

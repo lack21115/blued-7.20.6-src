@@ -17,11 +17,11 @@ import com.soft.blued.ui.setting.fragment.VerifyOriginalAccountDetailFragment;
 public class LinkMobileSuccessFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f31397a = LinkMobileSuccessFragment.class.getSimpleName();
+    private String f17707a = LinkMobileSuccessFragment.class.getSimpleName();
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f31398c;
+    private Context f17708c;
     private CommonTopTitleNoTrans d;
     private TextView e;
     private TextView f;
@@ -33,17 +33,17 @@ public class LinkMobileSuccessFragment extends BaseFragment implements View.OnCl
     private int l;
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        this.d = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        this.d = findViewById;
+        findViewById.a();
         this.d.f();
         this.d.setTitleBackgroundDrawable(2131101191);
         this.d.setLeftClickListener(this);
         this.d.setCenterText("");
         if (this.l == 1) {
-            this.g.setText(this.f31398c.getResources().getString(2131886184));
+            this.g.setText(this.f17708c.getResources().getString(R.string.Live_bindingPhone_binding));
         } else {
-            this.g.setText(this.f31398c.getResources().getString(2131892292));
+            this.g.setText(this.f17708c.getResources().getString(2131892292));
         }
     }
 
@@ -58,7 +58,7 @@ public class LinkMobileSuccessFragment extends BaseFragment implements View.OnCl
 
     private void c() {
         if (getArguments() != null) {
-            int i = getArguments().getInt(LoginRegisterTools.f31399a);
+            int i = getArguments().getInt(LoginRegisterTools.f17709a);
             this.l = i;
             if (i == 1) {
                 String string = getArguments().getString(LoginRegisterTools.e);
@@ -69,10 +69,10 @@ public class LinkMobileSuccessFragment extends BaseFragment implements View.OnCl
                 textView.setText(getResources().getString(2131886705) + this.i);
             } else if (i == 0) {
                 this.k = getArguments().getString(LoginRegisterTools.f);
-                this.e.setText(2131886080);
+                this.e.setText(R.string.Binding_description);
                 TextView textView2 = this.f;
-                textView2.setText(getResources().getString(2131886081) + this.k);
-                this.h.setText(2131886917);
+                textView2.setText(getResources().getString(R.string.Binding_header_type) + this.k);
+                this.h.setText(R.string.change_email_address);
             }
         }
     }
@@ -89,7 +89,7 @@ public class LinkMobileSuccessFragment extends BaseFragment implements View.OnCl
     private void e() {
         Bundle bundle = new Bundle();
         bundle.putString("binding_type", "change");
-        TerminalActivity.d(this.f31398c, VerifyOriginalAccountDetailFragment.class, bundle);
+        TerminalActivity.d(this.f17708c, VerifyOriginalAccountDetailFragment.class, bundle);
         getActivity().finish();
     }
 
@@ -110,9 +110,8 @@ public class LinkMobileSuccessFragment extends BaseFragment implements View.OnCl
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f31398c = getActivity();
+        this.f17708c = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_linkmobile_success, viewGroup, false);

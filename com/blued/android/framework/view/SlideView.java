@@ -9,13 +9,9 @@ import android.widget.LinearLayout;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/SlideView.class */
 public class SlideView extends HorizontalScrollView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LinearLayout f10187a;
+    private LinearLayout a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private OnSlideListener f10188c;
+    private OnSlideListener c;
     private int d;
     private int e;
 
@@ -33,7 +29,7 @@ public class SlideView extends HorizontalScrollView {
     }
 
     private void b() {
-        LinearLayout linearLayout = this.f10187a;
+        LinearLayout linearLayout = this.a;
         if (linearLayout != null) {
             this.d = 0;
             int childCount = linearLayout.getChildCount();
@@ -41,9 +37,9 @@ public class SlideView extends HorizontalScrollView {
                 this.d = 0;
                 return;
             }
-            this.b = this.f10187a.getChildAt(0);
+            this.b = this.a.getChildAt(0);
             for (int i = 1; i < childCount; i++) {
-                this.d += this.f10187a.getChildAt(i).getMeasuredWidth();
+                this.d += this.a.getChildAt(i).getMeasuredWidth();
             }
         }
     }
@@ -57,7 +53,7 @@ public class SlideView extends HorizontalScrollView {
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         View view;
-        if (this.f10187a == null) {
+        if (this.a == null) {
             return super.dispatchTouchEvent(motionEvent);
         }
         int x = (int) motionEvent.getX();
@@ -75,7 +71,7 @@ public class SlideView extends HorizontalScrollView {
                     i2 = 0;
                 }
                 smoothScrollTo(i2, 0);
-                OnSlideListener onSlideListener = this.f10188c;
+                OnSlideListener onSlideListener = this.c;
                 if (onSlideListener != null) {
                     if (i2 == 0) {
                         i = 0;
@@ -83,8 +79,8 @@ public class SlideView extends HorizontalScrollView {
                     onSlideListener.a(this, i);
                 }
             }
-        } else if (this.f10188c != null && this.e == 2 && (view = this.b) != null && x < view.getWidth() - this.d) {
-            this.f10188c.a(this, 1);
+        } else if (this.c != null && this.e == 2 && (view = this.b) != null && x < view.getWidth() - this.d) {
+            this.c.a(this, 1);
         }
         return super.dispatchTouchEvent(motionEvent);
     }
@@ -94,7 +90,7 @@ public class SlideView extends HorizontalScrollView {
     public void onFinishInflate() {
         super.onFinishInflate();
         if (getChildCount() > 0) {
-            this.f10187a = (LinearLayout) getChildAt(0);
+            this.a = (LinearLayout) getChildAt(0);
         }
     }
 
@@ -106,6 +102,6 @@ public class SlideView extends HorizontalScrollView {
     }
 
     public void setOnSlideListener(OnSlideListener onSlideListener) {
-        this.f10188c = onSlideListener;
+        this.c = onSlideListener;
     }
 }

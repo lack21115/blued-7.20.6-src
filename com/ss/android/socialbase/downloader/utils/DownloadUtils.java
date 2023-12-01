@@ -15,7 +15,6 @@ import android.os.StatFs;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.sensetime.stmobile.STMobileHumanActionNative;
 import com.ss.android.socialbase.downloader.constants.DownloadConstants;
 import com.ss.android.socialbase.downloader.constants.DownloadErrorCode;
@@ -36,6 +35,7 @@ import com.ss.android.socialbase.downloader.network.IDownloadHeadHttpConnection;
 import com.ss.android.socialbase.downloader.setting.DownloadSetting;
 import com.ss.android.socialbase.downloader.setting.DownloadSettingKeys;
 import com.ss.android.ttmd5.TTMd5;
+import com.xiaomi.mipush.sdk.Constants;
 import com.youzan.androidsdk.tool.WebParameter;
 import java.io.BufferedReader;
 import java.io.Closeable;
@@ -383,7 +383,7 @@ public class DownloadUtils {
         File file = new File(str, str2);
         boolean z = false;
         if (file.exists() && file.isDirectory()) {
-            throw new BaseException(1035, new IOException(String.format("path is :%s, path is directory:%B:", str, Boolean.valueOf(file.isDirectory()))));
+            throw new BaseException((int) DownloadErrorCode.ERROR_TEMP_FILE_IS_DIRECTORY, new IOException(String.format("path is :%s, path is directory:%B:", str, Boolean.valueOf(file.isDirectory()))));
         }
         if (!file.exists()) {
             try {
@@ -422,7 +422,7 @@ public class DownloadUtils {
                 }
                 file.createNewFile();
             } catch (IOException e2) {
-                throw new BaseException(1036, e2);
+                throw new BaseException((int) DownloadErrorCode.ERROR_TEMP_FILE_CREATE_FAILED, e2);
             }
         }
         return new RandomAccessOutputStream(file, i);
@@ -481,7 +481,7 @@ public class DownloadUtils {
         File file = new File(str, str2);
         if (file.exists()) {
             String str3 = TAG;
-            Log.e(str3, "deleteFile: " + str + BridgeUtil.SPLIT_MARK + str2);
+            Log.e(str3, "deleteFile: " + str + "/" + str2);
             file.delete();
         }
     }
@@ -838,7 +838,7 @@ public class DownloadUtils {
         if (str == null) {
             return getThrowableMsg(th);
         }
-        return str + "-" + getThrowableMsg(th);
+        return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + getThrowableMsg(th);
     }
 
     private static File getExternalDBFile(String str) {
@@ -1003,7 +1003,7 @@ public class DownloadUtils {
             String str3 = optString;
             if (!TextUtils.isEmpty(optString)) {
                 str3 = optString;
-                if (optString.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (optString.startsWith("/")) {
                     str3 = optString.substring(1);
                 }
             }
@@ -1817,7 +1817,7 @@ public class DownloadUtils {
         if (str == null) {
             return -1L;
         }
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         if (split.length >= 2) {
             try {
                 return Long.parseLong(split[1]);
@@ -1834,7 +1834,7 @@ public class DownloadUtils {
         String str2 = !TextUtils.isEmpty(str) ? str : "";
         if (th instanceof BaseException) {
             BaseException baseException = (BaseException) th;
-            baseException.setErrorMsg(str2 + "-" + baseException.getErrorMessage());
+            baseException.setErrorMsg(str2 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + baseException.getErrorMessage());
             throw baseException;
         } else if (th instanceof SSLHandshakeException) {
             throw new BaseException(1011, getErrorMsgWithTagPrefix(th, str2));

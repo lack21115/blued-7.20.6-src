@@ -7,10 +7,10 @@ import android.telephony.TelephonyManager;
 public class q6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static q6 f3952a = new q6();
+    public static q6 f3904a = new q6();
 
     public static q6 a() {
-        return f3952a;
+        return f3904a;
     }
 
     public final int a(int i) {

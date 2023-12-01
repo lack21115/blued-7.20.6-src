@@ -25,7 +25,7 @@ public final class EncodedValueReader {
     private int arg;
 
     /* renamed from: in  reason: collision with root package name */
-    protected final ByteInput f39454in;
+    protected final ByteInput f25763in;
     private int type;
 
     public EncodedValueReader(EncodedValue encodedValue) {
@@ -38,12 +38,12 @@ public final class EncodedValueReader {
 
     public EncodedValueReader(ByteInput byteInput) {
         this.type = -1;
-        this.f39454in = byteInput;
+        this.f25763in = byteInput;
     }
 
     public EncodedValueReader(ByteInput byteInput, int i) {
         this.type = -1;
-        this.f39454in = byteInput;
+        this.f25763in = byteInput;
         this.type = i;
     }
 
@@ -59,7 +59,7 @@ public final class EncodedValueReader {
 
     public int peek() {
         if (this.type == -1) {
-            int readByte = this.f39454in.readByte() & 255;
+            int readByte = this.f25763in.readByte() & 255;
             this.type = readByte & 31;
             this.arg = (readByte & 224) >> 5;
         }
@@ -69,18 +69,18 @@ public final class EncodedValueReader {
     public int readAnnotation() {
         checkType(29);
         this.type = -1;
-        this.annotationType = Leb128.readUnsignedLeb128(this.f39454in);
-        return Leb128.readUnsignedLeb128(this.f39454in);
+        this.annotationType = Leb128.readUnsignedLeb128(this.f25763in);
+        return Leb128.readUnsignedLeb128(this.f25763in);
     }
 
     public int readAnnotationName() {
-        return Leb128.readUnsignedLeb128(this.f39454in);
+        return Leb128.readUnsignedLeb128(this.f25763in);
     }
 
     public int readArray() {
         checkType(28);
         this.type = -1;
-        return Leb128.readUnsignedLeb128(this.f39454in);
+        return Leb128.readUnsignedLeb128(this.f25763in);
     }
 
     public boolean readBoolean() {
@@ -92,55 +92,55 @@ public final class EncodedValueReader {
     public byte readByte() {
         checkType(0);
         this.type = -1;
-        return (byte) EncodedValueCodec.readSignedInt(this.f39454in, this.arg);
+        return (byte) EncodedValueCodec.readSignedInt(this.f25763in, this.arg);
     }
 
     public char readChar() {
         checkType(3);
         this.type = -1;
-        return (char) EncodedValueCodec.readUnsignedInt(this.f39454in, this.arg, false);
+        return (char) EncodedValueCodec.readUnsignedInt(this.f25763in, this.arg, false);
     }
 
     public double readDouble() {
         checkType(17);
         this.type = -1;
-        return Double.longBitsToDouble(EncodedValueCodec.readUnsignedLong(this.f39454in, this.arg, true));
+        return Double.longBitsToDouble(EncodedValueCodec.readUnsignedLong(this.f25763in, this.arg, true));
     }
 
     public int readEnum() {
         checkType(27);
         this.type = -1;
-        return EncodedValueCodec.readUnsignedInt(this.f39454in, this.arg, false);
+        return EncodedValueCodec.readUnsignedInt(this.f25763in, this.arg, false);
     }
 
     public int readField() {
         checkType(25);
         this.type = -1;
-        return EncodedValueCodec.readUnsignedInt(this.f39454in, this.arg, false);
+        return EncodedValueCodec.readUnsignedInt(this.f25763in, this.arg, false);
     }
 
     public float readFloat() {
         checkType(16);
         this.type = -1;
-        return Float.intBitsToFloat(EncodedValueCodec.readUnsignedInt(this.f39454in, this.arg, true));
+        return Float.intBitsToFloat(EncodedValueCodec.readUnsignedInt(this.f25763in, this.arg, true));
     }
 
     public int readInt() {
         checkType(4);
         this.type = -1;
-        return EncodedValueCodec.readSignedInt(this.f39454in, this.arg);
+        return EncodedValueCodec.readSignedInt(this.f25763in, this.arg);
     }
 
     public long readLong() {
         checkType(6);
         this.type = -1;
-        return EncodedValueCodec.readSignedLong(this.f39454in, this.arg);
+        return EncodedValueCodec.readSignedLong(this.f25763in, this.arg);
     }
 
     public int readMethod() {
         checkType(26);
         this.type = -1;
-        return EncodedValueCodec.readUnsignedInt(this.f39454in, this.arg, false);
+        return EncodedValueCodec.readUnsignedInt(this.f25763in, this.arg, false);
     }
 
     public void readNull() {
@@ -151,19 +151,19 @@ public final class EncodedValueReader {
     public short readShort() {
         checkType(2);
         this.type = -1;
-        return (short) EncodedValueCodec.readSignedInt(this.f39454in, this.arg);
+        return (short) EncodedValueCodec.readSignedInt(this.f25763in, this.arg);
     }
 
     public int readString() {
         checkType(23);
         this.type = -1;
-        return EncodedValueCodec.readUnsignedInt(this.f39454in, this.arg, false);
+        return EncodedValueCodec.readUnsignedInt(this.f25763in, this.arg, false);
     }
 
     public int readType() {
         checkType(24);
         this.type = -1;
-        return EncodedValueCodec.readUnsignedInt(this.f39454in, this.arg, false);
+        return EncodedValueCodec.readUnsignedInt(this.f25763in, this.arg, false);
     }
 
     public void skipValue() {

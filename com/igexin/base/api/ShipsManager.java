@@ -44,32 +44,32 @@ public class ShipsManager {
     public void register(Site site) {
         b bVar = this.mBase;
         String tag = site.getTag();
-        bVar.f23210a.lock();
+        bVar.f9602a.lock();
         try {
             bVar.b.put(tag, site);
-            List<a> list = bVar.f23211c.get(tag);
+            List<a> list = bVar.f9603c.get(tag);
             if (list != null && list.size() > 0) {
                 Iterator<a> it = list.iterator();
                 while (it.hasNext()) {
                     a next = it.next();
                     if (next.b != null) {
-                        site.onArrived(next.f23209a, next.b);
+                        site.onArrived(next.f9601a, next.b);
                     }
                     it.remove();
                 }
             }
         } finally {
-            bVar.f23210a.unlock();
+            bVar.f9602a.unlock();
         }
     }
 
     public void unRegister(Site site) {
         b bVar = this.mBase;
-        bVar.f23210a.lock();
+        bVar.f9602a.lock();
         try {
             bVar.b.remove(site.getTag());
         } finally {
-            bVar.f23210a.unlock();
+            bVar.f9602a.unlock();
         }
     }
 }

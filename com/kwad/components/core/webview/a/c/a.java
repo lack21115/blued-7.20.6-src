@@ -10,10 +10,9 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public final class a {
     private final Set<e> VG;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.core.webview.a.c.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/webview/a/c/a$a.class */
-    public static final class C0535a {
+    static final class C0365a {
         private static final a VI = new a((byte) 0);
     }
 
@@ -46,7 +45,7 @@ public final class a {
     }
 
     public static a rn() {
-        return C0535a.VI;
+        return C0365a.VI;
     }
 
     public final void a(e eVar) {

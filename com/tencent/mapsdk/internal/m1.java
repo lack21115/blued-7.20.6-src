@@ -13,15 +13,15 @@ import java.util.Map;
 public class m1 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f37626a = false;
+    private static boolean f23935a = false;
     private static String b;
 
     public static String a(String str) {
-        return !f37626a ? "" : UserAction.getCloudParas(str);
+        return !f23935a ? "" : UserAction.getCloudParas(str);
     }
 
     public static void a() {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.doUploadRecords();
         }
     }
@@ -54,7 +54,7 @@ public class m1 {
                 }
             }
             if (a(b, "3.1.2")) {
-                f37626a = true;
+                f23935a = true;
             }
         } catch (ClassNotFoundException e4) {
             e4.printStackTrace();
@@ -62,67 +62,67 @@ public class m1 {
     }
 
     public static void a(Context context, boolean z) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.initUserAction(context, z);
         }
     }
 
     public static void a(Context context, boolean z, long j) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.initUserAction(context, z, j);
         }
     }
 
     public static void a(Context context, boolean z, long j, InitHandleListener initHandleListener, UploadHandleListener uploadHandleListener) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.initUserAction(context, z, j, initHandleListener, uploadHandleListener);
         }
     }
 
     public static void a(IAsyncQimeiListener iAsyncQimeiListener) {
-        if (f37626a && a(UserAction.getSDKVersion(), "3.2.1")) {
+        if (f23935a && a(UserAction.getSDKVersion(), "3.2.1")) {
             UserAction.getQimei(iAsyncQimeiListener);
         }
     }
 
     public static void a(String str, String str2, String str3) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.registerTunnel(new TunnelInfo(str, str2, str3));
         }
     }
 
     public static void a(String str, String str2, Map<String, String> map, boolean z, boolean z2) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.onUserActionToTunnel(str, str2, map, z, z2);
         }
     }
 
     public static void a(String str, String str2, boolean z, long j, long j2, Map<String, String> map, boolean z2, boolean z3) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.onUserActionToTunnel(str, str2, z, j, j2, map, z2, z3);
         }
     }
 
     public static void a(String str, Map<String, String> map) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setAdditionalInfo(str, map);
         }
     }
 
     public static void a(Map<String, String> map) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setAdditionalInfo(map);
         }
     }
 
     public static void a(boolean z) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.flushObjectsToDB(z);
         }
     }
 
     public static void a(boolean z, boolean z2) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setLogAble(z, z2);
         }
     }
@@ -132,102 +132,102 @@ public class m1 {
     }
 
     public static boolean a(String str, boolean z, long j, long j2, Map<String, String> map, boolean z2) {
-        if (f37626a) {
+        if (f23935a) {
             return UserAction.onUserAction(str, z, j, j2, map, z2);
         }
         return false;
     }
 
     public static boolean a(String str, boolean z, long j, long j2, Map<String, String> map, boolean z2, boolean z3) {
-        if (f37626a) {
+        if (f23935a) {
             return UserAction.onUserAction(str, z, j, j2, map, z2, z3);
         }
         return false;
     }
 
     public static boolean a(boolean z, long j, Map<String, String> map) {
-        if (f37626a) {
+        if (f23935a) {
             return UserAction.loginEvent(z, j, map);
         }
         return false;
     }
 
     public static String b() {
-        return !f37626a ? "" : UserAction.getQIMEI();
+        return !f23935a ? "" : UserAction.getQIMEI();
     }
 
     public static void b(Context context) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.initUserAction(context);
         }
     }
 
     public static void b(String str) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.onPageIn(str);
         }
     }
 
     public static void b(String str, String str2) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setReportDomain(str, str2);
         }
     }
 
     public static void b(boolean z) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setUploadMode(z);
         }
     }
 
     public static String c() {
-        return !f37626a ? "" : UserAction.getSDKVersion();
+        return !f23935a ? "" : UserAction.getSDKVersion();
     }
 
     public static void c(String str) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.onPageOut(str);
         }
     }
 
     public static void c(String str, String str2) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setUserID(str, str2);
         }
     }
 
     public static void d(String str) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setAppKey(str);
         }
     }
 
     public static void e(String str) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setAppVersion(str);
         }
     }
 
     public static void f(String str) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setChannelID(str);
         }
     }
 
     public static void g(String str) {
-        if (f37626a && a(UserAction.getSDKVersion(), "3.2.0")) {
+        if (f23935a && a(UserAction.getSDKVersion(), "3.2.0")) {
             UserAction.setOmgId(str);
         }
     }
 
     public static void h(String str) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setQQ(str);
         }
     }
 
     public static void i(String str) {
-        if (f37626a) {
+        if (f23935a) {
             UserAction.setUserID(str);
         }
     }

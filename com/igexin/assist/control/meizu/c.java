@@ -10,11 +10,11 @@ import java.util.HashMap;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final HashMap<String, Method> f23185a = new HashMap<>();
+    private static final HashMap<String, Method> f9577a = new HashMap<>();
     private final A b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f23186c;
+    private final String f9578c;
     private Class<?>[] d;
 
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/assist/control/meizu/c$a.class */
@@ -26,7 +26,7 @@ public class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(A a2, String str, Class<?>... clsArr) {
         this.b = a2;
-        this.f23186c = str;
+        this.f9578c = str;
         this.d = clsArr;
     }
 
@@ -80,14 +80,14 @@ public class c {
                 int length2 = declaredMethods.length;
                 int i3 = 0;
                 while (i3 < length2) {
-                    if (!a(declaredMethods[i3], this.f23186c, this.d)) {
+                    if (!a(declaredMethods[i3], this.f9578c, this.d)) {
                         i3++;
                     }
                 }
-                throw new NoSuchMethodException("No similar method " + this.f23186c + " with params " + Arrays.toString(this.d) + " could be found on type " + a2);
+                throw new NoSuchMethodException("No similar method " + this.f9578c + " with params " + Arrays.toString(this.d) + " could be found on type " + a2);
             }
             Method method = methods[i2];
-            if (a(method, this.f23186c, this.d)) {
+            if (a(method, this.f9578c, this.d)) {
                 return method;
             }
             i = i2 + 1;
@@ -117,7 +117,7 @@ public class c {
 
     private String b() throws ClassNotFoundException {
         StringBuilder sb = new StringBuilder(this.b.a().getName());
-        sb.append(this.f23186c);
+        sb.append(this.f9578c);
         Class<?>[] clsArr = this.d;
         int length = clsArr.length;
         int i = 0;
@@ -143,11 +143,11 @@ public class c {
         d<T> dVar = new d<>();
         try {
             String b = b();
-            Method method = f23185a.get(b);
+            Method method = f9577a.get(b);
             Method method2 = method;
             if (method == null) {
                 if (this.d.length == objArr.length) {
-                    method2 = this.b.a().getMethod(this.f23186c, this.d);
+                    method2 = this.b.a().getMethod(this.f9578c, this.d);
                 } else {
                     if (objArr.length > 0) {
                         this.d = new Class[objArr.length];
@@ -163,11 +163,11 @@ public class c {
                     }
                     method2 = a();
                 }
-                f23185a.put(b, method2);
+                f9577a.put(b, method2);
             }
             method2.setAccessible(true);
             dVar.b = (T) (objArr.length == 0 ? method2.invoke(this, obj) : method2.invoke(this, obj, objArr));
-            dVar.f23187a = true;
+            dVar.f9579a = true;
             return dVar;
         } catch (Exception e) {
             DebugLogger.e("ReflectMethod", Launcher.Method.INVOKE_CALLBACK, e);

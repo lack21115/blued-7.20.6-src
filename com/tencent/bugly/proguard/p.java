@@ -14,21 +14,22 @@ import java.util.Map;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    private static p f35396a;
+    private static p f21705a;
     private static q b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f35397c = false;
+    private static boolean f21706c = false;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/proguard/p$a.class */
-    final class a extends Thread {
+    public final class a extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f35398a;
+        private int f21707a;
         private o b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f35399c;
+        private String f21708c;
         private ContentValues d;
         private boolean e;
         private String[] f;
@@ -45,7 +46,7 @@ public final class p {
         private byte[] q;
 
         public a(int i, o oVar) {
-            this.f35398a = i;
+            this.f21707a = i;
             this.b = oVar;
         }
 
@@ -57,7 +58,7 @@ public final class p {
 
         public final void a(boolean z, String str, String[] strArr, String str2, String[] strArr2, String str3, String str4, String str5, String str6) {
             this.e = z;
-            this.f35399c = str;
+            this.f21708c = str;
             this.f = strArr;
             this.g = str2;
             this.h = strArr2;
@@ -69,15 +70,15 @@ public final class p {
 
         @Override // java.lang.Thread, java.lang.Runnable
         public final void run() {
-            switch (this.f35398a) {
+            switch (this.f21707a) {
                 case 1:
-                    p.this.a(this.f35399c, this.d, this.b);
+                    p.this.a(this.f21708c, this.d, this.b);
                     return;
                 case 2:
-                    p.this.a(this.f35399c, this.m, this.n, this.b);
+                    p.this.a(this.f21708c, this.m, this.n, this.b);
                     return;
                 case 3:
-                    Cursor a2 = p.this.a(this.e, this.f35399c, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.b);
+                    Cursor a2 = p.this.a(this.e, this.f21708c, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.b);
                     if (a2 != null) {
                         a2.close();
                         return;
@@ -309,7 +310,7 @@ public final class p {
         p pVar;
         synchronized (p.class) {
             try {
-                pVar = f35396a;
+                pVar = f21705a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -321,10 +322,10 @@ public final class p {
         p pVar;
         synchronized (p.class) {
             try {
-                if (f35396a == null) {
-                    f35396a = new p(context, list);
+                if (f21705a == null) {
+                    f21705a = new p(context, list);
                 }
-                pVar = f35396a;
+                pVar = f21705a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -338,9 +339,9 @@ public final class p {
         }
         try {
             r rVar = new r();
-            rVar.f35402a = cursor.getLong(cursor.getColumnIndex("_id"));
+            rVar.f21711a = cursor.getLong(cursor.getColumnIndex("_id"));
             rVar.b = cursor.getInt(cursor.getColumnIndex(bl.e));
-            rVar.f35403c = cursor.getString(cursor.getColumnIndex("_pc"));
+            rVar.f21712c = cursor.getString(cursor.getColumnIndex("_pc"));
             rVar.d = cursor.getString(cursor.getColumnIndex("_th"));
             rVar.e = cursor.getLong(cursor.getColumnIndex("_tm"));
             rVar.g = cursor.getBlob(cursor.getColumnIndex("_dt"));
@@ -425,7 +426,7 @@ public final class p {
             r0 = r12
             r1 = r5
             long r1 = (long) r1     // Catch: java.lang.Throwable -> L3e
-            r0.f35402a = r1     // Catch: java.lang.Throwable -> L3e
+            r0.f21711a = r1     // Catch: java.lang.Throwable -> L3e
             r0 = r12
             r1 = r6
             r0.f = r1     // Catch: java.lang.Throwable -> L3e
@@ -479,7 +480,7 @@ public final class p {
         }
         try {
             r rVar = new r();
-            rVar.f35402a = cursor.getLong(cursor.getColumnIndex("_id"));
+            rVar.f21711a = cursor.getLong(cursor.getColumnIndex("_id"));
             rVar.e = cursor.getLong(cursor.getColumnIndex("_tm"));
             rVar.f = cursor.getString(cursor.getColumnIndex(bl.e));
             rVar.g = cursor.getBlob(cursor.getColumnIndex("_dt"));
@@ -507,7 +508,7 @@ public final class p {
                 long replace = writableDatabase.replace("t_pf", "_id", d);
                 if (replace >= 0) {
                     x.c("[Database] insert %s success.", "t_pf");
-                    rVar.f35402a = replace;
+                    rVar.f21711a = replace;
                     return true;
                 }
                 return false;
@@ -529,11 +530,11 @@ public final class p {
         }
         try {
             ContentValues contentValues = new ContentValues();
-            if (rVar.f35402a > 0) {
-                contentValues.put("_id", Long.valueOf(rVar.f35402a));
+            if (rVar.f21711a > 0) {
+                contentValues.put("_id", Long.valueOf(rVar.f21711a));
             }
             contentValues.put(bl.e, Integer.valueOf(rVar.b));
-            contentValues.put("_pc", rVar.f35403c);
+            contentValues.put("_pc", rVar.f21712c);
             contentValues.put("_th", rVar.d);
             contentValues.put("_tm", Long.valueOf(rVar.e));
             if (rVar.g != null) {
@@ -612,8 +613,8 @@ public final class p {
         }
         try {
             ContentValues contentValues = new ContentValues();
-            if (rVar.f35402a > 0) {
-                contentValues.put("_id", Long.valueOf(rVar.f35402a));
+            if (rVar.f21711a > 0) {
+                contentValues.put("_id", Long.valueOf(rVar.f21711a));
             }
             contentValues.put(bl.e, rVar.f);
             contentValues.put("_tm", Long.valueOf(rVar.e));
@@ -670,7 +671,7 @@ public final class p {
                         for (r rVar : list) {
                             sb.append(" or _id");
                             sb.append(" = ");
-                            sb.append(rVar.f35402a);
+                            sb.append(rVar.f21711a);
                         }
                         String sb2 = sb.toString();
                         String str = sb2;
@@ -709,7 +710,7 @@ public final class p {
                 long replace = writableDatabase.replace("t_lr", "_id", c2);
                 if (replace >= 0) {
                     x.c("[Database] insert %s success.", "t_lr");
-                    rVar.f35402a = replace;
+                    rVar.f21711a = replace;
                     return true;
                 }
                 return false;

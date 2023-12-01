@@ -4,6 +4,6 @@ package com.tencent.turingface.sdk.mfa;
 public final class YunKQ {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f39932a = System.currentTimeMillis();
+    public static final long f26241a = System.currentTimeMillis();
     public static final /* synthetic */ int b = 0;
 }

@@ -6,11 +6,11 @@ import com.tencent.liteav.videobase.utils.Rotation;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f36668a;
+    public final int f22977a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Rotation f36669c;
+    public final Rotation f22978c;
     public final boolean d;
 
     public a(int i, int i2) {
@@ -18,9 +18,9 @@ public final class a {
     }
 
     private a(int i, int i2, Rotation rotation) {
-        this.f36668a = i;
+        this.f22977a = i;
         this.b = i2;
-        this.f36669c = rotation;
+        this.f22978c = rotation;
         this.d = false;
     }
 
@@ -30,7 +30,7 @@ public final class a {
         }
         if (obj instanceof a) {
             a aVar = (a) obj;
-            return aVar.f36668a == this.f36668a && aVar.b == this.b && aVar.f36669c == this.f36669c && aVar.d == this.d;
+            return aVar.f22977a == this.f22977a && aVar.b == this.b && aVar.f22978c == this.f22978c && aVar.d == this.d;
         }
         return false;
     }

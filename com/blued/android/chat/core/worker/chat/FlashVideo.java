@@ -1,6 +1,6 @@
 package com.blued.android.chat.core.worker.chat;
 
-import android.media.MediaFormat;
+import com.alipay.sdk.cons.c;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.FlashVideoHelper;
 import com.blued.android.chat.core.pack.BasePackage;
@@ -23,7 +23,6 @@ import com.blued.android.chat.model.ChattingModel;
 import com.blued.android.chat.model.FlashVideoGiftModel;
 import com.blued.android.chat.utils.ChatHelper;
 import com.blued.android.chat.utils.MsgPackHelper;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import java.util.List;
 import java.util.Map;
 
@@ -147,7 +146,7 @@ public class FlashVideo {
     }
 
     public void receiveFlashVideoApplyExtraTime(PushMsgPackage pushMsgPackage) {
-        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
         int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "add_time");
         IFlashVideoCallback iFlashVideoCallback = this.flashVideoCallback;
         if (iFlashVideoCallback != null) {
@@ -157,9 +156,9 @@ public class FlashVideo {
 
     public void receiveFlashVideoClosePush(PushMsgPackage pushMsgPackage) {
         if (pushMsgPackage.msgMapExtra != null) {
-            String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+            String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
             int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "reason");
-            String stringValue2 = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "msg");
+            String stringValue2 = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, c.b);
             IFlashVideoCallback iFlashVideoCallback = this.flashVideoCallback;
             if (iFlashVideoCallback != null) {
                 iFlashVideoCallback.onChatClose(stringValue, intValue, stringValue2);
@@ -168,7 +167,7 @@ public class FlashVideo {
     }
 
     public void receiveFlashVideoEmoji(PushMsgPackage pushMsgPackage) {
-        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
         String stringValue2 = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "emoji_tag");
         IFlashVideoCallback iFlashVideoCallback = this.flashVideoCallback;
         if (iFlashVideoCallback != null) {
@@ -177,7 +176,7 @@ public class FlashVideo {
     }
 
     public void receiveFlashVideoFriendApply(PushMsgPackage pushMsgPackage) {
-        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
         IFlashVideoCallback iFlashVideoCallback = this.flashVideoCallback;
         if (iFlashVideoCallback != null) {
             iFlashVideoCallback.onApplyFriends(stringValue);
@@ -185,7 +184,7 @@ public class FlashVideo {
     }
 
     public void receiveFlashVideoFriendApplyAgree(PushMsgPackage pushMsgPackage) {
-        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
         IFlashVideoCallback iFlashVideoCallback = this.flashVideoCallback;
         if (iFlashVideoCallback != null) {
             iFlashVideoCallback.onApplyFriendsAgree(stringValue);
@@ -201,7 +200,7 @@ public class FlashVideo {
     }
 
     public void receiveFlashVideoMatchAgree(PushMsgPackage pushMsgPackage) {
-        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
         IFlashVideoCallback iFlashVideoCallback = this.flashVideoCallback;
         if (iFlashVideoCallback != null) {
             iFlashVideoCallback.onReceiveMatchAgree(stringValue);
@@ -209,7 +208,7 @@ public class FlashVideo {
     }
 
     public void receiveFlashVideoSayHi(PushMsgPackage pushMsgPackage) {
-        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+        String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
         IFlashVideoCallback iFlashVideoCallback = this.flashVideoCallback;
         if (iFlashVideoCallback != null) {
             iFlashVideoCallback.onSayHi(stringValue);
@@ -219,13 +218,13 @@ public class FlashVideo {
     public void receiveMatchedPush(PushMsgPackage pushMsgPackage) {
         if (pushMsgPackage.msgMapExtra != null) {
             RelationProfileData relationProfileData = null;
-            Map<String, Object> mapValue = MsgPackHelper.getMapValue(pushMsgPackage.msgMapExtra, MediaFormat.KEY_PROFILE);
+            Map<String, Object> mapValue = MsgPackHelper.getMapValue(pushMsgPackage.msgMapExtra, "profile");
             if (mapValue != null) {
                 relationProfileData = new RelationProfileData();
                 relationProfileData.parseMsgPackData(mapValue);
             }
             int intValue = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "other_like");
-            String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, TTLiveConstants.ROOMID_KEY);
+            String stringValue = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "room_id");
             int intValue2 = MsgPackHelper.getIntValue(pushMsgPackage.msgMapExtra, "max_time");
             String stringValue2 = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "chat_tips");
             String stringValue3 = MsgPackHelper.getStringValue(pushMsgPackage.msgMapExtra, "stream_id");

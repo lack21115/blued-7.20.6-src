@@ -11,23 +11,23 @@ import com.zx.sdk.api.PermissionCallback;
 public class q2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Activity f42183a;
+    public final /* synthetic */ Activity f28492a;
     public final /* synthetic */ PermissionCallback b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/q2$a.class */
     public class a implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ s2 f42184a;
+        public final /* synthetic */ s2 f28493a;
 
         public a(s2 s2Var) {
-            this.f42184a = s2Var;
+            this.f28493a = s2Var;
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f42184a.dismiss();
+            this.f28493a.dismiss();
             q2.this.b.onAuthorized();
         }
     }
@@ -36,16 +36,16 @@ public class q2 implements Runnable {
     public class b implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ s2 f42185a;
+        public final /* synthetic */ s2 f28494a;
 
         public b(s2 s2Var) {
-            this.f42185a = s2Var;
+            this.f28494a = s2Var;
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f42185a.dismiss();
+            this.f28494a.dismiss();
             q2.this.b.onUnauthorized();
         }
     }
@@ -54,33 +54,33 @@ public class q2 implements Runnable {
     public class c implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ s2 f42186a;
+        public final /* synthetic */ s2 f28495a;
 
         public c(s2 s2Var) {
-            this.f42186a = s2Var;
+            this.f28495a = s2Var;
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            this.f42186a.dismiss();
+            this.f28495a.dismiss();
             z1.a("用户点击了解更多");
-            q2.this.f42183a.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://aid.mobileservice.cn/")));
+            q2.this.f28492a.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://aid.mobileservice.cn/")));
         }
     }
 
     public q2(r2 r2Var, Activity activity, PermissionCallback permissionCallback) {
-        this.f42183a = activity;
+        this.f28492a = activity;
         this.b = permissionCallback;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         try {
-            s2 s2Var = new s2(this.f42183a);
+            s2 s2Var = new s2(this.f28492a);
             s2Var.b = new a(s2Var);
-            s2Var.f42196a = new b(s2Var);
-            s2Var.f42197c = new c(s2Var);
+            s2Var.f28505a = new b(s2Var);
+            s2Var.f28506c = new c(s2Var);
             s2Var.show();
         } catch (Throwable th) {
             n2.a(th, m2.a("卓信ID授权弹窗异常: "));

@@ -21,7 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.anythink.core.common.res.d;
 import com.bytedance.applog.tracker.Tracker;
 import com.sobot.chat.SobotUIConfig;
 import com.sobot.chat.activity.base.SobotBaseActivity;
@@ -237,7 +236,7 @@ public class WebViewActivity extends SobotBaseActivity implements View.OnClickLi
         } else {
             String str = "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\">\n        <title></title>\n        <style>\n            img{\n                width: auto;\n                height:auto;\n                max-height: 100%;\n                max-width: 100%;\n            }\n        </style>\n    </head>\n    <body>" + this.mUrl + "  </body>\n</html>";
             this.mUrl = str;
-            Tracker.loadDataWithBaseURL(this.mWebView, d.f6907a, str.replace("<p> </p>", "<br/>").replace("<p></p>", "<br/>"), ClipDescription.MIMETYPE_TEXT_HTML, "utf-8", null);
+            Tracker.loadDataWithBaseURL(this.mWebView, "about:blank", str.replace("<p> </p>", "<br/>").replace("<p></p>", "<br/>"), ClipDescription.MIMETYPE_TEXT_HTML, "utf-8", null);
         }
         LogUtils.i("webViewActivity---" + this.mUrl);
     }

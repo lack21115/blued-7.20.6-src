@@ -8,7 +8,7 @@ public class b implements com.opos.cmn.func.b.a.d, com.opos.cmn.func.b.a.e {
     private static b b;
 
     /* renamed from: a  reason: collision with root package name */
-    f f24857a = com.opos.cmn.func.b.a.a.a.a();
+    f f11169a = com.opos.cmn.func.b.a.a.a.a();
 
     private b() {
     }
@@ -34,7 +34,7 @@ public class b implements com.opos.cmn.func.b.a.d, com.opos.cmn.func.b.a.e {
 
     @Override // com.opos.cmn.func.b.a.e
     public e a(Context context, d dVar) {
-        f fVar = this.f24857a;
+        f fVar = this.f11169a;
         if (fVar != null) {
             return fVar.a(context, dVar);
         }
@@ -46,7 +46,7 @@ public class b implements com.opos.cmn.func.b.a.d, com.opos.cmn.func.b.a.e {
         if (context == null) {
             throw new NullPointerException("context cannot be null");
         }
-        f fVar = this.f24857a;
+        f fVar = this.f11169a;
         if (fVar != null) {
             fVar.a(context);
         }

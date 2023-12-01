@@ -39,6 +39,7 @@ import com.tencent.tencentmap.mapsdk.maps.model.MapRouteSection;
 import com.tencent.tencentmap.mapsdk.maps.model.PolylineOptions;
 import com.tencent.tencentmap.mapsdk.maps.model.TrafficStyle;
 import com.tencent.tencentmap.mapsdk.maps.model.VectorHeatAggregationUnit;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.UnsupportedEncodingException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -80,24 +81,24 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class a implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37755a;
+        public final /* synthetic */ int f24064a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37756c;
+        public final /* synthetic */ int f24065c;
         public final /* synthetic */ int d;
 
         public a(int i, int i2, int i3, int i4) {
-            this.f37755a = i;
+            this.f24064a = i;
             this.b = i2;
-            this.f37756c = i3;
+            this.f24065c = i3;
             this.d = i4;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetViewport(ri.this.h, this.f37755a, this.b, this.f37756c, this.d);
+                ri.this.g.nativeSetViewport(ri.this.h, this.f24064a, this.b, this.f24065c, this.d);
             }
         }
     }
@@ -106,10 +107,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class a0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37757a;
+        public final /* synthetic */ String f24066a;
 
         public a0(String str) {
-            this.f37757a = str;
+            this.f24066a = str;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -117,7 +118,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeMapLoadKMLFile(ri.this.h, this.f37757a);
+            ri.this.g.nativeMapLoadKMLFile(ri.this.h, this.f24066a);
         }
     }
 
@@ -125,10 +126,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class a1 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37758a;
+        public final /* synthetic */ long f24067a;
 
         public a1(long j) {
-            this.f37758a = j;
+            this.f24067a = j;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -137,7 +138,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0;
             }
-            return Integer.valueOf(ri.this.g.nativeGetEngineId(this.f37758a));
+            return Integer.valueOf(ri.this.g.nativeGetEngineId(this.f24067a));
         }
     }
 
@@ -145,10 +146,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class a2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ List f37759a;
+        public final /* synthetic */ List f24068a;
 
         public a2(List list) {
-            this.f37759a = list;
+            this.f24068a = list;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -156,7 +157,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetIndoorCellInfo(ri.this.h, this.f37759a);
+            ri.this.g.nativeSetIndoorCellInfo(ri.this.h, this.f24068a);
         }
     }
 
@@ -164,19 +165,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class a3 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37760a;
+        public final /* synthetic */ gg f24069a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37761c;
+        public final /* synthetic */ boolean f24070c;
         public final /* synthetic */ boolean d;
         public final /* synthetic */ int[] e;
         public final /* synthetic */ int[] f;
 
         public a3(gg ggVar, int i, boolean z, boolean z2, int[] iArr, int[] iArr2) {
-            this.f37760a = ggVar;
+            this.f24069a = ggVar;
             this.b = i;
-            this.f37761c = z;
+            this.f24070c = z;
             this.d = z2;
             this.e = iArr;
             this.f = iArr2;
@@ -185,7 +186,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Integer run() {
-            return Integer.valueOf(ri.this.g.nativeCreateOrUpdateLine(ri.this.h, this.f37760a.R(), this.f37760a.W(), this.f37760a.X(), (GeoPoint[]) this.f37760a.S().toArray(new GeoPoint[0]), this.f37760a.Z(), this.f37760a.getWidth(), this.b, this.f37761c, this.d, this.f37760a.g0(), this.f37760a.isGradientEnable(), this.f37760a.getZIndex(), this.f37760a.d0(), this.f37760a.L(), this.e, this.f37760a.M(), this.f, this.f37760a.getAlpha(), this.f37760a.getLevel(), this.f37760a.isVisible()));
+            return Integer.valueOf(ri.this.g.nativeCreateOrUpdateLine(ri.this.h, this.f24069a.R(), this.f24069a.W(), this.f24069a.X(), (GeoPoint[]) this.f24069a.S().toArray(new GeoPoint[0]), this.f24069a.Z(), this.f24069a.getWidth(), this.b, this.f24070c, this.d, this.f24069a.g0(), this.f24069a.isGradientEnable(), this.f24069a.getZIndex(), this.f24069a.d0(), this.f24069a.L(), this.e, this.f24069a.M(), this.f, this.f24069a.getAlpha(), this.f24069a.getLevel(), this.f24069a.isVisible()));
         }
     }
 
@@ -207,18 +208,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class a5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37763a;
+        public final /* synthetic */ String f24072a;
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f37764c;
+        public final /* synthetic */ String f24073c;
         public final /* synthetic */ String d;
         public final /* synthetic */ String e;
 
         public a5(String str, String str2, String str3, String str4, String str5) {
-            this.f37763a = str;
+            this.f24072a = str;
             this.b = str2;
-            this.f37764c = str3;
+            this.f24073c = str3;
             this.d = str4;
             this.e = str5;
         }
@@ -226,7 +227,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationCompassGroupImages(ri.this.h, this.f37763a, this.b, this.f37764c, this.d, this.e);
+                ri.this.g.nativeSetLocationCompassGroupImages(ri.this.h, this.f24072a, this.b, this.f24073c, this.d, this.e);
             }
         }
     }
@@ -255,10 +256,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class b0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37766a;
+        public final /* synthetic */ int f24075a;
 
         public b0(int i) {
-            this.f37766a = i;
+            this.f24075a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -266,7 +267,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetLanguage(ri.this.h, this.f37766a);
+            ri.this.g.nativeSetLanguage(ri.this.h, this.f24075a);
         }
     }
 
@@ -274,11 +275,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class b1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37767a;
+        public final /* synthetic */ long f24076a;
         public final /* synthetic */ MarkerInfo b;
 
         public b1(long j, MarkerInfo markerInfo) {
-            this.f37767a = j;
+            this.f24076a = j;
             this.b = markerInfo;
         }
 
@@ -287,7 +288,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateMarker(this.f37767a, this.b);
+            ri.this.g.nativeUpdateMarker(this.f24076a, this.b);
         }
     }
 
@@ -309,19 +310,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class b3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37770a;
+        public final /* synthetic */ gg f24079a;
 
         public b3(gg ggVar) {
-            this.f37770a = ggVar;
+            this.f24079a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             int R;
-            if (ri.this.h == 0 || (R = this.f37770a.R()) == -1) {
+            if (ri.this.h == 0 || (R = this.f24079a.R()) == -1) {
                 return;
             }
-            ri.this.g.nativeSetLineSelected(ri.this.h, R, this.f37770a.isSelected());
+            ri.this.g.nativeSetLineSelected(ri.this.h, R, this.f24079a.isSelected());
         }
     }
 
@@ -329,18 +330,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class b4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37771a;
+        public final /* synthetic */ int f24080a;
         public final /* synthetic */ int b;
 
         public b4(int i, int i2) {
-            this.f37771a = i;
+            this.f24080a = i;
             this.b = i2;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetCompassPosition(ri.this.h, this.f37771a, this.b);
+                ri.this.g.nativeSetCompassPosition(ri.this.h, this.f24080a, this.b);
             }
         }
     }
@@ -349,16 +350,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class b5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37773a;
+        public final /* synthetic */ boolean f24082a;
 
         public b5(boolean z) {
-            this.f37773a = z;
+            this.f24082a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationCompassMarkerHidden(ri.this.h, this.f37773a);
+                ri.this.g.nativeSetLocationCompassMarkerHidden(ri.this.h, this.f24082a);
             }
         }
     }
@@ -394,10 +395,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class c1 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ PolygonInfo f37776a;
+        public final /* synthetic */ PolygonInfo f24085a;
 
         public c1(PolygonInfo polygonInfo) {
-            this.f37776a = polygonInfo;
+            this.f24085a = polygonInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -406,7 +407,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0;
             }
-            return Integer.valueOf(ri.this.g.nativeAddPolygon(ri.this.h, this.f37776a));
+            return Integer.valueOf(ri.this.g.nativeAddPolygon(ri.this.h, this.f24085a));
         }
     }
 
@@ -414,15 +415,15 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class c2 implements CallbackRunnable<Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ rc.b f37777a;
+        public final /* synthetic */ rc.b f24086a;
 
         public c2(rc.b bVar) {
-            this.f37777a = bVar;
+            this.f24086a = bVar;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         public Object run() {
-            this.f37777a.a(null);
+            this.f24086a.a(null);
             return null;
         }
     }
@@ -431,20 +432,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class c3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37778a;
+        public final /* synthetic */ int f24087a;
         public final /* synthetic */ boolean b;
 
         public c3(int i, boolean z) {
-            this.f37778a = i;
+            this.f24087a = i;
             this.b = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            if (this.f37778a == -1) {
+            if (this.f24087a == -1) {
                 return;
             }
-            ri.this.g.nativeDeleteLine(ri.this.h, this.f37778a, this.b);
+            ri.this.g.nativeDeleteLine(ri.this.h, this.f24087a, this.b);
         }
     }
 
@@ -452,16 +453,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class c4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37780a;
+        public final /* synthetic */ String f24089a;
 
         public c4(String str) {
-            this.f37780a = str;
+            this.f24089a = str;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetCompassImage(ri.this.h, this.f37780a);
+                ri.this.g.nativeSetCompassImage(ri.this.h, this.f24089a);
             }
         }
     }
@@ -470,16 +471,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class c5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37781a;
+        public final /* synthetic */ boolean f24090a;
 
         public c5(boolean z) {
-            this.f37781a = z;
+            this.f24090a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationRedLineHidden(ri.this.h, this.f37781a);
+                ri.this.g.nativeSetLocationRedLineHidden(ri.this.h, this.f24090a);
             }
         }
     }
@@ -488,10 +489,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class d implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37782a;
+        public final /* synthetic */ boolean f24091a;
 
         public d(boolean z) {
-            this.f37782a = z;
+            this.f24091a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -499,7 +500,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return;
             }
-            ri.this.g.nativeSetNeedDisplay(ri.this.h, this.f37782a);
+            ri.this.g.nativeSetNeedDisplay(ri.this.h, this.f24091a);
         }
     }
 
@@ -507,16 +508,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class d0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37783a;
+        public final /* synthetic */ String f24092a;
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f37784c;
+        public final /* synthetic */ String f24093c;
 
         public d0(String str, String str2, String str3) {
-            this.f37783a = str;
+            this.f24092a = str;
             this.b = str2;
-            this.f37784c = str3;
+            this.f24093c = str3;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -524,7 +525,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeResetEnginePath(ri.this.h, this.f37783a, this.b, this.f37784c);
+            ri.this.g.nativeResetEnginePath(ri.this.h, this.f24092a, this.b, this.f24093c);
         }
     }
 
@@ -532,11 +533,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class d1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37785a;
+        public final /* synthetic */ int f24094a;
         public final /* synthetic */ int b;
 
         public d1(int i, int i2) {
-            this.f37785a = i;
+            this.f24094a = i;
             this.b = i2;
         }
 
@@ -545,7 +546,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetMarkerMainSubRelation(ri.this.h, this.f37785a, this.b);
+            ri.this.g.nativeSetMarkerMainSubRelation(ri.this.h, this.f24094a, this.b);
         }
     }
 
@@ -553,15 +554,15 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class d2 implements CallbackRunnable<Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ rc.b f37787a;
+        public final /* synthetic */ rc.b f24096a;
 
         public d2(rc.b bVar) {
-            this.f37787a = bVar;
+            this.f24096a = bVar;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         public Object run() {
-            this.f37787a.a(null);
+            this.f24096a.a(null);
             return null;
         }
     }
@@ -570,22 +571,22 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class d3 implements CallbackRunnable<Boolean> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37788a;
+        public final /* synthetic */ int f24097a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37789c;
+        public final /* synthetic */ float f24098c;
 
         public d3(int i, float f, float f2) {
-            this.f37788a = i;
+            this.f24097a = i;
             this.b = f;
-            this.f37789c = f2;
+            this.f24098c = f2;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Boolean run() {
-            return Boolean.valueOf(ri.this.g.nativeOnTapLine(this.f37788a, this.b, this.f37789c));
+            return Boolean.valueOf(ri.this.g.nativeOnTapLine(this.f24097a, this.b, this.f24098c));
         }
     }
 
@@ -593,18 +594,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class d4 implements CallbackRunnable<Double> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Rect f37790a;
+        public final /* synthetic */ Rect f24099a;
         public final /* synthetic */ Rect b;
 
         public d4(Rect rect, Rect rect2) {
-            this.f37790a = rect;
+            this.f24099a = rect;
             this.b = rect2;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Double run() {
-            return 0 == ri.this.h ? Double.valueOf(1.0d) : Double.valueOf(ri.this.g.nativeGetTargetScale(ri.this.h, this.f37790a, this.b));
+            return 0 == ri.this.h ? Double.valueOf(1.0d) : Double.valueOf(ri.this.g.nativeGetTargetScale(ri.this.h, this.f24099a, this.b));
         }
     }
 
@@ -612,22 +613,22 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class d5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37792a;
+        public final /* synthetic */ float f24101a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ LatLng f37793c;
+        public final /* synthetic */ LatLng f24102c;
 
         public d5(float f, int i, LatLng latLng) {
-            this.f37792a = f;
+            this.f24101a = f;
             this.b = i;
-            this.f37793c = latLng;
+            this.f24102c = latLng;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationRedLineInfo(ri.this.h, this.f37792a, this.b, this.f37793c);
+                ri.this.g.nativeSetLocationRedLineInfo(ri.this.h, this.f24101a, this.b, this.f24102c);
             }
         }
     }
@@ -636,10 +637,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class e implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37794a;
+        public final /* synthetic */ int f24103a;
 
         public e(int i) {
-            this.f37794a = i;
+            this.f24103a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -647,7 +648,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return;
             }
-            ri.this.g.nativeSetMaxScaleLevel(ri.this.h, this.f37794a);
+            ri.this.g.nativeSetMaxScaleLevel(ri.this.h, this.f24103a);
         }
     }
 
@@ -655,16 +656,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class e0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37795a;
+        public final /* synthetic */ boolean f24104a;
 
         public e0(boolean z) {
-            this.f37795a = z;
+            this.f24104a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSwitchEngineForeGround(ri.this.h, this.f37795a);
+                ri.this.g.nativeSwitchEngineForeGround(ri.this.h, this.f24104a);
             }
         }
     }
@@ -673,10 +674,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class e1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37796a;
+        public final /* synthetic */ int f24105a;
 
         public e1(int i) {
-            this.f37796a = i;
+            this.f24105a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -684,7 +685,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetMapFontSize(ri.this.h, this.f37796a);
+            ri.this.g.nativeSetMapFontSize(ri.this.h, this.f24105a);
         }
     }
 
@@ -692,15 +693,15 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class e2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ CallbackRunnable f37797a;
+        public final /* synthetic */ CallbackRunnable f24106a;
 
         public e2(CallbackRunnable callbackRunnable) {
-            this.f37797a = callbackRunnable;
+            this.f24106a = callbackRunnable;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            this.f37797a.run();
+            this.f24106a.run();
         }
     }
 
@@ -723,22 +724,22 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class e4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Rect f37799a;
+        public final /* synthetic */ Rect f24108a;
         public final /* synthetic */ Rect b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37800c;
+        public final /* synthetic */ boolean f24109c;
 
         public e4(Rect rect, Rect rect2, boolean z) {
-            this.f37799a = rect;
+            this.f24108a = rect;
             this.b = rect2;
-            this.f37800c = z;
+            this.f24109c = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeZoomToSpan(ri.this.h, this.f37799a, this.b, this.f37800c);
+                ri.this.g.nativeZoomToSpan(ri.this.h, this.f24108a, this.b, this.f24109c);
             }
         }
     }
@@ -747,22 +748,22 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class e5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37801a;
+        public final /* synthetic */ float f24110a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37802c;
+        public final /* synthetic */ boolean f24111c;
 
         public e5(float f, float f2, boolean z) {
-            this.f37801a = f;
+            this.f24110a = f;
             this.b = f2;
-            this.f37802c = z;
+            this.f24111c = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeMoveBy(ri.this.h, this.f37801a, this.b, this.f37802c);
+                ri.this.g.nativeMoveBy(ri.this.h, this.f24110a, this.b, this.f24111c);
             }
         }
     }
@@ -771,10 +772,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class f implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37803a;
+        public final /* synthetic */ int f24112a;
 
         public f(int i) {
-            this.f37803a = i;
+            this.f24112a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -782,7 +783,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return;
             }
-            ri.this.g.nativeSetMinScaleLevel(ri.this.h, this.f37803a);
+            ri.this.g.nativeSetMinScaleLevel(ri.this.h, this.f24112a);
         }
     }
 
@@ -790,23 +791,23 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class f0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37804a;
+        public final /* synthetic */ gg f24113a;
 
         public f0(gg ggVar) {
-            this.f37804a = ggVar;
+            this.f24113a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             int R;
-            if (ri.this.h == 0 || (R = this.f37804a.R()) == -1 || this.f37804a.Y() < 0.0f) {
+            if (ri.this.h == 0 || (R = this.f24113a.R()) == -1 || this.f24113a.Y() < 0.0f) {
                 return;
             }
-            int O = this.f37804a.O();
+            int O = this.f24113a.O();
             if (O == 3 || O == 0) {
-                ri.this.g.nativeSetLineArrowSpacing(ri.this.h, R, this.f37804a.Y());
+                ri.this.g.nativeSetLineArrowSpacing(ri.this.h, R, this.f24113a.Y());
             } else {
-                ri.this.g.nativeSetLineFootPrintSpacing(ri.this.h, R, this.f37804a.Y());
+                ri.this.g.nativeSetLineFootPrintSpacing(ri.this.h, R, this.f24113a.Y());
             }
         }
     }
@@ -815,10 +816,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class f1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37805a;
+        public final /* synthetic */ long f24114a;
 
         public f1(long j) {
-            this.f37805a = j;
+            this.f24114a = j;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -826,7 +827,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeRemoveEngineOverlay(this.f37805a);
+            ri.this.g.nativeRemoveEngineOverlay(this.f24114a);
         }
     }
 
@@ -834,15 +835,15 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class f2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37806a;
+        public final /* synthetic */ int f24115a;
 
         public f2(int i) {
-            this.f37806a = i;
+            this.f24115a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            ri.this.g.nativeDeleteCircle(ri.this.h, this.f37806a);
+            ri.this.g.nativeDeleteCircle(ri.this.h, this.f24115a);
         }
     }
 
@@ -850,20 +851,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class f3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37807a;
+        public final /* synthetic */ gg f24116a;
 
         public f3(gg ggVar) {
-            this.f37807a = ggVar;
+            this.f24116a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             gg.a a0;
-            int R = this.f37807a.R();
-            if (R == -1 || (a0 = this.f37807a.a0()) == null) {
+            int R = this.f24116a.R();
+            if (R == -1 || (a0 = this.f24116a.a0()) == null) {
                 return;
             }
-            ri.this.g.nativeSetTurnArrow(ri.this.h, R, this.f37807a.S(), a0.f37491a, a0.b);
+            ri.this.g.nativeSetTurnArrow(ri.this.h, R, this.f24116a.S(), a0.f23800a, a0.b);
         }
     }
 
@@ -871,16 +872,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class f4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37808a;
+        public final /* synthetic */ boolean f24117a;
 
         public f4(boolean z) {
-            this.f37808a = z;
+            this.f24117a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeIndoorBuildingEnabled(ri.this.h, this.f37808a);
+                ri.this.g.nativeIndoorBuildingEnabled(ri.this.h, this.f24117a);
             }
         }
     }
@@ -889,18 +890,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class f5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint f37809a;
+        public final /* synthetic */ GeoPoint f24118a;
         public final /* synthetic */ boolean b;
 
         public f5(GeoPoint geoPoint, boolean z) {
-            this.f37809a = geoPoint;
+            this.f24118a = geoPoint;
             this.b = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetCenter(ri.this.h, this.f37809a, this.b);
+                ri.this.g.nativeSetCenter(ri.this.h, this.f24118a, this.b);
             }
         }
     }
@@ -909,10 +910,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class g implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37811a;
+        public final /* synthetic */ float f24120a;
 
         public g(float f) {
-            this.f37811a = f;
+            this.f24120a = f;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -920,7 +921,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return;
             }
-            ri.this.g.nativeSetRotate(ri.this.h, this.f37811a, false);
+            ri.this.g.nativeSetRotate(ri.this.h, this.f24120a, false);
         }
     }
 
@@ -950,10 +951,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                     bhVarArr[i2] = new bh();
                     bh bhVar = bhVarArr[i2];
                     int i3 = i2 * 7;
-                    bhVar.f37329a = nativeFetchLackedTrafficBlocks[i3];
+                    bhVar.f23638a = nativeFetchLackedTrafficBlocks[i3];
                     bhVarArr[i2].b = nativeFetchLackedTrafficBlocks[i3 + 1];
                     bhVarArr[i2].d = nativeFetchLackedTrafficBlocks[i3 + 2];
-                    bhVarArr[i2].f37330c = nativeFetchLackedTrafficBlocks[i3 + 3];
+                    bhVarArr[i2].f23639c = nativeFetchLackedTrafficBlocks[i3 + 3];
                     bhVarArr[i2].f = nativeFetchLackedTrafficBlocks[i3 + 4];
                     bhVarArr[i2].e = nativeFetchLackedTrafficBlocks[i3 + 5];
                     bhVarArr[i2].g = nativeFetchLackedTrafficBlocks[i3 + 6];
@@ -967,10 +968,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class g1 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ AggregationOverlayInfo f37813a;
+        public final /* synthetic */ AggregationOverlayInfo f24122a;
 
         public g1(AggregationOverlayInfo aggregationOverlayInfo) {
-            this.f37813a = aggregationOverlayInfo;
+            this.f24122a = aggregationOverlayInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -979,7 +980,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddAggregatioinOverlay(ri.this.h, this.f37813a));
+            return Long.valueOf(ri.this.g.nativeAddAggregatioinOverlay(ri.this.h, this.f24122a));
         }
     }
 
@@ -987,10 +988,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class g2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ PolygonInfo f37814a;
+        public final /* synthetic */ PolygonInfo f24123a;
 
         public g2(PolygonInfo polygonInfo) {
-            this.f37814a = polygonInfo;
+            this.f24123a = polygonInfo;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1000,7 +1001,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             }
             JNI jni = ri.this.g;
             long j = ri.this.h;
-            PolygonInfo polygonInfo = this.f37814a;
+            PolygonInfo polygonInfo = this.f24123a;
             jni.nativeUpdatePolygon(j, polygonInfo.polygonId, polygonInfo.borderLineId, polygonInfo);
         }
     }
@@ -1009,19 +1010,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class g3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37815a;
+        public final /* synthetic */ gg f24124a;
 
         public g3(gg ggVar) {
-            this.f37815a = ggVar;
+            this.f24124a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            int R = this.f37815a.R();
+            int R = this.f24124a.R();
             if (R == -1) {
                 return;
             }
-            int[] b0 = this.f37815a.b0();
+            int[] b0 = this.f24124a.b0();
             ri.this.g.nativeSetTurnArrowStyle(ri.this.h, R, b0[0], b0[1]);
         }
     }
@@ -1030,10 +1031,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class g4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37816a;
+        public final /* synthetic */ boolean f24125a;
 
         public g4(boolean z) {
-            this.f37816a = z;
+            this.f24125a = z;
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -1047,10 +1048,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class g5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint f37817a;
+        public final /* synthetic */ GeoPoint f24126a;
 
         public g5(GeoPoint geoPoint) {
-            this.f37817a = geoPoint;
+            this.f24126a = geoPoint;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1058,7 +1059,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h || ri.this.m == null) {
                 return;
             }
-            ri.this.g.nativeSetCenter(ri.this.h, this.f37817a, false);
+            ri.this.g.nativeSetCenter(ri.this.h, this.f24126a, false);
         }
     }
 
@@ -1066,10 +1067,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class h implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37818a;
+        public final /* synthetic */ float f24127a;
 
         public h(float f) {
-            this.f37818a = f;
+            this.f24127a = f;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1077,7 +1078,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return;
             }
-            ri.this.g.nativeSetSkew(ri.this.h, this.f37818a, false);
+            ri.this.g.nativeSetSkew(ri.this.h, this.f24127a, false);
         }
     }
 
@@ -1085,16 +1086,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class h0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37819a;
+        public final /* synthetic */ String f24128a;
 
         public h0(String str) {
-            this.f37819a = str;
+            this.f24128a = str;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetServerHost(ri.this.h, this.f37819a);
+                ri.this.g.nativeSetServerHost(ri.this.h, this.f24128a);
             }
         }
     }
@@ -1103,11 +1104,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class h1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37820a;
+        public final /* synthetic */ long f24129a;
         public final /* synthetic */ AggregationOverlayInfo b;
 
         public h1(long j, AggregationOverlayInfo aggregationOverlayInfo) {
-            this.f37820a = j;
+            this.f24129a = j;
             this.b = aggregationOverlayInfo;
         }
 
@@ -1116,7 +1117,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateAggregatioinOverlay(ri.this.h, this.f37820a, this.b);
+            ri.this.g.nativeUpdateAggregatioinOverlay(ri.this.h, this.f24129a, this.b);
         }
     }
 
@@ -1124,24 +1125,24 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class h2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37822a;
+        public final /* synthetic */ int f24131a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37823c;
+        public final /* synthetic */ boolean f24132c;
 
         public h2(int i, int i2, boolean z) {
-            this.f37822a = i;
+            this.f24131a = i;
             this.b = i2;
-            this.f37823c = z;
+            this.f24132c = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            if (ri.this.h == 0 || this.f37822a < 0 || ri.this.m == null) {
+            if (ri.this.h == 0 || this.f24131a < 0 || ri.this.m == null) {
                 return;
             }
-            ri.this.g.nativeSetPolygonHidden(ri.this.h, this.f37822a, this.b, this.f37823c);
+            ri.this.g.nativeSetPolygonHidden(ri.this.h, this.f24131a, this.b, this.f24132c);
         }
     }
 
@@ -1149,19 +1150,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class h3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37824a;
+        public final /* synthetic */ gg f24133a;
 
         public h3(gg ggVar) {
-            this.f37824a = ggVar;
+            this.f24133a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            int R = this.f37824a.R();
+            int R = this.f24133a.R();
             if (R == -1) {
                 return;
             }
-            ri.this.g.nativeSetLineDrawArrow(ri.this.h, R, this.f37824a.c0());
+            ri.this.g.nativeSetLineDrawArrow(ri.this.h, R, this.f24133a.c0());
         }
     }
 
@@ -1169,10 +1170,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class h4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37825a;
+        public final /* synthetic */ int f24134a;
 
         public h4(int i) {
-            this.f37825a = i;
+            this.f24134a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1180,7 +1181,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetIndoorConfigType(ri.this.h, this.f37825a);
+            ri.this.g.nativeSetIndoorConfigType(ri.this.h, this.f24134a);
         }
     }
 
@@ -1188,10 +1189,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class h5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37826a;
+        public final /* synthetic */ int f24135a;
 
         public h5(int i) {
-            this.f37826a = i;
+            this.f24135a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1199,7 +1200,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            int i = this.f37826a;
+            int i = this.f24135a;
             if (i == 1) {
                 ri.this.g.nativeSetTrafficColor(ri.this.h, ri.u, ri.w, ri.z, -16777063);
             } else if (i == 2) {
@@ -1214,11 +1215,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class i implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ TileOverlayCallback f37827a;
+        public final /* synthetic */ TileOverlayCallback f24136a;
         public final /* synthetic */ boolean b;
 
         public i(TileOverlayCallback tileOverlayCallback, boolean z) {
-            this.f37827a = tileOverlayCallback;
+            this.f24136a = tileOverlayCallback;
             this.b = z;
         }
 
@@ -1228,7 +1229,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return -1;
             }
-            return Integer.valueOf(ri.this.g.nativeAddTileOverlay(ri.this.h, this.f37827a, this.b));
+            return Integer.valueOf(ri.this.g.nativeAddTileOverlay(ri.this.h, this.f24136a, this.b));
         }
     }
 
@@ -1236,16 +1237,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class i0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37829a;
+        public final /* synthetic */ String f24138a;
 
         public i0(String str) {
-            this.f37829a = str;
+            this.f24138a = str;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeMapSetSatelliteServerFullUrl(ri.this.h, this.f37829a);
+                ri.this.g.nativeMapSetSatelliteServerFullUrl(ri.this.h, this.f24138a);
             }
         }
     }
@@ -1254,10 +1255,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class i1 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ HeatmapInfo f37830a;
+        public final /* synthetic */ HeatmapInfo f24139a;
 
         public i1(HeatmapInfo heatmapInfo) {
-            this.f37830a = heatmapInfo;
+            this.f24139a = heatmapInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -1266,7 +1267,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddHeatmapOverlay(ri.this.h, this.f37830a));
+            return Long.valueOf(ri.this.g.nativeAddHeatmapOverlay(ri.this.h, this.f24139a));
         }
     }
 
@@ -1296,19 +1297,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class i3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37832a;
+        public final /* synthetic */ gg f24141a;
 
         public i3(gg ggVar) {
-            this.f37832a = ggVar;
+            this.f24141a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            int R = this.f37832a.R();
+            int R = this.f24141a.R();
             if (R == -1) {
                 return;
             }
-            ri.this.g.nativeSetLineDirectionArrowTextureName(ri.this.h, R, this.f37832a.N());
+            ri.this.g.nativeSetLineDirectionArrowTextureName(ri.this.h, R, this.f24141a.N());
         }
     }
 
@@ -1316,10 +1317,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class i4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37833a;
+        public final /* synthetic */ int f24142a;
 
         public i4(int i) {
-            this.f37833a = i;
+            this.f24142a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1327,7 +1328,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h || ri.this.m == null) {
                 return;
             }
-            ri.this.g.nativeSetIndoorFloor(ri.this.h, this.f37833a);
+            ri.this.g.nativeSetIndoorFloor(ri.this.h, this.f24142a);
         }
     }
 
@@ -1335,22 +1336,22 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class i5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint f37834a;
+        public final /* synthetic */ GeoPoint f24143a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37835c;
+        public final /* synthetic */ boolean f24144c;
 
         public i5(GeoPoint geoPoint, int i, boolean z) {
-            this.f37834a = geoPoint;
+            this.f24143a = geoPoint;
             this.b = i;
-            this.f37835c = z;
+            this.f24144c = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetCenterMapPointAndScaleLevel(ri.this.h, this.f37834a, this.b, this.f37835c);
+                ri.this.g.nativeSetCenterMapPointAndScaleLevel(ri.this.h, this.f24143a, this.b, this.f24144c);
             }
         }
     }
@@ -1359,11 +1360,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class j implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37836a;
+        public final /* synthetic */ int f24145a;
         public final /* synthetic */ int b;
 
         public j(int i, int i2) {
-            this.f37836a = i;
+            this.f24145a = i;
             this.b = i2;
         }
 
@@ -1372,7 +1373,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetTileOverlayPriority(ri.this.h, this.f37836a, this.b);
+            ri.this.g.nativeSetTileOverlayPriority(ri.this.h, this.f24145a, this.b);
         }
     }
 
@@ -1380,10 +1381,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class j0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37838a;
+        public final /* synthetic */ boolean f24147a;
 
         public j0(boolean z) {
-            this.f37838a = z;
+            this.f24147a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1391,7 +1392,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeEnablePOI(ri.this.h, this.f37838a);
+            ri.this.g.nativeEnablePOI(ri.this.h, this.f24147a);
         }
     }
 
@@ -1399,11 +1400,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class j1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37839a;
+        public final /* synthetic */ long f24148a;
         public final /* synthetic */ HeatmapInfo b;
 
         public j1(long j, HeatmapInfo heatmapInfo) {
-            this.f37839a = j;
+            this.f24148a = j;
             this.b = heatmapInfo;
         }
 
@@ -1412,7 +1413,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateHeatmapOverlay(ri.this.h, this.f37839a, this.b);
+            ri.this.g.nativeUpdateHeatmapOverlay(ri.this.h, this.f24148a, this.b);
         }
     }
 
@@ -1420,20 +1421,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class j2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37841a;
+        public final /* synthetic */ int f24150a;
         public final /* synthetic */ int b;
 
         public j2(int i, int i2) {
-            this.f37841a = i;
+            this.f24150a = i;
             this.b = i2;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            if (ri.this.h == 0 || this.f37841a < 0 || ri.this.m == null) {
+            if (ri.this.h == 0 || this.f24150a < 0 || ri.this.m == null) {
                 return;
             }
-            ri.this.g.nativeDeletePolygon(ri.this.h, this.f37841a, this.b);
+            ri.this.g.nativeDeletePolygon(ri.this.h, this.f24150a, this.b);
         }
     }
 
@@ -1441,19 +1442,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class j3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37843a;
+        public final /* synthetic */ gg f24152a;
 
         public j3(gg ggVar) {
-            this.f37843a = ggVar;
+            this.f24152a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            int R = this.f37843a.R();
+            int R = this.f24152a.R();
             if (R == -1) {
                 return;
             }
-            ri.this.g.nativeSetDrawCap(ri.this.h, R, this.f37843a.e0());
+            ri.this.g.nativeSetDrawCap(ri.this.h, R, this.f24152a.e0());
         }
     }
 
@@ -1493,18 +1494,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class k implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37846a;
+        public final /* synthetic */ int f24155a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37847c;
+        public final /* synthetic */ int f24156c;
         public final /* synthetic */ int d;
         public final /* synthetic */ int e;
 
         public k(int i, int i2, int i3, int i4, int i5) {
-            this.f37846a = i;
+            this.f24155a = i;
             this.b = i2;
-            this.f37847c = i3;
+            this.f24156c = i3;
             this.d = i4;
             this.e = i5;
         }
@@ -1512,7 +1513,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeCheckTrafficBlockCache(ri.this.h, this.f37846a, this.b, this.f37847c, this.d, this.e);
+                ri.this.g.nativeCheckTrafficBlockCache(ri.this.h, this.f24155a, this.b, this.f24156c, this.d, this.e);
             }
         }
     }
@@ -1521,10 +1522,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class k0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37848a;
+        public final /* synthetic */ boolean f24157a;
 
         public k0(boolean z) {
-            this.f37848a = z;
+            this.f24157a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1532,7 +1533,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeEnableBaseMap(ri.this.h, this.f37848a);
+            ri.this.g.nativeEnableBaseMap(ri.this.h, this.f24157a);
         }
     }
 
@@ -1540,10 +1541,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class k1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37849a;
+        public final /* synthetic */ long f24158a;
 
         public k1(long j) {
-            this.f37849a = j;
+            this.f24158a = j;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1551,7 +1552,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeRemoveGLVisualizationOverlay(ri.this.h, this.f37849a);
+            ri.this.g.nativeRemoveGLVisualizationOverlay(ri.this.h, this.f24158a);
         }
     }
 
@@ -1559,10 +1560,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class k2 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ MaskLayer f37850a;
+        public final /* synthetic */ MaskLayer f24159a;
 
         public k2(MaskLayer maskLayer) {
-            this.f37850a = maskLayer;
+            this.f24159a = maskLayer;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -1571,7 +1572,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0;
             }
-            return Integer.valueOf(ri.this.g.nativeAddMaskLayer(ri.this.h, this.f37850a));
+            return Integer.valueOf(ri.this.g.nativeAddMaskLayer(ri.this.h, this.f24159a));
         }
     }
 
@@ -1579,20 +1580,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class k3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37851a;
+        public final /* synthetic */ gg f24160a;
 
         public k3(gg ggVar) {
-            this.f37851a = ggVar;
+            this.f24160a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             GeoPoint P;
-            int R = this.f37851a.R();
-            if (R == -1 || (P = this.f37851a.P()) == null) {
+            int R = this.f24160a.R();
+            if (R == -1 || (P = this.f24160a.P()) == null) {
                 return;
             }
-            ri.this.g.nativeLineInsertPoint(ri.this.h, R, P, this.f37851a.Q());
+            ri.this.g.nativeLineInsertPoint(ri.this.h, R, P, this.f24160a.Q());
         }
     }
 
@@ -1615,18 +1616,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class k5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ double f37853a;
+        public final /* synthetic */ double f24162a;
         public final /* synthetic */ boolean b;
 
         public k5(double d, boolean z) {
-            this.f37853a = d;
+            this.f24162a = d;
             this.b = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetScale(ri.this.h, this.f37853a, this.b);
+                ri.this.g.nativeSetScale(ri.this.h, this.f24162a, this.b);
             }
         }
     }
@@ -1635,22 +1636,22 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class l implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37855a;
+        public final /* synthetic */ int f24164a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37856c;
+        public final /* synthetic */ int f24165c;
 
         public l(int i, int i2, int i3) {
-            this.f37855a = i;
+            this.f24164a = i;
             this.b = i2;
-            this.f37856c = i3;
+            this.f24165c = i3;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetTileOverlayDataLevelRange(ri.this.h, this.f37855a, this.b, this.f37856c);
+                ri.this.g.nativeSetTileOverlayDataLevelRange(ri.this.h, this.f24164a, this.b, this.f24165c);
             }
         }
     }
@@ -1659,10 +1660,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class l0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37857a;
+        public final /* synthetic */ boolean f24166a;
 
         public l0(boolean z) {
-            this.f37857a = z;
+            this.f24166a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1670,7 +1671,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeEnableBuilding(ri.this.h, this.f37857a);
+            ri.this.g.nativeEnableBuilding(ri.this.h, this.f24166a);
         }
     }
 
@@ -1678,11 +1679,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class l1 implements CallbackRunnable<VectorHeatAggregationUnit> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37858a;
+        public final /* synthetic */ long f24167a;
         public final /* synthetic */ LatLng b;
 
         public l1(long j, LatLng latLng) {
-            this.f37858a = j;
+            this.f24167a = j;
             this.b = latLng;
         }
 
@@ -1692,7 +1693,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return null;
             }
-            return ri.this.g.getAggregationUnit(ri.this.h, this.f37858a, this.b);
+            return ri.this.g.getAggregationUnit(ri.this.h, this.f24167a, this.b);
         }
     }
 
@@ -1700,11 +1701,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class l2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37860a;
+        public final /* synthetic */ int f24169a;
         public final /* synthetic */ int b;
 
         public l2(int i, int i2) {
-            this.f37860a = i;
+            this.f24169a = i;
             this.b = i2;
         }
 
@@ -1713,7 +1714,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateMaskLayer(ri.this.h, this.f37860a, this.b);
+            ri.this.g.nativeUpdateMaskLayer(ri.this.h, this.f24169a, this.b);
         }
     }
 
@@ -1721,20 +1722,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class l3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37862a;
+        public final /* synthetic */ gg f24171a;
 
         public l3(gg ggVar) {
-            this.f37862a = ggVar;
+            this.f24171a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             GeoPoint P;
-            int R = this.f37862a.R();
-            if (R == -1 || (P = this.f37862a.P()) == null) {
+            int R = this.f24171a.R();
+            if (R == -1 || (P = this.f24171a.P()) == null) {
                 return;
             }
-            ri.this.g.nativeLineClearPoint(ri.this.h, R, P, this.f37862a.Q());
+            ri.this.g.nativeLineClearPoint(ri.this.h, R, P, this.f24171a.Q());
         }
     }
 
@@ -1754,22 +1755,22 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class l5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37864a;
+        public final /* synthetic */ int f24173a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37865c;
+        public final /* synthetic */ int f24174c;
 
         public l5(int i, int i2, int i3) {
-            this.f37864a = i;
+            this.f24173a = i;
             this.b = i2;
-            this.f37865c = i3;
+            this.f24174c = i3;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetMarkerScaleLevelRange(ri.this.h, this.f37864a, this.b, this.f37865c);
+                ri.this.g.nativeSetMarkerScaleLevelRange(ri.this.h, this.f24173a, this.b, this.f24174c);
             }
         }
     }
@@ -1778,16 +1779,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class m implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37866a;
+        public final /* synthetic */ int f24175a;
 
         public m(int i) {
-            this.f37866a = i;
+            this.f24175a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeRemoveTileOverlay(ri.this.h, this.f37866a);
+                ri.this.g.nativeRemoveTileOverlay(ri.this.h, this.f24175a);
             }
         }
     }
@@ -1808,10 +1809,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class m1 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ ArcLineOverlayInfo f37868a;
+        public final /* synthetic */ ArcLineOverlayInfo f24177a;
 
         public m1(ArcLineOverlayInfo arcLineOverlayInfo) {
-            this.f37868a = arcLineOverlayInfo;
+            this.f24177a = arcLineOverlayInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -1820,7 +1821,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddArcLineOverlay(ri.this.h, this.f37868a));
+            return Long.valueOf(ri.this.g.nativeAddArcLineOverlay(ri.this.h, this.f24177a));
         }
     }
 
@@ -1828,10 +1829,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class m2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37869a;
+        public final /* synthetic */ int f24178a;
 
         public m2(int i) {
-            this.f37869a = i;
+            this.f24178a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1839,7 +1840,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeRemoveMaskLayer(ri.this.h, this.f37869a);
+            ri.this.g.nativeRemoveMaskLayer(ri.this.h, this.f24178a);
         }
     }
 
@@ -1847,11 +1848,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class m3 implements CallbackRunnable<TappedElement> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37870a;
+        public final /* synthetic */ float f24179a;
         public final /* synthetic */ float b;
 
         public m3(float f, float f2) {
-            this.f37870a = f;
+            this.f24179a = f;
             this.b = f2;
         }
 
@@ -1859,7 +1860,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
         /* renamed from: a */
         public TappedElement run() {
             byte[] nativeOnTap;
-            if (ri.this.h == 0 || (nativeOnTap = ri.this.g.nativeOnTap(ri.this.h, this.f37870a, this.b)) == null) {
+            if (ri.this.h == 0 || (nativeOnTap = ri.this.g.nativeOnTap(ri.this.h, this.f24179a, this.b)) == null) {
                 return null;
             }
             try {
@@ -1874,10 +1875,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class m4 implements CallbackRunnable<dg> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint f37872a;
+        public final /* synthetic */ GeoPoint f24181a;
 
         public m4(GeoPoint geoPoint) {
-            this.f37872a = geoPoint;
+            this.f24181a = geoPoint;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -1886,7 +1887,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return null;
             }
-            return new dg(ri.this.g.nativeGetActiveIndoorBuildingGUID(ri.this.h), ri.this.g.nativeGetCurIndoorName(ri.this.h, this.f37872a), ri.this.g.nativeGetIndoorFloorNames(ri.this.h), ri.this.g.nativeGetIndoorCurrentFloorId(ri.this.h));
+            return new dg(ri.this.g.nativeGetActiveIndoorBuildingGUID(ri.this.h), ri.this.g.nativeGetCurIndoorName(ri.this.h, this.f24181a), ri.this.g.nativeGetIndoorFloorNames(ri.this.h), ri.this.g.nativeGetIndoorCurrentFloorId(ri.this.h));
         }
     }
 
@@ -1894,10 +1895,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class m5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ double f37873a;
+        public final /* synthetic */ double f24182a;
 
         public m5(double d) {
-            this.f37873a = d;
+            this.f24182a = d;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -1905,7 +1906,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h || ri.this.m == null) {
                 return;
             }
-            ri.this.g.nativeSetScale(ri.this.h, this.f37873a, false);
+            ri.this.g.nativeSetScale(ri.this.h, this.f24182a, false);
         }
     }
 
@@ -1913,16 +1914,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class n implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37874a;
+        public final /* synthetic */ int f24183a;
 
         public n(int i) {
-            this.f37874a = i;
+            this.f24183a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeReloadTileOverlay(ri.this.h, this.f37874a);
+                ri.this.g.nativeReloadTileOverlay(ri.this.h, this.f24183a);
             }
         }
     }
@@ -1943,19 +1944,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class n1 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ CircleInfo f37876a;
+        public final /* synthetic */ CircleInfo f24185a;
 
         public n1(CircleInfo circleInfo) {
-            this.f37876a = circleInfo;
+            this.f24185a = circleInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Integer run() {
-            if (ri.this.h == 0 || this.f37876a == null) {
+            if (ri.this.h == 0 || this.f24185a == null) {
                 return -1;
             }
-            return Integer.valueOf(ri.this.g.nativeAddCircle(ri.this.h, this.f37876a));
+            return Integer.valueOf(ri.this.g.nativeAddCircle(ri.this.h, this.f24185a));
         }
     }
 
@@ -1963,16 +1964,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class n2 implements CallbackRunnable<GeoPoint> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ byte[] f37877a;
+        public final /* synthetic */ byte[] f24186a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37878c;
+        public final /* synthetic */ float f24187c;
 
         public n2(byte[] bArr, float f, float f2) {
-            this.f37877a = bArr;
+            this.f24186a = bArr;
             this.b = f;
-            this.f37878c = f2;
+            this.f24187c = f2;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -1982,7 +1983,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                 return new GeoPoint();
             }
             double[] dArr = new double[2];
-            ri.this.g.nativeFromScreenLocation(ri.this.h, this.f37877a, this.b, this.f37878c, dArr);
+            ri.this.g.nativeFromScreenLocation(ri.this.h, this.f24186a, this.b, this.f24187c, dArr);
             return new GeoPoint((int) (dArr[1] * 1000000.0d), (int) (dArr[0] * 1000000.0d));
         }
     }
@@ -2018,18 +2019,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class n5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37881a;
+        public final /* synthetic */ int f24190a;
         public final /* synthetic */ boolean b;
 
         public n5(int i, boolean z) {
-            this.f37881a = i;
+            this.f24190a = i;
             this.b = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetScaleLevel(ri.this.h, this.f37881a, this.b);
+                ri.this.g.nativeSetScaleLevel(ri.this.h, this.f24190a, this.b);
             }
         }
     }
@@ -2050,11 +2051,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class o0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37884a;
+        public final /* synthetic */ String f24193a;
         public final /* synthetic */ String b;
 
         public o0(String str, String str2) {
-            this.f37884a = str;
+            this.f24193a = str;
             this.b = str2;
         }
 
@@ -2063,7 +2064,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetBuildingToSpecificFloor(ri.this.h, this.f37884a, this.b);
+            ri.this.g.nativeSetBuildingToSpecificFloor(ri.this.h, this.f24193a, this.b);
             if (ri.this.l != null) {
                 ri.this.l.d();
             }
@@ -2074,11 +2075,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class o1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37886a;
+        public final /* synthetic */ long f24195a;
         public final /* synthetic */ ArcLineOverlayInfo b;
 
         public o1(long j, ArcLineOverlayInfo arcLineOverlayInfo) {
-            this.f37886a = j;
+            this.f24195a = j;
             this.b = arcLineOverlayInfo;
         }
 
@@ -2087,7 +2088,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateArcLineOverlay(ri.this.h, this.f37886a, this.b);
+            ri.this.g.nativeUpdateArcLineOverlay(ri.this.h, this.f24195a, this.b);
         }
     }
 
@@ -2095,16 +2096,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class o2 implements CallbackRunnable<PointF> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ byte[] f37888a;
+        public final /* synthetic */ byte[] f24197a;
         public final /* synthetic */ double b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ double f37889c;
+        public final /* synthetic */ double f24198c;
 
         public o2(byte[] bArr, double d, double d2) {
-            this.f37888a = bArr;
+            this.f24197a = bArr;
             this.b = d;
-            this.f37889c = d2;
+            this.f24198c = d2;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2114,7 +2115,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                 return new PointF();
             }
             float[] fArr = new float[2];
-            ri.this.g.nativeToScreenLocation(ri.this.h, this.f37888a, this.b, this.f37889c, fArr);
+            ri.this.g.nativeToScreenLocation(ri.this.h, this.f24197a, this.b, this.f24198c, fArr);
             return new PointF(fArr[0], fArr[1]);
         }
     }
@@ -2123,16 +2124,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class o3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37890a;
+        public final /* synthetic */ boolean f24199a;
 
         public o3(boolean z) {
-            this.f37890a = z;
+            this.f24199a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (0 != ri.this.h) {
-                ri.this.g.nativeSetBuilding3DEffect(ri.this.h, this.f37890a);
+                ri.this.g.nativeSetBuilding3DEffect(ri.this.h, this.f24199a);
             }
         }
     }
@@ -2156,18 +2157,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class o5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37892a;
+        public final /* synthetic */ float f24201a;
         public final /* synthetic */ float b;
 
         public o5(float f, float f2) {
-            this.f37892a = f;
+            this.f24201a = f;
             this.b = f2;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeZoomIn(ri.this.h, this.f37892a, this.b);
+                ri.this.g.nativeZoomIn(ri.this.h, this.f24201a, this.b);
             }
         }
     }
@@ -2176,10 +2177,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class p implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37894a;
+        public final /* synthetic */ boolean f24203a;
 
         public p(boolean z) {
-            this.f37894a = z;
+            this.f24203a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -2187,7 +2188,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetTileOverlayEnabled(ri.this.h, this.f37894a);
+            ri.this.g.nativeSetTileOverlayEnabled(ri.this.h, this.f24203a);
         }
     }
 
@@ -2195,10 +2196,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class p0 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37895a;
+        public final /* synthetic */ String f24204a;
 
         public p0(String str) {
-            this.f37895a = str;
+            this.f24204a = str;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2207,7 +2208,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return -1;
             }
-            return Integer.valueOf(ri.this.g.getIndoorOutlineZoom(ri.this.h, this.f37895a));
+            return Integer.valueOf(ri.this.g.getIndoorOutlineZoom(ri.this.h, this.f24204a));
         }
     }
 
@@ -2215,10 +2216,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class p1 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ ScatterPlotInfo f37896a;
+        public final /* synthetic */ ScatterPlotInfo f24205a;
 
         public p1(ScatterPlotInfo scatterPlotInfo) {
-            this.f37896a = scatterPlotInfo;
+            this.f24205a = scatterPlotInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2227,7 +2228,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddScatterOverlay(ri.this.h, this.f37896a));
+            return Long.valueOf(ri.this.g.nativeAddScatterOverlay(ri.this.h, this.f24205a));
         }
     }
 
@@ -2235,16 +2236,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class p2 implements CallbackRunnable<Boolean> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37897a;
+        public final /* synthetic */ String f24206a;
 
         public p2(String str) {
-            this.f37897a = str;
+            this.f24206a = str;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Boolean run() {
-            return ri.this.h == 0 ? Boolean.FALSE : Boolean.valueOf(ri.this.g.nativeHasStreetRoad(ri.this.h, this.f37897a));
+            return ri.this.h == 0 ? Boolean.FALSE : Boolean.valueOf(ri.this.g.nativeHasStreetRoad(ri.this.h, this.f24206a));
         }
     }
 
@@ -2266,10 +2267,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class p4 implements CallbackRunnable<String> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint f37899a;
+        public final /* synthetic */ GeoPoint f24208a;
 
         public p4(GeoPoint geoPoint) {
-            this.f37899a = geoPoint;
+            this.f24208a = geoPoint;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2278,7 +2279,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return null;
             }
-            return ri.this.g.nativeGetCurIndoorName(ri.this.h, this.f37899a);
+            return ri.this.g.nativeGetCurIndoorName(ri.this.h, this.f24208a);
         }
     }
 
@@ -2299,15 +2300,15 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class q implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ com.tencent.mapsdk.internal.v f37901a;
+        public final /* synthetic */ com.tencent.mapsdk.internal.v f24210a;
 
         public q(com.tencent.mapsdk.internal.v vVar) {
-            this.f37901a = vVar;
+            this.f24210a = vVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            com.tencent.mapsdk.internal.v vVar = this.f37901a;
+            com.tencent.mapsdk.internal.v vVar = this.f24210a;
             if (vVar != null) {
                 vVar.z();
             }
@@ -2333,11 +2334,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class q1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37903a;
+        public final /* synthetic */ long f24212a;
         public final /* synthetic */ ScatterPlotInfo b;
 
         public q1(long j, ScatterPlotInfo scatterPlotInfo) {
-            this.f37903a = j;
+            this.f24212a = j;
             this.b = scatterPlotInfo;
         }
 
@@ -2346,7 +2347,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateScatterPlotOverlay(ri.this.h, this.f37903a, this.b);
+            ri.this.g.nativeUpdateScatterPlotOverlay(ri.this.h, this.f24212a, this.b);
         }
     }
 
@@ -2368,19 +2369,19 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class q3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ List f37906a;
+        public final /* synthetic */ List f24215a;
 
         public q3(List list) {
-            this.f37906a = list;
+            this.f24215a = list;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (0 != ri.this.h) {
-                if (this.f37906a == null) {
+                if (this.f24215a == null) {
                     ri.this.g.nativeSetBuildingBlackList(ri.this.h, null);
                 } else {
-                    ri.this.g.nativeSetBuildingBlackList(ri.this.h, (LatLngBounds[]) this.f37906a.toArray(new LatLngBounds[0]));
+                    ri.this.g.nativeSetBuildingBlackList(ri.this.h, (LatLngBounds[]) this.f24215a.toArray(new LatLngBounds[0]));
                 }
             }
         }
@@ -2390,16 +2391,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class q4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37907a;
+        public final /* synthetic */ int f24216a;
 
         public q4(int i) {
-            this.f37907a = i;
+            this.f24216a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetIndoorMaskColor(ri.this.h, this.f37907a);
+                ri.this.g.nativeSetIndoorMaskColor(ri.this.h, this.f24216a);
             }
         }
     }
@@ -2408,18 +2409,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class q5 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ RectF f37908a;
+        public final /* synthetic */ RectF f24217a;
         public final /* synthetic */ GeoPoint b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37909c;
+        public final /* synthetic */ int f24218c;
         public final /* synthetic */ int d;
         public final /* synthetic */ boolean e;
 
         public q5(RectF rectF, GeoPoint geoPoint, int i, int i2, boolean z) {
-            this.f37908a = rectF;
+            this.f24217a = rectF;
             this.b = geoPoint;
-            this.f37909c = i;
+            this.f24218c = i;
             this.d = i2;
             this.e = z;
         }
@@ -2429,9 +2430,9 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h != 0) {
                 JNI jni = ri.this.g;
                 long j = ri.this.h;
-                RectF rectF = this.f37908a;
+                RectF rectF = this.f24217a;
                 jni.nativeSetFlagOfZoomToSpanForLocation(j, rectF.top, rectF.left, rectF.bottom, rectF.right);
-                ri.this.g.nativeZoomToSpanForNavigation(ri.this.h, this.b, this.f37909c, this.d, this.e);
+                ri.this.g.nativeZoomToSpanForNavigation(ri.this.h, this.b, this.f24218c, this.d, this.e);
             }
         }
     }
@@ -2440,17 +2441,17 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class r implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37910a;
+        public final /* synthetic */ int f24219a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37911c;
+        public final /* synthetic */ int f24220c;
         public final /* synthetic */ int d;
 
         public r(int i, int i2, int i3, int i4) {
-            this.f37910a = i;
+            this.f24219a = i;
             this.b = i2;
-            this.f37911c = i3;
+            this.f24220c = i3;
             this.d = i4;
         }
 
@@ -2459,7 +2460,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetTrafficColor(ri.this.h, this.f37910a, this.b, this.f37911c, this.d);
+            ri.this.g.nativeSetTrafficColor(ri.this.h, this.f24219a, this.b, this.f24220c, this.d);
         }
     }
 
@@ -2467,10 +2468,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class r0 implements CallbackRunnable<CityTrafficInfo> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37912a;
+        public final /* synthetic */ String f24221a;
 
         public r0(String str) {
-            this.f37912a = str;
+            this.f24221a = str;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2480,7 +2481,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                 return null;
             }
             CityTrafficInfo cityTrafficInfo = new CityTrafficInfo();
-            ri.this.g.nativeGetTrafficCityInfo(ri.this.h, this.f37912a, cityTrafficInfo);
+            ri.this.g.nativeGetTrafficCityInfo(ri.this.h, this.f24221a, cityTrafficInfo);
             return cityTrafficInfo;
         }
     }
@@ -2489,10 +2490,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class r1 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ TrailOverlayInfo f37913a;
+        public final /* synthetic */ TrailOverlayInfo f24222a;
 
         public r1(TrailOverlayInfo trailOverlayInfo) {
-            this.f37913a = trailOverlayInfo;
+            this.f24222a = trailOverlayInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2501,7 +2502,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddTrailOverlay(ri.this.h, this.f37913a));
+            return Long.valueOf(ri.this.g.nativeAddTrailOverlay(ri.this.h, this.f24222a));
         }
     }
 
@@ -2522,24 +2523,24 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class r3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint f37915a;
+        public final /* synthetic */ GeoPoint f24224a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37916c;
+        public final /* synthetic */ float f24225c;
         public final /* synthetic */ boolean d;
 
         public r3(GeoPoint geoPoint, float f, float f2, boolean z) {
-            this.f37915a = geoPoint;
+            this.f24224a = geoPoint;
             this.b = f;
-            this.f37916c = f2;
+            this.f24225c = f2;
             this.d = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationInfo(ri.this.h, this.f37915a.getLatitudeE6() / 1000000.0d, this.f37915a.getLongitudeE6() / 1000000.0d, this.b, this.f37916c, this.d);
+                ri.this.g.nativeSetLocationInfo(ri.this.h, this.f24224a.getLatitudeE6() / 1000000.0d, this.f24224a.getLongitudeE6() / 1000000.0d, this.b, this.f24225c, this.d);
             }
         }
     }
@@ -2548,24 +2549,24 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class r4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37917a;
+        public final /* synthetic */ float f24226a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37918c;
+        public final /* synthetic */ float f24227c;
         public final /* synthetic */ float d;
 
         public r4(float f, float f2, float f3, float f4) {
-            this.f37917a = f;
+            this.f24226a = f;
             this.b = f2;
-            this.f37918c = f3;
+            this.f24227c = f3;
             this.d = f4;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetIndoorActiveScreenArea(ri.this.h, this.f37917a, this.b, this.f37918c, this.d);
+                ri.this.g.nativeSetIndoorActiveScreenArea(ri.this.h, this.f24226a, this.b, this.f24227c, this.d);
             }
         }
     }
@@ -2574,16 +2575,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class r5 implements CallbackRunnable<Boolean> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37919a;
+        public final /* synthetic */ boolean f24228a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37920c;
+        public final /* synthetic */ float f24229c;
 
         public r5(boolean z, float f, float f2) {
-            this.f37919a = z;
+            this.f24228a = z;
             this.b = f;
-            this.f37920c = f2;
+            this.f24229c = f2;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2592,17 +2593,17 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return Boolean.FALSE;
             }
-            if (this.f37919a) {
-                ri.this.g.nativeSetScreenCenterOffset(ri.this.h, this.b, this.f37920c, true);
+            if (this.f24228a) {
+                ri.this.g.nativeSetScreenCenterOffset(ri.this.h, this.b, this.f24229c, true);
             } else {
                 com.tencent.mapsdk.internal.t4 projection = ri.this.m.getProjection();
                 com.tencent.mapsdk.internal.p5 a2 = projection.a(ri.this.n());
-                ri.this.g.nativeSetScreenCenterOffset(ri.this.h, this.b, this.f37920c, false);
+                ri.this.g.nativeSetScreenCenterOffset(ri.this.h, this.b, this.f24229c, false);
                 com.tencent.mapsdk.internal.p5 a3 = projection.a(ri.this.n());
                 double d = a3.b;
                 double d2 = a2.b;
-                double d3 = a3.f37683c;
-                ri.this.g.nativeSetCenter(ri.this.h, projection.a(new com.tencent.mapsdk.internal.p5(d + (d - d2), d3 + (d3 - a2.f37683c))), false);
+                double d3 = a3.f23992c;
+                ri.this.g.nativeSetCenter(ri.this.h, projection.a(new com.tencent.mapsdk.internal.p5(d + (d - d2), d3 + (d3 - a2.f23992c))), false);
             }
             return Boolean.TRUE;
         }
@@ -2612,11 +2613,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class s implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37921a;
+        public final /* synthetic */ int f24230a;
         public final /* synthetic */ int b;
 
         public s(int i, int i2) {
-            this.f37921a = i;
+            this.f24230a = i;
             this.b = i2;
         }
 
@@ -2625,7 +2626,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeBringElementAbove(ri.this.h, this.f37921a, this.b);
+            ri.this.g.nativeBringElementAbove(ri.this.h, this.f24230a, this.b);
         }
     }
 
@@ -2648,11 +2649,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class s1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37924a;
+        public final /* synthetic */ long f24233a;
         public final /* synthetic */ TrailOverlayInfo b;
 
         public s1(long j, TrailOverlayInfo trailOverlayInfo) {
-            this.f37924a = j;
+            this.f24233a = j;
             this.b = trailOverlayInfo;
         }
 
@@ -2661,7 +2662,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateTrailOverlay(ri.this.h, this.f37924a, this.b);
+            ri.this.g.nativeUpdateTrailOverlay(ri.this.h, this.f24233a, this.b);
         }
     }
 
@@ -2669,10 +2670,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class s2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37926a;
+        public final /* synthetic */ boolean f24235a;
 
         public s2(boolean z) {
-            this.f37926a = z;
+            this.f24235a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -2680,7 +2681,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetSatelliteEnabled(ri.this.h, this.f37926a);
+            ri.this.g.nativeSetSatelliteEnabled(ri.this.h, this.f24235a);
         }
     }
 
@@ -2688,24 +2689,24 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class s3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37927a;
+        public final /* synthetic */ boolean f24236a;
         public final /* synthetic */ boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37928c;
+        public final /* synthetic */ boolean f24237c;
         public final /* synthetic */ boolean d;
 
         public s3(boolean z, boolean z2, boolean z3, boolean z4) {
-            this.f37927a = z;
+            this.f24236a = z;
             this.b = z2;
-            this.f37928c = z3;
+            this.f24237c = z3;
             this.d = z4;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationFollow(ri.this.h, this.f37927a, this.b, this.f37928c, this.d);
+                ri.this.g.nativeSetLocationFollow(ri.this.h, this.f24236a, this.b, this.f24237c, this.d);
             }
         }
     }
@@ -2714,16 +2715,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class s4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37929a;
+        public final /* synthetic */ boolean f24238a;
 
         public s4(boolean z) {
-            this.f37929a = z;
+            this.f24238a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetIndoorBuildingPickEnabled(ri.this.h, this.f37929a);
+                ri.this.g.nativeSetIndoorBuildingPickEnabled(ri.this.h, this.f24238a);
             }
         }
     }
@@ -2732,17 +2733,17 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class s5 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ byte[] f37930a;
+        public final /* synthetic */ byte[] f24239a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37931c;
+        public final /* synthetic */ boolean f24240c;
         public final /* synthetic */ boolean d;
 
         public s5(byte[] bArr, int i, boolean z, boolean z2) {
-            this.f37930a = bArr;
+            this.f24239a = bArr;
             this.b = i;
-            this.f37931c = z;
+            this.f24240c = z;
             this.d = z2;
         }
 
@@ -2753,7 +2754,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                 if (ri.this.h == 0) {
                     return -1;
                 }
-                return Integer.valueOf(ri.this.g.nativeRefreshTrafficData(ri.this.h, this.f37930a, this.b, this.f37931c, this.d));
+                return Integer.valueOf(ri.this.g.nativeRefreshTrafficData(ri.this.h, this.f24239a, this.b, this.f24240c, this.d));
             }
         }
     }
@@ -2762,11 +2763,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class t implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37932a;
+        public final /* synthetic */ int f24241a;
         public final /* synthetic */ int b;
 
         public t(int i, int i2) {
-            this.f37932a = i;
+            this.f24241a = i;
             this.b = i2;
         }
 
@@ -2775,7 +2776,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeBringElementBelow(ri.this.h, this.f37932a, this.b);
+            ri.this.g.nativeBringElementBelow(ri.this.h, this.f24241a, this.b);
         }
     }
 
@@ -2783,16 +2784,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class t0 implements CallbackRunnable<Boolean> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37934a;
+        public final /* synthetic */ int f24243a;
 
         public t0(int i) {
-            this.f37934a = i;
+            this.f24243a = i;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Boolean run() {
-            return ri.this.h == 0 ? Boolean.FALSE : Boolean.valueOf(ri.this.g.checkMapLoadFinishedTask(ri.this.h, this.f37934a));
+            return ri.this.h == 0 ? Boolean.FALSE : Boolean.valueOf(ri.this.g.checkMapLoadFinishedTask(ri.this.h, this.f24243a));
         }
     }
 
@@ -2824,16 +2825,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class t3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ float f37937a;
+        public final /* synthetic */ float f24246a;
 
         public t3(float f) {
-            this.f37937a = f;
+            this.f24246a = f;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationHeading(ri.this.h, this.f37937a);
+                ri.this.g.nativeSetLocationHeading(ri.this.h, this.f24246a);
             }
         }
     }
@@ -2842,16 +2843,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class t4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String[] f37938a;
+        public final /* synthetic */ String[] f24247a;
 
         public t4(String[] strArr) {
-            this.f37938a = strArr;
+            this.f24247a = strArr;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetShowIndoorBuildingWhiteList(ri.this.h, this.f37938a);
+                ri.this.g.nativeSetShowIndoorBuildingWhiteList(ri.this.h, this.f24247a);
             }
         }
     }
@@ -2860,11 +2861,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class u implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37939a;
+        public final /* synthetic */ int f24248a;
         public final /* synthetic */ float b;
 
         public u(int i, float f) {
-            this.f37939a = i;
+            this.f24248a = i;
             this.b = f;
         }
 
@@ -2873,7 +2874,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeSetPriority(ri.this.h, this.f37939a, this.b);
+            ri.this.g.nativeSetPriority(ri.this.h, this.f24248a, this.b);
         }
     }
 
@@ -2881,16 +2882,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class u0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ double[] f37941a;
+        public final /* synthetic */ double[] f24250a;
         public final /* synthetic */ double[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37942c;
+        public final /* synthetic */ int f24251c;
 
         public u0(double[] dArr, double[] dArr2, int i) {
-            this.f37941a = dArr;
+            this.f24250a = dArr;
             this.b = dArr2;
-            this.f37942c = i;
+            this.f24251c = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -2898,7 +2899,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.setRestrictBounds(ri.this.h, this.f37941a, this.b, this.f37942c);
+            ri.this.g.setRestrictBounds(ri.this.h, this.f24250a, this.b, this.f24251c);
         }
     }
 
@@ -2906,20 +2907,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class u1 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GroundOverlayInfo f37943a;
+        public final /* synthetic */ GroundOverlayInfo f24252a;
 
         public u1(GroundOverlayInfo groundOverlayInfo) {
-            this.f37943a = groundOverlayInfo;
+            this.f24252a = groundOverlayInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Long run() {
             GroundOverlayInfo groundOverlayInfo;
-            if (ri.this.h == 0 || (groundOverlayInfo = this.f37943a) == null || !groundOverlayInfo.checkValid()) {
+            if (ri.this.h == 0 || (groundOverlayInfo = this.f24252a) == null || !groundOverlayInfo.checkValid()) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddGroundOverlay(ri.this.h, this.f37943a));
+            return Long.valueOf(ri.this.g.nativeAddGroundOverlay(ri.this.h, this.f24252a));
         }
     }
 
@@ -2954,16 +2955,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class u4 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37946a;
+        public final /* synthetic */ String f24255a;
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37947c;
+        public final /* synthetic */ float f24256c;
 
         public u4(String str, float f, float f2) {
-            this.f37946a = str;
+            this.f24255a = str;
             this.b = f;
-            this.f37947c = f2;
+            this.f24256c = f2;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -2972,7 +2973,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return 0;
             }
-            return Integer.valueOf(ri.this.g.nativeSetLocationMarkerImage(ri.this.h, this.f37946a, this.b, this.f37947c));
+            return Integer.valueOf(ri.this.g.nativeSetLocationMarkerImage(ri.this.h, this.f24255a, this.b, this.f24256c));
         }
     }
 
@@ -2980,18 +2981,18 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class v implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37948a;
+        public final /* synthetic */ int f24257a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f37949c;
+        public final /* synthetic */ int f24258c;
         public final /* synthetic */ int d;
         public final /* synthetic */ int e;
 
         public v(int i, int i2, int i3, int i4, int i5) {
-            this.f37948a = i;
+            this.f24257a = i;
             this.b = i2;
-            this.f37949c = i3;
+            this.f24258c = i3;
             this.d = i4;
             this.e = i5;
         }
@@ -2999,7 +3000,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeCheckTrafficBlockCacheForReplay(ri.this.h, this.f37948a, this.b, this.f37949c, this.d, this.e);
+                ri.this.g.nativeCheckTrafficBlockCacheForReplay(ri.this.h, this.f24257a, this.b, this.f24258c, this.d, this.e);
             }
         }
     }
@@ -3008,11 +3009,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class v0 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint[] f37950a;
+        public final /* synthetic */ GeoPoint[] f24259a;
         public final /* synthetic */ PolylineOptions.Text b;
 
         public v0(GeoPoint[] geoPointArr, PolylineOptions.Text text) {
-            this.f37950a = geoPointArr;
+            this.f24259a = geoPointArr;
             this.b = text;
         }
 
@@ -3022,7 +3023,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return -1;
             }
-            return Integer.valueOf(ri.this.g.addLineText(ri.this.h, this.f37950a, this.b));
+            return Integer.valueOf(ri.this.g.addLineText(ri.this.h, this.f24259a, this.b));
         }
     }
 
@@ -3030,20 +3031,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class v1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37952a;
+        public final /* synthetic */ long f24261a;
         public final /* synthetic */ GroundOverlayInfo b;
 
         public v1(long j, GroundOverlayInfo groundOverlayInfo) {
-            this.f37952a = j;
+            this.f24261a = j;
             this.b = groundOverlayInfo;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            if (ri.this.h == 0 || this.f37952a == 0) {
+            if (ri.this.h == 0 || this.f24261a == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateGroundOverlay(ri.this.h, this.f37952a, this.b);
+            ri.this.g.nativeUpdateGroundOverlay(ri.this.h, this.f24261a, this.b);
         }
     }
 
@@ -3065,10 +3066,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class v3 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ ue f37955a;
+        public final /* synthetic */ ue f24264a;
 
         public v3(ue ueVar) {
-            this.f37955a = ueVar;
+            this.f24264a = ueVar;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -3077,7 +3078,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return 0;
             }
-            return Integer.valueOf(ri.this.g.nativeAddMarker(ri.this.h, this.f37955a.j(), this.f37955a.n(), this.f37955a.o(), this.f37955a.e(), this.f37955a.f(), this.f37955a.r(), this.f37955a.s(), this.f37955a.d(), this.f37955a.q(), this.f37955a.B(), this.f37955a.A(), this.f37955a.z(), this.f37955a.w(), this.f37955a.v(), this.f37955a.u(), this.f37955a.m()));
+            return Integer.valueOf(ri.this.g.nativeAddMarker(ri.this.h, this.f24264a.j(), this.f24264a.n(), this.f24264a.o(), this.f24264a.e(), this.f24264a.f(), this.f24264a.r(), this.f24264a.s(), this.f24264a.d(), this.f24264a.q(), this.f24264a.B(), this.f24264a.A(), this.f24264a.z(), this.f24264a.w(), this.f24264a.v(), this.f24264a.u(), this.f24264a.m()));
         }
     }
 
@@ -3085,16 +3086,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class v4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37956a;
+        public final /* synthetic */ int f24265a;
 
         public v4(int i) {
-            this.f37956a = i;
+            this.f24265a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationCircleColor(ri.this.h, this.f37956a);
+                ri.this.g.nativeSetLocationCircleColor(ri.this.h, this.f24265a);
             }
         }
     }
@@ -3103,11 +3104,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class w implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ List f37957a;
+        public final /* synthetic */ List f24266a;
         public final /* synthetic */ List b;
 
         public w(List list, List list2) {
-            this.f37957a = list;
+            this.f24266a = list;
             this.b = list2;
         }
 
@@ -3117,10 +3118,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
         public void a(GL10 gl10) {
             List list;
             List list2;
-            if (0 == ri.this.h || (list = this.f37957a) == null || list.isEmpty() || (list2 = this.b) == null || list2.isEmpty()) {
+            if (0 == ri.this.h || (list = this.f24266a) == null || list.isEmpty() || (list2 = this.b) == null || list2.isEmpty()) {
                 return;
             }
-            int size = this.f37957a.size();
+            int size = this.f24266a.size();
             ?? r0 = new byte[size];
             int i = 0;
             while (true) {
@@ -3130,7 +3131,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                     ri.this.g.nativeAddRouteNameSegments(ri.this.h, r0, size, (GeoPoint[]) this.b.toArray(new GeoPoint[size2]), size2);
                     return;
                 }
-                MapRouteSection mapRouteSection = (MapRouteSection) this.f37957a.get(i2);
+                MapRouteSection mapRouteSection = (MapRouteSection) this.f24266a.get(i2);
                 if (mapRouteSection != null) {
                     r0[i2] = mapRouteSection.toBytes();
                 }
@@ -3143,10 +3144,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class w0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37959a;
+        public final /* synthetic */ int f24268a;
 
         public w0(int i) {
-            this.f37959a = i;
+            this.f24268a = i;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -3154,7 +3155,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.removeLineText(ri.this.h, this.f37959a);
+            ri.this.g.removeLineText(ri.this.h, this.f24268a);
         }
     }
 
@@ -3162,10 +3163,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class w1 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ IntersectionOverlayInfo f37960a;
+        public final /* synthetic */ IntersectionOverlayInfo f24269a;
 
         public w1(IntersectionOverlayInfo intersectionOverlayInfo) {
-            this.f37960a = intersectionOverlayInfo;
+            this.f24269a = intersectionOverlayInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -3174,7 +3175,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddIntersectionOverlay(ri.this.h, this.f37960a));
+            return Long.valueOf(ri.this.g.nativeAddIntersectionOverlay(ri.this.h, this.f24269a));
         }
     }
 
@@ -3182,17 +3183,17 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class w2 implements CallbackRunnable<String> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ GeoPoint f37961a;
+        public final /* synthetic */ GeoPoint f24270a;
 
         public w2(GeoPoint geoPoint) {
-            this.f37961a = geoPoint;
+            this.f24270a = geoPoint;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public String run() {
             byte[] nativeGetCityName;
-            if (ri.this.h == 0 || (nativeGetCityName = ri.this.g.nativeGetCityName(ri.this.h, this.f37961a)) == null) {
+            if (ri.this.h == 0 || (nativeGetCityName = ri.this.g.nativeGetCityName(ri.this.h, this.f24270a)) == null) {
                 return "";
             }
             try {
@@ -3208,16 +3209,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class w3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ ue f37962a;
+        public final /* synthetic */ ue f24271a;
 
         public w3(ue ueVar) {
-            this.f37962a = ueVar;
+            this.f24271a = ueVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeUpdateMarkerInfo(ri.this.h, this.f37962a.i(), this.f37962a.j(), this.f37962a.n(), this.f37962a.o(), this.f37962a.e(), this.f37962a.f(), this.f37962a.r(), this.f37962a.s(), this.f37962a.d(), this.f37962a.q(), this.f37962a.B(), this.f37962a.A(), this.f37962a.z(), this.f37962a.w(), this.f37962a.v(), this.f37962a.u(), this.f37962a.m());
+                ri.this.g.nativeUpdateMarkerInfo(ri.this.h, this.f24271a.i(), this.f24271a.j(), this.f24271a.n(), this.f24271a.o(), this.f24271a.e(), this.f24271a.f(), this.f24271a.r(), this.f24271a.s(), this.f24271a.d(), this.f24271a.q(), this.f24271a.B(), this.f24271a.A(), this.f24271a.z(), this.f24271a.w(), this.f24271a.v(), this.f24271a.u(), this.f24271a.m());
             }
         }
     }
@@ -3226,10 +3227,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class w4 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37963a;
+        public final /* synthetic */ String f24272a;
 
         public w4(String str) {
-            this.f37963a = str;
+            this.f24272a = str;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -3238,7 +3239,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0;
             }
-            return Integer.valueOf(ri.this.g.nativeIsCityHasTraffic(ri.this.h, this.f37963a));
+            return Integer.valueOf(ri.this.g.nativeIsCityHasTraffic(ri.this.h, this.f24272a));
         }
     }
 
@@ -3260,11 +3261,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class x0 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37965a;
+        public final /* synthetic */ int f24274a;
         public final /* synthetic */ PolylineOptions.Text b;
 
         public x0(int i, PolylineOptions.Text text) {
-            this.f37965a = i;
+            this.f24274a = i;
             this.b = text;
         }
 
@@ -3273,7 +3274,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.setLineTextStyle(ri.this.h, this.f37965a, this.b);
+            ri.this.g.setLineTextStyle(ri.this.h, this.f24274a, this.b);
         }
     }
 
@@ -3281,20 +3282,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class x1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ long f37967a;
+        public final /* synthetic */ long f24276a;
         public final /* synthetic */ IntersectionOverlayInfo b;
 
         public x1(long j, IntersectionOverlayInfo intersectionOverlayInfo) {
-            this.f37967a = j;
+            this.f24276a = j;
             this.b = intersectionOverlayInfo;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            if (ri.this.h == 0 || this.f37967a == 0) {
+            if (ri.this.h == 0 || this.f24276a == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateIntersectionOverlay(this.f37967a, this.b);
+            ri.this.g.nativeUpdateIntersectionOverlay(this.f24276a, this.b);
         }
     }
 
@@ -3302,10 +3303,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class x2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37969a;
+        public final /* synthetic */ String f24278a;
 
         public x2(String str) {
-            this.f37969a = str;
+            this.f24278a = str;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -3313,7 +3314,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.nativeUpdateMapResource(ri.this.h, this.f37969a);
+            ri.this.g.nativeUpdateMapResource(ri.this.h, this.f24278a);
         }
     }
 
@@ -3321,11 +3322,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class x3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int[] f37970a;
+        public final /* synthetic */ int[] f24279a;
         public final /* synthetic */ int b;
 
         public x3(int[] iArr, int i) {
-            this.f37970a = iArr;
+            this.f24279a = iArr;
             this.b = i;
         }
 
@@ -3334,7 +3335,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return;
             }
-            ri.this.g.nativeDeleteIcons(ri.this.h, this.f37970a, this.b);
+            ri.this.g.nativeDeleteIcons(ri.this.h, this.f24279a, this.b);
         }
     }
 
@@ -3342,16 +3343,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class x4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37972a;
+        public final /* synthetic */ boolean f24281a;
 
         public x4(boolean z) {
-            this.f37972a = z;
+            this.f24281a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationCircleHidden(ri.this.h, this.f37972a);
+                ri.this.g.nativeSetLocationCircleHidden(ri.this.h, this.f24281a);
             }
         }
     }
@@ -3360,10 +3361,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class y implements CallbackRunnable<AnnocationTextResult> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ AnnocationText f37973a;
+        public final /* synthetic */ AnnocationText f24282a;
 
         public y(AnnocationText annocationText) {
-            this.f37973a = annocationText;
+            this.f24282a = annocationText;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -3372,7 +3373,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return null;
             }
-            return ri.this.g.nativeCreateAnnotationTextBitmap(ri.this.h, this.f37973a);
+            return ri.this.g.nativeCreateAnnotationTextBitmap(ri.this.h, this.f24282a);
         }
     }
 
@@ -3392,17 +3393,17 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class y1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f37975a;
+        public final /* synthetic */ int f24284a;
         public final /* synthetic */ CircleInfo b;
 
         public y1(int i, CircleInfo circleInfo) {
-            this.f37975a = i;
+            this.f24284a = i;
             this.b = circleInfo;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            ri.this.g.nativeUpdateCircle(ri.this.h, this.f37975a, this.b);
+            ri.this.g.nativeUpdateCircle(ri.this.h, this.f24284a, this.b);
         }
     }
 
@@ -3410,20 +3411,20 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class y2 implements CallbackRunnable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37977a;
+        public final /* synthetic */ gg f24286a;
 
         public y2(gg ggVar) {
-            this.f37977a = ggVar;
+            this.f24286a = ggVar;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
         /* renamed from: a */
         public Integer run() {
-            gg ggVar = this.f37977a;
+            gg ggVar = this.f24286a;
             if (ggVar == null) {
                 return -1;
             }
-            return ggVar.R() != -1 ? Integer.valueOf(this.f37977a.R()) : Integer.valueOf(ri.this.b(this.f37977a));
+            return ggVar.R() != -1 ? Integer.valueOf(this.f24286a.R()) : Integer.valueOf(ri.this.b(this.f24286a));
         }
     }
 
@@ -3431,16 +3432,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class y3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int[] f37978a;
+        public final /* synthetic */ int[] f24287a;
         public final /* synthetic */ int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f37979c;
+        public final /* synthetic */ boolean f24288c;
 
         public y3(int[] iArr, int i, boolean z) {
-            this.f37978a = iArr;
+            this.f24287a = iArr;
             this.b = i;
-            this.f37979c = z;
+            this.f24288c = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -3448,7 +3449,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (0 == ri.this.h) {
                 return;
             }
-            ri.this.g.nativeSetIconsHidden(ri.this.h, this.f37978a, this.b, this.f37979c);
+            ri.this.g.nativeSetIconsHidden(ri.this.h, this.f24287a, this.b, this.f24288c);
         }
     }
 
@@ -3456,16 +3457,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class y4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37980a;
+        public final /* synthetic */ boolean f24289a;
 
         public y4(boolean z) {
-            this.f37980a = z;
+            this.f24289a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationMarkerHidden(ri.this.h, this.f37980a);
+                ri.this.g.nativeSetLocationMarkerHidden(ri.this.h, this.f24289a);
             }
         }
     }
@@ -3474,11 +3475,11 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class z implements CallbackRunnable<List<Integer>> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Rect f37981a;
+        public final /* synthetic */ Rect f24290a;
         public final /* synthetic */ int b;
 
         public z(Rect rect, int i) {
-            this.f37981a = rect;
+            this.f24290a = rect;
             this.b = i;
         }
 
@@ -3490,7 +3491,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                 return null;
             }
             int[] iArr = new int[100];
-            int nativeQueryCityCodeList = ri.this.g.nativeQueryCityCodeList(ri.this.h, this.f37981a, this.b, iArr, 100);
+            int nativeQueryCityCodeList = ri.this.g.nativeQueryCityCodeList(ri.this.h, this.f24290a, this.b, iArr, 100);
             if (nativeQueryCityCodeList > 0) {
                 ArrayList arrayList2 = new ArrayList(nativeQueryCityCodeList);
                 int i = 0;
@@ -3512,10 +3513,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class z0 implements CallbackRunnable<Long> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ MarkerInfo f37983a;
+        public final /* synthetic */ MarkerInfo f24292a;
 
         public z0(MarkerInfo markerInfo) {
-            this.f37983a = markerInfo;
+            this.f24292a = markerInfo;
         }
 
         @Override // com.tencent.map.tools.CallbackRunnable
@@ -3524,7 +3525,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return 0L;
             }
-            return Long.valueOf(ri.this.g.nativeAddMarker2(ri.this.h, this.f37983a));
+            return Long.valueOf(ri.this.g.nativeAddMarker2(ri.this.h, this.f24292a));
         }
     }
 
@@ -3532,10 +3533,10 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class z1 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ TrafficStyle f37984a;
+        public final /* synthetic */ TrafficStyle f24293a;
 
         public z1(TrafficStyle trafficStyle) {
-            this.f37984a = trafficStyle;
+            this.f24293a = trafficStyle;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
@@ -3543,7 +3544,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
             if (ri.this.h == 0) {
                 return;
             }
-            ri.this.g.setTrafficStyle(ri.this.h, this.f37984a);
+            ri.this.g.setTrafficStyle(ri.this.h, this.f24293a);
         }
     }
 
@@ -3551,32 +3552,32 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class z2 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ gg f37985a;
+        public final /* synthetic */ gg f24294a;
 
         public z2(gg ggVar) {
-            this.f37985a = ggVar;
+            this.f24294a = ggVar;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
-            gg ggVar = this.f37985a;
+            gg ggVar = this.f24294a;
             if (ggVar == null || ggVar.R() == -1) {
                 return;
             }
-            ri.this.b(this.f37985a);
-            ri.this.k(this.f37985a);
-            ri.this.j(this.f37985a);
-            ri.this.f(this.f37985a);
-            if (this.f37985a.f0()) {
-                ri.this.c(this.f37985a);
+            ri.this.b(this.f24294a);
+            ri.this.k(this.f24294a);
+            ri.this.j(this.f24294a);
+            ri.this.f(this.f24294a);
+            if (this.f24294a.f0()) {
+                ri.this.c(this.f24294a);
             } else {
-                ri.this.d(this.f37985a);
+                ri.this.d(this.f24294a);
             }
-            ri.this.g(this.f37985a);
-            if (!f7.b(this.f37985a.N())) {
-                ri.this.e(this.f37985a);
+            ri.this.g(this.f24294a);
+            if (!f7.b(this.f24294a.N())) {
+                ri.this.e(this.f24294a);
             }
-            ri.this.i(this.f37985a);
+            ri.this.i(this.f24294a);
         }
     }
 
@@ -3584,16 +3585,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class z3 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37986a;
+        public final /* synthetic */ boolean f24295a;
 
         public z3(boolean z) {
-            this.f37986a = z;
+            this.f24295a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetCompassVisible(ri.this.h, this.f37986a);
+                ri.this.g.nativeSetCompassVisible(ri.this.h, this.f24295a);
             }
         }
     }
@@ -3602,16 +3603,16 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
     public class z4 implements rc.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37987a;
+        public final /* synthetic */ String f24296a;
 
         public z4(String str) {
-            this.f37987a = str;
+            this.f24296a = str;
         }
 
         @Override // com.tencent.mapsdk.internal.rc.b
         public void a(GL10 gl10) {
             if (ri.this.h != 0) {
-                ri.this.g.nativeSetLocationCompassMarkerImage(ri.this.h, this.f37987a);
+                ri.this.g.nativeSetLocationCompassMarkerImage(ri.this.h, this.f24296a);
             }
         }
     }
@@ -3632,7 +3633,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
         this.m = rcVar;
         this.p = context.getResources().getDisplayMetrics().density;
         if (G) {
-            ka.a(context, mi.f37649a);
+            ka.a(context, mi.f23958a);
         }
     }
 
@@ -4245,7 +4246,7 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                 na.c(ma.b, "onCancelDownload found TileOverlay");
                 a6.L().a(str);
                 ra.i(ma.b, "cancel-count");
-                ra.i(ma.b, "C/" + mapTileID.getX() + "-" + mapTileID.getY() + "-" + mapTileID.getZ());
+                ra.i(ma.b, "C/" + mapTileID.getX() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + mapTileID.getY() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + mapTileID.getZ());
                 return;
             }
         }
@@ -4424,9 +4425,9 @@ public class ri implements ee, ge, he, le, ne, pe, qe, com.tencent.mapsdk.intern
                 na.c(ma.b, "onRequestDownload found TileOverlay");
                 kb L = a6.L();
                 L.a(this.k);
-                L.a(str, a6.K(), hbVar.f37523c);
+                L.a(str, a6.K(), hbVar.f23832c);
                 ra.i(ma.b, "req-count");
-                ra.i(ma.b, "R/" + mapTileID.getX() + "-" + mapTileID.getY() + "-" + mapTileID.getZ());
+                ra.i(ma.b, "R/" + mapTileID.getX() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + mapTileID.getY() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + mapTileID.getZ());
                 return;
             }
         }

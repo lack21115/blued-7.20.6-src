@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.TextUtils;
 import android.util.Log;
+import com.android.ims.ImsConferenceState;
 import com.blued.android.statistics.grpc.DnsResolver;
 import com.blued.android.statistics.util.Utils;
 import com.qiniu.android.dns.DnsManager;
@@ -20,19 +21,15 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/ChannelManager.class */
 public class ChannelManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private volatile ManagedChannel f11358a;
+    private volatile ManagedChannel a;
     private volatile ManagedChannel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConcurrentHashMap<String, String> f11359c = new ConcurrentHashMap<>();
+    private final ConcurrentHashMap<String, String> c = new ConcurrentHashMap<>();
     private ConnectivityManager d;
     private String e;
     private String f;
 
     public ChannelManager(Context context, String str, int i, DnsManager dnsManager) {
-        this.f11358a = null;
+        this.a = null;
         this.b = null;
         this.d = null;
         Log.i("gRPC", "---------- createChannel! ----------");
@@ -48,9 +45,9 @@ public class ChannelManager {
                 }
             });
         }
-        this.d = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        this.d = (ConnectivityManager) context.getSystemService("connectivity");
         this.b = ((OkHttpChannelBuilder) Utils.a(str, i).keepAliveTime(10L, TimeUnit.SECONDS).keepAliveTimeout(30L, TimeUnit.SECONDS).idleTimeout(1L, TimeUnit.MINUTES)).keepAliveWithoutCalls(true).build();
-        this.f11358a = Utils.a(str, i).build();
+        this.a = Utils.a(str, i).build();
     }
 
     public Status a(Exception exc) {
@@ -61,7 +58,7 @@ public class ChannelManager {
             if (TextUtils.isEmpty(fromThrowable.getDescription())) {
                 StringBuilder sb = new StringBuilder();
                 sb.append("network is ");
-                sb.append(g() ? "connected" : "disconnected");
+                sb.append(g() ? ImsConferenceState.STATUS_CONNECTED : ImsConferenceState.STATUS_DISCONNECTED);
                 status = fromThrowable.withDescription(sb.toString());
             }
         }
@@ -81,9 +78,9 @@ public class ChannelManager {
             return;
         }
         if (TextUtils.isEmpty(str2)) {
-            this.f11359c.remove(str);
+            this.c.remove(str);
         } else {
-            this.f11359c.put(str, str2);
+            this.c.put(str, str2);
         }
     }
 
@@ -104,7 +101,7 @@ public class ChannelManager {
     }
 
     public Channel d() {
-        return this.f11358a;
+        return this.a;
     }
 
     public Channel e() {
@@ -113,7 +110,7 @@ public class ChannelManager {
 
     public Metadata f() {
         Metadata metadata = new Metadata();
-        for (Map.Entry<String, String> entry : this.f11359c.entrySet()) {
+        for (Map.Entry<String, String> entry : this.c.entrySet()) {
             metadata.put(Utils.a(entry.getKey()), entry.getValue());
         }
         return metadata;

@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ShGzN extends TextureView implements TextureView.SurfaceTextureListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private spXPg f39835a;
+    private spXPg f26144a;
     private AtomicBoolean b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingcam/view/ShGzN$spXPg.class */
@@ -36,7 +36,7 @@ public class ShGzN extends TextureView implements TextureView.SurfaceTextureList
     }
 
     public void a(spXPg spxpg) {
-        this.f39835a = spxpg;
+        this.f26144a = spxpg;
     }
 
     @Override // android.view.TextureView
@@ -49,7 +49,7 @@ public class ShGzN extends TextureView implements TextureView.SurfaceTextureList
 
     @Override // android.view.TextureView.SurfaceTextureListener
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i, int i2) {
-        spXPg spxpg = this.f39835a;
+        spXPg spxpg = this.f26144a;
         if (spxpg != null) {
             spxpg.onSurfaceTextureAvailable(surfaceTexture, i, i2);
         }
@@ -58,7 +58,7 @@ public class ShGzN extends TextureView implements TextureView.SurfaceTextureList
     @Override // android.view.TextureView.SurfaceTextureListener
     public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
         this.b.set(false);
-        spXPg spxpg = this.f39835a;
+        spXPg spxpg = this.f26144a;
         if (spxpg != null) {
             spxpg.onSurfaceTextureDestroyed(surfaceTexture);
             return false;

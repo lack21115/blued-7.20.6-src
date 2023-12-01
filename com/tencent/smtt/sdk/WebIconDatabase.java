@@ -10,7 +10,7 @@ import com.tencent.smtt.export.external.interfaces.IconListener;
 public class WebIconDatabase {
 
     /* renamed from: a  reason: collision with root package name */
-    private static WebIconDatabase f38798a;
+    private static WebIconDatabase f25107a;
 
     @Deprecated
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/WebIconDatabase$a.class */
@@ -25,10 +25,10 @@ public class WebIconDatabase {
         WebIconDatabase webIconDatabase;
         synchronized (WebIconDatabase.class) {
             try {
-                if (f38798a == null) {
-                    f38798a = new WebIconDatabase();
+                if (f25107a == null) {
+                    f25107a = new WebIconDatabase();
                 }
-                webIconDatabase = f38798a;
+                webIconDatabase = f25107a;
             } catch (Throwable th) {
                 throw th;
             }

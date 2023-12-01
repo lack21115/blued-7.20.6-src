@@ -8,22 +8,22 @@ import android.animation.TypeEvaluator;
 public class j implements TypeEvaluator<Float> {
 
     /* renamed from: a  reason: collision with root package name */
-    private TimeInterpolator f26526a;
+    private TimeInterpolator f12838a;
     private FloatEvaluator b = new FloatEvaluator();
 
     /* renamed from: c  reason: collision with root package name */
-    private float f26527c;
+    private float f12839c;
     private float d;
 
     public j(TimeInterpolator timeInterpolator, float f, float f2) {
-        this.f26526a = timeInterpolator;
-        this.f26527c = f;
+        this.f12838a = timeInterpolator;
+        this.f12839c = f;
         this.d = f2;
     }
 
     @Override // android.animation.TypeEvaluator
     /* renamed from: a */
     public Float evaluate(float f, Float f2, Float f3) {
-        return this.b.evaluate(this.f26526a.getInterpolation(f), (Number) Float.valueOf(this.f26527c), (Number) Float.valueOf(this.d));
+        return this.b.evaluate(this.f12838a.getInterpolation(f), (Number) Float.valueOf(this.f12839c), (Number) Float.valueOf(this.d));
     }
 }

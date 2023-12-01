@@ -29,11 +29,11 @@ public class ATSplashPopView extends RelativeLayout {
     public static final int TYPE_POP_SMALL = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8260c = "ATSplashPopView";
+    private static final String f5420c = "ATSplashPopView";
     private static final AtomicInteger d = new AtomicInteger(1);
 
     /* renamed from: a  reason: collision with root package name */
-    View.OnClickListener f8261a;
+    View.OnClickListener f5421a;
     View.OnClickListener b;
     private String e;
     private String f;
@@ -57,22 +57,22 @@ public class ATSplashPopView extends RelativeLayout {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f8268a;
+        private String f5428a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f8269c;
+        private int f5429c;
         private c d;
 
         public a(String str, String str2, int i, c cVar) {
-            this.f8268a = str;
+            this.f5428a = str;
             this.b = str2;
-            this.f8269c = i;
+            this.f5429c = i;
             this.d = cVar;
         }
 
         private void a(int i) {
-            this.f8269c = i;
+            this.f5429c = i;
         }
 
         private void a(c cVar) {
@@ -80,7 +80,7 @@ public class ATSplashPopView extends RelativeLayout {
         }
 
         private void a(String str) {
-            this.f8268a = str;
+            this.f5428a = str;
         }
 
         private void b(String str) {
@@ -88,7 +88,7 @@ public class ATSplashPopView extends RelativeLayout {
         }
 
         public final String a() {
-            return this.f8268a;
+            return this.f5428a;
         }
 
         public final String b() {
@@ -96,7 +96,7 @@ public class ATSplashPopView extends RelativeLayout {
         }
 
         public final int c() {
-            return this.f8269c;
+            return this.f5429c;
         }
 
         public final c d() {
@@ -134,7 +134,7 @@ public class ATSplashPopView extends RelativeLayout {
                 }
             }
         };
-        this.f8261a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
+        this.f5421a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
@@ -154,7 +154,7 @@ public class ATSplashPopView extends RelativeLayout {
             }
         };
         this.g = 1;
-        o.b(f8260c, "Please call setPopViewType() to init.");
+        o.b(f5420c, "Please call setPopViewType() to init.");
     }
 
     public ATSplashPopView(Context context, AttributeSet attributeSet) {
@@ -182,7 +182,7 @@ public class ATSplashPopView extends RelativeLayout {
                 }
             }
         };
-        this.f8261a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
+        this.f5421a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
@@ -202,7 +202,7 @@ public class ATSplashPopView extends RelativeLayout {
             }
         };
         this.g = 1;
-        o.b(f8260c, "Please call setPopViewType() to init.");
+        o.b(f5420c, "Please call setPopViewType() to init.");
     }
 
     public ATSplashPopView(Context context, AttributeSet attributeSet, int i) {
@@ -230,7 +230,7 @@ public class ATSplashPopView extends RelativeLayout {
                 }
             }
         };
-        this.f8261a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
+        this.f5421a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
@@ -250,7 +250,7 @@ public class ATSplashPopView extends RelativeLayout {
             }
         };
         this.g = 1;
-        o.b(f8260c, "Please call setPopViewType() to init.");
+        o.b(f5420c, "Please call setPopViewType() to init.");
     }
 
     public ATSplashPopView(Context context, AttributeSet attributeSet, int i, int i2) {
@@ -278,7 +278,7 @@ public class ATSplashPopView extends RelativeLayout {
                 }
             }
         };
-        this.f8261a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
+        this.f5421a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
@@ -298,7 +298,7 @@ public class ATSplashPopView extends RelativeLayout {
             }
         };
         this.g = 1;
-        o.b(f8260c, "Please call setPopViewType() to init.");
+        o.b(f5420c, "Please call setPopViewType() to init.");
     }
 
     public ATSplashPopView(Context context, a aVar, d dVar) {
@@ -326,7 +326,7 @@ public class ATSplashPopView extends RelativeLayout {
                 }
             }
         };
-        this.f8261a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
+        this.f5421a = new View.OnClickListener() { // from class: com.anythink.expressad.splash.view.ATSplashPopView.5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
@@ -400,13 +400,13 @@ public class ATSplashPopView extends RelativeLayout {
                     }
                     com.anythink.core.common.k.b.a(n.a().g(), bitmap);
                 } catch (Throwable th) {
-                    o.d(ATSplashPopView.f8260c, th.getMessage());
+                    o.d(ATSplashPopView.f5420c, th.getMessage());
                 }
             }
 
             @Override // com.anythink.expressad.foundation.g.d.c
             public final void a(String str2, String str3) {
-                o.d(ATSplashPopView.f8260c, str2);
+                o.d(ATSplashPopView.f5420c, str2);
             }
         });
     }
@@ -426,25 +426,25 @@ public class ATSplashPopView extends RelativeLayout {
                     }
                     imageView.setImageBitmap(bitmap);
                 } catch (Throwable th) {
-                    o.d(ATSplashPopView.f8260c, th.getMessage());
+                    o.d(ATSplashPopView.f5420c, th.getMessage());
                 }
             }
 
             @Override // com.anythink.expressad.foundation.g.d.c
             public final void a(String str2, String str3) {
-                o.d(ATSplashPopView.f8260c, str2);
+                o.d(ATSplashPopView.f5420c, str2);
             }
         });
     }
 
     private void b() {
-        View imageView = new ImageView(getContext());
+        ImageView imageView = new ImageView(getContext());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(t.b(getContext(), 80.0f), t.b(getContext(), 80.0f));
         layoutParams.addRule(9);
         layoutParams.topMargin = t.b(getContext(), 16.0f);
         imageView.setId(generateViewId());
         imageView.setLayoutParams(layoutParams);
-        imageView.setBackgroundResource(getResources().getIdentifier("anythink_splash_popview_default", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+        imageView.setBackgroundResource(getResources().getIdentifier("anythink_splash_popview_default", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         this.j = new ImageView(getContext());
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(t.b(getContext(), 60.0f), t.b(getContext(), 60.0f));
         layoutParams2.addRule(6, imageView.getId());
@@ -470,7 +470,7 @@ public class ATSplashPopView extends RelativeLayout {
         this.p.setMinWidth(t.b(getContext(), 16.0f));
         this.p.setMaxHeight(t.b(getContext(), 16.0f));
         this.p.setLayoutParams(layoutParams3);
-        this.p.setBackgroundResource(getResources().getIdentifier("anythink_cm_circle_50black", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+        this.p.setBackgroundResource(getResources().getIdentifier("anythink_cm_circle_50black", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         addView(imageView);
         addView(this.p);
         addView(this.j);
@@ -478,7 +478,7 @@ public class ATSplashPopView extends RelativeLayout {
         if (cVar2 != null && cVar2.u() <= 0) {
             g();
         }
-        setOnClickListener(this.f8261a);
+        setOnClickListener(this.f5421a);
         this.p.setOnClickListener(this.b);
     }
 
@@ -500,13 +500,13 @@ public class ATSplashPopView extends RelativeLayout {
                     }
                     ATSplashPopView.this.k.setImageBitmap(com.anythink.expressad.foundation.h.n.a(bitmap, 16));
                 } catch (Throwable th) {
-                    o.d(ATSplashPopView.f8260c, th.getMessage());
+                    o.d(ATSplashPopView.f5420c, th.getMessage());
                 }
             }
 
             @Override // com.anythink.expressad.foundation.g.d.c
             public final void a(String str2, String str3) {
-                o.d(ATSplashPopView.f8260c, str2);
+                o.d(ATSplashPopView.f5420c, str2);
             }
         });
     }
@@ -539,11 +539,11 @@ public class ATSplashPopView extends RelativeLayout {
         this.n.setSingleLine(true);
         this.n.setTextColor(-16777216);
         this.n.setText(this.h.bb());
-        setBackgroundResource(getResources().getIdentifier("anythink_shape_corners_bg", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+        setBackgroundResource(getResources().getIdentifier("anythink_shape_corners_bg", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         addView(this.j);
         addView(this.n);
         f();
-        setOnClickListener(this.f8261a);
+        setOnClickListener(this.f5421a);
     }
 
     private void d() {
@@ -596,11 +596,11 @@ public class ATSplashPopView extends RelativeLayout {
         this.o.setText(this.h.bc());
         relativeLayout.addView(this.n);
         relativeLayout.addView(this.o);
-        setBackgroundResource(getResources().getIdentifier("anythink_shape_corners_bg", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+        setBackgroundResource(getResources().getIdentifier("anythink_shape_corners_bg", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         addView(this.j);
         addView(relativeLayout);
         f();
-        setOnClickListener(this.f8261a);
+        setOnClickListener(this.f5421a);
     }
 
     static /* synthetic */ int e(ATSplashPopView aTSplashPopView) {
@@ -679,7 +679,7 @@ public class ATSplashPopView extends RelativeLayout {
         addView(this.j);
         addView(relativeLayout);
         f();
-        setOnClickListener(this.f8261a);
+        setOnClickListener(this.f5421a);
     }
 
     private void f() {
@@ -692,10 +692,10 @@ public class ATSplashPopView extends RelativeLayout {
         try {
             str = getResources().getConfiguration().locale.getLanguage();
         } catch (Throwable th) {
-            o.d(f8260c, th.getMessage());
+            o.d(f5420c, th.getMessage());
             str = "ZH";
         }
-        this.m.setBackgroundResource((str.toUpperCase().equals("CN") || str.toUpperCase().equals("ZH")) ? getResources().getIdentifier("anythink_splash_ad", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()) : getResources().getIdentifier("anythink_splash_ad_en", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+        this.m.setBackgroundResource((str.toUpperCase().equals("CN") || str.toUpperCase().equals("ZH")) ? getResources().getIdentifier("anythink_splash_ad", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()) : getResources().getIdentifier("anythink_splash_ad_en", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         addView(this.m);
     }
 
@@ -708,7 +708,7 @@ public class ATSplashPopView extends RelativeLayout {
             layoutParams.height = t.b(getContext(), 16.0f);
             this.p.setLayoutParams(layoutParams);
             this.p.setText("");
-            this.p.setBackgroundResource(getResources().getIdentifier("anythink_splash_popview_close", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+            this.p.setBackgroundResource(getResources().getIdentifier("anythink_splash_popview_close", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         }
     }
 
@@ -732,9 +732,8 @@ public class ATSplashPopView extends RelativeLayout {
         return i;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.i != null) {
             getWidth();
@@ -742,9 +741,8 @@ public class ATSplashPopView extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         release();
     }
@@ -780,7 +778,7 @@ public class ATSplashPopView extends RelativeLayout {
             this.h = null;
             this.i = null;
         } catch (Exception e) {
-            o.d(f8260c, e.getMessage());
+            o.d(f5420c, e.getMessage());
         }
     }
 

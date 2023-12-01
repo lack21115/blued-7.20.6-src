@@ -26,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRandomGiftHostPowerFragment.class */
 public final class LiveRandomGiftHostPowerFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveRandomGiftHostPowerBinding f13173a;
+    private LiveRandomGiftHostPowerBinding a;
     private ArrayList<RandomGiftItemModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FitemRandomGiftHostPowerItem> f13174c = new ArrayList<>();
+    private final ArrayList<FitemRandomGiftHostPowerItem> c = new ArrayList<>();
     private FreedomAdapter d;
     private float e;
     private float f;
@@ -40,7 +36,7 @@ public final class LiveRandomGiftHostPowerFragment extends BaseFragment {
 
     private final void a(RecyclerView recyclerView) {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        FreedomAdapter freedomAdapter = new FreedomAdapter(getContext(), getFragmentActive(), this.f13174c);
+        FreedomAdapter freedomAdapter = new FreedomAdapter(getContext(), getFragmentActive(), this.c);
         this.d = freedomAdapter;
         if (freedomAdapter != null) {
             freedomAdapter.b("FragmentManager", getChildFragmentManager());
@@ -111,9 +107,9 @@ public final class LiveRandomGiftHostPowerFragment extends BaseFragment {
         recyclerView.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftHostPowerFragment$m2CMA9HZgg-WwMQmLLWS8y73XCE
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean a2;
-                a2 = LiveRandomGiftHostPowerFragment.a(LiveRandomGiftHostPowerFragment.this, recyclerView, view, motionEvent);
-                return a2;
+                boolean a;
+                a = LiveRandomGiftHostPowerFragment.a(LiveRandomGiftHostPowerFragment.this, recyclerView, view, motionEvent);
+                return a;
             }
         });
     }
@@ -138,63 +134,63 @@ public final class LiveRandomGiftHostPowerFragment extends BaseFragment {
         }
         ArrayList<RandomGiftItemModel> arrayList = this.b;
         if (arrayList == null || arrayList.isEmpty()) {
-            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding = this.f13173a;
+            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding = this.a;
             RelativeLayout relativeLayout = liveRandomGiftHostPowerBinding == null ? null : liveRandomGiftHostPowerBinding.b;
             if (relativeLayout != null) {
                 relativeLayout.setVisibility(0);
             }
-            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding2 = this.f13173a;
-            LinearLayout linearLayout = liveRandomGiftHostPowerBinding2 == null ? null : liveRandomGiftHostPowerBinding2.f12392a;
+            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding2 = this.a;
+            LinearLayout linearLayout = liveRandomGiftHostPowerBinding2 == null ? null : liveRandomGiftHostPowerBinding2.a;
             if (linearLayout == null) {
                 return;
             }
             linearLayout.setVisibility(8);
             return;
         }
-        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding3 = this.f13173a;
+        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding3 = this.a;
         RelativeLayout relativeLayout2 = liveRandomGiftHostPowerBinding3 == null ? null : liveRandomGiftHostPowerBinding3.b;
         if (relativeLayout2 != null) {
             relativeLayout2.setVisibility(8);
         }
-        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding4 = this.f13173a;
-        LinearLayout linearLayout2 = liveRandomGiftHostPowerBinding4 == null ? null : liveRandomGiftHostPowerBinding4.f12392a;
+        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding4 = this.a;
+        LinearLayout linearLayout2 = liveRandomGiftHostPowerBinding4 == null ? null : liveRandomGiftHostPowerBinding4.a;
         if (linearLayout2 != null) {
             linearLayout2.setVisibility(0);
         }
-        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding5 = this.f13173a;
-        if (liveRandomGiftHostPowerBinding5 == null || (recyclerView = liveRandomGiftHostPowerBinding5.f12393c) == null) {
+        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding5 = this.a;
+        if (liveRandomGiftHostPowerBinding5 == null || (recyclerView = liveRandomGiftHostPowerBinding5.c) == null) {
             return;
         }
-        this.f13174c.clear();
-        ArrayList<RandomGiftItemModel> a2 = a();
-        if (a2 != null) {
-            for (RandomGiftItemModel randomGiftItemModel : a2) {
-                this.f13174c.add(new FitemRandomGiftHostPowerItem(randomGiftItemModel));
+        this.c.clear();
+        ArrayList<RandomGiftItemModel> a = a();
+        if (a != null) {
+            for (RandomGiftItemModel randomGiftItemModel : a) {
+                this.c.add(new FitemRandomGiftHostPowerItem(randomGiftItemModel));
             }
         }
         a(recyclerView);
         b(recyclerView);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         FrameLayout root;
         FrameLayout root2;
         Intrinsics.e(inflater, "inflater");
-        LiveRandomGiftHostPowerBinding a2 = LiveRandomGiftHostPowerBinding.a(getLayoutInflater(), viewGroup, false);
-        this.f13173a = a2;
-        if (((a2 == null || (root = a2.getRoot()) == null) ? null : root.getParent()) != null) {
-            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding = this.f13173a;
+        LiveRandomGiftHostPowerBinding a = LiveRandomGiftHostPowerBinding.a(getLayoutInflater(), viewGroup, false);
+        this.a = a;
+        if (((a == null || (root = a.getRoot()) == null) ? null : root.getParent()) != null) {
+            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding = this.a;
             ViewParent parent = (liveRandomGiftHostPowerBinding == null || (root2 = liveRandomGiftHostPowerBinding.getRoot()) == null) ? null : root2.getParent();
             if (parent == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup");
             }
             ViewGroup viewGroup2 = (ViewGroup) parent;
-            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding2 = this.f13173a;
+            LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding2 = this.a;
             viewGroup2.removeView(liveRandomGiftHostPowerBinding2 == null ? null : liveRandomGiftHostPowerBinding2.getRoot());
         }
         b();
-        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding3 = this.f13173a;
+        LiveRandomGiftHostPowerBinding liveRandomGiftHostPowerBinding3 = this.a;
         return liveRandomGiftHostPowerBinding3 == null ? null : liveRandomGiftHostPowerBinding3.getRoot();
     }
 }

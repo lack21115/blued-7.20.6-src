@@ -6,19 +6,19 @@ import com.opos.mobad.model.data.MaterialFileData;
 public class b implements com.opos.mobad.ad.c.e {
 
     /* renamed from: a  reason: collision with root package name */
-    private MaterialFileData f26164a;
+    private MaterialFileData f12476a;
 
     public b(MaterialFileData materialFileData) {
-        this.f26164a = materialFileData;
+        this.f12476a = materialFileData;
     }
 
     @Override // com.opos.mobad.ad.c.e
     public String a() {
-        return this.f26164a.a();
+        return this.f12476a.a();
     }
 
     @Override // com.opos.mobad.ad.c.e
     public String b() {
-        return this.f26164a.b();
+        return this.f12476a.b();
     }
 }

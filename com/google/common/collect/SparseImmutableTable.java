@@ -67,7 +67,7 @@ public final class SparseImmutableTable<R, C, V> extends RegularImmutableTable<R
 
     @Override // com.google.common.collect.ImmutableTable, com.google.common.collect.Table
     public ImmutableMap<C, Map<R, V>> columnMap() {
-        return ImmutableMap.copyOf(this.columnMap);
+        return ImmutableMap.copyOf((Map) this.columnMap);
     }
 
     @Override // com.google.common.collect.ImmutableTable
@@ -102,7 +102,7 @@ public final class SparseImmutableTable<R, C, V> extends RegularImmutableTable<R
 
     @Override // com.google.common.collect.ImmutableTable, com.google.common.collect.Table
     public ImmutableMap<R, Map<C, V>> rowMap() {
-        return ImmutableMap.copyOf(this.rowMap);
+        return ImmutableMap.copyOf((Map) this.rowMap);
     }
 
     @Override // com.google.common.collect.Table

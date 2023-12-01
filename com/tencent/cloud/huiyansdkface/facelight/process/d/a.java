@@ -16,19 +16,19 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f35636a;
+    private d f21945a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35637c;
+    private boolean f21946c;
 
     public a(d dVar, c cVar) {
-        this.f35636a = dVar;
+        this.f21945a = dVar;
         this.b = cVar;
     }
 
     public void a(final Context context, long j, final ProcessCallback<LoginResult> processCallback) {
-        WbCloudFaceVerifySdk.InputData i = this.f35636a.x().i();
+        WbCloudFaceVerifySdk.InputData i = this.f21945a.x().i();
         WbFaceModeProviders.faceMode().login(i.nonce, i.sign, j, new ProcessCallback<LoginResult>() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.d.a.1
             @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
             /* renamed from: a */
@@ -38,14 +38,14 @@ public class a {
 
             @Override // com.tencent.cloud.huiyansdkface.facelight.provider.ProcessCallback
             public void onFailed(WbFaceInnerError wbFaceInnerError) {
-                if (!WbFaceError.WBFaceErrorDomainLoginNetwork.equals(wbFaceInnerError.domain) || a.this.f35637c) {
+                if (!WbFaceError.WBFaceErrorDomainLoginNetwork.equals(wbFaceInnerError.domain) || a.this.f21946c) {
                     processCallback.onFailed(wbFaceInnerError);
                     return;
                 }
                 WLogger.d("LoginService", "first login network error,change url retry!");
-                a.this.f35637c = true;
+                a.this.f21946c = true;
                 KycWaSDK.getInstance().trackIMSWarnVEvent(context, "faceservice_login_retry_start", wbFaceInnerError.reason, null);
-                a.this.b.b(a.this.f35636a.x().X(), a.this.f35636a.x().P(), true);
+                a.this.b.b(a.this.f21945a.x().X(), a.this.f21945a.x().P(), true);
                 a.this.a(context, 14000L, processCallback);
             }
 

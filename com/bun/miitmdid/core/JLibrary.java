@@ -1,6 +1,7 @@
 package com.bun.miitmdid.core;
 
 import android.content.Context;
+import com.huawei.openalliance.ad.constant.t;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -73,7 +74,7 @@ public class JLibrary {
     public static native boolean a();
 
     public static Object[] o0o0o0o0o0(Object obj, String str, String str2, List<IOException> list) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchMethodException {
-        String[] split = str.split(";");
+        String[] split = str.split(t.aE);
         ArrayList arrayList = new ArrayList();
         int length = split.length;
         int i = 0;

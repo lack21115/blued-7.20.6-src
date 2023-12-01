@@ -3,9 +3,8 @@ package com.sobot.chat.widget.zxing.aztec.encoder;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.sobot.chat.widget.zxing.common.BitArray;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/zxing/aztec/encoder/BinaryShiftToken.class */
-public final class BinaryShiftToken extends Token {
+final class BinaryShiftToken extends Token {
     private final short binaryShiftByteCount;
     private final short binaryShiftStart;
 

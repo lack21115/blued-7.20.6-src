@@ -16,6 +16,7 @@ import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.url.Host;
 import com.blued.android.module.live_china.msg.LiveMsgSendManager;
 import com.blued.android.statistics.BluedStatistics;
+import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.bytedance.sdk.openadsdk.TTAdSdk;
 import com.soft.blued.R;
@@ -26,11 +27,11 @@ import com.soft.blued.utils.BluedPreferences;
 public class ServerAddressSettingFragment extends BaseFragment implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33596a;
+    private View f19905a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RadioGroup f33597c;
+    private RadioGroup f19906c;
     private RadioButton d;
     private RadioButton e;
     private RadioButton f;
@@ -58,33 +59,32 @@ public class ServerAddressSettingFragment extends BaseFragment implements View.O
         if (view.getId() != 2131362611) {
             return;
         }
-        if (this.f33597c.getCheckedRadioButtonId() == this.d.getId()) {
+        if (this.f19906c.getCheckedRadioButtonId() == this.d.getId()) {
             BluedHttpUrl.l();
-        } else if (this.f33597c.getCheckedRadioButtonId() == this.e.getId()) {
+        } else if (this.f19906c.getCheckedRadioButtonId() == this.e.getId()) {
             BluedHttpUrl.k();
-        } else if (this.f33597c.getCheckedRadioButtonId() == this.f.getId()) {
+        } else if (this.f19906c.getCheckedRadioButtonId() == this.f.getId()) {
             BluedHttpUrl.m();
         }
         BluedApplicationLike.initCoroutineRequestHost();
-        BluedStatistics.a(AppInfo.d(), BluedHttpUrl.w(), 443, HappyDnsUtils.d());
+        BluedStatistics.a(AppInfo.d(), BluedHttpUrl.w(), (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE, HappyDnsUtils.d());
         LiveMsgSendManager.a().b();
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View view = this.f33596a;
+        View view = this.f19905a;
         if (view == null) {
             View inflate = layoutInflater.inflate(R.layout.fragment_server_head_change, viewGroup, false);
-            this.f33596a = inflate;
+            this.f19905a = inflate;
             RadioGroup radioGroup = (RadioGroup) inflate.findViewById(R.id.rdgrp_servers);
-            this.f33597c = radioGroup;
+            this.f19906c = radioGroup;
             radioGroup.setOnCheckedChangeListener(this);
-            this.d = (RadioButton) this.f33596a.findViewById(R.id.rd_online);
-            this.f = (RadioButton) this.f33596a.findViewById(R.id.rd_pre_online);
-            this.e = (RadioButton) this.f33596a.findViewById(R.id.rd_debug);
-            this.b = (TextView) this.f33596a.findViewById(R.id.address);
-            this.h = (ImageView) this.f33596a.findViewById(R.id.iv_splash_toggle);
+            this.d = (RadioButton) this.f19905a.findViewById(R.id.rd_online);
+            this.f = (RadioButton) this.f19905a.findViewById(R.id.rd_pre_online);
+            this.e = (RadioButton) this.f19905a.findViewById(R.id.rd_debug);
+            this.b = (TextView) this.f19905a.findViewById(R.id.address);
+            this.h = (ImageView) this.f19905a.findViewById(R.id.iv_splash_toggle);
             int j = BluedHttpUrl.j();
             if (j == 1) {
                 this.e.setChecked(true);
@@ -112,12 +112,12 @@ public class ServerAddressSettingFragment extends BaseFragment implements View.O
                     }
                 }
             });
-            Button button = (Button) this.f33596a.findViewById(2131362611);
+            Button button = (Button) this.f19905a.findViewById(R.id.btn_ok);
             this.g = button;
             button.setOnClickListener(this);
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f33596a.getParent()).removeView(this.f33596a);
+            ((ViewGroup) this.f19905a.getParent()).removeView(this.f19905a);
         }
-        return this.f33596a;
+        return this.f19905a;
     }
 }

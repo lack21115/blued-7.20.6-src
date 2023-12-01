@@ -10,27 +10,27 @@ import com.bytedance.applog.tracker.Tracker;
 public class g {
     public Context b;
 
-    /* renamed from: a */
-    public WebView f38449a = null;
+    /* renamed from: a  reason: collision with root package name */
+    public WebView f24758a = null;
 
-    /* renamed from: c */
-    public final a f38450c = new a("sys");
+    /* renamed from: c  reason: collision with root package name */
+    public final a f24759c = new a("sys");
 
     public g(Context context) {
         this.b = context;
     }
 
     public static /* synthetic */ void a(g gVar) {
-        if (gVar.f38449a != null) {
+        if (gVar.f24758a != null) {
             gVar.a();
         }
         try {
             WebView webView = new WebView(gVar.b);
-            gVar.f38449a = webView;
+            gVar.f24758a = webView;
             webView.removeJavascriptInterface("searchBoxJavaBridge_");
-            gVar.f38449a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
-            gVar.f38449a.removeJavascriptInterface("accessibilityTraversal");
-            WebSettings settings = gVar.f38449a.getSettings();
+            gVar.f24758a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
+            gVar.f24758a.removeJavascriptInterface("accessibilityTraversal");
+            WebSettings settings = gVar.f24758a.getSettings();
             settings.setSavePassword(false);
             settings.setAllowFileAccess(false);
             if (Build.VERSION.SDK_INT >= 16) {
@@ -40,19 +40,19 @@ public class g {
             settings.setJavaScriptEnabled(true);
             settings.setAllowFileAccess(true);
             settings.setCacheMode(-1);
-            gVar.f38449a.addJavascriptInterface(gVar.f38450c, "JSInterface");
-            gVar.f38449a.setWebViewClient(new d(gVar));
-            Tracker.loadUrl(gVar.f38449a, com.tencent.qimei.a.a.a(gVar.b));
+            gVar.f24758a.addJavascriptInterface(gVar.f24759c, "JSInterface");
+            gVar.f24758a.setWebViewClient(new d(gVar));
+            Tracker.loadUrl(gVar.f24758a, com.tencent.qimei.a.a.a(gVar.b));
         } catch (RuntimeException e) {
             com.tencent.qimei.k.a.a(e);
         }
     }
 
     public final void a() {
-        WebView webView = this.f38449a;
+        WebView webView = this.f24758a;
         if (webView != null) {
             webView.destroy();
-            this.f38449a = null;
+            this.f24758a = null;
         }
     }
 

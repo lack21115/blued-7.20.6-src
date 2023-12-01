@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentSkinLayoutBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f28980a;
+    private final ConstraintLayout f15290a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f28980a;
+        return this.f15290a;
     }
 }

@@ -12,6 +12,6 @@ public final class StringVector extends BaseVector {
     }
 
     public String get(int i) {
-        return Table.a(a(i), this.f2849a, this.b);
+        return Table.a(a(i), this.f2801a, this.b);
     }
 }

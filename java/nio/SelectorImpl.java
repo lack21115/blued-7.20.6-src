@@ -43,42 +43,42 @@ public final class SelectorImpl extends AbstractSelector {
             this.set = set;
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean add(E e) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public void clear() {
             this.set.clear();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean contains(Object obj) {
             return this.set.contains(obj);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             return this.set.containsAll(collection);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean equals(Object obj) {
             return this.set.equals(obj);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public int hashCode() {
             return this.set.hashCode();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean isEmpty() {
             return this.set.isEmpty();
         }
@@ -88,32 +88,32 @@ public final class SelectorImpl extends AbstractSelector {
             return this.set.iterator();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean remove(Object obj) {
             return this.set.remove(obj);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             return this.set.removeAll(collection);
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             return this.set.retainAll(collection);
         }
 
-        @Override // java.util.Set, java.util.Collection, java.util.List
+        @Override // java.util.Set, java.util.Collection
         public int size() {
             return this.set.size();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public Object[] toArray() {
             return this.set.toArray();
         }
 
-        @Override // java.util.Set
+        @Override // java.util.Set, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) this.set.toArray(tArr);
         }

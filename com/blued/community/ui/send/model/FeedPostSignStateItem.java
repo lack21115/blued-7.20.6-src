@@ -40,7 +40,6 @@ public final class FeedPostSignStateItem implements MultiItemEntity, Serializabl
         return this.icon;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

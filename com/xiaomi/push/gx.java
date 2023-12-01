@@ -6,17 +6,17 @@ import com.xiaomi.push.al;
 public class gx {
 
     /* renamed from: a  reason: collision with root package name */
-    private static al f41459a = new al(true, 20);
+    private static al f27768a = new al(true, 20);
 
     public static void a(al.b bVar) {
-        f41459a.a(bVar);
+        f27768a.a(bVar);
     }
 
     public static void a(al.b bVar, long j) {
-        f41459a.a(bVar, j);
+        f27768a.a(bVar, j);
     }
 
     public static void a(Runnable runnable) {
-        f41459a.a(new gy(runnable));
+        f27768a.a(new gy(runnable));
     }
 }

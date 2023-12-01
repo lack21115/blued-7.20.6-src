@@ -4,11 +4,11 @@ package com.umeng.commonsdk.internal.utils;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f40871a;
+    public int f27180a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f40872c;
+    public int f27181c;
     public int d;
     public int e;
     public long f;

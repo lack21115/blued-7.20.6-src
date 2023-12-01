@@ -8,7 +8,7 @@ import java.util.Set;
 public final class BijG2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List<String> f39861a = new ArrayList();
+    public static final List<String> f26170a = new ArrayList();
 
     public static String a(Set<String> set) {
         StringBuilder sb = new StringBuilder();

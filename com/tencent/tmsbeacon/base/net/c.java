@@ -16,11 +16,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class c implements e.a, e, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f39506a;
+    private static volatile c f25815a;
     private final AtomicBoolean b = new AtomicBoolean(false);
 
     /* renamed from: c  reason: collision with root package name */
-    private final AtomicInteger f39507c = new AtomicInteger();
+    private final AtomicInteger f25816c = new AtomicInteger();
     public com.tencent.tmsbeacon.base.net.a.a d;
     public com.tencent.tmsbeacon.base.net.a.b e;
     private Context f;
@@ -32,12 +32,12 @@ public final class c implements e.a, e, Closeable {
         public final /* synthetic */ JceRequestEntity b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ boolean f39508c;
+        public final /* synthetic */ boolean f25817c;
         public final /* synthetic */ Callback d;
 
         public a(JceRequestEntity jceRequestEntity, boolean z, Callback callback) {
             this.b = jceRequestEntity;
-            this.f39508c = z;
+            this.f25817c = z;
             this.d = callback;
         }
 
@@ -45,7 +45,7 @@ public final class c implements e.a, e, Closeable {
         /* renamed from: a */
         public void onResponse(byte[] bArr) {
             if (bArr == null || bArr.length <= 0) {
-                onFailure(new d(this.b.getType().name(), this.f39508c ? "402" : "452", 200, "raw response == null", null));
+                onFailure(new d(this.b.getType().name(), this.f25817c ? "402" : "452", 200, "raw response == null", null));
                 return;
             }
             try {
@@ -56,12 +56,12 @@ public final class c implements e.a, e, Closeable {
                 com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", sb.toString(), new Object[0]);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append("mode: ");
-                sb2.append(this.f39508c ? "socket" : "http");
+                sb2.append(this.f25817c ? "socket" : "http");
                 com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", sb2.toString(), new Object[0]);
                 this.d.onResponse(bArr);
                 c.this.f();
             } catch (Exception e) {
-                onFailure(new d(this.b.getType().name(), this.f39508c ? "403" : "453", 200, e.getMessage(), e));
+                onFailure(new d(this.b.getType().name(), this.f25817c ? "403" : "453", 200, e.getMessage(), e));
             }
         }
 
@@ -79,11 +79,11 @@ public final class c implements e.a, e, Closeable {
         public final /* synthetic */ com.tencent.tmsbeacon.base.net.call.e b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Callback f39509c;
+        public final /* synthetic */ Callback f25818c;
 
         public b(com.tencent.tmsbeacon.base.net.call.e eVar, Callback callback) {
             this.b = eVar;
-            this.f39509c = callback;
+            this.f25818c = callback;
         }
 
         @Override // com.tencent.tmsbeacon.base.net.call.Callback
@@ -95,7 +95,7 @@ public final class c implements e.a, e, Closeable {
                 sb.append(this.b.h());
                 sb.append(" request success!");
                 com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", sb.toString(), new Object[0]);
-                this.f39509c.onResponse(bResponse);
+                this.f25818c.onResponse(bResponse);
                 c.this.f();
             } catch (Exception e) {
                 onFailure(new d(this.b.h(), "453", 200, e.getMessage(), e));
@@ -106,7 +106,7 @@ public final class c implements e.a, e, Closeable {
         public void onFailure(d dVar) {
             com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", "httpRequest: " + dVar.toString(), new Object[0]);
             c.this.a(dVar);
-            this.f39509c.onFailure(dVar);
+            this.f25818c.onFailure(dVar);
             c.this.f();
         }
     }
@@ -118,10 +118,10 @@ public final class c implements e.a, e, Closeable {
         c cVar;
         synchronized (c.class) {
             try {
-                if (f39506a == null) {
-                    f39506a = new c();
+                if (f25815a == null) {
+                    f25815a = new c();
                 }
-                cVar = f39506a;
+                cVar = f25815a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -131,11 +131,11 @@ public final class c implements e.a, e, Closeable {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f39507c.decrementAndGet()));
+        com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f25816c.decrementAndGet()));
     }
 
     private void g() {
-        com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f39507c.incrementAndGet()));
+        com.tencent.tmsbeacon.base.util.c.a("[BeaconNet]", "current net connected num: %d", Integer.valueOf(this.f25816c.incrementAndGet()));
     }
 
     public AbstractNetAdapter a(JceRequestEntity jceRequestEntity) {
@@ -192,7 +192,7 @@ public final class c implements e.a, e, Closeable {
     }
 
     public void a(d dVar) {
-        if (dVar.f39523a.equals("atta") || TextUtils.isEmpty(dVar.b)) {
+        if (dVar.f25832a.equals("atta") || TextUtils.isEmpty(dVar.b)) {
             return;
         }
         com.tencent.tmsbeacon.a.b.d.b().a(dVar.b, dVar.toString(), dVar.e);
@@ -215,7 +215,7 @@ public final class c implements e.a, e, Closeable {
     }
 
     public boolean d() {
-        return this.f39507c.get() >= 5;
+        return this.f25816c.get() >= 5;
     }
 
     public void e() {

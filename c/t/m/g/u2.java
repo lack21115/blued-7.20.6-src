@@ -32,7 +32,7 @@ public class u2 {
 
     public static byte[] a(byte[] bArr, int i, int i2) {
         byte[] bArr2 = new byte[16];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 16);
+        System.arraycopy(bArr, 0, bArr2, 0, 16);
         return a(bArr, i + 16, i2 - 16, bArr2, bArr2, 2);
     }
 
@@ -43,13 +43,13 @@ public class u2 {
     public static byte[] a(byte[] bArr, int i, int i2, byte[] bArr2, byte[] bArr3, int i3) {
         if (i3 == 1 || i3 == 2) {
             if (bArr == null || bArr.length == 0 || i < 0 || i2 <= 0) {
-                return k2.f3860a;
+                return k2.f3812a;
             }
             try {
                 Cipher a2 = a(bArr2, bArr3, i3);
-                return a2 == null ? k2.f3860a : a2.doFinal(bArr, i, i2);
+                return a2 == null ? k2.f3812a : a2.doFinal(bArr, i, i2);
             } catch (Throwable th) {
-                return k2.f3860a;
+                return k2.f3812a;
             }
         }
         throw new IllegalArgumentException("wrong mode.");
@@ -79,11 +79,11 @@ public class u2 {
                 return a3;
             }
             byte[] bArr2 = new byte[a2.length + a3.length];
-            System.arraycopy((Object) a2, 0, (Object) bArr2, 0, a2.length);
-            System.arraycopy((Object) a3, 0, (Object) bArr2, a2.length, a3.length);
+            System.arraycopy(a2, 0, bArr2, 0, a2.length);
+            System.arraycopy(a3, 0, bArr2, a2.length, a3.length);
             return bArr2;
         } catch (Throwable th) {
-            return k2.f3860a;
+            return k2.f3812a;
         }
     }
 }

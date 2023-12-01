@@ -19,32 +19,32 @@ public final class ActivityRecreator {
     private static final Handler g = new Handler(Looper.getMainLooper());
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final Class<?> f2317a = d();
+    protected static final Class<?> f2269a = d();
     protected static final Field b = b();
 
     /* renamed from: c  reason: collision with root package name */
-    protected static final Field f2318c = c();
-    protected static final Method d = a(f2317a);
-    protected static final Method e = b(f2317a);
-    protected static final Method f = c(f2317a);
+    protected static final Field f2270c = c();
+    protected static final Method d = a(f2269a);
+    protected static final Method e = b(f2269a);
+    protected static final Method f = c(f2269a);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/ActivityRecreator$LifecycleCheckCallbacks.class */
     public static final class LifecycleCheckCallbacks implements Application.ActivityLifecycleCallbacks {
 
         /* renamed from: a  reason: collision with root package name */
-        Object f2322a;
+        Object f2274a;
         private Activity b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f2323c;
+        private final int f2275c;
         private boolean d = false;
         private boolean e = false;
         private boolean f = false;
 
         LifecycleCheckCallbacks(Activity activity) {
             this.b = activity;
-            this.f2323c = activity.hashCode();
+            this.f2275c = activity.hashCode();
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -61,11 +61,11 @@ public final class ActivityRecreator {
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPaused(Activity activity) {
-            if (!this.e || this.f || this.d || !ActivityRecreator.a(this.f2322a, this.f2323c, activity)) {
+            if (!this.e || this.f || this.d || !ActivityRecreator.a(this.f2274a, this.f2275c, activity)) {
                 return;
             }
             this.f = true;
-            this.f2322a = null;
+            this.f2274a = null;
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
@@ -121,7 +121,7 @@ public final class ActivityRecreator {
                 return false;
             }
             try {
-                final Object obj2 = f2318c.get(activity);
+                final Object obj2 = f2270c.get(activity);
                 if (obj2 == null || (obj = b.get(activity)) == null) {
                     return false;
                 }
@@ -131,7 +131,7 @@ public final class ActivityRecreator {
                 g.post(new Runnable() { // from class: androidx.core.app.ActivityRecreator.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        LifecycleCheckCallbacks.this.f2322a = obj2;
+                        LifecycleCheckCallbacks.this.f2274a = obj2;
                     }
                 });
                 if (a()) {
@@ -154,7 +154,7 @@ public final class ActivityRecreator {
 
     protected static boolean a(Object obj, int i, Activity activity) {
         try {
-            final Object obj2 = f2318c.get(activity);
+            final Object obj2 = f2270c.get(activity);
             if (obj2 == obj && activity.hashCode() == i) {
                 final Object obj3 = b.get(activity);
                 g.postAtFrontOfQueue(new Runnable() { // from class: androidx.core.app.ActivityRecreator.3
@@ -162,9 +162,9 @@ public final class ActivityRecreator {
                     public void run() {
                         try {
                             if (ActivityRecreator.d != null) {
-                                ActivityRecreator.d.invoke(Object.this, obj2, false, "AppCompat recreation");
+                                ActivityRecreator.d.invoke(obj3, obj2, false, "AppCompat recreation");
                             } else {
-                                ActivityRecreator.e.invoke(Object.this, obj2, false);
+                                ActivityRecreator.e.invoke(obj3, obj2, false);
                             }
                         } catch (RuntimeException e2) {
                             if (e2.getClass() == RuntimeException.class && e2.getMessage() != null && e2.getMessage().startsWith("Unable to stop")) {

@@ -29,13 +29,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/RewardListAdapter.class */
 public class RewardListAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11711a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LoadOptions f11712c;
+    private LoadOptions c;
     private BaseFragment d;
     private PopRewardListView e;
     private List<LiveRewardListModel> f = new ArrayList();
@@ -44,9 +40,7 @@ public class RewardListAdapter extends BaseAdapter {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/RewardListAdapter$ViewHolder.class */
     class ViewHolder {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f11715c;
+        private ImageView c;
         private TextView d;
         private TextView e;
         private TextView f;
@@ -59,14 +53,14 @@ public class RewardListAdapter extends BaseAdapter {
 
     public RewardListAdapter(BaseFragment baseFragment, PopRewardListView popRewardListView) {
         Context context = baseFragment.getContext();
-        this.f11711a = context;
+        this.a = context;
         this.d = baseFragment;
         this.e = popRewardListView;
         this.b = LayoutInflater.from(context);
         LoadOptions loadOptions = new LoadOptions();
-        this.f11712c = loadOptions;
+        this.c = loadOptions;
         loadOptions.b = R.drawable.user_bg_round;
-        this.f11712c.d = R.drawable.user_bg_round;
+        this.c.d = R.drawable.user_bg_round;
     }
 
     public void a(long j) {
@@ -129,7 +123,7 @@ public class RewardListAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             view2 = this.b.inflate(R.layout.live_reward_list_item, viewGroup, false);
             viewHolder.b = (ImageView) view2.findViewById(R.id.header_view);
-            viewHolder.f11715c = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.c = (ImageView) view2.findViewById(R.id.img_verify);
             viewHolder.d = (TextView) view2.findViewById(R.id.reward_name);
             viewHolder.e = (TextView) view2.findViewById(R.id.reward_time);
             viewHolder.f = (TextView) view2.findViewById(R.id.reward_beans);
@@ -142,7 +136,7 @@ public class RewardListAdapter extends BaseAdapter {
         }
         final LiveRewardListModel liveRewardListModel = this.f.get(i);
         ImageLoader.a((IRequestHost) null, liveRewardListModel.avatar).b(R.drawable.user_bg_round).c().a(viewHolder.b);
-        LiveRoomInfo.a().a(viewHolder.f11715c, liveRewardListModel.vbadge);
+        LiveRoomInfo.a().a(viewHolder.c, liveRewardListModel.vbadge);
         if (TextUtils.isEmpty(liveRewardListModel.name)) {
             viewHolder.d.setText("");
         } else {

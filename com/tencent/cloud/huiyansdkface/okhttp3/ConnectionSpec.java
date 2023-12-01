@@ -1,6 +1,5 @@
 package com.tencent.cloud.huiyansdkface.okhttp3;
 
-import com.android.org.conscrypt.NativeCrypto;
 import com.blued.das.live.LiveProtos;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.Util;
 import java.util.Arrays;
@@ -17,37 +16,37 @@ public final class ConnectionSpec {
     private static final CipherSuite[] j = {CipherSuite.bl, CipherSuite.bm, CipherSuite.bn, CipherSuite.bo, CipherSuite.bp, CipherSuite.aX, CipherSuite.bb, CipherSuite.aY, CipherSuite.bc, CipherSuite.bi, CipherSuite.bh, CipherSuite.aI, CipherSuite.aJ, CipherSuite.ag, CipherSuite.ah, CipherSuite.E, CipherSuite.I, CipherSuite.i};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ConnectionSpec f35837a = new Builder(true).cipherSuites(i).tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2).supportsTlsExtensions(true).build();
+    public static final ConnectionSpec f22146a = new Builder(true).cipherSuites(i).tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2).supportsTlsExtensions(true).build();
     public static final ConnectionSpec b = new Builder(true).cipherSuites(j).tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2, TlsVersion.TLS_1_1, TlsVersion.TLS_1_0).supportsTlsExtensions(true).build();
 
     /* renamed from: c  reason: collision with root package name */
-    public static final ConnectionSpec f35838c = new Builder(true).cipherSuites(j).tlsVersions(TlsVersion.TLS_1_0).supportsTlsExtensions(true).build();
+    public static final ConnectionSpec f22147c = new Builder(true).cipherSuites(j).tlsVersions(TlsVersion.TLS_1_0).supportsTlsExtensions(true).build();
     public static final ConnectionSpec d = new Builder(false).build();
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/ConnectionSpec$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f35839a;
+        boolean f22148a;
         String[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        String[] f35840c;
+        String[] f22149c;
         boolean d;
 
         public Builder(ConnectionSpec connectionSpec) {
-            this.f35839a = connectionSpec.e;
+            this.f22148a = connectionSpec.e;
             this.b = connectionSpec.g;
-            this.f35840c = connectionSpec.h;
+            this.f22149c = connectionSpec.h;
             this.d = connectionSpec.f;
         }
 
         Builder(boolean z) {
-            this.f35839a = z;
+            this.f22148a = z;
         }
 
         public Builder allEnabledCipherSuites() {
-            if (this.f35839a) {
+            if (this.f22148a) {
                 this.b = null;
                 return this;
             }
@@ -55,8 +54,8 @@ public final class ConnectionSpec {
         }
 
         public Builder allEnabledTlsVersions() {
-            if (this.f35839a) {
-                this.f35840c = null;
+            if (this.f22148a) {
+                this.f22149c = null;
                 return this;
             }
             throw new IllegalStateException("no TLS versions for cleartext connections");
@@ -67,7 +66,7 @@ public final class ConnectionSpec {
         }
 
         public Builder cipherSuites(CipherSuite... cipherSuiteArr) {
-            if (!this.f35839a) {
+            if (!this.f22148a) {
                 throw new IllegalStateException("no cipher suites for cleartext connections");
             }
             String[] strArr = new String[cipherSuiteArr.length];
@@ -83,7 +82,7 @@ public final class ConnectionSpec {
         }
 
         public Builder cipherSuites(String... strArr) {
-            if (this.f35839a) {
+            if (this.f22148a) {
                 if (strArr.length != 0) {
                     this.b = (String[]) strArr.clone();
                     return this;
@@ -94,7 +93,7 @@ public final class ConnectionSpec {
         }
 
         public Builder supportsTlsExtensions(boolean z) {
-            if (this.f35839a) {
+            if (this.f22148a) {
                 this.d = z;
                 return this;
             }
@@ -102,7 +101,7 @@ public final class ConnectionSpec {
         }
 
         public Builder tlsVersions(TlsVersion... tlsVersionArr) {
-            if (!this.f35839a) {
+            if (!this.f22148a) {
                 throw new IllegalStateException("no TLS versions for cleartext connections");
             }
             String[] strArr = new String[tlsVersionArr.length];
@@ -118,9 +117,9 @@ public final class ConnectionSpec {
         }
 
         public Builder tlsVersions(String... strArr) {
-            if (this.f35839a) {
+            if (this.f22148a) {
                 if (strArr.length != 0) {
-                    this.f35840c = (String[]) strArr.clone();
+                    this.f22149c = (String[]) strArr.clone();
                     return this;
                 }
                 throw new IllegalArgumentException("At least one TLS version is required");
@@ -130,17 +129,17 @@ public final class ConnectionSpec {
     }
 
     ConnectionSpec(Builder builder) {
-        this.e = builder.f35839a;
+        this.e = builder.f22148a;
         this.g = builder.b;
-        this.h = builder.f35840c;
+        this.h = builder.f22149c;
         this.f = builder.d;
     }
 
     private ConnectionSpec b(SSLSocket sSLSocket, boolean z) {
-        String[] intersect = this.g != null ? Util.intersect(CipherSuite.f35831a, sSLSocket.getEnabledCipherSuites(), this.g) : sSLSocket.getEnabledCipherSuites();
+        String[] intersect = this.g != null ? Util.intersect(CipherSuite.f22140a, sSLSocket.getEnabledCipherSuites(), this.g) : sSLSocket.getEnabledCipherSuites();
         String[] intersect2 = this.h != null ? Util.intersect(Util.h, sSLSocket.getEnabledProtocols(), this.h) : sSLSocket.getEnabledProtocols();
         String[] supportedCipherSuites = sSLSocket.getSupportedCipherSuites();
-        int indexOf = Util.indexOf(CipherSuite.f35831a, supportedCipherSuites, NativeCrypto.TLS_FALLBACK_SCSV);
+        int indexOf = Util.indexOf(CipherSuite.f22140a, supportedCipherSuites, "TLS_FALLBACK_SCSV");
         String[] strArr = intersect;
         if (z) {
             strArr = intersect;
@@ -200,7 +199,7 @@ public final class ConnectionSpec {
     public boolean isCompatible(SSLSocket sSLSocket) {
         if (this.e) {
             if (this.h == null || Util.nonEmptyIntersection(Util.h, this.h, sSLSocket.getEnabledProtocols())) {
-                return this.g == null || Util.nonEmptyIntersection(CipherSuite.f35831a, this.g, sSLSocket.getEnabledCipherSuites());
+                return this.g == null || Util.nonEmptyIntersection(CipherSuite.f22140a, this.g, sSLSocket.getEnabledCipherSuites());
             }
             return false;
         }

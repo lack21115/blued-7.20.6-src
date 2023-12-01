@@ -4,11 +4,11 @@ package androidx.collection;
 public class SparseArrayCompat<E> implements Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f1964a = new Object();
+    private static final Object f1916a = new Object();
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int[] f1965c;
+    private int[] f1917c;
     private Object[] d;
     private int e;
 
@@ -19,18 +19,18 @@ public class SparseArrayCompat<E> implements Cloneable {
     public SparseArrayCompat(int i) {
         this.b = false;
         if (i == 0) {
-            this.f1965c = ContainerHelpers.f1947a;
-            this.d = ContainerHelpers.f1948c;
+            this.f1917c = ContainerHelpers.f1899a;
+            this.d = ContainerHelpers.f1900c;
             return;
         }
         int idealIntArraySize = ContainerHelpers.idealIntArraySize(i);
-        this.f1965c = new int[idealIntArraySize];
+        this.f1917c = new int[idealIntArraySize];
         this.d = new Object[idealIntArraySize];
     }
 
     private void a() {
         int i = this.e;
-        int[] iArr = this.f1965c;
+        int[] iArr = this.f1917c;
         Object[] objArr = this.d;
         int i2 = 0;
         int i3 = 0;
@@ -43,7 +43,7 @@ public class SparseArrayCompat<E> implements Cloneable {
             }
             Object obj = objArr[i2];
             int i5 = i4;
-            if (obj != f1964a) {
+            if (obj != f1916a) {
                 if (i2 != i4) {
                     iArr[i4] = iArr[i2];
                     objArr[i4] = obj;
@@ -58,26 +58,26 @@ public class SparseArrayCompat<E> implements Cloneable {
 
     public void append(int i, E e) {
         int i2 = this.e;
-        if (i2 != 0 && i <= this.f1965c[i2 - 1]) {
+        if (i2 != 0 && i <= this.f1917c[i2 - 1]) {
             put(i, e);
             return;
         }
-        if (this.b && this.e >= this.f1965c.length) {
+        if (this.b && this.e >= this.f1917c.length) {
             a();
         }
         int i3 = this.e;
-        if (i3 >= this.f1965c.length) {
+        if (i3 >= this.f1917c.length) {
             int idealIntArraySize = ContainerHelpers.idealIntArraySize(i3 + 1);
             int[] iArr = new int[idealIntArraySize];
             Object[] objArr = new Object[idealIntArraySize];
-            int[] iArr2 = this.f1965c;
-            System.arraycopy((Object) iArr2, 0, (Object) iArr, 0, iArr2.length);
+            int[] iArr2 = this.f1917c;
+            System.arraycopy(iArr2, 0, iArr, 0, iArr2.length);
             Object[] objArr2 = this.d;
             System.arraycopy(objArr2, 0, objArr, 0, objArr2.length);
-            this.f1965c = iArr;
+            this.f1917c = iArr;
             this.d = objArr;
         }
-        this.f1965c[i3] = i;
+        this.f1917c[i3] = i;
         this.d[i3] = e;
         this.e = i3 + 1;
     }
@@ -99,10 +99,10 @@ public class SparseArrayCompat<E> implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseArrayCompat<E> m1275clone() {
+    public SparseArrayCompat<E> m1138clone() {
         try {
             SparseArrayCompat<E> sparseArrayCompat = (SparseArrayCompat) super.clone();
-            sparseArrayCompat.f1965c = (int[]) this.f1965c.clone();
+            sparseArrayCompat.f1917c = (int[]) this.f1917c.clone();
             sparseArrayCompat.d = (Object[]) this.d.clone();
             return sparseArrayCompat;
         } catch (CloneNotSupportedException e) {
@@ -128,10 +128,10 @@ public class SparseArrayCompat<E> implements Cloneable {
     }
 
     public E get(int i, E e) {
-        int a2 = ContainerHelpers.a(this.f1965c, this.e, i);
+        int a2 = ContainerHelpers.a(this.f1917c, this.e, i);
         if (a2 >= 0) {
             Object[] objArr = this.d;
-            return objArr[a2] == f1964a ? e : (E) objArr[a2];
+            return objArr[a2] == f1916a ? e : (E) objArr[a2];
         }
         return e;
     }
@@ -140,7 +140,7 @@ public class SparseArrayCompat<E> implements Cloneable {
         if (this.b) {
             a();
         }
-        return ContainerHelpers.a(this.f1965c, this.e, i);
+        return ContainerHelpers.a(this.f1917c, this.e, i);
     }
 
     public int indexOfValue(E e) {
@@ -168,19 +168,19 @@ public class SparseArrayCompat<E> implements Cloneable {
         if (this.b) {
             a();
         }
-        return this.f1965c[i];
+        return this.f1917c[i];
     }
 
     public void put(int i, E e) {
-        int a2 = ContainerHelpers.a(this.f1965c, this.e, i);
+        int a2 = ContainerHelpers.a(this.f1917c, this.e, i);
         if (a2 >= 0) {
             this.d[a2] = e;
             return;
         }
         if (a2 < this.e) {
             Object[] objArr = this.d;
-            if (objArr[a2] == f1964a) {
-                this.f1965c[a2] = i;
+            if (objArr[a2] == f1916a) {
+                this.f1917c[a2] = i;
                 objArr[a2] = e;
                 return;
             }
@@ -188,32 +188,32 @@ public class SparseArrayCompat<E> implements Cloneable {
         int i2 = a2;
         if (this.b) {
             i2 = a2;
-            if (this.e >= this.f1965c.length) {
+            if (this.e >= this.f1917c.length) {
                 a();
-                i2 = ContainerHelpers.a(this.f1965c, this.e, i);
+                i2 = ContainerHelpers.a(this.f1917c, this.e, i);
             }
         }
         int i3 = this.e;
-        if (i3 >= this.f1965c.length) {
+        if (i3 >= this.f1917c.length) {
             int idealIntArraySize = ContainerHelpers.idealIntArraySize(i3 + 1);
             int[] iArr = new int[idealIntArraySize];
             Object[] objArr2 = new Object[idealIntArraySize];
-            int[] iArr2 = this.f1965c;
-            System.arraycopy((Object) iArr2, 0, (Object) iArr, 0, iArr2.length);
+            int[] iArr2 = this.f1917c;
+            System.arraycopy(iArr2, 0, iArr, 0, iArr2.length);
             Object[] objArr3 = this.d;
             System.arraycopy(objArr3, 0, objArr2, 0, objArr3.length);
-            this.f1965c = iArr;
+            this.f1917c = iArr;
             this.d = objArr2;
         }
         int i4 = this.e;
         if (i4 - i2 != 0) {
-            int[] iArr3 = this.f1965c;
+            int[] iArr3 = this.f1917c;
             int i5 = i2 + 1;
-            System.arraycopy((Object) iArr3, i2, (Object) iArr3, i5, i4 - i2);
+            System.arraycopy(iArr3, i2, iArr3, i5, i4 - i2);
             Object[] objArr4 = this.d;
             System.arraycopy(objArr4, i2, objArr4, i5, this.e - i2);
         }
-        this.f1965c[i2] = i;
+        this.f1917c[i2] = i;
         this.d[i2] = e;
         this.e++;
     }
@@ -240,11 +240,11 @@ public class SparseArrayCompat<E> implements Cloneable {
     }
 
     public void remove(int i) {
-        int a2 = ContainerHelpers.a(this.f1965c, this.e, i);
+        int a2 = ContainerHelpers.a(this.f1917c, this.e, i);
         if (a2 >= 0) {
             Object[] objArr = this.d;
             Object obj = objArr[a2];
-            Object obj2 = f1964a;
+            Object obj2 = f1916a;
             if (obj != obj2) {
                 objArr[a2] = obj2;
                 this.b = true;
@@ -268,7 +268,7 @@ public class SparseArrayCompat<E> implements Cloneable {
     public void removeAt(int i) {
         Object[] objArr = this.d;
         Object obj = objArr[i];
-        Object obj2 = f1964a;
+        Object obj2 = f1916a;
         if (obj != obj2) {
             objArr[i] = obj2;
             this.b = true;

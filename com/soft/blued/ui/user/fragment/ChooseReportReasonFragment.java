@@ -18,11 +18,11 @@ import com.soft.blued.ui.user.observer.ReportObserver;
 public class ChooseReportReasonFragment extends BaseFragment implements View.OnClickListener, ReportObserver.IReportObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33840a;
+    private View f20149a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f33841c;
+    private int f20150c;
     private String d;
     private boolean e;
     private boolean f;
@@ -45,55 +45,55 @@ public class ChooseReportReasonFragment extends BaseFragment implements View.OnC
     }
 
     public void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33840a.findViewById(2131370694);
-        commonTopTitleNoTrans.setCenterText(this.b.getResources().getString(2131891497));
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseReportReasonFragment.1
+        CommonTopTitleNoTrans findViewById = this.f20149a.findViewById(2131370694);
+        findViewById.setCenterText(this.b.getResources().getString(2131891497));
+        findViewById.a();
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseReportReasonFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 ChooseReportReasonFragment.this.a(0);
             }
         });
-        View findViewById = this.f33840a.findViewById(R.id.view_cheat);
-        this.g = findViewById;
-        ((TextView) findViewById.findViewById(2131372708)).setText(2131886996);
+        View findViewById2 = this.f20149a.findViewById(R.id.view_cheat);
+        this.g = findViewById2;
+        ((TextView) findViewById2.findViewById(2131372708)).setText(R.string.cheat_report);
         this.g.setOnClickListener(this);
-        View findViewById2 = this.f33840a.findViewById(R.id.view_unauth);
-        this.h = findViewById2;
-        ((TextView) findViewById2.findViewById(2131372708)).setText(2131887348);
+        View findViewById3 = this.f20149a.findViewById(R.id.view_unauth);
+        this.h = findViewById3;
+        ((TextView) findViewById3.findViewById(2131372708)).setText(R.string.content_unauth_report);
         this.h.setOnClickListener(this);
-        View findViewById3 = this.f33840a.findViewById(R.id.view_personal);
-        this.i = findViewById3;
-        ((TextView) findViewById3.findViewById(2131372708)).setText(2131891260);
+        View findViewById4 = this.f20149a.findViewById(R.id.view_personal);
+        this.i = findViewById4;
+        ((TextView) findViewById4.findViewById(2131372708)).setText(R.string.personal_report);
         this.i.setOnClickListener(this);
-        View findViewById4 = this.f33840a.findViewById(R.id.view_drug);
-        this.j = findViewById4;
-        ((TextView) findViewById4.findViewById(2131372708)).setText(2131887538);
+        View findViewById5 = this.f20149a.findViewById(R.id.view_drug);
+        this.j = findViewById5;
+        ((TextView) findViewById5.findViewById(2131372708)).setText(R.string.drug_report);
         this.j.setOnClickListener(this);
-        View findViewById5 = this.f33840a.findViewById(R.id.view_political);
-        this.k = findViewById5;
-        ((TextView) findViewById5.findViewById(2131372708)).setText(2131891288);
+        View findViewById6 = this.f20149a.findViewById(R.id.view_political);
+        this.k = findViewById6;
+        ((TextView) findViewById6.findViewById(2131372708)).setText(R.string.political_report);
         this.k.setOnClickListener(this);
-        View findViewById6 = this.f33840a.findViewById(R.id.view_porn);
-        this.l = findViewById6;
-        ((TextView) findViewById6.findViewById(2131372708)).setText(2131891289);
+        View findViewById7 = this.f20149a.findViewById(R.id.view_porn);
+        this.l = findViewById7;
+        ((TextView) findViewById7.findViewById(2131372708)).setText(R.string.porn_repot);
         this.l.setOnClickListener(this);
-        View findViewById7 = this.f33840a.findViewById(R.id.view_ad);
-        this.m = findViewById7;
-        ((TextView) findViewById7.findViewById(2131372708)).setText(2131886298);
+        View findViewById8 = this.f20149a.findViewById(R.id.view_ad);
+        this.m = findViewById8;
+        ((TextView) findViewById8.findViewById(2131372708)).setText(R.string.ad_report);
         this.m.setOnClickListener(this);
-        View findViewById8 = this.f33840a.findViewById(R.id.view_other);
-        this.o = findViewById8;
-        ((TextView) findViewById8.findViewById(2131372708)).setText(2131891208);
+        View findViewById9 = this.f20149a.findViewById(R.id.view_other);
+        this.o = findViewById9;
+        ((TextView) findViewById9.findViewById(2131372708)).setText(R.string.other_dialog_report);
         this.o.setOnClickListener(this);
-        View findViewById9 = this.f33840a.findViewById(R.id.view_minors);
-        this.n = findViewById9;
-        ((TextView) findViewById9.findViewById(2131372708)).setText(2131890631);
+        View findViewById10 = this.f20149a.findViewById(R.id.view_minors);
+        this.n = findViewById10;
+        ((TextView) findViewById10.findViewById(2131372708)).setText(R.string.minors_report);
         this.n.setOnClickListener(this);
-        View findViewById10 = this.f33840a.findViewById(R.id.view_gambling);
-        this.p = findViewById10;
-        ((TextView) findViewById10.findViewById(2131372708)).setText(2131888215);
+        View findViewById11 = this.f20149a.findViewById(R.id.view_gambling);
+        this.p = findViewById11;
+        ((TextView) findViewById11.findViewById(2131372708)).setText(R.string.gambling_report);
         this.p.setOnClickListener(this);
         this.p.setVisibility(8);
         if (this.e) {
@@ -121,7 +121,7 @@ public class ChooseReportReasonFragment extends BaseFragment implements View.OnC
             getActivity().setResult(i);
         } else {
             Intent intent = new Intent();
-            intent.putExtra("KEY_REPORT_ITEM_ID", this.f33841c);
+            intent.putExtra("KEY_REPORT_ITEM_ID", this.f20150c);
             intent.putExtra("KEY_REPORT_ITEM_TEXT", this.d);
             getActivity().setResult(-1, intent);
         }
@@ -136,7 +136,6 @@ public class ChooseReportReasonFragment extends BaseFragment implements View.OnC
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         a(0);
         return false;
@@ -147,54 +146,53 @@ public class ChooseReportReasonFragment extends BaseFragment implements View.OnC
         Tracker.onClick(view);
         switch (view.getId()) {
             case R.id.view_ad /* 2131373103 */:
-                this.f33841c = 1;
-                this.d = this.b.getResources().getString(2131886298);
+                this.f20150c = 1;
+                this.d = this.b.getResources().getString(R.string.ad_report);
                 break;
             case R.id.view_cheat /* 2131373134 */:
-                this.f33841c = 6;
-                this.d = this.b.getResources().getString(2131886996);
+                this.f20150c = 6;
+                this.d = this.b.getResources().getString(R.string.cheat_report);
                 break;
             case R.id.view_drug /* 2131373160 */:
-                this.f33841c = 5;
-                this.d = this.b.getResources().getString(2131887538);
+                this.f20150c = 5;
+                this.d = this.b.getResources().getString(R.string.drug_report);
                 break;
             case R.id.view_gambling /* 2131373170 */:
-                this.f33841c = 10;
-                this.d = this.b.getResources().getString(2131888215);
+                this.f20150c = 10;
+                this.d = this.b.getResources().getString(R.string.gambling_report);
                 break;
             case R.id.view_minors /* 2131373194 */:
-                this.f33841c = 9;
-                this.d = this.b.getResources().getString(2131890631);
+                this.f20150c = 9;
+                this.d = this.b.getResources().getString(R.string.minors_report);
                 break;
             case R.id.view_other /* 2131373206 */:
-                this.f33841c = 0;
-                this.d = this.b.getResources().getString(2131891208);
+                this.f20150c = 0;
+                this.d = this.b.getResources().getString(R.string.other_dialog_report);
                 break;
             case R.id.view_personal /* 2131373211 */:
-                this.f33841c = 8;
-                this.d = this.b.getResources().getString(2131891260);
+                this.f20150c = 8;
+                this.d = this.b.getResources().getString(R.string.personal_report);
                 break;
             case R.id.view_political /* 2131373216 */:
-                this.f33841c = 4;
-                this.d = this.b.getResources().getString(2131891288);
+                this.f20150c = 4;
+                this.d = this.b.getResources().getString(R.string.political_report);
                 break;
             case R.id.view_porn /* 2131373217 */:
-                this.f33841c = 2;
-                this.d = this.b.getResources().getString(2131891289);
+                this.f20150c = 2;
+                this.d = this.b.getResources().getString(R.string.porn_repot);
                 break;
             case R.id.view_unauth /* 2131373262 */:
-                this.f33841c = 7;
-                this.d = this.b.getResources().getString(2131887348);
+                this.f20150c = 7;
+                this.d = this.b.getResources().getString(R.string.content_unauth_report);
                 break;
         }
         a(-1);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        if (this.f33840a == null) {
-            this.f33840a = layoutInflater.inflate(R.layout.fragment_choose_report_reason, viewGroup, false);
+        if (this.f20149a == null) {
+            this.f20149a = layoutInflater.inflate(R.layout.fragment_choose_report_reason, viewGroup, false);
             if (getArguments() != null) {
                 this.e = getArguments().getBoolean("KEY_HIDE_RIGHT_ARROW");
                 this.f = getArguments().getBoolean("KEY_REPORT_EVENT_TYPE");
@@ -202,10 +200,9 @@ public class ChooseReportReasonFragment extends BaseFragment implements View.OnC
             a();
             ReportObserver.a().a(this);
         }
-        return this.f33840a;
+        return this.f20149a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         ReportObserver.a().b(this);

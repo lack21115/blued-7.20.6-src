@@ -23,6 +23,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewParent;
+import com.android.org.conscrypt.NativeCrypto;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.live.base.R;
 import com.blued.android.module.live.base.view.subscaleview.decoder.CompatDecoderFactory;
@@ -88,9 +89,7 @@ public class SubsamplingScaleImageView extends View {
     private OnImageEventListener ao;
     private OnStateChangedListener ap;
     private View.OnLongClickListener aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private final Handler f11556ar;
+    private final Handler ar;
     private Paint as;
     private Paint at;
     private Paint au;
@@ -119,13 +118,9 @@ public class SubsamplingScaleImageView extends View {
     private boolean x;
     private boolean y;
     private boolean z;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f11554a = SubsamplingScaleImageView.class.getSimpleName();
+    private static final String a = SubsamplingScaleImageView.class.getSimpleName();
     private static final List<Integer> b = Arrays.asList(0, 90, 180, 270, -1);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final List<Integer> f11555c = Arrays.asList(1, 2, 3);
+    private static final List<Integer> c = Arrays.asList(1, 2, 3);
     private static final List<Integer> d = Arrays.asList(2, 1);
     private static final List<Integer> e = Arrays.asList(1, 2, 3);
     private static final List<Integer> f = Arrays.asList(2, 1, 3, 4);
@@ -133,13 +128,9 @@ public class SubsamplingScaleImageView extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/SubsamplingScaleImageView$Anim.class */
     public static class Anim {
-
-        /* renamed from: a  reason: collision with root package name */
-        private float f11560a;
+        private float a;
         private float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private PointF f11561c;
+        private PointF c;
         private PointF d;
         private PointF e;
         private PointF f;
@@ -163,9 +154,7 @@ public class SubsamplingScaleImageView extends View {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/SubsamplingScaleImageView$AnimationBuilder.class */
     public final class AnimationBuilder {
         private final float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final PointF f11563c;
+        private final PointF c;
         private final PointF d;
         private long e;
         private int f;
@@ -181,7 +170,7 @@ public class SubsamplingScaleImageView extends View {
             this.h = true;
             this.i = true;
             this.b = f;
-            this.f11563c = pointF;
+            this.c = pointF;
             this.d = null;
         }
 
@@ -192,7 +181,7 @@ public class SubsamplingScaleImageView extends View {
             this.h = true;
             this.i = true;
             this.b = f;
-            this.f11563c = pointF;
+            this.c = pointF;
             this.d = pointF2;
         }
 
@@ -203,7 +192,7 @@ public class SubsamplingScaleImageView extends View {
             this.h = true;
             this.i = true;
             this.b = SubsamplingScaleImageView.this.D;
-            this.f11563c = pointF;
+            this.c = pointF;
             this.d = null;
         }
 
@@ -242,7 +231,7 @@ public class SubsamplingScaleImageView extends View {
                 try {
                     SubsamplingScaleImageView.this.al.m.c();
                 } catch (Exception e) {
-                    Log.w(SubsamplingScaleImageView.f11554a, "Error thrown by animation listener", e);
+                    Log.w(SubsamplingScaleImageView.a, "Error thrown by animation listener", e);
                 }
             }
             int paddingLeft = SubsamplingScaleImageView.this.getPaddingLeft();
@@ -250,15 +239,15 @@ public class SubsamplingScaleImageView extends View {
             int paddingTop = SubsamplingScaleImageView.this.getPaddingTop();
             int height = ((SubsamplingScaleImageView.this.getHeight() - SubsamplingScaleImageView.this.getPaddingBottom()) - SubsamplingScaleImageView.this.getPaddingTop()) / 2;
             float f = SubsamplingScaleImageView.this.f(this.b);
-            PointF a2 = this.i ? SubsamplingScaleImageView.this.a(this.f11563c.x, this.f11563c.y, f, new PointF()) : this.f11563c;
+            PointF a = this.i ? SubsamplingScaleImageView.this.a(this.c.x, this.c.y, f, new PointF()) : this.c;
             SubsamplingScaleImageView.this.al = new Anim();
-            SubsamplingScaleImageView.this.al.f11560a = SubsamplingScaleImageView.this.D;
+            SubsamplingScaleImageView.this.al.a = SubsamplingScaleImageView.this.D;
             SubsamplingScaleImageView.this.al.b = f;
             SubsamplingScaleImageView.this.al.l = System.currentTimeMillis();
-            SubsamplingScaleImageView.this.al.e = a2;
-            SubsamplingScaleImageView.this.al.f11561c = SubsamplingScaleImageView.this.getCenter();
-            SubsamplingScaleImageView.this.al.d = a2;
-            SubsamplingScaleImageView.this.al.f = SubsamplingScaleImageView.this.b(a2);
+            SubsamplingScaleImageView.this.al.e = a;
+            SubsamplingScaleImageView.this.al.c = SubsamplingScaleImageView.this.getCenter();
+            SubsamplingScaleImageView.this.al.d = a;
+            SubsamplingScaleImageView.this.al.f = SubsamplingScaleImageView.this.b(a);
             SubsamplingScaleImageView.this.al.g = new PointF(paddingLeft + width, paddingTop + height);
             SubsamplingScaleImageView.this.al.h = this.e;
             SubsamplingScaleImageView.this.al.i = this.h;
@@ -268,8 +257,8 @@ public class SubsamplingScaleImageView extends View {
             SubsamplingScaleImageView.this.al.m = this.j;
             PointF pointF = this.d;
             if (pointF != null) {
-                float f2 = pointF.x - (SubsamplingScaleImageView.this.al.f11561c.x * f);
-                float f3 = this.d.y - (SubsamplingScaleImageView.this.al.f11561c.y * f);
+                float f2 = pointF.x - (SubsamplingScaleImageView.this.al.c.x * f);
+                float f3 = this.d.y - (SubsamplingScaleImageView.this.al.c.y * f);
                 ScaleAndTranslate scaleAndTranslate = new ScaleAndTranslate(f, new PointF(f2, f3));
                 SubsamplingScaleImageView.this.a(true, scaleAndTranslate);
                 SubsamplingScaleImageView.this.al.g = new PointF(this.d.x + (scaleAndTranslate.b.x - f2), this.d.y + (scaleAndTranslate.b.y - f3));
@@ -281,22 +270,18 @@ public class SubsamplingScaleImageView extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/SubsamplingScaleImageView$BitmapLoadTask.class */
     public static class BitmapLoadTask extends AsyncTask<Void, Void, Integer> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<SubsamplingScaleImageView> f11564a;
+        private final WeakReference<SubsamplingScaleImageView> a;
         private final WeakReference<Context> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final WeakReference<DecoderFactory<? extends ImageDecoder>> f11565c;
+        private final WeakReference<DecoderFactory<? extends ImageDecoder>> c;
         private final Uri d;
         private final boolean e;
         private Bitmap f;
         private Exception g;
 
         BitmapLoadTask(SubsamplingScaleImageView subsamplingScaleImageView, Context context, DecoderFactory<? extends ImageDecoder> decoderFactory, Uri uri, boolean z) {
-            this.f11564a = new WeakReference<>(subsamplingScaleImageView);
+            this.a = new WeakReference<>(subsamplingScaleImageView);
             this.b = new WeakReference<>(context);
-            this.f11565c = new WeakReference<>(decoderFactory);
+            this.c = new WeakReference<>(decoderFactory);
             this.d = uri;
             this.e = z;
         }
@@ -308,8 +293,8 @@ public class SubsamplingScaleImageView extends View {
             try {
                 String uri = this.d.toString();
                 Context context = this.b.get();
-                DecoderFactory<? extends ImageDecoder> decoderFactory = this.f11565c.get();
-                SubsamplingScaleImageView subsamplingScaleImageView = this.f11564a.get();
+                DecoderFactory<? extends ImageDecoder> decoderFactory = this.c.get();
+                SubsamplingScaleImageView subsamplingScaleImageView = this.a.get();
                 if (context == null || decoderFactory == null || subsamplingScaleImageView == null) {
                     return null;
                 }
@@ -317,11 +302,11 @@ public class SubsamplingScaleImageView extends View {
                 this.f = decoderFactory.a().a(context, this.d);
                 return Integer.valueOf(subsamplingScaleImageView.a(context, uri));
             } catch (Exception e) {
-                Log.e(SubsamplingScaleImageView.f11554a, "Failed to load bitmap", e);
+                Log.e(SubsamplingScaleImageView.a, "Failed to load bitmap", e);
                 this.g = e;
                 return null;
             } catch (OutOfMemoryError e2) {
-                Log.e(SubsamplingScaleImageView.f11554a, "Failed to load bitmap - OutOfMemoryError", e2);
+                Log.e(SubsamplingScaleImageView.a, "Failed to load bitmap - OutOfMemoryError", e2);
                 this.g = new RuntimeException(e2);
                 return null;
             }
@@ -331,7 +316,7 @@ public class SubsamplingScaleImageView extends View {
         @Override // android.os.AsyncTask
         /* renamed from: a */
         public void onPostExecute(Integer num) {
-            SubsamplingScaleImageView subsamplingScaleImageView = this.f11564a.get();
+            SubsamplingScaleImageView subsamplingScaleImageView = this.a.get();
             if (subsamplingScaleImageView != null) {
                 Bitmap bitmap = this.f;
                 if (bitmap != null && num != null) {
@@ -439,13 +424,11 @@ public class SubsamplingScaleImageView extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/SubsamplingScaleImageView$ScaleAndTranslate.class */
     public static class ScaleAndTranslate {
-
-        /* renamed from: a  reason: collision with root package name */
-        private float f11566a;
+        private float a;
         private final PointF b;
 
         private ScaleAndTranslate(float f, PointF pointF) {
-            this.f11566a = f;
+            this.a = f;
             this.b = pointF;
         }
     }
@@ -453,13 +436,9 @@ public class SubsamplingScaleImageView extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/SubsamplingScaleImageView$Tile.class */
     public static class Tile {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Rect f11567a;
+        private Rect a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private Bitmap f11568c;
+        private Bitmap c;
         private boolean d;
         private boolean e;
         private Rect f;
@@ -472,19 +451,15 @@ public class SubsamplingScaleImageView extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/SubsamplingScaleImageView$TileLoadTask.class */
     public static class TileLoadTask extends AsyncTask<Void, Void, Bitmap> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<SubsamplingScaleImageView> f11569a;
+        private final WeakReference<SubsamplingScaleImageView> a;
         private final WeakReference<ImageRegionDecoder> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final WeakReference<Tile> f11570c;
+        private final WeakReference<Tile> c;
         private Exception d;
 
         TileLoadTask(SubsamplingScaleImageView subsamplingScaleImageView, ImageRegionDecoder imageRegionDecoder, Tile tile) {
-            this.f11569a = new WeakReference<>(subsamplingScaleImageView);
+            this.a = new WeakReference<>(subsamplingScaleImageView);
             this.b = new WeakReference<>(imageRegionDecoder);
-            this.f11570c = new WeakReference<>(tile);
+            this.c = new WeakReference<>(tile);
             tile.d = true;
         }
 
@@ -493,9 +468,9 @@ public class SubsamplingScaleImageView extends View {
         /* renamed from: a */
         public Bitmap doInBackground(Void... voidArr) {
             try {
-                SubsamplingScaleImageView subsamplingScaleImageView = this.f11569a.get();
+                SubsamplingScaleImageView subsamplingScaleImageView = this.a.get();
                 ImageRegionDecoder imageRegionDecoder = this.b.get();
-                Tile tile = this.f11570c.get();
+                Tile tile = this.c.get();
                 if (imageRegionDecoder == null || tile == null || subsamplingScaleImageView == null || !imageRegionDecoder.a() || !tile.e) {
                     if (tile != null) {
                         tile.d = false;
@@ -503,26 +478,26 @@ public class SubsamplingScaleImageView extends View {
                     }
                     return null;
                 }
-                subsamplingScaleImageView.a("TileLoadTask.doInBackground, tile.sRect=%s, tile.sampleSize=%d", tile.f11567a, Integer.valueOf(tile.b));
+                subsamplingScaleImageView.a("TileLoadTask.doInBackground, tile.sRect=%s, tile.sampleSize=%d", tile.a, Integer.valueOf(tile.b));
                 subsamplingScaleImageView.aa.readLock().lock();
                 if (!imageRegionDecoder.a()) {
                     tile.d = false;
                     subsamplingScaleImageView.aa.readLock().unlock();
                     return null;
                 }
-                subsamplingScaleImageView.a(tile.f11567a, tile.g);
+                subsamplingScaleImageView.a(tile.a, tile.g);
                 if (subsamplingScaleImageView.O != null) {
                     tile.g.offset(subsamplingScaleImageView.O.left, subsamplingScaleImageView.O.top);
                 }
-                Bitmap a2 = imageRegionDecoder.a(tile.g, tile.b);
+                Bitmap a = imageRegionDecoder.a(tile.g, tile.b);
                 subsamplingScaleImageView.aa.readLock().unlock();
-                return a2;
+                return a;
             } catch (Exception e) {
-                Log.e(SubsamplingScaleImageView.f11554a, "Failed to decode tile", e);
+                Log.e(SubsamplingScaleImageView.a, "Failed to decode tile", e);
                 this.d = e;
                 return null;
             } catch (OutOfMemoryError e2) {
-                Log.e(SubsamplingScaleImageView.f11554a, "Failed to decode tile - OutOfMemoryError", e2);
+                Log.e(SubsamplingScaleImageView.a, "Failed to decode tile - OutOfMemoryError", e2);
                 this.d = new RuntimeException(e2);
                 return null;
             }
@@ -532,13 +507,13 @@ public class SubsamplingScaleImageView extends View {
         @Override // android.os.AsyncTask
         /* renamed from: a */
         public void onPostExecute(Bitmap bitmap) {
-            SubsamplingScaleImageView subsamplingScaleImageView = this.f11569a.get();
-            Tile tile = this.f11570c.get();
+            SubsamplingScaleImageView subsamplingScaleImageView = this.a.get();
+            Tile tile = this.c.get();
             if (subsamplingScaleImageView == null || tile == null) {
                 return;
             }
             if (bitmap != null) {
-                tile.f11568c = bitmap;
+                tile.c = bitmap;
                 tile.d = false;
                 subsamplingScaleImageView.k();
             } else if (this.d == null || subsamplingScaleImageView.ao == null) {
@@ -551,21 +526,17 @@ public class SubsamplingScaleImageView extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/SubsamplingScaleImageView$TilesInitTask.class */
     public static class TilesInitTask extends AsyncTask<Void, Void, int[]> {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<SubsamplingScaleImageView> f11571a;
+        private final WeakReference<SubsamplingScaleImageView> a;
         private final WeakReference<Context> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final WeakReference<DecoderFactory<? extends ImageRegionDecoder>> f11572c;
+        private final WeakReference<DecoderFactory<? extends ImageRegionDecoder>> c;
         private final Uri d;
         private ImageRegionDecoder e;
         private Exception f;
 
         TilesInitTask(SubsamplingScaleImageView subsamplingScaleImageView, Context context, DecoderFactory<? extends ImageRegionDecoder> decoderFactory, Uri uri) {
-            this.f11571a = new WeakReference<>(subsamplingScaleImageView);
+            this.a = new WeakReference<>(subsamplingScaleImageView);
             this.b = new WeakReference<>(context);
-            this.f11572c = new WeakReference<>(decoderFactory);
+            this.c = new WeakReference<>(decoderFactory);
             this.d = uri;
         }
 
@@ -573,7 +544,7 @@ public class SubsamplingScaleImageView extends View {
         @Override // android.os.AsyncTask
         /* renamed from: a */
         public void onPostExecute(int[] iArr) {
-            SubsamplingScaleImageView subsamplingScaleImageView = this.f11571a.get();
+            SubsamplingScaleImageView subsamplingScaleImageView = this.a.get();
             if (subsamplingScaleImageView != null) {
                 ImageRegionDecoder imageRegionDecoder = this.e;
                 if (imageRegionDecoder != null && iArr != null && iArr.length == 3) {
@@ -592,18 +563,18 @@ public class SubsamplingScaleImageView extends View {
             try {
                 String uri = this.d.toString();
                 Context context = this.b.get();
-                DecoderFactory<? extends ImageRegionDecoder> decoderFactory = this.f11572c.get();
-                SubsamplingScaleImageView subsamplingScaleImageView = this.f11571a.get();
+                DecoderFactory<? extends ImageRegionDecoder> decoderFactory = this.c.get();
+                SubsamplingScaleImageView subsamplingScaleImageView = this.a.get();
                 if (context == null || decoderFactory == null || subsamplingScaleImageView == null) {
                     return null;
                 }
                 subsamplingScaleImageView.a("TilesInitTask.doInBackground", new Object[0]);
-                ImageRegionDecoder a2 = decoderFactory.a();
-                this.e = a2;
-                Point a3 = a2.a(context, this.d);
-                int i = a3.x;
-                int i2 = a3.y;
-                int a4 = subsamplingScaleImageView.a(context, uri);
+                ImageRegionDecoder a = decoderFactory.a();
+                this.e = a;
+                Point a2 = a.a(context, this.d);
+                int i = a2.x;
+                int i2 = a2.y;
+                int a3 = subsamplingScaleImageView.a(context, uri);
                 int i3 = i2;
                 int i4 = i;
                 if (subsamplingScaleImageView.O != null) {
@@ -614,9 +585,9 @@ public class SubsamplingScaleImageView extends View {
                     i4 = subsamplingScaleImageView.O.width();
                     i3 = subsamplingScaleImageView.O.height();
                 }
-                return new int[]{i4, i3, a4};
+                return new int[]{i4, i3, a3};
             } catch (Exception e) {
-                Log.e(SubsamplingScaleImageView.f11554a, "Failed to initialise bitmap decoder", e);
+                Log.e(SubsamplingScaleImageView.a, "Failed to initialise bitmap decoder", e);
                 this.f = e;
                 return null;
             }
@@ -655,9 +626,9 @@ public class SubsamplingScaleImageView extends View {
         this.aB = getResources().getDisplayMetrics().density;
         setMinimumDpi(160);
         setDoubleTapZoomDpi(160);
-        setMinimumTileDpi(320);
+        setMinimumTileDpi(NativeCrypto.SSL3_RT_MAX_ENCRYPTED_OVERHEAD);
         setGestureDetector(context);
-        this.f11556ar = new Handler(new Handler.Callback() { // from class: com.blued.android.module.live.base.view.subscaleview.SubsamplingScaleImageView.1
+        this.ar = new Handler(new Handler.Callback() { // from class: com.blued.android.module.live.base.view.subscaleview.SubsamplingScaleImageView.1
             @Override // android.os.Handler.Callback
             public boolean handleMessage(Message message) {
                 if (message.what != 1 || SubsamplingScaleImageView.this.aq == null) {
@@ -780,7 +751,7 @@ public class SubsamplingScaleImageView extends View {
         if (this.aw == null) {
             this.aw = new ScaleAndTranslate(0.0f, new PointF(0.0f, 0.0f));
         }
-        this.aw.f11566a = f4;
+        this.aw.a = f4;
         this.aw.b.set((paddingLeft + width) - (f2 * f4), (paddingTop + height) - (f3 * f4));
         a(true, this.aw);
         return this.aw.b;
@@ -862,7 +833,7 @@ public class SubsamplingScaleImageView extends View {
             ScaleAndTranslate scaleAndTranslate = new ScaleAndTranslate(0.0f, new PointF(0.0f, 0.0f));
             this.aw = scaleAndTranslate;
             a(true, scaleAndTranslate);
-            int a2 = a(this.aw.f11566a);
+            int a2 = a(this.aw.a);
             this.k = a2;
             if (a2 > 1) {
                 this.k = a2 / 2;
@@ -971,7 +942,7 @@ public class SubsamplingScaleImageView extends View {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, Object... objArr) {
         if (this.m) {
-            Log.d(f11554a, String.format(str, objArr));
+            Log.d(a, String.format(str, objArr));
         }
     }
 
@@ -1038,9 +1009,9 @@ public class SubsamplingScaleImageView extends View {
             for (Map.Entry<Integer, List<Tile>> entry : map.entrySet()) {
                 for (Tile tile : entry.getValue()) {
                     tile.e = false;
-                    if (tile.f11568c != null) {
-                        tile.f11568c.recycle();
-                        tile.f11568c = null;
+                    if (tile.c != null) {
+                        tile.c.recycle();
+                        tile.c = null;
                     }
                 }
             }
@@ -1063,7 +1034,7 @@ public class SubsamplingScaleImageView extends View {
             }
         }
         PointF pointF = scaleAndTranslate.b;
-        float f3 = f(scaleAndTranslate.f11566a);
+        float f3 = f(scaleAndTranslate.a);
         float l = l() * f3;
         float m = m() * f3;
         if (this.r == 3 && a()) {
@@ -1090,7 +1061,7 @@ public class SubsamplingScaleImageView extends View {
             f2 = max4;
             pointF.x = Math.min(pointF.x, f2);
             pointF.y = Math.min(pointF.y, max3);
-            scaleAndTranslate.f11566a = f3;
+            scaleAndTranslate.a = f3;
         } else {
             max = Math.max(0, getWidth());
             max2 = Math.max(0, getHeight());
@@ -1099,7 +1070,7 @@ public class SubsamplingScaleImageView extends View {
         max3 = max2;
         pointF.x = Math.min(pointF.x, f2);
         pointF.y = Math.min(pointF.y, max3);
-        scaleAndTranslate.f11566a = f3;
+        scaleAndTranslate.a = f3;
     }
 
     private void a(float[] fArr, float f2, float f3, float f4, float f5, float f6, float f7, float f8, float f9) {
@@ -1134,7 +1105,7 @@ public class SubsamplingScaleImageView extends View {
     }
 
     private boolean a(Tile tile) {
-        return b(0.0f) <= ((float) tile.f11567a.right) && ((float) tile.f11567a.left) <= b((float) getWidth()) && c(0.0f) <= ((float) tile.f11567a.bottom) && ((float) tile.f11567a.top) <= c((float) getHeight());
+        return b(0.0f) <= ((float) tile.a.right) && ((float) tile.a.left) <= b((float) getWidth()) && c(0.0f) <= ((float) tile.a.bottom) && ((float) tile.a.top) <= c((float) getHeight());
     }
 
     private float b(float f2) {
@@ -1215,9 +1186,9 @@ public class SubsamplingScaleImageView extends View {
                         Tile tile = new Tile();
                         tile.b = i4;
                         tile.e = i4 == this.k;
-                        tile.f11567a = new Rect(i11 * l, i13 * i2, i11 == i5 - 1 ? l() : (i11 + 1) * l, i13 == i - 1 ? m() : (i13 + 1) * i2);
+                        tile.a = new Rect(i11 * l, i13 * i2, i11 == i5 - 1 ? l() : (i11 + 1) * l, i13 == i - 1 ? m() : (i13 + 1) * i2);
                         tile.f = new Rect(0, 0, 0, 0);
-                        tile.g = new Rect(tile.f11567a);
+                        tile.g = new Rect(tile.a);
                         arrayList.add(tile);
                         i12 = i13 + 1;
                     }
@@ -1261,22 +1232,22 @@ public class SubsamplingScaleImageView extends View {
             for (Tile tile : entry.getValue()) {
                 if (tile.b < min || (tile.b > min && tile.b != this.k)) {
                     tile.e = false;
-                    if (tile.f11568c != null) {
-                        tile.f11568c.recycle();
-                        tile.f11568c = null;
+                    if (tile.c != null) {
+                        tile.c.recycle();
+                        tile.c = null;
                     }
                 }
                 if (tile.b == min) {
                     if (a(tile)) {
                         tile.e = true;
-                        if (!tile.d && tile.f11568c == null && z) {
+                        if (!tile.d && tile.c == null && z) {
                             a(new TileLoadTask(this, this.W, tile));
                         }
                     } else if (tile.b != this.k) {
                         tile.e = false;
-                        if (tile.f11568c != null) {
-                            tile.f11568c.recycle();
-                            tile.f11568c = null;
+                        if (tile.c != null) {
+                            tile.c.recycle();
+                            tile.c = null;
                         }
                     }
                 } else if (tile.b == this.k) {
@@ -1305,10 +1276,10 @@ public class SubsamplingScaleImageView extends View {
         if (this.aw == null) {
             this.aw = new ScaleAndTranslate(0.0f, new PointF(0.0f, 0.0f));
         }
-        this.aw.f11566a = this.D;
+        this.aw.a = this.D;
         this.aw.b.set(this.F);
         a(z, this.aw);
-        this.D = this.aw.f11566a;
+        this.D = this.aw.a;
         this.F.set(this.aw.b);
         if (!z2 || this.s == 4) {
             return;
@@ -1342,7 +1313,7 @@ public class SubsamplingScaleImageView extends View {
                             z = z2;
                             if (it.hasNext()) {
                                 Tile next = it.next();
-                                if (next.d || next.f11568c == null) {
+                                if (next.d || next.c == null) {
                                     z2 = false;
                                 }
                             }
@@ -1409,11 +1380,11 @@ public class SubsamplingScaleImageView extends View {
             Paint paint2 = new Paint();
             this.at = paint2;
             paint2.setTextSize(a(12));
-            this.at.setColor(Color.MAGENTA);
+            this.at.setColor(-65281);
             this.at.setStyle(Paint.Style.FILL);
             Paint paint3 = new Paint();
             this.au = paint3;
-            paint3.setColor(Color.MAGENTA);
+            paint3.setColor(-65281);
             this.au.setStyle(Paint.Style.STROKE);
             this.au.setStrokeWidth(a(1));
         }
@@ -1709,12 +1680,12 @@ public class SubsamplingScaleImageView extends View {
                 long currentTimeMillis = System.currentTimeMillis() - this.al.l;
                 boolean z = currentTimeMillis > this.al.h;
                 long min = Math.min(currentTimeMillis, this.al.h);
-                this.D = a(this.al.j, min, this.al.f11560a, this.al.b - this.al.f11560a, this.al.h);
+                this.D = a(this.al.j, min, this.al.a, this.al.b - this.al.a, this.al.h);
                 float a2 = a(this.al.j, min, this.al.f.x, this.al.g.x - this.al.f.x, this.al.h);
                 float a3 = a(this.al.j, min, this.al.f.y, this.al.g.y - this.al.f.y, this.al.h);
                 this.F.x -= d(this.al.d.x) - a2;
                 this.F.y -= e(this.al.d.y) - a3;
-                d(z || this.al.f11560a == this.al.b);
+                d(z || this.al.a == this.al.b);
                 a(f3, this.H, this.al.k);
                 c(z);
                 if (z) {
@@ -1722,7 +1693,7 @@ public class SubsamplingScaleImageView extends View {
                         try {
                             this.al.m.a();
                         } catch (Exception e2) {
-                            Log.w(f11554a, "Error thrown by animation listener", e2);
+                            Log.w(a, "Error thrown by animation listener", e2);
                         }
                     }
                     this.al = null;
@@ -1776,7 +1747,7 @@ public class SubsamplingScaleImageView extends View {
                             z2 = z3;
                             if (it.hasNext()) {
                                 Tile next = it.next();
-                                if (next.e && (next.d || next.f11568c == null)) {
+                                if (next.e && (next.d || next.c == null)) {
                                     z3 = true;
                                 }
                             }
@@ -1786,8 +1757,8 @@ public class SubsamplingScaleImageView extends View {
                 for (Map.Entry<Integer, List<Tile>> entry2 : this.l.entrySet()) {
                     if (entry2.getKey().intValue() == min2 || z2) {
                         for (Tile tile : entry2.getValue()) {
-                            b(tile.f11567a, tile.f);
-                            if (!tile.d && tile.f11568c != null) {
+                            b(tile.a, tile.f);
+                            if (!tile.d && tile.c != null) {
                                 if (this.av != null) {
                                     canvas.drawRect(tile.f, this.av);
                                 }
@@ -1795,7 +1766,7 @@ public class SubsamplingScaleImageView extends View {
                                     this.ax = new Matrix();
                                 }
                                 this.ax.reset();
-                                a(this.az, 0.0f, 0.0f, tile.f11568c.getWidth(), 0.0f, tile.f11568c.getWidth(), tile.f11568c.getHeight(), 0.0f, tile.f11568c.getHeight());
+                                a(this.az, 0.0f, 0.0f, tile.c.getWidth(), 0.0f, tile.c.getWidth(), tile.c.getHeight(), 0.0f, tile.c.getHeight());
                                 if (getRequiredRotation() == 0) {
                                     a(this.aA, tile.f.left, tile.f.top, tile.f.right, tile.f.top, tile.f.right, tile.f.bottom, tile.f.left, tile.f.bottom);
                                 } else if (getRequiredRotation() == 90) {
@@ -1806,7 +1777,7 @@ public class SubsamplingScaleImageView extends View {
                                     a(this.aA, tile.f.left, tile.f.bottom, tile.f.left, tile.f.top, tile.f.right, tile.f.top, tile.f.right, tile.f.bottom);
                                 }
                                 this.ax.setPolyToPoly(this.az, 0, this.aA, 0, 4);
-                                canvas.drawBitmap(tile.f11568c, this.ax, this.as);
+                                canvas.drawBitmap(tile.c, this.ax, this.as);
                                 if (this.m) {
                                     canvas.drawRect(tile.f, this.au);
                                 }
@@ -1814,7 +1785,7 @@ public class SubsamplingScaleImageView extends View {
                                 canvas.drawText("LOADING", tile.f.left + a(5), tile.f.top + a(35), this.at);
                             }
                             if (tile.e && this.m) {
-                                canvas.drawText("ISS " + tile.b + " RECT " + tile.f11567a.top + "," + tile.f11567a.left + "," + tile.f11567a.bottom + "," + tile.f11567a.right, tile.f.left + a(5), tile.f.top + a(15), this.at);
+                                canvas.drawText("ISS " + tile.b + " RECT " + tile.a.top + "," + tile.a.left + "," + tile.a.bottom + "," + tile.a.right, tile.f.left + a(5), tile.f.top + a(15), this.at);
                             }
                         }
                     }
@@ -1832,15 +1803,15 @@ public class SubsamplingScaleImageView extends View {
                 canvas.drawText("Source center: " + String.format(Locale.ENGLISH, "%.2f", Float.valueOf(center.x)) + ":" + String.format(Locale.ENGLISH, "%.2f", Float.valueOf(center.y)), a(5), a(45), this.at);
                 Anim anim2 = this.al;
                 if (anim2 != null) {
-                    PointF b2 = b(anim2.f11561c);
+                    PointF b2 = b(anim2.c);
                     PointF b3 = b(this.al.e);
                     PointF b4 = b(this.al.d);
                     canvas.drawCircle(b2.x, b2.y, a(10), this.au);
                     this.au.setColor(-65536);
                     canvas.drawCircle(b3.x, b3.y, a(20), this.au);
-                    this.au.setColor(Color.BLUE);
+                    this.au.setColor(-16776961);
                     canvas.drawCircle(b4.x, b4.y, a(25), this.au);
-                    this.au.setColor(Color.CYAN);
+                    this.au.setColor(-16711681);
                     canvas.drawCircle(getWidth() / 2, getHeight() / 2, a(30), this.au);
                 }
                 if (this.ad != null) {
@@ -1848,14 +1819,14 @@ public class SubsamplingScaleImageView extends View {
                     canvas.drawCircle(this.ad.x, this.ad.y, a(20), this.au);
                 }
                 if (this.aj != null) {
-                    this.au.setColor(Color.BLUE);
+                    this.au.setColor(-16776961);
                     canvas.drawCircle(d(this.aj.x), e(this.aj.y), a(35), this.au);
                 }
                 if (this.ak != null && this.S) {
-                    this.au.setColor(Color.CYAN);
+                    this.au.setColor(-16711681);
                     canvas.drawCircle(this.ak.x, this.ak.y, a(30), this.au);
                 }
-                this.au.setColor(Color.MAGENTA);
+                this.au.setColor(-65281);
             }
         }
     }
@@ -1924,7 +1895,7 @@ public class SubsamplingScaleImageView extends View {
             try {
                 this.al.m.b();
             } catch (Exception e2) {
-                Log.w(f11554a, "Error thrown by animation listener", e2);
+                Log.w(a, "Error thrown by animation listener", e2);
             }
         }
         this.al = null;
@@ -1996,7 +1967,7 @@ public class SubsamplingScaleImageView extends View {
     }
 
     public final void setDoubleTapZoomStyle(int i) {
-        if (f11555c.contains(Integer.valueOf(i))) {
+        if (c.contains(Integer.valueOf(i))) {
             this.B = i;
             return;
         }

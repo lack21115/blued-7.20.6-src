@@ -34,9 +34,7 @@ public class ShareSearch {
     public static final int NaviSaveMoney = 1;
     public static final int NaviSaveMoneyAvoidCongestion = 7;
     public static final int NaviShortDistance = 2;
-
-    /* renamed from: a  reason: collision with root package name */
-    private IShareSearch f5790a;
+    private IShareSearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/share/ShareSearch$OnShareSearchListener.class */
     public interface OnShareSearchListener {
@@ -55,13 +53,11 @@ public class ShareSearch {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/share/ShareSearch$ShareBusRouteQuery.class */
     public static class ShareBusRouteQuery {
-
-        /* renamed from: a  reason: collision with root package name */
-        private ShareFromAndTo f5791a;
+        private ShareFromAndTo a;
         private int b;
 
         public ShareBusRouteQuery(ShareFromAndTo shareFromAndTo, int i) {
-            this.f5791a = shareFromAndTo;
+            this.a = shareFromAndTo;
             this.b = i;
         }
 
@@ -70,19 +66,17 @@ public class ShareSearch {
         }
 
         public ShareFromAndTo getShareFromAndTo() {
-            return this.f5791a;
+            return this.a;
         }
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/share/ShareSearch$ShareDrivingRouteQuery.class */
     public static class ShareDrivingRouteQuery {
-
-        /* renamed from: a  reason: collision with root package name */
-        private ShareFromAndTo f5792a;
+        private ShareFromAndTo a;
         private int b;
 
         public ShareDrivingRouteQuery(ShareFromAndTo shareFromAndTo, int i) {
-            this.f5792a = shareFromAndTo;
+            this.a = shareFromAndTo;
             this.b = i;
         }
 
@@ -91,32 +85,28 @@ public class ShareSearch {
         }
 
         public ShareFromAndTo getShareFromAndTo() {
-            return this.f5792a;
+            return this.a;
         }
     }
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/share/ShareSearch$ShareFromAndTo.class */
     public static class ShareFromAndTo {
-
-        /* renamed from: a  reason: collision with root package name */
-        private LatLonPoint f5793a;
+        private LatLonPoint a;
         private LatLonPoint b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5794c = "起点";
+        private String c = "起点";
         private String d = "终点";
 
         public ShareFromAndTo(LatLonPoint latLonPoint, LatLonPoint latLonPoint2) {
-            this.f5793a = latLonPoint;
+            this.a = latLonPoint;
             this.b = latLonPoint2;
         }
 
         public LatLonPoint getFrom() {
-            return this.f5793a;
+            return this.a;
         }
 
         public String getFromName() {
-            return this.f5794c;
+            return this.c;
         }
 
         public LatLonPoint getTo() {
@@ -128,7 +118,7 @@ public class ShareSearch {
         }
 
         public void setFromName(String str) {
-            this.f5794c = str;
+            this.c = str;
         }
 
         public void setToName(String str) {
@@ -138,18 +128,16 @@ public class ShareSearch {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/share/ShareSearch$ShareNaviQuery.class */
     public static class ShareNaviQuery {
-
-        /* renamed from: a  reason: collision with root package name */
-        private ShareFromAndTo f5795a;
+        private ShareFromAndTo a;
         private int b;
 
         public ShareNaviQuery(ShareFromAndTo shareFromAndTo, int i) {
-            this.f5795a = shareFromAndTo;
+            this.a = shareFromAndTo;
             this.b = i;
         }
 
         public ShareFromAndTo getFromAndTo() {
-            return this.f5795a;
+            return this.a;
         }
 
         public int getNaviMode() {
@@ -159,18 +147,16 @@ public class ShareSearch {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/share/ShareSearch$ShareWalkRouteQuery.class */
     public static class ShareWalkRouteQuery {
-
-        /* renamed from: a  reason: collision with root package name */
-        private ShareFromAndTo f5796a;
+        private ShareFromAndTo a;
         private int b;
 
         public ShareWalkRouteQuery(ShareFromAndTo shareFromAndTo, int i) {
-            this.f5796a = shareFromAndTo;
+            this.a = shareFromAndTo;
             this.b = i;
         }
 
         public ShareFromAndTo getShareFromAndTo() {
-            return this.f5796a;
+            return this.a;
         }
 
         public int getWalkMode() {
@@ -179,9 +165,9 @@ public class ShareSearch {
     }
 
     public ShareSearch(Context context) throws AMapException {
-        if (this.f5790a == null) {
+        if (this.a == null) {
             try {
-                this.f5790a = new hd(context);
+                this.a = new hd(context);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -192,7 +178,7 @@ public class ShareSearch {
     }
 
     public String searchBusRouteShareUrl(ShareBusRouteQuery shareBusRouteQuery) throws AMapException {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchBusRouteShareUrl(shareBusRouteQuery);
             return null;
@@ -201,14 +187,14 @@ public class ShareSearch {
     }
 
     public void searchBusRouteShareUrlAsyn(ShareBusRouteQuery shareBusRouteQuery) {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchBusRouteShareUrlAsyn(shareBusRouteQuery);
         }
     }
 
     public String searchDrivingRouteShareUrl(ShareDrivingRouteQuery shareDrivingRouteQuery) throws AMapException {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchDrivingRouteShareUrl(shareDrivingRouteQuery);
             return null;
@@ -217,14 +203,14 @@ public class ShareSearch {
     }
 
     public void searchDrivingRouteShareUrlAsyn(ShareDrivingRouteQuery shareDrivingRouteQuery) {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchDrivingRouteShareUrlAsyn(shareDrivingRouteQuery);
         }
     }
 
     public String searchLocationShareUrl(LatLonSharePoint latLonSharePoint) throws AMapException {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchLocationShareUrl(latLonSharePoint);
             return null;
@@ -233,14 +219,14 @@ public class ShareSearch {
     }
 
     public void searchLocationShareUrlAsyn(LatLonSharePoint latLonSharePoint) {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchLocationShareUrlAsyn(latLonSharePoint);
         }
     }
 
     public String searchNaviShareUrl(ShareNaviQuery shareNaviQuery) throws AMapException {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchNaviShareUrl(shareNaviQuery);
             return null;
@@ -249,14 +235,14 @@ public class ShareSearch {
     }
 
     public void searchNaviShareUrlAsyn(ShareNaviQuery shareNaviQuery) {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchNaviShareUrlAsyn(shareNaviQuery);
         }
     }
 
     public String searchPoiShareUrl(PoiItem poiItem) throws AMapException {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchPoiShareUrl(poiItem);
             return null;
@@ -265,14 +251,14 @@ public class ShareSearch {
     }
 
     public void searchPoiShareUrlAsyn(PoiItem poiItem) {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchPoiShareUrlAsyn(poiItem);
         }
     }
 
     public String searchWalkRouteShareUrl(ShareWalkRouteQuery shareWalkRouteQuery) throws AMapException {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchWalkRouteShareUrl(shareWalkRouteQuery);
             return null;
@@ -281,14 +267,14 @@ public class ShareSearch {
     }
 
     public void searchWalkRouteShareUrlAsyn(ShareWalkRouteQuery shareWalkRouteQuery) {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.searchWalkRouteShareUrlAsyn(shareWalkRouteQuery);
         }
     }
 
     public void setOnShareSearchListener(OnShareSearchListener onShareSearchListener) {
-        IShareSearch iShareSearch = this.f5790a;
+        IShareSearch iShareSearch = this.a;
         if (iShareSearch != null) {
             iShareSearch.setOnShareSearchListener(onShareSearchListener);
         }

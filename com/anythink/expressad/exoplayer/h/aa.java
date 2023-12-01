@@ -10,11 +10,11 @@ public interface aa {
     public static final class a implements aa {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Random f7402a;
+        private final Random f4563a;
         private final int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int[] f7403c;
+        private final int[] f4564c;
 
         public a() {
             this(0, new Random());
@@ -30,15 +30,15 @@ public interface aa {
 
         private a(int[] iArr, Random random) {
             this.b = iArr;
-            this.f7402a = random;
-            this.f7403c = new int[iArr.length];
+            this.f4563a = random;
+            this.f4564c = new int[iArr.length];
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= iArr.length) {
                     return;
                 }
-                this.f7403c[iArr[i2]] = i2;
+                this.f4564c[iArr[i2]] = i2;
                 i = i2 + 1;
             }
         }
@@ -66,7 +66,7 @@ public interface aa {
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final int a(int i) {
-            int i2 = this.f7403c[i] + 1;
+            int i2 = this.f4564c[i] + 1;
             int[] iArr = this.b;
             if (i2 < iArr.length) {
                 return iArr[i2];
@@ -84,9 +84,9 @@ public interface aa {
                 if (i4 >= i2) {
                     break;
                 }
-                iArr[i4] = this.f7402a.nextInt(this.b.length + 1);
+                iArr[i4] = this.f4563a.nextInt(this.b.length + 1);
                 int i5 = i4 + 1;
-                int nextInt = this.f7402a.nextInt(i5);
+                int nextInt = this.f4563a.nextInt(i5);
                 iArr2[i4] = iArr2[nextInt];
                 iArr2[nextInt] = i4 + i;
                 i3 = i5;
@@ -99,7 +99,7 @@ public interface aa {
             while (true) {
                 int i9 = i8;
                 if (i9 >= this.b.length + i2) {
-                    return new a(iArr3, new Random(this.f7402a.nextLong()));
+                    return new a(iArr3, new Random(this.f4563a.nextLong()));
                 }
                 if (i6 >= i2 || i7 != iArr[i6]) {
                     iArr3[i9] = this.b[i7];
@@ -126,7 +126,7 @@ public interface aa {
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final int b(int i) {
-            int i2 = this.f7403c[i] - 1;
+            int i2 = this.f4564c[i] - 1;
             if (i2 >= 0) {
                 return this.b[i2];
             }
@@ -150,7 +150,7 @@ public interface aa {
             while (true) {
                 int[] iArr2 = this.b;
                 if (i2 >= iArr2.length) {
-                    return new a(iArr, new Random(this.f7402a.nextLong()));
+                    return new a(iArr, new Random(this.f4563a.nextLong()));
                 }
                 if (iArr2[i2] == i) {
                     z = true;
@@ -165,7 +165,7 @@ public interface aa {
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final aa d() {
-            return new a(0, new Random(this.f7402a.nextLong()));
+            return new a(0, new Random(this.f4563a.nextLong()));
         }
     }
 
@@ -173,21 +173,21 @@ public interface aa {
     public static final class b implements aa {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f7404a;
+        private final int f4565a;
 
         public b(int i) {
-            this.f7404a = i;
+            this.f4565a = i;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final int a() {
-            return this.f7404a;
+            return this.f4565a;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final int a(int i) {
             int i2 = i + 1;
-            if (i2 < this.f7404a) {
+            if (i2 < this.f4565a) {
                 return i2;
             }
             return -1;
@@ -195,12 +195,12 @@ public interface aa {
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final aa a(int i, int i2) {
-            return new b(this.f7404a + i2);
+            return new b(this.f4565a + i2);
         }
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final int b() {
-            int i = this.f7404a;
+            int i = this.f4565a;
             if (i > 0) {
                 return i - 1;
             }
@@ -218,12 +218,12 @@ public interface aa {
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final int c() {
-            return this.f7404a > 0 ? 0 : -1;
+            return this.f4565a > 0 ? 0 : -1;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.aa
         public final aa c(int i) {
-            return new b(this.f7404a - 1);
+            return new b(this.f4565a - 1);
         }
 
         @Override // com.anythink.expressad.exoplayer.h.aa

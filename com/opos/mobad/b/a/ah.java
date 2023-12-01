@@ -8,7 +8,7 @@ import okio.ByteString;
 public final class ah extends com.heytap.nearx.a.a.b<ah, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<ah> f25706c = new b();
+    public static final com.heytap.nearx.a.a.e<ah> f12018c = new b();
     public static final Boolean d = false;
     private static final long serialVersionUID = 0;
     public final Boolean e;
@@ -19,12 +19,12 @@ public final class ah extends com.heytap.nearx.a.a.b<ah, a> {
     public static final class a extends b.a<ah, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public Boolean f25707c;
+        public Boolean f12019c;
         public String d;
         public String e;
 
         public a a(Boolean bool) {
-            this.f25707c = bool;
+            this.f12019c = bool;
             return this;
         }
 
@@ -39,7 +39,7 @@ public final class ah extends com.heytap.nearx.a.a.b<ah, a> {
         }
 
         public ah b() {
-            return new ah(this.f25707c, this.d, this.e, super.a());
+            return new ah(this.f12019c, this.d, this.e, super.a());
         }
     }
 
@@ -52,7 +52,7 @@ public final class ah extends com.heytap.nearx.a.a.b<ah, a> {
         @Override // com.heytap.nearx.a.a.e
         public int a(ah ahVar) {
             int i = 0;
-            int a2 = ahVar.e != null ? com.heytap.nearx.a.a.e.f22261c.a(1, (int) ahVar.e) : 0;
+            int a2 = ahVar.e != null ? com.heytap.nearx.a.a.e.f8653c.a(1, (int) ahVar.e) : 0;
             int a3 = ahVar.f != null ? com.heytap.nearx.a.a.e.p.a(2, (int) ahVar.f) : 0;
             if (ahVar.g != null) {
                 i = com.heytap.nearx.a.a.e.p.a(3, (int) ahVar.g);
@@ -63,7 +63,7 @@ public final class ah extends com.heytap.nearx.a.a.b<ah, a> {
         @Override // com.heytap.nearx.a.a.e
         public void a(com.heytap.nearx.a.a.g gVar, ah ahVar) throws IOException {
             if (ahVar.e != null) {
-                com.heytap.nearx.a.a.e.f22261c.a(gVar, 1, ahVar.e);
+                com.heytap.nearx.a.a.e.f8653c.a(gVar, 1, ahVar.e);
             }
             if (ahVar.f != null) {
                 com.heytap.nearx.a.a.e.p.a(gVar, 2, ahVar.f);
@@ -85,7 +85,7 @@ public final class ah extends com.heytap.nearx.a.a.b<ah, a> {
                     fVar.a(a2);
                     return aVar.b();
                 } else if (b == 1) {
-                    aVar.a(com.heytap.nearx.a.a.e.f22261c.a(fVar));
+                    aVar.a(com.heytap.nearx.a.a.e.f8653c.a(fVar));
                 } else if (b == 2) {
                     aVar.a(com.heytap.nearx.a.a.e.p.a(fVar));
                 } else if (b != 3) {
@@ -99,7 +99,7 @@ public final class ah extends com.heytap.nearx.a.a.b<ah, a> {
     }
 
     public ah(Boolean bool, String str, String str2, ByteString byteString) {
-        super(f25706c, byteString);
+        super(f12018c, byteString);
         this.e = bool;
         this.f = str;
         this.g = str2;

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentModifyGridItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28896a;
+    private final FrameLayout f15206a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28896a;
+        return this.f15206a;
     }
 }

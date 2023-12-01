@@ -4,18 +4,15 @@ import android.content.Context;
 import android.os.Build;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Grego;
 import java.util.List;
 
 /* renamed from: com.amap.api.col.3sl.ix  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ix.class */
 public class ix {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static WeakReference<ke> f5189a;
+    private static WeakReference<ke> a;
     private static boolean b = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static WeakReference<ky> f5190c;
+    private static WeakReference<ky> c;
     private static WeakReference<ky> d;
     private static String[] e = new String[10];
     private static int f = 0;
@@ -113,9 +110,9 @@ public class ix {
         } else if (i2 != 0) {
             return;
         } else {
-            str3 = iu.f5182c;
+            str3 = iu.c;
         }
-        ke a5 = kl.a(f5189a);
+        ke a5 = kl.a(a);
         kl.a(context, a5, str3, 1000, 4096000, "1");
         if (a5.e == null) {
             a5.e = new jl(new jm(new jo(new jp())));
@@ -149,7 +146,7 @@ public class ix {
             lb.a().a(new lc() { // from class: com.amap.api.col.3sl.ix.1
                 @Override // com.amap.api.col.p0003sl.lc
                 public final void runTask() {
-                    String a2 = ix.a(Context.this, iaVar, str, str2);
+                    String a2 = ix.a(context, iaVar, str, str2);
                     if (keVar.e == null) {
                         keVar.e = new jl(new jm(new jo(new jp())));
                     }
@@ -193,13 +190,13 @@ public class ix {
             public final void runTask() {
                 try {
                     synchronized (ix.class) {
-                        ke a2 = kl.a(ix.f5189a);
-                        kl.a(Context.this, a2, str, 1000, 4096000, "1");
+                        ke a2 = kl.a(ix.a);
+                        kl.a(context, a2, str, 1000, 4096000, "1");
                         a2.f = kyVar;
                         if (a2.g == null) {
-                            a2.g = new kp(new ko(Context.this, new kt(), new jm(new jo(new jp())), "QImtleSI6IiVzIiwicGxhdGZvcm0iOiJhbmRyb2lkIiwiZGl1IjoiJXMiLCJhZGl1IjoiJXMiLCJwa2ciOiIlcyIsIm1vZGVsIjoiJXMiLCJhcHBuYW1lIjoiJXMiLCJhcHB2ZXJzaW9uIjoiJXMiLCJzeXN2ZXJzaW9uIjoiJXMi", ho.f(Context.this), hs.v(Context.this), hs.u(Context.this), ho.c(Context.this), Build.MODEL, ho.b(Context.this), ho.d(Context.this), Build.VERSION.RELEASE));
+                            a2.g = new kp(new ko(context, new kt(), new jm(new jo(new jp())), "QImtleSI6IiVzIiwicGxhdGZvcm0iOiJhbmRyb2lkIiwiZGl1IjoiJXMiLCJhZGl1IjoiJXMiLCJwa2ciOiIlcyIsIm1vZGVsIjoiJXMiLCJhcHBuYW1lIjoiJXMiLCJhcHB2ZXJzaW9uIjoiJXMiLCJzeXN2ZXJzaW9uIjoiJXMi", ho.f(context), hs.v(context), hs.u(context), ho.c(context), Build.MODEL, ho.b(context), ho.d(context), Build.VERSION.RELEASE));
                         }
-                        a2.h = 3600000;
+                        a2.h = Grego.MILLIS_PER_HOUR;
                         kf.a(a2);
                     }
                 } catch (Throwable th) {
@@ -276,23 +273,23 @@ public class ix {
     public static void b(Context context) {
         kw kwVar = new kw(b);
         b = false;
-        a(context, kwVar, iu.f5182c);
+        a(context, kwVar, iu.c);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void c(Context context) {
-        WeakReference<ky> weakReference = f5190c;
+        WeakReference<ky> weakReference = c;
         if (weakReference == null || weakReference.get() == null) {
-            f5190c = new WeakReference<>(new kx(context, 3600000, "hKey", new kz(context, false)));
+            c = new WeakReference<>(new kx(context, Grego.MILLIS_PER_HOUR, "hKey", new kz(context, false)));
         }
-        a(context, f5190c.get(), iu.d);
+        a(context, c.get(), iu.d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void d(Context context) {
         WeakReference<ky> weakReference = d;
         if (weakReference == null || weakReference.get() == null) {
-            d = new WeakReference<>(new kx(context, 3600000, "gKey", new kz(context, false)));
+            d = new WeakReference<>(new kx(context, Grego.MILLIS_PER_HOUR, "gKey", new kz(context, false)));
         }
         a(context, d.get(), iu.b);
     }

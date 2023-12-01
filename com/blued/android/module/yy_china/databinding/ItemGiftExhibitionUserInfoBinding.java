@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemGiftExhibitionUserInfoBinding.class */
 public final class ItemGiftExhibitionUserInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16602a;
+    public final ConstraintLayout a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final HollowView f16603c;
+    public final HollowView c;
     public final HollowView d;
     public final ImageView e;
     public final ImageView f;
@@ -42,9 +38,9 @@ public final class ItemGiftExhibitionUserInfoBinding implements ViewBinding {
 
     private ItemGiftExhibitionUserInfoBinding(LinearLayout linearLayout, ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, HollowView hollowView, HollowView hollowView2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ProgressBar progressBar, ProgressBar progressBar2, ShapeFrameLayout shapeFrameLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8) {
         this.v = linearLayout;
-        this.f16602a = constraintLayout;
+        this.a = constraintLayout;
         this.b = constraintLayout2;
-        this.f16603c = hollowView;
+        this.c = hollowView;
         this.d = hollowView2;
         this.e = imageView;
         this.f = imageView2;
@@ -67,10 +63,10 @@ public final class ItemGiftExhibitionUserInfoBinding implements ViewBinding {
 
     public static ItemGiftExhibitionUserInfoBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.con_elite);
-        if (constraintLayout != null) {
-            ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.con_nomer);
-            if (constraintLayout2 != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.con_elite);
+        if (findViewById != null) {
+            ConstraintLayout findViewById2 = view.findViewById(R.id.con_nomer);
+            if (findViewById2 != null) {
                 HollowView hollowView = (HollowView) view.findViewById(R.id.holl);
                 if (hollowView != null) {
                     HollowView hollowView2 = (HollowView) view.findViewById(R.id.holl_elite);
@@ -109,7 +105,7 @@ public final class ItemGiftExhibitionUserInfoBinding implements ViewBinding {
                                                                                     if (textView7 != null) {
                                                                                         TextView textView8 = (TextView) view.findViewById(R.id.tv_pro_need_nomer);
                                                                                         if (textView8 != null) {
-                                                                                            return new ItemGiftExhibitionUserInfoBinding((LinearLayout) view, constraintLayout, constraintLayout2, hollowView, hollowView2, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, progressBar, progressBar2, shapeFrameLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
+                                                                                            return new ItemGiftExhibitionUserInfoBinding((LinearLayout) view, findViewById, findViewById2, hollowView, hollowView2, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, progressBar, progressBar2, shapeFrameLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8);
                                                                                         }
                                                                                         str = "tvProNeedNomer";
                                                                                     } else {
@@ -175,7 +171,6 @@ public final class ItemGiftExhibitionUserInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.v;

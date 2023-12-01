@@ -12,7 +12,7 @@ public class SimpleReq extends BaseReq<SimpleReq> {
     @Override // com.tencent.cloud.huiyansdkface.wehttp2.BaseReq
     protected Call c() {
         HttpUrl build = b().build();
-        this.e.url(build).method(this.f36065a, null).tag(LogTag.class, new LogTag(this.d.config().iLogTag().tag(build, this.e.tag())));
+        this.e.url(build).method(this.f22374a, null).tag(LogTag.class, new LogTag(this.d.config().iLogTag().tag(build, this.e.tag())));
         return this.d.client().newCall(this.e.build());
     }
 }

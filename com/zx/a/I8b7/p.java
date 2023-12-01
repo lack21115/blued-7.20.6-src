@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class p implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public AtomicInteger f42162a = new AtomicInteger(0);
+    public AtomicInteger f28471a = new AtomicInteger(0);
 
     public p(q qVar) {
     }
@@ -16,7 +16,7 @@ public class p implements ThreadFactory {
     public Thread newThread(Runnable runnable) {
         Thread thread = new Thread(runnable);
         StringBuilder a2 = m2.a("ZXHttpClient dispatcher's thread");
-        a2.append(this.f42162a.getAndIncrement());
+        a2.append(this.f28471a.getAndIncrement());
         thread.setName(a2.toString());
         return thread;
     }

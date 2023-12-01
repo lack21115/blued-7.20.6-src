@@ -1,6 +1,5 @@
 package org.conscrypt;
 
-import com.sensetime.stmobile.STMobileHumanActionNative;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -470,7 +469,7 @@ public final class NativeSsl {
             NativeCrypto.setHasApplicationProtocolSelector(this.ssl, this, true);
         }
         if (!isClient()) {
-            NativeCrypto.SSL_set_options(this.ssl, this, STMobileHumanActionNative.ST_MOBILE_HAND_666);
+            NativeCrypto.SSL_set_options(this.ssl, this, 4194304L);
             if (this.parameters.sctExtension != null) {
                 NativeCrypto.SSL_set_signed_cert_timestamp_list(this.ssl, this, this.parameters.sctExtension);
             }
@@ -480,9 +479,9 @@ public final class NativeSsl {
         }
         enablePSKKeyManagerIfRequested();
         if (this.parameters.useSessionTickets) {
-            NativeCrypto.SSL_clear_options(this.ssl, this, 16384L);
+            NativeCrypto.SSL_clear_options(this.ssl, this, com.android.org.conscrypt.NativeCrypto.SSL_OP_NO_TICKET);
         } else {
-            NativeCrypto.SSL_set_options(this.ssl, this, NativeCrypto.SSL_get_options(this.ssl, this) | 16384);
+            NativeCrypto.SSL_set_options(this.ssl, this, NativeCrypto.SSL_get_options(this.ssl, this) | com.android.org.conscrypt.NativeCrypto.SSL_OP_NO_TICKET);
         }
         if (this.parameters.getUseSni() && AddressUtils.isValidSniHostname(str)) {
             NativeCrypto.SSL_set_tlsext_host_name(this.ssl, this, str);

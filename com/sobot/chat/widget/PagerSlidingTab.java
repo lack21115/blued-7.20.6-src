@@ -1,5 +1,6 @@
 package com.sobot.chat.widget;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -21,13 +22,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewpager.widget.ViewPager;
 import com.bytedance.applog.tracker.Tracker;
-import com.sobot.chat.R;
 import com.sobot.chat.utils.ResourceUtils;
 import java.util.Locale;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/PagerSlidingTab.class */
 public class PagerSlidingTab extends HorizontalScrollView {
-    private static final int[] ATTRS = {16842901, 16842904};
+    private static final int[] ATTRS = {R.attr.textSize, R.attr.textColor};
     private boolean checkedTabWidths;
     private int curTabTextColor;
     private int currentPosition;
@@ -141,7 +141,7 @@ public class PagerSlidingTab extends HorizontalScrollView {
             super(parcelable);
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
             parcel.writeInt(this.currentPosition);
@@ -201,20 +201,20 @@ public class PagerSlidingTab extends HorizontalScrollView {
         this.tabTextSize = obtainStyledAttributes.getDimensionPixelSize(0, this.tabTextSize);
         this.tabTextColor = obtainStyledAttributes.getColor(1, this.tabTextColor);
         obtainStyledAttributes.recycle();
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, R.styleable.sobot_PagerSlidingTab);
-        this.curTabTextColor = obtainStyledAttributes2.getColor(R.styleable.sobot_PagerSlidingTab_curTabTextColor, this.curTabTextColor);
-        this.tabTextColor = obtainStyledAttributes2.getColor(R.styleable.sobot_PagerSlidingTab_tabTextColor, this.tabTextColor);
-        this.indicatorColor = obtainStyledAttributes2.getColor(R.styleable.sobot_PagerSlidingTab_indicatorColor, this.indicatorColor);
-        this.underlineColor = obtainStyledAttributes2.getColor(R.styleable.sobot_PagerSlidingTab_underlineColor, this.underlineColor);
-        this.dividerColor = obtainStyledAttributes2.getColor(R.styleable.sobot_PagerSlidingTab_sobotdividerColor, this.dividerColor);
-        this.indicatorHeight = obtainStyledAttributes2.getDimensionPixelSize(R.styleable.sobot_PagerSlidingTab_indicatorHeight, this.indicatorHeight);
-        this.underlineHeight = obtainStyledAttributes2.getDimensionPixelSize(R.styleable.sobot_PagerSlidingTab_underlineHeight, this.underlineHeight);
-        this.dividerPadding = obtainStyledAttributes2.getDimensionPixelSize(R.styleable.sobot_PagerSlidingTab_pst_dividerPadding, this.dividerPadding);
-        this.tabPadding = obtainStyledAttributes2.getDimensionPixelSize(R.styleable.sobot_PagerSlidingTab_tabPaddingLeftRight, this.tabPadding);
-        this.tabBackgroundResId = obtainStyledAttributes2.getResourceId(R.styleable.sobot_PagerSlidingTab_tabBackground, this.tabBackgroundResId);
-        this.shouldExpand = obtainStyledAttributes2.getBoolean(R.styleable.sobot_PagerSlidingTab_shouldExpand, this.shouldExpand);
-        this.scrollOffset = obtainStyledAttributes2.getDimensionPixelSize(R.styleable.sobot_PagerSlidingTab_scrollOffset, this.scrollOffset);
-        this.textAllCaps = obtainStyledAttributes2.getBoolean(R.styleable.sobot_PagerSlidingTab_pst_textAllCaps, this.textAllCaps);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, com.sobot.chat.R.styleable.sobot_PagerSlidingTab);
+        this.curTabTextColor = obtainStyledAttributes2.getColor(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_curTabTextColor, this.curTabTextColor);
+        this.tabTextColor = obtainStyledAttributes2.getColor(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_tabTextColor, this.tabTextColor);
+        this.indicatorColor = obtainStyledAttributes2.getColor(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_indicatorColor, this.indicatorColor);
+        this.underlineColor = obtainStyledAttributes2.getColor(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_underlineColor, this.underlineColor);
+        this.dividerColor = obtainStyledAttributes2.getColor(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_sobotdividerColor, this.dividerColor);
+        this.indicatorHeight = obtainStyledAttributes2.getDimensionPixelSize(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_indicatorHeight, this.indicatorHeight);
+        this.underlineHeight = obtainStyledAttributes2.getDimensionPixelSize(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_underlineHeight, this.underlineHeight);
+        this.dividerPadding = obtainStyledAttributes2.getDimensionPixelSize(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_pst_dividerPadding, this.dividerPadding);
+        this.tabPadding = obtainStyledAttributes2.getDimensionPixelSize(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_tabPaddingLeftRight, this.tabPadding);
+        this.tabBackgroundResId = obtainStyledAttributes2.getResourceId(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_tabBackground, this.tabBackgroundResId);
+        this.shouldExpand = obtainStyledAttributes2.getBoolean(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_shouldExpand, this.shouldExpand);
+        this.scrollOffset = obtainStyledAttributes2.getDimensionPixelSize(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_scrollOffset, this.scrollOffset);
+        this.textAllCaps = obtainStyledAttributes2.getBoolean(com.sobot.chat.R.styleable.sobot_PagerSlidingTab_pst_textAllCaps, this.textAllCaps);
         obtainStyledAttributes2.recycle();
         this.tabBackgroundResId = ResourceUtils.getDrawableId(getContext(), "sobot_background_tab");
         Paint paint = new Paint();
@@ -426,9 +426,8 @@ public class PagerSlidingTab extends HorizontalScrollView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (isInEditMode() || this.tabCount == 0) {
             return;
@@ -481,9 +480,8 @@ public class PagerSlidingTab extends HorizontalScrollView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (!this.shouldExpand || View.MeasureSpec.getMode(i) == 0) {
             return;

@@ -21,16 +21,16 @@ public abstract class f extends com.qiniu.pili.droid.shortvideo.encode.a {
     public class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public ByteBuffer f27659a;
+        public ByteBuffer f13971a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f27660c;
+        public long f13972c;
 
         public a(ByteBuffer byteBuffer, int i, long j) {
-            this.f27659a = byteBuffer;
+            this.f13971a = byteBuffer;
             this.b = i;
-            this.f27660c = j;
+            this.f13972c = j;
         }
     }
 
@@ -43,15 +43,15 @@ public abstract class f extends com.qiniu.pili.droid.shortvideo.encode.a {
             e.printStackTrace();
             aVar = null;
         }
-        if (aVar == null || aVar.f27659a == null) {
+        if (aVar == null || aVar.f13971a == null) {
             return;
         }
-        com.qiniu.pili.droid.shortvideo.f.e.h.b(j(), "do encode frames, size = " + aVar.b + ", ts = " + aVar.f27660c);
+        com.qiniu.pili.droid.shortvideo.f.e.h.b(j(), "do encode frames, size = " + aVar.b + ", ts = " + aVar.f13972c);
         if (this.e == null) {
             this.e = ByteBuffer.allocateDirect(aVar.b);
         }
         this.e.rewind();
-        a(this.e, aVar.f27659a.array(), aVar.b, aVar.f27660c);
+        a(this.e, aVar.f13971a.array(), aVar.b, aVar.f13972c);
         synchronized (this.j) {
             int intValue = ((Integer) this.h.poll()).intValue();
             if (intValue >= 0) {

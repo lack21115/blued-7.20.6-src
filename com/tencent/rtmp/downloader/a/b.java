@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.ContextUtils;
 import com.tencent.liteav.base.storage.PersistStorage;
 import com.tencent.liteav.base.util.LiteavLog;
@@ -31,26 +30,26 @@ import java.util.List;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.tencent.liteav.txcplayer.b.a f38672a;
+    public com.tencent.liteav.txcplayer.b.a f24981a;
     ArrayList<c> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ITXVodDownloadListener f38673c;
+    public ITXVodDownloadListener f24982c;
     public PersistStorage d;
-    a.InterfaceC0929a e = new a.InterfaceC0929a() { // from class: com.tencent.rtmp.downloader.a.b.4
-        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0929a
+    a.InterfaceC0759a e = new a.InterfaceC0759a() { // from class: com.tencent.rtmp.downloader.a.b.4
+        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0759a
         public final void a(com.tencent.liteav.txcplayer.b.b bVar) {
             c a2 = b.this.a(bVar);
             if (a2 != null) {
                 a2.h(1);
                 b.a(b.this, a2);
-                if (b.this.f38673c != null) {
-                    b.this.f38673c.onDownloadStart(a2);
+                if (b.this.f24982c != null) {
+                    b.this.f24982c.onDownloadStart(a2);
                 }
             }
         }
 
-        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0929a
+        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0759a
         public final void a(com.tencent.liteav.txcplayer.b.b bVar, int i, String str) {
             c a2 = b.this.a(bVar);
             if (a2 != null) {
@@ -60,21 +59,21 @@ public final class b {
                 synchronized (b.this.b) {
                     b.this.b.remove(a2);
                 }
-                if (b.this.f38673c != null) {
+                if (b.this.f24982c != null) {
                     if (a2.getDownloadState() == 2) {
-                        b.this.f38673c.onDownloadStop(a2);
+                        b.this.f24982c.onDownloadStop(a2);
                     } else if (i == 1008) {
-                        b.this.f38673c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_HLS_KEY_ERROR, str);
+                        b.this.f24982c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_HLS_KEY_ERROR, str);
                     } else if (i == 14020003) {
-                        b.this.f38673c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_403FORBIDDEN, str);
+                        b.this.f24982c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_403FORBIDDEN, str);
                     } else {
-                        b.this.f38673c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_DISCONNECT, str);
+                        b.this.f24982c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_DISCONNECT, str);
                     }
                 }
             }
         }
 
-        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0929a
+        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0759a
         public final void b(com.tencent.liteav.txcplayer.b.b bVar) {
             c a2 = b.this.a(bVar);
             if (a2 != null) {
@@ -84,13 +83,13 @@ public final class b {
                 synchronized (b.this.b) {
                     b.this.b.remove(a2);
                 }
-                if (b.this.f38673c != null) {
-                    b.this.f38673c.onDownloadStop(a2);
+                if (b.this.f24982c != null) {
+                    b.this.f24982c.onDownloadStop(a2);
                 }
             }
         }
 
-        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0929a
+        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0759a
         public final void c(com.tencent.liteav.txcplayer.b.b bVar) {
             c a2 = b.this.a(bVar);
             if (a2 != null) {
@@ -100,30 +99,30 @@ public final class b {
                 synchronized (b.this.b) {
                     b.this.b.remove(a2);
                 }
-                if (b.this.f38673c != null) {
+                if (b.this.f24982c != null) {
                     if (b.c(a2.getPlayPath())) {
-                        b.this.f38673c.onDownloadFinish(a2);
+                        b.this.f24982c.onDownloadFinish(a2);
                     } else {
-                        b.this.f38673c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_NO_FILE, "The file not exist");
+                        b.this.f24982c.onDownloadError(a2, TXVodDownloadManager.DOWNLOAD_NO_FILE, "The file not exist");
                     }
                 }
             }
         }
 
-        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0929a
+        @Override // com.tencent.liteav.txcplayer.b.a.InterfaceC0759a
         public final void d(com.tencent.liteav.txcplayer.b.b bVar) {
             c a2 = b.this.a(bVar);
-            if (a2 == null || b.this.f38673c == null) {
+            if (a2 == null || b.this.f24982c == null) {
                 return;
             }
-            b.this.f38673c.onDownloadProgress(a2);
+            b.this.f24982c.onDownloadProgress(a2);
         }
     };
 
     public b() {
         Context b = b();
         com.tencent.liteav.txcplayer.b.a a2 = com.tencent.liteav.txcplayer.b.c.a(b);
-        this.f38672a = a2;
+        this.f24981a = a2;
         if (a2 != null) {
             a2.setListener(this.e);
         }
@@ -187,8 +186,8 @@ public final class b {
             i = cVar2.b.e;
         } else {
             i = -1;
-            if (cVar2.f36521c != null) {
-                f fVar = cVar2.f36521c;
+            if (cVar2.f22830c != null) {
+                f fVar = cVar2.f22830c;
                 if (fVar.b == null) {
                     fVar.b = fVar.c();
                 }
@@ -199,15 +198,15 @@ public final class b {
             }
         }
         cVar.c(i);
-        a.C0931a.f36516a.a(a2, new a.b() { // from class: com.tencent.rtmp.downloader.a.b.3
+        a.C0761a.f22825a.a(a2, new a.b() { // from class: com.tencent.rtmp.downloader.a.b.3
             @Override // com.tencent.liteav.txcvodplayer.b.a.b
             public final void a() {
                 LiteavLog.i("TXVodDownloadManagerImpl", "prepareDownloadMedia onError");
                 synchronized (b.this.b) {
                     b.this.b.remove(cVar);
                 }
-                if (b.this.f38673c != null) {
-                    b.this.f38673c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_AUTH_FAILED, "get substream infos failure");
+                if (b.this.f24982c != null) {
+                    b.this.f24982c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_AUTH_FAILED, "get substream infos failure");
                 }
             }
 
@@ -255,11 +254,11 @@ public final class b {
             if (TextUtils.isEmpty(tXVodDownloadMediaInfo.getUrl())) {
                 return null;
             }
-            return tXVodDownloadMediaInfo.getUserName() + BridgeUtil.UNDERLINE_STR + com.tencent.liteav.txcplayer.e.a.b(tXVodDownloadMediaInfo.getUrl());
+            return tXVodDownloadMediaInfo.getUserName() + "_" + com.tencent.liteav.txcplayer.e.a.b(tXVodDownloadMediaInfo.getUrl());
         } else if (TextUtils.isEmpty(dataSource.getFileId())) {
             return null;
         } else {
-            return dataSource.getUserName() + BridgeUtil.UNDERLINE_STR + dataSource.getAppId() + BridgeUtil.UNDERLINE_STR + dataSource.getFileId() + BridgeUtil.UNDERLINE_STR + dataSource.getQuality();
+            return dataSource.getUserName() + "_" + dataSource.getAppId() + "_" + dataSource.getFileId() + "_" + dataSource.getQuality();
         }
     }
 
@@ -375,7 +374,7 @@ public final class b {
                     return null;
                 }
                 next = it.next();
-                if (next.getTaskId() == bVar.f36475a) {
+                if (next.getTaskId() == bVar.f22784a) {
                     break;
                 }
             } while (!next.getUrl().equals(bVar.b));
@@ -385,8 +384,8 @@ public final class b {
             if (next.getDuration() <= 0 && bVar.i > 0) {
                 next.a(bVar.i);
             }
-            if (bVar.f36476c > 0) {
-                next.d(bVar.f36476c);
+            if (bVar.f22785c > 0) {
+                next.d(bVar.f22785c);
             }
             if (next.getSize() <= 0 && bVar.d > 0) {
                 next.c(bVar.d);
@@ -412,7 +411,7 @@ public final class b {
         if (tXVodDownloadDataSource.getAuthBuilder() != null) {
             TXPlayerAuthBuilder authBuilder = aVar.getAuthBuilder();
             d dVar = new d();
-            dVar.f36534c = authBuilder.isHttps();
+            dVar.f22843c = authBuilder.isHttps();
             final a aVar2 = aVar;
             dVar.a(new e() { // from class: com.tencent.rtmp.downloader.a.b.1
                 @Override // com.tencent.liteav.txcvodplayer.b.e
@@ -423,8 +422,8 @@ public final class b {
                         synchronized (b.this.b) {
                             b.this.b.remove(cVar);
                         }
-                        if (b.this.f38673c != null) {
-                            b.this.f38673c.onDownloadStop(cVar);
+                        if (b.this.f24982c != null) {
+                            b.this.f24982c.onDownloadStop(cVar);
                         }
                         LiteavLog.w("TXVodDownloadManagerImpl", "Download task canceled");
                         return;
@@ -439,8 +438,8 @@ public final class b {
                             List<f.a> k = a3.k();
                             if (k != null) {
                                 for (f.a aVar3 : k) {
-                                    if (aVar3.f36539a.equals(a4)) {
-                                        list = aVar3.f36540c;
+                                    if (aVar3.f22848a.equals(a4)) {
+                                        list = aVar3.f22849c;
                                         break;
                                     }
                                 }
@@ -497,19 +496,19 @@ public final class b {
                         synchronized (b.this.b) {
                             b.this.b.remove(cVar);
                         }
-                        if (b.this.f38673c != null) {
-                            b.this.f38673c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_NO_FILE, "No such resolution");
+                        if (b.this.f24982c != null) {
+                            b.this.f24982c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_NO_FILE, "No such resolution");
                             return;
                         }
                         return;
                     }
-                    String str = gVar.f36541a;
+                    String str = gVar.f22850a;
                     TXVodDownloadDataSource tXVodDownloadDataSource2 = tXVodDownloadDataSource;
                     String str2 = str;
                     if (tXVodDownloadDataSource2 != null) {
                         str2 = str;
                         if (tXVodDownloadDataSource2.getToken() != null) {
-                            String[] split = str.split(BridgeUtil.SPLIT_MARK);
+                            String[] split = str.split("/");
                             str2 = str;
                             if (split.length > 0) {
                                 int lastIndexOf = str.lastIndexOf(split[split.length - 1]);
@@ -528,8 +527,8 @@ public final class b {
                     synchronized (b.this.b) {
                         b.this.b.remove(cVar);
                     }
-                    if (b.this.f38673c != null) {
-                        b.this.f38673c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_AUTH_FAILED, str);
+                    if (b.this.f24982c != null) {
+                        b.this.f24982c.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_AUTH_FAILED, str);
                     }
                 }
             });
@@ -642,16 +641,16 @@ public final class b {
         }
         if (!Uri.parse(url).getPath().endsWith(".m3u8")) {
             LiteavLog.e("TXVodDownloadManagerImpl", "only support m3u8 file, format error: ".concat(String.valueOf(url)));
-            ITXVodDownloadListener iTXVodDownloadListener = this.f38673c;
+            ITXVodDownloadListener iTXVodDownloadListener = this.f24982c;
             if (iTXVodDownloadListener != null) {
                 iTXVodDownloadListener.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_FORMAT_ERROR, "No support format");
                 return;
             }
             return;
         }
-        cVar.a(a(this.f38672a.makePlayPath(url), cVar));
+        cVar.a(a(this.f24981a.makePlayPath(url), cVar));
         if (cVar.getPlayPath() == null) {
-            ITXVodDownloadListener iTXVodDownloadListener2 = this.f38673c;
+            ITXVodDownloadListener iTXVodDownloadListener2 = this.f24982c;
             if (iTXVodDownloadListener2 != null) {
                 iTXVodDownloadListener2.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_PATH_ERROR, "Failed to create local path");
                 return;
@@ -662,10 +661,10 @@ public final class b {
         synchronized (this.b) {
             this.b.add(cVar);
         }
-        cVar.g(this.f38672a.downloadHls(url, cVar.getPlayPath()));
+        cVar.g(this.f24981a.downloadHls(url, cVar.getPlayPath()));
         if (cVar.getTaskId() < 0) {
             LiteavLog.e("TXVodDownloadManagerImpl", "start download failed");
-            ITXVodDownloadListener iTXVodDownloadListener3 = this.f38673c;
+            ITXVodDownloadListener iTXVodDownloadListener3 = this.f24982c;
             if (iTXVodDownloadListener3 != null) {
                 iTXVodDownloadListener3.onDownloadError(cVar, TXVodDownloadManager.DOWNLOAD_FORMAT_ERROR, "Internal error");
             }
@@ -683,7 +682,7 @@ public final class b {
                     return false;
                 }
             }
-            return this.f38672a.deleteDownloadFile(str);
+            return this.f24981a.deleteDownloadFile(str);
         }
     }
 

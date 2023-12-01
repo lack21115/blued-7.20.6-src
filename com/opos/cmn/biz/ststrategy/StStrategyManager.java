@@ -2,6 +2,7 @@ package com.opos.cmn.biz.ststrategy;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.anythink.pd.ExHandler;
 import com.opos.cmn.biz.requeststatistic.InitParams;
 import com.opos.cmn.biz.requeststatistic.RequestStatisticManager;
 import com.opos.cmn.biz.ststrategy.b.a;
@@ -15,22 +16,22 @@ public class StStrategyManager {
     private static StStrategyManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f24690c;
+    private Context f11002c;
     private a d;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24689a = StStrategyManager.class.getSimpleName();
+    private static final String f11001a = StStrategyManager.class.getSimpleName();
     private static int e = 310;
-    public static final String BRAND_OF_O = com.opos.cmn.biz.a.a.f24601c;
-    public static final String BRAND_OF_P = com.opos.cmn.biz.a.a.f24600a;
+    public static final String BRAND_OF_O = com.opos.cmn.biz.a.a.f10914c;
+    public static final String BRAND_OF_P = com.opos.cmn.biz.a.a.f10913a;
     public static final String BRAND_OF_R = com.opos.cmn.biz.a.a.b;
 
     private StStrategyManager(Context context) {
-        this.f24690c = null;
+        this.f11002c = null;
         this.d = null;
-        this.f24690c = context;
-        RequestStatisticManager.getInstance().init(this.f24690c, new InitParams.Builder().build());
-        this.d = new com.opos.cmn.biz.ststrategy.a.a(this.f24690c);
+        this.f11002c = context;
+        RequestStatisticManager.getInstance().init(this.f11002c, new InitParams.Builder().build());
+        this.d = new com.opos.cmn.biz.ststrategy.a.a(this.f11002c);
     }
 
     public static StStrategyManager getInstance(Context context) {
@@ -44,7 +45,7 @@ public class StStrategyManager {
                 if (b != null) {
                     stStrategyManager = b;
                 } else if (context == null) {
-                    com.opos.cmn.an.f.a.b(f24689a, "StStrategyManager init context can not be null !");
+                    com.opos.cmn.an.f.a.b(f11001a, "StStrategyManager init context can not be null !");
                     throw new NullPointerException("StStrategyManager init context can not be null !");
                 } else {
                     stStrategyManager = new StStrategyManager(context.getApplicationContext());
@@ -77,12 +78,12 @@ public class StStrategyManager {
 
     @Deprecated
     public String getGUID() {
-        return getCryptValueByKey("guId", com.opos.cmn.g.a.b.c(this.f24690c));
+        return getCryptValueByKey("guId", com.opos.cmn.g.a.b.c(this.f11002c));
     }
 
     @Deprecated
     public String getImei() {
-        return getCryptValueByKey("imei", c.a(this.f24690c));
+        return getCryptValueByKey(ExHandler.JSON_REQUEST_IMEI, c.a(this.f11002c));
     }
 
     public STConfigEntity getSTConfigEntity() {
@@ -94,7 +95,7 @@ public class StStrategyManager {
             this.d.a(str, updateSTConfigListener);
             return;
         }
-        com.opos.cmn.an.f.a.b(f24689a, "updateParams dataType can not be null !");
+        com.opos.cmn.an.f.a.b(f11001a, "updateParams dataType can not be null !");
         if (updateSTConfigListener != null) {
             updateSTConfigListener.onFail();
         }
@@ -103,7 +104,7 @@ public class StStrategyManager {
 
     public void updateSTConfigsByPkgName(UpdateParams updateParams, UpdateSTConfigListener updateSTConfigListener) {
         if (updateParams == null) {
-            com.opos.cmn.an.f.a.b(f24689a, "updateParams can not be null !");
+            com.opos.cmn.an.f.a.b(f11001a, "updateParams can not be null !");
             if (updateSTConfigListener != null) {
                 updateSTConfigListener.onFail();
             }
@@ -111,7 +112,7 @@ public class StStrategyManager {
         } else if (!TextUtils.isEmpty(updateParams.pkgName)) {
             this.d.a(updateParams, updateSTConfigListener);
         } else {
-            com.opos.cmn.an.f.a.b(f24689a, "updateParams pkgName can not be null !");
+            com.opos.cmn.an.f.a.b(f11001a, "updateParams pkgName can not be null !");
             if (updateSTConfigListener != null) {
                 updateSTConfigListener.onFail();
             }

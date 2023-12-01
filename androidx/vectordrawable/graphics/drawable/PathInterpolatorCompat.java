@@ -18,7 +18,7 @@ public class PathInterpolatorCompat implements Interpolator {
     public static final int MAX_NUM_POINTS = 3000;
 
     /* renamed from: a  reason: collision with root package name */
-    private float[] f3531a;
+    private float[] f3483a;
     private float[] b;
 
     public PathInterpolatorCompat(Context context, AttributeSet attributeSet, XmlPullParser xmlPullParser) {
@@ -82,7 +82,7 @@ public class PathInterpolatorCompat implements Interpolator {
         if (min <= 0) {
             throw new IllegalArgumentException("The Path has a invalid length " + length);
         }
-        this.f3531a = new float[min];
+        this.f3483a = new float[min];
         this.b = new float[min];
         float[] fArr = new float[2];
         int i2 = 0;
@@ -92,13 +92,13 @@ public class PathInterpolatorCompat implements Interpolator {
                 break;
             }
             pathMeasure.getPosTan((i3 * length) / (min - 1), fArr, null);
-            this.f3531a[i3] = fArr[0];
+            this.f3483a[i3] = fArr[0];
             this.b[i3] = fArr[1];
             i2 = i3 + 1;
         }
-        if (Math.abs(this.f3531a[0]) <= 1.0E-5d && Math.abs(this.b[0]) <= 1.0E-5d) {
+        if (Math.abs(this.f3483a[0]) <= 1.0E-5d && Math.abs(this.b[0]) <= 1.0E-5d) {
             int i4 = min - 1;
-            if (Math.abs(this.f3531a[i4] - 1.0f) <= 1.0E-5d && Math.abs(this.b[i4] - 1.0f) <= 1.0E-5d) {
+            if (Math.abs(this.f3483a[i4] - 1.0f) <= 1.0E-5d && Math.abs(this.b[i4] - 1.0f) <= 1.0E-5d) {
                 float f = 0.0f;
                 int i5 = 0;
                 while (true) {
@@ -109,7 +109,7 @@ public class PathInterpolatorCompat implements Interpolator {
                         }
                         return;
                     }
-                    float[] fArr2 = this.f3531a;
+                    float[] fArr2 = this.f3483a;
                     float f2 = fArr2[i6];
                     if (f2 < f) {
                         throw new IllegalArgumentException("The Path cannot loop back on itself, x :" + f2);
@@ -123,12 +123,12 @@ public class PathInterpolatorCompat implements Interpolator {
         }
         StringBuilder sb = new StringBuilder();
         sb.append("The Path must start at (0,0) and end at (1,1) start: ");
-        sb.append(this.f3531a[0]);
+        sb.append(this.f3483a[0]);
         sb.append(",");
         sb.append(this.b[0]);
         sb.append(" end:");
         int i7 = min - 1;
-        sb.append(this.f3531a[i7]);
+        sb.append(this.f3483a[i7]);
         sb.append(",");
         sb.append(this.b[i7]);
         throw new IllegalArgumentException(sb.toString());
@@ -143,16 +143,16 @@ public class PathInterpolatorCompat implements Interpolator {
             return 1.0f;
         }
         int i = 0;
-        int length = this.f3531a.length - 1;
+        int length = this.f3483a.length - 1;
         while (length - i > 1) {
             int i2 = (i + length) / 2;
-            if (f < this.f3531a[i2]) {
+            if (f < this.f3483a[i2]) {
                 length = i2;
             } else {
                 i = i2;
             }
         }
-        float[] fArr = this.f3531a;
+        float[] fArr = this.f3483a;
         float f2 = fArr[length] - fArr[i];
         if (f2 == 0.0f) {
             return this.b[i];

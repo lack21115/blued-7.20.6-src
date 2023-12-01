@@ -14,5 +14,5 @@ public interface s {
     public static final String Z = "harmonyApp";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f22956a = "jssdkinterface";
+    public static final String f9348a = "jssdkinterface";
 }

@@ -7,28 +7,28 @@ import java.util.Map;
 final class PreFillQueue {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Map<PreFillType, Integer> f20854a;
+    private final Map<PreFillType, Integer> f7248a;
     private final List<PreFillType> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f20855c;
+    private int f7249c;
     private int d;
 
     public PreFillType a() {
         PreFillType preFillType = this.b.get(this.d);
-        Integer num = this.f20854a.get(preFillType);
+        Integer num = this.f7248a.get(preFillType);
         if (num.intValue() == 1) {
-            this.f20854a.remove(preFillType);
+            this.f7248a.remove(preFillType);
             this.b.remove(this.d);
         } else {
-            this.f20854a.put(preFillType, Integer.valueOf(num.intValue() - 1));
+            this.f7248a.put(preFillType, Integer.valueOf(num.intValue() - 1));
         }
-        this.f20855c--;
+        this.f7249c--;
         this.d = this.b.isEmpty() ? 0 : (this.d + 1) % this.b.size();
         return preFillType;
     }
 
     public boolean b() {
-        return this.f20855c == 0;
+        return this.f7249c == 0;
     }
 }

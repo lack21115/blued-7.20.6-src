@@ -5,13 +5,9 @@ import com.anythink.core.common.e.ai;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/d.class */
 public final class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    com.anythink.core.common.e.e f6603a;
+    com.anythink.core.common.e.e a;
     ai b;
-
-    /* renamed from: c  reason: collision with root package name */
-    long f6604c;
+    long c;
     ATBaseAdAdapter d;
     int e;
     Runnable f;
@@ -25,7 +21,7 @@ public final class d {
     }
 
     private void a(long j) {
-        this.f6604c = j;
+        this.c = j;
     }
 
     private void a(long j, final Runnable runnable, long j2, final Runnable runnable2) {
@@ -65,7 +61,7 @@ public final class d {
     }
 
     private void a(com.anythink.core.common.e.e eVar) {
-        this.f6603a = eVar;
+        this.a = eVar;
     }
 
     private void a(boolean z) {
@@ -84,11 +80,11 @@ public final class d {
     }
 
     private com.anythink.core.common.e.e c() {
-        return this.f6603a;
+        return this.a;
     }
 
     private long d() {
-        return this.f6604c;
+        return this.c;
     }
 
     private void e() {

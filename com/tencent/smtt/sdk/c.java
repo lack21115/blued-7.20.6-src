@@ -15,11 +15,11 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f38837a = "EmergencyManager";
+    private static String f25146a = "EmergencyManager";
     private static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f38838c = 1;
+    private static int f25147c = 1;
     private static int d = 2;
     private static int e = 3;
     private static int f = 4;
@@ -145,7 +145,7 @@ public class c {
                     com.tencent.smtt.sdk.a.g.a().a(context, "emergence_timestamp", currentTimeMillis);
                     b(context);
                 } else {
-                    a(context, f38838c, new ArrayList());
+                    a(context, f25147c, new ArrayList());
                 }
             } catch (Exception e2) {
                 a(context, g, new ArrayList());
@@ -159,12 +159,12 @@ public class c {
 
     public void a(Context context, Integer num, Map<Integer, String> map) {
         if (this.l != null) {
-            TbsLog.e(f38837a, "Dispatch emergency commands on tbs shell");
+            TbsLog.e(f25146a, "Dispatch emergency commands on tbs shell");
             this.l.invokeStaticMethod("com.tencent.tbs.tbsshell.TBSShell", "dispatchEmergencyCommand", new Class[]{Integer.class, Map.class}, num, map);
         } else {
-            TbsLog.e(f38837a, "Dex loader is null, cancel commands dispatching of tbs shell");
+            TbsLog.e(f25146a, "Dex loader is null, cancel commands dispatching of tbs shell");
         }
-        TbsLog.e(f38837a, "Dispatch emergency commands on tbs extension");
+        TbsLog.e(f25146a, "Dispatch emergency commands on tbs extension");
         QbSdk.a(context, num, map);
     }
 

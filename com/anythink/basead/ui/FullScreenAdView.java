@@ -31,11 +31,11 @@ public class FullScreenAdView extends BaseScreenAdView {
     protected final void A() {
         if (this.u) {
             C();
-        } else if (1 != this.f6062a || this.v) {
+        } else if (1 != this.a || this.v) {
             B();
             p();
         } else {
-            double ceil = Math.ceil(this.f6049c.m.e() / 1000.0d);
+            double ceil = Math.ceil(this.c.m.e() / 1000.0d);
             double d = ceil;
             if (this.x != null) {
                 double ceil2 = Math.ceil(this.x.getVideoLength() / 1000.0d);
@@ -88,7 +88,7 @@ public class FullScreenAdView extends BaseScreenAdView {
                         }
                     } else if (i != 6) {
                         if (i == 8) {
-                            if (this.f6049c.m.x() != 0) {
+                            if (this.c.m.x() != 0) {
                                 if (this.R != null) {
                                     this.R.setVisibility(8);
                                 }
@@ -113,11 +113,11 @@ public class FullScreenAdView extends BaseScreenAdView {
                         }
                     }
                 }
-                int a2 = h.a(getContext(), 300.0f);
-                this.z.setLayoutParams(new RelativeLayout.LayoutParams(this.C - a2, -1));
+                int a = h.a(getContext(), 300.0f);
+                this.z.setLayoutParams(new RelativeLayout.LayoutParams(this.C - a, -1));
                 RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.y.getLayoutParams();
                 if (layoutParams2 != null) {
-                    layoutParams2.width = a2;
+                    layoutParams2.width = a;
                     layoutParams2.height = -1;
                     this.y.setLayoutParams(layoutParams2);
                     this.y.removeAllViews();
@@ -126,13 +126,13 @@ public class FullScreenAdView extends BaseScreenAdView {
             } else {
                 this.w.setBackgroundColor(-1);
                 int i3 = (int) (this.D * 0.5f);
-                int a3 = TextUtils.isEmpty(this.d.t()) ? this.D - i3 : (this.D - i3) + h.a(getContext(), 50.0f);
+                int a2 = TextUtils.isEmpty(this.d.t()) ? this.D - i3 : (this.D - i3) + h.a(getContext(), 50.0f);
                 this.z.setLayoutParams(new RelativeLayout.LayoutParams(-1, i3));
                 this.z.setNeedArc(true);
                 RelativeLayout.LayoutParams layoutParams3 = (RelativeLayout.LayoutParams) this.y.getLayoutParams();
                 if (layoutParams3 != null) {
                     layoutParams3.width = this.C;
-                    layoutParams3.height = a3;
+                    layoutParams3.height = a2;
                     this.y.setLayoutParams(layoutParams3);
                     this.y.removeAllViews();
                     this.y.setLayoutType(this.Q);
@@ -140,9 +140,9 @@ public class FullScreenAdView extends BaseScreenAdView {
             }
         }
         this.w.addView(this.z, 3);
-        if (this.f6062a == 1) {
+        if (this.a == 1) {
             RoundImageView roundImageView = new RoundImageView(getContext());
-            roundImageView.setImageResource(h.a(getContext(), "myoffer_reward_icon", com.anythink.expressad.foundation.h.i.f7952c));
+            roundImageView.setImageResource(h.a(getContext(), "myoffer_reward_icon", "drawable"));
             RelativeLayout.LayoutParams layoutParams4 = new RelativeLayout.LayoutParams(h.a(getContext(), 60.0f), h.a(getContext(), 60.0f));
             if (c(this.Q)) {
                 int i4 = this.Q;
@@ -182,7 +182,7 @@ public class FullScreenAdView extends BaseScreenAdView {
         if (this.S != null && this.Q != 8) {
             this.S.setVisibility(8);
         }
-        if (this.f6049c.m.i() == 1 && !getHasPerformClick() && (guideToClickView = this.ae) != null) {
+        if (this.c.m.i() == 1 && !getHasPerformClick() && (guideToClickView = this.ae) != null) {
             guideToClickView.setVisibility(0);
             this.ae.setOnClickListener(new View.OnClickListener() { // from class: com.anythink.basead.ui.FullScreenAdView.1
                 @Override // android.view.View.OnClickListener
@@ -252,7 +252,7 @@ public class FullScreenAdView extends BaseScreenAdView {
                 this.Q = 8;
             }
             this.y.setLayoutType(this.Q);
-            if (this.Q == 8 && this.f6049c.m.x() == 0) {
+            if (this.Q == 8 && this.c.m.x() == 0) {
                 this.y.getCTAButton().setVisibility(8);
             }
         }

@@ -12,7 +12,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
-import android.util.Property;
 import android.view.View;
 import androidx.core.content.ContextCompat;
 import androidx.core.util.Preconditions;
@@ -23,9 +22,8 @@ import com.google.android.material.shape.MaterialShapeDrawable;
 import com.google.android.material.shape.ShapeAppearanceModel;
 import java.util.ArrayList;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/floatingactionbutton/FloatingActionButtonImplLollipop.class */
-public class FloatingActionButtonImplLollipop extends FloatingActionButtonImpl {
+class FloatingActionButtonImplLollipop extends FloatingActionButtonImpl {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/floatingactionbutton/FloatingActionButtonImplLollipop$AlwaysStatefulMaterialShapeDrawable.class */
@@ -47,7 +45,7 @@ public class FloatingActionButtonImplLollipop extends FloatingActionButtonImpl {
 
     private Animator createElevationAnimator(float f, float f2) {
         AnimatorSet animatorSet = new AnimatorSet();
-        animatorSet.play(ObjectAnimator.ofFloat(this.view, "elevation", f).setDuration(0L)).with(ObjectAnimator.ofFloat(this.view, (Property<FloatingActionButton, Float>) View.TRANSLATION_Z, f2).setDuration(100L));
+        animatorSet.play(ObjectAnimator.ofFloat(this.view, "elevation", f).setDuration(0L)).with(ObjectAnimator.ofFloat(this.view, View.TRANSLATION_Z, f2).setDuration(100L));
         animatorSet.setInterpolator(ELEVATION_ANIM_INTERPOLATOR);
         return animatorSet;
     }
@@ -150,9 +148,9 @@ public class FloatingActionButtonImplLollipop extends FloatingActionButtonImpl {
             ArrayList arrayList = new ArrayList();
             arrayList.add(ObjectAnimator.ofFloat(this.view, "elevation", f).setDuration(0L));
             if (Build.VERSION.SDK_INT >= 22 && Build.VERSION.SDK_INT <= 24) {
-                arrayList.add(ObjectAnimator.ofFloat(this.view, (Property<FloatingActionButton, Float>) View.TRANSLATION_Z, this.view.getTranslationZ()).setDuration(100L));
+                arrayList.add(ObjectAnimator.ofFloat(this.view, View.TRANSLATION_Z, this.view.getTranslationZ()).setDuration(100L));
             }
-            arrayList.add(ObjectAnimator.ofFloat(this.view, (Property<FloatingActionButton, Float>) View.TRANSLATION_Z, 0.0f).setDuration(100L));
+            arrayList.add(ObjectAnimator.ofFloat(this.view, View.TRANSLATION_Z, 0.0f).setDuration(100L));
             animatorSet.playSequentially((Animator[]) arrayList.toArray(new Animator[0]));
             animatorSet.setInterpolator(ELEVATION_ANIM_INTERPOLATOR);
             stateListAnimator.addState(ENABLED_STATE_SET, animatorSet);

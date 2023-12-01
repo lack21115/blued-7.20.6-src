@@ -8,9 +8,9 @@ import android.security.KeyChain;
 import android.text.TextUtils;
 import com.android.internal.util.XmlUtils;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.das.live.LiveProtos;
 import com.kuaishou.weapon.p0.t;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -486,7 +486,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
                 break;
         }
         arrayList.add("v" + Build.VERSION.RESOURCES_SDK_INT);
-        return TextUtils.join("-", arrayList);
+        return TextUtils.join(Constants.ACCEPT_TIME_SEPARATOR_SERVER, arrayList);
     }
 
     public static void writeXmlAttrs(XmlSerializer xmlSerializer, Configuration configuration) throws IOException {
@@ -974,7 +974,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
                 sb.append("/s");
                 break;
             default:
-                sb.append(BridgeUtil.SPLIT_MARK);
+                sb.append("/");
                 sb.append(this.keyboardHidden);
                 break;
         }
@@ -989,7 +989,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
                 sb.append("/h");
                 break;
             default:
-                sb.append(BridgeUtil.SPLIT_MARK);
+                sb.append("/");
                 sb.append(this.hardKeyboardHidden);
                 break;
         }
@@ -1025,7 +1025,7 @@ public final class Configuration implements Parcelable, Comparable<Configuration
                 sb.append("/h");
                 break;
             default:
-                sb.append(BridgeUtil.SPLIT_MARK);
+                sb.append("/");
                 sb.append(this.navigationHidden);
                 break;
         }

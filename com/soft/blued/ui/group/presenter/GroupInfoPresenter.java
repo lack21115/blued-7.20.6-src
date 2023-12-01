@@ -68,32 +68,29 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
     private String b = GroupInfoPresenter.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private int f30969c = 0;
+    private int f17279c = 0;
     private final int d = 403009030;
     private final int e = 403009029;
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f30968a = new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.11
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    public BluedUIHttpResponse f17278a = new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.11
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(GroupInfoPresenter.this.j);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(GroupInfoPresenter.this.j);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
             try {
                 GroupInfoPresenter.this.k();
                 AppMethods.d((int) R.string.group_modify_success);
                 GroupInfoPresenter.this.a(false);
             } catch (Exception e) {
-                AppMethods.a((CharSequence) GroupInfoPresenter.this.f.getResources().getString(2131887272));
+                AppMethods.a(GroupInfoPresenter.this.f.getResources().getString(2131887272));
                 e.printStackTrace();
             }
         }
@@ -105,7 +102,6 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
         AnonymousClass8() {
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
         }
@@ -123,22 +119,18 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.12
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 GroupInfoPresenter.this.m = str2;
                 GroupInfoPresenter.this.k();
                 GroupInfoPresenter.this.i(str2);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return false;
             }
@@ -149,17 +141,16 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
         GroupHttpUtils.a(this.f, new BluedUIHttpResponse<BluedEntityA<BluedCreatedGroupInfo>>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.1
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f30970a;
+            boolean f17280a;
             int b;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedCreatedGroupInfo> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                GroupInfoPresenter.this.k = bluedEntityA.getSingleData();
+                GroupInfoPresenter.this.k = (BluedCreatedGroupInfo) bluedEntityA.getSingleData();
                 GroupInfoPresenter groupInfoPresenter = GroupInfoPresenter.this;
                 groupInfoPresenter.m = groupInfoPresenter.k.groups_avatar;
                 GroupInfoPresenter groupInfoPresenter2 = GroupInfoPresenter.this;
@@ -170,36 +161,32 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
                 groupInfoPresenter4.p = groupInfoPresenter4.k.groups_in_members;
                 GroupInfoPresenter groupInfoPresenter5 = GroupInfoPresenter.this;
                 groupInfoPresenter5.q = groupInfoPresenter5.k.groups_is_admins;
-                GroupInfoPresenter.this.g.a(bluedEntityA.getSingleData());
+                GroupInfoPresenter.this.g.a((BluedCreatedGroupInfo) bluedEntityA.getSingleData());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str) {
                 super.onFailure(th, i, str);
                 Logger.a(GroupInfoPresenter.this.b, "onFailure, error:", th);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f30970a = true;
+                this.f17280a = true;
                 this.b = i;
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 if (z) {
                     DialogUtils.b(GroupInfoPresenter.this.j);
                 }
-                if (this.f30970a) {
-                    this.f30970a = false;
+                if (this.f17280a) {
+                    this.f17280a = false;
                     if (this.b == 403009030) {
                         GroupInfoPresenter.this.g.f();
                     }
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 if (z) {
                     DialogUtils.a(GroupInfoPresenter.this.j);
@@ -217,7 +204,6 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
         if (this.k != null) {
             GroupHttpUtils.j(this.f, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.13
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                     if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -227,13 +213,11 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
                     GroupInfoPresenter.this.k.groups_avatar = GroupInfoPresenter.this.s;
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     super.onUIFinish();
                     DialogUtils.b(GroupInfoPresenter.this.j);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     super.onUIStart();
                     DialogUtils.a(GroupInfoPresenter.this.j);
@@ -279,13 +263,12 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
         this.s = str;
         GroupHttpUtils.a(this.f, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                GroupInfoPresenter.this.a(str, bluedEntityA.getSingleData());
+                GroupInfoPresenter.this.a(str, (BluedAlbum) bluedEntityA.getSingleData());
             }
         }, this.l, this.i);
     }
@@ -305,7 +288,6 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
                 BluedShareUtils.b().a((Activity) this.f, 0, "http://7vznnm.com2.z0.glb.qiniucdn.com/blued-logo.png-500", null, null, b, string, format, format, 0, bluedGroupLists);
             } else {
                 ImageFileLoader.a(this.i).a(this.r ? this.s : this.k.groups_avatar).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.2
-                    @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                     public void onUIFinish(File file, Exception exc) {
                         Bitmap decodeFile = (file == null || !file.exists()) ? null : BitmapFactory.decodeFile(file.getPath());
                         BluedShareUtils b2 = BluedShareUtils.b();
@@ -326,14 +308,12 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
         c(z);
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 
     public void b() {
         if ("1".equals(this.o) || "1".equals(this.q)) {
-            CommonShowBottomWindow.a((FragmentActivity) this.f, TextUtils.isEmpty(this.k.groups_avatar) ? new String[]{this.f.getResources().getString(2131888666)} : new String[]{this.f.getResources().getString(2131888666), this.f.getResources().getString(2131888667)}, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.3
-                @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
+            CommonShowBottomWindow.a((FragmentActivity) this.f, TextUtils.isEmpty(this.k.groups_avatar) ? new String[]{this.f.getResources().getString(R.string.head_pic_update)} : new String[]{this.f.getResources().getString(R.string.head_pic_update), this.f.getResources().getString(R.string.head_pic_view)}, new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.3
                 public void a(ActionSheet actionSheet, int i) {
                     if (i == 0) {
                         if (PopMenuUtils.a(GroupInfoPresenter.this.f)) {
@@ -347,7 +327,6 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
                     }
                 }
 
-                @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                 public void a(ActionSheet actionSheet, boolean z) {
                 }
             });
@@ -361,7 +340,7 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
     public void b(final String str) {
         SessionModel snapSessionModel = ChatManager.getInstance().getSnapSessionModel((short) 3, Long.parseLong(str));
         if (snapSessionModel != null) {
-            SessionSettingModel sessionSettingModel = (SessionSettingModel) snapSessionModel.sessionSettingModel;
+            SessionSettingModel sessionSettingModel = snapSessionModel.sessionSettingModel;
             this.t = sessionSettingModel;
             if (sessionSettingModel != null) {
                 if (sessionSettingModel.getRemindAudio() == 0) {
@@ -372,7 +351,6 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
             }
         }
         ChatManager.getInstance().getSessionSettingModel((short) 3, Long.parseLong(str), new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.7
-            @Override // com.blued.android.chat.listener.FetchDataListener
             /* renamed from: a */
             public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                 GroupInfoPresenter.this.t = (SessionSettingModel) sessionSettingBaseModel;
@@ -402,14 +380,12 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
     public void c(String str) {
         GroupHttpUtils.d(this.f, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.9
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<Object> parseData(String str2) {
                 Logger.a(GroupInfoPresenter.this.b, "onSuccess, content:", str2);
-                return (BluedEntityA) super.parseData(str2);
+                return super.parseData(str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
@@ -417,29 +393,26 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
                     UserInfo.getInstance().getLoginUserInfo().setGroupsCount(1);
                     GroupInfoPresenter.this.g.e();
                 } catch (Exception e) {
-                    AppMethods.a((CharSequence) GroupInfoPresenter.this.f.getResources().getString(2131887272));
+                    AppMethods.a(GroupInfoPresenter.this.f.getResources().getString(2131887272));
                     e.printStackTrace();
                 }
-                GroupInfoPresenter.this.f30969c = 0;
+                GroupInfoPresenter.this.f17279c = 0;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i, String str2) {
                 super.onFailure(th, i, str2);
-                GroupInfoPresenter.this.f30969c = 0;
-                if (BluedHttpUtils.a(th, i, str2).first.intValue() == 403009029) {
-                    GroupInfoPresenter.this.f30969c = 403009029;
+                GroupInfoPresenter.this.f17279c = 0;
+                if (((Integer) BluedHttpUtils.a(th, i, str2).first).intValue() == 403009029) {
+                    GroupInfoPresenter.this.f17279c = 403009029;
                     GroupInfoPresenter.this.g.g();
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 Logger.a(GroupInfoPresenter.this.b, "onFinish");
                 DialogUtils.b(GroupInfoPresenter.this.j);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(GroupInfoPresenter.this.j);
             }
@@ -456,7 +429,6 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
 
     public void d(String str) {
         GroupHttpUtils.f(this.f, new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.10
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 AppMethods.d((int) R.string.btn_reportgroup);
             }
@@ -465,19 +437,16 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
 
     public void e() {
         GroupHttpUtils.f(this.f, new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.5
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(GroupInfoPresenter.this.j);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(GroupInfoPresenter.this.j);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 GroupInfoPresenter.this.g.c();
             }
@@ -485,24 +454,21 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
     }
 
     public void e(String str) {
-        GroupHttpUtils.b(this.f, this.f30968a, this.l, "", "", str, "", this.i);
+        GroupHttpUtils.b(this.f, this.f17278a, this.l, "", "", str, "", this.i);
     }
 
     public void f() {
         GroupHttpUtils.e(this.f, new BluedUIHttpResponse<BluedEntity>() { // from class: com.soft.blued.ui.group.presenter.GroupInfoPresenter.6
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(GroupInfoPresenter.this.j);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(GroupInfoPresenter.this.j);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 GroupInfoPresenter.this.g.d();
             }
@@ -510,7 +476,7 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
     }
 
     public void f(String str) {
-        GroupHttpUtils.b(this.f, this.f30968a, this.l, "", str, "", "", this.i);
+        GroupHttpUtils.b(this.f, this.f17278a, this.l, "", str, "", "", this.i);
     }
 
     public void g() {
@@ -518,15 +484,15 @@ public class GroupInfoPresenter implements IGroupInfoContract.IPresenter {
     }
 
     public void g(String str) {
-        GroupHttpUtils.b(this.f, this.f30968a, this.l, str, "", "", "", this.i);
+        GroupHttpUtils.b(this.f, this.f17278a, this.l, str, "", "", "", this.i);
     }
 
     public void h(String str) {
         this.r = true;
-        this.k.groups_avatar = RecyclingUtils.Scheme.FILE.b(str);
+        this.k.groups_avatar = RecyclingUtils.Scheme.c.b(str);
     }
 
     public boolean h() {
-        return this.f30969c == 403009029;
+        return this.f17279c == 403009029;
     }
 }

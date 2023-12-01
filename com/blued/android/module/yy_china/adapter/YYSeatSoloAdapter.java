@@ -24,6 +24,7 @@ import com.blued.android.module.yy_china.observer.GiftBeansObserver;
 import com.blued.android.module.yy_china.observer.SeatChangedObserver;
 import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -34,13 +35,9 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYSeatSoloAdapter.class */
 public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, BaseViewHolder> implements View.OnClickListener, GiftBeansObserver, SeatChangedObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f16273a;
+    private BaseYYStudioFragment a;
     private YYRoomModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f16274c;
+    private RelativeLayout c;
     private TextView d;
     private YYBaseUserHeadView e;
     private TextView f;
@@ -55,17 +52,17 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
 
     public YYSeatSoloAdapter(Context context, BaseYYStudioFragment baseYYStudioFragment) {
         super(null);
-        this.f16273a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.mContext = context;
         addItemType(5, R.layout.item_yy_connecting_solo_layout);
         this.b = YYRoomInfoManager.e().b();
-        int a2 = AppInfo.l - DensityUtils.a(this.mContext, 20.0f);
-        this.m = a2;
-        this.n = (int) (a2 * 0.338d);
+        int a = AppInfo.l - DensityUtils.a(this.mContext, 20.0f);
+        this.m = a;
+        this.n = (int) (a * 0.338d);
     }
 
     private String a(int i) {
-        return this.f16273a.getResources().getString(i);
+        return this.a.getResources().getString(i);
     }
 
     private void a(int i, View view) {
@@ -75,7 +72,7 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         }
         YYSeatMemberModel yYSeatMemberModel = this.b.mics.get(i);
         if (e(yYSeatMemberModel)) {
-            this.f16273a.a(view, yYSeatMemberModel, yYSeatMemberModel.mic_position);
+            this.a.a(view, yYSeatMemberModel, yYSeatMemberModel.mic_position);
         } else if (i == 1) {
             LiveEventBus.get("event_solo_friend").post("");
         } else if (i != 2) {
@@ -113,7 +110,7 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
     private void b(YYSeatMemberModel yYSeatMemberModel) {
         YYBaseUserHeadView yYBaseUserHeadView = this.e;
         if (yYBaseUserHeadView != null && yYSeatMemberModel != null) {
-            yYBaseUserHeadView.a(yYSeatMemberModel, this.f16273a.getFragmentActive());
+            yYBaseUserHeadView.a(yYSeatMemberModel, this.a.getFragmentActive());
         }
         if (this.f != null && e(yYSeatMemberModel)) {
             this.f.setText(yYSeatMemberModel.getName());
@@ -125,7 +122,7 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         YYBaseUserHeadView yYBaseUserHeadView = this.j;
         if (yYBaseUserHeadView != null && yYSeatMemberModel != null) {
             yYBaseUserHeadView.setNoAudienceView(this.k);
-            this.j.a(yYSeatMemberModel, this.f16273a.getFragmentActive());
+            this.j.a(yYSeatMemberModel, this.a.getFragmentActive());
         }
         if (this.l == null) {
             return;
@@ -141,7 +138,7 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         YYBaseUserHeadView yYBaseUserHeadView = this.g;
         if (yYBaseUserHeadView != null && yYSeatMemberModel != null) {
             yYBaseUserHeadView.setNoAudienceView(this.h);
-            this.g.a(yYSeatMemberModel, this.f16273a.getFragmentActive());
+            this.g.a(yYSeatMemberModel, this.a.getFragmentActive());
         }
         if (this.i == null) {
             return;
@@ -192,17 +189,17 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
             if (yYBaseUserHeadView2 == null) {
                 return;
             }
-            yYBaseUserHeadView2.a(yYSeatMemberModel, this.f16273a.getFragmentActive());
+            yYBaseUserHeadView2.a(yYSeatMemberModel, this.a.getFragmentActive());
         } else if (i != 1) {
             if (i == 2 && (yYBaseUserHeadView = this.j) != null) {
-                yYBaseUserHeadView.a(yYSeatMemberModel, this.f16273a.getFragmentActive());
+                yYBaseUserHeadView.a(yYSeatMemberModel, this.a.getFragmentActive());
             }
         } else {
             YYBaseUserHeadView yYBaseUserHeadView3 = this.g;
             if (yYBaseUserHeadView3 == null) {
                 return;
             }
-            yYBaseUserHeadView3.a(yYSeatMemberModel, this.f16273a.getFragmentActive());
+            yYBaseUserHeadView3.a(yYSeatMemberModel, this.a.getFragmentActive());
         }
     }
 
@@ -217,17 +214,17 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
             if (yYBaseUserHeadView2 == null) {
                 return;
             }
-            yYBaseUserHeadView2.a(this.f16273a.getFragmentActive(), str, str2, yYImModel);
+            yYBaseUserHeadView2.a(this.a.getFragmentActive(), str, str2, yYImModel);
         } else if (i != 1) {
             if (i == 2 && (yYBaseUserHeadView = this.j) != null) {
-                yYBaseUserHeadView.a(this.f16273a.getFragmentActive(), str, str2, yYImModel);
+                yYBaseUserHeadView.a(this.a.getFragmentActive(), str, str2, yYImModel);
             }
         } else {
             YYBaseUserHeadView yYBaseUserHeadView3 = this.g;
             if (yYBaseUserHeadView3 == null) {
                 return;
             }
-            yYBaseUserHeadView3.a(this.f16273a.getFragmentActive(), str, str2, yYImModel);
+            yYBaseUserHeadView3.a(this.a.getFragmentActive(), str, str2, yYImModel);
         }
     }
 
@@ -271,7 +268,6 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.YYSeatSoloAdapter.1
@@ -281,16 +277,16 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
             }
         });
         RelativeLayout relativeLayout = (RelativeLayout) baseViewHolder.getView(R.id.ll_topic);
-        this.f16274c = relativeLayout;
+        this.c = relativeLayout;
         ViewGroup.LayoutParams layoutParams = relativeLayout.getLayoutParams();
         layoutParams.width = this.m;
         layoutParams.height = this.n;
         this.d = (TextView) baseViewHolder.getView(R.id.tv_topic);
-        this.f16274c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         YYBaseUserHeadView yYBaseUserHeadView = (YYBaseUserHeadView) baseViewHolder.getView(R.id.base_host_head);
         this.e = yYBaseUserHeadView;
         yYBaseUserHeadView.setOnClickListener(this);
-        this.e.a(0, 0, DensityUtils.a(this.f16273a.b, 5.0f), DensityUtils.a(this.f16273a.b, 5.0f));
+        this.e.a(0, 0, DensityUtils.a(this.a.b, 5.0f), DensityUtils.a(this.a.b, 5.0f));
         this.f = (TextView) baseViewHolder.getView(R.id.tv_host_name);
         YYBaseUserHeadView yYBaseUserHeadView2 = (YYBaseUserHeadView) baseViewHolder.getView(R.id.base_friend_head);
         this.g = yYBaseUserHeadView2;
@@ -305,8 +301,7 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         b();
         a("");
         if (YYRoomInfoManager.e().b().voice_skin_info != null) {
-            ImageLoader.a((IRequestHost) null, YYRoomInfoManager.e().b().voice_skin_info.getIcon()).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.adapter.YYSeatSoloAdapter.2
-                @Override // com.bumptech.glide.request.target.Target
+            ImageLoader.a((IRequestHost) null, YYRoomInfoManager.e().b().voice_skin_info.getIcon()).a((Target<Drawable>) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.adapter.YYSeatSoloAdapter.2
                 /* renamed from: a */
                 public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
                     YYSeatSoloAdapter.this.k.setBackgroundDrawable(drawable);
@@ -323,7 +318,7 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
             return;
         }
         if (YYRoomInfoManager.e().y()) {
-            Drawable drawable = this.f16273a.getResources().getDrawable(R.drawable.icon_yy_topic_editor);
+            Drawable drawable = this.a.getResources().getDrawable(R.drawable.icon_yy_topic_editor);
             this.d.setText("");
             this.d.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, drawable, (Drawable) null);
         } else {
@@ -432,7 +427,6 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         }
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         YYObserverManager.a().a((SeatChangedObserver) this);
@@ -456,7 +450,6 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
         YYObserverManager.a().b((SeatChangedObserver) this);
@@ -468,7 +461,6 @@ public class YYSeatSoloAdapter extends BaseConnectingAdapter<YYSeatMemberModel, 
         yYRoomModel.clearEmojiAndSendMessage();
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<YYSeatMemberModel> list) {
         ArrayList arrayList = new ArrayList();
         YYSeatMemberModel yYSeatMemberModel = new YYSeatMemberModel();

@@ -57,11 +57,11 @@ import java.net.URL;
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    String f34870a;
+    String f21179a;
     private IWXAPI b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f34871c;
+    private int f21180c;
     private boolean d;
     private boolean e = false;
     private Dialog f;
@@ -95,11 +95,11 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     public void a() {
         ShareDialogUtils.b(this.f);
         if (this.d) {
-            if (!this.e && TextUtils.equals(this.f34870a, "intent_mode_login")) {
+            if (!this.e && TextUtils.equals(this.f21179a, "intent_mode_login")) {
                 WXProvider.a().a(1, null);
             }
-            if (TextUtils.equals(this.f34870a, "intent_mode_share")) {
-                ShareProvider.getInstance().onResume(this.f34871c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
+            if (TextUtils.equals(this.f21179a, "intent_mode_share")) {
+                ShareProvider.getInstance().onResume(this.f21180c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
             }
             d();
         }
@@ -133,7 +133,6 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                     r9.disconnect();
                     r8 = r7;
                  */
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -174,7 +173,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
             imageZoomToSize.recycle();
         }
         byte[] bmpToByteArray = Util.bmpToByteArray(createScaledBitmap, false);
-        Logger.b("xpf", "first image compress bitmap size:", Integer.valueOf(bmpToByteArray.length / 1024));
+        Logger.b("xpf", new Object[]{"first image compress bitmap size:", Integer.valueOf(bmpToByteArray.length / 1024)});
         if (bmpToByteArray == null || bmpToByteArray.length / 1024 < 20) {
             bArr = bmpToByteArray;
             if (createScaledBitmap != null) {
@@ -188,7 +187,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                 createScaledBitmap.recycle();
             }
             bArr = Util.bmpToByteArray(createScaledBitmap2, true);
-            Logger.b("xpf", "second image compress bitmap size:", Integer.valueOf(bArr.length / 1024));
+            Logger.b("xpf", new Object[]{"second image compress bitmap size:", Integer.valueOf(bArr.length / 1024)});
         }
         wXMediaMessage.thumbData = bArr;
         SendMessageToWX.Req req = new SendMessageToWX.Req();
@@ -235,30 +234,24 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         }
         if (msgImage.imageUrl.startsWith("http")) {
             AutoAttachRecyclingImageView.a(msgImage.imageUrl, new LoadOptions(), new ImageLoadingListener() { // from class: com.soft.blued.wxapi.WXEntryActivity.3
-                @Override // com.blued.android.core.imagecache.ImageLoadingListener
                 public void a(int i, int i2) {
                 }
 
-                @Override // com.blued.android.core.imagecache.ImageLoadingListener
                 public void a(String str, RecyclingImageView recyclingImageView, LoadOptions loadOptions) {
                 }
 
-                @Override // com.blued.android.core.imagecache.ImageLoadingListener
                 public void a(String str, RecyclingImageView recyclingImageView, LoadOptions loadOptions, Drawable drawable, boolean z) {
                     WXEntryActivity.this.a(msgImage, ShareBitmapUtils.a(drawable));
                 }
 
-                @Override // com.blued.android.core.imagecache.ImageLoadingListener
                 public void a(String str, RecyclingImageView recyclingImageView, LoadOptions loadOptions, FailReason failReason) {
                     AppMethods.d(R.string.common_net_error);
                 }
 
-                @Override // com.blued.android.core.imagecache.ImageLoadingListener
                 public boolean a() {
                     return false;
                 }
 
-                @Override // com.blued.android.core.imagecache.ImageLoadingListener
                 public void b(String str, RecyclingImageView recyclingImageView, LoadOptions loadOptions) {
                 }
             });
@@ -272,7 +265,6 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
             return;
         }
         ThreadManager.a().a(new ThreadExecutor("shareWebPage") { // from class: com.soft.blued.wxapi.WXEntryActivity.4
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 byte[] bArr;
                 byte[] bArr2;
@@ -290,7 +282,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                         msgImageText.image.recycle();
                     }
                     byte[] bmpToByteArray = Util.bmpToByteArray(createScaledBitmap, false);
-                    Logger.b("xpf", "first link compress bitmap size:", Integer.valueOf(bmpToByteArray.length / 1024));
+                    Logger.b("xpf", new Object[]{"first link compress bitmap size:", Integer.valueOf(bmpToByteArray.length / 1024)});
                     if (bmpToByteArray == null || bmpToByteArray.length / 1024 < 20) {
                         bArr2 = bmpToByteArray;
                         if (createScaledBitmap != null) {
@@ -304,7 +296,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                             createScaledBitmap.recycle();
                         }
                         bArr2 = Util.bmpToByteArray(createScaledBitmap2, true);
-                        Logger.b("xpf", "second link compress bitmap size:", Integer.valueOf(bArr2.length / 1024));
+                        Logger.b("xpf", new Object[]{"second link compress bitmap size:", Integer.valueOf(bArr2.length / 1024)});
                     }
                     wXMediaMessage.thumbData = bArr2;
                 } else if (msgImageText.imageUrl != null) {
@@ -317,7 +309,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                             decodeStream.recycle();
                         }
                         byte[] bmpToByteArray2 = Util.bmpToByteArray(createScaledBitmap3, false);
-                        Logger.b("xpf", "first link url compress bitmap size:", Integer.valueOf(bmpToByteArray2.length / 1024));
+                        Logger.b("xpf", new Object[]{"first link url compress bitmap size:", Integer.valueOf(bmpToByteArray2.length / 1024)});
                         if (bmpToByteArray2 == null || bmpToByteArray2.length / 1024 < 20) {
                             bArr = bmpToByteArray2;
                             if (createScaledBitmap3 != null) {
@@ -331,7 +323,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
                                 createScaledBitmap3.recycle();
                             }
                             bArr = Util.bmpToByteArray(createScaledBitmap4, true);
-                            Logger.b("xpf", "second link url compress bitmap size:", Integer.valueOf(bArr.length / 1024));
+                            Logger.b("xpf", new Object[]{"second link url compress bitmap size:", Integer.valueOf(bArr.length / 1024)});
                         }
                         wXMediaMessage.thumbData = bArr;
                     } catch (Exception e) {
@@ -400,19 +392,19 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         this.b = createWXAPI;
         createWXAPI.registerApp(ShareCoreConstants.a());
         this.b.handleIntent(getIntent(), this);
-        this.f34870a = getIntent().getStringExtra("intent_mode");
+        this.f21179a = getIntent().getStringExtra("intent_mode");
         AbsShareMsg absShareMsg = (AbsShareMsg) getIntent().getParcelableExtra("WXEnetry_jrj_show");
         if (absShareMsg != null) {
-            this.f34871c = absShareMsg.pType;
+            this.f21180c = absShareMsg.pType;
         }
         if (bundle != null) {
             this.d = bundle.getBoolean("task_running");
         } else if (!this.b.isWXAppInstalled()) {
             AppMethods.d(R.string.we_chat_uninstall);
             d();
-        } else if (TextUtils.equals(this.f34870a, "intent_mode_login")) {
+        } else if (TextUtils.equals(this.f21179a, "intent_mode_login")) {
             b();
-        } else if (TextUtils.equals(this.f34870a, "intent_mode_share")) {
+        } else if (TextUtils.equals(this.f21179a, "intent_mode_share")) {
             a(absShareMsg);
         } else {
             d();
@@ -443,24 +435,24 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         int i = baseResp.errCode;
         if (i == -4) {
             this.e = true;
-            if (TextUtils.equals(this.f34870a, "intent_mode_login")) {
+            if (TextUtils.equals(this.f21179a, "intent_mode_login")) {
                 WXProvider.a().a(-1, null);
-            } else if (TextUtils.equals(this.f34870a, "intent_mode_share")) {
-                ShareProvider.getInstance().onFailure(this.f34871c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
+            } else if (TextUtils.equals(this.f21179a, "intent_mode_share")) {
+                ShareProvider.getInstance().onFailure(this.f21180c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
             }
         } else if (i == -2) {
             this.e = true;
-            if (TextUtils.equals(this.f34870a, "intent_mode_login")) {
+            if (TextUtils.equals(this.f21179a, "intent_mode_login")) {
                 WXProvider.a().a(1, null);
-            } else if (TextUtils.equals(this.f34870a, "intent_mode_share")) {
-                ShareProvider.getInstance().onCancel(this.f34871c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
+            } else if (TextUtils.equals(this.f21179a, "intent_mode_share")) {
+                ShareProvider.getInstance().onCancel(this.f21180c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
             }
         } else if (i != 0) {
         } else {
             this.e = true;
-            if (!TextUtils.equals(this.f34870a, "intent_mode_login")) {
-                if (TextUtils.equals(this.f34870a, "intent_mode_share")) {
-                    ShareProvider.getInstance().onSuccess(this.f34871c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
+            if (!TextUtils.equals(this.f21179a, "intent_mode_login")) {
+                if (TextUtils.equals(this.f21179a, "intent_mode_share")) {
+                    ShareProvider.getInstance().onSuccess(this.f21180c == 8 ? Constants.WechatNAME : Constants.WechatMomentsNAME);
                     return;
                 }
                 return;
@@ -479,14 +471,14 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         super.onResume();
         if (!this.d) {
             this.d = true;
-        } else if (this.e || !TextUtils.equals(this.f34870a, "intent_mode_login")) {
+        } else if (this.e || !TextUtils.equals(this.f21179a, "intent_mode_login")) {
             a();
         } else {
             ShareDialogUtils.a(this.f);
             AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.wxapi.WXEntryActivity.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (UiUtils.a((Activity) WXEntryActivity.this)) {
+                    if (UiUtils.a(WXEntryActivity.this)) {
                         WXEntryActivity.this.a();
                     }
                 }

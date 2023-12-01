@@ -13,11 +13,11 @@ import java.util.concurrent.Executors;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static f f41723a;
+    private static f f28032a;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f41724c = false;
+    private boolean f28033c = false;
     private boolean d = false;
     private g e = g.a();
     private e f = e.a();
@@ -28,14 +28,14 @@ public final class f {
     }
 
     public static f a() {
-        if (f41723a == null) {
-            f41723a = new f();
+        if (f28032a == null) {
+            f28032a = new f();
         }
-        return f41723a;
+        return f28032a;
     }
 
     static /* synthetic */ void a(f fVar, String str, File file) {
-        fVar.f41724c = true;
+        fVar.f28033c = true;
         if (fVar.f.b(str) == null) {
             fVar.f.b(str, Long.valueOf(file.length()));
         }
@@ -47,14 +47,14 @@ public final class f {
     }
 
     static /* synthetic */ void b(f fVar, String str, File file) {
-        fVar.f41724c = true;
+        fVar.f28033c = true;
         if (fVar.e.b(str) == null) {
             fVar.e.b(str, Long.valueOf(file.length()));
         }
     }
 
     static /* synthetic */ void c(f fVar, String str, File file) {
-        fVar.f41724c = true;
+        fVar.f28033c = true;
         if (fVar.g.b(str) == null) {
             fVar.g.b(str, Long.valueOf(file.length()));
         }
@@ -91,7 +91,7 @@ public final class f {
         if (this.d) {
             return;
         }
-        this.f41724c = true;
+        this.f28033c = true;
         this.e.a((LinkedHashMap) linkedHashMap);
     }
 
@@ -116,12 +116,12 @@ public final class f {
         if (this.d) {
             return;
         }
-        this.f41724c = true;
+        this.f28033c = true;
         this.f.a((LinkedHashMap) linkedHashMap);
     }
 
     public final void c() {
-        if (this.f41724c) {
+        if (this.f28033c) {
             this.h.execute(new Runnable() { // from class: com.youzan.spiderman.b.f.4
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -153,7 +153,7 @@ public final class f {
                     }
                 }
             });
-            this.f41724c = false;
+            this.f28033c = false;
         }
     }
 
@@ -162,14 +162,14 @@ public final class f {
         if (this.d) {
             return;
         }
-        this.f41724c = true;
+        this.f28033c = true;
         this.g.a((LinkedHashMap) linkedHashMap);
     }
 
     public final void d() {
         if (this.b) {
             com.youzan.spiderman.a.c.a().a(new b());
-            this.f41724c = true;
+            this.f28033c = true;
         }
     }
 }

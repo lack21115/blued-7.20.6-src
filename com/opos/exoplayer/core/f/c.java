@@ -6,11 +6,11 @@ import java.nio.ByteBuffer;
 public abstract class c extends com.opos.exoplayer.core.b.g<h, i, f> implements e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f25365a;
+    private final String f11677a;
 
     public c(String str) {
         super(new h[2], new i[2]);
-        this.f25365a = str;
+        this.f11677a = str;
         a(1024);
     }
 
@@ -21,7 +21,7 @@ public abstract class c extends com.opos.exoplayer.core.b.g<h, i, f> implements 
     public final f a(h hVar, i iVar, boolean z) {
         try {
             ByteBuffer byteBuffer = hVar.b;
-            iVar.a(hVar.f25074c, a(byteBuffer.array(), byteBuffer.limit(), z), hVar.d);
+            iVar.a(hVar.f11386c, a(byteBuffer.array(), byteBuffer.limit(), z), hVar.d);
             iVar.c(Integer.MIN_VALUE);
             return null;
         } catch (f e) {

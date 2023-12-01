@@ -42,7 +42,6 @@ import androidx.core.widget.TextViewCompat;
 import androidx.customview.view.AbsSavedState;
 import androidx.transition.Fade;
 import androidx.transition.TransitionManager;
-import com.alipay.sdk.util.i;
 import com.google.android.material.R;
 import com.google.android.material.animation.AnimationUtils;
 import com.google.android.material.color.MaterialColors;
@@ -284,7 +283,7 @@ public class TextInputLayout extends LinearLayout {
         }
 
         public String toString() {
-            return "TextInputLayout.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " error=" + ((Object) this.error) + " hint=" + ((Object) this.hintText) + " helperText=" + ((Object) this.helperText) + " placeholderText=" + ((Object) this.placeholderText) + i.d;
+            return "TextInputLayout.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " error=" + ((Object) this.error) + " hint=" + ((Object) this.hintText) + " helperText=" + ((Object) this.helperText) + " placeholderText=" + ((Object) this.placeholderText) + "}";
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -686,7 +685,7 @@ public class TextInputLayout extends LinearLayout {
         int[] drawableState2 = checkableImageButton.getDrawableState();
         int length = drawableState.length;
         int[] copyOf = Arrays.copyOf(drawableState, drawableState.length + drawableState2.length);
-        System.arraycopy((Object) drawableState2, 0, (Object) copyOf, length, drawableState2.length);
+        System.arraycopy(drawableState2, 0, copyOf, length, drawableState2.length);
         return copyOf;
     }
 
@@ -1150,8 +1149,8 @@ public class TextInputLayout extends LinearLayout {
 
     private void updateStrokeErrorColor(boolean z, boolean z2) {
         int defaultColor = this.strokeErrorColor.getDefaultColor();
-        int colorForState = this.strokeErrorColor.getColorForState(new int[]{16843623, 16842910}, defaultColor);
-        int colorForState2 = this.strokeErrorColor.getColorForState(new int[]{16843518, 16842910}, defaultColor);
+        int colorForState = this.strokeErrorColor.getColorForState(new int[]{android.R.attr.state_hovered, android.R.attr.state_enabled}, defaultColor);
+        int colorForState2 = this.strokeErrorColor.getColorForState(new int[]{android.R.attr.state_activated, android.R.attr.state_enabled}, defaultColor);
         if (z) {
             this.boxStrokeColor = colorForState2;
         } else if (z2) {
@@ -1240,6 +1239,7 @@ public class TextInputLayout extends LinearLayout {
         return cutoutEnabled() && ((CutoutDrawable) this.boxBackground).hasCutout();
     }
 
+    @Override // android.view.ViewGroup, android.view.View
     public void dispatchProvideAutofillStructure(ViewStructure viewStructure, int i) {
         EditText editText = this.editText;
         if (editText == null) {
@@ -1273,9 +1273,8 @@ public class TextInputLayout extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
+    protected void dispatchRestoreInstanceState(SparseArray<Parcelable> sparseArray) {
         this.restoringSavedState = true;
         super.dispatchRestoreInstanceState(sparseArray);
         this.restoringSavedState = false;
@@ -1288,9 +1287,8 @@ public class TextInputLayout extends LinearLayout {
         drawBoxUnderline(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         if (this.inDrawableStateChanged) {
             return;
         }
@@ -1597,9 +1595,8 @@ public class TextInputLayout extends LinearLayout {
         return this.startIconView.getVisibility() == 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         EditText editText = this.editText;
         if (editText != null) {
@@ -1622,9 +1619,8 @@ public class TextInputLayout extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         boolean updateEditTextHeightBasedOnIcon = updateEditTextHeightBasedOnIcon();
         boolean updateDummyDrawables = updateDummyDrawables();
@@ -1641,9 +1637,8 @@ public class TextInputLayout extends LinearLayout {
         updateSuffixTextViewPadding();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -1728,8 +1723,8 @@ public class TextInputLayout extends LinearLayout {
         this.defaultFilledBackgroundColor = defaultColor;
         this.boxBackgroundColor = defaultColor;
         this.disabledFilledBackgroundColor = colorStateList.getColorForState(new int[]{-16842910}, -1);
-        this.focusedFilledBackgroundColor = colorStateList.getColorForState(new int[]{16842908, 16842910}, -1);
-        this.hoveredFilledBackgroundColor = colorStateList.getColorForState(new int[]{16843623, 16842910}, -1);
+        this.focusedFilledBackgroundColor = colorStateList.getColorForState(new int[]{android.R.attr.state_focused, android.R.attr.state_enabled}, -1);
+        this.hoveredFilledBackgroundColor = colorStateList.getColorForState(new int[]{android.R.attr.state_hovered, android.R.attr.state_enabled}, -1);
         applyBoxAttributes();
     }
 
@@ -1771,8 +1766,8 @@ public class TextInputLayout extends LinearLayout {
         if (colorStateList.isStateful()) {
             this.defaultStrokeColor = colorStateList.getDefaultColor();
             this.disabledColor = colorStateList.getColorForState(new int[]{-16842910}, -1);
-            this.hoveredStrokeColor = colorStateList.getColorForState(new int[]{16843623, 16842910}, -1);
-            this.focusedStrokeColor = colorStateList.getColorForState(new int[]{16842908, 16842910}, -1);
+            this.hoveredStrokeColor = colorStateList.getColorForState(new int[]{android.R.attr.state_hovered, android.R.attr.state_enabled}, -1);
+            this.focusedStrokeColor = colorStateList.getColorForState(new int[]{android.R.attr.state_focused, android.R.attr.state_enabled}, -1);
         } else if (this.focusedStrokeColor != colorStateList.getDefaultColor()) {
             this.focusedStrokeColor = colorStateList.getDefaultColor();
         }

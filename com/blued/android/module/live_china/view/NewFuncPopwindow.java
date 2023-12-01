@@ -21,13 +21,9 @@ import com.blued.android.module.live_china.view.HoleRelativeLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/NewFuncPopwindow.class */
 public class NewFuncPopwindow extends PopupWindow {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14982a;
+    private Context a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f14983c;
+    private ImageView c;
     private int d;
     private int e;
     private HoleRelativeLayout f;
@@ -52,7 +48,7 @@ public class NewFuncPopwindow extends PopupWindow {
         this.j = (int) (AppInfo.l * 0.6d);
         this.k = 0;
         this.n = 0;
-        this.f14982a = context;
+        this.a = context;
         if (i > 0) {
             this.j = i;
         }
@@ -63,9 +59,9 @@ public class NewFuncPopwindow extends PopupWindow {
     }
 
     private void a() {
-        View inflate = LayoutInflater.from(this.f14982a).inflate(R.layout.pop_new_function_layout, (ViewGroup) null);
+        View inflate = LayoutInflater.from(this.a).inflate(R.layout.pop_new_function_layout, (ViewGroup) null);
         this.b = (TextView) inflate.findViewById(R.id.pop_guest_text);
-        this.f14983c = (ImageView) inflate.findViewById(R.id.pop_guest_image);
+        this.c = (ImageView) inflate.findViewById(R.id.pop_guest_image);
         setContentView(inflate);
         int i = this.j;
         if (i > 0) {
@@ -82,21 +78,21 @@ public class NewFuncPopwindow extends PopupWindow {
     public void a(float f) {
         Logger.d("NewFuncPopwindow", "backgroundAlpha ... bgAlpha = " + f);
         if (this.f == null) {
-            this.g = ((Activity) this.f14982a).getWindow();
-            this.f = new HoleRelativeLayout(this.f14982a);
+            this.g = ((Activity) this.a).getWindow();
+            this.f = new HoleRelativeLayout(this.a);
             if (this.h == null) {
                 HoleRelativeLayout.RoundRect roundRect = new HoleRelativeLayout.RoundRect();
                 this.h = roundRect;
                 roundRect.d = 50.0f;
-                this.h.f14306c = 60.0f;
-                this.h.f14305a = this.d;
+                this.h.c = 60.0f;
+                this.h.a = this.d;
                 this.h.b = this.e;
             }
             this.f.a(this.h);
             this.g.addContentView(this.f, new RelativeLayout.LayoutParams(-1, -1));
         }
         if (f < 1.0f) {
-            this.f.setBgColor(this.f14982a.getResources().getColor(R.color.syc_62000000));
+            this.f.setBgColor(this.a.getResources().getColor(R.color.syc_62000000));
             return;
         }
         HoleRelativeLayout holeRelativeLayout = this.f;
@@ -111,10 +107,10 @@ public class NewFuncPopwindow extends PopupWindow {
         if (textView != null) {
             textView.setVisibility(8);
         }
-        ImageView imageView = this.f14983c;
+        ImageView imageView = this.c;
         if (imageView != null) {
             imageView.setVisibility(0);
-            this.f14983c.setImageResource(i);
+            this.c.setImageResource(i);
         }
     }
 
@@ -133,11 +129,11 @@ public class NewFuncPopwindow extends PopupWindow {
     }
 
     public void a(View view, int i, int i2) {
-        Context context = this.f14982a;
+        Context context = this.a;
         if (context == null || ((Activity) context).isFinishing()) {
             return;
         }
-        if (Build.VERSION.SDK_INT < 17 || !((Activity) this.f14982a).isDestroyed()) {
+        if (Build.VERSION.SDK_INT < 17 || !((Activity) this.a).isDestroyed()) {
             this.d = i;
             this.e = i2;
             Logger.d("NewFuncPopwindow", "show ... offsetX: " + i + " ; offsetY: " + i2);
@@ -155,9 +151,9 @@ public class NewFuncPopwindow extends PopupWindow {
                 i4 = i - (i3 - AppInfo.l);
                 Logger.d("NewFuncPopwindow", "show ... (moveX + width) > 屏幕宽度 --> screen width: " + AppInfo.l);
             }
-            int a2 = (i2 - measuredHeight) - DensityUtils.a(this.f14982a, 7.0f);
-            Logger.d("NewFuncPopwindow", "show ... moveX: " + i4 + " ; moveY：" + a2);
-            showAtLocation(view, 0, i4 - this.n, a2);
+            int a = (i2 - measuredHeight) - DensityUtils.a(this.a, 7.0f);
+            Logger.d("NewFuncPopwindow", "show ... moveX: " + i4 + " ; moveY：" + a);
+            showAtLocation(view, 0, i4 - this.n, a);
         }
     }
 

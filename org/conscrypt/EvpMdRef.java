@@ -1,7 +1,6 @@
 package org.conscrypt;
 
-import com.huawei.openalliance.ad.constant.at;
-import com.tencent.qcloud.core.auth.AuthConstants;
+import com.anythink.core.common.k.f;
 import java.security.NoSuchAlgorithmException;
 import java.util.Locale;
 
@@ -35,7 +34,7 @@ final class EvpMdRef {
         static final int SIZE_BYTES;
 
         static {
-            long EVP_get_digestbyname = NativeCrypto.EVP_get_digestbyname(AuthConstants.SHA1);
+            long EVP_get_digestbyname = NativeCrypto.EVP_get_digestbyname("sha1");
             EVP_MD = EVP_get_digestbyname;
             SIZE_BYTES = NativeCrypto.EVP_MD_size(EVP_get_digestbyname);
         }
@@ -69,7 +68,7 @@ final class EvpMdRef {
         static final int SIZE_BYTES;
 
         static {
-            long EVP_get_digestbyname = NativeCrypto.EVP_get_digestbyname(at.aq);
+            long EVP_get_digestbyname = NativeCrypto.EVP_get_digestbyname("sha256");
             EVP_MD = EVP_get_digestbyname;
             SIZE_BYTES = NativeCrypto.EVP_MD_size(EVP_get_digestbyname);
         }
@@ -197,7 +196,7 @@ final class EvpMdRef {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String getJcaDigestAlgorithmStandardNameFromEVP_MD(long j) {
         if (j == MD5.EVP_MD) {
-            return "MD5";
+            return f.a;
         }
         if (j == SHA1.EVP_MD) {
             return "SHA-1";

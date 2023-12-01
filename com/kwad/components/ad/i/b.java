@@ -37,7 +37,7 @@ public class b {
     private String GC;
     private j.a GD;
     private a GE;
-    private InterfaceC0479b GF;
+    private InterfaceC0309b GF;
     protected KsAdWebView cS;
     private com.kwad.components.core.webview.a cU;
     protected com.kwad.sdk.core.webview.b cV;
@@ -79,7 +79,7 @@ public class b {
 
     /* renamed from: com.kwad.components.ad.i.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/i/b$b.class */
-    public interface InterfaceC0479b {
+    public interface InterfaceC0309b {
         void hK();
     }
 
@@ -181,8 +181,8 @@ public class b {
         this.GE = aVar;
     }
 
-    public final void a(InterfaceC0479b interfaceC0479b) {
-        this.GF = interfaceC0479b;
+    public final void a(InterfaceC0309b interfaceC0309b) {
+        this.GF = interfaceC0309b;
         this.df.setVisibility(4);
         this.cW = -1;
         String l = l(this.mAdTemplate);

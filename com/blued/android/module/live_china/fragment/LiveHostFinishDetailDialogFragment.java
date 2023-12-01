@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.viewpager.widget.ViewPager;
@@ -58,9 +59,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailDialogFragment.class */
 public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12957a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private LiveCloseInfoModel e;
     private final Lazy b = LazyKt.a(new Function0<LiveHostFinishDetailViewModel>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailDialogFragment$mViewModel$2
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -81,9 +80,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             throw new NullPointerException("null cannot be cast to non-null type android.app.Application");
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f12958c = LazyKt.a(new Function0<LiveHostFinishDetailDialogLayoutBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailDialogFragment$vb$2
+    private final Lazy c = LazyKt.a(new Function0<LiveHostFinishDetailDialogLayoutBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -97,7 +94,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
     });
     private List<LiveFinishTabData> d = new ArrayList();
     private List<LiveHostFinishDetailTabItemBinding> f = new ArrayList();
-    private LiveHostFinishDetailViewModel.ApiState g = LiveHostFinishDetailViewModel.ApiState.ApiStateInfo.f15471a;
+    private LiveHostFinishDetailViewModel.ApiState g = LiveHostFinishDetailViewModel.ApiState.ApiStateInfo.a;
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailDialogFragment$Companion.class */
@@ -125,9 +122,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDetailDialogFragment$MyAdapter.class */
     public static final class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private FragmentManager f12959a;
+        private FragmentManager a;
         private List<LiveFinishTabData> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -135,28 +130,24 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             super(fm, 1);
             Intrinsics.e(fm, "fm");
             Intrinsics.e(tabs, "tabs");
-            this.f12959a = fm;
+            this.a = fm;
             this.b = tabs;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             super.destroyItem(container, i, object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            return LiveHostFinishDetailFragment.f12964a.a(this.b.get(i).getState());
+            return LiveHostFinishDetailFragment.a.a(this.b.get(i).getState());
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             return this.b.get(i).getName();
         }
@@ -168,7 +159,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
         Intrinsics.e(this$0, "this$0");
         LiveHostFinishDetailDialogLayoutBinding e = this$0.e();
         Intrinsics.a(e);
-        LinearLayout linearLayout2 = e.f12240c;
+        LinearLayout linearLayout2 = e.c;
         Intrinsics.a(linearLayout2);
         int width = (linearLayout2.getWidth() - (AppMethods.a(8) * 3)) / 4;
         LinearLayout linearLayout3 = new LinearLayout(this$0.getContext());
@@ -187,21 +178,21 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             a2.b.setText(next.getName());
             a2.d.setText(next.getCount());
             if (i2 == 0) {
-                ShapeFrameLayout shapeFrameLayout = a2.f12249a;
+                ShapeFrameLayout shapeFrameLayout = a2.a;
                 Intrinsics.c(shapeFrameLayout, "vbTab.slSelect");
                 BluedViewExKt.b(shapeFrameLayout);
             } else {
-                ShapeFrameLayout shapeFrameLayout2 = a2.f12249a;
+                ShapeFrameLayout shapeFrameLayout2 = a2.a;
                 Intrinsics.c(shapeFrameLayout2, "vbTab.slSelect");
                 BluedViewExKt.a(shapeFrameLayout2);
             }
-            if (Intrinsics.a(next.getState(), LiveHostFinishDetailViewModel.ApiState.ApiNewFans.f15469a)) {
-                TextView textView = a2.f12250c;
+            if (Intrinsics.a(next.getState(), LiveHostFinishDetailViewModel.ApiState.ApiNewFans.a)) {
+                TextView textView = a2.c;
                 Intrinsics.c(textView, "vbTab.tvName1");
                 BluedViewExKt.b(textView);
-                a2.f12250c.setText(this$0.getString(R.string.live_host_finish_people_add));
+                a2.c.setText(this$0.getString(R.string.live_host_finish_people_add));
             } else {
-                TextView textView2 = a2.f12250c;
+                TextView textView2 = a2.c;
                 Intrinsics.c(textView2, "vbTab.tvName1");
                 BluedViewExKt.a(textView2);
             }
@@ -219,7 +210,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
                 layoutParams2.setMargins(0, AppMethods.a(11), 0, 0);
                 linearLayout3.addView(a2.getRoot(), layoutParams);
                 LiveHostFinishDetailDialogLayoutBinding e2 = this$0.e();
-                if (e2 != null && (linearLayout = e2.f12240c) != null) {
+                if (e2 != null && (linearLayout = e2.c) != null) {
                     linearLayout.addView(linearLayout3, layoutParams2);
                 }
             } else {
@@ -259,11 +250,11 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             }
             LiveHostFinishDetailTabItemBinding next = it.next();
             if (i3 == i) {
-                ShapeFrameLayout shapeFrameLayout = next.f12249a;
+                ShapeFrameLayout shapeFrameLayout = next.a;
                 Intrinsics.c(shapeFrameLayout, "viewBind.slSelect");
                 BluedViewExKt.b(shapeFrameLayout);
             } else {
-                ShapeFrameLayout shapeFrameLayout2 = next.f12249a;
+                ShapeFrameLayout shapeFrameLayout2 = next.a;
                 Intrinsics.c(shapeFrameLayout2, "viewBind.slSelect");
                 BluedViewExKt.a(shapeFrameLayout2);
             }
@@ -307,7 +298,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
     }
 
     public final LiveHostFinishDetailDialogLayoutBinding e() {
-        return (LiveHostFinishDetailDialogLayoutBinding) this.f12958c.getValue();
+        return (LiveHostFinishDetailDialogLayoutBinding) this.c.getValue();
     }
 
     public final List<LiveHostFinishDetailTabItemBinding> f() {
@@ -334,12 +325,12 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             layoutParams.height = DensityUtils.a(getActivity());
         }
         this.d.addAll(j());
-        ImageWrapper a2 = ImageLoader.a(a(), ImgURLMap.f10885a.a("live_host_icon_back"));
+        ImageWrapper a2 = ImageLoader.a(a(), ImgURLMap.a.a("live_host_icon_back"));
         LiveHostFinishDetailDialogLayoutBinding e2 = e();
-        a2.a(e2 == null ? null : e2.f12239a);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("live_host_icon_header_bg")).a(e().b);
+        a2.a(e2 == null ? null : e2.a);
+        ImageLoader.a(a(), ImgURLMap.a.a("live_host_icon_header_bg")).a(e().b);
         LiveHostFinishDetailDialogLayoutBinding e3 = e();
-        if (e3 != null && (imageView = e3.f12239a) != null) {
+        if (e3 != null && (imageView = e3.a) != null) {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDetailDialogFragment$5pBrllih0CeHVy9VBLS8RaoX7hE
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -348,7 +339,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             });
         }
         LiveHostFinishDetailDialogLayoutBinding e4 = e();
-        if (e4 != null && (linearLayout = e4.f12240c) != null) {
+        if (e4 != null && (linearLayout = e4.c) != null) {
             linearLayout.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDetailDialogFragment$UwmPNwd1MB7KeId43VWNfdsGbRA
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -362,15 +353,12 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
         viewPager.setAdapter(new MyAdapter(childFragmentManager, this.d));
         e().e.setCurrentItem(0);
         e().e.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailDialogFragment$initView$3
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 LiveHostFinishDetailDialogFragment.this.a(i);
             }
@@ -380,7 +368,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
     }
 
     public final void i() {
-        LifecycleExtKt.a(this, d().d(), new Function1<LiveCloseInfoModel, Unit>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailDialogFragment$liveDataObserver$1
+        LifecycleExtKt.a((LifecycleOwner) this, d().d(), new Function1<LiveCloseInfoModel, Unit>() { // from class: com.blued.android.module.live_china.fragment.LiveHostFinishDetailDialogFragment$liveDataObserver$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -393,7 +381,7 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(LiveCloseInfoModel liveCloseInfoModel) {
                 a(liveCloseInfoModel);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -408,30 +396,29 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
             ArrayList arrayList2 = arrayList;
             String string = getString(R.string.live_host_finish_beans);
             Intrinsics.c(string, "getString(R.string.live_host_finish_beans)");
-            arrayList2.add(new LiveFinishTabData(string, LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.received_beans), LiveHostFinishDetailViewModel.ApiState.ApiContributors.f15466a));
+            arrayList2.add(new LiveFinishTabData(string, LiveNumFormatUtil.a.a(liveCloseInfoModel.received_beans), LiveHostFinishDetailViewModel.ApiState.ApiContributors.a));
             String string2 = getString(R.string.live_host_finish_att);
             Intrinsics.c(string2, "getString(R.string.live_host_finish_att)");
-            arrayList2.add(new LiveFinishTabData(string2, LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.new_follower_count), LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.f15470a));
+            arrayList2.add(new LiveFinishTabData(string2, LiveNumFormatUtil.a.a(liveCloseInfoModel.new_follower_count), LiveHostFinishDetailViewModel.ApiState.ApiNewFollowers.a));
             String string3 = getString(R.string.live_host_finish_au);
             Intrinsics.c(string3, "getString(R.string.live_host_finish_au)");
-            arrayList2.add(new LiveFinishTabData(string3, LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.total_watch_count), LiveHostFinishDetailViewModel.ApiState.ApiAudiences.f15464a));
+            arrayList2.add(new LiveFinishTabData(string3, LiveNumFormatUtil.a.a(liveCloseInfoModel.total_watch_count), LiveHostFinishDetailViewModel.ApiState.ApiAudiences.a));
             String string4 = getString(R.string.live_host_finish_gift);
             Intrinsics.c(string4, "getString(R.string.live_host_finish_gift)");
-            arrayList2.add(new LiveFinishTabData(string4, LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.giver_count), LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.f15467a));
+            arrayList2.add(new LiveFinishTabData(string4, LiveNumFormatUtil.a.a(liveCloseInfoModel.giver_count), LiveHostFinishDetailViewModel.ApiState.ApiGiverFrom.a));
             String string5 = getString(R.string.live_host_finish_fans);
             Intrinsics.c(string5, "getString(R.string.live_host_finish_fans)");
-            arrayList2.add(new LiveFinishTabData(string5, LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.new_fan_count), LiveHostFinishDetailViewModel.ApiState.ApiNewFans.f15469a));
+            arrayList2.add(new LiveFinishTabData(string5, LiveNumFormatUtil.a.a(liveCloseInfoModel.new_fan_count), LiveHostFinishDetailViewModel.ApiState.ApiNewFans.a));
             String string6 = getString(R.string.live_host_finish_com);
             Intrinsics.c(string6, "getString(R.string.live_host_finish_com)");
-            arrayList2.add(new LiveFinishTabData(string6, LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.commenter_count), LiveHostFinishDetailViewModel.ApiState.ApiComments.f15465a));
+            arrayList2.add(new LiveFinishTabData(string6, LiveNumFormatUtil.a.a(liveCloseInfoModel.commenter_count), LiveHostFinishDetailViewModel.ApiState.ApiComments.a));
             String string7 = getString(R.string.live_host_finish_like);
             Intrinsics.c(string7, "getString(R.string.live_host_finish_like)");
-            arrayList2.add(new LiveFinishTabData(string7, LiveNumFormatUtil.f14186a.a(liveCloseInfoModel.liked), LiveHostFinishDetailViewModel.ApiState.ApiLikes.f15468a));
+            arrayList2.add(new LiveFinishTabData(string7, LiveNumFormatUtil.a.a(liveCloseInfoModel.liked), LiveHostFinishDetailViewModel.ApiState.ApiLikes.a));
         }
         return arrayList;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int i = AppInfo.l;
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -454,13 +441,12 @@ public final class LiveHostFinishDetailDialogFragment extends BaseDialogFragment
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         this.f.clear();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

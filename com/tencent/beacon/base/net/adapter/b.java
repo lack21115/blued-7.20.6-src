@@ -81,7 +81,7 @@ public class b extends AbstractNetAdapter {
     }
 
     private byte[] buildBody(com.tencent.beacon.base.net.call.e eVar) throws UnsupportedEncodingException {
-        int i = a.f34963a[eVar.a().ordinal()];
+        int i = a.f21272a[eVar.a().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i != 3) {

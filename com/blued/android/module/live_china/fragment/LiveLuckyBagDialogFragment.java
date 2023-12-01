@@ -20,6 +20,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -64,9 +65,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveLuckyBagDialogFragment.class */
 public final class LiveLuckyBagDialogFragment extends BaseDialogFragment implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13008a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private List<LuckyBagModel> d;
     private LuckyBagViewPagerAdapter e;
     private FreedomAdapter g;
@@ -89,20 +88,16 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
             return DialogLiveLuckyBagBinding.a(LayoutInflater.from(LiveLuckyBagDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f13009c = -1;
+    private int c = -1;
     private final ArrayList<FitemLuckyBagTab> f = new ArrayList<>();
     private final DecelerateInterpolator l = new DecelerateInterpolator(1.5f);
     private float n = -1.0f;
     private final Observer<Boolean> q = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$KHIanFDIKFnFMgxKbAvPIm_4eZA
-        @Override // androidx.lifecycle.Observer
         public final void onChanged(Object obj) {
             LiveLuckyBagDialogFragment.a(LiveLuckyBagDialogFragment.this, (Boolean) obj);
         }
     };
     private final Observer<Integer> r = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$DmiYJEUGkr-tz5cO3EAbvr0VR0s
-        @Override // androidx.lifecycle.Observer
         public final void onChanged(Object obj) {
             LiveLuckyBagDialogFragment.a(LiveLuckyBagDialogFragment.this, (Integer) obj);
         }
@@ -132,9 +127,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveLuckyBagDialogFragment$LuckyBagViewPagerAdapter.class */
     public static final class LuckyBagViewPagerAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f13010a;
+        private final Context a;
         private List<LuckyBagModel> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -143,22 +136,19 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
             Intrinsics.e(fm, "fm");
             Intrinsics.e(mContext, "mContext");
             Intrinsics.e(mData, "mData");
-            this.f13010a = mContext;
+            this.a = mContext;
             this.b = mData;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             return new LiveLuckyBagFragment(this.b.get(i));
         }
@@ -176,11 +166,11 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         if (fitemLuckyBagTab2 != null) {
             fitemLuckyBagTab2.e();
         }
-        RecyclerView.LayoutManager layoutManager = d().m.getLayoutManager();
+        LinearLayoutManager layoutManager = d().m.getLayoutManager();
         if (layoutManager == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.LinearLayoutManager");
         }
-        int findFirstVisibleItemPosition = ((LinearLayoutManager) layoutManager).findFirstVisibleItemPosition();
+        int findFirstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
         int g = this.f.get(findFirstVisibleItemPosition).g();
         int i2 = this.i;
         int max = Math.max(0, (this.f.size() * this.i) - d().m.getWidth());
@@ -201,7 +191,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveLuckyBagDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        this$0.d().f11779a.setExpanded(true);
+        this$0.d().a.setExpanded(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -219,9 +209,9 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         float floatValue = ((Float) animatedValue).floatValue();
         this$0.n = floatValue;
         float interpolation = (scaleInterpolator.getInterpolation(floatValue) / 2.0f) + 0.5f;
-        this$0.d().f11780c.setScaleX(interpolation);
-        this$0.d().f11780c.setScaleY(interpolation);
-        this$0.d().f11780c.setTranslationY((1 - this$0.l.getInterpolation(floatValue)) * f);
+        this$0.d().c.setScaleX(interpolation);
+        this$0.d().c.setScaleY(interpolation);
+        this$0.d().c.setTranslationY((1 - this$0.l.getInterpolation(floatValue)) * f);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -265,7 +255,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
     public static final void a(LiveLuckyBagDialogFragment this$0, Ref.IntRef position) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(position, "$position");
-        this$0.a(position.f42543a);
+        this$0.a(position.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -282,7 +272,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
                 Intrinsics.c(requireContext, "requireContext()");
                 this.e = new LuckyBagViewPagerAdapter(childFragmentManager, requireContext, list);
                 d().s.setAdapter(this.e);
-                d().f11780c.setClickable(true);
+                d().c.setClickable(true);
                 d().m.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$oAUEpndMu6mRJ-rIPACXipJTWLk
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -455,7 +445,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
     public static final void b(LiveLuckyBagDialogFragment this$0, Ref.IntRef position) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(position, "$position");
-        this$0.b(position.f42543a);
+        this$0.b(position.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -516,14 +506,14 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(data, "$data");
         final Ref.IntRef intRef = new Ref.IntRef();
-        if (this$0.f13009c > 0) {
+        if (this$0.c > 0) {
             int i = 0;
             int size = data.size();
             while (true) {
                 if (i >= size) {
                     break;
-                } else if (this$0.f13009c == ((LuckyBagModel) data.get(i)).getGoods_id()) {
-                    intRef.f42543a = i;
+                } else if (this$0.c == ((LuckyBagModel) data.get(i)).getGoods_id()) {
+                    intRef.a = i;
                     break;
                 } else {
                     i++;
@@ -533,8 +523,8 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         if (this$0.isDetached() || this$0.getHost() == null) {
             return;
         }
-        if (intRef.f42543a > 0) {
-            this$0.d().s.setCurrentItem(intRef.f42543a);
+        if (intRef.a > 0) {
+            this$0.d().s.setCurrentItem(intRef.a);
             return;
         }
         this$0.d().m.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$NAUdZp5hvE4fld5hSrrYM0sWw9E
@@ -549,7 +539,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
                 LiveLuckyBagDialogFragment.b(LiveLuckyBagDialogFragment.this, intRef);
             }
         });
-        this$0.d().f11780c.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$4jxdL3hRbTyh64RNYQI43bF-LYo
+        this$0.d().c.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$4jxdL3hRbTyh64RNYQI43bF-LYo
             @Override // java.lang.Runnable
             public final void run() {
                 LiveLuckyBagDialogFragment.c(LiveLuckyBagDialogFragment.this, intRef);
@@ -561,7 +551,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
     public static final void c(LiveLuckyBagDialogFragment this$0, Ref.IntRef position) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(position, "$position");
-        this$0.c(position.f42543a);
+        this$0.c(position.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -585,9 +575,9 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
     }
 
     private final void e() {
-        LiveLuckyBagDialogFragment liveLuckyBagDialogFragment = this;
-        LiveEventBus.get(LiveEventBusUtil.T, Boolean.TYPE).observe(liveLuckyBagDialogFragment, this.q);
-        LiveEventBus.get(LiveEventBusUtil.W, Integer.TYPE).observe(liveLuckyBagDialogFragment, this.r);
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get(LiveEventBusUtil.T, Boolean.TYPE).observe(lifecycleOwner, this.q);
+        LiveEventBus.get(LiveEventBusUtil.W, Integer.TYPE).observe(lifecycleOwner, this.r);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -646,7 +636,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         d().r.getPaint().setFakeBoldText(true);
         d().p.getPaint().setFakeBoldText(true);
         this.i = DensityUtils.a(getContext(), 100.0f);
-        d().f11780c.setClickable(false);
+        d().c.setClickable(false);
         h();
         i();
         j();
@@ -657,7 +647,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
             }
         });
         o();
-        d().f11780c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$hU3WXvgs11NBhhiix2o-T7Y6H-k
+        d().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$hU3WXvgs11NBhhiix2o-T7Y6H-k
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveLuckyBagDialogFragment.b(LiveLuckyBagDialogFragment.this, view);
@@ -714,8 +704,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
 
     private final void h() {
         final AccelerateInterpolator accelerateInterpolator = new AccelerateInterpolator(1.5f);
-        d().f11779a.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$Kyhu4-U3bxtxHiGAkYuNlflaN_A
-            @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
+        d().a.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveLuckyBagDialogFragment$Kyhu4-U3bxtxHiGAkYuNlflaN_A
             public final void onOffsetChanged(AppBarLayout appBarLayout, int i) {
                 LiveLuckyBagDialogFragment.a(LiveLuckyBagDialogFragment.this, accelerateInterpolator, appBarLayout, i);
             }
@@ -733,7 +722,6 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
             return;
         }
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.fragment.LiveLuckyBagDialogFragment$initRecyclerScrollListener$1
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recycler, int i, int i2) {
                 float f;
                 Intrinsics.e(recycler, "recycler");
@@ -813,7 +801,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         }
         ObjectAnimator objectAnimator2 = this.o;
         if (objectAnimator2 != null) {
-            objectAnimator2.mo53clone();
+            objectAnimator2.clone();
         }
         this.o = null;
         ObjectAnimator objectAnimator3 = this.p;
@@ -822,7 +810,7 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         }
         ObjectAnimator objectAnimator4 = this.p;
         if (objectAnimator4 != null) {
-            objectAnimator4.mo53clone();
+            objectAnimator4.clone();
         }
         this.p = null;
     }
@@ -841,12 +829,11 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         d().s.setCurrentItem(i);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 579.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView((View) d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(0));
@@ -864,26 +851,25 @@ public final class LiveLuckyBagDialogFragment extends BaseDialogFragment impleme
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         f();
         n();
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         dismissAllowingStateLoss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
         Bundle arguments = getArguments();
         if (arguments != null) {
-            this.f13009c = arguments.getInt("goods_id", -1);
+            this.c = arguments.getInt("goods_id", -1);
         }
         e();
         g();

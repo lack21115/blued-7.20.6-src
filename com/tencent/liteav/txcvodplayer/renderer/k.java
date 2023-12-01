@@ -6,11 +6,11 @@ import android.graphics.SurfaceTexture;
 final /* synthetic */ class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f36575a;
+    private final c f22884a;
     private final SurfaceTexture b;
 
     private k(c cVar, SurfaceTexture surfaceTexture) {
-        this.f36575a = cVar;
+        this.f22884a = cVar;
         this.b = surfaceTexture;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class k implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        c.a(this.f36575a, this.b);
+        c.a(this.f22884a, this.b);
     }
 }

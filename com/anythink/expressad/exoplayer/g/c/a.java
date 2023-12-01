@@ -27,23 +27,23 @@ public final class a extends b {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f7364a;
+    public final long f4525a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final byte[] f7365c;
+    public final byte[] f4526c;
 
     private a(long j, byte[] bArr, long j2) {
-        this.f7364a = j2;
+        this.f4525a = j2;
         this.b = j;
-        this.f7365c = bArr;
+        this.f4526c = bArr;
     }
 
     private a(Parcel parcel) {
-        this.f7364a = parcel.readLong();
+        this.f4525a = parcel.readLong();
         this.b = parcel.readLong();
         byte[] bArr = new byte[parcel.readInt()];
-        this.f7365c = bArr;
+        this.f4526c = bArr;
         parcel.readByteArray(bArr);
     }
 
@@ -62,9 +62,9 @@ public final class a extends b {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f7364a);
+        parcel.writeLong(this.f4525a);
         parcel.writeLong(this.b);
-        parcel.writeInt(this.f7365c.length);
-        parcel.writeByteArray(this.f7365c);
+        parcel.writeInt(this.f4526c.length);
+        parcel.writeByteArray(this.f4526c);
     }
 }

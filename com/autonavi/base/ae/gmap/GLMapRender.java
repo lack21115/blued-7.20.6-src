@@ -4,7 +4,7 @@ import android.opengl.GLSurfaceView;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
-import com.amap.api.col.p0003sl.iw;
+import com.amap.api.col.3sl.iw;
 import com.autonavi.amap.mapcore.interfaces.IAMap;
 import java.util.concurrent.atomic.AtomicLong;
 import javax.microedition.khronos.egl.EGLConfig;

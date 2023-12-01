@@ -8,20 +8,20 @@ import android.os.SystemClock;
 public final class aa implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Handler f35358a;
+    private final Handler f21667a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f35359c;
+    private long f21668c;
     private final long d;
     private boolean e = true;
     private long f;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public aa(Handler handler, String str, long j) {
-        this.f35358a = handler;
+        this.f21667a = handler;
         this.b = str;
-        this.f35359c = j;
+        this.f21668c = j;
         this.d = j;
     }
 
@@ -29,23 +29,23 @@ public final class aa implements Runnable {
         if (this.e) {
             this.e = false;
             this.f = SystemClock.uptimeMillis();
-            this.f35358a.post(this);
+            this.f21667a.post(this);
         }
     }
 
     public final void a(long j) {
-        this.f35359c = Long.MAX_VALUE;
+        this.f21668c = Long.MAX_VALUE;
     }
 
     public final boolean b() {
-        return !this.e && SystemClock.uptimeMillis() > this.f + this.f35359c;
+        return !this.e && SystemClock.uptimeMillis() > this.f + this.f21668c;
     }
 
     public final int c() {
         if (this.e) {
             return 0;
         }
-        return SystemClock.uptimeMillis() - this.f < this.f35359c ? 1 : 3;
+        return SystemClock.uptimeMillis() - this.f < this.f21668c ? 1 : 3;
     }
 
     public final String d() {
@@ -53,12 +53,12 @@ public final class aa implements Runnable {
     }
 
     public final Looper e() {
-        return this.f35358a.getLooper();
+        return this.f21667a.getLooper();
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         this.e = true;
-        this.f35359c = this.d;
+        this.f21668c = this.d;
     }
 }

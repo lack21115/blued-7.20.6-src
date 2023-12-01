@@ -50,7 +50,7 @@ public final class Utf8 {
         }
 
         private static char highSurrogate(int i) {
-            return (char) ((i >>> 10) + okio.Utf8.HIGH_SURROGATE_HEADER);
+            return (char) ((i >>> 10) + 55232);
         }
 
         private static boolean isNotTrailingByte(byte b) {

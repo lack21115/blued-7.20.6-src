@@ -13,7 +13,7 @@ final class SipHashFunction extends AbstractHashFunction implements Serializable
     private static final long serialVersionUID = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f22216c;
+    private final int f8609c;
     private final int d;
     private final long k0;
     private final long k1;
@@ -24,7 +24,7 @@ final class SipHashFunction extends AbstractHashFunction implements Serializable
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f22217c;
+        private final int f8610c;
         private final int d;
         private long finalM;
         private long v0;
@@ -40,7 +40,7 @@ final class SipHashFunction extends AbstractHashFunction implements Serializable
             this.v3 = 8387220255154660723L;
             this.b = 0L;
             this.finalM = 0L;
-            this.f22217c = i;
+            this.f8610c = i;
             this.d = i2;
             this.v0 = 8317987319222330741L ^ j;
             this.v1 = 7237128888997146477L ^ j2;
@@ -50,7 +50,7 @@ final class SipHashFunction extends AbstractHashFunction implements Serializable
 
         private void processM(long j) {
             this.v3 ^= j;
-            sipRound(this.f22217c);
+            sipRound(this.f8610c);
             this.v0 = j ^ this.v0;
         }
 
@@ -125,7 +125,7 @@ final class SipHashFunction extends AbstractHashFunction implements Serializable
     public SipHashFunction(int i, int i2, long j, long j2) {
         Preconditions.checkArgument(i > 0, "The number of SipRound iterations (c=%s) during Compression must be positive.", i);
         Preconditions.checkArgument(i2 > 0, "The number of SipRound iterations (d=%s) during Finalization must be positive.", i2);
-        this.f22216c = i;
+        this.f8609c = i;
         this.d = i2;
         this.k0 = j;
         this.k1 = j2;
@@ -141,7 +141,7 @@ final class SipHashFunction extends AbstractHashFunction implements Serializable
         if (obj instanceof SipHashFunction) {
             SipHashFunction sipHashFunction = (SipHashFunction) obj;
             z = false;
-            if (this.f22216c == sipHashFunction.f22216c) {
+            if (this.f8609c == sipHashFunction.f8609c) {
                 z = false;
                 if (this.d == sipHashFunction.d) {
                     z = false;
@@ -158,15 +158,15 @@ final class SipHashFunction extends AbstractHashFunction implements Serializable
     }
 
     public int hashCode() {
-        return (int) ((((getClass().hashCode() ^ this.f22216c) ^ this.d) ^ this.k0) ^ this.k1);
+        return (int) ((((getClass().hashCode() ^ this.f8609c) ^ this.d) ^ this.k0) ^ this.k1);
     }
 
     @Override // com.google.common.hash.HashFunction
     public Hasher newHasher() {
-        return new SipHasher(this.f22216c, this.d, this.k0, this.k1);
+        return new SipHasher(this.f8609c, this.d, this.k0, this.k1);
     }
 
     public String toString() {
-        return "Hashing.sipHash" + this.f22216c + "" + this.d + "(" + this.k0 + ", " + this.k1 + ")";
+        return "Hashing.sipHash" + this.f8609c + "" + this.d + "(" + this.k0 + ", " + this.k1 + ")";
     }
 }

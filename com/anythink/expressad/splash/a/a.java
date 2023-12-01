@@ -30,10 +30,10 @@ public final class a {
     public String p;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f8183c = "android";
+    public String f5343c = "android";
 
     /* renamed from: a  reason: collision with root package name */
-    public String f8182a = k.b();
+    public String f5342a = k.b();
     public String b = k.c();
     public String f = d.f();
 
@@ -80,7 +80,7 @@ public final class a {
     public final JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("device", this.f8182a);
+            jSONObject.put("device", this.f5342a);
             jSONObject.put("system_version", this.b);
             jSONObject.put("network_type", this.h);
             jSONObject.put("network_type_str", this.i);
@@ -96,7 +96,7 @@ public final class a {
                 sb2.append(L.d());
                 jSONObject.put("wx_api_ver", sb2.toString());
             }
-            jSONObject.put("plantform", this.f8183c);
+            jSONObject.put("plantform", this.f5343c);
             jSONObject.put(c.b("ZGV2aWNlX2ltZWk="), this.d);
             jSONObject.put("android_id", this.e);
             jSONObject.put("google_ad_id", this.f);

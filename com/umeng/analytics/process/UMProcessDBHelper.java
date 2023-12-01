@@ -48,8 +48,8 @@ public class UMProcessDBHelper {
                 return true;
             }
             String str2 = str;
-            if (str.startsWith(com.umeng.analytics.process.a.f40803c)) {
-                str2 = str.replaceFirst(com.umeng.analytics.process.a.f40803c, "");
+            if (str.startsWith(com.umeng.analytics.process.a.f27112c)) {
+                str2 = str.replaceFirst(com.umeng.analytics.process.a.f27112c, "");
             }
             UMProcessDBHelper.this.insertEvents(str2.replace(com.umeng.analytics.process.a.d, ""), (JSONArray) obj);
             return true;
@@ -72,8 +72,8 @@ public class UMProcessDBHelper {
                 return true;
             }
             String str2 = str;
-            if (str.startsWith(com.umeng.analytics.process.a.f40803c)) {
-                str2 = str.replaceFirst(com.umeng.analytics.process.a.f40803c, "");
+            if (str.startsWith(com.umeng.analytics.process.a.f27112c)) {
+                str2 = str.replaceFirst(com.umeng.analytics.process.a.f27112c, "");
             }
             UMProcessDBHelper.this.processToMain(str2.replace(com.umeng.analytics.process.a.d, ""));
             return true;
@@ -90,11 +90,11 @@ public class UMProcessDBHelper {
     public class a implements Serializable {
 
         /* renamed from: a  reason: collision with root package name */
-        int f40800a;
+        int f27109a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f40801c;
+        String f27110c;
         String d;
         int e;
         String f;
@@ -126,7 +126,7 @@ public class UMProcessDBHelper {
             try {
                 JSONObject jSONObject = jSONArray.getJSONObject(i2);
                 a aVar = new a();
-                aVar.f40801c = jSONObject.optString("id");
+                aVar.f27110c = jSONObject.optString("id");
                 aVar.g = UMUtils.getAppVersionName(this.mContext);
                 aVar.h = UMUtils.getAppVersionCode(this.mContext);
                 aVar.b = jSONObject.optString("__i");
@@ -196,13 +196,13 @@ public class UMProcessDBHelper {
                     try {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put("__i", aVar.b);
-                        contentValues.put("__e", aVar.f40801c);
+                        contentValues.put("__e", aVar.f27110c);
                         contentValues.put("__t", Integer.valueOf(aVar.e));
-                        contentValues.put(a.InterfaceC1079a.f, aVar.f);
+                        contentValues.put(a.InterfaceC0909a.f, aVar.f);
                         contentValues.put("__av", aVar.g);
                         contentValues.put("__vc", aVar.h);
                         contentValues.put("__s", aVar.d);
-                        sQLiteDatabase.insert(a.InterfaceC1079a.f40804a, null, contentValues);
+                        sQLiteDatabase.insert(a.InterfaceC0909a.f27113a, null, contentValues);
                     } catch (Exception e2) {
                     }
                 }
@@ -310,11 +310,11 @@ public class UMProcessDBHelper {
                     if (i2 >= size) {
                         break;
                     }
-                    sQLiteDatabase.execSQL("delete from __et_p where rowid=" + list.get(i2).f40800a);
+                    sQLiteDatabase.execSQL("delete from __et_p where rowid=" + list.get(i2).f27109a);
                     i = i2 + 1;
                 }
             } else {
-                sQLiteDatabase.delete(a.InterfaceC1079a.f40804a, null, null);
+                sQLiteDatabase.delete(a.InterfaceC0909a.f27113a, null, null);
             }
             sQLiteDatabase.setTransactionSuccessful();
             if (sQLiteDatabase != null) {
@@ -498,7 +498,7 @@ public class UMProcessDBHelper {
             try {
                 try {
                     sQLiteDatabase.beginTransaction();
-                    cursor = sQLiteDatabase.query(a.InterfaceC1079a.f40804a, null, "rowid=?", new String[]{String.valueOf(num)}, null, null, null);
+                    cursor = sQLiteDatabase.query(a.InterfaceC0909a.f27113a, null, "rowid=?", new String[]{String.valueOf(num)}, null, null, null);
                     JSONObject jSONObject2 = null;
                     if (cursor != null) {
                         jSONObject2 = null;

@@ -314,7 +314,7 @@ public class IntentFilter implements Parcelable {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0053, code lost:
-        if (r0.contains(com.android.internal.telephony.PhoneConstants.APN_TYPE_ALL) == false) goto L20;
+        if (r0.contains("*") == false) goto L20;
      */
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0077, code lost:
         if (r0.contains(r8.substring(0, r0)) == false) goto L26;
@@ -928,7 +928,7 @@ public class IntentFilter implements Parcelable {
                             }
                         }
                     }
-                } else if (name.equals("auth")) {
+                } else if (name.equals(AUTH_STR)) {
                     String attributeValue8 = xmlPullParser.getAttributeValue(null, "host");
                     String attributeValue9 = xmlPullParser.getAttributeValue(null, "port");
                     if (attributeValue8 != null) {
@@ -1132,13 +1132,13 @@ public class IntentFilter implements Parcelable {
                 while (true) {
                     int i12 = i11;
                     if (i12 < countDataAuthorities) {
-                        xmlSerializer.startTag(null, "auth");
+                        xmlSerializer.startTag(null, AUTH_STR);
                         AuthorityEntry authorityEntry = this.mDataAuthorities.get(i12);
                         xmlSerializer.attribute(null, "host", authorityEntry.getHost());
                         if (authorityEntry.getPort() >= 0) {
                             xmlSerializer.attribute(null, "port", Integer.toString(authorityEntry.getPort()));
                         }
-                        xmlSerializer.endTag(null, "auth");
+                        xmlSerializer.endTag(null, AUTH_STR);
                         i11 = i12 + 1;
                     } else {
                         int countDataPaths = countDataPaths();

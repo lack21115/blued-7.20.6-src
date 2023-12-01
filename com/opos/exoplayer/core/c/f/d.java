@@ -11,11 +11,11 @@ import java.util.Collections;
 public final class d implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f25189a = {73, 68, 51};
+    private static final byte[] f11501a = {73, 68, 51};
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.opos.exoplayer.core.i.l f25190c;
+    private final com.opos.exoplayer.core.i.l f11502c;
     private final com.opos.exoplayer.core.i.m d;
     private final String e;
     private String f;
@@ -37,8 +37,8 @@ public final class d implements h {
     }
 
     public d(boolean z, String str) {
-        this.f25190c = new com.opos.exoplayer.core.i.l(new byte[7]);
-        this.d = new com.opos.exoplayer.core.i.m(Arrays.copyOf(f25189a, 10));
+        this.f11502c = new com.opos.exoplayer.core.i.l(new byte[7]);
+        this.d = new com.opos.exoplayer.core.i.m(Arrays.copyOf(f11501a, 10));
         c();
         this.b = z;
         this.e = str;
@@ -62,7 +62,7 @@ public final class d implements h {
 
     private void b(com.opos.exoplayer.core.i.m mVar) {
         int i;
-        byte[] bArr = mVar.f25496a;
+        byte[] bArr = mVar.f11808a;
         int d = mVar.d();
         int c2 = mVar.c();
         while (d < c2) {
@@ -123,7 +123,7 @@ public final class d implements h {
 
     private void d() {
         this.i = 1;
-        this.j = f25189a.length;
+        this.j = f11501a.length;
         this.o = 0;
         this.d.c(0);
     }
@@ -140,27 +140,27 @@ public final class d implements h {
     }
 
     private void g() {
-        this.f25190c.a(0);
+        this.f11502c.a(0);
         if (this.m) {
-            this.f25190c.b(10);
+            this.f11502c.b(10);
         } else {
-            int c2 = this.f25190c.c(2) + 1;
+            int c2 = this.f11502c.c(2) + 1;
             int i = c2;
             if (c2 != 2) {
                 com.opos.cmn.an.f.a.c("AdtsReader", "Detected audio object type: " + c2 + ", but assuming AAC LC.");
                 i = 2;
             }
-            int c3 = this.f25190c.c(4);
-            this.f25190c.b(1);
-            byte[] a2 = com.opos.exoplayer.core.i.c.a(i, c3, this.f25190c.c(3));
+            int c3 = this.f11502c.c(4);
+            this.f11502c.b(1);
+            byte[] a2 = com.opos.exoplayer.core.i.c.a(i, c3, this.f11502c.c(3));
             Pair<Integer, Integer> a3 = com.opos.exoplayer.core.i.c.a(a2);
             Format a4 = Format.a(this.f, "audio/mp4a-latm", null, -1, -1, a3.second.intValue(), a3.first.intValue(), Collections.singletonList(a2), null, 0, this.e);
             this.n = 1024000000 / a4.s;
             this.g.a(a4);
             this.m = true;
         }
-        this.f25190c.b(4);
-        int c4 = (this.f25190c.c(13) - 2) - 5;
+        this.f11502c.b(4);
+        int c4 = (this.f11502c.c(13) - 2) - 5;
         int i2 = c4;
         if (this.l) {
             i2 = c4 - 2;
@@ -201,13 +201,13 @@ public final class d implements h {
                 b(mVar);
             } else if (i != 1) {
                 if (i == 2) {
-                    if (a(mVar, this.f25190c.f25494a, this.l ? 7 : 5)) {
+                    if (a(mVar, this.f11502c.f11806a, this.l ? 7 : 5)) {
                         g();
                     }
                 } else if (i == 3) {
                     c(mVar);
                 }
-            } else if (a(mVar, this.d.f25496a, 10)) {
+            } else if (a(mVar, this.d.f11808a, 10)) {
                 f();
             }
         }

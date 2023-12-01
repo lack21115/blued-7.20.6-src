@@ -1,7 +1,7 @@
 package android.util;
 
 import android.app.backup.FullBackup;
-import com.alipay.sdk.util.i;
+import com.huawei.hms.ads.fw;
 
 /* loaded from: source-9557208-dex2jar.jar:android/util/TypedValue.class */
 public class TypedValue {
@@ -124,7 +124,7 @@ public class TypedValue {
             case 17:
                 return "0x" + Integer.toHexString(i2);
             case 18:
-                return i2 != 0 ? "true" : "false";
+                return i2 != 0 ? fw.Code : "false";
         }
         return str;
     }
@@ -212,7 +212,7 @@ public class TypedValue {
         if (this.resourceId != 0) {
             sb.append(" r=0x").append(Integer.toHexString(this.resourceId));
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

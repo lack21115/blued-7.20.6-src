@@ -7,16 +7,16 @@ import com.opos.exoplayer.core.h.g;
 public final class m implements g.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f25459a;
+    private final Context f11771a;
     private final t<? super g> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final g.a f25460c;
+    private final g.a f11772c;
 
     public m(Context context, t<? super g> tVar, g.a aVar) {
-        this.f25459a = context.getApplicationContext();
+        this.f11771a = context.getApplicationContext();
         this.b = tVar;
-        this.f25460c = aVar;
+        this.f11772c = aVar;
     }
 
     public m(Context context, String str) {
@@ -30,6 +30,6 @@ public final class m implements g.a {
     @Override // com.opos.exoplayer.core.h.g.a
     /* renamed from: b */
     public l a() {
-        return new l(this.f25459a, this.b, this.f25460c.a());
+        return new l(this.f11771a, this.b, this.f11772c.a());
     }
 }

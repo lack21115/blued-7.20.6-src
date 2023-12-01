@@ -1,6 +1,5 @@
 package com.soft.blued.ui.web;
 
-import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -49,7 +48,6 @@ import com.blued.android.framework.web.BluedWebView;
 import com.blued.android.module.common.utils.ActivityChangeAnimationUtils;
 import com.blued.android.module.common.utils.CommonPreferences;
 import com.blued.android.module.common.utils.PermissionUtils;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.ModelLoaderRegistry;
 import com.blued.android.module.common.web.jsbridge.BridgeHandler;
 import com.blued.android.module.common.web.jsbridge.BridgeManager;
@@ -68,6 +66,7 @@ import com.blued.community.track.EventTrackFeed;
 import com.blued.community.utils.CommunityPreferences;
 import com.blued.das.client.feed.FeedProtos;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.hms.ads.fw;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.soft.blued.R;
 import com.soft.blued.customview.WebViewProgressBar;
@@ -110,7 +109,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
     protected ViewGroup b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected BluedWebView f34481c;
+    protected BluedWebView f20790c;
     protected LinearLayout d;
     protected LinearLayout e;
     protected LinearLayout f;
@@ -127,7 +126,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
     private boolean o = false;
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f34480a = "";
+    protected String f20789a = "";
     private String p = "";
     private boolean q = false;
     private boolean r = false;
@@ -152,10 +151,9 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
             InstantLog.b("web_page_options_click", 3);
         }
 
-        @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
         public void handler(String str, CallBackFunction callBackFunction) {
-            if (WebViewShowInfoFragment.this.G.f18775c == null) {
-                WebViewShowInfoFragment.this.G.f18775c = new WebBtmOptions(WebViewShowInfoFragment.this.f34481c.a().getActivity(), new View.OnClickListener() { // from class: com.soft.blued.ui.web.-$$Lambda$WebViewShowInfoFragment$11$SmBVN6OFa2tkZVHRp4_tJSRo_Ts
+            if (WebViewShowInfoFragment.this.G.c == null) {
+                WebViewShowInfoFragment.this.G.c = new WebBtmOptions(WebViewShowInfoFragment.this.f20790c.a().getActivity(), new View.OnClickListener() { // from class: com.soft.blued.ui.web.-$$Lambda$WebViewShowInfoFragment$11$SmBVN6OFa2tkZVHRp4_tJSRo_Ts
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         WebViewShowInfoFragment.AnonymousClass11.a(view);
@@ -166,7 +164,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
             if (webShareModel != null) {
                 WebViewShowInfoFragment.this.G.b = webShareModel.activitySecretText;
                 Log.v("drb", "shareImgUrl:" + webShareModel.imgUrl + " -- shareUrl:" + webShareModel.shareUrl + " -- shareTitle:" + webShareModel.title + " -- shareContent:" + webShareModel.description + " -- shareType:" + webShareModel.shareType);
-                WebViewShowInfoFragment.this.G.f18775c.a(ShareUtils.a().a(webShareModel.imgUrl, WebViewShowInfoFragment.this.f34481c.c(), webShareModel.shareUrl, webShareModel.title, webShareModel.description, webShareModel.description, 0), WebViewShowInfoFragment.this.G.f18774a);
+                WebViewShowInfoFragment.this.G.c.a(ShareUtils.a().a(webShareModel.imgUrl, WebViewShowInfoFragment.this.f20790c.c(), webShareModel.shareUrl, webShareModel.title, webShareModel.description, webShareModel.description, 0), WebViewShowInfoFragment.this.G.a);
             }
         }
     }
@@ -176,14 +174,13 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
     class AnonymousClass19 implements CallBackFunction {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ WebViewShowInfoFragment f34494a;
+        final /* synthetic */ WebViewShowInfoFragment f20803a;
 
-        @Override // com.blued.android.module.common.web.jsbridge.CallBackFunction
         public void onCallBack(String str) {
             ShareEntity shareEntity = (ShareEntity) AppInfo.f().fromJson(str, (Class<Object>) ShareEntity.class);
             if (shareEntity != null) {
-                this.f34494a.G.b = shareEntity.p;
-                this.f34494a.G.f18775c.a(shareEntity, this.f34494a.G.f18774a);
+                this.f20803a.G.b = shareEntity.p;
+                this.f20803a.G.c.a(shareEntity, this.f20803a.G.a);
             }
         }
     }
@@ -205,7 +202,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        if (z3 && i != 9 && ((a2 = WebLinkManager.f34474a.a(str)) == WebLinkManager.LinkType.BLACK || a2 == WebLinkManager.LinkType.NORMAL)) {
+        if (z3 && i != 9 && ((a2 = WebLinkManager.f20783a.a(str)) == WebLinkManager.LinkType.BLACK || a2 == WebLinkManager.LinkType.NORMAL)) {
             WebViewLinkPromptFragment.a(context, str, str2, z, i, z2, a2);
         } else if (BluedWebView.a(context, str, new SimpleWebCallBack())) {
             if (i == 14) {
@@ -217,12 +214,12 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
             bundle.putString("title_name", str2);
             bundle.putInt("from_tag", i);
             bundle.putBoolean("auto_finish", z);
-            if ("true".equals(BluedUrlUtils.a(str, "is_invasion"))) {
+            if (fw.Code.equals(BluedUrlUtils.a(str, "is_invasion"))) {
                 z2 = true;
             }
             bundle.putBoolean("Screen_Invasion", z2);
-            for (Map.Entry<String, String> entry : BluedUrlUtils.b(str).entrySet()) {
-                bundle.putString(entry.getKey(), entry.getValue());
+            for (Map.Entry entry : BluedUrlUtils.b(str).entrySet()) {
+                bundle.putString((String) entry.getKey(), (String) entry.getValue());
             }
             if (z2) {
                 TerminalActivity.a(bundle);
@@ -279,10 +276,10 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
             case R.string.copy_link /* 2131887355 */:
                 InstantLog.b("web_page_options_click", 0);
                 if (Build.VERSION.SDK_INT < 11 || Build.VERSION.SDK_INT == 18) {
-                    ((ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE)).setText(this.f34481c.d());
+                    ((ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE)).setText(this.f20790c.d());
                 } else {
                     try {
-                        ((android.content.ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple url", this.G.f18775c.f9210a.linkUrl));
+                        ((android.content.ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("simple url", this.G.c.a.linkUrl));
                     } catch (Exception e) {
                     }
                 }
@@ -291,7 +288,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
             case R.string.open_in_browser /* 2131891181 */:
                 InstantLog.b("web_page_options_click", 1);
                 Intent intent = new Intent("android.intent.action.VIEW");
-                intent.setData(Uri.parse(this.G.f18775c.f9210a.linkUrl));
+                intent.setData(Uri.parse(this.G.c.a.linkUrl));
                 if (AppUtils.a(intent)) {
                     startActivity(intent);
                     return;
@@ -299,8 +296,8 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 return;
             case R.string.refresh /* 2131891459 */:
                 InstantLog.b("web_page_options_click", 2);
-                this.f34481c.c().reload();
-                this.f34481c.c().setVisibility(0);
+                this.f20790c.c().reload();
+                this.f20790c.c().setVisibility(0);
                 this.e.setVisibility(8);
                 return;
             case 2131891705:
@@ -328,14 +325,15 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void d() {
         LiveEventBus.get("LIVE_WEB_PAGE_REFRESH", String.class).observe(this, new Observer<String>() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.1
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (WebViewShowInfoFragment.this.f34481c != null) {
-                    WebViewShowInfoFragment.this.f34481c.c().reload();
-                    WebViewShowInfoFragment.this.f34481c.c().setVisibility(0);
+                if (WebViewShowInfoFragment.this.f20790c != null) {
+                    WebViewShowInfoFragment.this.f20790c.c().reload();
+                    WebViewShowInfoFragment.this.f20790c.c().setVisibility(0);
                 }
                 if (WebViewShowInfoFragment.this.e != null) {
                     WebViewShowInfoFragment.this.e.setVisibility(8);
@@ -345,14 +343,13 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
     }
 
     private void i() {
-        this.H = new BridgeManager(this.f34481c);
+        this.H = new BridgeManager(this.f20790c);
         final ModelLoaderRegistry modelLoaderRegistry = new ModelLoaderRegistry();
-        modelLoaderRegistry.add(LoaderConstants.OPEN_SHARE, new WebShareLoader.Factory());
-        modelLoaderRegistry.add(LoaderConstants.SET_HEAD_MENU, new WebHeadMenuLoader.Factory(this.H, this.x, getActivity()));
-        modelLoaderRegistry.add(LoaderConstants.PAGE_INFO, new PageInfoLoader.Factory(this.H, getLifecycle()));
-        modelLoaderRegistry.add(LoaderConstants.YY_BUY_BEANS, new WebPaBeansLoader.Factory());
-        this.H.registerHandler(LoaderConstants.SET_HEAD_MENU, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.6
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
+        modelLoaderRegistry.add("openShare", new WebShareLoader.Factory());
+        modelLoaderRegistry.add("setHeadMenu", new WebHeadMenuLoader.Factory(this.H, this.x, getActivity()));
+        modelLoaderRegistry.add("pageInfo", new PageInfoLoader.Factory(this.H, getLifecycle()));
+        modelLoaderRegistry.add("yy_js_native_bean", new WebPaBeansLoader.Factory());
+        this.H.registerHandler("setHeadMenu", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.6
             public void handler(String str, CallBackFunction callBackFunction) {
                 Log.v("drb", "收到js data:" + str);
                 if (!TextUtils.isEmpty(str)) {
@@ -360,7 +357,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                         WebHeadMenuModel webHeadMenuModel = (WebHeadMenuModel) AppInfo.f().fromJson(str, (Class<Object>) WebHeadMenuModel.class);
                         if (webHeadMenuModel.leftOption != null) {
                             for (WebHeadMenuModel.LeftOption leftOption : webHeadMenuModel.leftOption) {
-                                if (!TextUtils.isEmpty(leftOption.optionType) && leftOption.optionType.equals(LoaderConstants.INTERCEPT_GO_BACK)) {
+                                if (!TextUtils.isEmpty(leftOption.optionType) && leftOption.optionType.equals("interceptGoBack")) {
                                     WebViewShowInfoFragment.this.w = true;
                                 }
                             }
@@ -369,42 +366,37 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                         e.printStackTrace();
                     }
                 }
-                modelLoaderRegistry.getLoadData(LoaderConstants.SET_HEAD_MENU).fetcher.loadData(str, callBackFunction, new DataFetcher.DataFetcherCallback() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.6.1
-                    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher.DataFetcherCallback
+                modelLoaderRegistry.getLoadData("setHeadMenu").fetcher.loadData(str, callBackFunction, new DataFetcher.DataFetcherCallback() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.6.1
                     public void onLoadFailed(Exception exc) {
                     }
 
-                    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher.DataFetcherCallback
                     public void onLoadSuccess() {
                         WebViewShowInfoFragment.this.I.setVisibility(8);
                     }
                 });
             }
         });
-        this.H.registerHandler(LoaderConstants.GET_NETWORK_TYPE, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.7
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
+        this.H.registerHandler("getNetworkType", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.7
             public void handler(String str, CallBackFunction callBackFunction) {
                 Log.v("drb", "获取网络状态:" + NetworkUtils.a());
                 callBackFunction.onCallBack(ResponseUtil.makeResponse(1, "获取网络状态成功！", NetworkUtils.a()));
             }
         });
-        this.H.registerHandler(LoaderConstants.GET_CURRENT_LOCATION, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.8
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
+        this.H.registerHandler("getCurrentLocation", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.8
             public void handler(String str, CallBackFunction callBackFunction) {
                 callBackFunction.onCallBack(ResponseUtil.makeResponse(1, "获取地理位置成功！", AppInfo.f().toJson(new LatLonModel(CommonPreferences.v(), CommonPreferences.u()))));
             }
         });
-        modelLoaderRegistry.getLoadData(LoaderConstants.PAGE_INFO).fetcher.loadData("", null, null);
+        modelLoaderRegistry.getLoadData("pageInfo").fetcher.loadData("", (CallBackFunction) null, (DataFetcher.DataFetcherCallback) null);
         this.H.registerHandler("device", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.9
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
             public void handler(String str, CallBackFunction callBackFunction) {
                 int i;
                 String str2 = AppInfo.j + "";
                 String str3 = Build.MANUFACTURER + Build.MODEL;
                 String str4 = Build.VERSION.RELEASE;
                 String c2 = DeviceUtils.c();
-                int width = WebViewShowInfoFragment.this.f34481c.c().getWidth();
-                int height = WebViewShowInfoFragment.this.f34481c.c().getHeight();
+                int width = WebViewShowInfoFragment.this.f20790c.c().getWidth();
+                int height = WebViewShowInfoFragment.this.f20790c.c().getHeight();
                 if (Build.VERSION.SDK_INT >= 23) {
                     FragmentActivity activity = WebViewShowInfoFragment.this.getActivity();
                     Context unused = WebViewShowInfoFragment.this.F;
@@ -417,16 +409,14 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 callBackFunction.onCallBack(ResponseUtil.makeResponse(1, "获取手机系统元素成功！", AppInfo.f().toJson(deviceModel)));
             }
         });
-        this.H.registerHandler(LoaderConstants.VIBRATE, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.10
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
+        this.H.registerHandler("vibrate", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.10
             public void handler(String str, CallBackFunction callBackFunction) {
                 MediaUtils.a().a(1000L);
                 callBackFunction.onCallBack(ResponseUtil.makeResponse(1, "震动成功！"));
             }
         });
-        this.H.registerHandler(LoaderConstants.OPEN_SHARE, new AnonymousClass11());
-        this.H.registerHandler(LoaderConstants.FEED_CUSTOM_RECOMMEND, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.12
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
+        this.H.registerHandler("openShare", new AnonymousClass11());
+        this.H.registerHandler("feedCustomRecommend", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.12
             public void handler(String str, CallBackFunction callBackFunction) {
                 FeedCustomModel feedCustomModel = (FeedCustomModel) AppInfo.f().fromJson(str, (Class<Object>) FeedCustomModel.class);
                 if (feedCustomModel != null) {
@@ -435,13 +425,11 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
             }
         });
         this.H.registerHandler("close", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.13
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
             public void handler(String str, CallBackFunction callBackFunction) {
                 WebViewShowInfoFragment.this.b();
             }
         });
-        this.H.registerHandler(LoaderConstants.YY_BUY_BEANS, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.14
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
+        this.H.registerHandler("yy_js_native_bean", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.14
             public void handler(String str, CallBackFunction callBackFunction) {
                 WebBuyBeansModel webBuyBeansModel;
                 if (StringUtils.d(str) || (webBuyBeansModel = (WebBuyBeansModel) AppInfo.f().fromJson(str, (Class<Object>) WebBuyBeansModel.class)) == null || StringUtils.d(webBuyBeansModel.prop_id)) {
@@ -450,18 +438,18 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 YYRoomInfoManager.e().a(webBuyBeansModel, WebViewShowInfoFragment.this);
             }
         });
-        this.H.registerHandler(LoaderConstants.SAVE_IMAGE, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.15
+        this.H.registerHandler("saveImage", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.15
 
             /* renamed from: com.soft.blued.ui.web.WebViewShowInfoFragment$15$1  reason: invalid class name */
             /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/web/WebViewShowInfoFragment$15$1.class */
             class AnonymousClass1 implements PermissionCallbacks {
 
                 /* renamed from: a  reason: collision with root package name */
-                final /* synthetic */ SaveImageModel f34489a;
+                final /* synthetic */ SaveImageModel f20798a;
                 final /* synthetic */ CallBackFunction b;
 
                 AnonymousClass1(SaveImageModel saveImageModel, CallBackFunction callBackFunction) {
-                    this.f34489a = saveImageModel;
+                    this.f20798a = saveImageModel;
                     this.b = callBackFunction;
                 }
 
@@ -475,25 +463,21 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                     callBackFunction.onCallBack(ResponseUtil.makeResponse(0, "保存图片异常:" + exc.toString()));
                 }
 
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void U_() {
-                    ImageFileWrapper a2 = ImageFileLoader.a(WebViewShowInfoFragment.this.getFragmentActive()).a(this.f34489a.imgUrl);
+                    ImageFileWrapper a2 = ImageFileLoader.a(WebViewShowInfoFragment.this.getFragmentActive()).a(this.f20798a.imgUrl);
                     final CallBackFunction callBackFunction = this.b;
                     a2.a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.web.-$$Lambda$WebViewShowInfoFragment$15$1$A781R4N72Chx7dPu153L42sovpk
-                        @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                         public final void onUIFinish(File file, Exception exc) {
-                            WebViewShowInfoFragment.AnonymousClass15.AnonymousClass1.a(CallBackFunction.this, file, exc);
+                            WebViewShowInfoFragment.AnonymousClass15.AnonymousClass1.a(callBackFunction, file, exc);
                         }
                     }).a();
                 }
 
-                @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void a(String[] strArr) {
                     this.b.onCallBack(ResponseUtil.makeResponse(0, "保存图片失败，权限申请异常"));
                 }
             }
 
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
             public void handler(String str, CallBackFunction callBackFunction) {
                 try {
                     SaveImageModel saveImageModel = (SaveImageModel) AppInfo.f().fromJson(str, (Class<Object>) SaveImageModel.class);
@@ -510,8 +494,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 }
             }
         });
-        this.H.registerHandler(LoaderConstants.GO_BACK, new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.16
-            @Override // com.blued.android.module.common.web.jsbridge.BridgeHandler
+        this.H.registerHandler("goBack", new BridgeHandler() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.16
             public void handler(String str, CallBackFunction callBackFunction) {
                 WebViewShowInfoFragment.this.g();
             }
@@ -520,7 +503,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
 
     /* JADX INFO: Access modifiers changed from: private */
     public void j() {
-        if (this.f34481c.c().canGoBack()) {
+        if (this.f20790c.c().canGoBack()) {
             this.D.setVisibility(0);
             Log.v("drb", "webView.setCloseVisible 展示");
             return;
@@ -545,6 +528,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         return (ViewGroup) layoutInflater.inflate(R.layout.activity_webview_showinfo, viewGroup, false);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void a() {
         int i = this.n;
         if (i == 10 || i == 11 || i == 16) {
@@ -558,7 +542,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         this.e = linearLayout;
         linearLayout.setOnClickListener(this);
         this.e.setVisibility(8);
-        this.g = (TextView) this.e.findViewById(2131371262);
+        this.g = (TextView) this.e.findViewById(R.id.tv_desc);
         this.f = (LinearLayout) this.b.findViewById(R.id.ll_stop_visit);
         this.h = (FrameLayout) this.b.findViewById(R.id.share_code_layout);
         this.i = (TextView) this.b.findViewById(R.id.share_to_code_go_wechat);
@@ -572,12 +556,10 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         webView.setBackgroundColor(0);
         webView.requestFocus(130);
         this.G = new SimpleWebCallBack() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.3
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(BluedWebView bluedWebView, int i2) {
                 WebViewShowInfoFragment.this.E.setProgress(i2);
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(BluedWebView bluedWebView, int i2, String str, String str2) {
                 bluedWebView.c().setVisibility(8);
                 WebViewShowInfoFragment.this.e.setVisibility(0);
@@ -585,25 +567,23 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 WebViewShowInfoFragment.this.g.setText(String.format(WebViewShowInfoFragment.this.F.getResources().getString(R.string.page_not_exists), str2));
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(BluedWebView bluedWebView, String str) {
                 if (CommonTools.a(WebViewShowInfoFragment.this)) {
                     WebViewShowInfoFragment.this.c(str);
                 }
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(BluedWebView bluedWebView, String str, boolean z) {
                 if (WebViewShowInfoFragment.this.H != null) {
                     WebViewShowInfoFragment.this.H.onLoadPageOverrideLoad(bluedWebView, str, z);
                 }
                 if (z) {
                     WebViewShowInfoFragment.this.t = true;
-                    Map<String, String> b = BluedUrlUtils.b(str);
+                    Map b = BluedUrlUtils.b(str);
                     if (b == null || b.size() <= 0 || !b.containsKey("blued_mode")) {
                         return;
                     }
-                    String str2 = b.get("blued_mode");
+                    String str2 = (String) b.get("blued_mode");
                     if (!StringUtils.d(str2)) {
                         if (str2.contains("fullscreen")) {
                             WebViewShowInfoFragment.this.m = true;
@@ -614,7 +594,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                             WebViewShowInfoFragment.this.B.setVisibility(8);
                         }
                     }
-                    String str3 = b.get("screen_orientation");
+                    String str3 = (String) b.get("screen_orientation");
                     if (Camera.Parameters.SCENE_MODE_LANDSCAPE.equalsIgnoreCase(str3)) {
                         WebViewShowInfoFragment.this.getActivity().setRequestedOrientation(0);
                     } else if (Camera.Parameters.SCENE_MODE_PORTRAIT.equalsIgnoreCase(str3)) {
@@ -626,7 +606,6 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 }
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void a(String str) {
                 if ("show".equals(str)) {
                     WebViewShowInfoFragment.this.B.setVisibility(0);
@@ -635,12 +614,10 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 }
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public boolean a(BluedWebView bluedWebView, BluedUrlParser bluedUrlParser) {
                 return WebViewShowInfoFragment.this.a(bluedWebView, bluedUrlParser);
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack
             public void b(BluedWebView bluedWebView, final int i2) {
                 WebViewShowInfoFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.3.1
                     @Override // java.lang.Runnable
@@ -650,7 +627,6 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 });
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void b(BluedWebView bluedWebView, String str, boolean z) {
                 if (WebViewShowInfoFragment.this.H != null) {
                     WebViewShowInfoFragment.this.H.onLoadPageFinished(bluedWebView, str);
@@ -658,13 +634,12 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 if (z) {
                     WebViewShowInfoFragment.this.t = true;
                 }
-                if (CommonTools.a((Activity) WebViewShowInfoFragment.this.getActivity())) {
+                if (CommonTools.a(WebViewShowInfoFragment.this.getActivity())) {
                     WebViewShowInfoFragment.this.j();
                     WebViewShowInfoFragment.this.f();
                 }
             }
 
-            @Override // com.blued.android.web.SimpleWebCallBack, com.blued.android.framework.web.BluedWebView.WebCallback
             public void b(String str) {
                 Log.e("xufangmu", "onCallPopularizeMsg: --->" + str);
                 WebViewShowInfoFragment.this.J = TextUtils.equals(str, "call/popularize");
@@ -678,36 +653,36 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         };
         this.k = shareOptionsItemClickListener;
         this.G.a(shareOptionsItemClickListener);
-        this.f34481c = new BluedWebView(this, webView, this.b, this.G);
+        this.f20790c = new BluedWebView(this, webView, this.b, this.G);
         i();
-        this.f34481c.b(this.n);
+        this.f20790c.b(this.n);
         if (this.n == 13) {
-            this.f34481c.c().getSettings().setBuiltInZoomControls(false);
-            this.f34481c.a(DensityUtils.a(getActivity(), 44.0f));
+            this.f20790c.c().getSettings().setBuiltInZoomControls(false);
+            this.f20790c.a(DensityUtils.a(getActivity(), 44.0f));
             return;
         }
         BridgeManager bridgeManager = this.H;
-        if (bridgeManager == null || bridgeManager.hasJSUrl(this.f34480a)) {
+        if (bridgeManager == null || bridgeManager.hasJSUrl(this.f20789a)) {
             return;
         }
         webView.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.5
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 1) {
-                    if (WebViewShowInfoFragment.this.f34481c.c().canGoBack()) {
+                    if (WebViewShowInfoFragment.this.f20790c.c().canGoBack()) {
                         Log.v("drb", "webView.setOnTouchListener 展示");
                         WebViewShowInfoFragment.this.D.setVisibility(0);
                     } else {
                         Log.v("drb", "webView.setOnTouchListener 隐藏");
                         WebViewShowInfoFragment.this.D.setVisibility(4);
                     }
-                    String d = WebViewShowInfoFragment.this.f34481c.d();
+                    String d = WebViewShowInfoFragment.this.f20790c.d();
                     if (StringUtils.d(d) || !d.contains("file:///android_asset/")) {
                         return false;
                     }
-                    WebViewShowInfoFragment.this.f34481c.c().clearCache(false);
+                    WebViewShowInfoFragment.this.f20790c.c().clearCache(false);
                     WebViewShowInfoFragment webViewShowInfoFragment = WebViewShowInfoFragment.this;
-                    webViewShowInfoFragment.b(webViewShowInfoFragment.f34480a);
+                    webViewShowInfoFragment.b(webViewShowInfoFragment.f20789a);
                     return false;
                 }
                 return false;
@@ -719,14 +694,14 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
     }
 
     public void a(String str, String str2) {
-        BluedWebView bluedWebView = this.f34481c;
+        BluedWebView bluedWebView = this.f20790c;
         if (bluedWebView == null || bluedWebView.a(str, str2)) {
             return;
         }
         this.f.setVisibility(0);
         this.y.setText("");
         this.e.setVisibility(8);
-        this.f34481c.c().setVisibility(8);
+        this.f20790c.c().setVisibility(8);
     }
 
     public boolean a(BluedWebView bluedWebView, BluedUrlParser bluedUrlParser) {
@@ -841,7 +816,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
     }
 
     public String e() {
-        String str = this.f34480a;
+        String str = this.f20789a;
         return str != null ? str : "";
     }
 
@@ -857,34 +832,31 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
             BluedPreferences.af(false);
             return false;
         }
-        BluedWebView bluedWebView = this.f34481c;
+        BluedWebView bluedWebView = this.f20790c;
         if (bluedWebView == null || !bluedWebView.c().canGoBack()) {
             b();
             return false;
         }
-        this.f34481c.c().goBack();
+        this.f20790c.c().goBack();
         return true;
     }
 
     public void h() {
         Log.v("xxx", "NATIVE_TO_JS notifyJsBackPressed");
-        this.H.callHandler(LoaderConstants.NATIVE_TO_JS, AppInfo.f().toJson(new CallJsModel(LoaderConstants.INTERCEPT_GO_BACK)), new CallBackFunction() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.20
-            @Override // com.blued.android.module.common.web.jsbridge.CallBackFunction
+        this.H.callHandler("nativeToJs", AppInfo.f().toJson(new CallJsModel("interceptGoBack")), new CallBackFunction() { // from class: com.soft.blued.ui.web.WebViewShowInfoFragment.20
             public void onCallBack(String str) {
                 Log.v("drb", "NATIVE_TO_JS notifyJsBackPressed onCallBack：" + str);
             }
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
-        if (this.f34481c.a(i, i2, intent)) {
+        if (this.f20790c.a(i, i2, intent)) {
             return;
         }
         YYRoomInfoManager.e().a(i, i2, intent, this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         if (this.w) {
             Log.e("xxx", "onBackPressed() interceptGoBack");
@@ -907,11 +879,11 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 onBackPressed();
                 return;
             case 2131363126:
-                this.f34481c.b("");
+                this.f20790c.b("");
                 return;
             case R.id.ll_page_not_found /* 2131368116 */:
-                this.f34481c.c().reload();
-                this.f34481c.c().setVisibility(0);
+                this.f20790c.c().reload();
+                this.f20790c.c().setVisibility(0);
                 this.e.setVisibility(8);
                 return;
             case R.id.share_to_code_close /* 2131369791 */:
@@ -936,7 +908,6 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // androidx.fragment.app.Fragment, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         ViewGroup viewGroup;
         super.onConfigurationChanged(configuration);
@@ -958,7 +929,6 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
@@ -971,7 +941,6 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         String str;
         this.F = getActivity();
@@ -987,8 +956,8 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                     if (!string.contains("://")) {
                         str2 = "http://" + string;
                     }
-                    this.f34480a = str2;
-                    Log.v("drb", "跳转到webview页面载入链接：" + this.f34480a);
+                    this.f20789a = str2;
+                    Log.v("drb", "跳转到webview页面载入链接：" + this.f20789a);
                     this.p = getArguments().getString("title_name");
                     this.v = getArguments().getBoolean("hide_title");
                     this.u = getArguments().getBoolean("auto_finish", false);
@@ -1006,7 +975,7 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
                 a(str, this.p);
             } catch (InflateException e) {
                 getActivity().finish();
-                AppMethods.a((CharSequence) "请前往系统应用商店安装系统浏览器~");
+                AppMethods.a("请前往系统应用商店安装系统浏览器~");
                 return null;
             }
         } else if (viewGroup2.getParent() != null) {
@@ -1015,10 +984,9 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
-        BluedWebView bluedWebView = this.f34481c;
+        BluedWebView bluedWebView = this.f20790c;
         if (bluedWebView != null) {
             bluedWebView.h();
         }
@@ -1028,25 +996,22 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
-        BluedWebView bluedWebView = this.f34481c;
+        BluedWebView bluedWebView = this.f20790c;
         if (bluedWebView != null) {
             bluedWebView.g();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        BluedWebView bluedWebView = this.f34481c;
+        BluedWebView bluedWebView = this.f20790c;
         if (bluedWebView != null) {
             bluedWebView.f();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         if (this.t || !this.u) {
@@ -1055,7 +1020,6 @@ public class WebViewShowInfoFragment extends BaseFragment implements View.OnClic
         b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         d();

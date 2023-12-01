@@ -14,9 +14,9 @@ public final class a extends com.igexin.push.core.a.a {
     @Override // com.igexin.push.core.a.a
     public final boolean a(Object obj) {
         if (obj instanceof com.igexin.push.c.c.f) {
-            c.b.f23335a.d();
+            c.b.f9727a.d();
             com.igexin.c.a.c.a.a("heartbeatRsp", new Object[0]);
-            j.a().a(j.a.f23566a);
+            j.a().a(j.a.f9958a);
             return true;
         }
         return true;

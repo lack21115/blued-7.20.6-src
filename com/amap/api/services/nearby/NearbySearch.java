@@ -10,28 +10,24 @@ import com.amap.api.services.interfaces.INearbySearch;
 public class NearbySearch {
     public static final int AMAP = 1;
     public static final int GPS = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static NearbySearch f5651a;
+    private static NearbySearch a;
     private INearbySearch b;
 
     /* renamed from: com.amap.api.services.nearby.NearbySearch$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/nearby/NearbySearch$1.class */
     static final /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f5652a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[NearbySearchFunctionType.values().length];
-            f5652a = iArr;
+            a = iArr;
             try {
                 iArr[NearbySearchFunctionType.DISTANCE_SEARCH.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f5652a[NearbySearchFunctionType.DRIVING_DISTANCE_SEARCH.ordinal()] = 2;
+                a[NearbySearchFunctionType.DRIVING_DISTANCE_SEARCH.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -48,18 +44,14 @@ public class NearbySearch {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/nearby/NearbySearch$NearbyQuery.class */
     public static class NearbyQuery {
-
-        /* renamed from: a  reason: collision with root package name */
-        private LatLonPoint f5653a;
+        private LatLonPoint a;
         private NearbySearchFunctionType b = NearbySearchFunctionType.DISTANCE_SEARCH;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5654c = 1000;
-        private int d = 1800;
+        private int c = 1000;
+        private int d = AMapException.CODE_AMAP_CLIENT_ERRORCODE_MISSSING;
         private int e = 1;
 
         public LatLonPoint getCenterPoint() {
-            return this.f5653a;
+            return this.a;
         }
 
         public int getCoordType() {
@@ -67,7 +59,7 @@ public class NearbySearch {
         }
 
         public int getRadius() {
-            return this.f5654c;
+            return this.c;
         }
 
         public int getTimeRange() {
@@ -75,7 +67,7 @@ public class NearbySearch {
         }
 
         public int getType() {
-            int i = AnonymousClass1.f5652a[this.b.ordinal()];
+            int i = AnonymousClass1.a[this.b.ordinal()];
             int i2 = 1;
             if (i == 1 || i != 2) {
                 i2 = 0;
@@ -84,7 +76,7 @@ public class NearbySearch {
         }
 
         public void setCenterPoint(LatLonPoint latLonPoint) {
-            this.f5653a = latLonPoint;
+            this.a = latLonPoint;
         }
 
         public void setCoordType(int i) {
@@ -100,7 +92,7 @@ public class NearbySearch {
             if (i > 10000) {
                 i2 = 10000;
             }
-            this.f5654c = i2;
+            this.c = i2;
         }
 
         public void setTimeRange(int i) {
@@ -145,10 +137,10 @@ public class NearbySearch {
     public static void destroy() {
         synchronized (NearbySearch.class) {
             try {
-                if (f5651a != null) {
-                    f5651a.a();
+                if (a != null) {
+                    a.a();
                 }
-                f5651a = null;
+                a = null;
             } catch (Throwable th) {
                 throw th;
             }
@@ -159,14 +151,14 @@ public class NearbySearch {
         NearbySearch nearbySearch;
         synchronized (NearbySearch.class) {
             try {
-                if (f5651a == null) {
+                if (a == null) {
                     try {
-                        f5651a = new NearbySearch(context);
+                        a = new NearbySearch(context);
                     } catch (AMapException e) {
                         throw e;
                     }
                 }
-                nearbySearch = f5651a;
+                nearbySearch = a;
             } catch (Throwable th) {
                 throw th;
             }

@@ -12,7 +12,7 @@ import java.util.Set;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22694a = "e";
+    private static final String f9086a = "e";
     public static final Set<String> b = Collections.unmodifiableSet(new a(16));
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/framework/network/grs/f/e$a.class */
@@ -48,10 +48,10 @@ public class e {
 
     public static String b(Context context, com.huawei.hms.framework.network.grs.e.a aVar, String str, GrsBaseInfo grsBaseInfo, boolean z) {
         if (TextUtils.isEmpty(str)) {
-            Logger.w(f22694a, "routeBy must be not empty string or null.");
+            Logger.w(f9086a, "routeBy must be not empty string or null.");
             return null;
         } else if ("no_route".equals(str) || "unconditional".equals(str)) {
-            Logger.v(f22694a, "routeBy equals NO_ROUTE_POLICY");
+            Logger.v(f9086a, "routeBy equals NO_ROUTE_POLICY");
             return "no_route_country";
         } else {
             return a(context, aVar, str, grsBaseInfo, z);

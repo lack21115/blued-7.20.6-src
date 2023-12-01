@@ -12,22 +12,22 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f40806a;
+    private static c f27115a;
     private ConcurrentHashMap<String, a> b = new ConcurrentHashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f40807c;
+    private Context f27116c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/process/c$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private AtomicInteger f40808a = new AtomicInteger();
+        private AtomicInteger f27117a = new AtomicInteger();
         private SQLiteOpenHelper b;
 
         /* renamed from: c  reason: collision with root package name */
-        private SQLiteDatabase f40809c;
+        private SQLiteDatabase f27118c;
 
         private a() {
         }
@@ -42,10 +42,10 @@ public class c {
         SQLiteDatabase a() {
             SQLiteDatabase sQLiteDatabase;
             synchronized (this) {
-                if (this.f40808a.incrementAndGet() == 1) {
-                    this.f40809c = this.b.getWritableDatabase();
+                if (this.f27117a.incrementAndGet() == 1) {
+                    this.f27118c = this.b.getWritableDatabase();
                 }
-                sQLiteDatabase = this.f40809c;
+                sQLiteDatabase = this.f27118c;
             }
             return sQLiteDatabase;
         }
@@ -53,8 +53,8 @@ public class c {
         void b() {
             synchronized (this) {
                 try {
-                    if (this.f40808a.decrementAndGet() == 0) {
-                        this.f40809c.close();
+                    if (this.f27117a.decrementAndGet() == 0) {
+                        this.f27118c.close();
                     }
                 } catch (Throwable th) {
                 }
@@ -67,25 +67,25 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static c a(Context context) {
-        if (f40806a == null) {
+        if (f27115a == null) {
             synchronized (c.class) {
                 try {
-                    if (f40806a == null) {
-                        f40806a = new c();
+                    if (f27115a == null) {
+                        f27115a = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        c cVar = f40806a;
-        cVar.f40807c = context;
+        c cVar = f27115a;
+        cVar.f27116c = context;
         return cVar;
     }
 
     private a c(String str) {
         if (this.b.get(str) == null) {
-            a a2 = a.a(this.f40807c, str);
+            a a2 = a.a(this.f27116c, str);
             this.b.put(str, a2);
             return a2;
         }

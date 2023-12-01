@@ -13,9 +13,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/LiveCloakingUtil.class */
 public class LiveCloakingUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f14157a = false;
+    public static boolean a = false;
 
     public static int a(List list) {
         int i = 0;

@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class ca {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Object f41660a = new Object();
+    public static final Object f27969a = new Object();
 
     public static void a(Context context, hk hkVar) {
         if (bz.a(hkVar.e())) {
@@ -28,13 +28,13 @@ public class ca {
         String str = a2;
         if (TextUtils.isEmpty(a2)) {
             str = com.xiaomi.push.bn.a(20);
-            com.xiaomi.push.n.a(context).m12062a("mipush", "td_key", str);
+            com.xiaomi.push.n.a(context).m9012a("mipush", "td_key", str);
         }
         return a(str);
     }
 
     private static byte[] a(String str) {
-        byte[] copyOf = Arrays.copyOf(com.xiaomi.push.bk.m11546a(str), 16);
+        byte[] copyOf = Arrays.copyOf(com.xiaomi.push.bk.m8496a(str), 16);
         copyOf[0] = 68;
         copyOf[15] = 84;
         return copyOf;
@@ -54,7 +54,7 @@ public class ca {
                 byte[] b = com.xiaomi.push.h.b(a((Context) context), iq.a(hkVar));
                 if (b != null && b.length > 0) {
                     if (b.length > 10240) {
-                        com.xiaomi.channel.commonutils.logger.b.m11394a("TinyData write to cache file failed case too much data content item:" + hkVar.d() + "  ts:" + System.currentTimeMillis());
+                        com.xiaomi.channel.commonutils.logger.b.m8344a("TinyData write to cache file failed case too much data content item:" + hkVar.d() + "  ts:" + System.currentTimeMillis());
                         com.xiaomi.push.x.a((Closeable) null);
                         com.xiaomi.push.x.a((Closeable) null);
                         return;
@@ -96,7 +96,7 @@ public class ca {
                         throw th;
                     }
                 }
-                com.xiaomi.channel.commonutils.logger.b.m11394a("TinyData write to cache file failed case encryption fail item:" + hkVar.d() + "  ts:" + System.currentTimeMillis());
+                com.xiaomi.channel.commonutils.logger.b.m8344a("TinyData write to cache file failed case encryption fail item:" + hkVar.d() + "  ts:" + System.currentTimeMillis());
                 com.xiaomi.push.x.a((Closeable) null);
                 com.xiaomi.push.x.a((Closeable) null);
             } catch (IOException e3) {

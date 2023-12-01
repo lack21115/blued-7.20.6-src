@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
@@ -35,6 +35,7 @@ import com.blued.android.module.live_china.view.BluedViewExKt;
 import com.blued.das.live.LiveProtos;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.jeremyliao.liveeventbus.LiveEventBus;
+import dalvik.bytecode.Opcodes;
 import java.util.ArrayList;
 import java.util.HashMap;
 import kotlin.Lazy;
@@ -48,13 +49,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMedalWallDialogFragment.class */
 public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13060a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f13061c;
+    private boolean c;
     private boolean d;
     private final Lazy e;
     private final Lazy f;
@@ -179,7 +176,7 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
         Intrinsics.e(fragment, "fragment");
         this.k = liveRoomUserModel;
         this.b = fragment.getFragmentActive();
-        this.f13061c = LiveFloatManager.a().C();
+        this.c = LiveFloatManager.a().C();
         this.d = TextUtils.equals(liveRoomUserModel == null ? null : liveRoomUserModel.uid, LiveRoomManager.a().g());
     }
 
@@ -189,7 +186,7 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
         if (ClickUtils.a(view.getId())) {
             return;
         }
-        LiveMedalExplainDialogFragment.Companion companion = LiveMedalExplainDialogFragment.f13056a;
+        LiveMedalExplainDialogFragment.Companion companion = LiveMedalExplainDialogFragment.a;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         LiveRoomUserModel liveRoomUserModel = this$0.k;
@@ -255,7 +252,7 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
         String g = LiveRoomManager.a().g();
         LiveRoomUserModel liveRoomUserModel = this$0.k;
         EventTrackLive.h(event, badge_id, e, g, liveRoomUserModel == null ? null : liveRoomUserModel.uid);
-        LiveMedalDetailDialogFragment.Companion companion = LiveMedalDetailDialogFragment.f13051a;
+        LiveMedalDetailDialogFragment.Companion companion = LiveMedalDetailDialogFragment.a;
         ArrayList<LiveMedalItemData> arrayList = this$0.o;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
@@ -298,8 +295,7 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
     }
 
     private final void p() {
-        LiveEventBus.get("LIVE_MEDAL_DATA", LiveMedalData.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMedalWallDialogFragment$_FZypAs7j8diXpNu41lnAsmwD4E
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("LIVE_MEDAL_DATA", LiveMedalData.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMedalWallDialogFragment$_FZypAs7j8diXpNu41lnAsmwD4E
             public final void onChanged(Object obj) {
                 LiveMedalWallDialogFragment.a(LiveMedalWallDialogFragment.this, (LiveMedalData) obj);
             }
@@ -354,24 +350,24 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
             LinearLayout linearLayout = k.f;
             Intrinsics.c(linearLayout, "it.llEmptyView");
             BluedViewExKt.b(linearLayout);
-            RecyclerView recyclerView = k.g;
-            Intrinsics.c(recyclerView, "it.rvMedalWall");
-            BluedViewExKt.a(recyclerView);
+            View view = k.g;
+            Intrinsics.c(view, "it.rvMedalWall");
+            BluedViewExKt.a(view);
             return;
         }
         DialogLiveMedalWallBinding k2 = k();
         LinearLayout linearLayout2 = k2.f;
         Intrinsics.c(linearLayout2, "it.llEmptyView");
         BluedViewExKt.a(linearLayout2);
-        RecyclerView recyclerView2 = k2.g;
-        Intrinsics.c(recyclerView2, "it.rvMedalWall");
-        BluedViewExKt.b(recyclerView2);
+        View view2 = k2.g;
+        Intrinsics.c(view2, "it.rvMedalWall");
+        BluedViewExKt.b(view2);
         int size = arrayList.size();
         if (size == 1) {
-            arrayList.add(new LiveMedalItemData(0L, 0L, 0, 0, null, null, null, null, null, 511, null));
-            arrayList.add(new LiveMedalItemData(0L, 0L, 0, 0, null, null, null, null, null, 511, null));
+            arrayList.add(new LiveMedalItemData(0L, 0L, 0, 0, null, null, null, null, null, Opcodes.OP_CHECK_CAST_JUMBO, null));
+            arrayList.add(new LiveMedalItemData(0L, 0L, 0, 0, null, null, null, null, null, Opcodes.OP_CHECK_CAST_JUMBO, null));
         } else if (size == 2) {
-            arrayList.add(new LiveMedalItemData(0L, 0L, 0, 0, null, null, null, null, null, 511, null));
+            arrayList.add(new LiveMedalItemData(0L, 0L, 0, 0, null, null, null, null, null, Opcodes.OP_CHECK_CAST_JUMBO, null));
         }
         this.o.clear();
         this.o.addAll(arrayList2);
@@ -410,7 +406,7 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
         final DialogLiveMedalWallBinding k = k();
         LiveRoomUserModel liveRoomUserModel = this.k;
         if (liveRoomUserModel != null) {
-            ImageLoader.a(this.b, liveRoomUserModel.avatar).b(R.drawable.user_bg_round).c().a(k.f11789c);
+            ImageLoader.a(this.b, liveRoomUserModel.avatar).b(R.drawable.user_bg_round).c().a(k.c);
             k.j.setText(liveRoomUserModel.name);
             if (TextUtils.isEmpty(liveRoomUserModel.avatar_frame)) {
                 ImageView ivAvatarDecorate = k.d;
@@ -427,7 +423,6 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
         o().setNewData(this.o);
         k.g.setAdapter(o());
         o().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMedalWallDialogFragment$PiaMUykXwYUK8KcHxHIveF9dS8o
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 LiveMedalWallDialogFragment.a(LiveMedalWallDialogFragment.this, baseQuickAdapter, view, i);
             }
@@ -456,7 +451,6 @@ public final class LiveMedalWallDialogFragment extends LiveCurBaseDialogFragment
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

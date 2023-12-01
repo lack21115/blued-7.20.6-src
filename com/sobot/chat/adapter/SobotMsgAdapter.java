@@ -647,7 +647,7 @@ public class SobotMsgAdapter extends SobotBaseAdapter<ZhiChiMessageBase> {
     }
 
     public void removeByMsgId(String str) {
-        Object msgInfo = getMsgInfo(str);
+        ZhiChiMessageBase msgInfo = getMsgInfo(str);
         if (msgInfo != null) {
             this.list.remove(msgInfo);
         }

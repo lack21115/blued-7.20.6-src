@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import com.android.internal.telephony.PhoneConstants;
 import com.bytedance.applog.IExtraParams;
 import com.bytedance.applog.Level;
 import com.bytedance.applog.UriConfig;
@@ -21,26 +20,26 @@ import org.json.JSONObject;
 public final class r1 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final a[] f21294c = {new a("aid", "aid", String.class), new a("google_aid", "google_aid", String.class), new a(bh.P, bh.P, String.class), new a("mcc_mnc", "mcc_mnc", String.class), new a("sim_region", "sim_region", String.class), new a("device_id", "device_id", String.class), new a("bd_did", "bd_did", String.class), new a("install_id", "iid", String.class), new a("clientudid", "clientudid", String.class), new a("app_name", "app_name", String.class), new a("app_version", NativeUnifiedADAppInfoImpl.Keys.VERSION_NAME, String.class), new a("version_code", "version_code", Integer.class), new a("manifest_version_code", "manifest_version_code", Integer.class), new a("update_version_code", "update_version_code", Integer.class), new a("sdk_version_code", "sdk_version_code", Integer.class)};
+    public static final a[] f7688c = {new a("aid", "aid", String.class), new a("google_aid", "google_aid", String.class), new a(bh.P, bh.P, String.class), new a("mcc_mnc", "mcc_mnc", String.class), new a("sim_region", "sim_region", String.class), new a("device_id", "device_id", String.class), new a("bd_did", "bd_did", String.class), new a("install_id", "iid", String.class), new a("clientudid", "clientudid", String.class), new a("app_name", "app_name", String.class), new a("app_version", NativeUnifiedADAppInfoImpl.Keys.VERSION_NAME, String.class), new a("version_code", "version_code", Integer.class), new a("manifest_version_code", "manifest_version_code", Integer.class), new a("update_version_code", "update_version_code", Integer.class), new a("sdk_version_code", "sdk_version_code", Integer.class)};
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile IExtraParams f21295a;
+    public volatile IExtraParams f7689a;
     public final c b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/r1$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f21296a;
+        public final String f7690a;
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final Class f21297c;
+        public final Class f7691c;
 
         public a(String str, String str2, Class cls) {
-            this.f21296a = str;
+            this.f7690a = str;
             this.b = str2;
-            this.f21297c = cls;
+            this.f7691c = cls;
         }
     }
 
@@ -103,16 +102,16 @@ public final class r1 {
         if (z) {
             map.put("ssmix", "a");
         }
-        if (TextUtils.isEmpty(a3.f21189a)) {
+        if (TextUtils.isEmpty(a3.f7583a)) {
             DisplayMetrics displayMetrics = application.getResources().getDisplayMetrics();
             int i = displayMetrics == null ? 0 : displayMetrics.widthPixels;
             DisplayMetrics displayMetrics2 = application.getResources().getDisplayMetrics();
             int i2 = displayMetrics2 == null ? 0 : displayMetrics2.heightPixels;
             if (i > 0 && i2 > 0) {
-                a3.f21189a = i + PhoneConstants.APN_TYPE_ALL + i2;
+                a3.f7583a = i + "*" + i2;
             }
         }
-        String str = a3.f21189a;
+        String str = a3.f7583a;
         if (!TextUtils.isEmpty(str)) {
             map.put("resolution", str);
         }
@@ -143,12 +142,12 @@ public final class r1 {
             i4 = 0;
         }
         while (true) {
-            a[] aVarArr = f21294c;
+            a[] aVarArr = f7688c;
             if (i4 >= aVarArr.length) {
                 break;
             }
             a aVar = aVarArr[i4];
-            Object a2 = a(jSONObject, aVar.f21296a, (String) null, aVar.f21297c);
+            Object a2 = a(jSONObject, aVar.f7690a, (String) null, aVar.f7691c);
             if (a2 != null) {
                 map.put(aVar.b, a2.toString());
             }
@@ -175,7 +174,7 @@ public final class r1 {
         }
         this.b.getAppContext();
         try {
-            HashMap<String, String> extraParams = this.f21295a == null ? null : this.f21295a.getExtraParams(level);
+            HashMap<String, String> extraParams = this.f7689a == null ? null : this.f7689a.getExtraParams(level);
             if (extraParams == null || extraParams.isEmpty()) {
                 return;
             }
@@ -222,7 +221,7 @@ public final class r1 {
                 strArr[i3] = com.bytedance.bdtracker.a.a(new StringBuilder(), strArr[i3], "?tt_data=a");
             }
             strArr[i3] = a(jSONObject, strArr[i3], true, Level.L1);
-            strArr[i3] = q1.a(strArr[i3], p2.f21287c);
+            strArr[i3] = q1.a(strArr[i3], p2.f7681c);
             i2 = i3 + 1;
         }
     }

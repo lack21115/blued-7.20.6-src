@@ -9,7 +9,7 @@ public abstract class a implements View.OnClickListener {
     public static final int d = 2000;
 
     /* renamed from: a  reason: collision with root package name */
-    private long f8784a = 0;
+    private long f5944a = 0;
 
     protected abstract void a(View view);
 
@@ -17,8 +17,8 @@ public abstract class a implements View.OnClickListener {
     public void onClick(View view) {
         Tracker.onClick(view);
         long timeInMillis = Calendar.getInstance().getTimeInMillis();
-        if (timeInMillis - this.f8784a > 2000) {
-            this.f8784a = timeInMillis;
+        if (timeInMillis - this.f5944a > 2000) {
+            this.f5944a = timeInMillis;
             a(view);
         }
     }

@@ -17,7 +17,7 @@ import com.igexin.push.f.g;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f23591a = a.class.getName();
+    public static String f9983a = a.class.getName();
     public boolean b;
 
     private int a(String str, c cVar) {
@@ -25,7 +25,7 @@ public class a {
     }
 
     public static void a(int i) {
-        if (i == j.f23236a) {
+        if (i == j.f9628a) {
             e.a().a(new com.igexin.push.c.b.b());
             e.a().b();
         } else if (i == j.b) {
@@ -42,7 +42,7 @@ public class a {
     }
 
     public static void a(boolean z) {
-        com.igexin.c.a.c.a.a(f23591a + "|call -> disconnect, reset delay = " + z, new Object[0]);
+        com.igexin.c.a.c.a.a(f9983a + "|call -> disconnect, reset delay = " + z, new Object[0]);
         if (z) {
             com.igexin.push.core.e.O = 0L;
         }
@@ -50,26 +50,26 @@ public class a {
     }
 
     private void b(boolean z) {
-        String str = f23591a;
+        String str = f9983a;
         com.igexin.c.a.c.a.a(str, "call setActive, param active = " + z + "; this.active = " + this.b + "; reConnectDelayTime=" + com.igexin.push.core.e.O);
-        com.igexin.c.a.c.a.a(f23591a + "|call setActive, param active = " + z + "; this.active = " + this.b + "; reConnectDelayTime=" + com.igexin.push.core.e.O, new Object[0]);
+        com.igexin.c.a.c.a.a(f9983a + "|call setActive, param active = " + z + "; this.active = " + this.b + "; reConnectDelayTime=" + com.igexin.push.core.e.O, new Object[0]);
         boolean z2 = this.b;
         if (z2 == z) {
             if (!z2 || com.igexin.push.core.e.u || com.igexin.push.core.e.O <= com.igexin.push.config.c.j) {
                 return;
             }
-            com.igexin.c.a.c.a.a(f23591a + "|start active again, online = false, reset delay", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a + "|start active again, online = false, reset delay", new Object[0]);
             com.igexin.push.core.e.O = 0L;
             c();
             return;
         }
         this.b = z;
         if (z) {
-            com.igexin.c.a.c.a.a(f23591a + "|active = true, start connect~~~~", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a + "|active = true, start connect~~~~", new Object[0]);
             g();
             return;
         }
-        com.igexin.c.a.c.a.a(f23591a + "|active = false, disconnect...", new Object[0]);
+        com.igexin.c.a.c.a.a(f9983a + "|active = false, disconnect...", new Object[0]);
         a(true);
     }
 
@@ -85,15 +85,15 @@ public class a {
     public static void e() {
         com.igexin.push.core.j.a().a(j.a.d);
         boolean e = com.igexin.push.f.c.e();
-        String str = f23591a;
+        String str = f9983a;
         com.igexin.c.a.c.a.a(str, "network changed, available = " + e + ", last = " + com.igexin.push.core.e.n);
-        com.igexin.c.a.c.a.a(f23591a + "|network changed, available = " + e + ", last = " + com.igexin.push.core.e.n, new Object[0]);
+        com.igexin.c.a.c.a.a(f9983a + "|network changed, available = " + e + ", last = " + com.igexin.push.core.e.n, new Object[0]);
         c.b.a().a();
         if (!e) {
-            com.igexin.c.a.c.a.a(f23591a + "|network changed, available = false, do nothing", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a + "|network changed, available = false, do nothing", new Object[0]);
             a(false);
         } else if (!com.igexin.push.core.e.n) {
-            com.igexin.c.a.c.a.a(f23591a + "|network changed, try connect reset delay", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a + "|network changed, try connect reset delay", new Object[0]);
             g();
         }
         if (e) {
@@ -107,20 +107,20 @@ public class a {
     }
 
     private static void g() {
-        com.igexin.c.a.c.a.a(f23591a + "|call -> tryConnect and reset delay = 0", new Object[0]);
+        com.igexin.c.a.c.a.a(f9983a + "|call -> tryConnect and reset delay = 0", new Object[0]);
         a(true);
     }
 
     private static void h() {
         com.igexin.push.b.c.a().d().c();
         com.igexin.push.b.a d = com.igexin.push.b.c.a().d();
-        com.igexin.push.core.j.a().a(j.a.f23567c);
+        com.igexin.push.core.j.a().a(j.a.f9959c);
         d.f();
         if (d()) {
-            com.igexin.c.a.c.a.a(f23591a, "sdkOn = false or pushOn = false, disconect|user");
-            com.igexin.c.a.c.a.a(f23591a + "|sdkOn = false or pushOn = false, disconect|user", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a, "sdkOn = false or pushOn = false, disconect|user");
+            com.igexin.c.a.c.a.a(f9983a + "|sdkOn = false or pushOn = false, disconect|user", new Object[0]);
         } else {
-            com.igexin.c.a.c.a.a(f23591a + "|disconnect by network", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a + "|disconnect by network", new Object[0]);
         }
         com.igexin.c.a.d.e<f> eVar = e.a().s;
         if (eVar != null) {
@@ -132,17 +132,17 @@ public class a {
     private static void i() {
         com.igexin.push.c.a.c.b = -1;
         if (com.igexin.push.core.e.q) {
-            com.igexin.c.a.c.a.a(f23591a, "isAppidWrong = true");
-            com.igexin.c.a.c.a.a(f23591a + "|isAppidWrong = true", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a, "isAppidWrong = true");
+            com.igexin.c.a.c.a.a(f9983a + "|isAppidWrong = true", new Object[0]);
             com.igexin.c.a.c.a.d.a().a("isAppidWrong = true");
         } else if (!g.a()) {
-            com.igexin.c.a.c.a.a(f23591a, "so error ++++++++");
-            com.igexin.c.a.c.a.a(f23591a + "|so error ++++++++", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a, "so error ++++++++");
+            com.igexin.c.a.c.a.a(f9983a + "|so error ++++++++", new Object[0]);
         } else if (com.igexin.push.core.e.az) {
             c();
         } else {
-            com.igexin.c.a.c.a.a(f23591a, "initSuccess = false");
-            com.igexin.c.a.c.a.a(f23591a + "|initSuccess = false", new Object[0]);
+            com.igexin.c.a.c.a.a(f9983a, "initSuccess = false");
+            com.igexin.c.a.c.a.a(f9983a + "|initSuccess = false", new Object[0]);
         }
     }
 
@@ -155,9 +155,9 @@ public class a {
             return -3;
         } else if (this.b) {
             if (z) {
-                return e.a().a(SDKUrlConfig.getConnectAddress(), d.a.f23474a.g, cVar, com.igexin.push.config.d.f > 0 ? com.igexin.push.config.d.f : 10, new com.igexin.push.c.f()) == null ? -2 : 0;
+                return e.a().a(SDKUrlConfig.getConnectAddress(), d.a.f9866a.g, cVar, com.igexin.push.config.d.f > 0 ? com.igexin.push.config.d.f : 10, new com.igexin.push.c.f()) == null ? -2 : 0;
             }
-            return e.a().a(SDKUrlConfig.getConnectAddress(), d.a.f23474a.g, cVar) == null ? -2 : 0;
+            return e.a().a(SDKUrlConfig.getConnectAddress(), d.a.f9866a.g, cVar) == null ? -2 : 0;
         } else {
             return 0;
         }
@@ -179,7 +179,7 @@ public class a {
             com.igexin.push.core.e.u = false;
             l.a().b();
         }
-        com.igexin.c.a.c.a.a(f23591a + "|stop by user", new Object[0]);
+        com.igexin.c.a.c.a.a(f9983a + "|stop by user", new Object[0]);
         com.igexin.push.b.c.a().d().f();
     }
 }

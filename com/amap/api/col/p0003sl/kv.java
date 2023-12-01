@@ -10,9 +10,7 @@ public final class kv extends ky {
     private boolean d;
     private int e;
     private int f;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5289a = "iKey";
+    private String a = "iKey";
     private int g = 0;
 
     public kv(Context context, boolean z, int i, int i2, String str) {
@@ -28,7 +26,7 @@ public final class kv extends ky {
         this.d = z;
         this.e = i;
         this.f = i2;
-        this.f5289a = str;
+        this.a = str;
         this.g = i3;
     }
 
@@ -80,11 +78,11 @@ public final class kv extends ky {
             goto L1e
         L39:
             r0 = r3
-            com.amap.api.col.3sl.ky r0 = r0.f5292c
+            com.amap.api.col.3sl.ky r0 = r0.c
             if (r0 == 0) goto L4c
             r0 = r4
             r1 = r3
-            com.amap.api.col.3sl.ky r1 = r1.f5292c
+            com.amap.api.col.3sl.ky r1 = r1.c
             int r1 = r1.a()
             int r0 = java.lang.Math.max(r0, r1)
             return r0
@@ -100,24 +98,24 @@ public final class kv extends ky {
         if (hs.o(this.b) == 1) {
             return;
         }
-        String a2 = ib.a(System.currentTimeMillis(), "yyyyMMdd");
-        String a3 = iu.a(this.b, this.f5289a);
+        String a = ib.a(System.currentTimeMillis(), "yyyyMMdd");
+        String a2 = iu.a(this.b, this.a);
         int i2 = i;
-        if (!TextUtils.isEmpty(a3)) {
-            String[] split = a3.split("\\|");
+        if (!TextUtils.isEmpty(a2)) {
+            String[] split = a2.split("\\|");
             if (split == null || split.length < 2) {
-                iu.b(this.b, this.f5289a);
+                iu.b(this.b, this.a);
                 i2 = i;
             } else {
                 i2 = i;
-                if (a2.equals(split[0])) {
+                if (a.equals(split[0])) {
                     i2 = i + Integer.parseInt(split[1]);
                 }
             }
         }
         Context context = this.b;
-        String str = this.f5289a;
-        iu.a(context, str, a2 + "|" + i2);
+        String str = this.a;
+        iu.a(context, str, a + "|" + i2);
     }
 
     @Override // com.amap.api.col.p0003sl.ky
@@ -126,15 +124,15 @@ public final class kv extends ky {
             return true;
         }
         if (this.d) {
-            String a2 = iu.a(this.b, this.f5289a);
-            if (TextUtils.isEmpty(a2)) {
+            String a = iu.a(this.b, this.a);
+            if (TextUtils.isEmpty(a)) {
                 return true;
             }
-            String[] split = a2.split("\\|");
+            String[] split = a.split("\\|");
             if (split != null && split.length >= 2) {
                 return !ib.a(System.currentTimeMillis(), "yyyyMMdd").equals(split[0]) || Integer.parseInt(split[1]) < this.f;
             }
-            iu.b(this.b, this.f5289a);
+            iu.b(this.b, this.a);
             return true;
         }
         return false;

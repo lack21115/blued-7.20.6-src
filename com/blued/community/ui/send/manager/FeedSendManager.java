@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.collection.ArrayMap;
 import androidx.core.util.Pair;
+import com.alipay.sdk.util.i;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageFileLoader;
@@ -47,20 +48,15 @@ import com.blued.community.utils.StorageUtils;
 import com.blued.community.utils.UserInfoUtils;
 import com.google.gson.Gson;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.ss.android.socialbase.downloader.constants.DBDefinition;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/manager/FeedSendManager.class */
 public class FeedSendManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static FeedSendManager f20048a = new FeedSendManager();
+    private static FeedSendManager a = new FeedSendManager();
     private List<NewFeedModel> b = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<NewFeedModel> f20049c = new ArrayList();
+    private List<NewFeedModel> c = new ArrayList();
     private List<String> d = new ArrayList();
     private List<String> e = new ArrayList();
     private ArrayMap<String, String> f = new ArrayMap<>();
@@ -71,26 +67,26 @@ public class FeedSendManager {
     private long k;
 
     public static FeedSendManager a() {
-        return f20048a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(Pair<String, UploadModel> pair, final NewFeedModel newFeedModel) {
-        if (pair.second.type == 0) {
+        if (((UploadModel) pair.second).type == 0) {
             Logger.e("FeedSend", "pair.second.type ");
             b(pair, newFeedModel);
             return;
         }
-        Logger.e("FeedSend", "video===onPartFinish==" + pair.second.url);
-        if (TextUtils.isEmpty(pair.second.url)) {
+        Logger.e("FeedSend", "video===onPartFinish==" + ((UploadModel) pair.second).url);
+        if (TextUtils.isEmpty(((UploadModel) pair.second).url)) {
             return;
         }
-        String str = pair.first;
-        if (!TextUtils.isEmpty(pair.second.compressPath)) {
-            str = pair.second.compressPath;
+        String str = (String) pair.first;
+        if (!TextUtils.isEmpty(((UploadModel) pair.second).compressPath)) {
+            str = ((UploadModel) pair.second).compressPath;
         }
-        StorageUtils.a(pair.second.url, newFeedModel.localVideoPath, str);
-        newFeedModel.videoPath = pair.second.url;
+        StorageUtils.a(((UploadModel) pair.second).url, newFeedModel.localVideoPath, str);
+        newFeedModel.videoPath = ((UploadModel) pair.second).url;
         ThreadManager.a().a(new ThreadExecutor("update-feedModel") { // from class: com.blued.community.ui.send.manager.FeedSendManager.1
             @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
@@ -108,7 +104,7 @@ public class FeedSendManager {
             FileUtils.a(newFeedModel.localVideoPath);
         }
         NewFeedDao.a().d(newFeedModel);
-        this.f20049c.remove(newFeedModel);
+        this.c.remove(newFeedModel);
         this.b.remove(newFeedModel);
         f();
         g();
@@ -127,7 +123,7 @@ public class FeedSendManager {
     public void a(FeedComment feedComment, NewFeedModel newFeedModel) {
         newFeedModel.setProgress(100);
         FeedRefreshObserver.a().a(null, 1);
-        this.f20049c.remove(newFeedModel);
+        this.c.remove(newFeedModel);
         this.b.remove(newFeedModel);
         f();
         g();
@@ -199,7 +195,7 @@ public class FeedSendManager {
                         str6 = str3;
                     }
                     stringBuffer.append(str6);
-                    stringBuffer.append(";");
+                    stringBuffer.append(i.b);
                     i = i2 + 1;
                 }
                 newFeedModel.setPics(stringBuffer.toString());
@@ -278,12 +274,12 @@ public class FeedSendManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(Pair<String, UploadModel> pair, final NewFeedModel newFeedModel) {
-        if (TextUtils.isEmpty(pair.second.url)) {
+        if (TextUtils.isEmpty(((UploadModel) pair.second).url)) {
             return;
         }
-        String str = pair.second.url;
+        String str = ((UploadModel) pair.second).url;
         Logger.e("FeedSend", "图片上传成功===" + str);
-        ImageFileLoader.a((IRequestHost) null).a(pair.second.compressPath, str).a();
+        ImageFileLoader.a((IRequestHost) null).a(((UploadModel) pair.second).compressPath, str).a();
         StringBuffer stringBuffer = new StringBuffer();
         int i = 0;
         while (true) {
@@ -307,7 +303,7 @@ public class FeedSendManager {
                 str3 = str;
             }
             stringBuffer.append(str3);
-            stringBuffer.append(";");
+            stringBuffer.append(i.b);
             i = i2 + 1;
         }
     }
@@ -375,7 +371,7 @@ public class FeedSendManager {
                     NewFeedDao.a().c(newFeedModel);
                     FeedRefreshObserver.a().a(BluedIngSelfFeed.convertFromFeed(newFeedModel), 0);
                 }
-                FeedSendManager.this.f20049c.remove(newFeedModel);
+                FeedSendManager.this.c.remove(newFeedModel);
                 FeedSendManager.this.f();
             }
         });
@@ -449,7 +445,7 @@ public class FeedSendManager {
                 FeedSendManager.this.a(bluedEntity.extra, newFeedModel);
                 Logger.e("FeedSend", "onUIUpdate successed");
             }
-        }, newFeedModel, this.i, this.j, !TextUtils.isEmpty(newFeedModel.getPics()) ? newFeedModel.getPics().split(";") : new String[1], new String[]{newFeedModel.videoPath}, newFeedModel.videoWidth > 0 ? String.valueOf(newFeedModel.videoWidth) : String.valueOf(480), newFeedModel.videoHeight > 0 ? String.valueOf(newFeedModel.videoHeight) : String.valueOf(480), newFeedModel.duration);
+        }, newFeedModel, this.i, this.j, !TextUtils.isEmpty(newFeedModel.getPics()) ? newFeedModel.getPics().split(i.b) : new String[1], new String[]{newFeedModel.videoPath}, newFeedModel.videoWidth > 0 ? String.valueOf(newFeedModel.videoWidth) : String.valueOf(480), newFeedModel.videoHeight > 0 ? String.valueOf(newFeedModel.videoHeight) : String.valueOf(480), newFeedModel.duration);
     }
 
     private void i() {
@@ -528,11 +524,11 @@ public class FeedSendManager {
         if (newFeedModel.showNotificationWhenSend == 0) {
             this.b.add(0, newFeedModel);
         }
-        if (this.f20049c.size() <= 0) {
-            this.f20049c.add(0, newFeedModel);
+        if (this.c.size() <= 0) {
+            this.c.add(0, newFeedModel);
             f();
         } else {
-            this.f20049c.add(0, newFeedModel);
+            this.c.add(0, newFeedModel);
         }
         FeedRefreshObserver.a().a(BluedIngSelfFeed.convertFromFeed(newFeedModel), 3);
     }
@@ -595,12 +591,12 @@ public class FeedSendManager {
     public void b(NewFeedModel newFeedModel) {
         newFeedModel.setState(1);
         newFeedModel.isResend = true;
-        if (this.f20049c.size() <= 0) {
+        if (this.c.size() <= 0) {
             Log.d("FendSend", "restartUploadmSendingList.add");
-            this.f20049c.add(0, newFeedModel);
+            this.c.add(0, newFeedModel);
             f();
         } else {
-            this.f20049c.add(0, newFeedModel);
+            this.c.add(0, newFeedModel);
         }
         FeedRefreshObserver.a().a(null, 3);
     }
@@ -656,7 +652,7 @@ public class FeedSendManager {
         String[] a2 = ImageUtils.a(newFeedModel.localPath);
         if (!TextUtils.isEmpty(newFeedModel.extraJSON)) {
             Gson f = AppInfo.f();
-            FeedExtra feedExtra = (FeedExtra) f.fromJson(newFeedModel.extraJSON, (Class<Object>) FeedExtra.class);
+            FeedExtra feedExtra = (FeedExtra) f.fromJson(newFeedModel.extraJSON, FeedExtra.class);
             if (feedExtra.thumb == null || feedExtra.thumb.size() <= 0) {
                 feedExtra.thumb = new ArrayList();
             }
@@ -733,18 +729,18 @@ public class FeedSendManager {
 
     public void f() {
         i();
-        List<NewFeedModel> list = this.f20049c;
+        List<NewFeedModel> list = this.c;
         if (list == null || list.size() <= 0) {
             return;
         }
-        final NewFeedModel newFeedModel = this.f20049c.get(0);
+        final NewFeedModel newFeedModel = this.c.get(0);
         String pics = newFeedModel.getPics();
         Logger.e("FeedSend", "Pic====" + newFeedModel.getPics());
         Pair<String, String> pair = null;
         Pair<String, String> pair2 = null;
         if (newFeedModel.isVideo == 1) {
             if (!TextUtils.isEmpty(pics)) {
-                String[] split = pics.split(";");
+                String[] split = pics.split(i.b);
                 int i = 0;
                 while (true) {
                     int i2 = i;
@@ -775,13 +771,13 @@ public class FeedSendManager {
                         });
                         return;
                     }
-                    Logger.e("FeedSend", "feedModel.videoTaskID" + newFeedModel.videoTaskID + DBDefinition.TASK_ID + str);
+                    Logger.e("FeedSend", "feedModel.videoTaskID" + newFeedModel.videoTaskID + "taskId" + str);
                 }
 
                 @Override // com.blued.community.ui.send.manager.VideoUploadManager.VideoUploadListener
                 public void a(String str, boolean z, ArrayList<Pair<String, UploadModel>> arrayList, List<Pair<String, String>> list2) {
                     if (!TextUtils.isEmpty(newFeedModel.videoTaskID) && !str.equals(newFeedModel.videoTaskID)) {
-                        Logger.e("FeedSend", "feedModel.videoTaskID" + newFeedModel.videoTaskID + DBDefinition.TASK_ID + str);
+                        Logger.e("FeedSend", "feedModel.videoTaskID" + newFeedModel.videoTaskID + "taskId" + str);
                         return;
                     }
                     Logger.e("FeedSend", "onFinish succeed " + z);
@@ -807,7 +803,7 @@ public class FeedSendManager {
                 d(newFeedModel);
                 return;
             }
-            String[] split2 = pics.split(";");
+            String[] split2 = pics.split(i.b);
             for (int i3 = 0; i3 < split2.length; i3++) {
                 this.e.add(split2[i3]);
                 if (!split2[i3].startsWith("http")) {
@@ -851,7 +847,7 @@ public class FeedSendManager {
                             FeedSendManager.this.d(newFeedModel);
                             return;
                         }
-                        String[] a2 = ImageUtils.a(list2.get(i5).first);
+                        String[] a2 = ImageUtils.a((String) list2.get(i5).first);
                         if (i5 == 0) {
                             newFeedModel.feed_pics_width = a2[0];
                             newFeedModel.feed_pics_height = a2[1];

@@ -1,15 +1,15 @@
 package com.google.android.material.theme.overlay;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import androidx.appcompat.view.ContextThemeWrapper;
-import com.google.android.material.R;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/theme/overlay/MaterialThemeOverlay.class */
 public class MaterialThemeOverlay {
-    private static final int[] ANDROID_THEME_OVERLAY_ATTRS = {16842752, R.attr.theme};
-    private static final int[] MATERIAL_THEME_OVERLAY_ATTR = {R.attr.materialThemeOverlay};
+    private static final int[] ANDROID_THEME_OVERLAY_ATTRS = {R.attr.theme, com.google.android.material.R.attr.theme};
+    private static final int[] MATERIAL_THEME_OVERLAY_ATTR = {com.google.android.material.R.attr.materialThemeOverlay};
 
     private MaterialThemeOverlay() {
     }

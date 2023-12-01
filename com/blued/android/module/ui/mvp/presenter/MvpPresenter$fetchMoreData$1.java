@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/ui/mvp/presenter/MvpPresenter$fetchMoreData$1.class */
 public final class MvpPresenter$fetchMoreData$1 implements IFetchDataListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ MvpPresenter f16056a;
+    final /* synthetic */ MvpPresenter a;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(MvpPresenter this$0) {
@@ -53,7 +51,7 @@ public final class MvpPresenter$fetchMoreData$1 implements IFetchDataListener {
 
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void a() {
-        final MvpPresenter mvpPresenter = this.f16056a;
+        final MvpPresenter mvpPresenter = this.a;
         mvpPresenter.b("fetchmore_start", new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$fetchMoreData$1$6Lqe9EbVqC2ku1EinwEPHj_yQxI
             @Override // java.lang.Runnable
             public final void run() {
@@ -65,7 +63,7 @@ public final class MvpPresenter$fetchMoreData$1 implements IFetchDataListener {
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void a(final String type, final List<?> list) {
         Intrinsics.e(type, "type");
-        final MvpPresenter mvpPresenter = this.f16056a;
+        final MvpPresenter mvpPresenter = this.a;
         mvpPresenter.a("fetchmore_datafetch", new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$fetchMoreData$1$GJqP4G4Q0kLwYGRLsovsQePdwkU
             @Override // java.lang.Runnable
             public final void run() {
@@ -76,7 +74,7 @@ public final class MvpPresenter$fetchMoreData$1 implements IFetchDataListener {
 
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void a(final boolean z) {
-        final MvpPresenter mvpPresenter = this.f16056a;
+        final MvpPresenter mvpPresenter = this.a;
         mvpPresenter.b("fetchmore_end", new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$fetchMoreData$1$Ww_1KfpvczSxaclvwtt0Oc42iOU
             @Override // java.lang.Runnable
             public final void run() {
@@ -87,10 +85,10 @@ public final class MvpPresenter$fetchMoreData$1 implements IFetchDataListener {
 
     @Override // com.blued.android.framework.ui.mvp.IFetchDataListener
     public void b(final boolean z) {
-        MvpPresenter mvpPresenter = this.f16056a;
-        String a2 = Intrinsics.a("fetchmore_onMoreData, hasMoreData:", (Object) Boolean.valueOf(z));
-        final MvpPresenter mvpPresenter2 = this.f16056a;
-        mvpPresenter.b(a2, new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$fetchMoreData$1$z6eisb0WPaKgr9C7glLhcVmKhS8
+        MvpPresenter mvpPresenter = this.a;
+        String a = Intrinsics.a("fetchmore_onMoreData, hasMoreData:", (Object) Boolean.valueOf(z));
+        final MvpPresenter mvpPresenter2 = this.a;
+        mvpPresenter.b(a, new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$fetchMoreData$1$z6eisb0WPaKgr9C7glLhcVmKhS8
             @Override // java.lang.Runnable
             public final void run() {
                 MvpPresenter$fetchMoreData$1.b(MvpPresenter.this, z);

@@ -5,6 +5,7 @@ import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.os.PowerManager;
+import com.android.internal.util.cm.PowerMenuConstants;
 import com.blued.android.core.AppMethods;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class UiUtils {
 
     public static boolean a(Context context) {
         ComponentName componentName;
-        if (((PowerManager) context.getSystemService("power")).isScreenOn()) {
+        if (((PowerManager) context.getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER)).isScreenOn()) {
             try {
                 ActivityManager activityManager = (ActivityManager) context.getSystemService("activity");
                 List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = activityManager.getRunningAppProcesses();

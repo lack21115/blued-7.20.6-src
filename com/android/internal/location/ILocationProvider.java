@@ -211,7 +211,7 @@ public interface ILocationProvider extends IInterface {
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    setRequest(parcel.readInt() != 0 ? ProviderRequest.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? WorkSource.CREATOR.createFromParcel(parcel) : null);
+                    setRequest(parcel.readInt() != 0 ? ProviderRequest.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (WorkSource) WorkSource.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 4:
@@ -247,18 +247,18 @@ public interface ILocationProvider extends IInterface {
                 case 7:
                     parcel.enforceInterface(DESCRIPTOR);
                     String readString = parcel.readString();
-                    Bundle createFromParcel = parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null;
-                    boolean sendExtraCommand = sendExtraCommand(readString, createFromParcel);
+                    Bundle bundle2 = parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null;
+                    boolean sendExtraCommand = sendExtraCommand(readString, bundle2);
                     parcel2.writeNoException();
                     parcel2.writeInt(sendExtraCommand ? 1 : 0);
-                    if (createFromParcel == null) {
+                    if (bundle2 == null) {
                         parcel2.writeInt(0);
                         return true;
                     }
                     parcel2.writeInt(1);
-                    createFromParcel.writeToParcel(parcel2, 1);
+                    bundle2.writeToParcel(parcel2, 1);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

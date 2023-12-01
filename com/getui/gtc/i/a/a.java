@@ -11,7 +11,7 @@ import java.security.MessageDigest;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f22031a = !a.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f8424a = !a.class.desiredAssertionStatus();
 
     public static String a(String str) {
         byte[] bytes = str.getBytes();
@@ -56,7 +56,7 @@ public class a {
                                 break;
                             }
                             byte[] bArr2 = new byte[read];
-                            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, read);
+                            System.arraycopy(bArr, 0, bArr2, 0, read);
                             bufferedOutputStream3.write(b.a(bArr2, str));
                         }
                         bufferedOutputStream3.flush();

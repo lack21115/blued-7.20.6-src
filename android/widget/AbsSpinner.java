@@ -30,9 +30,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     private Rect mTouchFrame;
     int mWidthMeasureSpec;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/AbsSpinner$RecycleBin.class */
-    public class RecycleBin {
+    class RecycleBin {
         private final SparseArray<View> mScrapHeap = new SparseArray<>();
 
         RecycleBin() {
@@ -145,8 +144,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.AbsSpinner, i, i2);
         CharSequence[] textArray = obtainStyledAttributes.getTextArray(0);
         if (textArray != null) {
-            ArrayAdapter arrayAdapter = new ArrayAdapter(context, 17367048, textArray);
-            arrayAdapter.setDropDownViewResource(17367049);
+            ArrayAdapter arrayAdapter = new ArrayAdapter(context, (int) R.layout.simple_spinner_item, textArray);
+            arrayAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
             setAdapter((SpinnerAdapter) arrayAdapter);
         }
         obtainStyledAttributes.recycle();

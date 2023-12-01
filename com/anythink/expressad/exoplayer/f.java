@@ -12,11 +12,11 @@ import java.util.ArrayList;
 public final class f implements ab {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f7327a = 5000;
+    public static final long f4488a = 5000;
     public static final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7328c = 1;
+    public static final int f4489c = 1;
     public static final int d = 2;
     protected static final int e = 50;
     private static final String f = "DefaultRenderersFactory";
@@ -64,7 +64,7 @@ public final class f implements ab {
     }
 
     private static void a(Context context, com.anythink.expressad.exoplayer.d.g<com.anythink.expressad.exoplayer.d.k> gVar, long j, Handler handler, com.anythink.expressad.exoplayer.l.h hVar, int i, ArrayList<y> arrayList) {
-        arrayList.add(new com.anythink.expressad.exoplayer.l.e(context, com.anythink.expressad.exoplayer.f.c.f7333a, j, gVar, handler, hVar, 50));
+        arrayList.add(new com.anythink.expressad.exoplayer.l.e(context, com.anythink.expressad.exoplayer.f.c.f4494a, j, gVar, handler, hVar, 50));
         if (i == 0) {
             return;
         }
@@ -85,7 +85,7 @@ public final class f implements ab {
     private static void a(Context context, com.anythink.expressad.exoplayer.d.g<com.anythink.expressad.exoplayer.d.k> gVar, com.anythink.expressad.exoplayer.b.f[] fVarArr, Handler handler, com.anythink.expressad.exoplayer.b.g gVar2, int i, ArrayList<y> arrayList) {
         int i2;
         int i3;
-        arrayList.add(new com.anythink.expressad.exoplayer.b.o(context, com.anythink.expressad.exoplayer.f.c.f7333a, gVar, handler, gVar2, com.anythink.expressad.exoplayer.b.c.a(context), fVarArr));
+        arrayList.add(new com.anythink.expressad.exoplayer.b.o(context, com.anythink.expressad.exoplayer.f.c.f4494a, gVar, handler, gVar2, com.anythink.expressad.exoplayer.b.c.a(context), fVarArr));
         if (i == 0) {
             return;
         }
@@ -159,7 +159,7 @@ public final class f implements ab {
         Context context = this.g;
         long j = this.j;
         int i = this.i;
-        arrayList.add(new com.anythink.expressad.exoplayer.l.e(context, com.anythink.expressad.exoplayer.f.c.f7333a, j, gVar2, handler, hVar, 50));
+        arrayList.add(new com.anythink.expressad.exoplayer.l.e(context, com.anythink.expressad.exoplayer.f.c.f4494a, j, gVar2, handler, hVar, 50));
         if (i != 0) {
             int size = arrayList.size();
             int i2 = size;
@@ -177,7 +177,7 @@ public final class f implements ab {
         Context context2 = this.g;
         com.anythink.expressad.exoplayer.b.f[] fVarArr = new com.anythink.expressad.exoplayer.b.f[0];
         int i3 = this.i;
-        arrayList.add(new com.anythink.expressad.exoplayer.b.o(context2, com.anythink.expressad.exoplayer.f.c.f7333a, gVar2, handler, gVar, com.anythink.expressad.exoplayer.b.c.a(context2), fVarArr));
+        arrayList.add(new com.anythink.expressad.exoplayer.b.o(context2, com.anythink.expressad.exoplayer.f.c.f4494a, gVar2, handler, gVar, com.anythink.expressad.exoplayer.b.c.a(context2), fVarArr));
         if (i3 != 0) {
             int size2 = arrayList.size();
             int i4 = size2;

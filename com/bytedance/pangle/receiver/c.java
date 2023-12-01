@@ -16,17 +16,17 @@ public final class c {
     private static c d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map<String, a> f21465a = new ConcurrentHashMap();
+    public final Map<String, a> f7859a = new ConcurrentHashMap();
     public final Map<PluginBroadcastReceiver, BroadcastReceiver> b = new ConcurrentHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    public final Set<Integer> f21466c = new CopyOnWriteArraySet();
+    public final Set<Integer> f7860c = new CopyOnWriteArraySet();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/receiver/c$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f21467a;
+        public String f7861a;
         public final Set<PluginBroadcastReceiver> b = new CopyOnWriteArraySet();
 
         public final void a(Context context, Intent intent) {
@@ -48,7 +48,7 @@ public final class c {
 
         public final void a(PluginBroadcastReceiver pluginBroadcastReceiver) {
             if (pluginBroadcastReceiver != null) {
-                ZeusLogger.i(ZeusLogger.TAG_RECEIVER, "plugin-receiver:" + pluginBroadcastReceiver.getClass().getSimpleName() + ",action=" + this.f21467a + "[注册完成]");
+                ZeusLogger.i(ZeusLogger.TAG_RECEIVER, "plugin-receiver:" + pluginBroadcastReceiver.getClass().getSimpleName() + ",action=" + this.f7861a + "[注册完成]");
                 this.b.add(pluginBroadcastReceiver);
             }
         }
@@ -78,11 +78,11 @@ public final class c {
             return;
         }
         String action = intent.getAction();
-        Map<String, a> map = this.f21465a;
+        Map<String, a> map = this.f7859a;
         if (map == null || map.size() <= 0) {
             return;
         }
-        for (Map.Entry<String, a> entry : this.f21465a.entrySet()) {
+        for (Map.Entry<String, a> entry : this.f7859a.entrySet()) {
             if (action.equals(entry.getKey()) && (value = entry.getValue()) != null) {
                 ZeusLogger.d(ZeusLogger.TAG_RECEIVER, "action[" + action + "] match success ！ invoke onReceiver");
                 value.a(context, intent);
@@ -98,14 +98,14 @@ public final class c {
         while (actionsIterator.hasNext()) {
             String next = actionsIterator.next();
             if (next != null) {
-                a aVar = this.f21465a.get(next);
+                a aVar = this.f7859a.get(next);
                 if (aVar != null) {
                     aVar.a(pluginBroadcastReceiver);
                 } else {
                     a aVar2 = new a();
-                    aVar2.f21467a = next;
+                    aVar2.f7861a = next;
                     aVar2.a(pluginBroadcastReceiver);
-                    this.f21465a.put(next, aVar2);
+                    this.f7859a.put(next, aVar2);
                 }
             }
         }

@@ -12,15 +12,15 @@ import com.bytedance.applog.tracker.Tracker;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f25655a;
+    private Context f11967a;
     private LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f25656c = null;
+    private TextView f11968c = null;
     private com.opos.mobad.activity.webview.b.a d;
 
     public a(Context context, com.opos.mobad.activity.webview.b.a aVar) {
-        this.f25655a = context;
+        this.f11967a = context;
         this.d = aVar;
         b();
     }
@@ -31,24 +31,24 @@ public class a {
     }
 
     private void c() {
-        LinearLayout linearLayout = new LinearLayout(this.f25655a);
+        LinearLayout linearLayout = new LinearLayout(this.f11967a);
         this.b = linearLayout;
-        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f25655a, 43.33f)));
-        com.opos.cmn.e.a.d.a.a(this.b, com.opos.cmn.an.d.a.a.c(this.f25655a, "o_cmn_biz_ui_web_title_bar_bg.9.png"));
-        this.f25656c = new TextView(this.f25655a);
-        Drawable c2 = com.opos.cmn.an.d.a.a.c(this.f25655a, "o_cmn_biz_ui_web_close_bn.png");
-        c2.setBounds(0, 0, com.opos.cmn.an.h.f.a.a(this.f25655a, 26.0f), com.opos.cmn.an.h.f.a.a(this.f25655a, 24.0f));
-        this.f25656c.setCompoundDrawables(c2, null, null, null);
-        this.f25656c.setGravity(17);
-        this.f25656c.setTextSize(1, 15.0f);
-        this.f25656c.setTextColor(Color.parseColor("#2ac795"));
-        this.f25656c.setCompoundDrawablePadding(com.opos.cmn.an.h.f.a.a(this.f25655a, 2.0f));
-        this.f25656c.setText("返回");
-        this.b.addView(this.f25656c, new LinearLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f25655a, 43.33f)));
+        linearLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, com.opos.cmn.an.h.f.a.a(this.f11967a, 43.33f)));
+        com.opos.cmn.e.a.d.a.a(this.b, com.opos.cmn.an.d.a.a.c(this.f11967a, "o_cmn_biz_ui_web_title_bar_bg.9.png"));
+        this.f11968c = new TextView(this.f11967a);
+        Drawable c2 = com.opos.cmn.an.d.a.a.c(this.f11967a, "o_cmn_biz_ui_web_close_bn.png");
+        c2.setBounds(0, 0, com.opos.cmn.an.h.f.a.a(this.f11967a, 26.0f), com.opos.cmn.an.h.f.a.a(this.f11967a, 24.0f));
+        this.f11968c.setCompoundDrawables(c2, null, null, null);
+        this.f11968c.setGravity(17);
+        this.f11968c.setTextSize(1, 15.0f);
+        this.f11968c.setTextColor(Color.parseColor("#2ac795"));
+        this.f11968c.setCompoundDrawablePadding(com.opos.cmn.an.h.f.a.a(this.f11967a, 2.0f));
+        this.f11968c.setText("返回");
+        this.b.addView(this.f11968c, new LinearLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(this.f11967a, 43.33f)));
     }
 
     private void d() {
-        TextView textView = this.f25656c;
+        TextView textView = this.f11968c;
         if (textView == null || this.d == null) {
             return;
         }

@@ -142,7 +142,7 @@ public enum DisplayRules {
                 return arrayList;
             }
             DisplayRules displayRules = values[i2];
-            int idByName = ResourceUtils.getIdByName(applicationContext, i.f7952c, displayRules.getResName());
+            int idByName = ResourceUtils.getIdByName(applicationContext, i.f5112c, displayRules.getResName());
             if (idByName != 0) {
                 arrayList.add(new Emojicon(displayRules.getResName(), displayRules.getValue(), displayRules.getEmojiStr(), displayRules.getRemote(), idByName));
             }
@@ -163,7 +163,7 @@ public enum DisplayRules {
                     break;
                 }
                 DisplayRules displayRules = values[i2];
-                int idByName = ResourceUtils.getIdByName(applicationContext, i.f7952c, displayRules.getResName());
+                int idByName = ResourceUtils.getIdByName(applicationContext, i.f5112c, displayRules.getResName());
                 if (idByName != 0) {
                     sEmojiMap.put(displayRules.getEmojiStr(), Integer.valueOf(idByName));
                 }

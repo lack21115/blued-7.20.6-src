@@ -16,7 +16,7 @@ import androidx.core.view.ViewCompat;
 public class ChangeClipBounds extends Transition {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f3421a = {"android:clipBounds:clip"};
+    private static final String[] f3373a = {"android:clipBounds:clip"};
 
     public ChangeClipBounds() {
     }
@@ -101,6 +101,6 @@ public class ChangeClipBounds extends Transition {
 
     @Override // androidx.transition.Transition
     public String[] getTransitionProperties() {
-        return f3421a;
+        return f3373a;
     }
 }

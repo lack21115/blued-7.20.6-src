@@ -19,11 +19,11 @@ import java.util.concurrent.TimeUnit;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39068a = "Unknown_Operator";
+    public static final String f25377a = "Unknown_Operator";
     private static volatile j b;
 
     /* renamed from: c  reason: collision with root package name */
-    private InitCallbacks f39069c;
+    private InitCallbacks f25378c;
     private String d;
     private Context e;
     private ExecutorService f;
@@ -61,7 +61,7 @@ public class j {
         hashMap.put("device", str);
         hashMap.put("version", com.tencent.tendinsv.b.ao);
         hashMap.put("packageSign", b2);
-        String a4 = com.tencent.tendinsv.b.f38998ar == 0 ? com.tencent.tendinsv.utils.a.a(hashMap, com.tencent.tendinsv.utils.a.a(this.d)) : "";
+        String a4 = com.tencent.tendinsv.b.f25307ar == 0 ? com.tencent.tendinsv.utils.a.a(hashMap, com.tencent.tendinsv.utils.a.a(this.d)) : "";
         long currentTimeMillis = System.currentTimeMillis();
         String a5 = new com.tencent.tendinsv.utils.m().a();
         com.tencent.tendinsv.b.ak = (int) (System.currentTimeMillis() - currentTimeMillis);
@@ -75,7 +75,7 @@ public class j {
     private void a(String str, String str2, String str3, String str4, final int i, String str5, final long j, final long j2, final long j3) {
         Map<String, String> a2;
         com.tencent.tendinsv.d.b bVar;
-        if (com.tencent.tendinsv.b.f38998ar == 0) {
+        if (com.tencent.tendinsv.b.f25307ar == 0) {
             a2 = com.tencent.tendinsv.d.g.a().a(str, this.d, str2, str3, str4, str5);
             bVar = new com.tencent.tendinsv.d.b(com.tencent.tendinsv.b.y, this.e);
         } else {
@@ -86,7 +86,7 @@ public class j {
         bVar.a(a2, new com.tencent.tendinsv.d.a() { // from class: com.tencent.tendinsv.tool.j.3
             @Override // com.tencent.tendinsv.d.c
             public void a(int i2, String str6) {
-                InitCallbacks initCallbacks = j.this.f39069c;
+                InitCallbacks initCallbacks = j.this.f25378c;
                 initCallbacks.initFailed(1007, i2, "getOperatorInfo()__onFailure==" + str6, str6, i, j, j2, j3);
             }
 
@@ -131,7 +131,7 @@ public class j {
         try {
             com.tencent.tendinsv.utils.l.a(com.tencent.tendinsv.b.H, "initStart--processName=", Integer.valueOf(i));
             com.tencent.tendinsv.b.V.set(com.tencent.tendinsv.b.U);
-            this.f39069c = new com.tencent.tendinsv.c.c(this.e);
+            this.f25378c = new com.tencent.tendinsv.c.c(this.e);
             boolean b2 = t.b(this.e, t.S, false);
             com.tencent.tendinsv.utils.h.a().a(this.e, b2, i, j, j2, uptimeMillis);
             String b3 = t.b(this.e, "appId", "");
@@ -143,9 +143,9 @@ public class j {
                         long b6 = t.b(this.e, t.y, (long) com.anythink.expressad.d.a.b.P);
                         String b7 = t.b(this.e, t.E, "0");
                         if (!com.tencent.tendinsv.utils.d.b(b7) || !"1".equals(b7)) {
-                            this.f39069c.initSuccessed(1022, 1022, com.tencent.tendinsv.b.ay, "cache", i, j, j2, uptimeMillis);
+                            this.f25378c.initSuccessed(1022, 1022, com.tencent.tendinsv.b.ay, "cache", i, j, j2, uptimeMillis);
                             if ((SystemClock.uptimeMillis() - b5) / 1000 < b6) {
-                                this.f39069c.initSuccessed(1022, 1022, com.tencent.tendinsv.b.ay, "cache", i, j, j2, uptimeMillis);
+                                this.f25378c.initSuccessed(1022, 1022, com.tencent.tendinsv.b.ay, "cache", i, j, j2, uptimeMillis);
                                 return;
                             } else {
                                 a(i, j, j2, uptimeMillis);
@@ -153,7 +153,7 @@ public class j {
                             }
                         }
                         com.tencent.tendinsv.b.av = false;
-                        initCallbacks = this.f39069c;
+                        initCallbacks = this.f25378c;
                         i2 = 1032;
                         i3 = 1032;
                         str = "用户被禁用";
@@ -165,11 +165,11 @@ public class j {
                     e = e;
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "initStart--Exception_e=", e);
-                    this.f39069c.initFailed(1014, 1014, "initStart--Exception_e=" + e, e.getClass().getSimpleName(), i, j, j2, uptimeMillis);
+                    this.f25378c.initFailed(1014, 1014, "initStart--Exception_e=" + e, e.getClass().getSimpleName(), i, j, j2, uptimeMillis);
                     return;
                 }
             }
-            initCallbacks = this.f39069c;
+            initCallbacks = this.f25378c;
             i2 = 1016;
             i3 = 1016;
             str = "AppId为空";

@@ -12,17 +12,17 @@ public class o extends WebChromeClient {
     private static final String b = "H5_ENTRY";
 
     /* renamed from: a  reason: collision with root package name */
-    WindVaneWebView f7114a;
+    WindVaneWebView f4276a;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f7115c;
+    private e f4277c;
 
     public o(WindVaneWebView windVaneWebView) {
-        this.f7114a = windVaneWebView;
+        this.f4276a = windVaneWebView;
     }
 
     public final void a(e eVar) {
-        this.f7115c = eVar;
+        this.f4277c = eVar;
     }
 
     @Override // android.webkit.WebChromeClient
@@ -30,7 +30,7 @@ public class o extends WebChromeClient {
         if (consoleMessage.messageLevel() != ConsoleMessage.MessageLevel.LOG) {
             return super.onConsoleMessage(consoleMessage);
         }
-        d signalCommunication = this.f7114a.getSignalCommunication();
+        d signalCommunication = this.f4276a.getSignalCommunication();
         if (signalCommunication != null && consoleMessage != null) {
             String message = consoleMessage.message();
             if (TextUtils.isEmpty(message) || !message.startsWith("mv://")) {
@@ -50,7 +50,7 @@ public class o extends WebChromeClient {
     @Override // android.webkit.WebChromeClient
     public boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {
         com.anythink.expressad.foundation.h.o.d(b, String.valueOf(str2));
-        d signalCommunication = this.f7114a.getSignalCommunication();
+        d signalCommunication = this.f4276a.getSignalCommunication();
         if (signalCommunication == null || str3 == null || !signalCommunication.a(str3)) {
             return false;
         }
@@ -63,7 +63,7 @@ public class o extends WebChromeClient {
     public void onProgressChanged(WebView webView, int i) {
         Tracker.onProgressChanged(this, webView, i);
         super.onProgressChanged(webView, i);
-        e eVar = this.f7115c;
+        e eVar = this.f4277c;
         if (eVar != null) {
             eVar.onProgressChanged(webView, i);
         }

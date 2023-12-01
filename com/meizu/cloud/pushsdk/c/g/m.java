@@ -7,6 +7,6 @@ import java.io.IOException;
 public interface m extends Closeable {
     long b(b bVar, long j) throws IOException;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
+    @Override // java.lang.AutoCloseable, com.meizu.cloud.pushsdk.c.g.m
     void close() throws IOException;
 }

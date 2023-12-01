@@ -29,11 +29,11 @@ import java.util.List;
 public class BlacklistFragment extends BaseFragment implements View.OnClickListener, BlackListDataObserver.IBlackListDataObserver, IBlackListContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33327a;
+    private Context f19636a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private SmartRefreshLayout f33328c;
+    private SmartRefreshLayout f19637c;
     private RecyclerView d;
     private BlackAdapter e;
     private int f = 10;
@@ -43,44 +43,44 @@ public class BlacklistFragment extends BaseFragment implements View.OnClickListe
     private CommonTopTitleNoTrans j;
 
     private void g() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        this.j = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(this.f33327a.getResources().getString(R.string.my_black_list));
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        this.j = findViewById;
+        findViewById.setCenterText(this.f19636a.getResources().getString(R.string.my_black_list));
         this.j.setCenterClickListener(this);
         this.j.setLeftClickListener(this);
         this.j.a();
     }
 
     private void h() {
-        this.h = (NoDataAndLoadFailView) this.b.findViewById(2131368079);
+        this.h = this.b.findViewById(R.id.ll_nodata);
         LinearLayout linearLayout = (LinearLayout) this.b.findViewById(R.id.ll_hint);
         this.g = linearLayout;
         linearLayout.setOnClickListener(this);
         this.i.d();
-        this.f33328c = (SmartRefreshLayout) this.b.findViewById(2131369119);
+        this.f19637c = (SmartRefreshLayout) this.b.findViewById(R.id.refresh_layout);
         this.d = (RecyclerView) this.b.findViewById(2131369105);
-        this.d.setLayoutManager(new LinearLayoutManager(this.f33327a));
-        BlackAdapter blackAdapter = new BlackAdapter(this.f33327a, getFragmentActive());
+        this.d.setLayoutManager(new LinearLayoutManager(this.f19636a));
+        BlackAdapter blackAdapter = new BlackAdapter(this.f19636a, getFragmentActive());
         this.e = blackAdapter;
         this.d.setAdapter(blackAdapter);
-        this.f33328c.a(new OnRefreshListener() { // from class: com.soft.blued.ui.setting.fragment.BlacklistFragment.1
+        this.f19637c.a(new OnRefreshListener() { // from class: com.soft.blued.ui.setting.fragment.BlacklistFragment.1
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 BlacklistFragment.this.i.b();
             }
         });
-        this.f33328c.a(new OnLoadMoreListener() { // from class: com.soft.blued.ui.setting.fragment.BlacklistFragment.2
+        this.f19637c.a(new OnLoadMoreListener() { // from class: com.soft.blued.ui.setting.fragment.BlacklistFragment.2
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 BlacklistFragment.this.i.c();
             }
         });
-        this.f33328c.i();
+        this.f19637c.i();
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IBlackListContract.IView
     public void a() {
-        this.f33328c.l(true);
+        this.f19637c.l(true);
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IBlackListContract.IView
@@ -99,7 +99,7 @@ public class BlacklistFragment extends BaseFragment implements View.OnClickListe
 
     @Override // com.soft.blued.ui.setting.Contract.IBlackListContract.IView
     public void b() {
-        this.f33328c.l(false);
+        this.f19637c.l(false);
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IBlackListContract.IView
@@ -109,8 +109,8 @@ public class BlacklistFragment extends BaseFragment implements View.OnClickListe
 
     @Override // com.soft.blued.ui.setting.Contract.IBlackListContract.IView
     public void c() {
-        this.f33328c.j();
-        this.f33328c.h();
+        this.f19637c.j();
+        this.f19637c.h();
     }
 
     @Override // com.soft.blued.ui.setting.Contract.IBlackListContract.IView
@@ -140,10 +140,9 @@ public class BlacklistFragment extends BaseFragment implements View.OnClickListe
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
-        this.f33327a = activity;
+        this.f19636a = activity;
         this.i = new BlackListPresenter(activity, getFragmentActive(), this, this.f);
         View view = this.b;
         if (view == null) {
@@ -157,7 +156,6 @@ public class BlacklistFragment extends BaseFragment implements View.OnClickListe
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         BlackListDataObserver.a().b(this);
         super.onDestroy();

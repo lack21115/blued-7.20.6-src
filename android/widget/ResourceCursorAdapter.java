@@ -17,21 +17,21 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
         super(context, cursor);
         this.mDropDownLayout = i;
         this.mLayout = i;
-        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
     }
 
     public ResourceCursorAdapter(Context context, int i, Cursor cursor, int i2) {
         super(context, cursor, i2);
         this.mDropDownLayout = i;
         this.mLayout = i;
-        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
     }
 
     public ResourceCursorAdapter(Context context, int i, Cursor cursor, boolean z) {
         super(context, cursor, z);
         this.mDropDownLayout = i;
         this.mLayout = i;
-        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
     }
 
     @Override // android.widget.CursorAdapter

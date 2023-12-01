@@ -7,31 +7,31 @@ import java.util.List;
 public class b extends j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final g f24018a = g.a("application/x-www-form-urlencoded");
+    private static final g f10407a = g.a("application/x-www-form-urlencoded");
     private final List<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final List<String> f24019c;
+    private final List<String> f10408c;
 
     /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/c/c/b$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<String> f24020a = new ArrayList();
+        private final List<String> f10409a = new ArrayList();
         private final List<String> b = new ArrayList();
 
         public a a(String str, String str2) {
-            this.f24020a.add(f.a(str, " \"':;<=>@[]^`{}|/\\?#&!$(),~", false, false, true, true));
+            this.f10409a.add(f.a(str, " \"':;<=>@[]^`{}|/\\?#&!$(),~", false, false, true, true));
             this.b.add(f.a(str2, " \"':;<=>@[]^`{}|/\\?#&!$(),~", false, false, true, true));
             return this;
         }
 
         public b a() {
-            return new b(this.f24020a, this.b);
+            return new b(this.f10409a, this.b);
         }
 
         public a b(String str, String str2) {
-            this.f24020a.add(f.a(str, " \"':;<=>@[]^`{}|/\\?#&!$(),~", true, false, true, true));
+            this.f10409a.add(f.a(str, " \"':;<=>@[]^`{}|/\\?#&!$(),~", true, false, true, true));
             this.b.add(f.a(str2, " \"':;<=>@[]^`{}|/\\?#&!$(),~", true, false, true, true));
             return this;
         }
@@ -39,7 +39,7 @@ public class b extends j {
 
     private b(List<String> list, List<String> list2) {
         this.b = m.a(list);
-        this.f24019c = m.a(list2);
+        this.f10408c = m.a(list2);
     }
 
     private long a(com.meizu.cloud.pushsdk.c.g.c cVar, boolean z) {
@@ -51,7 +51,7 @@ public class b extends j {
             }
             bVar.b(this.b.get(i));
             bVar.b(61);
-            bVar.b(this.f24019c.get(i));
+            bVar.b(this.f10408c.get(i));
         }
         if (z) {
             long a2 = bVar.a();
@@ -63,7 +63,7 @@ public class b extends j {
 
     @Override // com.meizu.cloud.pushsdk.c.c.j
     public g a() {
-        return f24018a;
+        return f10407a;
     }
 
     @Override // com.meizu.cloud.pushsdk.c.c.j

@@ -309,19 +309,19 @@ public final class Array {
         }
     }
 
-    public static void setChar(Object obj, int i, char c2) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
+    public static void setChar(Object obj, int i, char c) throws IllegalArgumentException, ArrayIndexOutOfBoundsException {
         if (obj instanceof char[]) {
-            ((char[]) obj)[i] = c2;
+            ((char[]) obj)[i] = c;
         } else if (obj instanceof double[]) {
-            ((double[]) obj)[i] = c2;
+            ((double[]) obj)[i] = c;
         } else if (obj instanceof float[]) {
-            ((float[]) obj)[i] = c2;
+            ((float[]) obj)[i] = c;
         } else if (obj instanceof int[]) {
-            ((int[]) obj)[i] = c2;
+            ((int[]) obj)[i] = c;
         } else if (!(obj instanceof long[])) {
             throw badArray(obj);
         } else {
-            ((long[]) obj)[i] = c2;
+            ((long[]) obj)[i] = c;
         }
     }
 

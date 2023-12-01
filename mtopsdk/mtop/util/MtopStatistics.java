@@ -7,9 +7,7 @@ import mtopsdk.common.util.StringUtils;
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/util/MtopStatistics.class */
 public class MtopStatistics implements Cloneable {
     public long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public long f43791c;
+    public long c;
     public long d;
     public int e;
     public String f;
@@ -22,9 +20,7 @@ public class MtopStatistics implements Cloneable {
     protected long m;
     protected a o;
     private RbStatisticData r;
-
-    /* renamed from: a  reason: collision with root package name */
-    public boolean f43790a = true;
+    public boolean a = true;
     protected String n = "";
     public String p = "";
     public int q = MtopUtils.a();
@@ -32,13 +28,9 @@ public class MtopStatistics implements Cloneable {
 
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/util/MtopStatistics$RbStatisticData.class */
     public class RbStatisticData implements Cloneable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public long f43792a;
+        public long a;
         public long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public long f43793c;
+        public long c;
         public long d;
         public long e;
         public long f;
@@ -54,7 +46,7 @@ public class MtopStatistics implements Cloneable {
         }
 
         public String toString() {
-            return "rbReqTime=" + this.d + ",mtopReqTime=" + this.f43792a + ",mtopJsonParseTime=" + this.e + ",toMainThTime=" + this.g + ",isCache=" + this.h + ",beforeReqTime=" + this.b + ",afterReqTime=" + this.f43793c + ",parseTime=" + this.f;
+            return "rbReqTime=" + this.d + ",mtopReqTime=" + this.a + ",mtopJsonParseTime=" + this.e + ",toMainThTime=" + this.g + ",isCache=" + this.h + ",beforeReqTime=" + this.b + ",afterReqTime=" + this.c + ",parseTime=" + this.f;
         }
     }
 
@@ -71,7 +63,7 @@ public class MtopStatistics implements Cloneable {
     }
 
     public void a(boolean z) {
-        this.f43790a = z;
+        this.a = z;
     }
 
     public void b() {
@@ -104,13 +96,13 @@ public class MtopStatistics implements Cloneable {
 
     public void h() {
         this.b = this.i - this.h;
-        this.f43791c = this.k - this.j;
+        this.c = this.k - this.j;
         this.d = this.m - this.l;
         StringBuilder sb = new StringBuilder("");
         sb.append("mtopOneWayTime=");
         sb.append(this.b);
         sb.append(",oneWayTime=");
-        sb.append(this.f43791c);
+        sb.append(this.c);
         sb.append(",mtopResponseParseTime=");
         sb.append(this.d);
         sb.append(",httpResponseStatus=");
@@ -119,7 +111,7 @@ public class MtopStatistics implements Cloneable {
         sb.append(this.f);
         if (this.o != null) {
             sb.append(",");
-            sb.append(StringUtils.b(this.o.f43658a) ? this.o.a() : this.o.f43658a);
+            sb.append(StringUtils.b(this.o.a) ? this.o.a() : this.o.a);
         }
         this.n = sb.toString();
     }

@@ -4,11 +4,11 @@ package com.anythink.network.toutiao;
 public class TTATBiddingInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    protected double f9096a;
+    protected double f6256a;
     protected Object b;
 
     private TTATBiddingInfo(Object obj, double d) {
-        this.f9096a = d;
+        this.f6256a = d;
         this.b = obj;
     }
 }

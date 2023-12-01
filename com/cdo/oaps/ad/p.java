@@ -12,11 +12,11 @@ import java.util.Map;
 public class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f21532a = 5100;
+    public static final int f7926a = 5100;
     public static final int b = 5000;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f21533c = 4600;
+    public static final int f7927c = 4600;
     public static final int d = 4550;
     public static final int e = 390;
     public static final int f = 6500;

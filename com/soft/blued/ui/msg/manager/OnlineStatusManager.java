@@ -25,11 +25,11 @@ public final class OnlineStatusManager {
     private static OnSyncOnlineStatusListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static IRequestHost f32436c;
+    private static IRequestHost f18746c;
     private static long d;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final OnlineStatusManager f32435a = new OnlineStatusManager();
+    public static final OnlineStatusManager f18745a = new OnlineStatusManager();
     private static final HashMap<String, ChatOnlineStatusModel> e = new HashMap<>();
     private static final HashSet<Long> f = new HashSet<>();
     private static String g = "";
@@ -40,7 +40,7 @@ public final class OnlineStatusManager {
             List<String> a2;
             onSyncOnlineStatusListener = OnlineStatusManager.b;
             if (onSyncOnlineStatusListener != null && (a2 = onSyncOnlineStatusListener.a()) != null && (!a2.isEmpty())) {
-                OnlineStatusManager.f32435a.a(a2);
+                OnlineStatusManager.f18745a.a(a2);
             }
             AppInfo.n().postDelayed(this, 300000L);
         }
@@ -59,10 +59,9 @@ public final class OnlineStatusManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<String> list) {
-        final IRequestHost iRequestHost = f32436c;
+        final IRequestHost iRequestHost = f18746c;
         ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<ChatOnlineStatusModel>>(iRequestHost) { // from class: com.soft.blued.ui.msg.manager.OnlineStatusManager$syncOnlineStatusFromNetwork$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ChatOnlineStatusModel> bluedEntityA) {
                 HashSet hashSet;
@@ -71,18 +70,18 @@ public final class OnlineStatusManager {
                 if (bluedEntityA == null) {
                     return;
                 }
-                List<ChatOnlineStatusModel> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
-                if (!data.isEmpty()) {
-                    List<ChatOnlineStatusModel> data2 = bluedEntityA.data;
-                    Intrinsics.c(data2, "data");
-                    for (ChatOnlineStatusModel it : data2) {
-                        if (it.getUid().length() > 0) {
+                List list2 = bluedEntityA.data;
+                Intrinsics.c(list2, "data");
+                if (!list2.isEmpty()) {
+                    List<ChatOnlineStatusModel> list3 = bluedEntityA.data;
+                    Intrinsics.c(list3, "data");
+                    for (ChatOnlineStatusModel chatOnlineStatusModel : list3) {
+                        if (chatOnlineStatusModel.getUid().length() > 0) {
                             hashMap = OnlineStatusManager.e;
                             HashMap hashMap2 = hashMap;
-                            String uid = it.getUid();
-                            Intrinsics.c(it, "it");
-                            hashMap2.put(uid, it);
+                            String uid = chatOnlineStatusModel.getUid();
+                            Intrinsics.c(chatOnlineStatusModel, "it");
+                            hashMap2.put(uid, chatOnlineStatusModel);
                         }
                     }
                     hashSet = OnlineStatusManager.f;
@@ -95,11 +94,10 @@ public final class OnlineStatusManager {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return true;
             }
-        }, list, f32436c);
+        }, list, f18746c);
     }
 
     private final void f() {
@@ -136,19 +134,19 @@ public final class OnlineStatusManager {
         if (sessionModel.sessionType == 2 && !f.contains(Long.valueOf(sessionModel.sessionId))) {
             f.add(Long.valueOf(sessionModel.sessionId));
             if (chatOnlineStatusModel != null) {
-                EventTrackMessage.d(MessageProtos.Event.MSG_USER_SHOW, a(Integer.valueOf(chatOnlineStatusModel.getSocial_status())), Intrinsics.a("", (Object) Long.valueOf(sessionModel.sessionId)), Intrinsics.a("", (Object) Long.valueOf(chatOnlineStatusModel.getSource_id())));
+                EventTrackMessage.d(MessageProtos.Event.MSG_USER_SHOW, a(Integer.valueOf(chatOnlineStatusModel.getSocial_status())), Intrinsics.a("", Long.valueOf(sessionModel.sessionId)), Intrinsics.a("", Long.valueOf(chatOnlineStatusModel.getSource_id())));
             } else {
-                EventTrackMessage.d(MessageProtos.Event.MSG_USER_SHOW, a((Integer) 0), Intrinsics.a("", (Object) Long.valueOf(sessionModel.sessionId)), "");
+                EventTrackMessage.d(MessageProtos.Event.MSG_USER_SHOW, a((Integer) 0), Intrinsics.a("", Long.valueOf(sessionModel.sessionId)), "");
             }
         }
     }
 
     public final void a(IRequestHost iRequestHost, OnSyncOnlineStatusListener onSyncOnlineStatusListener) {
-        if (!Intrinsics.a((Object) g, (Object) UserInfo.getInstance().getLoginUserInfo().uid)) {
+        if (!Intrinsics.a(g, UserInfo.getInstance().getLoginUserInfo().uid)) {
             f();
         }
         if (a()) {
-            f32436c = iRequestHost;
+            f18746c = iRequestHost;
             b = onSyncOnlineStatusListener;
             if (d + 300000 > System.currentTimeMillis()) {
                 return;

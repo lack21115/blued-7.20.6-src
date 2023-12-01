@@ -12,17 +12,17 @@ import java.lang.reflect.Method;
 public class ViewUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f1923a;
+    private static Method f1875a;
 
     static {
         if (Build.VERSION.SDK_INT >= 18) {
             try {
                 Method declaredMethod = View.class.getDeclaredMethod("computeFitSystemWindows", Rect.class, Rect.class);
-                f1923a = declaredMethod;
+                f1875a = declaredMethod;
                 if (declaredMethod.isAccessible()) {
                     return;
                 }
-                f1923a.setAccessible(true);
+                f1875a.setAccessible(true);
             } catch (NoSuchMethodException e) {
                 Log.d("ViewUtils", "Could not find method computeFitSystemWindows. Oh well.");
             }
@@ -33,7 +33,7 @@ public class ViewUtils {
     }
 
     public static void computeFitSystemWindows(View view, Rect rect, Rect rect2) {
-        Method method = f1923a;
+        Method method = f1875a;
         if (method != null) {
             try {
                 method.invoke(view, rect, rect2);

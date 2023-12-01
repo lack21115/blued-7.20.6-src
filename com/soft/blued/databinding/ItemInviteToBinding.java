@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemInviteToBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29207a;
+    private final RelativeLayout f15517a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29207a;
+        return this.f15517a;
     }
 }

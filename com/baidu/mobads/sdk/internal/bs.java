@@ -18,7 +18,7 @@ public class bs extends Thread {
     private static final String b = "ApkDownloadThread";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f9357c = 900000;
+    private static final int f6517c = 900000;
     private static volatile bs h;
     private volatile String d;
     private String e;
@@ -30,7 +30,7 @@ public class bs extends Thread {
     private bq l = bq.a();
 
     /* renamed from: a  reason: collision with root package name */
-    cf.a f9358a = new bt(this);
+    cf.a f6518a = new bt(this);
 
     private bs(Context context, bu buVar, String str, Handler handler) {
         this.e = null;
@@ -77,9 +77,9 @@ public class bs extends Thread {
     private boolean b() {
         try {
             try {
-                this.j = new cf(this.i, new URL(this.d), this.k, this.f9358a);
+                this.j = new cf(this.i, new URL(this.d), this.k, this.f6518a);
             } catch (MalformedURLException e) {
-                this.j = new cf(this.i, this.d, this.k, this.f9358a);
+                this.j = new cf(this.i, this.d, this.k, this.f6518a);
             }
             double d = bw.q != null ? bw.q.b : bw.p != null ? bw.p.b > 0.0d ? bw.p.b : bw.p.b : 0.0d;
             this.l.a(b, "isNewApkAvailable: local apk version is: " + d + ", remote apk version: " + this.k.b());

@@ -25,7 +25,7 @@ public class ApplyJoinCircleFragment extends BaseFragment {
         TransparentActivity.b(context, ApplyJoinCircleFragment.class, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (getArguments() == null) {

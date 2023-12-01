@@ -4,6 +4,7 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/multiwaveview/TargetDrawable.class */
 public class TargetDrawable {
@@ -11,9 +12,9 @@ public class TargetDrawable {
     private static final String TAG = "TargetDrawable";
     private Drawable mDrawable;
     private final int mResourceId;
-    public static final int[] STATE_ACTIVE = {16842910, 16842914};
-    public static final int[] STATE_INACTIVE = {16842910, -16842914};
-    public static final int[] STATE_FOCUSED = {16842910, -16842914, 16842908};
+    public static final int[] STATE_ACTIVE = {R.attr.state_enabled, R.attr.state_active};
+    public static final int[] STATE_INACTIVE = {R.attr.state_enabled, -16842914};
+    public static final int[] STATE_FOCUSED = {R.attr.state_enabled, -16842914, R.attr.state_focused};
     private float mTranslationX = 0.0f;
     private float mTranslationY = 0.0f;
     private float mPositionX = 0.0f;

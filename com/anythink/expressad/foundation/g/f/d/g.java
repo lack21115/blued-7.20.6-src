@@ -9,7 +9,7 @@ import java.io.UnsupportedEncodingException;
 public class g extends i<String> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7889c = g.class.getSimpleName();
+    private static final String f5049c = g.class.getSimpleName();
     private String d;
 
     public g(int i, String str, String str2, com.anythink.expressad.foundation.g.f.e<String> eVar) {
@@ -22,7 +22,7 @@ public class g extends i<String> {
         try {
             return k.a(new String(cVar.b, com.anythink.expressad.foundation.g.f.g.e.a(cVar.d)), cVar);
         } catch (UnsupportedEncodingException e) {
-            o.d(f7889c, e.getMessage());
+            o.d(f5049c, e.getMessage());
             return k.a(new com.anythink.expressad.foundation.g.f.a.a(8, cVar));
         }
     }

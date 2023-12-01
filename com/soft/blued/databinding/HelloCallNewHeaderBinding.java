@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class HelloCallNewHeaderBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f29061a;
+    public final LinearLayout f15371a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f29062c;
+    public final LinearLayout f15372c;
     public final RecyclerView d;
     public final LinearLayout e;
     public final TextView f;
@@ -28,9 +28,9 @@ public final class HelloCallNewHeaderBinding implements ViewBinding {
 
     private HelloCallNewHeaderBinding(LinearLayout linearLayout, LinearLayout linearLayout2, ImageView imageView, LinearLayout linearLayout3, RecyclerView recyclerView, LinearLayout linearLayout4, TextView textView, TextView textView2, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.j = linearLayout;
-        this.f29061a = linearLayout2;
+        this.f15371a = linearLayout2;
         this.b = imageView;
-        this.f29062c = linearLayout3;
+        this.f15372c = linearLayout3;
         this.d = recyclerView;
         this.e = linearLayout4;
         this.f = textView;
@@ -55,11 +55,11 @@ public final class HelloCallNewHeaderBinding implements ViewBinding {
                             if (textView != null) {
                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_recommend_no_data);
                                 if (textView2 != null) {
-                                    ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_sort_left);
-                                    if (shapeTextView != null) {
-                                        ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_sort_right);
-                                        if (shapeTextView2 != null) {
-                                            return new HelloCallNewHeaderBinding((LinearLayout) view, linearLayout, imageView, linearLayout2, recyclerView, linearLayout3, textView, textView2, shapeTextView, shapeTextView2);
+                                    ShapeTextView findViewById = view.findViewById(R.id.tv_sort_left);
+                                    if (findViewById != null) {
+                                        ShapeTextView findViewById2 = view.findViewById(R.id.tv_sort_right);
+                                        if (findViewById2 != null) {
+                                            return new HelloCallNewHeaderBinding((LinearLayout) view, linearLayout, imageView, linearLayout2, recyclerView, linearLayout3, textView, textView2, findViewById, findViewById2);
                                         }
                                         str = "tvSortRight";
                                     } else {

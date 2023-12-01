@@ -13,7 +13,7 @@ public abstract class d extends f {
     public static final int l = -2147483640;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f23292a;
+    private final String f9684a;
     protected SQLiteDatabase d;
     protected Cursor e;
     Context f;
@@ -25,52 +25,52 @@ public abstract class d extends f {
 
     public d() {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
     }
 
     public d(ContentValues contentValues) {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
         this.h = contentValues;
     }
 
     private d(Context context) {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
         this.f = context;
     }
 
     private d(Context context, ContentValues contentValues) {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
         this.f = context;
         this.h = contentValues;
     }
 
     private d(Context context, c cVar) {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
         this.f = context;
         this.k = cVar;
     }
 
     private d(Context context, Object obj) {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
         this.f = context;
         this.j = obj;
     }
 
     private d(Context context, ContentValues[] contentValuesArr) {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
         this.f = context;
         this.i = contentValuesArr;
     }
 
     private d(Context context, String[] strArr) {
         super(1);
-        this.f23292a = getClass().getName();
+        this.f9684a = getClass().getName();
         this.f = context;
         this.g = strArr;
     }
@@ -84,7 +84,7 @@ public abstract class d extends f {
     @Override // com.igexin.c.a.d.f, com.igexin.c.a.d.a.f
     public final void b_() throws Exception {
         super.b_();
-        this.d = d.a.f23474a.i.getWritableDatabase();
+        this.d = d.a.f9866a.i.getWritableDatabase();
         a_();
         if (this.k != null) {
             e.a().a(this.k);

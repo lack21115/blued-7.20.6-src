@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f25405a = Pattern.compile("^NOTE(( |\t).*)?$");
+    private static final Pattern f11717a = Pattern.compile("^NOTE(( |\t).*)?$");
     private static final Pattern b = Pattern.compile("^\ufeff?WEBVTT(( |\t).*)?$");
 
     public static long a(String str) {

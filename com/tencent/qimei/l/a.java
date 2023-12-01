@@ -7,12 +7,12 @@ import com.tencent.qimei.i.f;
 public class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ com.tencent.qimei.c.d f38348a;
+    public final /* synthetic */ com.tencent.qimei.c.d f24657a;
     public final /* synthetic */ d b;
 
     public a(d dVar, com.tencent.qimei.c.d dVar2) {
         this.b = dVar;
-        this.f38348a = dVar2;
+        this.f24657a = dVar2;
     }
 
     @Override // java.lang.Runnable
@@ -23,9 +23,9 @@ public class a implements Runnable {
         String c2 = f.a(str).c("is_first");
         str2 = this.b.b;
         if (!com.tencent.qimei.v.d.a(str2).h() || TextUtils.isEmpty(c2)) {
-            this.f38348a.a(2);
+            this.f24657a.a(2);
         } else {
-            d.a(this.b, this.f38348a);
+            d.a(this.b, this.f24657a);
         }
     }
 }

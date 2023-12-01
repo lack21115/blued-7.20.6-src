@@ -4,11 +4,11 @@ package com.kuaishou.weapon.p0;
 public class bq {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23757a = "7";
+    public static final String f10149a = "7";
     public static final String b = "6";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23758c = "5";
+    public static final String f10150c = "5";
     public static final String d = "4";
     public static final String e = "3";
     public static final String f = "2";

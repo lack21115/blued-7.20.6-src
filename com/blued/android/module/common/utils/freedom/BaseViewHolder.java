@@ -13,55 +13,51 @@ import com.blued.android.module.common.utils.freedom.clickcallback.onViewRecycle
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/freedom/BaseViewHolder.class */
 public class BaseViewHolder extends RecyclerView.ViewHolder {
-
-    /* renamed from: a  reason: collision with root package name */
-    public FreedomAdapter f10931a;
+    public FreedomAdapter a;
     public IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public onViewRecycledCallback f10932c;
+    public onViewRecycledCallback c;
     private final SparseArray<View> d;
 
     public BaseViewHolder(FreedomAdapter freedomAdapter, View view, IRequestHost iRequestHost) {
         super(view);
-        this.f10931a = freedomAdapter;
+        this.a = freedomAdapter;
         this.d = new SparseArray<>();
         this.b = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ boolean f(View view) {
-        FreedomAdapter freedomAdapter = this.f10931a;
+        FreedomAdapter freedomAdapter = this.a;
         if (freedomAdapter == null || freedomAdapter.b() == null) {
             return false;
         }
         int adapterPosition = getAdapterPosition();
         int i = adapterPosition;
-        if (this.f10931a.f10934c) {
+        if (this.a.c) {
             i = adapterPosition;
-            if (this.f10931a.f10933a != null) {
-                i = adapterPosition % this.f10931a.f10933a.size();
+            if (this.a.a != null) {
+                i = adapterPosition % this.a.a.size();
             }
         }
-        this.f10931a.b().onLongClick(view, i, this);
+        this.a.b().onLongClick(view, i, this);
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void g(View view) {
-        FreedomAdapter freedomAdapter = this.f10931a;
+        FreedomAdapter freedomAdapter = this.a;
         if (freedomAdapter == null || freedomAdapter.a() == null) {
             return;
         }
         int adapterPosition = getAdapterPosition();
         int i = adapterPosition;
-        if (this.f10931a.f10934c) {
+        if (this.a.c) {
             i = adapterPosition;
-            if (this.f10931a.f10933a != null) {
-                i = adapterPosition % this.f10931a.f10933a.size();
+            if (this.a.a != null) {
+                i = adapterPosition % this.a.a.size();
             }
         }
-        this.f10931a.a().onClick(view, i, this);
+        this.a.a().onClick(view, i, this);
     }
 
     public <T extends View> T a(int i) {
@@ -80,9 +76,9 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     }
 
     public BaseViewHolder a(int i, int i2) {
-        View a2 = a(i);
-        if (a2 != null && (a2 instanceof TextView)) {
-            ((TextView) a2).setText(i2);
+        View a = a(i);
+        if (a != null && (a instanceof TextView)) {
+            ((TextView) a).setText(i2);
         }
         return this;
     }
@@ -93,9 +89,9 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     }
 
     public BaseViewHolder a(int i, CharSequence charSequence) {
-        View a2 = a(i);
-        if (a2 != null && (a2 instanceof TextView)) {
-            a((TextView) a2, charSequence);
+        View a = a(i);
+        if (a != null && (a instanceof TextView)) {
+            a((TextView) a, charSequence);
         }
         return this;
     }
@@ -131,9 +127,9 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     }
 
     public BaseViewHolder a(int i, boolean z) {
-        View a2 = a(i);
-        if (a2 != null && (a2 instanceof TextView)) {
-            a((TextView) a2, z);
+        View a = a(i);
+        if (a != null && (a instanceof TextView)) {
+            a((TextView) a, z);
         }
         return this;
     }
@@ -207,21 +203,21 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
             if (TextUtils.isEmpty(str)) {
                 return this;
             }
-            ImageWrapper a2 = ImageLoader.a(this.b, str);
-            a2.b(i);
+            ImageWrapper a = ImageLoader.a(this.b, str);
+            a.b(i);
             if (z) {
                 if (f <= 0.0f) {
-                    a2.c();
+                    a.c();
                 } else {
-                    a2.a(f, i2);
+                    a.a(f, i2);
                 }
             }
             if (z2) {
-                a2.g();
-                a2.g(i3);
+                a.g();
+                a.g(i3);
             }
-            a2.c(300);
-            a2.a(imageView);
+            a.c(300);
+            a.a(imageView);
         }
         return this;
     }
@@ -240,21 +236,21 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
                 str3 = str2;
             }
         }
-        ImageWrapper a2 = ImageLoader.a(this.b, str3);
-        a2.b(i);
+        ImageWrapper a = ImageLoader.a(this.b, str3);
+        a.b(i);
         if (z) {
             if (f2 <= 0.0f) {
-                a2.c();
+                a.c();
             } else {
-                a2.a(f2, i2);
+                a.a(f2, i2);
             }
         }
         if (z2) {
-            a2.g();
-            a2.g(i3);
+            a.g();
+            a.g(i3);
         }
-        a2.c(300);
-        a2.a(imageView);
+        a.c(300);
+        a.a(imageView);
         return this;
     }
 
@@ -293,7 +289,7 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void a() {
-        onViewRecycledCallback onviewrecycledcallback = this.f10932c;
+        onViewRecycledCallback onviewrecycledcallback = this.c;
         if (onviewrecycledcallback != null) {
             onviewrecycledcallback.a();
         }
@@ -310,9 +306,9 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     }
 
     public BaseViewHolder b(int i, int i2) {
-        View a2 = a(i);
-        if (a2 != null && (a2 instanceof TextView)) {
-            b((TextView) a2, i2);
+        View a = a(i);
+        if (a != null && (a instanceof TextView)) {
+            b((TextView) a, i2);
         }
         return this;
     }
@@ -362,9 +358,9 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
     }
 
     public BaseViewHolder c(int i, int i2) {
-        View a2 = a(i);
-        if (a2 != null && (a2 instanceof ImageView)) {
-            a((ImageView) a2, i2);
+        View a = a(i);
+        if (a != null && (a instanceof ImageView)) {
+            a((ImageView) a, i2);
         }
         return this;
     }

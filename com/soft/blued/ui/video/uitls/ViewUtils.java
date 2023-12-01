@@ -14,11 +14,11 @@ public class ViewUtils {
     class AnonymousClass1 implements Animation.AnimationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f34469a;
+        final /* synthetic */ View f20778a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            View view = this.f34469a;
+            View view = this.f20778a;
             if (view != null) {
                 view.setVisibility(8);
             }
@@ -38,11 +38,11 @@ public class ViewUtils {
     class AnonymousClass2 implements Animation.AnimationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f34470a;
+        final /* synthetic */ View f20779a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            View view = this.f34470a;
+            View view = this.f20779a;
             if (view != null) {
                 view.setVisibility(8);
             }
@@ -62,11 +62,11 @@ public class ViewUtils {
     class AnonymousClass3 implements Animation.AnimationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f34471a;
+        final /* synthetic */ View f20780a;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            View view = this.f34471a;
+            View view = this.f20780a;
             if (view != null) {
                 view.setVisibility(8);
             }
@@ -86,12 +86,12 @@ public class ViewUtils {
     class AnonymousClass4 implements Animation.AnimationListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f34472a;
+        final /* synthetic */ View f20781a;
         final /* synthetic */ ScaleAnimation b;
 
         @Override // android.view.animation.Animation.AnimationListener
         public void onAnimationEnd(Animation animation) {
-            this.f34472a.startAnimation(this.b);
+            this.f20781a.startAnimation(this.b);
         }
 
         @Override // android.view.animation.Animation.AnimationListener

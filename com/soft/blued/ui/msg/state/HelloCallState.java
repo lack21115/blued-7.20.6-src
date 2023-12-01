@@ -13,14 +13,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class HelloCallState implements UiState {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BluedEntity<UserFindResult, HelloDataExtra> f32597a;
+    private final BluedEntity<UserFindResult, HelloDataExtra> f18906a;
 
     public HelloCallState() {
         this(null, 1, null);
     }
 
     public HelloCallState(BluedEntity<UserFindResult, HelloDataExtra> bluedEntity) {
-        this.f32597a = bluedEntity;
+        this.f18906a = bluedEntity;
     }
 
     public /* synthetic */ HelloCallState(BluedEntity bluedEntity, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -28,7 +28,7 @@ public final class HelloCallState implements UiState {
     }
 
     public final BluedEntity<UserFindResult, HelloDataExtra> a() {
-        return this.f32597a;
+        return this.f18906a;
     }
 
     public final HelloCallState a(BluedEntity<UserFindResult, HelloDataExtra> bluedEntity) {
@@ -39,11 +39,11 @@ public final class HelloCallState implements UiState {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof HelloCallState) && Intrinsics.a(this.f32597a, ((HelloCallState) obj).f32597a);
+        return (obj instanceof HelloCallState) && Intrinsics.a(this.f18906a, ((HelloCallState) obj).f18906a);
     }
 
     public int hashCode() {
-        BluedEntity<UserFindResult, HelloDataExtra> bluedEntity = this.f32597a;
+        BluedEntity<UserFindResult, HelloDataExtra> bluedEntity = this.f18906a;
         if (bluedEntity == null) {
             return 0;
         }
@@ -51,6 +51,6 @@ public final class HelloCallState implements UiState {
     }
 
     public String toString() {
-        return "HelloCallState(helloData=" + this.f32597a + ')';
+        return "HelloCallState(helloData=" + this.f18906a + ')';
     }
 }

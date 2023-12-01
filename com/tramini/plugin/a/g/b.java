@@ -12,16 +12,16 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f40537a;
+    private static b f26846a;
 
     private b() {
     }
 
     public static b a() {
-        if (f40537a == null) {
-            f40537a = new b();
+        if (f26846a == null) {
+            f26846a = new b();
         }
-        return f40537a;
+        return f26846a;
     }
 
     public final void a(final com.tramini.plugin.b.a aVar) {
@@ -36,23 +36,23 @@ public final class b {
                     com.tramini.plugin.b.a aVar2 = aVar;
                     try {
                         com.tramini.plugin.a.c.b bVar = new com.tramini.plugin.a.c.b();
-                        bVar.f40500a = AppsFlyerLib.getInstance().getSdkVersion();
+                        bVar.f26809a = AppsFlyerLib.getInstance().getSdkVersion();
                         bVar.b = 1;
                         String b = i.b(com.tramini.plugin.a.a.c.a().b(), "appsflyer-data", "attributionId", "");
                         if (!TextUtils.isEmpty(b)) {
-                            bVar.f40501c = b;
+                            bVar.f26810c = b;
                             JSONObject a3 = bVar.a();
                             String b2 = i.b(com.tramini.plugin.a.a.c.a().b(), "tramini", "S_ASF_ATT", "");
                             if (a3 != null && !TextUtils.equals(b2, b)) {
                                 i.a(com.tramini.plugin.a.a.c.a().b(), "tramini", "S_ASF_ATT", b);
-                                com.tramini.plugin.a.f.a.a().a(a2, aVar2.b(), d.f40545a, a3);
+                                com.tramini.plugin.a.f.a.a().a(a2, aVar2.b(), d.f26854a, a3);
                             }
                         }
                     } catch (Throwable th) {
                     }
                     com.tramini.plugin.b.a aVar3 = aVar;
                     com.tramini.plugin.a.c.b bVar2 = new com.tramini.plugin.a.c.b();
-                    bVar2.f40500a = Adjust.getSdkVersion();
+                    bVar2.f26809a = Adjust.getSdkVersion();
                     bVar2.b = 2;
                     AdjustAttribution attribution = Adjust.getAttribution();
                     if (attribution != null) {
@@ -66,11 +66,11 @@ public final class b {
                         jSONObject.put("trackerName", attribution.trackerName);
                         jSONObject.put("trackerToken", attribution.trackerToken);
                         jSONObject.put("attr", attribution.toString());
-                        bVar2.f40501c = jSONObject.toString();
+                        bVar2.f26810c = jSONObject.toString();
                         JSONObject a4 = bVar2.a();
                         if (!TextUtils.equals(i.b(com.tramini.plugin.a.a.c.a().b(), "tramini", "S_AJS_ATT", ""), jSONObject.toString())) {
                             i.a(com.tramini.plugin.a.a.c.a().b(), "tramini", "S_AJS_ATT", jSONObject.toString());
-                            com.tramini.plugin.a.f.a.a().a(a2, aVar3.b(), d.f40545a, a4);
+                            com.tramini.plugin.a.f.a.a().a(a2, aVar3.b(), d.f26854a, a4);
                         }
                     }
                 }

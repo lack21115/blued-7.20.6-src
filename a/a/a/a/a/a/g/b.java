@@ -10,7 +10,7 @@ import com.qiniu.pili.droid.streaming.av.common.PLBufferInfo;
 public abstract class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public PLBufferInfo f1228a = new PLBufferInfo();
+    public PLBufferInfo f1180a = new PLBufferInfo();
 
     public abstract void a();
 

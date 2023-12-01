@@ -23,7 +23,7 @@ public class hq {
     private byte[] F = new byte[0];
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, Class<? extends hp>> f22493a = new HashMap();
+    private Map<String, Class<? extends hp>> f8885a = new HashMap();
     private BroadcastReceiver b = new BroadcastReceiver() { // from class: com.huawei.hms.ads.hq.1
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
@@ -51,8 +51,8 @@ public class hq {
     }
 
     private void V() {
-        this.f22493a.put("com.huawei.ads.notification.action.CLICK1", hk.class);
-        this.f22493a.put("com.huawei.ads.notification.action.DELETE1", hm.class);
+        this.f8885a.put("com.huawei.ads.notification.action.CLICK1", hk.class);
+        this.f8885a.put("com.huawei.ads.notification.action.DELETE1", hm.class);
     }
 
     public void Code() {
@@ -80,7 +80,7 @@ public class hq {
         try {
             int intExtra = intent.getIntExtra("type", 1);
             String str3 = intent.getAction() + intExtra;
-            Class<? extends hp> cls = this.f22493a.get(str3);
+            Class<? extends hp> cls = this.f8885a.get(str3);
             if (cls == null) {
                 ge.V(B, "can not find action key:" + str3);
                 return;

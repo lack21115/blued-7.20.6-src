@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.android.internal.content.NativeLibraryHelper;
+import com.anythink.core.common.b.e;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.android.module.yy_china.R;
@@ -26,13 +28,9 @@ import kotlin.text.Regex;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDatePickerDialog.class */
 public final class YYDatePickerDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogDatePickerLayoutBinding f17197a;
+    private DialogDatePickerLayoutBinding a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ArrayList<CharSequence> f17198c;
+    private ArrayList<CharSequence> c;
     private ArrayList<CharSequence> d;
     private ArrayList<CharSequence> e;
     private ArrayList<CharSequence> f;
@@ -71,7 +69,7 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
 
     private final void b(long j) {
         List b;
-        List<String> b2 = new Regex("-").b(c(j), 0);
+        List<String> b2 = new Regex(NativeLibraryHelper.CLEAR_ABI_OVERRIDE).b(c(j), 0);
         if (!b2.isEmpty()) {
             ListIterator<String> listIterator = b2.listIterator(b2.size());
             while (listIterator.hasPrevious()) {
@@ -91,73 +89,73 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
         int parseInt2 = Integer.parseInt(strArr[1]);
         int parseInt3 = Integer.parseInt(strArr[2]);
         ArrayList<CharSequence> arrayList = this.d;
-        IntRange a2 = arrayList == null ? null : CollectionsKt.a((Collection<?>) arrayList);
-        Intrinsics.a(a2);
-        int a3 = a2.a();
-        int b3 = a2.b();
-        if (a3 <= b3) {
+        IntRange a = arrayList == null ? null : CollectionsKt.a((Collection<?>) arrayList);
+        Intrinsics.a(a);
+        int a2 = a.a();
+        int b3 = a.b();
+        if (a2 <= b3) {
             while (true) {
                 ArrayList<CharSequence> arrayList2 = this.d;
-                if (Integer.parseInt(String.valueOf(arrayList2 == null ? null : arrayList2.get(a3))) == parseInt) {
-                    DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.f17197a;
+                if (Integer.parseInt(String.valueOf(arrayList2 == null ? null : arrayList2.get(a2))) == parseInt) {
+                    DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.a;
                     DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding2 = dialogDatePickerLayoutBinding;
                     if (dialogDatePickerLayoutBinding == null) {
                         Intrinsics.c("mBinging");
                         dialogDatePickerLayoutBinding2 = null;
                     }
-                    dialogDatePickerLayoutBinding2.f16325c.setSelectedPosition(a3);
-                } else if (a3 == b3) {
+                    dialogDatePickerLayoutBinding2.c.setSelectedPosition(a2);
+                } else if (a2 == b3) {
                     break;
                 } else {
-                    a3++;
+                    a2++;
                 }
             }
         }
         ArrayList<CharSequence> arrayList3 = this.e;
-        IntRange a4 = arrayList3 == null ? null : CollectionsKt.a((Collection<?>) arrayList3);
-        Intrinsics.a(a4);
-        int a5 = a4.a();
-        int b4 = a4.b();
-        if (a5 <= b4) {
+        IntRange a3 = arrayList3 == null ? null : CollectionsKt.a((Collection<?>) arrayList3);
+        Intrinsics.a(a3);
+        int a4 = a3.a();
+        int b4 = a3.b();
+        if (a4 <= b4) {
             while (true) {
                 ArrayList<CharSequence> arrayList4 = this.e;
-                if (Integer.parseInt(String.valueOf(arrayList4 == null ? null : arrayList4.get(a5))) >= parseInt2) {
-                    DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.f17197a;
+                if (Integer.parseInt(String.valueOf(arrayList4 == null ? null : arrayList4.get(a4))) >= parseInt2) {
+                    DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.a;
                     DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding4 = dialogDatePickerLayoutBinding3;
                     if (dialogDatePickerLayoutBinding3 == null) {
                         Intrinsics.c("mBinging");
                         dialogDatePickerLayoutBinding4 = null;
                     }
-                    dialogDatePickerLayoutBinding4.d.setSelectedPosition(a5);
-                } else if (a5 == b4) {
+                    dialogDatePickerLayoutBinding4.d.setSelectedPosition(a4);
+                } else if (a4 == b4) {
                     break;
                 } else {
-                    a5++;
+                    a4++;
                 }
             }
         }
         ArrayList<CharSequence> arrayList5 = this.f;
-        IntRange a6 = arrayList5 == null ? null : CollectionsKt.a((Collection<?>) arrayList5);
-        Intrinsics.a(a6);
-        int a7 = a6.a();
-        int b5 = a6.b();
-        if (a7 > b5) {
+        IntRange a5 = arrayList5 == null ? null : CollectionsKt.a((Collection<?>) arrayList5);
+        Intrinsics.a(a5);
+        int a6 = a5.a();
+        int b5 = a5.b();
+        if (a6 > b5) {
             return;
         }
         while (true) {
             ArrayList<CharSequence> arrayList6 = this.f;
-            if (Integer.parseInt(String.valueOf(arrayList6 == null ? null : arrayList6.get(a7))) >= parseInt3) {
-                DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.f17197a;
+            if (Integer.parseInt(String.valueOf(arrayList6 == null ? null : arrayList6.get(a6))) >= parseInt3) {
+                DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.a;
                 if (dialogDatePickerLayoutBinding5 == null) {
                     Intrinsics.c("mBinging");
                     dialogDatePickerLayoutBinding5 = null;
                 }
-                dialogDatePickerLayoutBinding5.e.setSelectedPosition(a7);
+                dialogDatePickerLayoutBinding5.e.setSelectedPosition(a6);
                 return;
-            } else if (a7 == b5) {
+            } else if (a6 == b5) {
                 return;
             } else {
-                a7++;
+                a6++;
             }
         }
     }
@@ -198,19 +196,19 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
     }
 
     private final void f() {
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding2 = dialogDatePickerLayoutBinding;
         if (dialogDatePickerLayoutBinding == null) {
             Intrinsics.c("mBinging");
             dialogDatePickerLayoutBinding2 = null;
         }
-        dialogDatePickerLayoutBinding2.f16324a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDatePickerDialog$ZeK0byQ8f5b3M4zo2UtXMh5PVTg
+        dialogDatePickerLayoutBinding2.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDatePickerDialog$ZeK0byQ8f5b3M4zo2UtXMh5PVTg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYDatePickerDialog.a(YYDatePickerDialog.this, view);
             }
         });
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding4 = dialogDatePickerLayoutBinding3;
         if (dialogDatePickerLayoutBinding3 == null) {
             Intrinsics.c("mBinging");
@@ -222,7 +220,7 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
                 YYDatePickerDialog.b(YYDatePickerDialog.this, view);
             }
         });
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.a;
         if (dialogDatePickerLayoutBinding5 == null) {
             Intrinsics.c("mBinging");
             dialogDatePickerLayoutBinding5 = null;
@@ -242,26 +240,26 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
     }
 
     private final void g() {
-        this.f17198c = new ArrayList<>();
+        this.c = new ArrayList<>();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= 16) {
                 break;
             }
-            ArrayList<CharSequence> arrayList = this.f17198c;
+            ArrayList<CharSequence> arrayList = this.c;
             Intrinsics.a(arrayList);
             arrayList.add(a(this.b + (this.i * i2)));
             i = i2 + 1;
         }
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding2 = dialogDatePickerLayoutBinding;
         if (dialogDatePickerLayoutBinding == null) {
             Intrinsics.c("mBinging");
             dialogDatePickerLayoutBinding2 = null;
         }
-        dialogDatePickerLayoutBinding2.b.setData(this.f17198c);
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.f17197a;
+        dialogDatePickerLayoutBinding2.b.setData(this.c);
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding4 = dialogDatePickerLayoutBinding3;
         if (dialogDatePickerLayoutBinding3 == null) {
             Intrinsics.c("mBinging");
@@ -280,13 +278,13 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
             arrayList2.add(i4 < 10 ? Intrinsics.a("0", (Object) Integer.valueOf(i4)) : String.valueOf(i4));
             i3 = i4 + 1;
         }
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding6 = dialogDatePickerLayoutBinding5;
         if (dialogDatePickerLayoutBinding5 == null) {
             Intrinsics.c("mBinging");
             dialogDatePickerLayoutBinding6 = null;
         }
-        dialogDatePickerLayoutBinding6.f16325c.setData(this.d);
+        dialogDatePickerLayoutBinding6.c.setData(this.d);
         this.e = new ArrayList<>();
         int i5 = 0;
         while (true) {
@@ -299,7 +297,7 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
             arrayList3.add(i6 < 10 ? Intrinsics.a("0", (Object) Integer.valueOf(i6)) : String.valueOf(i6));
             i5 = i6 + 1;
         }
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding7 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding7 = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding8 = dialogDatePickerLayoutBinding7;
         if (dialogDatePickerLayoutBinding7 == null) {
             Intrinsics.c("mBinging");
@@ -318,7 +316,7 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
             arrayList4.add(i8 < 10 ? Intrinsics.a("0", (Object) Integer.valueOf(i8)) : String.valueOf(i8));
             i7 = i8 + 1;
         }
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding9 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding9 = this.a;
         if (dialogDatePickerLayoutBinding9 == null) {
             Intrinsics.c("mBinging");
             dialogDatePickerLayoutBinding9 = null;
@@ -328,8 +326,8 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
     }
 
     private final void h() {
-        String a2 = a(this.b);
-        ArrayList<CharSequence> arrayList = this.f17198c;
+        String a = a(this.b);
+        ArrayList<CharSequence> arrayList = this.c;
         Intrinsics.a(arrayList);
         int size = arrayList.size();
         int i = 0;
@@ -338,10 +336,10 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
             if (i2 >= size) {
                 break;
             }
-            ArrayList<CharSequence> arrayList2 = this.f17198c;
+            ArrayList<CharSequence> arrayList2 = this.c;
             Intrinsics.a(arrayList2);
-            if (Intrinsics.a((Object) arrayList2.get(i2), (Object) a2)) {
-                DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.f17197a;
+            if (Intrinsics.a((Object) arrayList2.get(i2), (Object) a)) {
+                DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.a;
                 DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding2 = dialogDatePickerLayoutBinding;
                 if (dialogDatePickerLayoutBinding == null) {
                     Intrinsics.c("mBinging");
@@ -356,7 +354,7 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
     }
 
     private final void i() {
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding2 = dialogDatePickerLayoutBinding;
         if (dialogDatePickerLayoutBinding == null) {
             Intrinsics.c("mBinging");
@@ -367,18 +365,18 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
         int parseInt = Integer.parseInt((String) selectedItem);
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding3 = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding4 = dialogDatePickerLayoutBinding3;
         if (dialogDatePickerLayoutBinding3 == null) {
             Intrinsics.c("mBinging");
             dialogDatePickerLayoutBinding4 = null;
         }
-        CharSequence selectedItem2 = dialogDatePickerLayoutBinding4.f16325c.getSelectedItem();
+        CharSequence selectedItem2 = dialogDatePickerLayoutBinding4.c.getSelectedItem();
         if (selectedItem2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
         int parseInt2 = Integer.parseInt((String) selectedItem2);
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding5 = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding6 = dialogDatePickerLayoutBinding5;
         if (dialogDatePickerLayoutBinding5 == null) {
             Intrinsics.c("mBinging");
@@ -389,7 +387,7 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
         int parseInt3 = Integer.parseInt((String) selectedItem3);
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding7 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding7 = this.a;
         DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding8 = dialogDatePickerLayoutBinding7;
         if (dialogDatePickerLayoutBinding7 == null) {
             Intrinsics.c("mBinging");
@@ -400,7 +398,7 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
         String str = (String) selectedItem4;
-        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding9 = this.f17197a;
+        DialogDatePickerLayoutBinding dialogDatePickerLayoutBinding9 = this.a;
         if (dialogDatePickerLayoutBinding9 == null) {
             Intrinsics.c("mBinging");
             dialogDatePickerLayoutBinding9 = null;
@@ -446,14 +444,14 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
         this.m = iEventCallback;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
             Bundle arguments = getArguments();
-            if ((arguments == null ? null : Long.valueOf(arguments.getLong("start_time"))) != null) {
+            if ((arguments == null ? null : Long.valueOf(arguments.getLong(e.a))) != null) {
                 Bundle arguments2 = getArguments();
-                Long valueOf = arguments2 == null ? null : Long.valueOf(arguments2.getLong("start_time"));
+                Long valueOf = arguments2 == null ? null : Long.valueOf(arguments2.getLong(e.a));
                 Intrinsics.a(valueOf);
                 this.h = valueOf.longValue();
                 return;
@@ -462,13 +460,13 @@ public final class YYDatePickerDialog extends BaseFullScreenDialog {
         this.h = 0L;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_date_picker_layout, (ViewGroup) null);
-        DialogDatePickerLayoutBinding a2 = DialogDatePickerLayoutBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.f17197a = a2;
+        DialogDatePickerLayoutBinding a = DialogDatePickerLayoutBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.a = a;
         f();
         return inflate;
     }

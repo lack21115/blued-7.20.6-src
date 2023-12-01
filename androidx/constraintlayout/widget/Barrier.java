@@ -21,11 +21,11 @@ public class Barrier extends ConstraintHelper {
     public static final int TOP = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f2247a;
+    private int f2199a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private androidx.constraintlayout.core.widgets.Barrier f2248c;
+    private androidx.constraintlayout.core.widgets.Barrier f2200c;
 
     public Barrier(Context context) {
         super(context);
@@ -45,21 +45,21 @@ public class Barrier extends ConstraintHelper {
     private void a(ConstraintWidget constraintWidget, int i, boolean z) {
         this.b = i;
         if (Build.VERSION.SDK_INT < 17) {
-            int i2 = this.f2247a;
+            int i2 = this.f2199a;
             if (i2 == 5) {
                 this.b = 0;
             } else if (i2 == 6) {
                 this.b = 1;
             }
         } else if (z) {
-            int i3 = this.f2247a;
+            int i3 = this.f2199a;
             if (i3 == 5) {
                 this.b = 1;
             } else if (i3 == 6) {
                 this.b = 0;
             }
         } else {
-            int i4 = this.f2247a;
+            int i4 = this.f2199a;
             if (i4 == 5) {
                 this.b = 0;
             } else if (i4 == 6) {
@@ -75,7 +75,7 @@ public class Barrier extends ConstraintHelper {
     @Override // androidx.constraintlayout.widget.ConstraintHelper
     public void a(AttributeSet attributeSet) {
         super.a(attributeSet);
-        this.f2248c = new androidx.constraintlayout.core.widgets.Barrier();
+        this.f2200c = new androidx.constraintlayout.core.widgets.Barrier();
         if (attributeSet != null) {
             TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ConstraintLayout_Layout);
             int indexCount = obtainStyledAttributes.getIndexCount();
@@ -89,33 +89,33 @@ public class Barrier extends ConstraintHelper {
                 if (index == R.styleable.ConstraintLayout_Layout_barrierDirection) {
                     setType(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_barrierAllowsGoneWidgets) {
-                    this.f2248c.setAllowsGoneWidget(obtainStyledAttributes.getBoolean(index, true));
+                    this.f2200c.setAllowsGoneWidget(obtainStyledAttributes.getBoolean(index, true));
                 } else if (index == R.styleable.ConstraintLayout_Layout_barrierMargin) {
-                    this.f2248c.setMargin(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2200c.setMargin(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 }
                 i = i2 + 1;
             }
             obtainStyledAttributes.recycle();
         }
-        this.m = this.f2248c;
+        this.m = this.f2200c;
         validateParams();
     }
 
     @Deprecated
     public boolean allowsGoneWidget() {
-        return this.f2248c.getAllowsGoneWidget();
+        return this.f2200c.getAllowsGoneWidget();
     }
 
     public boolean getAllowsGoneWidget() {
-        return this.f2248c.getAllowsGoneWidget();
+        return this.f2200c.getAllowsGoneWidget();
     }
 
     public int getMargin() {
-        return this.f2248c.getMargin();
+        return this.f2200c.getMargin();
     }
 
     public int getType() {
-        return this.f2247a;
+        return this.f2199a;
     }
 
     @Override // androidx.constraintlayout.widget.ConstraintHelper
@@ -131,22 +131,22 @@ public class Barrier extends ConstraintHelper {
 
     @Override // androidx.constraintlayout.widget.ConstraintHelper
     public void resolveRtl(ConstraintWidget constraintWidget, boolean z) {
-        a(constraintWidget, this.f2247a, z);
+        a(constraintWidget, this.f2199a, z);
     }
 
     public void setAllowsGoneWidget(boolean z) {
-        this.f2248c.setAllowsGoneWidget(z);
+        this.f2200c.setAllowsGoneWidget(z);
     }
 
     public void setDpMargin(int i) {
-        this.f2248c.setMargin((int) ((i * getResources().getDisplayMetrics().density) + 0.5f));
+        this.f2200c.setMargin((int) ((i * getResources().getDisplayMetrics().density) + 0.5f));
     }
 
     public void setMargin(int i) {
-        this.f2248c.setMargin(i);
+        this.f2200c.setMargin(i);
     }
 
     public void setType(int i) {
-        this.f2247a = i;
+        this.f2199a = i;
     }
 }

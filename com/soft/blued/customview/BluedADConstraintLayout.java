@@ -26,28 +26,28 @@ import skin.support.constraint.SkinCompatConstraintLayout;
 public class BluedADConstraintLayout extends SkinCompatConstraintLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedADExtra f28361a;
+    public BluedADExtra f14671a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f28362c;
+    public final String f14672c;
     private ViewTreeObserver.OnPreDrawListener d;
 
     public BluedADConstraintLayout(Context context) {
         super(context);
-        this.f28362c = getClass().getName();
+        this.f14672c = getClass().getName();
         a(context);
     }
 
     public BluedADConstraintLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28362c = getClass().getName();
+        this.f14672c = getClass().getName();
         a(context);
     }
 
     public BluedADConstraintLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28362c = getClass().getName();
+        this.f14672c = getClass().getName();
         a(context);
     }
 
@@ -75,27 +75,27 @@ public class BluedADConstraintLayout extends SkinCompatConstraintLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View.OnClickListener onClickListener, BluedADExtra bluedADExtra, View view) {
         Tracker.onClick(view);
-        FindHttpUtils.b(this.f28361a.click_url);
+        FindHttpUtils.b(this.f14671a.click_url);
         if (onClickListener != null) {
             onClickListener.onClick(view);
-        } else if (this.f28361a.wx != null && !TextUtils.isEmpty(this.f28361a.wx.id) && !TextUtils.isEmpty(this.f28361a.wx.path)) {
-            if (this.f28361a.wx.is_popup != 1) {
-                WeChatUtils.a(this.b, this.f28361a.wx.id, this.f28361a.wx.path);
-            } else if (BDActivityManager.f34819a.a() != null) {
-                Activity a2 = BDActivityManager.f34819a.a();
+        } else if (this.f14671a.wx != null && !TextUtils.isEmpty(this.f14671a.wx.id) && !TextUtils.isEmpty(this.f14671a.wx.path)) {
+            if (this.f14671a.wx.is_popup != 1) {
+                WeChatUtils.a(this.b, this.f14671a.wx.id, this.f14671a.wx.path);
+            } else if (BDActivityManager.f21128a.a() != null) {
+                Activity a2 = BDActivityManager.f21128a.a();
                 if (a2 instanceof FragmentActivity) {
-                    AdMiniAppDialogFragment.a(((FragmentActivity) a2).getSupportFragmentManager(), this.f28361a.wx.id, this.f28361a.wx.path, this.f28361a);
+                    AdMiniAppDialogFragment.a(((FragmentActivity) a2).getSupportFragmentManager(), this.f14671a.wx.id, this.f14671a.wx.path, this.f14671a);
                 }
             }
         } else if (bluedADExtra.adm_type == 2) {
             BaseADVideoFragment.a(this.b, bluedADExtra, 1);
         } else {
-            String str = this.f28361a.target_url;
-            if (TextUtils.isEmpty(this.f28361a.deep_link_url)) {
+            String str = this.f14671a.target_url;
+            if (TextUtils.isEmpty(this.f14671a.deep_link_url)) {
                 WebViewShowInfoFragment.show(this.b, str, 9);
                 return;
             }
-            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(this.f28361a.deep_link_url));
+            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(this.f14671a.deep_link_url));
             if (AppUtils.a(intent)) {
                 this.b.startActivity(intent);
             } else {
@@ -110,23 +110,25 @@ public class BluedADConstraintLayout extends SkinCompatConstraintLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Multi-variable type inference failed */
     public /* synthetic */ boolean c() {
-        BluedADExtra bluedADExtra = this.f28361a;
-        if (bluedADExtra == null || bluedADExtra.isShowUrlVisited || this.f28361a.show_url == null || this.f28361a.show_url.length == 0 || !a(this)) {
+        BluedADExtra bluedADExtra = this.f14671a;
+        if (bluedADExtra == null || bluedADExtra.isShowUrlVisited || this.f14671a.show_url == null || this.f14671a.show_url.length == 0 || !a((View) this)) {
             return true;
         }
-        this.f28361a.isShowUrlVisited = true;
+        this.f14671a.isShowUrlVisited = true;
         getViewTreeObserver().removeOnPreDrawListener(this.d);
-        FindHttpUtils.b(this.f28361a.show_url);
+        FindHttpUtils.b(this.f14671a.show_url);
         return true;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(final BluedADExtra bluedADExtra, final View.OnClickListener onClickListener) {
         if (bluedADExtra == null) {
             setVisibility(8);
             return;
         }
-        this.f28361a = bluedADExtra;
+        this.f14671a = bluedADExtra;
         invalidate();
         setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.customview.-$$Lambda$BluedADConstraintLayout$sNuprxUfN_D72mObCI2jL9_nSTE
             @Override // android.view.View.OnClickListener
@@ -134,13 +136,13 @@ public class BluedADConstraintLayout extends SkinCompatConstraintLayout {
                 BluedADConstraintLayout.this.a(onClickListener, bluedADExtra, view);
             }
         });
-        if (this.f28361a != null) {
-            if (!a(this) || this.f28361a.isShowUrlVisited) {
+        if (this.f14671a != null) {
+            if (!a((View) this) || this.f14671a.isShowUrlVisited) {
                 a();
                 return;
             }
-            this.f28361a.isShowUrlVisited = true;
-            FindHttpUtils.b(this.f28361a.show_url);
+            this.f14671a.isShowUrlVisited = true;
+            FindHttpUtils.b(this.f14671a.show_url);
         }
     }
 
@@ -161,9 +163,7 @@ public class BluedADConstraintLayout extends SkinCompatConstraintLayout {
         return z2;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
     }
 

@@ -13,7 +13,7 @@ import com.qiniu.pili.droid.streaming.core.PLDroidStreamingCore;
 public class b extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public a.a.a.a.a.a.f.a f1240a;
+    public a.a.a.a.a.a.f.a f1192a;
 
     public b() {
         super(1);
@@ -48,8 +48,8 @@ public class b extends c {
                 e eVar = e.f;
                 eVar.a("PLAudioMuxer", "writeSampleData ====" + String.valueOf(i) + ",frame.mBuffer:" + pLAVFrame.mBuffer.toString());
                 try {
-                    synchronized (this.f1240a) {
-                        a2 = this.f1240a.a(pLAVFrame.mBuffer.capacity());
+                    synchronized (this.f1192a) {
+                        a2 = this.f1192a.a(pLAVFrame.mBuffer.capacity());
                     }
                     a2.mBuffer.clear();
                     a2.mBuffer.put(pLAVFrame.mBuffer);
@@ -73,8 +73,8 @@ public class b extends c {
             if (!this.o) {
                 e.f.a("PLAudioMuxer", " releaseOutputBufer encodedData.clear()!");
                 pLAVFrame.mBuffer.clear();
-                synchronized (this.f1240a) {
-                    this.f1240a.a(pLAVFrame);
+                synchronized (this.f1192a) {
+                    this.f1192a.a(pLAVFrame);
                 }
             }
         }
@@ -90,8 +90,8 @@ public class b extends c {
         if (i()) {
             this.f = new byte[1024];
         }
-        if (this.f1240a == null) {
-            this.f1240a = new a.a.a.a.a.a.f.a(10);
+        if (this.f1192a == null) {
+            this.f1192a = new a.a.a.a.a.a.f.a(10);
         }
         a("PLAudioMuxer");
         return !this.k;
@@ -104,20 +104,20 @@ public class b extends c {
             if (this.m || j.d == null || c(j) < 0) {
                 return;
             }
-            if (h.b(j.f1250a)) {
+            if (h.b(j.f1202a)) {
                 e eVar = e.f;
                 eVar.c("PLAudioMuxer", "handling BUFFER_FLAG_CODEC_CONFIG for track " + j.b);
-                if (j.f1250a.size <= 0) {
+                if (j.f1202a.size <= 0) {
                     e.f.e("PLAudioMuxer", "error config buffer");
                     return;
                 }
                 b(j);
             } else {
                 if (g() || !h()) {
-                    a(j.f1250a, j.d, j.f1251c, j.b);
+                    a(j.f1202a, j.d, j.f1203c, j.b);
                 } else {
                     int a2 = a(j);
-                    a(j.f1250a, j.d, j.f1251c, j.b);
+                    a(j.f1202a, j.d, j.f1203c, j.b);
                     if (!d(a2)) {
                         return;
                     }
@@ -131,17 +131,17 @@ public class b extends c {
     }
 
     public final void b(c.g gVar) {
-        a(gVar.d.mBuffer, gVar.f1250a);
+        a(gVar.d.mBuffer, gVar.f1202a);
         e eVar = e.f;
         eVar.b("PLAudioMuxer", "AUDIO CONFIG LENGTH: " + this.q.length);
         PLDroidStreamingCore pLDroidStreamingCore = this.g;
         byte[] bArr = this.q;
-        pLDroidStreamingCore.writeAudioSeqHeader(bArr, bArr.length, gVar.f1250a.presentationTimeUs / 1000);
+        pLDroidStreamingCore.writeAudioSeqHeader(bArr, bArr.length, gVar.f1202a.presentationTimeUs / 1000);
         if (this.q != null) {
             d().a(b.c.CONNECTING, null);
             e eVar2 = e.f;
             eVar2.c("PLAudioMuxer", "writeHeader :mIsNeedUpdateAVOption=" + this.D);
         }
-        a(gVar.f1250a, gVar.d, gVar.f1251c, gVar.b);
+        a(gVar.f1202a, gVar.d, gVar.f1203c, gVar.b);
     }
 }

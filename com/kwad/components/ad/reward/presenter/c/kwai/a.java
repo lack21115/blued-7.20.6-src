@@ -77,8 +77,8 @@ public final class a extends com.kwad.components.ad.reward.presenter.a implement
             aVar.a(this);
             aVar.a(this.mWebCardClickListener);
             aVar.a(this.df, this.qt.mRootContainer, adTemplate);
-            aVar.a(new a.InterfaceC0478a() { // from class: com.kwad.components.ad.reward.presenter.c.kwai.a.3
-                @Override // com.kwad.components.ad.i.a.InterfaceC0478a
+            aVar.a(new a.InterfaceC0308a() { // from class: com.kwad.components.ad.reward.presenter.c.kwai.a.3
+                @Override // com.kwad.components.ad.i.a.InterfaceC0308a
                 public final void V(boolean z) {
                     a.this.qt.pq = z;
                 }

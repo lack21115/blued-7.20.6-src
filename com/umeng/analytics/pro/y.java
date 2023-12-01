@@ -15,10 +15,10 @@ import java.util.List;
 public class y {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile y f40787c;
+    private static volatile y f27096c;
 
     /* renamed from: a  reason: collision with root package name */
-    private w f40788a = new x();
+    private w f27097a = new x();
     private String b;
     private List<a> d;
     private String e;
@@ -48,18 +48,18 @@ public class y {
     }
 
     public static y a() {
-        if (f40787c == null) {
+        if (f27096c == null) {
             synchronized (y.class) {
                 try {
-                    if (f40787c == null) {
-                        f40787c = new y();
+                    if (f27096c == null) {
+                        f27096c = new y();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f40787c;
+        return f27096c;
     }
 
     private void a(long j, long j2, long j3, String str, boolean z) {
@@ -100,9 +100,9 @@ public class y {
             UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>>*** 读取 foreground count druation值完成，无未处理check timer事件。");
         }
         a(i, h, j, str, false);
-        this.b = this.f40788a.a(context);
+        this.b = this.f27097a.a(context);
         a(i, h, j, str, true);
-        this.f40788a.a(context, this.b);
+        this.f27097a.a(context, this.b);
         return this.b;
     }
 
@@ -115,7 +115,7 @@ public class y {
     }
 
     private long i(Context context) {
-        return a(context, u.f40781a);
+        return a(context, u.f27090a);
     }
 
     private boolean j(Context context) {
@@ -140,7 +140,7 @@ public class y {
                 }
             }
             UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> interval of last session is: " + (j3 - j));
-            return this.f40788a.a(j, j3);
+            return this.f27097a.a(j, j3);
         } catch (Exception e) {
             return false;
         }
@@ -176,7 +176,7 @@ public class y {
     }
 
     public void a(long j) {
-        this.f40788a.a(j);
+        this.f27097a.a(j);
     }
 
     public void a(a aVar) {
@@ -193,7 +193,7 @@ public class y {
     }
 
     public long b() {
-        return this.f40788a.a();
+        return this.f27097a.a();
     }
 
     public String b(Context context) {

@@ -23,6 +23,6 @@ final /* synthetic */ class YYHomeChatsFragment$liveDataObserver$8 extends Funct
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(YYLiveState yYLiveState) {
         a(yYLiveState);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

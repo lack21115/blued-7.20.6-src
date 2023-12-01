@@ -1,6 +1,5 @@
 package com.tencent.cloud.huiyansdkface.okhttp3;
 
-import com.alipay.sdk.util.i;
 import com.blued.das.live.LiveProtos;
 import com.tencent.cloud.huiyansdkface.okhttp3.HttpUrl;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.Util;
@@ -15,11 +14,11 @@ import javax.net.ssl.SSLSocketFactory;
 public final class Address {
 
     /* renamed from: a  reason: collision with root package name */
-    final HttpUrl f35804a;
+    final HttpUrl f22113a;
     final Dns b;
 
     /* renamed from: c  reason: collision with root package name */
-    final SocketFactory f35805c;
+    final SocketFactory f22114c;
     final Authenticator d;
     final List<Protocol> e;
     final List<ConnectionSpec> f;
@@ -30,7 +29,7 @@ public final class Address {
     final CertificatePinner k;
 
     public Address(String str, int i, Dns dns, SocketFactory socketFactory, SSLSocketFactory sSLSocketFactory, HostnameVerifier hostnameVerifier, CertificatePinner certificatePinner, Authenticator authenticator, Proxy proxy, List<Protocol> list, List<ConnectionSpec> list2, ProxySelector proxySelector) {
-        this.f35804a = new HttpUrl.Builder().scheme(sSLSocketFactory != null ? "https" : "http").host(str).port(i).build();
+        this.f22113a = new HttpUrl.Builder().scheme(sSLSocketFactory != null ? "https" : "http").host(str).port(i).build();
         if (dns == null) {
             throw new NullPointerException("dns == null");
         }
@@ -38,7 +37,7 @@ public final class Address {
         if (socketFactory == null) {
             throw new NullPointerException("socketFactory == null");
         }
-        this.f35805c = socketFactory;
+        this.f22114c = socketFactory;
         if (authenticator == null) {
             throw new NullPointerException("proxyAuthenticator == null");
         }
@@ -81,13 +80,13 @@ public final class Address {
     public boolean equals(Object obj) {
         if (obj instanceof Address) {
             Address address = (Address) obj;
-            return this.f35804a.equals(address.f35804a) && a(address);
+            return this.f22113a.equals(address.f22113a) && a(address);
         }
         return false;
     }
 
     public int hashCode() {
-        int hashCode = this.f35804a.hashCode();
+        int hashCode = this.f22113a.hashCode();
         int hashCode2 = this.b.hashCode();
         int hashCode3 = this.d.hashCode();
         int hashCode4 = this.e.hashCode();
@@ -128,7 +127,7 @@ public final class Address {
     }
 
     public SocketFactory socketFactory() {
-        return this.f35805c;
+        return this.f22114c;
     }
 
     public SSLSocketFactory sslSocketFactory() {
@@ -139,9 +138,9 @@ public final class Address {
         Proxy proxy;
         StringBuilder sb = new StringBuilder();
         sb.append("Address{");
-        sb.append(this.f35804a.host());
+        sb.append(this.f22113a.host());
         sb.append(":");
-        sb.append(this.f35804a.port());
+        sb.append(this.f22113a.port());
         if (this.h != null) {
             sb.append(", proxy=");
             proxy = this.h;
@@ -150,11 +149,11 @@ public final class Address {
             proxy = this.g;
         }
         sb.append(proxy);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 
     public HttpUrl url() {
-        return this.f35804a;
+        return this.f22113a;
     }
 }

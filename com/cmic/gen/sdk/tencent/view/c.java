@@ -19,7 +19,7 @@ public class c {
     }
 
     public static int b(Context context, String str) {
-        int a2 = a(context, str, i.f7952c);
+        int a2 = a(context, str, i.f5112c);
         if (a2 != 0) {
             return a2;
         }

@@ -8,7 +8,6 @@ import com.blued.android.module.live_china.model.LiveRoomFunctionItemModel;
 public final /* synthetic */ class $$Lambda$vp9O66ly_kNLGZHZsc8Knor7gPc implements Observer {
     private final /* synthetic */ PlayingOnliveFragment f$0;
 
-    @Override // androidx.lifecycle.Observer
     public final void onChanged(Object obj) {
         this.f$0.a((LiveRoomFunctionItemModel) obj);
     }

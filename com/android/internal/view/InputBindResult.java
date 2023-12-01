@@ -31,7 +31,7 @@ public final class InputBindResult implements Parcelable {
     InputBindResult(Parcel parcel) {
         this.method = IInputMethodSession.Stub.asInterface(parcel.readStrongBinder());
         if (parcel.readInt() != 0) {
-            this.channel = InputChannel.CREATOR.createFromParcel(parcel);
+            this.channel = (InputChannel) InputChannel.CREATOR.createFromParcel(parcel);
         } else {
             this.channel = null;
         }

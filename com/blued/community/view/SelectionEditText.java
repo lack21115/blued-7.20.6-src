@@ -48,7 +48,6 @@ public class SelectionEditText extends EmojiEditText {
         }
     }
 
-    @Override // com.blued.android.module.common.widget.emoji.view.EmojiEditText, android.widget.TextView
     public void onSelectionChanged(int i, int i2) {
         super.onSelectionChanged(i, i2);
         OnSelectionChangeListener onSelectionChangeListener = this.onSelectionChangeListener;
@@ -69,7 +68,6 @@ public class SelectionEditText extends EmojiEditText {
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         return super.onTouchEvent(motionEvent);
     }

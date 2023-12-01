@@ -17,10 +17,10 @@ public interface e extends IInterface {
 
         /* renamed from: com.huawei.openalliance.ad.ipc.e$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/ipc/e$a$a.class */
-        static class C0437a implements e {
+        static class C0267a implements e {
             private IBinder Code;
 
-            C0437a(IBinder iBinder) {
+            C0267a(IBinder iBinder) {
                 this.Code = iBinder;
             }
 
@@ -61,7 +61,7 @@ public interface e extends IInterface {
             }
             try {
                 IInterface queryLocalInterface = iBinder.queryLocalInterface(I);
-                return (queryLocalInterface == null || !(queryLocalInterface instanceof e)) ? new C0437a(iBinder) : (e) queryLocalInterface;
+                return (queryLocalInterface == null || !(queryLocalInterface instanceof e)) ? new C0267a(iBinder) : (e) queryLocalInterface;
             } catch (Throwable th) {
                 ge.I(V, "IPPSResultCallback err: " + th.getClass().getSimpleName());
                 return null;

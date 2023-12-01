@@ -13,7 +13,6 @@ public final class LiveMsgLayoutManager extends LinearLayoutManager {
         super(context, i, z);
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         try {
             super.onLayoutChildren(recycler, state);
@@ -23,7 +22,6 @@ public final class LiveMsgLayoutManager extends LinearLayoutManager {
         }
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public int scrollVerticallyBy(int i, RecyclerView.Recycler recycler, RecyclerView.State state) {
         try {
             return super.scrollVerticallyBy(i, recycler, state);

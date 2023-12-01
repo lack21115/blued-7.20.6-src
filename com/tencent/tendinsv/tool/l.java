@@ -23,11 +23,11 @@ import org.json.JSONObject;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile l f39079a;
+    private static volatile l f25388a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private GetPhoneInfoCallbacks f39080c;
+    private GetPhoneInfoCallbacks f25389c;
     private a d;
     private int e;
     private String f;
@@ -50,27 +50,27 @@ public class l {
                     if (jSONObject.has(ProcessBridgeProvider.KEY_RESULT_CODE)) {
                         int optInt = jSONObject.optInt(ProcessBridgeProvider.KEY_RESULT_CODE);
                         if (optInt != 103000) {
-                            GetPhoneInfoCallbacks getPhoneInfoCallbacks = l.this.f39080c;
+                            GetPhoneInfoCallbacks getPhoneInfoCallbacks = l.this.f25389c;
                             getPhoneInfoCallbacks.getPhoneInfoFailed(1023, optInt, "getPhoneInfo()" + jSONObject.toString(), com.tencent.tendinsv.utils.d.a(jSONObject), l.this.e, l.this.f, l.this.h, l.this.g, l.this.i);
                             return;
                         }
                         com.tencent.tendinsv.b.v = m.b(com.tencent.tendinsv.b.x, com.igexin.push.core.b.l);
-                        com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f38999c;
+                        com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f25308c;
                         com.tencent.tendinsv.b.t = com.tencent.tendinsv.b.d;
                         com.tencent.tendinsv.b.p = com.tencent.tendinsv.b.i;
-                        l.this.f39080c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, com.tencent.tendinsv.b.ax, l.this.e, l.this.h, l.this.g, l.this.i);
+                        l.this.f25389c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, com.tencent.tendinsv.b.ax, l.this.e, l.this.h, l.this.g, l.this.i);
                         t.a(l.this.b, t.e, System.currentTimeMillis() + (t.b(l.this.b, t.v, (long) com.anythink.expressad.d.a.b.P) * 1000));
                         return;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mOperatePreCMCC--Exception_e=", e);
-                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f39080c;
+                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f25389c;
                     getPhoneInfoCallbacks2.getPhoneInfoFailed(1014, 1014, "mOperatePreCUCC--Exception_e=" + e, e.getClass().getSimpleName(), l.this.e, l.this.f, l.this.h, l.this.g, l.this.i);
                     return;
                 }
             }
-            l.this.f39080c.getPhoneInfoFailed(1023, 1023, "getPhoneInfo() jsonObject isEmpty", "jsonObject isEmpty", l.this.e, l.this.f, l.this.h, l.this.g, l.this.i);
+            l.this.f25389c.getPhoneInfoFailed(1023, 1023, "getPhoneInfo() jsonObject isEmpty", "jsonObject isEmpty", l.this.e, l.this.f, l.this.h, l.this.g, l.this.i);
         }
     }
 
@@ -78,18 +78,18 @@ public class l {
     }
 
     public static l a() {
-        if (f39079a == null) {
+        if (f25388a == null) {
             synchronized (l.class) {
                 try {
-                    if (f39079a == null) {
-                        f39079a = new l();
+                    if (f25388a == null) {
+                        f25388a = new l();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39079a;
+        return f25388a;
     }
 
     private void a(String str, int i, long j, long j2, long j3) {
@@ -115,7 +115,7 @@ public class l {
             i2 = b2;
             if (1 != b2) {
                 if (1 != b) {
-                    getPhoneInfoCallbacks = this.f39080c;
+                    getPhoneInfoCallbacks = this.f25389c;
                     str2 = "联通运营商通道未开启";
                     getPhoneInfoCallbacks.getPhoneInfoFailed(1001, 1001, str2, "check_error", i, str, j, j2, j3);
                     return;
@@ -126,7 +126,7 @@ public class l {
         } else if (!z) {
             i2 = t.b(this.b, t.A, 1);
             if (1 != i2) {
-                getPhoneInfoCallbacks = this.f39080c;
+                getPhoneInfoCallbacks = this.f25389c;
                 str2 = "移动运营商通道未开启";
                 getPhoneInfoCallbacks.getPhoneInfoFailed(1001, 1001, str2, "check_error", i, str, j, j2, j3);
                 return;
@@ -135,7 +135,7 @@ public class l {
         } else {
             i2 = t.b(this.b, t.C, 1);
             if (1 != i2) {
-                getPhoneInfoCallbacks = this.f39080c;
+                getPhoneInfoCallbacks = this.f25389c;
                 str2 = "电信运营商通道未开启";
                 getPhoneInfoCallbacks.getPhoneInfoFailed(1001, 1001, str2, "check_error", i, str, j, j2, j3);
                 return;
@@ -163,7 +163,7 @@ public class l {
                             if (com.tencent.tendinsv.utils.d.a(t.b(this.b, "uuid", ""))) {
                                 t.a(this.b, "uuid", System.currentTimeMillis() + "");
                             }
-                            this.f39080c.getPhoneInfoFailed(1023, 1023, "frequent operation", "cache", i, str, j, j2, j3);
+                            this.f25389c.getPhoneInfoFailed(1023, 1023, "frequent operation", "cache", i, str, j, j2, j3);
                             return;
                         }
                         if (com.tencent.tendinsv.utils.d.a(t.b(this.b, "uuid", ""))) {
@@ -175,26 +175,26 @@ public class l {
                             com.tencent.tendinsv.b.t = com.tencent.tendinsv.b.f;
                         } else if (com.tencent.tendinsv.b.h.equals(str)) {
                             com.tencent.tendinsv.b.v = b3;
-                            com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f38997a;
+                            com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f25306a;
                             com.tencent.tendinsv.b.t = com.tencent.tendinsv.b.b;
                             com.tencent.tendinsv.b.p = com.tencent.tendinsv.b.h;
-                            this.f39080c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, "cache", i, j, j2, j3);
+                            this.f25389c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, "cache", i, j, j2, j3);
                             return;
                         } else {
                             com.tencent.tendinsv.b.v = m.b(com.tencent.tendinsv.b.x, com.igexin.push.core.b.l);
-                            com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f38999c;
+                            com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f25308c;
                             com.tencent.tendinsv.b.t = com.tencent.tendinsv.b.d;
                             str2 = com.tencent.tendinsv.b.i;
                         }
                         com.tencent.tendinsv.b.p = str2;
-                        this.f39080c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, "cache", i, j, j2, j3);
+                        this.f25389c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, "cache", i, j, j2, j3);
                         return;
                     }
                 } catch (Exception e) {
                     e = e;
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "preTimeCheck--Exception_e=", e);
-                    GetPhoneInfoCallbacks getPhoneInfoCallbacks = this.f39080c;
+                    GetPhoneInfoCallbacks getPhoneInfoCallbacks = this.f25389c;
                     getPhoneInfoCallbacks.getPhoneInfoFailed(1014, 1014, "preTimeCheck--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
                     return;
                 }
@@ -269,7 +269,7 @@ public class l {
                 long j6;
                 try {
                     if (!com.tencent.tendinsv.utils.d.b(str2)) {
-                        l.this.f39080c.getPhoneInfoFailed(1023, 1023, "response isEmpty", "response isEmpty", i, str, j, j2, j3);
+                        l.this.f25389c.getPhoneInfoFailed(1023, 1023, "response isEmpty", "response isEmpty", i, str, j, j2, j3);
                         return;
                     }
                     JSONObject jSONObject = new JSONObject(str2);
@@ -286,13 +286,13 @@ public class l {
                                 t.a(l.this.b, com.tencent.tendinsv.b.w, optString2);
                                 t.a(l.this.b, t.g, optString3);
                                 com.tencent.tendinsv.b.v = optString;
-                                com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f38997a;
+                                com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.f25306a;
                                 com.tencent.tendinsv.b.t = com.tencent.tendinsv.b.b;
                                 com.tencent.tendinsv.b.p = com.tencent.tendinsv.b.h;
-                                l.this.f39080c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, com.tencent.tendinsv.b.ax, i, j, j2, j3);
+                                l.this.f25389c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, com.tencent.tendinsv.b.ax, i, j, j2, j3);
                                 return;
                             }
-                            getPhoneInfoCallbacks = l.this.f39080c;
+                            getPhoneInfoCallbacks = l.this.f25389c;
                             d = com.tencent.tendinsv.utils.d.d(str2);
                             i5 = i;
                             str3 = str;
@@ -300,7 +300,7 @@ public class l {
                             j5 = j2;
                             j6 = j3;
                         } else {
-                            getPhoneInfoCallbacks = l.this.f39080c;
+                            getPhoneInfoCallbacks = l.this.f25389c;
                             d = com.tencent.tendinsv.utils.d.d(str2);
                             i5 = i;
                             str3 = str;
@@ -309,7 +309,7 @@ public class l {
                             j6 = j3;
                         }
                     } else {
-                        getPhoneInfoCallbacks = l.this.f39080c;
+                        getPhoneInfoCallbacks = l.this.f25389c;
                         d = com.tencent.tendinsv.utils.d.d(str2);
                         i5 = i;
                         str3 = str;
@@ -321,7 +321,7 @@ public class l {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mOperatePreCTCC--Exception_e=", e);
-                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f39080c;
+                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f25389c;
                     getPhoneInfoCallbacks2.getPhoneInfoFailed(1014, 1014, "mOperatePreCUCC--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
                 }
             }
@@ -334,7 +334,7 @@ public class l {
         UiOauthManager.getInstance(this.b).login(i2, new CallBack<Object>() { // from class: com.tencent.tendinsv.tool.l.3
             @Override // com.sdk.tencent.base.api.CallBack
             public void onFailed(int i3, int i4, String str2, String str3) {
-                GetPhoneInfoCallbacks getPhoneInfoCallbacks = l.this.f39080c;
+                GetPhoneInfoCallbacks getPhoneInfoCallbacks = l.this.f25389c;
                 getPhoneInfoCallbacks.getPhoneInfoFailed(1023, i4, "_code=" + i3 + "_msg=" + str2 + "_status=" + i4 + "_seq=" + str3, str2, i, str, j, j2, j3);
             }
 
@@ -360,10 +360,10 @@ public class l {
                             com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.e;
                             com.tencent.tendinsv.b.t = com.tencent.tendinsv.b.f;
                             com.tencent.tendinsv.b.p = com.tencent.tendinsv.b.g;
-                            l.this.f39080c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, com.tencent.tendinsv.b.ax, i, j, j2, j3);
+                            l.this.f25389c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, com.tencent.tendinsv.b.ax, i, j, j2, j3);
                             return;
                         }
-                        getPhoneInfoCallbacks = l.this.f39080c;
+                        getPhoneInfoCallbacks = l.this.f25389c;
                         str4 = "_code=" + i3 + "_msg=" + str2 + "_status=" + i4 + "_response=" + obj + "_seq=" + str3;
                         i5 = i;
                         str5 = str;
@@ -371,7 +371,7 @@ public class l {
                         j5 = j2;
                         j6 = j3;
                     } else {
-                        getPhoneInfoCallbacks = l.this.f39080c;
+                        getPhoneInfoCallbacks = l.this.f25389c;
                         str4 = "_code=" + i3 + "_msg=" + str2 + "_status=" + i4 + "_response=" + obj + "_seq=" + str3;
                         i5 = i;
                         str5 = str;
@@ -383,7 +383,7 @@ public class l {
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mOperatePreCUCC--Exception_e=", e);
-                    l.this.f39080c.getPhoneInfoFailed(1014, 1014, "mOperatePreCUCC--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
+                    l.this.f25389c.getPhoneInfoFailed(1014, 1014, "mOperatePreCUCC--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
                 }
             }
         });
@@ -406,7 +406,7 @@ public class l {
                     String optString = jSONObject.optString(ProcessBridgeProvider.KEY_RESULT_DATA);
                     String optString2 = jSONObject.optString(ProcessBridgeProvider.KEY_RESULT_MSG);
                     if (optInt != 0) {
-                        getPhoneInfoCallbacks = l.this.f39080c;
+                        getPhoneInfoCallbacks = l.this.f25389c;
                         i3 = i;
                         str3 = str;
                         j4 = j;
@@ -423,10 +423,10 @@ public class l {
                         com.tencent.tendinsv.b.r = com.tencent.tendinsv.b.e;
                         com.tencent.tendinsv.b.t = com.tencent.tendinsv.b.f;
                         com.tencent.tendinsv.b.p = com.tencent.tendinsv.b.g;
-                        l.this.f39080c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, optString2, i, j, j2, j3);
+                        l.this.f25389c.getPhoneInfoSuccessed(1022, 1022, com.tencent.tendinsv.b.ax, optString2, i, j, j2, j3);
                         return;
                     } else {
-                        getPhoneInfoCallbacks = l.this.f39080c;
+                        getPhoneInfoCallbacks = l.this.f25389c;
                         i3 = i;
                         str3 = str;
                         j4 = j;
@@ -437,7 +437,7 @@ public class l {
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "mOperatePreCUCC--Exception_e=", e);
-                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f39080c;
+                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f25389c;
                     getPhoneInfoCallbacks2.getPhoneInfoFailed(1014, 1014, "mOperatePreCUCC--Exception_e=" + e, e.getClass().getSimpleName(), i, str, j, j2, j3);
                 }
             }
@@ -450,14 +450,14 @@ public class l {
         int i3;
         String str2;
         String str3;
-        this.f39080c = new com.tencent.tendinsv.c.b(this.b);
+        this.f25389c = new com.tencent.tendinsv.c.b(this.b);
         Runnable runnable = new Runnable() { // from class: com.tencent.tendinsv.tool.l.1
             @Override // java.lang.Runnable
             public void run() {
                 try {
                     com.tencent.tendinsv.utils.e.a(l.this.b, new String[]{"android.permission.ACCESS_NETWORK_STATE", "android.permission.ACCESS_WIFI_STATE", Manifest.permission.CHANGE_NETWORK_STATE, Manifest.permission.CHANGE_WIFI_STATE, "android.permission.READ_PHONE_STATE"});
                     int b = t.b(l.this.b, t.H, 4);
-                    o.a(d.a().a(l.this.b), b * 1000, i, l.this.f39080c, j, j2, j);
+                    o.a(d.a().a(l.this.b), b * 1000, i, l.this.f25389c, j, j2, j);
                     com.tencent.tendinsv.utils.l.a(com.tencent.tendinsv.b.H, "getPhoneInfoMethod--delay=", Integer.valueOf(b), "__INIT_STATUS=", Integer.valueOf(com.tencent.tendinsv.b.V.get()));
                     int i4 = com.tencent.tendinsv.b.V.get();
                     if (i4 != 0) {
@@ -469,19 +469,19 @@ public class l {
                         j.a().a(i, j, j2);
                     } else {
                         com.tencent.tendinsv.b.av = false;
-                        l.this.f39080c.getPhoneInfoFailed(1032, 1032, "用户被禁用", "check_error", i, d.a().a(l.this.b), j, j2, j3);
+                        l.this.f25389c.getPhoneInfoFailed(1032, 1032, "用户被禁用", "check_error", i, d.a().a(l.this.b), j, j2, j3);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     com.tencent.tendinsv.utils.l.d(com.tencent.tendinsv.b.F, "getPhoneInfoMethod--Exception_e=", e);
-                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f39080c;
+                    GetPhoneInfoCallbacks getPhoneInfoCallbacks2 = l.this.f25389c;
                     getPhoneInfoCallbacks2.getPhoneInfoFailed(1014, 1014, "getPhoneInfoMethod--Exception_e=" + e, e.getClass().getSimpleName(), i, d.a().a(l.this.b), j, j2, j3);
                 }
             }
         };
         Context context = this.b;
         if (context == null || this.j == null) {
-            getPhoneInfoCallbacks = this.f39080c;
+            getPhoneInfoCallbacks = this.f25389c;
             i2 = 1004;
             i3 = 1004;
             str2 = "getPhoneInfoMethod()未初始化";
@@ -498,7 +498,7 @@ public class l {
                 return;
             }
         } else {
-            getPhoneInfoCallbacks = this.f39080c;
+            getPhoneInfoCallbacks = this.f25389c;
             i2 = 1023;
             i3 = 200010;
             str2 = "无法识别sim卡或没有sim卡";

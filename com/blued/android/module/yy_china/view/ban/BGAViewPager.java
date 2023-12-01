@@ -12,9 +12,7 @@ import java.lang.reflect.Method;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ban/BGAViewPager.class */
 public class BGAViewPager extends ViewPager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f18617a;
+    private boolean a;
     private AutoPlayDelegate b;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ban/BGAViewPager$AutoPlayDelegate.class */
@@ -24,12 +22,12 @@ public class BGAViewPager extends ViewPager {
 
     public BGAViewPager(Context context) {
         super(context);
-        this.f18617a = true;
+        this.a = true;
     }
 
     public BGAViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f18617a = true;
+        this.a = true;
     }
 
     private float getXVelocity() {
@@ -48,6 +46,7 @@ public class BGAViewPager extends ViewPager {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(int i, boolean z) {
         try {
             Method declaredMethod = ViewPager.class.getDeclaredMethod("setCurrentItemInternal", Integer.TYPE, Boolean.TYPE, Boolean.TYPE);
@@ -59,17 +58,15 @@ public class BGAViewPager extends ViewPager {
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (!this.f18617a || getAdapter() == null || getAdapter().getCount() <= 0) {
+        if (!this.a || getAdapter() == null || getAdapter().getCount() <= 0) {
             return false;
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (!this.f18617a || getAdapter() == null || getAdapter().getCount() <= 0) {
+        if (!this.a || getAdapter() == null || getAdapter().getCount() <= 0) {
             return false;
         }
         if (this.b == null || !(motionEvent.getAction() == 3 || motionEvent.getAction() == 1)) {
@@ -80,7 +77,7 @@ public class BGAViewPager extends ViewPager {
     }
 
     public void setAllowUserScrollable(boolean z) {
-        this.f18617a = z;
+        this.a = z;
     }
 
     public void setAutoPlayDelegate(AutoPlayDelegate autoPlayDelegate) {

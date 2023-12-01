@@ -15,11 +15,11 @@ import javax.microedition.khronos.opengles.GL10;
 public class bc {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f37323a = 20;
+    public static final long f23632a = 20;
     private static final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f37324c = 1;
+    private static final int f23633c = 1;
     private static final int d = 2;
     public static int e;
 
@@ -27,7 +27,7 @@ public class bc {
         long maxMemory = Runtime.getRuntime().maxMemory();
         if (maxMemory <= STMobileHumanActionNative.ST_MOBILE_DETECT_EXTRA_FACE_POINTS) {
             e = 1;
-        } else if (maxMemory >= 67108864) {
+        } else if (maxMemory >= STMobileHumanActionNative.ST_MOBILE_DETECT_EYEBALL_CONTOUR) {
             e = 2;
         } else {
             e = 0;

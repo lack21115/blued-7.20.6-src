@@ -6,11 +6,11 @@ import com.opos.exoplayer.core.drm.DrmInitData;
 public abstract class a implements s, t {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f25002a;
+    private final int f11314a;
     private u b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25003c;
+    private int f11315c;
     private int d;
     private com.opos.exoplayer.core.e.i e;
     private long f;
@@ -18,7 +18,7 @@ public abstract class a implements s, t {
     private boolean h;
 
     public a(int i) {
-        this.f25002a = i;
+        this.f11314a = i;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -34,7 +34,7 @@ public abstract class a implements s, t {
 
     @Override // com.opos.exoplayer.core.s, com.opos.exoplayer.core.t
     public final int a() {
-        return this.f25002a;
+        return this.f11314a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -45,13 +45,13 @@ public abstract class a implements s, t {
                 this.g = true;
                 return this.h ? -4 : -3;
             }
-            eVar.f25074c += this.f;
+            eVar.f11386c += this.f;
             return a2;
         }
         if (a2 == -5) {
-            Format format = lVar.f25515a;
+            Format format = lVar.f11827a;
             if (format.w != Long.MAX_VALUE) {
-                lVar.f25515a = format.a(format.w + this.f);
+                lVar.f11827a = format.a(format.w + this.f);
             }
         }
         return a2;
@@ -59,7 +59,7 @@ public abstract class a implements s, t {
 
     @Override // com.opos.exoplayer.core.s
     public final void a(int i) {
-        this.f25003c = i;
+        this.f11315c = i;
     }
 
     @Override // com.opos.exoplayer.core.r.b
@@ -198,7 +198,7 @@ public abstract class a implements s, t {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int r() {
-        return this.f25003c;
+        return this.f11315c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -6,10 +6,10 @@ import android.view.View;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected View f24757a;
+    protected View f11069a;
 
     public a(View view) {
-        this.f24757a = view;
+        this.f11069a = view;
     }
 
     public abstract void a();

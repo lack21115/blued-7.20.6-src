@@ -13,15 +13,15 @@ import java.util.Map;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f35096a = "GBK";
+    protected String f21405a = "GBK";
     private ByteBuffer b;
 
     /* renamed from: com.tencent.beacon.pack.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/pack/a$a.class */
-    public static class C0899a {
+    public static class C0729a {
 
         /* renamed from: a  reason: collision with root package name */
-        public byte f35097a;
+        public byte f21406a;
         public int b;
     }
 
@@ -38,12 +38,12 @@ public final class a {
         wrap.position(i);
     }
 
-    public static int a(C0899a c0899a, ByteBuffer byteBuffer) {
+    public static int a(C0729a c0729a, ByteBuffer byteBuffer) {
         byte b = byteBuffer.get();
-        c0899a.f35097a = (byte) (b & 15);
-        c0899a.b = (b & 240) >> 4;
-        if (c0899a.b == 15) {
-            c0899a.b = byteBuffer.get() & 255;
+        c0729a.f21406a = (byte) (b & 15);
+        c0729a.b = (b & 240) >> 4;
+        if (c0729a.b == 15) {
+            c0729a.b = byteBuffer.get() & 255;
             return 2;
         }
         return 1;
@@ -58,9 +58,9 @@ public final class a {
         K key = next.getKey();
         V value = next.getValue();
         if (a(i)) {
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a != 8) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a != 8) {
                 throw new RuntimeException("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -142,26 +142,26 @@ public final class a {
             case 12:
                 return;
             case 13:
-                C0899a c0899a = new C0899a();
-                a(c0899a);
-                if (c0899a.f35097a == 0) {
+                C0729a c0729a = new C0729a();
+                a(c0729a);
+                if (c0729a.f21406a == 0) {
                     b(a(0, 0, true));
                     return;
                 }
-                throw new RuntimeException("skipField with invalid type, type value: " + ((int) b) + ", " + ((int) c0899a.f35097a));
+                throw new RuntimeException("skipField with invalid type, type value: " + ((int) b) + ", " + ((int) c0729a.f21406a));
             default:
                 throw new RuntimeException("invalid type.");
         }
     }
 
-    private int b(C0899a c0899a) {
-        return a(c0899a, this.b.duplicate());
+    private int b(C0729a c0729a) {
+        return a(c0729a, this.b.duplicate());
     }
 
     private void b() {
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        a(c0899a.f35097a);
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        a(c0729a.f21406a);
     }
 
     private void b(int i) {
@@ -177,9 +177,9 @@ public final class a {
             }
             return null;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        if (c0899a.f35097a != 9) {
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        if (c0729a.f21406a != 9) {
             throw new RuntimeException("type mismatch.");
         }
         int a2 = a(0, 0, true);
@@ -205,9 +205,9 @@ public final class a {
             }
             return b;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b2 = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b2 = c0729a.f21406a;
         if (b2 != 0) {
             if (b2 == 12) {
                 return (byte) 0;
@@ -224,9 +224,9 @@ public final class a {
             }
             return d;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b = c0729a.f21406a;
         if (b != 4) {
             if (b != 5) {
                 if (b == 12) {
@@ -246,9 +246,9 @@ public final class a {
             }
             return f;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b = c0729a.f21406a;
         if (b != 4) {
             if (b == 12) {
                 return 0.0f;
@@ -265,9 +265,9 @@ public final class a {
             }
             return i;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b = c0729a.f21406a;
         if (b != 0) {
             if (b != 1) {
                 if (b != 2) {
@@ -284,7 +284,7 @@ public final class a {
     }
 
     public int a(String str) {
-        this.f35096a = str;
+        this.f21405a = str;
         return 0;
     }
 
@@ -296,9 +296,9 @@ public final class a {
             }
             return j;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b2 = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b2 = c0729a.f21406a;
         if (b2 != 12) {
             if (b2 == 0) {
                 b = this.b.get();
@@ -326,9 +326,9 @@ public final class a {
         }
         try {
             AbstractJceStruct abstractJceStruct2 = (AbstractJceStruct) abstractJceStruct.getClass().newInstance();
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a == 10) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a == 10) {
                 abstractJceStruct2.readFrom(this);
                 a();
                 return abstractJceStruct2;
@@ -387,9 +387,9 @@ public final class a {
             }
             return null;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b = c0729a.f21406a;
         if (b == 6) {
             byte b2 = this.b.get();
             byte b3 = b2;
@@ -399,7 +399,7 @@ public final class a {
             byte[] bArr = new byte[b3];
             this.b.get(bArr);
             try {
-                return new String(bArr, this.f35096a);
+                return new String(bArr, this.f21405a);
             } catch (UnsupportedEncodingException e) {
                 return new String(bArr, Charset.forName("UTF-8"));
             }
@@ -411,7 +411,7 @@ public final class a {
             byte[] bArr2 = new byte[i2];
             this.b.get(bArr2);
             try {
-                return new String(bArr2, this.f35096a);
+                return new String(bArr2, this.f21405a);
             } catch (UnsupportedEncodingException e2) {
                 return new String(bArr2, Charset.forName("UTF-8"));
             }
@@ -451,9 +451,9 @@ public final class a {
             }
             return s;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b = c0729a.f21406a;
         if (b != 0) {
             if (b != 1) {
                 if (b == 12) {
@@ -467,15 +467,15 @@ public final class a {
     }
 
     public void a() {
-        C0899a c0899a = new C0899a();
+        C0729a c0729a = new C0729a();
         do {
-            a(c0899a);
-            a(c0899a.f35097a);
-        } while (c0899a.f35097a != 11);
+            a(c0729a);
+            a(c0729a.f21406a);
+        } while (c0729a.f21406a != 11);
     }
 
-    public void a(C0899a c0899a) {
-        a(c0899a, this.b);
+    public void a(C0729a c0729a) {
+        a(c0729a, this.b);
     }
 
     public void a(byte[] bArr) {
@@ -508,7 +508,7 @@ public final class a {
             int r0 = r0.b(r1)     // Catch: java.lang.RuntimeException -> L3b java.nio.BufferUnderflowException -> L42
             r5 = r0
             r0 = r6
-            byte r0 = r0.f35097a     // Catch: java.lang.RuntimeException -> L3b java.nio.BufferUnderflowException -> L42
+            byte r0 = r0.f21406a     // Catch: java.lang.RuntimeException -> L3b java.nio.BufferUnderflowException -> L42
             r1 = 11
             if (r0 != r1) goto L19
             r0 = 0
@@ -530,7 +530,7 @@ public final class a {
             r0.b(r1)     // Catch: java.lang.RuntimeException -> L3b java.nio.BufferUnderflowException -> L42
             r0 = r3
             r1 = r6
-            byte r1 = r1.f35097a     // Catch: java.lang.RuntimeException -> L3b java.nio.BufferUnderflowException -> L42
+            byte r1 = r1.f21406a     // Catch: java.lang.RuntimeException -> L3b java.nio.BufferUnderflowException -> L42
             r0.a(r1)     // Catch: java.lang.RuntimeException -> L3b java.nio.BufferUnderflowException -> L42
             goto L8
         L3b:
@@ -567,15 +567,15 @@ public final class a {
             }
             return null;
         }
-        C0899a c0899a = new C0899a();
-        a(c0899a);
-        byte b = c0899a.f35097a;
+        C0729a c0729a = new C0729a();
+        a(c0729a);
+        byte b = c0729a.f21406a;
         if (b != 9) {
             if (b == 13) {
-                C0899a c0899a2 = new C0899a();
-                a(c0899a2);
-                if (c0899a2.f35097a != 0) {
-                    throw new RuntimeException("type mismatch, tag: " + i + ", type: " + ((int) c0899a.f35097a) + ", " + ((int) c0899a2.f35097a));
+                C0729a c0729a2 = new C0729a();
+                a(c0729a2);
+                if (c0729a2.f21406a != 0) {
+                    throw new RuntimeException("type mismatch, tag: " + i + ", type: " + ((int) c0729a.f21406a) + ", " + ((int) c0729a2.f21406a));
                 }
                 int a2 = a(0, 0, true);
                 if (a2 >= 0 && a2 <= this.b.capacity()) {
@@ -583,7 +583,7 @@ public final class a {
                     this.b.get(bArr2);
                     return bArr2;
                 }
-                throw new RuntimeException("invalid size, tag: " + i + ", type: " + ((int) c0899a.f35097a) + ", " + ((int) c0899a2.f35097a) + ", size: " + a2);
+                throw new RuntimeException("invalid size, tag: " + i + ", type: " + ((int) c0729a.f21406a) + ", " + ((int) c0729a2.f21406a) + ", size: " + a2);
             }
             throw new RuntimeException("type mismatch.");
         }
@@ -606,9 +606,9 @@ public final class a {
     public double[] a(double[] dArr, int i, boolean z) {
         double[] dArr2;
         if (a(i)) {
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a != 9) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a != 9) {
                 throw new RuntimeException("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -637,9 +637,9 @@ public final class a {
     public float[] a(float[] fArr, int i, boolean z) {
         float[] fArr2;
         if (a(i)) {
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a != 9) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a != 9) {
                 throw new RuntimeException("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -668,9 +668,9 @@ public final class a {
     public int[] a(int[] iArr, int i, boolean z) {
         int[] iArr2;
         if (a(i)) {
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a != 9) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a != 9) {
                 throw new RuntimeException("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -699,9 +699,9 @@ public final class a {
     public long[] a(long[] jArr, int i, boolean z) {
         long[] jArr2;
         if (a(i)) {
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a != 9) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a != 9) {
                 throw new RuntimeException("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -737,9 +737,9 @@ public final class a {
     public short[] a(short[] sArr, int i, boolean z) {
         short[] sArr2;
         if (a(i)) {
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a != 9) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a != 9) {
                 throw new RuntimeException("type mismatch.");
             }
             int a2 = a(0, 0, true);
@@ -768,9 +768,9 @@ public final class a {
     public boolean[] a(boolean[] zArr, int i, boolean z) {
         boolean[] zArr2;
         if (a(i)) {
-            C0899a c0899a = new C0899a();
-            a(c0899a);
-            if (c0899a.f35097a != 9) {
+            C0729a c0729a = new C0729a();
+            a(c0729a);
+            if (c0729a.f21406a != 9) {
                 throw new RuntimeException("type mismatch.");
             }
             int a2 = a(0, 0, true);

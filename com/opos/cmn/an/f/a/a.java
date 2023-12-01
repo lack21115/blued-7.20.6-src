@@ -8,7 +8,7 @@ import android.provider.Settings;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile Boolean f24506a;
+    private static volatile Boolean f10819a;
     private static volatile Boolean b;
 
     public static void a(boolean z) {
@@ -37,25 +37,25 @@ public class a {
         boolean booleanValue;
         synchronized (a.class) {
             try {
-                if (f24506a == null) {
+                if (f10819a == null) {
                     try {
                         if (Build.VERSION.SDK_INT > 29) {
                             if (context != null) {
                                 if (Settings.Global.getInt(context.getApplicationContext().getContentResolver(), "oplus_customize_system_stable_plan_switch") == 0) {
                                     bool = false;
-                                    f24506a = bool;
+                                    f10819a = bool;
                                 }
                             }
                         }
                         bool = true;
-                        f24506a = bool;
+                        f10819a = bool;
                     } catch (Throwable th) {
                     }
                 }
-                if (f24506a == null) {
-                    f24506a = true;
+                if (f10819a == null) {
+                    f10819a = true;
                 }
-                booleanValue = f24506a.booleanValue();
+                booleanValue = f10819a.booleanValue();
             } catch (Throwable th2) {
                 throw th2;
             }

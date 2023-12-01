@@ -2,22 +2,20 @@ package com.huawei.hms.ads;
 
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.iab.omid.library.huawei.adsession.media.Position;
-import javax.xml.transform.OutputKeys;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/jf.class */
 public enum jf implements it {
     PREROLL(IAdInterListener.AdProdType.PRODUCT_PREROLL),
     MIDROLL("midroll"),
     POSTROLL("postroll"),
-    STANDALONE(OutputKeys.STANDALONE);
+    STANDALONE("standalone");
     
     private static boolean B;
     private final String C;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.huawei.hms.ads.jf$1  reason: invalid class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/jf$1.class */
-    public static /* synthetic */ class AnonymousClass1 {
+    static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] Code;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */

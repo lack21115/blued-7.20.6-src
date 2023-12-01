@@ -1,6 +1,7 @@
 package com.blued.community.ui.feed.fragment;
 
 import android.view.View;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
@@ -11,6 +12,7 @@ import com.blued.community.model.BluedIngSelfFeed;
 import com.blued.community.track.EventTrackFeed;
 import com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView;
 import com.blued.community.ui.feed.manager.FeedMethods;
+import com.blued.community.ui.feed.observer.IFeedDataObserver;
 import com.blued.community.ui.feed.vm.LikedFeedViewModel;
 import com.blued.das.client.feed.FeedProtos;
 import kotlin.Metadata;
@@ -39,33 +41,33 @@ public final class LikedFeedFragment extends BaseListFragment<LikedFeedViewModel
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
+        NoDataAndLoadFailView c = c();
+        if (c != null) {
+            c.setNoDataStr(R.string.feed_interacted_nodata_tip);
+        }
         NoDataAndLoadFailView c2 = c();
         if (c2 != null) {
-            c2.setNoDataStr(R.string.feed_interacted_nodata_tip);
+            c2.setBtnStr(R.string.feed_interacted_nodata_btn);
         }
         NoDataAndLoadFailView c3 = c();
         if (c3 != null) {
-            c3.setBtnStr(R.string.feed_interacted_nodata_btn);
-        }
-        NoDataAndLoadFailView c4 = c();
-        if (c4 != null) {
-            c4.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$LikedFeedFragment$SR6hmVUBGhnYU8rDH1detAg4jiM
+            c3.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.fragment.-$$Lambda$LikedFeedFragment$SR6hmVUBGhnYU8rDH1detAg4jiM
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LikedFeedFragment.a(LikedFeedFragment.this, view);
                 }
             });
         }
-        LikedFeedFragment likedFeedFragment = this;
-        RecyclerView a2 = a();
-        RecyclerView.Adapter adapter = a2 == null ? null : a2.getAdapter();
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        RecyclerView a = a();
+        RecyclerView.Adapter adapter = a == null ? null : a.getAdapter();
         if (adapter == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.community.ui.feed.adapter.FeedListAdapterForRecyclerView");
         }
-        FeedMethods.a(likedFeedFragment, (FeedListAdapterForRecyclerView) adapter);
+        FeedMethods.a(lifecycleOwner, (IFeedDataObserver) adapter);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         EventTrackFeed.a(FeedProtos.Event.MINE_LIKE_TAB_SHOW);

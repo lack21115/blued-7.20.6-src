@@ -27,7 +27,7 @@ public class a extends b {
     }
 
     public final a e(String str) {
-        this.f24431a.get().remove(str);
+        this.f10744a.get().remove(str);
         return this;
     }
 }

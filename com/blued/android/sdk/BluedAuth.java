@@ -2,7 +2,6 @@ package com.blued.android.sdk;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.exifinterface.media.ExifInterface;
 import com.blued.android.sdk.a.b;
 import com.blued.android.sdk.a.c;
 import com.blued.android.sdk.a.d;
@@ -34,8 +33,8 @@ public class BluedAuth {
 
     public static boolean startAuth(Context context, String str, String str2) {
         Intent intent = new Intent();
-        intent.setAction(b.f18652c);
-        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.setAction(b.c);
+        intent.addCategory("android.intent.category.DEFAULT");
         intent.setPackage("com.soft.blued");
         intent.putExtra("app_key", str);
         intent.putExtra("secret_key", str2);
@@ -49,10 +48,11 @@ public class BluedAuth {
         return true;
     }
 
+    /* JADX WARN: Type inference failed for: r2v3, types: [com.blued.android.sdk.BluedAuth$1] */
     public static void updateToken(String str, String str2, String str3, ModelCallback<TokenModel> modelCallback) {
         String valueOf = String.valueOf(System.currentTimeMillis() / 1000);
         HashMap hashMap = new HashMap();
-        hashMap.put(ExifInterface.GPS_DIRECTION_TRUE, valueOf);
+        hashMap.put("T", valueOf);
         hashMap.put("access_token", str3);
         c.a(e.a(d.a() + "/oauth2/refresh", hashMap), e.a(str, str2, str3, valueOf), new TypeToken<BluedEntity<TokenModel>>() { // from class: com.blued.android.sdk.BluedAuth.1
         }.getType(), modelCallback);

@@ -15,11 +15,11 @@ import java.io.IOException;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f27778a = "VideoMixItemExtractor";
+    private static String f14090a = "VideoMixItemExtractor";
     private SurfaceTexture b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Surface f27779c;
+    private Surface f14091c;
     private int d;
     private b.c e;
     private PLVideoMixItem f;
@@ -53,14 +53,14 @@ public class e {
         this.n = g.c(this.f.getVideoPath());
         this.d = com.qiniu.pili.droid.shortvideo.f.d.c();
         this.b = new SurfaceTexture(this.d);
-        this.f27779c = new Surface(this.b);
+        this.f14091c = new Surface(this.b);
         MediaExtractor mediaExtractor = new MediaExtractor();
         this.i = mediaExtractor;
         try {
             mediaExtractor.setDataSource(pLVideoMixItem.getVideoPath());
         } catch (IOException e) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.g;
-            String str = f27778a;
+            String str = f14090a;
             eVar.e(str, "sample media extractor setDataSource error , path is : " + pLVideoMixItem.getVideoPath());
         }
     }
@@ -93,7 +93,7 @@ public class e {
         com.qiniu.pili.droid.shortvideo.gl.c.d dVar = this.l;
         if (dVar == null) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.g;
-            String str = f27778a;
+            String str = f14090a;
             eVar.e(str, "sticker is null : " + this.f.getVideoPath());
             return i;
         }
@@ -102,7 +102,7 @@ public class e {
 
     public void a() {
         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.g;
-        String str = f27778a;
+        String str = f14090a;
         eVar.c(str, "start : " + this.f.getVideoPath());
         int b = g.b(this.i, "video/");
         if (b >= 0) {
@@ -110,10 +110,10 @@ public class e {
             MediaExtractor mediaExtractor = this.i;
             com.qiniu.pili.droid.shortvideo.d.b bVar = new com.qiniu.pili.droid.shortvideo.d.b(mediaExtractor, mediaExtractor.getTrackFormat(b));
             this.h = bVar;
-            bVar.a(this.f27779c);
+            bVar.a(this.f14091c);
             this.h.a(this.f.isLooping());
-            this.h.a(new b.InterfaceC0744b() { // from class: com.qiniu.pili.droid.shortvideo.process.a.e.1
-                @Override // com.qiniu.pili.droid.shortvideo.d.b.InterfaceC0744b
+            this.h.a(new b.InterfaceC0574b() { // from class: com.qiniu.pili.droid.shortvideo.process.a.e.1
+                @Override // com.qiniu.pili.droid.shortvideo.d.b.InterfaceC0574b
                 public void a() {
                     e.this.e();
                 }
@@ -146,7 +146,7 @@ public class e {
     public void d() {
         if (this.h != null) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.g;
-            String str = f27778a;
+            String str = f14090a;
             eVar.c(str, "stop : " + this.f.getVideoPath());
             this.h.c();
             this.h = null;
@@ -155,17 +155,17 @@ public class e {
 
     public void e() {
         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.g;
-        String str = f27778a;
+        String str = f14090a;
         eVar.c(str, "release : " + this.f.getVideoPath());
         SurfaceTexture surfaceTexture = this.b;
         if (surfaceTexture != null) {
             surfaceTexture.release();
             this.b = null;
         }
-        Surface surface = this.f27779c;
+        Surface surface = this.f14091c;
         if (surface != null) {
             surface.release();
-            this.f27779c = null;
+            this.f14091c = null;
         }
         MediaExtractor mediaExtractor = this.i;
         if (mediaExtractor != null) {

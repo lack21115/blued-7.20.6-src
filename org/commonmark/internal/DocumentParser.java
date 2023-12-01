@@ -38,13 +38,9 @@ import org.commonmark.parser.delimiter.DelimiterProcessor;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/DocumentParser.class */
 public class DocumentParser implements ParserState {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Set<Class<? extends Block>> f44012a = new LinkedHashSet(Arrays.asList(BlockQuote.class, Heading.class, FencedCodeBlock.class, HtmlBlock.class, ThematicBreak.class, ListBlock.class, IndentedCodeBlock.class));
+    private static final Set<Class<? extends Block>> a = new LinkedHashSet(Arrays.asList(BlockQuote.class, Heading.class, FencedCodeBlock.class, HtmlBlock.class, ThematicBreak.class, ListBlock.class, IndentedCodeBlock.class));
     private static final Map<Class<? extends Block>, BlockParserFactory> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CharSequence f44013c;
+    private CharSequence c;
     private boolean f;
     private boolean j;
     private final List<BlockParserFactory> k;
@@ -63,22 +59,20 @@ public class DocumentParser implements ParserState {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/DocumentParser$MatchedBlockParserImpl.class */
     public static class MatchedBlockParserImpl implements MatchedBlockParser {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final BlockParser f44014a;
+        private final BlockParser a;
 
         public MatchedBlockParserImpl(BlockParser blockParser) {
-            this.f44014a = blockParser;
+            this.a = blockParser;
         }
 
         @Override // org.commonmark.parser.block.MatchedBlockParser
         public BlockParser a() {
-            return this.f44014a;
+            return this.a;
         }
 
         @Override // org.commonmark.parser.block.MatchedBlockParser
         public CharSequence b() {
-            BlockParser blockParser = this.f44014a;
+            BlockParser blockParser = this.a;
             if (blockParser instanceof ParagraphParser) {
                 CharSequence e = ((ParagraphParser) blockParser).e();
                 if (e.length() == 0) {
@@ -121,7 +115,7 @@ public class DocumentParser implements ParserState {
     }
 
     public static Set<Class<? extends Block>> a() {
-        return f44012a;
+        return a;
     }
 
     private BlockStartImpl a(BlockParser blockParser) {
@@ -141,7 +135,7 @@ public class DocumentParser implements ParserState {
             this.d = i2;
             this.e = this.h;
         }
-        int length = this.f44013c.length();
+        int length = this.c.length();
         while (true) {
             int i3 = this.d;
             if (i3 >= i || i3 == length) {
@@ -195,7 +189,7 @@ public class DocumentParser implements ParserState {
             this.d = this.g;
             this.e = i2;
         }
-        int length = this.f44013c.length();
+        int length = this.c.length();
         while (this.e < i && this.d != length) {
             j();
         }
@@ -236,12 +230,12 @@ public class DocumentParser implements ParserState {
         int i = this.d;
         int i2 = this.e;
         this.j = true;
-        int length = this.f44013c.length();
+        int length = this.c.length();
         while (true) {
             if (i >= length) {
                 break;
             }
-            char charAt = this.f44013c.charAt(i);
+            char charAt = this.c.charAt(i);
             if (charAt == '\t') {
                 i++;
                 i2 += 4 - (i2 % 4);
@@ -259,7 +253,7 @@ public class DocumentParser implements ParserState {
     }
 
     private void j() {
-        if (this.f44013c.charAt(this.d) != '\t') {
+        if (this.c.charAt(this.d) != '\t') {
             this.d++;
             this.e++;
             return;
@@ -273,7 +267,7 @@ public class DocumentParser implements ParserState {
         String subSequence;
         if (this.f) {
             int i = this.d;
-            CharSequence charSequence = this.f44013c;
+            CharSequence charSequence = this.c;
             CharSequence subSequence2 = charSequence.subSequence(i + 1, charSequence.length());
             int a2 = Parsing.a(this.e);
             StringBuilder sb = new StringBuilder(subSequence2.length() + a2);
@@ -289,7 +283,7 @@ public class DocumentParser implements ParserState {
             sb.append(subSequence2);
             subSequence = sb.toString();
         } else {
-            CharSequence charSequence2 = this.f44013c;
+            CharSequence charSequence2 = this.c;
             subSequence = charSequence2.subSequence(this.d, charSequence2.length());
         }
         h().a(subSequence);
@@ -351,7 +345,7 @@ public class DocumentParser implements ParserState {
 
     @Override // org.commonmark.parser.block.ParserState
     public CharSequence b() {
-        return this.f44013c;
+        return this.c;
     }
 
     @Override // org.commonmark.parser.block.ParserState

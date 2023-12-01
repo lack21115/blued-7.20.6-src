@@ -7,6 +7,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.IBinder;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
@@ -105,14 +106,14 @@ public final class AndroidAppHelper {
 
     public static String currentPackageName() {
         ApplicationInfo currentApplicationInfo = currentApplicationInfo();
-        return currentApplicationInfo != null ? currentApplicationInfo.packageName : "android";
+        return currentApplicationInfo != null ? currentApplicationInfo.packageName : MsgBackupManager.PLATFORM_ANDROID;
     }
 
     public static String currentProcessName() {
         String currentPackageName = ActivityThread.currentPackageName();
         String str = currentPackageName;
         if (currentPackageName == null) {
-            str = "android";
+            str = MsgBackupManager.PLATFORM_ANDROID;
         }
         return str;
     }

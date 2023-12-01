@@ -53,20 +53,16 @@ public final class DiskLruCache implements Closeable {
     private final int valueCount;
     static final Pattern LEGAL_KEY_PATTERN = Pattern.compile("[a-z0-9_-]{1,120}");
     private static final Sink NULL_SINK = new Sink() { // from class: com.squareup.okhttp.internal.DiskLruCache.4
-        @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
         }
 
-        @Override // okio.Sink, java.io.Flushable
         public void flush() throws IOException {
         }
 
-        @Override // okio.Sink
         public Timeout timeout() {
             return Timeout.NONE;
         }
 
-        @Override // okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             buffer.skip(j);
         }
@@ -239,25 +235,25 @@ public final class DiskLruCache implements Closeable {
             if (!Thread.holdsLock(DiskLruCache.this)) {
                 throw new AssertionError();
             }
-            Source[] sourceArr = new Source[DiskLruCache.this.valueCount];
+            Closeable[] closeableArr = new Source[DiskLruCache.this.valueCount];
             long[] jArr = (long[]) this.lengths.clone();
             int i = 0;
             while (true) {
                 try {
                     int i2 = i;
                     if (i2 >= DiskLruCache.this.valueCount) {
-                        return new Snapshot(this.key, this.sequenceNumber, sourceArr, jArr);
+                        return new Snapshot(this.key, this.sequenceNumber, closeableArr, jArr);
                     }
-                    sourceArr[i2] = DiskLruCache.this.fileSystem.source(this.cleanFiles[i2]);
+                    closeableArr[i2] = DiskLruCache.this.fileSystem.source(this.cleanFiles[i2]);
                     i = i2 + 1;
                 } catch (FileNotFoundException e) {
                     int i3 = 0;
                     while (true) {
                         int i4 = i3;
-                        if (i4 >= DiskLruCache.this.valueCount || sourceArr[i4] == null) {
+                        if (i4 >= DiskLruCache.this.valueCount || closeableArr[i4] == null) {
                             return null;
                         }
-                        Util.closeQuietly(sourceArr[i4]);
+                        Util.closeQuietly(closeableArr[i4]);
                         i3 = i4 + 1;
                     }
                 }
@@ -295,15 +291,15 @@ public final class DiskLruCache implements Closeable {
 
         @Override // java.io.Closeable, java.lang.AutoCloseable
         public void close() {
-            Source[] sourceArr = this.sources;
-            int length = sourceArr.length;
+            Closeable[] closeableArr = this.sources;
+            int length = closeableArr.length;
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
                     return;
                 }
-                Util.closeQuietly(sourceArr[i2]);
+                Util.closeQuietly(closeableArr[i2]);
                 i = i2 + 1;
             }
         }
@@ -521,12 +517,12 @@ public final class DiskLruCache implements Closeable {
                     } else {
                         rebuildJournal();
                     }
-                    Util.closeQuietly(buffer);
+                    Util.closeQuietly((Closeable) buffer);
                     return;
                 }
             }
         } catch (Throwable th) {
-            Util.closeQuietly(buffer);
+            Util.closeQuietly((Closeable) buffer);
             throw th;
         }
     }

@@ -15,7 +15,7 @@ public final class PlatformScheduler implements c {
     private static final String b = "PlatformScheduler";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f7730c = "service_action";
+    private static final String f4891c = "service_action";
     private static final String d = "service_package";
     private static final String e = "requirements";
     private final int f;
@@ -31,7 +31,7 @@ public final class PlatformScheduler implements c {
                 jobFinished(jobParameters, true);
                 return false;
             }
-            String string = extras.getString(PlatformScheduler.f7730c);
+            String string = extras.getString(PlatformScheduler.f4891c);
             String string2 = extras.getString(PlatformScheduler.d);
             Intent intent = new Intent(string).setPackage(string2);
             StringBuilder sb = new StringBuilder("Starting service action: ");
@@ -68,10 +68,10 @@ public final class PlatformScheduler implements c {
             if (a2 != 4) {
                 throw new UnsupportedOperationException();
             }
-            if (af.f7632a < 26) {
+            if (af.f4793a < 26) {
                 throw new UnsupportedOperationException();
             }
-        } else if (af.f7632a < 24) {
+        } else if (af.f4793a < 24) {
             throw new UnsupportedOperationException();
         } else {
             i2 = 3;
@@ -81,7 +81,7 @@ public final class PlatformScheduler implements c {
         builder.setRequiresCharging(aVar.b());
         builder.setPersisted(true);
         PersistableBundle persistableBundle = new PersistableBundle();
-        persistableBundle.putString(f7730c, str);
+        persistableBundle.putString(f4891c, str);
         persistableBundle.putString(d, str2);
         persistableBundle.putInt(e, aVar.d());
         builder.setExtras(persistableBundle);
@@ -116,10 +116,10 @@ public final class PlatformScheduler implements c {
             if (a2 != 4) {
                 throw new UnsupportedOperationException();
             }
-            if (af.f7632a < 26) {
+            if (af.f4793a < 26) {
                 throw new UnsupportedOperationException();
             }
-        } else if (af.f7632a < 24) {
+        } else if (af.f4793a < 24) {
             throw new UnsupportedOperationException();
         } else {
             i = 3;
@@ -129,7 +129,7 @@ public final class PlatformScheduler implements c {
         builder.setRequiresCharging(aVar.b());
         builder.setPersisted(true);
         PersistableBundle persistableBundle = new PersistableBundle();
-        persistableBundle.putString(f7730c, str2);
+        persistableBundle.putString(f4891c, str2);
         persistableBundle.putString(d, str);
         persistableBundle.putInt(e, aVar.d());
         builder.setExtras(persistableBundle);

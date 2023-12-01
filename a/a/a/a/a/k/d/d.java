@@ -11,11 +11,11 @@ import com.cdo.oaps.ad.OapsWrapper;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Context f1409a;
+    public static Context f1361a;
     public f b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Object f1410c;
+    public Object f1362c;
     public boolean d;
     public BroadcastReceiver e;
     public BroadcastReceiver f;
@@ -62,11 +62,11 @@ public final class d {
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final d f1414a = new d(null);
+        public static final d f1366a = new d(null);
     }
 
     public d() {
-        this.f1410c = new Object();
+        this.f1362c = new Object();
         this.d = false;
         this.e = new a();
         this.f = new b();
@@ -77,20 +77,20 @@ public final class d {
     }
 
     public static d a() {
-        return c.f1414a;
+        return c.f1366a;
     }
 
     public void a(Context context) {
-        synchronized (this.f1410c) {
+        synchronized (this.f1362c) {
             if (this.d || context == null) {
                 return;
             }
-            f1409a = context.getApplicationContext();
+            f1361a = context.getApplicationContext();
             f fVar = new f();
             this.b = fVar;
             fVar.a(context);
             a.a.a.a.a.k.a.a().a(this.e, new IntentFilter("pldroid-qos-filter"));
-            f1409a.registerReceiver(this.f, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+            f1361a.registerReceiver(this.f, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
             this.d = true;
         }
     }
@@ -122,10 +122,10 @@ public final class d {
     }
 
     public void b(Context context) {
-        synchronized (this.f1410c) {
-            if (f1409a != null && this.d) {
-                f1409a.unregisterReceiver(this.f);
-                f1409a = null;
+        synchronized (this.f1362c) {
+            if (f1361a != null && this.d) {
+                f1361a.unregisterReceiver(this.f);
+                f1361a = null;
                 a.a.a.a.a.k.a.a().a(this.e);
                 this.b.c();
                 this.d = false;

@@ -11,17 +11,13 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/ItemNearbyViewFlipperBinding.class */
 public final class ItemNearbyViewFlipperBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f19015a;
+    public final ImageView a;
     public final ViewFlipper b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final CardView f19016c;
+    private final CardView c;
 
     private ItemNearbyViewFlipperBinding(CardView cardView, ImageView imageView, ViewFlipper viewFlipper) {
-        this.f19016c = cardView;
-        this.f19015a = imageView;
+        this.c = cardView;
+        this.a = imageView;
         this.b = viewFlipper;
     }
 
@@ -52,9 +48,8 @@ public final class ItemNearbyViewFlipperBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f19016c;
+        return this.c;
     }
 }

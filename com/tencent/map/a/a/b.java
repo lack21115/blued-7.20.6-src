@@ -6,21 +6,21 @@ import com.tencent.map.b.h;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37194a;
+    private int f23503a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f37195c;
+    private int f23504c;
     private int d;
 
     public b(int i, int i2, int i3, int i4) {
-        this.f37194a = 1;
+        this.f23503a = 1;
         this.b = 0;
-        this.f37195c = 12;
+        this.f23504c = 12;
         this.d = 1;
-        h.a("argument: " + this.f37194a + " " + this.d + " " + this.b);
+        h.a("argument: " + this.f23503a + " " + this.d + " " + this.b);
         if (i >= 0 && i <= 1) {
-            this.f37194a = i;
+            this.f23503a = i;
         }
         if (i2 >= 0 && i2 <= 1) {
             this.d = i2;
@@ -31,11 +31,11 @@ public class b {
         if (this.d == 0) {
             this.b = 0;
         }
-        this.f37195c = i4;
+        this.f23504c = i4;
     }
 
     public int a() {
-        return this.f37194a;
+        return this.f23503a;
     }
 
     public void a(int i) {

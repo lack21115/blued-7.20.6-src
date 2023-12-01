@@ -5,10 +5,10 @@ package com.tencent.ugc;
 public final /* synthetic */ class gp implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDemuxerFFmpeg f40426a;
+    private final VideoDemuxerFFmpeg f26735a;
 
     private gp(VideoDemuxerFFmpeg videoDemuxerFFmpeg) {
-        this.f40426a = videoDemuxerFFmpeg;
+        this.f26735a = videoDemuxerFFmpeg;
     }
 
     public static Runnable a(VideoDemuxerFFmpeg videoDemuxerFFmpeg) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class gp implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40426a.getNextEncodeVideoFrameInternal();
+        this.f26735a.getNextEncodeVideoFrameInternal();
     }
 }

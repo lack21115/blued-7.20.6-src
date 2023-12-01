@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.view.LiveAutoPlayView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/ItemLiveFollowRecommendUserBinding.class */
 public final class ItemLiveFollowRecommendUserBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12028a;
+    public final ImageView a;
     public final CardView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LiveAutoPlayView f12029c;
+    public final LiveAutoPlayView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -29,9 +25,9 @@ public final class ItemLiveFollowRecommendUserBinding implements ViewBinding {
 
     private ItemLiveFollowRecommendUserBinding(FrameLayout frameLayout, ImageView imageView, CardView cardView, LiveAutoPlayView liveAutoPlayView, ImageView imageView2, ImageView imageView3, ImageView imageView4, FrameLayout frameLayout2, ShapeTextView shapeTextView, TextView textView) {
         this.j = frameLayout;
-        this.f12028a = imageView;
+        this.a = imageView;
         this.b = cardView;
-        this.f12029c = liveAutoPlayView;
+        this.c = liveAutoPlayView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -44,8 +40,8 @@ public final class ItemLiveFollowRecommendUserBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.aariv_cover);
         if (imageView != null) {
-            CardView cardView = (CardView) view.findViewById(R.id.aariv_cover_layout);
-            if (cardView != null) {
+            CardView findViewById = view.findViewById(R.id.aariv_cover_layout);
+            if (findViewById != null) {
                 LiveAutoPlayView liveAutoPlayView = (LiveAutoPlayView) view.findViewById(R.id.fl_video_view);
                 if (liveAutoPlayView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_cover_box);
@@ -60,7 +56,7 @@ public final class ItemLiveFollowRecommendUserBinding implements ViewBinding {
                                     if (shapeTextView != null) {
                                         TextView textView = (TextView) view.findViewById(R.id.tv_username);
                                         if (textView != null) {
-                                            return new ItemLiveFollowRecommendUserBinding((FrameLayout) view, imageView, cardView, liveAutoPlayView, imageView2, imageView3, imageView4, frameLayout, shapeTextView, textView);
+                                            return new ItemLiveFollowRecommendUserBinding((FrameLayout) view, imageView, findViewById, liveAutoPlayView, imageView2, imageView3, imageView4, frameLayout, shapeTextView, textView);
                                         }
                                         str = "tvUsername";
                                     } else {
@@ -90,7 +86,6 @@ public final class ItemLiveFollowRecommendUserBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.j;

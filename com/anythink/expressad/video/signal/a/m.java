@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.hardware.Camera;
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.expressad.foundation.h.v;
 import com.anythink.expressad.video.module.AnythinkContainerView;
 import java.util.ArrayList;
@@ -17,11 +16,11 @@ public final class m extends f {
     private Activity b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AnythinkContainerView f8519c;
+    private AnythinkContainerView f5679c;
 
     public m(Activity activity, AnythinkContainerView anythinkContainerView) {
         this.b = activity;
-        this.f8519c = anythinkContainerView;
+        this.f5679c = anythinkContainerView;
     }
 
     private static String a(List<com.anythink.expressad.foundation.d.c> list, String str, String str2, JSONObject jSONObject) {
@@ -33,7 +32,7 @@ public final class m extends f {
                 jSONObject2.put("campaignList", b);
                 jSONObject2.put("device", bVar.a());
                 jSONObject2.put("unit_id", str);
-                jSONObject2.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.SDK_INFO, str2);
+                jSONObject2.put("sdk_info", str2);
                 jSONObject2.put("unitSetting", jSONObject);
                 if (com.anythink.expressad.d.b.a() != null) {
                     com.anythink.expressad.d.b.a();
@@ -118,20 +117,20 @@ public final class m extends f {
 
     @Override // com.anythink.expressad.video.signal.a.f, com.anythink.expressad.video.signal.i
     public final String a() {
-        if (this.f8519c == null) {
+        if (this.f5679c == null) {
             super.a();
         } else {
             try {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(this.f8519c.getCampaign());
-                String unitID = this.f8519c.getUnitID();
-                String str = com.anythink.expressad.out.b.f8067a + ",3.0.1";
+                arrayList.add(this.f5679c.getCampaign());
+                String unitID = this.f5679c.getUnitID();
+                String str = com.anythink.expressad.out.b.f5227a + ",3.0.1";
                 com.anythink.expressad.videocommon.e.d a2 = com.anythink.expressad.videocommon.e.c.a() == null ? null : com.anythink.expressad.videocommon.e.c.a().a(com.anythink.expressad.foundation.b.a.b().e(), unitID);
                 JSONObject jSONObject = new JSONObject();
                 if (a2 != null) {
                     jSONObject = a2.R();
                 }
-                com.anythink.expressad.foundation.h.o.a("JSRewardVideoV1", "getEndScreenInfo success campaign = " + this.f8519c.getCampaign());
+                com.anythink.expressad.foundation.h.o.a("JSRewardVideoV1", "getEndScreenInfo success campaign = " + this.f5679c.getCampaign());
                 return a(arrayList, unitID, str, jSONObject);
             } catch (Throwable th) {
                 th.printStackTrace();
@@ -144,10 +143,10 @@ public final class m extends f {
     public final void a(String str) {
         super.a(str);
         try {
-            if (this.b == null || TextUtils.isEmpty(str) || !str.equals("click") || this.f8519c == null) {
+            if (this.b == null || TextUtils.isEmpty(str) || !str.equals("click") || this.f5679c == null) {
                 return;
             }
-            this.f8519c.triggerCloseBtn(str);
+            this.f5679c.triggerCloseBtn(str);
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -174,10 +173,10 @@ public final class m extends f {
     public final void handlerPlayableException(String str) {
         super.handlerPlayableException(str);
         try {
-            if (this.b == null || TextUtils.isEmpty(str) || this.f8519c == null) {
+            if (this.b == null || TextUtils.isEmpty(str) || this.f5679c == null) {
                 return;
             }
-            this.f8519c.handlerPlayableException(str);
+            this.f5679c.handlerPlayableException(str);
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -186,7 +185,7 @@ public final class m extends f {
     @Override // com.anythink.expressad.video.signal.a.f, com.anythink.expressad.video.signal.h
     public final void install(com.anythink.expressad.foundation.d.c cVar) {
         super.install(cVar);
-        AnythinkContainerView anythinkContainerView = this.f8519c;
+        AnythinkContainerView anythinkContainerView = this.f5679c;
         if (anythinkContainerView != null) {
             anythinkContainerView.install(cVar);
         }
@@ -195,7 +194,7 @@ public final class m extends f {
     @Override // com.anythink.expressad.video.signal.a.f, com.anythink.expressad.video.signal.h
     public final void notifyCloseBtn(int i) {
         super.notifyCloseBtn(i);
-        AnythinkContainerView anythinkContainerView = this.f8519c;
+        AnythinkContainerView anythinkContainerView = this.f5679c;
         if (anythinkContainerView != null) {
             anythinkContainerView.notifyCloseBtn(i);
         }
@@ -205,8 +204,8 @@ public final class m extends f {
     public final void orientation(Configuration configuration) {
         super.orientation(configuration);
         try {
-            if (this.f8519c != null) {
-                this.f8519c.orientation(configuration);
+            if (this.f5679c != null) {
+                this.f5679c.orientation(configuration);
             }
         } catch (Throwable th) {
             th.printStackTrace();
@@ -216,7 +215,7 @@ public final class m extends f {
     @Override // com.anythink.expressad.video.signal.a.f, com.anythink.expressad.video.signal.h
     public final void toggleCloseBtn(int i) {
         super.toggleCloseBtn(i);
-        AnythinkContainerView anythinkContainerView = this.f8519c;
+        AnythinkContainerView anythinkContainerView = this.f5679c;
         if (anythinkContainerView != null) {
             anythinkContainerView.toggleCloseBtn(i);
         }
@@ -226,8 +225,8 @@ public final class m extends f {
     public final void webviewshow() {
         super.webviewshow();
         try {
-            if (this.f8519c != null) {
-                this.f8519c.webviewshow();
+            if (this.f5679c != null) {
+                this.f5679c.webviewshow();
             }
         } catch (Throwable th) {
             th.printStackTrace();

@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 public final class CompoundButtonCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Field f2748a;
+    private static Field f2700a;
     private static boolean b;
 
     private CompoundButtonCompat() {
@@ -25,20 +25,20 @@ public final class CompoundButtonCompat {
         if (!b) {
             try {
                 Field declaredField = CompoundButton.class.getDeclaredField("mButtonDrawable");
-                f2748a = declaredField;
+                f2700a = declaredField;
                 declaredField.setAccessible(true);
             } catch (NoSuchFieldException e) {
                 Log.i("CompoundButtonCompat", "Failed to retrieve mButtonDrawable field", e);
             }
             b = true;
         }
-        Field field = f2748a;
+        Field field = f2700a;
         if (field != null) {
             try {
                 return (Drawable) field.get(compoundButton);
             } catch (IllegalAccessException e2) {
                 Log.i("CompoundButtonCompat", "Failed to get button drawable via reflection", e2);
-                f2748a = null;
+                f2700a = null;
                 return null;
             }
         }

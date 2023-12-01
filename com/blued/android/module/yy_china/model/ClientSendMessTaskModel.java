@@ -63,17 +63,17 @@ public final class ClientSendMessTaskModel {
             Intrinsics.c(str2, "roomModel.room_type");
             ClientSendMessageInfoDataModel clientSendMessageInfoDataModel = new ClientSendMessageInfoDataModel(str, str2, j);
             this.allRoom.add(clientSendMessageInfoDataModel);
-            android.util.ArrayMap<String, ClientSendMessageInfoDataModel> arrayMap = this.difRoom.get(b.type_id);
-            android.util.ArrayMap<String, ClientSendMessageInfoDataModel> arrayMap2 = arrayMap;
+            android.util.ArrayMap arrayMap = (android.util.ArrayMap) this.difRoom.get(b.type_id);
+            android.util.ArrayMap arrayMap2 = arrayMap;
             if (arrayMap == null) {
-                arrayMap2 = new android.util.ArrayMap<>();
+                arrayMap2 = new android.util.ArrayMap();
                 this.difRoom.put(b.type_id, arrayMap2);
             }
             arrayMap2.put(b.room_id, clientSendMessageInfoDataModel);
-            ArrayList<ClientSendMessageInfoDataModel> arrayList = this.typeRoom.get(b.type_id);
-            ArrayList<ClientSendMessageInfoDataModel> arrayList2 = arrayList;
+            ArrayList arrayList = (ArrayList) this.typeRoom.get(b.type_id);
+            ArrayList arrayList2 = arrayList;
             if (arrayList == null) {
-                arrayList2 = new ArrayList<>();
+                arrayList2 = new ArrayList();
                 this.typeRoom.put(b.type_id, arrayList2);
             }
             arrayList2.add(clientSendMessageInfoDataModel);
@@ -83,8 +83,8 @@ public final class ClientSendMessTaskModel {
                 checkTask(String.valueOf(j));
             }
             String json = AppInfo.f().toJson(this);
-            BluedSharedPreferences a2 = BluedSharedPreferences.a(this.SP_DATA_KEY);
-            Intrinsics.c(a2, "getSharedPreferences(SP_DATA_KEY)");
+            BluedSharedPreferences a = BluedSharedPreferences.a(this.SP_DATA_KEY);
+            Intrinsics.c(a, "getSharedPreferences(SP_DATA_KEY)");
             new BluedSharedPreferences.Editor().a(YYRoomInfoManager.e().k(), json);
         }
     }
@@ -109,7 +109,7 @@ public final class ClientSendMessTaskModel {
                         if (!it.hasNext()) {
                             break;
                         }
-                        ArrayList<ClientSendMessageInfoDataModel> arrayList = getTypeRoom().get(it.next());
+                        ArrayList arrayList = (ArrayList) getTypeRoom().get(it.next());
                         i3 = arrayList == null ? i2 + 0 : i2 + arrayList.size();
                     }
                     if (i2 >= yYDailyTaskModel.getCondition()) {
@@ -118,9 +118,9 @@ public final class ClientSendMessTaskModel {
                     z = false;
                 }
             } else if (yYDailyTaskModel.getAppoint() == null || yYDailyTaskModel.getAppoint().size() <= 0) {
-                Iterator<Map.Entry<String, android.util.ArrayMap<String, ClientSendMessageInfoDataModel>>> it2 = getDifRoom().entrySet().iterator();
+                Iterator it2 = getDifRoom().entrySet().iterator();
                 it2.hasNext();
-                if (it2.next().getValue().size() + 0 >= yYDailyTaskModel.getCondition()) {
+                if (((android.util.ArrayMap) ((Map.Entry) it2.next()).getValue()).size() + 0 >= yYDailyTaskModel.getCondition()) {
                     z = true;
                 }
                 z = false;
@@ -132,7 +132,7 @@ public final class ClientSendMessTaskModel {
                     if (!it3.hasNext()) {
                         break;
                     }
-                    android.util.ArrayMap<String, ClientSendMessageInfoDataModel> arrayMap = getDifRoom().get(it3.next());
+                    android.util.ArrayMap arrayMap = (android.util.ArrayMap) getDifRoom().get(it3.next());
                     i4 = arrayMap == null ? i + 0 : i + arrayMap.size();
                 }
                 if (i >= yYDailyTaskModel.getCondition()) {
@@ -173,16 +173,16 @@ public final class ClientSendMessTaskModel {
                 return Boolean.valueOf(it.getTime() < j);
             }
         });
-        for (Map.Entry<String, android.util.ArrayMap<String, ClientSendMessageInfoDataModel>> entry : this.difRoom.entrySet()) {
-            android.util.ArrayMap<String, ClientSendMessageInfoDataModel> value = entry.getValue();
+        for (Map.Entry entry : this.difRoom.entrySet()) {
+            Object value = entry.getValue();
             Intrinsics.c(value, "next.value");
-            Iterator<Map.Entry<String, ClientSendMessageInfoDataModel>> it = value.entrySet().iterator();
-            while (it.hasNext() && it.next().getValue().getTime() < j) {
+            Iterator it = ((Map) value).entrySet().iterator();
+            while (it.hasNext() && ((ClientSendMessageInfoDataModel) ((Map.Entry) it.next()).getValue()).getTime() < j) {
                 it.remove();
             }
         }
-        for (Map.Entry<String, ArrayList<ClientSendMessageInfoDataModel>> entry2 : this.typeRoom.entrySet()) {
-            ArrayList<ClientSendMessageInfoDataModel> value2 = entry2.getValue();
+        for (Map.Entry entry2 : this.typeRoom.entrySet()) {
+            Object value2 = entry2.getValue();
             Intrinsics.c(value2, "next.value");
             CollectionsKt.a((List) value2, (Function1) new Function1<ClientSendMessageInfoDataModel, Boolean>() { // from class: com.blued.android.module.yy_china.model.ClientSendMessTaskModel$clearOldMessData$2
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -200,8 +200,8 @@ public final class ClientSendMessTaskModel {
             });
         }
         String json = AppInfo.f().toJson(this);
-        BluedSharedPreferences a2 = BluedSharedPreferences.a(this.SP_DATA_KEY);
-        Intrinsics.c(a2, "getSharedPreferences(SP_DATA_KEY)");
+        BluedSharedPreferences a = BluedSharedPreferences.a(this.SP_DATA_KEY);
+        Intrinsics.c(a, "getSharedPreferences(SP_DATA_KEY)");
         new BluedSharedPreferences.Editor().a(YYRoomInfoManager.e().k(), json);
     }
 
@@ -234,9 +234,9 @@ public final class ClientSendMessTaskModel {
     }
 
     public final void loadData() {
-        String a2 = BluedSharedPreferences.a(this.SP_DATA_KEY).a(YYRoomInfoManager.e().k(), "");
-        if (!"".equals(a2)) {
-            ClientSendMessTaskModel clientSendMessTaskModel = (ClientSendMessTaskModel) AppInfo.f().fromJson(a2, (Class<Object>) ClientSendMessTaskModel.class);
+        String a = BluedSharedPreferences.a(this.SP_DATA_KEY).a(YYRoomInfoManager.e().k(), "");
+        if (!"".equals(a)) {
+            ClientSendMessTaskModel clientSendMessTaskModel = (ClientSendMessTaskModel) AppInfo.f().fromJson(a, ClientSendMessTaskModel.class);
             this.allRoom.addAll(clientSendMessTaskModel.allRoom);
             this.difRoom.putAll(MapsKt.c(clientSendMessTaskModel.difRoom));
             this.typeRoom.putAll(MapsKt.c(clientSendMessTaskModel.typeRoom));
@@ -260,9 +260,9 @@ public final class ClientSendMessTaskModel {
                 }
                 ClientSendMessTaskModel.this.getAllTsak().addAll(bluedEntityA.data);
                 if (bluedEntityA.getSingleData() != null) {
-                    ClientSendMessTaskModel.ClientTaskDataListener a2 = ClientSendMessTaskModel.Companion.a();
-                    if (a2 != null) {
-                        a2.a(bluedEntityA.getSingleData());
+                    ClientSendMessTaskModel.ClientTaskDataListener a = ClientSendMessTaskModel.Companion.a();
+                    if (a != null) {
+                        a.a(bluedEntityA.getSingleData());
                     }
                     if (bluedEntityA.getSingleData().getStatus() == 1) {
                         ClientSendMessTaskModel.this.setStartTime(-1L);

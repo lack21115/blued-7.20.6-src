@@ -41,36 +41,32 @@ public class AppWidgetHost {
         Callbacks() {
         }
 
-        @Override // com.android.internal.appwidget.IAppWidgetHost
         public void providerChanged(int i, AppWidgetProviderInfo appWidgetProviderInfo) {
             AppWidgetProviderInfo appWidgetProviderInfo2 = appWidgetProviderInfo;
             if (AppWidgetHost.this.isLocalBinder()) {
                 appWidgetProviderInfo2 = appWidgetProviderInfo;
                 if (appWidgetProviderInfo != null) {
-                    appWidgetProviderInfo2 = appWidgetProviderInfo.m152clone();
+                    appWidgetProviderInfo2 = appWidgetProviderInfo.m150clone();
                 }
             }
             AppWidgetHost.this.mHandler.obtainMessage(2, i, 0, appWidgetProviderInfo2).sendToTarget();
         }
 
-        @Override // com.android.internal.appwidget.IAppWidgetHost
         public void providersChanged() {
             AppWidgetHost.this.mHandler.obtainMessage(3).sendToTarget();
         }
 
-        @Override // com.android.internal.appwidget.IAppWidgetHost
         public void updateAppWidget(int i, RemoteViews remoteViews) {
             RemoteViews remoteViews2 = remoteViews;
             if (AppWidgetHost.this.isLocalBinder()) {
                 remoteViews2 = remoteViews;
                 if (remoteViews != null) {
-                    remoteViews2 = remoteViews.mo120clone();
+                    remoteViews2 = remoteViews.clone();
                 }
             }
             AppWidgetHost.this.mHandler.obtainMessage(1, i, 0, remoteViews2).sendToTarget();
         }
 
-        @Override // com.android.internal.appwidget.IAppWidgetHost
         public void viewDataChanged(int i, int i2) {
             AppWidgetHost.this.mHandler.obtainMessage(4, i, i2).sendToTarget();
         }

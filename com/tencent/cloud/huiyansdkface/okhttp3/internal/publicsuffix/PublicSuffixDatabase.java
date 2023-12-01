@@ -1,6 +1,5 @@
 package com.tencent.cloud.huiyansdkface.okhttp3.internal.publicsuffix;
 
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.Util;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.platform.Platform;
 import com.tencent.cloud.huiyansdkface.okio.BufferedSource;
@@ -17,11 +16,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class PublicSuffixDatabase {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f36028a = {42};
+    private static final byte[] f22337a = {42};
     private static final String[] b = new String[0];
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String[] f36029c = {PhoneConstants.APN_TYPE_ALL};
+    private static final String[] f22338c = {"*"};
     private static final PublicSuffixDatabase d = new PublicSuffixDatabase();
     private final AtomicBoolean e = new AtomicBoolean(false);
     private final CountDownLatch f = new CountDownLatch(1);

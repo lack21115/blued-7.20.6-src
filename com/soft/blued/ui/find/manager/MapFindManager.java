@@ -4,18 +4,18 @@ package com.soft.blued.ui.find.manager;
 public class MapFindManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MapFindManager f30598a;
+    private static MapFindManager f16908a;
     private MapFindBean b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/manager/MapFindManager$MapFindBean.class */
     public static class MapFindBean {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f30599a;
+        public String f16909a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public double f30600c;
+        public double f16910c;
         public String d;
         public String e;
     }
@@ -24,18 +24,18 @@ public class MapFindManager {
     }
 
     public static MapFindManager a() {
-        if (f30598a == null) {
+        if (f16908a == null) {
             synchronized (MapFindManager.class) {
                 try {
-                    if (f30598a == null) {
-                        f30598a = new MapFindManager();
+                    if (f16908a == null) {
+                        f16908a = new MapFindManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f30598a;
+        return f16908a;
     }
 
     public void a(MapFindBean mapFindBean) {

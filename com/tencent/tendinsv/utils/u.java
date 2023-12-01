@@ -7,32 +7,32 @@ import android.content.SharedPreferences;
 public class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile u f39117a;
+    private static volatile u f25426a;
     private static SharedPreferences b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static SharedPreferences.Editor f39118c;
+    private static SharedPreferences.Editor f25427c;
     private static final String d = "shanyan_share_data";
 
     private u() {
     }
 
     public static u a(Context context) {
-        if (f39117a == null) {
+        if (f25426a == null) {
             synchronized (u.class) {
                 try {
-                    if (f39117a == null) {
-                        f39117a = new u();
+                    if (f25426a == null) {
+                        f25426a = new u();
                         SharedPreferences sharedPreferences = context.getSharedPreferences(d, 0);
                         b = sharedPreferences;
-                        f39118c = sharedPreferences.edit();
+                        f25427c = sharedPreferences.edit();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39117a;
+        return f25426a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -42,6 +42,6 @@ public class u {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SharedPreferences.Editor b() {
-        return f39118c;
+        return f25427c;
     }
 }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemGroupNoticeCommonBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29196a;
+    private final FrameLayout f15506a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29196a;
+        return this.f15506a;
     }
 }

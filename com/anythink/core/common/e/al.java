@@ -19,24 +19,16 @@ public final class al {
     static final String k = "networkFirmId";
     static final String l = "demandType";
     static final String m = "tp_bid_id";
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6640a;
+    String a;
     long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    List<a> f6641c = new ArrayList(3);
+    List<a> c = new ArrayList(3);
     List<a> d = new ArrayList(3);
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/al$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public int f6643a;
+        public int a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public int f6644c;
+        public int c;
         public double d;
         public String e;
 
@@ -94,7 +86,7 @@ public final class al {
                 r0 = r4
                 r1 = r5
                 int r1 = r1.c()
-                r0.f6644c = r1
+                r0.c = r1
                 r0 = r5
                 int r0 = r0.l()
                 r6 = r0
@@ -122,22 +114,22 @@ public final class al {
             L78:
                 r0 = r4
                 r1 = 4
-                r0.f6643a = r1
+                r0.a = r1
                 goto L95
             L80:
                 r0 = r4
                 r1 = 3
-                r0.f6643a = r1
+                r0.a = r1
                 goto L95
             L88:
                 r0 = r4
                 r1 = 2
-                r0.f6643a = r1
+                r0.a = r1
                 goto L95
             L90:
                 r0 = r4
                 r1 = 1
-                r0.f6643a = r1
+                r0.a = r1
             L95:
                 r0 = 35
                 r1 = r5
@@ -145,7 +137,7 @@ public final class al {
                 if (r0 != r1) goto La3
                 r0 = r4
                 r1 = 2
-                r0.f6643a = r1
+                r0.a = r1
             La3:
                 r0 = r7
                 if (r0 == 0) goto Laf
@@ -170,9 +162,9 @@ public final class al {
             synchronized (this) {
                 jSONObject = new JSONObject();
                 jSONObject.put(al.i, this.b);
-                jSONObject.put("price", this.d);
-                jSONObject.put(al.k, this.f6644c);
-                jSONObject.put(al.l, this.f6643a);
+                jSONObject.put(al.j, this.d);
+                jSONObject.put(al.k, this.c);
+                jSONObject.put(al.l, this.a);
                 jSONObject.put(al.m, this.e);
             }
             return jSONObject;
@@ -196,7 +188,7 @@ public final class al {
 
     private void a(List<a> list) {
         synchronized (this) {
-            this.f6641c = list;
+            this.c = list;
         }
     }
 
@@ -259,9 +251,9 @@ public final class al {
                     a aVar = new a();
                     JSONObject jSONObject = new JSONObject(jSONArray.optString(i3));
                     aVar.b = jSONObject.getString(i);
-                    aVar.d = jSONObject.getDouble("price");
-                    aVar.f6644c = jSONObject.getInt(k);
-                    aVar.f6643a = jSONObject.getInt(l);
+                    aVar.d = jSONObject.getDouble(j);
+                    aVar.c = jSONObject.getInt(k);
+                    aVar.a = jSONObject.getInt(l);
                     if (jSONObject.has(m)) {
                         aVar.e = jSONObject.getString(m);
                     }
@@ -305,26 +297,26 @@ public final class al {
     }
 
     private JSONArray d() {
-        JSONArray c2;
+        JSONArray c;
         synchronized (this) {
-            c2 = c(this.f6641c);
+            c = c(this.c);
         }
-        return c2;
+        return c;
     }
 
     private JSONArray e() {
-        JSONArray c2;
+        JSONArray c;
         synchronized (this) {
-            c2 = c(this.d);
+            c = c(this.d);
         }
-        return c2;
+        return c;
     }
 
     public final JSONObject a() {
         JSONObject jSONObject;
         synchronized (this) {
             jSONObject = new JSONObject();
-            jSONObject.put(e, this.f6640a);
+            jSONObject.put(e, this.a);
             jSONObject.put(f, this.b);
             jSONObject.put(g, d());
             jSONObject.put(h, e());
@@ -340,14 +332,14 @@ public final class al {
 
     public final void a(a aVar) {
         synchronized (this) {
-            a(this.f6641c, aVar);
+            a(this.c, aVar);
         }
     }
 
     public final String b() {
         String str;
         synchronized (this) {
-            str = this.f6640a;
+            str = this.a;
         }
         return str;
     }
@@ -360,7 +352,7 @@ public final class al {
 
     public final void b(String str) {
         synchronized (this) {
-            this.f6640a = str;
+            this.a = str;
         }
     }
 }

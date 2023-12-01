@@ -9,17 +9,18 @@ import android.os.Looper;
 import android.os.Message;
 import com.anythink.core.common.b.n;
 import com.anythink.expressad.foundation.h.x;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/a/a/a.class */
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f6947a = "mtg_retry_report=1";
+    public static String f4109a = "mtg_retry_report=1";
     public static int b = 10000;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f6948c = 1;
+    public static final int f4110c = 1;
     public static final int d = 2;
     public static int e = 3;
     public static int f = 50;
@@ -55,12 +56,12 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.a.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/a/a/a$a.class */
-    public static final class C0111a {
+    public static final class C0040a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static a f6950a = new a((byte) 0);
+        private static a f4112a = new a((byte) 0);
 
-        private C0111a() {
+        private C0040a() {
         }
     }
 
@@ -82,7 +83,7 @@ public final class a {
             }
             Object obj = message.obj;
             if (obj instanceof String) {
-                a.a().a((String) obj, com.anythink.expressad.a.a.b.f6951a);
+                a.a().a((String) obj, com.anythink.expressad.a.a.b.f4113a);
             }
         }
     }
@@ -117,7 +118,7 @@ public final class a {
     }
 
     public static a a() {
-        return C0111a.f6950a;
+        return C0040a.f4112a;
     }
 
     static /* synthetic */ void a(a aVar) {
@@ -156,9 +157,9 @@ public final class a {
                 b2.a(i2);
                 this.o.put(str, b2);
                 if (x.b(str) == 0) {
-                    str2 = str + "?" + f6947a;
+                    str2 = str + "?" + f4109a;
                 } else {
-                    str2 = str + "&" + f6947a;
+                    str2 = str + ContainerUtils.FIELD_DELIMITER + f4109a;
                 }
                 com.anythink.expressad.a.a.a(n.a().g(), b2.f(), b2.e(), str2, b2.a(), b2.b(), b2.d());
             }

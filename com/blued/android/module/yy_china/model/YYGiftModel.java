@@ -47,7 +47,7 @@ public class YYGiftModel extends CommonLiveGiftModel {
     }
 
     public boolean isBag() {
-        return this.goods_type == new Integer("-1").intValue();
+        return this.goods_type == new Integer(YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID).intValue();
     }
 
     public void setFreeTime(String str) {

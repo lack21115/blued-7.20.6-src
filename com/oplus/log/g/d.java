@@ -2,8 +2,8 @@ package com.oplus.log.g;
 
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.oplus.log.d.h;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -48,7 +48,7 @@ public final class d {
                 if (TextUtils.isEmpty(str3)) {
                     return false;
                 }
-                return (str3.endsWith(".dog3") || str3.endsWith(".dog1") || str3.endsWith(".dog2")) && (TextUtils.isEmpty(String.this) || str3.startsWith(String.this));
+                return (str3.endsWith(".dog3") || str3.endsWith(".dog1") || str3.endsWith(".dog2")) && (TextUtils.isEmpty(str2) || str3.startsWith(str2));
             }
         })) != null && listFiles.length > 0) {
             int length = listFiles.length;
@@ -60,8 +60,8 @@ public final class d {
                 }
                 File file = listFiles[i2];
                 try {
-                    String[] split = file.getName().split("\\.")[0].split(BridgeUtil.UNDERLINE_STR);
-                    long time = simpleDateFormat.parse(split[split.length - 4] + "-" + split[split.length - 3] + "-" + split[split.length - 2] + "-" + split[split.length - 1]).getTime();
+                    String[] split = file.getName().split("\\.")[0].split("_");
+                    long time = simpleDateFormat.parse(split[split.length - 4] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + split[split.length - 3] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + split[split.length - 2] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + split[split.length - 1]).getTime();
                     if (j <= 0 || j2 <= 0 || (time >= j3 && time <= j2)) {
                         arrayList.add(file);
                     }
@@ -88,7 +88,7 @@ public final class d {
             aVar.a(PackageManager.INSTALL_PARSE_FAILED_BAD_MANIFEST, "no match file");
             return;
         }
-        a("opluslog_" + str2 + BridgeUtil.UNDERLINE_STR + UUID.randomUUID() + ".zip", str, a2, aVar);
+        a("opluslog_" + str2 + "_" + UUID.randomUUID() + ".zip", str, a2, aVar);
     }
 
     private static void a(File file) {

@@ -7,7 +7,7 @@ public class i {
     private i b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f28213c;
+    private byte[] f14524c;
     private c d;
     private byte[] e;
     private int f;
@@ -24,7 +24,7 @@ public class i {
     private boolean r;
 
     /* renamed from: a  reason: collision with root package name */
-    final i f28212a = this;
+    final i f14523a = this;
     private a j = a.Manually;
 
     /* renamed from: com.sobot.chat.core.a.a.i$1  reason: invalid class name */
@@ -32,23 +32,23 @@ public class i {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f28214a;
+        static final /* synthetic */ int[] f14525a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[a.values().length];
-            f28214a = iArr;
+            f14525a = iArr;
             try {
                 iArr[a.Manually.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f28214a[a.AutoReadToTrailer.ordinal()] = 2;
+                f14525a[a.AutoReadToTrailer.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f28214a[a.AutoReadByLength.ordinal()] = 3;
+                f14525a[a.AutoReadByLength.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -154,15 +154,15 @@ public class i {
 
     public i b(byte[] bArr) {
         if (bArr != null) {
-            this.f28213c = Arrays.copyOf(bArr, bArr.length);
+            this.f14524c = Arrays.copyOf(bArr, bArr.length);
             return this;
         }
-        this.f28213c = null;
+        this.f14524c = null;
         return this;
     }
 
     public void b() {
-        int i = AnonymousClass1.f28214a[k().ordinal()];
+        int i = AnonymousClass1.f14525a[k().ordinal()];
         if (i != 1) {
             if (i == 2) {
                 if (o() == null || o().length <= 0) {
@@ -222,7 +222,7 @@ public class i {
     }
 
     public byte[] d() {
-        return this.f28213c;
+        return this.f14524c;
     }
 
     public c e() {

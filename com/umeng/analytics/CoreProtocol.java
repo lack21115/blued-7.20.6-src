@@ -10,13 +10,13 @@ import org.json.JSONObject;
 public class CoreProtocol implements UMLogDataProtocol, UMSenderStateNotify {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f40593a;
+    private static Context f26902a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/CoreProtocol$a.class */
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final CoreProtocol f40594a = new CoreProtocol();
+        private static final CoreProtocol f26903a = new CoreProtocol();
 
         private a() {
         }
@@ -26,34 +26,34 @@ public class CoreProtocol implements UMLogDataProtocol, UMSenderStateNotify {
     }
 
     public static CoreProtocol getInstance(Context context) {
-        if (f40593a == null && context != null) {
-            f40593a = context.getApplicationContext();
+        if (f26902a == null && context != null) {
+            f26902a = context.getApplicationContext();
         }
-        return a.f40594a;
+        return a.f26903a;
     }
 
     @Override // com.umeng.commonsdk.framework.UMSenderStateNotify
     public void onConnectionAvailable() {
-        o.a(f40593a).a();
+        o.a(f26902a).a();
     }
 
     @Override // com.umeng.commonsdk.framework.UMSenderStateNotify
     public void onSenderIdle() {
-        o.a(f40593a).b();
+        o.a(f26902a).b();
     }
 
     @Override // com.umeng.commonsdk.framework.UMLogDataProtocol
     public void removeCacheData(Object obj) {
-        o.a(f40593a).a(obj);
+        o.a(f26902a).a(obj);
     }
 
     @Override // com.umeng.commonsdk.framework.UMLogDataProtocol
     public JSONObject setupReportData(long j) {
-        return o.a(f40593a).a(j);
+        return o.a(f26902a).a(j);
     }
 
     @Override // com.umeng.commonsdk.framework.UMLogDataProtocol
     public void workEvent(Object obj, int i) {
-        o.a(f40593a).a(obj, i);
+        o.a(f26902a).a(obj, i);
     }
 }

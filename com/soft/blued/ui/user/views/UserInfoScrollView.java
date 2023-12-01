@@ -15,11 +15,11 @@ import android.widget.Scroller;
 class UserInfoScrollView extends ScrollView {
 
     /* renamed from: a  reason: collision with root package name */
-    TouchTool f34387a;
+    TouchTool f20696a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f34388c;
+    int f20697c;
     float d;
     float e;
     float f;
@@ -48,15 +48,15 @@ class UserInfoScrollView extends ScrollView {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f34391c;
+        private int f20700c;
 
         public TouchTool(int i, int i2, int i3, int i4) {
             this.b = i;
-            this.f34391c = i2;
+            this.f20700c = i2;
         }
 
         public int a(float f) {
-            return (int) (this.f34391c + (f / 2.5f));
+            return (int) (this.f20700c + (f / 2.5f));
         }
     }
 
@@ -139,13 +139,13 @@ class UserInfoScrollView extends ScrollView {
                     this.s = false;
                 }
                 this.b = this.k.getLeft();
-                this.f34388c = this.k.getBottom();
+                this.f20697c = this.k.getBottom();
                 this.i = getWidth();
                 this.j = getHeight();
                 this.h = this.k.getHeight();
                 this.d = this.f;
                 this.e = this.g;
-                this.f34387a = new TouchTool(this.k.getLeft(), this.k.getBottom(), this.k.getLeft(), this.k.getBottom() + 200);
+                this.f20696a = new TouchTool(this.k.getLeft(), this.k.getBottom(), this.k.getLeft(), this.k.getBottom() + 200);
                 return true;
             } else if (action == 1) {
                 if (this.p[1] == this.q[1]) {
@@ -163,7 +163,7 @@ class UserInfoScrollView extends ScrollView {
                     this.s = true;
                 }
                 if (this.k.isShown() && this.k.getTop() >= 0) {
-                    TouchTool touchTool = this.f34387a;
+                    TouchTool touchTool = this.f20696a;
                     if (touchTool != null) {
                         int a2 = touchTool.a(this.g - this.e);
                         if (!this.l && this.g < this.r && this.k.getHeight() > this.h) {
@@ -180,7 +180,7 @@ class UserInfoScrollView extends ScrollView {
                                 this.s = false;
                             }
                         }
-                        if (a2 >= this.f34388c && a2 <= this.k.getBottom() + 200 && this.p[1] == this.q[1] && this.g > this.r) {
+                        if (a2 >= this.f20697c && a2 <= this.k.getBottom() + 200 && this.p[1] == this.q[1] && this.g > this.r) {
                             ViewGroup.LayoutParams layoutParams2 = this.k.getLayoutParams();
                             layoutParams2.height = a2;
                             this.k.setLayoutParams(layoutParams2);

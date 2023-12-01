@@ -1,19 +1,16 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
-import android.provider.CalendarContract;
-import android.text.Spanned;
 import android.text.TextUtils;
+import android.view.View;
 import com.amap.api.col.p0003sl.cr;
 import com.amap.api.maps.model.CustomMapStyleOptions;
 import com.amap.api.maps.model.MyTrafficStyle;
-import com.autonavi.amap.mapcore.AMapEngineUtils;
+import com.autonavi.base.ae.gmap.style.StyleItem;
 import com.autonavi.base.amap.api.mapcore.IAMapDelegate;
 import com.autonavi.base.amap.mapcore.FileUtil;
 import com.autonavi.base.amap.mapcore.MapConfig;
 import com.autonavi.base.amap.mapcore.tools.GLFileUtil;
-import com.cdo.oaps.ad.OapsKey;
-import com.umeng.analytics.pro.d;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -28,18 +25,14 @@ public final class k implements cr.a {
     private boolean A;
     private a D;
     private IAMapDelegate b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private CustomMapStyleOptions f5255c;
+    private CustomMapStyleOptions c;
     private int i;
     private Context j;
     private boolean p;
     private boolean q;
     private cr u;
     private cr v;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f5254a = "__MACOSX";
+    private final String a = "__MACOSX";
     private boolean d = false;
     private boolean e = false;
     private boolean f = false;
@@ -85,24 +78,24 @@ public final class k implements cr.a {
             this.B.clear();
             return;
         }
-        String styleResDataPath = this.f5255c.getStyleResDataPath();
-        if (this.f5255c.getStyleResData() == null && !TextUtils.isEmpty(styleResDataPath)) {
-            this.f5255c.setStyleResData(FileUtil.readFileContents(styleResDataPath));
+        String styleResDataPath = this.c.getStyleResDataPath();
+        if (this.c.getStyleResData() == null && !TextUtils.isEmpty(styleResDataPath)) {
+            this.c.setStyleResData(FileUtil.readFileContents(styleResDataPath));
         }
-        if (this.f5255c.getStyleResData() == null && this.y == null) {
+        if (this.c.getStyleResData() == null && this.y == null) {
             return;
         }
         byte[] bArr2 = this.y;
         if (bArr2 == null) {
-            bArr2 = this.f5255c.getStyleResData();
+            bArr2 = this.c.getStyleResData();
         }
         if (bArr2 != null) {
             mapConfig.setUseProFunction(true);
             this.B.clear();
-            Map<String, byte[]> uncompressToByteWithKeys = FileUtil.uncompressToByteWithKeys(bArr2, null);
+            Map uncompressToByteWithKeys = FileUtil.uncompressToByteWithKeys(bArr2, (String[]) null);
             if (uncompressToByteWithKeys != null) {
                 for (String str : uncompressToByteWithKeys.keySet()) {
-                    if (str != null && !str.contains("__MACOSX") && (bArr = uncompressToByteWithKeys.get(str)) != null) {
+                    if (str != null && !str.contains("__MACOSX") && (bArr = (byte[]) uncompressToByteWithKeys.get(str)) != null) {
                         if (FileUtil.isGzip(bArr)) {
                             this.B.put(str, bArr);
                         } else {
@@ -123,7 +116,7 @@ public final class k implements cr.a {
             return;
         }
         if (this.m == null) {
-            this.m = FileUtil.readFileContentsFromAssets(this.j, AMapEngineUtils.MAP_MAP_ASSETS_NAME + File.separator + AMapEngineUtils.MAP_MAP_ASSETS_BACKGROUND_NAME);
+            this.m = FileUtil.readFileContentsFromAssets(this.j, "map_assets" + File.separator + "bktile.data");
         }
         if (this.m != null) {
             if (z) {
@@ -157,16 +150,16 @@ public final class k implements cr.a {
             String str = null;
             boolean z = true;
             if (optJSONObject2 != null) {
-                JSONObject optJSONObject3 = optJSONObject2.optJSONObject(OapsKey.KEY_BG);
+                JSONObject optJSONObject3 = optJSONObject2.optJSONObject("bg");
                 str = null;
                 z = true;
                 if (optJSONObject3 != null) {
-                    z = optJSONObject3.optBoolean(CalendarContract.CalendarColumns.VISIBLE, true);
+                    z = optJSONObject3.optBoolean("visible", true);
                     str = optJSONObject3.optString("lineColor", null);
                 }
             }
             a(str, z);
-            JSONObject optJSONObject4 = jSONObject.optJSONObject(d.F);
+            JSONObject optJSONObject4 = jSONObject.optJSONObject("traffic");
             if (optJSONObject4 != null && (optJSONObject = optJSONObject4.optJSONObject("multiFillColors")) != null) {
                 int a3 = cy.a(optJSONObject.optString("smooth"));
                 int a4 = cy.a(optJSONObject.optString("slow"));
@@ -203,7 +196,7 @@ public final class k implements cr.a {
             if (bArr.length < 8) {
                 return false;
             }
-            return ((bArr[4] & 255) | ((((bArr[7] << 24) & (-16777216)) | ((bArr[6] << 16) & Spanned.SPAN_PRIORITY)) | ((bArr[5] << 8) & 65280))) == 2001;
+            return ((bArr[4] & 255) | ((((bArr[7] << 24) & View.MEASURED_STATE_MASK) | ((bArr[6] << 16) & 16711680)) | ((bArr[5] << 8) & 65280))) == 2001;
         } catch (Throwable th) {
             iw.c(th, "AMapCustomStyleManager", "checkData");
             dw.a(th);
@@ -267,11 +260,11 @@ public final class k implements cr.a {
         if (this.A) {
             if (this.l == null) {
                 Context context = this.j;
-                this.l = c(FileUtil.readFileContentsFromAssets(context, AMapEngineUtils.MAP_MAP_ASSETS_NAME + File.separator + AMapEngineUtils.MAP_MAP_ASSETS_STYLE_DATA_ABROAD));
+                this.l = c(FileUtil.readFileContentsFromAssets(context, "map_assets" + File.separator + "style_1_16_3569740208.data"));
             }
         } else if (this.l == null) {
             Context context2 = this.j;
-            this.l = c(FileUtil.readFileContentsFromAssets(context2, AMapEngineUtils.MAP_MAP_ASSETS_NAME + File.separator + AMapEngineUtils.MAP_MAP_ASSETS_STYLE_DATA));
+            this.l = c(FileUtil.readFileContentsFromAssets(context2, "map_assets" + File.separator + "style_1_18_1627443174.data"));
         }
         this.b.getGLMapEngine().setCustomStyleData(this.i, this.l, this.k);
         this.s = false;
@@ -282,7 +275,7 @@ public final class k implements cr.a {
         if (this.r) {
             if (this.n == null) {
                 Context context = this.j;
-                this.n = FileUtil.readFileContentsFromAssets(context, AMapEngineUtils.MAP_MAP_ASSETS_NAME + File.separator + AMapEngineUtils.MAP_MAP_ASSETS_ICON_5_NAME_FOR_CUSTOM);
+                this.n = FileUtil.readFileContentsFromAssets(context, "map_assets" + File.separator + "icons-for-custom_5_18_1616413149.data");
             }
             this.r = false;
             this.b.getGLMapEngine().setCustomStyleTexture(this.i, this.n);
@@ -290,20 +283,20 @@ public final class k implements cr.a {
     }
 
     private void i() {
-        CustomMapStyleOptions customMapStyleOptions = this.f5255c;
+        CustomMapStyleOptions customMapStyleOptions = this.c;
         if (customMapStyleOptions != null) {
             customMapStyleOptions.setStyleId(null);
-            this.f5255c.setStyleDataPath(null);
-            this.f5255c.setStyleData(null);
-            this.f5255c.setStyleTexturePath(null);
-            this.f5255c.setStyleTextureData(null);
-            this.f5255c.setStyleExtraData(null);
-            this.f5255c.setStyleExtraPath(null);
+            this.c.setStyleDataPath(null);
+            this.c.setStyleData(null);
+            this.c.setStyleTexturePath(null);
+            this.c.setStyleTextureData(null);
+            this.c.setStyleExtraData(null);
+            this.c.setStyleExtraPath(null);
         }
     }
 
     public final void a() {
-        if (this.f5255c == null || this.q) {
+        if (this.c == null || this.q) {
             return;
         }
         try {
@@ -314,7 +307,7 @@ public final class k implements cr.a {
             synchronized (this) {
                 if (mapConfig.isHideLogoEnable() && this.b != null && this.b.getUiSettings() != null) {
                     if (this.b.getUiSettings().isLogoEnable()) {
-                        if (!this.f5255c.isEnable()) {
+                        if (!this.c.isEnable()) {
                             this.b.getUiSettings().setLogoEnable(true);
                         } else if (this.s) {
                             this.b.getUiSettings().setLogoEnable(false);
@@ -324,8 +317,8 @@ public final class k implements cr.a {
                     }
                 }
                 if (this.d) {
-                    if (!this.f5255c.isEnable()) {
-                        this.b.getGLMapEngine().setNativeMapModeAndStyle(this.i, mapConfig.getMapStyleMode(), mapConfig.getMapStyleTime(), mapConfig.getMapStyleState(), false, false, null);
+                    if (!this.c.isEnable()) {
+                        this.b.getGLMapEngine().setNativeMapModeAndStyle(this.i, mapConfig.getMapStyleMode(), mapConfig.getMapStyleTime(), mapConfig.getMapStyleState(), false, false, (StyleItem[]) null);
                         this.s = false;
                         if (mapConfig.isCustomStyleEnable()) {
                             if (mapConfig.getMapStyleMode() == 0 && mapConfig.getMapStyleTime() == 0 && mapConfig.getMapStyleState() == 0) {
@@ -340,20 +333,20 @@ public final class k implements cr.a {
                         this.d = false;
                         return;
                     }
-                    this.b.getGLMapEngine().setNativeMapModeAndStyle(this.i, 0, 0, 0, false, false, null);
+                    this.b.getGLMapEngine().setNativeMapModeAndStyle(this.i, 0, 0, 0, false, false, (StyleItem[]) null);
                     mapConfig.setCustomStyleEnable(true);
                     this.d = false;
                 }
                 if (this.f) {
-                    String styleTexturePath = this.f5255c.getStyleTexturePath();
-                    if (this.f5255c.getStyleTextureData() == null && !TextUtils.isEmpty(styleTexturePath)) {
-                        this.f5255c.setStyleTextureData(FileUtil.readFileContents(styleTexturePath));
+                    String styleTexturePath = this.c.getStyleTexturePath();
+                    if (this.c.getStyleTextureData() == null && !TextUtils.isEmpty(styleTexturePath)) {
+                        this.c.setStyleTextureData(FileUtil.readFileContents(styleTexturePath));
                     }
-                    if (this.f5255c.getStyleTextureData() != null) {
+                    if (this.c.getStyleTextureData() != null) {
                         this.z = true;
                         if (mapConfig.isProFunctionAuthEnable()) {
                             this.r = true;
-                            this.b.getGLMapEngine().setCustomStyleTexture(this.i, this.f5255c.getStyleTextureData());
+                            this.b.getGLMapEngine().setCustomStyleTexture(this.i, this.c.getStyleTextureData());
                             mapConfig.setUseProFunction(true);
                         } else {
                             h();
@@ -365,22 +358,22 @@ public final class k implements cr.a {
                     this.f = false;
                 }
                 if (this.e) {
-                    String styleDataPath = this.f5255c.getStyleDataPath();
-                    if (this.f5255c.getStyleData() == null && !TextUtils.isEmpty(styleDataPath)) {
-                        this.f5255c.setStyleData(FileUtil.readFileContents(styleDataPath));
+                    String styleDataPath = this.c.getStyleDataPath();
+                    if (this.c.getStyleData() == null && !TextUtils.isEmpty(styleDataPath)) {
+                        this.c.setStyleData(FileUtil.readFileContents(styleDataPath));
                     }
-                    if (this.f5255c.getStyleData() == null && this.w == null) {
+                    if (this.c.getStyleData() == null && this.w == null) {
                         if (this.s) {
                             this.d = true;
-                            this.f5255c.setEnable(false);
+                            this.c.setEnable(false);
                         }
                         this.e = false;
                     }
                     if (this.o == null) {
                         Context context = this.j;
-                        this.o = c(FileUtil.readFileContentsFromAssets(context, AMapEngineUtils.MAP_MAP_ASSETS_NAME + File.separator + AMapEngineUtils.MAP_MAP_ASSETS_STYLE_DATA_0_FOR_TEXTURE));
+                        this.o = c(FileUtil.readFileContentsFromAssets(context, "map_assets" + File.separator + "style-for-custom_0_18_1641525834.data"));
                     }
-                    byte[] styleData = this.w != null ? this.w : this.f5255c.getStyleData();
+                    byte[] styleData = this.w != null ? this.w : this.c.getStyleData();
                     if (b(styleData)) {
                         this.b.getGLMapEngine().setCustomStyleData(this.i, styleData, this.o);
                         this.s = true;
@@ -393,12 +386,12 @@ public final class k implements cr.a {
                     this.e = false;
                 }
                 if (this.g) {
-                    String styleExtraPath = this.f5255c.getStyleExtraPath();
-                    if (this.f5255c.getStyleExtraData() == null && !TextUtils.isEmpty(styleExtraPath)) {
-                        this.f5255c.setStyleExtraData(FileUtil.readFileContents(styleExtraPath));
+                    String styleExtraPath = this.c.getStyleExtraPath();
+                    if (this.c.getStyleExtraData() == null && !TextUtils.isEmpty(styleExtraPath)) {
+                        this.c.setStyleExtraData(FileUtil.readFileContents(styleExtraPath));
                     }
-                    if (this.f5255c.getStyleExtraData() != null || this.x != null) {
-                        byte[] styleExtraData = this.x != null ? this.x : this.f5255c.getStyleExtraData();
+                    if (this.c.getStyleExtraData() != null || this.x != null) {
+                        byte[] styleExtraData = this.x != null ? this.x : this.c.getStyleExtraData();
                         if (styleExtraData != null) {
                             a(styleExtraData);
                             this.t = true;
@@ -422,25 +415,25 @@ public final class k implements cr.a {
     }
 
     public final void a(CustomMapStyleOptions customMapStyleOptions) {
-        if (this.f5255c == null || customMapStyleOptions == null) {
+        if (this.c == null || customMapStyleOptions == null) {
             return;
         }
         synchronized (this) {
             if (!this.p) {
                 this.p = true;
-                if (this.f5255c.isEnable()) {
+                if (this.c.isEnable()) {
                     this.d = true;
                 }
             }
-            if (this.f5255c.isEnable() != customMapStyleOptions.isEnable()) {
-                this.f5255c.setEnable(customMapStyleOptions.isEnable());
+            if (this.c.isEnable() != customMapStyleOptions.isEnable()) {
+                this.c.setEnable(customMapStyleOptions.isEnable());
                 this.d = true;
                 dt.b(this.j, customMapStyleOptions.isEnable());
             }
-            if (this.f5255c.isEnable()) {
-                if (!TextUtils.equals(this.f5255c.getStyleId(), customMapStyleOptions.getStyleId())) {
-                    this.f5255c.setStyleId(customMapStyleOptions.getStyleId());
-                    String styleId = this.f5255c.getStyleId();
+            if (this.c.isEnable()) {
+                if (!TextUtils.equals(this.c.getStyleId(), customMapStyleOptions.getStyleId())) {
+                    this.c.setStyleId(customMapStyleOptions.getStyleId());
+                    String styleId = this.c.getStyleId();
                     if (!TextUtils.isEmpty(styleId) && this.b != null && this.b.getMapConfig() != null && this.b.getMapConfig().isProFunctionAuthEnable()) {
                         if (this.u == null) {
                             if (this.A) {
@@ -458,36 +451,36 @@ public final class k implements cr.a {
                         this.v.b();
                     }
                 }
-                if (!TextUtils.equals(this.f5255c.getStyleDataPath(), customMapStyleOptions.getStyleDataPath())) {
-                    this.f5255c.setStyleDataPath(customMapStyleOptions.getStyleDataPath());
+                if (!TextUtils.equals(this.c.getStyleDataPath(), customMapStyleOptions.getStyleDataPath())) {
+                    this.c.setStyleDataPath(customMapStyleOptions.getStyleDataPath());
                     this.e = true;
                 }
-                if (this.f5255c.getStyleData() != customMapStyleOptions.getStyleData()) {
-                    this.f5255c.setStyleData(customMapStyleOptions.getStyleData());
+                if (this.c.getStyleData() != customMapStyleOptions.getStyleData()) {
+                    this.c.setStyleData(customMapStyleOptions.getStyleData());
                     this.e = true;
                 }
-                if (!TextUtils.equals(this.f5255c.getStyleTexturePath(), customMapStyleOptions.getStyleTexturePath())) {
-                    this.f5255c.setStyleTexturePath(customMapStyleOptions.getStyleTexturePath());
+                if (!TextUtils.equals(this.c.getStyleTexturePath(), customMapStyleOptions.getStyleTexturePath())) {
+                    this.c.setStyleTexturePath(customMapStyleOptions.getStyleTexturePath());
                     this.f = true;
                 }
-                if (this.f5255c.getStyleTextureData() != customMapStyleOptions.getStyleTextureData()) {
-                    this.f5255c.setStyleTextureData(customMapStyleOptions.getStyleTextureData());
+                if (this.c.getStyleTextureData() != customMapStyleOptions.getStyleTextureData()) {
+                    this.c.setStyleTextureData(customMapStyleOptions.getStyleTextureData());
                     this.f = true;
                 }
-                if (!TextUtils.equals(this.f5255c.getStyleExtraPath(), customMapStyleOptions.getStyleExtraPath())) {
-                    this.f5255c.setStyleExtraPath(customMapStyleOptions.getStyleExtraPath());
+                if (!TextUtils.equals(this.c.getStyleExtraPath(), customMapStyleOptions.getStyleExtraPath())) {
+                    this.c.setStyleExtraPath(customMapStyleOptions.getStyleExtraPath());
                     this.g = true;
                 }
-                if (this.f5255c.getStyleExtraData() != customMapStyleOptions.getStyleExtraData()) {
-                    this.f5255c.setStyleExtraData(customMapStyleOptions.getStyleExtraData());
+                if (this.c.getStyleExtraData() != customMapStyleOptions.getStyleExtraData()) {
+                    this.c.setStyleExtraData(customMapStyleOptions.getStyleExtraData());
                     this.g = true;
                 }
-                if (!TextUtils.equals(this.f5255c.getStyleResDataPath(), customMapStyleOptions.getStyleResDataPath())) {
-                    this.f5255c.setStyleResDataPath(customMapStyleOptions.getStyleResDataPath());
+                if (!TextUtils.equals(this.c.getStyleResDataPath(), customMapStyleOptions.getStyleResDataPath())) {
+                    this.c.setStyleResDataPath(customMapStyleOptions.getStyleResDataPath());
                     this.h = true;
                 }
-                if (this.f5255c.getStyleResData() != customMapStyleOptions.getStyleResData()) {
-                    this.f5255c.setStyleResData(customMapStyleOptions.getStyleResData());
+                if (this.c.getStyleResData() != customMapStyleOptions.getStyleResData()) {
+                    this.c.setStyleResData(customMapStyleOptions.getStyleResData());
                     this.h = true;
                 }
                 dt.a(this.j, true);
@@ -501,7 +494,7 @@ public final class k implements cr.a {
     @Override // com.amap.api.col.p0003sl.cr.a
     public final void a(byte[] bArr, int i) {
         MapConfig mapConfig;
-        if (this.f5255c != null) {
+        if (this.c != null) {
             synchronized (this) {
                 if (this.b != null && (mapConfig = this.b.getMapConfig()) != null && mapConfig.isProFunctionAuthEnable()) {
                     mapConfig.setUseProFunction(true);
@@ -512,16 +505,16 @@ public final class k implements cr.a {
                         this.x = bArr;
                         this.g = true;
                     } else if (i == 2) {
-                        String str = this.f5255c.getStyleId() + "_sdk_780.data";
-                        String str2 = this.f5255c.getStyleId() + "_abroad_sdk.json";
-                        Map<String, byte[]> uncompressToByteWithKeys = FileUtil.uncompressToByteWithKeys(bArr, new String[]{str, str2});
+                        String str = this.c.getStyleId() + "_sdk_780.data";
+                        String str2 = this.c.getStyleId() + "_abroad_sdk.json";
+                        Map uncompressToByteWithKeys = FileUtil.uncompressToByteWithKeys(bArr, new String[]{str, str2});
                         if (uncompressToByteWithKeys != null) {
-                            byte[] bArr2 = uncompressToByteWithKeys.get(str);
+                            byte[] bArr2 = (byte[]) uncompressToByteWithKeys.get(str);
                             if (bArr2 != null) {
                                 this.w = bArr2;
                                 this.e = true;
                             }
-                            if (uncompressToByteWithKeys.get(str2) != null && this.D != null) {
+                            if (((byte[]) uncompressToByteWithKeys.get(str2)) != null && this.D != null) {
                                 this.D.a();
                             }
                         }
@@ -544,16 +537,16 @@ public final class k implements cr.a {
             }
             return null;
         }
-        return FileUtil.readFileContentsFromAssetsByPreName(this.j, AMapEngineUtils.MAP_MAP_ASSETS_NAME, b(str));
+        return FileUtil.readFileContentsFromAssetsByPreName(this.j, "map_assets", b(str));
     }
 
     public final void b() {
-        if (this.f5255c == null) {
+        if (this.c == null) {
             return;
         }
         synchronized (this) {
             if (this.b != null && this.b.getMapConfig() != null && !this.b.getMapConfig().isProFunctionAuthEnable()) {
-                this.f5255c.setStyleId(null);
+                this.c.setStyleId(null);
                 this.w = null;
                 this.x = null;
                 this.y = null;
@@ -574,19 +567,19 @@ public final class k implements cr.a {
     }
 
     public final void c() {
-        if (this.f5255c == null) {
-            this.f5255c = new CustomMapStyleOptions();
+        if (this.c == null) {
+            this.c = new CustomMapStyleOptions();
         }
     }
 
     public final boolean d() {
-        return this.f5255c != null;
+        return this.c != null;
     }
 
     public final void e() {
         synchronized (this) {
-            if (this.f5255c != null) {
-                this.f5255c.setEnable(false);
+            if (this.c != null) {
+                this.c.setEnable(false);
                 i();
                 this.d = true;
             }

@@ -6,11 +6,11 @@ public class HonorPushDataMsg {
     public static final int TYPE_MSG_PASS = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f22277a = 1;
+    public int f8669a = 1;
     public int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f22278c;
+    public long f8670c;
     public String d;
 
     public String getData() {
@@ -18,7 +18,7 @@ public class HonorPushDataMsg {
     }
 
     public long getMsgId() {
-        return this.f22278c;
+        return this.f8670c;
     }
 
     public int getType() {
@@ -26,7 +26,7 @@ public class HonorPushDataMsg {
     }
 
     public int getVersion() {
-        return this.f22277a;
+        return this.f8669a;
     }
 
     public void setData(String str) {
@@ -34,7 +34,7 @@ public class HonorPushDataMsg {
     }
 
     public void setMsgId(long j) {
-        this.f22278c = j;
+        this.f8670c = j;
     }
 
     public void setType(int i) {
@@ -42,6 +42,6 @@ public class HonorPushDataMsg {
     }
 
     public void setVersion(int i) {
-        this.f22277a = i;
+        this.f8669a = i;
     }
 }

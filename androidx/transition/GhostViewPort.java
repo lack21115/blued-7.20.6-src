@@ -12,11 +12,11 @@ import androidx.core.view.ViewCompat;
 public class GhostViewPort extends ViewGroup implements GhostView {
 
     /* renamed from: a  reason: collision with root package name */
-    ViewGroup f3451a;
+    ViewGroup f3403a;
     View b;
 
     /* renamed from: c  reason: collision with root package name */
-    final View f3452c;
+    final View f3404c;
     int d;
     private Matrix e;
     private final ViewTreeObserver.OnPreDrawListener f;
@@ -27,17 +27,17 @@ public class GhostViewPort extends ViewGroup implements GhostView {
             @Override // android.view.ViewTreeObserver.OnPreDrawListener
             public boolean onPreDraw() {
                 ViewCompat.postInvalidateOnAnimation(GhostViewPort.this);
-                if (GhostViewPort.this.f3451a == null || GhostViewPort.this.b == null) {
+                if (GhostViewPort.this.f3403a == null || GhostViewPort.this.b == null) {
                     return true;
                 }
-                GhostViewPort.this.f3451a.endViewTransition(GhostViewPort.this.b);
-                ViewCompat.postInvalidateOnAnimation(GhostViewPort.this.f3451a);
-                GhostViewPort.this.f3451a = null;
+                GhostViewPort.this.f3403a.endViewTransition(GhostViewPort.this.b);
+                ViewCompat.postInvalidateOnAnimation(GhostViewPort.this.f3403a);
+                GhostViewPort.this.f3403a = null;
                 GhostViewPort.this.b = null;
                 return true;
             }
         };
-        this.f3452c = view;
+        this.f3404c = view;
         setWillNotDraw(false);
         setLayerType(2, null);
     }
@@ -129,58 +129,54 @@ public class GhostViewPort extends ViewGroup implements GhostView {
         this.e = matrix;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        a(this.f3452c, this);
-        this.f3452c.getViewTreeObserver().addOnPreDrawListener(this.f);
-        ViewUtils.a(this.f3452c, 4);
-        if (this.f3452c.getParent() != null) {
-            ((View) this.f3452c.getParent()).invalidate();
+        a(this.f3404c, this);
+        this.f3404c.getViewTreeObserver().addOnPreDrawListener(this.f);
+        ViewUtils.a(this.f3404c, 4);
+        if (this.f3404c.getParent() != null) {
+            ((View) this.f3404c.getParent()).invalidate();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        this.f3452c.getViewTreeObserver().removeOnPreDrawListener(this.f);
-        ViewUtils.a(this.f3452c, 0);
-        a(this.f3452c, (GhostViewPort) null);
-        if (this.f3452c.getParent() != null) {
-            ((View) this.f3452c.getParent()).invalidate();
+    protected void onDetachedFromWindow() {
+        this.f3404c.getViewTreeObserver().removeOnPreDrawListener(this.f);
+        ViewUtils.a(this.f3404c, 0);
+        a(this.f3404c, (GhostViewPort) null);
+        if (this.f3404c.getParent() != null) {
+            ((View) this.f3404c.getParent()).invalidate();
         }
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         CanvasUtils.a(canvas, true);
         canvas.setMatrix(this.e);
-        ViewUtils.a(this.f3452c, 0);
-        this.f3452c.invalidate();
-        ViewUtils.a(this.f3452c, 4);
-        drawChild(canvas, this.f3452c, getDrawingTime());
+        ViewUtils.a(this.f3404c, 0);
+        this.f3404c.invalidate();
+        ViewUtils.a(this.f3404c, 4);
+        drawChild(canvas, this.f3404c, getDrawingTime());
         CanvasUtils.a(canvas, false);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
     }
 
     @Override // androidx.transition.GhostView
     public void reserveEndViewTransition(ViewGroup viewGroup, View view) {
-        this.f3451a = viewGroup;
+        this.f3403a = viewGroup;
         this.b = view;
     }
 
-    @Override // android.view.View
+    @Override // android.view.View, androidx.transition.GhostView
     public void setVisibility(int i) {
         super.setVisibility(i);
-        if (a(this.f3452c) == this) {
-            ViewUtils.a(this.f3452c, i == 0 ? 4 : 0);
+        if (a(this.f3404c) == this) {
+            ViewUtils.a(this.f3404c, i == 0 ? 4 : 0);
         }
     }
 }

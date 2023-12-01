@@ -7,6 +7,7 @@ import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import android.util.Slog;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.CloseGuard;
 import dalvik.system.VMRuntime;
 import java.io.Closeable;
@@ -33,7 +34,7 @@ public class NativeLibraryHelper {
         Handle(long[] jArr, boolean z) {
             this.apkHandles = jArr;
             this.multiArch = z;
-            this.mGuard.open("close");
+            this.mGuard.open(LoaderConstants.CLOSE);
         }
 
         public static Handle create(PackageParser.Package r3) throws IOException {
@@ -150,7 +151,7 @@ public class NativeLibraryHelper {
         int copyNativeBinariesForSupportedAbi2;
         try {
             if (handle.multiArch) {
-                if (str != null && !"-".equals(str)) {
+                if (str != null && !CLEAR_ABI_OVERRIDE.equals(str)) {
                     Slog.w(TAG, "Ignoring abiOverride for multi arch application.");
                 }
                 if (Build.SUPPORTED_32_BIT_ABIS.length > 0 && (copyNativeBinariesForSupportedAbi2 = copyNativeBinariesForSupportedAbi(handle, file, Build.SUPPORTED_32_BIT_ABIS, true)) < 0 && copyNativeBinariesForSupportedAbi2 != -114 && copyNativeBinariesForSupportedAbi2 != -113) {
@@ -164,7 +165,7 @@ public class NativeLibraryHelper {
                 }
             }
             String str2 = null;
-            if ("-".equals(str)) {
+            if (CLEAR_ABI_OVERRIDE.equals(str)) {
                 str2 = null;
             } else if (str != null) {
                 str2 = str;
@@ -347,7 +348,7 @@ public class NativeLibraryHelper {
     public static long sumNativeBinariesWithOverride(Handle handle, String str) throws IOException {
         long j = 0;
         if (handle.multiArch) {
-            if (str != null && !"-".equals(str)) {
+            if (str != null && !CLEAR_ABI_OVERRIDE.equals(str)) {
                 Slog.w(TAG, "Ignoring abiOverride for multi arch application.");
             }
             if (Build.SUPPORTED_32_BIT_ABIS.length > 0) {
@@ -360,7 +361,7 @@ public class NativeLibraryHelper {
             return j2;
         }
         String str2 = null;
-        if ("-".equals(str)) {
+        if (CLEAR_ABI_OVERRIDE.equals(str)) {
             str2 = null;
         } else if (str != null) {
             str2 = str;

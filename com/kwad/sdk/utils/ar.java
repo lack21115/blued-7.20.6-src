@@ -12,7 +12,7 @@ public final class ar {
         if (ck == null) {
             resources = context.getResources();
         }
-        return resources.getIdentifier(str, com.anythink.expressad.foundation.h.i.f7952c, context.getPackageName());
+        return resources.getIdentifier(str, com.anythink.expressad.foundation.h.i.f5112c, context.getPackageName());
     }
 
     public static Resources ck(Context context) {

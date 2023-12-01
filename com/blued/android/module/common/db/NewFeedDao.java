@@ -8,24 +8,22 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/db/NewFeedDao.class */
 public class NewFeedDao {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static NewFeedDao f10771a;
+    private static NewFeedDao a;
     private Dao<NewFeedModel, Integer> b;
 
     public static NewFeedDao a() {
-        if (f10771a == null) {
+        if (a == null) {
             synchronized (NewFeedDao.class) {
                 try {
-                    if (f10771a == null) {
-                        f10771a = new NewFeedDao();
+                    if (a == null) {
+                        a = new NewFeedDao();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f10771a;
+        return a;
     }
 
     public void a(int i) {
@@ -70,7 +68,7 @@ public class NewFeedDao {
 
     public void c(NewFeedModel newFeedModel) {
         try {
-            b().update((Dao<NewFeedModel, Integer>) newFeedModel);
+            b().update(newFeedModel);
         } catch (Exception e) {
         }
     }
@@ -87,7 +85,7 @@ public class NewFeedDao {
 
     public void d(NewFeedModel newFeedModel) {
         try {
-            b().delete((Dao<NewFeedModel, Integer>) newFeedModel);
+            b().delete(newFeedModel);
         } catch (Exception e) {
         }
     }

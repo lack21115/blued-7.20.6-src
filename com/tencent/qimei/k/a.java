@@ -7,11 +7,11 @@ import com.tencent.qimei.log.IObservableLog;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f38346a = false;
+    public static boolean f24655a = false;
     public static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    public static IObservableLog f38347c;
+    public static IObservableLog f24656c;
 
     public static int a(StackTraceElement[] stackTraceElementArr, Class cls) {
         int i = 5;
@@ -61,7 +61,7 @@ public class a {
         synchronized (a.class) {
             try {
                 Log.i("qm", "beacon logAble: " + z);
-                f38346a = z;
+                f24655a = z;
             } catch (Throwable th) {
                 throw th;
             }
@@ -72,7 +72,7 @@ public class a {
         boolean z;
         synchronized (a.class) {
             try {
-                z = f38346a;
+                z = f24655a;
             } catch (Throwable th) {
                 throw th;
             }

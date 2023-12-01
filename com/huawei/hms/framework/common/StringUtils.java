@@ -1,6 +1,7 @@
 package com.huawei.hms.framework.common;
 
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.huawei.secure.android.common.util.SafeString;
 import java.io.UnsupportedEncodingException;
 import java.util.Collection;
@@ -66,7 +67,7 @@ public class StringUtils {
         StringBuilder sb = new StringBuilder();
         for (String str : collection) {
             sb.append(str);
-            sb.append(";");
+            sb.append(t.aE);
         }
         return sb.toString().substring(0, sb.length() - 1);
     }
@@ -105,7 +106,7 @@ public class StringUtils {
             StackTraceElement stackTraceElement = stackTrace[i2];
             sb.append("at ");
             sb.append(stackTraceElement.toString());
-            sb.append(";");
+            sb.append(t.aE);
             i = i2 + 1;
         }
     }

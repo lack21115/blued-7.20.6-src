@@ -18,7 +18,6 @@ import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber;
 import com.android.i18n.phonenumbers.geocoding.PhoneNumberOfflineGeocoder;
 import com.android.internal.R;
-import com.igexin.push.core.b;
 import java.util.Locale;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/telephony/CallerInfo.class */
@@ -115,7 +114,7 @@ public class CallerInfo {
                 } else {
                     Rlog.w(TAG, "Couldn't find contact_id column for " + uri);
                 }
-                int columnIndex6 = cursor.getColumnIndex(ContactsContract.ContactsColumns.LOOKUP_KEY);
+                int columnIndex6 = cursor.getColumnIndex("lookup");
                 if (columnIndex6 != -1) {
                     callerInfo.lookupKey = cursor.getString(columnIndex6);
                 }
@@ -207,7 +206,7 @@ public class CallerInfo {
     }
 
     private static String getCurrentCountryIso(Context context, Locale locale) {
-        CountryDetector countryDetector = (CountryDetector) context.getSystemService(Context.COUNTRY_DETECTOR);
+        CountryDetector countryDetector = (CountryDetector) context.getSystemService("country_detector");
         String str = null;
         if (countryDetector != null) {
             Country detectCountry = countryDetector.detectCountry();
@@ -308,7 +307,7 @@ public class CallerInfo {
     }
 
     public String toString() {
-        return new StringBuilder(128).append(super.toString() + " { ").append("name " + (this.name == null ? b.l : "non-null")).append(", phoneNumber " + (this.phoneNumber == null ? b.l : "non-null")).append(" }").toString();
+        return new StringBuilder(128).append(super.toString() + " { ").append("name " + (this.name == null ? "null" : "non-null")).append(", phoneNumber " + (this.phoneNumber == null ? "null" : "non-null")).append(" }").toString();
     }
 
     public void updateGeoDescription(Context context, String str) {

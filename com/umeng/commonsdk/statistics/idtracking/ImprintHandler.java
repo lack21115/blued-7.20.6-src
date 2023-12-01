@@ -29,7 +29,7 @@ import java.util.TreeMap;
 public class ImprintHandler implements FileLockCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40911a = "ImprintHandler";
+    private static final String f27220a = "ImprintHandler";
     private static Context k;
     private static FileLockUtil l;
     private static final int m = 0;
@@ -40,7 +40,7 @@ public class ImprintHandler implements FileLockCallback {
     private static Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f40912c = at.b().b("imp");
+    private static final String f27221c = at.b().b("imp");
     private static final byte[] d = "pbl0".getBytes();
     private static Map<String, ArrayList<UMImprintChangeCallback>> f = new HashMap();
     private static Object g = new Object();
@@ -52,7 +52,7 @@ public class ImprintHandler implements FileLockCallback {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Map<String, String> f40913a = new HashMap();
+        private Map<String, String> f27222a = new HashMap();
 
         a() {
         }
@@ -71,9 +71,9 @@ public class ImprintHandler implements FileLockCallback {
                             if (!TextUtils.isEmpty(str) && (eVar = c2.get(str)) != null) {
                                 String b = eVar.b();
                                 if (!TextUtils.isEmpty(b)) {
-                                    this.f40913a.put(str, b);
+                                    this.f27222a.put(str, b);
                                     if (AnalyticsConstants.UM_DEBUG) {
-                                        Log.i(ImprintHandler.f40911a, "imKey is " + str + ", imValue is " + b);
+                                        Log.i(ImprintHandler.f27220a, "imKey is " + str + ", imValue is " + b);
                                     }
                                 }
                             }
@@ -85,8 +85,8 @@ public class ImprintHandler implements FileLockCallback {
 
         public String a(String str, String str2) {
             synchronized (this) {
-                if (!TextUtils.isEmpty(str) && this.f40913a.size() > 0) {
-                    String str3 = this.f40913a.get(str);
+                if (!TextUtils.isEmpty(str) && this.f27222a.size() > 0) {
+                    String str3 = this.f27222a.get(str);
                     return !TextUtils.isEmpty(str3) ? str3 : str2;
                 }
                 return str2;
@@ -102,8 +102,8 @@ public class ImprintHandler implements FileLockCallback {
 
         public void a(String str) {
             synchronized (this) {
-                if (this.f40913a != null && this.f40913a.size() > 0 && !TextUtils.isEmpty(str) && this.f40913a.containsKey(str)) {
-                    this.f40913a.remove(str);
+                if (this.f27222a != null && this.f27222a.size() > 0 && !TextUtils.isEmpty(str) && this.f27222a.containsKey(str)) {
+                    this.f27222a.remove(str);
                 }
             }
         }
@@ -123,7 +123,7 @@ public class ImprintHandler implements FileLockCallback {
         for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : dVar2.c().entrySet()) {
             if (entry.getValue().d()) {
                 String key = entry.getKey();
-                String str = entry.getValue().f40955a;
+                String str = entry.getValue().f27264a;
                 synchronized (p) {
                     z = false;
                     if (!TextUtils.isEmpty(key)) {
@@ -358,7 +358,7 @@ public class ImprintHandler implements FileLockCallback {
         for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : c2.entrySet()) {
             if (entry.getValue().d()) {
                 String key = entry.getKey();
-                String str = entry.getValue().f40955a;
+                String str = entry.getValue().f27264a;
                 synchronized (p) {
                     z = !TextUtils.isEmpty(key) && o.containsKey(key) && (uMImprintPreProcessCallback = o.get(key)) != null && uMImprintPreProcessCallback.onPreProcessImprintKey(key, str);
                 }
@@ -417,7 +417,7 @@ public class ImprintHandler implements FileLockCallback {
             r1 = r0
             android.content.Context r2 = com.umeng.commonsdk.statistics.idtracking.ImprintHandler.k
             java.io.File r2 = r2.getFilesDir()
-            java.lang.String r3 = com.umeng.commonsdk.statistics.idtracking.ImprintHandler.f40912c
+            java.lang.String r3 = com.umeng.commonsdk.statistics.idtracking.ImprintHandler.f27221c
             r1.<init>(r2, r3)
             r6 = r0
             java.lang.Object r0 = com.umeng.commonsdk.statistics.idtracking.ImprintHandler.b
@@ -434,7 +434,7 @@ public class ImprintHandler implements FileLockCallback {
             r0 = 0
             r9 = r0
             android.content.Context r0 = com.umeng.commonsdk.statistics.idtracking.ImprintHandler.k     // Catch: java.lang.Throwable -> L45 java.lang.Exception -> L4b
-            java.lang.String r1 = com.umeng.commonsdk.statistics.idtracking.ImprintHandler.f40912c     // Catch: java.lang.Throwable -> L45 java.lang.Exception -> L4b
+            java.lang.String r1 = com.umeng.commonsdk.statistics.idtracking.ImprintHandler.f27221c     // Catch: java.lang.Throwable -> L45 java.lang.Exception -> L4b
             java.io.FileInputStream r0 = r0.openFileInput(r1)     // Catch: java.lang.Throwable -> L45 java.lang.Exception -> L4b
             r6 = r0
             r0 = r6
@@ -530,7 +530,7 @@ public class ImprintHandler implements FileLockCallback {
                     FileLockUtil fileLockUtil = new FileLockUtil();
                     l = fileLockUtil;
                     if (fileLockUtil != null) {
-                        l.doFileOperateion(new File(k.getFilesDir(), f40912c), j, 0);
+                        l.doFileOperateion(new File(k.getFilesDir(), f27221c), j, 0);
                     }
                 }
                 imprintHandler = j;
@@ -680,7 +680,7 @@ public class ImprintHandler implements FileLockCallback {
         if (this.i == null || l == null) {
             return;
         }
-        File file = new File(k.getFilesDir(), f40912c);
+        File file = new File(k.getFilesDir(), f27221c);
         if (!file.exists()) {
             try {
                 file.createNewFile();

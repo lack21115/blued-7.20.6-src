@@ -29,11 +29,11 @@ import java.util.Properties;
 public class a implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private TuringPreviewDisplay f35569a;
+    private TuringPreviewDisplay f21878a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f35570c;
+    private long f21879c;
     private boolean d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -83,7 +83,7 @@ public class a implements c {
                                 return;
                             }
                             WLogger.d("TuringFaceHelper", "start FrameCheck");
-                            a.this.f35570c = System.currentTimeMillis();
+                            a.this.f21879c = System.currentTimeMillis();
                             TuringFaceDefender.startFrameCheck(str4);
                             return;
                         }
@@ -155,12 +155,12 @@ public class a implements c {
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
     public View a(Context context) {
-        if (this.f35569a == null) {
+        if (this.f21878a == null) {
             TuringPreviewDisplay turingPreviewDisplay = new TuringPreviewDisplay(context);
-            this.f35569a = turingPreviewDisplay;
+            this.f21878a = turingPreviewDisplay;
             turingPreviewDisplay.setBackgroundColor(-16777216);
         }
-        return this.f35569a;
+        return this.f21878a;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
@@ -170,13 +170,13 @@ public class a implements c {
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
     public void a(Camera camera) {
-        TuringFaceDefender.setPreviewDisplay(camera, this.f35569a);
+        TuringFaceDefender.setPreviewDisplay(camera, this.f21878a);
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
     public void a(Camera camera, String str) {
         WLogger.d("TuringFaceHelper", "start TuringFaceDefender");
-        this.f35570c = System.currentTimeMillis();
+        this.f21879c = System.currentTimeMillis();
         KycWaSDK.getInstance().trackCustomKVEvent(null, "turing_sdk_start", null, null);
         TuringFaceDefender.start(camera, str);
         ThreadOperate.runOnUiThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.d.a.2
@@ -206,7 +206,7 @@ public class a implements c {
     }
 
     @Override // com.tencent.cloud.huiyansdkface.facelight.c.d.c
-    public void a(final a.InterfaceC0905a interfaceC0905a) {
+    public void a(final a.InterfaceC0735a interfaceC0735a) {
         TuringFaceDefender.setCallback(new TuringCallback() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.d.a.1
             @Override // com.tencent.turingcam.TuringCallback
             public void onException(Throwable th) {
@@ -228,7 +228,7 @@ public class a implements c {
             @Override // com.tencent.turingcam.TuringCallback
             public void onFinish(long j, byte[] bArr) {
                 if (j == 0) {
-                    long currentTimeMillis = System.currentTimeMillis() - a.this.f35570c;
+                    long currentTimeMillis = System.currentTimeMillis() - a.this.f21879c;
                     WLogger.d("TuringFaceHelper", "get turingResult:" + currentTimeMillis);
                     KycWaSDK.getInstance().trackCustomKVEvent(null, "turing_sdk_success", String.valueOf(currentTimeMillis), null);
                     Param.setTuringPackage(Base64.encodeToString(bArr, 2));
@@ -254,7 +254,7 @@ public class a implements c {
                     kycWaSDK.trackCustomKVEvent(null, "turing_sdk_camera_failed", "code=" + j, null);
                     return;
                 }
-                long currentTimeMillis = System.currentTimeMillis() - a.this.f35570c;
+                long currentTimeMillis = System.currentTimeMillis() - a.this.f21879c;
                 WLogger.d("TuringFaceHelper", "get turingCameraResult:" + currentTimeMillis);
                 KycWaSDK.getInstance().trackCustomKVEvent(null, "turing_sdk_camera_success", String.valueOf(currentTimeMillis), null);
                 Param.setTuringVideoData(Base64.encodeToString(bArr, 2));
@@ -263,12 +263,12 @@ public class a implements c {
 
             @Override // com.tencent.turingcam.TuringCallback
             public void onPreviewAvailable() {
-                interfaceC0905a.a();
+                interfaceC0735a.a();
             }
 
             @Override // com.tencent.turingcam.TuringCallback
             public void onPreviewDestroyed() {
-                interfaceC0905a.b();
+                interfaceC0735a.b();
             }
         });
     }

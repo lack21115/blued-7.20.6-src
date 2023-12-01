@@ -18,7 +18,7 @@ public class FlowLayoutView extends ViewGroup {
     private int S;
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<c> f22969a;
+    private final List<c> f9361a;
 
     public FlowLayoutView(Context context) {
         this(context, null);
@@ -33,7 +33,7 @@ public class FlowLayoutView extends ViewGroup {
         this.D = 1;
         this.S = v.V(context, 8.0f);
         this.F = v.V(context, 8.0f);
-        this.f22969a = new ArrayList();
+        this.f9361a = new ArrayList();
         this.L = 0;
     }
 
@@ -50,14 +50,14 @@ public class FlowLayoutView extends ViewGroup {
         }
         c cVar = this.B;
         if (cVar != null) {
-            this.f22969a.add(cVar);
+            this.f9361a.add(cVar);
         }
         this.L = 0;
         this.B = new c();
     }
 
     private void V() {
-        this.f22969a.clear();
+        this.f9361a.clear();
         this.B = new c();
         this.L = 0;
     }
@@ -72,7 +72,7 @@ public class FlowLayoutView extends ViewGroup {
         int paddingLeft = getPaddingLeft();
         int paddingTop = getPaddingTop();
         int measuredWidth = getMeasuredWidth();
-        Iterator<c> it = this.f22969a.iterator();
+        Iterator<c> it = this.f9361a.iterator();
         int i5 = paddingTop;
         while (true) {
             int i6 = i5;
@@ -121,15 +121,15 @@ public class FlowLayoutView extends ViewGroup {
             i3 = i4 + 1;
         }
         c cVar = this.B;
-        if (cVar != null && !this.f22969a.contains(cVar)) {
+        if (cVar != null && !this.f9361a.contains(cVar)) {
             I();
         }
-        Iterator<c> it = this.f22969a.iterator();
+        Iterator<c> it = this.f9361a.iterator();
         int i7 = 0;
         while (true) {
             int i8 = i7;
             if (!it.hasNext()) {
-                setMeasuredDimension(View.MeasureSpec.getSize(i), resolveSize(i8 + (this.F * (this.f22969a.size() - 1)) + getPaddingBottom() + getPaddingTop(), i2));
+                setMeasuredDimension(View.MeasureSpec.getSize(i), resolveSize(i8 + (this.F * (this.f9361a.size() - 1)) + getPaddingBottom() + getPaddingTop(), i2));
                 return;
             }
             i7 = i8 + it.next().Code();

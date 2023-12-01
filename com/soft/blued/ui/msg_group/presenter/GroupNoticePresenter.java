@@ -15,7 +15,6 @@ public class GroupNoticePresenter extends MvpPresenter {
     private void c(final IFetchDataListener iFetchDataListener) {
         MsgGroupHttpUtils.b(g(), this.h, this.i, new BluedUIHttpResponse<BluedEntityA<GroupNoticeModel>>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.GroupNoticePresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupNoticeModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
@@ -24,7 +23,6 @@ public class GroupNoticePresenter extends MvpPresenter {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (!z) {
@@ -33,7 +31,6 @@ public class GroupNoticePresenter extends MvpPresenter {
                 iFetchDataListener.a(z);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 iFetchDataListener.a();
@@ -41,13 +38,11 @@ public class GroupNoticePresenter extends MvpPresenter {
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.h = 1;
         c(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.h++;
         c(iFetchDataListener);

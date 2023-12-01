@@ -9,7 +9,7 @@ import com.huawei.hms.common.internal.Preconditions;
 public class DataBufferRef {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f22637a;
+    private int f9029a;
     protected final DataHolder mDataHolder;
     protected int mDataRow;
 
@@ -20,7 +20,7 @@ public class DataBufferRef {
     }
 
     protected void copyToBuffer(String str, CharArrayBuffer charArrayBuffer) {
-        this.mDataHolder.copyToBuffer(str, this.mDataRow, this.f22637a, charArrayBuffer);
+        this.mDataHolder.copyToBuffer(str, this.mDataRow, this.f9029a, charArrayBuffer);
     }
 
     public boolean equals(Object obj) {
@@ -30,7 +30,7 @@ public class DataBufferRef {
             z = false;
             if (dataBufferRef.mDataRow == this.mDataRow) {
                 z = false;
-                if (dataBufferRef.f22637a == this.f22637a) {
+                if (dataBufferRef.f9029a == this.f9029a) {
                     z = false;
                     if (dataBufferRef.mDataHolder == this.mDataHolder) {
                         z = true;
@@ -42,7 +42,7 @@ public class DataBufferRef {
     }
 
     protected boolean getBoolean(String str) {
-        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_BOOLEAN);
+        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_BOOLEAN);
         if (value != null) {
             return ((Boolean) value).booleanValue();
         }
@@ -50,7 +50,7 @@ public class DataBufferRef {
     }
 
     protected byte[] getByteArray(String str) {
-        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_BYTE_ARRAY);
+        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_BYTE_ARRAY);
         if (value != null) {
             return (byte[]) value;
         }
@@ -62,7 +62,7 @@ public class DataBufferRef {
     }
 
     protected double getDouble(String str) {
-        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_DOUBLE);
+        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_DOUBLE);
         if (value != null) {
             return ((Double) value).doubleValue();
         }
@@ -70,7 +70,7 @@ public class DataBufferRef {
     }
 
     protected float getFloat(String str) {
-        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_FLOAT);
+        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_FLOAT);
         if (value != null) {
             return ((Float) value).floatValue();
         }
@@ -78,7 +78,7 @@ public class DataBufferRef {
     }
 
     protected int getInteger(String str) {
-        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_INT);
+        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_INT);
         if (value != null) {
             return ((Integer) value).intValue();
         }
@@ -86,7 +86,7 @@ public class DataBufferRef {
     }
 
     protected long getLong(String str) {
-        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_LONG);
+        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_LONG);
         if (value != null) {
             return ((Long) value).longValue();
         }
@@ -94,7 +94,7 @@ public class DataBufferRef {
     }
 
     protected String getString(String str) {
-        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_STRING);
+        Object value = this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_STRING);
         return value != null ? (String) value : "";
     }
 
@@ -102,7 +102,7 @@ public class DataBufferRef {
     public final void getWindowIndex(int i) {
         Preconditions.checkArgument(i >= 0 && i < this.mDataHolder.getCount(), "rowNum is out of index");
         this.mDataRow = i;
-        this.f22637a = this.mDataHolder.getWindowIndex(i);
+        this.f9029a = this.mDataHolder.getWindowIndex(i);
     }
 
     public boolean hasColumn(String str) {
@@ -110,11 +110,11 @@ public class DataBufferRef {
     }
 
     protected boolean hasNull(String str) {
-        return this.mDataHolder.hasNull(str, this.mDataRow, this.f22637a);
+        return this.mDataHolder.hasNull(str, this.mDataRow, this.f9029a);
     }
 
     public int hashCode() {
-        return Objects.hashCode(Integer.valueOf(this.mDataRow), Integer.valueOf(this.f22637a), this.mDataHolder);
+        return Objects.hashCode(Integer.valueOf(this.mDataRow), Integer.valueOf(this.f9029a), this.mDataHolder);
     }
 
     public boolean isDataValid() {
@@ -122,7 +122,7 @@ public class DataBufferRef {
     }
 
     protected Uri parseUri(String str) {
-        String str2 = (String) this.mDataHolder.getValue(str, this.mDataRow, this.f22637a, DataHolder.TYPE_STRING);
+        String str2 = (String) this.mDataHolder.getValue(str, this.mDataRow, this.f9029a, DataHolder.TYPE_STRING);
         if (str2 == null) {
             return null;
         }

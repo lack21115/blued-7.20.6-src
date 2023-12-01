@@ -6,18 +6,18 @@ import android.graphics.Bitmap;
 final /* synthetic */ class ag implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37115a;
+    private final f f23424a;
     private final Bitmap b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f37116c;
+    private final float f23425c;
     private final float d;
     private final float e;
 
     private ag(f fVar, Bitmap bitmap, float f, float f2, float f3) {
-        this.f37115a = fVar;
+        this.f23424a = fVar;
         this.b = bitmap;
-        this.f37116c = f;
+        this.f23425c = f;
         this.d = f2;
         this.e = f3;
     }
@@ -28,6 +28,6 @@ final /* synthetic */ class ag implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f37115a.f37156c.setWatermark(this.b, this.f37116c, this.d, this.e);
+        this.f23424a.f23465c.setWatermark(this.b, this.f23425c, this.d, this.e);
     }
 }

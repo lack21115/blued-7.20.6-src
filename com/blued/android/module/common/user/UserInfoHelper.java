@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.anythink.expressad.foundation.h.i;
+import com.anythink.core.common.b.g;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
@@ -13,6 +13,7 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.module.common.R;
 import com.blued.android.module.common.login.model.UserBasicModel;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import java.util.Random;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/user/UserInfoHelper.class */
@@ -95,7 +96,7 @@ public class UserInfoHelper {
         if (userBasicModel.expire_type > 0) {
             str6 = str5 + "_expire";
         }
-        int identifier = AppInfo.d().getResources().getIdentifier(str6, i.f7952c, AppInfo.d().getPackageName());
+        int identifier = AppInfo.d().getResources().getIdentifier(str6, "drawable", AppInfo.d().getPackageName());
         if (userBasicModel.vip_exp_lvl < 8) {
             nextInt = 0;
             str2 = "";
@@ -104,7 +105,7 @@ public class UserInfoHelper {
             str2 = "";
         } else {
             str2 = str6 + ".png";
-            nextInt = new Random().nextInt(100000);
+            nextInt = new Random().nextInt(g.j.p);
             i3 = 130;
         }
         ImageLoader.c(iRequestHost, str2).b(identifier).e(nextInt).g(-1).a(imageView);
@@ -112,7 +113,7 @@ public class UserInfoHelper {
     }
 
     public static String a(Context context, TextView textView, String str) {
-        String string = !TextUtils.isEmpty(str) ? "0".equals(str) ? context.getString(R.string.role_0) : "1".equals(str) ? context.getString(R.string.role_1) : "0.5".equals(str) ? context.getString(R.string.role_05) : "-1".equals(str) ? context.getString(R.string.role_other) : "0.75".equals(str) ? context.getString(R.string.role_05) : "0.25".equals(str) ? context.getString(R.string.role_05) : context.getString(R.string.role_other) : context.getString(R.string.role_other);
+        String string = !TextUtils.isEmpty(str) ? "0".equals(str) ? context.getString(R.string.role_0) : "1".equals(str) ? context.getString(R.string.role_1) : "0.5".equals(str) ? context.getString(R.string.role_05) : YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID.equals(str) ? context.getString(R.string.role_other) : "0.75".equals(str) ? context.getString(R.string.role_05) : "0.25".equals(str) ? context.getString(R.string.role_05) : context.getString(R.string.role_other) : context.getString(R.string.role_other);
         if (textView != null) {
             textView.setText(string);
         }
@@ -166,12 +167,12 @@ public class UserInfoHelper {
 
     public static void a(ImageView imageView, int i, int i2, int i3) {
         if (imageView != null) {
-            int a2 = a(i, i2);
-            if (a2 == 0) {
+            int a = a(i, i2);
+            if (a == 0) {
                 imageView.setVisibility(i3);
                 return;
             }
-            imageView.setImageResource(a2);
+            imageView.setImageResource(a);
             imageView.setVisibility(0);
         }
     }
@@ -182,12 +183,12 @@ public class UserInfoHelper {
 
     public static void a(ImageView imageView, int i, int i2, int i3, int i4, int i5) {
         if (imageView != null) {
-            int a2 = a(i, i2);
-            if (a2 == 0) {
+            int a = a(i, i2);
+            if (a == 0) {
                 imageView.setVisibility(i3);
                 return;
             }
-            ImageLoader.a((IRequestHost) null, a2).a(i4, i5).a(imageView);
+            ImageLoader.a((IRequestHost) null, a).a(i4, i5).a(imageView);
             imageView.setVisibility(0);
         }
     }
@@ -288,7 +289,7 @@ public class UserInfoHelper {
         if (userBasicModel.expire_type > 0) {
             str6 = str5 + "_expire";
         }
-        int identifier = AppInfo.d().getResources().getIdentifier(str6, i.f7952c, AppInfo.d().getPackageName());
+        int identifier = AppInfo.d().getResources().getIdentifier(str6, "drawable", AppInfo.d().getPackageName());
         if (userBasicModel.vip_exp_lvl < 8) {
             nextInt = 0;
             str2 = "";
@@ -297,7 +298,7 @@ public class UserInfoHelper {
             str2 = "";
         } else {
             str2 = str6 + ".png";
-            nextInt = new Random().nextInt(100000);
+            nextInt = new Random().nextInt(g.j.p);
             i3 = 130;
         }
         ImageLoader.c(iRequestHost, str2).b(identifier).e(nextInt).g(-1).a(imageView);
@@ -305,7 +306,7 @@ public class UserInfoHelper {
     }
 
     public static String b(Context context, TextView textView, String str) {
-        String string = !TextUtils.isEmpty(str) ? "0".equals(str) ? context.getString(R.string.role_0) : "1".equals(str) ? context.getString(R.string.role_1) : "0.5".equals(str) ? context.getString(R.string.role_05) : "-1".equals(str) ? context.getString(R.string.role_other) : "0.75".equals(str) ? context.getString(R.string.role_05) : "0.25".equals(str) ? context.getString(R.string.role_05) : context.getString(R.string.role_other) : " - ";
+        String string = !TextUtils.isEmpty(str) ? "0".equals(str) ? context.getString(R.string.role_0) : "1".equals(str) ? context.getString(R.string.role_1) : "0.5".equals(str) ? context.getString(R.string.role_05) : YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID.equals(str) ? context.getString(R.string.role_other) : "0.75".equals(str) ? context.getString(R.string.role_05) : "0.25".equals(str) ? context.getString(R.string.role_05) : context.getString(R.string.role_other) : " - ";
         if (textView != null) {
             textView.setText(string);
         }

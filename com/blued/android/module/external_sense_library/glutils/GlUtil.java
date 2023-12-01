@@ -3,16 +3,15 @@ package com.blued.android.module.external_sense_library.glutils;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
 import android.util.Log;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/glutils/GlUtil.class */
 public class GlUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final float[] f11254a;
+    public static final float[] a;
 
     static {
         float[] fArr = new float[16];
-        f11254a = fArr;
+        a = fArr;
         Matrix.setIdentityM(fArr, 0);
     }
 
@@ -30,10 +29,10 @@ public class GlUtil {
         GLES20.glGenTextures(1, iArr, 0);
         int i2 = iArr[0];
         GLES20.glBindTexture(i, i2);
-        GLES20.glTexParameterf(i, 10241, 9729.0f);
-        GLES20.glTexParameterf(i, 10240, 9729.0f);
-        GLES20.glTexParameterf(i, 10242, 33071.0f);
-        GLES20.glTexParameterf(i, 10243, 33071.0f);
+        GLES20.glTexParameterf(i, GL10.GL_TEXTURE_MIN_FILTER, 9729.0f);
+        GLES20.glTexParameterf(i, GL10.GL_TEXTURE_MAG_FILTER, 9729.0f);
+        GLES20.glTexParameterf(i, GL10.GL_TEXTURE_WRAP_S, 33071.0f);
+        GLES20.glTexParameterf(i, GL10.GL_TEXTURE_WRAP_T, 33071.0f);
         b("generateTexture");
         return i2;
     }
@@ -50,11 +49,11 @@ public class GlUtil {
                 return;
             }
             GLES20.glBindTexture(i3, iArr[i5]);
-            GLES20.glTexParameterf(i3, 10240, 9729.0f);
-            GLES20.glTexParameterf(i3, 10241, 9729.0f);
-            GLES20.glTexParameterf(i3, 10242, 33071.0f);
-            GLES20.glTexParameterf(i3, 10243, 33071.0f);
-            GLES20.glTexImage2D(i3, 0, 6408, i, i2, 0, 6408, 5121, null);
+            GLES20.glTexParameterf(i3, GL10.GL_TEXTURE_MAG_FILTER, 9729.0f);
+            GLES20.glTexParameterf(i3, GL10.GL_TEXTURE_MIN_FILTER, 9729.0f);
+            GLES20.glTexParameterf(i3, GL10.GL_TEXTURE_WRAP_S, 33071.0f);
+            GLES20.glTexParameterf(i3, GL10.GL_TEXTURE_WRAP_T, 33071.0f);
+            GLES20.glTexImage2D(i3, 0, GL10.GL_RGBA, i, i2, 0, GL10.GL_RGBA, GL10.GL_UNSIGNED_BYTE, null);
             i4 = i5 + 1;
         }
     }

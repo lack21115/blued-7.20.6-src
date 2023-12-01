@@ -31,9 +31,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/YYRoomInfoLocalChannel.class */
 public final class YYRoomInfoLocalChannel {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17808a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/YYRoomInfoLocalChannel$Companion.class */
@@ -49,9 +47,9 @@ public final class YYRoomInfoLocalChannel {
             return new IYYRoomInfoCallback() { // from class: com.blued.android.module.yy_china.test.YYRoomInfoLocalChannel$Companion$getYYRoomInfoCallback$1
                 @Override // com.blued.android.module.yy_china.IYYRoomInfoCallback
                 public CharSequence a(CharSequence charSequence, String str, ClickAtLinkListener clickAtLinkListener) {
-                    CharSequence a2 = YYStringUtils.a(charSequence, str, clickAtLinkListener);
-                    Intrinsics.c(a2, "parseYYAtUserLinkYY(content, color, callBask)");
-                    return a2;
+                    CharSequence a = YYStringUtils.a(charSequence, str, clickAtLinkListener);
+                    Intrinsics.c(a, "parseYYAtUserLinkYY(content, color, callBask)");
+                    return a;
                 }
 
                 @Override // com.blued.android.module.yy_china.IYYRoomInfoCallback
@@ -72,85 +70,85 @@ public final class YYRoomInfoLocalChannel {
                 public String a(int i) {
                     switch (i) {
                         case -1:
-                            String a2 = H5Url.a(63);
-                            Intrinsics.c(a2, "get(H5Url.YYCodeOfCOnductUrl)");
-                            return a2;
+                            String a = H5Url.a(63);
+                            Intrinsics.c(a, "get(H5Url.YYCodeOfCOnductUrl)");
+                            return a;
                         case 0:
                         case 12:
                         default:
                             return "";
                         case 1:
-                            String a3 = H5Url.a(76);
-                            Intrinsics.c(a3, "get(H5Url.YYChatAnchorLevel)");
-                            return a3;
+                            String a2 = H5Url.a(76);
+                            Intrinsics.c(a2, "get(H5Url.YYChatAnchorLevel)");
+                            return a2;
                         case 2:
-                            String a4 = ActivityUrl.a(2);
-                            Intrinsics.c(a4, "get(ActivityUrl.YYRoomMagicGift)");
-                            return a4;
+                            String a3 = ActivityUrl.a(2);
+                            Intrinsics.c(a3, "get(ActivityUrl.YYRoomMagicGift)");
+                            return a3;
                         case 3:
-                            String a5 = H5Url.a(77);
-                            Intrinsics.c(a5, "get(H5Url.YYChatPropCity)");
-                            return a5;
+                            String a4 = H5Url.a(77);
+                            Intrinsics.c(a4, "get(H5Url.YYChatPropCity)");
+                            return a4;
                         case 4:
-                            String a6 = H5Url.a(81);
-                            Intrinsics.c(a6, "get(H5Url.YYChatKtvRank)");
-                            return a6;
+                            String a5 = H5Url.a(81);
+                            Intrinsics.c(a5, "get(H5Url.YYChatKtvRank)");
+                            return a5;
                         case 5:
-                            String a7 = ActivityUrl.a(3);
-                            Intrinsics.c(a7, "get(ActivityUrl.YYWeekStar)");
-                            return a7;
+                            String a6 = ActivityUrl.a(3);
+                            Intrinsics.c(a6, "get(ActivityUrl.YYWeekStar)");
+                            return a6;
                         case 6:
-                            String a8 = H5Url.a(80);
-                            Intrinsics.c(a8, "get(H5Url.YYChatPropCityMyself)");
-                            return a8;
+                            String a7 = H5Url.a(80);
+                            Intrinsics.c(a7, "get(H5Url.YYChatPropCityMyself)");
+                            return a7;
                         case 7:
-                            String a9 = H5Url.a(78);
-                            Intrinsics.c(a9, "get(H5Url.YYChatHonorLv)");
-                            return a9;
+                            String a8 = H5Url.a(78);
+                            Intrinsics.c(a8, "get(H5Url.YYChatHonorLv)");
+                            return a8;
                         case 8:
-                            String a10 = H5Url.a(79);
-                            Intrinsics.c(a10, "get(H5Url.YYChatAnchorLv)");
-                            return a10;
+                            String a9 = H5Url.a(79);
+                            Intrinsics.c(a9, "get(H5Url.YYChatAnchorLv)");
+                            return a9;
                         case 9:
-                            String a11 = H5Url.a(82);
-                            Intrinsics.c(a11, "get(H5Url.YYTreasureChestIntro)");
-                            return a11;
+                            String a10 = H5Url.a(82);
+                            Intrinsics.c(a10, "get(H5Url.YYTreasureChestIntro)");
+                            return a10;
                         case 10:
-                            String a12 = H5Url.a(62);
-                            Intrinsics.c(a12, "get(H5Url.YYFirstCharge)");
-                            return a12;
+                            String a11 = H5Url.a(62);
+                            Intrinsics.c(a11, "get(H5Url.YYFirstCharge)");
+                            return a11;
                         case 11:
-                            String a13 = H5Url.a(61);
-                            Intrinsics.c(a13, "get(H5Url.YYChatGiftWallHome)");
-                            return a13;
+                            String a12 = H5Url.a(61);
+                            Intrinsics.c(a12, "get(H5Url.YYChatGiftWallHome)");
+                            return a12;
                         case 13:
-                            String a14 = H5Url.a(93);
-                            Intrinsics.c(a14, "get(H5Url.YYChatCarIntroduction)");
-                            return a14;
+                            String a13 = H5Url.a(93);
+                            Intrinsics.c(a13, "get(H5Url.YYChatCarIntroduction)");
+                            return a13;
                         case 14:
-                            String a15 = H5Url.a(94);
-                            Intrinsics.c(a15, "get(H5Url.YYChatCarRecord)");
-                            return a15;
+                            String a14 = H5Url.a(94);
+                            Intrinsics.c(a14, "get(H5Url.YYChatCarRecord)");
+                            return a14;
                         case 15:
-                            String a16 = H5Url.a(96);
-                            Intrinsics.c(a16, "get(H5Url.YYChatRoomRule)");
-                            return a16;
+                            String a15 = H5Url.a(96);
+                            Intrinsics.c(a15, "get(H5Url.YYChatRoomRule)");
+                            return a15;
                         case 16:
-                            String a17 = H5Url.a(97);
-                            Intrinsics.c(a17, "get(H5Url.YYChatThemeEventRule)");
-                            return a17;
+                            String a16 = H5Url.a(97);
+                            Intrinsics.c(a16, "get(H5Url.YYChatThemeEventRule)");
+                            return a16;
                         case 17:
-                            String a18 = H5Url.a(100);
-                            Intrinsics.c(a18, "get(H5Url.YYChatROMANTIC)");
-                            return a18;
+                            String a17 = H5Url.a(100);
+                            Intrinsics.c(a17, "get(H5Url.YYChatROMANTIC)");
+                            return a17;
                         case 18:
-                            String a19 = H5Url.a(98);
-                            Intrinsics.c(a19, "get(H5Url.YYChatNESTING)");
-                            return a19;
+                            String a18 = H5Url.a(98);
+                            Intrinsics.c(a18, "get(H5Url.YYChatNESTING)");
+                            return a18;
                         case 19:
-                            String a20 = H5Url.a(99);
-                            Intrinsics.c(a20, "get(H5Url.YYChatLOVERULE)");
-                            return a20;
+                            String a19 = H5Url.a(99);
+                            Intrinsics.c(a19, "get(H5Url.YYChatLOVERULE)");
+                            return a19;
                     }
                 }
 
@@ -336,7 +334,7 @@ public final class YYRoomInfoLocalChannel {
 
                 @Override // com.blued.android.module.yy_china.IYYRoomInfoCallback
                 public Application g() {
-                    return Application.this;
+                    return application;
                 }
 
                 @Override // com.blued.android.module.yy_china.IYYRoomInfoCallback

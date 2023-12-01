@@ -96,7 +96,7 @@ public class UploadVideoTask extends UploadBaseTask {
                             UploadVideoTask.this.c("需要转码,转码失败！！！");
                             UploadVideoTask.this.e();
                             if (UploadVideoTask.this.j != null) {
-                                UploadVideoTask.this.j.a(UploadVideoTask.this.a(), false, UploadVideoTask.this.f10137c);
+                                UploadVideoTask.this.j.a(UploadVideoTask.this.a(), false, UploadVideoTask.this.c);
                             }
                             if (UploadVideoTask.this.i != null) {
                                 UploadVideoTask.this.i.a();
@@ -172,16 +172,16 @@ public class UploadVideoTask extends UploadBaseTask {
             return;
         }
         b("上传视频任务!!!");
-        if (TextUtils.isEmpty(d.first)) {
+        if (TextUtils.isEmpty((CharSequence) d.first)) {
             if (iUploadStateListener != null) {
                 iUploadStateListener.a();
             }
-        } else if (!d.second.equals(String.valueOf(1))) {
+        } else if (!((String) d.second).equals(String.valueOf(1))) {
             b("上传视频封面");
             a(this.w, 0, true, this.p, iUploadStateListener);
         } else {
             Pair<String, String> pair = this.q;
-            if (pair == null || TextUtils.isEmpty(pair.first)) {
+            if (pair == null || TextUtils.isEmpty((CharSequence) pair.first)) {
                 b("视频文件路径有错");
                 a(1, "", "", this.q);
                 if (iUploadStateListener != null) {
@@ -197,7 +197,7 @@ public class UploadVideoTask extends UploadBaseTask {
             }
             String str = this.v;
             Pair<String, String> pair2 = this.q;
-            a(str, 1, pair2, pair2.first, iUploadStateListener);
+            a(str, 1, pair2, (String) pair2.first, iUploadStateListener);
         }
     }
 }

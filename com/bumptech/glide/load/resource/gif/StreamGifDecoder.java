@@ -17,16 +17,16 @@ import java.util.List;
 public class StreamGifDecoder implements ResourceDecoder<InputStream, GifDrawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ImageHeaderParser> f21001a;
+    private final List<ImageHeaderParser> f7395a;
     private final ResourceDecoder<ByteBuffer, GifDrawable> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayPool f21002c;
+    private final ArrayPool f7396c;
 
     public StreamGifDecoder(List<ImageHeaderParser> list, ResourceDecoder<ByteBuffer, GifDrawable> resourceDecoder, ArrayPool arrayPool) {
-        this.f21001a = list;
+        this.f7395a = list;
         this.b = resourceDecoder;
-        this.f21002c = arrayPool;
+        this.f7396c = arrayPool;
     }
 
     private static byte[] a(InputStream inputStream) {
@@ -61,6 +61,6 @@ public class StreamGifDecoder implements ResourceDecoder<InputStream, GifDrawabl
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean a(InputStream inputStream, Options options) throws IOException {
-        return !((Boolean) options.a(GifOptions.b)).booleanValue() && ImageHeaderParserUtils.getType(this.f21001a, inputStream, this.f21002c) == ImageHeaderParser.ImageType.GIF;
+        return !((Boolean) options.a(GifOptions.b)).booleanValue() && ImageHeaderParserUtils.getType(this.f7395a, inputStream, this.f7396c) == ImageHeaderParser.ImageType.GIF;
     }
 }

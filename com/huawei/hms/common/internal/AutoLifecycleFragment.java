@@ -12,7 +12,7 @@ import com.huawei.hms.api.HuaweiApiClient;
 public class AutoLifecycleFragment extends Fragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SparseArray<a> f22640a = new SparseArray<>();
+    private final SparseArray<a> f9032a = new SparseArray<>();
     private boolean b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -20,14 +20,14 @@ public class AutoLifecycleFragment extends Fragment {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final HuaweiApiClient f22641a;
+        public final HuaweiApiClient f9033a;
 
         public a(int i, HuaweiApiClient huaweiApiClient) {
-            this.f22641a = huaweiApiClient;
+            this.f9033a = huaweiApiClient;
         }
 
         public void a() {
-            this.f22641a.disconnect();
+            this.f9033a.disconnect();
         }
     }
 
@@ -78,10 +78,10 @@ public class AutoLifecycleFragment extends Fragment {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f22640a.size()) {
+            if (i2 >= this.f9032a.size()) {
                 return;
             }
-            this.f22640a.valueAt(i2).f22641a.connect((Activity) null);
+            this.f9032a.valueAt(i2).f9033a.connect((Activity) null);
             i = i2 + 1;
         }
     }
@@ -90,8 +90,8 @@ public class AutoLifecycleFragment extends Fragment {
     public void onStop() {
         super.onStop();
         this.b = false;
-        for (int i = 0; i < this.f22640a.size(); i++) {
-            this.f22640a.valueAt(i).f22641a.disconnect();
+        for (int i = 0; i < this.f9032a.size(); i++) {
+            this.f9032a.valueAt(i).f9033a.disconnect();
         }
     }
 
@@ -103,17 +103,17 @@ public class AutoLifecycleFragment extends Fragment {
 
     public void startAutoMange(int i, HuaweiApiClient huaweiApiClient) {
         Preconditions.checkNotNull(huaweiApiClient, "HuaweiApiClient instance cannot be null");
-        boolean z = this.f22640a.indexOfKey(i) < 0;
+        boolean z = this.f9032a.indexOfKey(i) < 0;
         Preconditions.checkState(z, "Already managing a HuaweiApiClient with this clientId: " + i);
-        this.f22640a.put(i, new a(i, huaweiApiClient));
+        this.f9032a.put(i, new a(i, huaweiApiClient));
         if (this.b) {
             huaweiApiClient.connect((Activity) null);
         }
     }
 
     public void stopAutoManage(int i) {
-        a aVar = this.f22640a.get(i);
-        this.f22640a.remove(i);
+        a aVar = this.f9032a.get(i);
+        this.f9032a.remove(i);
         if (aVar != null) {
             aVar.a();
         }

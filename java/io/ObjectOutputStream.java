@@ -30,7 +30,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     public static abstract class PutField {
         public abstract void put(String str, byte b);
 
-        public abstract void put(String str, char c2);
+        public abstract void put(String str, char c);
 
         public abstract void put(String str, double d);
 

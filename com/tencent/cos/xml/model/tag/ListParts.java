@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/ListParts.class */
@@ -24,7 +23,7 @@ public class ListParts {
         public String id;
 
         public String toString() {
-            return "{Initiator:\nId:" + this.id + "\nDisPlayName:" + this.disPlayName + "\n" + i.d;
+            return "{Initiator:\nId:" + this.id + "\nDisPlayName:" + this.disPlayName + "\n}";
         }
     }
 
@@ -34,7 +33,7 @@ public class ListParts {
         public String id;
 
         public String toString() {
-            return "{Owner:\nId:" + this.id + "\nDisPlayName:" + this.disPlayName + "\n" + i.d;
+            return "{Owner:\nId:" + this.id + "\nDisPlayName:" + this.disPlayName + "\n}";
         }
     }
 
@@ -46,7 +45,7 @@ public class ListParts {
         public String size;
 
         public String toString() {
-            return "{Part:\nPartNumber:" + this.partNumber + "\nLastModified:" + this.lastModified + "\nETag:" + this.eTag + "\nSize:" + this.size + "\n" + i.d;
+            return "{Part:\nPartNumber:" + this.partNumber + "\nLastModified:" + this.lastModified + "\nETag:" + this.eTag + "\nSize:" + this.size + "\n}";
         }
     }
 
@@ -98,7 +97,7 @@ public class ListParts {
                 }
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

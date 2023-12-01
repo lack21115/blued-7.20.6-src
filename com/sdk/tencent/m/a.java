@@ -9,7 +9,7 @@ import java.util.Properties;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28061a = "a";
+    public static final String f14373a = "a";
     public static final boolean b = c.b;
 
     public static String a(String str, String str2) {
@@ -20,7 +20,7 @@ public class a {
         try {
             properties.load(SDKManager.getContext().getAssets().open(str));
         } catch (Exception e) {
-            String str3 = f28061a;
+            String str3 = f14373a;
             b.a(str3, "域名读取失败！《" + str2 + "+》", Boolean.valueOf(b));
         }
         return properties.getProperty(str2);

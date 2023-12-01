@@ -31,12 +31,12 @@ public class RunnableScheduledFutureEnhance<T> implements RunnableScheduledFutur
 
     @Override // java.util.concurrent.Future
     public T get() throws ExecutionException, InterruptedException {
-        return this.proxy.get();
+        return (T) this.proxy.get();
     }
 
     @Override // java.util.concurrent.Future
     public T get(long j, TimeUnit timeUnit) throws ExecutionException, InterruptedException, TimeoutException {
-        return this.proxy.get(j, timeUnit);
+        return (T) this.proxy.get(j, timeUnit);
     }
 
     @Override // java.util.concurrent.Delayed

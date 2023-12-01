@@ -201,7 +201,7 @@ public final class InetAddresses {
         while (true) {
             int i3 = i2;
             if (i3 >= max) {
-                System.arraycopy((Object) byteArray, max, (Object) bArr, i - length, length);
+                System.arraycopy(byteArray, max, bArr, i - length, length);
                 try {
                     return InetAddress.getByAddress(bArr);
                 } catch (UnknownHostException e) {

@@ -13,22 +13,18 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveRandomGiftBinding.class */
 public final class DialogLiveRandomGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11809a;
+    public final ImageView a;
     public final RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f11810c;
+    public final RecyclerView c;
     public final View d;
     public final ShapeTextView e;
     private final FrameLayout f;
 
     private DialogLiveRandomGiftBinding(FrameLayout frameLayout, ImageView imageView, RelativeLayout relativeLayout, RecyclerView recyclerView, View view, ShapeTextView shapeTextView) {
         this.f = frameLayout;
-        this.f11809a = imageView;
+        this.a = imageView;
         this.b = relativeLayout;
-        this.f11810c = recyclerView;
+        this.c = recyclerView;
         this.d = view;
         this.e = shapeTextView;
     }
@@ -51,13 +47,13 @@ public final class DialogLiveRandomGiftBinding implements ViewBinding {
         if (imageView != null) {
             RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_draw_lottery_float);
             if (relativeLayout != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
-                    View findViewById = view.findViewById(R.id.top_padding);
-                    if (findViewById != null) {
+                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                if (findViewById != null) {
+                    View findViewById2 = view.findViewById(R.id.top_padding);
+                    if (findViewById2 != null) {
                         ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_draw_lottery);
                         if (shapeTextView != null) {
-                            return new DialogLiveRandomGiftBinding((FrameLayout) view, imageView, relativeLayout, recyclerView, findViewById, shapeTextView);
+                            return new DialogLiveRandomGiftBinding((FrameLayout) view, imageView, relativeLayout, findViewById, findViewById2, shapeTextView);
                         }
                         str = "tvDrawLottery";
                     } else {
@@ -75,7 +71,6 @@ public final class DialogLiveRandomGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.f;

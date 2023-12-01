@@ -16,31 +16,31 @@ import kotlin.jvm.internal.Intrinsics;
 public final class AdDownLoadAppDialogFragment$downloadApkIcon$1$1 extends CustomTarget<Drawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ AdDownLoadAppDialogFragment f34507a;
+    final /* synthetic */ AdDownLoadAppDialogFragment f20816a;
     final /* synthetic */ BluedADExtra.DownLoadModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AdDownLoadAppDialogFragment$downloadApkIcon$1$1(AdDownLoadAppDialogFragment adDownLoadAppDialogFragment, BluedADExtra.DownLoadModel downLoadModel) {
-        this.f34507a = adDownLoadAppDialogFragment;
+        this.f20816a = adDownLoadAppDialogFragment;
         this.b = downLoadModel;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(Drawable resource, BluedADExtra.DownLoadModel this_apply, AdDownLoadAppDialogFragment this$0) {
-        Intrinsics.e(resource, "$resource");
-        Intrinsics.e(this_apply, "$this_apply");
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(Drawable drawable, BluedADExtra.DownLoadModel downLoadModel, AdDownLoadAppDialogFragment adDownLoadAppDialogFragment) {
+        Intrinsics.e(drawable, "$resource");
+        Intrinsics.e(downLoadModel, "$this_apply");
+        Intrinsics.e(adDownLoadAppDialogFragment, "this$0");
         Log.v("drb", "「开机图下载」app_icon下载完成，开始apk下载");
-        DownLoadADApkHelper.f34639a.a(resource, this_apply);
-        this$0.dismiss();
+        DownLoadADApkHelper.f20948a.a(drawable, downLoadModel);
+        adDownLoadAppDialogFragment.dismiss();
         LiveEventBus.get(EventBusConstant.KEY_EVENT_SPLASH_AD_SKIP_TO_HOME).post(true);
     }
 
     @Override // com.bumptech.glide.request.target.Target
     /* renamed from: a */
-    public void onResourceReady(final Drawable resource, Transition<? super Drawable> transition) {
-        Intrinsics.e(resource, "resource");
-        final AdDownLoadAppDialogFragment adDownLoadAppDialogFragment = this.f34507a;
+    public void onResourceReady(final Drawable drawable, Transition<? super Drawable> transition) {
+        Intrinsics.e(drawable, "resource");
+        final AdDownLoadAppDialogFragment adDownLoadAppDialogFragment = this.f20816a;
         final BluedADExtra.DownLoadModel downLoadModel = this.b;
         adDownLoadAppDialogFragment.a(new Runnable() { // from class: com.soft.blued.ui.welcome.-$$Lambda$AdDownLoadAppDialogFragment$downloadApkIcon$1$1$iOTW9Vh_NyppDNwImhYsELNrf1Q
             @Override // java.lang.Runnable

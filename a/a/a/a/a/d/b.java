@@ -13,7 +13,7 @@ public class b {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f1343a;
+        public static final /* synthetic */ int[] f1295a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x007d -> B:61:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0081 -> B:55:0x001f). Please submit an issue!!! */
@@ -26,45 +26,45 @@ public class b {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x009d -> B:57:0x0070). Please submit an issue!!! */
         static {
             int[] iArr = new int[AVCodecType.values().length];
-            f1343a = iArr;
+            f1295a = iArr;
             try {
                 iArr[AVCodecType.HW_VIDEO_WITH_HW_AUDIO_CODEC.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1343a[AVCodecType.HW_VIDEO_SURFACE_AS_INPUT_WITH_HW_AUDIO_CODEC.ordinal()] = 2;
+                f1295a[AVCodecType.HW_VIDEO_SURFACE_AS_INPUT_WITH_HW_AUDIO_CODEC.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f1343a[AVCodecType.SW_VIDEO_WITH_HW_AUDIO_CODEC.ordinal()] = 3;
+                f1295a[AVCodecType.SW_VIDEO_WITH_HW_AUDIO_CODEC.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f1343a[AVCodecType.HW_VIDEO_YUV_AS_INPUT_WITH_HW_AUDIO_CODEC.ordinal()] = 4;
+                f1295a[AVCodecType.HW_VIDEO_YUV_AS_INPUT_WITH_HW_AUDIO_CODEC.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f1343a[AVCodecType.SW_VIDEO_WITH_SW_AUDIO_CODEC.ordinal()] = 5;
+                f1295a[AVCodecType.SW_VIDEO_WITH_SW_AUDIO_CODEC.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f1343a[AVCodecType.SW_AUDIO_CODEC.ordinal()] = 6;
+                f1295a[AVCodecType.SW_AUDIO_CODEC.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f1343a[AVCodecType.HW_AUDIO_CODEC.ordinal()] = 7;
+                f1295a[AVCodecType.HW_AUDIO_CODEC.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f1343a[AVCodecType.SW_VIDEO_CODEC.ordinal()] = 8;
+                f1295a[AVCodecType.SW_VIDEO_CODEC.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f1343a[AVCodecType.HW_VIDEO_CODEC.ordinal()] = 9;
+                f1295a[AVCodecType.HW_VIDEO_CODEC.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f1343a[AVCodecType.HW_VIDEO_SURFACE_AS_INPUT_WITH_SW_AUDIO_CODEC.ordinal()] = 10;
+                f1295a[AVCodecType.HW_VIDEO_SURFACE_AS_INPUT_WITH_SW_AUDIO_CODEC.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
         }
@@ -75,7 +75,7 @@ public class b {
     }
 
     public static void a(AVCodecType aVCodecType) {
-        switch (a.f1343a[aVCodecType.ordinal()]) {
+        switch (a.f1295a[aVCodecType.ordinal()]) {
             case 1:
             case 2:
                 a("videoHardEncode");

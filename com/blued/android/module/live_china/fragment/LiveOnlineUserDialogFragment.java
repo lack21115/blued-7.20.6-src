@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.viewpager2.widget.ViewPager2;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -34,9 +35,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveOnlineUserDialogFragment.class */
 public final class LiveOnlineUserDialogFragment extends LiveCurBaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13080a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<DialogLiveOnlineUserBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineUserDialogFragment$viewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -49,9 +48,7 @@ public final class LiveOnlineUserDialogFragment extends LiveCurBaseDialogFragmen
             return DialogLiveOnlineUserBinding.a(LayoutInflater.from(LiveOnlineUserDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f13081c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LiveVp2Adapter>() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineUserDialogFragment$vp2Adapter$2
+    private final Lazy c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LiveVp2Adapter>() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineUserDialogFragment$vp2Adapter$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -157,7 +154,7 @@ public final class LiveOnlineUserDialogFragment extends LiveCurBaseDialogFragmen
     }
 
     public final LiveVp2Adapter h() {
-        return (LiveVp2Adapter) this.f13081c.getValue();
+        return (LiveVp2Adapter) this.c.getValue();
     }
 
     public final ArrayList<Fragment> i() {
@@ -203,24 +200,23 @@ public final class LiveOnlineUserDialogFragment extends LiveCurBaseDialogFragmen
         }
         n.h.setAdapter(h());
         n.h.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineUserDialogFragment$initView$1$6
-            @Override // androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
             public void onPageSelected(int i) {
                 super.onPageSelected(i);
                 if (i == 0) {
                     ShapeTextView stvOnlineNobleUserSelBar = DialogLiveOnlineUserBinding.this.b;
                     Intrinsics.c(stvOnlineNobleUserSelBar, "stvOnlineNobleUserSelBar");
-                    BluedViewExKt.a(stvOnlineNobleUserSelBar);
-                    ShapeTextView stvOnlineUserSelBar = DialogLiveOnlineUserBinding.this.f11793c;
+                    BluedViewExKt.a((View) stvOnlineNobleUserSelBar);
+                    ShapeTextView stvOnlineUserSelBar = DialogLiveOnlineUserBinding.this.c;
                     Intrinsics.c(stvOnlineUserSelBar, "stvOnlineUserSelBar");
-                    BluedViewExKt.b(stvOnlineUserSelBar);
+                    BluedViewExKt.b((View) stvOnlineUserSelBar);
                 } else if (i != 1) {
                 } else {
-                    ShapeTextView stvOnlineUserSelBar2 = DialogLiveOnlineUserBinding.this.f11793c;
+                    ShapeTextView stvOnlineUserSelBar2 = DialogLiveOnlineUserBinding.this.c;
                     Intrinsics.c(stvOnlineUserSelBar2, "stvOnlineUserSelBar");
-                    BluedViewExKt.a(stvOnlineUserSelBar2);
+                    BluedViewExKt.a((View) stvOnlineUserSelBar2);
                     ShapeTextView stvOnlineNobleUserSelBar2 = DialogLiveOnlineUserBinding.this.b;
                     Intrinsics.c(stvOnlineNobleUserSelBar2, "stvOnlineNobleUserSelBar");
-                    BluedViewExKt.b(stvOnlineNobleUserSelBar2);
+                    BluedViewExKt.b((View) stvOnlineNobleUserSelBar2);
                 }
             }
         });
@@ -231,15 +227,13 @@ public final class LiveOnlineUserDialogFragment extends LiveCurBaseDialogFragmen
     }
 
     public final void l() {
-        LiveOnlineUserDialogFragment liveOnlineUserDialogFragment = this;
-        LiveEventBus.get("update_online_user_count", LiveOnLineUserCountModel.class).observe(liveOnlineUserDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserDialogFragment$dzEDp6FGf-87xx9ej7Oi6iW5GlI
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("update_online_user_count", LiveOnLineUserCountModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserDialogFragment$dzEDp6FGf-87xx9ej7Oi6iW5GlI
             public final void onChanged(Object obj) {
                 LiveOnlineUserDialogFragment.a(LiveOnlineUserDialogFragment.this, (LiveOnLineUserCountModel) obj);
             }
         });
-        LiveEventBus.get("close_online_user_dialog", Boolean.TYPE).observe(liveOnlineUserDialogFragment, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserDialogFragment$M9PhcF1mS5eUWF0hbNK2aYgoczE
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("close_online_user_dialog", Boolean.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserDialogFragment$M9PhcF1mS5eUWF0hbNK2aYgoczE
             public final void onChanged(Object obj) {
                 LiveOnlineUserDialogFragment.a(LiveOnlineUserDialogFragment.this, (Boolean) obj);
             }

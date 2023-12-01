@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import com.blued.android.framework.view.shape.ShapeHelper;
-import com.blued.android.framework.view.shape.ShapeLinearLayout;
 import com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.bytedance.applog.tracker.Tracker;
@@ -21,11 +20,11 @@ import com.soft.blued.user.BluedConfig;
 public class MineSettingDialogFragment extends BottomSheetDialogFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31628a;
+    private Context f17938a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f31629c;
+    private ImageView f17939c;
     private TextView d;
     private ToggleButton e;
     private ToggleButton f;
@@ -39,10 +38,10 @@ public class MineSettingDialogFragment extends BottomSheetDialogFragment impleme
     }
 
     private void h() {
-        ShapeHelper.b((ShapeLinearLayout) this.b.findViewById(2131366816), 2131101780);
-        this.f31629c = (ImageView) this.b.findViewById(2131365207);
-        this.d = (TextView) this.b.findViewById(2131371293);
-        this.f31629c.setOnClickListener(this);
+        ShapeHelper.b(this.b.findViewById(R.id.layout_read_auth), 2131101780);
+        this.f17939c = (ImageView) this.b.findViewById(2131365207);
+        this.d = (TextView) this.b.findViewById(R.id.tv_done);
+        this.f17939c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.e = (ToggleButton) this.b.findViewById(R.id.tglbtn_last_operate_onoff);
         this.f = (ToggleButton) this.b.findViewById(R.id.tglbtn_distance_onoff);
@@ -74,7 +73,7 @@ public class MineSettingDialogFragment extends BottomSheetDialogFragment impleme
                     return;
                 }
                 return;
-            case 2131371293:
+            case R.id.tv_done /* 2131371293 */:
                 OnMineSettingListener onMineSettingListener = this.i;
                 if (onMineSettingListener != null && i != 0) {
                     onMineSettingListener.a(this.e.isChecked(), this.f.isChecked());
@@ -86,14 +85,12 @@ public class MineSettingDialogFragment extends BottomSheetDialogFragment impleme
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f31628a = getActivity();
+        this.f17938a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.dialog_mine_setting, viewGroup, false);

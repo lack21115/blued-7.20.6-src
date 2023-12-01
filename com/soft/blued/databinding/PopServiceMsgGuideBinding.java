@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopServiceMsgGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29554a;
+    private final LinearLayout f15864a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29554a;
+        return this.f15864a;
     }
 }

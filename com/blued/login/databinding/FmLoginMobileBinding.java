@@ -13,20 +13,20 @@ import com.blued.login.R;
 public final class FmLoginMobileBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f20521a;
+    public final FrameLayout f6915a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f20522c;
+    public final ShapeTextView f6916c;
     public final ShapeTextView d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private FmLoginMobileBinding(ConstraintLayout constraintLayout, FrameLayout frameLayout, ImageView imageView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, TextView textView) {
         this.f = constraintLayout;
-        this.f20521a = frameLayout;
+        this.f6915a = frameLayout;
         this.b = imageView;
-        this.f20522c = shapeTextView;
+        this.f6916c = shapeTextView;
         this.d = shapeTextView2;
         this.e = textView;
     }
@@ -37,13 +37,13 @@ public final class FmLoginMobileBinding implements ViewBinding {
         if (frameLayout != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_back);
             if (imageView != null) {
-                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_one_login);
-                if (shapeTextView != null) {
-                    ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.tv_other);
-                    if (shapeTextView2 != null) {
+                ShapeTextView findViewById = view.findViewById(R.id.tv_one_login);
+                if (findViewById != null) {
+                    ShapeTextView findViewById2 = view.findViewById(R.id.tv_other);
+                    if (findViewById2 != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_phone_num);
                         if (textView != null) {
-                            return new FmLoginMobileBinding((ConstraintLayout) view, frameLayout, imageView, shapeTextView, shapeTextView2, textView);
+                            return new FmLoginMobileBinding((ConstraintLayout) view, frameLayout, imageView, findViewById, findViewById2, textView);
                         }
                         str = "tvPhoneNum";
                     } else {

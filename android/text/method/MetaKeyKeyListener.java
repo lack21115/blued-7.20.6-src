@@ -1,5 +1,6 @@
 package android.text.method;
 
+import android.content.Context;
 import android.os.IPowerManager;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -87,7 +88,7 @@ public abstract class MetaKeyKeyListener {
         adjust(spannable, ALT);
         adjust(spannable, SYM);
         try {
-            IPowerManager asInterface = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
+            IPowerManager asInterface = IPowerManager.Stub.asInterface(ServiceManager.getService(Context.POWER_SERVICE));
             if (getMetaState(spannable, 1) <= 0) {
                 asInterface.setKeyboardLight(false, 1);
             }
@@ -404,7 +405,7 @@ public abstract class MetaKeyKeyListener {
         if (i == 59 || i == 60) {
             press(editable, CAP);
             try {
-                IPowerManager asInterface = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
+                IPowerManager asInterface = IPowerManager.Stub.asInterface(ServiceManager.getService(Context.POWER_SERVICE));
                 int spanFlags = editable.getSpanFlags(CAP);
                 if (spanFlags == PRESSED || spanFlags == LOCKED) {
                     asInterface.setKeyboardLight(true, 1);
@@ -424,7 +425,7 @@ public abstract class MetaKeyKeyListener {
         } else {
             press(editable, ALT);
             try {
-                IPowerManager asInterface2 = IPowerManager.Stub.asInterface(ServiceManager.getService("power"));
+                IPowerManager asInterface2 = IPowerManager.Stub.asInterface(ServiceManager.getService(Context.POWER_SERVICE));
                 int spanFlags2 = editable.getSpanFlags(ALT);
                 if (spanFlags2 == PRESSED || spanFlags2 == LOCKED) {
                     asInterface2.setKeyboardLight(true, 2);

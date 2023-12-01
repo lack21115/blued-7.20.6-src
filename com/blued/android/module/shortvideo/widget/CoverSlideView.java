@@ -10,13 +10,9 @@ import com.blued.android.module.shortvideo.utils.StvLogUtils;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/widget/CoverSlideView.class */
 public class CoverSlideView extends FrameLayout {
     private static final String i = CoverSlideView.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f15931a;
+    protected int a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f15932c;
+    int c;
     int d;
     int e;
     int f;
@@ -51,7 +47,7 @@ public class CoverSlideView extends FrameLayout {
     }
 
     public void a(int i2, ICoverSlideListener iCoverSlideListener) {
-        this.f15931a = i2;
+        this.a = i2;
         this.j = iCoverSlideListener;
     }
 
@@ -66,10 +62,10 @@ public class CoverSlideView extends FrameLayout {
         int rawX = (int) motionEvent.getRawX();
         int action = motionEvent.getAction();
         if (action == 0) {
-            if (rawX <= this.f15931a) {
+            if (rawX <= this.a) {
                 this.b = rawX;
-                this.f15932c = (int) motionEvent.getX();
-                StvLogUtils.a(i + " cover slidev down rawx:" + rawX + " | x:" + this.f15932c, new Object[0]);
+                this.c = (int) motionEvent.getX();
+                StvLogUtils.a(i + " cover slidev down rawx:" + rawX + " | x:" + this.c, new Object[0]);
                 return true;
             }
             return false;
@@ -94,7 +90,7 @@ public class CoverSlideView extends FrameLayout {
             if (this.g == 0) {
                 this.g = getBottom();
             }
-            int i2 = rawX - this.f15932c;
+            int i2 = rawX - this.c;
             this.d = i2;
             if (i2 < 0) {
                 this.d = 0;
@@ -103,7 +99,7 @@ public class CoverSlideView extends FrameLayout {
             int i4 = this.h;
             int i5 = i3 + i4;
             this.e = i5;
-            int i6 = this.f15931a;
+            int i6 = this.a;
             if (i5 >= i6) {
                 this.e = i6;
                 this.d = i6 - i4;

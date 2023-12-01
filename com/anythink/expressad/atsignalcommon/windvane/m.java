@@ -15,13 +15,13 @@ import java.util.regex.Pattern;
 public final class m implements Handler.Callback, d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Pattern f7110a;
+    protected Pattern f4272a;
     protected String b;
     protected Context d;
     protected WindVaneWebView e;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final int f7111c = 1;
+    protected final int f4273c = 1;
     protected Handler f = new Handler(Looper.getMainLooper(), this);
 
     public m(Context context) {
@@ -29,7 +29,7 @@ public final class m implements Handler.Callback, d {
     }
 
     private void a(a aVar) {
-        Object jsObject = aVar.f7101a == null ? null : aVar.f7101a.getJsObject(aVar.d);
+        Object jsObject = aVar.f4263a == null ? null : aVar.f4263a.getJsObject(aVar.d);
         if (jsObject == null) {
             return;
         }
@@ -40,14 +40,14 @@ public final class m implements Handler.Callback, d {
                 return;
             }
             aVar.b = jsObject;
-            aVar.f7102c = a2;
+            aVar.f4264c = a2;
             aVar.b = jsObject;
             Message obtain = Message.obtain();
             obtain.what = 1;
             obtain.obj = aVar;
             this.f.sendMessage(obtain);
         } catch (c.b.a e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
         } catch (Exception e2) {
@@ -74,13 +74,13 @@ public final class m implements Handler.Callback, d {
 
     @Override // com.anythink.expressad.atsignalcommon.windvane.d
     public final void a(Pattern pattern) {
-        this.f7110a = pattern;
+        this.f4272a = pattern;
     }
 
     @Override // com.anythink.expressad.atsignalcommon.windvane.d
     public final boolean a(String str) {
         if (n.a(str)) {
-            this.f7110a = n.b(str);
+            this.f4272a = n.b(str);
             this.b = str;
             return true;
         }
@@ -94,10 +94,10 @@ public final class m implements Handler.Callback, d {
         }
         a mraidMethodContext = MraidUriUtil.getMraidMethodContext(this.e, str);
         if (mraidMethodContext != null) {
-            mraidMethodContext.f7101a = this.e;
+            mraidMethodContext.f4263a = this.e;
             return mraidMethodContext;
         }
-        Matcher matcher = this.f7110a.matcher(str);
+        Matcher matcher = this.f4272a.matcher(str);
         if (matcher.matches()) {
             a aVar = new a();
             int groupCount = matcher.groupCount();
@@ -111,7 +111,7 @@ public final class m implements Handler.Callback, d {
                 if (com.anythink.expressad.atsignalcommon.base.e.k != null && com.anythink.expressad.atsignalcommon.base.e.k.containsKey(aVar.e)) {
                     aVar.e = com.anythink.expressad.atsignalcommon.base.e.k.get(aVar.e);
                 }
-                aVar.f7101a = this.e;
+                aVar.f4263a = this.e;
                 return aVar;
             }
             return null;
@@ -154,7 +154,7 @@ public final class m implements Handler.Callback, d {
             if (message.what != 1) {
                 return false;
             }
-            aVar.f7102c.a(aVar.b, aVar, TextUtils.isEmpty(aVar.f) ? "{}" : aVar.f);
+            aVar.f4264c.a(aVar.b, aVar, TextUtils.isEmpty(aVar.f) ? "{}" : aVar.f);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

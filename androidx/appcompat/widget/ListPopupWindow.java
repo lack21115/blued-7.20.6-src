@@ -38,7 +38,7 @@ public class ListPopupWindow implements ShowableListMenu {
     public static final int WRAP_CONTENT = -2;
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f1831a;
+    private static Method f1783a;
     private static Method b;
     private static Method h;
     private AdapterView.OnItemClickListener A;
@@ -52,7 +52,7 @@ public class ListPopupWindow implements ShowableListMenu {
     private boolean I;
 
     /* renamed from: c  reason: collision with root package name */
-    DropDownListView f1832c;
+    DropDownListView f1784c;
     int d;
     final ResizePopupRunnable e;
     final Handler f;
@@ -88,8 +88,9 @@ public class ListPopupWindow implements ShowableListMenu {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/ListPopupWindow$PopupDataSetObserver.class */
-    class PopupDataSetObserver extends DataSetObserver {
+    public class PopupDataSetObserver extends DataSetObserver {
         PopupDataSetObserver() {
         }
 
@@ -157,7 +158,7 @@ public class ListPopupWindow implements ShowableListMenu {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (ListPopupWindow.this.f1832c == null || !ViewCompat.isAttachedToWindow(ListPopupWindow.this.f1832c) || ListPopupWindow.this.f1832c.getCount() <= ListPopupWindow.this.f1832c.getChildCount() || ListPopupWindow.this.f1832c.getChildCount() > ListPopupWindow.this.d) {
+            if (ListPopupWindow.this.f1784c == null || !ViewCompat.isAttachedToWindow(ListPopupWindow.this.f1784c) || ListPopupWindow.this.f1784c.getCount() <= ListPopupWindow.this.f1784c.getChildCount() || ListPopupWindow.this.f1784c.getChildCount() > ListPopupWindow.this.d) {
                 return;
             }
             ListPopupWindow.this.g.setInputMethodMode(2);
@@ -168,7 +169,7 @@ public class ListPopupWindow implements ShowableListMenu {
     static {
         if (Build.VERSION.SDK_INT <= 28) {
             try {
-                f1831a = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", Boolean.TYPE);
+                f1783a = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", Boolean.TYPE);
             } catch (NoSuchMethodException e) {
                 Log.i("ListPopupWindow", "Could not find method setClipToScreenEnabled() on PopupWindow. Oh well.");
             }
@@ -258,7 +259,7 @@ public class ListPopupWindow implements ShowableListMenu {
             this.g.setIsClippedToScreen(z);
             return;
         }
-        Method method = f1831a;
+        Method method = f1783a;
         if (method != null) {
             try {
                 method.invoke(this.g, Boolean.valueOf(z));
@@ -278,7 +279,7 @@ public class ListPopupWindow implements ShowableListMenu {
         LinearLayout linearLayout;
         int i3;
         boolean z = true;
-        if (this.f1832c == null) {
+        if (this.f1784c == null) {
             Context context = this.i;
             this.F = new Runnable() { // from class: androidx.appcompat.widget.ListPopupWindow.2
                 @Override // java.lang.Runnable
@@ -291,21 +292,21 @@ public class ListPopupWindow implements ShowableListMenu {
                 }
             };
             DropDownListView a2 = a(context, !this.I);
-            this.f1832c = a2;
+            this.f1784c = a2;
             Drawable drawable = this.z;
             if (drawable != null) {
                 a2.setSelector(drawable);
             }
-            this.f1832c.setAdapter(this.j);
-            this.f1832c.setOnItemClickListener(this.A);
-            this.f1832c.setFocusable(true);
-            this.f1832c.setFocusableInTouchMode(true);
-            this.f1832c.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: androidx.appcompat.widget.ListPopupWindow.3
+            this.f1784c.setAdapter(this.j);
+            this.f1784c.setOnItemClickListener(this.A);
+            this.f1784c.setFocusable(true);
+            this.f1784c.setFocusableInTouchMode(true);
+            this.f1784c.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { // from class: androidx.appcompat.widget.ListPopupWindow.3
                 @Override // android.widget.AdapterView.OnItemSelectedListener
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i4, long j) {
                     DropDownListView dropDownListView;
                     Tracker.onItemSelected(adapterView, view, i4, j);
-                    if (i4 == -1 || (dropDownListView = ListPopupWindow.this.f1832c) == null) {
+                    if (i4 == -1 || (dropDownListView = ListPopupWindow.this.f1784c) == null) {
                         return;
                     }
                     dropDownListView.setListSelectionHidden(false);
@@ -315,12 +316,12 @@ public class ListPopupWindow implements ShowableListMenu {
                 public void onNothingSelected(AdapterView<?> adapterView) {
                 }
             });
-            this.f1832c.setOnScrollListener(this.D);
+            this.f1784c.setOnScrollListener(this.D);
             AdapterView.OnItemSelectedListener onItemSelectedListener = this.B;
             if (onItemSelectedListener != null) {
-                this.f1832c.setOnItemSelectedListener(onItemSelectedListener);
+                this.f1784c.setOnItemSelectedListener(onItemSelectedListener);
             }
-            DropDownListView dropDownListView = this.f1832c;
+            DropDownListView dropDownListView = this.f1784c;
             View view = this.v;
             if (view != null) {
                 LinearLayout linearLayout2 = new LinearLayout(context);
@@ -383,10 +384,10 @@ public class ListPopupWindow implements ShowableListMenu {
             return a3 + i2;
         }
         int i7 = this.l;
-        int measureHeightOfChildrenCompat = this.f1832c.measureHeightOfChildrenCompat(i7 != -2 ? i7 != -1 ? View.MeasureSpec.makeMeasureSpec(i7, 1073741824) : View.MeasureSpec.makeMeasureSpec(this.i.getResources().getDisplayMetrics().widthPixels - (this.G.left + this.G.right), 1073741824) : View.MeasureSpec.makeMeasureSpec(this.i.getResources().getDisplayMetrics().widthPixels - (this.G.left + this.G.right), Integer.MIN_VALUE), 0, -1, a3 - i, -1);
+        int measureHeightOfChildrenCompat = this.f1784c.measureHeightOfChildrenCompat(i7 != -2 ? i7 != -1 ? View.MeasureSpec.makeMeasureSpec(i7, 1073741824) : View.MeasureSpec.makeMeasureSpec(this.i.getResources().getDisplayMetrics().widthPixels - (this.G.left + this.G.right), 1073741824) : View.MeasureSpec.makeMeasureSpec(this.i.getResources().getDisplayMetrics().widthPixels - (this.G.left + this.G.right), Integer.MIN_VALUE), 0, -1, a3 - i, -1);
         int i8 = i;
         if (measureHeightOfChildrenCompat > 0) {
-            i8 = i + i2 + this.f1832c.getPaddingTop() + this.f1832c.getPaddingBottom();
+            i8 = i + i2 + this.f1784c.getPaddingTop() + this.f1784c.getPaddingBottom();
         }
         return measureHeightOfChildrenCompat + i8;
     }
@@ -396,7 +397,7 @@ public class ListPopupWindow implements ShowableListMenu {
     }
 
     public void clearListSelection() {
-        DropDownListView dropDownListView = this.f1832c;
+        DropDownListView dropDownListView = this.f1784c;
         if (dropDownListView != null) {
             dropDownListView.setListSelectionHidden(true);
             dropDownListView.requestLayout();
@@ -417,7 +418,7 @@ public class ListPopupWindow implements ShowableListMenu {
         this.g.dismiss();
         a();
         this.g.setContentView(null);
-        this.f1832c = null;
+        this.f1784c = null;
         this.f.removeCallbacks(this.e);
     }
 
@@ -454,7 +455,7 @@ public class ListPopupWindow implements ShowableListMenu {
 
     @Override // androidx.appcompat.view.menu.ShowableListMenu
     public ListView getListView() {
-        return this.f1832c;
+        return this.f1784c;
     }
 
     public int getPromptPosition() {
@@ -463,28 +464,28 @@ public class ListPopupWindow implements ShowableListMenu {
 
     public Object getSelectedItem() {
         if (isShowing()) {
-            return this.f1832c.getSelectedItem();
+            return this.f1784c.getSelectedItem();
         }
         return null;
     }
 
     public long getSelectedItemId() {
         if (isShowing()) {
-            return this.f1832c.getSelectedItemId();
+            return this.f1784c.getSelectedItemId();
         }
         return Long.MIN_VALUE;
     }
 
     public int getSelectedItemPosition() {
         if (isShowing()) {
-            return this.f1832c.getSelectedItemPosition();
+            return this.f1784c.getSelectedItemPosition();
         }
         return -1;
     }
 
     public View getSelectedView() {
         if (isShowing()) {
-            return this.f1832c.getSelectedView();
+            return this.f1784c.getSelectedView();
         }
         return null;
     }
@@ -525,16 +526,16 @@ public class ListPopupWindow implements ShowableListMenu {
         if (!isShowing() || i == 62) {
             return false;
         }
-        if (this.f1832c.getSelectedItemPosition() >= 0 || !a(i)) {
-            int selectedItemPosition = this.f1832c.getSelectedItemPosition();
+        if (this.f1784c.getSelectedItemPosition() >= 0 || !a(i)) {
+            int selectedItemPosition = this.f1784c.getSelectedItemPosition();
             boolean z = !this.g.isAboveAnchor();
             ListAdapter listAdapter = this.j;
             int i2 = Integer.MAX_VALUE;
             int i3 = Integer.MIN_VALUE;
             if (listAdapter != null) {
                 boolean areAllItemsEnabled = listAdapter.areAllItemsEnabled();
-                i2 = areAllItemsEnabled ? 0 : this.f1832c.lookForSelectablePosition(0, true);
-                i3 = areAllItemsEnabled ? listAdapter.getCount() - 1 : this.f1832c.lookForSelectablePosition(listAdapter.getCount() - 1, false);
+                i2 = areAllItemsEnabled ? 0 : this.f1784c.lookForSelectablePosition(0, true);
+                i3 = areAllItemsEnabled ? listAdapter.getCount() - 1 : this.f1784c.lookForSelectablePosition(listAdapter.getCount() - 1, false);
             }
             if ((z && i == 19 && selectedItemPosition <= i2) || (!z && i == 20 && selectedItemPosition >= i3)) {
                 clearListSelection();
@@ -542,12 +543,12 @@ public class ListPopupWindow implements ShowableListMenu {
                 show();
                 return true;
             }
-            this.f1832c.setListSelectionHidden(false);
-            if (!this.f1832c.onKeyDown(i, keyEvent)) {
+            this.f1784c.setListSelectionHidden(false);
+            if (!this.f1784c.onKeyDown(i, keyEvent)) {
                 return (z && i == 20) ? selectedItemPosition == i3 : !z && i == 19 && selectedItemPosition == i2;
             }
             this.g.setInputMethodMode(2);
-            this.f1832c.requestFocusFromTouch();
+            this.f1784c.requestFocusFromTouch();
             show();
             return i == 19 || i == 20 || i == 23 || i == 66;
         }
@@ -582,10 +583,10 @@ public class ListPopupWindow implements ShowableListMenu {
     }
 
     public boolean onKeyUp(int i, KeyEvent keyEvent) {
-        if (!isShowing() || this.f1832c.getSelectedItemPosition() < 0) {
+        if (!isShowing() || this.f1784c.getSelectedItemPosition() < 0) {
             return false;
         }
-        boolean onKeyUp = this.f1832c.onKeyUp(i, keyEvent);
+        boolean onKeyUp = this.f1784c.onKeyUp(i, keyEvent);
         if (onKeyUp && a(i)) {
             dismiss();
         }
@@ -595,7 +596,7 @@ public class ListPopupWindow implements ShowableListMenu {
     public boolean performItemClick(int i) {
         if (isShowing()) {
             if (this.A != null) {
-                DropDownListView dropDownListView = this.f1832c;
+                DropDownListView dropDownListView = this.f1784c;
                 this.A.onItemClick(dropDownListView, dropDownListView.getChildAt(i - dropDownListView.getFirstVisiblePosition()), i, dropDownListView.getAdapter().getItemId(i));
                 return true;
             }
@@ -622,7 +623,7 @@ public class ListPopupWindow implements ShowableListMenu {
         if (listAdapter != null) {
             listAdapter.registerDataSetObserver(this.x);
         }
-        DropDownListView dropDownListView = this.f1832c;
+        DropDownListView dropDownListView = this.f1784c;
         if (dropDownListView != null) {
             dropDownListView.setAdapter(this.j);
         }
@@ -723,7 +724,7 @@ public class ListPopupWindow implements ShowableListMenu {
     }
 
     public void setSelection(int i) {
-        DropDownListView dropDownListView = this.f1832c;
+        DropDownListView dropDownListView = this.f1784c;
         if (!isShowing() || dropDownListView == null) {
             return;
         }
@@ -841,8 +842,8 @@ public class ListPopupWindow implements ShowableListMenu {
             this.g.setEpicenterBounds(this.H);
         }
         PopupWindowCompat.showAsDropDown(this.g, getAnchorView(), this.m, this.n, this.s);
-        this.f1832c.setSelection(-1);
-        if (!this.I || this.f1832c.isInTouchMode()) {
+        this.f1784c.setSelection(-1);
+        if (!this.I || this.f1784c.isInTouchMode()) {
             clearListSelection();
         }
         if (this.I) {

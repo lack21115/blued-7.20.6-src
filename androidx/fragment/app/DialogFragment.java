@@ -1,5 +1,6 @@
 package androidx.fragment.app;
 
+import android.R;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -479,7 +480,7 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         }
         this.mStyle = i;
         if (i == 2 || i == 3) {
-            this.mTheme = 16973913;
+            this.mTheme = R.style.Theme_Panel;
         }
         if (i2 != 0) {
             this.mTheme = i2;

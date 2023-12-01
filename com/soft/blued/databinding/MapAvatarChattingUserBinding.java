@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MapAvatarChattingUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29461a;
+    private final ConstraintLayout f15771a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29461a;
+        return this.f15771a;
     }
 }

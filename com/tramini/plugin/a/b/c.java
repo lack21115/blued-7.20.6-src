@@ -6,7 +6,7 @@ import android.content.ContentValues;
 public class c extends e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40494a = c.class.getSimpleName();
+    private static final String f26803a = c.class.getSimpleName();
     private static c b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tramini/plugin/a/b/c$a.class */
@@ -32,11 +32,11 @@ public class c extends e {
             }
             try {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("id", dVar.f40504a);
+                contentValues.put("id", dVar.f26813a);
                 contentValues.put("value", dVar.b);
-                contentValues.put("time", Long.valueOf(dVar.f40505c));
-                if (a(dVar.f40504a)) {
-                    return b().update("il_all", contentValues, "id = ? ", new String[]{dVar.f40504a});
+                contentValues.put("time", Long.valueOf(dVar.f26814c));
+                if (a(dVar.f26813a)) {
+                    return b().update("il_all", contentValues, "id = ? ", new String[]{dVar.f26813a});
                 }
                 return b().insert("il_all", null, contentValues);
             } catch (Exception e) {
@@ -100,7 +100,7 @@ public class c extends e {
             java.lang.String r3 = "id"
             int r2 = r2.getColumnIndex(r3)     // Catch: java.lang.Throwable -> Lad
             java.lang.String r1 = r1.getString(r2)     // Catch: java.lang.Throwable -> Lad
-            r0.f40504a = r1     // Catch: java.lang.Throwable -> Lad
+            r0.f26813a = r1     // Catch: java.lang.Throwable -> Lad
             r0 = r12
             r1 = r10
             r2 = r10
@@ -114,7 +114,7 @@ public class c extends e {
             java.lang.String r3 = "time"
             int r2 = r2.getColumnIndex(r3)     // Catch: java.lang.Throwable -> Lad
             long r1 = r1.getLong(r2)     // Catch: java.lang.Throwable -> Lad
-            r0.f40505c = r1     // Catch: java.lang.Throwable -> Lad
+            r0.f26814c = r1     // Catch: java.lang.Throwable -> Lad
             r0 = r11
             r1 = r12
             boolean r0 = r0.add(r1)     // Catch: java.lang.Throwable -> Lad

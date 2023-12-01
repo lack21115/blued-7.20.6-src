@@ -6,10 +6,10 @@ import android.util.Log;
 public class PieEntry extends Entry {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22138a;
+    private String f8531a;
 
     public String a() {
-        return this.f22138a;
+        return this.f8531a;
     }
 
     @Override // com.github.mikephil.charting.data.Entry

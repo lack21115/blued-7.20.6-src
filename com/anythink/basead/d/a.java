@@ -11,9 +11,7 @@ import com.anythink.expressad.out.TemplateBannerView;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/a.class */
 public final class a extends b {
-
-    /* renamed from: a  reason: collision with root package name */
-    BaseBannerAdView f5913a;
+    BaseBannerAdView a;
     private final String k;
     private com.anythink.expressad.out.h l;
 
@@ -21,11 +19,9 @@ public final class a extends b {
         super(context, aVar, jVar);
         this.k = getClass().getSimpleName();
         this.l = new com.anythink.expressad.out.h() { // from class: com.anythink.basead.d.a.1
-            @Override // com.anythink.expressad.out.h
             public final void a() {
             }
 
-            @Override // com.anythink.expressad.out.h
             public final void a(final com.anythink.expressad.foundation.d.c cVar) {
                 com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.basead.d.a.1.1
                     @Override // java.lang.Runnable
@@ -35,30 +31,24 @@ public final class a extends b {
                 });
             }
 
-            @Override // com.anythink.expressad.out.h
             public final void a(String str) {
             }
 
-            @Override // com.anythink.expressad.out.h
             public final void b() {
                 if (a.this.h != null) {
                     a.this.h.onAdShow();
                 }
             }
 
-            @Override // com.anythink.expressad.out.h
             public final void c() {
             }
 
-            @Override // com.anythink.expressad.out.h
             public final void d() {
             }
 
-            @Override // com.anythink.expressad.out.h
             public final void e() {
             }
 
-            @Override // com.anythink.expressad.out.h
             public final void f() {
                 if (a.this.h != null) {
                     a.this.h.onAdClosed();
@@ -69,24 +59,24 @@ public final class a extends b {
 
     public final View a() {
         if ((this.f instanceof TemplateBannerView) && this.f != null) {
-            ((TemplateBannerView) this.f).setBannerAdListener(this.l);
-            return (TemplateBannerView) this.f;
+            this.f.setBannerAdListener(this.l);
+            return this.f;
         }
-        if (this.f5913a == null && super.c()) {
+        if (this.a == null && super.c()) {
             if (this.e.g()) {
-                this.f5913a = new MraidBannerAdView(this.b, this.f5937c, this.e, this.h);
+                this.a = new MraidBannerAdView(this.b, this.c, this.e, this.h);
             } else {
-                this.f5913a = new SdkBannerAdView(this.b, this.f5937c, this.e, this.h);
+                this.a = new SdkBannerAdView(this.b, this.c, this.e, this.h);
             }
         }
-        return this.f5913a;
+        return this.a;
     }
 
     @Override // com.anythink.basead.d.b
     public final void b() {
         super.b();
         if (this.f instanceof TemplateBannerView) {
-            ((TemplateBannerView) this.f).release();
+            this.f.release();
         }
         this.f = null;
         this.h = null;

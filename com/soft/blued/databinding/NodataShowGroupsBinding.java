@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class NodataShowGroupsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29492a;
+    private final LinearLayout f15802a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29492a;
+        return this.f15802a;
     }
 }

@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public final class c implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23412a = "BasicAction";
+    public static final String f9804a = "BasicAction";
 
     @Override // com.igexin.push.extension.mod.PushMessageInterface
     public final boolean executeAction(PushTaskBean pushTaskBean, BaseActionBean baseActionBean) {

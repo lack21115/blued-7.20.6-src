@@ -3,7 +3,6 @@ package com.tencent.turingface.sdk.mfa;
 import android.content.Context;
 import android.os.Process;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -16,11 +15,11 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public final class G1g37 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f39876a = TimeUnit.HOURS.toMillis(32);
+    public static final long f26185a = TimeUnit.HOURS.toMillis(32);
     public static final G1g37 b = new G1g37();
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile QjsR0 f39877c = null;
+    public volatile QjsR0 f26186c = null;
     public final AtomicBoolean d = new AtomicBoolean(false);
     public final ReentrantReadWriteLock e = new ReentrantReadWriteLock();
 
@@ -113,11 +112,11 @@ public final class G1g37 {
         this.e.readLock().lock();
         try {
             if (this.d.get()) {
-                return this.f39877c;
+                return this.f26186c;
             }
             synchronized (this.d) {
                 if (this.d.get()) {
-                    return this.f39877c;
+                    return this.f26186c;
                 }
                 try {
                     QjsR0 qjsR02 = new QjsR0();
@@ -126,9 +125,9 @@ public final class G1g37 {
                 } catch (Throwable th) {
                     qjsR0 = null;
                 }
-                this.f39877c = qjsR0;
+                this.f26186c = qjsR0;
                 this.d.set(true);
-                return this.f39877c;
+                return this.f26186c;
             }
         } finally {
             this.e.readLock().unlock();
@@ -147,7 +146,7 @@ public final class G1g37 {
         sb.append("12");
         File file = new File(sb.toString());
         if (file.exists() || file.mkdirs()) {
-            return file.getAbsolutePath() + str + com.tencent.turingcam.oqKCa.f39831a + BridgeUtil.UNDERLINE_STR + "mfa" + BridgeUtil.UNDERLINE_STR + "1";
+            return file.getAbsolutePath() + str + com.tencent.turingcam.oqKCa.f26140a + "_mfa_1";
         }
         return "";
     }

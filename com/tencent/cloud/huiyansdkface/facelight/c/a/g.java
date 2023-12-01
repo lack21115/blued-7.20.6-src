@@ -1,6 +1,7 @@
 package com.tencent.cloud.huiyansdkface.facelight.c.a;
 
 import android.hardware.Camera;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/c/a/g.class */
@@ -24,11 +25,11 @@ public class g implements com.tencent.cloud.huiyansdkface.a.a.g<com.tencent.clou
                 }
                 int[] iArr2 = new int[2];
                 parameters.getPreviewFpsRange(iArr2);
-                com.tencent.cloud.huiyansdkface.a.d.a.a("V1PatchFpsSelector", "parameters getPreviewFpsRange=" + iArr2[0] + "-" + iArr2[1], new Object[0]);
+                com.tencent.cloud.huiyansdkface.a.d.a.a("V1PatchFpsSelector", "parameters getPreviewFpsRange=" + iArr2[0] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + iArr2[1], new Object[0]);
                 if (iArr2[0] == iArr2[1]) {
                     for (int[] iArr3 : parameters.getSupportedPreviewFpsRange()) {
                         if (iArr3[0] != iArr3[1]) {
-                            com.tencent.cloud.huiyansdkface.a.d.a.a("V1PatchFpsSelector", "new choose range is " + iArr3[0] + "-" + iArr3[1], new Object[0]);
+                            com.tencent.cloud.huiyansdkface.a.d.a.a("V1PatchFpsSelector", "new choose range is " + iArr3[0] + Constants.ACCEPT_TIME_SEPARATOR_SERVER + iArr3[1], new Object[0]);
                             return new com.tencent.cloud.huiyansdkface.a.a.a.b(iArr3[0], iArr3[1]);
                         }
                     }

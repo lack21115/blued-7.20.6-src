@@ -10,10 +10,10 @@ public class TransformerHorizontalBarChart extends Transformer {
     public void a(boolean z) {
         this.b.reset();
         if (!z) {
-            this.b.postTranslate(this.f22208c.a(), this.f22208c.m() - this.f22208c.d());
+            this.b.postTranslate(this.f8601c.a(), this.f8601c.m() - this.f8601c.d());
             return;
         }
-        this.b.setTranslate(-(this.f22208c.n() - this.f22208c.b()), this.f22208c.m() - this.f22208c.d());
+        this.b.setTranslate(-(this.f8601c.n() - this.f8601c.b()), this.f8601c.m() - this.f8601c.d());
         this.b.postScale(-1.0f, 1.0f);
     }
 }

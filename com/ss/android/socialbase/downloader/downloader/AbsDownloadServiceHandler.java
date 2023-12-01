@@ -99,11 +99,11 @@ public abstract class AbsDownloadServiceHandler implements IDownloadServiceHandl
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void resumePendingTask() {
-        SparseArray<List<DownloadTask>> m1029clone;
+        SparseArray<List<DownloadTask>> m1025clone;
         synchronized (this.pendingTasks) {
             String str = TAG;
             Logger.d(str, "resumePendingTask pendingTasks.size:" + this.pendingTasks.size());
-            m1029clone = this.pendingTasks.m1029clone();
+            m1025clone = this.pendingTasks.m1025clone();
             this.pendingTasks.clear();
         }
         AbsDownloadEngine downloadEngine = DownloadComponentManager.getDownloadEngine();
@@ -113,10 +113,10 @@ public abstract class AbsDownloadServiceHandler implements IDownloadServiceHandl
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= m1029clone.size()) {
+            if (i2 >= m1025clone.size()) {
                 return;
             }
-            List<DownloadTask> list = m1029clone.get(m1029clone.keyAt(i2));
+            List<DownloadTask> list = m1025clone.get(m1025clone.keyAt(i2));
             if (list != null) {
                 for (DownloadTask downloadTask : list) {
                     String str2 = TAG;

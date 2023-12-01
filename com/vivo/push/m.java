@@ -9,17 +9,17 @@ import android.os.Message;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Handler f41107a = new Handler(Looper.getMainLooper());
+    private static final Handler f27416a = new Handler(Looper.getMainLooper());
     private static final HandlerThread b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Handler f41108c;
+    private static final Handler f27417c;
 
     static {
         HandlerThread handlerThread = new HandlerThread("push_client_thread");
         b = handlerThread;
         handlerThread.start();
-        f41108c = new n(b.getLooper());
+        f27417c = new n(b.getLooper());
     }
 
     public static void a(l lVar) {
@@ -31,20 +31,20 @@ public final class m {
         Message message = new Message();
         message.what = a2;
         message.obj = lVar;
-        f41108c.sendMessageDelayed(message, 0L);
+        f27417c.sendMessageDelayed(message, 0L);
     }
 
     public static void a(Runnable runnable) {
-        f41108c.removeCallbacks(runnable);
-        f41108c.postDelayed(runnable, 15000L);
+        f27417c.removeCallbacks(runnable);
+        f27417c.postDelayed(runnable, 15000L);
     }
 
     public static void b(Runnable runnable) {
-        f41107a.post(runnable);
+        f27416a.post(runnable);
     }
 
     public static void c(Runnable runnable) {
-        Handler handler = f41108c;
+        Handler handler = f27417c;
         if (handler != null) {
             handler.post(runnable);
         }

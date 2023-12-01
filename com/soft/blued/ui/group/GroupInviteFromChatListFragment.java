@@ -28,10 +28,10 @@ import java.util.List;
 public class GroupInviteFromChatListFragment extends BaseFragment implements View.OnClickListener, CommonTitleDoubleClickObserver.ITitleClickObserver {
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f30800c;
+    public static String f17110c;
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedMyChatFriendListAdapter f30801a;
+    public BluedMyChatFriendListAdapter f17111a;
     private RenrenPullToRefreshListView d;
     private ListView e;
     private View h;
@@ -47,7 +47,6 @@ public class GroupInviteFromChatListFragment extends BaseFragment implements Vie
         private GroupInviteSessionListener() {
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
         public void onUISessionDataChanged(List<SessionModel> list) {
             if (list == null) {
                 list = new ArrayList();
@@ -55,7 +54,7 @@ public class GroupInviteFromChatListFragment extends BaseFragment implements Vie
                 ChatHelperV4.b(list);
             }
             GroupInviteFromChatListFragment.this.b = list;
-            GroupInviteFromChatListFragment.this.f30801a.notifyDataSetChanged();
+            GroupInviteFromChatListFragment.this.f17111a.notifyDataSetChanged();
             if (GroupInviteFromChatListFragment.this.b.size() > 0) {
                 if (GroupInviteFromChatListFragment.this.j != null) {
                     GroupInviteFromChatListFragment.this.j.d();
@@ -71,19 +70,19 @@ public class GroupInviteFromChatListFragment extends BaseFragment implements Vie
     class MyOnItemClickListener implements AdapterView.OnItemClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ GroupInviteFromChatListFragment f30803a;
+        final /* synthetic */ GroupInviteFromChatListFragment f17113a;
 
         @Override // android.widget.AdapterView.OnItemClickListener
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long j) {
             Tracker.onItemClick(adapterView, view, i, j);
-            if (i < 0 || i > this.f30803a.b.size()) {
+            if (i < 0 || i > this.f17113a.b.size()) {
                 return;
             }
             int i2 = i - 1;
-            if (this.f30803a.b.get(i2).sessionType == 2) {
-                UserInfoFragmentNew.a(this.f30803a.i, String.valueOf(this.f30803a.b.get(i2).sessionId), "");
-            } else if (this.f30803a.b.get(i2).sessionType == 3) {
-                GroupInfoFragment.a(this.f30803a.i, String.valueOf(this.f30803a.b.get(i2).sessionId));
+            if (this.f17113a.b.get(i2).sessionType == 2) {
+                UserInfoFragmentNew.a(this.f17113a.i, String.valueOf(this.f17113a.b.get(i2).sessionId), "");
+            } else if (this.f17113a.b.get(i2).sessionType == 3) {
+                GroupInfoFragment.a(this.f17113a.i, String.valueOf(this.f17113a.b.get(i2).sessionId));
             }
         }
     }
@@ -92,18 +91,16 @@ public class GroupInviteFromChatListFragment extends BaseFragment implements Vie
     class MyPullDownListener implements RenrenPullToRefreshListView.OnPullDownListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ GroupInviteFromChatListFragment f30804a;
+        final /* synthetic */ GroupInviteFromChatListFragment f17114a;
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void a() {
-            this.f30804a.f = 1;
-            this.f30804a.a(false);
+            this.f17114a.f = 1;
+            this.f17114a.a(false);
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
         public void b() {
-            GroupInviteFromChatListFragment.a(this.f30804a);
-            this.f30804a.a(false);
+            GroupInviteFromChatListFragment.a(this.f17114a);
+            this.f17114a.a(false);
         }
     }
 
@@ -126,7 +123,7 @@ public class GroupInviteFromChatListFragment extends BaseFragment implements Vie
             return;
         }
         this.f = i - 1;
-        AppMethods.a((CharSequence) getResources().getString(2131887275));
+        AppMethods.a(getResources().getString(2131887275));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -137,19 +134,17 @@ public class GroupInviteFromChatListFragment extends BaseFragment implements Vie
         }
     }
 
-    @Override // com.blued.android.module.common.observer.CommonTitleDoubleClickObserver.ITitleClickObserver
     public void a() {
         this.e.smoothScrollToPosition(0);
     }
 
     public void a(String str) {
-        f30800c = str;
+        f17110c = str;
     }
 
     public void b() {
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
     }
@@ -159,31 +154,26 @@ public class GroupInviteFromChatListFragment extends BaseFragment implements Vie
         Tracker.onClick(view);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.i = getActivity();
         return this.h;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDetach() {
         CommonTitleDoubleClickObserver.a().b(this);
         super.onDetach();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         ChatManager.getInstance().registerSessionListener(this.k);
         b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         ChatManager.getInstance().unregisterSessionListener(this.k);

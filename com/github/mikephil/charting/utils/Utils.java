@@ -20,12 +20,12 @@ import com.huawei.hms.framework.common.ExceptionCode;
 public abstract class Utils {
 
     /* renamed from: c  reason: collision with root package name */
-    private static DisplayMetrics f22210c;
+    private static DisplayMetrics f8603c;
     private static int d = 50;
     private static int e = 8000;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final double f22209a = Double.longBitsToDouble(1);
+    public static final double f8602a = Double.longBitsToDouble(1);
     public static final float b = Float.intBitsToFloat(1);
     private static Rect f = new Rect();
     private static Paint.FontMetrics g = new Paint.FontMetrics();
@@ -45,7 +45,7 @@ public abstract class Utils {
     }
 
     public static float a(float f2) {
-        DisplayMetrics displayMetrics = f22210c;
+        DisplayMetrics displayMetrics = f8603c;
         if (displayMetrics == null) {
             Log.e("MPChartLib-Utils", "Utils NOT INITIALIZED. You need to call Utils.init(...) at least once before calling Utils.convertDpToPixel(...). Otherwise conversion does not take place.");
             return f2;
@@ -84,17 +84,17 @@ public abstract class Utils {
         ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
         d = viewConfiguration.getScaledMinimumFlingVelocity();
         e = viewConfiguration.getScaledMaximumFlingVelocity();
-        f22210c = context.getResources().getDisplayMetrics();
+        f8603c = context.getResources().getDisplayMetrics();
     }
 
     public static void a(Canvas canvas, Drawable drawable, int i2, int i3, int i4, int i5) {
         MPPointF a2 = MPPointF.a();
-        a2.f22204a = i2 - (i4 / 2);
+        a2.f8597a = i2 - (i4 / 2);
         a2.b = i3 - (i5 / 2);
         drawable.copyBounds(k);
         drawable.setBounds(k.left, k.top, k.left + i4, k.top + i4);
         int save = canvas.save();
-        canvas.translate(a2.f22204a, a2.b);
+        canvas.translate(a2.f8597a, a2.b);
         drawable.draw(canvas);
         canvas.restoreToCount(save);
     }
@@ -121,7 +121,7 @@ public abstract class Utils {
         Rect rect = h;
         rect.set(0, 0, 0, 0);
         paint.getTextBounds(str, 0, str.length(), rect);
-        fSize.f22200a = rect.width();
+        fSize.f8593a = rect.width();
         fSize.b = rect.height();
     }
 
@@ -160,7 +160,7 @@ public abstract class Utils {
     public static void a(MPPointF mPPointF, float f2, float f3, MPPointF mPPointF2) {
         double d2 = f2;
         double d3 = f3;
-        mPPointF2.f22204a = (float) (mPPointF.f22204a + (Math.cos(Math.toRadians(d3)) * d2));
+        mPPointF2.f8597a = (float) (mPPointF.f8597a + (Math.cos(Math.toRadians(d3)) * d2));
         mPPointF2.b = (float) (mPPointF.b + (d2 * Math.sin(Math.toRadians(d3))));
     }
 

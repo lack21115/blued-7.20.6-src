@@ -19,11 +19,11 @@ import java.util.List;
 final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7276a = "AtomParsers";
+    private static final String f4437a = "AtomParsers";
     private static final int b = af.f("vide");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f7277c = af.f("soun");
+    private static final int f4438c = af.f("soun");
     private static final int d = af.f("text");
     private static final int e = af.f("sbtl");
     private static final int f = af.f("subt");
@@ -35,11 +35,11 @@ final class b {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7278a;
+        public final int f4439a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f7279c;
+        public int f4440c;
         public long d;
         private final boolean e;
         private final s f;
@@ -52,7 +52,7 @@ final class b {
             this.f = sVar2;
             this.e = z;
             sVar2.c(12);
-            this.f7278a = sVar2.m();
+            this.f4439a = sVar2.m();
             sVar.c(12);
             this.i = sVar.m();
             com.anythink.expressad.exoplayer.k.a.b(sVar.i() != 1 ? false : true, "first_chunk must be 1");
@@ -62,12 +62,12 @@ final class b {
         public final boolean a() {
             int i = this.b + 1;
             this.b = i;
-            if (i == this.f7278a) {
+            if (i == this.f4439a) {
                 return false;
             }
             this.d = this.e ? this.f.n() : this.f.h();
             if (this.b == this.h) {
-                this.f7279c = this.g.m();
+                this.f4440c = this.g.m();
                 this.g.d(4);
                 int i2 = this.i - 1;
                 this.i = i2;
@@ -80,7 +80,7 @@ final class b {
 
     /* renamed from: com.anythink.expressad.exoplayer.e.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/e/a/b$b.class */
-    interface InterfaceC0126b {
+    interface InterfaceC0055b {
         int a();
 
         int b();
@@ -93,11 +93,11 @@ final class b {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7280a = 8;
+        public static final int f4441a = 8;
         public final k[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public com.anythink.expressad.exoplayer.m f7281c;
+        public com.anythink.expressad.exoplayer.m f4442c;
         public int d;
         public int e = 0;
 
@@ -107,89 +107,89 @@ final class b {
     }
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/e/a/b$d.class */
-    static final class d implements InterfaceC0126b {
+    static final class d implements InterfaceC0055b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f7282a;
+        private final int f4443a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final s f7283c;
+        private final s f4444c;
 
         public d(a.b bVar) {
             s sVar = bVar.aV;
-            this.f7283c = sVar;
+            this.f4444c = sVar;
             sVar.c(12);
-            this.f7282a = this.f7283c.m();
-            this.b = this.f7283c.m();
+            this.f4443a = this.f4444c.m();
+            this.b = this.f4444c.m();
         }
 
-        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0126b
+        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0055b
         public final int a() {
             return this.b;
         }
 
-        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0126b
+        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0055b
         public final int b() {
-            int i = this.f7282a;
+            int i = this.f4443a;
             int i2 = i;
             if (i == 0) {
-                i2 = this.f7283c.m();
+                i2 = this.f4444c.m();
             }
             return i2;
         }
 
-        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0126b
+        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0055b
         public final boolean c() {
-            return this.f7282a != 0;
+            return this.f4443a != 0;
         }
     }
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/e/a/b$e.class */
-    static final class e implements InterfaceC0126b {
+    static final class e implements InterfaceC0055b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final s f7284a;
+        private final s f4445a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7285c;
+        private final int f4446c;
         private int d;
         private int e;
 
         public e(a.b bVar) {
             s sVar = bVar.aV;
-            this.f7284a = sVar;
+            this.f4445a = sVar;
             sVar.c(12);
-            this.f7285c = this.f7284a.m() & 255;
-            this.b = this.f7284a.m();
+            this.f4446c = this.f4445a.m() & 255;
+            this.b = this.f4445a.m();
         }
 
-        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0126b
+        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0055b
         public final int a() {
             return this.b;
         }
 
-        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0126b
+        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0055b
         public final int b() {
-            int i = this.f7285c;
+            int i = this.f4446c;
             if (i == 8) {
-                return this.f7284a.d();
+                return this.f4445a.d();
             }
             if (i == 16) {
-                return this.f7284a.e();
+                return this.f4445a.e();
             }
             int i2 = this.d;
             this.d = i2 + 1;
             if (i2 % 2 == 0) {
-                int d = this.f7284a.d();
+                int d = this.f4445a.d();
                 this.e = d;
                 return (d & 240) >> 4;
             }
             return this.e & 15;
         }
 
-        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0126b
+        @Override // com.anythink.expressad.exoplayer.e.a.b.InterfaceC0055b
         public final boolean c() {
             return false;
         }
@@ -199,16 +199,16 @@ final class b {
     static final class f {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f7286a;
+        private final int f4447a;
         private final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7287c;
+        private final int f4448c;
 
         public f(int i, long j, int i2) {
-            this.f7286a = i;
+            this.f4447a = i;
             this.b = j;
-            this.f7287c = i2;
+            this.f4448c = i2;
         }
     }
 
@@ -246,9 +246,9 @@ final class b {
         return sVar.h();
     }
 
-    private static Pair<long[], long[]> a(a.C0125a c0125a) {
+    private static Pair<long[], long[]> a(a.C0054a c0054a) {
         a.b d2;
-        if (c0125a == null || (d2 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.V)) == null) {
+        if (c0054a == null || (d2 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.V)) == null) {
             return Pair.create(null, null);
         }
         s sVar = d2.aV;
@@ -355,7 +355,7 @@ final class b {
                         com.anythink.expressad.exoplayer.k.a.b(str5 == null);
                         sVar.c(c4 + 8);
                         com.anythink.expressad.exoplayer.l.a a2 = com.anythink.expressad.exoplayer.l.a.a(sVar);
-                        list2 = a2.f7691a;
+                        list2 = a2.f4852a;
                         cVar.d = a2.b;
                         if (!z3) {
                             f3 = a2.e;
@@ -365,7 +365,7 @@ final class b {
                         com.anythink.expressad.exoplayer.k.a.b(str5 == null);
                         sVar.c(c4 + 8);
                         com.anythink.expressad.exoplayer.l.d a3 = com.anythink.expressad.exoplayer.l.d.a(sVar);
-                        list2 = a3.f7699a;
+                        list2 = a3.f4860a;
                         cVar.d = a3.b;
                         str3 = "video/hevc";
                     } else {
@@ -403,7 +403,7 @@ final class b {
                                     sVar.c(i20);
                                     int i21 = sVar.i();
                                     if (sVar.i() == com.anythink.expressad.exoplayer.e.a.a.aO) {
-                                        bArr2 = Arrays.copyOfRange(sVar.f7674a, i20, i21 + i20);
+                                        bArr2 = Arrays.copyOfRange(sVar.f4835a, i20, i21 + i20);
                                         break;
                                     }
                                     i18 = i20;
@@ -496,7 +496,7 @@ final class b {
                     i15 = i6;
                 }
                 if (str5 != null) {
-                    cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str5, null, -1, -1, e3, e4, -1.0f, list4, i3, f3, bArr3, i5, null, eVar2);
+                    cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str5, null, -1, -1, e3, e4, -1.0f, list4, i3, f3, bArr3, i5, null, eVar2);
                 }
             } else if (i14 == com.anythink.expressad.exoplayer.e.a.a.n || i14 == com.anythink.expressad.exoplayer.e.a.a.af || i14 == com.anythink.expressad.exoplayer.e.a.a.s || i14 == com.anythink.expressad.exoplayer.e.a.a.u || i14 == com.anythink.expressad.exoplayer.e.a.a.w || i14 == com.anythink.expressad.exoplayer.e.a.a.z || i14 == com.anythink.expressad.exoplayer.e.a.a.x || i14 == com.anythink.expressad.exoplayer.e.a.a.y || i14 == com.anythink.expressad.exoplayer.e.a.a.aD || i14 == com.anythink.expressad.exoplayer.e.a.a.aE || i14 == com.anythink.expressad.exoplayer.e.a.a.q || i14 == com.anythink.expressad.exoplayer.e.a.a.r || i14 == com.anythink.expressad.exoplayer.e.a.a.o || i14 == com.anythink.expressad.exoplayer.e.a.a.aT) {
                 sVar.c(c2 + 8 + 8);
@@ -583,12 +583,12 @@ final class b {
                         }
                     } else if (i24 == com.anythink.expressad.exoplayer.e.a.a.t) {
                         sVar.c(i22 + 8);
-                        cVar.f7281c = com.anythink.expressad.exoplayer.b.a.a(sVar, Integer.toString(i2), str, eVar6);
+                        cVar.f4442c = com.anythink.expressad.exoplayer.b.a.a(sVar, Integer.toString(i2), str, eVar6);
                     } else if (i24 == com.anythink.expressad.exoplayer.e.a.a.v) {
                         sVar.c(i22 + 8);
-                        cVar.f7281c = com.anythink.expressad.exoplayer.b.a.b(sVar, Integer.toString(i2), str, eVar6);
+                        cVar.f4442c = com.anythink.expressad.exoplayer.b.a.b(sVar, Integer.toString(i2), str, eVar6);
                     } else if (i24 == com.anythink.expressad.exoplayer.e.a.a.A) {
-                        cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str7, null, -1, e2, i8, null, eVar6, str);
+                        cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str7, null, -1, e2, i8, null, eVar6, str);
                     } else if (i24 == com.anythink.expressad.exoplayer.e.a.a.aT) {
                         bArr4 = new byte[i23];
                         sVar.c(i22);
@@ -596,8 +596,8 @@ final class b {
                     }
                     i22 += i23;
                 }
-                if (cVar.f7281c == null && str7 != null) {
-                    cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str7, (String) null, -1, e2, i8, "audio/raw".equals(str7) ? 2 : -1, bArr4 == null ? null : Collections.singletonList(bArr4), eVar6, str);
+                if (cVar.f4442c == null && str7 != null) {
+                    cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str7, (String) null, -1, e2, i8, "audio/raw".equals(str7) ? 2 : -1, bArr4 == null ? null : Collections.singletonList(bArr4), eVar6, str);
                 }
             } else if (i14 == com.anythink.expressad.exoplayer.e.a.a.ao || i14 == com.anythink.expressad.exoplayer.e.a.a.az || i14 == com.anythink.expressad.exoplayer.e.a.a.aA || i14 == com.anythink.expressad.exoplayer.e.a.a.aB || i14 == com.anythink.expressad.exoplayer.e.a.a.aC) {
                 sVar.c(c2 + 8 + 8);
@@ -617,7 +617,7 @@ final class b {
                         list3 = null;
                         str4 = o.Z;
                         j = 0;
-                        cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str4, (String) null, -1, 0, str, -1, (com.anythink.expressad.exoplayer.d.e) null, j, list3);
+                        cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str4, (String) null, -1, 0, str, -1, (com.anythink.expressad.exoplayer.d.e) null, j, list3);
                     } else if (i14 != com.anythink.expressad.exoplayer.e.a.a.aC) {
                         throw new IllegalStateException();
                     } else {
@@ -627,9 +627,9 @@ final class b {
                     list3 = null;
                 }
                 j = Long.MAX_VALUE;
-                cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str4, (String) null, -1, 0, str, -1, (com.anythink.expressad.exoplayer.d.e) null, j, list3);
+                cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), str4, (String) null, -1, 0, str, -1, (com.anythink.expressad.exoplayer.d.e) null, j, list3);
             } else if (i14 == com.anythink.expressad.exoplayer.e.a.a.aS) {
-                cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), o.ah, (String) null, (com.anythink.expressad.exoplayer.d.e) null);
+                cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i2), o.ah, (String) null, (com.anythink.expressad.exoplayer.d.e) null);
             }
             sVar.c(c2 + i13);
             i11 = i12 + 1;
@@ -643,7 +643,7 @@ final class b {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static com.anythink.expressad.exoplayer.e.a.j a(com.anythink.expressad.exoplayer.e.a.a.C0125a r17, com.anythink.expressad.exoplayer.e.a.a.b r18, long r19, com.anythink.expressad.exoplayer.d.e r21, boolean r22, boolean r23) {
+    public static com.anythink.expressad.exoplayer.e.a.j a(com.anythink.expressad.exoplayer.e.a.a.C0054a r17, com.anythink.expressad.exoplayer.e.a.a.b r18, long r19, com.anythink.expressad.exoplayer.d.e r21, boolean r22, boolean r23) {
         /*
             Method dump skipped, instructions count: 895
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -695,8 +695,8 @@ final class b {
         }
     }
 
-    public static m a(j jVar, a.C0125a c0125a, com.anythink.expressad.exoplayer.e.i iVar) {
-        InterfaceC0126b eVar;
+    public static m a(j jVar, a.C0054a c0054a, com.anythink.expressad.exoplayer.e.i iVar) {
+        InterfaceC0055b eVar;
         boolean z;
         int i2;
         s sVar;
@@ -707,11 +707,11 @@ final class b {
         long[] jArr2;
         int[] iArr2;
         long j;
-        a.b d2 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.av);
+        a.b d2 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.av);
         if (d2 != null) {
             eVar = new d(d2);
         } else {
-            a.b d3 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.aw);
+            a.b d3 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.aw);
             if (d3 == null) {
                 throw new t("Track has no sample table size information");
             }
@@ -721,19 +721,19 @@ final class b {
         if (a2 == 0) {
             return new m(jVar, new long[0], new int[0], 0, new long[0], new int[0], com.anythink.expressad.exoplayer.b.b);
         }
-        a.b d4 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.ax);
+        a.b d4 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.ax);
         if (d4 == null) {
-            d4 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.ay);
+            d4 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.ay);
             z = true;
         } else {
             z = false;
         }
         s sVar2 = d4.aV;
-        s sVar3 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.au).aV;
-        s sVar4 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.f7274ar).aV;
-        a.b d5 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.as);
+        s sVar3 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.au).aV;
+        s sVar4 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.f4435ar).aV;
+        a.b d5 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.as);
         s sVar5 = d5 != null ? d5.aV : null;
-        a.b d6 = c0125a.d(com.anythink.expressad.exoplayer.e.a.a.at);
+        a.b d6 = c0054a.d(com.anythink.expressad.exoplayer.e.a.a.at);
         s sVar6 = d6 != null ? d6.aV : null;
         a aVar = new a(sVar3, sVar2, z);
         sVar4.c(12);
@@ -762,16 +762,16 @@ final class b {
             i3 = 0;
         }
         if (eVar.c() && "audio/raw".equals(jVar.h.h) && m == 0 && i2 == 0 && i3 == 0) {
-            long[] jArr3 = new long[aVar.f7278a];
-            int[] iArr3 = new int[aVar.f7278a];
+            long[] jArr3 = new long[aVar.f4439a];
+            int[] iArr3 = new int[aVar.f4439a];
             while (aVar.a()) {
                 jArr3[aVar.b] = aVar.d;
-                iArr3[aVar.b] = aVar.f7279c;
+                iArr3[aVar.b] = aVar.f4440c;
             }
             d.a a3 = com.anythink.expressad.exoplayer.e.a.d.a(af.b(jVar.h.w, jVar.h.u), jArr3, iArr3, m3);
-            jArr = a3.f7291a;
+            jArr = a3.f4452a;
             iArr = a3.b;
-            i4 = a3.f7292c;
+            i4 = a3.f4453c;
             jArr2 = a3.d;
             iArr2 = a3.e;
             j = a3.f;
@@ -795,7 +795,7 @@ final class b {
                 while (i9 == 0) {
                     com.anythink.expressad.exoplayer.k.a.b(aVar.a());
                     j3 = aVar.d;
-                    i9 = aVar.f7279c;
+                    i9 = aVar.f4440c;
                 }
                 int i15 = i6;
                 int i16 = i2;
@@ -867,7 +867,7 @@ final class b {
                 i2--;
             }
             if (i10 != 0 || m2 != 0 || i9 != 0 || i6 != 0) {
-                Log.w(f7276a, "Inconsistent stbl box for track " + jVar.f7305c + ": remainingSynchronizationSamples " + i10 + ", remainingSamplesAtTimestampDelta " + m2 + ", remainingSamplesInChunk " + i9 + ", remainingTimestampDeltaChanges " + i6);
+                Log.w(f4437a, "Inconsistent stbl box for track " + jVar.f4466c + ": remainingSynchronizationSamples " + i10 + ", remainingSamplesAtTimestampDelta " + m2 + ", remainingSamplesInChunk " + i9 + ", remainingTimestampDeltaChanges " + i6);
             }
             iArr = iArr4;
             jArr2 = jArr4;
@@ -888,7 +888,7 @@ final class b {
                 long a7 = af.a(j - a5, jVar.h.v, jVar.e);
                 if ((a6 != 0 || a7 != 0) && a6 <= 2147483647L && a7 <= 2147483647L) {
                     iVar.b = (int) a6;
-                    iVar.f7319c = (int) a7;
+                    iVar.f4480c = (int) a7;
                     af.a(jArr2, jVar.e);
                     return new m(jVar, jArr, iArr, i4, jArr2, iArr2, a4);
                 }
@@ -937,12 +937,12 @@ final class b {
                     int a13 = af.a(jArr2, a11 + j7, z2, false);
                     if (z4) {
                         int i34 = a13 - a12;
-                        System.arraycopy((Object) jArr, a12, (Object) jArr5, i32, i34);
-                        System.arraycopy((Object) iArr8, a12, (Object) iArr6, i32, i34);
-                        System.arraycopy((Object) iArr2, a12, (Object) iArr7, i32, i34);
+                        System.arraycopy(jArr, a12, jArr5, i32, i34);
+                        System.arraycopy(iArr8, a12, iArr6, i32, i34);
+                        System.arraycopy(iArr2, a12, iArr7, i32, i34);
                     }
                     if (a12 < a13 && (iArr7[i32] & 1) == 0) {
-                        Log.w(f7276a, "Ignoring edit list: edit does not start with a sync sample.");
+                        Log.w(f4437a, "Ignoring edit list: edit does not start with a sync sample.");
                         throw new g();
                     }
                     while (a12 < a13) {
@@ -995,7 +995,7 @@ final class b {
                         sVar.d(8);
                         ArrayList arrayList = new ArrayList();
                         while (sVar.c() < c3 + i3) {
-                            a.InterfaceC0129a a2 = com.anythink.expressad.exoplayer.e.a.f.a(sVar);
+                            a.InterfaceC0058a a2 = com.anythink.expressad.exoplayer.e.a.f.a(sVar);
                             if (a2 != null) {
                                 arrayList.add(a2);
                             }
@@ -1024,7 +1024,7 @@ final class b {
                 sVar.d(8);
                 ArrayList arrayList = new ArrayList();
                 while (sVar.c() < c2 + i3) {
-                    a.InterfaceC0129a a2 = com.anythink.expressad.exoplayer.e.a.f.a(sVar);
+                    a.InterfaceC0058a a2 = com.anythink.expressad.exoplayer.e.a.f.a(sVar);
                     if (a2 != null) {
                         arrayList.add(a2);
                     }
@@ -1086,7 +1086,7 @@ final class b {
                 com.anythink.expressad.exoplayer.k.a.b(str2 == null);
                 sVar.c(c3 + 8);
                 com.anythink.expressad.exoplayer.l.a a2 = com.anythink.expressad.exoplayer.l.a.a(sVar);
-                list = a2.f7691a;
+                list = a2.f4852a;
                 cVar.d = a2.b;
                 if (!z2) {
                     f3 = a2.e;
@@ -1100,7 +1100,7 @@ final class b {
                 com.anythink.expressad.exoplayer.k.a.b(str2 == null);
                 sVar.c(c3 + 8);
                 com.anythink.expressad.exoplayer.l.d a3 = com.anythink.expressad.exoplayer.l.d.a(sVar);
-                list = a3.f7699a;
+                list = a3.f4860a;
                 cVar.d = a3.b;
                 str = "video/hevc";
                 z = z2;
@@ -1166,7 +1166,7 @@ final class b {
                     sVar.c(i16);
                     int i17 = sVar.i();
                     if (sVar.i() == com.anythink.expressad.exoplayer.e.a.a.aO) {
-                        bArr = Arrays.copyOfRange(sVar.f7674a, i16, i17 + i16);
+                        bArr = Arrays.copyOfRange(sVar.f4835a, i16, i17 + i16);
                         str = str2;
                         z = z2;
                         list = list2;
@@ -1245,7 +1245,7 @@ final class b {
         if (str2 == null) {
             return;
         }
-        cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, null, -1, -1, e2, e3, -1.0f, list2, i6, f3, bArr2, i10, null, eVar2);
+        cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, null, -1, -1, e2, e3, -1.0f, list2, i6, f3, bArr2, i10, null, eVar2);
     }
 
     private static void a(s sVar, int i2, int i3, int i4, int i5, String str, c cVar) {
@@ -1272,7 +1272,7 @@ final class b {
             cVar.e = 1;
             str2 = o.ac;
         }
-        cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, (String) null, -1, 0, str, -1, (com.anythink.expressad.exoplayer.d.e) null, j, list);
+        cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, (String) null, -1, 0, str, -1, (com.anythink.expressad.exoplayer.d.e) null, j, list);
     }
 
     private static void a(s sVar, int i2, int i3, int i4, int i5, String str, boolean z, com.anythink.expressad.exoplayer.d.e eVar, c cVar, int i6) {
@@ -1360,12 +1360,12 @@ final class b {
                 }
             } else if (i13 == com.anythink.expressad.exoplayer.e.a.a.t) {
                 sVar.c(i11 + 8);
-                cVar.f7281c = com.anythink.expressad.exoplayer.b.a.a(sVar, Integer.toString(i5), str, eVar3);
+                cVar.f4442c = com.anythink.expressad.exoplayer.b.a.a(sVar, Integer.toString(i5), str, eVar3);
             } else if (i13 == com.anythink.expressad.exoplayer.e.a.a.v) {
                 sVar.c(i11 + 8);
-                cVar.f7281c = com.anythink.expressad.exoplayer.b.a.b(sVar, Integer.toString(i5), str, eVar3);
+                cVar.f4442c = com.anythink.expressad.exoplayer.b.a.b(sVar, Integer.toString(i5), str, eVar3);
             } else if (i13 == com.anythink.expressad.exoplayer.e.a.a.A) {
-                cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, null, -1, e2, i8, null, eVar3, str);
+                cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, null, -1, e2, i8, null, eVar3, str);
             } else if (i13 == com.anythink.expressad.exoplayer.e.a.a.aT) {
                 bArr = new byte[i12];
                 sVar.c(i11);
@@ -1373,10 +1373,10 @@ final class b {
             }
             i11 += i12;
         }
-        if (cVar.f7281c != null || str2 == null) {
+        if (cVar.f4442c != null || str2 == null) {
             return;
         }
-        cVar.f7281c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, (String) null, -1, e2, i8, "audio/raw".equals(str2) ? 2 : -1, bArr == null ? null : Collections.singletonList(bArr), eVar3, str);
+        cVar.f4442c = com.anythink.expressad.exoplayer.m.a(Integer.toString(i5), str2, (String) null, -1, e2, i8, "audio/raw".equals(str2) ? 2 : -1, bArr == null ? null : Collections.singletonList(bArr), eVar3, str);
     }
 
     private static boolean a(long[] jArr, long j, long j2, long j3) {
@@ -1422,7 +1422,7 @@ final class b {
             if (i6 >= i4) {
                 z = true;
                 break;
-            } else if (sVar.f7674a[c2 + i6] != -1) {
+            } else if (sVar.f4835a[c2 + i6] != -1) {
                 z = false;
                 break;
             } else {
@@ -1470,7 +1470,7 @@ final class b {
         sVar.d(8);
         ArrayList arrayList = new ArrayList();
         while (sVar.c() < i2) {
-            a.InterfaceC0129a a2 = com.anythink.expressad.exoplayer.e.a.f.a(sVar);
+            a.InterfaceC0058a a2 = com.anythink.expressad.exoplayer.e.a.f.a(sVar);
             if (a2 != null) {
                 arrayList.add(a2);
             }
@@ -1489,7 +1489,7 @@ final class b {
     private static int c(s sVar) {
         sVar.c(16);
         int i2 = sVar.i();
-        if (i2 == f7277c) {
+        if (i2 == f4438c) {
             return 1;
         }
         if (i2 == b) {
@@ -1606,7 +1606,7 @@ final class b {
             sVar.c(i6);
             int i7 = sVar.i();
             if (sVar.i() == com.anythink.expressad.exoplayer.e.a.a.aO) {
-                return Arrays.copyOfRange(sVar.f7674a, i6, i7 + i6);
+                return Arrays.copyOfRange(sVar.f4835a, i6, i7 + i6);
             }
             i4 = i6;
             i5 = i7;

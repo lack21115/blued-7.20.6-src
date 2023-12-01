@@ -13,13 +13,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogRelationshipToInviteBinding.class */
 public final class DialogRelationshipToInviteBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16392a;
+    public final ShapeTextView a;
     public final ShapeConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16393c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ShapeableImageView f;
@@ -32,9 +28,9 @@ public final class DialogRelationshipToInviteBinding implements ViewBinding {
 
     private DialogRelationshipToInviteBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, ShapeConstraintLayout shapeConstraintLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2) {
         this.l = constraintLayout;
-        this.f16392a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeConstraintLayout;
-        this.f16393c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = shapeableImageView;
@@ -57,19 +53,19 @@ public final class DialogRelationshipToInviteBinding implements ViewBinding {
                     if (imageView2 != null) {
                         ImageView imageView3 = (ImageView) view.findViewById(R.id.iv_close);
                         if (imageView3 != null) {
-                            ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user_1);
-                            if (shapeableImageView != null) {
-                                ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user_2);
-                                if (shapeableImageView2 != null) {
-                                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rec_day);
-                                    if (recyclerView != null) {
-                                        RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rec_gift);
-                                        if (recyclerView2 != null) {
+                            ShapeableImageView findViewById = view.findViewById(R.id.iv_user_1);
+                            if (findViewById != null) {
+                                ShapeableImageView findViewById2 = view.findViewById(R.id.iv_user_2);
+                                if (findViewById2 != null) {
+                                    RecyclerView findViewById3 = view.findViewById(R.id.rec_day);
+                                    if (findViewById3 != null) {
+                                        RecyclerView findViewById4 = view.findViewById(R.id.rec_gift);
+                                        if (findViewById4 != null) {
                                             TextView textView = (TextView) view.findViewById(R.id.tv_type);
                                             if (textView != null) {
                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_type_info);
                                                 if (textView2 != null) {
-                                                    return new DialogRelationshipToInviteBinding((ConstraintLayout) view, shapeTextView, shapeConstraintLayout, imageView, imageView2, imageView3, shapeableImageView, shapeableImageView2, recyclerView, recyclerView2, textView, textView2);
+                                                    return new DialogRelationshipToInviteBinding((ConstraintLayout) view, shapeTextView, shapeConstraintLayout, imageView, imageView2, imageView3, findViewById, findViewById2, findViewById3, findViewById4, textView, textView2);
                                                 }
                                                 str = "tvTypeInfo";
                                             } else {
@@ -105,7 +101,6 @@ public final class DialogRelationshipToInviteBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.l;

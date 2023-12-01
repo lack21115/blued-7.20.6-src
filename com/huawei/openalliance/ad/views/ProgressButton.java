@@ -1,5 +1,6 @@
 package com.huawei.openalliance.ad.views;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -12,7 +13,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import com.huawei.hms.ads.ge;
-import com.huawei.hms.ads.nativead.R;
 import com.huawei.openalliance.ad.utils.ay;
 import java.util.Locale;
 
@@ -23,11 +23,11 @@ public abstract class ProgressButton extends View implements View.OnClickListene
     int V;
 
     /* renamed from: a  reason: collision with root package name */
-    private Rect f23036a;
+    private Rect f9428a;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23037c;
+    private int f9429c;
     private CharSequence d;
     private boolean e;
     private int f;
@@ -48,7 +48,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
     }
 
     public ProgressButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842871);
+        this(context, attributeSet, R.attr.progressBarStyle);
         Code(context, attributeSet);
         Code();
     }
@@ -61,7 +61,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
 
     public ProgressButton(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i);
-        this.f23036a = new Rect();
+        this.f9428a = new Rect();
         this.e = false;
         this.h = -1;
         this.i = 12.0f;
@@ -79,7 +79,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
     private CharSequence Code(CharSequence charSequence, int i, int i2) {
         int length = getText().length();
         int ceil = (int) Math.ceil(((i - i2) / getPromptRect().width()) * length);
-        int ceil2 = (int) Math.ceil((this.f23037c * length) / getPromptRect().width());
+        int ceil2 = (int) Math.ceil((this.f9429c * length) / getPromptRect().width());
         int i3 = length - ceil;
         if (i3 - ceil2 > 0) {
             return charSequence.toString().substring(0, length - (ceil + ceil2)) + "...";
@@ -106,7 +106,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         paint2.setTextSize(this.i);
         Rect rect = new Rect();
         paint2.getTextBounds("...", 0, 3, rect);
-        this.f23037c = rect.width();
+        this.f9429c = rect.width();
         this.p = ay.C();
     }
 
@@ -133,16 +133,16 @@ public abstract class ProgressButton extends View implements View.OnClickListene
     private void Code(Context context, AttributeSet attributeSet) {
         synchronized (this.o) {
             if (attributeSet != null) {
-                TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.hiad_progress_button);
+                TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button);
                 try {
-                    this.e = obtainStyledAttributes.getBoolean(R.styleable.hiad_progress_button_hiad_fixedWidth, false);
-                    this.f = obtainStyledAttributes.getDimensionPixelSize(R.styleable.hiad_progress_button_hiad_maxWidth, 0);
-                    this.g = obtainStyledAttributes.getDimensionPixelSize(R.styleable.hiad_progress_button_hiad_minWidth, 0);
-                    this.i = obtainStyledAttributes.getDimension(R.styleable.hiad_progress_button_hiad_textSize, 0.0f);
-                    this.h = obtainStyledAttributes.getColor(R.styleable.hiad_progress_button_hiad_textColor, -1);
-                    this.Code = obtainStyledAttributes.getString(R.styleable.hiad_progress_button_hiad_fontFamily);
-                    this.I = obtainStyledAttributes.getInt(R.styleable.hiad_progress_button_hiad_styleIndex, -1);
-                    this.V = obtainStyledAttributes.getInt(R.styleable.hiad_progress_button_hiad_typefaceIndex, -1);
+                    this.e = obtainStyledAttributes.getBoolean(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_fixedWidth, false);
+                    this.f = obtainStyledAttributes.getDimensionPixelSize(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_maxWidth, 0);
+                    this.g = obtainStyledAttributes.getDimensionPixelSize(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_minWidth, 0);
+                    this.i = obtainStyledAttributes.getDimension(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_textSize, 0.0f);
+                    this.h = obtainStyledAttributes.getColor(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_textColor, -1);
+                    this.Code = obtainStyledAttributes.getString(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_fontFamily);
+                    this.I = obtainStyledAttributes.getInt(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_styleIndex, -1);
+                    this.V = obtainStyledAttributes.getInt(com.huawei.hms.ads.nativead.R.styleable.hiad_progress_button_hiad_typefaceIndex, -1);
                 } catch (UnsupportedOperationException e) {
                     ge.I("ProgressButton", "initButtonAttr UnsupportedOperationException");
                 } catch (RuntimeException e2) {
@@ -159,7 +159,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         synchronized (this.o) {
             if (this.d != null && this.d.length() > 0) {
                 String intern = this.d.toString().intern();
-                canvas.drawText((CharSequence) intern, 0, intern.length(), (getWidth() / 2) - this.f23036a.centerX(), (getHeight() / 2) - this.f23036a.centerY(), this.b);
+                canvas.drawText((CharSequence) intern, 0, intern.length(), (getWidth() / 2) - this.f9428a.centerX(), (getHeight() / 2) - this.f9428a.centerY(), this.b);
             }
         }
     }
@@ -191,7 +191,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
 
     private boolean Code(Drawable drawable) {
         Drawable findDrawableByLayerId;
-        if (drawable == null || !(drawable instanceof LayerDrawable) || (findDrawableByLayerId = ((LayerDrawable) drawable).findDrawableByLayerId(16908301)) == null) {
+        if (drawable == null || !(drawable instanceof LayerDrawable) || (findDrawableByLayerId = ((LayerDrawable) drawable).findDrawableByLayerId(R.id.progress)) == null) {
             return false;
         }
         if ((findDrawableByLayerId instanceof f) || (findDrawableByLayerId instanceof g)) {
@@ -214,7 +214,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         paint.setTextSize(this.i);
         Rect rect = new Rect();
         paint.getTextBounds("...", 0, 3, rect);
-        this.f23037c = rect.width();
+        this.f9429c = rect.width();
     }
 
     private void V(int i, boolean z) {
@@ -236,7 +236,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         ViewGroup.LayoutParams layoutParams;
         synchronized (this.o) {
             if (this.d != null && this.d.length() > 0) {
-                this.b.getTextBounds(this.d.toString(), 0, this.d.length(), this.f23036a);
+                this.b.getTextBounds(this.d.toString(), 0, this.d.length(), this.f9428a);
                 int paddingStart = getPaddingStart();
                 int i2 = paddingStart;
                 if (paddingStart <= 0) {
@@ -247,7 +247,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
                 if (paddingEnd <= 0) {
                     i3 = getPaddingRight();
                 }
-                int width = this.f23036a.width() + i2 + i3;
+                int width = this.f9428a.width() + i2 + i3;
                 if (this.e) {
                     layoutParams = getLayoutParams();
                     int width2 = getWidth();
@@ -258,7 +258,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
                     if (width > i4) {
                         CharSequence Code = Code(this.d, width, i4);
                         this.d = Code;
-                        this.b.getTextBounds(Code.toString(), 0, this.d.length(), this.f23036a);
+                        this.b.getTextBounds(Code.toString(), 0, this.d.length(), this.f9428a);
                     }
                     if (layoutParams.height <= 0) {
                         layoutParams.height = ((int) this.i) + getPaddingTop() + getPaddingBottom();
@@ -278,7 +278,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
                         } else {
                             CharSequence Code2 = Code(this.d, width, this.f);
                             this.d = Code2;
-                            this.b.getTextBounds(Code2.toString(), 0, this.d.length(), this.f23036a);
+                            this.b.getTextBounds(Code2.toString(), 0, this.d.length(), this.f9428a);
                             i = this.f;
                         }
                         layoutParams2.width = i;
@@ -376,9 +376,8 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         I();
     }
@@ -386,7 +385,7 @@ public abstract class ProgressButton extends View implements View.OnClickListene
     public Rect getPromptRect() {
         Rect rect;
         synchronized (this.o) {
-            rect = this.f23036a;
+            rect = this.f9428a;
         }
         return rect;
     }
@@ -401,9 +400,8 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         synchronized (this.o) {
             super.onDraw(canvas);
             Drawable drawable = this.m;
@@ -417,9 +415,8 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         Code(i, i2);
     }
 
@@ -487,9 +484,8 @@ public abstract class ProgressButton extends View implements View.OnClickListene
         V();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
+    protected boolean verifyDrawable(Drawable drawable) {
         boolean z;
         synchronized (this.o) {
             if (drawable != this.l && !super.verifyDrawable(drawable)) {

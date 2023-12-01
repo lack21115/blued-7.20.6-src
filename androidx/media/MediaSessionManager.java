@@ -11,10 +11,10 @@ import androidx.media.MediaSessionManagerImplBase;
 public final class MediaSessionManager {
 
     /* renamed from: a  reason: collision with root package name */
-    static final boolean f3160a = Log.isLoggable("MediaSessionManager", 3);
+    static final boolean f3112a = Log.isLoggable("MediaSessionManager", 3);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f3161c = new Object();
+    private static final Object f3113c = new Object();
     private static volatile MediaSessionManager d;
     MediaSessionManagerImpl b;
 
@@ -30,17 +30,17 @@ public final class MediaSessionManager {
         public static final String LEGACY_CONTROLLER = "android.media.session.MediaController";
 
         /* renamed from: a  reason: collision with root package name */
-        RemoteUserInfoImpl f3162a;
+        RemoteUserInfoImpl f3114a;
 
         public RemoteUserInfo(MediaSessionManager.RemoteUserInfo remoteUserInfo) {
-            this.f3162a = new MediaSessionManagerImplApi28.RemoteUserInfoImplApi28(remoteUserInfo);
+            this.f3114a = new MediaSessionManagerImplApi28.RemoteUserInfoImplApi28(remoteUserInfo);
         }
 
         public RemoteUserInfo(String str, int i, int i2) {
             if (Build.VERSION.SDK_INT >= 28) {
-                this.f3162a = new MediaSessionManagerImplApi28.RemoteUserInfoImplApi28(str, i, i2);
+                this.f3114a = new MediaSessionManagerImplApi28.RemoteUserInfoImplApi28(str, i, i2);
             } else {
-                this.f3162a = new MediaSessionManagerImplBase.RemoteUserInfoImplBase(str, i, i2);
+                this.f3114a = new MediaSessionManagerImplBase.RemoteUserInfoImplBase(str, i, i2);
             }
         }
 
@@ -49,25 +49,25 @@ public final class MediaSessionManager {
                 return true;
             }
             if (obj instanceof RemoteUserInfo) {
-                return this.f3162a.equals(((RemoteUserInfo) obj).f3162a);
+                return this.f3114a.equals(((RemoteUserInfo) obj).f3114a);
             }
             return false;
         }
 
         public String getPackageName() {
-            return this.f3162a.getPackageName();
+            return this.f3114a.getPackageName();
         }
 
         public int getPid() {
-            return this.f3162a.getPid();
+            return this.f3114a.getPid();
         }
 
         public int getUid() {
-            return this.f3162a.getUid();
+            return this.f3114a.getUid();
         }
 
         public int hashCode() {
-            return this.f3162a.hashCode();
+            return this.f3114a.hashCode();
         }
     }
 
@@ -95,7 +95,7 @@ public final class MediaSessionManager {
         MediaSessionManager mediaSessionManager;
         MediaSessionManager mediaSessionManager2 = d;
         if (mediaSessionManager2 == null) {
-            synchronized (f3161c) {
+            synchronized (f3113c) {
                 MediaSessionManager mediaSessionManager3 = d;
                 mediaSessionManager = mediaSessionManager3;
                 if (mediaSessionManager3 == null) {
@@ -114,7 +114,7 @@ public final class MediaSessionManager {
 
     public boolean isTrustedForMediaControl(RemoteUserInfo remoteUserInfo) {
         if (remoteUserInfo != null) {
-            return this.b.isTrustedForMediaControl(remoteUserInfo.f3162a);
+            return this.b.isTrustedForMediaControl(remoteUserInfo.f3114a);
         }
         throw new IllegalArgumentException("userInfo should not be null");
     }

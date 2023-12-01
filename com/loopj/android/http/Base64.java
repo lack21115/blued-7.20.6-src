@@ -1,5 +1,6 @@
 package com.loopj.android.http;
 
+import com.anythink.expressad.exoplayer.b;
 import java.io.UnsupportedEncodingException;
 
 /* loaded from: source-7994992-dex2jar.jar:com/loopj/android/http/Base64.class */
@@ -292,7 +293,7 @@ public class Base64 {
                 return decoder.output;
             }
             byte[] bArr2 = new byte[decoder.op];
-            System.arraycopy((Object) decoder.output, 0, (Object) bArr2, 0, decoder.op);
+            System.arraycopy(decoder.output, 0, bArr2, 0, decoder.op);
             return bArr2;
         }
         throw new IllegalArgumentException("bad base-64");
@@ -329,7 +330,7 @@ public class Base64 {
 
     public static String encodeToString(byte[] bArr, int i) {
         try {
-            return new String(encode(bArr, i), "US-ASCII");
+            return new String(encode(bArr, i), b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }
@@ -337,7 +338,7 @@ public class Base64 {
 
     public static String encodeToString(byte[] bArr, int i, int i2, int i3) {
         try {
-            return new String(encode(bArr, i, i2, i3), "US-ASCII");
+            return new String(encode(bArr, i, i2, i3), b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

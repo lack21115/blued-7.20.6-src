@@ -10,14 +10,10 @@ import kotlin.coroutines.Continuation;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/api/BluedApiProxy.class */
 public class BluedApiProxy {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f10622a = false;
+    public static boolean a = false;
     private static volatile BluedApiProxy d;
     private Map<String, String> b = new HashMap();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Map<Method, BluedServiceMethod> f10623c = new HashMap();
+    private final Map<Method, BluedServiceMethod> c = new HashMap();
 
     private BluedApiProxy() {
     }
@@ -25,16 +21,16 @@ public class BluedApiProxy {
     /* JADX INFO: Access modifiers changed from: private */
     public BluedServiceMethod a(Method method) {
         BluedServiceMethod bluedServiceMethod;
-        BluedServiceMethod bluedServiceMethod2 = this.f10623c.get(method);
+        BluedServiceMethod bluedServiceMethod2 = this.c.get(method);
         if (bluedServiceMethod2 != null) {
             return bluedServiceMethod2;
         }
-        synchronized (this.f10623c) {
-            BluedServiceMethod bluedServiceMethod3 = this.f10623c.get(method);
+        synchronized (this.c) {
+            BluedServiceMethod bluedServiceMethod3 = this.c.get(method);
             bluedServiceMethod = bluedServiceMethod3;
             if (bluedServiceMethod3 == null) {
                 bluedServiceMethod = new BluedServiceMethod.Builder(method).j();
-                this.f10623c.put(method, bluedServiceMethod);
+                this.c.put(method, bluedServiceMethod);
             }
         }
         return bluedServiceMethod;
@@ -77,6 +73,6 @@ public class BluedApiProxy {
             return;
         }
         this.b = map;
-        this.f10623c.clear();
+        this.c.clear();
     }
 }

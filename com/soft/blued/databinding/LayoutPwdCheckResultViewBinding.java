@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutPwdCheckResultViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29425a;
+    private final ConstraintLayout f15735a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29425a;
+        return this.f15735a;
     }
 }

@@ -6,11 +6,11 @@ import android.os.CountDownTimer;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f8376a = 1000;
+    private static final long f5536a = 1000;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f8377c;
+    private long f5537c;
     private com.anythink.expressad.video.dynview.i.c.a d;
     private a e;
 
@@ -19,19 +19,19 @@ public final class b {
     public static final class a extends CountDownTimer {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.anythink.expressad.video.dynview.i.c.a f8378a;
+        private com.anythink.expressad.video.dynview.i.c.a f5538a;
 
         public a(long j, long j2) {
             super(j, j2);
         }
 
         final void a(com.anythink.expressad.video.dynview.i.c.a aVar) {
-            this.f8378a = aVar;
+            this.f5538a = aVar;
         }
 
         @Override // android.os.CountDownTimer
         public final void onFinish() {
-            com.anythink.expressad.video.dynview.i.c.a aVar = this.f8378a;
+            com.anythink.expressad.video.dynview.i.c.a aVar = this.f5538a;
             if (aVar != null) {
                 aVar.a();
             }
@@ -39,7 +39,7 @@ public final class b {
 
         @Override // android.os.CountDownTimer
         public final void onTick(long j) {
-            com.anythink.expressad.video.dynview.i.c.a aVar = this.f8378a;
+            com.anythink.expressad.video.dynview.i.c.a aVar = this.f5538a;
             if (aVar != null) {
                 aVar.a(j);
             }
@@ -52,16 +52,16 @@ public final class b {
             aVar.cancel();
             this.e = null;
         }
-        if (this.f8377c <= 0) {
-            this.f8377c = this.b + 1000;
+        if (this.f5537c <= 0) {
+            this.f5537c = this.b + 1000;
         }
-        a aVar2 = new a(this.b, this.f8377c);
+        a aVar2 = new a(this.b, this.f5537c);
         this.e = aVar2;
         aVar2.a(this.d);
     }
 
     public final b a() {
-        this.f8377c = 1000L;
+        this.f5537c = 1000L;
         return this;
     }
 

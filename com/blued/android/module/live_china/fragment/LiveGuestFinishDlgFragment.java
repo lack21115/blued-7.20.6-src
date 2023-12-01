@@ -164,13 +164,13 @@ public class LiveGuestFinishDlgFragment extends com.blued.android.module.common.
         }
         this.t.setVisibility(0);
         this.y.setVisibility(0);
-        String a2 = liveAnnounceInfoModel.live_time_controller == 1 ? LiveUtils.a(liveAnnounceInfoModel) : "";
+        String a = liveAnnounceInfoModel.live_time_controller == 1 ? LiveUtils.a(liveAnnounceInfoModel) : "";
         String str = liveAnnounceInfoModel.notice_controller == 1 ? liveAnnounceInfoModel.notice : "";
-        if (TextUtils.isEmpty(a2)) {
+        if (TextUtils.isEmpty(a)) {
             this.q.setVisibility(8);
         } else {
             TextView textView = this.q;
-            textView.setText(a2 + "直播");
+            textView.setText(a + "直播");
             this.q.setVisibility(0);
         }
         if (TextUtils.isEmpty(str)) {
@@ -398,7 +398,7 @@ public class LiveGuestFinishDlgFragment extends com.blued.android.module.common.
         this.s = (ShapeTextView) this.b.findViewById(R.id.live_guest_finish_anchor_attention);
         TextView textView = (TextView) this.b.findViewById(R.id.live_guest_finish_changed);
         this.u = (LinearLayout) this.b.findViewById(R.id.live_guest_finish_changed_loading);
-        this.x = (RecyclerView) this.b.findViewById(R.id.rv_recommend_data);
+        this.x = this.b.findViewById(R.id.rv_recommend_data);
         this.m = (ImageView) this.b.findViewById(R.id.background_header);
         n();
         this.x.setLayoutManager(new GridLayoutManager(getContext(), 2));
@@ -474,6 +474,7 @@ public class LiveGuestFinishDlgFragment extends com.blued.android.module.common.
         LiveRoomHttpUtils.u(new AnonymousClass2(a()));
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.fragment.LiveGuestFinishDlgFragment$4] */
     public void m() {
         s();
         this.A = new CountDownTimer(8000L, 1000L) { // from class: com.blued.android.module.live_china.fragment.LiveGuestFinishDlgFragment.4
@@ -497,7 +498,7 @@ public class LiveGuestFinishDlgFragment extends com.blued.android.module.common.
         return true;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         s();

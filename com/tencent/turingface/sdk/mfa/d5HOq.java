@@ -10,11 +10,11 @@ import java.util.Map;
 public final class d5HOq {
 
     /* renamed from: a  reason: collision with root package name */
-    public ByteBuffer f39942a;
+    public ByteBuffer f26251a;
     public String b = "GBK";
 
     public d5HOq(int i) {
-        this.f39942a = ByteBuffer.allocate(i);
+        this.f26251a = ByteBuffer.allocate(i);
     }
 
     public final void a(byte b, int i) {
@@ -24,20 +24,20 @@ public final class d5HOq {
             return;
         }
         b((byte) 0, i);
-        this.f39942a.put(b);
+        this.f26251a.put(b);
     }
 
     public final void a(float f, int i) {
         a(6);
         b((byte) 4, i);
-        this.f39942a.putFloat(f);
+        this.f26251a.putFloat(f);
     }
 
     public final void a(int i) {
-        if (this.f39942a.remaining() < i) {
-            ByteBuffer allocate = ByteBuffer.allocate((this.f39942a.capacity() + i) * 2);
-            allocate.put(this.f39942a.array(), 0, this.f39942a.position());
-            this.f39942a = allocate;
+        if (this.f26251a.remaining() < i) {
+            ByteBuffer allocate = ByteBuffer.allocate((this.f26251a.capacity() + i) * 2);
+            allocate.put(this.f26251a.array(), 0, this.f26251a.position());
+            this.f26251a = allocate;
         }
     }
 
@@ -48,7 +48,7 @@ public final class d5HOq {
             return;
         }
         b((byte) 2, i2);
-        this.f39942a.putInt(i);
+        this.f26251a.putInt(i);
     }
 
     public final void a(long j, int i) {
@@ -58,7 +58,7 @@ public final class d5HOq {
             return;
         }
         b((byte) 3, i);
-        this.f39942a.putLong(j);
+        this.f26251a.putLong(j);
     }
 
     public final void a(ucT3w uct3w, int i) {
@@ -86,7 +86,7 @@ public final class d5HOq {
             double doubleValue = ((Double) obj).doubleValue();
             a(10);
             b((byte) 5, i);
-            this.f39942a.putDouble(doubleValue);
+            this.f26251a.putDouble(doubleValue);
         } else if (obj instanceof String) {
             a((String) obj, i);
         } else if (obj instanceof Map) {
@@ -187,7 +187,7 @@ public final class d5HOq {
                 double d = dArr[i13];
                 a(10);
                 b((byte) 5, 0);
-                this.f39942a.putDouble(d);
+                this.f26251a.putDouble(d);
                 i12 = i13 + 1;
             }
         } else if (!obj.getClass().isArray()) {
@@ -226,13 +226,13 @@ public final class d5HOq {
         a(bytes.length + 10);
         if (bytes.length > 255) {
             b((byte) 7, i);
-            this.f39942a.putInt(bytes.length);
-            this.f39942a.put(bytes);
+            this.f26251a.putInt(bytes.length);
+            this.f26251a.put(bytes);
             return;
         }
         b((byte) 6, i);
-        this.f39942a.put((byte) bytes.length);
-        this.f39942a.put(bytes);
+        this.f26251a.put((byte) bytes.length);
+        this.f26251a.put(bytes);
     }
 
     public final <T> void a(Collection<T> collection, int i) {
@@ -265,7 +265,7 @@ public final class d5HOq {
             return;
         }
         b((byte) 1, i);
-        this.f39942a.putShort(s);
+        this.f26251a.putShort(s);
     }
 
     public final void a(byte[] bArr, int i) {
@@ -273,15 +273,15 @@ public final class d5HOq {
         b((byte) 13, i);
         b((byte) 0, 0);
         a(bArr.length, 0);
-        this.f39942a.put(bArr);
+        this.f26251a.put(bArr);
     }
 
     public final void b(byte b, int i) {
         if (i < 15) {
-            this.f39942a.put((byte) (b | (i << 4)));
+            this.f26251a.put((byte) (b | (i << 4)));
         } else if (i < 256) {
-            this.f39942a.put((byte) (b | 240));
-            this.f39942a.put((byte) i);
+            this.f26251a.put((byte) (b | 240));
+            this.f26251a.put((byte) i);
         } else {
             throw new yiZAu("tag is too large: " + i);
         }

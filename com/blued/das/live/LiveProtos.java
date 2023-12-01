@@ -948,7 +948,7 @@ public final class LiveProtos {
         LIVE_CHALLENGE_PK_PANEL_SHOW(440),
         LIVE_CHALLENGE_PK_PANEL_ANCHOR_CLICK(441),
         LIVE_CHALLENGE_PK_EXPLAIN_SHOW(442),
-        LIVE_CHALLENGE_PK_EXPLAIN_CLICK(443),
+        LIVE_CHALLENGE_PK_EXPLAIN_CLICK(LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE),
         LIVE_ANCHOR_WISH_RESET_BTN_SHOW(444),
         LIVE_ANCHOR_WISH_RESET_BTN_CLICK(445),
         LIVE_ANCHOR_WISH_RESET_YES_CLICK(446),
@@ -2786,7 +2786,7 @@ public final class LiveProtos {
                     return LIVE_CHALLENGE_PK_PANEL_ANCHOR_CLICK;
                 case 442:
                     return LIVE_CHALLENGE_PK_EXPLAIN_SHOW;
-                case 443:
+                case LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE:
                     return LIVE_CHALLENGE_PK_EXPLAIN_CLICK;
                 case 444:
                     return LIVE_ANCHOR_WISH_RESET_BTN_SHOW;
@@ -4493,8 +4493,8 @@ public final class LiveProtos {
 
             @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder mo2030clone() {
+                return (Builder) super.mo2030clone();
             }
 
             @Override // com.blued.das.live.LiveProtos.LiveProtoOrBuilder

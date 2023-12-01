@@ -156,10 +156,10 @@ public class VectorMap extends o1 {
     private float s;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f38168a = false;
+    private boolean f24477a = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f38169c = true;
+    private boolean f24478c = true;
     private mf e = null;
     private g1 f = null;
     private f0 g = null;
@@ -201,19 +201,19 @@ public class VectorMap extends o1 {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f38171a;
+        public static final /* synthetic */ int[] f24480a;
 
         static {
             Language.values();
             int[] iArr = new int[2];
-            f38171a = iArr;
+            f24480a = iArr;
             try {
                 Language language = Language.en;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f38171a;
+                int[] iArr2 = f24480a;
                 Language language2 = Language.zh;
                 iArr2[0] = 2;
             } catch (NoSuchFieldError e2) {
@@ -1144,7 +1144,7 @@ public class VectorMap extends o1 {
     }
 
     public void b(boolean z2) {
-        this.f38169c = z2;
+        this.f24478c = z2;
         this.b.e(z2);
     }
 
@@ -1190,7 +1190,7 @@ public class VectorMap extends o1 {
     }
 
     public void c(boolean z2) {
-        this.f38168a = z2;
+        this.f24477a = z2;
     }
 
     public boolean c0() {
@@ -1352,7 +1352,7 @@ public class VectorMap extends o1 {
     }
 
     public boolean f0() {
-        return this.f38168a;
+        return this.f24477a;
     }
 
     public void g(float f, float f2) {
@@ -1606,7 +1606,7 @@ public class VectorMap extends o1 {
     }
 
     public boolean h0() {
-        return this.f38169c;
+        return this.f24478c;
     }
 
     @Override // com.tencent.mapsdk.internal.o1

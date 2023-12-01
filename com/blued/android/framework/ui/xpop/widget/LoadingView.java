@@ -11,13 +11,9 @@ import com.blued.android.framework.ui.xpop.util.XPopupUtils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/widget/LoadingView.class */
 public class LoadingView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10033a;
+    int a;
     float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f10034c;
+    int c;
     float d;
     float e;
     float f;
@@ -41,21 +37,21 @@ public class LoadingView extends View {
         this.l = new ArgbEvaluator();
         this.m = Color.parseColor("#DDDDDD");
         this.n = Color.parseColor("#333333");
-        this.f10033a = 12;
+        this.a = 12;
         this.b = 360.0f / 12;
-        this.f10034c = 0;
+        this.c = 0;
         this.o = new Runnable() { // from class: com.blued.android.framework.ui.xpop.widget.LoadingView.1
             @Override // java.lang.Runnable
             public void run() {
-                LoadingView.this.f10034c++;
+                LoadingView.this.c++;
                 LoadingView loadingView = LoadingView.this;
                 loadingView.postInvalidate(0, 0, loadingView.getMeasuredWidth(), LoadingView.this.getMeasuredHeight());
             }
         };
         this.h = new Paint(1);
-        float a2 = XPopupUtils.a(context, this.k);
-        this.k = a2;
-        this.h.setStrokeWidth(a2);
+        float a = XPopupUtils.a(context, this.k);
+        this.k = a;
+        this.h.setStrokeWidth(a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -69,15 +65,15 @@ public class LoadingView extends View {
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int i = this.f10033a;
+        int i = this.a;
         while (true) {
             int i2 = i - 1;
             if (i2 < 0) {
                 postDelayed(this.o, 60L);
                 return;
             }
-            int abs = Math.abs(this.f10034c + i2);
-            int i3 = this.f10033a;
+            int abs = Math.abs(this.c + i2);
+            int i3 = this.a;
             this.h.setColor(((Integer) this.l.evaluate((((abs % i3) + 1) * 1.0f) / i3, Integer.valueOf(this.m), Integer.valueOf(this.n))).intValue());
             float f = this.f;
             float f2 = this.e;

@@ -4,30 +4,26 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/d.class */
 public class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5867a = d.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile d f5868c;
+    public static final String a = d.class.getSimpleName();
+    private static volatile d c;
     ConcurrentHashMap<String, com.anythink.basead.c.d> b = new ConcurrentHashMap<>();
 
     private d() {
     }
 
     public static d a() {
-        if (f5868c == null) {
+        if (c == null) {
             synchronized (d.class) {
                 try {
-                    if (f5868c == null) {
-                        f5868c = new d();
+                    if (c == null) {
+                        c = new d();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f5868c;
+        return c;
     }
 
     public final com.anythink.basead.c.d a(int i, String str) {

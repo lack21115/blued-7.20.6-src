@@ -18,24 +18,24 @@ import com.unikuwei.mianmi.account.shield.tencent.UniAccountHelper;
 public class OneKeyLoginManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile OneKeyLoginManager f38985a;
+    private static volatile OneKeyLoginManager f25294a;
 
     private OneKeyLoginManager() {
     }
 
     public static OneKeyLoginManager getInstance() {
-        if (f38985a == null) {
+        if (f25294a == null) {
             synchronized (OneKeyLoginManager.class) {
                 try {
-                    if (f38985a == null) {
-                        f38985a = new OneKeyLoginManager();
+                    if (f25294a == null) {
+                        f25294a = new OneKeyLoginManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f38985a;
+        return f25294a;
     }
 
     public void checkProcessesEnable(boolean z) {

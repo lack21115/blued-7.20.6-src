@@ -11,7 +11,7 @@ public final class di {
         ev.vP().put(com.kwad.sdk.core.report.j.class, new bl());
         ev.vP().put(y.b.class, new bk());
         ev.vP().put(y.a.class, new bi());
-        ev.vP().put(a.C0565a.class, new cv());
+        ev.vP().put(a.C0395a.class, new cv());
         ev.vP().put(q.a.class, new bj());
     }
 }

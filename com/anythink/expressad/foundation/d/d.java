@@ -27,11 +27,11 @@ public class d implements com.anythink.expressad.e.b, Serializable {
     private static final long L = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7777a = "a";
+    public static final String f4937a = "a";
     public static final String b = "pv_urls";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7778c = "parent_session_id";
+    public static final String f4938c = "parent_session_id";
     public static final String d = "ad_type";
     public static final String e = "unit_size";
     public static final String f = "html_url";
@@ -551,7 +551,7 @@ public class d implements com.anythink.expressad.e.b, Serializable {
                 stringBuffer2.append("|");
                 stringBuffer2.append(a((Object) Build.VERSION.RELEASE));
                 stringBuffer2.append("|");
-                stringBuffer2.append(a((Object) com.anythink.expressad.out.b.f8067a));
+                stringBuffer2.append(a((Object) com.anythink.expressad.out.b.f5227a));
                 stringBuffer2.append("|");
                 stringBuffer2.append(a((Object) com.anythink.core.common.k.d.a()));
                 stringBuffer2.append("|");

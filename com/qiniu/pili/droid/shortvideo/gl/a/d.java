@@ -4,13 +4,13 @@ package com.qiniu.pili.droid.shortvideo.gl.a;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f27690a;
+    private c f14002a;
 
     public d(Object obj, int i) {
         if (com.qiniu.pili.droid.shortvideo.f.d.b()) {
-            this.f27690a = new b(obj, i);
+            this.f14002a = new b(obj, i);
         } else {
-            this.f27690a = new a(obj, i);
+            this.f14002a = new a(obj, i);
         }
     }
 
@@ -19,33 +19,33 @@ public class d {
     }
 
     public void a() {
-        this.f27690a.a();
+        this.f14002a.a();
     }
 
     public void a(Object obj) {
-        this.f27690a.a(obj);
+        this.f14002a.a(obj);
     }
 
     public void a(Object obj, long j) {
-        this.f27690a.a(obj, j);
+        this.f14002a.a(obj, j);
     }
 
     public Object b(Object obj) {
-        return this.f27690a.b(obj);
+        return this.f14002a.b(obj);
     }
 
     public void c(Object obj) {
-        this.f27690a.c(obj);
+        this.f14002a.c(obj);
     }
 
     public boolean d(Object obj) {
-        return this.f27690a.d(obj);
+        return this.f14002a.d(obj);
     }
 
     protected void finalize() throws Throwable {
         try {
-            if (this.f27690a != null) {
-                this.f27690a.finalize();
+            if (this.f14002a != null) {
+                this.f14002a.finalize();
             }
         } finally {
             super.finalize();

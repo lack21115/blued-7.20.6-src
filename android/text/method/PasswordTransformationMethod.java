@@ -236,7 +236,7 @@ public class PasswordTransformationMethod implements TransformationMethod, TextW
                 if (view != null || i5 >= viewReferenceArr.length) {
                     break;
                 }
-                view = viewReferenceArr[i5].get();
+                view = (View) viewReferenceArr[i5].get();
                 i4 = i5 + 1;
             }
             if (view == null || (TextKeyListener.getInstance().getPrefs(view.getContext()) & 8) == 0 || i3 <= 0) {

@@ -45,7 +45,6 @@ class ProxyDetectorImpl implements ProxyDetector {
         }
     };
     private static final Supplier<ProxySelector> DEFAULT_PROXY_SELECTOR = new Supplier<ProxySelector>() { // from class: io.grpc.internal.ProxyDetectorImpl.2
-        @Override // com.google.common.base.Supplier
         public ProxySelector get() {
             return ProxySelector.getDefault();
         }
@@ -75,7 +74,7 @@ class ProxyDetectorImpl implements ProxyDetector {
         try {
             try {
                 URI uri = new URI("https", null, GrpcUtil.getHost(inetSocketAddress), inetSocketAddress.getPort(), null, null, null);
-                ProxySelector proxySelector = this.proxySelector.get();
+                ProxySelector proxySelector = (ProxySelector) this.proxySelector.get();
                 if (proxySelector == null) {
                     log.log(Level.FINE, "proxy selector is null, so continuing without proxy lookup");
                     return null;
@@ -122,7 +121,6 @@ class ProxyDetectorImpl implements ProxyDetector {
         return new InetSocketAddress(split[0], i);
     }
 
-    @Override // io.grpc.ProxyDetector
     @Nullable
     public ProxiedSocketAddress proxyFor(SocketAddress socketAddress) throws IOException {
         if (socketAddress instanceof InetSocketAddress) {

@@ -7,35 +7,35 @@ import android.view.View;
 public class b extends a {
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.e.a.b.f.a f24775c;
+    private com.opos.cmn.e.a.b.f.a f11087c;
 
     public b(Activity activity, com.opos.cmn.e.a.b.d.a aVar) {
         super(activity, aVar);
-        this.f24774a = activity;
+        this.f11086a = activity;
         this.b = aVar;
-        this.f24775c = (aVar == null || aVar.f24770a == 0) ? new com.opos.cmn.e.a.b.f.a(activity, aVar) : new com.opos.cmn.e.a.b.f.a(activity, aVar.f24770a, aVar);
-        com.opos.cmn.e.a.d.a.a(activity, this.f24775c);
+        this.f11087c = (aVar == null || aVar.f11082a == 0) ? new com.opos.cmn.e.a.b.f.a(activity, aVar) : new com.opos.cmn.e.a.b.f.a(activity, aVar.f11082a, aVar);
+        com.opos.cmn.e.a.d.a.a(activity, this.f11087c);
     }
 
     @Override // com.opos.cmn.e.a.b.e.c
     public void a(View view) {
         if (view != null) {
-            this.f24775c.setContentView(view);
+            this.f11087c.setContentView(view);
         }
     }
 
     @Override // com.opos.cmn.e.a.b.e.c
     public boolean a() {
-        return this.f24775c.isShowing();
+        return this.f11087c.isShowing();
     }
 
     @Override // com.opos.cmn.e.a.b.e.c
     public void b() {
-        this.f24775c.show();
+        this.f11087c.show();
     }
 
     @Override // com.opos.cmn.e.a.b.e.c
     public void c() {
-        this.f24775c.dismiss();
+        this.f11087c.dismiss();
     }
 }

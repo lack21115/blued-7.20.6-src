@@ -7,8 +7,8 @@ public class a {
 
     /* renamed from: com.tencent.qmsp.sdk.e.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/e/a$a.class */
-    static final class RunnableC0989a implements Runnable {
-        RunnableC0989a() {
+    static final class RunnableC0819a implements Runnable {
+        RunnableC0819a() {
         }
 
         @Override // java.lang.Runnable
@@ -22,6 +22,6 @@ public class a {
     }
 
     public static void a() {
-        f.i().c().post(new RunnableC0989a());
+        f.i().c().post(new RunnableC0819a());
     }
 }

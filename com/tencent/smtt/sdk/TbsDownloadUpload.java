@@ -18,10 +18,10 @@ public class TbsDownloadUpload {
     private static TbsDownloadUpload b;
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, Object> f38762a = new HashMap();
+    Map<String, Object> f25071a = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f38763c;
+    private Context f25072c;
     private int d;
     private int e;
     private int f;
@@ -43,9 +43,9 @@ public class TbsDownloadUpload {
     public TbsDownloadUpload(Context context) {
         this.mPreferences = context.getSharedPreferences("tbs_download_upload", 4);
         Context applicationContext = context.getApplicationContext();
-        this.f38763c = applicationContext;
+        this.f25072c = applicationContext;
         if (applicationContext == null) {
-            this.f38763c = context;
+            this.f25072c = context;
         }
     }
 
@@ -106,12 +106,12 @@ public class TbsDownloadUpload {
     }
 
     public void clearUploadCode() {
-        this.f38762a.put(TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 0);
-        this.f38762a.put(TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 0);
-        this.f38762a.put(TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 0);
-        this.f38762a.put(TbsUploadKey.KEY_NEEDDOWNLOAD_SENT, 0);
-        this.f38762a.put(TbsUploadKey.KEY_STARTDOWNLOAD_SENT, 0);
-        this.f38762a.put(TbsUploadKey.KEY_LOCAL_CORE_VERSION, 0);
+        this.f25071a.put(TbsUploadKey.KEY_NEEDDOWNLOAD_CODE, 0);
+        this.f25071a.put(TbsUploadKey.KEY_STARTDOWNLOAD_CODE, 0);
+        this.f25071a.put(TbsUploadKey.KEY_NEEDDOWNLOAD_RETURN, 0);
+        this.f25071a.put(TbsUploadKey.KEY_NEEDDOWNLOAD_SENT, 0);
+        this.f25071a.put(TbsUploadKey.KEY_STARTDOWNLOAD_SENT, 0);
+        this.f25071a.put(TbsUploadKey.KEY_LOCAL_CORE_VERSION, 0);
         writeTbsDownloadInfo();
     }
 
@@ -160,7 +160,7 @@ public class TbsDownloadUpload {
         File a2;
         synchronized (this) {
             try {
-                a2 = a(this.f38763c, "download_upload");
+                a2 = a(this.f25072c, "download_upload");
             } catch (Throwable th) {
                 th = th;
                 bufferedInputStream = null;
@@ -225,7 +225,7 @@ public class TbsDownloadUpload {
         synchronized (this) {
             TbsLog.i("TbsDownloadUpload", "writeTbsDownloadInfo #1");
             try {
-                a2 = a(this.f38763c, "download_upload");
+                a2 = a(this.f25072c, "download_upload");
             } catch (Throwable th) {
                 th = th;
                 bufferedOutputStream = null;
@@ -238,12 +238,12 @@ public class TbsDownloadUpload {
             try {
                 properties = new Properties();
                 properties.load(bufferedInputStream);
-                for (String str : this.f38762a.keySet()) {
-                    Object obj = this.f38762a.get(str);
+                for (String str : this.f25071a.keySet()) {
+                    Object obj = this.f25071a.get(str);
                     properties.setProperty(str, "" + obj);
                     TbsLog.i("TbsDownloadUpload", "writeTbsDownloadInfo key is " + str + " value is " + obj);
                 }
-                this.f38762a.clear();
+                this.f25071a.clear();
                 bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(a2));
             } catch (Throwable th2) {
                 th = th2;

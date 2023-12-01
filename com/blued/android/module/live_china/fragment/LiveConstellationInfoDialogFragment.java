@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import androidx.fragment.app.FragmentManager;
+import com.anythink.basead.b.a;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.util.ImageSize;
@@ -31,9 +32,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveConstellationInfoDialogFragment.class */
 public final class LiveConstellationInfoDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12805a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogLiveConstellationInfoBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveConstellationInfoDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -63,7 +62,7 @@ public final class LiveConstellationInfoDialogFragment extends BaseDialogFragmen
             String str2 = str;
             if (!(str2 == null || str2.length() == 0)) {
                 Bundle bundle = new Bundle();
-                bundle.putString("image_url", str);
+                bundle.putString(a.C0030a.h, str);
                 liveConstellationInfoDialogFragment.setArguments(bundle);
             }
             liveConstellationInfoDialogFragment.show(manager, LiveConstellationInfoDialogFragment.class.getSimpleName());
@@ -82,7 +81,7 @@ public final class LiveConstellationInfoDialogFragment extends BaseDialogFragmen
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(it, "$it");
         final Ref.IntRef intRef = new Ref.IntRef();
-        intRef.f42543a = this$0.d().f11758c.getWidth();
+        intRef.a = this$0.d().c.getWidth();
         final ImageSize imageSize = new ImageSize();
         ImageFileLoader.a(this$0.a()).a(it).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.LiveConstellationInfoDialogFragment$initView$2$1$1
             @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
@@ -93,17 +92,17 @@ public final class LiveConstellationInfoDialogFragment extends BaseDialogFragmen
                     return;
                 }
                 d = LiveConstellationInfoDialogFragment.this.d();
-                d.f11758c.setZoomEnabled(false);
+                d.c.setZoomEnabled(false);
                 float a2 = imageSize.a();
                 float f = 1.0f;
-                if (intRef.f42543a > 0) {
+                if (intRef.a > 0) {
                     f = 1.0f;
                     if (a2 > 0.0f) {
-                        f = (intRef.f42543a * 1.0f) / a2;
+                        f = (intRef.a * 1.0f) / a2;
                     }
                 }
                 d2 = LiveConstellationInfoDialogFragment.this.d();
-                d2.f11758c.a(ImageSource.b(file.getAbsolutePath()), new ImageViewState(f, new PointF(0.0f, 0.0f), 0));
+                d2.c.a(ImageSource.b(file.getAbsolutePath()), new ImageViewState(f, new PointF(0.0f, 0.0f), 0));
             }
         }).a();
     }
@@ -116,18 +115,18 @@ public final class LiveConstellationInfoDialogFragment extends BaseDialogFragmen
     private final void e() {
         final String string;
         ImageLoader.a(a(), "https://web.bldimg.com/image-manager/1688526244_65682.webp").b(R.drawable.live_constellation_info_bg_preview).a(d().b);
-        ImageLoader.a(a(), "https://web.bldimg.com/image-manager/1688526244_67560.webp").c(300).a(d().f11757a);
-        d().f11757a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationInfoDialogFragment$RqAkpr24R8vfqIkstK8nQ4mU3oU
+        ImageLoader.a(a(), "https://web.bldimg.com/image-manager/1688526244_67560.webp").c(300).a(d().a);
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationInfoDialogFragment$RqAkpr24R8vfqIkstK8nQ4mU3oU
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveConstellationInfoDialogFragment.a(LiveConstellationInfoDialogFragment.this, view);
             }
         });
         Bundle arguments = getArguments();
-        if (arguments == null || (string = arguments.getString("image_url", null)) == null) {
+        if (arguments == null || (string = arguments.getString(a.C0030a.h, null)) == null) {
             return;
         }
-        d().f11758c.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationInfoDialogFragment$ojYKGDIXYhbbvM41jZ7DnjbdFu0
+        d().c.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveConstellationInfoDialogFragment$ojYKGDIXYhbbvM41jZ7DnjbdFu0
             @Override // java.lang.Runnable
             public final void run() {
                 LiveConstellationInfoDialogFragment.a(LiveConstellationInfoDialogFragment.this, string);
@@ -135,12 +134,11 @@ public final class LiveConstellationInfoDialogFragment extends BaseDialogFragmen
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 623.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView((View) d().getRoot(), new ViewGroup.LayoutParams(-1, a2));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(0));
@@ -153,7 +151,6 @@ public final class LiveConstellationInfoDialogFragment extends BaseDialogFragmen
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

@@ -7,20 +7,20 @@ import java.util.Set;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Set<String> f41804a;
+    private Set<String> f28113a;
 
     public d() {
-        this.f41804a = null;
-        this.f41804a = new HashSet();
+        this.f28113a = null;
+        this.f28113a = new HashSet();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final boolean a(String str) {
-        return this.f41804a.contains(str);
+        return this.f28113a.contains(str);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void b(String str) {
-        this.f41804a.add(str);
+        this.f28113a.add(str);
     }
 }

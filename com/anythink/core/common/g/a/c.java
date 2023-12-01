@@ -12,9 +12,7 @@ public abstract class c {
     public static final int f = 2;
     public static final int g = 3;
     public static final int h = 4;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f6712a = 0;
+    private final int a = 0;
     protected int i;
     protected String j;
 

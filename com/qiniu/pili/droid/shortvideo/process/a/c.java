@@ -25,11 +25,11 @@ import java.util.concurrent.CountDownLatch;
 public class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f27759a = "MultiVideoMixer";
+    public static String f14071a = "MultiVideoMixer";
     private PLVideoEncodeSetting b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinkedList<PLVideoMixItem> f27760c;
+    private LinkedList<PLVideoMixItem> f14072c;
     private LinkedList<e> d;
     private com.qiniu.pili.droid.shortvideo.gl.a.f e;
     private g f;
@@ -54,34 +54,34 @@ public class c implements Runnable {
     private volatile int v = -1;
     private int z = 0;
     private int A = 0;
-    private a.InterfaceC0745a B = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.c.2
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a B = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.c.2
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.c(str, "audio encode format: " + mediaFormat);
             c.this.m = mediaFormat;
             c.this.j();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.b(str, "encoded audio frame: " + bufferInfo.presentationTimeUs);
             if (c.this.k != null) {
                 c.this.k.b(byteBuffer, bufferInfo);
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.c(str, "audio encode started result: " + z);
             if (z) {
                 c.this.i();
@@ -90,43 +90,43 @@ public class c implements Runnable {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(c.f27759a, "audio encode stopped");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(c.f14071a, "audio encode stopped");
             c.this.k();
         }
     };
-    private a.InterfaceC0745a C = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.c.3
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a C = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.process.a.c.3
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.c(str, "got video format:" + mediaFormat);
             c.this.n = mediaFormat;
             c.this.j();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             c.this.h = surface;
             new Thread(c.this).start();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (c.this.k != null) {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-                String str = c.f27759a;
+                String str = c.f14071a;
                 eVar.b(str, "video encoded frame size:" + bufferInfo.size + " ts:" + bufferInfo.presentationTimeUs);
                 c.this.k.a(byteBuffer, bufferInfo);
                 c.this.j.onProgressUpdate((((float) bufferInfo.presentationTimeUs) * 1.0f) / ((float) (c.this.o * 1000)));
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.c(str, "video encode started result: " + z);
             if (z) {
                 return;
@@ -134,9 +134,9 @@ public class c implements Runnable {
             c.this.a(6);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(c.f27759a, "video encode stopped");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(c.f14071a, "video encode stopped");
             c.this.n = null;
             c.this.k();
         }
@@ -145,26 +145,26 @@ public class c implements Runnable {
         @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
         public void onProgressUpdate(float f) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.c(str, "onProgressUpdate: " + f);
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
         public void onSaveVideoCanceled() {
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(c.f27759a, "onSaveVideoCanceled");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(c.f14071a, "onSaveVideoCanceled");
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
         public void onSaveVideoFailed(int i) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.c(str, "onSaveVideoFailed: " + i);
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
         public void onSaveVideoSuccess(String str) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str2 = c.f27759a;
+            String str2 = c.f14071a;
             eVar.c(str2, "onSaveVideoSuccess: " + str);
         }
     };
@@ -175,21 +175,21 @@ public class c implements Runnable {
         private volatile long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f27766c;
+        private long f14078c;
         private String d;
 
         public a(String str, long j) {
             this.d = str;
-            this.f27766c = j;
+            this.f14078c = j;
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.d.b.c
         public void a(ByteBuffer byteBuffer, int i, long j, long j2, boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = c.f27759a;
+            String str = c.f14071a;
             eVar.b(str, "video decode frame, elapseTimestampUs : " + j2 + " curMixDurationUs : " + c.this.p + " path : " + this.d);
             c.this.r.countDown();
-            this.b = z ? Long.MAX_VALUE : (this.f27766c * 1000) + j2;
+            this.b = z ? Long.MAX_VALUE : (this.f14078c * 1000) + j2;
             while (b() && !c.this.s) {
             }
             while (!a() && !c.this.s) {
@@ -201,7 +201,7 @@ public class c implements Runnable {
         }
 
         public boolean b() {
-            return c.this.p < this.f27766c * 1000;
+            return c.this.p < this.f14078c * 1000;
         }
     }
 
@@ -224,18 +224,18 @@ public class c implements Runnable {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(int i) {
         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-        String str = f27759a;
+        String str = f14071a;
         eVar.e(str, "exceptionalStop + " + i);
         a();
         k();
         com.qiniu.pili.droid.shortvideo.f.e eVar2 = com.qiniu.pili.droid.shortvideo.f.e.x;
-        String str2 = f27759a;
+        String str2 = f14071a;
         eVar2.e(str2, "exceptionalStop - " + i);
     }
 
     private boolean a(String str) {
         if (str == null) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.e(f27759a, "dest video path is wrong!");
+            com.qiniu.pili.droid.shortvideo.f.e.x.e(f14071a, "dest video path is wrong!");
             return false;
         }
         File parentFile = new File(str).getParentFile();
@@ -243,7 +243,7 @@ public class c implements Runnable {
             return true;
         }
         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-        String str2 = f27759a;
+        String str2 = f14071a;
         eVar.e(str2, "failed to mkdir: " + parentFile.getAbsolutePath());
         return false;
     }
@@ -254,21 +254,21 @@ public class c implements Runnable {
             pLVideoSaveListener2 = this.D;
         }
         if (list == null || list.isEmpty() || list.size() <= 1 || str == null || pLVideoEncodeSetting == null) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.e(f27759a, "mix: invalid params !");
+            com.qiniu.pili.droid.shortvideo.f.e.x.e(f14071a, "mix: invalid params !");
             pLVideoSaveListener2.onSaveVideoFailed(10);
             return false;
         } else if (!a(str)) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.e(f27759a, "mix: destVideoPath is wrong!");
+            com.qiniu.pili.droid.shortvideo.f.e.x.e(f14071a, "mix: destVideoPath is wrong!");
             pLVideoSaveListener2.onSaveVideoFailed(10);
             return false;
         } else {
             for (PLVideoMixItem pLVideoMixItem : list) {
                 if (pLVideoMixItem == null) {
-                    com.qiniu.pili.droid.shortvideo.f.e.x.e(f27759a, "mix failed, item is null !");
+                    com.qiniu.pili.droid.shortvideo.f.e.x.e(f14071a, "mix failed, item is null !");
                     pLVideoSaveListener2.onSaveVideoFailed(10);
                     return false;
                 } else if (pLVideoMixItem.getVideoPath().equals(str)) {
-                    com.qiniu.pili.droid.shortvideo.f.e.x.e(f27759a, "mix failed, the dest video path must be different with src videos !");
+                    com.qiniu.pili.droid.shortvideo.f.e.x.e(f14071a, "mix failed, the dest video path must be different with src videos !");
                     pLVideoSaveListener2.onSaveVideoFailed(10);
                     return false;
                 }
@@ -288,9 +288,9 @@ public class c implements Runnable {
     }
 
     private void c() {
-        this.r = new CountDownLatch(this.f27760c.size());
+        this.r = new CountDownLatch(this.f14072c.size());
         this.d = new LinkedList<>();
-        Iterator<PLVideoMixItem> it = this.f27760c.iterator();
+        Iterator<PLVideoMixItem> it = this.f14072c.iterator();
         while (it.hasNext()) {
             PLVideoMixItem next = it.next();
             e eVar = new e(next, this.b.getVideoEncodingWidth(), this.b.getVideoEncodingHeight());
@@ -329,7 +329,7 @@ public class c implements Runnable {
             this.e.a(this.p * 1000);
             this.e.c();
             this.i.a(this.p * 1000);
-            com.qiniu.pili.droid.shortvideo.f.e.x.b(f27759a, "mixVideoFrame, mix timestamp is : " + this.p);
+            com.qiniu.pili.droid.shortvideo.f.e.x.b(f14071a, "mixVideoFrame, mix timestamp is : " + this.p);
             this.p = this.p + videoEncodingFps;
         }
         this.s = true;
@@ -401,11 +401,11 @@ public class c implements Runnable {
     /* JADX INFO: Access modifiers changed from: private */
     public void j() {
         synchronized (this) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "startMuxer +");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "startMuxer +");
             int i = this.z + 1;
             this.z = i;
             if (this.y != null && i < 2) {
-                com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "not ready to start muxer.");
+                com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "not ready to start muxer.");
                 try {
                     wait();
                 } catch (InterruptedException e) {
@@ -416,32 +416,32 @@ public class c implements Runnable {
             com.qiniu.pili.droid.shortvideo.muxer.b bVar = new com.qiniu.pili.droid.shortvideo.muxer.b();
             this.k = bVar;
             if (bVar.a(this.l, this.n, this.m, 0)) {
-                com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "start muxer success!");
+                com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "start muxer success!");
                 notify();
             } else {
-                com.qiniu.pili.droid.shortvideo.f.e.x.e(f27759a, "start muxer failed!");
+                com.qiniu.pili.droid.shortvideo.f.e.x.e(f14071a, "start muxer failed!");
                 a();
             }
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "startMuxer -");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "startMuxer -");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void k() {
         synchronized (this) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "stopMuxer +");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "stopMuxer +");
             boolean z = true;
             int i = this.A + 1;
             this.A = i;
             if (this.y != null && i < 2) {
-                com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "not ready to stop muxer.");
+                com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "not ready to stop muxer.");
                 return;
             }
             if (this.k == null || !this.k.a()) {
                 z = false;
             }
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.x;
-            String str = f27759a;
+            String str = f14071a;
             StringBuilder sb = new StringBuilder();
             sb.append("stop muxer ");
             sb.append(z ? bw.o : bc.b.S);
@@ -449,9 +449,9 @@ public class c implements Runnable {
             this.k = null;
             this.i = null;
             this.y = null;
-            if (this.f27760c != null) {
-                this.f27760c.clear();
-                this.f27760c = null;
+            if (this.f14072c != null) {
+                this.f14072c.clear();
+                this.f14072c = null;
             }
             if (this.w != null) {
                 this.w.clear();
@@ -489,7 +489,7 @@ public class c implements Runnable {
                 new File(this.l).delete();
                 this.j.onSaveVideoFailed(3);
             }
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "stopMuxer -");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "stopMuxer -");
         }
     }
 
@@ -500,20 +500,20 @@ public class c implements Runnable {
     public void a() {
         synchronized (this) {
             if (this.u) {
-                com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "cancel mix");
+                com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "cancel mix");
                 this.t = true;
                 if (this.x != null) {
                     this.x.a();
                 }
             } else {
-                com.qiniu.pili.droid.shortvideo.f.e.x.d(f27759a, "cancel mix failed");
+                com.qiniu.pili.droid.shortvideo.f.e.x.d(f14071a, "cancel mix failed");
             }
         }
     }
 
     public boolean a(List<PLVideoMixItem> list, String str, long j, PLVideoEncodeSetting pLVideoEncodeSetting, PLVideoSaveListener pLVideoSaveListener) {
         synchronized (this) {
-            com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "mixItems +");
+            com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "mixItems +");
             if (a(list, str, pLVideoEncodeSetting, pLVideoSaveListener)) {
                 PLVideoSaveListener pLVideoSaveListener2 = pLVideoSaveListener;
                 if (pLVideoSaveListener == null) {
@@ -521,12 +521,12 @@ public class c implements Runnable {
                 }
                 this.j = pLVideoSaveListener2;
                 if (this.u) {
-                    com.qiniu.pili.droid.shortvideo.f.e.s.e(f27759a, "mix already started +");
+                    com.qiniu.pili.droid.shortvideo.f.e.s.e(f14071a, "mix already started +");
                     this.j.onSaveVideoFailed(1);
                     return false;
                 }
                 this.b = pLVideoEncodeSetting;
-                this.f27760c = new LinkedList<>(list);
+                this.f14072c = new LinkedList<>(list);
                 this.w = new LinkedList();
                 this.l = str;
                 this.o = j;
@@ -541,7 +541,7 @@ public class c implements Runnable {
                 eVar.a(this.C);
                 this.i.a();
                 this.u = true;
-                com.qiniu.pili.droid.shortvideo.f.e.x.c(f27759a, "mixItems +");
+                com.qiniu.pili.droid.shortvideo.f.e.x.c(f14071a, "mixItems +");
                 return true;
             }
             return false;

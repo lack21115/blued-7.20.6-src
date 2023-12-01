@@ -11,9 +11,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/utils/p.class */
 public class p {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/utils/p$a.class */
-    public static class a implements RejectedExecutionHandler {
+    static class a implements RejectedExecutionHandler {
         private a() {
         }
 
@@ -28,21 +27,20 @@ public class p {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/utils/p$b.class */
-    public static class b implements ThreadFactory {
+    static class b implements ThreadFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private AtomicInteger f39447a;
+        private AtomicInteger f25756a;
 
         private b() {
-            this.f39447a = new AtomicInteger(0);
+            this.f25756a = new AtomicInteger(0);
         }
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
             Thread thread = new Thread(runnable);
-            thread.setName("TP-Thread" + this.f39447a.incrementAndGet());
+            thread.setName("TP-Thread" + this.f25756a.incrementAndGet());
             return thread;
         }
     }

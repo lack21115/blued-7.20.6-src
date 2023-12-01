@@ -12,12 +12,12 @@ import com.opos.mobad.n.a;
 public class g extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f26970a;
+    private TextView f13282a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26971c;
-    private a.InterfaceC0708a d;
+    private TextView f13283c;
+    private a.InterfaceC0538a d;
 
     public g(Context context) {
         super(context);
@@ -35,10 +35,10 @@ public class g extends LinearLayout {
         int a3 = com.opos.cmn.an.h.f.a.a(getContext(), 12.0f);
         setPadding(a3, a2, a3, a2);
         TextView textView = new TextView(getContext());
-        this.f26970a = textView;
+        this.f13282a = textView;
         textView.setTextColor(Color.parseColor("#FFFFFF"));
-        this.f26970a.setTextSize(1, 14.0f);
-        addView(this.f26970a, new LinearLayout.LayoutParams(-2, -1));
+        this.f13282a.setTextSize(1, 14.0f);
+        addView(this.f13282a, new LinearLayout.LayoutParams(-2, -1));
         View view = new View(getContext());
         this.b = view;
         view.setBackgroundColor(Color.parseColor("#4DFFFFFF"));
@@ -46,12 +46,12 @@ public class g extends LinearLayout {
         layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 8.0f);
         addView(this.b, layoutParams);
         TextView textView2 = new TextView(getContext());
-        this.f26971c = textView2;
+        this.f13283c = textView2;
         textView2.setTextColor(Color.parseColor("#FFBB0E"));
-        this.f26971c.setTextSize(1, 14.0f);
+        this.f13283c.setTextSize(1, 14.0f);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -2);
         layoutParams2.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 8.0f);
-        addView(this.f26971c, layoutParams2);
+        addView(this.f13283c, layoutParams2);
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.h.g.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view2, int[] iArr) {
@@ -61,41 +61,41 @@ public class g extends LinearLayout {
                 }
             }
         };
-        this.f26971c.setOnClickListener(gVar);
-        this.f26971c.setOnTouchListener(gVar);
+        this.f13283c.setOnClickListener(gVar);
+        this.f13283c.setOnTouchListener(gVar);
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.d = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.d = interfaceC0538a;
     }
 
     public void a(String str, int i) {
         TextView textView;
         CharSequence charSequence;
-        if (this.f26970a != null) {
+        if (this.f13282a != null) {
             if (getVisibility() != 0) {
                 setVisibility(0);
             }
-            this.f26970a.setVisibility(0);
-            this.f26970a.setText(str);
+            this.f13282a.setVisibility(0);
+            this.f13282a.setText(str);
         }
         if (i != 0) {
             this.b.setVisibility(0);
-            this.f26971c.setVisibility(0);
+            this.f13283c.setVisibility(0);
             if (i == 1) {
-                textView = this.f26971c;
+                textView = this.f13283c;
                 charSequence = "跳过广告";
             } else if (i == 2) {
-                textView = this.f26971c;
+                textView = this.f13283c;
                 charSequence = "VIP免广告";
             } else {
-                this.f26971c.setVisibility(8);
+                this.f13283c.setVisibility(8);
             }
             textView.setText(charSequence);
-            this.f26971c.setVisibility(0);
+            this.f13283c.setVisibility(0);
             return;
         }
         this.b.setVisibility(8);
-        this.f26971c.setVisibility(8);
+        this.f13283c.setVisibility(8);
     }
 }

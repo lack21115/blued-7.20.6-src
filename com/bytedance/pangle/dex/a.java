@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile int f21377a;
+    private static volatile int f7771a;
     private static volatile Constructor<?> b;
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x010a  */

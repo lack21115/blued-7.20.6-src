@@ -10,15 +10,13 @@ import com.blued.android.core.net.IRequestHost;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/GifLiveAnimationView.class */
 public class GifLiveAnimationView extends BaseLiveAnimationView {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f11499c;
+    private Context c;
     private ImageView d;
 
     public GifLiveAnimationView(Context context, String str, boolean z) {
         this.b = str;
-        this.f11499c = context;
-        ImageView imageView = new ImageView(this.f11499c);
+        this.c = context;
+        ImageView imageView = new ImageView(this.c);
         this.d = imageView;
         imageView.setScaleType(z ? ImageView.ScaleType.CENTER_CROP : ImageView.ScaleType.FIT_CENTER);
     }
@@ -35,16 +33,16 @@ public class GifLiveAnimationView extends BaseLiveAnimationView {
             @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void a() {
                 Log.v("drb", "GifLiveAnimationView onLoadingStarted");
-                if (GifLiveAnimationView.this.f11493a != null) {
-                    GifLiveAnimationView.this.f11493a.a();
+                if (GifLiveAnimationView.this.a != null) {
+                    GifLiveAnimationView.this.a.a();
                 }
             }
 
             @Override // com.blued.android.core.image.ImageLoader.OnAnimationStateListener
             public void b() {
                 Log.v("drb", "GifLiveAnimationView onLoadingFailed");
-                if (GifLiveAnimationView.this.f11493a != null) {
-                    GifLiveAnimationView.this.f11493a.b();
+                if (GifLiveAnimationView.this.a != null) {
+                    GifLiveAnimationView.this.a.b();
                 }
             }
         }).a(this.d);

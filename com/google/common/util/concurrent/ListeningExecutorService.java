@@ -17,12 +17,12 @@ public interface ListeningExecutorService extends ExecutorService {
     @Override // java.util.concurrent.ExecutorService
     <T> List<Future<T>> invokeAll(Collection<? extends Callable<T>> collection, long j, TimeUnit timeUnit) throws InterruptedException;
 
-    @Override // java.util.concurrent.ExecutorService
+    @Override // java.util.concurrent.ExecutorService, com.google.common.util.concurrent.ListeningExecutorService
     ListenableFuture<?> submit(Runnable runnable);
 
-    @Override // java.util.concurrent.ExecutorService
+    @Override // java.util.concurrent.ExecutorService, com.google.common.util.concurrent.ListeningExecutorService
     <T> ListenableFuture<T> submit(Runnable runnable, T t);
 
-    @Override // java.util.concurrent.ExecutorService
+    @Override // java.util.concurrent.ExecutorService, com.google.common.util.concurrent.ListeningExecutorService
     <T> ListenableFuture<T> submit(Callable<T> callable);
 }

@@ -10,9 +10,11 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.widget.TextView;
 import com.alipay.mobilesecuritysdk.face.SecurityClientMobile;
+import com.alipay.sdk.app.OpenAuthTask;
 import com.alipay.sdk.app.i;
 import com.alipay.sdk.util.n;
-import com.anythink.expressad.video.module.a.a.m;
+import com.android.internal.util.cm.QSConstants;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.Executors;
@@ -20,13 +22,9 @@ import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/data/c.class */
 public class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f4623a = "virtualImeiAndImsi";
+    private static final String a = "virtualImeiAndImsi";
     private static final String b = "virtual_imei";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f4624c = "virtual_imsi";
+    private static final String c = "virtual_imsi";
     private static volatile c d;
     private String e;
     private String f = "sdk-and-lite";
@@ -48,7 +46,7 @@ public class c {
                 PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
                 sb.append("(");
                 sb.append(packageName);
-                sb.append(";");
+                sb.append(com.alipay.sdk.util.i.b);
                 sb.append(packageInfo.versionCode);
                 sb.append(")");
                 return sb.toString();
@@ -110,7 +108,7 @@ public class c {
 
     public static String c() {
         Context b2 = com.alipay.sdk.sys.b.a().b();
-        SharedPreferences sharedPreferences = b2.getSharedPreferences(f4623a, 0);
+        SharedPreferences sharedPreferences = b2.getSharedPreferences(a, 0);
         String string = sharedPreferences.getString(b, null);
         String str = string;
         if (TextUtils.isEmpty(string)) {
@@ -121,13 +119,13 @@ public class c {
     }
 
     private static String c(Context context) {
-        WifiInfo connectionInfo = ((WifiManager) context.getApplicationContext().getSystemService("wifi")).getConnectionInfo();
-        return connectionInfo != null ? connectionInfo.getSSID() : "-1";
+        WifiInfo connectionInfo = ((WifiManager) context.getApplicationContext().getSystemService(QSConstants.TILE_WIFI)).getConnectionInfo();
+        return connectionInfo != null ? connectionInfo.getSSID() : YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
     }
 
     private static String c(com.alipay.sdk.sys.a aVar, Context context, HashMap<String, String> hashMap) {
         try {
-            return (String) Executors.newFixedThreadPool(2).submit(new d(aVar, context, hashMap)).get(m.ag, TimeUnit.MILLISECONDS);
+            return (String) Executors.newFixedThreadPool(2).submit(new d(aVar, context, hashMap)).get(3000L, TimeUnit.MILLISECONDS);
         } catch (Throwable th) {
             com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.e, com.alipay.sdk.app.statistic.c.j, th);
             return "";
@@ -136,8 +134,8 @@ public class c {
 
     public static String d() {
         Context b2 = com.alipay.sdk.sys.b.a().b();
-        SharedPreferences sharedPreferences = b2.getSharedPreferences(f4623a, 0);
-        String string = sharedPreferences.getString(f4624c, null);
+        SharedPreferences sharedPreferences = b2.getSharedPreferences(a, 0);
+        String string = sharedPreferences.getString(c, null);
         String str = string;
         if (TextUtils.isEmpty(string)) {
             if (TextUtils.isEmpty(com.alipay.sdk.tid.b.a(b2).a())) {
@@ -146,13 +144,13 @@ public class c {
             } else {
                 str = com.alipay.sdk.util.a.a(b2).a();
             }
-            sharedPreferences.edit().putString(f4624c, str).apply();
+            sharedPreferences.edit().putString(c, str).apply();
         }
         return str;
     }
 
     private static String d(Context context) {
-        WifiInfo connectionInfo = ((WifiManager) context.getApplicationContext().getSystemService("wifi")).getConnectionInfo();
+        WifiInfo connectionInfo = ((WifiManager) context.getApplicationContext().getSystemService(QSConstants.TILE_WIFI)).getConnectionInfo();
         return connectionInfo != null ? connectionInfo.getBSSID() : "00";
     }
 
@@ -167,7 +165,7 @@ public class c {
     private static String g() {
         String hexString = Long.toHexString(System.currentTimeMillis());
         Random random = new Random();
-        return hexString + (random.nextInt(9000) + 1000);
+        return hexString + (random.nextInt(OpenAuthTask.OK) + 1000);
     }
 
     public String a() {
@@ -184,7 +182,7 @@ public class c {
             String f = n.f(b2);
             String e = n.e(b2);
             String b4 = b(b2);
-            this.e = "Msp/15.7.4 (" + b3 + ";" + c2 + ";" + d2 + ";" + f + ";" + e + ";" + b4;
+            this.e = "Msp/15.7.4 (" + b3 + com.alipay.sdk.util.i.b + c2 + com.alipay.sdk.util.i.b + d2 + com.alipay.sdk.util.i.b + f + com.alipay.sdk.util.i.b + e + com.alipay.sdk.util.i.b + b4;
         }
         String b5 = com.alipay.sdk.util.a.b(b2).b();
         String g = n.g(b2);
@@ -196,45 +194,45 @@ public class c {
         if (bVar != null) {
             this.g = bVar.b();
         }
-        String replace = Build.MANUFACTURER.replace(";", " ");
-        String replace2 = Build.MODEL.replace(";", " ");
+        String replace = Build.MANUFACTURER.replace(com.alipay.sdk.util.i.b, " ");
+        String replace2 = Build.MODEL.replace(com.alipay.sdk.util.i.b, " ");
         boolean d4 = com.alipay.sdk.sys.b.d();
         String d5 = a2.d();
         String c4 = c(b2);
         String d6 = d(b2);
         StringBuilder sb = new StringBuilder();
         sb.append(this.e);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(b5);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(g);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(e2);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(a3);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(b6);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(this.g);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(replace);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(replace2);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(d4);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(d5);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(f());
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(this.f);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(d3);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(c3);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(c4);
-        sb.append(";");
+        sb.append(com.alipay.sdk.util.i.b);
         sb.append(d6);
         if (bVar != null) {
             HashMap hashMap = new HashMap();
@@ -242,7 +240,7 @@ public class c {
             hashMap.put(com.alipay.sdk.cons.b.g, com.alipay.sdk.sys.b.a().e());
             String c5 = c(aVar, b2, hashMap);
             if (!TextUtils.isEmpty(c5)) {
-                sb.append(";");
+                sb.append(com.alipay.sdk.util.i.b);
                 sb.append(c5);
             }
         }

@@ -3,16 +3,17 @@ package com.anythink.expressad.mbbanner.a.b;
 import android.text.TextUtils;
 import com.anythink.core.common.b.n;
 import com.anythink.expressad.foundation.h.k;
+import com.huawei.hms.framework.common.ContainerUtils;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/mbbanner/a/b/c.class */
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8009a = "2000067";
+    public static final String f5169a = "2000067";
     public static final String b = "2000068";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f8010c = "2000069";
+    public static final String f5170c = "2000069";
     private String d;
     private String e;
     private String f;
@@ -122,37 +123,37 @@ public final class c {
         if (!TextUtils.isEmpty(this.e)) {
             sb.append("unit_id=");
             sb.append(this.e);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         if (!TextUtils.isEmpty(this.g)) {
             sb.append("cid=");
             sb.append(this.g);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         if (!TextUtils.isEmpty(this.h)) {
             sb.append("rid=");
             sb.append(this.h);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         if (!TextUtils.isEmpty(this.i)) {
             sb.append("rid_n=");
             sb.append(this.i);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         if (!TextUtils.isEmpty(this.j)) {
             sb.append("creative_id=");
             sb.append(this.j);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         if (!TextUtils.isEmpty(this.k)) {
             sb.append("reason=");
             sb.append(this.k);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         if (this.l != 0) {
             sb.append("result=");
             sb.append(this.l);
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         if (this.m) {
             sb.append("hb=1&");
@@ -160,7 +161,7 @@ public final class c {
         sb.append("network_type=");
         n.a().g();
         sb.append(k.a());
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         if (!TextUtils.isEmpty(this.d)) {
             sb.append("key=");
             sb.append(this.d);

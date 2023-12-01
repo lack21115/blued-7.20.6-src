@@ -8,7 +8,7 @@ import okio.ByteString;
 public final class g extends com.heytap.nearx.a.a.b<g, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<g> f25730c = new b();
+    public static final com.heytap.nearx.a.a.e<g> f12042c = new b();
     private static final long serialVersionUID = 0;
     public final String d;
     public final String e;
@@ -18,12 +18,12 @@ public final class g extends com.heytap.nearx.a.a.b<g, a> {
     public static final class a extends b.a<g, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public String f25731c;
+        public String f12043c;
         public String d;
         public String e;
 
         public a a(String str) {
-            this.f25731c = str;
+            this.f12043c = str;
             return this;
         }
 
@@ -33,7 +33,7 @@ public final class g extends com.heytap.nearx.a.a.b<g, a> {
         }
 
         public g b() {
-            return new g(this.f25731c, this.d, this.e, super.a());
+            return new g(this.f12043c, this.d, this.e, super.a());
         }
 
         public a c(String str) {
@@ -98,7 +98,7 @@ public final class g extends com.heytap.nearx.a.a.b<g, a> {
     }
 
     public g(String str, String str2, String str3, ByteString byteString) {
-        super(f25730c, byteString);
+        super(f12042c, byteString);
         this.d = str;
         this.e = str2;
         this.f = str3;

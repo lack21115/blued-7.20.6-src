@@ -34,12 +34,12 @@ public final class DrawableKt {
         if (config == null) {
             config2 = Bitmap.Config.ARGB_8888;
         }
-        Bitmap bitmap2 = Bitmap.createBitmap(i, i2, config2);
+        Bitmap createBitmap = Bitmap.createBitmap(i, i2, config2);
         drawable.setBounds(0, 0, i, i2);
-        drawable.draw(new Canvas(bitmap2));
+        drawable.draw(new Canvas(createBitmap));
         drawable.setBounds(i3, i4, i5, i6);
-        Intrinsics.c(bitmap2, "bitmap");
-        return bitmap2;
+        Intrinsics.c(createBitmap, "bitmap");
+        return createBitmap;
     }
 
     public static /* synthetic */ Bitmap toBitmap$default(Drawable drawable, int i, int i2, Bitmap.Config config, int i3, Object obj) {

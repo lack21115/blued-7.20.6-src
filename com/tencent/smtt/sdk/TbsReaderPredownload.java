@@ -16,10 +16,10 @@ public class TbsReaderPredownload {
     ReaderPreDownloadCallback i;
 
     /* renamed from: a  reason: collision with root package name */
-    Handler f38782a = null;
+    Handler f25091a = null;
 
     /* renamed from: c  reason: collision with root package name */
-    LinkedList<String> f38783c = new LinkedList<>();
+    LinkedList<String> f25092c = new LinkedList<>();
     boolean d = false;
     ReaderWizard e = null;
     TbsReaderView.ReaderCallback f = null;
@@ -39,7 +39,7 @@ public class TbsReaderPredownload {
         this.i = null;
         this.i = readerPreDownloadCallback;
         for (String str : b) {
-            this.f38783c.add(str);
+            this.f25092c.add(str);
         }
         a();
     }
@@ -49,13 +49,13 @@ public class TbsReaderPredownload {
     }
 
     void a() {
-        this.f38782a = new Handler(Looper.getMainLooper()) { // from class: com.tencent.smtt.sdk.TbsReaderPredownload.2
+        this.f25091a = new Handler(Looper.getMainLooper()) { // from class: com.tencent.smtt.sdk.TbsReaderPredownload.2
             @Override // android.os.Handler
             public void handleMessage(Message message) {
-                if (message.what != 3 || TbsReaderPredownload.this.f38783c.isEmpty() || TbsReaderPredownload.this.d) {
+                if (message.what != 3 || TbsReaderPredownload.this.f25092c.isEmpty() || TbsReaderPredownload.this.d) {
                     return;
                 }
-                String removeFirst = TbsReaderPredownload.this.f38783c.removeFirst();
+                String removeFirst = TbsReaderPredownload.this.f25092c.removeFirst();
                 TbsReaderPredownload.this.j = removeFirst;
                 if (TbsReaderPredownload.this.a(removeFirst)) {
                     return;
@@ -67,12 +67,12 @@ public class TbsReaderPredownload {
 
     void a(int i) {
         if (this.i != null) {
-            this.i.onEvent(this.j, i, this.f38783c.isEmpty());
+            this.i.onEvent(this.j, i, this.f25092c.isEmpty());
         }
     }
 
     void a(int i, int i2) {
-        this.f38782a.sendMessageDelayed(this.f38782a.obtainMessage(i), i2);
+        this.f25091a.sendMessageDelayed(this.f25091a.obtainMessage(i), i2);
     }
 
     boolean a(String str) {
@@ -83,11 +83,11 @@ public class TbsReaderPredownload {
     }
 
     void b(int i) {
-        this.f38782a.removeMessages(i);
+        this.f25091a.removeMessages(i);
     }
 
     boolean c(int i) {
-        return this.f38782a.hasMessages(i);
+        return this.f25091a.hasMessages(i);
     }
 
     public boolean init(Context context) {
@@ -133,7 +133,7 @@ public class TbsReaderPredownload {
     public void shutdown() {
         this.i = null;
         this.d = false;
-        this.f38783c.clear();
+        this.f25092c.clear();
         b();
         ReaderWizard readerWizard = this.e;
         if (readerWizard != null) {
@@ -146,7 +146,7 @@ public class TbsReaderPredownload {
     public void start(String str) {
         this.d = false;
         b(3);
-        this.f38783c.add(str);
+        this.f25092c.add(str);
         a(3, 100);
     }
 

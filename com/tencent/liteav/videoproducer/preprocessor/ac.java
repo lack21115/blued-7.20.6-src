@@ -4,16 +4,16 @@ package com.tencent.liteav.videoproducer.preprocessor;
 final /* synthetic */ class ac implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37052a;
+    private final VideoPreprocessor f23361a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f37053c;
+    private final boolean f23362c;
 
     private ac(VideoPreprocessor videoPreprocessor, String str, boolean z) {
-        this.f37052a = videoPreprocessor;
+        this.f23361a = videoPreprocessor;
         this.b = str;
-        this.f37053c = z;
+        this.f23362c = z;
     }
 
     public static Runnable a(VideoPreprocessor videoPreprocessor, String str, boolean z) {
@@ -22,6 +22,6 @@ final /* synthetic */ class ac implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoPreprocessor.lambda$setGreenScreenFile$5(this.f37052a, this.b, this.f37053c);
+        VideoPreprocessor.lambda$setGreenScreenFile$5(this.f23361a, this.b, this.f23362c);
     }
 }

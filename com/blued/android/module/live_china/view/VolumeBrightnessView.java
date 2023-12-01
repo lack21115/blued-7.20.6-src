@@ -11,20 +11,15 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/VolumeBrightnessView.class */
 public class VolumeBrightnessView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15296a;
+    public View a;
     public Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LayoutInflater f15297c;
+    public LayoutInflater c;
     public AudioManager d;
     public DismissWindow e;
     private ImageView f;
@@ -44,7 +39,7 @@ public class VolumeBrightnessView extends FrameLayout {
 
         @Override // java.lang.Runnable
         public void run() {
-            VolumeBrightnessView.this.f15296a.setVisibility(8);
+            VolumeBrightnessView.this.a.setVisibility(8);
         }
     }
 
@@ -64,11 +59,11 @@ public class VolumeBrightnessView extends FrameLayout {
 
     private void c() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f15297c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.live_volume_brightness_layout, this);
-        this.f15296a = inflate;
+        this.a = inflate;
         this.f = (ImageView) inflate.findViewById(R.id.function_icon);
-        this.g = (ProgressBar) this.f15296a.findViewById(R.id.function_progress);
+        this.g = (ProgressBar) this.a.findViewById(R.id.function_progress);
     }
 
     private void d() {
@@ -105,7 +100,7 @@ public class VolumeBrightnessView extends FrameLayout {
                 }
                 this.d.setStreamVolume(3, this.i, 0);
                 int i4 = (this.i * 100) / this.h;
-                this.f15296a.setVisibility(0);
+                this.a.setVisibility(0);
                 this.f.setImageResource(R.drawable.live_volume_icon);
                 this.g.setProgress(i4);
             }
@@ -142,7 +137,7 @@ public class VolumeBrightnessView extends FrameLayout {
                 attributes.screenBrightness = 0.01f;
             }
             activity.getWindow().setAttributes(attributes);
-            this.f15296a.setVisibility(0);
+            this.a.setVisibility(0);
             this.f.setImageResource(R.drawable.live_brightness_icon);
             this.g.setProgress((int) (attributes.screenBrightness * 100.0f));
         }
@@ -152,6 +147,6 @@ public class VolumeBrightnessView extends FrameLayout {
 
     public void b() {
         AppInfo.n().removeCallbacks(this.e);
-        AppInfo.n().postDelayed(this.e, m.ag);
+        AppInfo.n().postDelayed(this.e, 3000L);
     }
 }

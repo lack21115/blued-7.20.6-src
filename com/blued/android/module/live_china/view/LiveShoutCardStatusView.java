@@ -21,9 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveShoutCardStatusView.class */
 public final class LiveShoutCardStatusView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Lazy f14931a;
+    private final Lazy a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LiveShoutCardStatusView(Context context) {
@@ -41,7 +39,7 @@ public final class LiveShoutCardStatusView extends FrameLayout {
     public LiveShoutCardStatusView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14931a = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LayoutLiveShoutCardStatusBinding>() { // from class: com.blued.android.module.live_china.view.LiveShoutCardStatusView$binding$2
+        this.a = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<LayoutLiveShoutCardStatusBinding>() { // from class: com.blued.android.module.live_china.view.LiveShoutCardStatusView$binding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -50,9 +48,9 @@ public final class LiveShoutCardStatusView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LayoutLiveShoutCardStatusBinding invoke() {
-                LayoutLiveShoutCardStatusBinding a2 = LayoutLiveShoutCardStatusBinding.a(LayoutInflater.from(LiveShoutCardStatusView.this.getContext()), LiveShoutCardStatusView.this, true);
-                Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-                return a2;
+                LayoutLiveShoutCardStatusBinding a = LayoutLiveShoutCardStatusBinding.a(LayoutInflater.from(LiveShoutCardStatusView.this.getContext()), LiveShoutCardStatusView.this, true);
+                Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+                return a;
             }
         });
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveShoutCardStatusView$I-gUeaZvDPRVk18NcK6HQFjvWEs
@@ -90,6 +88,6 @@ public final class LiveShoutCardStatusView extends FrameLayout {
     }
 
     public final LayoutLiveShoutCardStatusBinding getBinding() {
-        return (LayoutLiveShoutCardStatusBinding) this.f14931a.getValue();
+        return (LayoutLiveShoutCardStatusBinding) this.a.getValue();
     }
 }

@@ -8,11 +8,11 @@ public final class d {
     public boolean n;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f9246a = 0;
+    public int f6406a = 0;
     public int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f9247c = 0;
+    public int f6407c = 0;
     public int d = 0;
     public long e = 0;
     public int f = 0;
@@ -22,7 +22,7 @@ public final class d {
     public int j = 0;
     public int k = PackageManager.INSTALL_FAILED_NO_MATCHING_ABIS;
     public short m = 0;
-    public int o = Short.MAX_VALUE;
+    public int o = 32767;
     public int p = Integer.MAX_VALUE;
     public int q = Integer.MAX_VALUE;
     public boolean r = true;
@@ -38,7 +38,7 @@ public final class d {
 
     private String e() {
         int i = this.l;
-        return this.l + "#" + this.f9246a + "#" + this.b + "#0#" + a();
+        return this.l + "#" + this.f6406a + "#" + this.b + "#0#" + a();
     }
 
     private String f() {
@@ -71,9 +71,9 @@ public final class d {
     /* renamed from: d */
     public final d clone() {
         d dVar = new d(this.l, this.n);
-        dVar.f9246a = this.f9246a;
+        dVar.f6406a = this.f6406a;
         dVar.b = this.b;
-        dVar.f9247c = this.f9247c;
+        dVar.f6407c = this.f6407c;
         dVar.d = this.d;
         dVar.e = this.e;
         dVar.f = this.f;
@@ -96,7 +96,7 @@ public final class d {
         if (obj != null && (obj instanceof d)) {
             d dVar = (d) obj;
             int i = dVar.l;
-            return i != 1 ? i != 2 ? i != 3 ? i != 4 ? i == 5 && this.l == 5 && dVar.f9247c == this.f9247c && dVar.e == this.e && dVar.q == this.q : this.l == 4 && dVar.f9247c == this.f9247c && dVar.d == this.d && dVar.b == this.b : this.l == 3 && dVar.f9247c == this.f9247c && dVar.d == this.d && dVar.b == this.b : this.l == 2 && dVar.j == this.j && dVar.i == this.i && dVar.h == this.h : this.l == 1 && dVar.f9247c == this.f9247c && dVar.d == this.d && dVar.b == this.b;
+            return i != 1 ? i != 2 ? i != 3 ? i != 4 ? i == 5 && this.l == 5 && dVar.f6407c == this.f6407c && dVar.e == this.e && dVar.q == this.q : this.l == 4 && dVar.f6407c == this.f6407c && dVar.d == this.d && dVar.b == this.b : this.l == 3 && dVar.f6407c == this.f6407c && dVar.d == this.d && dVar.b == this.b : this.l == 2 && dVar.j == this.j && dVar.i == this.i && dVar.h == this.h : this.l == 1 && dVar.f6407c == this.f6407c && dVar.d == this.d && dVar.b == this.b;
         }
         return false;
     }
@@ -109,7 +109,7 @@ public final class d {
             hashCode = String.valueOf(this.j).hashCode() + String.valueOf(this.i).hashCode();
             hashCode2 = String.valueOf(this.h).hashCode();
         } else {
-            hashCode = String.valueOf(this.f9247c).hashCode() + String.valueOf(this.d).hashCode();
+            hashCode = String.valueOf(this.f6407c).hashCode() + String.valueOf(this.d).hashCode();
             hashCode2 = String.valueOf(this.b).hashCode();
         }
         return hashCode3 + hashCode + hashCode2;

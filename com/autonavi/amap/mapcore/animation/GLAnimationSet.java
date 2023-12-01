@@ -70,8 +70,8 @@ public class GLAnimationSet extends GLAnimation {
 
     @Override // com.autonavi.amap.mapcore.animation.GLAnimation
     /* renamed from: clone */
-    public GLAnimationSet mo3058clone() throws CloneNotSupportedException {
-        GLAnimationSet gLAnimationSet = (GLAnimationSet) super.mo3058clone();
+    public GLAnimationSet mo1918clone() throws CloneNotSupportedException {
+        GLAnimationSet gLAnimationSet = (GLAnimationSet) super.mo1918clone();
         gLAnimationSet.mTempTransformation = new GLTransformation();
         gLAnimationSet.mAnimations = new ArrayList<>();
         int size = this.mAnimations.size();
@@ -82,7 +82,7 @@ public class GLAnimationSet extends GLAnimation {
             if (i2 >= size) {
                 return gLAnimationSet;
             }
-            gLAnimationSet.mAnimations.add(arrayList.get(i2).mo3058clone());
+            gLAnimationSet.mAnimations.add(arrayList.get(i2).mo1918clone());
             i = i2 + 1;
         }
     }

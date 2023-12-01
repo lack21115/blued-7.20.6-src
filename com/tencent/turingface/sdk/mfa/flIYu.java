@@ -8,11 +8,11 @@ public final class flIYu {
     public static Context d;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final WOMZP<IEttU> f39954a = new WOMZP<>(3);
+    public static final WOMZP<IEttU> f26263a = new WOMZP<>(3);
     public static final WOMZP<IEttU> b = new WOMZP<>(3);
 
     /* renamed from: c  reason: collision with root package name */
-    public static long f39955c = 0;
+    public static long f26264c = 0;
     public static final spXPg e = new spXPg();
     public static final ShGzN f = new ShGzN();
 
@@ -44,12 +44,12 @@ public final class flIYu {
                 }
                 return;
             }
-            long abs = oCkqn != null ? Math.abs(oCkqn.b - flIYu.f39955c) : 1000L;
-            flIYu.f39955c = System.currentTimeMillis();
+            long abs = oCkqn != null ? Math.abs(oCkqn.b - flIYu.f26264c) : 1000L;
+            flIYu.f26264c = System.currentTimeMillis();
             if (abs < 1000) {
                 return;
             }
-            WOMZP<IEttU> womzp2 = flIYu.f39954a;
+            WOMZP<IEttU> womzp2 = flIYu.f26263a;
             synchronized (womzp2) {
                 womzp2.a(new IEttU(str, i2, oCkqn));
             }

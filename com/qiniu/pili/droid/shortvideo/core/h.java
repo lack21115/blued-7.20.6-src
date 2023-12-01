@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public File f27552a;
+    public File f13864a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f27553c;
+    public int f13865c;
     public long d;
     public long e;
     public int f;
@@ -23,9 +23,9 @@ public class h {
     }
 
     public h(String str, int i, int i2, long j, long j2, int i3, int i4) {
-        this.f27552a = new File(str);
+        this.f13864a = new File(str);
         this.b = i;
-        this.f27553c = i2;
+        this.f13865c = i2;
         this.d = j;
         this.e = j2;
         this.f = i3;
@@ -39,9 +39,9 @@ public class h {
     public JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put(SobotProgress.FILE_NAME, this.f27552a.getPath());
+            jSONObject.put(SobotProgress.FILE_NAME, this.f13864a.getPath());
             jSONObject.put("audioIndex", this.b);
-            jSONObject.put("videoIndex", this.f27553c);
+            jSONObject.put("videoIndex", this.f13865c);
             jSONObject.put("startTimeMs", this.d);
             jSONObject.put("durationMs", this.e);
             jSONObject.put("audioFrameNum", this.f);

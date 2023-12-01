@@ -5,13 +5,12 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.SystemClock;
-import android.provider.MediaStore;
 import android.text.TextUtils;
 import com.amap.api.col.p0003sl.jy;
 import com.amap.api.col.p0003sl.kb;
-import com.anythink.expressad.exoplayer.g.b.i;
+import com.android.internal.widget.LockPatternUtils;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.cdo.oaps.ad.OapsWrapper;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -28,19 +27,16 @@ import java.util.Queue;
 import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import javax.xml.transform.OutputKeys;
 import org.json.JSONObject;
 
 /* renamed from: com.amap.api.col.3sl.hp  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hp.class */
 public final class hp {
     private static volatile boolean C = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f5080a = -1;
+    public static int a = -1;
     public static String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static Context f5081c;
+    public static Context c;
     private static String k = "6";
     private static String l = "4";
     private static String m = "9";
@@ -78,39 +74,29 @@ public final class hp {
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hp$b.class */
     public static final class b {
         @Deprecated
-
-        /* renamed from: a  reason: collision with root package name */
-        public JSONObject f5084a;
+        public JSONObject a;
         @Deprecated
         public JSONObject b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f5085c;
+        public String c;
         public int d = -1;
         public long e = 0;
         public JSONObject f;
         public a g;
-        public C0056b h;
+        public C0016b h;
         private boolean i;
 
         /* renamed from: com.amap.api.col.3sl.hp$b$a */
         /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hp$b$a.class */
         public static final class a {
-
-            /* renamed from: a  reason: collision with root package name */
-            public boolean f5086a;
+            public boolean a;
             public boolean b;
-
-            /* renamed from: c  reason: collision with root package name */
-            public JSONObject f5087c;
+            public JSONObject c;
         }
 
         /* renamed from: com.amap.api.col.3sl.hp$b$b  reason: collision with other inner class name */
         /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hp$b$b.class */
-        public static final class C0056b {
-
-            /* renamed from: a  reason: collision with root package name */
-            public boolean f5088a;
+        public static final class C0016b {
+            public boolean a;
         }
     }
 
@@ -154,17 +140,17 @@ public final class hp {
 
         @Override // com.amap.api.col.p0003sl.jv
         public final byte[] d() {
-            String u = hs.u(this.f5232a);
+            String u = hs.u(this.a);
             String str = u;
             if (!TextUtils.isEmpty(u)) {
                 str = hw.b(new StringBuilder(u).reverse().toString());
             }
             HashMap hashMap = new HashMap();
             hashMap.put("authkey", TextUtils.isEmpty(this.h) ? "" : this.h);
-            hashMap.put("plattype", "android");
+            hashMap.put("plattype", MsgBackupManager.PLATFORM_ANDROID);
             hashMap.put("product", this.b.a());
-            hashMap.put("version", this.b.b());
-            hashMap.put(MediaStore.EXTRA_OUTPUT, "json");
+            hashMap.put(OutputKeys.VERSION, this.b.b());
+            hashMap.put("output", "json");
             StringBuilder sb = new StringBuilder();
             sb.append(Build.VERSION.SDK_INT);
             hashMap.put("androidversion", sb.toString());
@@ -174,7 +160,7 @@ public final class hp {
             if (map != null && !map.isEmpty()) {
                 hashMap.putAll(this.i);
             }
-            hashMap.put("abitype", ib.a(this.f5232a));
+            hashMap.put("abitype", ib.a(this.a));
             hashMap.put("ext", this.b.d());
             return ib.a(ib.a(hashMap));
         }
@@ -201,7 +187,7 @@ public final class hp {
                 return null;
             }
             HashMap hashMap = new HashMap();
-            hashMap.put("host", this.l);
+            hashMap.put(com.alipay.sdk.cons.c.f, this.l);
             return hashMap;
         }
 
@@ -215,13 +201,9 @@ public final class hp {
     /* renamed from: com.amap.api.col.3sl.hp$d */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hp$d.class */
     public static final class d {
-
-        /* renamed from: a  reason: collision with root package name */
-        ia f5089a;
+        ia a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        a f5090c;
+        a c;
 
         private d() {
         }
@@ -234,18 +216,14 @@ public final class hp {
     /* renamed from: com.amap.api.col.3sl.hp$e */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hp$e.class */
     public static final class e {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f5091a;
+        private String a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private AtomicInteger f5092c;
+        private AtomicInteger c;
 
         public e(String str, String str2, int i) {
-            this.f5091a = str;
+            this.a = str;
             this.b = str2;
-            this.f5092c = new AtomicInteger(i);
+            this.c = new AtomicInteger(i);
         }
 
         public static e b(String str) {
@@ -254,14 +232,14 @@ public final class hp {
             }
             try {
                 JSONObject jSONObject = new JSONObject(str);
-                return new e(jSONObject.optString("a"), jSONObject.optString("f"), jSONObject.optInt("h"));
+                return new e(jSONObject.optString("a"), jSONObject.optString(iu.i), jSONObject.optInt(iu.g));
             } catch (Throwable th) {
                 return null;
             }
         }
 
         public final int a() {
-            AtomicInteger atomicInteger = this.f5092c;
+            AtomicInteger atomicInteger = this.c;
             if (atomicInteger == null) {
                 return 0;
             }
@@ -275,9 +253,9 @@ public final class hp {
         public final String b() {
             try {
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put("a", this.f5091a);
-                jSONObject.put("f", this.b);
-                jSONObject.put("h", this.f5092c.get());
+                jSONObject.put("a", this.a);
+                jSONObject.put(iu.i, this.b);
+                jSONObject.put(iu.g, this.c.get());
                 return jSONObject.toString();
             } catch (Throwable th) {
                 return "";
@@ -288,13 +266,9 @@ public final class hp {
     /* renamed from: com.amap.api.col.3sl.hp$f */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hp$f.class */
     public static final class f {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static boolean f5093a = true;
+        public static boolean a = true;
         public static boolean b = false;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static boolean f5094c = true;
+        public static boolean c = true;
         public static int d = 0;
         public static boolean e = false;
         public static int f;
@@ -436,7 +410,7 @@ public final class hp {
 
     public static void a(Context context) {
         if (context != null) {
-            f5081c = context.getApplicationContext();
+            c = context.getApplicationContext();
         }
     }
 
@@ -464,8 +438,8 @@ public final class hp {
                 return;
             }
             try {
-                if (f5081c == null) {
-                    f5081c = context.getApplicationContext();
+                if (c == null) {
+                    c = context.getApplicationContext();
                 }
                 String a2 = iaVar.a();
                 if (TextUtils.isEmpty(a2)) {
@@ -483,12 +457,12 @@ public final class hp {
                 }
                 if (!v.containsKey(a2)) {
                     d dVar = new d((byte) 0);
-                    dVar.f5089a = iaVar;
+                    dVar.a = iaVar;
                     dVar.b = str;
-                    dVar.f5090c = aVar;
+                    dVar.c = aVar;
                     v.put(a2, dVar);
-                    t.put(a2, Long.valueOf(jj.b(f5081c, "open_common", a2)));
-                    d(f5081c);
+                    t.put(a2, Long.valueOf(jj.b(c, "open_common", a2)));
+                    d(c);
                 }
             } catch (Throwable th) {
                 try {
@@ -525,7 +499,7 @@ public final class hp {
     }
 
     private static void a(Context context, String str, String str2, e eVar) {
-        if (eVar == null || TextUtils.isEmpty(eVar.f5091a)) {
+        if (eVar == null || TextUtils.isEmpty(eVar.a)) {
             return;
         }
         String b2 = eVar.b();
@@ -558,14 +532,14 @@ public final class hp {
     }
 
     public static void a(jy.c cVar) {
-        if (cVar == null || f5081c == null) {
+        if (cVar == null || c == null) {
             return;
         }
         HashMap hashMap = new HashMap();
-        hashMap.put("serverip", cVar.f5247c);
+        hashMap.put("serverip", cVar.c);
         hashMap.put("hostname", cVar.e);
-        hashMap.put(OapsWrapper.KEY_PATH, cVar.d);
-        hashMap.put("csid", cVar.f5246a);
+        hashMap.put("path", cVar.d);
+        hashMap.put("csid", cVar.a);
         hashMap.put("degrade", String.valueOf(cVar.b.a()));
         hashMap.put("errorcode", String.valueOf(cVar.m));
         hashMap.put("errorsubcode", String.valueOf(cVar.n));
@@ -581,22 +555,22 @@ public final class hp {
             return;
         }
         try {
-            kj kjVar = new kj(f5081c, "core", "2.0", "O008");
+            kj kjVar = new kj(c, "core", "2.0", "O008");
             kjVar.a(jSONObject);
-            kk.a(kjVar, f5081c);
+            kk.a(kjVar, c);
         } catch (hn e2) {
         }
     }
 
     private static void a(String str, String str2) {
-        e a2 = a(f5081c, str, str2);
+        e a2 = a(c, str, str2);
         String a3 = ib.a(System.currentTimeMillis(), "yyyyMMdd");
         if (!a3.equals(a2.b)) {
             a2.a(a3);
-            a2.f5092c.set(0);
+            a2.c.set(0);
         }
-        a2.f5092c.incrementAndGet();
-        a(f5081c, str, str2, a2);
+        a2.c.incrementAndGet();
+        a(c, str, str2, a2);
     }
 
     public static void a(final String str, boolean z2, final String str2, final String str3, final String str4) {
@@ -626,8 +600,8 @@ public final class hp {
                             if (dVar == null) {
                                 return;
                             }
-                            a aVar = dVar.f5090c;
-                            b a2 = hp.a(hp.f5081c, dVar.f5089a, dVar.b, str2, str3, str4);
+                            a aVar = dVar.c;
+                            b a2 = hp.a(hp.c, dVar.a, dVar.b, str2, str3, str4);
                             if (a2 == null || aVar == null) {
                                 return;
                             }
@@ -646,13 +620,13 @@ public final class hp {
     }
 
     public static void a(String str, boolean z2, boolean z3, boolean z4) {
-        if (TextUtils.isEmpty(str) || f5081c == null) {
+        if (TextUtils.isEmpty(str) || c == null) {
             return;
         }
         HashMap hashMap = new HashMap();
         hashMap.put("url", str);
         hashMap.put("downLevel", String.valueOf(z2));
-        hashMap.put("ant", hs.o(f5081c) == 0 ? "0" : "1");
+        hashMap.put("ant", hs.o(c) == 0 ? "0" : "1");
         if (z4) {
             hashMap.put("type", z2 ? m : n);
         } else {
@@ -664,9 +638,9 @@ public final class hp {
             return;
         }
         try {
-            kj kjVar = new kj(f5081c, "core", "2.0", "O002");
+            kj kjVar = new kj(c, "core", "2.0", "O002");
             kjVar.a(jSONObject);
-            kk.a(kjVar, f5081c);
+            kk.a(kjVar, c);
         } catch (hn e2) {
         }
     }
@@ -702,7 +676,7 @@ public final class hp {
                 sb.append(next2.j);
                 sb.append("-code=");
                 sb.append(next2.f);
-                sb.append(i.f7358a);
+                sb.append("----");
                 jy.b();
             }
             jy.b();
@@ -734,7 +708,7 @@ public final class hp {
 
     public static boolean a() {
         e a2;
-        if (f5081c != null) {
+        if (c != null) {
             i();
             if (!c()) {
                 return false;
@@ -743,7 +717,7 @@ public final class hp {
                 return true;
             }
         }
-        return o && (a2 = a(f5081c, "IPV6_CONFIG_NAME", "open_common")) != null && a2.a() < 5;
+        return o && (a2 = a(c, "IPV6_CONFIG_NAME", "open_common")) != null && a2.a() < 5;
     }
 
     public static boolean a(String str) {
@@ -792,7 +766,7 @@ public final class hp {
                     }
                 }
                 z2 = false;
-                if (SystemClock.elapsedRealtime() - j3 > 30000) {
+                if (SystemClock.elapsedRealtime() - j3 > LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS) {
                     z2 = true;
                 }
             }
@@ -844,7 +818,7 @@ public final class hp {
                 }
                 jy.a aVar = B.get(i2);
                 boolean z4 = z2;
-                if (cVar.f5247c.equals(aVar.b)) {
+                if (cVar.c.equals(aVar.b)) {
                     z4 = z2;
                     if (cVar.d.equals(aVar.e)) {
                         z4 = z2;
@@ -889,8 +863,8 @@ public final class hp {
                         t = new ConcurrentHashMap<>(8);
                     }
                     t.put(str, Long.valueOf(j2));
-                    if (f5081c != null) {
-                        SharedPreferences.Editor a2 = jj.a(f5081c, "open_common");
+                    if (c != null) {
+                        SharedPreferences.Editor a2 = jj.a(c, "open_common");
                         jj.a(a2, str, j2);
                         jj.a(a2);
                     }
@@ -917,7 +891,7 @@ public final class hp {
 
     public static boolean b() {
         Integer num;
-        Context context = f5081c;
+        Context context = c;
         if (context == null) {
             return false;
         }
@@ -970,7 +944,7 @@ public final class hp {
 
     public static boolean c() {
         Integer num;
-        Context context = f5081c;
+        Context context = c;
         if (context == null) {
             return false;
         }
@@ -980,14 +954,14 @@ public final class hp {
 
     public static void d() {
         try {
-            e a2 = a(f5081c, "IPV6_CONFIG_NAME", "open_common");
+            e a2 = a(c, "IPV6_CONFIG_NAME", "open_common");
             String a3 = ib.a(System.currentTimeMillis(), "yyyyMMdd");
             if (!a3.equals(a2.b)) {
                 a2.a(a3);
-                a2.f5092c.set(0);
+                a2.c.set(0);
             }
-            a2.f5092c.incrementAndGet();
-            a(f5081c, "IPV6_CONFIG_NAME", "open_common", a2);
+            a2.c.incrementAndGet();
+            a(c, "IPV6_CONFIG_NAME", "open_common", a2);
         } catch (Throwable th) {
         }
     }
@@ -1012,7 +986,7 @@ public final class hp {
             }
             if (f) {
                 if (z.get(str) == null) {
-                    if (f5081c == null || (a2 = a(f5081c, b(str, "a14"), "open_common")) == null) {
+                    if (c == null || (a2 = a(c, b(str, "a14"), "open_common")) == null) {
                         return true;
                     }
                     return a2.a() < x;
@@ -1030,7 +1004,7 @@ public final class hp {
             return;
         }
         try {
-            Context context = f5081c;
+            Context context = c;
             if (context == null) {
                 return;
             }
@@ -1038,9 +1012,9 @@ public final class hp {
             hu.a().a(context);
             b(context);
             c(context);
-            f.f5093a = jj.a(context, "open_common", "ucf", f.f5093a);
+            f.a = jj.a(context, "open_common", "ucf", f.a);
             f.b = jj.a(context, "open_common", "fsv2", f.b);
-            f.f5094c = jj.a(context, "open_common", "usc", f.f5094c);
+            f.c = jj.a(context, "open_common", "usc", f.c);
             f.d = jj.a(context, "open_common", "umv", f.d);
             f.e = jj.a(context, "open_common", "ust", f.e);
             f.f = jj.a(context, "open_common", "ustv", f.f);
@@ -1053,7 +1027,7 @@ public final class hp {
         try {
             if (!TextUtils.isEmpty(str) && i) {
                 if (A.get(str) == null) {
-                    if (f5081c == null || (a2 = a(f5081c, b(str, "a15"), "open_common")) == null) {
+                    if (c == null || (a2 = a(c, b(str, "a15"), "open_common")) == null) {
                         return true;
                     }
                     return a2.a() < y;
@@ -1096,8 +1070,8 @@ public final class hp {
 
     private static void i() {
         try {
-            if (f5081c != null) {
-                String t2 = hs.t(f5081c);
+            if (c != null) {
+                String t2 = hs.t(c);
                 if (!TextUtils.isEmpty(r) && !TextUtils.isEmpty(t2) && r.equals(t2) && System.currentTimeMillis() - s < 60000) {
                     return;
                 }

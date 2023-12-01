@@ -6,9 +6,7 @@ import com.amap.api.col.p0003sl.fe;
 public class WeatherSearchQuery implements Cloneable {
     public static final int WEATHER_TYPE_FORECAST = 2;
     public static final int WEATHER_TYPE_LIVE = 1;
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5806a;
+    private String a;
     private int b;
 
     public WeatherSearchQuery() {
@@ -17,22 +15,22 @@ public class WeatherSearchQuery implements Cloneable {
 
     public WeatherSearchQuery(String str, int i) {
         this.b = 1;
-        this.f5806a = str;
+        this.a = str;
         this.b = i;
     }
 
     /* renamed from: clone */
-    public WeatherSearchQuery m2540clone() {
+    public WeatherSearchQuery m8983clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
             fe.a(e, "WeatherSearchQuery", "clone");
         }
-        return new WeatherSearchQuery(this.f5806a, this.b);
+        return new WeatherSearchQuery(this.a, this.b);
     }
 
     public String getCity() {
-        return this.f5806a;
+        return this.a;
     }
 
     public int getType() {

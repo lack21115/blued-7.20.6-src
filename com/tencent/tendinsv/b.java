@@ -24,7 +24,7 @@ public class b {
     public static final int Z = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38997a = "天翼服务及隐私协议";
+    public static final String f25306a = "天翼服务及隐私协议";
     private static final String aC = "https://nsv.tencentcloudapi.com/";
     private static final String aD = "https://sysdk.cl2009.com/";
     public static final int aa = 2;
@@ -51,7 +51,7 @@ public class b {
     public static final String b = "https://e.189.cn/sdk/agreement/detail.do?hidetop=true";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f38999c = "中国移动认证服务条款";
+    public static final String f25308c = "中国移动认证服务条款";
     public static final String d = "https://wap.cmpassport.com/resources/html/contract.html";
     public static final String e = "中国联通认证服务协议";
     public static final String f = "https://auth.wosms.cn/html/oauth/protocol2.html";
@@ -88,7 +88,7 @@ public class b {
     public static int ak = 0;
 
     /* renamed from: ar  reason: collision with root package name */
-    public static int f38998ar = 0;
+    public static int f25307ar = 0;
     public static String as = "2";
     public static boolean av = true;
     public static boolean aA = true;

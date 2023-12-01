@@ -65,13 +65,13 @@ public final class FeedOperationFloatView extends FrameLayout {
         this.layoutContent = frameLayout.findViewById(R.id.feed_float_content_layout);
         this.ivIcon = (ImageView) frameLayout.findViewById(R.id.feed_float_op_img);
         this.tvTitle = (TextView) frameLayout.findViewById(R.id.feed_float_op_title);
-        this.btnConfirm = (ShapeTextView) frameLayout.findViewById(R.id.feed_float_op_btn);
+        this.btnConfirm = frameLayout.findViewById(R.id.feed_float_op_btn);
         this.btnClose = (ImageView) frameLayout.findViewById(R.id.feed_float_op_close);
         refreshDarkMode();
-        frameLayout.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$FeedOperationFloatView$XiDZR2RhTC1qdAv6MQuwpMDXOoI
+        frameLayout.setOnClickListener((View.OnClickListener) new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$FeedOperationFloatView$XiDZR2RhTC1qdAv6MQuwpMDXOoI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                FeedOperationFloatView.m5149initView$lambda0(FeedOperationFloatView.this, view);
+                FeedOperationFloatView.m2062initView$lambda0(FeedOperationFloatView.this, view);
             }
         }));
         ShapeTextView shapeTextView = this.btnConfirm;
@@ -79,16 +79,16 @@ public final class FeedOperationFloatView extends FrameLayout {
             shapeTextView.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$FeedOperationFloatView$HnQt-gcJarCotoHbA_9bE2DiWoE
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FeedOperationFloatView.m5150initView$lambda1(FeedOperationFloatView.this, view);
+                    FeedOperationFloatView.m2063initView$lambda1(FeedOperationFloatView.this, view);
                 }
             }));
         }
         ImageView imageView = this.btnClose;
         if (imageView != null) {
-            imageView.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$FeedOperationFloatView$3F2JJMTmuwpJenD1g86y7KJgWX0
+            imageView.setOnClickListener((View.OnClickListener) new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.view.-$$Lambda$FeedOperationFloatView$3F2JJMTmuwpJenD1g86y7KJgWX0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    FeedOperationFloatView.m5151initView$lambda2(FeedOperationFloatView.this, view);
+                    FeedOperationFloatView.m2064initView$lambda2(FeedOperationFloatView.this, view);
                 }
             }));
         }
@@ -97,23 +97,23 @@ public final class FeedOperationFloatView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: initView$lambda-0  reason: not valid java name */
-    public static final void m5149initView$lambda0(FeedOperationFloatView this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.onClickContent();
+    public static final void m2062initView$lambda0(FeedOperationFloatView feedOperationFloatView, View view) {
+        Intrinsics.e(feedOperationFloatView, "this$0");
+        feedOperationFloatView.onClickContent();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: initView$lambda-1  reason: not valid java name */
-    public static final void m5150initView$lambda1(FeedOperationFloatView this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.onClickConfirm();
+    public static final void m2063initView$lambda1(FeedOperationFloatView feedOperationFloatView, View view) {
+        Intrinsics.e(feedOperationFloatView, "this$0");
+        feedOperationFloatView.onClickConfirm();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: initView$lambda-2  reason: not valid java name */
-    public static final void m5151initView$lambda2(FeedOperationFloatView this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.onClickClose();
+    public static final void m2064initView$lambda2(FeedOperationFloatView feedOperationFloatView, View view) {
+        Intrinsics.e(feedOperationFloatView, "this$0");
+        feedOperationFloatView.onClickClose();
     }
 
     private final void onClickClose() {
@@ -121,10 +121,10 @@ public final class FeedOperationFloatView extends FrameLayout {
         FeedOperationFloatModel feedOperationFloatModel = this.model;
         if (feedOperationFloatModel != null) {
             if (this.from == 2) {
-                CommunityManager.f19086a.a().a(feedOperationFloatModel.getP_id());
+                CommunityManager.a.a().a(feedOperationFloatModel.getP_id());
                 EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_GUIDE_CLOSE_CLICK, FeedProtos.SourcePage.FEED_PLAZA_RECOMMEND);
             } else {
-                CommunityManager.f19086a.a().b(feedOperationFloatModel.getP_id());
+                CommunityManager.a.a().b(feedOperationFloatModel.getP_id());
                 EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_GUIDE_CLOSE_CLICK, FeedProtos.SourcePage.FEED_PLAZA_NEARBY);
             }
         }
@@ -175,7 +175,7 @@ public final class FeedOperationFloatView extends FrameLayout {
     }
 
     public final void refreshDarkMode() {
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             View view = this.layoutContent;
             if (view == null) {
                 return;

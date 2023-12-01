@@ -1,5 +1,6 @@
 package com.tencent.qcloud.core.auth;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.qcloud.core.http.HttpConfiguration;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/auth/SessionQCloudCredentials.class */
@@ -56,7 +57,7 @@ public class SessionQCloudCredentials implements QCloudLifecycleCredentials, QCl
     }
 
     private String getKeyTime(long j, long j2) {
-        return Utils.handleTimeAccuracy(j) + ";" + Utils.handleTimeAccuracy(j2);
+        return Utils.handleTimeAccuracy(j) + t.aE + Utils.handleTimeAccuracy(j2);
     }
 
     private String getSignKey(String str, String str2) {
@@ -73,7 +74,7 @@ public class SessionQCloudCredentials implements QCloudLifecycleCredentials, QCl
 
     @Override // com.tencent.qcloud.core.auth.QCloudLifecycleCredentials
     public String getKeyTime() {
-        return Utils.handleTimeAccuracy(this.startTime) + ";" + Utils.handleTimeAccuracy(this.expiredTime);
+        return Utils.handleTimeAccuracy(this.startTime) + t.aE + Utils.handleTimeAccuracy(this.expiredTime);
     }
 
     @Override // com.tencent.qcloud.core.auth.QCloudCredentials

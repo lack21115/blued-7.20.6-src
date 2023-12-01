@@ -17,9 +17,7 @@ public final class gg extends ex<RoutePOISearchQuery, RoutePOISearchResult> {
     /* renamed from: com.amap.api.col.3sl.gg$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gg$1.class */
     static final /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4992a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:21:0x0071 -> B:49:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x0075 -> B:45:0x001f). Please submit an issue!!! */
@@ -31,41 +29,41 @@ public final class gg extends ex<RoutePOISearchQuery, RoutePOISearchResult> {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:35:0x008d -> B:51:0x0064). Please submit an issue!!! */
         static {
             int[] iArr = new int[RoutePOISearch.RoutePOISearchType.values().length];
-            f4992a = iArr;
+            a = iArr;
             try {
                 iArr[RoutePOISearch.RoutePOISearchType.TypeGasStation.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeMaintenanceStation.ordinal()] = 2;
+                a[RoutePOISearch.RoutePOISearchType.TypeMaintenanceStation.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeATM.ordinal()] = 3;
+                a[RoutePOISearch.RoutePOISearchType.TypeATM.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeToilet.ordinal()] = 4;
+                a[RoutePOISearch.RoutePOISearchType.TypeToilet.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeFillingStation.ordinal()] = 5;
+                a[RoutePOISearch.RoutePOISearchType.TypeFillingStation.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeServiceArea.ordinal()] = 6;
+                a[RoutePOISearch.RoutePOISearchType.TypeServiceArea.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeChargeStation.ordinal()] = 7;
+                a[RoutePOISearch.RoutePOISearchType.TypeChargeStation.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeFood.ordinal()] = 8;
+                a[RoutePOISearch.RoutePOISearchType.TypeFood.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f4992a[RoutePOISearch.RoutePOISearchType.TypeHotel.ordinal()] = 9;
+                a[RoutePOISearch.RoutePOISearchType.TypeHotel.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
         }
@@ -101,7 +99,7 @@ public final class gg extends ex<RoutePOISearchQuery, RoutePOISearchResult> {
         stringBuffer.append(sb.toString());
         String str = "";
         try {
-            switch (AnonymousClass1.f4992a[((RoutePOISearchQuery) this.b).getSearchType().ordinal()]) {
+            switch (AnonymousClass1.a[((RoutePOISearchQuery) this.b).getSearchType().ordinal()]) {
                 case 1:
                     str = "010100";
                     break;

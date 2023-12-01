@@ -4,15 +4,15 @@ package com.meizu.flyme.openidsdk;
 public class OpenId {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f24193a;
+    public long f10578a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f24194c;
+    public String f10579c;
     public int d;
 
     public OpenId(String str) {
-        this.f24194c = str;
+        this.f10579c = str;
     }
 
     public native void a(int i);

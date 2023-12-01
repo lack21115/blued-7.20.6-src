@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.mapsdk.internal.ma;
 import com.tencent.smtt.sdk.TbsConfig;
 import com.tencent.smtt.sdk.WebView;
@@ -14,11 +15,11 @@ import com.tencent.smtt.sdk.WebView;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f38963a;
+    private static String f25272a;
     private static String b = "GA";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f38964c = "GE";
+    private static String f25273c = "GE";
     private static String d = "9422";
     private static String e = "0";
     private static String f = "";
@@ -31,12 +32,12 @@ public class j {
     }
 
     public static String a(Context context) {
-        if (TextUtils.isEmpty(f38963a)) {
-            String a2 = a(context, String.valueOf(WebView.getTbsSDKVersion(context)), "0", b, f38964c, d, e, f, g);
-            f38963a = a2;
+        if (TextUtils.isEmpty(f25272a)) {
+            String a2 = a(context, String.valueOf(WebView.getTbsSDKVersion(context)), "0", b, f25273c, d, e, f, g);
+            f25272a = a2;
             return a2;
         }
-        return f38963a;
+        return f25272a;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(26:1|2|3|4|(3:5|6|(1:8)(1:48))|9|(3:11|(1:13)|44)(3:45|(1:47)|44)|14|(1:16)|17|(1:19)|20|(1:22)|23|24|25|26|27|(1:29)|30|(3:31|32|33)|34|(1:36)|37|38|(1:(0))) */
@@ -64,7 +65,7 @@ public class j {
     }
 
     private static void a(StringBuilder sb, String str, String str2) {
-        sb.append("&");
+        sb.append(ContainerUtils.FIELD_DELIMITER);
         sb.append(str);
         sb.append("=");
         sb.append(str2);

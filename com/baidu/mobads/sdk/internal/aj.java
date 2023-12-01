@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class aj extends bf {
 
     /* renamed from: a  reason: collision with root package name */
-    private CPUAggregationManager.CPUAggregationListener f9306a;
+    private CPUAggregationManager.CPUAggregationListener f6466a;
     private String q;
     private int r;
     private int s;
@@ -77,26 +77,26 @@ public class aj extends bf {
     @Override // com.baidu.mobads.sdk.internal.bf
     public void a(int i, String str) {
         super.a(i, str);
-        CPUAggregationManager.CPUAggregationListener cPUAggregationListener = this.f9306a;
+        CPUAggregationManager.CPUAggregationListener cPUAggregationListener = this.f6466a;
         if (cPUAggregationListener != null) {
             cPUAggregationListener.onHotContentError(str, i);
         }
     }
 
     public void a(CPUAggregationManager.CPUAggregationListener cPUAggregationListener) {
-        this.f9306a = cPUAggregationListener;
+        this.f6466a = cPUAggregationListener;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void a(IOAdEvent iOAdEvent) {
-        if (this.f9306a != null) {
+        if (this.f6466a != null) {
             try {
                 ArrayList arrayList = new ArrayList();
                 for (Object obj : (List) iOAdEvent.getData().get("cpuHotList")) {
                     arrayList.add(new NativeCPUAggregationData(this.h, obj, this.v));
                 }
-                this.f9306a.onHotContentLoaded(arrayList);
+                this.f6466a.onHotContentLoaded(arrayList);
             } catch (Exception e) {
             }
         }
@@ -106,7 +106,7 @@ public class aj extends bf {
     @Override // com.baidu.mobads.sdk.internal.bf
     public void b(String str, int i) {
         super.b(str, i);
-        CPUAggregationManager.CPUAggregationListener cPUAggregationListener = this.f9306a;
+        CPUAggregationManager.CPUAggregationListener cPUAggregationListener = this.f6466a;
         if (cPUAggregationListener != null) {
             cPUAggregationListener.onHotContentError(str, i);
         }
@@ -115,7 +115,7 @@ public class aj extends bf {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void d() {
-        CPUAggregationManager.CPUAggregationListener cPUAggregationListener = this.f9306a;
+        CPUAggregationManager.CPUAggregationListener cPUAggregationListener = this.f6466a;
         if (cPUAggregationListener != null) {
             cPUAggregationListener.onExitLp();
         }

@@ -10,16 +10,16 @@ import java.util.concurrent.Callable;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/process/b.class */
 public class b {
-    private static InterfaceC0912b e;
+    private static InterfaceC0742b e;
     private static c f;
     private static final String b = b.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f35625c = 0;
+    private static int f21934c = 0;
     private static boolean d = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f35624a = 0;
+    public static int f21933a = 0;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/process/b$a.class */
     public interface a {
@@ -34,7 +34,7 @@ public class b {
 
     /* renamed from: com.tencent.cloud.huiyansdkface.facelight.process.b$b  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/process/b$b.class */
-    public interface InterfaceC0912b {
+    public interface InterfaceC0742b {
         void a();
 
         void a(int i, String str, String str2);
@@ -43,9 +43,9 @@ public class b {
     public static int a() {
         try {
             YTPoseDetectJNIInterface.nativeLog(b, "[YTFacePreviewInterface.initModel] ---");
-            if (f35625c > 0) {
+            if (f21934c > 0) {
                 YTPoseDetectJNIInterface.nativeLog(b, "[YTFacePreviewInterface.initModel] has already inited.");
-                f35625c++;
+                f21934c++;
                 return 0;
             }
             int initModel = YTPoseDetectJNIInterface.initModel("");
@@ -53,7 +53,7 @@ public class b {
                 c cVar = new c();
                 f = cVar;
                 cVar.a();
-                f35625c++;
+                f21934c++;
                 return 0;
             }
             return initModel;
@@ -65,20 +65,20 @@ public class b {
         }
     }
 
-    public static int a(int i, InterfaceC0912b interfaceC0912b) {
+    public static int a(int i, InterfaceC0742b interfaceC0742b) {
         YTPoseDetectJNIInterface.nativeLog(b, "[YTPoseDetectInterface.start] ---");
-        if (interfaceC0912b == null) {
+        if (interfaceC0742b == null) {
             return -1;
         }
-        e = interfaceC0912b;
-        if (f35625c > 0) {
-            f.a(i, new InterfaceC0912b() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.b.5
-                @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0912b
+        e = interfaceC0742b;
+        if (f21934c > 0) {
+            f.a(i, new InterfaceC0742b() { // from class: com.tencent.cloud.huiyansdkface.facelight.process.b.5
+                @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0742b
                 public void a() {
                     b.i();
                 }
 
-                @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0912b
+                @Override // com.tencent.cloud.huiyansdkface.facelight.process.b.InterfaceC0742b
                 public void a(int i2, String str, String str2) {
                     b.b(i2, str, str2);
                 }
@@ -129,7 +129,7 @@ public class b {
         int i6;
         String str;
         String str2;
-        if (f35625c <= 0) {
+        if (f21934c <= 0) {
             i6 = 2;
             str = "Not init model on poseDetect.";
             str2 = "Call YTPoseDetectInterface.initModel() before.";
@@ -157,15 +157,15 @@ public class b {
 
     public static void b() {
         YTPoseDetectJNIInterface.nativeLog(b, "[YTFacePreviewInterface.finalize] ---");
-        int i = f35625c - 1;
-        f35625c = i;
+        int i = f21934c - 1;
+        f21934c = i;
         if (i <= 0) {
             c cVar = f;
             if (cVar != null) {
                 cVar.b();
             }
             YTPoseDetectJNIInterface.releaseAll();
-            f35625c = 0;
+            f21934c = 0;
         }
     }
 
@@ -193,7 +193,7 @@ public class b {
 
     public static boolean e() {
         c cVar = f;
-        return cVar != null && cVar.f35629a;
+        return cVar != null && cVar.f21938a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -1,6 +1,5 @@
 package com.sobot.chat.utils;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +7,7 @@ import java.io.IOException;
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/utils/WriteFile.class */
 public class WriteFile {
     public static void checkFilePath(String str) {
-        File file = new File(str.substring(0, str.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1));
+        File file = new File(str.substring(0, str.lastIndexOf("/") + 1));
         if (!file.isDirectory()) {
             file.mkdirs();
         }

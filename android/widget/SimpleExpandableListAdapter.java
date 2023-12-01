@@ -32,7 +32,7 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
         this.mLastChildLayout = i4;
         this.mChildFrom = strArr2;
         this.mChildTo = iArr2;
-        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
     }
 
     public SimpleExpandableListAdapter(Context context, List<? extends Map<String, ?>> list, int i, int i2, String[] strArr, int[] iArr, List<? extends List<? extends Map<String, ?>>> list2, int i3, String[] strArr2, int[] iArr2) {

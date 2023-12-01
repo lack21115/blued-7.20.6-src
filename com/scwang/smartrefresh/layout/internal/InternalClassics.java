@@ -1,5 +1,6 @@
 package com.scwang.smartrefresh.layout.internal;
 
+import android.R;
 import android.content.Context;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.BitmapDrawable;
@@ -61,18 +62,18 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         textView2.setId(1);
         imageView.setId(2);
         imageView2.setId(3);
-        linearLayout2.setId(16908312);
+        linearLayout2.setId(R.id.widget_frame);
         linearLayout2.addView(textView2, new LinearLayout.LayoutParams(-2, -2));
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(13);
         addView(linearLayout2, layoutParams);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(densityUtil.b(20.0f), densityUtil.b(20.0f));
         layoutParams2.addRule(15);
-        layoutParams2.addRule(0, 16908312);
+        layoutParams2.addRule(0, R.id.widget_frame);
         addView(imageView, layoutParams2);
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams((ViewGroup.LayoutParams) layoutParams2);
         layoutParams3.addRule(15);
-        layoutParams3.addRule(0, 16908312);
+        layoutParams3.addRule(0, R.id.widget_frame);
         imageView2.animate().setInterpolator(new LinearInterpolator());
         addView(imageView2, layoutParams3);
         if (getPaddingTop() == 0) {
@@ -184,9 +185,8 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         return a();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (Build.VERSION.SDK_INT >= 14) {
             ImageView imageView = this.A;
@@ -203,9 +203,8 @@ public abstract class InternalClassics<T extends InternalClassics> extends Inter
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.RelativeLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (View.MeasureSpec.getMode(i2) == 1073741824) {
             int size = View.MeasureSpec.getSize(i2);
             int i3 = this.M;

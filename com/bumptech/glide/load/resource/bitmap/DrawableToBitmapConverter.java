@@ -15,7 +15,7 @@ import java.util.concurrent.locks.Lock;
 final class DrawableToBitmapConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final BitmapPool f20953a = new BitmapPoolAdapter() { // from class: com.bumptech.glide.load.resource.bitmap.DrawableToBitmapConverter.1
+    private static final BitmapPool f7347a = new BitmapPoolAdapter() { // from class: com.bumptech.glide.load.resource.bitmap.DrawableToBitmapConverter.1
         @Override // com.bumptech.glide.load.engine.bitmap_recycle.BitmapPoolAdapter, com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool
         public void a(Bitmap bitmap) {
         }
@@ -40,7 +40,7 @@ final class DrawableToBitmapConverter {
             z = true;
         }
         if (!z) {
-            bitmapPool = f20953a;
+            bitmapPool = f7347a;
         }
         return BitmapResource.a(bitmap, bitmapPool);
     }

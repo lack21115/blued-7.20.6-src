@@ -9,10 +9,10 @@ public class cy {
     private static volatile cy b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23809a;
+    private Context f10201a;
 
     private cy(Context context) {
-        this.f23809a = context;
+        this.f10201a = context;
     }
 
     public static cy a(Context context) {
@@ -35,9 +35,9 @@ public class cy {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    h a2 = h.a(cy.this.f23809a, "re_po_rt");
+                    h a2 = h.a(cy.this.f10201a, "re_po_rt");
                     if (a2.b(de.E, 1) == 1) {
-                        long a3 = de.a(cy.this.f23809a).a(de.be);
+                        long a3 = de.a(cy.this.f10201a).a(de.be);
                         long currentTimeMillis = System.currentTimeMillis();
                         long b2 = a2.b(de.G, 12);
                         if (a3 > 0 && currentTimeMillis - a3 < WeaponHI.ii * 3600000 && WeaponHI.isList != null) {
@@ -50,8 +50,8 @@ public class cy {
                             }
                         }
                         if (currentTimeMillis - a3 >= b2 * 3600000) {
-                            co.a(cy.this.f23809a, new ci(cy.this.f23809a).a(cj.g), cj.g, true, true);
-                            de.a(cy.this.f23809a).a(de.be, currentTimeMillis);
+                            co.a(cy.this.f10201a, new ci(cy.this.f10201a).a(cj.g), cj.g, true, true);
+                            de.a(cy.this.f10201a).a(de.be, currentTimeMillis);
                         }
                     }
                 } catch (Throwable th) {

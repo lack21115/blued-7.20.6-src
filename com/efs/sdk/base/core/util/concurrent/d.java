@@ -9,7 +9,7 @@ import java.util.List;
 public class d<T> implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<b<T>> f21796a = new ArrayList(5);
+    private List<b<T>> f8190a = new ArrayList(5);
     private c<T> b;
 
     public d(c<T> cVar) {
@@ -20,15 +20,15 @@ public class d<T> implements Runnable {
         T t;
         T t2 = null;
         try {
-            Iterator<b<T>> it = this.f21796a.iterator();
+            Iterator<b<T>> it = this.f8190a.iterator();
             while (it.hasNext()) {
                 it.next();
             }
             T a2 = this.b.a();
-            for (b<T> bVar : this.f21796a) {
+            for (b<T> bVar : this.f8190a) {
                 bVar.a(this.b, a2);
             }
-            Iterator<b<T>> it2 = this.f21796a.iterator();
+            Iterator<b<T>> it2 = this.f8190a.iterator();
             while (true) {
                 t2 = a2;
                 t = a2;
@@ -39,7 +39,7 @@ public class d<T> implements Runnable {
             }
         } catch (Throwable th) {
             Log.w("efs.util.concurrent", th);
-            Iterator<b<T>> it3 = this.f21796a.iterator();
+            Iterator<b<T>> it3 = this.f8190a.iterator();
             while (true) {
                 t = t2;
                 if (!it3.hasNext()) {
@@ -52,7 +52,7 @@ public class d<T> implements Runnable {
     }
 
     public final void a(List<b<T>> list) {
-        this.f21796a.addAll(list);
+        this.f8190a.addAll(list);
     }
 
     @Override // java.lang.Runnable

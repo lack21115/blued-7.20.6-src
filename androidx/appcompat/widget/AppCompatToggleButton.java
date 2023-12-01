@@ -17,36 +17,36 @@ import androidx.core.view.TintableBackgroundView;
 public class AppCompatToggleButton extends ToggleButton implements EmojiCompatConfigurationView, TintableBackgroundView {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AppCompatBackgroundHelper f1806a;
+    private final AppCompatBackgroundHelper f1758a;
     private final AppCompatTextHelper b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AppCompatEmojiTextHelper f1807c;
+    private AppCompatEmojiTextHelper f1759c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatToggleButton$InspectionCompanion.class */
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatToggleButton> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1808a = false;
+        private boolean f1760a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1809c;
+        private int f1761c;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1809c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
-            this.f1808a = true;
+            this.f1761c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.f1760a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatToggleButton appCompatToggleButton, PropertyReader propertyReader) {
-            if (!this.f1808a) {
+            if (!this.f1760a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatToggleButton.getBackgroundTintList());
-            propertyReader.readObject(this.f1809c, appCompatToggleButton.getBackgroundTintMode());
+            propertyReader.readObject(this.f1761c, appCompatToggleButton.getBackgroundTintMode());
         }
     }
 
@@ -55,14 +55,14 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
     }
 
     public AppCompatToggleButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842827);
+        this(context, attributeSet, android.R.attr.buttonStyleToggle);
     }
 
     public AppCompatToggleButton(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         ThemeUtils.checkAppCompatTheme(this, getContext());
         AppCompatBackgroundHelper appCompatBackgroundHelper = new AppCompatBackgroundHelper(this);
-        this.f1806a = appCompatBackgroundHelper;
+        this.f1758a = appCompatBackgroundHelper;
         appCompatBackgroundHelper.a(attributeSet, i);
         AppCompatTextHelper appCompatTextHelper = new AppCompatTextHelper(this);
         this.b = appCompatTextHelper;
@@ -71,17 +71,16 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
     }
 
     private AppCompatEmojiTextHelper getEmojiTextViewHelper() {
-        if (this.f1807c == null) {
-            this.f1807c = new AppCompatEmojiTextHelper(this);
+        if (this.f1759c == null) {
+            this.f1759c = new AppCompatEmojiTextHelper(this);
         }
-        return this.f1807c;
+        return this.f1759c;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ToggleButton, android.widget.CompoundButton, android.widget.TextView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1806a;
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1758a;
         if (appCompatBackgroundHelper != null) {
             appCompatBackgroundHelper.c();
         }
@@ -93,7 +92,7 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
 
     @Override // androidx.core.view.TintableBackgroundView
     public ColorStateList getSupportBackgroundTintList() {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1806a;
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1758a;
         if (appCompatBackgroundHelper != null) {
             return appCompatBackgroundHelper.a();
         }
@@ -102,7 +101,7 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
 
     @Override // androidx.core.view.TintableBackgroundView
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1806a;
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1758a;
         if (appCompatBackgroundHelper != null) {
             return appCompatBackgroundHelper.b();
         }
@@ -123,7 +122,7 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
     @Override // android.widget.ToggleButton, android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1806a;
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1758a;
         if (appCompatBackgroundHelper != null) {
             appCompatBackgroundHelper.a(drawable);
         }
@@ -132,7 +131,7 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
     @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1806a;
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1758a;
         if (appCompatBackgroundHelper != null) {
             appCompatBackgroundHelper.a(i);
         }
@@ -150,7 +149,7 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
 
     @Override // androidx.core.view.TintableBackgroundView
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1806a;
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1758a;
         if (appCompatBackgroundHelper != null) {
             appCompatBackgroundHelper.a(colorStateList);
         }
@@ -158,7 +157,7 @@ public class AppCompatToggleButton extends ToggleButton implements EmojiCompatCo
 
     @Override // androidx.core.view.TintableBackgroundView
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1806a;
+        AppCompatBackgroundHelper appCompatBackgroundHelper = this.f1758a;
         if (appCompatBackgroundHelper != null) {
             appCompatBackgroundHelper.a(mode);
         }

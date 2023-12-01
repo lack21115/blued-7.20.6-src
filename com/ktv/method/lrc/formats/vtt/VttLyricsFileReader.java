@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 public class VttLyricsFileReader extends LyricsFileReader {
     private LyricsLineInfo a(Map<String, Object> map, String str, LyricsInfo lyricsInfo) throws Exception {
         if (str.startsWith("[ti:")) {
-            map.put(LyricsTag.f23697a, str.substring(4, str.lastIndexOf("]")));
+            map.put(LyricsTag.f10089a, str.substring(4, str.lastIndexOf("]")));
             return null;
         }
         Matcher matcher = Pattern.compile("\\[\\d+,\\d+\\]").matcher(str);

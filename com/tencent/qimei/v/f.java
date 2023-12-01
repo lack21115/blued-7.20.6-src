@@ -7,16 +7,16 @@ import java.util.concurrent.ConcurrentHashMap;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map<String, f> f38424a = new ConcurrentHashMap();
+    public static final Map<String, f> f24733a = new ConcurrentHashMap();
     public static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f38425c;
+    public final String f24734c;
     public j d;
     public boolean e = false;
 
     public f(String str) {
-        this.f38425c = str;
+        this.f24734c = str;
         this.d = new j(this, str);
     }
 
@@ -24,11 +24,11 @@ public class f {
         f fVar;
         synchronized (f.class) {
             try {
-                f fVar2 = f38424a.get(str);
+                f fVar2 = f24733a.get(str);
                 fVar = fVar2;
                 if (fVar2 == null) {
                     fVar = new f(str);
-                    f38424a.put(str, fVar);
+                    f24733a.put(str, fVar);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -54,7 +54,7 @@ public class f {
     public final void b() {
         synchronized (this) {
             if (com.tencent.qimei.c.a.i()) {
-                if (com.tencent.qimei.a.a.a(com.tencent.qimei.i.f.a(this.f38425c).b("s_s_t"))) {
+                if (com.tencent.qimei.a.a.a(com.tencent.qimei.i.f.a(this.f24734c).b("s_s_t"))) {
                     com.tencent.qimei.k.a.b("SDK_INIT ｜ 策略", "距离上次请求Strategy超过24小时", new Object[0]);
                     if (!this.d.b.get()) {
                         com.tencent.qimei.b.a.a().a(this.d);

@@ -15,6 +15,7 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
+import com.android.org.conscrypt.NativeCrypto;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.external_sense_library.config.BluedBeautifyKey;
@@ -48,6 +49,7 @@ import com.sensetime.stmobile.model.STEffectRenderInParam;
 import com.sensetime.stmobile.model.STEffectRenderOutParam;
 import com.sensetime.stmobile.model.STEffectTexture;
 import com.sensetime.stmobile.model.STHumanAction;
+import com.sensetime.stmobile.model.STImage;
 import com.sensetime.stmobile.model.STQuaternion;
 import com.sensetime.stmobile.model.STRect;
 import com.sensetime.stmobile.model.STStickerInputParams;
@@ -174,7 +176,7 @@ public abstract class SenseTimeBaseManager implements SensorEventListener, IRequ
         this.mIsCreateHumanActionHandleSucceeded = false;
         this.mHumanActionHandleLock = new Object();
         this.mImageDataLock = new Object();
-        this.mHumanActionCreateConfig = STMobileHumanActionNative.ST_MOBILE_HUMAN_ACTION_DEFAULT_CONFIG_VIDEO;
+        this.mHumanActionCreateConfig = 131568;
         this.mStickerMaps = new HashMap<>();
         this.mParamType = 0;
         this.result = 1000;
@@ -438,8 +440,8 @@ public abstract class SenseTimeBaseManager implements SensorEventListener, IRequ
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void checkTexture(int i, int i2) {
-        AppLogger a2 = AppLogger.a();
-        a2.a("Blued_Sense_SenseTimeManager texWidth:" + i + " | texHeight:" + i2, new Object[0]);
+        AppLogger a = AppLogger.a();
+        a.a("Blued_Sense_SenseTimeManager texWidth:" + i + " | texHeight:" + i2, new Object[0]);
         if (this.mTexWidth != i || this.mTexHeight != i2 || this.mCameraChanging) {
             deleteInternalTextures();
             this.mTexWidth = i;
@@ -660,7 +662,7 @@ public abstract class SenseTimeBaseManager implements SensorEventListener, IRequ
             j = 8192;
         } else if ((handAction & 2048) > 0) {
             j = 2048;
-        } else if ((handAction & 16384) > 0) {
+        } else if ((handAction & NativeCrypto.SSL_OP_NO_TICKET) > 0) {
             j = 16384;
         }
         Message obtainMessage2 = this.mUpdateHandActionHandler.obtainMessage(141);
@@ -670,7 +672,7 @@ public abstract class SenseTimeBaseManager implements SensorEventListener, IRequ
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void init() {
-        init(true, STMobileHumanActionNative.ST_MOBILE_HUMAN_ACTION_DEFAULT_CONFIG_VIDEO);
+        init(true, 131568);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -788,9 +790,9 @@ public abstract class SenseTimeBaseManager implements SensorEventListener, IRequ
         }
         if (this.mNeedSetObjectTarget) {
             long currentTimeMillis = System.currentTimeMillis();
-            Rect c2 = STUtils.c(this.mTargetRect, this.mImageWidth, this.mImageHeight, this.mCameraID, this.mImageRotation);
-            this.mTargetRect = c2;
-            this.mSTMobileObjectTrackNative.setTarget(this.mImageData, 3, this.mImageHeight, this.mImageWidth, new STRect(c2.left, this.mTargetRect.top, this.mTargetRect.right, this.mTargetRect.bottom));
+            Rect c = STUtils.c(this.mTargetRect, this.mImageWidth, this.mImageHeight, this.mCameraID, this.mImageRotation);
+            this.mTargetRect = c;
+            this.mSTMobileObjectTrackNative.setTarget(this.mImageData, 3, this.mImageHeight, this.mImageWidth, new STRect(c.left, this.mTargetRect.top, this.mTargetRect.right, this.mTargetRect.bottom));
             LogUtils.c(TAG, "setTarget cost time: " + (System.currentTimeMillis() - currentTimeMillis) + " rotation = " + this.mImageRotation, new Object[0]);
             this.mNeedSetObjectTarget = false;
             this.mIsObjectTracking = true;
@@ -860,7 +862,7 @@ public abstract class SenseTimeBaseManager implements SensorEventListener, IRequ
             sTEffectCustomParam = new STEffectCustomParam(sTQuaternion, z, i5);
         }
         STEffectRenderInParam sTEffectRenderInParam = new STEffectRenderInParam(sTHumanAction, this.mAnimalFaceInfo[0], i4, i4, false, sTEffectCustomParam, sTEffectTexture, (STEffectInImage) null);
-        STEffectRenderOutParam sTEffectRenderOutParam = new STEffectRenderOutParam(sTEffectTexture2, null, this.mHumanActionBeautyOutput);
+        STEffectRenderOutParam sTEffectRenderOutParam = new STEffectRenderOutParam(sTEffectTexture2, (STImage) null, this.mHumanActionBeautyOutput);
         this.mSTMobileEffectNative.render(sTEffectRenderInParam, sTEffectRenderOutParam, false);
         return sTEffectRenderOutParam.getTexture() != null ? sTEffectRenderOutParam.getTexture().getId() : i;
     }
@@ -984,7 +986,7 @@ public abstract class SenseTimeBaseManager implements SensorEventListener, IRequ
         if (filer == null) {
             this.mFilterStyle = "";
             this.mNeedFilter = false;
-            this.mSTMobileEffectNative.setBeauty(501, null);
+            this.mSTMobileEffectNative.setBeauty(501, (String) null);
             return;
         }
         String model = FilterDataManager.getInstance().getModel(filer);

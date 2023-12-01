@@ -1,7 +1,5 @@
 package com.ishumei.l1111l111111Il;
 
-import com.amap.api.col.p0003sl.iu;
-
 /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l1111l111111Il/l111l11111I1l.class */
 public final class l111l11111I1l {
     @l111l11111Il(l1111l111111Il = "a1")
@@ -22,7 +20,7 @@ public final class l111l11111I1l {
     private String l111l1111llIl;
     @l111l11111Il(l1111l111111Il = "a98")
     private String l11l1111I11l;
-    @l111l11111Il(l1111l111111Il = iu.h)
+    @l111l11111Il(l1111l111111Il = "e")
     private String l11l1111I1l;
     @l111l11111Il(l1111l111111Il = "a97")
     private String l11l1111lIIl;

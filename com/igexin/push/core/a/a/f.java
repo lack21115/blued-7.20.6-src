@@ -48,7 +48,7 @@ public final class f extends com.igexin.push.core.a.a {
             com.igexin.c.a.c.a.a("loginReqAfterRegister|new session:" + com.igexin.push.core.e.z + ", cid :" + com.igexin.push.core.e.A + ", devId :" + com.igexin.push.core.e.H, new Object[0]);
             k.a();
             i d = k.d();
-            com.igexin.push.d.a aVar = d.a.f23474a.h;
+            com.igexin.push.d.a aVar = d.a.f9866a.h;
             StringBuilder sb = new StringBuilder("S-");
             sb.append(d.b);
             aVar.a(sb.toString(), d, true);

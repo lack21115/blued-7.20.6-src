@@ -12,13 +12,9 @@ import com.anythink.core.common.e.k;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseShakeView.class */
 public abstract class BaseShakeView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ImageView f6086a;
+    protected ImageView a;
     h b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Animation f6087c;
+    private Animation c;
     private int d;
     private a e;
 
@@ -129,15 +125,15 @@ public abstract class BaseShakeView extends LinearLayout {
     }
 
     private void b() {
-        if (this.f6086a != null) {
+        if (this.a != null) {
             RotateAnimation rotateAnimation = new RotateAnimation(-10.0f, 10.0f, 1, 0.8f, 1, 0.8f);
-            this.f6087c = rotateAnimation;
+            this.c = rotateAnimation;
             rotateAnimation.setDuration(150L);
-            this.f6087c.setRepeatMode(2);
-            this.f6087c.setRepeatCount(-1);
-            this.f6087c.setAnimationListener(new AnonymousClass2());
-            this.f6087c.setInterpolator(new AnonymousClass3());
-            this.f6086a.startAnimation(this.f6087c);
+            this.c.setRepeatMode(2);
+            this.c.setRepeatCount(-1);
+            this.c.setAnimationListener(new AnonymousClass2());
+            this.c.setInterpolator(new AnonymousClass3());
+            this.a.startAnimation(this.c);
         }
     }
 
@@ -147,15 +143,15 @@ public abstract class BaseShakeView extends LinearLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
-        if (this.f6086a != null) {
+        if (this.a != null) {
             RotateAnimation rotateAnimation = new RotateAnimation(-10.0f, 10.0f, 1, 0.8f, 1, 0.8f);
-            this.f6087c = rotateAnimation;
+            this.c = rotateAnimation;
             rotateAnimation.setDuration(150L);
-            this.f6087c.setRepeatMode(2);
-            this.f6087c.setRepeatCount(-1);
-            this.f6087c.setAnimationListener(new AnonymousClass2());
-            this.f6087c.setInterpolator(new AnonymousClass3());
-            this.f6086a.startAnimation(this.f6087c);
+            this.c.setRepeatMode(2);
+            this.c.setRepeatCount(-1);
+            this.c.setAnimationListener(new AnonymousClass2());
+            this.c.setInterpolator(new AnonymousClass3());
+            this.a.startAnimation(this.c);
         }
         com.anythink.expressad.shake.a.a().a(this.b);
     }
@@ -164,7 +160,7 @@ public abstract class BaseShakeView extends LinearLayout {
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        Animation animation = this.f6087c;
+        Animation animation = this.c;
         if (animation != null) {
             animation.cancel();
         }

@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public final class a extends ThreadPoolExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    public static ThreadPoolExecutor f36473a;
+    public static ThreadPoolExecutor f22782a;
 
     private a() {
         super(1, 3, 100L, TimeUnit.MILLISECONDS, new LinkedBlockingDeque(), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
@@ -19,10 +19,10 @@ public final class a extends ThreadPoolExecutor {
         ThreadPoolExecutor threadPoolExecutor;
         synchronized (a.class) {
             try {
-                if (f36473a == null || f36473a.isShutdown()) {
-                    f36473a = new a();
+                if (f22782a == null || f22782a.isShutdown()) {
+                    f22782a = new a();
                 }
-                threadPoolExecutor = f36473a;
+                threadPoolExecutor = f22782a;
             } finally {
             }
         }

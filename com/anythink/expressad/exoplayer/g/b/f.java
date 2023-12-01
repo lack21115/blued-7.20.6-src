@@ -29,26 +29,26 @@ public final class f extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7352a = "GEOB";
+    public static final String f4513a = "GEOB";
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f7353c;
+    public final String f4514c;
     public final String d;
     public final byte[] e;
 
     f(Parcel parcel) {
-        super(f7352a);
+        super(f4513a);
         this.b = parcel.readString();
-        this.f7353c = parcel.readString();
+        this.f4514c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.createByteArray();
     }
 
     public f(String str, String str2, String str3, byte[] bArr) {
-        super(f7352a);
+        super(f4513a);
         this.b = str;
-        this.f7353c = str2;
+        this.f4514c = str2;
         this.d = str3;
         this.e = bArr;
     }
@@ -61,14 +61,14 @@ public final class f extends h {
             return false;
         }
         f fVar = (f) obj;
-        return af.a((Object) this.b, (Object) fVar.b) && af.a((Object) this.f7353c, (Object) fVar.f7353c) && af.a((Object) this.d, (Object) fVar.d) && Arrays.equals(this.e, fVar.e);
+        return af.a((Object) this.b, (Object) fVar.b) && af.a((Object) this.f4514c, (Object) fVar.f4514c) && af.a((Object) this.d, (Object) fVar.d) && Arrays.equals(this.e, fVar.e);
     }
 
     public final int hashCode() {
         String str = this.b;
         int i = 0;
         int hashCode = str != null ? str.hashCode() : 0;
-        String str2 = this.f7353c;
+        String str2 = this.f4514c;
         int hashCode2 = str2 != null ? str2.hashCode() : 0;
         String str3 = this.d;
         if (str3 != null) {
@@ -79,13 +79,13 @@ public final class f extends h {
 
     @Override // com.anythink.expressad.exoplayer.g.b.h
     public final String toString() {
-        return this.g + ": mimeType=" + this.b + ", filename=" + this.f7353c + ", description=" + this.d;
+        return this.g + ": mimeType=" + this.b + ", filename=" + this.f4514c + ", description=" + this.d;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.b);
-        parcel.writeString(this.f7353c);
+        parcel.writeString(this.f4514c);
         parcel.writeString(this.d);
         parcel.writeByteArray(this.e);
     }

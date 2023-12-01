@@ -4,32 +4,27 @@ import android.content.Context;
 import com.anythink.core.api.AdError;
 import com.anythink.core.api.ErrorCode;
 import com.anythink.core.common.e.an;
-import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
 import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/f.class */
 public final class f extends a {
     public static final int e = 1;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6725a;
+    String a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f6726c;
+    String c;
     int d;
     private an f;
 
     private f(String str) {
         this.d = 0;
-        this.f6725a = str;
+        this.a = str;
     }
 
     private f(String str, int i, String str2) {
         this(str);
         this.d = 1;
         this.b = i;
-        this.f6726c = str2;
+        this.c = str2;
     }
 
     public static f a(String str, int i, String str2) {
@@ -51,7 +46,7 @@ public final class f extends a {
         if (1 != this.d || (anVar = this.f) == null) {
             return null;
         }
-        anVar.a(BasicPushStatus.SUCCESS_CODE);
+        anVar.a("200");
         com.anythink.core.common.j.c.a(this.f);
         return null;
     }
@@ -71,7 +66,7 @@ public final class f extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final String b() {
-        return this.f6725a;
+        return this.a;
     }
 
     @Override // com.anythink.core.common.g.a

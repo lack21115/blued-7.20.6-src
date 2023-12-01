@@ -10,9 +10,9 @@ public class ShareModel implements Parcelable {
         /* renamed from: a */
         public ShareModel createFromParcel(Parcel parcel) {
             ShareModel shareModel = new ShareModel();
-            shareModel.f38306a = parcel.readString();
+            shareModel.f24615a = parcel.readString();
             shareModel.b = parcel.readString();
-            shareModel.f38307c = parcel.readString();
+            shareModel.f24616c = parcel.readString();
             shareModel.d = parcel.readString();
             return shareModel;
         }
@@ -25,11 +25,11 @@ public class ShareModel implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public String f38306a;
+    public String f24615a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f38307c;
+    public String f24616c;
     public String d;
 
     @Override // android.os.Parcelable
@@ -39,9 +39,9 @@ public class ShareModel implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f38306a);
+        parcel.writeString(this.f24615a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f38307c);
+        parcel.writeString(this.f24616c);
         parcel.writeString(this.d);
     }
 }

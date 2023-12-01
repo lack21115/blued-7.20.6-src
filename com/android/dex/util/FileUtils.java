@@ -1,6 +1,6 @@
 package com.android.dex.util;
 
-import com.tencent.tinker.loader.shareutil.ShareConstants;
+import com.anythink.china.common.a.a;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,7 +11,7 @@ public final class FileUtils {
     }
 
     public static boolean hasArchiveSuffix(String str) {
-        return str.endsWith(".zip") || str.endsWith(ShareConstants.JAR_SUFFIX) || str.endsWith(".apk");
+        return str.endsWith(".zip") || str.endsWith(".jar") || str.endsWith(a.g);
     }
 
     public static byte[] readFile(File file) {

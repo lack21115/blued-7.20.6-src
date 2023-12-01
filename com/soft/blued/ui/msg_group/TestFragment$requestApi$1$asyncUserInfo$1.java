@@ -22,28 +22,25 @@ import kotlinx.coroutines.CoroutineScope;
 final class TestFragment$requestApi$1$asyncUserInfo$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super BluedEntityA<UserInfoEntity>>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32626a;
+    int f18935a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public TestFragment$requestApi$1$asyncUserInfo$1(Continuation<? super TestFragment$requestApi$1$asyncUserInfo$1> continuation) {
         super(2, continuation);
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super BluedEntityA<UserInfoEntity>> continuation) {
-        return ((TestFragment$requestApi$1$asyncUserInfo$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new TestFragment$requestApi$1$asyncUserInfo$1(continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32626a;
+        int i = this.f18935a;
         if (i != 0) {
             if (i == 1) {
                 ResultKt.a(obj);
@@ -54,8 +51,8 @@ final class TestFragment$requestApi$1$asyncUserInfo$1 extends SuspendLambda impl
         ResultKt.a(obj);
         BluedApiService a3 = BluedApiProxy.b().a(TestService.class);
         Intrinsics.c(a3, "getInstance().create(TestService::class.java)");
-        this.f32626a = 1;
-        Object a4 = TestService.DefaultImpls.a((TestService) a3, (String) null, this, 1, (Object) null);
+        this.f18935a = 1;
+        Object a4 = TestService.DefaultImpls.a((TestService) a3, (String) null, (Continuation) this, 1, (Object) null);
         return a4 == a2 ? a2 : a4;
     }
 }

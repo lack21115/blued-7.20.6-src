@@ -31,11 +31,11 @@ public class j implements gn, go, gr, BaseVideoView.g, e {
     private ImageView S;
 
     /* renamed from: a  reason: collision with root package name */
-    private View f23048a;
+    private View f9440a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f23049c;
+    private View f9441c;
     private boolean f;
     private int h;
     private boolean i;
@@ -116,7 +116,7 @@ public class j implements gn, go, gr, BaseVideoView.g, e {
     /* JADX INFO: Access modifiers changed from: private */
     public void Code(boolean z, boolean z2) {
         boolean Code;
-        View view = this.f23048a;
+        View view = this.f9440a;
         if (z2) {
             Code = bd.Code(view, z ? 0 : 8);
         } else {
@@ -167,7 +167,7 @@ public class j implements gn, go, gr, BaseVideoView.g, e {
 
     private void V(NativeVideoControlPanel nativeVideoControlPanel) {
         View D = nativeVideoControlPanel.D();
-        this.f23049c = D;
+        this.f9441c = D;
         if (D != null) {
             D.setOnClickListener(new View.OnClickListener() { // from class: com.huawei.openalliance.ad.views.j.3
                 @Override // android.view.View.OnClickListener
@@ -240,7 +240,7 @@ public class j implements gn, go, gr, BaseVideoView.g, e {
             return;
         }
         this.D = nativeVideoControlPanel.C();
-        this.f23048a = this.C.L();
+        this.f9440a = this.C.L();
         View F = this.C.F();
         this.b = F;
         if (F != null) {

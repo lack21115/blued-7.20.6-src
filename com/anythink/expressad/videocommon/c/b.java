@@ -9,16 +9,16 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f8761a;
+    private int f5921a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f8762c;
+    private a f5922c;
 
     public b(int i, int i2, a aVar) {
-        this.f8761a = i;
+        this.f5921a = i;
         this.b = i2;
-        this.f8762c = aVar;
+        this.f5922c = aVar;
     }
 
     public static List<b> a(JSONArray jSONArray) {
@@ -47,11 +47,11 @@ public final class b {
     }
 
     private void a(int i) {
-        this.f8761a = i;
+        this.f5921a = i;
     }
 
     private void a(a aVar) {
-        this.f8762c = aVar;
+        this.f5922c = aVar;
     }
 
     private void b(int i) {
@@ -59,11 +59,11 @@ public final class b {
     }
 
     private a c() {
-        return this.f8762c;
+        return this.f5922c;
     }
 
     public final int a() {
-        return this.f8761a;
+        return this.f5921a;
     }
 
     public final int b() {

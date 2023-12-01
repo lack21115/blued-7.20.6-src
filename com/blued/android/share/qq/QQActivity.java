@@ -2,7 +2,6 @@ package com.blued.android.share.qq;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -43,17 +42,14 @@ public class QQActivity extends Activity {
         private BaseUiListener() {
         }
 
-        @Override // com.tencent.tauth.IUiListener
         public void onCancel() {
             ShareProvider.getInstance().onCancel(Constants.QQNAME);
         }
 
-        @Override // com.tencent.tauth.IUiListener
         public void onComplete(Object obj) {
             ShareProvider.getInstance().onSuccess(Constants.QQNAME);
         }
 
-        @Override // com.tencent.tauth.IUiListener
         public void onError(UiError uiError) {
             ShareProvider.getInstance().onFailure(Constants.QQNAME);
         }
@@ -72,12 +68,11 @@ public class QQActivity extends Activity {
     }
 
     public String getAppId() {
-        return TextUtils.equals("a0300a", AppInfo.f9487c) ? "1106192727" : "1101054119";
+        return TextUtils.equals("a0300a", AppInfo.c) ? "1106192727" : "1101054119";
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onActivityResult(int i, int i2, Intent intent) {
+    protected void onActivityResult(int i, int i2, Intent intent) {
         if (this.mTencent != null) {
             Tencent.onActivityResultData(i, i2, intent, this.callbackListener);
         }
@@ -89,12 +84,11 @@ public class QQActivity extends Activity {
         super.onBackPressed();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
-        if (Build.VERSION.SDK_INT == 26 && UIUtils.a((Context) this)) {
-            boolean a2 = UIUtils.a((Object) this);
-            Log.c("WXEntryActivity", "onCreate fixOrientation when Oreo, result = " + a2);
+    protected void onCreate(Bundle bundle) {
+        if (Build.VERSION.SDK_INT == 26 && UIUtils.a(this)) {
+            boolean a = UIUtils.a(this);
+            Log.c("WXEntryActivity", "onCreate fixOrientation when Oreo, result = " + a);
         }
         super.onCreate(bundle);
         setContentView(R.layout.activity_empty_share);
@@ -114,9 +108,8 @@ public class QQActivity extends Activity {
         doFinish();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onResume() {
+    protected void onResume() {
         if (this.mIsCompleteTask) {
             getWindow().getDecorView().postDelayed(new Runnable() { // from class: com.blued.android.share.qq.QQActivity.1
                 @Override // java.lang.Runnable

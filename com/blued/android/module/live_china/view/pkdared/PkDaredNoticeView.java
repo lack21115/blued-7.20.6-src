@@ -15,13 +15,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredNoticeView.class */
 public class PkDaredNoticeView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f15400a;
+    private View a;
     private RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<PkDaredNoticeItemView> f15401c;
+    private List<PkDaredNoticeItemView> c;
 
     public PkDaredNoticeView(Context context) {
         super(context);
@@ -44,12 +40,12 @@ public class PkDaredNoticeView extends RelativeLayout {
     }
 
     private void c() {
-        if (this.f15401c.isEmpty()) {
-            this.f15400a.animate().cancel();
-            this.f15400a.animate().alpha(1.0f).setDuration(300L).setListener(null);
+        if (this.c.isEmpty()) {
+            this.a.animate().cancel();
+            this.a.animate().alpha(1.0f).setDuration(300L).setListener(null);
         } else {
-            for (PkDaredNoticeItemView pkDaredNoticeItemView : this.f15401c) {
-                if (pkDaredNoticeItemView.f15397a < 2) {
+            for (PkDaredNoticeItemView pkDaredNoticeItemView : this.c) {
+                if (pkDaredNoticeItemView.a < 2) {
                     pkDaredNoticeItemView.c();
                 }
             }
@@ -61,39 +57,39 @@ public class PkDaredNoticeView extends RelativeLayout {
 
     public void a() {
         b();
-        List<PkDaredNoticeItemView> list = this.f15401c;
+        List<PkDaredNoticeItemView> list = this.c;
         if (list != null) {
             list.clear();
         }
-        this.f15400a.setAlpha(0.0f);
+        this.a.setAlpha(0.0f);
         this.b.removeAllViews();
         setVisibility(8);
     }
 
     protected void a(Context context) {
-        this.f15401c = new ArrayList();
+        this.c = new ArrayList();
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_dared_notice, this);
-        this.f15400a = findViewById(R.id.view_background);
+        this.a = findViewById(R.id.view_background);
         this.b = (RelativeLayout) findViewById(R.id.rl_notice_root);
     }
 
     public void a(IRequestHost iRequestHost, boolean z, PropModule propModule) {
         c();
         PkDaredNoticeItemView pkDaredNoticeItemView = new PkDaredNoticeItemView(getContext());
-        this.f15401c.add(pkDaredNoticeItemView);
+        this.c.add(pkDaredNoticeItemView);
         this.b.addView(pkDaredNoticeItemView);
         pkDaredNoticeItemView.a(iRequestHost, z, propModule);
     }
 
     public void a(PkDaredNoticeItemView pkDaredNoticeItemView) {
         this.b.removeView(pkDaredNoticeItemView);
-        this.f15401c.remove(pkDaredNoticeItemView);
-        if (this.f15401c.isEmpty()) {
-            this.f15400a.animate().alpha(0.0f).setDuration(300L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredNoticeView.1
+        this.c.remove(pkDaredNoticeItemView);
+        if (this.c.isEmpty()) {
+            this.a.animate().alpha(0.0f).setDuration(300L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.view.pkdared.PkDaredNoticeView.1
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
                     super.onAnimationEnd(animator);
-                    if (PkDaredNoticeView.this.f15401c.isEmpty()) {
+                    if (PkDaredNoticeView.this.c.isEmpty()) {
                         PkDaredNoticeView.this.setVisibility(8);
                     }
                 }
@@ -104,17 +100,17 @@ public class PkDaredNoticeView extends RelativeLayout {
     public void a(boolean z, String str, String str2, int i) {
         c();
         PkDaredNoticeItemView pkDaredNoticeItemView = new PkDaredNoticeItemView(getContext());
-        this.f15401c.add(pkDaredNoticeItemView);
+        this.c.add(pkDaredNoticeItemView);
         this.b.addView(pkDaredNoticeItemView);
         pkDaredNoticeItemView.a(z, str, str2, i * 1000);
     }
 
     public void b() {
-        List<PkDaredNoticeItemView> list = this.f15401c;
+        List<PkDaredNoticeItemView> list = this.c;
         if (list == null || list.isEmpty()) {
             return;
         }
-        for (PkDaredNoticeItemView pkDaredNoticeItemView : this.f15401c) {
+        for (PkDaredNoticeItemView pkDaredNoticeItemView : this.c) {
             pkDaredNoticeItemView.a();
         }
     }

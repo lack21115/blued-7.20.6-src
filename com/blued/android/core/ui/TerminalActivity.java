@@ -18,9 +18,7 @@ import skin.support.SkinCompatManager;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/TerminalActivity.class */
 public class TerminalActivity extends BaseFragmentActivity {
-
-    /* renamed from: c  reason: collision with root package name */
-    protected FrameLayout f9724c;
+    protected FrameLayout c;
     private IWindowFocusChangedListener d;
     private IRestartListener e;
     private Class<? extends Fragment> f;
@@ -38,9 +36,7 @@ public class TerminalActivity extends BaseFragmentActivity {
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/TerminalActivity$WrapIntent.class */
     public static class WrapIntent {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Context f9725a;
+        private Context a;
         private Intent b;
 
         public WrapIntent(Context context, Class<? extends Fragment> cls, Bundle bundle, Class<?> cls2) {
@@ -50,7 +46,7 @@ public class TerminalActivity extends BaseFragmentActivity {
         public WrapIntent(Context context, String str, Bundle bundle, Class<?> cls) {
             this.b = null;
             Context d = context == null ? AppInfo.d() : context;
-            this.f9725a = d;
+            this.a = d;
             Intent intent = new Intent(d, cls);
             this.b = intent;
             intent.putExtra("arg_fragment_class_name", str);
@@ -62,7 +58,7 @@ public class TerminalActivity extends BaseFragmentActivity {
         }
 
         public void a(int i) {
-            Context context = this.f9725a;
+            Context context = this.a;
             if (context instanceof Activity) {
                 ((Activity) context).startActivityForResult(this.b, i);
             } else if (AppInfo.m()) {
@@ -78,10 +74,10 @@ public class TerminalActivity extends BaseFragmentActivity {
         }
 
         public void b() {
-            if (!(this.f9725a instanceof Activity)) {
+            if (!(this.a instanceof Activity)) {
                 this.b.setFlags(268435456);
             }
-            this.f9725a.startActivity(this.b);
+            this.a.startActivity(this.b);
         }
     }
 
@@ -178,7 +174,7 @@ public class TerminalActivity extends BaseFragmentActivity {
         }
     }
 
-    @Override // android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void finish() {
         super.finish();
         if (this.g) {
@@ -186,7 +182,7 @@ public class TerminalActivity extends BaseFragmentActivity {
             if (!isTaskRoot() || AppInfo.b() == null) {
                 return;
             }
-            AppInfo.b().b(this);
+            AppInfo.b().b((Context) this);
         }
     }
 
@@ -195,18 +191,20 @@ public class TerminalActivity extends BaseFragmentActivity {
         return super.getPageBizName();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.activity.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.blued.android.core.ui.BaseFragmentActivity
     public void onBackPressed() {
         if (this.g) {
             this.g = false;
             if (isTaskRoot() && AppInfo.b() != null) {
-                AppInfo.b().b(this);
+                AppInfo.b().b((Context) this);
             }
         }
         super.onBackPressed();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.blued.android.core.ui.BaseFragmentActivity
     public void onCreate(Bundle bundle) {
         boolean i = AppInfo.i();
         int k = AppInfo.k();
@@ -223,31 +221,29 @@ public class TerminalActivity extends BaseFragmentActivity {
             j = bundleExtra.getInt("arg_window_color", AppInfo.j());
             AppInfo.v = bundleExtra.containsKey("arg_statusbar_darkicon");
         }
-        boolean a2 = StatusBarHelper.a(this, z2, AppInfo.v);
+        boolean a = StatusBarHelper.a(this, z2, AppInfo.v);
         super.onCreate(bundle);
         FrameLayout frameLayout = new FrameLayout(this);
-        this.f9724c = frameLayout;
+        this.c = frameLayout;
         frameLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
-        if (a2) {
-            this.f9724c.setFitsSystemWindows(!z);
+        if (a) {
+            this.c.setFitsSystemWindows(!z);
             if (k != 17170445 && j != 17170445) {
                 getWindow().setBackgroundDrawable(StatusBarHelper.a(this, k, l, j, z));
             }
             if (!z && SkinCompatManager.a() != null) {
-                findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(this, k));
+                findViewById(16908290).setBackgroundColor(BluedSkinUtils.a((Context) this, k));
             }
         }
-        this.f9724c.setId(R.id.root_view);
-        setContentView(this.f9724c);
+        this.c.setId(R.id.root_view);
+        setContentView(this.c);
         c(bundle);
         if (bundle == null) {
             f();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.app.Activity
-    public void onRestart() {
+    protected void onRestart() {
         super.onRestart();
         IRestartListener iRestartListener = this.e;
         if (iRestartListener != null) {
@@ -255,13 +251,12 @@ public class TerminalActivity extends BaseFragmentActivity {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    @Override // com.blued.android.core.ui.BaseFragmentActivity
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         bundle.putBoolean("arg_bool_backtomain", this.g);
     }
 
-    @Override // android.app.Activity, android.view.Window.Callback
     public void onWindowFocusChanged(boolean z) {
         super.onWindowFocusChanged(z);
         IWindowFocusChangedListener iWindowFocusChangedListener = this.d;

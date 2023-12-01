@@ -20,10 +20,10 @@ public class ColorKeyframeAnimation extends KeyframeAnimation<Integer> {
 
     public int c(Keyframe<Integer> keyframe, float f) {
         Integer num;
-        if (keyframe.f4418a == null || keyframe.b == null) {
+        if (keyframe.a == null || keyframe.b == null) {
             throw new IllegalStateException("Missing values for keyframe.");
         }
-        int intValue = keyframe.f4418a.intValue();
+        int intValue = keyframe.a.intValue();
         int intValue2 = keyframe.b.intValue();
         return (this.b == null || (num = (Integer) this.b.a(keyframe.d, keyframe.e.floatValue(), Integer.valueOf(intValue), Integer.valueOf(intValue2), f, d(), h())) == null) ? GammaEvaluator.a(MiscUtils.b(f, 0.0f, 1.0f), intValue, intValue2) : num.intValue();
     }

@@ -7,6 +7,7 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.Surface;
 import com.baidu.mobads.sdk.internal.bw;
+import com.huawei.hms.ads.fw;
 import com.qiniu.pili.droid.streaming.StreamingProfile;
 import java.nio.ByteBuffer;
 
@@ -14,11 +15,11 @@ import java.nio.ByteBuffer;
 public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f27823a;
+    public Context f14135a;
     public b b;
 
     /* renamed from: c  reason: collision with root package name */
-    public StreamingManager f27824c;
+    public StreamingManager f14136c;
     public a.a.a.a.a.a.j.h.b d;
     public StreamingStateChangedListener e;
     public StreamingSessionListener f;
@@ -41,41 +42,41 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
         if (audioSourceCallback != null) {
             audioSourceCallback.onAudioSourceAvailable(byteBuffer, i, j * 1000, z);
         }
-        this.f27824c.inputAudioFrame(byteBuffer, i, j, z);
+        this.f14136c.inputAudioFrame(byteBuffer, i, j, z);
     }
 
     @Override // a.a.a.a.a.l.a.c
     public void a(boolean z) {
         if (this.l) {
-            this.f27824c.frameAvailable(z);
+            this.f14136c.frameAvailable(z);
         } else {
-            e.f1361c.b("ScreenStreamingManager", "onFrameCaptured audio frame not available");
+            e.f1313c.b("ScreenStreamingManager", "onFrameCaptured audio frame not available");
         }
     }
 
     public final boolean a(Surface surface) {
         b bVar;
-        e.f1361c.c("ScreenStreamingManager", "startDataCollection");
+        e.f1313c.c("ScreenStreamingManager", "startDataCollection");
         this.l = false;
         a.a().a(this);
-        boolean a2 = a.a().a(this.f27823a, this.i.getWidth(), this.i.getHeight(), this.i.getDpi(), surface);
+        boolean a2 = a.a().a(this.f14135a, this.i.getWidth(), this.i.getHeight(), this.i.getDpi(), surface);
         if (a2 && (bVar = this.b) != null) {
-            bVar.a(this.f27823a);
+            bVar.a(this.f14135a);
             return true;
         }
-        e eVar = e.f1361c;
+        e eVar = e.f1313c;
         StringBuilder sb = new StringBuilder();
         sb.append("screenCaptureOk ");
-        sb.append(a2 ? "true" : "false");
+        sb.append(a2 ? fw.Code : "false");
         sb.append(", audioManager is ");
         sb.append(this.b != null ? "exist" : com.igexin.push.core.b.l);
         eVar.d("ScreenStreamingManager", sb.toString());
-        e.f1361c.e("ScreenStreamingManager", "startDataCollection failed");
+        e.f1313c.e("ScreenStreamingManager", "startDataCollection failed");
         return false;
     }
 
     public final ScreenSetting b() {
-        DisplayMetrics displayMetrics = this.f27823a.getResources().getDisplayMetrics();
+        DisplayMetrics displayMetrics = this.f14135a.getResources().getDisplayMetrics();
         ScreenSetting screenSetting = new ScreenSetting();
         screenSetting.setSize(displayMetrics.widthPixels, displayMetrics.heightPixels);
         screenSetting.setDpi(displayMetrics.densityDpi);
@@ -84,12 +85,12 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
 
     @Override // a.a.a.a.a.g.b.a
     public void b(int i) {
-        this.f27824c.B();
+        this.f14136c.B();
     }
 
     @Override // a.a.a.a.a.l.a.c
     public void b(boolean z) {
-        e eVar = e.f1361c;
+        e eVar = e.f1313c;
         eVar.c("ScreenStreamingManager", "onRequestResult " + z);
         if (!z) {
             this.e.onStateChanged(StreamingState.REQUEST_SCREEN_CAPTURING_FAIL, null);
@@ -111,19 +112,19 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
             this.l = true;
             return;
         }
-        e eVar = e.f1361c;
+        e eVar = e.f1313c;
         eVar.c("ScreenStreamingManager", "notifyFirstAudioFrame MicrophoneOpenFailed:" + z);
     }
 
     public final void d(boolean z) {
         e.d.c("ScreenStreamingManager", "stopPictureStreaming +");
-        this.f27824c.H();
+        this.f14136c.H();
         this.d.b(z);
         e.d.c("ScreenStreamingManager", "stopPictureStreaming -");
     }
 
     public final boolean d() {
-        if (this.f27824c == null) {
+        if (this.f14136c == null) {
             e.d.d("ScreenStreamingManager", "toggle picture streaming failed cause not is streaming.");
             return false;
         } else if (this.d == null) {
@@ -133,7 +134,7 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
                 e.d.d("ScreenStreamingManager", "toggle picture streaming failed cause no file set.");
                 return false;
             }
-            a.a.a.a.a.a.j.h.b bVar = new a.a.a.a.a.a.j.h.b(this.f27823a, null, this.f27824c.f(), this.f27824c.g());
+            a.a.a.a.a.a.j.h.b bVar = new a.a.a.a.a.a.j.h.b(this.f14135a, null, this.f14136c.f(), this.f14136c.g());
             this.d = bVar;
             if (pictureStreamingFilePath != null) {
                 bVar.a(pictureStreamingFilePath);
@@ -149,12 +150,12 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
     public void destroy() {
         e.d.c("ScreenStreamingManager", "destroy +");
         h();
-        StreamingManager streamingManager = this.f27824c;
+        StreamingManager streamingManager = this.f14136c;
         if (streamingManager != null) {
             streamingManager.pause();
-            this.f27824c.destroy();
+            this.f14136c.destroy();
         }
-        this.f27823a = null;
+        this.f14135a = null;
         e.d.c("ScreenStreamingManager", "destroy -");
     }
 
@@ -165,42 +166,42 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
 
     public final void f() {
         e.d.c("ScreenStreamingManager", "startPictureStreaming +");
-        this.f27824c.D();
+        this.f14136c.D();
         this.d.a(this.j.getPictureStreamingFps());
         this.d.e();
         e.d.c("ScreenStreamingManager", "startPictureStreaming -");
     }
 
     public final void g() {
-        StreamingManager streamingManager = this.f27824c;
+        StreamingManager streamingManager = this.f14136c;
         if (streamingManager == null || this.i == null) {
-            e.f1361c.d("ScreenStreamingManager", "something is null !!!");
+            e.f1313c.d("ScreenStreamingManager", "something is null !!!");
             return;
         }
         streamingManager.F();
-        Surface inputSurface = this.f27824c.getInputSurface(this.i.getWidth(), this.i.getHeight());
+        Surface inputSurface = this.f14136c.getInputSurface(this.i.getWidth(), this.i.getHeight());
         a.a().a(this);
-        a.a().a(this.f27823a, this.i.getWidth(), this.i.getHeight(), this.i.getDpi(), inputSurface);
+        a.a().a(this.f14135a, this.i.getWidth(), this.i.getHeight(), this.i.getDpi(), inputSurface);
     }
 
     public final void h() {
-        e.f1361c.c("ScreenStreamingManager", "stopDataCollection");
+        e.f1313c.c("ScreenStreamingManager", "stopDataCollection");
         a.a().b();
         b bVar = this.b;
         if (bVar != null) {
-            bVar.b(this.f27823a);
+            bVar.b(this.f14135a);
         } else {
-            e.f1361c.d("ScreenStreamingManager", "AudioManager is null !!!");
+            e.f1313c.d("ScreenStreamingManager", "AudioManager is null !!!");
         }
     }
 
     public final void i() {
-        if (this.f27824c == null) {
-            e.f1361c.d("ScreenStreamingManager", "no streaming.");
+        if (this.f14136c == null) {
+            e.f1313c.d("ScreenStreamingManager", "no streaming.");
             return;
         }
         a.a().b();
-        this.f27824c.a(true);
+        this.f14136c.a(true);
     }
 
     public void mute(boolean z) {
@@ -240,7 +241,7 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
         if (context == null) {
             e.d.e("ScreenStreamingManager", "context cannot be null.");
         }
-        this.f27823a = context.getApplicationContext();
+        this.f14135a = context.getApplicationContext();
         if (screenSetting == null) {
             this.i = b();
         } else {
@@ -254,21 +255,21 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
         if (microphoneStreamingSetting == null) {
             microphoneStreamingSetting2 = a();
         }
-        StreamingManager streamingManager = new StreamingManager(this.f27823a, AVCodecType.HW_VIDEO_SURFACE_AS_INPUT_WITH_SW_AUDIO_CODEC);
-        this.f27824c = streamingManager;
+        StreamingManager streamingManager = new StreamingManager(this.f14135a, AVCodecType.HW_VIDEO_SURFACE_AS_INPUT_WITH_SW_AUDIO_CODEC);
+        this.f14136c = streamingManager;
         streamingManager.prepare(streamingProfile2);
-        this.f27824c.setStreamingStateListener(this);
+        this.f14136c.setStreamingStateListener(this);
         StreamingSessionListener streamingSessionListener = this.f;
         if (streamingSessionListener != null) {
-            this.f27824c.setStreamingSessionListener(streamingSessionListener);
+            this.f14136c.setStreamingSessionListener(streamingSessionListener);
         }
         StreamStatusCallback streamStatusCallback = this.g;
         if (streamStatusCallback != null) {
-            this.f27824c.setStreamStatusCallback(streamStatusCallback);
+            this.f14136c.setStreamStatusCallback(streamStatusCallback);
         }
         this.b = new b(microphoneStreamingSetting2, this);
         this.j = streamingProfile2;
-        a.a().a(this.f27823a, this);
+        a.a().a(this.f14135a, this);
         return true;
     }
 
@@ -329,7 +330,7 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
         e eVar = e.d;
         eVar.c("ScreenStreamingManager", "setStreamingProfile " + streamingProfile);
         if (streamingProfile != null) {
-            this.f27824c.setStreamingProfile(streamingProfile);
+            this.f14136c.setStreamingProfile(streamingProfile);
             return;
         }
         throw new IllegalArgumentException("Illegal profile:" + streamingProfile);
@@ -372,8 +373,8 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
             }
             return false;
         }
-        if (this.f27824c.startStreaming()) {
-            Surface inputSurface = this.f27824c.getInputSurface(this.i.getWidth(), this.i.getHeight());
+        if (this.f14136c.startStreaming()) {
+            Surface inputSurface = this.f14136c.getInputSurface(this.i.getWidth(), this.i.getHeight());
             if (inputSurface == null || !a(inputSurface)) {
                 e eVar = e.d;
                 if (("inputSurface " + inputSurface) == null) {
@@ -381,11 +382,11 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
                 } else {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append("exist, startDataCollection ");
-                    sb2.append(a(inputSurface) ? bw.o : com.alipay.sdk.util.e.f4661a);
+                    sb2.append(a(inputSurface) ? bw.o : "failed");
                     sb = sb2.toString();
                 }
                 eVar.d("ScreenStreamingManager", sb);
-                this.f27824c.stopStreaming();
+                this.f14136c.stopStreaming();
             } else {
                 e.d.c("ScreenStreamingManager", "startStreaming success");
                 z = true;
@@ -403,7 +404,7 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
         if (e()) {
             d(false);
         }
-        StreamingManager streamingManager = this.f27824c;
+        StreamingManager streamingManager = this.f14136c;
         if (streamingManager != null) {
             return streamingManager.stopStreaming();
         }
@@ -413,11 +414,11 @@ public class ScreenStreamingManager implements b.a, a.c, StreamingStateChangedLi
 
     public boolean togglePictureStreaming() {
         synchronized (this) {
-            if (this.f27824c == null) {
+            if (this.f14136c == null) {
                 e.d.d("ScreenStreamingManager", "no streaming.");
                 return false;
             } else if (d()) {
-                if (!this.k || !this.f27824c.h()) {
+                if (!this.k || !this.f14136c.h()) {
                     e.d.d("ScreenStreamingManager", "toggle picture streaming failed cause in invalid state");
                     return false;
                 }

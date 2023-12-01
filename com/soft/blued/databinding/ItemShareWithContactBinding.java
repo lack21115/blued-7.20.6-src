@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemShareWithContactBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29319a;
+    private final RelativeLayout f15629a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29319a;
+        return this.f15629a;
     }
 }

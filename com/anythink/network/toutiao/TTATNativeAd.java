@@ -24,11 +24,11 @@ import java.util.List;
 public class TTATNativeAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    TTNativeAd f9117a;
+    TTNativeAd f6277a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f9118c;
+    String f6278c;
     boolean d = false;
     TTATCustomVideo e;
     double f;
@@ -39,19 +39,19 @@ public class TTATNativeAd extends CustomNativeAd {
     final class AnonymousClass3 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Activity f9121a;
+        final /* synthetic */ Activity f6281a;
 
         AnonymousClass3(Activity activity) {
-            this.f9121a = activity;
+            this.f6281a = activity;
         }
 
         @Override // android.view.View.OnClickListener
         public final void onClick(View view) {
             Tracker.onClick(view);
-            if (TTATNativeAd.this.f9117a == null) {
+            if (TTATNativeAd.this.f6277a == null) {
                 return;
             }
-            TTAdDislike dislikeDialog = TTATNativeAd.this.f9117a.getDislikeDialog(this.f9121a);
+            TTAdDislike dislikeDialog = TTATNativeAd.this.f6277a.getDislikeDialog(this.f6281a);
             dislikeDialog.setDislikeInteractionCallback(new TTAdDislike.DislikeInteractionCallback() { // from class: com.anythink.network.toutiao.TTATNativeAd.3.1
                 @Override // com.bytedance.sdk.openadsdk.TTAdDislike.DislikeInteractionCallback
                 public final void onCancel() {
@@ -110,8 +110,8 @@ public class TTATNativeAd extends CustomNativeAd {
 
     public TTATNativeAd(Context context, String str, TTNativeAd tTNativeAd, boolean z, Bitmap bitmap, int i) {
         this.b = context.getApplicationContext();
-        this.f9118c = str;
-        this.f9117a = tTNativeAd;
+        this.f6278c = str;
+        this.f6277a = tTNativeAd;
         setNetworkInfoMap(tTNativeAd.getMediaExtraInfo());
         setAdData(z, bitmap, i);
     }
@@ -129,7 +129,7 @@ public class TTATNativeAd extends CustomNativeAd {
             view.setClickable(false);
             return;
         }
-        TTNativeAd tTNativeAd = this.f9117a;
+        TTNativeAd tTNativeAd = this.f6277a;
         if (tTNativeAd == null || view != tTNativeAd.getAdView()) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i = 0; i < viewGroup.getChildCount(); i++) {
@@ -139,8 +139,8 @@ public class TTATNativeAd extends CustomNativeAd {
     }
 
     private void a(List<View> list, View view) {
-        if (!(view instanceof ViewGroup) || view == this.f9117a.getAdView()) {
-            if (view != this.f9117a.getAdView()) {
+        if (!(view instanceof ViewGroup) || view == this.f6277a.getAdView()) {
+            if (view != this.f6277a.getAdView()) {
                 list.add(view);
                 return;
             }
@@ -163,23 +163,23 @@ public class TTATNativeAd extends CustomNativeAd {
         a(view);
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         try {
-            if (this.f9117a != null) {
-                this.f9117a.setActivityForDownloadApp(null);
+            if (this.f6277a != null) {
+                this.f6277a.setActivityForDownloadApp(null);
             }
         } catch (Exception e) {
         }
         this.b = null;
-        this.f9117a = null;
+        this.f6277a = null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public Bitmap getAdLogo() {
         try {
-            if (this.f9117a != null) {
-                return this.f9117a.getAdLogo();
+            if (this.f6277a != null) {
+                return this.f6277a.getAdLogo();
             }
             return null;
         } catch (Throwable th) {
@@ -188,20 +188,20 @@ public class TTATNativeAd extends CustomNativeAd {
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         if (this.g == null) {
-            this.g = this.f9117a.getAdView();
+            this.g = this.f6277a.getAdView();
         }
         return this.g;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public ATCustomVideo getNativeCustomVideo() {
         return this.e;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public double getVideoProgress() {
         return this.f;
     }
@@ -247,7 +247,7 @@ public class TTATNativeAd extends CustomNativeAd {
             int r0 = r0.size()
             if (r0 <= 0) goto L48
             r0 = r6
-            com.bytedance.sdk.openadsdk.TTNativeAd r0 = r0.f9117a
+            com.bytedance.sdk.openadsdk.TTNativeAd r0 = r0.f6277a
             r1 = r7
             android.view.ViewGroup r1 = (android.view.ViewGroup) r1
             r2 = r8
@@ -257,7 +257,7 @@ public class TTATNativeAd extends CustomNativeAd {
             goto L57
         L48:
             r0 = r6
-            com.bytedance.sdk.openadsdk.TTNativeAd r0 = r0.f9117a
+            com.bytedance.sdk.openadsdk.TTNativeAd r0 = r0.f6277a
             r1 = r7
             android.view.ViewGroup r1 = (android.view.ViewGroup) r1
             r2 = r7
@@ -269,7 +269,7 @@ public class TTATNativeAd extends CustomNativeAd {
             boolean r0 = r0 instanceof android.app.Activity
             if (r0 == 0) goto L84
             r0 = r6
-            com.bytedance.sdk.openadsdk.TTNativeAd r0 = r0.f9117a
+            com.bytedance.sdk.openadsdk.TTNativeAd r0 = r0.f6277a
             r1 = r7
             android.content.Context r1 = r1.getContext()
             android.app.Activity r1 = (android.app.Activity) r1
@@ -290,16 +290,16 @@ public class TTATNativeAd extends CustomNativeAd {
     }
 
     public void setAdData(boolean z, Bitmap bitmap, int i) {
-        setTitle(this.f9117a.getTitle());
-        setDescriptionText(this.f9117a.getDescription());
-        setAdFrom(this.f9117a.getSource());
-        setStarRating(Double.valueOf(this.f9117a.getAppScore()));
-        setAppCommentNum(this.f9117a.getAppCommentNum());
-        TTImage icon = this.f9117a.getIcon();
+        setTitle(this.f6277a.getTitle());
+        setDescriptionText(this.f6277a.getDescription());
+        setAdFrom(this.f6277a.getSource());
+        setStarRating(Double.valueOf(this.f6277a.getAppScore()));
+        setAppCommentNum(this.f6277a.getAppCommentNum());
+        TTImage icon = this.f6277a.getIcon();
         if (icon != null) {
             setIconImageUrl(icon.getImageUrl());
         }
-        List<TTImage> imageList = this.f9117a.getImageList();
+        List<TTImage> imageList = this.f6277a.getImageList();
         ArrayList arrayList = new ArrayList();
         if (imageList != null && imageList.size() > 0) {
             int i2 = 0;
@@ -321,43 +321,43 @@ public class TTATNativeAd extends CustomNativeAd {
             }
         }
         setImageUrlList(arrayList);
-        setCallToActionText(this.f9117a.getButtonText());
-        TTNativeAd tTNativeAd = this.f9117a;
+        setCallToActionText(this.f6277a.getButtonText());
+        TTNativeAd tTNativeAd = this.f6277a;
         if (tTNativeAd instanceof TTDrawFeedAd) {
             TTFeedAd.CustomizeVideo customVideo = ((TTDrawFeedAd) tTNativeAd).getCustomVideo();
             if (customVideo != null) {
                 setVideoUrl(customVideo.getVideoUrl());
                 this.e = new TTATCustomVideo(customVideo);
             }
-            ((TTDrawFeedAd) this.f9117a).setCanInterruptVideoPlay(z);
+            ((TTDrawFeedAd) this.f6277a).setCanInterruptVideoPlay(z);
             if (bitmap != null && i > 0) {
-                ((TTDrawFeedAd) this.f9117a).setPauseIcon(bitmap, i);
+                ((TTDrawFeedAd) this.f6277a).setPauseIcon(bitmap, i);
             }
         }
-        ComplianceInfo complianceInfo = this.f9117a.getComplianceInfo();
+        ComplianceInfo complianceInfo = this.f6277a.getComplianceInfo();
         if (complianceInfo != null) {
-            setAdAppInfo(new TTATDownloadAppInfo(complianceInfo, this.f9117a.getAppSize()));
+            setAdAppInfo(new TTATDownloadAppInfo(complianceInfo, this.f6277a.getAppSize()));
         }
         int i4 = 0;
-        if (this.f9117a.getInteractionType() == 4) {
+        if (this.f6277a.getInteractionType() == 4) {
             i4 = 1;
         }
-        if (this.f9117a.getInteractionType() == 3) {
+        if (this.f6277a.getInteractionType() == 3) {
             i4 = 3;
         }
-        if (this.f9117a.getInteractionType() == 2) {
+        if (this.f6277a.getInteractionType() == 2) {
             i4 = 2;
         }
         setNativeInteractionType(i4);
-        TTNativeAd tTNativeAd2 = this.f9117a;
+        TTNativeAd tTNativeAd2 = this.f6277a;
         if (tTNativeAd2 instanceof TTFeedAd) {
             TTFeedAd.CustomizeVideo customVideo2 = ((TTFeedAd) tTNativeAd2).getCustomVideo();
             if (customVideo2 != null) {
                 setVideoUrl(customVideo2.getVideoUrl());
                 this.e = new TTATCustomVideo(customVideo2);
             }
-            setVideoDuration(((TTFeedAd) this.f9117a).getVideoDuration());
-            ((TTFeedAd) this.f9117a).setVideoAdListener(new TTFeedAd.VideoAdListener() { // from class: com.anythink.network.toutiao.TTATNativeAd.1
+            setVideoDuration(((TTFeedAd) this.f6277a).getVideoDuration());
+            ((TTFeedAd) this.f6277a).setVideoAdListener(new TTFeedAd.VideoAdListener() { // from class: com.anythink.network.toutiao.TTATNativeAd.1
                 @Override // com.bytedance.sdk.openadsdk.TTFeedAd.VideoAdListener
                 public final void onProgressUpdate(long j, long j2) {
                     if (TTATNativeAd.this.getVideoDuration() == 0.0d) {
@@ -396,21 +396,21 @@ public class TTATNativeAd extends CustomNativeAd {
                 }
             });
         }
-        this.f9117a.setDownloadListener(new TTAppDownloadListener() { // from class: com.anythink.network.toutiao.TTATNativeAd.2
+        this.f6277a.setDownloadListener(new TTAppDownloadListener() { // from class: com.anythink.network.toutiao.TTATNativeAd.2
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
             public final void onDownloadActive(long j, long j2, String str, String str2) {
                 if (TTATNativeAd.this.d) {
                     if (TTATNativeAd.this.mDownloadListener == null || !(TTATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                         return;
                     }
-                    ((CustomAdapterDownloadListener) TTATNativeAd.this.mDownloadListener).onDownloadUpdate(j, j2, str, str2);
+                    TTATNativeAd.this.mDownloadListener.onDownloadUpdate(j, j2, str, str2);
                     return;
                 }
                 TTATNativeAd.this.d = true;
                 if (TTATNativeAd.this.mDownloadListener == null || !(TTATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeAd.this.mDownloadListener).onDownloadStart(j, j2, str, str2);
+                TTATNativeAd.this.mDownloadListener.onDownloadStart(j, j2, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -418,7 +418,7 @@ public class TTATNativeAd extends CustomNativeAd {
                 if (TTATNativeAd.this.mDownloadListener == null || !(TTATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeAd.this.mDownloadListener).onDownloadFail(j, j2, str, str2);
+                TTATNativeAd.this.mDownloadListener.onDownloadFail(j, j2, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -426,7 +426,7 @@ public class TTATNativeAd extends CustomNativeAd {
                 if (TTATNativeAd.this.mDownloadListener == null || !(TTATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeAd.this.mDownloadListener).onDownloadFinish(j, str, str2);
+                TTATNativeAd.this.mDownloadListener.onDownloadFinish(j, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -434,7 +434,7 @@ public class TTATNativeAd extends CustomNativeAd {
                 if (TTATNativeAd.this.mDownloadListener == null || !(TTATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeAd.this.mDownloadListener).onDownloadPause(j, j2, str, str2);
+                TTATNativeAd.this.mDownloadListener.onDownloadPause(j, j2, str, str2);
             }
 
             @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -446,10 +446,10 @@ public class TTATNativeAd extends CustomNativeAd {
                 if (TTATNativeAd.this.mDownloadListener == null || !(TTATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATNativeAd.this.mDownloadListener).onInstalled(str, str2);
+                TTATNativeAd.this.mDownloadListener.onInstalled(str, str2);
             }
         });
-        int imageMode = this.f9117a.getImageMode();
+        int imageMode = this.f6277a.getImageMode();
         if (imageMode != 2 && imageMode != 3 && imageMode != 4) {
             if (imageMode == 5 || imageMode == 15) {
                 this.mAdSourceType = "1";

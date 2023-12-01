@@ -36,18 +36,18 @@ public class NearbyLiveAdapter extends BaseAdapter {
     private IRequestHost f;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f30078c = -1;
+    public int f16388c = -1;
     private HashSet<String> g = new HashSet<>();
 
     /* renamed from: a  reason: collision with root package name */
-    public List<List<BluedLiveListData>> f30077a = new ArrayList();
+    public List<List<BluedLiveListData>> f16387a = new ArrayList();
     public List<BluedLiveListData> b = new ArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/adapter/NearbyLiveAdapter$ViewHolder.class */
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public View[] f30082a;
+        public View[] f16392a;
         public View b;
 
         public ViewHolder() {
@@ -65,22 +65,22 @@ public class NearbyLiveAdapter extends BaseAdapter {
             return;
         }
         bluedLiveListData.sort = DistanceUtils.a(bluedLiveListData.sort, BlueAppLocal.c(), false);
-        int i = this.f30078c;
-        if (i == -1 || i >= this.f30077a.size()) {
+        int i = this.f16388c;
+        if (i == -1 || i >= this.f16387a.size()) {
             ArrayList arrayList = new ArrayList();
             arrayList.add(bluedLiveListData);
             this.g.add(bluedLiveListData.lid);
-            this.f30077a.add(arrayList);
-            this.f30078c = this.f30077a.size() - 1;
+            this.f16387a.add(arrayList);
+            this.f16388c = this.f16387a.size() - 1;
             return;
         }
-        List<BluedLiveListData> list = this.f30077a.get(this.f30078c);
+        List<BluedLiveListData> list = this.f16387a.get(this.f16388c);
         if (list.size() <= 2) {
             list.add(bluedLiveListData);
             this.g.add(bluedLiveListData.lid);
             return;
         }
-        this.f30078c = -1;
+        this.f16388c = -1;
         a(bluedLiveListData);
     }
 
@@ -94,7 +94,7 @@ public class NearbyLiveAdapter extends BaseAdapter {
     }
 
     public void a(List<BluedLiveListData> list) {
-        if (list == null || list.size() <= 0 || this.f30077a == null) {
+        if (list == null || list.size() <= 0 || this.f16387a == null) {
             return;
         }
         if (this.b.size() > 0) {
@@ -117,36 +117,36 @@ public class NearbyLiveAdapter extends BaseAdapter {
             a(list.get(i4));
             i3 = i4 + 1;
         }
-        if (this.f30078c != -1) {
+        if (this.f16388c != -1) {
             int i5 = 0;
             while (true) {
                 int i6 = i5;
-                if (i6 >= this.f30077a.get(this.f30078c).size()) {
+                if (i6 >= this.f16387a.get(this.f16388c).size()) {
                     break;
                 }
-                this.b.add(this.f30077a.get(this.f30078c).get(i6));
-                this.g.remove(this.f30077a.get(this.f30078c).get(i6).lid);
+                this.b.add(this.f16387a.get(this.f16388c).get(i6));
+                this.g.remove(this.f16387a.get(this.f16388c).get(i6).lid);
                 i5 = i6 + 1;
             }
-            this.f30077a.remove(this.f30078c);
-            this.f30078c = -1;
+            this.f16387a.remove(this.f16388c);
+            this.f16388c = -1;
         }
         notifyDataSetChanged();
     }
 
     public void b(List<BluedLiveListData> list) {
-        if (this.f30077a != null) {
+        if (this.f16387a != null) {
             this.g.clear();
-            this.f30077a.clear();
+            this.f16387a.clear();
             this.b.clear();
-            this.f30078c = -1;
+            this.f16388c = -1;
             a(list);
         }
     }
 
     @Override // android.widget.Adapter
     public int getCount() {
-        List<List<BluedLiveListData>> list = this.f30077a;
+        List<List<BluedLiveListData>> list = this.f16387a;
         if (list != null) {
             return list.size();
         }
@@ -169,7 +169,7 @@ public class NearbyLiveAdapter extends BaseAdapter {
         if (view == null) {
             ViewHolder viewHolder2 = new ViewHolder();
             View inflate = this.e.inflate(R.layout.item_nearby_live, viewGroup, false);
-            viewHolder2.f30082a = new View[3];
+            viewHolder2.f16392a = new View[3];
             viewHolder2.b = inflate.findViewById(R.id.item_live_red);
             int i2 = 0;
             while (true) {
@@ -177,8 +177,8 @@ public class NearbyLiveAdapter extends BaseAdapter {
                 if (i3 >= 3) {
                     break;
                 }
-                viewHolder2.f30082a[i3] = inflate.findViewById(h[i3]);
-                viewHolder2.f30082a[i3].findViewById(2131364726).setVisibility(8);
+                viewHolder2.f16392a[i3] = inflate.findViewById(h[i3]);
+                viewHolder2.f16392a[i3].findViewById(2131364726).setVisibility(8);
                 i2 = i3 + 1;
             }
             inflate.setTag(viewHolder2);
@@ -187,7 +187,7 @@ public class NearbyLiveAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        List<BluedLiveListData> list = this.f30077a.get(i);
+        List<BluedLiveListData> list = this.f16387a.get(i);
         if (i == 0) {
             viewHolder.b.setPadding(viewHolder.b.getPaddingLeft(), DensityUtils.a(this.d, 8.0f), viewHolder.b.getPaddingRight(), viewHolder.b.getPaddingBottom());
         } else {
@@ -199,18 +199,18 @@ public class NearbyLiveAdapter extends BaseAdapter {
             if (i5 >= 3) {
                 return view;
             }
-            View view2 = viewHolder.f30082a[i5];
-            ImageView imageView = (ImageView) view2.findViewById(2131361893);
-            TextView textView = (TextView) view2.findViewById(2131370927);
-            TextView textView2 = (TextView) view2.findViewById(2131372892);
-            TextView textView3 = (TextView) view2.findViewById(2131371285);
+            View view2 = viewHolder.f16392a[i5];
+            ImageView imageView = (ImageView) view2.findViewById(R.id.aariv_cover);
+            TextView textView = (TextView) view2.findViewById(R.id.tv_audience_count);
+            TextView textView2 = (TextView) view2.findViewById(R.id.tv_username);
+            TextView textView3 = (TextView) view2.findViewById(R.id.tv_distance);
             ImageView imageView2 = (ImageView) view2.findViewById(R.id.img_distance_icon);
             ImageView imageView3 = (ImageView) view2.findViewById(R.id.grab_reward_icon);
             ImageView imageView4 = (ImageView) view2.findViewById(2131364726);
             if (i5 >= list.size()) {
-                viewHolder.f30082a[i5].setVisibility(4);
+                viewHolder.f16392a[i5].setVisibility(4);
             } else {
-                viewHolder.f30082a[i5].setVisibility(0);
+                viewHolder.f16392a[i5].setVisibility(0);
                 imageView2.setVisibility(0);
                 final BluedLiveListData bluedLiveListData = list.get(i5);
                 ImageLoader.a(this.f, bluedLiveListData.anchor.avatar).b(2131234804).a(2.0f).a(imageView);
@@ -268,7 +268,7 @@ public class NearbyLiveAdapter extends BaseAdapter {
                     public void onClick(View view3) {
                         Tracker.onClick(view3);
                         ArrayList arrayList = new ArrayList();
-                        for (List<BluedLiveListData> list2 : NearbyLiveAdapter.this.f30077a) {
+                        for (List<BluedLiveListData> list2 : NearbyLiveAdapter.this.f16387a) {
                             for (BluedLiveListData bluedLiveListData2 : list2) {
                                 arrayList.add(bluedLiveListData2);
                             }

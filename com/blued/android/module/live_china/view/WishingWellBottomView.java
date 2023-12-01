@@ -17,13 +17,9 @@ import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/WishingWellBottomView.class */
 public class WishingWellBottomView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f15312a;
+    public View a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f15313c;
+    private BaseFragment c;
     private View d;
     private View e;
     private ImageView f;
@@ -41,7 +37,7 @@ public class WishingWellBottomView extends FrameLayout {
         this.d = findViewById(R.id.rl_wishing_well);
         this.e = findViewById(R.id.rl_wishing_well_knocking);
         this.f = (ImageView) findViewById(R.id.iv_wishing_well);
-        this.f15312a = findViewById(R.id.iv_wishing_well_dot);
+        this.a = findViewById(R.id.iv_wishing_well_dot);
         this.g = (ImageView) findViewById(R.id.iv_knocking_tag);
         this.h = (ImageView) findViewById(R.id.iv_wishing_well_knocking);
     }
@@ -63,7 +59,7 @@ public class WishingWellBottomView extends FrameLayout {
             this.e.setVisibility(0);
             this.g.setImageResource(liveWishingDrawModel.type == 1 ? R.drawable.icon_live_wishing_well_pro_knocking_icon : R.drawable.icon_live_wishing_well_knocking_icon);
             this.g.setVisibility(0);
-            ImageLoader.a(this.f15313c.getFragmentActive(), liveWishingDrawModel.goods_icon).a(this.h);
+            ImageLoader.a(this.c.getFragmentActive(), liveWishingDrawModel.goods_icon).a(this.h);
         }
     }
 
@@ -72,12 +68,12 @@ public class WishingWellBottomView extends FrameLayout {
     }
 
     public void setBaseFragment(BaseFragment baseFragment) {
-        this.f15313c = baseFragment;
+        this.c = baseFragment;
     }
 
     public void setIcon(String str) {
         BaseFragment baseFragment;
-        if (TextUtils.isEmpty(str) || (baseFragment = this.f15313c) == null || this.f == null) {
+        if (TextUtils.isEmpty(str) || (baseFragment = this.c) == null || this.f == null) {
             return;
         }
         ImageLoader.a(baseFragment.getFragmentActive(), str).a(this.f);

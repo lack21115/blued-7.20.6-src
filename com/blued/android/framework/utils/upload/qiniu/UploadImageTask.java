@@ -25,8 +25,8 @@ public class UploadImageTask extends UploadBaseTask {
         super(str, senderListener);
         this.s = false;
         this.t = 0;
-        this.f10137c = list;
-        this.d.addAll(this.f10137c);
+        this.c = list;
+        this.d.addAll(this.c);
         this.p = str2;
         this.s = z;
         if (list != null) {
@@ -55,13 +55,11 @@ public class UploadImageTask extends UploadBaseTask {
         synchronized (this) {
             b("获取Task token！");
             QiniuTokenUtils.a(str, i, new BluedUIHttpResponse<BluedEntity<BluedToken, QiniuUploadExtra>>() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadImageTask.2
-
-                /* renamed from: a  reason: collision with root package name */
-                boolean f10154a;
+                boolean a;
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i2, String str2) {
-                    this.f10154a = true;
+                    this.a = true;
                     UploadImageTask uploadImageTask = UploadImageTask.this;
                     uploadImageTask.c("getTaskToken Error ! errorCode:" + i2 + " | errorMessage:" + str2);
                     if (AppInfo.p()) {
@@ -81,7 +79,7 @@ public class UploadImageTask extends UploadBaseTask {
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
-                    this.f10154a = false;
+                    this.a = false;
                     super.onUIStart();
                 }
 
@@ -91,7 +89,7 @@ public class UploadImageTask extends UploadBaseTask {
                         UploadImageTask.this.c("getTaskToken Error !  No Data");
                         return;
                     }
-                    this.f10154a = false;
+                    this.a = false;
                     UploadImageTask uploadImageTask = UploadImageTask.this;
                     uploadImageTask.b("获取Task token成功！！！ " + bluedEntity.toString());
                     UploadImageTask.this.q = bluedEntity.data.get(0);
@@ -134,7 +132,7 @@ public class UploadImageTask extends UploadBaseTask {
     @Override // com.blued.android.framework.utils.upload.qiniu.UploadBaseTask, com.blued.android.framework.utils.upload.qiniu.IUploadTask
     public void a(IUploadTask.IUploadStateListener iUploadStateListener) {
         super.a(iUploadStateListener);
-        a(this.p, this.f10137c.size(), new IUploadTask.IUploadStateListener() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadImageTask.1
+        a(this.p, this.c.size(), new IUploadTask.IUploadStateListener() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadImageTask.1
             @Override // com.blued.android.framework.utils.upload.qiniu.IUploadTask.IUploadStateListener
             public void a() {
                 UploadImageTask uploadImageTask = UploadImageTask.this;
@@ -143,16 +141,16 @@ public class UploadImageTask extends UploadBaseTask {
                         UploadThreadManager.a().a(new ThreadExecutor("readFileSize_thread") { // from class: com.blued.android.framework.utils.upload.qiniu.UploadImageTask.1.1
                             @Override // com.blued.android.framework.pool.ThreadExecutor
                             public void execute() {
-                                for (Pair<String, String> pair : UploadImageTask.this.f10137c) {
-                                    if (pair != null && !TextUtils.isEmpty(pair.first)) {
-                                        File file = new File(pair.first);
+                                for (Pair<String, String> pair : UploadImageTask.this.c) {
+                                    if (pair != null && !TextUtils.isEmpty((CharSequence) pair.first)) {
+                                        File file = new File((String) pair.first);
                                         if (file.exists()) {
                                             long length = file.length();
                                             UploadImageTask uploadImageTask2 = UploadImageTask.this;
-                                            uploadImageTask2.b(pair.first + "大小:" + length);
+                                            uploadImageTask2.b(((String) pair.first) + "大小:" + length);
                                             UploadImageTask uploadImageTask3 = UploadImageTask.this;
                                             uploadImageTask3.k = uploadImageTask3.k + length;
-                                            UploadImageTask.this.f.put(pair.first, Long.valueOf(length));
+                                            UploadImageTask.this.f.put((String) pair.first, Long.valueOf(length));
                                         }
                                     }
                                 }
@@ -167,11 +165,11 @@ public class UploadImageTask extends UploadBaseTask {
                 } else if (UploadImageTask.this.t <= 0) {
                     UploadImageTask.f(UploadImageTask.this);
                     UploadImageTask uploadImageTask2 = UploadImageTask.this;
-                    uploadImageTask2.a(uploadImageTask2.p, UploadImageTask.this.f10137c.size(), this);
+                    uploadImageTask2.a(uploadImageTask2.p, UploadImageTask.this.c.size(), this);
                 } else {
                     UploadImageTask.this.e();
                     if (UploadImageTask.this.j != null) {
-                        UploadImageTask.this.j.a(UploadImageTask.this.a(), false, UploadImageTask.this.f10137c);
+                        UploadImageTask.this.j.a(UploadImageTask.this.a(), false, UploadImageTask.this.c);
                     }
                     if (UploadImageTask.this.i != null) {
                         UploadImageTask.this.i.a();
@@ -203,7 +201,7 @@ public class UploadImageTask extends UploadBaseTask {
                     }
                 }
             } else {
-                a(((this.e.size() * 1.0f) * 100.0f) / this.f10137c.size());
+                a(((this.e.size() * 1.0f) * 100.0f) / this.c.size());
             }
         }
     }
@@ -234,7 +232,7 @@ public class UploadImageTask extends UploadBaseTask {
         } else if (this.l) {
             a(h, str, this.r, d, iUploadStateListener, 0, 0);
         } else {
-            a(h, str, this.r, 0, d, d.first, iUploadStateListener, 0);
+            a(h, str, this.r, 0, d, (String) d.first, iUploadStateListener, 0);
         }
     }
 }

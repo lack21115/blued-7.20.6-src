@@ -37,17 +37,17 @@ public final class e implements com.efs.sdk.base.core.c.c {
     public final HttpResponse a(com.efs.sdk.base.core.d.b bVar, boolean z) {
         f fVar;
         try {
-            fVar = f.a.f21781a;
-            c cVar = fVar.f21779a;
+            fVar = f.a.f8175a;
+            c cVar = fVar.f8173a;
             String valueOf = String.valueOf(System.currentTimeMillis());
             StringBuilder sb = new StringBuilder();
             sb.append(cVar.b);
-            sb.append(cVar.f21777c);
+            sb.append(cVar.f8171c);
             sb.append(valueOf);
             sb.append("AppChk#2014");
             String a2 = com.efs.sdk.base.core.util.b.b.a(sb.toString());
             StringBuilder sb2 = new StringBuilder();
-            String str = cVar.f21776a;
+            String str = cVar.f8170a;
             if (str.startsWith("http")) {
                 sb2.append(str);
                 sb2.append("?chk=");
@@ -59,17 +59,17 @@ public final class e implements com.efs.sdk.base.core.c.c {
             sb2.append("&vno=");
             sb2.append(valueOf);
             sb2.append("&uuid=");
-            sb2.append(cVar.f21777c);
+            sb2.append(cVar.f8171c);
             sb2.append("&app=");
             sb2.append(cVar.b);
             sb2.append("&zip=gzip");
             String sb3 = sb2.toString();
             int i = 0;
             byte[] bArr = new byte[0];
-            if (bVar.f21764a.f21763c == 0) {
-                bArr = bVar.f21765c;
+            if (bVar.f8158a.f8157c == 0) {
+                bArr = bVar.f8159c;
                 i = bArr.length;
-            } else if (1 == bVar.f21764a.f21763c) {
+            } else if (1 == bVar.f8158a.f8157c) {
                 bArr = com.efs.sdk.base.core.util.b.a(bVar.d.getPath());
                 i = bArr.length;
             }
@@ -77,7 +77,7 @@ public final class e implements com.efs.sdk.base.core.c.c {
             hashMap.put("Content-Type", "application/x-www-form-urlencoded");
             hashMap.put("Content-Length", String.valueOf(i));
             com.efs.sdk.base.core.util.a.d a3 = new com.efs.sdk.base.core.util.a.d(sb3).a(hashMap);
-            a3.f21791a.f21789c = bArr;
+            a3.f8185a.f8183c = bArr;
             HttpResponse b = a3.a().b();
             a(b);
             if (!b.succ) {

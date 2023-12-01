@@ -31,15 +31,15 @@ public class FeedStateObserverProxy extends BaseProxy<IFeedStateObserver> implem
 
     @Override // com.blued.android.module.base.http.IFeedStateObserver
     public void a(IFeedStateListener iFeedStateListener) {
-        if (this.f10426a != 0) {
-            ((IFeedStateObserver) this.f10426a).a(iFeedStateListener);
+        if (this.a != 0) {
+            ((IFeedStateObserver) this.a).a(iFeedStateListener);
         }
     }
 
     @Override // com.blued.android.module.base.http.IFeedStateObserver
     public void b(IFeedStateListener iFeedStateListener) {
-        if (this.f10426a != 0) {
-            ((IFeedStateObserver) this.f10426a).b(iFeedStateListener);
+        if (this.a != 0) {
+            ((IFeedStateObserver) this.a).b(iFeedStateListener);
         }
     }
 }

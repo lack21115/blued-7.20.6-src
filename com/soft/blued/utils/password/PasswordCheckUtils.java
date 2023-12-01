@@ -12,12 +12,12 @@ import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.utils.AesCrypto2;
 import com.blued.android.framework.utils.DelayRepeatTaskUtils;
 import com.blued.android.module.common.url.BluedHttpUrl;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.device_identity.library.BluedDeviceIdentity;
 import com.soft.blued.R;
 import com.soft.blued.utils.DeviceUtils;
 import com.soft.blued.utils.StringUtils;
 import com.tencent.ugc.datereport.UGCDataReportDef;
+import com.xiaomi.mipush.sdk.Constants;
 import java.security.NoSuchAlgorithmException;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -26,11 +26,11 @@ import java.util.regex.Pattern;
 public class PasswordCheckUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PasswordCheckUtils f34821a;
+    private static PasswordCheckUtils f21130a;
     private CheckCallBackListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f34822c;
+    private String f21131c;
     private String d;
     private String e;
     private String f;
@@ -45,18 +45,18 @@ public class PasswordCheckUtils {
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f34825a;
+        static final /* synthetic */ int[] f21134a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PWD_CHECK_PAGE.values().length];
-            f34825a = iArr;
+            f21134a = iArr;
             try {
                 iArr[PWD_CHECK_PAGE.MODIFY_PWD.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f34825a[PWD_CHECK_PAGE.REGISTER.ordinal()] = 2;
+                f21134a[PWD_CHECK_PAGE.REGISTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -90,64 +90,60 @@ public class PasswordCheckUtils {
         return new BluedUIHttpResponse<BluedEntityA<PasswordCheckResultModel>>(this.j) { // from class: com.soft.blued.utils.password.PasswordCheckUtils.1
 
             /* renamed from: a  reason: collision with root package name */
-            int f34823a;
+            int f21132a;
             String b;
 
             /* renamed from: c  reason: collision with root package name */
-            boolean f34824c;
+            boolean f21133c;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<PasswordCheckResultModel> parseData(String str) {
-                int i = AnonymousClass2.f34825a[pwd_check_page.ordinal()];
-                BluedEntityA<PasswordCheckResultModel> bluedEntityA = (BluedEntityA) super.parseData(str);
-                if (bluedEntityA != null) {
+                int i = AnonymousClass2.f21134a[pwd_check_page.ordinal()];
+                BluedEntityA<PasswordCheckResultModel> parseData = super.parseData(str);
+                if (parseData != null) {
                     try {
-                        if (bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
-                            bluedEntityA.data.set(0, (PasswordCheckResultModel) AppInfo.f().fromJson(AesCrypto2.a(bluedEntityA.data.get(0).encrypted), (Class<Object>) PasswordCheckResultModel.class));
-                            return bluedEntityA;
+                        if (parseData.data != null && parseData.data.size() > 0) {
+                            parseData.data.set(0, (PasswordCheckResultModel) AppInfo.f().fromJson(AesCrypto2.a(((PasswordCheckResultModel) parseData.data.get(0)).encrypted), (Class<Object>) PasswordCheckResultModel.class));
+                            return parseData;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        this.f34824c = true;
+                        this.f21133c = true;
                     }
                 }
-                return bluedEntityA;
+                return parseData;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PasswordCheckResultModel> bluedEntityA) {
                 if (PasswordCheckUtils.this.b != null) {
                     if (bluedEntityA == null || !bluedEntityA.hasData()) {
-                        this.f34823a = 20;
+                        this.f21132a = 20;
                         return;
                     }
-                    PasswordCheckResultModel passwordCheckResultModel = bluedEntityA.data.get(0);
+                    PasswordCheckResultModel passwordCheckResultModel = (PasswordCheckResultModel) bluedEntityA.data.get(0);
                     if (StringUtils.d(passwordCheckResultModel.password)) {
-                        this.f34823a = 20;
+                        this.f21132a = 20;
                         this.b = PasswordCheckUtils.this.f;
                         return;
                     }
-                    this.f34823a = passwordCheckResultModel.getStrength_level();
+                    this.f21132a = passwordCheckResultModel.getStrength_level();
                     this.b = passwordCheckResultModel.password;
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
-                this.f34824c = true;
-                this.f34823a = 20;
+                this.f21133c = true;
+                this.f21132a = 20;
                 return true;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if ((this.f34824c || PasswordCheckUtils.this.f.equals(this.b)) && PasswordCheckUtils.this.b != null) {
-                    int min = Math.min(this.f34823a, PasswordCheckUtils.this.i);
+                if ((this.f21133c || PasswordCheckUtils.this.f.equals(this.b)) && PasswordCheckUtils.this.b != null) {
+                    int min = Math.min(this.f21132a, PasswordCheckUtils.this.i);
                     if (min == 0) {
                         PasswordCheckUtils.this.b.a(min, PasswordCheckUtils.this.h.getString(R.string.pwd_server_forbidden));
                     } else if (min == 10) {
@@ -166,10 +162,10 @@ public class PasswordCheckUtils {
         PasswordCheckUtils passwordCheckUtils;
         synchronized (PasswordCheckUtils.class) {
             try {
-                if (f34821a == null) {
-                    f34821a = new PasswordCheckUtils();
+                if (f21130a == null) {
+                    f21130a = new PasswordCheckUtils();
                 }
-                passwordCheckUtils = f34821a;
+                passwordCheckUtils = f21130a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -190,8 +186,8 @@ public class PasswordCheckUtils {
                 }
             }
             str2 = str;
-            if (str.contains("-")) {
-                String[] split2 = str.split("-");
+            if (str.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
+                String[] split2 = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 str2 = str;
                 if (split2.length >= 1) {
                     str2 = split2[1];
@@ -216,9 +212,9 @@ public class PasswordCheckUtils {
         arrayMap.put("dev_dna_label", BluedDeviceIdentity.a().e());
         arrayMap.put("smid", BluedDeviceIdentity.a().f());
         arrayMap.put("boxid", BluedDeviceIdentity.a().g());
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto2.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -289,9 +285,9 @@ public class PasswordCheckUtils {
             if (this.e.equals(this.d)) {
                 return 2;
             }
-            String str2 = this.f34822c;
+            String str2 = this.f21131c;
             if (str2 != null) {
-                return (str2.equals(this.e) || a(this.f34822c).equals(this.e)) ? 1 : 0;
+                return (str2.equals(this.e) || a(this.f21131c).equals(this.e)) ? 1 : 0;
             }
             return 0;
         }
@@ -299,12 +295,12 @@ public class PasswordCheckUtils {
     }
 
     private void c(PWD_CHECK_PAGE pwd_check_page) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("stage", "strength");
         a2.put("passwd", this.f);
-        Map<String, String> a3 = BluedHttpTools.a();
+        Map a3 = BluedHttpTools.a();
         try {
-            a3.put(BridgeUtil.UNDERLINE_STR, AesCrypto2.b(AppInfo.f().toJson(a2)));
+            a3.put("_", AesCrypto2.b(AppInfo.f().toJson(a2)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -312,14 +308,14 @@ public class PasswordCheckUtils {
     }
 
     public void a(Context context, String str, String str2) {
-        PasswordCheckUtils passwordCheckUtils = f34821a;
-        passwordCheckUtils.f34822c = str;
+        PasswordCheckUtils passwordCheckUtils = f21130a;
+        passwordCheckUtils.f21131c = str;
         passwordCheckUtils.d = str2;
         this.h = context;
     }
 
     public void a(CheckCallBackListener checkCallBackListener, IRequestHost iRequestHost) {
-        PasswordCheckUtils passwordCheckUtils = f34821a;
+        PasswordCheckUtils passwordCheckUtils = f21130a;
         passwordCheckUtils.b = checkCallBackListener;
         passwordCheckUtils.j = iRequestHost;
     }

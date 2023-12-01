@@ -130,7 +130,7 @@ public final class UnknownFieldSet implements MessageLite {
 
         @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
         /* renamed from: clone */
-        public Builder m6752clone() {
+        public Builder m3745clone() {
             getFieldBuilder(0);
             return UnknownFieldSet.newBuilder().mergeFrom(new UnknownFieldSet(this.fields, Collections.unmodifiableMap(((TreeMap) this.fields).descendingMap())));
         }

@@ -11,25 +11,25 @@ import com.blued.login.R;
 public final class FmAdultIdentifyBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CommonTopTitleNoTrans f20509a;
+    public final CommonTopTitleNoTrans f6903a;
     public final ShapeTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final LinearLayout f20510c;
+    private final LinearLayout f6904c;
 
     private FmAdultIdentifyBinding(LinearLayout linearLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, ShapeTextView shapeTextView) {
-        this.f20510c = linearLayout;
-        this.f20509a = commonTopTitleNoTrans;
+        this.f6904c = linearLayout;
+        this.f6903a = commonTopTitleNoTrans;
         this.b = shapeTextView;
     }
 
     public static FmAdultIdentifyBinding a(View view) {
         String str;
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.title);
-        if (commonTopTitleNoTrans != null) {
-            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_identify);
-            if (shapeTextView != null) {
-                return new FmAdultIdentifyBinding((LinearLayout) view, commonTopTitleNoTrans, shapeTextView);
+        CommonTopTitleNoTrans findViewById = view.findViewById(R.id.title);
+        if (findViewById != null) {
+            ShapeTextView findViewById2 = view.findViewById(R.id.tv_identify);
+            if (findViewById2 != null) {
+                return new FmAdultIdentifyBinding((LinearLayout) view, findViewById, findViewById2);
             }
             str = "tvIdentify";
         } else {
@@ -41,6 +41,6 @@ public final class FmAdultIdentifyBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f20510c;
+        return this.f6904c;
     }
 }

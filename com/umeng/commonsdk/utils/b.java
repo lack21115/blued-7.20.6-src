@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap<String, PackageInfo> f40962a = new HashMap<>();
+    private static HashMap<String, PackageInfo> f27271a = new HashMap<>();
     private static Object b = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -18,7 +18,7 @@ public class b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final b f40963a = new b();
+        private static final b f27272a = new b();
 
         private a() {
         }
@@ -28,22 +28,22 @@ public class b {
     }
 
     public static b a() {
-        return a.f40963a;
+        return a.f27272a;
     }
 
     public PackageInfo a(Context context, String str, int i) {
         PackageInfo packageInfo;
         synchronized (b) {
-            if (f40962a.containsKey(str)) {
+            if (f27271a.containsKey(str)) {
                 UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> pkg： " + str + ", pkgInfo缓存命中，直接返回");
-                packageInfo = f40962a.get(str);
+                packageInfo = f27271a.get(str);
             } else {
                 try {
                     packageInfo = context.getPackageManager().getPackageInfo(str, i);
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> pkg： " + str + ", 获取pkgInfo并缓存");
-                    f40962a.put(str, packageInfo);
+                    f27271a.put(str, packageInfo);
                 } catch (PackageManager.NameNotFoundException e) {
-                    f40962a.put(str, null);
+                    f27271a.put(str, null);
                     UMRTLog.e(UMRTLog.RTLOG_TAG, "--->>> pkg: " + str + "，目标包未安装。");
                     packageInfo = null;
                 }

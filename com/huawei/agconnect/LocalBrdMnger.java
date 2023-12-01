@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
@@ -48,7 +47,7 @@ public class LocalBrdMnger {
         }
 
         public String toString() {
-            return "Receiver{" + this.receiver + " filter=" + this.filter + i.d;
+            return "Receiver{" + this.receiver + " filter=" + this.filter + "}";
         }
     }
 

@@ -30,7 +30,6 @@ import android.text.Editable;
 import android.text.GetChars;
 import android.text.GraphicsOperations;
 import android.text.InputFilter;
-import android.text.InputType;
 import android.text.Layout;
 import android.text.ParcelableSpan;
 import android.text.Selection;
@@ -105,7 +104,6 @@ import com.android.internal.R;
 import com.android.internal.util.FastMath;
 import com.android.internal.widget.EditableInputConnection;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.google.android.material.badge.BadgeDrawable;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -221,7 +219,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     private static final RectF TEMP_RECTF = new RectF();
     private static final InputFilter[] NO_FILTERS = new InputFilter[0];
     private static final Spanned EMPTY_SPANNED = new SpannedString("");
-    private static final int[] MULTILINE_STATE_SET = {16843597};
+    private static final int[] MULTILINE_STATE_SET = {R.attr.state_multiline};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: android.widget.TextView$4  reason: invalid class name */
@@ -333,12 +331,10 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             return this.mChars[this.mStart + i];
         }
 
-        @Override // android.text.GraphicsOperations
         public void drawText(Canvas canvas, int i, int i2, float f, float f2, Paint paint) {
             canvas.drawText(this.mChars, i + this.mStart, i2 - i, f, f2, paint);
         }
 
-        @Override // android.text.GraphicsOperations
         public void drawTextRun(Canvas canvas, int i, int i2, int i3, int i4, float f, float f2, boolean z, Paint paint) {
             canvas.drawTextRun(this.mChars, i + this.mStart, i2 - i, i3 + this.mStart, i4 - i3, f, f2, z, paint);
         }
@@ -351,17 +347,14 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             System.arraycopy(this.mChars, this.mStart + i, cArr, i3, i2 - i);
         }
 
-        @Override // android.text.GraphicsOperations
         public float getTextRunAdvances(int i, int i2, int i3, int i4, boolean z, float[] fArr, int i5, Paint paint) {
             return paint.getTextRunAdvances(this.mChars, i + this.mStart, i2 - i, i3 + this.mStart, i4 - i3, z, fArr, i5);
         }
 
-        @Override // android.text.GraphicsOperations
         public int getTextRunCursor(int i, int i2, int i3, int i4, int i5, Paint paint) {
             return paint.getTextRunCursor(this.mChars, i + this.mStart, i2 - i, i3, i4 + this.mStart, i5);
         }
 
-        @Override // android.text.GraphicsOperations
         public int getTextWidths(int i, int i2, float[] fArr, Paint paint) {
             return paint.getTextWidths(this.mChars, this.mStart + i, i2 - i, fArr);
         }
@@ -371,7 +364,6 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             return this.mLength;
         }
 
-        @Override // android.text.GraphicsOperations
         public float measureText(int i, int i2, Paint paint) {
             return paint.measureText(this.mChars, this.mStart + i, i2 - i);
         }
@@ -801,9 +793,9 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             this.selStart = parcel.readInt();
             this.selEnd = parcel.readInt();
             this.frozenWithFocus = parcel.readInt() != 0;
-            this.text = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            this.text = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             if (parcel.readInt() != 0) {
-                this.error = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+                this.error = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             }
         }
 
@@ -848,7 +840,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     public TextView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842884);
+        this(context, attributeSet, R.attr.textViewStyle);
     }
 
     public TextView(Context context, AttributeSet attributeSet, int i) {
@@ -866,7 +858,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         this.mLastLayoutDirection = -1;
         this.mMarqueeFadeMode = 0;
         this.mBufferType = BufferType.NORMAL;
-        this.mGravity = BadgeDrawable.TOP_START;
+        this.mGravity = 8388659;
         this.mLinksClickable = true;
         this.mSpacingMult = 1.0f;
         this.mSpacingAdd = 0.0f;
@@ -4676,7 +4668,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
                 setEllipsize(TextUtils.TruncateAt.MARQUEE);
                 break;
         }
-        setTextColor(colorStateList == null ? ColorStateList.valueOf(-16777216) : colorStateList);
+        setTextColor(colorStateList == null ? ColorStateList.valueOf(View.MEASURED_STATE_MASK) : colorStateList);
         setHintTextColor(colorStateList4);
         setLinkTextColor(colorStateList3);
         if (i17 != 0) {
@@ -5327,7 +5319,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     private void paste(int i, int i2) {
-        ClipData primaryClip = ((ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE)).getPrimaryClip();
+        ClipData primaryClip = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip();
         if (primaryClip != null) {
             boolean z = false;
             int i3 = 0;
@@ -5461,7 +5453,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
             }
             dialerKeyListener = DigitsKeyListener.getInstance(z3, z2);
         } else if (i2 == 4) {
-            switch (i & InputType.TYPE_MASK_VARIATION) {
+            switch (i & 4080) {
                 case 16:
                     dialerKeyListener = DateKeyListener.getInstance();
                     break;
@@ -5510,7 +5502,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
     }
 
     private void setPrimaryClip(ClipData clipData) {
-        ((ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(clipData);
+        ((ClipboardManager) getContext().getSystemService("clipboard")).setPrimaryClip(clipData);
         LAST_CUT_OR_COPY_TIME = SystemClock.uptimeMillis();
     }
 
@@ -5743,7 +5735,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         if (this.mEditor == null || (this.mEditor.mInputType & 15) != 1) {
             return false;
         }
-        int i = this.mEditor.mInputType & InputType.TYPE_MASK_VARIATION;
+        int i = this.mEditor.mInputType & 4080;
         return i == 32 || i == 48;
     }
 
@@ -5809,7 +5801,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean shouldSpeakPasswordsForAccessibility() {
-        return Settings.Secure.getIntForUser(this.mContext.getContentResolver(), Settings.Secure.ACCESSIBILITY_SPEAK_PASSWORD, 0, -3) == 1;
+        return Settings.Secure.getIntForUser(this.mContext.getContentResolver(), "speak_password", 0, -3) == 1;
     }
 
     private void startMarquee() {
@@ -5912,7 +5904,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateTextServicesLocaleLocked() {
-        SpellCheckerSubtype currentSpellCheckerSubtype = ((TextServicesManager) this.mContext.getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE)).getCurrentSpellCheckerSubtype(true);
+        SpellCheckerSubtype currentSpellCheckerSubtype = ((TextServicesManager) this.mContext.getSystemService("textservices")).getCurrentSpellCheckerSubtype(true);
         this.mCurrentSpellCheckerLocaleCache = currentSpellCheckerSubtype != null ? SpellCheckerSubtype.constructLocaleFromString(currentSpellCheckerSubtype.getLocale()) : null;
     }
 
@@ -6116,7 +6108,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean canPaste() {
-        return (this.mText instanceof Editable) && this.mEditor != null && this.mEditor.mKeyListener != null && getSelectionStart() >= 0 && getSelectionEnd() >= 0 && ((ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE)).hasPrimaryClip();
+        return (this.mText instanceof Editable) && this.mEditor != null && this.mEditor.mKeyListener != null && getSelectionStart() >= 0 && getSelectionEnd() >= 0 && ((ClipboardManager) getContext().getSystemService("clipboard")).hasPrimaryClip();
     }
 
     @Override // android.view.View
@@ -6150,9 +6142,8 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         postInvalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int computeVerticalScrollExtent() {
+    protected int computeVerticalScrollExtent() {
         return (getHeight() - getCompoundPaddingTop()) - getCompoundPaddingBottom();
     }
 
@@ -6939,8 +6930,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         return this.mTextColor;
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public TextDirectionHeuristic getTextDirectionHeuristic() {
+    TextDirectionHeuristic getTextDirectionHeuristic() {
         boolean z = true;
         if (hasPasswordTransformationMethod()) {
             return TextDirectionHeuristics.ANYRTL_LTR;
@@ -7304,7 +7294,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
 
     public boolean isSuggestionsEnabled() {
         if (this.mEditor != null && (this.mEditor.mInputType & 15) == 1 && (this.mEditor.mInputType & 524288) <= 0) {
-            int i = this.mEditor.mInputType & InputType.TYPE_MASK_VARIATION;
+            int i = this.mEditor.mInputType & 4080;
             return i == 0 || i == 48 || i == 80 || i == 64 || i == 160;
         }
         return false;
@@ -8479,8 +8469,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void onSelectionChanged(int i, int i2) {
+    protected void onSelectionChanged(int i, int i2) {
         sendAccessibilityEvent(8192);
     }
 
@@ -9957,8 +9946,7 @@ public class TextView extends View implements ViewTreeObserver.OnPreDrawListener
         throw new UnsupportedOperationException("Method not decompiled: android.widget.TextView.spanChange(android.text.Spanned, java.lang.Object, int, int, int, int):void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void stopSelectionActionMode() {
+    protected void stopSelectionActionMode() {
         this.mEditor.stopSelectionActionMode();
     }
 

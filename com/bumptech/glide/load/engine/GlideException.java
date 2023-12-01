@@ -14,12 +14,12 @@ import java.util.List;
 public final class GlideException extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final StackTraceElement[] f20784a = new StackTraceElement[0];
+    private static final StackTraceElement[] f7178a = new StackTraceElement[0];
     private static final long serialVersionUID = 1;
     private final List<Throwable> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Key f20785c;
+    private Key f7179c;
     private DataSource d;
     private Class<?> e;
     private String f;
@@ -30,11 +30,11 @@ public final class GlideException extends Exception {
     public static final class IndentedAppendable implements Appendable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Appendable f20786a;
+        private final Appendable f7180a;
         private boolean b = true;
 
         IndentedAppendable(Appendable appendable) {
-            this.f20786a = appendable;
+            this.f7180a = appendable;
         }
 
         private CharSequence a(CharSequence charSequence) {
@@ -50,13 +50,13 @@ public final class GlideException extends Exception {
             boolean z = false;
             if (this.b) {
                 this.b = false;
-                this.f20786a.append("  ");
+                this.f7180a.append("  ");
             }
             if (c2 == '\n') {
                 z = true;
             }
             this.b = z;
-            this.f20786a.append(c2);
+            this.f7180a.append(c2);
             return this;
         }
 
@@ -71,7 +71,7 @@ public final class GlideException extends Exception {
             CharSequence a2 = a(charSequence);
             if (this.b) {
                 this.b = false;
-                this.f20786a.append("  ");
+                this.f7180a.append("  ");
             }
             boolean z = false;
             if (a2.length() > 0) {
@@ -81,7 +81,7 @@ public final class GlideException extends Exception {
                 }
             }
             this.b = z;
-            this.f20786a.append(a2, i, i2);
+            this.f7180a.append(a2, i, i2);
             return this;
         }
     }
@@ -96,7 +96,7 @@ public final class GlideException extends Exception {
 
     public GlideException(String str, List<Throwable> list) {
         this.f = str;
-        setStackTrace(f20784a);
+        setStackTrace(f7178a);
         this.b = list;
     }
 
@@ -162,7 +162,7 @@ public final class GlideException extends Exception {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Key key, DataSource dataSource, Class<?> cls) {
-        this.f20785c = key;
+        this.f7179c = key;
         this.d = dataSource;
         this.e = cls;
     }
@@ -213,7 +213,7 @@ public final class GlideException extends Exception {
         sb.append(this.f);
         sb.append(this.e != null ? ", " + this.e : "");
         sb.append(this.d != null ? ", " + this.d : "");
-        sb.append(this.f20785c != null ? ", " + this.f20785c : "");
+        sb.append(this.f7179c != null ? ", " + this.f7179c : "");
         List<Throwable> c2 = c();
         if (c2.isEmpty()) {
             return sb.toString();

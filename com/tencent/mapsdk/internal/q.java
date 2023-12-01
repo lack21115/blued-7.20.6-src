@@ -9,11 +9,11 @@ import java.util.List;
 public final class q {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f37708a = 37;
+    private static final int f24017a = 37;
     private static final int b = 17;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[] f37709c;
+    private static final byte[] f24018c;
     private static final byte[] d;
 
     static {
@@ -24,7 +24,7 @@ public final class q {
         while (true) {
             int i2 = i;
             if (i2 >= 256) {
-                f37709c = bArr2;
+                f24018c = bArr2;
                 d = bArr3;
                 return;
             }
@@ -476,7 +476,7 @@ public final class q {
         StringBuffer stringBuffer = new StringBuffer((byteBuffer.remaining() * 3) - 1);
         int position = byteBuffer.position();
         int i = byteBuffer.get() & 255;
-        stringBuffer.append((char) f37709c[i]);
+        stringBuffer.append((char) f24018c[i]);
         stringBuffer.append((char) d[i]);
         while (true) {
             remaining--;
@@ -486,7 +486,7 @@ public final class q {
             }
             stringBuffer.append(' ');
             int i2 = byteBuffer.get() & 255;
-            stringBuffer.append((char) f37709c[i2]);
+            stringBuffer.append((char) f24018c[i2]);
             stringBuffer.append((char) d[i2]);
         }
     }
@@ -550,7 +550,7 @@ public final class q {
     public static byte[] b(ByteBuffer byteBuffer) {
         int position = byteBuffer.position();
         byte[] bArr = new byte[position];
-        System.arraycopy((Object) byteBuffer.array(), 0, (Object) bArr, 0, position);
+        System.arraycopy(byteBuffer.array(), 0, bArr, 0, position);
         return bArr;
     }
 }

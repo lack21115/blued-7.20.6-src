@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class ItemMineVasEntryBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f29240a;
+    public final ShapeTextView f15550a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29241c;
+    public final ImageView f15551c;
     public final LinearLayout d;
     public final TextView e;
     public final ShapeTextView f;
@@ -26,9 +26,9 @@ public final class ItemMineVasEntryBinding implements ViewBinding {
 
     private ItemMineVasEntryBinding(ShapeConstraintLayout shapeConstraintLayout, ShapeTextView shapeTextView, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, TextView textView, ShapeTextView shapeTextView2, TextView textView2) {
         this.h = shapeConstraintLayout;
-        this.f29240a = shapeTextView;
+        this.f15550a = shapeTextView;
         this.b = imageView;
-        this.f29241c = imageView2;
+        this.f15551c = imageView2;
         this.d = linearLayout;
         this.e = textView;
         this.f = shapeTextView2;
@@ -37,21 +37,21 @@ public final class ItemMineVasEntryBinding implements ViewBinding {
 
     public static ItemMineVasEntryBinding a(View view) {
         String str;
-        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(2131365270);
-        if (shapeTextView != null) {
-            ImageView imageView = (ImageView) view.findViewById(2131365540);
+        ShapeTextView findViewById = view.findViewById(R.id.iv_dot);
+        if (findViewById != null) {
+            ImageView imageView = (ImageView) view.findViewById(R.id.iv_left);
             if (imageView != null) {
-                ImageView imageView2 = (ImageView) view.findViewById(2131365826);
+                ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_right);
                 if (imageView2 != null) {
                     LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_icon);
                     if (linearLayout != null) {
                         TextView textView = (TextView) view.findViewById(2131371259);
                         if (textView != null) {
-                            ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(2131372721);
-                            if (shapeTextView2 != null) {
+                            ShapeTextView findViewById2 = view.findViewById(R.id.tv_time);
+                            if (findViewById2 != null) {
                                 TextView textView2 = (TextView) view.findViewById(2131372754);
                                 if (textView2 != null) {
-                                    return new ItemMineVasEntryBinding((ShapeConstraintLayout) view, shapeTextView, imageView, imageView2, linearLayout, textView, shapeTextView2, textView2);
+                                    return new ItemMineVasEntryBinding((ShapeConstraintLayout) view, findViewById, imageView, imageView2, linearLayout, textView, findViewById2, textView2);
                                 }
                                 str = "tvTitle";
                             } else {

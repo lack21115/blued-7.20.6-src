@@ -8,11 +8,11 @@ import java.util.TimerTask;
 public class CountDownTimerSupport implements ITimerSupport {
 
     /* renamed from: a  reason: collision with root package name */
-    private Timer f42244a;
+    private Timer f28552a;
     private Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f42245c;
+    private long f28553c;
     private long d;
     private long e;
     private OnCountDownTimerListener f;
@@ -33,9 +33,9 @@ public class CountDownTimerSupport implements ITimerSupport {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final boolean z) {
-        if (this.f42244a != null) {
+        if (this.f28552a != null) {
             f();
-            this.e = this.f42245c;
+            this.e = this.f28553c;
             this.g = TimerState.FINISH;
             this.b.post(new Runnable() { // from class: in.xiandan.countdowntimer.CountDownTimerSupport.1
                 @Override // java.lang.Runnable
@@ -53,24 +53,24 @@ public class CountDownTimerSupport implements ITimerSupport {
     }
 
     private void f() {
-        this.f42244a.cancel();
-        this.f42244a.purge();
-        this.f42244a = null;
+        this.f28552a.cancel();
+        this.f28552a.purge();
+        this.f28552a = null;
     }
 
     public void a() {
-        if (this.f42244a != null || this.g == TimerState.START) {
+        if (this.f28552a != null || this.g == TimerState.START) {
             return;
         }
         Timer timer = new Timer();
-        this.f42244a = timer;
+        this.f28552a = timer;
         timer.scheduleAtFixedRate(e(), 0L, this.d);
         this.g = TimerState.START;
     }
 
     @Deprecated
     public void a(long j) {
-        this.f42245c = j;
+        this.f28553c = j;
         this.e = j;
     }
 
@@ -79,7 +79,7 @@ public class CountDownTimerSupport implements ITimerSupport {
     }
 
     public void b() {
-        if (this.f42244a == null || this.g != TimerState.START) {
+        if (this.f28552a == null || this.g != TimerState.START) {
             return;
         }
         f();
@@ -108,7 +108,7 @@ public class CountDownTimerSupport implements ITimerSupport {
             @Override // java.util.TimerTask, java.lang.Runnable
             public void run() {
                 if (this.b < 0) {
-                    this.b = scheduledExecutionTime() - (CountDownTimerSupport.this.f42245c - CountDownTimerSupport.this.e);
+                    this.b = scheduledExecutionTime() - (CountDownTimerSupport.this.f28553c - CountDownTimerSupport.this.e);
                     CountDownTimerSupport.this.b.post(new Runnable() { // from class: in.xiandan.countdowntimer.CountDownTimerSupport.2.1
                         @Override // java.lang.Runnable
                         public void run() {
@@ -120,7 +120,7 @@ public class CountDownTimerSupport implements ITimerSupport {
                     return;
                 }
                 CountDownTimerSupport countDownTimerSupport = CountDownTimerSupport.this;
-                countDownTimerSupport.e = countDownTimerSupport.f42245c - (scheduledExecutionTime() - this.b);
+                countDownTimerSupport.e = countDownTimerSupport.f28553c - (scheduledExecutionTime() - this.b);
                 CountDownTimerSupport.this.b.post(new Runnable() { // from class: in.xiandan.countdowntimer.CountDownTimerSupport.2.2
                     @Override // java.lang.Runnable
                     public void run() {

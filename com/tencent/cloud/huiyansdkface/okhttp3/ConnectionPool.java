@@ -21,11 +21,11 @@ import java.util.concurrent.TimeUnit;
 public final class ConnectionPool {
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ boolean f35834c = !ConnectionPool.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f22143c = !ConnectionPool.class.desiredAssertionStatus();
     private static final Executor d = new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60, TimeUnit.SECONDS, new SynchronousQueue(), Util.threadFactory("OkHttp ConnectionPool", true));
 
     /* renamed from: a  reason: collision with root package name */
-    final RouteDatabase f35835a;
+    final RouteDatabase f22144a;
     boolean b;
     private final int e;
     private final long f;
@@ -58,7 +58,7 @@ public final class ConnectionPool {
             }
         };
         this.h = new ArrayDeque();
-        this.f35835a = new RouteDatabase();
+        this.f22144a = new RouteDatabase();
         this.e = i;
         this.f = timeUnit.toNanos(j);
         if (j > 0) {
@@ -75,9 +75,9 @@ public final class ConnectionPool {
             if (reference.get() != null) {
                 i++;
             } else {
-                Platform.get().logCloseableLeak("A connection to " + realConnection.route().address().url() + " was leaked. Did you forget to close a response body?", ((StreamAllocation.StreamAllocationReference) reference).f35945a);
+                Platform.get().logCloseableLeak("A connection to " + realConnection.route().address().url() + " was leaked. Did you forget to close a response body?", ((StreamAllocation.StreamAllocationReference) reference).f22254a);
                 list.remove(i);
-                realConnection.f35935a = true;
+                realConnection.f22244a = true;
                 if (list.isEmpty()) {
                     realConnection.e = j - this.f;
                     return 0;
@@ -125,7 +125,7 @@ public final class ConnectionPool {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public RealConnection a(Address address, StreamAllocation streamAllocation, Route route) {
-        if (f35834c || Thread.holdsLock(this)) {
+        if (f22143c || Thread.holdsLock(this)) {
             for (RealConnection realConnection : this.h) {
                 if (realConnection.isEligible(address, route)) {
                     streamAllocation.acquire(realConnection, true);
@@ -139,7 +139,7 @@ public final class ConnectionPool {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Socket a(Address address, StreamAllocation streamAllocation) {
-        if (f35834c || Thread.holdsLock(this)) {
+        if (f22143c || Thread.holdsLock(this)) {
             for (RealConnection realConnection : this.h) {
                 if (realConnection.isEligible(address, null) && realConnection.isMultiplexed() && realConnection != streamAllocation.connection()) {
                     return streamAllocation.releaseAndAcquire(realConnection);
@@ -152,7 +152,7 @@ public final class ConnectionPool {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(RealConnection realConnection) {
-        if (!f35834c && !Thread.holdsLock(this)) {
+        if (!f22143c && !Thread.holdsLock(this)) {
             throw new AssertionError();
         }
         if (!this.b) {
@@ -164,8 +164,8 @@ public final class ConnectionPool {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean b(RealConnection realConnection) {
-        if (f35834c || Thread.holdsLock(this)) {
-            if (realConnection.f35935a || this.e == 0) {
+        if (f22143c || Thread.holdsLock(this)) {
+            if (realConnection.f22244a || this.e == 0) {
                 this.h.remove(realConnection);
                 return true;
             }
@@ -190,7 +190,7 @@ public final class ConnectionPool {
             while (it.hasNext()) {
                 RealConnection next = it.next();
                 if (next.d.isEmpty()) {
-                    next.f35935a = true;
+                    next.f22244a = true;
                     arrayList.add(next);
                     it.remove();
                 }

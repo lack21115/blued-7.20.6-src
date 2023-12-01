@@ -23,9 +23,7 @@ import com.blued.android.module.live.base.R;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/SuperPlaneView.class */
 public class SuperPlaneView extends BaseLiveAnimationView {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f11532c;
+    private LayoutInflater c;
     private View d;
     private View e;
     private ImageView f;
@@ -45,7 +43,7 @@ public class SuperPlaneView extends BaseLiveAnimationView {
 
     private void e() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f11532c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.layout_sports_plane_anim, (ViewGroup) null);
         this.d = inflate;
         this.e = inflate.findViewById(R.id.plane_root_view);
@@ -89,8 +87,8 @@ public class SuperPlaneView extends BaseLiveAnimationView {
         this.n.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live.base.view.animation.SuperPlaneView.4
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
-                if (SuperPlaneView.this.f11493a != null) {
-                    SuperPlaneView.this.f11493a.b();
+                if (SuperPlaneView.this.a != null) {
+                    SuperPlaneView.this.a.b();
                 }
                 SuperPlaneView.this.e.setVisibility(8);
             }
@@ -132,8 +130,8 @@ public class SuperPlaneView extends BaseLiveAnimationView {
 
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationStart(Animation animation) {
-                if (SuperPlaneView.this.f11493a != null) {
-                    SuperPlaneView.this.f11493a.a();
+                if (SuperPlaneView.this.a != null) {
+                    SuperPlaneView.this.a.a();
                 }
                 SuperPlaneView.this.d();
                 SuperPlaneView.this.b();

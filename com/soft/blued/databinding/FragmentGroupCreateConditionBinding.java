@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentGroupCreateConditionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28831a;
+    private final LinearLayout f15141a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28831a;
+        return this.f15141a;
     }
 }

@@ -16,9 +16,7 @@ import com.anythink.core.common.k.a.f;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/u.class */
 public final class u {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f6824a = false;
+    private static boolean a = false;
 
     private static Path a(int i, int i2, int i3) {
         Path path = new Path();
@@ -144,7 +142,7 @@ public final class u {
     }
 
     public static void a(boolean z) {
-        f6824a = z;
+        a = z;
     }
 
     public static boolean a(View view, f.b bVar) {
@@ -152,7 +150,7 @@ public final class u {
             return false;
         }
         ViewParent parent = view.getParent();
-        return (parent instanceof View) && bVar.a((View) parent, view, 100, 0) && !f6824a;
+        return (parent instanceof View) && bVar.a((View) parent, view, 100, 0) && !a;
     }
 
     public static int[] a(int i, int i2, float f) {

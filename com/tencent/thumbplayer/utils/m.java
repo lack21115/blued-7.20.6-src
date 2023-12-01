@@ -7,5 +7,5 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class m extends ReentrantReadWriteLock {
 
     /* renamed from: a  reason: collision with root package name */
-    private Condition f39442a = writeLock().newCondition();
+    private Condition f25751a = writeLock().newCondition();
 }

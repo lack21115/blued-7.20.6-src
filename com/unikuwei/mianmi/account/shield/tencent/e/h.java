@@ -4,11 +4,11 @@ package com.unikuwei.mianmi.account.shield.tencent.e;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41008a = "";
+    private static String f27317a = "";
     private static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f41009c = "";
+    private static String f27318c = "";
     private static String d = "";
     private static String e = "";
     private static int f = 5000;
@@ -17,7 +17,7 @@ public class h {
     private static String i = "";
 
     public static String a() {
-        return f41008a;
+        return f27317a;
     }
 
     public static void a(int i2) {
@@ -25,7 +25,7 @@ public class h {
     }
 
     public static void a(String str) {
-        f41008a = str;
+        f27317a = str;
     }
 
     public static String b() {
@@ -41,11 +41,11 @@ public class h {
     }
 
     public static String c() {
-        return f41009c;
+        return f27318c;
     }
 
     public static void c(String str) {
-        f41009c = str;
+        f27318c = str;
     }
 
     public static String d() {

@@ -28,13 +28,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/MedalView.class */
 public class MedalView extends LinearLayout implements View.OnClickListener, PopAnchorBadge.DismissLisnter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14978a;
+    public View a;
     public Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LayoutInflater f14979c;
+    public LayoutInflater c;
     public String d;
     public String e;
     public BaseFragment f;
@@ -51,15 +47,15 @@ public class MedalView extends LinearLayout implements View.OnClickListener, Pop
         super(context, attributeSet);
         this.h = new ArrayList();
         this.b = context;
-        this.f14979c = LayoutInflater.from(context);
+        this.c = LayoutInflater.from(context);
         c();
         d();
     }
 
     private void d() {
-        this.k = (ImageView) this.f14978a.findViewById(R.id.medal_view1);
-        this.l = (ImageView) this.f14978a.findViewById(R.id.medal_view2);
-        this.m = (ImageView) this.f14978a.findViewById(R.id.medal_view3);
+        this.k = (ImageView) this.a.findViewById(R.id.medal_view1);
+        this.l = (ImageView) this.a.findViewById(R.id.medal_view2);
+        this.m = (ImageView) this.a.findViewById(R.id.medal_view3);
         LoadOptions loadOptions = new LoadOptions();
         this.n = loadOptions;
         loadOptions.d = R.drawable.anchor_badge_default;
@@ -89,7 +85,7 @@ public class MedalView extends LinearLayout implements View.OnClickListener, Pop
     }
 
     public void c() {
-        this.f14978a = this.f14979c.inflate(R.layout.live_medal_layout, (ViewGroup) this, true);
+        this.a = this.c.inflate(R.layout.live_medal_layout, (ViewGroup) this, true);
     }
 
     @Override // android.view.View.OnClickListener

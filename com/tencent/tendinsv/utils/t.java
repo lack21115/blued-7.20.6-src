@@ -30,11 +30,11 @@ public class t {
     public static String V = "deviceOaid";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39114a = "sdkVersion";
+    public static final String f25423a = "sdkVersion";
     public static final String b = "authPageFlag";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f39115c = "cmccfn";
+    public static final String f25424c = "cmccfn";
     public static final String d = "SIMOperator";
     public static final String e = "timeend";
     public static final String f = "preFailFlag";
@@ -59,12 +59,11 @@ public class t {
     public static final String y = "initFlag";
     public static final String z = "ispStatus";
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tendinsv/utils/t$a.class */
-    public static class a {
+    static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Method f39116a = a();
+        private static final Method f25425a = a();
 
         private a() {
         }
@@ -80,8 +79,8 @@ public class t {
 
         static void a(SharedPreferences.Editor editor) {
             try {
-                if (f39116a != null) {
-                    f39116a.invoke(editor, new Object[0]);
+                if (f25425a != null) {
+                    f25425a.invoke(editor, new Object[0]);
                     return;
                 }
             } catch (Exception e) {

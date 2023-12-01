@@ -14,7 +14,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
 import com.android.internal.R;
-import com.android.internal.telephony.PhoneConstants;
 import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -182,7 +181,7 @@ public final class ApduServiceInfo implements Parcelable {
                             } else if (next == 2 && "aid-prefix-filter".equals(name2) && aidGroup != null) {
                                 TypedArray obtainAttributes5 = resourcesForApplication.obtainAttributes(asAttributeSet, R.styleable.AidFilter);
                                 XmlResourceParser xmlResourceParser33 = xmlResourceParser;
-                                String concat = obtainAttributes5.getString(0).toUpperCase().concat(PhoneConstants.APN_TYPE_ALL);
+                                String concat = obtainAttributes5.getString(0).toUpperCase().concat("*");
                                 XmlResourceParser xmlResourceParser34 = xmlResourceParser;
                                 if (CardEmulation.isValidAid(concat)) {
                                     XmlResourceParser xmlResourceParser35 = xmlResourceParser;

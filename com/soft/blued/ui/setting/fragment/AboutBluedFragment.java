@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
+import com.blued.android.core.net.HttpResponseHandler;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.framework.download.model.DownloadBaseInfo;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -39,11 +40,11 @@ import com.soft.blued.version.update.UpdateVersionHelper;
 public class AboutBluedFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33315a;
+    private Context f19624a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f33316c;
+    private LinearLayout f19625c;
     private LinearLayout d;
     private LinearLayout e;
     private LinearLayout f;
@@ -55,28 +56,28 @@ public class AboutBluedFragment extends BaseFragment implements View.OnClickList
     private String l = AboutBluedFragment.class.getSimpleName();
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.h.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(R.string.about_blued));
-        commonTopTitleNoTrans.setLeftClickListener(this);
+        CommonTopTitleNoTrans findViewById = this.h.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.about_blued));
+        findViewById.setLeftClickListener(this);
     }
 
     private void b() {
         this.b = (TextView) this.h.findViewById(R.id.tv_version_update);
         String str = getResources().getString(R.string.version_str) + " " + DeviceUtils.c();
         String str2 = str;
-        if ("a8888a".equals(AppInfo.f9487c)) {
+        if ("a8888a".equals(AppInfo.c)) {
             str2 = str + " beta";
         }
         this.b.setText(str2);
-        this.f33316c = (LinearLayout) this.h.findViewById(R.id.ll_version_update);
+        this.f19625c = (LinearLayout) this.h.findViewById(R.id.ll_version_update);
         this.d = (LinearLayout) this.h.findViewById(R.id.ll_official);
         this.f = (LinearLayout) this.h.findViewById(R.id.ll_rate_blued);
-        this.i = (ShapeTextView) this.h.findViewById(R.id.iv_update_dot);
+        this.i = this.h.findViewById(R.id.iv_update_dot);
         this.e = (LinearLayout) this.h.findViewById(R.id.ll_microblogging);
         this.g = (LinearLayout) this.h.findViewById(R.id.ll_introduce);
-        this.j = (ShapeTextView) this.h.findViewById(R.id.iv_introduce_dot);
-        this.f33316c.setOnClickListener(this);
+        this.j = this.h.findViewById(R.id.iv_introduce_dot);
+        this.f19625c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.f.setOnClickListener(this);
         this.e.setOnClickListener(this);
@@ -93,8 +94,7 @@ public class AboutBluedFragment extends BaseFragment implements View.OnClickList
     }
 
     private void c() {
-        MineHttpUtils.a(getActivity(), "1", new BluedUIHttpResponse<BluedEntityA<DownloadBaseInfo>>() { // from class: com.soft.blued.ui.setting.fragment.AboutBluedFragment.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        MineHttpUtils.a((Context) getActivity(), "1", (HttpResponseHandler) new BluedUIHttpResponse<BluedEntityA<DownloadBaseInfo>>() { // from class: com.soft.blued.ui.setting.fragment.AboutBluedFragment.1
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<DownloadBaseInfo> bluedEntityA) {
                 if (CommonTools.a(AboutBluedFragment.this)) {
@@ -102,15 +102,15 @@ public class AboutBluedFragment extends BaseFragment implements View.OnClickList
                     if (bluedEntityA != null) {
                         try {
                             if (bluedEntityA.hasData()) {
-                                DownloadBaseInfo downloadBaseInfo = bluedEntityA.data.get(0);
+                                DownloadBaseInfo downloadBaseInfo = (DownloadBaseInfo) bluedEntityA.data.get(0);
                                 String str = downloadBaseInfo.type;
                                 if (!StringUtils.d(str) && str.equals("0")) {
-                                    AppMethods.a((CharSequence) AboutBluedFragment.this.getResources().getString(R.string.biao_version_new));
+                                    AppMethods.a(AboutBluedFragment.this.getResources().getString(R.string.biao_version_new));
                                 } else if (!TextUtils.isEmpty(str) && str.equals("1")) {
-                                    UpdateVersionFragment.a(AboutBluedFragment.this.f33315a, downloadBaseInfo, "i_s_weak_update");
+                                    UpdateVersionFragment.a(AboutBluedFragment.this.f19624a, downloadBaseInfo, "i_s_weak_update");
                                 } else if (TextUtils.isEmpty(str) || !str.equals("2")) {
                                 } else {
-                                    UpdateVersionFragment.a(AboutBluedFragment.this.f33315a, downloadBaseInfo, "i_s_strong_update");
+                                    UpdateVersionFragment.a(AboutBluedFragment.this.f19624a, downloadBaseInfo, "i_s_strong_update");
                                 }
                             }
                         } catch (Exception e) {
@@ -120,7 +120,6 @@ public class AboutBluedFragment extends BaseFragment implements View.OnClickList
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(AboutBluedFragment.this.k);
             }
@@ -145,7 +144,7 @@ public class AboutBluedFragment extends BaseFragment implements View.OnClickList
                 WebViewShowInfoFragment.a(getActivity(), getResources().getString(R.string.blog_url), getResources().getString(R.string.microblogging), 7);
                 return;
             case R.id.ll_official /* 2131368098 */:
-                WebViewShowInfoFragment.a(getActivity(), "CN".equals(BlueAppLocal.c().getCountry()) ? BluedHttpUrl.f10844a : "http://m.bluedapp.com", getResources().getString(R.string.official), 2);
+                WebViewShowInfoFragment.a(getActivity(), "CN".equals(BlueAppLocal.c().getCountry()) ? BluedHttpUrl.a : "http://m.bluedapp.com", getResources().getString(R.string.official), 2);
                 return;
             case R.id.ll_rate_blued /* 2131368162 */:
                 Intent b = MarketTool.a().b();
@@ -158,17 +157,17 @@ public class AboutBluedFragment extends BaseFragment implements View.OnClickList
                 if (DeviceUtils.f()) {
                     return;
                 }
-                int a2 = UpdateVersionHelper.a(this.f33315a);
+                int a2 = UpdateVersionHelper.a(this.f19624a);
                 if (a2 == -1) {
                     c();
                     return;
                 } else if (a2 == 2) {
-                    AppMethods.d(2131892290);
+                    AppMethods.d((int) R.string.tips_downloading);
                     return;
                 } else if (a2 != 8) {
                     return;
                 } else {
-                    UpdateVersionFragment.a(this.f33315a, "i_s_install_update");
+                    UpdateVersionFragment.a(this.f19624a, "i_s_install_update");
                     return;
                 }
             default:
@@ -176,9 +175,8 @@ public class AboutBluedFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33315a = getActivity();
+        this.f19624a = getActivity();
         View view = this.h;
         if (view == null) {
             this.h = layoutInflater.inflate(R.layout.fragment_about_blued, viewGroup, false);

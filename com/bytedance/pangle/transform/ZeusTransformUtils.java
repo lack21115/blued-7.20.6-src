@@ -23,7 +23,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.pangle.ComponentManager;
 import com.bytedance.pangle.FileProvider;
 import com.bytedance.pangle.PluginContext;
@@ -248,7 +247,7 @@ public class ZeusTransformUtils {
                     String str2 = (String) FieldUtils.readField(pluginResources, "pluginPkg");
                     if (TextUtils.isEmpty(str2)) {
                         String assetPaths = getAssetPaths(pluginResources.getAssets());
-                        if (!assetPaths.contains(BridgeUtil.SPLIT_MARK + str + "/version")) {
+                        if (!assetPaths.contains("/" + str + "/version")) {
                             return context;
                         }
                     } else if (!TextUtils.equals(str2, str)) {
@@ -297,7 +296,7 @@ public class ZeusTransformUtils {
                 String str2 = (String) FieldUtils.readField(resources, "pluginPkg");
                 if (TextUtils.isEmpty(str2)) {
                     String assetPaths = getAssetPaths(resources.getAssets());
-                    if (assetPaths.contains(BridgeUtil.SPLIT_MARK + str + "/version")) {
+                    if (assetPaths.contains("/" + str + "/version")) {
                         return resources;
                     }
                 } else if (TextUtils.equals(str2, str)) {
@@ -373,10 +372,10 @@ public class ZeusTransformUtils {
         for (Integer num : hashMap2.keySet()) {
             Integer num2 = (Integer) hashMap2.get(num);
             if (!num.equals(num2)) {
-                System.arraycopy((Object) iArr3, num.intValue() * 7, (Object) copyOf, num2.intValue() * 7, 7);
+                System.arraycopy(iArr3, num.intValue() * 7, copyOf, num2.intValue() * 7, 7);
             }
         }
-        System.arraycopy((Object) copyOf, 0, (Object) iArr3, 0, iArr3.length);
+        System.arraycopy(copyOf, 0, iArr3, 0, iArr3.length);
     }
 
     private static int[] handleAttrBefore(int[] iArr) {
@@ -658,7 +657,7 @@ public class ZeusTransformUtils {
         int identifier = Zeus.getAppApplication().getResources().getIdentifier(str2, str, Zeus.getAppApplication().getPackageName());
         int i2 = identifier;
         if (identifier == 0) {
-            i2 = Zeus.getAppApplication().getResources().getIdentifier(str2.replace(BridgeUtil.UNDERLINE_STR, "."), str, Zeus.getAppApplication().getPackageName());
+            i2 = Zeus.getAppApplication().getResources().getIdentifier(str2.replace("_", "."), str, Zeus.getAppApplication().getPackageName());
         }
         if (i2 == 0) {
             ZeusLogger.d(ZeusLogger.TAG_RESOURCES, "Cant find res, resName = " + str2 + ", pluginResId = " + i);

@@ -1,6 +1,7 @@
 package com.sdk.tencent.a;
 
 import android.os.SystemClock;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.net.HttpURLConnection;
 import java.util.Map;
@@ -78,9 +79,9 @@ public class c<T> extends com.sdk.tencent.d.c<Object, Object, Void> implements c
 
     public void a() {
         this.m = a.CANCELLED;
-        if (!this.f28032c.get()) {
+        if (!this.f14344c.get()) {
             try {
-                this.f28032c.set(true);
+                this.f14344c.set(true);
                 this.b.cancel(true);
             } catch (Throwable th) {
                 com.sdk.tencent.n.b.a("PriorityAsyncTask", th.getMessage(), this.f);
@@ -130,11 +131,11 @@ public class c<T> extends com.sdk.tencent.d.c<Object, Object, Void> implements c
                 File file = new File(this.q);
                 long length = (file.isFile() && file.exists()) ? file.length() : 0L;
                 if (length > 0) {
-                    httpURLConnection.setRequestProperty("RANGE", "bytes=" + length + "-");
+                    httpURLConnection.setRequestProperty("RANGE", "bytes=" + length + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 }
             }
             fVar = null;
-            if (!this.f28032c.get()) {
+            if (!this.f14344c.get()) {
                 this.w = System.currentTimeMillis();
                 fVar = a(dVar, dVar.a(httpURLConnection));
             }

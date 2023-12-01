@@ -4,10 +4,10 @@ package com.tencent.liteav.videoproducer.capture;
 final /* synthetic */ class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final float f36947a;
+    private final float f23256a;
 
     private v(float f) {
-        this.f36947a = f;
+        this.f23256a = f;
     }
 
     public static Runnable a(float f) {
@@ -16,6 +16,6 @@ final /* synthetic */ class v implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        CameraCaptureSingleton.getInstance().setPercentOfMaxZoomLevel(this.f36947a);
+        CameraCaptureSingleton.getInstance().setPercentOfMaxZoomLevel(this.f23256a);
     }
 }

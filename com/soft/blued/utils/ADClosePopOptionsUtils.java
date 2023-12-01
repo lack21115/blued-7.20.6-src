@@ -20,28 +20,23 @@ public class ADClosePopOptionsUtils {
 
     public static void a(final Context context, final BluedADExtra bluedADExtra, View view, final ADConstants.AD_POSITION ad_position, final ADRemovedListener aDRemovedListener) {
         ADClosePopOptionsHelper.a(context, bluedADExtra, view, ad_position, new ADClosePopOptionsHelper.ADOptionsListener() { // from class: com.soft.blued.utils.ADClosePopOptionsUtils.1
-            @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
             public void a() {
                 EventTrackVIP.a(VipProtos.Event.NO_AD_PROPAGATE_SHOW, EventTrackVIP.b(ADConstants.AD_POSITION.this), bluedADExtra.adms_type);
             }
 
-            @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
             public void b() {
                 EventTrackVIP.a(VipProtos.Event.NO_AD_PROPAGATE_BUY_CLICK, EventTrackVIP.b(ADConstants.AD_POSITION.this), bluedADExtra.adms_type);
                 PayUtils.a(context, 2, EventTrackVIP.a(ADConstants.AD_POSITION.this), 27, VipProtos.FromType.UNKNOWN_FROM);
             }
 
-            @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
             public void c() {
                 EventTrackVIP.a(VipProtos.Event.NO_AD_PROPAGATE_CLOSE_CLICK, EventTrackVIP.b(ADConstants.AD_POSITION.this), bluedADExtra.adms_type);
             }
 
-            @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
             public void d() {
                 aDRemovedListener.onRemoved();
             }
 
-            @Override // com.blued.android.module.common.utils.ADClosePopOptionsHelper.ADOptionsListener
             public int e() {
                 return BluedConfig.a().z();
             }

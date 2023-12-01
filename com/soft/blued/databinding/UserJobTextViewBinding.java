@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class UserJobTextViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29601a;
+    private final FrameLayout f15911a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29601a;
+        return this.f15911a;
     }
 }

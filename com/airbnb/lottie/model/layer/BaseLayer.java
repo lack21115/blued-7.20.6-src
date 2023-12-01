@@ -8,6 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.os.Build;
+import android.view.View;
 import com.airbnb.lottie.L;
 import com.airbnb.lottie.LottieComposition;
 import com.airbnb.lottie.LottieDrawable;
@@ -32,9 +33,7 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/layer/BaseLayer.class */
 public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation.AnimationListener, KeyPathElement {
     final LottieDrawable b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final Layer f4380c;
+    final Layer c;
     final TransformKeyframeAnimation d;
     private final String p;
     private MaskKeyframeAnimation q;
@@ -52,9 +51,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
     private final RectF m = new RectF();
     private final RectF n = new RectF();
     private final RectF o = new RectF();
-
-    /* renamed from: a  reason: collision with root package name */
-    final Matrix f4379a = new Matrix();
+    final Matrix a = new Matrix();
     private final List<BaseKeyframeAnimation<?, ?>> u = new ArrayList();
     private boolean v = true;
 
@@ -62,9 +59,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
     /* renamed from: com.airbnb.lottie.model.layer.BaseLayer$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/layer/BaseLayer$2.class */
     public static /* synthetic */ class AnonymousClass2 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4382a;
+        static final /* synthetic */ int[] a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:24:0x0083 -> B:56:0x0014). Please submit an issue!!! */
@@ -92,33 +87,33 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             } catch (NoSuchFieldError e3) {
             }
             int[] iArr2 = new int[Layer.LayerType.values().length];
-            f4382a = iArr2;
+            a = iArr2;
             try {
                 iArr2[Layer.LayerType.SHAPE.ordinal()] = 1;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f4382a[Layer.LayerType.PRE_COMP.ordinal()] = 2;
+                a[Layer.LayerType.PRE_COMP.ordinal()] = 2;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f4382a[Layer.LayerType.SOLID.ordinal()] = 3;
+                a[Layer.LayerType.SOLID.ordinal()] = 3;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f4382a[Layer.LayerType.IMAGE.ordinal()] = 4;
+                a[Layer.LayerType.IMAGE.ordinal()] = 4;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f4382a[Layer.LayerType.NULL.ordinal()] = 5;
+                a[Layer.LayerType.NULL.ordinal()] = 5;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f4382a[Layer.LayerType.TEXT.ordinal()] = 6;
+                a[Layer.LayerType.TEXT.ordinal()] = 6;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f4382a[Layer.LayerType.UNKNOWN.ordinal()] = 7;
+                a[Layer.LayerType.UNKNOWN.ordinal()] = 7;
             } catch (NoSuchFieldError e10) {
             }
         }
@@ -127,7 +122,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
     /* JADX INFO: Access modifiers changed from: package-private */
     public BaseLayer(LottieDrawable lottieDrawable, Layer layer) {
         this.b = lottieDrawable;
-        this.f4380c = layer;
+        this.c = layer;
         this.p = layer.f() + "#draw";
         if (layer.l() == Layer.MatteType.INVERT) {
             this.j.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
@@ -153,7 +148,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static BaseLayer a(Layer layer, LottieDrawable lottieDrawable, LottieComposition lottieComposition) {
-        switch (AnonymousClass2.f4382a[layer.k().ordinal()]) {
+        switch (AnonymousClass2.a[layer.k().ordinal()]) {
             case 1:
                 return new ShapeLayer(lottieDrawable, layer);
             case 2:
@@ -190,7 +185,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             if (i2 == 1) {
                 if (i == 0) {
                     Paint paint = new Paint();
-                    paint.setColor(-16777216);
+                    paint.setColor(View.MEASURED_STATE_MASK);
                     canvas.drawRect(this.l, paint);
                 }
                 if (mask.d()) {
@@ -278,7 +273,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
     }
 
     private void b(float f) {
-        this.b.r().c().a(this.f4380c.f(), f);
+        this.b.r().c().a(this.c.f(), f);
     }
 
     private void b(Canvas canvas, Matrix matrix, Mask mask, BaseKeyframeAnimation<ShapeData, Path> baseKeyframeAnimation, BaseKeyframeAnimation<Integer, Integer> baseKeyframeAnimation2) {
@@ -292,7 +287,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
     }
 
     private void b(RectF rectF, Matrix matrix) {
-        if (d() && this.f4380c.l() != Layer.MatteType.INVERT) {
+        if (d() && this.c.l() != Layer.MatteType.INVERT) {
             this.n.set(0.0f, 0.0f, 0.0f, 0.0f);
             this.r.a(this.n, matrix, true);
             if (rectF.intersect(this.n)) {
@@ -329,11 +324,11 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
 
     private void f() {
         boolean z = true;
-        if (this.f4380c.d().isEmpty()) {
+        if (this.c.d().isEmpty()) {
             a(true);
             return;
         }
-        final FloatKeyframeAnimation floatKeyframeAnimation = new FloatKeyframeAnimation(this.f4380c.d());
+        final FloatKeyframeAnimation floatKeyframeAnimation = new FloatKeyframeAnimation(this.c.d());
         floatKeyframeAnimation.a();
         floatKeyframeAnimation.a(new BaseKeyframeAnimation.AnimationListener() { // from class: com.airbnb.lottie.model.layer.BaseLayer.1
             @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
@@ -402,13 +397,13 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
             }
         }
         float f2 = f;
-        if (this.f4380c.b() != 0.0f) {
-            f2 = f / this.f4380c.b();
+        if (this.c.b() != 0.0f) {
+            f2 = f / this.c.b();
         }
         BaseLayer baseLayer = this.r;
         int i3 = 0;
         if (baseLayer != null) {
-            this.r.a(baseLayer.f4380c.b() * f2);
+            this.r.a(baseLayer.c.b() * f2);
             i3 = 0;
         }
         while (i3 < this.u.size()) {
@@ -420,7 +415,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
     @Override // com.airbnb.lottie.animation.content.DrawingContent
     public void a(Canvas canvas, Matrix matrix, int i) {
         L.a(this.p);
-        if (!this.v || this.f4380c.v()) {
+        if (!this.v || this.c.v()) {
             L.b(this.p);
             return;
         }
@@ -487,7 +482,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
     public void a(RectF rectF, Matrix matrix, boolean z) {
         this.l.set(0.0f, 0.0f, 0.0f, 0.0f);
         h();
-        this.f4379a.set(matrix);
+        this.a.set(matrix);
         if (z) {
             List<BaseLayer> list = this.t;
             if (list != null) {
@@ -497,17 +492,17 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
                     if (i < 0) {
                         break;
                     }
-                    this.f4379a.preConcat(this.t.get(i).d.d());
+                    this.a.preConcat(this.t.get(i).d.d());
                     size = i;
                 }
             } else {
                 BaseLayer baseLayer = this.s;
                 if (baseLayer != null) {
-                    this.f4379a.preConcat(baseLayer.d.d());
+                    this.a.preConcat(baseLayer.d.d());
                 }
             }
         }
-        this.f4379a.preConcat(this.d.d());
+        this.a.preConcat(this.d.d());
     }
 
     public void a(BaseKeyframeAnimation<?, ?> baseKeyframeAnimation) {
@@ -522,11 +517,11 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
         if (keyPath.a(b(), i)) {
             KeyPath keyPath3 = keyPath2;
             if (!"__container".equals(b())) {
-                KeyPath a2 = keyPath2.a(b());
-                keyPath3 = a2;
+                KeyPath a = keyPath2.a(b());
+                keyPath3 = a;
                 if (keyPath.c(b(), i)) {
-                    list.add(a2.a(this));
-                    keyPath3 = a2;
+                    list.add(a.a(this));
+                    keyPath3 = a;
                 }
             }
             if (keyPath.d(b(), i)) {
@@ -551,7 +546,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
 
     @Override // com.airbnb.lottie.animation.content.Content
     public String b() {
-        return this.f4380c.f();
+        return this.c.f();
     }
 
     abstract void b(Canvas canvas, Matrix matrix, int i);
@@ -570,7 +565,7 @@ public abstract class BaseLayer implements DrawingContent, BaseKeyframeAnimation
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Layer c() {
-        return this.f4380c;
+        return this.c;
     }
 
     boolean d() {

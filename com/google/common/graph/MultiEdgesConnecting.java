@@ -24,7 +24,7 @@ abstract class MultiEdgesConnecting<E> extends AbstractSet<E> {
         return this.targetNode.equals(this.outEdgeToNode.get(obj));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public UnmodifiableIterator<E> iterator() {
         final Iterator<Map.Entry<E, ?>> it = this.outEdgeToNode.entrySet().iterator();
         return new AbstractIterator<E>() { // from class: com.google.common.graph.MultiEdgesConnecting.1

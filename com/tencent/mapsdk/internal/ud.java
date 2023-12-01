@@ -9,7 +9,7 @@ import com.tencent.map.sdk.utilities.visualization.scatterplot.ScatterPlotOverla
 public class ud extends ScatterPlotInfo implements vc {
 
     /* renamed from: a  reason: collision with root package name */
-    private ScatterPlotOverlayProvider f38048a;
+    private ScatterPlotOverlayProvider f24357a;
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x0103, code lost:
         if (r5.mBitmapHeight != r0.getHeight()) goto L23;
@@ -37,6 +37,6 @@ public class ud extends ScatterPlotInfo implements vc {
     }
 
     public ScatterPlotOverlayProvider a() {
-        return this.f38048a;
+        return this.f24357a;
     }
 }

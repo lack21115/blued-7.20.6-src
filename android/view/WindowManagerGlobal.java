@@ -109,7 +109,7 @@ public final class WindowManagerGlobal {
         synchronized (WindowManagerGlobal.class) {
             try {
                 if (sWindowManagerService == null) {
-                    sWindowManagerService = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
+                    sWindowManagerService = IWindowManager.Stub.asInterface(ServiceManager.getService("window"));
                     try {
                         sWindowManagerService = getWindowManagerService();
                         ValueAnimator.setDurationScale(sWindowManagerService.getCurrentAnimatorScale());
@@ -138,7 +138,6 @@ public final class WindowManagerGlobal {
                     try {
                         InputMethodManager inputMethodManager = InputMethodManager.getInstance();
                         sWindowSession = getWindowManagerService().openSession(new IWindowSessionCallback.Stub() { // from class: android.view.WindowManagerGlobal.1
-                            @Override // android.view.IWindowSessionCallback
                             public void onAnimatorScaleChanged(float f) {
                                 ValueAnimator.setDurationScale(f);
                             }

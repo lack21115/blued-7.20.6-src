@@ -8,29 +8,29 @@ import com.opos.exoplayer.core.drm.DrmInitData;
 public final class s implements q {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.exoplayer.core.i.s f25224a;
+    private com.opos.exoplayer.core.i.s f11536a;
     private com.opos.exoplayer.core.c.n b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f25225c;
+    private boolean f11537c;
 
     @Override // com.opos.exoplayer.core.c.f.q
     public void a(com.opos.exoplayer.core.i.m mVar) {
-        if (!this.f25225c) {
-            if (this.f25224a.c() == com.anythink.expressad.exoplayer.b.b) {
+        if (!this.f11537c) {
+            if (this.f11536a.c() == com.anythink.expressad.exoplayer.b.b) {
                 return;
             }
-            this.b.a(Format.a((String) null, com.anythink.expressad.exoplayer.k.o.ag, this.f25224a.c()));
-            this.f25225c = true;
+            this.b.a(Format.a((String) null, com.anythink.expressad.exoplayer.k.o.ag, this.f11536a.c()));
+            this.f11537c = true;
         }
         int b = mVar.b();
         this.b.a(mVar, b);
-        this.b.a(this.f25224a.b(), 1, b, 0, null);
+        this.b.a(this.f11536a.b(), 1, b, 0, null);
     }
 
     @Override // com.opos.exoplayer.core.c.f.q
     public void a(com.opos.exoplayer.core.i.s sVar, com.opos.exoplayer.core.c.g gVar, u.d dVar) {
-        this.f25224a = sVar;
+        this.f11536a = sVar;
         dVar.a();
         com.opos.exoplayer.core.c.n a2 = gVar.a(dVar.b(), 4);
         this.b = a2;

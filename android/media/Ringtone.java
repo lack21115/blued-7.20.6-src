@@ -12,7 +12,6 @@ import android.os.RemoteException;
 import android.provider.DrmStore;
 import android.provider.MediaStore;
 import android.util.Log;
-import com.android.internal.R;
 import java.io.IOException;
 
 /* loaded from: source-9557208-dex2jar.jar:android/media/Ringtone.class */
@@ -60,10 +59,10 @@ public class Ringtone {
                 if (z) {
                     Uri actualRingtoneUriBySubId = RingtoneManager.getDefaultType(uri) == 1 ? RingtoneManager.getActualRingtoneUriBySubId(context, RingtoneManager.getDefaultRingtoneSubIdByUri(uri)) : RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.getDefaultType(uri));
                     if (actualRingtoneUriBySubId == null) {
-                        str = context.getString(R.string.ringtone_default);
+                        str = context.getString(17040779);
                         return str;
                     }
-                    str2 = context.getString(R.string.ringtone_default_with_actual, getTitle(context, actualRingtoneUriBySubId, false));
+                    str2 = context.getString(17040780, getTitle(context, actualRingtoneUriBySubId, false));
                 }
             } else {
                 try {
@@ -107,7 +106,7 @@ public class Ringtone {
         }
         String str3 = str2;
         if (str2 == null) {
-            String string2 = context.getString(R.string.ringtone_unknown);
+            String string2 = context.getString(17040783);
             str3 = string2;
             if (string2 == null) {
                 str3 = "";
@@ -124,7 +123,7 @@ public class Ringtone {
                 return false;
             }
             try {
-                AssetFileDescriptor openRawResourceFd = this.mContext.getResources().openRawResourceFd(R.raw.fallbackring);
+                AssetFileDescriptor openRawResourceFd = this.mContext.getResources().openRawResourceFd(17825797);
                 if (openRawResourceFd == null) {
                     Log.e(TAG, "Could not load fallback ringtone");
                     return false;

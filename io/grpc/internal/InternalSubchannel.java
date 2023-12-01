@@ -159,7 +159,7 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         }
 
         public SocketAddress getCurrentAddress() {
-            return this.addressGroups.get(this.groupIndex).getAddresses().get(this.addressIndex);
+            return (SocketAddress) this.addressGroups.get(this.groupIndex).getAddresses().get(this.addressIndex);
         }
 
         public Attributes getCurrentEagAttributes() {
@@ -254,7 +254,7 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
 
         @Override // io.grpc.internal.ManagedClientTransport.Listener
         public void transportShutdown(final Status status) {
-            InternalSubchannel.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "{0} SHUTDOWN with {1}", this.transport.getLogId(), InternalSubchannel.this.printShortStatus(status));
+            InternalSubchannel.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "{0} SHUTDOWN with {1}", new Object[]{this.transport.getLogId(), InternalSubchannel.this.printShortStatus(status)});
             this.shutdownInitiated = true;
             InternalSubchannel.this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.InternalSubchannel.TransportListener.2
                 @Override // java.lang.Runnable
@@ -284,7 +284,7 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         @Override // io.grpc.internal.ManagedClientTransport.Listener
         public void transportTerminated() {
             Preconditions.checkState(this.shutdownInitiated, "transportShutdown() must be called before transportTerminated().");
-            InternalSubchannel.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "{0} Terminated", this.transport.getLogId());
+            InternalSubchannel.this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "{0} Terminated", new Object[]{this.transport.getLogId()});
             InternalSubchannel.this.channelz.removeClientSocket(this.transport);
             InternalSubchannel.this.handleTransportInUseState(this.transport, false);
             InternalSubchannel.this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.InternalSubchannel.TransportListener.3
@@ -307,12 +307,10 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         TransportLogger() {
         }
 
-        @Override // io.grpc.ChannelLogger
         public void log(ChannelLogger.ChannelLogLevel channelLogLevel, String str) {
             ChannelLoggerImpl.logOnly(this.logId, channelLogLevel, str);
         }
 
-        @Override // io.grpc.ChannelLogger
         public void log(ChannelLogger.ChannelLogLevel channelLogLevel, String str, Object... objArr) {
             ChannelLoggerImpl.logOnly(this.logId, channelLogLevel, str, objArr);
         }
@@ -331,7 +329,7 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         this.backoffPolicyProvider = provider;
         this.transportFactory = clientTransportFactory;
         this.scheduledExecutor = scheduledExecutorService;
-        this.connectingTimer = supplier.get();
+        this.connectingTimer = (Stopwatch) supplier.get();
         this.syncContext = synchronizationContext;
         this.callback = callback;
         this.channelz = internalChannelz;
@@ -417,7 +415,7 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         }
         long nextBackoffNanos = this.reconnectPolicy.nextBackoffNanos() - this.connectingTimer.elapsed(TimeUnit.NANOSECONDS);
         boolean z = false;
-        this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "TRANSIENT_FAILURE ({0}). Will reconnect after {1} ns", printShortStatus(status), Long.valueOf(nextBackoffNanos));
+        this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "TRANSIENT_FAILURE ({0}). Will reconnect after {1} ns", new Object[]{printShortStatus(status), Long.valueOf(nextBackoffNanos)});
         if (this.reconnectTask == null) {
             z = true;
         }
@@ -443,7 +441,7 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         }
         InetSocketAddress currentAddress = this.addressIndex.getCurrentAddress();
         if (currentAddress instanceof HttpConnectProxiedSocketAddress) {
-            httpConnectProxiedSocketAddress = (HttpConnectProxiedSocketAddress) currentAddress;
+            httpConnectProxiedSocketAddress = currentAddress;
             currentAddress = httpConnectProxiedSocketAddress.getTargetAddress();
         } else {
             httpConnectProxiedSocketAddress = null;
@@ -466,7 +464,7 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         if (start != null) {
             this.syncContext.executeLater(start);
         }
-        this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Started transport {0}", transportLogger.logId);
+        this.channelLogger.log(ChannelLogger.ChannelLogLevel.INFO, "Started transport {0}", new Object[]{transportLogger.logId});
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -483,7 +481,6 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         return this.channelLogger;
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return this.logId;
     }
@@ -493,7 +490,6 @@ public final class InternalSubchannel implements InternalInstrumented<InternalCh
         return this.state.getState();
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.ChannelStats> getStats() {
         final SettableFuture create = SettableFuture.create();
         this.syncContext.execute(new Runnable() { // from class: io.grpc.internal.InternalSubchannel.9

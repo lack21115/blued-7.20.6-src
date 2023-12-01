@@ -10,7 +10,7 @@ public class ExceptionsKt__ExceptionsKt {
         Intrinsics.e(th, "<this>");
         Intrinsics.e(exception, "exception");
         if (th != exception) {
-            PlatformImplementationsKt.f42478a.a(th, exception);
+            PlatformImplementationsKt.a.a(th, exception);
         }
     }
 }

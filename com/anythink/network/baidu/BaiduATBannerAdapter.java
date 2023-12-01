@@ -21,11 +21,11 @@ public class BaiduATBannerAdapter extends CustomBannerAdapter {
     private static final String d = BaiduATBannerAdapter.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    String f8855a;
+    String f6015a;
     AdView b;
 
     /* renamed from: c  reason: collision with root package name */
-    FrameLayout f8856c;
+    FrameLayout f6016c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.network.baidu.BaiduATBannerAdapter$1  reason: invalid class name */
@@ -77,23 +77,23 @@ public class BaiduATBannerAdapter extends CustomBannerAdapter {
     public final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f8858a;
+        final /* synthetic */ Context f6018a;
 
         AnonymousClass2(Context context) {
-            this.f8858a = context;
+            this.f6018a = context;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            BaiduATBannerAdapter.this.f8856c = new FrameLayout(this.f8858a);
-            BaiduATBannerAdapter.this.f8856c.addView(BaiduATBannerAdapter.this.b, new FrameLayout.LayoutParams(-1, -1));
-            BaiduATBannerAdapter.this.f8856c.setVisibility(4);
-            final ViewGroup viewGroup = (ViewGroup) ((Activity) this.f8858a).getWindow().getDecorView();
-            viewGroup.addView(BaiduATBannerAdapter.this.f8856c);
+            BaiduATBannerAdapter.this.f6016c = new FrameLayout(this.f6018a);
+            BaiduATBannerAdapter.this.f6016c.addView(BaiduATBannerAdapter.this.b, new FrameLayout.LayoutParams(-1, -1));
+            BaiduATBannerAdapter.this.f6016c.setVisibility(4);
+            final ViewGroup viewGroup = (ViewGroup) ((Activity) this.f6018a).getWindow().getDecorView();
+            viewGroup.addView(BaiduATBannerAdapter.this.f6016c);
             BaiduATBannerAdapter.this.postOnMainThreadDelayed(new Runnable() { // from class: com.anythink.network.baidu.BaiduATBannerAdapter.2.1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    viewGroup.removeView(BaiduATBannerAdapter.this.f8856c);
+                    viewGroup.removeView(BaiduATBannerAdapter.this.f6016c);
                 }
             }, 100L);
         }
@@ -104,28 +104,27 @@ public class BaiduATBannerAdapter extends CustomBannerAdapter {
         if (adView != null && (adView.getParent() instanceof ViewGroup)) {
             ((ViewGroup) this.b.getParent()).removeView(this.b);
         }
-        FrameLayout frameLayout = this.f8856c;
+        FrameLayout frameLayout = this.f6016c;
         if (frameLayout == null || !(frameLayout.getParent() instanceof ViewGroup)) {
             return;
         }
-        ((ViewGroup) this.f8856c.getParent()).removeView(this.f8856c);
+        ((ViewGroup) this.f6016c.getParent()).removeView(this.f6016c);
     }
 
     private void a(Context context) {
-        AdView adView = new AdView(context, this.f8855a);
+        AdView adView = new AdView(context, this.f6015a);
         this.b = adView;
         adView.setListener(new AnonymousClass1());
         postOnMainThread(new AnonymousClass2(context));
     }
 
     static /* synthetic */ void a(BaiduATBannerAdapter baiduATBannerAdapter, Context context) {
-        AdView adView = new AdView(context, baiduATBannerAdapter.f8855a);
+        AdView adView = new AdView(context, baiduATBannerAdapter.f6015a);
         baiduATBannerAdapter.b = adView;
         adView.setListener(new AnonymousClass1());
         baiduATBannerAdapter.postOnMainThread(new AnonymousClass2(context));
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
         AdView adView = this.b;
         if (adView != null) {
@@ -135,44 +134,37 @@ public class BaiduATBannerAdapter extends CustomBannerAdapter {
         }
     }
 
-    @Override // com.anythink.banner.unitgroup.api.CustomBannerAdapter
     public View getBannerView() {
         return this.b;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return BaiduATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f8855a;
+        return this.f6015a;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return BaiduATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, Map<String, Object> map, Map<String, Object> map2) {
         String stringFromMap = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f8855a = ATInitMediation.getStringFromMap(map, "ad_place_id");
-        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f8855a)) {
+        this.f6015a = ATInitMediation.getStringFromMap(map, "ad_place_id");
+        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f6015a)) {
             if (this.mLoadListener != null) {
                 this.mLoadListener.onAdLoadError("", "app_id or ad_place_id is empty.");
             }
         } else if (context instanceof Activity) {
             BaiduATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.baidu.BaiduATBannerAdapter.3
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     if (BaiduATBannerAdapter.this.mLoadListener != null) {
                         BaiduATBannerAdapter.this.mLoadListener.onAdLoadError("", str);
                     }
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     try {
                         BaiduATBannerAdapter.a(BaiduATBannerAdapter.this, context);
@@ -190,7 +182,6 @@ public class BaiduATBannerAdapter extends CustomBannerAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean supportImpressionCallback() {
         return false;
     }

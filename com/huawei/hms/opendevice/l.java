@@ -15,7 +15,7 @@ import com.huawei.hms.support.log.HMSLog;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private ServiceConnection f22817a;
+    private ServiceConnection f9209a;
     private Messenger b = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,11 +23,11 @@ public class l {
     public class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Bundle f22818a;
+        final /* synthetic */ Bundle f9210a;
         final /* synthetic */ Context b;
 
         a(Bundle bundle, Context context) {
-            this.f22818a = bundle;
+            this.f9210a = bundle;
             this.b = context;
         }
 
@@ -36,14 +36,14 @@ public class l {
             HMSLog.i("RemoteService", "remote service onConnected");
             l.this.b = new Messenger(iBinder);
             Message obtain = Message.obtain();
-            obtain.setData(this.f22818a);
+            obtain.setData(this.f9210a);
             try {
                 l.this.b.send(obtain);
             } catch (RemoteException e) {
                 HMSLog.i("RemoteService", "remote service message send failed");
             }
             HMSLog.i("RemoteService", "remote service unbindservice");
-            this.b.unbindService(l.this.f22817a);
+            this.b.unbindService(l.this.f9209a);
         }
 
         @Override // android.content.ServiceConnection
@@ -55,8 +55,8 @@ public class l {
 
     public boolean a(Context context, Bundle bundle, Intent intent) {
         Context applicationContext = context.getApplicationContext();
-        this.f22817a = new a(bundle, applicationContext);
+        this.f9209a = new a(bundle, applicationContext);
         HMSLog.i("RemoteService", "remote service bind service start");
-        return applicationContext.bindService(intent, this.f22817a, 1);
+        return applicationContext.bindService(intent, this.f9209a, 1);
     }
 }

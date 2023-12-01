@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoaderHostManager;
 import com.blued.android.core.imagecache.RecyclingImageLoader;
@@ -35,6 +34,7 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         return "[\"" + getSimpleRouterName() + "\"," + System.currentTimeMillis() + "]";
     }
 
+    /* JADX WARN: Type inference failed for: r0v8, types: [com.blued.android.core.ui.BaseFragmentActivity, android.app.Activity] */
     protected void generateRouterName() {
         if (isGenerateRouterName()) {
             try {
@@ -46,16 +46,16 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
                         this.curPageRouterName = baseFragment.curPageRouterName + "," + getRouterName();
                     }
                 } else {
-                    BaseFragmentActivity baseFragmentActivity = (BaseFragmentActivity) getActivity();
-                    if (UiUtils.a((Activity) baseFragmentActivity)) {
-                        if (TextUtils.isEmpty(baseFragmentActivity.b)) {
+                    ?? r0 = (BaseFragmentActivity) getActivity();
+                    if (UiUtils.a((Activity) r0)) {
+                        if (TextUtils.isEmpty(r0.b)) {
                             this.curPageRouterName = getRouterName();
                         } else {
-                            this.curPageRouterName = baseFragmentActivity.b + "," + getRouterName();
+                            this.curPageRouterName = r0.b + "," + getRouterName();
                         }
                     }
                 }
-                BaseActivity.f9718a = this.curPageRouterName;
+                BaseActivity.a = this.curPageRouterName;
                 Page d = BluedStatistics.d();
                 String simpleRouterName = getSimpleRouterName();
                 String hexString = Integer.toHexString(hashCode());
@@ -75,7 +75,7 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         ActivityFragmentActive activityFragmentActive2 = activityFragmentActive;
         if (activityFragmentActive == null) {
             Log.e(TAG, "current fragmentActive is null, but someone want to use it");
-            activityFragmentActive2 = ActivityFragmentActive.f9713a;
+            activityFragmentActive2 = ActivityFragmentActive.a;
         }
         return activityFragmentActive2;
     }
@@ -109,7 +109,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         return true;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onAttach(Activity activity) {
         Log.a(TAG, getClass().getName() + this + " onAttach()");
         super.onAttach(activity);
@@ -124,7 +123,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         Log.a(TAG, getClass().getName() + this + " onAttach()");
         super.onAttach(context);
@@ -144,20 +142,17 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         return false;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         AppInfo.d(getClass().getSimpleName() + ".onCreate");
         super.onCreate(bundle);
         this.isCreated = true;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Log.a(TAG, getClass().getSimpleName() + this + " onCreateView()");
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onDestroy() {
         AppInfo.d(getClass().getSimpleName() + ".onDestroy");
         super.onDestroy();
@@ -171,7 +166,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onDestroyView() {
         super.onDestroyView();
         Log.a(TAG, getClass().getName() + this + " onDestroyView()");
@@ -181,12 +175,11 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onDetach() {
         Log.a(TAG, getClass().getName() + this + " onDetach()");
-        FragmentActivity activity = getActivity();
+        BaseFragmentActivity activity = getActivity();
         if (isActivityListenerEnable() && (activity instanceof BaseFragmentActivity)) {
-            BaseFragmentActivity baseFragmentActivity = (BaseFragmentActivity) activity;
+            BaseFragmentActivity baseFragmentActivity = activity;
             if (this == baseFragmentActivity.c()) {
                 baseFragmentActivity.a((BaseFragmentActivity.IOnBackPressedListener) null);
             }
@@ -197,7 +190,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         super.onDetach();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onHiddenChanged(boolean z) {
         Tracker.onHiddenChanged(this, z);
         super.onHiddenChanged(z);
@@ -213,7 +205,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         return false;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onPause() {
         Tracker.onPause(this);
         super.onPause();
@@ -223,7 +214,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onResume() {
         Tracker.onResume(this);
         super.onResume();
@@ -239,13 +229,11 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         bundle.putString("router_name", this.curPageRouterName);
         super.onSaveInstanceState(bundle);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         Log.a(TAG, getClass().getName() + this + " onStart()");
@@ -255,7 +243,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         PageTimeUtils.a((PageTimeUtils.APMInterface) this);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         Log.a(TAG, getClass().getName() + this + " onStop()");
@@ -265,12 +252,10 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         PageTimeUtils.b(this);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onViewStateRestored(Bundle bundle) {
         if (bundle != null) {
             this.curPageRouterName = bundle.getString("router_name");
@@ -286,7 +271,6 @@ public class BaseFragment extends Fragment implements BaseFragmentActivity.IOnBa
         return UIRunnableManager.a(this.fragmentActive, runnable, 0L);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         Tracker.setUserVisibleHint(this, z);
         super.setUserVisibleHint(z);

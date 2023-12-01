@@ -105,7 +105,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
                 } else if (obj instanceof ByteString) {
                     lazyStringList.add((ByteString) obj);
                 } else {
-                    lazyStringList.add((LazyStringList) ((String) obj));
+                    lazyStringList.add((String) obj);
                 }
             }
         }
@@ -144,7 +144,7 @@ public abstract class AbstractMessageLite<MessageType extends AbstractMessageLit
 
         @Override // 
         /* renamed from: clone */
-        public abstract BuilderType mo1800clone();
+        public abstract BuilderType mo2030clone();
 
         protected abstract BuilderType internalMergeFrom(MessageType messagetype);
 

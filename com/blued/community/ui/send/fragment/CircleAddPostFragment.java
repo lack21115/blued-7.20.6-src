@@ -1,5 +1,6 @@
 package com.blued.community.ui.send.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import com.alipay.sdk.util.i;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.TerminalActivity;
@@ -35,7 +37,6 @@ import com.blued.community.widget.vote.text.model.CircleTextVote;
 import com.blued.community.widget.vote.text.view.CircleTextVoteView;
 import com.blued.das.client.feed.FeedProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.cdo.oaps.ad.wrapper.BaseWrapper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +79,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
                 this.bb = true;
                 this.bc = this.ah.posts_vote_title;
                 this.bd = new ArrayList();
-                String[] split = this.ah.option.split(";");
+                String[] split = this.ah.option.split(i.b);
                 int length = split.length;
                 int i = 0;
                 while (true) {
@@ -102,9 +103,9 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
             ImageLoader.a(getFragmentActive(), this.aZ).a(3.0f).a(this.b);
         }
         if (this.aX < 0) {
-            this.aX = CircleMethods.a(this.f19992c);
+            this.aX = CircleMethods.a(this.c);
         }
-        this.aU.setImageResource(CircleMethods.a(this.f19992c, this.aX));
+        this.aU.setImageResource(CircleMethods.a(this.c, this.aX));
         if (arguments == null || (circleBubble = (CircleBubble) arguments.getSerializable("circle_bubble")) == null) {
             return;
         }
@@ -117,7 +118,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
         this.J.setVisibility(8);
         this.K.setVisibility(8);
         this.aP = (FrameLayout) this.j.findViewById(R.id.layout_text_vote);
-        this.aQ = (CircleTextVoteView) this.j.findViewById(R.id.circle_text_vote);
+        this.aQ = this.j.findViewById(R.id.circle_text_vote);
         this.aR = (ImageView) this.j.findViewById(R.id.iv_text_vote_delete);
         this.aQ.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.CircleAddPostFragment.1
             @Override // android.view.View.OnClickListener
@@ -138,7 +139,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
                 CircleAddPostFragment.this.R();
             }
         });
-        this.aS = (ConstraintLayout) this.j.findViewById(R.id.cl_anonymous);
+        this.aS = this.j.findViewById(R.id.cl_anonymous);
         this.aT = (CheckBox) this.j.findViewById(R.id.cb_anonymous_post);
         this.aU = (ImageView) this.j.findViewById(R.id.iv_anonymous);
         this.aV = (TextView) this.j.findViewById(R.id.tv_anonymous_tip);
@@ -192,9 +193,9 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
             a(context, str, str2, str3);
             return;
         }
-        Bundle a2 = a(str, str2, str3);
-        a2.putSerializable("circle_bubble", circleBubble);
-        TerminalActivity.d(context, CircleAddPostFragment.class, a2);
+        Bundle a = a(str, str2, str3);
+        a.putSerializable("circle_bubble", circleBubble);
+        TerminalActivity.d(context, CircleAddPostFragment.class, a);
     }
 
     public static boolean a(Context context, String str) {
@@ -221,7 +222,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
         NewFeedDao.a().a(newFeedModel);
         FeedSendManager.a().a(newFeedModel);
         ac();
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         if (getActivity() != null) {
             getActivity().finish();
         }
@@ -231,7 +232,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
     protected boolean a(boolean z) {
         if (this.q.isOutOfBounds()) {
             if (z) {
-                String string = this.f19992c.getResources().getString(R.string.community_max_input_limit);
+                String string = this.c.getResources().getString(R.string.community_max_input_limit);
                 AppMethods.a((CharSequence) String.format(string, this.q.getEditMaxLength() + ""));
                 return false;
             }
@@ -273,7 +274,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
     @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment
     protected void ab_() {
         super.ab_();
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.V.setImageResource(R.drawable.feed_post_tools_vote_dark);
         } else {
             this.V.setImageResource(R.drawable.feed_post_tools_vote);
@@ -335,7 +336,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
                     ToastUtils.b(R.string.content_can_not_send_feed_in_circle);
                 }
             }
-        }, Y().toString(), BaseWrapper.ENTER_ID_OAPS_DEMO, getFragmentActive());
+        }, Y().toString(), "31", getFragmentActive());
         EventTrackFeed.a(FeedProtos.Event.CIRCLE_PUBLISH_BTN_CLICK, Z.circle_id, Z.is_posts_vote == 1 ? FeedProtos.NoteType.VOTE_TEXT : Z.isVideo == 1 ? FeedProtos.NoteType.NOTE_VIDEO : FeedProtos.NoteType.NOTE_COMMON, this.aT.isChecked(), this.aW.isChecked(), MarkDownLinkHelper.b(Z.getContent()));
     }
 
@@ -357,7 +358,7 @@ public class CircleAddPostFragment extends FeedAddPostBaseFragment {
         return (this.av && this.aw != null) || this.bb;
     }
 
-    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.send.fragment.FeedAddPostBaseFragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1 && i == 111 && intent != null) {

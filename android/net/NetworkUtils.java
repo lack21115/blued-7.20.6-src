@@ -3,7 +3,6 @@ package android.net;
 import android.os.Parcel;
 import android.util.Log;
 import android.util.Pair;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
 import java.net.InetAddress;
@@ -118,7 +117,7 @@ public class NetworkUtils {
         int i4 = -1;
         int i5 = -1;
         try {
-            String[] split = str.split(BridgeUtil.SPLIT_MARK, 2);
+            String[] split = str.split("/", 2);
             i = Integer.parseInt(split[1]);
             i2 = i;
             i3 = i;

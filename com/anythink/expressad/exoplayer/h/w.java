@@ -7,7 +7,7 @@ import com.anythink.expressad.exoplayer.e.m;
 public final class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7513a = 1000;
+    private static final int f4674a = 1000;
     private int j;
     private int k;
     private int l;
@@ -17,7 +17,7 @@ public final class w {
     private int b = 1000;
 
     /* renamed from: c  reason: collision with root package name */
-    private int[] f7514c = new int[1000];
+    private int[] f4675c = new int[1000];
     private long[] d = new long[1000];
     private long[] g = new long[1000];
     private int[] f = new int[1000];
@@ -33,11 +33,11 @@ public final class w {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f7515a;
+        public int f4676a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public m.a f7516c;
+        public m.a f4677c;
     }
 
     private int a(int i, int i2, long j, boolean z) {
@@ -154,7 +154,7 @@ public final class w {
                 } else if (this.r == null || (!z && this.r == mVar)) {
                     return -3;
                 } else {
-                    nVar.f7721a = this.r;
+                    nVar.f4882a = this.r;
                     return -5;
                 }
             }
@@ -165,13 +165,13 @@ public final class w {
                 }
                 eVar.f = this.g[f];
                 eVar.a(this.f[f]);
-                aVar.f7515a = this.e[f];
+                aVar.f4676a = this.e[f];
                 aVar.b = this.d[f];
-                aVar.f7516c = this.h[f];
+                aVar.f4677c = this.h[f];
                 this.m++;
                 return -4;
             }
-            nVar.f7721a = this.i[f];
+            nVar.f4882a = this.i[f];
             return -5;
         }
     }
@@ -230,7 +230,7 @@ public final class w {
             this.f[f] = i;
             this.h[f] = aVar;
             this.i[f] = this.r;
-            this.f7514c[f] = this.s;
+            this.f4675c[f] = this.s;
             int i3 = this.j + 1;
             this.j = i3;
             if (i3 == this.b) {
@@ -243,28 +243,28 @@ public final class w {
                 m.a[] aVarArr = new m.a[i4];
                 com.anythink.expressad.exoplayer.m[] mVarArr = new com.anythink.expressad.exoplayer.m[i4];
                 int i5 = this.b - this.l;
-                System.arraycopy((Object) this.d, this.l, (Object) jArr, 0, i5);
-                System.arraycopy((Object) this.g, this.l, (Object) jArr2, 0, i5);
-                System.arraycopy((Object) this.f, this.l, (Object) iArr2, 0, i5);
-                System.arraycopy((Object) this.e, this.l, (Object) iArr3, 0, i5);
+                System.arraycopy(this.d, this.l, jArr, 0, i5);
+                System.arraycopy(this.g, this.l, jArr2, 0, i5);
+                System.arraycopy(this.f, this.l, iArr2, 0, i5);
+                System.arraycopy(this.e, this.l, iArr3, 0, i5);
                 System.arraycopy(this.h, this.l, aVarArr, 0, i5);
                 System.arraycopy(this.i, this.l, mVarArr, 0, i5);
-                System.arraycopy((Object) this.f7514c, this.l, (Object) iArr, 0, i5);
+                System.arraycopy(this.f4675c, this.l, iArr, 0, i5);
                 int i6 = this.l;
-                System.arraycopy((Object) this.d, 0, (Object) jArr, i5, i6);
-                System.arraycopy((Object) this.g, 0, (Object) jArr2, i5, i6);
-                System.arraycopy((Object) this.f, 0, (Object) iArr2, i5, i6);
-                System.arraycopy((Object) this.e, 0, (Object) iArr3, i5, i6);
+                System.arraycopy(this.d, 0, jArr, i5, i6);
+                System.arraycopy(this.g, 0, jArr2, i5, i6);
+                System.arraycopy(this.f, 0, iArr2, i5, i6);
+                System.arraycopy(this.e, 0, iArr3, i5, i6);
                 System.arraycopy(this.h, 0, aVarArr, i5, i6);
                 System.arraycopy(this.i, 0, mVarArr, i5, i6);
-                System.arraycopy((Object) this.f7514c, 0, (Object) iArr, i5, i6);
+                System.arraycopy(this.f4675c, 0, iArr, i5, i6);
                 this.d = jArr;
                 this.g = jArr2;
                 this.f = iArr2;
                 this.e = iArr3;
                 this.h = aVarArr;
                 this.i = mVarArr;
-                this.f7514c = iArr;
+                this.f4675c = iArr;
                 this.l = 0;
                 this.j = this.b;
                 this.b = i4;
@@ -339,7 +339,7 @@ public final class w {
     }
 
     public final int e() {
-        return f() ? this.f7514c[f(this.m)] : this.s;
+        return f() ? this.f4675c[f(this.m)] : this.s;
     }
 
     public final boolean f() {

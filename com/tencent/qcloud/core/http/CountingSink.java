@@ -6,9 +6,8 @@ import okio.Buffer;
 import okio.ForwardingSink;
 import okio.Sink;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/http/CountingSink.class */
-public class CountingSink extends ForwardingSink {
+class CountingSink extends ForwardingSink {
     private long bytesTotal;
     private long bytesWritten;
     private QCloudProgressListener progressListener;
@@ -96,7 +95,6 @@ public class CountingSink extends ForwardingSink {
         return this.bytesWritten;
     }
 
-    @Override // okio.ForwardingSink, okio.Sink
     public void write(Buffer buffer, long j) throws IOException {
         super.write(buffer, j);
         writeBytesInternal(j);

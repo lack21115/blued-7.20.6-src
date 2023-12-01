@@ -29,13 +29,9 @@ public final class FragYyRelationshipInfoItemBinding implements ViewBinding {
     public final TextView I;
     public final ViewPager J;
     private final ConstraintLayout K;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16465a;
+    public final ShapeTextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16466c;
+    public final TextView c;
     public final ShapeTextView d;
     public final FrameLayout e;
     public final Group f;
@@ -62,9 +58,9 @@ public final class FragYyRelationshipInfoItemBinding implements ViewBinding {
 
     private FragYyRelationshipInfoItemBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, TextView textView, TextView textView2, ShapeTextView shapeTextView2, FrameLayout frameLayout, Group group, Group group2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, SquareImageView squareImageView, ImageView imageView7, SquareImageView squareImageView2, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, YYLivingStreamView yYLivingStreamView, YYLivingStreamView yYLivingStreamView2, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, RelationShipRoomProgressBtn relationShipRoomProgressBtn, TextView textView3, ShapeTextView shapeTextView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, ViewPager viewPager) {
         this.K = constraintLayout;
-        this.f16465a = shapeTextView;
+        this.a = shapeTextView;
         this.b = textView;
-        this.f16466c = textView2;
+        this.c = textView2;
         this.d = shapeTextView2;
         this.e = frameLayout;
         this.f = group;
@@ -112,10 +108,10 @@ public final class FragYyRelationshipInfoItemBinding implements ViewBinding {
                     if (shapeTextView2 != null) {
                         FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.con_pro);
                         if (frameLayout != null) {
-                            Group group = (Group) view.findViewById(R.id.gro_masked_about);
-                            if (group != null) {
-                                Group group2 = (Group) view.findViewById(R.id.grp_lv_info);
-                                if (group2 != null) {
+                            Group findViewById = view.findViewById(R.id.gro_masked_about);
+                            if (findViewById != null) {
+                                Group findViewById2 = view.findViewById(R.id.grp_lv_info);
+                                if (findViewById2 != null) {
                                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_bg);
                                     if (imageView != null) {
                                         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_bg_2);
@@ -134,10 +130,10 @@ public final class FragYyRelationshipInfoItemBinding implements ViewBinding {
                                                                 if (imageView7 != null) {
                                                                     SquareImageView squareImageView2 = (SquareImageView) view.findViewById(R.id.iv_relationship_about);
                                                                     if (squareImageView2 != null) {
-                                                                        ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.iv_user_1);
-                                                                        if (shapeableImageView != null) {
-                                                                            ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.iv_user_2);
-                                                                            if (shapeableImageView2 != null) {
+                                                                        ShapeableImageView findViewById3 = view.findViewById(R.id.iv_user_1);
+                                                                        if (findViewById3 != null) {
+                                                                            ShapeableImageView findViewById4 = view.findViewById(R.id.iv_user_2);
+                                                                            if (findViewById4 != null) {
                                                                                 YYLivingStreamView yYLivingStreamView = (YYLivingStreamView) view.findViewById(R.id.iv_user_live_1);
                                                                                 if (yYLivingStreamView != null) {
                                                                                     YYLivingStreamView yYLivingStreamView2 = (YYLivingStreamView) view.findViewById(R.id.iv_user_live_2);
@@ -172,9 +168,9 @@ public final class FragYyRelationshipInfoItemBinding implements ViewBinding {
                                                                                                                                             if (textView11 != null) {
                                                                                                                                                 TextView textView12 = (TextView) view.findViewById(R.id.tv_relation_type_name);
                                                                                                                                                 if (textView12 != null) {
-                                                                                                                                                    ViewPager viewPager = (ViewPager) view.findViewById(R.id.vp_room);
-                                                                                                                                                    if (viewPager != null) {
-                                                                                                                                                        return new FragYyRelationshipInfoItemBinding((ConstraintLayout) view, shapeTextView, textView, textView2, shapeTextView2, frameLayout, group, group2, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, squareImageView, imageView7, squareImageView2, shapeableImageView, shapeableImageView2, yYLivingStreamView, yYLivingStreamView2, linearLayout, linearLayout2, linearLayout3, relationShipRoomProgressBtn, textView3, shapeTextView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, viewPager);
+                                                                                                                                                    ViewPager findViewById5 = view.findViewById(R.id.vp_room);
+                                                                                                                                                    if (findViewById5 != null) {
+                                                                                                                                                        return new FragYyRelationshipInfoItemBinding((ConstraintLayout) view, shapeTextView, textView, textView2, shapeTextView2, frameLayout, findViewById, findViewById2, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, squareImageView, imageView7, squareImageView2, findViewById3, findViewById4, yYLivingStreamView, yYLivingStreamView2, linearLayout, linearLayout2, linearLayout3, relationShipRoomProgressBtn, textView3, shapeTextView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, findViewById5);
                                                                                                                                                     }
                                                                                                                                                     str = "vpRoom";
                                                                                                                                                 } else {
@@ -285,7 +281,6 @@ public final class FragYyRelationshipInfoItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.K;

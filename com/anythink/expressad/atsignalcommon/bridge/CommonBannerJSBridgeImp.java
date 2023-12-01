@@ -21,11 +21,11 @@ import org.json.JSONObject;
 public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7074a = CommonBannerJSBridgeImp.class.getSimpleName();
+    public static final String f4236a = CommonBannerJSBridgeImp.class.getSimpleName();
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void cai(Object obj, String str) {
-        o.a(f7074a, "cai:".concat(String.valueOf(str)));
+        o.a(f4236a, "cai:".concat(String.valueOf(str)));
         if (TextUtils.isEmpty(str)) {
             CommonJSBridgeImpUtils.callbackExcep(obj, "params is null");
         } else if (TextUtils.isEmpty(str)) {
@@ -46,32 +46,32 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
                         j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
                     } catch (Exception e) {
                         CommonJSBridgeImpUtils.callbackExcep(obj, e.getMessage());
-                        o.a(f7074a, e.getMessage());
+                        o.a(f4236a, e.getMessage());
                     }
                 } catch (Throwable th) {
                     CommonJSBridgeImpUtils.callbackExcep(obj, "exception: " + th.getLocalizedMessage());
-                    o.b(f7074a, "cai", th);
+                    o.b(f4236a, "cai", th);
                 }
             } catch (JSONException e2) {
                 CommonJSBridgeImpUtils.callbackExcep(obj, "exception: " + e2.getLocalizedMessage());
-                o.b(f7074a, "cai", e2);
+                o.b(f4236a, "cai", e2);
             }
         }
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void click(Object obj, String str) {
-        o.a(f7074a, "click: ".concat(String.valueOf(str)));
+        o.a(f4236a, "click: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void getFileInfo(Object obj, String str) {
-        o.a(f7074a, "getFileInfo:".concat(String.valueOf(str)));
+        o.a(f4236a, "getFileInfo:".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void getNetstat(Object obj, String str) {
-        o.d(f7074a, "getNetstat:".concat(String.valueOf(str)));
+        o.d(f4236a, "getNetstat:".concat(String.valueOf(str)));
         if (TextUtils.isEmpty(str)) {
             CommonJSBridgeImpUtils.callbackExcep(obj, "params is null");
             return;
@@ -85,14 +85,14 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
             context = g;
             try {
                 if (obj instanceof a) {
-                    WindVaneWebView windVaneWebView = ((a) obj).f7101a;
+                    WindVaneWebView windVaneWebView = ((a) obj).f4263a;
                     context = g;
                     if (windVaneWebView != null) {
                         context = windVaneWebView.getContext();
                     }
                 }
             } catch (Exception e) {
-                o.d(f7074a, e.getMessage());
+                o.d(f4236a, e.getMessage());
                 context = g;
             }
         }
@@ -110,14 +110,14 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
             }
             j.a().a(obj, str2);
         } catch (Throwable th) {
-            o.d(f7074a, th.getMessage());
+            o.d(f4236a, th.getMessage());
             j.a().a(obj, CommonJSBridgeImpUtils.codeToJsonString(1));
         }
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void gial(Object obj, String str) {
-        o.a(f7074a, "gial:".concat(String.valueOf(str)));
+        o.a(f4236a, "gial:".concat(String.valueOf(str)));
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("code", CommonJSBridgeImpUtils.b);
@@ -125,21 +125,21 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
             j.a().a(obj, Base64.encodeToString(jSONObject.toString().getBytes(), 2));
         } catch (Exception e) {
             CommonJSBridgeImpUtils.callbackExcep(obj, e.getMessage());
-            o.a(f7074a, e.getMessage());
+            o.a(f4236a, e.getMessage());
         } catch (Throwable th) {
             CommonJSBridgeImpUtils.callbackExcep(obj, th.getMessage());
-            o.a(f7074a, th.getMessage());
+            o.a(f4236a, th.getMessage());
         }
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void handlerH5Exception(Object obj, String str) {
-        o.a(f7074a, "handlerH5Exception: ".concat(String.valueOf(str)));
+        o.a(f4236a, "handlerH5Exception: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void increaseOfferFrequence(Object obj, String str) {
-        o.a(f7074a, "increaseOfferFrequence:".concat(String.valueOf(str)));
+        o.a(f4236a, "increaseOfferFrequence:".concat(String.valueOf(str)));
         if (TextUtils.isEmpty(str)) {
             CommonJSBridgeImpUtils.callbackExcep(obj, "params is null");
         } else if (TextUtils.isEmpty(str)) {
@@ -147,19 +147,19 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
             try {
                 CommonJSBridgeImpUtils.increaseOfferFrequence(obj, new JSONObject(str));
             } catch (Throwable th) {
-                o.b(f7074a, "increaseOfferFrequence", th);
+                o.b(f4236a, "increaseOfferFrequence", th);
             }
         }
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void init(Object obj, String str) {
-        o.a(f7074a, "init: ".concat(String.valueOf(str)));
+        o.a(f4236a, "init: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void install(Object obj, String str) {
-        o.a(f7074a, "install: ".concat(String.valueOf(str)));
+        o.a(f4236a, "install: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
@@ -167,16 +167,16 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
         try {
             if (obj instanceof a) {
                 j.a();
-                j.b(((a) obj).f7101a);
+                j.b(((a) obj).f4263a);
             }
         } catch (Throwable th) {
-            o.b(f7074a, "onJSBridgeConnect", th);
+            o.b(f4236a, "onJSBridgeConnect", th);
         }
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void openURL(Object obj, String str) {
-        o.d(f7074a, "openURL:".concat(String.valueOf(str)));
+        o.d(f4236a, "openURL:".concat(String.valueOf(str)));
         if (TextUtils.isEmpty(str)) {
             CommonJSBridgeImpUtils.callbackExcep(obj, "params is null");
             return;
@@ -190,14 +190,14 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
             context = g;
             try {
                 if (obj instanceof a) {
-                    WindVaneWebView windVaneWebView = ((a) obj).f7101a;
+                    WindVaneWebView windVaneWebView = ((a) obj).f4263a;
                     context = g;
                     if (windVaneWebView != null) {
                         context = windVaneWebView.getContext();
                     }
                 }
             } catch (Exception e) {
-                o.d(f7074a, e.getMessage());
+                o.d(f4236a, e.getMessage());
                 context = g;
             }
         }
@@ -214,20 +214,20 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
                 l.b(context, optString);
             }
         } catch (JSONException e2) {
-            o.d(f7074a, e2.getMessage());
+            o.d(f4236a, e2.getMessage());
         } catch (Throwable th) {
-            o.d(f7074a, th.getMessage());
+            o.d(f4236a, th.getMessage());
         }
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void readyStatus(Object obj, String str) {
-        o.a(f7074a, "readyStatus: ".concat(String.valueOf(str)));
+        o.a(f4236a, "readyStatus: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void reportUrls(Object obj, String str) {
-        o.a(f7074a, "reportUrls:".concat(String.valueOf(str)));
+        o.a(f4236a, "reportUrls:".concat(String.valueOf(str)));
         if (TextUtils.isEmpty(str)) {
             CommonJSBridgeImpUtils.callbackExcep(obj, "params is null");
         } else if (TextUtils.isEmpty(str)) {
@@ -258,28 +258,28 @@ public abstract class CommonBannerJSBridgeImp implements IBannerJSBridge {
                     i = i2 + 1;
                 }
             } catch (Throwable th) {
-                o.b(f7074a, "reportUrls", th);
+                o.b(f4236a, "reportUrls", th);
             }
         }
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void resetCountdown(Object obj, String str) {
-        o.a(f7074a, "resetCountdown: ".concat(String.valueOf(str)));
+        o.a(f4236a, "resetCountdown: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void sendImpressions(Object obj, String str) {
-        o.a(f7074a, "sendImpressions: ".concat(String.valueOf(str)));
+        o.a(f4236a, "sendImpressions: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void toggleCloseBtn(Object obj, String str) {
-        o.a(f7074a, "toggleCloseBtn: ".concat(String.valueOf(str)));
+        o.a(f4236a, "toggleCloseBtn: ".concat(String.valueOf(str)));
     }
 
     @Override // com.anythink.expressad.atsignalcommon.bridge.IBannerJSBridge
     public void triggerCloseBtn(Object obj, String str) {
-        o.a(f7074a, "triggerCloseBtn: ".concat(String.valueOf(str)));
+        o.a(f4236a, "triggerCloseBtn: ".concat(String.valueOf(str)));
     }
 }

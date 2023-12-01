@@ -9,10 +9,10 @@ import java.util.IdentityHashMap;
 final class u implements r, r.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final r[] f7508a;
+    public final r[] f4669a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final h f7509c;
+    private final h f4670c;
     private r.a e;
     private af f;
     private r[] g;
@@ -21,8 +21,8 @@ final class u implements r, r.a {
     private final IdentityHashMap<y, Integer> b = new IdentityHashMap<>();
 
     public u(h hVar, r... rVarArr) {
-        this.f7509c = hVar;
-        this.f7508a = rVarArr;
+        this.f4670c = hVar;
+        this.f4669a = rVarArr;
         this.h = hVar.a(new z[0]);
     }
 
@@ -54,7 +54,7 @@ final class u implements r, r.a {
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
-                    r[] rVarArr = this.f7508a;
+                    r[] rVarArr = this.f4669a;
                     if (i4 >= rVarArr.length) {
                         break;
                     } else if (rVarArr[i4].b().a(f) != -1) {
@@ -72,16 +72,16 @@ final class u implements r, r.a {
         y[] yVarArr2 = new y[length];
         y[] yVarArr3 = new y[fVarArr.length];
         com.anythink.expressad.exoplayer.i.f[] fVarArr2 = new com.anythink.expressad.exoplayer.i.f[fVarArr.length];
-        ArrayList arrayList = new ArrayList(this.f7508a.length);
+        ArrayList arrayList = new ArrayList(this.f4669a.length);
         int i5 = 0;
         while (true) {
             int i6 = i5;
-            if (i6 >= this.f7508a.length) {
+            if (i6 >= this.f4669a.length) {
                 System.arraycopy(yVarArr2, 0, yVarArr, 0, length);
                 r[] rVarArr2 = new r[arrayList.size()];
                 this.g = rVarArr2;
                 arrayList.toArray(rVarArr2);
-                this.h = this.f7509c.a(this.g);
+                this.h = this.f4670c.a(this.g);
                 return j;
             }
             int i7 = 0;
@@ -98,7 +98,7 @@ final class u implements r, r.a {
                 fVarArr2[i8] = fVar;
                 i7 = i8 + 1;
             }
-            long a2 = this.f7508a[i6].a(fVarArr2, zArr, yVarArr3, zArr2, j);
+            long a2 = this.f4669a[i6].a(fVarArr2, zArr, yVarArr3, zArr2, j);
             if (i6 == 0) {
                 j = a2;
             } else if (a2 != j) {
@@ -131,7 +131,7 @@ final class u implements r, r.a {
                 z3 = z2;
             }
             if (z) {
-                arrayList.add(this.f7508a[i6]);
+                arrayList.add(this.f4669a[i6]);
             }
             i5 = i6 + 1;
         }
@@ -139,7 +139,7 @@ final class u implements r, r.a {
 
     @Override // com.anythink.expressad.exoplayer.h.r
     public final void a() {
-        r[] rVarArr = this.f7508a;
+        r[] rVarArr = this.f4669a;
         int length = rVarArr.length;
         int i = 0;
         while (true) {
@@ -170,8 +170,8 @@ final class u implements r, r.a {
     @Override // com.anythink.expressad.exoplayer.h.r
     public final void a(r.a aVar, long j) {
         this.e = aVar;
-        Collections.addAll(this.d, this.f7508a);
-        r[] rVarArr = this.f7508a;
+        Collections.addAll(this.d, this.f4669a);
+        r[] rVarArr = this.f4669a;
         int length = rVarArr.length;
         int i = 0;
         while (true) {
@@ -190,12 +190,12 @@ final class u implements r, r.a {
         this.d.remove(rVar);
         if (this.d.isEmpty()) {
             int i = 0;
-            for (r rVar2 : this.f7508a) {
+            for (r rVar2 : this.f4669a) {
                 i += rVar2.b().b;
             }
             ae[] aeVarArr = new ae[i];
             int i2 = 0;
-            for (r rVar3 : this.f7508a) {
+            for (r rVar3 : this.f4669a) {
                 af b = rVar3.b();
                 int i3 = b.b;
                 int i4 = 0;
@@ -244,11 +244,11 @@ final class u implements r, r.a {
 
     @Override // com.anythink.expressad.exoplayer.h.r
     public final long c() {
-        long c2 = this.f7508a[0].c();
+        long c2 = this.f4669a[0].c();
         int i = 1;
         while (true) {
             int i2 = i;
-            r[] rVarArr = this.f7508a;
+            r[] rVarArr = this.f4669a;
             if (i2 >= rVarArr.length) {
                 if (c2 != com.anythink.expressad.exoplayer.b.b) {
                     r[] rVarArr2 = this.g;
@@ -260,7 +260,7 @@ final class u implements r, r.a {
                             break;
                         }
                         r rVar = rVarArr2[i4];
-                        if (rVar != this.f7508a[0] && rVar.b(c2) != c2) {
+                        if (rVar != this.f4669a[0] && rVar.b(c2) != c2) {
                             throw new IllegalStateException("Unexpected child seekToUs result.");
                         }
                         i3 = i4 + 1;

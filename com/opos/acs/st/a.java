@@ -4,5 +4,5 @@ package com.opos.acs.st;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f24447a = Boolean.TRUE;
+    public static final Boolean f10760a = Boolean.TRUE;
 }

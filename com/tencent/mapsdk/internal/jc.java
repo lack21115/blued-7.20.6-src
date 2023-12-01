@@ -15,11 +15,11 @@ import org.json.JSONObject;
 public class jc {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f37566a = "tencentmap";
+    private static final String f23875a = "tencentmap";
     private static final String b = "/mapsdk_vector/";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f37567c;
+    private static String f23876c;
     private static String d;
     private static String e = "resourceVersion.dat";
 
@@ -41,11 +41,11 @@ public class jc {
     }
 
     public static String a() {
-        return f37567c;
+        return f23876c;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0070, code lost:
-        if (a(r6, r7, com.tencent.mapsdk.internal.jc.f37567c, r9, true) != false) goto L18;
+        if (a(r6, r7, com.tencent.mapsdk.internal.jc.f23876c, r9, true) != false) goto L18;
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x00eb, code lost:
         if (a(r6, r7, com.tencent.mapsdk.internal.jc.d, r9, false) != false) goto L38;
@@ -105,7 +105,7 @@ public class jc {
         if (!str.endsWith(str2)) {
             str3 = str + str2;
         }
-        f37567c = str3;
+        f23876c = str3;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -128,12 +128,12 @@ public class jc {
         String str5 = null;
         if (str2.startsWith(k4.i)) {
             str4 = k4.i;
-            str3 = m4.f37627a;
+            str3 = m4.f23936a;
         } else if (str2.startsWith(k4.j)) {
             str3 = m4.d;
             str4 = k4.j;
         } else if (str2.startsWith("poi_icon")) {
-            str3 = m4.f37628c;
+            str3 = m4.f23937c;
             str4 = "poi_icon";
         } else {
             str3 = "";
@@ -208,7 +208,7 @@ public class jc {
                 icVar.a(new String[]{"indoormap_style_version", "indoormap_style_md5"});
             }
         }
-        File file2 = new File(str, k4.f37584c);
+        File file2 = new File(str, k4.f23893c);
         String d3 = icVar.d("indoormap_style_night_md5");
         if (TextUtils.isEmpty(d3)) {
             return;
@@ -248,7 +248,7 @@ public class jc {
     }
 
     private static boolean d(ic icVar, String str) {
-        File file = new File(str, k4.f37583a);
+        File file = new File(str, k4.f23892a);
         String d2 = icVar.d(m4.t);
         if (file.exists() || !TextUtils.isEmpty(d2)) {
             try {

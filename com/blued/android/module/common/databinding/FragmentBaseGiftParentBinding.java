@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/databinding/FragmentBaseGiftParentBinding.class */
 public final class FragmentBaseGiftParentBinding implements ViewBinding {
+    private final FrameLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f10722a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f10722a;
+        return this.a;
     }
 }

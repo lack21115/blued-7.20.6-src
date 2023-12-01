@@ -4,18 +4,17 @@ import com.blued.android.framework.utils.LogUtils;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.BluedSharedPreferences;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.community.manager.CommunityManager;
 
 /* loaded from: source-7206380-dex2jar.jar:com/blued/community/utils/CommunityPreferences.class */
 public final class CommunityPreferences {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f20462a = "IS_YY_ROOM_FIRST_SHOW";
+    public static String f6856a = "IS_YY_ROOM_FIRST_SHOW";
     public static String b = "GUIDE_PUBLISH_FEED_CODE";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f20463c = "GUIDE_OPERATE_BUBBLE_CODE";
+    public static String f6857c = "GUIDE_OPERATE_BUBBLE_CODE";
     public static String d = "JOIN_CIRCLE_OUT_OF_CIRCLE_DETAILS";
     public static String e = "SHOW_DIALOG_ONLY_ONCE";
     public static String f = "setting_join_circle";
@@ -170,12 +169,12 @@ public final class CommunityPreferences {
 
     public static void a(int i2, int i3) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("FEED_DIVERSION_INSERT_COUNT_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + i2, i3).a();
+        c2.a("FEED_DIVERSION_INSERT_COUNT_" + UserInfoUtils.c() + "_" + i2, i3).a();
     }
 
     public static void a(int i2, long j2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("NEARBY_PROMOTION_POPUP_" + i2 + BridgeUtil.UNDERLINE_STR + UserInfoUtils.c(), j2).a();
+        c2.a("NEARBY_PROMOTION_POPUP_" + i2 + "_" + UserInfoUtils.c(), j2).a();
     }
 
     public static void a(long j2) {
@@ -185,17 +184,17 @@ public final class CommunityPreferences {
     public static void a(String str, int i2) {
         LogUtils.c(str + ": " + i2);
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("OPERATION_COUNT_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, i2).a();
+        c2.a("OPERATION_COUNT_BY_TYPE_" + UserInfoUtils.c() + "_" + str, i2).a();
     }
 
     public static void a(String str, long j2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("GUIDE_WEEK_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, j2).a();
+        c2.a("GUIDE_WEEK_BY_TYPE_" + UserInfoUtils.c() + "_" + str, j2).a();
     }
 
     public static void a(String str, String str2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("FEED_GUIDE_NEXT_TEMPLATE_TITLE_PIDS_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, str2).a();
+        c2.a("FEED_GUIDE_NEXT_TEMPLATE_TITLE_PIDS_" + UserInfoUtils.c() + "_" + str, str2).a();
     }
 
     public static void a(String str, boolean z) {
@@ -356,7 +355,7 @@ public final class CommunityPreferences {
 
     public static void b(int i2, long j2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("FEED_DIVERSION_INSERT_DATE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + i2, j2).a();
+        c2.a("FEED_DIVERSION_INSERT_DATE_" + UserInfoUtils.c() + "_" + i2, j2).a();
     }
 
     public static void b(long j2) {
@@ -366,12 +365,12 @@ public final class CommunityPreferences {
 
     public static void b(String str, long j2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("LAST_DATE_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, j2).a();
+        c2.a("LAST_DATE_BY_TYPE_" + UserInfoUtils.c() + "_" + str, j2).a();
     }
 
     public static void b(String str, String str2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("FEED_GUIDE_NEXT_TOPIC_PIDS_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, str2).a();
+        c2.a("FEED_GUIDE_NEXT_TOPIC_PIDS_" + UserInfoUtils.c() + "_" + str, str2).a();
     }
 
     public static void b(String str, boolean z) {
@@ -390,7 +389,7 @@ public final class CommunityPreferences {
 
     public static long c(int i2) {
         BluedSharedPreferences as = as();
-        return as.a("NEARBY_PROMOTION_POPUP_" + i2 + BridgeUtil.UNDERLINE_STR + UserInfoUtils.c(), 0L);
+        return as.a("NEARBY_PROMOTION_POPUP_" + i2 + "_" + UserInfoUtils.c(), 0L);
     }
 
     public static void c(long j2) {
@@ -400,12 +399,12 @@ public final class CommunityPreferences {
 
     public static void c(String str, String str2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("OPERATION_CONTENT_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, str2).a();
+        c2.a("OPERATION_CONTENT_BY_TYPE_" + UserInfoUtils.c() + "_" + str, str2).a();
     }
 
     public static void c(String str, boolean z) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("FLAG_BOOLEAN_DEFAULT_TRUE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, z).a();
+        c2.a("FLAG_BOOLEAN_DEFAULT_TRUE_" + UserInfoUtils.c() + "_" + str, z).a();
     }
 
     public static void c(boolean z) {
@@ -427,7 +426,7 @@ public final class CommunityPreferences {
 
     public static void d(int i2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("NEARBY_PROMOTION_POPUP_COUNT_" + i2 + BridgeUtil.UNDERLINE_STR + UserInfoUtils.c(), 0).a();
+        c2.a("NEARBY_PROMOTION_POPUP_COUNT_" + i2 + "_" + UserInfoUtils.c(), 0).a();
     }
 
     public static void d(long j2) {
@@ -449,7 +448,7 @@ public final class CommunityPreferences {
 
     public static int e(int i2) {
         BluedSharedPreferences as = as();
-        return as.b("NEARBY_PROMOTION_POPUP_COUNT_" + i2 + BridgeUtil.UNDERLINE_STR + UserInfoUtils.c(), 0);
+        return as.b("NEARBY_PROMOTION_POPUP_COUNT_" + i2 + "_" + UserInfoUtils.c(), 0);
     }
 
     public static void e(long j2) {
@@ -475,7 +474,7 @@ public final class CommunityPreferences {
 
     public static void f(int i2) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("NEARBY_PROMOTION_POPUP_COUNT_" + i2 + BridgeUtil.UNDERLINE_STR + UserInfoUtils.c(), e(i2) + 1).a();
+        c2.a("NEARBY_PROMOTION_POPUP_COUNT_" + i2 + "_" + UserInfoUtils.c(), e(i2) + 1).a();
     }
 
     public static void f(long j2) {
@@ -514,7 +513,7 @@ public final class CommunityPreferences {
 
     public static boolean g(String str) {
         BluedSharedPreferences as = as();
-        return as.a("EVENT_SIGN_DLG_GUIDE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, true);
+        return as.a("EVENT_SIGN_DLG_GUIDE_" + UserInfoUtils.c() + "_" + str, true);
     }
 
     public static long h(boolean z) {
@@ -536,12 +535,12 @@ public final class CommunityPreferences {
 
     public static void h(String str) {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("EVENT_SIGN_DLG_GUIDE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, false).a();
+        c2.a("EVENT_SIGN_DLG_GUIDE_" + UserInfoUtils.c() + "_" + str, false).a();
     }
 
     public static long i(int i2) {
         BluedSharedPreferences as = as();
-        return as.a("FEED_DIVERSION_INSERT_DATE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + i2, 0L);
+        return as.a("FEED_DIVERSION_INSERT_DATE_" + UserInfoUtils.c() + "_" + i2, 0L);
     }
 
     public static void i(String str) {
@@ -563,7 +562,7 @@ public final class CommunityPreferences {
 
     public static int j(int i2) {
         BluedSharedPreferences as = as();
-        return as.b("FEED_DIVERSION_INSERT_COUNT_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + i2, 0);
+        return as.b("FEED_DIVERSION_INSERT_COUNT_" + UserInfoUtils.c() + "_" + i2, 0);
     }
 
     public static long j(boolean z) {
@@ -692,7 +691,7 @@ public final class CommunityPreferences {
 
     public static String q(String str) {
         BluedSharedPreferences as = as();
-        return as.a("FEED_GUIDE_NEXT_TEMPLATE_TITLE_PIDS_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, "");
+        return as.a("FEED_GUIDE_NEXT_TEMPLATE_TITLE_PIDS_" + UserInfoUtils.c() + "_" + str, "");
     }
 
     public static void q(boolean z) {
@@ -702,7 +701,7 @@ public final class CommunityPreferences {
 
     public static String r(String str) {
         BluedSharedPreferences as = as();
-        return as.a("FEED_GUIDE_NEXT_TOPIC_PIDS_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, "");
+        return as.a("FEED_GUIDE_NEXT_TOPIC_PIDS_" + UserInfoUtils.c() + "_" + str, "");
     }
 
     public static void r() {
@@ -722,7 +721,7 @@ public final class CommunityPreferences {
 
     public static long t(String str) {
         BluedSharedPreferences as = as();
-        return as.a("GUIDE_WEEK_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, 0L);
+        return as.a("GUIDE_WEEK_BY_TYPE_" + UserInfoUtils.c() + "_" + str, 0L);
     }
 
     public static void t() {
@@ -732,7 +731,7 @@ public final class CommunityPreferences {
 
     public static long u(String str) {
         BluedSharedPreferences as = as();
-        return as.a("LAST_DATE_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, 0L);
+        return as.a("LAST_DATE_BY_TYPE_" + UserInfoUtils.c() + "_" + str, 0L);
     }
 
     public static void u() {
@@ -742,48 +741,48 @@ public final class CommunityPreferences {
 
     public static int v(String str) {
         BluedSharedPreferences as = as();
-        return as.b("OPERATION_COUNT_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, 0);
+        return as.b("OPERATION_COUNT_BY_TYPE_" + UserInfoUtils.c() + "_" + str, 0);
     }
 
     public static long v() {
         BluedSharedPreferences as = as();
-        return as.a("SIGN_FEED_LIST_BTN_ANIM_DATE_" + CommunityManager.f19086a.a().e(), 0L);
+        return as.a("SIGN_FEED_LIST_BTN_ANIM_DATE_" + CommunityManager.a.a().e(), 0L);
     }
 
     public static int w(String str) {
         int v = v(str) + 1;
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("OPERATION_COUNT_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, v).a();
+        c2.a("OPERATION_COUNT_BY_TYPE_" + UserInfoUtils.c() + "_" + str, v).a();
         return v;
     }
 
     public static void w() {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("SIGN_FEED_LIST_BTN_ANIM_DATE_" + CommunityManager.f19086a.a().e(), TimeAndDateUtils.a()).a();
+        c2.a("SIGN_FEED_LIST_BTN_ANIM_DATE_" + CommunityManager.a.a().e(), TimeAndDateUtils.a()).a();
     }
 
     public static int x() {
         BluedSharedPreferences as = as();
-        return as.b("SIGN_FEED_LIST_BTN_ANIM_COUNT_" + CommunityManager.f19086a.a().e(), 0);
+        return as.b("SIGN_FEED_LIST_BTN_ANIM_COUNT_" + CommunityManager.a.a().e(), 0);
     }
 
     public static boolean x(String str) {
         BluedSharedPreferences as = as();
-        return as.a("FLAG_BOOLEAN_DEFAULT_TRUE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, true);
+        return as.a("FLAG_BOOLEAN_DEFAULT_TRUE_" + UserInfoUtils.c() + "_" + str, true);
     }
 
     public static String y(String str) {
         BluedSharedPreferences as = as();
-        return as.a("OPERATION_CONTENT_BY_TYPE_" + UserInfoUtils.c() + BridgeUtil.UNDERLINE_STR + str, "");
+        return as.a("OPERATION_CONTENT_BY_TYPE_" + UserInfoUtils.c() + "_" + str, "");
     }
 
     public static void y() {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("SIGN_FEED_LIST_BTN_ANIM_COUNT_" + CommunityManager.f19086a.a().e(), 0).a();
+        c2.a("SIGN_FEED_LIST_BTN_ANIM_COUNT_" + CommunityManager.a.a().e(), 0).a();
     }
 
     public static void z() {
         BluedSharedPreferences.Editor c2 = as().c();
-        c2.a("SIGN_FEED_LIST_BTN_ANIM_COUNT_" + CommunityManager.f19086a.a().e(), x() + 1).a();
+        c2.a("SIGN_FEED_LIST_BTN_ANIM_COUNT_" + CommunityManager.a.a().e(), x() + 1).a();
     }
 }

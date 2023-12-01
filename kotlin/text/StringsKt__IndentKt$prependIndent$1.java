@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/StringsKt__IndentKt$prependIndent$1.class */
 final class StringsKt__IndentKt$prependIndent$1 extends Lambda implements Function1<String, String> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ String f42745a;
+    final /* synthetic */ String a;
 
     @Override // kotlin.jvm.functions.Function1
     /* renamed from: a */
@@ -19,11 +17,11 @@ final class StringsKt__IndentKt$prependIndent$1 extends Lambda implements Functi
         Intrinsics.e(it, "it");
         if (StringsKt.a((CharSequence) it)) {
             str = it;
-            if (it.length() < this.f42745a.length()) {
-                return this.f42745a;
+            if (it.length() < this.a.length()) {
+                return this.a;
             }
         } else {
-            str = this.f42745a + it;
+            str = this.a + it;
         }
         return str;
     }

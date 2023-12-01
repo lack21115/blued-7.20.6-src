@@ -109,7 +109,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
         Streams.readFully(inputStream, bArr, 0, bArr.length);
         BufferIterator it = HeapBufferIterator.iterator(bArr, 0, bArr.length, ByteOrder.LITTLE_ENDIAN);
         int readInt = it.readInt();
-        if (readInt != 33639248) {
+        if (readInt != ZipConstants.CENSIG) {
             ZipFile.throwZipException("Central Directory Entry", readInt);
         }
         it.seek(8);

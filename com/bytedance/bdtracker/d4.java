@@ -13,13 +13,13 @@ public interface d4 extends IInterface {
 
         /* renamed from: com.bytedance.bdtracker.d4$a$a  reason: collision with other inner class name */
         /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/d4$a$a.class */
-        public static class C0308a implements d4 {
+        public static class C0138a implements d4 {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f21209a;
+            public IBinder f7603a;
 
-            public C0308a(IBinder iBinder) {
-                this.f21209a = iBinder;
+            public C0138a(IBinder iBinder) {
+                this.f7603a = iBinder;
             }
 
             public String a() {
@@ -27,7 +27,7 @@ public interface d4 extends IInterface {
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken("com.samsung.android.deviceidservice.IDeviceIdService");
-                    this.f21209a.transact(1, obtain, obtain2, 0);
+                    this.f7603a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                     return obtain2.readString();
                 } finally {
@@ -38,7 +38,7 @@ public interface d4 extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f21209a;
+                return this.f7603a;
             }
         }
 
@@ -47,7 +47,7 @@ public interface d4 extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.samsung.android.deviceidservice.IDeviceIdService");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof d4)) ? new C0308a(iBinder) : (d4) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof d4)) ? new C0138a(iBinder) : (d4) queryLocalInterface;
         }
     }
 }

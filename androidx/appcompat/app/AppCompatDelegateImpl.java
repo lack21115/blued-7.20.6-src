@@ -122,7 +122,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     private boolean Z;
 
     /* renamed from: a  reason: collision with root package name */
-    final Object f1562a;
+    final Object f1514a;
     private Rect aa;
     private Rect ab;
     private AppCompatViewInflater ac;
@@ -130,7 +130,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    Window f1563c;
+    Window f1515c;
     final AppCompatCallback d;
     ActionBar e;
     MenuInflater f;
@@ -244,7 +244,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         public void onDestroyActionMode(ActionMode actionMode) {
             this.b.onDestroyActionMode(actionMode);
             if (AppCompatDelegateImpl.this.i != null) {
-                AppCompatDelegateImpl.this.f1563c.getDecorView().removeCallbacks(AppCompatDelegateImpl.this.j);
+                AppCompatDelegateImpl.this.f1515c.getDecorView().removeCallbacks(AppCompatDelegateImpl.this.j);
             }
             if (AppCompatDelegateImpl.this.h != null) {
                 AppCompatDelegateImpl.this.f();
@@ -345,7 +345,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     public class AppCompatWindowCallback extends WindowCallbackWrapper {
 
         /* renamed from: c  reason: collision with root package name */
-        private ActionBarMenuCallback f1577c;
+        private ActionBarMenuCallback f1529c;
 
         AppCompatWindowCallback(Window.Callback callback) {
             super(callback);
@@ -361,7 +361,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         }
 
         void a(ActionBarMenuCallback actionBarMenuCallback) {
-            this.f1577c = actionBarMenuCallback;
+            this.f1529c = actionBarMenuCallback;
         }
 
         @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
@@ -389,7 +389,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
         public View onCreatePanelView(int i) {
             View onCreatePanelView;
-            ActionBarMenuCallback actionBarMenuCallback = this.f1577c;
+            ActionBarMenuCallback actionBarMenuCallback = this.f1529c;
             return (actionBarMenuCallback == null || (onCreatePanelView = actionBarMenuCallback.onCreatePanelView(i)) == null) ? super.onCreatePanelView(i) : onCreatePanelView;
         }
 
@@ -416,7 +416,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             if (menuBuilder != null) {
                 menuBuilder.setOverrideVisibleItems(true);
             }
-            ActionBarMenuCallback actionBarMenuCallback = this.f1577c;
+            ActionBarMenuCallback actionBarMenuCallback = this.f1529c;
             if (actionBarMenuCallback == null || !actionBarMenuCallback.onPreparePanel(i)) {
                 z = false;
             }
@@ -430,7 +430,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             return z2;
         }
 
-        @Override // androidx.appcompat.view.WindowCallbackWrapper
+        @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
         public void onProvideKeyboardShortcuts(List<KeyboardShortcutGroup> list, Menu menu, int i) {
             PanelFeatureState a2 = AppCompatDelegateImpl.this.a(0, true);
             if (a2 == null || a2.j == null) {
@@ -448,7 +448,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             return AppCompatDelegateImpl.this.isHandleNativeActionModesEnabled() ? a(callback) : super.onWindowStartingActionMode(callback);
         }
 
-        @Override // androidx.appcompat.view.WindowCallbackWrapper
+        @Override // androidx.appcompat.view.WindowCallbackWrapper, android.view.Window.Callback
         public android.view.ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i) {
             return (AppCompatDelegateImpl.this.isHandleNativeActionModesEnabled() && i == 0) ? a(callback) : super.onWindowStartingActionMode(callback, i);
         }
@@ -459,11 +459,11 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     public class AutoBatteryNightModeManager extends AutoNightModeManager {
 
         /* renamed from: c  reason: collision with root package name */
-        private final PowerManager f1579c;
+        private final PowerManager f1531c;
 
         AutoBatteryNightModeManager(Context context) {
             super();
-            this.f1579c = (PowerManager) context.getApplicationContext().getSystemService("power");
+            this.f1531c = (PowerManager) context.getApplicationContext().getSystemService(Context.POWER_SERVICE);
         }
 
         @Override // androidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager
@@ -481,7 +481,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             int i = 1;
             if (Build.VERSION.SDK_INT >= 21) {
                 i = 1;
-                if (Api21Impl.a(this.f1579c)) {
+                if (Api21Impl.a(this.f1531c)) {
                     i = 2;
                 }
             }
@@ -499,7 +499,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     public abstract class AutoNightModeManager {
 
         /* renamed from: a  reason: collision with root package name */
-        private BroadcastReceiver f1580a;
+        private BroadcastReceiver f1532a;
 
         AutoNightModeManager() {
         }
@@ -512,24 +512,24 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             if (a2 == null || a2.countActions() == 0) {
                 return;
             }
-            if (this.f1580a == null) {
-                this.f1580a = new BroadcastReceiver() { // from class: androidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager.1
+            if (this.f1532a == null) {
+                this.f1532a = new BroadcastReceiver() { // from class: androidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager.1
                     @Override // android.content.BroadcastReceiver
                     public void onReceive(Context context, Intent intent) {
                         AutoNightModeManager.this.onChange();
                     }
                 };
             }
-            AppCompatDelegateImpl.this.b.registerReceiver(this.f1580a, a2);
+            AppCompatDelegateImpl.this.b.registerReceiver(this.f1532a, a2);
         }
 
         void c() {
-            if (this.f1580a != null) {
+            if (this.f1532a != null) {
                 try {
-                    AppCompatDelegateImpl.this.b.unregisterReceiver(this.f1580a);
+                    AppCompatDelegateImpl.this.b.unregisterReceiver(this.f1532a);
                 } catch (IllegalArgumentException e) {
                 }
-                this.f1580a = null;
+                this.f1532a = null;
             }
         }
 
@@ -543,11 +543,11 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     public class AutoTimeNightModeManager extends AutoNightModeManager {
 
         /* renamed from: c  reason: collision with root package name */
-        private final TwilightManager f1583c;
+        private final TwilightManager f1535c;
 
         AutoTimeNightModeManager(TwilightManager twilightManager) {
             super();
-            this.f1583c = twilightManager;
+            this.f1535c = twilightManager;
         }
 
         @Override // androidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager
@@ -561,7 +561,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
 
         @Override // androidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager
         public int getApplyableNightMode() {
-            return this.f1583c.a() ? 2 : 1;
+            return this.f1535c.a() ? 2 : 1;
         }
 
         @Override // androidx.appcompat.app.AppCompatDelegateImpl.AutoNightModeManager
@@ -615,11 +615,11 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     public static final class PanelFeatureState {
 
         /* renamed from: a  reason: collision with root package name */
-        int f1585a;
+        int f1537a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f1586c;
+        int f1538c;
         int d;
         int e;
         int f;
@@ -659,25 +659,25 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             };
 
             /* renamed from: a  reason: collision with root package name */
-            int f1587a;
+            int f1539a;
             boolean b;
 
             /* renamed from: c  reason: collision with root package name */
-            Bundle f1588c;
+            Bundle f1540c;
 
             SavedState() {
             }
 
             static SavedState a(Parcel parcel, ClassLoader classLoader) {
                 SavedState savedState = new SavedState();
-                savedState.f1587a = parcel.readInt();
+                savedState.f1539a = parcel.readInt();
                 boolean z = true;
                 if (parcel.readInt() != 1) {
                     z = false;
                 }
                 savedState.b = z;
                 if (z) {
-                    savedState.f1588c = parcel.readBundle(classLoader);
+                    savedState.f1540c = parcel.readBundle(classLoader);
                 }
                 return savedState;
             }
@@ -695,7 +695,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         }
 
         PanelFeatureState(int i) {
-            this.f1585a = i;
+            this.f1537a = i;
         }
 
         MenuView a(MenuPresenter.Callback callback) {
@@ -793,7 +793,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
                     AppCompatDelegateImpl.this.a(a2, z);
                     return;
                 }
-                AppCompatDelegateImpl.this.a(a2.f1585a, a2, rootMenu);
+                AppCompatDelegateImpl.this.a(a2.f1537a, a2, rootMenu);
                 AppCompatDelegateImpl.this.a(a2, true);
             }
         }
@@ -811,7 +811,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
 
     static {
         v = Build.VERSION.SDK_INT < 21;
-        w = new int[]{16842836};
+        w = new int[]{android.R.attr.windowBackground};
         x = !"robolectric".equals(Build.FINGERPRINT);
         boolean z2 = false;
         if (Build.VERSION.SDK_INT >= 17) {
@@ -872,13 +872,13 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             @Override // java.lang.Thread.UncaughtExceptionHandler
             public void uncaughtException(Thread thread, Throwable th) {
                 if (!a(th)) {
-                    Thread.UncaughtExceptionHandler.this.uncaughtException(thread, th);
+                    defaultUncaughtExceptionHandler.uncaughtException(thread, th);
                     return;
                 }
                 Resources.NotFoundException notFoundException = new Resources.NotFoundException(th.getMessage() + ". If the resource you are trying to use is a vector resource, you may be referencing it in an unsupported way. See AppCompatDelegate.setCompatVectorFromResourcesEnabled() for more info.");
                 notFoundException.initCause(th.getCause());
                 notFoundException.setStackTrace(th.getStackTrace());
-                Thread.UncaughtExceptionHandler.this.uncaughtException(thread, notFoundException);
+                defaultUncaughtExceptionHandler.uncaughtException(thread, notFoundException);
             }
         });
         z = true;
@@ -925,13 +925,13 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         };
         this.b = context;
         this.d = appCompatCallback;
-        this.f1562a = obj;
+        this.f1514a = obj;
         if (this.S == -100 && (obj instanceof Dialog) && (o = o()) != null) {
             this.S = o.getDelegate().getLocalNightMode();
         }
-        if (this.S == -100 && (num = u.get(this.f1562a.getClass().getName())) != null) {
+        if (this.S == -100 && (num = u.get(this.f1514a.getClass().getName())) != null) {
             this.S = num.intValue();
-            u.remove(this.f1562a.getClass().getName());
+            u.remove(this.f1514a.getClass().getName());
         }
         if (window != null) {
             a(window);
@@ -1052,7 +1052,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             }
         }
         if (z2) {
-            Object obj = this.f1562a;
+            Object obj = this.f1514a;
             if (obj instanceof Activity) {
                 Activity activity = (Activity) obj;
                 if (activity instanceof LifecycleOwner) {
@@ -1072,7 +1072,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     }
 
     private void a(Window window) {
-        if (this.f1563c != null) {
+        if (this.f1515c != null) {
             throw new IllegalStateException("AppCompat has already installed itself into the Window");
         }
         Window.Callback callback = window.getCallback();
@@ -1088,7 +1088,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             window.setBackgroundDrawable(drawableIfKnown);
         }
         obtainStyledAttributes.recycle();
-        this.f1563c = window;
+        this.f1515c = window;
     }
 
     private void a(PanelFeatureState panelFeatureState, KeyEvent keyEvent) {
@@ -1097,13 +1097,13 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         if (panelFeatureState.o || this.r) {
             return;
         }
-        if (panelFeatureState.f1585a == 0) {
+        if (panelFeatureState.f1537a == 0) {
             if ((this.b.getResources().getConfiguration().screenLayout & 15) == 4) {
                 return;
             }
         }
         Window.Callback b = b();
-        if (b != null && !b.onMenuOpened(panelFeatureState.f1585a, panelFeatureState.j)) {
+        if (b != null && !b.onMenuOpened(panelFeatureState.f1537a, panelFeatureState.j)) {
             a(panelFeatureState, true);
             return;
         }
@@ -1139,7 +1139,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
                 i = -1;
                 panelFeatureState.n = false;
                 WindowManager.LayoutParams layoutParams4 = new WindowManager.LayoutParams(i, -2, panelFeatureState.d, panelFeatureState.e, 1002, 8519680, -3);
-                layoutParams4.gravity = panelFeatureState.f1586c;
+                layoutParams4.gravity = panelFeatureState.f1538c;
                 layoutParams4.windowAnimations = panelFeatureState.f;
                 windowManager.addView(panelFeatureState.g, layoutParams4);
                 panelFeatureState.o = true;
@@ -1147,7 +1147,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             i = -2;
             panelFeatureState.n = false;
             WindowManager.LayoutParams layoutParams42 = new WindowManager.LayoutParams(i, -2, panelFeatureState.d, panelFeatureState.e, 1002, 8519680, -3);
-            layoutParams42.gravity = panelFeatureState.f1586c;
+            layoutParams42.gravity = panelFeatureState.f1538c;
             layoutParams42.windowAnimations = panelFeatureState.f;
             windowManager.addView(panelFeatureState.g, layoutParams42);
             panelFeatureState.o = true;
@@ -1173,7 +1173,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         } else if (b == null || this.r) {
         } else {
             if (this.s && (this.t & 1) != 0) {
-                this.f1563c.getDecorView().removeCallbacks(this.Y);
+                this.f1515c.getDecorView().removeCallbacks(this.Y);
                 this.Y.run();
             }
             PanelFeatureState a3 = a(0, true);
@@ -1189,7 +1189,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         if (viewParent == null) {
             return false;
         }
-        View decorView = this.f1563c.getDecorView();
+        View decorView = this.f1515c.getDecorView();
         while (viewParent != null) {
             if (viewParent == decorView || !(viewParent instanceof View) || ViewCompat.isAttachedToWindow((View) viewParent)) {
                 return false;
@@ -1202,7 +1202,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     private boolean a(PanelFeatureState panelFeatureState) {
         panelFeatureState.a(c());
         panelFeatureState.g = new ListMenuDecorView(panelFeatureState.l);
-        panelFeatureState.f1586c = 81;
+        panelFeatureState.f1538c = 81;
         return true;
     }
 
@@ -1337,7 +1337,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             if (r0 == 0) goto L8e
         L66:
             r0 = r5
-            java.lang.Object r0 = r0.f1562a
+            java.lang.Object r0 = r0.f1514a
             r12 = r0
             r0 = r12
             boolean r0 = r0 instanceof android.app.Activity
@@ -1347,7 +1347,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             boolean r0 = r0.isChild()
             if (r0 != 0) goto L8e
             r0 = r5
-            java.lang.Object r0 = r0.f1562a
+            java.lang.Object r0 = r0.f1514a
             android.app.Activity r0 = (android.app.Activity) r0
             androidx.core.app.ActivityCompat.recreate(r0)
             r0 = 1
@@ -1374,7 +1374,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             r0 = r7
             if (r0 == 0) goto Lc4
             r0 = r5
-            java.lang.Object r0 = r0.f1562a
+            java.lang.Object r0 = r0.f1514a
             r12 = r0
             r0 = r12
             boolean r0 = r0 instanceof androidx.appcompat.app.AppCompatActivity
@@ -1391,7 +1391,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0016, code lost:
-        if (r6.f1585a == 108) goto L8;
+        if (r6.f1537a == 108) goto L8;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1421,9 +1421,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         }
         Window.Callback b = b();
         if (b != null) {
-            panelFeatureState.i = b.onCreatePanelView(panelFeatureState.f1585a);
+            panelFeatureState.i = b.onCreatePanelView(panelFeatureState.f1537a);
         }
-        boolean z2 = panelFeatureState.f1585a == 0 || panelFeatureState.f1585a == 108;
+        boolean z2 = panelFeatureState.f1537a == 0 || panelFeatureState.f1537a == 108;
         if (z2 && (decorContentParent3 = this.C) != null) {
             decorContentParent3.setMenuPrepared();
         }
@@ -1439,7 +1439,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
                     this.C.setMenu(panelFeatureState.j, this.D);
                 }
                 panelFeatureState.j.stopDispatchingItemsChanged();
-                if (!b.onCreatePanelMenu(panelFeatureState.f1585a, panelFeatureState.j)) {
+                if (!b.onCreatePanelMenu(panelFeatureState.f1537a, panelFeatureState.j)) {
                     panelFeatureState.a((MenuBuilder) null);
                     if (!z2 || (decorContentParent = this.C) == null) {
                         return false;
@@ -1527,7 +1527,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         if (this.s) {
             return;
         }
-        ViewCompat.postOnAnimation(this.f1563c.getDecorView(), this.Y);
+        ViewCompat.postOnAnimation(this.f1515c.getDecorView(), this.Y);
         this.s = true;
     }
 
@@ -1593,7 +1593,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     private void i() {
         l();
         if (this.m && this.e == null) {
-            Object obj = this.f1562a;
+            Object obj = this.f1514a;
             if (obj instanceof Activity) {
                 this.e = new WindowDecorActionBar((Activity) obj, this.n);
             } else if (obj instanceof Dialog) {
@@ -1618,13 +1618,13 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     }
 
     private void k() {
-        if (this.f1563c == null) {
-            Object obj = this.f1562a;
+        if (this.f1515c == null) {
+            Object obj = this.f1514a;
             if (obj instanceof Activity) {
                 a(((Activity) obj).getWindow());
             }
         }
-        if (this.f1563c == null) {
+        if (this.f1515c == null) {
             throw new IllegalStateException("We have not been given a Window");
         }
     }
@@ -1681,7 +1681,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         this.p = obtainStyledAttributes.getBoolean(R.styleable.AppCompatTheme_android_windowIsFloating, false);
         obtainStyledAttributes.recycle();
         k();
-        this.f1563c.getDecorView();
+        this.f1515c.getDecorView();
         LayoutInflater from = LayoutInflater.from(this.b);
         if (this.q) {
             viewGroup = this.o ? (ViewGroup) from.inflate(R.layout.abc_screen_simple_overlay_action_mode, (ViewGroup) null) : (ViewGroup) from.inflate(R.layout.abc_screen_simple, (ViewGroup) null);
@@ -1739,7 +1739,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         }
         ViewUtils.makeOptionalFitsSystemWindows(viewGroup);
         ContentFrameLayout contentFrameLayout = (ContentFrameLayout) viewGroup.findViewById(R.id.action_bar_activity_content);
-        ViewGroup viewGroup3 = (ViewGroup) this.f1563c.findViewById(16908290);
+        ViewGroup viewGroup3 = (ViewGroup) this.f1515c.findViewById(android.R.id.content);
         if (viewGroup3 != null) {
             while (viewGroup3.getChildCount() > 0) {
                 View childAt = viewGroup3.getChildAt(0);
@@ -1747,12 +1747,12 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
                 contentFrameLayout.addView(childAt);
             }
             viewGroup3.setId(-1);
-            contentFrameLayout.setId(16908290);
+            contentFrameLayout.setId(android.R.id.content);
             if (viewGroup3 instanceof FrameLayout) {
                 ((FrameLayout) viewGroup3).setForeground(null);
             }
         }
-        this.f1563c.setContentView(viewGroup);
+        this.f1515c.setContentView(viewGroup);
         contentFrameLayout.setAttachListener(new ContentFrameLayout.OnAttachListener() { // from class: androidx.appcompat.app.AppCompatDelegateImpl.5
             @Override // androidx.appcompat.widget.ContentFrameLayout.OnAttachListener
             public void onAttachedFromWindow() {
@@ -1767,8 +1767,8 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     }
 
     private void n() {
-        ContentFrameLayout contentFrameLayout = (ContentFrameLayout) this.l.findViewById(16908290);
-        View decorView = this.f1563c.getDecorView();
+        ContentFrameLayout contentFrameLayout = (ContentFrameLayout) this.l.findViewById(android.R.id.content);
+        View decorView = this.f1515c.getDecorView();
         contentFrameLayout.setDecorPadding(decorView.getPaddingLeft(), decorView.getPaddingTop(), decorView.getPaddingRight(), decorView.getPaddingBottom());
         TypedArray obtainStyledAttributes = this.b.obtainStyledAttributes(R.styleable.AppCompatTheme);
         obtainStyledAttributes.getValue(R.styleable.AppCompatTheme_windowMinWidthMajor, contentFrameLayout.getMinWidthMajor());
@@ -1818,13 +1818,13 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     }
 
     private boolean r() {
-        if (!this.V && (this.f1562a instanceof Activity)) {
+        if (!this.V && (this.f1514a instanceof Activity)) {
             PackageManager packageManager = this.b.getPackageManager();
             if (packageManager == null) {
                 return false;
             }
             try {
-                ActivityInfo activityInfo = packageManager.getActivityInfo(new ComponentName(this.b, this.f1562a.getClass()), Build.VERSION.SDK_INT >= 29 ? 269221888 : Build.VERSION.SDK_INT >= 24 ? 786432 : 0);
+                ActivityInfo activityInfo = packageManager.getActivityInfo(new ComponentName(this.b, this.f1514a.getClass()), Build.VERSION.SDK_INT >= 29 ? 269221888 : Build.VERSION.SDK_INT >= 24 ? 786432 : 0);
                 this.U = (activityInfo == null || (activityInfo.configChanges & 512) == 0) ? false : true;
             } catch (PackageManager.NameNotFoundException e) {
                 Log.d("AppCompatDelegate", "Exception while getting ActivityInfo", e);
@@ -2092,7 +2092,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
 
     void a(PanelFeatureState panelFeatureState, boolean z2) {
         DecorContentParent decorContentParent;
-        if (z2 && panelFeatureState.f1585a == 0 && (decorContentParent = this.C) != null && decorContentParent.isOverflowMenuShowing()) {
+        if (z2 && panelFeatureState.f1537a == 0 && (decorContentParent = this.C) != null && decorContentParent.isOverflowMenuShowing()) {
             a(panelFeatureState.j);
             return;
         }
@@ -2100,7 +2100,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         if (windowManager != null && panelFeatureState.o && panelFeatureState.g != null) {
             windowManager.removeView(panelFeatureState.g);
             if (z2) {
-                a(panelFeatureState.f1585a, panelFeatureState, (Menu) null);
+                a(panelFeatureState.f1537a, panelFeatureState, (Menu) null);
             }
         }
         panelFeatureState.m = false;
@@ -2152,9 +2152,9 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
 
     boolean a(KeyEvent keyEvent) {
         View decorView;
-        Object obj = this.f1562a;
+        Object obj = this.f1514a;
         boolean z2 = true;
-        if (((obj instanceof KeyEventDispatcher.Component) || (obj instanceof AppCompatDialog)) && (decorView = this.f1563c.getDecorView()) != null && KeyEventDispatcher.dispatchBeforeHierarchy(decorView, keyEvent)) {
+        if (((obj instanceof KeyEventDispatcher.Component) || (obj instanceof AppCompatDialog)) && (decorView = this.f1515c.getDecorView()) != null && KeyEventDispatcher.dispatchBeforeHierarchy(decorView, keyEvent)) {
             return true;
         }
         if (keyEvent.getKeyCode() == 82 && this.A.getWrapped().dispatchKeyEvent(keyEvent)) {
@@ -2170,7 +2170,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
         l();
-        ((ViewGroup) this.l.findViewById(16908290)).addView(view, layoutParams);
+        ((ViewGroup) this.l.findViewById(android.R.id.content)).addView(view, layoutParams);
         this.A.getWrapped().onContentChanged();
     }
 
@@ -2231,7 +2231,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     }
 
     final Window.Callback b() {
-        return this.f1563c.getCallback();
+        return this.f1515c.getCallback();
     }
 
     void b(int i) {
@@ -2327,7 +2327,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     }
 
     final CharSequence d() {
-        Object obj = this.f1562a;
+        Object obj = this.f1514a;
         return obj instanceof Activity ? ((Activity) obj).getTitle() : this.B;
     }
 
@@ -2367,7 +2367,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     @Override // androidx.appcompat.app.AppCompatDelegate
     public <T extends View> T findViewById(int i) {
         l();
-        return (T) this.f1563c.findViewById(i);
+        return (T) this.f1515c.findViewById(i);
     }
 
     boolean g() {
@@ -2412,7 +2412,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             decorContentParent.dismissPopups();
         }
         if (this.i != null) {
-            this.f1563c.getDecorView().removeCallbacks(this.j);
+            this.f1515c.getDecorView().removeCallbacks(this.j);
             if (this.i.isShowing()) {
                 try {
                     this.i.dismiss();
@@ -2434,7 +2434,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         int f = f(i);
         boolean z2 = true;
         if (!(f != 1 ? f != 2 ? f != 5 ? f != 10 ? f != 108 ? f != 109 ? false : this.n : this.m : this.o : this.K : this.J : this.q)) {
-            if (this.f1563c.hasFeature(i)) {
+            if (this.f1515c.hasFeature(i)) {
                 return true;
             }
             z2 = false;
@@ -2482,7 +2482,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         this.P = true;
         b(false);
         k();
-        Object obj = this.f1562a;
+        Object obj = this.f1514a;
         if (obj instanceof Activity) {
             String str = null;
             try {
@@ -2523,7 +2523,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         /*
             r4 = this;
             r0 = r4
-            java.lang.Object r0 = r0.f1562a
+            java.lang.Object r0 = r0.f1514a
             boolean r0 = r0 instanceof android.app.Activity
             if (r0 == 0) goto Le
             r0 = r4
@@ -2533,7 +2533,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             boolean r0 = r0.s
             if (r0 == 0) goto L24
             r0 = r4
-            android.view.Window r0 = r0.f1563c
+            android.view.Window r0 = r0.f1515c
             android.view.View r0 = r0.getDecorView()
             r1 = r4
             java.lang.Runnable r1 = r1.Y
@@ -2547,7 +2547,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             r1 = -100
             if (r0 == r1) goto L63
             r0 = r4
-            java.lang.Object r0 = r0.f1562a
+            java.lang.Object r0 = r0.f1514a
             r5 = r0
             r0 = r5
             boolean r0 = r0 instanceof android.app.Activity
@@ -2558,7 +2558,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             if (r0 == 0) goto L63
             androidx.collection.SimpleArrayMap<java.lang.String, java.lang.Integer> r0 = androidx.appcompat.app.AppCompatDelegateImpl.u
             r1 = r4
-            java.lang.Object r1 = r1.f1562a
+            java.lang.Object r1 = r1.f1514a
             java.lang.Class r1 = r1.getClass()
             java.lang.String r1 = r1.getName()
             r2 = r4
@@ -2569,7 +2569,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         L63:
             androidx.collection.SimpleArrayMap<java.lang.String, java.lang.Integer> r0 = androidx.appcompat.app.AppCompatDelegateImpl.u
             r1 = r4
-            java.lang.Object r1 = r1.f1562a
+            java.lang.Object r1 = r1.f1514a
             java.lang.Class r1 = r1.getClass()
             java.lang.String r1 = r1.getName()
             java.lang.Object r0 = r0.remove(r1)
@@ -2596,7 +2596,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
         if (b == null || this.r || (a2 = a((Menu) menuBuilder.getRootMenu())) == null) {
             return false;
         }
-        return b.onMenuItemSelected(a2.f1585a, menuItem);
+        return b.onMenuItemSelected(a2.f1537a, menuItem);
     }
 
     @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
@@ -2664,7 +2664,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             this.m = true;
             return true;
         } else if (f != 109) {
-            return this.f1563c.requestFeature(f);
+            return this.f1515c.requestFeature(f);
         } else {
             p();
             this.n = true;
@@ -2675,7 +2675,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void setContentView(int i) {
         l();
-        ViewGroup viewGroup = (ViewGroup) this.l.findViewById(16908290);
+        ViewGroup viewGroup = (ViewGroup) this.l.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         LayoutInflater.from(this.b).inflate(i, viewGroup);
         this.A.getWrapped().onContentChanged();
@@ -2684,7 +2684,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void setContentView(View view) {
         l();
-        ViewGroup viewGroup = (ViewGroup) this.l.findViewById(16908290);
+        ViewGroup viewGroup = (ViewGroup) this.l.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         viewGroup.addView(view);
         this.A.getWrapped().onContentChanged();
@@ -2693,7 +2693,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
         l();
-        ViewGroup viewGroup = (ViewGroup) this.l.findViewById(16908290);
+        ViewGroup viewGroup = (ViewGroup) this.l.findViewById(android.R.id.content);
         viewGroup.removeAllViews();
         viewGroup.addView(view, layoutParams);
         this.A.getWrapped().onContentChanged();
@@ -2716,7 +2716,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void setSupportActionBar(Toolbar toolbar) {
-        if (this.f1562a instanceof Activity) {
+        if (this.f1514a instanceof Activity) {
             ActionBar supportActionBar = getSupportActionBar();
             if (supportActionBar instanceof WindowDecorActionBar) {
                 throw new IllegalStateException("This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_SUPPORT_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.");
@@ -2729,7 +2729,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements LayoutIn
             if (toolbar != null) {
                 ToolbarActionBar toolbarActionBar = new ToolbarActionBar(toolbar, d(), this.A);
                 this.e = toolbarActionBar;
-                this.A.a(toolbarActionBar.f1598c);
+                this.A.a(toolbarActionBar.f1550c);
             } else {
                 this.A.a((ActionBarMenuCallback) null);
             }

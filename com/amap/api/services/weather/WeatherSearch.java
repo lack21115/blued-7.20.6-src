@@ -7,9 +7,7 @@ import com.amap.api.services.interfaces.IWeatherSearch;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/weather/WeatherSearch.class */
 public class WeatherSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IWeatherSearch f5805a;
+    private IWeatherSearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/weather/WeatherSearch$OnWeatherSearchListener.class */
     public interface OnWeatherSearchListener {
@@ -19,10 +17,10 @@ public class WeatherSearch {
     }
 
     public WeatherSearch(Context context) throws AMapException {
-        this.f5805a = null;
+        this.a = null;
         if (0 == 0) {
             try {
-                this.f5805a = new he(context);
+                this.a = new he(context);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -33,7 +31,7 @@ public class WeatherSearch {
     }
 
     public WeatherSearchQuery getQuery() {
-        IWeatherSearch iWeatherSearch = this.f5805a;
+        IWeatherSearch iWeatherSearch = this.a;
         if (iWeatherSearch != null) {
             return iWeatherSearch.getQuery();
         }
@@ -41,21 +39,21 @@ public class WeatherSearch {
     }
 
     public void searchWeatherAsyn() {
-        IWeatherSearch iWeatherSearch = this.f5805a;
+        IWeatherSearch iWeatherSearch = this.a;
         if (iWeatherSearch != null) {
             iWeatherSearch.searchWeatherAsyn();
         }
     }
 
     public void setOnWeatherSearchListener(OnWeatherSearchListener onWeatherSearchListener) {
-        IWeatherSearch iWeatherSearch = this.f5805a;
+        IWeatherSearch iWeatherSearch = this.a;
         if (iWeatherSearch != null) {
             iWeatherSearch.setOnWeatherSearchListener(onWeatherSearchListener);
         }
     }
 
     public void setQuery(WeatherSearchQuery weatherSearchQuery) {
-        IWeatherSearch iWeatherSearch = this.f5805a;
+        IWeatherSearch iWeatherSearch = this.a;
         if (iWeatherSearch != null) {
             iWeatherSearch.setQuery(weatherSearchQuery);
         }

@@ -21,7 +21,7 @@ public final class d implements Runnable {
                 if (file2.getName().endsWith(".apk") || file2.getName().endsWith(ShareConstants.JAR_SUFFIX)) {
                     PluginManager.getInstance().asyncInstall(null, file2);
                     return true;
-                } else if ((file2.getAbsolutePath().endsWith(com.anythink.china.common.a.a.e) || file2.getAbsolutePath().endsWith(".tp")) && System.currentTimeMillis() - file2.lastModified() < 259200000) {
+                } else if ((file2.getAbsolutePath().endsWith(".temp") || file2.getAbsolutePath().endsWith(".tp")) && System.currentTimeMillis() - file2.lastModified() < 259200000) {
                     ZeusLogger.w(ZeusLogger.TAG_INIT, "ZeusScanRunnable installPluginDir find : ".concat(String.valueOf(file2)));
                     return false;
                 } else {

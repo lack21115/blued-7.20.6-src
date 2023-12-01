@@ -1,5 +1,6 @@
 package com.squareup.wire.internal;
 
+import com.kuaishou.weapon.p0.bp;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.FunctionReference;
@@ -17,24 +18,20 @@ public final /* synthetic */ class Internal__InternalKt$sanitize$2 extends Funct
         super(1);
     }
 
-    @Override // kotlin.jvm.internal.CallableReference, kotlin.reflect.KCallable
     public final String getName() {
         return "sanitize";
     }
 
-    @Override // kotlin.jvm.internal.CallableReference
     public final KDeclarationContainer getOwner() {
         return Reflection.a(Internal__InternalKt.class, "wire-runtime");
     }
 
-    @Override // kotlin.jvm.internal.CallableReference
     public final String getSignature() {
         return "sanitize(Ljava/lang/String;)Ljava/lang/String;";
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public final String invoke(String p0) {
-        Intrinsics.e(p0, "p0");
-        return Internal.sanitize(p0);
+    public final String invoke(String str) {
+        Intrinsics.e(str, bp.g);
+        return Internal.sanitize(str);
     }
 }

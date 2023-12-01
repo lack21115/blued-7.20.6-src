@@ -40,12 +40,10 @@ public final class ReqGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             int i = this.methodId;
             if (i == 0) {
@@ -63,12 +61,10 @@ public final class ReqGrpc {
         ReqBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return ReqOuterClass.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("Req");
         }
@@ -81,8 +77,8 @@ public final class ReqGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReqBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReqBlockingStub m2517build(Channel channel, CallOptions callOptions) {
             return new ReqBlockingStub(channel, callOptions);
         }
 
@@ -109,8 +105,8 @@ public final class ReqGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReqFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReqFutureStub m2518build(Channel channel, CallOptions callOptions) {
             return new ReqFutureStub(channel, callOptions);
         }
 
@@ -148,7 +144,6 @@ public final class ReqGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -161,8 +156,8 @@ public final class ReqGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ReqStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ReqStub m2519build(Channel channel, CallOptions callOptions) {
             return new ReqStub(channel, callOptions);
         }
 
@@ -242,30 +237,27 @@ public final class ReqGrpc {
     }
 
     public static ReqBlockingStub newBlockingStub(Channel channel) {
-        return (ReqBlockingStub) ReqBlockingStub.newStub(new AbstractStub.StubFactory<ReqBlockingStub>() { // from class: com.blued.im.req.ReqGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReqBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReqBlockingStub.newStub(new AbstractStub.StubFactory<ReqBlockingStub>() { // from class: com.blued.im.req.ReqGrpc.2
+            /* renamed from: newStub */
+            public ReqBlockingStub m2515newStub(Channel channel2, CallOptions callOptions) {
                 return new ReqBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ReqFutureStub newFutureStub(Channel channel) {
-        return (ReqFutureStub) ReqFutureStub.newStub(new AbstractStub.StubFactory<ReqFutureStub>() { // from class: com.blued.im.req.ReqGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReqFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReqFutureStub.newStub(new AbstractStub.StubFactory<ReqFutureStub>() { // from class: com.blued.im.req.ReqGrpc.3
+            /* renamed from: newStub */
+            public ReqFutureStub m2516newStub(Channel channel2, CallOptions callOptions) {
                 return new ReqFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ReqStub newStub(Channel channel) {
-        return (ReqStub) ReqStub.newStub(new AbstractStub.StubFactory<ReqStub>() { // from class: com.blued.im.req.ReqGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ReqStub newStub(Channel channel2, CallOptions callOptions) {
+        return ReqStub.newStub(new AbstractStub.StubFactory<ReqStub>() { // from class: com.blued.im.req.ReqGrpc.1
+            /* renamed from: newStub */
+            public ReqStub m2514newStub(Channel channel2, CallOptions callOptions) {
                 return new ReqStub(channel2, callOptions);
             }
         }, channel);

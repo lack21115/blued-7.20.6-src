@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.webkit.ValueCallback;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.uc.crashsdk.JNIBridge;
 import com.uc.crashsdk.a.a;
 import com.uc.crashsdk.a.d;
@@ -22,10 +21,10 @@ import java.util.concurrent.Callable;
 public class CrashApi {
 
     /* renamed from: a  reason: collision with root package name */
-    private static CrashApi f40585a;
+    private static CrashApi f26894a;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f40586c = true;
+    private static boolean f26895c = true;
     private static boolean d = false;
     private boolean b;
 
@@ -99,7 +98,7 @@ public class CrashApi {
         if (context == null) {
             a.d("crashsdk", "context can not be null!");
             throw null;
-        } else if (!f40586c || (context instanceof Application)) {
+        } else if (!f26895c || (context instanceof Application)) {
             return context;
         } else {
             Context applicationContext = context.getApplicationContext();
@@ -112,13 +111,13 @@ public class CrashApi {
     }
 
     private static void a() {
-        if (b.f40574a) {
+        if (b.f26883a) {
             a.b("Has enabled java log!");
             return;
         }
         e.s();
         e.o();
-        b.f40574a = true;
+        b.f26883a = true;
     }
 
     private static void a(Context context, CustomInfo customInfo, VersionInfo versionInfo, ICrashClient iCrashClient) {
@@ -166,7 +165,7 @@ public class CrashApi {
                 return;
             }
             com.uc.crashsdk.a.g.a(context);
-            com.uc.crashsdk.a.f40557a = context.getPackageName();
+            com.uc.crashsdk.a.f26866a = context.getPackageName();
             d = true;
         } catch (Throwable th) {
             a(th);
@@ -187,10 +186,10 @@ public class CrashApi {
         CrashApi crashApi;
         synchronized (CrashApi.class) {
             try {
-                if (f40585a == null) {
-                    f40585a = new CrashApi(context, customInfo, versionInfo, iCrashClient, z, z2, z3);
+                if (f26894a == null) {
+                    f26894a = new CrashApi(context, customInfo, versionInfo, iCrashClient, z, z2, z3);
                 }
-                crashApi = f40585a;
+                crashApi = f26894a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -207,7 +206,7 @@ public class CrashApi {
     }
 
     public static CrashApi createInstanceEx(Context context, String str, boolean z, Bundle bundle, ICrashClient iCrashClient) {
-        CrashApi crashApi = f40585a;
+        CrashApi crashApi = f26894a;
         if (crashApi != null) {
             return crashApi;
         }
@@ -215,7 +214,7 @@ public class CrashApi {
         if (bundle == null) {
             bundle2 = new Bundle();
         }
-        f40586c = bundle2.getBoolean("useApplicationContext", true);
+        f26895c = bundle2.getBoolean("useApplicationContext", true);
         Context a2 = a(context);
         b(a2);
         CustomInfo customInfo = new CustomInfo(str);
@@ -247,7 +246,7 @@ public class CrashApi {
     }
 
     public static CrashApi getInstance() {
-        return f40585a;
+        return f26894a;
     }
 
     public int addCachedInfo(String str, String str2) {
@@ -314,13 +313,13 @@ public class CrashApi {
         b.f = true;
         b();
         synchronized (b.e) {
-            if (b.h && b.f && !b.f40575c) {
+            if (b.h && b.f && !b.f26884c) {
                 if (!b.d) {
                     c();
                     g.d();
                 }
                 e.x();
-                b.f40575c = true;
+                b.f26884c = true;
             }
         }
         com.uc.crashsdk.a.n();
@@ -343,9 +342,9 @@ public class CrashApi {
     public void disableLog(int i) {
         synchronized (b.e) {
             b.b(i);
-            if (LogType.isForJava(i) && b.f40574a) {
+            if (LogType.isForJava(i) && b.f26883a) {
                 e.t();
-                b.f40574a = false;
+                b.f26883a = false;
             }
             if (LogType.isForNative(i)) {
                 if (b.b) {
@@ -359,10 +358,10 @@ public class CrashApi {
                 b.a(false);
             }
             if (LogType.isForUnexp(i)) {
-                if (!b.f40575c) {
+                if (!b.f26884c) {
                     b.h = false;
                 } else if (e.z()) {
-                    b.f40575c = false;
+                    b.f26884c = false;
                 }
             }
         }
@@ -374,7 +373,7 @@ public class CrashApi {
             if (customLogInfo.mData == null || customLogInfo.mLogType == null) {
                 throw new NullPointerException("mData or mLogType is null!");
             }
-            if (customLogInfo.mLogType.contains(BridgeUtil.UNDERLINE_STR) || customLogInfo.mLogType.contains(" ")) {
+            if (customLogInfo.mLogType.contains("_") || customLogInfo.mLogType.contains(" ")) {
                 throw new IllegalArgumentException("mLogType can not contain char '_' and ' '");
             }
             if (customLogInfo.mDumpTids != null && customLogInfo.mDumpTids.size() > 0) {

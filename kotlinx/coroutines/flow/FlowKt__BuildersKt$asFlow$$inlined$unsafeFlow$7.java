@@ -8,18 +8,14 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$7.class */
 public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$7 implements Flow<Integer> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int[] f43075a;
+    final /* synthetic */ int[] a;
 
     @Metadata
     @DebugMetadata(b = "Builders.kt", c = {115}, d = "collect", e = "kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$7")
     /* renamed from: kotlinx.coroutines.flow.FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$7$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$7$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43076a;
+        /* synthetic */ Object a;
         int b;
         Object d;
         Object e;
@@ -32,7 +28,7 @@ public final class FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$7 implements Fl
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43076a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__BuildersKt$asFlow$$inlined$unsafeFlow$7.this.a(null, this);
         }

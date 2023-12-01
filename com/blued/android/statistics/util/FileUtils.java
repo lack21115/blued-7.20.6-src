@@ -1,6 +1,7 @@
 package com.blued.android.statistics.util;
 
 import android.text.TextUtils;
+import com.anythink.core.common.k.f;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,9 +9,7 @@ import java.security.MessageDigest;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/util/FileUtils.class */
 public class FileUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final char[] f18726a = "0123456789abcdef".toCharArray();
+    private static final char[] a = "0123456789abcdef".toCharArray();
 
     public static String a(File file) {
         try {
@@ -26,7 +25,7 @@ public class FileUtils {
 
     public static String a(String str) {
         try {
-            return a(MessageDigest.getInstance("MD5").digest(str.getBytes()));
+            return a(MessageDigest.getInstance(f.a).digest(str.getBytes()));
         } catch (Exception e) {
             return str;
         }
@@ -42,8 +41,8 @@ public class FileUtils {
                 return sb.toString();
             }
             byte b = bArr[i2];
-            sb.append(f18726a[(b >> 4) & 15]);
-            sb.append(f18726a[b & 15]);
+            sb.append(a[(b >> 4) & 15]);
+            sb.append(a[b & 15]);
             i = i2 + 1;
         }
     }

@@ -16,13 +16,9 @@ import java.util.Iterator;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/view/EmoticonsIndicatorView.class */
 public class EmoticonsIndicatorView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11163a;
+    private Context a;
     private ArrayList<ImageView> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Bitmap f11164c;
+    private Bitmap c;
     private Bitmap d;
     private int e;
     private int f;
@@ -30,10 +26,10 @@ public class EmoticonsIndicatorView extends LinearLayout {
     public EmoticonsIndicatorView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.e = 12;
-        this.f11163a = context;
+        this.a = context;
         setOrientation(0);
-        this.f = DensityUtils.a(this.f11163a, this.e);
-        this.f11164c = BitmapFactory.decodeResource(getResources(), R.drawable.indicator_point_select);
+        this.f = DensityUtils.a(this.a, this.e);
+        this.c = BitmapFactory.decodeResource(getResources(), R.drawable.indicator_point_select);
         this.d = BitmapFactory.decodeResource(getResources(), R.drawable.indicator_point_nomal);
     }
 
@@ -48,14 +44,14 @@ public class EmoticonsIndicatorView extends LinearLayout {
             if (i3 >= i) {
                 return;
             }
-            RelativeLayout relativeLayout = new RelativeLayout(this.f11163a);
+            RelativeLayout relativeLayout = new RelativeLayout(this.a);
             int i4 = this.f;
             ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(i4, i4);
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
             layoutParams2.addRule(13);
-            ImageView imageView = new ImageView(this.f11163a);
+            ImageView imageView = new ImageView(this.a);
             if (i3 == 0) {
-                imageView.setImageBitmap(this.f11164c);
+                imageView.setImageBitmap(this.c);
                 relativeLayout.addView(imageView, layoutParams2);
             } else {
                 imageView.setImageBitmap(this.d);
@@ -112,7 +108,7 @@ public class EmoticonsIndicatorView extends LinearLayout {
             java.lang.Object r0 = r0.get(r1)
             android.widget.ImageView r0 = (android.widget.ImageView) r0
             r1 = r3
-            android.graphics.Bitmap r1 = r1.f11164c
+            android.graphics.Bitmap r1 = r1.c
             r0.setImageBitmap(r1)
         L46:
             return
@@ -125,7 +121,7 @@ public class EmoticonsIndicatorView extends LinearLayout {
         while (it.hasNext()) {
             it.next().setImageBitmap(this.d);
         }
-        this.b.get(i).setImageBitmap(this.f11164c);
+        this.b.get(i).setImageBitmap(this.c);
     }
 
     public void setIndicatorCount(int i) {

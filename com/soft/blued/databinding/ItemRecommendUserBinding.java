@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeRelativeLayout;
 public final class ItemRecommendUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeRelativeLayout f29295a;
+    private final ShapeRelativeLayout f15605a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeRelativeLayout getRoot() {
-        return this.f29295a;
+        return this.f15605a;
     }
 }

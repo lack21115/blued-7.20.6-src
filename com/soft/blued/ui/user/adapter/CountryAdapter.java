@@ -19,12 +19,12 @@ import java.util.Map;
 public class CountryAdapter extends BaseAdapter implements AreaCodeIndexer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LayoutInflater f33737a;
+    private final LayoutInflater f20046a;
     private List<Country> b;
     private Context e;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<Country> f33738c = new ArrayList();
+    private List<Country> f20047c = new ArrayList();
     private List<Country> d = new ArrayList();
     private Map<String, Integer> f = new ArrayMap();
 
@@ -32,11 +32,11 @@ public class CountryAdapter extends BaseAdapter implements AreaCodeIndexer {
     static class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        TextView f33739a;
+        TextView f20048a;
         TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        View f33740c;
+        View f20049c;
         TextView d;
 
         ViewHolder() {
@@ -46,10 +46,10 @@ public class CountryAdapter extends BaseAdapter implements AreaCodeIndexer {
     public CountryAdapter(Context context, List<Country> list) {
         this.b = new ArrayList();
         this.b = list;
-        this.f33738c.addAll(list);
+        this.f20047c.addAll(list);
         this.d.addAll(list);
         this.e = context;
-        this.f33737a = LayoutInflater.from(context);
+        this.f20046a = LayoutInflater.from(context);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -82,15 +82,15 @@ public class CountryAdapter extends BaseAdapter implements AreaCodeIndexer {
 
     public void a(Country country) {
         List<Country> list;
-        if (country == null || (list = this.f33738c) == null || list.size() <= 0) {
+        if (country == null || (list = this.f20047c) == null || list.size() <= 0) {
             return;
         }
-        this.f33738c.add(0, country);
+        this.f20047c.add(0, country);
         this.b.add(0, country);
     }
 
     public void b(String str) {
-        List<Country> list = this.f33738c;
+        List<Country> list = this.f20047c;
         if (list == null || list.size() <= 0) {
             return;
         }
@@ -98,17 +98,17 @@ public class CountryAdapter extends BaseAdapter implements AreaCodeIndexer {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f33738c.size()) {
+            if (i2 >= this.f20047c.size()) {
                 break;
             }
-            if (this.f33738c.get(i2).nation.contains(str) || this.f33738c.get(i2).abbr.contains(str) || this.f33738c.get(i2).group_by.equals(this.e.getResources().getString(R.string.position_now))) {
-                this.d.add(this.f33738c.get(i2));
+            if (this.f20047c.get(i2).nation.contains(str) || this.f20047c.get(i2).abbr.contains(str) || this.f20047c.get(i2).group_by.equals(this.e.getResources().getString(R.string.position_now))) {
+                this.d.add(this.f20047c.get(i2));
             }
             i = i2 + 1;
         }
         this.b.clear();
         if (StringUtils.d(str)) {
-            this.b.addAll(this.f33738c);
+            this.b.addAll(this.f20047c);
         } else {
             this.b.addAll(this.d);
         }
@@ -133,18 +133,18 @@ public class CountryAdapter extends BaseAdapter implements AreaCodeIndexer {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
         if (view == null) {
-            view = this.f33737a.inflate(R.layout.fragment_user_choosearea_item, viewGroup, false);
+            view = this.f20046a.inflate(R.layout.fragment_user_choosearea_item, viewGroup, false);
             viewHolder = new ViewHolder();
-            viewHolder.f33739a = (TextView) view.findViewById(2131372046);
-            viewHolder.b = (TextView) view.findViewById(2131371577);
-            viewHolder.f33740c = view.findViewById(R.id.tv_rightArrow);
+            viewHolder.f20048a = (TextView) view.findViewById(2131372046);
+            viewHolder.b = (TextView) view.findViewById(R.id.tv_group);
+            viewHolder.f20049c = view.findViewById(R.id.tv_rightArrow);
             viewHolder.d = (TextView) view.findViewById(R.id.tv_cutter);
             view.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         Country country = this.b.get(i);
-        viewHolder.f33739a.setText(country.nation);
+        viewHolder.f20048a.setText(country.nation);
         String str = country.group_by;
         String upperCase = str.toUpperCase();
         if (i == 0) {
@@ -164,10 +164,10 @@ public class CountryAdapter extends BaseAdapter implements AreaCodeIndexer {
             viewHolder.d.setVisibility(8);
         }
         if ("1".equals(country.has_child)) {
-            viewHolder.f33740c.setVisibility(0);
+            viewHolder.f20049c.setVisibility(0);
             return view;
         }
-        viewHolder.f33740c.setVisibility(8);
+        viewHolder.f20049c.setVisibility(8);
         return view;
     }
 }

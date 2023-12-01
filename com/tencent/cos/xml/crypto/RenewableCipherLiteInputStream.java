@@ -30,13 +30,13 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
         if (this.hasBeenAccessed) {
             throw new UnsupportedOperationException("Marking is only supported before your first call to read or skip.");
         }
-        this.f42254in.mark(i);
+        this.in.mark(i);
     }
 
     @Override // com.tencent.cos.xml.crypto.CipherLiteInputStream, com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream
     public boolean markSupported() {
         abortIfNeeded();
-        return this.f42254in.markSupported();
+        return this.in.markSupported();
     }
 
     @Override // com.tencent.cos.xml.crypto.CipherLiteInputStream, com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream
@@ -45,7 +45,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
         return super.read();
     }
 
-    @Override // com.tencent.cos.xml.crypto.CipherLiteInputStream, java.io.InputStream
+    @Override // com.tencent.cos.xml.crypto.CipherLiteInputStream, java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr) throws IOException {
         this.hasBeenAccessed = true;
         return super.read(bArr);
@@ -60,7 +60,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
     @Override // com.tencent.cos.xml.crypto.CipherLiteInputStream, com.tencent.cos.xml.crypto.SdkFilterInputStream, java.io.FilterInputStream, java.io.InputStream
     public void reset() throws IOException {
         abortIfNeeded();
-        this.f42254in.reset();
+        this.in.reset();
         try {
             renewCipherLite();
             resetInternal();

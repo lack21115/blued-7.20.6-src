@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.base.mvvm.EmptyViewModel;
@@ -38,14 +39,10 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/home/HomeFragment.class */
 public final class HomeFragment extends MVVMBaseFragment<EmptyViewModel> {
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f19884c;
+    private final ViewBindingProperty c;
     private MyAdapter d;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(HomeFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentHomeBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19883a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/home/HomeFragment$Companion.class */
@@ -66,36 +63,31 @@ public final class HomeFragment extends MVVMBaseFragment<EmptyViewModel> {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/home/HomeFragment$MyAdapter.class */
     static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<String> f19885a;
+        private final List<String> a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MyAdapter(FragmentManager fm) {
             super(fm);
             Intrinsics.e(fm, "fm");
-            this.f19885a = CollectionsKt.b("推荐", "同城", "关注", "圈子", "活动");
+            this.a = CollectionsKt.b("推荐", "同城", "关注", "圈子", "活动");
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f19885a.size();
+            return this.a.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             return i != 0 ? i != 1 ? i != 2 ? i != 3 ? i != 4 ? new RecommendFeedFragment() : new EventListFragment() : new CircleNewFragment() : new AttentionFeedFragment() : new NearbyFeedFragment() : new RecommendFeedFragment();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return this.f19885a.get(i);
+            return this.a.get(i);
         }
     }
 
     public HomeFragment() {
         super(R.layout.fragment_home);
-        this.f19884c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<HomeFragment, FragmentHomeBinding>() { // from class: com.blued.community.ui.home.HomeFragment$special$$inlined$viewBindingFragment$default$1
+        this.c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<HomeFragment, FragmentHomeBinding>() { // from class: com.blued.community.ui.home.HomeFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentHomeBinding invoke(HomeFragment fragment) {
@@ -115,7 +107,7 @@ public final class HomeFragment extends MVVMBaseFragment<EmptyViewModel> {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(HomeFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LoginFragment.f20569a.a(this$0.getContext());
+        LoginFragment.a.a(this$0.getContext());
         FragmentActivity activity = this$0.getActivity();
         if (activity == null) {
             return;
@@ -146,7 +138,7 @@ public final class HomeFragment extends MVVMBaseFragment<EmptyViewModel> {
         FragmentHomeBinding p = p();
         CustomViewPager customViewPager = p == null ? null : p.d;
         if (customViewPager != null) {
-            customViewPager.setAdapter(this.d);
+            customViewPager.setAdapter((PagerAdapter) this.d);
         }
         FragmentHomeBinding p2 = p();
         if (p2 != null && (tabPageIndicatorWithDot = p2.e) != null) {
@@ -163,7 +155,7 @@ public final class HomeFragment extends MVVMBaseFragment<EmptyViewModel> {
             });
         }
         FragmentHomeBinding p5 = p();
-        if (p5 == null || (shapeTextView = p5.f18887c) == null) {
+        if (p5 == null || (shapeTextView = p5.c) == null) {
             return;
         }
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.home.-$$Lambda$HomeFragment$vgZPopeLzJSYLEhqKjALHrXnYi0
@@ -179,6 +171,6 @@ public final class HomeFragment extends MVVMBaseFragment<EmptyViewModel> {
     }
 
     public final FragmentHomeBinding p() {
-        return (FragmentHomeBinding) this.f19884c.b(this, b[0]);
+        return (FragmentHomeBinding) this.c.b(this, b[0]);
     }
 }

@@ -1,6 +1,5 @@
 package com.google.common.util.concurrent;
 
-import com.alipay.sdk.util.i;
 import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -161,6 +160,6 @@ public final class SequentialExecutor implements Executor {
     }
 
     public String toString() {
-        return "SequentialExecutor@" + System.identityHashCode(this) + "{" + this.executor + i.d;
+        return "SequentialExecutor@" + System.identityHashCode(this) + "{" + this.executor + "}";
     }
 }

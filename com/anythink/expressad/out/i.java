@@ -4,11 +4,11 @@ package com.anythink.expressad.out;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8071a = 1;
+    public static final int f5231a = 1;
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f8072c = 3;
+    public static final int f5232c = 3;
     public static final int d = 4;
     public static final int e = 5;
     private int f;

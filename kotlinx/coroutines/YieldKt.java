@@ -13,28 +13,28 @@ import kotlinx.coroutines.internal.DispatchedContinuationKt;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/YieldKt.class */
 public final class YieldKt {
     public static final Object a(Continuation<? super Unit> continuation) {
-        Object a2;
+        Object a;
         CoroutineContext context = continuation.getContext();
         JobKt.a(context);
-        Continuation a3 = IntrinsicsKt.a(continuation);
-        DispatchedContinuation dispatchedContinuation = a3 instanceof DispatchedContinuation ? (DispatchedContinuation) a3 : null;
+        Continuation a2 = IntrinsicsKt.a(continuation);
+        DispatchedContinuation dispatchedContinuation = a2 instanceof DispatchedContinuation ? (DispatchedContinuation) a2 : null;
         if (dispatchedContinuation == null) {
-            a2 = Unit.f42314a;
+            a = Unit.a;
         } else {
             if (dispatchedContinuation.b.isDispatchNeeded(context)) {
-                dispatchedContinuation.a(context, (CoroutineContext) Unit.f42314a);
+                dispatchedContinuation.a(context, (CoroutineContext) Unit.a);
             } else {
                 YieldContext yieldContext = new YieldContext();
-                dispatchedContinuation.a(context.plus(yieldContext), (CoroutineContext) Unit.f42314a);
+                dispatchedContinuation.a(context.plus(yieldContext), (CoroutineContext) Unit.a);
                 if (yieldContext.b) {
-                    a2 = DispatchedContinuationKt.a(dispatchedContinuation) ? IntrinsicsKt.a() : Unit.f42314a;
+                    a = DispatchedContinuationKt.a(dispatchedContinuation) ? IntrinsicsKt.a() : Unit.a;
                 }
             }
-            a2 = IntrinsicsKt.a();
+            a = IntrinsicsKt.a();
         }
-        if (a2 == IntrinsicsKt.a()) {
+        if (a == IntrinsicsKt.a()) {
             DebugProbesKt.c(continuation);
         }
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

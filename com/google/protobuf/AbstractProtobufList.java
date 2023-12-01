@@ -6,9 +6,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/AbstractProtobufList.class */
-public abstract class AbstractProtobufList<E> extends AbstractList<E> implements Internal.ProtobufList<E> {
+abstract class AbstractProtobufList<E> extends AbstractList<E> implements Internal.ProtobufList<E> {
     protected static final int DEFAULT_CAPACITY = 10;
     private boolean isMutable = true;
 
@@ -18,7 +17,7 @@ public abstract class AbstractProtobufList<E> extends AbstractList<E> implements
         super.add(i, e);
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(E e) {
         ensureIsMutable();
         return super.add(e);
@@ -30,13 +29,13 @@ public abstract class AbstractProtobufList<E> extends AbstractList<E> implements
         return super.addAll(i, collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection<? extends E> collection) {
         ensureIsMutable();
         return super.addAll(collection);
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public void clear() {
         ensureIsMutable();
         super.clear();
@@ -49,7 +48,7 @@ public abstract class AbstractProtobufList<E> extends AbstractList<E> implements
         }
     }
 
-    @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -78,7 +77,7 @@ public abstract class AbstractProtobufList<E> extends AbstractList<E> implements
         }
     }
 
-    @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int size = size();
         int i = 1;
@@ -109,19 +108,19 @@ public abstract class AbstractProtobufList<E> extends AbstractList<E> implements
         return (E) super.remove(i);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean remove(Object obj) {
         ensureIsMutable();
         return super.remove(obj);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean removeAll(Collection<?> collection) {
         ensureIsMutable();
         return super.removeAll(collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean retainAll(Collection<?> collection) {
         ensureIsMutable();
         return super.retainAll(collection);

@@ -9,17 +9,17 @@ import java.util.Calendar;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SimpleDateFormat f38229a = d.C0973d.a("yy.MM.dd.HH");
+    private static SimpleDateFormat f24538a = d.C0803d.a("yy.MM.dd.HH");
     private File g;
     private String b = "Tracer.File";
 
     /* renamed from: c  reason: collision with root package name */
-    private int f38230c = Integer.MAX_VALUE;
+    private int f24539c = Integer.MAX_VALUE;
     private int d = Integer.MAX_VALUE;
     private int e = 4096;
     private long f = 10000;
     private int h = 10;
-    private String i = com.anythink.china.common.a.a.f;
+    private String i = ".log";
     private long j = Long.MAX_VALUE;
 
     public b(File file, int i, int i2, int i3, String str, long j, int i4, String str2, long j2) {
@@ -45,7 +45,7 @@ public class b {
     }
 
     private String c(String str) {
-        return "com.tencent.mobileqq_connectSdk." + str + com.anythink.china.common.a.a.f;
+        return "com.tencent.mobileqq_connectSdk." + str + ".log";
     }
 
     private String d(long j) {
@@ -59,7 +59,7 @@ public class b {
     }
 
     public void a(int i) {
-        this.f38230c = i;
+        this.f24539c = i;
     }
 
     public void a(long j) {

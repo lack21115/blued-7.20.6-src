@@ -15,28 +15,28 @@ import com.huawei.hms.update.ui.NotInstalledHmsDialogHelper;
 public class NotInstalledHmsAdapter implements IBridgeActivityDelegate {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Object f22427c = new Object();
+    public static final Object f8819c = new Object();
     public static boolean d;
 
     /* renamed from: a  reason: collision with root package name */
-    public Activity f22428a;
+    public Activity f8820a;
     public Dialog b;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/adapter/ui/NotInstalledHmsAdapter$a.class */
     public static class a implements DialogInterface.OnCancelListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final Activity f22429a;
+        public final Activity f8821a;
 
         public a(Activity activity) {
-            this.f22429a = activity;
+            this.f8821a = activity;
         }
 
         @Override // android.content.DialogInterface.OnCancelListener
         public void onCancel(DialogInterface dialogInterface) {
             HMSLog.i("NotInstalledHmsAdapter", "<Dialog onCancel>");
             SystemManager.getInstance().notifyUpdateResult(13);
-            this.f22429a.finish();
+            this.f8821a.finish();
         }
     }
 
@@ -44,10 +44,10 @@ public class NotInstalledHmsAdapter implements IBridgeActivityDelegate {
     public static class b implements DialogInterface.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final Activity f22430a;
+        public final Activity f8822a;
 
         public b(Activity activity) {
-            this.f22430a = activity;
+            this.f8822a = activity;
         }
 
         @Override // android.content.DialogInterface.OnClickListener
@@ -55,12 +55,12 @@ public class NotInstalledHmsAdapter implements IBridgeActivityDelegate {
             Tracker.onClick(dialogInterface, i);
             HMSLog.i("NotInstalledHmsAdapter", "<Dialog onClick>");
             SystemManager.getInstance().notifyUpdateResult(30);
-            this.f22430a.finish();
+            this.f8822a.finish();
         }
     }
 
     public static boolean getShowLock() {
-        synchronized (f22427c) {
+        synchronized (f8819c) {
             HMSLog.i("NotInstalledHmsAdapter", "<canShowDialog> sIsShowingDialog: " + d);
             if (d) {
                 return false;
@@ -92,14 +92,14 @@ public class NotInstalledHmsAdapter implements IBridgeActivityDelegate {
             HMSLog.e("NotInstalledHmsAdapter", "<onBridgeActivityCreate> activity is null or finishing");
             return;
         }
-        this.f22428a = activity;
+        this.f8820a = activity;
         a(activity);
     }
 
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
     public void onBridgeActivityDestroy() {
         HMSLog.i("NotInstalledHmsAdapter", "<onBridgeActivityDestroy>");
-        synchronized (f22427c) {
+        synchronized (f8819c) {
             d = false;
         }
     }
@@ -113,11 +113,11 @@ public class NotInstalledHmsAdapter implements IBridgeActivityDelegate {
     @Override // com.huawei.hms.activity.IBridgeActivityDelegate
     public void onBridgeConfigurationChanged() {
         HMSLog.i("NotInstalledHmsAdapter", "<onBridgeConfigurationChanged>");
-        Activity activity = this.f22428a;
+        Activity activity = this.f8820a;
         if (activity == null || activity.isFinishing()) {
             HMSLog.e("NotInstalledHmsAdapter", "<onBridgeConfigurationChanged> mActivity is null or finishing");
         } else {
-            a(this.f22428a);
+            a(this.f8820a);
         }
     }
 

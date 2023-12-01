@@ -21,12 +21,8 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/present/AlbumBasePresenter.class */
 public class AlbumBasePresenter extends MediaBasePresent<IAlbumBaseView> implements IAlbumBaseCallback, AlbumLoadDataModel.IAlbumLoadDataCallback {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f15570c = AlbumBasePresenter.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    protected AlbumLoadDataModel f15571a;
+    private static final String c = AlbumBasePresenter.class.getSimpleName();
+    protected AlbumLoadDataModel a;
 
     public static List<MediaInfo> a(String str) {
         return AlbumDataManager.getGroupFileList(str);
@@ -121,7 +117,7 @@ public class AlbumBasePresenter extends MediaBasePresent<IAlbumBaseView> impleme
     public void a(Bundle bundle) {
         AlbumDataManager.clear();
         AlbumDataManager.setMaxSelectNum(n().f());
-        this.f15571a = new AlbumLoadDataModel(n().getContext(), bundle, this);
+        this.a = new AlbumLoadDataModel(n().getContext(), bundle, this);
     }
 
     @Override // com.blued.android.module.media.selector.model.AlbumLoadDataModel.IAlbumLoadDataCallback
@@ -209,7 +205,7 @@ public class AlbumBasePresenter extends MediaBasePresent<IAlbumBaseView> impleme
 
     @Override // com.blued.android.module.media.selector.present.MediaBasePresent
     public void h() {
-        AlbumLoadDataModel albumLoadDataModel = this.f15571a;
+        AlbumLoadDataModel albumLoadDataModel = this.a;
         if (albumLoadDataModel != null) {
             albumLoadDataModel.d();
         }

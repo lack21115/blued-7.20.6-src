@@ -10,24 +10,24 @@ public final class dr {
     }
 
     public static boolean a(LatLng latLng, LatLng latLng2, LatLng latLng3, LatLng latLng4) {
-        double a2 = a(latLng3, latLng4, latLng);
-        double a3 = a(latLng3, latLng4, latLng2);
-        double a4 = a(latLng, latLng2, latLng3);
-        double a5 = a(latLng, latLng2, latLng4);
-        int i = (a2 > 0.0d ? 1 : (a2 == 0.0d ? 0 : -1));
-        if (((i > 0 && a3 < 0.0d) || (a2 < 0.0d && a3 > 0.0d)) && ((a4 > 0.0d && a5 < 0.0d) || (a4 < 0.0d && a5 > 0.0d))) {
+        double a = a(latLng3, latLng4, latLng);
+        double a2 = a(latLng3, latLng4, latLng2);
+        double a3 = a(latLng, latLng2, latLng3);
+        double a4 = a(latLng, latLng2, latLng4);
+        int i = (a > 0.0d ? 1 : (a == 0.0d ? 0 : -1));
+        if (((i > 0 && a2 < 0.0d) || (a < 0.0d && a2 > 0.0d)) && ((a3 > 0.0d && a4 < 0.0d) || (a3 < 0.0d && a4 > 0.0d))) {
             return true;
         }
         if (i == 0 && b(latLng3, latLng4, latLng)) {
             return true;
         }
-        if (a3 == 0.0d && b(latLng3, latLng4, latLng2)) {
+        if (a2 == 0.0d && b(latLng3, latLng4, latLng2)) {
             return true;
         }
-        if (a4 == 0.0d && b(latLng, latLng2, latLng3)) {
+        if (a3 == 0.0d && b(latLng, latLng2, latLng3)) {
             return true;
         }
-        return a5 == 0.0d && b(latLng, latLng2, latLng4);
+        return a4 == 0.0d && b(latLng, latLng2, latLng4);
     }
 
     private static boolean b(LatLng latLng, LatLng latLng2, LatLng latLng3) {

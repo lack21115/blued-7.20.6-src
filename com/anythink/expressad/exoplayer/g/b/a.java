@@ -29,26 +29,26 @@ public final class a extends h {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7343a = "APIC";
+    public static final String f4504a = "APIC";
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f7344c;
+    public final String f4505c;
     public final int d;
     public final byte[] e;
 
     a(Parcel parcel) {
-        super(f7343a);
+        super(f4504a);
         this.b = parcel.readString();
-        this.f7344c = parcel.readString();
+        this.f4505c = parcel.readString();
         this.d = parcel.readInt();
         this.e = parcel.createByteArray();
     }
 
     public a(String str, String str2, int i, byte[] bArr) {
-        super(f7343a);
+        super(f4504a);
         this.b = str;
-        this.f7344c = str2;
+        this.f4505c = str2;
         this.d = i;
         this.e = bArr;
     }
@@ -61,7 +61,7 @@ public final class a extends h {
             return false;
         }
         a aVar = (a) obj;
-        return this.d == aVar.d && af.a((Object) this.b, (Object) aVar.b) && af.a((Object) this.f7344c, (Object) aVar.f7344c) && Arrays.equals(this.e, aVar.e);
+        return this.d == aVar.d && af.a((Object) this.b, (Object) aVar.b) && af.a((Object) this.f4505c, (Object) aVar.f4505c) && Arrays.equals(this.e, aVar.e);
     }
 
     public final int hashCode() {
@@ -69,7 +69,7 @@ public final class a extends h {
         String str = this.b;
         int i2 = 0;
         int hashCode = str != null ? str.hashCode() : 0;
-        String str2 = this.f7344c;
+        String str2 = this.f4505c;
         if (str2 != null) {
             i2 = str2.hashCode();
         }
@@ -78,13 +78,13 @@ public final class a extends h {
 
     @Override // com.anythink.expressad.exoplayer.g.b.h
     public final String toString() {
-        return this.g + ": mimeType=" + this.b + ", description=" + this.f7344c;
+        return this.g + ": mimeType=" + this.b + ", description=" + this.f4505c;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.b);
-        parcel.writeString(this.f7344c);
+        parcel.writeString(this.f4505c);
         parcel.writeInt(this.d);
         parcel.writeByteArray(this.e);
     }

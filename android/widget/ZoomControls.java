@@ -23,7 +23,7 @@ public class ZoomControls extends LinearLayout {
     public ZoomControls(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         setFocusable(false);
-        ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.zoom_controls, (ViewGroup) this, true);
+        ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(R.layout.zoom_controls, (ViewGroup) this, true);
         this.mZoomIn = (ZoomButton) findViewById(R.id.zoomIn);
         this.mZoomOut = (ZoomButton) findViewById(R.id.zoomOut);
     }

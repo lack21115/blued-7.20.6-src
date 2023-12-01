@@ -29,9 +29,7 @@ import okio.Source;
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/cache/DiskLruCache.class */
 public final class DiskLruCache implements Closeable, Flushable {
     final FileSystem b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final File f43850c;
+    final File c;
     final int d;
     BufferedSink e;
     int g;
@@ -47,9 +45,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     private long r;
     private final Executor u;
     static final /* synthetic */ boolean m = !DiskLruCache.class.desiredAssertionStatus();
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Pattern f43849a = Pattern.compile("[a-z0-9_-]{1,120}");
+    static final Pattern a = Pattern.compile("[a-z0-9_-]{1,120}");
     private long s = 0;
     final LinkedHashMap<String, Entry> f = new LinkedHashMap<>(0, 0.75f, true);
     private long t = 0;
@@ -80,14 +76,12 @@ public final class DiskLruCache implements Closeable, Flushable {
 
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/cache/DiskLruCache$Editor.class */
     public final class Editor {
-
-        /* renamed from: a  reason: collision with root package name */
-        final Entry f43855a;
+        final Entry a;
         final boolean[] b;
         private boolean d;
 
         Editor(Entry entry) {
-            this.f43855a = entry;
+            this.a = entry;
             this.b = entry.e ? null : new boolean[DiskLruCache.this.d];
         }
 
@@ -96,14 +90,14 @@ public final class DiskLruCache implements Closeable, Flushable {
                 if (this.d) {
                     throw new IllegalStateException();
                 }
-                if (this.f43855a.f != this) {
+                if (this.a.f != this) {
                     return Okio.blackhole();
                 }
-                if (!this.f43855a.e) {
+                if (!this.a.e) {
                     this.b[i] = true;
                 }
                 try {
-                    return new FaultHidingSink(DiskLruCache.this.b.b(this.f43855a.d[i])) { // from class: okhttp3.internal.cache.DiskLruCache.Editor.1
+                    return new FaultHidingSink(DiskLruCache.this.b.b(this.a.d[i])) { // from class: okhttp3.internal.cache.DiskLruCache.Editor.1
                         @Override // okhttp3.internal.cache.FaultHidingSink
                         protected void a(IOException iOException) {
                             synchronized (DiskLruCache.this) {
@@ -118,18 +112,18 @@ public final class DiskLruCache implements Closeable, Flushable {
         }
 
         void a() {
-            if (this.f43855a.f != this) {
+            if (this.a.f != this) {
                 return;
             }
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= DiskLruCache.this.d) {
-                    this.f43855a.f = null;
+                    this.a.f = null;
                     return;
                 } else {
                     try {
-                        DiskLruCache.this.b.delete(this.f43855a.d[i2]);
+                        DiskLruCache.this.b.delete(this.a.d[i2]);
                     } catch (IOException e) {
                     }
                     i = i2 + 1;
@@ -142,7 +136,7 @@ public final class DiskLruCache implements Closeable, Flushable {
                 if (this.d) {
                     throw new IllegalStateException();
                 }
-                if (this.f43855a.f == this) {
+                if (this.a.f == this) {
                     DiskLruCache.this.a(this, true);
                 }
                 this.d = true;
@@ -154,7 +148,7 @@ public final class DiskLruCache implements Closeable, Flushable {
                 if (this.d) {
                     throw new IllegalStateException();
                 }
-                if (this.f43855a.f == this) {
+                if (this.a.f == this) {
                     DiskLruCache.this.a(this, false);
                 }
                 this.d = true;
@@ -165,22 +159,18 @@ public final class DiskLruCache implements Closeable, Flushable {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/cache/DiskLruCache$Entry.class */
     public final class Entry {
-
-        /* renamed from: a  reason: collision with root package name */
-        final String f43858a;
+        final String a;
         final long[] b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final File[] f43859c;
+        final File[] c;
         final File[] d;
         boolean e;
         Editor f;
         long g;
 
         Entry(String str) {
-            this.f43858a = str;
+            this.a = str;
             this.b = new long[DiskLruCache.this.d];
-            this.f43859c = new File[DiskLruCache.this.d];
+            this.c = new File[DiskLruCache.this.d];
             this.d = new File[DiskLruCache.this.d];
             StringBuilder sb = new StringBuilder(str);
             sb.append('.');
@@ -192,9 +182,9 @@ public final class DiskLruCache implements Closeable, Flushable {
                     return;
                 }
                 sb.append(i2);
-                this.f43859c[i2] = new File(DiskLruCache.this.f43850c, sb.toString());
+                this.c[i2] = new File(DiskLruCache.this.c, sb.toString());
                 sb.append(".tmp");
-                this.d[i2] = new File(DiskLruCache.this.f43850c, sb.toString());
+                this.d[i2] = new File(DiskLruCache.this.c, sb.toString());
                 sb.setLength(length);
                 i = i2 + 1;
             }
@@ -215,9 +205,9 @@ public final class DiskLruCache implements Closeable, Flushable {
                 try {
                     int i2 = i;
                     if (i2 >= DiskLruCache.this.d) {
-                        return new Snapshot(this.f43858a, this.g, sourceArr, jArr);
+                        return new Snapshot(this.a, this.g, sourceArr, jArr);
                     }
-                    sourceArr[i2] = DiskLruCache.this.b.a(this.f43859c[i2]);
+                    sourceArr[i2] = DiskLruCache.this.b.a(this.c[i2]);
                     i = i2 + 1;
                 } catch (FileNotFoundException e) {
                     int i3 = 0;
@@ -275,22 +265,20 @@ public final class DiskLruCache implements Closeable, Flushable {
     /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/cache/DiskLruCache$Snapshot.class */
     public final class Snapshot implements Closeable {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long f43861c;
+        private final long c;
         private final Source[] d;
         private final long[] e;
 
         Snapshot(String str, long j, Source[] sourceArr, long[] jArr) {
             this.b = str;
-            this.f43861c = j;
+            this.c = j;
             this.d = sourceArr;
             this.e = jArr;
         }
 
         @Nullable
         public Editor a() throws IOException {
-            return DiskLruCache.this.a(this.b, this.f43861c);
+            return DiskLruCache.this.a(this.b, this.c);
         }
 
         public Source a(int i) {
@@ -315,7 +303,7 @@ public final class DiskLruCache implements Closeable, Flushable {
 
     DiskLruCache(FileSystem fileSystem, File file, int i, int i2, long j, Executor executor) {
         this.b = fileSystem;
-        this.f43850c = file;
+        this.c = file;
         this.q = i;
         this.n = new File(file, "journal");
         this.o = new File(file, "journal.tmp");
@@ -376,7 +364,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     private void e(String str) {
-        if (f43849a.matcher(str).matches()) {
+        if (a.matcher(str).matches()) {
             return;
         }
         throw new IllegalArgumentException("keys must match regex [a-z0-9_-]{1,120}: \"" + str + "\"");
@@ -419,13 +407,11 @@ public final class DiskLruCache implements Closeable, Flushable {
 
     private BufferedSink l() throws FileNotFoundException {
         return Okio.buffer(new FaultHidingSink(this.b.c(this.n)) { // from class: okhttp3.internal.cache.DiskLruCache.2
-
-            /* renamed from: a  reason: collision with root package name */
-            static final /* synthetic */ boolean f43852a = !DiskLruCache.class.desiredAssertionStatus();
+            static final /* synthetic */ boolean a = !DiskLruCache.class.desiredAssertionStatus();
 
             @Override // okhttp3.internal.cache.FaultHidingSink
             protected void a(IOException iOException) {
-                if (!f43852a && !Thread.holdsLock(DiskLruCache.this)) {
+                if (!a && !Thread.holdsLock(DiskLruCache.this)) {
                     throw new AssertionError();
                 }
                 DiskLruCache.this.h = true;
@@ -450,7 +436,7 @@ public final class DiskLruCache implements Closeable, Flushable {
                     if (i3 >= this.d) {
                         break;
                     }
-                    this.b.delete(next.f43859c[i3]);
+                    this.b.delete(next.c[i3]);
                     this.b.delete(next.d[i3]);
                     i2 = i3 + 1;
                 }
@@ -544,7 +530,7 @@ public final class DiskLruCache implements Closeable, Flushable {
                     return;
                 } catch (IOException e) {
                     Platform e2 = Platform.e();
-                    e2.a(5, "DiskLruCache " + this.f43850c + " is corrupt: " + e.getMessage() + ", removing", e);
+                    e2.a(5, "DiskLruCache " + this.c + " is corrupt: " + e.getMessage() + ", removing", e);
                     delete();
                     this.j = false;
                 }
@@ -556,7 +542,7 @@ public final class DiskLruCache implements Closeable, Flushable {
 
     void a(Editor editor, boolean z) throws IOException {
         synchronized (this) {
-            Entry entry = editor.f43855a;
+            Entry entry = editor.a;
             if (entry.f != editor) {
                 throw new IllegalStateException();
             }
@@ -587,7 +573,7 @@ public final class DiskLruCache implements Closeable, Flushable {
                 if (!z) {
                     this.b.delete(file);
                 } else if (this.b.d(file)) {
-                    File file2 = entry.f43859c[i];
+                    File file2 = entry.c[i];
                     this.b.a(file, file2);
                     long j = entry.b[i];
                     long e = this.b.e(file2);
@@ -601,7 +587,7 @@ public final class DiskLruCache implements Closeable, Flushable {
             if (entry.e || z) {
                 entry.e = true;
                 this.e.writeUtf8("CLEAN").writeByte(32);
-                this.e.writeUtf8(entry.f43858a);
+                this.e.writeUtf8(entry.a);
                 entry.a(this.e);
                 this.e.writeByte(10);
                 if (z) {
@@ -610,9 +596,9 @@ public final class DiskLruCache implements Closeable, Flushable {
                     entry.g = j2;
                 }
             } else {
-                this.f.remove(entry.f43858a);
+                this.f.remove(entry.a);
                 this.e.writeUtf8("REMOVE").writeByte(32);
-                this.e.writeUtf8(entry.f43858a);
+                this.e.writeUtf8(entry.a);
                 this.e.writeByte(10);
             }
             this.e.flush();
@@ -632,14 +618,14 @@ public final class DiskLruCache implements Closeable, Flushable {
             if (i2 >= this.d) {
                 break;
             }
-            this.b.delete(entry.f43859c[i2]);
+            this.b.delete(entry.c[i2]);
             this.s -= entry.b[i2];
             entry.b[i2] = 0;
             i = i2 + 1;
         }
         this.g++;
-        this.e.writeUtf8("REMOVE").writeByte(32).writeUtf8(entry.f43858a).writeByte(10);
-        this.f.remove(entry.f43858a);
+        this.e.writeUtf8("REMOVE").writeByte(32).writeUtf8(entry.a).writeByte(10);
+        this.f.remove(entry.a);
         if (f()) {
             this.u.execute(this.v);
             return true;
@@ -666,11 +652,11 @@ public final class DiskLruCache implements Closeable, Flushable {
             for (Entry entry : this.f.values()) {
                 if (entry.f != null) {
                     buffer.writeUtf8("DIRTY").writeByte(32);
-                    buffer.writeUtf8(entry.f43858a);
+                    buffer.writeUtf8(entry.a);
                     buffer.writeByte(10);
                 } else {
                     buffer.writeUtf8("CLEAN").writeByte(32);
-                    buffer.writeUtf8(entry.f43858a);
+                    buffer.writeUtf8(entry.a);
                     entry.a(buffer);
                     buffer.writeByte(10);
                 }
@@ -688,7 +674,7 @@ public final class DiskLruCache implements Closeable, Flushable {
     }
 
     public File c() {
-        return this.f43850c;
+        return this.c;
     }
 
     public boolean c(String str) throws IOException {
@@ -745,7 +731,7 @@ public final class DiskLruCache implements Closeable, Flushable {
 
     public void delete() throws IOException {
         close();
-        this.b.f(this.f43850c);
+        this.b.f(this.c);
     }
 
     public long e() throws IOException {
@@ -811,16 +797,12 @@ public final class DiskLruCache implements Closeable, Flushable {
         synchronized (this) {
             a();
             it = new Iterator<Snapshot>() { // from class: okhttp3.internal.cache.DiskLruCache.3
-
-                /* renamed from: a  reason: collision with root package name */
-                final Iterator<Entry> f43853a;
+                final Iterator<Entry> a;
                 Snapshot b;
-
-                /* renamed from: c  reason: collision with root package name */
-                Snapshot f43854c;
+                Snapshot c;
 
                 {
-                    this.f43853a = new ArrayList(DiskLruCache.this.f.values()).iterator();
+                    this.a = new ArrayList(DiskLruCache.this.f.values()).iterator();
                 }
 
                 @Override // java.util.Iterator
@@ -828,7 +810,7 @@ public final class DiskLruCache implements Closeable, Flushable {
                 public Snapshot next() {
                     if (hasNext()) {
                         Snapshot snapshot = this.b;
-                        this.f43854c = snapshot;
+                        this.c = snapshot;
                         this.b = null;
                         return snapshot;
                     }
@@ -845,8 +827,8 @@ public final class DiskLruCache implements Closeable, Flushable {
                         if (DiskLruCache.this.j) {
                             return false;
                         }
-                        while (this.f43853a.hasNext()) {
-                            Entry next = this.f43853a.next();
+                        while (this.a.hasNext()) {
+                            Entry next = this.a.next();
                             if (next.e && (a2 = next.a()) != null) {
                                 this.b = a2;
                                 return true;
@@ -858,7 +840,7 @@ public final class DiskLruCache implements Closeable, Flushable {
 
                 @Override // java.util.Iterator
                 public void remove() {
-                    Snapshot snapshot = this.f43854c;
+                    Snapshot snapshot = this.c;
                     if (snapshot == null) {
                         throw new IllegalStateException("remove() before next()");
                     }
@@ -866,10 +848,10 @@ public final class DiskLruCache implements Closeable, Flushable {
                         DiskLruCache.this.c(snapshot.b);
                     } catch (IOException e) {
                     } catch (Throwable th) {
-                        this.f43854c = null;
+                        this.c = null;
                         throw th;
                     }
-                    this.f43854c = null;
+                    this.c = null;
                 }
             };
         }

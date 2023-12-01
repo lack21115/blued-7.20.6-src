@@ -10,11 +10,11 @@ import java.util.PriorityQueue;
 public abstract class e implements com.opos.exoplayer.core.f.e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedList<a> f25340a = new LinkedList<>();
+    private final LinkedList<a> f11652a = new LinkedList<>();
     private final LinkedList<i> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final PriorityQueue<a> f25341c;
+    private final PriorityQueue<a> f11653c;
     private a d;
     private long e;
     private long f;
@@ -56,9 +56,9 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
                 goto L54
             L1d:
                 r0 = r5
-                long r0 = r0.f25074c
+                long r0 = r0.f11386c
                 r1 = r6
-                long r1 = r1.f25074c
+                long r1 = r1.f11386c
                 long r0 = r0 - r1
                 r12 = r0
                 r0 = r12
@@ -117,7 +117,7 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
             if (i2 >= 10) {
                 break;
             }
-            this.f25340a.add(new a());
+            this.f11652a.add(new a());
             i = i2 + 1;
         }
         this.b = new LinkedList<>();
@@ -125,7 +125,7 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
         while (true) {
             int i4 = i3;
             if (i4 >= 2) {
-                this.f25341c = new PriorityQueue<>();
+                this.f11653c = new PriorityQueue<>();
                 return;
             } else {
                 this.b.add(new b());
@@ -136,7 +136,7 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
 
     private void a(a aVar) {
         aVar.a();
-        this.f25340a.add(aVar);
+        this.f11652a.add(aVar);
     }
 
     @Override // com.opos.exoplayer.core.f.e
@@ -163,7 +163,7 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
             long j = this.f;
             this.f = 1 + j;
             aVar.e = j;
-            this.f25341c.add(this.d);
+            this.f11653c.add(this.d);
         }
         this.d = null;
     }
@@ -172,8 +172,8 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
     public void c() {
         this.f = 0L;
         this.e = 0L;
-        while (!this.f25341c.isEmpty()) {
-            a(this.f25341c.poll());
+        while (!this.f11653c.isEmpty()) {
+            a(this.f11653c.poll());
         }
         a aVar = this.d;
         if (aVar != null) {
@@ -197,8 +197,8 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
         if (this.b.isEmpty()) {
             return null;
         }
-        while (!this.f25341c.isEmpty() && this.f25341c.peek().f25074c <= this.e) {
-            a poll = this.f25341c.poll();
+        while (!this.f11653c.isEmpty() && this.f11653c.peek().f11386c <= this.e) {
+            a poll = this.f11653c.poll();
             if (poll.c()) {
                 pollFirst = this.b.pollFirst();
                 pollFirst.b(4);
@@ -208,7 +208,7 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
                     com.opos.exoplayer.core.f.d f = f();
                     if (!poll.d_()) {
                         pollFirst = this.b.pollFirst();
-                        pollFirst.a(poll.f25074c, f, Long.MAX_VALUE);
+                        pollFirst.a(poll.f11386c, f, Long.MAX_VALUE);
                     }
                 }
                 a(poll);
@@ -223,10 +223,10 @@ public abstract class e implements com.opos.exoplayer.core.f.e {
     /* renamed from: h */
     public h a() {
         com.opos.exoplayer.core.i.a.b(this.d == null);
-        if (this.f25340a.isEmpty()) {
+        if (this.f11652a.isEmpty()) {
             return null;
         }
-        a pollFirst = this.f25340a.pollFirst();
+        a pollFirst = this.f11652a.pollFirst();
         this.d = pollFirst;
         return pollFirst;
     }

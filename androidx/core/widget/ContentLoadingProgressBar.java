@@ -8,11 +8,11 @@ import android.widget.ProgressBar;
 public class ContentLoadingProgressBar extends ProgressBar {
 
     /* renamed from: a  reason: collision with root package name */
-    long f2749a;
+    long f2701a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f2750c;
+    boolean f2702c;
     boolean d;
     private final Runnable e;
     private final Runnable f;
@@ -23,9 +23,9 @@ public class ContentLoadingProgressBar extends ProgressBar {
 
     public ContentLoadingProgressBar(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, 0);
-        this.f2749a = -1L;
+        this.f2701a = -1L;
         this.b = false;
-        this.f2750c = false;
+        this.f2702c = false;
         this.d = false;
         this.e = new Runnable() { // from class: androidx.core.widget.-$$Lambda$ContentLoadingProgressBar$RRZMcqB-4h2-lyW2GeLnU3S6gHA
             @Override // java.lang.Runnable
@@ -50,9 +50,9 @@ public class ContentLoadingProgressBar extends ProgressBar {
     public void b() {
         this.d = true;
         removeCallbacks(this.f);
-        this.f2750c = false;
+        this.f2702c = false;
         long currentTimeMillis = System.currentTimeMillis();
-        long j = this.f2749a;
+        long j = this.f2701a;
         long j2 = currentTimeMillis - j;
         if (j2 >= 500 || j == -1) {
             setVisibility(8);
@@ -65,31 +65,31 @@ public class ContentLoadingProgressBar extends ProgressBar {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        this.f2749a = -1L;
+        this.f2701a = -1L;
         this.d = false;
         removeCallbacks(this.e);
         this.b = false;
-        if (this.f2750c) {
+        if (this.f2702c) {
             return;
         }
         postDelayed(this.f, 500L);
-        this.f2750c = true;
+        this.f2702c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void d() {
-        this.f2750c = false;
+        this.f2702c = false;
         if (this.d) {
             return;
         }
-        this.f2749a = System.currentTimeMillis();
+        this.f2701a = System.currentTimeMillis();
         setVisibility(0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void e() {
         this.b = false;
-        this.f2749a = -1L;
+        this.f2701a = -1L;
         setVisibility(8);
     }
 

@@ -6,18 +6,14 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import androidx.cardview.widget.CardView;
-import skin.support.cardview.R;
+import com.android.internal.R;
 import skin.support.content.res.SkinCompatResources;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatCardView.class */
 public class SkinCompatCardView extends CardView implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int[] f44259a = {16842801};
+    private static final int[] a = {R.attr.colorBackground};
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f44260c;
+    private int c;
 
     public SkinCompatCardView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
@@ -26,12 +22,12 @@ public class SkinCompatCardView extends CardView implements SkinCompatSupportabl
     public SkinCompatCardView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 0;
-        this.f44260c = 0;
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.CardView, i, R.style.CardView);
-        if (obtainStyledAttributes.hasValue(R.styleable.CardView_cardBackgroundColor)) {
-            this.f44260c = obtainStyledAttributes.getResourceId(R.styleable.CardView_cardBackgroundColor, 0);
+        this.c = 0;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, skin.support.cardview.R.styleable.CardView, i, skin.support.cardview.R.style.CardView);
+        if (obtainStyledAttributes.hasValue(skin.support.cardview.R.styleable.CardView_cardBackgroundColor)) {
+            this.c = obtainStyledAttributes.getResourceId(skin.support.cardview.R.styleable.CardView_cardBackgroundColor, 0);
         } else {
-            TypedArray obtainStyledAttributes2 = getContext().obtainStyledAttributes(f44259a);
+            TypedArray obtainStyledAttributes2 = getContext().obtainStyledAttributes(a);
             this.b = obtainStyledAttributes2.getResourceId(0, 0);
             obtainStyledAttributes2.recycle();
         }
@@ -40,15 +36,15 @@ public class SkinCompatCardView extends CardView implements SkinCompatSupportabl
     }
 
     private void a() {
-        this.f44260c = SkinCompatHelper.b(this.f44260c);
+        this.c = SkinCompatHelper.b(this.c);
         int b = SkinCompatHelper.b(this.b);
         this.b = b;
-        if (this.f44260c != 0) {
-            setCardBackgroundColor(SkinCompatResources.d(getContext(), this.f44260c));
+        if (this.c != 0) {
+            setCardBackgroundColor(SkinCompatResources.d(getContext(), this.c));
         } else if (b != 0) {
             float[] fArr = new float[3];
             Color.colorToHSV(SkinCompatResources.c(getContext(), this.b), fArr);
-            setCardBackgroundColor(ColorStateList.valueOf(fArr[2] > 0.5f ? getResources().getColor(R.color.cardview_light_background) : getResources().getColor(R.color.cardview_dark_background)));
+            setCardBackgroundColor(ColorStateList.valueOf(fArr[2] > 0.5f ? getResources().getColor(skin.support.cardview.R.color.cardview_light_background) : getResources().getColor(skin.support.cardview.R.color.cardview_dark_background)));
         }
     }
 

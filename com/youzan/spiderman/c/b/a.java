@@ -7,16 +7,16 @@ public final class a {
     @SerializedName("sign_date")
 
     /* renamed from: a  reason: collision with root package name */
-    private long f41744a;
+    private long f28053a;
     @SerializedName("vaild_interval")
     private long b;
 
     public final long a() {
-        return this.f41744a;
+        return this.f28053a;
     }
 
     public final void a(long j) {
-        this.f41744a = 0L;
+        this.f28053a = 0L;
     }
 
     public final long b() {

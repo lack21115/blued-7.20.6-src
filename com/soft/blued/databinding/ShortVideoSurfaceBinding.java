@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ShortVideoSurfaceBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29589a;
+    private final FrameLayout f15899a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29589a;
+        return this.f15899a;
     }
 }

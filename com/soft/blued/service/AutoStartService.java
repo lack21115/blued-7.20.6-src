@@ -21,11 +21,11 @@ import com.soft.blued.utils.ServiceUtils;
 public class AutoStartService extends Service {
 
     /* renamed from: a  reason: collision with root package name */
-    private MyBinder f29762a;
+    private MyBinder f16072a;
     private MyConn b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IBinder f29763c;
+    private IBinder f16073c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/service/AutoStartService$MyBinder.class */
     static class MyBinder extends IMyAidlInterface.Stub {
@@ -46,7 +46,7 @@ public class AutoStartService extends Service {
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             Logger.a("AutoStartService", "AutoStartService onServiceConnected");
-            AutoStartService.this.f29763c = iBinder;
+            AutoStartService.this.f16073c = iBinder;
         }
 
         @Override // android.content.ServiceConnection
@@ -88,14 +88,14 @@ public class AutoStartService extends Service {
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
-        return this.f29762a;
+        return this.f16072a;
     }
 
     @Override // android.app.Service
     public void onCreate() {
         super.onCreate();
         Logger.a("AutoStartService", "AutoStartService.onCreate()");
-        this.f29762a = new MyBinder();
+        this.f16072a = new MyBinder();
         this.b = new MyConn();
         InitTaskUtil.setStartAutoStartService(false);
     }
@@ -104,10 +104,10 @@ public class AutoStartService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Logger.a("AutoStartService", "AutoStartService.onDestroy()");
-        if (this.f29763c != null) {
+        if (this.f16073c != null) {
             Logger.a("AutoStartService", "unbind remote service");
             unbindService(this.b);
-            this.f29763c = null;
+            this.f16073c = null;
         }
         if (UserInfo.getInstance().isLogin()) {
             a();

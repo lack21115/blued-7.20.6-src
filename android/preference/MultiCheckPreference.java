@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -8,7 +9,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.preference.Preference;
 import android.util.AttributeSet;
-import com.android.internal.R;
 import java.util.Arrays;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/MultiCheckPreference.class */
@@ -58,7 +58,7 @@ public class MultiCheckPreference extends DialogPreference {
     }
 
     public MultiCheckPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842897);
+        this(context, attributeSet, R.attr.dialogPreferenceStyle);
     }
 
     public MultiCheckPreference(Context context, AttributeSet attributeSet, int i) {
@@ -67,14 +67,14 @@ public class MultiCheckPreference extends DialogPreference {
 
     public MultiCheckPreference(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ListPreference, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.ListPreference, i, i2);
         this.mEntries = obtainStyledAttributes.getTextArray(0);
         if (this.mEntries != null) {
             setEntries(this.mEntries);
         }
         setEntryValuesCS(obtainStyledAttributes.getTextArray(1));
         obtainStyledAttributes.recycle();
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, R.styleable.Preference, 0, 0);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.Preference, 0, 0);
         this.mSummary = obtainStyledAttributes2.getString(7);
         obtainStyledAttributes2.recycle();
     }

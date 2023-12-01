@@ -45,7 +45,7 @@ public class ContainerUtils {
         int i = 0;
         for (K k : list) {
             if (i > 0) {
-                sb.append("&");
+                sb.append(FIELD_DELIMITER);
             }
             sb.append(k.toString());
             i++;
@@ -61,7 +61,7 @@ public class ContainerUtils {
         int i = 0;
         for (Map.Entry<K, V> entry : map.entrySet()) {
             if (i > 0) {
-                sb.append("&");
+                sb.append(FIELD_DELIMITER);
             }
             sb.append(entry.getKey().toString());
             sb.append("=");
@@ -79,7 +79,7 @@ public class ContainerUtils {
         int i = 0;
         for (K k : set) {
             if (i > 0) {
-                sb.append("&");
+                sb.append(FIELD_DELIMITER);
             }
             sb.append(k.toString());
             i++;

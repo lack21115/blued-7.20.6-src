@@ -18,11 +18,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class VerticalTextView extends AppCompatTextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f32836a;
+    private final int f19145a;
     private Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f32837c;
+    private int f19146c;
     private int d;
     private int e;
     private int f;
@@ -52,7 +52,7 @@ public final class VerticalTextView extends AppCompatTextView {
     public VerticalTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f32836a = 1;
+        this.f19145a = 1;
         Paint paint = new Paint();
         this.b = paint;
         this.g = 22;
@@ -96,22 +96,22 @@ public final class VerticalTextView extends AppCompatTextView {
 
     private final void a(Canvas canvas, String str) {
         this.d = 0;
-        this.f32837c = this.j / 2;
+        this.f19146c = this.j / 2;
         int i = 0;
         while (i < this.k) {
             char charAt = str.charAt(i);
             if (charAt == '\n') {
-                this.f32837c -= this.j;
+                this.f19146c -= this.j;
                 this.d = 0;
             } else {
                 int i2 = this.d + this.g;
                 this.d = i2;
                 if (i2 > this.f) {
-                    this.f32837c += this.j;
+                    this.f19146c += this.j;
                     i--;
                     this.d = 0;
                 } else {
-                    canvas.drawText(String.valueOf(charAt), this.f32837c, this.d, this.b);
+                    canvas.drawText(String.valueOf(charAt), this.f19146c, this.d, this.b);
                 }
             }
             i++;
@@ -123,7 +123,7 @@ public final class VerticalTextView extends AppCompatTextView {
         int i;
         float[] fArr;
         this.b.setTextSize(this.h);
-        Logger.c("VerticalTextView", Intrinsics.a("mFontSize :  ", (Object) Float.valueOf(this.h)));
+        Logger.c("VerticalTextView", Intrinsics.a("mFontSize :  ", Float.valueOf(this.h)));
         if (this.j == 0) {
             this.b.getTextWidths("正", new float[1]);
             this.j = (int) Math.ceil(fArr[0] * 1.1d);
@@ -154,8 +154,8 @@ public final class VerticalTextView extends AppCompatTextView {
             i = i2;
             i2 = i + 1;
         }
-        Logger.c("VerticalTextView", Intrinsics.a("mRealLine : ", (Object) Integer.valueOf(this.i)));
-        Logger.c("VerticalTextView", Intrinsics.a("mLineWidth : ", (Object) Integer.valueOf(this.j)));
+        Logger.c("VerticalTextView", Intrinsics.a("mRealLine : ", Integer.valueOf(this.i)));
+        Logger.c("VerticalTextView", Intrinsics.a("mLineWidth : ", Integer.valueOf(this.j)));
         int i5 = this.j * this.i;
         this.e = i5;
         measure(i5, getHeight());
@@ -166,9 +166,8 @@ public final class VerticalTextView extends AppCompatTextView {
         return this.e;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         Intrinsics.e(canvas, "canvas");
         super.onDraw(canvas);
         a(canvas, this.m);
@@ -187,7 +186,7 @@ public final class VerticalTextView extends AppCompatTextView {
             if (handler == null) {
                 return;
             }
-            handler.sendEmptyMessage(this.f32836a);
+            handler.sendEmptyMessage(this.f19145a);
         }
     }
 
@@ -199,10 +198,10 @@ public final class VerticalTextView extends AppCompatTextView {
         this.j = i;
     }
 
-    public final void setText(String text) {
-        Intrinsics.e(text, "text");
-        this.m = text;
-        this.k = text.length();
+    public final void setText(String str) {
+        Intrinsics.e(str, "text");
+        this.m = str;
+        this.k = str.length();
         if (this.f > 0) {
             getTextInfo();
         }

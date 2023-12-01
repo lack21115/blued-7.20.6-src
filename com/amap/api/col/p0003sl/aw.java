@@ -32,13 +32,9 @@ public final class aw extends OfflineMapCity implements bf, bw {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ca f4756a;
+    public final ca a;
     public final ca b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ca f4757c;
+    public final ca c;
     public final ca d;
     public final ca e;
     public final ca f;
@@ -57,34 +53,32 @@ public final class aw extends OfflineMapCity implements bf, bw {
     /* renamed from: com.amap.api.col.3sl.aw$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/aw$3.class */
     static final /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4760a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[bx.a.values().length];
-            f4760a = iArr;
+            a = iArr;
             try {
                 iArr[bx.a.amap_exception.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4760a[bx.a.file_io_exception.ordinal()] = 2;
+                a[bx.a.file_io_exception.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f4760a[bx.a.network_exception.ordinal()] = 3;
+                a[bx.a.network_exception.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
     }
 
     private aw(Context context, int i) {
-        this.f4756a = new cc(this);
+        this.a = new cc(this);
         this.b = new cj(this);
-        this.f4757c = new cf(this);
+        this.c = new cf(this);
         this.d = new ch(this);
         this.e = new ci(this);
         this.f = new cb(this);
@@ -118,9 +112,9 @@ public final class aw extends OfflineMapCity implements bf, bw {
 
     public aw(Parcel parcel) {
         super(parcel);
-        this.f4756a = new cc(this);
+        this.a = new cc(this);
         this.b = new cj(this);
-        this.f4757c = new cf(this);
+        this.c = new cf(this);
         this.d = new ch(this);
         this.e = new ci(this);
         this.f = new cb(this);
@@ -191,9 +185,9 @@ public final class aw extends OfflineMapCity implements bf, bw {
     }
 
     private void z() {
-        ax a2 = ax.a(this.m);
-        if (a2 != null) {
-            a2.a(this);
+        ax a = ax.a(this.m);
+        if (a != null) {
+            a.a(this);
         }
     }
 
@@ -205,7 +199,7 @@ public final class aw extends OfflineMapCity implements bf, bw {
         if (i == -1) {
             this.l = this.h;
         } else if (i == 0) {
-            this.l = this.f4757c;
+            this.l = this.c;
         } else if (i == 1) {
             this.l = this.e;
         } else if (i == 2) {
@@ -215,7 +209,7 @@ public final class aw extends OfflineMapCity implements bf, bw {
         } else if (i == 4) {
             this.l = this.f;
         } else if (i == 6) {
-            this.l = this.f4756a;
+            this.l = this.a;
         } else if (i != 7) {
             switch (i) {
                 case 101:
@@ -264,9 +258,9 @@ public final class aw extends OfflineMapCity implements bf, bw {
 
     @Override // com.amap.api.col.p0003sl.bx
     public final void a(bx.a aVar) {
-        int i = AnonymousClass3.f4760a[aVar.ordinal()];
+        int i = AnonymousClass3.a[aVar.ordinal()];
         int b = i != 1 ? i != 2 ? i != 3 ? 6 : this.i.b() : this.k.b() : this.j.b();
-        if (this.l.equals(this.f4757c) || this.l.equals(this.b)) {
+        if (this.l.equals(this.c) || this.l.equals(this.b)) {
             this.l.a(b);
         }
     }
@@ -323,9 +317,9 @@ public final class aw extends OfflineMapCity implements bf, bw {
     }
 
     public final void d() {
-        ax a2 = ax.a(this.m);
-        if (a2 != null) {
-            a2.c(this);
+        ax a = ax.a(this.m);
+        if (a != null) {
+            a.c(this);
         }
     }
 
@@ -335,9 +329,9 @@ public final class aw extends OfflineMapCity implements bf, bw {
     }
 
     public final void e() {
-        ax a2 = ax.a(this.m);
-        if (a2 != null) {
-            a2.e(this);
+        ax a = ax.a(this.m);
+        if (a != null) {
+            a.e(this);
             d();
         }
     }
@@ -346,7 +340,7 @@ public final class aw extends OfflineMapCity implements bf, bw {
         new StringBuilder("CityOperation current State==>").append(c().b());
         if (this.l.equals(this.d)) {
             this.l.d();
-        } else if (this.l.equals(this.f4757c)) {
+        } else if (this.l.equals(this.c)) {
             this.l.e();
         } else if (this.l.equals(this.g) || this.l.equals(this.h)) {
             z();
@@ -380,16 +374,16 @@ public final class aw extends OfflineMapCity implements bf, bw {
     }
 
     public final void k() {
-        ax a2 = ax.a(this.m);
-        if (a2 != null) {
-            a2.b(this);
+        ax a = ax.a(this.m);
+        if (a != null) {
+            a.b(this);
         }
     }
 
     public final void l() {
-        ax a2 = ax.a(this.m);
-        if (a2 != null) {
-            a2.d(this);
+        ax a = ax.a(this.m);
+        if (a != null) {
+            a.d(this);
         }
     }
 
@@ -402,7 +396,7 @@ public final class aw extends OfflineMapCity implements bf, bw {
 
     @Override // com.amap.api.col.p0003sl.bx
     public final void n() {
-        this.l.equals(this.f4757c);
+        this.l.equals(this.c);
         this.l.g();
     }
 
@@ -432,7 +426,7 @@ public final class aw extends OfflineMapCity implements bf, bw {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void s() {
-        String str = ax.f4761a;
+        String str = ax.a;
         String b = bu.b(getUrl());
         if (b != null) {
             this.o = str + b + ".zip.tmp";

@@ -7,14 +7,12 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/UserCardDialogFragment$setOnMedalItemClick$1.class */
 public final class UserCardDialogFragment$setOnMedalItemClick$1 implements PopAnchorBadge.DismissLisnter {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ UserCardDialogFragment f15289a;
+    final /* synthetic */ UserCardDialogFragment a;
 
     @Override // com.blued.android.module.live_china.view.PopAnchorBadge.DismissLisnter
     public void a() {
         UserCardDialogFragment.UserCardOnclickListner userCardOnclickListner;
-        userCardOnclickListner = this.f15289a.j;
+        userCardOnclickListner = this.a.j;
         if (userCardOnclickListner == null) {
             return;
         }
@@ -24,7 +22,7 @@ public final class UserCardDialogFragment$setOnMedalItemClick$1 implements PopAn
     @Override // com.blued.android.module.live_china.view.PopAnchorBadge.DismissLisnter
     public void b() {
         UserCardDialogFragment.UserCardOnclickListner userCardOnclickListner;
-        userCardOnclickListner = this.f15289a.j;
+        userCardOnclickListner = this.a.j;
         if (userCardOnclickListner == null) {
             return;
         }

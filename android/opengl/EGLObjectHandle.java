@@ -1,6 +1,5 @@
 package android.opengl;
 
-import android.widget.ExpandableListView;
 import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-9557208-dex2jar.jar:android/opengl/EGLObjectHandle.class */
@@ -19,7 +18,7 @@ public abstract class EGLObjectHandle {
 
     @Deprecated
     public int getHandle() {
-        if ((this.mHandle & ExpandableListView.PACKED_POSITION_VALUE_NULL) != this.mHandle) {
+        if ((this.mHandle & 4294967295L) != this.mHandle) {
             throw new UnsupportedOperationException();
         }
         return (int) this.mHandle;

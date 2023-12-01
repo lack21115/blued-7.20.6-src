@@ -9,11 +9,11 @@ import com.bumptech.glide.request.transition.Transition;
 public class DrawableCrossFadeTransition implements Transition<Drawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f21082a;
+    private final int f7476a;
     private final boolean b;
 
     public DrawableCrossFadeTransition(int i, boolean z) {
-        this.f21082a = i;
+        this.f7476a = i;
         this.b = z;
     }
 
@@ -26,7 +26,7 @@ public class DrawableCrossFadeTransition implements Transition<Drawable> {
         }
         TransitionDrawable transitionDrawable = new TransitionDrawable(new Drawable[]{drawable2, drawable});
         transitionDrawable.setCrossFadeEnabled(this.b);
-        transitionDrawable.startTransition(this.f21082a);
+        transitionDrawable.startTransition(this.f7476a);
         viewAdapter.b(transitionDrawable);
         return true;
     }

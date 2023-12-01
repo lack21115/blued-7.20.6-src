@@ -7,16 +7,12 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/wheel/widget/WheelRecycle.class */
 public class WheelRecycle {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<View> f10351a;
+    private List<View> a;
     private List<View> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WheelView f10352c;
+    private WheelView c;
 
     public WheelRecycle(WheelView wheelView) {
-        this.f10352c = wheelView;
+        this.c = wheelView;
     }
 
     private View a(List<View> list) {
@@ -48,7 +44,7 @@ public class WheelRecycle {
         /*
             r5 = this;
             r0 = r5
-            com.blued.android.framework.view.wheel.widget.WheelView r0 = r0.f10352c
+            com.blued.android.framework.view.wheel.widget.WheelView r0 = r0.c
             com.blued.android.framework.view.wheel.widget.adapters.WheelViewAdapter r0 = r0.getViewAdapter()
             int r0 = r0.a()
             r9 = r0
@@ -63,7 +59,7 @@ public class WheelRecycle {
             r0 = r7
             r8 = r0
             r0 = r5
-            com.blued.android.framework.view.wheel.widget.WheelView r0 = r0.f10352c
+            com.blued.android.framework.view.wheel.widget.WheelView r0 = r0.c
             boolean r0 = r0.c()
             if (r0 != 0) goto L34
             r0 = r5
@@ -87,9 +83,9 @@ public class WheelRecycle {
             r1 = r5
             r2 = r6
             r3 = r5
-            java.util.List<android.view.View> r3 = r3.f10351a
+            java.util.List<android.view.View> r3 = r3.a
             java.util.List r1 = r1.a(r2, r3)
-            r0.f10351a = r1
+            r0.a = r1
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.framework.view.wheel.widget.WheelRecycle.a(android.view.View, int):void");
@@ -122,7 +118,7 @@ public class WheelRecycle {
     }
 
     public View a() {
-        return a(this.f10351a);
+        return a(this.a);
     }
 
     public View b() {
@@ -130,7 +126,7 @@ public class WheelRecycle {
     }
 
     public void c() {
-        List<View> list = this.f10351a;
+        List<View> list = this.a;
         if (list != null) {
             list.clear();
         }

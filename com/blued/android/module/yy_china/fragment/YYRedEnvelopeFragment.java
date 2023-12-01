@@ -50,13 +50,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRedEnvelopeFragment.class */
 public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentYyRedEnvelopeLayoutBinding f17406a;
+    private FragmentYyRedEnvelopeLayoutBinding a;
     private PrizeAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private OpenHongbaoListener f17407c;
+    private OpenHongbaoListener c;
     private CountDownTimer d;
     private YYMsgRedEnvExtra e;
     private int f;
@@ -71,22 +67,18 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRedEnvelopeFragment$PrizeAdapter.class */
     public final class PrizeAdapter extends BaseQuickAdapter<YYRedEnvGoodsModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRedEnvelopeFragment f17408a;
+        final /* synthetic */ YYRedEnvelopeFragment a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f17409c;
+        private int c;
         private int d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public PrizeAdapter(YYRedEnvelopeFragment this$0) {
             super(R.layout.item_red_envelope_prize);
             Intrinsics.e(this$0, "this$0");
-            this.f17408a = this$0;
-            this.f17409c = DensityUtils.a(this.f17408a.getContext(), 5.0f);
-            this.d = DensityUtils.a(this.f17408a.getContext(), 15.0f);
+            this.a = this$0;
+            this.c = DensityUtils.a(this.a.getContext(), 5.0f);
+            this.d = DensityUtils.a(this.a.getContext(), 15.0f);
         }
 
         public final void a(int i) {
@@ -94,7 +86,6 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYRedEnvGoodsModel yYRedEnvGoodsModel) {
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.tv_prize_img);
@@ -107,10 +98,10 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
                 if (layoutParams == null) {
                     throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
                 }
-                RecyclerView.LayoutParams layoutParams2 = (RecyclerView.LayoutParams) layoutParams;
+                RecyclerView.LayoutParams layoutParams2 = layoutParams;
                 layoutParams2.width = -2;
-                layoutParams2.leftMargin = this.f17409c;
-                layoutParams2.rightMargin = this.f17409c;
+                layoutParams2.leftMargin = this.c;
+                layoutParams2.rightMargin = this.c;
                 if (textView != null) {
                     textView.setMaxWidth(this.b);
                 }
@@ -133,7 +124,7 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
             if (yYRedEnvGoodsModel == null) {
                 return;
             }
-            ImageLoader.a(this.f17408a.a(), yYRedEnvGoodsModel.icon).a(imageView);
+            ImageLoader.a(this.a.a(), yYRedEnvGoodsModel.icon).a(imageView);
             if (textView != null) {
                 textView.setText(yYRedEnvGoodsModel.name);
             }
@@ -148,7 +139,7 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
     }
 
     public YYRedEnvelopeFragment(YYMsgRedEnvExtra yYMsgRedEnvExtra, OpenHongbaoListener openHongbaoListener) {
-        this.f17407c = openHongbaoListener;
+        this.c = openHongbaoListener;
         this.e = yYMsgRedEnvExtra;
     }
 
@@ -156,27 +147,23 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
         final String string = getResources().getString(R.string.countdown_hongbao_string);
         Intrinsics.c(string, "resources.getString(R.st…countdown_hongbao_string)");
         CountDownTimer countDownTimer = new CountDownTimer(j, this, string) { // from class: com.blued.android.module.yy_china.fragment.YYRedEnvelopeFragment$startTimer$1
-
-            /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ long f17411a;
+            final /* synthetic */ long a;
             final /* synthetic */ YYRedEnvelopeFragment b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ String f17412c;
+            final /* synthetic */ String c;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(j, 1000L);
-                this.f17411a = j;
+                this.a = j;
                 this.b = this;
-                this.f17412c = string;
+                this.c = string;
             }
 
             @Override // android.os.CountDownTimer
             public void onFinish() {
                 FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding;
-                fragmentYyRedEnvelopeLayoutBinding = this.b.f17406a;
+                fragmentYyRedEnvelopeLayoutBinding = this.b.a;
                 TextView textView = fragmentYyRedEnvelopeLayoutBinding == null ? null : fragmentYyRedEnvelopeLayoutBinding.i;
                 if (textView == null) {
                     return;
@@ -190,13 +177,13 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
                 SimpleDateFormat simpleDateFormat = TimeAndDateUtils.k.get();
                 Intrinsics.a(simpleDateFormat);
                 String format = simpleDateFormat.format(Long.valueOf(j2));
-                fragmentYyRedEnvelopeLayoutBinding = this.b.f17406a;
+                fragmentYyRedEnvelopeLayoutBinding = this.b.a;
                 TextView textView = fragmentYyRedEnvelopeLayoutBinding == null ? null : fragmentYyRedEnvelopeLayoutBinding.i;
                 if (textView == null) {
                     return;
                 }
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-                String format2 = String.format(this.f17412c, Arrays.copyOf(new Object[]{format}, 1));
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+                String format2 = String.format(this.c, Arrays.copyOf(new Object[]{format}, 1));
                 Intrinsics.c(format2, "format(format, *args)");
                 textView.setText(format2);
             }
@@ -245,8 +232,8 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
         ImageView imageView;
         RecyclerView recyclerView;
         View view;
-        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding = this.f17406a;
-        if (fragmentYyRedEnvelopeLayoutBinding != null && (view = fragmentYyRedEnvelopeLayoutBinding.f16537a) != null) {
+        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding = this.a;
+        if (fragmentYyRedEnvelopeLayoutBinding != null && (view = fragmentYyRedEnvelopeLayoutBinding.a) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedEnvelopeFragment$Hco3vTq_C_x1UUBtxCXaIobhTVA
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -258,7 +245,7 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
         YYMsgRedEnvExtra yYMsgRedEnvExtra = this.e;
         if (yYMsgRedEnvExtra != null) {
             if (yYMsgRedEnvExtra.gift_list.size() >= 3) {
-                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding2 = this.f17406a;
+                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding2 = this.a;
                 ViewGroup.LayoutParams layoutParams = (fragmentYyRedEnvelopeLayoutBinding2 == null || (recyclerView = fragmentYyRedEnvelopeLayoutBinding2.g) == null) ? null : recyclerView.getLayoutParams();
                 if (layoutParams == null) {
                     throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
@@ -268,36 +255,35 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
                 if (prizeAdapter != null) {
                     prizeAdapter.a(0);
                 }
-                GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
-                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding3 = this.f17406a;
+                RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
+                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding3 = this.a;
                 RecyclerView recyclerView2 = fragmentYyRedEnvelopeLayoutBinding3 == null ? null : fragmentYyRedEnvelopeLayoutBinding3.g;
                 if (recyclerView2 != null) {
                     recyclerView2.setLayoutManager(gridLayoutManager);
                 }
-                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding4 = this.f17406a;
+                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding4 = this.a;
                 RecyclerView recyclerView3 = fragmentYyRedEnvelopeLayoutBinding4 == null ? null : fragmentYyRedEnvelopeLayoutBinding4.g;
                 if (recyclerView3 != null) {
                     recyclerView3.setAdapter(this.b);
                 }
                 gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.yy_china.fragment.YYRedEnvelopeFragment$initView$2$1
-                    @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
                     public int getSpanSize(int i) {
                         return i >= 3 ? 3 : 1;
                     }
                 });
             } else {
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+                RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                 linearLayoutManager.setOrientation(0);
                 PrizeAdapter prizeAdapter2 = this.b;
                 if (prizeAdapter2 != null) {
                     prizeAdapter2.a(DensityUtils.a(getContext(), 100.0f));
                 }
-                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding5 = this.f17406a;
+                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding5 = this.a;
                 RecyclerView recyclerView4 = fragmentYyRedEnvelopeLayoutBinding5 == null ? null : fragmentYyRedEnvelopeLayoutBinding5.g;
                 if (recyclerView4 != null) {
                     recyclerView4.setLayoutManager(linearLayoutManager);
                 }
-                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding6 = this.f17406a;
+                FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding6 = this.a;
                 RecyclerView recyclerView5 = fragmentYyRedEnvelopeLayoutBinding6 == null ? null : fragmentYyRedEnvelopeLayoutBinding6.g;
                 if (recyclerView5 != null) {
                     recyclerView5.setAdapter(this.b);
@@ -307,7 +293,7 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
                 this.f += StringUtils.a(yYRedEnvGoodsModel.beans, 0) * StringUtils.a(yYRedEnvGoodsModel.num, 0);
             }
         }
-        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding7 = this.f17406a;
+        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding7 = this.a;
         if (fragmentYyRedEnvelopeLayoutBinding7 != null && (imageView = fragmentYyRedEnvelopeLayoutBinding7.b) != null) {
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYRedEnvelopeFragment$s1doWcQ-QMHiokUwYAOC9-ndM6g
                 @Override // android.view.View.OnClickListener
@@ -317,7 +303,7 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
             });
         }
         i();
-        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding8 = this.f17406a;
+        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding8 = this.a;
         if (fragmentYyRedEnvelopeLayoutBinding8 == null || (shapeTextView = fragmentYyRedEnvelopeLayoutBinding8.h) == null) {
             return;
         }
@@ -336,29 +322,29 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
         }
         YYAudienceModel yYAudienceModel = yYMsgRedEnvExtra.user_info;
         if (yYAudienceModel != null) {
-            ImageWrapper a2 = ImageLoader.a(a(), yYAudienceModel.getAvatar());
-            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding = this.f17406a;
-            a2.a(fragmentYyRedEnvelopeLayoutBinding == null ? null : fragmentYyRedEnvelopeLayoutBinding.f16538c);
-            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding2 = this.f17406a;
+            ImageWrapper a = ImageLoader.a(a(), yYAudienceModel.getAvatar());
+            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding = this.a;
+            a.a(fragmentYyRedEnvelopeLayoutBinding == null ? null : fragmentYyRedEnvelopeLayoutBinding.c);
+            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding2 = this.a;
             TextView textView = fragmentYyRedEnvelopeLayoutBinding2 == null ? null : fragmentYyRedEnvelopeLayoutBinding2.j;
             if (textView != null) {
                 textView.setText(yYAudienceModel.getName());
             }
         }
-        long a3 = StringUtils.a(yYMsgRedEnvExtra.countdown_time, 0L);
-        if (a3 <= 0) {
-            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding3 = this.f17406a;
+        long a2 = StringUtils.a(yYMsgRedEnvExtra.countdown_time, 0L);
+        if (a2 <= 0) {
+            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding3 = this.a;
             TextView textView2 = fragmentYyRedEnvelopeLayoutBinding3 == null ? null : fragmentYyRedEnvelopeLayoutBinding3.i;
             if (textView2 != null) {
                 textView2.setText("时间到，可以开始抢红包啦");
             }
         } else {
-            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding4 = this.f17406a;
+            FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding4 = this.a;
             TextView textView3 = fragmentYyRedEnvelopeLayoutBinding4 == null ? null : fragmentYyRedEnvelopeLayoutBinding4.i;
             if (textView3 != null) {
                 textView3.setVisibility(0);
             }
-            a(a3);
+            a(a2);
         }
         PrizeAdapter prizeAdapter = this.b;
         if (prizeAdapter == null) {
@@ -376,28 +362,28 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
         if (yYMsgRedEnvExtra != null) {
             str2 = yYMsgRedEnvExtra.hongbao_id;
         }
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.c(str3, str2, str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYRedEnvOpenedModel, YYRedEnvOpenedExtra>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYRedEnvelopeFragment$openRedEnvelope$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.c(str3, str2, str, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<YYRedEnvOpenedModel, YYRedEnvOpenedExtra>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYRedEnvelopeFragment$openRedEnvelope$1
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str4, String str5) {
                 YYRedEnvOpenedExtra yYRedEnvOpenedExtra;
-                YYRedEnvOpenedError yYRedEnvOpenedError = (YYRedEnvOpenedError) AppInfo.f().fromJson(str5, (Class<Object>) YYRedEnvOpenedError.class);
+                YYRedEnvOpenedError yYRedEnvOpenedError = (YYRedEnvOpenedError) AppInfo.f().fromJson(str5, YYRedEnvOpenedError.class);
                 if (yYRedEnvOpenedError != null && (yYRedEnvOpenedExtra = yYRedEnvOpenedError.extra) != null) {
                     YYRedEnvelopeFragment yYRedEnvelopeFragment = YYRedEnvelopeFragment.this;
                     YYRoomModel b2 = YYRoomInfoManager.e().b();
                     if (b2 != null) {
                         b2.relationship = yYRedEnvOpenedExtra.is_followed;
                     }
-                    YYObserverManager a3 = YYObserverManager.a();
+                    YYObserverManager a2 = YYObserverManager.a();
                     YYRoomModel b3 = YYRoomInfoManager.e().b();
-                    a3.a(b3 == null ? null : b3.uid, yYRedEnvOpenedExtra.is_followed);
+                    a2.a(b3 == null ? null : b3.uid, yYRedEnvOpenedExtra.is_followed);
                     yYRedEnvelopeFragment.i();
                 }
                 return super.onUIFailure(i, str4, str5);
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:22:0x0073, code lost:
-                r0 = r0.f17407c;
+                r0 = r0.c;
              */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /*
@@ -498,7 +484,7 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
             this.g = ChatRoomProtos.Event.YY_ROOM_REDBAG_FOLLOW_GET_CLICK;
             charSequence = "关注房主并领取";
         }
-        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding = this.f17406a;
+        FragmentYyRedEnvelopeLayoutBinding fragmentYyRedEnvelopeLayoutBinding = this.a;
         ShapeTextView shapeTextView = fragmentYyRedEnvelopeLayoutBinding == null ? null : fragmentYyRedEnvelopeLayoutBinding.h;
         if (shapeTextView == null) {
             return;
@@ -515,24 +501,24 @@ public final class YYRedEnvelopeFragment extends BaseFullScreenDialog {
         countDownTimer.cancel();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_red_envelope_layout, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…_layout, container, true)");
-        this.f17406a = FragmentYyRedEnvelopeLayoutBinding.a(inflate);
+        this.a = FragmentYyRedEnvelopeLayoutBinding.a(inflate);
         f();
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         super.onDismiss(dialog);
         j();
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

@@ -76,7 +76,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return CompactHashMap.this.entrySetIterator();
         }
@@ -102,7 +102,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return CompactHashMap.this.size();
         }
@@ -178,7 +178,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             return CompactHashMap.this.containsKey(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             return CompactHashMap.this.keySetIterator();
         }
@@ -189,7 +189,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             return delegateOrNull != null ? delegateOrNull.keySet().remove(obj) : CompactHashMap.this.removeHelper(obj) != CompactHashMap.NOT_FOUND;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return CompactHashMap.this.size();
         }
@@ -257,7 +257,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
         ValuesView() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             CompactHashMap.this.clear();
         }
@@ -267,7 +267,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
             return CompactHashMap.this.valuesIterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return CompactHashMap.this.size();
         }

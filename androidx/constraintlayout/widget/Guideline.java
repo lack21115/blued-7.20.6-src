@@ -32,9 +32,8 @@ public class Guideline extends View {
     public void draw(Canvas canvas) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(0, 0);
     }
 

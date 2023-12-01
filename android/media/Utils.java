@@ -9,9 +9,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Vector;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/media/Utils.class */
-public class Utils {
+class Utils {
     private static final String TAG = "Utils";
 
     Utils() {

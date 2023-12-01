@@ -1,6 +1,5 @@
 package com.google.zxing.datamatrix.detector;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.ResultPoint;
 import com.google.zxing.common.BitMatrix;
@@ -46,7 +45,7 @@ public final class Detector {
         }
 
         public String toString() {
-            return this.from + BridgeUtil.SPLIT_MARK + this.to + '/' + this.transitions;
+            return this.from + "/" + this.to + '/' + this.transitions;
         }
     }
 

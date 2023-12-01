@@ -1,9 +1,6 @@
 package org.conscrypt;
 
-import androidx.exifinterface.media.ExifInterface;
-import com.kuaishou.weapon.p0.b;
-import com.tencent.cos.xml.crypto.COSKeyWrapScheme;
-import com.tencent.cos.xml.crypto.JceEncryptionConstants;
+import com.anythink.core.common.k.f;
 import java.security.Provider;
 
 /* loaded from: source-3503164-dex2jar.jar:org/conscrypt/OpenSSLProvider.class */
@@ -100,7 +97,7 @@ public final class OpenSSLProvider extends Provider {
         put("Alg.Alias.MessageDigest.SHA512", "SHA-512");
         put("Alg.Alias.MessageDigest.2.16.840.1.101.3.4.2.3", "SHA-512");
         put("MessageDigest.MD5", PREFIX + "OpenSSLMessageDigestJDK$MD5");
-        put("Alg.Alias.MessageDigest.1.2.840.113549.2.5", "MD5");
+        put("Alg.Alias.MessageDigest.1.2.840.113549.2.5", f.a);
         put("KeyGenerator.ARC4", PREFIX + "KeyGeneratorImpl$ARC4");
         put("Alg.Alias.KeyGenerator.RC4", "ARC4");
         put("Alg.Alias.KeyGenerator.1.2.840.113549.3.4", "ARC4");
@@ -231,7 +228,7 @@ public final class OpenSSLProvider extends Provider {
         putSignatureImplClass("SHA512withRSA/PSS", "OpenSSLSignature$SHA512RSAPSS");
         put("Alg.Alias.Signature.SHA512withRSAandMGF1", "SHA512withRSA/PSS");
         put("SecureRandom.SHA1PRNG", PREFIX + "OpenSSLRandom");
-        put("SecureRandom.SHA1PRNG ImplementedIn", ExifInterface.TAG_SOFTWARE);
+        put("SecureRandom.SHA1PRNG ImplementedIn", "Software");
         putRSACipherImplClass("RSA/ECB/NoPadding", "OpenSSLCipherRSA$Raw");
         put("Alg.Alias.Cipher.RSA/None/NoPadding", "RSA/ECB/NoPadding");
         putRSACipherImplClass("RSA/ECB/PKCS1Padding", "OpenSSLCipherRSA$PKCS1");
@@ -242,8 +239,8 @@ public final class OpenSSLProvider extends Provider {
         put("Alg.Alias.Cipher.RSA/None/OAEPWithSHA-1AndMGF1Padding", "RSA/ECB/OAEPWithSHA-1AndMGF1Padding");
         putRSACipherImplClass("RSA/ECB/OAEPWithSHA-224AndMGF1Padding", "OpenSSLCipherRSA$OAEP$SHA224");
         put("Alg.Alias.Cipher.RSA/None/OAEPWithSHA-224AndMGF1Padding", "RSA/ECB/OAEPWithSHA-224AndMGF1Padding");
-        putRSACipherImplClass(COSKeyWrapScheme.RSA_ECB_OAEPWithSHA256AndMGF1Padding, "OpenSSLCipherRSA$OAEP$SHA256");
-        put("Alg.Alias.Cipher.RSA/None/OAEPWithSHA-256AndMGF1Padding", COSKeyWrapScheme.RSA_ECB_OAEPWithSHA256AndMGF1Padding);
+        putRSACipherImplClass("RSA/ECB/OAEPWithSHA-256AndMGF1Padding", "OpenSSLCipherRSA$OAEP$SHA256");
+        put("Alg.Alias.Cipher.RSA/None/OAEPWithSHA-256AndMGF1Padding", "RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
         putRSACipherImplClass("RSA/ECB/OAEPWithSHA-384AndMGF1Padding", "OpenSSLCipherRSA$OAEP$SHA384");
         put("Alg.Alias.Cipher.RSA/None/OAEPWithSHA-384AndMGF1Padding", "RSA/ECB/OAEPWithSHA-384AndMGF1Padding");
         putRSACipherImplClass("RSA/ECB/OAEPWithSHA-512AndMGF1Padding", "OpenSSLCipherRSA$OAEP$SHA512");
@@ -251,9 +248,9 @@ public final class OpenSSLProvider extends Provider {
         putSymmetricCipherImplClass("AES/ECB/NoPadding", "OpenSSLEvpCipherAES$AES$ECB$NoPadding");
         putSymmetricCipherImplClass("AES/ECB/PKCS5Padding", "OpenSSLEvpCipherAES$AES$ECB$PKCS5Padding");
         put("Alg.Alias.Cipher.AES/ECB/PKCS7Padding", "AES/ECB/PKCS5Padding");
-        putSymmetricCipherImplClass(b.f23739a, "OpenSSLEvpCipherAES$AES$CBC$NoPadding");
-        putSymmetricCipherImplClass(JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD, "OpenSSLEvpCipherAES$AES$CBC$PKCS5Padding");
-        put("Alg.Alias.Cipher.AES/CBC/PKCS7Padding", JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD);
+        putSymmetricCipherImplClass("AES/CBC/NoPadding", "OpenSSLEvpCipherAES$AES$CBC$NoPadding");
+        putSymmetricCipherImplClass("AES/CBC/PKCS5Padding", "OpenSSLEvpCipherAES$AES$CBC$PKCS5Padding");
+        put("Alg.Alias.Cipher.AES/CBC/PKCS7Padding", "AES/CBC/PKCS5Padding");
         putSymmetricCipherImplClass("AES/CTR/NoPadding", "OpenSSLEvpCipherAES$AES$CTR");
         putSymmetricCipherImplClass("AES_128/ECB/NoPadding", "OpenSSLEvpCipherAES$AES_128$ECB$NoPadding");
         putSymmetricCipherImplClass("AES_128/ECB/PKCS5Padding", "OpenSSLEvpCipherAES$AES_128$ECB$PKCS5Padding");

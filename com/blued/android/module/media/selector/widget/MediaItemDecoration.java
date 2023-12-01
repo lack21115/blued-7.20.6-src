@@ -3,7 +3,6 @@ package com.blued.android.module.media.selector.widget;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.util.AttributeSet;
@@ -13,37 +12,33 @@ import com.blued.android.module.media.selector.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/widget/MediaItemDecoration.class */
 public class MediaItemDecoration extends RecyclerView.ItemDecoration {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f15613a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f15614c;
+    private int c;
     private boolean d;
     private int e;
     private ColorDrawable f;
 
     public MediaItemDecoration(Context context, AttributeSet attributeSet) {
-        this.f15613a = Color.GRAY;
+        this.a = -7829368;
         this.b = 1;
-        this.f15614c = 0;
+        this.c = 0;
         this.d = true;
         this.e = 1;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.media_divder);
-        this.f15613a = obtainStyledAttributes.getColor(R.styleable.media_divder_divider_color, this.f15613a);
+        this.a = obtainStyledAttributes.getColor(R.styleable.media_divder_divider_color, this.a);
         this.b = (int) obtainStyledAttributes.getDimension(R.styleable.media_divder_thickness, this.b);
-        this.f15614c = obtainStyledAttributes.getInt(R.styleable.media_divder_orientation, 0);
+        this.c = obtainStyledAttributes.getInt(R.styleable.media_divder_orientation, 0);
         this.d = obtainStyledAttributes.getBoolean(R.styleable.media_divder_draw_side, true);
         this.e = obtainStyledAttributes.getInt(R.styleable.media_divder_grid_col_num, 1);
-        this.f = new ColorDrawable(this.f15613a);
+        this.f = new ColorDrawable(this.a);
         obtainStyledAttributes.recycle();
     }
 
     private void a(Canvas canvas, RecyclerView recyclerView) {
         int childCount = recyclerView.getChildCount();
         View childAt = recyclerView.getChildAt(0);
-        int i = this.f15614c;
+        int i = this.c;
         if (i == 1) {
             int left = recyclerView.getLeft();
             int right = recyclerView.getRight();
@@ -131,9 +126,8 @@ public class MediaItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
     public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
-        int i = this.f15614c;
+        int i = this.c;
         if (i == 1) {
             int i2 = this.b;
             rect.set(0, i2 / 2, 0, i2 / 2);
@@ -146,10 +140,9 @@ public class MediaItemDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
     public void onDraw(Canvas canvas, RecyclerView recyclerView, RecyclerView.State state) {
         super.onDraw(canvas, recyclerView, state);
-        int i = this.f15614c;
+        int i = this.c;
         if (i == 0 || i == 1) {
             a(canvas, recyclerView);
         } else if (i == 2) {

@@ -13,6 +13,7 @@ import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.MediationInitCallback;
 import com.anythink.interstitial.unitgroup.api.CustomInterstitialAdapter;
 import com.anythink.interstitial.unitgroup.api.CustomInterstitialEventListener;
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.qq.e.ads.cfg.VideoOption;
 import com.qq.e.ads.interstitial2.UnifiedInterstitialAD;
 import com.qq.e.ads.interstitial2.UnifiedInterstitialADListener;
@@ -28,11 +29,11 @@ public class GDTATInterstitialAdapter extends CustomInterstitialAdapter implemen
     public static String TAG = GDTATInterstitialAdapter.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    UnifiedInterstitialAD f8938a;
+    UnifiedInterstitialAD f6098a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f8939c;
+    String f6099c;
     String d;
     int e = 0;
     String f;
@@ -59,15 +60,15 @@ public class GDTATInterstitialAdapter extends CustomInterstitialAdapter implemen
             if (GDTATInterstitialAdapter.this.mImpressListener != null) {
                 GDTATInterstitialAdapter.this.mImpressListener.onInterstitialAdClose();
             }
-            if (GDTATInterstitialAdapter.this.f8938a != null) {
-                GDTATInterstitialAdapter.this.f8938a.destroy();
+            if (GDTATInterstitialAdapter.this.f6098a != null) {
+                GDTATInterstitialAdapter.this.f6098a.destroy();
             }
         }
 
         @Override // com.qq.e.ads.interstitial2.UnifiedInterstitialADListener
         public final void onADExposure() {
             try {
-                GDTATInitManager.getInstance().a(GDTATInterstitialAdapter.this.getTrackingInfo().l(), new WeakReference(GDTATInterstitialAdapter.this.f8938a));
+                GDTATInitManager.getInstance().a(GDTATInterstitialAdapter.this.getTrackingInfo().l(), new WeakReference(GDTATInterstitialAdapter.this.f6098a));
             } catch (Throwable th) {
             }
             if (GDTATInterstitialAdapter.this.mImpressListener != null) {
@@ -85,8 +86,8 @@ public class GDTATInterstitialAdapter extends CustomInterstitialAdapter implemen
 
         @Override // com.qq.e.ads.interstitial2.UnifiedInterstitialADListener
         public final void onADReceive() {
-            if (GDTATInterstitialAdapter.this.f8938a != null && GDTATInterstitialAdapter.this.g) {
-                GDTATInterstitialAdapter.this.f8938a.setDownloadConfirmListener(new DownloadConfirmListener() { // from class: com.anythink.network.gdt.GDTATInterstitialAdapter.1.1
+            if (GDTATInterstitialAdapter.this.f6098a != null && GDTATInterstitialAdapter.this.g) {
+                GDTATInterstitialAdapter.this.f6098a.setDownloadConfirmListener(new DownloadConfirmListener() { // from class: com.anythink.network.gdt.GDTATInterstitialAdapter.1.1
                     @Override // com.qq.e.comm.compliance.DownloadConfirmListener
                     public final void onDownloadConfirm(Activity activity, int i, String str, DownloadConfirmCallBack downloadConfirmCallBack) {
                         if (GDTATInterstitialAdapter.this.mImpressListener != null) {
@@ -104,12 +105,12 @@ public class GDTATInterstitialAdapter extends CustomInterstitialAdapter implemen
                     GDTATInterstitialAdapter.this.mLoadListener.onAdDataLoaded();
                 }
             } else if (GDTATInterstitialAdapter.this.mBiddingListener != null) {
-                double ecpm = GDTATInterstitialAdapter.this.f8938a.getECPM();
-                GDTATBiddingNotice gDTATBiddingNotice = new GDTATBiddingNotice(GDTATInterstitialAdapter.this.f8938a);
+                double ecpm = GDTATInterstitialAdapter.this.f6098a.getECPM();
+                GDTATBiddingNotice gDTATBiddingNotice = new GDTATBiddingNotice(GDTATInterstitialAdapter.this.f6098a);
                 ATBiddingListener aTBiddingListener = GDTATInterstitialAdapter.this.mBiddingListener;
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), null);
+                aTBiddingListener.onC2SBiddingResultWithCache(ATBiddingResult.success(ecpm, sb.toString(), gDTATBiddingNotice, ATAdConst.CURRENCY.RMB_CENT), (BaseAd) null);
             }
         }
 
@@ -142,193 +143,183 @@ public class GDTATInterstitialAdapter extends CustomInterstitialAdapter implemen
         }
         AnonymousClass1 anonymousClass1 = new AnonymousClass1();
         if (TextUtils.isEmpty(this.d) || this.h) {
-            UnifiedInterstitialAD unifiedInterstitialAD = new UnifiedInterstitialAD((Activity) context, this.f8939c, anonymousClass1);
-            this.f8938a = unifiedInterstitialAD;
+            UnifiedInterstitialAD unifiedInterstitialAD = new UnifiedInterstitialAD((Activity) context, this.f6099c, anonymousClass1);
+            this.f6098a = unifiedInterstitialAD;
             GDTATInitManager.getInstance();
             unifiedInterstitialAD.setLoadAdParams(GDTATInitManager.a(map));
         } else {
-            this.f8938a = new UnifiedInterstitialAD((Activity) context, this.f8939c, anonymousClass1, null, this.d);
+            this.f6098a = new UnifiedInterstitialAD((Activity) context, this.f6099c, anonymousClass1, null, this.d);
         }
         int intFromMap = ATInitMediation.getIntFromMap(map, "video_muted", 0);
         int intFromMap2 = ATInitMediation.getIntFromMap(map, "video_autoplay", 1);
         int intFromMap3 = ATInitMediation.getIntFromMap(map, "video_duration", -1);
-        if (this.f8938a != null) {
+        if (this.f6098a != null) {
             VideoOption.Builder autoPlayMuted = new VideoOption.Builder().setAutoPlayMuted(intFromMap == 1);
             boolean z = false;
             if (intFromMap == 1) {
                 z = true;
             }
-            this.f8938a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
+            this.f6098a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
             if (intFromMap3 != -1) {
-                this.f8938a.setMaxVideoDuration(intFromMap3);
+                this.f6098a.setMaxVideoDuration(intFromMap3);
             }
         }
         if (TextUtils.equals("1", this.f)) {
-            this.f8938a.loadFullScreenAD();
+            this.f6098a.loadFullScreenAD();
         } else {
-            this.f8938a.loadAD();
+            this.f6098a.loadAD();
         }
     }
 
     private void a(Context context, Map<String, Object> map, Map<String, Object> map2) {
         this.f = ATInitMediation.getStringFromMap(map, "is_fullscreen", "0");
-        this.g = ATInitMediation.getBooleanFromMap(map2, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS, false);
+        this.g = ATInitMediation.getBooleanFromMap(map2, "ad_click_confirm_status", false);
         if (!(context instanceof Activity)) {
             notifyATLoadFail("", "GDT UnifiedInterstitial's context must be activity.");
             return;
         }
         AnonymousClass1 anonymousClass1 = new AnonymousClass1();
         if (TextUtils.isEmpty(this.d) || this.h) {
-            UnifiedInterstitialAD unifiedInterstitialAD = new UnifiedInterstitialAD((Activity) context, this.f8939c, anonymousClass1);
-            this.f8938a = unifiedInterstitialAD;
+            UnifiedInterstitialAD unifiedInterstitialAD = new UnifiedInterstitialAD((Activity) context, this.f6099c, anonymousClass1);
+            this.f6098a = unifiedInterstitialAD;
             GDTATInitManager.getInstance();
             unifiedInterstitialAD.setLoadAdParams(GDTATInitManager.a(map));
         } else {
-            this.f8938a = new UnifiedInterstitialAD((Activity) context, this.f8939c, anonymousClass1, null, this.d);
+            this.f6098a = new UnifiedInterstitialAD((Activity) context, this.f6099c, anonymousClass1, null, this.d);
         }
         int intFromMap = ATInitMediation.getIntFromMap(map, "video_muted", 0);
         int intFromMap2 = ATInitMediation.getIntFromMap(map, "video_autoplay", 1);
         int intFromMap3 = ATInitMediation.getIntFromMap(map, "video_duration", -1);
-        if (this.f8938a != null) {
+        if (this.f6098a != null) {
             VideoOption.Builder autoPlayMuted = new VideoOption.Builder().setAutoPlayMuted(intFromMap == 1);
             boolean z = false;
             if (intFromMap == 1) {
                 z = true;
             }
-            this.f8938a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
+            this.f6098a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
             if (intFromMap3 != -1) {
-                this.f8938a.setMaxVideoDuration(intFromMap3);
+                this.f6098a.setMaxVideoDuration(intFromMap3);
             }
         }
         if (TextUtils.equals("1", this.f)) {
-            this.f8938a.loadFullScreenAD();
+            this.f6098a.loadFullScreenAD();
         } else {
-            this.f8938a.loadAD();
+            this.f6098a.loadAD();
         }
     }
 
     static /* synthetic */ void a(GDTATInterstitialAdapter gDTATInterstitialAdapter, Context context, Map map, Map map2) {
         gDTATInterstitialAdapter.f = ATInitMediation.getStringFromMap(map, "is_fullscreen", "0");
-        gDTATInterstitialAdapter.g = ATInitMediation.getBooleanFromMap(map2, ATAdConst.KEY.AD_CLICK_CONFIRM_STATUS, false);
+        gDTATInterstitialAdapter.g = ATInitMediation.getBooleanFromMap(map2, "ad_click_confirm_status", false);
         if (!(context instanceof Activity)) {
             gDTATInterstitialAdapter.notifyATLoadFail("", "GDT UnifiedInterstitial's context must be activity.");
             return;
         }
         AnonymousClass1 anonymousClass1 = new AnonymousClass1();
         if (TextUtils.isEmpty(gDTATInterstitialAdapter.d) || gDTATInterstitialAdapter.h) {
-            UnifiedInterstitialAD unifiedInterstitialAD = new UnifiedInterstitialAD((Activity) context, gDTATInterstitialAdapter.f8939c, anonymousClass1);
-            gDTATInterstitialAdapter.f8938a = unifiedInterstitialAD;
+            UnifiedInterstitialAD unifiedInterstitialAD = new UnifiedInterstitialAD((Activity) context, gDTATInterstitialAdapter.f6099c, anonymousClass1);
+            gDTATInterstitialAdapter.f6098a = unifiedInterstitialAD;
             GDTATInitManager.getInstance();
             unifiedInterstitialAD.setLoadAdParams(GDTATInitManager.a(map));
         } else {
-            gDTATInterstitialAdapter.f8938a = new UnifiedInterstitialAD((Activity) context, gDTATInterstitialAdapter.f8939c, anonymousClass1, null, gDTATInterstitialAdapter.d);
+            gDTATInterstitialAdapter.f6098a = new UnifiedInterstitialAD((Activity) context, gDTATInterstitialAdapter.f6099c, anonymousClass1, null, gDTATInterstitialAdapter.d);
         }
         int intFromMap = ATInitMediation.getIntFromMap(map, "video_muted", 0);
         int intFromMap2 = ATInitMediation.getIntFromMap(map, "video_autoplay", 1);
         int intFromMap3 = ATInitMediation.getIntFromMap(map, "video_duration", -1);
-        if (gDTATInterstitialAdapter.f8938a != null) {
+        if (gDTATInterstitialAdapter.f6098a != null) {
             VideoOption.Builder autoPlayMuted = new VideoOption.Builder().setAutoPlayMuted(intFromMap == 1);
             boolean z = false;
             if (intFromMap == 1) {
                 z = true;
             }
-            gDTATInterstitialAdapter.f8938a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
+            gDTATInterstitialAdapter.f6098a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
             if (intFromMap3 != -1) {
-                gDTATInterstitialAdapter.f8938a.setMaxVideoDuration(intFromMap3);
+                gDTATInterstitialAdapter.f6098a.setMaxVideoDuration(intFromMap3);
             }
         }
         if (TextUtils.equals("1", gDTATInterstitialAdapter.f)) {
-            gDTATInterstitialAdapter.f8938a.loadFullScreenAD();
+            gDTATInterstitialAdapter.f6098a.loadFullScreenAD();
         } else {
-            gDTATInterstitialAdapter.f8938a.loadAD();
+            gDTATInterstitialAdapter.f6098a.loadAD();
         }
     }
 
     private void a(Map<String, Object> map) {
         this.b = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f8939c = ATInitMediation.getStringFromMap(map, "unit_id");
+        this.f6099c = ATInitMediation.getStringFromMap(map, "unit_id");
         this.e = ATInitMediation.getIntFromMap(map, "unit_version");
-        this.d = ATInitMediation.getStringFromMap(map, "payload");
+        this.d = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
     }
 
     private void b(Map<String, Object> map) {
         int intFromMap = ATInitMediation.getIntFromMap(map, "video_muted", 0);
         int intFromMap2 = ATInitMediation.getIntFromMap(map, "video_autoplay", 1);
         int intFromMap3 = ATInitMediation.getIntFromMap(map, "video_duration", -1);
-        if (this.f8938a != null) {
+        if (this.f6098a != null) {
             VideoOption.Builder autoPlayMuted = new VideoOption.Builder().setAutoPlayMuted(intFromMap == 1);
             boolean z = false;
             if (intFromMap == 1) {
                 z = true;
             }
-            this.f8938a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
+            this.f6098a.setVideoOption(autoPlayMuted.setDetailPageMuted(z).setAutoPlayPolicy(intFromMap2).build());
             if (intFromMap3 != -1) {
-                this.f8938a.setMaxVideoDuration(intFromMap3);
+                this.f6098a.setMaxVideoDuration(intFromMap3);
             }
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
-        UnifiedInterstitialAD unifiedInterstitialAD = this.f8938a;
+        UnifiedInterstitialAD unifiedInterstitialAD = this.f6098a;
         if (unifiedInterstitialAD != null) {
             unifiedInterstitialAD.setMediaListener(null);
-            this.f8938a.destroy();
-            this.f8938a = null;
+            this.f6098a.destroy();
+            this.f6098a = null;
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void getBidRequestInfo(Context context, Map<String, Object> map, Map<String, Object> map2, ATBidRequestInfoListener aTBidRequestInfoListener) {
-        this.f8939c = ATInitMediation.getStringFromMap(map, "unit_id");
+        this.f6099c = ATInitMediation.getStringFromMap(map, "unit_id");
         GDTATInitManager.getInstance().a(context, map, map2, aTBidRequestInfoListener);
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public ATInitMediation getMediationInitManager() {
         return GDTATInitManager.getInstance();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return GDTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f8939c;
+        return this.f6099c;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return GDTATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
-        UnifiedInterstitialAD unifiedInterstitialAD = this.f8938a;
+        UnifiedInterstitialAD unifiedInterstitialAD = this.f6098a;
         if (unifiedInterstitialAD != null) {
             return unifiedInterstitialAD.isValid();
         }
         return false;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         this.b = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f8939c = ATInitMediation.getStringFromMap(map, "unit_id");
+        this.f6099c = ATInitMediation.getStringFromMap(map, "unit_id");
         this.e = ATInitMediation.getIntFromMap(map, "unit_version");
-        this.d = ATInitMediation.getStringFromMap(map, "payload");
-        if (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f8939c)) {
+        this.d = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
+        if (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f6099c)) {
             notifyATLoadFail("", "GDT appid or unitId is empty.");
         } else {
             GDTATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.gdt.GDTATInterstitialAdapter.2
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     GDTATInterstitialAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     if (GDTATInterstitialAdapter.this.getMixedFormatAdType() == 0) {
                         GDTATInterstitialAdapter.this.thirdPartyLoad(new GDTATAdapter(), context, map, map2);
@@ -391,7 +382,7 @@ public class GDTATInterstitialAdapter extends CustomInterstitialAdapter implemen
 
     @Override // com.anythink.interstitial.unitgroup.api.CustomInterstitialAdapter
     public void show(Activity activity) {
-        UnifiedInterstitialAD unifiedInterstitialAD = this.f8938a;
+        UnifiedInterstitialAD unifiedInterstitialAD = this.f6098a;
         if (unifiedInterstitialAD != null) {
             unifiedInterstitialAD.setMediaListener(this);
             if (TextUtils.equals("1", this.f)) {
@@ -399,20 +390,19 @@ public class GDTATInterstitialAdapter extends CustomInterstitialAdapter implemen
                     Log.e(TAG, "Gdt (Full Screen) show fail: context need be Activity");
                     return;
                 }
-                GDTATInitManager.getInstance().a(this.f8939c, this.f8938a);
-                this.f8938a.showFullScreenAD(activity);
+                GDTATInitManager.getInstance().a(this.f6099c, this.f6098a);
+                this.f6098a.showFullScreenAD(activity);
                 return;
             }
-            GDTATInitManager.getInstance().a(this.f8939c, this.f8938a);
+            GDTATInitManager.getInstance().a(this.f6099c, this.f6098a);
             if (activity != null) {
-                this.f8938a.show(activity);
+                this.f6098a.show(activity);
             } else {
-                this.f8938a.show();
+                this.f6098a.show();
             }
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.h = true;
         loadCustomNetworkAd(context, map, map2);

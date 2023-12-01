@@ -44,7 +44,7 @@ public abstract class SDKManager {
         AppUtils.isFirstLogin(context);
         a2.getClass();
         a.b = str;
-        a.f28079c = null;
+        a.f14391c = null;
     }
 
     public static void init(Context context, String str, String str2) {
@@ -53,7 +53,7 @@ public abstract class SDKManager {
         AppUtils.isFirstLogin(context);
         a2.getClass();
         a.b = str2;
-        a.f28079c = str;
+        a.f14391c = str;
     }
 
     public static boolean isClosePermission() {
@@ -70,7 +70,7 @@ public abstract class SDKManager {
 
     public static void releaseConnect(Context context) {
         ConnectivityManager.NetworkCallback networkCallback;
-        String str = com.sdk.tencent.s.a.f28077a;
+        String str = com.sdk.tencent.s.a.f14389a;
         com.sdk.tencent.a.a aVar = new com.sdk.tencent.a.a();
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         aVar.b = connectivityManager;

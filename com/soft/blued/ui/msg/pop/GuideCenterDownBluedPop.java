@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg.pop;
 
 import android.content.Context;
+import android.provider.Downloads;
 import android.widget.TextView;
 import com.blued.android.framework.ui.xpop.core.AttachPopupView;
 import com.soft.blued.R;
@@ -13,14 +14,13 @@ public final class GuideCenterDownBluedPop extends AttachPopupView {
     private final String t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public GuideCenterDownBluedPop(Context context, String hint) {
+    public GuideCenterDownBluedPop(Context context, String str) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(hint, "hint");
-        this.t = hint;
+        Intrinsics.e(str, Downloads.Impl.COLUMN_FILE_NAME_HINT);
+        this.t = str;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.AttachPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         ((TextView) findViewById(2131371675)).setText(this.t);
@@ -30,7 +30,6 @@ public final class GuideCenterDownBluedPop extends AttachPopupView {
         return this.t;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_guide_group_base;
     }

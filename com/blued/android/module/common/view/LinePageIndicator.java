@@ -20,13 +20,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/LinePageIndicator.class */
 public class LinePageIndicator extends View implements PageIndicator {
-
-    /* renamed from: a  reason: collision with root package name */
-    RectF f10996a;
+    RectF a;
     private final Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Paint f10997c;
+    private final Paint c;
     private final Paint d;
     private ViewPager e;
     private ViewPager.OnPageChangeListener f;
@@ -59,13 +55,11 @@ public class LinePageIndicator extends View implements PageIndicator {
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        int f10998a;
+        int a;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f10998a = parcel.readInt();
+            this.a = parcel.readInt();
         }
 
         public SavedState(Parcelable parcelable) {
@@ -75,7 +69,7 @@ public class LinePageIndicator extends View implements PageIndicator {
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f10998a);
+            parcel.writeInt(this.a);
         }
     }
 
@@ -90,11 +84,11 @@ public class LinePageIndicator extends View implements PageIndicator {
     public LinePageIndicator(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = new Paint(1);
-        this.f10997c = new Paint(1);
+        this.c = new Paint(1);
         this.d = new Paint(1);
         this.o = -1.0f;
         this.p = -1;
-        this.f10996a = new RectF();
+        this.a = new RectF();
         if (isInEditMode()) {
             return;
         }
@@ -113,7 +107,7 @@ public class LinePageIndicator extends View implements PageIndicator {
         this.j = obtainStyledAttributes.getDimension(R.styleable.LinePageIndicator_gapWidth, dimension2);
         setStrokeWidth(obtainStyledAttributes.getDimension(R.styleable.LinePageIndicator_lineStrokeWidth, dimension3));
         this.b.setColor(obtainStyledAttributes.getColor(R.styleable.LinePageIndicator_lineUnselectedColor, color2));
-        this.f10997c.setColor(obtainStyledAttributes.getColor(R.styleable.LinePageIndicator_lineSelectedColor, color));
+        this.c.setColor(obtainStyledAttributes.getColor(R.styleable.LinePageIndicator_lineSelectedColor, color));
         this.d.setStyle(Paint.Style.FILL);
         this.d.setColor(obtainStyledAttributes.getColor(R.styleable.LinePageIndicator_lineUnselectedColor, color2));
         this.k = obtainStyledAttributes.getDimension(R.styleable.LinePageIndicator_selectedLineWidth, this.i);
@@ -151,7 +145,7 @@ public class LinePageIndicator extends View implements PageIndicator {
         if (mode == 1073741824) {
             strokeWidth = size;
         } else {
-            strokeWidth = this.f10997c.getStrokeWidth() + getPaddingTop() + getPaddingBottom();
+            strokeWidth = this.c.getStrokeWidth() + getPaddingTop() + getPaddingBottom();
             if (mode == Integer.MIN_VALUE) {
                 strokeWidth = Math.min(strokeWidth, size);
             }
@@ -173,11 +167,11 @@ public class LinePageIndicator extends View implements PageIndicator {
     }
 
     public int getSelectedColor() {
-        return this.f10997c.getColor();
+        return this.c.getColor();
     }
 
     public float getStrokeWidth() {
-        return this.f10997c.getStrokeWidth();
+        return this.c.getStrokeWidth();
     }
 
     public int getUnselectedColor() {
@@ -222,18 +216,18 @@ public class LinePageIndicator extends View implements PageIndicator {
             if (i2 == this.g) {
                 f9 = this.k - f8;
             }
-            RectF rectF = this.f10996a;
+            RectF rectF = this.a;
             float f10 = this.m;
             rectF.set(f7, height - (f10 / 2.0f), f7 + f8 + f9, (f10 / 2.0f) + height);
             if (i2 == this.g) {
-                RectF rectF2 = this.f10996a;
+                RectF rectF2 = this.a;
                 float f11 = this.l;
-                canvas.drawRoundRect(rectF2, f11, f11, this.f10997c);
+                canvas.drawRoundRect(rectF2, f11, f11, this.c);
             } else if (Math.abs(this.m - (this.l * 2.0f)) < 0.4f || this.r) {
                 float f12 = this.l;
                 canvas.drawCircle(f7 + f12, height, f12, this.d);
             } else {
-                RectF rectF3 = this.f10996a;
+                RectF rectF3 = this.a;
                 float f13 = this.l;
                 canvas.drawRoundRect(rectF3, f13, f13, this.b);
             }
@@ -247,7 +241,6 @@ public class LinePageIndicator extends View implements PageIndicator {
         setMeasuredDimension(a(i), b(i2));
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageScrollStateChanged(int i) {
         ViewPager.OnPageChangeListener onPageChangeListener = this.f;
         if (onPageChangeListener != null) {
@@ -255,7 +248,6 @@ public class LinePageIndicator extends View implements PageIndicator {
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageScrolled(int i, float f, int i2) {
         ViewPager.OnPageChangeListener onPageChangeListener = this.f;
         if (onPageChangeListener != null) {
@@ -263,7 +255,6 @@ public class LinePageIndicator extends View implements PageIndicator {
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageSelected(int i) {
         this.g = i;
         invalidate();
@@ -277,14 +268,14 @@ public class LinePageIndicator extends View implements PageIndicator {
     public void onRestoreInstanceState(Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        this.g = savedState.f10998a;
+        this.g = savedState.a;
         requestLayout();
     }
 
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f10998a = this.g;
+        savedState.a = this.g;
         return savedState;
     }
 
@@ -403,12 +394,12 @@ public class LinePageIndicator extends View implements PageIndicator {
     }
 
     public void setSelectedColor(int i) {
-        this.f10997c.setColor(i);
+        this.c.setColor(i);
         invalidate();
     }
 
     public void setStrokeWidth(float f) {
-        this.f10997c.setStrokeWidth(f);
+        this.c.setStrokeWidth(f);
         this.b.setStrokeWidth(f);
         invalidate();
     }
@@ -429,7 +420,7 @@ public class LinePageIndicator extends View implements PageIndicator {
             return;
         }
         if (viewPager2 != null) {
-            viewPager2.setOnPageChangeListener(null);
+            viewPager2.setOnPageChangeListener((ViewPager.OnPageChangeListener) null);
         }
         if (viewPager.getAdapter() == null) {
             throw new IllegalStateException("ViewPager does not have adapter instance.");

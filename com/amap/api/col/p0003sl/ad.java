@@ -12,13 +12,9 @@ import com.autonavi.base.amap.api.mapcore.IAMapDelegate;
 /* renamed from: com.amap.api.col.3sl.ad  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ad.class */
 public final class ad implements SensorEventListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SensorManager f4732a;
+    private SensorManager a;
     private Sensor b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Sensor f4733c;
+    private Sensor c;
     private Sensor d;
     private Context e;
     private IAMapDelegate f;
@@ -35,13 +31,13 @@ public final class ad implements SensorEventListener {
         this.f = iAMapDelegate;
         try {
             SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
-            this.f4732a = sensorManager;
+            this.a = sensorManager;
             if (sensorManager != null && c()) {
-                this.b = this.f4732a.getDefaultSensor(3);
+                this.b = this.a.getDefaultSensor(3);
                 return;
             }
-            this.f4733c = this.f4732a.getDefaultSensor(1);
-            this.d = this.f4732a.getDefaultSensor(2);
+            this.c = this.a.getDefaultSensor(1);
+            this.d = this.a.getDefaultSensor(2);
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -63,7 +59,7 @@ public final class ad implements SensorEventListener {
 
     private static int a(Context context) {
         WindowManager windowManager;
-        if (context == null || (windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE)) == null) {
+        if (context == null || (windowManager = (WindowManager) context.getSystemService("window")) == null) {
             return 0;
         }
         try {
@@ -82,13 +78,13 @@ public final class ad implements SensorEventListener {
 
     private float b(float f) {
         float f2;
-        float a2 = (f + a(this.e)) % 360.0f;
-        if (a2 > 180.0f) {
-            f2 = a2 - 360.0f;
+        float a = (f + a(this.e)) % 360.0f;
+        if (a > 180.0f) {
+            f2 = a - 360.0f;
         } else {
-            f2 = a2;
-            if (a2 < -180.0f) {
-                f2 = a2 + 360.0f;
+            f2 = a;
+            if (a < -180.0f) {
+                f2 = a + 360.0f;
             }
         }
         float f3 = f2;
@@ -115,7 +111,7 @@ public final class ad implements SensorEventListener {
     }
 
     private boolean c() {
-        SensorManager sensorManager = this.f4732a;
+        SensorManager sensorManager = this.a;
         if (sensorManager == null) {
             return false;
         }
@@ -132,16 +128,16 @@ public final class ad implements SensorEventListener {
     public final void a() {
         Sensor sensor;
         Sensor sensor2;
-        SensorManager sensorManager = this.f4732a;
+        SensorManager sensorManager = this.a;
         if (sensorManager != null && (sensor2 = this.b) != null) {
             sensorManager.registerListener(this, sensor2, 3);
         }
-        SensorManager sensorManager2 = this.f4732a;
-        if (sensorManager2 == null || (sensor = this.f4733c) == null || this.d == null) {
+        SensorManager sensorManager2 = this.a;
+        if (sensorManager2 == null || (sensor = this.c) == null || this.d == null) {
             return;
         }
         sensorManager2.registerListener(this, sensor, 3);
-        this.f4732a.registerListener(this, this.d, 3);
+        this.a.registerListener(this, this.d, 3);
     }
 
     public final void a(Marker marker) {
@@ -155,16 +151,16 @@ public final class ad implements SensorEventListener {
     public final void b() {
         Sensor sensor;
         Sensor sensor2;
-        SensorManager sensorManager = this.f4732a;
+        SensorManager sensorManager = this.a;
         if (sensorManager != null && (sensor2 = this.b) != null) {
             sensorManager.unregisterListener(this, sensor2);
         }
-        SensorManager sensorManager2 = this.f4732a;
-        if (sensorManager2 == null || (sensor = this.f4733c) == null || this.d == null) {
+        SensorManager sensorManager2 = this.a;
+        if (sensorManager2 == null || (sensor = this.c) == null || this.d == null) {
             return;
         }
         sensorManager2.unregisterListener(this, sensor);
-        this.f4732a.unregisterListener(this, this.d);
+        this.a.unregisterListener(this, this.d);
     }
 
     @Override // android.hardware.SensorEventListener
@@ -178,12 +174,12 @@ public final class ad implements SensorEventListener {
                 int type = sensorEvent.sensor.getType();
                 if (type == 3) {
                     float f = sensorEvent.values[0];
-                    float a2 = a(f);
+                    float a = a(f);
                     if (Math.abs(this.h - f) < 3.0f) {
                         return;
                     }
-                    this.h = a2;
-                    c(a2);
+                    this.h = a;
+                    c(a);
                     return;
                 }
                 if (type == 1) {
@@ -191,12 +187,12 @@ public final class ad implements SensorEventListener {
                 } else if (type == 2) {
                     this.j = (float[]) sensorEvent.values.clone();
                 }
-                float a3 = a(this.i, this.j);
-                if (Math.abs(this.h - a3) < 3.0f) {
+                float a2 = a(this.i, this.j);
+                if (Math.abs(this.h - a2) < 3.0f) {
                     return;
                 }
-                this.h = a3;
-                c(a3);
+                this.h = a2;
+                c(a2);
             }
         } catch (Throwable th) {
             th.printStackTrace();

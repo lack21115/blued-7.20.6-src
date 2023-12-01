@@ -18,13 +18,9 @@ import com.blued.android.module.common.model.LiveFansLevelModel;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/LiveFansLevelView.class */
 public class LiveFansLevelView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f10999a;
+    private View a;
     private ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f11000c;
+    private ImageView c;
     private TextView d;
     private TextView e;
     private int f;
@@ -70,9 +66,9 @@ public class LiveFansLevelView extends FrameLayout {
 
     private void a() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.live_fans_heart_level_badge, this);
-        this.f10999a = inflate.findViewById(R.id.ll_join);
+        this.a = inflate.findViewById(R.id.ll_join);
         this.b = (ShapeLinearLayout) inflate.findViewById(R.id.ll_level);
-        this.f11000c = (ImageView) inflate.findViewById(R.id.iv_heart);
+        this.c = (ImageView) inflate.findViewById(R.id.iv_heart);
         this.d = (TextView) inflate.findViewById(R.id.tv_level_num);
         this.e = (TextView) inflate.findViewById(R.id.tv_fans_name);
     }
@@ -96,22 +92,22 @@ public class LiveFansLevelView extends FrameLayout {
             this.g = str;
         }
         if (this.h == 0) {
-            this.f10999a.setVisibility(0);
+            this.a.setVisibility(0);
             this.b.setVisibility(8);
             b();
             return;
         }
-        this.f10999a.setVisibility(8);
+        this.a.setVisibility(8);
         this.b.setVisibility(0);
         ShapeModel shapeModel = new ShapeModel();
         if (i3 == 1) {
             this.d.setTextColor(AppInfo.d().getResources().getColor(R.color.syc_dark_E07F00));
-            this.f11000c.setImageResource(R.drawable.live_fans_heart_level_badge_heart);
+            this.c.setImageResource(R.drawable.live_fans_heart_level_badge_heart);
             shapeModel.k = BluedSkinUtils.a(getContext(), R.color.syc_dark_D6FFB928);
             shapeModel.n = BluedSkinUtils.a(getContext(), R.color.syc_dark_FFA100);
         } else if (i3 == 2) {
             this.d.setTextColor(AppInfo.d().getResources().getColor(R.color.syc_dark_777777));
-            this.f11000c.setImageResource(R.drawable.live_fans_heart_level_badge_heart_grey);
+            this.c.setImageResource(R.drawable.live_fans_heart_level_badge_heart_grey);
             shapeModel.k = BluedSkinUtils.a(getContext(), R.color.syc_dark_D6C3C3C3);
             shapeModel.n = BluedSkinUtils.a(getContext(), R.color.syc_dark_B2B2B2);
         }

@@ -25,8 +25,8 @@ public class BluedPay {
 
     public static boolean pay(Context context, String str, String str2, String str3, int i) {
         Intent intent = new Intent();
-        intent.setAction(f.f18660c);
-        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.setAction(f.c);
+        intent.addCategory("android.intent.category.DEFAULT");
         intent.setPackage("com.soft.blued");
         intent.putExtra("app_key", str);
         intent.putExtra("pkg_name", context.getPackageName());

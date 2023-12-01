@@ -5,9 +5,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/scheduling/NonBlockingContext.class */
 public final class NonBlockingContext implements TaskContext {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final NonBlockingContext f43584a = new NonBlockingContext();
+    public static final NonBlockingContext a = new NonBlockingContext();
     private static final int b = 0;
 
     private NonBlockingContext() {

@@ -17,13 +17,9 @@ import com.tencent.rtmp.TXLivePlayer;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/live/view/BLVideoViewTX.class */
 public class BLVideoViewTX extends AbsVideoView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15635a = BLVideoViewTX.class.getSimpleName();
+    private static final String a = BLVideoViewTX.class.getSimpleName();
     private SurfaceView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Surface f15636c;
+    private Surface c;
     private TXLivePlayer d;
     private int e;
     private String f;
@@ -38,44 +34,40 @@ public class BLVideoViewTX extends AbsVideoView {
         super(context, attributeSet);
         this.e = 1;
         this.k = new SurfaceHolder.Callback() { // from class: com.blued.android.module.player.live.view.BLVideoViewTX.1
-
-            /* renamed from: a  reason: collision with root package name */
-            int f15637a;
+            int a;
             int b;
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
-                String str = BLVideoViewTX.f15635a;
+                String str = BLVideoViewTX.a;
                 Log.c(str, "surfaceChanged mSurfaceHeight" + BLVideoViewTX.this.h + "mSurfaceWidth " + BLVideoViewTX.this.g);
-                if (this.b == i3 && this.f15637a == i2) {
+                if (this.b == i3 && this.a == i2) {
                     return;
                 }
                 BLVideoViewTX.this.d.setSurfaceSize(BLVideoViewTX.this.g, BLVideoViewTX.this.h);
-                BLVideoViewTX.this.d.setSurface(BLVideoViewTX.this.f15636c);
+                BLVideoViewTX.this.d.setSurface(BLVideoViewTX.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
-                BLVideoViewTX.this.f15636c = surfaceHolder.getSurface();
-                this.f15637a = BLVideoViewTX.this.g;
+                BLVideoViewTX.this.c = surfaceHolder.getSurface();
+                this.a = BLVideoViewTX.this.g;
                 this.b = BLVideoViewTX.this.h;
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-                if (BLVideoViewTX.this.f15636c != null) {
-                    BLVideoViewTX.this.f15636c.release();
+                if (BLVideoViewTX.this.c != null) {
+                    BLVideoViewTX.this.c.release();
                 }
             }
         };
         this.l = new ITXLivePlayListener() { // from class: com.blued.android.module.player.live.view.BLVideoViewTX.2
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             public void onNetStatus(Bundle bundle) {
             }
 
             /* JADX WARN: Removed duplicated region for block: B:21:0x00ed  */
             /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -95,42 +87,38 @@ public class BLVideoViewTX extends AbsVideoView {
         super(context, attributeSet, i);
         this.e = 1;
         this.k = new SurfaceHolder.Callback() { // from class: com.blued.android.module.player.live.view.BLVideoViewTX.1
-
-            /* renamed from: a  reason: collision with root package name */
-            int f15637a;
+            int a;
             int b;
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceChanged(SurfaceHolder surfaceHolder, int i2, int i22, int i3) {
-                String str = BLVideoViewTX.f15635a;
+                String str = BLVideoViewTX.a;
                 Log.c(str, "surfaceChanged mSurfaceHeight" + BLVideoViewTX.this.h + "mSurfaceWidth " + BLVideoViewTX.this.g);
-                if (this.b == i3 && this.f15637a == i22) {
+                if (this.b == i3 && this.a == i22) {
                     return;
                 }
                 BLVideoViewTX.this.d.setSurfaceSize(BLVideoViewTX.this.g, BLVideoViewTX.this.h);
-                BLVideoViewTX.this.d.setSurface(BLVideoViewTX.this.f15636c);
+                BLVideoViewTX.this.d.setSurface(BLVideoViewTX.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
-                BLVideoViewTX.this.f15636c = surfaceHolder.getSurface();
-                this.f15637a = BLVideoViewTX.this.g;
+                BLVideoViewTX.this.c = surfaceHolder.getSurface();
+                this.a = BLVideoViewTX.this.g;
                 this.b = BLVideoViewTX.this.h;
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-                if (BLVideoViewTX.this.f15636c != null) {
-                    BLVideoViewTX.this.f15636c.release();
+                if (BLVideoViewTX.this.c != null) {
+                    BLVideoViewTX.this.c.release();
                 }
             }
         };
         this.l = new ITXLivePlayListener() { // from class: com.blued.android.module.player.live.view.BLVideoViewTX.2
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             public void onNetStatus(Bundle bundle) {
             }
 
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -155,13 +143,13 @@ public class BLVideoViewTX extends AbsVideoView {
 
     private boolean a(String str) {
         if (TextUtils.isEmpty(str) || !(str.startsWith("http://") || str.startsWith("https://") || str.startsWith("rtmp://") || str.startsWith(BridgeUtil.SPLIT_MARK))) {
-            Log.c(f15635a, "url is invalid");
+            Log.c(a, "url is invalid");
             return false;
         }
         if (str.startsWith("rtmp://")) {
             this.e = 0;
         } else if ((!str.startsWith("http://") && !str.startsWith("https://")) || !str.contains(".flv")) {
-            Log.c(f15635a, "url is invalide");
+            Log.c(a, "url is invalide");
             return false;
         } else {
             this.e = 1;
@@ -179,7 +167,7 @@ public class BLVideoViewTX extends AbsVideoView {
         this.g = AppInfo.m;
         this.h = AppInfo.l;
         g();
-        this.d.setSurface(this.f15636c);
+        this.d.setSurface(this.c);
         this.d.setSurfaceSize(this.g, this.h);
         this.d.setPlayListener(this.l);
     }
@@ -209,7 +197,7 @@ public class BLVideoViewTX extends AbsVideoView {
     public void a(int i, int i2) {
         this.g = i;
         this.h = i2;
-        String str = f15635a;
+        String str = a;
         Log.a(str, "setSurfaceWidthHeight width = " + i + " -- height = " + i2);
         d();
     }
@@ -231,10 +219,10 @@ public class BLVideoViewTX extends AbsVideoView {
     public void c() {
         TXLivePlayer tXLivePlayer = this.d;
         if (tXLivePlayer != null) {
-            tXLivePlayer.setPlayListener(null);
+            tXLivePlayer.setPlayListener((ITXLivePlayListener) null);
             this.d.stopPlay(true);
         }
-        Surface surface = this.f15636c;
+        Surface surface = this.c;
         if (surface != null) {
             surface.release();
         }
@@ -248,12 +236,12 @@ public class BLVideoViewTX extends AbsVideoView {
                 float f = this.i / this.g;
                 float f2 = this.j / this.h;
                 float f3 = f;
-                if (BLVideoView.f15633a) {
+                if (BLVideoView.a) {
                     f3 = Math.max(f, f2);
                 }
-                String str = f15635a;
+                String str = a;
                 Log.c(str, "before data: mVideoWidth:" + this.i + "   mVideoHeight:" + this.j + " mSurfaceWidth:" + this.g + "   mSurfaceHeight:" + this.h);
-                String str2 = f15635a;
+                String str2 = a;
                 StringBuilder sb = new StringBuilder();
                 sb.append("====ratio:");
                 sb.append(f3);
@@ -261,7 +249,7 @@ public class BLVideoViewTX extends AbsVideoView {
                 this.g = (int) Math.ceil((double) (((float) this.i) / f3));
                 this.h = (int) Math.ceil((double) (((float) this.j) / f3));
             }
-            String str3 = f15635a;
+            String str3 = a;
             Log.c(str3, "after data: mVideoWidth:" + this.i + "   mVideoHeight:" + this.j + " mSurfaceWidth:" + this.g + "   mSurfaceHeight:" + this.h);
             g();
         }

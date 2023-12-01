@@ -10,11 +10,11 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class uh {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f38053a = "_night";
+    private final String f24362a = "_night";
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f38054c;
+    private final int f24363c;
     private final List<ai> d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/uh$a.class */
@@ -33,13 +33,13 @@ public class uh {
         CopyOnWriteArrayList copyOnWriteArrayList = new CopyOnWriteArrayList();
         this.d = copyOnWriteArrayList;
         this.b = i;
-        this.f38054c = i2;
+        this.f24363c = i2;
         copyOnWriteArrayList.addAll(list);
         Collections.sort(list, new a());
     }
 
     public int a() {
-        return this.f38054c;
+        return this.f24363c;
     }
 
     public Object[] a(w5 w5Var, boolean z) {

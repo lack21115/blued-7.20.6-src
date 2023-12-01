@@ -11,11 +11,11 @@ import java.util.List;
 public abstract class b implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private final m[] f7525a;
+    private final m[] f4686a;
     private final long[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7526c;
+    private int f4687c;
     protected final ae g;
     protected final int h;
     protected final int[] i;
@@ -44,17 +44,17 @@ public abstract class b implements f {
         this.g = (ae) com.anythink.expressad.exoplayer.k.a.a(aeVar);
         int length = iArr.length;
         this.h = length;
-        this.f7525a = new m[length];
+        this.f4686a = new m[length];
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= iArr.length) {
                 break;
             }
-            this.f7525a[i2] = aeVar.a(iArr[i2]);
+            this.f4686a[i2] = aeVar.a(iArr[i2]);
             i = i2 + 1;
         }
-        Arrays.sort(this.f7525a, new a((byte) 0));
+        Arrays.sort(this.f4686a, new a((byte) 0));
         this.i = new int[this.h];
         int i3 = 0;
         while (true) {
@@ -64,7 +64,7 @@ public abstract class b implements f {
                 this.b = new long[i5];
                 return;
             } else {
-                this.i[i4] = aeVar.a(this.f7525a[i4]);
+                this.i[i4] = aeVar.a(this.f4686a[i4]);
                 i3 = i4 + 1;
             }
         }
@@ -83,7 +83,7 @@ public abstract class b implements f {
             if (i2 >= this.h) {
                 return -1;
             }
-            if (this.f7525a[i2] == mVar) {
+            if (this.f4686a[i2] == mVar) {
                 return i2;
             }
             i = i2 + 1;
@@ -92,7 +92,7 @@ public abstract class b implements f {
 
     @Override // com.anythink.expressad.exoplayer.i.f
     public final m a(int i) {
-        return this.f7525a[i];
+        return this.f4686a[i];
     }
 
     @Override // com.anythink.expressad.exoplayer.i.f
@@ -176,14 +176,14 @@ public abstract class b implements f {
 
     @Override // com.anythink.expressad.exoplayer.i.f
     public final m h() {
-        return this.f7525a[b()];
+        return this.f4686a[b()];
     }
 
     public int hashCode() {
-        if (this.f7526c == 0) {
-            this.f7526c = (System.identityHashCode(this.g) * 31) + Arrays.hashCode(this.i);
+        if (this.f4687c == 0) {
+            this.f4687c = (System.identityHashCode(this.g) * 31) + Arrays.hashCode(this.i);
         }
-        return this.f7526c;
+        return this.f4687c;
     }
 
     @Override // com.anythink.expressad.exoplayer.i.f

@@ -6,11 +6,11 @@ import org.json.JSONObject;
 public class NativeUnifiedADAppInfoImpl implements NativeUnifiedADAppMiitInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f27885a;
+    private final String f14197a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f27886c;
+    private final long f14198c;
     private final String d;
     private final String e;
     private final String f;
@@ -26,9 +26,9 @@ public class NativeUnifiedADAppInfoImpl implements NativeUnifiedADAppMiitInfo {
     }
 
     public NativeUnifiedADAppInfoImpl(JSONObject jSONObject) {
-        this.f27885a = jSONObject.optString("app_name");
+        this.f14197a = jSONObject.optString("app_name");
         this.b = jSONObject.optString(Keys.AUTHOR_NAME);
-        this.f27886c = jSONObject.optLong("package_size");
+        this.f14198c = jSONObject.optLong("package_size");
         this.d = jSONObject.optString(Keys.PERMISSION_URL);
         this.e = jSONObject.optString(Keys.PRIVACY_AGREEMENT);
         this.f = jSONObject.optString(Keys.VERSION_NAME);
@@ -36,7 +36,7 @@ public class NativeUnifiedADAppInfoImpl implements NativeUnifiedADAppMiitInfo {
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
     public String getAppName() {
-        return this.f27885a;
+        return this.f14197a;
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
@@ -46,7 +46,7 @@ public class NativeUnifiedADAppInfoImpl implements NativeUnifiedADAppMiitInfo {
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
     public long getPackageSizeBytes() {
-        return this.f27886c;
+        return this.f14198c;
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo

@@ -9,11 +9,11 @@ import com.bytedance.applog.scheme.BuildConfig;
 public class z2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f21341a = false;
+    public static boolean f7735a = false;
     public static ILogger b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f21342c;
+    public static boolean f7736c;
     public static final int d;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/z2$a.class */
@@ -31,16 +31,16 @@ public class z2 {
 
     public static void a(Context context, ILogger iLogger, boolean z) {
         try {
-            f21341a = (context.getApplicationInfo().flags & 2) != 0;
+            f7735a = (context.getApplicationInfo().flags & 2) != 0;
         } catch (Throwable th) {
-            f21341a = true;
+            f7735a = true;
         }
         b = iLogger;
-        f21342c = z;
+        f7736c = z;
     }
 
     public static void a(a aVar) {
-        if (f21341a && f21342c && aVar != null) {
+        if (f7735a && f7736c && aVar != null) {
             ILogger iLogger = b;
             String a2 = aVar.a();
             if (iLogger != null) {
@@ -52,7 +52,7 @@ public class z2 {
     }
 
     public static void a(String str) {
-        if (f21341a && f21342c) {
+        if (f7735a && f7736c) {
             ILogger iLogger = b;
             if (iLogger != null) {
                 iLogger.log(str, null);
@@ -63,18 +63,18 @@ public class z2 {
     }
 
     public static void a(String str, Throwable th) {
-        if (f21342c) {
+        if (f7736c) {
             ILogger iLogger = b;
             if (iLogger != null) {
                 iLogger.log(str, th);
-            } else if (f21341a) {
+            } else if (f7735a) {
                 Log.e("AppLog", str, th);
             }
         }
     }
 
     public static void a(String str, Object... objArr) {
-        if (f21341a && f21342c && str != null) {
+        if (f7735a && f7736c && str != null) {
             String b2 = b(str, objArr);
             ILogger iLogger = b;
             if (iLogger != null) {
@@ -86,11 +86,11 @@ public class z2 {
     }
 
     public static void a(Throwable th) {
-        if (f21342c) {
+        if (f7736c) {
             ILogger iLogger = b;
             if (iLogger != null) {
                 iLogger.log("", th);
-            } else if (f21341a) {
+            } else if (f7735a) {
                 Log.e("AppLog", "", th);
             }
         }
@@ -129,7 +129,7 @@ public class z2 {
     }
 
     public static void b(String str) {
-        if (f21342c) {
+        if (f7736c) {
             ILogger iLogger = b;
             if (iLogger != null) {
                 iLogger.log(str, null);
@@ -140,11 +140,11 @@ public class z2 {
     }
 
     public static void b(String str, Throwable th) {
-        if (f21342c) {
+        if (f7736c) {
             ILogger iLogger = b;
             if (iLogger != null) {
                 iLogger.log(str, th);
-            } else if (f21341a) {
+            } else if (f7735a) {
                 Log.w("AppLog", str, th);
             }
         }
@@ -155,12 +155,12 @@ public class z2 {
     }
 
     public static void c(String str, Object... objArr) {
-        if (f21342c) {
+        if (f7736c) {
             String b2 = b(str, objArr);
             ILogger iLogger = b;
             if (iLogger != null) {
                 iLogger.log(b2, null);
-            } else if (f21341a) {
+            } else if (f7735a) {
                 Log.i("AppLog", b2, null);
             }
         }

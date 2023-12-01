@@ -24,23 +24,21 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/randomgift/FitemRandomGiftProbability.class */
 public final class FitemRandomGiftProbability extends FreedomItem {
     private RandomGiftDialogAnimationModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<FitemRandomGiftProbabilityItem> f12690c;
+    private final ArrayList<FitemRandomGiftProbabilityItem> c;
     private FreedomAdapter d;
 
     public FitemRandomGiftProbability(RandomGiftDialogAnimationModel model) {
         Intrinsics.e(model, "model");
         this.b = model;
-        this.f12690c = new ArrayList<>();
+        this.c = new ArrayList<>();
     }
 
     private final void e() {
-        RecyclerView recyclerView = (RecyclerView) this.f10935a.a(R.id.rv_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this.f10935a.f10931a.b));
-        this.d = new FreedomAdapter(this.f10935a.f10931a.b, this.f10935a.b, this.f12690c);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(this.d);
+        RecyclerView a = this.a.a(R.id.rv_list);
+        a.setLayoutManager(new LinearLayoutManager(this.a.a.b));
+        this.d = new FreedomAdapter(this.a.a.b, this.a.b, this.c);
+        a.setItemAnimator(new DefaultItemAnimator());
+        a.setAdapter(this.d);
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -59,11 +57,11 @@ public final class FitemRandomGiftProbability extends FreedomItem {
             vh.d(R.id.ll_info_root).a(R.id.tv_info_title, true).a(R.id.tv_info_subtitle, (CharSequence) AppInfo.d().getString(R.string.live_random_gift_probability_info_subtitle, this.b.getRandom_weight_incr())).a(R.id.tv_info_subtitle, LiveUtils.a(vh.b(R.id.tv_info_subtitle), "#FF9219", false)).a(R.id.tv_info_content, (CharSequence) this.b.getRandom_weight_incr_desc());
             EventTrackLive.a(LiveProtos.Event.LIVE_USER_RANDOM_GIFT_PAGE_UP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
         }
-        this.f12690c.clear();
+        this.c.clear();
         ArrayList<RandomGiftItemModel> list2 = this.b.getList();
         if (list2 != null) {
             for (RandomGiftItemModel randomGiftItemModel : list2) {
-                this.f12690c.add(new FitemRandomGiftProbabilityItem(randomGiftItemModel));
+                this.c.add(new FitemRandomGiftProbabilityItem(randomGiftItemModel));
             }
             String current_random_weight = list2.get(0).getCurrent_random_weight();
             if (current_random_weight != null ? current_random_weight.length() == 0 : true) {

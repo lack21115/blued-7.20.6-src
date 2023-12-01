@@ -12,10 +12,10 @@ import android.os.HandlerThread;
 public class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile Handler f41557a;
+    private static volatile Handler f27866a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static final Object f895a = new Object();
+    private static final Object f848a = new Object();
     private static volatile Handler b;
 
     public static Intent a(Context context, BroadcastReceiver broadcastReceiver, IntentFilter intentFilter, int i) {
@@ -35,7 +35,7 @@ public class l {
 
     public static Handler a() {
         if (b == null) {
-            synchronized (f895a) {
+            synchronized (f848a) {
                 if (b == null) {
                     HandlerThread handlerThread = new HandlerThread("receiver_task");
                     handlerThread.start();
@@ -47,19 +47,19 @@ public class l {
     }
 
     private static Handler b() {
-        if (f41557a == null) {
+        if (f27866a == null) {
             synchronized (l.class) {
                 try {
-                    if (f41557a == null) {
+                    if (f27866a == null) {
                         HandlerThread handlerThread = new HandlerThread("handle_receiver");
                         handlerThread.start();
-                        f41557a = new Handler(handlerThread.getLooper());
+                        f27866a = new Handler(handlerThread.getLooper());
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41557a;
+        return f27866a;
     }
 }

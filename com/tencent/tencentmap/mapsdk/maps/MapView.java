@@ -47,19 +47,19 @@ public class MapView extends BaseMapView {
         public class a implements TencentMap.OnMapLoadedCallback {
 
             /* renamed from: a  reason: collision with root package name */
-            public final /* synthetic */ TencentMap f38978a;
+            public final /* synthetic */ TencentMap f25287a;
 
             public a(TencentMap tencentMap) {
-                this.f38978a = tencentMap;
+                this.f25287a = tencentMap;
             }
 
             @Override // com.tencent.tencentmap.mapsdk.maps.TencentMap.OnMapLoadedCallback
             public void onMapLoaded() {
                 Callback callback = b.this.b;
                 if (callback != null) {
-                    callback.callback(this.f38978a);
+                    callback.callback(this.f25287a);
                 }
-                this.f38978a.removeOnMapLoadedCallback(this);
+                this.f25287a.removeOnMapLoadedCallback(this);
             }
         }
 
@@ -75,7 +75,7 @@ public class MapView extends BaseMapView {
     }
 
     static {
-        System.loadLibrary(mi.f37649a);
+        System.loadLibrary(mi.f23958a);
     }
 
     public MapView(Context context) {
@@ -217,7 +217,7 @@ public class MapView extends BaseMapView {
         u.d().onResumeReport();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         BaseMapView.MapViewProxy mapViewProxy = this.mMapDelegate;

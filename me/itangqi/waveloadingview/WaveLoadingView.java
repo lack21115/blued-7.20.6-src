@@ -23,13 +23,9 @@ import me.itangqi.library.R;
 
 /* loaded from: source-3503164-dex2jar.jar:me/itangqi/waveloadingview/WaveLoadingView.class */
 public class WaveLoadingView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int f43650a = Color.parseColor("#212121");
+    private static final int a = Color.parseColor("#212121");
     private static final int b = Color.parseColor("#00000000");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final int f43651c = Color.parseColor("#212121");
+    private static final int c = Color.parseColor("#212121");
     private static final int d = ShapeType.CIRCLE.ordinal();
     private static final int e = TriangleDirection.NORTH.ordinal();
     private Paint A;
@@ -153,7 +149,7 @@ public class WaveLoadingView extends View {
         e();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.WaveLoadingView, i, 0);
         this.l = obtainStyledAttributes.getInteger(R.styleable.WaveLoadingView_wlv_shapeType, d);
-        this.k = obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_waveColor, f43650a);
+        this.k = obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_waveColor, a);
         int color = obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_wave_background_Color, b);
         this.j = color;
         this.A.setColor(color);
@@ -174,10 +170,10 @@ public class WaveLoadingView extends View {
         paint3.setAntiAlias(true);
         this.B.setStyle(Paint.Style.STROKE);
         this.B.setStrokeWidth(obtainStyledAttributes.getDimension(R.styleable.WaveLoadingView_wlv_borderWidth, b(0.0f)));
-        this.B.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_borderColor, f43650a));
+        this.B.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_borderColor, a));
         Paint paint4 = new Paint();
         this.C = paint4;
-        paint4.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_titleTopColor, f43651c));
+        paint4.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_titleTopColor, c));
         this.C.setStyle(Paint.Style.FILL);
         this.C.setAntiAlias(true);
         this.C.setTextSize(obtainStyledAttributes.getDimension(R.styleable.WaveLoadingView_wlv_titleTopSize, a(18.0f)));
@@ -191,7 +187,7 @@ public class WaveLoadingView extends View {
         this.o = obtainStyledAttributes.getString(R.styleable.WaveLoadingView_wlv_titleTop);
         Paint paint6 = new Paint();
         this.E = paint6;
-        paint6.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_titleCenterColor, f43651c));
+        paint6.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_titleCenterColor, c));
         this.E.setStyle(Paint.Style.FILL);
         this.E.setAntiAlias(true);
         this.E.setTextSize(obtainStyledAttributes.getDimension(R.styleable.WaveLoadingView_wlv_titleCenterSize, a(22.0f)));
@@ -205,7 +201,7 @@ public class WaveLoadingView extends View {
         this.p = obtainStyledAttributes.getString(R.styleable.WaveLoadingView_wlv_titleCenter);
         Paint paint8 = new Paint();
         this.D = paint8;
-        paint8.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_titleBottomColor, f43651c));
+        paint8.setColor(obtainStyledAttributes.getColor(R.styleable.WaveLoadingView_wlv_titleBottomColor, c));
         this.D.setStyle(Paint.Style.FILL);
         this.D.setAntiAlias(true);
         this.D.setTextSize(obtainStyledAttributes.getDimension(R.styleable.WaveLoadingView_wlv_titleBottomSize, a(18.0f)));

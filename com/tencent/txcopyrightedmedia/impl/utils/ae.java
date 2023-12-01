@@ -4,7 +4,7 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class ae {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f40043a = false;
+    private static boolean f26352a = false;
 
     public static void a() {
     }

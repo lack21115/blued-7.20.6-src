@@ -43,13 +43,9 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     public static final String KEYWORDS_COUNTRY = "country";
     public static final String KEYWORDS_DISTRICT = "district";
     public static final String KEYWORDS_PROVINCE = "province";
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f5624a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5625c;
+    private String c;
     private String d;
     private boolean e;
     private boolean f;
@@ -57,7 +53,7 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     private int h;
 
     public DistrictSearchQuery() {
-        this.f5624a = 1;
+        this.a = 1;
         this.b = 20;
         this.e = true;
         this.f = false;
@@ -66,15 +62,15 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     }
 
     public DistrictSearchQuery(String str, String str2, int i) {
-        this.f5624a = 1;
+        this.a = 1;
         this.b = 20;
         this.e = true;
         this.f = false;
         this.g = false;
         this.h = 1;
-        this.f5625c = str;
+        this.c = str;
         this.d = str2;
-        this.f5624a = i;
+        this.a = i;
     }
 
     public DistrictSearchQuery(String str, String str2, int i, boolean z, int i2) {
@@ -84,7 +80,7 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     }
 
     public boolean checkKeyWords() {
-        String str = this.f5625c;
+        String str = this.c;
         return (str == null || str.trim().equalsIgnoreCase("")) ? false : true;
     }
 
@@ -93,20 +89,20 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
         if (str == null) {
             return false;
         }
-        return str.trim().equals("country") || this.d.trim().equals(KEYWORDS_PROVINCE) || this.d.trim().equals(KEYWORDS_CITY) || this.d.trim().equals(KEYWORDS_DISTRICT) || this.d.trim().equals(KEYWORDS_BUSINESS);
+        return str.trim().equals(KEYWORDS_COUNTRY) || this.d.trim().equals(KEYWORDS_PROVINCE) || this.d.trim().equals(KEYWORDS_CITY) || this.d.trim().equals(KEYWORDS_DISTRICT) || this.d.trim().equals(KEYWORDS_BUSINESS);
     }
 
     /* renamed from: clone */
-    public DistrictSearchQuery m2455clone() {
+    public DistrictSearchQuery m8898clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
             fe.a(e, "DistrictSearchQuery", "clone");
         }
         DistrictSearchQuery districtSearchQuery = new DistrictSearchQuery();
-        districtSearchQuery.setKeywords(this.f5625c);
+        districtSearchQuery.setKeywords(this.c);
         districtSearchQuery.setKeywordsLevel(this.d);
-        districtSearchQuery.setPageNum(this.f5624a);
+        districtSearchQuery.setPageNum(this.a);
         districtSearchQuery.setPageSize(this.b);
         districtSearchQuery.setShowChild(this.e);
         districtSearchQuery.setSubDistrict(this.h);
@@ -129,21 +125,21 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
             if (this.g != districtSearchQuery.g) {
                 return false;
             }
-            String str = this.f5625c;
+            String str = this.c;
             if (str == null) {
-                if (districtSearchQuery.f5625c != null) {
+                if (districtSearchQuery.c != null) {
                     return false;
                 }
-            } else if (!str.equals(districtSearchQuery.f5625c)) {
+            } else if (!str.equals(districtSearchQuery.c)) {
                 return false;
             }
-            return this.f5624a == districtSearchQuery.f5624a && this.b == districtSearchQuery.b && this.e == districtSearchQuery.e && this.h == districtSearchQuery.h;
+            return this.a == districtSearchQuery.a && this.b == districtSearchQuery.b && this.e == districtSearchQuery.e && this.h == districtSearchQuery.h;
         }
         return false;
     }
 
     public String getKeywords() {
-        return this.f5625c;
+        return this.c;
     }
 
     public String getKeywordsLevel() {
@@ -151,7 +147,7 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     }
 
     public int getPageNum() {
-        int i = this.f5624a;
+        int i = this.a;
         int i2 = i;
         if (i <= 0) {
             i2 = 1;
@@ -170,14 +166,14 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     public int hashCode() {
         int i = 1231;
         int i2 = this.g ? 1231 : 1237;
-        String str = this.f5625c;
+        String str = this.c;
         int i3 = 0;
         int hashCode = str == null ? 0 : str.hashCode();
         String str2 = this.d;
         if (str2 != null) {
             i3 = str2.hashCode();
         }
-        int i4 = this.f5624a;
+        int i4 = this.a;
         int i5 = this.b;
         if (!this.e) {
             i = 1237;
@@ -198,7 +194,7 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     }
 
     public void setKeywords(String str) {
-        this.f5625c = str;
+        this.c = str;
     }
 
     public void setKeywordsLevel(String str) {
@@ -206,7 +202,7 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
     }
 
     public void setPageNum(int i) {
-        this.f5624a = i;
+        this.a = i;
     }
 
     public void setPageSize(int i) {
@@ -236,12 +232,12 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
         if (districtSearchQuery == null) {
             return false;
         }
-        String str = this.f5625c;
+        String str = this.c;
         if (str == null) {
-            if (districtSearchQuery.f5625c != null) {
+            if (districtSearchQuery.c != null) {
                 return false;
             }
-        } else if (!str.equals(districtSearchQuery.f5625c)) {
+        } else if (!str.equals(districtSearchQuery.c)) {
             return false;
         }
         return this.b == districtSearchQuery.b && this.e == districtSearchQuery.e && this.g == districtSearchQuery.g && this.h == districtSearchQuery.h;
@@ -249,9 +245,9 @@ public class DistrictSearchQuery implements Parcelable, Cloneable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5625c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
-        parcel.writeInt(this.f5624a);
+        parcel.writeInt(this.a);
         parcel.writeInt(this.b);
         parcel.writeByte(this.e ? (byte) 1 : (byte) 0);
         parcel.writeByte(this.g ? (byte) 1 : (byte) 0);

@@ -20,18 +20,18 @@ public final class a extends b {
                 e eVar = e.u;
                 String j = a.this.j();
                 eVar.c(j, "decoder callback onError " + codecException.getMessage());
-                if (a.this.f27636c != null) {
-                    a.this.f27636c.a(17);
+                if (a.this.f13948c != null) {
+                    a.this.f13948c.a(17);
                 }
             }
 
             @Override // android.media.MediaCodec.Callback
             public void onInputBufferAvailable(MediaCodec mediaCodec, int i) {
                 try {
-                    int readSampleData = a.this.f27635a.readSampleData(a.this.b.getInputBuffer(i), 0);
+                    int readSampleData = a.this.f13947a.readSampleData(a.this.b.getInputBuffer(i), 0);
                     if (readSampleData > 0) {
-                        a.this.b.queueInputBuffer(i, 0, readSampleData, a.this.f27635a.getSampleTime(), 0);
-                        a.this.f27635a.advance();
+                        a.this.b.queueInputBuffer(i, 0, readSampleData, a.this.f13947a.getSampleTime(), 0);
+                        a.this.f13947a.advance();
                         return;
                     }
                     e eVar = e.u;

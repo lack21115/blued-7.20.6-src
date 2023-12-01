@@ -12,9 +12,7 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/BlockQuoteParser.class */
 public class BlockQuoteParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BlockQuote f44004a = new BlockQuote();
+    private final BlockQuote a = new BlockQuote();
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/BlockQuoteParser$Factory.class */
     public static class Factory extends AbstractBlockParserFactory {
@@ -36,7 +34,7 @@ public class BlockQuoteParser extends AbstractBlockParser {
     /* JADX INFO: Access modifiers changed from: private */
     public static boolean b(ParserState parserState, int i) {
         CharSequence b = parserState.b();
-        return parserState.f() < Parsing.f44049a && i < b.length() && b.charAt(i) == '>';
+        return parserState.f() < Parsing.a && i < b.length() && b.charAt(i) == '>';
     }
 
     @Override // org.commonmark.parser.block.BlockParser
@@ -66,6 +64,6 @@ public class BlockQuoteParser extends AbstractBlockParser {
     @Override // org.commonmark.parser.block.BlockParser
     /* renamed from: aC_ */
     public BlockQuote c() {
-        return this.f44004a;
+        return this.a;
     }
 }

@@ -7,16 +7,16 @@ import android.view.View;
 public abstract class PLTransition {
 
     /* renamed from: a  reason: collision with root package name */
-    protected long f27504a;
+    protected long f13816a;
     protected long b;
 
     public PLTransition(long j, long j2) {
         this.b = j;
-        this.f27504a = j2;
+        this.f13816a = j2;
     }
 
     public long a() {
-        return this.b + this.f27504a;
+        return this.b + this.f13816a;
     }
 
     public abstract Animator a(View view);

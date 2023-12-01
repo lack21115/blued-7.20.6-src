@@ -4,10 +4,10 @@ package com.tencent.turingface.sdk.mfa;
 public final class kB0t4 implements BfUKf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f39961a;
+    public final /* synthetic */ String f26270a;
 
     public kB0t4(String str) {
-        this.f39961a = str;
+        this.f26270a = str;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x009a, code lost:

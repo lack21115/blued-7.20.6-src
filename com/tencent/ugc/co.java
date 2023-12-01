@@ -4,11 +4,11 @@ package com.tencent.ugc;
 final /* synthetic */ class co implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCImageProvider f40298a;
+    private final UGCImageProvider f26607a;
     private final long b;
 
     private co(UGCImageProvider uGCImageProvider, long j) {
-        this.f40298a = uGCImageProvider;
+        this.f26607a = uGCImageProvider;
         this.b = j;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class co implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCImageProvider.lambda$seekTo$4(this.f40298a, this.b);
+        UGCImageProvider.lambda$seekTo$4(this.f26607a, this.b);
     }
 }

@@ -1,18 +1,17 @@
 package com.vivo.push.model;
 
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-8829756-dex2jar.jar:com/vivo/push/model/b.class */
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41110a;
+    private String f27419a;
     private String d;
     private long b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f41111c = -1;
+    private int f27420c = -1;
     private boolean e = false;
     private boolean f = false;
 
@@ -20,15 +19,15 @@ public final class b {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalAccessError("PushPackageInfo need a non-null pkgName.");
         }
-        this.f41110a = str;
+        this.f27419a = str;
     }
 
     public final String a() {
-        return this.f41110a;
+        return this.f27419a;
     }
 
     public final void a(int i) {
-        this.f41111c = i;
+        this.f27420c = i;
     }
 
     public final void a(long j) {
@@ -60,6 +59,6 @@ public final class b {
     }
 
     public final String toString() {
-        return "PushPackageInfo{mPackageName=" + this.f41110a + ", mPushVersion=" + this.b + ", mPackageVersion=" + this.f41111c + ", mInBlackList=" + this.e + ", mPushEnable=" + this.f + i.d;
+        return "PushPackageInfo{mPackageName=" + this.f27419a + ", mPushVersion=" + this.b + ", mPackageVersion=" + this.f27420c + ", mInBlackList=" + this.e + ", mPushEnable=" + this.f + "}";
     }
 }

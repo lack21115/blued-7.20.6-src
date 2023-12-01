@@ -18,11 +18,11 @@ import javax.microedition.khronos.opengles.GL10;
 public class b implements GLSurfaceView.Renderer {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<GLSurfaceView> f27697a;
+    private WeakReference<GLSurfaceView> f14009a;
     private com.qiniu.pili.droid.beauty.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private k f27698c;
+    private k f14010c;
     private com.qiniu.pili.droid.shortvideo.gl.c.a d;
     private i f;
     private SurfaceTexture g;
@@ -39,7 +39,7 @@ public class b implements GLSurfaceView.Renderer {
     private float[] m = new float[16];
 
     public b(GLSurfaceView gLSurfaceView, PLFaceBeautySetting pLFaceBeautySetting, PLDisplayMode pLDisplayMode) {
-        this.f27697a = new WeakReference<>(gLSurfaceView);
+        this.f14009a = new WeakReference<>(gLSurfaceView);
         gLSurfaceView.setEGLContextClientVersion(2);
         gLSurfaceView.setRenderer(this);
         gLSurfaceView.setRenderMode(0);
@@ -48,7 +48,7 @@ public class b implements GLSurfaceView.Renderer {
     }
 
     public void a() {
-        GLSurfaceView gLSurfaceView = this.f27697a.get();
+        GLSurfaceView gLSurfaceView = this.f14009a.get();
         if (gLSurfaceView != null) {
             gLSurfaceView.onResume();
         }
@@ -67,7 +67,7 @@ public class b implements GLSurfaceView.Renderer {
         this.i = i2;
         this.j = i3;
         this.k = i4;
-        GLSurfaceView gLSurfaceView = this.f27697a.get();
+        GLSurfaceView gLSurfaceView = this.f14009a.get();
         if (gLSurfaceView != null) {
             gLSurfaceView.requestRender();
         }
@@ -87,7 +87,7 @@ public class b implements GLSurfaceView.Renderer {
     }
 
     public void b() {
-        GLSurfaceView gLSurfaceView = this.f27697a.get();
+        GLSurfaceView gLSurfaceView = this.f14009a.get();
         if (gLSurfaceView != null) {
             gLSurfaceView.queueEvent(new Runnable() { // from class: com.qiniu.pili.droid.shortvideo.gl.b.b.1
                 @Override // java.lang.Runnable
@@ -135,9 +135,9 @@ public class b implements GLSurfaceView.Renderer {
                 aVar.b();
                 this.d.a(this.j, this.k);
                 k kVar = new k();
-                this.f27698c = kVar;
+                this.f14010c = kVar;
                 kVar.b();
-                this.f27698c.a(this.j, this.k);
+                this.f14010c.a(this.j, this.k);
             }
             int i3 = 0;
             if (this.p) {
@@ -149,7 +149,7 @@ public class b implements GLSurfaceView.Renderer {
                 if (this.b.a()) {
                     int onDrawFrame = this.b.onDrawFrame(this.l, this.h, this.i, timestamp, this.m);
                     GLES20.glGetError();
-                    b = this.f27698c.b(onDrawFrame, this.m);
+                    b = this.f14010c.b(onDrawFrame, this.m);
                 } else {
                     b = this.d.b(this.l, this.m);
                 }
@@ -193,7 +193,7 @@ public class b implements GLSurfaceView.Renderer {
         this.j = 0;
         this.k = 0;
         this.d = null;
-        this.f27698c = null;
+        this.f14010c = null;
         this.f = null;
         this.l = com.qiniu.pili.droid.shortvideo.f.d.c();
         this.g = new SurfaceTexture(this.l);

@@ -28,11 +28,11 @@ public class th {
     private volatile boolean e;
 
     /* renamed from: a  reason: collision with root package name */
-    private ReentrantReadWriteLock f38030a = new ReentrantReadWriteLock();
+    private ReentrantReadWriteLock f24339a = new ReentrantReadWriteLock();
     private String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f38031c = null;
+    private String f24340c = null;
     private boolean d = false;
     private AtomicInteger f = new AtomicInteger(0);
 
@@ -182,7 +182,7 @@ public class th {
         }
         if (context != null) {
             this.b = context.getFilesDir() + "/frontiers.dat";
-            this.f38031c = this.b + ".bak";
+            this.f24340c = this.b + ".bak";
         }
         ca.a((ca.i) new a()).b((ca.d.b) Boolean.FALSE);
     }
@@ -262,7 +262,7 @@ public class th {
 
     public String d() {
         FileInputStream fileInputStream;
-        this.f38030a.readLock().lock();
+        this.f24339a.readLock().lock();
         try {
             fileInputStream = new FileInputStream(new File(this.b));
         } catch (Throwable th) {
@@ -271,20 +271,20 @@ public class th {
         try {
             String str = new String(ha.b(fileInputStream), "UTF-8");
             ha.a((Closeable) fileInputStream);
-            this.f38030a.readLock().unlock();
+            this.f24339a.readLock().unlock();
             return str;
         } catch (Throwable th2) {
             ha.a((Closeable) fileInputStream);
-            this.f38030a.readLock().unlock();
+            this.f24339a.readLock().unlock();
             return null;
         }
     }
 
     public boolean e(String str) {
         FileOutputStream fileOutputStream;
-        this.f38030a.writeLock().lock();
+        this.f24339a.writeLock().lock();
         File file = new File(this.b);
-        File file2 = new File(this.f38031c);
+        File file2 = new File(this.f24340c);
         if (file2.exists() && !file2.delete()) {
             file2.deleteOnExit();
             return false;
@@ -293,7 +293,7 @@ public class th {
             if (file.exists() && !file.renameTo(file2)) {
                 ha.a((Closeable) null);
                 file2.renameTo(file);
-                this.f38030a.writeLock().unlock();
+                this.f24339a.writeLock().unlock();
                 return false;
             }
             FileOutputStream fileOutputStream2 = new FileOutputStream(file);
@@ -302,13 +302,13 @@ public class th {
                 fileOutputStream2.flush();
                 ha.a(fileOutputStream2);
                 file2.delete();
-                this.f38030a.writeLock().unlock();
+                this.f24339a.writeLock().unlock();
                 return true;
             } catch (Throwable th) {
                 fileOutputStream = fileOutputStream2;
                 ha.a(fileOutputStream);
                 file2.renameTo(file);
-                this.f38030a.writeLock().unlock();
+                this.f24339a.writeLock().unlock();
                 return false;
             }
         } catch (Throwable th2) {

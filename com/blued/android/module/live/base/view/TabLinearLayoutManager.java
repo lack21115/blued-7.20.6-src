@@ -12,10 +12,8 @@ public class TabLinearLayoutManager extends LinearLayoutManager {
         super(context, i, z);
     }
 
-    @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
     public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state, int i) {
         LinearSmoothScroller linearSmoothScroller = new LinearSmoothScroller(recyclerView.getContext()) { // from class: com.blued.android.module.live.base.view.TabLinearLayoutManager.1
-            @Override // androidx.recyclerview.widget.LinearSmoothScroller
             public float calculateSpeedPerPixel(DisplayMetrics displayMetrics) {
                 return 150.0f / displayMetrics.densityDpi;
             }

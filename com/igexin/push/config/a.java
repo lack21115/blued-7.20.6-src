@@ -7,11 +7,11 @@ import android.database.sqlite.SQLiteDatabase;
 public class a implements com.igexin.push.core.e.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23361a = a.class.getName();
+    public static final String f9753a = a.class.getName();
     public static final int b = 63;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f23362c = 65;
+    public static final int f9754c = 65;
     public static final int d = 67;
     public static final int e = 68;
     public static final int f = 79;
@@ -41,15 +41,15 @@ public class a implements com.igexin.push.core.e.a {
     public final class AnonymousClass1 extends com.igexin.push.a.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f23363a;
+        final /* synthetic */ String f9755a;
 
         public AnonymousClass1(String str) {
-            this.f23363a = str;
+            this.f9755a = str;
         }
 
         @Override // com.igexin.push.a.d
         public final void a_() {
-            a.b(this.d, 63, this.f23363a);
+            a.b(this.d, 63, this.f9755a);
         }
     }
 
@@ -94,15 +94,15 @@ public class a implements com.igexin.push.core.e.a {
     public final class AnonymousClass6 extends com.igexin.push.a.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f23368a;
+        final /* synthetic */ String f9760a;
 
         public AnonymousClass6(String str) {
-            this.f23368a = str;
+            this.f9760a = str;
         }
 
         @Override // com.igexin.push.a.d
         public final void a_() {
-            a.a(this.d, 26, com.igexin.c.a.a.a.b(this.f23368a.getBytes(), com.igexin.push.core.e.M));
+            a.a(this.d, 26, com.igexin.c.a.a.a.b(this.f9760a.getBytes(), com.igexin.push.core.e.M));
         }
     }
 
@@ -111,15 +111,15 @@ public class a implements com.igexin.push.core.e.a {
     public final class AnonymousClass7 extends com.igexin.push.a.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f23369a;
+        final /* synthetic */ String f9761a;
 
         public AnonymousClass7(String str) {
-            this.f23369a = str;
+            this.f9761a = str;
         }
 
         @Override // com.igexin.push.a.d
         public final void a_() {
-            a.a(this.d, 24, com.igexin.c.a.a.a.b(this.f23369a.getBytes(), com.igexin.push.core.e.M));
+            a.a(this.d, 24, com.igexin.c.a.a.a.b(this.f9761a.getBytes(), com.igexin.push.core.e.M));
         }
     }
 
@@ -128,15 +128,15 @@ public class a implements com.igexin.push.core.e.a {
     public final class AnonymousClass9 extends com.igexin.push.a.d {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f23371a;
+        final /* synthetic */ boolean f9763a;
 
         public AnonymousClass9(boolean z) {
-            this.f23371a = z;
+            this.f9763a = z;
         }
 
         @Override // com.igexin.push.a.d
         public final void a_() {
-            a.b(this.d, 79, String.valueOf(this.f23371a));
+            a.b(this.d, 79, String.valueOf(this.f9763a));
         }
     }
 
@@ -231,7 +231,7 @@ public class a implements com.igexin.push.core.e.a {
             @Override // com.igexin.push.a.d
             public final void a_() {
                 a.b(this.d, 1, String.valueOf(d.b));
-                a.b(this.d, 2, String.valueOf(d.f23376c));
+                a.b(this.d, 2, String.valueOf(d.f9768c));
             }
         }, false, true);
     }
@@ -256,7 +256,7 @@ public class a implements com.igexin.push.core.e.a {
     @Override // com.igexin.push.core.e.a
     public final void c(SQLiteDatabase sQLiteDatabase) {
         b(sQLiteDatabase, 1, String.valueOf(d.b));
-        b(sQLiteDatabase, 2, String.valueOf(d.f23376c));
+        b(sQLiteDatabase, 2, String.valueOf(d.f9768c));
         b(sQLiteDatabase, 3, String.valueOf(d.d));
         b(sQLiteDatabase, 15, String.valueOf(d.e));
         b(sQLiteDatabase, 3, String.valueOf(d.d));

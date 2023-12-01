@@ -32,11 +32,11 @@ import org.xmlpull.v1.XmlPullParserException;
 public class SupportMenuInflater extends MenuInflater {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Class<?>[] f1642a;
+    static final Class<?>[] f1594a;
     static final Class<?>[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    final Object[] f1643c;
+    final Object[] f1595c;
     final Object[] d;
     Context e;
     private Object f;
@@ -46,17 +46,17 @@ public class SupportMenuInflater extends MenuInflater {
     public static class InflatedOnMenuItemClickListener implements MenuItem.OnMenuItemClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Class<?>[] f1644a = {MenuItem.class};
+        private static final Class<?>[] f1596a = {MenuItem.class};
         private Object b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Method f1645c;
+        private Method f1597c;
 
         public InflatedOnMenuItemClickListener(Object obj, String str) {
             this.b = obj;
             Class<?> cls = obj.getClass();
             try {
-                this.f1645c = cls.getMethod(str, f1644a);
+                this.f1597c = cls.getMethod(str, f1596a);
             } catch (Exception e) {
                 InflateException inflateException = new InflateException("Couldn't resolve menu item onClick handler " + str + " in class " + cls.getName());
                 inflateException.initCause(e);
@@ -68,10 +68,10 @@ public class SupportMenuInflater extends MenuInflater {
         public boolean onMenuItemClick(MenuItem menuItem) {
             Tracker.onMenuItemClick(menuItem);
             try {
-                if (this.f1645c.getReturnType() == Boolean.TYPE) {
-                    return ((Boolean) this.f1645c.invoke(this.b, menuItem)).booleanValue();
+                if (this.f1597c.getReturnType() == Boolean.TYPE) {
+                    return ((Boolean) this.f1597c.invoke(this.b, menuItem)).booleanValue();
                 }
-                this.f1645c.invoke(this.b, menuItem);
+                this.f1597c.invoke(this.b, menuItem);
                 return true;
             } catch (Exception e) {
                 throw new RuntimeException(e);
@@ -90,10 +90,10 @@ public class SupportMenuInflater extends MenuInflater {
         private PorterDuff.Mode F = null;
 
         /* renamed from: a  reason: collision with root package name */
-        ActionProvider f1646a;
+        ActionProvider f1598a;
 
         /* renamed from: c  reason: collision with root package name */
-        private Menu f1647c;
+        private Menu f1599c;
         private int d;
         private int e;
         private int f;
@@ -119,7 +119,7 @@ public class SupportMenuInflater extends MenuInflater {
         private String z;
 
         public MenuState(Menu menu) {
-            this.f1647c = menu;
+            this.f1599c = menu;
             resetGroup();
         }
 
@@ -163,7 +163,7 @@ public class SupportMenuInflater extends MenuInflater {
             }
             String str = this.z;
             if (str != null) {
-                menuItem.setActionView((View) a(str, SupportMenuInflater.f1642a, SupportMenuInflater.this.f1643c));
+                menuItem.setActionView((View) a(str, SupportMenuInflater.f1594a, SupportMenuInflater.this.f1595c));
                 z = true;
             }
             int i2 = this.y;
@@ -174,7 +174,7 @@ public class SupportMenuInflater extends MenuInflater {
                     menuItem.setActionView(i2);
                 }
             }
-            ActionProvider actionProvider = this.f1646a;
+            ActionProvider actionProvider = this.f1598a;
             if (actionProvider != null) {
                 MenuItemCompat.setActionProvider(menuItem, actionProvider);
             }
@@ -194,12 +194,12 @@ public class SupportMenuInflater extends MenuInflater {
 
         public void addItem() {
             this.j = true;
-            a(this.f1647c.add(this.d, this.k, this.l, this.m));
+            a(this.f1599c.add(this.d, this.k, this.l, this.m));
         }
 
         public SubMenu addSubMenuItem() {
             this.j = true;
-            SubMenu addSubMenu = this.f1647c.addSubMenu(this.d, this.k, this.l, this.m);
+            SubMenu addSubMenu = this.f1599c.addSubMenu(this.d, this.k, this.l, this.m);
             a(addSubMenu.getItem());
             return addSubMenu;
         }
@@ -236,7 +236,7 @@ public class SupportMenuInflater extends MenuInflater {
 
     static {
         Class<?>[] clsArr = {Context.class};
-        f1642a = clsArr;
+        f1594a = clsArr;
         b = clsArr;
     }
 
@@ -244,7 +244,7 @@ public class SupportMenuInflater extends MenuInflater {
         super(context);
         this.e = context;
         Object[] objArr = {context};
-        this.f1643c = objArr;
+        this.f1595c = objArr;
         this.d = objArr;
     }
 
@@ -316,10 +316,10 @@ public class SupportMenuInflater extends MenuInflater {
         if (r0.hasAddedItem() != false) goto L42;
      */
     /* JADX WARN: Code restructure failed: missing block: B:36:0x00fb, code lost:
-        if (r0.f1646a == null) goto L40;
+        if (r0.f1598a == null) goto L40;
      */
     /* JADX WARN: Code restructure failed: missing block: B:38:0x0106, code lost:
-        if (r0.f1646a.hasSubMenu() == false) goto L40;
+        if (r0.f1598a.hasSubMenu() == false) goto L40;
      */
     /* JADX WARN: Code restructure failed: missing block: B:39:0x0109, code lost:
         r0.addSubMenuItem();
@@ -339,7 +339,7 @@ public class SupportMenuInflater extends MenuInflater {
         r8 = r14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:42:0x0142, code lost:
-        if (r0.equals(com.android.internal.util.cm.NavigationRingConstants.ACTION_MENU) == false) goto L47;
+        if (r0.equals("menu") == false) goto L47;
      */
     /* JADX WARN: Code restructure failed: missing block: B:43:0x0145, code lost:
         r12 = true;
@@ -376,7 +376,7 @@ public class SupportMenuInflater extends MenuInflater {
         r8 = r14;
      */
     /* JADX WARN: Code restructure failed: missing block: B:54:0x01ac, code lost:
-        if (r8.equals(com.android.internal.util.cm.NavigationRingConstants.ACTION_MENU) == false) goto L64;
+        if (r8.equals("menu") == false) goto L64;
      */
     /* JADX WARN: Code restructure failed: missing block: B:55:0x01af, code lost:
         a(r6, r7, r0.addSubMenuItem());

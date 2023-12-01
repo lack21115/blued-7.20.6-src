@@ -30,20 +30,14 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/FeedSendRecyclerAdapter.class */
 public class FeedSendRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f19901a;
+    private Context a;
     private IRequestHost b;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/FeedSendRecyclerAdapter$ViewHolder.class */
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public CardView f19906a;
+        public CardView a;
         public ViewGroup b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public ImageView f19907c;
+        public ImageView c;
         public View d;
         public TextView e;
         public TextView f;
@@ -57,9 +51,9 @@ public class FeedSendRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
 
         public ViewHolder(View view) {
             super(view);
-            this.f19906a = (CardView) view.findViewById(R.id.feed_send_item_card_view);
+            this.a = view.findViewById(R.id.feed_send_item_card_view);
             this.b = (ViewGroup) view.findViewById(R.id.feed_send_item_img_layout);
-            this.f19907c = (ImageView) view.findViewById(R.id.header_view);
+            this.c = (ImageView) view.findViewById(R.id.header_view);
             this.d = view.findViewById(R.id.feed_send_item_fail);
             this.e = (TextView) view.findViewById(R.id.content_view);
             this.f = (TextView) view.findViewById(R.id.send_state);
@@ -74,11 +68,10 @@ public class FeedSendRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
     }
 
     public FeedSendRecyclerAdapter(Context context, IRequestHost iRequestHost) {
-        this.f19901a = context;
+        this.a = context;
         this.b = iRequestHost;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.fragment_feed_send_item, viewGroup, false));
@@ -87,16 +80,15 @@ public class FeedSendRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
     public void a(NewFeedModel newFeedModel) {
         if (newFeedModel.getState() == 0) {
             if (CircleMethods.a(newFeedModel)) {
-                CircleAddPostFragment.a(this.f19901a, newFeedModel);
+                CircleAddPostFragment.a(this.a, newFeedModel);
             } else if (newFeedModel.is_evaluate_activity == 1) {
-                EventScoreAddPostFragment.b.a(this.f19901a, newFeedModel);
+                EventScoreAddPostFragment.b.a(this.a, newFeedModel);
             } else {
-                FeedAddPostFragment.a(this.f19901a, newFeedModel);
+                FeedAddPostFragment.a(this.a, newFeedModel);
             }
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         final NewFeedModel newFeedModel = FeedSendManager.a().d().get(i);
@@ -104,41 +96,41 @@ public class FeedSendRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
         if (i == FeedSendManager.a().d().size() - 1) {
             layoutParams.leftMargin = 0;
         } else {
-            layoutParams.leftMargin = DensityUtils.a(this.f19901a, 13.0f);
+            layoutParams.leftMargin = DensityUtils.a(this.a, 13.0f);
         }
         viewHolder.m.setLayoutParams(layoutParams);
         if (newFeedModel.is_repost == 1) {
             viewHolder.b.setVisibility(0);
             viewHolder.e.setVisibility(8);
-            ImageLoader.a(this.b, newFeedModel.forwardImage).a(viewHolder.f19907c);
+            ImageLoader.a(this.b, newFeedModel.forwardImage).a(viewHolder.c);
         } else if (!TextUtils.isEmpty(newFeedModel.getPics()) || newFeedModel.isVideo == 1) {
             viewHolder.b.setVisibility(0);
             viewHolder.e.setVisibility(8);
-            ImageLoader.d(this.b, newFeedModel.localPath).a(viewHolder.f19907c);
+            ImageLoader.d(this.b, newFeedModel.localPath).a(viewHolder.c);
         } else {
             viewHolder.b.setVisibility(8);
             viewHolder.e.setVisibility(0);
             viewHolder.e.setText(((Object) StringUtils.a(newFeedModel.getContent(), false, true, false, "")) + "");
         }
         if (BluedSkinUtils.c()) {
-            viewHolder.f19906a.setCardBackgroundColor(Color.parseColor("#ECEDF0"));
-            viewHolder.h.setProgressDrawable(this.f19901a.getResources().getDrawable(R.drawable.progress_bar_send_feed));
+            viewHolder.a.setCardBackgroundColor(Color.parseColor("#ECEDF0"));
+            viewHolder.h.setProgressDrawable(this.a.getResources().getDrawable(R.drawable.progress_bar_send_feed));
         } else {
-            viewHolder.f19906a.setCardBackgroundColor(Color.parseColor("#282828"));
-            viewHolder.h.setProgressDrawable(this.f19901a.getResources().getDrawable(R.drawable.progress_bar_send_feed_dark));
+            viewHolder.a.setCardBackgroundColor(Color.parseColor("#282828"));
+            viewHolder.h.setProgressDrawable(this.a.getResources().getDrawable(R.drawable.progress_bar_send_feed_dark));
         }
         int state = newFeedModel.getState();
         if (state == 0) {
             viewHolder.h.setVisibility(8);
             viewHolder.k.setVisibility(0);
-            viewHolder.f.setText(this.f19901a.getResources().getString(R.string.send_failed));
+            viewHolder.f.setText(this.a.getResources().getString(R.string.send_failed));
             viewHolder.g.setVisibility(0);
             viewHolder.d.setVisibility(0);
         } else if (state != 1) {
             viewHolder.d.setVisibility(8);
             viewHolder.h.setVisibility(8);
             viewHolder.k.setVisibility(0);
-            viewHolder.f.setText(this.f19901a.getResources().getString(R.string.send_failed));
+            viewHolder.f.setText(this.a.getResources().getString(R.string.send_failed));
             viewHolder.g.setVisibility(0);
         } else {
             viewHolder.d.setVisibility(8);
@@ -148,8 +140,8 @@ public class FeedSendRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
                 viewHolder.h.setVisibility(8);
             }
             viewHolder.k.setVisibility(8);
-            viewHolder.f.setText(this.f19901a.getResources().getString(R.string.send_ing));
-            viewHolder.f.setTextColor(BluedSkinUtils.a(this.f19901a, R.color.syc_h));
+            viewHolder.f.setText(this.a.getResources().getString(R.string.send_ing));
+            viewHolder.f.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_h));
             viewHolder.g.setVisibility(8);
         }
         viewHolder.h.setProgress(newFeedModel.getProgress());
@@ -187,7 +179,6 @@ public class FeedSendRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
         });
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
         return FeedSendManager.a().e();
     }

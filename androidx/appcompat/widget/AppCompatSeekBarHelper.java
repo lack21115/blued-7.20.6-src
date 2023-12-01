@@ -10,15 +10,16 @@ import androidx.appcompat.R;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.view.ViewCompat;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatSeekBarHelper.class */
-class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
+public class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SeekBar f1778a;
+    private final SeekBar f1730a;
     private Drawable b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ColorStateList f1779c;
+    private ColorStateList f1731c;
     private PorterDuff.Mode d;
     private boolean e;
     private boolean f;
@@ -26,11 +27,11 @@ class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public AppCompatSeekBarHelper(SeekBar seekBar) {
         super(seekBar);
-        this.f1779c = null;
+        this.f1731c = null;
         this.d = null;
         this.e = false;
         this.f = false;
-        this.f1778a = seekBar;
+        this.f1730a = seekBar;
     }
 
     private void d() {
@@ -39,13 +40,13 @@ class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
                 Drawable wrap = DrawableCompat.wrap(this.b.mutate());
                 this.b = wrap;
                 if (this.e) {
-                    DrawableCompat.setTintList(wrap, this.f1779c);
+                    DrawableCompat.setTintList(wrap, this.f1731c);
                 }
                 if (this.f) {
                     DrawableCompat.setTintMode(this.b, this.d);
                 }
                 if (this.b.isStateful()) {
-                    this.b.setState(this.f1778a.getDrawableState());
+                    this.b.setState(this.f1730a.getDrawableState());
                 }
             }
         }
@@ -56,7 +57,7 @@ class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
         if (this.b == null) {
             return;
         }
-        int max = this.f1778a.getMax();
+        int max = this.f1730a.getMax();
         int i = 1;
         if (max <= 1) {
             return;
@@ -68,9 +69,9 @@ class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
             i = intrinsicHeight / 2;
         }
         this.b.setBounds(-i2, -i, i2, i);
-        float width = ((this.f1778a.getWidth() - this.f1778a.getPaddingLeft()) - this.f1778a.getPaddingRight()) / max;
+        float width = ((this.f1730a.getWidth() - this.f1730a.getPaddingLeft()) - this.f1730a.getPaddingRight()) / max;
         int save = canvas.save();
-        canvas.translate(this.f1778a.getPaddingLeft(), this.f1778a.getHeight() / 2);
+        canvas.translate(this.f1730a.getPaddingLeft(), this.f1730a.getHeight() / 2);
         int i3 = 0;
         while (true) {
             int i4 = i3;
@@ -91,26 +92,26 @@ class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
         }
         this.b = drawable;
         if (drawable != null) {
-            drawable.setCallback(this.f1778a);
-            DrawableCompat.setLayoutDirection(drawable, ViewCompat.getLayoutDirection(this.f1778a));
+            drawable.setCallback(this.f1730a);
+            DrawableCompat.setLayoutDirection(drawable, ViewCompat.getLayoutDirection(this.f1730a));
             if (drawable.isStateful()) {
-                drawable.setState(this.f1778a.getDrawableState());
+                drawable.setState(this.f1730a.getDrawableState());
             }
             d();
         }
-        this.f1778a.invalidate();
+        this.f1730a.invalidate();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.appcompat.widget.AppCompatProgressBarHelper
     public void a(AttributeSet attributeSet, int i) {
         super.a(attributeSet, i);
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(this.f1778a.getContext(), attributeSet, R.styleable.AppCompatSeekBar, i, 0);
-        SeekBar seekBar = this.f1778a;
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(this.f1730a.getContext(), attributeSet, R.styleable.AppCompatSeekBar, i, 0);
+        SeekBar seekBar = this.f1730a;
         ViewCompat.saveAttributeDataForStyleable(seekBar, seekBar.getContext(), R.styleable.AppCompatSeekBar, attributeSet, obtainStyledAttributes.getWrappedTypeArray(), i, 0);
         Drawable drawableIfKnown = obtainStyledAttributes.getDrawableIfKnown(R.styleable.AppCompatSeekBar_android_thumb);
         if (drawableIfKnown != null) {
-            this.f1778a.setThumb(drawableIfKnown);
+            this.f1730a.setThumb(drawableIfKnown);
         }
         a(obtainStyledAttributes.getDrawable(R.styleable.AppCompatSeekBar_tickMark));
         if (obtainStyledAttributes.hasValue(R.styleable.AppCompatSeekBar_tickMarkTintMode)) {
@@ -118,7 +119,7 @@ class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
             this.f = true;
         }
         if (obtainStyledAttributes.hasValue(R.styleable.AppCompatSeekBar_tickMarkTint)) {
-            this.f1779c = obtainStyledAttributes.getColorStateList(R.styleable.AppCompatSeekBar_tickMarkTint);
+            this.f1731c = obtainStyledAttributes.getColorStateList(R.styleable.AppCompatSeekBar_tickMarkTint);
             this.e = true;
         }
         obtainStyledAttributes.recycle();
@@ -136,8 +137,8 @@ class AppCompatSeekBarHelper extends AppCompatProgressBarHelper {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c() {
         Drawable drawable = this.b;
-        if (drawable != null && drawable.isStateful() && drawable.setState(this.f1778a.getDrawableState())) {
-            this.f1778a.invalidateDrawable(drawable);
+        if (drawable != null && drawable.isStateful() && drawable.setState(this.f1730a.getDrawableState())) {
+            this.f1730a.invalidateDrawable(drawable);
         }
     }
 }

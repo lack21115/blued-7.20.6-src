@@ -2,14 +2,14 @@ package androidx.core.os;
 
 import android.os.Build;
 import android.os.LocaleList;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Locale;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/os/LocaleListCompat.class */
 public final class LocaleListCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final LocaleListCompat f2510a = create(new Locale[0]);
+    private static final LocaleListCompat f2462a = create(new Locale[0]);
     private LocaleListInterface b;
 
     private LocaleListCompat(LocaleListInterface localeListInterface) {
@@ -18,8 +18,8 @@ public final class LocaleListCompat {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Locale a(String str) {
-        if (str.contains("-")) {
-            String[] split = str.split("-", -1);
+        if (str.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
+            String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER, -1);
             if (split.length > 2) {
                 return new Locale(split[0], split[1], split[2]);
             }
@@ -29,10 +29,10 @@ public final class LocaleListCompat {
             if (split.length == 1) {
                 return new Locale(split[0]);
             }
-        } else if (!str.contains(BridgeUtil.UNDERLINE_STR)) {
+        } else if (!str.contains("_")) {
             return new Locale(str);
         } else {
-            String[] split2 = str.split(BridgeUtil.UNDERLINE_STR, -1);
+            String[] split2 = str.split("_", -1);
             if (split2.length > 2) {
                 return new Locale(split2[0], split2[1], split2[2]);
             }
@@ -77,7 +77,7 @@ public final class LocaleListCompat {
     }
 
     public static LocaleListCompat getEmptyLocaleList() {
-        return f2510a;
+        return f2462a;
     }
 
     public static LocaleListCompat wrap(LocaleList localeList) {

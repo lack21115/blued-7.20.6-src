@@ -222,11 +222,11 @@ public final class x {
         g.execute(new Runnable() { // from class: com.kwad.sdk.utils.x.1
             @Override // java.lang.Runnable
             public final void run() {
-                int c2 = ba.c("ksadsdk_kv_perf", String.this, 0);
+                int c2 = ba.c("ksadsdk_kv_perf", str, 0);
                 if (TextUtils.isEmpty(str2)) {
-                    ba.ae("ksadsdk_kv_perf", String.this);
+                    ba.ae("ksadsdk_kv_perf", str);
                 } else {
-                    ba.b("ksadsdk_kv_perf", String.this, c2 + 1);
+                    ba.b("ksadsdk_kv_perf", str, c2 + 1);
                 }
             }
         });
@@ -237,12 +237,12 @@ public final class x {
             @Override // java.lang.Runnable
             public final void run() {
                 SharedPreferences eN = ba.eN("ksadsdk_kv_perf");
-                if (eN != null && eN.contains(String.this)) {
+                if (eN != null && eN.contains(str)) {
                     if (TextUtils.isEmpty(str2)) {
-                        ba.b("ksadsdk_kv_perf_failed", String.this, ba.c("ksadsdk_kv_perf_failed", String.this, 0) + 1);
+                        ba.b("ksadsdk_kv_perf_failed", str, ba.c("ksadsdk_kv_perf_failed", str, 0) + 1);
                         return;
                     }
-                    ba.b("ksadsdk_kv_perf_success", String.this, ba.c("ksadsdk_kv_perf_success", String.this, 0) + 1);
+                    ba.b("ksadsdk_kv_perf_success", str, ba.c("ksadsdk_kv_perf_success", str, 0) + 1);
                 }
             }
         });

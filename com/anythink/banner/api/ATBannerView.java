@@ -421,8 +421,8 @@ public class ATBannerView extends FrameLayout implements d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isRefreshOpen() {
-        com.anythink.core.c.d a2 = com.anythink.core.c.e.a(getContext().getApplicationContext()).a(this.mPlacementId);
-        return a2 != null && a2.V() == 1;
+        com.anythink.core.c.d a = com.anythink.core.c.e.a(getContext().getApplicationContext()).a(this.mPlacementId);
+        return a != null && a.V() == 1;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -446,7 +446,7 @@ public class ATBannerView extends FrameLayout implements d {
         com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.banner.api.ATBannerView.6
             @Override // java.lang.Runnable
             public void run() {
-                com.anythink.core.common.k.g.a(trackingInfo, g.i.f6512c, g.i.f, "");
+                com.anythink.core.common.k.g.a(trackingInfo, g.i.c, g.i.f, "");
                 com.anythink.core.common.j.a.a(context).a(4, trackingInfo, aTBaseAdAdapter.getUnitGroupInfo());
                 n.a().a(new Runnable() { // from class: com.anythink.banner.api.ATBannerView.6.1
                     @Override // java.lang.Runnable
@@ -584,9 +584,9 @@ public class ATBannerView extends FrameLayout implements d {
             Log.e(this.TAG, "PlacementId is empty!");
             return new ATAdStatusInfo(false, false, null);
         }
-        ATAdStatusInfo a2 = aVar.a(getContext(), this.mTKExtraMap);
-        com.anythink.core.common.k.n.b(this.mPlacementId, g.i.i, g.i.u, a2.toString(), "");
-        return a2;
+        ATAdStatusInfo a = aVar.a(getContext(), this.mTKExtraMap);
+        com.anythink.core.common.k.n.b(this.mPlacementId, g.i.i, g.i.u, a.toString(), "");
+        return a;
     }
 
     public List<ATAdInfo> checkValidAdCaches() {

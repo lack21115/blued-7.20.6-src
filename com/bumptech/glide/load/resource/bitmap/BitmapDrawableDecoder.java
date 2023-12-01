@@ -13,21 +13,21 @@ import java.io.IOException;
 public class BitmapDrawableDecoder<DataType> implements ResourceDecoder<DataType, BitmapDrawable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ResourceDecoder<DataType, Bitmap> f20935a;
+    private final ResourceDecoder<DataType, Bitmap> f7329a;
     private final Resources b;
 
     public BitmapDrawableDecoder(Resources resources, ResourceDecoder<DataType, Bitmap> resourceDecoder) {
         this.b = (Resources) Preconditions.a(resources);
-        this.f20935a = (ResourceDecoder) Preconditions.a(resourceDecoder);
+        this.f7329a = (ResourceDecoder) Preconditions.a(resourceDecoder);
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<BitmapDrawable> a(DataType datatype, int i, int i2, Options options) throws IOException {
-        return LazyBitmapDrawableResource.a(this.b, this.f20935a.a(datatype, i, i2, options));
+        return LazyBitmapDrawableResource.a(this.b, this.f7329a.a(datatype, i, i2, options));
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public boolean a(DataType datatype, Options options) throws IOException {
-        return this.f20935a.a(datatype, options);
+        return this.f7329a.a(datatype, options);
     }
 }

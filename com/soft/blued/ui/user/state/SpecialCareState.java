@@ -11,14 +11,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SpecialCareState implements UiState {
 
     /* renamed from: a  reason: collision with root package name */
-    private final InvisibleToUserModel f34309a;
+    private final InvisibleToUserModel f20618a;
 
     public SpecialCareState() {
         this(null, 1, null);
     }
 
     public SpecialCareState(InvisibleToUserModel invisibleToUserModel) {
-        this.f34309a = invisibleToUserModel;
+        this.f20618a = invisibleToUserModel;
     }
 
     public /* synthetic */ SpecialCareState(InvisibleToUserModel invisibleToUserModel, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -26,7 +26,7 @@ public final class SpecialCareState implements UiState {
     }
 
     public final InvisibleToUserModel a() {
-        return this.f34309a;
+        return this.f20618a;
     }
 
     public final SpecialCareState a(InvisibleToUserModel invisibleToUserModel) {
@@ -37,11 +37,11 @@ public final class SpecialCareState implements UiState {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof SpecialCareState) && Intrinsics.a(this.f34309a, ((SpecialCareState) obj).f34309a);
+        return (obj instanceof SpecialCareState) && Intrinsics.a(this.f20618a, ((SpecialCareState) obj).f20618a);
     }
 
     public int hashCode() {
-        InvisibleToUserModel invisibleToUserModel = this.f34309a;
+        InvisibleToUserModel invisibleToUserModel = this.f20618a;
         if (invisibleToUserModel == null) {
             return 0;
         }
@@ -49,6 +49,6 @@ public final class SpecialCareState implements UiState {
     }
 
     public String toString() {
-        return "SpecialCareState(data=" + this.f34309a + ')';
+        return "SpecialCareState(data=" + this.f20618a + ')';
     }
 }

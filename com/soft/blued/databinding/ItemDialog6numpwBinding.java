@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemDialog6numpwBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29169a;
+    private final LinearLayout f15479a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29169a;
+        return this.f15479a;
     }
 }

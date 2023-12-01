@@ -14,20 +14,20 @@ import android.view.animation.DecelerateInterpolator;
 public class Explode extends Visibility {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final TimeInterpolator f3437a = new DecelerateInterpolator();
+    private static final TimeInterpolator f3389a = new DecelerateInterpolator();
     private static final TimeInterpolator b = new AccelerateInterpolator();
 
     /* renamed from: c  reason: collision with root package name */
-    private int[] f3438c;
+    private int[] f3390c;
 
     public Explode() {
-        this.f3438c = new int[2];
+        this.f3390c = new int[2];
         setPropagation(new CircularPropagation());
     }
 
     public Explode(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f3438c = new int[2];
+        this.f3390c = new int[2];
         setPropagation(new CircularPropagation());
     }
 
@@ -42,8 +42,8 @@ public class Explode extends Visibility {
     private void a(View view, Rect rect, int[] iArr) {
         int centerX;
         int centerY;
-        view.getLocationOnScreen(this.f3438c);
-        int[] iArr2 = this.f3438c;
+        view.getLocationOnScreen(this.f3390c);
+        int[] iArr2 = this.f3390c;
         int i = iArr2[0];
         int i2 = iArr2[1];
         Rect epicenter = getEpicenter();
@@ -76,8 +76,8 @@ public class Explode extends Visibility {
 
     private void a(TransitionValues transitionValues) {
         View view = transitionValues.view;
-        view.getLocationOnScreen(this.f3438c);
-        int[] iArr = this.f3438c;
+        view.getLocationOnScreen(this.f3390c);
+        int[] iArr = this.f3390c;
         int i = iArr[0];
         int i2 = iArr[1];
         transitionValues.values.put("android:explode:screenBounds", new Rect(i, i2, view.getWidth() + i, view.getHeight() + i2));
@@ -103,9 +103,9 @@ public class Explode extends Visibility {
         Rect rect = (Rect) transitionValues2.values.get("android:explode:screenBounds");
         float translationX = view.getTranslationX();
         float translationY = view.getTranslationY();
-        a(viewGroup, rect, this.f3438c);
-        int[] iArr = this.f3438c;
-        return TranslationAnimationCreator.a(view, transitionValues2, rect.left, rect.top, translationX + iArr[0], translationY + iArr[1], translationX, translationY, f3437a, this);
+        a(viewGroup, rect, this.f3390c);
+        int[] iArr = this.f3390c;
+        return TranslationAnimationCreator.a(view, transitionValues2, rect.left, rect.top, translationX + iArr[0], translationY + iArr[1], translationX, translationY, f3389a, this);
     }
 
     @Override // androidx.transition.Visibility
@@ -129,8 +129,8 @@ public class Explode extends Visibility {
             f = translationX;
             f2 = translationY;
         }
-        a(viewGroup, rect, this.f3438c);
-        int[] iArr2 = this.f3438c;
+        a(viewGroup, rect, this.f3390c);
+        int[] iArr2 = this.f3390c;
         return TranslationAnimationCreator.a(view, transitionValues, i, i2, translationX, translationY, f + iArr2[0], f2 + iArr2[1], b, this);
     }
 }

@@ -1,6 +1,5 @@
 package com.airbnb.lottie.parser;
 
-import android.app.backup.FullBackup;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.util.JsonReader;
@@ -14,12 +13,11 @@ import com.airbnb.lottie.model.layer.Layer;
 import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.Keyframe;
 import com.alipay.sdk.sys.a;
-import com.anythink.expressad.foundation.d.d;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.tencent.tendinsv.a.b;
+import com.amap.api.col.p0003sl.iu;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/LayerParser.class */
 public class LayerParser {
@@ -74,7 +72,7 @@ public class LayerParser {
                     z = true;
                     break;
                 case 104:
-                    if (nextName.equals("h")) {
+                    if (nextName.equals(iu.g)) {
                         z = true;
                         break;
                     }
@@ -88,7 +86,7 @@ public class LayerParser {
                     z = true;
                     break;
                 case 119:
-                    if (nextName.equals(IAdInterListener.AdReqParam.WIDTH)) {
+                    if (nextName.equals("w")) {
                         z = true;
                         break;
                     }
@@ -102,7 +100,7 @@ public class LayerParser {
                     z = true;
                     break;
                 case 3233:
-                    if (nextName.equals(FullBackup.MANAGED_EXTERNAL_TREE_TOKEN)) {
+                    if (nextName.equals("ef")) {
                         z = true;
                         break;
                     }
@@ -116,7 +114,7 @@ public class LayerParser {
                     z = true;
                     break;
                 case 3367:
-                    if (nextName.equals(b.a.q)) {
+                    if (nextName.equals("ip")) {
                         z = true;
                         break;
                     }
@@ -136,7 +134,7 @@ public class LayerParser {
                     }
                     z = true;
                     break;
-                case 3553:
+                case GL10.GL_TEXTURE_2D /* 3553 */:
                     if (nextName.equals("op")) {
                         z = true;
                         break;
@@ -151,7 +149,7 @@ public class LayerParser {
                     z = true;
                     break;
                 case 3669:
-                    if (nextName.equals(d.t)) {
+                    if (nextName.equals("sh")) {
                         z = true;
                         break;
                     }
@@ -273,9 +271,9 @@ public class LayerParser {
                 case true:
                     jsonReader.beginArray();
                     while (jsonReader.hasNext()) {
-                        ContentModel a2 = ContentModelParser.a(jsonReader, lottieComposition);
-                        if (a2 != null) {
-                            arrayList2.add(a2);
+                        ContentModel a = ContentModelParser.a(jsonReader, lottieComposition);
+                        if (a != null) {
+                            arrayList2.add(a);
                         }
                     }
                     jsonReader.endArray();
@@ -375,7 +373,7 @@ public class LayerParser {
         }
         arrayList4.add(new Keyframe(lottieComposition, valueOf, valueOf, null, f5, Float.valueOf(f6)));
         arrayList4.add(new Keyframe(lottieComposition, valueOf2, valueOf2, null, f6, Float.valueOf(Float.MAX_VALUE)));
-        if (str2.endsWith(".ai") || com.anythink.expressad.d.a.b.cZ.equals(str3)) {
+        if (str2.endsWith(".ai") || "ai".equals(str3)) {
             lottieComposition.a("Convert your Illustrator layers to shape layers.");
         }
         return new Layer(arrayList2, lottieComposition, str2, j, layerType, j2, str, arrayList, animatableTransform, i, i2, i3, f3, f4, i4, i5, animatableTextFrame, animatableTextProperties, arrayList4, matteType, animatableFloatValue, z3);

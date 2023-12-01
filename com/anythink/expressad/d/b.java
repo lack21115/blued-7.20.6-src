@@ -2,7 +2,6 @@ package com.anythink.expressad.d;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,10 +11,10 @@ public class b {
     public static final int b = 500;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7136c = "anythink";
+    public static final String f4297c = "anythink";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7135a = b.class.getSimpleName();
+    public static final String f4296a = b.class.getSimpleName();
     private static volatile b d = null;
     private static HashMap<String, c> e = new HashMap<>();
     private static a f = null;
@@ -55,7 +54,7 @@ public class b {
         try {
             Map<String, ?> all = context.getSharedPreferences(com.anythink.expressad.foundation.g.a.o, 0).getAll();
             for (String str2 : all.keySet()) {
-                if (str2.startsWith(str + BridgeUtil.UNDERLINE_STR)) {
+                if (str2.startsWith(str + "_")) {
                     e.put(str2, c.b((String) all.get(str2)));
                 }
             }
@@ -65,7 +64,7 @@ public class b {
     }
 
     private static void a(String str, String str2, String str3) {
-        String str4 = str + BridgeUtil.UNDERLINE_STR + str2;
+        String str4 = str + "_" + str2;
         com.anythink.expressad.foundation.a.a.a.a().a(str4, str3);
         e.put(str4, c.b(str3));
     }
@@ -99,7 +98,7 @@ public class b {
         aVar.w();
         aVar.u();
         aVar.m();
-        aVar.a("anythink");
+        aVar.a(f4297c);
         aVar.j();
         aVar.p();
         aVar.o();
@@ -189,7 +188,7 @@ public class b {
         if (TextUtils.isEmpty(str)) {
             str3 = com.anythink.expressad.foundation.b.a.b().e();
         }
-        String str4 = str3 + BridgeUtil.UNDERLINE_STR + str2;
+        String str4 = str3 + "_" + str2;
         c cVar = null;
         if (e.containsKey(str4)) {
             return e.get(str4);

@@ -1,10 +1,10 @@
 package com.blued.android.module.yy_china.manager;
 
-import android.media.TtmlUtils;
-import android.os.BatteryManager;
-import android.provider.BrowserContract;
 import android.text.TextUtils;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.common.c.d;
+import com.anythink.core.common.c.g;
+import com.anythink.core.common.l;
 import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
@@ -29,11 +29,7 @@ import com.blued.android.module.yy_china.trtc_audio.manager.AudioChannelManager;
 import com.blued.im.audio_chatroom.AudioChatroomOuterClass;
 import com.blued.im.audio_chatroom.AudioMsgExtra;
 import com.blued.im.audio_chatroom.AudioMsgType;
-import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import com.google.protobuf.Any;
-import com.oplus.quickgame.sdk.hall.Constant;
-import com.sina.weibo.sdk.constant.WBConstants;
-import com.soft.blued.ui.mine.model.MineEntryInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -41,18 +37,16 @@ import java.util.Map;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYIMManager.class */
 public class YYIMManager implements OnConnectStateListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static YYIMManager f17549a;
+    public static YYIMManager a;
 
     private YYIMManager() {
     }
 
     public static YYIMManager a() {
-        if (f17549a == null) {
-            f17549a = new YYIMManager();
+        if (a == null) {
+            a = new YYIMManager();
         }
-        return f17549a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -123,13 +117,13 @@ public class YYIMManager implements OnConnectStateListener {
         } else if (receive.getMsgType() == AudioMsgType.MsgType.UNMUTE) {
             YYImMsgManager.a().a(yYImModel, "0");
         } else if (receive.getMsgType() == AudioMsgType.MsgType.INVITE_UP_SEAT) {
-            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, BrowserContract.Bookmarks.POSITION, receive.getExtra().getMicInfo().getPosition());
+            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "position", receive.getExtra().getMicInfo().getPosition());
             YYImMsgManager.a().e(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.REFUSE_INVITE) {
             YYImMsgManager.a().r(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.UP_SEAT_SUCCESS) {
             AudioMsgExtra.UpSeatSuccess upSeatSuccessExtra = receive.getExtra().getUpSeatSuccessExtra();
-            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, TTLiveConstants.ROOMID_KEY, upSeatSuccessExtra.getRoomId());
+            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "room_id", upSeatSuccessExtra.getRoomId());
             MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, ReqAckPackage.REQ_RESPONSE_KEY.SEAT_NUM, upSeatSuccessExtra.getSeatNum());
             MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "auditor_count", upSeatSuccessExtra.getAuditorCount());
             ArrayList arrayList = new ArrayList();
@@ -154,7 +148,7 @@ public class YYIMManager implements OnConnectStateListener {
                 if (seats.getSpeechRipple() != null) {
                     HashMap hashMap2 = new HashMap();
                     hashMap2.put("img", seats.getSpeechRipple().getImg());
-                    hashMap2.put("icon", seats.getSpeechRipple().getIcon());
+                    hashMap2.put(ReqAckPackage.REQ_RESPONSE_KEY.ICON, seats.getSpeechRipple().getIcon());
                     hashMap.put("speech_ripple", hashMap2);
                 }
                 if (i != 0 && upSeatSuccessExtra.getSeats(i).getMicPosition() == 0) {
@@ -167,7 +161,7 @@ public class YYIMManager implements OnConnectStateListener {
             YYImMsgManager.a().c(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.LEAVE_SEAT) {
             AudioMsgExtra.LeaveSeat leaveSeatExtra = receive.getExtra().getLeaveSeatExtra();
-            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, TTLiveConstants.ROOMID_KEY, leaveSeatExtra.getRoomId());
+            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "room_id", leaveSeatExtra.getRoomId());
             MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, ReqAckPackage.REQ_RESPONSE_KEY.SEAT_NUM, leaveSeatExtra.getSeatNum());
             MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "leave_type", leaveSeatExtra.getLeaveType());
             MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "auditor_count", leaveSeatExtra.getAuditorCount());
@@ -193,7 +187,7 @@ public class YYIMManager implements OnConnectStateListener {
                 if (seats2.getSpeechRipple() != null) {
                     HashMap hashMap4 = new HashMap();
                     hashMap4.put("img", seats2.getSpeechRipple().getImg());
-                    hashMap4.put("icon", seats2.getSpeechRipple().getIcon());
+                    hashMap4.put(ReqAckPackage.REQ_RESPONSE_KEY.ICON, seats2.getSpeechRipple().getIcon());
                     hashMap3.put("speech_ripple", hashMap4);
                 }
                 if (i2 != 0 && leaveSeatExtra.getSeats(i2).getMicPosition() == 0) {
@@ -226,7 +220,7 @@ public class YYIMManager implements OnConnectStateListener {
         } else if (receive.getMsgType() == AudioMsgType.MsgType.OFFICE_MSG) {
             AudioMsgExtra.OfficeMsg officeMsgExtra = receive.getExtra().getOfficeMsgExtra();
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "title", officeMsgExtra.getTitle());
-            MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "content", officeMsgExtra.getContent());
+            MsgPackHelper.putMapValue(yYImModel.msgMapExtra, l.y, officeMsgExtra.getContent());
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "text_color", officeMsgExtra.getTextColor());
             YYImMsgManager.a().a(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.AUDIT_NAME_PASS) {
@@ -246,7 +240,7 @@ public class YYIMManager implements OnConnectStateListener {
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "name", emojiMsgExtra.getName());
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "pic", emojiMsgExtra.getPic());
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "apng", emojiMsgExtra.getApng());
-            MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "result", emojiMsgExtra.getResult());
+            MsgPackHelper.putMapValue(yYImModel.msgMapExtra, com.alipay.sdk.util.l.c, emojiMsgExtra.getResult());
             YYImMsgManager.a().u(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.SOUND_EFFECT) {
             YYImMsgManager.a().a(yYImModel);
@@ -311,7 +305,7 @@ public class YYIMManager implements OnConnectStateListener {
                 MsgPackHelper.putMapValue((Map<String, Object>) hashMap7, ReqAckPackage.REQ_RESPONSE_KEY.SEAT_NUM, target.getSeatNum());
                 HashMap hashMap8 = new HashMap();
                 hashMap8.put("source", hashMap6);
-                hashMap8.put(TypedValues.AttributesType.S_TARGET, hashMap7);
+                hashMap8.put("target", hashMap7);
                 hashMap8.put("isVip", Integer.valueOf(matchUserPair.getIsVipMatch()));
                 arrayList4.add(hashMap8);
             }
@@ -369,7 +363,7 @@ public class YYIMManager implements OnConnectStateListener {
             YYImMsgManager.a().H(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.GAME_UPDATE) {
             AudioMsgExtra.GameUpdate gameUpdate = receive.getExtra().getGameUpdate();
-            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "time", gameUpdate.getTime());
+            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, g.a.g, gameUpdate.getTime());
             MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "step", gameUpdate.getStep());
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "step_title", gameUpdate.getStepTitle());
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "step_content", gameUpdate.getStepContent());
@@ -424,13 +418,13 @@ public class YYIMManager implements OnConnectStateListener {
                 if (userSeats.getSpeechRipple() != null) {
                     HashMap hashMap15 = new HashMap();
                     hashMap15.put("img", userSeats.getSpeechRipple().getImg());
-                    hashMap15.put("icon", userSeats.getSpeechRipple().getIcon());
+                    hashMap15.put(ReqAckPackage.REQ_RESPONSE_KEY.ICON, userSeats.getSpeechRipple().getIcon());
                     hashMap14.put("speech_ripple", hashMap15);
                 }
                 arrayList7.add(hashMap14);
             }
             yYImModel.msgMapExtra.put("seats", arrayList7);
-            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "time", updateUserSeats.getTime());
+            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, g.a.g, updateUserSeats.getTime());
             YYImMsgManager.a().K(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.UPDATE_AUCTION) {
             AudioMsgExtra.UpdateAuction updateAuction = receive.getExtra().getUpdateAuction();
@@ -457,7 +451,7 @@ public class YYIMManager implements OnConnectStateListener {
             for (AudioMsgExtra.AuctionStageInfo auctionStageInfo : updateAuction.getStageListList()) {
                 HashMap hashMap18 = new HashMap();
                 MsgPackHelper.putMapValue(hashMap18, "name", auctionStageInfo.getName());
-                MsgPackHelper.putMapValue(hashMap18, "value", auctionStageInfo.getValue());
+                MsgPackHelper.putMapValue(hashMap18, d.a.d, auctionStageInfo.getValue());
                 arrayList8.add(hashMap18);
             }
             yYImModel.msgMapExtra.put("stage_list", arrayList8);
@@ -473,7 +467,7 @@ public class YYIMManager implements OnConnectStateListener {
             YYImMsgManager.a().M(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.AUCTIONEER_LEVEL) {
             AudioMsgExtra.AuctioneerLevel auctioneerLevel = receive.getExtra().getAuctioneerLevel();
-            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, BatteryManager.EXTRA_LEVEL, auctioneerLevel.getAuctioneerLevel());
+            MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "level", auctioneerLevel.getAuctioneerLevel());
             MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "level_img", auctioneerLevel.getAuctioneerAvatar());
             YYImMsgManager.a().N(yYImModel);
         } else if (receive.getMsgType() == AudioMsgType.MsgType.GUEST_AUTO_FEEDING) {
@@ -536,7 +530,7 @@ public class YYIMManager implements OnConnectStateListener {
             if (receive.getMsgType() == AudioMsgType.MsgType.GLOBAL_MESSAGE) {
                 AudioMsgExtra.GlobalMessage globalMessage = receive.getExtra().getGlobalMessage();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "type", globalMessage.getType());
-                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, TtmlUtils.TAG_BODY, globalMessage.getBody());
+                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "body", globalMessage.getBody());
                 YYImMsgManager.a().W(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.KTV_SINGER_INFO) {
                 AudioMsgExtra.KtvSingerInfo singerInfo = receive.getExtra().getSingerInfo();
@@ -574,7 +568,7 @@ public class YYIMManager implements OnConnectStateListener {
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "name", singResult.getName());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "uid", singResult.getUid());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, ReqAckPackage.REQ_RESPONSE_KEY.BEANS, singResult.getBeans());
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, WBConstants.GAME_PARAMS_SCORE, singResult.getScore());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "score", singResult.getScore());
                 YYImMsgManager.a().aa(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.KTV_MUSIC_NUM) {
                 if (receive.getExtra().getMusicNum() == null) {
@@ -626,14 +620,14 @@ public class YYIMManager implements OnConnectStateListener {
                 AudioMsgExtra.FansLevel fansLevel = receive.getExtra().getFansLevel();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "uid", fansLevel.getUid());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "status", fansLevel.getStatus());
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, BatteryManager.EXTRA_LEVEL, fansLevel.getLevel());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "level", fansLevel.getLevel());
                 YYImMsgManager.a().ad(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.FANS_STATUS) {
                 AudioMsgExtra.FansStatus fansStatus = receive.getExtra().getFansStatus();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "anchor_uid", fansStatus.getAnchorUid());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "uid", fansStatus.getUid());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "status", fansStatus.getStatus());
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, BatteryManager.EXTRA_LEVEL, fansStatus.getLevel());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "level", fansStatus.getLevel());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "name", fansStatus.getFansGroupName());
                 YYImMsgManager.a().ab(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.FANS_CREATE_GROUP) {
@@ -647,7 +641,7 @@ public class YYIMManager implements OnConnectStateListener {
             } else if (receive.getMsgType() == AudioMsgType.MsgType.BOX_NOTIFY) {
                 AudioMsgExtra.BoxNotify boxNotify = receive.getExtra().getBoxNotify();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "count_down", boxNotify.getCountDown());
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, BatteryManager.EXTRA_LEVEL, boxNotify.getLevel());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "level", boxNotify.getLevel());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "grant", boxNotify.getGrant());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "icon_small", boxNotify.getIconSmall());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "icon_middle", boxNotify.getIconMiddle());
@@ -667,13 +661,13 @@ public class YYIMManager implements OnConnectStateListener {
             } else if (receive.getMsgType() == AudioMsgType.MsgType.KTV_RECEIVE) {
                 AudioMsgExtra.KtvReceive receive2 = receive.getExtra().getReceive();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, ReqAckPackage.REQ_RESPONSE_KEY.BEANS, receive2.getBeans());
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "count", receive2.getCount());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT, receive2.getCount());
                 YYImMsgManager.a().ak(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.ANCHOR_PRIVILEGE) {
                 AudioMsgExtra.AnchorPrivilege anchorPrivilege = receive.getExtra().getAnchorPrivilege();
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "material", anchorPrivilege.getMaterial());
-                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "content", anchorPrivilege.getContent());
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, MineEntryInfo.ColumnsExtra.TYPE_ANCHOR_LEVEL, anchorPrivilege.getAnchorLevel());
+                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, l.y, anchorPrivilege.getContent());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "anchor_level", anchorPrivilege.getAnchorLevel());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "name", anchorPrivilege.getName());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, ReqAckPackage.REQ_RESPONSE_KEY.AVATAR, anchorPrivilege.getAvatar());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "roomid", anchorPrivilege.getRoomId());
@@ -683,13 +677,13 @@ public class YYIMManager implements OnConnectStateListener {
                 YYImMsgManager.a().ag(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.REPORT_INFO) {
                 AudioMsgExtra.ReportInfo reportInfo = receive.getExtra().getReportInfo();
-                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "content", reportInfo.getContents());
+                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, l.y, reportInfo.getContents());
                 YYImMsgManager.a().c(reportInfo.getContents());
             } else if (receive.getMsgType() == AudioMsgType.MsgType.POPOVER_INFO) {
                 AudioMsgExtra.PopoverInfo popoverInfo = receive.getExtra().getPopoverInfo();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "delay", popoverInfo.getDelay());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "title", popoverInfo.getTitle());
-                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "content", popoverInfo.getContent());
+                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, l.y, popoverInfo.getContent());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "background", popoverInfo.getBackground());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "submit_title", popoverInfo.getSubmitTitle());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "link", popoverInfo.getLink());
@@ -697,7 +691,7 @@ public class YYIMManager implements OnConnectStateListener {
             } else if (receive.getMsgType() == AudioMsgType.MsgType.CHATROOM_MIC_BEANS) {
                 AudioMsgExtra.ChatroomMicBeans chatroomMicBeans = receive.getExtra().getChatroomMicBeans();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "uid", chatroomMicBeans.getUid());
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, TTLiveConstants.ROOMID_KEY, chatroomMicBeans.getRoomId());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "room_id", chatroomMicBeans.getRoomId());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "status", chatroomMicBeans.getStatus());
                 List<AudioMsgExtra.MicBeansInfo> micBeansInfoList = chatroomMicBeans.getMicBeansInfoList();
                 if (micBeansInfoList != null) {
@@ -713,19 +707,19 @@ public class YYIMManager implements OnConnectStateListener {
                 YYImMsgManager.a().ai(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.TOPIC_INFO) {
                 AudioMsgExtra.TopicInfo topicInfo = receive.getExtra().getTopicInfo();
-                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, TTLiveConstants.ROOMID_KEY, topicInfo.getRoomId());
-                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, Constant.Param.TOPIC, topicInfo.getTopic());
+                MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "room_id", topicInfo.getRoomId());
+                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "topic", topicInfo.getTopic());
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "type_id", topicInfo.getTypeId());
                 MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "type_name", topicInfo.getTypeName());
-                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "content", topicInfo.getContent());
+                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, l.y, topicInfo.getContent());
                 YYImMsgManager.a().R(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.NEW_PK) {
                 AudioMsgExtra.NewPk newPk = receive.getExtra().getNewPk();
                 MsgPackHelper.putMapValue((Map<String, Object>) yYImModel.msgMapExtra, "type", newPk.getType());
-                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, TtmlUtils.TAG_BODY, newPk.getBody());
+                MsgPackHelper.putMapValue(yYImModel.msgMapExtra, "body", newPk.getBody());
                 YYImMsgManager.a().al(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.UPGRADE_PRIVILEGE) {
-                yYImModel.extra = (IMJsonContents95Model) AppInfo.f().fromJson(receive.getExtra().getJsonContents(), (Class<Object>) IMJsonContents95Model.class);
+                yYImModel.extra = (IMJsonContents95Model) AppInfo.f().fromJson(receive.getExtra().getJsonContents(), IMJsonContents95Model.class);
                 YYImMsgManager.a().ah(yYImModel);
             } else if (receive.getMsgType() == AudioMsgType.MsgType.ACTIVITY_ENTRANCE) {
                 yYImModel.setMsgExtra(receive.getExtra().getJsonContents());
@@ -789,7 +783,7 @@ public class YYIMManager implements OnConnectStateListener {
     }
 
     public void a(String str, AudioChatroom.OnAudioChatroomResponseListener onAudioChatroomResponseListener) {
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b == null || TextUtils.isEmpty(b.room_id) || yYUserInfo == null) {
             return;
@@ -849,73 +843,73 @@ public class YYIMManager implements OnConnectStateListener {
             if (b == null) {
                 return;
             }
-            final AudioChatroomOuterClass.Receive receive = (AudioChatroomOuterClass.Receive) any.unpack(AudioChatroomOuterClass.Receive.class);
-            if (receive.getRoomId() != StringUtils.a(b.room_id, 0)) {
+            final AudioChatroomOuterClass.Receive unpack = any.unpack(AudioChatroomOuterClass.Receive.class);
+            if (unpack.getRoomId() != StringUtils.a(b.room_id, 0)) {
                 return;
             }
             final YYImModel yYImModel = new YYImModel();
-            yYImModel.type = receive.getMsgTypeValue();
-            yYImModel.contents = receive.getContents();
-            yYImModel.resend = receive.getResend();
+            yYImModel.type = unpack.getMsgTypeValue();
+            yYImModel.contents = unpack.getContents();
+            yYImModel.resend = unpack.getResend();
             yYImModel.source_profile = new YYAudienceModel();
-            yYImModel.source_profile.setUid(String.valueOf(receive.getSourceProfile().getUid()));
-            yYImModel.source_profile.setName(receive.getSourceProfile().getName());
-            yYImModel.source_profile.setAvatar(receive.getSourceProfile().getAvatar());
-            yYImModel.source_profile.setWealth_level(receive.getSourceProfile().getWealthLevel());
-            yYImModel.source_profile.setAnchor_level(receive.getSourceProfile().getAnchorLevel());
-            yYImModel.source_profile.setAvatr_frame(receive.getSourceProfile().getAvatarFrame());
-            yYImModel.source_profile.setEnter_effects(receive.getSourceProfile().getEnterEffects());
-            yYImModel.source_profile.setEnter_effects_forward(receive.getSourceProfile().getEnterEffectsForward());
-            yYImModel.source_profile.chat_anchor = String.valueOf(receive.getSourceProfile().getRoleValue());
-            yYImModel.source_profile.message_bubble_icon = String.valueOf(receive.getSourceProfile().getMessageBubbleIcon());
-            yYImModel.source_profile.message_bubble_img = String.valueOf(receive.getSourceProfile().getMessageBubbleImg());
-            yYImModel.source_profile.fans_group_level = String.valueOf(receive.getSourceProfile().getFansGroupLevel());
-            yYImModel.source_profile.fans_group_name = String.valueOf(receive.getSourceProfile().getFansGroupName());
-            yYImModel.source_profile.fans_group_status = (int) receive.getSourceProfile().getFansGroupStatus();
-            if (receive.getSourceProfile().getMessageUserTitleList() != null) {
+            yYImModel.source_profile.setUid(String.valueOf(unpack.getSourceProfile().getUid()));
+            yYImModel.source_profile.setName(unpack.getSourceProfile().getName());
+            yYImModel.source_profile.setAvatar(unpack.getSourceProfile().getAvatar());
+            yYImModel.source_profile.setWealth_level(unpack.getSourceProfile().getWealthLevel());
+            yYImModel.source_profile.setAnchor_level(unpack.getSourceProfile().getAnchorLevel());
+            yYImModel.source_profile.setAvatr_frame(unpack.getSourceProfile().getAvatarFrame());
+            yYImModel.source_profile.setEnter_effects(unpack.getSourceProfile().getEnterEffects());
+            yYImModel.source_profile.setEnter_effects_forward(unpack.getSourceProfile().getEnterEffectsForward());
+            yYImModel.source_profile.chat_anchor = String.valueOf(unpack.getSourceProfile().getRoleValue());
+            yYImModel.source_profile.message_bubble_icon = String.valueOf(unpack.getSourceProfile().getMessageBubbleIcon());
+            yYImModel.source_profile.message_bubble_img = String.valueOf(unpack.getSourceProfile().getMessageBubbleImg());
+            yYImModel.source_profile.fans_group_level = String.valueOf(unpack.getSourceProfile().getFansGroupLevel());
+            yYImModel.source_profile.fans_group_name = String.valueOf(unpack.getSourceProfile().getFansGroupName());
+            yYImModel.source_profile.fans_group_status = (int) unpack.getSourceProfile().getFansGroupStatus();
+            if (unpack.getSourceProfile().getMessageUserTitleList() != null) {
                 ArrayList<YYRoomBasicPropItemMode> arrayList = new ArrayList<>();
-                for (AudioMsgExtra.MessageUserTitle messageUserTitle : receive.getSourceProfile().getMessageUserTitleList()) {
+                for (AudioMsgExtra.MessageUserTitle messageUserTitle : unpack.getSourceProfile().getMessageUserTitleList()) {
                     arrayList.add(new YYRoomBasicPropItemMode(messageUserTitle.getIcon(), messageUserTitle.getImg(), (int) messageUserTitle.getWidth()));
                 }
                 yYImModel.source_profile.message_user_title = arrayList;
             }
             yYImModel.target_profile = new YYAudienceModel();
-            yYImModel.target_profile.setUid(String.valueOf(receive.getTargetProfile().getUid()));
-            yYImModel.target_profile.setName(receive.getTargetProfile().getName());
-            yYImModel.target_profile.setAvatar(receive.getTargetProfile().getAvatar());
-            yYImModel.target_profile.setWealth_level(receive.getTargetProfile().getWealthLevel());
-            yYImModel.target_profile.setAnchor_level(receive.getTargetProfile().getAnchorLevel());
-            yYImModel.target_profile.setAvatr_frame(receive.getTargetProfile().getAvatarFrame());
-            yYImModel.target_profile.setEnter_effects(receive.getTargetProfile().getEnterEffects());
-            yYImModel.target_profile.setEnter_effects_forward(receive.getTargetProfile().getEnterEffectsForward());
-            yYImModel.target_profile.chat_anchor = String.valueOf(receive.getTargetProfile().getRoleValue());
-            yYImModel.target_profile.message_bubble_icon = String.valueOf(receive.getTargetProfile().getMessageBubbleIcon());
-            yYImModel.target_profile.message_bubble_img = String.valueOf(receive.getTargetProfile().getMessageBubbleImg());
-            yYImModel.target_profile.fans_group_level = String.valueOf(receive.getTargetProfile().getFansGroupLevel());
-            yYImModel.target_profile.fans_group_name = String.valueOf(receive.getTargetProfile().getFansGroupName());
-            yYImModel.target_profile.fans_group_status = (int) receive.getTargetProfile().getFansGroupStatus();
-            if (receive.getTargetProfile().getMessageUserTitleList() != null) {
+            yYImModel.target_profile.setUid(String.valueOf(unpack.getTargetProfile().getUid()));
+            yYImModel.target_profile.setName(unpack.getTargetProfile().getName());
+            yYImModel.target_profile.setAvatar(unpack.getTargetProfile().getAvatar());
+            yYImModel.target_profile.setWealth_level(unpack.getTargetProfile().getWealthLevel());
+            yYImModel.target_profile.setAnchor_level(unpack.getTargetProfile().getAnchorLevel());
+            yYImModel.target_profile.setAvatr_frame(unpack.getTargetProfile().getAvatarFrame());
+            yYImModel.target_profile.setEnter_effects(unpack.getTargetProfile().getEnterEffects());
+            yYImModel.target_profile.setEnter_effects_forward(unpack.getTargetProfile().getEnterEffectsForward());
+            yYImModel.target_profile.chat_anchor = String.valueOf(unpack.getTargetProfile().getRoleValue());
+            yYImModel.target_profile.message_bubble_icon = String.valueOf(unpack.getTargetProfile().getMessageBubbleIcon());
+            yYImModel.target_profile.message_bubble_img = String.valueOf(unpack.getTargetProfile().getMessageBubbleImg());
+            yYImModel.target_profile.fans_group_level = String.valueOf(unpack.getTargetProfile().getFansGroupLevel());
+            yYImModel.target_profile.fans_group_name = String.valueOf(unpack.getTargetProfile().getFansGroupName());
+            yYImModel.target_profile.fans_group_status = (int) unpack.getTargetProfile().getFansGroupStatus();
+            if (unpack.getTargetProfile().getMessageUserTitleList() != null) {
                 ArrayList<YYRoomBasicPropItemMode> arrayList2 = new ArrayList<>();
-                for (AudioMsgExtra.MessageUserTitle messageUserTitle2 : receive.getTargetProfile().getMessageUserTitleList()) {
+                for (AudioMsgExtra.MessageUserTitle messageUserTitle2 : unpack.getTargetProfile().getMessageUserTitleList()) {
                     arrayList2.add(new YYRoomBasicPropItemMode(messageUserTitle2.getIcon(), messageUserTitle2.getImg(), (int) messageUserTitle2.getWidth()));
                 }
                 yYImModel.target_profile.message_user_title = arrayList2;
             }
-            yYImModel.msg_time = receive.getMsgTime();
+            yYImModel.msg_time = unpack.getMsgTime();
             yYImModel.msgMapExtra = new HashMap<>();
             AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.yy_china.manager.YYIMManager.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    LogUtils.d("YYIMManager", "收到消息 type = " + receive.getMsgTypeValue());
+                    LogUtils.d("YYIMManager", "收到消息 type = " + unpack.getMsgTypeValue());
                     try {
-                        YYIMManager.this.a(receive, yYImModel);
+                        YYIMManager.this.a(unpack, yYImModel);
                         String json = AppInfo.f().toJson(yYImModel);
                         LogUtils.d("YYIMManager", "收到消息 = " + json);
-                        if (receive.getMsgType() == AudioMsgType.MsgType.JOIN_ROOM || receive.getMsgType() == AudioMsgType.MsgType.CLOSE_ROOM || receive.getMsgType() == AudioMsgType.MsgType.ALERT_ROOM || receive.getMsgType() == AudioMsgType.MsgType.SET_MANAGER || receive.getMsgType() == AudioMsgType.MsgType.CANCLE_MANAGER || receive.getMsgType() == AudioMsgType.MsgType.MUTE || receive.getMsgType() == AudioMsgType.MsgType.UNMUTE || receive.getMsgType() == AudioMsgType.MsgType.INVITE_UP_SEAT || receive.getMsgType() == AudioMsgType.MsgType.REFUSE_INVITE || receive.getMsgType() == AudioMsgType.MsgType.UP_SEAT_SUCCESS || receive.getMsgType() == AudioMsgType.MsgType.LEAVE_SEAT || receive.getMsgType() == AudioMsgType.MsgType.MUTE_SEAT_STATUS || receive.getMsgType() == AudioMsgType.MsgType.CLOSE_SEAT_STATUS || receive.getMsgType() == AudioMsgType.MsgType.KICK_ROOM || receive.getMsgType() == AudioMsgType.MsgType.ROOM_NAME_INVALID || receive.getMsgType() == AudioMsgType.MsgType.UP_APPLY_REJECT || receive.getMsgType() == AudioMsgType.MsgType.LATE_UP_SEAT_ACCEPT || receive.getMsgType() == AudioMsgType.MsgType.LATE_UP_SEAT_REJECT || receive.getMsgType() == AudioMsgType.MsgType.INVALID_LIVE_WARNING || receive.getMsgType() == AudioMsgType.MsgType.ROB_SING_ROOM || receive.getMsgType() == AudioMsgType.MsgType.NEW_PK) {
-                            LiveLogUtils.a("YYIMManager --> onReceive --> msgType：" + receive.getMsgType() + " --> json：" + json);
+                        if (unpack.getMsgType() == AudioMsgType.MsgType.JOIN_ROOM || unpack.getMsgType() == AudioMsgType.MsgType.CLOSE_ROOM || unpack.getMsgType() == AudioMsgType.MsgType.ALERT_ROOM || unpack.getMsgType() == AudioMsgType.MsgType.SET_MANAGER || unpack.getMsgType() == AudioMsgType.MsgType.CANCLE_MANAGER || unpack.getMsgType() == AudioMsgType.MsgType.MUTE || unpack.getMsgType() == AudioMsgType.MsgType.UNMUTE || unpack.getMsgType() == AudioMsgType.MsgType.INVITE_UP_SEAT || unpack.getMsgType() == AudioMsgType.MsgType.REFUSE_INVITE || unpack.getMsgType() == AudioMsgType.MsgType.UP_SEAT_SUCCESS || unpack.getMsgType() == AudioMsgType.MsgType.LEAVE_SEAT || unpack.getMsgType() == AudioMsgType.MsgType.MUTE_SEAT_STATUS || unpack.getMsgType() == AudioMsgType.MsgType.CLOSE_SEAT_STATUS || unpack.getMsgType() == AudioMsgType.MsgType.KICK_ROOM || unpack.getMsgType() == AudioMsgType.MsgType.ROOM_NAME_INVALID || unpack.getMsgType() == AudioMsgType.MsgType.UP_APPLY_REJECT || unpack.getMsgType() == AudioMsgType.MsgType.LATE_UP_SEAT_ACCEPT || unpack.getMsgType() == AudioMsgType.MsgType.LATE_UP_SEAT_REJECT || unpack.getMsgType() == AudioMsgType.MsgType.INVALID_LIVE_WARNING || unpack.getMsgType() == AudioMsgType.MsgType.ROB_SING_ROOM || unpack.getMsgType() == AudioMsgType.MsgType.NEW_PK) {
+                            LiveLogUtils.a("YYIMManager --> onReceive --> msgType：" + unpack.getMsgType() + " --> json：" + json);
                         }
                     } catch (Exception e) {
-                        LiveLogUtils.a("YYIMManager --> onReceive --> msgType：" + receive.getMsgType() + " --> Exception：" + e.getMessage());
+                        LiveLogUtils.a("YYIMManager --> onReceive --> msgType：" + unpack.getMsgType() + " --> Exception：" + e.getMessage());
                     }
                 }
             });

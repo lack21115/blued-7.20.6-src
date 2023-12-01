@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -14,16 +13,16 @@ import java.util.HashMap;
 public class c {
     private HandlerThread h;
     private d i;
-    private HandlerC1101c j;
-    private HandlerC1101c k;
+    private HandlerC0931c j;
+    private HandlerC0931c k;
     private b l;
 
     /* renamed from: a  reason: collision with root package name */
-    HashMap<String, com.zk_oaction.adengine.bitmap.b> f41868a = new HashMap<>();
+    HashMap<String, com.zk_oaction.adengine.bitmap.b> f28177a = new HashMap<>();
     com.zk_oaction.adengine.bitmap.a b = new com.zk_oaction.adengine.bitmap.a();
 
     /* renamed from: c  reason: collision with root package name */
-    com.zk_oaction.adengine.bitmap.d f41869c = new com.zk_oaction.adengine.bitmap.d();
+    com.zk_oaction.adengine.bitmap.d f28178c = new com.zk_oaction.adengine.bitmap.d();
     Handler d = new Handler(Looper.getMainLooper());
     private int e = 1;
     private float f = 1.0f;
@@ -45,21 +44,21 @@ public class c {
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f41870a;
+        final /* synthetic */ String f28179a;
         final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ boolean f41871c;
+        final /* synthetic */ boolean f28180c;
 
         a(String str, float f, boolean z) {
-            this.f41870a = str;
+            this.f28179a = str;
             this.b = f;
-            this.f41871c = z;
+            this.f28180c = z;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            c.this.c(this.f41870a, this.b, this.f41871c);
+            c.this.c(this.f28179a, this.b, this.f28180c);
         }
     }
 
@@ -68,13 +67,13 @@ public class c {
     public class b extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile boolean f41872a;
+        public volatile boolean f28181a;
         public volatile boolean b;
         private volatile long d;
 
         public b(Looper looper) {
             super(looper);
-            this.f41872a = false;
+            this.f28181a = false;
             this.b = false;
             this.d = 0L;
         }
@@ -95,7 +94,7 @@ public class c {
 
         public void a(boolean z) {
             synchronized (this) {
-                this.f41872a = z;
+                this.f28181a = z;
                 a();
                 removeMessages(0);
             }
@@ -103,7 +102,7 @@ public class c {
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            if (this.f41872a) {
+            if (this.f28181a) {
                 return;
             }
             synchronized (this) {
@@ -115,23 +114,23 @@ public class c {
                     this.b = false;
                 }
             }
-            if (this.f41872a) {
+            if (this.f28181a) {
                 return;
             }
             com.zk_oaction.adengine.bitmap.b bVar = (com.zk_oaction.adengine.bitmap.b) message.obj;
             if (bVar.e() == null) {
                 if (message.what == 0) {
-                    c.this.b.a(bVar.f41866a);
+                    c.this.b.a(bVar.f28175a);
                     return;
                 }
-                Bitmap c2 = c.this.c(bVar.f41866a, bVar.b);
+                Bitmap c2 = c.this.c(bVar.f28175a, bVar.b);
                 if (c2 != null) {
-                    if (this.f41872a) {
+                    if (this.f28181a) {
                         c2.recycle();
                         return;
                     }
                     bVar.a(c2);
-                    c.this.b(bVar.f41866a, bVar.b, true);
+                    c.this.b(bVar.f28175a, bVar.b, true);
                 }
             }
         }
@@ -140,7 +139,7 @@ public class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.bitmap.c$c  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/bitmap/c$c.class */
-    public class HandlerC1101c extends Handler {
+    public class HandlerC0931c extends Handler {
         public void a(boolean z) {
             throw null;
         }
@@ -166,13 +165,13 @@ public class c {
         com.zk_oaction.adengine.bitmap.b bVar;
         synchronized (this) {
             String b2 = b(str, f);
-            com.zk_oaction.adengine.bitmap.b bVar2 = this.f41868a.get(b2);
+            com.zk_oaction.adengine.bitmap.b bVar2 = this.f28177a.get(b2);
             bVar = bVar2;
             if (z) {
                 bVar = bVar2;
                 if (bVar2 == null) {
                     bVar = new com.zk_oaction.adengine.bitmap.b(str, f);
-                    this.f41868a.put(b2, bVar);
+                    this.f28177a.put(b2, bVar);
                 }
             }
         }
@@ -216,7 +215,7 @@ public class c {
         }
         Bitmap bitmap = null;
         try {
-            com.zk_oaction.adengine.bitmap.d dVar = this.f41869c;
+            com.zk_oaction.adengine.bitmap.d dVar = this.f28178c;
             if (dVar != null) {
                 bitmap = dVar.a(str, f, i, i2, this.b.a(str));
             }
@@ -243,18 +242,18 @@ public class c {
 
     private void g() {
         synchronized (this) {
-            HandlerC1101c handlerC1101c = this.k;
-            if (handlerC1101c != null) {
-                handlerC1101c.a(true);
+            HandlerC0931c handlerC0931c = this.k;
+            if (handlerC0931c != null) {
+                handlerC0931c.a(true);
             }
         }
     }
 
     private void h() {
         synchronized (this) {
-            HandlerC1101c handlerC1101c = this.j;
-            if (handlerC1101c != null) {
-                handlerC1101c.a(true);
+            HandlerC0931c handlerC0931c = this.j;
+            if (handlerC0931c != null) {
+                handlerC0931c.a(true);
             }
         }
     }
@@ -286,7 +285,7 @@ public class c {
     public com.zk_oaction.adengine.bitmap.b a(String str, float f) {
         com.zk_oaction.adengine.bitmap.b bVar;
         synchronized (this) {
-            bVar = this.f41868a.get(b(str, f));
+            bVar = this.f28177a.get(b(str, f));
         }
         return bVar;
     }
@@ -300,7 +299,7 @@ public class c {
                 if (i2 < this.m.size()) {
                     com.zk_oaction.adengine.bitmap.b bVar = this.m.get(i2);
                     bVar.b();
-                    b(bVar.f41866a, bVar.b, false);
+                    b(bVar.f28175a, bVar.b, false);
                     i = i2 + 1;
                 }
             }
@@ -343,7 +342,7 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String b(String str, float f) {
-        return str + BridgeUtil.UNDERLINE_STR + f;
+        return str + "_" + f;
     }
 
     public void b() {
@@ -371,9 +370,9 @@ public class c {
             b();
             this.h.quit();
             i();
-            this.f41868a.clear();
+            this.f28177a.clear();
             this.b.a();
-            this.f41869c = null;
+            this.f28178c = null;
             this.m.clear();
             this.n.clear();
         }

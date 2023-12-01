@@ -6,15 +6,15 @@ import com.huawei.hms.support.log.HMSLog;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Object f22870a = new Object();
+    public static final Object f9262a = new Object();
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f22871c = false;
+    public static boolean f9263c = false;
 
     public static boolean a() {
         boolean z;
-        synchronized (f22870a) {
+        synchronized (f9262a) {
             if (!b) {
                 boolean z2 = false;
                 try {
@@ -31,12 +31,12 @@ public class c {
                     HMSLog.i("HianalyticsExist", "In isHianalyticsExist, Failed to find class HmsHiAnalyticsUtils.");
                 }
                 if (z && !z2) {
-                    f22871c = true;
+                    f9263c = true;
                 }
                 b = true;
-                HMSLog.i("HianalyticsExist", "hianalytics exist: " + f22871c);
+                HMSLog.i("HianalyticsExist", "hianalytics exist: " + f9263c);
             }
         }
-        return f22871c;
+        return f9263c;
     }
 }

@@ -7,11 +7,11 @@ import android.view.View;
 public final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f36670a;
+    private final View f22979a;
     private final int b;
 
     private b(View view, int i) {
-        this.f36670a = view;
+        this.f22979a = view;
         this.b = i;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36670a.setVisibility(this.b);
+        this.f22979a.setVisibility(this.b);
     }
 }

@@ -260,7 +260,7 @@ public class VpnService extends Service {
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
-        if (intent == null || !"android.net.VpnService".equals(intent.getAction())) {
+        if (intent == null || !SERVICE_INTERFACE.equals(intent.getAction())) {
             return null;
         }
         return new Callback();

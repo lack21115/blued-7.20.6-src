@@ -1,6 +1,5 @@
 package kotlin.internal;
 
-import com.igexin.push.a.c;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
@@ -8,9 +7,7 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/internal/PlatformImplementationsKt.class */
 public final class PlatformImplementationsKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final PlatformImplementations f42478a;
+    public static final PlatformImplementations a;
 
     static {
         PlatformImplementations platformImplementations;
@@ -46,7 +43,7 @@ public final class PlatformImplementationsKt {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.internal.PlatformImplementations");
                 }
                 platformImplementations = (PlatformImplementations) newInstance;
-                f42478a = platformImplementations;
+                a = platformImplementations;
             } catch (ClassCastException e4) {
                 ClassLoader classLoader3 = newInstance.getClass().getClassLoader();
                 ClassLoader classLoader4 = PlatformImplementations.class.getClassLoader();
@@ -85,7 +82,7 @@ public final class PlatformImplementationsKt {
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.internal.PlatformImplementations");
                 }
                 platformImplementations = (PlatformImplementations) newInstance2;
-                f42478a = platformImplementations;
+                a = platformImplementations;
             } catch (ClassCastException e8) {
                 ClassLoader classLoader7 = newInstance2.getClass().getClassLoader();
                 ClassLoader classLoader8 = PlatformImplementations.class.getClassLoader();
@@ -96,13 +93,13 @@ public final class PlatformImplementationsKt {
             }
         }
         platformImplementations = new PlatformImplementations();
-        f42478a = platformImplementations;
+        a = platformImplementations;
     }
 
     private static final int a() {
         String property = System.getProperty("java.specification.version");
         if (property == null) {
-            return c.f23290c;
+            return 65542;
         }
         String str = property;
         int a2 = StringsKt.a((CharSequence) str, '.', 0, false, 6, (Object) null);
@@ -110,7 +107,7 @@ public final class PlatformImplementationsKt {
             try {
                 return Integer.parseInt(property) * 65536;
             } catch (NumberFormatException e) {
-                return c.f23290c;
+                return 65542;
             }
         }
         int i = a2 + 1;
@@ -127,7 +124,7 @@ public final class PlatformImplementationsKt {
             int parseInt = Integer.parseInt(substring);
             return (parseInt * 65536) + Integer.parseInt(substring2);
         } catch (NumberFormatException e2) {
-            return c.f23290c;
+            return 65542;
         }
     }
 }

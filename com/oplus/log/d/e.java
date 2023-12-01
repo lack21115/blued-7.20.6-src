@@ -9,7 +9,7 @@ import java.util.Map;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f24357a = {"MemTotal:", "MemFree:", "Buffers:", "Cached:", "Active:", "Inactive:", "Dirty:"};
+    public static final String[] f10670a = {"MemTotal:", "MemFree:", "Buffers:", "Cached:", "Active:", "Inactive:", "Dirty:"};
     public static final String[] b = {"VmLck:", "VmRSS:", "VmSize:", "VmExe:", "VmStk:", "VmLib", "Threads:"};
 
     public static Map<String, Long> a() {
@@ -20,17 +20,17 @@ public final class e {
             Method method = Class.forName("android.os.Process").getMethod("readProcLines", String.class, String[].class, long[].class);
             hashMap = hashMap2;
             if (method != null) {
-                int length = f24357a.length;
+                int length = f10670a.length;
                 long[] jArr = new long[length];
                 jArr[0] = 30;
                 jArr[1] = -30;
-                method.invoke(null, new String("/proc/meminfo"), f24357a, jArr);
+                method.invoke(null, new String("/proc/meminfo"), f10670a, jArr);
                 while (true) {
                     hashMap = hashMap2;
                     if (i >= length) {
                         break;
                     }
-                    hashMap2.put(f24357a[i], Long.valueOf(jArr[i]));
+                    hashMap2.put(f10670a[i], Long.valueOf(jArr[i]));
                     i++;
                 }
             }

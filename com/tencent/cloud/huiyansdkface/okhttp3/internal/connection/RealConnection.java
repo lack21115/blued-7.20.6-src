@@ -52,11 +52,11 @@ import javax.net.ssl.SSLSocket;
 public final class RealConnection extends Http2Connection.Listener implements Connection {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f35935a;
+    public boolean f22244a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f35936c = 1;
+    public int f22245c = 1;
     public final List<Reference<StreamAllocation>> d = new ArrayList();
     public long e = Long.MAX_VALUE;
     private final ConnectionPool g;
@@ -75,8 +75,8 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     }
 
     private Request a() throws IOException {
-        Request build = new Request.Builder().url(this.h.address().url()).method("CONNECT", null).header("Host", Util.hostHeader(this.h.address().url(), true)).header("Proxy-Connection", c.f7906c).header("User-Agent", Version.userAgent()).build();
-        Request authenticate = this.h.address().proxyAuthenticator().authenticate(this.h, new Response.Builder().request(build).protocol(Protocol.HTTP_1_1).code(407).message("Preemptive Authenticate").body(Util.f35905c).sentRequestAtMillis(-1L).receivedResponseAtMillis(-1L).header(HttpHeaders.PROXY_AUTHENTICATE, "OkHttp-Preemptive").build());
+        Request build = new Request.Builder().url(this.h.address().url()).method("CONNECT", null).header("Host", Util.hostHeader(this.h.address().url(), true)).header("Proxy-Connection", c.f5066c).header("User-Agent", Version.userAgent()).build();
+        Request authenticate = this.h.address().proxyAuthenticator().authenticate(this.h, new Response.Builder().request(build).protocol(Protocol.HTTP_1_1).code(407).message("Preemptive Authenticate").body(Util.f22214c).sentRequestAtMillis(-1L).receivedResponseAtMillis(-1L).header(HttpHeaders.PROXY_AUTHENTICATE, "OkHttp-Preemptive").build());
         if (authenticate != null) {
             build = authenticate;
         }
@@ -286,13 +286,13 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     }
 
     public boolean isEligible(Address address, Route route) {
-        if (this.d.size() >= this.f35936c || this.f35935a || !Internal.f35902a.equalsNonHost(this.h.address(), address)) {
+        if (this.d.size() >= this.f22245c || this.f22244a || !Internal.f22211a.equalsNonHost(this.h.address(), address)) {
             return false;
         }
         if (address.url().host().equals(route().address().url().host())) {
             return true;
         }
-        if (this.m != null && route != null && route.proxy().type() == Proxy.Type.DIRECT && this.h.proxy().type() == Proxy.Type.DIRECT && this.h.socketAddress().equals(route.socketAddress()) && route.address().hostnameVerifier() == OkHostnameVerifier.f36034a && supportsUrl(address.url())) {
+        if (this.m != null && route != null && route.proxy().type() == Proxy.Type.DIRECT && this.h.proxy().type() == Proxy.Type.DIRECT && this.h.socketAddress().equals(route.socketAddress()) && route.address().hostnameVerifier() == OkHostnameVerifier.f22343a && supportsUrl(address.url())) {
             try {
                 address.certificatePinner().check(address.url().host(), handshake().peerCertificates());
                 return true;
@@ -362,7 +362,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.http2.Http2Connection.Listener
     public void onSettings(Http2Connection http2Connection) {
         synchronized (this.g) {
-            this.f35936c = http2Connection.maxConcurrentStreams();
+            this.f22245c = http2Connection.maxConcurrentStreams();
         }
     }
 
@@ -396,7 +396,7 @@ public final class RealConnection extends Http2Connection.Listener implements Co
         boolean z = false;
         if (this.k != null) {
             z = false;
-            if (OkHostnameVerifier.f36034a.verify(httpUrl.host(), (X509Certificate) this.k.peerCertificates().get(0))) {
+            if (OkHostnameVerifier.f22343a.verify(httpUrl.host(), (X509Certificate) this.k.peerCertificates().get(0))) {
                 z = true;
             }
         }

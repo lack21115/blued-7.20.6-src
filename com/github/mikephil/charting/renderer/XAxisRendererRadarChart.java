@@ -43,7 +43,7 @@ public class XAxisRendererRadarChart extends XAxisRenderer {
             float f = i2;
             String a4 = this.g.q().a(f, this.g);
             Utils.a(centerOffsets, (this.n.getYRange() * factor) + (this.g.E / 2.0f), ((f * sliceAngle) + this.n.getRotationAngle()) % 360.0f, a3);
-            a(canvas, a4, a3.f22204a, a3.b - (this.g.F / 2.0f), a2, B);
+            a(canvas, a4, a3.f8597a, a3.b - (this.g.F / 2.0f), a2, B);
             i = i2 + 1;
         }
     }

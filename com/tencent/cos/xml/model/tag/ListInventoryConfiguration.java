@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.Set;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/ListInventoryConfiguration.class */
@@ -34,7 +33,7 @@ public class ListInventoryConfiguration {
                 }
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

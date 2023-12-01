@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.nio.CharBuffer;
@@ -145,7 +145,7 @@ public class Debug {
                 return "?" + i;
             }
         }
-        return "UNKNOWN";
+        return GrsBaseInfo.CountryCodeSource.UNKNOWN;
     }
 
     public static String getName(Context context, int[] iArr) {
@@ -157,7 +157,7 @@ public class Debug {
             i = 0;
         } catch (Exception e) {
             Log.v("DEBUG", e.toString());
-            return "UNKNOWN";
+            return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
         while (true) {
             int i2 = i;
@@ -176,7 +176,7 @@ public class Debug {
             str = sb2 + str2;
             i = i2 + 1;
             Log.v("DEBUG", e.toString());
-            return "UNKNOWN";
+            return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -184,7 +184,7 @@ public class Debug {
         try {
             return view.getContext().getResources().getResourceEntryName(view.getId());
         } catch (Exception e) {
-            return "UNKNOWN";
+            return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 
@@ -209,7 +209,7 @@ public class Debug {
                 str = str2;
                 if (length > 0) {
                     int length2 = (str2.length() - i2) / length;
-                    str = str2.replaceAll(CharBuffer.allocate(length2).toString().replace((char) 0, '.') + BridgeUtil.UNDERLINE_STR, BridgeUtil.UNDERLINE_STR);
+                    str = str2.replaceAll(CharBuffer.allocate(length2).toString().replace((char) 0, '.') + "_", "_");
                 }
             }
         }

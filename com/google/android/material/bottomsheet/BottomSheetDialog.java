@@ -354,7 +354,7 @@ public class BottomSheetDialog extends AppCompatDialog {
 
     boolean shouldWindowCloseOnTouchOutside() {
         if (!this.canceledOnTouchOutsideSet) {
-            TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(new int[]{16843611});
+            TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(new int[]{android.R.attr.windowCloseOnTouchOutside});
             this.canceledOnTouchOutside = obtainStyledAttributes.getBoolean(0, true);
             obtainStyledAttributes.recycle();
             this.canceledOnTouchOutsideSet = true;

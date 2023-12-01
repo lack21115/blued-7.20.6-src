@@ -30,11 +30,11 @@ import com.ss.android.socialbase.downloader.setting.DownloadSettingKeys;
 public class CommonWriteTextFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f29642a;
+    public Context f15952a;
     public int b = 256;
 
     /* renamed from: c  reason: collision with root package name */
-    protected View f29643c;
+    protected View f15953c;
     public EditText d;
     protected EditInputNumView e;
     protected String f;
@@ -79,7 +79,7 @@ public class CommonWriteTextFragment extends BaseFragment implements View.OnClic
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f29646c;
+            private int f15956c;
             private String d;
             private String e;
 
@@ -87,21 +87,21 @@ public class CommonWriteTextFragment extends BaseFragment implements View.OnClic
             public void afterTextChanged(Editable editable) {
                 try {
                     this.b = CommonWriteTextFragment.this.d.getSelectionStart();
-                    this.f29646c = CommonWriteTextFragment.this.d.getSelectionEnd();
+                    this.f15956c = CommonWriteTextFragment.this.d.getSelectionEnd();
                     if (!CommonWriteTextFragment.this.d()) {
                         CommonWriteTextFragment.this.d.setSelection(this.b);
-                    } else if (!CommonWriteTextFragment.this.m.a(CommonWriteTextFragment.this, this.d, this.e, editable, this.f29646c)) {
+                    } else if (!CommonWriteTextFragment.this.m.a(CommonWriteTextFragment.this, this.d, this.e, editable, this.f15956c)) {
                         CommonWriteTextFragment.this.d.setSelection(this.b);
                     }
                     if (CommonWriteTextFragment.this.o != null) {
                         CommonWriteTextFragment.this.o.afterTextChanged(editable);
                     }
                     if (CommonWriteTextFragment.this.e.isOutOfBounds()) {
-                        CommonWriteTextFragment.this.j.getRightTextView().setTextColor(BluedSkinUtils.a(CommonWriteTextFragment.this.f29642a, 2131102260));
-                        CommonWriteTextFragment.this.j.setRightClickListener(null);
+                        CommonWriteTextFragment.this.j.getRightTextView().setTextColor(BluedSkinUtils.a(CommonWriteTextFragment.this.f15952a, 2131102260));
+                        CommonWriteTextFragment.this.j.setRightClickListener((View.OnClickListener) null);
                         return;
                     }
-                    CommonWriteTextFragment.this.j.getRightTextView().setTextColor(BluedSkinUtils.a(CommonWriteTextFragment.this.f29642a, 2131102254));
+                    CommonWriteTextFragment.this.j.getRightTextView().setTextColor(BluedSkinUtils.a(CommonWriteTextFragment.this.f15952a, 2131102254));
                     CommonWriteTextFragment.this.j.setRightClickListener(CommonWriteTextFragment.this);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -177,7 +177,6 @@ public class CommonWriteTextFragment extends BaseFragment implements View.OnClic
         return true;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1 && i == 9090) {
             this.m.a(this.d, intent, this.n);
@@ -185,7 +184,6 @@ public class CommonWriteTextFragment extends BaseFragment implements View.OnClic
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         a(0);
         return true;
@@ -204,19 +202,18 @@ public class CommonWriteTextFragment extends BaseFragment implements View.OnClic
                 a(-1);
                 return;
             }
-            String string = this.f29642a.getResources().getString(R.string.max_input_limit);
-            AppMethods.a((CharSequence) String.format(string, this.b + ""));
+            String string = this.f15952a.getResources().getString(R.string.max_input_limit);
+            AppMethods.a(String.format(string, this.b + ""));
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29642a = getActivity();
+        this.f15952a = getActivity();
         getActivity().getWindow().setSoftInputMode(18);
         this.m = new AtChooseUserHelper(getActivity());
-        View view = this.f29643c;
+        View view = this.f15953c;
         if (view == null) {
-            this.f29643c = layoutInflater.inflate(R.layout.fragment_common_write, viewGroup, false);
+            this.f15953c = layoutInflater.inflate(R.layout.fragment_common_write, viewGroup, false);
             if (getArguments() != null) {
                 this.b = Integer.parseInt(getArguments().getString(DownloadSettingKeys.RetryScheduleConfig.MAX_COUNT));
                 this.k = getArguments().getString("string_edit");
@@ -227,11 +224,11 @@ public class CommonWriteTextFragment extends BaseFragment implements View.OnClic
                 this.i = getArguments().getInt("REQUEST_CODE_KEY");
                 this.p = getArguments().getBoolean("im_note");
             }
-            this.j = (CommonTopTitleNoTrans) this.f29643c.findViewById(2131370749);
+            this.j = this.f15953c.findViewById(R.id.top_title);
             a();
             c();
-            this.d = (EditText) this.f29643c.findViewById(R.id.write_et);
-            this.e = (EditInputNumView) this.f29643c.findViewById(2131364757);
+            this.d = (EditText) this.f15953c.findViewById(R.id.write_et);
+            this.e = (EditInputNumView) this.f15953c.findViewById(R.id.inv_word_count);
             this.d.addTextChangedListener(this.n);
             this.e.init(this.d, this.b, this.p);
             if (!StringUtils.d(this.l)) {
@@ -242,8 +239,8 @@ public class CommonWriteTextFragment extends BaseFragment implements View.OnClic
             }
             b();
         } else {
-            ((ViewGroup) view.getParent()).removeView(this.f29643c);
+            ((ViewGroup) view.getParent()).removeView(this.f15953c);
         }
-        return this.f29643c;
+        return this.f15953c;
     }
 }

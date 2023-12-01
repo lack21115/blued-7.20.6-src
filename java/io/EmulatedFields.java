@@ -115,9 +115,9 @@ public class EmulatedFields {
         return findMandatorySlot.defaulted ? b : ((Byte) findMandatorySlot.fieldValue).byteValue();
     }
 
-    public char get(String str, char c2) throws IllegalArgumentException {
+    public char get(String str, char c) throws IllegalArgumentException {
         ObjectSlot findMandatorySlot = findMandatorySlot(str, Character.TYPE);
-        return findMandatorySlot.defaulted ? c2 : ((Character) findMandatorySlot.fieldValue).charValue();
+        return findMandatorySlot.defaulted ? c : ((Character) findMandatorySlot.fieldValue).charValue();
     }
 
     public double get(String str, double d) throws IllegalArgumentException {
@@ -161,9 +161,9 @@ public class EmulatedFields {
         findMandatorySlot.defaulted = false;
     }
 
-    public void put(String str, char c2) throws IllegalArgumentException {
+    public void put(String str, char c) throws IllegalArgumentException {
         ObjectSlot findMandatorySlot = findMandatorySlot(str, Character.TYPE);
-        findMandatorySlot.fieldValue = Character.valueOf(c2);
+        findMandatorySlot.fieldValue = Character.valueOf(c);
         findMandatorySlot.defaulted = false;
     }
 

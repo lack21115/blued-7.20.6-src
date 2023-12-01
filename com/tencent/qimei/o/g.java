@@ -7,14 +7,14 @@ import com.tencent.qimei.sdk.Qimei;
 public class g implements IAsyncQimeiListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ j f38373a;
+    public final /* synthetic */ j f24682a;
 
     public g(j jVar) {
-        this.f38373a = jVar;
+        this.f24682a = jVar;
     }
 
     @Override // com.tencent.qimei.sdk.IAsyncQimeiListener
     public void onQimeiDispatch(Qimei qimei) {
-        this.f38373a.a();
+        this.f24682a.a();
     }
 }

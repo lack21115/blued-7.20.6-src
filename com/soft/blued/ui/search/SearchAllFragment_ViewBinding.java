@@ -26,12 +26,12 @@ public class SearchAllFragment_ViewBinding implements Unbinder {
         searchAllFragment.tvMoreMsg = (TextView) Utils.a(view, R.id.tv_more_msg, "field 'tvMoreMsg'", TextView.class);
         searchAllFragment.listPerson = (RecyclerView) Utils.a(view, R.id.list_person, "field 'listPerson'", RecyclerView.class);
         searchAllFragment.listMessage = (RecyclerView) Utils.a(view, R.id.list_message, "field 'listMessage'", RecyclerView.class);
-        searchAllFragment.noDataView = (NoDataAndLoadFailView) Utils.a(view, 2131368727, "field 'noDataView'", NoDataAndLoadFailView.class);
+        searchAllFragment.noDataView = (NoDataAndLoadFailView) Utils.a(view, R.id.no_data_view, "field 'noDataView'", NoDataAndLoadFailView.class);
         searchAllFragment.personLoading = (FrameLayout) Utils.a(view, R.id.person_loading, "field 'personLoading'", FrameLayout.class);
         searchAllFragment.llUserView = (RelativeLayout) Utils.a(view, R.id.ll_user_view, "field 'llUserView'", RelativeLayout.class);
-        searchAllFragment.llLine = Utils.a(view, 2131367966, "field 'llLine'");
+        searchAllFragment.llLine = Utils.a(view, R.id.ll_line, "field 'llLine'");
         searchAllFragment.llMsgView = (RelativeLayout) Utils.a(view, R.id.ll_msg_view, "field 'llMsgView'", RelativeLayout.class);
-        searchAllFragment.llContentView = (NestedScrollView) Utils.a(view, 2131367718, "field 'llContentView'", NestedScrollView.class);
+        searchAllFragment.llContentView = (NestedScrollView) Utils.a(view, R.id.ll_content_view, "field 'llContentView'", NestedScrollView.class);
         searchAllFragment.layoutCircle = Utils.a(view, R.id.circle_parent_layout, "field 'layoutCircle'");
         searchAllFragment.tvCircleMore = Utils.a(view, R.id.circle_more_tv, "field 'tvCircleMore'");
         searchAllFragment.rvCircle = (RecyclerView) Utils.a(view, R.id.circle_rv, "field 'rvCircle'", RecyclerView.class);

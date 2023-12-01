@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LivePlanetAreaItemBinding.class */
 public final class LivePlanetAreaItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final BamFrameLayout f12358a;
+    public final BamFrameLayout a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12359c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -33,9 +29,9 @@ public final class LivePlanetAreaItemBinding implements ViewBinding {
 
     private LivePlanetAreaItemBinding(RelativeLayout relativeLayout, BamFrameLayout bamFrameLayout, FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, View view, ImageView imageView5, ImageView imageView6, ImageView imageView7, LinearLayout linearLayout, TextView textView, TextView textView2) {
         this.n = relativeLayout;
-        this.f12358a = bamFrameLayout;
+        this.a = bamFrameLayout;
         this.b = frameLayout;
-        this.f12359c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -118,7 +114,6 @@ public final class LivePlanetAreaItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.n;

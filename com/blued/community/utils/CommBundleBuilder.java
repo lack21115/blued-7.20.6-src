@@ -4,6 +4,7 @@ import android.os.Bundle;
 import com.blued.android.module.common.db.model.NewFeedModel;
 import com.blued.community.model.BluedIngSelfFeed;
 import com.blued.community.ui.topic.model.BluedTopic;
+import java.io.Serializable;
 import kotlin.Metadata;
 
 @Metadata
@@ -11,11 +12,11 @@ import kotlin.Metadata;
 public final class CommBundleBuilder {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f20459a;
+    private String f6853a;
     private BluedTopic b;
 
     /* renamed from: c  reason: collision with root package name */
-    private BluedIngSelfFeed f20460c;
+    private BluedIngSelfFeed f6854c;
     private int d;
     private String e;
     private int f;
@@ -24,14 +25,14 @@ public final class CommBundleBuilder {
 
     public final Bundle a() {
         Bundle bundle = new Bundle();
-        bundle.putString("feed_id", this.f20459a);
-        bundle.putSerializable("super_topic_param", this.b);
-        bundle.putSerializable("feed_model", this.f20460c);
+        bundle.putString("feed_id", this.f6853a);
+        bundle.putSerializable("super_topic_param", (Serializable) this.b);
+        bundle.putSerializable("feed_model", (Serializable) this.f6854c);
         bundle.putInt("page_from", this.d);
         bundle.putString("classify_id", this.e);
         bundle.putInt("nearby_guide_type", this.f);
         bundle.putString("template_param_title", this.g);
-        bundle.putSerializable("feed_send_data", this.h);
+        bundle.putSerializable("feed_send_data", (Serializable) this.h);
         return bundle;
     }
 

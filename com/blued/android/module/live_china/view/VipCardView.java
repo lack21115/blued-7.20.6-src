@@ -7,9 +7,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/VipCardView.class */
 public final class VipCardView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final LiveVipCardViewBinding f15295a;
+    private final LiveVipCardViewBinding a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x038e, code lost:

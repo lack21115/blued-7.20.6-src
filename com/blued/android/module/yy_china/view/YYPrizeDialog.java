@@ -10,10 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
 import com.blued.android.core.ui.BaseDialogFragment;
@@ -30,13 +31,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYPrizeDialog.class */
 public final class YYPrizeDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogYyPrizeBinding f18382a;
+    private DialogYyPrizeBinding a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomModel f18383c;
+    private YYRoomModel c;
     private String d;
     private String e;
     private String f;
@@ -77,8 +74,8 @@ public final class YYPrizeDialog extends BaseDialogFragment {
 
     private final void d() {
         View view;
-        DialogYyPrizeBinding dialogYyPrizeBinding = this.f18382a;
-        if (dialogYyPrizeBinding == null || (view = dialogYyPrizeBinding.f16451a) == null) {
+        DialogYyPrizeBinding dialogYyPrizeBinding = this.a;
+        if (dialogYyPrizeBinding == null || (view = dialogYyPrizeBinding.a) == null) {
             return;
         }
         view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYPrizeDialog$i7ljWx_zdElj4NWHctGM2yht-wA
@@ -89,7 +86,6 @@ public final class YYPrizeDialog extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         if (Build.VERSION.SDK_INT >= 23) {
@@ -109,8 +105,7 @@ public final class YYPrizeDialog extends BaseDialogFragment {
         Window window3 = dialog3.getWindow();
         Intrinsics.a(window3);
         window3.setLayout(-1, -1);
-        LiveEventBus.get(LiveEventBusConstant.d, String.class).observe(this, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYPrizeDialog$XTVgir4t2klc9TLvIT2lqvuOoMI
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get(LiveEventBusConstant.d, String.class).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYPrizeDialog$XTVgir4t2klc9TLvIT2lqvuOoMI
             public final void onChanged(Object obj) {
                 YYPrizeDialog.a(YYPrizeDialog.this, (String) obj);
             }
@@ -120,48 +115,48 @@ public final class YYPrizeDialog extends BaseDialogFragment {
             public final void run() {
                 YYPrizeDialog.a(YYPrizeDialog.this);
             }
-        }, m.ag);
+        }, 3000L);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.b = getActivity();
         setStyle(0, R.style.common_full_screen);
-        this.f18383c = YYRoomInfoManager.e().b();
+        this.c = YYRoomInfoManager.e().b();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_yy_prize, viewGroup, false);
-        this.f18382a = DialogYyPrizeBinding.a(inflate);
+        this.a = DialogYyPrizeBinding.a(inflate);
         d();
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         LiveEventBus.get("inner_fragment_close").post("");
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
         String str = this.e;
         if (str != null) {
-            ImageWrapper a2 = ImageLoader.a(a(), str);
-            DialogYyPrizeBinding dialogYyPrizeBinding = this.f18382a;
-            a2.a(dialogYyPrizeBinding == null ? null : dialogYyPrizeBinding.b);
+            ImageWrapper a = ImageLoader.a(a(), str);
+            DialogYyPrizeBinding dialogYyPrizeBinding = this.a;
+            a.a(dialogYyPrizeBinding == null ? null : dialogYyPrizeBinding.b);
         }
-        DialogYyPrizeBinding dialogYyPrizeBinding2 = this.f18382a;
-        TextView textView = dialogYyPrizeBinding2 == null ? null : dialogYyPrizeBinding2.f16452c;
+        DialogYyPrizeBinding dialogYyPrizeBinding2 = this.a;
+        TextView textView = dialogYyPrizeBinding2 == null ? null : dialogYyPrizeBinding2.c;
         if (textView != null) {
             textView.setText(this.d);
         }
-        DialogYyPrizeBinding dialogYyPrizeBinding3 = this.f18382a;
+        DialogYyPrizeBinding dialogYyPrizeBinding3 = this.a;
         TextView textView2 = dialogYyPrizeBinding3 == null ? null : dialogYyPrizeBinding3.d;
         if (textView2 == null) {
             return;
@@ -169,7 +164,7 @@ public final class YYPrizeDialog extends BaseDialogFragment {
         textView2.setText(this.f);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
@@ -177,7 +172,7 @@ public final class YYPrizeDialog extends BaseDialogFragment {
             ReflectionUtils.a(this, "mShownByMe", true);
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

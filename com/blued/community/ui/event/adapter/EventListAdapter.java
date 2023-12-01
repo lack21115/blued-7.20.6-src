@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.image.ImageLoader;
@@ -40,13 +39,9 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/adapter/EventListAdapter.class */
 public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f19502a;
+    private final IRequestHost a;
     private final FragmentManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final BaseFragment f19503c;
+    private final BaseFragment c;
     private final int d;
     private final int e;
     private final int f;
@@ -58,26 +53,23 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         Intrinsics.e(fragmentActive, "fragmentActive");
         Intrinsics.e(fragmentManager, "fragmentManager");
         Intrinsics.e(fragment, "fragment");
-        this.f19502a = fragmentActive;
+        this.a = fragmentActive;
         this.b = fragmentManager;
-        this.f19503c = fragment;
+        this.c = fragment;
         this.d = i;
         this.e = 1;
         this.f = 2;
-        LiveEventBus.get("EVENT_BUS_ACTIVITY_SIGN_IN_SUCCESS", String.class).observe(this.f19503c, new Observer() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$m3IuxA21m1VrMzY3D7SXMrliJmo
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("EVENT_BUS_ACTIVITY_SIGN_IN_SUCCESS", String.class).observe(this.c, new Observer() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$m3IuxA21m1VrMzY3D7SXMrliJmo
             public final void onChanged(Object obj) {
                 EventListAdapter.a(EventListAdapter.this, (String) obj);
             }
         });
-        LiveEventBus.get("EVENT_BUS_ACTIVITY_SCORED", EventDetailsModel.class).observe(this.f19503c, new Observer() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$ctOw2z8kl9F3Xdw6CP7ZWbP3yQA
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("EVENT_BUS_ACTIVITY_SCORED", EventDetailsModel.class).observe(this.c, new Observer() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$ctOw2z8kl9F3Xdw6CP7ZWbP3yQA
             public final void onChanged(Object obj) {
                 EventListAdapter.a(EventListAdapter.this, (EventDetailsModel) obj);
             }
         });
-        LiveEventBus.get("EVENT_BUS_EVENT_APPLY_SUCC", EventDetailsModel.class).observe(this.f19503c, new Observer() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$dC65gEuv-Pxf5drnPpzNfEaJhWA
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("EVENT_BUS_EVENT_APPLY_SUCC", EventDetailsModel.class).observe(this.c, new Observer() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$dC65gEuv-Pxf5drnPpzNfEaJhWA
             public final void onChanged(Object obj) {
                 EventListAdapter.b(EventListAdapter.this, (EventDetailsModel) obj);
             }
@@ -94,10 +86,10 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         if (this$0.d != this$0.f) {
             int size = this$0.getData().size();
             for (int i = 0; i < size; i++) {
-                if (eventDetailsModel.id.equals(this$0.getData().get(i).id)) {
-                    this$0.getData().get(i).evaluate_status = 1;
-                    this$0.getData().get(i).activity_evaluate = eventDetailsModel.activity_evaluate;
-                    this$0.getData().get(i).activity_score = eventDetailsModel.activity_score;
+                if (eventDetailsModel.id.equals(((EventDetailsModel) this$0.getData().get(i)).id)) {
+                    ((EventDetailsModel) this$0.getData().get(i)).evaluate_status = 1;
+                    ((EventDetailsModel) this$0.getData().get(i)).activity_evaluate = eventDetailsModel.activity_evaluate;
+                    ((EventDetailsModel) this$0.getData().get(i)).activity_score = eventDetailsModel.activity_score;
                     this$0.notifyItemChanged(i);
                     return;
                 }
@@ -118,8 +110,8 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         if (this$0.d != this$0.f) {
             int size = this$0.getData().size();
             for (int i = 0; i < size; i++) {
-                if (str.equals(this$0.getData().get(i).id)) {
-                    this$0.getData().get(i).is_sign_in = 1;
+                if (str.equals(((EventDetailsModel) this$0.getData().get(i)).id)) {
+                    ((EventDetailsModel) this$0.getData().get(i)).is_sign_in = 1;
                     this$0.notifyItemChanged(i);
                     return;
                 }
@@ -139,7 +131,7 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         } else {
             eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_LIST);
         }
-        EventDetailsFragment.Companion companion = EventDetailsFragment.f19534a;
+        EventDetailsFragment.Companion companion = EventDetailsFragment.a;
         Context mContext = this.mContext;
         Intrinsics.c(mContext, "mContext");
         companion.a(mContext, eventDetailsModel.id, eventLogData);
@@ -172,9 +164,9 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         if (this$0.d != this$0.f) {
             int size = this$0.getData().size();
             for (int i = 0; i < size; i++) {
-                if (eventDetailsModel.id.equals(this$0.getData().get(i).id)) {
-                    this$0.getData().get(i).apply_status = eventDetailsModel.apply_status;
-                    this$0.getData().get(i).join_num = eventDetailsModel.join_num;
+                if (eventDetailsModel.id.equals(((EventDetailsModel) this$0.getData().get(i)).id)) {
+                    ((EventDetailsModel) this$0.getData().get(i)).apply_status = eventDetailsModel.apply_status;
+                    ((EventDetailsModel) this$0.getData().get(i)).join_num = eventDetailsModel.join_num;
                     this$0.notifyItemChanged(i);
                     return;
                 }
@@ -215,7 +207,6 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder helper, final EventDetailsModel item) {
         String format;
@@ -223,7 +214,7 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         Intrinsics.e(helper, "helper");
         Intrinsics.e(item, "item");
         helper.setText(R.id.tv_event_name, item.name);
-        ImageLoader.a(this.f19502a, item.pic).b(R.drawable.event_avatar_square).a(10.0f).a((ImageView) helper.getView(R.id.iv_event_avatar));
+        ImageLoader.a(this.a, item.pic).b(R.drawable.event_avatar_square).a(10.0f).a((ImageView) helper.getView(R.id.iv_event_avatar));
         helper.setGone(R.id.tv_event_tag_official, item.is_official == 1);
         ShapeTextView shapeTextView = (ShapeTextView) helper.getView(R.id.tv_event_tag_official);
         ShapeTextView shapeTextView2 = (ShapeTextView) helper.getView(R.id.tv_event_tag);
@@ -272,7 +263,7 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         view.post(new Runnable() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$DNjki99g6ROilh7PjqPcq0PvKZY
             @Override // java.lang.Runnable
             public final void run() {
-                EventListAdapter.a(BaseViewHolder.this, view);
+                EventListAdapter.a(helper, view);
             }
         });
         float f = item.join_num / item.quota_num;
@@ -280,13 +271,13 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
             format = this.mContext.getString(R.string.wait_you_be_1);
             Intrinsics.c(format, "{\n                mConte…t_you_be_1)\n            }");
         } else if (f < 0.8f) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string = this.mContext.getString(R.string.x_joiners, String.valueOf(item.join_num));
             Intrinsics.c(string, "mContext.getString(R.str…item.join_num.toString())");
             format = String.format(string, Arrays.copyOf(new Object[0], 0));
             Intrinsics.c(format, "format(format, *args)");
         } else {
-            StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
             String string2 = this.mContext.getString(R.string.x_spaces_available, String.valueOf(item.quota_num - item.join_num));
             Intrinsics.c(string2, "mContext.getString(R.str…tem.join_num).toString())");
             format = String.format(string2, Arrays.copyOf(new Object[0], 0));
@@ -298,24 +289,24 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
         } else {
             helper.setGone(R.id.container_stack_users, true);
             Context context = this.mContext;
-            IRequestHost iRequestHost = this.f19502a;
+            IRequestHost iRequestHost = this.a;
             View view2 = helper.getView(R.id.container_stack_users);
             Intrinsics.c(view2, "helper.getView(R.id.container_stack_users)");
             ViewUtils.a(context, iRequestHost, (LinearLayout) view2, item.joiners, 3, item.join_num, 18.0f, 5.5f);
         }
         helper.setText(R.id.tv_event_tag, item.type_name);
-        boolean c2 = CommunityManager.f19086a.a().c(item.uid);
+        boolean c = CommunityManager.a.a().c(item.uid);
         ShapeTextView shapeTextView3 = (ShapeTextView) helper.getView(R.id.tv_event_sign_up);
         ShapeTextView shapeTextView4 = (ShapeTextView) helper.getView(R.id.tv_event_score);
         ImageView imageView2 = (ImageView) helper.getView(R.id.iv_event_sign_up_status);
-        int a2 = EventMethods.a(item);
-        if (a2 != 0) {
-            imageView2.setImageResource(a2);
+        int a = EventMethods.a(item);
+        if (a != 0) {
+            imageView2.setImageResource(a);
         }
         shapeTextView3.setVisibility(8);
         shapeTextView4.setVisibility(8);
         imageView2.setVisibility(8);
-        if (!c2) {
+        if (!c) {
             int i = item.status;
             if (i == 1) {
                 int i2 = item.apply_status;
@@ -361,15 +352,15 @@ public final class EventListAdapter extends BaseQuickAdapter<EventDetailsModel, 
                     }
                 });
             }
-            if (shapeTextView3.getVisibility() == 8 && shapeTextView4.getVisibility() == 8 && a2 != 0) {
+            if (shapeTextView3.getVisibility() == 8 && shapeTextView4.getVisibility() == 8 && a != 0) {
                 imageView2.setVisibility(0);
             }
-        } else if (a2 == 0 || !(item.status == 0 || item.status == 1 || item.status == 3)) {
+        } else if (a == 0 || !(item.status == 0 || item.status == 1 || item.status == 3)) {
             imageView2.setVisibility(8);
         } else {
             imageView2.setVisibility(0);
         }
-        ((ConstraintLayout) helper.getView(R.id.content_view)).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$JBdjwMpQuoEXUUKxWaOGJtEtR1s
+        helper.getView(R.id.content_view).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventListAdapter$JBdjwMpQuoEXUUKxWaOGJtEtR1s
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 EventListAdapter.a(EventDetailsModel.this, this, view3);

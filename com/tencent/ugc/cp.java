@@ -7,11 +7,11 @@ import java.util.concurrent.Callable;
 public final /* synthetic */ class cp implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCImageProvider f40299a;
+    private final UGCImageProvider f26608a;
     private final int b;
 
     private cp(UGCImageProvider uGCImageProvider, int i) {
-        this.f40299a = uGCImageProvider;
+        this.f26608a = uGCImageProvider;
         this.b = i;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class cp implements Callable {
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        return UGCImageProvider.lambda$setPictureTransition$5(this.f40299a, this.b);
+        return UGCImageProvider.lambda$setPictureTransition$5(this.f26608a, this.b);
     }
 }

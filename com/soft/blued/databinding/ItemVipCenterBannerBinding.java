@@ -11,25 +11,25 @@ import com.soft.blued.R;
 public final class ItemVipCenterBannerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AutoScrollViewPager f29351a;
+    public final AutoScrollViewPager f15661a;
     public final LinePageIndicator b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final CardView f29352c;
+    private final CardView f15662c;
 
     private ItemVipCenterBannerBinding(CardView cardView, AutoScrollViewPager autoScrollViewPager, LinePageIndicator linePageIndicator) {
-        this.f29352c = cardView;
-        this.f29351a = autoScrollViewPager;
+        this.f15662c = cardView;
+        this.f15661a = autoScrollViewPager;
         this.b = linePageIndicator;
     }
 
     public static ItemVipCenterBannerBinding a(View view) {
         String str;
-        AutoScrollViewPager autoScrollViewPager = (AutoScrollViewPager) view.findViewById(R.id.banner_view_pager);
-        if (autoScrollViewPager != null) {
-            LinePageIndicator linePageIndicator = (LinePageIndicator) view.findViewById(2131364744);
-            if (linePageIndicator != null) {
-                return new ItemVipCenterBannerBinding((CardView) view, autoScrollViewPager, linePageIndicator);
+        AutoScrollViewPager findViewById = view.findViewById(R.id.banner_view_pager);
+        if (findViewById != null) {
+            LinePageIndicator findViewById2 = view.findViewById(R.id.indicator);
+            if (findViewById2 != null) {
+                return new ItemVipCenterBannerBinding((CardView) view, findViewById, findViewById2);
             }
             str = "indicator";
         } else {
@@ -41,6 +41,6 @@ public final class ItemVipCenterBannerBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29352c;
+        return this.f15662c;
     }
 }

@@ -157,7 +157,7 @@ public final class MapFieldLite<K, V> extends LinkedHashMap<K, V> {
         super.clear();
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
     public Set<Map.Entry<K, V>> entrySet() {
         return isEmpty() ? Collections.emptySet() : super.entrySet();
     }

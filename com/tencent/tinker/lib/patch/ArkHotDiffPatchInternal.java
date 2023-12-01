@@ -1,7 +1,6 @@
 package com.tencent.tinker.lib.patch;
 
 import android.content.Context;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.lib.tinker.Tinker;
 import com.tencent.tinker.loader.TinkerRuntimeException;
 import com.tencent.tinker.loader.shareutil.ShareArkHotDiffPatchInfo;
@@ -36,7 +35,7 @@ public class ArkHotDiffPatchInternal extends BasePatchInternal {
                         if (str3.equals("")) {
                             str2 = next.name;
                         } else {
-                            str2 = str3 + BridgeUtil.SPLIT_MARK + next.name;
+                            str2 = str3 + "/" + next.name;
                         }
                         String str4 = next.patchMd5;
                         if (!SharePatchFileUtil.checkIfMd5Valid(str4)) {
@@ -90,7 +89,7 @@ public class ArkHotDiffPatchInternal extends BasePatchInternal {
     }
 
     private static boolean patchArkHotLibraryExtract(Context context, String str, String str2, File file) {
-        String str3 = str + BridgeUtil.SPLIT_MARK + ShareConstants.ARKHOTFIX_PATH + BridgeUtil.SPLIT_MARK;
+        String str3 = str + "/" + ShareConstants.ARKHOTFIX_PATH + "/";
         arkPatchList.clear();
         ShareArkHotDiffPatchInfo.parseDiffPatchInfo(str2, arkPatchList);
         return extractArkHotLibrary(context, str3, file, 8);

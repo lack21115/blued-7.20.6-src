@@ -11,11 +11,11 @@ import androidx.core.view.ViewCompat;
 public class ContentFrameLayout extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TypedValue f1812a;
+    private TypedValue f1764a;
     private TypedValue b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TypedValue f1813c;
+    private TypedValue f1765c;
     private TypedValue d;
     private TypedValue e;
     private TypedValue f;
@@ -61,10 +61,10 @@ public class ContentFrameLayout extends FrameLayout {
     }
 
     public TypedValue getFixedWidthMajor() {
-        if (this.f1813c == null) {
-            this.f1813c = new TypedValue();
+        if (this.f1765c == null) {
+            this.f1765c = new TypedValue();
         }
-        return this.f1813c;
+        return this.f1765c;
     }
 
     public TypedValue getFixedWidthMinor() {
@@ -75,10 +75,10 @@ public class ContentFrameLayout extends FrameLayout {
     }
 
     public TypedValue getMinWidthMajor() {
-        if (this.f1812a == null) {
-            this.f1812a = new TypedValue();
+        if (this.f1764a == null) {
+            this.f1764a = new TypedValue();
         }
-        return this.f1812a;
+        return this.f1764a;
     }
 
     public TypedValue getMinWidthMinor() {
@@ -88,9 +88,8 @@ public class ContentFrameLayout extends FrameLayout {
         return this.b;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         OnAttachListener onAttachListener = this.h;
         if (onAttachListener != null) {
@@ -98,9 +97,8 @@ public class ContentFrameLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         OnAttachListener onAttachListener = this.h;
         if (onAttachListener != null) {
@@ -108,7 +106,6 @@ public class ContentFrameLayout extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:26:0x00a0  */
     /* JADX WARN: Removed duplicated region for block: B:30:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0141  */
@@ -125,7 +122,7 @@ public class ContentFrameLayout extends FrameLayout {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onMeasure(int r5, int r6) {
+    protected void onMeasure(int r5, int r6) {
         /*
             Method dump skipped, instructions count: 536
             To view this dump change 'Code comments level' option to 'DEBUG'

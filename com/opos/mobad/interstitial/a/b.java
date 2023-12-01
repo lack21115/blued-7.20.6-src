@@ -14,11 +14,11 @@ import com.opos.mobad.n.a;
 public abstract class b implements com.opos.mobad.n.a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected RelativeLayout f26221a;
+    protected RelativeLayout f12533a;
     protected RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected RelativeLayout f26222c;
+    protected RelativeLayout f12534c;
     protected RelativeLayout d;
     protected ImageView e;
     protected ImageView f;
@@ -28,13 +28,13 @@ public abstract class b implements com.opos.mobad.n.a {
     protected com.opos.cmn.e.a.a.a j;
     protected Context k;
     protected int[] l = new int[4];
-    private a.InterfaceC0708a m;
+    private a.InterfaceC0538a m;
     private int n;
     private com.opos.mobad.n.d.h o;
 
-    public b(Context context, int i, a.InterfaceC0708a interfaceC0708a) {
+    public b(Context context, int i, a.InterfaceC0538a interfaceC0538a) {
         this.k = context;
-        this.m = interfaceC0708a;
+        this.m = interfaceC0538a;
         this.n = i;
         h();
         f();
@@ -70,20 +70,20 @@ public abstract class b implements com.opos.mobad.n.a {
 
     private void c(RelativeLayout.LayoutParams layoutParams) {
         k();
-        this.b.addView(this.f26222c, layoutParams);
+        this.b.addView(this.f12534c, layoutParams);
     }
 
     private void h() {
         RelativeLayout relativeLayout = new RelativeLayout(this.k);
-        this.f26221a = relativeLayout;
+        this.f12533a = relativeLayout;
         relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
         this.b = new RelativeLayout(this.k);
         RelativeLayout relativeLayout2 = new RelativeLayout(this.k);
-        this.f26222c = relativeLayout2;
+        this.f12534c = relativeLayout2;
         relativeLayout2.setId(1);
         this.d = new RelativeLayout(this.k);
         i();
-        this.f26221a.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.opos.mobad.interstitial.a.b.1
+        this.f12533a.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() { // from class: com.opos.mobad.interstitial.a.b.1
             @Override // android.view.View.OnAttachStateChangeListener
             public void onViewAttachedToWindow(View view) {
                 if (b.this.m != null) {
@@ -107,12 +107,12 @@ public abstract class b implements com.opos.mobad.n.a {
     private void j() {
         RelativeLayout relativeLayout = this.b;
         if (relativeLayout != null) {
-            this.f26221a.removeView(relativeLayout);
+            this.f12533a.removeView(relativeLayout);
         }
     }
 
     private void k() {
-        RelativeLayout relativeLayout = this.f26222c;
+        RelativeLayout relativeLayout = this.f12534c;
         if (relativeLayout != null) {
             this.b.removeView(relativeLayout);
         }
@@ -121,7 +121,7 @@ public abstract class b implements com.opos.mobad.n.a {
     private void l() {
         ImageView imageView = this.f;
         if (imageView != null) {
-            this.f26222c.removeView(imageView);
+            this.f12534c.removeView(imageView);
         }
         ImageView imageView2 = this.g;
         if (imageView2 != null) {
@@ -146,7 +146,7 @@ public abstract class b implements com.opos.mobad.n.a {
         layoutParams.addRule(11);
         layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.k, -4.0f);
         layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.k, -5.0f);
-        this.f26222c.addView(this.f, layoutParams);
+        this.f12534c.addView(this.f, layoutParams);
     }
 
     private void n() {
@@ -208,7 +208,7 @@ public abstract class b implements com.opos.mobad.n.a {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(RelativeLayout.LayoutParams layoutParams) {
-        this.f26222c.addView(this.d, layoutParams);
+        this.f12534c.addView(this.d, layoutParams);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -223,8 +223,8 @@ public abstract class b implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.m = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.m = interfaceC0538a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -242,9 +242,9 @@ public abstract class b implements com.opos.mobad.n.a {
 
     @Override // com.opos.mobad.n.a
     public void a(com.opos.mobad.n.d.h hVar) {
-        a.InterfaceC0708a interfaceC0708a;
-        if (this.o == null && (interfaceC0708a = this.m) != null) {
-            interfaceC0708a.e();
+        a.InterfaceC0538a interfaceC0538a;
+        if (this.o == null && (interfaceC0538a = this.m) != null) {
+            interfaceC0538a.e();
         }
         this.o = hVar;
     }
@@ -273,7 +273,7 @@ public abstract class b implements com.opos.mobad.n.a {
         c(layoutParams);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams2.addRule(13);
-        this.f26221a.addView(this.b, layoutParams2);
+        this.f12533a.addView(this.b, layoutParams2);
     }
 
     @Override // com.opos.mobad.n.a
@@ -286,6 +286,6 @@ public abstract class b implements com.opos.mobad.n.a {
     @Override // com.opos.mobad.n.a
     /* renamed from: g */
     public RelativeLayout c() {
-        return this.f26221a;
+        return this.f12533a;
     }
 }

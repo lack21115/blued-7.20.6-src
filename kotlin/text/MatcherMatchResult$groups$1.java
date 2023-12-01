@@ -13,23 +13,21 @@ import kotlin.sequences.SequencesKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/MatcherMatchResult$groups$1.class */
 public final class MatcherMatchResult$groups$1 extends AbstractCollection<MatchGroup> implements MatchNamedGroupCollection {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ MatcherMatchResult f42728a;
+    final /* synthetic */ MatcherMatchResult a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public MatcherMatchResult$groups$1(MatcherMatchResult matcherMatchResult) {
-        this.f42728a = matcherMatchResult;
+        this.a = matcherMatchResult;
     }
 
     public MatchGroup a(int i) {
         java.util.regex.MatchResult b;
         IntRange b2;
         java.util.regex.MatchResult b3;
-        b = this.f42728a.b();
+        b = this.a.b();
         b2 = RegexKt.b(b, i);
         if (b2.getStart().intValue() >= 0) {
-            b3 = this.f42728a.b();
+            b3 = this.a.b();
             String group = b3.group(i);
             Intrinsics.c(group, "matchResult.group(index)");
             return new MatchGroup(group, b2);
@@ -41,7 +39,7 @@ public final class MatcherMatchResult$groups$1 extends AbstractCollection<MatchG
         return super.contains(matchGroup);
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj == null ? true : obj instanceof MatchGroup) {
             return a((MatchGroup) obj);
@@ -52,11 +50,11 @@ public final class MatcherMatchResult$groups$1 extends AbstractCollection<MatchG
     @Override // kotlin.collections.AbstractCollection
     public int getSize() {
         java.util.regex.MatchResult b;
-        b = this.f42728a.b();
+        b = this.a.b();
         return b.groupCount() + 1;
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return false;
     }

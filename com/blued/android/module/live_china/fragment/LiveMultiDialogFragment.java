@@ -53,9 +53,7 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMultiDialogFragment.class */
 public final class LiveMultiDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13068a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogLiveMultiBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveMultiDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -68,9 +66,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
             return DialogLiveMultiBinding.a(LayoutInflater.from(LiveMultiDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private MultiDialogModel f13069c;
+    private MultiDialogModel c;
     private boolean d;
     private CountDownTimer e;
 
@@ -99,7 +95,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
 
     @JvmStatic
     public static final LiveMultiDialogFragment a(FragmentManager fragmentManager, MultiDialogModel multiDialogModel) {
-        return f13068a.a(fragmentManager, multiDialogModel);
+        return a.a(fragmentManager, multiDialogModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -108,10 +104,10 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         String str2;
         Intrinsics.e(this$0, "this$0");
         this$0.dismissAllowingStateLoss();
-        MultiDialogModel multiDialogModel = this$0.f13069c;
+        MultiDialogModel multiDialogModel = this$0.c;
         if (multiDialogModel != null && multiDialogModel.from_type == 0) {
             LiveProtos.Event event = LiveProtos.Event.LIVE_LIST_CONFIG_POP_CLOSE_CLICK;
-            MultiDialogModel multiDialogModel2 = this$0.f13069c;
+            MultiDialogModel multiDialogModel2 = this$0.c;
             if (multiDialogModel2 == null) {
                 str2 = null;
             } else {
@@ -121,9 +117,9 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
             EventTrackLive.f(event, str2);
             return;
         }
-        MultiDialogModel multiDialogModel3 = this$0.f13069c;
+        MultiDialogModel multiDialogModel3 = this$0.c;
         if (!(multiDialogModel3 != null && multiDialogModel3.from_type == 1)) {
-            MultiDialogModel multiDialogModel4 = this$0.f13069c;
+            MultiDialogModel multiDialogModel4 = this$0.c;
             if (!(multiDialogModel4 != null && multiDialogModel4.from_type == 2)) {
                 return;
             }
@@ -131,7 +127,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         LiveProtos.Event event2 = LiveProtos.Event.LIVE_ROOM_CONFIG_POP_CLOSE_CLICK;
         String e = LiveRoomManager.a().e();
         String g = LiveRoomManager.a().g();
-        MultiDialogModel multiDialogModel5 = this$0.f13069c;
+        MultiDialogModel multiDialogModel5 = this$0.c;
         if (multiDialogModel5 == null) {
             str = null;
         } else {
@@ -154,9 +150,9 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
 
     private final void a(String str) {
         d().e.setVisibility(8);
-        d().f11791c.setVisibility(0);
-        ImageLoader.a(a(), str).a(d().f11791c);
-        d().f11791c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMultiDialogFragment$L7DOhtkbzbkXS2IRxpJZw-Mh5io
+        d().c.setVisibility(0);
+        ImageLoader.a(a(), str).a(d().c);
+        d().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveMultiDialogFragment$L7DOhtkbzbkXS2IRxpJZw-Mh5io
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveMultiDialogFragment.b(LiveMultiDialogFragment.this, view);
@@ -164,6 +160,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         });
     }
 
+    /* JADX WARN: Type inference failed for: r1v1, types: [com.blued.android.module.live_china.fragment.LiveMultiDialogFragment$initAutoClose$1] */
     private final void a(boolean z) {
         CountDownTimer countDownTimer = this.e;
         if (countDownTimer != null) {
@@ -190,7 +187,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
                     int a2 = MathKt.a(j / 1000);
                     d = LiveMultiDialogFragment.this.d();
                     TextView textView = d.d;
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                     String string = AppInfo.d().getString(R.string.live_pk_dared_match_auto_close_time);
                     Intrinsics.c(string, "getAppContext()\n        …ed_match_auto_close_time)");
                     String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(a2)}, 1));
@@ -245,12 +242,12 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
     }
 
     private final void b(String str) {
-        d().f11791c.setVisibility(8);
+        d().c.setVisibility(8);
         d().e.setVisibility(0);
         if (getParentFragment() != null) {
             Fragment parentFragment = getParentFragment();
             if ((parentFragment == null ? null : parentFragment.getActivity()) != null) {
-                d().e.a(this);
+                d().e.a((Fragment) this);
                 String str2 = str;
                 String str3 = str;
                 if (!TextUtils.isEmpty(str2)) {
@@ -293,10 +290,10 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
 
     private final void f() {
         MultiDialogResourceModel multiDialogResourceModel;
-        MultiDialogModel multiDialogModel = this.f13069c;
+        MultiDialogModel multiDialogModel = this.c;
         Integer num = null;
         String str = (multiDialogModel == null || (multiDialogResourceModel = multiDialogModel.resource) == null) ? null : multiDialogResourceModel.jump_url;
-        MultiDialogModel multiDialogModel2 = this.f13069c;
+        MultiDialogModel multiDialogModel2 = this.c;
         if (multiDialogModel2 != null) {
             num = Integer.valueOf(multiDialogModel2.from_type);
         }
@@ -311,7 +308,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
 
     private final void g() {
         MultiDialogResourceModel multiDialogResourceModel;
-        MultiDialogModel multiDialogModel = this.f13069c;
+        MultiDialogModel multiDialogModel = this.c;
         boolean z = false;
         if (multiDialogModel != null && multiDialogModel.from_type == 0) {
             z = true;
@@ -336,7 +333,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
                     }
                 }
             };
-            MultiDialogModel multiDialogModel2 = this.f13069c;
+            MultiDialogModel multiDialogModel2 = this.c;
             String str = null;
             if (multiDialogModel2 != null && (multiDialogResourceModel = multiDialogModel2.resource) != null) {
                 str = multiDialogResourceModel.jump_uid;
@@ -346,7 +343,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
     }
 
     private final void h() {
-        MultiDialogModel multiDialogModel = this.f13069c;
+        MultiDialogModel multiDialogModel = this.c;
         boolean z = false;
         if (multiDialogModel != null && multiDialogModel.from_type == 1) {
             z = true;
@@ -357,7 +354,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
     }
 
     private final void i() {
-        MultiDialogModel multiDialogModel = this.f13069c;
+        MultiDialogModel multiDialogModel = this.c;
         boolean z = false;
         if (multiDialogModel != null && multiDialogModel.from_type == 1) {
             z = true;
@@ -368,7 +365,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
     }
 
     private final void j() {
-        MultiDialogModel multiDialogModel = this.f13069c;
+        MultiDialogModel multiDialogModel = this.c;
         boolean z = false;
         if (multiDialogModel != null && multiDialogModel.from_type == 1) {
             z = true;
@@ -379,7 +376,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
     }
 
     private final void k() {
-        MultiDialogModel multiDialogModel = this.f13069c;
+        MultiDialogModel multiDialogModel = this.c;
         boolean z = false;
         if (multiDialogModel != null && multiDialogModel.from_type == 2) {
             z = true;
@@ -390,7 +387,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
     }
 
     private final void l() {
-        MultiDialogModel multiDialogModel = this.f13069c;
+        MultiDialogModel multiDialogModel = this.c;
         boolean z = false;
         if (multiDialogModel != null && multiDialogModel.from_type == 2) {
             z = true;
@@ -400,7 +397,6 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismissAllowingStateLoss() {
         CountDownTimer countDownTimer = this.e;
         if (countDownTimer != null) {
@@ -410,7 +406,6 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         super.dismissAllowingStateLoss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         ConstraintLayout root;
         Dialog onCreateDialog = super.onCreateDialog(bundle);
@@ -438,13 +433,13 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
             if (parent == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup");
             }
-            ((ViewGroup) parent).removeView(d().getRoot());
+            ((ViewGroup) parent).removeView((View) d().getRoot());
         }
-        onCreateDialog.setContentView(d().getRoot());
+        onCreateDialog.setContentView((View) d().getRoot());
         return onCreateDialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         CountDownTimer countDownTimer = this.e;
@@ -454,7 +449,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         this.e = null;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onStart() {
         super.onStart();
         Dialog dialog = getDialog();
@@ -472,7 +467,6 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         window2.setAttributes(attributes);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Serializable serializable;
         Intrinsics.e(dialog, "dialog");
@@ -481,7 +475,7 @@ public final class LiveMultiDialogFragment extends BaseDialogFragment {
         if (arguments == null || (serializable = arguments.getSerializable("MultiDialogModel")) == null || !(serializable instanceof MultiDialogModel)) {
             return;
         }
-        this.f13069c = (MultiDialogModel) serializable;
+        this.c = (MultiDialogModel) serializable;
         e();
     }
 }

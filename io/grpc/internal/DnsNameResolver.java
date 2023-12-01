@@ -1,8 +1,6 @@
 package io.grpc.internal;
 
-import android.net.ProxyInfo;
-import android.security.KeyChain;
-import androidx.core.app.NotificationCompat;
+import com.alipay.sdk.cons.c;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -10,8 +8,6 @@ import com.google.common.base.Stopwatch;
 import com.google.common.base.Throwables;
 import com.google.common.base.Verify;
 import com.google.common.base.VerifyException;
-import com.opos.process.bridge.provider.ProcessBridgeProvider;
-import com.uc.crashsdk.export.LogType;
 import io.grpc.Attributes;
 import io.grpc.EquivalentAddressGroup;
 import io.grpc.NameResolver;
@@ -270,17 +266,17 @@ public class DnsNameResolver extends NameResolver {
         }
 
         public int hashCode() {
-            return Objects.hashCode(this.host, Integer.valueOf(this.port));
+            return Objects.hashCode(new Object[]{this.host, Integer.valueOf(this.port)});
         }
 
         public String toString() {
-            return MoreObjects.toStringHelper(this).add("host", this.host).add(KeyChain.EXTRA_PORT, this.port).toString();
+            return MoreObjects.toStringHelper(this).add(c.f, this.host).add("port", this.port).toString();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public DnsNameResolver(@Nullable String str, String str2, NameResolver.Args args, SharedResourceHolder.Resource<Executor> resource, Stopwatch stopwatch, boolean z) {
-        Preconditions.checkNotNull(args, ProcessBridgeProvider.KEY_ARGS);
+        Preconditions.checkNotNull(args, "args");
         this.executorResource = resource;
         URI create = URI.create("//" + ((String) Preconditions.checkNotNull(str2, "name")));
         Preconditions.checkArgument(create.getHost() != null, "Invalid DNS name: %s", str2);
@@ -293,7 +289,7 @@ public class DnsNameResolver extends NameResolver {
         }
         this.proxyDetector = (ProxyDetector) Preconditions.checkNotNull(args.getProxyDetector(), "proxyDetector");
         this.cacheTtlNanos = getNetworkAddressCacheTtlNanos(z);
-        this.stopwatch = (Stopwatch) Preconditions.checkNotNull(stopwatch, NotificationCompat.CATEGORY_STOPWATCH);
+        this.stopwatch = (Stopwatch) Preconditions.checkNotNull(stopwatch, "stopwatch");
         this.syncContext = (SynchronizationContext) Preconditions.checkNotNull(args.getSynchronizationContext(), "syncContext");
         Executor offloadExecutor = args.getOffloadExecutor();
         this.executor = offloadExecutor;
@@ -409,7 +405,7 @@ public class DnsNameResolver extends NameResolver {
             Iterator<String> it = clientLanguagesFromChoice.iterator();
             while (true) {
                 if (it.hasNext()) {
-                    if (LogType.JAVA_TYPE.equalsIgnoreCase(it.next())) {
+                    if ("java".equalsIgnoreCase(it.next())) {
                         z2 = true;
                         break;
                     }
@@ -559,7 +555,7 @@ public class DnsNameResolver extends NameResolver {
         if (!z) {
             return false;
         }
-        if (ProxyInfo.LOCAL_HOST.equalsIgnoreCase(str)) {
+        if ("localhost".equalsIgnoreCase(str)) {
             return z2;
         }
         if (str.contains(":")) {
@@ -624,12 +620,10 @@ public class DnsNameResolver extends NameResolver {
         return null;
     }
 
-    @Override // io.grpc.NameResolver
     public String getServiceAuthority() {
         return this.authority;
     }
 
-    @Override // io.grpc.NameResolver
     public void refresh() {
         Preconditions.checkState(this.listener != null, "not started");
         resolve();
@@ -643,7 +637,6 @@ public class DnsNameResolver extends NameResolver {
         this.resourceResolver.set(resourceResolver);
     }
 
-    @Override // io.grpc.NameResolver
     public void shutdown() {
         if (this.shutdown) {
             return;
@@ -656,7 +649,6 @@ public class DnsNameResolver extends NameResolver {
         this.executor = (Executor) SharedResourceHolder.release(this.executorResource, executor);
     }
 
-    @Override // io.grpc.NameResolver
     public void start(NameResolver.Listener2 listener2) {
         Preconditions.checkState(this.listener == null, "already started");
         if (this.usingExecutorResource) {

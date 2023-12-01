@@ -4,11 +4,11 @@ package com.anythink.expressad.mbbanner.a;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7994a = "banner controler init error，please check it";
+    public static final String f5154a = "banner controler init error，please check it";
     public static final String b = "banner token is null or empty，please check it";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7995c = "banner res load failed";
+    public static final String f5155c = "banner res load failed";
     public static final String d = "banner load failed because params are exception";
     public static final String e = "banner load failed because WebView is not available";
     public static final String f = "banner load failed because env is exception";

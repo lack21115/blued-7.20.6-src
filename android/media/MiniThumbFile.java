@@ -3,6 +3,7 @@ package android.media;
 import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -70,7 +71,7 @@ public class MiniThumbFile {
     }
 
     private String randomAccessFilePath(int i) {
-        return (Environment.getExternalStorageDirectory().toString() + "/DCIM/.thumbnails") + "/.thumbdata" + i + "-" + this.mUri.hashCode();
+        return (Environment.getExternalStorageDirectory().toString() + "/DCIM/.thumbnails") + "/.thumbdata" + i + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.mUri.hashCode();
     }
 
     private void removeOldFile() {

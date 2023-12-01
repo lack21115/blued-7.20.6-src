@@ -26,7 +26,7 @@ public class p8 extends t8 {
         y8 y8Var;
         y8 y8Var2;
         y8 y8Var3;
-        int i2 = this.f38021a;
+        int i2 = this.f24330a;
         if (i2 == 2) {
             if (this.j) {
                 this.j = false;
@@ -58,7 +58,7 @@ public class p8 extends t8 {
             return this.f == null ? h2 + (f4 * (h3 - h2)) : ((Number) y8Var3.a(f4, Double.valueOf(h2), Double.valueOf(h3))).floatValue();
         } else if (f >= 1.0f) {
             s8.a aVar3 = (s8.a) this.e.get(i2 - 2);
-            s8.a aVar4 = (s8.a) this.e.get(this.f38021a - 1);
+            s8.a aVar4 = (s8.a) this.e.get(this.f24330a - 1);
             double h4 = aVar3.h();
             double h5 = aVar4.h();
             float b3 = aVar3.b();
@@ -74,7 +74,7 @@ public class p8 extends t8 {
             s8.a aVar5 = (s8.a) this.e.get(0);
             int i3 = 1;
             while (true) {
-                if (i3 >= this.f38021a) {
+                if (i3 >= this.f24330a) {
                     return ((Number) this.e.get(i - 1).e()).floatValue();
                 }
                 s8.a aVar6 = (s8.a) this.e.get(i3);

@@ -28,9 +28,8 @@ public class MediaRouteChooserDialog extends Dialog {
     private int mRouteTypes;
     private final MediaRouter mRouter;
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/MediaRouteChooserDialog$MediaRouterCallback.class */
-    public final class MediaRouterCallback extends MediaRouter.SimpleCallback {
+    private final class MediaRouterCallback extends MediaRouter.SimpleCallback {
         private MediaRouterCallback() {
         }
 
@@ -77,8 +76,8 @@ public class MediaRouteChooserDialog extends Dialog {
                 view2 = this.mInflater.inflate(R.layout.media_route_list_item, viewGroup, false);
             }
             MediaRouter.RouteInfo item = getItem(i);
-            TextView textView = (TextView) view2.findViewById(16908308);
-            TextView textView2 = (TextView) view2.findViewById(16908309);
+            TextView textView = (TextView) view2.findViewById(R.id.text1);
+            TextView textView2 = (TextView) view2.findViewById(R.id.text2);
             textView.setText(item.getName());
             CharSequence description = item.getDescription();
             if (TextUtils.isEmpty(description)) {
@@ -142,7 +141,7 @@ public class MediaRouteChooserDialog extends Dialog {
 
     public MediaRouteChooserDialog(Context context, int i) {
         super(context, i);
-        this.mRouter = (MediaRouter) context.getSystemService(Context.MEDIA_ROUTER_SERVICE);
+        this.mRouter = (MediaRouter) context.getSystemService("media_router");
         this.mCallback = new MediaRouterCallback();
     }
 
@@ -165,9 +164,8 @@ public class MediaRouteChooserDialog extends Dialog {
         refreshRoutes();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Dialog
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         getWindow().requestFeature(3);
         setContentView(R.layout.media_route_chooser_dialog);
@@ -177,7 +175,7 @@ public class MediaRouteChooserDialog extends Dialog {
         this.mListView = (ListView) findViewById(R.id.media_route_list);
         this.mListView.setAdapter((ListAdapter) this.mAdapter);
         this.mListView.setOnItemClickListener(this.mAdapter);
-        this.mListView.setEmptyView(findViewById(16908292));
+        this.mListView.setEmptyView(findViewById(R.id.empty));
         this.mExtendedSettingsButton = (Button) findViewById(R.id.media_route_extended_settings_button);
         updateExtendedSettingsButton();
     }

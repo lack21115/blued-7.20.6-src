@@ -14,8 +14,6 @@ public final class Headers {
     public static final String CACHE_CONTROL = "cache-control";
     public static final int CONN_CLOSE = 1;
     public static final int CONN_KEEP_ALIVE = 2;
-    public static final String CONTENT_ENCODING = "content-encoding";
-    public static final String CONTENT_TYPE = "content-type";
     public static final String EXPIRES = "expires";
     private static final int HASH_ACCEPT_RANGES = 1397189435;
     private static final int HASH_CACHE_CONTROL = -208775662;
@@ -62,9 +60,10 @@ public final class Headers {
     public static final int NO_CONN_TYPE = 0;
     public static final long NO_CONTENT_LENGTH = -1;
     public static final long NO_TRANSFER_ENCODING = 0;
-    public static final String REFRESH = "refresh";
     public static final String TRANSFER_ENCODING = "transfer-encoding";
     public static final String CONTENT_LEN = "content-length";
+    public static final String CONTENT_TYPE = "content-type";
+    public static final String CONTENT_ENCODING = "content-encoding";
     public static final String CONN_DIRECTIVE = "connection";
     public static final String PROXY_CONNECTION = "proxy-connection";
     public static final String WWW_AUTHENTICATE = "www-authenticate";
@@ -74,8 +73,9 @@ public final class Headers {
     public static final String ETAG = "etag";
     public static final String SET_COOKIE = "set-cookie";
     public static final String PRAGMA = "pragma";
+    public static final String REFRESH = "refresh";
     public static final String X_PERMITTED_CROSS_DOMAIN_POLICIES = "x-permitted-cross-domain-policies";
-    private static final String[] sHeaderNames = {TRANSFER_ENCODING, CONTENT_LEN, "content-type", "content-encoding", CONN_DIRECTIVE, "location", PROXY_CONNECTION, WWW_AUTHENTICATE, PROXY_AUTHENTICATE, CONTENT_DISPOSITION, ACCEPT_RANGES, "expires", "cache-control", "last-modified", ETAG, SET_COOKIE, PRAGMA, "refresh", X_PERMITTED_CROSS_DOMAIN_POLICIES};
+    private static final String[] sHeaderNames = {TRANSFER_ENCODING, CONTENT_LEN, CONTENT_TYPE, CONTENT_ENCODING, CONN_DIRECTIVE, "location", PROXY_CONNECTION, WWW_AUTHENTICATE, PROXY_AUTHENTICATE, CONTENT_DISPOSITION, ACCEPT_RANGES, "expires", "cache-control", "last-modified", ETAG, SET_COOKIE, PRAGMA, REFRESH, X_PERMITTED_CROSS_DOMAIN_POLICIES};
     private ArrayList<String> cookies = new ArrayList<>(2);
     private String[] mHeaders = new String[19];
     private ArrayList<String> mExtraHeaderNames = new ArrayList<>(4);
@@ -92,7 +92,7 @@ public final class Headers {
     private void setConnectionType(CharArrayBuffer charArrayBuffer, int i) {
         if (CharArrayBuffers.containsIgnoreCaseTrimmed(charArrayBuffer, i, "Close")) {
             this.connectionType = 1;
-        } else if (CharArrayBuffers.containsIgnoreCaseTrimmed(charArrayBuffer, i, c.f7906c)) {
+        } else if (CharArrayBuffers.containsIgnoreCaseTrimmed(charArrayBuffer, i, c.f5066c)) {
             this.connectionType = 2;
         }
     }
@@ -290,13 +290,13 @@ public final class Headers {
                     }
                     return;
                 case HASH_CONTENT_TYPE /* 785670158 */:
-                    if (substringTrimmed.equals("content-type")) {
+                    if (substringTrimmed.equals(CONTENT_TYPE)) {
                         this.mHeaders[2] = substringTrimmed2;
                         return;
                     }
                     return;
                 case HASH_REFRESH /* 1085444827 */:
-                    if (substringTrimmed.equals("refresh")) {
+                    if (substringTrimmed.equals(REFRESH)) {
                         this.mHeaders[17] = substringTrimmed2;
                         return;
                     }
@@ -338,7 +338,7 @@ public final class Headers {
                     }
                     return;
                 case HASH_CONTENT_ENCODING /* 2095084583 */:
-                    if (substringTrimmed.equals("content-encoding")) {
+                    if (substringTrimmed.equals(CONTENT_ENCODING)) {
                         this.mHeaders[3] = substringTrimmed2;
                         return;
                     }

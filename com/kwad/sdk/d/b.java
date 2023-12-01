@@ -1,5 +1,6 @@
 package com.kwad.sdk.d;
 
+import android.accounts.AccountManager;
 import java.util.HashMap;
 import org.json.JSONObject;
 
@@ -38,7 +39,7 @@ public class b implements a {
         HashMap hashMap = new HashMap();
         hashMap.put("userSet", String.valueOf(z));
         hashMap.put("value", obj);
-        hashMap.put("errorCode", String.valueOf(i));
+        hashMap.put(AccountManager.KEY_ERROR_CODE, String.valueOf(i));
         return new JSONObject(hashMap).toString();
     }
 

@@ -10,7 +10,7 @@ import java.nio.charset.Charset;
 public abstract class LyricsFileReader {
 
     /* renamed from: a  reason: collision with root package name */
-    private Charset f23692a = Charset.forName("utf-8");
+    private Charset f10084a = Charset.forName("utf-8");
 
     public LyricsInfo a(File file) throws Exception {
         if (file != null) {

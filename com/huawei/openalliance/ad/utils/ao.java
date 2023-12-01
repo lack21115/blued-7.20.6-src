@@ -45,9 +45,8 @@ public class ao extends ObjectInputStream {
         super(inputStream);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.io.ObjectInputStream
-    public Class<?> resolveClass(ObjectStreamClass objectStreamClass) {
+    protected Class<?> resolveClass(ObjectStreamClass objectStreamClass) {
         boolean z;
         Class[] clsArr = Code;
         int length = clsArr.length;

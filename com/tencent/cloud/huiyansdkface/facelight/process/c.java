@@ -11,14 +11,14 @@ public class c {
     public int b;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f35629a = false;
+    public boolean f21938a = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f35630c = 1280;
+    public int f21939c = 1280;
     public int d = UGCTransitionRules.DEFAULT_IMAGE_WIDTH;
 
     public int a(float[] fArr, float[] fArr2, int i, byte[] bArr, int i2, int i3, float f, float f2, float f3, int i4, int i5) {
-        this.f35630c = i2;
+        this.f21939c = i2;
         this.d = i3;
         return YTPoseDetectJNIInterface.poseDetect(fArr, fArr2, i, bArr, i2, i3, this.b, f, f2, f3, i4, i5);
     }
@@ -26,21 +26,21 @@ public class c {
     public void a() {
     }
 
-    public void a(int i, b.InterfaceC0912b interfaceC0912b) {
-        if (this.f35629a) {
+    public void a(int i, b.InterfaceC0742b interfaceC0742b) {
+        if (this.f21938a) {
             WLogger.d(e, "Restart FaceDetect process. YTPoseDetectInterface.stop() should be called before the next start, or maybe camera's parameter may be setting wrong.");
         }
         this.b = i;
-        this.f35629a = true;
-        interfaceC0912b.a();
+        this.f21938a = true;
+        interfaceC0742b.a();
     }
 
     public void b() {
     }
 
     public void c() {
-        if (this.f35629a) {
-            this.f35629a = false;
+        if (this.f21938a) {
+            this.f21938a = false;
             YTPoseDetectJNIInterface.resetDetect();
         }
     }

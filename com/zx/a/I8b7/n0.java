@@ -10,20 +10,20 @@ import java.util.regex.Pattern;
 public class n0 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Pattern f42150c = Pattern.compile("([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)");
+    public static final Pattern f28459c = Pattern.compile("([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)/([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)");
     public static final Pattern d = Pattern.compile(";\\s*(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)=(?:([a-zA-Z0-9-!#$%&'*+.^_`{|}~]+)|\"([^\"]*)\"))?");
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f42151a;
+    public final String f28460a;
     public final String b;
 
     public n0(String str, String str2, String str3, String str4) {
-        this.f42151a = str;
+        this.f28460a = str;
         this.b = str4;
     }
 
     public static n0 a(String str) {
-        Matcher matcher = f42150c.matcher(str);
+        Matcher matcher = f28459c.matcher(str);
         if (!matcher.lookingAt()) {
             throw new IllegalArgumentException("No subtype found for: \"" + str + '\"');
         }
@@ -99,14 +99,14 @@ public class n0 {
     }
 
     public boolean equals(Object obj) {
-        return (obj instanceof n0) && ((n0) obj).f42151a.equals(this.f42151a);
+        return (obj instanceof n0) && ((n0) obj).f28460a.equals(this.f28460a);
     }
 
     public int hashCode() {
-        return this.f42151a.hashCode();
+        return this.f28460a.hashCode();
     }
 
     public String toString() {
-        return this.f42151a;
+        return this.f28460a;
     }
 }

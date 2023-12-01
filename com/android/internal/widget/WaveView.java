@@ -111,18 +111,18 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                 if (WaveView.this.mLockState != 3 || ceil >= WaveView.this.mSnapRadius || WaveView.this.mWaveTimerDelay < 100) {
                     WaveView.access$614(WaveView.this, WaveView.DELAY_INCREMENT2);
                 } else {
-                    WaveView.this.mWaveTimerDelay = Math.min(2000L, WaveView.this.mWaveTimerDelay + 15);
+                    WaveView.this.mWaveTimerDelay = Math.min((long) WaveView.WAVE_DURATION, WaveView.this.mWaveTimerDelay + WaveView.DELAY_INCREMENT);
                     DrawableHolder drawableHolder = (DrawableHolder) WaveView.this.mLightWaves.get(WaveView.this.mCurrentWave);
                     drawableHolder.setAlpha(0.0f);
                     drawableHolder.setScaleX(0.2f);
                     drawableHolder.setScaleY(0.2f);
                     drawableHolder.setX(WaveView.this.mMouseX);
                     drawableHolder.setY(WaveView.this.mMouseY);
-                    drawableHolder.addAnimTo(2000L, 0L, "x", WaveView.this.mLockCenterX, true);
-                    drawableHolder.addAnimTo(2000L, 0L, "y", WaveView.this.mLockCenterY, true);
+                    drawableHolder.addAnimTo(WaveView.WAVE_DURATION, 0L, "x", WaveView.this.mLockCenterX, true);
+                    drawableHolder.addAnimTo(WaveView.WAVE_DURATION, 0L, "y", WaveView.this.mLockCenterY, true);
                     drawableHolder.addAnimTo(1333L, 0L, "alpha", 1.0f, true);
-                    drawableHolder.addAnimTo(2000L, 0L, "scaleX", 1.0f, true);
-                    drawableHolder.addAnimTo(2000L, 0L, "scaleY", 1.0f, true);
+                    drawableHolder.addAnimTo(WaveView.WAVE_DURATION, 0L, "scaleX", 1.0f, true);
+                    drawableHolder.addAnimTo(WaveView.WAVE_DURATION, 0L, "scaleY", 1.0f, true);
                     drawableHolder.addAnimTo(1000L, WaveView.RING_DELAY, "alpha", 0.0f, false);
                     drawableHolder.startAnimations(WaveView.this);
                     WaveView.this.mCurrentWave = (WaveView.this.mCurrentWave + 1) % WaveView.this.mWaveCount;
@@ -157,7 +157,7 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
     }
 
     private float getScaledGrabHandleRadius() {
-        return AccessibilityManager.getInstance(this.mContext).isEnabled() ? 1.0f * this.mUnlockHalo.getWidth() : 0.5f * this.mUnlockHalo.getWidth();
+        return AccessibilityManager.getInstance(this.mContext).isEnabled() ? 1.0f * this.mUnlockHalo.getWidth() : GRAB_HANDLE_RADIUS_SCALE_ACCESSIBILITY_DISABLED * this.mUnlockHalo.getWidth();
     }
 
     private void initDrawables() {
@@ -220,12 +220,12 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
     private void vibrate(long j) {
         boolean z = true;
         synchronized (this) {
-            if (Settings.System.getIntForUser(this.mContext.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 1, -2) == 0) {
+            if (Settings.System.getIntForUser(this.mContext.getContentResolver(), "haptic_feedback_enabled", 1, -2) == 0) {
                 z = false;
             }
             if (z) {
                 if (this.mVibrator == null) {
-                    this.mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    this.mVibrator = (Vibrator) getContext().getSystemService("vibrator");
                 }
                 this.mVibrator.vibrate(j, VIBRATION_ATTRIBUTES);
             }
@@ -250,11 +250,11 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                         while (true) {
                             int i4 = i3;
                             if (i4 >= this.mLightWaves.size()) {
-                                this.mUnlockRing.addAnimTo(300L, 0L, "x", this.mLockCenterX, true);
-                                this.mUnlockRing.addAnimTo(300L, 0L, "y", this.mLockCenterY, true);
-                                this.mUnlockRing.addAnimTo(300L, 0L, "scaleX", 0.1f, true);
-                                this.mUnlockRing.addAnimTo(300L, 0L, "scaleY", 0.1f, true);
-                                this.mUnlockRing.addAnimTo(300L, 0L, "alpha", 0.0f, true);
+                                this.mUnlockRing.addAnimTo(DURATION, 0L, "x", this.mLockCenterX, true);
+                                this.mUnlockRing.addAnimTo(DURATION, 0L, "y", this.mLockCenterY, true);
+                                this.mUnlockRing.addAnimTo(DURATION, 0L, "scaleX", 0.1f, true);
+                                this.mUnlockRing.addAnimTo(DURATION, 0L, "scaleY", 0.1f, true);
+                                this.mUnlockRing.addAnimTo(DURATION, 0L, "alpha", 0.0f, true);
                                 this.mUnlockDefault.removeAnimationFor("x");
                                 this.mUnlockDefault.removeAnimationFor("y");
                                 this.mUnlockDefault.removeAnimationFor("scaleX");
@@ -265,9 +265,9 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                                 this.mUnlockDefault.setScaleX(0.1f);
                                 this.mUnlockDefault.setScaleY(0.1f);
                                 this.mUnlockDefault.setAlpha(0.0f);
-                                this.mUnlockDefault.addAnimTo(300L, 100L, "scaleX", 1.0f, true);
-                                this.mUnlockDefault.addAnimTo(300L, 100L, "scaleY", 1.0f, true);
-                                this.mUnlockDefault.addAnimTo(300L, 100L, "alpha", 1.0f, true);
+                                this.mUnlockDefault.addAnimTo(DURATION, 100L, "scaleX", 1.0f, true);
+                                this.mUnlockDefault.addAnimTo(DURATION, 100L, "scaleY", 1.0f, true);
+                                this.mUnlockDefault.addAnimTo(DURATION, 100L, "alpha", 1.0f, true);
                                 this.mUnlockHalo.removeAnimationFor("x");
                                 this.mUnlockHalo.removeAnimationFor("y");
                                 this.mUnlockHalo.removeAnimationFor("scaleX");
@@ -278,11 +278,11 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                                 this.mUnlockHalo.setScaleX(0.1f);
                                 this.mUnlockHalo.setScaleY(0.1f);
                                 this.mUnlockHalo.setAlpha(0.0f);
-                                this.mUnlockHalo.addAnimTo(300L, 100L, "x", this.mLockCenterX, true);
-                                this.mUnlockHalo.addAnimTo(300L, 100L, "y", this.mLockCenterY, true);
-                                this.mUnlockHalo.addAnimTo(300L, 100L, "scaleX", 1.0f, true);
-                                this.mUnlockHalo.addAnimTo(300L, 100L, "scaleY", 1.0f, true);
-                                this.mUnlockHalo.addAnimTo(300L, 100L, "alpha", 1.0f, true);
+                                this.mUnlockHalo.addAnimTo(DURATION, 100L, "x", this.mLockCenterX, true);
+                                this.mUnlockHalo.addAnimTo(DURATION, 100L, "y", this.mLockCenterY, true);
+                                this.mUnlockHalo.addAnimTo(DURATION, 100L, "scaleX", 1.0f, true);
+                                this.mUnlockHalo.addAnimTo(DURATION, 100L, "scaleY", 1.0f, true);
+                                this.mUnlockHalo.addAnimTo(DURATION, 100L, "alpha", 1.0f, true);
                                 removeCallbacks(this.mLockTimerActions);
                                 this.mLockState = 1;
                                 break;
@@ -292,7 +292,7 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                             }
                         }
                     } else {
-                        this.mLightWaves.get(i2).addAnimTo(300L, 0L, "alpha", 0.0f, false);
+                        this.mLightWaves.get(i2).addAnimTo(DURATION, 0L, "alpha", 0.0f, false);
                         i = i2 + 1;
                     }
                 }
@@ -310,12 +310,12 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                 this.mUnlockDefault.setScaleX(0.1f);
                 this.mUnlockDefault.setScaleY(0.1f);
                 this.mUnlockDefault.setAlpha(0.0f);
-                this.mUnlockDefault.addAnimTo(300L, 100L, "scaleX", 1.0f, false);
-                this.mUnlockDefault.addAnimTo(300L, 100L, "scaleY", 1.0f, false);
-                this.mUnlockDefault.addAnimTo(300L, 100L, "alpha", 1.0f, false);
-                this.mUnlockRing.addAnimTo(300L, 0L, "scaleX", 1.0f, true);
-                this.mUnlockRing.addAnimTo(300L, 0L, "scaleY", 1.0f, true);
-                this.mUnlockRing.addAnimTo(300L, 0L, "alpha", 1.0f, true);
+                this.mUnlockDefault.addAnimTo(DURATION, 100L, "scaleX", 1.0f, false);
+                this.mUnlockDefault.addAnimTo(DURATION, 100L, "scaleY", 1.0f, false);
+                this.mUnlockDefault.addAnimTo(DURATION, 100L, "alpha", 1.0f, false);
+                this.mUnlockRing.addAnimTo(DURATION, 0L, "scaleX", 1.0f, true);
+                this.mUnlockRing.addAnimTo(DURATION, 0L, "scaleY", 1.0f, true);
+                this.mUnlockRing.addAnimTo(DURATION, 0L, "alpha", 1.0f, true);
                 this.mLockState = 3;
                 break;
             case 3:
@@ -388,7 +388,7 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                                     this.mUnlockHalo.addAnimTo(200L, 200L, "scaleY", 3.0f, false);
                                     this.mUnlockHalo.addAnimTo(200L, 200L, "alpha", 0.0f, false);
                                     removeCallbacks(this.mLockTimerActions);
-                                    postDelayed(this.mLockTimerActions, 3000L);
+                                    postDelayed(this.mLockTimerActions, RESET_TIMEOUT);
                                     dispatchTriggerEvent(10);
                                     this.mLockState = 5;
                                     break;
@@ -508,8 +508,8 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public void onSizeChanged(int i, int i2, int i3, int i4) {
-        this.mLockCenterX = i * 0.5f;
-        this.mLockCenterY = i2 * 0.5f;
+        this.mLockCenterX = i * GRAB_HANDLE_RADIUS_SCALE_ACCESSIBILITY_DISABLED;
+        this.mLockCenterY = i2 * GRAB_HANDLE_RADIUS_SCALE_ACCESSIBILITY_DISABLED;
         super.onSizeChanged(i, i2, i3, i4);
     }
 
@@ -528,7 +528,7 @@ public class WaveView extends View implements ValueAnimator.AnimatorUpdateListen
                 break;
             case 1:
                 this.mFingerDown = false;
-                postDelayed(this.mLockTimerActions, 3000L);
+                postDelayed(this.mLockTimerActions, RESET_TIMEOUT);
                 setGrabbedState(0);
                 waveUpdateFrame(this.mMouseX, this.mMouseY, this.mFingerDown);
                 z = true;

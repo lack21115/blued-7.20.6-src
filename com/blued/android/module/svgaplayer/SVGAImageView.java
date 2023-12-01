@@ -27,13 +27,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAImageView.class */
 public class SVGAImageView extends ImageView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f15950a;
+    private final String a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f15951c;
+    private int c;
     private boolean d;
     private boolean e;
     private FillMode f;
@@ -52,18 +48,16 @@ public class SVGAImageView extends ImageView {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAImageView$AnimatorListener.class */
     public static final class AnimatorListener implements Animator.AnimatorListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<SVGAImageView> f15952a;
+        private final WeakReference<SVGAImageView> a;
 
         public AnimatorListener(SVGAImageView view) {
             Intrinsics.e(view, "view");
-            this.f15952a = new WeakReference<>(view);
+            this.a = new WeakReference<>(view);
         }
 
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationCancel(Animator animator) {
-            SVGAImageView sVGAImageView = this.f15952a.get();
+            SVGAImageView sVGAImageView = this.a.get();
             if (sVGAImageView == null) {
                 return;
             }
@@ -72,7 +66,7 @@ public class SVGAImageView extends ImageView {
 
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
-            SVGAImageView sVGAImageView = this.f15952a.get();
+            SVGAImageView sVGAImageView = this.a.get();
             if (sVGAImageView != null) {
                 sVGAImageView.a(animator);
             }
@@ -81,7 +75,7 @@ public class SVGAImageView extends ImageView {
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationRepeat(Animator animator) {
             SVGACallback callback;
-            SVGAImageView sVGAImageView = this.f15952a.get();
+            SVGAImageView sVGAImageView = this.a.get();
             if (sVGAImageView == null || (callback = sVGAImageView.getCallback()) == null) {
                 return;
             }
@@ -90,7 +84,7 @@ public class SVGAImageView extends ImageView {
 
         @Override // android.animation.Animator.AnimatorListener
         public void onAnimationStart(Animator animator) {
-            SVGAImageView sVGAImageView = this.f15952a.get();
+            SVGAImageView sVGAImageView = this.a.get();
             if (sVGAImageView == null) {
                 return;
             }
@@ -102,18 +96,16 @@ public class SVGAImageView extends ImageView {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAImageView$AnimatorUpdateListener.class */
     public static final class AnimatorUpdateListener implements ValueAnimator.AnimatorUpdateListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<SVGAImageView> f15953a;
+        private final WeakReference<SVGAImageView> a;
 
         public AnimatorUpdateListener(SVGAImageView view) {
             Intrinsics.e(view, "view");
-            this.f15953a = new WeakReference<>(view);
+            this.a = new WeakReference<>(view);
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            SVGAImageView sVGAImageView = this.f15953a.get();
+            SVGAImageView sVGAImageView = this.a.get();
             if (sVGAImageView != null) {
                 sVGAImageView.a(valueAnimator);
             }
@@ -131,16 +123,14 @@ public class SVGAImageView extends ImageView {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAImageView$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f15956a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[FillMode.values().length];
             iArr[FillMode.Backward.ordinal()] = 1;
             iArr[FillMode.Forward.ordinal()] = 2;
             iArr[FillMode.Clear.ordinal()] = 3;
-            f15956a = iArr;
+            a = iArr;
         }
     }
 
@@ -160,7 +150,7 @@ public class SVGAImageView extends ImageView {
     public SVGAImageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f15950a = "SVGAImageView";
+        this.a = "SVGAImageView";
         this.e = true;
         this.f = FillMode.Forward;
         this.j = true;
@@ -203,7 +193,7 @@ public class SVGAImageView extends ImageView {
         d();
         SVGADrawable sVGADrawable = getSVGADrawable();
         if (sVGADrawable != null) {
-            int i = WhenMappings.f15956a[this.f.ordinal()];
+            int i = WhenMappings.a[this.f.ordinal()];
             if (i == 1) {
                 sVGADrawable.a(this.n);
             } else if (i == 2) {
@@ -220,9 +210,9 @@ public class SVGAImageView extends ImageView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(ValueAnimator valueAnimator) {
-        SVGAVideoData a2;
+        SVGAVideoData a;
         SVGADrawable sVGADrawable = getSVGADrawable();
-        if (sVGADrawable == null || (a2 = sVGADrawable.a().a()) == null) {
+        if (sVGADrawable == null || (a = sVGADrawable.a().a()) == null) {
             return;
         }
         Integer animatedValue = valueAnimator != null ? valueAnimator.getAnimatedValue() : null;
@@ -230,16 +220,16 @@ public class SVGAImageView extends ImageView {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Int");
         }
         sVGADrawable.a(animatedValue.intValue());
-        double c2 = (sVGADrawable.c() + 1) / a2.e();
+        double c = (sVGADrawable.c() + 1) / a.e();
         SVGACallback sVGACallback = this.g;
         if (sVGACallback != null) {
-            sVGACallback.onStep(sVGADrawable.c(), c2);
+            sVGACallback.onStep(sVGADrawable.c(), c);
         }
     }
 
     private final void a(AttributeSet attributeSet) {
         TypedArray obtainStyledAttributes = getContext().getTheme().obtainStyledAttributes(attributeSet, R.styleable.SVGAImageView, 0, 0);
-        this.f15951c = obtainStyledAttributes.getInt(R.styleable.SVGAImageView_loopCount, 0);
+        this.c = obtainStyledAttributes.getInt(R.styleable.SVGAImageView_loopCount, 0);
         this.d = obtainStyledAttributes.getBoolean(R.styleable.SVGAImageView_clearsAfterStop, false);
         this.e = obtainStyledAttributes.getBoolean(R.styleable.SVGAImageView_clearsAfterDetached, true);
         this.j = obtainStyledAttributes.getBoolean(R.styleable.SVGAImageView_antiAlias, true);
@@ -288,9 +278,9 @@ public class SVGAImageView extends ImageView {
     public static final void a(SVGAVideoEntity videoItem, SVGAImageView this$0) {
         Intrinsics.e(videoItem, "$videoItem");
         Intrinsics.e(this$0, "this$0");
-        SVGAVideoData a2 = videoItem.a();
-        if (a2 != null) {
-            a2.a(this$0.j);
+        SVGAVideoData a = videoItem.a();
+        if (a != null) {
+            a.a(this$0.j);
         }
         this$0.setVideoItem(videoItem);
         SVGADrawable sVGADrawable = this$0.getSVGADrawable();
@@ -315,24 +305,24 @@ public class SVGAImageView extends ImageView {
     }
 
     private final void b(SVGARange sVGARange, boolean z) {
-        SVGAVideoData a2;
-        LogUtils.f16034a.a(this.f15950a, "================ start animation ================");
+        SVGAVideoData a;
+        LogUtils.a.a(this.a, "================ start animation ================");
         SVGADrawable sVGADrawable = getSVGADrawable();
-        if (sVGADrawable == null || (a2 = sVGADrawable.a().a()) == null) {
+        if (sVGADrawable == null || (a = sVGADrawable.a().a()) == null) {
             return;
         }
         f();
         this.n = Math.max(0, sVGARange != null ? sVGARange.a() : 0);
-        SVGAVideoData a3 = sVGADrawable.a().a();
-        int min = Math.min((a3 != null ? a3.e() : 1) - 1, ((sVGARange != null ? sVGARange.a() : 0) + (sVGARange != null ? sVGARange.b() : Integer.MAX_VALUE)) - 1);
+        SVGAVideoData a2 = sVGADrawable.a().a();
+        int min = Math.min((a2 != null ? a2.e() : 1) - 1, ((sVGARange != null ? sVGARange.a() : 0) + (sVGARange != null ? sVGARange.b() : Integer.MAX_VALUE)) - 1);
         this.o = min;
         ValueAnimator ofInt = ValueAnimator.ofInt(this.n, min);
         ofInt.setInterpolator(new LinearInterpolator());
-        ofInt.setDuration((long) ((((this.o - this.n) + 1) * (1000 / a2.d())) / g()));
-        int i = this.f15951c;
+        ofInt.setDuration((long) ((((this.o - this.n) + 1) * (1000 / a.d())) / g()));
+        int i = this.c;
         ofInt.setRepeatCount(i <= 0 ? 99999 : i - 1);
-        LogUtils logUtils = LogUtils.f16034a;
-        String str = this.f15950a;
+        LogUtils logUtils = LogUtils.a;
+        String str = this.a;
         logUtils.a(str, "play:: mStartFrame=" + this.n + ", mEndFrame=" + this.o + ",duration = " + ofInt.getDuration());
         ofInt.addUpdateListener(this.m);
         ofInt.addListener(this.l);
@@ -374,7 +364,7 @@ public class SVGAImageView extends ImageView {
                         }
                         declaredMethod2.setAccessible(true);
                         declaredMethod2.invoke(cls, Float.valueOf(1.0f));
-                        LogUtils.f16034a.a(this.f15950a, "The animation duration scale has been reset to 1.0x, because you closed it on developer options.");
+                        LogUtils.a.a(this.a, "The animation duration scale has been reset to 1.0x, because you closed it on developer options.");
                         return 1.0d;
                     } catch (Exception e) {
                         e = e;
@@ -408,10 +398,10 @@ public class SVGAImageView extends ImageView {
     }
 
     public final void a(int i, boolean z) {
-        SVGAVideoData a2;
+        SVGAVideoData a;
         c();
         SVGADrawable sVGADrawable = getSVGADrawable();
-        if (sVGADrawable == null || (a2 = sVGADrawable.a().a()) == null) {
+        if (sVGADrawable == null || (a = sVGADrawable.a().a()) == null) {
             return;
         }
         sVGADrawable.a(i);
@@ -419,7 +409,7 @@ public class SVGAImageView extends ImageView {
             a();
             ValueAnimator valueAnimator = this.h;
             if (valueAnimator != null) {
-                valueAnimator.setCurrentPlayTime(Math.max(0.0f, Math.min(1.0f, i / a2.e())) * ((float) valueAnimator.getDuration()));
+                valueAnimator.setCurrentPlayTime(Math.max(0.0f, Math.min(1.0f, i / a.e())) * ((float) valueAnimator.getDuration()));
             }
         }
     }
@@ -515,7 +505,7 @@ public class SVGAImageView extends ImageView {
     }
 
     public final int getLoops() {
-        return this.f15951c;
+        return this.c;
     }
 
     public final boolean getMIsNeedOnDetachedFromWindow() {
@@ -567,7 +557,7 @@ public class SVGAImageView extends ImageView {
     }
 
     public final void setLoops(int i) {
-        this.f15951c = i;
+        this.c = i;
     }
 
     public final void setMIsNeedOnDetachedFromWindow(boolean z) {

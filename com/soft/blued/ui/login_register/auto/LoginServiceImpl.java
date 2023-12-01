@@ -73,7 +73,7 @@ public class LoginServiceImpl implements ILoginService {
         } else {
             EventTrackLoginAndRegister.a(LoginAndRegisterProtos.Event.LOGIN_PAGE_REGISTER_BTN_CLICK);
             LoginRegisterHttpUtils.a("signup_main");
-            TerminalActivity.d(checkBox.getContext(), RegisterV1ForPhoneFragment.class, null);
+            TerminalActivity.d(checkBox.getContext(), RegisterV1ForPhoneFragment.class, (Bundle) null);
         }
     }
 
@@ -83,7 +83,7 @@ public class LoginServiceImpl implements ILoginService {
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                LoginTool loginTool = LoginTool.f31584a;
+                LoginTool loginTool = LoginTool.f17894a;
                 LoginTool.a();
                 BluedPreferences.aE();
                 LoginServiceImpl.this.a(str, checkBox);
@@ -131,7 +131,7 @@ public class LoginServiceImpl implements ILoginService {
 
     @Override // com.blued.login.auto.ILoginService
     public void a(Context context) {
-        TerminalActivity.d(context, ServerAddressSettingFragment.class, null);
+        TerminalActivity.d(context, ServerAddressSettingFragment.class, (Bundle) null);
     }
 
     @Override // com.blued.login.auto.ILoginService
@@ -146,7 +146,7 @@ public class LoginServiceImpl implements ILoginService {
 
     @Override // com.blued.login.auto.ILoginService
     public void a(TextView textView, TextView textView2, boolean z) {
-        LoginTool.f31584a.a(textView, textView2, z);
+        LoginTool.f17894a.a(textView, textView2, z);
     }
 
     @Override // com.blued.login.auto.ILoginService
@@ -191,7 +191,7 @@ public class LoginServiceImpl implements ILoginService {
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                LoginTool loginTool = LoginTool.f31584a;
+                LoginTool loginTool = LoginTool.f17894a;
                 LoginTool.a();
                 BluedPreferences.aE();
             }
@@ -281,7 +281,7 @@ public class LoginServiceImpl implements ILoginService {
 
     @Override // com.blued.login.auto.ILoginService
     public void d(Context context) {
-        TerminalActivity.d(context, TouristFragment.class, null);
+        TerminalActivity.d(context, TouristFragment.class, (Bundle) null);
     }
 
     @Override // com.blued.login.auto.ILoginService

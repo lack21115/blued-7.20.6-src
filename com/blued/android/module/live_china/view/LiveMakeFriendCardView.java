@@ -30,13 +30,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeFriendCardView.class */
 public class LiveMakeFriendCardView implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14502a;
+    public View a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f14503c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     private MyPopupWindow f;
@@ -128,15 +124,15 @@ public class LiveMakeFriendCardView implements View.OnClickListener {
     private void c() {
         this.e = LayoutInflater.from(this.d);
         a();
-        this.b = this.f14502a.findViewById(R.id.live_make_friend_card_layer);
-        this.f14503c = (FrameLayout) this.f14502a.findViewById(R.id.content_layout);
-        this.k = (ImageView) this.f14502a.findViewById(R.id.live_make_friend_card_header);
-        this.l = (TextView) this.f14502a.findViewById(R.id.live_make_friend_card_name);
-        this.m = (TextView) this.f14502a.findViewById(R.id.live_make_friend_card_mic);
-        this.n = (TextView) this.f14502a.findViewById(R.id.live_make_friend_card_out);
-        this.o = (ImageView) this.f14502a.findViewById(R.id.live_make_friend_card_num);
-        this.p = (TextView) this.f14502a.findViewById(R.id.live_make_friend_card_btn);
-        this.j = (LinearLayout) this.f14502a.findViewById(R.id.ll_loading);
+        this.b = this.a.findViewById(R.id.live_make_friend_card_layer);
+        this.c = (FrameLayout) this.a.findViewById(R.id.content_layout);
+        this.k = (ImageView) this.a.findViewById(R.id.live_make_friend_card_header);
+        this.l = (TextView) this.a.findViewById(R.id.live_make_friend_card_name);
+        this.m = (TextView) this.a.findViewById(R.id.live_make_friend_card_mic);
+        this.n = (TextView) this.a.findViewById(R.id.live_make_friend_card_out);
+        this.o = (ImageView) this.a.findViewById(R.id.live_make_friend_card_num);
+        this.p = (TextView) this.a.findViewById(R.id.live_make_friend_card_btn);
+        this.j = (LinearLayout) this.a.findViewById(R.id.ll_loading);
         this.m.setOnClickListener(this);
         this.n.setOnClickListener(this);
         this.p.setOnClickListener(this);
@@ -148,16 +144,16 @@ public class LiveMakeFriendCardView implements View.OnClickListener {
                 LiveMakeFriendCardView.this.b();
             }
         });
-        this.f14503c.setVisibility(8);
-        this.f14503c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendCardView.2
+        this.c.setVisibility(8);
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.LiveMakeFriendCardView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
             }
         });
-        MyPopupWindow myPopupWindow = new MyPopupWindow(this.f14502a, -1, -1, true);
+        MyPopupWindow myPopupWindow = new MyPopupWindow(this.a, -1, -1, true);
         this.f = myPopupWindow;
-        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(17170445));
+        myPopupWindow.setBackgroundDrawable(this.d.getResources().getDrawable(com.android.internal.R.color.transparent));
         this.f.setTouchable(true);
         this.f.setOutsideTouchable(true);
         this.f.setFocusable(true);
@@ -192,7 +188,7 @@ public class LiveMakeFriendCardView implements View.OnClickListener {
     }
 
     private void d() {
-        this.f14503c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_in));
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.5f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
@@ -217,11 +213,11 @@ public class LiveMakeFriendCardView implements View.OnClickListener {
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f14503c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
+        this.c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_bottom_out));
     }
 
     public void a() {
-        this.f14502a = this.e.inflate(R.layout.live_make_friend_card, (ViewGroup) null);
+        this.a = this.e.inflate(R.layout.live_make_friend_card, (ViewGroup) null);
     }
 
     public void a(LiveFriendModel liveFriendModel, int i) {
@@ -236,12 +232,12 @@ public class LiveMakeFriendCardView implements View.OnClickListener {
             LiveSetDataObserver.a().e(4);
         }
         this.b.clearAnimation();
-        this.f14503c.clearAnimation();
+        this.c.clearAnimation();
         if (this.f.isShowing()) {
             this.f.a();
         }
-        this.f.showAtLocation(this.f14503c, 81, 0, 0);
-        this.f14503c.setVisibility(0);
+        this.f.showAtLocation(this.c, 81, 0, 0);
+        this.c.setVisibility(0);
         d();
     }
 
@@ -264,7 +260,7 @@ public class LiveMakeFriendCardView implements View.OnClickListener {
             }
         }, 320L);
         e();
-        this.f14503c.setVisibility(8);
+        this.c.setVisibility(8);
     }
 
     public void b() {

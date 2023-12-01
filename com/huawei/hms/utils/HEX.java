@@ -4,7 +4,7 @@ package com.huawei.hms.utils;
 public final class HEX {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final char[] f22912a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    public static final char[] f9304a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     public static final char[] b = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public static char[] a(byte[] bArr, char[] cArr) {
@@ -25,7 +25,7 @@ public final class HEX {
     }
 
     public static char[] encodeHex(byte[] bArr, boolean z) {
-        return a(bArr, z ? b : f22912a);
+        return a(bArr, z ? b : f9304a);
     }
 
     public static String encodeHexString(byte[] bArr, boolean z) {

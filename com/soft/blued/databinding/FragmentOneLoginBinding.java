@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class FragmentOneLoginBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f28921a;
+    public final FrameLayout f15231a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f28922c;
+    public final ShapeTextView f15232c;
     public final ImageView d;
     public final TextView e;
     public final ShapeTextView f;
@@ -25,9 +25,9 @@ public final class FragmentOneLoginBinding implements ViewBinding {
 
     private FragmentOneLoginBinding(ConstraintLayout constraintLayout, FrameLayout frameLayout, ImageView imageView, ShapeTextView shapeTextView, ImageView imageView2, TextView textView, ShapeTextView shapeTextView2) {
         this.g = constraintLayout;
-        this.f28921a = frameLayout;
+        this.f15231a = frameLayout;
         this.b = imageView;
-        this.f28922c = shapeTextView;
+        this.f15232c = shapeTextView;
         this.d = imageView2;
         this.e = textView;
         this.f = shapeTextView2;
@@ -39,15 +39,15 @@ public final class FragmentOneLoginBinding implements ViewBinding {
         if (frameLayout != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.one_login_back);
             if (imageView != null) {
-                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.one_login_btn);
-                if (shapeTextView != null) {
+                ShapeTextView findViewById = view.findViewById(R.id.one_login_btn);
+                if (findViewById != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.one_login_icon);
                     if (imageView2 != null) {
                         TextView textView = (TextView) view.findViewById(R.id.one_login_number);
                         if (textView != null) {
-                            ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.one_login_other_btn);
-                            if (shapeTextView2 != null) {
-                                return new FragmentOneLoginBinding((ConstraintLayout) view, frameLayout, imageView, shapeTextView, imageView2, textView, shapeTextView2);
+                            ShapeTextView findViewById2 = view.findViewById(R.id.one_login_other_btn);
+                            if (findViewById2 != null) {
+                                return new FragmentOneLoginBinding((ConstraintLayout) view, frameLayout, imageView, findViewById, imageView2, textView, findViewById2);
                             }
                             str = "oneLoginOtherBtn";
                         } else {

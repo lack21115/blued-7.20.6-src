@@ -21,7 +21,7 @@ public class ContextUtils {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SharedPreferences f36276a = ContextUtils.access$000();
+        private static SharedPreferences f22585a = ContextUtils.access$000();
     }
 
     static /* synthetic */ SharedPreferences access$000() {
@@ -43,7 +43,7 @@ public class ContextUtils {
     }
 
     public static SharedPreferences getAppSharedPreferences() {
-        return a.f36276a;
+        return a.f22585a;
     }
 
     public static AssetManager getApplicationAssets() {
@@ -67,7 +67,7 @@ public class ContextUtils {
 
     public static void initApplicationContextForTests(Context context) {
         initJavaSideApplicationContext(context);
-        SharedPreferences unused = a.f36276a = fetchAppSharedPreferences();
+        SharedPreferences unused = a.f22585a = fetchAppSharedPreferences();
     }
 
     public static void initContextFromNative(String str) {

@@ -13,13 +13,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/l/f.class */
 public final class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6849a = com.anythink.core.common.h.class.getSimpleName();
+    public static final String a = com.anythink.core.common.h.class.getSimpleName();
     final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f6850c;
+    int c;
     int d;
     long e;
     al m;
@@ -34,17 +30,17 @@ public final class f {
     List<ai> h = Collections.synchronizedList(new ArrayList(2));
 
     public f(g gVar) {
-        this.f6850c = 1;
+        this.c = 1;
         this.f.addAll(gVar.d);
         if (this.n == null) {
             this.n = Collections.synchronizedList(new ArrayList());
         }
         this.n.clear();
         this.n.addAll(gVar.d);
-        this.b = gVar.f6852c.am();
-        this.f6850c = gVar.f6852c.k();
-        this.d = gVar.f6852c.aa();
-        this.e = gVar.f6852c.m();
+        this.b = gVar.c.am();
+        this.c = gVar.c.k();
+        this.d = gVar.c.aa();
+        this.e = gVar.c.m();
         List<ai> b = b(gVar.d);
         if (b != null) {
             this.f.removeAll(b);
@@ -119,10 +115,10 @@ public final class f {
         }
         double a2 = com.anythink.core.common.k.g.a(aiVar2);
         r rVar = new r();
-        rVar.f6674a = 2;
+        rVar.a = 2;
         rVar.b = a2;
         rVar.e = eVar;
-        rVar.f6675c = aiVar2;
+        rVar.c = aiVar2;
         rVar.d = aiVar;
         N.a(rVar, z);
     }
@@ -254,7 +250,7 @@ public final class f {
     }
 
     public final void a(int i) {
-        if (this.f6850c == 2 && i == 1) {
+        if (this.c == 2 && i == 1) {
             this.l--;
         }
     }
@@ -320,7 +316,7 @@ public final class f {
                 arrayList.add(aiVar);
             } else {
                 boolean z2 = com.anythink.core.common.k.g.a(aiVar) > a(true);
-                int i2 = this.f6850c;
+                int i2 = this.c;
                 if (i2 == 1) {
                     if (this.j < this.d) {
                         z = true;
@@ -431,7 +427,7 @@ public final class f {
 
     public final List<ai> h() {
         ArrayList b;
-        int i = this.f6850c;
+        int i = this.c;
         if (i == 1) {
             ArrayList arrayList = new ArrayList();
             int min = Math.min(this.d, this.f.size());
@@ -449,7 +445,7 @@ public final class f {
             b = i == 2 ? b(1) : null;
         }
         StringBuilder sb = new StringBuilder("startToRequestMediationAd: mRequestNumType: ");
-        sb.append(this.f6850c);
+        sb.append(this.c);
         sb.append(", needRequestNum: ");
         int i4 = 0;
         if (b != null) {

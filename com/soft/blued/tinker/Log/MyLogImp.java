@@ -8,11 +8,11 @@ import com.tencent.tinker.lib.util.TinkerLog;
 public class MyLogImp implements TinkerLog.TinkerLogImp {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f29768a;
+    private static int f16078a;
 
     @Override // com.tencent.tinker.loader.shareutil.ShareTinkerLog.TinkerLogImp
     public void d(String str, String str2, Object... objArr) {
-        if (f29768a <= 1) {
+        if (f16078a <= 1) {
             if (objArr != null) {
                 str2 = String.format(str2, objArr);
             }
@@ -22,7 +22,7 @@ public class MyLogImp implements TinkerLog.TinkerLogImp {
 
     @Override // com.tencent.tinker.loader.shareutil.ShareTinkerLog.TinkerLogImp
     public void e(String str, String str2, Object... objArr) {
-        if (f29768a <= 4) {
+        if (f16078a <= 4) {
             if (objArr != null) {
                 str2 = String.format(str2, objArr);
             }
@@ -32,7 +32,7 @@ public class MyLogImp implements TinkerLog.TinkerLogImp {
 
     @Override // com.tencent.tinker.loader.shareutil.ShareTinkerLog.TinkerLogImp
     public void i(String str, String str2, Object... objArr) {
-        if (f29768a <= 2) {
+        if (f16078a <= 2) {
             if (objArr != null) {
                 str2 = String.format(str2, objArr);
             }
@@ -54,7 +54,7 @@ public class MyLogImp implements TinkerLog.TinkerLogImp {
 
     @Override // com.tencent.tinker.loader.shareutil.ShareTinkerLog.TinkerLogImp
     public void v(String str, String str2, Object... objArr) {
-        if (f29768a <= 0) {
+        if (f16078a <= 0) {
             if (objArr != null) {
                 str2 = String.format(str2, objArr);
             }
@@ -64,7 +64,7 @@ public class MyLogImp implements TinkerLog.TinkerLogImp {
 
     @Override // com.tencent.tinker.loader.shareutil.ShareTinkerLog.TinkerLogImp
     public void w(String str, String str2, Object... objArr) {
-        if (f29768a <= 3) {
+        if (f16078a <= 3) {
             if (objArr != null) {
                 str2 = String.format(str2, objArr);
             }

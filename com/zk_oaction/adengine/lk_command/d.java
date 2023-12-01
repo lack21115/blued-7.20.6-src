@@ -9,18 +9,18 @@ import org.xmlpull.v1.XmlPullParserException;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.zk_oaction.adengine.lk_sdk.c f41913a;
+    protected com.zk_oaction.adengine.lk_sdk.c f28222a;
     public ArrayList<g> b = new ArrayList<>();
 
     public d(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f41913a = cVar;
+        this.f28222a = cVar;
     }
 
     public void a(String str) {
         Iterator<g> it = this.b.iterator();
         while (it.hasNext()) {
             g next = it.next();
-            String str2 = next.f41915a;
+            String str2 = next.f28224a;
             if (str2 != null && str2.equals(str)) {
                 next.a();
             }
@@ -39,7 +39,7 @@ public class d {
                         return true;
                     }
                 } else if (xmlPullParser.getName().equals("Trigger")) {
-                    g gVar = new g(this.f41913a);
+                    g gVar = new g(this.f28222a);
                     if (gVar.a(xmlPullParser, "Trigger")) {
                         this.b.add(gVar);
                     }

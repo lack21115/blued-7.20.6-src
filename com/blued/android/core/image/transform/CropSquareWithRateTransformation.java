@@ -6,17 +6,14 @@ import java.security.MessageDigest;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/transform/CropSquareWithRateTransformation.class */
 public class CropSquareWithRateTransformation extends BitmapTransformation {
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f9566c;
+    private float c;
 
     public CropSquareWithRateTransformation(float f, float f2) {
         this.b = f;
-        this.f9566c = f2;
+        this.c = f2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:35:0x016a  */
-    @Override // com.bumptech.glide.load.resource.bitmap.BitmapTransformation
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -29,26 +26,23 @@ public class CropSquareWithRateTransformation extends BitmapTransformation {
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.core.image.transform.CropSquareWithRateTransformation.a(com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool, android.graphics.Bitmap, int, int):android.graphics.Bitmap");
     }
 
-    @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
-        messageDigest.update(("com.blued.android.core.transform.CropSquareWithRateTransformation.1" + this.b + this.f9566c).getBytes(f20706a));
+        messageDigest.update(("com.blued.android.core.transform.CropSquareWithRateTransformation.1" + this.b + this.c).getBytes(a));
     }
 
-    @Override // com.bumptech.glide.load.Key
     public boolean equals(Object obj) {
         if (obj instanceof CropSquareWithRateTransformation) {
             CropSquareWithRateTransformation cropSquareWithRateTransformation = (CropSquareWithRateTransformation) obj;
-            return cropSquareWithRateTransformation.b == this.b && cropSquareWithRateTransformation.f9566c == this.f9566c;
+            return cropSquareWithRateTransformation.b == this.b && cropSquareWithRateTransformation.c == this.c;
         }
         return false;
     }
 
-    @Override // com.bumptech.glide.load.Key
     public int hashCode() {
-        return (int) ((-515355040) + (this.b * 1000.0f) + (this.f9566c * 10.0f));
+        return (int) ((-515355040) + (this.b * 1000.0f) + (this.c * 10.0f));
     }
 
     public String toString() {
-        return "CropSquareWithRateTransformation(rateX=" + this.b + ", rateY=" + this.f9566c + ")";
+        return "CropSquareWithRateTransformation(rateX=" + this.b + ", rateY=" + this.c + ")";
     }
 }

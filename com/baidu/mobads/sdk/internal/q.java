@@ -12,25 +12,25 @@ import org.json.JSONObject;
 public class q implements ICommonModuleObj {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile q f9440a;
+    private static volatile q f6600a;
     private CustomNotification b = new CustomNotification();
 
     private q() {
     }
 
     public static q a() {
-        if (f9440a == null) {
+        if (f6600a == null) {
             synchronized (q.class) {
                 try {
-                    if (f9440a == null) {
-                        f9440a = new q();
+                    if (f6600a == null) {
+                        f6600a = new q();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9440a;
+        return f6600a;
     }
 
     @Override // com.baidu.mobads.sdk.api.ICommonModuleObj

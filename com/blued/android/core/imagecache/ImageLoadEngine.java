@@ -17,19 +17,15 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/ImageLoadEngine.class */
 public class ImageLoadEngine {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static final AsyncViewChecker<String> f9576a = new AsyncViewChecker<>();
+    protected static final AsyncViewChecker<String> a = new AsyncViewChecker<>();
     protected static final Map<String, ReentrantLock> b = new WeakHashMap();
-
-    /* renamed from: c  reason: collision with root package name */
-    protected static final AtomicBoolean f9577c = new AtomicBoolean(false);
+    protected static final AtomicBoolean c = new AtomicBoolean(false);
     private static final ThreadPoolExecutor d = ExecutorFactory.a().b();
     private static final ThreadPoolExecutor e = ExecutorFactory.a().c();
     private static final ExecutorService f = ExecutorFactory.a().d();
 
     public static LoadJob a(LoadJobImpl loadJobImpl) {
-        loadJobImpl.a(loadJobImpl.f9586a == LoadJobImpl.LoadType.DATA ? d.submit(loadJobImpl) : loadJobImpl.b == null ? f.submit(loadJobImpl) : e.submit(loadJobImpl));
+        loadJobImpl.a(loadJobImpl.a == LoadJobImpl.LoadType.DATA ? d.submit(loadJobImpl) : loadJobImpl.b == null ? f.submit(loadJobImpl) : e.submit(loadJobImpl));
         return loadJobImpl;
     }
 
@@ -45,26 +41,26 @@ public class ImageLoadEngine {
     }
 
     public static void a() {
-        f9577c.set(true);
+        c.set(true);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(ImageView imageView) {
         if (imageView != null) {
-            f9576a.a(imageView);
+            a.a(imageView);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void a(ImageView imageView, String str) {
         if (imageView != null) {
-            f9576a.a(imageView, str);
+            a.a(imageView, str);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void a(final LoadJobImpl loadJobImpl, final Drawable drawable) {
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "image load success, uri:" + loadJobImpl.d);
         }
         if (Thread.interrupted()) {
@@ -84,7 +80,7 @@ public class ImageLoadEngine {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void a(final LoadJobImpl loadJobImpl, final FailReason.FailType failType, final Throwable th) {
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "image load failed, uri:" + loadJobImpl.d + ", failType:" + failType + ", failCause:" + th);
         }
         if (Thread.interrupted()) {
@@ -113,18 +109,18 @@ public class ImageLoadEngine {
     }
 
     public static void b() {
-        synchronized (f9577c) {
-            f9577c.set(false);
-            f9577c.notifyAll();
+        synchronized (c) {
+            c.set(false);
+            c.notifyAll();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static boolean b(LoadJobImpl loadJobImpl) {
-        if (f9577c.get()) {
-            synchronized (f9577c) {
+        if (c.get()) {
+            synchronized (c) {
                 try {
-                    f9577c.wait();
+                    c.wait();
                 } catch (InterruptedException e2) {
                     return true;
                 }
@@ -135,7 +131,7 @@ public class ImageLoadEngine {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void c(final LoadJobImpl loadJobImpl) {
-        if (ImageLoaderUtils.f9582a) {
+        if (ImageLoaderUtils.a) {
             Log.a("IMAGE_LOADER", "image load cancel, uri:" + loadJobImpl.d);
         }
         if (Thread.interrupted()) {
@@ -156,6 +152,6 @@ public class ImageLoadEngine {
         if (loadJobImpl.b == null) {
             return false;
         }
-        return !f9576a.b(loadJobImpl.b, loadJobImpl.f9587c);
+        return !a.b(loadJobImpl.b, loadJobImpl.c);
     }
 }

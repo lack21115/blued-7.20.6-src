@@ -233,7 +233,7 @@ public class DownloadLandPageActivity extends com.kwad.components.core.j.b<com.k
                 public final void onClick(View view) {
                     Tracker.onClick(view);
                     com.kwad.sdk.core.report.a.q(DownloadLandPageActivity.this.mAdTemplate, 152);
-                    DownloadLandPageActivity.this.mApkDownloadHelper.m(new a.C0519a(DownloadLandPageActivity.this.getActivity()).ao(true).ap(false).I(DownloadLandPageActivity.this.mAdTemplate).ar(false));
+                    DownloadLandPageActivity.this.mApkDownloadHelper.m(new a.C0349a(DownloadLandPageActivity.this.getActivity()).ao(true).ap(false).I(DownloadLandPageActivity.this.mAdTemplate).ar(false));
                     if (DownloadLandPageActivity.this.mIsRewardLandPage) {
                         com.kwad.sdk.core.report.a.a(DownloadLandPageActivity.this.mAdTemplate, new com.kwad.sdk.core.report.i(), (JSONObject) null);
                     }

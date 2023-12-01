@@ -8,7 +8,7 @@ import java.util.List;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile com.opos.mobad.provider.monitor.a f27372a;
+    private static volatile com.opos.mobad.provider.monitor.a f13684a;
 
     public static final a a() {
         return new a();
@@ -35,15 +35,15 @@ public class b {
     /* JADX INFO: Access modifiers changed from: private */
     public static com.opos.mobad.provider.monitor.a b(Context context) {
         com.opos.mobad.provider.monitor.a aVar;
-        com.opos.mobad.provider.monitor.a aVar2 = f27372a;
+        com.opos.mobad.provider.monitor.a aVar2 = f13684a;
         if (aVar2 == null) {
             synchronized (b.class) {
                 try {
-                    com.opos.mobad.provider.monitor.a aVar3 = f27372a;
+                    com.opos.mobad.provider.monitor.a aVar3 = f13684a;
                     aVar = aVar3;
                     if (aVar3 == null) {
                         aVar = new com.opos.mobad.provider.monitor.a(context.getApplicationContext());
-                        f27372a = aVar;
+                        f13684a = aVar;
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -58,7 +58,7 @@ public class b {
         com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.service.g.b.1
             @Override // java.lang.Runnable
             public void run() {
-                for (String str : List.this) {
+                for (String str : list) {
                     try {
                         b.b(context).a(str, monitorEvent);
                     } catch (Exception e) {

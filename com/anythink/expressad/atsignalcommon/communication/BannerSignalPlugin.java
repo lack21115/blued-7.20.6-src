@@ -10,7 +10,7 @@ import com.anythink.expressad.foundation.h.o;
 public class BannerSignalPlugin extends l {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f7081a = "BannerSignalPlugin";
+    private final String f4243a = "BannerSignalPlugin";
     private b b;
 
     public void click(Object obj, String str) {

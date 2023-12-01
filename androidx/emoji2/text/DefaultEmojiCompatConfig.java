@@ -22,15 +22,15 @@ public final class DefaultEmojiCompatConfig {
     public static class DefaultEmojiCompatConfigFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private final DefaultEmojiCompatConfigHelper f2811a;
+        private final DefaultEmojiCompatConfigHelper f2763a;
 
         public DefaultEmojiCompatConfigFactory(DefaultEmojiCompatConfigHelper defaultEmojiCompatConfigHelper) {
-            this.f2811a = defaultEmojiCompatConfigHelper == null ? a() : defaultEmojiCompatConfigHelper;
+            this.f2763a = defaultEmojiCompatConfigHelper == null ? a() : defaultEmojiCompatConfigHelper;
         }
 
         private ProviderInfo a(PackageManager packageManager) {
-            for (ResolveInfo resolveInfo : this.f2811a.queryIntentContentProviders(packageManager, new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0)) {
-                ProviderInfo providerInfo = this.f2811a.getProviderInfo(resolveInfo);
+            for (ResolveInfo resolveInfo : this.f2763a.queryIntentContentProviders(packageManager, new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0)) {
+                ProviderInfo providerInfo = this.f2763a.getProviderInfo(resolveInfo);
                 if (a(providerInfo)) {
                     return providerInfo;
                 }
@@ -41,7 +41,7 @@ public final class DefaultEmojiCompatConfig {
         private FontRequest a(ProviderInfo providerInfo, PackageManager packageManager) throws PackageManager.NameNotFoundException {
             String str = providerInfo.authority;
             String str2 = providerInfo.packageName;
-            return new FontRequest(str, str2, "emojicompat-emoji-font", a(this.f2811a.getSigningSignatures(packageManager, str2)));
+            return new FontRequest(str, str2, "emojicompat-emoji-font", a(this.f2763a.getSigningSignatures(packageManager, str2)));
         }
 
         private static DefaultEmojiCompatConfigHelper a() {

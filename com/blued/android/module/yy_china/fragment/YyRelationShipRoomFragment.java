@@ -59,13 +59,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YyRelationShipRoomFragment.class */
 public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShipPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentYyRelationItemBinding f17497a;
+    private FragmentYyRelationItemBinding a;
     private final UserAdapter b = new UserAdapter(this);
-
-    /* renamed from: c  reason: collision with root package name */
-    private final TaskAdapter f17498c = new TaskAdapter(this);
+    private final TaskAdapter c = new TaskAdapter(this);
     private YYRelationShipItemPagerAdapter d;
     private YYRelationShipRoomTaskExtraMode e;
     private YYRelationShipRoomUserCardInfoMode f;
@@ -76,15 +72,13 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YyRelationShipRoomFragment$TaskAdapter.class */
     public final class TaskAdapter extends BaseMultiItemQuickAdapter<YYRelationShipRoomTask, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YyRelationShipRoomFragment f17499a;
+        final /* synthetic */ YyRelationShipRoomFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public TaskAdapter(YyRelationShipRoomFragment this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17499a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_yy_relationship_room_task_item);
             addItemType(1, R.layout.item_yy_relationship_room_task_title);
             addItemType(2, R.layout.item_yy_relationship_room_task_bottom);
@@ -140,20 +134,20 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
         }
 
         private final void b(BaseViewHolder baseViewHolder, YYRelationShipRoomTask yYRelationShipRoomTask) {
-            ItemYyRelationshipRoomTaskBottomBinding a2 = ItemYyRelationshipRoomTaskBottomBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.f16799a.setText(yYRelationShipRoomTask.getTitle());
+            ItemYyRelationshipRoomTaskBottomBinding a = ItemYyRelationshipRoomTaskBottomBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.a.setText(yYRelationShipRoomTask.getTitle());
         }
 
         private final void c(BaseViewHolder baseViewHolder, YYRelationShipRoomTask yYRelationShipRoomTask) {
-            ItemYyRelationshipRoomTaskTitleBinding a2 = ItemYyRelationshipRoomTaskTitleBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            YYRelationShipRoomTaskExtraMode yYRelationShipRoomTaskExtraMode = this.f17499a.e;
+            ItemYyRelationshipRoomTaskTitleBinding a = ItemYyRelationshipRoomTaskTitleBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            YYRelationShipRoomTaskExtraMode yYRelationShipRoomTaskExtraMode = this.a.e;
             if (yYRelationShipRoomTaskExtraMode == null) {
                 return;
             }
-            a2.b.setText(yYRelationShipRoomTaskExtraMode.getTitle());
-            a2.f16802a.setText(yYRelationShipRoomTaskExtraMode.getRemark1());
+            a.b.setText(yYRelationShipRoomTaskExtraMode.getTitle());
+            a.a.setText(yYRelationShipRoomTaskExtraMode.getRemark1());
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:10:0x0075, code lost:
@@ -172,7 +166,6 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YYRelationShipRoomTask item) {
             Intrinsics.e(helper, "helper");
@@ -192,15 +185,13 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YyRelationShipRoomFragment$UserAdapter.class */
     public final class UserAdapter extends BaseMultiItemQuickAdapter<YYRelationShipRoomUser, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YyRelationShipRoomFragment f17501a;
+        final /* synthetic */ YyRelationShipRoomFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public UserAdapter(YyRelationShipRoomFragment this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17501a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_yy_relationship_room_users_item);
             addItemType(1, R.layout.item_yy_relationship_room_users_title);
         }
@@ -244,48 +235,48 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
 
         private final void b(BaseViewHolder baseViewHolder, final YYRelationShipRoomUser yYRelationShipRoomUser) {
             YYRelationShipRoomUiInfo resource_options;
-            ItemYyRelationshipRoomUsersItemBinding a2 = ItemYyRelationshipRoomUsersItemBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemYyRelationshipRoomUsersItemBinding a = ItemYyRelationshipRoomUsersItemBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             if (!YYRoomInfoManager.e().J() || YYRoomInfoManager.e().g(yYRelationShipRoomUser.getUid())) {
-                a2.b.a(this.f17501a.getFragmentActive(), yYRelationShipRoomUser.getAvatar(), yYRelationShipRoomUser.getAvatar_frame());
+                a.b.a(this.a.getFragmentActive(), yYRelationShipRoomUser.getAvatar(), yYRelationShipRoomUser.getAvatar_frame());
             } else {
-                a2.b.setEmptyHead(R.drawable.icon_user_mask_without_text);
+                a.b.setEmptyHead(R.drawable.icon_user_mask_without_text);
             }
-            a2.d.setText(YYRoomInfoManager.e().a(yYRelationShipRoomUser.getUid(), yYRelationShipRoomUser.getName()));
+            a.d.setText(YYRoomInfoManager.e().a(yYRelationShipRoomUser.getUid(), yYRelationShipRoomUser.getName()));
             YYTextSpanComputer.Builder builder = new YYTextSpanComputer.Builder();
             boolean z = YYRoomInfoManager.e().J() && !YYRoomInfoManager.e().g(yYRelationShipRoomUser.getUid());
             if (yYRelationShipRoomUser.getAnchor_level() > 0 && !z) {
-                Context context = this.f17501a.getContext();
+                Context context = this.a.getContext();
                 Intrinsics.a(context);
                 Drawable drawable = context.getResources().getDrawable(YYRoomInfoManager.e().b(yYRelationShipRoomUser.getAnchor_level()));
                 drawable.setBounds(0, 0, AppMethods.a(32), AppMethods.a(16));
                 Intrinsics.c(drawable, "drawable");
                 builder.a(drawable).a(" ");
             }
-            a2.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YyRelationShipRoomFragment$UserAdapter$3nuKfS1QYjsCS-1MTOUq-dhGeNY
+            a.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YyRelationShipRoomFragment$UserAdapter$3nuKfS1QYjsCS-1MTOUq-dhGeNY
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YyRelationShipRoomFragment.UserAdapter.a(YYRelationShipRoomUser.this, view);
                 }
             });
             if (yYRelationShipRoomUser.getHonor_level() > 0) {
-                Context context2 = this.f17501a.getContext();
+                Context context2 = this.a.getContext();
                 Intrinsics.a(context2);
                 Drawable drawable2 = context2.getResources().getDrawable(YYRoomInfoManager.e().a(yYRelationShipRoomUser.getHonor_level()));
                 drawable2.setBounds(0, 0, AppMethods.a(38), AppMethods.a(16));
                 Intrinsics.c(drawable2, "drawable");
                 builder.a(drawable2).a(" ");
             }
-            a2.f16805c.setText(builder.c().a());
-            ShapeTextView shapeTextView = a2.f16804a;
-            YYRelationShipRoomMode b = this.f17501a.b();
+            a.c.setText(builder.c().a());
+            ShapeTextView shapeTextView = a.a;
+            YYRelationShipRoomMode b = this.a.b();
             String str = null;
             if (b != null && (resource_options = b.getResource_options()) != null) {
                 str = resource_options.getTheme_color_6();
             }
             shapeTextView.setTextColor(Color.parseColor(str));
-            ShapeTextView shapeTextView2 = a2.f16804a;
-            final YyRelationShipRoomFragment yyRelationShipRoomFragment = this.f17501a;
+            ShapeTextView shapeTextView2 = a.a;
+            final YyRelationShipRoomFragment yyRelationShipRoomFragment = this.a;
             shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YyRelationShipRoomFragment$UserAdapter$VCB5k6KiXYM8KalU-_K_SH6KNIE
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -295,7 +286,6 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YYRelationShipRoomUser item) {
             Intrinsics.e(helper, "helper");
@@ -310,8 +300,8 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
     public static final void a(YyRelationShipRoomFragment this$0, View view) {
         AppBarLayout appBarLayout;
         Intrinsics.e(this$0, "this$0");
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this$0.f17497a;
-        if (fragmentYyRelationItemBinding == null || (appBarLayout = fragmentYyRelationItemBinding.f16541a) == null) {
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this$0.a;
+        if (fragmentYyRelationItemBinding == null || (appBarLayout = fragmentYyRelationItemBinding.a) == null) {
             return;
         }
         appBarLayout.setExpanded(false);
@@ -320,12 +310,12 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(YYRelationShipRoomUserCardInfoMode yYRelationShipRoomUserCardInfoMode) {
         if (yYRelationShipRoomUserCardInfoMode == null) {
-            FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.f17497a;
+            FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.a;
             ShapeFrameLayout shapeFrameLayout = fragmentYyRelationItemBinding == null ? null : fragmentYyRelationItemBinding.h;
             if (shapeFrameLayout != null) {
                 shapeFrameLayout.setVisibility(8);
             }
-            FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.f17497a;
+            FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.a;
             ShapeFrameLayout shapeFrameLayout2 = fragmentYyRelationItemBinding2 == null ? null : fragmentYyRelationItemBinding2.i;
             if (shapeFrameLayout2 != null) {
                 shapeFrameLayout2.setVisibility(0);
@@ -333,12 +323,12 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
             x();
             return;
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.a;
         ShapeFrameLayout shapeFrameLayout3 = fragmentYyRelationItemBinding3 == null ? null : fragmentYyRelationItemBinding3.i;
         if (shapeFrameLayout3 != null) {
             shapeFrameLayout3.setVisibility(8);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding4 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding4 = this.a;
         ShapeFrameLayout shapeFrameLayout4 = fragmentYyRelationItemBinding4 == null ? null : fragmentYyRelationItemBinding4.h;
         if (shapeFrameLayout4 != null) {
             shapeFrameLayout4.setVisibility(0);
@@ -352,7 +342,7 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
         ShapeTextView shapeTextView;
         ViewPager viewPager;
         arrayList.add(null);
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.a;
         ViewPager viewPager2 = fragmentYyRelationItemBinding == null ? null : fragmentYyRelationItemBinding.k;
         if (viewPager2 != null) {
             viewPager2.setOffscreenPageLimit(1);
@@ -373,12 +363,12 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
                 }
             });
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.a;
         ViewPager viewPager3 = fragmentYyRelationItemBinding2 == null ? null : fragmentYyRelationItemBinding2.k;
         if (viewPager3 != null) {
             viewPager3.setAdapter(this.d);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.a;
         ViewPager viewPager4 = fragmentYyRelationItemBinding3 == null ? null : fragmentYyRelationItemBinding3.k;
         if (viewPager4 != null) {
             viewPager4.setOffscreenPageLimit(2);
@@ -392,41 +382,39 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
             yYRelationShipItemPagerAdapter4.b(arrayList);
         }
         final int dimensionPixelOffset = getResources().getDimensionPixelOffset(R.dimen.dp_15);
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding4 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding4 = this.a;
         ViewGroup.LayoutParams layoutParams = (fragmentYyRelationItemBinding4 == null || (shapeFrameLayout = fragmentYyRelationItemBinding4.e) == null) ? null : shapeFrameLayout.getLayoutParams();
         if (layoutParams != null) {
             layoutParams.width = arrayList.size() * dimensionPixelOffset;
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding5 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding5 = this.a;
         ShapeFrameLayout shapeFrameLayout2 = fragmentYyRelationItemBinding5 == null ? null : fragmentYyRelationItemBinding5.e;
         if (shapeFrameLayout2 != null) {
             shapeFrameLayout2.setLayoutParams(layoutParams);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding6 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding6 = this.a;
         ViewGroup.LayoutParams layoutParams2 = (fragmentYyRelationItemBinding6 == null || (shapeTextView = fragmentYyRelationItemBinding6.l) == null) ? null : shapeTextView.getLayoutParams();
         if (layoutParams2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
         }
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) layoutParams2;
         layoutParams3.leftMargin = 0;
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding7 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding7 = this.a;
         ShapeTextView shapeTextView2 = fragmentYyRelationItemBinding7 == null ? null : fragmentYyRelationItemBinding7.l;
         if (shapeTextView2 != null) {
             shapeTextView2.setLayoutParams(layoutParams3);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding8 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding8 = this.a;
         if (fragmentYyRelationItemBinding8 != null && (viewPager = fragmentYyRelationItemBinding8.k) != null) {
             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YyRelationShipRoomFragment$initTabs$2
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrolled(int i, float f, int i2) {
                     FragmentYyRelationItemBinding fragmentYyRelationItemBinding9;
                     ShapeTextView shapeTextView3;
                     FragmentYyRelationItemBinding fragmentYyRelationItemBinding10;
-                    fragmentYyRelationItemBinding9 = YyRelationShipRoomFragment.this.f17497a;
+                    fragmentYyRelationItemBinding9 = YyRelationShipRoomFragment.this.a;
                     ViewGroup.LayoutParams layoutParams4 = (fragmentYyRelationItemBinding9 == null || (shapeTextView3 = fragmentYyRelationItemBinding9.l) == null) ? null : shapeTextView3.getLayoutParams();
                     if (layoutParams4 == null) {
                         throw new NullPointerException("null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
@@ -434,7 +422,7 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
                     FrameLayout.LayoutParams layoutParams5 = (FrameLayout.LayoutParams) layoutParams4;
                     int i3 = dimensionPixelOffset;
                     layoutParams5.leftMargin = (int) ((i * i3) + (i3 * f));
-                    fragmentYyRelationItemBinding10 = YyRelationShipRoomFragment.this.f17497a;
+                    fragmentYyRelationItemBinding10 = YyRelationShipRoomFragment.this.a;
                     ShapeTextView shapeTextView4 = fragmentYyRelationItemBinding10 == null ? null : fragmentYyRelationItemBinding10.l;
                     if (shapeTextView4 == null) {
                         return;
@@ -442,7 +430,6 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
                     shapeTextView4.setLayoutParams(layoutParams5);
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageSelected(int i) {
                     if (arrayList.size() > i) {
                         YyRelationShipRoomFragment.this.a(arrayList.get(i));
@@ -452,7 +439,7 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
         }
         a(arrayList.get(0));
         if (arrayList.size() == 1) {
-            FragmentYyRelationItemBinding fragmentYyRelationItemBinding9 = this.f17497a;
+            FragmentYyRelationItemBinding fragmentYyRelationItemBinding9 = this.a;
             ShapeFrameLayout shapeFrameLayout3 = fragmentYyRelationItemBinding9 == null ? null : fragmentYyRelationItemBinding9.e;
             if (shapeFrameLayout3 == null) {
                 return;
@@ -495,30 +482,30 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
                 }
                 task2.add(0, new YYRelationShipRoomTask(1, "", "", 0, "", "", null, 0, "", ""));
                 task2.add(new YYRelationShipRoomTask(2, "", yYRelationShipRoomTaskExtraMode.getRemark2(), 0, "", "", null, 0, "", ""));
-                taskAdapter = yyRelationShipRoomFragment.f17498c;
+                taskAdapter = yyRelationShipRoomFragment.c;
                 taskAdapter.setNewData(task2);
             }
         }, getFragmentActive());
     }
 
     private final void d() {
-        FragmentYyRelationItemBinding a2 = FragmentYyRelationItemBinding.a(this.i);
-        this.f17497a = a2;
-        RecyclerView recyclerView = a2 == null ? null : a2.f;
+        FragmentYyRelationItemBinding a = FragmentYyRelationItemBinding.a(this.i);
+        this.a = a;
+        RecyclerView recyclerView = a == null ? null : a.f;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.a;
         RecyclerView recyclerView2 = fragmentYyRelationItemBinding == null ? null : fragmentYyRelationItemBinding.f;
         if (recyclerView2 != null) {
-            recyclerView2.setAdapter(this.f17498c);
+            recyclerView2.setAdapter(this.c);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.a;
         RecyclerView recyclerView3 = fragmentYyRelationItemBinding2 == null ? null : fragmentYyRelationItemBinding2.g;
         if (recyclerView3 != null) {
             recyclerView3.setLayoutManager(new LinearLayoutManager(getContext()));
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.a;
         RecyclerView recyclerView4 = fragmentYyRelationItemBinding3 == null ? null : fragmentYyRelationItemBinding3.g;
         if (recyclerView4 != null) {
             recyclerView4.setAdapter(this.b);
@@ -559,26 +546,26 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
         if (yYRelationShipRoomMode == null || (resource_options = yYRelationShipRoomMode.getResource_options()) == null) {
             return;
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.a;
         if (fragmentYyRelationItemBinding != null && (shapeConstraintLayout = fragmentYyRelationItemBinding.b) != null) {
             ShapeModel shapeModel = shapeConstraintLayout.getShapeModel();
             shapeModel.t = Color.parseColor(resource_options.getTheme_color_7());
             shapeModel.v = Color.parseColor("#ffffff");
             shapeConstraintLayout.setShapeModel(shapeModel);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.f17497a;
-        if (fragmentYyRelationItemBinding2 != null && (shapeTextView2 = fragmentYyRelationItemBinding2.f16542c) != null) {
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding2 = this.a;
+        if (fragmentYyRelationItemBinding2 != null && (shapeTextView2 = fragmentYyRelationItemBinding2.c) != null) {
             ShapeModel shapeModel2 = shapeTextView2.getShapeModel();
             shapeModel2.k = Color.parseColor(resource_options.getTheme_color_3());
             shapeTextView2.setShapeModel(shapeModel2);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding3 = this.a;
         if (fragmentYyRelationItemBinding3 != null && (shapeTextView = fragmentYyRelationItemBinding3.l) != null) {
             ShapeModel shapeModel3 = shapeTextView.getShapeModel();
             shapeModel3.k = Color.parseColor(resource_options.getTheme_color_3());
             shapeTextView.setShapeModel(shapeModel3);
         }
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding4 = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding4 = this.a;
         if (fragmentYyRelationItemBinding4 == null || (shapeFrameLayout = fragmentYyRelationItemBinding4.e) == null) {
             return;
         }
@@ -589,17 +576,17 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void w() {
-        Fragment a2;
+        Fragment a;
         YYRelationShipItemPagerAdapter yYRelationShipItemPagerAdapter = this.d;
-        if (yYRelationShipItemPagerAdapter == null || (a2 = yYRelationShipItemPagerAdapter.a()) == null || !(a2 instanceof YyRelationShipRoomItemFragment)) {
+        if (yYRelationShipItemPagerAdapter == null || (a = yYRelationShipItemPagerAdapter.a()) == null || !(a instanceof YyRelationShipRoomItemFragment)) {
             return;
         }
-        ((YyRelationShipRoomItemFragment) a2).e();
+        ((YyRelationShipRoomItemFragment) a).e();
     }
 
     private final void x() {
         String str;
-        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.f17497a;
+        FragmentYyRelationItemBinding fragmentYyRelationItemBinding = this.a;
         String str2 = null;
         LinearLayout linearLayout = fragmentYyRelationItemBinding == null ? null : fragmentYyRelationItemBinding.d;
         if (linearLayout != null) {
@@ -628,7 +615,7 @@ public final class YyRelationShipRoomFragment extends MvpFragment<YYRelationShip
                 }
                 YyRelationShipRoomFragment yyRelationShipRoomFragment = YyRelationShipRoomFragment.this;
                 if (list.size() > 0) {
-                    fragmentYyRelationItemBinding2 = yyRelationShipRoomFragment.f17497a;
+                    fragmentYyRelationItemBinding2 = yyRelationShipRoomFragment.a;
                     LinearLayout linearLayout2 = fragmentYyRelationItemBinding2 == null ? null : fragmentYyRelationItemBinding2.d;
                     if (linearLayout2 != null) {
                         linearLayout2.setVisibility(8);

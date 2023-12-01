@@ -15,11 +15,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class GDTApkManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private DFA f27868a;
+    private DFA f14180a;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f27869c = false;
+    private boolean f14181c = false;
     private AtomicInteger d = new AtomicInteger(0);
     private Context e;
 
@@ -47,8 +47,8 @@ public class GDTApkManager {
                             public void run() {
                                 try {
                                     if (pOFactory != null) {
-                                        GDTApkManager.this.f27868a = b.b().c().getPOFactory().getGDTApkDelegate(iGDTApkListener);
-                                        GDTApkManager.this.f27869c = true;
+                                        GDTApkManager.this.f14180a = b.b().c().getPOFactory().getGDTApkDelegate(iGDTApkListener);
+                                        GDTApkManager.this.f14181c = true;
                                         while (GDTApkManager.this.d.getAndDecrement() > 0) {
                                             GDTApkManager.this.loadGDTApk();
                                         }
@@ -70,11 +70,11 @@ public class GDTApkManager {
 
     public final void loadGDTApk() {
         if (this.b) {
-            if (!this.f27869c) {
+            if (!this.f14181c) {
                 this.d.incrementAndGet();
                 return;
             }
-            DFA dfa = this.f27868a;
+            DFA dfa = this.f14180a;
             if (dfa != null) {
                 dfa.loadGDTApk();
             } else {
@@ -84,7 +84,7 @@ public class GDTApkManager {
     }
 
     public final void startInstall(GDTApk gDTApk) {
-        DFA dfa = this.f27868a;
+        DFA dfa = this.f14180a;
         if (dfa != null) {
             dfa.startInstall(this.e, gDTApk);
         }

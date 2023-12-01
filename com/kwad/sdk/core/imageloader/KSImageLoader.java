@@ -11,6 +11,7 @@ import android.renderscript.ScriptIntrinsicBlur;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.kwad.sdk.R;
 import com.kwad.sdk.core.imageloader.core.DisplayImageOptionsCompat;
 import com.kwad.sdk.core.imageloader.core.assist.FailReason;
@@ -141,7 +142,7 @@ public class KSImageLoader {
                     }
                     int i = AnonymousClass1.$SwitchMap$com$kwad$sdk$core$imageloader$core$assist$FailReason$FailType[failReason.getType().ordinal()];
                     if (i == 1) {
-                        str3 = "UNKNOWN";
+                        str3 = GrsBaseInfo.CountryCodeSource.UNKNOWN;
                     } else if (i == 2) {
                         sb.append("IO_ERROR");
                         sb.append(str2);

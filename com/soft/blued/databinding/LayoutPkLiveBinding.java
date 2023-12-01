@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutPkLiveBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29423a;
+    private final LinearLayout f15733a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29423a;
+        return this.f15733a;
     }
 }

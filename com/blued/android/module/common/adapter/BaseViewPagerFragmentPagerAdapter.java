@@ -9,20 +9,16 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adapter/BaseViewPagerFragmentPagerAdapter.class */
 public abstract class BaseViewPagerFragmentPagerAdapter extends FragmentStatePagerAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    FragmentManager f10435a;
+    FragmentManager a;
     protected List<BaseFragment> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected List<String> f10436c;
+    protected List<String> c;
     private int d;
 
     public BaseViewPagerFragmentPagerAdapter(FragmentManager fragmentManager) {
         super(fragmentManager);
         this.b = new ArrayList();
-        this.f10436c = new ArrayList();
-        this.f10435a = fragmentManager;
+        this.c = new ArrayList();
+        this.a = fragmentManager;
     }
 
     private String a(int i, long j) {
@@ -40,19 +36,20 @@ public abstract class BaseViewPagerFragmentPagerAdapter extends FragmentStatePag
     protected abstract BaseFragment b(int i);
 
     public void b(List<String> list) {
-        this.f10436c = list;
+        this.c = list;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
         return this.b.size();
     }
 
-    @Override // androidx.fragment.app.FragmentStatePagerAdapter
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v23, types: [androidx.fragment.app.Fragment] */
+    /* JADX WARN: Type inference failed for: r0v5, types: [androidx.fragment.app.Fragment] */
     public Fragment getItem(int i) {
-        String a2 = a(this.d, i);
+        String a = a(this.d, i);
         if (i >= this.b.size()) {
-            Fragment findFragmentByTag = this.f10435a.findFragmentByTag(a2);
+            ?? findFragmentByTag = this.a.findFragmentByTag(a);
             BaseFragment baseFragment = findFragmentByTag;
             if (findFragmentByTag == 0) {
                 baseFragment = b(i);
@@ -60,7 +57,7 @@ public abstract class BaseViewPagerFragmentPagerAdapter extends FragmentStatePag
             this.b.add(baseFragment);
             return baseFragment;
         } else if (this.b.get(i) == null) {
-            Fragment findFragmentByTag2 = this.f10435a.findFragmentByTag(a2);
+            ?? findFragmentByTag2 = this.a.findFragmentByTag(a);
             BaseFragment baseFragment2 = findFragmentByTag2;
             if (findFragmentByTag2 == 0) {
                 baseFragment2 = b(i);
@@ -72,7 +69,6 @@ public abstract class BaseViewPagerFragmentPagerAdapter extends FragmentStatePag
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public int getItemPosition(Object obj) {
         int i = 0;
         while (true) {
@@ -87,8 +83,7 @@ public abstract class BaseViewPagerFragmentPagerAdapter extends FragmentStatePag
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public CharSequence getPageTitle(int i) {
-        return this.f10436c.get(i);
+        return this.c.get(i);
     }
 }

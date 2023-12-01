@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.text.TextUtils;
-import com.anythink.core.api.ATAdConst;
 import com.anythink.expressad.video.module.a.a.m;
 import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
 import com.opos.acs.st.utils.ErrorContants;
@@ -42,20 +41,20 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f35159a;
+    private static int f21468a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private u f35160c;
+    private u f21469c;
     private p d;
     private com.tencent.bugly.crashreport.common.strategy.a e;
     private o f;
     private BuglyStrategy.a g;
 
     public b(int i, Context context, u uVar, p pVar, com.tencent.bugly.crashreport.common.strategy.a aVar, BuglyStrategy.a aVar2, o oVar) {
-        f35159a = i;
+        f21468a = i;
         this.b = context;
-        this.f35160c = uVar;
+        this.f21469c = uVar;
         this.d = pVar;
         this.e = aVar;
         this.g = aVar2;
@@ -74,7 +73,7 @@ public final class b {
             long j = cursor.getLong(cursor.getColumnIndex("_id"));
             CrashDetailBean crashDetailBean = (CrashDetailBean) z.a(blob, CrashDetailBean.CREATOR);
             if (crashDetailBean != null) {
-                crashDetailBean.f35141a = j;
+                crashDetailBean.f21450a = j;
             }
             return crashDetailBean;
         } catch (Throwable th) {
@@ -270,40 +269,40 @@ public final class b {
         ak akVar = new ak();
         switch (crashDetailBean.b) {
             case 0:
-                akVar.f35368a = crashDetailBean.j ? BasicPushStatus.SUCCESS_CODE : "100";
+                akVar.f21677a = crashDetailBean.j ? BasicPushStatus.SUCCESS_CODE : "100";
                 break;
             case 1:
-                akVar.f35368a = crashDetailBean.j ? ErrorContants.REALTIME_LOADAD_ERROR : "101";
+                akVar.f21677a = crashDetailBean.j ? ErrorContants.REALTIME_LOADAD_ERROR : "101";
                 break;
             case 2:
-                akVar.f35368a = crashDetailBean.j ? ErrorContants.INIT_LOADAD_ERROR : ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB;
+                akVar.f21677a = crashDetailBean.j ? ErrorContants.INIT_LOADAD_ERROR : "102";
                 break;
             case 3:
-                akVar.f35368a = crashDetailBean.j ? "203" : ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_NORMAL;
+                akVar.f21677a = crashDetailBean.j ? "203" : "103";
                 break;
             case 4:
-                akVar.f35368a = crashDetailBean.j ? "204" : "104";
+                akVar.f21677a = crashDetailBean.j ? "204" : "104";
                 break;
             case 5:
-                akVar.f35368a = crashDetailBean.j ? "207" : "107";
+                akVar.f21677a = crashDetailBean.j ? "207" : "107";
                 break;
             case 6:
-                akVar.f35368a = crashDetailBean.j ? "206" : "106";
+                akVar.f21677a = crashDetailBean.j ? "206" : "106";
                 break;
             case 7:
-                akVar.f35368a = crashDetailBean.j ? "208" : "108";
+                akVar.f21677a = crashDetailBean.j ? "208" : "108";
                 break;
             default:
                 x.e("crash type error! %d", Integer.valueOf(crashDetailBean.b));
                 break;
         }
         akVar.b = crashDetailBean.r;
-        akVar.f35369c = crashDetailBean.n;
+        akVar.f21678c = crashDetailBean.n;
         akVar.d = crashDetailBean.o;
         akVar.e = crashDetailBean.p;
         akVar.g = crashDetailBean.q;
         akVar.h = crashDetailBean.z;
-        akVar.i = crashDetailBean.f35142c;
+        akVar.i = crashDetailBean.f21451c;
         akVar.j = null;
         akVar.l = crashDetailBean.m;
         akVar.m = crashDetailBean.e;
@@ -314,9 +313,9 @@ public final class b {
             akVar.p = new ArrayList<>();
             for (Map.Entry<String, PlugInBean> entry : crashDetailBean.h.entrySet()) {
                 ah ahVar = new ah();
-                ahVar.f35362a = entry.getValue().f35127a;
-                ahVar.b = entry.getValue().f35128c;
-                ahVar.f35363c = entry.getValue().b;
+                ahVar.f21671a = entry.getValue().f21436a;
+                ahVar.b = entry.getValue().f21437c;
+                ahVar.f21672c = entry.getValue().b;
                 akVar.p.add(ahVar);
             }
         }
@@ -553,7 +552,7 @@ public final class b {
             akVar.s = crashDetailBean.O;
             x.a("setted message size %d", Integer.valueOf(akVar.s.size()));
         }
-        x.c("%s rid:%s sess:%s ls:%ds isR:%b isF:%b isM:%b isN:%b mc:%d ,%s ,isUp:%b ,vm:%d", crashDetailBean.n, crashDetailBean.f35142c, aVar.e(), Long.valueOf((crashDetailBean.r - crashDetailBean.M) / 1000), Boolean.valueOf(crashDetailBean.k), Boolean.valueOf(crashDetailBean.N), Boolean.valueOf(crashDetailBean.j), Boolean.valueOf(crashDetailBean.b == 1), Integer.valueOf(crashDetailBean.t), crashDetailBean.s, Boolean.valueOf(crashDetailBean.d), Integer.valueOf(akVar.r.size()));
+        x.c("%s rid:%s sess:%s ls:%ds isR:%b isF:%b isM:%b isN:%b mc:%d ,%s ,isUp:%b ,vm:%d", crashDetailBean.n, crashDetailBean.f21451c, aVar.e(), Long.valueOf((crashDetailBean.r - crashDetailBean.M) / 1000), Boolean.valueOf(crashDetailBean.k), Boolean.valueOf(crashDetailBean.N), Boolean.valueOf(crashDetailBean.j), Boolean.valueOf(crashDetailBean.b == 1), Integer.valueOf(crashDetailBean.t), crashDetailBean.s, Boolean.valueOf(crashDetailBean.d), Integer.valueOf(akVar.r.size()));
         return akVar;
     }
 
@@ -579,16 +578,16 @@ public final class b {
         }
         x.e("#++++++++++Record By Bugly++++++++++#", new Object[0]);
         x.e("# You can use Bugly(http:\\\\bugly.qq.com) to get more Crash Detail!", new Object[0]);
-        x.e("# PKG NAME: %s", b.f35130c);
+        x.e("# PKG NAME: %s", b.f21439c);
         x.e("# APP VER: %s", b.k);
         x.e("# SDK VER: %s", b.f);
-        x.e("# LAUNCH TIME: %s", z.a(new Date(com.tencent.bugly.crashreport.common.info.a.b().f35129a)));
+        x.e("# LAUNCH TIME: %s", z.a(new Date(com.tencent.bugly.crashreport.common.info.a.b().f21438a)));
         x.e("# CRASH TYPE: %s", str);
         x.e("# CRASH TIME: %s", str2);
         x.e("# CRASH PROCESS: %s", str3);
         x.e("# CRASH THREAD: %s", str4);
         if (crashDetailBean != null) {
-            x.e("# REPORT ID: %s", crashDetailBean.f35142c);
+            x.e("# REPORT ID: %s", crashDetailBean.f21451c);
             x.e("# CRASH DEVICE: %s %s", b.h, b.r().booleanValue() ? "ROOTED" : "UNROOT");
             x.e("# RUNTIME AVAIL RAM:%d ROM:%d SD:%d", Long.valueOf(crashDetailBean.C), Long.valueOf(crashDetailBean.D), Long.valueOf(crashDetailBean.E));
             x.e("# RUNTIME TOTAL RAM:%d ROM:%d SD:%d", Long.valueOf(crashDetailBean.F), Long.valueOf(crashDetailBean.G), Long.valueOf(crashDetailBean.H));
@@ -614,10 +613,10 @@ public final class b {
         if (list != null && list.size() > 0) {
             x.c("up finish update state %b", Boolean.valueOf(z));
             for (CrashDetailBean crashDetailBean : list) {
-                x.c("pre uid:%s uc:%d re:%b me:%b", crashDetailBean.f35142c, Integer.valueOf(crashDetailBean.l), Boolean.valueOf(crashDetailBean.d), Boolean.valueOf(crashDetailBean.j));
+                x.c("pre uid:%s uc:%d re:%b me:%b", crashDetailBean.f21451c, Integer.valueOf(crashDetailBean.l), Boolean.valueOf(crashDetailBean.d), Boolean.valueOf(crashDetailBean.j));
                 crashDetailBean.l++;
                 crashDetailBean.d = z;
-                x.c("set uid:%s uc:%d re:%b me:%b", crashDetailBean.f35142c, Integer.valueOf(crashDetailBean.l), Boolean.valueOf(crashDetailBean.d), Boolean.valueOf(crashDetailBean.j));
+                x.c("set uid:%s uc:%d re:%b me:%b", crashDetailBean.f21451c, Integer.valueOf(crashDetailBean.l), Boolean.valueOf(crashDetailBean.d), Boolean.valueOf(crashDetailBean.j));
             }
             for (CrashDetailBean crashDetailBean2 : list) {
                 c.a().a(crashDetailBean2);
@@ -636,9 +635,9 @@ public final class b {
         }
         try {
             a aVar = new a();
-            aVar.f35143a = cursor.getLong(cursor.getColumnIndex("_id"));
+            aVar.f21452a = cursor.getLong(cursor.getColumnIndex("_id"));
             aVar.b = cursor.getLong(cursor.getColumnIndex("_tm"));
-            aVar.f35144c = cursor.getString(cursor.getColumnIndex("_s1"));
+            aVar.f21453c = cursor.getString(cursor.getColumnIndex("_s1"));
             aVar.d = cursor.getInt(cursor.getColumnIndex("_up")) == 1;
             boolean z = false;
             if (cursor.getInt(cursor.getColumnIndex("_me")) == 1) {
@@ -732,7 +731,7 @@ public final class b {
         sb.append("_id in ");
         sb.append("(");
         for (a aVar : list) {
-            sb.append(aVar.f35143a);
+            sb.append(aVar.f21452a);
             sb.append(",");
         }
         StringBuilder sb2 = sb;
@@ -812,7 +811,7 @@ public final class b {
         sb.append("_id in ");
         sb.append("(");
         for (a aVar : list) {
-            sb.append(aVar.f35143a);
+            sb.append(aVar.f21452a);
             sb.append(",");
         }
         StringBuilder sb2 = new StringBuilder(sb.substring(0, sb.lastIndexOf(",")));
@@ -839,7 +838,7 @@ public final class b {
                 for (CrashDetailBean crashDetailBean : list) {
                     sb.append(" or _id");
                     sb.append(" = ");
-                    sb.append(crashDetailBean.f35141a);
+                    sb.append(crashDetailBean.f21450a);
                 }
                 String sb2 = sb.toString();
                 String str = sb2;
@@ -863,8 +862,8 @@ public final class b {
         }
         try {
             ContentValues contentValues = new ContentValues();
-            if (crashDetailBean.f35141a > 0) {
-                contentValues.put("_id", Long.valueOf(crashDetailBean.f35141a));
+            if (crashDetailBean.f21450a > 0) {
+                contentValues.put("_id", Long.valueOf(crashDetailBean.f21450a));
             }
             contentValues.put("_tm", Long.valueOf(crashDetailBean.r));
             contentValues.put("_s1", crashDetailBean.u);
@@ -955,8 +954,8 @@ public final class b {
     public final void a(final List<CrashDetailBean> list, long j, boolean z, boolean z2, boolean z3) {
         u uVar;
         al alVar;
-        if (com.tencent.bugly.crashreport.common.info.a.a(this.b).e && (uVar = this.f35160c) != null) {
-            if (z3 || uVar.b(c.f35162a)) {
+        if (com.tencent.bugly.crashreport.common.info.a.a(this.b).e && (uVar = this.f21469c) != null) {
+            if (z3 || uVar.b(c.f21471a)) {
                 StrategyBean c2 = this.e.c();
                 if (!c2.e) {
                     x.d("remote report is disable!", new Object[0]);
@@ -970,14 +969,14 @@ public final class b {
                         com.tencent.bugly.crashreport.common.info.a b = com.tencent.bugly.crashreport.common.info.a.b();
                         if (context != null && list != null && list.size() != 0 && b != null) {
                             al alVar2 = new al();
-                            alVar2.f35370a = new ArrayList<>();
+                            alVar2.f21679a = new ArrayList<>();
                             Iterator<CrashDetailBean> it = list.iterator();
                             while (true) {
                                 alVar = alVar2;
                                 if (!it.hasNext()) {
                                     break;
                                 }
-                                alVar2.f35370a.add(a(context, it.next(), b));
+                                alVar2.f21679a.add(a(context, it.next(), b));
                             }
                         } else {
                             x.d("enEXPPkg args == null!", new Object[0]);
@@ -1004,9 +1003,9 @@ public final class b {
                             }
                         };
                         if (z) {
-                            this.f35160c.a(f35159a, a3, str, str2, tVar, j, z2);
+                            this.f21469c.a(f21468a, a3, str, str2, tVar, j, z2);
                         } else {
-                            this.f35160c.a(f35159a, a3, str, str2, tVar, false);
+                            this.f21469c.a(f21468a, a3, str, str2, tVar, false);
                         }
                     } catch (Throwable th) {
                         x.e("req cr error %s", th.toString());
@@ -1025,7 +1024,7 @@ public final class b {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:54:0x0217, code lost:
-        if (r0.size() >= com.tencent.bugly.crashreport.crash.c.f35163c) goto L60;
+        if (r0.size() >= com.tencent.bugly.crashreport.crash.c.f21472c) goto L60;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1085,7 +1084,7 @@ public final class b {
         long a2 = p.a().a("t_cr", f, (o) null, true);
         if (a2 >= 0) {
             x.c("insert %s success!", "t_cr");
-            crashDetailBean.f35141a = a2;
+            crashDetailBean.f21450a = a2;
         }
     }
 }

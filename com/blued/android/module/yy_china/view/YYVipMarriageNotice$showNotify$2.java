@@ -19,19 +19,15 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYVipMarriageNotice$showNotify$2.class */
 public final class YYVipMarriageNotice$showNotify$2 implements Animator.AnimatorListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ YYVipMarriageNotice f18553a;
+    final /* synthetic */ YYVipMarriageNotice a;
     final /* synthetic */ ActivityFragmentActive b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ViewGroup f18554c;
+    final /* synthetic */ ViewGroup c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public YYVipMarriageNotice$showNotify$2(YYVipMarriageNotice yYVipMarriageNotice, ActivityFragmentActive activityFragmentActive, ViewGroup viewGroup) {
-        this.f18553a = yYVipMarriageNotice;
+        this.a = yYVipMarriageNotice;
         this.b = activityFragmentActive;
-        this.f18554c = viewGroup;
+        this.c = viewGroup;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -52,15 +48,15 @@ public final class YYVipMarriageNotice$showNotify$2 implements Animator.Animator
     public void onAnimationEnd(Animator animator) {
         YYGlobalMsgMarqueeModel yYGlobalMsgMarqueeModel;
         LogUtils.d("notice", "fly in animation ending ... ");
-        yYGlobalMsgMarqueeModel = this.f18553a.f18551c;
+        yYGlobalMsgMarqueeModel = this.a.c;
         if (yYGlobalMsgMarqueeModel == null) {
             return;
         }
         final ActivityFragmentActive activityFragmentActive = this.b;
-        final YYVipMarriageNotice yYVipMarriageNotice = this.f18553a;
-        final ViewGroup viewGroup = this.f18554c;
+        final YYVipMarriageNotice yYVipMarriageNotice = this.a;
+        final ViewGroup viewGroup = this.c;
         if (TextUtils.isEmpty(yYGlobalMsgMarqueeModel.after_image)) {
-            ImageLoader.c(activityFragmentActive, "couple_heartbeat.png").f().a(yYVipMarriageNotice.getBinding().f16884a);
+            ImageLoader.c(activityFragmentActive, "couple_heartbeat.png").f().a(yYVipMarriageNotice.getBinding().a);
         } else {
             String str = yYGlobalMsgMarqueeModel.after_image;
             Intrinsics.c(str, "it.after_image");
@@ -69,12 +65,12 @@ public final class YYVipMarriageNotice$showNotify$2 implements Animator.Animator
             String lowerCase = str.toLowerCase(locale);
             Intrinsics.c(lowerCase, "this as java.lang.String).toLowerCase(locale)");
             if (StringsKt.b(lowerCase, "png", false, 2, (Object) null)) {
-                ImageLoader.a((IRequestHost) null, yYGlobalMsgMarqueeModel.after_image).g(-1).f().a(yYVipMarriageNotice.getBinding().f16884a);
+                ImageLoader.a((IRequestHost) null, yYGlobalMsgMarqueeModel.after_image).g(-1).f().a(yYVipMarriageNotice.getBinding().a);
             } else {
                 String str2 = yYGlobalMsgMarqueeModel.after_image;
                 Intrinsics.c(str2, "it.after_image");
                 SVGAPlayer.Builder builder = new SVGAPlayer.Builder(str2);
-                SVGAImageView sVGAImageView = yYVipMarriageNotice.getBinding().f16884a;
+                SVGAImageView sVGAImageView = yYVipMarriageNotice.getBinding().a;
                 Intrinsics.c(sVGAImageView, "binding.imgAnimationView");
                 builder.a(sVGAImageView);
             }

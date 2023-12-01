@@ -90,7 +90,7 @@ public final class d extends com.kwad.components.ad.reward.presenter.a implement
             if (this.qt.fX()) {
                 return;
             }
-            this.vu.setText(this.qt.f23926pl ? vv[1] : vv[0]);
+            this.vu.setText(this.qt.pl ? vv[1] : vv[0]);
         } else if (this.qt.fX()) {
             iB();
         }
@@ -100,7 +100,7 @@ public final class d extends com.kwad.components.ad.reward.presenter.a implement
     public final void onClick(View view) {
         Tracker.onClick(view);
         if (view == this.vs || view == this.vr) {
-            com.kwad.components.core.d.b.a.a(new a.C0519a(view.getContext()).I(this.qt.mAdTemplate).b(this.qt.mApkDownloadHelper).ao(false).ap(2).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.c.a.d.3
+            com.kwad.components.core.d.b.a.a(new a.C0349a(view.getContext()).I(this.qt.mAdTemplate).b(this.qt.mApkDownloadHelper).ao(false).ap(2).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.c.a.d.3
                 @Override // com.kwad.components.core.d.b.a.b
                 public final void onAdClicked() {
                     d.this.notifyAdClick();

@@ -26,13 +26,9 @@ public class OfflineMapProvince extends Province {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5566a;
+    private String a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f5567c;
+    private long c;
     private String d;
     private int e;
     private ArrayList<OfflineMapCity> f;
@@ -46,9 +42,9 @@ public class OfflineMapProvince extends Province {
         super(parcel);
         this.b = 6;
         this.e = 0;
-        this.f5566a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readInt();
-        this.f5567c = parcel.readLong();
+        this.c = parcel.readLong();
         this.d = parcel.readString();
         this.e = parcel.readInt();
         this.f = parcel.createTypedArrayList(OfflineMapCity.CREATOR);
@@ -85,7 +81,7 @@ public class OfflineMapProvince extends Province {
     }
 
     public long getSize() {
-        return this.f5567c;
+        return this.c;
     }
 
     public int getState() {
@@ -93,7 +89,7 @@ public class OfflineMapProvince extends Province {
     }
 
     public String getUrl() {
-        return this.f5566a;
+        return this.a;
     }
 
     public String getVersion() {
@@ -113,7 +109,7 @@ public class OfflineMapProvince extends Province {
     }
 
     public void setSize(long j) {
-        this.f5567c = j;
+        this.c = j;
     }
 
     public void setState(int i) {
@@ -121,7 +117,7 @@ public class OfflineMapProvince extends Province {
     }
 
     public void setUrl(String str) {
-        this.f5566a = str;
+        this.a = str;
     }
 
     public void setVersion(String str) {
@@ -131,9 +127,9 @@ public class OfflineMapProvince extends Province {
     @Override // com.amap.api.maps.offlinemap.Province, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeString(this.f5566a);
+        parcel.writeString(this.a);
         parcel.writeInt(this.b);
-        parcel.writeLong(this.f5567c);
+        parcel.writeLong(this.c);
         parcel.writeString(this.d);
         parcel.writeInt(this.e);
         parcel.writeTypedList(this.f);

@@ -29,15 +29,13 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveGiftManager.class */
 public class LiveGiftManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveGiftManager f13646a = new LiveGiftManager();
+    private static LiveGiftManager a = new LiveGiftManager();
 
     private LiveGiftManager() {
     }
 
     public static LiveGiftManager a() {
-        return f13646a;
+        return a;
     }
 
     private void a(String str) {

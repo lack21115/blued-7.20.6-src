@@ -1,13 +1,14 @@
 package com.blued.android.module.live_china.manager;
 
 import android.app.Activity;
-import android.app.Instrumentation;
 import android.content.Context;
-import android.os.BatteryManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.FrameLayout;
 import com.android.internal.inputmethod.InputMethodUtils;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.common.l;
+import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.chat.data.JoinLiveResult;
 import com.blued.android.chat.data.ProfileData;
 import com.blued.android.chat.utils.ChatHelper;
@@ -85,10 +86,7 @@ import com.blued.android.module.live_china.view.LiveMakeFriendStartView;
 import com.blued.android.module.live_china.view.LivePKFirstPayView;
 import com.blued.android.module.live_china.view.LivePKResult;
 import com.blued.das.live.LiveProtos;
-import com.igexin.push.config.c;
-import com.igexin.sdk.PushConsts;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -97,13 +95,9 @@ import java.util.Map;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayingOnlineManager.class */
 public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatManager.OnMediaPlayerConnectListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f13687a;
+    public int a;
     public long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f13688c;
+    public String c;
     private Activity f;
     private short g;
     private long h;
@@ -121,7 +115,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
     public PlayingOnlineManager(PlayingOnliveFragment playingOnliveFragment, boolean z, short s, long j, String str, int i, FrameLayout frameLayout, String str2, int i2) {
         super(playingOnliveFragment);
         this.g = (short) 4;
-        this.f13687a = 0;
+        this.a = 0;
         this.n = new ArrayList();
         this.o = new ArrayList();
         this.p = new ArrayList();
@@ -207,7 +201,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                 }
             }
             k();
-            LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_LUCK_TURNING_BTN).post(Boolean.valueOf(p.entrance_status == 1));
+            LiveEventBus.get("live_luck_turning_btn").post(Boolean.valueOf(p.entrance_status == 1));
         }
     }
 
@@ -372,13 +366,13 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
 
     public void a(long j) {
         EventTrackLive.a(LiveProtos.Event.LIVE_LOADING, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("loading_time", String.valueOf(j));
-        a2.put("session_id", String.valueOf(this.h));
+        Map<String, String> a = BluedHttpTools.a();
+        a.put("loading_time", String.valueOf(j));
+        a.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, String.valueOf(this.h));
         InstantLogBody instantLogBody = new InstantLogBody();
         instantLogBody.service = "live_loading";
         instantLogBody.event = 10001;
-        InstantLog.a(instantLogBody, a2);
+        InstantLog.a(instantLogBody, a);
     }
 
     @Override // com.blued.android.module.live_china.msg.LiveMsgHandler
@@ -534,10 +528,10 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                 @Override // java.lang.Runnable
                 public void run() {
                     Map<String, Object> map2 = liveChattingModel.msgMapExtra;
-                    int intValue2 = MsgPackHelper.getIntValue(map2, "count");
+                    int intValue2 = MsgPackHelper.getIntValue(map2, SpamFilter.SpamContract.NotificationTable.COUNT);
                     long longValue = MsgPackHelper.getLongValue(map2, "uid");
-                    LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                    a2.d("主播忽略观众申请 uid:" + longValue + " - count:" + intValue2);
+                    LiveMsgSendManager a = LiveMsgSendManager.a();
+                    a.d("主播忽略观众申请 uid:" + longValue + " - count:" + intValue2);
                     String f = LiveRoomInfo.a().f();
                     if (TextUtils.equals(f, longValue + "")) {
                         if (PlayingOnlineManager.this.l.cb.c()) {
@@ -556,13 +550,13 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                 public void run() {
                     long longValue = MsgPackHelper.getLongValue(liveChattingModel.msgMapExtra, "uid");
                     int intValue2 = MsgPackHelper.getIntValue(liveChattingModel.msgMapExtra, InputMethodUtils.SUBTYPE_MODE_VOICE);
-                    LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                    a2.d("麦序管理 uid:" + longValue + " - voice:" + intValue2);
+                    LiveMsgSendManager a = LiveMsgSendManager.a();
+                    a.d("麦序管理 uid:" + longValue + " - voice:" + intValue2);
                     PlayingOnlineManager.this.a(longValue, intValue2);
                 }
             });
         } else if (s == 132) {
-            LiveFriendModel liveFriendModel = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+            LiveFriendModel liveFriendModel = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
             if (liveFriendModel != null) {
                 LiveRoomManager.a().p().friends_line = liveFriendModel;
                 this.l.c(liveFriendModel);
@@ -570,7 +564,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
             }
         } else if (s == 180) {
             Log.i("==makelover==", "180(join):" + liveChattingModel.getMsgExtra());
-            final LiveMakeLoverModel liveMakeLoverModel = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveMakeLoverModel.class);
+            final LiveMakeLoverModel liveMakeLoverModel = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveMakeLoverModel.class);
             if (liveMakeLoverModel != null) {
                 this.l.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingOnlineManager.19
                     @Override // java.lang.Runnable
@@ -636,13 +630,13 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
             }
         } else if (s == 181) {
             Log.i("==makelover==", "181(下麦):" + liveChattingModel.getMsgExtra());
-            final LiveMakeLoverModel liveMakeLoverModel2 = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveMakeLoverModel.class);
+            final LiveMakeLoverModel liveMakeLoverModel2 = (LiveMakeLoverModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveMakeLoverModel.class);
             if (liveMakeLoverModel2 != null) {
                 this.l.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingOnlineManager.20
                     @Override // java.lang.Runnable
                     public void run() {
-                        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                        a2.d("直播间相亲下麦:" + liveMakeLoverModel2.index + "号uid：" + liveMakeLoverModel2.uid + "name:" + liveMakeLoverModel2.name);
+                        LiveMsgSendManager a = LiveMsgSendManager.a();
+                        a.d("直播间相亲下麦:" + liveMakeLoverModel2.index + "号uid：" + liveMakeLoverModel2.uid + "name:" + liveMakeLoverModel2.name);
                         PlayingOnlineManager.this.l.bY.d(liveMakeLoverModel2.uid);
                         if (TextUtils.equals(liveMakeLoverModel2.uid, LiveRoomInfo.a().f())) {
                             PlayingOnlineManager.this.l.aa();
@@ -654,7 +648,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
             }
         } else if (s == 215) {
             Log.i("==xpp", "215暴击时刻:" + liveChattingModel.getMsgExtra());
-            final LivePKDoubleModel livePKDoubleModel = (LivePKDoubleModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LivePKDoubleModel.class);
+            final LivePKDoubleModel livePKDoubleModel = (LivePKDoubleModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LivePKDoubleModel.class);
             this.l.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingOnlineManager.26
                 @Override // java.lang.Runnable
                 public void run() {
@@ -667,7 +661,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
             });
         } else if (s == 216) {
             Log.i("==wish", "216:" + liveChattingModel.getMsgExtra());
-            LiveWishItemModel liveWishItemModel = (LiveWishItemModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveWishItemModel.class);
+            LiveWishItemModel liveWishItemModel = (LiveWishItemModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveWishItemModel.class);
             if (liveWishItemModel != null) {
                 this.l.a(liveWishItemModel);
             }
@@ -695,7 +689,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                         public void run() {
                             Map<String, Object> map2 = liveChattingModel.msgMapExtra;
                             if (map2 != null) {
-                                PlayingOnlineManager.this.f13687a = MsgPackHelper.getIntValue(map2, "live_status");
+                                PlayingOnlineManager.this.a = MsgPackHelper.getIntValue(map2, "live_status");
                             }
                         }
                     });
@@ -731,7 +725,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                     });
                     return;
                 case 134:
-                    final LiveFriendModel liveFriendModel2 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+                    final LiveFriendModel liveFriendModel2 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
                     if (liveFriendModel2 != null) {
                         this.l.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingOnlineManager.16
                             @Override // java.lang.Runnable
@@ -796,7 +790,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                         @Override // java.lang.Runnable
                         public void run() {
                             Map<String, Object> map2 = liveChattingModel.msgMapExtra;
-                            MsgPackHelper.getIntValue(map2, BatteryManager.EXTRA_LEVEL);
+                            MsgPackHelper.getIntValue(map2, "level");
                             String stringValue = MsgPackHelper.getStringValue(map2, "resource");
                             LiveGiftModel liveGiftModel = new LiveGiftModel();
                             liveGiftModel.images_apng2 = stringValue;
@@ -818,7 +812,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                     LiveFansLevelUpModel liveFansLevelUpModel = null;
                     try {
                         if (!TextUtils.isEmpty(liveChattingModel.getMsgExtra())) {
-                            liveFansLevelUpModel = (LiveFansLevelUpModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFansLevelUpModel.class);
+                            liveFansLevelUpModel = (LiveFansLevelUpModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFansLevelUpModel.class);
                         }
                         if (liveFansLevelUpModel != null) {
                             final LiveFansLevelUpModel liveFansLevelUpModel2 = liveFansLevelUpModel;
@@ -840,7 +834,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                     return;
                 case 220:
                     Log.i("==wish", "220:" + liveChattingModel.getMsgExtra());
-                    LiveWishModel liveWishModel = (LiveWishModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveWishModel.class);
+                    LiveWishModel liveWishModel = (LiveWishModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveWishModel.class);
                     if (liveWishModel == null || LiveRoomManager.a().p() == null) {
                         return;
                     }
@@ -848,7 +842,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                     this.l.L();
                     return;
                 case 236:
-                    LiveWishingDrawModel liveWishingDrawModel = (LiveWishingDrawModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveWishingDrawModel.class);
+                    LiveWishingDrawModel liveWishingDrawModel = (LiveWishingDrawModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveWishingDrawModel.class);
                     if (liveWishingDrawModel == null || LiveRoomManager.a().p() == null) {
                         return;
                     }
@@ -862,11 +856,11 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                     }
                     return;
                 case 266:
-                    LiveCommonSwitchModel liveCommonSwitchModel = (LiveCommonSwitchModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveCommonSwitchModel.class);
+                    LiveCommonSwitchModel liveCommonSwitchModel = (LiveCommonSwitchModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveCommonSwitchModel.class);
                     if (liveCommonSwitchModel.getId() == 1) {
                         this.l.a(false, liveCommonSwitchModel.getContent());
                         if (liveCommonSwitchModel.getStatus() == 1) {
-                            LiveMsgSendManager.a().c(((LiveCommonSwitchExtraModel) AppInfo.f().fromJson(liveCommonSwitchModel.getExtra(), (Class<Object>) LiveCommonSwitchExtraModel.class)).getOther());
+                            LiveMsgSendManager.a().c(((LiveCommonSwitchExtraModel) AppInfo.f().fromJson(liveCommonSwitchModel.getExtra(), LiveCommonSwitchExtraModel.class)).getOther());
                             return;
                         }
                         return;
@@ -892,7 +886,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                 default:
                     switch (s) {
                         case 119:
-                            final LiveFriendModel liveFriendModel3 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveFriendModel.class);
+                            final LiveFriendModel liveFriendModel3 = (LiveFriendModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveFriendModel.class);
                             this.l.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingOnlineManager.11
                                 @Override // java.lang.Runnable
                                 public void run() {
@@ -927,13 +921,13 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                                         String stringValue3 = MsgPackHelper.getStringValue(map2, "name");
                                         long longValue = MsgPackHelper.getLongValue(map2, "uid");
                                         int intValue2 = MsgPackHelper.getIntValue(map2, "type");
-                                        String stringValue4 = MsgPackHelper.getStringValue(map2, Instrumentation.REPORT_KEY_STREAMRESULT);
+                                        String stringValue4 = MsgPackHelper.getStringValue(map2, "stream");
                                         String stringValue5 = MsgPackHelper.getStringValue(map2, "target_stream");
-                                        LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                                        a2.d("收到连麦开始消息,当前连麦uid:" + longValue);
+                                        LiveMsgSendManager a = LiveMsgSendManager.a();
+                                        a.d("收到连麦开始消息,当前连麦uid:" + longValue);
                                         if (intValue2 == 0) {
                                             PlayingOnlineManager.this.b = longValue;
-                                            PlayingOnlineManager.this.f13688c = stringValue3;
+                                            PlayingOnlineManager.this.c = stringValue3;
                                             PlayingOnlineManager.this.l.g(false);
                                             Logger.a("pk", "111");
                                             PlayingOnlineManager.this.l.cq = true;
@@ -947,7 +941,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                                                 PlayingOnlineManager.this.l.d_(4);
                                             } else {
                                                 PlayingOnlineManager.this.b = longValue;
-                                                PlayingOnlineManager.this.f13688c = stringValue3;
+                                                PlayingOnlineManager.this.c = stringValue3;
                                                 PlayingOnlineManager.this.l.g(false);
                                                 Logger.a("pk", "222");
                                                 PlayingOnlineManager.this.l.d_(3);
@@ -997,7 +991,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                                     return;
                                 case 185:
                                     Log.i("==makelover==", "185(爆照):" + liveChattingModel.getMsgExtra());
-                                    final LiveMakeLoverFansModel liveMakeLoverFansModel = (LiveMakeLoverFansModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) LiveMakeLoverFansModel.class);
+                                    final LiveMakeLoverFansModel liveMakeLoverFansModel = (LiveMakeLoverFansModel) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), LiveMakeLoverFansModel.class);
                                     this.l.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingOnlineManager.22
                                         @Override // java.lang.Runnable
                                         public void run() {
@@ -1025,8 +1019,8 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                                         @Override // java.lang.Runnable
                                         public void run() {
                                             long longValue = MsgPackHelper.getLongValue(liveChattingModel.msgMapExtra, "uid");
-                                            LiveMsgSendManager a2 = LiveMsgSendManager.a();
-                                            a2.d("主播忽略观众相亲申请 uid:" + longValue);
+                                            LiveMsgSendManager a = LiveMsgSendManager.a();
+                                            a.d("主播忽略观众相亲申请 uid:" + longValue);
                                             String f = LiveRoomInfo.a().f();
                                             if (TextUtils.equals(f, longValue + "")) {
                                                 if (PlayingOnlineManager.this.l.O()) {
@@ -1077,11 +1071,11 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                                             liveGuideModel.id = MsgPackHelper.getIntValue(map, "id");
                                             liveGuideModel.type = MsgPackHelper.getIntValue(map, "type");
                                             liveGuideModel.sub_type = MsgPackHelper.getIntValue(map, "sub_type");
-                                            liveGuideModel.content = MsgPackHelper.getStringValue(map, "content");
+                                            liveGuideModel.content = MsgPackHelper.getStringValue(map, l.y);
                                             liveGuideModel.url = MsgPackHelper.getStringValue(map, "url");
                                             liveGuideModel.strategy = MsgPackHelper.getIntValue(map, "strategy");
                                             liveGuideModel.frequency = MsgPackHelper.getIntValue(map, "frequency");
-                                            liveGuideModel.count = MsgPackHelper.getIntValue(map, "count");
+                                            liveGuideModel.count = MsgPackHelper.getIntValue(map, SpamFilter.SpamContract.NotificationTable.COUNT);
                                             liveGuideModel.countdown = MsgPackHelper.getIntValue(map, "countdown");
                                             liveGuideModel.show_type = intValue;
                                             this.l.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.-$$Lambda$PlayingOnlineManager$FxGODyjdtuMr5bWHh-QYKZjVOKU
@@ -1104,7 +1098,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                                             });
                                             return;
                                         case 228:
-                                            RankingHourExtra rankingHourExtra = (RankingHourExtra) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), (Class<Object>) RankingHourExtra.class);
+                                            RankingHourExtra rankingHourExtra = (RankingHourExtra) AppInfo.f().fromJson(liveChattingModel.getMsgExtra(), RankingHourExtra.class);
                                             this.l.a(rankingHourExtra.rank, rankingHourExtra.need_score);
                                             return;
                                         default:
@@ -1367,7 +1361,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
                                 }
                                 LiveFloatManager.a().e(false);
                             }
-                        }, c.j);
+                        }, 1500L);
                     }
                     PlayingOnlineManager.this.l.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.live_china.manager.PlayingOnlineManager.30.3
                         @Override // java.lang.Runnable
@@ -1546,7 +1540,7 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
         copy.fromId = LiveRoomInfo.a().g();
         ILiveMsgSender.c(copy);
         copy.fromAvatar = LiveRoomInfo.a().d();
-        copy.fromNickName = LiveCloakingUtil.a(LiveRoomInfo.a().c(), LiveCloakingUtil.f14157a);
+        copy.fromNickName = LiveCloakingUtil.a(LiveRoomInfo.a().c(), LiveCloakingUtil.a);
         if (LiveRoomManager.a().N() == null || TextUtils.isEmpty(LiveRoomManager.a().N().getNoble_join_text())) {
             copy.msgContent = this.f.getString(R.string.live_coming);
         } else {
@@ -1573,12 +1567,12 @@ public class PlayingOnlineManager extends LiveMsgHandler implements LiveFloatMan
 
     public void n() {
         EventTrackLive.a(LiveProtos.Event.LIVE_INTERRUPT, LiveRoomManager.a().e(), LiveRoomManager.a().g());
-        Map<String, String> a2 = BluedHttpTools.a();
-        a2.put("session_id", String.valueOf(this.h));
+        Map<String, String> a = BluedHttpTools.a();
+        a.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, String.valueOf(this.h));
         InstantLogBody instantLogBody = new InstantLogBody();
         instantLogBody.service = "live_interrupt";
-        instantLogBody.event = PushConsts.SETTAG_ERROR_COUNT;
-        InstantLog.a(instantLogBody, a2);
+        instantLogBody.event = 20001;
+        InstantLog.a(instantLogBody, a);
     }
 
     public boolean o() {

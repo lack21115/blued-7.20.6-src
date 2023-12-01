@@ -25,13 +25,11 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYConnectingAdapter.class */
 public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel, BaseViewHolder> implements SeatChangedObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f16165a;
+    private BaseYYStudioFragment a;
 
     public YYConnectingAdapter(Context context, BaseYYStudioFragment baseYYStudioFragment) {
         super(null);
-        this.f16165a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.mContext = context;
         addItemType(0, R.layout.item_yy_connecting_layout);
     }
@@ -47,12 +45,12 @@ public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel
         } else {
             textView.setText(yYSeatMemberModel.getName());
         }
-        yYBaseUserHeadView.a(yYSeatMemberModel, this.f16165a.getFragmentActive());
+        yYBaseUserHeadView.a(yYSeatMemberModel, this.a.getFragmentActive());
     }
 
     @Override // com.blued.android.module.yy_china.observer.SeatChangedObserver
     public void a(final int i, final int i2) {
-        this.f16165a.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.adapter.YYConnectingAdapter.2
+        this.a.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.adapter.YYConnectingAdapter.2
             @Override // java.lang.Runnable
             public void run() {
                 YYSeatMemberModel yYSeatMemberModel = (YYSeatMemberModel) YYConnectingAdapter.this.getData().get(i - 1);
@@ -64,7 +62,7 @@ public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel
                 }
                 YYBaseUserHeadView yYBaseUserHeadView = (YYBaseUserHeadView) YYConnectingAdapter.this.getViewByPosition(i - 1, R.id.base_us_head);
                 if (yYBaseUserHeadView != null) {
-                    yYBaseUserHeadView.a(yYSeatMemberModel, YYConnectingAdapter.this.f16165a.getFragmentActive());
+                    yYBaseUserHeadView.a(yYSeatMemberModel, YYConnectingAdapter.this.a.getFragmentActive());
                 }
             }
         });
@@ -80,7 +78,7 @@ public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel
         if (yYBaseUserHeadView == null) {
             return;
         }
-        yYBaseUserHeadView.a(this.f16165a.getFragmentActive(), str, str2, yYImModel);
+        yYBaseUserHeadView.a(this.a.getFragmentActive(), str, str2, yYImModel);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
@@ -100,7 +98,6 @@ public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         a(baseViewHolder.itemView, yYSeatMemberModel, baseViewHolder.getAdapterPosition());
@@ -120,7 +117,7 @@ public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel
                 yYSeatMemberModel.chat_anchor = str2;
                 YYBaseUserHeadView yYBaseUserHeadView = (YYBaseUserHeadView) getViewByPosition(i2, R.id.base_us_head);
                 if (yYBaseUserHeadView != null) {
-                    yYBaseUserHeadView.a(yYSeatMemberModel, this.f16165a.getFragmentActive());
+                    yYBaseUserHeadView.a(yYSeatMemberModel, this.a.getFragmentActive());
                     return;
                 }
                 return;
@@ -159,7 +156,7 @@ public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel
 
     @Override // com.blued.android.module.yy_china.observer.SeatChangedObserver
     public void b(final List<YYSeatMemberModel> list) {
-        this.f16165a.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.adapter.YYConnectingAdapter.1
+        this.a.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.adapter.YYConnectingAdapter.1
             /* JADX WARN: Multi-variable type inference failed */
             /* JADX WARN: Type inference failed for: r0v24, types: [java.util.List] */
             @Override // java.lang.Runnable
@@ -188,14 +185,12 @@ public class YYConnectingAdapter extends BaseConnectingAdapter<YYSeatMemberModel
     public void c() {
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
         Logger.e("observer", "YYConnectingAdapter onAttachedToRecyclerView ...");
         YYObserverManager.a().a(this);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
         Logger.e("observer", "YYConnectingAdapter onDetachedFromRecyclerView ...");

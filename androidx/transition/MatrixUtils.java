@@ -7,7 +7,7 @@ import android.graphics.RectF;
 class MatrixUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    static final Matrix f3456a = new Matrix() { // from class: androidx.transition.MatrixUtils.1
+    static final Matrix f3408a = new Matrix() { // from class: androidx.transition.MatrixUtils.1
         void a() {
             throw new IllegalStateException("Matrix can not be modified");
         }

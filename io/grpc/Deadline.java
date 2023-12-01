@@ -15,9 +15,8 @@ public final class Deadline implements Comparable<Deadline> {
     private volatile boolean expired;
     private final Ticker ticker;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:io/grpc/Deadline$SystemTicker.class */
-    public static class SystemTicker extends Ticker {
+    static class SystemTicker extends Ticker {
         private SystemTicker() {
         }
 

@@ -15,9 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/NinePatchUtils.class */
 public final class NinePatchUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final NinePatchUtils f10891a = new NinePatchUtils();
+    public static final NinePatchUtils a = new NinePatchUtils();
 
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/NinePatchUtils$GuideArrowPosition.class */
@@ -30,16 +28,14 @@ public final class NinePatchUtils {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/NinePatchUtils$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f10894a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[GuideArrowPosition.values().length];
             iArr[GuideArrowPosition.LEFT.ordinal()] = 1;
             iArr[GuideArrowPosition.CENTER.ordinal()] = 2;
             iArr[GuideArrowPosition.RIGHT.ordinal()] = 3;
-            f10894a = iArr;
+            a = iArr;
         }
     }
 
@@ -55,21 +51,21 @@ public final class NinePatchUtils {
         Intrinsics.e(resId, "resId");
         Bitmap bitmap = BitmapFactory.decodeResource(AppInfo.d().getResources(), ((resId.length == 0) || resId[0] == 0) ? R.drawable.guide_black_bubble_up : resId[0]);
         ArrayList arrayList = new ArrayList();
-        int i = guideArrowPosition == null ? -1 : WhenMappings.f10894a[guideArrowPosition.ordinal()];
+        int i = guideArrowPosition == null ? -1 : WhenMappings.a[guideArrowPosition.ordinal()];
         if (i == 1) {
             int width = (bitmap.getWidth() / 4) * 3;
-            arrayList.add(f10891a.a(width - 1, width + 1).get(0));
+            arrayList.add(a.a(width - 1, width + 1).get(0));
         } else if (i == 2) {
             int width2 = bitmap.getWidth() / 4;
-            arrayList.add(f10891a.a(width2 - 1, width2 + 1).get(0));
+            arrayList.add(a.a(width2 - 1, width2 + 1).get(0));
             int width3 = (bitmap.getWidth() / 4) * 3;
-            arrayList.add(f10891a.a(width3 - 1, width3 + 1).get(0));
+            arrayList.add(a.a(width3 - 1, width3 + 1).get(0));
         } else if (i == 3) {
             int width4 = bitmap.getWidth() / 4;
-            arrayList.add(f10891a.a(width4 - 1, width4 + 1).get(0));
+            arrayList.add(a.a(width4 - 1, width4 + 1).get(0));
         }
-        List<NinePatchBitmapFactory.Range> a2 = f10891a.a((bitmap.getHeight() / 2) - 1, (bitmap.getHeight() / 2) + 1);
-        NinePatchUtils ninePatchUtils = f10891a;
+        List<NinePatchBitmapFactory.Range> a2 = a.a((bitmap.getHeight() / 2) - 1, (bitmap.getHeight() / 2) + 1);
+        NinePatchUtils ninePatchUtils = a;
         Intrinsics.c(bitmap, "bitmap");
         return ninePatchUtils.a(bitmap, arrayList, a2);
     }
@@ -77,7 +73,7 @@ public final class NinePatchUtils {
     private final List<NinePatchBitmapFactory.Range> a(int i, int i2) {
         ArrayList arrayList = new ArrayList();
         NinePatchBitmapFactory.Range range = new NinePatchBitmapFactory.Range();
-        range.f10890a = i;
+        range.a = i;
         range.b = i2;
         arrayList.add(range);
         return arrayList;

@@ -1,10 +1,7 @@
 package com.wrapper.proxyapplication;
 
 import android.os.Build;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.cdo.oaps.ad.OapsWrapper;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import dalvik.system.DexFile;
 import java.io.File;
 import java.io.IOException;
@@ -56,7 +53,7 @@ public final class MultiDex {
                 Object obj2 = makeDexElements[i3];
                 Object obj3 = MultiDex.findField(obj2, "dexFile").get(obj2);
                 Field findField = MultiDex.findField(obj3, "mCookie");
-                if (findField.getType().getName().equals(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL)) {
+                if (findField.getType().getName().equals("int")) {
                     arrayList2.add(Integer.valueOf(findField.getInt(obj3)));
                 } else if (findField.getType().getName().equals("long")) {
                     arrayList2.add(Long.valueOf(findField.getLong(obj3)));
@@ -107,7 +104,7 @@ public final class MultiDex {
                 Object obj2 = makeDexElements[i2];
                 Object obj3 = MultiDex.findField(obj2, "dexFile").get(obj2);
                 Field findField = MultiDex.findField(obj3, "mCookie");
-                if (findField.getType().getName().equals(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL)) {
+                if (findField.getType().getName().equals("int")) {
                     arrayList2.add(Integer.valueOf(findField.getInt(obj3)));
                 } else if (findField.getType().getName().equals("long")) {
                     arrayList2.add(Long.valueOf(findField.getLong(obj3)));
@@ -250,7 +247,7 @@ public final class MultiDex {
                 strArr[previousIndex] = absolutePath;
                 fileArr[previousIndex] = next;
                 zipFileArr[previousIndex] = new ZipFile(next);
-                dexFileArr[previousIndex] = DexFile.loadDex(absolutePath, absolutePath2 + BridgeUtil.SPLIT_MARK + str + ShareConstants.DEX_SUFFIX, 0);
+                dexFileArr[previousIndex] = DexFile.loadDex(absolutePath, absolutePath2 + BridgeUtil.SPLIT_MARK + str + ".dex", 0);
                 arrayList.add(Integer.valueOf(MultiDex.findField(dexFileArr[previousIndex], "mCookie").getInt(dexFileArr[previousIndex])));
             }
             field.set(classLoader, sb.toString());
@@ -286,7 +283,7 @@ public final class MultiDex {
                 strArr[previousIndex] = absolutePath;
                 fileArr[previousIndex] = next;
                 zipFileArr[previousIndex] = new ZipFile(next);
-                dexFileArr[previousIndex] = DexFile.loadDex(absolutePath, absolutePath2 + BridgeUtil.SPLIT_MARK + str + ShareConstants.DEX_SUFFIX, 0);
+                dexFileArr[previousIndex] = DexFile.loadDex(absolutePath, absolutePath2 + BridgeUtil.SPLIT_MARK + str + ".dex", 0);
                 arrayList.add(Integer.valueOf(MultiDex.findField(dexFileArr[previousIndex], "mCookie").getInt(dexFileArr[previousIndex])));
             }
             field.set(classLoader, sb.toString());
@@ -414,7 +411,7 @@ public final class MultiDex {
         } catch (NoSuchFieldException e3) {
             try {
                 try {
-                    Object obj2 = findField(classLoader, OapsWrapper.KEY_PATH).get(classLoader);
+                    Object obj2 = findField(classLoader, "path").get(classLoader);
                     findField(obj2, "mPaths").set(obj2, injectPathsObj);
                     findField(obj2, "mFiles").set(obj2, injectFilesObj);
                     findField(obj2, "mZips").set(obj2, injectZipsObj);
@@ -471,7 +468,7 @@ public final class MultiDex {
         } catch (NoSuchFieldException e5) {
             try {
                 try {
-                    return V4.install(classLoader, findField(classLoader, OapsWrapper.KEY_PATH), splitPaths, file, i);
+                    return V4.install(classLoader, findField(classLoader, "path"), splitPaths, file, i);
                 } catch (IOException e6) {
                     e6.printStackTrace();
                     return null;
@@ -516,7 +513,7 @@ public final class MultiDex {
                 try {
                     try {
                         try {
-                            return V4.install(classLoader, findField(classLoader, OapsWrapper.KEY_PATH), splitPaths, file);
+                            return V4.install(classLoader, findField(classLoader, "path"), splitPaths, file);
                         } catch (IllegalAccessException e6) {
                             e6.printStackTrace();
                             return null;
@@ -638,7 +635,7 @@ public final class MultiDex {
             }
         } catch (NoSuchFieldException e3) {
             try {
-                findField(classLoader, OapsWrapper.KEY_PATH);
+                findField(classLoader, "path");
                 try {
                     prepareexpandFieldArray(classLoader, "mPaths", i);
                     prepareexpandFieldArray(classLoader, "mFiles", i);

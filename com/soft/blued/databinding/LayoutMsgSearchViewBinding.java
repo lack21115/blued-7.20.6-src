@@ -7,11 +7,11 @@ import com.blued.android.module.common.view.SearchView;
 public final class LayoutMsgSearchViewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SearchView f29411a;
+    private final SearchView f15721a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public SearchView getRoot() {
-        return this.f29411a;
+        return this.f15721a;
     }
 }

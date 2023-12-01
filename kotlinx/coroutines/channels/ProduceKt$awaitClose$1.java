@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Produce.kt", c = {157}, d = "awaitClose", e = "kotlinx.coroutines.channels.ProduceKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ProduceKt$awaitClose$1.class */
 public final class ProduceKt$awaitClose$1 extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42996a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    /* synthetic */ Object f42997c;
+    /* synthetic */ Object c;
     int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -26,7 +22,7 @@ public final class ProduceKt$awaitClose$1 extends ContinuationImpl {
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        this.f42997c = obj;
+        this.c = obj;
         this.d |= Integer.MIN_VALUE;
         return ProduceKt.a(null, null, this);
     }

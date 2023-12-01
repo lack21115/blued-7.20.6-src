@@ -10,21 +10,21 @@ import org.json.JSONObject;
 public class i implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile i f38365a;
+    public static volatile i f24674a;
     public f b;
 
     public static i a() {
         i iVar;
         synchronized (i.class) {
             try {
-                if (f38365a == null) {
+                if (f24674a == null) {
                     synchronized (i.class) {
-                        if (f38365a == null) {
-                            f38365a = new i();
+                        if (f24674a == null) {
+                            f24674a = new i();
                         }
                     }
                 }
-                iVar = f38365a;
+                iVar = f24674a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -45,7 +45,7 @@ public class i implements a {
     public final void a(String str, Map<String, Object> map, String str2, String str3) {
         String str4;
         String str5;
-        d dVar = d.f38358a;
+        d dVar = d.f24667a;
         String a2 = dVar.a(com.tencent.qimei.v.d.a(str3).D(), str);
         String c2 = com.tencent.qimei.l.d.a(str3).c();
         try {
@@ -79,7 +79,7 @@ public class i implements a {
         if (fVar.a(str2)) {
             return;
         }
-        Set<String> set = fVar.f38362a;
+        Set<String> set = fVar.f24671a;
         set.add(str3 + str2);
     }
 
@@ -90,7 +90,7 @@ public class i implements a {
             if (fVar.a(str2)) {
                 contains = false;
             } else {
-                contains = fVar.f38362a.contains(str3 + str2);
+                contains = fVar.f24671a.contains(str3 + str2);
             }
             if (contains) {
                 return;

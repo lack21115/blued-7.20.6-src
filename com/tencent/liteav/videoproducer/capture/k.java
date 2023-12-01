@@ -7,11 +7,11 @@ import com.tencent.liteav.videoproducer.producer.ServerVideoProducerConfig;
 public final /* synthetic */ class k implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CameraCaptureSingleton f36933a;
+    private final CameraCaptureSingleton f23242a;
     private final ServerVideoProducerConfig b;
 
     private k(CameraCaptureSingleton cameraCaptureSingleton, ServerVideoProducerConfig serverVideoProducerConfig) {
-        this.f36933a = cameraCaptureSingleton;
+        this.f23242a = cameraCaptureSingleton;
         this.b = serverVideoProducerConfig;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class k implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        CameraCaptureSingleton.lambda$setServerConfig$1(this.f36933a, this.b);
+        CameraCaptureSingleton.lambda$setServerConfig$1(this.f23242a, this.b);
     }
 }

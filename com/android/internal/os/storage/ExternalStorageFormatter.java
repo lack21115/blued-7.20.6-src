@@ -3,10 +3,8 @@ package com.android.internal.os.storage;
 import android.app.ProgressDialog;
 import android.app.Service;
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Environment;
 import android.os.IBinder;
 import android.os.Looper;
 import android.os.PowerManager;
@@ -19,11 +17,13 @@ import android.os.storage.StorageVolume;
 import android.util.Log;
 import android.widget.Toast;
 import com.android.internal.R;
+import com.android.internal.util.cm.PowerMenuConstants;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import java.util.ArrayList;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/os/storage/ExternalStorageFormatter.class */
 public class ExternalStorageFormatter extends Service implements DialogInterface.OnCancelListener {
-    public static final ComponentName COMPONENT_NAME = new ComponentName("android", ExternalStorageFormatter.class.getName());
+    public static final ComponentName COMPONENT_NAME = new ComponentName(MsgBackupManager.PLATFORM_ANDROID, ExternalStorageFormatter.class.getName());
     public static final String EXTRA_ALWAYS_RESET = "always_reset";
     public static final String EXTRA_WIPE_MEDIA = "wipe_media";
     public static final String FORMAT_AND_FACTORY_RESET = "com.android.internal.os.storage.FORMAT_AND_FACTORY_RESET";
@@ -40,7 +40,6 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
     private String mReason = null;
     private boolean mIsFormatSuccess = false;
     StorageEventListener mStorageListener = new StorageEventListener() { // from class: com.android.internal.os.storage.ExternalStorageFormatter.1
-        @Override // android.os.storage.StorageEventListener
         public void onStorageStateChanged(String str, String str2, String str3) {
             Log.i(ExternalStorageFormatter.TAG, "Received storage state changed notification that " + str + " changed state from " + str2 + " to " + str3);
             ExternalStorageFormatter.this.updateProgressState();
@@ -50,9 +49,9 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
     void fail(int i) {
         Toast.makeText(this, i, 1).show();
         if (this.mAlwaysReset) {
-            Intent intent = new Intent(Intent.ACTION_MASTER_CLEAR);
+            Intent intent = new Intent("android.intent.action.MASTER_CLEAR");
             intent.addFlags(268435456);
-            intent.putExtra(Intent.EXTRA_REASON, this.mReason);
+            intent.putExtra("android.intent.extra.REASON", this.mReason);
             sendBroadcast(intent);
         }
         stopSelf();
@@ -79,13 +78,13 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
     public void onCancel(DialogInterface dialogInterface) {
         IMountService mountService = getMountService();
         try {
-            ArrayList<StorageVolume> physicalExternalVolume = StorageManager.getPhysicalExternalVolume(mountService.getVolumeList());
+            ArrayList physicalExternalVolume = StorageManager.getPhysicalExternalVolume(mountService.getVolumeList());
             if (this.mStorageVolume != null) {
                 mountService.mountVolume(this.mStorageVolume.getPath());
             } else if (physicalExternalVolume.size() == 0) {
                 updateProgressDialog(R.string.progress_nomediapresent);
             } else {
-                mountService.mountVolume(physicalExternalVolume.get(0).toString());
+                mountService.mountVolume(((StorageVolume) physicalExternalVolume.get(0)).toString());
             }
         } catch (RemoteException e) {
             Log.w(TAG, "Failed talking with mount service", e);
@@ -97,10 +96,10 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
     public void onCreate() {
         super.onCreate();
         if (this.mStorageManager == null) {
-            this.mStorageManager = (StorageManager) getSystemService(Context.STORAGE_SERVICE);
+            this.mStorageManager = (StorageManager) getSystemService("storage");
             this.mStorageManager.registerListener(this.mStorageListener);
         }
-        this.mWakeLock = ((PowerManager) getSystemService("power")).newWakeLock(1, TAG);
+        this.mWakeLock = ((PowerManager) getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER)).newWakeLock(1, TAG);
         this.mWakeLock.acquire();
     }
 
@@ -125,8 +124,8 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
             this.mAlwaysReset = true;
         }
         this.mWipeInternalStorage = intent.getBooleanExtra(EXTRA_WIPE_MEDIA, false);
-        this.mReason = intent.getStringExtra(Intent.EXTRA_REASON);
-        this.mStorageVolume = (StorageVolume) intent.getParcelableExtra(StorageVolume.EXTRA_STORAGE_VOLUME);
+        this.mReason = intent.getStringExtra("android.intent.extra.REASON");
+        this.mStorageVolume = (StorageVolume) intent.getParcelableExtra("storage_volume");
         if (this.mProgressDialog == null) {
             this.mProgressDialog = new ProgressDialog(this);
             this.mProgressDialog.setIndeterminate(true);
@@ -158,7 +157,7 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
         boolean z = false;
         String str = null;
         try {
-            ArrayList<StorageVolume> physicalExternalVolume = StorageManager.getPhysicalExternalVolume(getMountService().getVolumeList());
+            ArrayList physicalExternalVolume = StorageManager.getPhysicalExternalVolume(getMountService().getVolumeList());
             if (this.mStorageVolume != null) {
                 String volumeState = this.mStorageManager.getVolumeState(this.mStorageVolume.getPath());
                 z = this.mStorageVolume.getDescriptionId() == 17041020;
@@ -167,7 +166,7 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
                 updateProgressDialog(R.string.progress_nomediapresent);
                 return;
             } else {
-                StorageVolume storageVolume2 = physicalExternalVolume.get(0);
+                StorageVolume storageVolume2 = (StorageVolume) physicalExternalVolume.get(0);
                 String volumeState2 = this.mStorageManager.getVolumeState(storageVolume2.getPath());
                 if (storageVolume2.getDescriptionId() == 17041020) {
                     z = true;
@@ -180,27 +179,27 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
         } catch (RemoteException e) {
             Log.w(TAG, "Failed talking with mount service", e);
         }
-        if (Environment.MEDIA_MOUNTED.equals(str) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(str)) {
+        if ("mounted".equals(str) || "mounted_ro".equals(str)) {
             updateProgressDialog(z ? 17039521 : 17039514);
             try {
                 if (this.mIsFormatSuccess) {
                     return;
                 }
                 IMountService mountService = getMountService();
-                ArrayList<StorageVolume> physicalExternalVolume2 = StorageManager.getPhysicalExternalVolume(mountService.getVolumeList());
+                ArrayList physicalExternalVolume2 = StorageManager.getPhysicalExternalVolume(mountService.getVolumeList());
                 if (this.mStorageVolume != null) {
                     mountService.unmountVolume(this.mStorageVolume.getPath(), true, this.mFactoryReset);
                 } else if (physicalExternalVolume2.size() == 0) {
                     updateProgressDialog(R.string.progress_nomediapresent);
                 } else {
-                    String path = physicalExternalVolume2.get(0).getPath();
+                    String path = ((StorageVolume) physicalExternalVolume2.get(0)).getPath();
                     Log.e(TAG, "physicalVol : " + storageVolume.toString());
                     mountService.unmountVolume(path, true, this.mFactoryReset);
                 }
             } catch (RemoteException e2) {
                 Log.w(TAG, "Failed talking with mount service", e2);
             }
-        } else if (Environment.MEDIA_NOFS.equals(str) || Environment.MEDIA_UNMOUNTED.equals(str) || Environment.MEDIA_UNMOUNTABLE.equals(str)) {
+        } else if ("nofs".equals(str) || "unmounted".equals(str) || "unmountable".equals(str)) {
             updateProgressDialog(z ? 17039522 : 17039515);
             int i = z ? 17039523 : 17039516;
             final IMountService mountService2 = getMountService();
@@ -214,16 +213,16 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
                 public void run() {
                     String path2;
                     boolean z2 = false;
-                    ArrayList<StorageVolume> arrayList = null;
+                    ArrayList arrayList = null;
                     try {
-                        ArrayList<StorageVolume> physicalExternalVolume3 = StorageManager.getPhysicalExternalVolume(mountService2.getVolumeList());
+                        ArrayList physicalExternalVolume3 = StorageManager.getPhysicalExternalVolume(mountService2.getVolumeList());
                         if (ExternalStorageFormatter.this.mStorageVolume != null) {
                             path2 = ExternalStorageFormatter.this.mStorageVolume.getPath();
                         } else if (physicalExternalVolume3.size() == 0) {
                             ExternalStorageFormatter.this.updateProgressDialog(R.string.progress_nomediapresent);
                             return;
                         } else {
-                            path2 = physicalExternalVolume3.get(0).getPath();
+                            path2 = ((StorageVolume) physicalExternalVolume3.get(0)).getPath();
                         }
                         mountService2.formatVolume(path2);
                         ExternalStorageFormatter.this.mIsFormatSuccess = true;
@@ -234,9 +233,9 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
                         Toast.makeText(ExternalStorageFormatter.this, i2, 1).show();
                     }
                     if (z2 && ExternalStorageFormatter.this.mFactoryReset) {
-                        Intent intent = new Intent(Intent.ACTION_MASTER_CLEAR);
+                        Intent intent = new Intent("android.intent.action.MASTER_CLEAR");
                         intent.addFlags(268435456);
-                        intent.putExtra(Intent.EXTRA_REASON, ExternalStorageFormatter.this.mReason);
+                        intent.putExtra("android.intent.extra.REASON", ExternalStorageFormatter.this.mReason);
                         intent.putExtra(ExternalStorageFormatter.EXTRA_WIPE_MEDIA, ExternalStorageFormatter.this.mWipeInternalStorage);
                         ExternalStorageFormatter.this.sendBroadcast(intent);
                         ExternalStorageFormatter.this.stopSelf();
@@ -248,25 +247,25 @@ public class ExternalStorageFormatter extends Service implements DialogInterface
                                 ExternalStorageFormatter.this.updateProgressDialog(R.string.progress_nomediapresent);
                                 return;
                             }
-                            mountService2.mountVolume(ExternalStorageFormatter.this.mStorageVolume == null ? arrayList.get(0).getPath() : ExternalStorageFormatter.this.mStorageVolume.getPath());
+                            mountService2.mountVolume(ExternalStorageFormatter.this.mStorageVolume == null ? ((StorageVolume) arrayList.get(0)).getPath() : ExternalStorageFormatter.this.mStorageVolume.getPath());
                         } catch (RemoteException e4) {
                             Log.w(ExternalStorageFormatter.TAG, "Failed talking with mount service", e4);
                         }
                     } else {
-                        Intent intent2 = new Intent(Intent.ACTION_MASTER_CLEAR);
+                        Intent intent2 = new Intent("android.intent.action.MASTER_CLEAR");
                         intent2.addFlags(268435456);
-                        intent2.putExtra(Intent.EXTRA_REASON, ExternalStorageFormatter.this.mReason);
+                        intent2.putExtra("android.intent.extra.REASON", ExternalStorageFormatter.this.mReason);
                         intent2.putExtra(ExternalStorageFormatter.EXTRA_WIPE_MEDIA, ExternalStorageFormatter.this.mWipeInternalStorage);
                         ExternalStorageFormatter.this.sendBroadcast(intent2);
                     }
                     ExternalStorageFormatter.this.stopSelf();
                 }
             }.start();
-        } else if (Environment.MEDIA_BAD_REMOVAL.equals(str)) {
+        } else if ("bad_removal".equals(str)) {
             fail(z ? 17039524 : 17039517);
-        } else if (Environment.MEDIA_CHECKING.equals(str)) {
+        } else if ("checking".equals(str)) {
             fail(z ? 17039525 : 17039518);
-        } else if (Environment.MEDIA_REMOVED.equals(str)) {
+        } else if ("removed".equals(str)) {
             fail(z ? 17039526 : 17039519);
         } else if ("shared".equals(str)) {
             fail(z ? 17039527 : 17039520);

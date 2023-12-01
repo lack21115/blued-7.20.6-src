@@ -137,7 +137,7 @@ public abstract class d implements n<f> {
                     StringBuilder sb2 = new StringBuilder("read size= ");
                     sb2.append(arrayList.size());
                     com.kwad.sdk.core.d.b.d(tag, sb2.toString());
-                    Iterator<E> it = arrayList.iterator();
+                    Iterator it = arrayList.iterator();
                     while (true) {
                         cursor = rawQuery;
                         if (!it.hasNext()) {

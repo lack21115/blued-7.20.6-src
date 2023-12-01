@@ -37,9 +37,9 @@ public final class LonginServiceDefaultImpl implements ILoginService {
     }
 
     @Override // com.blued.login.auto.ILoginService
-    public void a(TextView tvTerms, TextView tvTermsEn, boolean z) {
-        Intrinsics.e(tvTerms, "tvTerms");
-        Intrinsics.e(tvTermsEn, "tvTermsEn");
+    public void a(TextView textView, TextView textView2, boolean z) {
+        Intrinsics.e(textView, "tvTerms");
+        Intrinsics.e(textView2, "tvTermsEn");
     }
 
     @Override // com.blued.login.auto.ILoginService
@@ -55,8 +55,8 @@ public final class LonginServiceDefaultImpl implements ILoginService {
     }
 
     @Override // com.blued.login.auto.ILoginService
-    public void a(String from, Context context, CheckBox checkBox) {
-        Intrinsics.e(from, "from");
+    public void a(String str, Context context, CheckBox checkBox) {
+        Intrinsics.e(str, "from");
     }
 
     @Override // com.blued.login.auto.ILoginService

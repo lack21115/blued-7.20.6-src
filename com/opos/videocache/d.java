@@ -2,6 +2,7 @@ package com.opos.videocache;
 
 import android.text.TextUtils;
 import com.google.common.net.HttpHeaders;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,17 +15,17 @@ import java.util.Map;
 public class d implements i {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.videocache.c.b f27442a;
+    private final com.opos.videocache.c.b f13754a;
     private final com.opos.videocache.b.b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private j f27443c;
+    private j f13755c;
     private HttpURLConnection d;
     private InputStream e;
 
     public d(d dVar) {
-        this.f27443c = dVar.f27443c;
-        this.f27442a = dVar.f27442a;
+        this.f13755c = dVar.f13755c;
+        this.f13754a = dVar.f13754a;
         this.b = dVar.b;
     }
 
@@ -37,10 +38,10 @@ public class d implements i {
     }
 
     public d(String str, com.opos.videocache.c.b bVar, com.opos.videocache.b.b bVar2) {
-        this.f27442a = (com.opos.videocache.c.b) f.a(bVar);
+        this.f13754a = (com.opos.videocache.c.b) f.a(bVar);
         this.b = (com.opos.videocache.b.b) f.a(bVar2);
         j a2 = bVar.a(str);
-        this.f27443c = a2 != null ? a2 : new j(str, -2147483648L, h.a(str));
+        this.f13755c = a2 != null ? a2 : new j(str, -2147483648L, h.a(str));
     }
 
     private long a(HttpURLConnection httpURLConnection) {
@@ -53,14 +54,14 @@ public class d implements i {
 
     private long a(HttpURLConnection httpURLConnection, long j, int i) {
         long a2 = a(httpURLConnection);
-        return i == 200 ? a2 : i == 206 ? a2 + j : this.f27443c.b;
+        return i == 200 ? a2 : i == 206 ? a2 + j : this.f13755c.b;
     }
 
     private HttpURLConnection a(long j, int i) {
         String str;
         HttpURLConnection httpURLConnection;
         boolean z;
-        String str2 = this.f27443c.f27444a;
+        String str2 = this.f13755c.f13756a;
         int i2 = 0;
         do {
             StringBuilder sb = new StringBuilder();
@@ -78,7 +79,7 @@ public class d implements i {
             httpURLConnection = (HttpURLConnection) new URL(str2).openConnection();
             a(httpURLConnection, str2);
             if (i3 > 0) {
-                httpURLConnection.setRequestProperty("Range", "bytes=" + j + "-");
+                httpURLConnection.setRequestProperty("Range", "bytes=" + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             }
             if (i > 0) {
                 httpURLConnection.setConnectTimeout(i);
@@ -123,14 +124,14 @@ public class d implements i {
     public int a(byte[] bArr) {
         InputStream inputStream = this.e;
         if (inputStream == null) {
-            throw new g("Error reading data from " + this.f27443c.f27444a + ": connection is absent!");
+            throw new g("Error reading data from " + this.f13755c.f13756a + ": connection is absent!");
         }
         try {
             return inputStream.read(bArr, 0, bArr.length);
         } catch (InterruptedIOException e) {
-            throw new e("Reading source " + this.f27443c.f27444a + " is interrupted", e);
+            throw new e("Reading source " + this.f13755c.f13756a + " is interrupted", e);
         } catch (IOException e2) {
-            throw new g("Error reading data from " + this.f27443c.f27444a, e2);
+            throw new g("Error reading data from " + this.f13755c.f13756a, e2);
         }
     }
 
@@ -138,10 +139,10 @@ public class d implements i {
     public long a() {
         long j;
         synchronized (this) {
-            if (this.f27443c.b == -2147483648L) {
+            if (this.f13755c.b == -2147483648L) {
                 e();
             }
-            j = this.f27443c.b;
+            j = this.f13755c.b;
         }
         return j;
     }
@@ -153,11 +154,11 @@ public class d implements i {
             this.d = a2;
             String contentType = a2.getContentType();
             this.e = new BufferedInputStream(this.d.getInputStream(), 8192);
-            j jVar = new j(this.f27443c.f27444a, a(this.d, j, this.d.getResponseCode()), contentType);
-            this.f27443c = jVar;
-            this.f27442a.a(jVar.f27444a, this.f27443c);
+            j jVar = new j(this.f13755c.f13756a, a(this.d, j, this.d.getResponseCode()), contentType);
+            this.f13755c = jVar;
+            this.f13754a.a(jVar.f13756a, this.f13755c);
         } catch (IOException e) {
-            throw new g("Error opening connection for " + this.f27443c.f27444a + " with offset " + j, e);
+            throw new g("Error opening connection for " + this.f13755c.f13756a + " with offset " + j, e);
         }
     }
 
@@ -182,19 +183,19 @@ public class d implements i {
     public String c() {
         String str;
         synchronized (this) {
-            if (TextUtils.isEmpty(this.f27443c.f27445c)) {
+            if (TextUtils.isEmpty(this.f13755c.f13757c)) {
                 e();
             }
-            str = this.f27443c.f27445c;
+            str = this.f13755c.f13757c;
         }
         return str;
     }
 
     public String d() {
-        return this.f27443c.f27444a;
+        return this.f13755c.f13756a;
     }
 
     public String toString() {
-        return "HttpUrlSource{sourceInfo='" + this.f27443c + com.alipay.sdk.util.i.d;
+        return "HttpUrlSource{sourceInfo='" + this.f13755c + "}";
     }
 }

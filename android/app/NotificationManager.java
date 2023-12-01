@@ -127,10 +127,10 @@ public class NotificationManager {
         if (localLOGV) {
             Log.v(TAG, packageName + ": notify(" + i + ", " + notification + ")");
         }
-        Notification m116clone = notification.m116clone();
-        Notification.Builder.stripForDelivery(m116clone);
+        Notification m115clone = notification.m115clone();
+        Notification.Builder.stripForDelivery(m115clone);
         try {
-            service.enqueueNotificationWithTag(packageName, this.mContext.getOpPackageName(), str, i, m116clone, iArr, UserHandle.myUserId());
+            service.enqueueNotificationWithTag(packageName, this.mContext.getOpPackageName(), str, i, m115clone, iArr, UserHandle.myUserId());
             if (i != iArr[0]) {
                 Log.w(TAG, "notify: id corrupted: sent " + i + ", got back " + iArr[0]);
             }
@@ -151,10 +151,10 @@ public class NotificationManager {
         if (localLOGV) {
             Log.v(TAG, packageName + ": notify(" + i + ", " + notification + ")");
         }
-        Notification m116clone = notification.m116clone();
-        Notification.Builder.stripForDelivery(m116clone);
+        Notification m115clone = notification.m115clone();
+        Notification.Builder.stripForDelivery(m115clone);
         try {
-            service.enqueueNotificationWithTag(packageName, this.mContext.getOpPackageName(), str, i, m116clone, iArr, userHandle.getIdentifier());
+            service.enqueueNotificationWithTag(packageName, this.mContext.getOpPackageName(), str, i, m115clone, iArr, userHandle.getIdentifier());
             if (i != iArr[0]) {
                 Log.w(TAG, "notify: id corrupted: sent " + i + ", got back " + iArr[0]);
             }

@@ -10,13 +10,9 @@ import java.util.concurrent.TimeoutException;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/RequestFuture.class */
 public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Response.ErrorListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private VolleyError f24270a;
+    private VolleyError a;
     private T b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f24271c = false;
+    private boolean c = false;
     private Request<?> d;
 
     private RequestFuture() {
@@ -35,12 +31,12 @@ public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Respon
             r0 = r5
             monitor-enter(r0)
             r0 = r5
-            com.mokee.volley.VolleyError r0 = r0.f24270a     // Catch: java.lang.InterruptedException -> L15 java.lang.Throwable -> L18
+            com.mokee.volley.VolleyError r0 = r0.a     // Catch: java.lang.InterruptedException -> L15 java.lang.Throwable -> L18
             if (r0 == 0) goto L1d
             java.util.concurrent.ExecutionException r0 = new java.util.concurrent.ExecutionException     // Catch: java.lang.InterruptedException -> L15 java.lang.Throwable -> L18
             r1 = r0
             r2 = r5
-            com.mokee.volley.VolleyError r2 = r2.f24270a     // Catch: java.lang.InterruptedException -> L15 java.lang.Throwable -> L18
+            com.mokee.volley.VolleyError r2 = r2.a     // Catch: java.lang.InterruptedException -> L15 java.lang.Throwable -> L18
             r1.<init>(r2)     // Catch: java.lang.InterruptedException -> L15 java.lang.Throwable -> L18
             throw r0     // Catch: java.lang.InterruptedException -> L15 java.lang.Throwable -> L18
         L15:
@@ -55,7 +51,7 @@ public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Respon
             throw r0
         L1d:
             r0 = r5
-            boolean r0 = r0.f24271c     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L2d
+            boolean r0 = r0.c     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L2d
             if (r0 == 0) goto L30
             r0 = r5
             T r0 = r0.b     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L2d
@@ -93,12 +89,12 @@ public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Respon
             r0.wait(r1)     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L70
         L54:
             r0 = r5
-            com.mokee.volley.VolleyError r0 = r0.f24270a     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L67
+            com.mokee.volley.VolleyError r0 = r0.a     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L67
             if (r0 == 0) goto L73
             java.util.concurrent.ExecutionException r0 = new java.util.concurrent.ExecutionException     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L67
             r1 = r0
             r2 = r5
-            com.mokee.volley.VolleyError r2 = r2.f24270a     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L67
+            com.mokee.volley.VolleyError r2 = r2.a     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L67
             r1.<init>(r2)     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L67
             throw r0     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L67
         L67:
@@ -119,7 +115,7 @@ public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Respon
             throw r0     // Catch: java.lang.Throwable -> L18
         L73:
             r0 = r5
-            boolean r0 = r0.f24271c     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L82
+            boolean r0 = r0.c     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L82
             if (r0 != 0) goto L85
             java.util.concurrent.TimeoutException r0 = new java.util.concurrent.TimeoutException     // Catch: java.lang.Throwable -> L18 java.lang.InterruptedException -> L82
             r1 = r0
@@ -180,7 +176,7 @@ public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Respon
     public boolean isDone() {
         boolean z;
         synchronized (this) {
-            if (!this.f24271c && this.f24270a == null) {
+            if (!this.c && this.a == null) {
                 if (!isCancelled()) {
                     z = false;
                 }
@@ -193,7 +189,7 @@ public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Respon
     @Override // com.mokee.volley.Response.ErrorListener
     public void onErrorResponse(VolleyError volleyError) {
         synchronized (this) {
-            this.f24270a = volleyError;
+            this.a = volleyError;
             notifyAll();
         }
     }
@@ -201,7 +197,7 @@ public class RequestFuture<T> implements Future<T>, Response.Listener<T>, Respon
     @Override // com.mokee.volley.Response.Listener
     public void onResponse(T t) {
         synchronized (this) {
-            this.f24271c = true;
+            this.c = true;
             this.b = t;
             notifyAll();
         }

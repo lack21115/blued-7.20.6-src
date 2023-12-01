@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import com.blued.android.core.AppInfo;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeManager;
 import com.blued.android.module.common.web.jsbridge.CallBackFunction;
 import com.blued.android.module.common.web.jsbridge.CallJsModel;
@@ -38,8 +37,7 @@ public class WebHeadMenuFetcher implements DataFetcher {
                 Tracker.onClick(view2);
                 String json = AppInfo.f().toJson(new CallJsModel(str));
                 Log.v("drb", "控件点击：" + str + " -- " + json);
-                WebHeadMenuFetcher.this.bridgeManager.callHandler(LoaderConstants.NATIVE_TO_JS, json, new CallBackFunction() { // from class: com.soft.blued.ui.web.modelloader.fetcher.WebHeadMenuFetcher.2.1
-                    @Override // com.blued.android.module.common.web.jsbridge.CallBackFunction
+                WebHeadMenuFetcher.this.bridgeManager.callHandler("nativeToJs", json, new CallBackFunction() { // from class: com.soft.blued.ui.web.modelloader.fetcher.WebHeadMenuFetcher.2.1
                     public void onCallBack(String str2) {
                         Log.v("drb", str + "点击事件设置成功：" + str2);
                     }
@@ -48,7 +46,6 @@ public class WebHeadMenuFetcher implements DataFetcher {
         });
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher
     public void cancel() {
     }
 
@@ -59,7 +56,6 @@ public class WebHeadMenuFetcher implements DataFetcher {
     /* JADX WARN: Removed duplicated region for block: B:188:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:60:0x04ff  */
     /* JADX WARN: Removed duplicated region for block: B:66:0x0522  */
-    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

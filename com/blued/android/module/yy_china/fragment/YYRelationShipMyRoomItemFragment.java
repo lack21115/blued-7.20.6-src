@@ -37,27 +37,21 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRelationShipMyRoomItemFragment.class */
 public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelationShipMyRoomItemPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentYyMyRelationshipBinding f17423a;
+    private FragmentYyMyRelationshipBinding a;
     private final RelationShipMyRoomAdapter b = new RelationShipMyRoomAdapter(this);
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRelationShipRoomMode f17424c;
+    private YYRelationShipRoomMode c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYRelationShipMyRoomItemFragment$RelationShipMyRoomAdapter.class */
     public final class RelationShipMyRoomAdapter extends BaseMultiItemQuickAdapter<YYRelationShipRoomMyRoom, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRelationShipMyRoomItemFragment f17425a;
+        final /* synthetic */ YYRelationShipMyRoomItemFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public RelationShipMyRoomAdapter(YYRelationShipMyRoomItemFragment this$0) {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17425a = this$0;
+            this.a = this$0;
             addItemType(0, R.layout.item_yy_my_relation);
         }
 
@@ -91,7 +85,6 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YYRelationShipRoomMyRoom item) {
             Intrinsics.e(helper, "helper");
@@ -105,31 +98,31 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
     private final void b(boolean z) {
         SmartRefreshLayout smartRefreshLayout;
         SmartRefreshLayout smartRefreshLayout2;
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.f17423a;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.a;
         if (fragmentYyMyRelationshipBinding != null && (smartRefreshLayout2 = fragmentYyMyRelationshipBinding.d) != null) {
-            smartRefreshLayout2.j();
+            smartRefreshLayout2.g();
         }
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding2 = this.f17423a;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding2 = this.a;
         if (fragmentYyMyRelationshipBinding2 != null && (smartRefreshLayout = fragmentYyMyRelationshipBinding2.d) != null) {
             smartRefreshLayout.h();
         }
         LinearLayout linearLayout = null;
         if (this.b.getData().size() > 0) {
-            FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding3 = this.f17423a;
+            FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding3 = this.a;
             LinearLayout linearLayout2 = fragmentYyMyRelationshipBinding3 == null ? null : fragmentYyMyRelationshipBinding3.b;
             if (linearLayout2 == null) {
                 return;
             }
             linearLayout2.setVisibility(8);
         } else if (!z) {
-            FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding4 = this.f17423a;
+            FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding4 = this.a;
             LinearLayout linearLayout3 = fragmentYyMyRelationshipBinding4 == null ? null : fragmentYyMyRelationshipBinding4.b;
             if (linearLayout3 == null) {
                 return;
             }
             linearLayout3.setVisibility(0);
         } else {
-            FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding5 = this.f17423a;
+            FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding5 = this.a;
             if (fragmentYyMyRelationshipBinding5 != null) {
                 linearLayout = fragmentYyMyRelationshipBinding5.b;
             }
@@ -144,27 +137,25 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
         YYRelationShipRoomUiInfo resource_options;
         String icon_empty_data;
         SmartRefreshLayout smartRefreshLayout;
-        FragmentYyMyRelationshipBinding a2 = FragmentYyMyRelationshipBinding.a(this.i);
-        this.f17423a = a2;
-        RecyclerView recyclerView = a2 == null ? null : a2.f16530c;
+        FragmentYyMyRelationshipBinding a = FragmentYyMyRelationshipBinding.a(this.i);
+        this.a = a;
+        RecyclerView recyclerView = a == null ? null : a.c;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         }
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.f17423a;
-        RecyclerView recyclerView2 = fragmentYyMyRelationshipBinding == null ? null : fragmentYyMyRelationshipBinding.f16530c;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.a;
+        RecyclerView recyclerView2 = fragmentYyMyRelationshipBinding == null ? null : fragmentYyMyRelationshipBinding.c;
         if (recyclerView2 != null) {
             recyclerView2.setAdapter(this.b);
         }
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding2 = this.f17423a;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding2 = this.a;
         if (fragmentYyMyRelationshipBinding2 != null && (smartRefreshLayout = fragmentYyMyRelationshipBinding2.d) != null) {
             smartRefreshLayout.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYRelationShipMyRoomItemFragment$initView$1
-                @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
                 public void onLoadMore(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     YYRelationShipMyRoomItemFragment.this.j().f();
                 }
 
-                @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
                 public void onRefresh(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                     YYRelationShipMyRoomItemFragment.this.j().e();
@@ -172,32 +163,32 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
             });
         }
         ActivityFragmentActive fragmentActive = getFragmentActive();
-        YYRelationShipRoomMode yYRelationShipRoomMode = this.f17424c;
+        YYRelationShipRoomMode yYRelationShipRoomMode = this.c;
         String str = "";
         if (yYRelationShipRoomMode != null && (resource_options = yYRelationShipRoomMode.getResource_options()) != null && (icon_empty_data = resource_options.getIcon_empty_data()) != null) {
             str = icon_empty_data;
         }
-        ImageWrapper a3 = ImageLoader.a(fragmentActive, str);
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding3 = this.f17423a;
-        a3.a(fragmentYyMyRelationshipBinding3 == null ? null : fragmentYyMyRelationshipBinding3.f16529a);
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding4 = this.f17423a;
+        ImageWrapper a2 = ImageLoader.a(fragmentActive, str);
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding3 = this.a;
+        a2.a(fragmentYyMyRelationshipBinding3 == null ? null : fragmentYyMyRelationshipBinding3.a);
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding4 = this.a;
         TextView textView = fragmentYyMyRelationshipBinding4 == null ? null : fragmentYyMyRelationshipBinding4.e;
         if (textView != null) {
             StringBuilder sb = new StringBuilder();
             sb.append("暂无「");
-            YYRelationShipRoomMode yYRelationShipRoomMode2 = this.f17424c;
+            YYRelationShipRoomMode yYRelationShipRoomMode2 = this.c;
             sb.append((Object) (yYRelationShipRoomMode2 == null ? null : yYRelationShipRoomMode2.getRelation_name()));
             sb.append((char) 12301);
             textView.setText(sb.toString());
         }
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding5 = this.f17423a;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding5 = this.a;
         TextView textView2 = fragmentYyMyRelationshipBinding5 == null ? null : fragmentYyMyRelationshipBinding5.f;
         if (textView2 == null) {
             return;
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append("快去配对自己的「");
-        YYRelationShipRoomMode yYRelationShipRoomMode3 = this.f17424c;
+        YYRelationShipRoomMode yYRelationShipRoomMode3 = this.c;
         sb2.append((Object) (yYRelationShipRoomMode3 == null ? null : yYRelationShipRoomMode3.getRelation_name()));
         sb2.append("」吧～");
         textView2.setText(sb2.toString());
@@ -210,7 +201,7 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
     }
 
     public final void a(YYRelationShipRoomMode yYRelationShipRoomMode) {
-        this.f17424c = yYRelationShipRoomMode;
+        this.c = yYRelationShipRoomMode;
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
@@ -245,7 +236,7 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
     }
 
     public final YYRelationShipRoomMode b() {
-        return this.f17424c;
+        return this.c;
     }
 
     public final void c(String roomId) {
@@ -275,7 +266,7 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
         SmartRefreshLayout smartRefreshLayout;
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.f17423a;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.a;
         if (fragmentYyMyRelationshipBinding == null || (smartRefreshLayout = fragmentYyMyRelationshipBinding.d) == null) {
             return;
         }
@@ -286,21 +277,21 @@ public final class YYRelationShipMyRoomItemFragment extends MvpFragment<YYRelati
     public void o() {
         SmartRefreshLayout smartRefreshLayout;
         super.o();
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.f17423a;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.a;
         if (fragmentYyMyRelationshipBinding == null || (smartRefreshLayout = fragmentYyMyRelationshipBinding.d) == null) {
             return;
         }
-        smartRefreshLayout.l(true);
+        smartRefreshLayout.b(true);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         SmartRefreshLayout smartRefreshLayout;
         super.p();
-        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.f17423a;
+        FragmentYyMyRelationshipBinding fragmentYyMyRelationshipBinding = this.a;
         if (fragmentYyMyRelationshipBinding == null || (smartRefreshLayout = fragmentYyMyRelationshipBinding.d) == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 }

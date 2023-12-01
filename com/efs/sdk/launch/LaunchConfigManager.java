@@ -13,11 +13,11 @@ import java.util.Random;
 public class LaunchConfigManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f21801a = "LaunchConfigManager";
+    private final String f8194a = "LaunchConfigManager";
     private final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private EfsReporter f21802c;
+    private EfsReporter f8195c;
     private int d;
     private int e;
     private boolean f;
@@ -35,14 +35,14 @@ public class LaunchConfigManager {
         this.f = false;
         Context applicationContext = context.getApplicationContext();
         this.g = applicationContext;
-        this.f21802c = efsReporter;
+        this.f8195c = efsReporter;
         SharedPreferences sharedPreferences2 = applicationContext.getSharedPreferences("efs_launch", 0);
         if (sharedPreferences2 != null) {
             this.e = sharedPreferences2.getInt("apm_startperf_sampling_rate_last", 0);
         }
         SharedPreferences sharedPreferences3 = this.g.getSharedPreferences("efs_launch", 0);
         int i = sharedPreferences3 != null ? sharedPreferences3.getInt("apm_startperf_sampling_rate", -1) : -1;
-        this.f21802c.getAllSdkConfig(new String[]{"apm_startperf_sampling_rate"}, new IConfigCallback() { // from class: com.efs.sdk.launch.LaunchConfigManager.1
+        this.f8195c.getAllSdkConfig(new String[]{"apm_startperf_sampling_rate"}, new IConfigCallback() { // from class: com.efs.sdk.launch.LaunchConfigManager.1
             @Override // com.efs.sdk.base.observer.IConfigCallback
             public final void onChange(Map<String, Object> map) {
                 SharedPreferences sharedPreferences4;

@@ -8,7 +8,6 @@ import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.util.LruCache;
 import android.util.Printer;
-import com.alipay.sdk.util.e;
 import com.huawei.openalliance.ad.constant.bc;
 import com.igexin.push.core.b;
 import dalvik.system.BlockGuard;
@@ -62,7 +61,7 @@ public final class SQLiteConnection implements CancellationSignal.OnCancelListen
         }
 
         private String getStatus() {
-            return !this.mFinished ? "running" : this.mException != null ? e.f4661a : "succeeded";
+            return !this.mFinished ? "running" : this.mException != null ? "failed" : "succeeded";
         }
 
         public void describe(StringBuilder sb, boolean z) {

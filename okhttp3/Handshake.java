@@ -1,6 +1,5 @@
 package okhttp3;
 
-import com.blued.das.live.LiveProtos;
 import java.io.IOException;
 import java.security.Principal;
 import java.security.cert.Certificate;
@@ -45,9 +44,9 @@ public final class Handshake {
                 } catch (SSLPeerUnverifiedException e) {
                     certificateArr = null;
                 }
-                List a2 = certificateArr != null ? Util.a(certificateArr) : Collections.emptyList();
+                List a = certificateArr != null ? Util.a(certificateArr) : Collections.emptyList();
                 Certificate[] localCertificates = sSLSession.getLocalCertificates();
-                return new Handshake(forJavaName2, forJavaName, a2, localCertificates != null ? Util.a(localCertificates) : Collections.emptyList());
+                return new Handshake(forJavaName2, forJavaName, a, localCertificates != null ? Util.a(localCertificates) : Collections.emptyList());
             }
             throw new IllegalStateException("tlsVersion == null");
         }
@@ -90,7 +89,7 @@ public final class Handshake {
     }
 
     public int hashCode() {
-        return ((((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + this.tlsVersion.hashCode()) * 31) + this.cipherSuite.hashCode()) * 31) + this.peerCertificates.hashCode()) * 31) + this.localCertificates.hashCode();
+        return ((((((527 + this.tlsVersion.hashCode()) * 31) + this.cipherSuite.hashCode()) * 31) + this.peerCertificates.hashCode()) * 31) + this.localCertificates.hashCode();
     }
 
     public List<Certificate> localCertificates() {

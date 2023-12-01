@@ -18,11 +18,11 @@ public class NewLineInlineProcessor extends InlineProcessor {
         if (k instanceof Text) {
             Text text = (Text) k;
             if (text.a().endsWith(" ")) {
-                String a2 = text.a();
-                Matcher matcher = FINAL_SPACE.matcher(a2);
+                String a = text.a();
+                Matcher matcher = FINAL_SPACE.matcher(a);
                 int end = matcher.find() ? matcher.end() - matcher.start() : 0;
                 if (end > 0) {
-                    text.a(a2.substring(0, a2.length() - end));
+                    text.a(a.substring(0, a.length() - end));
                 }
                 return end >= 2 ? new HardLineBreak() : new SoftLineBreak();
             }

@@ -25,8 +25,8 @@ import java.util.List;
 public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements PKProgressUpdateExtraOrBuilder {
     private static final PKProgressUpdateExtra DEFAULT_INSTANCE = new PKProgressUpdateExtra();
     private static final Parser<PKProgressUpdateExtra> PARSER = new AbstractParser<PKProgressUpdateExtra>() { // from class: cn.irisgw.live.PKProgressUpdateExtra.1
-        @Override // com.google.protobuf.Parser
-        public PKProgressUpdateExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public PKProgressUpdateExtra m6505parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new PKProgressUpdateExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -55,8 +55,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         private int uid_;
         private static final BattleTopUser DEFAULT_INSTANCE = new BattleTopUser();
         private static final Parser<BattleTopUser> PARSER = new AbstractParser<BattleTopUser>() { // from class: cn.irisgw.live.PKProgressUpdateExtra.BattleTopUser.1
-            @Override // com.google.protobuf.Parser
-            public BattleTopUser parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public BattleTopUser m6514parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new BattleTopUser(codedInputStream, extensionRegistryLite);
             }
         };
@@ -88,22 +88,22 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 boolean unused = BattleTopUser.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m6516addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public BattleTopUser build() {
-                BattleTopUser buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public BattleTopUser m6518build() {
+                BattleTopUser m6520buildPartial = m6520buildPartial();
+                if (m6520buildPartial.isInitialized()) {
+                    return m6520buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m6520buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public BattleTopUser buildPartial() {
+            /* renamed from: buildPartial */
+            public BattleTopUser m6520buildPartial() {
                 BattleTopUser battleTopUser = new BattleTopUser(this);
                 battleTopUser.uid_ = this.uid_;
                 battleTopUser.avatar_ = this.avatar_;
@@ -112,8 +112,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return battleTopUser;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m6524clear() {
                 super.clear();
                 this.uid_ = 0;
                 this.avatar_ = "";
@@ -127,8 +127,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m6526clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -138,8 +138,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m6529clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -149,10 +149,9 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m6535clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.PKProgressUpdateExtra.BattleTopUserOrBuilder
@@ -177,12 +176,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public BattleTopUser getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public BattleTopUser m6537getDefaultInstanceForType() {
                 return BattleTopUser.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_PKProgressUpdateExtra_BattleTopUser_descriptor;
             }
@@ -214,12 +212,10 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this.uid_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_PKProgressUpdateExtra_BattleTopUser_fieldAccessorTable.ensureFieldAccessorsInitialized(BattleTopUser.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -239,18 +235,18 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                     this.name_ = battleTopUser.name_;
                     onChanged();
                 }
-                mergeUnknownFields(battleTopUser.unknownFields);
+                m6546mergeUnknownFields(battleTopUser.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.PKProgressUpdateExtra.BattleTopUser.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.PKProgressUpdateExtra.BattleTopUser.Builder m6543mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -295,11 +291,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PKProgressUpdateExtra.BattleTopUser.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PKProgressUpdateExtra$BattleTopUser$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PKProgressUpdateExtra.BattleTopUser.Builder.m6543mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PKProgressUpdateExtra$BattleTopUser$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m6542mergeFrom(Message message) {
                 if (message instanceof BattleTopUser) {
                     return mergeFrom((BattleTopUser) message);
                 }
@@ -307,8 +303,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m6546mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -331,8 +327,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m6548setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -355,8 +351,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m6550setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -366,8 +362,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m6552setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -428,66 +424,65 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m6513toBuilder();
         }
 
         public static Builder newBuilder(BattleTopUser battleTopUser) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(battleTopUser);
+            return DEFAULT_INSTANCE.m6513toBuilder().mergeFrom(battleTopUser);
         }
 
         public static BattleTopUser parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (BattleTopUser) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static BattleTopUser parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (BattleTopUser) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static BattleTopUser parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (BattleTopUser) PARSER.parseFrom(byteString);
         }
 
         public static BattleTopUser parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (BattleTopUser) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static BattleTopUser parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (BattleTopUser) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static BattleTopUser parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (BattleTopUser) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static BattleTopUser parseFrom(InputStream inputStream) throws IOException {
-            return (BattleTopUser) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static BattleTopUser parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (BattleTopUser) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static BattleTopUser parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (BattleTopUser) PARSER.parseFrom(byteBuffer);
         }
 
         public static BattleTopUser parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (BattleTopUser) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static BattleTopUser parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (BattleTopUser) PARSER.parseFrom(bArr);
         }
 
         public static BattleTopUser parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (BattleTopUser) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<BattleTopUser> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -521,8 +516,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public BattleTopUser getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public BattleTopUser m6508getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -548,12 +543,10 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<BattleTopUser> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -582,12 +575,10 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -597,12 +588,10 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_PKProgressUpdateExtra_BattleTopUser_fieldAccessorTable.ensureFieldAccessorsInitialized(BattleTopUser.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -615,28 +604,26 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m6511newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m6510newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new BattleTopUser();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m6513toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.uid_;
             if (i != 0) {
@@ -742,7 +729,7 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this;
             }
             ensureTargetTopIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.targetTop_);
+            AbstractMessageLite.Builder.addAll(iterable, this.targetTop_);
             onChanged();
             return this;
         }
@@ -754,24 +741,24 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 return this;
             }
             ensureTopIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.top_);
+            AbstractMessageLite.Builder.addAll(iterable, this.top_);
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m6554addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
         public Builder addTargetTop(int i, BattleTopUser.Builder builder) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.targetTopBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m6518build());
                 return this;
             }
             ensureTargetTopIsMutable();
-            this.targetTop_.add(i, builder.build());
+            this.targetTop_.add(i, builder.m6518build());
             onChanged();
             return this;
         }
@@ -794,11 +781,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         public Builder addTargetTop(BattleTopUser.Builder builder) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.targetTopBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m6518build());
                 return this;
             }
             ensureTargetTopIsMutable();
-            this.targetTop_.add(builder.build());
+            this.targetTop_.add(builder.m6518build());
             onChanged();
             return this;
         }
@@ -829,11 +816,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         public Builder addTop(int i, BattleTopUser.Builder builder) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.topBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m6518build());
                 return this;
             }
             ensureTopIsMutable();
-            this.top_.add(i, builder.build());
+            this.top_.add(i, builder.m6518build());
             onChanged();
             return this;
         }
@@ -856,11 +843,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         public Builder addTop(BattleTopUser.Builder builder) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.topBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m6518build());
                 return this;
             }
             ensureTopIsMutable();
-            this.top_.add(builder.build());
+            this.top_.add(builder.m6518build());
             onChanged();
             return this;
         }
@@ -888,17 +875,17 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return getTopFieldBuilder().addBuilder(i, BattleTopUser.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public PKProgressUpdateExtra build() {
-            PKProgressUpdateExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public PKProgressUpdateExtra m6556build() {
+            PKProgressUpdateExtra m6558buildPartial = m6558buildPartial();
+            if (m6558buildPartial.isInitialized()) {
+                return m6558buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m6558buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public PKProgressUpdateExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public PKProgressUpdateExtra m6558buildPartial() {
             PKProgressUpdateExtra pKProgressUpdateExtra = new PKProgressUpdateExtra(this);
             pKProgressUpdateExtra.uid_ = this.uid_;
             pKProgressUpdateExtra.score_ = this.score_;
@@ -927,8 +914,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return pKProgressUpdateExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m6562clear() {
             super.clear();
             this.uid_ = 0;
             this.score_ = 0;
@@ -950,13 +937,13 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m6564clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m6567clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -1002,18 +989,16 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m6573clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public PKProgressUpdateExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public PKProgressUpdateExtra m6575getDefaultInstanceForType() {
             return PKProgressUpdateExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_PKProgressUpdateExtra_descriptor;
         }
@@ -1052,7 +1037,7 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         @Override // cn.irisgw.live.PKProgressUpdateExtraOrBuilder
         public BattleTopUserOrBuilder getTargetTopOrBuilder(int i) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.targetTopBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.targetTop_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.targetTop_.get(i) : (BattleTopUserOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.PKProgressUpdateExtraOrBuilder
@@ -1090,7 +1075,7 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         @Override // cn.irisgw.live.PKProgressUpdateExtraOrBuilder
         public BattleTopUserOrBuilder getTopOrBuilder(int i) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.topBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.top_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.top_.get(i) : (BattleTopUserOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.PKProgressUpdateExtraOrBuilder
@@ -1109,12 +1094,10 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_PKProgressUpdateExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(PKProgressUpdateExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1180,18 +1163,18 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                     this.targetTopBuilder_.addAllMessages(pKProgressUpdateExtra.targetTop_);
                 }
             }
-            mergeUnknownFields(pKProgressUpdateExtra.unknownFields);
+            m6584mergeUnknownFields(pKProgressUpdateExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.PKProgressUpdateExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.PKProgressUpdateExtra.Builder m6581mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1236,11 +1219,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PKProgressUpdateExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PKProgressUpdateExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PKProgressUpdateExtra.Builder.m6581mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PKProgressUpdateExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m6580mergeFrom(Message message) {
             if (message instanceof PKProgressUpdateExtra) {
                 return mergeFrom((PKProgressUpdateExtra) message);
             }
@@ -1248,8 +1231,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m6584mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1277,13 +1260,13 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m6586setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m6588setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -1296,11 +1279,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         public Builder setTargetTop(int i, BattleTopUser.Builder builder) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.targetTopBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m6518build());
                 return this;
             }
             ensureTargetTopIsMutable();
-            this.targetTop_.set(i, builder.build());
+            this.targetTop_.set(i, builder.m6518build());
             onChanged();
             return this;
         }
@@ -1323,11 +1306,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         public Builder setTop(int i, BattleTopUser.Builder builder) {
             RepeatedFieldBuilderV3<BattleTopUser, BattleTopUser.Builder, BattleTopUserOrBuilder> repeatedFieldBuilderV3 = this.topBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m6518build());
                 return this;
             }
             ensureTopIsMutable();
-            this.top_.set(i, builder.build());
+            this.top_.set(i, builder.m6518build());
             onChanged();
             return this;
         }
@@ -1359,8 +1342,8 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m6590setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1452,66 +1435,65 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m6504toBuilder();
     }
 
     public static Builder newBuilder(PKProgressUpdateExtra pKProgressUpdateExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(pKProgressUpdateExtra);
+        return DEFAULT_INSTANCE.m6504toBuilder().mergeFrom(pKProgressUpdateExtra);
     }
 
     public static PKProgressUpdateExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (PKProgressUpdateExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static PKProgressUpdateExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PKProgressUpdateExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static PKProgressUpdateExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (PKProgressUpdateExtra) PARSER.parseFrom(byteString);
     }
 
     public static PKProgressUpdateExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (PKProgressUpdateExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static PKProgressUpdateExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (PKProgressUpdateExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static PKProgressUpdateExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PKProgressUpdateExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static PKProgressUpdateExtra parseFrom(InputStream inputStream) throws IOException {
-        return (PKProgressUpdateExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static PKProgressUpdateExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PKProgressUpdateExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static PKProgressUpdateExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (PKProgressUpdateExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static PKProgressUpdateExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (PKProgressUpdateExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static PKProgressUpdateExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (PKProgressUpdateExtra) PARSER.parseFrom(bArr);
     }
 
     public static PKProgressUpdateExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (PKProgressUpdateExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<PKProgressUpdateExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1523,12 +1505,11 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public PKProgressUpdateExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public PKProgressUpdateExtra m6499getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<PKProgressUpdateExtra> getParserForType() {
         return PARSER;
     }
@@ -1538,7 +1519,6 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         return this.score_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i;
         int i2;
@@ -1636,12 +1616,10 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1660,12 +1638,10 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_PKProgressUpdateExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(PKProgressUpdateExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1678,28 +1654,26 @@ public final class PKProgressUpdateExtra extends GeneratedMessageV3 implements P
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m6502newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m6501newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new PKProgressUpdateExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m6504toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         int i2 = this.uid_;

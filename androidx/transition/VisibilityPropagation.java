@@ -6,7 +6,7 @@ import android.view.View;
 public abstract class VisibilityPropagation extends TransitionPropagation {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String[] f3516a = {"android:visibilityPropagation:visibility", "android:visibilityPropagation:center"};
+    private static final String[] f3468a = {"android:visibilityPropagation:visibility", "android:visibilityPropagation:center"};
 
     private static int a(TransitionValues transitionValues, int i) {
         int[] iArr;
@@ -35,7 +35,7 @@ public abstract class VisibilityPropagation extends TransitionPropagation {
 
     @Override // androidx.transition.TransitionPropagation
     public String[] getPropagationProperties() {
-        return f3516a;
+        return f3468a;
     }
 
     public int getViewVisibility(TransitionValues transitionValues) {

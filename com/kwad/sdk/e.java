@@ -37,7 +37,7 @@ public final class e {
 
         @Override // com.kwad.sdk.service.kwai.a
         public final void h(Context context, AdTemplate adTemplate) {
-            com.kwad.components.core.d.b.a.a(new a.C0519a(context).I(adTemplate).aq(true));
+            com.kwad.components.core.d.b.a.a(new a.C0349a(context).I(adTemplate).aq(true));
         }
     }
 

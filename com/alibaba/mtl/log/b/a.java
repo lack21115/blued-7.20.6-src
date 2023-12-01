@@ -3,13 +3,12 @@ package com.alibaba.mtl.log.b;
 import android.text.TextUtils;
 import com.alibaba.mtl.log.e.i;
 import com.alibaba.mtl.log.e.l;
+import com.android.internal.util.cm.QSConstants;
 import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/b/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static StringBuilder f4483a = new StringBuilder();
+    private static StringBuilder a = new StringBuilder();
     private static volatile long e;
     private static long f;
     private static long g;
@@ -73,7 +72,7 @@ public class a {
 
     private static void D() {
         String u2 = l.u();
-        if ("wifi".equalsIgnoreCase(u2)) {
+        if (QSConstants.TILE_WIFI.equalsIgnoreCase(u2)) {
             m++;
         } else if ("3G".equalsIgnoreCase(u2)) {
             k++;
@@ -122,10 +121,10 @@ public class a {
                         if (!"6005".equalsIgnoreCase(aVar.T)) {
                             i7 = i3 + 1;
                         }
-                        f4483a.append(aVar.X);
+                        a.append(aVar.X);
                         i6 = i7;
                         if (i4 != list.size() - 1) {
-                            f4483a.append(",");
+                            a.append(",");
                             i6 = i7;
                         }
                     }

@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import com.blued.android.core.ui.TerminalActivity;
-import com.blued.android.module.live_china.model.LiveRoomData;
 import com.soft.blued.log.InstantLog;
 import com.soft.blued.ui.find.fragment.VisitHistoryFragment;
 import com.soft.blued.ui.live.LiveRoomInfoChannel;
@@ -41,19 +40,19 @@ public class HomeArgumentHelper {
         if (a2 != null) {
             String string = a2.getString("arg_open_homeactivity_ope");
             if ("ope_liveplay".equals(string)) {
-                LiveRoomInfoChannel.a(context, (LiveRoomData) a2.getSerializable("live_anchor_model"));
+                LiveRoomInfoChannel.a(context, a2.getSerializable("live_anchor_model"));
                 ChatHelperV4.a().a(6L);
                 ChatHelperV4.a().a(7L);
             } else if ("ope_livelist".equals(string)) {
             } else {
                 if ("ope_setting".equals(string)) {
-                    TerminalActivity.d(context, SettingFragment.class, null);
+                    TerminalActivity.d(context, SettingFragment.class, (Bundle) null);
                 } else if ("ope_notifications".equals(string)) {
                     TerminalActivity.d(context, MsgAttentionNotifyFragment.class, a2);
                 } else if ("ope_visitors".equals(string)) {
-                    TerminalActivity.d(context, VisitHistoryFragment.class, null);
+                    TerminalActivity.d(context, VisitHistoryFragment.class, (Bundle) null);
                 } else if ("ope_group_notification".equals(string)) {
-                    TerminalActivity.d(context, GroupNoticeNewFragment.class, null);
+                    TerminalActivity.d(context, GroupNoticeNewFragment.class, (Bundle) null);
                 }
             }
         }

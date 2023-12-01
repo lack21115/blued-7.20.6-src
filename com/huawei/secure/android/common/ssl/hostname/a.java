@@ -9,19 +9,19 @@ import javax.security.auth.x500.X500Principal;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f23121a;
+    private final String f9513a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23122c;
+    private int f9514c;
     private int d;
     private int e;
     private int f;
     private char[] g;
 
     public a(X500Principal x500Principal) {
-        String name = x500Principal.getName(X500Principal.RFC2253);
-        this.f23121a = name;
+        String name = x500Principal.getName("RFC2253");
+        this.f9513a = name;
         this.b = name.length();
     }
 
@@ -30,7 +30,7 @@ public class a {
         int i3;
         int i4 = i + 1;
         if (i4 >= this.b) {
-            throw new IllegalStateException("Malformed DN: " + this.f23121a);
+            throw new IllegalStateException("Malformed DN: " + this.f9513a);
         }
         char c2 = this.g[i];
         if (c2 >= '0' && c2 <= '9') {
@@ -38,7 +38,7 @@ public class a {
         } else if (c2 >= 'a' && c2 <= 'f') {
             i2 = c2 - 'W';
         } else if (c2 < 'A' || c2 > 'F') {
-            throw new IllegalStateException("Malformed DN: " + this.f23121a);
+            throw new IllegalStateException("Malformed DN: " + this.f9513a);
         } else {
             i2 = c2 - '7';
         }
@@ -48,7 +48,7 @@ public class a {
         } else if (c3 >= 'a' && c3 <= 'f') {
             i3 = c3 - 'W';
         } else if (c3 < 'A' || c3 > 'F') {
-            throw new IllegalStateException("Malformed DN: " + this.f23121a);
+            throw new IllegalStateException("Malformed DN: " + this.f9513a);
         } else {
             i3 = c3 - '7';
         }
@@ -75,10 +75,10 @@ public class a {
     }
 
     private char b() {
-        int i = this.f23122c + 1;
-        this.f23122c = i;
+        int i = this.f9514c + 1;
+        this.f9514c = i;
         if (i == this.b) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f23121a);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f9513a);
         }
         char[] cArr = this.g;
         char c2 = cArr[i];
@@ -106,8 +106,8 @@ public class a {
     private char c() {
         int i;
         int i2;
-        int a2 = a(this.f23122c);
-        this.f23122c++;
+        int a2 = a(this.f9514c);
+        this.f9514c++;
         if (a2 < 128) {
             return (char) a2;
         }
@@ -130,15 +130,15 @@ public class a {
             if (i4 >= i) {
                 return (char) i2;
             }
-            int i5 = this.f23122c + 1;
-            this.f23122c = i5;
+            int i5 = this.f9514c + 1;
+            this.f9514c = i5;
             if (i5 == this.b || this.g[i5] != '\\') {
                 return '?';
             }
             int i6 = i5 + 1;
-            this.f23122c = i6;
+            this.f9514c = i6;
             int a3 = a(i6);
-            this.f23122c++;
+            this.f9514c++;
             if ((a3 & 192) != 128) {
                 return '?';
             }
@@ -148,14 +148,14 @@ public class a {
     }
 
     private String d() {
-        int i = this.f23122c;
+        int i = this.f9514c;
         if (i + 4 >= this.b) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f23121a);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f9513a);
         }
         this.d = i;
-        this.f23122c = i + 1;
+        this.f9514c = i + 1;
         while (true) {
-            int i2 = this.f23122c;
+            int i2 = this.f9514c;
             if (i2 == this.b) {
                 break;
             }
@@ -164,27 +164,27 @@ public class a {
                 break;
             } else if (cArr[i2] == ' ') {
                 this.e = i2;
-                this.f23122c = i2 + 1;
+                this.f9514c = i2 + 1;
                 while (true) {
-                    int i3 = this.f23122c;
+                    int i3 = this.f9514c;
                     if (i3 >= this.b || this.g[i3] != ' ') {
                         break;
                     }
-                    this.f23122c = i3 + 1;
+                    this.f9514c = i3 + 1;
                 }
             } else {
                 if (cArr[i2] >= 'A' && cArr[i2] <= 'F') {
                     cArr[i2] = (char) (cArr[i2] + ' ');
                 }
-                this.f23122c++;
+                this.f9514c++;
             }
         }
-        this.e = this.f23122c;
+        this.e = this.f9514c;
         int i4 = this.e;
         int i5 = this.d;
         int i6 = i4 - i5;
         if (i6 < 5 || (i6 & 1) == 0) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f23121a);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f9513a);
         }
         int i7 = i6 / 2;
         byte[] bArr = new byte[i7];
@@ -198,20 +198,20 @@ public class a {
 
     private String e() {
         while (true) {
-            int i = this.f23122c;
+            int i = this.f9514c;
             if (i >= this.b || this.g[i] != ' ') {
                 break;
             }
-            this.f23122c = i + 1;
+            this.f9514c = i + 1;
         }
-        int i2 = this.f23122c;
+        int i2 = this.f9514c;
         if (i2 == this.b) {
             return null;
         }
         this.d = i2;
-        this.f23122c = i2 + 1;
+        this.f9514c = i2 + 1;
         while (true) {
-            int i3 = this.f23122c;
+            int i3 = this.f9514c;
             if (i3 >= this.b) {
                 break;
             }
@@ -219,16 +219,16 @@ public class a {
             if (cArr[i3] == '=' || cArr[i3] == ' ') {
                 break;
             }
-            this.f23122c = i3 + 1;
+            this.f9514c = i3 + 1;
         }
-        int i4 = this.f23122c;
+        int i4 = this.f9514c;
         if (i4 >= this.b) {
-            throw new IllegalStateException("Unexpected end of DN: " + this.f23121a);
+            throw new IllegalStateException("Unexpected end of DN: " + this.f9513a);
         }
         this.e = i4;
         if (this.g[i4] == ' ') {
             while (true) {
-                int i5 = this.f23122c;
+                int i5 = this.f9514c;
                 if (i5 >= this.b) {
                     break;
                 }
@@ -236,21 +236,21 @@ public class a {
                 if (cArr2[i5] == '=' || cArr2[i5] != ' ') {
                     break;
                 }
-                this.f23122c = i5 + 1;
+                this.f9514c = i5 + 1;
             }
             char[] cArr3 = this.g;
-            int i6 = this.f23122c;
+            int i6 = this.f9514c;
             if (cArr3[i6] != '=' || i6 == this.b) {
-                throw new IllegalStateException("Unexpected end of DN: " + this.f23121a);
+                throw new IllegalStateException("Unexpected end of DN: " + this.f9513a);
             }
         }
-        this.f23122c++;
+        this.f9514c++;
         while (true) {
-            int i7 = this.f23122c;
+            int i7 = this.f9514c;
             if (i7 >= this.b || this.g[i7] != ' ') {
                 break;
             }
-            this.f23122c = i7 + 1;
+            this.f9514c = i7 + 1;
         }
         int i8 = this.e;
         int i9 = this.d;
@@ -274,24 +274,24 @@ public class a {
     }
 
     private String f() {
-        int i = this.f23122c + 1;
-        this.f23122c = i;
+        int i = this.f9514c + 1;
+        this.f9514c = i;
         this.d = i;
         this.e = i;
         while (true) {
-            int i2 = this.f23122c;
+            int i2 = this.f9514c;
             if (i2 == this.b) {
-                throw new IllegalStateException("Unexpected end of DN: " + this.f23121a);
+                throw new IllegalStateException("Unexpected end of DN: " + this.f9513a);
             }
             char[] cArr = this.g;
             if (cArr[i2] == '\"') {
-                this.f23122c = i2 + 1;
+                this.f9514c = i2 + 1;
                 while (true) {
-                    int i3 = this.f23122c;
+                    int i3 = this.f9514c;
                     if (i3 >= this.b || this.g[i3] != ' ') {
                         break;
                     }
-                    this.f23122c = i3 + 1;
+                    this.f9514c = i3 + 1;
                 }
                 char[] cArr2 = this.g;
                 int i4 = this.d;
@@ -302,24 +302,24 @@ public class a {
             } else {
                 cArr[this.e] = cArr[i2];
             }
-            this.f23122c++;
+            this.f9514c++;
             this.e++;
         }
     }
 
     public String a(String str) {
-        this.f23122c = 0;
+        this.f9514c = 0;
         this.d = 0;
         this.e = 0;
         this.f = 0;
-        this.g = this.f23121a.toCharArray();
+        this.g = this.f9513a.toCharArray();
         String e = e();
         String str2 = e;
         if (e == null) {
             return null;
         }
         do {
-            int i = this.f23122c;
+            int i = this.f9514c;
             if (i == this.b) {
                 return null;
             }
@@ -328,26 +328,26 @@ public class a {
             if (str.equalsIgnoreCase(str2)) {
                 return a2;
             }
-            int i2 = this.f23122c;
+            int i2 = this.f9514c;
             if (i2 >= this.b) {
                 return null;
             }
             char[] cArr = this.g;
             if (cArr[i2] != ',' && cArr[i2] != ';' && cArr[i2] != '+') {
-                throw new IllegalStateException("Malformed DN: " + this.f23121a);
+                throw new IllegalStateException("Malformed DN: " + this.f9513a);
             }
-            this.f23122c++;
+            this.f9514c++;
             str2 = e();
         } while (str2 != null);
-        throw new IllegalStateException("Malformed DN: " + this.f23121a);
+        throw new IllegalStateException("Malformed DN: " + this.f9513a);
     }
 
     public List<String> b(String str) {
-        this.f23122c = 0;
+        this.f9514c = 0;
         this.d = 0;
         this.e = 0;
         this.f = 0;
-        this.g = this.f23121a.toCharArray();
+        this.g = this.f9513a.toCharArray();
         List<String> emptyList = Collections.emptyList();
         String e = e();
         List<String> list = emptyList;
@@ -356,7 +356,7 @@ public class a {
             return emptyList;
         }
         while (true) {
-            int i = this.f23122c;
+            int i = this.f9514c;
             if (i >= this.b) {
                 return list;
             }
@@ -371,18 +371,18 @@ public class a {
                 arrayList.add(a2);
                 list2 = arrayList;
             }
-            int i2 = this.f23122c;
+            int i2 = this.f9514c;
             if (i2 >= this.b) {
                 return list2;
             }
             char[] cArr = this.g;
             if (cArr[i2] != ',' && cArr[i2] != ';' && cArr[i2] != '+') {
-                throw new IllegalStateException("Malformed DN: " + this.f23121a);
+                throw new IllegalStateException("Malformed DN: " + this.f9513a);
             }
-            this.f23122c++;
+            this.f9514c++;
             str2 = e();
             if (str2 == null) {
-                throw new IllegalStateException("Malformed DN: " + this.f23121a);
+                throw new IllegalStateException("Malformed DN: " + this.f9513a);
             }
             list = list2;
         }

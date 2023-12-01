@@ -19,7 +19,6 @@ import com.blued.android.framework.view.badgeview.DisplayUtil;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.model.LiveGiftScrawlModel;
 import com.blued.android.module.live_china.model.LiveGiftScrawlTransModel;
-import com.igexin.push.config.c;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,13 +28,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/LiveGiftScrawlPlayView.class */
 public class LiveGiftScrawlPlayView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f13865a;
+    int a;
     float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    float f13866c;
+    float c;
     private Paint d;
     private int e;
     private int f;
@@ -82,7 +77,7 @@ public class LiveGiftScrawlPlayView extends View {
         this.u = 25;
         this.v = 0.04f;
         this.w = 0.01f;
-        this.f13865a = 0;
+        this.a = 0;
         this.y = false;
         b();
     }
@@ -104,7 +99,7 @@ public class LiveGiftScrawlPlayView extends View {
         this.u = 25;
         this.v = 0.04f;
         this.w = 0.01f;
-        this.f13865a = 0;
+        this.a = 0;
         this.y = false;
         b();
     }
@@ -126,7 +121,7 @@ public class LiveGiftScrawlPlayView extends View {
         this.u = 25;
         this.v = 0.04f;
         this.w = 0.01f;
-        this.f13865a = 0;
+        this.a = 0;
         this.y = false;
         b();
     }
@@ -148,7 +143,7 @@ public class LiveGiftScrawlPlayView extends View {
         this.u = 25;
         this.v = 0.04f;
         this.w = 0.01f;
-        this.f13865a = 0;
+        this.a = 0;
         this.y = false;
         b();
     }
@@ -204,7 +199,7 @@ public class LiveGiftScrawlPlayView extends View {
         this.i.addAll(liveGiftScrawlTransModel.goods);
         int i6 = this.l;
         if (i6 > 100) {
-            this.q = c.j;
+            this.q = 1500L;
         } else if (i6 > 50) {
             this.q = 1000L;
         }
@@ -218,10 +213,10 @@ public class LiveGiftScrawlPlayView extends View {
             bitmap = this.g;
         } else {
             int i = this.h;
-            Bitmap a2 = ImageUtils.a(file, i, i);
-            if (a2 != null) {
+            Bitmap a = ImageUtils.a(file, i, i);
+            if (a != null) {
                 int i2 = this.h;
-                bitmap = Bitmap.createScaledBitmap(a2, i2, i2, false);
+                bitmap = Bitmap.createScaledBitmap(a, i2, i2, false);
             } else {
                 bitmap = null;
             }
@@ -241,7 +236,7 @@ public class LiveGiftScrawlPlayView extends View {
     }
 
     private void b() {
-        int a2 = DisplayUtil.a(getContext(), 1.0f);
+        int a = DisplayUtil.a(getContext(), 1.0f);
         this.h = DisplayUtil.a(getContext(), 40.0f);
         Bitmap decodeResource = BitmapFactory.decodeResource(getResources(), R.drawable.gift_default_icon);
         int i = this.h;
@@ -250,7 +245,7 @@ public class LiveGiftScrawlPlayView extends View {
         this.d = paint;
         paint.setAntiAlias(true);
         this.d.setDither(true);
-        this.d.setStrokeWidth(a2);
+        this.d.setStrokeWidth(a);
         this.d.setStyle(Paint.Style.STROKE);
         this.s.top = 0;
         this.s.left = 0;
@@ -322,7 +317,7 @@ public class LiveGiftScrawlPlayView extends View {
         if (this.i.size() <= 0) {
             canvas.drawColor(0);
         } else if (this.o < this.l) {
-            this.f13865a = 0;
+            this.a = 0;
             for (LiveGiftScrawlModel liveGiftScrawlModel : this.i) {
                 Bitmap bitmap = this.j.get(liveGiftScrawlModel.images_static);
                 Bitmap bitmap2 = bitmap;
@@ -331,14 +326,14 @@ public class LiveGiftScrawlPlayView extends View {
                 }
                 if (bitmap2 != null) {
                     for (Point point : liveGiftScrawlModel.getPath()) {
-                        if (this.f13865a > this.o) {
+                        if (this.a > this.o) {
                             break;
                         }
                         canvas.drawBitmap(bitmap2, point.x, point.y, this.d);
-                        this.f13865a++;
+                        this.a++;
                     }
                 }
-                if (this.f13865a >= this.o) {
+                if (this.a >= this.o) {
                     break;
                 }
             }
@@ -373,15 +368,15 @@ public class LiveGiftScrawlPlayView extends View {
                     for (Point point2 : liveGiftScrawlModel2.getPath()) {
                         this.b = point2.x;
                         float f = point2.y;
-                        this.f13866c = f;
+                        this.c = f;
                         int i2 = this.r;
                         if (i2 > 0) {
                             float f2 = ((this.h * 0.01f) * i2) / 2.0f;
                             this.x = f2;
                             this.t.left = this.b - f2;
-                            this.t.top = this.f13866c - this.x;
+                            this.t.top = this.c - this.x;
                             this.t.right = this.b + this.h + this.x;
-                            this.t.bottom = this.f13866c + this.h + this.x;
+                            this.t.bottom = this.c + this.h + this.x;
                             canvas.drawBitmap(bitmap4, this.s, this.t, this.d);
                         } else {
                             canvas.drawBitmap(bitmap4, this.b, f, this.d);

@@ -1,6 +1,5 @@
 package com.efs.sdk.base.core.b;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.efs.sdk.base.core.controller.ControllerCenter;
 import com.efs.sdk.base.core.f.f;
 import com.efs.sdk.base.core.util.Log;
@@ -13,16 +12,16 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a */
-    public boolean f21725a;
+    public boolean f8119a;
     public boolean b;
 
     /* renamed from: c */
-    public com.efs.sdk.base.core.b.b f21726c;
-    public C0333a d;
+    public com.efs.sdk.base.core.b.b f8120c;
+    public C0163a d;
 
     /* renamed from: com.efs.sdk.base.core.b.a$a */
     /* loaded from: source-7206380-dex2jar.jar:com/efs/sdk/base/core/b/a$a.class */
-    public static final class C0333a implements Comparator<File> {
+    public static final class C0163a implements Comparator<File> {
         @Override // java.util.Comparator
         public final /* synthetic */ int compare(File file, File file2) {
             int i = ((file.lastModified() - file2.lastModified()) > 0L ? 1 : ((file.lastModified() - file2.lastModified()) == 0L ? 0 : -1));
@@ -37,18 +36,18 @@ public final class a {
     public static final class b {
 
         /* renamed from: a */
-        private static final a f21727a = new a((byte) 0);
+        private static final a f8121a = new a((byte) 0);
 
         public static /* synthetic */ a a() {
-            return f21727a;
+            return f8121a;
         }
     }
 
     private a() {
-        this.f21725a = false;
+        this.f8119a = false;
         this.b = true;
-        this.f21726c = new com.efs.sdk.base.core.b.b();
-        this.d = new C0333a();
+        this.f8120c = new com.efs.sdk.base.core.b.b();
+        this.d = new C0163a();
     }
 
     /* synthetic */ a(byte b2) {
@@ -57,7 +56,7 @@ public final class a {
 
     public static boolean a(String str) {
         try {
-            long parseLong = Long.parseLong(str.substring(str.lastIndexOf(BridgeUtil.UNDERLINE_STR) + 1));
+            long parseLong = Long.parseLong(str.substring(str.lastIndexOf("_") + 1));
             com.efs.sdk.base.core.a.a.a();
             return Math.abs(com.efs.sdk.base.core.a.a.b() - parseLong) >= 604800000;
         } catch (Throwable th) {
@@ -68,8 +67,8 @@ public final class a {
     public static void b(File file) {
         com.efs.sdk.base.core.f.f fVar;
         if (!file.getName().startsWith("wa_")) {
-            fVar = f.a.f21781a;
-            fVar.f21780c.e();
+            fVar = f.a.f8175a;
+            fVar.f8174c.e();
         }
         com.efs.sdk.base.core.util.b.b(file);
     }
@@ -83,8 +82,8 @@ public final class a {
         sb.append(com.efs.sdk.base.core.a.a.b());
         Log.i("efs.cache", sb.toString());
         if (!file.getName().startsWith("wa_")) {
-            fVar = f.a.f21781a;
-            fVar.f21780c.d();
+            fVar = f.a.f8175a;
+            fVar.f8174c.d();
         }
         com.efs.sdk.base.core.util.b.b(file);
     }
@@ -101,7 +100,7 @@ public final class a {
                     b(file);
                     return null;
                 }
-                e a2 = this.f21726c.a(b2.f21764a.b);
+                e a2 = this.f8120c.a(b2.f8158a.b);
                 if (a2 == null) {
                     b(file);
                     return null;
@@ -146,7 +145,7 @@ public final class a {
                             if (b2 == null) {
                                 b(file2);
                             } else {
-                                e a2 = this.f21726c.a(b2.f21764a.b);
+                                e a2 = this.f8120c.a(b2.f8158a.b);
                                 if (a2 == null) {
                                     b(file2);
                                 } else {

@@ -12,7 +12,7 @@ import android.os.ParcelUuid;
 import android.os.Process;
 import android.os.RemoteException;
 import android.util.Log;
-import com.android.ims.ImsConferenceState;
+import com.efs.sdk.base.core.util.NetworkUtil;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.util.ArrayList;
 import java.util.List;
@@ -107,13 +107,13 @@ public final class BluetoothA2dp implements BluetoothProfile {
     public static String stateToString(int i) {
         switch (i) {
             case 0:
-                return "disconnected";
+                return NetworkUtil.NETWORK_CLASS_DISCONNECTED;
             case 1:
                 return "connecting";
             case 2:
                 return "connected";
             case 3:
-                return ImsConferenceState.STATUS_DISCONNECTING;
+                return "disconnecting";
             case 4:
             case 5:
             case 6:

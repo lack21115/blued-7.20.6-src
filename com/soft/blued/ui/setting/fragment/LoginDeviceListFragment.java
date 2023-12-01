@@ -36,11 +36,11 @@ import java.util.List;
 public class LoginDeviceListFragment extends BaseFragment implements CompoundButton.OnCheckedChangeListener, LoginDeviceListContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33406a;
+    private View f19715a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LoginDeviceListContract.IPresenter f33407c;
+    private LoginDeviceListContract.IPresenter f19716c;
     private LoginDeviceListAdapter d;
     private View e;
     private Dialog f;
@@ -54,7 +54,7 @@ public class LoginDeviceListFragment extends BaseFragment implements CompoundBut
     private boolean n;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, LoginDeviceListFragment.class, null);
+        TerminalActivity.d(context, LoginDeviceListFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -72,11 +72,11 @@ public class LoginDeviceListFragment extends BaseFragment implements CompoundBut
     }
 
     private void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33406a.findViewById(R.id.cttnt_title);
-        this.j = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.f19715a.findViewById(R.id.cttnt_title);
+        this.j = findViewById;
+        findViewById.a();
         this.j.setLeftImg(2131233902);
-        this.j.setCenterText(R.string.login_protection);
+        this.j.setCenterText((int) R.string.login_protection);
         this.j.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.LoginDeviceListFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -85,12 +85,12 @@ public class LoginDeviceListFragment extends BaseFragment implements CompoundBut
             }
         });
         this.f = DialogUtils.a(this.b);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.f33406a.findViewById(R.id.rptrlv_device_list);
-        this.k = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(false);
+        RenrenPullToRefreshListView findViewById2 = this.f19715a.findViewById(R.id.rptrlv_device_list);
+        this.k = findViewById2;
+        findViewById2.setRefreshEnabled(false);
         this.h = (ListView) this.k.getRefreshableView();
         this.m = new ArrayList();
-        this.d = new LoginDeviceListAdapter(this.b, this.f33407c, this.m);
+        this.d = new LoginDeviceListAdapter(this.b, this.f19716c, this.m);
         View inflate = LayoutInflater.from(this.b).inflate(R.layout.header_login_protection, (ViewGroup) this.h, false);
         this.e = inflate;
         this.g = (TextView) inflate.findViewById(R.id.tv_list_sticker);
@@ -178,7 +178,7 @@ public class LoginDeviceListFragment extends BaseFragment implements CompoundBut
         if (compoundButton.isPressed()) {
             BluedPreferences.J(z);
             if (z) {
-                this.f33407c.a("set", "");
+                this.f19716c.a("set", "");
                 return;
             }
             this.n = true;
@@ -187,8 +187,8 @@ public class LoginDeviceListFragment extends BaseFragment implements CompoundBut
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
                     LoginDeviceListFragment loginDeviceListFragment = LoginDeviceListFragment.this;
-                    loginDeviceListFragment.a(z, loginDeviceListFragment.f33407c.b());
-                    LoginDeviceListFragment.this.f33407c.a("close", "");
+                    loginDeviceListFragment.a(z, loginDeviceListFragment.f19716c.b());
+                    LoginDeviceListFragment.this.f19716c.a("close", "");
                 }
             }, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.LoginDeviceListFragment.7
                 @Override // android.content.DialogInterface.OnClickListener
@@ -205,30 +205,27 @@ public class LoginDeviceListFragment extends BaseFragment implements CompoundBut
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f33406a;
+        View view = this.f19715a;
         if (view == null) {
-            this.f33406a = layoutInflater.inflate(R.layout.fragment_login_device_list, viewGroup, false);
-            this.f33407c = new LoginDeviceListPresenter(this, getFragmentActive());
+            this.f19715a = layoutInflater.inflate(R.layout.fragment_login_device_list, viewGroup, false);
+            this.f19716c = new LoginDeviceListPresenter(this, getFragmentActive());
             d();
         } else {
-            ((ViewGroup) view.getParent()).removeView(this.f33406a);
+            ((ViewGroup) view.getParent()).removeView(this.f19715a);
         }
-        return this.f33406a;
+        return this.f19715a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
-        this.f33407c.ar_();
+        this.f19716c.ar_();
         this.l = LoginRegisterTools.b();
     }
 }

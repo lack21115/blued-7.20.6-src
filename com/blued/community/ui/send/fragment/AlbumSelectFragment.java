@@ -52,9 +52,7 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/AlbumSelectFragment.class */
 public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefreshObserver.IFeedRefreshObserver, AlbumTabsView.ITabsClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f19947a;
+    protected int a;
     private int d;
     private int e;
     private int f;
@@ -79,11 +77,11 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
             checkBox.setOnTouchListener(new SingleTouchProxy(new SingleTouchProxy.TouchListener() { // from class: com.blued.community.ui.send.fragment.AlbumSelectFragment.3.1
                 @Override // com.blued.android.module.common.utils.click.SingleTouchProxy.TouchListener
                 public boolean a() {
-                    if (ComplianceUtils.f10878a.a(checkBox.getContext())) {
+                    if (ComplianceUtils.a.a(checkBox.getContext())) {
                         return true;
                     }
                     if (CommunityServiceManager.a().E() < 1) {
-                        PayVIPPopupWindow.f19924c.a(checkBox.getContext(), 1, new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.AlbumSelectFragment.3.1.1
+                        PayVIPPopupWindow.c.a(checkBox.getContext(), 1, new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.AlbumSelectFragment.3.1.1
                             @Override // android.content.DialogInterface.OnDismissListener
                             public void onDismiss(DialogInterface dialogInterface) {
                                 CheckBox checkBox2 = checkBox;
@@ -103,7 +101,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
 
     private DeleteAutoCheckedListener F() {
         AnonymousClass3 anonymousClass3 = new AnonymousClass3();
-        if (this.f19947a == 1) {
+        if (this.a == 1) {
             return anonymousClass3;
         }
         return null;
@@ -151,14 +149,14 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
             PermissionUtils.f(new PermissionCallbacks() { // from class: com.blued.community.ui.send.fragment.AlbumSelectFragment.1
                 @Override // com.blued.android.framework.permission.PermissionCallbacks
                 public void U_() {
-                    Bundle a2 = AlbumSelectFragment.a(i, i2, i3, i4);
+                    Bundle a = AlbumSelectFragment.a(i, i2, i3, i4);
                     Object obj2 = obj;
                     if (obj2 instanceof Activity) {
-                        TerminalActivity.a((Activity) obj2, AlbumSelectFragment.class, a2, i5);
+                        TerminalActivity.a((Activity) obj2, AlbumSelectFragment.class, a, i5);
                     } else if (obj2 instanceof Fragment) {
-                        TerminalActivity.a((Fragment) obj2, AlbumSelectFragment.class, a2, i5);
+                        TerminalActivity.a((Fragment) obj2, AlbumSelectFragment.class, a, i5);
                     } else if (obj2 instanceof Application) {
-                        TerminalActivity.d((Context) obj2, AlbumSelectFragment.class, a2);
+                        TerminalActivity.d((Context) obj2, AlbumSelectFragment.class, a);
                     }
                 }
 
@@ -180,7 +178,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
         } else if (this.d == 1) {
             c();
         } else {
-            ShortVideoProxy.e().a(b(), this.f19947a, 2, 1001);
+            ShortVideoProxy.e().a(b(), this.a, 2, 1001);
         }
     }
 
@@ -194,7 +192,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
     }
 
     protected void a(int i) {
-        AlbumPreviewFragment.a(b(), this.f19947a, i, 1);
+        AlbumPreviewFragment.a(b(), this.a, i, 1);
     }
 
     @Override // com.blued.community.ui.send.observer.FeedRefreshObserver.IFeedRefreshObserver
@@ -240,7 +238,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
                                 if (AlbumSelectFragment.this.n != null) {
                                     AlbumSelectFragment.this.n.dismiss();
                                 }
-                                ShortVideoProxy.e().a(AlbumSelectFragment.this.b(), mediaInfo.path, AlbumSelectFragment.this.f19947a, 1000);
+                                ShortVideoProxy.e().a(AlbumSelectFragment.this.b(), mediaInfo.path, AlbumSelectFragment.this.a, 1000);
                             }
                         });
                     }
@@ -250,7 +248,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
             ShortVideoProxy e = ShortVideoProxy.e();
             BaseFragment b = b();
             String str = mediaInfo.path;
-            int i2 = this.f19947a;
+            int i2 = this.a;
             e.a(b, str, i2, 1000, getContext().getString(R.string.stv_delete_auto_tv) + CommunityServiceManager.a().F(), CommunityServiceManager.a().E(), F());
             return true;
         }
@@ -286,7 +284,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
         if (albumSelectInfo == null || (albumSelectPresent = this.g) == null) {
             return false;
         }
-        albumSelectPresent.a(b(), albumSelectInfo, this.f19947a, 1000);
+        albumSelectPresent.a(b(), albumSelectInfo, this.a, 1000);
         return true;
     }
 
@@ -349,7 +347,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
 
     @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.contract.IAlbumBaseView
     public int i() {
-        int i = this.f19947a;
+        int i = this.a;
         if (i == 1 || i == 7) {
             return 2;
         }
@@ -361,7 +359,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
         if (getArguments() == null) {
             return;
         }
-        this.f19947a = getArguments().getInt("from");
+        this.a = getArguments().getInt("from");
         this.d = getArguments().getInt("page_type");
         this.e = getArguments().getInt("select_photo_max_num", 9);
         this.f = getArguments().getInt("album_data_type", 3);
@@ -380,7 +378,7 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
         int length = string.length();
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string.substring(0, indexOf) + string.substring(indexOf + 1, lastIndexOf) + string.substring(lastIndexOf + 1, length));
         spannableStringBuilder.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.nafio_g)), indexOf, lastIndexOf - 1, 33);
-        if (this.f19947a == 8) {
+        if (this.a == 8) {
             return null;
         }
         return spannableStringBuilder;
@@ -391,23 +389,22 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
         return 6;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         u().setTextColor(BluedSkinUtils.a(getContext(), R.color.syc_h));
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.module.media.selector.fragment.MediaBaseFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         a(viewGroup);
         this.g = new AlbumSelectPresent(getActivity());
         ShortVideoProxy.e().a(getClass().getSimpleName());
         FeedRefreshObserver.a().a(this);
-        this.n = DialogUtils.a(getActivity());
+        this.n = DialogUtils.a((Context) getActivity());
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroyView() {
         FeedRefreshObserver.a().b(this);
         ShortVideoProxy.e().b(getClass().getSimpleName());
@@ -416,12 +413,12 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
 
     @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment
     public View p() {
-        int i = this.f19947a;
+        int i = this.a;
         if (i == 8 || i == 4) {
             return null;
         }
         AlbumTabsView albumTabsView = new AlbumTabsView(getContext());
-        if (this.f19947a == 1) {
+        if (this.a == 1) {
             albumTabsView.a(this, false, 2);
             return albumTabsView;
         }
@@ -446,6 +443,6 @@ public class AlbumSelectFragment extends AlbumBaseFragment implements FeedRefres
 
     @Override // com.blued.android.module.media.selector.fragment.AlbumBaseFragment
     public boolean w() {
-        return this.f19947a == 1;
+        return this.a == 1;
     }
 }

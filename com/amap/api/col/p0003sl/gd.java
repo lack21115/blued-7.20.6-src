@@ -10,13 +10,9 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gd.class */
 public class gd {
     private static volatile gd r;
-
-    /* renamed from: a  reason: collision with root package name */
-    boolean f4990a = true;
+    boolean a = true;
     boolean b = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    boolean f4991c = true;
+    boolean c = true;
     boolean d = true;
     boolean e = true;
     boolean f = true;
@@ -28,7 +24,7 @@ public class gd {
     int l = 6;
     int m = 100;
     int n = 5000;
-    int o = 1200;
+    int o = AMapException.CODE_AMAP_SERVICE_INVALID_PARAMS;
     int p = 100000000;
     int q = 16;
 
@@ -61,15 +57,15 @@ public class gd {
     }
 
     public final void a(RouteSearch.FromAndTo fromAndTo, List<LatLonPoint> list) throws AMapException {
-        double a2;
+        double a;
         LatLonPoint latLonPoint;
         LatLonPoint next;
-        if (!this.f4991c || fromAndTo == null || fromAndTo.getFrom() == null || fromAndTo.getTo() == null) {
+        if (!this.c || fromAndTo == null || fromAndTo.getFrom() == null || fromAndTo.getTo() == null) {
             return;
         }
         double d = 0.0d;
         if (list == null || list.size() == 0) {
-            a2 = fe.a(fromAndTo.getFrom(), fromAndTo.getTo());
+            a = fe.a(fromAndTo.getFrom(), fromAndTo.getTo());
         } else {
             LatLonPoint from = fromAndTo.getFrom();
             LatLonPoint to = fromAndTo.getTo();
@@ -83,9 +79,9 @@ public class gd {
                 d += fe.a(latLonPoint, next);
                 latLonPoint2 = it.next();
             }
-            a2 = d + fe.a(latLonPoint, to);
+            a = d + fe.a(latLonPoint, to);
         }
-        if (this.n < a2 / 1000.0d) {
+        if (this.n < a / 1000.0d) {
             throw new AMapException(AMapException.AMAP_OVER_DIRECTION_RANGE);
         }
     }
@@ -105,7 +101,7 @@ public class gd {
     }
 
     public final void a(boolean z) {
-        this.f4990a = z;
+        this.a = z;
     }
 
     public final void b(int i) {
@@ -122,7 +118,7 @@ public class gd {
     }
 
     public final void b(List<List<LatLonPoint>> list) throws AMapException {
-        if (this.f4990a && list != null) {
+        if (this.a && list != null) {
             if (this.j < list.size()) {
                 throw new AMapException(AMapException.AMAP_CLIENT_OVER_PASSAREA_MAX_COUNT_EXCEPTION);
             }
@@ -139,7 +135,7 @@ public class gd {
     }
 
     public final void b(boolean z) {
-        this.f4991c = z;
+        this.c = z;
     }
 
     public final void c(int i) {

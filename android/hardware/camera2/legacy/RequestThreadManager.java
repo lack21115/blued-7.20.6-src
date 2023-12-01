@@ -531,7 +531,7 @@ public class RequestThreadManager {
                 }
                 this.mGLThreadManager.waitUntilStarted();
                 ArrayList arrayList3 = new ArrayList();
-                Iterator<E> it = arrayList.iterator();
+                Iterator it = arrayList.iterator();
                 for (Surface surface2 : this.mPreviewOutputs) {
                     arrayList3.add(new Pair(surface2, it.next()));
                 }

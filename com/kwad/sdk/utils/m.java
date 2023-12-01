@@ -1,6 +1,5 @@
 package com.kwad.sdk.utils;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -43,7 +42,7 @@ public final class m {
                         bufferedInputStream5 = new BufferedInputStream(new FileInputStream(fileArr[i2]), 4096);
                         try {
                             String absolutePath = fileArr[i2].getAbsolutePath();
-                            zipOutputStream.putNextEntry(new ZipEntry(absolutePath.substring(absolutePath.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1)));
+                            zipOutputStream.putNextEntry(new ZipEntry(absolutePath.substring(absolutePath.lastIndexOf("/") + 1)));
                             while (true) {
                                 int read = bufferedInputStream5.read(bArr, 0, 4096);
                                 if (read == -1) {

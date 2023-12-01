@@ -44,19 +44,19 @@ public class RangesKt___RangesKt extends RangesKt__RangesKt {
     }
 
     public static final IntProgression a(int i, int i2) {
-        return IntProgression.f42576a.a(i, i2, -1);
+        return IntProgression.a.a(i, i2, -1);
     }
 
     public static final IntProgression a(IntProgression intProgression, int i) {
         Intrinsics.e(intProgression, "<this>");
         RangesKt.a(i > 0, Integer.valueOf(i));
-        IntProgression.Companion companion = IntProgression.f42576a;
-        int a2 = intProgression.a();
+        IntProgression.Companion companion = IntProgression.a;
+        int a = intProgression.a();
         int b = intProgression.b();
         if (intProgression.c() <= 0) {
             i = -i;
         }
-        return companion.a(a2, b, i);
+        return companion.a(a, b, i);
     }
 
     public static final float b(float f, float f2) {

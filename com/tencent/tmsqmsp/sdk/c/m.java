@@ -9,7 +9,7 @@ import java.io.IOException;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f39733a = {96, 110, -109, 82, 109, 2, 36, -77, 108, 59, -80, 10, 112, 122, 56, -67};
+    private static final byte[] f26042a = {96, 110, -109, 82, 109, 2, 36, -77, 108, 59, -80, 10, 112, 122, 56, -67};
 
     public String a(byte[] bArr) {
         return com.tencent.tmsqmsp.sdk.f.h.a(bArr);
@@ -36,7 +36,7 @@ public class m {
             r0 = r13
             r9 = r0
             r0 = r6
-            byte[] r1 = com.tencent.tmsqmsp.sdk.c.m.f39733a     // Catch: java.lang.Throwable -> L75 java.io.IOException -> L79
+            byte[] r1 = com.tencent.tmsqmsp.sdk.c.m.f26042a     // Catch: java.lang.Throwable -> L75 java.io.IOException -> L79
             java.lang.String r0 = r0.a(r1)     // Catch: java.lang.Throwable -> L75 java.io.IOException -> L79
             r11 = r0
         L19:
@@ -144,7 +144,7 @@ public class m {
         DataInputStream dataInputStream2;
         File file = new File(str);
         boolean exists = file.exists();
-        AutoCloseable autoCloseable = null;
+        DataInputStream dataInputStream3 = null;
         try {
             if (exists) {
                 try {
@@ -156,7 +156,7 @@ public class m {
                     th = th;
                     if (0 != 0) {
                         try {
-                            autoCloseable.close();
+                            dataInputStream3.close();
                         } catch (IOException e2) {
                             e2.printStackTrace();
                         }
@@ -213,7 +213,7 @@ public class m {
                             }
                             String str3 = str2;
                             if (str2 == null) {
-                                str3 = a(f39733a);
+                                str3 = a(f26042a);
                             }
                             byte[] a2 = new com.tencent.tmsqmsp.sdk.f.b().a(bArr, 0, i2, str3.getBytes());
                             if (a2 == null) {

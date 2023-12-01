@@ -13,11 +13,11 @@ import java.lang.reflect.Method;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f4145a;
+    public static String f4097a;
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f4146c;
+    public static String f4098c;
     public static String d = "0";
     private static final String[] e = {"46000", "46002", "46004", "46007", "46008"};
     private static final String[] f = {"46003", "46005", "46011"};
@@ -69,7 +69,7 @@ public class g {
     }
 
     public static String a() {
-        return f4145a;
+        return f4097a;
     }
 
     public static String a(Context context, boolean z) {
@@ -126,7 +126,7 @@ public class g {
     }
 
     public static String c() {
-        String str = f4146c;
+        String str = f4098c;
         return str != null ? "https://api-e189.21cn.com/gw/client/accountMsg.do".replace("e189.21cn.com", str) : "https://api-e189.21cn.com/gw/client/accountMsg.do";
     }
 

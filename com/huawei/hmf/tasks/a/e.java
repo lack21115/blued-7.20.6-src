@@ -9,11 +9,11 @@ import java.util.concurrent.ExecutionException;
 final class e<TResult> implements OnCanceledListener, OnFailureListener, OnSuccessListener<TResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f22365a = new Object();
+    private final Object f8757a = new Object();
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final i<Void> f22366c;
+    private final i<Void> f8758c;
     private int d;
     private Exception e;
     private boolean f;
@@ -21,24 +21,24 @@ final class e<TResult> implements OnCanceledListener, OnFailureListener, OnSucce
     /* JADX INFO: Access modifiers changed from: package-private */
     public e(int i, i<Void> iVar) {
         this.b = i;
-        this.f22366c = iVar;
+        this.f8758c = iVar;
     }
 
     private void a() {
         if (this.d >= this.b) {
             if (this.e != null) {
-                this.f22366c.a(new ExecutionException("a task failed", this.e));
+                this.f8758c.a(new ExecutionException("a task failed", this.e));
             } else if (this.f) {
-                this.f22366c.a();
+                this.f8758c.a();
             } else {
-                this.f22366c.a((i<Void>) null);
+                this.f8758c.a((i<Void>) null);
             }
         }
     }
 
     @Override // com.huawei.hmf.tasks.OnCanceledListener
     public final void onCanceled() {
-        synchronized (this.f22365a) {
+        synchronized (this.f8757a) {
             this.d++;
             this.f = true;
             a();
@@ -47,7 +47,7 @@ final class e<TResult> implements OnCanceledListener, OnFailureListener, OnSucce
 
     @Override // com.huawei.hmf.tasks.OnFailureListener
     public final void onFailure(Exception exc) {
-        synchronized (this.f22365a) {
+        synchronized (this.f8757a) {
             this.d++;
             this.e = exc;
             a();
@@ -56,7 +56,7 @@ final class e<TResult> implements OnCanceledListener, OnFailureListener, OnSucce
 
     @Override // com.huawei.hmf.tasks.OnSuccessListener
     public final void onSuccess(TResult tresult) {
-        synchronized (this.f22365a) {
+        synchronized (this.f8757a) {
             this.d++;
             a();
         }

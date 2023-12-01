@@ -1,6 +1,5 @@
 package com.kwad.sdk.commercial.model;
 
-import com.alipay.sdk.app.statistic.c;
 import com.kwad.sdk.core.b;
 import com.kwad.sdk.core.response.kwai.a;
 import com.kwad.sdk.utils.t;
@@ -36,9 +35,9 @@ public class WebViewCommercialMsg extends a implements b, Serializable {
                 this.subBiz = SubBusinessType.OTHER;
             }
         }
-        if (jSONObject.has(c.b)) {
+        if (jSONObject.has("biz")) {
             try {
-                this.biz = BusinessType.valueOf(jSONObject.optString(c.b));
+                this.biz = BusinessType.valueOf(jSONObject.optString("biz"));
             } catch (Exception e2) {
                 this.biz = BusinessType.OTHER;
             }
@@ -55,7 +54,7 @@ public class WebViewCommercialMsg extends a implements b, Serializable {
     @Override // com.kwad.sdk.core.response.kwai.a
     public void afterToJson(JSONObject jSONObject) {
         super.afterToJson(jSONObject);
-        t.putValue(jSONObject, c.b, this.biz.value);
+        t.putValue(jSONObject, "biz", this.biz.value);
         t.putValue(jSONObject, "subBiz", this.subBiz.value);
         t.putValue(jSONObject, "type", this.type.getValue());
     }

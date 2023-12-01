@@ -4,7 +4,6 @@ import android.net.NetworkStats;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.MathUtils;
-import com.android.internal.telephony.PhoneConstants;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.IndentingPrintWriter;
 import java.io.CharArrayWriter;
@@ -440,31 +439,31 @@ public class NetworkStatsHistory implements Parcelable {
             if (this.rxBytes != null) {
                 printWriter.print(this.rxBytes[i2]);
             } else {
-                printWriter.print(PhoneConstants.APN_TYPE_ALL);
+                printWriter.print("*");
             }
             printWriter.print(',');
             if (this.rxPackets != null) {
                 printWriter.print(this.rxPackets[i2]);
             } else {
-                printWriter.print(PhoneConstants.APN_TYPE_ALL);
+                printWriter.print("*");
             }
             printWriter.print(',');
             if (this.txBytes != null) {
                 printWriter.print(this.txBytes[i2]);
             } else {
-                printWriter.print(PhoneConstants.APN_TYPE_ALL);
+                printWriter.print("*");
             }
             printWriter.print(',');
             if (this.txPackets != null) {
                 printWriter.print(this.txPackets[i2]);
             } else {
-                printWriter.print(PhoneConstants.APN_TYPE_ALL);
+                printWriter.print("*");
             }
             printWriter.print(',');
             if (this.operations != null) {
                 printWriter.print(this.operations[i2]);
             } else {
-                printWriter.print(PhoneConstants.APN_TYPE_ALL);
+                printWriter.print("*");
             }
             printWriter.println();
             i = i2 + 1;

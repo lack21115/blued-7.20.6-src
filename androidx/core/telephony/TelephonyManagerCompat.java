@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
 public class TelephonyManagerCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f2559a;
+    private static Method f2511a;
     private static Method b;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/telephony/TelephonyManagerCompat$Api23Impl.class */
@@ -59,12 +59,12 @@ public class TelephonyManagerCompat {
             return Api23Impl.a(telephonyManager, slotIndex);
         }
         try {
-            if (f2559a == null) {
+            if (f2511a == null) {
                 Method declaredMethod = TelephonyManager.class.getDeclaredMethod("getDeviceId", Integer.TYPE);
-                f2559a = declaredMethod;
+                f2511a = declaredMethod;
                 declaredMethod.setAccessible(true);
             }
-            return (String) f2559a.invoke(telephonyManager, Integer.valueOf(slotIndex));
+            return (String) f2511a.invoke(telephonyManager, Integer.valueOf(slotIndex));
         } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
             return null;
         }

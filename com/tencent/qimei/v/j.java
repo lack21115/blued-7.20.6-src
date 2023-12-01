@@ -9,21 +9,21 @@ import org.json.JSONObject;
 public class j implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f38429a;
+    public final String f24738a;
 
     /* renamed from: c  reason: collision with root package name */
-    public final f f38430c;
+    public final f f24739c;
     public volatile AtomicBoolean b = new AtomicBoolean(false);
     public k d = null;
 
     public j(f fVar, String str) {
-        this.f38430c = fVar;
-        this.f38429a = str;
+        this.f24739c = fVar;
+        this.f24738a = str;
     }
 
     public void a() {
         try {
-            String c2 = com.tencent.qimei.i.f.a(this.f38429a).c("s_d");
+            String c2 = com.tencent.qimei.i.f.a(this.f24738a).c("s_d");
             if (!c2.equals("")) {
                 try {
                     c2 = com.tencent.qimei.a.a.a(c2, com.tencent.qimei.a.a.a("s_d"));
@@ -46,10 +46,10 @@ public class j implements Runnable {
         try {
             com.tencent.qimei.f.b bVar = com.tencent.qimei.f.b.KEY_CODE;
             bVar.f = str;
-            String a2 = bVar.a(this.f38429a);
+            String a2 = bVar.a(this.f24738a);
             if (!a2.equals("0")) {
                 if (a2.equals("304")) {
-                    com.tencent.qimei.i.f.a(this.f38429a).a("s_s_t", System.currentTimeMillis());
+                    com.tencent.qimei.i.f.a(this.f24738a).a("s_s_t", System.currentTimeMillis());
                 }
                 b();
                 return;
@@ -57,13 +57,13 @@ public class j implements Runnable {
             com.tencent.qimei.f.b bVar2 = com.tencent.qimei.f.b.KEY_DATA;
             bVar2.f = str;
             try {
-                str3 = com.tencent.qimei.a.a.a(bVar2.a(this.f38429a), str2);
+                str3 = com.tencent.qimei.a.a.a(bVar2.a(this.f24738a), str2);
             } catch (Exception e) {
                 e.printStackTrace();
                 str3 = "";
             }
             a(str3, true);
-            this.f38430c.a(true);
+            this.f24739c.a(true);
             b();
         } catch (Throwable th) {
             com.tencent.qimei.k.a.a(th);
@@ -72,18 +72,18 @@ public class j implements Runnable {
 
     public void a(String str, boolean z) {
         try {
-            g.f38426a.put(this.f38429a, str);
-            String str2 = this.f38429a;
-            d.a(this.f38429a, new h(str2, d.a(str2)));
+            g.f24735a.put(this.f24738a, str);
+            String str2 = this.f24738a;
+            d.a(this.f24738a, new h(str2, d.a(str2)));
             if (z) {
-                com.tencent.qimei.i.f a2 = com.tencent.qimei.i.f.a(this.f38429a);
+                com.tencent.qimei.i.f a2 = com.tencent.qimei.i.f.a(this.f24738a);
                 try {
                     str = com.tencent.qimei.a.a.b(str, com.tencent.qimei.a.a.a("s_d"));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
                 a2.a("s_d", str);
-                com.tencent.qimei.i.f.a(this.f38429a).a("s_s_t", System.currentTimeMillis());
+                com.tencent.qimei.i.f.a(this.f24738a).a("s_s_t", System.currentTimeMillis());
             }
         } catch (Throwable th) {
             com.tencent.qimei.k.a.a(th);
@@ -108,13 +108,13 @@ public class j implements Runnable {
         String str2;
         this.b.set(true);
         String a2 = com.tencent.qimei.j.a.a();
-        String D = d.a(this.f38429a).D();
+        String D = d.a(this.f24738a).D();
         if (D.isEmpty()) {
             str = com.tencent.qimei.e.a.a() + "/config";
         } else {
             str = D + "/config";
         }
-        String str3 = this.f38429a;
+        String str3 = this.f24738a;
         com.tencent.qimei.u.d b = com.tencent.qimei.u.d.b();
         com.tencent.qimei.c.c j = com.tencent.qimei.c.c.j();
         try {

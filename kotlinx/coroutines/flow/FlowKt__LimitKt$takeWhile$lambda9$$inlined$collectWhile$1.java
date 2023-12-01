@@ -11,9 +11,7 @@ import kotlin.jvm.functions.Function2;
 /* renamed from: kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$lambda-9$$inlined$collectWhile$1  reason: invalid class name */
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$lambda-9$$inlined$collectWhile$1.class */
 public final class FlowKt__LimitKt$takeWhile$lambda9$$inlined$collectWhile$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function2 f43202a;
+    final /* synthetic */ Function2 a;
     final /* synthetic */ FlowCollector b;
 
     @Metadata
@@ -21,13 +19,9 @@ public final class FlowKt__LimitKt$takeWhile$lambda9$$inlined$collectWhile$1<T> 
     /* renamed from: kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$lambda-9$$inlined$collectWhile$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$lambda-9$$inlined$collectWhile$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        Object f43203a;
+        Object a;
         /* synthetic */ Object b;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f43204c;
+        int c;
         Object e;
 
         public AnonymousClass1(Continuation continuation) {
@@ -37,13 +31,13 @@ public final class FlowKt__LimitKt$takeWhile$lambda9$$inlined$collectWhile$1<T> 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             this.b = obj;
-            this.f43204c |= Integer.MIN_VALUE;
+            this.c |= Integer.MIN_VALUE;
             return FlowKt__LimitKt$takeWhile$lambda9$$inlined$collectWhile$1.this.emit(null, this);
         }
     }
 
     public FlowKt__LimitKt$takeWhile$lambda9$$inlined$collectWhile$1(Function2 function2, FlowCollector flowCollector) {
-        this.f43202a = function2;
+        this.a = function2;
         this.b = flowCollector;
     }
 

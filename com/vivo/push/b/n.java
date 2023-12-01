@@ -4,16 +4,16 @@ package com.vivo.push.b;
 public final class n extends s {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41046a;
+    private String f27355a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f41047c;
+    private boolean f27356c;
 
     public n() {
         super(7);
         this.b = 0;
-        this.f41047c = false;
+        this.f27356c = false;
     }
 
     public final void a(int i) {
@@ -21,31 +21,31 @@ public final class n extends s {
     }
 
     public final void a(boolean z) {
-        this.f41047c = z;
+        this.f27356c = z;
     }
 
     public final void b(String str) {
-        this.f41046a = str;
+        this.f27355a = str;
     }
 
     @Override // com.vivo.push.b.s, com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
         super.c(aVar);
-        aVar.a("content", this.f41046a);
+        aVar.a("content", this.f27355a);
         aVar.a("log_level", this.b);
-        aVar.a("is_server_log", this.f41047c);
+        aVar.a("is_server_log", this.f27356c);
     }
 
     public final String d() {
-        return this.f41046a;
+        return this.f27355a;
     }
 
     @Override // com.vivo.push.b.s, com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
         super.d(aVar);
-        this.f41046a = aVar.a("content");
+        this.f27355a = aVar.a("content");
         this.b = aVar.b("log_level", 0);
-        this.f41047c = aVar.e("is_server_log");
+        this.f27356c = aVar.e("is_server_log");
     }
 
     public final int e() {
@@ -53,7 +53,7 @@ public final class n extends s {
     }
 
     public final boolean f() {
-        return this.f41047c;
+        return this.f27356c;
     }
 
     @Override // com.vivo.push.b.s, com.vivo.push.o

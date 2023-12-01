@@ -67,12 +67,12 @@ public final class a {
             @Override // com.kwad.components.ad.widget.tailframe.appbar.b, android.animation.Animator.AnimatorListener
             public final void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
-                View.this.setAlpha(1.0f);
-                ViewGroup.LayoutParams layoutParams = View.this.getLayoutParams();
+                view.setAlpha(1.0f);
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
                 if (layoutParams != null) {
                     layoutParams.width = 0;
                     layoutParams.height = 0;
-                    View.this.setLayoutParams(layoutParams);
+                    view.setLayoutParams(layoutParams);
                 }
             }
         });

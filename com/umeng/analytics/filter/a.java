@@ -7,7 +7,7 @@ import com.umeng.analytics.AnalyticsConfig;
 public class a extends EventList {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f40605a;
+    private d f26914a;
     private Object b;
 
     public a(String str, String str2) {
@@ -21,8 +21,8 @@ public class a extends EventList {
             return;
         }
         synchronized (this.b) {
-            this.f40605a = null;
-            this.f40605a = new d(false, this.mEventList);
+            this.f26914a = null;
+            this.f26914a = new d(false, this.mEventList);
         }
     }
 
@@ -33,10 +33,10 @@ public class a extends EventList {
             return false;
         }
         synchronized (this.b) {
-            if (this.f40605a == null) {
-                this.f40605a = new d(false, this.mEventList);
+            if (this.f26914a == null) {
+                this.f26914a = new d(false, this.mEventList);
             }
-            a2 = this.f40605a.a(str);
+            a2 = this.f26914a.a(str);
         }
         return a2;
     }

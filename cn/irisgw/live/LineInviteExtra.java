@@ -31,8 +31,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
     private int uid_;
     private static final LineInviteExtra DEFAULT_INSTANCE = new LineInviteExtra();
     private static final Parser<LineInviteExtra> PARSER = new AbstractParser<LineInviteExtra>() { // from class: cn.irisgw.live.LineInviteExtra.1
-        @Override // com.google.protobuf.Parser
-        public LineInviteExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LineInviteExtra m4042parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LineInviteExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -66,22 +66,22 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             boolean unused = LineInviteExtra.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m4044addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LineInviteExtra build() {
-            LineInviteExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LineInviteExtra m4046build() {
+            LineInviteExtra m4048buildPartial = m4048buildPartial();
+            if (m4048buildPartial.isInitialized()) {
+                return m4048buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m4048buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LineInviteExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public LineInviteExtra m4048buildPartial() {
             LineInviteExtra lineInviteExtra = new LineInviteExtra(this);
             lineInviteExtra.uid_ = this.uid_;
             lineInviteExtra.name_ = this.name_;
@@ -92,8 +92,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return lineInviteExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m4052clear() {
             super.clear();
             this.uid_ = 0;
             this.name_ = "";
@@ -109,8 +109,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m4054clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -120,8 +120,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m4057clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -143,10 +143,9 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m4063clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.LineInviteExtraOrBuilder
@@ -171,12 +170,11 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LineInviteExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LineInviteExtra m4065getDefaultInstanceForType() {
             return LineInviteExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LineInviteExtra_descriptor;
         }
@@ -218,12 +216,10 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LineInviteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(LineInviteExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -249,18 +245,18 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             if (lineInviteExtra.getType() != 0) {
                 setType(lineInviteExtra.getType());
             }
-            mergeUnknownFields(lineInviteExtra.unknownFields);
+            m4074mergeUnknownFields(lineInviteExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LineInviteExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LineInviteExtra.Builder m4071mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -305,11 +301,11 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LineInviteExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LineInviteExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LineInviteExtra.Builder.m4071mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LineInviteExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m4070mergeFrom(Message message) {
             if (message instanceof LineInviteExtra) {
                 return mergeFrom((LineInviteExtra) message);
             }
@@ -317,8 +313,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m4074mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -341,8 +337,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m4076setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -365,8 +361,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m4078setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -388,8 +384,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m4080setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -426,10 +422,10 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
                         }
                     }
                     z = true;
-                } catch (InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(this);
-                } catch (IOException e2) {
-                    throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                } catch (IOException e) {
+                    throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                } catch (InvalidProtocolBufferException e2) {
+                    throw e2.setUnfinishedMessage(this);
                 }
             } finally {
                 this.unknownFields = newBuilder.build();
@@ -452,66 +448,65 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m4041toBuilder();
     }
 
     public static Builder newBuilder(LineInviteExtra lineInviteExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(lineInviteExtra);
+        return DEFAULT_INSTANCE.m4041toBuilder().mergeFrom(lineInviteExtra);
     }
 
     public static LineInviteExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LineInviteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LineInviteExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LineInviteExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LineInviteExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LineInviteExtra) PARSER.parseFrom(byteString);
     }
 
     public static LineInviteExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LineInviteExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LineInviteExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LineInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LineInviteExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LineInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LineInviteExtra parseFrom(InputStream inputStream) throws IOException {
-        return (LineInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LineInviteExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LineInviteExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LineInviteExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LineInviteExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static LineInviteExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LineInviteExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LineInviteExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LineInviteExtra) PARSER.parseFrom(bArr);
     }
 
     public static LineInviteExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LineInviteExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LineInviteExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -545,8 +540,8 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LineInviteExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LineInviteExtra m4036getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -572,7 +567,6 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LineInviteExtra> getParserForType() {
         return PARSER;
     }
@@ -582,7 +576,6 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
         return this.reset_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -626,12 +619,10 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -641,12 +632,10 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LineInviteExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(LineInviteExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -659,28 +648,26 @@ public final class LineInviteExtra extends GeneratedMessageV3 implements LineInv
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m4039newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m4038newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LineInviteExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m4041toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.uid_;
         if (i != 0) {

@@ -18,6 +18,7 @@ import com.bytedance.sdk.openadsdk.CSJAdError;
 import com.bytedance.sdk.openadsdk.CSJSplashAd;
 import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTAppDownloadListener;
+import com.igexin.assist.sdk.AssistPushConsts;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,11 +33,11 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
     private final String k = getClass().getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    String f9145a = "";
+    String f6305a = "";
     String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    String f9146c = "";
+    String f6306c = "";
     private boolean l = false;
     String h = "";
     boolean i = false;
@@ -48,14 +49,14 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
                 if (TTATSplashAdapter.this.mDownloadListener == null || !(TTATSplashAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATSplashAdapter.this.mDownloadListener).onDownloadUpdate(j, j2, str, str2);
+                TTATSplashAdapter.this.mDownloadListener.onDownloadUpdate(j, j2, str, str2);
                 return;
             }
             TTATSplashAdapter.h(TTATSplashAdapter.this);
             if (TTATSplashAdapter.this.mDownloadListener == null || !(TTATSplashAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATSplashAdapter.this.mDownloadListener).onDownloadStart(j, j2, str, str2);
+            TTATSplashAdapter.this.mDownloadListener.onDownloadStart(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -63,7 +64,7 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
             if (TTATSplashAdapter.this.mDownloadListener == null || !(TTATSplashAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATSplashAdapter.this.mDownloadListener).onDownloadFail(j, j2, str, str2);
+            TTATSplashAdapter.this.mDownloadListener.onDownloadFail(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -71,7 +72,7 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
             if (TTATSplashAdapter.this.mDownloadListener == null || !(TTATSplashAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATSplashAdapter.this.mDownloadListener).onDownloadFinish(j, str, str2);
+            TTATSplashAdapter.this.mDownloadListener.onDownloadFinish(j, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -79,7 +80,7 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
             if (TTATSplashAdapter.this.mDownloadListener == null || !(TTATSplashAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATSplashAdapter.this.mDownloadListener).onDownloadPause(j, j2, str, str2);
+            TTATSplashAdapter.this.mDownloadListener.onDownloadPause(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -91,7 +92,7 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
             if (TTATSplashAdapter.this.mDownloadListener == null || !(TTATSplashAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATSplashAdapter.this.mDownloadListener).onInstalled(str, str2);
+            TTATSplashAdapter.this.mDownloadListener.onInstalled(str, str2);
         }
     };
 
@@ -101,18 +102,18 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
     public final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ AdSlot.Builder f9149a;
+        final /* synthetic */ AdSlot.Builder f6309a;
         final /* synthetic */ TTAdNative b;
 
         AnonymousClass2(AdSlot.Builder builder, TTAdNative tTAdNative) {
-            this.f9149a = builder;
+            this.f6309a = builder;
             this.b = tTAdNative;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                this.b.loadSplashAd(this.f9149a.build(), new TTAdNative.CSJSplashAdListener() { // from class: com.anythink.network.toutiao.TTATSplashAdapter.2.1
+                this.b.loadSplashAd(this.f6309a.build(), new TTAdNative.CSJSplashAdListener() { // from class: com.anythink.network.toutiao.TTATSplashAdapter.2.1
                     @Override // com.bytedance.sdk.openadsdk.TTAdNative.CSJSplashAdListener
                     public final void onSplashLoadFail(CSJAdError cSJAdError) {
                         TTATSplashAdapter tTATSplashAdapter = TTATSplashAdapter.this;
@@ -267,8 +268,8 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
         if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.b)) {
             return false;
         }
-        this.h = ATInitMediation.getStringFromMap(map, "payload");
-        this.f9146c = ATInitMediation.getStringFromMap(map, "personalized_template", "0");
+        this.h = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
+        this.f6306c = ATInitMediation.getStringFromMap(map, "personalized_template", "0");
         return true;
     }
 
@@ -277,26 +278,21 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
         return true;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public Map<String, Object> getNetworkInfoMap() {
         return this.m;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return TTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
         return this.b;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return TTATInitManager.getInstance().getNetworkVersion();
     }
@@ -306,7 +302,6 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
         return this.f;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean isAdReady() {
         return this.d != null;
     }
@@ -316,7 +311,6 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
         return true;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         boolean z;
         String stringFromMap = ATInitMediation.getStringFromMap(map, "app_id");
@@ -324,18 +318,16 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
         if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.b)) {
             z = false;
         } else {
-            this.h = ATInitMediation.getStringFromMap(map, "payload");
-            this.f9146c = ATInitMediation.getStringFromMap(map, "personalized_template", "0");
+            this.h = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
+            this.f6306c = ATInitMediation.getStringFromMap(map, "personalized_template", "0");
             z = true;
         }
         if (z) {
             TTATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.toutiao.TTATSplashAdapter.1
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     TTATSplashAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     try {
                         if (TTATSplashAdapter.this.getMixedFormatAdType() == 0) {
@@ -411,7 +403,6 @@ public class TTATSplashAdapter extends CustomSplashAdapter implements CSJSplashA
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.i = true;
         if (getMixedFormatAdType() == 0) {

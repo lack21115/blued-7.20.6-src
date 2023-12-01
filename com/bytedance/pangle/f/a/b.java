@@ -8,7 +8,7 @@ import java.io.InputStream;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    InputStream f21399a;
+    InputStream f7793a;
     private int b;
 
     public b(InputStream inputStream) {
@@ -18,7 +18,7 @@ public final class b {
     public final int a() {
         int i = 0;
         for (int i2 = 0; i2 != 32; i2 += 8) {
-            int read = this.f21399a.read();
+            int read = this.f7793a.read();
             if (read == -1) {
                 throw new EOFException();
             }
@@ -30,7 +30,7 @@ public final class b {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(InputStream inputStream) {
-        this.f21399a = inputStream;
+        this.f7793a = inputStream;
         this.b = 0;
     }
 
@@ -50,7 +50,7 @@ public final class b {
     }
 
     public final void b() {
-        long skip = this.f21399a.skip(4L);
+        long skip = this.f7793a.skip(4L);
         this.b = (int) (this.b + skip);
         if (skip != 4) {
             throw new EOFException();

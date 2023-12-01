@@ -16,11 +16,11 @@ import com.tencent.ugc.UGCTransitionRules;
 public final class c implements SurfaceTexture.OnFrameAvailableListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public com.tencent.liteav.base.util.b f36564a;
+    public com.tencent.liteav.base.util.b f22873a;
     protected com.tencent.liteav.videobase.b.e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.tencent.liteav.videoconsumer.renderer.g f36565c;
+    private com.tencent.liteav.videoconsumer.renderer.g f22874c;
     private DisplayTarget d;
     private SurfaceTexture g;
     private PixelFrame i;
@@ -81,7 +81,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
                 cVar.b = null;
             }
         }
-        cVar.f36565c = new com.tencent.liteav.videoconsumer.renderer.g(cVar.f36564a.getLooper(), new com.tencent.liteav.videobase.videobase.f());
+        cVar.f22874c = new com.tencent.liteav.videoconsumer.renderer.g(cVar.f22873a.getLooper(), new com.tencent.liteav.videobase.videobase.f());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -143,7 +143,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
             if (aVar != null) {
                 aVar.a(a4);
             }
-            com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f36565c;
+            com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f22874c;
             if (gVar != null) {
                 gVar.renderFrame(a4);
             }
@@ -157,7 +157,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     public static /* synthetic */ void a(c cVar, GLConstants.GLScaleType gLScaleType) {
         LiteavLog.i("VodRenderer", "setScaleType ".concat(String.valueOf(gLScaleType)));
         cVar.e = gLScaleType;
-        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f36565c;
+        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f22874c;
         if (gVar != null) {
             gVar.setScaleType(gLScaleType);
         }
@@ -167,7 +167,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     public static /* synthetic */ void a(c cVar, Rotation rotation) {
         LiteavLog.i("VodRenderer", "setRenderRotation ".concat(String.valueOf(rotation)));
         cVar.f = rotation;
-        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f36565c;
+        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f22874c;
         if (gVar != null) {
             gVar.setRenderRotation(rotation);
         }
@@ -177,7 +177,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     public static /* synthetic */ void a(c cVar, DisplayTarget displayTarget) {
         LiteavLog.i("VodRenderer", "setDisplayTarget: ".concat(String.valueOf(displayTarget)));
         cVar.d = displayTarget;
-        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f36565c;
+        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f22874c;
         if (gVar != null) {
             gVar.setDisplayView(displayTarget, true);
         }
@@ -186,7 +186,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(c cVar, boolean z) {
         LiteavLog.i("VodRenderer", "Stop");
-        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f36565c;
+        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f22874c;
         if (gVar != null) {
             gVar.stop(z);
         }
@@ -195,12 +195,12 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void b(c cVar) {
         LiteavLog.i("VodRenderer", "Start");
-        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f36565c;
+        com.tencent.liteav.videoconsumer.renderer.g gVar = cVar.f22874c;
         if (gVar != null) {
             gVar.setDisplayView(cVar.d, true);
-            cVar.f36565c.setRenderRotation(cVar.f);
-            cVar.f36565c.setScaleType(cVar.e);
-            cVar.f36565c.start(null);
+            cVar.f22874c.setRenderRotation(cVar.f);
+            cVar.f22874c.setScaleType(cVar.e);
+            cVar.f22874c.start(null);
         }
     }
 
@@ -220,7 +220,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     }
 
     static /* synthetic */ com.tencent.liteav.videoconsumer.renderer.g d(c cVar) {
-        cVar.f36565c = null;
+        cVar.f22874c = null;
         return null;
     }
 
@@ -230,7 +230,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     }
 
     static /* synthetic */ com.tencent.liteav.base.util.b g(c cVar) {
-        cVar.f36564a = null;
+        cVar.f22873a = null;
         return null;
     }
 
@@ -279,7 +279,7 @@ public final class c implements SurfaceTexture.OnFrameAvailableListener {
     }
 
     public final void a(Runnable runnable, String str) {
-        com.tencent.liteav.base.util.b bVar = this.f36564a;
+        com.tencent.liteav.base.util.b bVar = this.f22873a;
         if (bVar == null) {
             LiteavLog.w("VodRenderer", "ignore runnable: ".concat(String.valueOf(str)));
         } else if (bVar.getLooper() != Looper.myLooper()) {

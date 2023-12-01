@@ -15,9 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/d.class */
 public class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6907a = "about:blank";
+    public static final String a = "about:blank";
     private static final String d = "anythink_internal_resouce";
     private static final String e = "anythink_custom_resouce";
     private static final String f = "anythink_internal_extra_resource";
@@ -26,9 +24,7 @@ public class d {
     private static volatile d i;
     private Context j;
     private File k;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f6908c = getClass().getSimpleName();
+    private final String c = getClass().getSimpleName();
     ConcurrentHashMap<Integer, a> b = new ConcurrentHashMap<>();
 
     private d(Context context) {

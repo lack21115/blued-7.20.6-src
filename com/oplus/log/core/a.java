@@ -8,6 +8,6 @@ import java.util.Locale;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    Calendar f24328a;
+    Calendar f10641a;
     SimpleDateFormat b = new SimpleDateFormat("yyyy_MM_dd_HH", Locale.getDefault());
 }

@@ -12,16 +12,16 @@ import android.view.WindowManager;
 public class j implements DialogInterface.OnKeyListener, DialogInterface.OnShowListener, com.opos.mobad.q.a.b.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f26234a;
+    private d f12546a;
     private Activity b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.q.a.b.a f26235c;
+    private com.opos.mobad.q.a.b.a f12547c;
 
     private void a(Activity activity) {
-        d dVar = this.f26234a;
+        d dVar = this.f12546a;
         if (dVar != null && (dVar.getContext() instanceof Activity)) {
-            if (((Activity) this.f26234a.getContext()) == activity) {
+            if (((Activity) this.f12546a.getContext()) == activity) {
                 com.opos.cmn.an.f.a.b("InterstitialDialog", "same activity");
                 return;
             }
@@ -32,18 +32,18 @@ public class j implements DialogInterface.OnKeyListener, DialogInterface.OnShowL
             i = 16973841;
         }
         d dVar2 = new d(activity, i);
-        this.f26234a = dVar2;
+        this.f12546a = dVar2;
         dVar2.getWindow().getDecorView().setBackgroundColor(1711276032);
-        this.f26234a.setOnKeyListener(this);
-        this.f26234a.setOnShowListener(this);
+        this.f12546a.setOnKeyListener(this);
+        this.f12546a.setOnShowListener(this);
     }
 
     @Override // com.opos.mobad.q.a.b.b
     public void a() {
-        if (this.b == null || !this.f26234a.isShowing()) {
+        if (this.b == null || !this.f12546a.isShowing()) {
             com.opos.cmn.an.f.a.b("InterstitialDialog", "dismiss dialog but fail");
         } else {
-            this.f26234a.dismiss();
+            this.f12546a.dismiss();
         }
     }
 
@@ -62,12 +62,12 @@ public class j implements DialogInterface.OnKeyListener, DialogInterface.OnShowL
                     return j.this.b();
                 }
             });
-            this.f26234a.setContentView(view, new ViewGroup.LayoutParams(-1, -1));
-            this.f26234a.show();
+            this.f12546a.setContentView(view, new ViewGroup.LayoutParams(-1, -1));
+            this.f12546a.show();
             if (Build.VERSION.SDK_INT >= 28) {
-                WindowManager.LayoutParams attributes = this.f26234a.getWindow().getAttributes();
+                WindowManager.LayoutParams attributes = this.f12546a.getWindow().getAttributes();
                 attributes.layoutInDisplayCutoutMode = 1;
-                this.f26234a.getWindow().setAttributes(attributes);
+                this.f12546a.getWindow().setAttributes(attributes);
             }
             if (Build.VERSION.SDK_INT >= 16) {
                 int systemUiVisibility = activity.getWindow().getDecorView().getSystemUiVisibility();
@@ -78,14 +78,14 @@ public class j implements DialogInterface.OnKeyListener, DialogInterface.OnShowL
                 if ((systemUiVisibility & 4) == 4) {
                     i2 = i | 4 | 4096;
                 }
-                this.f26234a.getWindow().getDecorView().setSystemUiVisibility(i2);
+                this.f12546a.getWindow().getDecorView().setSystemUiVisibility(i2);
             }
         }
     }
 
     @Override // com.opos.mobad.q.a.b.b
     public void a(com.opos.mobad.q.a.b.a aVar) {
-        this.f26235c = aVar;
+        this.f12547c = aVar;
     }
 
     public boolean b() {
@@ -94,8 +94,8 @@ public class j implements DialogInterface.OnKeyListener, DialogInterface.OnShowL
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("InterstitialDialog", "isShowing", (Throwable) e);
         }
-        if (!this.b.isFinishing() && this.f26234a != null) {
-            if (this.f26234a.isShowing()) {
+        if (!this.b.isFinishing() && this.f12546a != null) {
+            if (this.f12546a.isShowing()) {
                 z = true;
                 com.opos.cmn.an.f.a.b("InterstitialDialog", "isShowing=" + z);
                 return z;
@@ -127,10 +127,10 @@ public class j implements DialogInterface.OnKeyListener, DialogInterface.OnShowL
             int r0 = r0.getAction()     // Catch: java.lang.Exception -> L2c
             if (r0 != 0) goto L35
             r0 = r4
-            com.opos.mobad.q.a.b.a r0 = r0.f26235c     // Catch: java.lang.Exception -> L2c
+            com.opos.mobad.q.a.b.a r0 = r0.f12547c     // Catch: java.lang.Exception -> L2c
             if (r0 == 0) goto L26
             r0 = r4
-            com.opos.mobad.q.a.b.a r0 = r0.f26235c     // Catch: java.lang.Exception -> L2c
+            com.opos.mobad.q.a.b.a r0 = r0.f12547c     // Catch: java.lang.Exception -> L2c
             r0.a()     // Catch: java.lang.Exception -> L2c
         L26:
             r0 = 1

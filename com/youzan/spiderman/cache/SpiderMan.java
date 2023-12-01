@@ -13,18 +13,18 @@ import java.lang.ref.WeakReference;
 public class SpiderMan {
 
     /* renamed from: a  reason: collision with root package name */
-    private static SpiderMan f41793a;
+    private static SpiderMan f28102a;
     private static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private static SpiderCacheCallback f41794c;
+    private static SpiderCacheCallback f28103c;
     private static WeakReference<SpiderCacheCallback> d;
 
     public static SpiderMan getInstance() {
-        if (f41793a == null) {
-            f41793a = new SpiderMan();
+        if (f28102a == null) {
+            f28102a = new SpiderMan();
         }
-        return f41793a;
+        return f28102a;
     }
 
     public static boolean isEnable() {
@@ -44,11 +44,11 @@ public class SpiderMan {
     public SpiderCacheCallback getSpiderCacheCallback() {
         SpiderCacheCallback spiderCacheCallback;
         WeakReference<SpiderCacheCallback> weakReference = d;
-        return (weakReference == null || (spiderCacheCallback = weakReference.get()) == null) ? f41794c : spiderCacheCallback;
+        return (weakReference == null || (spiderCacheCallback = weakReference.get()) == null) ? f28103c : spiderCacheCallback;
     }
 
     public void init(Context context, String str, SpiderCacheCallback spiderCacheCallback) {
-        f41794c = spiderCacheCallback;
+        f28103c = spiderCacheCallback;
         g.a(context);
         com.youzan.spiderman.b.c.a();
         com.youzan.spiderman.c.a.a(str);

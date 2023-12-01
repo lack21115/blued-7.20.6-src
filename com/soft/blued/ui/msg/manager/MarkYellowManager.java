@@ -12,13 +12,13 @@ import java.util.List;
 public class MarkYellowManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MarkYellowManager f32421a = new MarkYellowManager();
+    private static MarkYellowManager f18731a = new MarkYellowManager();
 
     private MarkYellowManager() {
     }
 
     public static MarkYellowManager a() {
-        return f32421a;
+        return f18731a;
     }
 
     public void a(List<String> list) {

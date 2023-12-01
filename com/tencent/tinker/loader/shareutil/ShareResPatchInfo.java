@@ -1,6 +1,5 @@
 package com.tencent.tinker.loader.shareutil;
 
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.tinker.loader.TinkerRuntimeException;
 import java.io.File;
 import java.util.ArrayList;
@@ -56,8 +55,8 @@ public class ShareResPatchInfo {
             str3 = str2.replaceAll("\\?", "\\.");
         }
         String str4 = str3;
-        if (str3.contains(PhoneConstants.APN_TYPE_ALL)) {
-            str4 = str3.replace(PhoneConstants.APN_TYPE_ALL, ".*");
+        if (str3.contains("*")) {
+            str4 = str3.replace("*", ".*");
         }
         return Pattern.compile(str4);
     }

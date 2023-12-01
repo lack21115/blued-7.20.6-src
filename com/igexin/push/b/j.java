@@ -36,7 +36,7 @@ public final class j extends h implements i {
         a(dVar);
         a2.a();
         m();
-        if (i == b.a.f23302a) {
+        if (i == b.a.f9694a) {
             l();
         }
     }
@@ -47,7 +47,7 @@ public final class j extends h implements i {
 
     @Override // com.igexin.push.b.h
     public final int c() {
-        return b.EnumC0449b.f23304a;
+        return b.EnumC0279b.f9696a;
     }
 
     @Override // com.igexin.push.b.h

@@ -5,7 +5,7 @@ import android.filterfw.core.FilterFactory;
 import android.filterfw.core.FilterGraph;
 import android.filterfw.core.KeyValueMap;
 import android.filterfw.core.ProtocolException;
-import com.alipay.sdk.util.i;
+import com.huawei.openalliance.ad.constant.t;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.regex.Pattern;
@@ -182,7 +182,7 @@ public class TextGraphReader extends GraphReader {
         Pattern compile6 = Pattern.compile("[a-zA-Z\\./:]+");
         Pattern compile7 = Pattern.compile("\\[[a-zA-Z0-9\\-_]+\\]");
         Pattern compile8 = Pattern.compile("=>");
-        Pattern compile9 = Pattern.compile(";");
+        Pattern compile9 = Pattern.compile(t.aE);
         Pattern compile10 = Pattern.compile("[a-zA-Z0-9\\-_]+");
         boolean z = false;
         PatternScanner patternScanner = new PatternScanner(str, compile4);
@@ -243,7 +243,7 @@ public class TextGraphReader extends GraphReader {
                     z = true;
                     break;
                 case true:
-                    patternScanner.eat(compile2, i.d);
+                    patternScanner.eat(compile2, "}");
                     z = false;
                     break;
                 case true:
@@ -281,7 +281,7 @@ public class TextGraphReader extends GraphReader {
                     z = true;
                     break;
                 case true:
-                    patternScanner.eat(compile9, ";");
+                    patternScanner.eat(compile9, t.aE);
                     z = false;
                     break;
             }
@@ -293,7 +293,7 @@ public class TextGraphReader extends GraphReader {
 
     private KeyValueMap readKeyValueAssignments(PatternScanner patternScanner, Pattern pattern) throws GraphIOException {
         Pattern compile = Pattern.compile("=");
-        Pattern compile2 = Pattern.compile(";");
+        Pattern compile2 = Pattern.compile(t.aE);
         Pattern compile3 = Pattern.compile("[a-zA-Z]+[a-zA-Z0-9]*");
         Pattern compile4 = Pattern.compile("'[^']*'|\\\"[^\\\"]*\\\"");
         Pattern compile5 = Pattern.compile("[0-9]+");
@@ -347,7 +347,7 @@ public class TextGraphReader extends GraphReader {
                     z = true;
                     break;
                 case true:
-                    patternScanner.eat(compile2, ";");
+                    patternScanner.eat(compile2, t.aE);
                     z = false;
                     break;
             }

@@ -7,7 +7,7 @@ public interface a extends ITPRichMediaSynchronizer {
 
     /* renamed from: com.tencent.thumbplayer.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/f/a$a.class */
-    public interface InterfaceC1019a {
+    public interface InterfaceC0849a {
         long a(ITPRichMediaSynchronizer iTPRichMediaSynchronizer);
     }
 
@@ -15,5 +15,5 @@ public interface a extends ITPRichMediaSynchronizer {
 
     void a(long j);
 
-    void a(InterfaceC1019a interfaceC1019a);
+    void a(InterfaceC0849a interfaceC0849a);
 }

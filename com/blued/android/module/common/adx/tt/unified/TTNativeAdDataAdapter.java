@@ -17,7 +17,6 @@ import com.blued.android.module.common.utils.ImageUtils;
 import com.bytedance.sdk.openadsdk.TTFeedAd;
 import com.bytedance.sdk.openadsdk.TTImage;
 import com.bytedance.sdk.openadsdk.TTNativeAd;
-import com.cdo.oaps.ad.OapsKey;
 import com.qq.e.ads.cfg.VideoOption;
 import com.qq.e.ads.nativ.CustomizeVideo;
 import com.qq.e.ads.nativ.MediaView;
@@ -39,13 +38,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/tt/unified/TTNativeAdDataAdapter.class */
 public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifiedADData {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10613a;
+    private BluedADExtra a;
     private ADListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private MediaView f10614c;
+    private MediaView c;
     private final TTFeedAd d;
     private NativeAdContainer e;
     private String f;
@@ -57,7 +52,7 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
         Intrinsics.e(context, "context");
         Intrinsics.e(data, "data");
         Intrinsics.e(adExtra, "adExtra");
-        this.f10613a = adExtra;
+        this.a = adExtra;
         this.d = data;
     }
 
@@ -66,7 +61,7 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
         if (list2 == null || list2.isEmpty()) {
             return;
         }
-        List<TTImage> imageList = this.d.getImageList();
+        List imageList = this.d.getImageList();
         boolean z = true;
         if (imageList != null) {
             z = imageList.isEmpty();
@@ -74,14 +69,13 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
         if (z) {
             return;
         }
-        List<TTImage> imageList2 = this.d.getImageList();
+        List imageList2 = this.d.getImageList();
         Intrinsics.a(imageList2);
-        ImageLoader.a((IRequestHost) null, imageList2.get(0).getImageUrl()).a(list.get(0));
+        ImageLoader.a((IRequestHost) null, ((TTImage) imageList2.get(0)).getImageUrl()).a(list.get(0));
     }
 
     private final TTNativeAd.AdInteractionListener b() {
         return new TTNativeAd.AdInteractionListener() { // from class: com.blued.android.module.common.adx.tt.unified.TTNativeAdDataAdapter$getInteractionListener$1
-            @Override // com.bytedance.sdk.openadsdk.TTNativeAd.AdInteractionListener
             public void onAdClicked(View view, TTNativeAd ttNativeAd) {
                 ADListener aDListener;
                 Intrinsics.e(view, "view");
@@ -94,7 +88,6 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
                 aDListener.onADEvent(new ADEvent(105, TTNativeAdDataAdapter.this.a()));
             }
 
-            @Override // com.bytedance.sdk.openadsdk.TTNativeAd.AdInteractionListener
             public void onAdCreativeClick(View view, TTNativeAd ttNativeAd) {
                 ADListener aDListener;
                 Intrinsics.e(view, "view");
@@ -107,7 +100,6 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
                 aDListener.onADEvent(new ADEvent(105, TTNativeAdDataAdapter.this.a()));
             }
 
-            @Override // com.bytedance.sdk.openadsdk.TTNativeAd.AdInteractionListener
             public void onAdShow(TTNativeAd ttNativeAd) {
                 boolean z;
                 ADListener aDListener;
@@ -134,23 +126,20 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
     }
 
     public final BluedADExtra a() {
-        return this.f10613a;
+        return this.a;
     }
 
     public void a(ADListener aDListener) {
         this.b = aDListener;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToCustomVideo(ViewGroup viewGroup, Context context, List<View> list, List<View> list2) {
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToView(Context context, NativeAdContainer nativeAdContainer, FrameLayout.LayoutParams layoutParams, List<View> list) {
         bindAdToView(context, nativeAdContainer, layoutParams, list, list);
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToView(Context context, NativeAdContainer nativeAdContainer, FrameLayout.LayoutParams layoutParams, List<View> list, List<View> list2) {
         this.e = nativeAdContainer;
         this.g = list;
@@ -159,60 +148,52 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
             return;
         }
         Log.v("adx", "bindAdToView 穿山甲注册原生大图");
-        this.d.registerViewForInteraction(nativeAdContainer, list, list, b());
+        this.d.registerViewForInteraction((ViewGroup) nativeAdContainer, list, list, b());
         this.d.render();
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindCTAViews(List<View> list) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindImageViews(List<ImageView> list, int i) {
         a(list);
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindImageViews(List<ImageView> list, byte[] bArr) {
         a(list);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindMediaView(MediaView mediaView, VideoOption videoOption, NativeADMediaListener nativeADMediaListener) {
-        this.f10614c = mediaView;
+        this.c = mediaView;
         View adView = this.d.getAdView();
-        int a2 = AppInfo.l - DensityUtil.a(95.0f);
-        int i = (a2 / 16) * 9;
-        int[] a3 = ImageUtils.a(this.d.getAdViewWidth(), this.d.getAdViewHeight(), a2, i, a2, i);
+        int a = AppInfo.l - DensityUtil.a(95.0f);
+        int i = (a / 16) * 9;
+        int[] a2 = ImageUtils.a(this.d.getAdViewWidth(), this.d.getAdViewHeight(), a, i, a, i);
         if (adView != null && adView.getParent() == null) {
-            MediaView mediaView2 = this.f10614c;
+            MediaView mediaView2 = this.c;
             if (mediaView2 != null) {
                 mediaView2.removeAllViews();
             }
-            MediaView mediaView3 = this.f10614c;
+            MediaView mediaView3 = this.c;
             if (mediaView3 != null) {
-                mediaView3.addView(adView, new ViewGroup.LayoutParams(a3[0], a3[1]));
+                mediaView3.addView(adView, new ViewGroup.LayoutParams(a2[0], a2[1]));
             }
         }
-        Log.v("adx", "绑定穿山甲视频，用于点击跳转 素材宽：" + a3[0] + " + 素材高：" + a3[1]);
+        Log.v("adx", "绑定穿山甲视频，用于点击跳转 素材宽：" + a2[0] + " + 素材高：" + a2[1]);
         Log.v("adx", "bindAdToView 穿山甲注册原生视频");
         this.d.registerViewForInteraction(this.e, this.g, this.h, b());
         this.d.render();
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void destroy() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean equalsAdData(NativeUnifiedADData nativeUnifiedADData) {
         return false;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAdPatternType() {
         int imageMode = this.d.getImageMode();
         int i = 3;
@@ -231,15 +212,12 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
         return i;
     }
 
-    @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public String getApkInfoUrl() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public NativeUnifiedADAppMiitInfo getAppMiitInfo() {
         return new NativeUnifiedADAppMiitInfo() { // from class: com.blued.android.module.common.adx.tt.unified.TTNativeAdDataAdapter$getAppMiitInfo$1
-            @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
             public String getAppName() {
                 TTFeedAd tTFeedAd;
                 tTFeedAd = TTNativeAdDataAdapter.this.d;
@@ -248,7 +226,6 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
                 return appName;
             }
 
-            @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
             public String getAuthorName() {
                 TTFeedAd tTFeedAd;
                 tTFeedAd = TTNativeAdDataAdapter.this.d;
@@ -257,12 +234,10 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
                 return developerName;
             }
 
-            @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
             public long getPackageSizeBytes() {
                 return 0L;
             }
 
-            @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
             public String getPermissionsUrl() {
                 TTFeedAd tTFeedAd;
                 tTFeedAd = TTNativeAdDataAdapter.this.d;
@@ -271,7 +246,6 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
                 return permissionUrl;
             }
 
-            @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
             public String getPrivacyAgreement() {
                 TTFeedAd tTFeedAd;
                 tTFeedAd = TTNativeAdDataAdapter.this.d;
@@ -280,7 +254,6 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
                 return privacyUrl;
             }
 
-            @Override // com.qq.e.ads.nativ.NativeUnifiedADAppMiitInfo
             public String getVersionName() {
                 TTFeedAd tTFeedAd;
                 tTFeedAd = TTNativeAdDataAdapter.this.d;
@@ -291,54 +264,45 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
         };
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public double getAppPrice() {
         return 0.0d;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAppScore() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAppStatus() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getButtonText() {
         String buttonText = this.d.getButtonText();
         Intrinsics.c(buttonText, "data.buttonText");
         return buttonText;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getCTAText() {
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public CustomizeVideo getCustomizeVideo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getDesc() {
         String description = this.d.getDescription();
         Intrinsics.c(description, "data.description");
         return description;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public long getDownloadCount() {
         return 0L;
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public int getECPM() {
         try {
-            Object obj = this.d.getMediaExtraInfo().get(OapsKey.KEY_PRICE);
+            Object obj = this.d.getMediaExtraInfo().get("price");
             if (obj != null) {
                 return ((Integer) obj).intValue();
             }
@@ -348,29 +312,25 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
         }
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public String getECPMLevel() {
         return this.f;
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public Map<String, Object> getExtraInfo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getIconUrl() {
-        List<TTImage> imageList = this.d.getImageList();
+        List imageList = this.d.getImageList();
         Intrinsics.c(imageList, "data.imageList");
         if (!imageList.isEmpty()) {
-            String imageUrl = this.d.getImageList().get(0).getImageUrl();
+            String imageUrl = ((TTImage) this.d.getImageList().get(0)).getImageUrl();
             Intrinsics.c(imageUrl, "{\n            data.imageList[0].imageUrl\n        }");
             return imageUrl;
         }
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public List<String> getImgList() {
         ArrayList arrayList = new ArrayList();
         List<TTImage> imageList = this.d.getImageList();
@@ -382,154 +342,127 @@ public final class TTNativeAdDataAdapter implements ADEventListener, NativeUnifi
         return arrayList;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getImgUrl() {
-        List<TTImage> imageList = this.d.getImageList();
+        List imageList = this.d.getImageList();
         Intrinsics.c(imageList, "data.imageList");
         if (!imageList.isEmpty()) {
-            String imageUrl = this.d.getImageList().get(0).getImageUrl();
+            String imageUrl = ((TTImage) this.d.getImageList().get(0)).getImageUrl();
             Intrinsics.c(imageUrl, "{\n            data.imageList[0].imageUrl\n        }");
             return imageUrl;
         }
         return "";
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getPictureHeight() {
-        List<TTImage> imageList;
+        List imageList;
         Intrinsics.c(this.d.getImageList(), "data.imageList");
         int i = 0;
         if (!imageList.isEmpty()) {
-            i = this.d.getImageList().get(0).getHeight();
+            i = ((TTImage) this.d.getImageList().get(0)).getHeight();
         }
         return i;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getPictureWidth() {
-        List<TTImage> imageList;
+        List imageList;
         Intrinsics.c(this.d.getImageList(), "data.imageList");
         int i = 0;
         if (!imageList.isEmpty()) {
-            i = this.d.getImageList().get(0).getWidth();
+            i = ((TTImage) this.d.getImageList().get(0)).getWidth();
         }
         return i;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getProgress() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getTitle() {
         String title = this.d.getTitle();
         Intrinsics.c(title, "data.title");
         return title;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getVideoCurrentPosition() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getVideoDuration() {
         return 0;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean isAppAd() {
         return this.d.getInteractionType() == 4;
     }
 
-    @Override // com.qq.e.comm.pi.LADI
     public boolean isValid() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean isWeChatCanvasAd() {
         return false;
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void negativeFeedback() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void pauseAppDownload() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void pauseVideo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resume() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resumeAppDownload() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resumeVideo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(int i, int i2, String str) {
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(Map<String, Object> map) {
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(int i) {
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(Map<String, Object> map) {
     }
 
-    @Override // com.qq.e.comm.pi.IBidding
     public void setBidECPM(int i) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public void setDownloadConfirmListener(DownloadConfirmListener downloadConfirmListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void setNativeAdEventListener(NativeADEventListener nativeADEventListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.comm.pi.NFBI
     public void setNegativeFeedbackListener(NegativeFeedbackListener negativeFeedbackListener) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void setVideoMute(boolean z) {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void startVideo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }
 
-    @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void stopVideo() {
         throw new NotImplementedError("An operation is not implemented: Not yet implemented");
     }

@@ -39,28 +39,22 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYNewUserGiftDialog.class */
 public final class YYNewUserGiftDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f18336a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private DialogNewUserGiftBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private NewComesNewGiftModel f18337c;
+    private NewComesNewGiftModel c;
     private List<NewComesNewGiftModel> d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYNewUserGiftDialog$CAdapter.class */
     public final class CAdapter extends BaseQuickAdapter<NewComesNewGiftModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYNewUserGiftDialog f18338a;
+        final /* synthetic */ YYNewUserGiftDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public CAdapter(YYNewUserGiftDialog this$0) {
             super(R.layout.item_new_user_gift, new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f18338a = this$0;
+            this.a = this$0;
         }
 
         private final void a(final View view) {
@@ -90,60 +84,59 @@ public final class YYNewUserGiftDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, NewComesNewGiftModel newComesNewGiftModel) {
             Intrinsics.e(helper, "helper");
-            ItemNewUserGiftBinding a2 = ItemNewUserGiftBinding.a(helper.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
+            ItemNewUserGiftBinding a = ItemNewUserGiftBinding.a(helper.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
             int lastIndexOf = getData().lastIndexOf(newComesNewGiftModel);
             if (lastIndexOf == 0) {
-                a2.f.setText("第一天");
+                a.f.setText("第一天");
             } else if (lastIndexOf == 1) {
-                a2.f.setText("第二天");
+                a.f.setText("第二天");
             } else if (lastIndexOf == 2) {
-                a2.f.setText("第三天");
+                a.f.setText("第三天");
             } else if (lastIndexOf == 3) {
-                a2.f.setText("第四天");
+                a.f.setText("第四天");
             }
-            a2.f16632a.setBackgroundResource(R.color.transparent);
+            a.a.setBackgroundResource(R.color.transparent);
             if (newComesNewGiftModel == null) {
                 return;
             }
-            ImageLoader.a(this.f18338a.a(), newComesNewGiftModel.getPic()).a(a2.f16632a);
-            TextView textView = a2.d;
+            ImageLoader.a(this.a.a(), newComesNewGiftModel.getPic()).a(a.a);
+            TextView textView = a.d;
             textView.setText(newComesNewGiftModel.getName() + ' ' + newComesNewGiftModel.getDuration() + (char) 22825);
-            a2.e.setText(Intrinsics.a("x", (Object) newComesNewGiftModel.getCount()));
-            ShapeModel shapeModel = a2.f16633c.getShapeModel();
+            a.e.setText(Intrinsics.a("x", (Object) newComesNewGiftModel.getCount()));
+            ShapeModel shapeModel = a.c.getShapeModel();
             shapeModel.q = 0.0f;
-            a2.f.setTextColor(a2.d.getResources().getColor(R.color.syc_e84e5d));
-            ShapeModel shapeModel2 = a2.f.getShapeModel();
-            shapeModel2.k = a2.f.getResources().getColor(R.color.syc_dark_e5e5e5);
+            a.f.setTextColor(a.d.getResources().getColor(R.color.syc_e84e5d));
+            ShapeModel shapeModel2 = a.f.getShapeModel();
+            shapeModel2.k = a.f.getResources().getColor(R.color.syc_dark_e5e5e5);
             int status = newComesNewGiftModel.getStatus();
             if (status == 0) {
-                a2.b.setVisibility(8);
-                a2.f16632a.setAlpha(1.0f);
+                a.b.setVisibility(8);
+                a.a.setAlpha(1.0f);
             } else if (status == 1) {
-                shapeModel2.k = a2.f.getResources().getColor(R.color.syc_f82645);
-                shapeModel.q = a2.f16633c.getResources().getDimensionPixelOffset(R.dimen.dp_1);
-                a2.b.setVisibility(4);
-                a2.f16632a.setAlpha(1.0f);
-                shapeModel2.b = a2.d.getResources().getColor(R.color.white);
+                shapeModel2.k = a.f.getResources().getColor(R.color.syc_f82645);
+                shapeModel.q = a.c.getResources().getDimensionPixelOffset(R.dimen.dp_1);
+                a.b.setVisibility(4);
+                a.a.setAlpha(1.0f);
+                shapeModel2.b = a.d.getResources().getColor(R.color.white);
                 EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_NEW_GIFT_POP_SHOW, getData().lastIndexOf(newComesNewGiftModel) + 1);
-                SquareImageView squareImageView = a2.f16632a;
+                SquareImageView squareImageView = a.a;
                 Intrinsics.c(squareImageView, "bind.iv");
                 a(squareImageView);
             } else if (status == 2) {
-                a2.b.setImageResource(R.drawable.yy_icon_newcome_ylq);
-                a2.b.setVisibility(0);
-                a2.f16632a.setAlpha(0.2f);
+                a.b.setImageResource(R.drawable.yy_icon_newcome_ylq);
+                a.b.setVisibility(0);
+                a.a.setAlpha(0.2f);
             } else if (status == 3) {
-                a2.b.setImageResource(R.drawable.yy_icon_newcome_sx);
-                a2.b.setVisibility(0);
-                a2.f16632a.setAlpha(0.2f);
+                a.b.setImageResource(R.drawable.yy_icon_newcome_sx);
+                a.b.setVisibility(0);
+                a.a.setAlpha(0.2f);
             }
-            a2.f16633c.setShapeModel(shapeModel);
-            a2.f.setShapeModel(shapeModel2);
+            a.c.setShapeModel(shapeModel);
+            a.f.setShapeModel(shapeModel2);
         }
     }
 
@@ -216,9 +209,9 @@ public final class YYNewUserGiftDialog extends BaseFullScreenDialog {
                 list = YYNewUserGiftDialog.this.d;
                 if (list != null) {
                     YYNewUserGiftDialog yYNewUserGiftDialog = YYNewUserGiftDialog.this;
-                    newComesNewGiftModel = yYNewUserGiftDialog.f18337c;
+                    newComesNewGiftModel = yYNewUserGiftDialog.c;
                     int b = CollectionsKt.b((List<? extends NewComesNewGiftModel>) list, newComesNewGiftModel);
-                    newComesNewGiftModel2 = yYNewUserGiftDialog.f18337c;
+                    newComesNewGiftModel2 = yYNewUserGiftDialog.c;
                     yYNewUserGiftDialog.a(newComesNewGiftModel2, Integer.valueOf(b));
                     EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_NEW_GIFT_POP_GET_CLICK, b + 1);
                 }
@@ -238,7 +231,7 @@ public final class YYNewUserGiftDialog extends BaseFullScreenDialog {
         ShapeTextView shapeTextView;
         ImageView imageView2;
         DialogNewUserGiftBinding dialogNewUserGiftBinding = this.b;
-        if (dialogNewUserGiftBinding != null && (imageView2 = dialogNewUserGiftBinding.f16369c) != null) {
+        if (dialogNewUserGiftBinding != null && (imageView2 = dialogNewUserGiftBinding.c) != null) {
             imageView2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYNewUserGiftDialog$LE6yrTRE_d8OZlGmZ7uWVGJfS-Q
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -269,7 +262,7 @@ public final class YYNewUserGiftDialog extends BaseFullScreenDialog {
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
         }
-        CAdapter cAdapter = new CAdapter(this);
+        RecyclerView.Adapter cAdapter = new CAdapter(this);
         DialogNewUserGiftBinding dialogNewUserGiftBinding5 = this.b;
         RecyclerView recyclerView2 = dialogNewUserGiftBinding5 == null ? null : dialogNewUserGiftBinding5.d;
         if (recyclerView2 != null) {
@@ -282,7 +275,7 @@ public final class YYNewUserGiftDialog extends BaseFullScreenDialog {
         cAdapter.setNewData(list);
         for (NewComesNewGiftModel newComesNewGiftModel : list) {
             if (newComesNewGiftModel.getStatus() == 1) {
-                this.f18337c = newComesNewGiftModel;
+                this.c = newComesNewGiftModel;
             }
         }
     }
@@ -297,7 +290,7 @@ public final class YYNewUserGiftDialog extends BaseFullScreenDialog {
         a2.show(childFragmentManager, "YYNewUserGiftINfoDialog");
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_new_user_gift, viewGroup, true);

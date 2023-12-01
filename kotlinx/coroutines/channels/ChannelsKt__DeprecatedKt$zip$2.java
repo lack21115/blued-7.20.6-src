@@ -1,6 +1,6 @@
 package kotlinx.coroutines.channels;
 
-import com.blued.das.client.chatroom.ChatRoomProtos;
+import java.net.HttpURLConnection;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -10,16 +10,12 @@ import kotlin.jvm.functions.Function2;
 
 /* JADX INFO: Add missing generic type declarations: [V] */
 @Metadata
-@DebugMetadata(b = "Deprecated.kt", c = {415, ChatRoomProtos.Event.YY_LIFT_MASK_POP_USE_CLICK_VALUE, 399}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$zip$2")
+@DebugMetadata(b = "Deprecated.kt", c = {HttpURLConnection.HTTP_UNSUPPORTED_TYPE, 397, 399}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$zip$2")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$zip$2.class */
 final class ChannelsKt__DeprecatedKt$zip$2<V> extends SuspendLambda implements Function2<ProducerScope<? super V>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42987a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42988c;
+    Object c;
     Object d;
     Object e;
     int f;
@@ -40,7 +36,7 @@ final class ChannelsKt__DeprecatedKt$zip$2<V> extends SuspendLambda implements F
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<? super V> producerScope, Continuation<? super Unit> continuation) {
-        return ((ChannelsKt__DeprecatedKt$zip$2) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((ChannelsKt__DeprecatedKt$zip$2) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

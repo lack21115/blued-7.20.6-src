@@ -1,20 +1,28 @@
 package com.tencent.tmsqmsp.sdk.a;
 
+import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.text.TextUtils;
-import com.tencent.tmsqmsp.sdk.app.QmspSDK;
+import com.tencent.mapsdk.internal.oj;
 import java.io.File;
 import java.security.MessageDigest;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/a/c.class */
 public class c {
     public static int a() {
+        Context context;
+        Context context2;
+        Context context3;
         try {
-            String str = QmspSDK.getContext().getPackageManager().getPackageInfo(QmspSDK.getContext().getPackageName(), 0).packageName;
-            ApplicationInfo applicationInfo = QmspSDK.getContext().getApplicationInfo();
+            context = oj.getContext();
+            PackageManager packageManager = context.getPackageManager();
+            context2 = oj.getContext();
+            String str = packageManager.getPackageInfo(context2.getPackageName(), 0).packageName;
+            context3 = oj.getContext();
+            ApplicationInfo applicationInfo = context3.getApplicationInfo();
             if (applicationInfo.packageName.equals(str)) {
                 return Integer.valueOf((int) new File(applicationInfo.publicSourceDir).length()).intValue();
             }
@@ -42,8 +50,10 @@ public class c {
     }
 
     public static String b() {
+        Context context;
         try {
-            String packageName = QmspSDK.getContext().getPackageName();
+            context = oj.getContext();
+            String packageName = context.getPackageName();
             if (TextUtils.isEmpty(packageName)) {
                 return null;
             }
@@ -54,8 +64,13 @@ public class c {
     }
 
     public static String c() {
+        Context context;
+        Context context2;
+        context = oj.getContext();
+        PackageManager packageManager = context.getPackageManager();
         try {
-            PackageInfo packageInfo = QmspSDK.getContext().getPackageManager().getPackageInfo(QmspSDK.getContext().getPackageName(), 0);
+            context2 = oj.getContext();
+            PackageInfo packageInfo = packageManager.getPackageInfo(context2.getPackageName(), 0);
             if (TextUtils.isEmpty(packageInfo.versionName)) {
                 return null;
             }
@@ -72,16 +87,21 @@ public class c {
 
     public static String e() {
         try {
-            return com.tencent.tmsqmsp.sdk.c.b.f39706c;
+            return com.tencent.tmsqmsp.sdk.c.b.f26015c;
         } catch (Throwable th) {
             return "";
         }
     }
 
     public static String f() {
+        Context context;
         PackageInfo packageInfo;
+        Context context2;
+        context = oj.getContext();
+        PackageManager packageManager = context.getPackageManager();
         try {
-            packageInfo = QmspSDK.getContext().getPackageManager().getPackageInfo(QmspSDK.getContext().getPackageName(), 64);
+            context2 = oj.getContext();
+            packageInfo = packageManager.getPackageInfo(context2.getPackageName(), 64);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             packageInfo = null;

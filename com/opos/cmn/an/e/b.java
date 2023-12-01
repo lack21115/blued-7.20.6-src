@@ -4,20 +4,20 @@ package com.opos.cmn.an.e;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f24495a;
+    private long f10808a;
     private double b;
 
     /* renamed from: c  reason: collision with root package name */
-    private double f24496c;
+    private double f10809c;
 
     public b(double d, double d2, long j) {
         this.b = d;
-        this.f24496c = d2;
-        this.f24495a = j;
+        this.f10809c = d2;
+        this.f10808a = j;
     }
 
     public long a() {
-        return this.f24495a;
+        return this.f10808a;
     }
 
     public double b() {
@@ -25,6 +25,6 @@ public class b {
     }
 
     public double c() {
-        return this.f24496c;
+        return this.f10809c;
     }
 }

@@ -92,7 +92,7 @@ public class VpnConfig implements Parcelable {
 
     public static CharSequence getVpnLabel(Context context, String str) throws PackageManager.NameNotFoundException {
         PackageManager packageManager = context.getPackageManager();
-        Intent intent = new Intent("android.net.VpnService");
+        Intent intent = new Intent(SERVICE_INTERFACE);
         intent.setPackage(str);
         List<ResolveInfo> queryIntentServices = packageManager.queryIntentServices(intent, 0);
         return (queryIntentServices == null || queryIntentServices.size() != 1) ? packageManager.getApplicationInfo(str, 0).loadLabel(packageManager) : queryIntentServices.get(0).loadLabel(packageManager);
@@ -129,7 +129,7 @@ public class VpnConfig implements Parcelable {
             if (i2 >= length) {
                 return;
             }
-            RouteInfo routeInfo = new RouteInfo(new IpPrefix(split[i2]), (InetAddress) null);
+            RouteInfo routeInfo = new RouteInfo(new IpPrefix(split[i2]), null);
             this.routes.add(routeInfo);
             updateAllowedFamilies(routeInfo.getDestination().getAddress());
             i = i2 + 1;

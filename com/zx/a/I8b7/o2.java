@@ -19,26 +19,26 @@ public class o2 {
     public static final AtomicBoolean e = new AtomicBoolean(false);
 
     /* renamed from: a  reason: collision with root package name */
-    public ZXModule f42155a = null;
+    public ZXModule f28464a = null;
     public final o0 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final y1 f42156c;
+    public final y1 f28465c;
     public final x1 d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/o2$a.class */
     public class a implements ContextHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Context f42157a;
+        public final /* synthetic */ Context f28466a;
 
         public a(o2 o2Var, Context context) {
-            this.f42157a = context;
+            this.f28466a = context;
         }
 
         @Override // com.zx.module.context.ContextHolder
         public Object getContext() {
-            return this.f42157a;
+            return this.f28466a;
         }
     }
 
@@ -46,10 +46,10 @@ public class o2 {
     public class b implements Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ SAIDCallback f42158a;
+        public final /* synthetic */ SAIDCallback f28467a;
 
         public b(o2 o2Var, SAIDCallback sAIDCallback) {
-            this.f42158a = sAIDCallback;
+            this.f28467a = sAIDCallback;
         }
 
         @Override // com.zx.module.base.Callback
@@ -58,13 +58,13 @@ public class o2 {
                 JSONObject jSONObject = new JSONObject(str);
                 int i = jSONObject.getInt("code");
                 if (i == 0) {
-                    this.f42158a.onSuccess(jSONObject.getString("data"));
+                    this.f28467a.onSuccess(jSONObject.getString("data"));
                 } else {
-                    this.f42158a.onFailed(i, jSONObject.optString("data"));
+                    this.f28467a.onFailed(i, jSONObject.optString("data"));
                 }
             } catch (Throwable th) {
                 z1.a(th);
-                SAIDCallback sAIDCallback = this.f42158a;
+                SAIDCallback sAIDCallback = this.f28467a;
                 if (sAIDCallback != null) {
                     sAIDCallback.onFailed(10000, th.getMessage());
                 }
@@ -76,10 +76,10 @@ public class o2 {
     public class c implements Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ com.zx.sdk.api.Callback f42159a;
+        public final /* synthetic */ com.zx.sdk.api.Callback f28468a;
 
         public c(o2 o2Var, com.zx.sdk.api.Callback callback) {
-            this.f42159a = callback;
+            this.f28468a = callback;
         }
 
         @Override // com.zx.module.base.Callback
@@ -88,13 +88,13 @@ public class o2 {
                 JSONObject jSONObject = new JSONObject(str);
                 int i = jSONObject.getInt("code");
                 if (i == 0) {
-                    this.f42159a.onSuccess(jSONObject.getString("data"));
+                    this.f28468a.onSuccess(jSONObject.getString("data"));
                 } else {
-                    this.f42159a.onFailed(i, jSONObject.optString("data"));
+                    this.f28468a.onFailed(i, jSONObject.optString("data"));
                 }
             } catch (Throwable th) {
                 z1.a(th);
-                com.zx.sdk.api.Callback callback = this.f42159a;
+                com.zx.sdk.api.Callback callback = this.f28468a;
                 if (callback != null) {
                     callback.onFailed(10000, th.getMessage());
                 }
@@ -106,10 +106,10 @@ public class o2 {
     public class d implements Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ com.zx.sdk.api.Callback f42160a;
+        public final /* synthetic */ com.zx.sdk.api.Callback f28469a;
 
         public d(o2 o2Var, com.zx.sdk.api.Callback callback) {
-            this.f42160a = callback;
+            this.f28469a = callback;
         }
 
         @Override // com.zx.module.base.Callback
@@ -118,13 +118,13 @@ public class o2 {
                 JSONObject jSONObject = new JSONObject(str);
                 int i = jSONObject.getInt("code");
                 if (i == 0) {
-                    this.f42160a.onSuccess(jSONObject.getString("data"));
+                    this.f28469a.onSuccess(jSONObject.getString("data"));
                 } else {
-                    this.f42160a.onFailed(i, jSONObject.optString("data"));
+                    this.f28469a.onFailed(i, jSONObject.optString("data"));
                 }
             } catch (Throwable th) {
                 z1.a(th);
-                com.zx.sdk.api.Callback callback = this.f42160a;
+                com.zx.sdk.api.Callback callback = this.f28469a;
                 if (callback != null) {
                     callback.onFailed(10000, th.getMessage());
                 }
@@ -136,20 +136,20 @@ public class o2 {
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final o2 f42161a = new o2();
+        public static final o2 f28470a = new o2();
     }
 
     public o2() {
         o0 o0Var = new o0();
         this.b = o0Var;
         y1 y1Var = new y1();
-        this.f42156c = y1Var;
+        this.f28465c = y1Var;
         x1 x1Var = new x1();
         this.d = x1Var;
         o0Var.a("MESSAGE_ON_ZXID_CHANGED", y1Var);
         o0Var.a("MESSAGE_ON_ZXID_RECEIVED", x1Var);
         try {
-            a(t2.f42201a);
+            a(t2.f28510a);
         } catch (Throwable th) {
             n2.a(th, m2.a("ZXModule init failed: "));
         }
@@ -160,7 +160,7 @@ public class o2 {
 
     public void a() throws r1 {
         try {
-            this.f42155a.start();
+            this.f28464a.start();
         } catch (Exception e2) {
             StringBuilder a2 = m2.a("Raised exception in start: ");
             a2.append(e2.getMessage());
@@ -180,13 +180,13 @@ public class o2 {
                 x1 x1Var = this.d;
                 x1Var.getClass();
                 if (!TextUtils.isEmpty(str)) {
-                    LinkedList<ZXIDListener> linkedList = x1Var.f42227a.get(str);
+                    LinkedList<ZXIDListener> linkedList = x1Var.f28536a.get(str);
                     LinkedList<ZXIDListener> linkedList2 = linkedList;
                     if (linkedList == null) {
                         linkedList2 = new LinkedList<>();
                     }
                     linkedList2.add(zXIDListener);
-                    x1Var.f42227a.put(str, linkedList2);
+                    x1Var.f28536a.put(str, linkedList2);
                 }
             } catch (Exception e2) {
                 z1.a(e2);

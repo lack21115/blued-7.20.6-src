@@ -20,21 +20,17 @@ public class SearchCity implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5764a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5765c;
+    private String c;
 
     public SearchCity() {
     }
 
     public SearchCity(Parcel parcel) {
-        this.f5764a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5765c = parcel.readString();
+        this.c = parcel.readString();
     }
 
     @Override // android.os.Parcelable
@@ -43,11 +39,11 @@ public class SearchCity implements Parcelable {
     }
 
     public String getSearchCityAdCode() {
-        return this.f5765c;
+        return this.c;
     }
 
     public String getSearchCityName() {
-        return this.f5764a;
+        return this.a;
     }
 
     public String getSearchCitycode() {
@@ -55,7 +51,7 @@ public class SearchCity implements Parcelable {
     }
 
     public void setSearchCityName(String str) {
-        this.f5764a = str;
+        this.a = str;
     }
 
     public void setSearchCitycode(String str) {
@@ -63,13 +59,13 @@ public class SearchCity implements Parcelable {
     }
 
     public void setSearchCityhAdCode(String str) {
-        this.f5765c = str;
+        this.c = str;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5764a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5765c);
+        parcel.writeString(this.c);
     }
 }

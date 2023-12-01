@@ -46,7 +46,7 @@ public class BluedFingerPrintUtils {
             public Map<String, Object> setUserData() {
                 HashMap hashMap = new HashMap();
                 hashMap.put(DeviceInfoConstant.APP_NAME, "blued");
-                hashMap.put(DeviceInfoConstant.CHANNEL, AppInfo.f9487c);
+                hashMap.put(DeviceInfoConstant.CHANNEL, AppInfo.c);
                 hashMap.put(DeviceInfoConstant.USERID, UserInfo.getInstance().getLoginUserInfo().getUid());
                 hashMap.put(DeviceInfoConstant.OAID, BluedDeviceIdentity.a().h());
                 hashMap.put(DeviceInfoConstant.SMID, BluedDeviceIdentity.a().g());
@@ -61,7 +61,7 @@ public class BluedFingerPrintUtils {
             @Override // com.danlan.android.cognition.collector.listener.ExtraInfoFroAction
             public HashMap<String, Object> setExtraInfo() {
                 HashMap<String, Object> hashMap = new HashMap<>();
-                hashMap.put(DeviceInfoConstant.USERID, String.this);
+                hashMap.put(DeviceInfoConstant.USERID, str);
                 hashMap.put(DeviceInfoConstant.SMID, BluedDeviceIdentity.a().g());
                 hashMap.put(DeviceInfoConstant.DUID, BluedDeviceIdentity.a().d());
                 return hashMap;

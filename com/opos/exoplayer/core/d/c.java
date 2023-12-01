@@ -4,7 +4,7 @@ package com.opos.exoplayer.core.d;
 public interface c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final c f25262a = new c() { // from class: com.opos.exoplayer.core.d.c.1
+    public static final c f11574a = new c() { // from class: com.opos.exoplayer.core.d.c.1
         @Override // com.opos.exoplayer.core.d.c
         public a a() {
             return d.a();

@@ -3,7 +3,7 @@ package com.sobot.chat.api.apiUtils;
 import android.os.BatteryManager;
 import android.provider.ThemesContract;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
+import com.huawei.hms.ads.fw;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.huawei.openalliance.ad.constant.at;
 import com.igexin.push.core.b;
@@ -2831,7 +2831,7 @@ public class GsonUtil {
                 JSONObject jSONObject2 = jSONObject.getJSONObject("data");
                 if (jSONObject2.has("isWork")) {
                     ZhiChiWorkModel zhiChiWorkModel = new ZhiChiWorkModel();
-                    zhiChiWorkModel.setWork("true".equals(jSONObject2.optString("isWork")));
+                    zhiChiWorkModel.setWork(fw.Code.equals(jSONObject2.optString("isWork")));
                     zhiChiWorkResult.setData(zhiChiWorkModel);
                     return zhiChiWorkResult;
                 }
@@ -2864,7 +2864,7 @@ public class GsonUtil {
                 sb.append("\"" + entry.getKey() + "\":" + entry.getValue() + ",");
             }
             String sb2 = sb.toString();
-            return sb2.substring(0, sb2.lastIndexOf(",")) + i.d;
+            return sb2.substring(0, sb2.lastIndexOf(",")) + "}";
         } catch (Exception e) {
             return "";
         }

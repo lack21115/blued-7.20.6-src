@@ -66,7 +66,6 @@ public final class NearbyHomeFragment_MVP implements MvpDispatcher {
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00a5, code lost:
         if (r6.equals(com.soft.blued.constant.EventBusConstant.KEY_EVENT_NEARBY_ACTIVITY) != false) goto L12;
      */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

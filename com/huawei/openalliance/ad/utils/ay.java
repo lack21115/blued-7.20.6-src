@@ -332,7 +332,7 @@ public abstract class ay {
 
     public static boolean Code(Context context) {
         PowerManager powerManager;
-        if (context == null || (powerManager = (PowerManager) context.getSystemService("power")) == null) {
+        if (context == null || (powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE)) == null) {
             return true;
         }
         try {

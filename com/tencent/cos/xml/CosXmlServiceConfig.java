@@ -4,10 +4,10 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.common.VersionInfo;
 import com.tencent.qcloud.core.http.QCloudHttpRetryHandler;
 import com.tencent.qcloud.core.task.RetryStrategy;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -375,10 +375,10 @@ public class CosXmlServiceConfig implements Parcelable {
         String str3 = str;
         if (str != null) {
             str3 = str;
-            if (!str.endsWith("-" + str2)) {
+            if (!str.endsWith(Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2)) {
                 str3 = str;
                 if (!TextUtils.isEmpty(str2)) {
-                    str3 = str + "-" + str2;
+                    str3 = str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str2;
                 }
             }
         }
@@ -529,19 +529,19 @@ public class CosXmlServiceConfig implements Parcelable {
         StringBuilder sb = new StringBuilder();
         if (this.bucketInPath) {
             String str3 = str;
-            if (!str.endsWith("-" + this.appid)) {
+            if (!str.endsWith(Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.appid)) {
                 str3 = str;
                 if (!TextUtils.isEmpty(this.appid)) {
-                    str3 = str + "-" + this.appid;
+                    str3 = str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.appid;
                 }
             }
-            sb.append(BridgeUtil.SPLIT_MARK);
+            sb.append("/");
             sb.append(str3);
         }
-        if (str2 == null || str2.startsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str2 == null || str2.startsWith("/")) {
             sb.append(str2);
         } else {
-            sb.append(BridgeUtil.SPLIT_MARK);
+            sb.append("/");
             sb.append(str2);
         }
         return sb.toString();

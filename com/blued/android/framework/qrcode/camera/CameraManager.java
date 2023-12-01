@@ -15,11 +15,11 @@ import java.io.IOException;
 public final class CameraManager {
 
     /* renamed from: a  reason: collision with root package name */
-    static final int f9858a;
+    static final int f6656a;
     private static final String b = CameraManager.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static CameraManager f9859c;
+    private static CameraManager f6657c;
     private final Context d;
     private final CameraConfigurationManager e;
     private Camera f;
@@ -37,7 +37,7 @@ public final class CameraManager {
         } catch (NumberFormatException e) {
             i = 10000;
         }
-        f9858a = i;
+        f6656a = i;
     }
 
     private CameraManager(Context context) {
@@ -50,12 +50,12 @@ public final class CameraManager {
     }
 
     public static CameraManager a() {
-        return f9859c;
+        return f6657c;
     }
 
     public static void a(Context context) {
-        if (f9859c == null) {
-            f9859c = new CameraManager(context);
+        if (f6657c == null) {
+            f6657c = new CameraManager(context);
         }
     }
 

@@ -44,10 +44,10 @@ public class Soundex implements StringEncoder {
         return this.soundexMapping;
     }
 
-    private char map(char c2) {
-        int i = c2 - 'A';
+    private char map(char c) {
+        int i = c - 'A';
         if (i < 0 || i >= getSoundexMapping().length) {
-            throw new IllegalArgumentException("The character is not mapped: " + c2);
+            throw new IllegalArgumentException("The character is not mapped: " + c);
         }
         return getSoundexMapping()[i];
     }
@@ -96,7 +96,7 @@ public class Soundex implements StringEncoder {
                 break;
             }
             char mappingCode2 = getMappingCode(clean, i);
-            char c2 = mappingCode;
+            char c = mappingCode;
             int i4 = i3;
             if (mappingCode2 != 0) {
                 i4 = i3;
@@ -107,10 +107,10 @@ public class Soundex implements StringEncoder {
                         i4 = i3 + 1;
                     }
                 }
-                c2 = mappingCode2;
+                c = mappingCode2;
             }
             i++;
-            mappingCode = c2;
+            mappingCode = c;
             i2 = i4;
         }
         return new String(cArr);

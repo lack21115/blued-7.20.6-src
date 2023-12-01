@@ -15,30 +15,30 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
     private final MapEntryProtoAdapter<K, V> entryAdapter;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public MapProtoAdapter(ProtoAdapter<K> keyAdapter, ProtoAdapter<V> valueAdapter) {
-        super(FieldEncoding.LENGTH_DELIMITED, Reflection.b(Map.class), (String) null, valueAdapter.getSyntax(), MapsKt.a());
-        Intrinsics.e(keyAdapter, "keyAdapter");
-        Intrinsics.e(valueAdapter, "valueAdapter");
-        this.entryAdapter = new MapEntryProtoAdapter<>(keyAdapter, valueAdapter);
+    public MapProtoAdapter(ProtoAdapter<K> protoAdapter, ProtoAdapter<V> protoAdapter2) {
+        super(FieldEncoding.LENGTH_DELIMITED, Reflection.b(Map.class), (String) null, protoAdapter2.getSyntax(), MapsKt.a());
+        Intrinsics.e(protoAdapter, "keyAdapter");
+        Intrinsics.e(protoAdapter2, "valueAdapter");
+        this.entryAdapter = new MapEntryProtoAdapter<>(protoAdapter, protoAdapter2);
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public Map<K, V> decode(ProtoReader reader) throws IOException {
-        Intrinsics.e(reader, "reader");
+    public Map<K, V> decode(ProtoReader protoReader) throws IOException {
+        Intrinsics.e(protoReader, "reader");
         K identity = this.entryAdapter.getKeyAdapter$wire_runtime().getIdentity();
         V identity2 = this.entryAdapter.getValueAdapter$wire_runtime().getIdentity();
-        long beginMessage = reader.beginMessage();
+        long beginMessage = protoReader.beginMessage();
         while (true) {
-            int nextTag = reader.nextTag();
+            int nextTag = protoReader.nextTag();
             if (nextTag == -1) {
                 break;
             } else if (nextTag == 1) {
-                identity = this.entryAdapter.getKeyAdapter$wire_runtime().decode(reader);
+                identity = this.entryAdapter.getKeyAdapter$wire_runtime().decode(protoReader);
             } else if (nextTag == 2) {
-                identity2 = this.entryAdapter.getValueAdapter$wire_runtime().decode(reader);
+                identity2 = this.entryAdapter.getValueAdapter$wire_runtime().decode(protoReader);
             }
         }
-        reader.endMessageAndGetUnknownFields(beginMessage);
+        protoReader.endMessageAndGetUnknownFields(beginMessage);
         if (identity != null) {
             if (identity2 != null) {
                 return MapsKt.a(TuplesKt.a(identity, identity2));
@@ -53,9 +53,9 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
         encode(protoWriter, (Map) ((Map) obj));
     }
 
-    public void encode(ProtoWriter writer, Map<K, ? extends V> value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
+    public void encode(ProtoWriter protoWriter, Map<K, ? extends V> map) {
+        Intrinsics.e(protoWriter, "writer");
+        Intrinsics.e(map, "value");
         throw new UnsupportedOperationException("Repeated values can only be encoded with a tag.");
     }
 
@@ -64,9 +64,9 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
         encode(reverseProtoWriter, (Map) ((Map) obj));
     }
 
-    public void encode(ReverseProtoWriter writer, Map<K, ? extends V> value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
+    public void encode(ReverseProtoWriter reverseProtoWriter, Map<K, ? extends V> map) {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        Intrinsics.e(map, "value");
         throw new UnsupportedOperationException("Repeated values can only be encoded with a tag.");
     }
 
@@ -75,13 +75,13 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
         encodeWithTag(protoWriter, i, (Map) ((Map) obj));
     }
 
-    public void encodeWithTag(ProtoWriter writer, int i, Map<K, ? extends V> map) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ProtoWriter protoWriter, int i, Map<K, ? extends V> map) throws IOException {
+        Intrinsics.e(protoWriter, "writer");
         if (map == null) {
             return;
         }
         for (Map.Entry<K, ? extends V> entry : map.entrySet()) {
-            this.entryAdapter.encodeWithTag(writer, i, (int) entry);
+            this.entryAdapter.encodeWithTag(protoWriter, i, (int) entry);
         }
     }
 
@@ -90,8 +90,8 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
         encodeWithTag(reverseProtoWriter, i, (Map) ((Map) obj));
     }
 
-    public void encodeWithTag(ReverseProtoWriter writer, int i, Map<K, ? extends V> map) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ReverseProtoWriter reverseProtoWriter, int i, Map<K, ? extends V> map) throws IOException {
+        Intrinsics.e(reverseProtoWriter, "writer");
         if (map == null) {
             return;
         }
@@ -106,7 +106,7 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
         while (i2 < length) {
             Map.Entry entry = entryArr[i2];
             i2++;
-            this.entryAdapter.encodeWithTag(writer, i, (int) entry);
+            this.entryAdapter.encodeWithTag(reverseProtoWriter, i, (int) entry);
         }
     }
 
@@ -115,8 +115,8 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
         return encodedSize((Map) ((Map) obj));
     }
 
-    public int encodedSize(Map<K, ? extends V> value) {
-        Intrinsics.e(value, "value");
+    public int encodedSize(Map<K, ? extends V> map) {
+        Intrinsics.e(map, "value");
         throw new UnsupportedOperationException("Repeated values can only be sized with a tag.");
     }
 
@@ -141,8 +141,8 @@ public final class MapProtoAdapter<K, V> extends ProtoAdapter<Map<K, ? extends V
         return redact((Map) ((Map) obj));
     }
 
-    public Map<K, V> redact(Map<K, ? extends V> value) {
-        Intrinsics.e(value, "value");
+    public Map<K, V> redact(Map<K, ? extends V> map) {
+        Intrinsics.e(map, "value");
         return MapsKt.a();
     }
 }

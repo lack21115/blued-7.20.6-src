@@ -256,14 +256,14 @@ public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements 
     public static <E> ImmutableSet<E> copyOf(Iterator<? extends E> it) {
         if (it.hasNext()) {
             E next = it.next();
-            return !it.hasNext() ? of(next) : new Builder().add((Builder) next).addAll((Iterator) it).build();
+            return !it.hasNext() ? of((Object) next) : new Builder().add((Builder) next).addAll((Iterator) it).build();
         }
         return of();
     }
 
     public static <E> ImmutableSet<E> copyOf(E[] eArr) {
         int length = eArr.length;
-        return length != 0 ? length != 1 ? construct(eArr.length, (Object[]) eArr.clone()) : of(eArr[0]) : of();
+        return length != 0 ? length != 1 ? construct(eArr.length, (Object[]) eArr.clone()) : of((Object) eArr[0]) : of();
     }
 
     public static <E> ImmutableSet<E> of() {
@@ -346,7 +346,7 @@ public abstract class ImmutableSet<E> extends ImmutableCollection<E> implements 
         return false;
     }
 
-    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public abstract UnmodifiableIterator<E> iterator();
 
     @Override // com.google.common.collect.ImmutableCollection

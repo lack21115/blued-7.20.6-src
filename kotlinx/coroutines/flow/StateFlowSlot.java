@@ -19,9 +19,7 @@ import kotlinx.coroutines.internal.Symbol;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StateFlowSlot.class */
 public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ AtomicReferenceFieldUpdater f43436a = AtomicReferenceFieldUpdater.newUpdater(StateFlowSlot.class, Object.class, "_state");
+    static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(StateFlowSlot.class, Object.class, "_state");
     volatile /* synthetic */ Object _state = null;
 
     public final Object a(Continuation<? super Unit> continuation) {
@@ -32,8 +30,8 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
         cancellableContinuationImpl.e();
         CancellableContinuationImpl cancellableContinuationImpl2 = cancellableContinuationImpl;
         if (!DebugKt.a() || Boxing.a(!(this._state instanceof CancellableContinuationImpl)).booleanValue()) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = f43436a;
-            symbol = StateFlowKt.f43435a;
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
+            symbol = StateFlowKt.a;
             if (!atomicReferenceFieldUpdater.compareAndSet(this, symbol, cancellableContinuationImpl2)) {
                 if (DebugKt.a()) {
                     Object obj = this._state;
@@ -46,15 +44,15 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                     }
                 }
                 CancellableContinuationImpl cancellableContinuationImpl3 = cancellableContinuationImpl2;
-                Unit unit = Unit.f42314a;
-                Result.Companion companion = Result.f42293a;
+                Unit unit = Unit.a;
+                Result.Companion companion = Result.a;
                 cancellableContinuationImpl3.resumeWith(Result.f(unit));
             }
             Object h = cancellableContinuationImpl.h();
             if (h == IntrinsicsKt.a()) {
                 DebugProbesKt.c(continuation);
             }
-            return h == IntrinsicsKt.a() ? h : Unit.f42314a;
+            return h == IntrinsicsKt.a() ? h : Unit.a;
         }
         throw new AssertionError();
     }
@@ -73,20 +71,20 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
             if (obj == symbol) {
                 return;
             }
-            symbol2 = StateFlowKt.f43435a;
+            symbol2 = StateFlowKt.a;
             if (obj == symbol2) {
-                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = f43436a;
+                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
                 symbol3 = StateFlowKt.b;
                 if (atomicReferenceFieldUpdater.compareAndSet(this, obj, symbol3)) {
                     return;
                 }
             } else {
-                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = f43436a;
-                symbol4 = StateFlowKt.f43435a;
+                AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = a;
+                symbol4 = StateFlowKt.a;
                 if (atomicReferenceFieldUpdater2.compareAndSet(this, obj, symbol4)) {
                     CancellableContinuationImpl cancellableContinuationImpl = (CancellableContinuationImpl) obj;
-                    Unit unit = Unit.f42314a;
-                    Result.Companion companion = Result.f42293a;
+                    Unit unit = Unit.a;
+                    Result.Companion companion = Result.a;
                     cancellableContinuationImpl.resumeWith(Result.f(unit));
                     return;
                 }
@@ -100,7 +98,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
         if (this._state != null) {
             return false;
         }
-        symbol = StateFlowKt.f43435a;
+        symbol = StateFlowKt.a;
         this._state = symbol;
         return true;
     }
@@ -108,8 +106,8 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
     public final boolean b() {
         Symbol symbol;
         Symbol symbol2;
-        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = f43436a;
-        symbol = StateFlowKt.f43435a;
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
+        symbol = StateFlowKt.a;
         Object andSet = atomicReferenceFieldUpdater.getAndSet(this, symbol);
         Intrinsics.a(andSet);
         if (!DebugKt.a() || (!(andSet instanceof CancellableContinuationImpl))) {
@@ -122,6 +120,6 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
     @Override // kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot
     public Continuation<Unit>[] b(StateFlowImpl<?> stateFlowImpl) {
         this._state = null;
-        return AbstractSharedFlowKt.f43445a;
+        return AbstractSharedFlowKt.a;
     }
 }

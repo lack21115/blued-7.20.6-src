@@ -20,13 +20,9 @@ import java.util.ListIterator;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/RepeaterContent.class */
 public class RepeaterContent implements DrawingContent, GreedyContent, KeyPathElementContent, PathContent, BaseKeyframeAnimation.AnimationListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Matrix f4289a = new Matrix();
+    private final Matrix a = new Matrix();
     private final Path b = new Path();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final LottieDrawable f4290c;
+    private final LottieDrawable c;
     private final BaseLayer d;
     private final String e;
     private final boolean f;
@@ -36,17 +32,17 @@ public class RepeaterContent implements DrawingContent, GreedyContent, KeyPathEl
     private ContentGroup j;
 
     public RepeaterContent(LottieDrawable lottieDrawable, BaseLayer baseLayer, Repeater repeater) {
-        this.f4290c = lottieDrawable;
+        this.c = lottieDrawable;
         this.d = baseLayer;
         this.e = repeater.a();
         this.f = repeater.e();
-        BaseKeyframeAnimation<Float, Float> a2 = repeater.b().a();
-        this.g = a2;
-        baseLayer.a(a2);
+        BaseKeyframeAnimation<Float, Float> a = repeater.b().a();
+        this.g = a;
+        baseLayer.a(a);
         this.g.a(this);
-        BaseKeyframeAnimation<Float, Float> a3 = repeater.c().a();
-        this.h = a3;
-        baseLayer.a(a3);
+        BaseKeyframeAnimation<Float, Float> a2 = repeater.c().a();
+        this.h = a2;
+        baseLayer.a(a2);
         this.h.a(this);
         TransformKeyframeAnimation j = repeater.d().j();
         this.i = j;
@@ -56,7 +52,7 @@ public class RepeaterContent implements DrawingContent, GreedyContent, KeyPathEl
 
     @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation.AnimationListener
     public void a() {
-        this.f4290c.invalidateSelf();
+        this.c.invalidateSelf();
     }
 
     @Override // com.airbnb.lottie.animation.content.DrawingContent
@@ -71,10 +67,10 @@ public class RepeaterContent implements DrawingContent, GreedyContent, KeyPathEl
             if (i3 < 0) {
                 return;
             }
-            this.f4289a.set(matrix);
+            this.a.set(matrix);
             float f = i3;
-            this.f4289a.preConcat(this.i.b(f + floatValue2));
-            this.j.a(canvas, this.f4289a, (int) (i * MiscUtils.a(floatValue3, floatValue4, f / floatValue)));
+            this.a.preConcat(this.i.b(f + floatValue2));
+            this.j.a(canvas, this.a, (int) (i * MiscUtils.a(floatValue3, floatValue4, f / floatValue)));
             i2 = i3;
         }
     }
@@ -119,7 +115,7 @@ public class RepeaterContent implements DrawingContent, GreedyContent, KeyPathEl
             listIterator.remove();
         }
         Collections.reverse(arrayList);
-        this.j = new ContentGroup(this.f4290c, this.d, "Repeater", this.f, arrayList, null);
+        this.j = new ContentGroup(this.c, this.d, "Repeater", this.f, arrayList, null);
     }
 
     @Override // com.airbnb.lottie.animation.content.Content
@@ -139,8 +135,8 @@ public class RepeaterContent implements DrawingContent, GreedyContent, KeyPathEl
             if (i2 < 0) {
                 return this.b;
             }
-            this.f4289a.set(this.i.b(i2 + floatValue2));
-            this.b.addPath(e, this.f4289a);
+            this.a.set(this.i.b(i2 + floatValue2));
+            this.b.addPath(e, this.a);
             i = i2;
         }
     }

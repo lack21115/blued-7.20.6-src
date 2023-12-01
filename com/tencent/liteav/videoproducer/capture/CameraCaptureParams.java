@@ -8,29 +8,29 @@ import java.util.Objects;
 public class CameraCaptureParams extends CaptureSourceInterface.CaptureParams {
 
     /* renamed from: a  reason: collision with root package name */
-    public Boolean f36842a;
+    public Boolean f23151a;
 
     public CameraCaptureParams() {
-        this.f36842a = null;
+        this.f23151a = null;
     }
 
     public CameraCaptureParams(CameraCaptureParams cameraCaptureParams) {
         super(cameraCaptureParams);
-        this.f36842a = null;
-        this.f36842a = cameraCaptureParams.f36842a;
+        this.f23151a = null;
+        this.f23151a = cameraCaptureParams.f23151a;
     }
 
     @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.CaptureParams
     public boolean equals(Object obj) {
         if (obj instanceof CameraCaptureParams) {
             CameraCaptureParams cameraCaptureParams = (CameraCaptureParams) obj;
-            return super.equals(cameraCaptureParams) && Objects.equals(this.f36842a, cameraCaptureParams.f36842a);
+            return super.equals(cameraCaptureParams) && Objects.equals(this.f23151a, cameraCaptureParams.f23151a);
         }
         return false;
     }
 
     @Override // com.tencent.liteav.videoproducer.capture.CaptureSourceInterface.CaptureParams
     public String toString() {
-        return String.format(Locale.ENGLISH, "%s, frontCamera: %b", super.toString(), this.f36842a);
+        return String.format(Locale.ENGLISH, "%s, frontCamera: %b", super.toString(), this.f23151a);
     }
 }

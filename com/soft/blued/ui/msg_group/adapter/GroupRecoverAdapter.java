@@ -20,17 +20,17 @@ public final class GroupRecoverAdapter extends BaseQuickAdapter<GroupInfoModel, 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, GroupInfoModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        GroupUtil.b((IRequestHost) null, item.group_cover, (ImageView) helper.getView(2131365230));
-        ((ImageView) helper.getView(2131365189)).setSelected(item.isSelected);
-        BaseViewHolder text = helper.setText(2131372754, item.group_title).setText(2131371262, item.group_desc);
+    public void convert(BaseViewHolder baseViewHolder, GroupInfoModel groupInfoModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(groupInfoModel, "item");
+        GroupUtil.b((IRequestHost) null, groupInfoModel.group_cover, (ImageView) baseViewHolder.getView(R.id.iv_cover));
+        ((ImageView) baseViewHolder.getView(R.id.iv_check)).setSelected(groupInfoModel.isSelected);
+        BaseViewHolder text = baseViewHolder.setText(2131372754, groupInfoModel.group_title).setText(R.id.tv_desc, groupInfoModel.group_desc);
         StringBuilder sb = new StringBuilder();
-        sb.append(item.group_now_population);
+        sb.append(groupInfoModel.group_now_population);
         sb.append('/');
-        sb.append(item.group_max_population);
-        text.setText(2131372144, sb.toString());
-        ((ImageView) helper.getView(2131365189)).setSelected(item.isSelected);
+        sb.append(groupInfoModel.group_max_population);
+        text.setText(R.id.tv_num, sb.toString());
+        ((ImageView) baseViewHolder.getView(R.id.iv_check)).setSelected(groupInfoModel.isSelected);
     }
 }

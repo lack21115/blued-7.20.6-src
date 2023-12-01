@@ -22,9 +22,7 @@ import com.blued.android.module.shortvideo.utils.StvLogUtils;
 public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<V>> extends KeyBoardFragment implements PermissionCallbacks, IView {
     protected static String j = ShortVideoBaseFragment.class.getSimpleName();
     private Dialog b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f15743c = false;
+    private boolean c = false;
     protected T k;
     protected Context l;
     protected ViewGroup m;
@@ -37,10 +35,10 @@ public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<
         this.m = (ViewGroup) layoutInflater.inflate(R.layout.activity_stv_base, viewGroup, false);
         this.m.addView(layoutInflater.inflate(i, viewGroup, false));
         b(bundle);
-        T c2 = c(bundle);
-        this.k = c2;
-        if (c2 != null) {
-            c2.a(this);
+        T c = c(bundle);
+        this.k = c;
+        if (c != null) {
+            c.a(this);
             this.k.a();
         }
         if (getSimpleName().equals(ShineFragment.class.getSimpleName()) || getSimpleName().equals(TrimFragment.class.getSimpleName())) {
@@ -95,12 +93,11 @@ public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<
 
     @Override // com.blued.android.module.shortvideo.contract.IView
     public void g() {
-        this.f15743c = true;
+        this.c = true;
     }
 
     protected abstract void h();
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (this.k == null || getActivity() == null) {
@@ -115,13 +112,13 @@ public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<
         return t != null ? t.g() : super.onBackPressed();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.l = getContext();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         T t = this.k;
         if (t != null) {
@@ -134,24 +131,24 @@ public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<
         StvLogUtils.a(ShortVideoBaseFragment.class.getSimpleName() + " onDestroy()", new Object[0]);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         T t = this.k;
         if (t != null) {
             t.e();
         }
-        AudioManagerUtils.a().a(this.f15743c);
+        AudioManagerUtils.a().a(this.c);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         T t = this.k;
         if (t != null) {
             t.c();
         }
-        this.f15743c = false;
+        this.c = false;
         AudioManagerUtils.a().b();
         if (getSimpleName().equals(ShineFragment.class.getSimpleName())) {
             PermissionHelper.c(this);
@@ -160,7 +157,7 @@ public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         T t = this.k;
@@ -169,7 +166,7 @@ public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStart() {
         super.onStart();
         T t = this.k;
@@ -178,7 +175,7 @@ public abstract class ShortVideoBaseFragment<V, T extends ShortVideoBasePresent<
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         T t = this.k;

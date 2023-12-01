@@ -25,11 +25,11 @@ public final class GlobalSetting {
     public static final String TT_SDK_WRAPPER = "TT";
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile Integer f27927a;
+    private static volatile Integer f14239a;
     private static volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile boolean f27928c = true;
+    private static volatile boolean f14240c = true;
     private static volatile Integer d;
     private static volatile Boolean e;
     private static volatile Boolean f;
@@ -53,7 +53,7 @@ public final class GlobalSetting {
     }
 
     public static Integer getChannel() {
-        return f27927a;
+        return f14239a;
     }
 
     public static String getCustomADActivityClassName() {
@@ -115,7 +115,7 @@ public final class GlobalSetting {
     }
 
     public static boolean isEnableVideoDownloadingCache() {
-        return f27928c;
+        return f14240c;
     }
 
     public static void setAgreePrivacyStrategy(boolean z) {
@@ -146,8 +146,8 @@ public final class GlobalSetting {
     }
 
     public static void setChannel(int i2) {
-        if (f27927a == null) {
-            f27927a = Integer.valueOf(i2);
+        if (f14239a == null) {
+            f14239a = Integer.valueOf(i2);
         }
     }
 
@@ -183,7 +183,7 @@ public final class GlobalSetting {
     }
 
     public static void setEnableVideoDownloadingCache(boolean z) {
-        f27928c = z;
+        f14240c = z;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:8:0x001a  */

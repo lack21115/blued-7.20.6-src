@@ -1,6 +1,7 @@
 package com.kwad.sdk.core.network;
 
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.kwad.sdk.components.DevelopMangerComponents;
 import com.kwad.sdk.internal.api.SceneImpl;
 import com.kwad.sdk.service.ServiceProvider;
@@ -22,7 +23,7 @@ public abstract class b implements g {
         buildBaseHeader();
         buildBaseBody();
         if (encryptDisable()) {
-            addHeader("x-ksad-ignore-decrypt", "true");
+            addHeader("x-ksad-ignore-decrypt", fw.Code);
         }
         addHeader("cookie", e.wc().wd());
         com.kwad.sdk.core.kwai.d.d(getHeader());

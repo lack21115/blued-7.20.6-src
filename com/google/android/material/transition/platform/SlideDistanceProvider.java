@@ -80,7 +80,7 @@ public final class SlideDistanceProvider implements VisibilityAnimatorProvider {
         ofPropertyValuesHolder.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.transition.platform.SlideDistanceProvider.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                View.this.setTranslationX(f3);
+                view.setTranslationX(f3);
             }
         });
         return ofPropertyValuesHolder;
@@ -91,7 +91,7 @@ public final class SlideDistanceProvider implements VisibilityAnimatorProvider {
         ofPropertyValuesHolder.addListener(new AnimatorListenerAdapter() { // from class: com.google.android.material.transition.platform.SlideDistanceProvider.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                View.this.setTranslationY(f3);
+                view.setTranslationY(f3);
             }
         });
         return ofPropertyValuesHolder;

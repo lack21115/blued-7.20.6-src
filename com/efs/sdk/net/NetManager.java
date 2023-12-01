@@ -3,6 +3,7 @@ package com.efs.sdk.net;
 import android.content.Context;
 import com.efs.sdk.base.EfsReporter;
 import com.efs.sdk.base.core.util.Log;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.Map;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -43,7 +44,7 @@ public class NetManager {
             sb.append(str2);
             sb.append("=");
             sb.append(map.get(str2));
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         new OkHttpClient.Builder().eventListenerFactory(OkHttpListener.get()).addNetworkInterceptor(new OkHttpInterceptor()).build().newCall(new Request.Builder().url(str).post(RequestBody.create(MediaType.parse("application/x-www-form-urlencoded"), sb.toString())).build()).enqueue(callback);
     }

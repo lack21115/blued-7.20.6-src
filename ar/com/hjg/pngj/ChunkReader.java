@@ -6,10 +6,10 @@ import ar.com.hjg.pngj.chunks.ChunkRaw;
 public abstract class ChunkReader {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ChunkReaderMode f3612a;
+    public final ChunkReaderMode f3564a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ChunkRaw f3613c;
+    private final ChunkRaw f3565c;
     private boolean d;
     protected int b = 0;
     private int e = 0;
@@ -25,9 +25,9 @@ public abstract class ChunkReader {
         if (chunkReaderMode == null || str.length() != 4 || i < 0) {
             throw new PngjExceptionInternal("Bad chunk paramenters: " + chunkReaderMode);
         }
-        this.f3612a = chunkReaderMode;
+        this.f3564a = chunkReaderMode;
         ChunkRaw chunkRaw = new ChunkRaw(i, str, chunkReaderMode == ChunkReaderMode.BUFFER);
-        this.f3613c = chunkRaw;
+        this.f3565c = chunkRaw;
         chunkRaw.a(j);
         this.d = chunkReaderMode != ChunkReaderMode.SKIP;
     }
@@ -48,7 +48,7 @@ public abstract class ChunkReader {
     }
 
     public ChunkRaw a() {
-        return this.f3613c;
+        return this.f3565c;
     }
 
     protected abstract void a(int i, byte[] bArr, int i2, int i3);
@@ -72,18 +72,18 @@ public abstract class ChunkReader {
         }
         if (obj != null && getClass() == obj.getClass()) {
             ChunkReader chunkReader = (ChunkReader) obj;
-            ChunkRaw chunkRaw = this.f3613c;
-            return chunkRaw == null ? chunkReader.f3613c == null : chunkRaw.equals(chunkReader.f3613c);
+            ChunkRaw chunkRaw = this.f3565c;
+            return chunkRaw == null ? chunkReader.f3565c == null : chunkRaw.equals(chunkReader.f3565c);
         }
         return false;
     }
 
     public int hashCode() {
-        ChunkRaw chunkRaw = this.f3613c;
+        ChunkRaw chunkRaw = this.f3565c;
         return 31 + (chunkRaw == null ? 0 : chunkRaw.hashCode());
     }
 
     public String toString() {
-        return this.f3613c.toString();
+        return this.f3565c.toString();
     }
 }

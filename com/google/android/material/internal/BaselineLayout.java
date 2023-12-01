@@ -29,9 +29,8 @@ public class BaselineLayout extends ViewGroup {
         return this.baseline;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int childCount = getChildCount();
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();
@@ -54,9 +53,8 @@ public class BaselineLayout extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int childCount = getChildCount();
         int i3 = 0;
         int i4 = 0;

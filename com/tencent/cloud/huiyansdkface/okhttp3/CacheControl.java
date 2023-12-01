@@ -6,11 +6,11 @@ import java.util.concurrent.TimeUnit;
 public final class CacheControl {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final CacheControl f35821a = new Builder().noCache().build();
+    public static final CacheControl f22130a = new Builder().noCache().build();
     public static final CacheControl b = new Builder().onlyIfCached().maxStale(Integer.MAX_VALUE, TimeUnit.SECONDS).build();
 
     /* renamed from: c  reason: collision with root package name */
-    String f35822c;
+    String f22131c;
     private final boolean d;
     private final boolean e;
     private final int f;
@@ -28,11 +28,11 @@ public final class CacheControl {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f35823a;
+        boolean f22132a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f35824c = -1;
+        int f22133c = -1;
         int d = -1;
         int e = -1;
         boolean f;
@@ -51,7 +51,7 @@ public final class CacheControl {
         public Builder maxAge(int i, TimeUnit timeUnit) {
             if (i >= 0) {
                 long seconds = timeUnit.toSeconds(i);
-                this.f35824c = seconds > 2147483647L ? Integer.MAX_VALUE : (int) seconds;
+                this.f22133c = seconds > 2147483647L ? Integer.MAX_VALUE : (int) seconds;
                 return this;
             }
             throw new IllegalArgumentException("maxAge < 0: " + i);
@@ -76,7 +76,7 @@ public final class CacheControl {
         }
 
         public Builder noCache() {
-            this.f35823a = true;
+            this.f22132a = true;
             return this;
         }
 
@@ -97,9 +97,9 @@ public final class CacheControl {
     }
 
     CacheControl(Builder builder) {
-        this.d = builder.f35823a;
+        this.d = builder.f22132a;
         this.e = builder.b;
-        this.f = builder.f35824c;
+        this.f = builder.f22133c;
         this.g = -1;
         this.h = false;
         this.i = false;
@@ -124,7 +124,7 @@ public final class CacheControl {
         this.m = z6;
         this.n = z7;
         this.o = z8;
-        this.f35822c = str;
+        this.f22131c = str;
     }
 
     private String a() {
@@ -242,12 +242,12 @@ public final class CacheControl {
     }
 
     public String toString() {
-        String str = this.f35822c;
+        String str = this.f22131c;
         if (str != null) {
             return str;
         }
         String a2 = a();
-        this.f35822c = a2;
+        this.f22131c = a2;
         return a2;
     }
 }

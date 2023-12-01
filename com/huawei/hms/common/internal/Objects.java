@@ -11,12 +11,12 @@ public final class Objects {
     public static final class ToStringHelper {
 
         /* renamed from: a  reason: collision with root package name */
-        public final List<String> f22656a;
+        public final List<String> f9048a;
         public final Object b;
 
         public ToStringHelper(Object obj) {
             this.b = Preconditions.checkNotNull(obj);
-            this.f22656a = new ArrayList();
+            this.f9048a = new ArrayList();
         }
 
         public final ToStringHelper add(String str, Object obj) {
@@ -26,7 +26,7 @@ public final class Objects {
             sb.append(str2);
             sb.append("=");
             sb.append(valueOf);
-            this.f22656a.add(sb.toString());
+            this.f9048a.add(sb.toString());
             return this;
         }
 
@@ -35,7 +35,7 @@ public final class Objects {
             StringBuilder sb = new StringBuilder(100);
             sb.append(simpleName);
             sb.append('{');
-            int size = this.f22656a.size();
+            int size = this.f9048a.size();
             int i = 0;
             while (true) {
                 int i2 = i;
@@ -43,7 +43,7 @@ public final class Objects {
                     sb.append('}');
                     return sb.toString();
                 }
-                sb.append(this.f22656a.get(i2));
+                sb.append(this.f9048a.get(i2));
                 if (i2 < size - 1) {
                     sb.append(", ");
                 }

@@ -10,10 +10,10 @@ public final class a {
     private static volatile STManager b;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f24794a = new byte[0];
+    private static final byte[] f11106a = new byte[0];
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f24795c = b.a("Y29tLm9wcG8udW5pb24=");
+    private static final String f11107c = b.a("Y29tLm9wcG8udW5pb24=");
 
     public static int a() {
         return c().getSdkVerCode();
@@ -74,7 +74,7 @@ public final class a {
             com.opos.acs.st.InitParams$Builder r0 = new com.opos.acs.st.InitParams$Builder     // Catch: java.lang.Throwable -> L71 java.lang.Throwable -> L71
             r1 = r0
             r1.<init>()     // Catch: java.lang.Throwable -> L71
-            java.lang.String r1 = com.opos.cmn.f.a.f24795c     // Catch: java.lang.Throwable -> L71
+            java.lang.String r1 = com.opos.cmn.f.a.f11107c     // Catch: java.lang.Throwable -> L71
             com.opos.acs.st.InitParams$Builder r0 = r0.setPkgName(r1)     // Catch: java.lang.Throwable -> L71
             r1 = 0
             com.opos.acs.st.InitParams$Builder r0 = r0.setIsLoganInit(r1)     // Catch: java.lang.Throwable -> L71
@@ -126,7 +126,7 @@ public final class a {
         STManager sTManager;
         STManager sTManager2 = b;
         if (sTManager2 == null) {
-            synchronized (f24794a) {
+            synchronized (f11106a) {
                 STManager sTManager3 = b;
                 sTManager = sTManager3;
                 if (sTManager3 == null) {

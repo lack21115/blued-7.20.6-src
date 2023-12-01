@@ -107,7 +107,7 @@ public class TimeoutUtils {
     private Object cancelTimeoutObject(long j) {
         TimeoutObject timeoutObject;
         synchronized (this.lock) {
-            if (this.timerObjectMap == null || (timeoutObject = this.timerObjectMap.get(j)) == null) {
+            if (this.timerObjectMap == null || (timeoutObject = (TimeoutObject) this.timerObjectMap.get(j)) == null) {
                 return null;
             }
             this.timerObjectMap.delete(j);

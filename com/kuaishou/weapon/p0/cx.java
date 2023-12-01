@@ -9,10 +9,10 @@ public class cx {
     private static volatile cx b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23806a;
+    private Context f10198a;
 
     private cx(Context context) {
-        this.f23806a = context;
+        this.f10198a = context;
     }
 
     public static cx a(Context context) {
@@ -32,7 +32,7 @@ public class cx {
 
     public void a(final int i) {
         try {
-            h a2 = h.a(this.f23806a, "re_po_rt");
+            h a2 = h.a(this.f10198a, "re_po_rt");
             final boolean e = a2.e("a1_p_s_p_s");
             final boolean e2 = a2.e("a1_p_s_p_s_c_b");
             if ((e || e2) && WeaponHI.as) {
@@ -40,10 +40,10 @@ public class cx {
                     @Override // java.lang.Runnable
                     public void run() {
                         try {
-                            h a3 = h.a(cx.this.f23806a, "re_po_rt");
+                            h a3 = h.a(cx.this.f10198a, "re_po_rt");
                             if (a3.b(de.m, 1) == 1) {
                                 if (e || e2) {
-                                    long a4 = de.a(cx.this.f23806a).a(de.ba);
+                                    long a4 = de.a(cx.this.f10198a).a(de.ba);
                                     long currentTimeMillis = System.currentTimeMillis();
                                     long b2 = a3.b(de.n, 8);
                                     int b3 = a3.b(de.o, 0);
@@ -66,8 +66,8 @@ public class cx {
                                             return;
                                         }
                                     }
-                                    co.a(cx.this.f23806a, new ch(cx.this.f23806a, i).a(cj.d), cj.d, true, true);
-                                    de.a(cx.this.f23806a).a(de.ba, currentTimeMillis);
+                                    co.a(cx.this.f10198a, new ch(cx.this.f10198a, i).a(cj.d), cj.d, true, true);
+                                    de.a(cx.this.f10198a).a(de.ba, currentTimeMillis);
                                 }
                             }
                         } catch (Throwable th) {

@@ -10,7 +10,7 @@ public class cb extends cp<com.huawei.openalliance.ad.views.AppDownloadButton> {
     private int L;
 
     /* renamed from: a  reason: collision with root package name */
-    private Typeface f22444a;
+    private Typeface f8836a;
 
     public cb(com.huawei.openalliance.ad.views.AppDownloadButton appDownloadButton) {
         super(appDownloadButton);
@@ -105,11 +105,11 @@ public class cb extends cp<com.huawei.openalliance.ad.views.AppDownloadButton> {
                     z = true;
                     break;
             }
-            this.f22444a = z ? !z ? !z ? !z ? Typeface.DEFAULT : Typeface.MONOSPACE : Typeface.SERIF : Typeface.SANS_SERIF : Typeface.DEFAULT_BOLD;
+            this.f8836a = z ? !z ? !z ? !z ? Typeface.DEFAULT : Typeface.MONOSPACE : Typeface.SERIF : Typeface.SANS_SERIF : Typeface.DEFAULT_BOLD;
         }
         String attributeValue3 = attributeSet.getAttributeValue(null, "fontFamily");
         if (TextUtils.isEmpty(attributeValue3)) {
-            ((com.huawei.openalliance.ad.views.AppDownloadButton) this.Code).Code(this.f22444a, this.L);
+            ((com.huawei.openalliance.ad.views.AppDownloadButton) this.Code).Code(this.f8836a, this.L);
         } else {
             ((com.huawei.openalliance.ad.views.AppDownloadButton) this.Code).setPaintTypeface(Typeface.create(attributeValue3, this.L));
         }

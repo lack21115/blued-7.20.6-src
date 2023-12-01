@@ -4,16 +4,16 @@ package com.tencent.ugc;
 final /* synthetic */ class ec implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMultiFilePixelFrameProvider f40344a;
+    private final UGCMultiFilePixelFrameProvider f26653a;
     private final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f40345c;
+    private final boolean f26654c;
 
     private ec(UGCMultiFilePixelFrameProvider uGCMultiFilePixelFrameProvider, long j, boolean z) {
-        this.f40344a = uGCMultiFilePixelFrameProvider;
+        this.f26653a = uGCMultiFilePixelFrameProvider;
         this.b = j;
-        this.f40345c = z;
+        this.f26654c = z;
     }
 
     public static Runnable a(UGCMultiFilePixelFrameProvider uGCMultiFilePixelFrameProvider, long j, boolean z) {
@@ -22,6 +22,6 @@ final /* synthetic */ class ec implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCMultiFilePixelFrameProvider.lambda$seekTo$2(this.f40344a, this.b, this.f40345c);
+        UGCMultiFilePixelFrameProvider.lambda$seekTo$2(this.f26653a, this.b, this.f26654c);
     }
 }

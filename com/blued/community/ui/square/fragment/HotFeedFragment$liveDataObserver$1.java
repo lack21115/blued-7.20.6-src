@@ -24,6 +24,6 @@ final /* synthetic */ class HotFeedFragment$liveDataObserver$1 extends FunctionR
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(List<? extends BluedIngSelfFeed> list) {
         a(list);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

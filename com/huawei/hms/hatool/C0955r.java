@@ -9,36 +9,36 @@ import org.json.JSONObject;
 
 /* renamed from: com.huawei.hms.hatool.r  reason: case insensitive filesystem */
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/hatool/r.class */
-public class C1138r implements s {
+public class C0955r implements s {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<q> f22790a;
+    public List<q> f9182a;
     public o b;
 
     /* renamed from: c  reason: collision with root package name */
-    public p f22791c;
+    public p f9183c;
     public s d;
     public String e = "";
     public String f;
 
-    public C1138r(String str) {
+    public C0955r(String str) {
         this.f = str;
     }
 
     @Override // com.huawei.hms.hatool.s
     public JSONObject a() {
         String str;
-        List<q> list = this.f22790a;
+        List<q> list = this.f9182a;
         if (list == null || list.size() == 0) {
             str = "Not have actionEvent to send";
-        } else if (this.b == null || this.f22791c == null || this.d == null) {
+        } else if (this.b == null || this.f9183c == null || this.d == null) {
             str = "model in wrong format";
         } else {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("header", this.b.a());
             JSONObject jSONObject2 = new JSONObject();
             JSONObject a2 = this.d.a();
-            a2.put("properties", this.f22791c.a());
+            a2.put("properties", this.f9183c.a());
             try {
                 a2.put("events_global_properties", new JSONObject(this.e));
             } catch (JSONException e) {
@@ -46,7 +46,7 @@ public class C1138r implements s {
             }
             jSONObject2.put("events_common", a2);
             JSONArray jSONArray = new JSONArray();
-            for (q qVar : this.f22790a) {
+            for (q qVar : this.f9182a) {
                 JSONObject a3 = qVar.a();
                 if (a3 != null) {
                     jSONArray.put(a3);
@@ -54,7 +54,7 @@ public class C1138r implements s {
                     z.e("hmsSdk", "custom event is empty,delete this event");
                 }
             }
-            jSONObject2.put(com.umeng.analytics.pro.d.f40716ar, jSONArray);
+            jSONObject2.put(com.umeng.analytics.pro.d.f27025ar, jSONArray);
             try {
                 String a4 = d.a(u0.a(jSONObject2.toString().getBytes("UTF-8")), this.f);
                 if (TextUtils.isEmpty(a4)) {
@@ -80,7 +80,7 @@ public class C1138r implements s {
     }
 
     public void a(p pVar) {
-        this.f22791c = pVar;
+        this.f9183c = pVar;
     }
 
     public void a(String str) {
@@ -90,6 +90,6 @@ public class C1138r implements s {
     }
 
     public void a(List<q> list) {
-        this.f22790a = list;
+        this.f9182a = list;
     }
 }

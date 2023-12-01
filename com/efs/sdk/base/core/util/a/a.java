@@ -24,10 +24,10 @@ public final class a implements IHttpUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.efs.sdk.base.core.util.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/efs/sdk/base/core/util/a/a$a.class */
-    public static final class C0335a {
+    public static final class C0165a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final a f21787a = new a((byte) 0);
+        private static final a f8181a = new a((byte) 0);
     }
 
     private a() {
@@ -38,7 +38,7 @@ public final class a implements IHttpUtil {
     }
 
     public static a a() {
-        return C0335a.f21787a;
+        return C0165a.f8181a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

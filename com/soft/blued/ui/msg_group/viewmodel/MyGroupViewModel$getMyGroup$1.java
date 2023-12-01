@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg_group.viewmodel;
 
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.BluedApiService;
 import com.blued.android.module.common.api.Error;
@@ -27,7 +28,7 @@ import kotlinx.coroutines.CoroutineScope;
 public final class MyGroupViewModel$getMyGroup$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32863a;
+    int f19172a;
     final /* synthetic */ MyGroupViewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -37,28 +38,25 @@ public final class MyGroupViewModel$getMyGroup$1 extends SuspendLambda implement
         this.b = myGroupViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((MyGroupViewModel$getMyGroup$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new MyGroupViewModel$getMyGroup$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object obj2;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32863a;
+        int i = this.f19172a;
         if (i == 0) {
             ResultKt.a(obj);
             BluedApiService a3 = BluedApiProxy.b().a(GroupApiService.class);
             Intrinsics.c(a3, "getInstance().create(GroupApiService::class.java)");
-            this.f32863a = 1;
-            Object a4 = GroupApiService.DefaultImpls.a((GroupApiService) a3, null, this, 1, null);
+            this.f19172a = 1;
+            Object a4 = GroupApiService.DefaultImpls.a((GroupApiService) a3, null, (Continuation) this, 1, null);
             obj = a4;
             if (a4 == a2) {
                 return a2;
@@ -72,31 +70,31 @@ public final class MyGroupViewModel$getMyGroup$1 extends SuspendLambda implement
         MyGroupViewModel myGroupViewModel = this.b;
         if (bluedEntityA.code != 200) {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         } else if (bluedEntityA.hasData()) {
-            List<T> data = bluedEntityA.data;
-            Intrinsics.c(data, "data");
+            List list = bluedEntityA.data;
+            Intrinsics.c(list, "data");
             bluedEntityA.hasMore();
-            if (!data.isEmpty()) {
-                obj2 = data.get(0);
+            if (!list.isEmpty()) {
+                obj2 = list.get(0);
                 myGroupViewModel.a((MyGroupModel) obj2);
             }
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             List b = CollectionsKt.b();
-            List list = b;
+            List list2 = b;
             boolean z = true;
-            if (list != null) {
-                z = list.isEmpty();
+            if (list2 != null) {
+                z = list2.isEmpty();
             }
             if (!z) {
                 obj2 = b.get(0);
                 myGroupViewModel.a((MyGroupModel) obj2);
             }
-            Succeed succeed2 = Succeed.f10631a;
+            ApiState apiState2 = Succeed.a;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

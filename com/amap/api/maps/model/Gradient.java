@@ -16,18 +16,14 @@ public class Gradient {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/Gradient$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final int f5525a;
+        private final int a;
         private final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final float f5526c;
+        private final float c;
 
         private a(int i, int i2, float f) {
-            this.f5525a = i;
+            this.a = i;
             this.b = i2;
-            this.f5526c = f;
+            this.c = f;
         }
 
         /* synthetic */ a(int i, int i2, float f, byte b) {
@@ -136,7 +132,7 @@ public class Gradient {
                 aVar = a2.get(Integer.valueOf(i2));
                 i = i2;
             }
-            iArr[i2] = a(aVar.f5525a, aVar.b, (i2 - i) / aVar.f5526c);
+            iArr[i2] = a(aVar.a, aVar.b, (i2 - i) / aVar.c);
         }
         if (d != 1.0d) {
             int i3 = 0;

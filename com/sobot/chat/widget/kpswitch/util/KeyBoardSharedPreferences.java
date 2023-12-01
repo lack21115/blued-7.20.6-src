@@ -3,8 +3,9 @@ package com.sobot.chat.widget.kpswitch.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/widget/kpswitch/util/KeyBoardSharedPreferences.class */
-class KeyBoardSharedPreferences {
+public class KeyBoardSharedPreferences {
     private static final String FILE_NAME = "keyboard.common";
     private static final String KEY_KEYBOARD_HEIGHT = "sp.key.keyboard.height";
     private static volatile SharedPreferences SP;

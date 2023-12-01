@@ -6,11 +6,11 @@ import com.tencent.liteav.videoproducer.producer.VideoProducerDef;
 final /* synthetic */ class q implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37174a;
+    private final f f23483a;
     private final VideoProducerDef.HomeOrientation b;
 
     private q(f fVar, VideoProducerDef.HomeOrientation homeOrientation) {
-        this.f37174a = fVar;
+        this.f23483a = fVar;
         this.b = homeOrientation;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class q implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37174a, this.b);
+        f.a(this.f23483a, this.b);
     }
 }

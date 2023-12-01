@@ -21,7 +21,7 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f22350a;
+    private final Context f8742a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/agconnect/core/a/c$a.class */
@@ -38,7 +38,7 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(Context context) {
-        this.f22350a = context;
+        this.f8742a = context;
     }
 
     private <T extends ServiceRegistrar> T a(String str) {
@@ -113,12 +113,12 @@ public class c {
     }
 
     private Bundle c() {
-        PackageManager packageManager = this.f22350a.getPackageManager();
+        PackageManager packageManager = this.f8742a.getPackageManager();
         if (packageManager == null) {
             return null;
         }
         try {
-            ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(this.f22350a, ServiceDiscovery.class), 128);
+            ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(this.f8742a, ServiceDiscovery.class), 128);
             if (serviceInfo == null) {
                 Log.e("ServiceRegistrarParser", "Can not found ServiceDiscovery service.");
                 return null;
@@ -137,8 +137,8 @@ public class c {
         for (String str : b) {
             ServiceRegistrar a2 = a(str);
             if (a2 != null) {
-                a2.initialize(this.f22350a);
-                List<Service> services = a2.getServices(this.f22350a);
+                a2.initialize(this.f8742a);
+                List<Service> services = a2.getServices(this.f8742a);
                 if (services != null) {
                     arrayList.addAll(services);
                 }

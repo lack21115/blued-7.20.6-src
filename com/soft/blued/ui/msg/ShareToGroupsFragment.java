@@ -51,7 +51,7 @@ public class ShareToGroupsFragment extends PreloadFragment {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f31935c;
+        private ImageView f18245c;
 
         private GroupListAdapter() {
             super(R.layout.item_share_to, null);
@@ -65,13 +65,13 @@ public class ShareToGroupsFragment extends PreloadFragment {
                 return;
             }
             this.b = (TextView) baseViewHolder.getView(2131372046);
-            this.f31935c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
+            this.f18245c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
             if (TextUtils.isEmpty(bluedGroupLists.groups_name)) {
                 this.b.setVisibility(4);
             } else {
                 this.b.setText(bluedGroupLists.groups_name);
             }
-            ImageLoader.a(ShareToGroupsFragment.this.getFragmentActive(), bluedGroupLists.groups_avatar).b(2131237310).c().a(this.f31935c);
+            ImageLoader.a(ShareToGroupsFragment.this.getFragmentActive(), bluedGroupLists.groups_avatar).b(2131237310).c().a(this.f18245c);
         }
     }
 
@@ -80,7 +80,7 @@ public class ShareToGroupsFragment extends PreloadFragment {
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f31937c;
+        private int f18247c;
         private int d;
         private int e;
         private final int h = 2131101196;
@@ -90,7 +90,7 @@ public class ShareToGroupsFragment extends PreloadFragment {
 
         public SectionDecoration(int i) {
             this.b = i;
-            this.f31937c = DensityUtils.d(ShareToGroupsFragment.this.j, 12.0f);
+            this.f18247c = DensityUtils.d(ShareToGroupsFragment.this.j, 12.0f);
             this.d = DensityUtils.a(ShareToGroupsFragment.this.j, 11.0f);
             this.e = DensityUtils.a(ShareToGroupsFragment.this.j, 15.0f);
         }
@@ -98,9 +98,9 @@ public class ShareToGroupsFragment extends PreloadFragment {
         private void a(Canvas canvas, int i, int i2, View view, RecyclerView.LayoutParams layoutParams, int i3) {
             this.g.setColor(ShareToGroupsFragment.this.getResources().getColor(2131101196));
             canvas.drawRect(i, (view.getTop() - layoutParams.topMargin) - this.b, i2, view.getTop() - layoutParams.topMargin, this.g);
-            this.g.setTextSize(this.f31937c);
+            this.g.setTextSize(this.f18247c);
             this.g.setColor(ShareToGroupsFragment.this.getResources().getColor(2131101207));
-            canvas.drawText(((BluedGroupLists) ShareToGroupsFragment.this.q.get(i3)).header_name, this.e, (view.getTop() - layoutParams.topMargin) - ((this.b - this.d) - this.f31937c), this.g);
+            canvas.drawText(((BluedGroupLists) ShareToGroupsFragment.this.q.get(i3)).header_name, this.e, (view.getTop() - layoutParams.topMargin) - ((this.b - this.d) - this.f18247c), this.g);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
@@ -158,7 +158,7 @@ public class ShareToGroupsFragment extends PreloadFragment {
             float f = this.e;
             int paddingTop = recyclerView.getPaddingTop();
             int i = this.b;
-            canvas.drawText(str, f, (paddingTop + i) - ((i - this.d) - this.f31937c), this.g);
+            canvas.drawText(str, f, (paddingTop + i) - ((i - this.d) - this.f18247c), this.g);
         }
     }
 
@@ -173,22 +173,21 @@ public class ShareToGroupsFragment extends PreloadFragment {
     private void h() {
         GroupHttpUtils.g(this.j, new BluedUIHttpResponse<BluedEntityA<BluedMyGroupLists>>() { // from class: com.soft.blued.ui.msg.ShareToGroupsFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedMyGroupLists> bluedEntityA) {
                 if (bluedEntityA != null) {
                     try {
                         if (bluedEntityA.hasData()) {
-                            BluedMyGroupLists singleData = bluedEntityA.getSingleData();
-                            if (singleData == null) {
+                            BluedMyGroupLists bluedMyGroupLists = (BluedMyGroupLists) bluedEntityA.getSingleData();
+                            if (bluedMyGroupLists == null) {
                                 ShareToGroupsFragment.this.m.a();
-                                ShareToGroupsFragment.this.l.setEmptyView(ShareToGroupsFragment.this.m);
+                                ShareToGroupsFragment.this.l.setEmptyView((View) ShareToGroupsFragment.this.m);
                                 ShareToGroupsFragment.this.l.setNewData(null);
                                 return;
                             }
-                            List<BluedCreatedGroupInfo> list = singleData.created;
-                            List<BluedCreatedGroupInfo> list2 = singleData.admin;
-                            List<BluedCreatedGroupInfo> list3 = singleData.joined;
+                            List<BluedCreatedGroupInfo> list = bluedMyGroupLists.created;
+                            List<BluedCreatedGroupInfo> list2 = bluedMyGroupLists.admin;
+                            List<BluedCreatedGroupInfo> list3 = bluedMyGroupLists.joined;
                             if (list != null) {
                                 int i = 0;
                                 while (true) {
@@ -233,32 +232,30 @@ public class ShareToGroupsFragment extends PreloadFragment {
                                 return;
                             }
                             ShareToGroupsFragment.this.m.a();
-                            ShareToGroupsFragment.this.l.setEmptyView(ShareToGroupsFragment.this.m);
+                            ShareToGroupsFragment.this.l.setEmptyView((View) ShareToGroupsFragment.this.m);
                             ShareToGroupsFragment.this.l.setNewData(null);
                             return;
                         }
                     } catch (Exception e) {
                         ShareToGroupsFragment.this.m.a();
-                        ShareToGroupsFragment.this.l.setEmptyView(ShareToGroupsFragment.this.m);
+                        ShareToGroupsFragment.this.l.setEmptyView((View) ShareToGroupsFragment.this.m);
                         ShareToGroupsFragment.this.l.setNewData(null);
                         e.printStackTrace();
                         return;
                     }
                 }
                 ShareToGroupsFragment.this.m.a();
-                ShareToGroupsFragment.this.l.setEmptyView(ShareToGroupsFragment.this.m);
+                ShareToGroupsFragment.this.l.setEmptyView((View) ShareToGroupsFragment.this.m);
                 ShareToGroupsFragment.this.l.setNewData(null);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 ShareToGroupsFragment.this.m.b();
-                ShareToGroupsFragment.this.l.setEmptyView(ShareToGroupsFragment.this.m);
+                ShareToGroupsFragment.this.l.setEmptyView((View) ShareToGroupsFragment.this.m);
                 ShareToGroupsFragment.this.l.setNewData(null);
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 ShareToGroupsFragment.this.n.setVisibility(8);
@@ -267,15 +264,14 @@ public class ShareToGroupsFragment extends PreloadFragment {
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive());
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         this.q = new ArrayList();
         View inflate = LayoutInflater.from(this.j).inflate(R.layout.fragment_share_to_single, (ViewGroup) view, true);
         this.n = (ProgressBar) inflate.findViewById(2131368973);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) inflate.findViewById(R.id.ptrrv_list);
-        this.p = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(false);
-        this.o = this.p.getRefreshableView();
+        PullToRefreshRecyclerView findViewById = inflate.findViewById(R.id.ptrrv_list);
+        this.p = findViewById;
+        findViewById.setRefreshEnabled(false);
+        this.o = (RecyclerView) this.p.getRefreshableView();
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.j);
         this.m = noDataAndLoadFailView;
         noDataAndLoadFailView.setNoDataImg(2131233642);
@@ -299,7 +295,6 @@ public class ShareToGroupsFragment extends PreloadFragment {
         h();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
         this.j = context;

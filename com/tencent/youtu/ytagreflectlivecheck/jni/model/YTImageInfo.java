@@ -11,8 +11,8 @@ public class YTImageInfo {
     public String image;
 
     public YTImageInfo(a aVar) {
-        this.image = new String(Base64.encode(aVar.f35533a, 2));
-        this.checksum = aVar.f35534c;
+        this.image = new String(Base64.encode(aVar.f21842a, 2));
+        this.checksum = aVar.f21843c;
         if (aVar.b != null) {
             this.five_points.add(Float.valueOf(aVar.b[176]));
             this.five_points.add(Float.valueOf(aVar.b[177]));

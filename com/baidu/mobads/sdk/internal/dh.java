@@ -4,11 +4,11 @@ package com.baidu.mobads.sdk.internal;
 class dh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ dg f9419a;
+    final /* synthetic */ dg f6579a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public dh(dg dgVar) {
-        this.f9419a = dgVar;
+        this.f6579a = dgVar;
     }
 
     @Override // java.lang.Runnable

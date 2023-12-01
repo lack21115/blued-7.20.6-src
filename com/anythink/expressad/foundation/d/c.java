@@ -3,7 +3,6 @@ package com.anythink.expressad.foundation.d;
 import android.net.Uri;
 import android.speech.tts.TextToSpeech;
 import android.text.TextUtils;
-import com.anythink.basead.b.a;
 import com.anythink.expressad.a.c;
 import com.anythink.expressad.foundation.h.t;
 import com.anythink.expressad.foundation.h.w;
@@ -49,7 +48,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     public static final String Z = "number_rating";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7765a = c.class.getSimpleName();
+    public static final String f4926a = c.class.getSimpleName();
     public static final String aA = "vctn_t";
     public static final String aB = "vck_t";
     public static final String aC = "rs_ignc_r";
@@ -94,7 +93,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     public static final String aq = "reward_name";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f7766ar = "md5_file";
+    public static final String f4927ar = "md5_file";
     public static final String as = "c_toi";
     public static final int at = 2;
     public static final String au = "5";
@@ -157,7 +156,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     public static final int bz = 8;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7767c = "ad_html";
+    public static final String f4928c = "ad_html";
     public static final String ca = "click";
     public static final String cb = "pause";
     public static final String cc = "resume";
@@ -173,7 +172,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     public static final int cm = 1;
 
     /* renamed from: cn  reason: collision with root package name */
-    public static final int f7768cn = 0;
+    public static final int f4929cn = 0;
     public static final String d = "cmpt=1";
     private static final long dP = 1;
     public static final String e = "tp_offer";
@@ -280,7 +279,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     private String fl;
     private int fm;
     private b fn;
-    private C0143c fo;
+    private C0072c fo;
     private c.b fp;
     private int fs;
     private ArrayList<Integer> fu;
@@ -290,9 +289,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     private boolean cY = false;
     private int db = 0;
     private int dc = 0;
-
-    /* renamed from: de  reason: collision with root package name */
-    private int f7769de = -2;
+    private int de = -2;
     private int df = -2;
     private long dg = 0;
     private long dh = 0;
@@ -303,7 +300,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     private int dn = 0;
 
     /* renamed from: do  reason: not valid java name */
-    private String f47do = "";
+    private String f1do = "";
     private boolean dp = false;
     private int dq = 0;
     private boolean dr = false;
@@ -346,11 +343,11 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     public static final class a implements Serializable {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f7770a = "ad_logo_link";
+        public static final String f4930a = "ad_logo_link";
         public static final String b = "adchoice_link";
 
         /* renamed from: c  reason: collision with root package name */
-        public static final String f7771c = "adchoice_icon";
+        public static final String f4931c = "adchoice_icon";
         public static final String d = "adchoice_size";
         public static final String e = "platform_name";
         public static final String f = "platform_logo";
@@ -375,13 +372,13 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 }
                 return a(new JSONObject(str));
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                     return null;
                 }
                 return null;
             } catch (Throwable th) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     th.printStackTrace();
                     return null;
                 }
@@ -408,7 +405,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 aVar4.j = jSONObject.optString("adchoice_link");
                 String optString = jSONObject.optString("adchoice_size");
                 aVar4.l = optString;
-                aVar4.i = jSONObject.optString(f7770a);
+                aVar4.i = jSONObject.optString(f4930a);
                 aVar4.p = jSONObject.optString(h);
                 aVar4.o = jSONObject.optString(g);
                 aVar4.n = jSONObject.optString("platform_logo");
@@ -421,7 +418,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 e = e3;
                 aVar2 = aVar4;
                 aVar3 = aVar2;
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e.printStackTrace();
                     aVar3 = aVar2;
                 }
@@ -430,7 +427,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 th = th2;
                 aVar = aVar4;
                 aVar3 = aVar;
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     th.printStackTrace();
                     aVar3 = aVar;
                 }
@@ -565,11 +562,11 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     public static final class b implements Serializable {
 
         /* renamed from: a  reason: collision with root package name */
-        public boolean f7772a = false;
+        public boolean f4932a = false;
         public boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f7773c = false;
+        public boolean f4933c = false;
         public boolean d = false;
         public boolean e = false;
         public boolean f = false;
@@ -583,14 +580,14 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
 
     /* renamed from: com.anythink.expressad.foundation.d.c$c  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/d/c$c.class */
-    public static final class C0143c implements Serializable {
+    public static final class C0072c implements Serializable {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f7774a = "video_template";
+        public static final String f4934a = "video_template";
         public static final String b = "template_url";
 
         /* renamed from: c  reason: collision with root package name */
-        public static final String f7775c = "orientation";
+        public static final String f4935c = "orientation";
         public static final String d = "paused_url";
         public static final String e = "image";
         private static final int f = 1;
@@ -606,23 +603,23 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         public static final class a implements Serializable {
 
             /* renamed from: a  reason: collision with root package name */
-            public String f7776a;
+            public String f4936a;
             public List<String> b = new ArrayList();
         }
 
-        private C0143c(String str) {
+        private C0072c(String str) {
             this.g = str;
         }
 
-        public static C0143c a(JSONObject jSONObject) {
+        public static C0072c a(JSONObject jSONObject) {
             if (jSONObject != null) {
                 try {
                     if (w.b(jSONObject.toString())) {
-                        C0143c c0143c = new C0143c(jSONObject.toString());
-                        c0143c.h = jSONObject.optInt(f7774a, 1);
-                        c0143c.a(jSONObject.optString("template_url"));
-                        c0143c.i = jSONObject.optInt("orientation");
-                        c0143c.j = jSONObject.optString(d);
+                        C0072c c0072c = new C0072c(jSONObject.toString());
+                        c0072c.h = jSONObject.optInt(f4934a, 1);
+                        c0072c.a(jSONObject.optString("template_url"));
+                        c0072c.i = jSONObject.optInt("orientation");
+                        c0072c.j = jSONObject.optString(d);
                         JSONObject optJSONObject = jSONObject.optJSONObject("image");
                         if (optJSONObject != null) {
                             ArrayList arrayList = new ArrayList();
@@ -632,14 +629,14 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                                 List<String> a2 = t.a(optJSONObject.optJSONArray(next));
                                 if (a2 != null && a2.size() > 0) {
                                     a aVar = new a();
-                                    aVar.f7776a = next;
+                                    aVar.f4936a = next;
                                     aVar.b.addAll(a2);
                                     arrayList.add(aVar);
                                 }
                             }
-                            c0143c.l = arrayList;
+                            c0072c.l = arrayList;
                         }
-                        return c0143c;
+                        return c0072c;
                     }
                     return null;
                 } catch (Throwable th) {
@@ -669,7 +666,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
             this.j = str;
         }
 
-        private static C0143c d(String str) {
+        private static C0072c d(String str) {
             try {
                 if (w.b(str)) {
                     return a(new JSONObject(str));
@@ -914,17 +911,17 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         cVar.v(jSONObject.optString("campaignid"));
         cVar.w(jSONObject.optString("packageName"));
         cVar.x(jSONObject.optString("title"));
-        cVar.o(jSONObject.optString(a.C0070a.k));
+        cVar.o(jSONObject.optString("cta"));
         cVar.y(jSONObject.optString("desc"));
         cVar.dT = jSONObject.optString(L);
         cVar.A(jSONObject.optString("image_url"));
         cVar.dg = jSONObject.optLong("plct");
         cVar.dh = jSONObject.optLong("plctb");
-        cVar.cX = jSONObject.optString(f7767c);
+        cVar.cX = jSONObject.optString(f4928c);
         cVar.a(jSONObject.optString(b));
         cVar.d(jSONObject.optString(j));
         cVar.dj = jSONObject.optString(k);
-        cVar.dk = jSONObject.optInt("creative_id");
+        cVar.dk = jSONObject.optInt(l);
         return cVar;
     }
 
@@ -996,17 +993,17 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 cVar2.y(c2.optString("desc"));
                 cVar2.w(c2.optString("package_name"));
                 cVar2.ev = c2.optInt(av);
-                cVar2.z(c2.optString("icon_url"));
+                cVar2.z(c2.optString(H));
                 cVar2.A(c2.optString("image_url"));
                 cVar2.B(c2.optString(K));
                 cVar2.ea = c2.optString(J);
                 cVar2.dT = a(dVar, cVar2, c2.optString(L));
-                cVar2.dV = a(dVar, cVar2, c2.optString("click_url"));
+                cVar2.dV = a(dVar, cVar2, c2.optString(M));
                 cVar2.aH = p.a(c2.optString(aF));
                 cVar2.dW = c2.optInt(N);
                 cVar2.dX = a(dVar, cVar2, c2.optString(O));
                 cVar2.dY = c2.optBoolean(P, false);
-                cVar2.dU = a(dVar, cVar2, c2.optString("notice_url"));
+                cVar2.dU = a(dVar, cVar2, c2.optString(Q));
                 cVar2.eb = c2.optInt("template");
                 cVar2.p(c2.optInt("ad_source_id", 1));
                 cVar2.ec = c2.optInt(T);
@@ -1018,7 +1015,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 if (!TextUtils.isEmpty(c2.optString(Z))) {
                     cVar2.o(c2.optInt(Z, 333333));
                 }
-                cVar2.ee = c2.optString("click_mode");
+                cVar2.ee = c2.optString(V);
                 cVar2.ef = c2.optString("landing_type");
                 cVar2.eu = c2.optInt("link_type", 4);
                 cVar2.ei = c2.optInt(ab);
@@ -1046,9 +1043,9 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 cVar2.ey = str2;
                 cVar2.n(str3);
                 cVar2.ew = c2.optString(an);
-                cVar2.ex = c2.optInt("offer_type");
-                cVar2.eB = c2.optString("reward_name");
-                cVar2.eA = c2.optInt("reward_amount");
+                cVar2.ex = c2.optInt(ao);
+                cVar2.eB = c2.optString(aq);
+                cVar2.eA = c2.optInt(ap);
                 try {
                     if (c2.has(cj)) {
                         String a2 = a(dVar, cVar2, c2.optString(cj));
@@ -1064,8 +1061,8 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                     return null;
                 }
                 cVar2.fc = c2.optInt(bP, 1);
-                if (c2.has(f7766ar)) {
-                    cVar2.bK = c2.optString(f7766ar);
+                if (c2.has(f4927ar)) {
+                    cVar2.bK = c2.optString(f4927ar);
                 }
                 if (c2.has(bc)) {
                     cVar2.dQ = c2.optInt(bc);
@@ -1073,7 +1070,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 if (c2.has(be)) {
                     cVar2.dR = c2.optString(be);
                 }
-                cVar2.a(C0143c.a(c2.optJSONObject(ck)));
+                cVar2.a(C0072c.a(c2.optJSONObject(ck)));
                 cVar2.fa = c2.optInt(as, 2);
                 cVar2.dN = c2.optInt(aW, 1);
                 cVar2.dO = c2.optInt(aX, 1);
@@ -1095,7 +1092,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 cVar2.dJ = a.a(c2.optString(aL, ""));
                 cVar2.dg = c2.optLong("plct");
                 cVar2.dh = c2.optLong("plctb");
-                cVar2.dk = c2.optLong("creative_id");
+                cVar2.dk = c2.optLong(l);
                 String optString3 = c2.optString("cam_tpl_url");
                 Uri parse = Uri.parse(optString3);
                 if (TextUtils.isEmpty(parse.getPath()) || !(parse.getPath().endsWith(".zip") || parse.getPath().endsWith(".ZIP"))) {
@@ -1125,7 +1122,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 cVar2.fk = c2.optInt(q);
                 cVar2.fl = c2.optString(r);
                 cVar2.du = c2.optInt(ay);
-                cVar2.f7769de = c2.optInt(x, -2);
+                cVar2.de = c2.optInt(x, -2);
                 cVar2.df = c2.optInt(y, -2);
                 cVar2.dd = c2.optInt("adspace_t", 1);
                 cVar2.dv = c2.optInt(az);
@@ -1179,14 +1176,14 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     }
 
     public static JSONObject a(c cVar) {
-        C0143c c0143c;
+        C0072c c0072c;
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("id", cVar.aZ());
         jSONObject.put(ay, cVar.du);
         jSONObject.put(az, cVar.dv);
         jSONObject.put("adspace_t", cVar.dd);
         jSONObject.put(y, cVar.df);
-        jSONObject.put(x, cVar.f7769de);
+        jSONObject.put(x, cVar.de);
         if (!TextUtils.isEmpty(cVar.ff)) {
             jSONObject.put("unitId", cVar.ff);
         }
@@ -1226,12 +1223,12 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         jSONObject.put("desc", cVar.bc());
         jSONObject.put("package_name", cVar.ba());
         jSONObject.put(av, cVar.ev);
-        jSONObject.put("icon_url", cVar.bd());
+        jSONObject.put(H, cVar.bd());
         jSONObject.put("image_url", cVar.be());
         jSONObject.put(K, cVar.bh());
         jSONObject.put(J, cVar.ea);
         jSONObject.put(L, cVar.dT);
-        jSONObject.put("click_url", cVar.dV);
+        jSONObject.put(M, cVar.dV);
         p pVar = cVar.aH;
         if (pVar != null) {
             jSONObject.put(aF, pVar.c());
@@ -1239,7 +1236,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         jSONObject.put(N, cVar.dW);
         jSONObject.put(O, cVar.dX);
         jSONObject.put(P, cVar.dY);
-        jSONObject.put("notice_url", cVar.dU);
+        jSONObject.put(Q, cVar.dU);
         jSONObject.put("template", cVar.eb);
         jSONObject.put("ad_source_id", cVar.bf());
         jSONObject.put(T, cVar.ec);
@@ -1248,7 +1245,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         sb.append(cVar.aX());
         jSONObject.put(Y, sb.toString());
         jSONObject.put(Z, cVar.aY());
-        jSONObject.put("click_mode", cVar.ee);
+        jSONObject.put(V, cVar.ee);
         jSONObject.put("landing_type", cVar.ef);
         jSONObject.put("link_type", cVar.eu);
         jSONObject.put(ab, cVar.ei);
@@ -1268,9 +1265,9 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         jSONObject.put(d.f, cVar.ey);
         jSONObject.put(d.k, cVar.ez);
         jSONObject.put(an, cVar.ew);
-        jSONObject.put("offer_type", cVar.ex);
-        jSONObject.put("reward_amount", cVar.eA);
-        jSONObject.put("reward_name", cVar.eB);
+        jSONObject.put(ao, cVar.ex);
+        jSONObject.put(ap, cVar.eA);
+        jSONObject.put(aq, cVar.eB);
         jSONObject.put(be, cVar.dR);
         if (w.b(cVar.fe)) {
             jSONObject.put(cj, new JSONObject(cVar.fe));
@@ -1278,10 +1275,10 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         jSONObject.put(bC, cVar.eP);
         jSONObject.put("endcard_url", cVar.I());
         jSONObject.put(bP, cVar.fc);
-        if (cVar != null && (c0143c = cVar.fo) != null && w.b(c0143c.a())) {
+        if (cVar != null && (c0072c = cVar.fo) != null && w.b(c0072c.a())) {
             jSONObject.put(ck, new JSONObject(cVar.fo.a()));
         }
-        jSONObject.put(f7766ar, cVar.bK);
+        jSONObject.put(f4927ar, cVar.bK);
         jSONObject.put(as, cVar.fa);
         jSONObject.put(aX, cVar.dO);
         jSONObject.put(aW, cVar.dN);
@@ -1305,7 +1302,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         jSONObject.put("plct", cVar.dg);
         jSONObject.put("plctb", cVar.dh);
         jSONObject.put(aM, cVar.fr);
-        jSONObject.put("creative_id", cVar.dk);
+        jSONObject.put(l, cVar.dk);
         jSONObject.put("cam_html", cVar.dj);
         String str2 = cVar.di;
         if (str2 == null) {
@@ -1328,7 +1325,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
             i3 = 0;
         }
         jSONObject.put("token_r", i3);
-        jSONObject.put("encrypt_p", cVar.f47do);
+        jSONObject.put("encrypt_p", cVar.f1do);
         jSONObject.put(v, cVar.ds);
         jSONObject.put(aC, cVar.fu);
         jSONObject.put(aB, cVar.fv);
@@ -1383,16 +1380,16 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         this.fn = bVar;
     }
 
-    private void a(C0143c c0143c) {
-        this.fo = c0143c;
-        if (c0143c == null || TextUtils.isEmpty(c0143c.e())) {
+    private void a(C0072c c0072c) {
+        this.fo = c0072c;
+        if (c0072c == null || TextUtils.isEmpty(c0072c.e())) {
             return;
         }
-        if (TextUtils.isEmpty(this.eV) && c0143c.e().contains(d)) {
-            this.eW = c0143c.e();
+        if (TextUtils.isEmpty(this.eV) && c0072c.e().contains(d)) {
+            this.eW = c0072c.e();
         }
-        boolean e2 = t.e(c0143c.e());
-        int g2 = t.g(c0143c.e());
+        boolean e2 = t.e(c0072c.e());
+        int g2 = t.g(c0072c.e());
         if (e2) {
             this.dp = true;
             v(g2);
@@ -1633,17 +1630,17 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 cVar.y(jSONObject.optString("desc"));
                 cVar.w(jSONObject.optString("package_name"));
                 cVar.ev = jSONObject.optInt(av);
-                cVar.z(jSONObject.optString("icon_url"));
+                cVar.z(jSONObject.optString(H));
                 cVar.A(jSONObject.optString("image_url"));
                 cVar.B(jSONObject.optString(K));
                 cVar.ea = jSONObject.optString(J);
                 cVar.dT = jSONObject.optString(L);
-                cVar.dV = jSONObject.optString("click_url");
+                cVar.dV = jSONObject.optString(M);
                 cVar.aH = p.a(jSONObject.optString(aF));
                 cVar.dW = jSONObject.optInt(N);
                 cVar.dX = jSONObject.optString(O);
                 cVar.dY = jSONObject.optBoolean(P, false);
-                cVar.dU = jSONObject.optString("notice_url");
+                cVar.dU = jSONObject.optString(Q);
                 cVar.eb = jSONObject.optInt("template");
                 cVar.p(jSONObject.optInt("ad_source_id", 1));
                 cVar.ec = jSONObject.optInt(T);
@@ -1655,7 +1652,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 if (!TextUtils.isEmpty(jSONObject.optString(Z))) {
                     cVar.o(jSONObject.optInt(Z, 333333));
                 }
-                cVar.ee = jSONObject.optString("click_mode");
+                cVar.ee = jSONObject.optString(V);
                 cVar.ef = jSONObject.optString("landing_type");
                 cVar.eu = jSONObject.optInt("link_type", 4);
                 cVar.ei = jSONObject.optInt(ab);
@@ -1674,9 +1671,9 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 cVar.ey = jSONObject.optString(d.f);
                 cVar.n(jSONObject.optString(d.k));
                 cVar.ew = jSONObject.optString(an);
-                cVar.ex = jSONObject.optInt("offer_type");
-                cVar.eB = jSONObject.optString("reward_name");
-                cVar.eA = jSONObject.optInt("reward_amount");
+                cVar.ex = jSONObject.optInt(ao);
+                cVar.eB = jSONObject.optString(aq);
+                cVar.eA = jSONObject.optInt(ap);
                 try {
                     String optString = jSONObject.optString(cj);
                     if (!TextUtils.isEmpty(optString)) {
@@ -1723,8 +1720,8 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                     return null;
                 }
                 cVar.fc = jSONObject.optInt(bP, 1);
-                if (jSONObject.has(f7766ar)) {
-                    cVar.bK = jSONObject.optString(f7766ar);
+                if (jSONObject.has(f4927ar)) {
+                    cVar.bK = jSONObject.optString(f4927ar);
                 }
                 if (jSONObject.has(bc)) {
                     cVar.dQ = jSONObject.optInt(bc);
@@ -1732,7 +1729,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 if (jSONObject.has(be)) {
                     cVar.dR = jSONObject.optString(be);
                 }
-                cVar.a(C0143c.a(jSONObject.optJSONObject(ck)));
+                cVar.a(C0072c.a(jSONObject.optJSONObject(ck)));
                 cVar.fa = jSONObject.optInt(as, 2);
                 cVar.dN = jSONObject.optInt(aW, 1);
                 cVar.dO = jSONObject.optInt(aX, 1);
@@ -1762,7 +1759,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 } else {
                     cVar.fr = jSONObject.optString(aM);
                 }
-                cVar.dk = jSONObject.optInt("creative_id");
+                cVar.dk = jSONObject.optInt(l);
                 String optString2 = jSONObject.optString("cam_tpl_url");
                 Uri parse = Uri.parse(optString2);
                 if (TextUtils.isEmpty(parse.getPath()) || !(parse.getPath().endsWith(".zip") || parse.getPath().endsWith(".ZIP"))) {
@@ -1795,7 +1792,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                             cVar.eg = parse2.getQueryParameter("k");
                         }
                     }
-                    String optString5 = jSONObject.optString("notice_url");
+                    String optString5 = jSONObject.optString(Q);
                     if (!TextUtils.isEmpty(optString5)) {
                         cVar.dU = optString5;
                         Uri parse3 = Uri.parse(optString5);
@@ -1810,13 +1807,13 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
                 cVar.fl = jSONObject.optString(r);
                 cVar.du = jSONObject.optInt(ay);
                 cVar.dv = jSONObject.optInt(az);
-                cVar.f7769de = jSONObject.optInt(x, -2);
+                cVar.de = jSONObject.optInt(x, -2);
                 cVar.df = jSONObject.optInt(y, -2);
                 cVar.dd = jSONObject.optInt("adspace_t", 1);
                 c a2 = a(jSONObject, cVar);
                 a2.dm = jSONObject.optInt("vcn");
                 a2.dn = jSONObject.optInt("token_r");
-                a2.f47do = jSONObject.optString("encrypt_p");
+                a2.f1do = jSONObject.optString("encrypt_p");
                 a2.ds = jSONObject.optInt(v);
                 a2.ag(jSONObject.optInt(aB, 2));
                 a2.ah(jSONObject.optInt(aA, 1));
@@ -2017,7 +2014,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     }
 
     private String bk() {
-        return this.f47do;
+        return this.f1do;
     }
 
     private int bl() {
@@ -2217,7 +2214,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
             }
             return !TextUtils.isEmpty(sb) ? sb.toString() : "";
         } catch (Throwable th) {
-            com.anythink.expressad.foundation.h.o.d(f7765a, th.getMessage());
+            com.anythink.expressad.foundation.h.o.d(f4926a, th.getMessage());
             return "";
         }
     }
@@ -2288,7 +2285,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     }
 
     private void u(int i2) {
-        this.f7769de = i2;
+        this.de = i2;
     }
 
     private void v(int i2) {
@@ -2362,7 +2359,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
         return this.fd;
     }
 
-    public final C0143c M() {
+    public final C0072c M() {
         return this.fo;
     }
 
@@ -2681,7 +2678,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     }
 
     public final void c(String str) {
-        this.f47do = str;
+        this.f1do = str;
     }
 
     public final void c(boolean z2) {
@@ -2725,7 +2722,7 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     }
 
     public final int g() {
-        return this.f7769de;
+        return this.de;
     }
 
     public final void g(int i2) {
@@ -2781,9 +2778,9 @@ public class c extends h implements com.anythink.expressad.e.b, Serializable {
     }
 
     public final void k(String str) {
-        C0143c c0143c;
+        C0072c c0072c;
         this.fb = str;
-        if (TextUtils.isEmpty(this.eV) && (((c0143c = this.fo) == null || TextUtils.isEmpty(c0143c.k)) && !TextUtils.isEmpty(str) && str.contains(d))) {
+        if (TextUtils.isEmpty(this.eV) && (((c0072c = this.fo) == null || TextUtils.isEmpty(c0072c.k)) && !TextUtils.isEmpty(str) && str.contains(d))) {
             this.eW = str;
         }
         this.fz = t.d(str);

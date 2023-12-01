@@ -6,7 +6,7 @@ import android.os.SystemClock;
 public class i implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f27395a = 0;
+    private long f13707a = 0;
     private int b;
 
     public i(int i) {
@@ -15,13 +15,13 @@ public class i implements d {
 
     @Override // com.opos.mobad.service.j.d
     public boolean a(Object obj) {
-        long j = this.f27395a;
+        long j = this.f13707a;
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (j <= 0) {
-            this.f27395a = elapsedRealtime;
+            this.f13707a = elapsedRealtime;
             return false;
-        } else if (elapsedRealtime - this.f27395a >= this.b) {
-            this.f27395a = SystemClock.elapsedRealtime();
+        } else if (elapsedRealtime - this.f13707a >= this.b) {
+            this.f13707a = SystemClock.elapsedRealtime();
             return true;
         } else {
             return false;

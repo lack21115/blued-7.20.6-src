@@ -15,15 +15,15 @@ import java.util.concurrent.ConcurrentHashMap;
 public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.j implements n<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26032a;
+    private String f12344a;
     protected Map<Integer, T> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26033c;
+    private String f12345c;
     private int d;
     private int g;
     private int h;
-    private com.opos.mobad.f.a.m<a.C0695a> i;
+    private com.opos.mobad.f.a.m<a.C0525a> i;
     private com.opos.mobad.f.a.n j;
     private t<e.a> k;
     private Map<Integer, Boolean> l;
@@ -38,19 +38,19 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
         super(aVar4);
         this.g = -1;
         this.h = -1;
-        this.f26033c = str;
+        this.f12345c = str;
         this.d = i;
         this.o = aVar;
         this.p = new w(str, j);
-        this.i = new com.opos.mobad.f.a.m<>(new m.a<a.C0695a>() { // from class: com.opos.mobad.f.a.a.h.1
+        this.i = new com.opos.mobad.f.a.m<>(new m.a<a.C0525a>() { // from class: com.opos.mobad.f.a.a.h.1
             @Override // com.opos.mobad.f.a.m.a
-            public void a(a.C0695a c0695a) {
-                if (c0695a == null) {
+            public void a(a.C0525a c0525a) {
+                if (c0525a == null) {
                     return;
                 }
                 h hVar = h.this;
-                int i2 = c0695a.b;
-                hVar.b(i2, "" + c0695a.f26075c);
+                int i2 = c0525a.b;
+                hVar.b(i2, "" + c0525a.f12387c);
             }
         });
         this.j = new com.opos.mobad.f.a.n(new Runnable() { // from class: com.opos.mobad.f.a.a.h.2
@@ -75,13 +75,13 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
     }
 
     private void a(e.a aVar, com.opos.mobad.f.a.b.a<T> aVar2) {
-        if (!this.b.containsKey(Integer.valueOf(aVar.f27301a))) {
+        if (!this.b.containsKey(Integer.valueOf(aVar.f13613a))) {
             T b = aVar2.b(aVar, this);
             if (b == null) {
                 com.opos.cmn.an.f.a.d("delegator", "disable reserve");
                 return;
             }
-            this.b.put(Integer.valueOf(aVar.f27301a), b);
+            this.b.put(Integer.valueOf(aVar.f13613a), b);
         }
         this.n = aVar;
     }
@@ -98,11 +98,11 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
                 return;
             }
             e.a aVar3 = list.get(i2);
-            this.m.put(Integer.valueOf(aVar3.f27301a), aVar3);
+            this.m.put(Integer.valueOf(aVar3.f13613a), aVar3);
             if (aVar3.f <= 0) {
                 sb = new StringBuilder();
                 sb.append("percent fail with channel:");
-                sb.append(aVar3.f27301a);
+                sb.append(aVar3.f13613a);
             } else {
                 T b = aVar.b(aVar3, this);
                 if (b == null) {
@@ -110,7 +110,7 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
                     sb.append("ad null with channel:");
                     sb.append(aVar3);
                 } else {
-                    this.b.put(Integer.valueOf(aVar3.f27301a), b);
+                    this.b.put(Integer.valueOf(aVar3.f13613a), b);
                     aVar2.a(aVar3, aVar3.f);
                     i = i2 + 1;
                 }
@@ -128,23 +128,23 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
         if (a2 == null) {
             com.opos.cmn.an.f.a.b("delegator", "reserve:" + this.n + ",current:" + this.h);
             e.a aVar2 = this.n;
-            if (aVar2 == null || this.h == aVar2.f27301a) {
+            if (aVar2 == null || this.h == aVar2.f13613a) {
                 b(i, str);
                 this.p.b(-7);
                 return;
             }
             aVar = this.n;
         }
-        this.h = aVar.f27301a;
-        a.C0695a a3 = this.o.a(aVar.f27301a);
-        if (a3 != null && !a3.f26074a) {
-            this.p.a(aVar.f27301a, a3.b);
+        this.h = aVar.f13613a;
+        a.C0525a a3 = this.o.a(aVar.f13613a);
+        if (a3 != null && !a3.f12386a) {
+            this.p.a(aVar.f13613a, a3.b);
             d(i, str);
             return;
         }
-        com.opos.cmn.an.f.a.b("delegator", "start:" + aVar.f27301a);
-        if (aVar.f27301a != 1 && this.l.containsKey(Integer.valueOf(aVar.f27301a)) && this.l.get(Integer.valueOf(aVar.f27301a)).booleanValue() && g(aVar.f27301a)) {
-            final int i2 = aVar.f27301a;
+        com.opos.cmn.an.f.a.b("delegator", "start:" + aVar.f13613a);
+        if (aVar.f13613a != 1 && this.l.containsKey(Integer.valueOf(aVar.f13613a)) && this.l.get(Integer.valueOf(aVar.f13613a)).booleanValue() && g(aVar.f13613a)) {
+            final int i2 = aVar.f13613a;
             com.opos.cmn.an.f.a.b("delegator", "cache");
             com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.f.a.a.h.4
                 @Override // java.lang.Runnable
@@ -154,17 +154,17 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
             });
             return;
         }
-        a(this.f26032a, aVar);
-        com.opos.cmn.an.f.a.b("delegator", "timeout:" + aVar.f27302c);
-        this.j.a(aVar.f27302c);
+        a(this.f12344a, aVar);
+        com.opos.cmn.an.f.a.b("delegator", "timeout:" + aVar.f13614c);
+        this.j.a(aVar.f13614c);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void i(final int i) {
         this.i.a();
         this.j.a();
-        a.C0695a a2 = this.o.a(this.f26033c, i);
-        if (a2.f26074a) {
+        a.C0525a a2 = this.o.a(this.f12345c, i);
+        if (a2.f12386a) {
             c(new Callable<Boolean>() { // from class: com.opos.mobad.f.a.a.h.5
                 @Override // java.util.concurrent.Callable
                 /* renamed from: a */
@@ -175,7 +175,7 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
             });
             return;
         }
-        b(a2.b, a2.f26075c);
+        b(a2.b, a2.f12387c);
         this.p.b(a2.b);
     }
 
@@ -207,9 +207,9 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
     }
 
     protected void a(String str, e.a aVar) {
-        T t = this.b.get(Integer.valueOf(aVar.f27301a));
-        if (aVar.f27301a == 1) {
-            t.a(str, (int) aVar.f27302c);
+        T t = this.b.get(Integer.valueOf(aVar.f13613a));
+        if (aVar.f13613a == 1) {
+            t.a(str, (int) aVar.f13614c);
         } else {
             t.a(str);
         }
@@ -245,18 +245,18 @@ public abstract class h<T extends com.opos.mobad.ad.b> extends com.opos.mobad.l.
     @Override // com.opos.mobad.l.j
     public boolean b(String str) {
         com.opos.cmn.an.f.a.b("delegator", "doload:" + str);
-        a.C0695a a2 = this.o.a(this.f26033c);
+        a.C0525a a2 = this.o.a(this.f12345c);
         this.p.a(str);
         this.p.a();
-        if (!a2.f26074a) {
-            com.opos.cmn.an.f.a.b("delegator", "intercept " + a2.f26075c);
+        if (!a2.f12386a) {
+            com.opos.cmn.an.f.a.b("delegator", "intercept " + a2.f12387c);
             this.i.a(500L, a2);
             this.p.c(a2.b);
             return true;
         }
         this.g = -1;
         this.h = -1;
-        this.f26032a = str;
+        this.f12344a = str;
         this.i.a();
         this.j.a();
         this.k.b();

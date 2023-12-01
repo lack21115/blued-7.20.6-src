@@ -7,11 +7,11 @@ import java.io.InputStream;
 public class BufferedStreamFeeder {
 
     /* renamed from: a  reason: collision with root package name */
-    private InputStream f3610a;
+    private InputStream f3562a;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f3611c;
+    private int f3563c;
     private int d;
     private boolean e;
     private boolean f;
@@ -25,7 +25,7 @@ public class BufferedStreamFeeder {
         this.e = false;
         this.f = true;
         this.g = false;
-        this.f3610a = inputStream;
+        this.f3562a = inputStream;
         this.b = new byte[i < 1 ? 8192 : i];
     }
 
@@ -34,11 +34,11 @@ public class BufferedStreamFeeder {
     }
 
     public int a(IBytesConsumer iBytesConsumer, int i) {
-        if (this.f3611c == 0) {
+        if (this.f3563c == 0) {
             a();
         }
-        if (i < 0 || i >= this.f3611c) {
-            i = this.f3611c;
+        if (i < 0 || i >= this.f3563c) {
+            i = this.f3563c;
         }
         int i2 = 0;
         if (i > 0) {
@@ -46,7 +46,7 @@ public class BufferedStreamFeeder {
             i2 = a2;
             if (a2 > 0) {
                 this.d += a2;
-                this.f3611c -= a2;
+                this.f3563c -= a2;
                 i2 = a2;
             }
         }
@@ -57,13 +57,13 @@ public class BufferedStreamFeeder {
     }
 
     protected void a() {
-        if (this.f3611c > 0 || this.e) {
+        if (this.f3563c > 0 || this.e) {
             return;
         }
         try {
             this.d = 0;
-            int read = this.f3610a.read(this.b);
-            this.f3611c = read;
+            int read = this.f3562a.read(this.b);
+            this.f3563c = read;
             if (read < 0) {
                 b();
             }
@@ -79,16 +79,16 @@ public class BufferedStreamFeeder {
     public void b() {
         this.e = true;
         this.b = null;
-        this.f3611c = 0;
+        this.f3563c = 0;
         this.d = 0;
-        InputStream inputStream = this.f3610a;
+        InputStream inputStream = this.f3562a;
         if (inputStream != null && this.f) {
             try {
                 inputStream.close();
             } catch (Exception e) {
             }
         }
-        this.f3610a = null;
+        this.f3562a = null;
     }
 
     public void b(boolean z) {

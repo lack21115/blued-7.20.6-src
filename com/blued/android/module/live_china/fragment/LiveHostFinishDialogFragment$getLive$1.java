@@ -1,5 +1,6 @@
 package com.blued.android.module.live_china.fragment;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -14,21 +15,19 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveHostFinishDialogFragment$getLive$1.class */
 public final class LiveHostFinishDialogFragment$getLive$1 extends BluedUIHttpResponse<BluedEntityA<BluedLiveState>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LiveHostFinishDialogFragment f12974a;
+    final /* synthetic */ LiveHostFinishDialogFragment a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveHostFinishDialogFragment$getLive$1(LiveHostFinishDialogFragment liveHostFinishDialogFragment, ActivityFragmentActive activityFragmentActive) {
         super(activityFragmentActive);
-        this.f12974a = liveHostFinishDialogFragment;
+        this.a = liveHostFinishDialogFragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveHostFinishDialogFragment this$0, DialogInterface dialogInterface, int i) {
         Intrinsics.e(this$0, "this$0");
-        LiveRoomInfo.a().c(this$0.getActivity());
+        LiveRoomInfo.a().c((Context) this$0.getActivity());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -44,15 +43,15 @@ public final class LiveHostFinishDialogFragment$getLive$1 extends BluedUIHttpRes
         if (singleData.idcard_verify_status == 1 && singleData.has_bankcard == 1) {
             return;
         }
-        String string = this.f12974a.getString(R.string.live_apply_improve_title);
-        String string2 = this.f12974a.getString(R.string.live_apply_improve_des);
-        String string3 = this.f12974a.getString(R.string.live_apply_improve_ok);
-        final LiveHostFinishDialogFragment liveHostFinishDialogFragment = this.f12974a;
-        CommonAlertDialog.a(this.f12974a.getActivity(), string, string2, string3, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDialogFragment$getLive$1$bIcZUBymy8nVN9lR6tMgmNLn8Wo
+        String string = this.a.getString(R.string.live_apply_improve_title);
+        String string2 = this.a.getString(R.string.live_apply_improve_des);
+        String string3 = this.a.getString(R.string.live_apply_improve_ok);
+        final LiveHostFinishDialogFragment liveHostFinishDialogFragment = this.a;
+        CommonAlertDialog.a(this.a.getActivity(), string, string2, string3, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveHostFinishDialogFragment$getLive$1$bIcZUBymy8nVN9lR6tMgmNLn8Wo
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 LiveHostFinishDialogFragment$getLive$1.a(LiveHostFinishDialogFragment.this, dialogInterface, i);
             }
-        }, this.f12974a.getString(R.string.live_apply_improve_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, this.a.getString(R.string.live_apply_improve_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 }

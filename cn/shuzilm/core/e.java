@@ -7,14 +7,12 @@ import java.util.concurrent.locks.Lock;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/e.class */
 public final class e implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f4181a;
+    final /* synthetic */ Context a;
     final /* synthetic */ DUListener b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public e(Context context, DUListener dUListener) {
-        this.f4181a = context;
+        this.a = context;
         this.b = dUListener;
     }
 
@@ -33,25 +31,25 @@ public final class e implements Runnable {
         try {
             lock = DUHelper.f;
             lock.lock();
-            aIClient = DUHelper.f4163c;
+            aIClient = DUHelper.c;
             if (aIClient == null) {
-                AIClient unused3 = DUHelper.f4163c = new AIClient(this.f4181a);
-                aIClient5 = DUHelper.f4163c;
+                AIClient unused3 = DUHelper.c = new AIClient(this.a);
+                aIClient5 = DUHelper.c;
                 aIClient5.asynAI();
             }
-            unused = DUHelper.f4163c;
+            unused = DUHelper.c;
             if (!AIClient.isf) {
-                aIClient4 = DUHelper.f4163c;
+                aIClient4 = DUHelper.c;
                 aIClient4.asynAI();
             }
-            unused2 = DUHelper.f4163c;
+            unused2 = DUHelper.c;
             if (AIClient.isf) {
                 String str = null;
                 String upperCase = Build.MANUFACTURER.toUpperCase();
-                aIClient2 = DUHelper.f4163c;
+                aIClient2 = DUHelper.c;
                 if (aIClient2.m(upperCase)) {
-                    aIClient3 = DUHelper.f4163c;
-                    zZVTFJRA = DUHelper.zZVTFJRA(this.f4181a, aIClient3.cm(upperCase));
+                    aIClient3 = DUHelper.c;
+                    zZVTFJRA = DUHelper.zZVTFJRA(this.a, aIClient3.cm(upperCase));
                     str = zZVTFJRA;
                 }
                 String str2 = str;

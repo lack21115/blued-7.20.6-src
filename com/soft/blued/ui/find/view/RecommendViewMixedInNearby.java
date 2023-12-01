@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -62,11 +63,11 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
     private BluedPopupWindow F;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f30712a;
+    private Context f17022a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f30713c;
+    private TextView f17023c;
     private TextView d;
     private RecyclerView e;
     private TextView f;
@@ -96,74 +97,72 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
     class AnonymousClass2 extends BluedUIHttpResponse<BluedEntity<FindRecommendData, FindRecommendExtra>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ RecommendViewMixedInNearby f30722a;
+        final /* synthetic */ RecommendViewMixedInNearby f17032a;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             Log.v("drb", "onUIFailure GONE");
-            this.f30722a.setVisibility(8);
-            if (this.f30722a.w != null) {
-                this.f30722a.w.f30625a.postValue(null);
+            this.f17032a.setVisibility(8);
+            if (this.f17032a.w != null) {
+                this.f17032a.w.f16935a.postValue(null);
                 return true;
             }
             return true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(final BluedEntity<FindRecommendData, FindRecommendExtra> bluedEntity) {
-            this.f30722a.setVisibility(0);
+            this.f17032a.setVisibility(0);
             if (bluedEntity.data == null || bluedEntity.data.size() == 0) {
                 Log.v("drb", "onUIUpdate bluedEntity.data == null GONE");
-                this.f30722a.setVisibility(8);
+                this.f17032a.setVisibility(8);
             }
             if (bluedEntity.data.size() < 5) {
-                this.f30722a.f30713c.setVisibility(8);
+                this.f17032a.f17023c.setVisibility(8);
             } else {
-                this.f30722a.f30713c.setVisibility(0);
+                this.f17032a.f17023c.setVisibility(0);
             }
             if (bluedEntity.data == null || bluedEntity.data.size() <= 0) {
-                if (bluedEntity.extra == null || TextUtils.isEmpty(bluedEntity.extra.default_bg)) {
-                    this.f30722a.v.setImageDrawable(new ColorDrawable(0));
+                if (bluedEntity.extra == null || TextUtils.isEmpty(((FindRecommendExtra) bluedEntity.extra).default_bg)) {
+                    this.f17032a.v.setImageDrawable(new ColorDrawable(0));
                 } else {
-                    ImageLoader.a(this.f30722a.g, bluedEntity.extra.default_bg).a(this.f30722a.v);
+                    ImageLoader.a(this.f17032a.g, ((FindRecommendExtra) bluedEntity.extra).default_bg).a(this.f17032a.v);
                 }
-                this.f30722a.u.setVisibility(0);
-                if (this.f30722a.w != null) {
-                    this.f30722a.w.f30625a.postValue(null);
+                this.f17032a.u.setVisibility(0);
+                if (this.f17032a.w != null) {
+                    this.f17032a.w.f16935a.postValue(null);
                 }
             } else {
-                this.f30722a.u.setVisibility(8);
-                this.f30722a.a(0);
+                this.f17032a.u.setVisibility(8);
+                this.f17032a.a(0);
             }
-            if (this.f30722a.k == null) {
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f30722a.getContext());
+            if (this.f17032a.k == null) {
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f17032a.getContext());
                 linearLayoutManager.setOrientation(0);
-                this.f30722a.e.setLayoutManager(linearLayoutManager);
-                this.f30722a.k = new RecommendMixedInNearbyAdapter(this.f30722a.getContext(), this.f30722a.g, this.f30722a.e);
-                this.f30722a.k.setHeaderAndEmpty(true);
-                this.f30722a.k.addHeaderView(this.f30722a.t, -1, 0);
-                this.f30722a.k.bindToRecyclerView(this.f30722a.e);
-                this.f30722a.e.setAdapter(this.f30722a.k);
+                this.f17032a.e.setLayoutManager(linearLayoutManager);
+                this.f17032a.k = new RecommendMixedInNearbyAdapter(this.f17032a.getContext(), this.f17032a.g, this.f17032a.e);
+                this.f17032a.k.setHeaderAndEmpty(true);
+                this.f17032a.k.addHeaderView(this.f17032a.t, -1, 0);
+                this.f17032a.k.bindToRecyclerView(this.f17032a.e);
+                this.f17032a.e.setAdapter(this.f17032a.k);
             }
             if (bluedEntity != null && bluedEntity.extra != null) {
-                this.f30722a.m = bluedEntity.extra.show_call;
-                this.f30722a.f();
-                this.f30722a.f30713c.setText(bluedEntity.extra.more_title);
-                this.f30722a.b.setText(bluedEntity.extra.title);
-                this.f30722a.f30713c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.2.1
+                this.f17032a.m = ((FindRecommendExtra) bluedEntity.extra).show_call;
+                this.f17032a.f();
+                this.f17032a.f17023c.setText(((FindRecommendExtra) bluedEntity.extra).more_title);
+                this.f17032a.b.setText(((FindRecommendExtra) bluedEntity.extra).title);
+                this.f17032a.f17023c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.2.1
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         if (TextUtils.isEmpty(((FindRecommendExtra) bluedEntity.extra).more_link)) {
                             return;
                         }
-                        WebViewShowInfoFragment.show(AnonymousClass2.this.f30722a.getContext(), ((FindRecommendExtra) bluedEntity.extra).more_link, -1);
+                        WebViewShowInfoFragment.show(AnonymousClass2.this.f17032a.getContext(), ((FindRecommendExtra) bluedEntity.extra).more_link, -1);
                     }
                 });
             }
             if (bluedEntity.data != null) {
-                this.f30722a.k.setNewData(bluedEntity.data);
-                CallHelloManager.a().a(this.f30722a.getContext(), this.f30722a.g, this.f30722a.getFromPage(), (CallHelloManager.ToOpenListener) null);
+                this.f17032a.k.setNewData(bluedEntity.data);
+                CallHelloManager.a().a(this.f17032a.getContext(), this.f17032a.g, this.f17032a.getFromPage(), (CallHelloManager.ToOpenListener) null);
             }
         }
     }
@@ -180,7 +179,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
             EventTrackGuy.b(GuyProtos.Event.NEARBY_FRIEND_VOCATIVE_BUBBLE_CLICK);
             CallMeStatusData b = CallHelloManager.a().b();
             if (b == null || (b.free_count == 0 && b.pay_count == 0)) {
-                CallHelloManager.a().a(RecommendViewMixedInNearby.this.f30712a, RecommendViewMixedInNearby.this.g, 11, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.7.2
+                CallHelloManager.a().a(RecommendViewMixedInNearby.this.f17022a, RecommendViewMixedInNearby.this.g, 11, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.7.2
                     @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
                     public void done(boolean z) {
                         if (z) {
@@ -189,12 +188,12 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                     }
                 });
             } else {
-                CommonAlertDialog.a(RecommendViewMixedInNearby.this.f30712a, (String) null, RecommendViewMixedInNearby.this.f30712a.getResources().getString(R.string.call_open_tip), RecommendViewMixedInNearby.this.f30712a.getResources().getString(R.string.call_open), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.7.1
+                CommonAlertDialog.a(RecommendViewMixedInNearby.this.f17022a, (String) null, RecommendViewMixedInNearby.this.f17022a.getResources().getString(R.string.call_open_tip), RecommendViewMixedInNearby.this.f17022a.getResources().getString(R.string.call_open), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.7.1
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Tracker.onClick(dialogInterface, i);
                         EventTrackGuy.b(GuyProtos.Event.NEARBY_FRIEND_VOCATIVE_BUBBLE_OPEN_CLICK);
-                        CallHelloManager.a().a(RecommendViewMixedInNearby.this.f30712a, RecommendViewMixedInNearby.this.g, 11, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.7.1.1
+                        CallHelloManager.a().a(RecommendViewMixedInNearby.this.f17022a, RecommendViewMixedInNearby.this.g, 11, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.7.1.1
                             @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
                             public void done(boolean z) {
                                 if (z) {
@@ -203,7 +202,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                             }
                         });
                     }
-                }, RecommendViewMixedInNearby.this.f30712a.getResources().getString(R.string.call_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+                }, RecommendViewMixedInNearby.this.f17022a.getResources().getString(R.string.call_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
             }
             RecommendViewMixedInNearby.this.A.dismiss();
         }
@@ -225,7 +224,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         this.l = true;
         this.m = 0;
         this.x = false;
-        this.f30712a = getContext();
+        this.f17022a = getContext();
         a(context);
     }
 
@@ -233,11 +232,11 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         View inflate = View.inflate(context, R.layout.view_home_recommend, null);
         this.t = View.inflate(context, R.layout.layout_recommend_header, null);
         this.b = (TextView) inflate.findViewById(2131372754);
-        this.f30713c = (TextView) inflate.findViewById(2131371973);
+        this.f17023c = (TextView) inflate.findViewById(R.id.tv_more);
         this.e = (RecyclerView) inflate.findViewById(R.id.recycler_view_recommend);
-        this.i = (ImageView) inflate.findViewById(2131365960);
-        this.u = inflate.findViewById(2131369278);
-        this.v = (ImageView) inflate.findViewById(2131365285);
+        this.i = (ImageView) inflate.findViewById(R.id.iv_title);
+        this.u = inflate.findViewById(R.id.rl_empty);
+        this.v = (ImageView) inflate.findViewById(R.id.iv_empty);
         this.d = (TextView) this.t.findViewById(R.id.tv_call_me_btn);
         ConstraintLayout constraintLayout = (ConstraintLayout) this.t.findViewById(R.id.cl_btn);
         this.h = constraintLayout;
@@ -247,8 +246,8 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         addView(inflate, new FrameLayout.LayoutParams(-1, -2));
         setVisibility(4);
         this.d.setOnClickListener(this);
-        if (HomeActivity.f30985c != null) {
-            this.w = (NearbyViewModel) ViewModelProviders.of(HomeActivity.f30985c).get(NearbyViewModel.class);
+        if (HomeActivity.f17295c != null) {
+            this.w = (NearbyViewModel) ViewModelProviders.of((FragmentActivity) HomeActivity.f17295c).get(NearbyViewModel.class);
         }
     }
 
@@ -374,7 +373,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         setVisibility(8);
         NearbyViewModel nearbyViewModel = this.w;
         if (nearbyViewModel != null) {
-            nearbyViewModel.f30625a.postValue(null);
+            nearbyViewModel.f16935a.postValue(null);
         }
     }
 
@@ -391,7 +390,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         }
         NearbyViewModel nearbyViewModel = this.w;
         if (nearbyViewModel != null) {
-            nearbyViewModel.f30625a.postValue(rect);
+            nearbyViewModel.f16935a.postValue(rect);
         }
     }
 
@@ -441,7 +440,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                     }
                     this.y.setVisibility(0);
                     this.r.setVisibility(8);
-                    this.s.setText(this.f30712a.getString(R.string.call_under_review));
+                    this.s.setText(this.f17022a.getString(R.string.call_under_review));
                 } else if (i != 4) {
                     if (i == 5) {
                         Log.v("drb", "CALL_STATUS_COMPLETE");
@@ -455,7 +454,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                         }
                         this.y.setVisibility(0);
                         this.r.setVisibility(8);
-                        this.s.setText(this.f30712a.getString(R.string.call_finished));
+                        this.s.setText(this.f17022a.getString(R.string.call_finished));
                     }
                 }
             }
@@ -487,7 +486,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
             }
             this.y.setVisibility(0);
             this.r.setVisibility(8);
-            this.s.setText(this.f30712a.getString(R.string.call_free));
+            this.s.setText(this.f17022a.getString(R.string.call_free));
         } else if (callMeStatusData.pay_count != 0) {
             imageView.setVisibility(8);
             textView.setText(callMeStatusData.pay_count + "");
@@ -501,10 +500,10 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
             this.r.setVisibility(8);
             if (callMeStatusData.pay_count > 99) {
                 TextView textView2 = this.s;
-                textView2.setText("99+" + this.f30712a.getString(R.string.call_count));
+                textView2.setText("99+" + this.f17022a.getString(R.string.call_count));
             } else if (BlueAppLocal.d() || callMeStatusData.pay_count != 1) {
                 TextView textView3 = this.s;
-                textView3.setText(callMeStatusData.pay_count + " " + this.f30712a.getString(R.string.call_count));
+                textView3.setText(callMeStatusData.pay_count + " " + this.f17022a.getString(R.string.call_count));
             } else {
                 TextView textView4 = this.s;
                 textView4.setText(callMeStatusData.pay_count + " use");
@@ -531,7 +530,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                 }
             });
             TextView textView = (TextView) inflate.findViewById(R.id.tv_cnt);
-            textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.RIGHT, new int[0]));
+            textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.c, new int[0]));
             textView.setText(usersNewCallBubbleModel.text);
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.15
                 @Override // android.view.View.OnClickListener
@@ -562,7 +561,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         AppConfigModel.CallBubbleTest w;
         View view2;
         BluedPopupWindow bluedPopupWindow = this.z;
-        if ((bluedPopupWindow == null || !bluedPopupWindow.isShowing()) && HomeActivity.f30985c != null && "find".equals(HomeActivity.f30985c.f()) && (view = this.q) != null && view.getGlobalVisibleRect(new Rect()) && j() && (w = BluedConfig.a().w()) != null && w.group >= 1 && w.group <= 3 && !TextUtils.isEmpty(w.text) && w.group != 3) {
+        if ((bluedPopupWindow == null || !bluedPopupWindow.isShowing()) && HomeActivity.f17295c != null && "find".equals(HomeActivity.f17295c.f()) && (view = this.q) != null && view.getGlobalVisibleRect(new Rect()) && j() && (w = BluedConfig.a().w()) != null && w.group >= 1 && w.group <= 3 && !TextUtils.isEmpty(w.text) && w.group != 3) {
             boolean z2 = w.group == 1 && B >= 100 && !z;
             boolean z3 = z2;
             if (w.group == 2) {
@@ -593,7 +592,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                             }
                         });
                         TextView textView = (TextView) inflate.findViewById(R.id.tv_cnt);
-                        textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.RIGHT, new int[0]));
+                        textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.c, new int[0]));
                         textView.setText(w.text);
                         inflate.setOnClickListener(new AnonymousClass7());
                         BluedPopupWindow bluedPopupWindow2 = this.A;
@@ -638,16 +637,16 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
             this.y.setVisibility(0);
             this.r.setVisibility(8);
             if (!z) {
-                this.s.setText(this.f30712a.getString(R.string.call_name));
+                this.s.setText(this.f17022a.getString(R.string.call_name));
             } else if (Integer.valueOf(str).intValue() > 99) {
                 TextView textView2 = this.s;
-                textView2.setText("99+" + this.f30712a.getString(R.string.call_count));
+                textView2.setText("99+" + this.f17022a.getString(R.string.call_count));
             } else if (!BlueAppLocal.d() && TextUtils.equals(str, "1")) {
                 TextView textView3 = this.s;
                 textView3.setText(str + " use");
             } else {
                 TextView textView4 = this.s;
-                textView4.setText(str + " " + this.f30712a.getString(R.string.call_count));
+                textView4.setText(str + " " + this.f17022a.getString(R.string.call_count));
             }
         }
     }
@@ -659,7 +658,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
             return;
         }
         BluedPopupWindow bluedPopupWindow = this.A;
-        if ((bluedPopupWindow == null || !bluedPopupWindow.isShowing()) && HomeActivity.f30985c != null && "find".equals(HomeActivity.f30985c.f()) && (view = this.q) != null && view.getGlobalVisibleRect(new Rect()) && j() && this.z == null && CallHelloManager.a().b() != null && (view2 = this.q) != null && view2.getVisibility() == 0) {
+        if ((bluedPopupWindow == null || !bluedPopupWindow.isShowing()) && HomeActivity.f17295c != null && "find".equals(HomeActivity.f17295c.f()) && (view = this.q) != null && view.getGlobalVisibleRect(new Rect()) && j() && this.z == null && CallHelloManager.a().b() != null && (view2 = this.q) != null && view2.getVisibility() == 0) {
             View inflate = View.inflate(getContext(), R.layout.pop_call_open_cnt_guide, null);
             BluedPopupWindow a2 = BluedPopupWindow.Builder.a((Activity) getContext(), inflate).a(true).a();
             this.z = a2;
@@ -670,13 +669,13 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                 }
             });
             TextView textView = (TextView) inflate.findViewById(R.id.tv_cnt);
-            textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.RIGHT, new int[0]));
+            textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.c, new int[0]));
             textView.setText(R.string.call_try_secret);
             inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.4
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    HelloOpenDialogFragment.a(RecommendViewMixedInNearby.this.f30712a, RecommendViewMixedInNearby.this.getFromPage());
+                    HelloOpenDialogFragment.a(RecommendViewMixedInNearby.this.f17022a, RecommendViewMixedInNearby.this.getFromPage());
                     RecommendViewMixedInNearby.this.z.dismiss();
                 }
             });
@@ -711,7 +710,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         BluedPopupWindow bluedPopupWindow = this.D;
         if (bluedPopupWindow == null || !bluedPopupWindow.isShowing()) {
             BluedPopupWindow bluedPopupWindow2 = this.z;
-            if ((bluedPopupWindow2 == null || !bluedPopupWindow2.isShowing()) && HomeActivity.f30985c != null && "find".equals(HomeActivity.f30985c.f()) && (view = this.q) != null && view.getGlobalVisibleRect(new Rect()) && j() && z) {
+            if ((bluedPopupWindow2 == null || !bluedPopupWindow2.isShowing()) && HomeActivity.f17295c != null && "find".equals(HomeActivity.f17295c.f()) && (view = this.q) != null && view.getGlobalVisibleRect(new Rect()) && j() && z) {
                 String str = UserInfo.getInstance().getLoginUserInfo().uid;
                 String cF = BluedPreferences.cF();
                 long time = new Date().getTime();
@@ -730,7 +729,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
                             }
                         });
                         TextView textView = (TextView) inflate.findViewById(R.id.tv_cnt);
-                        textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.RIGHT, 2131232900));
+                        textView.setBackground(NinePatchUtils.a(NinePatchUtils.GuideArrowPosition.c, new int[]{2131232900}));
                         String string = getContext().getString(R.string.call_stock_tip);
                         textView.setText(String.format(string, i + ""));
                         inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.10
@@ -820,9 +819,9 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
     public void setMakeFriendRecommend(List<FindRecommendData> list) {
         setVisibility(0);
         if (list.size() < 5) {
-            this.f30713c.setVisibility(8);
+            this.f17023c.setVisibility(8);
         } else {
-            this.f30713c.setVisibility(0);
+            this.f17023c.setVisibility(0);
         }
         this.u.setVisibility(8);
         a(0);
@@ -844,9 +843,9 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         if (findRecommendExtra != null) {
             this.m = findRecommendExtra.show_call;
             f();
-            this.f30713c.setText(findRecommendExtra.more_title);
+            this.f17023c.setText(findRecommendExtra.more_title);
             this.b.setText(findRecommendExtra.title);
-            this.f30713c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.1
+            this.f17023c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.RecommendViewMixedInNearby.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -869,7 +868,7 @@ public class RecommendViewMixedInNearby extends FrameLayout implements View.OnCl
         this.u.setVisibility(0);
         NearbyViewModel nearbyViewModel = this.w;
         if (nearbyViewModel != null) {
-            nearbyViewModel.f30625a.postValue(null);
+            nearbyViewModel.f16935a.postValue(null);
         }
     }
 }

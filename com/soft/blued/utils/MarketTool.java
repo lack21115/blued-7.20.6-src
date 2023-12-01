@@ -22,21 +22,21 @@ import java.util.List;
 public class MarketTool {
 
     /* renamed from: a  reason: collision with root package name */
-    private static MarketTool f34752a;
+    private static MarketTool f21061a;
 
     public static MarketTool a() {
-        if (f34752a == null) {
+        if (f21061a == null) {
             synchronized (MarketTool.class) {
                 try {
-                    if (f34752a == null) {
-                        f34752a = new MarketTool();
+                    if (f21061a == null) {
+                        f21061a = new MarketTool();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f34752a;
+        return f21061a;
     }
 
     public void a(Context context) {
@@ -44,7 +44,7 @@ public class MarketTool {
             Uri parse = Uri.parse(BaseConstants.MARKET_PREFIX + context.getApplicationContext().getPackageName());
             Intent intent = new Intent("android.intent.action.VIEW", parse);
             intent.addFlags(268435456);
-            String str = AppInfo.f9487c;
+            String str = AppInfo.c;
             List<ResolveInfo> queryIntentActivities = context.getPackageManager().queryIntentActivities(intent, 0);
             boolean z = true;
             switch (str.hashCode()) {
@@ -202,7 +202,7 @@ public class MarketTool {
                 FeedBackFragmentNew.a(context);
             }
         });
-        create.getWindow().setBackgroundDrawableResource(17170445);
+        create.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
         create.show();
     }
 

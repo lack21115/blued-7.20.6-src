@@ -11,21 +11,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewCertificateLevelBinding.class */
 public final class ViewCertificateLevelBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16841a;
+    public final SquareImageView a;
     public final RelativeLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16842c;
+    public final TextView c;
     public final TextView d;
     private final RelativeLayout e;
 
     private ViewCertificateLevelBinding(RelativeLayout relativeLayout, SquareImageView squareImageView, RelativeLayout relativeLayout2, TextView textView, TextView textView2) {
         this.e = relativeLayout;
-        this.f16841a = squareImageView;
+        this.a = squareImageView;
         this.b = relativeLayout2;
-        this.f16842c = textView;
+        this.c = textView;
         this.d = textView2;
     }
 
@@ -62,7 +58,6 @@ public final class ViewCertificateLevelBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.e;

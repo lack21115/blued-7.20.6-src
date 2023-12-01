@@ -92,9 +92,8 @@ public class NavigationRailMenuView extends NavigationBarMenuView {
         return (this.layoutParams.gravity & 112) == 48;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int childCount = getChildCount();
         int i5 = 0;
         int i6 = 0;
@@ -114,9 +113,8 @@ public class NavigationRailMenuView extends NavigationBarMenuView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i2);
         int size2 = getMenu().getVisibleItems().size();
         setMeasuredDimension(View.resolveSizeAndState(View.MeasureSpec.getSize(i), i, 0), View.resolveSizeAndState((size2 <= 1 || !isShifting(getLabelVisibilityMode(), size2)) ? measureSharedChildHeights(i, size, size2, null) : measureShiftingChildHeights(i, size, size2), i2, 0));

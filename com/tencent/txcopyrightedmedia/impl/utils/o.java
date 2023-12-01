@@ -9,21 +9,21 @@ import java.util.concurrent.Executors;
 public class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public ExecutorService f40129a;
+    public ExecutorService f26438a;
     public ExecutorService b;
     private final Set<Long> d = new HashSet();
     private final Object e = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f40130c = true;
+    public boolean f26439c = true;
 
     public final boolean a(final Runnable runnable, int i) {
         ExecutorService executorService;
         synchronized (o.class) {
             try {
-                if (this.f40130c) {
-                    if (this.f40129a == null) {
-                        this.f40129a = Executors.newFixedThreadPool(6);
+                if (this.f26439c) {
+                    if (this.f26438a == null) {
+                        this.f26438a = Executors.newFixedThreadPool(6);
                     }
                     if (this.b == null) {
                         this.b = Executors.newCachedThreadPool();
@@ -43,7 +43,7 @@ public class o {
                         }
                     };
                     if (i == 0) {
-                        executorService = this.f40129a;
+                        executorService = this.f26438a;
                     } else if (i != 1) {
                         return false;
                     } else {

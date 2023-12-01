@@ -18,10 +18,10 @@ import com.igexin.sdk.PushManager;
 public final class c extends Handler implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23254a = "SERVER_LOG";
+    public static final String f9646a = "SERVER_LOG";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23255c = "LogController";
+    private static final String f9647c = "LogController";
     public b b;
     private Messenger d;
     private Messenger e;
@@ -31,7 +31,7 @@ public final class c extends Handler implements ServiceConnection {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final c f23256a = new c((byte) 0);
+        private static final c f9648a = new c((byte) 0);
 
         private a() {
         }
@@ -47,12 +47,12 @@ public final class c extends Handler implements ServiceConnection {
     }
 
     public static c a() {
-        return a.f23256a;
+        return a.f9648a;
     }
 
     private void a(Context context, IUserLoggerInterface iUserLoggerInterface) {
         if (iUserLoggerInterface == null) {
-            e.a(f23255c, "user logger register parameter can not be null!");
+            e.a(f9647c, "user logger register parameter can not be null!");
             return;
         }
         Context applicationContext = context.getApplicationContext();
@@ -66,10 +66,10 @@ public final class c extends Handler implements ServiceConnection {
         com.igexin.c.a.c.a.a("try to bind log server", new Object[0]);
         try {
             Intent intent = new Intent(context, ServiceManager.getInstance().b(context));
-            intent.setType(f23254a);
+            intent.setType(f9646a);
             context.bindService(intent, this, 1);
         } catch (Exception e) {
-            e.a(f23255c, "bind service error = " + e.toString());
+            e.a(f9647c, "bind service error = " + e.toString());
         }
     }
 
@@ -119,7 +119,7 @@ public final class c extends Handler implements ServiceConnection {
             obtain.what = 1;
             this.e.send(obtain);
         } catch (Exception e) {
-            com.igexin.c.a.c.a.a(f23255c, "Client sent Message to Service error = ".concat(String.valueOf(e)));
+            com.igexin.c.a.c.a.a(f9647c, "Client sent Message to Service error = ".concat(String.valueOf(e)));
             a("Client sent Message to Service error = ".concat(String.valueOf(e)));
         }
     }

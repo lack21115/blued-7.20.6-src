@@ -14,9 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/cache/SizeUtilKt.class */
 public final class SizeUtilKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15989a = "SizeUtil";
+    private static final String a = "SizeUtil";
 
     public static final int a(Bitmap bitmap) {
         Intrinsics.e(bitmap, "<this>");

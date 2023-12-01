@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -25,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYSayHelloView.class */
 public final class YYSayHelloView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYySayHelloLayoutBinding f18469a;
+    private ViewYySayHelloLayoutBinding a;
     private BaseYYStudioFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYRoomModel f18470c;
+    private YYRoomModel c;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public YYSayHelloView(Context context) {
@@ -49,10 +46,10 @@ public final class YYSayHelloView extends ConstraintLayout {
     public YYSayHelloView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewYySayHelloLayoutBinding a2 = ViewYySayHelloLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18469a = a2;
-        a2.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYSayHelloView$tOAdCKySSENB8cggTXqo1wPsJlc
+        ViewYySayHelloLayoutBinding a = ViewYySayHelloLayoutBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
+        a.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYSayHelloView$tOAdCKySSENB8cggTXqo1wPsJlc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYSayHelloView.a(YYSayHelloView.this, view);
@@ -61,13 +58,13 @@ public final class YYSayHelloView extends ConstraintLayout {
     }
 
     private final void a() {
-        YYRoomModel yYRoomModel = this.f18470c;
+        YYRoomModel yYRoomModel = this.c;
         if (yYRoomModel == null) {
             return;
         }
         String str = yYRoomModel == null ? null : yYRoomModel.room_id;
         String k = YYRoomInfoManager.e().k();
-        YYRoomModel yYRoomModel2 = this.f18470c;
+        YYRoomModel yYRoomModel2 = this.c;
         String str2 = yYRoomModel2 == null ? null : yYRoomModel2.uid;
         BaseYYStudioFragment baseYYStudioFragment = this.b;
         final ActivityFragmentActive fragmentActive = baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive();
@@ -92,12 +89,12 @@ public final class YYSayHelloView extends ConstraintLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYSayHelloView this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        if (this$0.f18470c != null) {
+        if (this$0.c != null) {
             ChatRoomProtos.Event event = ChatRoomProtos.Event.CHAT_ROOM_BACK_INTERACT_CLICK;
-            YYRoomModel yYRoomModel = this$0.f18470c;
+            YYRoomModel yYRoomModel = this$0.c;
             String str = null;
             String str2 = yYRoomModel == null ? null : yYRoomModel.room_id;
-            YYRoomModel yYRoomModel2 = this$0.f18470c;
+            YYRoomModel yYRoomModel2 = this$0.c;
             if (yYRoomModel2 != null) {
                 str = yYRoomModel2.uid;
             }
@@ -108,8 +105,8 @@ public final class YYSayHelloView extends ConstraintLayout {
 
     public final void a(BaseYYStudioFragment fragment) {
         Intrinsics.e(fragment, "fragment");
-        this.f18470c = YYRoomInfoManager.e().b();
+        this.c = YYRoomInfoManager.e().b();
         this.b = fragment;
-        ImageLoader.c(fragment.getFragmentActive(), "say_hello.png").f().g(-1).a(this.f18469a.f16956a);
+        ImageLoader.c(fragment.getFragmentActive(), "say_hello.png").f().g(-1).a(this.a.a);
     }
 }

@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -49,18 +49,14 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/FeedPostSignStateFragment.class */
 public class FeedPostSignStateFragment extends SimpleFragment {
-
-    /* renamed from: c  reason: collision with root package name */
-    public CommonAdapter<FeedPostSignStateItem> f20034c;
+    public CommonAdapter<FeedPostSignStateItem> c;
     private final ViewBindingProperty d;
     private boolean e;
     private int f;
     private FeedPostSignStateItem g;
     private FeedProtos.SourcePage h;
     static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(FeedPostSignStateFragment.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/FragmentFeedPostSignStateBinding;", 0))};
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f20033a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/fragment/FeedPostSignStateFragment$Companion.class */
@@ -91,7 +87,7 @@ public class FeedPostSignStateFragment extends SimpleFragment {
     }
 
     public FeedPostSignStateFragment() {
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<FeedPostSignStateFragment, FragmentFeedPostSignStateBinding>() { // from class: com.blued.community.ui.send.fragment.FeedPostSignStateFragment$special$$inlined$viewBindingFragment$default$1
+        this.d = ((Fragment) this) instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<FeedPostSignStateFragment, FragmentFeedPostSignStateBinding>() { // from class: com.blued.community.ui.send.fragment.FeedPostSignStateFragment$special$$inlined$viewBindingFragment$default$1
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final FragmentFeedPostSignStateBinding invoke(FeedPostSignStateFragment fragment) {
@@ -126,17 +122,17 @@ public class FeedPostSignStateFragment extends SimpleFragment {
             if (a3 != null && (photoGridView = a3.d) != null) {
                 photoGridView.getLocationOnScreen(iArr);
             }
-            roundRect.f10179c = FeedMethods.c(50);
+            roundRect.c = FeedMethods.c(50);
             roundRect.d = FeedMethods.c(50);
-            roundRect.f10178a = FeedMethods.c(75) + (((AppInfo.l - FeedMethods.c(30)) * i3) / 3);
+            roundRect.a = FeedMethods.c(75) + (((AppInfo.l - FeedMethods.c(30)) * i3) / 3);
             int i4 = iArr[1];
             int i5 = i4;
             if (i4 < FeedMethods.c(10)) {
                 i5 = FeedMethods.c(153);
             }
             roundRect.b = ((i5 - StatusBarHelper.a(getContext())) - FeedMethods.c(16)) + (FeedMethods.c(135) * i2);
-            LogUtils.c("x: " + roundRect.f10178a + ", y:" + roundRect.b);
-            roundRect.f = roundRect.f10179c / ((float) 2);
+            LogUtils.c("x: " + roundRect.a + ", y:" + roundRect.b);
+            roundRect.f = roundRect.c / ((float) 2);
             roundRect.g = roundRect.f;
             roundRect.h = roundRect.f;
             roundRect.e = roundRect.f;
@@ -193,7 +189,7 @@ public class FeedPostSignStateFragment extends SimpleFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(FeedPostSignStateItem feedPostSignStateItem) {
-        FragmentActivity activity = getActivity();
+        Context activity = getActivity();
         if (activity == null) {
             return;
         }
@@ -202,7 +198,7 @@ public class FeedPostSignStateFragment extends SimpleFragment {
             this.args.putInt("page_from", this.args.getInt("page_from"));
             FeedPostSignBaseFragment.a(activity, this.args);
         }
-        CommEventBusUtil.f20461a.a(feedPostSignStateItem);
+        CommEventBusUtil.a.a(feedPostSignStateItem);
         FragmentActivity activity2 = getActivity();
         if (activity2 == null) {
             return;
@@ -228,7 +224,7 @@ public class FeedPostSignStateFragment extends SimpleFragment {
         if (photoGridView == null) {
             return;
         }
-        photoGridView.setAdapter((ListAdapter) b());
+        photoGridView.setAdapter(b());
     }
 
     private final void g() {
@@ -245,11 +241,11 @@ public class FeedPostSignStateFragment extends SimpleFragment {
 
     public final void a(CommonAdapter<FeedPostSignStateItem> commonAdapter) {
         Intrinsics.e(commonAdapter, "<set-?>");
-        this.f20034c = commonAdapter;
+        this.c = commonAdapter;
     }
 
     public final CommonAdapter<FeedPostSignStateItem> b() {
-        CommonAdapter<FeedPostSignStateItem> commonAdapter = this.f20034c;
+        CommonAdapter<FeedPostSignStateItem> commonAdapter = this.c;
         if (commonAdapter != null) {
             return commonAdapter;
         }
@@ -269,7 +265,6 @@ public class FeedPostSignStateFragment extends SimpleFragment {
         return this.h;
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         TextView textView;
         AppBarLayout appBarLayout;
@@ -287,16 +282,15 @@ public class FeedPostSignStateFragment extends SimpleFragment {
         this.e = this.g == null;
         this.f = DisplayUtil.a(AppInfo.d(), -83.0f);
         FragmentFeedPostSignStateBinding a3 = a();
-        if (a3 != null && (appBarLayout = a3.f18878a) != null) {
+        if (a3 != null && (appBarLayout = a3.a) != null) {
             appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignStateFragment$TcywsV6DiDWRox24SxrkVv_ljqk
-                @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
                 public final void onOffsetChanged(AppBarLayout appBarLayout2, int i) {
                     FeedPostSignStateFragment.a(FeedPostSignStateFragment.this, appBarLayout2, i);
                 }
             });
         }
         FragmentFeedPostSignStateBinding a4 = a();
-        if (a4 == null || (textView = a4.f18879c) == null) {
+        if (a4 == null || (textView = a4.c) == null) {
             return;
         }
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignStateFragment$J3wSdm4WnSXqLH33cVsLrfS95T8
@@ -307,7 +301,6 @@ public class FeedPostSignStateFragment extends SimpleFragment {
         });
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onLoadData() {
         super.onLoadData();
         final ActivityFragmentActive fragmentActive = getFragmentActive();
@@ -345,7 +338,6 @@ public class FeedPostSignStateFragment extends SimpleFragment {
         }, getFragmentActive());
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onParseArguments() {
         super.onParseArguments();
         this.g = (FeedPostSignStateItem) this.args.getSerializable("selected_model");
@@ -362,7 +354,6 @@ public class FeedPostSignStateFragment extends SimpleFragment {
         }
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public int onSetRootViewId() {
         return R.layout.fragment_feed_post_sign_state;
     }

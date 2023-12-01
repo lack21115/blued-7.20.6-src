@@ -6,17 +6,13 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/e/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f5981a = b.class.getSimpleName();
-    private Map<String, InterfaceC0079b> b;
+    public static final String a = b.class.getSimpleName();
+    private Map<String, InterfaceC0039b> b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/e/b$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final b f5982a = new b((byte) 0);
+        private static final b a = new b((byte) 0);
 
         private a() {
         }
@@ -24,7 +20,7 @@ public class b {
 
     /* renamed from: com.anythink.basead.e.b$b  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/e/b$b.class */
-    public interface InterfaceC0079b extends Serializable {
+    public interface InterfaceC0039b extends Serializable {
         void a();
 
         void a(int i);
@@ -51,15 +47,15 @@ public class b {
     }
 
     public static b a() {
-        return a.f5982a;
+        return a.a;
     }
 
-    public final InterfaceC0079b a(String str) {
+    public final InterfaceC0039b a(String str) {
         return this.b.get(str);
     }
 
-    public final void a(String str, InterfaceC0079b interfaceC0079b) {
-        this.b.put(str, interfaceC0079b);
+    public final void a(String str, InterfaceC0039b interfaceC0039b) {
+        this.b.put(str, interfaceC0039b);
     }
 
     public final void b(String str) {

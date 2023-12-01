@@ -10,15 +10,15 @@ public final class l extends h<b> {
         private static final g<a> b = m.a();
 
         /* renamed from: a  reason: collision with root package name */
-        private final b f36645a;
+        private final b f22954a;
 
         private a(b bVar, Object obj) {
             super(b);
             bVar.retain();
-            this.mWidth = bVar.f36647c;
+            this.mWidth = bVar.f22956c;
             this.mHeight = bVar.d;
-            this.f36645a = bVar;
-            this.mTextureId = bVar.f36646a;
+            this.f22954a = bVar;
+            this.mTextureId = bVar.f22955a;
             this.mGLContext = obj;
             if (bVar.b == 3553) {
                 this.mPixelBufferType = GLConstants.PixelBufferType.TEXTURE_2D;
@@ -42,24 +42,24 @@ public final class l extends h<b> {
     public static final class b extends d {
 
         /* renamed from: a  reason: collision with root package name */
-        int f36646a;
+        int f22955a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f36647c;
+        int f22956c;
         int d;
 
         public b(g<? extends d> gVar) {
             super(gVar);
-            this.f36646a = -1;
+            this.f22955a = -1;
             this.b = 3553;
-            this.f36647c = 0;
+            this.f22956c = 0;
             this.d = 0;
         }
 
         @Override // com.tencent.liteav.videobase.frame.d
         public final int a() {
-            return this.f36646a;
+            return this.f22955a;
         }
 
         @Override // com.tencent.liteav.videobase.frame.d
@@ -71,14 +71,14 @@ public final class l extends h<b> {
 
         public final void a(int i, int i2, int i3, int i4) {
             this.b = i;
-            this.f36646a = i2;
-            this.f36647c = i3;
+            this.f22955a = i2;
+            this.f22956c = i3;
             this.d = i4;
         }
 
         @Override // com.tencent.liteav.videobase.frame.d
         public final int b() {
-            return this.f36647c;
+            return this.f22956c;
         }
 
         @Override // com.tencent.liteav.videobase.frame.d

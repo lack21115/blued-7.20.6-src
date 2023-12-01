@@ -11,17 +11,13 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLivePlanetRuleBinding.class */
 public final class FragmentLivePlanetRuleBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11966a;
+    public final ImageView a;
     public final SubsamplingScaleImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final FrameLayout f11967c;
+    private final FrameLayout c;
 
     private FragmentLivePlanetRuleBinding(FrameLayout frameLayout, ImageView imageView, SubsamplingScaleImageView subsamplingScaleImageView) {
-        this.f11967c = frameLayout;
-        this.f11966a = imageView;
+        this.c = frameLayout;
+        this.a = imageView;
         this.b = subsamplingScaleImageView;
     }
 
@@ -52,9 +48,8 @@ public final class FragmentLivePlanetRuleBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f11967c;
+        return this.c;
     }
 }

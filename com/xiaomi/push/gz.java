@@ -15,71 +15,71 @@ import java.util.List;
 public class gz {
 
     /* renamed from: a  reason: collision with other field name */
-    private static al f531a = new al(true);
+    private static al f484a = new al(true);
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile int f41461a = -1;
+    private static volatile int f27770a = -1;
 
     /* renamed from: a  reason: collision with other field name */
-    private static long f530a = System.currentTimeMillis();
+    private static long f483a = System.currentTimeMillis();
 
     /* renamed from: a  reason: collision with other field name */
-    private static final Object f533a = new Object();
+    private static final Object f486a = new Object();
 
     /* renamed from: a  reason: collision with other field name */
-    private static List<a> f535a = Collections.synchronizedList(new ArrayList());
+    private static List<a> f488a = Collections.synchronizedList(new ArrayList());
 
     /* renamed from: a  reason: collision with other field name */
-    private static String f534a = "";
+    private static String f487a = "";
 
     /* renamed from: a  reason: collision with other field name */
-    private static com.xiaomi.push.providers.a f532a = null;
+    private static com.xiaomi.push.providers.a f485a = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/gz$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f41462a;
+        public int f27771a;
 
         /* renamed from: a  reason: collision with other field name */
-        public long f536a;
+        public long f489a;
 
         /* renamed from: a  reason: collision with other field name */
-        public String f537a;
+        public String f490a;
         public int b;
 
         /* renamed from: b  reason: collision with other field name */
-        public long f538b;
+        public long f491b;
 
         /* renamed from: b  reason: collision with other field name */
-        public String f539b;
+        public String f492b;
 
         public a(String str, long j, int i, int i2, String str2, long j2) {
-            this.f537a = "";
-            this.f536a = 0L;
-            this.f41462a = -1;
+            this.f490a = "";
+            this.f489a = 0L;
+            this.f27771a = -1;
             this.b = -1;
-            this.f539b = "";
-            this.f538b = 0L;
-            this.f537a = str;
-            this.f536a = j;
-            this.f41462a = i;
+            this.f492b = "";
+            this.f491b = 0L;
+            this.f490a = str;
+            this.f489a = j;
+            this.f27771a = i;
             this.b = i2;
-            this.f539b = str2;
-            this.f538b = j2;
+            this.f492b = str2;
+            this.f491b = j2;
         }
 
         public boolean a(a aVar) {
-            return TextUtils.equals(aVar.f537a, this.f537a) && TextUtils.equals(aVar.f539b, this.f539b) && aVar.f41462a == this.f41462a && aVar.b == this.b && Math.abs(aVar.f536a - this.f536a) <= 5000;
+            return TextUtils.equals(aVar.f490a, this.f490a) && TextUtils.equals(aVar.f492b, this.f492b) && aVar.f27771a == this.f27771a && aVar.b == this.b && Math.abs(aVar.f489a - this.f489a) <= 5000;
         }
     }
 
     public static int a(Context context) {
-        if (f41461a == -1) {
-            f41461a = b(context);
+        if (f27770a == -1) {
+            f27770a = b(context);
         }
-        return f41461a;
+        return f27770a;
     }
 
     public static int a(String str) {
@@ -92,8 +92,8 @@ public class gz {
 
     private static long a(int i, long j, boolean z, long j2, boolean z2) {
         if (z && z2) {
-            long j3 = f530a;
-            f530a = j2;
+            long j3 = f483a;
+            f483a = j2;
             if (j2 - j3 > 30000 && j > 1024) {
                 return j * 2;
             }
@@ -102,32 +102,32 @@ public class gz {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static com.xiaomi.push.providers.a m11836a(Context context) {
-        com.xiaomi.push.providers.a aVar = f532a;
+    private static com.xiaomi.push.providers.a m8786a(Context context) {
+        com.xiaomi.push.providers.a aVar = f485a;
         if (aVar != null) {
             return aVar;
         }
         com.xiaomi.push.providers.a aVar2 = new com.xiaomi.push.providers.a(context);
-        f532a = aVar2;
+        f485a = aVar2;
         return aVar2;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static String m11837a(Context context) {
+    private static String m8787a(Context context) {
         synchronized (gz.class) {
             try {
-                if (TextUtils.isEmpty(f534a)) {
+                if (TextUtils.isEmpty(f487a)) {
                     return "";
                 }
-                return f534a;
+                return f487a;
             } finally {
             }
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static void m11839a(Context context) {
-        f41461a = b(context);
+    public static void m8789a(Context context) {
+        f27770a = b(context);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -140,21 +140,21 @@ public class gz {
     }
 
     private static void a(a aVar) {
-        for (a aVar2 : f535a) {
+        for (a aVar2 : f488a) {
             if (aVar2.a(aVar)) {
-                aVar2.f538b += aVar.f538b;
+                aVar2.f491b += aVar.f491b;
                 return;
             }
         }
-        f535a.add(aVar);
+        f488a.add(aVar);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static void m11840a(String str) {
+    public static void m8790a(String str) {
         synchronized (gz.class) {
             try {
-                if (!j.m12053d() && !TextUtils.isEmpty(str)) {
-                    f534a = str;
+                if (!j.m9003d() && !TextUtils.isEmpty(str)) {
+                    f487a = str;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -181,17 +181,17 @@ public class gz {
     /* JADX INFO: Access modifiers changed from: private */
     public static void b(Context context, List<a> list) {
         try {
-            synchronized (com.xiaomi.push.providers.a.f903a) {
-                SQLiteDatabase writableDatabase = m11836a(context).getWritableDatabase();
+            synchronized (com.xiaomi.push.providers.a.f856a) {
+                SQLiteDatabase writableDatabase = m8786a(context).getWritableDatabase();
                 writableDatabase.beginTransaction();
                 for (a aVar : list) {
                     ContentValues contentValues = new ContentValues();
-                    contentValues.put("package_name", aVar.f537a);
-                    contentValues.put("message_ts", Long.valueOf(aVar.f536a));
-                    contentValues.put("network_type", Integer.valueOf(aVar.f41462a));
-                    contentValues.put("bytes", Long.valueOf(aVar.f538b));
+                    contentValues.put("package_name", aVar.f490a);
+                    contentValues.put("message_ts", Long.valueOf(aVar.f489a));
+                    contentValues.put("network_type", Integer.valueOf(aVar.f27771a));
+                    contentValues.put("bytes", Long.valueOf(aVar.f491b));
                     contentValues.put("rcv", Integer.valueOf(aVar.b));
-                    contentValues.put("imsi", aVar.f539b);
+                    contentValues.put("imsi", aVar.f492b);
                     writableDatabase.insert(com.umeng.analytics.pro.d.F, null, contentValues);
                 }
                 writableDatabase.setTransactionSuccessful();

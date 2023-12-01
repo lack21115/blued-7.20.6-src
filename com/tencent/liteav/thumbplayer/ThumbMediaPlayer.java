@@ -432,7 +432,7 @@ public class ThumbMediaPlayer extends a implements b {
             }
 
             public String getLanguage() {
-                return com.anythink.expressad.exoplayer.b.f7166ar;
+                return com.anythink.expressad.exoplayer.b.f4327ar;
             }
 
             public int getTrackType() {
@@ -536,7 +536,7 @@ public class ThumbMediaPlayer extends a implements b {
         String[] split;
         LiteavLog.i(this.TAG, "getMediaInfo");
         com.tencent.liteav.txcplayer.d.b bVar = new com.tencent.liteav.txcplayer.d.b();
-        bVar.f36480a = "thumbplayer";
+        bVar.f22789a = "thumbplayer";
         bVar.f = new com.tencent.liteav.txcplayer.d.c();
         String propertyString = this.mTPPPlayer.getPropertyString(0);
         if (propertyString != null && propertyString.length() > 0 && (split = propertyString.split("\\n")) != null && split.length > 0) {
@@ -548,8 +548,8 @@ public class ThumbMediaPlayer extends a implements b {
             }
             bVar.f.e = new c.a(i2);
             bVar.f.d = new c.a(i2);
-            bVar.f.f36483c.add(bVar.f.e);
-            bVar.f.f36483c.add(bVar.f.d);
+            bVar.f.f22792c.add(bVar.f.e);
+            bVar.f.f22792c.add(bVar.f.d);
             int length = split.length;
             int i3 = 0;
             while (true) {
@@ -561,13 +561,13 @@ public class ThumbMediaPlayer extends a implements b {
                 if (str != null) {
                     String trim = str.substring(str.indexOf("=") + 1, str.length()).trim();
                     if (str.contains("ContainerFormat=")) {
-                        bVar.f.f36482a = trim;
+                        bVar.f.f22791a = trim;
                     } else if (str.contains("VideoCodec=")) {
                         bVar.b = "avcodec";
-                        bVar.f36481c = trim;
+                        bVar.f22790c = trim;
                         bVar.f.d.b = trim;
                     } else if (str.contains("VideoProfile=")) {
-                        bVar.f.d.f36485c = trim;
+                        bVar.f.d.f22794c = trim;
                     } else if (str.contains("Width=")) {
                         bVar.f.d.e = Integer.valueOf(trim).intValue();
                     } else if (str.contains("Height=")) {
@@ -579,7 +579,7 @@ public class ThumbMediaPlayer extends a implements b {
                         bVar.e = trim;
                         bVar.f.e.b = trim;
                     } else if (str.contains("AudioProfile=")) {
-                        bVar.f.e.f36485c = trim;
+                        bVar.f.e.f22794c = trim;
                     } else if (str.contains("AudioBitRate=")) {
                         bVar.f.e.d = Integer.valueOf(trim).intValue();
                     } else if (str.contains("SampleRate=")) {
@@ -682,15 +682,15 @@ public class ThumbMediaPlayer extends a implements b {
                     String[] split = tPProgramInfo.resolution.split("x");
                     if (split != null && split.length == 2) {
                         aVar.b = Integer.valueOf(split[0]).intValue();
-                        aVar.f36479c = Integer.valueOf(split[1]).intValue();
+                        aVar.f22788c = Integer.valueOf(split[1]).intValue();
                     }
                     aVar.d = (int) tPProgramInfo.bandwidth;
-                    aVar.f36478a = tPProgramInfo.programId;
-                    if (aVar.f36478a == this.mBitrateIndex || tPProgramInfo.actived) {
+                    aVar.f22787a = tPProgramInfo.programId;
+                    if (aVar.f22787a == this.mBitrateIndex || tPProgramInfo.actived) {
                         this.mBitrate = aVar.d;
                     }
                     arrayList2.add(aVar);
-                    LiteavLog.i(this.TAG, "getSupportedBitrates item index：" + aVar.f36478a + ":width:" + aVar.b + ":height:" + aVar.f36479c + ":bitrate:" + aVar.d);
+                    LiteavLog.i(this.TAG, "getSupportedBitrates item index：" + aVar.f22787a + ":width:" + aVar.b + ":height:" + aVar.f22788c + ":bitrate:" + aVar.d);
                 }
                 i = i2 + 1;
             }
@@ -1097,7 +1097,7 @@ public class ThumbMediaPlayer extends a implements b {
         } else {
             z = false;
         }
-        PowerManager.WakeLock newWakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(i | 536870912, ThumbMediaPlayer.class.getName());
+        PowerManager.WakeLock newWakeLock = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(i | 536870912, ThumbMediaPlayer.class.getName());
         this.mWakeLock = newWakeLock;
         newWakeLock.setReferenceCounted(false);
         if (z) {

@@ -16,7 +16,7 @@ import java.io.Writer;
 public abstract class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23131a = "IOUtil";
+    private static final String f9523a = "IOUtil";
     private static final int b = 4096;
 
     public static long a(InputStream inputStream, OutputStream outputStream) throws IOException {
@@ -51,7 +51,7 @@ public abstract class f {
             try {
                 closeable.close();
             } catch (IOException e) {
-                g.b(f23131a, "closeSecure IOException");
+                g.b(f9523a, "closeSecure IOException");
             }
         }
     }
@@ -60,7 +60,7 @@ public abstract class f {
         if (file == null || !file.exists() || file.delete()) {
             return;
         }
-        g.b(f23131a, "deleteSecure exception");
+        g.b(f9523a, "deleteSecure exception");
     }
 
     public static void a(InputStream inputStream) {

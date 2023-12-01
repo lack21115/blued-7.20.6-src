@@ -5,7 +5,6 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/transition/Scene.class */
 public final class Scene {
@@ -43,15 +42,15 @@ public final class Scene {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Scene getCurrentScene(View view) {
-        return (Scene) view.getTag(R.id.current_scene);
+        return (Scene) view.getTag(16908355);
     }
 
     public static Scene getSceneForLayout(ViewGroup viewGroup, int i, Context context) {
-        SparseArray sparseArray = (SparseArray) viewGroup.getTag(R.id.scene_layoutid_cache);
+        SparseArray sparseArray = (SparseArray) viewGroup.getTag(16908356);
         SparseArray sparseArray2 = sparseArray;
         if (sparseArray == null) {
             sparseArray2 = new SparseArray();
-            viewGroup.setTagInternal(R.id.scene_layoutid_cache, sparseArray2);
+            viewGroup.setTagInternal(16908356, sparseArray2);
         }
         Scene scene = (Scene) sparseArray2.get(i);
         if (scene != null) {
@@ -64,7 +63,7 @@ public final class Scene {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void setCurrentScene(View view, Scene scene) {
-        view.setTagInternal(R.id.current_scene, scene);
+        view.setTagInternal(16908355, scene);
     }
 
     public void enter() {

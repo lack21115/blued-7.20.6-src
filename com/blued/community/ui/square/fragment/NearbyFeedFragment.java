@@ -74,13 +74,9 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     private int G;
     private int K;
     private int L;
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f20154a;
+    public Context a;
     public CoordinatorLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public RecyclerView f20155c;
+    public RecyclerView c;
     protected RecyclerView.LayoutManager d;
     public SmartRefreshLayout e;
     public AppBarLayout f;
@@ -104,15 +100,14 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     private long J = 0;
     private boolean M = true;
     private RecyclerView.OnScrollListener N = new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.square.fragment.NearbyFeedFragment.2
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrollStateChanged(RecyclerView recyclerView, int i) {
             if (NearbyFeedFragment.this.o != null && NearbyFeedFragment.this.o.s != null) {
                 NearbyFeedFragment.this.o.s.onScrollStateChanged(recyclerView, i);
             }
             if (i == 0 && NearbyFeedFragment.this.H && NearbyFeedFragment.this.M) {
-                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-                NearbyFeedFragment.this.F = linearLayoutManager.findFirstVisibleItemPosition();
-                NearbyFeedFragment.this.G = linearLayoutManager.findLastVisibleItemPosition();
+                LinearLayoutManager layoutManager = recyclerView.getLayoutManager();
+                NearbyFeedFragment.this.F = layoutManager.findFirstVisibleItemPosition();
+                NearbyFeedFragment.this.G = layoutManager.findLastVisibleItemPosition();
                 if (NearbyFeedFragment.this.G > 12) {
                     NearbyFeedFragment.this.M = false;
                     NearbyFeedFragment.this.F();
@@ -126,13 +121,12 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
             } else if (recyclerView.canScrollVertically(1)) {
             } else {
                 if (!NearbyFeedFragment.this.j().m()) {
-                    AppMethods.a((CharSequence) NearbyFeedFragment.this.f20154a.getResources().getString(R.string.no_more_please_try_again));
+                    AppMethods.a((CharSequence) NearbyFeedFragment.this.a.getResources().getString(R.string.no_more_please_try_again));
                 }
                 NearbyFeedFragment.this.s.startBtmBtnHide();
             }
         }
 
-        @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
         public void onScrolled(RecyclerView recyclerView, int i, int i2) {
             if (NearbyFeedFragment.this.o != null && NearbyFeedFragment.this.o.s != null) {
                 NearbyFeedFragment.this.o.s.onScrolled(recyclerView, i, i2);
@@ -160,18 +154,16 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     /* renamed from: com.blued.community.ui.square.fragment.NearbyFeedFragment$6  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/square/fragment/NearbyFeedFragment$6.class */
     class AnonymousClass6 implements ValueAnimator.AnimatorUpdateListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ NearbyFeedFragment f20164a;
+        final /* synthetic */ NearbyFeedFragment a;
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            if (this.f20164a.g == null) {
+            if (this.a.g == null) {
                 valueAnimator.cancel();
                 return;
             }
-            this.f20164a.g.getLayoutParams().height = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-            this.f20164a.g.requestLayout();
+            this.a.g.getLayoutParams().height = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+            this.a.g.requestLayout();
         }
     }
 
@@ -254,7 +246,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     public void J() {
         this.H = true;
         this.M = true;
-        this.f20155c.scrollToPosition(0);
+        this.c.scrollToPosition(0);
         RefreshUtils.a(this.f);
         this.e.i();
     }
@@ -271,7 +263,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
         marginLayoutParams.height = FeedMethods.c(70);
         marginLayoutParams.topMargin = iArr[1] + FeedMethods.c(-40);
         this.z.setLayoutParams(marginLayoutParams);
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.A.setBackgroundResource(R.drawable.nearby_feed_refresh_guide_bg_dark);
         } else {
             this.A.setBackgroundResource(R.drawable.nearby_feed_refresh_guide_bg);
@@ -347,7 +339,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     public void a(FeedOperationFloatModel feedOperationFloatModel) {
         this.D.setOperationData(feedOperationFloatModel);
         if (feedOperationFloatModel != null) {
-            CommunityManager.f19086a.a().b(0);
+            CommunityManager.a.a().b(0);
         }
     }
 
@@ -425,7 +417,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
 
     private void c(boolean z) {
         NoDataAndLoadFailView noDataAndLoadFailView;
-        this.e.j();
+        this.e.g();
         this.e.j(z);
         if (this.o.getData().size() <= 0 && (noDataAndLoadFailView = this.n) != null) {
             if (z) {
@@ -447,26 +439,26 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     }
 
     private void v() {
-        this.b = (CoordinatorLayout) this.i.findViewById(R.id.coordinator);
+        this.b = this.i.findViewById(R.id.coordinator);
         View findViewById = this.i.findViewById(R.id.bgAreaForStagger);
         this.l = findViewById;
         findViewById.setVisibility(8);
         this.m = this.i.findViewById(R.id.areaListView);
         this.k = this.i.findViewById(R.id.pageRoot);
-        this.f20155c = (RecyclerView) this.i.findViewById(R.id.recycler_view);
-        this.e = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
-        this.s = (FloatFooterView) this.i.findViewById(R.id.ll_feed_post);
+        this.c = this.i.findViewById(R.id.recycler_view);
+        this.e = this.i.findViewById(R.id.refresh_layout);
+        this.s = this.i.findViewById(R.id.ll_feed_post);
         this.t = (ImageView) this.i.findViewById(R.id.img_guide);
         this.u = this.i.findViewById(R.id.view_rule);
-        this.f = (AppBarLayout) this.i.findViewById(R.id.appbar);
+        this.f = this.i.findViewById(R.id.appbar);
         this.v = (ShapeTextView) this.i.findViewById(R.id.tv_sort_all);
         this.w = (ShapeTextView) this.i.findViewById(R.id.tv_sort_time);
         this.g = this.i.findViewById(R.id.ll_refresh);
         this.x = (TranslationAnimHintView) this.i.findViewById(R.id.hint_view);
-        this.y = (TransformersLayout) this.i.findViewById(R.id.transformers);
-        FeedOperationFloatView feedOperationFloatView = (FeedOperationFloatView) this.i.findViewById(R.id.feed_operation_float_view_id);
-        this.D = feedOperationFloatView;
-        feedOperationFloatView.setFrom(1);
+        this.y = this.i.findViewById(R.id.transformers);
+        FeedOperationFloatView findViewById2 = this.i.findViewById(R.id.feed_operation_float_view_id);
+        this.D = findViewById2;
+        findViewById2.setFrom(1);
         this.p = (ImageView) this.i.findViewById(R.id.img_like_anim);
         this.z = this.i.findViewById(R.id.nearby_feed_refresh_guide_parent_layout);
         this.A = this.i.findViewById(R.id.nearby_feed_refresh_guide_layout);
@@ -492,16 +484,14 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
 
     private void x() {
         LiveEventBus.get("FEED_LIST_REFRESH_TAB_CHANGED", String.class).observe(this, new Observer() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$NearbyFeedFragment$maO4D3Dha6qRcptLO6evOrf75Iw
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 NearbyFeedFragment.this.c((String) obj);
             }
         });
         LiveEventBus.get("APP_CHANGE_TO_BACKGROUND", Boolean.class).observe(this, new Observer<Boolean>() { // from class: com.blued.community.ui.square.fragment.NearbyFeedFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
-                String q2 = CommunityManager.f19086a.a().q();
+                String q2 = CommunityManager.a.a().q();
                 String str = q2;
                 if (q2 == null) {
                     str = "";
@@ -519,7 +509,6 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
             }
         });
         this.f.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() { // from class: com.blued.community.ui.square.fragment.-$$Lambda$NearbyFeedFragment$biOkeNQpoa1ZrU-mSRK660Eoypw
-            @Override // com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener, com.google.android.material.appbar.AppBarLayout.BaseOnOffsetChangedListener
             public final void onOffsetChanged(AppBarLayout appBarLayout, int i) {
                 NearbyFeedFragment.this.a(appBarLayout, i);
             }
@@ -531,21 +520,19 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
         CommunityServiceManager.d().a("feed_post_btn_click", 0);
         b();
         if (CommunityServiceManager.a().x() == 1) {
-            CollectionAddPostFragment.f19963a.a(this.f20154a);
+            CollectionAddPostFragment.a.a(this.a);
         } else {
-            FeedAddPostFragment.a(this.f20154a);
+            FeedAddPostFragment.a(this.a);
         }
     }
 
     private void z() {
         this.s.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.square.fragment.NearbyFeedFragment.3
-            @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
             public void onPostFeedClick() {
                 NearbyFeedFragment.this.y();
             }
         });
         this.s.setBtnAnimatorUpdateListener(new FloatFooterView.BtnAnimatorUpdateListener() { // from class: com.blued.community.ui.square.fragment.NearbyFeedFragment.4
-            @Override // com.blued.community.view.FloatFooterView.BtnAnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 if (NearbyFeedFragment.this.t != null) {
                     int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
@@ -557,14 +544,12 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
         });
         c();
         j().a(this.o);
-        this.f20155c.addOnScrollListener(this.N);
+        this.c.addOnScrollListener(this.N);
         this.e.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.square.fragment.NearbyFeedFragment.5
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 NearbyFeedFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 CommunityServiceManager.e().a(NearbyFeedFragment.this.getParentFragment());
                 NearbyFeedFragment.this.j().e();
@@ -597,7 +582,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f20154a = getActivity();
+        this.a = getActivity();
         v();
         z();
         ByteDanceEvent.a("A60", new JSONObject());
@@ -774,9 +759,9 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
-        this.f20155c.setAdapter(null);
+        this.c.setAdapter((RecyclerView.Adapter) null);
         super.af_();
-        RecyclerView recyclerView = this.f20155c;
+        RecyclerView recyclerView = this.c;
         if (recyclerView != null) {
             recyclerView.removeOnScrollListener(this.N);
         }
@@ -791,21 +776,21 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     }
 
     public void c() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20154a);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.a);
         this.d = linearLayoutManager;
-        this.f20155c.setLayoutManager(linearLayoutManager);
+        this.c.setLayoutManager(linearLayoutManager);
         if (this.o == null) {
-            this.o = new FeedListAdapterForRecyclerView(this.f20154a, this, this.f20155c, 4);
-            NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.f20154a);
+            this.o = new FeedListAdapterForRecyclerView(this.a, this, this.c, 4);
+            NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.a);
             this.n = noDataAndLoadFailView;
             this.o.setEmptyView(noDataAndLoadFailView);
         }
-        this.f20155c.setAdapter(this.o);
+        this.c.setAdapter(this.o);
     }
 
     protected void d() {
         TranslationAnimHintView.HintInfo hintInfo = new TranslationAnimHintView.HintInfo();
-        hintInfo.f11074a = 6;
+        hintInfo.a = 6;
         hintInfo.b = getString(R.string.community_city_switching_succeeded);
         hintInfo.f = true;
         this.x.a(hintInfo);
@@ -813,7 +798,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
 
     public void e() {
         CommunityServiceManager.e().a(getParentFragment());
-        if (this.e == null || this.f20155c == null) {
+        if (this.e == null || this.c == null) {
             return;
         }
         w();
@@ -832,10 +817,10 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
-        this.e.l(true);
+        this.e.b(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         FeedOperationFloatView feedOperationFloatView = this.D;
@@ -845,7 +830,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
         a(j().q());
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.o;
@@ -854,7 +839,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.o;
@@ -863,7 +848,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         FeedListAdapterForRecyclerView feedListAdapterForRecyclerView = this.o;
@@ -886,7 +871,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
-        this.e.l(false);
+        this.e.b(false);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
@@ -899,7 +884,7 @@ public class NearbyFeedFragment<T extends NearbyFeedPresenter> extends MvpFragme
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.E = z;

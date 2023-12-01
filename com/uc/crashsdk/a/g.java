@@ -21,10 +21,10 @@ public class g {
     private static Context b;
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40568a = !g.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26877a = !g.class.desiredAssertionStatus();
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f40569c = null;
+    private static String f26878c = null;
     private static String d = null;
     private static String e = null;
     private static String f = null;
@@ -232,7 +232,7 @@ public class g {
     public static void a(int i2) {
         if (i2 == 800) {
             l();
-        } else if (!f40568a) {
+        } else if (!f26877a) {
             throw new AssertionError();
         }
     }
@@ -243,7 +243,7 @@ public class g {
         }
         b = context;
         ApplicationInfo applicationInfo = context.getApplicationInfo();
-        f40569c = applicationInfo.dataDir;
+        f26878c = applicationInfo.dataDir;
         d = applicationInfo.sourceDir;
         try {
             Field declaredField = ApplicationInfo.class.getDeclaredField("primaryCpuAbi");
@@ -408,7 +408,7 @@ public class g {
     }
 
     public static String b() {
-        return f40569c;
+        return f26878c;
     }
 
     public static void b(File file) {

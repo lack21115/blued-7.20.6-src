@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.provider.UserDictionary;
 import android.text.TextUtils;
 import androidx.fragment.app.FragmentActivity;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.framework.pool.ThreadManager;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
 import com.blued.android.framework.ui.mvp.MvpPresenter;
@@ -37,7 +36,7 @@ public class SearchLikeChatPresenter extends MvpPresenter {
                 o();
                 return;
             }
-            ArrayList arrayList = new ArrayList();
+            List<SearchSessionModel> arrayList = new ArrayList<>();
             this.l.moveToPosition(i);
             int i3 = i2;
             if (i2 < 0) {
@@ -51,13 +50,13 @@ public class SearchLikeChatPresenter extends MvpPresenter {
                 searchSessionModel.lastMsgStateCode = this.l.getShort(this.l.getColumnIndexOrThrow("msgStateCode"));
                 searchSessionModel.lastMsgId = this.l.getLong(this.l.getColumnIndexOrThrow(RemoteMessageConst.MSGID));
                 searchSessionModel.lastMsgLocalId = this.l.getLong(this.l.getColumnIndexOrThrow("msgLocalId"));
-                searchSessionModel.avatar = this.l.getString(this.l.getColumnIndexOrThrow(ReqAckPackage.REQ_RESPONSE_KEY.AVATAR));
+                searchSessionModel.avatar = this.l.getString(this.l.getColumnIndexOrThrow("avatar"));
                 searchSessionModel.vBadge = this.l.getInt(this.l.getColumnIndexOrThrow("vBadge"));
                 searchSessionModel.vipAnnual = this.l.getInt(this.l.getColumnIndexOrThrow("fromVipAnnual"));
                 searchSessionModel.vipExpLvl = this.l.getInt(this.l.getColumnIndexOrThrow("fromVipExpLvl"));
                 searchSessionModel.vipGrade = this.l.getInt(this.l.getColumnIndexOrThrow("fromVipGrade"));
                 searchSessionModel.hideVipLook = this.l.getInt(this.l.getColumnIndexOrThrow("fromHideVipLook"));
-                searchSessionModel.f33162a = 1;
+                searchSessionModel.f19471a = 1;
                 if (TextUtils.equals(String.valueOf(this.l.getLong(this.l.getColumnIndexOrThrow("fromId"))), UserInfo.getInstance().getLoginUserInfo().uid)) {
                     searchSessionModel.nickName = UserInfo.getInstance().getLoginUserInfo().getName();
                 } else {
@@ -69,7 +68,7 @@ public class SearchLikeChatPresenter extends MvpPresenter {
                 this.l.moveToNext();
             }
             a(arrayList);
-            a("notify_list", (String) arrayList);
+            a("notify_list", arrayList);
             if (i3 >= this.l.getCount()) {
                 f_("no_more_list");
                 o();
@@ -131,7 +130,6 @@ public class SearchLikeChatPresenter extends MvpPresenter {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         this.j = bundle.getString(UserDictionary.Words.WORD);
@@ -140,11 +138,9 @@ public class SearchLikeChatPresenter extends MvpPresenter {
         this.k = bundle.getString("passby_nick_name");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 

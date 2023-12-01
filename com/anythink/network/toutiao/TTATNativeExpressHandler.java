@@ -10,11 +10,11 @@ import java.util.List;
 public class TTATNativeExpressHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f9130a = TTATNativeExpressHandler.class.getSimpleName();
+    static final String f6290a = TTATNativeExpressHandler.class.getSimpleName();
     final List<TTNativeExpressAd> b;
 
     /* renamed from: c  reason: collision with root package name */
-    final List<TTNativeExpressAd> f9131c = new ArrayList();
+    final List<TTNativeExpressAd> f6291c = new ArrayList();
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/network/toutiao/TTATNativeExpressHandler$RenderCallback.class */
     public interface RenderCallback {
@@ -42,11 +42,11 @@ public class TTATNativeExpressHandler {
 
                 @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
                 public final void onRenderFail(View view, String str, int i) {
-                    Log.e(TTATNativeExpressHandler.f9130a, String.format("onRenderFail, errorCode: %d, errorMsg: %s", Integer.valueOf(i), str));
+                    Log.e(TTATNativeExpressHandler.f6290a, String.format("onRenderFail, errorCode: %d, errorMsg: %s", Integer.valueOf(i), str));
                     int[] iArr2 = iArr;
                     iArr2[0] = iArr2[0] - 1;
                     if (iArr2[0] == 0) {
-                        if (TTATNativeExpressHandler.this.f9131c.size() == 0) {
+                        if (TTATNativeExpressHandler.this.f6291c.size() == 0) {
                             RenderCallback renderCallback2 = renderCallback;
                             if (renderCallback2 != null) {
                                 renderCallback2.onRenderFail(str, i);
@@ -56,25 +56,25 @@ public class TTATNativeExpressHandler {
                         }
                         RenderCallback renderCallback3 = renderCallback;
                         if (renderCallback3 != null) {
-                            renderCallback3.onRenderSuccess(TTATNativeExpressHandler.this.f9131c);
+                            renderCallback3.onRenderSuccess(TTATNativeExpressHandler.this.f6291c);
                         }
-                        TTATNativeExpressHandler.this.f9131c.clear();
+                        TTATNativeExpressHandler.this.f6291c.clear();
                         TTATNativeExpressHandler.this.b.clear();
                     }
                 }
 
                 @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
                 public final void onRenderSuccess(View view, float f, float f2) {
-                    Log.i(TTATNativeExpressHandler.f9130a, "onRenderSuccess()");
-                    TTATNativeExpressHandler.this.f9131c.add(tTNativeExpressAd);
+                    Log.i(TTATNativeExpressHandler.f6290a, "onRenderSuccess()");
+                    TTATNativeExpressHandler.this.f6291c.add(tTNativeExpressAd);
                     int[] iArr2 = iArr;
                     iArr2[0] = iArr2[0] - 1;
                     if (iArr2[0] == 0) {
                         RenderCallback renderCallback2 = renderCallback;
                         if (renderCallback2 != null) {
-                            renderCallback2.onRenderSuccess(TTATNativeExpressHandler.this.f9131c);
+                            renderCallback2.onRenderSuccess(TTATNativeExpressHandler.this.f6291c);
                         }
-                        TTATNativeExpressHandler.this.f9131c.clear();
+                        TTATNativeExpressHandler.this.f6291c.clear();
                         TTATNativeExpressHandler.this.b.clear();
                     }
                 }

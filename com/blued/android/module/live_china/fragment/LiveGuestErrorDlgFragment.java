@@ -4,7 +4,6 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.framework.utils.LogUtils;
@@ -103,7 +102,7 @@ public class LiveGuestErrorDlgFragment extends com.blued.android.module.common.f
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
-        this.m = this.f10822c.getString("msg_text");
+        this.m = this.c.getString("msg_text");
     }
 
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
@@ -112,9 +111,10 @@ public class LiveGuestErrorDlgFragment extends com.blued.android.module.common.f
         ImageLoader.a(a(), LiveRoomManager.a().p().profile.avatar).d().a(this.l);
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.fragment.LiveGuestErrorDlgFragment$1] */
     public void k() {
         n();
-        this.o = new CountDownTimer(m.ag, 1000L) { // from class: com.blued.android.module.live_china.fragment.LiveGuestErrorDlgFragment.1
+        this.o = new CountDownTimer(3000L, 1000L) { // from class: com.blued.android.module.live_china.fragment.LiveGuestErrorDlgFragment.1
             @Override // android.os.CountDownTimer
             public void onFinish() {
                 LogUtils.d("pLog", "000 倒计时结束---");
@@ -136,7 +136,7 @@ public class LiveGuestErrorDlgFragment extends com.blued.android.module.common.f
         return true;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         n();

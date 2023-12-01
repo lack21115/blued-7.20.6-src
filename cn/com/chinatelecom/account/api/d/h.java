@@ -7,9 +7,9 @@ public class h {
     public JSONObject b;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f4134a = -1;
+    public int f4086a = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f4135c = "";
+    public String f4087c = "";
     public boolean d = false;
 }

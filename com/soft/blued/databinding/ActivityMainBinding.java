@@ -7,10 +7,10 @@ import androidx.viewbinding.ViewBinding;
 public final class ActivityMainBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f28668a;
+    private final View f14978a;
 
     @Override // androidx.viewbinding.ViewBinding
     public View getRoot() {
-        return this.f28668a;
+        return this.f14978a;
     }
 }

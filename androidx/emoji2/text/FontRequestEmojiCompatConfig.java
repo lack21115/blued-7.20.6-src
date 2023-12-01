@@ -26,11 +26,11 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
     public static class ExponentialBackoffRetryPolicy extends RetryPolicy {
 
         /* renamed from: a  reason: collision with root package name */
-        private final long f2834a;
+        private final long f2786a;
         private long b;
 
         public ExponentialBackoffRetryPolicy(long j) {
-            this.f2834a = j;
+            this.f2786a = j;
         }
 
         @Override // androidx.emoji2.text.FontRequestEmojiCompatConfig.RetryPolicy
@@ -40,10 +40,10 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
                 return 0L;
             }
             long uptimeMillis = SystemClock.uptimeMillis() - this.b;
-            if (uptimeMillis > this.f2834a) {
+            if (uptimeMillis > this.f2786a) {
                 return -1L;
             }
-            return Math.min(Math.max(uptimeMillis, 1000L), this.f2834a - uptimeMillis);
+            return Math.min(Math.max(uptimeMillis, 1000L), this.f2786a - uptimeMillis);
         }
     }
 
@@ -71,11 +71,11 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
     public static class FontRequestMetadataLoader implements EmojiCompat.MetadataRepoLoader {
 
         /* renamed from: a  reason: collision with root package name */
-        EmojiCompat.MetadataRepoLoaderCallback f2835a;
+        EmojiCompat.MetadataRepoLoaderCallback f2787a;
         private final Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final FontRequest f2836c;
+        private final FontRequest f2788c;
         private final FontProviderHelper d;
         private final Object e = new Object();
         private Handler f;
@@ -89,7 +89,7 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
             Preconditions.checkNotNull(context, "Context cannot be null");
             Preconditions.checkNotNull(fontRequest, "FontRequest cannot be null");
             this.b = context.getApplicationContext();
-            this.f2836c = fontRequest;
+            this.f2788c = fontRequest;
             this.d = fontProviderHelper;
         }
 
@@ -125,7 +125,7 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
 
         private FontsContractCompat.FontInfo c() {
             try {
-                FontsContractCompat.FontFamilyResult fetchFonts = this.d.fetchFonts(this.b, this.f2836c);
+                FontsContractCompat.FontFamilyResult fetchFonts = this.d.fetchFonts(this.b, this.f2788c);
                 if (fetchFonts.getStatusCode() == 0) {
                     FontsContractCompat.FontInfo[] fonts = fetchFonts.getFonts();
                     if (fonts == null || fonts.length == 0) {
@@ -141,7 +141,7 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
 
         private void d() {
             synchronized (this.e) {
-                this.f2835a = null;
+                this.f2787a = null;
                 if (this.j != null) {
                     this.d.unregisterObserver(this.b, this.j);
                     this.j = null;
@@ -161,7 +161,7 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
         /* JADX INFO: Access modifiers changed from: package-private */
         public void a() {
             synchronized (this.e) {
-                if (this.f2835a == null) {
+                if (this.f2787a == null) {
                     return;
                 }
                 if (this.g == null) {
@@ -181,7 +181,7 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
         /* JADX INFO: Access modifiers changed from: package-private */
         public void b() {
             synchronized (this.e) {
-                if (this.f2835a == null) {
+                if (this.f2787a == null) {
                     return;
                 }
                 try {
@@ -210,15 +210,15 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
                     MetadataRepo create = MetadataRepo.create(buildTypeface, mmap);
                     TraceCompat.endSection();
                     synchronized (this.e) {
-                        if (this.f2835a != null) {
-                            this.f2835a.onLoaded(create);
+                        if (this.f2787a != null) {
+                            this.f2787a.onLoaded(create);
                         }
                     }
                     d();
                 } catch (Throwable th) {
                     synchronized (this.e) {
-                        if (this.f2835a != null) {
-                            this.f2835a.onFailed(th);
+                        if (this.f2787a != null) {
+                            this.f2787a.onFailed(th);
                         }
                         d();
                     }
@@ -230,7 +230,7 @@ public class FontRequestEmojiCompatConfig extends EmojiCompat.Config {
         public void load(EmojiCompat.MetadataRepoLoaderCallback metadataRepoLoaderCallback) {
             Preconditions.checkNotNull(metadataRepoLoaderCallback, "LoaderCallback cannot be null");
             synchronized (this.e) {
-                this.f2835a = metadataRepoLoaderCallback;
+                this.f2787a = metadataRepoLoaderCallback;
             }
             a();
         }

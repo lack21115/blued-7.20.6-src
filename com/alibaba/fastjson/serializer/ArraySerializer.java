@@ -1,6 +1,5 @@
 package com.alibaba.fastjson.serializer;
 
-import com.igexin.push.core.b;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
@@ -38,7 +37,7 @@ public class ArraySerializer implements ObjectSerializer {
                 }
                 Object obj3 = objArr[i2];
                 if (obj3 == null) {
-                    serializeWriter.append((CharSequence) b.l);
+                    serializeWriter.append((CharSequence) "null");
                 } else if (obj3.getClass() == this.componentType) {
                     this.compObjectSerializer.write(jSONSerializer, obj3, Integer.valueOf(i2), null, 0);
                 } else {

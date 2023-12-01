@@ -29,9 +29,8 @@ public interface IBluetoothInputDevice extends IInterface {
         static final int TRANSACTION_setReport = 12;
         static final int TRANSACTION_virtualUnplug = 9;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothInputDevice$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothInputDevice {
+        private static class Proxy implements IBluetoothInputDevice {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

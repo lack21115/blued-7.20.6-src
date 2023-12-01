@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopmenuGridItemBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f29571a;
+    private final TextView f15881a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public TextView getRoot() {
-        return this.f29571a;
+        return this.f15881a;
     }
 }

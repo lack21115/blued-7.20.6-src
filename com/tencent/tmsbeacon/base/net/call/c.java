@@ -8,7 +8,7 @@ import com.tencent.tmsbeacon.base.net.d;
 public class c implements com.tencent.tmsbeacon.base.net.call.a<BResponse> {
 
     /* renamed from: a  reason: collision with root package name */
-    private e f39512a;
+    private e f25821a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/base/net/call/c$a.class */
     public class a implements Callback<BResponse> {
@@ -37,10 +37,10 @@ public class c implements com.tencent.tmsbeacon.base.net.call.a<BResponse> {
     }
 
     public c(e eVar) {
-        this.f39512a = eVar;
+        this.f25821a = eVar;
     }
 
     public void a(Callback<BResponse> callback) {
-        com.tencent.tmsbeacon.base.net.c.c().a(this.f39512a, new a(callback));
+        com.tencent.tmsbeacon.base.net.c.c().a(this.f25821a, new a(callback));
     }
 }

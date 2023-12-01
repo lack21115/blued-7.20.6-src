@@ -6,10 +6,10 @@ import android.animation.TypeEvaluator;
 public class ArgbEvaluator implements TypeEvaluator {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ArgbEvaluator f3530a = new ArgbEvaluator();
+    private static final ArgbEvaluator f3482a = new ArgbEvaluator();
 
     public static ArgbEvaluator getInstance() {
-        return f3530a;
+        return f3482a;
     }
 
     @Override // android.animation.TypeEvaluator

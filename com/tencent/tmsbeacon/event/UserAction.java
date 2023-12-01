@@ -29,10 +29,10 @@ import java.util.concurrent.ScheduledExecutorService;
 public class UserAction {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f39554a;
+    private static String f25863a;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f39555c;
+    private static String f25864c;
     public static Context mContext;
     private static BeaconConfig.Builder b = BeaconConfig.builder();
     private static boolean d = true;
@@ -64,7 +64,7 @@ public class UserAction {
     }
 
     public static String getAppKey() {
-        return f39554a;
+        return f25863a;
     }
 
     public static String getCloudParas(String str) {
@@ -76,7 +76,7 @@ public class UserAction {
     }
 
     public static String getEventDomain() {
-        return b.f39502c;
+        return b.f25811c;
     }
 
     public static String getQIMEI() {
@@ -137,7 +137,7 @@ public class UserAction {
             return;
         }
         mContext = context;
-        BeaconReport.getInstance().start(context, f39554a, b.build());
+        BeaconReport.getInstance().start(context, f25863a, b.build());
     }
 
     public static boolean loginEvent(boolean z, long j, Map<String, String> map) {
@@ -198,7 +198,7 @@ public class UserAction {
     }
 
     public static boolean onUserAction(String str, boolean z, long j, long j2, Map<String, String> map, boolean z2, boolean z3) {
-        return BeaconReport.getInstance().report(BeaconEvent.builder().withCode(str).withType(z2 ? EventType.REALTIME : EventType.NORMAL).withParams(map).withAppKey(f39554a).withIsSucceed(z).build()).isSuccess();
+        return BeaconReport.getInstance().report(BeaconEvent.builder().withCode(str).withType(z2 ? EventType.REALTIME : EventType.NORMAL).withParams(map).withAppKey(f25863a).withIsSucceed(z).build()).isSuccess();
     }
 
     public static boolean onUserActionToTunnel(String str, String str2, Map<String, String> map, boolean z, boolean z2) {
@@ -221,11 +221,11 @@ public class UserAction {
     }
 
     public static void setAppKey(String str) {
-        f39554a = str;
+        f25863a = str;
     }
 
     public static void setAppVersion(String str) {
-        f39555c = str;
+        f25864c = str;
     }
 
     @Deprecated

@@ -13,15 +13,15 @@ import org.json.JSONObject;
 public final class b implements PushMessageInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23411a = "CleanExtAction";
+    private static final String f9803a = "CleanExtAction";
 
     @Override // com.igexin.push.extension.mod.PushMessageInterface
     public final boolean executeAction(PushTaskBean pushTaskBean, BaseActionBean baseActionBean) {
         if (pushTaskBean != null && baseActionBean != null) {
             com.igexin.push.core.b.g gVar = (com.igexin.push.core.b.g) baseActionBean;
-            if (gVar.f23441a != null && gVar.f23441a.length > 0) {
-                Arrays.toString(gVar.f23441a);
-                GtcManager.getInstance().removeExt(com.igexin.push.core.b.i, gVar.f23441a);
+            if (gVar.f9833a != null && gVar.f9833a.length > 0) {
+                Arrays.toString(gVar.f9833a);
+                GtcManager.getInstance().removeExt(com.igexin.push.core.b.i, gVar.f9833a);
             }
         }
         if ("".equals(baseActionBean.getDoActionId())) {
@@ -49,7 +49,7 @@ public final class b implements PushMessageInterface {
                 if (i2 >= jSONArray.length()) {
                     com.igexin.push.core.b.g gVar = new com.igexin.push.core.b.g();
                     gVar.setType(com.igexin.push.core.b.t);
-                    gVar.f23441a = iArr;
+                    gVar.f9833a = iArr;
                     gVar.setActionId(jSONObject.getString("actionid"));
                     gVar.setDoActionId(jSONObject.getString(com.anythink.expressad.foundation.d.d.s));
                     return gVar;

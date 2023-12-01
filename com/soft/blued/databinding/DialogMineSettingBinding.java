@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogMineSettingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28707a;
+    private final FrameLayout f15017a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28707a;
+        return this.f15017a;
     }
 }

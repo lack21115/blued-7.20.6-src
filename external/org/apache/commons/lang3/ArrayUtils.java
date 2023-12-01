@@ -67,14 +67,14 @@ public class ArrayUtils {
         return (byte[]) add(bArr, i, Byte.valueOf(b), Byte.TYPE);
     }
 
-    public static char[] add(char[] cArr, char c2) {
+    public static char[] add(char[] cArr, char c) {
         char[] cArr2 = (char[]) copyArrayGrow1(cArr, Character.TYPE);
-        cArr2[cArr2.length - 1] = c2;
+        cArr2[cArr2.length - 1] = c;
         return cArr2;
     }
 
-    public static char[] add(char[] cArr, int i, char c2) {
-        return (char[]) add(cArr, i, Character.valueOf(c2), Character.TYPE);
+    public static char[] add(char[] cArr, int i, char c) {
+        return (char[]) add(cArr, i, Character.valueOf(c), Character.TYPE);
     }
 
     public static double[] add(double[] dArr, double d) {
@@ -356,8 +356,8 @@ public class ArrayUtils {
         return indexOf(bArr, b) != -1;
     }
 
-    public static boolean contains(char[] cArr, char c2) {
-        return indexOf(cArr, c2) != -1;
+    public static boolean contains(char[] cArr, char c) {
+        return indexOf(cArr, c) != -1;
     }
 
     public static boolean contains(double[] dArr, double d) {
@@ -457,11 +457,11 @@ public class ArrayUtils {
         return i2;
     }
 
-    public static int indexOf(char[] cArr, char c2) {
-        return indexOf(cArr, c2, 0);
+    public static int indexOf(char[] cArr, char c) {
+        return indexOf(cArr, c, 0);
     }
 
-    public static int indexOf(char[] cArr, char c2, int i) {
+    public static int indexOf(char[] cArr, char c, int i) {
         int i2;
         if (cArr == null) {
             i2 = -1;
@@ -477,7 +477,7 @@ public class ArrayUtils {
                     return -1;
                 }
                 i2 = i5;
-                if (c2 == cArr[i5]) {
+                if (c == cArr[i5]) {
                     break;
                 }
                 i4 = i5 + 1;
@@ -930,11 +930,11 @@ public class ArrayUtils {
         return i2;
     }
 
-    public static int lastIndexOf(char[] cArr, char c2) {
-        return lastIndexOf(cArr, c2, Integer.MAX_VALUE);
+    public static int lastIndexOf(char[] cArr, char c) {
+        return lastIndexOf(cArr, c, Integer.MAX_VALUE);
     }
 
-    public static int lastIndexOf(char[] cArr, char c2, int i) {
+    public static int lastIndexOf(char[] cArr, char c, int i) {
         int i2;
         if (cArr == null) {
             i2 = -1;
@@ -952,7 +952,7 @@ public class ArrayUtils {
                     return -1;
                 }
                 i2 = i5;
-                if (c2 == cArr[i5]) {
+                if (c == cArr[i5]) {
                     break;
                 }
                 i4 = i5 - 1;
@@ -1828,8 +1828,8 @@ public class ArrayUtils {
         return indexOf == -1 ? clone(bArr) : remove(bArr, indexOf);
     }
 
-    public static char[] removeElement(char[] cArr, char c2) {
-        int indexOf = indexOf(cArr, c2);
+    public static char[] removeElement(char[] cArr, char c) {
+        int indexOf = indexOf(cArr, c);
         return indexOf == -1 ? clone(cArr) : remove(cArr, indexOf);
     }
 
@@ -2220,9 +2220,9 @@ public class ArrayUtils {
         }
         int length = cArr.length - 1;
         for (int i = 0; length > i; i++) {
-            char c2 = cArr[length];
+            char c = cArr[length];
             cArr[length] = cArr[i];
-            cArr[i] = c2;
+            cArr[i] = c;
             length--;
         }
     }
@@ -2809,7 +2809,7 @@ public class ArrayUtils {
         return cArr;
     }
 
-    public static char[] toPrimitive(Character[] chArr, char c2) {
+    public static char[] toPrimitive(Character[] chArr, char c) {
         char[] cArr;
         if (chArr != null) {
             if (chArr.length != 0) {
@@ -2822,7 +2822,7 @@ public class ArrayUtils {
                         break;
                     }
                     Character ch = chArr[i2];
-                    cArr2[i2] = ch == null ? c2 : ch.charValue();
+                    cArr2[i2] = ch == null ? c : ch.charValue();
                     i = i2 + 1;
                 }
             } else {

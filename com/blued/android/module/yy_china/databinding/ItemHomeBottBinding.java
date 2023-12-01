@@ -11,22 +11,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemHomeBottBinding.class */
 public final class ItemHomeBottBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16618a;
+    public final SquareImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16619c;
+    public final ImageView c;
     public final LinearLayout d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private ItemHomeBottBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, TextView textView) {
         this.f = constraintLayout;
-        this.f16618a = squareImageView;
+        this.a = squareImageView;
         this.b = imageView;
-        this.f16619c = imageView2;
+        this.c = imageView2;
         this.d = linearLayout;
         this.e = textView;
     }
@@ -61,7 +57,6 @@ public final class ItemHomeBottBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

@@ -14,20 +14,20 @@ import com.soft.blued.R;
 public final class FmServiceCenterBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final RelativeLayout f28767a;
+    public final RelativeLayout f15077a;
     public final NoDataAndLoadFailView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f28768c;
+    public final RecyclerView f15078c;
     public final CommonTopTitleNoTrans d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private FmServiceCenterBinding(ConstraintLayout constraintLayout, RelativeLayout relativeLayout, NoDataAndLoadFailView noDataAndLoadFailView, RecyclerView recyclerView, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView) {
         this.f = constraintLayout;
-        this.f28767a = relativeLayout;
+        this.f15077a = relativeLayout;
         this.b = noDataAndLoadFailView;
-        this.f28768c = recyclerView;
+        this.f15078c = recyclerView;
         this.d = commonTopTitleNoTrans;
         this.e = textView;
     }
@@ -36,15 +36,15 @@ public final class FmServiceCenterBinding implements ViewBinding {
         String str;
         RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.bottomView);
         if (relativeLayout != null) {
-            NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(2131368721);
-            if (noDataAndLoadFailView != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(2131369093);
+            NoDataAndLoadFailView findViewById = view.findViewById(2131368721);
+            if (findViewById != null) {
+                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
                 if (recyclerView != null) {
-                    CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370694);
-                    if (commonTopTitleNoTrans != null) {
+                    CommonTopTitleNoTrans findViewById2 = view.findViewById(2131370694);
+                    if (findViewById2 != null) {
                         TextView textView = (TextView) view.findViewById(2131371675);
                         if (textView != null) {
-                            return new FmServiceCenterBinding((ConstraintLayout) view, relativeLayout, noDataAndLoadFailView, recyclerView, commonTopTitleNoTrans, textView);
+                            return new FmServiceCenterBinding((ConstraintLayout) view, relativeLayout, findViewById, recyclerView, findViewById2, textView);
                         }
                         str = "tvHint";
                     } else {

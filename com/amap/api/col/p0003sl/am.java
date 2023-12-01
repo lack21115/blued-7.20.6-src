@@ -9,13 +9,9 @@ import android.view.ViewConfiguration;
 /* renamed from: com.amap.api.col.3sl.am  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/am.class */
 public abstract class am extends an {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected float f4742a;
+    protected float a;
     protected float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected float f4743c;
+    protected float c;
     protected float d;
     private final float n;
     private float o;
@@ -74,13 +70,13 @@ public abstract class am extends an {
             float y = motionEvent2.getY(0);
             float x2 = motionEvent2.getX(1);
             float y2 = motionEvent2.getY(1);
-            this.f4742a = x2 - x;
+            this.a = x2 - x;
             this.b = y2 - y;
             float x3 = motionEvent.getX(0);
             float y3 = motionEvent.getY(0);
             float x4 = motionEvent.getX(1);
             float y4 = motionEvent.getY(1);
-            this.f4743c = x4 - x3;
+            this.c = x4 - x3;
             this.d = y4 - y3;
             this.s = x3 - x;
             this.t = y3 - y;
@@ -104,10 +100,10 @@ public abstract class am extends an {
         float f3 = this.p;
         float rawX = motionEvent.getRawX();
         float rawY = motionEvent.getRawY();
-        float a2 = a(motionEvent, i);
+        float a = a(motionEvent, i);
         float b = b(motionEvent, i2);
         boolean z = rawX < f || rawY < f || rawX > f2 || rawY > f3;
-        boolean z2 = a2 < f || b < f || a2 > f2 || b > f3;
+        boolean z2 = a < f || b < f || a > f2 || b > f3;
         return (z && z2) || z || z2;
     }
 }

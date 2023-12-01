@@ -31,13 +31,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYGiftPkDetailView.class */
 public class YYGiftPkDetailView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYGiftPkCountView f18193a;
+    private YYGiftPkCountView a;
     private YYGiftPkCountView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18194c;
+    private TextView c;
     private ImageView d;
     private TextView e;
     private TextView f;
@@ -48,7 +44,6 @@ public class YYGiftPkDetailView extends LinearLayout {
     public YYGiftPkDetailView(Context context) {
         super(context);
         this.i = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYGiftPkDetailView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (TextUtils.isEmpty(str)) {
@@ -73,7 +68,6 @@ public class YYGiftPkDetailView extends LinearLayout {
     public YYGiftPkDetailView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.i = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYGiftPkDetailView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (TextUtils.isEmpty(str)) {
@@ -98,7 +92,6 @@ public class YYGiftPkDetailView extends LinearLayout {
     public YYGiftPkDetailView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.i = new Observer<String>() { // from class: com.blued.android.module.yy_china.view.YYGiftPkDetailView.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 if (TextUtils.isEmpty(str)) {
@@ -122,13 +115,13 @@ public class YYGiftPkDetailView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_gift_pk_detail, (ViewGroup) this, true);
-        this.f18193a = (YYGiftPkCountView) findViewById(R.id.gift_left);
+        this.a = (YYGiftPkCountView) findViewById(R.id.gift_left);
         this.b = (YYGiftPkCountView) findViewById(R.id.gift_right);
         this.e = (TextView) findViewById(R.id.tv_pk_time);
-        this.f18194c = (TextView) findViewById(R.id.tv_pk_user);
+        this.c = (TextView) findViewById(R.id.tv_pk_user);
         this.d = (ImageView) findViewById(R.id.iv_pk_user);
         this.f = (TextView) findViewById(R.id.tv_stop_pk);
-        this.f18193a.setChartColor(R.color.syc_00E0AB);
+        this.a.setChartColor(R.color.syc_00E0AB);
         this.b.setChartColor(R.color.syc_3883FD);
         this.f.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYGiftPkDetailView.2
             @Override // android.view.View.OnClickListener
@@ -137,7 +130,7 @@ public class YYGiftPkDetailView extends LinearLayout {
                 YYGiftPkDetailView.this.b();
             }
         });
-        this.f18193a.setSendGiftClickListener(new YYGiftPkCountView.SendGiftClickListener() { // from class: com.blued.android.module.yy_china.view.YYGiftPkDetailView.3
+        this.a.setSendGiftClickListener(new YYGiftPkCountView.SendGiftClickListener() { // from class: com.blued.android.module.yy_china.view.YYGiftPkDetailView.3
             @Override // com.blued.android.module.yy_china.view.YYGiftPkCountView.SendGiftClickListener
             public void a(String str) {
                 YYGiftPkDetailView.this.a(str);
@@ -197,7 +190,7 @@ public class YYGiftPkDetailView extends LinearLayout {
                 YYUserInfo yYUserInfo = singleData.user;
                 if (yYUserInfo != null) {
                     YYGiftPkDetailView.this.h = yYUserInfo.getUid();
-                    YYGiftPkDetailView.this.f18194c.setText(yYUserInfo.getName());
+                    YYGiftPkDetailView.this.c.setText(yYUserInfo.getName());
                     ImageLoader.a(YYGiftPkDetailView.this.g.getFragmentActive(), yYUserInfo.getAvatar()).a(YYGiftPkDetailView.this.d);
                 }
                 List<YYPkGoodItemModel> list = singleData.event;
@@ -207,10 +200,10 @@ public class YYGiftPkDetailView extends LinearLayout {
                 while (i2 < list.size()) {
                     YYPkGoodItemModel yYPkGoodItemModel = list.get(i2);
                     if (i2 == 0) {
-                        YYGiftPkDetailView.this.f18193a.setPkGiftImage(yYPkGoodItemModel.image);
-                        YYGiftPkDetailView.this.f18193a.setGiftId(yYPkGoodItemModel.goods_id);
-                        YYGiftPkDetailView.this.f18193a.setRewardName(yYPkGoodItemModel.event_name);
-                        YYGiftPkDetailView.this.f18193a.setReceivedGiftCount(yYPkGoodItemModel.vote_count + "票");
+                        YYGiftPkDetailView.this.a.setPkGiftImage(yYPkGoodItemModel.image);
+                        YYGiftPkDetailView.this.a.setGiftId(yYPkGoodItemModel.goods_id);
+                        YYGiftPkDetailView.this.a.setRewardName(yYPkGoodItemModel.event_name);
+                        YYGiftPkDetailView.this.a.setReceivedGiftCount(yYPkGoodItemModel.vote_count + "票");
                         i = StringUtils.a(yYPkGoodItemModel.vote_count, 0);
                     } else {
                         i = i3;
@@ -227,13 +220,13 @@ public class YYGiftPkDetailView extends LinearLayout {
                     i3 = i;
                 }
                 if (i3 > i4) {
-                    YYGiftPkDetailView.this.f18193a.setChartRange(1.0f);
+                    YYGiftPkDetailView.this.a.setChartRange(1.0f);
                     YYGiftPkDetailView.this.b.setChartRange(0.6f);
                 } else if (i3 == i4) {
-                    YYGiftPkDetailView.this.f18193a.setChartRange(1.0f);
+                    YYGiftPkDetailView.this.a.setChartRange(1.0f);
                     YYGiftPkDetailView.this.b.setChartRange(1.0f);
                 } else {
-                    YYGiftPkDetailView.this.f18193a.setChartRange(0.6f);
+                    YYGiftPkDetailView.this.a.setChartRange(0.6f);
                     YYGiftPkDetailView.this.b.setChartRange(1.0f);
                 }
             }

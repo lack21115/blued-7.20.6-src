@@ -48,9 +48,8 @@ public interface IImsCallSession extends IInterface {
         static final int TRANSACTION_terminate = 16;
         static final int TRANSACTION_update_19 = 20;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/ims/internal/IImsCallSession$Stub$Proxy.class */
-        public static class Proxy implements IImsCallSession {
+        private static class Proxy implements IImsCallSession {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -408,12 +407,12 @@ public interface IImsCallSession extends IInterface {
             }
 
             @Override // com.android.ims.internal.IImsCallSession
-            public void sendDtmf(char c2, Message message) throws RemoteException {
+            public void sendDtmf(char c, Message message) throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    obtain.writeInt(c2);
+                    obtain.writeInt(c);
                     if (message != null) {
                         obtain.writeInt(1);
                         message.writeToParcel(obtain, 0);
@@ -520,12 +519,12 @@ public interface IImsCallSession extends IInterface {
             }
 
             @Override // com.android.ims.internal.IImsCallSession
-            public void startDtmf(char c2) throws RemoteException {
+            public void startDtmf(char c) throws RemoteException {
                 Parcel obtain = Parcel.obtain();
                 Parcel obtain2 = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
-                    obtain.writeInt(c2);
+                    obtain.writeInt(c);
                     this.mRemote.transact(25, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
@@ -748,7 +747,7 @@ public interface IImsCallSession extends IInterface {
                     return true;
                 case 24:
                     parcel.enforceInterface(DESCRIPTOR);
-                    sendDtmf((char) parcel.readInt(), parcel.readInt() != 0 ? Message.CREATOR.createFromParcel(parcel) : null);
+                    sendDtmf((char) parcel.readInt(), parcel.readInt() != 0 ? (Message) Message.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 25:
@@ -788,7 +787,7 @@ public interface IImsCallSession extends IInterface {
                     }
                     parcel2.writeInt(i4);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:
@@ -837,7 +836,7 @@ public interface IImsCallSession extends IInterface {
 
     void resume(ImsStreamMediaProfile imsStreamMediaProfile) throws RemoteException;
 
-    void sendDtmf(char c2, Message message) throws RemoteException;
+    void sendDtmf(char c, Message message) throws RemoteException;
 
     void sendUssd(String str) throws RemoteException;
 
@@ -849,7 +848,7 @@ public interface IImsCallSession extends IInterface {
 
     void startConference(String[] strArr, ImsCallProfile imsCallProfile) throws RemoteException;
 
-    void startDtmf(char c2) throws RemoteException;
+    void startDtmf(char c) throws RemoteException;
 
     void stopDtmf() throws RemoteException;
 

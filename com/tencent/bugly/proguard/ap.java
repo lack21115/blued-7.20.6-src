@@ -10,11 +10,11 @@ public final class ap extends k implements Cloneable {
     private static ao m = new ao();
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f35376a = true;
+    public boolean f21685a = true;
     public boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f35377c = true;
+    public boolean f21686c = true;
     public String d = "";
     public String e = "";
     public ao f = null;
@@ -33,9 +33,9 @@ public final class ap extends k implements Cloneable {
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(i iVar) {
-        this.f35376a = iVar.a(0, true);
+        this.f21685a = iVar.a(0, true);
         this.b = iVar.a(1, true);
-        this.f35377c = iVar.a(2, true);
+        this.f21686c = iVar.a(2, true);
         this.d = iVar.b(3, false);
         this.e = iVar.b(4, false);
         this.f = (ao) iVar.a((k) m, 5, false);
@@ -49,9 +49,9 @@ public final class ap extends k implements Cloneable {
 
     @Override // com.tencent.bugly.proguard.k
     public final void a(j jVar) {
-        jVar.a(this.f35376a, 0);
+        jVar.a(this.f21685a, 0);
         jVar.a(this.b, 1);
-        jVar.a(this.f35377c, 2);
+        jVar.a(this.f21686c, 2);
         String str = this.d;
         if (str != null) {
             jVar.a(str, 3);
@@ -84,9 +84,9 @@ public final class ap extends k implements Cloneable {
     @Override // com.tencent.bugly.proguard.k
     public final void a(StringBuilder sb, int i) {
         h hVar = new h(sb, i);
-        hVar.a(this.f35376a, "enable");
+        hVar.a(this.f21685a, "enable");
         hVar.a(this.b, "enableUserInfo");
-        hVar.a(this.f35377c, "enableQuery");
+        hVar.a(this.f21686c, "enableQuery");
         hVar.a(this.d, "url");
         hVar.a(this.e, "expUrl");
         hVar.a((k) this.f, "security");
@@ -114,7 +114,7 @@ public final class ap extends k implements Cloneable {
             return false;
         }
         ap apVar = (ap) obj;
-        return l.a(this.f35376a, apVar.f35376a) && l.a(this.b, apVar.b) && l.a(this.f35377c, apVar.f35377c) && l.a(this.d, apVar.d) && l.a(this.e, apVar.e) && l.a(this.f, apVar.f) && l.a(this.g, apVar.g) && l.a(this.h, apVar.h) && l.a(this.j, apVar.j) && l.a(this.k, apVar.k) && l.a(this.l, apVar.l) && l.a(this.i, apVar.i);
+        return l.a(this.f21685a, apVar.f21685a) && l.a(this.b, apVar.b) && l.a(this.f21686c, apVar.f21686c) && l.a(this.d, apVar.d) && l.a(this.e, apVar.e) && l.a(this.f, apVar.f) && l.a(this.g, apVar.g) && l.a(this.h, apVar.h) && l.a(this.j, apVar.j) && l.a(this.k, apVar.k) && l.a(this.l, apVar.l) && l.a(this.i, apVar.i);
     }
 
     public final int hashCode() {

@@ -26,9 +26,7 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/dialog/EventSignUpPopupWindow.class */
 public final class EventSignUpPopupWindow extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f19533c = {Reflection.a(new PropertyReference1Impl(EventSignUpPopupWindow.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/DialogEventSignUpBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] c = {Reflection.a(new PropertyReference1Impl(EventSignUpPopupWindow.class, "viewBinding", "getViewBinding()Lcom/blued/community/databinding/DialogEventSignUpBinding;", 0))};
     private final View.OnClickListener d;
     private final EventDetailsModel e;
     private final ViewBindingProperty f;
@@ -54,7 +52,7 @@ public final class EventSignUpPopupWindow extends CenterPopupView {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(DialogEventSignUpBinding viewBinding, View view) {
         Intrinsics.e(viewBinding, "$viewBinding");
-        viewBinding.f18797a.setChecked(!viewBinding.f18797a.isChecked());
+        viewBinding.a.setChecked(!viewBinding.a.isChecked());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -72,7 +70,7 @@ public final class EventSignUpPopupWindow extends CenterPopupView {
     public static final void a(DialogEventSignUpBinding viewBinding, EventSignUpPopupWindow this$0, View view) {
         Intrinsics.e(viewBinding, "$viewBinding");
         Intrinsics.e(this$0, "this$0");
-        if (viewBinding.f18797a.isChecked()) {
+        if (viewBinding.a.isChecked()) {
             this$0.d.onClick(view);
         }
     }
@@ -97,7 +95,7 @@ public final class EventSignUpPopupWindow extends CenterPopupView {
     }
 
     private final DialogEventSignUpBinding getViewBinding() {
-        return (DialogEventSignUpBinding) this.f.b(this, f19533c[0]);
+        return (DialogEventSignUpBinding) this.f.b(this, c[0]);
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
@@ -124,13 +122,13 @@ public final class EventSignUpPopupWindow extends CenterPopupView {
                 EventSignUpPopupWindow.a(EventSignUpPopupWindow.this, view);
             }
         });
-        viewBinding.f18797a.setChecked(CommunityPreferences.i());
+        viewBinding.a.setChecked(CommunityPreferences.i());
         if (CommunityPreferences.i()) {
             viewBinding.j.getBackground().setAlpha(255);
         } else {
             viewBinding.j.getBackground().setAlpha(55);
         }
-        viewBinding.f18797a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.community.ui.event.dialog.-$$Lambda$EventSignUpPopupWindow$57V6qftEMaXJfSvLJ_ZrKEYV8aE
+        viewBinding.a.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.blued.community.ui.event.dialog.-$$Lambda$EventSignUpPopupWindow$57V6qftEMaXJfSvLJ_ZrKEYV8aE
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public final void onCheckedChanged(CompoundButton compoundButton, boolean z) {
                 EventSignUpPopupWindow.a(DialogEventSignUpBinding.this, compoundButton, z);

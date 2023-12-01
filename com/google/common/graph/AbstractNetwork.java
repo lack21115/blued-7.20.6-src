@@ -58,7 +58,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
                     return false;
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+                @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
                 public Iterator<EndpointPair<N>> iterator() {
                     return Iterators.transform(AbstractNetwork.this.edges().iterator(), new Function<E, EndpointPair<N>>() { // from class: com.google.common.graph.AbstractNetwork.1.1.1
                         @Override // com.google.common.base.Function
@@ -68,12 +68,12 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
 
                         @Override // com.google.common.base.Function
                         public /* bridge */ /* synthetic */ Object apply(Object obj) {
-                            return apply((C03761) obj);
+                            return apply((C02061) obj);
                         }
                     });
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
                 public int size() {
                     return AbstractNetwork.this.edges().size();
                 }
@@ -147,7 +147,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
     @Override // com.google.common.graph.Network
     public Set<E> adjacentEdges(E e) {
         EndpointPair<N> incidentNodes = incidentNodes(e);
-        return Sets.difference(Sets.union(incidentEdges(incidentNodes.nodeU()), incidentEdges(incidentNodes.nodeV())), ImmutableSet.of(e));
+        return Sets.difference(Sets.union(incidentEdges(incidentNodes.nodeU()), incidentEdges(incidentNodes.nodeV())), ImmutableSet.of((Object) e));
     }
 
     @Override // com.google.common.graph.Network

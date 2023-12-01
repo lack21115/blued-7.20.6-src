@@ -17,6 +17,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.RecyclerView;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -55,7 +56,6 @@ import com.blued.android.module.live_china.utils.LiveRoomPreferences;
 import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,14 +88,12 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/LiveGiftScrawlFragment$ScrawlGiftAdapter.class */
     public class ScrawlGiftAdapter extends LiveGiftBaseAdapter {
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f13862c;
+        private int c;
 
         public ScrawlGiftAdapter(Context context, Fragment fragment, int i) {
             super(context, fragment, i);
-            this.f13862c = 327;
-            this.f13862c = DisplayUtil.a(context, 109.0f);
+            this.c = 327;
+            this.c = DisplayUtil.a(context, 109.0f);
         }
 
         @Override // com.blued.android.module.common.adapter.BaseGiftAdapter
@@ -132,12 +130,12 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
         @Override // com.blued.android.module.live_china.mine.LiveGiftBaseAdapter
         public void b(CommonRecycleAdapter.CommonAdapterHolder commonAdapterHolder, LiveGiftModel liveGiftModel) {
             super.b(commonAdapterHolder, liveGiftModel);
-            View a2 = commonAdapterHolder.a(R.id.item_live_gift_content_layout);
-            if (a2 != null) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) a2.getLayoutParams();
-                layoutParams.height = this.f13862c;
+            View a = commonAdapterHolder.a(R.id.item_live_gift_content_layout);
+            if (a != null) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) a.getLayoutParams();
+                layoutParams.height = this.c;
                 layoutParams.topMargin = 0;
-                a2.setLayoutParams(layoutParams);
+                a.setLayoutParams(layoutParams);
             }
         }
     }
@@ -148,14 +146,12 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
         this.l.setLayoutManager(this.n);
         new PagerGridSnapHelper().attachToRecyclerView(this.l);
         this.l.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.mine.LiveGiftScrawlFragment.4
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 rect.left = LiveGiftScrawlFragment.this.A;
                 rect.right = LiveGiftScrawlFragment.this.A;
             }
         });
         this.l.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.android.module.live_china.mine.LiveGiftScrawlFragment.5
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrollStateChanged(RecyclerView recyclerView, int i) {
                 super.onScrollStateChanged(recyclerView, i);
                 if (i == 0) {
@@ -163,7 +159,6 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
                 }
             }
 
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 super.onScrolled(recyclerView, i, i2);
             }
@@ -185,9 +180,9 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
             case 4221002:
                 Bundle bundle = new Bundle();
                 bundle.putString("title", getString(R.string.Live_SendPresent_resetPayPassword));
-                bundle.putString("content", getString(R.string.live_set_6_num));
+                bundle.putString(l.y, getString(R.string.live_set_6_num));
                 bundle.putString("http_host", LiveRoomInfo.a().m());
-                LiveRouteUtil.a(this, bundle, i);
+                LiveRouteUtil.a((Fragment) this, bundle, i);
                 return;
             case 4221003:
             case 4221006:
@@ -206,8 +201,8 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
                 } else {
                     bundle2.putString("title", str);
                 }
-                bundle2.putString("content", getString(R.string.Live_SendPresent_verifyPasswordText));
-                LiveRouteUtil.a(this, bundle2, i);
+                bundle2.putString(l.y, getString(R.string.Live_SendPresent_verifyPasswordText));
+                LiveRouteUtil.a((Fragment) this, bundle2, i);
                 return;
             case 4221008:
                 o();
@@ -247,7 +242,7 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
             if (LiveRoomManager.a().q() != null) {
                 LiveRoomManager.a().q().fans_status = 1;
             }
-            LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_REFRESH_GIFT_LIST).post(true);
+            LiveEventBus.get("live_refresh_gift_list").post(true);
         }
         if (LiveRoomManager.a().q() != null && LiveRoomManager.a().q().fans_status == 2) {
             LiveFansObserver.a().d();
@@ -359,13 +354,11 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
 
     private void k() {
         LiveEventBus.get("gold_remain_result", BasePayRemaining.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftScrawlFragment$OzbkW-GQ65UiPSYe53zbdh82Hrs
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftScrawlFragment.this.b((BasePayRemaining) obj);
             }
         });
         LiveEventBus.get(LiveEventBusUtil.d, PayResultEvent.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftScrawlFragment$cCgkEavFEIoEvcCIE911K09G1rQ
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveGiftScrawlFragment.this.b((PayResultEvent) obj);
             }
@@ -485,7 +478,7 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
             return;
         }
         for (LiveGiftScrawlModel liveGiftScrawlModel : q().goods) {
-            EventTrackLive.a(LiveProtos.Event.LIVE_GIFT_PAGE_SEND_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), LiveRoomManager.a().p().liveFrom, LiveRoomManager.a().p().recommendType, LiveRoomManager.a().p().livePosition, liveGiftScrawlModel.goods_id, liveGiftScrawlModel.getPath().size(), (int) (liveGiftScrawlModel.beans * liveGiftScrawlModel.getPath().size()), liveGiftScrawlModel.packageTypeName, liveGiftScrawlModel.pageIndex + 1, liveGiftScrawlModel.positionInPage + 1, this.f10822c.getBoolean("isHit"), this.f10822c.getBoolean("isPking"), this.f10822c.getBoolean("isMakeLover") ? LiveProtos.LiveType.BLIND_DATING_LIVE : LiveProtos.LiveType.SHOW_LIVE, "gift_bar", true, liveGiftScrawlModel.isMp4, false, 0L, this.f10822c.getString("defined_rank_name", ""), "", false);
+            EventTrackLive.a(LiveProtos.Event.LIVE_GIFT_PAGE_SEND_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), LiveRoomManager.a().p().liveFrom, LiveRoomManager.a().p().recommendType, LiveRoomManager.a().p().livePosition, liveGiftScrawlModel.goods_id, liveGiftScrawlModel.getPath().size(), (int) (liveGiftScrawlModel.beans * liveGiftScrawlModel.getPath().size()), liveGiftScrawlModel.packageTypeName, liveGiftScrawlModel.pageIndex + 1, liveGiftScrawlModel.positionInPage + 1, this.c.getBoolean("isHit"), this.c.getBoolean("isPking"), this.c.getBoolean("isMakeLover") ? LiveProtos.LiveType.BLIND_DATING_LIVE : LiveProtos.LiveType.SHOW_LIVE, "gift_bar", true, liveGiftScrawlModel.isMp4, false, 0L, this.c.getString("defined_rank_name", ""), "", false);
         }
         if (this.e != null && !this.e.isShowing()) {
             this.e.show();
@@ -545,7 +538,7 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
 
     /* renamed from: a */
     public void b(List<LiveGiftModel> list) {
-        String string = this.f10822c.getString("selected_index");
+        String string = this.c.getString("selected_index");
         boolean z = false;
         int i = 0;
         for (int i2 = 0; i2 < list.size(); i2++) {
@@ -597,7 +590,7 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void e() {
         this.k = (LiveGiftScrawlPaintView) this.b.findViewById(R.id.live_gift_scrawl_paint_view);
-        this.l = (RecyclerView) this.b.findViewById(R.id.live_gift_scrawl_rv);
+        this.l = this.b.findViewById(R.id.live_gift_scrawl_rv);
         A();
         this.j = (LiveGiftIndicatorView) this.b.findViewById(R.id.live_gift_scrawl_indicator_view);
         this.o = (TextView) this.b.findViewById(R.id.live_gift_scrawl_price_view);
@@ -706,9 +699,9 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
         this.z.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftScrawlFragment$NmhKkAlSIgW_iuJ4EwsEJ-vyBAQ
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
-                boolean a2;
-                a2 = LiveGiftScrawlFragment.this.a(view, motionEvent);
-                return a2;
+                boolean a;
+                a = LiveGiftScrawlFragment.this.a(view, motionEvent);
+                return a;
             }
         });
         k();
@@ -720,7 +713,6 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
     public void f() {
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 == -1) {
@@ -741,7 +733,7 @@ public class LiveGiftScrawlFragment extends LiveBaseDialogFragment {
         return true;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         a(new Runnable() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveGiftScrawlFragment$CVS8tFVVT59z8v35wkYxyb6iYTg

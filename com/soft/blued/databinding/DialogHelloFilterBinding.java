@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogHelloFilterBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28703a;
+    private final FrameLayout f15013a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28703a;
+        return this.f15013a;
     }
 }

@@ -10,9 +10,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/f/b.class */
 public final class b extends c {
-
-    /* renamed from: a  reason: collision with root package name */
-    com.anythink.basead.e.a f5990a;
+    com.anythink.basead.e.a a;
     private final String k;
 
     public b(Context context, j jVar, String str, boolean z) {
@@ -25,18 +23,18 @@ public final class b extends c {
     }
 
     public final void a(com.anythink.basead.e.a aVar) {
-        this.f5990a = aVar;
+        this.a = aVar;
     }
 
     public final View b() {
         if (a()) {
-            return this.g.g() ? new MraidBannerAdView(this.f5991c, this.d, this.g, this.f5990a) : new SdkBannerAdView(this.f5991c, this.d, this.g, this.f5990a);
+            return this.g.g() ? new MraidBannerAdView(this.c, this.d, this.g, this.a) : new SdkBannerAdView(this.c, this.d, this.g, this.a);
         }
         return null;
     }
 
     @Override // com.anythink.basead.f.c
     public final void c() {
-        this.f5990a = null;
+        this.a = null;
     }
 }

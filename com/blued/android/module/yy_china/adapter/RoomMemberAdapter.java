@@ -24,25 +24,21 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/RoomMemberAdapter.class */
 public class RoomMemberAdapter extends BaseQuickAdapter<YYAudienceModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f16146a;
+    private BaseYYStudioFragment a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private OnItemClickRoomMemberListener f16147c;
+    private OnItemClickRoomMemberListener c;
     private YYRoomModel d;
 
     public RoomMemberAdapter(BaseYYStudioFragment baseYYStudioFragment, int i) {
         super(R.layout.item_yy_room_member_layout, new ArrayList());
         this.mContext = baseYYStudioFragment.getContext();
         this.b = i;
-        this.f16146a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         this.d = YYRoomInfoManager.e().b();
     }
 
     private void a(YYAudienceModel yYAudienceModel, TextView textView, ImageView imageView, TextView textView2) {
-        ImageLoader.a(this.f16146a.getFragmentActive(), yYAudienceModel.getAvatar()).b(R.drawable.user_bg_round).a(imageView);
+        ImageLoader.a(this.a.getFragmentActive(), yYAudienceModel.getAvatar()).b(R.drawable.user_bg_round).a(imageView);
         textView.setText(yYAudienceModel.getName());
         if (TextUtils.equals(yYAudienceModel.getUid(), YYRoomInfoManager.e().k())) {
             textView2.setText(this.mContext.getResources().getString(R.string.yy_msg_self));
@@ -90,7 +86,7 @@ public class RoomMemberAdapter extends BaseQuickAdapter<YYAudienceModel, BaseVie
             if (i2 >= getData().size()) {
                 return -1;
             }
-            if (TextUtils.equals(str, getData().get(i2).getUid())) {
+            if (TextUtils.equals(str, ((YYAudienceModel) getData().get(i2)).getUid())) {
                 return i2;
             }
             i = i2 + 1;
@@ -98,11 +94,10 @@ public class RoomMemberAdapter extends BaseQuickAdapter<YYAudienceModel, BaseVie
     }
 
     public void a(OnItemClickRoomMemberListener onItemClickRoomMemberListener) {
-        this.f16147c = onItemClickRoomMemberListener;
+        this.c = onItemClickRoomMemberListener;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final YYAudienceModel yYAudienceModel) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_member_view);
@@ -134,8 +129,8 @@ public class RoomMemberAdapter extends BaseQuickAdapter<YYAudienceModel, BaseVie
         } else if (YYRoomInfoManager.e().g(yYAudienceModel.getUid())) {
             a(yYAudienceModel, textView, imageView, textView2);
         } else {
-            ImageLoader.a(this.f16146a.getFragmentActive(), R.drawable.icon_user_mask_with_text).b(R.drawable.user_bg_round).a(imageView);
-            textView.setText(this.f16146a.getResources().getString(R.string.masked_user_name));
+            ImageLoader.a(this.a.getFragmentActive(), R.drawable.icon_user_mask_with_text).b(R.drawable.user_bg_round).a(imageView);
+            textView.setText(this.a.getResources().getString(R.string.masked_user_name));
             textView2.setVisibility(8);
             shapeTextView.setVisibility(8);
         }
@@ -157,8 +152,8 @@ public class RoomMemberAdapter extends BaseQuickAdapter<YYAudienceModel, BaseVie
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (RoomMemberAdapter.this.f16147c != null) {
-                    RoomMemberAdapter.this.f16147c.a(yYAudienceModel, baseViewHolder.getAdapterPosition());
+                if (RoomMemberAdapter.this.c != null) {
+                    RoomMemberAdapter.this.c.a(yYAudienceModel, baseViewHolder.getAdapterPosition());
                 }
             }
         });
@@ -170,8 +165,8 @@ public class RoomMemberAdapter extends BaseQuickAdapter<YYAudienceModel, BaseVie
                 if (b != null) {
                     EventTrackYY.a(ChatRoomProtos.Event.CHAT_ROOM_INVITE_CLICK, b.room_id, b.uid, yYAudienceModel.getUid());
                 }
-                if (RoomMemberAdapter.this.f16147c != null) {
-                    RoomMemberAdapter.this.f16147c.b(yYAudienceModel, baseViewHolder.getAdapterPosition());
+                if (RoomMemberAdapter.this.c != null) {
+                    RoomMemberAdapter.this.c.b(yYAudienceModel, baseViewHolder.getAdapterPosition());
                 }
             }
         });
@@ -181,8 +176,8 @@ public class RoomMemberAdapter extends BaseQuickAdapter<YYAudienceModel, BaseVie
                 Tracker.onClick(view);
                 YYRoomModel b = YYRoomInfoManager.e().b();
                 boolean isExistById = b != null ? b.isExistById(yYAudienceModel.getUid()) : false;
-                if (YYRoomInfoManager.e().f17578a != null) {
-                    RoomMemberAdapter.this.f16146a.a(yYAudienceModel.getUid(), yYAudienceModel.getName(), yYAudienceModel.getAvatar(), YYRoomInfoManager.e().f17578a.chat_anchor, isExistById);
+                if (YYRoomInfoManager.e().a != null) {
+                    RoomMemberAdapter.this.a.a(yYAudienceModel.getUid(), yYAudienceModel.getName(), yYAudienceModel.getAvatar(), YYRoomInfoManager.e().a.chat_anchor, isExistById);
                 }
             }
         });

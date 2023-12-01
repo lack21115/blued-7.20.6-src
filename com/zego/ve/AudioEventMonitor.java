@@ -20,6 +20,7 @@ import android.os.Looper;
 import android.provider.MediaStore;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import com.igexin.push.config.c;
 import java.lang.reflect.Method;
 import java.util.List;
@@ -195,7 +196,7 @@ public class AudioEventMonitor extends BroadcastReceiver {
         this._audioFocusChangeListener = onAudioFocusChangeListener;
         try {
             int requestAudioFocus = this._audioManager.requestAudioFocus(onAudioFocusChangeListener, 0, 1);
-            String str = requestAudioFocus != 0 ? requestAudioFocus != 1 ? requestAudioFocus != 2 ? "UNKNOWN" : "DELAYED" : "GRANTED" : "FAILED";
+            String str = requestAudioFocus != 0 ? requestAudioFocus != 1 ? requestAudioFocus != 2 ? GrsBaseInfo.CountryCodeSource.UNKNOWN : "DELAYED" : "GRANTED" : "FAILED";
             Log.i("device", "trace request audio focus status: " + requestAudioFocus + "(" + str + ")");
         } catch (Throwable th) {
             Log.e("device", "trace request audio focus failed, " + th.getMessage());

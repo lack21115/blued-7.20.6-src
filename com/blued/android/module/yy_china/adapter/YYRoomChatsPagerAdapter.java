@@ -7,6 +7,7 @@ import com.blued.android.module.yy_china.fragment.YYChatRoomItemFragment;
 import com.blued.android.module.yy_china.fragment.YYHomeMineFragment;
 import com.blued.android.module.yy_china.listener.OnCLickRoomItemToGoRoomListener;
 import com.blued.android.module.yy_china.model.HomeThemeModel;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import com.blued.android.module.yy_china.model.YYRoomExtraModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +15,14 @@ import java.util.List;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYRoomChatsPagerAdapter.class */
 public class YYRoomChatsPagerAdapter extends BaseFragmentPagerAdapter {
     private List<HomeThemeModel> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f16228c;
+    private String c;
     private OnCLickRoomItemToGoRoomListener d;
     private YYRoomExtraModel e;
 
     public YYRoomChatsPagerAdapter(FragmentManager fragmentManager, String str, OnCLickRoomItemToGoRoomListener onCLickRoomItemToGoRoomListener) {
         super(fragmentManager, 1);
         this.b = new ArrayList();
-        this.f16228c = str;
+        this.c = str;
         this.d = onCLickRoomItemToGoRoomListener;
     }
 
@@ -52,7 +51,7 @@ public class YYRoomChatsPagerAdapter extends BaseFragmentPagerAdapter {
     }
 
     public void b() {
-        this.f16113a = new ArrayList();
+        this.a = new ArrayList();
     }
 
     public void b(List<HomeThemeModel> list) {
@@ -61,10 +60,10 @@ public class YYRoomChatsPagerAdapter extends BaseFragmentPagerAdapter {
             for (HomeThemeModel homeThemeModel : this.b) {
                 Bundle bundle = new Bundle();
                 bundle.putString("room_type", homeThemeModel.getId() + "");
-                bundle.putString("from_source", this.f16228c);
+                bundle.putString("from_source", this.c);
                 String str = homeThemeModel.getId() + "";
                 boolean z = true;
-                if (str.hashCode() == 1444 && str.equals("-1")) {
+                if (str.hashCode() == 1444 && str.equals(YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID)) {
                     z = false;
                 }
                 if (z) {
@@ -84,7 +83,6 @@ public class YYRoomChatsPagerAdapter extends BaseFragmentPagerAdapter {
         }
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     public CharSequence getPageTitle(int i) {
         return this.b.get(i).getName();
     }

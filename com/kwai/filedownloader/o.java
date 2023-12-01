@@ -8,8 +8,9 @@ import com.kwai.filedownloader.services.e;
 import java.util.ArrayList;
 import java.util.List;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/o.class */
-final class o implements e.a, u {
+public final class o implements e.a, u {
     private static Class<?> aFY;
     private final ArrayList<Runnable> aFZ = new ArrayList<>();
     private com.kwai.filedownloader.services.e aGa;

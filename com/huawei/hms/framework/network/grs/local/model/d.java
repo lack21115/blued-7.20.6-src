@@ -6,7 +6,7 @@ import java.util.Map;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22731a;
+    private String f9123a;
     private Map<String, String> b;
 
     public Map<String, String> a() {
@@ -14,7 +14,7 @@ public class d {
     }
 
     public void a(String str) {
-        this.f22731a = str;
+        this.f9123a = str;
     }
 
     public void a(Map<String, String> map) {
@@ -22,6 +22,6 @@ public class d {
     }
 
     public String b() {
-        return this.f22731a;
+        return this.f9123a;
     }
 }

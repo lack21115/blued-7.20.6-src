@@ -11,12 +11,12 @@ import java.util.ArrayList;
 class RawDocumentFile extends DocumentFile {
 
     /* renamed from: a  reason: collision with root package name */
-    private File f2778a;
+    private File f2730a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public RawDocumentFile(DocumentFile documentFile, File file) {
         super(documentFile);
-        this.f2778a = file;
+        this.f2730a = file;
     }
 
     private static String a(String str) {
@@ -59,17 +59,17 @@ class RawDocumentFile extends DocumentFile {
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean canRead() {
-        return this.f2778a.canRead();
+        return this.f2730a.canRead();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean canWrite() {
-        return this.f2778a.canWrite();
+        return this.f2730a.canWrite();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public DocumentFile createDirectory(String str) {
-        File file = new File(this.f2778a, str);
+        File file = new File(this.f2730a, str);
         if (file.isDirectory() || file.mkdir()) {
             return new RawDocumentFile(this, file);
         }
@@ -83,7 +83,7 @@ class RawDocumentFile extends DocumentFile {
         if (extensionFromMimeType != null) {
             str3 = str2 + "." + extensionFromMimeType;
         }
-        File file = new File(this.f2778a, str3);
+        File file = new File(this.f2730a, str3);
         try {
             file.createNewFile();
             return new RawDocumentFile(this, file);
@@ -95,41 +95,41 @@ class RawDocumentFile extends DocumentFile {
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean delete() {
-        a(this.f2778a);
-        return this.f2778a.delete();
+        a(this.f2730a);
+        return this.f2730a.delete();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean exists() {
-        return this.f2778a.exists();
+        return this.f2730a.exists();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public String getName() {
-        return this.f2778a.getName();
+        return this.f2730a.getName();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public String getType() {
-        if (this.f2778a.isDirectory()) {
+        if (this.f2730a.isDirectory()) {
             return null;
         }
-        return a(this.f2778a.getName());
+        return a(this.f2730a.getName());
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public Uri getUri() {
-        return Uri.fromFile(this.f2778a);
+        return Uri.fromFile(this.f2730a);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean isDirectory() {
-        return this.f2778a.isDirectory();
+        return this.f2730a.isDirectory();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean isFile() {
-        return this.f2778a.isFile();
+        return this.f2730a.isFile();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
@@ -139,18 +139,18 @@ class RawDocumentFile extends DocumentFile {
 
     @Override // androidx.documentfile.provider.DocumentFile
     public long lastModified() {
-        return this.f2778a.lastModified();
+        return this.f2730a.lastModified();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public long length() {
-        return this.f2778a.length();
+        return this.f2730a.length();
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public DocumentFile[] listFiles() {
         ArrayList arrayList = new ArrayList();
-        File[] listFiles = this.f2778a.listFiles();
+        File[] listFiles = this.f2730a.listFiles();
         if (listFiles != null) {
             int length = listFiles.length;
             int i = 0;
@@ -168,9 +168,9 @@ class RawDocumentFile extends DocumentFile {
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean renameTo(String str) {
-        File file = new File(this.f2778a.getParentFile(), str);
-        if (this.f2778a.renameTo(file)) {
-            this.f2778a = file;
+        File file = new File(this.f2730a.getParentFile(), str);
+        if (this.f2730a.renameTo(file)) {
+            this.f2730a = file;
             return true;
         }
         return false;

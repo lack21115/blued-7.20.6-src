@@ -51,7 +51,7 @@ public class b implements n, t {
     private static final String D = "umsp_5";
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f40601a;
+    private static Context f26910a;
     private static final String h = "sp_uapp";
     private static final String i = "prepp_uapp";
     private static final int o = 128;
@@ -64,7 +64,7 @@ public class b implements n, t {
     private ISysListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private p f40602c;
+    private p f26911c;
     private v d;
     private k e;
     private u f;
@@ -85,7 +85,7 @@ public class b implements n, t {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final b f40603a = new b();
+        private static final b f26912a = new b();
 
         private a() {
         }
@@ -94,12 +94,12 @@ public class b implements n, t {
     static {
         Context appContext = UMGlobalContext.getAppContext();
         if (appContext != null) {
-            f40601a = appContext.getApplicationContext();
+            f26910a = appContext.getApplicationContext();
         }
     }
 
     private b() {
-        this.f40602c = new p();
+        this.f26911c = new p();
         this.d = new v();
         this.e = new k();
         this.f = u.a();
@@ -112,11 +112,11 @@ public class b implements n, t {
         this.u = null;
         this.x = null;
         this.y = null;
-        this.f40602c.a(this);
+        this.f26911c.a(this);
     }
 
     public static b a() {
-        return a.f40603a;
+        return a.f26912a;
     }
 
     private void a(Context context, String str, Map<String, Object> map, long j, boolean z2) {
@@ -125,11 +125,11 @@ public class b implements n, t {
                 MLog.e("context is null in onEventNoCheck, please check!");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (c(str)) {
                 UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> filter ekv [" + str + "].");
@@ -141,7 +141,7 @@ public class b implements n, t {
             } else {
                 str2 = this.k.toString();
             }
-            s.a(f40601a).a(str, map, j, str2, z2);
+            s.a(f26910a).a(str, map, j, str2, z2);
         } catch (Throwable th) {
             if (MLog.DEBUG) {
                 MLog.e(th);
@@ -315,8 +315,8 @@ public class b implements n, t {
                 MLog.e("unexpected null context in getNativeSuperProperties");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
             SharedPreferences sharedPreferences = PreferenceWrapper.getDefault(context);
             if (this.k == null) {
@@ -341,7 +341,7 @@ public class b implements n, t {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(double d, double d2) {
-        Context context = f40601a;
+        Context context = f26910a;
         if (context == null) {
             return;
         }
@@ -349,16 +349,16 @@ public class b implements n, t {
             MLog.e("setLocation can not be called in child process");
             return;
         }
-        if (AnalyticsConfig.f40591a == null) {
-            AnalyticsConfig.f40591a = new double[2];
+        if (AnalyticsConfig.f26900a == null) {
+            AnalyticsConfig.f26900a = new double[2];
         }
-        AnalyticsConfig.f40591a[0] = d;
-        AnalyticsConfig.f40591a[1] = d2;
+        AnalyticsConfig.f26900a[0] = d;
+        AnalyticsConfig.f26900a[1] = d2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(long j) {
-        Context context = f40601a;
+        Context context = f26910a;
         if (context == null) {
             return;
         }
@@ -375,23 +375,23 @@ public class b implements n, t {
             return;
         }
         try {
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
             if (this.u == null) {
                 com.umeng.analytics.filter.a aVar = new com.umeng.analytics.filter.a(s, "ekv_bl_ver");
                 this.u = aVar;
-                aVar.register(f40601a);
+                aVar.register(f26910a);
             }
             if (this.x == null) {
                 com.umeng.analytics.filter.b bVar = new com.umeng.analytics.filter.b(v, "ekv_wl_ver");
                 this.x = bVar;
-                bVar.register(f40601a);
+                bVar.register(f26910a);
             }
-            if (UMUtils.isMainProgress(f40601a)) {
+            if (UMUtils.isMainProgress(f26910a)) {
                 if (!this.j) {
                     this.j = true;
-                    i(f40601a);
+                    i(f26910a);
                 }
                 if (Build.VERSION.SDK_INT > 13) {
                     synchronized (this) {
@@ -415,7 +415,7 @@ public class b implements n, t {
                 if (UMConfigure.isDebugLog()) {
                     UMLog.mutlInfo(j.B, 3, "", null, null);
                 }
-                UMWorkDispatch.registerConnStateObserver(CoreProtocol.getInstance(f40601a));
+                UMWorkDispatch.registerConnStateObserver(CoreProtocol.getInstance(f26910a));
             }
         } catch (Throwable th2) {
         }
@@ -426,17 +426,17 @@ public class b implements n, t {
             MLog.e("unexpected null context in setVerticalType");
             return;
         }
-        if (f40601a == null) {
-            f40601a = context.getApplicationContext();
+        if (f26910a == null) {
+            f26910a = context.getApplicationContext();
         }
-        if (!UMUtils.isMainProgress(f40601a)) {
+        if (!UMUtils.isMainProgress(f26910a)) {
             MLog.e("setVerticalType can not be called in child process");
             return;
         }
         if (!this.j || !this.n) {
-            a(f40601a);
+            a(f26910a);
         }
-        AnalyticsConfig.a(f40601a, i2);
+        AnalyticsConfig.a(f26910a, i2);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -445,20 +445,20 @@ public class b implements n, t {
             MLog.e("unexpected null context in setScenarioType");
             return;
         }
-        if (f40601a == null) {
-            f40601a = context.getApplicationContext();
+        if (f26910a == null) {
+            f26910a = context.getApplicationContext();
         }
-        if (!UMUtils.isMainProgress(f40601a)) {
+        if (!UMUtils.isMainProgress(f26910a)) {
             MLog.e("setScenarioType can not be called in child process");
             return;
         }
         if (eScenarioType != null) {
-            a(f40601a, eScenarioType.toValue());
+            a(f26910a, eScenarioType.toValue());
         }
         if (this.j && this.n) {
             return;
         }
-        a(f40601a);
+        a(f26910a);
     }
 
     void a(Context context, String str) {
@@ -466,10 +466,10 @@ public class b implements n, t {
             UMLog.aq(j.w, 0, "\\|");
             return;
         }
-        if (f40601a == null) {
-            f40601a = context.getApplicationContext();
+        if (f26910a == null) {
+            f26910a = context.getApplicationContext();
         }
-        if (!UMUtils.isMainProgress(f40601a)) {
+        if (!UMUtils.isMainProgress(f26910a)) {
             MLog.e("reportError can not be called in child process");
         } else if (TextUtils.isEmpty(str)) {
             if (UMConfigure.isDebugLog()) {
@@ -478,14 +478,14 @@ public class b implements n, t {
         } else {
             try {
                 if (!this.j || !this.n) {
-                    a(f40601a);
+                    a(f26910a);
                 }
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("ts", System.currentTimeMillis());
                 jSONObject.put(d.Q, 2);
                 jSONObject.put("context", str);
                 jSONObject.put("__ii", this.f.c());
-                UMWorkDispatch.sendEvent(f40601a, 4106, CoreProtocol.getInstance(f40601a), jSONObject);
+                UMWorkDispatch.sendEvent(f26910a, 4106, CoreProtocol.getInstance(f26910a), jSONObject);
             } catch (Throwable th) {
                 if (MLog.DEBUG) {
                     MLog.e(th);
@@ -500,15 +500,15 @@ public class b implements n, t {
                 UMLog.aq(j.af, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("registerSuperProperty can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (TextUtils.isEmpty(str) || obj == null) {
                 UMLog.aq(j.ag, 0, "\\|");
@@ -633,7 +633,7 @@ public class b implements n, t {
                     }
                 } catch (Throwable th) {
                 }
-                UMWorkDispatch.sendEvent(f40601a, 8195, CoreProtocol.getInstance(f40601a), this.k.toString());
+                UMWorkDispatch.sendEvent(f26910a, 8195, CoreProtocol.getInstance(f26910a), this.k.toString());
             }
         }
     }
@@ -643,11 +643,11 @@ public class b implements n, t {
             return;
         }
         try {
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (c(str)) {
                 UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> filter ekv [" + str + "].");
@@ -659,7 +659,7 @@ public class b implements n, t {
             } else {
                 str3 = this.k.toString();
             }
-            s.a(f40601a).a(str, str2, j, i2, str3);
+            s.a(f26910a).a(str, str2, j, i2, str3);
         } catch (Throwable th) {
             if (MLog.DEBUG) {
                 MLog.e(th);
@@ -672,15 +672,15 @@ public class b implements n, t {
             return;
         }
         try {
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onGKVEvent can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             String str2 = "";
             if (this.k == null) {
@@ -688,7 +688,7 @@ public class b implements n, t {
             } else {
                 str2 = this.k.toString();
             }
-            s.a(f40601a).a(str, hashMap, str2);
+            s.a(f26910a).a(str, hashMap, str2);
         } catch (Throwable th) {
             if (MLog.DEBUG) {
                 MLog.e(th);
@@ -709,7 +709,7 @@ public class b implements n, t {
             }
         }
         if (TextUtils.isEmpty(str)) {
-            UMLog.aq(j.f40757c, 0, "\\|");
+            UMLog.aq(j.f27066c, 0, "\\|");
         } else if (Arrays.asList(d.aF).contains(str)) {
             UMLog.aq(j.b, 0, "\\|");
         } else if (map.isEmpty()) {
@@ -731,18 +731,18 @@ public class b implements n, t {
             UMLog.aq(j.y, 0, "\\|");
             return;
         }
-        if (f40601a == null) {
-            f40601a = context.getApplicationContext();
+        if (f26910a == null) {
+            f26910a = context.getApplicationContext();
         }
-        if (!UMUtils.isMainProgress(f40601a)) {
+        if (!UMUtils.isMainProgress(f26910a)) {
             MLog.e("reportError can not be called in child process");
             return;
         }
         try {
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
-            a(f40601a, DataHelper.convertExceptionToString(th));
+            a(f26910a, DataHelper.convertExceptionToString(th));
         } catch (Exception e) {
             if (MLog.DEBUG) {
                 MLog.e(e);
@@ -760,17 +760,17 @@ public class b implements n, t {
                 UMLog.aq(j.aj, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("setFirstLaunchEvent can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
-            s.a(f40601a).a(list);
+            s.a(f26910a).a(list);
         }
     }
 
@@ -782,15 +782,15 @@ public class b implements n, t {
                 UMLog.aq(j.al, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("registerPreProperties can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (this.m == null) {
                 this.m = new JSONObject();
@@ -830,13 +830,13 @@ public class b implements n, t {
             }
             this.m = jSONObject3;
             if (this.m.length() > 0) {
-                UMWorkDispatch.sendEvent(f40601a, 8199, CoreProtocol.getInstance(f40601a), this.m.toString());
+                UMWorkDispatch.sendEvent(f26910a, 8199, CoreProtocol.getInstance(f26910a), this.m.toString());
             }
         }
     }
 
     public void a(ISysListener iSysListener) {
-        if (UMUtils.isMainProgress(f40601a)) {
+        if (UMUtils.isMainProgress(f26910a)) {
             this.b = iSysListener;
         } else {
             MLog.e("setSysListener can not be called in child process");
@@ -845,16 +845,16 @@ public class b implements n, t {
 
     public void a(Object obj) {
         synchronized (this) {
-            if (f40601a == null) {
+            if (f26910a == null) {
                 return;
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("registerSuperPropertyByCoreProtocol can not be called in child process");
                 return;
             }
             if (obj != null) {
                 String str = (String) obj;
-                SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f40601a).edit();
+                SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f26910a).edit();
                 if (edit != null && !TextUtils.isEmpty(str)) {
                     edit.putString(h, this.k.toString()).commit();
                 }
@@ -864,7 +864,7 @@ public class b implements n, t {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(String str) {
-        if (!UMUtils.isMainProgress(f40601a)) {
+        if (!UMUtils.isMainProgress(f26910a)) {
             MLog.e("onPageStart can not be called in child process");
             return;
         }
@@ -879,10 +879,10 @@ public class b implements n, t {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(String str, String str2) {
         try {
-            if (f40601a == null) {
+            if (f26910a == null) {
                 return;
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onProfileSignIn can not be called in child process");
                 return;
             }
@@ -891,8 +891,8 @@ public class b implements n, t {
             jSONObject.put(d.M, str);
             jSONObject.put("uid", str2);
             jSONObject.put("ts", currentTimeMillis);
-            UMWorkDispatch.sendEvent(f40601a, 4101, CoreProtocol.getInstance(f40601a), jSONObject);
-            UMWorkDispatch.sendEvent(f40601a, o.a.o, CoreProtocol.getInstance(f40601a), jSONObject);
+            UMWorkDispatch.sendEvent(f26910a, 4101, CoreProtocol.getInstance(f26910a), jSONObject);
+            UMWorkDispatch.sendEvent(f26910a, o.a.o, CoreProtocol.getInstance(f26910a), jSONObject);
         } catch (Throwable th) {
             if (MLog.DEBUG) {
                 MLog.e(" Excepthon  in  onProfileSignIn", th);
@@ -903,16 +903,16 @@ public class b implements n, t {
     @Override // com.umeng.analytics.pro.t
     public void a(Throwable th) {
         try {
-            if (f40601a == null) {
+            if (f26910a == null) {
                 return;
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onAppCrash can not be called in child process");
             } else if (AnalyticsConfig.enable) {
                 if (this.d != null) {
                     this.d.b();
                 }
-                l.a(f40601a, "onAppCrash");
+                l.a(f26910a, "onAppCrash");
                 if (this.e != null) {
                     this.e.b();
                 }
@@ -920,21 +920,21 @@ public class b implements n, t {
                     this.g.c();
                 }
                 if (this.f != null) {
-                    this.f.c(f40601a, Long.valueOf(System.currentTimeMillis()));
+                    this.f.c(f26910a, Long.valueOf(System.currentTimeMillis()));
                 }
                 if (th != null) {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("ts", System.currentTimeMillis());
                     jSONObject.put(d.Q, 1);
                     jSONObject.put("context", DataHelper.convertExceptionToString(th));
-                    i.a(f40601a).a(this.f.c(), jSONObject.toString(), 1);
+                    i.a(f26910a).a(this.f.c(), jSONObject.toString(), 1);
                 }
-                o.a(f40601a).d();
-                v.a(f40601a);
+                o.a(f26910a).d();
+                v.a(f26910a);
                 if (UMConfigure.AUTO_ACTIVITY_PAGE_COLLECTION == MobclickAgent.PageMode.AUTO) {
-                    l.c(f40601a);
+                    l.c(f26910a);
                 }
-                PreferenceWrapper.getDefault(f40601a).edit().commit();
+                PreferenceWrapper.getDefault(f26910a).edit().commit();
             }
         } catch (Exception e) {
             if (MLog.DEBUG) {
@@ -954,7 +954,7 @@ public class b implements n, t {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(boolean z2) {
-        Context context = f40601a;
+        Context context = f26910a;
         if (context == null) {
             return;
         }
@@ -976,10 +976,10 @@ public class b implements n, t {
             MLog.e("unexpected null context in onResume");
         } else if (UMConfigure.AUTO_ACTIVITY_PAGE_COLLECTION == MobclickAgent.PageMode.AUTO) {
         } else {
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onResume can not be called in child process");
                 return;
             }
@@ -1009,15 +1009,15 @@ public class b implements n, t {
                 UMLog.aq(j.N, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onDeepLinkReceived can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (TextUtils.isEmpty(str)) {
                 UMLog.aq(j.O, 0, "\\|");
@@ -1025,7 +1025,7 @@ public class b implements n, t {
             }
             HashMap hashMap = new HashMap();
             hashMap.put(d.aE, str);
-            a(f40601a, d.aD, (Map<String, Object>) hashMap, -1L, false);
+            a(f26910a, d.aD, (Map<String, Object>) hashMap, -1L, false);
         } catch (Throwable th) {
             if (MLog.DEBUG) {
                 MLog.e(th);
@@ -1035,14 +1035,14 @@ public class b implements n, t {
 
     public void b(Object obj) {
         synchronized (this) {
-            if (f40601a == null) {
+            if (f26910a == null) {
                 return;
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("updateNativePrePropertiesByCoreProtocol can not be called in child process");
                 return;
             }
-            SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f40601a).edit();
+            SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f26910a).edit();
             if (obj != null) {
                 String str = (String) obj;
                 if (edit != null && !TextUtils.isEmpty(str)) {
@@ -1056,7 +1056,7 @@ public class b implements n, t {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(String str) {
-        if (!UMUtils.isMainProgress(f40601a)) {
+        if (!UMUtils.isMainProgress(f26910a)) {
             MLog.e("onPageEnd can not be called in child process");
             return;
         }
@@ -1078,10 +1078,10 @@ public class b implements n, t {
             UMLog.aq(j.p, 0, "\\|");
         } else if (UMConfigure.AUTO_ACTIVITY_PAGE_COLLECTION == MobclickAgent.PageMode.AUTO) {
         } else {
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onPause can not be called in child process");
                 return;
             }
@@ -1113,17 +1113,17 @@ public class b implements n, t {
             UMLog.aq(j.z, 0, "\\|");
             return;
         }
-        if (f40601a == null) {
-            f40601a = context.getApplicationContext();
+        if (f26910a == null) {
+            f26910a = context.getApplicationContext();
         }
-        if (!UMUtils.isMainProgress(f40601a)) {
+        if (!UMUtils.isMainProgress(f26910a)) {
             MLog.e("setSecret can not be called in child process");
             return;
         }
         if (!this.j || !this.n) {
-            a(f40601a);
+            a(f26910a);
         }
-        AnalyticsConfig.a(f40601a, str);
+        AnalyticsConfig.a(f26910a, str);
     }
 
     public JSONObject d() {
@@ -1136,10 +1136,10 @@ public class b implements n, t {
             return;
         }
         try {
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onKillProcess can not be called in child process");
                 return;
             }
@@ -1153,16 +1153,16 @@ public class b implements n, t {
             if (this.d != null) {
                 this.d.b();
             }
-            if (f40601a != null) {
+            if (f26910a != null) {
                 if (this.f != null) {
-                    this.f.c(f40601a, Long.valueOf(System.currentTimeMillis()));
+                    this.f.c(f26910a, Long.valueOf(System.currentTimeMillis()));
                 }
-                o.a(f40601a).d();
-                v.a(f40601a);
+                o.a(f26910a).d();
+                v.a(f26910a);
                 if (UMConfigure.AUTO_ACTIVITY_PAGE_COLLECTION == MobclickAgent.PageMode.AUTO) {
-                    l.c(f40601a);
+                    l.c(f26910a);
                 }
-                PreferenceWrapper.getDefault(f40601a).edit().commit();
+                PreferenceWrapper.getDefault(f26910a).edit().commit();
             }
         } catch (Throwable th) {
         }
@@ -1178,15 +1178,15 @@ public class b implements n, t {
                 UMLog.aq(j.ah, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("unregisterSuperProperty can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (TextUtils.isEmpty(str)) {
                 UMLog.aq(j.ag, 0, "\\|");
@@ -1198,7 +1198,7 @@ public class b implements n, t {
                 }
                 if (this.k.has(str)) {
                     this.k.remove(str);
-                    UMWorkDispatch.sendEvent(f40601a, 8197, CoreProtocol.getInstance(f40601a), str);
+                    UMWorkDispatch.sendEvent(f26910a, 8197, CoreProtocol.getInstance(f26910a), str);
                 }
             }
         }
@@ -1210,10 +1210,10 @@ public class b implements n, t {
                 UMLog.aq(j.ai, 0, "\\|");
                 return null;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("getSuperProperty can not be called in child process");
                 return null;
             } else if (TextUtils.isEmpty(str)) {
@@ -1239,10 +1239,10 @@ public class b implements n, t {
                 UMLog.aq(j.ai, 0, "\\|");
                 return null;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("getSuperProperties can not be called in child process");
                 return null;
             } else if (this.k != null) {
@@ -1259,7 +1259,7 @@ public class b implements n, t {
     }
 
     public String f() {
-        if (UMUtils.isMainProgress(f40601a)) {
+        if (UMUtils.isMainProgress(f26910a)) {
             return q;
         }
         MLog.e("getOnResumedActivityName can not be called in child process");
@@ -1272,18 +1272,18 @@ public class b implements n, t {
                 UMLog.aq(j.ah, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("clearSuperProperties can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             this.k = new JSONObject();
-            UMWorkDispatch.sendEvent(f40601a, 8196, CoreProtocol.getInstance(f40601a), null);
+            UMWorkDispatch.sendEvent(f26910a, 8196, CoreProtocol.getInstance(f26910a), null);
         }
     }
 
@@ -1293,15 +1293,15 @@ public class b implements n, t {
                 UMLog.aq(j.an, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("unregisterPreProperty can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (this.m == null) {
                 this.m = new JSONObject();
@@ -1309,7 +1309,7 @@ public class b implements n, t {
             if (str != null && str.length() > 0) {
                 if (this.m.has(str)) {
                     this.m.remove(str);
-                    UMWorkDispatch.sendEvent(f40601a, 8200, CoreProtocol.getInstance(f40601a), this.m.toString());
+                    UMWorkDispatch.sendEvent(f26910a, 8200, CoreProtocol.getInstance(f26910a), this.m.toString());
                 } else if (UMConfigure.isDebugLog()) {
                     UMLog.aq(j.ao, 0, "\\|");
                 }
@@ -1320,7 +1320,7 @@ public class b implements n, t {
     }
 
     public String g() {
-        if (UMUtils.isMainProgress(f40601a)) {
+        if (UMUtils.isMainProgress(f26910a)) {
             return r;
         }
         MLog.e("getOnPausedActivityName can not be called in child process");
@@ -1333,18 +1333,18 @@ public class b implements n, t {
                 UMLog.aq(j.ap, 0, "\\|");
                 return;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("clearPreProperties can not be called in child process");
                 return;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (this.m.length() > 0) {
-                UMWorkDispatch.sendEvent(f40601a, 8201, CoreProtocol.getInstance(f40601a), null);
+                UMWorkDispatch.sendEvent(f26910a, 8201, CoreProtocol.getInstance(f26910a), null);
             }
             this.m = new JSONObject();
         }
@@ -1356,15 +1356,15 @@ public class b implements n, t {
                 UMLog.aq(j.aq, 0, "\\|");
                 return null;
             }
-            if (f40601a == null) {
-                f40601a = context.getApplicationContext();
+            if (f26910a == null) {
+                f26910a = context.getApplicationContext();
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("getPreProperties can not be called in child process");
                 return null;
             }
             if (!this.j || !this.n) {
-                a(f40601a);
+                a(f26910a);
             }
             if (this.m == null) {
                 this.m = new JSONObject();
@@ -1384,14 +1384,14 @@ public class b implements n, t {
 
     public void h() {
         try {
-            if (f40601a != null) {
-                if (!UMUtils.isMainProgress(f40601a)) {
+            if (f26910a != null) {
+                if (!UMUtils.isMainProgress(f26910a)) {
                     MLog.e("onStartSessionInternal can not be called in child process");
                     return;
                 }
                 long currentTimeMillis = System.currentTimeMillis();
-                UMWorkDispatch.sendEvent(f40601a, 4352, CoreProtocol.getInstance(f40601a), Long.valueOf(currentTimeMillis));
-                UMWorkDispatch.sendEvent(f40601a, 4103, CoreProtocol.getInstance(f40601a), Long.valueOf(currentTimeMillis));
+                UMWorkDispatch.sendEvent(f26910a, 4352, CoreProtocol.getInstance(f26910a), Long.valueOf(currentTimeMillis));
+                UMWorkDispatch.sendEvent(f26910a, 4103, CoreProtocol.getInstance(f26910a), Long.valueOf(currentTimeMillis));
             }
             if (this.b != null) {
                 this.b.onAppResume();
@@ -1402,15 +1402,15 @@ public class b implements n, t {
 
     public void i() {
         try {
-            if (f40601a != null) {
-                if (!UMUtils.isMainProgress(f40601a)) {
+            if (f26910a != null) {
+                if (!UMUtils.isMainProgress(f26910a)) {
                     MLog.e("onEndSessionInternal can not be called in child process");
                     return;
                 }
-                UMWorkDispatch.sendEvent(f40601a, o.a.h, CoreProtocol.getInstance(f40601a), Long.valueOf(System.currentTimeMillis()));
-                UMWorkDispatch.sendEvent(f40601a, 4100, CoreProtocol.getInstance(f40601a), null);
-                UMWorkDispatch.sendEvent(f40601a, 4099, CoreProtocol.getInstance(f40601a), null);
-                UMWorkDispatch.sendEvent(f40601a, 4105, CoreProtocol.getInstance(f40601a), null);
+                UMWorkDispatch.sendEvent(f26910a, o.a.h, CoreProtocol.getInstance(f26910a), Long.valueOf(System.currentTimeMillis()));
+                UMWorkDispatch.sendEvent(f26910a, 4100, CoreProtocol.getInstance(f26910a), null);
+                UMWorkDispatch.sendEvent(f26910a, 4099, CoreProtocol.getInstance(f26910a), null);
+                UMWorkDispatch.sendEvent(f26910a, 4105, CoreProtocol.getInstance(f26910a), null);
             }
         } catch (Throwable th) {
         }
@@ -1423,18 +1423,18 @@ public class b implements n, t {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void j() {
         try {
-            if (f40601a == null) {
+            if (f26910a == null) {
                 return;
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("onProfileSignOff can not be called in child process");
                 return;
             }
             long currentTimeMillis = System.currentTimeMillis();
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("ts", currentTimeMillis);
-            UMWorkDispatch.sendEvent(f40601a, 4102, CoreProtocol.getInstance(f40601a), jSONObject);
-            UMWorkDispatch.sendEvent(f40601a, o.a.o, CoreProtocol.getInstance(f40601a), jSONObject);
+            UMWorkDispatch.sendEvent(f26910a, 4102, CoreProtocol.getInstance(f26910a), jSONObject);
+            UMWorkDispatch.sendEvent(f26910a, o.a.o, CoreProtocol.getInstance(f26910a), jSONObject);
         } catch (Throwable th) {
             if (MLog.DEBUG) {
                 MLog.e(" Excepthon  in  onProfileSignOff", th);
@@ -1444,15 +1444,15 @@ public class b implements n, t {
 
     public void k() {
         synchronized (this) {
-            if (f40601a == null) {
+            if (f26910a == null) {
                 return;
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("unregisterSuperPropertyByCoreProtocol can not be called in child process");
                 return;
             }
             if (this.k != null) {
-                SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f40601a).edit();
+                SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f26910a).edit();
                 edit.putString(h, this.k.toString());
                 edit.commit();
             } else {
@@ -1463,10 +1463,10 @@ public class b implements n, t {
 
     public JSONObject l() {
         synchronized (this) {
-            if (f40601a == null) {
+            if (f26910a == null) {
                 return null;
             }
-            if (!UMUtils.isMainProgress(f40601a)) {
+            if (!UMUtils.isMainProgress(f26910a)) {
                 MLog.e("getSuperPropertiesJSONObject can not be called in child process");
                 return null;
             }
@@ -1480,12 +1480,12 @@ public class b implements n, t {
     public void m() {
         synchronized (this) {
             try {
-                if (f40601a != null) {
-                    if (!UMUtils.isMainProgress(f40601a)) {
+                if (f26910a != null) {
+                    if (!UMUtils.isMainProgress(f26910a)) {
                         MLog.e("clearSuperPropertiesByCoreProtocol can not be called in child process");
                         return;
                     }
-                    SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f40601a).edit();
+                    SharedPreferences.Editor edit = PreferenceWrapper.getDefault(f26910a).edit();
                     edit.remove(h);
                     edit.commit();
                 }
@@ -1503,7 +1503,7 @@ public class b implements n, t {
             } else if (UMWorkDispatch.eventHasExist(8210)) {
             } else {
                 UMRTLog.i(UMRTLog.RTLOG_TAG, "--->>> 退出时发送策略 被触发！");
-                Context context = f40601a;
+                Context context = f26910a;
                 UMWorkDispatch.sendEvent(context, 8210, CoreProtocol.getInstance(context), null);
             }
         }

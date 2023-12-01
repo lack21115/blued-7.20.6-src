@@ -6,6 +6,7 @@ import com.kwad.sdk.service.ServiceProvider;
 import com.kwad.sdk.service.kwai.h;
 import com.kwad.sdk.utils.q;
 import com.kwai.filedownloader.e.c;
+import java.io.Closeable;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
@@ -72,7 +73,7 @@ public final class f implements com.kwai.filedownloader.kwai.b {
     }
 
     private static OkHttpClient.Builder Z() {
-        return new OkHttpClient.Builder().connectTimeout(10000L, TimeUnit.MILLISECONDS).addInterceptor(new com.ksad.download.a.a()).protocols(Util.a(Protocol.HTTP_1_1)).readTimeout(0L, TimeUnit.MILLISECONDS).connectionPool(new ConnectionPool(6, 60000L, TimeUnit.MILLISECONDS)).retryOnConnectionFailure(true);
+        return new OkHttpClient.Builder().connectTimeout(10000L, TimeUnit.MILLISECONDS).addInterceptor(new com.ksad.download.a.a()).protocols(Util.a(new Protocol[]{Protocol.HTTP_1_1})).readTimeout(0L, TimeUnit.MILLISECONDS).connectionPool(new ConnectionPool(6, 60000L, TimeUnit.MILLISECONDS)).retryOnConnectionFailure(true);
     }
 
     static /* synthetic */ OkHttpClient.Builder aa() {
@@ -128,7 +129,7 @@ public final class f implements com.kwai.filedownloader.kwai.b {
         this.bA = null;
         Response response = this.bB;
         if (response != null && response.body() != null) {
-            com.kwad.sdk.crash.utils.b.closeQuietly(this.bB.body());
+            com.kwad.sdk.crash.utils.b.closeQuietly((Closeable) this.bB.body());
         }
         this.bB = null;
     }
@@ -179,8 +180,8 @@ public final class f implements com.kwai.filedownloader.kwai.b {
             str2 = "";
         }
         if (TextUtils.isEmpty(com.kwai.filedownloader.e.f.fC(this.bB.header(str)))) {
-            List<String> pathSegments = this.bB.request().url().pathSegments();
-            str2 = pathSegments.get(pathSegments.size() - 1);
+            List pathSegments = this.bB.request().url().pathSegments();
+            str2 = (String) pathSegments.get(pathSegments.size() - 1);
             return "attachment; filename=\"" + p(str2) + "\"";
         }
         return this.bB.header(str);

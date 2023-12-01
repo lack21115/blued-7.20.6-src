@@ -3,7 +3,7 @@ package com.autonavi.aps.amapapi.restruct;
 import android.content.Context;
 import android.os.Handler;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.ht;
+import com.amap.api.col.3sl.ht;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -18,19 +18,19 @@ import java.util.concurrent.ConcurrentHashMap;
 public abstract class a<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f9238a;
+    public String f6398a;
     private File b;
     private Handler e;
     private String f;
     private boolean g;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f9239c = false;
-    private Map<String, C0190a> d = new ConcurrentHashMap();
+    private boolean f6399c = false;
+    private Map<String, C0119a> d = new ConcurrentHashMap();
     private Runnable h = new Runnable() { // from class: com.autonavi.aps.amapapi.restruct.a.2
         @Override // java.lang.Runnable
         public final void run() {
-            if (a.this.f9239c) {
+            if (a.this.f6399c) {
                 if (a.this.g) {
                     a.this.e();
                     a.e(a.this);
@@ -45,19 +45,19 @@ public abstract class a<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.autonavi.aps.amapapi.restruct.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/autonavi/aps/amapapi/restruct/a$a.class */
-    public static final class C0190a {
+    public static final class C0119a {
 
         /* renamed from: a  reason: collision with root package name */
-        int f9242a;
+        int f6402a;
         long b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f9243c;
+        long f6403c;
 
-        public C0190a(int i, long j, long j2) {
-            this.f9242a = i;
+        public C0119a(int i, long j, long j2) {
+            this.f6402a = i;
             this.b = j;
-            this.f9243c = j2;
+            this.f6403c = j2;
         }
     }
 
@@ -67,10 +67,10 @@ public abstract class a<T> {
             return;
         }
         this.e = handler;
-        this.f9238a = TextUtils.isEmpty(str) ? "unknow" : str;
+        this.f6398a = TextUtils.isEmpty(str) ? "unknow" : str;
         this.f = com.autonavi.aps.amapapi.utils.i.l(context);
         try {
-            this.b = new File(context.getFilesDir().getPath(), this.f9238a);
+            this.b = new File(context.getFilesDir().getPath(), this.f6398a);
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -90,21 +90,21 @@ public abstract class a<T> {
             return;
         }
         String b = b((a<T>) t);
-        C0190a c0190a = this.d.get(b);
-        if (c0190a == null) {
+        C0119a c0119a = this.d.get(b);
+        if (c0119a == null) {
             a((a<T>) t, j);
-            this.d.put(b, new C0190a(c((a<T>) t), d((a<T>) t), j));
+            this.d.put(b, new C0119a(c((a<T>) t), d((a<T>) t), j));
             this.g = true;
             return;
         }
-        c0190a.f9243c = j;
-        if (c0190a.f9242a == c((a<T>) t)) {
-            a((a<T>) t, c0190a.b);
+        c0119a.f6403c = j;
+        if (c0119a.f6402a == c((a<T>) t)) {
+            a((a<T>) t, c0119a.b);
             return;
         }
         a((a<T>) t, j);
-        c0190a.f9242a = c((a<T>) t);
-        c0190a.b = d((a<T>) t);
+        c0119a.f6402a = c((a<T>) t);
+        c0119a.b = d((a<T>) t);
         this.g = true;
     }
 
@@ -116,7 +116,7 @@ public abstract class a<T> {
                 sb.append(str2);
                 sb.append("\n");
                 String[] split = str2.split(",");
-                this.d.put(split[0], new C0190a(Integer.parseInt(split[1]), Long.parseLong(split[2]), split.length >= 4 ? Long.parseLong(split[3]) : com.autonavi.aps.amapapi.utils.i.b()));
+                this.d.put(split[0], new C0119a(Integer.parseInt(split[1]), Long.parseLong(split[2]), split.length >= 4 ? Long.parseLong(split[3]) : com.autonavi.aps.amapapi.utils.i.b()));
             }
         } catch (Throwable th) {
             th.printStackTrace();
@@ -129,9 +129,9 @@ public abstract class a<T> {
             this.d.size();
             if (b() > 0) {
                 long b = com.autonavi.aps.amapapi.utils.i.b();
-                Iterator<Map.Entry<String, C0190a>> it = this.d.entrySet().iterator();
+                Iterator<Map.Entry<String, C0119a>> it = this.d.entrySet().iterator();
                 while (it.hasNext()) {
-                    if (b - this.d.get(it.next().getKey()).f9243c > b()) {
+                    if (b - this.d.get(it.next().getKey()).f6403c > b()) {
                         it.remove();
                     }
                 }
@@ -143,7 +143,7 @@ public abstract class a<T> {
                     @Override // java.util.Comparator
                     /* renamed from: a */
                     public int compare(String str, String str2) {
-                        return a.a(((C0190a) a.this.d.get(str2)).f9243c, ((C0190a) a.this.d.get(str)).f9243c);
+                        return a.a(((C0119a) a.this.d.get(str2)).f6403c, ((C0119a) a.this.d.get(str)).f6403c);
                     }
                 });
                 int c2 = (int) c();
@@ -158,8 +158,8 @@ public abstract class a<T> {
             }
         }
         StringBuilder sb = new StringBuilder();
-        for (Map.Entry<String, C0190a> entry : this.d.entrySet()) {
-            String str = entry.getKey() + "," + entry.getValue().f9242a + "," + entry.getValue().b + "," + entry.getValue().f9243c;
+        for (Map.Entry<String, C0119a> entry : this.d.entrySet()) {
+            String str = entry.getKey() + "," + entry.getValue().f6402a + "," + entry.getValue().b + "," + entry.getValue().f6403c;
             try {
                 sb.append(ht.b(com.autonavi.aps.amapapi.security.a.a(str.getBytes("UTF-8"), this.f)) + "\n");
             } catch (UnsupportedEncodingException e) {
@@ -180,11 +180,11 @@ public abstract class a<T> {
 
     public final void a() {
         Handler handler;
-        if (!this.f9239c && (handler = this.e) != null) {
+        if (!this.f6399c && (handler = this.e) != null) {
             handler.removeCallbacks(this.h);
             this.e.postDelayed(this.h, 60000L);
         }
-        this.f9239c = true;
+        this.f6399c = true;
     }
 
     public final void a(T t) {
@@ -204,7 +204,7 @@ public abstract class a<T> {
         if (this.d.size() > 16384 || c() <= 0) {
             this.d.clear();
             for (T t2 : list) {
-                this.d.put(b((a<T>) t2), new C0190a(c((a<T>) t2), d((a<T>) t2), b));
+                this.d.put(b((a<T>) t2), new C0119a(c((a<T>) t2), d((a<T>) t2), b));
             }
         }
     }
@@ -217,7 +217,7 @@ public abstract class a<T> {
         if (!z) {
             this.h.run();
         }
-        this.f9239c = false;
+        this.f6399c = false;
     }
 
     abstract long b();

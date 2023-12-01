@@ -23,7 +23,7 @@ public abstract class LiveBottomDialog extends Dialog {
         attributes.windowAnimations = R.style.BottomDialogAnimation;
         attributes.gravity = 80;
         window.setAttributes(attributes);
-        window.setBackgroundDrawableResource(17170445);
+        window.setBackgroundDrawableResource(com.android.internal.R.color.transparent);
         b();
     }
 

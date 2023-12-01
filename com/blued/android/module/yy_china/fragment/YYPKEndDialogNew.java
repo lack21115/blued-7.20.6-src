@@ -29,55 +29,48 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPKEndDialogNew.class */
 public final class YYPKEndDialogNew extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYRoomPkMVPExtra f17349a;
+    private YYRoomPkMVPExtra a;
     private DialogRoomPkEndLayoutBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RankAdapter f17350c;
+    private RankAdapter c;
     private RankAdapter d;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPKEndDialogNew$RankAdapter.class */
     public final class RankAdapter extends BaseQuickAdapter<YYAudienceModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYPKEndDialogNew f17351a;
+        final /* synthetic */ YYPKEndDialogNew a;
         private final boolean b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public RankAdapter(YYPKEndDialogNew this$0, boolean z) {
             super(R.layout.item_room_pk_rank, new ArrayList());
             Intrinsics.e(this$0, "this$0");
-            this.f17351a = this$0;
+            this.a = this$0;
             this.b = z;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYAudienceModel yYAudienceModel) {
             View view;
             View view2;
-            ShapeableImageView shapeableImageView = baseViewHolder == null ? null : (ShapeableImageView) baseViewHolder.getView(R.id.header_img);
+            ShapeableImageView view3 = baseViewHolder == null ? null : baseViewHolder.getView(R.id.header_img);
             ShapeTextView shapeTextView = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.tv_serial_num);
             ShapeTextView shapeTextView2 = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.tv_empty);
-            if (shapeableImageView != null) {
-                shapeableImageView.setImageResource(R.drawable.shape_circular_202020);
+            if (view3 != null) {
+                view3.setImageResource(R.drawable.shape_circular_202020);
             }
             ShapeHelper.b(shapeTextView2, R.color.syc_tran30_FFFFFF);
             if (this.b) {
-                if (shapeableImageView != null) {
-                    shapeableImageView.setStrokeColor(ContextCompat.getColorStateList(this.mContext, R.color.syc_FF57F0));
+                if (view3 != null) {
+                    view3.setStrokeColor(ContextCompat.getColorStateList(this.mContext, R.color.syc_FF57F0));
                 }
                 ShapeHelper.b(shapeTextView, R.color.syc_FF57F0);
                 if (baseViewHolder != null && (view2 = baseViewHolder.itemView) != null) {
                     view2.setPadding(0, 0, this.mContext.getResources().getDimensionPixelOffset(R.dimen.dp_5), 0);
                 }
             } else {
-                if (shapeableImageView != null) {
-                    shapeableImageView.setStrokeColor(ContextCompat.getColorStateList(this.mContext, R.color.syc_3883FD));
+                if (view3 != null) {
+                    view3.setStrokeColor(ContextCompat.getColorStateList(this.mContext, R.color.syc_3883FD));
                 }
                 ShapeHelper.b(shapeTextView, R.color.syc_3883FD);
                 if (baseViewHolder != null && (view = baseViewHolder.itemView) != null) {
@@ -101,7 +94,7 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
                 if (shapeTextView != null) {
                     shapeTextView.setVisibility(0);
                 }
-                ImageLoader.a((IRequestHost) null, yYAudienceModel.getAvatar()).b(R.drawable.shape_circular_202020).d(R.drawable.user_bg_round).a(shapeableImageView);
+                ImageLoader.a((IRequestHost) null, yYAudienceModel.getAvatar()).b(R.drawable.shape_circular_202020).d(R.drawable.user_bg_round).a((ImageView) view3);
             }
             if (shapeTextView == null) {
                 return;
@@ -111,7 +104,7 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
     }
 
     public YYPKEndDialogNew(YYRoomPkMVPExtra yYRoomPkMVPExtra) {
-        this.f17349a = yYRoomPkMVPExtra;
+        this.a = yYRoomPkMVPExtra;
     }
 
     private final void a(RankAdapter rankAdapter, List<YYAudienceModel> list) {
@@ -139,24 +132,24 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
     private final void g() {
         YYAudienceModel yYAudienceModel;
         YYAudienceModel yYAudienceModel2;
-        YYRoomPkMVPExtra yYRoomPkMVPExtra = this.f17349a;
+        YYRoomPkMVPExtra yYRoomPkMVPExtra = this.a;
         if (yYRoomPkMVPExtra != null && (yYAudienceModel2 = yYRoomPkMVPExtra.anchor_info) != null) {
-            ImageWrapper a2 = ImageLoader.a(a(), yYAudienceModel2.getAvatar());
+            ImageWrapper a = ImageLoader.a(a(), yYAudienceModel2.getAvatar());
             DialogRoomPkEndLayoutBinding dialogRoomPkEndLayoutBinding = this.b;
-            a2.a(dialogRoomPkEndLayoutBinding == null ? null : dialogRoomPkEndLayoutBinding.g);
+            a.a(dialogRoomPkEndLayoutBinding == null ? null : dialogRoomPkEndLayoutBinding.g);
         }
-        YYRoomPkMVPExtra yYRoomPkMVPExtra2 = this.f17349a;
+        YYRoomPkMVPExtra yYRoomPkMVPExtra2 = this.a;
         if (yYRoomPkMVPExtra2 == null || (yYAudienceModel = yYRoomPkMVPExtra2.other_anchor_info) == null) {
             return;
         }
-        ImageWrapper a3 = ImageLoader.a(a(), yYAudienceModel.getAvatar());
+        ImageWrapper a2 = ImageLoader.a(a(), yYAudienceModel.getAvatar());
         DialogRoomPkEndLayoutBinding dialogRoomPkEndLayoutBinding2 = this.b;
-        a3.a(dialogRoomPkEndLayoutBinding2 == null ? null : dialogRoomPkEndLayoutBinding2.h);
+        a2.a(dialogRoomPkEndLayoutBinding2 == null ? null : dialogRoomPkEndLayoutBinding2.h);
     }
 
     private final void h() {
-        this.f17350c = new RankAdapter(this, true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        this.c = new RankAdapter(this, true);
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
         DialogRoomPkEndLayoutBinding dialogRoomPkEndLayoutBinding = this.b;
         RecyclerView recyclerView = dialogRoomPkEndLayoutBinding == null ? null : dialogRoomPkEndLayoutBinding.j;
@@ -166,10 +159,10 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
         DialogRoomPkEndLayoutBinding dialogRoomPkEndLayoutBinding2 = this.b;
         RecyclerView recyclerView2 = dialogRoomPkEndLayoutBinding2 == null ? null : dialogRoomPkEndLayoutBinding2.j;
         if (recyclerView2 != null) {
-            recyclerView2.setAdapter(this.f17350c);
+            recyclerView2.setAdapter(this.c);
         }
         this.d = new RankAdapter(this, false);
-        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager2 = new LinearLayoutManager(getContext());
         linearLayoutManager2.setOrientation(0);
         linearLayoutManager2.setStackFromEnd(true);
         linearLayoutManager2.setReverseLayout(true);
@@ -183,11 +176,11 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
         if (recyclerView4 != null) {
             recyclerView4.setAdapter(this.d);
         }
-        RankAdapter rankAdapter = this.f17350c;
-        YYRoomPkMVPExtra yYRoomPkMVPExtra = this.f17349a;
+        RankAdapter rankAdapter = this.c;
+        YYRoomPkMVPExtra yYRoomPkMVPExtra = this.a;
         a(rankAdapter, yYRoomPkMVPExtra == null ? null : yYRoomPkMVPExtra.rank_list);
         RankAdapter rankAdapter2 = this.d;
-        YYRoomPkMVPExtra yYRoomPkMVPExtra2 = this.f17349a;
+        YYRoomPkMVPExtra yYRoomPkMVPExtra2 = this.a;
         a(rankAdapter2, yYRoomPkMVPExtra2 == null ? null : yYRoomPkMVPExtra2.other_rank_list);
     }
 
@@ -198,7 +191,7 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
         ImageView imageView4;
         ImageView imageView5;
         ImageView imageView6;
-        YYRoomPkMVPExtra yYRoomPkMVPExtra = this.f17349a;
+        YYRoomPkMVPExtra yYRoomPkMVPExtra = this.a;
         if (yYRoomPkMVPExtra == null) {
             return;
         }
@@ -244,7 +237,7 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
         imageView8.setVisibility(0);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_room_pk_end_layout, viewGroup, true);
@@ -255,6 +248,6 @@ public final class YYPKEndDialogNew extends BaseFullScreenDialog {
     }
 
     public final void setResult(YYRoomPkMVPExtra yYRoomPkMVPExtra) {
-        this.f17349a = yYRoomPkMVPExtra;
+        this.a = yYRoomPkMVPExtra;
     }
 }

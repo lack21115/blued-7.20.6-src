@@ -130,7 +130,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
             return this.forwardList.isPartialView();
         }
 
-        @Override // com.google.common.collect.ImmutableList, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ImmutableList, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
         public /* bridge */ /* synthetic */ Iterator iterator() {
             return super.iterator();
         }
@@ -223,7 +223,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
             return true;
         }
 
-        @Override // com.google.common.collect.ImmutableList, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ImmutableList, com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
         public /* bridge */ /* synthetic */ Iterator iterator() {
             return super.iterator();
         }
@@ -295,7 +295,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     public static <E> ImmutableList<E> copyOf(Iterator<? extends E> it) {
         if (it.hasNext()) {
             E next = it.next();
-            return !it.hasNext() ? of(next) : new Builder().add((Builder) next).addAll((Iterator) it).build();
+            return !it.hasNext() ? of((Object) next) : new Builder().add((Builder) next).addAll((Iterator) it).build();
         }
         return of();
     }
@@ -428,12 +428,12 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
         }
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, java.util.List
     public boolean equals(@NullableDecl Object obj) {
         return Lists.equalsImpl(this, obj);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, java.util.List
     public int hashCode() {
         int size = size();
         int i = 1;
@@ -456,7 +456,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
         return Lists.indexOfImpl(this, obj);
     }
 
-    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // com.google.common.collect.ImmutableCollection, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public UnmodifiableIterator<E> iterator() {
         return listIterator();
     }

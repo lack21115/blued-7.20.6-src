@@ -1,5 +1,6 @@
 package android.accounts;
 
+import android.R;
 import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.content.Intent;
@@ -18,7 +19,6 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.internal.R;
 import com.google.android.collect.Sets;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -130,7 +130,7 @@ public class ChooseTypeAndAccountActivity extends Activity implements AccountMan
             i = i2 + 1;
         }
         if (!this.mDisallowAddAccounts) {
-            strArr[arrayList.size()] = getResources().getString(R.string.add_account_button_label);
+            strArr[arrayList.size()] = getResources().getString(17040981);
         }
         return strArr;
     }
@@ -163,7 +163,7 @@ public class ChooseTypeAndAccountActivity extends Activity implements AccountMan
     }
 
     private void overrideDescriptionIfSupplied(String str) {
-        TextView textView = (TextView) findViewById(R.id.description);
+        TextView textView = (TextView) findViewById(16909014);
         if (TextUtils.isEmpty(str)) {
             textView.setVisibility(8);
         } else {
@@ -172,8 +172,8 @@ public class ChooseTypeAndAccountActivity extends Activity implements AccountMan
     }
 
     private final void populateUIAccountList(String[] strArr) {
-        ListView listView = (ListView) findViewById(16908298);
-        listView.setAdapter((ListAdapter) new ArrayAdapter(this, 17367055, strArr));
+        ListView listView = (ListView) findViewById(R.id.list);
+        listView.setAdapter((ListAdapter) new ArrayAdapter(this, (int) R.layout.simple_list_item_single_choice, strArr));
         listView.setChoiceMode(1);
         listView.setItemsCanFocus(false);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: android.accounts.ChooseTypeAndAccountActivity.1
@@ -278,7 +278,7 @@ public class ChooseTypeAndAccountActivity extends Activity implements AccountMan
         this.mAccounts = getAcceptableAccountChoices(AccountManager.get(this));
         if (this.mAccounts.isEmpty() && this.mDisallowAddAccounts) {
             requestWindowFeature(1);
-            setContentView(R.layout.app_not_authorized);
+            setContentView(17367089);
             this.mDontShowPicker = true;
         }
     }
@@ -325,10 +325,10 @@ public class ChooseTypeAndAccountActivity extends Activity implements AccountMan
         }
         String[] listOfDisplayableOptions = getListOfDisplayableOptions(this.mAccounts);
         this.mSelectedItemIndex = getItemIndexToSelect(this.mAccounts, this.mSelectedAccountName, this.mSelectedAddNewAccount);
-        setContentView(R.layout.choose_type_and_account);
+        setContentView(17367103);
         overrideDescriptionIfSupplied(this.mDescriptionOverride);
         populateUIAccountList(listOfDisplayableOptions);
-        this.mOkButton = (Button) findViewById(16908314);
+        this.mOkButton = (Button) findViewById(R.id.button2);
         this.mOkButton.setEnabled(this.mSelectedItemIndex != -1);
     }
 

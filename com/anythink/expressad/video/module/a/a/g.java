@@ -6,11 +6,11 @@ import com.anythink.expressad.video.module.AnythinkClickMiniCardView;
 public final class g extends i {
 
     /* renamed from: a  reason: collision with root package name */
-    private AnythinkClickMiniCardView f8508a;
+    private AnythinkClickMiniCardView f5668a;
 
     public g(AnythinkClickMiniCardView anythinkClickMiniCardView, com.anythink.expressad.video.module.a.a aVar) {
         super(aVar);
-        this.f8508a = anythinkClickMiniCardView;
+        this.f5668a = anythinkClickMiniCardView;
     }
 
     @Override // com.anythink.expressad.video.module.a.a.i, com.anythink.expressad.video.module.a.a.f, com.anythink.expressad.video.module.a.a
@@ -19,12 +19,12 @@ public final class g extends i {
         int i2;
         switch (i) {
             case 100:
-                AnythinkClickMiniCardView anythinkClickMiniCardView = this.f8508a;
+                AnythinkClickMiniCardView anythinkClickMiniCardView = this.f5668a;
                 z = false;
                 i2 = i;
                 if (anythinkClickMiniCardView != null) {
                     anythinkClickMiniCardView.webviewshow();
-                    AnythinkClickMiniCardView anythinkClickMiniCardView2 = this.f8508a;
+                    AnythinkClickMiniCardView anythinkClickMiniCardView2 = this.f5668a;
                     anythinkClickMiniCardView2.onSelfConfigurationChanged(anythinkClickMiniCardView2.getResources().getConfiguration());
                     i2 = i;
                     z = false;

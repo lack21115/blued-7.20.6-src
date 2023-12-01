@@ -13,19 +13,19 @@ import javax.crypto.spec.SecretKeySpec;
 public abstract class HMACSHA256 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23067a = "HMACSHA256";
+    private static final String f9459a = "HMACSHA256";
     private static final String b = "HmacSHA256";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23068c = "";
+    private static final String f9460c = "";
     private static final int d = 32;
 
     public static byte[] hmacEncrypt(byte[] bArr, byte[] bArr2) {
         if (bArr == null || bArr2 == null) {
-            b.b(f23067a, "content or key is null.");
+            b.b(f9459a, "content or key is null.");
             return new byte[0];
         } else if (bArr2.length < 32) {
-            b.b(f23067a, "hmac key length is not right");
+            b.b(f9459a, "hmac key length is not right");
             return new byte[0];
         } else {
             try {
@@ -34,7 +34,7 @@ public abstract class HMACSHA256 {
                 mac.init(secretKeySpec);
                 return mac.doFinal(bArr);
             } catch (InvalidKeyException | NoSuchAlgorithmException e) {
-                String str = f23067a;
+                String str = f9459a;
                 b.b(str, "hmacsha256 encrypt exception" + e.getMessage());
                 return new byte[0];
             }
@@ -51,13 +51,13 @@ public abstract class HMACSHA256 {
             return "";
         }
         if (bArr.length < 32) {
-            b.b(f23067a, "hmac key length is not right");
+            b.b(f9459a, "hmac key length is not right");
             return "";
         }
         try {
             bArr2 = str.getBytes("UTF-8");
         } catch (UnsupportedEncodingException e) {
-            String str2 = f23067a;
+            String str2 = f9459a;
             b.b(str2, "hmacsha256 encrypt exception" + e.getMessage());
             bArr2 = new byte[0];
         }

@@ -59,7 +59,7 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
     }
 
     public SeekBarPreference(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.seekBarPreferenceStyle);
+        this(context, attributeSet, 18219041);
     }
 
     public SeekBarPreference(Context context, AttributeSet attributeSet, int i) {
@@ -72,7 +72,7 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
         setMax(obtainStyledAttributes.getInt(2, this.mMax));
         obtainStyledAttributes.recycle();
         TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, R.styleable.SeekBarPreference, i, i2);
-        int resourceId = obtainStyledAttributes2.getResourceId(0, R.layout.preference_widget_seekbar);
+        int resourceId = obtainStyledAttributes2.getResourceId(0, 17367203);
         obtainStyledAttributes2.recycle();
         setLayoutResource(resourceId);
     }
@@ -108,7 +108,7 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
     @Override // android.preference.Preference
     public void onBindView(View view) {
         super.onBindView(view);
-        SeekBar seekBar = (SeekBar) view.findViewById(R.id.seekbar);
+        SeekBar seekBar = (SeekBar) view.findViewById(16909156);
         seekBar.setOnSeekBarChangeListener(this);
         seekBar.setMax(this.mMax);
         seekBar.setProgress(this.mProgress);

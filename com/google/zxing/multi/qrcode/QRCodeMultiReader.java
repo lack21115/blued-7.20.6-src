@@ -88,7 +88,7 @@ public final class QRCodeMultiReader extends QRCodeReader implements MultipleBar
             int i5 = 0;
             int i6 = 0;
             for (Result result3 : arrayList2) {
-                System.arraycopy((Object) result3.getRawBytes(), 0, (Object) bArr, i5, result3.getRawBytes().length);
+                System.arraycopy(result3.getRawBytes(), 0, bArr, i5, result3.getRawBytes().length);
                 int length2 = i5 + result3.getRawBytes().length;
                 i5 = length2;
                 if (result3.getResultMetadata().containsKey(ResultMetadataType.BYTE_SEGMENTS)) {
@@ -100,7 +100,7 @@ public final class QRCodeMultiReader extends QRCodeReader implements MultipleBar
                         i6 = i8;
                         if (it3.hasNext()) {
                             byte[] bArr3 = (byte[]) it3.next();
-                            System.arraycopy((Object) bArr3, 0, (Object) bArr2, i8, bArr3.length);
+                            System.arraycopy(bArr3, 0, bArr2, i8, bArr3.length);
                             i7 = i8 + bArr3.length;
                         }
                     }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentEmotionMainBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28816a;
+    private final LinearLayout f15126a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28816a;
+        return this.f15126a;
     }
 }

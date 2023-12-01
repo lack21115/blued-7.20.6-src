@@ -2,7 +2,6 @@ package com.blued.android.framework.utils;
 
 import android.text.Editable;
 import android.text.TextUtils;
-import com.igexin.push.core.b;
 import java.util.regex.Pattern;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/StringUtils.class */
@@ -106,7 +105,7 @@ public class StringUtils {
     }
 
     public static boolean b(String str) {
-        return str == null || "".equals(str.trim()) || b.l.equals(str) || str.equals(" ");
+        return str == null || "".equals(str.trim()) || "null".equals(str) || str.equals(" ");
     }
 
     public static int c(String str) {

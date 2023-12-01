@@ -28,11 +28,11 @@ public class ScanningView extends View {
     private Paint S;
 
     /* renamed from: a  reason: collision with root package name */
-    private float f23040a;
+    private float f9432a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ValueAnimator f23041c;
+    private ValueAnimator f9433c;
     private Animator.AnimatorListener d;
 
     public ScanningView(Context context) {
@@ -54,18 +54,18 @@ public class ScanningView extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void B() {
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f23040a, this.b);
-        this.f23041c = ofFloat;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.f9432a, this.b);
+        this.f9433c = ofFloat;
         ofFloat.setInterpolator(new fl(0.33f, 0.0f, 0.67f, 1.0f));
-        this.f23041c.setDuration(2500L);
-        this.f23041c.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.huawei.openalliance.ad.views.ScanningView.1
+        this.f9433c.setDuration(2500L);
+        this.f9433c.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.huawei.openalliance.ad.views.ScanningView.1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 ScanningView.this.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 ScanningView.this.postInvalidate();
             }
         });
-        this.f23041c.addListener(new AnimatorListenerAdapter() { // from class: com.huawei.openalliance.ad.views.ScanningView.2
+        this.f9433c.addListener(new AnimatorListenerAdapter() { // from class: com.huawei.openalliance.ad.views.ScanningView.2
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
                 ScanningView.this.setVisibility(8);
@@ -117,23 +117,23 @@ public class ScanningView extends View {
             post(new Runnable() { // from class: com.huawei.openalliance.ad.views.ScanningView.3
                 @Override // java.lang.Runnable
                 public void run() {
-                    if (ScanningView.this.f23041c == null) {
+                    if (ScanningView.this.f9433c == null) {
                         ScanningView.this.B();
-                    } else if (ScanningView.this.f23041c.isRunning()) {
-                        ScanningView.this.f23041c.cancel();
+                    } else if (ScanningView.this.f9433c.isRunning()) {
+                        ScanningView.this.f9433c.cancel();
                     }
-                    ScanningView.this.f23041c.start();
+                    ScanningView.this.f9433c.start();
                 }
             });
         }
     }
 
     public void V() {
-        ValueAnimator valueAnimator = this.f23041c;
+        ValueAnimator valueAnimator = this.f9433c;
         if (valueAnimator != null && valueAnimator.isRunning()) {
-            this.f23041c.cancel();
+            this.f9433c.cancel();
         }
-        this.L = this.f23040a;
+        this.L = this.f9432a;
         postInvalidate();
     }
 
@@ -159,13 +159,12 @@ public class ScanningView extends View {
         return this.B;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         I();
         float f = i2;
-        this.f23040a = f;
+        this.f9432a = f;
         this.L = f;
         this.b = -i2;
     }

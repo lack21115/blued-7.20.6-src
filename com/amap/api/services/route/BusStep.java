@@ -22,13 +22,9 @@ public class BusStep implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private RouteBusWalkItem f5680a;
+    private RouteBusWalkItem a;
     private List<RouteBusLineItem> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Doorway f5681c;
+    private Doorway c;
     private Doorway d;
     private RouteRailwayItem e;
     private TaxiItem f;
@@ -39,9 +35,9 @@ public class BusStep implements Parcelable {
 
     public BusStep(Parcel parcel) {
         this.b = new ArrayList();
-        this.f5680a = (RouteBusWalkItem) parcel.readParcelable(RouteBusWalkItem.class.getClassLoader());
+        this.a = (RouteBusWalkItem) parcel.readParcelable(RouteBusWalkItem.class.getClassLoader());
         this.b = parcel.createTypedArrayList(RouteBusLineItem.CREATOR);
-        this.f5681c = (Doorway) parcel.readParcelable(Doorway.class.getClassLoader());
+        this.c = (Doorway) parcel.readParcelable(Doorway.class.getClassLoader());
         this.d = (Doorway) parcel.readParcelable(Doorway.class.getClassLoader());
         this.e = (RouteRailwayItem) parcel.readParcelable(RouteRailwayItem.class.getClassLoader());
         this.f = (TaxiItem) parcel.readParcelable(TaxiItem.class.getClassLoader());
@@ -66,7 +62,7 @@ public class BusStep implements Parcelable {
     }
 
     public Doorway getEntrance() {
-        return this.f5681c;
+        return this.c;
     }
 
     public Doorway getExit() {
@@ -82,7 +78,7 @@ public class BusStep implements Parcelable {
     }
 
     public RouteBusWalkItem getWalk() {
-        return this.f5680a;
+        return this.a;
     }
 
     @Deprecated
@@ -102,7 +98,7 @@ public class BusStep implements Parcelable {
     }
 
     public void setEntrance(Doorway doorway) {
-        this.f5681c = doorway;
+        this.c = doorway;
     }
 
     public void setExit(Doorway doorway) {
@@ -118,14 +114,14 @@ public class BusStep implements Parcelable {
     }
 
     public void setWalk(RouteBusWalkItem routeBusWalkItem) {
-        this.f5680a = routeBusWalkItem;
+        this.a = routeBusWalkItem;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f5680a, i);
+        parcel.writeParcelable(this.a, i);
         parcel.writeTypedList(this.b);
-        parcel.writeParcelable(this.f5681c, i);
+        parcel.writeParcelable(this.c, i);
         parcel.writeParcelable(this.d, i);
         parcel.writeParcelable(this.e, i);
         parcel.writeParcelable(this.f, i);

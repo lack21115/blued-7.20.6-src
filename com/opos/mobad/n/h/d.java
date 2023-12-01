@@ -16,7 +16,7 @@ import com.heytap.msp.mobad.api.R;
 public class d extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private TextView f26958a;
+    private TextView f13270a;
     private a b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/n/h/d$a.class */
@@ -69,7 +69,7 @@ public class d extends RelativeLayout {
         };
         textView.setOnClickListener(gVar);
         textView.setOnTouchListener(gVar);
-        View textView2 = new TextView(getContext());
+        TextView textView2 = new TextView(getContext());
         textView2.setBackgroundColor(Color.parseColor("#33000000"));
         linearLayout.addView(textView2, new LinearLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), 1.0f), a2));
         TextView textView3 = new TextView(getContext());
@@ -98,18 +98,18 @@ public class d extends RelativeLayout {
         layoutParams3.addRule(12);
         relativeLayout3.addView(linearLayout, layoutParams3);
         TextView textView4 = new TextView(getContext());
-        this.f26958a = textView4;
+        this.f13270a = textView4;
         textView4.setId(View.generateViewId());
-        this.f26958a.setTextColor(Color.parseColor("#D9000000"));
-        this.f26958a.setTextSize(1, 16.0f);
+        this.f13270a.setTextColor(Color.parseColor("#D9000000"));
+        this.f13270a.setTextSize(1, 16.0f);
         FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(-2, -2);
         layoutParams4.gravity = 17;
-        TextPaint paint3 = this.f26958a.getPaint();
+        TextPaint paint3 = this.f13270a.getPaint();
         paint3.setStrokeWidth(1.0f);
         paint3.setStyle(Paint.Style.FILL_AND_STROKE);
         int a3 = com.opos.cmn.an.h.f.a.a(getContext(), 24.0f);
         frameLayout.setPadding(a3, a3, a3, 0);
-        frameLayout.addView(this.f26958a, layoutParams4);
+        frameLayout.addView(this.f13270a, layoutParams4);
         RelativeLayout.LayoutParams layoutParams5 = new RelativeLayout.LayoutParams(-1, -1);
         layoutParams5.addRule(14);
         layoutParams5.addRule(2, linearLayout.getId());
@@ -131,6 +131,6 @@ public class d extends RelativeLayout {
         if (charSequence == null || TextUtils.isEmpty(charSequence)) {
             return;
         }
-        this.f26958a.setText(charSequence);
+        this.f13270a.setText(charSequence);
     }
 }

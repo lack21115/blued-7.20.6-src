@@ -10,7 +10,7 @@ import com.bytedance.bdtracker.s3;
 public final class v3 implements s3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final f3<Boolean> f21328a = new a();
+    public static final f3<Boolean> f7722a = new a();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/v3$a.class */
     public static final class a extends f3<Boolean> {
@@ -29,7 +29,7 @@ public final class v3 implements s3 {
     }
 
     public static boolean a() {
-        return f21328a.b(new Object[0]).booleanValue();
+        return f7722a.b(new Object[0]).booleanValue();
     }
 
     @Override // com.bytedance.bdtracker.s3
@@ -67,7 +67,7 @@ public final class v3 implements s3 {
                         cursor2 = cursor;
                         str = null;
                         j1.a(cursor2);
-                        aVar.f21305a = str;
+                        aVar.f7699a = str;
                         return aVar;
                     }
                 }
@@ -81,12 +81,12 @@ public final class v3 implements s3 {
             }
             j1.a(cursor2);
         }
-        aVar.f21305a = str;
+        aVar.f7699a = str;
         return aVar;
     }
 
     @Override // com.bytedance.bdtracker.s3
     public boolean b(Context context) {
-        return f21328a.b(new Object[0]).booleanValue();
+        return f7722a.b(new Object[0]).booleanValue();
     }
 }

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ViewInfoStore {
 
     /* renamed from: a  reason: collision with root package name */
-    final SimpleArrayMap<RecyclerView.ViewHolder, InfoRecord> f3364a = new SimpleArrayMap<>();
+    final SimpleArrayMap<RecyclerView.ViewHolder, InfoRecord> f3316a = new SimpleArrayMap<>();
     final LongSparseArray<RecyclerView.ViewHolder> b = new LongSparseArray<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -19,11 +19,11 @@ public class ViewInfoStore {
         static Pools.Pool<InfoRecord> d = new Pools.SimplePool(20);
 
         /* renamed from: a  reason: collision with root package name */
-        int f3365a;
+        int f3317a;
         RecyclerView.ItemAnimator.ItemHolderInfo b;
 
         /* renamed from: c  reason: collision with root package name */
-        RecyclerView.ItemAnimator.ItemHolderInfo f3366c;
+        RecyclerView.ItemAnimator.ItemHolderInfo f3318c;
 
         private InfoRecord() {
         }
@@ -38,9 +38,9 @@ public class ViewInfoStore {
         }
 
         static void a(InfoRecord infoRecord) {
-            infoRecord.f3365a = 0;
+            infoRecord.f3317a = 0;
             infoRecord.b = null;
-            infoRecord.f3366c = null;
+            infoRecord.f3318c = null;
             d.release(infoRecord);
         }
 
@@ -65,20 +65,20 @@ public class ViewInfoStore {
     private RecyclerView.ItemAnimator.ItemHolderInfo a(RecyclerView.ViewHolder viewHolder, int i) {
         InfoRecord valueAt;
         RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo;
-        int indexOfKey = this.f3364a.indexOfKey(viewHolder);
-        if (indexOfKey < 0 || (valueAt = this.f3364a.valueAt(indexOfKey)) == null || (valueAt.f3365a & i) == 0) {
+        int indexOfKey = this.f3316a.indexOfKey(viewHolder);
+        if (indexOfKey < 0 || (valueAt = this.f3316a.valueAt(indexOfKey)) == null || (valueAt.f3317a & i) == 0) {
             return null;
         }
-        valueAt.f3365a &= i;
+        valueAt.f3317a &= i;
         if (i == 4) {
             itemHolderInfo = valueAt.b;
         } else if (i != 8) {
             throw new IllegalArgumentException("Must provide flag PRE or POST");
         } else {
-            itemHolderInfo = valueAt.f3366c;
+            itemHolderInfo = valueAt.f3318c;
         }
-        if ((valueAt.f3365a & 12) == 0) {
-            this.f3364a.removeAt(indexOfKey);
+        if ((valueAt.f3317a & 12) == 0) {
+            this.f3316a.removeAt(indexOfKey);
             InfoRecord.a(valueAt);
         }
         return itemHolderInfo;
@@ -91,7 +91,7 @@ public class ViewInfoStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        this.f3364a.clear();
+        this.f3316a.clear();
         this.b.clear();
     }
 
@@ -102,44 +102,44 @@ public class ViewInfoStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo) {
-        InfoRecord infoRecord = this.f3364a.get(viewHolder);
+        InfoRecord infoRecord = this.f3316a.get(viewHolder);
         InfoRecord infoRecord2 = infoRecord;
         if (infoRecord == null) {
             infoRecord2 = InfoRecord.a();
-            this.f3364a.put(viewHolder, infoRecord2);
+            this.f3316a.put(viewHolder, infoRecord2);
         }
         infoRecord2.b = itemHolderInfo;
-        infoRecord2.f3365a |= 4;
+        infoRecord2.f3317a |= 4;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(ProcessCallback processCallback) {
-        int size = this.f3364a.size();
+        int size = this.f3316a.size();
         while (true) {
             int i = size - 1;
             if (i < 0) {
                 return;
             }
-            RecyclerView.ViewHolder keyAt = this.f3364a.keyAt(i);
-            InfoRecord removeAt = this.f3364a.removeAt(i);
-            if ((removeAt.f3365a & 3) == 3) {
+            RecyclerView.ViewHolder keyAt = this.f3316a.keyAt(i);
+            InfoRecord removeAt = this.f3316a.removeAt(i);
+            if ((removeAt.f3317a & 3) == 3) {
                 processCallback.unused(keyAt);
-            } else if ((removeAt.f3365a & 1) != 0) {
+            } else if ((removeAt.f3317a & 1) != 0) {
                 if (removeAt.b == null) {
                     processCallback.unused(keyAt);
                 } else {
-                    processCallback.processDisappeared(keyAt, removeAt.b, removeAt.f3366c);
+                    processCallback.processDisappeared(keyAt, removeAt.b, removeAt.f3318c);
                 }
-            } else if ((removeAt.f3365a & 14) == 14) {
-                processCallback.processAppeared(keyAt, removeAt.b, removeAt.f3366c);
-            } else if ((removeAt.f3365a & 12) == 12) {
-                processCallback.processPersistent(keyAt, removeAt.b, removeAt.f3366c);
-            } else if ((removeAt.f3365a & 4) != 0) {
+            } else if ((removeAt.f3317a & 14) == 14) {
+                processCallback.processAppeared(keyAt, removeAt.b, removeAt.f3318c);
+            } else if ((removeAt.f3317a & 12) == 12) {
+                processCallback.processPersistent(keyAt, removeAt.b, removeAt.f3318c);
+            } else if ((removeAt.f3317a & 4) != 0) {
                 processCallback.processDisappeared(keyAt, removeAt.b, null);
-            } else if ((removeAt.f3365a & 8) != 0) {
-                processCallback.processAppeared(keyAt, removeAt.b, removeAt.f3366c);
+            } else if ((removeAt.f3317a & 8) != 0) {
+                processCallback.processAppeared(keyAt, removeAt.b, removeAt.f3318c);
             } else {
-                int i2 = removeAt.f3365a;
+                int i2 = removeAt.f3317a;
             }
             InfoRecord.a(removeAt);
             size = i;
@@ -148,8 +148,8 @@ public class ViewInfoStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(RecyclerView.ViewHolder viewHolder) {
-        InfoRecord infoRecord = this.f3364a.get(viewHolder);
-        return (infoRecord == null || (infoRecord.f3365a & 1) == 0) ? false : true;
+        InfoRecord infoRecord = this.f3316a.get(viewHolder);
+        return (infoRecord == null || (infoRecord.f3317a & 1) == 0) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -164,13 +164,13 @@ public class ViewInfoStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo) {
-        InfoRecord infoRecord = this.f3364a.get(viewHolder);
+        InfoRecord infoRecord = this.f3316a.get(viewHolder);
         InfoRecord infoRecord2 = infoRecord;
         if (infoRecord == null) {
             infoRecord2 = InfoRecord.a();
-            this.f3364a.put(viewHolder, infoRecord2);
+            this.f3316a.put(viewHolder, infoRecord2);
         }
-        infoRecord2.f3365a |= 2;
+        infoRecord2.f3317a |= 2;
         infoRecord2.b = itemHolderInfo;
     }
 
@@ -181,40 +181,40 @@ public class ViewInfoStore {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c(RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo) {
-        InfoRecord infoRecord = this.f3364a.get(viewHolder);
+        InfoRecord infoRecord = this.f3316a.get(viewHolder);
         InfoRecord infoRecord2 = infoRecord;
         if (infoRecord == null) {
             infoRecord2 = InfoRecord.a();
-            this.f3364a.put(viewHolder, infoRecord2);
+            this.f3316a.put(viewHolder, infoRecord2);
         }
-        infoRecord2.f3366c = itemHolderInfo;
-        infoRecord2.f3365a |= 8;
+        infoRecord2.f3318c = itemHolderInfo;
+        infoRecord2.f3317a |= 8;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean d(RecyclerView.ViewHolder viewHolder) {
-        InfoRecord infoRecord = this.f3364a.get(viewHolder);
-        return (infoRecord == null || (infoRecord.f3365a & 4) == 0) ? false : true;
+        InfoRecord infoRecord = this.f3316a.get(viewHolder);
+        return (infoRecord == null || (infoRecord.f3317a & 4) == 0) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void e(RecyclerView.ViewHolder viewHolder) {
-        InfoRecord infoRecord = this.f3364a.get(viewHolder);
+        InfoRecord infoRecord = this.f3316a.get(viewHolder);
         InfoRecord infoRecord2 = infoRecord;
         if (infoRecord == null) {
             infoRecord2 = InfoRecord.a();
-            this.f3364a.put(viewHolder, infoRecord2);
+            this.f3316a.put(viewHolder, infoRecord2);
         }
-        infoRecord2.f3365a |= 1;
+        infoRecord2.f3317a |= 1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void f(RecyclerView.ViewHolder viewHolder) {
-        InfoRecord infoRecord = this.f3364a.get(viewHolder);
+        InfoRecord infoRecord = this.f3316a.get(viewHolder);
         if (infoRecord == null) {
             return;
         }
-        infoRecord.f3365a &= -2;
+        infoRecord.f3317a &= -2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -231,7 +231,7 @@ public class ViewInfoStore {
                 size = i;
             }
         }
-        InfoRecord remove = this.f3364a.remove(viewHolder);
+        InfoRecord remove = this.f3316a.remove(viewHolder);
         if (remove != null) {
             InfoRecord.a(remove);
         }

@@ -5,13 +5,12 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.util.Log;
 import android.util.Pair;
-import com.amap.api.col.p0003sl.dw;
-import com.amap.api.col.p0003sl.dx;
-import com.amap.api.col.p0003sl.dy;
-import com.amap.api.col.p0003sl.iw;
+import com.amap.api.col.3sl.dw;
+import com.amap.api.col.3sl.dx;
+import com.amap.api.col.3sl.dy;
+import com.amap.api.col.3sl.iw;
 import com.amap.api.maps.MapsInitializer;
 import com.autonavi.base.amap.mapcore.tools.GLFileUtil;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -615,7 +614,7 @@ public class FileUtil {
                 }
                 String str3 = list[i2];
                 if (str3 != null && str3.contains(str2)) {
-                    return readFileContentsFromAssets(context, str + BridgeUtil.SPLIT_MARK + str3);
+                    return readFileContentsFromAssets(context, str + "/" + str3);
                 }
                 i = i2 + 1;
             }

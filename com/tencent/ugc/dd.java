@@ -7,10 +7,10 @@ import java.util.concurrent.Callable;
 public final /* synthetic */ class dd implements Callable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40318a;
+    private final UGCMediaListSource f26627a;
 
     private dd(UGCMediaListSource uGCMediaListSource) {
-        this.f40318a = uGCMediaListSource;
+        this.f26627a = uGCMediaListSource;
     }
 
     public static Callable a(UGCMediaListSource uGCMediaListSource) {
@@ -20,7 +20,7 @@ public final /* synthetic */ class dd implements Callable {
     @Override // java.util.concurrent.Callable
     public final Object call() {
         long calculateTotalDurationOfClips;
-        calculateTotalDurationOfClips = this.f40318a.calculateTotalDurationOfClips();
+        calculateTotalDurationOfClips = this.f26627a.calculateTotalDurationOfClips();
         return Long.valueOf(calculateTotalDurationOfClips);
     }
 }

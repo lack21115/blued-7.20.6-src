@@ -14,14 +14,14 @@ public class e {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27516c;
+    private int f13828c;
     private String g;
     private List<Camera.Area> i;
     private List<Camera.Area> j;
     private PLFocusListener k;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27515a = 0;
+    private int f13827a = 0;
     private boolean d = false;
     private boolean e = false;
     private long f = 0;
@@ -31,7 +31,7 @@ public class e {
         public void onAutoFocus(boolean z, Camera camera) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
             eVar.c("FocusManager", "manual focus cost time: " + (System.currentTimeMillis() - e.this.f) + "Ms, result: " + z);
-            e.this.f27515a = z ? 2 : 3;
+            e.this.f13827a = z ? 2 : 3;
             if (e.this.k != null) {
                 e.this.k.onManualFocusStop(z);
             }
@@ -58,7 +58,7 @@ public class e {
         eVar.c("FocusManager", "default focus mode: " + str + " preview width: " + i + " preview height: " + i2);
         this.g = str;
         this.b = i;
-        this.f27516c = i2;
+        this.f13828c = i2;
         b();
         c();
         a(context);
@@ -101,7 +101,7 @@ public class e {
 
     private void a(Context context) {
         Matrix matrix = new Matrix();
-        c.a(matrix, a.a().j(), b(context), this.b, this.f27516c);
+        c.a(matrix, a.a().j(), b(context), this.b, this.f13828c);
         matrix.invert(this.h);
     }
 
@@ -136,7 +136,7 @@ public class e {
 
     private void d() {
         com.qiniu.pili.droid.shortvideo.f.e.f.c("FocusManager", "start manual focus.");
-        this.f27515a = 1;
+        this.f13827a = 1;
         this.f = System.currentTimeMillis();
         a.a().a(this.l);
         PLFocusListener pLFocusListener = this.k;
@@ -147,7 +147,7 @@ public class e {
 
     private void e() {
         com.qiniu.pili.droid.shortvideo.f.e.f.c("FocusManager", "cancel manual focus.");
-        this.f27515a = 0;
+        this.f13827a = 0;
         a.a().e();
         f();
         PLFocusListener pLFocusListener = this.k;
@@ -176,13 +176,13 @@ public class e {
         }
         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.f;
         eVar.c("FocusManager", "focus on x: " + i3 + " y: " + i4 + " width: " + i + " height: " + i2);
-        if (this.i != null && ((i5 = this.f27515a) == 1 || i5 == 2 || i5 == 3)) {
+        if (this.i != null && ((i5 = this.f13827a) == 1 || i5 == 2 || i5 == 3)) {
             e();
         }
         Rect rect = new Rect();
         Rect rect2 = new Rect();
-        a(i, i2, 1.0f, i3, i4, this.b, this.f27516c, rect);
-        a(i, i2, 1.5f, i3, i4, this.b, this.f27516c, rect2);
+        a(i, i2, 1.0f, i3, i4, this.b, this.f13828c, rect);
+        a(i, i2, 1.5f, i3, i4, this.b, this.f13828c, rect2);
         if (this.i == null) {
             ArrayList arrayList = new ArrayList();
             this.i = arrayList;

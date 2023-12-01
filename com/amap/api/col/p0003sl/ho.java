@@ -5,7 +5,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
-import com.umeng.analytics.pro.bl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,13 +14,9 @@ import java.util.Locale;
 /* renamed from: com.amap.api.col.3sl.ho  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ho.class */
 public final class ho {
-
-    /* renamed from: a  reason: collision with root package name */
-    static String f5077a;
+    static String a;
     static boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String f5078c = "";
+    private static String c = "";
     private static String d = "";
     private static String e = "";
     private static String f = "";
@@ -48,7 +43,7 @@ public final class ho {
                     FileOutputStream fileOutputStream;
                     FileOutputStream fileOutputStream2 = null;
                     try {
-                        File file = new File(iu.c(Context.this, "k.store"));
+                        File file = new File(iu.c(context, "k.store"));
                         if (!file.getParentFile().exists()) {
                             file.getParentFile().mkdirs();
                         }
@@ -67,7 +62,7 @@ public final class ho {
                         th = th3;
                         fileOutputStream2 = fileOutputStream;
                         try {
-                            it.a(th, "AI", bl.f40666c);
+                            it.a(th, "AI", "stf");
                             if (fileOutputStream2 != null) {
                                 try {
                                     fileOutputStream2.close();
@@ -101,12 +96,12 @@ public final class ho {
             if (b) {
                 return true;
             }
-            if (c(f5077a)) {
+            if (c(a)) {
                 b = true;
                 return true;
-            } else if (!TextUtils.isEmpty(f5077a)) {
+            } else if (!TextUtils.isEmpty(a)) {
                 b = false;
-                f5077a = null;
+                a = null;
                 return false;
             } else if (c(d)) {
                 b = true;
@@ -128,12 +123,12 @@ public final class ho {
         } catch (Throwable th) {
             it.a(th, "AI", "gAN");
         }
-        if ("".equals(f5078c)) {
+        if ("".equals(c)) {
             PackageManager packageManager = context.getPackageManager();
-            f5078c = (String) packageManager.getApplicationLabel(packageManager.getApplicationInfo(context.getPackageName(), 0));
-            return f5078c;
+            c = (String) packageManager.getApplicationLabel(packageManager.getApplicationInfo(context.getPackageName(), 0));
+            return c;
         }
-        return f5078c;
+        return c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -222,11 +217,11 @@ public final class ho {
             }
             stringBuffer.append(str2);
             String stringBuffer2 = stringBuffer.toString();
-            f5077a = stringBuffer2;
+            a = stringBuffer2;
             return stringBuffer2;
         } catch (Throwable th) {
             it.a(th, "AI", "gsp");
-            return f5077a;
+            return a;
         }
     }
 

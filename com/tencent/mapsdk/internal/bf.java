@@ -103,7 +103,7 @@ public class bf extends ze<o0> implements o0 {
                 geoPoint.setLatitudeE6(i + (latitudeE6 - latitudeE62));
                 geoPoint.setLongitudeE6(i2 + (longitudeE6 - longitudeE62));
                 p5 a3 = bf.this.Z.getMap().getProjection().a(geoPoint);
-                bf.this.N.setLatitudeE6((int) a3.f37683c);
+                bf.this.N.setLatitudeE6((int) a3.f23992c);
                 bf.this.N.setLongitudeE6((int) a3.b);
             }
             bf bfVar = bf.this;
@@ -157,9 +157,9 @@ public class bf extends ze<o0> implements o0 {
             }
             BitmapDescriptor icon = markerOptions.getIcon();
             int activeSize = icon.getFormater().activeSize();
-            na.a(ma.f37643c, "current Marker iconLooper getValue:" + f);
+            na.a(ma.f23952c, "current Marker iconLooper getValue:" + f);
             int round = Math.round(((float) activeSize) * f);
-            na.a(ma.f37643c, "current Marker iconLooper activeIndex:" + round);
+            na.a(ma.f23952c, "current Marker iconLooper activeIndex:" + round);
             if (round != bf.this.i0) {
                 bf bfVar = bf.this;
                 bfVar.a(bfVar.Z.getContext(), icon.getFormater());
@@ -173,16 +173,16 @@ public class bf extends ze<o0> implements o0 {
     public class c implements ReturnCallback<Boolean, Collision> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Collision f37327a;
+        public final /* synthetic */ Collision f23636a;
 
         public c(Collision collision) {
-            this.f37327a = collision;
+            this.f23636a = collision;
         }
 
         @Override // com.tencent.map.tools.ReturnCallback
         /* renamed from: a */
         public Boolean callback(Collision collision) {
-            return Boolean.valueOf(collision == this.f37327a);
+            return Boolean.valueOf(collision == this.f23636a);
         }
     }
 
@@ -906,7 +906,7 @@ public class bf extends ze<o0> implements o0 {
         if (yiVar == null || (a2 = i8.a(yiVar.getMapContext(), animation)) == null) {
             return;
         }
-        b(a2.f37563a);
+        b(a2.f23872a);
     }
 
     @Override // com.tencent.mapsdk.internal.o0
@@ -1007,7 +1007,7 @@ public class bf extends ze<o0> implements o0 {
         }
         boolean isIconLooperEnable = this.L.isIconLooperEnable();
         int activeSize = this.L.getIcon().getFormater().activeSize();
-        na.a(ma.f37643c, "iconLooper totalSize:" + activeSize);
+        na.a(ma.f23952c, "iconLooper totalSize:" + activeSize);
         if (activeSize > 1) {
             this.i0 = -1;
             p7 p7Var = new p7();

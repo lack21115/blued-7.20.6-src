@@ -11,17 +11,18 @@ public final class ArrayMapKt {
         return new ArrayMap<>();
     }
 
-    public static final <K, V> ArrayMap<K, V> arrayMapOf(Pair<? extends K, ? extends V>... pairs) {
-        Intrinsics.d(pairs, "pairs");
-        ArrayMap<K, V> arrayMap = new ArrayMap<>(pairs.length);
-        int length = pairs.length;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static final <K, V> ArrayMap<K, V> arrayMapOf(Pair<? extends K, ? extends V>... pairArr) {
+        Intrinsics.d(pairArr, "pairs");
+        ArrayMap<K, V> arrayMap = new ArrayMap<>(pairArr.length);
+        int length = pairArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return arrayMap;
             }
-            Pair<? extends K, ? extends V> pair = pairs[i2];
+            Pair<? extends K, ? extends V> pair = pairArr[i2];
             arrayMap.put(pair.a(), pair.b());
             i = i2 + 1;
         }

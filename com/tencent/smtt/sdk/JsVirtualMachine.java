@@ -15,26 +15,26 @@ import java.util.Iterator;
 public final class JsVirtualMachine {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f38708a;
+    private final Context f25017a;
     private final IX5JsVirtualMachine b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final HashSet<WeakReference<a>> f38709c;
+    private final HashSet<WeakReference<a>> f25018c;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/JsVirtualMachine$a.class */
     static class a implements IX5JsContext {
 
         /* renamed from: a  reason: collision with root package name */
-        private WebView f38710a;
+        private WebView f25019a;
 
         public a(Context context) {
             WebView webView = new WebView(context);
-            this.f38710a = webView;
+            this.f25019a = webView;
             webView.getSettings().setJavaScriptEnabled(true);
         }
 
         public void a() {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return;
             }
@@ -43,16 +43,16 @@ public final class JsVirtualMachine {
 
         @Override // com.tencent.smtt.export.external.jscore.interfaces.IX5JsContext
         public void addJavascriptInterface(Object obj, String str) {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return;
             }
             webView.addJavascriptInterface(obj, str);
-            this.f38710a.loadUrl(com.anythink.core.common.res.d.f6907a);
+            this.f25019a.loadUrl("about:blank");
         }
 
         public void b() {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return;
             }
@@ -61,22 +61,22 @@ public final class JsVirtualMachine {
 
         @Override // com.tencent.smtt.export.external.jscore.interfaces.IX5JsContext
         public void destroy() {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return;
             }
             webView.clearHistory();
-            this.f38710a.clearCache(true);
-            this.f38710a.loadUrl(com.anythink.core.common.res.d.f6907a);
-            this.f38710a.freeMemory();
-            this.f38710a.pauseTimers();
-            this.f38710a.destroy();
-            this.f38710a = null;
+            this.f25019a.clearCache(true);
+            this.f25019a.loadUrl("about:blank");
+            this.f25019a.freeMemory();
+            this.f25019a.pauseTimers();
+            this.f25019a.destroy();
+            this.f25019a = null;
         }
 
         @Override // com.tencent.smtt.export.external.jscore.interfaces.IX5JsContext
         public void evaluateJavascript(String str, final android.webkit.ValueCallback<String> valueCallback, URL url) {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return;
             }
@@ -91,7 +91,7 @@ public final class JsVirtualMachine {
 
         @Override // com.tencent.smtt.export.external.jscore.interfaces.IX5JsContext
         public IX5JsValue evaluateScript(String str, URL url) {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return null;
             }
@@ -101,7 +101,7 @@ public final class JsVirtualMachine {
 
         @Override // com.tencent.smtt.export.external.jscore.interfaces.IX5JsContext
         public void evaluateScriptAsync(String str, final android.webkit.ValueCallback<IX5JsValue> valueCallback, URL url) {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return;
             }
@@ -126,7 +126,7 @@ public final class JsVirtualMachine {
 
         @Override // com.tencent.smtt.export.external.jscore.interfaces.IX5JsContext
         public void removeJavascriptInterface(String str) {
-            WebView webView = this.f38710a;
+            WebView webView = this.f25019a;
             if (webView == null) {
                 return;
             }
@@ -160,8 +160,8 @@ public final class JsVirtualMachine {
     }
 
     public JsVirtualMachine(Context context, Looper looper) {
-        this.f38709c = new HashSet<>();
-        this.f38708a = context;
+        this.f25018c = new HashSet<>();
+        this.f25017a = context;
         this.b = X5JsCore.a(context, looper);
     }
 
@@ -169,8 +169,8 @@ public final class JsVirtualMachine {
     public IX5JsContext a() {
         IX5JsVirtualMachine iX5JsVirtualMachine = this.b;
         if (iX5JsVirtualMachine == null) {
-            a aVar = new a(this.f38708a);
-            this.f38709c.add(new WeakReference<>(aVar));
+            a aVar = new a(this.f25017a);
+            this.f25018c.add(new WeakReference<>(aVar));
             return aVar;
         }
         return iX5JsVirtualMachine.createJsContext();
@@ -182,7 +182,7 @@ public final class JsVirtualMachine {
             iX5JsVirtualMachine.destroy();
             return;
         }
-        Iterator<WeakReference<a>> it = this.f38709c.iterator();
+        Iterator<WeakReference<a>> it = this.f25018c.iterator();
         while (it.hasNext()) {
             WeakReference<a> next = it.next();
             if (next.get() != null) {
@@ -206,7 +206,7 @@ public final class JsVirtualMachine {
             iX5JsVirtualMachine.onPause();
             return;
         }
-        Iterator<WeakReference<a>> it = this.f38709c.iterator();
+        Iterator<WeakReference<a>> it = this.f25018c.iterator();
         while (it.hasNext()) {
             WeakReference<a> next = it.next();
             if (next.get() != null) {
@@ -221,7 +221,7 @@ public final class JsVirtualMachine {
             iX5JsVirtualMachine.onResume();
             return;
         }
-        Iterator<WeakReference<a>> it = this.f38709c.iterator();
+        Iterator<WeakReference<a>> it = this.f25018c.iterator();
         while (it.hasNext()) {
             WeakReference<a> next = it.next();
             if (next.get() != null) {

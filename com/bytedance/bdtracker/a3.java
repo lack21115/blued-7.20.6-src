@@ -4,6 +4,6 @@ package com.bytedance.bdtracker;
 public final class a3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f21189a = "";
+    public static String f7583a = "";
     public static int b = -1;
 }

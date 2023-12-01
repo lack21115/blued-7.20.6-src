@@ -16,13 +16,13 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27140a;
+    private Context f13452a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.cmn.a.a f27141c;
-    private b.InterfaceC0687b d;
-    private InterfaceC0724a e;
+    private com.opos.mobad.cmn.a.a f13453c;
+    private b.InterfaceC0517b d;
+    private InterfaceC0554a e;
     private boolean f;
     private AdItemData g;
     private MaterialData h;
@@ -35,20 +35,20 @@ public class a {
 
     /* renamed from: com.opos.mobad.q.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/q/a/a$a.class */
-    public interface InterfaceC0724a extends i.b, a.b {
+    public interface InterfaceC0554a extends i.b, a.b {
         void j_();
     }
 
-    public a(Context context, String str, com.opos.mobad.cmn.a.a aVar, b.InterfaceC0687b interfaceC0687b, InterfaceC0724a interfaceC0724a) {
-        this.f27140a = context;
+    public a(Context context, String str, com.opos.mobad.cmn.a.a aVar, b.InterfaceC0517b interfaceC0517b, InterfaceC0554a interfaceC0554a) {
+        this.f13452a = context;
         this.b = str;
-        this.f27141c = aVar;
-        this.d = interfaceC0687b;
-        this.e = interfaceC0724a;
+        this.f13453c = aVar;
+        this.d = interfaceC0517b;
+        this.e = interfaceC0554a;
     }
 
     private void a(boolean z, int i, Map<String, String> map) {
-        com.opos.mobad.cmn.a.b.d.a(this.f27140a, this.b, this.g, this.h, z, i, map);
+        com.opos.mobad.cmn.a.b.d.a(this.f13452a, this.b, this.g, this.h, z, i, map);
     }
 
     private boolean a(int i, long j) {
@@ -79,7 +79,7 @@ public class a {
     private void c() {
         MaterialData materialData = this.h;
         if (materialData != null) {
-            com.opos.mobad.service.g.b.a(this.f27140a, materialData.o());
+            com.opos.mobad.service.g.b.a(this.f13452a, materialData.o());
         } else {
             com.opos.cmn.an.f.a.c("AdPresenter", "close with null data");
         }
@@ -101,7 +101,7 @@ public class a {
         if (this.g != null) {
             HashMap hashMap = new HashMap();
             hashMap.put("clientTemplateId", String.valueOf(this.k));
-            com.opos.mobad.cmn.a.b.d.a(this.f27140a, this.g.b(), this.g.g(), "3", this.g.c(), "", hashMap);
+            com.opos.mobad.cmn.a.b.d.a(this.f13452a, this.g.b(), this.g.g(), "3", this.g.c(), "", hashMap);
         }
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.q.a.a.1
             @Override // java.lang.Runnable
@@ -125,7 +125,7 @@ public class a {
         hashMap.put("rsCode", "" + i);
         hashMap.put("clientTemplateId", String.valueOf(this.k));
         AdItemData adItemData = this.g;
-        Context context = this.f27140a;
+        Context context = this.f13452a;
         if (adItemData == null) {
             str = this.b;
             b = "";
@@ -142,8 +142,8 @@ public class a {
             @Override // java.lang.Runnable
             public void run() {
                 if (a.this.e != null) {
-                    InterfaceC0724a interfaceC0724a = a.this.e;
-                    interfaceC0724a.a(-1, "render fail code:" + i);
+                    InterfaceC0554a interfaceC0554a = a.this.e;
+                    interfaceC0554a.a(-1, "render fail code:" + i);
                 }
             }
         });
@@ -163,7 +163,7 @@ public class a {
         boolean a2 = a(this.g.N(), this.g.p());
         hashMap.put("clientTemplateId", String.valueOf(this.k));
         a(a2, this.n, hashMap);
-        com.opos.mobad.service.g.b.a(this.f27140a, this.h.n());
+        com.opos.mobad.service.g.b.a(this.f13452a, this.h.n());
         com.opos.mobad.service.c.a(new Runnable() { // from class: com.opos.mobad.q.a.a.3
             @Override // java.lang.Runnable
             public void run() {
@@ -194,7 +194,7 @@ public class a {
             str = "1";
         }
         map.put("clickState", str);
-        com.opos.mobad.cmn.a.a aVar2 = this.f27141c;
+        com.opos.mobad.cmn.a.a aVar2 = this.f13453c;
         if (aVar2 != null) {
             aVar2.a(this.g, a2, iArr, map, aVar, view, this.d, (com.opos.mobad.cmn.a.b) null, cVar);
         }
@@ -215,10 +215,10 @@ public class a {
         this.i = false;
         this.k = i;
         this.m = i2;
-        com.opos.mobad.cmn.a.a aVar = this.f27141c;
+        com.opos.mobad.cmn.a.a aVar = this.f13453c;
         if (aVar != null) {
             aVar.b(adItemData);
-            this.f27141c.a(this.g);
+            this.f13453c.a(this.g);
         }
         this.l = false;
     }
@@ -227,18 +227,18 @@ public class a {
         if (this.f) {
             return;
         }
-        com.opos.mobad.cmn.a.b.d.a(this.f27140a, this.b, z, this.g, this.h, (Map<String, String>) null, iArr);
+        com.opos.mobad.cmn.a.b.d.a(this.f13452a, this.b, z, this.g, this.h, (Map<String, String>) null, iArr);
         c();
     }
 
     public void b() {
-        com.opos.mobad.cmn.service.pkginstall.b.a(this.f27140a).a(this.d);
+        com.opos.mobad.cmn.service.pkginstall.b.a(this.f13452a).a(this.d);
         this.f = true;
-        com.opos.mobad.cmn.a.a aVar = this.f27141c;
+        com.opos.mobad.cmn.a.a aVar = this.f13453c;
         if (aVar != null) {
             aVar.a();
         }
-        this.f27141c = null;
+        this.f13453c = null;
     }
 
     public void b(int i) {
@@ -249,7 +249,7 @@ public class a {
         if (this.f) {
             return;
         }
-        com.opos.mobad.cmn.a.b.d.a(this.f27140a, this.b, this.g, this.h, iArr, z);
+        com.opos.mobad.cmn.a.b.d.a(this.f13452a, this.b, this.g, this.h, iArr, z);
         c();
     }
 
@@ -257,7 +257,7 @@ public class a {
         if (this.f) {
             return;
         }
-        com.opos.mobad.cmn.a.b.d.a(this.f27140a, this.b, this.g, this.h, i);
+        com.opos.mobad.cmn.a.b.d.a(this.f13452a, this.b, this.g, this.h, i);
     }
 
     public void d(int i) {
@@ -272,7 +272,7 @@ public class a {
         hashMap.put("rsCode", "" + i);
         hashMap.put("clientTemplateId", String.valueOf(this.k));
         AdItemData adItemData = this.g;
-        Context context = this.f27140a;
+        Context context = this.f13452a;
         if (adItemData == null) {
             str = this.b;
             b = "";

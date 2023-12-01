@@ -30,25 +30,25 @@ public class b extends a {
     }
 
     private void c() {
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f25896a, 58.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 58.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12208a, 58.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 58.0f));
         layoutParams.addRule(15);
-        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f25896a, com.opos.cmn.an.h.f.a.d(this.f25896a) ? 17 : 35);
+        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f12208a, com.opos.cmn.an.h.f.a.d(this.f12208a) ? 17 : 35);
         this.j.setLayoutParams(layoutParams);
     }
 
     private void e() {
-        this.k = new RelativeLayout(this.f25896a);
+        this.k = new RelativeLayout(this.f12208a);
         k();
         l();
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(1, 1);
         layoutParams.addRule(15);
-        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f25896a, 8.0f);
+        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f12208a, 8.0f);
         this.i.addView(this.k, layoutParams);
     }
 
     private void k() {
-        TextView textView = new TextView(this.f25896a);
+        TextView textView = new TextView(this.f12208a);
         this.l = textView;
         textView.setId(2);
         this.l.setGravity(17);
@@ -62,7 +62,7 @@ public class b extends a {
     }
 
     private void l() {
-        TextView textView = new TextView(this.f25896a);
+        TextView textView = new TextView(this.f12208a);
         this.m = textView;
         textView.setGravity(17);
         this.m.setTextColor(Color.parseColor("#80000000"));
@@ -73,32 +73,32 @@ public class b extends a {
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(3, 2);
         layoutParams.addRule(5, 2);
-        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f25896a, 4.0f);
+        layoutParams.topMargin = com.opos.cmn.an.h.f.a.a(this.f12208a, 4.0f);
         this.k.addView(this.m, layoutParams);
     }
 
     private void m() {
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f25896a, 13.0f);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f12208a, 13.0f);
         this.j = cVar;
         cVar.setId(1);
         this.j.setScaleType(ImageView.ScaleType.FIT_XY);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f25896a, 58.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 58.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12208a, 58.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 58.0f));
         layoutParams.addRule(15);
-        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f25896a, 17.0f);
+        layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(this.f12208a, 17.0f);
         this.i.addView(this.j, layoutParams);
     }
 
     private void n() {
-        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f25896a, "opos_module_biz_ui_cmn_click_bn_normal_red_bg_img.png", "opos_module_biz_ui_cmn_click_bn_pressed_red_bg_img.png");
+        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f12208a, "opos_module_biz_ui_cmn_click_bn_normal_red_bg_img.png", "opos_module_biz_ui_cmn_click_bn_pressed_red_bg_img.png");
         this.n = aVar;
         aVar.setGravity(17);
         this.n.setTextColor(Color.parseColor("#ffffff"));
         this.n.setTextSize(1, 14.0f);
         this.n.setVisibility(8);
-        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f25896a, 80.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 30.0f));
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12208a, 80.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 30.0f));
         layoutParams.addRule(15);
         layoutParams.addRule(11);
-        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f25896a, 17.0f);
+        layoutParams.rightMargin = com.opos.cmn.an.h.f.a.a(this.f12208a, 17.0f);
         this.i.addView(this.n, layoutParams);
     }
 
@@ -118,7 +118,7 @@ public class b extends a {
         o();
         List<MaterialFileData> j = materialData.j();
         if (j != null && j.size() > 0 && j.get(0) != null) {
-            Bitmap a2 = g.a(j.get(0).a(), com.opos.cmn.an.h.f.a.a(this.f25896a, 58.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 58.0f));
+            Bitmap a2 = g.a(j.get(0).a(), com.opos.cmn.an.h.f.a.a(this.f12208a, 58.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 58.0f));
             this.o = a2;
             if (a2 != null) {
                 this.j.setImageBitmap(a2);

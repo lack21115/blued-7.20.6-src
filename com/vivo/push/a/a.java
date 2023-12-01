@@ -19,7 +19,7 @@ public final class a {
     private static void a(Context context, Intent intent) {
         if (context == null) {
             p.d("CommandBridge", "enter startService context is null");
-            throw new Exception(b.f7836a);
+            throw new Exception(b.f4996a);
         }
         try {
             context.startService(intent);

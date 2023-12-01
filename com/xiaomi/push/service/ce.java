@@ -19,19 +19,19 @@ import com.xiaomi.push.ir;
 /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/ce.class */
 public class ce {
     public static ir a(Context context, ic icVar) {
-        if (icVar.m11953b()) {
+        if (icVar.m8903b()) {
             return null;
         }
-        byte[] m11951a = icVar.m11951a();
-        ir a2 = a(icVar.a(), icVar.f714b);
+        byte[] m8901a = icVar.m8901a();
+        ir a2 = a(icVar.a(), icVar.f667b);
         if (a2 != null) {
-            iq.a(a2, m11951a);
+            iq.a(a2, m8901a);
         }
         return a2;
     }
 
     private static ir a(hg hgVar, boolean z) {
-        switch (cf.f41663a[hgVar.ordinal()]) {
+        switch (cf.f27972a[hgVar.ordinal()]) {
             case 1:
                 return new ih();
             case 2:

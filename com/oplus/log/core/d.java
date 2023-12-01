@@ -10,7 +10,7 @@ public final class d {
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f24335c;
+    public long f10648c;
     public h d;
     private String e;
     private String f;
@@ -21,25 +21,25 @@ public final class d {
     private String k;
 
     /* renamed from: a  reason: collision with root package name */
-    public ConcurrentLinkedQueue<e> f24334a = new ConcurrentLinkedQueue<>();
+    public ConcurrentLinkedQueue<e> f10647a = new ConcurrentLinkedQueue<>();
     private SimpleDateFormat l = new SimpleDateFormat("yyyy-MM-dd");
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public d(c cVar) {
-        if (!((TextUtils.isEmpty(cVar.f24330a) || TextUtils.isEmpty(cVar.b) || cVar.h == null || cVar.i == null) ? false : true)) {
+        if (!((TextUtils.isEmpty(cVar.f10643a) || TextUtils.isEmpty(cVar.b) || cVar.h == null || cVar.i == null) ? false : true)) {
             throw new NullPointerException("config's param is invalid");
         }
         this.b = cVar.b;
-        this.e = cVar.f24330a;
-        this.f = cVar.f24331c;
+        this.e = cVar.f10643a;
+        this.f = cVar.f10644c;
         this.g = cVar.e;
         this.i = cVar.g;
         this.h = cVar.d;
-        this.f24335c = cVar.f;
+        this.f10648c = cVar.f;
         this.j = new String(cVar.h);
         this.k = new String(cVar.i);
         if (this.d == null) {
-            h hVar = new h(this.f24334a, this.e, this.b, this.g, this.h, this.i, this.j, this.k, this.f);
+            h hVar = new h(this.f10647a, this.e, this.b, this.g, this.h, this.i, this.j, this.k, this.f);
             this.d = hVar;
             hVar.setName("logan-thread");
             this.d.start();
@@ -52,9 +52,9 @@ public final class d {
             return;
         }
         e eVar = new e();
-        eVar.f24336a = e.a.f24339c;
+        eVar.f10649a = e.a.f10652c;
         eVar.b = bVar;
-        this.f24334a.add(eVar);
+        this.f10647a.add(eVar);
         h hVar = this.d;
         if (hVar != null) {
             hVar.a();
@@ -62,6 +62,6 @@ public final class d {
     }
 
     public final void a(i iVar) {
-        this.d.f24342a = iVar;
+        this.d.f10655a = iVar;
     }
 }

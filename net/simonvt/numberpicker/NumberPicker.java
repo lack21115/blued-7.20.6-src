@@ -6,7 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -36,7 +35,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.blued.blued_third_library.R;
 import com.bytedance.applog.tracker.Tracker;
-import com.google.android.material.timepicker.TimeModel;
 import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -45,9 +43,7 @@ import java.util.Locale;
 
 /* loaded from: source-3503164-dex2jar.jar:net/simonvt/numberpicker/NumberPicker.class */
 public class NumberPicker extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final TwoDigitFormatter f43821a = new TwoDigitFormatter();
+    private static final TwoDigitFormatter a = new TwoDigitFormatter();
     private static final char[] ah = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 1632, 1633, 1634, 1635, 1636, 1637, 1638, 1639, 1640, 1641, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785};
     private int A;
     private final Scroller B;
@@ -80,9 +76,7 @@ public class NumberPicker extends LinearLayout {
     private final PressedStateHelper af;
     private int ag;
     private final ImageButton b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ImageButton f43822c;
+    private final ImageButton c;
     private final EditText d;
     private final int e;
     private final int f;
@@ -111,9 +105,7 @@ public class NumberPicker extends LinearLayout {
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/numberpicker/NumberPicker$AccessibilityNodeProviderImpl.class */
     public class AccessibilityNodeProviderImpl extends AccessibilityNodeProvider {
         private final Rect b = new Rect();
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int[] f43827c = new int[2];
+        private final int[] c = new int[2];
         private int d = Integer.MIN_VALUE;
 
         AccessibilityNodeProviderImpl() {
@@ -176,7 +168,7 @@ public class NumberPicker extends LinearLayout {
             Rect rect = this.b;
             rect.set(i2, i3, i4, i5);
             obtain.setBoundsInParent(rect);
-            int[] iArr = this.f43827c;
+            int[] iArr = this.c;
             NumberPicker.this.getLocationOnScreen(iArr);
             rect.offset(iArr[0], iArr[1]);
             obtain.setBoundsInScreen(rect);
@@ -193,7 +185,7 @@ public class NumberPicker extends LinearLayout {
         }
 
         private void a(int i) {
-            if (((AccessibilityManager) NumberPicker.this.getContext().getSystemService(Context.ACCESSIBILITY_SERVICE)).isEnabled()) {
+            if (((AccessibilityManager) NumberPicker.this.getContext().getSystemService("accessibility")).isEnabled()) {
                 AccessibilityEvent obtain = AccessibilityEvent.obtain(i);
                 NumberPicker.this.d.onInitializeAccessibilityEvent(obtain);
                 NumberPicker.this.d.onPopulateAccessibilityEvent(obtain);
@@ -204,7 +196,7 @@ public class NumberPicker extends LinearLayout {
         }
 
         private void a(int i, int i2, String str) {
-            if (((AccessibilityManager) NumberPicker.this.getContext().getSystemService(Context.ACCESSIBILITY_SERVICE)).isEnabled()) {
+            if (((AccessibilityManager) NumberPicker.this.getContext().getSystemService("accessibility")).isEnabled()) {
                 AccessibilityEvent obtain = AccessibilityEvent.obtain(i2);
                 obtain.setClassName(Button.class.getName());
                 obtain.setPackageName(NumberPicker.this.getContext().getPackageName());
@@ -567,9 +559,7 @@ public class NumberPicker extends LinearLayout {
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/numberpicker/NumberPicker$PressedStateHelper.class */
     public class PressedStateHelper implements Runnable {
         private final int b = 1;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f43832c = 2;
+        private final int c = 2;
         private int d;
         private int e;
 
@@ -650,41 +640,37 @@ public class NumberPicker extends LinearLayout {
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/numberpicker/NumberPicker$SetSelectionCommand.class */
     public class SetSelectionCommand implements Runnable {
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f43834c;
+        private int c;
 
         SetSelectionCommand() {
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            NumberPicker.this.d.setSelection(this.b, this.f43834c);
+            NumberPicker.this.d.setSelection(this.b, this.c);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/numberpicker/NumberPicker$SupportAccessibilityNodeProvider.class */
     public class SupportAccessibilityNodeProvider {
-
-        /* renamed from: a  reason: collision with root package name */
-        AccessibilityNodeProviderImpl f43835a;
+        AccessibilityNodeProviderImpl a;
 
         private SupportAccessibilityNodeProvider() {
             if (Build.VERSION.SDK_INT >= 16) {
-                this.f43835a = new AccessibilityNodeProviderImpl();
+                this.a = new AccessibilityNodeProviderImpl();
             }
         }
 
         public void a(int i, int i2) {
-            AccessibilityNodeProviderImpl accessibilityNodeProviderImpl = this.f43835a;
+            AccessibilityNodeProviderImpl accessibilityNodeProviderImpl = this.a;
             if (accessibilityNodeProviderImpl != null) {
                 accessibilityNodeProviderImpl.a(i, i2);
             }
         }
 
         public boolean a(int i, int i2, Bundle bundle) {
-            AccessibilityNodeProviderImpl accessibilityNodeProviderImpl = this.f43835a;
+            AccessibilityNodeProviderImpl accessibilityNodeProviderImpl = this.a;
             if (accessibilityNodeProviderImpl != null) {
                 return accessibilityNodeProviderImpl.performAction(i, i2, bundle);
             }
@@ -696,12 +682,8 @@ public class NumberPicker extends LinearLayout {
     /* loaded from: source-3503164-dex2jar.jar:net/simonvt/numberpicker/NumberPicker$TwoDigitFormatter.class */
     public static class TwoDigitFormatter implements Formatter {
         char b;
-
-        /* renamed from: c  reason: collision with root package name */
-        java.util.Formatter f43837c;
-
-        /* renamed from: a  reason: collision with root package name */
-        final StringBuilder f43836a = new StringBuilder();
+        java.util.Formatter c;
+        final StringBuilder a = new StringBuilder();
         final Object[] d = new Object[1];
 
         TwoDigitFormatter() {
@@ -709,7 +691,7 @@ public class NumberPicker extends LinearLayout {
         }
 
         private void a(Locale locale) {
-            this.f43837c = c(locale);
+            this.c = c(locale);
             this.b = b(locale);
         }
 
@@ -718,7 +700,7 @@ public class NumberPicker extends LinearLayout {
         }
 
         private java.util.Formatter c(Locale locale) {
-            return new java.util.Formatter(this.f43836a, locale);
+            return new java.util.Formatter(this.a, locale);
         }
 
         @Override // net.simonvt.numberpicker.NumberPicker.Formatter
@@ -728,10 +710,10 @@ public class NumberPicker extends LinearLayout {
                 a(locale);
             }
             this.d[0] = Integer.valueOf(i);
-            StringBuilder sb = this.f43836a;
+            StringBuilder sb = this.a;
             sb.delete(0, sb.length());
-            this.f43837c.format(TimeModel.ZERO_LEADING_NUMBER_FORMAT, this.d);
-            return this.f43837c.toString();
+            this.c.format("%02d", this.d);
+            return this.c.toString();
         }
     }
 
@@ -777,7 +759,7 @@ public class NumberPicker extends LinearLayout {
         obtainStyledAttributes.recycle();
         this.af = new PressedStateHelper();
         setWillNotDraw(!this.Q);
-        ((LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(resourceId, (ViewGroup) this, true);
+        ((LayoutInflater) getContext().getSystemService("layout_inflater")).inflate(resourceId, (ViewGroup) this, true);
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: net.simonvt.numberpicker.NumberPicker.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -813,12 +795,12 @@ public class NumberPicker extends LinearLayout {
             this.b.setOnLongClickListener(onLongClickListener);
         }
         if (this.Q) {
-            this.f43822c = null;
+            this.c = null;
         } else {
             ImageButton imageButton2 = (ImageButton) findViewById(R.id.np__decrement);
-            this.f43822c = imageButton2;
+            this.c = imageButton2;
             imageButton2.setOnClickListener(onClickListener);
-            this.f43822c.setOnLongClickListener(onLongClickListener);
+            this.c.setOnLongClickListener(onLongClickListener);
         }
         EditText editText = (EditText) findViewById(R.id.np__numberpicker_input);
         this.d = editText;
@@ -929,12 +911,12 @@ public class NumberPicker extends LinearLayout {
         if (this.p == i) {
             return;
         }
-        int c2 = this.O ? c(i) : Math.min(Math.max(i, this.n), this.o);
+        int c = this.O ? c(i) : Math.min(Math.max(i, this.n), this.o);
         int i2 = this.p;
-        this.p = c2;
+        this.p = c;
         h();
         if (z) {
-            b(i2, c2);
+            b(i2, c);
         }
         e();
         invalidate();
@@ -1032,7 +1014,7 @@ public class NumberPicker extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
-        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService("input_method");
         if (inputMethodManager != null) {
             if (this.Q) {
                 this.d.setVisibility(0);
@@ -1105,7 +1087,7 @@ public class NumberPicker extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService("input_method");
         if (inputMethodManager == null || !inputMethodManager.isActive(this.d)) {
             return;
         }
@@ -1124,7 +1106,7 @@ public class NumberPicker extends LinearLayout {
             removeCallbacks(setSelectionCommand);
         }
         this.E.b = i;
-        this.E.f43834c = i2;
+        this.E.c = i2;
         post(this.E);
     }
 
@@ -1226,7 +1208,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     private static String f(int i) {
-        return String.format(Locale.getDefault(), TimeModel.NUMBER_FORMAT, Integer.valueOf(i));
+        return String.format(Locale.getDefault(), "%d", Integer.valueOf(i));
     }
 
     private void f() {
@@ -1251,7 +1233,7 @@ public class NumberPicker extends LinearLayout {
     }
 
     public static final Formatter getTwoDigitFormatter() {
-        return f43821a;
+        return a;
     }
 
     private boolean h() {
@@ -1354,7 +1336,7 @@ public class NumberPicker extends LinearLayout {
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchHoverEvent(MotionEvent motionEvent) {
         if (this.Q) {
-            if (((AccessibilityManager) getContext().getSystemService(Context.ACCESSIBILITY_SERVICE)).isEnabled()) {
+            if (((AccessibilityManager) getContext().getSystemService("accessibility")).isEnabled()) {
                 int y = (int) motionEvent.getY();
                 int i = y < this.W ? 3 : y > this.aa ? 1 : 2;
                 int action = motionEvent.getAction() & 255;
@@ -1548,7 +1530,7 @@ public class NumberPicker extends LinearLayout {
             if (this.ae == null) {
                 this.ae = new SupportAccessibilityNodeProvider();
             }
-            return this.ae.f43835a;
+            return this.ae.a;
         }
         return super.getAccessibilityNodeProvider();
     }
@@ -1842,7 +1824,7 @@ public class NumberPicker extends LinearLayout {
         }
         this.m = strArr;
         if (strArr != null) {
-            this.d.setRawInputType(ConnectivityManager.CALLBACK_PRECHECK);
+            this.d.setRawInputType(524289);
         } else {
             this.d.setRawInputType(2);
         }
@@ -1858,7 +1840,7 @@ public class NumberPicker extends LinearLayout {
             this.b.setEnabled(z);
         }
         if (!this.Q) {
-            this.f43822c.setEnabled(z);
+            this.c.setEnabled(z);
         }
         this.d.setEnabled(z);
     }

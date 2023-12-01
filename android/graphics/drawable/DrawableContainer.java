@@ -141,7 +141,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             this.mNumChildren = drawableContainerState.mNumChildren;
             SparseArray<ConstantStateFuture> sparseArray = drawableContainerState.mDrawableFutures;
             if (sparseArray != null) {
-                this.mDrawableFutures = sparseArray.m1029clone();
+                this.mDrawableFutures = sparseArray.m1025clone();
             } else {
                 this.mDrawableFutures = new SparseArray<>(this.mNumChildren);
             }

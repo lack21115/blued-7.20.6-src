@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public class ba {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23741a;
+    private JSONObject f10133a;
     private int b;
 
     public ba(Context context, int i, String str, boolean z) {
@@ -20,7 +20,7 @@ public class ba {
                 if (TextUtils.isEmpty(pqr)) {
                     return;
                 }
-                this.f23741a = new JSONObject(pqr);
+                this.f10133a = new JSONObject(pqr);
             } catch (Throwable th) {
             }
         }
@@ -42,7 +42,7 @@ public class ba {
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23741a;
+        JSONObject jSONObject = this.f10133a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);
@@ -54,7 +54,7 @@ public class ba {
     }
 
     public JSONObject b() {
-        return this.f23741a;
+        return this.f10133a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:48:0x0124, code lost:

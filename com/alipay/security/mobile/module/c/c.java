@@ -26,6 +26,6 @@ public final class c {
         if (externalStorageState == null || externalStorageState.length() <= 0) {
             return false;
         }
-        return (externalStorageState.equals(Environment.MEDIA_MOUNTED) || externalStorageState.equals(Environment.MEDIA_MOUNTED_READ_ONLY)) && Environment.getExternalStorageDirectory() != null;
+        return (externalStorageState.equals("mounted") || externalStorageState.equals("mounted_ro")) && Environment.getExternalStorageDirectory() != null;
     }
 }

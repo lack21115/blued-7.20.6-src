@@ -11,13 +11,9 @@ import android.widget.TextView;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/AutoResizeTextView.class */
 public class AutoResizeTextView extends TextView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int f6042a = 1000;
+    private static final int a = 1000;
     private static final int b = 5;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextPaint f6043c;
+    private TextPaint c;
     private float d;
     private float e;
     private boolean f;
@@ -51,11 +47,11 @@ public class AutoResizeTextView extends TextView {
     }
 
     private int a(CharSequence charSequence, int i) {
-        return new StaticLayout(charSequence, this.f6043c, i, Layout.Alignment.ALIGN_NORMAL, this.d, this.e, true).getHeight();
+        return new StaticLayout(charSequence, this.c, i, Layout.Alignment.ALIGN_NORMAL, this.d, this.e, true).getHeight();
     }
 
     private void a() {
-        this.f6043c = new TextPaint();
+        this.c = new TextPaint();
     }
 
     private void b() {
@@ -73,9 +69,9 @@ public class AutoResizeTextView extends TextView {
             if (i < 5) {
                 break;
             }
-            this.f6043c.setTextSize(i);
-            int measureText = (int) this.f6043c.measureText(text, 0, text.length());
-            int height2 = new StaticLayout(text, this.f6043c, width, Layout.Alignment.ALIGN_NORMAL, this.d, this.e, true).getHeight();
+            this.c.setTextSize(i);
+            int measureText = (int) this.c.measureText(text, 0, text.length());
+            int height2 = new StaticLayout(text, this.c, width, Layout.Alignment.ALIGN_NORMAL, this.d, this.e, true).getHeight();
             if (measureText < width && height2 < height) {
                 break;
             }
@@ -111,9 +107,9 @@ public class AutoResizeTextView extends TextView {
             if (i < 5) {
                 break;
             }
-            this.f6043c.setTextSize(i);
-            int measureText = (int) this.f6043c.measureText(text, 0, text.length());
-            int height2 = new StaticLayout(text, this.f6043c, width, Layout.Alignment.ALIGN_NORMAL, this.d, this.e, true).getHeight();
+            this.c.setTextSize(i);
+            int measureText = (int) this.c.measureText(text, 0, text.length());
+            int height2 = new StaticLayout(text, this.c, width, Layout.Alignment.ALIGN_NORMAL, this.d, this.e, true).getHeight();
             if (measureText < width && height2 < height) {
                 break;
             }

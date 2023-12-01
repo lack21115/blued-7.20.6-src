@@ -30,17 +30,17 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<b> f7372a;
+    public final List<b> f4533a;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/g/c/f$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7373a;
+        public final int f4534a;
         public final long b;
 
         private a(int i, long j) {
-            this.f7373a = i;
+            this.f4534a = i;
             this.b = j;
         }
 
@@ -53,7 +53,7 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
         }
 
         static /* synthetic */ void a(a aVar, Parcel parcel) {
-            parcel.writeInt(aVar.f7373a);
+            parcel.writeInt(aVar.f4534a);
             parcel.writeLong(aVar.b);
         }
 
@@ -62,7 +62,7 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
         }
 
         private void c(Parcel parcel) {
-            parcel.writeInt(this.f7373a);
+            parcel.writeInt(this.f4534a);
             parcel.writeLong(this.b);
         }
     }
@@ -71,11 +71,11 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f7374a;
+        public final long f4535a;
         public final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final boolean f7375c;
+        public final boolean f4536c;
         public final boolean d;
         public final long e;
         public final List<a> f;
@@ -86,9 +86,9 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
         public final int k;
 
         private b(long j, boolean z, boolean z2, boolean z3, List<a> list, long j2, boolean z4, long j3, int i, int i2, int i3) {
-            this.f7374a = j;
+            this.f4535a = j;
             this.b = z;
-            this.f7375c = z2;
+            this.f4536c = z2;
             this.d = z3;
             this.f = Collections.unmodifiableList(list);
             this.e = j2;
@@ -100,9 +100,9 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
         }
 
         private b(Parcel parcel) {
-            this.f7374a = parcel.readLong();
+            this.f4535a = parcel.readLong();
             this.b = parcel.readByte() == 1;
-            this.f7375c = parcel.readByte() == 1;
+            this.f4536c = parcel.readByte() == 1;
             this.d = parcel.readByte() == 1;
             int readInt = parcel.readInt();
             ArrayList arrayList = new ArrayList(readInt);
@@ -182,9 +182,9 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
         }
 
         private static /* synthetic */ void a(b bVar, Parcel parcel) {
-            parcel.writeLong(bVar.f7374a);
+            parcel.writeLong(bVar.f4535a);
             parcel.writeByte(bVar.b ? (byte) 1 : (byte) 0);
-            parcel.writeByte(bVar.f7375c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(bVar.f4536c ? (byte) 1 : (byte) 0);
             parcel.writeByte(bVar.d ? (byte) 1 : (byte) 0);
             int size = bVar.f.size();
             parcel.writeInt(size);
@@ -259,9 +259,9 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
         }
 
         private void b(Parcel parcel) {
-            parcel.writeLong(this.f7374a);
+            parcel.writeLong(this.f4535a);
             parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
-            parcel.writeByte(this.f7375c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(this.f4536c ? (byte) 1 : (byte) 0);
             parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
             int size = this.f.size();
             parcel.writeInt(size);
@@ -294,7 +294,7 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
         while (true) {
             int i2 = i;
             if (i2 >= readInt) {
-                this.f7372a = Collections.unmodifiableList(arrayList);
+                this.f4533a = Collections.unmodifiableList(arrayList);
                 return;
             } else {
                 arrayList.add(b.a(parcel));
@@ -308,7 +308,7 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
     }
 
     private f(List<b> list) {
-        this.f7372a = Collections.unmodifiableList(list);
+        this.f4533a = Collections.unmodifiableList(list);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -328,7 +328,7 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        int size = this.f7372a.size();
+        int size = this.f4533a.size();
         parcel.writeInt(size);
         int i2 = 0;
         while (true) {
@@ -336,10 +336,10 @@ public final class f extends com.anythink.expressad.exoplayer.g.c.b {
             if (i3 >= size) {
                 return;
             }
-            b bVar = this.f7372a.get(i3);
-            parcel.writeLong(bVar.f7374a);
+            b bVar = this.f4533a.get(i3);
+            parcel.writeLong(bVar.f4535a);
             parcel.writeByte(bVar.b ? (byte) 1 : (byte) 0);
-            parcel.writeByte(bVar.f7375c ? (byte) 1 : (byte) 0);
+            parcel.writeByte(bVar.f4536c ? (byte) 1 : (byte) 0);
             parcel.writeByte(bVar.d ? (byte) 1 : (byte) 0);
             int size2 = bVar.f.size();
             parcel.writeInt(size2);

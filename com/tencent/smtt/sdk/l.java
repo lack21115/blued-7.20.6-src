@@ -39,7 +39,7 @@ public class l {
     private boolean D;
 
     /* renamed from: a  reason: collision with root package name */
-    String f38859a;
+    String f25168a;
     private Context h;
     private String i;
     private String j;
@@ -64,7 +64,7 @@ public class l {
     String[] b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    int f38860c = 0;
+    int f25169c = 0;
 
     public l(Context context) throws NullPointerException {
         Context applicationContext = context.getApplicationContext();
@@ -515,12 +515,12 @@ public class l {
             }
             this.u = null;
         }
-        int i = this.w.f38776a;
+        int i = this.w.f25085a;
         if (this.s || !this.z) {
             if (this.d) {
                 return;
             }
-            TbsDownloader.f38764a = false;
+            TbsDownloader.f25073a = false;
             return;
         }
         this.w.setEventTime(System.currentTimeMillis());
@@ -535,7 +535,7 @@ public class l {
         if (apnType != this.y || !str.equals(this.x)) {
             this.w.setNetworkChange(0);
         }
-        if ((this.w.f38776a == 0 || this.w.f38776a == 107) && this.w.getDownFinalFlag() == 0 && (!Apn.isNetworkAvailable(this.h) || !m())) {
+        if ((this.w.f25085a == 0 || this.w.f25085a == 107) && this.w.getDownFinalFlag() == 0 && (!Apn.isNetworkAvailable(this.h) || !m())) {
             a(101, (String) null, true);
         }
         if (TbsDownloader.a(this.h)) {
@@ -901,7 +901,7 @@ public class l {
         } else {
             str = "by new key";
         }
-        this.f38859a = str;
+        this.f25168a = str;
         if (i2 == 0 || i2 == i3) {
             return false;
         }
@@ -927,7 +927,7 @@ public class l {
                         TbsDownloadConfig.getInstance(this.h).setDownloadInterruptCode(-214);
                         d(false);
                         if (z3) {
-                            a(100, "use local backup apk in startDownload" + this.f38859a, true);
+                            a(100, "use local backup apk in startDownload" + this.f25168a, true);
                             if (TbsDownloader.a(this.h)) {
                                 tbsLogReport = TbsLogReport.getInstance(this.h);
                                 eventType = TbsLogReport.EventType.TYPE_DOWNLOAD_DECOUPLE;
@@ -993,8 +993,8 @@ public class l {
     public boolean b(boolean z) {
         String[] strArr;
         int i;
-        if ((!z || o() || (QbSdk.getDownloadWithoutWifi() && Apn.isNetworkAvailable(this.h))) && (strArr = this.b) != null && (i = this.f38860c) >= 0 && i < strArr.length) {
-            this.f38860c = i + 1;
+        if ((!z || o() || (QbSdk.getDownloadWithoutWifi() && Apn.isNetworkAvailable(this.h))) && (strArr = this.b) != null && (i = this.f25169c) >= 0 && i < strArr.length) {
+            this.f25169c = i + 1;
             this.k = strArr[i];
             this.q = 0;
             this.r = 0;

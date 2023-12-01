@@ -13,46 +13,46 @@ import org.json.JSONObject;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    public JSONArray f42187a = new JSONArray();
+    public JSONArray f28496a = new JSONArray();
 
     /* loaded from: source-8829756-dex2jar.jar:com/zx/a/I8b7/r$a.class */
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f42188a;
+        public final /* synthetic */ String f28497a;
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f42189c;
+        public final /* synthetic */ String f28498c;
 
         public a(String str, String str2, String str3) {
-            this.f42188a = str;
+            this.f28497a = str;
             this.b = str2;
-            this.f42189c = str3;
+            this.f28498c = str3;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             try {
-                if (r.this.f42187a.length() >= 100) {
-                    z1.a("events length > MAX_COUNT " + r.this.f42187a.length());
+                if (r.this.f28496a.length() >= 100) {
+                    z1.a("events length > MAX_COUNT " + r.this.f28496a.length());
                     return;
                 }
                 long currentTimeMillis = System.currentTimeMillis();
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("ts", currentTimeMillis);
-                jSONObject.put(FailedBinderCallBack.CALLER_ID, this.f42188a);
+                jSONObject.put(FailedBinderCallBack.CALLER_ID, this.f28497a);
                 jSONObject.put("action", this.b);
-                jSONObject.put("params", this.f42189c);
-                r.this.f42187a.put(jSONObject);
+                jSONObject.put("params", this.f28498c);
+                r.this.f28496a.put(jSONObject);
                 z1.a("events add:" + jSONObject.toString());
                 if (t2.D) {
-                    z1.a("events save:" + r.this.f42187a.toString());
-                    u1 u1Var = u1.a.f42208a;
-                    b3 b3Var = u1Var.f42207a;
-                    String jSONArray = r.this.f42187a.toString();
+                    z1.a("events save:" + r.this.f28496a.toString());
+                    u1 u1Var = u1.a.f28517a;
+                    b3 b3Var = u1Var.f28516a;
+                    String jSONArray = r.this.f28496a.toString();
                     b3Var.getClass();
-                    u1Var.f42207a.a(23, jSONArray, true);
+                    u1Var.f28516a.a(23, jSONArray, true);
                 }
             } catch (Throwable th) {
                 z1.a(th);
@@ -64,7 +64,7 @@ public class r {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final r f42190a = new r();
+        public static final r f28499a = new r();
     }
 
     public void a(String str) {
@@ -73,7 +73,7 @@ public class r {
                 return;
             }
             JSONArray jSONArray = new JSONArray(str);
-            JSONArray jSONArray2 = this.f42187a;
+            JSONArray jSONArray2 = this.f28496a;
             JSONArray jSONArray3 = new JSONArray();
             int i = 0;
             while (true) {
@@ -89,7 +89,7 @@ public class r {
                     i = i2 + 1;
                 }
             }
-            this.f42187a = jSONArray3;
+            this.f28496a = jSONArray3;
         } catch (JSONException e) {
             z1.a(e);
         }
@@ -98,8 +98,8 @@ public class r {
     public void a(String str, String str2, String str3) {
         try {
             a aVar = new a(str, str2, str3);
-            AtomicInteger atomicInteger = c3.f42112c;
-            c3.c.f42114a.b.execute(aVar);
+            AtomicInteger atomicInteger = c3.f28421c;
+            c3.c.f28423a.b.execute(aVar);
         } catch (Throwable th) {
             z1.a(th);
         }

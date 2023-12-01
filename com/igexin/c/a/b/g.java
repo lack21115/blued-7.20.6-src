@@ -1,7 +1,6 @@
 package com.igexin.c.a.b;
 
 import android.database.Cursor;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
@@ -15,11 +14,11 @@ import java.util.zip.GZIPOutputStream;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23248a = 512;
+    public static final int f9640a = 512;
     public static final String b = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
     /* renamed from: c  reason: collision with root package name */
-    static final char f23249c = '=';
+    static final char f9641c = '=';
     public static final int d = 0;
     public static final int e = 1;
     public static final int f = 2;
@@ -52,7 +51,7 @@ public final class g {
     }
 
     public static int a(byte[] bArr, byte[] bArr2, int i2, int i3) {
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, i2, i3);
+        System.arraycopy(bArr, 0, bArr2, i2, i3);
         return i3;
     }
 
@@ -91,7 +90,7 @@ public final class g {
         }
         if (!strArr[3].equals("")) {
             sb.append(strArr[3]);
-            if (!strArr[3].equals(BridgeUtil.SPLIT_MARK)) {
+            if (!strArr[3].equals("/")) {
                 sb.append('/');
             }
         }
@@ -278,7 +277,7 @@ public final class g {
                 return strArr;
             }
         } else {
-            strArr[3] = BridgeUtil.SPLIT_MARK;
+            strArr[3] = "/";
         }
         return strArr;
     }

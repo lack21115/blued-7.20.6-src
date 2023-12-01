@@ -19,6 +19,7 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 
@@ -29,11 +30,11 @@ import kotlinx.coroutines.CoroutineScope;
 public final class IdentifyFaceVM$requestSign$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f20613a;
+    int f7007a;
     final /* synthetic */ String b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f20614c;
+    final /* synthetic */ String f7008c;
     final /* synthetic */ IdentifyFaceVM d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,31 +42,28 @@ public final class IdentifyFaceVM$requestSign$1 extends SuspendLambda implements
     public IdentifyFaceVM$requestSign$1(String str, String str2, IdentifyFaceVM identifyFaceVM, Continuation<? super IdentifyFaceVM$requestSign$1> continuation) {
         super(2, continuation);
         this.b = str;
-        this.f20614c = str2;
+        this.f7008c = str2;
         this.d = identifyFaceVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((IdentifyFaceVM$requestSign$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new IdentifyFaceVM$requestSign$1(this.b, this.f20614c, this.d, continuation);
+        return new IdentifyFaceVM$requestSign$1(this.b, this.f7008c, this.d, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        ApiState error;
+        ApiState apiState;
         Object obj2;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f20613a;
+        int i = this.f7007a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f20613a = 1;
-            Object a3 = ((LoginService) BluedApiProxy.b().a(LoginService.class)).a(this.b, this.f20614c, this);
+            this.f7007a = 1;
+            Object a3 = ((LoginService) BluedApiProxy.b().a(LoginService.class)).a(this.b, this.f7008c, (Continuation) this);
             obj = a3;
             if (a3 == a2) {
                 return a2;
@@ -79,38 +77,38 @@ public final class IdentifyFaceVM$requestSign$1 extends SuspendLambda implements
         IdentifyFaceVM identifyFaceVM = this.d;
         if (bluedEntityA.code != 200) {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            error = new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            apiState = (ApiState) new Error(i2, str);
         } else if (bluedEntityA.hasData()) {
-            List<T> data = bluedEntityA.data;
-            Intrinsics.c(data, "data");
+            List list = bluedEntityA.data;
+            Intrinsics.c(list, "data");
             bluedEntityA.hasMore();
-            if (!data.isEmpty()) {
-                obj2 = data.get(0);
+            if (!list.isEmpty()) {
+                obj2 = list.get(0);
                 identifyFaceVM.a((FaceSignModel) obj2);
             }
-            error = Succeed.f10631a;
+            apiState = (ApiState) Succeed.a;
         } else {
             List b = CollectionsKt.b();
-            List list = b;
+            List list2 = b;
             boolean z = true;
-            if (list != null) {
-                z = list.isEmpty();
+            if (list2 != null) {
+                z = list2.isEmpty();
             }
             if (!z) {
                 obj2 = b.get(0);
                 identifyFaceVM.a((FaceSignModel) obj2);
             }
-            error = Succeed.f10631a;
+            apiState = (ApiState) Succeed.a;
         }
         IdentifyFaceVM identifyFaceVM2 = this.d;
-        if (error instanceof Error) {
-            Error error2 = (Error) error;
-            error2.a();
-            error2.b();
-            BluedStructureExtKt.a(identifyFaceVM2, new MviEvent.LoadFinished(false, false, 3, null));
+        if (apiState instanceof Error) {
+            Error error = apiState;
+            error.a();
+            error.b();
+            BluedStructureExtKt.a(identifyFaceVM2, new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null));
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

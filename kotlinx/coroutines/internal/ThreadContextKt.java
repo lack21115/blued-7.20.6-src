@@ -9,9 +9,7 @@ import kotlinx.coroutines.ThreadContextElement;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/ThreadContextKt.class */
 public final class ThreadContextKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Symbol f43565a = new Symbol("NO_THREAD_ELEMENTS");
+    public static final Symbol a = new Symbol("NO_THREAD_ELEMENTS");
     private static final Function2<Object, CoroutineContext.Element, Object> b = new Function2<Object, CoroutineContext.Element, Object>() { // from class: kotlinx.coroutines.internal.ThreadContextKt$countAll$1
         @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
@@ -24,9 +22,7 @@ public final class ThreadContextKt {
             return obj;
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Function2<ThreadContextElement<?>, CoroutineContext.Element, ThreadContextElement<?>> f43566c = new Function2<ThreadContextElement<?>, CoroutineContext.Element, ThreadContextElement<?>>() { // from class: kotlinx.coroutines.internal.ThreadContextKt$findOne$1
+    private static final Function2<ThreadContextElement<?>, CoroutineContext.Element, ThreadContextElement<?>> c = new Function2<ThreadContextElement<?>, CoroutineContext.Element, ThreadContextElement<?>>() { // from class: kotlinx.coroutines.internal.ThreadContextKt$findOne$1
         @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final ThreadContextElement<?> invoke(ThreadContextElement<?> threadContextElement, CoroutineContext.Element element) {
@@ -45,7 +41,7 @@ public final class ThreadContextKt {
         public final ThreadState invoke(ThreadState threadState, CoroutineContext.Element element) {
             if (element instanceof ThreadContextElement) {
                 ThreadContextElement<?> threadContextElement = (ThreadContextElement) element;
-                threadState.a(threadContextElement, threadContextElement.b(threadState.f43574a));
+                threadState.a(threadContextElement, threadContextElement.b(threadState.a));
             }
             return threadState;
         }
@@ -62,18 +58,18 @@ public final class ThreadContextKt {
         if (obj == null) {
             obj2 = a(coroutineContext);
         }
-        return obj2 == 0 ? f43565a : obj2 instanceof Integer ? coroutineContext.fold(new ThreadState(coroutineContext, ((Number) obj2).intValue()), d) : ((ThreadContextElement) obj2).b(coroutineContext);
+        return obj2 == 0 ? a : obj2 instanceof Integer ? coroutineContext.fold(new ThreadState(coroutineContext, ((Number) obj2).intValue()), d) : ((ThreadContextElement) obj2).b(coroutineContext);
     }
 
     public static final void b(CoroutineContext coroutineContext, Object obj) {
-        if (obj == f43565a) {
+        if (obj == a) {
             return;
         }
         if (obj instanceof ThreadState) {
             ((ThreadState) obj).a(coroutineContext);
             return;
         }
-        Object fold = coroutineContext.fold(null, f43566c);
+        Object fold = coroutineContext.fold(null, c);
         if (fold == null) {
             throw new NullPointerException("null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
         }

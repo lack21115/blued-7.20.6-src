@@ -11,7 +11,7 @@ public class ExtractedText implements Parcelable {
         @Override // android.os.Parcelable.Creator
         public ExtractedText createFromParcel(Parcel parcel) {
             ExtractedText extractedText = new ExtractedText();
-            extractedText.text = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            extractedText.text = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             extractedText.startOffset = parcel.readInt();
             extractedText.partialStartOffset = parcel.readInt();
             extractedText.partialEndOffset = parcel.readInt();

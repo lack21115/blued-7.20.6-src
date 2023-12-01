@@ -1,5 +1,6 @@
 package com.opos.exoplayer.a;
 
+import android.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -29,11 +30,11 @@ import java.util.List;
 public class c extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f24993a;
+    private int f11305a;
     private final com.opos.exoplayer.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f24994c;
+    private View f11306c;
     private final a d;
     private final View e;
     private final ImageView f;
@@ -206,18 +207,18 @@ public class c extends FrameLayout {
 
     public c(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f24993a = 2;
+        this.f11305a = 2;
         if (isInEditMode()) {
             this.b = null;
             this.d = null;
-            this.f24994c = null;
+            this.f11306c = null;
             this.e = null;
             this.f = null;
             this.g = null;
             this.h = null;
             this.i = null;
             ImageView imageView = new ImageView(context);
-            if (u.f25510a >= 23) {
+            if (u.f11822a >= 23) {
                 a(getResources(), imageView);
             } else {
                 b(getResources(), imageView);
@@ -239,14 +240,14 @@ public class c extends FrameLayout {
         this.e = view;
         view.setBackgroundColor(-16777216);
         this.b.addView(this.e, new FrameLayout.LayoutParams(-1, -1));
-        if (this.b == null || this.f24993a == 0) {
-            this.f24994c = null;
+        if (this.b == null || this.f11305a == 0) {
+            this.f11306c = null;
         } else {
             ViewGroup.LayoutParams layoutParams2 = new ViewGroup.LayoutParams(-1, -1);
-            View textureView = this.f24993a == 2 ? new TextureView(context) : new SurfaceView(context);
-            this.f24994c = textureView;
+            View textureView = this.f11305a == 2 ? new TextureView(context) : new SurfaceView(context);
+            this.f11306c = textureView;
             textureView.setLayoutParams(layoutParams2);
-            this.b.addView(this.f24994c, 0);
+            this.b.addView(this.f11306c, 0);
         }
         this.i = new FrameLayout(context);
         addView(this.i, new FrameLayout.LayoutParams(-1, -1));
@@ -457,7 +458,7 @@ public class c extends FrameLayout {
         L13:
             r0 = r4
             r1 = r6
-            int r1 = r1.f25435a
+            int r1 = r1.f11747a
             if (r0 >= r1) goto L3b
             r0 = r3
             com.opos.exoplayer.core.q r0 = r0.j
@@ -494,7 +495,7 @@ public class c extends FrameLayout {
         L55:
             r0 = r4
             r1 = r6
-            int r1 = r1.f25435a
+            int r1 = r1.f11747a
             if (r0 >= r1) goto L9f
             r0 = r6
             r1 = r4
@@ -550,7 +551,7 @@ public class c extends FrameLayout {
     private void f() {
         ImageView imageView = this.f;
         if (imageView != null) {
-            imageView.setImageResource(17170445);
+            imageView.setImageResource(R.color.transparent);
             this.f.setVisibility(4);
         }
     }
@@ -563,14 +564,14 @@ public class c extends FrameLayout {
     }
 
     public void a(int i) {
-        if (this.f24993a == i || this.j == null || this.b == null) {
+        if (this.f11305a == i || this.j == null || this.b == null) {
             return;
         }
-        View view = this.f24994c;
-        this.f24993a = i;
+        View view = this.f11306c;
+        this.f11305a = i;
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
-        View surfaceView = this.f24993a == 1 ? new SurfaceView(getContext()) : new TextureView(getContext());
-        this.f24994c = surfaceView;
+        View surfaceView = this.f11305a == 1 ? new SurfaceView(getContext()) : new TextureView(getContext());
+        this.f11306c = surfaceView;
         surfaceView.setLayoutParams(layoutParams);
         q.d a2 = this.j.a();
         if (a2 != null) {
@@ -582,10 +583,10 @@ public class c extends FrameLayout {
                     a2.b((SurfaceView) view);
                 }
             }
-            View view2 = this.f24994c;
+            View view2 = this.f11306c;
             if (view2 != null) {
                 this.b.addView(view2, 0);
-                View view3 = this.f24994c;
+                View view3 = this.f11306c;
                 if (view3 instanceof TextureView) {
                     a2.a((TextureView) view3);
                 } else if (view3 instanceof SurfaceView) {
@@ -605,7 +606,7 @@ public class c extends FrameLayout {
             q.d a2 = this.j.a();
             if (a2 != null) {
                 a2.b(this.d);
-                View view = this.f24994c;
+                View view = this.f11306c;
                 if (view instanceof TextureView) {
                     a2.b((TextureView) view);
                 } else if (view instanceof SurfaceView) {
@@ -636,7 +637,7 @@ public class c extends FrameLayout {
         }
         q.d a3 = qVar.a();
         if (a3 != null) {
-            View view3 = this.f24994c;
+            View view3 = this.f11306c;
             if (view3 instanceof TextureView) {
                 a3.a((TextureView) view3);
             } else if (view3 instanceof SurfaceView) {
@@ -681,7 +682,7 @@ public class c extends FrameLayout {
     }
 
     public View b() {
-        return this.f24994c;
+        return this.f11306c;
     }
 
     public void b(int i) {
@@ -736,10 +737,10 @@ public class c extends FrameLayout {
         return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void setVisibility(int i) {
         super.setVisibility(i);
-        View view = this.f24994c;
+        View view = this.f11306c;
         if (view instanceof SurfaceView) {
             view.setVisibility(i);
         }

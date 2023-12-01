@@ -6,7 +6,6 @@ import com.blued.android.core.AppMethods;
 import com.blued.android.framework.pool.ThreadManager;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.module.common.utils.BluedSharedPreferences;
-import com.tencent.qcloud.core.util.IOUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,9 +16,7 @@ public class LiveLogUtils {
     /* renamed from: com.blued.android.module.live.base.utils.LiveLogUtils$2  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveLogUtils$2.class */
     class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f11461a;
+        final /* synthetic */ String a;
         final /* synthetic */ byte[] b;
 
         @Override // java.lang.Runnable
@@ -28,7 +25,7 @@ public class LiveLogUtils {
                 try {
                     File file = new File(LiveLogUtils.c());
                     if (file.exists() || file.mkdirs()) {
-                        File file2 = new File(file, this.f11461a);
+                        File file2 = new File(file, this.a);
                         if (!file2.exists()) {
                             try {
                                 file2.createNewFile();
@@ -60,9 +57,7 @@ public class LiveLogUtils {
     /* renamed from: com.blued.android.module.live.base.utils.LiveLogUtils$4  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveLogUtils$4.class */
     class AnonymousClass4 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f11463a;
+        final /* synthetic */ String a;
         final /* synthetic */ Bitmap b;
 
         @Override // java.lang.Runnable
@@ -72,7 +67,7 @@ public class LiveLogUtils {
                 Log.d("PhotoEditorSDK", "Failed to create directory");
                 return;
             }
-            String str = file.getPath() + File.separator + this.f11463a;
+            String str = file.getPath() + File.separator + this.a;
             Log.d("PhotoEditorSDK", "selected camera path " + str);
             File file2 = new File(str);
             try {
@@ -91,9 +86,7 @@ public class LiveLogUtils {
     /* renamed from: com.blued.android.module.live.base.utils.LiveLogUtils$5  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/utils/LiveLogUtils$5.class */
     class AnonymousClass5 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f11464a;
+        final /* synthetic */ String a;
         final /* synthetic */ LiveDecryptLogListener b;
 
         /* JADX WARN: Not initialized variable reg: 10, insn: 0x0249: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r10 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:95:0x0249 */
@@ -300,7 +293,7 @@ public class LiveLogUtils {
                                     e2.printStackTrace();
                                 }
                             }
-                            String str3 = IOUtils.LINE_SEPARATOR_WINDOWS + LiveTimeAndDateUtils.c(System.currentTimeMillis()) + " ::::: " + str;
+                            String str3 = "\r\n" + LiveTimeAndDateUtils.c(System.currentTimeMillis()) + " ::::: " + str;
                             FileOutputStream fileOutputStream = new FileOutputStream(file2, true);
                             try {
                                 fileOutputStream.write(str3.getBytes());
@@ -331,9 +324,9 @@ public class LiveLogUtils {
     public static File c(String str) throws Exception {
         File file = new File(c());
         if (file.exists() && file.isDirectory()) {
-            long a2 = StringUtils.a(LiveTimeAndDateUtils.d(System.currentTimeMillis()), 0L);
-            if (a2 > BluedSharedPreferences.a().a("YY_Log", 0L)) {
-                a(file, a2);
+            long a = StringUtils.a(LiveTimeAndDateUtils.d(System.currentTimeMillis()), 0L);
+            if (a > BluedSharedPreferences.a().a("YY_Log", 0L)) {
+                a(file, a);
             }
         } else {
             file.mkdirs();

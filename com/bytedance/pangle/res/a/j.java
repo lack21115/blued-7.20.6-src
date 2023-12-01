@@ -25,7 +25,7 @@ public abstract class j extends FilterInputStream {
     @Override // java.io.FilterInputStream, java.io.InputStream, java.io.Closeable, java.lang.AutoCloseable
     public void close() {
         try {
-            this.f42254in.close();
+            this.in.close();
         } catch (IOException e) {
             throw e;
         }
@@ -34,19 +34,19 @@ public abstract class j extends FilterInputStream {
     @Override // java.io.FilterInputStream, java.io.InputStream
     public void mark(int i) {
         synchronized (this) {
-            this.f42254in.mark(i);
+            this.in.mark(i);
         }
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public boolean markSupported() {
-        return this.f42254in.markSupported();
+        return this.in.markSupported();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read() {
         try {
-            int read = this.f42254in.read();
+            int read = this.in.read();
             int i = -1;
             if (read != -1) {
                 i = 1;
@@ -58,10 +58,10 @@ public abstract class j extends FilterInputStream {
         }
     }
 
-    @Override // java.io.InputStream
+    @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr) {
         try {
-            int read = this.f42254in.read(bArr);
+            int read = this.in.read(bArr);
             a(read);
             return read;
         } catch (IOException e) {
@@ -72,7 +72,7 @@ public abstract class j extends FilterInputStream {
     @Override // java.io.FilterInputStream, java.io.InputStream
     public int read(byte[] bArr, int i, int i2) {
         try {
-            int read = this.f42254in.read(bArr, i, i2);
+            int read = this.in.read(bArr, i, i2);
             a(read);
             return read;
         } catch (IOException e) {
@@ -84,7 +84,7 @@ public abstract class j extends FilterInputStream {
     public void reset() {
         synchronized (this) {
             try {
-                this.f42254in.reset();
+                this.in.reset();
             } catch (IOException e) {
                 throw e;
             }
@@ -94,7 +94,7 @@ public abstract class j extends FilterInputStream {
     @Override // java.io.FilterInputStream, java.io.InputStream
     public long skip(long j) {
         try {
-            return this.f42254in.skip(j);
+            return this.in.skip(j);
         } catch (IOException e) {
             throw e;
         }

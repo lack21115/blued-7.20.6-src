@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 public class SyncAudioResampler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f27788a = h.a().c();
+    private static final boolean f14100a = h.a().c();
     private b n;
     private boolean o;
     private int q;
@@ -22,7 +22,7 @@ public class SyncAudioResampler {
     private volatile boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile boolean f27789c = false;
+    private volatile boolean f14101c = false;
     private volatile boolean d = false;
     private volatile boolean e = false;
     private long f = 0;
@@ -43,7 +43,7 @@ public class SyncAudioResampler {
                 eVar.c("SyncAudioResampler", "stopExtractor : already stop, release native " + this.s);
                 release();
                 this.d = false;
-                this.f27789c = false;
+                this.f14101c = false;
             }
             this.n = null;
         }
@@ -82,7 +82,7 @@ public class SyncAudioResampler {
     public void a() {
         e eVar = e.r;
         eVar.c("SyncAudioResampler", "cancel +" + this.s);
-        this.f27789c = true;
+        this.f14101c = true;
         e();
         this.b = false;
         e eVar2 = e.r;
@@ -92,8 +92,8 @@ public class SyncAudioResampler {
     public void a(double d) {
         this.l = d;
         this.m.a(d);
-        this.m.a(new a.InterfaceC0743a() { // from class: com.qiniu.pili.droid.shortvideo.process.audio.SyncAudioResampler.1
-            @Override // com.qiniu.pili.droid.shortvideo.core.a.InterfaceC0743a
+        this.m.a(new a.InterfaceC0573a() { // from class: com.qiniu.pili.droid.shortvideo.process.audio.SyncAudioResampler.1
+            @Override // com.qiniu.pili.droid.shortvideo.core.a.InterfaceC0573a
             public void a(ByteBuffer byteBuffer, int i, long j) {
                 SyncAudioResampler.this.write(byteBuffer, i, j, false);
             }
@@ -105,7 +105,7 @@ public class SyncAudioResampler {
     }
 
     public boolean a(String str, long j, long j2, int i, int i2, int i3) {
-        if (!f27788a) {
+        if (!f14100a) {
             e.r.c("can't found pldroid_amix.so !");
             return false;
         } else if (this.b) {
@@ -115,7 +115,7 @@ public class SyncAudioResampler {
             e.r.d("invalid params !");
             return false;
         } else {
-            this.f27789c = false;
+            this.f14101c = false;
             this.d = false;
             this.e = false;
             this.g = j > 0 ? j : 0L;
@@ -130,7 +130,7 @@ public class SyncAudioResampler {
             this.n.a(new b.c() { // from class: com.qiniu.pili.droid.shortvideo.process.audio.SyncAudioResampler.2
                 @Override // com.qiniu.pili.droid.shortvideo.d.b.c
                 public void a(ByteBuffer byteBuffer, int i4, long j3, long j4, boolean z) {
-                    if (SyncAudioResampler.this.f27789c || SyncAudioResampler.this.d) {
+                    if (SyncAudioResampler.this.f14101c || SyncAudioResampler.this.d) {
                         return;
                     }
                     if (!z) {
@@ -152,13 +152,13 @@ public class SyncAudioResampler {
                     }
                 }
             });
-            this.n.a(new b.InterfaceC0744b() { // from class: com.qiniu.pili.droid.shortvideo.process.audio.SyncAudioResampler.4
-                @Override // com.qiniu.pili.droid.shortvideo.d.b.InterfaceC0744b
+            this.n.a(new b.InterfaceC0574b() { // from class: com.qiniu.pili.droid.shortvideo.process.audio.SyncAudioResampler.4
+                @Override // com.qiniu.pili.droid.shortvideo.d.b.InterfaceC0574b
                 public void a() {
-                    if (SyncAudioResampler.this.f27789c || SyncAudioResampler.this.d) {
+                    if (SyncAudioResampler.this.f14101c || SyncAudioResampler.this.d) {
                         SyncAudioResampler.this.release();
                         SyncAudioResampler.this.d = false;
-                        SyncAudioResampler.this.f27789c = false;
+                        SyncAudioResampler.this.f14101c = false;
                         e eVar = e.r;
                         eVar.c("SyncAudioResampler", "onExtractorStop : release native " + SyncAudioResampler.this.s);
                     }

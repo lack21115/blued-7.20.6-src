@@ -14,11 +14,11 @@ import com.soft.blued.ui.find.view.ExpandLinearLayout;
 public final class LayoutFilterCommonSelectorBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final RelativeLayout f29391a;
+    public final RelativeLayout f15701a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final StringScrollPicker f29392c;
+    public final StringScrollPicker f15702c;
     public final StringScrollPicker d;
     public final ExpandLinearLayout e;
     public final TextView f;
@@ -27,9 +27,9 @@ public final class LayoutFilterCommonSelectorBinding implements ViewBinding {
 
     private LayoutFilterCommonSelectorBinding(LinearLayout linearLayout, RelativeLayout relativeLayout, ImageView imageView, StringScrollPicker stringScrollPicker, StringScrollPicker stringScrollPicker2, ExpandLinearLayout expandLinearLayout, TextView textView, TextView textView2) {
         this.h = linearLayout;
-        this.f29391a = relativeLayout;
+        this.f15701a = relativeLayout;
         this.b = imageView;
-        this.f29392c = stringScrollPicker;
+        this.f15702c = stringScrollPicker;
         this.d = stringScrollPicker2;
         this.e = expandLinearLayout;
         this.f = textView;
@@ -42,17 +42,17 @@ public final class LayoutFilterCommonSelectorBinding implements ViewBinding {
         if (relativeLayout != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_filter_item_arrow);
             if (imageView != null) {
-                StringScrollPicker stringScrollPicker = (StringScrollPicker) view.findViewById(R.id.ssp_filter_left);
-                if (stringScrollPicker != null) {
-                    StringScrollPicker stringScrollPicker2 = (StringScrollPicker) view.findViewById(R.id.ssp_filter_right);
-                    if (stringScrollPicker2 != null) {
+                StringScrollPicker findViewById = view.findViewById(R.id.ssp_filter_left);
+                if (findViewById != null) {
+                    StringScrollPicker findViewById2 = view.findViewById(R.id.ssp_filter_right);
+                    if (findViewById2 != null) {
                         ExpandLinearLayout expandLinearLayout = (ExpandLinearLayout) view.findViewById(R.id.ssp_filter_root_view);
                         if (expandLinearLayout != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_filter_item_select_content);
                             if (textView != null) {
                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_filter_select_title);
                                 if (textView2 != null) {
-                                    return new LayoutFilterCommonSelectorBinding((LinearLayout) view, relativeLayout, imageView, stringScrollPicker, stringScrollPicker2, expandLinearLayout, textView, textView2);
+                                    return new LayoutFilterCommonSelectorBinding((LinearLayout) view, relativeLayout, imageView, findViewById, findViewById2, expandLinearLayout, textView, textView2);
                                 }
                                 str = "tvFilterSelectTitle";
                             } else {

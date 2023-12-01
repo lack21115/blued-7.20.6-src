@@ -33,7 +33,7 @@ public class UMFrUtils {
     private static final String KEY_LAST_INSTANT_SUCC_BUILD_TIME = "last_instant_build_time";
     private static final String KEY_LAST_SUCC_BUILD_TIME = "last_successful_build_time";
     private static Object mEnvelopeBuildTimeLock = new Object();
-    private static String mDefaultEnvelopeDir = at.b().b(at.f40633a);
+    private static String mDefaultEnvelopeDir = at.b().b(at.f26942a);
     private static String mDefaultEnvelopeDirPath = null;
     private static Object mEnvelopeFileLock = new Object();
     private static String sCurrentProcessName = "";

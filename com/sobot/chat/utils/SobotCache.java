@@ -7,7 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Process;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -231,7 +231,7 @@ public class SobotCache {
             int i3 = i2 - i;
             if (i3 >= 0) {
                 byte[] bArr2 = new byte[i3];
-                System.arraycopy((Object) bArr, i, (Object) bArr2, 0, Math.min(bArr.length - i, i3));
+                System.arraycopy(bArr, i, bArr2, 0, Math.min(bArr.length - i, i3));
                 return bArr2;
             }
             throw new IllegalArgumentException(i + " > " + i2);
@@ -242,7 +242,7 @@ public class SobotCache {
             while (true) {
                 String str2 = str;
                 if (str2.length() >= 13) {
-                    return str2 + "-" + i + ' ';
+                    return str2 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i + ' ';
                 }
                 str = "0" + str2;
             }
@@ -314,8 +314,8 @@ public class SobotCache {
         public static byte[] newByteArrayWithDateInfo(int i, byte[] bArr) {
             byte[] bytes = createDateInfo(i).getBytes();
             byte[] bArr2 = new byte[bytes.length + bArr.length];
-            System.arraycopy((Object) bytes, 0, (Object) bArr2, 0, bytes.length);
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, bytes.length, bArr.length);
+            System.arraycopy(bytes, 0, bArr2, 0, bytes.length);
+            System.arraycopy(bArr, 0, bArr2, bytes.length, bArr.length);
             return bArr2;
         }
 
@@ -362,7 +362,7 @@ public class SobotCache {
     }
 
     private static String myPid() {
-        return BridgeUtil.UNDERLINE_STR + Process.myPid();
+        return "_" + Process.myPid();
     }
 
     public void clear() {
@@ -538,24 +538,24 @@ public class SobotCache {
         ByteArrayInputStream byteArrayInputStream;
         ByteArrayInputStream byteArrayInputStream2;
         Throwable th;
-        AutoCloseable autoCloseable;
         ObjectInputStream objectInputStream;
-        ByteArrayInputStream byteArrayInputStream3;
         ObjectInputStream objectInputStream2;
+        ByteArrayInputStream byteArrayInputStream3;
+        ObjectInputStream objectInputStream3;
         byte[] asBinary = getAsBinary(str);
         try {
             if (asBinary != null) {
                 try {
                     byteArrayInputStream2 = new ByteArrayInputStream(asBinary);
                     try {
-                        objectInputStream2 = new ObjectInputStream(byteArrayInputStream2);
+                        objectInputStream3 = new ObjectInputStream(byteArrayInputStream2);
                     } catch (Exception e) {
                         e = e;
                         byteArrayInputStream3 = byteArrayInputStream2;
-                        objectInputStream = null;
+                        objectInputStream2 = null;
                     } catch (Throwable th2) {
                         th = th2;
-                        autoCloseable = null;
+                        objectInputStream = null;
                         if (byteArrayInputStream2 != null) {
                             try {
                                 byteArrayInputStream2.close();
@@ -563,9 +563,9 @@ public class SobotCache {
                                 e2.printStackTrace();
                             }
                         }
-                        if (autoCloseable != null) {
+                        if (objectInputStream != null) {
                             try {
-                                autoCloseable.close();
+                                objectInputStream.close();
                             } catch (IOException e3) {
                                 e3.printStackTrace();
                             }
@@ -574,22 +574,22 @@ public class SobotCache {
                     }
                 } catch (Exception e4) {
                     e = e4;
-                    objectInputStream = null;
+                    objectInputStream2 = null;
                     byteArrayInputStream3 = null;
                 } catch (Throwable th3) {
                     th = th3;
                     byteArrayInputStream2 = null;
-                    autoCloseable = null;
+                    objectInputStream = null;
                 }
                 try {
-                    Object readObject = objectInputStream2.readObject();
+                    Object readObject = objectInputStream3.readObject();
                     try {
                         byteArrayInputStream2.close();
                     } catch (IOException e5) {
                         e5.printStackTrace();
                     }
                     try {
-                        objectInputStream2.close();
+                        objectInputStream3.close();
                         return readObject;
                     } catch (IOException e6) {
                         e6.printStackTrace();
@@ -598,7 +598,7 @@ public class SobotCache {
                 } catch (Exception e7) {
                     e = e7;
                     byteArrayInputStream3 = byteArrayInputStream2;
-                    objectInputStream = objectInputStream2;
+                    objectInputStream2 = objectInputStream3;
                     e.printStackTrace();
                     if (byteArrayInputStream3 != null) {
                         try {
@@ -607,9 +607,9 @@ public class SobotCache {
                             e8.printStackTrace();
                         }
                     }
-                    if (objectInputStream != null) {
+                    if (objectInputStream2 != null) {
                         try {
-                            objectInputStream.close();
+                            objectInputStream2.close();
                             return null;
                         } catch (IOException e9) {
                             e9.printStackTrace();

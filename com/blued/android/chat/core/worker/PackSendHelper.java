@@ -111,11 +111,11 @@ public class PackSendHelper extends BaseWorker implements TimeoutUtils.TimeoutLi
     public boolean handlePackageSendFailed(BasePackage basePackage, String str) {
         Pair<StatePackage, PackCallback> remove = basePackage.localId > 0 ? this.sendingList.remove(Long.valueOf(basePackage.localId)) : this.sendingListForType.remove(Short.valueOf(basePackage.type));
         if (remove != null) {
-            DataUtils.imMessageFailed(BasePackage.typeToString(remove.first.basePackage), SystemClock.uptimeMillis() - remove.first.basePackage.sendTime, str);
-            remove.first.changeState(2);
-            PackCallback packCallback = remove.second;
+            DataUtils.imMessageFailed(BasePackage.typeToString(((StatePackage) remove.first).basePackage), SystemClock.uptimeMillis() - ((StatePackage) remove.first).basePackage.sendTime, str);
+            ((StatePackage) remove.first).changeState(2);
+            PackCallback packCallback = (PackCallback) remove.second;
             if (packCallback != null) {
-                packCallback.onSendFailed(remove.first.basePackage);
+                packCallback.onSendFailed(((StatePackage) remove.first).basePackage);
                 return true;
             }
             return true;
@@ -126,10 +126,10 @@ public class PackSendHelper extends BaseWorker implements TimeoutUtils.TimeoutLi
     public boolean handlePackageSendFinish(BasePackage basePackage) {
         Pair<StatePackage, PackCallback> pair = basePackage.localId > 0 ? this.sendingList.get(Long.valueOf(basePackage.localId)) : this.sendingListForType.get(Short.valueOf(basePackage.type));
         if (pair != null) {
-            pair.first.changeState(3);
-            PackCallback packCallback = pair.second;
+            ((StatePackage) pair.first).changeState(3);
+            PackCallback packCallback = (PackCallback) pair.second;
             if (packCallback != null) {
-                packCallback.onSendFinish(pair.first.basePackage);
+                packCallback.onSendFinish(((StatePackage) pair.first).basePackage);
                 return true;
             }
             return true;
@@ -143,11 +143,11 @@ public class PackSendHelper extends BaseWorker implements TimeoutUtils.TimeoutLi
             if (ChatManager.debug) {
                 Log.v(TAG, "(" + basePackage.localId + ") receive ack: " + basePackage);
             }
-            DataUtils.imMessageSuccess(BasePackage.typeToString(remove.first.basePackage), SystemClock.uptimeMillis() - remove.first.basePackage.sendTime);
-            remove.first.changeState(4);
-            PackCallback packCallback = remove.second;
+            DataUtils.imMessageSuccess(BasePackage.typeToString(((StatePackage) remove.first).basePackage), SystemClock.uptimeMillis() - ((StatePackage) remove.first).basePackage.sendTime);
+            ((StatePackage) remove.first).changeState(4);
+            PackCallback packCallback = (PackCallback) remove.second;
             if (packCallback != null) {
-                packCallback.onReceiveAck(remove.first.basePackage, basePackage);
+                packCallback.onReceiveAck(((StatePackage) remove.first).basePackage, basePackage);
                 return true;
             }
             return true;
@@ -163,18 +163,18 @@ public class PackSendHelper extends BaseWorker implements TimeoutUtils.TimeoutLi
             pair = this.sendingListForType.remove(Long.valueOf(j));
         }
         if (pair != null) {
-            int state = pair.first.getState();
-            pair.first.changeState(2);
-            String typeToString = BasePackage.typeToString(pair.first.basePackage);
+            int state = ((StatePackage) pair.first).getState();
+            ((StatePackage) pair.first).changeState(2);
+            String typeToString = BasePackage.typeToString(((StatePackage) pair.first).basePackage);
             long uptimeMillis = SystemClock.uptimeMillis();
-            long j2 = pair.first.basePackage.sendTime;
-            DataUtils.imMessageFailed(typeToString, uptimeMillis - j2, "package timeout, old state:" + pair.first.stateToString(state) + ", connect state:" + this.connector.getConnectStatus());
-            PackCallback packCallback = pair.second;
+            long j2 = ((StatePackage) pair.first).basePackage.sendTime;
+            DataUtils.imMessageFailed(typeToString, uptimeMillis - j2, "package timeout, old state:" + ((StatePackage) pair.first).stateToString(state) + ", connect state:" + this.connector.getConnectStatus());
+            PackCallback packCallback = (PackCallback) pair.second;
             if (packCallback != null) {
                 if (state == 1) {
-                    packCallback.onSendTimeout(pair.first.basePackage);
+                    packCallback.onSendTimeout(((StatePackage) pair.first).basePackage);
                 } else if (state == 3) {
-                    packCallback.onAckTimeout(pair.first.basePackage);
+                    packCallback.onAckTimeout(((StatePackage) pair.first).basePackage);
                 }
             }
         }

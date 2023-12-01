@@ -55,9 +55,9 @@ public final class s {
         int i;
         int i2;
         long currentTimeMillis = System.currentTimeMillis();
-        Map<String, ae> a2 = com.anythink.core.a.a.a(context).a(Integer.parseInt(eVar.Y()));
-        if (a2 != null) {
-            Iterator<ae> it = a2.values().iterator();
+        Map<String, ae> a = com.anythink.core.a.a.a(context).a(Integer.parseInt(eVar.Y()));
+        if (a != null) {
+            Iterator<ae> it = a.values().iterator();
             i = 0;
             int i3 = 0;
             while (true) {
@@ -66,10 +66,10 @@ public final class s {
                     break;
                 }
                 ae next = it.next();
-                i += next.f6623c;
+                i += next.c;
                 i3 = i2 + next.d;
             }
-            aeVar = a2.get(eVar.W());
+            aeVar = a.get(eVar.W());
         } else {
             aeVar = null;
             i = 0;
@@ -77,7 +77,7 @@ public final class s {
         }
         eVar.g(i + 1);
         eVar.h(i2 + 1);
-        eVar.i((aeVar != null ? aeVar.f6623c : 0) + 1);
+        eVar.i((aeVar != null ? aeVar.c : 0) + 1);
         int i4 = 0;
         if (aeVar != null) {
             i4 = aeVar.d;
@@ -115,7 +115,7 @@ public final class s {
         com.anythink.core.common.e.m N;
         String str;
         com.anythink.core.common.e.s e;
-        ae.a a2 = z ? com.anythink.core.a.a.a(com.anythink.core.common.b.n.a().g()).a(eVar.W(), aiVar.t()) : null;
+        ae.a a = z ? com.anythink.core.a.a.a(com.anythink.core.common.b.n.a().g()).a(eVar.W(), aiVar.t()) : null;
         eVar.c(aiVar.l());
         eVar.u(aiVar.c());
         eVar.l(aiVar.t());
@@ -124,10 +124,10 @@ public final class s {
         eVar.f(aiVar.U());
         eVar.o(i);
         eVar.n(aiVar.g());
-        eVar.q(a2 != null ? a2.e : 0);
+        eVar.q(a != null ? a.e : 0);
         int i2 = 0;
-        if (a2 != null) {
-            i2 = a2.d;
+        if (a != null) {
+            i2 = a.d;
         }
         eVar.r(i2);
         if (!aiVar.M()) {
@@ -175,8 +175,8 @@ public final class s {
             JSONObject jSONObject2 = new JSONObject();
             if (35 == aiVar.c()) {
                 String optString = jSONObject.optString("my_oid");
-                com.anythink.core.c.d a3 = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(eVar.W());
-                if (a3 != null && (e = a3.e(optString)) != null) {
+                com.anythink.core.c.d a2 = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(eVar.W());
+                if (a2 != null && (e = a2.e(optString)) != null) {
                     jSONObject2.put("o_id", optString);
                     jSONObject2.put("c_id", e.q());
                 }

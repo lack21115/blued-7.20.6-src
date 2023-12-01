@@ -8,11 +8,11 @@ import java.util.UUID;
 public final class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f35410a;
+    private int f21719a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f35411c;
+    private final Context f21720c;
     private final int d;
     private final byte[] e;
     private final com.tencent.bugly.crashreport.common.info.a f;
@@ -31,14 +31,14 @@ public final class v implements Runnable {
     private boolean s;
 
     public v(Context context, int i, int i2, byte[] bArr, String str, String str2, t tVar, int i3, int i4, boolean z, Map<String, String> map) {
-        this.f35410a = 2;
+        this.f21719a = 2;
         this.b = 30000;
         this.m = null;
         this.p = 0;
         this.q = 0L;
         this.r = 0L;
         this.s = false;
-        this.f35411c = context;
+        this.f21720c = context;
         this.f = com.tencent.bugly.crashreport.common.info.a.a(context);
         this.e = bArr;
         this.g = com.tencent.bugly.crashreport.common.strategy.a.a();
@@ -51,7 +51,7 @@ public final class v implements Runnable {
         this.l = null;
         this.d = i2;
         if (i3 > 0) {
-            this.f35410a = i3;
+            this.f21719a = i3;
         }
         if (i4 > 0) {
             this.b = i4;
@@ -204,13 +204,13 @@ public final class v implements Runnable {
         if (anVar == null) {
             x.d("resp == null!", new Object[0]);
             return false;
-        } else if (anVar.f35373a != 0) {
-            x.e("resp result error %d", Byte.valueOf(anVar.f35373a));
+        } else if (anVar.f21682a != 0) {
+            x.e("resp result error %d", Byte.valueOf(anVar.f21682a));
             return false;
         } else {
             try {
                 if (!z.a(anVar.e) && !com.tencent.bugly.crashreport.common.info.a.b().i().equals(anVar.e)) {
-                    p.a().a(com.tencent.bugly.crashreport.common.strategy.a.f35135a, "device", anVar.e.getBytes("UTF-8"), (o) null, true);
+                    p.a().a(com.tencent.bugly.crashreport.common.strategy.a.f21444a, "device", anVar.e.getBytes("UTF-8"), (o) null, true);
                     aVar.e(anVar.e);
                 }
             } catch (Throwable th) {
@@ -218,11 +218,11 @@ public final class v implements Runnable {
             }
             aVar.j = anVar.d;
             if (anVar.b == 510) {
-                if (anVar.f35374c == null) {
+                if (anVar.f21683c == null) {
                     x.e("[Upload] Strategy data is null. Response cmd: %d", Integer.valueOf(anVar.b));
                     return false;
                 }
-                ap apVar = (ap) a.a(anVar.f35374c, ap.class);
+                ap apVar = (ap) a.a(anVar.f21683c, ap.class);
                 if (apVar == null) {
                     x.e("[Upload] Failed to decode strategy from server. Response cmd: %d", Integer.valueOf(anVar.b));
                     return false;

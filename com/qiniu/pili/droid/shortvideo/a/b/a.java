@@ -12,11 +12,11 @@ import java.util.Arrays;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private AudioRecord f27519a;
+    private AudioRecord f13831a;
     private PLMicrophoneSetting b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27520c;
+    private int f13832c;
     private Thread d;
     private byte[] h;
     private PLAudioFrameListener k;
@@ -33,9 +33,9 @@ public final class a {
             while (!a.this.g) {
                 if (a.this.h == null) {
                     a aVar = a.this;
-                    aVar.h = new byte[aVar.f27520c * 1024 * 2];
+                    aVar.h = new byte[aVar.f13832c * 1024 * 2];
                 }
-                int read = a.this.f27519a.read(a.this.h, 0, a.this.h.length);
+                int read = a.this.f13831a.read(a.this.h, 0, a.this.h.length);
                 e eVar = e.f;
                 eVar.a("AudioManager", "audio frame read size:" + read);
                 if (read < 0) {
@@ -91,7 +91,7 @@ public final class a {
         if (this.f) {
             Arrays.fill(bArr, (byte) 0);
         }
-        this.k.onAudioFrameAvailable(bArr, a(System.nanoTime() / 1000, (bArr.length / this.f27520c) / 2) * 1000);
+        this.k.onAudioFrameAvailable(bArr, a(System.nanoTime() / 1000, (bArr.length / this.f13832c) / 2) * 1000);
     }
 
     private boolean c() {
@@ -118,16 +118,16 @@ public final class a {
             e.f.d("AudioManager", "recording already started !");
             return false;
         }
-        this.f27520c = this.b.getChannelConfig() == 12 ? 2 : 1;
+        this.f13832c = this.b.getChannelConfig() == 12 ? 2 : 1;
         int minBufferSize = AudioRecord.getMinBufferSize(this.b.getSampleRate(), this.b.getChannelConfig(), this.b.getAudioFormat());
         if (minBufferSize == -2) {
             e.f.e("AudioManager", "invalid parameter !");
             return false;
         }
         try {
-            this.f27519a = new AudioRecord(this.b.getAudioSource(), this.b.getSampleRate(), this.b.getChannelConfig(), this.b.getAudioFormat(), minBufferSize * 4);
+            this.f13831a = new AudioRecord(this.b.getAudioSource(), this.b.getSampleRate(), this.b.getChannelConfig(), this.b.getAudioFormat(), minBufferSize * 4);
             if (c()) {
-                NoiseSuppressor create = NoiseSuppressor.create(this.f27519a.getAudioSessionId());
+                NoiseSuppressor create = NoiseSuppressor.create(this.f13831a.getAudioSessionId());
                 this.l = create;
                 if (create != null) {
                     e.f.c("AudioManager", "set noise suppressor enabled");
@@ -135,19 +135,19 @@ public final class a {
                 }
             }
             if (d()) {
-                AcousticEchoCanceler create2 = AcousticEchoCanceler.create(this.f27519a.getAudioSessionId());
+                AcousticEchoCanceler create2 = AcousticEchoCanceler.create(this.f13831a.getAudioSessionId());
                 this.m = create2;
                 if (create2 != null) {
                     e.f.c("AudioManager", "set acoustic echo canceler enabled");
                     this.m.setEnabled(true);
                 }
             }
-            if (this.f27519a.getState() == 0) {
+            if (this.f13831a.getState() == 0) {
                 e.f.e("AudioManager", "AudioRecord initialize fail !");
                 return false;
             }
-            this.f27519a.startRecording();
-            if (this.f27519a.getRecordingState() != 3) {
+            this.f13831a.startRecording();
+            if (this.f13831a.getRecordingState() != 3) {
                 e.f.e("AudioManager", "AudioRecord cannot recording !");
                 return false;
             }
@@ -181,10 +181,10 @@ public final class a {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (this.f27519a.getRecordingState() == 3) {
-            this.f27519a.stop();
+        if (this.f13831a.getRecordingState() == 3) {
+            this.f13831a.stop();
         }
-        this.f27519a.release();
+        this.f13831a.release();
         if (this.l != null) {
             e.f.c("AudioManager", "set noise suppressor disabled");
             this.l.setEnabled(false);

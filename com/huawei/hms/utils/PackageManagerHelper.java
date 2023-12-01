@@ -16,7 +16,7 @@ import java.security.cert.CertificateFactory;
 public class PackageManagerHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public final PackageManager f22923a;
+    public final PackageManager f9315a;
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/utils/PackageManagerHelper$PackageStates.class */
     public enum PackageStates {
@@ -27,12 +27,12 @@ public class PackageManagerHelper {
     }
 
     public PackageManagerHelper(Context context) {
-        this.f22923a = context.getPackageManager();
+        this.f9315a = context.getPackageManager();
     }
 
     public final byte[] a(String str) {
         try {
-            PackageInfo packageInfo = this.f22923a.getPackageInfo(str, 64);
+            PackageInfo packageInfo = this.f9315a.getPackageInfo(str, 64);
             if (packageInfo != null && packageInfo.signatures != null && packageInfo.signatures.length > 0) {
                 return packageInfo.signatures[0].toByteArray();
             }
@@ -47,7 +47,7 @@ public class PackageManagerHelper {
 
     public String getApplicationName(String str) {
         try {
-            return this.f22923a.getApplicationLabel(this.f22923a.getApplicationInfo(str, 128)).toString();
+            return this.f9315a.getApplicationLabel(this.f9315a.getApplicationInfo(str, 128)).toString();
         } catch (AndroidException e) {
             HMSLog.e("PackageManagerHelper", "Failed to get application name for " + str);
             return null;
@@ -57,7 +57,7 @@ public class PackageManagerHelper {
     public long getPackageFirstInstallTime(String str) {
         long j = 0;
         try {
-            PackageInfo packageInfo = this.f22923a.getPackageInfo(str, 128);
+            PackageInfo packageInfo = this.f9315a.getPackageInfo(str, 128);
             if (packageInfo != null) {
                 j = packageInfo.firstInstallTime;
             }
@@ -80,7 +80,7 @@ public class PackageManagerHelper {
             return PackageStates.NOT_INSTALLED;
         }
         try {
-            return this.f22923a.getApplicationInfo(str, 128).enabled ? PackageStates.ENABLED : PackageStates.DISABLED;
+            return this.f9315a.getApplicationInfo(str, 128).enabled ? PackageStates.ENABLED : PackageStates.DISABLED;
         } catch (AndroidException e) {
             return PackageStates.NOT_INSTALLED;
         }
@@ -88,7 +88,7 @@ public class PackageManagerHelper {
 
     public int getPackageVersionCode(String str) {
         try {
-            PackageInfo packageInfo = this.f22923a.getPackageInfo(str, 16);
+            PackageInfo packageInfo = this.f9315a.getPackageInfo(str, 16);
             if (packageInfo != null) {
                 return packageInfo.versionCode;
             }
@@ -104,7 +104,7 @@ public class PackageManagerHelper {
 
     public String getPackageVersionName(String str) {
         try {
-            PackageInfo packageInfo = this.f22923a.getPackageInfo(str, 16);
+            PackageInfo packageInfo = this.f9315a.getPackageInfo(str, 16);
             return (packageInfo == null || packageInfo.versionName == null) ? "" : packageInfo.versionName;
         } catch (AndroidException e) {
             return "";
@@ -116,7 +116,7 @@ public class PackageManagerHelper {
 
     public boolean hasProvider(String str, String str2) {
         try {
-            PackageInfo packageInfo = this.f22923a.getPackageInfo(str, 8);
+            PackageInfo packageInfo = this.f9315a.getPackageInfo(str, 8);
             if (packageInfo == null || packageInfo.providers == null) {
                 return false;
             }
@@ -140,7 +140,7 @@ public class PackageManagerHelper {
 
     public boolean isPackageFreshInstall(String str) {
         try {
-            PackageInfo packageInfo = this.f22923a.getPackageInfo(str, 128);
+            PackageInfo packageInfo = this.f9315a.getPackageInfo(str, 128);
             boolean z = false;
             if (packageInfo != null) {
                 z = false;
@@ -155,7 +155,7 @@ public class PackageManagerHelper {
     }
 
     public boolean verifyPackageArchive(String str, String str2, String str3) {
-        PackageInfo packageArchiveInfo = this.f22923a.getPackageArchiveInfo(str, 64);
+        PackageInfo packageArchiveInfo = this.f9315a.getPackageArchiveInfo(str, 64);
         if (packageArchiveInfo == null || packageArchiveInfo.signatures.length <= 0 || !str2.equals(packageArchiveInfo.packageName)) {
             return false;
         }

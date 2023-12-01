@@ -29,9 +29,8 @@ public final class b extends ThreadPoolExecutor implements c {
         this.amN = 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.ThreadPoolExecutor
-    public final void beforeExecute(Thread thread, Runnable runnable) {
+    protected final void beforeExecute(Thread thread, Runnable runnable) {
         super.beforeExecute(thread, runnable);
         if (amK && this.amL.containsKey(runnable) && this.amL.get(runnable) != null) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.amL.get(runnable).longValue();

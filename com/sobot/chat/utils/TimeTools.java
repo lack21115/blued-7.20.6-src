@@ -1,5 +1,7 @@
 package com.sobot.chat.utils;
 
+import com.ss.android.download.api.constant.BaseConstants;
+
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/utils/TimeTools.class */
 public class TimeTools {
     public static TimeTools instance;
@@ -11,7 +13,7 @@ public class TimeTools {
     }
 
     public String calculatTime(int i) {
-        int i2 = i / 3600000;
+        int i2 = i / BaseConstants.Time.HOUR;
         int i3 = i - (((i2 * 60) * 60) * 1000);
         int i4 = i3 / 60000;
         int i5 = (i3 - ((i4 * 60) * 1000)) / 1000;

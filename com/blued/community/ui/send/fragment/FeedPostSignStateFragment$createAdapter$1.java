@@ -59,9 +59,9 @@ public final class FeedPostSignStateFragment$createAdapter$1 extends CommonAdapt
         int i3 = R.id.item_feed_post_sign_state_iv_layout;
         String bubble_state_id = model.getBubble_state_id();
         FeedPostSignStateItem d = this.d.d();
-        View a2 = b.c(i3, StringsKt.a((CharSequence) bubble_state_id, (CharSequence) (d == null ? null : d.getBubble_state_id())) ? CommunityManager.f19086a.a().s() ? R.drawable.item_feed_post_sign_state_iv_selected_black : R.drawable.item_feed_post_sign_state_iv_selected : CommunityManager.f19086a.a().s() ? R.drawable.item_feed_post_sign_state_iv_bg_black : R.drawable.item_feed_post_sign_state_iv_bg).a();
+        View a = b.c(i3, StringsKt.a((CharSequence) bubble_state_id, (CharSequence) (d == null ? null : d.getBubble_state_id())) ? CommunityManager.a.a().s() ? R.drawable.item_feed_post_sign_state_iv_selected_black : R.drawable.item_feed_post_sign_state_iv_selected : CommunityManager.a.a().s() ? R.drawable.item_feed_post_sign_state_iv_bg_black : R.drawable.item_feed_post_sign_state_iv_bg).a();
         final FeedPostSignStateFragment feedPostSignStateFragment = this.d;
-        a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignStateFragment$createAdapter$1$iCPS3jxnMPaYneuWdwedGHcj7aI
+        a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedPostSignStateFragment$createAdapter$1$iCPS3jxnMPaYneuWdwedGHcj7aI
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeedPostSignStateFragment$createAdapter$1.a(FeedPostSignStateFragment.this, model, view);

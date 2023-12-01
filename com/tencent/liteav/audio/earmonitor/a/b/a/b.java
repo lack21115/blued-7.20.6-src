@@ -11,13 +11,13 @@ public final class b {
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f36226c = new Object();
+    private static final Object f22535c = new Object();
     private static final Object d = new Object();
     private static final Object e = new Object();
     private static b f = null;
 
     /* renamed from: a  reason: collision with root package name */
-    e f36227a = null;
+    e f22536a = null;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static <T extends a> T a(int i, Context context) {
@@ -32,7 +32,7 @@ public final class b {
     /* JADX INFO: Access modifiers changed from: protected */
     public static b a() {
         b bVar;
-        synchronized (f36226c) {
+        synchronized (f22535c) {
             if (f == null) {
                 f = new b();
             }
@@ -86,8 +86,8 @@ public final class b {
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(int i) {
         synchronized (b) {
-            if (this.f36227a != null) {
-                this.f36227a.a(i);
+            if (this.f22536a != null) {
+                this.f22536a.a(i);
             }
         }
     }

@@ -46,7 +46,7 @@ public class TXCGPUGhostFilter extends TXCGPUEffectFilterBase {
 
     @Override // com.tencent.liteav.videobase.a.b
     public void onDraw(int i, d dVar, FloatBuffer floatBuffer, FloatBuffer floatBuffer2) {
-        d a2 = this.mTexturePool.a(getOutputSize().f36340a, getOutputSize().b);
+        d a2 = this.mTexturePool.a(getOutputSize().f22649a, getOutputSize().b);
         super.onDraw(i, a2, floatBuffer, floatBuffer2);
         this.mShiftFilter.onDraw(a2.a(), dVar, floatBuffer, floatBuffer2);
         a2.release();
@@ -71,7 +71,7 @@ public class TXCGPUGhostFilter extends TXCGPUEffectFilterBase {
         if (Math.abs(i) <= 1.0E-5d || Math.abs(this.mBlur) <= 1.0E-5d) {
             return;
         }
-        setFloatVec2OnDraw(this.mBlurPos, new float[]{this.mBlur / getOutputSize().f36340a, 0.0f});
+        setFloatVec2OnDraw(this.mBlurPos, new float[]{this.mBlur / getOutputSize().f22649a, 0.0f});
     }
 
     @Override // com.tencent.liteav.videobase.a.b
@@ -135,8 +135,8 @@ public class TXCGPUGhostFilter extends TXCGPUEffectFilterBase {
 
     public void updateParams(GhostParam ghostParam) {
         this.mBlur = ghostParam.blur;
-        if (getOutputSize().f36340a != 0) {
-            setFloatVec2OnDraw(this.mBlurPos, new float[]{ghostParam.blur / getOutputSize().f36340a, 0.0f});
+        if (getOutputSize().f22649a != 0) {
+            setFloatVec2OnDraw(this.mBlurPos, new float[]{ghostParam.blur / getOutputSize().f22649a, 0.0f});
         }
         this.mShiftFilter.setFloatOnDraw(this.mAlphaPos, ghostParam.alpha);
         this.mShiftFilter.setFloatOnDraw(this.mShiftPos, ghostParam.shift);

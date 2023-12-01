@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class ImeDelBugFixedEditText extends EditText {
 
     /* renamed from: a  reason: collision with root package name */
-    private OnDelKeyEventListener f23688a;
+    private OnDelKeyEventListener f10080a;
 
     /* loaded from: source-7994992-dex2jar.jar:com/jungly/gridpasswordview/imebugfixer/ImeDelBugFixedEditText$OnDelKeyEventListener.class */
     public interface OnDelKeyEventListener {
@@ -32,8 +32,8 @@ public class ImeDelBugFixedEditText extends EditText {
 
         @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
         public boolean sendKeyEvent(KeyEvent keyEvent) {
-            if (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 67 && ImeDelBugFixedEditText.this.f23688a != null) {
-                ImeDelBugFixedEditText.this.f23688a.a();
+            if (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 67 && ImeDelBugFixedEditText.this.f10080a != null) {
+                ImeDelBugFixedEditText.this.f10080a.a();
                 return true;
             }
             return super.sendKeyEvent(keyEvent);
@@ -58,6 +58,6 @@ public class ImeDelBugFixedEditText extends EditText {
     }
 
     public void setDelKeyEventListener(OnDelKeyEventListener onDelKeyEventListener) {
-        this.f23688a = onDelKeyEventListener;
+        this.f10080a = onDelKeyEventListener;
     }
 }

@@ -50,7 +50,7 @@ public class ActionBarH5 extends FrameLayout implements c {
     }
 
     private void b(View view, final boolean z) {
-        com.kwad.components.core.d.b.a.a(new a.C0519a(view.getContext()).I(this.mAdTemplate).ap(view == this.AT ? 1 : 2).a(new a.b() { // from class: com.kwad.components.ad.reward.widget.actionbar.ActionBarH5.1
+        com.kwad.components.core.d.b.a.a(new a.C0349a(view.getContext()).I(this.mAdTemplate).ap(view == this.AT ? 1 : 2).a(new a.b() { // from class: com.kwad.components.ad.reward.widget.actionbar.ActionBarH5.1
             @Override // com.kwad.components.core.d.b.a.b
             public final void onAdClicked() {
                 if (ActionBarH5.this.AS != null) {

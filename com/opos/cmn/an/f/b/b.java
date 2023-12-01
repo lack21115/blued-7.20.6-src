@@ -6,29 +6,29 @@ import android.content.Context;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f24530a;
+    public final String f10843a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f24531c;
+    public final int f10844c;
     public final int d;
     public final int e;
     public final String f;
     public final Context g;
-    public final InterfaceC0621b h;
+    public final InterfaceC0451b h;
     public final c i;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/an/f/b/b$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f24532a;
-        private InterfaceC0621b g;
+        private Context f10845a;
+        private InterfaceC0451b g;
         private c h;
         private int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f24533c = 1;
+        private int f10846c = 1;
         private int d = 7;
         private String e = "";
         private String f = "cmn_log";
@@ -36,13 +36,13 @@ public class b {
 
         private void a() {
             if (com.opos.cmn.an.c.a.a(this.e)) {
-                this.e = this.f24532a.getPackageName();
+                this.e = this.f10845a.getPackageName();
             }
             if (this.g == null) {
-                this.g = new InterfaceC0621b() { // from class: com.opos.cmn.an.f.b.b.a.1
-                    @Override // com.opos.cmn.an.f.b.b.InterfaceC0621b
+                this.g = new InterfaceC0451b() { // from class: com.opos.cmn.an.f.b.b.a.1
+                    @Override // com.opos.cmn.an.f.b.b.InterfaceC0451b
                     public String a() {
-                        return com.opos.cmn.an.f.c.b.a(a.this.f24532a);
+                        return com.opos.cmn.an.f.c.b.a(a.this.f10845a);
                     }
                 };
             }
@@ -50,7 +50,7 @@ public class b {
                 this.h = new c() { // from class: com.opos.cmn.an.f.b.b.a.2
                     @Override // com.opos.cmn.an.f.b.b.c
                     public String a() {
-                        return com.opos.cmn.an.f.c.a.a(a.this.f24532a);
+                        return com.opos.cmn.an.f.c.a.a(a.this.f10845a);
                     }
                 };
             }
@@ -68,7 +68,7 @@ public class b {
 
         public b a(Context context) {
             if (context != null) {
-                this.f24532a = context.getApplicationContext();
+                this.f10845a = context.getApplicationContext();
                 a();
                 return new b(this);
             }
@@ -76,7 +76,7 @@ public class b {
         }
 
         public a b(int i) {
-            this.f24533c = i;
+            this.f10846c = i;
             return this;
         }
 
@@ -97,7 +97,7 @@ public class b {
 
     /* renamed from: com.opos.cmn.an.f.b.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/an/f/b/b$b.class */
-    public interface InterfaceC0621b {
+    public interface InterfaceC0451b {
         String a();
     }
 
@@ -107,18 +107,18 @@ public class b {
     }
 
     private b(a aVar) {
-        this.f24530a = aVar.f;
+        this.f10843a = aVar.f;
         this.b = aVar.b;
-        this.f24531c = aVar.f24533c;
+        this.f10844c = aVar.f10846c;
         this.d = aVar.d;
         this.f = aVar.e;
-        this.g = aVar.f24532a;
+        this.g = aVar.f10845a;
         this.h = aVar.g;
         this.i = aVar.h;
         this.e = aVar.i;
     }
 
     public String toString() {
-        return "LogInitParams{, context=" + this.g + ", baseTag=" + this.f24530a + ", fileLogLevel=" + this.b + ", consoleLogLevel=" + this.f24531c + ", fileExpireDays=" + this.d + ", pkgName=" + this.f + ", imeiProvider=" + this.h + ", openIdProvider=" + this.i + ", logImplType=" + this.e + '}';
+        return "LogInitParams{, context=" + this.g + ", baseTag=" + this.f10843a + ", fileLogLevel=" + this.b + ", consoleLogLevel=" + this.f10844c + ", fileExpireDays=" + this.d + ", pkgName=" + this.f + ", imeiProvider=" + this.h + ", openIdProvider=" + this.i + ", logImplType=" + this.e + '}';
     }
 }

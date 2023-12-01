@@ -8,27 +8,26 @@ import java.util.List;
 public class TranscoderRegistry {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<Entry<?, ?>> f21007a = new ArrayList();
+    private final List<Entry<?, ?>> f7401a = new ArrayList();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/resource/transcode/TranscoderRegistry$Entry.class */
-    public static final class Entry<Z, R> {
+    static final class Entry<Z, R> {
 
         /* renamed from: a  reason: collision with root package name */
-        final ResourceTranscoder<Z, R> f21008a;
+        final ResourceTranscoder<Z, R> f7402a;
         private final Class<Z> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Class<R> f21009c;
+        private final Class<R> f7403c;
 
         Entry(Class<Z> cls, Class<R> cls2, ResourceTranscoder<Z, R> resourceTranscoder) {
             this.b = cls;
-            this.f21009c = cls2;
-            this.f21008a = resourceTranscoder;
+            this.f7403c = cls2;
+            this.f7402a = resourceTranscoder;
         }
 
         public boolean a(Class<?> cls, Class<?> cls2) {
-            return this.b.isAssignableFrom(cls) && cls2.isAssignableFrom(this.f21009c);
+            return this.b.isAssignableFrom(cls) && cls2.isAssignableFrom(this.f7403c);
         }
     }
 
@@ -38,20 +37,20 @@ public class TranscoderRegistry {
             if (cls2.isAssignableFrom(cls)) {
                 return UnitTranscoder.a();
             }
-            Iterator<Entry<?, ?>> it = this.f21007a.iterator();
+            Iterator<Entry<?, ?>> it = this.f7401a.iterator();
             do {
                 if (!it.hasNext()) {
                     throw new IllegalArgumentException("No transcoder registered to transcode from " + cls + " to " + cls2);
                 }
                 next = it.next();
             } while (!next.a(cls, cls2));
-            return (ResourceTranscoder<Z, R>) next.f21008a;
+            return (ResourceTranscoder<Z, R>) next.f7402a;
         }
     }
 
     public <Z, R> void a(Class<Z> cls, Class<R> cls2, ResourceTranscoder<Z, R> resourceTranscoder) {
         synchronized (this) {
-            this.f21007a.add(new Entry<>(cls, cls2, resourceTranscoder));
+            this.f7401a.add(new Entry<>(cls, cls2, resourceTranscoder));
         }
     }
 
@@ -62,7 +61,7 @@ public class TranscoderRegistry {
                 arrayList.add(cls2);
                 return arrayList;
             }
-            for (Entry<?, ?> entry : this.f21007a) {
+            for (Entry<?, ?> entry : this.f7401a) {
                 if (entry.a(cls, cls2)) {
                     arrayList.add(cls2);
                 }

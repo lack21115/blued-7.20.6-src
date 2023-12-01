@@ -2,7 +2,6 @@ package com.ss.android.socialbase.downloader.impls;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.socialbase.downloader.constants.DownloadConstants;
 import com.ss.android.socialbase.downloader.downloader.DownloadComponentManager;
 import com.ss.android.socialbase.downloader.model.HttpHeader;
@@ -34,7 +33,7 @@ public class DefaultDownloadHttpService implements IDownloadHttpService {
         try {
             final String host = Uri.parse(str).getHost();
             if (!TextUtils.isEmpty(host) && !TextUtils.isEmpty(str2)) {
-                String str3 = host + BridgeUtil.UNDERLINE_STR + str2;
+                String str3 = host + "_" + str2;
                 synchronized (this.hostIpClientCache) {
                     OkHttpClient okHttpClient = this.hostIpClientCache.get(str3);
                     if (okHttpClient != null) {
@@ -42,7 +41,6 @@ public class DefaultDownloadHttpService implements IDownloadHttpService {
                     }
                     OkHttpClient.Builder createDownloadClientBuilder = DownloadComponentManager.createDownloadClientBuilder();
                     createDownloadClientBuilder.dns(new Dns() { // from class: com.ss.android.socialbase.downloader.impls.DefaultDownloadHttpService.2
-                        @Override // okhttp3.Dns
                         public List<InetAddress> lookup(String str4) throws UnknownHostException {
                             return TextUtils.equals(host, str4) ? Collections.singletonList(InetAddress.getByName(str2)) : Dns.SYSTEM.lookup(str4);
                         }

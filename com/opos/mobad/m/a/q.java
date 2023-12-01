@@ -8,7 +8,7 @@ import okio.ByteString;
 public final class q extends com.heytap.nearx.a.a.b<q, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<q> f26359c = new b();
+    public static final com.heytap.nearx.a.a.e<q> f12671c = new b();
     public static final Integer d = 0;
     public static final Long e = 0L;
     private static final long serialVersionUID = 0;
@@ -21,7 +21,7 @@ public final class q extends com.heytap.nearx.a.a.b<q, a> {
     public static final class a extends b.a<q, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public Integer f26360c;
+        public Integer f12672c;
         public String d;
         public r e;
         public Long f;
@@ -32,7 +32,7 @@ public final class q extends com.heytap.nearx.a.a.b<q, a> {
         }
 
         public a a(Integer num) {
-            this.f26360c = num;
+            this.f12672c = num;
             return this;
         }
 
@@ -47,10 +47,10 @@ public final class q extends com.heytap.nearx.a.a.b<q, a> {
         }
 
         public q b() {
-            if (this.f26360c == null || this.f == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f26360c, "code", this.f, "deadLineTime");
+            if (this.f12672c == null || this.f == null) {
+                throw com.heytap.nearx.a.a.a.b.a(this.f12672c, "code", this.f, "deadLineTime");
             }
-            return new q(this.f26360c, this.d, this.e, this.f, super.a());
+            return new q(this.f12672c, this.d, this.e, this.f, super.a());
         }
     }
 
@@ -66,7 +66,7 @@ public final class q extends com.heytap.nearx.a.a.b<q, a> {
             int i = 0;
             int a3 = qVar.g != null ? com.heytap.nearx.a.a.e.p.a(2, (int) qVar.g) : 0;
             if (qVar.h != null) {
-                i = r.f26361c.a(3, (int) qVar.h);
+                i = r.f12673c.a(3, (int) qVar.h);
             }
             return a3 + a2 + i + com.heytap.nearx.a.a.e.i.a(4, (int) qVar.i) + qVar.a().size();
         }
@@ -78,7 +78,7 @@ public final class q extends com.heytap.nearx.a.a.b<q, a> {
                 com.heytap.nearx.a.a.e.p.a(gVar, 2, qVar.g);
             }
             if (qVar.h != null) {
-                r.f26361c.a(gVar, 3, qVar.h);
+                r.f12673c.a(gVar, 3, qVar.h);
             }
             com.heytap.nearx.a.a.e.i.a(gVar, 4, qVar.i);
             gVar.a(qVar.a());
@@ -99,7 +99,7 @@ public final class q extends com.heytap.nearx.a.a.b<q, a> {
                 } else if (b == 2) {
                     aVar.a(com.heytap.nearx.a.a.e.p.a(fVar));
                 } else if (b == 3) {
-                    aVar.a(r.f26361c.a(fVar));
+                    aVar.a(r.f12673c.a(fVar));
                 } else if (b != 4) {
                     com.heytap.nearx.a.a.a c2 = fVar.c();
                     aVar.a(b, c2, c2.a().a(fVar));
@@ -111,7 +111,7 @@ public final class q extends com.heytap.nearx.a.a.b<q, a> {
     }
 
     public q(Integer num, String str, r rVar, Long l, ByteString byteString) {
-        super(f26359c, byteString);
+        super(f12671c, byteString);
         this.f = num;
         this.g = str;
         this.h = rVar;

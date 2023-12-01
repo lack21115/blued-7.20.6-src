@@ -26,8 +26,8 @@ public class TakePhotoProxy extends BaseProxy<ITakePhoto> implements ITakePhoto 
 
     @Override // com.blued.android.module.base.album.ITakePhoto
     public void a(String str) {
-        if (this.f10426a != 0) {
-            ((ITakePhoto) this.f10426a).a(str);
+        if (this.a != 0) {
+            ((ITakePhoto) this.a).a(str);
         }
     }
 }

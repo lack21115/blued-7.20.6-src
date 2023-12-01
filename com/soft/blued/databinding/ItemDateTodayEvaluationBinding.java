@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemDateTodayEvaluationBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f29166a;
+    private final TextView f15476a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public TextView getRoot() {
-        return this.f29166a;
+        return this.f15476a;
     }
 }

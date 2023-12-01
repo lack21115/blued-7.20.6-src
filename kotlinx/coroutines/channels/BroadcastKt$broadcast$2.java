@@ -12,31 +12,27 @@ import kotlin.jvm.functions.Function2;
 @DebugMetadata(b = "Broadcast.kt", c = {53, 54}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.BroadcastKt$broadcast$2")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/BroadcastKt$broadcast$2.class */
 final class BroadcastKt$broadcast$2<E> extends SuspendLambda implements Function2<ProducerScope<? super E>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42895a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ReceiveChannel<E> f42896c;
+    final /* synthetic */ ReceiveChannel<E> c;
     private /* synthetic */ Object d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     BroadcastKt$broadcast$2(ReceiveChannel<? extends E> receiveChannel, Continuation<? super BroadcastKt$broadcast$2> continuation) {
         super(2, continuation);
-        this.f42896c = receiveChannel;
+        this.c = receiveChannel;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<? super E> producerScope, Continuation<? super Unit> continuation) {
-        return ((BroadcastKt$broadcast$2) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((BroadcastKt$broadcast$2) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        BroadcastKt$broadcast$2 broadcastKt$broadcast$2 = new BroadcastKt$broadcast$2(this.f42896c, continuation);
+        BroadcastKt$broadcast$2 broadcastKt$broadcast$2 = new BroadcastKt$broadcast$2(this.c, continuation);
         broadcastKt$broadcast$2.d = obj;
         return broadcastKt$broadcast$2;
     }

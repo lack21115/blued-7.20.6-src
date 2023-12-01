@@ -18,22 +18,18 @@ import kotlinx.coroutines.flow.FlowCollector;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/SafeCollector.class */
 public final class SafeCollector<T> extends ContinuationImpl implements CoroutineStackFrame, FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FlowCollector<T> f43500a;
+    public final FlowCollector<T> a;
     public final CoroutineContext b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final int f43501c;
+    public final int c;
     private CoroutineContext d;
     private Continuation<? super Unit> e;
 
     /* JADX WARN: Multi-variable type inference failed */
     public SafeCollector(FlowCollector<? super T> flowCollector, CoroutineContext coroutineContext) {
-        super(NoOpContinuation.f43496a, EmptyCoroutineContext.f42457a);
-        this.f43500a = flowCollector;
+        super(NoOpContinuation.a, EmptyCoroutineContext.a);
+        this.a = flowCollector;
         this.b = coroutineContext;
-        this.f43501c = ((Number) coroutineContext.fold(0, new Function2<Integer, CoroutineContext.Element, Integer>() { // from class: kotlinx.coroutines.flow.internal.SafeCollector$collectContextSize$1
+        this.c = ((Number) coroutineContext.fold(0, new Function2<Integer, CoroutineContext.Element, Integer>() { // from class: kotlinx.coroutines.flow.internal.SafeCollector$collectContextSize$1
             public final int a(int i, CoroutineContext.Element element) {
                 return i + 1;
             }
@@ -53,7 +49,7 @@ public final class SafeCollector<T> extends ContinuationImpl implements Coroutin
             a(context, coroutineContext, t);
         }
         this.e = continuation;
-        return SafeCollectorKt.a().a(this.f43500a, t, this);
+        return SafeCollectorKt.a().a(this.a, t, this);
     }
 
     private final void a(CoroutineContext coroutineContext, CoroutineContext coroutineContext2, T t) {
@@ -71,11 +67,11 @@ public final class SafeCollector<T> extends ContinuationImpl implements Coroutin
     @Override // kotlinx.coroutines.flow.FlowCollector
     public Object emit(T t, Continuation<? super Unit> continuation) {
         try {
-            Object a2 = a(continuation, (Continuation<? super Unit>) t);
-            if (a2 == IntrinsicsKt.a()) {
+            Object a = a(continuation, (Continuation<? super Unit>) t);
+            if (a == IntrinsicsKt.a()) {
                 DebugProbesKt.c(continuation);
             }
-            return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+            return a == IntrinsicsKt.a() ? a : Unit.a;
         } catch (Throwable th) {
             this.d = new DownstreamExceptionElement(th);
             throw th;
@@ -97,7 +93,7 @@ public final class SafeCollector<T> extends ContinuationImpl implements Coroutin
         CoroutineContext context = continuation == null ? null : continuation.getContext();
         EmptyCoroutineContext emptyCoroutineContext = context;
         if (context == null) {
-            emptyCoroutineContext = EmptyCoroutineContext.f42457a;
+            emptyCoroutineContext = EmptyCoroutineContext.a;
         }
         return emptyCoroutineContext;
     }
@@ -109,9 +105,9 @@ public final class SafeCollector<T> extends ContinuationImpl implements Coroutin
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public Object invokeSuspend(Object obj) {
-        Throwable c2 = Result.c(obj);
-        if (c2 != null) {
-            this.d = new DownstreamExceptionElement(c2);
+        Throwable c = Result.c(obj);
+        if (c != null) {
+            this.d = new DownstreamExceptionElement(c);
         }
         Continuation<? super Unit> continuation = this.e;
         if (continuation != null) {

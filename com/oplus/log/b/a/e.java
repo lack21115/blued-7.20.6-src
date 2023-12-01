@@ -10,10 +10,10 @@ import java.util.HashMap;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.oplus.log.f.d f24322a;
+    private com.oplus.log.f.d f10635a;
 
     public e(com.oplus.log.f.d dVar) {
-        this.f24322a = dVar;
+        this.f10635a = dVar;
     }
 
     public final void a(Context context) {
@@ -26,8 +26,8 @@ public final class e {
         hashMap.put("InternalFreeSpace", String.valueOf(com.oplus.log.d.c.a(Environment.getDataDirectory()) / 1024));
         hashMap.put("App_version", com.oplus.log.d.b.c(context));
         hashMap.put("App_versioncode", String.valueOf(com.oplus.log.d.b.d(context)));
-        if (this.f24322a != null) {
-            this.f24322a.a(new com.oplus.log.b.b("BASE_INFO", "record_base_info", (byte) 4, null, hashMap));
+        if (this.f10635a != null) {
+            this.f10635a.a(new com.oplus.log.b.b("BASE_INFO", "record_base_info", (byte) 4, null, hashMap));
         }
     }
 }

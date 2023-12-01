@@ -9,9 +9,9 @@ public abstract class bz extends ca {
 
     @Override // com.amap.api.col.p0003sl.ca
     public final void a() {
-        b(this.b.f4756a);
+        b(this.b.a);
         this.b.setCompleteCode(0);
-        this.b.a(this.b.f4756a);
+        this.b.a(this.b.a);
         this.b.d();
     }
 }

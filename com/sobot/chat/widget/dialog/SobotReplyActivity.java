@@ -19,6 +19,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.openalliance.ad.constant.t;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.activity.SobotPhotoActivity;
 import com.sobot.chat.activity.SobotVideoActivity;
@@ -276,7 +277,7 @@ public class SobotReplyActivity extends SobotDialogBaseActivity implements View.
             if (i2 >= this.adapter.getPicList().size()) {
                 return str;
             }
-            str = str + picList.get(i2).getFileUrl() + ";";
+            str = str + picList.get(i2).getFileUrl() + t.aE;
             i = i2 + 1;
         }
     }

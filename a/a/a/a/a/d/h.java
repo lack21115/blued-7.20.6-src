@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Locale;
 
 /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/d/h.class */
@@ -23,7 +22,7 @@ public class h {
         }
         sb.append(str2);
         sb.append(trim);
-        return a(sb.toString()).replace(" ", BridgeUtil.UNDERLINE_STR);
+        return a(sb.toString()).replace(" ", "_");
     }
 
     public static String a(Context context) {

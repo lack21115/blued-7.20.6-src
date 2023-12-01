@@ -14,7 +14,7 @@ public class SelectSessionFragment_ViewBinding implements Unbinder {
 
     public SelectSessionFragment_ViewBinding(SelectSessionFragment selectSessionFragment, View view) {
         this.b = selectSessionFragment;
-        selectSessionFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, 2131370749, "field 'top_title'", CommonTopTitleNoTrans.class);
+        selectSessionFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, R.id.top_title, "field 'top_title'", CommonTopTitleNoTrans.class);
         selectSessionFragment.recyclerView = (RecyclerView) Utils.a(view, 2131369096, "field 'recyclerView'", RecyclerView.class);
         selectSessionFragment.tv_all = (TextView) Utils.a(view, R.id.tv_all, "field 'tv_all'", TextView.class);
     }

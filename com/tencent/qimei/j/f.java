@@ -4,24 +4,24 @@ package com.tencent.qimei.j;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f38345a;
+    public final Object f24654a;
     public int b;
 
     public f(Object obj, int i) {
-        this.f38345a = obj;
+        this.f24654a = obj;
         this.b = i;
     }
 
     public void a() {
-        synchronized (this.f38345a) {
-            this.f38345a.notifyAll();
+        synchronized (this.f24654a) {
+            this.f24654a.notifyAll();
         }
     }
 
     public void b() {
         try {
-            synchronized (this.f38345a) {
-                this.f38345a.wait(this.b);
+            synchronized (this.f24654a) {
+                this.f24654a.wait(this.b);
             }
         } catch (InterruptedException e) {
             com.tencent.qimei.k.a.a(e);

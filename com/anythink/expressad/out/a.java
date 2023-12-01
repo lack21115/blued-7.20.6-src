@@ -7,14 +7,14 @@ import java.util.Map;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Map<String, Object> f8066a;
+    protected Map<String, Object> f5226a;
     protected Context b;
 
     public a() {
     }
 
     private a(Map<String, Object> map, Context context) {
-        this.f8066a = map;
+        this.f5226a = map;
         this.b = context;
     }
 

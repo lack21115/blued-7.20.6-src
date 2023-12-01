@@ -28,11 +28,11 @@ import java.util.Iterator;
 public class TRTCCloudImpl extends TRTCCloud implements TXAudioEffectManager.TXMusicPlayObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f36441a = false;
+    private static boolean f22750a = false;
     private static TRTCCloudImpl b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f36442c;
+    private Context f22751c;
     private TRTCCloudListener d;
     private TrtcCloudJni e;
     private TRTCCloud.BGMNotify f;
@@ -44,13 +44,13 @@ public class TRTCCloudImpl extends TRTCCloud implements TXAudioEffectManager.TXM
 
     private TRTCCloudImpl(Context context) {
         b(context);
-        this.f36442c = context;
+        this.f22751c = context;
         a(context, 0L);
     }
 
     private TRTCCloudImpl(Context context, long j) {
         b(context);
-        this.f36442c = context;
+        this.f22751c = context;
         a(context, j);
     }
 
@@ -91,7 +91,7 @@ public class TRTCCloudImpl extends TRTCCloud implements TXAudioEffectManager.TXM
     }
 
     private void a(Context context, long j) {
-        this.f36442c = context.getApplicationContext();
+        this.f22751c = context.getApplicationContext();
         if (j == 0) {
             this.e = new TrtcCloudJni();
         } else {
@@ -122,7 +122,7 @@ public class TRTCCloudImpl extends TRTCCloud implements TXAudioEffectManager.TXM
     }
 
     private String b() {
-        return this.f36442c.getCacheDir() + File.separator + "liteav_effect";
+        return this.f22751c.getCacheDir() + File.separator + "liteav_effect";
     }
 
     /* JADX WARN: Not initialized variable reg: 11, insn: 0x0266: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r11 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:124:0x0246 */
@@ -142,11 +142,11 @@ public class TRTCCloudImpl extends TRTCCloud implements TXAudioEffectManager.TXM
     private static void b(Context context) {
         synchronized (TRTCCloudImpl.class) {
             try {
-                if (!f36441a) {
+                if (!f22750a) {
                     ContextUtils.initApplicationContext(context.getApplicationContext());
                     ContextUtils.setDataDirectorySuffix("liteav");
                     TrtcCloudJni.init(0);
-                    f36441a = true;
+                    f22750a = true;
                 }
             } finally {
             }

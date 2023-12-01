@@ -38,11 +38,11 @@ public final class PrintHelper {
     public static final int SCALE_MODE_FIT = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    static final boolean f3198a;
+    static final boolean f3150a;
     static final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    final Context f3199c;
+    final Context f3151c;
     BitmapFactory.Options d = null;
     final Object e = new Object();
     int f = 2;
@@ -60,14 +60,14 @@ public final class PrintHelper {
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f3203c;
+        private final int f3155c;
         private final Bitmap d;
         private final OnPrintFinishCallback e;
         private PrintAttributes f;
 
         PrintBitmapAdapter(String str, int i, Bitmap bitmap, OnPrintFinishCallback onPrintFinishCallback) {
             this.b = str;
-            this.f3203c = i;
+            this.f3155c = i;
             this.d = bitmap;
             this.e = onPrintFinishCallback;
         }
@@ -88,7 +88,7 @@ public final class PrintHelper {
 
         @Override // android.print.PrintDocumentAdapter
         public void onWrite(PageRange[] pageRangeArr, ParcelFileDescriptor parcelFileDescriptor, CancellationSignal cancellationSignal, PrintDocumentAdapter.WriteResultCallback writeResultCallback) {
-            PrintHelper.this.a(this.f, this.f3203c, this.d, parcelFileDescriptor, cancellationSignal, writeResultCallback);
+            PrintHelper.this.a(this.f, this.f3155c, this.d, parcelFileDescriptor, cancellationSignal, writeResultCallback);
         }
     }
 
@@ -97,20 +97,20 @@ public final class PrintHelper {
     public class PrintUriAdapter extends PrintDocumentAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f3204a;
+        final String f3156a;
         final Uri b;
 
         /* renamed from: c  reason: collision with root package name */
-        final OnPrintFinishCallback f3205c;
+        final OnPrintFinishCallback f3157c;
         final int d;
         PrintAttributes e;
         AsyncTask<Uri, Boolean, Bitmap> f;
         Bitmap g = null;
 
         PrintUriAdapter(String str, Uri uri, OnPrintFinishCallback onPrintFinishCallback, int i) {
-            this.f3204a = str;
+            this.f3156a = str;
             this.b = uri;
-            this.f3205c = onPrintFinishCallback;
+            this.f3157c = onPrintFinishCallback;
             this.d = i;
         }
 
@@ -133,7 +133,7 @@ public final class PrintHelper {
             if (asyncTask != null) {
                 asyncTask.cancel(true);
             }
-            OnPrintFinishCallback onPrintFinishCallback = this.f3205c;
+            OnPrintFinishCallback onPrintFinishCallback = this.f3157c;
             if (onPrintFinishCallback != null) {
                 onPrintFinishCallback.onFinish();
             }
@@ -152,7 +152,7 @@ public final class PrintHelper {
             if (cancellationSignal.isCanceled()) {
                 layoutResultCallback.onLayoutCancelled();
             } else if (this.g != null) {
-                layoutResultCallback.onLayoutFinished(new PrintDocumentInfo.Builder(this.f3204a).setContentType(1).setPageCount(1).build(), !printAttributes2.equals(printAttributes));
+                layoutResultCallback.onLayoutFinished(new PrintDocumentInfo.Builder(this.f3156a).setContentType(1).setPageCount(1).build(), !printAttributes2.equals(printAttributes));
             } else {
                 this.f = new AsyncTask<Uri, Boolean, Bitmap>() { // from class: androidx.print.PrintHelper.PrintUriAdapter.1
                     /* JADX INFO: Access modifiers changed from: protected */
@@ -192,9 +192,8 @@ public final class PrintHelper {
                         PrintUriAdapter.this.f = null;
                     }
 
-                    /* JADX INFO: Access modifiers changed from: protected */
                     @Override // android.os.AsyncTask
-                    public void onPreExecute() {
+                    protected void onPreExecute() {
                         cancellationSignal.setOnCancelListener(new CancellationSignal.OnCancelListener() { // from class: androidx.print.PrintHelper.PrintUriAdapter.1.1
                             @Override // android.os.CancellationSignal.OnCancelListener
                             public void onCancel() {
@@ -214,7 +213,7 @@ public final class PrintHelper {
     }
 
     static {
-        f3198a = Build.VERSION.SDK_INT < 20 || Build.VERSION.SDK_INT > 23;
+        f3150a = Build.VERSION.SDK_INT < 20 || Build.VERSION.SDK_INT > 23;
         boolean z = false;
         if (Build.VERSION.SDK_INT != 23) {
             z = true;
@@ -223,7 +222,7 @@ public final class PrintHelper {
     }
 
     public PrintHelper(Context context) {
-        this.f3199c = context;
+        this.f3151c = context;
     }
 
     static Bitmap a(Bitmap bitmap, int i) {
@@ -244,7 +243,7 @@ public final class PrintHelper {
     private Bitmap a(Uri uri, BitmapFactory.Options options) throws FileNotFoundException {
         Context context;
         InputStream inputStream;
-        if (uri == null || (context = this.f3199c) == null) {
+        if (uri == null || (context = this.f3151c) == null) {
             throw new IllegalArgumentException("bad argument to loadBitmap");
         }
         try {
@@ -310,7 +309,7 @@ public final class PrintHelper {
     Bitmap a(Uri uri) throws FileNotFoundException {
         int i;
         BitmapFactory.Options options;
-        if (uri == null || this.f3199c == null) {
+        if (uri == null || this.f3151c == null) {
             throw new IllegalArgumentException("bad argument to getScaledBitmap");
         }
         BitmapFactory.Options options2 = new BitmapFactory.Options();
@@ -367,7 +366,7 @@ public final class PrintHelper {
                     if (cancellationSignal.isCanceled()) {
                         return null;
                     }
-                    PrintedPdfDocument printedPdfDocument = new PrintedPdfDocument(PrintHelper.this.f3199c, build);
+                    PrintedPdfDocument printedPdfDocument = new PrintedPdfDocument(PrintHelper.this.f3151c, build);
                     Bitmap a2 = PrintHelper.a(bitmap, build.getColorMode());
                     if (cancellationSignal.isCanceled()) {
                         return null;
@@ -376,7 +375,7 @@ public final class PrintHelper {
                     if (PrintHelper.b) {
                         rectF = new RectF(startPage.getInfo().getContentRect());
                     } else {
-                        PrintedPdfDocument printedPdfDocument2 = new PrintedPdfDocument(PrintHelper.this.f3199c, printAttributes);
+                        PrintedPdfDocument printedPdfDocument2 = new PrintedPdfDocument(PrintHelper.this.f3151c, printAttributes);
                         PdfDocument.Page startPage2 = printedPdfDocument2.startPage(1);
                         rectF = new RectF(startPage2.getInfo().getContentRect());
                         printedPdfDocument2.finishPage(startPage2);
@@ -460,7 +459,7 @@ public final class PrintHelper {
         if (Build.VERSION.SDK_INT < 19 || bitmap == null) {
             return;
         }
-        ((PrintManager) this.f3199c.getSystemService("print")).print(str, new PrintBitmapAdapter(str, this.f, bitmap, onPrintFinishCallback), new PrintAttributes.Builder().setMediaSize(a(bitmap) ? PrintAttributes.MediaSize.UNKNOWN_PORTRAIT : PrintAttributes.MediaSize.UNKNOWN_LANDSCAPE).setColorMode(this.g).build());
+        ((PrintManager) this.f3151c.getSystemService("print")).print(str, new PrintBitmapAdapter(str, this.f, bitmap, onPrintFinishCallback), new PrintAttributes.Builder().setMediaSize(a(bitmap) ? PrintAttributes.MediaSize.UNKNOWN_PORTRAIT : PrintAttributes.MediaSize.UNKNOWN_LANDSCAPE).setColorMode(this.g).build());
     }
 
     public void printBitmap(String str, Uri uri) throws FileNotFoundException {
@@ -472,7 +471,7 @@ public final class PrintHelper {
             return;
         }
         PrintUriAdapter printUriAdapter = new PrintUriAdapter(str, uri, onPrintFinishCallback, this.f);
-        PrintManager printManager = (PrintManager) this.f3199c.getSystemService("print");
+        PrintManager printManager = (PrintManager) this.f3151c.getSystemService("print");
         PrintAttributes.Builder builder = new PrintAttributes.Builder();
         builder.setColorMode(this.g);
         int i = this.h;

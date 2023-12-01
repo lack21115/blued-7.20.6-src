@@ -6,7 +6,7 @@ import android.content.pm.PackageInfo;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.SparseArray;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.openalliance.ad.constant.t;
 import com.tencent.beacon.a.a.d;
 import com.tencent.beacon.a.c.e;
 import com.tencent.beacon.a.c.f;
@@ -25,12 +25,12 @@ import java.util.Set;
 public class AuditModule implements d, BeaconModule {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35076c;
+    private String f21385c;
     private Set<String> d;
     private Context f;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f35075a = true;
+    private boolean f21384a = true;
     private boolean b = true;
     private int e = 2;
 
@@ -42,10 +42,10 @@ public class AuditModule implements d, BeaconModule {
     private String a(String str) {
         String str2;
         if (str != null) {
-            String replace = str.replace("=", "%3D").replace(BridgeUtil.SPLIT_MARK, "%2F").replace("+", "%2B");
+            String replace = str.replace("=", "%3D").replace("/", "%2F").replace("+", "%2B");
             str2 = replace;
             if (replace.length() > 1024) {
-                return replace + ";";
+                return replace + t.aE;
             }
         } else {
             str2 = "";
@@ -73,7 +73,7 @@ public class AuditModule implements d, BeaconModule {
 
     private String c() {
         String str;
-        return (com.tencent.beacon.e.b.a() == null || (str = this.f35076c) == null) ? "" : str;
+        return (com.tencent.beacon.e.b.a() == null || (str = this.f21385c) == null) ? "" : str;
     }
 
     private Activity d() {
@@ -121,7 +121,7 @@ public class AuditModule implements d, BeaconModule {
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
         boolean z;
-        int i = cVar.f34920a;
+        int i = cVar.f21229a;
         if (i != 2) {
             if (i != 10) {
                 return;
@@ -137,20 +137,20 @@ public class AuditModule implements d, BeaconModule {
         if (map == null) {
             return;
         }
-        this.f35075a = b.a((String) map.get("upAc"), this.f35075a);
+        this.f21384a = b.a((String) map.get("upAc"), this.f21384a);
         this.e = b.a((String) map.get("deleteSoCrashTime"), this.e, 1, 10);
-        this.f35076c = (String) map.get("appendXMeths");
+        this.f21385c = (String) map.get("appendXMeths");
         String str = (String) map.get("auditIgnore");
         if (!TextUtils.isEmpty(str)) {
             this.d = new HashSet(Arrays.asList(str.split(",")));
         }
         if (this.d != null) {
-            z = !this.d.contains((f.e().h() + BridgeUtil.UNDERLINE_STR + Build.VERSION.SDK).replaceAll(" ", ""));
+            z = !this.d.contains((f.e().h() + "_" + Build.VERSION.SDK).replaceAll(" ", ""));
         } else {
             z = true;
         }
         boolean z2 = false;
-        if (this.f35075a) {
+        if (this.f21384a) {
             z2 = false;
             if (z) {
                 z2 = true;

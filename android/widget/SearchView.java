@@ -1,7 +1,6 @@
 package android.widget;
 
 import android.app.PendingIntent;
-import android.app.SearchManager;
 import android.app.SearchableInfo;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
@@ -14,7 +13,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
 import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -177,7 +175,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         public void onWindowFocusChanged(boolean z) {
             super.onWindowFocusChanged(z);
             if (z && this.mSearchView.hasFocus() && getVisibility() == 0) {
-                ((InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(this, 0);
+                ((InputMethodManager) getContext().getSystemService("input_method")).showSoftInput(this, 0);
                 if (SearchView.isLandscapeMode(getContext())) {
                     ensureImeVisible(true);
                 }
@@ -208,7 +206,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     }
 
     public SearchView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843904);
+        this(context, attributeSet, R.attr.searchViewStyle);
     }
 
     public SearchView(Context context, AttributeSet attributeSet, int i) {
@@ -220,7 +218,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         this.mShowImeRunnable = new Runnable() { // from class: android.widget.SearchView.1
             @Override // java.lang.Runnable
             public void run() {
-                InputMethodManager inputMethodManager = (InputMethodManager) SearchView.this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager inputMethodManager = (InputMethodManager) SearchView.this.getContext().getSystemService("input_method");
                 if (inputMethodManager != null) {
                     inputMethodManager.showSoftInputUnchecked(0, null);
                 }
@@ -321,7 +319,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             }
         };
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SearchView, i, i2);
-        ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(obtainStyledAttributes.getResourceId(1, R.layout.search_view), (ViewGroup) this, true);
+        ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(obtainStyledAttributes.getResourceId(1, R.layout.search_view), (ViewGroup) this, true);
         this.mSearchSrcTextView = (SearchAutoComplete) findViewById(R.id.search_src_text);
         this.mSearchSrcTextView.setSearchView(this);
         this.mSearchEditFrame = findViewById(R.id.search_edit_frame);
@@ -383,10 +381,10 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         }
         setFocusable(obtainStyledAttributes.getBoolean(0, true));
         obtainStyledAttributes.recycle();
-        this.mVoiceWebSearchIntent = new Intent(RecognizerIntent.ACTION_WEB_SEARCH);
+        this.mVoiceWebSearchIntent = new Intent("android.speech.action.WEB_SEARCH");
         this.mVoiceWebSearchIntent.addFlags(268435456);
-        this.mVoiceWebSearchIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_WEB_SEARCH);
-        this.mVoiceAppSearchIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        this.mVoiceWebSearchIntent.putExtra("android.speech.extra.LANGUAGE_MODEL", "web_search");
+        this.mVoiceAppSearchIntent = new Intent("android.speech.action.RECOGNIZE_SPEECH");
         this.mVoiceAppSearchIntent.addFlags(268435456);
         this.mDropDownAnchor = findViewById(this.mSearchSrcTextView.getDropDownAnchor());
         if (this.mDropDownAnchor != null) {
@@ -421,19 +419,19 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         if (uri != null) {
             intent.setData(uri);
         }
-        intent.putExtra(SearchManager.USER_QUERY, this.mUserQuery);
+        intent.putExtra("user_query", this.mUserQuery);
         if (str3 != null) {
             intent.putExtra("query", str3);
         }
         if (str2 != null) {
-            intent.putExtra(SearchManager.EXTRA_DATA_KEY, str2);
+            intent.putExtra("intent_extra_data_key", str2);
         }
         if (this.mAppSearchData != null) {
-            intent.putExtra(SearchManager.APP_DATA, this.mAppSearchData);
+            intent.putExtra("app_data", this.mAppSearchData);
         }
         if (i != 0) {
-            intent.putExtra(SearchManager.ACTION_KEY, i);
-            intent.putExtra(SearchManager.ACTION_MSG, str4);
+            intent.putExtra("action_key", i);
+            intent.putExtra("action_msg", str4);
         }
         intent.setComponent(this.mSearchable.getSearchActivity());
         return intent;
@@ -443,16 +441,16 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         int i2;
         String columnString;
         try {
-            String columnString2 = SuggestionsAdapter.getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_ACTION);
+            String columnString2 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_action");
             String str2 = columnString2;
             if (columnString2 == null) {
                 str2 = this.mSearchable.getSuggestIntentAction();
             }
             String str3 = str2;
             if (str2 == null) {
-                str3 = Intent.ACTION_SEARCH;
+                str3 = "android.intent.action.SEARCH";
             }
-            String columnString3 = SuggestionsAdapter.getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_DATA);
+            String columnString3 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_data");
             String str4 = columnString3;
             if (columnString3 == null) {
                 str4 = this.mSearchable.getSuggestIntentData();
@@ -460,11 +458,11 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             String str5 = str4;
             if (str4 != null) {
                 str5 = str4;
-                if (SuggestionsAdapter.getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID) != null) {
+                if (SuggestionsAdapter.getColumnString(cursor, "suggest_intent_data_id") != null) {
                     str5 = str4 + BridgeUtil.SPLIT_MARK + Uri.encode(columnString);
                 }
             }
-            return createIntent(str3, str5 == null ? null : Uri.parse(str5), SuggestionsAdapter.getColumnString(cursor, SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA), SuggestionsAdapter.getColumnString(cursor, SearchManager.SUGGEST_COLUMN_QUERY), i, str);
+            return createIntent(str3, str5 == null ? null : Uri.parse(str5), SuggestionsAdapter.getColumnString(cursor, "suggest_intent_extra_data"), SuggestionsAdapter.getColumnString(cursor, "suggest_intent_query"), i, str);
         } catch (RuntimeException e) {
             try {
                 i2 = cursor.getPosition();
@@ -478,45 +476,42 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
 
     private Intent createVoiceAppSearchIntent(Intent intent, SearchableInfo searchableInfo) {
         ComponentName searchActivity = searchableInfo.getSearchActivity();
-        Intent intent2 = new Intent(Intent.ACTION_SEARCH);
+        Intent intent2 = new Intent("android.intent.action.SEARCH");
         intent2.setComponent(searchActivity);
         PendingIntent activity = PendingIntent.getActivity(getContext(), 0, intent2, 1073741824);
         Bundle bundle = new Bundle();
         if (this.mAppSearchData != null) {
-            bundle.putParcelable(SearchManager.APP_DATA, this.mAppSearchData);
+            bundle.putParcelable("app_data", this.mAppSearchData);
         }
         Intent intent3 = new Intent(intent);
-        String str = RecognizerIntent.LANGUAGE_MODEL_FREE_FORM;
+        String str = null;
         String str2 = null;
-        String str3 = null;
         int i = 1;
         Resources resources = getResources();
-        if (searchableInfo.getVoiceLanguageModeId() != 0) {
-            str = resources.getString(searchableInfo.getVoiceLanguageModeId());
-        }
+        String string = searchableInfo.getVoiceLanguageModeId() != 0 ? resources.getString(searchableInfo.getVoiceLanguageModeId()) : "free_form";
         if (searchableInfo.getVoicePromptTextId() != 0) {
-            str2 = resources.getString(searchableInfo.getVoicePromptTextId());
+            str = resources.getString(searchableInfo.getVoicePromptTextId());
         }
         if (searchableInfo.getVoiceLanguageId() != 0) {
-            str3 = resources.getString(searchableInfo.getVoiceLanguageId());
+            str2 = resources.getString(searchableInfo.getVoiceLanguageId());
         }
         if (searchableInfo.getVoiceMaxResults() != 0) {
             i = searchableInfo.getVoiceMaxResults();
         }
-        intent3.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, str);
-        intent3.putExtra(RecognizerIntent.EXTRA_PROMPT, str2);
-        intent3.putExtra(RecognizerIntent.EXTRA_LANGUAGE, str3);
-        intent3.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, i);
-        intent3.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, searchActivity == null ? null : searchActivity.flattenToShortString());
-        intent3.putExtra(RecognizerIntent.EXTRA_RESULTS_PENDINGINTENT, activity);
-        intent3.putExtra(RecognizerIntent.EXTRA_RESULTS_PENDINGINTENT_BUNDLE, bundle);
+        intent3.putExtra("android.speech.extra.LANGUAGE_MODEL", string);
+        intent3.putExtra("android.speech.extra.PROMPT", str);
+        intent3.putExtra("android.speech.extra.LANGUAGE", str2);
+        intent3.putExtra("android.speech.extra.MAX_RESULTS", i);
+        intent3.putExtra("calling_package", searchActivity == null ? null : searchActivity.flattenToShortString());
+        intent3.putExtra("android.speech.extra.RESULTS_PENDINGINTENT", activity);
+        intent3.putExtra("android.speech.extra.RESULTS_PENDINGINTENT_BUNDLE", bundle);
         return intent3;
     }
 
     private Intent createVoiceWebSearchIntent(Intent intent, SearchableInfo searchableInfo) {
         Intent intent2 = new Intent(intent);
         ComponentName searchActivity = searchableInfo.getSearchActivity();
-        intent2.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, searchActivity == null ? null : searchActivity.flattenToShortString());
+        intent2.putExtra("calling_package", searchActivity == null ? null : searchActivity.flattenToShortString());
         return intent2;
     }
 
@@ -603,7 +598,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void launchQuerySearch(int i, String str, String str2) {
-        getContext().startActivity(createIntent(Intent.ACTION_SEARCH, null, null, str2, i, str));
+        getContext().startActivity(createIntent("android.intent.action.SEARCH", null, null, str2, i, str));
     }
 
     private boolean launchSuggestion(int i, int i2, String str) {
@@ -767,7 +762,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             return;
         }
         removeCallbacks(this.mShowImeRunnable);
-        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService("input_method");
         if (inputMethodManager != null) {
             inputMethodManager.hideSoftInputFromWindow(getWindowToken(), 0);
         }

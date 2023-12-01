@@ -1,7 +1,5 @@
 package io.grpc.internal;
 
-import android.app.Instrumentation;
-import android.provider.ContactsContract;
 import com.google.common.base.Preconditions;
 import io.grpc.Attributes;
 import io.grpc.Compressor;
@@ -350,7 +348,7 @@ class DelayedStream implements ClientStream {
     @Override // io.grpc.internal.ClientStream
     public void setAuthority(final String str) {
         Preconditions.checkState(this.listener == null, "May only be called before start");
-        Preconditions.checkNotNull(str, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+        Preconditions.checkNotNull(str, "authority");
         delayOrExecute(new Runnable() { // from class: io.grpc.internal.DelayedStream.4
             @Override // java.lang.Runnable
             public void run() {
@@ -449,7 +447,7 @@ class DelayedStream implements ClientStream {
             if (this.realStream != null) {
                 return;
             }
-            setRealStream((ClientStream) Preconditions.checkNotNull(clientStream, Instrumentation.REPORT_KEY_STREAMRESULT));
+            setRealStream((ClientStream) Preconditions.checkNotNull(clientStream, "stream"));
             drainPendingCalls();
         }
     }

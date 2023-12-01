@@ -15,15 +15,13 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/consecutivescroller/ScrollUtils.class */
 public class ScrollUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Rect f11096a = new Rect();
+    private static final Rect a = new Rect();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int a(View view) {
-        View h = h(view);
+        ScrollingView h = h(view);
         if (h instanceof ScrollingView) {
-            return ((ScrollingView) h).computeVerticalScrollOffset();
+            return h.computeVerticalScrollOffset();
         }
         try {
             Method declaredMethod = View.class.getDeclaredMethod("computeVerticalScrollOffset", new Class[0]);
@@ -76,7 +74,7 @@ public class ScrollUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean a(View view, int i) {
-        View h = h(view);
+        RecyclerView h = h(view);
         if (h instanceof AbsListView) {
             AbsListView absListView = (AbsListView) h;
             if (Build.VERSION.SDK_INT >= 19) {
@@ -86,7 +84,7 @@ public class ScrollUtils {
         } else if (!(h instanceof RecyclerView)) {
             return h.canScrollVertically(i);
         } else {
-            RecyclerView recyclerView = (RecyclerView) h;
+            RecyclerView recyclerView = h;
             RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
             RecyclerView.Adapter adapter = recyclerView.getAdapter();
             if (layoutManager == null || adapter == null || adapter.getItemCount() <= 0) {
@@ -103,8 +101,8 @@ public class ScrollUtils {
                     if (i3 < 0) {
                         return false;
                     }
-                    recyclerView.getDecoratedBoundsWithMargins(recyclerView.getChildAt(i3), f11096a);
-                    if (f11096a.bottom > recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
+                    recyclerView.getDecoratedBoundsWithMargins(recyclerView.getChildAt(i3), a);
+                    if (a.bottom > recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
                         return true;
                     }
                     i2 = i3;
@@ -116,8 +114,8 @@ public class ScrollUtils {
                     if (i5 >= childCount) {
                         return false;
                     }
-                    recyclerView.getDecoratedBoundsWithMargins(recyclerView.getChildAt(i5), f11096a);
-                    if (f11096a.top < recyclerView.getPaddingTop()) {
+                    recyclerView.getDecoratedBoundsWithMargins(recyclerView.getChildAt(i5), a);
+                    if (a.top < recyclerView.getPaddingTop()) {
                         return true;
                     }
                     i4 = i5 + 1;
@@ -143,9 +141,9 @@ public class ScrollUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int b(View view) {
-        View h = h(view);
+        ScrollingView h = h(view);
         if (h instanceof ScrollingView) {
-            return ((ScrollingView) h).computeVerticalScrollRange();
+            return h.computeVerticalScrollRange();
         }
         try {
             Method declaredMethod = View.class.getDeclaredMethod("computeVerticalScrollRange", new Class[0]);
@@ -195,9 +193,9 @@ public class ScrollUtils {
     }
 
     static int c(View view) {
-        View h = h(view);
+        ScrollingView h = h(view);
         if (h instanceof ScrollingView) {
-            return ((ScrollingView) h).computeVerticalScrollExtent();
+            return h.computeVerticalScrollExtent();
         }
         try {
             Method declaredMethod = View.class.getDeclaredMethod("computeVerticalScrollExtent", new Class[0]);
@@ -285,7 +283,7 @@ public class ScrollUtils {
         if (view != null) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             if (layoutParams instanceof ConsecutiveScrollerLayout.LayoutParams) {
-                return ((ConsecutiveScrollerLayout.LayoutParams) layoutParams).f11091a;
+                return ((ConsecutiveScrollerLayout.LayoutParams) layoutParams).a;
             }
             return true;
         }

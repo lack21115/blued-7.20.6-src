@@ -20,7 +20,7 @@ public class h extends b {
         public void run() {
             h.this.k.a((String) null, (String) null);
             h hVar = h.this;
-            hVar.f41909a.a(hVar.i, "" + h.this.k.a());
+            hVar.f28218a.a(hVar.i, "" + h.this.k.a());
         }
     }
 
@@ -33,10 +33,10 @@ public class h extends b {
     public void a() {
         this.b.a((String) null, (String) null);
         if (this.b.a() != 0.0f) {
-            if (this.d.a() != 1.0f || this.f41910c == 0) {
+            if (this.d.a() != 1.0f || this.f28219c == 0) {
                 this.l.run();
             } else {
-                new Handler().postDelayed(this.l, this.f41910c);
+                new Handler().postDelayed(this.l, this.f28219c);
             }
         }
     }
@@ -46,13 +46,13 @@ public class h extends b {
         try {
             this.i = xmlPullParser.getAttributeValue(null, "name");
             this.j = xmlPullParser.getAttributeValue(null, "expression");
-            this.k = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, this.j, 0.0f, null, false);
-            this.b = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
+            this.k = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, this.j, 0.0f, null, false);
+            this.b = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, Condition.SCHEME), 1.0f, null, false);
             String attributeValue = xmlPullParser.getAttributeValue(null, "delay");
             if (attributeValue != null) {
-                this.f41910c = Integer.parseInt(attributeValue);
+                this.f28219c = Integer.parseInt(attributeValue);
             }
-            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
+            this.d = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, null, xmlPullParser.getAttributeValue(null, "delayCondition"), 1.0f, null, false);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

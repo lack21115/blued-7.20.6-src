@@ -18,11 +18,11 @@ import javax.crypto.spec.SecretKeySpec;
 public final class AesGcm {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23061a = "security:";
+    private static final String f9453a = "security:";
     private static final String b = "AES/GCM/NoPadding";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23062c = "AES";
+    private static final String f9454c = "AES";
     private static final String d = "GCM";
     private static final String e = "";
     private static final int f = 16;
@@ -71,8 +71,8 @@ public final class AesGcm {
 
     private static byte[] a(byte[] bArr, byte[] bArr2) {
         byte[] bArr3 = new byte[bArr.length + bArr2.length];
-        System.arraycopy((Object) bArr, 0, (Object) bArr3, 0, bArr.length);
-        System.arraycopy((Object) bArr2, 0, (Object) bArr3, bArr.length, bArr2.length);
+        System.arraycopy(bArr, 0, bArr3, 0, bArr.length);
+        System.arraycopy(bArr2, 0, bArr3, bArr.length, bArr2.length);
         return bArr3;
     }
 
@@ -86,13 +86,13 @@ public final class AesGcm {
 
     private static byte[] b(byte[] bArr) {
         byte[] bArr2 = new byte[bArr.length - 12];
-        System.arraycopy((Object) bArr, 12, (Object) bArr2, 0, bArr.length - 12);
+        System.arraycopy(bArr, 12, bArr2, 0, bArr.length - 12);
         return bArr2;
     }
 
     private static byte[] c(byte[] bArr) {
         byte[] bArr2 = new byte[12];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 12);
+        System.arraycopy(bArr, 0, bArr2, 0, 12);
         return bArr2;
     }
 
@@ -289,7 +289,7 @@ public final class AesGcm {
         byte[] copyOf = Arrays.copyOf(d2, a2);
         int length = (d2.length - copyOf.length) - 1;
         byte[] bArr3 = new byte[length];
-        System.arraycopy((Object) d2, a2 + 1, (Object) bArr3, 0, length);
+        System.arraycopy(d2, a2 + 1, bArr3, 0, length);
         return decrypt(bArr3, bArr2, copyOf);
     }
 

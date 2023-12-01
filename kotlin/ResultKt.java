@@ -13,7 +13,7 @@ public final class ResultKt {
 
     public static final void a(Object obj) {
         if (obj instanceof Result.Failure) {
-            throw ((Result.Failure) obj).f42294a;
+            throw ((Result.Failure) obj).a;
         }
     }
 }

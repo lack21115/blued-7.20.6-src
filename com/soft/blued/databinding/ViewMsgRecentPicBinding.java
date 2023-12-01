@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewMsgRecentPicBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29627a;
+    private final RelativeLayout f15937a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29627a;
+        return this.f15937a;
     }
 }

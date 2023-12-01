@@ -10,19 +10,14 @@ import java.util.TimerTask;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/banner/b/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5819a;
+    String a;
     WeakReference<d> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Timer f5820c;
+    Timer c;
     private boolean d = false;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.banner.b.a$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/banner/b/a$1.class */
-    public final class AnonymousClass1 extends TimerTask {
+    final class AnonymousClass1 extends TimerTask {
         AnonymousClass1() {
         }
 
@@ -61,7 +56,7 @@ public class a {
     }
 
     public final void a(String str) {
-        this.f5819a = str;
+        this.a = str;
     }
 
     public final boolean a() {
@@ -70,35 +65,35 @@ public class a {
 
     public final void b() {
         synchronized (this) {
-            if (TextUtils.isEmpty(this.f5819a)) {
+            if (TextUtils.isEmpty(this.a)) {
                 return;
             }
-            com.anythink.core.c.d a2 = e.a(n.a().g()).a(this.f5819a);
-            if (this.f5820c != null) {
-                this.f5820c.cancel();
+            com.anythink.core.c.d a = e.a(n.a().g()).a(this.a);
+            if (this.c != null) {
+                this.c.cancel();
             }
-            if (a2 != null && a2.V() == 1) {
+            if (a != null && a.V() == 1) {
                 this.d = true;
-                this.f5820c = new Timer();
+                this.c = new Timer();
                 long j = 5000;
-                if (a2.W() > 5000) {
-                    j = a2.W();
+                if (a.W() > 5000) {
+                    j = a.W();
                 }
-                this.f5820c.schedule(new AnonymousClass1(), j, j);
+                this.c.schedule(new AnonymousClass1(), j, j);
             }
         }
     }
 
     public final boolean c() {
-        return this.f5820c == null;
+        return this.c == null;
     }
 
     public final void d() {
         synchronized (this) {
-            if (this.f5820c != null) {
-                this.f5820c.cancel();
+            if (this.c != null) {
+                this.c.cancel();
             }
-            this.f5820c = null;
+            this.c = null;
         }
     }
 }

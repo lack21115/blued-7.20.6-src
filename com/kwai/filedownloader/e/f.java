@@ -6,7 +6,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.utils.ap;
 import com.kwai.filedownloader.exception.FileDownloadGiveUpRetryException;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
@@ -74,7 +73,7 @@ public class f {
         if (TextUtils.isEmpty(fC)) {
             str2 = fA(str);
         }
-        return str2.replaceAll("\\/", BridgeUtil.UNDERLINE_STR);
+        return str2.replaceAll("\\/", "_");
     }
 
     public static String a(String str, boolean z, String str2) {

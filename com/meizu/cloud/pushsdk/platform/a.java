@@ -11,8 +11,8 @@ import java.util.TreeMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, String> f24180a = a();
-    private static final List<String> b = new ArrayList(f24180a.keySet());
+    private static Map<String, String> f10565a = a();
+    private static final List<String> b = new ArrayList(f10565a.keySet());
 
     public static String a(String str) {
         String str2;
@@ -22,8 +22,8 @@ public class a {
         try {
             if (str.length() > 3) {
                 String substring = str.substring(0, 3);
-                if (f24180a.containsKey(substring)) {
-                    String str3 = f24180a.get(substring);
+                if (f10565a.containsKey(substring)) {
+                    String str3 = f10565a.get(substring);
                     str2 = str.substring(3);
                     try {
                         char[] cArr = new char[str2.length() / 2];
@@ -56,39 +56,39 @@ public class a {
     }
 
     private static Map<String, String> a() {
-        if (a(f24180a)) {
+        if (a(f10565a)) {
             synchronized (a.class) {
                 try {
-                    if (a(f24180a)) {
+                    if (a(f10565a)) {
                         TreeMap treeMap = new TreeMap();
-                        f24180a = treeMap;
+                        f10565a = treeMap;
                         treeMap.put("UCI", "v9tC0Myz1MGwXRFy");
-                        f24180a.put("G3G", "XAsFqhhaf4gKpmAi");
-                        f24180a.put("V5R", "cOqH18NXwBtZVkvz");
-                        f24180a.put("0XC", "IgSEKZ3Ea6Pm4woS");
-                        f24180a.put("Z9K", "pH6J9DMPNgqQp8m8");
-                        f24180a.put("EIM", "K11Rs9HAKRXeNwq8");
-                        f24180a.put("SO7", "T8LquL1DvwVcogiU");
-                        f24180a.put("DDI", "d02F6ttOtV05MYCQ");
-                        f24180a.put("ULY", "ToZZIhAywnUfHShN");
-                        f24180a.put("0EV", "r5D5RRwQhfV0AYLb");
-                        f24180a.put("N6A", "QAtSBFcXnQoUgHO2");
-                        f24180a.put("S5Q", "sDWLrZINnum227am");
-                        f24180a.put("RA5", "4Uq3Ruxo1FTBdHQE");
-                        f24180a.put("J04", "N5hViUTdLCpN59H0");
-                        f24180a.put("B68", "EY3sH1KKtalg5ZaT");
-                        f24180a.put("9IW", "q1u0MiuFyim4pCYY");
-                        f24180a.put("UU3", "syLnkkd8AqNykVV7");
-                        f24180a.put("Z49", "V00FiWu124yE91sH");
-                        f24180a.put("BNA", "rPP7AK1VWpKEry3p");
-                        f24180a.put("WXG", "om8w5ahkJJgpAH9v");
+                        f10565a.put("G3G", "XAsFqhhaf4gKpmAi");
+                        f10565a.put("V5R", "cOqH18NXwBtZVkvz");
+                        f10565a.put("0XC", "IgSEKZ3Ea6Pm4woS");
+                        f10565a.put("Z9K", "pH6J9DMPNgqQp8m8");
+                        f10565a.put("EIM", "K11Rs9HAKRXeNwq8");
+                        f10565a.put("SO7", "T8LquL1DvwVcogiU");
+                        f10565a.put("DDI", "d02F6ttOtV05MYCQ");
+                        f10565a.put("ULY", "ToZZIhAywnUfHShN");
+                        f10565a.put("0EV", "r5D5RRwQhfV0AYLb");
+                        f10565a.put("N6A", "QAtSBFcXnQoUgHO2");
+                        f10565a.put("S5Q", "sDWLrZINnum227am");
+                        f10565a.put("RA5", "4Uq3Ruxo1FTBdHQE");
+                        f10565a.put("J04", "N5hViUTdLCpN59H0");
+                        f10565a.put("B68", "EY3sH1KKtalg5ZaT");
+                        f10565a.put("9IW", "q1u0MiuFyim4pCYY");
+                        f10565a.put("UU3", "syLnkkd8AqNykVV7");
+                        f10565a.put("Z49", "V00FiWu124yE91sH");
+                        f10565a.put("BNA", "rPP7AK1VWpKEry3p");
+                        f10565a.put("WXG", "om8w5ahkJJgpAH9v");
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f24180a;
+        return f10565a;
     }
 
     public static <K, V> boolean a(Map<K, V> map) {

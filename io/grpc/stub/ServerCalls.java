@@ -182,7 +182,6 @@ public final class ServerCalls {
                 this.call = serverCall;
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onCancel() {
                 this.responseObserver.cancelled = true;
                 if (((ServerCallStreamObserverImpl) this.responseObserver).onCancelHandler != null) {
@@ -194,13 +193,11 @@ public final class ServerCalls {
                 this.requestObserver.onError(Status.CANCELLED.withDescription("cancelled before receiving half close").asRuntimeException());
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onHalfClose() {
                 this.halfClosed = true;
                 this.requestObserver.onCompleted();
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onMessage(ReqT reqt) {
                 this.requestObserver.onNext(reqt);
                 if (((ServerCallStreamObserverImpl) this.responseObserver).autoRequestEnabled) {
@@ -208,7 +205,6 @@ public final class ServerCalls {
                 }
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onReady() {
                 if (((ServerCallStreamObserverImpl) this.responseObserver).onReadyHandler != null) {
                     ((ServerCallStreamObserverImpl) this.responseObserver).onReadyHandler.run();
@@ -220,7 +216,6 @@ public final class ServerCalls {
             this.method = streamingRequestMethod;
         }
 
-        @Override // io.grpc.ServerCallHandler
         public ServerCall.Listener<ReqT> startCall(ServerCall<ReqT, RespT> serverCall, Metadata metadata) {
             ServerCallStreamObserverImpl serverCallStreamObserverImpl = new ServerCallStreamObserverImpl(serverCall);
             StreamObserver<ReqT> invoke = this.method.invoke(serverCallStreamObserverImpl);
@@ -238,15 +233,13 @@ public final class ServerCalls {
         void invoke(ReqT reqt, StreamObserver<RespT> streamObserver);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:io/grpc/stub/ServerCalls$UnaryRequestMethod.class */
-    public interface UnaryRequestMethod<ReqT, RespT> {
+    interface UnaryRequestMethod<ReqT, RespT> {
         void invoke(ReqT reqt, StreamObserver<RespT> streamObserver);
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:io/grpc/stub/ServerCalls$UnaryServerCallHandler.class */
-    public static final class UnaryServerCallHandler<ReqT, RespT> implements ServerCallHandler<ReqT, RespT> {
+    static final class UnaryServerCallHandler<ReqT, RespT> implements ServerCallHandler<ReqT, RespT> {
         private final UnaryRequestMethod<ReqT, RespT> method;
 
         /* loaded from: source-3503164-dex2jar.jar:io/grpc/stub/ServerCalls$UnaryServerCallHandler$UnaryServerCallListener.class */
@@ -262,7 +255,6 @@ public final class ServerCalls {
                 this.responseObserver = serverCallStreamObserverImpl;
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onCancel() {
                 this.responseObserver.cancelled = true;
                 if (((ServerCallStreamObserverImpl) this.responseObserver).onCancelHandler != null) {
@@ -270,7 +262,6 @@ public final class ServerCalls {
                 }
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onHalfClose() {
                 if (this.canInvoke) {
                     if (this.request == null) {
@@ -286,7 +277,6 @@ public final class ServerCalls {
                 }
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onMessage(ReqT reqt) {
                 if (this.request == null) {
                     this.request = reqt;
@@ -296,7 +286,6 @@ public final class ServerCalls {
                 this.canInvoke = false;
             }
 
-            @Override // io.grpc.ServerCall.Listener
             public void onReady() {
                 this.wasReady = true;
                 if (((ServerCallStreamObserverImpl) this.responseObserver).onReadyHandler != null) {
@@ -309,7 +298,6 @@ public final class ServerCalls {
             this.method = unaryRequestMethod;
         }
 
-        @Override // io.grpc.ServerCallHandler
         public ServerCall.Listener<ReqT> startCall(ServerCall<ReqT, RespT> serverCall, Metadata metadata) {
             Preconditions.checkArgument(serverCall.getMethodDescriptor().getType().clientSendsOneMessage(), "asyncUnaryRequestCall is only for clientSendsOneMessage methods");
             ServerCallStreamObserverImpl serverCallStreamObserverImpl = new ServerCallStreamObserverImpl(serverCall);

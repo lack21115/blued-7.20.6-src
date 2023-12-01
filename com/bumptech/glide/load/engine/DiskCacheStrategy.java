@@ -7,7 +7,7 @@ import com.bumptech.glide.load.EncodeStrategy;
 public abstract class DiskCacheStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final DiskCacheStrategy f20762a = new DiskCacheStrategy() { // from class: com.bumptech.glide.load.engine.DiskCacheStrategy.1
+    public static final DiskCacheStrategy f7156a = new DiskCacheStrategy() { // from class: com.bumptech.glide.load.engine.DiskCacheStrategy.1
         @Override // com.bumptech.glide.load.engine.DiskCacheStrategy
         public boolean a() {
             return true;
@@ -51,7 +51,7 @@ public abstract class DiskCacheStrategy {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    public static final DiskCacheStrategy f20763c = new DiskCacheStrategy() { // from class: com.bumptech.glide.load.engine.DiskCacheStrategy.3
+    public static final DiskCacheStrategy f7157c = new DiskCacheStrategy() { // from class: com.bumptech.glide.load.engine.DiskCacheStrategy.3
         @Override // com.bumptech.glide.load.engine.DiskCacheStrategy
         public boolean a() {
             return false;

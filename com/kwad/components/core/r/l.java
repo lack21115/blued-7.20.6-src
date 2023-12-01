@@ -4,7 +4,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.service.ServiceProvider;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -120,7 +119,7 @@ public class l {
     }
 
     private static String l(int i, int i2) {
-        return i + BridgeUtil.UNDERLINE_STR + i2;
+        return i + "_" + i2;
     }
 
     public static l pS() {

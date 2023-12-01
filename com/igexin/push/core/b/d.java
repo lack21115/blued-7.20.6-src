@@ -8,22 +8,22 @@ import java.util.Set;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f23435a = 0;
+    public int f9827a = 0;
     public int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f23436c = 0;
+    public int f9828c = 0;
     public long d = 0;
     private Set<Integer> f = null;
     private List<NeighboringCellInfo> g = null;
     public int e = 0;
 
     private int a() {
-        return this.f23435a;
+        return this.f9827a;
     }
 
     private void a(int i) {
-        this.f23435a = i;
+        this.f9827a = i;
     }
 
     private void a(long j) {
@@ -39,11 +39,11 @@ public final class d {
     }
 
     private int c() {
-        return this.f23436c;
+        return this.f9828c;
     }
 
     private void c(int i) {
-        this.f23436c = i;
+        this.f9828c = i;
     }
 
     private long d() {

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveFollowNoDataBannerBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f29450a;
+    private final TextView f15760a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public TextView getRoot() {
-        return this.f29450a;
+        return this.f15760a;
     }
 }

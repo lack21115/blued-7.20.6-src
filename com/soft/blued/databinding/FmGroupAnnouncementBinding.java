@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public final class FmGroupAnnouncementBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final EditText f28747a;
+    public final EditText f15057a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f28748c;
+    public final RelativeLayout f15058c;
     public final CommonTopTitleNoTrans d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +27,9 @@ public final class FmGroupAnnouncementBinding implements ViewBinding {
 
     private FmGroupAnnouncementBinding(LinearLayout linearLayout, EditText editText, FrameLayout frameLayout, RelativeLayout relativeLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, TextView textView2, TextView textView3) {
         this.h = linearLayout;
-        this.f28747a = editText;
+        this.f15057a = editText;
         this.b = frameLayout;
-        this.f28748c = relativeLayout;
+        this.f15058c = relativeLayout;
         this.d = commonTopTitleNoTrans;
         this.e = textView;
         this.f = textView2;
@@ -44,15 +44,15 @@ public final class FmGroupAnnouncementBinding implements ViewBinding {
             if (frameLayout != null) {
                 RelativeLayout relativeLayout = (RelativeLayout) view.findViewById(R.id.rl_edit);
                 if (relativeLayout != null) {
-                    CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370694);
-                    if (commonTopTitleNoTrans != null) {
+                    CommonTopTitleNoTrans findViewById = view.findViewById(2131370694);
+                    if (findViewById != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_default);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(2131371322);
                             if (textView2 != null) {
-                                TextView textView3 = (TextView) view.findViewById(2131372144);
+                                TextView textView3 = (TextView) view.findViewById(R.id.tv_num);
                                 if (textView3 != null) {
-                                    return new FmGroupAnnouncementBinding((LinearLayout) view, editText, frameLayout, relativeLayout, commonTopTitleNoTrans, textView, textView2, textView3);
+                                    return new FmGroupAnnouncementBinding((LinearLayout) view, editText, frameLayout, relativeLayout, findViewById, textView, textView2, textView3);
                                 }
                                 str = "tvNum";
                             } else {

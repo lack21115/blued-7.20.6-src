@@ -24,20 +24,15 @@ import com.blued.android.module.live_china.presenter.LiveFansGroupPlayingPresent
 import com.blued.android.module.live_china.same.tip.CommonAlertDialog;
 import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.das.live.LiveProtos;
-import com.meizu.cloud.pushsdk.platform.message.BasicPushStatus;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansGroupPlayingFrahment.class */
 public class LiveFansGroupPlayingFrahment extends MvpFragment<LiveFansGroupPlayingPresent> implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f12843a;
+    private View a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f12844c;
+    private RecyclerView c;
     private ShapeTextView d;
     private View e;
     private FreedomAdapter f;
@@ -72,27 +67,27 @@ public class LiveFansGroupPlayingFrahment extends MvpFragment<LiveFansGroupPlayi
 
     private void b() {
         RecyclerView recyclerView;
-        int a2;
-        if (this.k == null || (recyclerView = this.f12844c) == null) {
+        int a;
+        if (this.k == null || (recyclerView = this.c) == null) {
             return;
         }
         if (this.f == null || recyclerView.getAdapter() == null) {
-            this.f12844c.setLayoutManager(new LinearLayoutManager(getContext()));
+            this.c.setLayoutManager(new LinearLayoutManager(getContext()));
             FreedomAdapter freedomAdapter = new FreedomAdapter(getContext(), getFragmentActive(), this.k, this);
             this.f = freedomAdapter;
-            this.f12844c.setAdapter(freedomAdapter);
+            this.c.setAdapter(freedomAdapter);
         } else {
             this.f.notifyDataSetChanged();
         }
-        int a3 = DensityUtils.a(getContext(), 17.0f);
+        int a2 = DensityUtils.a(getContext(), 17.0f);
         if (this.g) {
             this.f.a((OnClickCallback) null);
-            a2 = a3;
+            a = a2;
         } else {
             this.f.a(this);
-            a2 = DensityUtils.a(getContext(), 76.0f);
+            a = DensityUtils.a(getContext(), 76.0f);
         }
-        this.f12844c.setPadding(0, a3, 0, a2);
+        this.c.setPadding(0, a2, 0, a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -175,15 +170,15 @@ public class LiveFansGroupPlayingFrahment extends MvpFragment<LiveFansGroupPlayi
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void d() {
-        f(BasicPushStatus.SUCCESS_CODE);
+        f("200");
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f12843a = this.i.findViewById(R.id.rl_not_data);
+        this.a = this.i.findViewById(R.id.rl_not_data);
         this.b = (TextView) this.i.findViewById(R.id.tv_not_data);
-        this.f12844c = (RecyclerView) this.i.findViewById(R.id.recycler_view);
+        this.c = this.i.findViewById(R.id.recycler_view);
         this.d = (ShapeTextView) this.i.findViewById(R.id.tv_apply_join);
         this.e = this.i.findViewById(R.id.loading);
         this.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFansGroupPlayingFrahment$xLKVo00xE5PfbyrF33fbxPMFBiQ
@@ -192,7 +187,7 @@ public class LiveFansGroupPlayingFrahment extends MvpFragment<LiveFansGroupPlayi
                 LiveFansGroupPlayingFrahment.this.b(view);
             }
         });
-        this.f12843a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFansGroupPlayingFrahment$fWUIzlhg3w_QOKsKcja2t1bsGgw
+        this.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveFansGroupPlayingFrahment$fWUIzlhg3w_QOKsKcja2t1bsGgw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveFansGroupPlayingFrahment.this.a(view);
@@ -219,22 +214,22 @@ public class LiveFansGroupPlayingFrahment extends MvpFragment<LiveFansGroupPlayi
 
     public void c(String str) {
         this.b.setText(R.string.live_fans_group_not_create_to_playing);
-        this.f12843a.setVisibility(0);
+        this.a.setVisibility(0);
         this.d.setVisibility(8);
-        this.f12844c.setVisibility(8);
+        this.c.setVisibility(8);
         this.e.setVisibility(8);
     }
 
     public void d(String str) {
         this.b.setText(R.string.live_fans_group_get_data_error);
-        this.f12843a.setVisibility(0);
+        this.a.setVisibility(0);
         this.d.setVisibility(8);
-        this.f12844c.setVisibility(8);
+        this.c.setVisibility(8);
         this.e.setVisibility(8);
     }
 
     public void e(String str) {
-        if (!BasicPushStatus.SUCCESS_CODE.equals(str) || this.l == null) {
+        if (!"200".equals(str) || this.l == null) {
             this.e.setVisibility(8);
             return;
         }
@@ -249,7 +244,7 @@ public class LiveFansGroupPlayingFrahment extends MvpFragment<LiveFansGroupPlayi
 
     public void f(String str) {
         this.e.setVisibility(8);
-        if (!BasicPushStatus.SUCCESS_CODE.equals(str) || this.l == null) {
+        if (!"200".equals(str) || this.l == null) {
             return;
         }
         EventTrackLive.b(LiveProtos.Event.LIVE_USER_FANS_CLUB_PAGE_APPLY_SUCCESS, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.l.b.group_id);
@@ -297,7 +292,7 @@ public class LiveFansGroupPlayingFrahment extends MvpFragment<LiveFansGroupPlayi
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }

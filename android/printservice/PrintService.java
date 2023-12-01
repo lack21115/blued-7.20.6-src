@@ -140,7 +140,6 @@ public abstract class PrintService extends Service {
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0064, code lost:
         if (r9 == null) goto L21;
      */
-    /* JADX WARN: Multi-variable type inference failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

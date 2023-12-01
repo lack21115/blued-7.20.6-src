@@ -20,13 +20,9 @@ import kotlinx.coroutines.CoroutineScope;
 /* renamed from: com.blued.android.module.common.adx.gdt.native.TXNativeServerAdAdapter$loadAD$2$1  reason: invalid package */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/gdt/native/TXNativeServerAdAdapter$loadAD$2$1.class */
 final class TXNativeServerAdAdapter$loadAD$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10557a;
+    int a;
     final /* synthetic */ TXNativeServerAdAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ CancellableContinuation<ADEvent> f10558c;
+    final /* synthetic */ CancellableContinuation<ADEvent> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -34,31 +30,31 @@ final class TXNativeServerAdAdapter$loadAD$2$1 extends SuspendLambda implements 
     public TXNativeServerAdAdapter$loadAD$2$1(TXNativeServerAdAdapter tXNativeServerAdAdapter, CancellableContinuation<? super ADEvent> cancellableContinuation, Continuation<? super TXNativeServerAdAdapter$loadAD$2$1> continuation) {
         super(2, continuation);
         this.b = tXNativeServerAdAdapter;
-        this.f10558c = cancellableContinuation;
+        this.c = cancellableContinuation;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((TXNativeServerAdAdapter$loadAD$2$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((TXNativeServerAdAdapter$loadAD$2$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new TXNativeServerAdAdapter$loadAD$2$1(this.b, this.f10558c, continuation);
+        return new TXNativeServerAdAdapter$loadAD$2$1(this.b, this.c, continuation);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2;
-        Object a3 = IntrinsicsKt.a();
-        int i = this.f10557a;
+        Object a;
+        Object a2 = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
             TXNativeServerAdAdapter tXNativeServerAdAdapter = this.b;
-            final CancellableContinuation<ADEvent> cancellableContinuation = this.f10558c;
-            this.f10557a = 1;
-            a2 = tXNativeServerAdAdapter.a(new ADListener() { // from class: com.blued.android.module.common.adx.gdt.native.TXNativeServerAdAdapter$loadAD$2$1.1
+            final CancellableContinuation<ADEvent> cancellableContinuation = this.c;
+            this.a = 1;
+            a = tXNativeServerAdAdapter.a(new ADListener() { // from class: com.blued.android.module.common.adx.gdt.native.TXNativeServerAdAdapter$loadAD$2$1.1
                 @Override // com.blued.android.module.common.adx.base.ADListener
                 public void onADEvent(ADEvent aDEvent) {
                     if (aDEvent == null) {
@@ -74,20 +70,20 @@ final class TXNativeServerAdAdapter$loadAD$2$1 extends SuspendLambda implements 
                             @Override // kotlin.jvm.functions.Function1
                             public /* synthetic */ Unit invoke(Throwable th) {
                                 a(th);
-                                return Unit.f42314a;
+                                return Unit.a;
                             }
                         });
                     }
                 }
             }, this);
-            if (a2 == a3) {
-                return a3;
+            if (a == a2) {
+                return a2;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

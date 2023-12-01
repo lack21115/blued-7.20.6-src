@@ -48,7 +48,7 @@ public class o extends k {
                         if (obj == null || !(obj instanceof AnythinkVideoView.a)) {
                             i3 = 0;
                         } else {
-                            i3 = ((AnythinkVideoView.a) obj).f8500a;
+                            i3 = ((AnythinkVideoView.a) obj).f5660a;
                             i4 = ((AnythinkVideoView.a) obj).b;
                         }
                         int i5 = i4;

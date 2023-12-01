@@ -5,10 +5,10 @@ package com.tencent.ugc;
 public final /* synthetic */ class am implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40229a;
+    private final TXVideoEditer f26538a;
 
     private am(TXVideoEditer tXVideoEditer) {
-        this.f40229a = tXVideoEditer;
+        this.f26538a = tXVideoEditer;
     }
 
     public static Runnable a(TXVideoEditer tXVideoEditer) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class am implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$resumePlay$42(this.f40229a);
+        TXVideoEditer.lambda$resumePlay$42(this.f26538a);
     }
 }

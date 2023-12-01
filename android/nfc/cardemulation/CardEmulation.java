@@ -11,7 +11,6 @@ import android.os.RemoteException;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
-import com.android.internal.telephony.PhoneConstants;
 import java.util.HashMap;
 import java.util.List;
 
@@ -87,10 +86,10 @@ public final class CardEmulation {
         if (str == null) {
             return false;
         }
-        if (str.endsWith(PhoneConstants.APN_TYPE_ALL) && str.length() % 2 == 0) {
+        if (str.endsWith("*") && str.length() % 2 == 0) {
             Log.e(TAG, "AID " + str + " is not a valid AID.");
             return false;
-        } else if (!str.endsWith(PhoneConstants.APN_TYPE_ALL) && str.length() % 2 != 0) {
+        } else if (!str.endsWith("*") && str.length() % 2 != 0) {
             Log.e(TAG, "AID " + str + " is not a valid AID.");
             return false;
         } else if (str.matches("[0-9A-Fa-f]{10,32}\\*?")) {

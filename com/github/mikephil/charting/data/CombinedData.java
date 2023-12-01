@@ -132,9 +132,9 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
             this.i = new ArrayList();
         }
         this.i.clear();
-        this.f22128a = -3.4028235E38f;
+        this.f8521a = -3.4028235E38f;
         this.b = Float.MAX_VALUE;
-        this.f22129c = -3.4028235E38f;
+        this.f8522c = -3.4028235E38f;
         this.d = Float.MAX_VALUE;
         this.e = -3.4028235E38f;
         this.f = Float.MAX_VALUE;
@@ -143,14 +143,14 @@ public class CombinedData extends BarLineScatterCandleBubbleData<IBarLineScatter
         for (BarLineScatterCandleBubbleData barLineScatterCandleBubbleData : p()) {
             barLineScatterCandleBubbleData.c();
             this.i.addAll(barLineScatterCandleBubbleData.i());
-            if (barLineScatterCandleBubbleData.f() > this.f22128a) {
-                this.f22128a = barLineScatterCandleBubbleData.f();
+            if (barLineScatterCandleBubbleData.f() > this.f8521a) {
+                this.f8521a = barLineScatterCandleBubbleData.f();
             }
             if (barLineScatterCandleBubbleData.e() < this.b) {
                 this.b = barLineScatterCandleBubbleData.e();
             }
-            if (barLineScatterCandleBubbleData.h() > this.f22129c) {
-                this.f22129c = barLineScatterCandleBubbleData.h();
+            if (barLineScatterCandleBubbleData.h() > this.f8522c) {
+                this.f8522c = barLineScatterCandleBubbleData.h();
             }
             if (barLineScatterCandleBubbleData.g() < this.d) {
                 this.d = barLineScatterCandleBubbleData.g();

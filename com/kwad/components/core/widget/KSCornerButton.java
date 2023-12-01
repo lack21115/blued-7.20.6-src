@@ -45,9 +45,8 @@ public class KSCornerButton extends Button {
         hVar.initAttrs(context, attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         this.mViewRCHelper.beforeDispatchDraw(canvas);
         super.dispatchDraw(canvas);
         this.mViewRCHelper.afterDispatchDraw(canvas);
@@ -64,9 +63,8 @@ public class KSCornerButton extends Button {
         return this.mViewRCHelper.getCornerConf();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.mViewRCHelper.onSizeChanged(i, i2);
     }

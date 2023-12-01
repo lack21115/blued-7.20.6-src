@@ -14,7 +14,6 @@ import android.text.style.MetricAffectingSpan;
 import androidx.core.os.TraceCompat;
 import androidx.core.util.ObjectsCompat;
 import androidx.core.util.Preconditions;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
@@ -26,11 +25,11 @@ import java.util.concurrent.FutureTask;
 public class PrecomputedTextCompat implements Spannable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f2567a = new Object();
+    private static final Object f2519a = new Object();
     private static Executor b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Spannable f2568c;
+    private final Spannable f2520c;
     private final Params d;
     private final int[] e;
     private final PrecomputedText f;
@@ -39,11 +38,11 @@ public class PrecomputedTextCompat implements Spannable {
     public static final class Params {
 
         /* renamed from: a  reason: collision with root package name */
-        final PrecomputedText.Params f2569a;
+        final PrecomputedText.Params f2521a;
         private final TextPaint b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final TextDirectionHeuristic f2570c;
+        private final TextDirectionHeuristic f2522c;
         private final int d;
         private final int e;
 
@@ -51,21 +50,21 @@ public class PrecomputedTextCompat implements Spannable {
         public static class Builder {
 
             /* renamed from: a  reason: collision with root package name */
-            private final TextPaint f2571a;
+            private final TextPaint f2523a;
             private TextDirectionHeuristic b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f2572c;
+            private int f2524c;
             private int d;
 
             public Builder(TextPaint textPaint) {
-                this.f2571a = textPaint;
+                this.f2523a = textPaint;
                 if (Build.VERSION.SDK_INT >= 23) {
-                    this.f2572c = 1;
+                    this.f2524c = 1;
                     this.d = 1;
                 } else {
                     this.d = 0;
-                    this.f2572c = 0;
+                    this.f2524c = 0;
                 }
                 if (Build.VERSION.SDK_INT >= 18) {
                     this.b = TextDirectionHeuristics.FIRSTSTRONG_LTR;
@@ -75,11 +74,11 @@ public class PrecomputedTextCompat implements Spannable {
             }
 
             public Params build() {
-                return new Params(this.f2571a, this.b, this.f2572c, this.d);
+                return new Params(this.f2523a, this.b, this.f2524c, this.d);
             }
 
             public Builder setBreakStrategy(int i) {
-                this.f2572c = i;
+                this.f2524c = i;
                 return this;
             }
 
@@ -96,20 +95,20 @@ public class PrecomputedTextCompat implements Spannable {
 
         public Params(PrecomputedText.Params params) {
             this.b = params.getTextPaint();
-            this.f2570c = params.getTextDirection();
+            this.f2522c = params.getTextDirection();
             this.d = params.getBreakStrategy();
             this.e = params.getHyphenationFrequency();
-            this.f2569a = Build.VERSION.SDK_INT < 29 ? null : params;
+            this.f2521a = Build.VERSION.SDK_INT < 29 ? null : params;
         }
 
         Params(TextPaint textPaint, TextDirectionHeuristic textDirectionHeuristic, int i, int i2) {
             if (Build.VERSION.SDK_INT >= 29) {
-                this.f2569a = new PrecomputedText.Params.Builder(textPaint).setBreakStrategy(i).setHyphenationFrequency(i2).setTextDirection(textDirectionHeuristic).build();
+                this.f2521a = new PrecomputedText.Params.Builder(textPaint).setBreakStrategy(i).setHyphenationFrequency(i2).setTextDirection(textDirectionHeuristic).build();
             } else {
-                this.f2569a = null;
+                this.f2521a = null;
             }
             this.b = textPaint;
-            this.f2570c = textDirectionHeuristic;
+            this.f2522c = textDirectionHeuristic;
             this.d = i;
             this.e = i2;
         }
@@ -121,7 +120,7 @@ public class PrecomputedTextCompat implements Spannable {
             if (obj instanceof Params) {
                 Params params = (Params) obj;
                 if (equalsWithoutTextDirection(params)) {
-                    return Build.VERSION.SDK_INT < 18 || this.f2570c == params.getTextDirection();
+                    return Build.VERSION.SDK_INT < 18 || this.f2522c == params.getTextDirection();
                 }
                 return false;
             }
@@ -154,7 +153,7 @@ public class PrecomputedTextCompat implements Spannable {
         }
 
         public TextDirectionHeuristic getTextDirection() {
-            return this.f2570c;
+            return this.f2522c;
         }
 
         public TextPaint getTextPaint() {
@@ -163,15 +162,15 @@ public class PrecomputedTextCompat implements Spannable {
 
         public int hashCode() {
             if (Build.VERSION.SDK_INT >= 24) {
-                return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Float.valueOf(this.b.getLetterSpacing()), Integer.valueOf(this.b.getFlags()), this.b.getTextLocales(), this.b.getTypeface(), Boolean.valueOf(this.b.isElegantTextHeight()), this.f2570c, Integer.valueOf(this.d), Integer.valueOf(this.e));
+                return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Float.valueOf(this.b.getLetterSpacing()), Integer.valueOf(this.b.getFlags()), this.b.getTextLocales(), this.b.getTypeface(), Boolean.valueOf(this.b.isElegantTextHeight()), this.f2522c, Integer.valueOf(this.d), Integer.valueOf(this.e));
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Float.valueOf(this.b.getLetterSpacing()), Integer.valueOf(this.b.getFlags()), this.b.getTextLocale(), this.b.getTypeface(), Boolean.valueOf(this.b.isElegantTextHeight()), this.f2570c, Integer.valueOf(this.d), Integer.valueOf(this.e));
+                return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Float.valueOf(this.b.getLetterSpacing()), Integer.valueOf(this.b.getFlags()), this.b.getTextLocale(), this.b.getTypeface(), Boolean.valueOf(this.b.isElegantTextHeight()), this.f2522c, Integer.valueOf(this.d), Integer.valueOf(this.e));
             }
             if (Build.VERSION.SDK_INT < 18 && Build.VERSION.SDK_INT < 17) {
-                return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Integer.valueOf(this.b.getFlags()), this.b.getTypeface(), this.f2570c, Integer.valueOf(this.d), Integer.valueOf(this.e));
+                return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Integer.valueOf(this.b.getFlags()), this.b.getTypeface(), this.f2522c, Integer.valueOf(this.d), Integer.valueOf(this.e));
             }
-            return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Integer.valueOf(this.b.getFlags()), this.b.getTextLocale(), this.b.getTypeface(), this.f2570c, Integer.valueOf(this.d), Integer.valueOf(this.e));
+            return ObjectsCompat.hash(Float.valueOf(this.b.getTextSize()), Float.valueOf(this.b.getTextScaleX()), Float.valueOf(this.b.getTextSkewX()), Integer.valueOf(this.b.getFlags()), this.b.getTextLocale(), this.b.getTypeface(), this.f2522c, Integer.valueOf(this.d), Integer.valueOf(this.e));
         }
 
         public String toString() {
@@ -192,10 +191,10 @@ public class PrecomputedTextCompat implements Spannable {
             if (Build.VERSION.SDK_INT >= 26) {
                 sb.append(", variationSettings=" + this.b.getFontVariationSettings());
             }
-            sb.append(", textDir=" + this.f2570c);
+            sb.append(", textDir=" + this.f2522c);
             sb.append(", breakStrategy=" + this.d);
             sb.append(", hyphenationFrequency=" + this.e);
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -207,18 +206,18 @@ public class PrecomputedTextCompat implements Spannable {
         static class PrecomputedTextCallback implements Callable<PrecomputedTextCompat> {
 
             /* renamed from: a  reason: collision with root package name */
-            private Params f2573a;
+            private Params f2525a;
             private CharSequence b;
 
             PrecomputedTextCallback(Params params, CharSequence charSequence) {
-                this.f2573a = params;
+                this.f2525a = params;
                 this.b = charSequence;
             }
 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // java.util.concurrent.Callable
             public PrecomputedTextCompat call() throws Exception {
-                return PrecomputedTextCompat.create(this.b, this.f2573a);
+                return PrecomputedTextCompat.create(this.b, this.f2525a);
             }
         }
 
@@ -228,14 +227,14 @@ public class PrecomputedTextCompat implements Spannable {
     }
 
     private PrecomputedTextCompat(PrecomputedText precomputedText, Params params) {
-        this.f2568c = precomputedText;
+        this.f2520c = precomputedText;
         this.d = params;
         this.e = null;
         this.f = Build.VERSION.SDK_INT < 29 ? null : precomputedText;
     }
 
     private PrecomputedTextCompat(CharSequence charSequence, Params params, int[] iArr) {
-        this.f2568c = new SpannableString(charSequence);
+        this.f2520c = new SpannableString(charSequence);
         this.d = params;
         this.e = iArr;
         this.f = null;
@@ -246,8 +245,8 @@ public class PrecomputedTextCompat implements Spannable {
         Preconditions.checkNotNull(params);
         try {
             TraceCompat.beginSection("PrecomputedText");
-            if (Build.VERSION.SDK_INT >= 29 && params.f2569a != null) {
-                PrecomputedTextCompat precomputedTextCompat = new PrecomputedTextCompat(PrecomputedText.create(charSequence, params.f2569a), params);
+            if (Build.VERSION.SDK_INT >= 29 && params.f2521a != null) {
+                PrecomputedTextCompat precomputedTextCompat = new PrecomputedTextCompat(PrecomputedText.create(charSequence, params.f2521a), params);
                 TraceCompat.endSection();
                 return precomputedTextCompat;
             }
@@ -287,7 +286,7 @@ public class PrecomputedTextCompat implements Spannable {
         PrecomputedTextFutureTask precomputedTextFutureTask = new PrecomputedTextFutureTask(params, charSequence);
         Executor executor2 = executor;
         if (executor == null) {
-            synchronized (f2567a) {
+            synchronized (f2519a) {
                 if (b == null) {
                     b = Executors.newFixedThreadPool(1);
                 }
@@ -300,7 +299,7 @@ public class PrecomputedTextCompat implements Spannable {
 
     @Override // java.lang.CharSequence
     public char charAt(int i) {
-        return this.f2568c.charAt(i);
+        return this.f2520c.charAt(i);
     }
 
     public int getParagraphCount() {
@@ -328,7 +327,7 @@ public class PrecomputedTextCompat implements Spannable {
     }
 
     public PrecomputedText getPrecomputedText() {
-        Spannable spannable = this.f2568c;
+        Spannable spannable = this.f2520c;
         if (spannable instanceof PrecomputedText) {
             return (PrecomputedText) spannable;
         }
@@ -337,32 +336,32 @@ public class PrecomputedTextCompat implements Spannable {
 
     @Override // android.text.Spanned
     public int getSpanEnd(Object obj) {
-        return this.f2568c.getSpanEnd(obj);
+        return this.f2520c.getSpanEnd(obj);
     }
 
     @Override // android.text.Spanned
     public int getSpanFlags(Object obj) {
-        return this.f2568c.getSpanFlags(obj);
+        return this.f2520c.getSpanFlags(obj);
     }
 
     @Override // android.text.Spanned
     public int getSpanStart(Object obj) {
-        return this.f2568c.getSpanStart(obj);
+        return this.f2520c.getSpanStart(obj);
     }
 
     @Override // android.text.Spanned
     public <T> T[] getSpans(int i, int i2, Class<T> cls) {
-        return Build.VERSION.SDK_INT >= 29 ? (T[]) this.f.getSpans(i, i2, cls) : (T[]) this.f2568c.getSpans(i, i2, cls);
+        return Build.VERSION.SDK_INT >= 29 ? (T[]) this.f.getSpans(i, i2, cls) : (T[]) this.f2520c.getSpans(i, i2, cls);
     }
 
     @Override // java.lang.CharSequence
     public int length() {
-        return this.f2568c.length();
+        return this.f2520c.length();
     }
 
     @Override // android.text.Spanned
     public int nextSpanTransition(int i, int i2, Class cls) {
-        return this.f2568c.nextSpanTransition(i, i2, cls);
+        return this.f2520c.nextSpanTransition(i, i2, cls);
     }
 
     @Override // android.text.Spannable
@@ -373,7 +372,7 @@ public class PrecomputedTextCompat implements Spannable {
         if (Build.VERSION.SDK_INT >= 29) {
             this.f.removeSpan(obj);
         } else {
-            this.f2568c.removeSpan(obj);
+            this.f2520c.removeSpan(obj);
         }
     }
 
@@ -385,17 +384,17 @@ public class PrecomputedTextCompat implements Spannable {
         if (Build.VERSION.SDK_INT >= 29) {
             this.f.setSpan(obj, i, i2, i3);
         } else {
-            this.f2568c.setSpan(obj, i, i2, i3);
+            this.f2520c.setSpan(obj, i, i2, i3);
         }
     }
 
     @Override // java.lang.CharSequence
     public CharSequence subSequence(int i, int i2) {
-        return this.f2568c.subSequence(i, i2);
+        return this.f2520c.subSequence(i, i2);
     }
 
     @Override // java.lang.CharSequence
     public String toString() {
-        return this.f2568c.toString();
+        return this.f2520c.toString();
     }
 }

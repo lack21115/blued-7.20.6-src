@@ -9,11 +9,11 @@ public class ProxyCenter {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static ProxyCenter f22396a = new ProxyCenter();
+        private static ProxyCenter f8788a = new ProxyCenter();
     }
 
     private static ProxyCenter getInstance() {
-        return a.f22396a;
+        return a.f8788a;
     }
 
     public static PushProxy getProxy() {

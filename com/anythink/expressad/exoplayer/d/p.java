@@ -7,7 +7,7 @@ import java.util.Map;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7268a = "LicenseDurationRemaining";
+    public static final String f4429a = "LicenseDurationRemaining";
     public static final String b = "PlaybackDurationRemaining";
 
     private p() {
@@ -30,6 +30,6 @@ public final class p {
         if (h == null) {
             return null;
         }
-        return new Pair<>(Long.valueOf(a(h, f7268a)), Long.valueOf(a(h, b)));
+        return new Pair<>(Long.valueOf(a(h, f4429a)), Long.valueOf(a(h, b)));
     }
 }

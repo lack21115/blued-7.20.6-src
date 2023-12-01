@@ -13,10 +13,10 @@ public class SDKUrlConfig {
     private static volatile String h;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f23359a = new Object();
+    private static final Object f9751a = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f23360c = "HZ";
+    private static String f9752c = "HZ";
     private static String[] g = {"socket://sdk.open.talk.igexin.com:5224", "socket://sdk.open.talk.getui.net:5224", "socket://sdk.open.talk.gepush.com:5224"};
     public static String[] XFR_ADDRESS_BAK = {com.igexin.push.a.m};
     public static String[] BI_ADDRESS_IPS = {com.igexin.push.a.g};
@@ -58,7 +58,7 @@ public class SDKUrlConfig {
     }
 
     public static String getLocation() {
-        return f23360c;
+        return f9752c;
     }
 
     public static String getLogServiceUrl() {
@@ -67,7 +67,7 @@ public class SDKUrlConfig {
 
     public static String[] getXfrAddress() {
         String[] strArr;
-        synchronized (f23359a) {
+        synchronized (f9751a) {
             strArr = g;
         }
         return strArr;
@@ -91,11 +91,11 @@ public class SDKUrlConfig {
             return;
         }
         com.igexin.push.core.e.f = str;
-        f23360c = str;
+        f9752c = str;
     }
 
     public static void setXfrAddressIps(String[] strArr) {
-        synchronized (f23359a) {
+        synchronized (f9751a) {
             g = strArr;
         }
     }

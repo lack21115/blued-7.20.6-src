@@ -15,7 +15,6 @@ import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.LoadOptions;
 import com.blued.android.core.net.IRequestHost;
-import com.blued.android.core.ui.BaseFragmentActivity;
 import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.common.log.oldtrack.LogData;
@@ -53,6 +52,7 @@ import com.soft.blued.utils.AppUtils;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.StringUtils;
 import com.soft.blued.utils.UserRelationshipUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -65,11 +65,11 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
     private int A;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f30084a;
+    public Context f16394a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f30085c;
+    public int f16395c;
     public int d;
     public String e;
     public String f;
@@ -117,23 +117,23 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
         this.z = false;
         this.r = true;
         this.s = 0;
-        this.f30084a = activity;
+        this.f16394a = activity;
         this.b = str;
         this.p = recyclerView;
         recyclerView.setRecyclerListener(new RecyclerView.RecyclerListener() { // from class: com.soft.blued.ui.find.adapter.PeopleGridQuickAdapter.1
             @Override // androidx.recyclerview.widget.RecyclerView.RecyclerListener
             public void onViewRecycled(RecyclerView.ViewHolder viewHolder) {
                 BaseViewHolder baseViewHolder = (BaseViewHolder) viewHolder;
-                ImageLoader.a(iRequestHost, (ImageView) baseViewHolder.getView(2131364588));
+                ImageLoader.a(iRequestHost, (ImageView) baseViewHolder.getView(R.id.img_live_new_icon));
                 ImageLoader.a(iRequestHost, (ImageView) baseViewHolder.getView(R.id.img_chat));
             }
         });
-        this.i = DensityUtils.a(this.f30084a, 6.0f);
-        this.j = DensityUtils.a(this.f30084a, 9.0f);
-        this.k = this.f30084a.getResources().getDisplayMetrics().widthPixels;
-        this.d = a(this.f30084a);
+        this.i = DensityUtils.a(this.f16394a, 6.0f);
+        this.j = DensityUtils.a(this.f16394a, 9.0f);
+        this.k = this.f16394a.getResources().getDisplayMetrics().widthPixels;
+        this.d = a(this.f16394a);
         a();
-        this.v = (this.f30085c - DensityUtils.a(this.f30084a, 15.0f)) - DensityUtils.a(this.f30084a, 18.0f);
+        this.v = (this.f16395c - DensityUtils.a(this.f16394a, 15.0f)) - DensityUtils.a(this.f16394a, 18.0f);
         this.o = iRequestHost;
         LoadOptions loadOptions = new LoadOptions();
         this.g = loadOptions;
@@ -193,10 +193,10 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
     }
 
     private void f(final BaseViewHolder baseViewHolder, final UserFindResult userFindResult) {
-        FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(2131363859);
+        FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(R.id.fl_main);
         SpannedGridLayoutManager.LayoutParams layoutParams = (SpannedGridLayoutManager.LayoutParams) frameLayout.getLayoutParams();
-        layoutParams.width = (this.f30085c * 2) + (this.i * 2);
-        layoutParams.height = (this.f30085c * 2) + this.i + this.j;
+        layoutParams.width = (this.f16395c * 2) + (this.i * 2);
+        layoutParams.height = (this.f16395c * 2) + this.i + this.j;
         layoutParams.rightMargin = this.i;
         layoutParams.bottomMargin = this.j;
         frameLayout.setLayoutParams(layoutParams);
@@ -213,7 +213,7 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
             public void onClick(View view) {
                 Tracker.onClick(view);
                 FindHttpUtils.b(userFindResult.click_url);
-                WebViewShowInfoFragment.show(PeopleGridQuickAdapter.this.f30084a, userFindResult.operate_promotion.deep_link_url, -1);
+                WebViewShowInfoFragment.show(PeopleGridQuickAdapter.this.f16394a, userFindResult.operate_promotion.deep_link_url, -1);
                 if (UserFindResult.USER_SORT_BY.ONLINE.equals(PeopleGridQuickAdapter.this.b)) {
                     PeopleGridQuickAdapter.this.a(GuyProtos.Event.NEARBY_OPERATION_CLICK, userFindResult, GuyProtos.ShowType.PALACE_SHOW, (baseViewHolder.getLayoutPosition() / 3) + 1, false);
                 } else {
@@ -243,12 +243,12 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
     }
 
     private void i() {
-        Collection<UserFindResult> data = getData();
-        if (data != null) {
+        List<T> data = getData();
+        if (data != 0) {
             int i = 0;
-            for (UserFindResult userFindResult : data) {
-                if (userFindResult != null && userFindResult.getItemType() == 10) {
-                    userFindResult.userPositionReal = i;
+            for (T t : data) {
+                if (t != null && t.getItemType() == 10) {
+                    t.userPositionReal = i;
                     i++;
                 }
             }
@@ -265,7 +265,7 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a() {
-        this.f30085c = ((this.k - (this.i * this.d)) - DensityUtils.a(this.f30084a, 18.0f)) / this.d;
+        this.f16395c = ((this.k - (this.i * this.d)) - DensityUtils.a(this.f16394a, 18.0f)) / this.d;
     }
 
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
@@ -288,20 +288,20 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
         String str = UserFindResult.USER_SORT_BY.NEARBY.equals(this.b) ? "home_distance" : UserFindResult.USER_SORT_BY.ONLINE.equals(this.b) ? "home_online" : "";
         boolean z = true;
         if (userFindResult.live_info != null) {
-            UserRelationshipUtils.b(this.f30084a, userFindResult, userFindResult.live_info.lid, this.b, str, userFindResult.recommend_type, userFindResult.userPositionReal + 1, getData());
+            UserRelationshipUtils.b(this.f16394a, userFindResult, userFindResult.live_info.lid, this.b, str, userFindResult.recommend_type, userFindResult.userPositionReal + 1, getData());
         } else if (userFindResult.is_have_chatroom > 0 && userFindResult.chatroom != null && !TextUtils.isEmpty(userFindResult.chatroom.room_id)) {
             if (!UserFindResult.USER_SORT_BY.ONLINE.equalsIgnoreCase(this.b)) {
-                YYRoomInfoManager.e().a((BaseFragmentActivity) this.f30084a, userFindResult.chatroom.room_id, "home_distance_yy_icon");
+                YYRoomInfoManager.e().a(this.f16394a, userFindResult.chatroom.room_id, "home_distance_yy_icon");
             } else if (userFindResult.is_insert_chatroom == 1) {
-                YYRoomInfoManager.e().a((BaseFragmentActivity) this.f30084a, userFindResult.chatroom.room_id, "home_online_yy_room");
+                YYRoomInfoManager.e().a(this.f16394a, userFindResult.chatroom.room_id, "home_online_yy_room");
             } else {
-                YYRoomInfoManager.e().a((BaseFragmentActivity) this.f30084a, userFindResult.chatroom.room_id, "home_online_yy_icon");
+                YYRoomInfoManager.e().a(this.f16394a, userFindResult.chatroom.room_id, "home_online_yy_icon");
             }
         } else if (!TextUtils.isEmpty(userFindResult.redirect_url)) {
             LiveUtils.a(str, userFindResult.recommend_type, userFindResult.userPositionReal + 1);
-            WebViewShowInfoFragment.a(this.f30084a, userFindResult.redirect_url, "", false, 9);
+            WebViewShowInfoFragment.a(this.f16394a, userFindResult.redirect_url, "", false, 9);
         } else if (userFindResult.is_invisible_half == 1 && ((UserInfo.getInstance().getLoginUserInfo().vip_grade != 2 && UserInfo.getInstance().getLoginUserInfo().vip_grade != 1) || BluedConfig.a().g().is_invisible_half == 0)) {
-            PayUtils.a(this.f30084a, 3, "user_half_invisible");
+            PayUtils.a(this.f16394a, 3, "user_half_invisible");
         } else {
             if (userFindResult.live_info == null) {
                 z = false;
@@ -331,7 +331,7 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
     }
 
     public void a(BaseViewHolder baseViewHolder) {
-        AppUtils.a(baseViewHolder.getView(2131363859), baseViewHolder.getAdapterPosition());
+        AppUtils.a(baseViewHolder.getView(R.id.fl_main), baseViewHolder.getAdapterPosition());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -418,9 +418,9 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
                 }
             }
             if (userFindResult.is_eco_user == 1) {
-                UserInfoFragmentNew.a(this.f30084a, userFindResult.uid);
+                UserInfoFragmentNew.a(this.f16394a, userFindResult.uid);
             } else {
-                UserInfoFragmentNew.a(this.f30084a, userFindResult, a(userFindResult) ? "nearby_operation" : this.b, z, view, logData, new MsgSourceEntity(strangerSource3, str));
+                UserInfoFragmentNew.a(this.f16394a, userFindResult, a(userFindResult) ? "nearby_operation" : this.b, z, view, logData, new MsgSourceEntity(strangerSource3, str));
             }
             AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.find.adapter.PeopleGridQuickAdapter.6
                 @Override // java.lang.Runnable
@@ -482,9 +482,9 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
             EventTrackGuy.a(GuyProtos.Event.NEARBY_FRIEND_USER_CHATROOM_SHOW, userFindResult.uid, userFindResult.chatroom.room_id, userFindResult.chatroom.uid);
         }
         if (!StringUtils.d(userFindResult.uid)) {
-            this.e += "-" + userFindResult.uid;
+            this.e += Constants.ACCEPT_TIME_SEPARATOR_SERVER + userFindResult.uid;
             if (userFindResult.is_call == 1) {
-                this.f += "-" + userFindResult.uid;
+                this.f += Constants.ACCEPT_TIME_SEPARATOR_SERVER + userFindResult.uid;
             }
             if (e()) {
                 if (InstantLog.b(this.e)) {
@@ -592,7 +592,7 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
         } else {
             InstantLog.g("personal_page", "0");
         }
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("u", userFindResult.uid);
         a2.put("d", userFindResult.is_hide_distance == 1 ? "-1" : StringUtils.d(userFindResult.distanceStr) ? userFindResult.distance : userFindResult.distanceStr);
         a2.put("t", userFindResult.is_hide_last_operate == 1 ? "-1" : userFindResult.last_operate_time_stamp);
@@ -633,7 +633,6 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
         }
     }
 
-    @Override // com.blued.android.module.live_china.view.LiveListAutoPlay
     public boolean c() {
         View findViewByPosition;
         this.y = null;
@@ -649,9 +648,9 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
                     }
                     UserFindResult userFindResult = (UserFindResult) this.mData.get(b);
                     if (this.z && userFindResult != null && userFindResult.live_info != null && !TextUtils.isEmpty(userFindResult.live_info.live_stream_url) && (findViewByPosition = spannedGridLayoutManager.findViewByPosition(getHeaderLayoutCount() + b)) != null) {
-                        LiveAutoPlayView liveAutoPlayView = (LiveAutoPlayView) findViewByPosition.findViewById(R.id.header_video_view);
-                        this.y = liveAutoPlayView;
-                        if (liveAutoPlayView != null) {
+                        LiveAutoPlayView findViewById = findViewByPosition.findViewById(R.id.header_video_view);
+                        this.y = findViewById;
+                        if (findViewById != null) {
                             BluedLiveListData bluedLiveListData = new BluedLiveListData();
                             bluedLiveListData.lid = String.valueOf(userFindResult.live_info.lid);
                             bluedLiveListData.live_play = userFindResult.live_info.live_stream_url;
@@ -659,10 +658,10 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
                             int i2 = userFindResult.play_view_height;
                             int i3 = i;
                             if (i == 0) {
-                                i3 = this.f30085c;
+                                i3 = this.f16395c;
                             }
                             if (i2 == 0) {
-                                i2 = this.f30085c;
+                                i2 = this.f16395c;
                             }
                             this.y.a(this, bluedLiveListData, "", i3, i2);
                             this.y.setVisibility(0);
@@ -674,8 +673,8 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
                 return false;
             }
         }
-        LiveAutoPlayView liveAutoPlayView2 = this.y;
-        if (liveAutoPlayView2 == null || !liveAutoPlayView2.e() || this.y.getHeight() == 0) {
+        LiveAutoPlayView liveAutoPlayView = this.y;
+        if (liveAutoPlayView == null || !liveAutoPlayView.e() || this.y.getHeight() == 0) {
             return false;
         }
         j();
@@ -717,7 +716,7 @@ public class PeopleGridQuickAdapter extends BaseMultiItemQuickAdapter<UserFindRe
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                PayUtils.a(PeopleGridQuickAdapter.this.f30084a, UserInfo.getInstance().getLoginUserInfo().vip_grade, "nearb_unlock_user", 10001, VipProtos.FromType.UNKNOWN_FROM);
+                PayUtils.a(PeopleGridQuickAdapter.this.f16394a, UserInfo.getInstance().getLoginUserInfo().vip_grade, "nearb_unlock_user", 10001, VipProtos.FromType.UNKNOWN_FROM);
             }
         });
         if (baseViewHolder.getLayoutPosition() != BluedPreferences.eY()) {

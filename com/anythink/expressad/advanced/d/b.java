@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class b implements com.anythink.expressad.advanced.b.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private o f7030a;
+    private o f4192a;
     private c b;
 
     public b(c cVar) {
@@ -18,8 +18,8 @@ public final class b implements com.anythink.expressad.advanced.b.a {
     }
 
     private void b() {
-        if (this.f7030a != null) {
-            this.f7030a = null;
+        if (this.f4192a != null) {
+            this.f4192a = null;
         }
         if (this.b != null) {
             this.b = null;
@@ -34,7 +34,7 @@ public final class b implements com.anythink.expressad.advanced.b.a {
         if (cVar3 == null || !cVar3.a() || cVar == null) {
             return;
         }
-        o oVar = this.f7030a;
+        o oVar = this.f4192a;
         if (oVar != null && this.b != null) {
             oVar.a();
         }
@@ -47,7 +47,7 @@ public final class b implements com.anythink.expressad.advanced.b.a {
     }
 
     public final void a(o oVar) {
-        this.f7030a = oVar;
+        this.f4192a = oVar;
     }
 
     @Override // com.anythink.expressad.advanced.b.a
@@ -57,7 +57,7 @@ public final class b implements com.anythink.expressad.advanced.b.a {
         if (cVar == null || !cVar.a()) {
             return;
         }
-        o oVar = this.f7030a;
+        o oVar = this.f4192a;
         if (oVar != null) {
             oVar.a(str);
         }

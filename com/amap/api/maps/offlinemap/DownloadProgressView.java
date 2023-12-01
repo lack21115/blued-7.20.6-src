@@ -12,13 +12,9 @@ import com.amap.api.map3d.R;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/offlinemap/DownloadProgressView.class */
 public class DownloadProgressView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5551a;
+    private String a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5552c;
+    private int c;
     private float d;
     private float e;
     private TextPaint f;
@@ -29,7 +25,7 @@ public class DownloadProgressView extends View {
     public DownloadProgressView(Context context) {
         super(context);
         this.b = -65536;
-        this.f5552c = -65536;
+        this.c = -65536;
         this.d = 0.0f;
         this.e = 0.6f;
         a(null, 0);
@@ -38,7 +34,7 @@ public class DownloadProgressView extends View {
     public DownloadProgressView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = -65536;
-        this.f5552c = -65536;
+        this.c = -65536;
         this.d = 0.0f;
         this.e = 0.6f;
         a(attributeSet, 0);
@@ -47,7 +43,7 @@ public class DownloadProgressView extends View {
     public DownloadProgressView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = -65536;
-        this.f5552c = -65536;
+        this.c = -65536;
         this.d = 0.0f;
         this.e = 0.6f;
         a(attributeSet, i);
@@ -56,17 +52,17 @@ public class DownloadProgressView extends View {
     private void a() {
         this.f.setTextSize(this.d);
         this.f.setColor(this.b);
-        this.g.setColor(this.f5552c);
-        this.h = this.f.measureText(this.f5551a);
+        this.g.setColor(this.c);
+        this.h = this.f.measureText(this.a);
         this.i = this.f.getFontMetrics().bottom;
     }
 
     private void a(AttributeSet attributeSet, int i) {
-        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.f5493a, i, 0);
-        this.f5551a = obtainStyledAttributes.getString(0);
+        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.a, i, 0);
+        this.a = obtainStyledAttributes.getString(0);
         this.b = obtainStyledAttributes.getColor(3, this.b);
         this.d = obtainStyledAttributes.getDimension(1, this.d);
-        this.f5552c = obtainStyledAttributes.getColor(2, this.f5552c);
+        this.c = obtainStyledAttributes.getColor(2, this.c);
         obtainStyledAttributes.recycle();
         TextPaint textPaint = new TextPaint();
         this.f = textPaint;

@@ -1,6 +1,5 @@
 package com.android.internal.app;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.UserManager;
 import android.text.Editable;
@@ -12,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.android.ims.ImsConferenceState;
 import com.android.internal.R;
 import com.android.internal.app.AlertController;
 
@@ -70,7 +70,7 @@ public class RestrictionsPinActivity extends AlertActivity implements View.OnCli
     protected void initUi() {
         AlertController.AlertParams alertParams = this.mAlertParams;
         alertParams.mTitle = getString(R.string.restr_pin_enter_admin_pin);
-        alertParams.mView = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.restrictions_pin_challenge, (ViewGroup) null);
+        alertParams.mView = ((LayoutInflater) getSystemService("layout_inflater")).inflate(R.layout.restrictions_pin_challenge, (ViewGroup) null);
         this.mPinErrorMessage = (TextView) alertParams.mView.findViewById(R.id.pin_error_message);
         this.mPinText = (EditText) alertParams.mView.findViewById(R.id.pin_text);
         this.mOkButton = (Button) alertParams.mView.findViewById(R.id.pin_ok_button);
@@ -93,7 +93,7 @@ public class RestrictionsPinActivity extends AlertActivity implements View.OnCli
     @Override // com.android.internal.app.AlertActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.mUserManager = (UserManager) getSystemService("user");
+        this.mUserManager = (UserManager) getSystemService(ImsConferenceState.USER);
         this.mHasRestrictionsPin = this.mUserManager.hasRestrictionsChallenge();
         initUi();
         setupAlert();

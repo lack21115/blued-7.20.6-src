@@ -24,8 +24,8 @@ public class bz extends cw<com.huawei.openalliance.ad.views.AppDownloadButton> {
         try {
             int parseColor = Color.parseColor(str2);
             com.huawei.openalliance.ad.views.a style = ((com.huawei.openalliance.ad.views.AppDownloadButton) this.Code).getStyle();
-            a.C0442a Code = style.Code();
-            a.C0442a V = style.V();
+            a.C0272a Code = style.Code();
+            a.C0272a V = style.V();
             Code.Code(parseColor);
             V.Code(parseColor);
         } catch (IllegalArgumentException e) {

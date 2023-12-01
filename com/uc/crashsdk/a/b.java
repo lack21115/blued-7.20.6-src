@@ -11,11 +11,11 @@ import java.util.zip.GZIPOutputStream;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f40559a = {126, 147, 115, 241, 101, 198, 215, 134};
+    private static final int[] f26868a = {126, 147, 115, 241, 101, 198, 215, 134};
     private static final int[] b = {125, 185, 233, 226, 129, 142, 151, 176};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f40560c = {238, 185, 233, 179, 129, 142, 151, 167};
+    private static final int[] f26869c = {238, 185, 233, 179, 129, 142, 151, 167};
 
     public static String a(String str) {
         FileInputStream fileInputStream;
@@ -30,7 +30,7 @@ public final class b {
                 byte[] bArr = new byte[(int) file.length()];
                 fileInputStream.read(bArr);
                 g.a(fileInputStream);
-                byte[] a2 = a(bArr, f40559a);
+                byte[] a2 = a(bArr, f26868a);
                 if (a2 == null || a2.length <= 0) {
                     g.a((Closeable) null);
                     return null;
@@ -188,7 +188,7 @@ public final class b {
         if (fileOutputStream == null) {
             return false;
         }
-        byte[] b2 = b(str2.getBytes(), f40559a);
+        byte[] b2 = b(str2.getBytes(), f26868a);
         if (b2 == null) {
             g.a(fileOutputStream);
             return false;

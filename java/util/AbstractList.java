@@ -245,7 +245,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             throw new ConcurrentModificationException();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             if (this.modCount == this.fullList.modCount) {
                 boolean addAll = this.fullList.addAll(this.offset + this.size, collection);
@@ -322,7 +322,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
             throw new ConcurrentModificationException();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             if (this.modCount == this.fullList.modCount) {
                 return this.size;
@@ -347,16 +347,18 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         }
     }
 
+    @Override // java.util.List
     public void add(int i, E e) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         add(size(), e);
         return true;
     }
 
+    @Override // java.util.List
     public boolean addAll(int i, Collection<? extends E> collection) {
         for (E e : collection) {
             add(i, e);
@@ -365,12 +367,12 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         return !collection.isEmpty();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         removeRange(0, size());
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -400,7 +402,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
 
     public abstract E get(int i);
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public int hashCode() {
         int i = 1;
         Iterator<E> it = iterator();
@@ -411,6 +413,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         return i;
     }
 
+    @Override // java.util.List
     public int indexOf(Object obj) {
         ListIterator<E> listIterator = listIterator();
         if (obj != null) {
@@ -434,6 +437,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         return new SimpleListIterator();
     }
 
+    @Override // java.util.List
     public int lastIndexOf(Object obj) {
         ListIterator<E> listIterator = listIterator(size());
         if (obj != null) {
@@ -457,10 +461,12 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         return listIterator(0);
     }
 
+    @Override // java.util.List
     public ListIterator<E> listIterator(int i) {
         return new FullListIterator(i);
     }
 
+    @Override // java.util.List
     public E remove(int i) {
         throw new UnsupportedOperationException();
     }
@@ -474,10 +480,12 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
         }
     }
 
+    @Override // java.util.List
     public E set(int i, E e) {
         throw new UnsupportedOperationException();
     }
 
+    @Override // java.util.List
     public List<E> subList(int i, int i2) {
         if (i < 0 || i2 > size()) {
             throw new IndexOutOfBoundsException();

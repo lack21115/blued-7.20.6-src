@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ExpandedLinearLayoutManager extends LinearLayoutManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28415a;
+    private int f14725a;
 
     public ExpandedLinearLayoutManager(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        this.f28415a = -1;
+        this.f14725a = -1;
     }
 
     private int[] a(RecyclerView.Recycler recycler, int i) {

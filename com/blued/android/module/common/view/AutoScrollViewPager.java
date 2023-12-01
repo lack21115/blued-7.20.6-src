@@ -9,19 +9,14 @@ import android.view.animation.Interpolator;
 import androidx.core.view.MotionEventCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import com.igexin.push.config.c;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/AutoScrollViewPager.class */
 public class AutoScrollViewPager extends ViewPager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f10940a;
+    private long a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10941c;
+    private boolean c;
     private boolean d;
     private int e;
     private boolean f;
@@ -37,32 +32,30 @@ public class AutoScrollViewPager extends ViewPager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/AutoScrollViewPager$MyHandler.class */
     public static class MyHandler extends Handler {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<AutoScrollViewPager> f10942a;
+        private final WeakReference<AutoScrollViewPager> a;
 
         public MyHandler(AutoScrollViewPager autoScrollViewPager) {
-            this.f10942a = new WeakReference<>(autoScrollViewPager);
+            this.a = new WeakReference<>(autoScrollViewPager);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             AutoScrollViewPager autoScrollViewPager;
             super.handleMessage(message);
-            if (message.what == 0 && (autoScrollViewPager = this.f10942a.get()) != null) {
+            if (message.what == 0 && (autoScrollViewPager = this.a.get()) != null) {
                 autoScrollViewPager.n.a(autoScrollViewPager.g);
                 autoScrollViewPager.c();
                 autoScrollViewPager.n.a(autoScrollViewPager.h);
-                autoScrollViewPager.a(autoScrollViewPager.f10940a + autoScrollViewPager.n.getDuration());
+                autoScrollViewPager.a(autoScrollViewPager.a + autoScrollViewPager.n.getDuration());
             }
         }
     }
 
     public AutoScrollViewPager(Context context) {
         super(context);
-        this.f10940a = c.j;
+        this.a = 1500L;
         this.b = 1;
-        this.f10941c = true;
+        this.c = true;
         this.d = true;
         this.e = 0;
         this.f = true;
@@ -78,9 +71,9 @@ public class AutoScrollViewPager extends ViewPager {
 
     public AutoScrollViewPager(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10940a = c.j;
+        this.a = 1500L;
         this.b = 1;
-        this.f10941c = true;
+        this.c = true;
         this.d = true;
         this.e = 0;
         this.f = true;
@@ -121,7 +114,7 @@ public class AutoScrollViewPager extends ViewPager {
 
     public void a() {
         this.j = true;
-        a((long) (this.f10940a + ((this.n.getDuration() / this.g) * this.h)));
+        a((long) (this.a + ((this.n.getDuration() / this.g) * this.h)));
     }
 
     public void a(int i) {
@@ -143,17 +136,16 @@ public class AutoScrollViewPager extends ViewPager {
         }
         int i = this.b == 0 ? currentItem - 1 : currentItem + 1;
         if (i < 0) {
-            if (this.f10941c) {
+            if (this.c) {
                 setCurrentItem(count - 1, this.f);
             }
         } else if (i != count) {
             setCurrentItem(i, true);
-        } else if (this.f10941c) {
+        } else if (this.c) {
             setCurrentItem(0, this.f);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         int actionMasked = MotionEventCompat.getActionMasked(motionEvent);
         if (this.d) {
@@ -193,7 +185,7 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     public long getInterval() {
-        return this.f10940a;
+        return this.a;
     }
 
     public int getSlideBorderMode() {
@@ -209,7 +201,7 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     public void setCycle(boolean z) {
-        this.f10941c = z;
+        this.c = z;
     }
 
     public void setDirection(int i) {
@@ -217,7 +209,7 @@ public class AutoScrollViewPager extends ViewPager {
     }
 
     public void setInterval(long j) {
-        this.f10940a = j;
+        this.a = j;
     }
 
     public void setSlideBorderMode(int i) {

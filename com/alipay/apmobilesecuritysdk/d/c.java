@@ -2,6 +2,7 @@ package com.alipay.apmobilesecuritysdk.d;
 
 import android.content.Context;
 import com.alipay.apmobilesecuritysdk.e.f;
+import com.anythink.china.api.ChinaDeviceDataInfo;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
@@ -9,36 +10,36 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/apmobilesecuritysdk/d/c.class */
 public final class c {
     public static Map<String, String> a(Context context) {
-        com.alipay.security.mobile.module.b.b a2 = com.alipay.security.mobile.module.b.b.a();
+        com.alipay.security.mobile.module.b.b a = com.alipay.security.mobile.module.b.b.a();
         HashMap hashMap = new HashMap();
-        f a3 = com.alipay.apmobilesecuritysdk.e.e.a(context);
-        String a4 = com.alipay.security.mobile.module.b.b.a(context);
+        f a2 = com.alipay.apmobilesecuritysdk.e.e.a(context);
+        String a3 = com.alipay.security.mobile.module.b.b.a(context);
         String b = com.alipay.security.mobile.module.b.b.b(context);
         String k = com.alipay.security.mobile.module.b.b.k(context);
         String m = com.alipay.security.mobile.module.b.b.m(context);
-        String str = a4;
+        String str = a3;
         String str2 = b;
         String str3 = k;
         String str4 = m;
-        if (a3 != null) {
-            String str5 = a4;
-            if (com.alipay.security.mobile.module.a.a.a(a4)) {
-                str5 = a3.a();
+        if (a2 != null) {
+            String str5 = a3;
+            if (com.alipay.security.mobile.module.a.a.a(a3)) {
+                str5 = a2.a();
             }
             String str6 = b;
             if (com.alipay.security.mobile.module.a.a.a(b)) {
-                str6 = a3.b();
+                str6 = a2.b();
             }
             String str7 = k;
             if (com.alipay.security.mobile.module.a.a.a(k)) {
-                str7 = a3.c();
+                str7 = a2.c();
             }
             str = str5;
             str2 = str6;
             str3 = str7;
             str4 = m;
             if (com.alipay.security.mobile.module.a.a.a(m)) {
-                str4 = a3.e();
+                str4 = a2.e();
                 str3 = str7;
                 str2 = str6;
                 str = str5;
@@ -48,9 +49,9 @@ public final class c {
         if (context != null) {
             try {
                 JSONObject jSONObject = new JSONObject();
-                jSONObject.put("imei", fVar.a());
+                jSONObject.put(ChinaDeviceDataInfo.IMEI, fVar.a());
                 jSONObject.put("imsi", fVar.b());
-                jSONObject.put("mac", fVar.c());
+                jSONObject.put(ChinaDeviceDataInfo.MAC, fVar.c());
                 jSONObject.put("bluetoothmac", fVar.d());
                 jSONObject.put("gsi", fVar.e());
                 String jSONObject2 = jSONObject.toString();
@@ -70,7 +71,7 @@ public final class c {
         hashMap.put("AD9", com.alipay.security.mobile.module.b.b.l(context));
         hashMap.put("AD10", str4);
         hashMap.put("AD11", com.alipay.security.mobile.module.b.b.d());
-        hashMap.put("AD12", a2.e());
+        hashMap.put("AD12", a.e());
         hashMap.put("AD13", com.alipay.security.mobile.module.b.b.f());
         hashMap.put("AD14", com.alipay.security.mobile.module.b.b.h());
         hashMap.put("AD15", com.alipay.security.mobile.module.b.b.i());

@@ -27,9 +27,9 @@ public class NativeProducerParamCreator {
 
     public static CameraCaptureParams createCameraParams(Boolean bool, int i, int i2, int i3) {
         CameraCaptureParams cameraCaptureParams = new CameraCaptureParams();
-        cameraCaptureParams.f36842a = bool;
+        cameraCaptureParams.f23151a = bool;
         cameraCaptureParams.b = i;
-        cameraCaptureParams.f36846c = i2;
+        cameraCaptureParams.f23155c = i2;
         cameraCaptureParams.d = i3;
         return cameraCaptureParams;
     }
@@ -84,9 +84,9 @@ public class NativeProducerParamCreator {
 
     public static ScreenCapturer.ScreenCaptureParams createScreenParams(boolean z, int i, int i2, int i3, MediaProjection mediaProjection) {
         ScreenCapturer.ScreenCaptureParams screenCaptureParams = new ScreenCapturer.ScreenCaptureParams();
-        screenCaptureParams.f36849a = z;
+        screenCaptureParams.f23158a = z;
         screenCaptureParams.b = i;
-        screenCaptureParams.f36846c = i2;
+        screenCaptureParams.f23155c = i2;
         screenCaptureParams.d = i3;
         screenCaptureParams.f = mediaProjection;
         return screenCaptureParams;
@@ -106,9 +106,9 @@ public class NativeProducerParamCreator {
 
     public static VirtualCamera.VirtualCameraParams createVirtualParams(Bitmap bitmap, int i, int i2, int i3) {
         VirtualCamera.VirtualCameraParams virtualCameraParams = new VirtualCamera.VirtualCameraParams();
-        virtualCameraParams.f36851a = bitmap;
+        virtualCameraParams.f23160a = bitmap;
         virtualCameraParams.b = i;
-        virtualCameraParams.f36846c = i2;
+        virtualCameraParams.f23155c = i2;
         virtualCameraParams.d = i3;
         return virtualCameraParams;
     }

@@ -21,7 +21,7 @@ import androidx.appcompat.app.AlertController;
 public class AlertDialog extends AppCompatDialog implements DialogInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    final AlertController f1557a;
+    final AlertController f1509a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/app/AlertDialog$Builder.class */
     public static class Builder {
@@ -39,7 +39,7 @@ public class AlertDialog extends AppCompatDialog implements DialogInterface {
 
         public AlertDialog create() {
             AlertDialog alertDialog = new AlertDialog(this.P.mContext, this.mTheme);
-            this.P.apply(alertDialog.f1557a);
+            this.P.apply(alertDialog.f1509a);
             alertDialog.setCancelable(this.P.mCancelable);
             if (this.P.mCancelable) {
                 alertDialog.setCanceledOnTouchOutside(true);
@@ -311,7 +311,7 @@ public class AlertDialog extends AppCompatDialog implements DialogInterface {
 
     protected AlertDialog(Context context, int i) {
         super(context, a(context, i));
-        this.f1557a = new AlertController(getContext(), this, getWindow());
+        this.f1509a = new AlertController(getContext(), this, getWindow());
     }
 
     static int a(Context context, int i) {
@@ -324,23 +324,23 @@ public class AlertDialog extends AppCompatDialog implements DialogInterface {
     }
 
     public Button getButton(int i) {
-        return this.f1557a.getButton(i);
+        return this.f1509a.getButton(i);
     }
 
     public ListView getListView() {
-        return this.f1557a.getListView();
+        return this.f1509a.getListView();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.appcompat.app.AppCompatDialog, android.app.Dialog
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f1557a.installContent();
+        this.f1509a.installContent();
     }
 
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
-        if (this.f1557a.onKeyDown(i, keyEvent)) {
+        if (this.f1509a.onKeyDown(i, keyEvent)) {
             return true;
         }
         return super.onKeyDown(i, keyEvent);
@@ -348,57 +348,57 @@ public class AlertDialog extends AppCompatDialog implements DialogInterface {
 
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i, KeyEvent keyEvent) {
-        if (this.f1557a.onKeyUp(i, keyEvent)) {
+        if (this.f1509a.onKeyUp(i, keyEvent)) {
             return true;
         }
         return super.onKeyUp(i, keyEvent);
     }
 
     public void setButton(int i, CharSequence charSequence, DialogInterface.OnClickListener onClickListener) {
-        this.f1557a.setButton(i, charSequence, onClickListener, null, null);
+        this.f1509a.setButton(i, charSequence, onClickListener, null, null);
     }
 
     public void setButton(int i, CharSequence charSequence, Drawable drawable, DialogInterface.OnClickListener onClickListener) {
-        this.f1557a.setButton(i, charSequence, onClickListener, null, drawable);
+        this.f1509a.setButton(i, charSequence, onClickListener, null, drawable);
     }
 
     public void setButton(int i, CharSequence charSequence, Message message) {
-        this.f1557a.setButton(i, charSequence, null, message, null);
+        this.f1509a.setButton(i, charSequence, null, message, null);
     }
 
     public void setCustomTitle(View view) {
-        this.f1557a.setCustomTitle(view);
+        this.f1509a.setCustomTitle(view);
     }
 
     public void setIcon(int i) {
-        this.f1557a.setIcon(i);
+        this.f1509a.setIcon(i);
     }
 
     public void setIcon(Drawable drawable) {
-        this.f1557a.setIcon(drawable);
+        this.f1509a.setIcon(drawable);
     }
 
     public void setIconAttribute(int i) {
         TypedValue typedValue = new TypedValue();
         getContext().getTheme().resolveAttribute(i, typedValue, true);
-        this.f1557a.setIcon(typedValue.resourceId);
+        this.f1509a.setIcon(typedValue.resourceId);
     }
 
     public void setMessage(CharSequence charSequence) {
-        this.f1557a.setMessage(charSequence);
+        this.f1509a.setMessage(charSequence);
     }
 
     @Override // androidx.appcompat.app.AppCompatDialog, android.app.Dialog
     public void setTitle(CharSequence charSequence) {
         super.setTitle(charSequence);
-        this.f1557a.setTitle(charSequence);
+        this.f1509a.setTitle(charSequence);
     }
 
     public void setView(View view) {
-        this.f1557a.setView(view);
+        this.f1509a.setView(view);
     }
 
     public void setView(View view, int i, int i2, int i3, int i4) {
-        this.f1557a.setView(view, i, i2, i3, i4);
+        this.f1509a.setView(view, i, i2, i3, i4);
     }
 }

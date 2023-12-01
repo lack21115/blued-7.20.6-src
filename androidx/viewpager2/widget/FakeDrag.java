@@ -6,15 +6,16 @@ import android.view.VelocityTracker;
 import android.view.ViewConfiguration;
 import androidx.recyclerview.widget.RecyclerView;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/viewpager2/widget/FakeDrag.class */
-final class FakeDrag {
+public final class FakeDrag {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ViewPager2 f3585a;
+    private final ViewPager2 f3537a;
     private final ScrollEventAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RecyclerView f3586c;
+    private final RecyclerView f3538c;
     private VelocityTracker d;
     private int e;
     private float f;
@@ -23,9 +24,9 @@ final class FakeDrag {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FakeDrag(ViewPager2 viewPager2, ScrollEventAdapter scrollEventAdapter, RecyclerView recyclerView) {
-        this.f3585a = viewPager2;
+        this.f3537a = viewPager2;
         this.b = scrollEventAdapter;
-        this.f3586c = recyclerView;
+        this.f3538c = recyclerView;
     }
 
     private void a(long j, int i, float f, float f2) {
@@ -41,7 +42,7 @@ final class FakeDrag {
             return;
         }
         this.d = VelocityTracker.obtain();
-        this.e = ViewConfiguration.get(this.f3585a.getContext()).getScaledMaximumFlingVelocity();
+        this.e = ViewConfiguration.get(this.f3537a.getContext()).getScaledMaximumFlingVelocity();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -57,14 +58,14 @@ final class FakeDrag {
             int round = Math.round(f2 - this.g);
             this.g += round;
             long uptimeMillis = SystemClock.uptimeMillis();
-            boolean z = this.f3585a.getOrientation() == 0;
+            boolean z = this.f3537a.getOrientation() == 0;
             int i = z ? round : 0;
             if (z) {
                 round = 0;
             }
             float f3 = z ? this.f : 0.0f;
             float f4 = z ? 0.0f : this.f;
-            this.f3586c.scrollBy(i, round);
+            this.f3538c.scrollBy(i, round);
             a(uptimeMillis, 2, f3, f4);
             return true;
         }
@@ -82,7 +83,7 @@ final class FakeDrag {
         d();
         this.b.b();
         if (!this.b.e()) {
-            this.f3586c.stopScroll();
+            this.f3538c.stopScroll();
         }
         a(this.h, 0, 0.0f, 0.0f);
         return true;
@@ -94,10 +95,10 @@ final class FakeDrag {
             this.b.c();
             VelocityTracker velocityTracker = this.d;
             velocityTracker.computeCurrentVelocity(1000, this.e);
-            if (this.f3586c.fling((int) velocityTracker.getXVelocity(), (int) velocityTracker.getYVelocity())) {
+            if (this.f3538c.fling((int) velocityTracker.getXVelocity(), (int) velocityTracker.getYVelocity())) {
                 return true;
             }
-            this.f3585a.c();
+            this.f3537a.c();
             return true;
         }
         return false;

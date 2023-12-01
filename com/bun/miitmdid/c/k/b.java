@@ -8,10 +8,10 @@ import com.bun.supplier.SupplierListener;
 public class b implements InnerIdSupplier {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f21159a;
+    private Context f7553a;
 
     public b(Context context) {
-        this.f21159a = context;
+        this.f7553a = context;
     }
 
     @Override // com.bun.supplier.InnerIdSupplier

@@ -18,11 +18,11 @@ import androidx.core.graphics.drawable.DrawableCompat;
 public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private DrawableContainerState f1626a;
+    private DrawableContainerState f1578a;
     private Rect b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Drawable f1627c;
+    private Drawable f1579c;
     private Drawable d;
     private boolean f;
     private boolean h;
@@ -57,7 +57,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     public static class BlockInvalidateCallback implements Drawable.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private Drawable.Callback f1629a;
+        private Drawable.Callback f1581a;
 
         BlockInvalidateCallback() {
         }
@@ -68,7 +68,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
         @Override // android.graphics.drawable.Drawable.Callback
         public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-            Drawable.Callback callback = this.f1629a;
+            Drawable.Callback callback = this.f1581a;
             if (callback != null) {
                 callback.scheduleDrawable(drawable, runnable, j);
             }
@@ -76,20 +76,20 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
         @Override // android.graphics.drawable.Drawable.Callback
         public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-            Drawable.Callback callback = this.f1629a;
+            Drawable.Callback callback = this.f1581a;
             if (callback != null) {
                 callback.unscheduleDrawable(drawable, runnable);
             }
         }
 
         public Drawable.Callback unwrap() {
-            Drawable.Callback callback = this.f1629a;
-            this.f1629a = null;
+            Drawable.Callback callback = this.f1581a;
+            this.f1581a = null;
             return callback;
         }
 
         public BlockInvalidateCallback wrap(Drawable.Callback callback) {
-            this.f1629a = callback;
+            this.f1581a = callback;
             return this;
         }
     }
@@ -110,7 +110,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         boolean K;
 
         /* renamed from: c  reason: collision with root package name */
-        final DrawableContainer f1630c;
+        final DrawableContainer f1582c;
         Resources d;
         int e;
         int f;
@@ -142,7 +142,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             this.z = true;
             this.C = 0;
             this.D = 0;
-            this.f1630c = drawableContainer;
+            this.f1582c = drawableContainer;
             this.d = resources != null ? resources : drawableContainerState != null ? drawableContainerState.d : null;
             int a2 = DrawableContainer.a(resources, drawableContainerState != null ? drawableContainerState.e : 0);
             this.e = a2;
@@ -195,7 +195,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             this.j = drawableContainerState.j;
             SparseArray<Drawable.ConstantState> sparseArray = drawableContainerState.h;
             if (sparseArray != null) {
-                this.h = sparseArray.m1029clone();
+                this.h = sparseArray.m1025clone();
             } else {
                 this.h = new SparseArray<>(this.j);
             }
@@ -223,7 +223,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                 DrawableCompat.setLayoutDirection(drawable, this.B);
             }
             Drawable mutate = drawable.mutate();
-            mutate.setCallback(this.f1630c);
+            mutate.setCallback(this.f1582c);
             return mutate;
         }
 
@@ -304,7 +304,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             }
             drawable.mutate();
             drawable.setVisible(false, true);
-            drawable.setCallback(this.f1630c);
+            drawable.setCallback(this.f1582c);
             this.i[i] = drawable;
             this.j++;
             this.g = drawable.getChangingConfigurations() | this.g;
@@ -627,21 +627,21 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
         drawable.setCallback(this.l.wrap(drawable.getCallback()));
         try {
-            if (this.f1626a.C <= 0 && this.f) {
+            if (this.f1578a.C <= 0 && this.f) {
                 drawable.setAlpha(this.e);
             }
-            if (this.f1626a.G) {
-                drawable.setColorFilter(this.f1626a.F);
+            if (this.f1578a.G) {
+                drawable.setColorFilter(this.f1578a.F);
             } else {
-                if (this.f1626a.J) {
-                    DrawableCompat.setTintList(drawable, this.f1626a.H);
+                if (this.f1578a.J) {
+                    DrawableCompat.setTintList(drawable, this.f1578a.H);
                 }
-                if (this.f1626a.K) {
-                    DrawableCompat.setTintMode(drawable, this.f1626a.I);
+                if (this.f1578a.K) {
+                    DrawableCompat.setTintMode(drawable, this.f1578a.I);
                 }
             }
             drawable.setVisible(isVisible(), true);
-            drawable.setDither(this.f1626a.z);
+            drawable.setDither(this.f1578a.z);
             drawable.setState(getState());
             drawable.setLevel(getLevel());
             drawable.setBounds(getBounds());
@@ -649,7 +649,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
                 DrawableCompat.setLayoutDirection(drawable, DrawableCompat.getLayoutDirection(this));
             }
             if (Build.VERSION.SDK_INT >= 19) {
-                DrawableCompat.setAutoMirrored(drawable, this.f1626a.E);
+                DrawableCompat.setAutoMirrored(drawable, this.f1578a.E);
             }
             Rect rect = this.b;
             if (Build.VERSION.SDK_INT >= 21 && rect != null) {
@@ -666,16 +666,16 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void a(Resources resources) {
-        this.f1626a.a(resources);
+        this.f1578a.a(resources);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(DrawableContainerState drawableContainerState) {
-        this.f1626a = drawableContainerState;
+        this.f1578a = drawableContainerState;
         int i = this.g;
         if (i >= 0) {
             Drawable child = drawableContainerState.getChild(i);
-            this.f1627c = child;
+            this.f1579c = child;
             if (child != null) {
                 a(child);
             }
@@ -703,35 +703,35 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
             return false;
         }
         long uptimeMillis = SystemClock.uptimeMillis();
-        if (this.f1626a.D > 0) {
+        if (this.f1578a.D > 0) {
             Drawable drawable = this.d;
             if (drawable != null) {
                 drawable.setVisible(false, false);
             }
-            Drawable drawable2 = this.f1627c;
+            Drawable drawable2 = this.f1579c;
             if (drawable2 != null) {
                 this.d = drawable2;
-                this.k = this.f1626a.D + uptimeMillis;
+                this.k = this.f1578a.D + uptimeMillis;
             } else {
                 this.d = null;
                 this.k = 0L;
             }
         } else {
-            Drawable drawable3 = this.f1627c;
+            Drawable drawable3 = this.f1579c;
             if (drawable3 != null) {
                 drawable3.setVisible(false, false);
             }
         }
-        if (i < 0 || i >= this.f1626a.j) {
-            this.f1627c = null;
+        if (i < 0 || i >= this.f1578a.j) {
+            this.f1579c = null;
             this.g = -1;
         } else {
-            Drawable child = this.f1626a.getChild(i);
-            this.f1627c = child;
+            Drawable child = this.f1578a.getChild(i);
+            this.f1579c = child;
             this.g = i;
             if (child != null) {
-                if (this.f1626a.C > 0) {
-                    this.j = uptimeMillis + this.f1626a.C;
+                if (this.f1578a.C > 0) {
+                    this.j = uptimeMillis + this.f1578a.C;
                 }
                 a(child);
             }
@@ -757,16 +757,16 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public void applyTheme(Resources.Theme theme) {
-        this.f1626a.a(theme);
+        this.f1578a.a(theme);
     }
 
     DrawableContainerState c() {
-        return this.f1626a;
+        return this.f1578a;
     }
 
     @Override // android.graphics.drawable.Drawable
     public boolean canApplyTheme() {
-        return this.f1626a.canApplyTheme();
+        return this.f1578a.canApplyTheme();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -776,7 +776,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             drawable.draw(canvas);
         }
@@ -793,21 +793,21 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public int getChangingConfigurations() {
-        return super.getChangingConfigurations() | this.f1626a.getChangingConfigurations();
+        return super.getChangingConfigurations() | this.f1578a.getChangingConfigurations();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final Drawable.ConstantState getConstantState() {
-        if (this.f1626a.canConstantState()) {
-            this.f1626a.f = getChangingConfigurations();
-            return this.f1626a;
+        if (this.f1578a.canConstantState()) {
+            this.f1578a.f = getChangingConfigurations();
+            return this.f1578a;
         }
         return null;
     }
 
     @Override // android.graphics.drawable.Drawable
     public Drawable getCurrent() {
-        return this.f1627c;
+        return this.f1579c;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -822,10 +822,10 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        if (this.f1626a.isConstantSize()) {
-            return this.f1626a.getConstantHeight();
+        if (this.f1578a.isConstantSize()) {
+            return this.f1578a.getConstantHeight();
         }
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             return drawable.getIntrinsicHeight();
         }
@@ -834,10 +834,10 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        if (this.f1626a.isConstantSize()) {
-            return this.f1626a.getConstantWidth();
+        if (this.f1578a.isConstantSize()) {
+            return this.f1578a.getConstantWidth();
         }
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             return drawable.getIntrinsicWidth();
         }
@@ -846,10 +846,10 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public int getMinimumHeight() {
-        if (this.f1626a.isConstantSize()) {
-            return this.f1626a.getConstantMinimumHeight();
+        if (this.f1578a.isConstantSize()) {
+            return this.f1578a.getConstantMinimumHeight();
         }
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             return drawable.getMinimumHeight();
         }
@@ -858,10 +858,10 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public int getMinimumWidth() {
-        if (this.f1626a.isConstantSize()) {
-            return this.f1626a.getConstantMinimumWidth();
+        if (this.f1578a.isConstantSize()) {
+            return this.f1578a.getConstantMinimumWidth();
         }
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             return drawable.getMinimumWidth();
         }
@@ -870,16 +870,16 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public int getOpacity() {
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable == null || !drawable.isVisible()) {
             return -2;
         }
-        return this.f1626a.getOpacity();
+        return this.f1578a.getOpacity();
     }
 
     @Override // android.graphics.drawable.Drawable
     public void getOutline(Outline outline) {
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             Api21Impl.getOutline(drawable, outline);
         }
@@ -888,12 +888,12 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     @Override // android.graphics.drawable.Drawable
     public boolean getPadding(Rect rect) {
         boolean padding;
-        Rect constantPadding = this.f1626a.getConstantPadding();
+        Rect constantPadding = this.f1578a.getConstantPadding();
         if (constantPadding != null) {
             rect.set(constantPadding);
             padding = (constantPadding.right | ((constantPadding.left | constantPadding.top) | constantPadding.bottom)) != 0;
         } else {
-            Drawable drawable = this.f1627c;
+            Drawable drawable = this.f1579c;
             padding = drawable != null ? drawable.getPadding(rect) : super.getPadding(rect);
         }
         if (a()) {
@@ -905,11 +905,11 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     public void invalidateDrawable(Drawable drawable) {
-        DrawableContainerState drawableContainerState = this.f1626a;
+        DrawableContainerState drawableContainerState = this.f1578a;
         if (drawableContainerState != null) {
             drawableContainerState.b();
         }
-        if (drawable != this.f1627c || getCallback() == null) {
+        if (drawable != this.f1579c || getCallback() == null) {
             return;
         }
         getCallback().invalidateDrawable(this);
@@ -917,12 +917,12 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public boolean isAutoMirrored() {
-        return this.f1626a.E;
+        return this.f1578a.E;
     }
 
     @Override // android.graphics.drawable.Drawable
     public boolean isStateful() {
-        return this.f1626a.isStateful();
+        return this.f1578a.isStateful();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -936,11 +936,11 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         } else {
             z = false;
         }
-        Drawable drawable2 = this.f1627c;
+        Drawable drawable2 = this.f1579c;
         if (drawable2 != null) {
             drawable2.jumpToCurrentState();
             if (this.f) {
-                this.f1627c.setAlpha(this.e);
+                this.f1579c.setAlpha(this.e);
             }
         }
         if (this.k != 0) {
@@ -974,14 +974,14 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         if (drawable != null) {
             drawable.setBounds(rect);
         }
-        Drawable drawable2 = this.f1627c;
+        Drawable drawable2 = this.f1579c;
         if (drawable2 != null) {
             drawable2.setBounds(rect);
         }
     }
 
     public boolean onLayoutDirectionChanged(int i) {
-        return this.f1626a.d(i, d());
+        return this.f1578a.d(i, d());
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -991,7 +991,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         if (drawable != null) {
             return drawable.setLevel(i);
         }
-        Drawable drawable2 = this.f1627c;
+        Drawable drawable2 = this.f1579c;
         if (drawable2 != null) {
             return drawable2.setLevel(i);
         }
@@ -1005,7 +1005,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         if (drawable != null) {
             return drawable.setState(iArr);
         }
-        Drawable drawable2 = this.f1627c;
+        Drawable drawable2 = this.f1579c;
         if (drawable2 != null) {
             return drawable2.setState(iArr);
         }
@@ -1013,7 +1013,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        if (drawable != this.f1627c || getCallback() == null) {
+        if (drawable != this.f1579c || getCallback() == null) {
             return;
         }
         getCallback().scheduleDrawable(this, runnable, j);
@@ -1026,7 +1026,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         }
         this.f = true;
         this.e = i;
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             if (this.j == 0) {
                 drawable.setAlpha(i);
@@ -1038,21 +1038,21 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public void setAutoMirrored(boolean z) {
-        if (this.f1626a.E != z) {
-            this.f1626a.E = z;
-            Drawable drawable = this.f1627c;
+        if (this.f1578a.E != z) {
+            this.f1578a.E = z;
+            Drawable drawable = this.f1579c;
             if (drawable != null) {
-                DrawableCompat.setAutoMirrored(drawable, this.f1626a.E);
+                DrawableCompat.setAutoMirrored(drawable, this.f1578a.E);
             }
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setColorFilter(ColorFilter colorFilter) {
-        this.f1626a.G = true;
-        if (this.f1626a.F != colorFilter) {
-            this.f1626a.F = colorFilter;
-            Drawable drawable = this.f1627c;
+        this.f1578a.G = true;
+        if (this.f1578a.F != colorFilter) {
+            this.f1578a.F = colorFilter;
+            Drawable drawable = this.f1579c;
             if (drawable != null) {
                 drawable.setColorFilter(colorFilter);
             }
@@ -1061,26 +1061,26 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public void setDither(boolean z) {
-        if (this.f1626a.z != z) {
-            this.f1626a.z = z;
-            Drawable drawable = this.f1627c;
+        if (this.f1578a.z != z) {
+            this.f1578a.z = z;
+            Drawable drawable = this.f1579c;
             if (drawable != null) {
-                drawable.setDither(this.f1626a.z);
+                drawable.setDither(this.f1578a.z);
             }
         }
     }
 
     public void setEnterFadeDuration(int i) {
-        this.f1626a.C = i;
+        this.f1578a.C = i;
     }
 
     public void setExitFadeDuration(int i) {
-        this.f1626a.D = i;
+        this.f1578a.D = i;
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setHotspot(float f, float f2) {
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             DrawableCompat.setHotspot(drawable, f, f2);
         }
@@ -1094,7 +1094,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         } else {
             rect.set(i, i2, i3, i4);
         }
-        Drawable drawable = this.f1627c;
+        Drawable drawable = this.f1579c;
         if (drawable != null) {
             DrawableCompat.setHotspotBounds(drawable, i, i2, i3, i4);
         }
@@ -1102,19 +1102,19 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
 
     @Override // android.graphics.drawable.Drawable
     public void setTintList(ColorStateList colorStateList) {
-        this.f1626a.J = true;
-        if (this.f1626a.H != colorStateList) {
-            this.f1626a.H = colorStateList;
-            DrawableCompat.setTintList(this.f1627c, colorStateList);
+        this.f1578a.J = true;
+        if (this.f1578a.H != colorStateList) {
+            this.f1578a.H = colorStateList;
+            DrawableCompat.setTintList(this.f1579c, colorStateList);
         }
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setTintMode(PorterDuff.Mode mode) {
-        this.f1626a.K = true;
-        if (this.f1626a.I != mode) {
-            this.f1626a.I = mode;
-            DrawableCompat.setTintMode(this.f1627c, mode);
+        this.f1578a.K = true;
+        if (this.f1578a.I != mode) {
+            this.f1578a.I = mode;
+            DrawableCompat.setTintMode(this.f1579c, mode);
         }
     }
 
@@ -1125,7 +1125,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
         if (drawable != null) {
             drawable.setVisible(z, z2);
         }
-        Drawable drawable2 = this.f1627c;
+        Drawable drawable2 = this.f1579c;
         if (drawable2 != null) {
             drawable2.setVisible(z, z2);
         }
@@ -1133,7 +1133,7 @@ public class DrawableContainer extends Drawable implements Drawable.Callback {
     }
 
     public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        if (drawable != this.f1627c || getCallback() == null) {
+        if (drawable != this.f1579c || getCallback() == null) {
             return;
         }
         getCallback().unscheduleDrawable(this, runnable);

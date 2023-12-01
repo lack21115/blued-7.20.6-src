@@ -9,11 +9,11 @@ import com.qiniu.pili.droid.streaming.StreamingProfile;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f1450a = 15;
+    public static int f1402a = 15;
     public static int b = 10;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f1451c = 3;
+    public static int f1403c = 3;
     public static int d = 10;
     public float e;
     public int f;
@@ -30,7 +30,7 @@ public final class a {
     public static class C0019a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f1452a = new a();
+        public static final a f1404a = new a();
     }
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/m/a$b.class */
@@ -41,14 +41,14 @@ public final class a {
     }
 
     public static a a() {
-        return C0019a.f1452a;
+        return C0019a.f1404a;
     }
 
     public static void a(int i, int i2) {
-        f1451c = i;
+        f1403c = i;
         d = i2;
         e eVar = e.i;
-        eVar.b("PLAdaptiveBitrate", "Threshold: Safe = " + f1451c + ", fps = " + d);
+        eVar.b("PLAdaptiveBitrate", "Threshold: Safe = " + f1403c + ", fps = " + d);
     }
 
     public final int a(int i) {
@@ -134,7 +134,7 @@ public final class a {
                         int i3 = i;
                         if (this.f >= 3) {
                             i3 = i;
-                            if (this.e < f1451c) {
+                            if (this.e < f1403c) {
                                 i3 = i;
                                 if (streamStatus.videoFps > d) {
                                     this.f = 0;
@@ -142,7 +142,7 @@ public final class a {
                                 }
                             }
                         }
-                        if (f3 > f1450a) {
+                        if (f3 > f1402a) {
                             i3 = -1;
                         } else if (f3 > b && bVar.s() == b.c.FRAME_QUEUE_HAS_MANY_ELEMENTS) {
                             i3 = -1;

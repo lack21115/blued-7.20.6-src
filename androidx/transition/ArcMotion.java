@@ -11,11 +11,11 @@ import org.xmlpull.v1.XmlPullParser;
 public class ArcMotion extends PathMotion {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final float f3405a = (float) Math.tan(Math.toRadians(35.0d));
+    private static final float f3357a = (float) Math.tan(Math.toRadians(35.0d));
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f3406c;
+    private float f3358c;
     private float d;
     private float e;
     private float f;
@@ -23,21 +23,21 @@ public class ArcMotion extends PathMotion {
 
     public ArcMotion() {
         this.b = 0.0f;
-        this.f3406c = 0.0f;
+        this.f3358c = 0.0f;
         this.d = 70.0f;
         this.e = 0.0f;
         this.f = 0.0f;
-        this.g = f3405a;
+        this.g = f3357a;
     }
 
     public ArcMotion(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = 0.0f;
-        this.f3406c = 0.0f;
+        this.f3358c = 0.0f;
         this.d = 70.0f;
         this.e = 0.0f;
         this.f = 0.0f;
-        this.g = f3405a;
+        this.g = f3357a;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, Styleable.j);
         XmlPullParser xmlPullParser = (XmlPullParser) attributeSet;
         setMinimumVerticalAngle(TypedArrayUtils.getNamedFloat(obtainStyledAttributes, xmlPullParser, "minimumVerticalAngle", 1, 0.0f));
@@ -62,7 +62,7 @@ public class ArcMotion extends PathMotion {
     }
 
     public float getMinimumVerticalAngle() {
-        return this.f3406c;
+        return this.f3358c;
     }
 
     @Override // androidx.transition.PathMotion
@@ -131,7 +131,7 @@ public class ArcMotion extends PathMotion {
     }
 
     public void setMinimumVerticalAngle(float f) {
-        this.f3406c = f;
+        this.f3358c = f;
         this.f = a(f);
     }
 }

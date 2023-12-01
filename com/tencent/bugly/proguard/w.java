@@ -10,23 +10,23 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final AtomicInteger f35412a = new AtomicInteger(1);
+    private static final AtomicInteger f21721a = new AtomicInteger(1);
     private static w b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ScheduledExecutorService f35413c;
+    private ScheduledExecutorService f21722c;
 
     protected w() {
-        this.f35413c = null;
+        this.f21722c = null;
         ScheduledExecutorService newScheduledThreadPool = Executors.newScheduledThreadPool(3, new ThreadFactory(this) { // from class: com.tencent.bugly.proguard.w.1
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
                 Thread thread = new Thread(runnable);
-                thread.setName("BuglyThread-" + w.f35412a.getAndIncrement());
+                thread.setName("BuglyThread-" + w.f21721a.getAndIncrement());
                 return thread;
             }
         });
-        this.f35413c = newScheduledThreadPool;
+        this.f21722c = newScheduledThreadPool;
         if (newScheduledThreadPool == null || newScheduledThreadPool.isShutdown()) {
             x.d("[AsyncTaskHandler] ScheduledExecutorService is not valiable!", new Object[0]);
         }
@@ -57,7 +57,7 @@ public final class w {
                 return false;
             } else {
                 x.c("[AsyncTaskHandler] Post a normal task: %s", runnable.getClass().getName());
-                this.f35413c.execute(runnable);
+                this.f21722c.execute(runnable);
                 return true;
             }
         }
@@ -76,7 +76,7 @@ public final class w {
                     j = 0;
                 }
                 x.c("[AsyncTaskHandler] Post a delay(time: %dms) task: %s", Long.valueOf(j), runnable.getClass().getName());
-                this.f35413c.schedule(runnable, j, TimeUnit.MILLISECONDS);
+                this.f21722c.schedule(runnable, j, TimeUnit.MILLISECONDS);
                 return true;
             }
         }
@@ -84,9 +84,9 @@ public final class w {
 
     public final void b() {
         synchronized (this) {
-            if (this.f35413c != null && !this.f35413c.isShutdown()) {
+            if (this.f21722c != null && !this.f21722c.isShutdown()) {
                 x.c("[AsyncTaskHandler] Close async handler.", new Object[0]);
-                this.f35413c.shutdownNow();
+                this.f21722c.shutdownNow();
             }
         }
     }
@@ -94,8 +94,8 @@ public final class w {
     public final boolean c() {
         boolean z;
         synchronized (this) {
-            if (this.f35413c != null) {
-                if (!this.f35413c.isShutdown()) {
+            if (this.f21722c != null) {
+                if (!this.f21722c.isShutdown()) {
                     z = true;
                 }
             }

@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.object;
 
-import com.alipay.sdk.util.e;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.exception.CosXmlClientException;
 import com.tencent.cos.xml.exception.CosXmlServiceException;
@@ -31,7 +30,7 @@ public class CopyObjectResult extends CosXmlResult {
                     XmlSlimParser.parseCopyObjectResult(byteArrayInputStream2, this.copyObject);
                     if (this.copyObject.eTag == null && bytes != null && bytes.length > 0) {
                         byteArrayInputStream2.reset();
-                        CosXmlServiceException cosXmlServiceException = new CosXmlServiceException(e.f4661a);
+                        CosXmlServiceException cosXmlServiceException = new CosXmlServiceException("failed");
                         CosError cosError = new CosError();
                         XmlSlimParser.parseError(byteArrayInputStream2, cosError);
                         cosXmlServiceException.setErrorCode(cosError.code);

@@ -1,6 +1,5 @@
 package com.android.org.conscrypt;
 
-import android.text.format.Time;
 import com.android.org.conscrypt.OpenSSLX509CertificateFactory;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -186,7 +185,7 @@ public class OpenSSLX509CRL extends X509CRL {
 
     @Override // java.security.cert.X509CRL
     public Date getNextUpdate() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         calendar.set(14, 0);
         NativeCrypto.ASN1_TIME_to_Calendar(NativeCrypto.X509_CRL_get_nextUpdate(this.mContext), calendar);
         return calendar.getTime();
@@ -272,7 +271,7 @@ public class OpenSSLX509CRL extends X509CRL {
 
     @Override // java.security.cert.X509CRL
     public Date getThisUpdate() {
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
         calendar.set(14, 0);
         NativeCrypto.ASN1_TIME_to_Calendar(NativeCrypto.X509_CRL_get_lastUpdate(this.mContext), calendar);
         return calendar.getTime();

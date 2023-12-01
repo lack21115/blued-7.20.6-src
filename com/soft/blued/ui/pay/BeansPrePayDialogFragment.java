@@ -14,16 +14,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import com.anythink.expressad.video.module.a.a.m;
-import com.blued.android.chat.core.pack.ReqAckPackage;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageFileLoader;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.util.ImageSize;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.utils.ClickUtils;
@@ -70,11 +71,11 @@ import java.util.List;
 public class BeansPrePayDialogFragment extends BottomSheetDialogFragment implements VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f32947a;
+    public View f19256a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f32948c;
+    private int f19257c;
     private String d;
     private String e;
     private LiveChargeCouponModel f;
@@ -97,7 +98,7 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
 
     public BeansPrePayDialogFragment() {
         this.b = 0;
-        this.f32948c = 0;
+        this.f19257c = 0;
         this.d = "";
         this.e = "";
         this.t = 0.42f;
@@ -106,19 +107,19 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
 
     public BeansPrePayDialogFragment(Context context, int i, int i2, String str) {
         this.b = 0;
-        this.f32948c = 0;
+        this.f19257c = 0;
         this.d = "";
         this.e = "";
         this.t = 0.42f;
         this.u = false;
         this.b = i;
-        this.f32948c = i2;
+        this.f19257c = i2;
         this.d = str;
     }
 
     public BeansPrePayDialogFragment(Context context, int i, LiveChargeCouponModel liveChargeCouponModel) {
         this.b = 0;
-        this.f32948c = 0;
+        this.f19257c = 0;
         this.d = "";
         this.e = "";
         this.t = 0.42f;
@@ -132,13 +133,13 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
         String str;
         Tracker.onClick(view);
         LivePrePayViewPagerAdapter livePrePayViewPagerAdapter = this.s;
-        if (livePrePayViewPagerAdapter == null || livePrePayViewPagerAdapter.f31101a == null || this.r == null) {
+        if (livePrePayViewPagerAdapter == null || livePrePayViewPagerAdapter.f17411a == null || this.r == null) {
             return;
         }
-        EventTrackLive.a(LiveProtos.Event.LIVE_EXCHANGE_PAGE_NOW_CLICK, LiveRoomManager.a().g(), LiveRoomManager.a().e(), (int) this.s.f31101a.money, (int) (this.s.f31101a.money * this.s.f31101a.ratio));
-        this.s.f31101a.choosed = false;
+        EventTrackLive.a(LiveProtos.Event.LIVE_EXCHANGE_PAGE_NOW_CLICK, LiveRoomManager.a().g(), LiveRoomManager.a().e(), (int) this.s.f17411a.money, (int) (this.s.f17411a.money * this.s.f17411a.ratio));
+        this.s.f17411a.choosed = false;
         if (k()) {
-            final int i = (int) this.s.f31101a.money;
+            final int i = (int) this.s.f17411a.money;
             if (TextUtils.isEmpty(this.d)) {
                 int i2 = this.b;
                 str = i2 == 7 ? "yy_chat" : (i2 == 2 || i2 == 3 || i2 == 4 || i2 == 5 || i2 == 8 || i2 == 10 || i2 == 9 || i2 == 6) ? "experiment_p" : "";
@@ -149,19 +150,18 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
             if (liveChargeCouponModel != null) {
                 liveChargeCouponModel.realPayMoney = i;
                 final String str2 = str;
-                PayHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<CountModel>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.7
+                PayHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<CountModel>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.7
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<CountModel> bluedEntityA) {
                         Context context = BeansPrePayDialogFragment.this.getContext();
-                        BluedURIRouterAdapter.startVIPPay(context, BeansPrePayDialogFragment.this.s.f31101a.id + "", "", "", "", BeansPrePayDialogFragment.this.p(), str2, i, BeansPrePayDialogFragment.this.f);
+                        BluedURIRouterAdapter.startVIPPay(context, BeansPrePayDialogFragment.this.s.f17411a.id + "", "", "", "", BeansPrePayDialogFragment.this.p(), str2, i, BeansPrePayDialogFragment.this.f);
                     }
-                }, this.f.id, i, a());
+                }, this.f.id, i, (IRequestHost) a());
                 return;
             }
             Context context = getContext();
-            BluedURIRouterAdapter.startVIPPay(context, this.s.f31101a.id + "", "", "", "", p(), str, (int) this.s.f31101a.money);
+            BluedURIRouterAdapter.startVIPPay(context, this.s.f17411a.id + "", "", "", "", p(), str, (int) this.s.f17411a.money);
         }
     }
 
@@ -228,7 +228,6 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
         EventTrackLive.s(LiveProtos.Event.LIVE_EXCHANGE_PAGE_BANNER_SHOW, LiveRoomManager.a().g(), LiveRoomManager.a().e(), str);
         final ImageSize imageSize = new ImageSize();
         ImageFileLoader.a(a()).a(str).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.5
-            @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public void onUIFinish(File file, Exception exc) {
                 if (file == null || !file.exists() || imageSize.a() <= 0) {
                     return;
@@ -264,8 +263,8 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
             return;
         }
         final View findViewById = view.findViewById(2131369389);
-        final View findViewById2 = view.findViewById(2131373238);
-        final View findViewById3 = view.findViewById(2131373175);
+        final View findViewById2 = view.findViewById(R.id.view_shadow);
+        final View findViewById3 = view.findViewById(R.id.view_hand);
         findViewById.post(new Runnable() { // from class: com.soft.blued.ui.pay.-$$Lambda$BeansPrePayDialogFragment$MirS0IwGGM2PvuUEK4o6ShnjN_A
             @Override // java.lang.Runnable
             public final void run() {
@@ -281,16 +280,16 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
     }
 
     private void m() {
-        this.g = (RelativeLayout) this.f32947a.findViewById(2131369389);
-        this.h = (ImageView) this.f32947a.findViewById(2131365719);
-        this.i = (TextView) this.f32947a.findViewById(2131370958);
-        this.j = (TextView) this.f32947a.findViewById(2131370956);
-        this.l = (ViewPager) this.f32947a.findViewById(2131373306);
-        this.m = (LinearLayout) this.f32947a.findViewById(2131373179);
-        this.n = (TextView) this.f32947a.findViewById(2131372282);
-        this.o = (TextView) this.f32947a.findViewById(2131370860);
-        this.p = (RelativeLayout) this.f32947a.findViewById(2131368381);
-        this.k = (ImageView) this.f32947a.findViewById(2131366040);
+        this.g = (RelativeLayout) this.f19256a.findViewById(2131369389);
+        this.h = (ImageView) this.f19256a.findViewById(2131365719);
+        this.i = (TextView) this.f19256a.findViewById(R.id.tv_balance_title);
+        this.j = (TextView) this.f19256a.findViewById(R.id.tv_balance);
+        this.l = (ViewPager) this.f19256a.findViewById(R.id.vp_pre_pay);
+        this.m = (LinearLayout) this.f19256a.findViewById(R.id.view_indicator);
+        this.n = (TextView) this.f19256a.findViewById(R.id.tv_pre_pay);
+        this.o = (TextView) this.f19256a.findViewById(R.id.tv_agreement);
+        this.p = (RelativeLayout) this.f19256a.findViewById(R.id.loading);
+        this.k = (ImageView) this.f19256a.findViewById(R.id.iv_vip);
         a(false);
         h();
         i();
@@ -413,24 +412,23 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
         if (this.f != null) {
             LiveEventBusUtil.c();
         } else {
-            AppMethods.a((CharSequence) getResources().getString(2131886226));
+            AppMethods.a(getResources().getString(R.string.Live_setting_rechargeSuccess));
         }
         a(true);
     }
 
     public void a(final boolean z) {
-        MineHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<PayRemaining>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        MineHttpUtils.d((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<PayRemaining>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.1
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayRemaining> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() == 0 || bluedEntityA.data.get(0) == null) {
                     return;
                 }
-                PayRemaining payRemaining = bluedEntityA.data.get(0);
+                PayRemaining payRemaining = (PayRemaining) bluedEntityA.data.get(0);
                 UserInfo.getInstance().setUserPrice(payRemaining.beans);
                 LiveDataManager.a().a(payRemaining);
                 if (z) {
-                    LiveEventBusUtil.a(true, 0, null);
+                    LiveEventBusUtil.a(true, 0, (String) null);
                     LiveEventBus.get("gold_remain_result").post(bluedEntityA.getSingleData());
                 }
                 if (BeansPrePayDialogFragment.this.getActivity() == null || BeansPrePayDialogFragment.this.getActivity().isFinishing() || BeansPrePayDialogFragment.this.getDialog() == null || !BeansPrePayDialogFragment.this.getDialog().isShowing()) {
@@ -444,7 +442,6 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (z && BeansPrePayDialogFragment.this.getActivity() != null && !BeansPrePayDialogFragment.this.getActivity().isFinishing() && BeansPrePayDialogFragment.this.getDialog() != null && BeansPrePayDialogFragment.this.getDialog().isShowing()) {
                     BeansPrePayDialogFragment.this.dismissAllowingStateLoss();
@@ -452,33 +449,28 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 return super.onUIFailure(i, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
             }
-        }, a());
+        }, (IRequestHost) a());
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
     public void dismiss() {
         super.dismissAllowingStateLoss();
         VIPBuyResultObserver.a().b(this);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public boolean e() {
         return true;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public int g() {
-        return 2131952889;
+        return R.style.main_menu_animstyle;
     }
 
     public void h() {
         int i = this.b;
-        PayHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<PayOption>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.2
+        PayHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<PayOption>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<PayOption> bluedEntityA) {
                 int i2;
@@ -486,7 +478,7 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() == 0 || bluedEntityA.data.get(0) == null) {
                     return;
                 }
-                BeansPrePayDialogFragment.this.e = bluedEntityA.data.get(0).banner_url;
+                BeansPrePayDialogFragment.this.e = ((PayOption) bluedEntityA.data.get(0)).banner_url;
                 if (!TextUtils.isEmpty(BeansPrePayDialogFragment.this.e)) {
                     if (BeansPrePayDialogFragment.this.b == 8) {
                         BeansPrePayDialogFragment.this.h.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.2.1
@@ -509,7 +501,7 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                         });
                     }
                 }
-                if (bluedEntityA.data.get(0).pay_list == null || bluedEntityA.data.get(0).pay_list.size() == 0) {
+                if (((PayOption) bluedEntityA.data.get(0)).pay_list == null || ((PayOption) bluedEntityA.data.get(0)).pay_list.size() == 0) {
                     return;
                 }
                 if (BeansPrePayDialogFragment.this.r == null) {
@@ -517,7 +509,7 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 } else {
                     BeansPrePayDialogFragment.this.r.clear();
                 }
-                BeansPrePayDialogFragment.this.q = bluedEntityA.data.get(0);
+                BeansPrePayDialogFragment.this.q = (PayOption) bluedEntityA.data.get(0);
                 BeansPrePayDialogFragment.this.r.addAll(BeansPrePayDialogFragment.this.q.pay_list);
                 int i3 = -1;
                 if (BeansPrePayDialogFragment.this.r != null) {
@@ -534,8 +526,8 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                                     break;
                                 }
                                 i4 = i2 + 1;
-                            } else if (BeansPrePayDialogFragment.this.f32948c > 0) {
-                                if (((PayOption._pay_list) BeansPrePayDialogFragment.this.r.get(i2)).money * ((PayOption._pay_list) BeansPrePayDialogFragment.this.r.get(i2)).ratio >= BeansPrePayDialogFragment.this.f32948c) {
+                            } else if (BeansPrePayDialogFragment.this.f19257c > 0) {
+                                if (((PayOption._pay_list) BeansPrePayDialogFragment.this.r.get(i2)).money * ((PayOption._pay_list) BeansPrePayDialogFragment.this.r.get(i2)).ratio >= BeansPrePayDialogFragment.this.f19257c) {
                                     break;
                                 }
                                 i4 = i2 + 1;
@@ -571,15 +563,15 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                                     i3 = BeansPrePayDialogFragment.this.r.size() - 1;
                                 }
                             }
-                            BeansPrePayDialogFragment.this.f32948c = (int) (beansPrePayDialogFragment.f.threshold * ((PayOption._pay_list) BeansPrePayDialogFragment.this.r.get(i3)).ratio);
+                            BeansPrePayDialogFragment.this.f19257c = (int) (beansPrePayDialogFragment.f.threshold * ((PayOption._pay_list) BeansPrePayDialogFragment.this.r.get(i3)).ratio);
                         } else {
                             i3 = i8;
-                            if (BeansPrePayDialogFragment.this.f32948c > 0) {
+                            if (BeansPrePayDialogFragment.this.f19257c > 0) {
                                 PayOption._pay_list _pay_listVar2 = (PayOption._pay_list) BeansPrePayDialogFragment.this.r.get(BeansPrePayDialogFragment.this.r.size() - 1);
                                 i3 = i8;
                                 if (i8 == 0) {
                                     i3 = i8;
-                                    if (BeansPrePayDialogFragment.this.f32948c > _pay_listVar2.money * _pay_listVar2.ratio) {
+                                    if (BeansPrePayDialogFragment.this.f19257c > _pay_listVar2.money * _pay_listVar2.ratio) {
                                         i3 = BeansPrePayDialogFragment.this.r.size() - 1;
                                     }
                                 }
@@ -593,12 +585,10 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 BeansPrePayDialogFragment.this.b(i3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str) {
                 return super.onUIFailure(i2, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 if (BeansPrePayDialogFragment.this.getActivity() == null || BeansPrePayDialogFragment.this.getActivity().isFinishing() || BeansPrePayDialogFragment.this.getDialog() == null || !BeansPrePayDialogFragment.this.getDialog().isShowing()) {
                     return;
@@ -610,7 +600,6 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 if (BeansPrePayDialogFragment.this.getActivity() == null || BeansPrePayDialogFragment.this.getActivity().isFinishing() || BeansPrePayDialogFragment.this.getDialog() == null || !BeansPrePayDialogFragment.this.getDialog().isShowing()) {
                     return;
@@ -618,24 +607,23 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 super.onUIStart();
                 BeansPrePayDialogFragment.this.p.setVisibility(0);
             }
-        }, a(), ReqAckPackage.REQ_RESPONSE_KEY.BEANS, (i == 2 || i == 3 || i == 4 || i == 5 || i == 8 || i == 10 || i == 9 || i == 6) ? "live" : "");
+        }, (IRequestHost) a(), "beans", (i == 2 || i == 3 || i == 4 || i == 5 || i == 8 || i == 10 || i == 9 || i == 6) ? "live" : "");
     }
 
     public void i() {
         PayHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<LiveVIPModel>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<LiveVIPModel> bluedEntityA) {
                 if (bluedEntityA.getSingleData() != null) {
-                    if (!bluedEntityA.data.get(0).is_enable()) {
+                    if (!((LiveVIPModel) bluedEntityA.data.get(0)).is_enable()) {
                         BeansPrePayDialogFragment.this.k.setVisibility(8);
                         return;
                     }
                     BeansPrePayDialogFragment.this.k.setVisibility(0);
                     ImageLoader.c(BeansPrePayDialogFragment.this.a(), "live_charge_vip.png").f().g(-1).a(BeansPrePayDialogFragment.this.k);
-                    final String link = bluedEntityA.data.get(0).getLink();
-                    final int link_type = bluedEntityA.data.get(0).getLink_type();
+                    final String link = ((LiveVIPModel) bluedEntityA.data.get(0)).getLink();
+                    final int link_type = ((LiveVIPModel) bluedEntityA.data.get(0)).getLink_type();
                     BeansPrePayDialogFragment.this.k.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.3.1
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view) {
@@ -653,7 +641,6 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
             }
@@ -663,10 +650,9 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
     public void j() {
         LiveHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<LivePayChargeAdModel>>(a()) { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<LivePayChargeAdModel> bluedEntityA) {
-                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || bluedEntityA.data.get(0) == null || bluedEntityA.data.get(0).get_9002() == null || bluedEntityA.data.get(0).get_9002().size() <= 0 || bluedEntityA.data.get(0).get_9002().get(0) == null) {
+                if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || bluedEntityA.data.get(0) == null || ((LivePayChargeAdModel) bluedEntityA.data.get(0)).get_9002() == null || ((LivePayChargeAdModel) bluedEntityA.data.get(0)).get_9002().size() <= 0 || ((LivePayChargeAdModel) bluedEntityA.data.get(0)).get_9002().get(0) == null) {
                     BeansPrePayDialogFragment.this.h.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.pay.BeansPrePayDialogFragment.4.2
                         @Override // android.view.View.OnClickListener
                         public void onClick(View view) {
@@ -676,7 +662,7 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                     });
                     return;
                 }
-                final LivePayChargeAdItemModel livePayChargeAdItemModel = bluedEntityA.data.get(0).get_9002().get(0);
+                final LivePayChargeAdItemModel livePayChargeAdItemModel = (LivePayChargeAdItemModel) ((LivePayChargeAdModel) bluedEntityA.data.get(0)).get_9002().get(0);
                 if (livePayChargeAdItemModel != null) {
                     FindHttpUtils.b(livePayChargeAdItemModel.getShow_url());
                     BeansPrePayDialogFragment.this.a(livePayChargeAdItemModel.getBanner_pic());
@@ -696,7 +682,6 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
             }
@@ -721,7 +706,6 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
         }, 500L);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         Dialog dialog;
         super.onDestroy();
@@ -733,27 +717,26 @@ public class BeansPrePayDialogFragment extends BottomSheetDialogFragment impleme
         LiveEventBus.get("live_tans_activity").post(true);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         super.setupDialog(dialog, i);
         dialog.requestWindowFeature(1);
-        dialog.getContext().setTheme(2131953017);
+        dialog.getContext().setTheme(R.style.transparentFrameWindowStyleLive);
         Window window = dialog.getWindow();
         window.setBackgroundDrawable(new ColorDrawable(0));
-        window.setWindowAnimations(2131952889);
-        this.f32947a = getActivity().getLayoutInflater().inflate(R.layout.dialog_pre_pay, (ViewGroup) null);
-        dialog.setContentView(this.f32947a, new ViewGroup.LayoutParams(-1, DensityUtils.a(getContext(), 440.0f)));
+        window.setWindowAnimations(R.style.main_menu_animstyle);
+        this.f19256a = getActivity().getLayoutInflater().inflate(R.layout.dialog_pre_pay, (ViewGroup) null);
+        dialog.setContentView(this.f19256a, new ViewGroup.LayoutParams(-1, DensityUtils.a(getContext(), 440.0f)));
         m();
         EventTrackLive.a(LiveProtos.Event.LIVE_EXCHANGE_PAGE_SHOW, LiveRoomManager.a().g(), LiveRoomManager.a().e());
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);
             ReflectionUtils.a(this, "mShownByMe", true);
             FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(fragmentManager, str);

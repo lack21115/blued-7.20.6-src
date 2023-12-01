@@ -135,8 +135,8 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
         DownloadLandPageActivity.launch(context, adTemplate, false);
     }
 
-    private int n(a.C0519a c0519a) {
-        Context context = c0519a.getContext();
+    private int n(a.C0349a c0349a) {
+        Context context = c0349a.getContext();
         String cu = com.kwad.sdk.core.response.a.a.cu(this.mAdInfo);
         if (com.kwad.sdk.utils.d.a(context, cu, this.IZ)) {
             com.kwad.sdk.core.report.a.l(this.IZ, 1);
@@ -150,16 +150,16 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
             if (!ag.isNetworkConnected(context)) {
                 v.H(context, w.bO(context));
                 return 0;
-            } else if (c0519a.mX() && com.kwad.sdk.core.config.d.uh()) {
-                return o(c0519a);
+            } else if (c0349a.mX() && com.kwad.sdk.core.config.d.uh()) {
+                return o(c0349a);
             } else {
-                if (com.kwad.sdk.core.response.a.d.cr(this.IZ) && c0519a.mZ() != 2) {
-                    e(c0519a.getContext(), c0519a.getAdTemplate());
+                if (com.kwad.sdk.core.response.a.d.cr(this.IZ) && c0349a.mZ() != 2) {
+                    e(c0349a.getContext(), c0349a.getAdTemplate());
                     return 0;
-                } else if (c0519a.mT()) {
-                    return p(c0519a);
+                } else if (c0349a.mT()) {
+                    return p(c0349a);
                 } else {
-                    if (q(c0519a)) {
+                    if (q(c0349a)) {
                         return 0;
                     }
                     return np();
@@ -307,7 +307,7 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
 
     private boolean nn() {
         Context context = KsAdSDKImpl.get().getContext();
-        if (d.b(new a.C0519a(context).I(this.IZ), 1) == 1) {
+        if (d.b(new a.C0349a(context).I(this.IZ), 1) == 1) {
             return true;
         }
         boolean aj = ak.aj(context, com.kwad.sdk.core.response.a.a.aq(this.mAdInfo));
@@ -323,10 +323,10 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
         return 1;
     }
 
-    private int o(a.C0519a c0519a) {
-        Context context = c0519a.getContext();
-        AdTemplate adTemplate = c0519a.getAdTemplate();
-        int mY = c0519a.mY();
+    private int o(a.C0349a c0349a) {
+        Context context = c0349a.getContext();
+        AdTemplate adTemplate = c0349a.getAdTemplate();
+        int mY = c0349a.mY();
         if (mY != 1) {
             if (mY == 2 && com.kwad.sdk.core.response.a.b.bB(adTemplate)) {
                 com.kwad.components.core.d.a.b.a(context, new b.a().H(adTemplate).ao(com.kwad.sdk.core.response.a.b.bA(adTemplate)).a(this.Jd).c(this.mOnDismissListener).mI());
@@ -337,10 +337,10 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
         return np();
     }
 
-    private int p(a.C0519a c0519a) {
-        Context context = c0519a.getContext();
-        AdTemplate adTemplate = c0519a.getAdTemplate();
-        int s = s(c0519a);
+    private int p(a.C0349a c0349a) {
+        Context context = c0349a.getContext();
+        AdTemplate adTemplate = c0349a.getAdTemplate();
+        int s = s(c0349a);
         if (s == 1) {
             if (com.kwad.sdk.core.response.a.b.bB(adTemplate)) {
                 com.kwad.components.core.d.a.b.a(context, new b.a().H(adTemplate).ao(com.kwad.sdk.core.response.a.b.bA(adTemplate)).a(this.Jd).c(this.mOnDismissListener).mI());
@@ -348,34 +348,34 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
             }
             return 0;
         } else if (s == 2) {
-            e(c0519a.getContext(), c0519a.getAdTemplate());
+            e(c0349a.getContext(), c0349a.getAdTemplate());
             return 0;
-        } else if (s == 3 || q(c0519a)) {
+        } else if (s == 3 || q(c0349a)) {
             return 0;
         } else {
             return np();
         }
     }
 
-    private boolean q(a.C0519a c0519a) {
-        if (c0519a.mR() || this.mAdInfo.status == 4 || !com.kwad.sdk.core.response.a.b.bE(this.IZ) || !r(c0519a)) {
+    private boolean q(a.C0349a c0349a) {
+        if (c0349a.mR() || this.mAdInfo.status == 4 || !com.kwad.sdk.core.response.a.b.bE(this.IZ) || !r(c0349a)) {
             return false;
         }
-        return com.kwad.components.core.d.a.b.a(c0519a.getContext(), new b.a().H(this.IZ).ao(com.kwad.sdk.core.response.a.b.bD(this.IZ)).a(this.Jd).c(this.mOnDismissListener).mI());
+        return com.kwad.components.core.d.a.b.a(c0349a.getContext(), new b.a().H(this.IZ).ao(com.kwad.sdk.core.response.a.b.bD(this.IZ)).a(this.Jd).c(this.mOnDismissListener).mI());
     }
 
-    private static boolean r(a.C0519a c0519a) {
-        AdInfo cb = com.kwad.sdk.core.response.a.d.cb(c0519a.getAdTemplate());
-        if (com.kwad.sdk.core.response.a.a.bk(cb) && (DownloadLandPageActivity.showingAdWebViewLandPage || AdWebViewVideoActivityProxy.showingAdWebViewVideoActivity || c0519a.getAdTemplate().isWebViewDownload)) {
+    private static boolean r(a.C0349a c0349a) {
+        AdInfo cb = com.kwad.sdk.core.response.a.d.cb(c0349a.getAdTemplate());
+        if (com.kwad.sdk.core.response.a.a.bk(cb) && (DownloadLandPageActivity.showingAdWebViewLandPage || AdWebViewVideoActivityProxy.showingAdWebViewVideoActivity || c0349a.getAdTemplate().isWebViewDownload)) {
             return true;
         }
-        return com.kwad.sdk.core.response.a.a.bl(cb) && !ag.isWifiConnected(c0519a.getContext());
+        return com.kwad.sdk.core.response.a.a.bl(cb) && !ag.isWifiConnected(c0349a.getContext());
     }
 
-    public static int s(a.C0519a c0519a) {
-        AdInfo cb = com.kwad.sdk.core.response.a.d.cb(c0519a.getAdTemplate());
+    public static int s(a.C0349a c0349a) {
+        AdInfo cb = com.kwad.sdk.core.response.a.d.cb(c0349a.getAdTemplate());
         if (cb.downloadSafeInfo.complianceInfo != null) {
-            int db = c0519a.db();
+            int db = c0349a.db();
             return db != 2 ? db != 3 ? cb.downloadSafeInfo.complianceInfo.actionBarType : cb.downloadSafeInfo.complianceInfo.materialJumpType : cb.downloadSafeInfo.complianceInfo.describeBarType;
         }
         return 0;
@@ -435,9 +435,9 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
             this.mAdInfo.status = 7;
             nf();
             if (fVar.vx()) {
-                a.C0565a c0565a = new a.C0565a(i, str2);
-                com.kwad.sdk.core.report.a.a(this.IZ, c0565a);
-                com.kwad.components.core.m.a.pb().a(this.IZ, this.mAdInfo.adConversionInfo.appDownloadUrl, c0565a.toJson().toString());
+                a.C0395a c0395a = new a.C0395a(i, str2);
+                com.kwad.sdk.core.report.a.a(this.IZ, c0395a);
+                com.kwad.components.core.m.a.pb().a(this.IZ, this.mAdInfo.adConversionInfo.appDownloadUrl, c0395a.toJson().toString());
                 fVar.vw();
             }
             if (this.mAdInfo.adConversionInfo.retryH5TimeStep <= 0 || this.Jb || System.currentTimeMillis() - this.Ja >= this.mAdInfo.adConversionInfo.retryH5TimeStep || TextUtils.isEmpty(com.kwad.sdk.core.response.a.a.aK(this.mAdInfo))) {
@@ -602,7 +602,7 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
         }
     }
 
-    public final int m(a.C0519a c0519a) {
+    public final int m(a.C0349a c0349a) {
         int n;
         this.Jb = false;
         ng();
@@ -612,12 +612,12 @@ public final class c implements NetworkMonitor.a, com.kwad.sdk.core.download.d, 
             case 5:
             case 6:
             case 7:
-                n = n(c0519a);
+                n = n(c0349a);
                 break;
             case 2:
             case 3:
                 n = 0;
-                if (c0519a.mP()) {
+                if (c0349a.mP()) {
                     n = 0;
                     if (this.downloadPauseEnable) {
                         com.kwad.sdk.core.download.a.bM(this.mAdInfo.downloadId);

@@ -20,9 +20,8 @@ public interface IVoiceInteractorCallback extends IInterface {
         static final int TRANSACTION_deliverCompleteVoiceResult = 2;
         static final int TRANSACTION_deliverConfirmationResult = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/app/IVoiceInteractorCallback$Stub$Proxy.class */
-        public static class Proxy implements IVoiceInteractorCallback {
+        private static class Proxy implements IVoiceInteractorCallback {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -180,15 +179,15 @@ public interface IVoiceInteractorCallback extends IInterface {
                     if (parcel.readInt() != 0) {
                         z = true;
                     }
-                    deliverConfirmationResult(asInterface, z, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    deliverConfirmationResult(asInterface, z, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    deliverCompleteVoiceResult(IVoiceInteractorRequest.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    deliverCompleteVoiceResult(IVoiceInteractorRequest.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
-                    deliverAbortVoiceResult(IVoiceInteractorRequest.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    deliverAbortVoiceResult(IVoiceInteractorRequest.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 4:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -197,13 +196,13 @@ public interface IVoiceInteractorCallback extends IInterface {
                     if (parcel.readInt() != 0) {
                         z2 = true;
                     }
-                    deliverCommandResult(asInterface2, z2, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    deliverCommandResult(asInterface2, z2, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
                     deliverCancel(IVoiceInteractorRequest.Stub.asInterface(parcel.readStrongBinder()));
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -62,7 +62,7 @@ class FragmentTransitionCompat21 extends FragmentTransitionImpl {
     @Override // androidx.fragment.app.FragmentTransitionImpl
     public Object cloneTransition(Object obj) {
         if (obj != null) {
-            return ((Transition) obj).mo1000clone();
+            return ((Transition) obj).mo996clone();
         }
         return null;
     }

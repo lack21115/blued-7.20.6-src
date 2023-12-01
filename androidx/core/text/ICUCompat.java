@@ -11,7 +11,7 @@ import java.util.Locale;
 public final class ICUCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f2566a;
+    private static Method f2518a;
     private static Method b;
 
     static {
@@ -29,11 +29,11 @@ public final class ICUCompat {
         try {
             Class<?> cls = Class.forName("libcore.icu.ICU");
             if (cls != null) {
-                f2566a = cls.getMethod("getScript", String.class);
+                f2518a = cls.getMethod("getScript", String.class);
                 b = cls.getMethod("addLikelySubtags", String.class);
             }
         } catch (Exception e2) {
-            f2566a = null;
+            f2518a = null;
             b = null;
             Log.w("ICUCompat", e2);
         }
@@ -44,8 +44,8 @@ public final class ICUCompat {
 
     private static String a(String str) {
         try {
-            if (f2566a != null) {
-                return (String) f2566a.invoke(null, str);
+            if (f2518a != null) {
+                return (String) f2518a.invoke(null, str);
             }
             return null;
         } catch (IllegalAccessException e) {

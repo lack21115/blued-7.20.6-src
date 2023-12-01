@@ -2,7 +2,6 @@ package android.content;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/RestrictionEntry.class */
@@ -260,7 +259,7 @@ public class RestrictionEntry implements Parcelable {
     }
 
     public String toString() {
-        return "RestrictionsEntry {type=" + this.mType + ", key=" + this.mKey + ", value=" + this.mCurrentValue + i.d;
+        return "RestrictionsEntry {type=" + this.mType + ", key=" + this.mKey + ", value=" + this.mCurrentValue + "}";
     }
 
     @Override // android.os.Parcelable

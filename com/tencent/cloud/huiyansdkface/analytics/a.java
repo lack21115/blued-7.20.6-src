@@ -4,11 +4,11 @@ package com.tencent.cloud.huiyansdkface.analytics;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35494a = a.class.getSimpleName();
+    private static final String f21803a = a.class.getSimpleName();
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f35495c;
+    private long f21804c;
     private long d = 1;
     private long e = 0;
 
@@ -16,7 +16,7 @@ public class a {
         long currentTimeMillis;
         synchronized (this) {
             currentTimeMillis = System.currentTimeMillis();
-            this.f35495c = currentTimeMillis;
+            this.f21804c = currentTimeMillis;
         }
         return currentTimeMillis;
     }
@@ -25,11 +25,11 @@ public class a {
         synchronized (this) {
             long currentTimeMillis = System.currentTimeMillis();
             if (this.e == 0) {
-                WBSLogger.d(f35494a, "new life on first:".concat(String.valueOf(currentTimeMillis)), new Object[0]);
+                WBSLogger.d(f21803a, "new life on first:".concat(String.valueOf(currentTimeMillis)), new Object[0]);
                 this.b = currentTimeMillis;
                 this.d = 1L;
-                WBSLogger.d(f35494a, "inn start new session.", new Object[0]);
-                WBSLogger.d(f35494a, "new session:".concat(String.valueOf(e())), new Object[0]);
+                WBSLogger.d(f21803a, "inn start new session.", new Object[0]);
+                WBSLogger.d(f21803a, "new session:".concat(String.valueOf(e())), new Object[0]);
                 return true;
             }
             return false;
@@ -50,10 +50,10 @@ public class a {
     public final String c() {
         long j;
         synchronized (this) {
-            if (this.f35495c == 0) {
+            if (this.f21804c == 0) {
                 throw new IllegalStateException("session not started");
             }
-            j = this.f35495c;
+            j = this.f21804c;
         }
         return String.valueOf(j);
     }

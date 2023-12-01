@@ -20,35 +20,31 @@ import com.blued.android.framework.ui.xpop.util.XPopupUtils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/impl/FullScreenPopupView.class */
 public class FullScreenPopupView extends BasePopupView {
-
-    /* renamed from: a  reason: collision with root package name */
-    public ArgbEvaluator f10003a;
+    public ArgbEvaluator a;
     protected View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected FrameLayout f10004c;
+    protected FrameLayout c;
     Paint d;
     Rect e;
     int f;
 
     public FullScreenPopupView(Context context) {
         super(context);
-        this.f10003a = new ArgbEvaluator();
+        this.a = new ArgbEvaluator();
         this.d = new Paint();
         this.f = 0;
-        this.f10004c = (FrameLayout) findViewById(R.id.fullPopupContainer);
+        this.c = (FrameLayout) findViewById(R.id.fullPopupContainer);
     }
 
     protected void a() {
-        View inflate = LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.f10004c, false);
+        View inflate = LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.c, false);
         this.b = inflate;
-        this.f10004c.addView(inflate);
+        this.c.addView(inflate);
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        if (this.f10004c.getChildCount() == 0) {
+        if (this.c.getChildCount() == 0) {
             a();
         }
         getPopupContentView().setTranslationX(this.l.x);
@@ -57,11 +53,11 @@ public class FullScreenPopupView extends BasePopupView {
 
     public void c(boolean z) {
         if (this.l.t.booleanValue()) {
-            ArgbEvaluator argbEvaluator = this.f10003a;
+            ArgbEvaluator argbEvaluator = this.a;
             int i = 0;
-            int i2 = z ? 0 : XPopup.f9936a;
+            int i2 = z ? 0 : XPopup.a;
             if (z) {
-                i = XPopup.f9936a;
+                i = XPopup.a;
             }
             ValueAnimator ofObject = ValueAnimator.ofObject(argbEvaluator, Integer.valueOf(i2), Integer.valueOf(i));
             ofObject.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.framework.ui.xpop.impl.FullScreenPopupView.1

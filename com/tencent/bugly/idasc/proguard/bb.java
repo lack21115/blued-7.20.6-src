@@ -4,11 +4,11 @@ package com.tencent.bugly.idasc.proguard;
 public final class bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f35286a = null;
+    public String f21595a = null;
     public String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35287c = null;
+    public String f21596c = null;
     public String d = null;
     public String e = null;
     public String f = null;

@@ -60,9 +60,8 @@ public abstract class ActivityTransitionCoordinator extends ResultReceiver {
     protected ArrayList<View> mTransitioningViews;
     private Window mWindow;
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* loaded from: source-9557208-dex2jar.jar:android/app/ActivityTransitionCoordinator$ContinueTransitionListener.class */
-    public class ContinueTransitionListener extends Transition.TransitionListenerAdapter {
+    protected class ContinueTransitionListener extends Transition.TransitionListenerAdapter {
         /* JADX INFO: Access modifiers changed from: protected */
         public ContinueTransitionListener() {
         }
@@ -96,9 +95,8 @@ public abstract class ActivityTransitionCoordinator extends ResultReceiver {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/app/ActivityTransitionCoordinator$GhostViewListeners.class */
-    public static class GhostViewListeners implements ViewTreeObserver.OnPreDrawListener {
+    private static class GhostViewListeners implements ViewTreeObserver.OnPreDrawListener {
         private ViewGroup mDecor;
         private Matrix mMatrix = new Matrix();
         private View mParent;
@@ -485,9 +483,9 @@ public abstract class ActivityTransitionCoordinator extends ResultReceiver {
     public Transition configureTransition(Transition transition, boolean z) {
         Transition transition2 = transition;
         if (transition != null) {
-            Transition mo1000clone = transition.mo1000clone();
-            mo1000clone.setEpicenterCallback(this.mEpicenterCallback);
-            transition2 = setTargets(mo1000clone, z);
+            Transition mo996clone = transition.mo996clone();
+            mo996clone.setEpicenterCallback(this.mEpicenterCallback);
+            transition2 = setTargets(mo996clone, z);
         }
         return transition2;
     }

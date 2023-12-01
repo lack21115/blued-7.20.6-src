@@ -25,11 +25,11 @@ import java.util.Set;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f6943a = "Anythink SDK M";
+    public static final String f4105a = "Anythink SDK M";
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static Map<String, Long> f6944c = new HashMap();
+    public static Map<String, Long> f4106c = new HashMap();
     public static Set<String> d = new HashSet();
     public static final String e = "2";
     private static final int f = 1;
@@ -76,7 +76,7 @@ public final class a {
                 s.a(this.j, str, cVar2);
             }
         } catch (Throwable th) {
-            o.b(f6943a, th.getMessage(), th);
+            o.b(f4105a, th.getMessage(), th);
         }
     }
 
@@ -116,7 +116,7 @@ public final class a {
             intent.setAction("ExitApp");
             k.a(aVar.j).a(intent);
         } catch (Exception e2) {
-            o.b(f6943a, "Exception", e2);
+            o.b(f4105a, "Exception", e2);
         }
     }
 
@@ -204,7 +204,7 @@ public final class a {
             if (jVar instanceof com.anythink.expressad.foundation.d.c) {
                 cVar = (com.anythink.expressad.foundation.d.c) jVar;
             }
-            if ((!str.startsWith("market://") && !str.startsWith("https://play.google.com/")) || s.a.a(this.j, str, this.m) || cVar == null) {
+            if ((!str.startsWith(s.a.f) && !str.startsWith("https://play.google.com/")) || s.a.a(this.j, str, this.m) || cVar == null) {
                 return;
             }
             if (TextUtils.isEmpty(cVar.ba())) {
@@ -263,8 +263,8 @@ public final class a {
             try {
                 if (2 == cVar.Q() || 3 == cVar.Q()) {
                     String aZ = cVar.aZ();
-                    if (f6944c != null) {
-                        if (f6944c.containsKey(aZ) && (l = f6944c.get(aZ)) != null) {
+                    if (f4106c != null) {
+                        if (f4106c.containsKey(aZ) && (l = f4106c.get(aZ)) != null) {
                             if (l.longValue() > System.currentTimeMillis()) {
                                 return false;
                             }
@@ -272,14 +272,14 @@ public final class a {
                                 return false;
                             }
                         }
-                        f6944c.put(cVar.aZ(), Long.valueOf(System.currentTimeMillis() + (cVar.Y() * 1000)));
+                        f4106c.put(cVar.aZ(), Long.valueOf(System.currentTimeMillis() + (cVar.Y() * 1000)));
                         return true;
                     }
                     return true;
                 }
                 return true;
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                     return true;
                 }
@@ -297,7 +297,7 @@ public final class a {
                 s.a(this.j, cVar.ad(), this.m);
                 z3 = true;
             } catch (Throwable th) {
-                o.b(f6943a, th.getMessage(), th);
+                o.b(f4105a, th.getMessage(), th);
                 z2 = false;
             }
         }
@@ -344,7 +344,7 @@ public final class a {
                 }
                 z3 = true;
             } catch (Throwable th) {
-                o.b(f6943a, th.getMessage(), th);
+                o.b(f4105a, th.getMessage(), th);
                 z2 = false;
             }
         }
@@ -423,10 +423,10 @@ public final class a {
         try {
             Intent intent = new Intent(this.j, LoadingActivity.class);
             intent.setFlags(268435456);
-            intent.putExtra("icon_url", cVar.bd());
+            intent.putExtra(com.anythink.expressad.foundation.d.c.H, cVar.bd());
             this.j.startActivity(intent);
         } catch (Exception e2) {
-            o.b(f6943a, "Exception", e2);
+            o.b(f4105a, "Exception", e2);
         }
     }
 
@@ -474,7 +474,7 @@ public final class a {
             intent.setAction("ExitApp");
             k.a(this.j).a(intent);
         } catch (Exception e2) {
-            o.b(f6943a, "Exception", e2);
+            o.b(f4105a, "Exception", e2);
         }
     }
 

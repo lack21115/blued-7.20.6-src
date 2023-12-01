@@ -5,9 +5,7 @@ import java.util.Stack;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/ActivityStack.class */
 public class ActivityStack {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ActivityStack f9714a;
+    private static ActivityStack a;
     private final Stack<Activity> b = new Stack<>();
 
     ActivityStack() {
@@ -17,10 +15,10 @@ public class ActivityStack {
         ActivityStack activityStack;
         synchronized (ActivityStack.class) {
             try {
-                if (f9714a == null) {
-                    f9714a = new ActivityStack();
+                if (a == null) {
+                    a = new ActivityStack();
                 }
-                activityStack = f9714a;
+                activityStack = a;
             } catch (Throwable th) {
                 throw th;
             }

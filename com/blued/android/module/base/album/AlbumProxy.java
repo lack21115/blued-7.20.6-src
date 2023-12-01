@@ -26,8 +26,8 @@ public class AlbumProxy extends BaseProxy<IAlbum> implements IAlbum {
 
     @Override // com.blued.android.module.base.album.IAlbum
     public void a(Object obj, int i, int i2, int i3) {
-        if (this.f10426a != 0) {
-            ((IAlbum) this.f10426a).a(obj, i, i2, i3);
+        if (this.a != 0) {
+            ((IAlbum) this.a).a(obj, i, i2, i3);
         }
     }
 }

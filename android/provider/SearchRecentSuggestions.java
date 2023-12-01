@@ -68,6 +68,7 @@ public class SearchRecentSuggestions {
         truncateHistory(this.mContext.getContentResolver(), 0);
     }
 
+    /* JADX WARN: Type inference failed for: r0v4, types: [android.provider.SearchRecentSuggestions$1] */
     public void saveRecentQuery(final String str, final String str2) {
         if (TextUtils.isEmpty(str)) {
             return;

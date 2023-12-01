@@ -81,7 +81,7 @@ public final class UnknownFieldSetLite {
     public static UnknownFieldSetLite mutableCopyOf(UnknownFieldSetLite unknownFieldSetLite, UnknownFieldSetLite unknownFieldSetLite2) {
         int i = unknownFieldSetLite.count + unknownFieldSetLite2.count;
         int[] copyOf = Arrays.copyOf(unknownFieldSetLite.tags, i);
-        System.arraycopy((Object) unknownFieldSetLite2.tags, 0, (Object) copyOf, unknownFieldSetLite.count, unknownFieldSetLite2.count);
+        System.arraycopy(unknownFieldSetLite2.tags, 0, copyOf, unknownFieldSetLite.count, unknownFieldSetLite2.count);
         Object[] copyOf2 = Arrays.copyOf(unknownFieldSetLite.objects, i);
         System.arraycopy(unknownFieldSetLite2.objects, 0, copyOf2, unknownFieldSetLite.count, unknownFieldSetLite2.count);
         return new UnknownFieldSetLite(i, copyOf, copyOf2, true);

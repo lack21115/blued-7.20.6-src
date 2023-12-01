@@ -8,14 +8,14 @@ import java.util.Map;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, String> f21132a = new HashMap();
+    private Map<String, String> f7526a = new HashMap();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bun/miitmdid/b/c$a.class */
-    class a implements b.InterfaceC0300b {
+    class a implements b.InterfaceC0130b {
         a(c cVar) {
         }
 
-        @Override // com.bun.miitmdid.b.b.InterfaceC0300b
+        @Override // com.bun.miitmdid.b.b.InterfaceC0130b
         public native void a(Exception exc, int i, String str);
     }
 

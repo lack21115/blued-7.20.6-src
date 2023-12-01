@@ -7,19 +7,17 @@ import java.lang.reflect.Field;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/SafeToast.class */
 public class SafeToast extends NotificationToast {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f9755a;
+    private boolean a;
 
     public SafeToast(Application application) {
         super(application);
     }
 
     private void a() {
-        if (this.f9755a) {
+        if (this.a) {
             return;
         }
-        this.f9755a = true;
+        this.a = true;
         try {
             Field declaredField = Toast.class.getDeclaredField("mTN");
             declaredField.setAccessible(true);

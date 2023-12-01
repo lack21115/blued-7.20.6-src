@@ -8,9 +8,7 @@ import com.anythink.core.common.k.p;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/a/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile a f6443a;
+    private static volatile a a;
     private k b;
 
     private a() {
@@ -20,18 +18,18 @@ public class a {
     }
 
     public static a a() {
-        if (f6443a == null) {
+        if (a == null) {
             synchronized (a.class) {
                 try {
-                    if (f6443a == null) {
-                        f6443a = new a();
+                    if (a == null) {
+                        a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6443a;
+        return a;
     }
 
     public static void c(Context context, String str) {

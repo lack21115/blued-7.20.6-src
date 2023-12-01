@@ -18,13 +18,9 @@ import com.blued.android.framework.ui.xpop.util.XPopupUtils;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/widget/SmartDragLayout.class */
 public class SmartDragLayout extends FrameLayout implements NestedScrollingParent {
-
-    /* renamed from: a  reason: collision with root package name */
-    OverScroller f10045a;
+    OverScroller a;
     VelocityTracker b;
-
-    /* renamed from: c  reason: collision with root package name */
-    ShadowBgAnimator f10046c;
+    ShadowBgAnimator c;
     boolean d;
     boolean e;
     boolean f;
@@ -59,7 +55,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
 
     public SmartDragLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10046c = new ShadowBgAnimator();
+        this.c = new ShadowBgAnimator();
         this.d = true;
         this.e = true;
         this.f = true;
@@ -67,7 +63,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
         this.h = false;
         this.i = LayoutStatus.Close;
         if (this.d) {
-            this.f10045a = new OverScroller(context);
+            this.a = new OverScroller(context);
         }
     }
 
@@ -93,7 +89,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
                 }
                 scrollY2 = i - scrollY;
             }
-            this.f10045a.startScroll(getScrollX(), getScrollY(), 0, scrollY2, XPopup.b());
+            this.a.startScroll(getScrollX(), getScrollY(), 0, scrollY2, XPopup.b());
             ViewCompat.postInvalidateOnAnimation(this);
         }
     }
@@ -121,7 +117,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
         post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.widget.SmartDragLayout.3
             @Override // java.lang.Runnable
             public void run() {
-                SmartDragLayout.this.f10045a.startScroll(SmartDragLayout.this.getScrollX(), SmartDragLayout.this.getScrollY(), 0, i, (int) (z ? XPopup.b() : XPopup.b() * 0.8f));
+                SmartDragLayout.this.a.startScroll(SmartDragLayout.this.getScrollX(), SmartDragLayout.this.getScrollY(), 0, i, (int) (z ? XPopup.b() : XPopup.b() * 0.8f));
                 ViewCompat.postInvalidateOnAnimation(SmartDragLayout.this);
             }
         });
@@ -136,7 +132,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
         post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.widget.SmartDragLayout.2
             @Override // java.lang.Runnable
             public void run() {
-                SmartDragLayout.this.f10045a.abortAnimation();
+                SmartDragLayout.this.a.abortAnimation();
                 SmartDragLayout smartDragLayout = SmartDragLayout.this;
                 smartDragLayout.a(smartDragLayout.k - SmartDragLayout.this.getScrollY(), false);
                 SmartDragLayout.this.i = LayoutStatus.Closing;
@@ -155,8 +151,8 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
     @Override // android.view.View
     public void computeScroll() {
         super.computeScroll();
-        if (this.f10045a.computeScrollOffset()) {
-            scrollTo(this.f10045a.getCurrX(), this.f10045a.getCurrY());
+        if (this.a.computeScrollOffset()) {
+            scrollTo(this.a.getCurrX(), this.a.getCurrY());
             ViewCompat.postInvalidateOnAnimation(this);
         }
     }
@@ -171,7 +167,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // android.view.ViewGroup, androidx.core.view.NestedScrollingParent
+    @Override // android.view.ViewGroup
     public int getNestedScrollAxes() {
         return 2;
     }
@@ -238,7 +234,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
 
     @Override // android.view.ViewGroup, android.view.ViewParent
     public void onNestedScrollAccepted(View view, View view2, int i) {
-        this.f10045a.abortAnimation();
+        this.a.abortAnimation();
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
@@ -255,7 +251,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
     public boolean onTouchEvent(MotionEvent motionEvent) {
         VelocityTracker velocityTracker;
         VelocityTracker velocityTracker2;
-        if (this.d && this.f10045a.computeScrollOffset()) {
+        if (this.d && this.a.computeScrollOffset()) {
             this.m = 0.0f;
             this.n = 0.0f;
             return true;
@@ -326,7 +322,7 @@ public class SmartDragLayout extends FrameLayout implements NestedScrollingParen
         float f = ((i6 - i7) * 1.0f) / (this.j - i7);
         this.o = i6 > getScrollY();
         if (this.f) {
-            setBackgroundColor(this.f10046c.a(f));
+            setBackgroundColor(this.c.a(f));
         }
         if (this.q != null) {
             if (this.g && f == 0.0f && this.i != LayoutStatus.Close) {

@@ -59,9 +59,8 @@ public class MaterialDivider extends View {
         return this.thickness;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int width;
         int i;
         super.onDraw(canvas);
@@ -81,9 +80,8 @@ public class MaterialDivider extends View {
         this.dividerDrawable.draw(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int mode = View.MeasureSpec.getMode(i2);
         int measuredHeight = getMeasuredHeight();

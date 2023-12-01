@@ -87,7 +87,7 @@ public final class b {
                 httpURLConnection3.setReadTimeout(5000);
                 httpURLConnection3.setUseCaches(false);
                 httpURLConnection3.setRequestMethod("POST");
-                httpURLConnection3.setRequestProperty(Headers.CONN_DIRECTIVE, com.anythink.expressad.foundation.g.f.g.c.f7906c);
+                httpURLConnection3.setRequestProperty(Headers.CONN_DIRECTIVE, com.anythink.expressad.foundation.g.f.g.c.f5066c);
                 httpURLConnection3.setRequestProperty("User-Agent", q.getUserAgent());
                 httpURLConnection3.setRequestProperty("Charset", "UTF-8");
                 httpURLConnection3.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + uuid);

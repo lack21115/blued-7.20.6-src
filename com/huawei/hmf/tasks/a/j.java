@@ -23,21 +23,21 @@ public final class j {
     public static final class a<TResult> implements OnCanceledListener, OnFailureListener, OnSuccessListener<TResult> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final CountDownLatch f22390a = new CountDownLatch(1);
+        public final CountDownLatch f8782a = new CountDownLatch(1);
 
         @Override // com.huawei.hmf.tasks.OnCanceledListener
         public final void onCanceled() {
-            this.f22390a.countDown();
+            this.f8782a.countDown();
         }
 
         @Override // com.huawei.hmf.tasks.OnFailureListener
         public final void onFailure(Exception exc) {
-            this.f22390a.countDown();
+            this.f8782a.countDown();
         }
 
         @Override // com.huawei.hmf.tasks.OnSuccessListener
         public final void onSuccess(TResult tresult) {
-            this.f22390a.countDown();
+            this.f8782a.countDown();
         }
     }
 
@@ -51,8 +51,8 @@ public final class j {
         return c(collection).continueWith(new Continuation<Void, List<Task<?>>>() { // from class: com.huawei.hmf.tasks.a.j.2
             @Override // com.huawei.hmf.tasks.Continuation
             public final /* synthetic */ List<Task<?>> then(Task<Void> task) throws Exception {
-                ArrayList arrayList = new ArrayList(Collection.this.size());
-                arrayList.addAll(Collection.this);
+                ArrayList arrayList = new ArrayList(collection.size());
+                arrayList.addAll(collection);
                 return arrayList;
             }
         });
@@ -76,7 +76,7 @@ public final class j {
             @Override // com.huawei.hmf.tasks.Continuation
             public final /* synthetic */ Object then(Task<Void> task) throws Exception {
                 ArrayList arrayList = new ArrayList();
-                for (Task task2 : Collection.this) {
+                for (Task task2 : collection) {
                     arrayList.add(task2.getResult());
                 }
                 return arrayList;

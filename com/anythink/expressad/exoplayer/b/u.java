@@ -10,19 +10,19 @@ final class u implements f {
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7219c;
+    private int f4380c;
     private int d;
     private int g;
     private int k;
     private boolean l;
-    private ByteBuffer h = f7181a;
-    private ByteBuffer i = f7181a;
+    private ByteBuffer h = f4342a;
+    private ByteBuffer i = f4342a;
     private int e = -1;
     private int f = -1;
     private byte[] j = new byte[0];
 
     public final void a(int i, int i2) {
-        this.f7219c = i;
+        this.f4380c = i;
         this.d = i2;
     }
 
@@ -54,7 +54,7 @@ final class u implements f {
         int i4 = this.k - a2;
         this.k = i4;
         byte[] bArr = this.j;
-        System.arraycopy((Object) bArr, a2, (Object) bArr, 0, i4);
+        System.arraycopy(bArr, a2, bArr, 0, i4);
         byteBuffer.get(this.j, this.k, i3);
         this.k += i3;
         this.h.flip();
@@ -74,7 +74,7 @@ final class u implements f {
             int i4 = this.d;
             this.j = new byte[i4 * i2 * 2];
             this.k = 0;
-            int i5 = this.f7219c;
+            int i5 = this.f4380c;
             this.g = i2 * i5 * 2;
             boolean z = this.b;
             boolean z2 = (i5 == 0 && i4 == 0) ? false : true;
@@ -107,18 +107,18 @@ final class u implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final ByteBuffer f() {
         ByteBuffer byteBuffer = this.i;
-        this.i = f7181a;
+        this.i = f4342a;
         return byteBuffer;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final boolean g() {
-        return this.l && this.i == f7181a;
+        return this.l && this.i == f4342a;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final void h() {
-        this.i = f7181a;
+        this.i = f4342a;
         this.l = false;
         this.g = 0;
         this.k = 0;
@@ -127,7 +127,7 @@ final class u implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final void i() {
         h();
-        this.h = f7181a;
+        this.h = f4342a;
         this.e = -1;
         this.f = -1;
         this.j = new byte[0];

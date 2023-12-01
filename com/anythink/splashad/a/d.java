@@ -13,7 +13,6 @@ import com.anythink.core.common.b.g;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.k.h;
 import com.anythink.core.common.k.i;
-import com.anythink.core.common.l;
 import com.anythink.core.common.v;
 import com.anythink.splashad.unitgroup.api.CustomSplashAdapter;
 import java.util.HashMap;
@@ -24,11 +23,11 @@ import org.json.JSONObject;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f9197a;
+    boolean f6357a;
     b b;
 
     /* renamed from: c  reason: collision with root package name */
-    long f9198c;
+    long f6358c;
     com.anythink.core.common.e.b d;
     String e;
     String f;
@@ -63,17 +62,17 @@ public final class d {
     public final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CustomSplashAdapter f9200a;
+        final /* synthetic */ CustomSplashAdapter f6360a;
         final /* synthetic */ AdError b;
 
         AnonymousClass2(CustomSplashAdapter customSplashAdapter, AdError adError) {
-            this.f9200a = customSplashAdapter;
+            this.f6360a = customSplashAdapter;
             this.b = adError;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            CustomSplashAdapter customSplashAdapter = this.f9200a;
+            CustomSplashAdapter customSplashAdapter = this.f6360a;
             if (customSplashAdapter != null) {
                 customSplashAdapter.destory();
             }
@@ -84,29 +83,25 @@ public final class d {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/splashad/a/d$a.class */
-    public final class a implements ATCustomLoadListener {
+    final class a implements ATCustomLoadListener {
 
         /* renamed from: a  reason: collision with root package name */
-        CustomSplashAdapter f9202a;
+        CustomSplashAdapter f6362a;
 
         public a(CustomSplashAdapter customSplashAdapter) {
-            this.f9202a = customSplashAdapter;
+            this.f6362a = customSplashAdapter;
         }
 
-        @Override // com.anythink.core.api.ATCustomLoadListener
         public final void onAdCacheLoaded(BaseAd... baseAdArr) {
-            d.this.a(this.f9202a, baseAdArr);
+            d.this.a(this.f6362a, baseAdArr);
         }
 
-        @Override // com.anythink.core.api.ATCustomLoadListener
         public final void onAdDataLoaded() {
         }
 
-        @Override // com.anythink.core.api.ATCustomLoadListener
         public final void onAdLoadError(String str, String str2) {
-            d.this.a(this.f9202a, ErrorCode.getErrorCode(ErrorCode.noADError, str, str2));
+            d.this.a(this.f6362a, ErrorCode.getErrorCode("4001", str, str2));
         }
     }
 
@@ -131,7 +126,7 @@ public final class d {
             JSONObject jSONObject = new JSONObject(str);
             this.g = jSONObject.optString("unit_id");
             this.h = jSONObject.optInt("nw_firm_id");
-            this.i = jSONObject.optString(l.z);
+            this.i = jSONObject.optString("adapter_class");
             this.j = jSONObject.optString("content");
             this.k = jSONObject.optInt("ad_type", -1);
             Map<String, Object> c2 = h.c(this.j);
@@ -165,7 +160,7 @@ public final class d {
         eVar.z("4");
         eVar.w("0");
         eVar.a(true);
-        com.anythink.core.common.j.c.a(eVar, ErrorCode.getErrorCode(ErrorCode.timeOutError, "", "Splash FetchAd Timeout."));
+        com.anythink.core.common.j.c.a(eVar, ErrorCode.getErrorCode("2001", "", "Splash FetchAd Timeout."));
     }
 
     private com.anythink.core.common.e.b f() {
@@ -191,7 +186,7 @@ public final class d {
                 JSONObject jSONObject = new JSONObject(str3);
                 this.g = jSONObject.optString("unit_id");
                 this.h = jSONObject.optInt("nw_firm_id");
-                this.i = jSONObject.optString(l.z);
+                this.i = jSONObject.optString("adapter_class");
                 this.j = jSONObject.optString("content");
                 this.k = jSONObject.optInt("ad_type", -1);
                 Map<String, Object> c2 = h.c(this.j);
@@ -233,8 +228,8 @@ public final class d {
             }
             ((CustomSplashAdapter) a2).setFetchAdTimeout(i);
             this.n = true;
-            this.f9197a = false;
-            this.f9198c = SystemClock.elapsedRealtime();
+            this.f6357a = false;
+            this.f6358c = SystemClock.elapsedRealtime();
             try {
                 eVar.v(a2.getNetworkName());
                 eVar.u = a2.getNetworkSDKVersion();
@@ -242,7 +237,7 @@ public final class d {
             } catch (Throwable th2) {
             }
             a2.setTrackingInfo(eVar);
-            com.anythink.core.common.k.g.a(eVar, g.i.f6511a, g.i.h, "");
+            com.anythink.core.common.k.g.a(eVar, g.i.a, g.i.h, "");
             com.anythink.core.common.j.a.a(this.m).a(10, eVar);
             com.anythink.core.common.j.a.a(this.m).a(1, eVar);
             a2.internalLoad(context, this.l, v.a().c(str), new a((CustomSplashAdapter) a2));
@@ -255,23 +250,23 @@ public final class d {
     }
 
     public final void a(CustomSplashAdapter customSplashAdapter, AdError adError) {
-        if (this.f9197a) {
+        if (this.f6357a) {
             return;
         }
         if (customSplashAdapter != null) {
             com.anythink.core.common.k.g.a(customSplashAdapter.getTrackingInfo(), g.i.b, g.i.g, adError.printStackTrace());
         }
-        this.f9197a = true;
+        this.f6357a = true;
         this.n = false;
         n.a().a(new AnonymousClass2(customSplashAdapter, adError));
     }
 
     public final void a(CustomSplashAdapter customSplashAdapter, BaseAd... baseAdArr) {
-        if (this.f9197a) {
+        if (this.f6357a) {
             return;
         }
         if (customSplashAdapter != null) {
-            customSplashAdapter.getTrackingInfo().d(SystemClock.elapsedRealtime() - this.f9198c);
+            customSplashAdapter.getTrackingInfo().d(SystemClock.elapsedRealtime() - this.f6358c);
             customSplashAdapter.getTrackingInfo().g(customSplashAdapter.getNetworkPlacementId());
             com.anythink.core.common.k.g.a(customSplashAdapter.getTrackingInfo(), g.i.b, g.i.f, "");
             com.anythink.core.common.j.a.a(this.m).a(12, customSplashAdapter.getTrackingInfo());
@@ -289,7 +284,7 @@ public final class d {
             }
             this.d = bVar;
         }
-        this.f9197a = true;
+        this.f6357a = true;
         this.n = false;
         n.a().a(new AnonymousClass1());
     }

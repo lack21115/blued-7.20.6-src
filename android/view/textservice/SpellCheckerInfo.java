@@ -103,7 +103,7 @@ public final class SpellCheckerInfo implements Parcelable {
         this.mLabel = parcel.readInt();
         this.mId = parcel.readString();
         this.mSettingsActivityName = parcel.readString();
-        this.mService = ResolveInfo.CREATOR.createFromParcel(parcel);
+        this.mService = (ResolveInfo) ResolveInfo.CREATOR.createFromParcel(parcel);
         parcel.readTypedList(this.mSubtypes, SpellCheckerSubtype.CREATOR);
     }
 

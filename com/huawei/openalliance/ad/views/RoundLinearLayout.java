@@ -72,9 +72,8 @@ public class RoundLinearLayout extends LinearLayout {
         super.draw(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         this.Code.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         Code();

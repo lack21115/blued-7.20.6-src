@@ -4,16 +4,16 @@ package com.tencent.cloud.huiyansdkface.facelight.b;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f35537a = 0;
+    private int f21846a = 0;
     private String b = null;
 
     public void a() {
-        this.f35537a = 0;
+        this.f21846a = 0;
         this.b = null;
     }
 
     public void a(int i) {
-        this.f35537a = i;
+        this.f21846a = i;
     }
 
     public void a(String str) {
@@ -21,7 +21,7 @@ public class b {
     }
 
     public int b() {
-        return this.f35537a;
+        return this.f21846a;
     }
 
     public String c() {

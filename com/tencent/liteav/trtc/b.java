@@ -6,11 +6,11 @@ import android.graphics.Bitmap;
 final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TrtcCloudJni f36472a;
+    private final TrtcCloudJni f22781a;
     private final Bitmap b;
 
     private b(TrtcCloudJni trtcCloudJni, Bitmap bitmap) {
-        this.f36472a = trtcCloudJni;
+        this.f22781a = trtcCloudJni;
         this.b = bitmap;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TrtcCloudJni.lambda$onSnapshotComplete$1(this.f36472a, this.b);
+        TrtcCloudJni.lambda$onSnapshotComplete$1(this.f22781a, this.b);
     }
 }

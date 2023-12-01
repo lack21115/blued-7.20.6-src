@@ -16,19 +16,19 @@ public class l6 extends x6 {
         @Json(name = "showCount")
 
         /* renamed from: c  reason: collision with root package name */
-        private int f37608c;
+        private int f23917c;
 
         public a(long j, int i) {
             super(j);
             this.b = 0;
-            this.f37608c = 0;
+            this.f23917c = 0;
             this.b = i;
-            this.f37608c = 1;
+            this.f23917c = 1;
         }
 
         public static /* synthetic */ int b(a aVar) {
-            int i = aVar.f37608c + 1;
-            aVar.f37608c = i;
+            int i = aVar.f23917c + 1;
+            aVar.f23917c = i;
             return i;
         }
     }
@@ -44,7 +44,7 @@ public class l6 extends x6 {
                 return a.b(aVar);
             }
         }
-        this.b.add(new a(this.f38104a, i));
+        this.b.add(new a(this.f24413a, i));
         return 1;
     }
 }

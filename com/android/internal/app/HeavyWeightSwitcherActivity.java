@@ -31,7 +31,7 @@ public class HeavyWeightSwitcherActivity extends Activity {
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             try {
-                ActivityManagerNative.getDefault().moveTaskToFront(HeavyWeightSwitcherActivity.this.mCurTask, 0, null);
+                ActivityManagerNative.getDefault().moveTaskToFront(HeavyWeightSwitcherActivity.this.mCurTask, 0, (Bundle) null);
             } catch (RemoteException e) {
             }
             HeavyWeightSwitcherActivity.this.finish();
@@ -63,12 +63,11 @@ public class HeavyWeightSwitcherActivity extends Activity {
         }
     };
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         requestWindowFeature(3);
-        this.mStartIntent = (IntentSender) getIntent().getParcelableExtra("intent");
+        this.mStartIntent = (IntentSender) getIntent().getParcelableExtra(KEY_INTENT);
         this.mHasResult = getIntent().getBooleanExtra(KEY_HAS_RESULT, false);
         this.mCurApp = getIntent().getStringExtra(KEY_CUR_APP);
         this.mCurTask = getIntent().getIntExtra(KEY_CUR_TASK, 0);
@@ -80,7 +79,7 @@ public class HeavyWeightSwitcherActivity extends Activity {
         findViewById(R.id.switch_new).setOnClickListener(this.mSwitchNewListener);
         findViewById(R.id.cancel).setOnClickListener(this.mCancelListener);
         TypedValue typedValue = new TypedValue();
-        getTheme().resolveAttribute(16843605, typedValue, true);
+        getTheme().resolveAttribute(R.attr.alertDialogIcon, typedValue, true);
         getWindow().setFeatureDrawableResource(3, typedValue.resourceId);
     }
 
@@ -106,7 +105,7 @@ public class HeavyWeightSwitcherActivity extends Activity {
             }
         }
         setDrawable(i, drawable);
-        setText(i2, getString(i4, charSequence));
+        setText(i2, getString(i4, new Object[]{charSequence}));
         setText(i3, getText(i5));
     }
 

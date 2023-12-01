@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogFavourableCommentBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28697a;
+    private final RelativeLayout f15007a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28697a;
+        return this.f15007a;
     }
 }

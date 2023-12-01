@@ -10,7 +10,7 @@ public class PreDownWrapper extends IDWrapper {
     public static final int OPERATOR_TYPE_START = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21541a = "type";
+    private static final String f7935a = "type";
 
     protected PreDownWrapper(Map<String, Object> map) {
         super(map);

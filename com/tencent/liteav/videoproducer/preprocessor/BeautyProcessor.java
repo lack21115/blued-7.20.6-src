@@ -45,7 +45,7 @@ public class BeautyProcessor extends com.tencent.liteav.videobase.a.h {
 
     private float getSharpnessLevel() {
         float f = this.mUserSetSharpnessLevel;
-        return f != 0.0f ? f : (this.mIsPerformanceMode || Math.min(this.mOutputSize.f36340a, this.mOutputSize.b) < 540) ? 0.0f : 0.4f;
+        return f != 0.0f ? f : (this.mIsPerformanceMode || Math.min(this.mOutputSize.f22649a, this.mOutputSize.b) < 540) ? 0.0f : 0.4f;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -99,7 +99,7 @@ public class BeautyProcessor extends com.tencent.liteav.videobase.a.h {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateBeautyInternal(int i, float f, float f2, float f3, float f4) {
-        if (this.mOutputSize.f36340a == -1 || this.mOutputSize.b == -1) {
+        if (this.mOutputSize.f22649a == -1 || this.mOutputSize.b == -1) {
             return;
         }
         if (this.mBeautyStyle != i) {
@@ -110,7 +110,7 @@ public class BeautyProcessor extends com.tencent.liteav.videobase.a.h {
         if (bVar == null) {
             aVar = i != 0 ? i != 1 ? i != 2 ? new com.tencent.liteav.beauty.b.a() : new com.tencent.liteav.beauty.b.a.a() : new com.tencent.liteav.beauty.b.c.a() : new com.tencent.liteav.beauty.b.b.a();
             aVar.initialize(this.mTexturePool);
-            aVar.onOutputSizeChanged(this.mOutputSize.f36340a, this.mOutputSize.b);
+            aVar.onOutputSizeChanged(this.mOutputSize.f22649a, this.mOutputSize.b);
             this.mBeautyFilters.put(i, aVar);
         }
         com.tencent.liteav.beauty.b.b bVar2 = (com.tencent.liteav.beauty.b.b) aVar;
@@ -167,7 +167,7 @@ public class BeautyProcessor extends com.tencent.liteav.videobase.a.h {
             sb.append(entry.getValue());
             sb.append(" ");
         }
-        this.mBeautyManagerStatusListener.onBeautyStatsChanged("{" + ((Object) sb) + com.alipay.sdk.util.i.d);
+        this.mBeautyManagerStatusListener.onBeautyStatsChanged("{" + ((Object) sb) + "}");
     }
 
     @Override // com.tencent.liteav.videobase.a.h, com.tencent.liteav.videobase.a.b

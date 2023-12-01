@@ -11,23 +11,23 @@ import java.util.List;
 final class i implements com.opos.exoplayer.core.f.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<c> f25409a;
+    private final List<c> f11721a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long[] f25410c;
+    private final long[] f11722c;
     private final long[] d;
 
     public i(List<c> list) {
-        this.f25409a = list;
+        this.f11721a = list;
         int size = list.size();
         this.b = size;
-        this.f25410c = new long[size * 2];
+        this.f11722c = new long[size * 2];
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= this.b) {
-                long[] jArr = this.f25410c;
+                long[] jArr = this.f11722c;
                 long[] copyOf = Arrays.copyOf(jArr, jArr.length);
                 this.d = copyOf;
                 Arrays.sort(copyOf);
@@ -35,8 +35,8 @@ final class i implements com.opos.exoplayer.core.f.d {
             }
             c cVar = list.get(i2);
             int i3 = i2 * 2;
-            this.f25410c[i3] = cVar.m;
-            this.f25410c[i3 + 1] = cVar.n;
+            this.f11722c[i3] = cVar.m;
+            this.f11722c[i3 + 1] = cVar.n;
             i = i2 + 1;
         }
     }
@@ -74,7 +74,7 @@ final class i implements com.opos.exoplayer.core.f.d {
         c cVar = null;
         int i = 0;
         while (i < this.b) {
-            long[] jArr = this.f25410c;
+            long[] jArr = this.f11722c;
             int i2 = i * 2;
             SpannableStringBuilder spannableStringBuilder2 = spannableStringBuilder;
             ArrayList arrayList2 = arrayList;
@@ -88,7 +88,7 @@ final class i implements com.opos.exoplayer.core.f.d {
                     if (arrayList == null) {
                         arrayList2 = new ArrayList();
                     }
-                    cVar2 = this.f25409a.get(i);
+                    cVar2 = this.f11721a.get(i);
                     if (!cVar2.a()) {
                         arrayList2.add(cVar2);
                         cVar2 = cVar;
@@ -98,11 +98,11 @@ final class i implements com.opos.exoplayer.core.f.d {
                     } else {
                         if (spannableStringBuilder == null) {
                             spannableStringBuilder = new SpannableStringBuilder();
-                            append = spannableStringBuilder.append(cVar.f25344a).append((CharSequence) "\n");
+                            append = spannableStringBuilder.append(cVar.f11656a).append((CharSequence) "\n");
                         } else {
                             append = spannableStringBuilder.append((CharSequence) "\n");
                         }
-                        append.append(cVar2.f25344a);
+                        append.append(cVar2.f11656a);
                         spannableStringBuilder2 = spannableStringBuilder;
                         cVar2 = cVar;
                     }

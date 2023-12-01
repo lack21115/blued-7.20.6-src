@@ -12,11 +12,11 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private a.InterfaceC1091a f40994a;
+    private a.InterfaceC0921a f27303a;
 
-    public b(a.InterfaceC1091a interfaceC1091a) {
-        this.f40994a = null;
-        this.f40994a = interfaceC1091a;
+    public b(a.InterfaceC0921a interfaceC0921a) {
+        this.f27303a = null;
+        this.f27303a = interfaceC0921a;
     }
 
     public void a(int i, String str) {
@@ -25,7 +25,7 @@ public class b {
 
     public void a(int i, String str, String str2) {
         try {
-            if (this.f40994a == null) {
+            if (this.f27303a == null) {
                 return;
             }
             JSONObject jSONObject = new JSONObject();
@@ -34,8 +34,8 @@ public class b {
             jSONObject.put(ProcessBridgeProvider.KEY_RESULT_DATA, "");
             jSONObject.put("traceId", str2);
             jSONObject.put("operatorType", "CU");
-            this.f40994a.a(jSONObject.toString());
-            this.f40994a = null;
+            this.f27303a.a(jSONObject.toString());
+            this.f27303a = null;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,7 +43,7 @@ public class b {
 
     public void a(String str, String str2) {
         try {
-            if (this.f40994a == null) {
+            if (this.f27303a == null) {
                 return;
             }
             JSONObject jSONObject = new JSONObject();
@@ -58,8 +58,8 @@ public class b {
                 jSONObject.put(ProcessBridgeProvider.KEY_RESULT_DATA, jSONObject2);
             }
             jSONObject.put("operatorType", "CU");
-            this.f40994a.a(jSONObject.toString());
-            this.f40994a = null;
+            this.f27303a.a(jSONObject.toString());
+            this.f27303a = null;
         } catch (Exception e) {
             e.printStackTrace();
         }

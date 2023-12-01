@@ -63,16 +63,16 @@ public class SelfRenderViewUtil {
     }
 
     public static void a(Context context, ATNativeMaterial aTNativeMaterial, View view, ATNativePrepareInfo aTNativePrepareInfo, int i) {
-        TextView textView = (TextView) view.findViewById(2131368652);
-        TextView textView2 = (TextView) view.findViewById(2131371262);
+        TextView textView = (TextView) view.findViewById(R.id.name_view);
+        TextView textView2 = (TextView) view.findViewById(R.id.tv_desc);
         TextView textView3 = (TextView) view.findViewById(R.id.native_ad_install_btn);
         ImageView imageView = (ImageView) view.findViewById(2131364232);
         ImageView imageView2 = (ImageView) view.findViewById(R.id.img_style_1_ad_icon);
         ImageView imageView3 = (ImageView) view.findViewById(R.id.img_style_2_ad_icon);
         ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_style_1);
         ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cl_style_2);
-        FrameLayout frameLayout = (FrameLayout) view.findViewById(2131363785);
-        view.findViewById(2131364488);
+        FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_content);
+        view.findViewById(R.id.img_close);
         ViewGroup viewGroup = (ViewGroup) view.findViewById(R.id.cl_information_layout);
         ViewGroup viewGroup2 = (ViewGroup) view.findViewById(R.id.cl_download_layout);
         if (aTNativePrepareInfo == null) {
@@ -109,7 +109,7 @@ public class SelfRenderViewUtil {
             arrayList.add(textView3);
             textView3.setVisibility(0);
         }
-        View adMediaView = aTNativeMaterial.getAdMediaView(frameLayout);
+        View adMediaView = aTNativeMaterial.getAdMediaView(new Object[]{frameLayout});
         int mainImageHeight = aTNativeMaterial.getMainImageHeight();
         int mainImageWidth = aTNativeMaterial.getMainImageWidth();
         int a2 = AppInfo.l - DensityUtil.a(95.0f);
@@ -189,18 +189,18 @@ public class SelfRenderViewUtil {
 
     public static void a(Context context, NativeAdContainer nativeAdContainer, BluedADExtra bluedADExtra) {
         int i;
-        TextView textView = (TextView) nativeAdContainer.findViewById(2131368652);
-        TextView textView2 = (TextView) nativeAdContainer.findViewById(2131371262);
+        TextView textView = (TextView) nativeAdContainer.findViewById(R.id.name_view);
+        TextView textView2 = (TextView) nativeAdContainer.findViewById(R.id.tv_desc);
         TextView textView3 = (TextView) nativeAdContainer.findViewById(R.id.native_ad_install_btn);
         ImageView imageView = (ImageView) nativeAdContainer.findViewById(2131364232);
         ImageView imageView2 = (ImageView) nativeAdContainer.findViewById(R.id.img_style_1_ad_icon);
         ImageView imageView3 = (ImageView) nativeAdContainer.findViewById(R.id.img_style_2_ad_icon);
         ConstraintLayout constraintLayout = (ConstraintLayout) nativeAdContainer.findViewById(R.id.cl_style_1);
         ConstraintLayout constraintLayout2 = (ConstraintLayout) nativeAdContainer.findViewById(R.id.cl_style_2);
-        FrameLayout frameLayout = (FrameLayout) nativeAdContainer.findViewById(2131363785);
+        FrameLayout frameLayout = (FrameLayout) nativeAdContainer.findViewById(R.id.fl_content);
         MediaView mediaView = (MediaView) nativeAdContainer.findViewById(R.id.media_view);
         ImageView imageView4 = (ImageView) nativeAdContainer.findViewById(R.id.iv_resource);
-        nativeAdContainer.findViewById(2131364488);
+        nativeAdContainer.findViewById(R.id.img_close);
         LinearLayout linearLayout = (LinearLayout) nativeAdContainer.findViewById(R.id.layout_native_ad);
         ViewGroup viewGroup = (ViewGroup) nativeAdContainer.findViewById(R.id.cl_information_layout);
         ViewGroup viewGroup2 = (ViewGroup) nativeAdContainer.findViewById(R.id.cl_download_layout);
@@ -285,42 +285,34 @@ public class SelfRenderViewUtil {
         }
         if (nativeUnifiedADData.isAppAd() && nativeUnifiedADData.getAppMiitInfo() != null) {
             a(context, new ATAdAppInfo() { // from class: com.soft.blued.customview.SelfRenderViewUtil.1
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public String getAppDownloadCount() {
                     return "";
                 }
 
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public String getAppName() {
                     return NativeUnifiedADData.this.getAppMiitInfo().getAppName();
                 }
 
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public String getAppPackageName() {
                     return "";
                 }
 
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public String getAppPermissonUrl() {
                     return NativeUnifiedADData.this.getAppMiitInfo().getPermissionsUrl();
                 }
 
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public String getAppPrivacyUrl() {
                     return NativeUnifiedADData.this.getAppMiitInfo().getPrivacyAgreement();
                 }
 
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public long getAppSize() {
                     return NativeUnifiedADData.this.getAppMiitInfo().getPackageSizeBytes();
                 }
 
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public String getAppVersion() {
                     return NativeUnifiedADData.this.getAppMiitInfo().getVersionName();
                 }
 
-                @Override // com.anythink.core.api.ATAdAppInfo
                 public String getPublisher() {
                     return NativeUnifiedADData.this.getAppMiitInfo().getAuthorName();
                 }

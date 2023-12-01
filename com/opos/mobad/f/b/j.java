@@ -6,5 +6,5 @@ import android.app.Activity;
 public class j extends h<Activity, com.opos.mobad.ad.e.c> {
 
     /* renamed from: c  reason: collision with root package name */
-    public final com.opos.mobad.ad.e.f f26133c;
+    public final com.opos.mobad.ad.e.f f12445c;
 }

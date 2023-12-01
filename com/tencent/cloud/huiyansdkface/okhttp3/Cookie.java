@@ -1,9 +1,9 @@
 package com.tencent.cloud.huiyansdkface.okhttp3;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.das.live.LiveProtos;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.Util;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.http.HttpDate;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -17,11 +17,11 @@ import java.util.regex.Pattern;
 public final class Cookie {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pattern f35841a = Pattern.compile("(\\d{2,4})[^\\d]*");
+    private static final Pattern f22150a = Pattern.compile("(\\d{2,4})[^\\d]*");
     private static final Pattern b = Pattern.compile("(?i)(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec).*");
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f35842c = Pattern.compile("(\\d{1,2})[^\\d]*");
+    private static final Pattern f22151c = Pattern.compile("(\\d{1,2})[^\\d]*");
     private static final Pattern d = Pattern.compile("(\\d{1,2}):(\\d{1,2}):(\\d{1,2})[^\\d]*");
     private final String e;
     private final String f;
@@ -37,7 +37,7 @@ public final class Cookie {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        String f35843a;
+        String f22152a;
         String b;
         String d;
         boolean f;
@@ -46,8 +46,8 @@ public final class Cookie {
         boolean i;
 
         /* renamed from: c  reason: collision with root package name */
-        long f35844c = 253402300799999L;
-        String e = BridgeUtil.SPLIT_MARK;
+        long f22153c = 253402300799999L;
+        String e = "/";
 
         private Builder a(String str, boolean z) {
             if (str != null) {
@@ -79,7 +79,7 @@ public final class Cookie {
             if (j2 > 253402300799999L) {
                 j3 = 253402300799999L;
             }
-            this.f35844c = j3;
+            this.f22153c = j3;
             this.h = true;
             return this;
         }
@@ -96,7 +96,7 @@ public final class Cookie {
         public Builder name(String str) {
             if (str != null) {
                 if (str.trim().equals(str)) {
-                    this.f35843a = str;
+                    this.f22152a = str;
                     return this;
                 }
                 throw new IllegalArgumentException("name is not trimmed");
@@ -105,7 +105,7 @@ public final class Cookie {
         }
 
         public Builder path(String str) {
-            if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (str.startsWith("/")) {
                 this.e = str;
                 return this;
             }
@@ -130,7 +130,7 @@ public final class Cookie {
     }
 
     Cookie(Builder builder) {
-        if (builder.f35843a == null) {
+        if (builder.f22152a == null) {
             throw new NullPointerException("builder.name == null");
         }
         if (builder.b == null) {
@@ -139,9 +139,9 @@ public final class Cookie {
         if (builder.d == null) {
             throw new NullPointerException("builder.domain == null");
         }
-        this.e = builder.f35843a;
+        this.e = builder.f22152a;
         this.f = builder.b;
-        this.g = builder.f35844c;
+        this.g = builder.f22153c;
         this.h = builder.d;
         this.i = builder.e;
         this.j = builder.f;
@@ -182,7 +182,7 @@ public final class Cookie {
             return parseLong;
         } catch (NumberFormatException e) {
             if (str.matches("-?\\d+")) {
-                return str.startsWith("-") ? Long.MIN_VALUE : Long.MAX_VALUE;
+                return str.startsWith(Constants.ACCEPT_TIME_SEPARATOR_SERVER) ? Long.MIN_VALUE : Long.MAX_VALUE;
             }
             throw e;
         }
@@ -213,7 +213,7 @@ public final class Cookie {
                 i3 = i9;
                 i5 = i11;
                 i6 = i12;
-            } else if (i11 == -1 && matcher.usePattern(f35842c).matches()) {
+            } else if (i11 == -1 && matcher.usePattern(f22151c).matches()) {
                 i5 = Integer.parseInt(matcher.group(1));
                 i3 = i9;
                 i4 = i10;
@@ -241,7 +241,7 @@ public final class Cookie {
                     i6 = i12;
                     i7 = i13;
                     i8 = i14;
-                    if (matcher.usePattern(f35841a).matches()) {
+                    if (matcher.usePattern(f22150a).matches()) {
                         i3 = Integer.parseInt(matcher.group(1));
                         i8 = i14;
                         i7 = i13;
@@ -324,7 +324,7 @@ public final class Cookie {
             return true;
         }
         if (encodedPath.startsWith(str)) {
-            return str.endsWith(BridgeUtil.SPLIT_MARK) || encodedPath.charAt(str.length()) == '/';
+            return str.endsWith("/") || encodedPath.charAt(str.length()) == '/';
         }
         return false;
     }

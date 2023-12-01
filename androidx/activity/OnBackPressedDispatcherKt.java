@@ -9,19 +9,19 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/activity/OnBackPressedDispatcherKt.class */
 public final class OnBackPressedDispatcherKt {
-    public static final OnBackPressedCallback addCallback(OnBackPressedDispatcher addCallback, LifecycleOwner lifecycleOwner, final boolean z, final Function1<? super OnBackPressedCallback, Unit> onBackPressed) {
-        Intrinsics.e(addCallback, "$this$addCallback");
-        Intrinsics.e(onBackPressed, "onBackPressed");
+    public static final OnBackPressedCallback addCallback(OnBackPressedDispatcher onBackPressedDispatcher, LifecycleOwner lifecycleOwner, final boolean z, final Function1<? super OnBackPressedCallback, Unit> function1) {
+        Intrinsics.e(onBackPressedDispatcher, "$this$addCallback");
+        Intrinsics.e(function1, "onBackPressed");
         OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(z) { // from class: androidx.activity.OnBackPressedDispatcherKt$addCallback$callback$1
             @Override // androidx.activity.OnBackPressedCallback
             public void handleOnBackPressed() {
-                Function1.this.invoke(this);
+                function1.invoke(this);
             }
         };
         if (lifecycleOwner != null) {
-            addCallback.addCallback(lifecycleOwner, onBackPressedCallback);
+            onBackPressedDispatcher.addCallback(lifecycleOwner, onBackPressedCallback);
         } else {
-            addCallback.addCallback(onBackPressedCallback);
+            onBackPressedDispatcher.addCallback(onBackPressedCallback);
         }
         return onBackPressedCallback;
     }

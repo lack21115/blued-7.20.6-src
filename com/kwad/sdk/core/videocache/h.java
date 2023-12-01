@@ -5,6 +5,7 @@ import com.google.common.net.HttpHeaders;
 import com.kwad.sdk.core.network.q;
 import com.kwad.sdk.core.network.s;
 import com.kwad.sdk.utils.ao;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -75,7 +76,7 @@ public final class h implements l {
             s.wrapHttpURLConnection(httpURLConnection);
             a(httpURLConnection, str2);
             if (i3 > 0) {
-                httpURLConnection.setRequestProperty("Range", "bytes=" + j + "-");
+                httpURLConnection.setRequestProperty("Range", "bytes=" + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             }
             if (i > 0) {
                 httpURLConnection.setConnectTimeout(i);
@@ -212,7 +213,7 @@ public final class h implements l {
     }
 
     public final String toString() {
-        return "HttpUrlSource{sourceInfo='" + this.anS + com.alipay.sdk.util.i.d;
+        return "HttpUrlSource{sourceInfo='" + this.anS + "}";
     }
 
     public final String yF() {

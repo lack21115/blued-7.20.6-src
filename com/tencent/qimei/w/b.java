@@ -4,11 +4,11 @@ import com.tencent.qimei.v.g;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qimei/w/b.class */
 public enum b implements com.tencent.qimei.f.a<Integer> {
-    KEY_DATA_QM_REPORT_RATE("reportRate", com.tencent.qimei.v.d.f38422a.C()),
-    KEY_DATA_QM_JS_TIME("jsTime", com.tencent.qimei.v.d.f38422a.c()),
-    KEY_DATA_QM_X5_TIME("x5Time", com.tencent.qimei.v.d.f38422a.k()),
-    KEY_DATA_QM_MIN_HID_RUN("minHr", com.tencent.qimei.v.d.f38422a.x()),
-    KEY_DATA_QM_ARDT("ardt", com.tencent.qimei.v.d.f38422a.s());
+    KEY_DATA_QM_REPORT_RATE("reportRate", com.tencent.qimei.v.d.f24731a.C()),
+    KEY_DATA_QM_JS_TIME("jsTime", com.tencent.qimei.v.d.f24731a.c()),
+    KEY_DATA_QM_X5_TIME("x5Time", com.tencent.qimei.v.d.f24731a.k()),
+    KEY_DATA_QM_MIN_HID_RUN("minHr", com.tencent.qimei.v.d.f24731a.x()),
+    KEY_DATA_QM_ARDT("ardt", com.tencent.qimei.v.d.f24731a.s());
     
     public static final com.tencent.qimei.h.a<Integer> f;
     public final String h;

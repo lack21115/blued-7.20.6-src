@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentAdVideoBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28780a;
+    private final FrameLayout f15090a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28780a;
+        return this.f15090a;
     }
 }

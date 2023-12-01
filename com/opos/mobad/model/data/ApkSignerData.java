@@ -23,16 +23,16 @@ public class ApkSignerData extends a implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f26464a;
+    public final String f12776a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f26465c;
+    public final String f12777c;
 
     public ApkSignerData(String str, String str2, String str3) {
-        this.f26464a = str;
+        this.f12776a = str;
         this.b = str2;
-        this.f26465c = str3;
+        this.f12777c = str3;
     }
 
     @Override // android.os.Parcelable
@@ -41,13 +41,13 @@ public class ApkSignerData extends a implements Parcelable {
     }
 
     public String toString() {
-        return "ApkSignerData{md5=" + this.f26464a + ", sha1='" + this.b + "', sha256=" + this.f26465c + '}';
+        return "ApkSignerData{md5=" + this.f12776a + ", sha1='" + this.b + "', sha256=" + this.f12777c + '}';
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f26464a);
+        parcel.writeString(this.f12776a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f26465c);
+        parcel.writeString(this.f12777c);
     }
 }

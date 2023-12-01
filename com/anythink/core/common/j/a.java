@@ -44,12 +44,12 @@ public class a extends o<f> {
         }
         com.anythink.core.c.a b = com.anythink.core.c.b.a(n.a().g()).b(n.a().p());
         f fVar = new f();
-        fVar.f6657a = i;
+        fVar.a = i;
         fVar.b = ahVar;
         if (j <= 0) {
             j = System.currentTimeMillis();
         }
-        fVar.f6658c = j;
+        fVar.c = j;
         r.a(n.a().g()).a(i, fVar, b);
         if (a(i, ahVar, b)) {
             return null;
@@ -88,16 +88,16 @@ public class a extends o<f> {
     private void a(e eVar, ai aiVar) {
         List<String> w;
         List<ai> G;
-        com.anythink.core.common.e.b a2;
+        com.anythink.core.common.e.b a;
         m N;
         String W = eVar.W();
-        com.anythink.core.c.d a3 = com.anythink.core.c.e.a(this.e).a(W);
-        if (a3 == null || (w = a3.w()) == null || w.size() == 0 || (G = a3.G()) == null || G.size() == 0) {
+        com.anythink.core.c.d a2 = com.anythink.core.c.e.a(this.e).a(W);
+        if (a2 == null || (w = a2.w()) == null || w.size() == 0 || (G = a2.G()) == null || G.size() == 0) {
             return;
         }
         for (ai aiVar2 : G) {
             try {
-                if (w.contains(String.valueOf(aiVar2.c())) && (a2 = com.anythink.core.common.a.a().a(W, aiVar2)) != null && (N = a2.e().getUnitGroupInfo().N()) != null) {
+                if (w.contains(String.valueOf(aiVar2.c())) && (a = com.anythink.core.common.a.a().a(W, aiVar2)) != null && (N = a.e().getUnitGroupInfo().N()) != null) {
                     N.a(false, g.a(aiVar), aiVar.j());
                 }
             } catch (Throwable th) {
@@ -153,12 +153,12 @@ public class a extends o<f> {
         }
         com.anythink.core.c.a b = com.anythink.core.c.b.a(n.a().g()).b(n.a().p());
         f fVar = new f();
-        fVar.f6657a = i;
+        fVar.a = i;
         fVar.b = ahVar;
         if (j <= 0) {
             j = System.currentTimeMillis();
         }
-        fVar.f6658c = j;
+        fVar.c = j;
         r.a(n.a().g()).a(i, fVar, b);
         if (a(i, ahVar, b)) {
             return null;
@@ -183,20 +183,20 @@ public class a extends o<f> {
     }
 
     static /* synthetic */ boolean b(int i, ah ahVar) {
-        Map<String, String> a2;
+        Map<String, String> a;
         if (ahVar instanceof e) {
             e eVar = (e) ahVar;
             if (eVar.H() == 67) {
                 return true;
             }
-            if (eVar.H() == 0 || TextUtils.isEmpty(ahVar.Y()) || (a2 = com.anythink.core.c.b.a(n.a().g()).b(n.a().p()).a(i)) == null) {
+            if (eVar.H() == 0 || TextUtils.isEmpty(ahVar.Y()) || (a = com.anythink.core.c.b.a(n.a().g()).b(n.a().p()).a(i)) == null) {
                 return false;
             }
-            if (a2.containsKey("0")) {
-                String str = a2.get("0");
+            if (a.containsKey("0")) {
+                String str = a.get("0");
                 return !TextUtils.isEmpty(str) && str.contains(ahVar.Y());
-            } else if (a2.containsKey(String.valueOf(eVar.H()))) {
-                String str2 = a2.get(String.valueOf(eVar.H()));
+            } else if (a.containsKey(String.valueOf(eVar.H()))) {
+                String str2 = a.get(String.valueOf(eVar.H()));
                 return !TextUtils.isEmpty(str2) && str2.contains(ahVar.Y());
             } else {
                 return false;
@@ -206,20 +206,20 @@ public class a extends o<f> {
     }
 
     private static boolean c(int i, ah ahVar) {
-        Map<String, String> a2;
+        Map<String, String> a;
         if (ahVar instanceof e) {
             e eVar = (e) ahVar;
             if (eVar.H() == 67) {
                 return true;
             }
-            if (eVar.H() == 0 || TextUtils.isEmpty(ahVar.Y()) || (a2 = com.anythink.core.c.b.a(n.a().g()).b(n.a().p()).a(i)) == null) {
+            if (eVar.H() == 0 || TextUtils.isEmpty(ahVar.Y()) || (a = com.anythink.core.c.b.a(n.a().g()).b(n.a().p()).a(i)) == null) {
                 return false;
             }
-            if (a2.containsKey("0")) {
-                String str = a2.get("0");
+            if (a.containsKey("0")) {
+                String str = a.get("0");
                 return !TextUtils.isEmpty(str) && str.contains(ahVar.Y());
-            } else if (a2.containsKey(String.valueOf(eVar.H()))) {
-                String str2 = a2.get(String.valueOf(eVar.H()));
+            } else if (a.containsKey(String.valueOf(eVar.H()))) {
+                String str2 = a.get(String.valueOf(eVar.H()));
                 return !TextUtils.isEmpty(str2) && str2.contains(ahVar.Y());
             } else {
                 return false;
@@ -277,11 +277,11 @@ public class a extends o<f> {
                     if ((ahVar instanceof e) && n.a().H()) {
                         i.a().a(i, (e) ahVar);
                     }
-                    f a2 = a.a(a.this, i, ahVar, aiVar, j);
-                    if (a2 == null) {
+                    f a = a.a(a.this, i, ahVar, aiVar, j);
+                    if (a == null) {
                         return;
                     }
-                    a.super.a((a) a2, a.b(i, ahVar));
+                    a.super.a((a) a, a.b(i, ahVar));
                 }
             });
         }

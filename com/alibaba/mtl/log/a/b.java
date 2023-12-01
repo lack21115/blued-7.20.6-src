@@ -9,9 +9,7 @@ import java.util.HashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/a/b.class */
 public class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static b f4479a = new b();
+    private static b a = new b();
     private static String P = "http://adashx.m.taobao.com/rest/gc2";
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -32,16 +30,16 @@ public class b {
                     return;
                 }
                 HashMap hashMap = new HashMap();
-                String m2162b = com.alibaba.mtl.log.a.a.m2162b("b01n15");
-                String m2162b2 = com.alibaba.mtl.log.a.a.m2162b("b01na");
-                hashMap.put("_b01n15", m2162b);
-                hashMap.put("_b01na", m2162b2);
+                String m8605b = com.alibaba.mtl.log.a.a.m8605b("b01n15");
+                String m8605b2 = com.alibaba.mtl.log.a.a.m8605b("b01na");
+                hashMap.put("_b01n15", m8605b);
+                hashMap.put("_b01na", m8605b2);
                 try {
                     String b = t.b(b.P, hashMap, null);
                     i.a("ConfigMgr", "config:" + b);
-                    e.a a2 = com.alibaba.mtl.log.e.e.a(1, b, null, false);
-                    if (a2.e != null) {
-                        com.alibaba.mtl.log.a.a.h(new String(a2.e, 0, a2.e.length));
+                    e.a a = com.alibaba.mtl.log.e.e.a(1, b, null, false);
+                    if (a.e != null) {
+                        com.alibaba.mtl.log.a.a.h(new String(a.e, 0, a.e.length));
                         com.alibaba.mtl.log.a.a.q();
                         return;
                     }
@@ -58,7 +56,7 @@ public class b {
     }
 
     public static b a() {
-        return f4479a;
+        return a;
     }
 
     public void r() {

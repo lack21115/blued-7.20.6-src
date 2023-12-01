@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStore;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -51,13 +52,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/dialog/SelectTopicDialogFragment.class */
 public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f19940a = new Companion(null);
+    public static final Companion a = new Companion(null);
     public SuperTopicAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public NoDataAndLoadFailView f19941c;
+    public NoDataAndLoadFailView c;
     private DialogFeedPostTopicBinding d;
     private SelectTopicViewModel e;
     private boolean f;
@@ -200,7 +197,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             Intrinsics.c("viewBinding");
             dialogFeedPostTopicBinding2 = null;
         }
-        KeyboardUtils.b(context, dialogFeedPostTopicBinding2.f.getEditView());
+        KeyboardUtils.b(context, (View) dialogFeedPostTopicBinding2.f.getEditView());
         return false;
     }
 
@@ -248,7 +245,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             Intrinsics.c("mViewModel");
             selectTopicViewModel4 = null;
         }
-        h2.setNewData(selectTopicViewModel4.j().getValue());
+        h2.setNewData((List) selectTopicViewModel4.j().getValue());
         h().a(new SuperTopicAdapter.OnShowListener() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$1
             @Override // com.blued.community.ui.topic.adapter.SuperTopicAdapter.OnShowListener
             public void a(BluedTopic bluedTopic) {
@@ -272,14 +269,14 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
         i().setImageScale(0.7f);
         i().d();
         h().setEmptyView(i());
-        SelectTopicDialogFragment selectTopicDialogFragment = this;
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
         SelectTopicViewModel selectTopicViewModel5 = this.e;
         SelectTopicViewModel selectTopicViewModel6 = selectTopicViewModel5;
         if (selectTopicViewModel5 == null) {
             Intrinsics.c("mViewModel");
             selectTopicViewModel6 = null;
         }
-        LifecycleExtKt.a(selectTopicDialogFragment, selectTopicViewModel6.j(), new Function1<List<BluedTopic>, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$2
+        LifecycleExtKt.a(lifecycleOwner, selectTopicViewModel6.j(), new Function1<List<BluedTopic>, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -292,7 +289,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(List<BluedTopic> list) {
                 a(list);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         SelectTopicViewModel selectTopicViewModel7 = this.e;
@@ -301,7 +298,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             Intrinsics.c("mViewModel");
             selectTopicViewModel8 = null;
         }
-        LifecycleExtKt.a(selectTopicDialogFragment, selectTopicViewModel8.k(), new Function1<String, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$3
+        LifecycleExtKt.a(lifecycleOwner, selectTopicViewModel8.k(), new Function1<String, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -314,7 +311,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(String str) {
                 a(str);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         SelectTopicViewModel selectTopicViewModel9 = this.e;
@@ -323,7 +320,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             Intrinsics.c("mViewModel");
             selectTopicViewModel10 = null;
         }
-        LifecycleExtKt.a(selectTopicDialogFragment, selectTopicViewModel10.l(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$4
+        LifecycleExtKt.a(lifecycleOwner, selectTopicViewModel10.l(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$4
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -348,7 +345,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Boolean bool) {
                 a(bool);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         SelectTopicViewModel selectTopicViewModel11 = this.e;
@@ -356,7 +353,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             Intrinsics.c("mViewModel");
             selectTopicViewModel11 = null;
         }
-        LifecycleExtKt.a(selectTopicDialogFragment, selectTopicViewModel11.m(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$5
+        LifecycleExtKt.a(lifecycleOwner, selectTopicViewModel11.m(), new Function1<Boolean, Unit>() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initData$5
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -393,7 +390,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Boolean bool) {
                 a(bool);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -420,7 +417,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
                 Intrinsics.c("viewBinding");
                 dialogFeedPostTopicBinding4 = null;
             }
-            dialogFeedPostTopicBinding4.f18803a.setText("添加主题");
+            dialogFeedPostTopicBinding4.a.setText("添加主题");
             DialogFeedPostTopicBinding dialogFeedPostTopicBinding5 = this.d;
             DialogFeedPostTopicBinding dialogFeedPostTopicBinding6 = dialogFeedPostTopicBinding5;
             if (dialogFeedPostTopicBinding5 == null) {
@@ -435,7 +432,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
                 Intrinsics.c("viewBinding");
                 dialogFeedPostTopicBinding8 = null;
             }
-            dialogFeedPostTopicBinding8.f18803a.setText(getString(R.string.feed_post_super_topic));
+            dialogFeedPostTopicBinding8.a.setText(getString(R.string.feed_post_super_topic));
             DialogFeedPostTopicBinding dialogFeedPostTopicBinding9 = this.d;
             DialogFeedPostTopicBinding dialogFeedPostTopicBinding10 = dialogFeedPostTopicBinding9;
             if (dialogFeedPostTopicBinding9 == null) {
@@ -469,7 +466,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             Intrinsics.c("mViewModel");
             selectTopicViewModel4 = null;
         }
-        editView.setText(selectTopicViewModel4.k().getValue());
+        editView.setText((CharSequence) selectTopicViewModel4.k().getValue());
         DialogFeedPostTopicBinding dialogFeedPostTopicBinding15 = this.d;
         DialogFeedPostTopicBinding dialogFeedPostTopicBinding16 = dialogFeedPostTopicBinding15;
         if (dialogFeedPostTopicBinding15 == null) {
@@ -547,7 +544,6 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
             dialogFeedPostTopicBinding30 = null;
         }
         dialogFeedPostTopicBinding30.d.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.blued.community.ui.send.dialog.SelectTopicDialogFragment$initView$4
-            @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
                 Intrinsics.e(recyclerView, "recyclerView");
                 super.onScrolled(recyclerView, i, i2);
@@ -570,7 +566,6 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
         }
         dialogFeedPostTopicBinding34.d.setAdapter(h());
         h().setOnItemClickListener(new SingleItemClickProxy(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectTopicDialogFragment$KOCj6ZzasWrgIblS55yDwJLZ5eM
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 SelectTopicDialogFragment.a(SelectTopicDialogFragment.this, baseQuickAdapter, view, i);
             }
@@ -579,7 +574,6 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
         h().setEnableLoadMore(true);
         SuperTopicAdapter h = h();
         BaseQuickAdapter.RequestLoadMoreListener requestLoadMoreListener = new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.community.ui.send.dialog.-$$Lambda$SelectTopicDialogFragment$K6VnGALNoEJ_CnKz8NRfrTBBBYs
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public final void onLoadMoreRequested() {
                 SelectTopicDialogFragment.c(SelectTopicDialogFragment.this);
             }
@@ -654,7 +648,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
 
     public final void a(NoDataAndLoadFailView noDataAndLoadFailView) {
         Intrinsics.e(noDataAndLoadFailView, "<set-?>");
-        this.f19941c = noDataAndLoadFailView;
+        this.c = noDataAndLoadFailView;
     }
 
     public final void a(OnTopicListener onTopicListener) {
@@ -714,7 +708,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
     }
 
     public final NoDataAndLoadFailView i() {
-        NoDataAndLoadFailView noDataAndLoadFailView = this.f19941c;
+        NoDataAndLoadFailView noDataAndLoadFailView = this.c;
         if (noDataAndLoadFailView != null) {
             return noDataAndLoadFailView;
         }
@@ -730,7 +724,7 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
         dismiss();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         ViewModelStore viewModelStore = requireActivity().getViewModelStore();
@@ -743,14 +737,14 @@ public final class SelectTopicDialogFragment extends BottomSheetDialogFragment {
         this.e = (SelectTopicViewModel) new ViewModelProvider(viewModelStore, companion.getInstance((Application) d)).get(SelectTopicViewModel.class);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
         n();
         super.onDismiss(dialog);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

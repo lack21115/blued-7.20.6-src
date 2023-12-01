@@ -11,39 +11,35 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogNewUserGiftInfoBinding.class */
 public final class DialogNewUserGiftInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f16370a;
+    public final ConstraintLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f16371c;
+    public final RecyclerView c;
     public final ShapeTextView d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private DialogNewUserGiftInfoBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ImageView imageView, RecyclerView recyclerView, ShapeTextView shapeTextView, TextView textView) {
         this.f = constraintLayout;
-        this.f16370a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = imageView;
-        this.f16371c = recyclerView;
+        this.c = recyclerView;
         this.d = shapeTextView;
         this.e = textView;
     }
 
     public static DialogNewUserGiftInfoBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl);
-        if (constraintLayout != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.cl);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_close);
             if (imageView != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv);
-                if (recyclerView != null) {
+                RecyclerView findViewById2 = view.findViewById(R.id.rcv);
+                if (findViewById2 != null) {
                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv);
                     if (shapeTextView != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_type);
                         if (textView != null) {
-                            return new DialogNewUserGiftInfoBinding((ConstraintLayout) view, constraintLayout, imageView, recyclerView, shapeTextView, textView);
+                            return new DialogNewUserGiftInfoBinding((ConstraintLayout) view, findViewById, imageView, findViewById2, shapeTextView, textView);
                         }
                         str = "tvType";
                     } else {
@@ -61,7 +57,6 @@ public final class DialogNewUserGiftInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

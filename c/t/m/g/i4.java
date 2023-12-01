@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,11 +23,11 @@ import java.util.List;
 public class i4 extends ScanCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f3839a;
+    public final Context f3791a;
     public BluetoothManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    public BluetoothAdapter f3840c;
+    public BluetoothAdapter f3792c;
     public BluetoothLeScanner d;
     public boolean j;
     public a k;
@@ -48,10 +49,10 @@ public class i4 extends ScanCallback {
             switch (message.what) {
                 case 99001:
                     i4 i4Var = i4.this;
-                    i4Var.f3840c = i4Var.b == null ? null : i4.this.b.getAdapter();
-                    if (i4.this.f3840c != null) {
+                    i4Var.f3792c = i4Var.b == null ? null : i4.this.b.getAdapter();
+                    if (i4.this.f3792c != null) {
                         i4 i4Var2 = i4.this;
-                        i4Var2.d = i4Var2.f3840c.getBluetoothLeScanner();
+                        i4Var2.d = i4Var2.f3792c.getBluetoothLeScanner();
                     }
                     i4.this.c();
                     return;
@@ -80,8 +81,8 @@ public class i4 extends ScanCallback {
     }
 
     public i4(Context context) {
-        this.f3839a = context;
-        this.b = (BluetoothManager) this.f3839a.getSystemService("bluetooth");
+        this.f3791a = context;
+        this.b = (BluetoothManager) this.f3791a.getSystemService("bluetooth");
         for (String str : this.i) {
             this.f.add(b(str));
         }
@@ -158,7 +159,7 @@ public class i4 extends ScanCallback {
 
     public final ScanFilter b(String str) {
         byte[] bArr = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        System.arraycopy((Object) a(str.replace("-", "")), 0, (Object) bArr, 2, 16);
+        System.arraycopy(a(str.replace(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "")), 0, bArr, 2, 16);
         return new ScanFilter.Builder().setManufacturerData(76, bArr, new byte[]{0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0}).build();
     }
 
@@ -177,8 +178,8 @@ public class i4 extends ScanCallback {
 
     public final int c() {
         try {
-            if (this.f3839a.getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
-                if (this.f3840c == null || !this.f3840c.isEnabled() || this.d == null) {
+            if (this.f3791a.getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+                if (this.f3792c == null || !this.f3792c.isEnabled() || this.d == null) {
                     return -2;
                 }
                 this.d.startScan(this.f, this.e, this);
@@ -194,11 +195,11 @@ public class i4 extends ScanCallback {
     public final void d() {
         try {
             synchronized (this.m) {
-                if (this.f3839a.getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+                if (this.f3791a.getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
                     if (this.d != null) {
                         this.d.stopScan(this);
                     }
-                    this.f3840c = null;
+                    this.f3792c = null;
                     this.j = false;
                     synchronized (this.g) {
                         this.g.clear();

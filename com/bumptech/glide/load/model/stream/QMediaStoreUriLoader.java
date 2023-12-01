@@ -25,28 +25,28 @@ import java.io.InputStream;
 public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f20924a;
+    private final Context f7318a;
     private final ModelLoader<File, DataT> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ModelLoader<Uri, DataT> f20925c;
+    private final ModelLoader<Uri, DataT> f7319c;
     private final Class<DataT> d;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/stream/QMediaStoreUriLoader$Factory.class */
     static abstract class Factory<DataT> implements ModelLoaderFactory<Uri, DataT> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f20926a;
+        private final Context f7320a;
         private final Class<DataT> b;
 
         Factory(Context context, Class<DataT> cls) {
-            this.f20926a = context;
+            this.f7320a = context;
             this.b = cls;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public final ModelLoader<Uri, DataT> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new QMediaStoreUriLoader(this.f20926a, multiModelLoaderFactory.b(File.class, this.b), multiModelLoaderFactory.b(Uri.class, this.b), this.b);
+            return new QMediaStoreUriLoader(this.f7320a, multiModelLoaderFactory.b(File.class, this.b), multiModelLoaderFactory.b(Uri.class, this.b), this.b);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -73,11 +73,11 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
     public static final class QMediaStoreUriFetcher<DataT> implements DataFetcher<DataT> {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String[] f20927a = {"_data"};
+        private static final String[] f7321a = {"_data"};
         private final Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final ModelLoader<File, DataT> f20928c;
+        private final ModelLoader<File, DataT> f7322c;
         private final ModelLoader<Uri, DataT> d;
         private final Uri e;
         private final int f;
@@ -89,7 +89,7 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
 
         QMediaStoreUriFetcher(Context context, ModelLoader<File, DataT> modelLoader, ModelLoader<Uri, DataT> modelLoader2, Uri uri, int i, int i2, Options options, Class<DataT> cls) {
             this.b = context.getApplicationContext();
-            this.f20928c = modelLoader;
+            this.f7322c = modelLoader;
             this.d = modelLoader2;
             this.e = uri;
             this.f = i;
@@ -101,7 +101,7 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
         private File a(Uri uri) throws FileNotFoundException {
             AutoCloseable autoCloseable = null;
             try {
-                Cursor query = this.b.getContentResolver().query(uri, f20927a, null, null, null);
+                Cursor query = this.b.getContentResolver().query(uri, f7321a, null, null, null);
                 if (query == null || !query.moveToFirst()) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("Failed to media store entry for: ");
@@ -131,14 +131,14 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
         private DataFetcher<DataT> e() throws FileNotFoundException {
             ModelLoader.LoadData<DataT> f = f();
             if (f != null) {
-                return f.f20891c;
+                return f.f7285c;
             }
             return null;
         }
 
         private ModelLoader.LoadData<DataT> f() throws FileNotFoundException {
             if (Environment.isExternalStorageLegacy()) {
-                return this.f20928c.a(a(this.e), this.f, this.g, this.h);
+                return this.f7322c.a(a(this.e), this.f, this.g, this.h);
             }
             return this.d.a(g() ? MediaStore.setRequireOriginal(this.e) : this.e, this.f, this.g, this.h);
         }
@@ -195,15 +195,15 @@ public final class QMediaStoreUriLoader<DataT> implements ModelLoader<Uri, DataT
     }
 
     QMediaStoreUriLoader(Context context, ModelLoader<File, DataT> modelLoader, ModelLoader<Uri, DataT> modelLoader2, Class<DataT> cls) {
-        this.f20924a = context.getApplicationContext();
+        this.f7318a = context.getApplicationContext();
         this.b = modelLoader;
-        this.f20925c = modelLoader2;
+        this.f7319c = modelLoader2;
         this.d = cls;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<DataT> a(Uri uri, int i, int i2, Options options) {
-        return new ModelLoader.LoadData<>(new ObjectKey(uri), new QMediaStoreUriFetcher(this.f20924a, this.b, this.f20925c, uri, i, i2, options, this.d));
+        return new ModelLoader.LoadData<>(new ObjectKey(uri), new QMediaStoreUriFetcher(this.f7318a, this.b, this.f7319c, uri, i, i2, options, this.d));
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

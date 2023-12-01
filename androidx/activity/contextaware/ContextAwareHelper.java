@@ -8,14 +8,14 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public final class ContextAwareHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Set<OnContextAvailableListener> f1500a = new CopyOnWriteArraySet();
+    private final Set<OnContextAvailableListener> f1452a = new CopyOnWriteArraySet();
     private volatile Context b;
 
     public void addOnContextAvailableListener(OnContextAvailableListener onContextAvailableListener) {
         if (this.b != null) {
             onContextAvailableListener.onContextAvailable(this.b);
         }
-        this.f1500a.add(onContextAvailableListener);
+        this.f1452a.add(onContextAvailableListener);
     }
 
     public void clearAvailableContext() {
@@ -24,7 +24,7 @@ public final class ContextAwareHelper {
 
     public void dispatchOnContextAvailable(Context context) {
         this.b = context;
-        for (OnContextAvailableListener onContextAvailableListener : this.f1500a) {
+        for (OnContextAvailableListener onContextAvailableListener : this.f1452a) {
             onContextAvailableListener.onContextAvailable(context);
         }
     }
@@ -34,6 +34,6 @@ public final class ContextAwareHelper {
     }
 
     public void removeOnContextAvailableListener(OnContextAvailableListener onContextAvailableListener) {
-        this.f1500a.remove(onContextAvailableListener);
+        this.f1452a.remove(onContextAvailableListener);
     }
 }

@@ -11,14 +11,14 @@ import java.lang.ref.WeakReference;
 public class KSATDrawAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    Context f8981a;
+    Context f6141a;
     KsDrawAd b;
 
     /* renamed from: c  reason: collision with root package name */
-    View f8982c;
+    View f6142c;
 
     public KSATDrawAd(Context context, KsDrawAd ksDrawAd) {
-        this.f8981a = context;
+        this.f6141a = context;
         this.b = ksDrawAd;
     }
 
@@ -26,23 +26,23 @@ public class KSATDrawAd extends CustomNativeAd {
     public void clear(View view) {
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         KsDrawAd ksDrawAd = this.b;
         if (ksDrawAd != null) {
             ksDrawAd.setAdInteractionListener(null);
             this.b = null;
         }
-        this.f8981a = null;
+        this.f6141a = null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         try {
-            if (this.f8982c == null) {
-                this.f8982c = this.b.getDrawView(this.f8981a);
+            if (this.f6142c == null) {
+                this.f6142c = this.b.getDrawView(this.f6141a);
             }
-            return this.f8982c;
+            return this.f6142c;
         } catch (Exception e) {
             return null;
         }

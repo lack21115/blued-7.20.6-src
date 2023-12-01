@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemVisitorAdBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29367a;
+    private final FrameLayout f15677a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29367a;
+        return this.f15677a;
     }
 }

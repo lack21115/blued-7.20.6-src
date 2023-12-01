@@ -10,24 +10,24 @@ import com.xiaomi.push.iq;
 public final class ch implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Cif f41665a;
+    final /* synthetic */ Cif f27974a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ch(Cif cif) {
-        this.f41665a = cif;
+        this.f27974a = cif;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         Context context;
         Context context2;
-        byte[] a2 = iq.a(ah.a(this.f41665a.c(), this.f41665a.b(), this.f41665a, hg.Notification));
-        context = cg.f41664a;
+        byte[] a2 = iq.a(ah.a(this.f27974a.c(), this.f27974a.b(), this.f27974a, hg.Notification));
+        context = cg.f27973a;
         if (!(context instanceof XMPushService)) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("UNDatas UploadNotificationDatas failed because not xmsf");
+            com.xiaomi.channel.commonutils.logger.b.m8344a("UNDatas UploadNotificationDatas failed because not xmsf");
             return;
         }
-        context2 = cg.f41664a;
-        ((XMPushService) context2).a(this.f41665a.c(), a2, true);
+        context2 = cg.f27973a;
+        ((XMPushService) context2).a(this.f27974a.c(), a2, true);
     }
 }

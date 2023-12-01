@@ -13,18 +13,18 @@ import androidx.constraintlayout.widget.SharedValues;
 public class ReactiveGuide extends View implements SharedValues.SharedValuesListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f2282a;
+    private int f2234a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2283c;
+    private int f2235c;
     private boolean d;
 
     public ReactiveGuide(Context context) {
         super(context);
-        this.f2282a = -1;
+        this.f2234a = -1;
         this.b = false;
-        this.f2283c = 0;
+        this.f2235c = 0;
         this.d = true;
         super.setVisibility(8);
         a(null);
@@ -32,9 +32,9 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
 
     public ReactiveGuide(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f2282a = -1;
+        this.f2234a = -1;
         this.b = false;
-        this.f2283c = 0;
+        this.f2235c = 0;
         this.d = true;
         super.setVisibility(8);
         a(attributeSet);
@@ -42,9 +42,9 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
 
     public ReactiveGuide(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f2282a = -1;
+        this.f2234a = -1;
         this.b = false;
-        this.f2283c = 0;
+        this.f2235c = 0;
         this.d = true;
         super.setVisibility(8);
         a(attributeSet);
@@ -52,9 +52,9 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
 
     public ReactiveGuide(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i);
-        this.f2282a = -1;
+        this.f2234a = -1;
         this.b = false;
-        this.f2283c = 0;
+        this.f2235c = 0;
         this.d = true;
         super.setVisibility(8);
         a(attributeSet);
@@ -78,11 +78,11 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
                 }
                 int index = obtainStyledAttributes.getIndex(i2);
                 if (index == R.styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_valueId) {
-                    this.f2282a = obtainStyledAttributes.getResourceId(index, this.f2282a);
+                    this.f2234a = obtainStyledAttributes.getResourceId(index, this.f2234a);
                 } else if (index == R.styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_animateChange) {
                     this.b = obtainStyledAttributes.getBoolean(index, this.b);
                 } else if (index == R.styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_applyToConstraintSet) {
-                    this.f2283c = obtainStyledAttributes.getResourceId(index, this.f2283c);
+                    this.f2235c = obtainStyledAttributes.getResourceId(index, this.f2235c);
                 } else if (index == R.styleable.ConstraintLayout_ReactiveGuide_reactiveGuide_applyToAllConstraintSets) {
                     this.d = obtainStyledAttributes.getBoolean(index, this.d);
                 }
@@ -90,8 +90,8 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
             }
             obtainStyledAttributes.recycle();
         }
-        if (this.f2282a != -1) {
-            ConstraintLayout.getSharedValues().addListener(this.f2282a, this);
+        if (this.f2234a != -1) {
+            ConstraintLayout.getSharedValues().addListener(this.f2234a, this);
         }
     }
 
@@ -100,20 +100,19 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
     }
 
     public int getApplyToConstraintSetId() {
-        return this.f2283c;
+        return this.f2235c;
     }
 
     public int getAttributeId() {
-        return this.f2282a;
+        return this.f2234a;
     }
 
     public boolean isAnimatingChange() {
         return this.b;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(0, 0);
     }
 
@@ -127,7 +126,7 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
         }
         MotionLayout motionLayout = (MotionLayout) getParent();
         int currentState = motionLayout.getCurrentState();
-        int i4 = this.f2283c;
+        int i4 = this.f2235c;
         if (i4 != 0) {
             currentState = i4;
         }
@@ -163,16 +162,16 @@ public class ReactiveGuide extends View implements SharedValues.SharedValuesList
     }
 
     public void setApplyToConstraintSetId(int i) {
-        this.f2283c = i;
+        this.f2235c = i;
     }
 
     public void setAttributeId(int i) {
         SharedValues sharedValues = ConstraintLayout.getSharedValues();
-        int i2 = this.f2282a;
+        int i2 = this.f2234a;
         if (i2 != -1) {
             sharedValues.removeListener(i2, this);
         }
-        this.f2282a = i;
+        this.f2234a = i;
         if (i != -1) {
             sharedValues.addListener(i, this);
         }

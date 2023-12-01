@@ -12,13 +12,9 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/GradientFill.class */
 public class GradientFill implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final GradientType f4338a;
+    private final GradientType a;
     private final Path.FillType b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableGradientColorValue f4339c;
+    private final AnimatableGradientColorValue c;
     private final AnimatableIntegerValue d;
     private final AnimatablePointValue e;
     private final AnimatablePointValue f;
@@ -28,9 +24,9 @@ public class GradientFill implements ContentModel {
     private final boolean j;
 
     public GradientFill(String str, GradientType gradientType, Path.FillType fillType, AnimatableGradientColorValue animatableGradientColorValue, AnimatableIntegerValue animatableIntegerValue, AnimatablePointValue animatablePointValue, AnimatablePointValue animatablePointValue2, AnimatableFloatValue animatableFloatValue, AnimatableFloatValue animatableFloatValue2, boolean z) {
-        this.f4338a = gradientType;
+        this.a = gradientType;
         this.b = fillType;
-        this.f4339c = animatableGradientColorValue;
+        this.c = animatableGradientColorValue;
         this.d = animatableIntegerValue;
         this.e = animatablePointValue;
         this.f = animatablePointValue2;
@@ -50,7 +46,7 @@ public class GradientFill implements ContentModel {
     }
 
     public GradientType b() {
-        return this.f4338a;
+        return this.a;
     }
 
     public Path.FillType c() {
@@ -58,7 +54,7 @@ public class GradientFill implements ContentModel {
     }
 
     public AnimatableGradientColorValue d() {
-        return this.f4339c;
+        return this.c;
     }
 
     public AnimatableIntegerValue e() {

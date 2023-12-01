@@ -7,7 +7,7 @@ import java.util.List;
 public class q2 implements p2 {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f37715a;
+    private boolean f24024a;
     private List<HttpProxyRule> b;
 
     @Override // com.tencent.mapsdk.internal.p2
@@ -16,7 +16,7 @@ public class q2 implements p2 {
     }
 
     public void a(o2 o2Var) {
-        this.f37715a = o2Var.f37673a;
+        this.f24024a = o2Var.f23982a;
         this.b = o2Var.b;
     }
 
@@ -25,11 +25,11 @@ public class q2 implements p2 {
     }
 
     public void a(boolean z) {
-        this.f37715a = z;
+        this.f24024a = z;
     }
 
     @Override // com.tencent.mapsdk.internal.p2
     public boolean b() {
-        return this.f37715a;
+        return this.f24024a;
     }
 }

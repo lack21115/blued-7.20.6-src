@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopLivePersonalCollectionLeftMenuBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29539a;
+    private final RelativeLayout f15849a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29539a;
+        return this.f15849a;
     }
 }

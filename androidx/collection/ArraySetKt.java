@@ -10,17 +10,17 @@ public final class ArraySetKt {
         return new ArraySet<>();
     }
 
-    public static final <T> ArraySet<T> arraySetOf(T... values) {
-        Intrinsics.d(values, "values");
-        ArraySet<T> arraySet = new ArraySet<>(values.length);
-        int length = values.length;
+    public static final <T> ArraySet<T> arraySetOf(T... tArr) {
+        Intrinsics.d(tArr, "values");
+        ArraySet<T> arraySet = new ArraySet<>(tArr.length);
+        int length = tArr.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return arraySet;
             }
-            arraySet.add(values[i2]);
+            arraySet.add(tArr[i2]);
             i = i2 + 1;
         }
     }

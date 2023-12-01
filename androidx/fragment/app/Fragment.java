@@ -55,7 +55,6 @@ import androidx.savedstate.SavedStateRegistry;
 import androidx.savedstate.SavedStateRegistryController;
 import androidx.savedstate.SavedStateRegistryOwner;
 import androidx.savedstate.ViewTreeSavedStateRegistryOwner;
-import com.alipay.sdk.util.i;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
@@ -136,11 +135,11 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
     public static class AnimationInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        View f2942a;
+        View f2894a;
         Animator b;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f2943c;
+        boolean f2895c;
         int d;
         int e;
         int f;
@@ -213,16 +212,16 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         };
 
         /* renamed from: a  reason: collision with root package name */
-        final Bundle f2944a;
+        final Bundle f2896a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public SavedState(Bundle bundle) {
-            this.f2944a = bundle;
+            this.f2896a = bundle;
         }
 
         SavedState(Parcel parcel, ClassLoader classLoader) {
             Bundle readBundle = parcel.readBundle();
-            this.f2944a = readBundle;
+            this.f2896a = readBundle;
             if (classLoader == null || readBundle == null) {
                 return;
             }
@@ -236,7 +235,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
-            parcel.writeBundle(this.f2944a);
+            parcel.writeBundle(this.f2896a);
         }
     }
 
@@ -380,7 +379,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         }
         if (onStartEnterTransitionListener != null) {
             onStartEnterTransitionListener.onStartEnterTransition();
-        } else if (!FragmentManager.f2967a || this.mView == null || (viewGroup = this.mContainer) == null || (fragmentManager = this.mFragmentManager) == null) {
+        } else if (!FragmentManager.f2919a || this.mView == null || (viewGroup = this.mContainer) == null || (fragmentManager = this.mFragmentManager) == null) {
         } else {
             final SpecialEffectsController a2 = SpecialEffectsController.a(viewGroup, fragmentManager);
             a2.a();
@@ -586,7 +585,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         if (animationInfo == null) {
             return null;
         }
-        return animationInfo.f2942a;
+        return animationInfo.f2894a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -780,7 +779,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         if (animationInfo == null) {
             return false;
         }
-        return animationInfo.f2943c;
+        return animationInfo.f2895c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1673,7 +1672,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void setAnimatingAway(View view) {
-        ensureAnimationInfo().f2942a = view;
+        ensureAnimationInfo().f2894a = view;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1739,7 +1738,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         if (this.mFragmentManager != null) {
             throw new IllegalStateException("Fragment already added");
         }
-        this.mSavedFragmentState = (savedState == null || savedState.f2944a == null) ? null : savedState.f2944a;
+        this.mSavedFragmentState = (savedState == null || savedState.f2896a == null) ? null : savedState.f2896a;
     }
 
     public void setMenuVisibility(boolean z) {
@@ -1782,7 +1781,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         if (this.mAnimationInfo == null) {
             return;
         }
-        ensureAnimationInfo().f2943c = z;
+        ensureAnimationInfo().f2895c = z;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1939,7 +1938,7 @@ public class Fragment implements ComponentCallbacks, View.OnCreateContextMenuLis
         sb.append(getClass().getSimpleName());
         sb.append("{");
         sb.append(Integer.toHexString(System.identityHashCode(this)));
-        sb.append(i.d);
+        sb.append("}");
         sb.append(" (");
         sb.append(this.mWho);
         if (this.mFragmentId != 0) {

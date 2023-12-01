@@ -16,11 +16,11 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public final class z implements i {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s[] f25598a;
+    private final s[] f11910a;
     private final com.opos.exoplayer.core.g.h b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.opos.exoplayer.core.g.i f25599c;
+    private final com.opos.exoplayer.core.g.i f11911c;
     private final Handler d;
     private final aa e;
     private final Handler f;
@@ -42,24 +42,24 @@ public final class z implements i {
     public z(s[] sVarArr, com.opos.exoplayer.core.g.h hVar, n nVar, com.opos.exoplayer.core.i.b bVar) {
         com.opos.cmn.an.f.a.a("ExoPlayerImpl", "Init " + Integer.toHexString(System.identityHashCode(this)) + " [ExoPlayerLib/2.7.3] [" + com.opos.exoplayer.core.i.u.e + "]");
         com.opos.exoplayer.core.i.a.b(sVarArr.length > 0);
-        this.f25598a = (s[]) com.opos.exoplayer.core.i.a.a(sVarArr);
+        this.f11910a = (s[]) com.opos.exoplayer.core.i.a.a(sVarArr);
         this.b = (com.opos.exoplayer.core.g.h) com.opos.exoplayer.core.i.a.a(hVar);
         this.j = false;
         this.k = 0;
         this.l = false;
         this.g = new CopyOnWriteArraySet<>();
-        this.f25599c = new com.opos.exoplayer.core.g.i(com.opos.exoplayer.core.e.m.f25311a, new boolean[sVarArr.length], new com.opos.exoplayer.core.g.g(new com.opos.exoplayer.core.g.f[sVarArr.length]), null, new u[sVarArr.length]);
+        this.f11911c = new com.opos.exoplayer.core.g.i(com.opos.exoplayer.core.e.m.f11623a, new boolean[sVarArr.length], new com.opos.exoplayer.core.g.g(new com.opos.exoplayer.core.g.f[sVarArr.length]), null, new u[sVarArr.length]);
         this.h = new y.b();
         this.i = new y.a();
-        this.p = p.f25554a;
+        this.p = p.f11866a;
         this.d = new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper()) { // from class: com.opos.exoplayer.core.z.1
             @Override // android.os.Handler
             public void handleMessage(Message message) {
                 z.this.a(message);
             }
         };
-        this.q = new ae(y.f25593a, 0L, this.f25599c);
-        this.e = new aa(sVarArr, hVar, this.f25599c, nVar, this.j, this.k, this.l, this.d, this, bVar);
+        this.q = new ae(y.f11905a, 0L, this.f11911c);
+        this.e = new aa(sVarArr, hVar, this.f11911c, nVar, this.j, this.k, this.l, this.d, this, bVar);
         this.f = new Handler(this.e.b());
     }
 
@@ -75,7 +75,7 @@ public final class z implements i {
             m = m();
         }
         this.t = m;
-        return new ae(z2 ? y.f25593a : this.q.f25063a, z2 ? null : this.q.b, this.q.f25064c, this.q.d, this.q.e, i, false, z2 ? this.f25599c : this.q.h);
+        return new ae(z2 ? y.f11905a : this.q.f11375a, z2 ? null : this.q.b, this.q.f11376c, this.q.d, this.q.e, i, false, z2 ? this.f11911c : this.q.h);
     }
 
     private void a(ae aeVar, int i, boolean z, int i2) {
@@ -84,9 +84,9 @@ public final class z implements i {
         if (i3 == 0) {
             ae aeVar2 = aeVar;
             if (aeVar.d == com.anythink.expressad.exoplayer.b.b) {
-                aeVar2 = aeVar.a(aeVar.f25064c, 0L, aeVar.e);
+                aeVar2 = aeVar.a(aeVar.f11376c, 0L, aeVar.e);
             }
-            if ((!this.q.f25063a.a() || this.n) && aeVar2.f25063a.a()) {
+            if ((!this.q.f11375a.a() || this.n) && aeVar2.f11375a.a()) {
                 this.s = 0;
                 this.r = 0;
                 this.t = 0L;
@@ -101,7 +101,7 @@ public final class z implements i {
 
     private void a(ae aeVar, boolean z, int i, int i2, boolean z2) {
         boolean z3 = false;
-        boolean z4 = (this.q.f25063a == aeVar.f25063a && this.q.b == aeVar.b) ? false : true;
+        boolean z4 = (this.q.f11375a == aeVar.f11375a && this.q.b == aeVar.b) ? false : true;
         boolean z5 = this.q.f != aeVar.f;
         boolean z6 = this.q.g != aeVar.g;
         if (this.q.h != aeVar.h) {
@@ -111,7 +111,7 @@ public final class z implements i {
         if (z4 || i2 == 0) {
             Iterator<q.b> it = this.g.iterator();
             while (it.hasNext()) {
-                it.next().a(this.q.f25063a, this.q.b, i2);
+                it.next().a(this.q.f11375a, this.q.b, i2);
             }
         }
         if (z) {
@@ -124,7 +124,7 @@ public final class z implements i {
             this.b.a(this.q.h.d);
             Iterator<q.b> it3 = this.g.iterator();
             while (it3.hasNext()) {
-                it3.next().a(this.q.h.f25438a, this.q.h.f25439c);
+                it3.next().a(this.q.h.f11750a, this.q.h.f11751c);
             }
         }
         if (z6) {
@@ -150,15 +150,15 @@ public final class z implements i {
     private long b(long j) {
         long a2 = b.a(j);
         long j2 = a2;
-        if (!this.q.f25064c.a()) {
-            this.q.f25063a.a(this.q.f25064c.f25286a, this.i);
+        if (!this.q.f11376c.a()) {
+            this.q.f11375a.a(this.q.f11376c.f11598a, this.i);
             j2 = a2 + this.i.b();
         }
         return j2;
     }
 
     private boolean r() {
-        return this.q.f25063a.a() || this.m > 0;
+        return this.q.f11375a.a() || this.m > 0;
     }
 
     @Override // com.opos.exoplayer.core.q
@@ -168,7 +168,7 @@ public final class z implements i {
 
     @Override // com.opos.exoplayer.core.i
     public r a(r.b bVar) {
-        return new r(this.e, bVar, this.q.f25063a, i(), this.f);
+        return new r(this.e, bVar, this.q.f11375a, i(), this.f);
     }
 
     @Override // com.opos.exoplayer.core.q
@@ -185,7 +185,7 @@ public final class z implements i {
 
     @Override // com.opos.exoplayer.core.q
     public void a(int i, long j) {
-        y yVar = this.q.f25063a;
+        y yVar = this.q.f11375a;
         if (i < 0 || (!yVar.a() && i >= yVar.b())) {
             throw new m(yVar, i, j);
         }
@@ -282,7 +282,7 @@ public final class z implements i {
 
     @Override // com.opos.exoplayer.core.q
     public int b(int i) {
-        return this.f25598a[i].a();
+        return this.f11910a[i].a();
     }
 
     @Override // com.opos.exoplayer.core.q
@@ -319,22 +319,22 @@ public final class z implements i {
 
     @Override // com.opos.exoplayer.core.q
     public com.opos.exoplayer.core.g.g g() {
-        return this.q.h.f25439c;
+        return this.q.h.f11751c;
     }
 
     @Override // com.opos.exoplayer.core.q
     public y h() {
-        return this.q.f25063a;
+        return this.q.f11375a;
     }
 
     @Override // com.opos.exoplayer.core.q
     public int i() {
-        return r() ? this.r : this.q.f25063a.a(this.q.f25064c.f25286a, this.i).f25595c;
+        return r() ? this.r : this.q.f11375a.a(this.q.f11376c.f11598a, this.i).f11907c;
     }
 
     @Override // com.opos.exoplayer.core.q
     public int j() {
-        y yVar = this.q.f25063a;
+        y yVar = this.q.f11375a;
         if (yVar.a()) {
             return -1;
         }
@@ -343,7 +343,7 @@ public final class z implements i {
 
     @Override // com.opos.exoplayer.core.q
     public int k() {
-        y yVar = this.q.f25063a;
+        y yVar = this.q.f11375a;
         if (yVar.a()) {
             return -1;
         }
@@ -352,14 +352,14 @@ public final class z implements i {
 
     @Override // com.opos.exoplayer.core.q
     public long l() {
-        y yVar = this.q.f25063a;
+        y yVar = this.q.f11375a;
         if (yVar.a()) {
             return com.anythink.expressad.exoplayer.b.b;
         }
         if (o()) {
-            e.b bVar = this.q.f25064c;
-            yVar.a(bVar.f25286a, this.i);
-            return b.a(this.i.c(bVar.b, bVar.f25287c));
+            e.b bVar = this.q.f11376c;
+            yVar.a(bVar.f11598a, this.i);
+            return b.a(this.i.c(bVar.b, bVar.f11599c));
         }
         return yVar.a(i(), this.h).b();
     }
@@ -376,19 +376,19 @@ public final class z implements i {
 
     @Override // com.opos.exoplayer.core.q
     public boolean o() {
-        return !r() && this.q.f25064c.a();
+        return !r() && this.q.f11376c.a();
     }
 
     @Override // com.opos.exoplayer.core.q
     public long p() {
         if (o()) {
-            this.q.f25063a.a(this.q.f25064c.f25286a, this.i);
+            this.q.f11375a.a(this.q.f11376c.f11598a, this.i);
             return this.i.b() + b.a(this.q.e);
         }
         return m();
     }
 
     public int q() {
-        return r() ? this.s : this.q.f25064c.f25286a;
+        return r() ? this.s : this.q.f11376c.f11598a;
     }
 }

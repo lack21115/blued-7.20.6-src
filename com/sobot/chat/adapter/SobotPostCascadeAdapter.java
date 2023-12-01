@@ -80,7 +80,7 @@ public class SobotPostCascadeAdapter extends SobotBaseAdapter<SobotCusFieldDataI
         this.myViewHolder.categoryTitle.setText(((SobotCusFieldDataInfo) this.list.get(i)).getDataName());
         if (((SobotCusFieldDataInfo) this.list.get(i)).isHasNext()) {
             this.myViewHolder.categoryIshave.setVisibility(0);
-            this.myViewHolder.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f7952c, "sobot_right_arrow_icon"));
+            this.myViewHolder.categoryIshave.setBackgroundResource(ResourceUtils.getIdByName(this.mContext, i.f5112c, "sobot_right_arrow_icon"));
         } else {
             this.myViewHolder.categoryIshave.setVisibility(8);
         }

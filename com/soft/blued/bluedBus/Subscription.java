@@ -4,6 +4,6 @@ package com.soft.blued.bluedBus;
 public class Subscription {
 
     /* renamed from: a  reason: collision with root package name */
-    public Object f28306a;
+    public Object f14616a;
     public SubscriberMethod b;
 }

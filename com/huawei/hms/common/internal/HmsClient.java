@@ -20,11 +20,11 @@ public abstract class HmsClient extends BaseHmsClient implements AnyClient {
     static class BaseAdapterCallBack implements BaseAdapter.BaseCallBack {
 
         /* renamed from: a  reason: collision with root package name */
-        private final AnyClient.CallBack f22655a;
+        private final AnyClient.CallBack f9047a;
         private final WeakReference<HmsClient> b;
 
         BaseAdapterCallBack(HmsClient hmsClient, AnyClient.CallBack callBack) {
-            this.f22655a = callBack;
+            this.f9047a = callBack;
             this.b = new WeakReference<>(hmsClient);
         }
 
@@ -38,24 +38,24 @@ public abstract class HmsClient extends BaseHmsClient implements AnyClient {
         private void a(String str, String str2) {
             ResponseHeader responseHeader = new ResponseHeader();
             if (!responseHeader.fromJson(str)) {
-                this.f22655a.onCallback(new ResponseHeader(1, CommonCode.ErrorCode.ARGUMENTS_INVALID, "response header json error"), new JSONObject().toString());
+                this.f9047a.onCallback(new ResponseHeader(1, CommonCode.ErrorCode.ARGUMENTS_INVALID, "response header json error"), new JSONObject().toString());
                 return;
             }
             HMSLog.i("HmsClient", "receive msg " + responseHeader);
             a(responseHeader.getSessionId());
-            this.f22655a.onCallback(responseHeader, str2);
+            this.f9047a.onCallback(responseHeader, str2);
         }
 
         private void a(String str, String str2, Parcelable parcelable) {
             ResponseHeader responseHeader = new ResponseHeader();
             if (!responseHeader.fromJson(str)) {
-                this.f22655a.onCallback(new ResponseHeader(1, CommonCode.ErrorCode.ARGUMENTS_INVALID, "response header json error"), new JSONObject().toString());
+                this.f9047a.onCallback(new ResponseHeader(1, CommonCode.ErrorCode.ARGUMENTS_INVALID, "response header json error"), new JSONObject().toString());
                 return;
             }
             responseHeader.setParcelable(parcelable);
             HMSLog.i("HmsClient", "receive msg " + responseHeader);
             a(responseHeader.getSessionId());
-            this.f22655a.onCallback(responseHeader, str2);
+            this.f9047a.onCallback(responseHeader, str2);
         }
 
         @Override // com.huawei.hms.adapter.BaseAdapter.BaseCallBack
@@ -71,13 +71,13 @@ public abstract class HmsClient extends BaseHmsClient implements AnyClient {
         public void onError(String str) {
             ResponseWrap responseWrap = new ResponseWrap(new ResponseHeader());
             if (!responseWrap.fromJson(str)) {
-                this.f22655a.onCallback(new ResponseHeader(1, CommonCode.ErrorCode.ARGUMENTS_INVALID, "response header json error"), new JSONObject().toString());
+                this.f9047a.onCallback(new ResponseHeader(1, CommonCode.ErrorCode.ARGUMENTS_INVALID, "response header json error"), new JSONObject().toString());
                 return;
             }
             HMSLog.i("HmsClient", "receive msg " + responseWrap);
             ResponseHeader responseHeader = responseWrap.getResponseHeader();
             a(responseHeader.getSessionId());
-            this.f22655a.onCallback(responseHeader, responseWrap.getBody());
+            this.f9047a.onCallback(responseHeader, responseWrap.getBody());
         }
     }
 

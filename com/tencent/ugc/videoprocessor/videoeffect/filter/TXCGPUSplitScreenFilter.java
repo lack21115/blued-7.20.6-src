@@ -23,17 +23,17 @@ public class TXCGPUSplitScreenFilter extends TXCGPUEffectFilterBase {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        int f40460a;
+        int f26769a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f40461c;
+        public int f26770c;
         public int d;
 
         private a() {
-            this.f40460a = 0;
+            this.f26769a = 0;
             this.b = 0;
-            this.f40461c = 0;
+            this.f26770c = 0;
             this.d = 0;
         }
 
@@ -61,12 +61,12 @@ public class TXCGPUSplitScreenFilter extends TXCGPUEffectFilterBase {
             this.mSubWindowPosition[i3] = new a((byte) 0);
             i2 = i3 + 1;
         }
-        int i4 = getOutputSize().f36340a;
+        int i4 = getOutputSize().f22649a;
         int i5 = getOutputSize().b;
         if (splitSceenParam.splitScreenNumber == this.mSupportSplitNumber[0]) {
-            this.mSubWindowPosition[0].f40460a = 0;
+            this.mSubWindowPosition[0].f26769a = 0;
             this.mSubWindowPosition[0].b = 0;
-            this.mSubWindowPosition[0].f40461c = i4;
+            this.mSubWindowPosition[0].f26770c = i4;
             this.mSubWindowPosition[0].d = i5;
         } else if (splitSceenParam.splitScreenNumber == this.mSupportSplitNumber[1]) {
             int i6 = 0;
@@ -75,9 +75,9 @@ public class TXCGPUSplitScreenFilter extends TXCGPUEffectFilterBase {
                 if (i7 >= this.mSupportSplitNumber[1]) {
                     return;
                 }
-                this.mSubWindowPosition[i7].f40460a = ((i7 % 2) * i4) / 2;
+                this.mSubWindowPosition[i7].f26769a = ((i7 % 2) * i4) / 2;
                 this.mSubWindowPosition[i7].b = ((i7 / 2) * i5) / 2;
-                this.mSubWindowPosition[i7].f40461c = i4 / 2;
+                this.mSubWindowPosition[i7].f26770c = i4 / 2;
                 this.mSubWindowPosition[i7].d = i5 / 2;
                 i6 = i7 + 1;
             }
@@ -89,9 +89,9 @@ public class TXCGPUSplitScreenFilter extends TXCGPUEffectFilterBase {
                 if (i9 >= this.mSupportSplitNumber[2]) {
                     return;
                 }
-                this.mSubWindowPosition[i9].f40460a = ((i9 % 3) * i4) / 3;
+                this.mSubWindowPosition[i9].f26769a = ((i9 % 3) * i4) / 3;
                 this.mSubWindowPosition[i9].b = ((i9 / 3) * i5) / 3;
-                this.mSubWindowPosition[i9].f40461c = i4 / 3;
+                this.mSubWindowPosition[i9].f26770c = i4 / 3;
                 this.mSubWindowPosition[i9].d = i5 / 3;
                 i8 = i9 + 1;
             }
@@ -109,12 +109,12 @@ public class TXCGPUSplitScreenFilter extends TXCGPUEffectFilterBase {
         while (true) {
             int i3 = i2;
             if (i3 >= length) {
-                GLES20.glViewport(0, 0, getOutputSize().f36340a, getOutputSize().b);
+                GLES20.glViewport(0, 0, getOutputSize().f22649a, getOutputSize().b);
                 return;
             }
             a aVar = aVarArr[i3];
             if (aVar != null) {
-                GLES20.glViewport(aVar.f40460a, aVar.b, aVar.f40461c, aVar.d);
+                GLES20.glViewport(aVar.f26769a, aVar.b, aVar.f26770c, aVar.d);
             }
             super.onDraw(i, dVar, floatBuffer, floatBuffer2);
             i2 = i3 + 1;

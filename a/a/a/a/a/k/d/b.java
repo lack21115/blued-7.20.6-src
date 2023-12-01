@@ -1,7 +1,6 @@
 package a.a.a.a.a.k.d;
 
 import android.content.Context;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.Closeable;
@@ -20,11 +19,11 @@ public final class b {
     public Context e;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1405a = 0;
+    public long f1357a = 0;
     public long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f1406c = 0;
+    public long f1358c = 0;
     public long d = 0;
     public boolean f = false;
     public String g = null;
@@ -238,13 +237,13 @@ public final class b {
     }
 
     public boolean a(String str) {
-        if (this.f && this.f1406c - this.f1405a <= 100) {
+        if (this.f && this.f1358c - this.f1357a <= 100) {
             synchronized (this) {
-                if (a(this.e, "pili_qos_log." + this.f1406c, str, 32768)) {
+                if (a(this.e, "pili_qos_log." + this.f1358c, str, 32768)) {
                     long length = this.d + str.length();
                     this.d = length;
                     if (length >= 65536) {
-                        this.f1406c++;
+                        this.f1358c++;
                         this.d = 0L;
                     }
                     g();
@@ -269,24 +268,24 @@ public final class b {
             if (str != null) {
                 return str;
             }
-            if (this.f1405a == this.f1406c && this.b == this.d) {
+            if (this.f1357a == this.f1358c && this.b == this.d) {
                 return null;
             }
             synchronized (this) {
-                boolean z = this.f1405a < this.f1406c;
-                String a2 = a(this.e, "pili_qos_log." + this.f1405a, this.b);
+                boolean z = this.f1357a < this.f1358c;
+                String a2 = a(this.e, "pili_qos_log." + this.f1357a, this.b);
                 this.g = a2;
                 if (a2 == null) {
                     return null;
                 }
                 this.b += a2.length();
-                if (this.f1405a < this.f1406c) {
-                    this.f1405a++;
+                if (this.f1357a < this.f1358c) {
+                    this.f1357a++;
                     this.b = 0L;
                 }
                 g();
                 if (z) {
-                    long j = this.f1405a;
+                    long j = this.f1357a;
                     this.e.deleteFile("pili_qos_log." + (j - 1));
                 }
                 return this.g;
@@ -296,7 +295,7 @@ public final class b {
     }
 
     public final boolean d() {
-        return new File(this.e.getFilesDir().getAbsolutePath() + BridgeUtil.SPLIT_MARK + "pili_qos_cache").exists();
+        return new File(this.e.getFilesDir().getAbsolutePath() + "/pili_qos_cache").exists();
     }
 
     public final void e() {
@@ -324,9 +323,9 @@ public final class b {
                 return false;
             }
             JSONObject jSONObject = new JSONObject(String.valueOf(a2));
-            this.f1405a = jSONObject.getLong("read_file_index");
+            this.f1357a = jSONObject.getLong("read_file_index");
             this.b = jSONObject.getLong("read_file_position");
-            this.f1406c = jSONObject.getLong("write_file_index");
+            this.f1358c = jSONObject.getLong("write_file_index");
             this.d = jSONObject.getLong("write_file_position");
             return true;
         } catch (JSONException e) {
@@ -339,9 +338,9 @@ public final class b {
     public final boolean g() {
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("read_file_index", this.f1405a);
+            jSONObject.put("read_file_index", this.f1357a);
             jSONObject.put("read_file_position", this.b);
-            jSONObject.put("write_file_index", this.f1406c);
+            jSONObject.put("write_file_index", this.f1358c);
             jSONObject.put("write_file_position", this.d);
             return a(this.e, "pili_qos_index.json", jSONObject.toString(), 0);
         } catch (JSONException e) {

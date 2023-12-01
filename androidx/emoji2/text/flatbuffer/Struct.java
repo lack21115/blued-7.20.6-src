@@ -6,7 +6,7 @@ import java.nio.ByteBuffer;
 public class Struct {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f2870a;
+    protected int f2822a;
     protected ByteBuffer b;
 
     public void __reset() {
@@ -16,9 +16,9 @@ public class Struct {
     protected void a(int i, ByteBuffer byteBuffer) {
         this.b = byteBuffer;
         if (byteBuffer != null) {
-            this.f2870a = i;
+            this.f2822a = i;
         } else {
-            this.f2870a = 0;
+            this.f2822a = 0;
         }
     }
 }

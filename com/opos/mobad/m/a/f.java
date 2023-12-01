@@ -9,7 +9,7 @@ import okio.ByteString;
 public final class f extends com.heytap.nearx.a.a.b<f, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<f> f26337c = new b();
+    public static final com.heytap.nearx.a.a.e<f> f12649c = new b();
     public static final Integer d = 0;
     public static final Long e = 0L;
     public static final c f = c.UNKNOWN;
@@ -29,7 +29,7 @@ public final class f extends com.heytap.nearx.a.a.b<f, a> {
     public static final class a extends b.a<f, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public String f26338c;
+        public String f12650c;
         public Integer d;
         public Long e;
         public c f;
@@ -53,7 +53,7 @@ public final class f extends com.heytap.nearx.a.a.b<f, a> {
         }
 
         public a a(String str) {
-            this.f26338c = str;
+            this.f12650c = str;
             return this;
         }
 
@@ -66,9 +66,9 @@ public final class f extends com.heytap.nearx.a.a.b<f, a> {
             Integer num;
             Long l;
             c cVar;
-            String str = this.f26338c;
+            String str = this.f12650c;
             if (str == null || (num = this.d) == null || (l = this.e) == null || (cVar = this.f) == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f26338c, "channelPosId", this.d, "percent", this.e, "timeout", this.f, "channel");
+                throw com.heytap.nearx.a.a.a.b.a(this.f12650c, "channelPosId", this.d, "percent", this.e, "timeout", this.f, "channel");
             }
             return new f(str, num, l, cVar, this.g, this.h, this.i, super.a());
         }
@@ -149,7 +149,7 @@ public final class f extends com.heytap.nearx.a.a.b<f, a> {
                             aVar.a(c.j.a(fVar));
                             break;
                         } catch (e.a e) {
-                            aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f22263a));
+                            aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f8655a));
                             break;
                         }
                     case 5:
@@ -171,7 +171,7 @@ public final class f extends com.heytap.nearx.a.a.b<f, a> {
     }
 
     public f(String str, Integer num, Long l, c cVar, Integer num2, Integer num3, Integer num4, ByteString byteString) {
-        super(f26337c, byteString);
+        super(f12649c, byteString);
         this.j = str;
         this.k = num;
         this.l = l;

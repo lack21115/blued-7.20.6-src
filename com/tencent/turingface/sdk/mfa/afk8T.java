@@ -1,6 +1,5 @@
 package com.tencent.turingface.sdk.mfa;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -8,21 +7,21 @@ import java.util.concurrent.atomic.AtomicReference;
 public final class afk8T implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AtomicBoolean f39935a;
+    public final /* synthetic */ AtomicBoolean f26244a;
     public final /* synthetic */ AtomicReference b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final /* synthetic */ Object f39936c;
+    public final /* synthetic */ Object f26245c;
 
     public afk8T(AtomicBoolean atomicBoolean, AtomicReference atomicReference, Object obj) {
-        this.f39935a = atomicBoolean;
+        this.f26244a = atomicBoolean;
         this.b = atomicReference;
-        this.f39936c = obj;
+        this.f26245c = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (this.f39935a.get()) {
+        if (this.f26244a.get()) {
             return;
         }
         try {
@@ -35,13 +34,13 @@ public final class afk8T implements Runnable {
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
-                    synchronized (this.f39936c) {
-                        this.f39936c.notify();
+                    synchronized (this.f26245c) {
+                        this.f26245c.notify();
                         return;
                     }
                 }
                 StackTraceElement stackTraceElement = stackTrace[i2];
-                if (a2.equals(stackTraceElement.getClassName() + BridgeUtil.UNDERLINE_STR + stackTraceElement.getMethodName())) {
+                if (a2.equals(stackTraceElement.getClassName() + "_" + stackTraceElement.getMethodName())) {
                     this.b.set(Boolean.TRUE);
                 }
                 i = i2 + 1;

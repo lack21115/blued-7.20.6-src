@@ -12,20 +12,16 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutOnlineUserBinding.class */
 public final class LayoutOnlineUserBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f12107a;
+    public final LinearLayout a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SmartRefreshLayout f12108c;
+    public final SmartRefreshLayout c;
     private final RelativeLayout d;
 
     private LayoutOnlineUserBinding(RelativeLayout relativeLayout, LinearLayout linearLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout) {
         this.d = relativeLayout;
-        this.f12107a = linearLayout;
+        this.a = linearLayout;
         this.b = recyclerView;
-        this.f12108c = smartRefreshLayout;
+        this.c = smartRefreshLayout;
     }
 
     public static LayoutOnlineUserBinding a(LayoutInflater layoutInflater) {
@@ -44,11 +40,11 @@ public final class LayoutOnlineUserBinding implements ViewBinding {
         String str;
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_no_online_user_empty_view);
         if (linearLayout != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-            if (recyclerView != null) {
-                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.smart_refresh_layout);
-                if (smartRefreshLayout != null) {
-                    return new LayoutOnlineUserBinding((RelativeLayout) view, linearLayout, recyclerView, smartRefreshLayout);
+            RecyclerView findViewById = view.findViewById(R.id.recycler_view);
+            if (findViewById != null) {
+                SmartRefreshLayout findViewById2 = view.findViewById(R.id.smart_refresh_layout);
+                if (findViewById2 != null) {
+                    return new LayoutOnlineUserBinding((RelativeLayout) view, linearLayout, findViewById, findViewById2);
                 }
                 str = "smartRefreshLayout";
             } else {
@@ -60,7 +56,6 @@ public final class LayoutOnlineUserBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.d;

@@ -11,13 +11,9 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/activity/AnyThinkGdprAuthActivity.class */
 public class AnyThinkGdprAuthActivity extends Activity {
     public static ATGDPRAuthCallback mCallback;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6329a;
+    String a;
     PrivacyPolicyView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    boolean f6330c = false;
+    boolean c = false;
 
     @Override // android.app.Activity, android.view.Window.Callback
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
@@ -27,17 +23,16 @@ public class AnyThinkGdprAuthActivity extends Activity {
 
     @Override // android.app.Activity
     public void onBackPressed() {
-        if (this.f6330c) {
+        if (this.c) {
             super.onBackPressed();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         i.a();
-        this.f6329a = i.l();
+        this.a = i.l();
         if (getResources().getConfiguration().orientation == 2) {
             setRequestedOrientation(6);
         } else {
@@ -58,7 +53,7 @@ public class AnyThinkGdprAuthActivity extends Activity {
 
                 @Override // com.anythink.core.activity.component.PrivacyPolicyView.a
                 public final void onPageLoadFail() {
-                    AnyThinkGdprAuthActivity.this.f6330c = true;
+                    AnyThinkGdprAuthActivity.this.c = true;
                     if (AnyThinkGdprAuthActivity.mCallback != null) {
                         AnyThinkGdprAuthActivity.mCallback.onPageLoadFail();
                     }
@@ -66,18 +61,17 @@ public class AnyThinkGdprAuthActivity extends Activity {
 
                 @Override // com.anythink.core.activity.component.PrivacyPolicyView.a
                 public final void onPageLoadSuccess() {
-                    AnyThinkGdprAuthActivity.this.f6330c = false;
+                    AnyThinkGdprAuthActivity.this.c = false;
                 }
             });
             setContentView(this.b);
-            this.b.loadPolicyUrl(this.f6329a);
+            this.b.loadPolicyUrl(this.a);
         } catch (Exception e) {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onDestroy() {
+    protected void onDestroy() {
         PrivacyPolicyView privacyPolicyView = this.b;
         if (privacyPolicyView != null) {
             privacyPolicyView.destory();

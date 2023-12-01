@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ShareActionProvider;
 import androidx.core.util.Preconditions;
+import com.huawei.openalliance.ad.constant.t;
 import java.util.ArrayList;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/app/ShareCompat.class */
@@ -61,11 +62,11 @@ public final class ShareCompat {
     public static class IntentBuilder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f2395a;
+        private final Context f2347a;
         private final Intent b;
 
         /* renamed from: c  reason: collision with root package name */
-        private CharSequence f2396c;
+        private CharSequence f2348c;
         private ArrayList<String> d;
         private ArrayList<String> e;
         private ArrayList<String> f;
@@ -73,7 +74,7 @@ public final class ShareCompat {
 
         public IntentBuilder(Context context) {
             Activity activity;
-            this.f2395a = (Context) Preconditions.checkNotNull(context);
+            this.f2347a = (Context) Preconditions.checkNotNull(context);
             Intent action = new Intent().setAction(Intent.ACTION_SEND);
             this.b = action;
             action.putExtra(ShareCompat.EXTRA_CALLING_PACKAGE, context.getPackageName());
@@ -173,11 +174,11 @@ public final class ShareCompat {
         }
 
         public Intent createChooserIntent() {
-            return Intent.createChooser(getIntent(), this.f2396c);
+            return Intent.createChooser(getIntent(), this.f2348c);
         }
 
         Context getContext() {
-            return this.f2395a;
+            return this.f2347a;
         }
 
         public Intent getIntent() {
@@ -226,11 +227,11 @@ public final class ShareCompat {
         }
 
         public IntentBuilder setChooserTitle(int i) {
-            return setChooserTitle(this.f2395a.getText(i));
+            return setChooserTitle(this.f2347a.getText(i));
         }
 
         public IntentBuilder setChooserTitle(CharSequence charSequence) {
-            this.f2396c = charSequence;
+            this.f2348c = charSequence;
             return this;
         }
 
@@ -284,7 +285,7 @@ public final class ShareCompat {
         }
 
         public void startChooser() {
-            this.f2395a.startActivity(createChooserIntent());
+            this.f2347a.startActivity(createChooserIntent());
         }
     }
 
@@ -292,11 +293,11 @@ public final class ShareCompat {
     public static class IntentReader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f2397a;
+        private final Context f2349a;
         private final Intent b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f2398c;
+        private final String f2350c;
         private final ComponentName d;
         private ArrayList<Uri> e;
 
@@ -305,9 +306,9 @@ public final class ShareCompat {
         }
 
         public IntentReader(Context context, Intent intent) {
-            this.f2397a = (Context) Preconditions.checkNotNull(context);
+            this.f2349a = (Context) Preconditions.checkNotNull(context);
             this.b = (Intent) Preconditions.checkNotNull(intent);
-            this.f2398c = ShareCompat.a(intent);
+            this.f2350c = ShareCompat.a(intent);
             this.d = ShareCompat.b(intent);
         }
 
@@ -323,7 +324,7 @@ public final class ShareCompat {
                 } else if (charAt > '~' || charAt < ' ') {
                     sb.append("&#");
                     sb.append((int) charAt);
-                    sb.append(";");
+                    sb.append(t.aE);
                 } else if (charAt == ' ') {
                     while (true) {
                         int i3 = i + 1;
@@ -355,7 +356,7 @@ public final class ShareCompat {
                 return null;
             }
             try {
-                return this.f2397a.getPackageManager().getActivityIcon(this.d);
+                return this.f2349a.getPackageManager().getActivityIcon(this.d);
             } catch (PackageManager.NameNotFoundException e) {
                 Log.e("IntentReader", "Could not retrieve icon for calling activity", e);
                 return null;
@@ -363,11 +364,11 @@ public final class ShareCompat {
         }
 
         public Drawable getCallingApplicationIcon() {
-            if (this.f2398c == null) {
+            if (this.f2350c == null) {
                 return null;
             }
             try {
-                return this.f2397a.getPackageManager().getApplicationIcon(this.f2398c);
+                return this.f2349a.getPackageManager().getApplicationIcon(this.f2350c);
             } catch (PackageManager.NameNotFoundException e) {
                 Log.e("IntentReader", "Could not retrieve icon for calling application", e);
                 return null;
@@ -375,12 +376,12 @@ public final class ShareCompat {
         }
 
         public CharSequence getCallingApplicationLabel() {
-            if (this.f2398c == null) {
+            if (this.f2350c == null) {
                 return null;
             }
-            PackageManager packageManager = this.f2397a.getPackageManager();
+            PackageManager packageManager = this.f2349a.getPackageManager();
             try {
-                return packageManager.getApplicationLabel(packageManager.getApplicationInfo(this.f2398c, 0));
+                return packageManager.getApplicationLabel(packageManager.getApplicationInfo(this.f2350c, 0));
             } catch (PackageManager.NameNotFoundException e) {
                 Log.e("IntentReader", "Could not retrieve label for calling application", e);
                 return null;
@@ -388,7 +389,7 @@ public final class ShareCompat {
         }
 
         public String getCallingPackage() {
-            return this.f2398c;
+            return this.f2350c;
         }
 
         public String[] getEmailBcc() {

@@ -146,9 +146,8 @@ public final class GlobalThreadPools {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/threads/GlobalThreadPools$g.class */
-    public static final class g implements a {
+    static final class g implements a {
         private g() {
         }
 

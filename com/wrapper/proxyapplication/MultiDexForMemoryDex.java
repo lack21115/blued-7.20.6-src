@@ -1,7 +1,6 @@
 package com.wrapper.proxyapplication;
 
 import android.os.Build;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.IOException;
@@ -45,7 +44,7 @@ public class MultiDexForMemoryDex {
                 Object obj2 = makeDexElements[i2];
                 Object obj3 = MultiDexForMemoryDex.findField(obj2, "dexFile").get(obj2);
                 Field findField = MultiDexForMemoryDex.findField(obj3, "mCookie");
-                if (findField.getType().getName().equals(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL)) {
+                if (findField.getType().getName().equals("int")) {
                     arrayList2.add(Integer.valueOf(findField.getInt(obj3)));
                 } else if (findField.getType().getName().equals("long")) {
                     arrayList2.add(Long.valueOf(findField.getLong(obj3)));

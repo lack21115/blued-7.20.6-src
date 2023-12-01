@@ -4,15 +4,15 @@ package com.bytedance.pangle.g;
 public final class q extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f21427a;
+    public final int f7821a;
 
     public q(int i, String str) {
         super(str);
-        this.f21427a = i;
+        this.f7821a = i;
     }
 
     public q(int i, String str, Throwable th) {
         super(str, th);
-        this.f21427a = i;
+        this.f7821a = i;
     }
 }

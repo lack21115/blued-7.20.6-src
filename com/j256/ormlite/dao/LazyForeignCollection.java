@@ -48,7 +48,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
     }
 
     /* JADX WARN: Finally extract failed */
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean contains(Object obj) {
         CloseableIterator<T> it = iterator();
         do {
@@ -77,7 +77,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
         }
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         HashSet hashSet = new HashSet(collection);
         CloseableIterator<T> it = iterator();
@@ -99,7 +99,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
         }
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean equals(Object obj) {
         return super.equals(obj);
     }
@@ -128,7 +128,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
         });
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public int hashCode() {
         return super.hashCode();
     }
@@ -138,7 +138,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
         return false;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public boolean isEmpty() {
         CloseableIterator<T> it = iterator();
         try {
@@ -156,7 +156,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
         }
     }
 
-    @Override // java.lang.Iterable
+    @Override // java.lang.Iterable, java.util.Collection
     public CloseableIterator<T> iterator() {
         return closeableIterator(-1);
     }
@@ -189,7 +189,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
     }
 
     /* JADX WARN: Finally extract failed */
-    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection
     public boolean remove(Object obj) {
         CloseableIterator<T> it = iterator();
         do {
@@ -220,7 +220,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
     }
 
     /* JADX WARN: Finally extract failed */
-    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection, java.util.Set
+    @Override // com.j256.ormlite.dao.BaseForeignCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         CloseableIterator<T> it = iterator();
         boolean z = false;
@@ -246,7 +246,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
         }
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection
     public int size() {
         CloseableIterator<T> it = iterator();
         int i = 0;
@@ -271,7 +271,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
         }
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public Object[] toArray() {
         ArrayList arrayList = new ArrayList();
         CloseableIterator<T> it = iterator();
@@ -294,7 +294,7 @@ public class LazyForeignCollection<T, ID> extends BaseForeignCollection<T, ID> i
     }
 
     /* JADX WARN: Finally extract failed */
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     public <E> E[] toArray(E[] eArr) {
         int i;
         CloseableIterator<T> it = iterator();

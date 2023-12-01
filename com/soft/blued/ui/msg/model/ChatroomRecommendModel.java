@@ -16,15 +16,15 @@ public final class ChatroomRecommendModel {
     private final String text_content;
     private final long uid;
 
-    public ChatroomRecommendModel(long j, String str, long j2, String str2, String str3, String str4, List<ChatroomRecommendUserModel> current_users, int i) {
-        Intrinsics.e(current_users, "current_users");
+    public ChatroomRecommendModel(long j, String str, long j2, String str2, String str3, String str4, List<ChatroomRecommendUserModel> list, int i) {
+        Intrinsics.e(list, "current_users");
         this.uid = j;
         this.source = str;
         this.room_id = j2;
         this.room_name = str2;
         this.avatar = str3;
         this.text_content = str4;
-        this.current_users = current_users;
+        this.current_users = list;
         this.experiment = i;
     }
 
@@ -88,9 +88,9 @@ public final class ChatroomRecommendModel {
         return this.experiment;
     }
 
-    public final ChatroomRecommendModel copy(long j, String str, long j2, String str2, String str3, String str4, List<ChatroomRecommendUserModel> current_users, int i) {
-        Intrinsics.e(current_users, "current_users");
-        return new ChatroomRecommendModel(j, str, j2, str2, str3, str4, current_users, i);
+    public final ChatroomRecommendModel copy(long j, String str, long j2, String str2, String str3, String str4, List<ChatroomRecommendUserModel> list, int i) {
+        Intrinsics.e(list, "current_users");
+        return new ChatroomRecommendModel(j, str, j2, str2, str3, str4, list, i);
     }
 
     public boolean equals(Object obj) {
@@ -99,7 +99,7 @@ public final class ChatroomRecommendModel {
         }
         if (obj instanceof ChatroomRecommendModel) {
             ChatroomRecommendModel chatroomRecommendModel = (ChatroomRecommendModel) obj;
-            return this.uid == chatroomRecommendModel.uid && Intrinsics.a((Object) this.source, (Object) chatroomRecommendModel.source) && this.room_id == chatroomRecommendModel.room_id && Intrinsics.a((Object) this.room_name, (Object) chatroomRecommendModel.room_name) && Intrinsics.a((Object) this.avatar, (Object) chatroomRecommendModel.avatar) && Intrinsics.a((Object) this.text_content, (Object) chatroomRecommendModel.text_content) && Intrinsics.a(this.current_users, chatroomRecommendModel.current_users) && this.experiment == chatroomRecommendModel.experiment;
+            return this.uid == chatroomRecommendModel.uid && Intrinsics.a(this.source, chatroomRecommendModel.source) && this.room_id == chatroomRecommendModel.room_id && Intrinsics.a(this.room_name, chatroomRecommendModel.room_name) && Intrinsics.a(this.avatar, chatroomRecommendModel.avatar) && Intrinsics.a(this.text_content, chatroomRecommendModel.text_content) && Intrinsics.a(this.current_users, chatroomRecommendModel.current_users) && this.experiment == chatroomRecommendModel.experiment;
         }
         return false;
     }

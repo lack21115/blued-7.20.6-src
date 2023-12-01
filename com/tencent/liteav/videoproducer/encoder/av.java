@@ -6,16 +6,16 @@ import com.tencent.liteav.videobase.common.EncodedVideoFrame;
 final /* synthetic */ class av implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ai f36996a;
+    private final ai f23305a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final EncodedVideoFrame f36997c;
+    private final EncodedVideoFrame f23306c;
 
     private av(ai aiVar, boolean z, EncodedVideoFrame encodedVideoFrame) {
-        this.f36996a = aiVar;
+        this.f23305a = aiVar;
         this.b = z;
-        this.f36997c = encodedVideoFrame;
+        this.f23306c = encodedVideoFrame;
     }
 
     public static Runnable a(ai aiVar, boolean z, EncodedVideoFrame encodedVideoFrame) {
@@ -24,6 +24,6 @@ final /* synthetic */ class av implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ai.a(this.f36996a, this.b, this.f36997c);
+        ai.a(this.f23305a, this.b, this.f23306c);
     }
 }

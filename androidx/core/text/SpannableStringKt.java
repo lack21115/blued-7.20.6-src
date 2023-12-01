@@ -19,17 +19,17 @@ public final class SpannableStringKt {
         }
     }
 
-    public static final void set(Spannable spannable, int i, int i2, Object span) {
+    public static final void set(Spannable spannable, int i, int i2, Object obj) {
         Intrinsics.e(spannable, "<this>");
-        Intrinsics.e(span, "span");
-        spannable.setSpan(span, i, i2, 17);
+        Intrinsics.e(obj, "span");
+        spannable.setSpan(obj, i, i2, 17);
     }
 
-    public static final void set(Spannable spannable, IntRange range, Object span) {
+    public static final void set(Spannable spannable, IntRange intRange, Object obj) {
         Intrinsics.e(spannable, "<this>");
-        Intrinsics.e(range, "range");
-        Intrinsics.e(span, "span");
-        spannable.setSpan(span, range.getStart().intValue(), range.getEndInclusive().intValue(), 17);
+        Intrinsics.e(intRange, "range");
+        Intrinsics.e(obj, "span");
+        spannable.setSpan(obj, intRange.f().intValue(), intRange.g().intValue(), 17);
     }
 
     public static final Spannable toSpannable(CharSequence charSequence) {

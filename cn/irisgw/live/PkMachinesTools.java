@@ -27,8 +27,8 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
     private volatile Object title_;
     private static final PkMachinesTools DEFAULT_INSTANCE = new PkMachinesTools();
     private static final Parser<PkMachinesTools> PARSER = new AbstractParser<PkMachinesTools>() { // from class: cn.irisgw.live.PkMachinesTools.1
-        @Override // com.google.protobuf.Parser
-        public PkMachinesTools parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public PkMachinesTools m6693parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new PkMachinesTools(codedInputStream, extensionRegistryLite);
         }
     };
@@ -60,22 +60,22 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             boolean unused = PkMachinesTools.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m6695addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public PkMachinesTools build() {
-            PkMachinesTools buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public PkMachinesTools m6697build() {
+            PkMachinesTools m6699buildPartial = m6699buildPartial();
+            if (m6699buildPartial.isInitialized()) {
+                return m6699buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m6699buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public PkMachinesTools buildPartial() {
+        /* renamed from: buildPartial */
+        public PkMachinesTools m6699buildPartial() {
             PkMachinesTools pkMachinesTools = new PkMachinesTools(this);
             pkMachinesTools.desc_ = this.desc_;
             pkMachinesTools.status_ = this.status_;
@@ -84,8 +84,8 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             return pkMachinesTools;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m6703clear() {
             super.clear();
             this.desc_ = "";
             this.status_ = 0;
@@ -99,13 +99,13 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m6705clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m6708clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -121,14 +121,13 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m6714clone() {
+            return (Builder) super.clone();
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public PkMachinesTools getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public PkMachinesTools m6716getDefaultInstanceForType() {
             return PkMachinesTools.getDefaultInstance();
         }
 
@@ -154,7 +153,6 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_PkMachinesTools_descriptor;
         }
@@ -186,12 +184,10 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_PkMachinesTools_fieldAccessorTable.ensureFieldAccessorsInitialized(PkMachinesTools.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -211,18 +207,18 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
                 this.title_ = pkMachinesTools.title_;
                 onChanged();
             }
-            mergeUnknownFields(pkMachinesTools.unknownFields);
+            m6725mergeUnknownFields(pkMachinesTools.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.PkMachinesTools.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.PkMachinesTools.Builder m6722mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -267,11 +263,11 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PkMachinesTools.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PkMachinesTools$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.PkMachinesTools.Builder.m6722mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.PkMachinesTools$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m6721mergeFrom(Message message) {
             if (message instanceof PkMachinesTools) {
                 return mergeFrom((PkMachinesTools) message);
             }
@@ -279,8 +275,8 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m6725mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -303,13 +299,13 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m6727setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m6729setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -338,8 +334,8 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m6731setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -400,66 +396,65 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m6692toBuilder();
     }
 
     public static Builder newBuilder(PkMachinesTools pkMachinesTools) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(pkMachinesTools);
+        return DEFAULT_INSTANCE.m6692toBuilder().mergeFrom(pkMachinesTools);
     }
 
     public static PkMachinesTools parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (PkMachinesTools) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static PkMachinesTools parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PkMachinesTools) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static PkMachinesTools parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (PkMachinesTools) PARSER.parseFrom(byteString);
     }
 
     public static PkMachinesTools parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (PkMachinesTools) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static PkMachinesTools parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (PkMachinesTools) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static PkMachinesTools parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PkMachinesTools) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static PkMachinesTools parseFrom(InputStream inputStream) throws IOException {
-        return (PkMachinesTools) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static PkMachinesTools parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (PkMachinesTools) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static PkMachinesTools parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (PkMachinesTools) PARSER.parseFrom(byteBuffer);
     }
 
     public static PkMachinesTools parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (PkMachinesTools) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static PkMachinesTools parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (PkMachinesTools) PARSER.parseFrom(bArr);
     }
 
     public static PkMachinesTools parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (PkMachinesTools) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<PkMachinesTools> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -471,8 +466,8 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
         return super.equals(obj);
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public PkMachinesTools getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public PkMachinesTools m6687getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -498,12 +493,10 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<PkMachinesTools> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -554,12 +547,10 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -569,12 +560,10 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_PkMachinesTools_fieldAccessorTable.ensureFieldAccessorsInitialized(PkMachinesTools.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -587,28 +576,26 @@ public final class PkMachinesTools extends GeneratedMessageV3 implements PkMachi
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m6690newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m6689newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new PkMachinesTools();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m6692toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (!getDescBytes().isEmpty()) {
             GeneratedMessageV3.writeString(codedOutputStream, 1, this.desc_);

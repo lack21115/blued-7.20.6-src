@@ -33,7 +33,7 @@ public class td extends uc<ud> {
 
     @Override // com.tencent.mapsdk.internal.uc
     public void g() {
-        int size = this.f38045c.size();
+        int size = this.f24354c.size();
         boolean O = this.b.O();
         int i = 0;
         while (true) {
@@ -41,7 +41,7 @@ public class td extends uc<ud> {
             if (i2 >= size) {
                 break;
             }
-            O |= ((sd) this.f38045c.get(this.f38045c.keyAt(i2))).f().isAnimate();
+            O |= ((sd) this.f24354c.get(this.f24354c.keyAt(i2))).f().isAnimate();
             i = i2 + 1;
         }
         if (O) {

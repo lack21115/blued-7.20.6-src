@@ -10,17 +10,17 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40533a = a.class.getSimpleName();
+    public static final String f26842a = a.class.getSimpleName();
 
     /* renamed from: com.tramini.plugin.a.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tramini/plugin/a/g/a$a.class */
-    public interface InterfaceC1072a {
+    public interface InterfaceC0902a {
         void a(com.tramini.plugin.a.c.a aVar);
     }
 
-    public static void a(final com.tramini.plugin.b.a aVar, final String str, final String str2, final String str3, final InterfaceC1072a interfaceC1072a) {
+    public static void a(final com.tramini.plugin.b.a aVar, final String str, final String str2, final String str3, final InterfaceC0902a interfaceC0902a) {
         if (aVar == null) {
-            interfaceC1072a.a(null);
+            interfaceC0902a.a(null);
         } else {
             com.tramini.plugin.a.g.b.a.a().a(new Runnable() { // from class: com.tramini.plugin.a.g.a.1
                 @Override // java.lang.Runnable
@@ -33,8 +33,8 @@ public class a {
                         aVar2 = null;
                     }
                     if (e == null) {
-                        if (interfaceC1072a != null) {
-                            interfaceC1072a.a(null);
+                        if (interfaceC0902a != null) {
+                            interfaceC0902a.a(null);
                             return;
                         }
                         return;
@@ -42,8 +42,8 @@ public class a {
                     com.tramini.plugin.a.c.c cVar = e.get(TextUtils.equals(str, BaseWrapper.ENTER_ID_OAPS_ROAMING) ? "2" : str);
                     String str4 = cVar != null ? cVar.d : "";
                     if (TextUtils.isEmpty(str4)) {
-                        if (interfaceC1072a != null) {
-                            interfaceC1072a.a(null);
+                        if (interfaceC0902a != null) {
+                            interfaceC0902a.a(null);
                             return;
                         }
                         return;
@@ -117,9 +117,9 @@ public class a {
                             aVar2 = null;
                             break;
                     }
-                    InterfaceC1072a interfaceC1072a2 = interfaceC1072a;
-                    if (interfaceC1072a2 != null) {
-                        interfaceC1072a2.a(aVar2);
+                    InterfaceC0902a interfaceC0902a2 = interfaceC0902a;
+                    if (interfaceC0902a2 != null) {
+                        interfaceC0902a2.a(aVar2);
                     }
                 }
             });

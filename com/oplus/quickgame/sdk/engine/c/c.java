@@ -10,14 +10,14 @@ import org.json.JSONObject;
 public class c extends QuickGame.FromBuilder {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, String> f24398a = new HashMap();
+    private Map<String, String> f10711a = new HashMap();
 
     @Override // com.oplus.quickgame.sdk.QuickGame.FromBuilder
     public String build() {
         JSONObject jSONObject = new JSONObject();
         try {
-            for (String str : this.f24398a.keySet()) {
-                jSONObject.put(str, this.f24398a.get(str));
+            for (String str : this.f10711a.keySet()) {
+                jSONObject.put(str, this.f10711a.get(str));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -27,19 +27,19 @@ public class c extends QuickGame.FromBuilder {
 
     @Override // com.oplus.quickgame.sdk.QuickGame.FromBuilder
     public QuickGame.FromBuilder set(String str, String str2) {
-        this.f24398a.put(str, str2);
+        this.f10711a.put(str, str2);
         return this;
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.FromBuilder
     public QuickGame.FromBuilder setScene(String str) {
-        this.f24398a.put("m", str);
+        this.f10711a.put("m", str);
         return this;
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.FromBuilder
     public QuickGame.FromBuilder setTraceId(String str) {
-        this.f24398a.put("t", str);
+        this.f10711a.put("t", str);
         return this;
     }
 }

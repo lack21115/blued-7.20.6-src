@@ -20,6 +20,7 @@ import com.blued.android.chat.model.SessionModel;
 import com.blued.android.chat.utils.ChatHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.activity.PreloadFragment;
 import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLayout;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -77,7 +78,7 @@ public class InviteChatRecentFragment extends PreloadFragment {
         private TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ImageView f34678c;
+        private ImageView f20987c;
         private ShapeTextView d;
 
         private ChatListAdapter() {
@@ -86,27 +87,26 @@ public class InviteChatRecentFragment extends PreloadFragment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(final UserBasicModel userBasicModel, final int i) {
-            LiveHttpUtils.b(InviteChatRecentFragment.this.v.sessionId + "", new BluedUIHttpResponse<BluedEntityA<LiveMsgShareEntity>>(InviteChatRecentFragment.this.getFragmentActive()) { // from class: com.soft.blued.ui.yy_room.fragment.InviteChatRecentFragment.ChatListAdapter.2
+            LiveHttpUtils.b(InviteChatRecentFragment.this.v.sessionId + "", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<LiveMsgShareEntity>>(InviteChatRecentFragment.this.getFragmentActive()) { // from class: com.soft.blued.ui.yy_room.fragment.InviteChatRecentFragment.ChatListAdapter.2
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<LiveMsgShareEntity> bluedEntityA) {
                     if (bluedEntityA == null || !bluedEntityA.hasData()) {
                         return;
                     }
-                    LiveMsgShareEntity singleData = bluedEntityA.getSingleData();
+                    LiveMsgShareEntity liveMsgShareEntity = (LiveMsgShareEntity) bluedEntityA.getSingleData();
                     Gson f = AppInfo.f();
-                    singleData.copywriting = InviteChatRecentFragment.this.v.title;
-                    singleData.room_type = StringUtils.a(InviteChatRecentFragment.this.x, 1);
-                    singleData.description = InviteChatRecentFragment.this.w;
-                    String json = f.toJson(singleData);
+                    liveMsgShareEntity.copywriting = InviteChatRecentFragment.this.v.title;
+                    liveMsgShareEntity.room_type = StringUtils.a(InviteChatRecentFragment.this.x, 1);
+                    liveMsgShareEntity.description = InviteChatRecentFragment.this.w;
+                    String json = f.toJson(liveMsgShareEntity);
                     Logger.e("invite", "invite friends extra: " + json);
                     ChatHelperV4.a().a(InviteChatRecentFragment.this.a(StringUtils.a(userBasicModel.uid, 0L), (short) 2, (short) 210, ChatListAdapter.this.mContext.getResources().getString(R.string.yy_share_to_chat), json), false);
                     YYRoomInfoManager.e().b().addInvited(userBasicModel.uid);
                     InviteChatRecentFragment.this.k.notifyItemChanged(i);
                     LiveEventBus.get("share_to_private_chat").post(userBasicModel.uid);
                 }
-            }, InviteChatRecentFragment.this.getFragmentActive());
+            }, (IRequestHost) InviteChatRecentFragment.this.getFragmentActive());
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -117,19 +117,19 @@ public class InviteChatRecentFragment extends PreloadFragment {
                 return;
             }
             this.b = (TextView) baseViewHolder.getView(2131372046);
-            this.f34678c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
-            this.d = (ShapeTextView) baseViewHolder.getView(R.id.invite_to);
+            this.f20987c = (ImageView) baseViewHolder.getView(R.id.riv_avatar);
+            this.d = baseViewHolder.getView(R.id.invite_to);
             this.b.setText(InviteChatRecentFragment.this.a(sessionModel));
             YYRoomModel b = YYRoomInfoManager.e().b();
             if (b.isInvited(sessionModel.sessionId + "")) {
                 this.d.setEnabled(false);
                 this.d.setText("已邀请");
-                ShapeHelper.a((ShapeHelper.ShapeView) this.d, 2131101615);
+                ShapeHelper.a(this.d, 2131101615);
                 ShapeHelper.a(this.d, 2131101874, 2131101874);
             } else {
                 this.d.setText("邀请");
                 this.d.setEnabled(true);
-                ShapeHelper.a((ShapeHelper.ShapeView) this.d, 2131102478);
+                ShapeHelper.a(this.d, 2131102478);
                 ShapeHelper.a(this.d, 2131101446, 2131101533);
             }
             final UserBasicModel userBasicModel = new UserBasicModel();
@@ -137,7 +137,7 @@ public class InviteChatRecentFragment extends PreloadFragment {
             userBasicModel.is_vip_annual = sessionModel.vipAnnual;
             userBasicModel.vip_exp_lvl = sessionModel.vipExpLvl;
             userBasicModel.uid = sessionModel.sessionId + "";
-            ImageLoader.a(InviteChatRecentFragment.this.getFragmentActive(), sessionModel.avatar).b(2131237310).c().a(this.f34678c);
+            ImageLoader.a(InviteChatRecentFragment.this.getFragmentActive(), sessionModel.avatar).b(2131237310).c().a(this.f20987c);
             this.d.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.yy_room.fragment.InviteChatRecentFragment.ChatListAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -157,14 +157,13 @@ public class InviteChatRecentFragment extends PreloadFragment {
         private ShareToSessionListListener() {
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
         public void onUISessionDataChanged(List<SessionModel> list) {
             if (list == null) {
                 list = new ArrayList();
             } else {
                 ChatHelperV4.c(list);
             }
-            if (BluedConstant.f28239a) {
+            if (BluedConstant.f14549a) {
                 Iterator<SessionModel> it = list.iterator();
                 while (it.hasNext()) {
                     SessionModel next = it.next();
@@ -201,7 +200,7 @@ public class InviteChatRecentFragment extends PreloadFragment {
         if (sessionModel == null) {
             return "";
         }
-        SessionSettingModel sessionSettingModel = (SessionSettingModel) sessionModel.sessionSettingModel;
+        SessionSettingModel sessionSettingModel = sessionModel.sessionSettingModel;
         String sessinoNote = sessionSettingModel != null ? sessionSettingModel.getSessinoNote() : "";
         if (TextUtils.isEmpty(sessinoNote)) {
             if (TextUtils.isEmpty(sessionModel.nickName)) {
@@ -216,7 +215,6 @@ public class InviteChatRecentFragment extends PreloadFragment {
         return ChatHelper.getChattingModelForSendmsg(j, s2, str, ILiveMsgSender.e(), str2, s);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         View inflate = LayoutInflater.from(this.j).inflate(R.layout.fragment_share_to_single, (ViewGroup) view, true);
         ProgressBar progressBar = (ProgressBar) inflate.findViewById(2131368973);
@@ -225,14 +223,14 @@ public class InviteChatRecentFragment extends PreloadFragment {
         FrameLayout frameLayout = (FrameLayout) inflate.findViewById(2131363911);
         this.s = frameLayout;
         frameLayout.setBackgroundResource(2131101478);
-        this.m = inflate.findViewById(2131366095);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) inflate.findViewById(R.id.ptrrv_list);
-        this.q = pullToRefreshRecyclerView;
-        pullToRefreshRecyclerView.setRefreshEnabled(false);
-        this.p = this.q.getRefreshableView();
-        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) inflate.findViewById(2131366092);
-        this.r = keyboardListenLinearLayout;
-        super.a(keyboardListenLinearLayout);
+        this.m = inflate.findViewById(R.id.keyboard_view);
+        PullToRefreshRecyclerView findViewById = inflate.findViewById(R.id.ptrrv_list);
+        this.q = findViewById;
+        findViewById.setRefreshEnabled(false);
+        this.p = (RecyclerView) this.q.getRefreshableView();
+        KeyboardListenLinearLayout findViewById2 = inflate.findViewById(R.id.keyboard_layout);
+        this.r = findViewById2;
+        super.a(findViewById2);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.j);
         this.k = new ChatListAdapter();
         this.p.setLayoutManager(linearLayoutManager);
@@ -256,12 +254,11 @@ public class InviteChatRecentFragment extends PreloadFragment {
                 InviteChatRecentFragment.this.n.setNoDataTextColor(2131102478);
                 InviteChatRecentFragment.this.n.setNoDataStr(2131892286);
                 InviteChatRecentFragment.this.n.a();
-                InviteChatRecentFragment.this.k.setEmptyView(InviteChatRecentFragment.this.n);
+                InviteChatRecentFragment.this.k.setEmptyView((View) InviteChatRecentFragment.this.n);
             }
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onAttach(Context context) {
         super.onAttach(context);
         this.j = context;

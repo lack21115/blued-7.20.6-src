@@ -13,20 +13,20 @@ import java.util.Locale;
 public class BluedContextWrapper extends ContextWrapper {
     public static ContextWrapper a(Context context) {
         Context context2;
-        Locale c2 = LocaleUtils.c();
-        if (c2 != null) {
+        Locale c = LocaleUtils.c();
+        if (c != null) {
             Configuration configuration = context.getResources().getConfiguration();
             if (Build.VERSION.SDK_INT >= 24) {
-                configuration.setLocales(new LocaleList(c2));
+                configuration.setLocales(new LocaleList(c));
                 context2 = context.createConfigurationContext(configuration);
             } else {
                 context2 = context;
                 if (Build.VERSION.SDK_INT >= 19) {
-                    configuration.setLocale(c2);
+                    configuration.setLocale(c);
                     context2 = context.createConfigurationContext(configuration);
                 }
             }
-            Log.i("BluedContextWrapper", "locale :" + c2.getLanguage() + ":" + c2.getCountry());
+            Log.i("BluedContextWrapper", "locale :" + c.getLanguage() + ":" + c.getCountry());
             context = context2;
         } else {
             Log.i("BluedContextWrapper", "locale null");

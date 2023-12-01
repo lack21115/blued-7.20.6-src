@@ -6,14 +6,10 @@ import okio.ByteString;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http2/Http2.class */
 public final class Http2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final ByteString f43913a = ByteString.encodeUtf8("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
+    static final ByteString a = ByteString.encodeUtf8("PRI * HTTP/2.0\r\n\r\nSM\r\n\r\n");
     private static final String[] d = {"DATA", "HEADERS", "PRIORITY", "RST_STREAM", "SETTINGS", "PUSH_PROMISE", "PING", "GOAWAY", "WINDOW_UPDATE", "CONTINUATION"};
     static final String[] b = new String[64];
-
-    /* renamed from: c  reason: collision with root package name */
-    static final String[] f43914c = new String[256];
+    static final String[] c = new String[256];
 
     static {
         int i;
@@ -22,7 +18,7 @@ public final class Http2 {
         int i4 = 0;
         while (true) {
             int i5 = i4;
-            String[] strArr = f43914c;
+            String[] strArr = c;
             if (i5 >= strArr.length) {
                 break;
             }
@@ -73,7 +69,7 @@ public final class Http2 {
                 return;
             }
             if (strArr4[i] == null) {
-                strArr4[i] = f43914c[i];
+                strArr4[i] = c[i];
             }
             i++;
         }
@@ -93,14 +89,14 @@ public final class Http2 {
         }
         if (b2 != 2 && b2 != 3) {
             if (b2 == 4 || b2 == 6) {
-                return b3 == 1 ? "ACK" : f43914c[b3];
+                return b3 == 1 ? "ACK" : c[b3];
             } else if (b2 != 7 && b2 != 8) {
                 String[] strArr = b;
-                String str = b3 < strArr.length ? strArr[b3] : f43914c[b3];
+                String str = b3 < strArr.length ? strArr[b3] : c[b3];
                 return (b2 != 5 || (b3 & 4) == 0) ? (b2 != 0 || (b3 & 32) == 0) ? str : str.replace("PRIORITY", "COMPRESSED") : str.replace("HEADERS", "PUSH_PROMISE");
             }
         }
-        return f43914c[b3];
+        return c[b3];
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

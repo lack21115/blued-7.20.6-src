@@ -41,9 +41,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRandomGiftLotteryDialog.class */
 public final class LiveRandomGiftLotteryDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13180a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<LiveRandomGiftLotteryDialogBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveRandomGiftLotteryDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -101,12 +99,12 @@ public final class LiveRandomGiftLotteryDialog extends BaseDialogFragment {
         if (z) {
             ShapeTextView shapeTextView = d().i;
             Intrinsics.c(shapeTextView, "vb.tvTag");
-            BluedViewExKt.a(shapeTextView);
+            BluedViewExKt.a((View) shapeTextView);
         } else {
             d().i.setText(randomGiftDialogLotteryDataModel.getLabel());
             ShapeTextView shapeTextView2 = d().i;
             Intrinsics.c(shapeTextView2, "vb.tvTag");
-            BluedViewExKt.b(shapeTextView2);
+            BluedViewExKt.b((View) shapeTextView2);
         }
         d().f.c();
         d().b.setAlpha(0.0f);
@@ -131,7 +129,7 @@ public final class LiveRandomGiftLotteryDialog extends BaseDialogFragment {
     public static final void c(LiveRandomGiftLotteryDialog this$0) {
         Intrinsics.e(this$0, "this$0");
         this$0.d().b.animate().alpha(1.0f).setDuration(200L).start();
-        this$0.d().f12397a.animate().alpha(1.0f).setDuration(200L).start();
+        this$0.d().a.animate().alpha(1.0f).setDuration(200L).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -212,7 +210,6 @@ public final class LiveRandomGiftLotteryDialog extends BaseDialogFragment {
         BluedViewExKt.a(slopeLoadingView);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;
@@ -238,13 +235,13 @@ public final class LiveRandomGiftLotteryDialog extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

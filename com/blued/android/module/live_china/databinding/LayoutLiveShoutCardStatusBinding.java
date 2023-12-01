@@ -11,20 +11,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutLiveShoutCardStatusBinding.class */
 public final class LayoutLiveShoutCardStatusBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12100a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f12101c;
+    public final TextView c;
     private final ShapeRelativeLayout d;
 
     private LayoutLiveShoutCardStatusBinding(ShapeRelativeLayout shapeRelativeLayout, ImageView imageView, ImageView imageView2, TextView textView) {
         this.d = shapeRelativeLayout;
-        this.f12100a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12101c = textView;
+        this.c = textView;
     }
 
     public static LayoutLiveShoutCardStatusBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -55,7 +51,6 @@ public final class LayoutLiveShoutCardStatusBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeRelativeLayout getRoot() {
         return this.d;

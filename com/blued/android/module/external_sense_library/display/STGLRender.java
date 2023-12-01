@@ -1,7 +1,7 @@
 package com.blued.android.module.external_sense_library.display;
 
-import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
+import com.android.org.conscrypt.NativeCrypto;
 import com.blued.android.framework.utils.LogUtils;
 import com.blued.android.module.external_sense_library.glutils.GlUtil;
 import com.blued.android.module.external_sense_library.glutils.OpenGLUtils;
@@ -13,6 +13,8 @@ import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import javax.microedition.khronos.opengles.GL10;
+import javax.microedition.khronos.opengles.GL11ExtensionPack;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/display/STGLRender.class */
 public class STGLRender {
@@ -81,7 +83,7 @@ public class STGLRender {
                     }
                     HashMap hashMap = new HashMap();
                     hashMap.put(STGLRender.PROGRAM_ID, 0);
-                    hashMap.put("position", -1);
+                    hashMap.put(STGLRender.POSITION_COORDINATE, -1);
                     hashMap.put(STGLRender.TEXTURE_UNIFORM, -1);
                     hashMap.put(STGLRender.TEXTURE_COORDINATE, -1);
                     add(hashMap);
@@ -91,7 +93,7 @@ public class STGLRender {
         };
         this.mNeedResize = false;
         this.mWidthResize = 180;
-        this.mHeightResize = 320;
+        this.mHeightResize = NativeCrypto.SSL3_RT_MAX_ENCRYPTED_OVERHEAD;
         this.activityModelLandscape = true;
         this.activityModelLandscape = z;
         FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(TextureRotationUtil.f.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
@@ -111,16 +113,16 @@ public class STGLRender {
     }
 
     private void bindFrameBuffer(int i, int i2, int i3, int i4) {
-        GLES20.glBindTexture(3553, i);
-        GLES20.glTexImage2D(3553, 0, 6408, i3, i4, 0, 6408, 5121, null);
-        GLES20.glTexParameterf(3553, 10240, 9729.0f);
-        GLES20.glTexParameterf(3553, 10241, 9729.0f);
-        GLES20.glTexParameterf(3553, 10242, 33071.0f);
-        GLES20.glTexParameterf(3553, 10243, 33071.0f);
-        GLES20.glBindFramebuffer(36160, i2);
-        GLES20.glFramebufferTexture2D(36160, 36064, 3553, i, 0);
-        GLES20.glBindTexture(3553, 0);
-        GLES20.glBindFramebuffer(36160, 0);
+        GLES20.glBindTexture(GL10.GL_TEXTURE_2D, i);
+        GLES20.glTexImage2D(GL10.GL_TEXTURE_2D, 0, GL10.GL_RGBA, i3, i4, 0, GL10.GL_RGBA, GL10.GL_UNSIGNED_BYTE, null);
+        GLES20.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MAG_FILTER, 9729.0f);
+        GLES20.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MIN_FILTER, 9729.0f);
+        GLES20.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_S, 33071.0f);
+        GLES20.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_WRAP_T, 33071.0f);
+        GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, i2);
+        GLES20.glFramebufferTexture2D(GL11ExtensionPack.GL_FRAMEBUFFER_OES, GL11ExtensionPack.GL_COLOR_ATTACHMENT0_OES, GL10.GL_TEXTURE_2D, i, 0);
+        GLES20.glBindTexture(GL10.GL_TEXTURE_2D, 0);
+        GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
     }
 
     private void initFrameBuffers(int i, int i2) {
@@ -174,18 +176,18 @@ public class STGLRender {
 
     private void initProgram(String str, HashMap<String, Integer> hashMap) {
         if (hashMap.get(PROGRAM_ID).intValue() == 0) {
-            int a2 = OpenGLUtils.a(CAMERA_INPUT_VERTEX_SHADER, str);
-            hashMap.put(PROGRAM_ID, Integer.valueOf(a2));
-            hashMap.put("position", Integer.valueOf(GLES20.glGetAttribLocation(a2, "position")));
-            hashMap.put(TEXTURE_UNIFORM, Integer.valueOf(GLES20.glGetUniformLocation(a2, TEXTURE_UNIFORM)));
-            hashMap.put(TEXTURE_COORDINATE, Integer.valueOf(GLES20.glGetAttribLocation(a2, TEXTURE_COORDINATE)));
+            int a = OpenGLUtils.a(CAMERA_INPUT_VERTEX_SHADER, str);
+            hashMap.put(PROGRAM_ID, Integer.valueOf(a));
+            hashMap.put(POSITION_COORDINATE, Integer.valueOf(GLES20.glGetAttribLocation(a, POSITION_COORDINATE)));
+            hashMap.put(TEXTURE_UNIFORM, Integer.valueOf(GLES20.glGetUniformLocation(a, TEXTURE_UNIFORM)));
+            hashMap.put(TEXTURE_COORDINATE, Integer.valueOf(GLES20.glGetAttribLocation(a, TEXTURE_COORDINATE)));
         }
     }
 
     private void initYUVProgram(String str, String str2) {
-        int a2 = OpenGLUtils.a(str, str2);
-        this.YUVToRGBAProgramId = a2;
-        this.yTextureLoc = GLES20.glGetUniformLocation(a2, Y_TEXTURE);
+        int a = OpenGLUtils.a(str, str2);
+        this.YUVToRGBAProgramId = a;
+        this.yTextureLoc = GLES20.glGetUniformLocation(a, Y_TEXTURE);
         this.uvTextureLoc = GLES20.glGetUniformLocation(this.YUVToRGBAProgramId, UV_TEXTURE);
     }
 
@@ -196,50 +198,50 @@ public class STGLRender {
         GLES20.glUseProgram(this.YUVToRGBAProgramId);
         GlUtil.a("glUseProgram");
         this.mGLCubeBuffer.position(0);
-        int intValue = this.mArrayPrograms.get(0).get("position").intValue();
-        GLES20.glVertexAttribPointer(intValue, 2, 5126, false, 0, (Buffer) this.mGLCubeBuffer);
+        int intValue = this.mArrayPrograms.get(0).get(POSITION_COORDINATE).intValue();
+        GLES20.glVertexAttribPointer(intValue, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mGLCubeBuffer);
         GLES20.glEnableVertexAttribArray(intValue);
         this.mTextureBuffer.position(0);
         int intValue2 = this.mArrayPrograms.get(0).get(TEXTURE_COORDINATE).intValue();
-        GLES20.glVertexAttribPointer(intValue2, 2, 5126, false, 0, (Buffer) this.mTextureBuffer);
+        GLES20.glVertexAttribPointer(intValue2, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mTextureBuffer);
         GLES20.glEnableVertexAttribArray(intValue2);
         if (i != -1) {
-            GLES20.glActiveTexture(33984);
-            GLES20.glBindTexture(3553, i);
+            GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+            GLES20.glBindTexture(GL10.GL_TEXTURE_2D, i);
             GLES20.glUniform1i(this.yTextureLoc, 0);
         }
         if (i2 != -1) {
-            GLES20.glActiveTexture(33985);
-            GLES20.glBindTexture(3553, i2);
+            GLES20.glActiveTexture(GL10.GL_TEXTURE1);
+            GLES20.glBindTexture(GL10.GL_TEXTURE_2D, i2);
             GLES20.glUniform1i(this.uvTextureLoc, 1);
         }
         if (z) {
-            GLES20.glBindFramebuffer(36160, this.mFrameBuffers[0]);
+            GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mFrameBuffers[0]);
         } else {
-            GLES20.glBindFramebuffer(36160, this.mFrameBuffers[1]);
+            GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mFrameBuffers[1]);
         }
         GlUtil.a("glBindFramebuffer");
         GLES20.glViewport(0, 0, this.mViewPortWidth, this.mViewPortHeight);
         GLES20.glDrawArrays(5, 0, 4);
         GLES20.glDisableVertexAttribArray(intValue);
         GLES20.glDisableVertexAttribArray(intValue2);
-        GLES20.glActiveTexture(33984);
-        GLES20.glBindTexture(3553, 0);
-        GLES20.glActiveTexture(33985);
-        GLES20.glBindTexture(3553, 0);
-        GLES20.glBindFramebuffer(36160, 0);
+        GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+        GLES20.glBindTexture(GL10.GL_TEXTURE_2D, 0);
+        GLES20.glActiveTexture(GL10.GL_TEXTURE1);
+        GLES20.glBindTexture(GL10.GL_TEXTURE_2D, 0);
+        GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
         GLES20.glUseProgram(0);
         return z ? this.mFrameBufferTextures[0] : this.mFrameBufferTextures[1];
     }
 
     public void adjustTextureBuffer(int i, boolean z, boolean z2) {
-        float[] a2 = TextureRotationUtil.a(i, z, z2);
-        LogUtils.b(TAG, "==========rotation: " + i + " flipVertical: " + z2 + " texturePos: " + Arrays.toString(a2));
+        float[] a = TextureRotationUtil.a(i, z, z2);
+        LogUtils.b(TAG, "==========rotation: " + i + " flipVertical: " + z2 + " texturePos: " + Arrays.toString(a));
         if (this.mTextureBuffer == null) {
-            this.mTextureBuffer = ByteBuffer.allocateDirect(a2.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
+            this.mTextureBuffer = ByteBuffer.allocateDirect(a.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
         }
         this.mTextureBuffer.clear();
-        this.mTextureBuffer.put(a2).position(0);
+        this.mTextureBuffer.put(a).position(0);
     }
 
     public void adjustVideoTextureBuffer(int i, boolean z, boolean z2) {
@@ -375,9 +377,9 @@ public class STGLRender {
     }
 
     public void initDrawPoints() {
-        int a2 = OpenGLUtils.a(DRAW_POINTS_VERTEX_SHADER, DRAW_POINTS_FRAGMENT_SHADER);
-        this.mDrawPointsProgram = a2;
-        this.mColor = GLES20.glGetAttribLocation(a2, DRAW_POINTS_POSITION);
+        int a = OpenGLUtils.a(DRAW_POINTS_VERTEX_SHADER, DRAW_POINTS_FRAGMENT_SHADER);
+        this.mDrawPointsProgram = a;
+        this.mColor = GLES20.glGetAttribLocation(a, DRAW_POINTS_POSITION);
         this.mPosition = GLES20.glGetUniformLocation(this.mDrawPointsProgram, DRAW_POINTS_COLOR);
         if (this.mPointsFrameBuffers == null) {
             int[] iArr = new int[1];
@@ -390,23 +392,23 @@ public class STGLRender {
         if (this.mIsInitialized) {
             GLES20.glUseProgram(this.mArrayPrograms.get(1).get(PROGRAM_ID).intValue());
             this.mVertexBuffer.position(0);
-            int intValue = this.mArrayPrograms.get(1).get("position").intValue();
-            GLES20.glVertexAttribPointer(intValue, 2, 5126, false, 0, (Buffer) this.mVertexBuffer);
+            int intValue = this.mArrayPrograms.get(1).get(POSITION_COORDINATE).intValue();
+            GLES20.glVertexAttribPointer(intValue, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mVertexBuffer);
             GLES20.glEnableVertexAttribArray(intValue);
             this.mGLTextureBuffer.position(0);
             int intValue2 = this.mArrayPrograms.get(1).get(TEXTURE_COORDINATE).intValue();
-            GLES20.glVertexAttribPointer(intValue2, 2, 5126, false, 0, (Buffer) this.mGLTextureBuffer);
+            GLES20.glVertexAttribPointer(intValue2, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mGLTextureBuffer);
             GLES20.glEnableVertexAttribArray(intValue2);
             if (i != -1) {
-                GLES20.glActiveTexture(33984);
-                GLES20.glBindTexture(3553, i);
+                GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+                GLES20.glBindTexture(GL10.GL_TEXTURE_2D, i);
                 GLES20.glUniform1i(this.mArrayPrograms.get(1).get(TEXTURE_UNIFORM).intValue(), 0);
             }
             GLES20.glDrawArrays(5, 0, 4);
             GLES20.glDisableVertexAttribArray(intValue);
             GLES20.glDisableVertexAttribArray(intValue2);
-            GLES20.glActiveTexture(33984);
-            GLES20.glBindTexture(3553, 0);
+            GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+            GLES20.glBindTexture(GL10.GL_TEXTURE_2D, 0);
             return 1;
         }
         return -1;
@@ -421,10 +423,10 @@ public class STGLRender {
         FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(fArr.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
         asFloatBuffer.clear();
         asFloatBuffer.put(fArr).position(0);
-        GLES20.glVertexAttribPointer(this.mPosition, 2, 5126, false, 0, (Buffer) asFloatBuffer);
+        GLES20.glVertexAttribPointer(this.mPosition, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) asFloatBuffer);
         GLES20.glEnableVertexAttribArray(this.mPosition);
-        GLES20.glBindFramebuffer(36160, this.mPointsFrameBuffers[0]);
-        GLES20.glFramebufferTexture2D(36160, 36064, 3553, i, 0);
+        GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mPointsFrameBuffers[0]);
+        GLES20.glFramebufferTexture2D(GL11ExtensionPack.GL_FRAMEBUFFER_OES, GL11ExtensionPack.GL_COLOR_ATTACHMENT0_OES, GL10.GL_TEXTURE_2D, i, 0);
         GlUtil.a("glBindFramebuffer");
         GLES20.glViewport(0, 0, this.mViewPortWidth, this.mViewPortHeight);
         GLES20.glDrawArrays(0, 0, fArr.length / 2);
@@ -447,38 +449,38 @@ public class STGLRender {
         GLES20.glUseProgram(this.mArrayPrograms.get(0).get(PROGRAM_ID).intValue());
         GlUtil.a("glUseProgram");
         this.mGLCubeBuffer.position(0);
-        int intValue = this.mArrayPrograms.get(0).get("position").intValue();
-        GLES20.glVertexAttribPointer(intValue, 2, 5126, false, 0, (Buffer) this.mGLCubeBuffer);
+        int intValue = this.mArrayPrograms.get(0).get(POSITION_COORDINATE).intValue();
+        GLES20.glVertexAttribPointer(intValue, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mGLCubeBuffer);
         GLES20.glEnableVertexAttribArray(intValue);
         this.mTextureBuffer.position(0);
         int intValue2 = this.mArrayPrograms.get(0).get(TEXTURE_COORDINATE).intValue();
-        GLES20.glVertexAttribPointer(intValue2, 2, 5126, false, 0, (Buffer) this.mTextureBuffer);
+        GLES20.glVertexAttribPointer(intValue2, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mTextureBuffer);
         GLES20.glEnableVertexAttribArray(intValue2);
         if (i != -1) {
-            GLES20.glActiveTexture(33984);
-            GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, i);
+            GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+            GLES20.glBindTexture(36197, i);
             GLES20.glUniform1i(this.mArrayPrograms.get(0).get(TEXTURE_UNIFORM).intValue(), 0);
         }
-        GLES20.glBindFramebuffer(36160, this.mFrameBuffers[i2]);
+        GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mFrameBuffers[i2]);
         GlUtil.a("glBindFramebuffer");
         GLES20.glViewport(0, 0, this.mViewPortWidth, this.mViewPortHeight);
         GLES20.glDrawArrays(5, 0, 4);
         if (byteBuffer != null) {
             if (this.mNeedResize) {
-                GLES20.glBindFramebuffer(36160, this.mFrameBuffersResize[i2]);
-                GLES20.glFramebufferTexture2D(36160, 36064, 3553, this.mFrameBufferTexturesResize[i2], 0);
-                GLES20.glBindFramebuffer(36160, 0);
-                GLES20.glBindFramebuffer(36160, this.mFrameBuffers[i2]);
-                GLES20.glBindFramebuffer(36160, this.mFrameBuffersResize[i2]);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mFrameBuffersResize[i2]);
+                GLES20.glFramebufferTexture2D(GL11ExtensionPack.GL_FRAMEBUFFER_OES, GL11ExtensionPack.GL_COLOR_ATTACHMENT0_OES, GL10.GL_TEXTURE_2D, this.mFrameBufferTexturesResize[i2], 0);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mFrameBuffers[i2]);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mFrameBuffersResize[i2]);
                 GLES20.glViewport(0, 0, this.mWidthResize, this.mHeightResize);
-                GLES20.glBindFramebuffer(36160, 0);
-                GLES20.glBindFramebuffer(36160, 0);
-                GLES20.glBindFramebuffer(36160, this.mFrameBuffersResize[i2]);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, this.mFrameBuffersResize[i2]);
                 GLES20.glDrawArrays(5, 0, 4);
-                GLES20.glReadPixels(0, 0, this.mWidthResize, this.mHeightResize, 6408, 5121, byteBuffer);
-                GLES20.glBindFramebuffer(36160, 0);
+                GLES20.glReadPixels(0, 0, this.mWidthResize, this.mHeightResize, GL10.GL_RGBA, GL10.GL_UNSIGNED_BYTE, byteBuffer);
+                GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
             } else {
-                GLES20.glReadPixels(0, 0, this.mViewPortWidth, this.mViewPortHeight, 6408, 5121, byteBuffer);
+                GLES20.glReadPixels(0, 0, this.mViewPortWidth, this.mViewPortHeight, GL10.GL_RGBA, GL10.GL_UNSIGNED_BYTE, byteBuffer);
             }
         }
         if (this.mNeedResize) {
@@ -486,9 +488,9 @@ public class STGLRender {
         }
         GLES20.glDisableVertexAttribArray(intValue);
         GLES20.glDisableVertexAttribArray(intValue2);
-        GLES20.glActiveTexture(33984);
-        GLES20.glBindTexture(GLES11Ext.GL_TEXTURE_EXTERNAL_OES, 0);
-        GLES20.glBindFramebuffer(36160, 0);
+        GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+        GLES20.glBindTexture(36197, 0);
+        GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
         GLES20.glUseProgram(0);
         return this.mFrameBufferTextures[i2];
     }
@@ -498,32 +500,32 @@ public class STGLRender {
         if (iArr == null) {
             return;
         }
-        GLES20.glBindFramebuffer(36160, iArr[0]);
+        GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, iArr[0]);
         GLES20.glViewport(0, 0, this.mViewPortWidth, this.mViewPortHeight);
         GLES20.glUseProgram(this.mArrayPrograms.get(1).get(PROGRAM_ID).intValue());
         if (this.mIsInitialized) {
             this.mGLCubeBuffer.position(0);
-            int intValue = this.mArrayPrograms.get(1).get("position").intValue();
-            GLES20.glVertexAttribPointer(intValue, 2, 5126, false, 0, (Buffer) this.mGLCubeBuffer);
+            int intValue = this.mArrayPrograms.get(1).get(POSITION_COORDINATE).intValue();
+            GLES20.glVertexAttribPointer(intValue, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mGLCubeBuffer);
             GLES20.glEnableVertexAttribArray(intValue);
             this.mGLSaveTextureBuffer.position(0);
             int intValue2 = this.mArrayPrograms.get(1).get(TEXTURE_COORDINATE).intValue();
-            GLES20.glVertexAttribPointer(intValue2, 2, 5126, false, 0, (Buffer) this.mGLSaveTextureBuffer);
+            GLES20.glVertexAttribPointer(intValue2, 2, (int) GL10.GL_FLOAT, false, 0, (Buffer) this.mGLSaveTextureBuffer);
             GLES20.glEnableVertexAttribArray(intValue2);
             if (i != -1) {
-                GLES20.glActiveTexture(33984);
-                GLES20.glBindTexture(3553, i);
+                GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+                GLES20.glBindTexture(GL10.GL_TEXTURE_2D, i);
                 GLES20.glUniform1i(this.mArrayPrograms.get(1).get(TEXTURE_UNIFORM).intValue(), 0);
             }
             GLES20.glDrawArrays(5, 0, 4);
             if (byteBuffer != null) {
-                GLES20.glReadPixels(0, 0, this.mViewPortWidth, this.mViewPortHeight, 6408, 5121, byteBuffer);
+                GLES20.glReadPixels(0, 0, this.mViewPortWidth, this.mViewPortHeight, GL10.GL_RGBA, GL10.GL_UNSIGNED_BYTE, byteBuffer);
             }
             GLES20.glDisableVertexAttribArray(intValue);
             GLES20.glDisableVertexAttribArray(intValue2);
-            GLES20.glActiveTexture(33984);
-            GLES20.glBindTexture(3553, 0);
-            GLES20.glBindFramebuffer(36160, 0);
+            GLES20.glActiveTexture(GL10.GL_TEXTURE0);
+            GLES20.glBindTexture(GL10.GL_TEXTURE_2D, 0);
+            GLES20.glBindFramebuffer(GL11ExtensionPack.GL_FRAMEBUFFER_OES, 0);
         }
     }
 }

@@ -1,13 +1,16 @@
 package com.anythink.core.c;
 
-import android.provider.ThemesContract;
 import android.text.TextUtils;
+import com.alipay.sdk.widget.j;
+import com.amap.api.services.core.AMapException;
+import com.android.internal.telephony.SmsConstants;
 import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATCustomAdapterConfig;
 import com.anythink.core.api.ATRewardInfo;
 import com.anythink.core.common.b.g;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.b.p;
+import com.anythink.core.common.c.l;
 import com.anythink.core.common.e.ab;
 import com.anythink.core.common.e.ag;
 import com.anythink.core.common.e.ai;
@@ -15,14 +18,11 @@ import com.anythink.core.common.e.k;
 import com.anythink.core.common.e.m;
 import com.anythink.core.common.e.s;
 import com.anythink.core.common.e.u;
-import com.anythink.core.common.g.j;
 import com.anythink.core.common.k.g;
 import com.anythink.core.common.k.h;
 import com.anythink.core.common.l;
 import com.anythink.core.common.v;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.cdo.oaps.ad.OapsKey;
-import com.huawei.openalliance.ad.constant.bc;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -60,9 +60,7 @@ public class d {
     private List<String> X;
     private String Y;
     private String Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6422a = "Placement";
+    private final String a = "Placement";
     private int aA;
     private int aB;
     private int aC;
@@ -94,9 +92,7 @@ public class d {
     private int ao;
     private int ap;
     private long aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private JSONObject f6423ar;
+    private JSONObject ar;
     private String as;
     private JSONObject at;
     private int au;
@@ -106,9 +102,7 @@ public class d {
     private int ay;
     private List<Integer> az;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f6424c;
+    private long c;
     private int d;
     private int e;
     private int f;
@@ -161,9 +155,7 @@ public class d {
         public static final String X = "lm_lrqf_interval_sws";
         public static final String Y = "wf_lscb_type";
         public static final String Z = "reqid_pg_sw";
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6425a = "hb_bid_timeout";
+        public static final String a = "hb_bid_timeout";
         private static final String aA = "s_id";
         private static final String aB = "u_n_f_sw";
         private static final String aC = "m_o";
@@ -196,9 +188,7 @@ public class d {
         private static final String ao = "gro_id";
         private static final String ap = "hb_list";
         private static final String aq = "s2shb_list";
-
-        /* renamed from: ar  reason: collision with root package name */
-        private static final String f6426ar = "format";
+        private static final String ar = "format";
         private static final String as = "auto_refresh";
         private static final String at = "auto_refresh_time";
         private static final String au = "s_t";
@@ -208,9 +198,7 @@ public class d {
         private static final String ay = "tp_ps";
         private static final String az = "t_g_id";
         public static final String b = "addr_bid";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6427c = "load_fail_wtime";
+        public static final String c = "load_fail_wtime";
         public static final String d = "load_cap";
         public static final String e = "load_cap_time";
         public static final String f = "cached_offers_num";
@@ -305,10 +293,10 @@ public class d {
                     } else {
                         aiVar.c(jSONObject.optInt(l.x));
                     }
-                    if (jSONObject.isNull("content")) {
+                    if (jSONObject.isNull(l.y)) {
                         aiVar.b("");
                     } else {
-                        aiVar.b(jSONObject.optString("content"));
+                        aiVar.b(jSONObject.optString(l.y));
                     }
                     if (jSONObject.isNull("nw_firm_id")) {
                         aiVar.a(-1);
@@ -321,7 +309,7 @@ public class d {
                         aiVar.a(jSONObject.optString(l.v));
                     }
                     if (jSONObject.isNull(l.A)) {
-                        aiVar.d("unknown");
+                        aiVar.d(SmsConstants.FORMAT_UNKNOWN);
                     } else {
                         aiVar.d(jSONObject.optString(l.A));
                     }
@@ -350,10 +338,10 @@ public class d {
                     } else {
                         aiVar.e(jSONObject.optString("unit_id"));
                     }
-                    if (jSONObject.isNull("ecpm")) {
+                    if (jSONObject.isNull(l.D)) {
                         aiVar.a(0.0d);
                     } else {
-                        aiVar.a(jSONObject.optDouble("ecpm", 0.0d));
+                        aiVar.a(jSONObject.optDouble(l.D, 0.0d));
                     }
                     if (jSONObject.isNull(l.E)) {
                         aiVar.f(2000L);
@@ -371,7 +359,7 @@ public class d {
                         aiVar.i(jSONObject.optInt(l.H));
                     }
                     if (jSONObject.isNull(l.I)) {
-                        aiVar.j(3000);
+                        aiVar.j(AMapException.CODE_AMAP_ROUTE_OUT_OF_SERVICE);
                     } else {
                         aiVar.j(jSONObject.optInt(l.I));
                     }
@@ -731,7 +719,7 @@ public class d {
     }
 
     private JSONObject ay() {
-        return this.f6423ar;
+        return this.ar;
     }
 
     private int az() {
@@ -752,9 +740,9 @@ public class d {
                 dVar.b = jSONObject.optLong("ps_ct");
             }
             if (jSONObject.isNull("ps_ct_out")) {
-                dVar.f6424c = 0L;
+                dVar.c = 0L;
             } else {
-                dVar.f6424c = jSONObject.optLong("ps_ct_out");
+                dVar.c = jSONObject.optLong("ps_ct_out");
             }
             if (jSONObject.isNull("pucs")) {
                 dVar.d = 1;
@@ -796,20 +784,20 @@ public class d {
             } else {
                 dVar.k = jSONObject.optInt("show_type");
             }
-            if (jSONObject.isNull("refresh")) {
+            if (jSONObject.isNull(j.l)) {
                 dVar.l = 0;
             } else {
-                dVar.l = jSONObject.optInt("refresh");
+                dVar.l = jSONObject.optInt(j.l);
             }
             if (jSONObject.isNull("gro_id")) {
                 dVar.m = 0;
             } else {
                 dVar.m = jSONObject.optInt("gro_id");
             }
-            if (jSONObject.isNull("format")) {
+            if (jSONObject.isNull(l.a.b)) {
                 dVar.u = 0;
             } else {
-                dVar.u = jSONObject.optInt("format");
+                dVar.u = jSONObject.optInt(l.a.b);
             }
             if (jSONObject.isNull("auto_refresh")) {
                 dVar.v = 0;
@@ -826,10 +814,10 @@ public class d {
             } else {
                 dVar.x = jSONObject.optLong("s_t");
             }
-            if (jSONObject.isNull(l.J)) {
+            if (jSONObject.isNull(com.anythink.core.common.l.J)) {
                 dVar.y = 1800000L;
             } else {
-                dVar.y = jSONObject.optLong(l.J);
+                dVar.y = jSONObject.optLong(com.anythink.core.common.l.J);
             }
             if (jSONObject.isNull("ra")) {
                 dVar.z = -1;
@@ -847,9 +835,9 @@ public class d {
                 try {
                     ag agVar = new ag();
                     JSONObject optJSONObject = jSONObject.optJSONObject("tp_ps");
-                    agVar.f6629a = optJSONObject.optInt("pucs") == 1;
+                    agVar.a = optJSONObject.optInt("pucs") == 1;
                     agVar.b = optJSONObject.optLong("apdt");
-                    agVar.f6630c = optJSONObject.optInt("aprn");
+                    agVar.c = optJSONObject.optInt("aprn");
                     agVar.d = optJSONObject.optInt("puas") == 1;
                     agVar.e = optJSONObject.optLong("cdt");
                     agVar.f = optJSONObject.optInt("ski_swt") == 1;
@@ -899,11 +887,11 @@ public class d {
             } else {
                 dVar.aH = jSONObject.optString(a.w);
             }
-            if (jSONObject.isNull(ThemesContract.ThemesColumns.LAST_UPDATE_TIME)) {
+            if (jSONObject.isNull("updateTime")) {
                 dVar.aG = 0L;
                 optLong = 0;
             } else {
-                optLong = jSONObject.optLong(ThemesContract.ThemesColumns.LAST_UPDATE_TIME);
+                optLong = jSONObject.optLong("updateTime");
                 dVar.aG = optLong;
             }
             if (jSONObject.isNull("t_g_id")) {
@@ -934,10 +922,10 @@ public class d {
             } else {
                 dVar.F = jSONObject.optInt("p_m_o");
             }
-            if (jSONObject.isNull(j.f6729a)) {
+            if (jSONObject.isNull(com.anythink.core.common.g.j.a)) {
                 dVar.H = null;
             } else {
-                JSONObject jSONObject2 = new JSONObject(jSONObject.optString(j.f6729a));
+                JSONObject jSONObject2 = new JSONObject(jSONObject.optString(com.anythink.core.common.g.j.a));
                 HashMap hashMap = new HashMap();
                 Iterator<String> keys = jSONObject2.keys();
                 while (keys.hasNext()) {
@@ -946,8 +934,8 @@ public class d {
                 }
                 dVar.H = hashMap;
             }
-            if (!jSONObject.isNull(bc.e.D)) {
-                JSONObject jSONObject3 = new JSONObject(jSONObject.optString(bc.e.D));
+            if (!jSONObject.isNull("callback")) {
+                JSONObject jSONObject3 = new JSONObject(jSONObject.optString("callback"));
                 if (!jSONObject3.isNull("sc_list")) {
                     JSONObject jSONObject4 = new JSONObject(jSONObject3.optString("sc_list"));
                     HashMap hashMap2 = new HashMap();
@@ -973,8 +961,8 @@ public class d {
                     }
                     dVar.J = aTRewardInfo2;
                 }
-                if (!jSONObject3.isNull(OapsKey.KEY_CURRENCY_CODE)) {
-                    dVar.K = jSONObject3.optString(OapsKey.KEY_CURRENCY_CODE);
+                if (!jSONObject3.isNull("currency")) {
+                    dVar.K = jSONObject3.optString("currency");
                 }
                 if (!jSONObject3.isNull("cc")) {
                     dVar.L = jSONObject3.optString("cc");
@@ -986,20 +974,20 @@ public class d {
                     dVar.W = jSONObject3.optString("acct_cy");
                 }
             }
-            if (jSONObject.isNull(a.f6425a)) {
+            if (jSONObject.isNull(a.a)) {
                 dVar.M = 10000L;
             } else {
-                dVar.M = jSONObject.optLong(a.f6425a);
+                dVar.M = jSONObject.optLong(a.a);
             }
             if (jSONObject.isNull(a.b)) {
                 dVar.N = "";
             } else {
                 dVar.N = jSONObject.optString(a.b);
             }
-            if (jSONObject.isNull(a.f6427c)) {
+            if (jSONObject.isNull(a.c)) {
                 dVar.O = 10000L;
             } else {
-                dVar.O = jSONObject.optLong(a.f6427c);
+                dVar.O = jSONObject.optLong(a.c);
             }
             if (jSONObject.isNull(a.d)) {
                 dVar.P = -1;
@@ -1145,9 +1133,9 @@ public class d {
                 dVar.aJ = jSONObject.optDouble("bid_floor");
             }
             if (jSONObject.isNull(a.I)) {
-                dVar.f6423ar = null;
+                dVar.ar = null;
             } else {
-                dVar.f6423ar = jSONObject.optJSONObject(a.I);
+                dVar.ar = jSONObject.optJSONObject(a.I);
             }
             if (jSONObject.isNull(a.J)) {
                 dVar.as = "";
@@ -1259,7 +1247,7 @@ public class d {
     }
 
     private void b(JSONObject jSONObject) {
-        this.f6423ar = jSONObject;
+        this.ar = jSONObject;
     }
 
     public static List<ai> c(String str) {
@@ -1383,7 +1371,7 @@ public class d {
     }
 
     private void k(long j) {
-        this.f6424c = j;
+        this.c = j;
     }
 
     private void k(String str) {
@@ -1639,7 +1627,7 @@ public class d {
     }
 
     public final long Y() {
-        return this.f6424c;
+        return this.c;
     }
 
     public final int Z() {
@@ -1652,16 +1640,16 @@ public class d {
 
     public final Map<String, Object> a(String str, String str2, ai aiVar) {
         m N;
-        Map<String, Object> c2 = h.c(aiVar.g());
+        Map<String, Object> c = h.c(aiVar.g());
         boolean b = g.b();
         com.anythink.core.c.a b2 = b.a(n.a().g()).b(n.a().p());
         if (!TextUtils.isEmpty(aiVar.y())) {
-            c2.put("payload", aiVar.y());
+            c.put("payload", aiVar.y());
         }
         if (!TextUtils.isEmpty(aiVar.R())) {
-            c2.put("custom_inhouse_bid_result", aiVar.R());
+            c.put("custom_inhouse_bid_result", aiVar.R());
         }
-        c2.put(g.k.f6516c, Boolean.valueOf(b2.p() == 3));
+        c.put(g.k.c, Boolean.valueOf(b2.p() == 3));
         boolean z = false;
         if (b2.q() == 2) {
             z = false;
@@ -1669,25 +1657,25 @@ public class d {
                 z = true;
             }
         }
-        c2.put(g.k.d, Boolean.valueOf(z));
-        c2.put(g.k.e, Boolean.valueOf(p.a(n.a().g()).c()));
-        c2.put("ad_type", Integer.valueOf(aiVar.Y()));
+        c.put(g.k.d, Boolean.valueOf(z));
+        c.put(g.k.e, Boolean.valueOf(p.a(n.a().g()).c()));
+        c.put("ad_type", Integer.valueOf(aiVar.Y()));
         if (this.ay == 1) {
-            c2.put(g.k.m, str + BridgeUtil.UNDERLINE_STR + this.C + BridgeUtil.UNDERLINE_STR + this.m);
+            c.put(g.k.m, str + BridgeUtil.UNDERLINE_STR + this.C + BridgeUtil.UNDERLINE_STR + this.m);
         }
-        c2.put(g.k.n, v.a().g(str));
+        c.put(g.k.n, v.a().g(str));
         if (aiVar.c() == 28 && (N = aiVar.N()) != null) {
-            c2.put(g.k.o, Double.valueOf(com.anythink.core.common.k.g.a(aiVar) * N.l));
+            c.put(g.k.o, Double.valueOf(com.anythink.core.common.k.g.a(aiVar) * N.l));
         }
         String l = com.anythink.core.common.k.d.l();
         if (!TextUtils.isEmpty(l)) {
-            c2.put(ATAdConst.KEY.WECHAT_APPID, l);
+            c.put(ATAdConst.KEY.WECHAT_APPID, l);
         }
         if (aiVar.c() == 35 || aiVar.l() == 3 || aiVar.l() == 4 || aiVar.l() == 7) {
             com.anythink.core.common.e.j jVar = new com.anythink.core.common.e.j();
-            jVar.f6663a = aiVar.y();
+            jVar.a = aiVar.y();
             jVar.f = aiVar.c();
-            jVar.f6664c = aiVar.t();
+            jVar.c = aiVar.t();
             jVar.d = str2;
             jVar.b = str;
             jVar.h = this.C;
@@ -1706,22 +1694,22 @@ public class d {
                 jVar.m.q(this.u);
             }
             jVar.n = N2 != null ? N2.f : 0L;
-            c2.put(g.k.f6515a, jVar);
+            c.put(g.k.a, jVar);
         }
         if (aiVar.ai()) {
-            c2.put(g.k.i, this.f6423ar);
+            c.put(g.k.i, this.ar);
         }
         if (aiVar.c() == 50 && this.aB == 1) {
-            c2.put(g.k.q, str2);
+            c.put(g.k.q, str2);
         }
         if (aiVar.c() == 46) {
             ATAdConst.CURRENCY currency = ATAdConst.CURRENCY.RMB;
             if (TextUtils.equals(aiVar.ah(), "USD")) {
                 currency = ATAdConst.CURRENCY.USD;
             }
-            c2.put(g.k.r, currency);
+            c.put(g.k.r, currency);
         }
-        return c2;
+        return c;
     }
 
     public final boolean a(String str) {

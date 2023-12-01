@@ -22,13 +22,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveWishCourtView.class */
 public class LiveWishCourtView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f14960a;
+    private BaseFragment a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f14961c;
+    private TextView c;
     private TextView d;
     private TextView e;
     private LiveWishCourtModel f;
@@ -82,7 +78,7 @@ public class LiveWishCourtView extends FrameLayout {
     private void a() {
         View inflate = LayoutInflater.from(AppInfo.d()).inflate(this.g, (ViewGroup) null);
         this.b = (ImageView) inflate.findViewById(R.id.live_wish_court_iv);
-        this.f14961c = (TextView) inflate.findViewById(R.id.tv_title);
+        this.c = (TextView) inflate.findViewById(R.id.tv_title);
         this.d = (TextView) inflate.findViewById(R.id.live_wish_court_time_tv);
         this.e = (TextView) inflate.findViewById(R.id.live_wish_court_count_tv);
         setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveWishCourtView$abJnBI2AiJmPGuJR7CEdzyV_644
@@ -104,8 +100,8 @@ public class LiveWishCourtView extends FrameLayout {
         if (this.f == null) {
             return;
         }
-        ImageLoader.a(this.f14960a.getFragmentActive(), this.f.goods_icon).a(this.b);
-        this.f14961c.setText(this.f.tools_title);
+        ImageLoader.a(this.a.getFragmentActive(), this.f.goods_icon).a(this.b);
+        this.c.setText(this.f.tools_title);
         this.e.setText(String.valueOf(this.f.goods_count));
         TextView textView = this.d;
         textView.setText(this.f.countdown + "s");
@@ -157,6 +153,6 @@ public class LiveWishCourtView extends FrameLayout {
     }
 
     public void setBaseFragment(BaseFragment baseFragment) {
-        this.f14960a = baseFragment;
+        this.a = baseFragment;
     }
 }

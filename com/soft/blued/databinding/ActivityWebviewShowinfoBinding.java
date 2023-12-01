@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ActivityWebviewShowinfoBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28672a;
+    private final RelativeLayout f14982a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28672a;
+        return this.f14982a;
     }
 }

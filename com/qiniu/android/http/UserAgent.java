@@ -2,8 +2,8 @@ package com.qiniu.android.http;
 
 import android.os.Build;
 import android.text.TextUtils;
-import com.qiniu.android.common.Constants;
 import com.qiniu.android.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.nio.charset.Charset;
 import java.util.Locale;
 import java.util.Random;
@@ -31,14 +31,14 @@ public final class UserAgent {
             StringBuilder sb = new StringBuilder();
             String str2 = str;
             if (str == null) {
-                str2 = "-";
+                str2 = Constants.ACCEPT_TIME_SEPARATOR_SERVER;
             }
             sb.append(str2);
-            sb.append("-");
+            sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             sb.append(trim);
             return StringUtils.strip(sb.toString());
         } catch (Throwable th) {
-            return "-";
+            return Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         }
     }
 
@@ -56,7 +56,7 @@ public final class UserAgent {
     }
 
     static String getUserAgent(String str) {
-        return String.format("QiniuAndroid/%s (%s; %s; %s", Constants.VERSION, osVersion(), device(), str);
+        return String.format("QiniuAndroid/%s (%s; %s; %s", com.qiniu.android.common.Constants.VERSION, osVersion(), device(), str);
     }
 
     public static UserAgent instance() {
@@ -66,9 +66,9 @@ public final class UserAgent {
     public static String osVersion() {
         try {
             String str = Build.VERSION.RELEASE;
-            return str == null ? "-" : StringUtils.strip(str.trim());
+            return str == null ? Constants.ACCEPT_TIME_SEPARATOR_SERVER : StringUtils.strip(str.trim());
         } catch (Throwable th) {
-            return "-";
+            return Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         }
     }
 

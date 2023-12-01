@@ -18,12 +18,12 @@ import java.util.Map;
 public class StatModule implements d, BeaconModule {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39595a;
+    private Context f25904a;
     private com.tencent.tmsbeacon.d.b d;
     private boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f39596c = true;
+    private boolean f25905c = true;
     private long e = 0;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/module/StatModule$a.class */
@@ -51,18 +51,18 @@ public class StatModule implements d, BeaconModule {
         public final /* synthetic */ long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f39597c;
+        public final /* synthetic */ String f25906c;
         public final /* synthetic */ long d;
 
         public b(long j, String str, long j2) {
             this.b = j;
-            this.f39597c = str;
+            this.f25906c = str;
             this.d = j2;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            BeaconReport.getInstance().report(BeaconEvent.builder().withParams("A110", String.valueOf(this.b)).withParams("A111", this.f39597c).withParams("A112", String.valueOf(this.d)).withCode("rqd_page_fgt").withType(EventType.REALTIME).build());
+            BeaconReport.getInstance().report(BeaconEvent.builder().withParams("A110", String.valueOf(this.b)).withParams("A111", this.f25906c).withParams("A112", String.valueOf(this.d)).withCode("rqd_page_fgt").withType(EventType.REALTIME).build());
         }
     }
 
@@ -71,18 +71,18 @@ public class StatModule implements d, BeaconModule {
         public final /* synthetic */ long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ String f39598c;
+        public final /* synthetic */ String f25907c;
         public final /* synthetic */ long d;
 
         public c(long j, String str, long j2) {
             this.b = j;
-            this.f39598c = str;
+            this.f25907c = str;
             this.d = j2;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            BeaconReport.getInstance().report(BeaconEvent.builder().withParams("A110", String.valueOf(this.b)).withParams("A111", this.f39598c).withParams("A112", String.valueOf(this.d)).withCode("rqd_page").withType(EventType.NORMAL).build());
+            BeaconReport.getInstance().report(BeaconEvent.builder().withParams("A110", String.valueOf(this.b)).withParams("A111", this.f25907c).withParams("A112", String.valueOf(this.d)).withCode("rqd_page").withType(EventType.NORMAL).build());
             StatModule.this.e += this.d;
             if (StatModule.this.e >= 15000) {
                 StatModule.this.e = 0L;
@@ -91,7 +91,7 @@ public class StatModule implements d, BeaconModule {
     }
 
     private void c() {
-        ((Application) this.f39595a).registerActivityLifecycleCallbacks(new com.tencent.tmsbeacon.c.a.d(this));
+        ((Application) this.f25904a).registerActivityLifecycleCallbacks(new com.tencent.tmsbeacon.c.a.d(this));
     }
 
     private void d() {
@@ -100,7 +100,7 @@ public class StatModule implements d, BeaconModule {
             return;
         }
         com.tencent.tmsbeacon.a.b.a.a().a(50000L, new a());
-        a.SharedPreferences$EditorC1031a edit = a2.edit();
+        a.SharedPreferences$EditorC0861a edit = a2.edit();
         if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
             edit.putString("rqd_model", com.tencent.tmsbeacon.base.util.b.d());
         }
@@ -119,16 +119,16 @@ public class StatModule implements d, BeaconModule {
         hashMap.put("A19", l.q());
         hashMap.put("A63", "Y");
         hashMap.put("A21", com.tencent.tmsbeacon.a.c.b.g() ? "Y" : "N");
-        hashMap.put("A45", com.tencent.tmsbeacon.a.c.b.d(this.f39595a) ? "Y" : "N");
-        hashMap.put("A66", com.tencent.tmsbeacon.a.c.b.e(this.f39595a) ? "F" : "B");
-        hashMap.put("A68", "" + com.tencent.tmsbeacon.a.c.b.b(this.f39595a));
+        hashMap.put("A45", com.tencent.tmsbeacon.a.c.b.d(this.f25904a) ? "Y" : "N");
+        hashMap.put("A66", com.tencent.tmsbeacon.a.c.b.e(this.f25904a) ? "F" : "B");
+        hashMap.put("A68", "" + com.tencent.tmsbeacon.a.c.b.b(this.f25904a));
         hashMap.put("A85", com.tencent.tmsbeacon.a.c.b.d ? "Y" : "N");
         hashMap.put("A9", Build.BRAND);
         hashMap.put("A14", l.w());
         hashMap.put("A20", e.j());
         hashMap.put("A69", e.k());
         if (a(hashMap)) {
-            a.SharedPreferences$EditorC1031a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
+            a.SharedPreferences$EditorC0861a edit = com.tencent.tmsbeacon.a.d.a.a().edit();
             if (com.tencent.tmsbeacon.base.util.b.a((SharedPreferences.Editor) edit)) {
                 edit.putString("LAUEVE_DENGTA", com.tencent.tmsbeacon.base.util.b.d());
             }
@@ -140,15 +140,15 @@ public class StatModule implements d, BeaconModule {
 
     @Override // com.tencent.tmsbeacon.module.BeaconModule
     public void a(Context context) {
-        this.f39595a = context;
+        this.f25904a = context;
         if (!com.tencent.tmsbeacon.a.c.b.f(context)) {
             com.tencent.tmsbeacon.base.util.c.a("non-main process. do not report rqd event", new Object[0]);
             return;
         }
-        com.tencent.tmsbeacon.d.b b2 = ((StrategyModule) BeaconModule.f39592a.get(ModuleName.STRATEGY)).b();
+        com.tencent.tmsbeacon.d.b b2 = ((StrategyModule) BeaconModule.f25901a.get(ModuleName.STRATEGY)).b();
         this.d = b2;
-        this.f39596c = b2.f();
-        ((Application) this.f39595a).registerActivityLifecycleCallbacks(new com.tencent.tmsbeacon.c.a.c(this));
+        this.f25905c = b2.f();
+        ((Application) this.f25904a).registerActivityLifecycleCallbacks(new com.tencent.tmsbeacon.c.a.c(this));
         com.tencent.tmsbeacon.a.a.b.a().a(2, this);
         com.tencent.tmsbeacon.a.a.b.a().a(10, this);
     }
@@ -174,23 +174,23 @@ public class StatModule implements d, BeaconModule {
 
     @Override // com.tencent.tmsbeacon.a.a.d
     public void onEvent(com.tencent.tmsbeacon.a.a.c cVar) {
-        int i = cVar.f39460a;
+        int i = cVar.f25769a;
         if (i == 2) {
             Map map = (Map) cVar.b.get("d_m");
             if (map != null) {
                 this.b = com.tencent.tmsbeacon.base.util.b.a((String) map.get("modelEventUsable"), this.b);
-                this.f39596c = com.tencent.tmsbeacon.base.util.b.a((String) map.get("isPagePath"), this.f39596c);
+                this.f25905c = com.tencent.tmsbeacon.base.util.b.a((String) map.get("isPagePath"), this.f25905c);
             }
         } else if (i != 10) {
         } else {
             e();
-            if (com.tencent.tmsbeacon.a.c.b.f(this.f39595a)) {
-                new com.tencent.tmsbeacon.c.c(this.f39595a).a(this.d);
+            if (com.tencent.tmsbeacon.a.c.b.f(this.f25904a)) {
+                new com.tencent.tmsbeacon.c.c(this.f25904a).a(this.d);
             }
             if (this.b) {
                 d();
             }
-            if (this.f39596c) {
+            if (this.f25905c) {
                 c();
             }
         }

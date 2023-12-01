@@ -10,7 +10,7 @@ import java.util.Map;
 public class ResourceDecoderRegistry {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<String> f21034a = new ArrayList();
+    private final List<String> f7428a = new ArrayList();
     private final Map<String, List<Entry<?, ?>>> b = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -18,28 +18,28 @@ public class ResourceDecoderRegistry {
     public static class Entry<T, R> {
 
         /* renamed from: a  reason: collision with root package name */
-        final Class<R> f21035a;
+        final Class<R> f7429a;
         final ResourceDecoder<T, R> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Class<T> f21036c;
+        private final Class<T> f7430c;
 
         public Entry(Class<T> cls, Class<R> cls2, ResourceDecoder<T, R> resourceDecoder) {
-            this.f21036c = cls;
-            this.f21035a = cls2;
+            this.f7430c = cls;
+            this.f7429a = cls2;
             this.b = resourceDecoder;
         }
 
         public boolean a(Class<?> cls, Class<?> cls2) {
-            return this.f21036c.isAssignableFrom(cls) && cls2.isAssignableFrom(this.f21035a);
+            return this.f7430c.isAssignableFrom(cls) && cls2.isAssignableFrom(this.f7429a);
         }
     }
 
     private List<Entry<?, ?>> a(String str) {
         ArrayList arrayList;
         synchronized (this) {
-            if (!this.f21034a.contains(str)) {
-                this.f21034a.add(str);
+            if (!this.f7428a.contains(str)) {
+                this.f7428a.add(str);
             }
             List<Entry<?, ?>> list = this.b.get(str);
             arrayList = list;
@@ -55,7 +55,7 @@ public class ResourceDecoderRegistry {
         ArrayList arrayList;
         synchronized (this) {
             arrayList = new ArrayList();
-            for (String str : this.f21034a) {
+            for (String str : this.f7428a) {
                 List<Entry<?, ?>> list = this.b.get(str);
                 if (list != null) {
                     for (Entry<?, ?> entry : list) {
@@ -77,14 +77,14 @@ public class ResourceDecoderRegistry {
 
     public void a(List<String> list) {
         synchronized (this) {
-            ArrayList<String> arrayList = new ArrayList(this.f21034a);
-            this.f21034a.clear();
+            ArrayList<String> arrayList = new ArrayList(this.f7428a);
+            this.f7428a.clear();
             for (String str : list) {
-                this.f21034a.add(str);
+                this.f7428a.add(str);
             }
             for (String str2 : arrayList) {
                 if (!list.contains(str2)) {
-                    this.f21034a.add(str2);
+                    this.f7428a.add(str2);
                 }
             }
         }
@@ -94,12 +94,12 @@ public class ResourceDecoderRegistry {
         ArrayList arrayList;
         synchronized (this) {
             arrayList = new ArrayList();
-            for (String str : this.f21034a) {
+            for (String str : this.f7428a) {
                 List<Entry<?, ?>> list = this.b.get(str);
                 if (list != null) {
                     for (Entry<?, ?> entry : list) {
-                        if (entry.a(cls, cls2) && !arrayList.contains(entry.f21035a)) {
-                            arrayList.add(entry.f21035a);
+                        if (entry.a(cls, cls2) && !arrayList.contains(entry.f7429a)) {
+                            arrayList.add(entry.f7429a);
                         }
                     }
                 }

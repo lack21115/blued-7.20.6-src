@@ -9,19 +9,19 @@ public class e implements com.anythink.expressad.foundation.g.d.c {
     protected static final String b = "ImageLoaderListener";
 
     /* renamed from: a  reason: collision with root package name */
-    private com.anythink.expressad.foundation.d.c f8506a;
+    private com.anythink.expressad.foundation.d.c f5666a;
 
     /* renamed from: c  reason: collision with root package name */
-    protected WeakReference<ImageView> f8507c;
+    protected WeakReference<ImageView> f5667c;
     private String d;
 
     public e(ImageView imageView) {
-        this.f8507c = new WeakReference<>(imageView);
+        this.f5667c = new WeakReference<>(imageView);
     }
 
     public e(ImageView imageView, com.anythink.expressad.foundation.d.c cVar, String str) {
-        this.f8507c = new WeakReference<>(imageView);
-        this.f8506a = cVar;
+        this.f5667c = new WeakReference<>(imageView);
+        this.f5666a = cVar;
         this.d = str;
     }
 
@@ -30,13 +30,13 @@ public class e implements com.anythink.expressad.foundation.g.d.c {
         try {
             if (bitmap == null) {
                 com.anythink.expressad.foundation.h.o.d(b, "bitmap=null");
-            } else if (this.f8507c == null || this.f8507c.get() == null || bitmap.isRecycled()) {
+            } else if (this.f5667c == null || this.f5667c.get() == null || bitmap.isRecycled()) {
             } else {
-                this.f8507c.get().setImageBitmap(bitmap);
-                this.f8507c.get().setVisibility(0);
+                this.f5667c.get().setImageBitmap(bitmap);
+                this.f5667c.get().setVisibility(0);
             }
         } catch (Throwable th) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
             }
         }

@@ -7,7 +7,9 @@ import android.os.IBinder;
 import android.os.StrictMode;
 import android.util.Log;
 import com.google.common.net.HttpHeaders;
+import com.huawei.hms.ads.fw;
 import com.tencent.qcloud.core.util.IOUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -127,7 +129,7 @@ public class MediaHTTPConnection extends IMediaHTTPConnection.Stub {
         try {
             return Long.parseLong(str) != 0;
         } catch (NumberFormatException e) {
-            if ("true".equalsIgnoreCase(str) || "yes".equalsIgnoreCase(str)) {
+            if (fw.Code.equalsIgnoreCase(str) || "yes".equalsIgnoreCase(str)) {
                 z = true;
             }
             return z;
@@ -184,7 +186,7 @@ public class MediaHTTPConnection extends IMediaHTTPConnection.Stub {
                     }
                 }
                 if (j > 0) {
-                    this.mConnection.setRequestProperty("Range", "bytes=" + j + "-");
+                    this.mConnection.setRequestProperty("Range", "bytes=" + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 }
                 int responseCode = this.mConnection.getResponseCode();
                 if (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303 && responseCode != 307) {

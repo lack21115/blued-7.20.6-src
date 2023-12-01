@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f36656a;
+    private final String f22965a;
     private final int b;
     private long d;
     private long e;
@@ -17,7 +17,7 @@ public final class f {
     private final a g;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.tencent.liteav.base.b.a f36657c = new com.tencent.liteav.base.b.a(m.ag);
+    private final com.tencent.liteav.base.b.a f22966c = new com.tencent.liteav.base.b.a(m.ag);
     private double h = 0.0d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/utils/f$a.class */
@@ -26,7 +26,7 @@ public final class f {
     }
 
     public f(String str, int i, a aVar) {
-        this.f36656a = str + "(" + hashCode() + ")";
+        this.f22965a = str + "(" + hashCode() + ")";
         this.b = (int) Math.max((long) i, TimeUnit.SECONDS.toMillis(1L));
         b();
         this.g = aVar;
@@ -40,8 +40,8 @@ public final class f {
             this.f = SystemClock.elapsedRealtime();
         } else if (elapsedRealtime - j >= this.b) {
             this.h = (((float) (this.d - this.e)) * 1000.0f) / ((float) (elapsedRealtime - j));
-            if (this.f36657c.a()) {
-                LiteavLog.i("FpsCalculate", "meter name:" + this.f36656a + " fps:" + this.h);
+            if (this.f22966c.a()) {
+                LiteavLog.i("FpsCalculate", "meter name:" + this.f22965a + " fps:" + this.h);
             }
             this.f = elapsedRealtime;
             this.e = this.d;

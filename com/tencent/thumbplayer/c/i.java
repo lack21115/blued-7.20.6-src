@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class i implements f.a, i.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f39262a;
+    private int f25571a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f39263c;
+    private int f25572c;
     private ConcurrentHashMap<Integer, b> d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,13 +29,13 @@ public class i implements f.a, i.b {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static i f39265a = new i();
+        private static i f25574a = new i();
     }
 
     private i() {
-        this.f39262a = 0;
+        this.f25571a = 0;
         this.b = "";
-        this.f39263c = 0;
+        this.f25572c = 0;
         if (this.d == null) {
             this.d = new ConcurrentHashMap<>();
         }
@@ -44,7 +44,7 @@ public class i implements f.a, i.b {
     }
 
     public static i a() {
-        return a.f39265a;
+        return a.f25574a;
     }
 
     private static TPDLProxyInitParam a(Context context) {
@@ -53,7 +53,7 @@ public class i implements f.a, i.b {
 
     private void a(String str, int i) {
         this.b = str;
-        this.f39263c = i;
+        this.f25572c = i;
         for (b bVar : this.d.values()) {
             bVar.a().setUserData(TPDownloadProxyEnum.USER_UPC, str);
             bVar.a().setUserData(TPDownloadProxyEnum.USER_UPC_STATE, Integer.valueOf(i));
@@ -139,7 +139,7 @@ public class i implements f.a, i.b {
             default:
                 return;
         }
-        this.f39262a = i4;
+        this.f25571a = i4;
         b(i4);
     }
 

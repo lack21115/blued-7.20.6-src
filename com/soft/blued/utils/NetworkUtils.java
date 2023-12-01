@@ -9,7 +9,7 @@ import com.blued.android.core.AppInfo;
 public class NetworkUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f34763a = NetworkUtils.class.getSimpleName();
+    private static final String f21072a = NetworkUtils.class.getSimpleName();
 
     public static String a() {
         try {

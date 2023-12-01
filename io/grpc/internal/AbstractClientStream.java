@@ -1,7 +1,5 @@
 package io.grpc.internal;
 
-import android.provider.Downloads;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.common.base.Preconditions;
 import com.google.common.io.ByteStreams;
 import io.grpc.CallOptions;
@@ -39,7 +37,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
         private final StatsTraceContext statsTraceCtx;
 
         public GetFramer(Metadata metadata, StatsTraceContext statsTraceContext) {
-            this.headers = (Metadata) Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+            this.headers = (Metadata) Preconditions.checkNotNull(metadata, "headers");
             this.statsTraceCtx = (StatsTraceContext) Preconditions.checkNotNull(statsTraceContext, "statsTraceCtx");
         }
 
@@ -178,7 +176,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
 
         /* JADX INFO: Access modifiers changed from: protected */
         public void inboundDataReceived(ReadableBuffer readableBuffer) {
-            Preconditions.checkNotNull(readableBuffer, TypedValues.AttributesType.S_FRAME);
+            Preconditions.checkNotNull(readableBuffer, "frame");
             try {
                 if (!this.statusReported) {
                     deframe(readableBuffer);
@@ -264,7 +262,7 @@ public abstract class AbstractClientStream extends AbstractStream implements Cli
     }
 
     public AbstractClientStream(WritableBufferAllocator writableBufferAllocator, StatsTraceContext statsTraceContext, TransportTracer transportTracer, Metadata metadata, CallOptions callOptions, boolean z) {
-        Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        Preconditions.checkNotNull(metadata, "headers");
         this.transportTracer = (TransportTracer) Preconditions.checkNotNull(transportTracer, "transportTracer");
         this.shouldBeCountedForInUse = GrpcUtil.shouldBeCountedForInUse(callOptions);
         this.useGet = z;

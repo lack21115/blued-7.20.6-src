@@ -41,9 +41,8 @@ public final class FrameEntity extends Message<FrameEntity, Builder> {
             return this;
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.Message.Builder
-        public FrameEntity build() {
+        /* renamed from: build */
+        public FrameEntity m10549build() {
             return new FrameEntity(this.alpha, this.layout, this.transform, this.clipPath, this.shapes, super.buildUnknownFields());
         }
 
@@ -75,52 +74,49 @@ public final class FrameEntity extends Message<FrameEntity, Builder> {
             super(FieldEncoding.LENGTH_DELIMITED, FrameEntity.class);
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.squareup.wire.ProtoAdapter
-        public FrameEntity decode(ProtoReader protoReader) throws IOException {
+        /* renamed from: decode */
+        public FrameEntity m10550decode(ProtoReader protoReader) throws IOException {
             Builder builder = new Builder();
             long beginMessage = protoReader.beginMessage();
             while (true) {
                 int nextTag = protoReader.nextTag();
                 if (nextTag == -1) {
                     protoReader.endMessage(beginMessage);
-                    return builder.build();
+                    return builder.m10549build();
                 } else if (nextTag == 1) {
-                    builder.alpha(ProtoAdapter.FLOAT.decode(protoReader));
+                    builder.alpha((Float) ProtoAdapter.FLOAT.decode(protoReader));
                 } else if (nextTag == 2) {
-                    builder.layout(Layout.ADAPTER.decode(protoReader));
+                    builder.layout((Layout) Layout.ADAPTER.decode(protoReader));
                 } else if (nextTag == 3) {
-                    builder.transform(Transform.ADAPTER.decode(protoReader));
+                    builder.transform((Transform) Transform.ADAPTER.decode(protoReader));
                 } else if (nextTag == 4) {
-                    builder.clipPath(ProtoAdapter.STRING.decode(protoReader));
+                    builder.clipPath((String) ProtoAdapter.STRING.decode(protoReader));
                 } else if (nextTag != 5) {
                     FieldEncoding peekFieldEncoding = protoReader.peekFieldEncoding();
                     builder.addUnknownField(nextTag, peekFieldEncoding, peekFieldEncoding.rawProtoAdapter().decode(protoReader));
                 } else {
-                    builder.shapes.add(ShapeEntity.ADAPTER.decode(protoReader));
+                    builder.shapes.add((ShapeEntity) ShapeEntity.ADAPTER.decode(protoReader));
                 }
             }
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public void encode(ProtoWriter protoWriter, FrameEntity frameEntity) throws IOException {
             if (frameEntity.alpha != null) {
-                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, (int) frameEntity.alpha);
+                ProtoAdapter.FLOAT.encodeWithTag(protoWriter, 1, frameEntity.alpha);
             }
             if (frameEntity.layout != null) {
-                Layout.ADAPTER.encodeWithTag(protoWriter, 2, (int) frameEntity.layout);
+                Layout.ADAPTER.encodeWithTag(protoWriter, 2, frameEntity.layout);
             }
             if (frameEntity.transform != null) {
-                Transform.ADAPTER.encodeWithTag(protoWriter, 3, (int) frameEntity.transform);
+                Transform.ADAPTER.encodeWithTag(protoWriter, 3, frameEntity.transform);
             }
             if (frameEntity.clipPath != null) {
-                ProtoAdapter.STRING.encodeWithTag(protoWriter, 4, (int) frameEntity.clipPath);
+                ProtoAdapter.STRING.encodeWithTag(protoWriter, 4, frameEntity.clipPath);
             }
-            ShapeEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 5, (int) frameEntity.shapes);
+            ShapeEntity.ADAPTER.asRepeated().encodeWithTag(protoWriter, 5, frameEntity.shapes);
             protoWriter.writeBytes(frameEntity.unknownFields());
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public int encodedSize(FrameEntity frameEntity) {
             int i = 0;
             int encodedSizeWithTag = frameEntity.alpha != null ? ProtoAdapter.FLOAT.encodedSizeWithTag(1, frameEntity.alpha) : 0;
@@ -132,18 +128,17 @@ public final class FrameEntity extends Message<FrameEntity, Builder> {
             return encodedSizeWithTag + encodedSizeWithTag2 + encodedSizeWithTag3 + i + ShapeEntity.ADAPTER.asRepeated().encodedSizeWithTag(5, frameEntity.shapes) + frameEntity.unknownFields().size();
         }
 
-        @Override // com.squareup.wire.ProtoAdapter
         public FrameEntity redact(FrameEntity frameEntity) {
-            Builder newBuilder = frameEntity.newBuilder();
-            if (newBuilder.layout != null) {
-                newBuilder.layout = Layout.ADAPTER.redact(newBuilder.layout);
+            Builder m10548newBuilder = frameEntity.m10548newBuilder();
+            if (m10548newBuilder.layout != null) {
+                m10548newBuilder.layout = (Layout) Layout.ADAPTER.redact(m10548newBuilder.layout);
             }
-            if (newBuilder.transform != null) {
-                newBuilder.transform = Transform.ADAPTER.redact(newBuilder.transform);
+            if (m10548newBuilder.transform != null) {
+                m10548newBuilder.transform = (Transform) Transform.ADAPTER.redact(m10548newBuilder.transform);
             }
-            Internal.redactElements(newBuilder.shapes, ShapeEntity.ADAPTER);
-            newBuilder.clearUnknownFields();
-            return newBuilder.build();
+            Internal.redactElements(m10548newBuilder.shapes, ShapeEntity.ADAPTER);
+            m10548newBuilder.clearUnknownFields();
+            return m10548newBuilder.m10549build();
         }
     }
 
@@ -172,7 +167,7 @@ public final class FrameEntity extends Message<FrameEntity, Builder> {
     }
 
     public int hashCode() {
-        int i = this.hashCode;
+        int i = ((Message) this).hashCode;
         int i2 = i;
         if (i == 0) {
             int hashCode = unknownFields().hashCode();
@@ -188,14 +183,13 @@ public final class FrameEntity extends Message<FrameEntity, Builder> {
                 i3 = str.hashCode();
             }
             i2 = (((((((((hashCode * 37) + hashCode2) * 37) + hashCode3) * 37) + hashCode4) * 37) + i3) * 37) + this.shapes.hashCode();
-            this.hashCode = i2;
+            ((Message) this).hashCode = i2;
         }
         return i2;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // com.squareup.wire.Message
-    public Builder newBuilder() {
+    /* renamed from: newBuilder */
+    public Builder m10548newBuilder() {
         Builder builder = new Builder();
         builder.alpha = this.alpha;
         builder.layout = this.layout;
@@ -206,7 +200,6 @@ public final class FrameEntity extends Message<FrameEntity, Builder> {
         return builder;
     }
 
-    @Override // com.squareup.wire.Message
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (this.alpha != null) {

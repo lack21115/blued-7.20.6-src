@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.anythink.china.api.CustomAdapterDownloadListener;
+import com.anythink.expressad.d.b;
 import com.anythink.nativead.unitgroup.api.CustomNativeAd;
 import com.kwad.sdk.api.KsAdVideoPlayConfig;
 import com.kwad.sdk.api.KsAppDownloadListener;
@@ -20,11 +21,11 @@ import java.util.List;
 public class KSATNativeAd extends CustomNativeAd {
 
     /* renamed from: a  reason: collision with root package name */
-    Context f9001a;
+    Context f6161a;
     KsNativeAd b;
 
     /* renamed from: c  reason: collision with root package name */
-    View f9002c;
+    View f6162c;
     long d;
     FrameLayout e;
     boolean f;
@@ -73,7 +74,7 @@ public class KSATNativeAd extends CustomNativeAd {
             if (KSATNativeAd.this.mDownloadListener == null || !(KSATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) KSATNativeAd.this.mDownloadListener).onDownloadFail(KSATNativeAd.this.d, KSATNativeAd.this.h, "", KSATNativeAd.this.getTitle());
+            KSATNativeAd.this.mDownloadListener.onDownloadFail(KSATNativeAd.this.d, KSATNativeAd.this.h, "", KSATNativeAd.this.getTitle());
         }
 
         @Override // com.kwad.sdk.api.KsAppDownloadListener
@@ -81,7 +82,7 @@ public class KSATNativeAd extends CustomNativeAd {
             if (KSATNativeAd.this.mDownloadListener == null || !(KSATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) KSATNativeAd.this.mDownloadListener).onDownloadFinish(KSATNativeAd.this.d, "", KSATNativeAd.this.getTitle());
+            KSATNativeAd.this.mDownloadListener.onDownloadFinish(KSATNativeAd.this.d, "", KSATNativeAd.this.getTitle());
         }
 
         @Override // com.kwad.sdk.api.KsAppDownloadListener
@@ -89,7 +90,7 @@ public class KSATNativeAd extends CustomNativeAd {
             if (KSATNativeAd.this.mDownloadListener == null || !(KSATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) KSATNativeAd.this.mDownloadListener).onDownloadStart(KSATNativeAd.this.d, 0L, "", KSATNativeAd.this.getTitle());
+            KSATNativeAd.this.mDownloadListener.onDownloadStart(KSATNativeAd.this.d, 0L, "", KSATNativeAd.this.getTitle());
         }
 
         @Override // com.kwad.sdk.api.KsAppDownloadListener
@@ -101,7 +102,7 @@ public class KSATNativeAd extends CustomNativeAd {
             if (KSATNativeAd.this.mDownloadListener == null || !(KSATNativeAd.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) KSATNativeAd.this.mDownloadListener).onInstalled("", KSATNativeAd.this.getTitle());
+            KSATNativeAd.this.mDownloadListener.onInstalled("", KSATNativeAd.this.getTitle());
         }
 
         @Override // com.kwad.sdk.api.KsAppDownloadListener
@@ -111,7 +112,7 @@ public class KSATNativeAd extends CustomNativeAd {
             }
             KSATNativeAd kSATNativeAd = KSATNativeAd.this;
             kSATNativeAd.h = (kSATNativeAd.d * i) / 100;
-            ((CustomAdapterDownloadListener) KSATNativeAd.this.mDownloadListener).onDownloadUpdate(KSATNativeAd.this.d, KSATNativeAd.this.h, "", KSATNativeAd.this.getTitle());
+            KSATNativeAd.this.mDownloadListener.onDownloadUpdate(KSATNativeAd.this.d, KSATNativeAd.this.h, "", KSATNativeAd.this.getTitle());
         }
     }
 
@@ -128,7 +129,7 @@ public class KSATNativeAd extends CustomNativeAd {
 
         @Override // com.kwad.sdk.api.KsNativeAd.VideoPlayListener
         public final void onVideoPlayError(int i, int i2) {
-            Log.i("anythink", "KuaiShou Video play error:" + i + " " + i2);
+            Log.i(b.f4297c, "KuaiShou Video play error:" + i + " " + i2);
             KSATNativeAd.this.notifyAdVideoVideoPlayFail(String.valueOf(i), String.valueOf(i2));
         }
 
@@ -152,7 +153,7 @@ public class KSATNativeAd extends CustomNativeAd {
 
     public KSATNativeAd(Context context, KsNativeAd ksNativeAd, boolean z) {
         this.d = 0L;
-        this.f9001a = context.getApplicationContext();
+        this.f6161a = context.getApplicationContext();
         this.b = ksNativeAd;
         this.f = z;
         setTitle(ksNativeAd.getAppName());
@@ -255,7 +256,7 @@ public class KSATNativeAd extends CustomNativeAd {
         if (view == null) {
             return;
         }
-        if (!(view instanceof ViewGroup) || view == this.f9002c) {
+        if (!(view instanceof ViewGroup) || view == this.f6162c) {
             view.setOnClickListener(null);
             view.setClickable(false);
             return;
@@ -282,17 +283,17 @@ public class KSATNativeAd extends CustomNativeAd {
                 builder.videoSoundEnable(z);
             }
             View videoView = this.b.getVideoView(viewGroup.getContext(), builder.build());
-            this.f9002c = videoView;
+            this.f6162c = videoView;
             if (videoView == null || this.e == null || videoView.getParent() != null) {
                 return;
             }
-            this.e.addView(this.f9002c);
+            this.e.addView(this.f6162c);
         }
     }
 
     private void a(List<View> list, View view) {
-        if (!(view instanceof ViewGroup) || view == this.f9002c) {
-            if (view != this.f9002c) {
+        if (!(view instanceof ViewGroup) || view == this.f6162c) {
+            if (view != this.f6162c) {
                 list.add(view);
                 return;
             }
@@ -315,7 +316,7 @@ public class KSATNativeAd extends CustomNativeAd {
         a(view);
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         KsNativeAd ksNativeAd = this.b;
         if (ksNativeAd != null) {
@@ -325,11 +326,11 @@ public class KSATNativeAd extends CustomNativeAd {
             } catch (Exception e) {
             }
         }
-        this.f9001a = null;
+        this.f6161a = null;
         this.e = null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
         if (this.b.getMaterialType() == 1) {
             return this.e;
@@ -438,7 +439,7 @@ public class KSATNativeAd extends CustomNativeAd {
             r8 = r0
             r0 = r7
             r1 = r8
-            r0.f9002c = r1
+            r0.f6162c = r1
             r0 = r8
             if (r0 == 0) goto Ld2
             r0 = r7
@@ -450,7 +451,7 @@ public class KSATNativeAd extends CustomNativeAd {
             r0 = r7
             android.widget.FrameLayout r0 = r0.e
             r1 = r7
-            android.view.View r1 = r1.f9002c
+            android.view.View r1 = r1.f6162c
             r0.addView(r1)
         Ld2:
             return
@@ -458,7 +459,7 @@ public class KSATNativeAd extends CustomNativeAd {
         throw new UnsupportedOperationException("Method not decompiled: com.anythink.network.ks.KSATNativeAd.prepare(android.view.View, com.anythink.nativead.api.ATNativePrepareInfo):void");
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void setVideoMute(boolean z) {
         super.setVideoMute(z);
         this.g = z ? 1 : 2;

@@ -9,11 +9,11 @@ public final class e extends h<String, Long> {
     private static e b;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41722a;
+    private String f28031a;
 
     private e(int i) {
         super(i);
-        this.f41722a = com.youzan.spiderman.cache.g.g();
+        this.f28031a = com.youzan.spiderman.cache.g.g();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -34,7 +34,7 @@ public final class e extends h<String, Long> {
     public final /* synthetic */ void a(boolean z, String str, Long l, Long l2) {
         String str2 = str;
         super.a(z, str2, l, l2);
-        File file = new File(this.f41722a, str2);
+        File file = new File(this.f28031a, str2);
         if (!file.exists() || file.delete()) {
             return;
         }

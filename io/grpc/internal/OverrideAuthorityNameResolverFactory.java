@@ -15,12 +15,10 @@ final class OverrideAuthorityNameResolverFactory extends NameResolver.Factory {
         this.authorityOverride = str;
     }
 
-    @Override // io.grpc.NameResolver.Factory
     public String getDefaultScheme() {
         return this.delegate.getDefaultScheme();
     }
 
-    @Override // io.grpc.NameResolver.Factory
     @Nullable
     public NameResolver newNameResolver(URI uri, NameResolver.Args args) {
         NameResolver newNameResolver = this.delegate.newNameResolver(uri, args);
@@ -28,7 +26,7 @@ final class OverrideAuthorityNameResolverFactory extends NameResolver.Factory {
             return null;
         }
         return new ForwardingNameResolver(newNameResolver) { // from class: io.grpc.internal.OverrideAuthorityNameResolverFactory.1
-            @Override // io.grpc.internal.ForwardingNameResolver, io.grpc.NameResolver
+            @Override // io.grpc.internal.ForwardingNameResolver
             public String getServiceAuthority() {
                 return OverrideAuthorityNameResolverFactory.this.authorityOverride;
             }

@@ -16,9 +16,7 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(b = "CommunitySampleViewModel.kt", c = {69}, d = "invokeSuspend", e = "com.blued.community.manager.CommunitySampleViewModel$requestDataAsync$1$asyncJob$1")
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunitySampleViewModel$requestDataAsync$1$asyncJob$1.class */
 final class CommunitySampleViewModel$requestDataAsync$1$asyncJob$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super BluedEntityA<BluedIngSelfFeed>>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f19094a;
+    int a;
     final /* synthetic */ CommunitySampleViewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -31,7 +29,7 @@ final class CommunitySampleViewModel$requestDataAsync$1$asyncJob$1 extends Suspe
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super BluedEntityA<BluedIngSelfFeed>> continuation) {
-        return ((CommunitySampleViewModel$requestDataAsync$1$asyncJob$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((CommunitySampleViewModel$requestDataAsync$1$asyncJob$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -42,8 +40,8 @@ final class CommunitySampleViewModel$requestDataAsync$1$asyncJob$1 extends Suspe
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object b;
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f19094a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i != 0) {
             if (i == 1) {
                 ResultKt.a(obj);
@@ -52,8 +50,8 @@ final class CommunitySampleViewModel$requestDataAsync$1$asyncJob$1 extends Suspe
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.a(obj);
-        this.f19094a = 1;
+        this.a = 1;
         b = this.b.b(this);
-        return b == a2 ? a2 : b;
+        return b == a ? a : b;
     }
 }

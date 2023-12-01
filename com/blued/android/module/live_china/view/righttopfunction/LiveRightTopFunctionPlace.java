@@ -27,13 +27,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/righttopfunction/LiveRightTopFunctionPlace.class */
 public final class LiveRightTopFunctionPlace extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15439a;
+    private final Context a;
     private BaseFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f15440c;
+    private boolean c;
     private final ArrayList<RightTopFunction> d;
     private View e;
     private ValueAnimator f;
@@ -55,20 +51,20 @@ public final class LiveRightTopFunctionPlace extends FrameLayout {
     public LiveRightTopFunctionPlace(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f15439a = mContext;
-        this.f15440c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
+        this.a = mContext;
+        this.c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
         this.d = new ArrayList<>();
-        LiveRightTopFunctionPlaceBinding a2 = LiveRightTopFunctionPlaceBinding.a(LayoutInflater.from(this.f15439a).inflate(R.layout.live_right_top_function_place, this));
-        Intrinsics.c(a2, "bind(\n        LayoutInfl…nction_place, this)\n    )");
-        this.g = a2;
-        int childCount = a2.f12414a.getChildCount();
+        LiveRightTopFunctionPlaceBinding a = LiveRightTopFunctionPlaceBinding.a(LayoutInflater.from(this.a).inflate(R.layout.live_right_top_function_place, this));
+        Intrinsics.c(a, "bind(\n        LayoutInfl…nction_place, this)\n    )");
+        this.g = a;
+        int childCount = a.a.getChildCount();
         int i2 = 0;
         while (true) {
             int i3 = i2;
             if (i3 >= childCount) {
                 return;
             }
-            View childAt = this.g.f12414a.getChildAt(i3);
+            View childAt = this.g.a.getChildAt(i3);
             if (childAt instanceof RightTopFunction) {
                 this.d.add((RightTopFunction) childAt);
                 BluedViewExKt.a(childAt);
@@ -87,18 +83,18 @@ public final class LiveRightTopFunctionPlace extends FrameLayout {
             valueAnimator.cancel();
         }
         final Ref.FloatRef floatRef = new Ref.FloatRef();
-        floatRef.f42542a = this.g.f12414a.getWidth();
+        floatRef.a = this.g.a.getWidth();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         View view = this.e;
         Intrinsics.a(view);
-        floatRef2.f42542a = view.getLayoutParams().width;
+        floatRef2.a = view.getLayoutParams().width;
         final Ref.FloatRef floatRef3 = new Ref.FloatRef();
-        floatRef3.f42542a = this.g.f12414a.getHeight();
+        floatRef3.a = this.g.a.getHeight();
         final Ref.FloatRef floatRef4 = new Ref.FloatRef();
         View view2 = this.e;
         if (view2 != null) {
             Intrinsics.a(view2);
-            floatRef4.f42542a = view2.getLayoutParams().height + this.g.f12414a.getPaddingBottom();
+            floatRef4.a = view2.getLayoutParams().height + this.g.a.getPaddingBottom();
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.f = ofFloat;
@@ -196,8 +192,8 @@ public final class LiveRightTopFunctionPlace extends FrameLayout {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Float");
         }
         float floatValue = ((Float) animatedValue).floatValue();
-        this$0.g.f12414a.getLayoutParams().height = (int) (startHeight.f42542a + ((endHeight.f42542a - startHeight.f42542a) * floatValue));
-        this$0.g.f12414a.setLayoutParams(this$0.g.f12414a.getLayoutParams());
+        this$0.g.a.getLayoutParams().height = (int) (startHeight.a + ((endHeight.a - startHeight.a) * floatValue));
+        this$0.g.a.setLayoutParams(this$0.g.a.getLayoutParams());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -213,9 +209,9 @@ public final class LiveRightTopFunctionPlace extends FrameLayout {
             throw new NullPointerException("null cannot be cast to non-null type kotlin.Float");
         }
         float floatValue = ((Float) animatedValue).floatValue();
-        this$0.g.f12414a.getLayoutParams().width = (int) (startWidth.f42542a + ((endWidth.f42542a - startWidth.f42542a) * floatValue));
-        this$0.g.f12414a.getLayoutParams().height = (int) (startHeight.f42542a + ((endHeight.f42542a - startHeight.f42542a) * floatValue));
-        this$0.g.f12414a.setLayoutParams(this$0.g.f12414a.getLayoutParams());
+        this$0.g.a.getLayoutParams().width = (int) (startWidth.a + ((endWidth.a - startWidth.a) * floatValue));
+        this$0.g.a.getLayoutParams().height = (int) (startHeight.a + ((endHeight.a - startHeight.a) * floatValue));
+        this$0.g.a.setLayoutParams(this$0.g.a.getLayoutParams());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -274,16 +270,16 @@ public final class LiveRightTopFunctionPlace extends FrameLayout {
             valueAnimator.cancel();
         }
         final Ref.FloatRef floatRef = new Ref.FloatRef();
-        floatRef.f42542a = this.g.f12414a.getHeight();
+        floatRef.a = this.g.a.getHeight();
         final Ref.FloatRef floatRef2 = new Ref.FloatRef();
         if (z && this.e != null) {
-            floatRef.f42542a = 0.0f;
+            floatRef.a = 0.0f;
             View view2 = this.e;
             Intrinsics.a(view2);
-            floatRef2.f42542a = view2.getLayoutParams().height + this.g.f12414a.getPaddingBottom();
+            floatRef2.a = view2.getLayoutParams().height + this.g.a.getPaddingBottom();
         }
-        this.g.f12414a.getLayoutParams().height = (int) floatRef.f42542a;
-        this.g.f12414a.setLayoutParams(this.g.f12414a.getLayoutParams());
+        this.g.a.getLayoutParams().height = (int) floatRef.a;
+        this.g.a.setLayoutParams(this.g.a.getLayoutParams());
         if (z && (view = this.e) != null) {
             BluedViewExKt.b(view);
         }
@@ -346,17 +342,17 @@ public final class LiveRightTopFunctionPlace extends FrameLayout {
 
     public final void a(LiveWishItemModel data) {
         Intrinsics.e(data, "data");
-        this.g.f12415c.a(data);
+        this.g.c.a(data);
     }
 
     public final Context getMContext() {
-        return this.f15439a;
+        return this.a;
     }
 
     public final void setBaseFragment(BaseFragment baseFragment) {
         Intrinsics.e(baseFragment, "baseFragment");
         this.b = baseFragment;
-        this.g.f12415c.setBaseFragment(baseFragment);
+        this.g.c.setBaseFragment(baseFragment);
         this.g.b.setBaseFragment(baseFragment);
     }
 
@@ -368,8 +364,8 @@ public final class LiveRightTopFunctionPlace extends FrameLayout {
     }
 
     public final void setDataToWish(List<? extends LiveWishItemModel> list) {
-        this.g.f12415c.setData(list);
-        LiveWishView liveWishView = this.g.f12415c;
+        this.g.c.setData(list);
+        LiveWishView liveWishView = this.g.c;
         Intrinsics.c(liveWishView, "vb.liveWishView");
         a(liveWishView);
     }

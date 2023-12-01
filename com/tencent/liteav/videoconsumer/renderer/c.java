@@ -7,11 +7,11 @@ import android.view.Surface;
 public final /* synthetic */ class c implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36817a;
+    private final a f23126a;
     private final Surface b;
 
     private c(a aVar, Surface surface) {
-        this.f36817a = aVar;
+        this.f23126a = aVar;
         this.b = surface;
     }
 
@@ -21,15 +21,15 @@ public final /* synthetic */ class c implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a aVar = this.f36817a;
+        a aVar = this.f23126a;
         Surface surface = this.b;
         aVar.c();
         aVar.b = surface;
-        if (aVar.f36813a != null) {
+        if (aVar.f23122a != null) {
             if (surface == null) {
-                aVar.f36813a.a();
+                aVar.f23122a.a();
             } else {
-                aVar.f36813a.a(surface, aVar.d.f36340a, aVar.d.b, false);
+                aVar.f23122a.a(surface, aVar.d.f22649a, aVar.d.b, false);
             }
         }
     }

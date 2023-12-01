@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopMsgRecentPicTopBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29547a;
+    private final LinearLayout f15857a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29547a;
+        return this.f15857a;
     }
 }

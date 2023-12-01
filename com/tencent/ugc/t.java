@@ -7,18 +7,18 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final /* synthetic */ class t implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40444a;
+    private final TXVideoEditer f26753a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f40445c;
+    private final long f26754c;
     private final long d;
     private final AtomicBoolean e;
 
     private t(TXVideoEditer tXVideoEditer, int i, long j, long j2, AtomicBoolean atomicBoolean) {
-        this.f40444a = tXVideoEditer;
+        this.f26753a = tXVideoEditer;
         this.b = i;
-        this.f40445c = j;
+        this.f26754c = j;
         this.d = j2;
         this.e = atomicBoolean;
     }
@@ -29,6 +29,6 @@ public final /* synthetic */ class t implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setTransitionEffect$26(this.f40444a, this.b, this.f40445c, this.d, this.e);
+        TXVideoEditer.lambda$setTransitionEffect$26(this.f26753a, this.b, this.f26754c, this.d, this.e);
     }
 }

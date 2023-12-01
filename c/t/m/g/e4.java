@@ -7,11 +7,11 @@ import android.os.Bundle;
 public class e4 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static e4 f3802c = new e4();
+    public static e4 f3754c = new e4();
     public static boolean d = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f3803a = 0;
+    public int f3755a = 0;
     public boolean b = false;
 
     public static void a(boolean z) {
@@ -23,18 +23,18 @@ public class e4 {
     }
 
     public static e4 b() {
-        if (f3802c == null) {
+        if (f3754c == null) {
             synchronized (e4.class) {
                 try {
-                    if (f3802c == null) {
-                        f3802c = new e4();
+                    if (f3754c == null) {
+                        f3754c = new e4();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f3802c;
+        return f3754c;
     }
 
     public int a(Location location) {
@@ -61,15 +61,15 @@ public class e4 {
         } else {
             this.b = false;
         }
-        return i + this.f3803a;
+        return i + this.f3755a;
     }
 
     public void a(int i) {
-        this.f3803a = (int) Math.pow(2.0d, i + 3);
+        this.f3755a = (int) Math.pow(2.0d, i + 3);
     }
 
     public void c() {
-        this.f3803a = 0;
+        this.f3755a = 0;
         this.b = false;
     }
 }

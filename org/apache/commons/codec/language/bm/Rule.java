@@ -1,5 +1,6 @@
 package org.apache.commons.codec.language.bm;
 
+import com.anythink.core.common.g.c;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -273,7 +274,7 @@ public class Rule {
                         }
                     }
                     if (!ruleType.equals(RuleType.RULES)) {
-                        hashMap.put("common", parseRules(createScanner(nameType, ruleType, "common"), createResourceName(nameType, ruleType, "common")));
+                        hashMap.put(c.Z, parseRules(createScanner(nameType, ruleType, c.Z), createResourceName(nameType, ruleType, c.Z)));
                     }
                     enumMap.put((EnumMap) ruleType, (RuleType) Collections.unmodifiableMap(hashMap));
                     i3 = i4 + 1;
@@ -292,14 +293,14 @@ public class Rule {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static boolean contains(CharSequence charSequence, char c2) {
+    public static boolean contains(CharSequence charSequence, char c) {
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= charSequence.length()) {
                 return false;
             }
-            if (charSequence.charAt(i2) == c2) {
+            if (charSequence.charAt(i2) == c) {
                 return true;
             }
             i = i2 + 1;

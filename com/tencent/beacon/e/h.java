@@ -8,7 +8,7 @@ import java.util.Date;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile h f35023a;
+    private static volatile h f21332a;
     private d d;
     private final String b = "sid";
     private String e = "";
@@ -18,25 +18,25 @@ public class h {
     private String i = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f35024c = com.tencent.beacon.a.c.c.d().c();
+    private final Context f21333c = com.tencent.beacon.a.c.c.d().c();
 
     private h() {
         com.tencent.beacon.a.b.a.a().a(new f(this));
     }
 
     public static h b() {
-        if (f35023a == null) {
+        if (f21332a == null) {
             synchronized (h.class) {
                 try {
-                    if (f35023a == null) {
-                        f35023a = new h();
+                    if (f21332a == null) {
+                        f21332a = new h();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f35023a;
+        return f21332a;
     }
 
     public String a() {

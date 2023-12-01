@@ -16,7 +16,7 @@ public class HelloOpenDialogFragment_ViewBinding implements Unbinder {
     private HelloOpenDialogFragment b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f30328c;
+    private View f16638c;
     private View d;
     private View e;
     private View f;
@@ -28,7 +28,7 @@ public class HelloOpenDialogFragment_ViewBinding implements Unbinder {
         helloOpenDialogFragment.tvCallLeft = (TextView) Utils.a(view, R.id.tv_call_left, "field 'tvCallLeft'", TextView.class);
         View a2 = Utils.a(view, R.id.sll_call_left, "field 'sllCallLeft' and method 'onViewClicked'");
         helloOpenDialogFragment.sllCallLeft = (ShapeLinearLayout) Utils.b(a2, R.id.sll_call_left, "field 'sllCallLeft'", ShapeLinearLayout.class);
-        this.f30328c = a2;
+        this.f16638c = a2;
         a2.setOnClickListener(new DebouncingOnClickListener() { // from class: com.soft.blued.ui.find.fragment.HelloOpenDialogFragment_ViewBinding.1
             @Override // butterknife.internal.DebouncingOnClickListener
             public void a(View view2) {
@@ -94,8 +94,8 @@ public class HelloOpenDialogFragment_ViewBinding implements Unbinder {
         helloOpenDialogFragment.tvTitle = null;
         helloOpenDialogFragment.tvCount = null;
         helloOpenDialogFragment.tvContent = null;
-        this.f30328c.setOnClickListener(null);
-        this.f30328c = null;
+        this.f16638c.setOnClickListener(null);
+        this.f16638c = null;
         this.d.setOnClickListener(null);
         this.d = null;
         this.e.setOnClickListener(null);

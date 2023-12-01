@@ -11,6 +11,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import com.blued.android.module.live_china.model.LiveFansRelationModel;
+import com.soft.blued.R;
 import com.soft.blued.ui.live.utils.FormatUtils;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -43,11 +44,11 @@ public class LineView extends View {
     private int V;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f31312a;
+    private int f17622a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Paint f31313c;
+    private Paint f17623c;
     private Paint d;
     private Paint e;
     private Paint f;
@@ -120,10 +121,10 @@ public class LineView extends View {
 
     private void a() {
         Paint paint = new Paint();
-        this.f31313c = paint;
+        this.f17623c = paint;
         paint.setAntiAlias(true);
-        this.f31313c.setDither(true);
-        this.f31313c.setColor(this.D);
+        this.f17623c.setDither(true);
+        this.f17623c.setColor(this.D);
         Paint paint2 = new Paint();
         this.d = paint2;
         paint2.setAntiAlias(true);
@@ -173,9 +174,9 @@ public class LineView extends View {
         this.d.getTextBounds("03-14", 0, 5, this.y);
         this.v = this.y.height();
         this.z = new Rect();
-        this.k.getTextBounds(getContext().getString(2131889485), 0, getContext().getString(2131889485).length(), this.z);
+        this.k.getTextBounds(getContext().getString(R.string.live_fans_join), 0, getContext().getString(R.string.live_fans_join).length(), this.z);
         this.w = this.z.width();
-        this.k.getTextBounds(getContext().getString(2131889485), 0, getContext().getString(2131889485).length(), this.z);
+        this.k.getTextBounds(getContext().getString(R.string.live_fans_join), 0, getContext().getString(R.string.live_fans_join).length(), this.z);
         int height = this.z.height();
         this.x = height;
         this.K = height;
@@ -243,7 +244,7 @@ public class LineView extends View {
             return;
         }
         canvas.save();
-        canvas.translate(this.f31312a - this.A, this.B + this.p + (this.q / 2.0f));
+        canvas.translate(this.f17622a - this.A, this.B + this.p + (this.q / 2.0f));
         float size = this.A / (this.o.size() + 1);
         this.J = size;
         canvas.drawLine(size - this.u, 0.0f, (size * this.o.size()) + this.u, 0.0f, this.g);
@@ -255,13 +256,13 @@ public class LineView extends View {
         if (this.V >= 0) {
             canvas.translate(((-this.J) * this.o.size()) - b(getContext(), 2.0f), (this.v / 2) + this.s + (this.x / 2));
             canvas.translate(this.J * (this.V + 1), a(getContext(), 1.0f));
-            canvas.drawText(getContext().getString(2131889485), 0.0f, 0.0f, this.d);
+            canvas.drawText(getContext().getString(R.string.live_fans_join), 0.0f, 0.0f, this.d);
         }
         canvas.restore();
     }
 
     public float a(int i) {
-        return (this.f31312a - this.A) + (this.J * (i + 1));
+        return (this.f17622a - this.A) + (this.J * (i + 1));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0077, code lost:
@@ -279,28 +280,26 @@ public class LineView extends View {
         throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.live.view.LineView.a(java.lang.Float):float");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        this.A = this.f31312a;
+    protected void onDraw(Canvas canvas) {
+        this.A = this.f17622a;
         this.B = (((((this.b - this.p) - this.q) - this.r) - this.v) - this.s) - this.x;
         b(canvas);
         a(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int size = View.MeasureSpec.getSize(i2);
         int mode = View.MeasureSpec.getMode(i2);
-        this.f31312a = View.MeasureSpec.getSize(i);
+        this.f17622a = View.MeasureSpec.getSize(i);
         if (mode == Integer.MIN_VALUE) {
             this.b = a(getContext(), 350.0f);
         } else if (mode == 1073741824) {
             this.b = size;
         }
-        setMeasuredDimension(this.f31312a, this.b);
+        setMeasuredDimension(this.f17622a, this.b);
     }
 
     public void setData(List<LiveFansRelationModel> list) {

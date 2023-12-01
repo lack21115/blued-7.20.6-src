@@ -30,8 +30,8 @@ public class EmulatedFieldsForLoading extends ObjectInputStream.GetField {
     }
 
     @Override // java.io.ObjectInputStream.GetField
-    public char get(String str, char c2) throws IOException, IllegalArgumentException {
-        return this.emulatedFields.get(str, c2);
+    public char get(String str, char c) throws IOException, IllegalArgumentException {
+        return this.emulatedFields.get(str, c);
     }
 
     @Override // java.io.ObjectInputStream.GetField

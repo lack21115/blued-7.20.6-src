@@ -11,13 +11,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveConstellationHonourKingViewBinding.class */
 public final class LiveConstellationHonourKingViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12169a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12170c;
+    public final ImageView c;
     public final ImageView d;
     public final View e;
     public final RelativeLayout f;
@@ -28,9 +24,9 @@ public final class LiveConstellationHonourKingViewBinding implements ViewBinding
 
     private LiveConstellationHonourKingViewBinding(RelativeLayout relativeLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, View view, RelativeLayout relativeLayout2, TextView textView, TextView textView2, TextView textView3) {
         this.j = relativeLayout;
-        this.f12169a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12170c = imageView3;
+        this.c = imageView3;
         this.d = imageView4;
         this.e = view;
         this.f = relativeLayout2;
@@ -97,7 +93,6 @@ public final class LiveConstellationHonourKingViewBinding implements ViewBinding
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.j;

@@ -30,11 +30,11 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
     private int S;
 
     /* renamed from: a  reason: collision with root package name */
-    private View f23011a;
+    private View f9403a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int[] f23012c;
+    private int[] f9404c;
     private int[] d;
     private ComplianceView e;
     private ComplianceView f;
@@ -80,16 +80,16 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
 
     public PPSAdvertiserInfoDialog(Context context, int[] iArr, int[] iArr2) {
         super(context);
-        this.f23012c = iArr == null ? null : Arrays.copyOf(iArr, iArr.length);
+        this.f9404c = iArr == null ? null : Arrays.copyOf(iArr, iArr.length);
         this.d = iArr2 == null ? null : Arrays.copyOf(iArr2, iArr2.length);
         Code(context);
     }
 
     private void B() {
         if (D() && ay.I()) {
-            int[] iArr = this.f23012c;
+            int[] iArr = this.f9404c;
             iArr[0] = (this.C - iArr[0]) - this.d[0];
-            ge.V("PPSAdvertiserInfoDialog", "rtl mAnchorViewLoc[x,y]= %d, %d", Integer.valueOf(iArr[0]), Integer.valueOf(this.f23012c[1]));
+            ge.V("PPSAdvertiserInfoDialog", "rtl mAnchorViewLoc[x,y]= %d, %d", Integer.valueOf(iArr[0]), Integer.valueOf(this.f9404c[1]));
         }
     }
 
@@ -103,7 +103,7 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
         int V = v.V(this.k, 36.0f);
         int i = this.D;
         int i2 = (this.C - i) - V;
-        int i3 = (this.f23012c[0] + (this.d[0] / 2)) - (V / 2);
+        int i3 = (this.f9404c[0] + (this.d[0] / 2)) - (V / 2);
         if (i3 >= i) {
             i = i3;
         }
@@ -131,7 +131,7 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
         }
         ComplianceView complianceView = this.g;
         if (complianceView != null) {
-            complianceView.Code(this.f23012c, this.d);
+            complianceView.Code(this.f9404c, this.d);
         }
         F();
         S();
@@ -163,7 +163,7 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
     }
 
     private boolean D() {
-        int[] iArr = this.f23012c;
+        int[] iArr = this.f9404c;
         boolean z = iArr != null && iArr.length == 2;
         int[] iArr2 = this.d;
         return z && (iArr2 != null && iArr2.length == 2);
@@ -175,7 +175,7 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
             return;
         }
         boolean z = true;
-        if (this.f23012c[1] + (this.d[1] / 2) > this.S / 2) {
+        if (this.f9404c[1] + (this.d[1] / 2) > this.S / 2) {
             z = false;
         }
         Code(z);
@@ -244,12 +244,12 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
             V();
             return;
         }
-        ViewGroup.LayoutParams layoutParams = this.f23011a.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = this.f9403a.getLayoutParams();
         if (layoutParams instanceof RelativeLayout.LayoutParams) {
             RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) layoutParams;
-            layoutParams2.width = this.f23012c[0];
-            layoutParams2.height = this.f23012c[1];
-            this.f23011a.setLayoutParams(layoutParams2);
+            layoutParams2.width = this.f9404c[0];
+            layoutParams2.height = this.f9404c[1];
+            this.f9403a.setLayoutParams(layoutParams2);
         }
         ViewGroup.LayoutParams layoutParams3 = this.b.getLayoutParams();
         if (layoutParams3 instanceof RelativeLayout.LayoutParams) {
@@ -297,7 +297,7 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
 
     private void Z() {
         this.L = (RelativeLayout) findViewById(R.id.haid_advertiser_info_dialog_root);
-        this.f23011a = findViewById(R.id.margin_view);
+        this.f9403a = findViewById(R.id.margin_view);
         this.b = findViewById(R.id.anchor_view);
         this.e = (ComplianceView) findViewById(R.id.top_advertiser_view);
         this.h = (ImageView) findViewById(R.id.top_advertiser_iv);
@@ -323,9 +323,8 @@ public class PPSAdvertiserInfoDialog extends RelativeLayout {
         return this.e;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
+    protected void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         V();
     }

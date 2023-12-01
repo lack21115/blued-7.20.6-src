@@ -29,7 +29,6 @@ public class CircleBaseMember {
         public int number;
         public String uid;
 
-        @Override // com.chad.library.adapter.base.entity.MultiItemEntity
         public int getItemType() {
             return this.adapterType;
         }

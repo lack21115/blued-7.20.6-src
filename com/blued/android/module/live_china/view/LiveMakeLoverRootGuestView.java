@@ -50,9 +50,7 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
     GestureDetector U;
     private Context V;
     private LayoutInflater W;
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14566a;
+    public View a;
     private View aa;
     private View ab;
     private View ac;
@@ -61,9 +59,7 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
     private Dialog af;
     private PlayingOnliveFragment ag;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f14567c;
+    public View c;
     public View d;
     public View e;
     public View f;
@@ -91,9 +87,7 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
     /* renamed from: com.blued.android.module.live_china.view.LiveMakeLoverRootGuestView$11  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverRootGuestView$11.class */
     class AnonymousClass11 extends BluedUIHttpResponse {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveMakeLoverRootGuestView f14570a;
+        final /* synthetic */ LiveMakeLoverRootGuestView a;
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
@@ -104,19 +98,19 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
-            DialogUtils.b(this.f14570a.af);
+            DialogUtils.b(this.a.af);
         }
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
-            DialogUtils.a(this.f14570a.af);
+            DialogUtils.a(this.a.af);
         }
 
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
-            this.f14570a.ag.bY.b(LiveRoomInfo.a().f());
-            this.f14570a.ag.bY.h();
+            this.a.ag.bY.b(LiveRoomInfo.a().f());
+            this.a.ag.bY.h();
         }
     }
 
@@ -195,17 +189,17 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
     }
 
     public void a() {
-        List<LiveMakeLoverFansModel> a2 = this.ag.bY.a();
-        if (a2 == null) {
+        List<LiveMakeLoverFansModel> a = this.ag.bY.a();
+        if (a == null) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= a2.size()) {
+            if (i2 >= a.size()) {
                 return;
             }
-            LiveMakeLoverFansModel liveMakeLoverFansModel = a2.get(i2);
+            LiveMakeLoverFansModel liveMakeLoverFansModel = a.get(i2);
             Log.i("==makelover==", i2 + "  setLoverLightStatus:" + liveMakeLoverFansModel.lamp + "  :" + liveMakeLoverFansModel.uid);
             if (i2 == 1) {
                 if (liveMakeLoverFansModel == null || liveMakeLoverFansModel.isEmpty()) {
@@ -290,9 +284,9 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
         this.W = LayoutInflater.from(this.V);
         this.af = DialogUtils.a(this.V);
         View inflate = this.W.inflate(R.layout.live_make_lover_guest_view, this);
-        this.f14566a = inflate.findViewById(R.id.fl_make_lover_window_root);
+        this.a = inflate.findViewById(R.id.fl_make_lover_window_root);
         this.b = inflate.findViewById(R.id.live_make_lover_windows_B);
-        this.f14567c = inflate.findViewById(R.id.live_make_lover_windows_C);
+        this.c = inflate.findViewById(R.id.live_make_lover_windows_C);
         this.d = inflate.findViewById(R.id.live_make_lover_windows_D);
         this.e = inflate.findViewById(R.id.live_make_lover_windows_E);
         this.f = inflate.findViewById(R.id.live_make_lover_windows_F);
@@ -342,7 +336,7 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
         this.I.setOnClickListener(this);
         this.J.setOnClickListener(this);
         this.b.setOnClickListener(this);
-        this.f14567c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.e.setOnClickListener(this);
         this.f.setOnClickListener(this);
@@ -352,7 +346,7 @@ public class LiveMakeLoverRootGuestView extends FrameLayout implements View.OnCl
                 return LiveMakeLoverRootGuestView.this.Q.onTouchEvent(motionEvent);
             }
         });
-        this.f14567c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootGuestView.2
+        this.c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootGuestView.2
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 return LiveMakeLoverRootGuestView.this.R.onTouchEvent(motionEvent);

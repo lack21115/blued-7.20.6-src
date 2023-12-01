@@ -30,7 +30,7 @@ public final class b {
     public static final String Z = "bi";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23426a = "BUILD_CONFIG";
+    public static final String f9818a = "BUILD_CONFIG";
     public static final String aa = "st";
     public static final String ab = "bidata";
     public static int ac = 0;
@@ -50,7 +50,7 @@ public final class b {
     public static final int aq = 5;
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final int f23427ar = 1000;
+    public static final int f9819ar = 1000;
     public static final int as = 250;
     public static final long at = 800;
     public static final String au = "postAction";
@@ -61,7 +61,7 @@ public final class b {
     public static final String b = "PUSH_APPID";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23428c = "GETUI_APPID";
+    public static final String f9820c = "GETUI_APPID";
     public static final String d = "GT_INSTALL_CHANNEL";
     public static final String e = "EXT-";
     public static final String f = "0";

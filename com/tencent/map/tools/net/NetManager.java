@@ -24,25 +24,25 @@ public class NetManager {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37264a;
+        public static final /* synthetic */ int[] f23573a;
 
         static {
             AdapterType.values();
             int[] iArr = new int[3];
-            f37264a = iArr;
+            f23573a = iArr;
             try {
                 AdapterType adapterType = AdapterType.DEFAULT;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37264a;
+                int[] iArr2 = f23573a;
                 AdapterType adapterType2 = AdapterType.URL;
                 iArr2[1] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37264a;
+                int[] iArr3 = f23573a;
                 AdapterType adapterType3 = AdapterType.Halley;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {
@@ -62,7 +62,7 @@ public class NetManager {
         if (netConfig == null) {
             netConfig2 = NetConfig.create().setForceHttps(true).setAdapterType(AdapterType.URL);
         }
-        int i = a.f37264a[netConfig2.getAdapterType().ordinal()];
+        int i = a.f23573a[netConfig2.getAdapterType().ordinal()];
         fb fbVar = new fb();
         fbVar.initNet(context, netConfig2);
         return fbVar;

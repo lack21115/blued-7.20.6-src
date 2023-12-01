@@ -37,13 +37,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/view/FeedPostVoteView.class */
 public final class FeedPostVoteView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FrameLayout f20085a;
+    private FrameLayout a;
     private ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f20086c;
+    private TextView c;
     private ImageView d;
     private CardView e;
     private CardView f;
@@ -91,7 +87,7 @@ public final class FeedPostVoteView extends FrameLayout {
     private final void a(int i) {
         ICommunityShowPageService b = CommunityServiceManager.b();
         FeedAddPostFragment feedAddPostFragment = this.g;
-        b.a(feedAddPostFragment == null ? null : feedAddPostFragment.getActivity(), i, 0, (LoadOptions) null);
+        b.a((Context) (feedAddPostFragment == null ? null : feedAddPostFragment.getActivity()), i, 0, (LoadOptions) null);
     }
 
     private final void a(int i, String str) {
@@ -172,12 +168,12 @@ public final class FeedPostVoteView extends FrameLayout {
 
     private final void d() {
         FrameLayout frameLayout = (FrameLayout) LayoutInflater.from(getContext()).inflate(R.layout.feed_post_vote_view_layout, (ViewGroup) null);
-        this.f20085a = frameLayout;
+        this.a = frameLayout;
         if (frameLayout == null) {
             return;
         }
         this.b = (ShapeLinearLayout) frameLayout.findViewById(R.id.feed_post_vote_content_lo);
-        this.f20086c = (TextView) frameLayout.findViewById(R.id.feed_post_vote_title);
+        this.c = (TextView) frameLayout.findViewById(R.id.feed_post_vote_title);
         ImageView imageView = (ImageView) frameLayout.findViewById(R.id.feed_post_vote_close);
         this.d = imageView;
         if (imageView != null) {
@@ -188,7 +184,7 @@ public final class FeedPostVoteView extends FrameLayout {
                 }
             }));
         }
-        this.e = (CardView) frameLayout.findViewById(R.id.feed_post_vote_cv_a);
+        this.e = frameLayout.findViewById(R.id.feed_post_vote_cv_a);
         ImageView imageView2 = (ImageView) frameLayout.findViewById(R.id.feed_post_vote_img_a);
         if (imageView2 != null) {
             imageView2.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.send.view.-$$Lambda$FeedPostVoteView$12hSQ1RUR33mRrbevB4Hv7P8u70
@@ -207,7 +203,7 @@ public final class FeedPostVoteView extends FrameLayout {
                 }
             }));
         }
-        this.f = (CardView) frameLayout.findViewById(R.id.feed_post_vote_cv_b);
+        this.f = frameLayout.findViewById(R.id.feed_post_vote_cv_b);
         ImageView imageView3 = (ImageView) frameLayout.findViewById(R.id.feed_post_vote_img_b);
         if (imageView3 != null) {
             imageView3.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.community.ui.send.view.-$$Lambda$FeedPostVoteView$yROnwKDIRoJvp7wEmNMiwSTLpJM
@@ -245,7 +241,7 @@ public final class FeedPostVoteView extends FrameLayout {
     }
 
     private final void e() {
-        boolean s = CommunityManager.f19086a.a().s();
+        boolean s = CommunityManager.a.a().s();
         ShapeLinearLayout shapeLinearLayout = this.b;
         ShapeModel shapeModel = null;
         ShapeModel shapeModel2 = shapeLinearLayout == null ? null : shapeLinearLayout.getShapeModel();
@@ -332,7 +328,7 @@ public final class FeedPostVoteView extends FrameLayout {
                 if (feedAddPostFragment != null) {
                     feedAddPostFragment.B();
                 }
-                TextView textView = this.f20086c;
+                TextView textView = this.c;
                 if (textView == null) {
                     return;
                 }
@@ -344,7 +340,7 @@ public final class FeedPostVoteView extends FrameLayout {
         if (feedAddPostFragment2 != null) {
             feedAddPostFragment2.B();
         }
-        TextView textView2 = this.f20086c;
+        TextView textView2 = this.c;
         if (textView2 == null) {
             return;
         }
@@ -357,7 +353,7 @@ public final class FeedPostVoteView extends FrameLayout {
         if (view != null) {
             view.setVisibility(8);
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             ImageView imageView = this.l[i];
             if (imageView != null) {
                 imageView.setImageResource(R.drawable.feed_post_vote_add_dark);
@@ -381,7 +377,7 @@ public final class FeedPostVoteView extends FrameLayout {
         if (view2 != null) {
             view2.setVisibility(8);
         }
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             ImageView imageView = this.l[this.j];
             if (imageView != null) {
                 imageView.setImageResource(R.drawable.feed_post_vote_add_dark);

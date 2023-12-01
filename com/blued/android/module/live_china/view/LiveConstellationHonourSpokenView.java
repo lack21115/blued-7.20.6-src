@@ -20,9 +20,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveConstellationHonourSpokenView.class */
 public final class LiveConstellationHonourSpokenView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Lazy f14432a;
+    private final Lazy a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LiveConstellationHonourSpokenView(Context context) {
@@ -40,7 +38,7 @@ public final class LiveConstellationHonourSpokenView extends FrameLayout {
     public LiveConstellationHonourSpokenView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14432a = LazyKt.a(new Function0<LiveConstellationHonourSpokenViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveConstellationHonourSpokenView$binding$2
+        this.a = LazyKt.a(new Function0<LiveConstellationHonourSpokenViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveConstellationHonourSpokenView$binding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -49,9 +47,9 @@ public final class LiveConstellationHonourSpokenView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveConstellationHonourSpokenViewBinding invoke() {
-                LiveConstellationHonourSpokenViewBinding a2 = LiveConstellationHonourSpokenViewBinding.a(LayoutInflater.from(LiveConstellationHonourSpokenView.this.getContext()), LiveConstellationHonourSpokenView.this, true);
-                Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-                return a2;
+                LiveConstellationHonourSpokenViewBinding a = LiveConstellationHonourSpokenViewBinding.a(LayoutInflater.from(LiveConstellationHonourSpokenView.this.getContext()), LiveConstellationHonourSpokenView.this, true);
+                Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+                return a;
             }
         });
         a();
@@ -65,7 +63,7 @@ public final class LiveConstellationHonourSpokenView extends FrameLayout {
     }
 
     public final LiveConstellationHonourSpokenViewBinding getBinding() {
-        return (LiveConstellationHonourSpokenViewBinding) this.f14432a.getValue();
+        return (LiveConstellationHonourSpokenViewBinding) this.a.getValue();
     }
 
     public final void setData(GiftConstellationHonourSpokenModel spokenModel) {
@@ -73,9 +71,9 @@ public final class LiveConstellationHonourSpokenView extends FrameLayout {
         float percent;
         Intrinsics.e(spokenModel, "spokenModel");
         getBinding().l.setText(spokenModel.getTitle());
-        ImageLoader.a((IRequestHost) null, spokenModel.getAnchor_avatar()).b(R.drawable.user_bg_round).c().a(getBinding().f12171a);
+        ImageLoader.a((IRequestHost) null, spokenModel.getAnchor_avatar()).b(R.drawable.user_bg_round).c().a(getBinding().a);
         getBinding().g.setText(spokenModel.getAnchor_name());
-        ImageLoader.a((IRequestHost) null, spokenModel.getAvatar()).b(R.drawable.user_bg_round).c().a(getBinding().f12172c);
+        ImageLoader.a((IRequestHost) null, spokenModel.getAvatar()).b(R.drawable.user_bg_round).c().a(getBinding().c);
         boolean z = false;
         getBinding().m.setText(LiveCloakingUtil.a(spokenModel.getName(), spokenModel.is_hide() == 1));
         getBinding().j.setText(String.valueOf(spokenModel.getScore()));

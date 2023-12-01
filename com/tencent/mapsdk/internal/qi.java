@@ -10,15 +10,15 @@ public class qi extends Handler {
     public static final int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f37730c = 1;
+    public static final int f24039c = 1;
     public static final int d = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    private final yi f37731a;
+    private final yi f24040a;
 
     public qi(yi yiVar, Looper looper) {
         super(looper);
-        this.f37731a = yiVar;
+        this.f24040a = yiVar;
         ra.h(qa.T);
     }
 
@@ -26,7 +26,7 @@ public class qi extends Handler {
     public void handleMessage(Message message) {
         CameraPosition J;
         super.handleMessage(message);
-        yi yiVar = this.f37731a;
+        yi yiVar = this.f24040a;
         if (yiVar == null || yiVar.getMap() == null || !yiVar.getMap().g() || (J = yiVar.J()) == null) {
             return;
         }

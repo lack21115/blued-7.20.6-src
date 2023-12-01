@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class FloatRedBagViewScrollObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static FloatRedBagViewScrollObserver f30618a = new FloatRedBagViewScrollObserver();
+    private static FloatRedBagViewScrollObserver f16928a = new FloatRedBagViewScrollObserver();
     private ArrayList<IFloatRedBagViewScrollObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/FloatRedBagViewScrollObserver$IFloatRedBagViewScrollObserver.class */
@@ -20,7 +20,7 @@ public class FloatRedBagViewScrollObserver {
     }
 
     public static FloatRedBagViewScrollObserver a() {
-        return f30618a;
+        return f16928a;
     }
 
     public void a(RecyclerView recyclerView, int i, int i2) {

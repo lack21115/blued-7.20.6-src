@@ -1,6 +1,5 @@
 package java.util.jar;
 
-import com.youzan.androidsdk.tool.AppSigning;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -23,7 +22,7 @@ import org.apache.harmony.security.utils.JarUtils;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:java/util/jar/JarVerifier.class */
 public class JarVerifier {
-    private static final String[] DIGEST_ALGORITHMS = {"SHA-512", "SHA-384", "SHA-256", AppSigning.SHA1};
+    private static final String[] DIGEST_ALGORITHMS = {"SHA-512", "SHA-384", "SHA-256", "SHA1"};
     private final String jarName;
     private final int mainAttributesEnd;
     private final Manifest manifest;

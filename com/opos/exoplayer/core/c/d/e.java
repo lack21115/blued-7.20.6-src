@@ -6,11 +6,11 @@ import com.opos.exoplayer.core.Format;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25124a;
+    public final int f11436a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f25125c;
+    public final long f11437c;
     public final long d;
     public final long e;
     public final Format f;
@@ -21,9 +21,9 @@ public final class e {
     private final f[] k;
 
     public e(int i, int i2, long j, long j2, long j3, Format format, int i3, f[] fVarArr, int i4, long[] jArr, long[] jArr2) {
-        this.f25124a = i;
+        this.f11436a = i;
         this.b = i2;
-        this.f25125c = j;
+        this.f11437c = j;
         this.d = j2;
         this.e = j3;
         this.f = format;

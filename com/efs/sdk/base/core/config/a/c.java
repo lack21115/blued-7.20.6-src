@@ -23,11 +23,11 @@ import org.json.JSONObject;
 public final class c implements Handler.Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Random f21751a = new Random();
+    public static final Random f8145a = new Random();
     public IConfigRefreshAction b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f21752c;
+    public boolean f8146c;
     public b d;
     public Map<IConfigCallback, String[]> e;
     private Handler f;
@@ -39,13 +39,13 @@ public final class c implements Handler.Callback {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final c f21754a = new c((byte) 0);
+        private static final c f8148a = new c((byte) 0);
     }
 
     private c() {
-        this.f21752c = true;
+        this.f8146c = true;
         this.e = new HashMap();
-        this.f = new Handler(com.efs.sdk.base.core.util.concurrent.a.f21795a.getLooper(), this);
+        this.f = new Handler(com.efs.sdk.base.core.util.concurrent.a.f8189a.getLooper(), this);
         this.g = new e();
         this.d = b.a();
         this.h = ControllerCenter.getGlobalEnvStruct().configRefreshDelayMills;
@@ -56,21 +56,23 @@ public final class c implements Handler.Callback {
     }
 
     public static c a() {
-        return a.f21754a;
+        return a.f8148a;
     }
 
     private boolean a(b bVar) {
-        if (this.d.f21749a >= bVar.f21749a) {
+        if (this.d.f8143a >= bVar.f8143a) {
             return true;
         }
-        Log.i("efs.config", "current config version (" + this.d.f21749a + ") is older than another (" + bVar.f21749a + ")");
+        Log.i("efs.config", "current config version (" + this.d.f8143a + ") is older than another (" + bVar.f8143a + ")");
         return false;
     }
 
     private void e() {
-        if (!f.a.a().a()) {
+        f fVar;
+        fVar = f.a.f8138a;
+        if (!fVar.a()) {
             Log.i("efs.config", "has no permission to refresh config from remote");
-        } else if (!this.f21752c) {
+        } else if (!this.f8146c) {
             Log.i("efs.config", "disable refresh config from remote");
         } else {
             String refresh = g().refresh();
@@ -110,8 +112,8 @@ public final class c implements Handler.Callback {
         try {
             e eVar = this.g;
             eVar.c();
-            if (eVar.f21756a != null) {
-                j = eVar.f21756a.getLong("last_refresh_time", 0L);
+            if (eVar.f8150a != null) {
+                j = eVar.f8150a.getLong("last_refresh_time", 0L);
             }
         } catch (Throwable th) {
         }
@@ -137,13 +139,13 @@ public final class c implements Handler.Callback {
 
     public final String a(boolean z) {
         if (z) {
-            return "https://" + this.d.f21750c;
+            return "https://" + this.d.f8144c;
         }
-        return this.d.b + this.d.f21750c;
+        return this.d.b + this.d.f8144c;
     }
 
     public final void a(int i) {
-        if (i <= this.d.f21749a) {
+        if (i <= this.d.f8143a) {
             Log.i("efs.config", "current config version is " + i + ", no need to refresh");
             return;
         }
@@ -210,18 +212,28 @@ public final class c implements Handler.Callback {
     @Override // android.os.Handler.Callback
     public final boolean handleMessage(Message message) {
         b a2;
+        f fVar;
         int i = message.what;
         if (i != 0) {
-            if (i != 1) {
-                if (i != 2) {
-                    if (i != 3) {
-                        return true;
-                    }
-                    f();
+            if (i == 1) {
+                int i2 = message.arg1;
+                if (i2 > this.d.f8143a) {
+                    e();
                     return true;
                 }
+                Log.i("efs.config", "current config version is " + i2 + ", no need to refresh");
+                Log.i("efs.config", "current config version(" + this.d.f8143a + ") is " + i2 + ", no need to refresh");
+                return true;
+            } else if (i != 2) {
+                if (i != 3) {
+                    return true;
+                }
+                f();
+                return true;
+            } else {
                 try {
-                    if (f.a.a().a()) {
+                    fVar = f.a.f8138a;
+                    if (fVar.a()) {
                         if (h()) {
                             e();
                             return true;
@@ -235,14 +247,6 @@ public final class c implements Handler.Callback {
                     return true;
                 }
             }
-            int i2 = message.arg1;
-            if (i2 > this.d.f21749a) {
-                e();
-                return true;
-            }
-            Log.i("efs.config", "current config version is " + i2 + ", no need to refresh");
-            Log.i("efs.config", "current config version(" + this.d.f21749a + ") is " + i2 + ", no need to refresh");
-            return true;
         }
         boolean a3 = e.a();
         Log.i("efs.config", "delete old config is ".concat(String.valueOf(a3)));
@@ -252,15 +256,15 @@ public final class c implements Handler.Callback {
         }
         e eVar = this.g;
         eVar.c();
-        if (eVar.f21756a == null) {
+        if (eVar.f8150a == null) {
             a2 = null;
         } else {
             a2 = b.a();
-            a2.f21749a = eVar.f21756a.getInt("cver", -1);
-            Set<String> keySet = eVar.f21756a.getAll().keySet();
+            a2.f8143a = eVar.f8150a.getInt("cver", -1);
+            Set<String> keySet = eVar.f8150a.getAll().keySet();
             HashMap hashMap = new HashMap();
             for (String str : keySet) {
-                String string = eVar.f21756a.getString(str, "");
+                String string = eVar.f8150a.getString(str, "");
                 if (!TextUtils.isEmpty(string)) {
                     hashMap.put(str, string);
                 }
@@ -276,7 +280,7 @@ public final class c implements Handler.Callback {
         } else {
             this.d = a2;
             String str2 = "load config from storage";
-            if (-1 != a2.f21749a) {
+            if (-1 != a2.f8143a) {
                 i();
                 d();
                 str2 = "load config from storage and notify observer";

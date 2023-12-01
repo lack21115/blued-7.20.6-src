@@ -96,7 +96,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
         public Builder addAliases(String str) {
             if (str != null) {
                 ensureAliasesIsMutable();
-                this.aliases_.add((LazyStringList) str);
+                this.aliases_.add(str);
                 onChanged();
                 return this;
             }
@@ -133,7 +133,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
         public Builder addFeatures(String str) {
             if (str != null) {
                 ensureFeaturesIsMutable();
-                this.features_.add((LazyStringList) str);
+                this.features_.add(str);
                 onChanged();
                 return this;
             }
@@ -244,14 +244,14 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.api.EndpointOrBuilder
         @Deprecated
         public String getAliases(int i) {
-            return this.aliases_.get(i);
+            return (String) this.aliases_.get(i);
         }
 
         @Override // com.google.api.EndpointOrBuilder
@@ -289,7 +289,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
 
         @Override // com.google.api.EndpointOrBuilder
         public String getFeatures(int i) {
-            return this.features_.get(i);
+            return (String) this.features_.get(i);
         }
 
         @Override // com.google.api.EndpointOrBuilder
@@ -473,7 +473,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
         public Builder setAliases(int i, String str) {
             if (str != null) {
                 ensureAliasesIsMutable();
-                this.aliases_.set(i, (int) str);
+                this.aliases_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -489,7 +489,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
         public Builder setFeatures(int i, String str) {
             if (str != null) {
                 ensureFeaturesIsMutable();
-                this.features_.set(i, (int) str);
+                this.features_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -581,7 +581,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
                                 this.aliases_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.aliases_.add((LazyStringList) readStringRequireUtf8);
+                            this.aliases_.add(readStringRequireUtf8);
                             z2 = z4;
                         } else if (readTag == 34) {
                             String readStringRequireUtf82 = codedInputStream.readStringRequireUtf8();
@@ -590,7 +590,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
                                 this.features_ = new LazyStringArrayList();
                                 z5 = z2 | true;
                             }
-                            this.features_.add((LazyStringList) readStringRequireUtf82);
+                            this.features_.add(readStringRequireUtf82);
                             z2 = z5;
                         } else if (readTag == 40) {
                             this.allowCors_ = codedInputStream.readBool();
@@ -715,7 +715,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
     @Override // com.google.api.EndpointOrBuilder
     @Deprecated
     public String getAliases(int i) {
-        return this.aliases_.get(i);
+        return (String) this.aliases_.get(i);
     }
 
     @Override // com.google.api.EndpointOrBuilder
@@ -748,7 +748,7 @@ public final class Endpoint extends GeneratedMessageV3 implements EndpointOrBuil
 
     @Override // com.google.api.EndpointOrBuilder
     public String getFeatures(int i) {
-        return this.features_.get(i);
+        return (String) this.features_.get(i);
     }
 
     @Override // com.google.api.EndpointOrBuilder

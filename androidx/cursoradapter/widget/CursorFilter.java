@@ -7,7 +7,7 @@ import android.widget.Filter;
 class CursorFilter extends Filter {
 
     /* renamed from: a  reason: collision with root package name */
-    CursorFilterClient f2770a;
+    CursorFilterClient f2722a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/cursoradapter/widget/CursorFilter$CursorFilterClient.class */
     interface CursorFilterClient {
@@ -22,17 +22,17 @@ class CursorFilter extends Filter {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public CursorFilter(CursorFilterClient cursorFilterClient) {
-        this.f2770a = cursorFilterClient;
+        this.f2722a = cursorFilterClient;
     }
 
     @Override // android.widget.Filter
     public CharSequence convertResultToString(Object obj) {
-        return this.f2770a.convertToString((Cursor) obj);
+        return this.f2722a.convertToString((Cursor) obj);
     }
 
     @Override // android.widget.Filter
     protected Filter.FilterResults performFiltering(CharSequence charSequence) {
-        Cursor runQueryOnBackgroundThread = this.f2770a.runQueryOnBackgroundThread(charSequence);
+        Cursor runQueryOnBackgroundThread = this.f2722a.runQueryOnBackgroundThread(charSequence);
         Filter.FilterResults filterResults = new Filter.FilterResults();
         if (runQueryOnBackgroundThread != null) {
             filterResults.count = runQueryOnBackgroundThread.getCount();
@@ -46,10 +46,10 @@ class CursorFilter extends Filter {
 
     @Override // android.widget.Filter
     protected void publishResults(CharSequence charSequence, Filter.FilterResults filterResults) {
-        Cursor cursor = this.f2770a.getCursor();
+        Cursor cursor = this.f2722a.getCursor();
         if (filterResults.values == null || filterResults.values == cursor) {
             return;
         }
-        this.f2770a.changeCursor((Cursor) filterResults.values);
+        this.f2722a.changeCursor((Cursor) filterResults.values);
     }
 }

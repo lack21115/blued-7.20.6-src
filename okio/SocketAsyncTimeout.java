@@ -1,5 +1,6 @@
 package okio;
 
+import com.android.internal.location.GpsNetInitiatedHandler;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
@@ -21,7 +22,7 @@ public final class SocketAsyncTimeout extends AsyncTimeout {
 
     @Override // okio.AsyncTimeout
     protected IOException newTimeoutException(IOException iOException) {
-        SocketTimeoutException socketTimeoutException = new SocketTimeoutException("timeout");
+        SocketTimeoutException socketTimeoutException = new SocketTimeoutException(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT);
         if (iOException != null) {
             socketTimeoutException.initCause(iOException);
         }

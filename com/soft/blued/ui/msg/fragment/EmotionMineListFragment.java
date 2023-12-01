@@ -14,7 +14,7 @@ public class EmotionMineListFragment extends EmotionBaseListFragment {
                 arrayList.add(emotionListItemModel);
             }
         }
-        this.f32337c.a(arrayList);
+        this.f18647c.a(arrayList);
     }
 
     @Override // com.soft.blued.ui.msg.fragment.EmotionBaseListFragment
@@ -37,7 +37,7 @@ public class EmotionMineListFragment extends EmotionBaseListFragment {
     @Override // com.soft.blued.ui.msg.fragment.EmotionBaseListFragment, com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        this.f32336a.setVisibility(8);
-        this.f32337c.a(1);
+        this.f18646a.setVisibility(8);
+        this.f18647c.a(1);
     }
 }

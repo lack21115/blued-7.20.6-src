@@ -4,14 +4,14 @@ package com.tencent.youtu.liveness;
 public class YTCommonInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40467a = !YTCommonInterface.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26776a = !YTCommonInterface.class.desiredAssertionStatus();
     private static String b = "YTCommon";
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f40468c = 1;
+    private static int f26777c = 1;
 
     public static int a(String str, String str2) {
-        if (f40467a || str != null) {
+        if (f26776a || str != null) {
             String str3 = str2;
             if (str2 == null) {
                 str3 = "";

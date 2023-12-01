@@ -32,13 +32,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveDesireGiftNumberDialogFragment.class */
 public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12826a;
+    public Context a;
     public Observer<Boolean> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public LiveDesireGiftNumberModel f12827c;
+    public LiveDesireGiftNumberModel c;
     private View d;
     private View e;
     private TextView f;
@@ -55,11 +51,11 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
     }
 
     public LiveDesireGiftNumberDialogFragment(Context context, int i, SelectGiftNumberCallBack selectGiftNumberCallBack) {
-        this.f12826a = context;
+        this.a = context;
         this.l = selectGiftNumberCallBack;
         if (i > 0) {
             LiveDesireGiftNumberModel liveDesireGiftNumberModel = new LiveDesireGiftNumberModel();
-            this.f12827c = liveDesireGiftNumberModel;
+            this.c = liveDesireGiftNumberModel;
             liveDesireGiftNumberModel.count = i;
         }
     }
@@ -68,7 +64,7 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
     public void a(View view) {
         LiveDesireGiftNumberModel liveDesireGiftNumberModel;
         SelectGiftNumberCallBack selectGiftNumberCallBack = this.l;
-        if (selectGiftNumberCallBack == null || (liveDesireGiftNumberModel = this.f12827c) == null) {
+        if (selectGiftNumberCallBack == null || (liveDesireGiftNumberModel = this.c) == null) {
             return;
         }
         selectGiftNumberCallBack.selectGiftNumber(liveDesireGiftNumberModel.count);
@@ -82,7 +78,7 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(LiveDesireGiftNumberModel liveDesireGiftNumberModel) {
-        this.f12827c = liveDesireGiftNumberModel;
+        this.c = liveDesireGiftNumberModel;
         this.f.setClickable(liveDesireGiftNumberModel != null);
         this.f.animate().alpha(liveDesireGiftNumberModel == null ? 0.3f : 1.0f).setDuration(200L);
     }
@@ -118,14 +114,14 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
         });
         this.f.setClickable(false);
         this.h.c(false);
-        this.h.l(false);
+        this.h.b(false);
         this.h.f(true);
         this.h.e(true);
         this.h.g(true);
     }
 
     private void e() {
-        this.i = new LiveDesireGiftNumberAdapter(this.f12826a, getFragmentManager(), new LiveDesireGiftNumberAdapter.GiftNumberEventCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireGiftNumberDialogFragment$rRkvtEQfrDetaCz4gVzo0bsEBE0
+        this.i = new LiveDesireGiftNumberAdapter(this.a, getFragmentManager(), new LiveDesireGiftNumberAdapter.GiftNumberEventCallBack() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireGiftNumberDialogFragment$rRkvtEQfrDetaCz4gVzo0bsEBE0
             @Override // com.blued.android.module.live_china.adapter.LiveDesireGiftNumberAdapter.GiftNumberEventCallBack
             public final void giftNumber(LiveDesireGiftNumberModel liveDesireGiftNumberModel) {
                 LiveDesireGiftNumberDialogFragment.this.a(liveDesireGiftNumberModel);
@@ -161,10 +157,10 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
                     liveDesireGiftNumberModel.id = i;
                 }
                 int i2 = 0;
-                if (LiveDesireGiftNumberDialogFragment.this.f12827c != null) {
+                if (LiveDesireGiftNumberDialogFragment.this.c != null) {
                     i2 = 0;
-                    if (LiveDesireGiftNumberDialogFragment.this.f12827c.count > 0) {
-                        i2 = LiveDesireGiftNumberDialogFragment.this.f12827c.count;
+                    if (LiveDesireGiftNumberDialogFragment.this.c.count > 0) {
+                        i2 = LiveDesireGiftNumberDialogFragment.this.c.count;
                     }
                 }
                 LiveDesireGiftNumberModel liveDesireGiftNumberModel2 = null;
@@ -195,8 +191,8 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
                 }
                 LiveDesireGiftNumberDialogFragment.this.j.add(liveDesireGiftNumberModel5);
                 if (i2 > 0 && liveDesireGiftNumberModel6 != null) {
-                    LiveDesireGiftNumberDialogFragment.this.f12827c = liveDesireGiftNumberModel6;
-                    LiveDesireGiftNumberDialogFragment.this.i.f11612c = liveDesireGiftNumberModel6.id;
+                    LiveDesireGiftNumberDialogFragment.this.c = liveDesireGiftNumberModel6;
+                    LiveDesireGiftNumberDialogFragment.this.i.c = liveDesireGiftNumberModel6.id;
                     LiveDesireGiftNumberDialogFragment.this.f.setClickable(true);
                     LiveDesireGiftNumberDialogFragment.this.f.animate().alpha(1.0f).setDuration(200L);
                 }
@@ -217,9 +213,8 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12826a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_desire_adddesire_gift_number, (ViewGroup) null);
         int height = getActivity().getWindowManager().getDefaultDisplay().getHeight();
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -240,21 +235,20 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         final View inflate = layoutInflater.inflate(R.layout.dialog_live_desire_adddesire_gift_number, viewGroup);
         this.d = inflate.findViewById(R.id.rl_root);
         this.e = inflate.findViewById(R.id.iv_close);
         this.f = (TextView) inflate.findViewById(R.id.tv_confirm);
-        this.g = (RecyclerView) inflate.findViewById(R.id.recycler_view);
-        this.h = (SmartRefreshLayout) inflate.findViewById(R.id.smart_refresh);
+        this.g = inflate.findViewById(R.id.recycler_view);
+        this.h = inflate.findViewById(R.id.smart_refresh);
         this.k = (RelativeLayout) inflate.findViewById(R.id.loading);
         d();
         e();
         f();
         this.b = new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveDesireGiftNumberDialogFragment$0oh-zaaB23wI0Q3fq33OVMHz6Bc
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveDesireGiftNumberDialogFragment.a(View.this, (Boolean) obj);
             }
@@ -262,12 +256,12 @@ public class LiveDesireGiftNumberDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

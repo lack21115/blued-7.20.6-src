@@ -14,11 +14,11 @@ import com.opos.mobad.q.a.i;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27195a;
+    private Context f13507a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewGroup f27196c;
+    private ViewGroup f13508c;
     private TextView d;
     private View e;
     private TextView f;
@@ -37,10 +37,10 @@ public class b {
     }
 
     public b(Context context) {
-        this.f27195a = context;
+        this.f13507a = context;
         View inflate = LayoutInflater.from(context).inflate(R.layout.opos_mob_layout_reward_title, (ViewGroup) null);
         this.b = inflate;
-        this.f27196c = (ViewGroup) inflate.findViewById(R.id.opos_mob_video_title_left);
+        this.f13508c = (ViewGroup) inflate.findViewById(R.id.opos_mob_video_title_left);
         this.d = (TextView) this.b.findViewById(R.id.opos_mob_video_btn_vip);
         this.e = this.b.findViewById(R.id.opos_mob_txt_video_left_split);
         this.f = (TextView) this.b.findViewById(R.id.opos_mob_txt_video_count);
@@ -101,13 +101,13 @@ public class b {
             r0 = r5
             if (r0 != 0) goto L16
             r0 = r3
-            android.view.ViewGroup r0 = r0.f27196c
+            android.view.ViewGroup r0 = r0.f13508c
             r1 = 8
             r0.setVisibility(r1)
             return
         L16:
             r0 = r3
-            android.view.ViewGroup r0 = r0.f27196c
+            android.view.ViewGroup r0 = r0.f13508c
             r1 = 0
             r0.setVisibility(r1)
             r0 = r3
@@ -200,11 +200,11 @@ public class b {
         int i;
         if (z) {
             imageView = this.g;
-            resources = this.f27195a.getResources();
+            resources = this.f13507a.getResources();
             i = R.drawable.opos_mob_drawable_sound_on;
         } else {
             imageView = this.g;
-            resources = this.f27195a.getResources();
+            resources = this.f13507a.getResources();
             i = R.drawable.opos_mob_drawable_sound_off;
         }
         imageView.setImageDrawable(resources.getDrawable(i));

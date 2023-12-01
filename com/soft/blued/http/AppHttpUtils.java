@@ -6,8 +6,10 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.collection.ArrayMap;
+import com.anythink.pd.ExHandler;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
+import com.blued.android.core.net.HttpResponseHandler;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.net.StringHttpResponseHandler;
 import com.blued.android.framework.http.BluedHttpTools;
@@ -16,7 +18,6 @@ import com.blued.android.framework.utils.AesCrypto;
 import com.blued.android.module.common.url.BluedHttpUrl;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.CommonPreferences;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.device_identity.library.BluedDeviceIdentity;
 import com.blued.android.statistics.BluedStatistics;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -34,15 +35,15 @@ import java.util.Map;
 public class AppHttpUtils {
     public static void a() {
         String bB = BluedPreferences.bB();
-        String str = DeviceUtils.b() + BridgeUtil.UNDERLINE_STR + TinkerTools.a();
+        String str = DeviceUtils.b() + "_" + TinkerTools.a();
         if (StringUtils.d(str) || str.equalsIgnoreCase(bB)) {
             return;
         }
         BluedPreferences.O(str);
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("version_code", "" + DeviceUtils.b());
         a2.put("patch_code", TinkerTools.a());
-        a2.put("channel", AppInfo.f9487c);
+        a2.put("channel", AppInfo.c);
         a2.put("app", "1");
         try {
             BluedStatistics.c().a("PATCH_CODE", 0L, Integer.parseInt(TinkerTools.a()), a2.toString());
@@ -55,12 +56,12 @@ public class AppHttpUtils {
     }
 
     public static void a(Context context, BluedUIHttpResponse bluedUIHttpResponse, IRequestHost iRequestHost) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         HttpManager.a(BluedHttpUrl.q() + "/users/terms", bluedUIHttpResponse, iRequestHost).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         ArrayMap arrayMap = new ArrayMap();
         String g = DeviceUtils.g();
         if (!TextUtils.isEmpty(g)) {
@@ -77,11 +78,11 @@ public class AppHttpUtils {
         if (BluedPreferences.aC() == 1 || BluedPreferences.aD()) {
             arrayMap.put("android_id", Settings.System.getString(AppInfo.d().getContentResolver(), "android_id"));
             arrayMap.put("mac", AppInfo.e);
-            arrayMap.put("imei", AppInfo.d);
+            arrayMap.put(ExHandler.JSON_REQUEST_IMEI, AppInfo.d);
         }
-        arrayMap.put("channel", AppInfo.f9487c);
+        arrayMap.put("channel", AppInfo.c);
         try {
-            a2.put(BridgeUtil.UNDERLINE_STR, AesCrypto.b(AppInfo.f().toJson(arrayMap)));
+            a2.put("_", AesCrypto.b(AppInfo.f().toJson(arrayMap)));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -101,18 +102,18 @@ public class AppHttpUtils {
         } catch (Exception e2) {
         }
         arrayMap.put("domain", Uri.parse(str).getHost());
-        HttpManager.a(HttpUtils.a(arrayMap, str3), bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(HttpUtils.a(arrayMap, str3), bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     public static void a(String str, BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("plan_key", str);
         HttpManager.a(BluedHttpUrl.q() + "/blued/alink/config", bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void a(String str, String str2, StringHttpResponseHandler stringHttpResponseHandler) {
         int b = DeviceUtils.b();
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("version_code", "" + b);
         a2.put("patch_code", str);
         a2.put("channel", str2);
@@ -130,16 +131,16 @@ public class AppHttpUtils {
     }
 
     public static void b(BluedUIHttpResponse bluedUIHttpResponse) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("longitude", "" + CommonPreferences.u());
         a2.put("latitude", "" + CommonPreferences.v());
         HttpManager.a(BluedHttpUrl.q() + "/blued/config", bluedUIHttpResponse).b(BluedHttpTools.a(true)).a(a2).h();
     }
 
     public static void c() {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("uid", UserInfo.getInstance().getLoginUserInfo().uid);
-        HttpManager.b(BluedHttpUrl.q() + "/users/call/period/push", null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
+        HttpManager.b(BluedHttpUrl.q() + "/users/call/period/push", (HttpResponseHandler) null).b(BluedHttpTools.a(true)).a(BluedHttpTools.a(a2)).h();
     }
 
     public static void c(BluedUIHttpResponse bluedUIHttpResponse) {

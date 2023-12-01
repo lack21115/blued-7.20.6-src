@@ -1,19 +1,18 @@
 package com.autonavi.aps.amapapi.utils;
 
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.amap.api.col.p0003sl.hn;
-import com.amap.api.col.p0003sl.ho;
-import com.amap.api.col.p0003sl.hw;
-import com.amap.api.col.p0003sl.ia;
-import com.amap.api.col.p0003sl.ib;
-import com.amap.api.col.p0003sl.iw;
+import com.amap.api.col.3sl.hn;
+import com.amap.api.col.3sl.ho;
+import com.amap.api.col.3sl.hw;
+import com.amap.api.col.3sl.ia;
+import com.amap.api.col.3sl.ib;
+import com.amap.api.col.3sl.iw;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.DPoint;
-import com.amap.api.maps.model.MyLocationStyle;
-import com.amap.api.services.district.DistrictSearchQuery;
 import com.sina.weibo.sdk.constant.WBPageConstants;
 import java.util.HashMap;
 import java.util.List;
@@ -24,13 +23,13 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f9278a = "5.3";
+    public static String f6438a = "5.3";
     static String l;
     static HashMap<String, String> m;
     public static final String[] b = {"5.1"};
 
     /* renamed from: c  reason: collision with root package name */
-    static String f9279c = "http://apilocate.amap.com/mobile/binary";
+    static String f6439c = "http://apilocate.amap.com/mobile/binary";
     static String d = "http://dualstack-a.apilocate.amap.com/mobile/binary";
     static String e = "";
     private static final String[] p = {"com.amap.api.location", "com.loc", "com.amap.api.fence"};
@@ -105,7 +104,7 @@ public final class b {
         }
         try {
             bundle.setClassLoader(AMapLocationClientOption.class.getClassLoader());
-            return (AMapLocationClientOption) bundle.getParcelable("opt");
+            return bundle.getParcelable("opt");
         } catch (Throwable th) {
             a(th, "CoreUtil", "getOptionFromBundle");
             return aMapLocationClientOption;
@@ -113,13 +112,13 @@ public final class b {
     }
 
     public static String a() {
-        return f9279c;
+        return f6439c;
     }
 
     public static void a(Context context) {
         try {
             if (ib.b(context)) {
-                f9279c = "http://abroad.apilocate.amap.com/mobile/binary";
+                f6439c = "http://abroad.apilocate.amap.com/mobile/binary";
                 return;
             }
             f();
@@ -135,7 +134,7 @@ public final class b {
         if (jSONObject != null) {
             try {
                 double optDouble = jSONObject.optDouble("lat", aMapLocation.getLatitude());
-                double optDouble2 = jSONObject.optDouble(com.anythink.core.common.g.c.C, aMapLocation.getLongitude());
+                double optDouble2 = jSONObject.optDouble("lon", aMapLocation.getLongitude());
                 aMapLocation.setProvider(jSONObject.optString(com.umeng.analytics.pro.d.M, aMapLocation.getProvider()));
                 aMapLocation.setLatitude(optDouble);
                 aMapLocation.setLongitude(optDouble2);
@@ -166,17 +165,17 @@ public final class b {
                 aMapLocation.setAddress(jSONObject.optString("address", aMapLocation.getAddress()));
                 String optString4 = jSONObject.optString("desc", "");
                 aMapLocation.setCountry(jSONObject.optString("country", aMapLocation.getCountry()));
-                aMapLocation.setProvince(jSONObject.optString(DistrictSearchQuery.KEYWORDS_PROVINCE, aMapLocation.getProvince()));
-                aMapLocation.setCity(jSONObject.optString(DistrictSearchQuery.KEYWORDS_CITY, aMapLocation.getCity()));
-                aMapLocation.setDistrict(jSONObject.optString(DistrictSearchQuery.KEYWORDS_DISTRICT, aMapLocation.getDistrict()));
+                aMapLocation.setProvince(jSONObject.optString("province", aMapLocation.getProvince()));
+                aMapLocation.setCity(jSONObject.optString("city", aMapLocation.getCity()));
+                aMapLocation.setDistrict(jSONObject.optString("district", aMapLocation.getDistrict()));
                 aMapLocation.setRoad(jSONObject.optString("road", aMapLocation.getRoad()));
                 aMapLocation.setStreet(jSONObject.optString("street", aMapLocation.getStreet()));
                 aMapLocation.setNumber(jSONObject.optString("number", aMapLocation.getStreetNum()));
                 aMapLocation.setPoiName(jSONObject.optString(WBPageConstants.ParamKey.POINAME, aMapLocation.getPoiName()));
                 aMapLocation.setAoiName(jSONObject.optString("aoiname", aMapLocation.getAoiName()));
-                aMapLocation.setErrorCode(jSONObject.optInt("errorCode", aMapLocation.getErrorCode()));
-                aMapLocation.setErrorInfo(jSONObject.optString(MyLocationStyle.ERROR_INFO, aMapLocation.getErrorInfo()));
-                aMapLocation.setLocationType(jSONObject.optInt(MyLocationStyle.LOCATION_TYPE, aMapLocation.getLocationType()));
+                aMapLocation.setErrorCode(jSONObject.optInt(AccountManager.KEY_ERROR_CODE, aMapLocation.getErrorCode()));
+                aMapLocation.setErrorInfo(jSONObject.optString("errorInfo", aMapLocation.getErrorInfo()));
+                aMapLocation.setLocationType(jSONObject.optInt("locationType", aMapLocation.getLocationType()));
                 aMapLocation.setLocationDetail(jSONObject.optString("locationDetail", aMapLocation.getLocationDetail()));
                 aMapLocation.setTime(jSONObject.optLong("time", aMapLocation.getTime()));
                 boolean optBoolean = jSONObject.optBoolean("isOffset", aMapLocation.isOffset());
@@ -185,11 +184,11 @@ public final class b {
                 aMapLocation.setFloor(jSONObject.optString("floor", aMapLocation.getFloor()));
                 aMapLocation.setDescription(jSONObject.optString("description", aMapLocation.getDescription()));
                 if (jSONObject.has("coordType")) {
-                    aMapLocation.setCoordType(jSONObject.optString("coordType", AMapLocation.COORD_TYPE_GCJ02));
+                    aMapLocation.setCoordType(jSONObject.optString("coordType", "GCJ02"));
                 } else if (a(optDouble, optDouble2) && optBoolean) {
-                    aMapLocation.setCoordType(AMapLocation.COORD_TYPE_GCJ02);
+                    aMapLocation.setCoordType("GCJ02");
                 } else {
-                    aMapLocation.setCoordType(AMapLocation.COORD_TYPE_WGS84);
+                    aMapLocation.setCoordType("WGS84");
                 }
                 Bundle bundle = new Bundle();
                 bundle.putString("citycode", aMapLocation.getCityCode());
@@ -220,7 +219,7 @@ public final class b {
                     return;
                 }
                 e = str3;
-                f9279c = str3;
+                f6439c = str3;
             } catch (Throwable th) {
                 a(th, "CoreUtil", "checkUrl");
             }
@@ -356,11 +355,11 @@ public final class b {
     public static void c(Context context) {
         try {
             if (ib.b(context)) {
-                f9279c = "http://abroad.apilocate.amap.com/mobile/binary";
+                f6439c = "http://abroad.apilocate.amap.com/mobile/binary";
                 d = "http://abroad.apilocate.amap.com/mobile/binary";
                 return;
             }
-            f9279c = "http://apilocate.amap.com/mobile/binary";
+            f6439c = "http://apilocate.amap.com/mobile/binary";
             d = "http://dualstack-a.apilocate.amap.com/mobile/binary";
         } catch (Throwable th) {
             a(th, "CoreUtil", "changeUrl");

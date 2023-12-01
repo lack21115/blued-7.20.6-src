@@ -36,13 +36,9 @@ import java.util.Iterator;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYUserVoteView.class */
 public class YYUserVoteView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f18540a;
+    private RecyclerView a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private VoteUserAdapter f18541c;
+    private VoteUserAdapter c;
     private BaseYYStudioFragment d;
     private String e;
     private boolean f;
@@ -55,7 +51,6 @@ public class YYUserVoteView extends LinearLayout {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(final BaseViewHolder baseViewHolder, final YYVoteDataModel yYVoteDataModel) {
             ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_vote_header);
@@ -109,7 +104,7 @@ public class YYUserVoteView extends LinearLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_user_vote, (ViewGroup) this, true);
-        this.f18540a = (RecyclerView) findViewById(R.id.rv_vote_user_list);
+        this.a = findViewById(R.id.rv_vote_user_list);
         ShapeTextView shapeTextView = (ShapeTextView) findViewById(R.id.tv_close_vote);
         this.b = shapeTextView;
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYUserVoteView.1
@@ -119,7 +114,7 @@ public class YYUserVoteView extends LinearLayout {
                 YYUserVoteView.this.b();
             }
         });
-        this.f18541c = new VoteUserAdapter();
+        this.c = new VoteUserAdapter();
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null) {
             if (TextUtils.equals(b.uid, YYRoomInfoManager.e().k())) {
@@ -144,7 +139,7 @@ public class YYUserVoteView extends LinearLayout {
                 yYVoteDataModel.num++;
                 yYVoteDataModel.is_choise = 1;
                 YYUserVoteView.this.f = true;
-                YYUserVoteView.this.f18541c.notifyDataSetChanged();
+                YYUserVoteView.this.c.notifyDataSetChanged();
             }
         }, (IRequestHost) this.d.getFragmentActive());
     }
@@ -192,9 +187,9 @@ public class YYUserVoteView extends LinearLayout {
                     if (bluedEntityA.getSingleData().vote_data.size() < 4) {
                         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(YYUserVoteView.this.getContext());
                         linearLayoutManager.setOrientation(0);
-                        YYUserVoteView.this.f18540a.setLayoutManager(linearLayoutManager);
+                        YYUserVoteView.this.a.setLayoutManager(linearLayoutManager);
                     } else {
-                        YYUserVoteView.this.f18540a.setLayoutManager(new GridLayoutManager(YYUserVoteView.this.getContext(), 4));
+                        YYUserVoteView.this.a.setLayoutManager(new GridLayoutManager(YYUserVoteView.this.getContext(), 4));
                     }
                     Iterator<YYVoteDataModel> it = bluedEntityA.getSingleData().vote_data.iterator();
                     while (true) {
@@ -205,8 +200,8 @@ public class YYUserVoteView extends LinearLayout {
                             break;
                         }
                     }
-                    YYUserVoteView.this.f18540a.setAdapter(YYUserVoteView.this.f18541c);
-                    YYUserVoteView.this.f18541c.setNewData(bluedEntityA.getSingleData().vote_data);
+                    YYUserVoteView.this.a.setAdapter(YYUserVoteView.this.c);
+                    YYUserVoteView.this.c.setNewData(bluedEntityA.getSingleData().vote_data);
                 }
             }, (IRequestHost) this.d.getFragmentActive());
         }

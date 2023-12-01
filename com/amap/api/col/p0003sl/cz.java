@@ -8,25 +8,21 @@ import java.util.concurrent.ConcurrentHashMap;
 /* renamed from: com.amap.api.col.3sl.cz  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/cz.class */
 public final class cz {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Map<Integer, StyleItem> f4834a = new ConcurrentHashMap();
+    private Map<Integer, StyleItem> a = new ConcurrentHashMap();
     private Object b = null;
-
-    /* renamed from: c  reason: collision with root package name */
-    private StyleItem[] f4835c;
+    private StyleItem[] c;
 
     public final Map<Integer, StyleItem> a() {
-        return this.f4834a;
+        return this.a;
     }
 
     public final StyleItem[] b() {
-        Map<Integer, StyleItem> map = this.f4834a;
+        Map<Integer, StyleItem> map = this.a;
         if (map == null || map.size() == 0) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
-        for (StyleItem styleItem : this.f4834a.values()) {
+        for (StyleItem styleItem : this.a.values()) {
             if (styleItem.isValid()) {
                 arrayList.add(styleItem);
             }
@@ -34,14 +30,14 @@ public final class cz {
         int size = arrayList.size();
         if (size > 0) {
             StyleItem[] styleItemArr = (StyleItem[]) arrayList.toArray(new StyleItem[size]);
-            this.f4835c = styleItemArr;
+            this.c = styleItemArr;
             return styleItemArr;
         }
         return null;
     }
 
     public final StyleItem[] c() {
-        return this.f4835c;
+        return this.c;
     }
 
     public final Object d() {

@@ -14,7 +14,7 @@ public class c {
     private static final String b = "lastReqTime";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f40965c = 48;
+    private static final int f27274c = 48;
     private static final int d = 1;
     private static final int e = 720;
     private static final String f = "iss";
@@ -24,7 +24,7 @@ public class c {
     private static int j;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40964a = at.b().b(at.z);
+    private static final String f27273a = at.b().b(at.z);
     private static Object k = new Object();
 
     static {
@@ -71,7 +71,7 @@ public class c {
     }
 
     public static void a(Context context, long j2) {
-        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f40964a, 0);
+        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f27273a, 0);
         if (sharedPreferences != null) {
             sharedPreferences.edit().putLong(b, j2).commit();
         }
@@ -94,7 +94,7 @@ public class c {
     }
 
     public static long b(Context context) {
-        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f40964a, 0);
+        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f27273a, 0);
         long j2 = 0;
         if (sharedPreferences != null) {
             j2 = sharedPreferences.getLong(b, 0L);
@@ -103,14 +103,14 @@ public class c {
     }
 
     public static void c(Context context) {
-        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f40964a, 0);
+        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f27273a, 0);
         if (sharedPreferences != null) {
             sharedPreferences.edit().putBoolean(h, true).commit();
         }
     }
 
     public static void d(Context context) {
-        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f40964a, 0);
+        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f27273a, 0);
         if (sharedPreferences != null) {
             sharedPreferences.edit().putBoolean(h, false).commit();
         }
@@ -118,7 +118,7 @@ public class c {
 
     public static boolean e(Context context) {
         boolean z = false;
-        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f40964a, 0);
+        SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(f27273a, 0);
         if (sharedPreferences != null) {
             z = sharedPreferences.getBoolean(h, false);
         }

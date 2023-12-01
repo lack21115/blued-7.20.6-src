@@ -12,11 +12,11 @@ import java.util.concurrent.Executors;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35544a = b.class.getName();
+    private static final String f21853a = b.class.getName();
     private static Handler b = new Handler(Looper.getMainLooper());
 
     /* renamed from: c  reason: collision with root package name */
-    private static ExecutorService f35545c = Executors.newFixedThreadPool(1, new WbThreadFactory("wbcfFaceDetect"));
+    private static ExecutorService f21854c = Executors.newFixedThreadPool(1, new WbThreadFactory("wbcfFaceDetect"));
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/c/b/b$a.class */
     public interface a<T> {
@@ -24,19 +24,19 @@ public class b {
     }
 
     public static void a(Runnable runnable) {
-        f35545c.submit(runnable);
+        f21854c.submit(runnable);
     }
 
     public static <T> void a(final Callable<T> callable, final a<T> aVar) {
-        if (f35545c.isShutdown()) {
-            WLogger.w(f35544a, "already shutDown!");
+        if (f21854c.isShutdown()) {
+            WLogger.w(f21853a, "already shutDown!");
         } else {
-            f35545c.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.b.b.1
+            f21854c.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.facelight.c.b.b.1
                 @Override // java.lang.Runnable
                 public void run() {
                     Object obj;
                     try {
-                        obj = Callable.this.call();
+                        obj = callable.call();
                     } catch (Exception e) {
                         e.printStackTrace();
                         obj = null;

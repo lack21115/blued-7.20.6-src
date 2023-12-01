@@ -7,24 +7,24 @@ import java.util.Map;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, Boolean> f6989a = new HashMap();
+    private static Map<String, Boolean> f4151a = new HashMap();
 
     private static void a() {
-        f6989a.clear();
+        f4151a.clear();
     }
 
     public static void a(String str) {
-        f6989a.put(str, Boolean.TRUE);
+        f4151a.put(str, Boolean.TRUE);
     }
 
     public static boolean b(String str) {
-        if (f6989a.containsKey(str)) {
-            return f6989a.get(str).booleanValue();
+        if (f4151a.containsKey(str)) {
+            return f4151a.get(str).booleanValue();
         }
         return false;
     }
 
     public static void c(String str) {
-        f6989a.remove(str);
+        f4151a.remove(str);
     }
 }

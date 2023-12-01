@@ -15,11 +15,11 @@ import javax.crypto.spec.SecretKeySpec;
 public class CipherUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23063a = "CipherUtil";
+    private static final String f9455a = "CipherUtil";
     private static final String b = "AES/GCM/NoPadding";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23064c = "AES/CBC/PKCS5Padding";
+    private static final String f9456c = "AES/CBC/PKCS5Padding";
     private static final String d = "AES";
     private static final String e = "";
     private static final int f = 16;
@@ -39,7 +39,7 @@ public class CipherUtil {
 
     private static Cipher a(byte[] bArr, byte[] bArr2, int i, String str) {
         if (bArr == null || bArr.length < 16 || bArr2 == null || bArr2.length < 12 || !AesGcm.isBuildVersionHigherThan19()) {
-            b.b(f23063a, "gcm encrypt param is not right");
+            b.b(f9455a, "gcm encrypt param is not right");
             return null;
         }
         try {
@@ -48,7 +48,7 @@ public class CipherUtil {
             cipher.init(i, secretKeySpec, b.equals(str) ? AesGcm.getGcmAlgorithmParams(bArr2) : new IvParameterSpec(bArr2));
             return cipher;
         } catch (GeneralSecurityException e2) {
-            b.b(f23063a, "GCM encrypt data error" + e2.getMessage());
+            b.b(f9455a, "GCM encrypt data error" + e2.getMessage());
             return null;
         }
     }
@@ -91,7 +91,7 @@ public class CipherUtil {
 
     public static Cipher getAesGcmEncryptCipher(byte[] bArr) {
         byte[] generateSecureRandom = EncryptUtil.generateSecureRandom(12);
-        b.a(f23063a, "getEncryptCipher: iv is : " + HexUtil.byteArray2HexStr(generateSecureRandom));
+        b.a(f9455a, "getEncryptCipher: iv is : " + HexUtil.byteArray2HexStr(generateSecureRandom));
         return getAesGcmEncryptCipher(bArr, generateSecureRandom);
     }
 
@@ -109,7 +109,7 @@ public class CipherUtil {
 
     public static int getContent(Cipher cipher, byte[] bArr, int i, int i2, byte[] bArr2, int i3) throws BadPaddingException, IllegalBlockSizeException, ShortBufferException {
         if (cipher == null || bArr == null) {
-            b.b(f23063a, "getEncryptCOntent: cipher is null or content is null");
+            b.b(f9455a, "getEncryptCOntent: cipher is null or content is null");
             return -1;
         }
         return cipher.doFinal(bArr, i, i2, bArr2, i3);
@@ -117,35 +117,35 @@ public class CipherUtil {
 
     public static int getContent(Cipher cipher, byte[] bArr, byte[] bArr2) {
         if (cipher == null || bArr == null) {
-            b.b(f23063a, "getEncryptCOntent: cipher is null or content is null");
+            b.b(f9455a, "getEncryptCOntent: cipher is null or content is null");
             return -1;
         }
         try {
             return cipher.doFinal(bArr, 0, bArr.length, bArr2);
         } catch (BadPaddingException e2) {
-            b.b(f23063a, "getContent: BadPaddingException");
+            b.b(f9455a, "getContent: BadPaddingException");
             return -1;
         } catch (IllegalBlockSizeException e3) {
-            b.b(f23063a, "getContent: IllegalBlockSizeException");
+            b.b(f9455a, "getContent: IllegalBlockSizeException");
             return -1;
         } catch (ShortBufferException e4) {
-            b.b(f23063a, "getContent: ShortBufferException");
+            b.b(f9455a, "getContent: ShortBufferException");
             return -1;
         }
     }
 
     public static byte[] getContent(Cipher cipher, byte[] bArr) {
         if (cipher == null || bArr == null) {
-            b.b(f23063a, "getEncryptCOntent: cipher is null or content is null");
+            b.b(f9455a, "getEncryptCOntent: cipher is null or content is null");
             return new byte[0];
         }
         try {
             return cipher.doFinal(bArr, 0, bArr.length);
         } catch (BadPaddingException e2) {
-            b.b(f23063a, "getContent: BadPaddingException");
+            b.b(f9455a, "getContent: BadPaddingException");
             return new byte[0];
         } catch (IllegalBlockSizeException e3) {
-            b.b(f23063a, "getContent: IllegalBlockSizeException");
+            b.b(f9455a, "getContent: IllegalBlockSizeException");
             return new byte[0];
         }
     }

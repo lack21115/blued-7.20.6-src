@@ -9,6 +9,7 @@ import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,10 +39,10 @@ public final class KotlinConstructorBuilder<M extends Message<M, B>, B extends M
         private final Class<?> type;
         private final WireField wireField;
 
-        public ProtoField(Class<?> type, WireField wireField) {
-            Intrinsics.e(type, "type");
+        public ProtoField(Class<?> cls, WireField wireField) {
+            Intrinsics.e(cls, "type");
             Intrinsics.e(wireField, "wireField");
-            this.type = type;
+            this.type = cls;
             this.wireField = wireField;
         }
 
@@ -54,10 +55,10 @@ public final class KotlinConstructorBuilder<M extends Message<M, B>, B extends M
         }
     }
 
-    public KotlinConstructorBuilder(Class<M> messageType) {
-        Intrinsics.e(messageType, "messageType");
-        this.messageType = messageType;
-        int length = messageType.getDeclaredFields().length;
+    public KotlinConstructorBuilder(Class<M> cls) {
+        Intrinsics.e(cls, "messageType");
+        this.messageType = cls;
+        int length = cls.getDeclaredFields().length;
         this.fieldValueMap = new LinkedHashMap(length);
         this.repeatedFieldValueMap = new LinkedHashMap(length);
         this.mapFieldKeyValueMap = new LinkedHashMap(length);
@@ -66,14 +67,15 @@ public final class KotlinConstructorBuilder<M extends Message<M, B>, B extends M
     private final void clobberOtherIsOneOfs(WireField wireField) {
         Collection<Pair<WireField, Object>> values = this.fieldValueMap.values();
         ArrayList arrayList = new ArrayList(CollectionsKt.a(values, 10));
-        for (Pair<WireField, Object> pair : values) {
-            arrayList.add(pair.a());
+        Iterator<T> it = values.iterator();
+        while (it.hasNext()) {
+            arrayList.add((WireField) ((Pair) it.next()).a());
         }
         ArrayList arrayList2 = arrayList;
         ArrayList<WireField> arrayList3 = new ArrayList();
         for (Object obj : arrayList2) {
             WireField wireField2 = (WireField) obj;
-            if (Intrinsics.a((Object) wireField2.oneofName(), (Object) wireField.oneofName()) && wireField2.tag() != wireField.tag()) {
+            if (Intrinsics.a(wireField2.oneofName(), wireField.oneofName()) && wireField2.tag() != wireField.tag()) {
                 arrayList3.add(obj);
             }
         }
@@ -96,7 +98,7 @@ public final class KotlinConstructorBuilder<M extends Message<M, B>, B extends M
             Field field2 = field;
             Annotation[] declaredAnnotations = field2.getDeclaredAnnotations();
             Intrinsics.c(declaredAnnotations, "field.declaredAnnotations");
-            WireField wireField = (WireField) CollectionsKt.i((List<? extends Object>) ArraysKt.a((Object[]) declaredAnnotations, WireField.class));
+            WireField wireField = (WireField) CollectionsKt.i(ArraysKt.a(declaredAnnotations, WireField.class));
             if (wireField == null) {
                 protoField = null;
             } else {
@@ -121,10 +123,10 @@ public final class KotlinConstructorBuilder<M extends Message<M, B>, B extends M
             if (!protoField.getWireField().label().isRepeated()) {
                 isMap = KotlinConstructorBuilderKt.isMap(protoField.getWireField());
                 if (!isMap) {
-                    arrayDeque2.add(protoField);
+                    ((Collection) arrayDeque2).add(protoField);
                 }
             }
-            arrayDeque.add(protoField);
+            ((Collection) arrayDeque).add(protoField);
         }
         Constructor<?>[] constructors = this.messageType.getConstructors();
         Intrinsics.c(constructors, "messageType.constructors");
@@ -168,30 +170,30 @@ public final class KotlinConstructorBuilder<M extends Message<M, B>, B extends M
         throw new NoSuchElementException("Array contains no element matching the predicate.");
     }
 
-    public final Object get(WireField field) {
+    public final Object get(WireField wireField) {
         boolean isMap;
-        Map<?, ?> b;
-        Intrinsics.e(field, "field");
-        isMap = KotlinConstructorBuilderKt.isMap(field);
-        Map<?, ?> map = null;
+        Map b;
+        Intrinsics.e(wireField, "field");
+        isMap = KotlinConstructorBuilderKt.isMap(wireField);
+        Map map = null;
         if (isMap) {
-            Pair<WireField, Map<?, ?>> pair = this.mapFieldKeyValueMap.get(Integer.valueOf(field.tag()));
+            Pair<WireField, Map<?, ?>> pair = this.mapFieldKeyValueMap.get(Integer.valueOf(wireField.tag()));
             if (pair != null) {
-                map = pair.b();
+                map = (Map) pair.b();
             }
             b = map;
             if (map == null) {
                 return MapsKt.a();
             }
-        } else if (field.label().isRepeated()) {
-            Pair<WireField, List<?>> pair2 = this.repeatedFieldValueMap.get(Integer.valueOf(field.tag()));
-            List<?> b2 = pair2 == null ? null : pair2.b();
-            b = b2;
-            if (b2 == null) {
+        } else if (wireField.label().isRepeated()) {
+            Pair<WireField, List<?>> pair2 = this.repeatedFieldValueMap.get(Integer.valueOf(wireField.tag()));
+            List list = pair2 == null ? null : (List) pair2.b();
+            b = list;
+            if (list == null) {
                 return CollectionsKt.b();
             }
         } else {
-            Pair<WireField, Object> pair3 = this.fieldValueMap.get(Integer.valueOf(field.tag()));
+            Pair<WireField, Object> pair3 = this.fieldValueMap.get(Integer.valueOf(wireField.tag()));
             if (pair3 == null) {
                 return null;
             }
@@ -200,30 +202,30 @@ public final class KotlinConstructorBuilder<M extends Message<M, B>, B extends M
         return b;
     }
 
-    public final void set(WireField field, Object obj) {
+    public final void set(WireField wireField, Object obj) {
         boolean isMap;
-        Intrinsics.e(field, "field");
-        isMap = KotlinConstructorBuilderKt.isMap(field);
+        Intrinsics.e(wireField, "field");
+        isMap = KotlinConstructorBuilderKt.isMap(wireField);
         if (isMap) {
             Map<Integer, Pair<WireField, Map<?, ?>>> map = this.mapFieldKeyValueMap;
-            int tag = field.tag();
+            int tag = wireField.tag();
             if (obj == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.MutableMap<*, *>");
             }
-            map.put(Integer.valueOf(tag), TuplesKt.a(field, TypeIntrinsics.i(obj)));
-        } else if (field.label().isRepeated()) {
+            map.put(Integer.valueOf(tag), TuplesKt.a(wireField, TypeIntrinsics.i(obj)));
+        } else if (wireField.label().isRepeated()) {
             Map<Integer, Pair<WireField, List<?>>> map2 = this.repeatedFieldValueMap;
-            int tag2 = field.tag();
+            int tag2 = wireField.tag();
             if (obj == null) {
                 throw new NullPointerException("null cannot be cast to non-null type kotlin.collections.MutableList<*>");
             }
-            map2.put(Integer.valueOf(tag2), TuplesKt.a(field, TypeIntrinsics.f(obj)));
+            map2.put(Integer.valueOf(tag2), TuplesKt.a(wireField, TypeIntrinsics.f(obj)));
         } else {
-            this.fieldValueMap.put(Integer.valueOf(field.tag()), TuplesKt.a(field, obj));
-            if (obj == null || !field.label().isOneOf()) {
+            this.fieldValueMap.put(Integer.valueOf(wireField.tag()), TuplesKt.a(wireField, obj));
+            if (obj == null || !wireField.label().isOneOf()) {
                 return;
             }
-            clobberOtherIsOneOfs(field);
+            clobberOtherIsOneOfs(wireField);
         }
     }
 }

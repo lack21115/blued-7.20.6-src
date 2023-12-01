@@ -20,14 +20,13 @@ public final class WmManager$Companion$getWid$1 extends StringHttpResponseHandle
         BluedPreferences.ar(wmLoginModel == null ? null : wmLoginModel.superWid);
     }
 
-    @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
     /* renamed from: a */
     public void onSuccess(final String str) {
-        Log.v("drb", String.valueOf(Intrinsics.a("getWid:", (Object) str)));
+        Log.v("drb", String.valueOf(Intrinsics.a("getWid:", str)));
         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.soft.blued.ui.discover.manager.-$$Lambda$WmManager$Companion$getWid$1$EKIK0cvA7kughJtOfUsvCny1HC0
             @Override // java.lang.Runnable
             public final void run() {
-                WmManager$Companion$getWid$1.b(String.this);
+                WmManager$Companion$getWid$1.b(str);
             }
         });
     }

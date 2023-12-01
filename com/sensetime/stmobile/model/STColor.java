@@ -4,7 +4,7 @@ package com.sensetime.stmobile.model;
 public class STColor {
 
     /* renamed from: a  reason: collision with root package name */
-    public float f28093a;
+    public float f14405a;
     public float b;
     public float g;
     public float r;
@@ -13,11 +13,11 @@ public class STColor {
         this.r = f;
         this.g = f2;
         this.b = f3;
-        this.f28093a = f4;
+        this.f14405a = f4;
     }
 
     public float getA() {
-        return this.f28093a;
+        return this.f14405a;
     }
 
     public float getB() {
@@ -33,6 +33,6 @@ public class STColor {
     }
 
     public String toString() {
-        return "STColor{r=" + this.r + ", g=" + this.g + ", b=" + this.b + ", a=" + this.f28093a + '}';
+        return "STColor{r=" + this.r + ", g=" + this.g + ", b=" + this.b + ", a=" + this.f14405a + '}';
     }
 }

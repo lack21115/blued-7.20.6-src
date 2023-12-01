@@ -65,9 +65,9 @@ public class FloatFooterView extends LinearLayout implements View.OnClickListene
 
     private void initView(AttributeSet attributeSet) {
         View.inflate(getContext(), R.layout.view_float_footer, this);
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) findViewById(R.id.btn);
-        this.mBtn = shapeLinearLayout;
-        shapeLinearLayout.setOnClickListener(new SingleClickProxy(this));
+        ShapeLinearLayout findViewById = findViewById(R.id.btn);
+        this.mBtn = findViewById;
+        findViewById.setOnClickListener(new SingleClickProxy(this));
         this.ivBtn = (ImageView) findViewById(R.id.iv_btn);
         this.tvBtn = (TextView) findViewById(R.id.tv_btn);
         this.iconRedDot = findViewById(R.id.icon_red_dot);
@@ -131,7 +131,7 @@ public class FloatFooterView extends LinearLayout implements View.OnClickListene
 
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
-                FloatFooterView.this.mBtn.setOnClickListener(null);
+                FloatFooterView.this.mBtn.setOnClickListener((View.OnClickListener) null);
             }
         });
         animatorSet.start();

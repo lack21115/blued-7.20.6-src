@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentPicturesWallBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28931a;
+    private final FrameLayout f15241a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28931a;
+        return this.f15241a;
     }
 }

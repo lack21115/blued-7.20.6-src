@@ -37,11 +37,11 @@ import java.util.List;
 public class ShareWithContactFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public ShareWithContactAdapter f31236a;
+    public ShareWithContactAdapter f17546a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f31237c;
+    private View f17547c;
     private RenrenPullToRefreshListView d;
     private ListView e;
     private List<SessionModel> f;
@@ -65,7 +65,6 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
         private ShareWithContactSessionListener() {
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
         public void onUISessionDataChanged(List<SessionModel> list) {
             ChatHelperV4.d(list);
             if (ShareWithContactFragment.this.f.size() == 0) {
@@ -97,14 +96,14 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
                     }
                     if (sessionModel.sessionType == 2) {
                         ShareWithContactFragment.this.f.add(sessionModel);
-                    } else if (sessionModel.sessionType == 3 && !BluedConstant.f28239a) {
+                    } else if (sessionModel.sessionType == 3 && !BluedConstant.f14549a) {
                         ShareWithContactFragment.this.f.add(sessionModel);
                     }
                     i = i2 + 1;
                 }
-                ShareWithContactFragment.this.f31236a = new ShareWithContactAdapter(ShareWithContactFragment.this.getFragmentActive(), ShareWithContactFragment.this.b, ShareWithContactFragment.this.f, ShareWithContactFragment.this.q);
-                ShareWithContactFragment.this.e.setAdapter((ListAdapter) ShareWithContactFragment.this.f31236a);
-                ShareWithContactFragment.this.f31236a.notifyDataSetChanged();
+                ShareWithContactFragment.this.f17546a = new ShareWithContactAdapter(ShareWithContactFragment.this.getFragmentActive(), ShareWithContactFragment.this.b, ShareWithContactFragment.this.f, ShareWithContactFragment.this.q);
+                ShareWithContactFragment.this.e.setAdapter((ListAdapter) ShareWithContactFragment.this.f17546a);
+                ShareWithContactFragment.this.f17546a.notifyDataSetChanged();
                 if (ShareWithContactFragment.this.f.size() > 0) {
                     if (ShareWithContactFragment.this.o != null) {
                         ShareWithContactFragment.this.o.setVisibility(8);
@@ -124,11 +123,11 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
     }
 
     private void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f31237c.findViewById(2131370749);
-        this.l = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(getString(R.string.biao_v4_msg_title));
+        CommonTopTitleNoTrans findViewById = this.f17547c.findViewById(R.id.top_title);
+        this.l = findViewById;
+        findViewById.setCenterText(getString(R.string.biao_v4_msg_title));
         this.l.setLeftText(2131886885);
-        this.l.setRightText(R.string.done);
+        this.l.setRightText((int) R.string.done);
         this.l.setRightTextColor(2131102254);
         this.l.setLeftClickListener(this);
         this.l.setRightClickListener(this);
@@ -172,13 +171,13 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
             return;
         }
         this.h = i - 1;
-        AppMethods.a((CharSequence) this.b.getResources().getString(2131887275));
+        AppMethods.a(this.b.getResources().getString(2131887275));
         this.d.j();
         this.d.q();
     }
 
     private void b() {
-        LinearLayout linearLayout = (LinearLayout) this.f31237c.findViewById(R.id.ll_hint);
+        LinearLayout linearLayout = (LinearLayout) this.f17547c.findViewById(R.id.ll_hint);
         this.p = linearLayout;
         linearLayout.setOnClickListener(this);
         if (LiveRoomPreferences.C()) {
@@ -186,18 +185,18 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
         } else {
             this.p.setVisibility(4);
         }
-        this.k = (TextView) this.f31237c.findViewById(R.id.tv_hint_text);
+        this.k = (TextView) this.f17547c.findViewById(R.id.tv_hint_text);
         if (StringUtils.d(this.r)) {
             this.p.setVisibility(8);
         } else {
             this.p.setVisibility(0);
-            this.p.startAnimation(AnimationUtils.loadAnimation(this.b, 2130772110));
+            this.p.startAnimation(AnimationUtils.loadAnimation(this.b, R.anim.push_bottom_in));
             this.k.setText(this.r);
         }
-        this.o = (LinearLayout) this.f31237c.findViewById(2131368079);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.f31237c.findViewById(2131366898);
-        this.d = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        this.o = (LinearLayout) this.f17547c.findViewById(R.id.ll_nodata);
+        RenrenPullToRefreshListView findViewById = this.f17547c.findViewById(R.id.list_view);
+        this.d = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.d.getRefreshableView();
         this.e = listView;
         listView.setClipToPadding(false);
@@ -205,13 +204,11 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
         this.e.setHeaderDividersEnabled(false);
         this.e.setDividerHeight(0);
         this.d.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.live.fragment.ShareWithContactFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 ShareWithContactFragment.this.h = 1;
                 ShareWithContactFragment.this.a(false);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 ShareWithContactFragment.a(ShareWithContactFragment.this);
                 ShareWithContactFragment.this.a(false);
@@ -220,24 +217,21 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
         this.d.setRefreshEnabled(false);
         LayoutInflater from = LayoutInflater.from(getActivity());
         this.g = from;
-        SearchView searchView = (SearchView) from.inflate(R.layout.search_layout, (ViewGroup) null);
-        this.m = searchView;
-        this.n = searchView.getEditView();
+        SearchView inflate = from.inflate(R.layout.search_layout, (ViewGroup) null);
+        this.m = inflate;
+        this.n = inflate.getEditView();
         this.m.setDelaymillis(0L);
         this.m.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.live.fragment.ShareWithContactFragment.2
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 ShareWithContactFragment.this.h = 1;
                 ShareWithContactFragment.this.a(false);
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
-                ShareWithContactFragment.this.f31236a.a(str);
-                ShareWithContactFragment.this.f31236a.notifyDataSetChanged();
+                ShareWithContactFragment.this.f17546a.a(str);
+                ShareWithContactFragment.this.f17546a.notifyDataSetChanged();
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
@@ -274,7 +268,7 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
             }
             this.p.setVisibility(8);
             LiveRoomPreferences.c(true);
-            this.p.startAnimation(AnimationUtils.loadAnimation(this.b, 2130772111));
+            this.p.startAnimation(AnimationUtils.loadAnimation(this.b, R.anim.push_bottom_out));
         } else {
             Intent intent = new Intent();
             ArrayList arrayList = new ArrayList();
@@ -298,13 +292,12 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
         this.f = new ArrayList();
-        View view = this.f31237c;
+        View view = this.f17547c;
         if (view == null) {
-            this.f31237c = layoutInflater.inflate(R.layout.fragment_share_with_contact, viewGroup, false);
+            this.f17547c = layoutInflater.inflate(R.layout.fragment_share_with_contact, viewGroup, false);
             if (getArguments() != null) {
                 this.q = getArguments().getInt(ao.h);
                 this.r = getArguments().getString("bottomHintStr");
@@ -313,24 +306,21 @@ public class ShareWithContactFragment extends BaseFragment implements View.OnCli
             b();
             a();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f31237c.getParent()).removeView(this.f31237c);
+            ((ViewGroup) this.f17547c.getParent()).removeView(this.f17547c);
         }
-        return this.f31237c;
+        return this.f17547c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         this.f.clear();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         ChatManager.getInstance().registerSessionListener(this.t);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         ChatManager.getInstance().unregisterSessionListener(this.t);

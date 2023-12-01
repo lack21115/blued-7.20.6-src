@@ -50,11 +50,11 @@ import java.util.List;
 public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData, BaseViewHolder> implements LiveListAutoPlay {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31088a;
+    private Context f17398a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f31089c;
+    private LayoutInflater f17399c;
     private LoadOptions d;
     private List<BluedLiveListData> e;
     private List<String> f;
@@ -74,12 +74,12 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
         super(new ArrayList());
         this.p = true;
         this.q = new ArrayList();
-        this.f31088a = context;
+        this.f17398a = context;
         this.b = iRequestHost;
         this.i = z;
         this.k = i;
         this.l = str;
-        this.f31089c = LayoutInflater.from(context);
+        this.f17399c = LayoutInflater.from(context);
         this.e = new ArrayList();
         this.f = new ArrayList();
         LoadOptions loadOptions = new LoadOptions();
@@ -107,40 +107,40 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             this.q.add(bluedLiveListData.lid);
             EventTrackLive.a(LiveProtos.Event.LIVE_ROOM_SHOW, this.l, bluedLiveListData.lid, bluedLiveListData.uid, bluedLiveListData.isPKStreamShow());
         }
-        View view = baseViewHolder.getView(2131367567);
+        View view = baseViewHolder.getView(R.id.live_user_layout);
         GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) view.getLayoutParams();
         layoutParams.width = AppInfo.l / 2;
         layoutParams.height = AppInfo.l / 2;
         view.setLayoutParams(layoutParams);
-        int a4 = DensityUtils.a(this.f31088a, 4.5f);
-        int a5 = DensityUtils.a(this.f31088a, 4.5f);
+        int a4 = DensityUtils.a(this.f17398a, 4.5f);
+        int a5 = DensityUtils.a(this.f17398a, 4.5f);
         if (bluedLiveListData.position == 0) {
-            a2 = DensityUtils.a(this.f31088a, 12.0f);
-            a3 = DensityUtils.a(this.f31088a, 3.0f);
+            a2 = DensityUtils.a(this.f17398a, 12.0f);
+            a3 = DensityUtils.a(this.f17398a, 3.0f);
         } else {
-            a2 = DensityUtils.a(this.f31088a, 3.0f);
-            a3 = DensityUtils.a(this.f31088a, 12.0f);
+            a2 = DensityUtils.a(this.f17398a, 3.0f);
+            a3 = DensityUtils.a(this.f17398a, 12.0f);
         }
-        View findViewById = view.findViewById(2131361894);
+        View findViewById = view.findViewById(R.id.aariv_cover_layout);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) findViewById.getLayoutParams();
         layoutParams2.leftMargin = a2;
         layoutParams2.topMargin = a4;
         layoutParams2.rightMargin = a3;
         layoutParams2.bottomMargin = a5;
         findViewById.setLayoutParams(layoutParams2);
-        ImageView imageView = (ImageView) baseViewHolder.getView(2131361893);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.aariv_cover);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_mark_screen_horizontal);
-        TextView textView = (TextView) baseViewHolder.getView(2131370927);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_audience_count);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_live_description);
-        TextView textView3 = (TextView) baseViewHolder.getView(2131372892);
+        TextView textView3 = (TextView) baseViewHolder.getView(R.id.tv_username);
         ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.grab_reward_icon);
         ImageView imageView4 = (ImageView) baseViewHolder.getView(R.id.iv_icon_live);
         ImageView imageView5 = (ImageView) baseViewHolder.getView(R.id.iv_pk_left);
         ImageView imageView6 = (ImageView) baseViewHolder.getView(R.id.iv_pk_right);
-        LiveAutoPlayView liveAutoPlayView = (LiveAutoPlayView) baseViewHolder.getView(2131363955);
-        liveAutoPlayView.a(this, bluedLiveListData, this.m, layoutParams.width, layoutParams.height);
+        LiveAutoPlayView view2 = baseViewHolder.getView(R.id.fl_video_view);
+        view2.a(this, bluedLiveListData, this.m, layoutParams.width, layoutParams.height);
         if (bluedLiveListData.positionReal == 0 && z) {
-            this.n = liveAutoPlayView;
+            this.n = view2;
         }
         if (!TextUtils.equals(this.l, "13")) {
             imageView5.setVisibility(8);
@@ -162,11 +162,11 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             textView3.setText(liveHotListDiversion.title);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveListAdapter.3
                 @Override // android.view.View.OnClickListener
-                public void onClick(View view2) {
-                    Tracker.onClick(view2);
+                public void onClick(View view3) {
+                    Tracker.onClick(view3);
                     FindHttpUtils.b(liveHotListDiversion.click_url);
                     LiveUtils.a("", "", 0);
-                    WebViewShowInfoFragment.a(LiveListAdapter.this.f31088a, liveHotListDiversion.link, "", false, 9);
+                    WebViewShowInfoFragment.a(LiveListAdapter.this.f17398a, liveHotListDiversion.link, "", false, 9);
                     EventTrackLive.c(LiveProtos.Event.HOT_LIVE_H5_LINK_CLICK, liveHotListDiversion.link);
                     EventTrackLive.c(LiveProtos.Event.LIVE_TASK_COLLECTION_PAGE_CLICK, liveHotListDiversion.link);
                 }
@@ -178,11 +178,11 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
                 bluedLiveListData.isShowUrlVisited = true;
             }
             baseViewHolder.setGone(R.id.live_select, false);
-            baseViewHolder.setGone(2131367459, false);
+            baseViewHolder.setGone(R.id.live_record_level, false);
             baseViewHolder.setGone(R.id.live_pk_streak, false);
-            View view2 = baseViewHolder.getView(R.id.live_is_emperor_recommend);
-            if (view2 != null) {
-                view2.setVisibility(8);
+            View view3 = baseViewHolder.getView(R.id.live_is_emperor_recommend);
+            if (view3 != null) {
+                view3.setVisibility(8);
                 return;
             }
             return;
@@ -190,7 +190,7 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
         textView.setVisibility(0);
         if (bluedLiveListData.hb > 0) {
             imageView3.setVisibility(0);
-            imageView3.setImageResource(2131235114);
+            imageView3.setImageResource(R.drawable.live_list_grab_reward_icon);
         } else if (bluedLiveListData.link_type == 1) {
             imageView3.setVisibility(0);
             imageView3.setImageResource(2131235124);
@@ -248,8 +248,8 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             liveRoomData.live_url = bluedLiveListData.live_play;
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveListAdapter.4
                 @Override // android.view.View.OnClickListener
-                public void onClick(View view3) {
-                    Tracker.onClick(view3);
+                public void onClick(View view4) {
+                    Tracker.onClick(view4);
                     int i2 = 2;
                     if (bluedLiveListData.positionReal == 0 && TextUtils.equals(LiveListAdapter.this.l, "0")) {
                         if (bluedLiveListData.link_type == 1) {
@@ -271,7 +271,7 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
                         i2 = 0;
                     }
                     bundle.putInt("live_prop", i2);
-                    LiveRoomInfoChannel.a(LiveListAdapter.this.f31088a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListDataUtils.a(LiveListAdapter.this.e), LiveListAdapter.this.m), bundle);
+                    LiveRoomInfoChannel.a(LiveListAdapter.this.f17398a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListDataUtils.a(LiveListAdapter.this.e), LiveListAdapter.this.m), bundle);
                 }
             });
             if (!TextUtils.isEmpty(bluedLiveListData.title)) {
@@ -285,20 +285,20 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
         if (bluedLiveListData.is_distance == 1) {
             baseViewHolder.setGone(R.id.ll_distance, true);
             if (bluedLiveListData.anchor.is_hide_distance == 1) {
-                baseViewHolder.setText(2131371285, 2131889431);
+                baseViewHolder.setText(R.id.tv_distance, R.string.live_distance_privacy);
                 baseViewHolder.setGone(R.id.iv_distance, true);
                 UserRelationshipUtils.a((ImageView) baseViewHolder.getView(R.id.iv_distance), bluedLiveListData.anchor);
             } else {
-                baseViewHolder.setText(2131371285, DistanceUtils.a(bluedLiveListData.distance, BlueAppLocal.c(), false));
+                baseViewHolder.setText(R.id.tv_distance, DistanceUtils.a(bluedLiveListData.distance, BlueAppLocal.c(), false));
                 baseViewHolder.setGone(R.id.iv_distance, false);
             }
         } else {
             baseViewHolder.setGone(R.id.ll_distance, false);
         }
         if (bluedLiveListData.anchor_level >= 80) {
-            LiveUtils.a(this.f31088a, (ImageView) baseViewHolder.getView(2131367459), bluedLiveListData.anchor_level, false);
+            LiveUtils.a(this.f17398a, (ImageView) baseViewHolder.getView(R.id.live_record_level), bluedLiveListData.anchor_level, false);
         } else {
-            baseViewHolder.setGone(2131367459, false);
+            baseViewHolder.setGone(R.id.live_record_level, false);
         }
         if (bluedLiveListData.is_emperor_recommend == 1) {
             baseViewHolder.setGone(R.id.live_is_emperor_recommend, true);
@@ -399,7 +399,7 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             this.q.add(bluedLiveListData.lid);
             EventTrackLive.c(LiveProtos.Event.LIVE_ROOM_SHOW, this.l, bluedLiveListData.lid, bluedLiveListData.uid);
         }
-        ((PKLiveHorizontalView) baseViewHolder.getView(2131366898)).a(this.b, this.e, bluedLiveListData, this.j);
+        ((PKLiveHorizontalView) baseViewHolder.getView(R.id.list_view)).a(this.b, this.e, bluedLiveListData, this.j);
     }
 
     private void c(BaseViewHolder baseViewHolder, final BluedLiveListData bluedLiveListData) {
@@ -410,39 +410,39 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
         LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.live_game_layout);
         GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) linearLayout.getLayoutParams();
         layoutParams.width = this.h;
-        layoutParams.bottomMargin = DensityUtils.a(this.f31088a, 3.0f);
+        layoutParams.bottomMargin = DensityUtils.a(this.f17398a, 3.0f);
         if (bluedLiveListData.position == 0) {
-            layoutParams.leftMargin = DensityUtils.a(this.f31088a, 10.0f);
+            layoutParams.leftMargin = DensityUtils.a(this.f17398a, 10.0f);
             layoutParams.rightMargin = 0;
         } else {
-            layoutParams.leftMargin = DensityUtils.a(this.f31088a, 3.0f);
-            layoutParams.rightMargin = DensityUtils.a(this.f31088a, 10.0f);
+            layoutParams.leftMargin = DensityUtils.a(this.f17398a, 3.0f);
+            layoutParams.rightMargin = DensityUtils.a(this.f17398a, 10.0f);
         }
         linearLayout.setLayoutParams(layoutParams);
-        ImageView imageView = (ImageView) baseViewHolder.getView(2131361893);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.aariv_cover);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_mark_screen_horizontal);
-        TextView textView = (TextView) baseViewHolder.getView(2131370927);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_audience_count);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_live_description);
-        TextView textView3 = (TextView) baseViewHolder.getView(2131372892);
+        TextView textView3 = (TextView) baseViewHolder.getView(R.id.tv_username);
         ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.grab_reward_icon);
         ImageView imageView4 = (ImageView) baseViewHolder.getView(R.id.iv_icon_live);
-        FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(2131361894);
-        TextView textView4 = (TextView) baseViewHolder.getView(2131371509);
+        FrameLayout frameLayout = (FrameLayout) baseViewHolder.getView(R.id.aariv_cover_layout);
+        TextView textView4 = (TextView) baseViewHolder.getView(R.id.tv_game_name);
         LinearLayout linearLayout2 = (LinearLayout) baseViewHolder.getView(R.id.ll_live_item_info);
-        LiveAutoPlayView liveAutoPlayView = (LiveAutoPlayView) baseViewHolder.getView(2131363955);
-        liveAutoPlayView.a(this, bluedLiveListData, this.m, layoutParams.width, DensityUtils.a(this.f31088a, 100.0f));
+        LiveAutoPlayView view = baseViewHolder.getView(R.id.fl_video_view);
+        view.a(this, bluedLiveListData, this.m, layoutParams.width, DensityUtils.a(this.f17398a, 100.0f));
         if (bluedLiveListData.positionReal == 0) {
-            this.n = liveAutoPlayView;
+            this.n = view;
         }
         textView4.setText(!TextUtils.isEmpty(bluedLiveListData.game_name) ? bluedLiveListData.game_name : "");
         if (TextUtils.isEmpty(bluedLiveListData.title)) {
-            textView2.setText(bluedLiveListData.anchor.name + " " + this.f31088a.getString(2131889145));
+            textView2.setText(bluedLiveListData.anchor.name + " " + this.f17398a.getString(R.string.liveVideo_followingHost_label_isLiving));
         } else {
             textView2.setText(bluedLiveListData.title);
         }
         if (bluedLiveListData.hb > 0) {
             imageView3.setVisibility(0);
-            imageView3.setImageResource(2131235114);
+            imageView3.setImageResource(R.drawable.live_list_grab_reward_icon);
         } else if (bluedLiveListData.link_type == 1) {
             imageView3.setVisibility(0);
             imageView3.setImageResource(2131235124);
@@ -472,17 +472,17 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             liveRoomData.live_url = bluedLiveListData.live_play;
             linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveListAdapter.1
                 @Override // android.view.View.OnClickListener
-                public void onClick(View view) {
-                    Tracker.onClick(view);
+                public void onClick(View view2) {
+                    Tracker.onClick(view2);
                     EventTrackLive.c(LiveProtos.Event.LIVE_ROOM_CLICK, LiveListAdapter.this.l, bluedLiveListData.lid, bluedLiveListData.uid);
-                    LiveRoomInfoChannel.a(LiveListAdapter.this.f31088a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListAdapter.this.e, LiveListAdapter.this.m));
+                    LiveRoomInfoChannel.a(LiveListAdapter.this.f17398a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListAdapter.this.e, LiveListAdapter.this.m));
                 }
             });
             linearLayout2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveListAdapter.2
                 @Override // android.view.View.OnClickListener
-                public void onClick(View view) {
-                    Tracker.onClick(view);
-                    UserInfoFragmentNew.a(LiveListAdapter.this.f31088a, str5, "");
+                public void onClick(View view2) {
+                    Tracker.onClick(view2);
+                    UserInfoFragmentNew.a(LiveListAdapter.this.f17398a, str5, "");
                 }
             });
             if (TextUtils.isEmpty(bluedLiveListData.anchor.name)) {
@@ -523,17 +523,17 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             this.q.add(bluedLiveListData.lid);
             EventTrackLive.c(LiveProtos.Event.LIVE_ROOM_SHOW, BuildConfig.FLAVOR, bluedLiveListData.lid, bluedLiveListData.uid);
         }
-        ImageView imageView = (ImageView) baseViewHolder.getView(2131361893);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.aariv_cover);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_mark_screen_horizontal);
-        TextView textView = (TextView) baseViewHolder.getView(2131370927);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_audience_count);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_live_description);
-        TextView textView3 = (TextView) baseViewHolder.getView(2131372892);
+        TextView textView3 = (TextView) baseViewHolder.getView(R.id.tv_username);
         ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.grab_reward_icon);
         ImageView imageView4 = (ImageView) baseViewHolder.getView(R.id.iv_icon_live);
         LinearLayout linearLayout = (LinearLayout) baseViewHolder.getView(R.id.ll_live_item_info);
         if (bluedLiveListData.hb > 0) {
             imageView3.setVisibility(0);
-            imageView3.setImageResource(2131235114);
+            imageView3.setImageResource(R.drawable.live_list_grab_reward_icon);
         } else if (bluedLiveListData.link_type == 1) {
             imageView3.setVisibility(0);
             imageView3.setImageResource(2131235124);
@@ -554,20 +554,20 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
         }
         if (bluedLiveListData.screen_pattern == 1) {
             if (!BlueAppLocal.d()) {
-                imageView2.setImageResource(2131233482);
+                imageView2.setImageResource(R.drawable.icon_live_list_horizontal_screen_en);
             } else if (DeviceUtils.a()) {
-                imageView2.setImageResource(2131233481);
+                imageView2.setImageResource(R.drawable.icon_live_list_horizontal_screen);
             } else {
-                imageView2.setImageResource(2131233483);
+                imageView2.setImageResource(R.drawable.icon_live_list_horizontal_screen_zhr);
             }
             imageView2.setVisibility(0);
         } else {
             imageView2.setVisibility(8);
         }
         if (bluedLiveListData.anchor_level >= 80) {
-            LiveUtils.a(this.f31088a, (ImageView) baseViewHolder.getView(2131367459), bluedLiveListData.anchor_level, false);
+            LiveUtils.a(this.f17398a, (ImageView) baseViewHolder.getView(R.id.live_record_level), bluedLiveListData.anchor_level, false);
         } else {
-            baseViewHolder.setGone(2131367459, false);
+            baseViewHolder.setGone(R.id.live_record_level, false);
         }
         if (bluedLiveListData.anchor != null) {
             int i = bluedLiveListData.screen_pattern;
@@ -583,21 +583,21 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     EventTrackLive.c(LiveProtos.Event.LIVE_ROOM_CLICK, BuildConfig.FLAVOR, bluedLiveListData.lid, bluedLiveListData.uid);
-                    LiveRoomInfoChannel.a(LiveListAdapter.this.f31088a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListDataUtils.a(LiveListAdapter.this.e), "official_live"));
+                    LiveRoomInfoChannel.a(LiveListAdapter.this.f17398a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListDataUtils.a(LiveListAdapter.this.e), "official_live"));
                 }
             });
             linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveListAdapter.6
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    UserInfoFragmentNew.a(LiveListAdapter.this.f31088a, str5, "");
+                    UserInfoFragmentNew.a(LiveListAdapter.this.f17398a, str5, "");
                 }
             });
             if (!TextUtils.isEmpty(bluedLiveListData.title)) {
                 textView2.setText(bluedLiveListData.title);
                 return;
             }
-            textView2.setText(bluedLiveListData.anchor.name + " " + this.f31088a.getString(2131889145));
+            textView2.setText(bluedLiveListData.anchor.name + " " + this.f17398a.getString(R.string.liveVideo_followingHost_label_isLiving));
         }
     }
 
@@ -623,35 +623,35 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
         GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams) viewGroup.getLayoutParams();
         layoutParams.width = this.g;
         layoutParams.height = this.g;
-        layoutParams.topMargin = DensityUtils.a(this.f31088a, 4.5f);
-        layoutParams.bottomMargin = DensityUtils.a(this.f31088a, 4.5f);
+        layoutParams.topMargin = DensityUtils.a(this.f17398a, 4.5f);
+        layoutParams.bottomMargin = DensityUtils.a(this.f17398a, 4.5f);
         if (bluedLiveListData.position == 0) {
-            layoutParams.leftMargin = DensityUtils.a(this.f31088a, 12.0f);
+            layoutParams.leftMargin = DensityUtils.a(this.f17398a, 12.0f);
             layoutParams.rightMargin = 0;
         } else if (bluedLiveListData.position == 1) {
-            layoutParams.leftMargin = DensityUtils.a(this.f31088a, 6.0f);
-            layoutParams.rightMargin = DensityUtils.a(this.f31088a, 6.0f);
+            layoutParams.leftMargin = DensityUtils.a(this.f17398a, 6.0f);
+            layoutParams.rightMargin = DensityUtils.a(this.f17398a, 6.0f);
         } else if (bluedLiveListData.position == 2) {
             layoutParams.leftMargin = 0;
-            layoutParams.rightMargin = DensityUtils.a(this.f31088a, 12.0f);
+            layoutParams.rightMargin = DensityUtils.a(this.f17398a, 12.0f);
         }
         viewGroup.setLayoutParams(layoutParams);
-        View view = baseViewHolder.getView(2131363788);
+        View view = baseViewHolder.getView(R.id.fl_cover);
         int i = this.g;
         view.setLayoutParams(new RelativeLayout.LayoutParams(i, i));
-        ImageView imageView = (ImageView) baseViewHolder.getView(2131361893);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.aariv_cover);
         ImageView imageView2 = (ImageView) baseViewHolder.getView(R.id.iv_mark_screen_horizontal);
-        TextView textView = (TextView) baseViewHolder.getView(2131370927);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.tv_audience_count);
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_live_description);
-        TextView textView3 = (TextView) baseViewHolder.getView(2131372892);
+        TextView textView3 = (TextView) baseViewHolder.getView(R.id.tv_username);
         ImageView imageView3 = (ImageView) baseViewHolder.getView(R.id.grab_reward_icon);
         ImageView imageView4 = (ImageView) baseViewHolder.getView(R.id.iv_icon_live);
-        LiveAutoPlayView liveAutoPlayView = (LiveAutoPlayView) baseViewHolder.getView(2131363955);
+        LiveAutoPlayView view2 = baseViewHolder.getView(R.id.fl_video_view);
         String str = this.m;
         int i2 = this.g;
-        liveAutoPlayView.a(this, bluedLiveListData, str, i2, i2);
+        view2.a(this, bluedLiveListData, str, i2, i2);
         if (bluedLiveListData.positionReal == 0) {
-            this.o = liveAutoPlayView;
+            this.o = view2;
         }
         if (bluedLiveListData.isPKStreamShow()) {
             baseViewHolder.setGone(R.id.live_type_right_icon, true);
@@ -681,7 +681,7 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             baseViewHolder.setGone(R.id.live_type_right_icon, false);
             if (bluedLiveListData.hb > 0) {
                 imageView3.setVisibility(0);
-                imageView3.setImageResource(2131235114);
+                imageView3.setImageResource(R.drawable.live_list_grab_reward_icon);
             } else if (bluedLiveListData.link_type == 1) {
                 imageView3.setVisibility(0);
                 imageView3.setImageResource(2131235124);
@@ -711,9 +711,9 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             textView.setText(StringUtils.a(Long.valueOf(bluedLiveListData.realtime_count).longValue()));
         }
         if (bluedLiveListData.anchor_level >= 80) {
-            LiveUtils.a(this.f31088a, (ImageView) baseViewHolder.getView(2131367459), bluedLiveListData.anchor_level, false);
+            LiveUtils.a(this.f17398a, (ImageView) baseViewHolder.getView(R.id.live_record_level), bluedLiveListData.anchor_level, false);
         } else {
-            baseViewHolder.setGone(2131367459, false);
+            baseViewHolder.setGone(R.id.live_record_level, false);
         }
         if (bluedLiveListData.anchor != null) {
             final int i3 = bluedLiveListData.screen_pattern;
@@ -725,8 +725,8 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
             final int i4 = bluedLiveListData.anchor.vbadge;
             viewGroup.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveListAdapter.7
                 @Override // android.view.View.OnClickListener
-                public void onClick(View view2) {
-                    Tracker.onClick(view2);
+                public void onClick(View view3) {
+                    Tracker.onClick(view3);
                     if (bluedLiveListData.positionReal == 0 && TextUtils.equals(LiveListAdapter.this.l, "0")) {
                         if (bluedLiveListData.link_type == 1) {
                             EventTrackLive.a(LiveProtos.Event.LIVE_FAVORITE_FIRST_ROOM_CLICK, str4, str6, LiveProtos.EnterType.PK);
@@ -745,7 +745,7 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
                     }
                     LiveRoomData liveRoomData = new LiveRoomData(StringUtils.a(str4, 0L), i3, "red_board", str6, str5, str2, i4);
                     liveRoomData.live_url = bluedLiveListData.live_play;
-                    LiveRoomInfoChannel.a(LiveListAdapter.this.f31088a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListDataUtils.a(arrayList), "red_board"));
+                    LiveRoomInfoChannel.a(LiveListAdapter.this.f17398a, liveRoomData, -1, LiveRoomInfoChannel.a(LiveListDataUtils.a(arrayList), "red_board"));
                     InstantLog.b("click_live_hot", str6);
                 }
             });
@@ -861,7 +861,6 @@ public class LiveListAdapter extends BaseMultiItemQuickAdapter<BluedLiveListData
         }
     }
 
-    @Override // com.blued.android.module.live_china.view.LiveListAutoPlay
     public boolean c() {
         LiveAutoPlayView liveAutoPlayView;
         LiveAutoPlayView liveAutoPlayView2 = this.o;

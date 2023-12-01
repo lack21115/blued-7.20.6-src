@@ -8,11 +8,11 @@ import java.io.UnsupportedEncodingException;
 public class bz {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ByteArrayOutputStream f40675a;
+    private final ByteArrayOutputStream f26984a;
     private final db b;
 
     /* renamed from: c  reason: collision with root package name */
-    private cp f40676c;
+    private cp f26985c;
 
     public bz() {
         this(new cj.a());
@@ -20,10 +20,10 @@ public class bz {
 
     public bz(cr crVar) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        this.f40675a = byteArrayOutputStream;
+        this.f26984a = byteArrayOutputStream;
         db dbVar = new db(byteArrayOutputStream);
         this.b = dbVar;
-        this.f40676c = crVar.a(dbVar);
+        this.f26985c = crVar.a(dbVar);
     }
 
     public String a(bq bqVar, String str) throws bw {
@@ -35,9 +35,9 @@ public class bz {
     }
 
     public byte[] a(bq bqVar) throws bw {
-        this.f40675a.reset();
-        bqVar.write(this.f40676c);
-        return this.f40675a.toByteArray();
+        this.f26984a.reset();
+        bqVar.write(this.f26985c);
+        return this.f26984a.toByteArray();
     }
 
     public String b(bq bqVar) throws bw {

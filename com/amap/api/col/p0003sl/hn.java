@@ -8,13 +8,9 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.hn  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hn.class */
 public final class hn extends Exception {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5075a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5076c;
+    private String c;
     private String d;
     private String e;
     private int f;
@@ -25,15 +21,15 @@ public final class hn extends Exception {
 
     public hn(String str) {
         super(str);
-        this.f5075a = AMapException.ERROR_UNKNOWN;
+        this.a = AMapException.ERROR_UNKNOWN;
         this.b = "";
-        this.f5076c = "";
+        this.c = "";
         this.d = "1900";
         this.e = "UnknownError";
         this.f = -1;
         this.g = -1;
         this.h = false;
-        this.f5075a = str;
+        this.a = str;
         if ("IO 操作异常 - IOException".equals(str)) {
             this.f = 21;
             this.d = "1902";
@@ -126,11 +122,11 @@ public final class hn extends Exception {
     public hn(String str, String str2, String str3) {
         this(str);
         this.b = str2;
-        this.f5076c = str3;
+        this.c = str3;
     }
 
     public final String a() {
-        return this.f5075a;
+        return this.a;
     }
 
     public final void a(int i) {
@@ -158,7 +154,7 @@ public final class hn extends Exception {
     }
 
     public final String e() {
-        return this.f5076c;
+        return this.c;
     }
 
     public final int f() {

@@ -3,9 +3,10 @@ package android.webkit;
 import android.content.Context;
 import android.os.Handler;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 @Deprecated
 /* loaded from: source-4181928-dex2jar.jar:android/webkit/WebSyncManager.class */
-abstract class WebSyncManager implements Runnable {
+public abstract class WebSyncManager implements Runnable {
     protected static final String LOGTAG = "websync";
     protected WebViewDatabase mDataBase;
     protected Handler mHandler;

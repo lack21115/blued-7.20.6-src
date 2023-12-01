@@ -7,6 +7,7 @@ import android.app.job.JobService;
 import android.content.ComponentName;
 import android.content.Context;
 import android.os.Handler;
+import com.android.internal.widget.LockPatternUtils;
 import com.blued.android.chat.core.utils.Log;
 import com.blued.android.chat.core.worker.heart.PingCheckerManager;
 
@@ -23,7 +24,7 @@ public class PingCheckerJobServer extends JobService implements PingCheckerManag
             Log.v(TAG, "start PingCheckerJobServer...");
         }
         try {
-            JobScheduler jobScheduler = (JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
+            JobScheduler jobScheduler = (JobScheduler) context.getSystemService("jobscheduler");
             JobInfo.Builder builder = new JobInfo.Builder(108, new ComponentName(context, PingCheckerJobServer.class));
             builder.setRequiredNetworkType(1);
             builder.setPeriodic(300000L);
@@ -43,7 +44,7 @@ public class PingCheckerJobServer extends JobService implements PingCheckerManag
             Log.v(TAG, "stop PingCheckerJobServer...");
         }
         try {
-            ((JobScheduler) context.getSystemService(Context.JOB_SCHEDULER_SERVICE)).cancel(108);
+            ((JobScheduler) context.getSystemService("jobscheduler")).cancel(108);
         } catch (Exception e) {
             if (ChatManager.debug) {
                 Log.v(TAG, "stop PingCheckerJobServer exception:" + e);
@@ -82,7 +83,7 @@ public class PingCheckerJobServer extends JobService implements PingCheckerManag
         if (ChatManager.debug) {
             Log.v(TAG, "pingCheckerJobServer.onPingCheckFinish(), will finish job after 30s.");
         }
-        this.uiHandler.postDelayed(this.finishJobTask, 30000L);
+        this.uiHandler.postDelayed(this.finishJobTask, LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
     }
 
     @Override // android.app.job.JobService

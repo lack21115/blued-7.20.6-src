@@ -1,8 +1,6 @@
 package com.kwad.sdk.utils.kwai;
 
 import android.text.TextUtils;
-import android.widget.ExpandableListView;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.utils.kwai.a;
 import java.io.File;
 import java.io.IOException;
@@ -57,7 +55,7 @@ public final class c {
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/c$a.class */
     public static class a {
         static int aCs = 11;
-        static final C0581c aCt = new C0581c(11);
+        static final C0411c aCt = new C0411c(11);
         private final String RZ;
         private int aCo = 0;
         private b[] aCu;
@@ -70,7 +68,7 @@ public final class c {
             if (str2 == null || str2.isEmpty()) {
                 throw new IllegalArgumentException("name is empty");
             }
-            if (!str.endsWith(BridgeUtil.SPLIT_MARK)) {
+            if (!str.endsWith("/")) {
                 str = str + '/';
             }
             this.RZ = str;
@@ -79,28 +77,28 @@ public final class c {
 
         public final c Fv() {
             String str = this.RZ + this.name;
-            c fd = C0581c.fd(str);
+            c fd = C0411c.fd(str);
             c cVar = fd;
             if (fd == null) {
                 synchronized (a.class) {
                     try {
-                        c fd2 = C0581c.fd(str);
+                        c fd2 = C0411c.fd(str);
                         cVar = fd2;
                         if (fd2 == null) {
                             cVar = new c(this.RZ, this.name, this.aCu, this.aCo);
-                            C0581c.b(str, cVar);
+                            C0411c.b(str, cVar);
                         }
                     } catch (Throwable th) {
                         throw th;
                     }
                 }
             }
-            Integer num = C0581c.aCy.get(str);
+            Integer num = C0411c.aCy.get(str);
             if (num != null) {
-                C0581c.aCy.put(str, Integer.valueOf(num.intValue() + 1));
+                C0411c.aCy.put(str, Integer.valueOf(num.intValue() + 1));
                 return cVar;
             }
-            C0581c.aCy.put(str, 1);
+            C0411c.aCy.put(str, 1);
             return cVar;
         }
     }
@@ -117,13 +115,13 @@ public final class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.sdk.utils.kwai.c$c  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/c$c.class */
-    public static final class C0581c {
+    public static final class C0411c {
         private static Map<String, c> aCv;
         private static List<String> aCw;
         private static int aCx;
         public static Map<String, Integer> aCy;
 
-        public C0581c(int i) {
+        public C0411c(int i) {
             int size = getSize(i);
             aCv = new ConcurrentHashMap(size);
             aCy = new HashMap(size);
@@ -865,7 +863,7 @@ public final class c {
             } else {
                 length = bArr.length;
             }
-            this.aCf.put(str, b2 == 6 ? new a.i(this.aCh, a2, (String) obj, length, z) : b2 == 7 ? new a.C0580a(this.aCh, a2, obj, length, z) : new a.h(this.aCh, a2, obj, length, z));
+            this.aCf.put(str, b2 == 6 ? new a.i(this.aCh, a2, (String) obj, length, z) : b2 == 7 ? new a.C0410a(this.aCh, a2, obj, length, z) : new a.h(this.aCh, a2, obj, length, z));
             Fp();
         }
     }
@@ -954,7 +952,7 @@ public final class c {
                 int i4 = i3 - 3;
                 com.kwad.sdk.utils.kwai.b bVar4 = this.aCc;
                 if (bVar4 != null) {
-                    System.arraycopy((Object) bVar4.aBO, iVar.start + 1, (Object) this.aCc.aBO, this.aCc.position, i4);
+                    System.arraycopy(bVar4.aBO, iVar.start + 1, this.aCc.aBO, this.aCc.position, i4);
                 }
                 com.kwad.sdk.utils.kwai.b bVar5 = this.aCc;
                 if (bVar5 != null) {
@@ -1095,9 +1093,9 @@ public final class c {
         }
     }
 
-    private byte[] a(a.C0580a c0580a) {
+    private byte[] a(a.C0410a c0410a) {
         try {
-            byte[] Z = h.Z(new File(this.RZ + this.name, (String) c0580a.value));
+            byte[] Z = h.Z(new File(this.RZ + this.name, (String) c0410a.value));
             return Z != null ? Z : aBQ;
         } catch (Exception e2) {
             m(e2);
@@ -1149,7 +1147,7 @@ public final class c {
             if (bArr == null) {
                 remove(str);
             } else {
-                a(str, bArr, bArr, (a.C0580a) this.aCf.get(str), (byte) 7);
+                a(str, bArr, bArr, (a.C0410a) this.aCf.get(str), (byte) 7);
             }
         }
     }
@@ -1192,7 +1190,7 @@ public final class c {
             }
             int y = y(length, i2);
             byte[] bArr = new byte[y];
-            System.arraycopy((Object) this.aCc.aBO, 0, (Object) bArr, 0, this.aCd);
+            System.arraycopy(this.aCc.aBO, 0, bArr, 0, this.aCd);
             this.aCc.aBO = bArr;
             if (this.aCo == 0) {
                 try {
@@ -1240,7 +1238,7 @@ public final class c {
         for (int i12 = 1; i12 < size; i12++) {
             e eVar2 = this.aCn.get(i12);
             int i13 = eVar2.start - i11;
-            System.arraycopy((Object) this.aCc.aBO, i11, (Object) this.aCc.aBO, i10, i13);
+            System.arraycopy(this.aCc.aBO, i11, this.aCc.aBO, i10, i13);
             int i14 = (i12 - 1) << 1;
             iArr[i14] = i11;
             iArr[i14 + 1] = i11 - i10;
@@ -1248,7 +1246,7 @@ public final class c {
             i11 = eVar2.end;
         }
         if (i9 > 0) {
-            System.arraycopy((Object) this.aCc.aBO, i11, (Object) this.aCc.aBO, i10, i9);
+            System.arraycopy(this.aCc.aBO, i11, this.aCc.aBO, i10, i9);
             int i15 = i8 << 1;
             iArr[i15] = i11;
             iArr[i15 + 1] = i11 - i10;
@@ -1293,7 +1291,7 @@ public final class c {
                 return;
             }
             byte[] bArr = new byte[y];
-            System.arraycopy((Object) this.aCc.aBO, 0, (Object) bArr, 0, this.aCd);
+            System.arraycopy(this.aCc.aBO, 0, bArr, 0, this.aCd);
             this.aCc.aBO = bArr;
         }
         if (this.aCo == 0) {
@@ -1425,7 +1423,7 @@ public final class c {
                 if (eVar.value != f) {
                     int floatToRawIntBits = Float.floatToRawIntBits(f);
                     eVar.value = f;
-                    a(floatToRawIntBits, (Float.floatToRawIntBits(eVar.value) ^ floatToRawIntBits) & ExpandableListView.PACKED_POSITION_VALUE_NULL, eVar.offset);
+                    a(floatToRawIntBits, (Float.floatToRawIntBits(eVar.value) ^ floatToRawIntBits) & 4294967295L, eVar.offset);
                     Fi();
                 }
                 return;
@@ -1571,12 +1569,12 @@ public final class c {
                             break;
                         }
                     case 7:
-                        a.C0580a c0580a = (a.C0580a) value;
-                        if (c0580a.aBM) {
-                            bArr = a(c0580a);
+                        a.C0410a c0410a = (a.C0410a) value;
+                        if (c0410a.aBM) {
+                            bArr = a(c0410a);
                             break;
                         } else {
-                            bArr = c0580a.value;
+                            bArr = c0410a.value;
                             break;
                         }
                     case 8:
@@ -1683,7 +1681,7 @@ public final class c {
             if (fVar != null) {
                 if (fVar.value != i) {
                     fVar.value = i;
-                    a(i, (fVar.value ^ i) & ExpandableListView.PACKED_POSITION_VALUE_NULL, fVar.offset);
+                    a(i, (fVar.value ^ i) & 4294967295L, fVar.offset);
                     Fi();
                 }
                 return;
@@ -1772,8 +1770,8 @@ public final class c {
         this.aBX = null;
         this.aCa = null;
         this.aCb = null;
-        C0581c c0581c = a.aCt;
-        C0581c.remove(this.RZ + this.name);
+        C0411c c0411c = a.aCt;
+        C0411c.remove(this.RZ + this.name);
     }
 
     public final void remove(String str) {

@@ -21,13 +21,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/rank/LiveRankToolBarView.class */
 public final class LiveRankToolBarView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14076a;
+    private final Context a;
     private final LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f14077c;
+    private LinearLayout c;
     private Function1<? super Integer, Unit> d;
     private List<View> e;
 
@@ -47,7 +43,7 @@ public final class LiveRankToolBarView extends LinearLayout {
     public LiveRankToolBarView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14076a = mContext;
+        this.a = mContext;
         LayoutInflater from = LayoutInflater.from(mContext);
         Intrinsics.c(from, "from(mContext)");
         this.b = from;
@@ -77,7 +73,7 @@ public final class LiveRankToolBarView extends LinearLayout {
         if (findViewById == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.LinearLayout");
         }
-        this.f14077c = (LinearLayout) findViewById;
+        this.c = (LinearLayout) findViewById;
         int length = titleArray.length;
         int i = 0;
         while (true) {
@@ -87,7 +83,7 @@ public final class LiveRankToolBarView extends LinearLayout {
                 return;
             }
             LinearLayout linearLayout = null;
-            View singleBar = LayoutInflater.from(this.f14076a).inflate(R.layout.live_tool_bar_component, (ViewGroup) null);
+            View singleBar = LayoutInflater.from(this.a).inflate(R.layout.live_tool_bar_component, (ViewGroup) null);
             singleBar.setLayoutParams(new LinearLayout.LayoutParams(0, -1, 1.0f));
             ((TextView) singleBar.findViewById(R.id.text1)).setText(titleArray[i2]);
             singleBar.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.rank.-$$Lambda$LiveRankToolBarView$F4gzDRYelLu2QM965Uv-69X_fnU
@@ -99,7 +95,7 @@ public final class LiveRankToolBarView extends LinearLayout {
             List<View> list = this.e;
             Intrinsics.c(singleBar, "singleBar");
             list.add(i2, singleBar);
-            LinearLayout linearLayout2 = this.f14077c;
+            LinearLayout linearLayout2 = this.c;
             if (linearLayout2 == null) {
                 Intrinsics.c("mRootView");
             } else {

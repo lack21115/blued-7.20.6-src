@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.meizu.cloud.pushsdk.util.MzSystemUtils;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -23,17 +22,17 @@ import java.util.Map;
 public class a implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24109a = a.class.getSimpleName();
+    private static final String f10494a = a.class.getSimpleName();
     private SQLiteDatabase b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final b f24110c;
+    private final b f10495c;
     private final String[] d = {"id", "eventData", "dateCreated"};
     private long e = -1;
     private final int f;
 
     public a(Context context, int i) {
-        this.f24110c = b.a(context, a(context));
+        this.f10495c = b.a(context, a(context));
         b();
         this.f = i;
     }
@@ -43,7 +42,7 @@ public class a implements d {
         if (TextUtils.isEmpty(processName)) {
             return "PushEvents.db";
         }
-        return processName + BridgeUtil.UNDERLINE_STR + "PushEvents.db";
+        return processName + "_PushEvents.db";
     }
 
     public static Map<String, String> a(byte[] bArr) {
@@ -81,7 +80,7 @@ public class a implements d {
     public List<Map<String, Object>> a(String str, String str2) {
         ArrayList arrayList = new ArrayList();
         if (e()) {
-            Cursor query = this.b.query(com.umeng.analytics.pro.d.f40716ar, this.d, str, null, null, null, str2);
+            Cursor query = this.b.query(com.umeng.analytics.pro.d.f27025ar, this.d, str, null, null, null, str2);
             query.moveToFirst();
             while (!query.isAfterLast()) {
                 HashMap hashMap = new HashMap(4);
@@ -110,12 +109,12 @@ public class a implements d {
     public boolean a(long j) {
         int i;
         if (e()) {
-            i = this.b.delete(com.umeng.analytics.pro.d.f40716ar, "id=" + j, null);
+            i = this.b.delete(com.umeng.analytics.pro.d.f27025ar, "id=" + j, null);
         } else {
             i = -1;
         }
         boolean z = false;
-        com.meizu.cloud.pushsdk.d.f.c.b(f24109a, "Removed event from database: " + j, new Object[0]);
+        com.meizu.cloud.pushsdk.d.f.c.b(f10494a, "Removed event from database: " + j, new Object[0]);
         if (i == 1) {
             z = true;
         }
@@ -127,9 +126,9 @@ public class a implements d {
             byte[] a2 = a(aVar.a());
             ContentValues contentValues = new ContentValues(2);
             contentValues.put("eventData", a2);
-            this.e = this.b.insert(com.umeng.analytics.pro.d.f40716ar, null, contentValues);
+            this.e = this.b.insert(com.umeng.analytics.pro.d.f27025ar, null, contentValues);
         }
-        String str = f24109a;
+        String str = f10494a;
         com.meizu.cloud.pushsdk.d.f.c.b(str, "Added event to database: " + this.e, new Object[0]);
         return this.e;
     }
@@ -139,11 +138,11 @@ public class a implements d {
             return;
         }
         try {
-            SQLiteDatabase writableDatabase = this.f24110c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = this.f10495c.getWritableDatabase();
             this.b = writableDatabase;
             writableDatabase.enableWriteAheadLogging();
         } catch (Exception e) {
-            String str = f24109a;
+            String str = f10494a;
             com.meizu.cloud.pushsdk.d.f.c.a(str, " open database error " + e.getMessage(), new Object[0]);
         }
     }
@@ -151,7 +150,7 @@ public class a implements d {
     @Override // com.meizu.cloud.pushsdk.d.d.d
     public long c() {
         if (e()) {
-            return DatabaseUtils.queryNumEntries(this.b, com.umeng.analytics.pro.d.f40716ar);
+            return DatabaseUtils.queryNumEntries(this.b, com.umeng.analytics.pro.d.f27025ar);
         }
         return 0L;
     }

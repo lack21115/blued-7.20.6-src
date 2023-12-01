@@ -1,6 +1,5 @@
 package io.grpc.internal;
 
-import android.provider.Downloads;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import io.grpc.CallOptions;
@@ -16,7 +15,7 @@ public final class PickSubchannelArgsImpl extends LoadBalancer.PickSubchannelArg
 
     public PickSubchannelArgsImpl(MethodDescriptor<?, ?> methodDescriptor, Metadata metadata, CallOptions callOptions) {
         this.method = (MethodDescriptor) Preconditions.checkNotNull(methodDescriptor, "method");
-        this.headers = (Metadata) Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        this.headers = (Metadata) Preconditions.checkNotNull(metadata, "headers");
         this.callOptions = (CallOptions) Preconditions.checkNotNull(callOptions, "callOptions");
     }
 
@@ -31,23 +30,20 @@ public final class PickSubchannelArgsImpl extends LoadBalancer.PickSubchannelArg
         return Objects.equal(this.callOptions, pickSubchannelArgsImpl.callOptions) && Objects.equal(this.headers, pickSubchannelArgsImpl.headers) && Objects.equal(this.method, pickSubchannelArgsImpl.method);
     }
 
-    @Override // io.grpc.LoadBalancer.PickSubchannelArgs
     public CallOptions getCallOptions() {
         return this.callOptions;
     }
 
-    @Override // io.grpc.LoadBalancer.PickSubchannelArgs
     public Metadata getHeaders() {
         return this.headers;
     }
 
-    @Override // io.grpc.LoadBalancer.PickSubchannelArgs
     public MethodDescriptor<?, ?> getMethodDescriptor() {
         return this.method;
     }
 
     public int hashCode() {
-        return Objects.hashCode(this.callOptions, this.headers, this.method);
+        return Objects.hashCode(new Object[]{this.callOptions, this.headers, this.method});
     }
 
     public final String toString() {

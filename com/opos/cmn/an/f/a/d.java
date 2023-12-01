@@ -10,21 +10,21 @@ import android.util.Log;
 public class d extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.cmn.an.f.a.a.b f24526a;
+    private com.opos.cmn.an.f.a.a.b f10839a;
 
     public d(Looper looper) {
         super(looper);
     }
 
     private void a(com.opos.cmn.an.f.a.b.c cVar) {
-        if (cVar.f24516a.e == 2 && a()) {
-            this.f24526a = new com.opos.cmn.an.f.a.a.d();
+        if (cVar.f10829a.e == 2 && a()) {
+            this.f10839a = new com.opos.cmn.an.f.a.a.d();
             if (c.b()) {
                 Log.d("LogHandler", "use NearLogImpl");
             }
         }
-        if (this.f24526a == null) {
-            this.f24526a = new com.opos.cmn.an.f.a.a.a();
+        if (this.f10839a == null) {
+            this.f10839a = new com.opos.cmn.an.f.a.a.a();
             if (c.b()) {
                 Log.d("LogHandler", "use BasicLogImpl");
             }
@@ -54,40 +54,40 @@ public class d extends Handler {
                         if (message.obj != null) {
                             com.opos.cmn.an.f.a.b.c cVar = (com.opos.cmn.an.f.a.b.c) message.obj;
                             a(cVar);
-                            this.f24526a.a(cVar.f24516a);
+                            this.f10839a.a(cVar.f10829a);
                             return;
                         }
                         return;
                     case 2:
-                        if (this.f24526a == null || message.obj == null) {
+                        if (this.f10839a == null || message.obj == null) {
                             return;
                         }
-                        this.f24526a.a((com.opos.cmn.an.f.a.b.d) message.obj);
+                        this.f10839a.a((com.opos.cmn.an.f.a.b.d) message.obj);
                         return;
                     case 3:
-                        if (this.f24526a == null || message.obj == null) {
+                        if (this.f10839a == null || message.obj == null) {
                             return;
                         }
                         com.opos.cmn.an.f.a.b.f fVar = (com.opos.cmn.an.f.a.b.f) message.obj;
-                        this.f24526a.a(fVar.f24523a, fVar.b);
+                        this.f10839a.a(fVar.f10836a, fVar.b);
                         return;
                     case 4:
-                        if (this.f24526a == null || message.obj == null) {
+                        if (this.f10839a == null || message.obj == null) {
                             return;
                         }
-                        this.f24526a.a(((com.opos.cmn.an.f.a.b.b) message.obj).f24515a);
+                        this.f10839a.a(((com.opos.cmn.an.f.a.b.b) message.obj).f10828a);
                         return;
                     case 5:
-                        if (this.f24526a == null || message.obj == null) {
+                        if (this.f10839a == null || message.obj == null) {
                             return;
                         }
-                        this.f24526a.a();
+                        this.f10839a.a();
                         return;
                     case 6:
-                        if (this.f24526a == null || message.obj == null || (eVar = (com.opos.cmn.an.f.a.b.e) message.obj) == null) {
+                        if (this.f10839a == null || message.obj == null || (eVar = (com.opos.cmn.an.f.a.b.e) message.obj) == null) {
                             return;
                         }
-                        this.f24526a.a(eVar.f24522a);
+                        this.f10839a.a(eVar.f10835a);
                         return;
                     default:
                         return;

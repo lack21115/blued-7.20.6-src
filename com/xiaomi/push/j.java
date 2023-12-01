@@ -10,6 +10,7 @@ import com.igexin.assist.sdk.AssistPushConsts;
 import com.opos.acs.st.STManager;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import com.tencent.thumbplayer.core.common.TPSystemInfo;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
@@ -19,10 +20,10 @@ import java.util.Map;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile int f41544a = 0;
+    private static volatile int f27853a = 0;
 
     /* renamed from: a  reason: collision with other field name */
-    private static Map<String, m> f888a;
+    private static Map<String, m> f841a;
     private static int b = -1;
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x005d  */
@@ -33,10 +34,10 @@ public class j {
     */
     public static int a() {
         /*
-            int r0 = com.xiaomi.push.j.f41544a
+            int r0 = com.xiaomi.push.j.f27853a
             if (r0 != 0) goto L4e
             java.lang.String r0 = "ro.miui.ui.version.code"
-            java.lang.String r0 = m12045a(r0)     // Catch: java.lang.Throwable -> L2a
+            java.lang.String r0 = m8995a(r0)     // Catch: java.lang.Throwable -> L2a
             boolean r0 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L2a
             r6 = r0
             r0 = 1
@@ -44,13 +45,13 @@ public class j {
             r0 = r6
             if (r0 == 0) goto L57
             java.lang.String r0 = "ro.miui.ui.version.name"
-            java.lang.String r0 = m12045a(r0)     // Catch: java.lang.Throwable -> L2a
+            java.lang.String r0 = m8995a(r0)     // Catch: java.lang.Throwable -> L2a
             boolean r0 = android.text.TextUtils.isEmpty(r0)     // Catch: java.lang.Throwable -> L2a
             if (r0 != 0) goto L52
             goto L57
         L23:
             r0 = r4
-            com.xiaomi.push.j.f41544a = r0     // Catch: java.lang.Throwable -> L2a
+            com.xiaomi.push.j.f27853a = r0     // Catch: java.lang.Throwable -> L2a
             goto L35
         L2a:
             r7 = move-exception
@@ -58,7 +59,7 @@ public class j {
             r1 = r7
             com.xiaomi.channel.commonutils.logger.b.a(r0, r1)
             r0 = 0
-            com.xiaomi.push.j.f41544a = r0
+            com.xiaomi.push.j.f27853a = r0
         L35:
             java.lang.StringBuilder r0 = new java.lang.StringBuilder
             r1 = r0
@@ -66,13 +67,13 @@ public class j {
             r1.<init>(r2)
             r7 = r0
             r0 = r7
-            int r1 = com.xiaomi.push.j.f41544a
+            int r1 = com.xiaomi.push.j.f27853a
             java.lang.StringBuilder r0 = r0.append(r1)
             r0 = r7
             java.lang.String r0 = r0.toString()
             com.xiaomi.channel.commonutils.logger.b.b(r0)
         L4e:
-            int r0 = com.xiaomi.push.j.f41544a
+            int r0 = com.xiaomi.push.j.f27853a
             return r0
         L52:
             r0 = 0
@@ -96,11 +97,11 @@ public class j {
     }
 
     public static int a(Context context) {
-        String m12045a = m12045a(XmSystemUtils.KEY_VERSION_CODE);
-        if (TextUtils.isEmpty(m12045a) || !TextUtils.isDigitsOnly(m12045a)) {
+        String m8995a = m8995a(XmSystemUtils.KEY_VERSION_CODE);
+        if (TextUtils.isEmpty(m8995a) || !TextUtils.isDigitsOnly(m8995a)) {
             return 0;
         }
-        return Integer.parseInt(m12045a);
+        return Integer.parseInt(m8995a);
     }
 
     public static m a(String str) {
@@ -113,9 +114,9 @@ public class j {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static String m12044a() {
+    public static String m8994a() {
         int a2 = r.a();
-        return (!m12047a() || a2 <= 0) ? "" : a2 < 2 ? "alpha" : a2 < 3 ? "development" : "stable";
+        return (!m8997a() || a2 <= 0) ? "" : a2 < 2 ? "alpha" : a2 < 3 ? "development" : "stable";
     }
 
     public static String a(Intent intent) {
@@ -174,7 +175,7 @@ public class j {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static String m12045a(String str) {
+    public static String m8995a(String str) {
         try {
             try {
                 return (String) bi.a("android.os.SystemProperties", MonitorConstants.CONNECT_TYPE_GET, str, "");
@@ -188,72 +189,72 @@ public class j {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static void m12046a() {
-        if (f888a != null) {
+    private static void m8996a() {
+        if (f841a != null) {
             return;
         }
         HashMap hashMap = new HashMap();
-        f888a = hashMap;
+        f841a = hashMap;
         hashMap.put("CN", m.China);
-        f888a.put("FI", m.Europe);
-        f888a.put("SE", m.Europe);
-        f888a.put("NO", m.Europe);
-        f888a.put("FO", m.Europe);
-        f888a.put("EE", m.Europe);
-        f888a.put("LV", m.Europe);
-        f888a.put("LT", m.Europe);
-        f888a.put("BY", m.Europe);
-        f888a.put("MD", m.Europe);
-        f888a.put("UA", m.Europe);
-        f888a.put("PL", m.Europe);
-        f888a.put("CZ", m.Europe);
-        f888a.put("SK", m.Europe);
-        f888a.put("HU", m.Europe);
-        f888a.put("DE", m.Europe);
-        f888a.put("AT", m.Europe);
-        f888a.put("CH", m.Europe);
-        f888a.put("LI", m.Europe);
-        f888a.put("GB", m.Europe);
-        f888a.put("IE", m.Europe);
-        f888a.put("NL", m.Europe);
-        f888a.put("BE", m.Europe);
-        f888a.put("LU", m.Europe);
-        f888a.put("FR", m.Europe);
-        f888a.put("RO", m.Europe);
-        f888a.put("BG", m.Europe);
-        f888a.put("RS", m.Europe);
-        f888a.put("MK", m.Europe);
-        f888a.put("AL", m.Europe);
-        f888a.put("GR", m.Europe);
-        f888a.put("SI", m.Europe);
-        f888a.put("HR", m.Europe);
-        f888a.put("IT", m.Europe);
-        f888a.put("SM", m.Europe);
-        f888a.put("MT", m.Europe);
-        f888a.put("ES", m.Europe);
-        f888a.put(AssistPushConsts.MSG_VALUE_PAYLOAD, m.Europe);
-        f888a.put("AD", m.Europe);
-        f888a.put("CY", m.Europe);
-        f888a.put("DK", m.Europe);
-        f888a.put("IS", m.Europe);
-        f888a.put("UK", m.Europe);
-        f888a.put("EL", m.Europe);
-        f888a.put("RU", m.Russia);
-        f888a.put(STManager.REGION_OF_IN, m.India);
+        f841a.put("FI", m.Europe);
+        f841a.put("SE", m.Europe);
+        f841a.put("NO", m.Europe);
+        f841a.put("FO", m.Europe);
+        f841a.put("EE", m.Europe);
+        f841a.put("LV", m.Europe);
+        f841a.put("LT", m.Europe);
+        f841a.put("BY", m.Europe);
+        f841a.put("MD", m.Europe);
+        f841a.put("UA", m.Europe);
+        f841a.put("PL", m.Europe);
+        f841a.put("CZ", m.Europe);
+        f841a.put("SK", m.Europe);
+        f841a.put("HU", m.Europe);
+        f841a.put("DE", m.Europe);
+        f841a.put("AT", m.Europe);
+        f841a.put("CH", m.Europe);
+        f841a.put("LI", m.Europe);
+        f841a.put("GB", m.Europe);
+        f841a.put("IE", m.Europe);
+        f841a.put("NL", m.Europe);
+        f841a.put("BE", m.Europe);
+        f841a.put("LU", m.Europe);
+        f841a.put("FR", m.Europe);
+        f841a.put("RO", m.Europe);
+        f841a.put("BG", m.Europe);
+        f841a.put("RS", m.Europe);
+        f841a.put("MK", m.Europe);
+        f841a.put("AL", m.Europe);
+        f841a.put("GR", m.Europe);
+        f841a.put("SI", m.Europe);
+        f841a.put("HR", m.Europe);
+        f841a.put("IT", m.Europe);
+        f841a.put("SM", m.Europe);
+        f841a.put("MT", m.Europe);
+        f841a.put("ES", m.Europe);
+        f841a.put(AssistPushConsts.MSG_VALUE_PAYLOAD, m.Europe);
+        f841a.put("AD", m.Europe);
+        f841a.put("CY", m.Europe);
+        f841a.put("DK", m.Europe);
+        f841a.put("IS", m.Europe);
+        f841a.put("UK", m.Europe);
+        f841a.put("EL", m.Europe);
+        f841a.put("RU", m.Russia);
+        f841a.put(STManager.REGION_OF_IN, m.India);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12047a() {
+    public static boolean m8997a() {
         return a() == 1;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12048a(Context context) {
-        return context != null && m12049a(context.getPackageName());
+    public static boolean m8998a(Context context) {
+        return context != null && m8999a(context.getPackageName());
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12049a(String str) {
+    public static boolean m8999a(String str) {
         return "com.xiaomi.xmsf".equals(str);
     }
 
@@ -266,8 +267,8 @@ public class j {
     }
 
     private static m b(String str) {
-        m12046a();
-        return f888a.get(str.toUpperCase());
+        m8996a();
+        return f841a.get(str.toUpperCase());
     }
 
     public static String b() {
@@ -294,7 +295,7 @@ public class j {
         }
         String str6 = str5;
         if (TextUtils.isEmpty(str5)) {
-            str6 = m12050b(q.a("ro.product.country.region", ""));
+            str6 = m9000b(q.a("ro.product.country.region", ""));
         }
         String str7 = str6;
         if (TextUtils.isEmpty(str6)) {
@@ -313,21 +314,21 @@ public class j {
             str10 = q.a("persist.sys.country", "");
         }
         if (!TextUtils.isEmpty(str10)) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("get region from system, region = ".concat(String.valueOf(str10)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("get region from system, region = ".concat(String.valueOf(str10)));
         }
         String str11 = str10;
         if (TextUtils.isEmpty(str10)) {
             str11 = Locale.getDefault().getCountry();
-            com.xiaomi.channel.commonutils.logger.b.m11394a("locale.default.country = ".concat(String.valueOf(str11)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("locale.default.country = ".concat(String.valueOf(str11)));
         }
         return str11;
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    private static String m12050b(String str) {
+    private static String m9000b(String str) {
         String str2 = str;
         if (!TextUtils.isEmpty(str)) {
-            String[] split = str.split("-");
+            String[] split = str.split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             str2 = str;
             if (split.length > 0) {
                 str2 = split[0];
@@ -337,37 +338,37 @@ public class j {
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    public static boolean m12051b() {
+    public static boolean m9001b() {
         return a() == 2;
     }
 
     public static String c() {
-        return m12045a(XmSystemUtils.KEY_VERSION_MIUI);
+        return m8995a(XmSystemUtils.KEY_VERSION_MIUI);
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    public static boolean m12052c() {
+    public static boolean m9002c() {
         if (b < 0) {
-            b = !m12054e() ? 1 : 0;
+            b = !m9004e() ? 1 : 0;
         }
         return b > 0;
     }
 
     public static String d() {
-        return m12045a("ro.build.characteristics");
+        return m8995a("ro.build.characteristics");
     }
 
     /* renamed from: d  reason: collision with other method in class */
-    public static boolean m12053d() {
+    public static boolean m9003d() {
         return !m.China.name().equalsIgnoreCase(a(b()).name());
     }
 
     public static String e() {
-        return m12045a(TPSystemInfo.KEY_PROPERTY_MANUFACTURER);
+        return m8995a(TPSystemInfo.KEY_PROPERTY_MANUFACTURER);
     }
 
     /* renamed from: e  reason: collision with other method in class */
-    public static boolean m12054e() {
+    public static boolean m9004e() {
         String str = "";
         try {
             str = q.a(XmSystemUtils.KEY_VERSION_CODE, "");

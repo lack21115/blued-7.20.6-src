@@ -102,7 +102,7 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
         this.mResource = i;
         this.mFrom = strArr;
         this.mTo = iArr;
-        this.mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.mInflater = (LayoutInflater) context.getSystemService("layout_inflater");
     }
 
     private void bindView(int i, View view) {

@@ -4,11 +4,12 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.module.common.base.mvi.EmptyMviViewModel;
 import com.blued.android.module.common.base.mvi.MVIBaseFragment;
 import com.blued.android.module.common.extensions.DialogFragmentViewBindingProperty;
@@ -33,24 +34,24 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-7206380-dex2jar.jar:com/blued/login/fragment/AdultIdentifyFragment.class */
 public final class AdultIdentifyFragment extends MVIBaseFragment<EmptyMviViewModel> {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(AdultIdentifyFragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmAdultIdentifyBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(AdultIdentifyFragment.class, "vb", "getVb()Lcom/blued/login/databinding/FmAdultIdentifyBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f20539c;
+    private final ViewBindingProperty f6933c;
 
     public AdultIdentifyFragment() {
         super(R.layout.fm_adult_identify);
-        this.f20539c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<AdultIdentifyFragment, FmAdultIdentifyBinding>() { // from class: com.blued.login.fragment.AdultIdentifyFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        this.f6933c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<AdultIdentifyFragment, FmAdultIdentifyBinding>() { // from class: com.blued.login.fragment.AdultIdentifyFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/AdultIdentifyFragment;)Lcom/blued/login/databinding/FmAdultIdentifyBinding; */
             /* renamed from: a */
-            public final FmAdultIdentifyBinding invoke(AdultIdentifyFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmAdultIdentifyBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<AdultIdentifyFragment, FmAdultIdentifyBinding>() { // from class: com.blued.login.fragment.AdultIdentifyFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/blued/login/fragment/AdultIdentifyFragment;)Lcom/blued/login/databinding/FmAdultIdentifyBinding; */
             /* renamed from: a */
-            public final FmAdultIdentifyBinding invoke(AdultIdentifyFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmAdultIdentifyBinding.a(fragment.requireView());
             }
@@ -58,14 +59,14 @@ public final class AdultIdentifyFragment extends MVIBaseFragment<EmptyMviViewMod
     }
 
     private final FmAdultIdentifyBinding a() {
-        return (FmAdultIdentifyBinding) this.f20539c.b(this, b[0]);
+        return (FmAdultIdentifyBinding) this.f6933c.b(this, b[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(AdultIdentifyFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(AdultIdentifyFragment adultIdentifyFragment, View view) {
+        Intrinsics.e(adultIdentifyFragment, "this$0");
         UserInfo.getInstance().setAccessToken("");
-        FragmentActivity activity = this$0.getActivity();
+        FragmentActivity activity = adultIdentifyFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -73,9 +74,9 @@ public final class AdultIdentifyFragment extends MVIBaseFragment<EmptyMviViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(AdultIdentifyFragment this$0, Object obj) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.b();
+    public static final void a(AdultIdentifyFragment adultIdentifyFragment, Object obj) {
+        Intrinsics.e(adultIdentifyFragment, "this$0");
+        adultIdentifyFragment.b();
     }
 
     private final void b() {
@@ -86,7 +87,7 @@ public final class AdultIdentifyFragment extends MVIBaseFragment<EmptyMviViewMod
         if (context == null) {
             return;
         }
-        new XPopup.Builder(context).c((Boolean) false).a((Boolean) false).b((Boolean) false).a((BasePopupView) new FaceIdentifySucceedPop(context, new View.OnClickListener() { // from class: com.blued.login.fragment.-$$Lambda$AdultIdentifyFragment$nW1TbCa13zFw5Sjtukcg9KvqSN8
+        new XPopup.Builder(context).c(false).a(false).b(false).a(new FaceIdentifySucceedPop(context, new View.OnClickListener() { // from class: com.blued.login.fragment.-$$Lambda$AdultIdentifyFragment$nW1TbCa13zFw5Sjtukcg9KvqSN8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AdultIdentifyFragment.c(AdultIdentifyFragment.this, view);
@@ -95,19 +96,19 @@ public final class AdultIdentifyFragment extends MVIBaseFragment<EmptyMviViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(AdultIdentifyFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void b(AdultIdentifyFragment adultIdentifyFragment, View view) {
+        Intrinsics.e(adultIdentifyFragment, "this$0");
         EventTrackSettings.a(SettingsProtos.Event.UNDER_AGE_AUTH_BTN_CLICK);
-        TerminalActivity.d(this$0.getContext(), IdentifyFaceFragment.class, null);
+        TerminalActivity.d(adultIdentifyFragment.getContext(), IdentifyFaceFragment.class, (Bundle) null);
     }
 
     private final void c() {
-        if (!AVConfig.a().f20536a) {
+        if (!AVConfig.a().f6930a) {
             Bundle bundle = new Bundle();
             bundle.putString("from_tag_page", "from_tag_login");
             LoginServiceManager.a().a(getActivity(), (Bundle) null, bundle);
         } else if (UserInfo.getInstance().isBindPhone()) {
-            FinishProfile1Fragment.f20540a.a(getContext());
+            FinishProfile1Fragment.f6934a.a(getContext());
         } else {
             LoginServiceManager.a().c(getContext());
         }
@@ -119,17 +120,16 @@ public final class AdultIdentifyFragment extends MVIBaseFragment<EmptyMviViewMod
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void c(AdultIdentifyFragment this$0, View view) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.c();
+    public static final void c(AdultIdentifyFragment adultIdentifyFragment, View view) {
+        Intrinsics.e(adultIdentifyFragment, "this$0");
+        adultIdentifyFragment.c();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         FmAdultIdentifyBinding a2 = a();
         if (a2 != null) {
-            a2.f20509a.setCenterText(getString(R.string.login_adult_title));
-            a2.f20509a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.login.fragment.-$$Lambda$AdultIdentifyFragment$uSLtBMtk2JV9rQG_OxmR9Yv9N5Y
+            a2.f6903a.setCenterText(getString(R.string.login_adult_title));
+            a2.f6903a.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.login.fragment.-$$Lambda$AdultIdentifyFragment$uSLtBMtk2JV9rQG_OxmR9Yv9N5Y
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     AdultIdentifyFragment.a(AdultIdentifyFragment.this, view);
@@ -145,7 +145,6 @@ public final class AdultIdentifyFragment extends MVIBaseFragment<EmptyMviViewMod
         EventTrackSettings.a(SettingsProtos.Event.UNDER_AGE_UNABLE_LOGIN_PAGE_SHOW);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         LiveEventBus.get("LOGIN_ADULT_IDENTIFY_SUCCEED").observe(getViewLifecycleOwner(), new Observer() { // from class: com.blued.login.fragment.-$$Lambda$AdultIdentifyFragment$7RW54Zny5hleeKSiW9nJukVkfSs
             @Override // androidx.lifecycle.Observer

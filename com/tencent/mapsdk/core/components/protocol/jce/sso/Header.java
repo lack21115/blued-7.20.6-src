@@ -11,7 +11,7 @@ import com.tencent.mapsdk.internal.q;
 public final class Header extends MapJceStruct implements Cloneable {
 
     /* renamed from: c  reason: collision with root package name */
-    public static CmdResult f37270c;
+    public static CmdResult f23579c;
     public static final /* synthetic */ boolean d = !Header.class.desiredAssertionStatus();
     public long lCurrTime;
     public CmdResult stResult;
@@ -229,10 +229,10 @@ public final class Header extends MapJceStruct implements Cloneable {
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
         this.lCurrTime = mVar.a(this.lCurrTime, 0, true);
-        if (f37270c == null) {
-            f37270c = new CmdResult();
+        if (f23579c == null) {
+            f23579c = new CmdResult();
         }
-        this.stResult = (CmdResult) mVar.b((p) f37270c, 1, false);
+        this.stResult = (CmdResult) mVar.b((p) f23579c, 1, false);
         this.uAccIp = mVar.a(this.uAccIp, 2, false);
         this.strSessionId = mVar.b(3, false);
         this.strLC = mVar.b(4, false);

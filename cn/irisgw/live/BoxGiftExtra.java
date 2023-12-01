@@ -28,8 +28,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
     public static final int BONUS_FIELD_NUMBER = 1;
     private static final BoxGiftExtra DEFAULT_INSTANCE = new BoxGiftExtra();
     private static final Parser<BoxGiftExtra> PARSER = new AbstractParser<BoxGiftExtra>() { // from class: cn.irisgw.live.BoxGiftExtra.1
-        @Override // com.google.protobuf.Parser
-        public BoxGiftExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public BoxGiftExtra m719parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new BoxGiftExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -51,8 +51,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         private WinnerProfile profile_;
         private static final Bonus DEFAULT_INSTANCE = new Bonus();
         private static final Parser<Bonus> PARSER = new AbstractParser<Bonus>() { // from class: cn.irisgw.live.BoxGiftExtra.Bonus.1
-            @Override // com.google.protobuf.Parser
-            public Bonus parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Bonus m728parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Bonus(codedInputStream, extensionRegistryLite);
             }
         };
@@ -94,22 +94,22 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 boolean unused = Bonus.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m730addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Bonus build() {
-                Bonus buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Bonus m732build() {
+                Bonus m734buildPartial = m734buildPartial();
+                if (m734buildPartial.isInitialized()) {
+                    return m734buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m734buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Bonus buildPartial() {
+            /* renamed from: buildPartial */
+            public Bonus m734buildPartial() {
                 Bonus bonus = new Bonus(this);
                 bonus.id_ = this.id_;
                 bonus.image_ = this.image_;
@@ -124,12 +124,12 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return bonus;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m738clear() {
                 super.clear();
                 this.id_ = "";
                 this.image_ = "";
-                this.count_ = 0L;
+                this.count_ = Bonus.serialVersionUID;
                 if (this.profileBuilder_ == null) {
                     this.profile_ = null;
                     return this;
@@ -140,13 +140,13 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             }
 
             public Builder clearCount() {
-                this.count_ = 0L;
+                this.count_ = Bonus.serialVersionUID;
                 onChanged();
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m740clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -162,8 +162,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m743clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -178,10 +178,9 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m749clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.BoxGiftExtra.BonusOrBuilder
@@ -189,12 +188,11 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this.count_;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Bonus getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Bonus m751getDefaultInstanceForType() {
                 return Bonus.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_Bonus_descriptor;
             }
@@ -266,7 +264,7 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             public WinnerProfileOrBuilder getProfileOrBuilder() {
                 SingleFieldBuilderV3<WinnerProfile, WinnerProfile.Builder, WinnerProfileOrBuilder> singleFieldBuilderV3 = this.profileBuilder_;
                 if (singleFieldBuilderV3 != null) {
-                    return singleFieldBuilderV3.getMessageOrBuilder();
+                    return (WinnerProfileOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
                 }
                 WinnerProfile winnerProfile = this.profile_;
                 WinnerProfile winnerProfile2 = winnerProfile;
@@ -281,12 +279,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return (this.profileBuilder_ == null && this.profile_ == null) ? false : true;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_Bonus_fieldAccessorTable.ensureFieldAccessorsInitialized(Bonus.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -303,24 +299,24 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                     this.image_ = bonus.image_;
                     onChanged();
                 }
-                if (bonus.getCount() != 0) {
+                if (bonus.getCount() != Bonus.serialVersionUID) {
                     setCount(bonus.getCount());
                 }
                 if (bonus.hasProfile()) {
                     mergeProfile(bonus.getProfile());
                 }
-                mergeUnknownFields(bonus.unknownFields);
+                m760mergeUnknownFields(bonus.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.BoxGiftExtra.Bonus.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.BoxGiftExtra.Bonus.Builder m757mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -365,11 +361,11 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxGiftExtra.Bonus.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxGiftExtra$Bonus$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxGiftExtra.Bonus.Builder.m757mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxGiftExtra$Bonus$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m756mergeFrom(Message message) {
                 if (message instanceof Bonus) {
                     return mergeFrom((Bonus) message);
                 }
@@ -385,7 +381,7 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 }
                 WinnerProfile winnerProfile2 = this.profile_;
                 if (winnerProfile2 != null) {
-                    this.profile_ = WinnerProfile.newBuilder(winnerProfile2).mergeFrom(winnerProfile).buildPartial();
+                    this.profile_ = WinnerProfile.newBuilder(winnerProfile2).mergeFrom(winnerProfile).m819buildPartial();
                 } else {
                     this.profile_ = winnerProfile;
                 }
@@ -393,8 +389,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m760mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -404,8 +400,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m762setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -450,10 +446,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             public Builder setProfile(WinnerProfile.Builder builder) {
                 SingleFieldBuilderV3<WinnerProfile, WinnerProfile.Builder, WinnerProfileOrBuilder> singleFieldBuilderV3 = this.profileBuilder_;
                 if (singleFieldBuilderV3 != null) {
-                    singleFieldBuilderV3.setMessage(builder.build());
+                    singleFieldBuilderV3.setMessage(builder.m817build());
                     return this;
                 }
-                this.profile_ = builder.build();
+                this.profile_ = builder.m817build();
                 onChanged();
                 return this;
             }
@@ -472,13 +468,13 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 }
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m764setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m766setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -508,12 +504,12 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                             } else if (readTag == 24) {
                                 this.count_ = codedInputStream.readUInt64();
                             } else if (readTag == 34) {
-                                WinnerProfile.Builder builder = this.profile_ != null ? this.profile_.toBuilder() : null;
-                                WinnerProfile winnerProfile = (WinnerProfile) codedInputStream.readMessage(WinnerProfile.parser(), extensionRegistryLite);
-                                this.profile_ = winnerProfile;
-                                if (builder != null) {
-                                    builder.mergeFrom(winnerProfile);
-                                    this.profile_ = builder.buildPartial();
+                                WinnerProfile.Builder m812toBuilder = this.profile_ != null ? this.profile_.m812toBuilder() : null;
+                                WinnerProfile readMessage = codedInputStream.readMessage(WinnerProfile.parser(), extensionRegistryLite);
+                                this.profile_ = readMessage;
+                                if (m812toBuilder != null) {
+                                    m812toBuilder.mergeFrom(readMessage);
+                                    this.profile_ = m812toBuilder.m819buildPartial();
                                 }
                             } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                             }
@@ -545,66 +541,65 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m727toBuilder();
         }
 
         public static Builder newBuilder(Bonus bonus) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(bonus);
+            return DEFAULT_INSTANCE.m727toBuilder().mergeFrom(bonus);
         }
 
         public static Bonus parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Bonus) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Bonus parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Bonus) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Bonus parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Bonus) PARSER.parseFrom(byteString);
         }
 
         public static Bonus parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Bonus) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Bonus parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Bonus) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Bonus parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Bonus) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Bonus parseFrom(InputStream inputStream) throws IOException {
-            return (Bonus) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Bonus parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Bonus) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Bonus parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Bonus) PARSER.parseFrom(byteBuffer);
         }
 
         public static Bonus parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Bonus) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Bonus parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Bonus) PARSER.parseFrom(bArr);
         }
 
         public static Bonus parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Bonus) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Bonus> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -624,8 +619,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Bonus getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Bonus m722getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -673,7 +668,6 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Bonus> getParserForType() {
             return PARSER;
         }
@@ -693,7 +687,6 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return getProfile();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -709,7 +702,7 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             }
             long j = this.count_;
             int i4 = i3;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 i4 = i3 + CodedOutputStream.computeUInt64Size(3, j);
             }
             int i5 = i4;
@@ -721,7 +714,6 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -731,7 +723,6 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return this.profile_ != null;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -746,12 +737,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return hashCode2;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_Bonus_fieldAccessorTable.ensureFieldAccessorsInitialized(Bonus.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -764,28 +753,26 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m725newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m724newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Bonus();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m727toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getIdBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.id_);
@@ -794,7 +781,7 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 GeneratedMessageV3.writeString(codedOutputStream, 2, this.image_);
             }
             long j = this.count_;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 codedOutputStream.writeUInt64(3, j);
             }
             if (this.profile_ != null) {
@@ -877,7 +864,7 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
             ensureBonusIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.bonus_);
+            AbstractMessageLite.Builder.addAll(iterable, this.bonus_);
             onChanged();
             return this;
         }
@@ -885,11 +872,11 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         public Builder addBonus(int i, Bonus.Builder builder) {
             RepeatedFieldBuilderV3<Bonus, Bonus.Builder, BonusOrBuilder> repeatedFieldBuilderV3 = this.bonusBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m732build());
                 return this;
             }
             ensureBonusIsMutable();
-            this.bonus_.add(i, builder.build());
+            this.bonus_.add(i, builder.m732build());
             onChanged();
             return this;
         }
@@ -912,11 +899,11 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         public Builder addBonus(Bonus.Builder builder) {
             RepeatedFieldBuilderV3<Bonus, Bonus.Builder, BonusOrBuilder> repeatedFieldBuilderV3 = this.bonusBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m732build());
                 return this;
             }
             ensureBonusIsMutable();
-            this.bonus_.add(builder.build());
+            this.bonus_.add(builder.m732build());
             onChanged();
             return this;
         }
@@ -944,22 +931,22 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return getBonusFieldBuilder().addBuilder(i, Bonus.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m768addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public BoxGiftExtra build() {
-            BoxGiftExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public BoxGiftExtra m770build() {
+            BoxGiftExtra m772buildPartial = m772buildPartial();
+            if (m772buildPartial.isInitialized()) {
+                return m772buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m772buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public BoxGiftExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public BoxGiftExtra m772buildPartial() {
             BoxGiftExtra boxGiftExtra = new BoxGiftExtra(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<Bonus, Bonus.Builder, BonusOrBuilder> repeatedFieldBuilderV3 = this.bonusBuilder_;
@@ -976,8 +963,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return boxGiftExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m776clear() {
             super.clear();
             RepeatedFieldBuilderV3<Bonus, Bonus.Builder, BonusOrBuilder> repeatedFieldBuilderV3 = this.bonusBuilder_;
             if (repeatedFieldBuilderV3 != null) {
@@ -1001,20 +988,19 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m778clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m781clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m787clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.BoxGiftExtraOrBuilder
@@ -1046,7 +1032,7 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         @Override // cn.irisgw.live.BoxGiftExtraOrBuilder
         public BonusOrBuilder getBonusOrBuilder(int i) {
             RepeatedFieldBuilderV3<Bonus, Bonus.Builder, BonusOrBuilder> repeatedFieldBuilderV3 = this.bonusBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.bonus_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.bonus_.get(i) : (BonusOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.BoxGiftExtraOrBuilder
@@ -1055,22 +1041,19 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.bonus_);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public BoxGiftExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public BoxGiftExtra m789getDefaultInstanceForType() {
             return BoxGiftExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_descriptor;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(BoxGiftExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -1105,18 +1088,18 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                     this.bonusBuilder_.addAllMessages(boxGiftExtra.bonus_);
                 }
             }
-            mergeUnknownFields(boxGiftExtra.unknownFields);
+            m798mergeUnknownFields(boxGiftExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.BoxGiftExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.BoxGiftExtra.Builder m795mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1161,11 +1144,11 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxGiftExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxGiftExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxGiftExtra.Builder.m795mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxGiftExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m794mergeFrom(Message message) {
             if (message instanceof BoxGiftExtra) {
                 return mergeFrom((BoxGiftExtra) message);
             }
@@ -1173,8 +1156,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m798mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1193,11 +1176,11 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         public Builder setBonus(int i, Bonus.Builder builder) {
             RepeatedFieldBuilderV3<Bonus, Bonus.Builder, BonusOrBuilder> repeatedFieldBuilderV3 = this.bonusBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m732build());
                 return this;
             }
             ensureBonusIsMutable();
-            this.bonus_.set(i, builder.build());
+            this.bonus_.set(i, builder.m732build());
             onChanged();
             return this;
         }
@@ -1217,18 +1200,18 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m800setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m802setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m804setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1243,8 +1226,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         private int uid_;
         private static final WinnerProfile DEFAULT_INSTANCE = new WinnerProfile();
         private static final Parser<WinnerProfile> PARSER = new AbstractParser<WinnerProfile>() { // from class: cn.irisgw.live.BoxGiftExtra.WinnerProfile.1
-            @Override // com.google.protobuf.Parser
-            public WinnerProfile parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public WinnerProfile m813parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new WinnerProfile(codedInputStream, extensionRegistryLite);
             }
         };
@@ -1273,22 +1256,22 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 boolean unused = WinnerProfile.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m815addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public WinnerProfile build() {
-                WinnerProfile buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public WinnerProfile m817build() {
+                WinnerProfile m819buildPartial = m819buildPartial();
+                if (m819buildPartial.isInitialized()) {
+                    return m819buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m819buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public WinnerProfile buildPartial() {
+            /* renamed from: buildPartial */
+            public WinnerProfile m819buildPartial() {
                 WinnerProfile winnerProfile = new WinnerProfile(this);
                 winnerProfile.name_ = this.name_;
                 winnerProfile.uid_ = this.uid_;
@@ -1296,16 +1279,16 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return winnerProfile;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m823clear() {
                 super.clear();
                 this.name_ = "";
                 this.uid_ = 0;
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m825clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -1315,8 +1298,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m828clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -1326,18 +1309,16 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m834clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public WinnerProfile getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public WinnerProfile m836getDefaultInstanceForType() {
                 return WinnerProfile.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_WinnerProfile_descriptor;
             }
@@ -1369,12 +1350,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this.uid_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_WinnerProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(WinnerProfile.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1390,18 +1369,18 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 if (winnerProfile.getUid() != 0) {
                     setUid(winnerProfile.getUid());
                 }
-                mergeUnknownFields(winnerProfile.unknownFields);
+                m845mergeUnknownFields(winnerProfile.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.BoxGiftExtra.WinnerProfile.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.BoxGiftExtra.WinnerProfile.Builder m842mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1446,11 +1425,11 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxGiftExtra.WinnerProfile.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxGiftExtra$WinnerProfile$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.BoxGiftExtra.WinnerProfile.Builder.m842mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.BoxGiftExtra$WinnerProfile$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m841mergeFrom(Message message) {
                 if (message instanceof WinnerProfile) {
                     return mergeFrom((WinnerProfile) message);
                 }
@@ -1458,13 +1437,13 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m845mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m847setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -1487,8 +1466,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m849setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -1498,8 +1477,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m851setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1557,66 +1536,65 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m812toBuilder();
         }
 
         public static Builder newBuilder(WinnerProfile winnerProfile) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(winnerProfile);
+            return DEFAULT_INSTANCE.m812toBuilder().mergeFrom(winnerProfile);
         }
 
         public static WinnerProfile parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (WinnerProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static WinnerProfile parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (WinnerProfile) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static WinnerProfile parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (WinnerProfile) PARSER.parseFrom(byteString);
         }
 
         public static WinnerProfile parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (WinnerProfile) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static WinnerProfile parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (WinnerProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static WinnerProfile parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (WinnerProfile) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static WinnerProfile parseFrom(InputStream inputStream) throws IOException {
-            return (WinnerProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static WinnerProfile parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (WinnerProfile) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static WinnerProfile parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (WinnerProfile) PARSER.parseFrom(byteBuffer);
         }
 
         public static WinnerProfile parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (WinnerProfile) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static WinnerProfile parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (WinnerProfile) PARSER.parseFrom(bArr);
         }
 
         public static WinnerProfile parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (WinnerProfile) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<WinnerProfile> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1628,8 +1606,8 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public WinnerProfile getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public WinnerProfile m807getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1655,12 +1633,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<WinnerProfile> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1685,12 +1661,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1700,12 +1674,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_WinnerProfile_fieldAccessorTable.ensureFieldAccessorsInitialized(WinnerProfile.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1718,28 +1690,26 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m810newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m809newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new WinnerProfile();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m812toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getNameBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.name_);
@@ -1827,66 +1797,65 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m718toBuilder();
     }
 
     public static Builder newBuilder(BoxGiftExtra boxGiftExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(boxGiftExtra);
+        return DEFAULT_INSTANCE.m718toBuilder().mergeFrom(boxGiftExtra);
     }
 
     public static BoxGiftExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (BoxGiftExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static BoxGiftExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BoxGiftExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static BoxGiftExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (BoxGiftExtra) PARSER.parseFrom(byteString);
     }
 
     public static BoxGiftExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (BoxGiftExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static BoxGiftExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (BoxGiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static BoxGiftExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BoxGiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static BoxGiftExtra parseFrom(InputStream inputStream) throws IOException {
-        return (BoxGiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static BoxGiftExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (BoxGiftExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static BoxGiftExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (BoxGiftExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static BoxGiftExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (BoxGiftExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static BoxGiftExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (BoxGiftExtra) PARSER.parseFrom(bArr);
     }
 
     public static BoxGiftExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (BoxGiftExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<BoxGiftExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1923,17 +1892,15 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         return this.bonus_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public BoxGiftExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public BoxGiftExtra m713getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<BoxGiftExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1948,12 +1915,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1968,12 +1933,10 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_BoxGiftExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(BoxGiftExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1986,28 +1949,26 @@ public final class BoxGiftExtra extends GeneratedMessageV3 implements BoxGiftExt
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m716newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m715newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new BoxGiftExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m718toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

@@ -28,11 +28,11 @@ import java.util.ArrayList;
 public class ToolbarActionBar extends ActionBar {
 
     /* renamed from: a  reason: collision with root package name */
-    final DecorToolbar f1597a;
+    final DecorToolbar f1549a;
     final Window.Callback b;
 
     /* renamed from: c  reason: collision with root package name */
-    final AppCompatDelegateImpl.ActionBarMenuCallback f1598c;
+    final AppCompatDelegateImpl.ActionBarMenuCallback f1550c;
     boolean d;
     private boolean e;
     private boolean f;
@@ -64,7 +64,7 @@ public class ToolbarActionBar extends ActionBar {
                 return;
             }
             this.b = true;
-            ToolbarActionBar.this.f1597a.dismissPopupMenus();
+            ToolbarActionBar.this.f1549a.dismissPopupMenus();
             ToolbarActionBar.this.b.onPanelClosed(108, menuBuilder);
             this.b = false;
         }
@@ -89,7 +89,7 @@ public class ToolbarActionBar extends ActionBar {
 
         @Override // androidx.appcompat.view.menu.MenuBuilder.Callback
         public void onMenuModeChange(MenuBuilder menuBuilder) {
-            if (ToolbarActionBar.this.f1597a.isOverflowMenuShowing()) {
+            if (ToolbarActionBar.this.f1549a.isOverflowMenuShowing()) {
                 ToolbarActionBar.this.b.onPanelClosed(108, menuBuilder);
             } else if (ToolbarActionBar.this.b.onPreparePanel(0, null, menuBuilder)) {
                 ToolbarActionBar.this.b.onMenuOpened(108, menuBuilder);
@@ -105,7 +105,7 @@ public class ToolbarActionBar extends ActionBar {
         @Override // androidx.appcompat.app.AppCompatDelegateImpl.ActionBarMenuCallback
         public View onCreatePanelView(int i) {
             if (i == 0) {
-                return new View(ToolbarActionBar.this.f1597a.getContext());
+                return new View(ToolbarActionBar.this.f1549a.getContext());
             }
             return null;
         }
@@ -115,7 +115,7 @@ public class ToolbarActionBar extends ActionBar {
             if (i != 0 || ToolbarActionBar.this.d) {
                 return false;
             }
-            ToolbarActionBar.this.f1597a.setMenuPrepared();
+            ToolbarActionBar.this.f1549a.setMenuPrepared();
             ToolbarActionBar.this.d = true;
             return false;
         }
@@ -124,26 +124,26 @@ public class ToolbarActionBar extends ActionBar {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ToolbarActionBar(Toolbar toolbar, CharSequence charSequence, Window.Callback callback) {
         Preconditions.checkNotNull(toolbar);
-        this.f1597a = new ToolbarWidgetWrapper(toolbar, false);
+        this.f1549a = new ToolbarWidgetWrapper(toolbar, false);
         this.b = (Window.Callback) Preconditions.checkNotNull(callback);
-        this.f1597a.setWindowCallback(callback);
+        this.f1549a.setWindowCallback(callback);
         toolbar.setOnMenuItemClickListener(this.i);
-        this.f1597a.setWindowTitle(charSequence);
-        this.f1598c = new ToolbarMenuCallback();
+        this.f1549a.setWindowTitle(charSequence);
+        this.f1550c = new ToolbarMenuCallback();
     }
 
     private Menu c() {
         if (!this.e) {
-            this.f1597a.setMenuCallbacks(new ActionMenuPresenterCallback(), new MenuBuilderCallback());
+            this.f1549a.setMenuCallbacks(new ActionMenuPresenterCallback(), new MenuBuilderCallback());
             this.e = true;
         }
-        return this.f1597a.getMenu();
+        return this.f1549a.getMenu();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.appcompat.app.ActionBar
     public void a() {
-        this.f1597a.getViewGroup().removeCallbacks(this.h);
+        this.f1549a.getViewGroup().removeCallbacks(this.h);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -191,13 +191,13 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public boolean closeOptionsMenu() {
-        return this.f1597a.hideOverflowMenu();
+        return this.f1549a.hideOverflowMenu();
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public boolean collapseActionView() {
-        if (this.f1597a.hasExpandedActionView()) {
-            this.f1597a.collapseActionView();
+        if (this.f1549a.hasExpandedActionView()) {
+            this.f1549a.collapseActionView();
             return true;
         }
         return false;
@@ -223,22 +223,22 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public View getCustomView() {
-        return this.f1597a.getCustomView();
+        return this.f1549a.getCustomView();
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public int getDisplayOptions() {
-        return this.f1597a.getDisplayOptions();
+        return this.f1549a.getDisplayOptions();
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public float getElevation() {
-        return ViewCompat.getElevation(this.f1597a.getViewGroup());
+        return ViewCompat.getElevation(this.f1549a.getViewGroup());
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public int getHeight() {
-        return this.f1597a.getHeight();
+        return this.f1549a.getHeight();
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -263,7 +263,7 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public CharSequence getSubtitle() {
-        return this.f1597a.getSubtitle();
+        return this.f1549a.getSubtitle();
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -278,29 +278,29 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public Context getThemedContext() {
-        return this.f1597a.getContext();
+        return this.f1549a.getContext();
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public CharSequence getTitle() {
-        return this.f1597a.getTitle();
+        return this.f1549a.getTitle();
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void hide() {
-        this.f1597a.setVisibility(8);
+        this.f1549a.setVisibility(8);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public boolean invalidateOptionsMenu() {
-        this.f1597a.getViewGroup().removeCallbacks(this.h);
-        ViewCompat.postOnAnimation(this.f1597a.getViewGroup(), this.h);
+        this.f1549a.getViewGroup().removeCallbacks(this.h);
+        ViewCompat.postOnAnimation(this.f1549a.getViewGroup(), this.h);
         return true;
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public boolean isShowing() {
-        return this.f1597a.getVisibility() == 0;
+        return this.f1549a.getVisibility() == 0;
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -343,7 +343,7 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public boolean openOptionsMenu() {
-        return this.f1597a.showOverflowMenu();
+        return this.f1549a.showOverflowMenu();
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -368,7 +368,7 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public boolean requestFocus() {
-        ViewGroup viewGroup = this.f1597a.getViewGroup();
+        ViewGroup viewGroup = this.f1549a.getViewGroup();
         if (viewGroup == null || viewGroup.hasFocus()) {
             return false;
         }
@@ -383,12 +383,12 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public void setBackgroundDrawable(Drawable drawable) {
-        this.f1597a.setBackgroundDrawable(drawable);
+        this.f1549a.setBackgroundDrawable(drawable);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setCustomView(int i) {
-        setCustomView(LayoutInflater.from(this.f1597a.getContext()).inflate(i, this.f1597a.getViewGroup(), false));
+        setCustomView(LayoutInflater.from(this.f1549a.getContext()).inflate(i, this.f1549a.getViewGroup(), false));
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -401,7 +401,7 @@ public class ToolbarActionBar extends ActionBar {
         if (view != null) {
             view.setLayoutParams(layoutParams);
         }
-        this.f1597a.setCustomView(view);
+        this.f1549a.setCustomView(view);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -420,7 +420,7 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public void setDisplayOptions(int i, int i2) {
-        this.f1597a.setDisplayOptions((i & i2) | (i2 & this.f1597a.getDisplayOptions()));
+        this.f1549a.setDisplayOptions((i & i2) | (i2 & this.f1549a.getDisplayOptions()));
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -446,27 +446,27 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public void setElevation(float f) {
-        ViewCompat.setElevation(this.f1597a.getViewGroup(), f);
+        ViewCompat.setElevation(this.f1549a.getViewGroup(), f);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setHomeActionContentDescription(int i) {
-        this.f1597a.setNavigationContentDescription(i);
+        this.f1549a.setNavigationContentDescription(i);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setHomeActionContentDescription(CharSequence charSequence) {
-        this.f1597a.setNavigationContentDescription(charSequence);
+        this.f1549a.setNavigationContentDescription(charSequence);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setHomeAsUpIndicator(int i) {
-        this.f1597a.setNavigationIcon(i);
+        this.f1549a.setNavigationIcon(i);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setHomeAsUpIndicator(Drawable drawable) {
-        this.f1597a.setNavigationIcon(drawable);
+        this.f1549a.setNavigationIcon(drawable);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -475,27 +475,27 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public void setIcon(int i) {
-        this.f1597a.setIcon(i);
+        this.f1549a.setIcon(i);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setIcon(Drawable drawable) {
-        this.f1597a.setIcon(drawable);
+        this.f1549a.setIcon(drawable);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setListNavigationCallbacks(SpinnerAdapter spinnerAdapter, ActionBar.OnNavigationListener onNavigationListener) {
-        this.f1597a.setDropdownParams(spinnerAdapter, new NavItemSelectedListener(onNavigationListener));
+        this.f1549a.setDropdownParams(spinnerAdapter, new NavItemSelectedListener(onNavigationListener));
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setLogo(int i) {
-        this.f1597a.setLogo(i);
+        this.f1549a.setLogo(i);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setLogo(Drawable drawable) {
-        this.f1597a.setLogo(drawable);
+        this.f1549a.setLogo(drawable);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -503,15 +503,15 @@ public class ToolbarActionBar extends ActionBar {
         if (i == 2) {
             throw new IllegalArgumentException("Tabs not supported in this configuration");
         }
-        this.f1597a.setNavigationMode(i);
+        this.f1549a.setNavigationMode(i);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setSelectedNavigationItem(int i) {
-        if (this.f1597a.getNavigationMode() != 1) {
+        if (this.f1549a.getNavigationMode() != 1) {
             throw new IllegalStateException("setSelectedNavigationIndex not valid for current navigation mode");
         }
-        this.f1597a.setDropdownSelectedPosition(i);
+        this.f1549a.setDropdownSelectedPosition(i);
     }
 
     @Override // androidx.appcompat.app.ActionBar
@@ -528,33 +528,33 @@ public class ToolbarActionBar extends ActionBar {
 
     @Override // androidx.appcompat.app.ActionBar
     public void setSubtitle(int i) {
-        DecorToolbar decorToolbar = this.f1597a;
+        DecorToolbar decorToolbar = this.f1549a;
         decorToolbar.setSubtitle(i != 0 ? decorToolbar.getContext().getText(i) : null);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setSubtitle(CharSequence charSequence) {
-        this.f1597a.setSubtitle(charSequence);
+        this.f1549a.setSubtitle(charSequence);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setTitle(int i) {
-        DecorToolbar decorToolbar = this.f1597a;
+        DecorToolbar decorToolbar = this.f1549a;
         decorToolbar.setTitle(i != 0 ? decorToolbar.getContext().getText(i) : null);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setTitle(CharSequence charSequence) {
-        this.f1597a.setTitle(charSequence);
+        this.f1549a.setTitle(charSequence);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void setWindowTitle(CharSequence charSequence) {
-        this.f1597a.setWindowTitle(charSequence);
+        this.f1549a.setWindowTitle(charSequence);
     }
 
     @Override // androidx.appcompat.app.ActionBar
     public void show() {
-        this.f1597a.setVisibility(0);
+        this.f1549a.setVisibility(0);
     }
 }

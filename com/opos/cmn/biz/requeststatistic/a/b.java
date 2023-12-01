@@ -12,7 +12,7 @@ import java.util.List;
 public class b extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    static final String f24676a = b.class.getSimpleName();
+    static final String f10988a = b.class.getSimpleName();
 
     public b(Context context) {
         super(context, "request_statistic.db", null, 1);
@@ -30,14 +30,14 @@ public class b extends SQLiteOpenHelper {
                     rawQuery.close();
                     return linkedList;
                 } catch (Exception e) {
-                    com.opos.cmn.an.f.a.b(f24676a, "cursor close fail", e);
+                    com.opos.cmn.an.f.a.b(f10988a, "cursor close fail", e);
                     return linkedList;
                 }
             } catch (Throwable th) {
                 try {
                     rawQuery.close();
                 } catch (Exception e2) {
-                    com.opos.cmn.an.f.a.b(f24676a, "cursor close fail", e2);
+                    com.opos.cmn.an.f.a.b(f10988a, "cursor close fail", e2);
                 }
                 throw th;
             }
@@ -55,8 +55,8 @@ public class b extends SQLiteOpenHelper {
             for (c cVar : list) {
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("data", cVar.b);
-                contentValues.put("createTime", Long.valueOf(cVar.f24678c));
-                cVar.f24677a = getWritableDatabase().insert("request_statistic", null, contentValues);
+                contentValues.put("createTime", Long.valueOf(cVar.f10990c));
+                cVar.f10989a = getWritableDatabase().insert("request_statistic", null, contentValues);
             }
             writableDatabase.setTransactionSuccessful();
         } finally {

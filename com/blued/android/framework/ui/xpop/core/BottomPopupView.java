@@ -16,33 +16,31 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/BottomPopupView.class */
 public class BottomPopupView extends BasePopupView {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected SmartDragLayout f9977a;
+    protected SmartDragLayout a;
 
     public BottomPopupView(Context context) {
         super(context);
-        this.f9977a = (SmartDragLayout) findViewById(R.id.bottomPopupContainer);
+        this.a = (SmartDragLayout) findViewById(R.id.bottomPopupContainer);
     }
 
     protected void a() {
-        this.f9977a.addView(LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.f9977a, false));
+        this.a.addView(LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.a, false));
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        if (this.f9977a.getChildCount() == 0) {
+        if (this.a.getChildCount() == 0) {
             a();
         }
-        this.f9977a.b(this.l.z.booleanValue());
-        this.f9977a.c(this.l.f9988c.booleanValue());
-        this.f9977a.d(this.l.e.booleanValue());
-        this.f9977a.a(this.l.G);
+        this.a.b(this.l.z.booleanValue());
+        this.a.c(this.l.c.booleanValue());
+        this.a.d(this.l.e.booleanValue());
+        this.a.a(this.l.G);
         getPopupImplView().setTranslationX(this.l.x);
         getPopupImplView().setTranslationY(this.l.y);
         XPopupUtils.a((ViewGroup) getPopupContentView(), getMaxWidth(), getMaxHeight());
-        this.f9977a.setOnCloseListener(new SmartDragLayout.OnCloseListener() { // from class: com.blued.android.framework.ui.xpop.core.BottomPopupView.1
+        this.a.setOnCloseListener(new SmartDragLayout.OnCloseListener() { // from class: com.blued.android.framework.ui.xpop.core.BottomPopupView.1
             @Override // com.blued.android.framework.ui.xpop.widget.SmartDragLayout.OnCloseListener
             public void a() {
                 BottomPopupView.this.v();
@@ -64,7 +62,7 @@ public class BottomPopupView extends BasePopupView {
                 BottomPopupView.super.i();
             }
         });
-        this.f9977a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.framework.ui.xpop.core.BottomPopupView.2
+        this.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.framework.ui.xpop.core.BottomPopupView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -123,7 +121,7 @@ public class BottomPopupView extends BasePopupView {
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void n() {
         if (this.l.z.booleanValue()) {
-            this.f9977a.a();
+            this.a.a();
         } else {
             super.n();
         }
@@ -132,7 +130,7 @@ public class BottomPopupView extends BasePopupView {
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void o() {
         if (this.l.z.booleanValue()) {
-            this.f9977a.b();
+            this.a.b();
         } else {
             super.o();
         }
@@ -152,7 +150,7 @@ public class BottomPopupView extends BasePopupView {
                 KeyboardUtils.b(this);
             }
             clearFocus();
-            this.f9977a.b();
+            this.a.b();
         }
     }
 }

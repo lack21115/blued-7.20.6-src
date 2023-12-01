@@ -4,10 +4,10 @@ package com.tencent.liteav.sdkcommon;
 final /* synthetic */ class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final DashboardManager f36430a;
+    private final DashboardManager f22739a;
 
     private d(DashboardManager dashboardManager) {
-        this.f36430a = dashboardManager;
+        this.f22739a = dashboardManager;
     }
 
     public static Runnable a(DashboardManager dashboardManager) {
@@ -16,6 +16,6 @@ final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f36430a.removeAllDashboardInternal();
+        this.f22739a.removeAllDashboardInternal();
     }
 }

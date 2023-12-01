@@ -10,16 +10,16 @@ public final class d {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final UUID f25122a;
+        private final UUID f11434a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final byte[] f25123c;
+        private final byte[] f11435c;
 
         public a(UUID uuid, int i, byte[] bArr) {
-            this.f25122a = uuid;
+            this.f11434a = uuid;
             this.b = i;
-            this.f25123c = bArr;
+            this.f11435c = bArr;
         }
     }
 
@@ -28,7 +28,7 @@ public final class d {
         if (b == null) {
             return null;
         }
-        return b.f25122a;
+        return b.f11434a;
     }
 
     private static a b(byte[] bArr) {

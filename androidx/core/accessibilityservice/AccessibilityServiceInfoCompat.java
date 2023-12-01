@@ -3,6 +3,7 @@ package androidx.core.accessibilityservice;
 import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/accessibilityservice/AccessibilityServiceInfoCompat.class */
 public final class AccessibilityServiceInfoCompat {
@@ -22,7 +23,7 @@ public final class AccessibilityServiceInfoCompat {
     }
 
     public static String capabilityToString(int i) {
-        return i != 1 ? i != 2 ? i != 4 ? i != 8 ? "UNKNOWN" : "CAPABILITY_CAN_FILTER_KEY_EVENTS" : "CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY" : "CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION" : "CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT";
+        return i != 1 ? i != 2 ? i != 4 ? i != 8 ? GrsBaseInfo.CountryCodeSource.UNKNOWN : "CAPABILITY_CAN_FILTER_KEY_EVENTS" : "CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY" : "CAPABILITY_CAN_REQUEST_TOUCH_EXPLORATION" : "CAPABILITY_CAN_RETRIEVE_WINDOW_CONTENT";
     }
 
     public static String feedbackTypeToString(int i) {

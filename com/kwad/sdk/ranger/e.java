@@ -25,7 +25,7 @@ public class e {
         g.schedule(new aw() { // from class: com.kwad.sdk.ranger.e.1
             @Override // com.kwad.sdk.utils.aw
             public final void doTask() {
-                String str2 = String.this;
+                String str2 = str;
                 if (TextUtils.isEmpty(str2)) {
                     com.kwad.sdk.core.d.b.w(e.TAG, "config is empty");
                     return;

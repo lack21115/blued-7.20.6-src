@@ -9,6 +9,7 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.AttributeSet;
+import android.view.View;
 import com.blued.android.module.common.R;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,13 +17,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/scrollpicker/StringScrollPicker.class */
 public class StringScrollPicker extends ScrollPickerView<CharSequence> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11085a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextPaint f11086c;
+    private TextPaint c;
     private int d;
     private int e;
     private int f;
@@ -39,15 +36,15 @@ public class StringScrollPicker extends ScrollPickerView<CharSequence> {
         super(context, attributeSet, i);
         this.d = 24;
         this.e = 32;
-        this.f = -16777216;
-        this.g = Color.GRAY;
-        this.h = Color.GRAY;
+        this.f = View.MEASURED_STATE_MASK;
+        this.g = -7829368;
+        this.h = -7829368;
         this.i = -1;
         this.j = Layout.Alignment.ALIGN_CENTER;
         TextPaint textPaint = new TextPaint(1);
-        this.f11086c = textPaint;
+        this.c = textPaint;
         textPaint.setStyle(Paint.Style.FILL);
-        this.f11086c.setColor(-16777216);
+        this.c.setColor(View.MEASURED_STATE_MASK);
         a(attributeSet);
         setData(new ArrayList(Arrays.asList("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve")));
     }
@@ -76,7 +73,7 @@ public class StringScrollPicker extends ScrollPickerView<CharSequence> {
     private void a(CharSequence charSequence, int i, int i2, float f) {
         float f2 = i2;
         float abs = (f2 - Math.abs(f)) / f2;
-        this.f11086c.setColor(i != -2 ? i != -1 ? i != 0 ? i != 1 ? i != 2 ? this.h : f < 0.0f ? a(this.g, this.h, abs) : this.h : f < 0.0f ? a(this.f, this.g, abs) : a(this.h, this.g, abs) : a(this.f, this.g, Math.abs(f) / f2) : f < 0.0f ? a(this.h, this.g, abs) : a(this.f, this.g, abs) : f < 0.0f ? this.h : a(this.g, this.h, abs));
+        this.c.setColor(i != -2 ? i != -1 ? i != 0 ? i != 1 ? i != 2 ? this.h : f < 0.0f ? a(this.g, this.h, abs) : this.h : f < 0.0f ? a(this.f, this.g, abs) : a(this.h, this.g, abs) : a(this.f, this.g, Math.abs(f) / f2) : f < 0.0f ? a(this.h, this.g, abs) : a(this.f, this.g, abs) : f < 0.0f ? this.h : a(this.g, this.h, abs));
     }
 
     public int a(int i, int i2, float f) {
@@ -108,25 +105,25 @@ public class StringScrollPicker extends ScrollPickerView<CharSequence> {
         int itemSize = getItemSize();
         if (i2 == -1) {
             if (f < 0.0f) {
-                this.f11086c.setTextSize(this.d);
+                this.c.setTextSize(this.d);
             } else {
-                this.f11086c.setTextSize(this.d + (((this.e - i4) * f) / itemSize));
+                this.c.setTextSize(this.d + (((this.e - i4) * f) / itemSize));
             }
         } else if (i2 == 0) {
-            TextPaint textPaint = this.f11086c;
+            TextPaint textPaint = this.c;
             int i5 = this.d;
             float f3 = i5;
             float f4 = this.e - i5;
             float f5 = itemSize;
             textPaint.setTextSize(f3 + ((f4 * (f5 - Math.abs(f))) / f5));
         } else if (i2 != 1) {
-            this.f11086c.setTextSize(this.d);
+            this.c.setTextSize(this.d);
         } else if (f > 0.0f) {
-            this.f11086c.setTextSize(this.d);
+            this.c.setTextSize(this.d);
         } else {
-            this.f11086c.setTextSize(this.d + (((this.e - i3) * (-f)) / itemSize));
+            this.c.setTextSize(this.d + (((this.e - i3) * (-f)) / itemSize));
         }
-        StaticLayout staticLayout = new StaticLayout(charSequence, 0, charSequence.length(), this.f11086c, this.i, this.j, 1.0f, 0.0f, true, null, 0);
+        StaticLayout staticLayout = new StaticLayout(charSequence, 0, charSequence.length(), this.c, this.i, this.j, 1.0f, 0.0f, true, null, 0);
         float width = staticLayout.getWidth();
         if (g()) {
             itemWidth = f2 + ((getItemWidth() - width) / 2.0f);
@@ -174,7 +171,7 @@ public class StringScrollPicker extends ScrollPickerView<CharSequence> {
     @Override // com.blued.android.module.common.view.scrollpicker.ScrollPickerView, android.view.View
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
-        this.f11085a = getMeasuredWidth();
+        this.a = getMeasuredWidth();
         this.b = getMeasuredHeight();
         if (this.i < 0) {
             this.i = getItemWidth();

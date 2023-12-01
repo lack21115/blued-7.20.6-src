@@ -149,9 +149,9 @@ public final class AnnotationAccess {
         if (cls2 == null) {
             throw new NullPointerException("annotationType == null");
         }
-        A a2 = (A) getDeclaredAnnotation(cls, cls2);
-        if (a2 != null) {
-            return a2;
+        A a = (A) getDeclaredAnnotation(cls, cls2);
+        if (a != null) {
+            return a;
         }
         if (!isInherited(cls2)) {
             return null;
@@ -162,9 +162,9 @@ public final class AnnotationAccess {
             if (cls3 == null) {
                 return null;
             }
-            A a3 = (A) getDeclaredAnnotation(cls3, cls2);
-            if (a3 != null) {
-                return a3;
+            A a2 = (A) getDeclaredAnnotation(cls3, cls2);
+            if (a2 != null) {
+                return a2;
             }
             superclass = cls3.getSuperclass();
         }

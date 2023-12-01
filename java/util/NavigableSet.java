@@ -12,7 +12,7 @@ public interface NavigableSet<E> extends SortedSet<E> {
 
     NavigableSet<E> headSet(E e, boolean z);
 
-    @Override // 
+    @Override // java.util.SortedSet
     SortedSet<E> headSet(E e);
 
     E higher(E e);
@@ -28,11 +28,11 @@ public interface NavigableSet<E> extends SortedSet<E> {
 
     NavigableSet<E> subSet(E e, boolean z, E e2, boolean z2);
 
-    @Override // 
+    @Override // java.util.SortedSet
     SortedSet<E> subSet(E e, E e2);
 
     NavigableSet<E> tailSet(E e, boolean z);
 
-    @Override // 
+    @Override // java.util.SortedSet
     SortedSet<E> tailSet(E e);
 }

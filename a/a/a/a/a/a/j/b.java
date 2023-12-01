@@ -19,11 +19,11 @@ import java.nio.ByteBuffer;
 public final class b extends f {
 
     /* renamed from: a  reason: collision with root package name */
-    public a.a.a.a.a.a.h.g f1256a;
+    public a.a.a.a.a.a.h.g f1208a;
     public a.a.a.a.a.a.h.d b;
 
     /* renamed from: c  reason: collision with root package name */
-    public StreamingPreviewCallback f1257c;
+    public StreamingPreviewCallback f1209c;
     public a.a.a.a.a.a.a d;
     public j e;
     public p f;
@@ -36,18 +36,18 @@ public final class b extends f {
     public static class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<b> f1258a;
+        public WeakReference<b> f1210a;
 
         public a(Looper looper, b bVar) {
             super(looper);
-            this.f1258a = new WeakReference<>(bVar);
+            this.f1210a = new WeakReference<>(bVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             int i = message.what;
             Object obj = message.obj;
-            b bVar = this.f1258a.get();
+            b bVar = this.f1210a.get();
             a.a.a.a.a.e.e.f.a("RGBDataTransfer", "EncoderHandler what:" + i + ",encoder=" + bVar);
             if (bVar == null) {
                 a.a.a.a.a.e.e.f.d("RGBDataTransfer", "EncoderHandler.handleMessage: encoder is null");
@@ -128,7 +128,7 @@ public final class b extends f {
 
     @Override // a.a.a.a.a.a.j.f
     public void a(StreamingPreviewCallback streamingPreviewCallback) {
-        this.f1257c = streamingPreviewCallback;
+        this.f1209c = streamingPreviewCallback;
     }
 
     public final void a(PLAVFrame pLAVFrame) {
@@ -183,16 +183,16 @@ public final class b extends f {
 
     public final void b() {
         a.a.a.a.a.e.e.f.c("RGBDataTransfer", "releaseEncoder");
-        this.f1257c = null;
+        this.f1209c = null;
         a.a.a.a.a.a.a aVar = this.d;
         if (aVar != null) {
             aVar.b();
             this.d = null;
         }
-        a.a.a.a.a.a.h.g gVar = this.f1256a;
+        a.a.a.a.a.a.h.g gVar = this.f1208a;
         if (gVar != null) {
             gVar.g();
-            this.f1256a = null;
+            this.f1208a = null;
         }
         a.a.a.a.a.a.h.d dVar = this.b;
         if (dVar != null) {
@@ -204,9 +204,9 @@ public final class b extends f {
     public final void b(int i, long j, boolean z) {
         f.a aVar;
         int d;
-        if (this.h == null || this.f1256a == null || (aVar = this.w) == null) {
+        if (this.h == null || this.f1208a == null || (aVar = this.w) == null) {
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f;
-            eVar.c("RGBDataTransfer", "ERROR. handleFrameAvailable mTextureI420Reader:" + this.h + ",mInputWindowSurface:" + this.f1256a + ",mEncoderConfig:" + this.w);
+            eVar.c("RGBDataTransfer", "ERROR. handleFrameAvailable mTextureI420Reader:" + this.h + ",mInputWindowSurface:" + this.f1208a + ",mEncoderConfig:" + this.w);
             return;
         }
         PLAVFrame b = this.d.b(aVar.d);
@@ -236,9 +236,9 @@ public final class b extends f {
             this.i = new byte[b.mSize];
         }
         b.mBuffer.rewind();
-        if (this.f1257c != null) {
+        if (this.f1209c != null) {
             b.mBuffer.get(this.i, 0, b.mSize);
-            this.f1257c.onPreviewFrame(this.i, this.g.a(), this.g.b(), 0, PLFourCC.FOURCC_I420, b.mPresentationTimeUs);
+            this.f1209c.onPreviewFrame(this.i, this.g.a(), this.g.b(), 0, PLFourCC.FOURCC_I420, b.mPresentationTimeUs);
         }
         f.a aVar2 = this.w;
         if (aVar2.g) {

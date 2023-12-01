@@ -36,9 +36,8 @@ public final class b extends BaseDexClassLoader {
         return findLibrary;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.lang.ClassLoader
-    public final Class<?> loadClass(String str, boolean z) {
+    protected final Class<?> loadClass(String str, boolean z) {
         List<String> list = this.aKh;
         if (list != null && list.contains(str)) {
             Log.i("PluginClassLoader", "loadClass " + str + " from host by interface");

@@ -30,8 +30,8 @@ public class PopMenuFromCenter extends PopMenuFromBottom {
         alphaAnimation.setDuration(200L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f28469c.setVisibility(8);
-        this.f28469c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
+        this.f14779c.setVisibility(8);
+        this.f14779c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.customview.PopMenuFromCenter.1
             @Override // java.lang.Runnable
             public void run() {
@@ -58,7 +58,7 @@ public class PopMenuFromCenter extends PopMenuFromBottom {
     @Override // com.soft.blued.customview.PopMenuFromBottom
     public void e() {
         this.b.clearAnimation();
-        this.f28469c.clearAnimation();
+        this.f14779c.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();
         }
@@ -67,7 +67,7 @@ public class PopMenuFromCenter extends PopMenuFromBottom {
         alphaAnimation.setDuration(400L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f28469c.setVisibility(0);
-        this.f28469c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_in));
+        this.f14779c.setVisibility(0);
+        this.f14779c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.push_center_in));
     }
 }

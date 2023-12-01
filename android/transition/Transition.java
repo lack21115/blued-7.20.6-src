@@ -817,7 +817,7 @@ public abstract class Transition implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public Transition mo1000clone() {
+    public Transition mo996clone() {
         Transition transition = null;
         try {
             Transition transition2 = (Transition) super.clone();

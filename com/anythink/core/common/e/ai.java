@@ -30,18 +30,14 @@ public class ai implements Comparable<ai> {
     private int X;
     private int Y;
     private int Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    int f6634a;
+    int a;
     private m aa;
     private int ab;
     private int ac;
     private String ad;
     private int ae;
     private int af;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f6635c;
+    int c;
     int d;
     String e;
     int f;
@@ -179,7 +175,7 @@ public class ai implements Comparable<ai> {
     }
 
     public final int U() {
-        return this.f6635c;
+        return this.c;
     }
 
     public final int V() {
@@ -191,7 +187,7 @@ public class ai implements Comparable<ai> {
     }
 
     public final int X() {
-        return this.f6634a;
+        return this.a;
     }
 
     public final int Y() {
@@ -563,7 +559,7 @@ public class ai implements Comparable<ai> {
     }
 
     public final void t(int i) {
-        this.f6635c = i;
+        this.c = i;
     }
 
     public final String u() {
@@ -579,7 +575,7 @@ public class ai implements Comparable<ai> {
     }
 
     public final void v(int i) {
-        this.f6634a = i;
+        this.a = i;
     }
 
     public final int w() {

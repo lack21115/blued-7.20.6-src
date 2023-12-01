@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorSpace;
 import android.graphics.Point;
 import android.graphics.PointF;
+import com.igexin.push.core.b;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -13,34 +14,34 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/graphics/BitmapKt.class */
 public final class BitmapKt {
-    public static final Bitmap applyCanvas(Bitmap bitmap, Function1<? super Canvas, Unit> block) {
+    public static final Bitmap applyCanvas(Bitmap bitmap, Function1<? super Canvas, Unit> function1) {
         Intrinsics.e(bitmap, "<this>");
-        Intrinsics.e(block, "block");
-        block.invoke(new Canvas(bitmap));
+        Intrinsics.e(function1, "block");
+        function1.invoke(new Canvas(bitmap));
         return bitmap;
     }
 
-    public static final boolean contains(Bitmap bitmap, Point p) {
+    public static final boolean contains(Bitmap bitmap, Point point) {
         Intrinsics.e(bitmap, "<this>");
-        Intrinsics.e(p, "p");
-        return p.x >= 0 && p.x < bitmap.getWidth() && p.y >= 0 && p.y < bitmap.getHeight();
+        Intrinsics.e(point, "p");
+        return point.x >= 0 && point.x < bitmap.getWidth() && point.y >= 0 && point.y < bitmap.getHeight();
     }
 
-    public static final boolean contains(Bitmap bitmap, PointF p) {
+    public static final boolean contains(Bitmap bitmap, PointF pointF) {
         Intrinsics.e(bitmap, "<this>");
-        Intrinsics.e(p, "p");
-        return p.x >= 0.0f && p.x < ((float) bitmap.getWidth()) && p.y >= 0.0f && p.y < ((float) bitmap.getHeight());
+        Intrinsics.e(pointF, "p");
+        return pointF.x >= 0.0f && pointF.x < ((float) bitmap.getWidth()) && pointF.y >= 0.0f && pointF.y < ((float) bitmap.getHeight());
     }
 
     public static final Bitmap createBitmap(int i, int i2, Bitmap.Config config) {
-        Intrinsics.e(config, "config");
+        Intrinsics.e(config, b.U);
         Bitmap createBitmap = Bitmap.createBitmap(i, i2, config);
         Intrinsics.c(createBitmap, "createBitmap(width, height, config)");
         return createBitmap;
     }
 
     public static final Bitmap createBitmap(int i, int i2, Bitmap.Config config, boolean z, ColorSpace colorSpace) {
-        Intrinsics.e(config, "config");
+        Intrinsics.e(config, b.U);
         Intrinsics.e(colorSpace, "colorSpace");
         Bitmap createBitmap = Bitmap.createBitmap(i, i2, config, z, colorSpace);
         Intrinsics.c(createBitmap, "createBitmap(width, height, config, hasAlpha, colorSpace)");
@@ -51,8 +52,7 @@ public final class BitmapKt {
         if ((i3 & 4) != 0) {
             config = Bitmap.Config.ARGB_8888;
         }
-        Bitmap.Config config2 = config;
-        Intrinsics.e(config2, "config");
+        Intrinsics.e(config, b.U);
         Bitmap createBitmap = Bitmap.createBitmap(i, i2, config);
         Intrinsics.c(createBitmap, "createBitmap(width, height, config)");
         return createBitmap;
@@ -69,10 +69,8 @@ public final class BitmapKt {
             colorSpace = ColorSpace.get(ColorSpace.Named.SRGB);
             Intrinsics.c(colorSpace, "get(ColorSpace.Named.SRGB)");
         }
-        Bitmap.Config config2 = config;
-        Intrinsics.e(config2, "config");
-        ColorSpace colorSpace2 = colorSpace;
-        Intrinsics.e(colorSpace2, "colorSpace");
+        Intrinsics.e(config, b.U);
+        Intrinsics.e(colorSpace, "colorSpace");
         Bitmap createBitmap = Bitmap.createBitmap(i, i2, config, z, colorSpace);
         Intrinsics.c(createBitmap, "createBitmap(width, height, config, hasAlpha, colorSpace)");
         return createBitmap;

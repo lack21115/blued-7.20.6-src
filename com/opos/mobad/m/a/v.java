@@ -9,7 +9,7 @@ import okio.ByteString;
 public final class v extends com.heytap.nearx.a.a.b<v, a> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final com.heytap.nearx.a.a.e<v> f26369c = new b();
+    public static final com.heytap.nearx.a.a.e<v> f12681c = new b();
     public static final Integer d = 0;
     public static final w e = w.UNKNOWN_STATUS;
     public static final Boolean f = false;
@@ -22,7 +22,7 @@ public final class v extends com.heytap.nearx.a.a.b<v, a> {
     public static final class a extends b.a<v, a> {
 
         /* renamed from: c  reason: collision with root package name */
-        public Integer f26370c;
+        public Integer f12682c;
         public w d;
         public Boolean e;
 
@@ -37,16 +37,16 @@ public final class v extends com.heytap.nearx.a.a.b<v, a> {
         }
 
         public a a(Integer num) {
-            this.f26370c = num;
+            this.f12682c = num;
             return this;
         }
 
         public v b() {
             w wVar;
             Boolean bool;
-            Integer num = this.f26370c;
+            Integer num = this.f12682c;
             if (num == null || (wVar = this.d) == null || (bool = this.e) == null) {
-                throw com.heytap.nearx.a.a.a.b.a(this.f26370c, "code", this.d, "vipStatus", this.e, "rightValid");
+                throw com.heytap.nearx.a.a.a.b.a(this.f12682c, "code", this.d, "vipStatus", this.e, "rightValid");
             }
             return new v(num, wVar, bool, super.a());
         }
@@ -60,14 +60,14 @@ public final class v extends com.heytap.nearx.a.a.b<v, a> {
 
         @Override // com.heytap.nearx.a.a.e
         public int a(v vVar) {
-            return com.heytap.nearx.a.a.e.d.a(1, (int) vVar.g) + w.d.a(2, (int) vVar.h) + com.heytap.nearx.a.a.e.f22261c.a(3, (int) vVar.i) + vVar.a().size();
+            return com.heytap.nearx.a.a.e.d.a(1, (int) vVar.g) + w.d.a(2, (int) vVar.h) + com.heytap.nearx.a.a.e.f8653c.a(3, (int) vVar.i) + vVar.a().size();
         }
 
         @Override // com.heytap.nearx.a.a.e
         public void a(com.heytap.nearx.a.a.g gVar, v vVar) throws IOException {
             com.heytap.nearx.a.a.e.d.a(gVar, 1, vVar.g);
             w.d.a(gVar, 2, vVar.h);
-            com.heytap.nearx.a.a.e.f22261c.a(gVar, 3, vVar.i);
+            com.heytap.nearx.a.a.e.f8653c.a(gVar, 3, vVar.i);
             gVar.a(vVar.a());
         }
 
@@ -87,20 +87,20 @@ public final class v extends com.heytap.nearx.a.a.b<v, a> {
                     try {
                         aVar.a(w.d.a(fVar));
                     } catch (e.a e) {
-                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f22263a));
+                        aVar.a(b, com.heytap.nearx.a.a.a.VARINT, Long.valueOf(e.f8655a));
                     }
                 } else if (b != 3) {
                     com.heytap.nearx.a.a.a c2 = fVar.c();
                     aVar.a(b, c2, c2.a().a(fVar));
                 } else {
-                    aVar.a(com.heytap.nearx.a.a.e.f22261c.a(fVar));
+                    aVar.a(com.heytap.nearx.a.a.e.f8653c.a(fVar));
                 }
             }
         }
     }
 
     public v(Integer num, w wVar, Boolean bool, ByteString byteString) {
-        super(f26369c, byteString);
+        super(f12681c, byteString);
         this.g = num;
         this.h = wVar;
         this.i = bool;

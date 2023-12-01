@@ -1,6 +1,5 @@
 package com.amap.api.maps.model;
 
-import android.graphics.Color;
 import android.text.TextUtils;
 import com.amap.api.maps.interfaces.IGlOverlayLayer;
 import java.lang.ref.WeakReference;
@@ -42,7 +41,7 @@ public class BuildingOverlay extends BaseOverlay {
                 arrayList.add(new LatLng(-84.9d, -179.9d));
                 this.mDefaultOptions.setBuildingLatlngs(arrayList);
                 this.mDefaultOptions.setBuildingTopColor(-65536);
-                this.mDefaultOptions.setBuildingSideColor(Color.DKGRAY);
+                this.mDefaultOptions.setBuildingSideColor(-12303292);
                 this.mDefaultOptions.setVisible(true);
                 this.mDefaultOptions.setZIndex(1.0f);
                 this.buildingOverlayTotalOptions.allOptionList.add(this.mDefaultOptions);

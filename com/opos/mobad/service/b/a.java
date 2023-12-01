@@ -8,15 +8,15 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class a implements Thread.UncaughtExceptionHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ArrayList<String> f27309a = new ArrayList<>();
+    private static final ArrayList<String> f13621a = new ArrayList<>();
     private Thread.UncaughtExceptionHandler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AtomicBoolean f27310c = new AtomicBoolean(false);
+    private AtomicBoolean f13622c = new AtomicBoolean(false);
 
     public a() {
-        f27309a.add("com.opos");
-        f27309a.add("com.heytap");
+        f13621a.add("com.opos");
+        f13621a.add("com.heytap");
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x005c, code lost:
@@ -54,7 +54,7 @@ public class a implements Thread.UncaughtExceptionHandler {
             if (r0 == 0) goto L29
             goto L55
         L29:
-            java.util.ArrayList<java.lang.String> r0 = com.opos.mobad.service.b.a.f27309a
+            java.util.ArrayList<java.lang.String> r0 = com.opos.mobad.service.b.a.f13621a
             java.util.Iterator r0 = r0.iterator()
             r9 = r0
         L31:
@@ -90,7 +90,7 @@ public class a implements Thread.UncaughtExceptionHandler {
 
     public void a() {
         try {
-            if (this.f27310c.compareAndSet(false, true)) {
+            if (this.f13622c.compareAndSet(false, true)) {
                 this.b = Thread.getDefaultUncaughtExceptionHandler();
                 Thread.setDefaultUncaughtExceptionHandler(this);
             }

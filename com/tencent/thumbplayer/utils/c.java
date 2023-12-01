@@ -9,27 +9,27 @@ import java.util.ArrayList;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f39426a;
+    private a f25735a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayList<String> f39427c;
+    private ArrayList<String> f25736c;
     private String d;
 
     public c(Context context, String str) {
-        this.f39426a = null;
+        this.f25735a = null;
         this.b = null;
-        this.f39427c = null;
+        this.f25736c = null;
         this.d = null;
-        this.f39426a = a.a(context, str);
+        this.f25735a = a.a(context, str);
         String str2 = str + "_key";
         this.d = str2;
         a a2 = a.a(context, str2);
         this.b = a2;
         ArrayList<String> arrayList = (ArrayList) a2.b(this.d);
-        this.f39427c = arrayList;
+        this.f25736c = arrayList;
         if (arrayList == null) {
-            this.f39427c = new ArrayList<>();
+            this.f25736c = new ArrayList<>();
         }
     }
 
@@ -43,7 +43,7 @@ public class c {
                     String str = (String) arrayList.get(i);
                     ArrayList arrayList3 = arrayList2;
                     if (!TextUtils.isEmpty(str)) {
-                        Object b = this.f39426a.b(str);
+                        Object b = this.f25735a.b(str);
                         arrayList3 = arrayList2;
                         if (b != null) {
                             arrayList3 = arrayList2;
@@ -56,9 +56,9 @@ public class c {
                     i++;
                     arrayList2 = arrayList3;
                 }
-                this.f39426a.a();
+                this.f25735a.a();
                 this.b.a();
-                this.f39427c.clear();
+                this.f25736c.clear();
                 return arrayList2;
             }
             return null;
@@ -70,11 +70,11 @@ public class c {
             if (TextUtils.isEmpty(str)) {
                 return;
             }
-            this.f39426a.c(str);
-            this.f39427c.remove(str);
+            this.f25735a.c(str);
+            this.f25736c.remove(str);
             this.b.c(this.d);
-            if (!this.f39427c.isEmpty()) {
-                this.b.a(this.d, this.f39427c);
+            if (!this.f25736c.isEmpty()) {
+                this.b.a(this.d, this.f25736c);
             }
         }
     }
@@ -83,12 +83,12 @@ public class c {
         synchronized (this) {
             if (serializable != null) {
                 if (!TextUtils.isEmpty(str)) {
-                    this.f39426a.c(str);
-                    this.f39426a.a(str, serializable);
-                    this.f39427c.remove(str);
-                    this.f39427c.add(str);
+                    this.f25735a.c(str);
+                    this.f25735a.a(str, serializable);
+                    this.f25736c.remove(str);
+                    this.f25736c.add(str);
                     this.b.c(this.d);
-                    this.b.a(this.d, this.f39427c);
+                    this.b.a(this.d, this.f25736c);
                 }
             }
         }
@@ -97,7 +97,7 @@ public class c {
     public Object b(String str) {
         Object b;
         synchronized (this) {
-            b = this.f39426a.b(str);
+            b = this.f25735a.b(str);
         }
         return b;
     }
@@ -105,16 +105,16 @@ public class c {
     public ArrayList<String> b() {
         ArrayList<String> arrayList;
         synchronized (this) {
-            arrayList = (ArrayList) this.f39427c.clone();
+            arrayList = (ArrayList) this.f25736c.clone();
         }
         return arrayList;
     }
 
     public void c() {
         synchronized (this) {
-            this.f39426a.a();
+            this.f25735a.a();
             this.b.a();
-            this.f39427c.clear();
+            this.f25736c.clear();
         }
     }
 }

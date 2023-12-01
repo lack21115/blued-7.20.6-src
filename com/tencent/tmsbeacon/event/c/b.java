@@ -7,7 +7,7 @@ import com.tencent.tmsbeacon.event.EventBean;
 public final class b extends c.a<EventBean, com.tencent.tmsbeacon.event.a.b> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C1034b f39562a = new C1034b();
+    private final C0864b f25871a = new C0864b();
     private final a b = new a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/event/c/b$a.class */
@@ -20,7 +20,7 @@ public final class b extends c.a<EventBean, com.tencent.tmsbeacon.event.a.b> {
             byte[] a2 = com.tencent.tmsbeacon.base.util.b.a(eventBean);
             bVar.e = a2;
             if (a2 != null) {
-                bVar.f39559c = a2.length;
+                bVar.f25868c = a2.length;
             }
             return bVar;
         }
@@ -28,13 +28,13 @@ public final class b extends c.a<EventBean, com.tencent.tmsbeacon.event.a.b> {
 
     /* renamed from: com.tencent.tmsbeacon.event.c.b$b  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/event/c/b$b.class */
-    public static final class C1034b implements c<com.tencent.tmsbeacon.event.a.b, EventBean> {
+    public static final class C0864b implements c<com.tencent.tmsbeacon.event.a.b, EventBean> {
         @Override // com.tencent.tmsbeacon.base.net.a.c
         public EventBean a(com.tencent.tmsbeacon.event.a.b bVar) {
             Object a2 = com.tencent.tmsbeacon.base.util.b.a(bVar.e);
             if (a2 != null && (a2 instanceof EventBean)) {
                 EventBean eventBean = (EventBean) a2;
-                eventBean.setCid(bVar.f39558a);
+                eventBean.setCid(bVar.f25867a);
                 return eventBean;
             }
             return null;
@@ -53,6 +53,6 @@ public final class b extends c.a<EventBean, com.tencent.tmsbeacon.event.a.b> {
     }
 
     public c<com.tencent.tmsbeacon.event.a.b, EventBean> c() {
-        return this.f39562a;
+        return this.f25871a;
     }
 }

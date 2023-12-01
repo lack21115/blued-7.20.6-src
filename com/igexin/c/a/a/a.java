@@ -4,7 +4,7 @@ package com.igexin.c.a.a;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23217a = "RC4Carder";
+    private static final String f9609a = "RC4Carder";
 
     private static String a() {
         return null;

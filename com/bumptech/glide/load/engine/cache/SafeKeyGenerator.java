@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
 public class SafeKeyGenerator {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LruCache<Key, String> f20839a = new LruCache<>(1000);
+    private final LruCache<Key, String> f7233a = new LruCache<>(1000);
     private final Pools.Pool<PoolableDigestContainer> b = FactoryPools.a(10, new FactoryPools.Factory<PoolableDigestContainer>() { // from class: com.bumptech.glide.load.engine.cache.SafeKeyGenerator.1
         @Override // com.bumptech.glide.util.pool.FactoryPools.Factory
         /* renamed from: a */
@@ -32,11 +32,11 @@ public class SafeKeyGenerator {
     public static final class PoolableDigestContainer implements FactoryPools.Poolable {
 
         /* renamed from: a  reason: collision with root package name */
-        final MessageDigest f20841a;
+        final MessageDigest f7235a;
         private final StateVerifier b = StateVerifier.a();
 
         PoolableDigestContainer(MessageDigest messageDigest) {
-            this.f20841a = messageDigest;
+            this.f7235a = messageDigest;
         }
 
         @Override // com.bumptech.glide.util.pool.FactoryPools.Poolable
@@ -48,8 +48,8 @@ public class SafeKeyGenerator {
     private String b(Key key) {
         PoolableDigestContainer poolableDigestContainer = (PoolableDigestContainer) Preconditions.a(this.b.acquire());
         try {
-            key.a(poolableDigestContainer.f20841a);
-            return Util.a(poolableDigestContainer.f20841a.digest());
+            key.a(poolableDigestContainer.f7235a);
+            return Util.a(poolableDigestContainer.f7235a.digest());
         } finally {
             this.b.release(poolableDigestContainer);
         }
@@ -57,15 +57,15 @@ public class SafeKeyGenerator {
 
     public String a(Key key) {
         String b;
-        synchronized (this.f20839a) {
-            b = this.f20839a.b(key);
+        synchronized (this.f7233a) {
+            b = this.f7233a.b(key);
         }
         String str = b;
         if (b == null) {
             str = b(key);
         }
-        synchronized (this.f20839a) {
-            this.f20839a.b(key, str);
+        synchronized (this.f7233a) {
+            this.f7233a.b(key, str);
         }
         return str;
     }

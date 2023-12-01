@@ -4,9 +4,8 @@ import android.text.TextUtils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/heytap/baselib/utils/MD5.class */
-public class MD5 {
+class MD5 {
     MD5() {
     }
 

@@ -7,13 +7,13 @@ import java.io.ByteArrayOutputStream;
 public class ix {
 
     /* renamed from: a  reason: collision with root package name */
-    private jc f41539a;
+    private jc f27848a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final jj f878a;
+    private final jj f831a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final ByteArrayOutputStream f879a;
+    private final ByteArrayOutputStream f832a;
 
     public ix() {
         this(new iy.a());
@@ -21,15 +21,15 @@ public class ix {
 
     public ix(je jeVar) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        this.f879a = byteArrayOutputStream;
+        this.f832a = byteArrayOutputStream;
         jj jjVar = new jj(byteArrayOutputStream);
-        this.f878a = jjVar;
-        this.f41539a = jeVar.a(jjVar);
+        this.f831a = jjVar;
+        this.f27848a = jeVar.a(jjVar);
     }
 
     public byte[] a(ir irVar) {
-        this.f879a.reset();
-        irVar.b(this.f41539a);
-        return this.f879a.toByteArray();
+        this.f832a.reset();
+        irVar.b(this.f27848a);
+        return this.f832a.toByteArray();
     }
 }

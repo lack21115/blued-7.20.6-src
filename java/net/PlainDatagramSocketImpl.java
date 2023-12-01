@@ -3,6 +3,7 @@ package java.net;
 import android.system.ErrnoException;
 import android.system.OsConstants;
 import android.system.StructGroupReq;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.CloseGuard;
 import java.io.FileDescriptor;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
         this.fd = fileDescriptor;
         this.localPort = i;
         if (fileDescriptor.valid()) {
-            this.guard.open("close");
+            this.guard.open(LoaderConstants.CLOSE);
         }
     }
 

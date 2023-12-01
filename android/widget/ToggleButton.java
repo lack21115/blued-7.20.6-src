@@ -22,7 +22,7 @@ public class ToggleButton extends CompoundButton {
     }
 
     public ToggleButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842827);
+        this(context, attributeSet, R.attr.buttonStyleToggle);
     }
 
     public ToggleButton(Context context, AttributeSet attributeSet, int i) {
@@ -51,7 +51,7 @@ public class ToggleButton extends CompoundButton {
 
     private void updateReferenceToIndicatorDrawable(Drawable drawable) {
         if (drawable instanceof LayerDrawable) {
-            this.mIndicatorDrawable = ((LayerDrawable) drawable).findDrawableByLayerId(16908311);
+            this.mIndicatorDrawable = ((LayerDrawable) drawable).findDrawableByLayerId(R.id.toggle);
         } else {
             this.mIndicatorDrawable = null;
         }

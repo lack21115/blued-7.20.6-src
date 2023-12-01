@@ -12,24 +12,24 @@ import java.util.Set;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f41795a;
+    private static a f28104a;
     private Set<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41796c;
+    private String f28105c;
     private String d;
     private String e;
 
     private a() {
         this.b = null;
-        this.f41796c = null;
+        this.f28105c = null;
         this.d = null;
         this.e = null;
         this.b = new HashSet();
-        this.f41796c = g.c();
+        this.f28105c = g.c();
         this.d = g.f();
         this.e = g.g();
-        File file = new File(this.f41796c);
+        File file = new File(this.f28105c);
         if (!file.exists()) {
             file.mkdirs();
         }
@@ -45,14 +45,14 @@ public final class a {
     }
 
     public static a a() {
-        if (f41795a == null) {
-            f41795a = new a();
+        if (f28104a == null) {
+            f28104a = new a();
         }
-        return f41795a;
+        return f28104a;
     }
 
     public final void a(Context context, final CacheUrl cacheUrl, final FileCallback fileCallback) {
-        File file = new File(this.f41796c);
+        File file = new File(this.f28105c);
         if (!(file.exists() || file.mkdirs())) {
             Logger.e("CacheDownLoader", "downloading dir not exists and make dir failed", new Object[0]);
             return;
@@ -66,7 +66,7 @@ public final class a {
             return;
         }
         this.b.add(md5);
-        final File file2 = new File(this.f41796c, md5);
+        final File file2 = new File(this.f28105c, md5);
         OkHttpUtil.downloadFile(context, cacheUrl.getUri().toString(), file2, new FileCallback() { // from class: com.youzan.spiderman.cache.a.1
             @Override // com.youzan.spiderman.utils.FileCallback
             public final void fail(int i, Exception exc) {

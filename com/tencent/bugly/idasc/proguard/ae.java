@@ -2,7 +2,6 @@ package com.tencent.bugly.idasc.proguard;
 
 import android.content.Context;
 import android.text.TextUtils;
-import com.android.internal.util.cm.QSConstants;
 import com.tencent.bugly.idasc.crashreport.biz.UserInfoBean;
 import com.tencent.bugly.idasc.crashreport.common.strategy.StrategyBean;
 import java.util.HashMap;
@@ -20,9 +19,9 @@ public final class ae {
         try {
             bq bqVar = new bq();
             synchronized (b) {
-                bqVar.f35306a = b.b;
+                bqVar.f21615a = b.b;
                 bqVar.b = b.e();
-                bqVar.f35307c = b.f35213c;
+                bqVar.f21616c = b.f21522c;
                 bqVar.d = b.o;
                 bqVar.e = b.s;
                 bqVar.f = b.h;
@@ -123,10 +122,10 @@ public final class ae {
             return null;
         }
         bu buVar = new bu();
-        buVar.f35313a = userInfoBean.e;
+        buVar.f21622a = userInfoBean.e;
         buVar.e = userInfoBean.j;
-        buVar.d = userInfoBean.f35193c;
-        buVar.f35314c = userInfoBean.d;
+        buVar.d = userInfoBean.f21502c;
+        buVar.f21623c = userInfoBean.d;
         buVar.h = userInfoBean.o == 1;
         int i = userInfoBean.b;
         if (i != 1) {
@@ -224,8 +223,8 @@ public final class ae {
             l lVar = new l();
             lVar.a("utf-8");
             mVar.a(lVar);
-            byte[] bArr = new byte[lVar.f35325a.position()];
-            System.arraycopy((Object) lVar.f35325a.array(), 0, (Object) bArr, 0, lVar.f35325a.position());
+            byte[] bArr = new byte[lVar.f21634a.position()];
+            System.arraycopy(lVar.f21634a.array(), 0, bArr, 0, lVar.f21634a.position());
             return bArr;
         } catch (Throwable th) {
             if (al.b(th)) {
@@ -243,7 +242,7 @@ public final class ae {
             eVar.a("utf-8");
             eVar.c();
             eVar.b("RqdServer");
-            eVar.c(QSConstants.TILE_SYNC);
+            eVar.c("sync");
             eVar.a("detail", (String) obj);
             return eVar.a();
         } catch (Throwable th) {

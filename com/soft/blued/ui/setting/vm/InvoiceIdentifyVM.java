@@ -14,26 +14,24 @@ import kotlin.jvm.internal.Intrinsics;
 public final class InvoiceIdentifyVM extends BaseViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f33649a;
+    private IRequestHost f19958a;
     private final MutableLiveData<Boolean> b = new MutableLiveData<>();
 
-    public final void a(String card_name, String card_number) {
-        Intrinsics.e(card_name, "card_name");
-        Intrinsics.e(card_number, "card_number");
-        final IRequestHost iRequestHost = this.f33649a;
+    public final void a(String str, String str2) {
+        Intrinsics.e(str, "card_name");
+        Intrinsics.e(str2, "card_number");
+        final IRequestHost iRequestHost = this.f19958a;
         MineHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<Object>>(iRequestHost) { // from class: com.soft.blued.ui.setting.vm.InvoiceIdentifyVM$submitIdentifyInfo$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 InvoiceIdentifyVM.this.d().postValue(Boolean.valueOf(z));
             }
-        }, card_name, card_number);
+        }, str, str2);
     }
 
     public final MutableLiveData<Boolean> d() {

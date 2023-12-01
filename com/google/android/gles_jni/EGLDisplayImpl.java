@@ -1,6 +1,5 @@
 package com.google.android.gles_jni;
 
-import com.blued.das.live.LiveProtos;
 import javax.microedition.khronos.egl.EGLDisplay;
 
 /* loaded from: source-4181928-dex2jar.jar:com/google/android/gles_jni/EGLDisplayImpl.class */
@@ -19,6 +18,6 @@ public class EGLDisplayImpl extends EGLDisplay {
     }
 
     public int hashCode() {
-        return ((int) (this.mEGLDisplay ^ (this.mEGLDisplay >>> 32))) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE;
+        return ((int) (this.mEGLDisplay ^ (this.mEGLDisplay >>> 32))) + 527;
     }
 }

@@ -16,30 +16,30 @@ import kotlin.jvm.internal.Intrinsics;
 public final class GroupHelpAdapter extends BaseQuickAdapter<GroupApplyResp.User, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f32630a;
+    private final IRequestHost f18939a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public GroupHelpAdapter(IRequestHost requestHost) {
+    public GroupHelpAdapter(IRequestHost iRequestHost) {
         super((int) R.layout.item_pop_group_help_create);
-        Intrinsics.e(requestHost, "requestHost");
-        this.f32630a = requestHost;
+        Intrinsics.e(iRequestHost, "requestHost");
+        this.f18939a = iRequestHost;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, GroupApplyResp.User item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        String avatar = item.getAvatar();
+    public void convert(BaseViewHolder baseViewHolder, GroupApplyResp.User user) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(user, "item");
+        String avatar = user.getAvatar();
         if (avatar == null || avatar.length() == 0) {
-            String name = item.getName();
+            String name = user.getName();
             if (name == null || name.length() == 0) {
-                helper.setImageResource(2131365477, R.drawable.icon_group_help_add).setTextColor(R.id.tv_nick, ContextCompat.getColor(this.mContext, 2131102264)).setText(R.id.tv_nick, this.mContext.getString(R.string.group_help_unfinished_invite)).setGone(2131371733, false).setGone(R.id.view_shape, false);
+                baseViewHolder.setImageResource(R.id.iv_header, R.drawable.icon_group_help_add).setTextColor(R.id.tv_nick, ContextCompat.getColor(this.mContext, 2131102264)).setText(R.id.tv_nick, this.mContext.getString(R.string.group_help_unfinished_invite)).setGone(R.id.tv_invite, false).setGone(R.id.view_shape, false);
                 return;
             }
         }
-        ImageLoader.a(this.f32630a, item.getAvatar()).c().a((ImageView) helper.getView(2131365477));
-        helper.setText(R.id.tv_nick, item.getName()).setTextColor(R.id.tv_nick, ContextCompat.getColor(this.mContext, 2131102263)).setGone(2131371733, true).setGone(R.id.view_shape, true);
+        ImageLoader.a(this.f18939a, user.getAvatar()).c().a((ImageView) baseViewHolder.getView(R.id.iv_header));
+        baseViewHolder.setText(R.id.tv_nick, user.getName()).setTextColor(R.id.tv_nick, ContextCompat.getColor(this.mContext, 2131102263)).setGone(R.id.tv_invite, true).setGone(R.id.view_shape, true);
     }
 }

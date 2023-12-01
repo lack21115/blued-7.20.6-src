@@ -13,20 +13,20 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /* loaded from: source-7994992-dex2jar.jar:com/igexin/base/scheduler/a.class */
-public final class a implements b.InterfaceC0445b, c {
+public final class a implements b.InterfaceC0275b, c {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f23212a;
+    private b f9604a;
     private Map<BaseTask, ScheduledFuture> b = new ConcurrentHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private final Set<String> f23213c = new HashSet();
+    private final Set<String> f9605c = new HashSet();
     private final Map<String, LinkedBlockingQueue<BaseTask>> d = new HashMap();
 
     public a() {
         b bVar = new b();
-        this.f23212a = bVar;
-        bVar.f23214a = this;
+        this.f9604a = bVar;
+        bVar.f9606a = this;
     }
 
     private ScheduledFuture b(BaseTask baseTask) {
@@ -36,7 +36,7 @@ public final class a implements b.InterfaceC0445b, c {
             if (scheduledFuture.cancel(false)) {
                 this.b.remove(baseTask);
             }
-            BlockingQueue<Runnable> queue = this.f23212a.getQueue();
+            BlockingQueue<Runnable> queue = this.f9604a.getQueue();
             if (queue != null) {
                 queue.remove(scheduledFuture);
             }
@@ -44,15 +44,15 @@ public final class a implements b.InterfaceC0445b, c {
         long initDelay = baseTask.getInitDelay();
         if (baseTask.isPeriodic()) {
             long period = baseTask.getPeriod();
-            schedule = period > 0 ? this.f23212a.scheduleAtFixedRate(baseTask, initDelay, period, TimeUnit.MILLISECONDS) : this.f23212a.scheduleWithFixedDelay(baseTask, initDelay, -period, TimeUnit.MILLISECONDS);
+            schedule = period > 0 ? this.f9604a.scheduleAtFixedRate(baseTask, initDelay, period, TimeUnit.MILLISECONDS) : this.f9604a.scheduleWithFixedDelay(baseTask, initDelay, -period, TimeUnit.MILLISECONDS);
         } else {
-            schedule = this.f23212a.schedule(baseTask, initDelay, TimeUnit.MILLISECONDS);
+            schedule = this.f9604a.schedule(baseTask, initDelay, TimeUnit.MILLISECONDS);
         }
         this.b.put(baseTask, schedule);
         return schedule;
     }
 
-    @Override // com.igexin.base.scheduler.b.InterfaceC0445b
+    @Override // com.igexin.base.scheduler.b.InterfaceC0275b
     public final void a(BaseTask baseTask) {
         synchronized (this) {
             try {
@@ -64,7 +64,7 @@ public final class a implements b.InterfaceC0445b, c {
                         b(linkedBlockingQueue.poll());
                         return;
                     }
-                    this.f23213c.remove(groupName);
+                    this.f9605c.remove(groupName);
                 }
             } catch (Throwable th) {
                 th.printStackTrace();
@@ -89,13 +89,13 @@ public final class a implements b.InterfaceC0445b, c {
                 String groupName = baseTask.getGroupName();
                 boolean z = false;
                 if (!TextUtils.isEmpty(groupName)) {
-                    if (this.f23213c.contains(groupName)) {
+                    if (this.f9605c.contains(groupName)) {
                         if (this.d.get(groupName) == null) {
                             this.d.put(groupName, new LinkedBlockingQueue<>());
                         }
                         z = this.d.get(groupName).offer(baseTask);
                     } else {
-                        this.f23213c.add(groupName);
+                        this.f9605c.add(groupName);
                     }
                 }
                 if (z) {

@@ -2548,9 +2548,9 @@ public final class MessageSchema<T> implements Schema<T> {
             iArr6 = EMPTY_INT_ARRAY;
         }
         int[] iArr7 = new int[iArr4.length + iArr5.length + iArr6.length];
-        System.arraycopy((Object) iArr4, 0, (Object) iArr7, 0, iArr4.length);
-        System.arraycopy((Object) iArr5, 0, (Object) iArr7, iArr4.length, iArr5.length);
-        System.arraycopy((Object) iArr6, 0, (Object) iArr7, iArr4.length + iArr5.length, iArr6.length);
+        System.arraycopy(iArr4, 0, iArr7, 0, iArr4.length);
+        System.arraycopy(iArr5, 0, iArr7, iArr4.length, iArr5.length);
+        System.arraycopy(iArr6, 0, iArr7, iArr4.length + iArr5.length, iArr6.length);
         return new MessageSchema<>(iArr, objArr, fieldNumber, fieldNumber2, structuralMessageInfo.getDefaultInstance(), z, true, iArr7, iArr4.length, iArr4.length + iArr5.length, newInstanceSchema, listFieldSchema, unknownFieldSchema, extensionSchema, mapFieldSchema);
     }
 

@@ -17,11 +17,11 @@ import java.util.Map;
 public class am {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9309a = "OAdURLConnection";
+    public static final String f6469a = "OAdURLConnection";
     public static final String b = "POST";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9310c = "GET";
+    public static final String f6470c = "GET";
     public static final String d = "application/json";
     public static final String e = "text/plain";
     private HttpURLConnection f;
@@ -37,8 +37,9 @@ public class am {
     private boolean p;
     private Uri.Builder q;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/am$a.class */
-    class a extends h {
+    public class a extends h {
         a() {
         }
 
@@ -304,7 +305,7 @@ public class am {
                     inputStream.close();
                 }
             } catch (Exception e2) {
-                av.h(f9309a).f(e2.toString());
+                av.h(f6469a).f(e2.toString());
             }
         }
     }

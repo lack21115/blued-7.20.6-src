@@ -8,7 +8,7 @@ import com.tencent.tmsqmsp.sdk.base.IVendorCallback;
 public class b implements com.tencent.tmsqmsp.sdk.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public a f39803a;
+    public a f26112a;
 
     private static String a(String str, String str2) {
         try {
@@ -22,12 +22,12 @@ public class b implements com.tencent.tmsqmsp.sdk.base.b {
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String a() {
-        return this.f39803a.a(0, "");
+        return this.f26112a.a(0, "");
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f39803a = new a(context);
+        this.f26112a = new a(context);
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b

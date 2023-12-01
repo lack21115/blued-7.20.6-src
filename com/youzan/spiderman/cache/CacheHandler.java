@@ -21,14 +21,14 @@ import java.util.Map;
 public class CacheHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41783a;
+    private Context f28092a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final HandlerCallback f41784c;
+    private final HandlerCallback f28093c;
     private final CacheStatistic d;
     private final k b = k.a();
     private final f e = f.a();
-    private final b f = b.a.f41801a;
+    private final b f = b.a.f28110a;
     private final com.youzan.spiderman.c.a.a g = com.youzan.spiderman.c.a.a.a();
     private final com.youzan.spiderman.b.f h = com.youzan.spiderman.b.f.a();
     private List<CacheUrl> i = new LinkedList();
@@ -41,8 +41,8 @@ public class CacheHandler {
     }
 
     public CacheHandler(Context context, final HandlerCallback handlerCallback) {
-        this.f41783a = context;
-        this.f41784c = handlerCallback;
+        this.f28092a = context;
+        this.f28093c = handlerCallback;
         this.d = new CacheStatistic(new CacheStatistic.StatisticCallback() { // from class: com.youzan.spiderman.cache.CacheHandler.1
             @Override // com.youzan.spiderman.cache.CacheStatistic.StatisticCallback
             public final void onStatistic(String str, Map<String, String> map) {
@@ -55,7 +55,7 @@ public class CacheHandler {
                 }
                 com.youzan.spiderman.c.g.b bVar = new com.youzan.spiderman.c.g.b(str, CacheHandler.this.i);
                 CacheHandler.this.i = new LinkedList();
-                com.youzan.spiderman.c.g.a.a().a(CacheHandler.this.f41783a, bVar);
+                com.youzan.spiderman.c.g.a.a().a(CacheHandler.this.f28092a, bVar);
             }
         });
     }
@@ -91,8 +91,8 @@ public class CacheHandler {
         l lVar = new l(uri);
         if (this.f.a(lVar)) {
             HtmlStatistic htmlStatistic = new HtmlStatistic(lVar.a());
-            HtmlResponse a2 = this.b.a(this.f41783a, lVar, htmlStatistic);
-            if (htmlStatistic.isNeedRecord() && (handlerCallback = this.f41784c) != null) {
+            HtmlResponse a2 = this.b.a(this.f28092a, lVar, htmlStatistic);
+            if (htmlStatistic.isNeedRecord() && (handlerCallback = this.f28093c) != null) {
                 handlerCallback.onHtmlStatistic(htmlStatistic.getStatisticData());
             }
             return a2;
@@ -105,8 +105,8 @@ public class CacheHandler {
         l lVar = new l(str);
         if (this.f.a(lVar)) {
             HtmlStatistic htmlStatistic = new HtmlStatistic(str);
-            HtmlResponse a2 = this.b.a(this.f41783a, lVar, htmlStatistic);
-            if (htmlStatistic.isNeedRecord() && (handlerCallback = this.f41784c) != null) {
+            HtmlResponse a2 = this.b.a(this.f28092a, lVar, htmlStatistic);
+            if (htmlStatistic.isNeedRecord() && (handlerCallback = this.f28093c) != null) {
                 handlerCallback.onHtmlStatistic(htmlStatistic.getStatisticData());
             }
             return a2;
@@ -129,7 +129,7 @@ public class CacheHandler {
                 }
                 this.d.addStatisticCount(1, false);
                 this.i.add(cacheUrl);
-                resourceResponse = new ResourceResponse(buildMimeType, "UTF-8", new com.youzan.spiderman.d.a(this.f41783a, cacheUrl));
+                resourceResponse = new ResourceResponse(buildMimeType, "UTF-8", new com.youzan.spiderman.d.a(this.f28092a, cacheUrl));
             }
             return resourceResponse;
         }

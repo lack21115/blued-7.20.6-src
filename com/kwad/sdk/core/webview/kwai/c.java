@@ -155,6 +155,7 @@ public class c extends com.kwad.sdk.core.webview.kwai.a {
         com.kwad.sdk.core.webview.a.b.b.Q(str2, str);
     }
 
+    @Override // android.webkit.WebViewClient
     public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
         return (Build.VERSION.SDK_INT >= 26 && renderProcessGoneDetail != null && renderProcessGoneDetail.didCrash()) || super.onRenderProcessGone(webView, renderProcessGoneDetail);
     }
@@ -170,7 +171,7 @@ public class c extends com.kwad.sdk.core.webview.kwai.a {
         com.kwad.sdk.core.webview.a.b.b.O(this.mUniqueId, "shouldOverrideUrlLoading");
         try {
             if (!str.startsWith("http") && !str.startsWith("https")) {
-                if (!str.startsWith("tel:") && !str.startsWith("sms:")) {
+                if (!str.startsWith(com.tencent.smtt.sdk.WebView.SCHEME_TEL) && !str.startsWith("sms:")) {
                     if (this.kl == null || !this.kl.yW()) {
                         return true;
                     }

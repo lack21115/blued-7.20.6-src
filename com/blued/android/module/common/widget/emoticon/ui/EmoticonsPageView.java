@@ -14,13 +14,9 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoticon/ui/EmoticonsPageView.class */
 public class EmoticonsPageView extends ViewPager implements IViewStateListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f11179a;
+    public int a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f11180c;
+    private IRequestHost c;
     private int d;
     private int e;
     private List<EmoticonPackageModel> f;
@@ -35,18 +31,15 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
         AnonymousClass2() {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrolled(int i, float f, int i2) {
         }
 
-        @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageSelected(int i) {
-            if (EmoticonsPageView.this.f11179a < 0) {
-                EmoticonsPageView.this.f11179a = 0;
+            if (EmoticonsPageView.this.a < 0) {
+                EmoticonsPageView.this.a = 0;
             }
             int i2 = 0;
             int i3 = 0;
@@ -55,13 +48,13 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
                 if (i2 >= EmoticonsPageView.this.f.size()) {
                     break;
                 }
-                int a2 = EmoticonsPageView.this.a((EmoticonPackageModel) EmoticonsPageView.this.f.get(i2));
-                int i5 = i3 + a2;
+                int a = EmoticonsPageView.this.a((EmoticonPackageModel) EmoticonsPageView.this.f.get(i2));
+                int i5 = i3 + a;
                 if (i5 > i) {
                     if (EmoticonsPageView.this.j != null) {
-                        EmoticonsPageView.this.j.b(a2);
+                        EmoticonsPageView.this.j.b(a);
                     }
-                    if (EmoticonsPageView.this.f11179a - i3 >= a2) {
+                    if (EmoticonsPageView.this.a - i3 >= a) {
                         int i6 = i - i3;
                         if (i6 >= 0 && EmoticonsPageView.this.j != null) {
                             EmoticonsPageView.this.j.c(i6);
@@ -71,7 +64,7 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
                                 iViewStateListener.a(i4);
                             }
                         }
-                    } else if (EmoticonsPageView.this.f11179a - i3 < 0) {
+                    } else if (EmoticonsPageView.this.a - i3 < 0) {
                         if (EmoticonsPageView.this.j != null) {
                             EmoticonsPageView.this.j.c(0);
                         }
@@ -81,7 +74,7 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
                             }
                         }
                     } else if (EmoticonsPageView.this.j != null) {
-                        EmoticonsPageView.this.j.a(EmoticonsPageView.this.f11179a - i3, i - i3);
+                        EmoticonsPageView.this.j.a(EmoticonsPageView.this.a - i3, i - i3);
                     }
                 } else {
                     i4++;
@@ -89,7 +82,7 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
                     i3 = i5;
                 }
             }
-            EmoticonsPageView.this.f11179a = i;
+            EmoticonsPageView.this.a = i;
         }
     }
 
@@ -98,23 +91,19 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
         private EmoticonsViewPagerAdapter() {
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             ((ViewPager) viewGroup).removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return EmoticonsPageView.this.h.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             ((ViewPager) viewGroup).addView((View) EmoticonsPageView.this.h.get(i));
             return EmoticonsPageView.this.h.get(i);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -135,7 +124,7 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
         super(context);
         this.d = 0;
         this.e = 0;
-        this.f11179a = -1;
+        this.a = -1;
         this.h = new ArrayList();
         this.b = context;
     }
@@ -144,7 +133,7 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
         super(context, attributeSet);
         this.d = 0;
         this.e = 0;
-        this.f11179a = -1;
+        this.a = -1;
         this.h = new ArrayList();
         this.b = context;
     }
@@ -164,7 +153,7 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
     }
 
     public void a(IRequestHost iRequestHost, List<EmoticonPackageModel> list) {
-        this.f11180c = iRequestHost;
+        this.c = iRequestHost;
         this.f = list;
     }
 
@@ -186,7 +175,6 @@ public class EmoticonsPageView extends ViewPager implements IViewStateListener {
         this.i.add(iViewStateListener);
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.d = i2;

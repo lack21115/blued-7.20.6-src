@@ -7,10 +7,10 @@ import com.tencent.turingcam.z5VDt;
 public final class F2BEC implements z5VDt.B9LVG {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ TuringCallback f39813a;
+    final /* synthetic */ TuringCallback f26122a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public F2BEC(TuringCallback turingCallback) {
-        this.f39813a = turingCallback;
+        this.f26122a = turingCallback;
     }
 }

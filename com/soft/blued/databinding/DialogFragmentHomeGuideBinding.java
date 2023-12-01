@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogFragmentHomeGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28700a;
+    private final RelativeLayout f15010a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28700a;
+        return this.f15010a;
     }
 }

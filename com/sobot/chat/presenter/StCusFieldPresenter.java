@@ -89,13 +89,13 @@ public class StCusFieldPresenter {
                             textView3.setTextColor(ContextCompat.getColor(context2, ResourceUtils.getResColorId(context2, "sobot_common_gray2")));
                             textView.setTextSize(12.0f);
                             textView2.setVisibility(8);
-                            EditText.this.setVisibility(0);
-                        } else if (StringUtils.isEmpty(EditText.this.getText().toString().trim())) {
+                            editText.setVisibility(0);
+                        } else if (StringUtils.isEmpty(editText.getText().toString().trim())) {
                             textView.setTextSize(14.0f);
                             TextView textView4 = textView;
                             Context context3 = context;
                             textView4.setTextColor(ContextCompat.getColor(context3, ResourceUtils.getResColorId(context3, "sobot_common_gray1")));
-                            EditText.this.setVisibility(8);
+                            editText.setVisibility(8);
                             textView2.setVisibility(0);
                         }
                     }
@@ -261,21 +261,21 @@ public class StCusFieldPresenter {
                                     charSequence2 = charSequence;
                                     if ((charSequence.length() - 1) - charSequence.toString().indexOf(".") > 2) {
                                         charSequence2 = charSequence.toString().subSequence(0, charSequence.toString().indexOf(".") + 3);
-                                        EditText.this.setText(charSequence2);
-                                        EditText.this.setSelection(charSequence2.length());
+                                        editText3.setText(charSequence2);
+                                        editText3.setSelection(charSequence2.length());
                                     }
                                 }
                                 String str = charSequence2;
                                 if (charSequence2.toString().trim().substring(0).equals(".")) {
                                     str = "0" + ((Object) charSequence2);
-                                    EditText.this.setText(str);
-                                    EditText.this.setSelection(2);
+                                    editText3.setText(str);
+                                    editText3.setSelection(2);
                                 }
                                 if (!str.toString().startsWith("0") || str.toString().trim().length() <= 1 || str.toString().substring(1, 2).equals(".")) {
                                     return;
                                 }
-                                EditText.this.setText(str.subSequence(0, 1));
-                                EditText.this.setSelection(1);
+                                editText3.setText(str.subSequence(0, 1));
+                                editText3.setSelection(1);
                             }
                         });
                     }
@@ -396,12 +396,12 @@ public class StCusFieldPresenter {
                 public void onResult(INotchScreen.NotchScreenInfo notchScreenInfo) {
                     if (notchScreenInfo.hasNotch) {
                         for (Rect rect : notchScreenInfo.notchRects) {
-                            View view2 = View.this;
+                            View view2 = view;
                             int i = 110;
                             if (rect.right <= 110) {
                                 i = rect.right;
                             }
-                            view2.setPadding(i, View.this.getPaddingTop(), View.this.getPaddingRight(), View.this.getPaddingBottom());
+                            view2.setPadding(i, view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
                         }
                     }
                 }

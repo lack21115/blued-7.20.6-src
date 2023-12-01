@@ -11,7 +11,7 @@ public interface a extends IInterface {
 
     /* renamed from: com.umeng.analytics.pro.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/a$a.class */
-    public static class C1074a implements a {
+    public static class C0904a implements a {
         @Override // com.umeng.analytics.pro.a
         public String a(String str) throws RemoteException {
             return null;
@@ -57,11 +57,11 @@ public interface a extends IInterface {
     public static abstract class b extends Binder implements a {
 
         /* renamed from: a  reason: collision with root package name */
-        static final int f40609a = 1;
+        static final int f26918a = 1;
         static final int b = 2;
 
         /* renamed from: c  reason: collision with root package name */
-        static final int f40610c = 3;
+        static final int f26919c = 3;
         static final int d = 4;
         static final int e = 5;
         static final int f = 6;
@@ -71,13 +71,13 @@ public interface a extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.umeng.analytics.pro.a$b$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/a$b$a.class */
-        public static class C1075a implements a {
+        public static class C0905a implements a {
 
             /* renamed from: a  reason: collision with root package name */
-            public static a f40611a;
+            public static a f26920a;
             private IBinder b;
 
-            C1075a(IBinder iBinder) {
+            C0905a(IBinder iBinder) {
                 this.b = iBinder;
             }
 
@@ -230,19 +230,19 @@ public interface a extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface(h);
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C1075a(iBinder) : (a) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C0905a(iBinder) : (a) queryLocalInterface;
         }
 
         public static boolean a(a aVar) {
-            if (C1075a.f40611a != null || aVar == null) {
+            if (C0905a.f26920a != null || aVar == null) {
                 return false;
             }
-            C1075a.f40611a = aVar;
+            C0905a.f26920a = aVar;
             return true;
         }
 
         public static a c() {
-            return C1075a.f40611a;
+            return C0905a.f26920a;
         }
 
         @Override // android.os.IInterface

@@ -1,5 +1,6 @@
 package com.blued.community.ui.comment.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,7 +46,6 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/comment/fragment/HotCommentsFragment.class */
@@ -56,18 +56,16 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
     private SwitchPanelRelativeLayout D;
     private TextWatcher E = new TextWatcher() { // from class: com.blued.community.ui.comment.fragment.HotCommentsFragment.9
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19481c;
+        private int c;
         private String d;
         private String e;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = HotCommentsFragment.this.v.getSelectionStart();
-            this.f19481c = HotCommentsFragment.this.v.getSelectionEnd();
+            this.c = HotCommentsFragment.this.v.getSelectionEnd();
             HotCommentsFragment.this.v.removeTextChangedListener(HotCommentsFragment.this.E);
-            if (!HotCommentsFragment.this.B.a(HotCommentsFragment.this, this.d, this.e, editable, this.f19481c)) {
+            if (!HotCommentsFragment.this.B.a(HotCommentsFragment.this, this.d, this.e, editable, this.c)) {
                 HotCommentsFragment.this.v.setSelection(this.b);
             }
             HotCommentsFragment.this.v.addTextChangedListener(HotCommentsFragment.this.E);
@@ -84,9 +82,7 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
         }
     };
     public KeyboardListenLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f19471c;
+    public View c;
     private Context j;
     private View k;
     private FeedDetailsCommentListAdapter l;
@@ -122,7 +118,7 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
 
     @Override // com.blued.community.ui.comment.contract.IHotCommentsContract.IView
     public void a() {
-        this.n.l(true);
+        this.n.b(true);
     }
 
     @Override // com.blued.community.ui.comment.contract.IHotCommentsContract.IView
@@ -133,12 +129,12 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
 
     @Override // com.blued.community.ui.comment.contract.IHotCommentsContract.IView
     public void a(List<FeedComment> list) {
-        this.l.addData((Collection) list);
+        this.l.addData(list);
     }
 
     @Override // com.blued.community.ui.comment.contract.IHotCommentsContract.IView
     public void b() {
-        this.n.l(false);
+        this.n.b(false);
     }
 
     @Override // com.blued.community.ui.comment.contract.IHotCommentsContract.IView
@@ -148,19 +144,19 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
 
     @Override // com.blued.community.ui.comment.contract.IHotCommentsContract.IView
     public void c() {
-        this.n.j();
+        this.n.g();
         this.n.h();
     }
 
     @Override // com.blued.community.ui.comment.contract.IHotCommentsContract.IView
     public void d() {
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         this.q.a(true);
         this.q.b("");
         this.q.a("");
         this.v.setHint("");
         this.v.setText("");
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         this.D.setVisibility(8);
     }
 
@@ -190,12 +186,12 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.j);
         this.m = noDataAndLoadFailView;
         noDataAndLoadFailView.d();
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.k.findViewById(R.id.refresh_layout);
-        this.n = smartRefreshLayout;
-        smartRefreshLayout.c(true);
-        RecyclerView recyclerView = (RecyclerView) this.k.findViewById(R.id.recycler_view);
-        this.o = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        SmartRefreshLayout findViewById = this.k.findViewById(R.id.refresh_layout);
+        this.n = findViewById;
+        findViewById.c(true);
+        RecyclerView findViewById2 = this.k.findViewById(R.id.recycler_view);
+        this.o = findViewById2;
+        findViewById2.setLayoutManager(new LinearLayoutManager(getContext()));
         this.o.setClipToPadding(false);
         this.o.setScrollBarSize(33554432);
         this.D = (SwitchPanelRelativeLayout) this.k.findViewById(R.id.emoticon_layout_root);
@@ -209,12 +205,10 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
         }
         this.o.setAdapter(this.l);
         this.n.a(new OnRefreshLoadMoreListener() { // from class: com.blued.community.ui.comment.fragment.HotCommentsFragment.3
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 HotCommentsFragment.this.q.c();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 HotCommentsFragment.this.q.b();
             }
@@ -225,28 +219,28 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
                 HotCommentsFragment.this.q.d().contentClick(feedComment);
             }
         });
-        View findViewById = this.k.findViewById(R.id.bottom_edit_view);
-        this.u = findViewById;
-        EditText editText = (EditText) findViewById.findViewById(R.id.edit_view);
+        View findViewById3 = this.k.findViewById(R.id.bottom_edit_view);
+        this.u = findViewById3;
+        EditText editText = (EditText) findViewById3.findViewById(R.id.edit_view);
         this.v = editText;
         editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(256)});
         this.v.addTextChangedListener(this.E);
-        View findViewById2 = this.u.findViewById(R.id.expression_btn);
-        this.w = findViewById2;
-        findViewById2.setOnClickListener(this);
-        View findViewById3 = this.u.findViewById(R.id.send_btn);
-        this.x = findViewById3;
-        findViewById3.setOnClickListener(this);
+        View findViewById4 = this.u.findViewById(R.id.expression_btn);
+        this.w = findViewById4;
+        findViewById4.setOnClickListener(this);
+        View findViewById5 = this.u.findViewById(R.id.send_btn);
+        this.x = findViewById5;
+        findViewById5.setOnClickListener(this);
         this.b = (KeyboardListenLinearLayout) this.k.findViewById(R.id.keyboardRelativeLayout);
         this.s = this.k.findViewById(R.id.keyboard_view);
-        this.f19471c = this.k.findViewById(R.id.emoticon_layout);
+        this.c = this.k.findViewById(R.id.emoticon_layout);
         this.u.setVisibility(0);
         this.t = new Emotion(this.j);
         ArrayList arrayList = new ArrayList();
         arrayList.add(EmotionManager.g());
-        this.y = (EmoticonsPageView) this.f19471c.findViewById(R.id.view_epv);
-        this.z = (EmoticonsIndicatorView) this.f19471c.findViewById(R.id.view_eiv);
-        EmoticonsToolBarView emoticonsToolBarView = (EmoticonsToolBarView) this.f19471c.findViewById(R.id.view_etv);
+        this.y = (EmoticonsPageView) this.c.findViewById(R.id.view_epv);
+        this.z = (EmoticonsIndicatorView) this.c.findViewById(R.id.view_eiv);
+        EmoticonsToolBarView emoticonsToolBarView = (EmoticonsToolBarView) this.c.findViewById(R.id.view_etv);
         this.A = emoticonsToolBarView;
         emoticonsToolBarView.setModel(true);
         this.A.a(getFragmentActive(), arrayList);
@@ -324,7 +318,7 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
             this.s.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.comment.fragment.HotCommentsFragment.8
                 @Override // android.view.View.OnTouchListener
                 public boolean onTouch(View view, MotionEvent motionEvent) {
-                    KeyboardUtils.a(HotCommentsFragment.this.getActivity());
+                    KeyboardUtils.a((Activity) HotCommentsFragment.this.getActivity());
                     HotCommentsFragment.this.D.setVisibility(8);
                     HotCommentsFragment.this.s.setVisibility(8);
                     return true;
@@ -335,7 +329,6 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i == 9090) {
@@ -389,7 +382,7 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(16);
         FragmentActivity activity = getActivity();
@@ -401,7 +394,7 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
             j();
             this.q = new HotCommentsPresenter(this.j, this.r, this, getFragmentActive());
             h();
-            a(this.D, this.b, this.v, this.f19471c);
+            a(this.D, this.b, this.v, this.c);
             i();
         } else if (view.getParent() != null) {
             ((ViewGroup) this.k.getParent()).removeView(this.k);
@@ -409,7 +402,7 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
         return this.k;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (this.C != null) {
@@ -421,7 +414,7 @@ public class HotCommentsFragment extends KeyBoardFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

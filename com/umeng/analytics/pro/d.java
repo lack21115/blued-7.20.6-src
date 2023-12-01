@@ -2,7 +2,6 @@ package com.umeng.analytics.pro;
 
 import android.app.backup.FullBackup;
 import android.media.TtmlUtils;
-import com.amap.api.services.district.DistrictSearchQuery;
 import com.tencent.tendinsv.a.b;
 
 /* loaded from: source-8829756-dex2jar.jar:com/umeng/analytics/pro/d.class */
@@ -33,7 +32,7 @@ public class d {
     public static final String Z = "dplus";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40715a = "appkey";
+    public static final String f27024a = "appkey";
     public static final String aA = "userlevel";
     public static final String aB = "eof";
     public static final String aC = "exception";
@@ -54,7 +53,7 @@ public class d {
     public static final String aq = "$ekv_wl_ver";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f40716ar = "events";
+    public static final String f27025ar = "events";
     public static final String av = "_$pp";
     public static final String aw = "session";
     public static final String ax = "pageview";
@@ -63,7 +62,7 @@ public class d {
     public static final String b = "channel";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f40717c = "secret";
+    public static final String f27026c = "secret";
     public static final String d = "app_version";
     public static final String e = "version_code";
     public static final String f = "wrapper_type";
@@ -98,5 +97,5 @@ public class d {
     public static final String[] aG = {"id", "ts", W, Y, "ds", "pn", au};
     public static final String as = "_$!ts";
     public static final String at = "_$!id";
-    public static final String[] aH = {as, at, "_$!du", "_$!c", Y, "_$!sp", "event_name", "token", "time", b.a.q, "country", TtmlUtils.TAG_REGION, DistrictSearchQuery.KEYWORDS_CITY, "browser", bh.x, bh.F, "device_version", bh.ai, "screen_width", "screen_height", "referrer", "referrer_domain", "initial_referrer", "initial_referrer_domain", "initial_view_time", "search_engine", "keyword", "ali_lib", "utm_source", "utm_medium", "utm_term", "utm_content", "utm_campaign", "date", "hour", "minute", "app_version", FullBackup.SHAREDPREFS_TREE_TOKEN};
+    public static final String[] aH = {as, at, "_$!du", "_$!c", Y, "_$!sp", "event_name", "token", "time", b.a.q, "country", TtmlUtils.TAG_REGION, "city", "browser", bh.x, bh.F, "device_version", bh.ai, "screen_width", "screen_height", "referrer", "referrer_domain", "initial_referrer", "initial_referrer_domain", "initial_view_time", "search_engine", "keyword", "ali_lib", "utm_source", "utm_medium", "utm_term", "utm_content", "utm_campaign", "date", "hour", "minute", "app_version", FullBackup.SHAREDPREFS_TREE_TOKEN};
 }

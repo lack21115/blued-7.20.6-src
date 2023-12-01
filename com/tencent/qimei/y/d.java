@@ -7,17 +7,17 @@ import android.webkit.WebViewClient;
 public class d extends WebViewClient {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ g f38446a;
+    public final /* synthetic */ g f24755a;
 
     public d(g gVar) {
-        this.f38446a = gVar;
+        this.f24755a = gVar;
     }
 
     @Override // android.webkit.WebViewClient
     public void onPageFinished(WebView webView, String str) {
         super.onPageFinished(webView, str);
         try {
-            this.f38446a.a(webView);
+            this.f24755a.a(webView);
         } catch (Exception e) {
             com.tencent.qimei.k.a.a(e);
         }

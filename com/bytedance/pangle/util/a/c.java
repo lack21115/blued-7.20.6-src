@@ -1,7 +1,6 @@
 package com.bytedance.pangle.util.a;
 
 import android.util.Pair;
-import android.widget.ExpandableListView;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -11,7 +10,7 @@ import java.util.zip.ZipFile;
 public final class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static long a(ByteBuffer byteBuffer, int i) {
-        return byteBuffer.getInt(i) & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+        return byteBuffer.getInt(i) & 4294967295L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

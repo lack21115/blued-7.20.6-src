@@ -7,16 +7,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/EmptyState.class */
 public final class EmptyState implements UiState {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f10677a;
+    private final String a;
 
     public EmptyState() {
         this(null, 1, null);
     }
 
     public EmptyState(String str) {
-        this.f10677a = str;
+        this.a = str;
     }
 
     public /* synthetic */ EmptyState(String str, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -27,11 +25,11 @@ public final class EmptyState implements UiState {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof EmptyState) && Intrinsics.a((Object) this.f10677a, (Object) ((EmptyState) obj).f10677a);
+        return (obj instanceof EmptyState) && Intrinsics.a((Object) this.a, (Object) ((EmptyState) obj).a);
     }
 
     public int hashCode() {
-        String str = this.f10677a;
+        String str = this.a;
         if (str == null) {
             return 0;
         }
@@ -39,6 +37,6 @@ public final class EmptyState implements UiState {
     }
 
     public String toString() {
-        return "EmptyState(empty=" + ((Object) this.f10677a) + ')';
+        return "EmptyState(empty=" + ((Object) this.a) + ')';
     }
 }

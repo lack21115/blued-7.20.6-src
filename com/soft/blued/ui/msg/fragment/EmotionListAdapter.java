@@ -73,10 +73,10 @@ public class EmotionListAdapter extends CommonAdapter<EmotionListItemModel> {
 
     public String a(EmotionListItemModel emotionListItemModel) {
         if (emotionListItemModel.downloadState != 3) {
-            return emotionListItemModel.downloadState == 2 ? this.f10437a.getString(2131887694) : emotionListItemModel.downloadState == 1 ? this.f10437a.getString(2131887690) : this.f10437a.getString(2131887695);
+            return emotionListItemModel.downloadState == 2 ? this.a.getString(2131887694) : emotionListItemModel.downloadState == 1 ? this.a.getString(2131887690) : this.a.getString(2131887695);
         }
         int i = this.d;
-        return (i == 1 || i == 2) ? this.f10437a.getString(2131887700) : this.f10437a.getString(2131887693);
+        return (i == 1 || i == 2) ? this.a.getString(2131887700) : this.a.getString(2131887693);
     }
 
     public void a(int i) {
@@ -84,17 +84,16 @@ public class EmotionListAdapter extends CommonAdapter<EmotionListItemModel> {
     }
 
     public void a(int i, String str) {
-        EmotionDetailFragment.a(this.f10437a, i, str);
+        EmotionDetailFragment.a(this.a, i, str);
     }
 
-    @Override // com.blued.android.module.common.adapter.CommonAdapter
     public void a(CommonAdapter.ViewHolder viewHolder, final EmotionListItemModel emotionListItemModel, int i) {
-        CommonAdapter.ViewHolder b = viewHolder.c(R.id.item_emotion_iv, emotionListItemModel.icon).a(R.id.item_emotion_name, c(emotionListItemModel)).a(R.id.item_emotion_des, d(emotionListItemModel)).a(R.id.item_emotion_btn, a(emotionListItemModel)).b(R.id.item_emotion_btn_cv, this.d == 2 ? 8 : 0);
+        CommonAdapter.ViewHolder b = viewHolder.c((int) R.id.item_emotion_iv, emotionListItemModel.icon).a((int) R.id.item_emotion_name, c(emotionListItemModel)).a((int) R.id.item_emotion_des, d(emotionListItemModel)).a((int) R.id.item_emotion_btn, a(emotionListItemModel)).b((int) R.id.item_emotion_btn_cv, this.d == 2 ? 8 : 0);
         int i2 = 8;
         if (this.d == 2) {
             i2 = 0;
         }
-        b.b(R.id.item_emotion_arrow_iv, i2).a(R.id.item_emotion_btn, new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionListAdapter$kqoYwAxFg3mSOGcf0yiKo81Jrzo
+        b.b((int) R.id.item_emotion_arrow_iv, i2).a((int) R.id.item_emotion_btn, new View.OnClickListener() { // from class: com.soft.blued.ui.msg.fragment.-$$Lambda$EmotionListAdapter$kqoYwAxFg3mSOGcf0yiKo81Jrzo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EmotionListAdapter.this.b(emotionListItemModel, view);
@@ -105,15 +104,15 @@ public class EmotionListAdapter extends CommonAdapter<EmotionListItemModel> {
                 EmotionListAdapter.this.a(emotionListItemModel, view);
             }
         });
-        CardView cardView = (CardView) viewHolder.a(R.id.item_emotion_btn_cv);
-        TextView textView = (TextView) viewHolder.a(R.id.item_emotion_btn);
+        CardView cardView = (CardView) viewHolder.a((int) R.id.item_emotion_btn_cv);
+        TextView textView = (TextView) viewHolder.a((int) R.id.item_emotion_btn);
         if (emotionListItemModel.downloadState == 3) {
-            cardView.setCardBackgroundColor(BluedSkinUtils.a(this.f10437a, 2131102360));
-            textView.setTextColor(this.f10437a.getResources().getColor(2131102263));
+            cardView.setCardBackgroundColor(BluedSkinUtils.a(this.a, 2131102360));
+            textView.setTextColor(this.a.getResources().getColor(2131102263));
             return;
         }
-        cardView.setCardBackgroundColor(BluedSkinUtils.a(this.f10437a, 2131101766));
-        textView.setTextColor(this.f10437a.getResources().getColor(2131102478));
+        cardView.setCardBackgroundColor(BluedSkinUtils.a(this.a, 2131101766));
+        textView.setTextColor(this.a.getResources().getColor(2131102478));
     }
 
     public void b(EmotionListItemModel emotionListItemModel) {

@@ -15,10 +15,10 @@ public class b {
     private boolean e = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40554a = b.class.getSimpleName();
+    public static final String f26863a = b.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private static a f40555c = null;
+    private static a f26864c = null;
 
     private b(Context context) {
         this.d = context;
@@ -87,7 +87,7 @@ public class b {
                 b.this.e = false;
             }
         };
-        if (this.e || TextUtils.isEmpty(c.f40543a)) {
+        if (this.e || TextUtils.isEmpty(c.f26852a)) {
             return;
         }
         new d().a(0, bVar);
@@ -103,17 +103,17 @@ public class b {
     public final a b() {
         a aVar;
         synchronized (this) {
-            if (f40555c == null) {
+            if (f26864c == null) {
                 try {
                     if (this.d == null) {
                         this.d = com.tramini.plugin.a.a.c.a().b();
                     }
-                    f40555c = b(this.d);
+                    f26864c = b(this.d);
                 } catch (Exception e) {
                 }
-                com.tramini.plugin.a.a.c.a().a(f40555c);
+                com.tramini.plugin.a.a.c.a().a(f26864c);
             }
-            aVar = f40555c;
+            aVar = f26864c;
         }
         return aVar;
     }

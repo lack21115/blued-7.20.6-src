@@ -4,12 +4,12 @@ package com.tencent.tendinsv;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f38986a = false;
+    public static final boolean f25295a = false;
     public static final String b = "com.tencent.tendinsv";
     @Deprecated
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f38987c = "com.tencent.tendinsv";
+    public static final String f25296c = "com.tencent.tendinsv";
     public static final String d = "release";
     public static final String e = "";
     public static final int f = 242;

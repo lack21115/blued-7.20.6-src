@@ -4,9 +4,9 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class az {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f40082a;
+    public byte[] f26391a;
     public byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40083c;
+    public String f26392c;
 }

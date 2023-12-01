@@ -29,7 +29,7 @@ public class mb {
     private boolean lz = false;
     private volatile boolean x = false;
     private final List<Pair<ox, hj>> je = new ArrayList();
-    public final List<InterfaceC0876mb> ox = new ArrayList();
+    public final List<InterfaceC0706mb> ox = new ArrayList();
     private final ServiceConnection nk = new ServiceConnection() { // from class: com.ss.android.downloadlib.mb.ox.mb.1
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
@@ -37,8 +37,8 @@ public class mb {
                 mb.this.mb(false);
                 mb.this.mb = b.mb.mb(iBinder);
                 mb.this.b();
-                for (InterfaceC0876mb interfaceC0876mb : mb.this.ox) {
-                    interfaceC0876mb.mb();
+                for (InterfaceC0706mb interfaceC0706mb : mb.this.ox) {
+                    interfaceC0706mb.mb();
                 }
             }
         }
@@ -48,8 +48,8 @@ public class mb {
             synchronized (mb.this.b) {
                 mb.this.mb(false);
                 mb.this.mb = null;
-                for (InterfaceC0876mb interfaceC0876mb : mb.this.ox) {
-                    interfaceC0876mb.ox();
+                for (InterfaceC0706mb interfaceC0706mb : mb.this.ox) {
+                    interfaceC0706mb.ox();
                 }
             }
         }
@@ -59,7 +59,7 @@ public class mb {
 
     /* renamed from: com.ss.android.downloadlib.mb.ox.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/mb/ox/mb$mb.class */
-    public interface InterfaceC0876mb {
+    public interface InterfaceC0706mb {
         void mb();
 
         void ox();

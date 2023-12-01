@@ -8,82 +8,82 @@ import java.util.Map;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f21668a;
+    private static Context f8062a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/cmic/gen/sdk/tencent/e/k$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final SharedPreferences.Editor f21669a;
+        private final SharedPreferences.Editor f8063a;
 
         a(SharedPreferences.Editor editor) {
-            this.f21669a = editor;
+            this.f8063a = editor;
         }
 
         public void a() {
-            this.f21669a.apply();
+            this.f8063a.apply();
         }
 
         public void a(String str) {
-            this.f21669a.remove(d.a(str));
+            this.f8063a.remove(d.a(str));
         }
 
         public void a(String str, int i) {
-            this.f21669a.putInt(d.a(str), i);
+            this.f8063a.putInt(d.a(str), i);
         }
 
         public void a(String str, long j) {
-            this.f21669a.putLong(d.a(str), j);
+            this.f8063a.putLong(d.a(str), j);
         }
 
         public void a(String str, String str2) {
-            this.f21669a.putString(d.a(str), str2);
+            this.f8063a.putString(d.a(str), str2);
         }
 
         public void b() {
-            this.f21669a.commit();
+            this.f8063a.commit();
         }
 
         public void c() {
-            this.f21669a.clear();
+            this.f8063a.clear();
         }
     }
 
     public static int a(String str, int i) {
-        return f21668a.getSharedPreferences("ssoconfigs", 0).getInt(d.a(str), i);
+        return f8062a.getSharedPreferences("ssoconfigs", 0).getInt(d.a(str), i);
     }
 
     public static int a(String str, String str2, int i) {
-        return f21668a.getSharedPreferences(str, 0).getInt(d.a(str2), i);
+        return f8062a.getSharedPreferences(str, 0).getInt(d.a(str2), i);
     }
 
     public static long a(String str, long j) {
-        return f21668a.getSharedPreferences("ssoconfigs", 0).getLong(d.a(str), j);
+        return f8062a.getSharedPreferences("ssoconfigs", 0).getLong(d.a(str), j);
     }
 
     public static long a(String str, String str2, long j) {
-        return f21668a.getSharedPreferences(str, 0).getLong(d.a(str2), j);
+        return f8062a.getSharedPreferences(str, 0).getLong(d.a(str2), j);
     }
 
     public static a a() {
-        return new a(f21668a.getSharedPreferences("ssoconfigs", 0).edit());
+        return new a(f8062a.getSharedPreferences("ssoconfigs", 0).edit());
     }
 
     public static String a(String str, String str2, String str3) {
-        return f21668a.getSharedPreferences(str, 0).getString(d.a(str2), str3);
+        return f8062a.getSharedPreferences(str, 0).getString(d.a(str2), str3);
     }
 
     public static void a(Context context) {
-        f21668a = context.getApplicationContext();
+        f8062a = context.getApplicationContext();
     }
 
     public static void a(String str) {
-        SharedPreferences sharedPreferences = f21668a.getSharedPreferences("ssoconfigs", 0);
+        SharedPreferences sharedPreferences = f8062a.getSharedPreferences("ssoconfigs", 0);
         sharedPreferences.edit().remove(d.a(str)).commit();
     }
 
     public static void a(String str, String str2) {
-        SharedPreferences sharedPreferences = f21668a.getSharedPreferences("ssoconfigs", 0);
+        SharedPreferences sharedPreferences = f8062a.getSharedPreferences("ssoconfigs", 0);
         sharedPreferences.edit().putString(d.a(str), str2).commit();
     }
 
@@ -91,7 +91,7 @@ public class k {
         if (map == null || map.isEmpty()) {
             return;
         }
-        SharedPreferences.Editor edit = f21668a.getSharedPreferences("ssoconfigs", 0).edit();
+        SharedPreferences.Editor edit = f8062a.getSharedPreferences("ssoconfigs", 0).edit();
         for (String str : map.keySet()) {
             Object obj = map.get(str);
             String a2 = d.a(str);
@@ -109,10 +109,10 @@ public class k {
     }
 
     public static a b(String str) {
-        return new a(f21668a.getSharedPreferences(str, 0).edit());
+        return new a(f8062a.getSharedPreferences(str, 0).edit());
     }
 
     public static String b(String str, String str2) {
-        return f21668a.getSharedPreferences("ssoconfigs", 0).getString(d.a(str), str2);
+        return f8062a.getSharedPreferences("ssoconfigs", 0).getString(d.a(str), str2);
     }
 }

@@ -3,6 +3,7 @@ package com.zego.zegoavkit2.screencapture.ve_gl;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.SurfaceTexture;
+import android.opengl.EGL14;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import com.zego.zegoavkit2.screencapture.ve_gl.EglBase;
@@ -49,7 +50,7 @@ public final class EglBase10 extends EglBase {
         if (context == null || context.eglContext != EGL10.EGL_NO_CONTEXT) {
             EGLContext eGLContext = context == null ? EGL10.EGL_NO_CONTEXT : context.eglContext;
             synchronized (EglBase.lock) {
-                eglCreateContext = this.egl.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, 12344});
+                eglCreateContext = this.egl.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, 2, EGL14.EGL_NONE});
             }
             if (eglCreateContext != EGL10.EGL_NO_CONTEXT) {
                 return eglCreateContext;
@@ -67,7 +68,7 @@ public final class EglBase10 extends EglBase {
         if (this.eglSurface != EGL10.EGL_NO_SURFACE) {
             throw new RuntimeException("Already has an EGLSurface");
         }
-        this.eglSurface = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{12344});
+        this.eglSurface = this.egl.eglCreateWindowSurface(this.eglDisplay, this.eglConfig, obj, new int[]{EGL14.EGL_NONE});
         int eglGetError = this.egl.eglGetError();
         if (this.eglSurface == EGL10.EGL_NO_SURFACE || eglGetError != 12288) {
             throw new RuntimeException("Failed to create window surface: 0x" + Integer.toHexString(eglGetError));
@@ -112,7 +113,7 @@ public final class EglBase10 extends EglBase {
         if (this.eglSurface != EGL10.EGL_NO_SURFACE) {
             throw new RuntimeException("Already has an EGLSurface");
         }
-        this.eglSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{12375, i, 12374, i2, 12344});
+        this.eglSurface = this.egl.eglCreatePbufferSurface(this.eglDisplay, this.eglConfig, new int[]{EGL14.EGL_WIDTH, i, EGL14.EGL_HEIGHT, i2, EGL14.EGL_NONE});
         int eglGetError = this.egl.eglGetError();
         if (this.eglSurface == EGL10.EGL_NO_SURFACE || eglGetError != 12288) {
             throw new RuntimeException("Failed to create pixel buffer surface with size " + i + "x" + i2 + ": 0x" + Integer.toHexString(eglGetError));
@@ -220,7 +221,7 @@ public final class EglBase10 extends EglBase {
         }
         synchronized (EglBase.lock) {
             EGLContext eglGetCurrentContext = this.egl.eglGetCurrentContext();
-            EGLSurface eglGetCurrentSurface = this.egl.eglGetCurrentSurface(12377);
+            EGLSurface eglGetCurrentSurface = this.egl.eglGetCurrentSurface(EGL14.EGL_DRAW);
             if (eglGetCurrentContext == this.eglContext && eglGetCurrentSurface == this.eglSurface) {
                 return;
             }
@@ -254,14 +255,14 @@ public final class EglBase10 extends EglBase {
     @Override // com.zego.zegoavkit2.screencapture.ve_gl.EglBase
     public int surfaceHeight() {
         int[] iArr = new int[1];
-        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12374, iArr);
+        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, EGL14.EGL_HEIGHT, iArr);
         return iArr[0];
     }
 
     @Override // com.zego.zegoavkit2.screencapture.ve_gl.EglBase
     public int surfaceWidth() {
         int[] iArr = new int[1];
-        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, 12375, iArr);
+        this.egl.eglQuerySurface(this.eglDisplay, this.eglSurface, EGL14.EGL_WIDTH, iArr);
         return iArr[0];
     }
 

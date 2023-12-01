@@ -5,7 +5,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.TextUtils;
-import com.anythink.expressad.video.module.a.a.m;
 import com.mokee.volley.Cache;
 import com.mokee.volley.Response;
 import com.mokee.volley.VolleyLog;
@@ -19,13 +18,9 @@ import java.util.Map;
 public abstract class Request<T> implements Comparable<Request<T>> {
     public static boolean e;
     private static final String[] p = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f24238a;
+    private boolean a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f24239c;
+    private boolean c;
     private final int d;
     private Object f;
     private RequestQueue g;
@@ -58,9 +53,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
         public static final Priority IMMEDIATE = null;
         public static final Priority LOW = null;
         public static final Priority NORMAL = null;
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final /* synthetic */ Priority[] f24240a = null;
+        private static final /* synthetic */ Priority[] a = null;
         private static final String[] b = null;
 
         static {
@@ -76,7 +69,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
         }
 
         public static Priority[] values() {
-            Priority[] priorityArr = f24240a;
+            Priority[] priorityArr = a;
             int length = priorityArr.length;
             Priority[] priorityArr2 = new Priority[length];
             System.arraycopy(priorityArr, 0, priorityArr2, 0, length);
@@ -112,9 +105,9 @@ public abstract class Request<T> implements Comparable<Request<T>> {
         boolean z2 = e;
         try {
             this.m = VolleyLog.a.ENABLED ? new VolleyLog.a() : aVar;
-            this.f24238a = true;
+            this.a = true;
             this.b = false;
-            this.f24239c = false;
+            this.c = false;
             this.j = 0L;
             this.n = null;
             this.h = i;
@@ -219,7 +212,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
                 }
             }
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.j;
-            if (elapsedRealtime >= m.ag) {
+            if (elapsedRealtime >= 3000) {
                 try {
                     VolleyLog.d(p[5], Long.valueOf(elapsedRealtime), toString());
                 } catch (IllegalStateException e2) {
@@ -380,7 +373,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     public boolean hasHadResponseDelivered() {
-        return this.f24239c;
+        return this.c;
     }
 
     public boolean isCanceled() {
@@ -388,7 +381,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     public void markDelivered() {
-        this.f24239c = true;
+        this.c = true;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -425,7 +418,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
 
     /* JADX WARN: Multi-variable type inference failed */
     public final Request<?> setShouldCache(boolean z) {
-        this.f24238a = z;
+        this.a = z;
         return this;
     }
 
@@ -436,7 +429,7 @@ public abstract class Request<T> implements Comparable<Request<T>> {
     }
 
     public final boolean shouldCache() {
-        return this.f24238a;
+        return this.a;
     }
 
     public String toString() {

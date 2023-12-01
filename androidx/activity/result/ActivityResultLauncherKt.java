@@ -8,9 +8,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/activity/result/ActivityResultLauncherKt.class */
 public final class ActivityResultLauncherKt {
-    public static final void launch(ActivityResultLauncher<Void> launch, ActivityOptionsCompat activityOptionsCompat) {
-        Intrinsics.e(launch, "$this$launch");
-        launch.launch(null, activityOptionsCompat);
+    public static final void launch(ActivityResultLauncher<Void> activityResultLauncher, ActivityOptionsCompat activityOptionsCompat) {
+        Intrinsics.e(activityResultLauncher, "$this$launch");
+        activityResultLauncher.launch(null, activityOptionsCompat);
     }
 
     public static /* synthetic */ void launch$default(ActivityResultLauncher activityResultLauncher, ActivityOptionsCompat activityOptionsCompat, int i, Object obj) {
@@ -20,9 +20,9 @@ public final class ActivityResultLauncherKt {
         launch(activityResultLauncher, activityOptionsCompat);
     }
 
-    public static final void launchUnit(ActivityResultLauncher<Unit> launch, ActivityOptionsCompat activityOptionsCompat) {
-        Intrinsics.e(launch, "$this$launch");
-        launch.launch(null, activityOptionsCompat);
+    public static final void launchUnit(ActivityResultLauncher<Unit> activityResultLauncher, ActivityOptionsCompat activityOptionsCompat) {
+        Intrinsics.e(activityResultLauncher, "$this$launch");
+        activityResultLauncher.launch(null, activityOptionsCompat);
     }
 
     public static /* synthetic */ void launchUnit$default(ActivityResultLauncher activityResultLauncher, ActivityOptionsCompat activityOptionsCompat, int i, Object obj) {

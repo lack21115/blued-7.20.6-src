@@ -23,13 +23,13 @@ import java.util.Locale;
 public final class LocalMediaLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f32599a = LocalMediaLoader.class.getSimpleName();
+    private static final String f18908a = LocalMediaLoader.class.getSimpleName();
     private static final Uri b = MediaStore.Files.getContentUri(Constant.Param.KEY_RPK_EXTERNAL);
     private static final String[] f = {"_id", "_data", "mime_type", "width", "height", "duration", "_size", "bucket_display_name", "_display_name", "bucket_id"};
     private static final String[] g = {String.valueOf(1), String.valueOf(3)};
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f32600c;
+    private Context f18909c;
     private boolean d = AppUtils.b();
     private int e;
 
@@ -71,7 +71,7 @@ public final class LocalMediaLoader {
     }
 
     public LocalMediaLoader(Context context, int i) {
-        this.f32600c = context.getApplicationContext();
+        this.f18909c = context.getApplicationContext();
         this.e = i;
     }
 
@@ -152,7 +152,7 @@ public final class LocalMediaLoader {
     }
 
     public LinkedHashMap<String, List<ChildImageInfo>> a() {
-        Cursor query = this.f32600c.getContentResolver().query(b, f, c(), d(), "_id DESC");
+        Cursor query = this.f18909c.getContentResolver().query(b, f, c(), d(), "_id DESC");
         try {
             if (query == null) {
                 if (query == null || query.isClosed()) {
@@ -163,7 +163,7 @@ public final class LocalMediaLoader {
             }
             try {
                 LinkedHashMap<String, List<ChildImageInfo>> linkedHashMap = new LinkedHashMap<>();
-                linkedHashMap.put(this.f32600c.getResources().getString(R.string.msg_camera_pic), new ArrayList());
+                linkedHashMap.put(this.f18909c.getResources().getString(R.string.msg_camera_pic), new ArrayList());
                 if (query.getCount() <= 0) {
                     if (query != null) {
                         query.close();
@@ -199,9 +199,9 @@ public final class LocalMediaLoader {
                     long j3 = query.getLong(columnIndexOrThrow7);
                     String string3 = query.getString(columnIndexOrThrow8);
                     String string4 = query.getString(columnIndexOrThrow9);
-                    String str3 = f32599a;
+                    String str3 = f18908a;
                     Logger.c(str3, "fileName : " + string4 + "    type :" + str2 + "  path :" + a2 + "isAndroidQ : " + this.d);
-                    String str4 = f32599a;
+                    String str4 = f18908a;
                     StringBuilder sb = new StringBuilder();
                     sb.append("absolutePath : ");
                     sb.append(string);
@@ -225,7 +225,7 @@ public final class LocalMediaLoader {
                         if (!linkedHashMap.containsValue(string3)) {
                             linkedHashMap.put(string3, arrayList);
                         }
-                        linkedHashMap.get(this.f32600c.getResources().getString(R.string.msg_camera_pic)).add(childImageInfo);
+                        linkedHashMap.get(this.f18909c.getResources().getString(R.string.msg_camera_pic)).add(childImageInfo);
                     }
                 } while (query.moveToNext());
                 if (query != null && !query.isClosed()) {
@@ -234,7 +234,7 @@ public final class LocalMediaLoader {
                 return linkedHashMap;
             } catch (Exception e) {
                 e.printStackTrace();
-                String str5 = f32599a;
+                String str5 = f18908a;
                 Log.i(str5, "loadAllMedia Data Error: " + e.getMessage());
                 if (query == null || query.isClosed()) {
                     return null;

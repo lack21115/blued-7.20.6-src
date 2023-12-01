@@ -13,13 +13,11 @@ import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/presenter/LiveGrabRewardPresenter.class */
 public class LiveGrabRewardPresenter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IGrabRewardView f14025a;
+    private IGrabRewardView a;
     private IRequestHost b;
 
     public LiveGrabRewardPresenter(IGrabRewardView iGrabRewardView, IRequestHost iRequestHost) {
-        this.f14025a = iGrabRewardView;
+        this.a = iGrabRewardView;
         this.b = iRequestHost;
     }
 
@@ -30,7 +28,7 @@ public class LiveGrabRewardPresenter {
                 AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.presenter.LiveGrabRewardPresenter.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        LiveGrabRewardPresenter.this.f14025a.a(th, i, str4);
+                        LiveGrabRewardPresenter.this.a.a(th, i, str4);
                     }
                 });
             }
@@ -42,7 +40,7 @@ public class LiveGrabRewardPresenter {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                LiveGrabRewardPresenter.this.f14025a.f();
+                LiveGrabRewardPresenter.this.a.f();
             }
 
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -51,7 +49,7 @@ public class LiveGrabRewardPresenter {
                     if (bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                         return;
                     }
-                    LiveGrabRewardPresenter.this.f14025a.a(bluedEntity.data.get(0));
+                    LiveGrabRewardPresenter.this.a.a(bluedEntity.data.get(0));
                     if (TextUtils.isEmpty(str3)) {
                         return;
                     }

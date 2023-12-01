@@ -8,7 +8,7 @@ public final class f0 {
     public static f0 b;
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile Map<String, g0> f22741a = new HashMap();
+    public volatile Map<String, g0> f9133a = new HashMap();
 
     public static f0 a() {
         if (b == null) {
@@ -30,10 +30,10 @@ public final class f0 {
     }
 
     public final g0 a(String str) {
-        if (!this.f22741a.containsKey(str)) {
-            this.f22741a.put(str, new g0());
+        if (!this.f9133a.containsKey(str)) {
+            this.f9133a.put(str, new g0());
         }
-        return this.f22741a.get(str);
+        return this.f9133a.get(str);
     }
 
     public g0 a(String str, long j) {

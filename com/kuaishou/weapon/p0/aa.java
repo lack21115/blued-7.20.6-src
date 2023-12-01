@@ -7,7 +7,7 @@ import java.io.BufferedInputStream;
 public class aa {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile aa f23716a;
+    private static volatile aa f10108a;
 
     private aa() {
     }
@@ -16,14 +16,14 @@ public class aa {
         aa aaVar;
         synchronized (aa.class) {
             try {
-                if (f23716a == null) {
+                if (f10108a == null) {
                     synchronized (aa.class) {
-                        if (f23716a == null) {
-                            f23716a = new aa();
+                        if (f10108a == null) {
+                            f10108a = new aa();
                         }
                     }
                 }
-                aaVar = f23716a;
+                aaVar = f10108a;
             } catch (Throwable th) {
                 throw th;
             }

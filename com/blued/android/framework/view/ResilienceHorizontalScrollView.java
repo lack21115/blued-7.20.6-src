@@ -8,29 +8,25 @@ import android.widget.HorizontalScrollView;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/ResilienceHorizontalScrollView.class */
 public class ResilienceHorizontalScrollView extends HorizontalScrollView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Rect f10184a;
+    private Rect a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10185c;
+    private boolean c;
     private boolean d;
     private boolean e;
     private float f;
 
     public ResilienceHorizontalScrollView(Context context) {
         super(context);
-        this.f10184a = new Rect();
-        this.f10185c = false;
+        this.a = new Rect();
+        this.c = false;
         this.d = false;
         this.e = false;
     }
 
     public ResilienceHorizontalScrollView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10184a = new Rect();
-        this.f10185c = false;
+        this.a = new Rect();
+        this.c = false;
         this.d = false;
         this.e = false;
     }
@@ -77,6 +73,6 @@ public class ResilienceHorizontalScrollView extends HorizontalScrollView {
         if (view == null) {
             return;
         }
-        this.f10184a.set(view.getLeft(), this.b.getTop(), this.b.getRight(), this.b.getBottom());
+        this.a.set(view.getLeft(), this.b.getTop(), this.b.getRight(), this.b.getBottom());
     }
 }

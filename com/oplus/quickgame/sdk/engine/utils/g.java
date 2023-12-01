@@ -6,7 +6,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.common.net.HttpHeaders;
 import com.oplus.quickgame.sdk.engine.callback.Callback;
 import com.oplus.quickgame.sdk.engine.observer.RequestObserver;
@@ -21,11 +20,11 @@ import org.json.JSONObject;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f24413a = "xgame_hap_game_cache_manage";
+    public static String f10726a = "xgame_hap_game_cache_manage";
     public static String b = "action_game_cache";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f24414c = "action_query_game_cache";
+    public static String f10727c = "action_query_game_cache";
     public static String d = "action_delete_game_cache";
     public static String e = "action_query_game_pkg_list";
     public static String f = "action_delete_one_game_cache";
@@ -47,17 +46,17 @@ public class g {
     public static class b extends Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private Callback f24415a;
+        private Callback f10728a;
         private Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f24416c;
+        private String f10729c;
         private Map<String, String> d;
 
         public b(Context context, String str, Callback callback, Map<String, String> map) {
-            this.f24415a = callback;
+            this.f10728a = callback;
             this.b = context;
-            this.f24416c = str;
+            this.f10729c = str;
             this.d = map;
         }
 
@@ -71,7 +70,7 @@ public class g {
                         i.b("GameUtil", "wrapper onResponse " + response);
                         Intent intent = new Intent();
                         intent.setComponent(new ComponentName(c.a("Y29tLmhleXRhcC54Z2FtZQ=="), c.a("Y29tLm5lYXJtZS5pbnN0YW50LnF1aWNrZ2FtZS5hY3Rpdml0eS5HYW1lVHJhbnNmZXJBY3Rpdml0eQ==")));
-                        intent.putExtra("req_uri", this.f24416c);
+                        intent.putExtra("req_uri", this.f10729c);
                         intent.putExtra("tsf_key", this.d.get("tsf_key"));
                         if (this.b instanceof Activity) {
                             Activity activity = (Activity) this.b;
@@ -96,7 +95,7 @@ public class g {
                     }
                 }
             }
-            Callback callback = this.f24415a;
+            Callback callback = this.f10728a;
             if (callback != null) {
                 callback.onResponse(response2);
             }
@@ -112,14 +111,14 @@ public class g {
     }
 
     public static String a() {
-        return System.currentTimeMillis() + BridgeUtil.UNDERLINE_STR + new Random().nextInt();
+        return System.currentTimeMillis() + "_" + new Random().nextInt();
     }
 
     public static void a(Context context, Callback callback, String str, String str2) {
         synchronized (g.class) {
             try {
                 ContentValues contentValues = new ContentValues();
-                Uri parse = Uri.parse("content://" + f24413a);
+                Uri parse = Uri.parse("content://" + f10726a);
                 contentValues.put("req_url", f.a(context, str2, parse.toString()));
                 contentValues.put(HttpHeaders.ReferrerPolicyValues.ORIGIN, str);
                 contentValues.put(b, d);
@@ -143,7 +142,7 @@ public class g {
         synchronized (g.class) {
             try {
                 ContentValues contentValues = new ContentValues();
-                Uri parse = Uri.parse("content://" + f24413a);
+                Uri parse = Uri.parse("content://" + f10726a);
                 contentValues.put("req_url", f.a(context, str2, parse.toString()));
                 contentValues.put(HttpHeaders.ReferrerPolicyValues.ORIGIN, str);
                 contentValues.put(b, f);
@@ -179,10 +178,10 @@ public class g {
         synchronized (g.class) {
             try {
                 ContentValues contentValues = new ContentValues();
-                Uri parse = Uri.parse("content://" + f24413a);
+                Uri parse = Uri.parse("content://" + f10726a);
                 contentValues.put("req_url", f.a(context, str2, parse.toString()));
                 contentValues.put(HttpHeaders.ReferrerPolicyValues.ORIGIN, str);
-                contentValues.put(b, f24414c);
+                contentValues.put(b, f10727c);
                 context.getContentResolver().registerContentObserver(parse, false, new RequestObserver(context, null, callback, parse));
                 context.getContentResolver().insert(parse, contentValues);
             } catch (Throwable th) {
@@ -218,7 +217,7 @@ public class g {
         synchronized (g.class) {
             try {
                 ContentValues contentValues = new ContentValues();
-                Uri parse = Uri.parse("content://" + f24413a);
+                Uri parse = Uri.parse("content://" + f10726a);
                 contentValues.put("req_url", f.a(context, str2, parse.toString()));
                 contentValues.put(HttpHeaders.ReferrerPolicyValues.ORIGIN, str);
                 contentValues.put(b, e);
@@ -240,7 +239,7 @@ public class g {
 
     public static void d(Context context, Callback callback, String str, String str2) {
         ContentValues contentValues = new ContentValues();
-        Uri parse = Uri.parse("content://" + f24413a);
+        Uri parse = Uri.parse("content://" + f10726a);
         contentValues.put("req_url", f.a(context, str2, parse.toString()));
         contentValues.put(HttpHeaders.ReferrerPolicyValues.ORIGIN, str);
         contentValues.put(b, "action_upload_error_log");

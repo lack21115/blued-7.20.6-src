@@ -1,12 +1,12 @@
 package com.sobot.chat.widget.zxing.aztec.decoder;
 
+import android.app.backup.FullBackup;
 import androidx.exifinterface.media.ExifInterface;
-import com.alipay.sdk.util.i;
-import com.amap.api.col.p0003sl.iu;
-import com.android.internal.telephony.PhoneConstants;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.ads.ContentClassification;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.sobot.chat.widget.zxing.FormatException;
 import com.sobot.chat.widget.zxing.aztec.AztecDetectorResult;
@@ -16,6 +16,7 @@ import com.sobot.chat.widget.zxing.common.reedsolomon.GenericGF;
 import com.sobot.chat.widget.zxing.common.reedsolomon.ReedSolomonDecoder;
 import com.sobot.chat.widget.zxing.common.reedsolomon.ReedSolomonException;
 import com.tencent.qcloud.core.util.IOUtils;
+import com.tencent.qimei.o.j;
 import com.umeng.analytics.pro.bh;
 import com.xiaomi.mipush.sdk.Constants;
 import java.util.Arrays;
@@ -24,9 +25,9 @@ import java.util.Arrays;
 public final class Decoder {
     private AztecDetectorResult ddata;
     private static final String[] UPPER_TABLE = {"CTRL_PS", " ", "A", "B", "C", "D", ExifInterface.LONGITUDE_EAST, "F", "G", "H", "I", ContentClassification.AD_CONTENT_CLASSIFICATION_J, "K", "L", "M", "N", "O", "P", "Q", "R", ExifInterface.LATITUDE_SOUTH, ExifInterface.GPS_DIRECTION_TRUE, "U", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "W", "X", "Y", "Z", "CTRL_LL", "CTRL_ML", "CTRL_DL", "CTRL_BS"};
-    private static final String[] LOWER_TABLE = {"CTRL_PS", " ", "a", "b", "c", "d", iu.h, "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", IAdInterListener.AdReqParam.WIDTH, "x", "y", bh.aG, "CTRL_US", "CTRL_ML", "CTRL_DL", "CTRL_BS"};
-    private static final String[] MIXED_TABLE = {"CTRL_PS", " ", "\u0001", "\u0002", "\u0003", "\u0004", "\u0005", "\u0006", "\u0007", "\b", "\t", "\n", "\u000b", "\f", "\r", "\u001b", "\u001c", "\u001d", "\u001e", "\u001f", "@", "\\", "^", BridgeUtil.UNDERLINE_STR, "`", "|", Constants.WAVE_SEPARATOR, "\u007f", "CTRL_LL", "CTRL_UL", "CTRL_PL", "CTRL_BS"};
-    private static final String[] PUNCT_TABLE = {"", "\r", IOUtils.LINE_SEPARATOR_WINDOWS, ". ", ", ", ": ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", PhoneConstants.APN_TYPE_ALL, "+", ",", "-", ".", BridgeUtil.SPLIT_MARK, ":", ";", SimpleComparison.LESS_THAN_OPERATION, "=", SimpleComparison.GREATER_THAN_OPERATION, "?", "[", "]", "{", i.d, "CTRL_UL"};
+    private static final String[] LOWER_TABLE = {"CTRL_PS", " ", "a", "b", "c", "d", "e", FullBackup.DATA_TREE_TOKEN, OapsKey.KEY_GRADE, "h", "i", j.f24685a, "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", IAdInterListener.AdReqParam.WIDTH, "x", "y", bh.aG, "CTRL_US", "CTRL_ML", "CTRL_DL", "CTRL_BS"};
+    private static final String[] MIXED_TABLE = {"CTRL_PS", " ", "\u0001", "\u0002", "\u0003", "\u0004", "\u0005", "\u0006", "\u0007", "\b", "\t", "\n", "\u000b", "\f", "\r", "\u001b", "\u001c", "\u001d", "\u001e", "\u001f", "@", "\\", "^", "_", "`", "|", Constants.WAVE_SEPARATOR, "\u007f", "CTRL_LL", "CTRL_UL", "CTRL_PL", "CTRL_BS"};
+    private static final String[] PUNCT_TABLE = {"", "\r", IOUtils.LINE_SEPARATOR_WINDOWS, ". ", ", ", ": ", "!", "\"", "#", "$", "%", ContainerUtils.FIELD_DELIMITER, "'", "(", ")", "*", "+", ",", Constants.ACCEPT_TIME_SEPARATOR_SERVER, ".", "/", ":", t.aE, SimpleComparison.LESS_THAN_OPERATION, "=", SimpleComparison.GREATER_THAN_OPERATION, "?", "[", "]", "{", "}", "CTRL_UL"};
     private static final String[] DIGIT_TABLE = {"CTRL_PS", " ", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ",", ".", "CTRL_UL", "CTRL_US"};
 
     /* JADX INFO: Access modifiers changed from: package-private */

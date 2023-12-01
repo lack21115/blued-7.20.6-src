@@ -70,7 +70,7 @@ public abstract class InternalAbstract extends RelativeLayout implements Refresh
         if (view != null) {
             ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
             if (layoutParams instanceof SmartRefreshLayout.LayoutParams) {
-                refreshKernel.a(this, ((SmartRefreshLayout.LayoutParams) layoutParams).f27963a);
+                refreshKernel.a(this, ((SmartRefreshLayout.LayoutParams) layoutParams).f14275a);
             }
         }
     }

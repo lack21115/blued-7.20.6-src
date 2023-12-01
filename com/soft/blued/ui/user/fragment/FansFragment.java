@@ -50,12 +50,11 @@ public class FansFragment extends PreloadFragment {
     BluedUIHttpResponse j = new BluedUIHttpResponse<BluedEntity<BluedRecommendUsers, FollowedExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.FansFragment.3
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f33853a;
+        boolean f20162a;
         int b;
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f33853a = true;
+            this.f20162a = true;
             this.b = i;
             if (FansFragment.this.t != 1) {
                 FansFragment.f(FansFragment.this);
@@ -64,7 +63,6 @@ public class FansFragment extends PreloadFragment {
             return true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             FansFragment.this.m.j();
             FansFragment.this.m.q();
@@ -72,18 +70,18 @@ public class FansFragment extends PreloadFragment {
                 Log.v("drb", "没有访问权限");
                 FansFragment.this.r.a(new ArrayList());
                 FansFragment.this.s.setNoDataImg(2131233647);
-                FansFragment.this.s.setNoDataStr(R.string.fans_list_hidden);
+                FansFragment.this.s.setNoDataStr((int) R.string.fans_list_hidden);
             } else {
                 FansFragment.this.s.setNoDataImg(2131233641);
                 if (UserInfo.getInstance().getLoginUserInfo().uid.equals(FansFragment.this.x)) {
-                    FansFragment.this.s.setNoDataStr(R.string.no_fans);
+                    FansFragment.this.s.setNoDataStr((int) R.string.no_fans);
                 } else {
-                    FansFragment.this.s.setNoDataStr(R.string.he_no_fans);
+                    FansFragment.this.s.setNoDataStr((int) R.string.he_no_fans);
                 }
             }
             if (FansFragment.this.r.getCount() != 0) {
                 FansFragment.this.s.d();
-            } else if (!this.f33853a) {
+            } else if (!this.f20162a) {
                 FansFragment.this.s.a();
             } else if (this.b == 403903) {
                 Log.v("drb", "showNodata");
@@ -99,7 +97,6 @@ public class FansFragment extends PreloadFragment {
             FansFragment.this.r.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedRecommendUsers, FollowedExtra> bluedEntity) {
             if (bluedEntity != null) {
                 try {
@@ -112,7 +109,7 @@ public class FansFragment extends PreloadFragment {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) FansFragment.this.k.getResources().getString(2131887272));
+                    AppMethods.a(FansFragment.this.k.getResources().getString(2131887272));
                     if (FansFragment.this.t != 1) {
                         FansFragment.f(FansFragment.this);
                         return;
@@ -131,13 +128,13 @@ public class FansFragment extends PreloadFragment {
                     FansFragment.this.m.j();
                     FansFragment.this.m.q();
                 }
-                AppMethods.a((CharSequence) FansFragment.this.k.getResources().getString(2131887275));
+                AppMethods.a(FansFragment.this.k.getResources().getString(2131887275));
             } else if (FansFragment.this.t == 1) {
                 FansFragment.this.r.a(bluedEntity.data);
             } else {
                 FansFragment.this.r.b(bluedEntity.data);
             }
-            if (bluedEntity == null || bluedEntity.extra == null || bluedEntity.extra.count_repair != 1) {
+            if (bluedEntity == null || bluedEntity.extra == null || ((FollowedExtra) bluedEntity.extra).count_repair != 1) {
                 FansFragment.this.p.setVisibility(8);
             } else {
                 FansFragment.this.p.setVisibility(0);
@@ -162,7 +159,7 @@ public class FansFragment extends PreloadFragment {
         }
         if (!this.v && (i = this.t) != 1) {
             this.t = i - 1;
-            AppMethods.a((CharSequence) this.k.getResources().getString(2131887275));
+            AppMethods.a(this.k.getResources().getString(2131887275));
             this.m.j();
             this.m.q();
             return;
@@ -178,9 +175,9 @@ public class FansFragment extends PreloadFragment {
 
     private void h() {
         this.q = LayoutInflater.from(this.k);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.l.findViewById(2131366898);
-        this.m = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.l.findViewById(R.id.list_view);
+        this.m = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.m.getRefreshableView();
         this.n = listView;
         listView.setClipToPadding(false);
@@ -196,13 +193,11 @@ public class FansFragment extends PreloadFragment {
         this.r = recommendListAdapter;
         this.n.setAdapter((ListAdapter) recommendListAdapter);
         this.m.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.user.fragment.FansFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 FansFragment.this.t = 1;
                 FansFragment.this.a(false);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 FansFragment.a(FansFragment.this);
                 FansFragment.this.a(false);
@@ -213,7 +208,7 @@ public class FansFragment extends PreloadFragment {
     private void i() {
         View inflate = this.q.inflate(R.layout.layout_normal_followed_header, (ViewGroup) null, false);
         this.o = inflate;
-        this.p = (TextView) inflate.findViewById(2131372735);
+        this.p = (TextView) inflate.findViewById(R.id.tv_tip);
         String string = getContext().getString(R.string.normal_followed_clean_tip);
         this.p.setText(string);
         TypefaceUtils.a(getContext(), this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.FansFragment.2
@@ -234,7 +229,6 @@ public class FansFragment extends PreloadFragment {
         return !TextUtils.isEmpty(this.x) && this.x.equals(UserInfo.getInstance().getLoginUserInfo().getUid());
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment
     public void a(View view) {
         FragmentActivity activity = getActivity();
         this.k = activity;
@@ -249,20 +243,18 @@ public class FansFragment extends PreloadFragment {
             this.x = getArguments().getString("uid");
         }
         if (UserInfo.getInstance().getLoginUserInfo().uid.equals(this.x)) {
-            this.s.setNoDataStr(R.string.no_fans);
+            this.s.setNoDataStr((int) R.string.no_fans);
         } else {
-            this.s.setNoDataStr(R.string.he_no_fans);
+            this.s.setNoDataStr((int) R.string.he_no_fans);
         }
         ((FrameLayout) this.l.findViewById(2131364048)).addView(this.s);
         h();
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }
 
-    @Override // com.blued.android.framework.activity.PreloadFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         RenrenPullToRefreshListView renrenPullToRefreshListView;
         super.setUserVisibleHint(z);

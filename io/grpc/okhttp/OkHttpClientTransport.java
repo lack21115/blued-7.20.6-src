@@ -1,19 +1,17 @@
 package io.grpc.okhttp;
 
-import android.provider.Downloads;
 import android.widget.ExpandableListView;
+import com.alipay.sdk.cons.b;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Supplier;
-import com.google.common.net.HttpHeaders;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
 import com.squareup.okhttp.Credentials;
 import com.squareup.okhttp.HttpUrl;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.internal.http.StatusLine;
-import com.tencent.qcloud.core.util.IOUtils;
 import io.grpc.Attributes;
 import io.grpc.CallOptions;
 import io.grpc.Grpc;
@@ -55,6 +53,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.SocketAddress;
 import java.net.URI;
 import java.util.Collections;
 import java.util.Deque;
@@ -523,11 +522,11 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
     }
 
     private Request createHttpProxyRequest(InetSocketAddress inetSocketAddress, String str, String str2) {
-        HttpUrl build = new HttpUrl.Builder().scheme("https").host(inetSocketAddress.getHostName()).port(inetSocketAddress.getPort()).build();
+        HttpUrl build = new HttpUrl.Builder().scheme(b.a).host(inetSocketAddress.getHostName()).port(inetSocketAddress.getPort()).build();
         Request.Builder url = new Request.Builder().url(build);
         Request.Builder header = url.header("Host", build.host() + ":" + build.port()).header("User-Agent", this.userAgent);
         if (str != null && str2 != null) {
-            header.header(HttpHeaders.PROXY_AUTHORIZATION, Credentials.basic(str, str2));
+            header.header("Proxy-Authorization", Credentials.basic(str, str2));
         }
         return header.build();
     }
@@ -541,7 +540,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
             BufferedSink buffer = Okio.buffer(Okio.sink(createSocket));
             Request createHttpProxyRequest = createHttpProxyRequest(inetSocketAddress, str, str2);
             HttpUrl httpUrl = createHttpProxyRequest.httpUrl();
-            buffer.writeUtf8(String.format("CONNECT %s:%d HTTP/1.1", httpUrl.host(), Integer.valueOf(httpUrl.port()))).writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+            buffer.writeUtf8(String.format("CONNECT %s:%d HTTP/1.1", httpUrl.host(), Integer.valueOf(httpUrl.port()))).writeUtf8("\r\n");
             int size = createHttpProxyRequest.headers().size();
             int i = 0;
             while (true) {
@@ -549,10 +548,10 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
                 if (i2 >= size) {
                     break;
                 }
-                buffer.writeUtf8(createHttpProxyRequest.headers().name(i2)).writeUtf8(": ").writeUtf8(createHttpProxyRequest.headers().value(i2)).writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+                buffer.writeUtf8(createHttpProxyRequest.headers().name(i2)).writeUtf8(": ").writeUtf8(createHttpProxyRequest.headers().value(i2)).writeUtf8("\r\n");
                 i = i2 + 1;
             }
-            buffer.writeUtf8(IOUtils.LINE_SEPARATOR_WINDOWS);
+            buffer.writeUtf8("\r\n");
             buffer.flush();
             StatusLine parse = StatusLine.parse(readUtf8LineStrictUnbuffered(source));
             while (!readUtf8LineStrictUnbuffered(source).equals("")) {
@@ -787,7 +786,6 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
         return this.clientFrameHandler;
     }
 
-    @Override // io.grpc.InternalWithLogId
     public InternalLogId getLogId() {
         return this.logId;
     }
@@ -814,12 +812,11 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
         return this.socketFactory;
     }
 
-    @Override // io.grpc.InternalInstrumented
     public ListenableFuture<InternalChannelz.SocketStats> getStats() {
         SettableFuture create = SettableFuture.create();
         synchronized (this.lock) {
             if (this.socket == null) {
-                create.set(new InternalChannelz.SocketStats(this.transportTracer.getStats(), null, null, new InternalChannelz.SocketOptions.Builder().build(), null));
+                create.set(new InternalChannelz.SocketStats(this.transportTracer.getStats(), (SocketAddress) null, (SocketAddress) null, new InternalChannelz.SocketOptions.Builder().build(), (InternalChannelz.Security) null));
             } else {
                 create.set(new InternalChannelz.SocketStats(this.transportTracer.getStats(), this.socket.getLocalSocketAddress(), this.socket.getRemoteSocketAddress(), Utils.getSocketOptions(this.socket), this.securityInfo));
             }
@@ -864,7 +861,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
         Object obj2;
         OkHttpClientStream okHttpClientStream;
         Preconditions.checkNotNull(methodDescriptor, "method");
-        Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        Preconditions.checkNotNull(metadata, "headers");
         StatsTraceContext newClientContext = StatsTraceContext.newClientContext(callOptions, this.attributes, metadata);
         Object obj3 = this.lock;
         synchronized (obj3) {
@@ -907,7 +904,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
                 z = false;
             } else {
                 nextLong = this.random.nextLong();
-                Stopwatch stopwatch = this.stopwatchFactory.get();
+                Stopwatch stopwatch = (Stopwatch) this.stopwatchFactory.get();
                 stopwatch.start();
                 http2Ping = new Http2Ping(nextLong, stopwatch);
                 this.ping = http2Ping;
@@ -998,7 +995,7 @@ public class OkHttpClientTransport implements ConnectionClientTransport, Excepti
                         OkHttpClientTransport.this.maxConcurrentStreams = Integer.MAX_VALUE;
                         OkHttpClientTransport.this.startPendingStreams();
                     }
-                    OkHttpClientTransport.this.connectedFuture.set(null);
+                    OkHttpClientTransport.this.connectedFuture.set((Object) null);
                 }
             });
             return null;

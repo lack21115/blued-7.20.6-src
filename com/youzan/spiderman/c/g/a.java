@@ -27,17 +27,17 @@ import okhttp3.ResponseBody;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f41776a;
+    private static a f28085a;
     private com.youzan.spiderman.c.f.b b = com.youzan.spiderman.c.f.b.a();
 
     private a() {
     }
 
     public static a a() {
-        if (f41776a == null) {
-            f41776a = new a();
+        if (f28085a == null) {
+            f28085a = new a();
         }
-        return f41776a;
+        return f28085a;
     }
 
     static /* synthetic */ List a(a aVar, List list) {
@@ -84,12 +84,10 @@ public final class a {
                 }
             }
 
-            @Override // okhttp3.Callback
             public final void onFailure(Call call, IOException iOException) {
                 Logger.e("UploadManager", "upload request fail: " + iOException, new Object[0]);
             }
 
-            @Override // okhttp3.Callback
             public final void onResponse(Call call, Response response) throws IOException {
                 if (!response.isSuccessful()) {
                     Logger.i("UploadManager", "upload request is not successful", new Object[0]);

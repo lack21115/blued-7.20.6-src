@@ -31,11 +31,11 @@ public class PPSCircleProgressBar extends View {
     private int L;
 
     /* renamed from: a  reason: collision with root package name */
-    private float f23017a;
+    private float f9409a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f23018c;
+    private int f9410c;
     private int d;
     private float e;
     private float f;
@@ -195,10 +195,10 @@ public class PPSCircleProgressBar extends View {
                     return;
                 }
                 this.L = obtainStyledAttributes.getColor(R.styleable.hiad_circle_progress_outerColor, resources.getColor(R.color.hiad_circle_outer));
-                this.f23017a = obtainStyledAttributes.getDimension(R.styleable.hiad_circle_progress_outerRadius, resources.getDimension(R.dimen.hiad_24_dp));
+                this.f9409a = obtainStyledAttributes.getDimension(R.styleable.hiad_circle_progress_outerRadius, resources.getDimension(R.dimen.hiad_24_dp));
                 this.b = obtainStyledAttributes.getColor(R.styleable.hiad_circle_progress_innerColor, resources.getColor(R.color.hiad_circle_inner));
                 this.d = obtainStyledAttributes.getColor(R.styleable.hiad_circle_progress_textColor, resources.getColor(R.color.hiad_circle_text));
-                this.f23018c = obtainStyledAttributes.getColor(R.styleable.hiad_circle_progress_fillColor, resources.getColor(R.color.hiad_circle_fill));
+                this.f9410c = obtainStyledAttributes.getColor(R.styleable.hiad_circle_progress_fillColor, resources.getColor(R.color.hiad_circle_fill));
                 this.e = obtainStyledAttributes.getDimension(R.styleable.hiad_circle_progress_textSize, v.Z(context, 18.0f));
                 this.f = obtainStyledAttributes.getDimension(R.styleable.hiad_circle_progress_progressWidth, v.V(context, 2.0f));
                 this.h = obtainStyledAttributes.getFloat(R.styleable.hiad_circle_progress_progress, 0.0f);
@@ -307,7 +307,7 @@ public class PPSCircleProgressBar extends View {
     public float getOuterRadius() {
         float f;
         synchronized (this.D) {
-            f = this.f23017a;
+            f = this.f9409a;
         }
         return f;
     }
@@ -352,25 +352,24 @@ public class PPSCircleProgressBar extends View {
         return f;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         synchronized (this.D) {
             try {
                 super.onDraw(canvas);
                 int width = getWidth() / 2;
-                this.j.setColor(this.f23018c);
+                this.j.setColor(this.f9410c);
                 this.j.setStyle(Paint.Style.FILL);
                 this.j.setAntiAlias(true);
                 float f = width;
-                canvas.drawCircle(f, f, this.f23017a, this.j);
+                canvas.drawCircle(f, f, this.f9409a, this.j);
                 this.j.setColor(this.b);
                 this.j.setStyle(Paint.Style.STROKE);
                 this.j.setStrokeWidth(this.f);
                 this.j.setAntiAlias(true);
-                canvas.drawCircle(f, f, this.f23017a, this.j);
+                canvas.drawCircle(f, f, this.f9409a, this.j);
                 this.j.setColor(this.L);
-                canvas.drawArc(new RectF(f - this.f23017a, f - this.f23017a, this.f23017a + f, f + this.f23017a), a.I(this.i), (this.h / this.g) * 360.0f, false, this.j);
+                canvas.drawArc(new RectF(f - this.f9409a, f - this.f9409a, this.f9409a + f, f + this.f9409a), a.I(this.i), (this.h / this.g) * 360.0f, false, this.j);
                 this.l = new Rect();
                 this.j.setColor(this.d);
                 this.j.setStyle(Paint.Style.FILL);
@@ -386,12 +385,11 @@ public class PPSCircleProgressBar extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         synchronized (this.D) {
             try {
-                setMeasuredDimension(View.MeasureSpec.getMode(i) == 1073741824 ? View.MeasureSpec.getSize(i) : (int) ((this.f23017a * 2.0f) + this.f), View.MeasureSpec.getMode(i2) == 1073741824 ? View.MeasureSpec.getSize(i2) : (int) ((this.f23017a * 2.0f) + this.f));
+                setMeasuredDimension(View.MeasureSpec.getMode(i) == 1073741824 ? View.MeasureSpec.getSize(i) : (int) ((this.f9409a * 2.0f) + this.f), View.MeasureSpec.getMode(i2) == 1073741824 ? View.MeasureSpec.getSize(i2) : (int) ((this.f9409a * 2.0f) + this.f));
             }
         }
     }
@@ -422,7 +420,7 @@ public class PPSCircleProgressBar extends View {
 
     public void setOuterRadius(float f) {
         synchronized (this.D) {
-            this.f23017a = f;
+            this.f9409a = f;
         }
     }
 

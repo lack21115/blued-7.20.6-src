@@ -7,18 +7,18 @@ import com.anythink.expressad.exoplayer.k.af;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f7547a;
+    public final int f4708a;
     public final aa[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final g f7548c;
+    public final g f4709c;
     public final Object d;
 
     public i(aa[] aaVarArr, f[] fVarArr, Object obj) {
         this.b = aaVarArr;
-        this.f7548c = new g(fVarArr);
+        this.f4709c = new g(fVarArr);
         this.d = obj;
-        this.f7547a = aaVarArr.length;
+        this.f4708a = aaVarArr.length;
     }
 
     public final boolean a(int i) {
@@ -26,13 +26,13 @@ public final class i {
     }
 
     public final boolean a(i iVar) {
-        if (iVar == null || iVar.f7548c.f7544a != this.f7548c.f7544a) {
+        if (iVar == null || iVar.f4709c.f4705a != this.f4709c.f4705a) {
             return false;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f7548c.f7544a) {
+            if (i2 >= this.f4709c.f4705a) {
                 return true;
             }
             if (!a(iVar, i2)) {
@@ -43,6 +43,6 @@ public final class i {
     }
 
     public final boolean a(i iVar, int i) {
-        return iVar != null && af.a(this.b[i], iVar.b[i]) && af.a(this.f7548c.a(i), iVar.f7548c.a(i));
+        return iVar != null && af.a(this.b[i], iVar.b[i]) && af.a(this.f4709c.a(i), iVar.f4709c.a(i));
     }
 }

@@ -7,19 +7,17 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/t.class */
 public class t extends IDUService.Stub {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ DUService f4197a;
+    final /* synthetic */ DUService a;
 
     public t(DUService dUService) {
-        this.f4197a = dUService;
+        this.a = dUService;
     }
 
     @Override // cn.shuzilm.core.IDUService
     public void getOpenAnmsIDAsyn(DUListener dUListener) {
         Context context;
         try {
-            context = this.f4197a.f4164a;
+            context = this.a.a;
             DUHelper.ZVTFJRAAsyn(context, dUListener);
         } catch (Exception e) {
             e.printStackTrace();
@@ -30,7 +28,7 @@ public class t extends IDUService.Stub {
     public String getQueryID(String str, String str2) {
         Context context;
         try {
-            context = this.f4197a.f4164a;
+            context = this.a.a;
             return DUHelper.getQueryID(context, str, str2);
         } catch (Exception e) {
             e.printStackTrace();
@@ -43,7 +41,7 @@ public class t extends IDUService.Stub {
         Context context;
         HashMap hashMap = new HashMap();
         try {
-            context = this.f4197a.f4164a;
+            context = this.a.a;
             return DUHelper.getQueryIDDUCallback(context, str, str2, 1, dUListener);
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,7 +53,7 @@ public class t extends IDUService.Stub {
     public void go(String str, String str2) {
         Context context;
         try {
-            context = this.f4197a.f4164a;
+            context = this.a.a;
             DUHelper.go(context, str, str2);
         } catch (Exception e) {
             e.printStackTrace();
@@ -67,7 +65,7 @@ public class t extends IDUService.Stub {
         Context context;
         HashMap hashMap = new HashMap();
         try {
-            context = this.f4197a.f4164a;
+            context = this.a.a;
             return DUHelper.onEventDUCallback(context, str, str2, str3, 0, null);
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +78,7 @@ public class t extends IDUService.Stub {
         Context context;
         HashMap hashMap = new HashMap();
         try {
-            context = this.f4197a.f4164a;
+            context = this.a.a;
             return DUHelper.onEventDUCallback(context, str, str2, str3, 1, dUListener);
         } catch (Exception e) {
             e.printStackTrace();
@@ -92,7 +90,7 @@ public class t extends IDUService.Stub {
     public void report(String str, String str2) {
         Context context;
         try {
-            context = this.f4197a.f4164a;
+            context = this.a.a;
             DUHelper.report(context, str, str2);
         } catch (Exception e) {
             e.printStackTrace();

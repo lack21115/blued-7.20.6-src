@@ -7,19 +7,19 @@ import android.graphics.Point;
 public final /* synthetic */ class aq implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37131a;
+    private final f f23440a;
     private final Point b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f37132c;
+    private final int f23441c;
     private final int d;
     private final int e;
     private final int f;
 
     private aq(f fVar, Point point, int i, int i2, int i3, int i4) {
-        this.f37131a = fVar;
+        this.f23440a = fVar;
         this.b = point;
-        this.f37132c = i;
+        this.f23441c = i;
         this.d = i2;
         this.e = i3;
         this.f = i4;
@@ -31,6 +31,6 @@ public final /* synthetic */ class aq implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37131a, this.b, this.f37132c, this.d, this.e, this.f);
+        f.a(this.f23440a, this.b, this.f23441c, this.d, this.e, this.f);
     }
 }

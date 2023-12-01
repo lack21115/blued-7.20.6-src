@@ -10,18 +10,18 @@ import java.util.concurrent.LinkedBlockingDeque;
 public final class b implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BlockingDeque<PixelFrame> f36654a = new LinkedBlockingDeque(2);
+    private final BlockingDeque<PixelFrame> f22963a = new LinkedBlockingDeque(2);
 
     @Override // com.tencent.liteav.videobase.utils.h
     public final PixelFrame a() {
-        return this.f36654a.poll();
+        return this.f22963a.poll();
     }
 
     @Override // com.tencent.liteav.videobase.utils.h
     public final void a(PixelFrame pixelFrame) {
         pixelFrame.retain();
         try {
-            this.f36654a.put(pixelFrame);
+            this.f22963a.put(pixelFrame);
         } catch (InterruptedException e) {
             LiteavLog.e("BlockingFrameQueue", "push frame failed with exception", e);
         }
@@ -30,7 +30,7 @@ public final class b implements h {
     @Override // com.tencent.liteav.videobase.utils.h
     public final void b() {
         ArrayList arrayList = new ArrayList();
-        this.f36654a.drainTo(arrayList);
+        this.f22963a.drainTo(arrayList);
         PixelFrame.releasePixelFrames(arrayList);
     }
 }

@@ -61,7 +61,6 @@ public class MyCircleModel extends DiscoverRecommendModel implements MultiItemEn
         }
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return 0;
     }

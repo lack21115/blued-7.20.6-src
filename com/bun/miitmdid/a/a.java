@@ -8,20 +8,20 @@ import org.json.JSONObject;
 public class a implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    public C0299a f21122a = new C0299a(this);
+    public C0129a f7516a = new C0129a(this);
 
     /* renamed from: com.bun.miitmdid.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/bun/miitmdid/a/a$a.class */
-    public class C0299a {
+    public class C0129a {
 
         /* renamed from: a  reason: collision with root package name */
-        public com.bun.miitmdid.a.c.a f21123a;
+        public com.bun.miitmdid.a.c.a f7517a;
         public com.bun.miitmdid.a.c.b b;
 
         /* renamed from: c  reason: collision with root package name */
-        public c f21124c;
+        public c f7518c;
 
-        public C0299a(a aVar) {
+        public C0129a(a aVar) {
         }
     }
 

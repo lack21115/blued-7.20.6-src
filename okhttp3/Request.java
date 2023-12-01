@@ -1,6 +1,6 @@
 package okhttp3;
 
-import com.sobot.network.http.SobotOkHttpUtils;
+import io.grpc.internal.GrpcUtil;
 import java.net.URL;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -111,11 +111,11 @@ public final class Request {
         }
 
         public Builder patch(RequestBody requestBody) {
-            return method(SobotOkHttpUtils.METHOD.PATCH, requestBody);
+            return method("PATCH", requestBody);
         }
 
         public Builder post(RequestBody requestBody) {
-            return method("POST", requestBody);
+            return method(GrpcUtil.HTTP_METHOD, requestBody);
         }
 
         public Builder put(RequestBody requestBody) {

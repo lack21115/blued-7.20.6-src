@@ -19,7 +19,6 @@ public final class YYRedPackageGiftAdapter extends BaseQuickAdapter<YYRedPackage
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYRedPackageGiftItems yYRedPackageGiftItems) {
         String images_static;

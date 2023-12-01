@@ -48,7 +48,7 @@ public final class d {
             fArr[0] = (f * 0.6f) + (fArr2[0] * 0.39999998f);
             fArr[1] = (fArr[1] * 0.6f) + (fArr2[1] * 0.39999998f);
             fArr[2] = (fArr[2] * 0.6f) + (fArr2[2] * 0.39999998f);
-            System.arraycopy((Object) fArr, 0, (Object) fArr2, 0, 3);
+            System.arraycopy(fArr, 0, fArr2, 0, 3);
         }
 
         private void xH() {

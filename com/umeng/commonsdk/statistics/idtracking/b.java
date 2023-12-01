@@ -7,7 +7,7 @@ import com.umeng.commonsdk.statistics.common.DeviceConfig;
 public class b extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40916a = "android_id";
+    private static final String f27225a = "android_id";
     private Context b;
 
     public b(Context context) {

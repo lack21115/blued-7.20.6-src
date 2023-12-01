@@ -59,9 +59,7 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
     GestureDetector U;
     GestureDetector V;
     GestureDetector W;
-
-    /* renamed from: a  reason: collision with root package name */
-    public View f14582a;
+    public View a;
     GestureDetector aa;
     private Context ab;
     private LayoutInflater ac;
@@ -75,9 +73,7 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
     private Dialog ak;
     private RecordingOnliveFragment al;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f14583c;
+    public View c;
     public View d;
     public View e;
     public View f;
@@ -119,8 +115,8 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         this.T = new GestureDetector(this.ab, new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.6
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onDoubleTap(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(0);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(0);
+                if (a == null || a.isEmpty()) {
                     return super.onSingleTapConfirmed(motionEvent);
                 }
                 LiveMakeLoverRootRecordView.this.d(0);
@@ -129,8 +125,8 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
 
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(0);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(0);
+                if (a == null || a.isEmpty()) {
                     return super.onSingleTapConfirmed(motionEvent);
                 }
                 if (!LiveMakeLoverRootRecordView.this.ai) {
@@ -142,8 +138,8 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         this.U = new GestureDetector(this.ab, new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.7
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onDoubleTap(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(1);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(1);
+                if (a == null || a.isEmpty()) {
                     return super.onDoubleTap(motionEvent);
                 }
                 LiveMakeLoverRootRecordView.this.d(1);
@@ -152,13 +148,13 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
 
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(1);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(1);
+                if (a == null || a.isEmpty()) {
                     return super.onSingleTapConfirmed(motionEvent);
                 }
                 if (!LiveMakeLoverRootRecordView.this.ai) {
                     LiveMakeLoverRootRecordView.this.c(1);
-                } else if (a2.lamp == 0) {
+                } else if (a.lamp == 0) {
                     AppMethods.d(R.string.live_make_lover_can_not_match);
                     return super.onSingleTapConfirmed(motionEvent);
                 } else {
@@ -171,8 +167,8 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         this.V = new GestureDetector(this.ab, new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.8
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onDoubleTap(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(2);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(2);
+                if (a == null || a.isEmpty()) {
                     return super.onDoubleTap(motionEvent);
                 }
                 LiveMakeLoverRootRecordView.this.d(2);
@@ -181,13 +177,13 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
 
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(2);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(2);
+                if (a == null || a.isEmpty()) {
                     return super.onSingleTapConfirmed(motionEvent);
                 }
                 if (!LiveMakeLoverRootRecordView.this.ai) {
                     LiveMakeLoverRootRecordView.this.c(2);
-                } else if (a2.lamp == 0) {
+                } else if (a.lamp == 0) {
                     AppMethods.d(R.string.live_make_lover_can_not_match);
                     return super.onSingleTapConfirmed(motionEvent);
                 } else {
@@ -200,8 +196,8 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         this.W = new GestureDetector(this.ab, new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.9
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onDoubleTap(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(3);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(3);
+                if (a == null || a.isEmpty()) {
                     return super.onDoubleTap(motionEvent);
                 }
                 LiveMakeLoverRootRecordView.this.d(3);
@@ -210,13 +206,13 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
 
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(3);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(3);
+                if (a == null || a.isEmpty()) {
                     return super.onSingleTapConfirmed(motionEvent);
                 }
                 if (!LiveMakeLoverRootRecordView.this.ai) {
                     LiveMakeLoverRootRecordView.this.c(3);
-                } else if (a2.lamp == 0) {
+                } else if (a.lamp == 0) {
                     AppMethods.d(R.string.live_make_lover_can_not_match);
                     return super.onSingleTapConfirmed(motionEvent);
                 } else {
@@ -229,8 +225,8 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         this.aa = new GestureDetector(this.ab, new GestureDetector.SimpleOnGestureListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.10
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onDoubleTap(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(4);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(4);
+                if (a == null || a.isEmpty()) {
                     return super.onDoubleTap(motionEvent);
                 }
                 LiveMakeLoverRootRecordView.this.d(4);
@@ -239,13 +235,13 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
 
             @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
             public boolean onSingleTapConfirmed(MotionEvent motionEvent) {
-                LiveMakeLoverFansModel a2 = LiveMakeLoverRootRecordView.this.al.bm.a(4);
-                if (a2 == null || a2.isEmpty()) {
+                LiveMakeLoverFansModel a = LiveMakeLoverRootRecordView.this.al.bm.a(4);
+                if (a == null || a.isEmpty()) {
                     return super.onSingleTapConfirmed(motionEvent);
                 }
                 if (!LiveMakeLoverRootRecordView.this.ai) {
                     LiveMakeLoverRootRecordView.this.c(4);
-                } else if (a2.lamp == 0) {
+                } else if (a.lamp == 0) {
                     AppMethods.d(R.string.live_make_lover_can_not_match);
                     return super.onSingleTapConfirmed(motionEvent);
                 } else {
@@ -370,17 +366,17 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         } else {
             this.R.setImageResource(R.drawable.live_make_lover_make_gray);
         }
-        List<LiveMakeLoverFansModel> a2 = this.al.bm.a();
-        if (a2 == null) {
+        List<LiveMakeLoverFansModel> a = this.al.bm.a();
+        if (a == null) {
             return;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= a2.size()) {
+            if (i2 >= a.size()) {
                 return;
             }
-            LiveMakeLoverFansModel liveMakeLoverFansModel = a2.get(i2);
+            LiveMakeLoverFansModel liveMakeLoverFansModel = a.get(i2);
             if (i2 == 1) {
                 if (liveMakeLoverFansModel == null || liveMakeLoverFansModel.isEmpty()) {
                     this.w.setVisibility(8);
@@ -428,9 +424,9 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         this.ac = LayoutInflater.from(this.ab);
         this.ak = DialogUtils.a(this.ab);
         View inflate = this.ac.inflate(R.layout.live_make_lover_record_view, this);
-        this.f14582a = inflate.findViewById(R.id.fl_make_lover_window_root);
+        this.a = inflate.findViewById(R.id.fl_make_lover_window_root);
         this.b = inflate.findViewById(R.id.live_make_lover_windows_B);
-        this.f14583c = inflate.findViewById(R.id.live_make_lover_windows_C);
+        this.c = inflate.findViewById(R.id.live_make_lover_windows_C);
         this.d = inflate.findViewById(R.id.live_make_lover_windows_D);
         this.e = inflate.findViewById(R.id.live_make_lover_windows_E);
         this.f = inflate.findViewById(R.id.live_make_lover_windows_F);
@@ -485,7 +481,7 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
         this.I.setOnClickListener(this);
         this.J.setOnClickListener(this);
         this.b.setOnClickListener(this);
-        this.f14583c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.e.setOnClickListener(this);
         this.f.setOnClickListener(this);
@@ -495,7 +491,7 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
                 return LiveMakeLoverRootRecordView.this.T.onTouchEvent(motionEvent);
             }
         });
-        this.f14583c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.2
+        this.c.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.2
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 return LiveMakeLoverRootRecordView.this.U.onTouchEvent(motionEvent);
@@ -539,11 +535,11 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
     }
 
     public void b(int i) {
-        LiveMakeLoverFansModel a2 = this.al.bm.a(0);
-        a2.index = 1;
-        LiveMakeLoverFansModel a3 = this.al.bm.a(i);
-        a3.index = i + 1;
-        this.al.a(a2, a3, "", true);
+        LiveMakeLoverFansModel a = this.al.bm.a(0);
+        a.index = 1;
+        LiveMakeLoverFansModel a2 = this.al.bm.a(i);
+        a2.index = i + 1;
+        this.al.a(a, a2, "", true);
     }
 
     public void c() {
@@ -554,10 +550,10 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
     }
 
     public void c(int i) {
-        LiveMakeLoverFansModel a2 = this.al.bm.a(i);
-        if (a2 != null) {
+        LiveMakeLoverFansModel a = this.al.bm.a(i);
+        if (a != null) {
             f(i);
-            this.al.dd.a(a2.uid);
+            this.al.dd.a(a.uid);
         }
     }
 
@@ -568,14 +564,14 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
 
     public void d(int i) {
         g();
-        LiveMakeLoverFansModel a2 = this.al.bm.a(i);
-        if (a2 == null) {
+        LiveMakeLoverFansModel a = this.al.bm.a(i);
+        if (a == null) {
             return;
         }
-        String str = a2.pic;
+        String str = a.pic;
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
-            str2 = a2.avatar;
+            str2 = a.avatar;
         }
         if (TextUtils.isEmpty(str2)) {
             Log.i("==makelover==", "photo is empty");
@@ -629,18 +625,18 @@ public class LiveMakeLoverRootRecordView extends FrameLayout implements View.OnC
 
     public void e(int i) {
         String str = i == 0 ? "0" : "1";
-        final LiveMakeLoverFansModel a2 = this.al.bm.a(i);
-        if (a2 == null) {
+        final LiveMakeLoverFansModel a = this.al.bm.a(i);
+        if (a == null) {
             return;
         }
-        String format = String.format(this.ab.getString(R.string.live_make_lover_kik_tip), a2.name);
+        String format = String.format(this.ab.getString(R.string.live_make_lover_kik_tip), a.name);
         Context context = this.ab;
         final String str2 = str;
         CommonAlertDialog.a(context, "", format, context.getString(R.string.live_make_lover_confirm), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.LiveMakeLoverRootRecordView.12
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i2) {
                 Tracker.onClick(dialogInterface, i2);
-                LiveMakeLoverRootRecordView.this.a(a2, str2);
+                LiveMakeLoverRootRecordView.this.a(a, str2);
             }
         }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }

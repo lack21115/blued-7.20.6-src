@@ -14,13 +14,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LayoutSuperCallingCardBinding.class */
 public final class LayoutSuperCallingCardBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final EditText f12113a;
+    public final EditText a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12114c;
+    public final ImageView c;
     public final ImageView d;
     public final ShapeConstraintLayout e;
     public final ShapeFrameLayout f;
@@ -29,9 +25,9 @@ public final class LayoutSuperCallingCardBinding implements ViewBinding {
 
     private LayoutSuperCallingCardBinding(LinearLayout linearLayout, EditText editText, ImageView imageView, ImageView imageView2, ImageView imageView3, ShapeConstraintLayout shapeConstraintLayout, ShapeFrameLayout shapeFrameLayout, ShapeTextView shapeTextView) {
         this.h = linearLayout;
-        this.f12113a = editText;
+        this.a = editText;
         this.b = imageView;
-        this.f12114c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = shapeConstraintLayout;
         this.f = shapeFrameLayout;
@@ -90,7 +86,6 @@ public final class LayoutSuperCallingCardBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.h;

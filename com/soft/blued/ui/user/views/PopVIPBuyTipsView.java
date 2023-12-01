@@ -16,11 +16,11 @@ import com.soft.blued.log.track.EventTrackVIP;
 public class PopVIPBuyTipsView {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f34372a;
+    public View f20681a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f34373c;
+    public Context f20682c;
     private MyPopupWindow d;
     private BaseFragment e;
     private int f;
@@ -48,13 +48,13 @@ public class PopVIPBuyTipsView {
     class AnonymousClass3 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopVIPBuyTipsView f34374a;
+        final /* synthetic */ PopVIPBuyTipsView f20683a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_BUY_CLICK, this.f34374a.f);
-            this.f34374a.a();
+            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_BUY_CLICK, this.f20683a.f);
+            this.f20683a.a();
         }
     }
 
@@ -63,15 +63,15 @@ public class PopVIPBuyTipsView {
     class AnonymousClass4 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopVIPBuyTipsView f34375a;
+        final /* synthetic */ PopVIPBuyTipsView f20684a;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_CANCEL_CLICK, this.f34375a.f);
-            this.f34375a.a();
-            if (this.f34375a.e.getActivity() != null) {
-                this.f34375a.e.getActivity().finish();
+            EventTrackVIP.a(VipProtos.Event.VIP_BUY_PAGE_CANCEL_POP_CANCEL_CLICK, this.f20684a.f);
+            this.f20684a.a();
+            if (this.f20684a.e.getActivity() != null) {
+                this.f20684a.e.getActivity().finish();
             }
         }
     }
@@ -96,7 +96,7 @@ public class PopVIPBuyTipsView {
     class MyPopupWindow extends PopupWindow {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PopVIPBuyTipsView f34377a;
+        final /* synthetic */ PopVIPBuyTipsView f20686a;
 
         public void a() {
             super.dismiss();
@@ -105,9 +105,9 @@ public class PopVIPBuyTipsView {
         @Override // android.widget.PopupWindow
         public void dismiss() {
             try {
-                this.f34377a.a();
+                this.f20686a.a();
             } catch (Exception e) {
-                if (this.f34377a.e == null || !this.f34377a.e.isAdded()) {
+                if (this.f20686a.e == null || !this.f20686a.e.isAdded()) {
                     return;
                 }
                 a();
@@ -119,8 +119,8 @@ public class PopVIPBuyTipsView {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.5f, 0.0f);
         alphaAnimation.setDuration(300L);
         alphaAnimation.setFillAfter(true);
-        this.f34372a.startAnimation(alphaAnimation);
-        this.b.startAnimation(AnimationUtils.loadAnimation(this.f34373c, 2130772113));
+        this.f20681a.startAnimation(alphaAnimation);
+        this.b.startAnimation(AnimationUtils.loadAnimation(this.f20682c, 2130772113));
     }
 
     public void a() {

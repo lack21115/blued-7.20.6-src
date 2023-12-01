@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FloatViewComingEventsBinding.class */
 public final class FloatViewComingEventsBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16463a;
+    public final ImageView a;
     public final ShapeLinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16464c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     public final ImageView f;
@@ -28,9 +24,9 @@ public final class FloatViewComingEventsBinding implements ViewBinding {
 
     private FloatViewComingEventsBinding(CardView cardView, ImageView imageView, ShapeLinearLayout shapeLinearLayout, TextView textView, TextView textView2, TextView textView3, ImageView imageView2, TextView textView4, TextView textView5) {
         this.i = cardView;
-        this.f16463a = imageView;
+        this.a = imageView;
         this.b = shapeLinearLayout;
-        this.f16464c = textView;
+        this.c = textView;
         this.d = textView2;
         this.e = textView3;
         this.f = imageView2;
@@ -91,7 +87,6 @@ public final class FloatViewComingEventsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
         return this.i;

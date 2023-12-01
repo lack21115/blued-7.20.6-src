@@ -9,7 +9,7 @@ import java.util.Map;
 public class Inventory {
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, SkuDetails> f33011a = new HashMap();
+    Map<String, SkuDetails> f19320a = new HashMap();
     Map<String, Purchase> b = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -30,6 +30,6 @@ public class Inventory {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(SkuDetails skuDetails) {
-        this.f33011a.put(skuDetails.a(), skuDetails);
+        this.f19320a.put(skuDetails.a(), skuDetails);
     }
 }

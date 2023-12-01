@@ -52,16 +52,16 @@ public abstract class TRTCCloud extends DeprecatedTRTCCloud {
     static final class a implements LiteavLog.a {
 
         /* renamed from: a  reason: collision with root package name */
-        TRTCCloudListener.TRTCLogListener f39806a;
+        TRTCCloudListener.TRTCLogListener f26115a;
 
         public a() {
-            this.f39806a = null;
-            this.f39806a = null;
+            this.f26115a = null;
+            this.f26115a = null;
         }
 
         @Override // com.tencent.liteav.base.util.LiteavLog.a
         public final void a(LiteavLog.b bVar, String str, String str2) {
-            TRTCCloudListener.TRTCLogListener tRTCLogListener = this.f39806a;
+            TRTCCloudListener.TRTCLogListener tRTCLogListener = this.f26115a;
             if (tRTCLogListener != null) {
                 tRTCLogListener.onLog(str2, bVar.mNativeValue, str);
             }
@@ -95,12 +95,12 @@ public abstract class TRTCCloud extends DeprecatedTRTCCloud {
     public static void setLogListener(TRTCCloudListener.TRTCLogListener tRTCLogListener) {
         a aVar = mTXLogListener;
         if (aVar != null) {
-            aVar.f39806a = null;
+            aVar.f26115a = null;
         }
         if (tRTCLogListener != null) {
             a aVar2 = new a();
             mTXLogListener = aVar2;
-            aVar2.f39806a = tRTCLogListener;
+            aVar2.f26115a = tRTCLogListener;
         } else {
             mTXLogListener = null;
         }

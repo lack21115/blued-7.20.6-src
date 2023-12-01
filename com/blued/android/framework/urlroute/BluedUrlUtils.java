@@ -2,6 +2,7 @@ package com.blued.android.framework.urlroute;
 
 import android.text.TextUtils;
 import androidx.collection.ArrayMap;
+import com.alipay.sdk.sys.a;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.HashMap;
@@ -10,11 +11,11 @@ import java.util.Map;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/urlroute/BluedUrlUtils.class */
 public class BluedUrlUtils {
     public static String a(String str, String str2) {
-        Map<String, String> a2 = a(str);
-        if (a2 == null || a2.size() <= 0) {
+        Map<String, String> a = a(str);
+        if (a == null || a.size() <= 0) {
             return null;
         }
-        return a2.get(str2);
+        return a.get(str2);
     }
 
     public static Map<String, String> a(String str) {
@@ -24,7 +25,7 @@ public class BluedUrlUtils {
             return null;
         }
         ArrayMap arrayMap = new ArrayMap();
-        String[] split = substring.split("&");
+        String[] split = substring.split(a.b);
         if (split.length > 0) {
             int i = 0;
             while (true) {
@@ -52,9 +53,9 @@ public class BluedUrlUtils {
 
     public static Map<String, String> b(String str) {
         HashMap hashMap = new HashMap();
-        Map<String, String> a2 = a(str);
-        if (a2 != null) {
-            String str2 = a2.get("blued_mode");
+        Map<String, String> a = a(str);
+        if (a != null) {
+            String str2 = a.get("blued_mode");
             if (!TextUtils.isEmpty(str2)) {
                 hashMap.put("blued_mode", str2);
             }

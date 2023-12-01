@@ -9,11 +9,11 @@ import android.widget.Toast;
 public final class o {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f7965a = true;
+    public static boolean f5125a = true;
     public static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f7966c = true;
+    public static boolean f5126c = true;
     public static boolean d = true;
     public static boolean e = true;
     public static boolean f = false;
@@ -22,12 +22,12 @@ public final class o {
     private static final String i = "anythink_";
 
     static {
-        if (com.anythink.expressad.a.f6941a) {
+        if (com.anythink.expressad.a.f4103a) {
             return;
         }
-        f7965a = false;
+        f5125a = false;
         b = false;
-        f7966c = false;
+        f5126c = false;
         d = false;
         e = false;
         f = false;
@@ -74,7 +74,7 @@ public final class o {
     }
 
     public static void b(String str, String str2) {
-        if (!f7966c || TextUtils.isEmpty(str2)) {
+        if (!f5126c || TextUtils.isEmpty(str2)) {
             return;
         }
         Log.i(a(str), str2);
@@ -95,7 +95,7 @@ public final class o {
     }
 
     private static void c(String str, String str2, Throwable th) {
-        if (!f7965a || TextUtils.isEmpty(str2)) {
+        if (!f5125a || TextUtils.isEmpty(str2)) {
             return;
         }
         Log.v(a(str), str2, th);
@@ -109,14 +109,14 @@ public final class o {
     }
 
     private static void d(String str, String str2, Throwable th) {
-        if (!f7966c || TextUtils.isEmpty(str2)) {
+        if (!f5126c || TextUtils.isEmpty(str2)) {
             return;
         }
         Log.i(a(str), str2, th);
     }
 
     private static void e(String str, String str2) {
-        if (!f7965a || TextUtils.isEmpty(str2)) {
+        if (!f5125a || TextUtils.isEmpty(str2)) {
             return;
         }
         Log.v(a(str), str2);

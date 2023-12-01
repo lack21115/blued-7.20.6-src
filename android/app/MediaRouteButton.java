@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.TypedArray;
@@ -11,7 +12,6 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Toast;
-import com.android.internal.R;
 import com.android.internal.app.MediaRouteDialogPresenter;
 import com.google.android.material.badge.BadgeDrawable;
 
@@ -28,8 +28,8 @@ public class MediaRouteButton extends View {
     private Drawable mRemoteIndicator;
     private int mRouteTypes;
     private final MediaRouter mRouter;
-    private static final int[] CHECKED_STATE_SET = {16842912};
-    private static final int[] ACTIVATED_STATE_SET = {16843518};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
+    private static final int[] ACTIVATED_STATE_SET = {R.attr.state_activated};
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/app/MediaRouteButton$MediaRouterCallback.class */
@@ -78,7 +78,7 @@ public class MediaRouteButton extends View {
     }
 
     public MediaRouteButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843693);
+        this(context, attributeSet, R.attr.mediaRouteButtonStyle);
     }
 
     public MediaRouteButton(Context context, AttributeSet attributeSet, int i) {
@@ -89,7 +89,7 @@ public class MediaRouteButton extends View {
         super(context, attributeSet, i, i2);
         this.mRouter = (MediaRouter) context.getSystemService(Context.MEDIA_ROUTER_SERVICE);
         this.mCallback = new MediaRouterCallback();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.MediaRouteButton, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, com.android.internal.R.styleable.MediaRouteButton, i, i2);
         setRemoteIndicatorDrawable(obtainStyledAttributes.getDrawable(3));
         this.mMinWidth = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         this.mMinHeight = obtainStyledAttributes.getDimensionPixelSize(1, 0);
@@ -156,9 +156,8 @@ public class MediaRouteButton extends View {
         refreshDrawableState();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         if (this.mRemoteIndicator != null) {
             this.mRemoteIndicator.setState(getDrawableState());
@@ -188,9 +187,8 @@ public class MediaRouteButton extends View {
         refreshRoute();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int[] onCreateDrawableState(int i) {
+    protected int[] onCreateDrawableState(int i) {
         int[] onCreateDrawableState = super.onCreateDrawableState(i + 1);
         if (this.mIsConnecting) {
             mergeDrawableStates(onCreateDrawableState, CHECKED_STATE_SET);
@@ -210,9 +208,8 @@ public class MediaRouteButton extends View {
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.mRemoteIndicator == null) {
             return;
@@ -231,9 +228,8 @@ public class MediaRouteButton extends View {
         this.mRemoteIndicator.draw(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int min;
         int min2;
         int size = View.MeasureSpec.getSize(i);
@@ -357,9 +353,8 @@ public class MediaRouteButton extends View {
         return this.mAttachedToWindow && MediaRouteDialogPresenter.showDialogFragment(getActivity(), this.mRouteTypes, this.mExtendedSettingsClickListener) != null;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
+    protected boolean verifyDrawable(Drawable drawable) {
         return super.verifyDrawable(drawable) || drawable == this.mRemoteIndicator;
     }
 }

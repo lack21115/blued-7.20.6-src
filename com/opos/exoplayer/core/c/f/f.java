@@ -8,7 +8,7 @@ public final class f implements h {
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f25193c;
+    private String f11505c;
     private com.opos.exoplayer.core.c.n d;
     private int f;
     private int g;
@@ -18,7 +18,7 @@ public final class f implements h {
     private long k;
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.exoplayer.core.i.m f25192a = new com.opos.exoplayer.core.i.m(new byte[18]);
+    private final com.opos.exoplayer.core.i.m f11504a = new com.opos.exoplayer.core.i.m(new byte[18]);
     private int e = 0;
 
     public f(String str) {
@@ -40,10 +40,10 @@ public final class f implements h {
             int g = i | mVar.g();
             this.g = g;
             if (com.opos.exoplayer.core.a.h.a(g)) {
-                this.f25192a.f25496a[0] = (byte) ((this.g >> 24) & 255);
-                this.f25192a.f25496a[1] = (byte) ((this.g >> 16) & 255);
-                this.f25192a.f25496a[2] = (byte) ((this.g >> 8) & 255);
-                this.f25192a.f25496a[3] = (byte) (this.g & 255);
+                this.f11504a.f11808a[0] = (byte) ((this.g >> 24) & 255);
+                this.f11504a.f11808a[1] = (byte) ((this.g >> 16) & 255);
+                this.f11504a.f11808a[2] = (byte) ((this.g >> 8) & 255);
+                this.f11504a.f11808a[3] = (byte) (this.g & 255);
                 this.f = 4;
                 this.g = 0;
                 return true;
@@ -53,9 +53,9 @@ public final class f implements h {
     }
 
     private void c() {
-        byte[] bArr = this.f25192a.f25496a;
+        byte[] bArr = this.f11504a.f11808a;
         if (this.i == null) {
-            Format a2 = com.opos.exoplayer.core.a.h.a(bArr, this.f25193c, this.b, null);
+            Format a2 = com.opos.exoplayer.core.a.h.a(bArr, this.f11505c, this.b, null);
             this.i = a2;
             this.d.a(a2);
         }
@@ -78,7 +78,7 @@ public final class f implements h {
     @Override // com.opos.exoplayer.core.c.f.h
     public void a(com.opos.exoplayer.core.c.g gVar, u.d dVar) {
         dVar.a();
-        this.f25193c = dVar.c();
+        this.f11505c = dVar.c();
         this.d = gVar.a(dVar.b(), 1);
     }
 
@@ -100,10 +100,10 @@ public final class f implements h {
                             this.e = 0;
                         }
                     }
-                } else if (a(mVar, this.f25192a.f25496a, 18)) {
+                } else if (a(mVar, this.f11504a.f11808a, 18)) {
                     c();
-                    this.f25192a.c(0);
-                    this.d.a(this.f25192a, 18);
+                    this.f11504a.c(0);
+                    this.d.a(this.f11504a, 18);
                     this.e = 2;
                 }
             } else if (b(mVar)) {

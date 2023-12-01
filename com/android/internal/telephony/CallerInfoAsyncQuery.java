@@ -41,7 +41,7 @@ public class CallerInfoAsyncQuery {
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/telephony/CallerInfoAsyncQuery$CallerInfoAsyncQueryHandler$CallerInfoWorkerHandler.class */
         protected class CallerInfoWorkerHandler extends AsyncQueryHandler.WorkerHandler {
             public CallerInfoWorkerHandler(Looper looper) {
-                super(looper);
+                super(CallerInfoAsyncQueryHandler.this, looper);
             }
 
             @Override // android.content.AsyncQueryHandler.WorkerHandler, android.os.Handler

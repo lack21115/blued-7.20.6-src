@@ -139,9 +139,8 @@ public interface ITelephony extends IInterface {
         static final int TRANSACTION_updateServiceLocation = 33;
         static final int TRANSACTION_updateServiceLocationForSubscriber = 34;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/internal/telephony/ITelephony$Stub$Proxy.class */
-        public static class Proxy implements ITelephony {
+        private static class Proxy implements ITelephony {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -718,10 +717,10 @@ public interface ITelephony extends IInterface {
                     obtain.writeInterfaceToken(Stub.DESCRIPTOR);
                     this.mRemote.transact(43, obtain, obtain2, 0);
                     obtain2.readException();
-                    Bundle createFromParcel = obtain2.readInt() != 0 ? Bundle.CREATOR.createFromParcel(obtain2) : null;
+                    Bundle bundle = obtain2.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return bundle;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -1287,10 +1286,10 @@ public interface ITelephony extends IInterface {
                     obtain.writeString(str);
                     this.mRemote.transact(79, obtain, obtain2, 0);
                     obtain2.readException();
-                    IccOpenLogicalChannelResponse createFromParcel = obtain2.readInt() != 0 ? IccOpenLogicalChannelResponse.CREATOR.createFromParcel(obtain2) : null;
+                    IccOpenLogicalChannelResponse iccOpenLogicalChannelResponse = obtain2.readInt() != 0 ? (IccOpenLogicalChannelResponse) IccOpenLogicalChannelResponse.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return iccOpenLogicalChannelResponse;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -1308,10 +1307,10 @@ public interface ITelephony extends IInterface {
                     obtain.writeString(str);
                     this.mRemote.transact(80, obtain, obtain2, 0);
                     obtain2.readException();
-                    IccOpenLogicalChannelResponse createFromParcel = obtain2.readInt() != 0 ? IccOpenLogicalChannelResponse.CREATOR.createFromParcel(obtain2) : null;
+                    IccOpenLogicalChannelResponse iccOpenLogicalChannelResponse = obtain2.readInt() != 0 ? (IccOpenLogicalChannelResponse) IccOpenLogicalChannelResponse.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return iccOpenLogicalChannelResponse;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -3047,7 +3046,7 @@ public interface ITelephony extends IInterface {
                     return true;
                 case 106:
                     parcel.enforceInterface(DESCRIPTOR);
-                    List<String> carrierPackageNamesForIntent = getCarrierPackageNamesForIntent(parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null);
+                    List<String> carrierPackageNamesForIntent = getCarrierPackageNamesForIntent(parcel.readInt() != 0 ? (Intent) Intent.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeStringList(carrierPackageNamesForIntent);
                     return true;
@@ -3137,7 +3136,7 @@ public interface ITelephony extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeString(deviceId);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

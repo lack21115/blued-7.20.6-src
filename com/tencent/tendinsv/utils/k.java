@@ -9,13 +9,13 @@ import java.util.concurrent.TimeUnit;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ScheduledExecutorService f39101a = new ScheduledThreadPoolExecutor(1);
+    private static ScheduledExecutorService f25410a = new ScheduledThreadPoolExecutor(1);
 
     public static void a() {
         synchronized (k.class) {
             try {
-                if (f39101a != null) {
-                    f39101a.shutdownNow();
+                if (f25410a != null) {
+                    f25410a.shutdownNow();
                 }
             } catch (Throwable th) {
                 throw th;
@@ -24,11 +24,11 @@ public class k {
     }
 
     public static void a(final String str, final long j, final LoginAuthCallbacks loginAuthCallbacks, final long j2, final long j3, final long j4) {
-        ScheduledExecutorService scheduledExecutorService = f39101a;
+        ScheduledExecutorService scheduledExecutorService = f25410a;
         if (scheduledExecutorService == null || scheduledExecutorService.isShutdown()) {
-            f39101a = new ScheduledThreadPoolExecutor(1);
+            f25410a = new ScheduledThreadPoolExecutor(1);
         }
-        f39101a.schedule(new Runnable() { // from class: com.tencent.tendinsv.utils.k.1
+        f25410a.schedule(new Runnable() { // from class: com.tencent.tendinsv.utils.k.1
             @Override // java.lang.Runnable
             public void run() {
                 LoginAuthCallbacks loginAuthCallbacks2 = LoginAuthCallbacks.this;
@@ -38,10 +38,10 @@ public class k {
     }
 
     public void a(long j, long j2, Runnable runnable) {
-        f39101a.scheduleAtFixedRate(runnable, j, j2, TimeUnit.MILLISECONDS);
+        f25410a.scheduleAtFixedRate(runnable, j, j2, TimeUnit.MILLISECONDS);
     }
 
     public void b(long j, long j2, Runnable runnable) {
-        f39101a.scheduleWithFixedDelay(runnable, j, j2, TimeUnit.MILLISECONDS);
+        f25410a.scheduleWithFixedDelay(runnable, j, j2, TimeUnit.MILLISECONDS);
     }
 }

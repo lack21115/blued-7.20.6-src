@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import android.R;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Shader;
@@ -21,11 +22,11 @@ import androidx.core.graphics.drawable.WrappedDrawable;
 public class AppCompatProgressBarHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f1772a = {16843067, 16843068};
+    private static final int[] f1724a = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
     private final ProgressBar b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Bitmap f1773c;
+    private Bitmap f1725c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatProgressBarHelper$Api23Impl.class */
@@ -81,7 +82,7 @@ public class AppCompatProgressBarHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Bitmap a() {
-        return this.f1773c;
+        return this.f1725c;
     }
 
     Drawable a(Drawable drawable, boolean z) {
@@ -122,8 +123,8 @@ public class AppCompatProgressBarHelper {
         } else if (drawable instanceof BitmapDrawable) {
             BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
             Bitmap bitmap = bitmapDrawable.getBitmap();
-            if (this.f1773c == null) {
-                this.f1773c = bitmap;
+            if (this.f1725c == null) {
+                this.f1725c = bitmap;
             }
             ShapeDrawable shapeDrawable = new ShapeDrawable(b());
             shapeDrawable.getPaint().setShader(new BitmapShader(bitmap, Shader.TileMode.REPEAT, Shader.TileMode.CLAMP));
@@ -139,7 +140,7 @@ public class AppCompatProgressBarHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(AttributeSet attributeSet, int i) {
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(this.b.getContext(), attributeSet, f1772a, i, 0);
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(this.b.getContext(), attributeSet, f1724a, i, 0);
         Drawable drawableIfKnown = obtainStyledAttributes.getDrawableIfKnown(0);
         if (drawableIfKnown != null) {
             this.b.setIndeterminateDrawable(a(drawableIfKnown));

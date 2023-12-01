@@ -40,7 +40,7 @@ public class KPSwitchConflictUtil {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view4) {
                     Tracker.onClick(view4);
-                    boolean switchPanelAndKeyboard = KPSwitchConflictUtil.switchPanelAndKeyboard(View.this, view3);
+                    boolean switchPanelAndKeyboard = KPSwitchConflictUtil.switchPanelAndKeyboard(view, view3);
                     SwitchClickListener switchClickListener2 = switchClickListener;
                     if (switchClickListener2 != null) {
                         switchClickListener2.onClickSwitch(view4, switchPanelAndKeyboard);
@@ -54,10 +54,10 @@ public class KPSwitchConflictUtil {
                 public boolean onTouch(View view4, MotionEvent motionEvent) {
                     if (motionEvent.getAction() == 1) {
                         if (SobotApi.getSwitchMarkStatus(1)) {
-                            View.this.setVisibility(8);
+                            view.setVisibility(8);
                             return false;
                         }
-                        View.this.setVisibility(4);
+                        view.setVisibility(4);
                         return false;
                     }
                     return false;
@@ -84,10 +84,10 @@ public class KPSwitchConflictUtil {
                 public boolean onTouch(View view3, MotionEvent motionEvent) {
                     if (motionEvent.getAction() == 1) {
                         if (SobotApi.getSwitchMarkStatus(1)) {
-                            View.this.setVisibility(8);
+                            view.setVisibility(8);
                             return false;
                         }
-                        View.this.setVisibility(4);
+                        view.setVisibility(4);
                         return false;
                     }
                     return false;
@@ -108,12 +108,12 @@ public class KPSwitchConflictUtil {
             public void onClick(View view5) {
                 Boolean bool;
                 Tracker.onClick(view5);
-                if (View.this.getVisibility() != 0) {
-                    KPSwitchConflictUtil.showPanel(View.this);
+                if (view2.getVisibility() != 0) {
+                    KPSwitchConflictUtil.showPanel(view2);
                     bool = true;
                     KPSwitchConflictUtil.showBoundTriggerSubPanel(view4, subPanelAndTriggerArr);
                 } else if (view4.getVisibility() == 0) {
-                    KPSwitchConflictUtil.showKeyboard(View.this, view);
+                    KPSwitchConflictUtil.showKeyboard(view2, view);
                     bool = false;
                 } else {
                     KPSwitchConflictUtil.showBoundTriggerSubPanel(view4, subPanelAndTriggerArr);

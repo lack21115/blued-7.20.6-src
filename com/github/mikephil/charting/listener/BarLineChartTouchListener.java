@@ -52,7 +52,7 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
     }
 
     private void a(MotionEvent motionEvent, float f, float f2) {
-        this.f22159a = ChartTouchListener.ChartGesture.DRAG;
+        this.f8552a = ChartTouchListener.ChartGesture.DRAG;
         this.f.set(this.g);
         OnChartGestureListener onChartGestureListener = ((BarLineChartBase) this.e).getOnChartGestureListener();
         float f3 = f;
@@ -77,13 +77,13 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
         float x2 = motionEvent.getX(1);
         float y = motionEvent.getY(0);
         float y2 = motionEvent.getY(1);
-        mPPointF.f22204a = (x + x2) / 2.0f;
+        mPPointF.f8597a = (x + x2) / 2.0f;
         mPPointF.b = (y + y2) / 2.0f;
     }
 
     private void c(MotionEvent motionEvent) {
         this.g.set(this.f);
-        this.h.f22204a = motionEvent.getX();
+        this.h.f8597a = motionEvent.getX();
         this.h.b = motionEvent.getY();
         this.m = ((BarLineChartBase) this.e).b(motionEvent.getX(), motionEvent.getY());
     }
@@ -100,12 +100,12 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
             OnChartGestureListener onChartGestureListener = ((BarLineChartBase) this.e).getOnChartGestureListener();
             float f = f(motionEvent);
             if (f > this.s) {
-                MPPointF a2 = a(this.i.f22204a, this.i.b);
+                MPPointF a2 = a(this.i.f8597a, this.i.b);
                 ViewPortHandler viewPortHandler = ((BarLineChartBase) this.e).getViewPortHandler();
                 boolean z = true;
                 float f2 = 1.0f;
                 if (this.b == 4) {
-                    this.f22159a = ChartTouchListener.ChartGesture.PINCH_ZOOM;
+                    this.f8552a = ChartTouchListener.ChartGesture.PINCH_ZOOM;
                     float f3 = f / this.l;
                     if (f3 >= 1.0f) {
                         z = false;
@@ -118,27 +118,27 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
                     }
                     if (y || w) {
                         this.f.set(this.g);
-                        this.f.postScale(f4, f2, a2.f22204a, a2.b);
+                        this.f.postScale(f4, f2, a2.f8597a, a2.b);
                         if (onChartGestureListener != null) {
                             onChartGestureListener.a(motionEvent, f4, f2);
                         }
                     }
                 } else if (this.b == 2 && ((BarLineChartBase) this.e).o()) {
-                    this.f22159a = ChartTouchListener.ChartGesture.X_ZOOM;
+                    this.f8552a = ChartTouchListener.ChartGesture.X_ZOOM;
                     float g = g(motionEvent) / this.j;
                     if ((g > 1.0f ? 1 : (g == 1.0f ? 0 : -1)) < 0 ? viewPortHandler.w() : viewPortHandler.x()) {
                         this.f.set(this.g);
-                        this.f.postScale(g, 1.0f, a2.f22204a, a2.b);
+                        this.f.postScale(g, 1.0f, a2.f8597a, a2.b);
                         if (onChartGestureListener != null) {
                             onChartGestureListener.a(motionEvent, g, 1.0f);
                         }
                     }
                 } else if (this.b == 3 && ((BarLineChartBase) this.e).p()) {
-                    this.f22159a = ChartTouchListener.ChartGesture.Y_ZOOM;
+                    this.f8552a = ChartTouchListener.ChartGesture.Y_ZOOM;
                     float h = h(motionEvent) / this.k;
                     if ((h > 1.0f ? 1 : (h == 1.0f ? 0 : -1)) < 0 ? viewPortHandler.y() : viewPortHandler.z()) {
                         this.f.set(this.g);
-                        this.f.postScale(1.0f, h, a2.f22204a, a2.b);
+                        this.f.postScale(1.0f, h, a2.f8597a, a2.b);
                         if (onChartGestureListener != null) {
                             onChartGestureListener.a(motionEvent, 1.0f, h);
                         }
@@ -151,10 +151,10 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
 
     private void e(MotionEvent motionEvent) {
         Highlight a2 = ((BarLineChartBase) this.e).a(motionEvent.getX(), motionEvent.getY());
-        if (a2 == null || a2.a(this.f22160c)) {
+        if (a2 == null || a2.a(this.f8553c)) {
             return;
         }
-        this.f22160c = a2;
+        this.f8553c = a2;
         ((BarLineChartBase) this.e).a(a2, true);
     }
 
@@ -178,25 +178,25 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
     }
 
     public void a() {
-        this.q.f22204a = 0.0f;
+        this.q.f8597a = 0.0f;
         this.q.b = 0.0f;
     }
 
     public void b() {
         float f = 0.0f;
-        if (this.q.f22204a == 0.0f && this.q.b == 0.0f) {
+        if (this.q.f8597a == 0.0f && this.q.b == 0.0f) {
             return;
         }
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        this.q.f22204a *= ((BarLineChartBase) this.e).getDragDecelerationFrictionCoef();
+        this.q.f8597a *= ((BarLineChartBase) this.e).getDragDecelerationFrictionCoef();
         this.q.b *= ((BarLineChartBase) this.e).getDragDecelerationFrictionCoef();
         float f2 = ((float) (currentAnimationTimeMillis - this.o)) / 1000.0f;
-        float f3 = this.q.f22204a;
+        float f3 = this.q.f8597a;
         float f4 = this.q.b;
-        this.p.f22204a += f3 * f2;
+        this.p.f8597a += f3 * f2;
         this.p.b += f4 * f2;
-        MotionEvent obtain = MotionEvent.obtain(currentAnimationTimeMillis, currentAnimationTimeMillis, 2, this.p.f22204a, this.p.b, 0);
-        float f5 = ((BarLineChartBase) this.e).m() ? this.p.f22204a - this.h.f22204a : 0.0f;
+        MotionEvent obtain = MotionEvent.obtain(currentAnimationTimeMillis, currentAnimationTimeMillis, 2, this.p.f8597a, this.p.b, 0);
+        float f5 = ((BarLineChartBase) this.e).m() ? this.p.f8597a - this.h.f8597a : 0.0f;
         if (((BarLineChartBase) this.e).n()) {
             f = this.p.b - this.h.b;
         }
@@ -204,7 +204,7 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
         obtain.recycle();
         this.f = ((BarLineChartBase) this.e).getViewPortHandler().a(this.f, this.e, false);
         this.o = currentAnimationTimeMillis;
-        if (Math.abs(this.q.f22204a) >= 0.01d || Math.abs(this.q.b) >= 0.01d) {
+        if (Math.abs(this.q.f8597a) >= 0.01d || Math.abs(this.q.b) >= 0.01d) {
             Utils.a(this.e);
             return;
         }
@@ -215,7 +215,7 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
     public boolean onDoubleTap(MotionEvent motionEvent) {
-        this.f22159a = ChartTouchListener.ChartGesture.DOUBLE_TAP;
+        this.f8552a = ChartTouchListener.ChartGesture.DOUBLE_TAP;
         OnChartGestureListener onChartGestureListener = ((BarLineChartBase) this.e).getOnChartGestureListener();
         if (onChartGestureListener != null) {
             onChartGestureListener.b(motionEvent);
@@ -228,9 +228,9 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
             if (!((BarLineChartBase) this.e).p()) {
                 f = 1.0f;
             }
-            barLineChartBase.a(f2, f, a2.f22204a, a2.b);
+            barLineChartBase.a(f2, f, a2.f8597a, a2.b);
             if (((BarLineChartBase) this.e).z()) {
-                Log.i("BarlineChartTouch", "Double-Tap, Zooming In, x: " + a2.f22204a + ", y: " + a2.b);
+                Log.i("BarlineChartTouch", "Double-Tap, Zooming In, x: " + a2.f8597a + ", y: " + a2.b);
             }
             MPPointF.b(a2);
         }
@@ -239,7 +239,7 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        this.f22159a = ChartTouchListener.ChartGesture.FLING;
+        this.f8552a = ChartTouchListener.ChartGesture.FLING;
         OnChartGestureListener onChartGestureListener = ((BarLineChartBase) this.e).getOnChartGestureListener();
         if (onChartGestureListener != null) {
             onChartGestureListener.a(motionEvent, motionEvent2, f, f2);
@@ -249,7 +249,7 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public void onLongPress(MotionEvent motionEvent) {
-        this.f22159a = ChartTouchListener.ChartGesture.LONG_PRESS;
+        this.f8552a = ChartTouchListener.ChartGesture.LONG_PRESS;
         OnChartGestureListener onChartGestureListener = ((BarLineChartBase) this.e).getOnChartGestureListener();
         if (onChartGestureListener != null) {
             onChartGestureListener.a(motionEvent);
@@ -258,7 +258,7 @@ public class BarLineChartTouchListener extends ChartTouchListener<BarLineChartBa
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public boolean onSingleTapUp(MotionEvent motionEvent) {
-        this.f22159a = ChartTouchListener.ChartGesture.SINGLE_TAP;
+        this.f8552a = ChartTouchListener.ChartGesture.SINGLE_TAP;
         OnChartGestureListener onChartGestureListener = ((BarLineChartBase) this.e).getOnChartGestureListener();
         if (onChartGestureListener != null) {
             onChartGestureListener.c(motionEvent);

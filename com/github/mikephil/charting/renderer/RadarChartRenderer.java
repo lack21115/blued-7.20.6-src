@@ -22,11 +22,11 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 public class RadarChartRenderer extends LineRadarRenderer {
 
     /* renamed from: a  reason: collision with root package name */
-    protected RadarChart f22193a;
+    protected RadarChart f8586a;
     protected Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Paint f22194c;
+    protected Paint f8587c;
     protected Path d;
     protected Path e;
 
@@ -34,7 +34,7 @@ public class RadarChartRenderer extends LineRadarRenderer {
         super(chartAnimator, viewPortHandler);
         this.d = new Path();
         this.e = new Path();
-        this.f22193a = radarChart;
+        this.f8586a = radarChart;
         this.i = new Paint(1);
         this.i.setStyle(Paint.Style.STROKE);
         this.i.setStrokeWidth(2.0f);
@@ -42,7 +42,7 @@ public class RadarChartRenderer extends LineRadarRenderer {
         Paint paint = new Paint(1);
         this.b = paint;
         paint.setStyle(Paint.Style.STROKE);
-        this.f22194c = new Paint(1);
+        this.f8587c = new Paint(1);
     }
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
@@ -51,7 +51,7 @@ public class RadarChartRenderer extends LineRadarRenderer {
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void a(Canvas canvas) {
-        RadarData radarData = (RadarData) this.f22193a.getData();
+        RadarData radarData = (RadarData) this.f8586a.getData();
         int H = radarData.k().H();
         for (IRadarDataSet iRadarDataSet : radarData.i()) {
             if (iRadarDataSet.B()) {
@@ -63,27 +63,27 @@ public class RadarChartRenderer extends LineRadarRenderer {
     protected void a(Canvas canvas, IRadarDataSet iRadarDataSet, int i) {
         float b = this.g.b();
         float a2 = this.g.a();
-        float sliceAngle = this.f22193a.getSliceAngle();
-        float factor = this.f22193a.getFactor();
-        MPPointF centerOffsets = this.f22193a.getCenterOffsets();
+        float sliceAngle = this.f8586a.getSliceAngle();
+        float factor = this.f8586a.getFactor();
+        MPPointF centerOffsets = this.f8586a.getCenterOffsets();
         MPPointF a3 = MPPointF.a(0.0f, 0.0f);
         Path path = this.d;
         path.reset();
         boolean z = false;
         for (int i2 = 0; i2 < iRadarDataSet.H(); i2++) {
             this.h.setColor(iRadarDataSet.a(i2));
-            Utils.a(centerOffsets, (((RadarEntry) iRadarDataSet.e(i2)).b() - this.f22193a.getYChartMin()) * factor * a2, (i2 * sliceAngle * b) + this.f22193a.getRotationAngle(), a3);
-            if (!Float.isNaN(a3.f22204a)) {
+            Utils.a(centerOffsets, (((RadarEntry) iRadarDataSet.e(i2)).b() - this.f8586a.getYChartMin()) * factor * a2, (i2 * sliceAngle * b) + this.f8586a.getRotationAngle(), a3);
+            if (!Float.isNaN(a3.f8597a)) {
                 if (z) {
-                    path.lineTo(a3.f22204a, a3.b);
+                    path.lineTo(a3.f8597a, a3.b);
                 } else {
-                    path.moveTo(a3.f22204a, a3.b);
+                    path.moveTo(a3.f8597a, a3.b);
                     z = true;
                 }
             }
         }
         if (iRadarDataSet.H() > i) {
-            path.lineTo(centerOffsets.f22204a, centerOffsets.b);
+            path.lineTo(centerOffsets.f8597a, centerOffsets.b);
         }
         path.close();
         if (iRadarDataSet.S()) {
@@ -110,19 +110,19 @@ public class RadarChartRenderer extends LineRadarRenderer {
         if (i != 1122867) {
             Path path = this.e;
             path.reset();
-            path.addCircle(mPPointF.f22204a, mPPointF.b, a2, Path.Direction.CW);
+            path.addCircle(mPPointF.f8597a, mPPointF.b, a2, Path.Direction.CW);
             if (a3 > 0.0f) {
-                path.addCircle(mPPointF.f22204a, mPPointF.b, a3, Path.Direction.CCW);
+                path.addCircle(mPPointF.f8597a, mPPointF.b, a3, Path.Direction.CCW);
             }
-            this.f22194c.setColor(i);
-            this.f22194c.setStyle(Paint.Style.FILL);
-            canvas.drawPath(path, this.f22194c);
+            this.f8587c.setColor(i);
+            this.f8587c.setStyle(Paint.Style.FILL);
+            canvas.drawPath(path, this.f8587c);
         }
         if (i2 != 1122867) {
-            this.f22194c.setColor(i2);
-            this.f22194c.setStyle(Paint.Style.STROKE);
-            this.f22194c.setStrokeWidth(Utils.a(f3));
-            canvas.drawCircle(mPPointF.f22204a, mPPointF.b, a2, this.f22194c);
+            this.f8587c.setColor(i2);
+            this.f8587c.setStyle(Paint.Style.STROKE);
+            this.f8587c.setStrokeWidth(Utils.a(f3));
+            canvas.drawCircle(mPPointF.f8597a, mPPointF.b, a2, this.f8587c);
         }
         canvas.restore();
     }
@@ -134,11 +134,11 @@ public class RadarChartRenderer extends LineRadarRenderer {
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void a(Canvas canvas, Highlight[] highlightArr) {
-        float sliceAngle = this.f22193a.getSliceAngle();
-        float factor = this.f22193a.getFactor();
-        MPPointF centerOffsets = this.f22193a.getCenterOffsets();
+        float sliceAngle = this.f8586a.getSliceAngle();
+        float factor = this.f8586a.getFactor();
+        MPPointF centerOffsets = this.f8586a.getCenterOffsets();
         MPPointF a2 = MPPointF.a(0.0f, 0.0f);
-        RadarData radarData = (RadarData) this.f22193a.getData();
+        RadarData radarData = (RadarData) this.f8586a.getData();
         int length = highlightArr.length;
         int i = 0;
         while (true) {
@@ -153,10 +153,10 @@ public class RadarChartRenderer extends LineRadarRenderer {
             if (a3 != null && a3.p()) {
                 Entry entry = (RadarEntry) a3.e((int) highlight.a());
                 if (a(entry, a3)) {
-                    Utils.a(centerOffsets, (entry.b() - this.f22193a.getYChartMin()) * factor * this.g.a(), (highlight.a() * sliceAngle * this.g.b()) + this.f22193a.getRotationAngle(), a2);
-                    highlight.a(a2.f22204a, a2.b);
-                    a(canvas, a2.f22204a, a2.b, a3);
-                    if (a3.a() && !Float.isNaN(a2.f22204a) && !Float.isNaN(a2.b)) {
+                    Utils.a(centerOffsets, (entry.b() - this.f8586a.getYChartMin()) * factor * this.g.a(), (highlight.a() * sliceAngle * this.g.b()) + this.f8586a.getRotationAngle(), a2);
+                    highlight.a(a2.f8597a, a2.b);
+                    a(canvas, a2.f8597a, a2.b, a3);
+                    if (a3.a() && !Float.isNaN(a2.f8597a) && !Float.isNaN(a2.b)) {
                         int c2 = a3.c();
                         int i3 = c2;
                         if (c2 == 1122867) {
@@ -178,27 +178,27 @@ public class RadarChartRenderer extends LineRadarRenderer {
     public void b(Canvas canvas) {
         float b = this.g.b();
         float a2 = this.g.a();
-        float sliceAngle = this.f22193a.getSliceAngle();
-        float factor = this.f22193a.getFactor();
-        MPPointF centerOffsets = this.f22193a.getCenterOffsets();
+        float sliceAngle = this.f8586a.getSliceAngle();
+        float factor = this.f8586a.getFactor();
+        MPPointF centerOffsets = this.f8586a.getCenterOffsets();
         MPPointF a3 = MPPointF.a(0.0f, 0.0f);
         MPPointF a4 = MPPointF.a(0.0f, 0.0f);
         float a5 = Utils.a(5.0f);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= ((RadarData) this.f22193a.getData()).d()) {
+            if (i2 >= ((RadarData) this.f8586a.getData()).d()) {
                 MPPointF.b(centerOffsets);
                 MPPointF.b(a3);
                 MPPointF.b(a4);
                 return;
             }
-            IRadarDataSet a6 = ((RadarData) this.f22193a.getData()).a(i2);
+            IRadarDataSet a6 = ((RadarData) this.f8586a.getData()).a(i2);
             if (a(a6)) {
                 b(a6);
                 ValueFormatter q = a6.q();
                 MPPointF a7 = MPPointF.a(a6.A());
-                a7.f22204a = Utils.a(a7.f22204a);
+                a7.f8597a = Utils.a(a7.f8597a);
                 a7.b = Utils.a(a7.b);
                 int i3 = 0;
                 while (true) {
@@ -208,15 +208,15 @@ public class RadarChartRenderer extends LineRadarRenderer {
                     }
                     RadarEntry radarEntry = (RadarEntry) a6.e(i4);
                     float f = i4 * sliceAngle * b;
-                    Utils.a(centerOffsets, (radarEntry.b() - this.f22193a.getYChartMin()) * factor * a2, f + this.f22193a.getRotationAngle(), a3);
+                    Utils.a(centerOffsets, (radarEntry.b() - this.f8586a.getYChartMin()) * factor * a2, f + this.f8586a.getRotationAngle(), a3);
                     if (a6.y()) {
-                        a(canvas, q.a(radarEntry), a3.f22204a, a3.b - a5, a6.d(i4));
+                        a(canvas, q.a(radarEntry), a3.f8597a, a3.b - a5, a6.d(i4));
                     }
                     if (radarEntry.g() != null && a6.z()) {
                         Drawable g = radarEntry.g();
-                        Utils.a(centerOffsets, (radarEntry.b() * factor * a2) + a7.b, f + this.f22193a.getRotationAngle(), a4);
-                        a4.b += a7.f22204a;
-                        Utils.a(canvas, g, (int) a4.f22204a, (int) a4.b, g.getIntrinsicWidth(), g.getIntrinsicHeight());
+                        Utils.a(centerOffsets, (radarEntry.b() * factor * a2) + a7.b, f + this.f8586a.getRotationAngle(), a4);
+                        a4.b += a7.f8597a;
+                        Utils.a(canvas, g, (int) a4.f8597a, (int) a4.b, g.getIntrinsicWidth(), g.getIntrinsicHeight());
                     }
                     i3 = i4 + 1;
                 }
@@ -232,15 +232,15 @@ public class RadarChartRenderer extends LineRadarRenderer {
     }
 
     protected void d(Canvas canvas) {
-        float sliceAngle = this.f22193a.getSliceAngle();
-        float factor = this.f22193a.getFactor();
-        float rotationAngle = this.f22193a.getRotationAngle();
-        MPPointF centerOffsets = this.f22193a.getCenterOffsets();
-        this.b.setStrokeWidth(this.f22193a.getWebLineWidth());
-        this.b.setColor(this.f22193a.getWebColor());
-        this.b.setAlpha(this.f22193a.getWebAlpha());
-        int skipWebLineCount = this.f22193a.getSkipWebLineCount();
-        int H = ((RadarData) this.f22193a.getData()).k().H();
+        float sliceAngle = this.f8586a.getSliceAngle();
+        float factor = this.f8586a.getFactor();
+        float rotationAngle = this.f8586a.getRotationAngle();
+        MPPointF centerOffsets = this.f8586a.getCenterOffsets();
+        this.b.setStrokeWidth(this.f8586a.getWebLineWidth());
+        this.b.setColor(this.f8586a.getWebColor());
+        this.b.setAlpha(this.f8586a.getWebAlpha());
+        int skipWebLineCount = this.f8586a.getSkipWebLineCount();
+        int H = ((RadarData) this.f8586a.getData()).k().H();
         MPPointF a2 = MPPointF.a(0.0f, 0.0f);
         int i = 0;
         while (true) {
@@ -248,15 +248,15 @@ public class RadarChartRenderer extends LineRadarRenderer {
             if (i2 >= H) {
                 break;
             }
-            Utils.a(centerOffsets, this.f22193a.getYRange() * factor, (i2 * sliceAngle) + rotationAngle, a2);
-            canvas.drawLine(centerOffsets.f22204a, centerOffsets.b, a2.f22204a, a2.b, this.b);
+            Utils.a(centerOffsets, this.f8586a.getYRange() * factor, (i2 * sliceAngle) + rotationAngle, a2);
+            canvas.drawLine(centerOffsets.f8597a, centerOffsets.b, a2.f8597a, a2.b, this.b);
             i = i2 + skipWebLineCount + 1;
         }
         MPPointF.b(a2);
-        this.b.setStrokeWidth(this.f22193a.getWebLineWidthInner());
-        this.b.setColor(this.f22193a.getWebColorInner());
-        this.b.setAlpha(this.f22193a.getWebAlpha());
-        int i3 = this.f22193a.getYAxis().d;
+        this.b.setStrokeWidth(this.f8586a.getWebLineWidthInner());
+        this.b.setColor(this.f8586a.getWebColorInner());
+        this.b.setAlpha(this.f8586a.getWebAlpha());
+        int i3 = this.f8586a.getYAxis().d;
         MPPointF a3 = MPPointF.a(0.0f, 0.0f);
         MPPointF a4 = MPPointF.a(0.0f, 0.0f);
         int i4 = 0;
@@ -268,12 +268,12 @@ public class RadarChartRenderer extends LineRadarRenderer {
                 return;
             }
             int i6 = 0;
-            while (i6 < ((RadarData) this.f22193a.getData()).j()) {
-                float yChartMin = (this.f22193a.getYAxis().b[i5] - this.f22193a.getYChartMin()) * factor;
+            while (i6 < ((RadarData) this.f8586a.getData()).j()) {
+                float yChartMin = (this.f8586a.getYAxis().b[i5] - this.f8586a.getYChartMin()) * factor;
                 Utils.a(centerOffsets, yChartMin, (i6 * sliceAngle) + rotationAngle, a3);
                 i6++;
                 Utils.a(centerOffsets, yChartMin, (i6 * sliceAngle) + rotationAngle, a4);
-                canvas.drawLine(a3.f22204a, a3.b, a4.f22204a, a4.b, this.b);
+                canvas.drawLine(a3.f8597a, a3.b, a4.f8597a, a4.b, this.b);
             }
             i4 = i5 + 1;
         }

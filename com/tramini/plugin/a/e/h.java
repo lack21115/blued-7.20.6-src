@@ -29,7 +29,7 @@ public final class h extends f {
                     if (map == null || map.size() == 0) {
                         return f.a.a();
                     }
-                    if (map.containsKey(String.this) && (obj3 = map.get(String.this)) != null) {
+                    if (map.containsKey(str5) && (obj3 = map.get(str5)) != null) {
                         return obj3.getClass().getName().contains(str2) ? f.a.a(obj3) : f.a.b(obj3);
                     }
                     return f.a.a();
@@ -50,7 +50,7 @@ public final class h extends f {
                     }
                     Iterator it = map.entrySet().iterator();
                     if (it.hasNext() && (value = ((Map.Entry) it.next()).getValue()) != null) {
-                        return value.getClass().getSimpleName().contains(String.this) ? f.a.a(value) : f.a.b(value);
+                        return value.getClass().getSimpleName().contains(str3) ? f.a.a(value) : f.a.b(value);
                     }
                     return f.a.a();
                 }
@@ -62,7 +62,7 @@ public final class h extends f {
             Object a4 = a(a3, str4, stringBuffer, new f.c() { // from class: com.tramini.plugin.a.e.h.3
                 @Override // com.tramini.plugin.a.e.f.c
                 public final boolean a(Object obj2) {
-                    return obj2.getClass().getName().startsWith(String.this);
+                    return obj2.getClass().getName().startsWith(str4);
                 }
 
                 @Override // com.tramini.plugin.a.e.f.c
@@ -89,7 +89,7 @@ public final class h extends f {
                     } catch (Throwable th) {
                     }
                     if (map != null && map.size() > 0) {
-                        if (map.containsKey(String.this) && (obj3 = map.get(String.this)) != null) {
+                        if (map.containsKey(str5) && (obj3 = map.get(str5)) != null) {
                             Object a6 = f.a(obj3, str4, stringBuffer, new f.c() { // from class: com.tramini.plugin.a.e.h.4.1
                                 @Override // com.tramini.plugin.a.e.f.c
                                 public final boolean a(Object obj4) {
@@ -243,7 +243,7 @@ public final class h extends f {
             }
             if (jSONObject2.length() > 0) {
                 com.tramini.plugin.a.c.a aVar = new com.tramini.plugin.a.c.a();
-                aVar.f40498a = jSONObject2;
+                aVar.f26807a = jSONObject2;
                 return aVar;
             }
             return null;

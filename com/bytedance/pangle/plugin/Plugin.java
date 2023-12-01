@@ -8,7 +8,6 @@ import android.content.pm.ServiceInfo;
 import android.content.res.Resources;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.pangle.GlobalParam;
 import com.bytedance.pangle.PluginClassLoader;
 import com.bytedance.pangle.Zeus;
@@ -21,6 +20,7 @@ import com.bytedance.pangle.util.l;
 import com.bytedance.pangle.wrapper.PluginApplicationWrapper;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import com.tencent.open.GameAppOperation;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileOutputStream;
@@ -115,7 +115,7 @@ public class Plugin {
         } else if (file == null || !file.exists()) {
             ZeusLogger.w(ZeusLogger.TAG_INSTALL, "Plugin checkValid " + str + " pluginApk not exist.");
             return false;
-        } else if (i == this.mVersionCode && l.a().f21506a.getString("IDENTITY_".concat(String.valueOf(str)), "").equals(com.bytedance.pangle.util.c.a(file)[0])) {
+        } else if (i == this.mVersionCode && l.a().f7900a.getString("IDENTITY_".concat(String.valueOf(str)), "").equals(com.bytedance.pangle.util.c.a(file)[0])) {
             ZeusLogger.w(ZeusLogger.TAG_INSTALL, "Plugin checkValid " + str + " pluginApk with the same identity has already installed.");
             return false;
         } else {
@@ -141,10 +141,10 @@ public class Plugin {
 
     private void deleteIfNeeded() {
         if (com.bytedance.pangle.d.d.a(Zeus.getAppApplication())) {
-            if (l.a().f21506a.getBoolean("UNINSTALL__".concat(String.valueOf(this.mPkgName)), false)) {
+            if (l.a().f7900a.getBoolean("UNINSTALL__".concat(String.valueOf(this.mPkgName)), false)) {
                 l a2 = l.a();
                 String str = this.mPkgName;
-                SharedPreferences.Editor edit = a2.f21506a.edit();
+                SharedPreferences.Editor edit = a2.f7900a.edit();
                 edit.remove("UNINSTALL__".concat(String.valueOf(str)));
                 edit.apply();
                 deleteInstalledPlugin();
@@ -161,7 +161,7 @@ public class Plugin {
             @Override // java.io.FileFilter
             public final boolean accept(File file) {
                 if (file.getName().matches("^version-(\\d+)$")) {
-                    l.a().a(Plugin.this.mPkgName, Integer.parseInt(file.getName().split("-")[1]), false);
+                    l.a().a(Plugin.this.mPkgName, Integer.parseInt(file.getName().split(Constants.ACCEPT_TIME_SEPARATOR_SERVER)[1]), false);
                     return false;
                 }
                 return false;
@@ -185,7 +185,7 @@ public class Plugin {
                     g.a(file.getAbsolutePath());
                     ZeusLogger.w(ZeusLogger.TAG_INIT, "Plugin deleteOtherExpired " + file.getAbsolutePath());
                     if (file.getName().matches("^version-(\\d+)$")) {
-                        l.a().a(Plugin.this.mPkgName, Integer.parseInt(file.getName().split("-")[1]), false);
+                        l.a().a(Plugin.this.mPkgName, Integer.parseInt(file.getName().split(Constants.ACCEPT_TIME_SEPARATOR_SERVER)[1]), false);
                         return false;
                     }
                     return false;
@@ -240,7 +240,7 @@ public class Plugin {
     }
 
     private void setupInternalPlugin() {
-        if (l.a().f21506a.getInt(String.format(Locale.getDefault(), "OFFLINE_INTERNAL_%s", this.mPkgName), -1) == this.mApiVersionCode) {
+        if (l.a().f7900a.getInt(String.format(Locale.getDefault(), "OFFLINE_INTERNAL_%s", this.mPkgName), -1) == this.mApiVersionCode) {
             return;
         }
         if (!TextUtils.isEmpty(this.mInternalPath) && this.mInternalVersionCode != -1) {
@@ -256,10 +256,10 @@ public class Plugin {
                     return;
                 }
                 String str = list[i2];
-                if (str.startsWith(this.mPkgName + BridgeUtil.UNDERLINE_STR)) {
-                    int a2 = k.a(str.split(BridgeUtil.UNDERLINE_STR)[1]);
+                if (str.startsWith(this.mPkgName + "_")) {
+                    int a2 = k.a(str.split("_")[1]);
                     if (a2 != -1) {
-                        this.mInternalPath = com.bytedance.pangle.g.d + BridgeUtil.SPLIT_MARK + str;
+                        this.mInternalPath = com.bytedance.pangle.g.d + "/" + str;
                         this.mInternalVersionCode = a2;
                         return;
                     }
@@ -317,7 +317,7 @@ public class Plugin {
                     if (i3 >= length) {
                         break;
                     }
-                    int parseInt = Integer.parseInt(listFiles[i3].getName().split("-")[1]);
+                    int parseInt = Integer.parseInt(listFiles[i3].getName().split(Constants.ACCEPT_TIME_SEPARATOR_SERVER)[1]);
                     int i4 = i;
                     if (parseInt > i) {
                         i4 = i;
@@ -370,9 +370,9 @@ public class Plugin {
             }
             if (com.bytedance.pangle.d.d.a(Zeus.getAppApplication())) {
                 int i = 0;
-                if (!TextUtils.isEmpty(l.a().f21506a.getString("HOST_ABI_".concat(String.valueOf(this.mPkgName)), ""))) {
-                    z = !TextUtils.equals(l.a().f21506a.getString("HOST_ABI_".concat(String.valueOf(this.mPkgName)), ""), Zeus.getHostAbi());
-                    ZeusLogger.i(ZeusLogger.TAG_INIT, "ZeusSpUtils isHostAbiUpdate HOST_ABI=" + a2.f21506a.getString("HOST_ABI_".concat(String.valueOf(str)), "") + ", " + Zeus.getHostAbi() + ", result=" + z);
+                if (!TextUtils.isEmpty(l.a().f7900a.getString("HOST_ABI_".concat(String.valueOf(this.mPkgName)), ""))) {
+                    z = !TextUtils.equals(l.a().f7900a.getString("HOST_ABI_".concat(String.valueOf(this.mPkgName)), ""), Zeus.getHostAbi());
+                    ZeusLogger.i(ZeusLogger.TAG_INIT, "ZeusSpUtils isHostAbiUpdate HOST_ABI=" + a2.f7900a.getString("HOST_ABI_".concat(String.valueOf(str)), "") + ", " + Zeus.getHostAbi() + ", result=" + z);
                 } else {
                     z = false;
                 }
@@ -386,13 +386,13 @@ public class Plugin {
                 ZeusLogger.i(ZeusLogger.TAG_INIT, "Plugin initPlugins result=".concat(String.valueOf(this)));
                 l a3 = l.a();
                 String str2 = this.mPkgName;
-                SharedPreferences.Editor edit = a3.f21506a.edit();
+                SharedPreferences.Editor edit = a3.f7900a.edit();
                 edit.putString("ROM_LAST_".concat(String.valueOf(str2)), Build.VERSION.INCREMENTAL);
                 edit.apply();
                 l a4 = l.a();
                 String str3 = this.mPkgName;
-                String string = a4.f21506a.getString("HOST_ABI_".concat(String.valueOf(str3)), "");
-                SharedPreferences.Editor edit2 = a4.f21506a.edit();
+                String string = a4.f7900a.getString("HOST_ABI_".concat(String.valueOf(str3)), "");
+                SharedPreferences.Editor edit2 = a4.f7900a.edit();
                 edit2.putString("HOST_ABI_".concat(String.valueOf(str3)), Zeus.getHostAbi());
                 edit2.apply();
                 ZeusLogger.i(ZeusLogger.TAG_INIT, "ZeusSpUtils setHostAbiUpdated HOST_ABI=" + string + " --> " + Zeus.getHostAbi());
@@ -401,7 +401,7 @@ public class Plugin {
                 String b = com.bytedance.pangle.util.b.b(Zeus.getAppApplication());
                 String b2 = a5.b(str4);
                 if (!TextUtils.equals(b2, b)) {
-                    SharedPreferences.Editor edit3 = a5.f21506a.edit();
+                    SharedPreferences.Editor edit3 = a5.f7900a.edit();
                     edit3.putString("HOST_IDENTITY_".concat(String.valueOf(str4)), b);
                     edit3.apply();
                 }
@@ -411,7 +411,7 @@ public class Plugin {
                 int i2 = this.mApiVersionCode;
                 int a7 = a6.a(str5);
                 if (a7 != i2) {
-                    SharedPreferences.Editor edit4 = a6.f21506a.edit();
+                    SharedPreferences.Editor edit4 = a6.f7900a.edit();
                     edit4.putInt("PLUGIN_API_VERSION_".concat(String.valueOf(str5)), i2);
                     edit4.apply();
                 }
@@ -437,7 +437,7 @@ public class Plugin {
             sb.append(", ");
             sb.append(Thread.currentThread().getName());
             ZeusLogger.i(ZeusLogger.TAG_INSTALL, sb.toString());
-            String str = eVar.f21402a;
+            String str = eVar.f7796a;
             int i = eVar.b;
             synchronized (this.installLock) {
                 try {
@@ -451,7 +451,7 @@ public class Plugin {
                                 String str2 = com.bytedance.pangle.util.c.a(new File(com.bytedance.pangle.d.c.b(this.mPkgName, i)))[0];
                                 l a2 = l.a();
                                 String str3 = this.mPkgName;
-                                SharedPreferences.Editor edit = a2.f21506a.edit();
+                                SharedPreferences.Editor edit = a2.f7900a.edit();
                                 edit.putString("IDENTITY_".concat(String.valueOf(str3)), str2);
                                 edit.apply();
                                 l.a().a(this.mPkgName, i, true);
@@ -508,9 +508,9 @@ public class Plugin {
     public void setApiCompatVersion(int i, int i2, int i3) {
         l a2 = l.a();
         String str = this.mPkgName;
-        SharedPreferences.Editor edit = a2.f21506a.edit();
-        edit.putInt("API_MIN_" + str + BridgeUtil.UNDERLINE_STR + i, i2);
-        edit.putInt("API_MAX_" + str + BridgeUtil.UNDERLINE_STR + i, i3);
+        SharedPreferences.Editor edit = a2.f7900a.edit();
+        edit.putInt("API_MIN_" + str + "_" + i, i2);
+        edit.putInt("API_MAX_" + str + "_" + i, i3);
         edit.apply();
     }
 

@@ -12,18 +12,17 @@ import kotlin.jvm.internal.Lambda;
 public final class FragmentViewModelLazyKt$viewModels$2 extends Lambda implements Function0<ViewModelStore> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function0 f3046a;
+    final /* synthetic */ Function0 f2998a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FragmentViewModelLazyKt$viewModels$2(Function0 function0) {
         super(0);
-        this.f3046a = function0;
+        this.f2998a = function0;
     }
 
-    /* JADX WARN: Can't rename method to resolve collision */
-    @Override // kotlin.jvm.functions.Function0
-    public final ViewModelStore invoke() {
-        ViewModelStore viewModelStore = ((ViewModelStoreOwner) this.f3046a.invoke()).getViewModelStore();
+    /* renamed from: invoke */
+    public final ViewModelStore m1405invoke() {
+        ViewModelStore viewModelStore = ((ViewModelStoreOwner) this.f2998a.invoke()).getViewModelStore();
         Intrinsics.c(viewModelStore, "ownerProducer().viewModelStore");
         return viewModelStore;
     }

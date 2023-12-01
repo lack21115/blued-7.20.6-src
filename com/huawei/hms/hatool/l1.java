@@ -4,9 +4,9 @@ package com.huawei.hms.hatool;
 public class l1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Boolean f22767a = false;
+    public static final Boolean f9159a = false;
 
     public static String a() {
-        return f22767a.booleanValue() ? "-dev" : "";
+        return f9159a.booleanValue() ? "-dev" : "";
     }
 }

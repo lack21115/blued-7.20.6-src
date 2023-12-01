@@ -8,7 +8,7 @@ import com.zx.module.annotation.Java2C;
 public class p2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f42164a = Integer.MIN_VALUE;
+    public static int f28473a = Integer.MIN_VALUE;
     public static Object b;
 
     @Java2C.Method2C

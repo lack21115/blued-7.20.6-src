@@ -11,6 +11,7 @@ import com.baidu.aip.face.stat.Ast;
 import com.baidu.idl.facesdk.FaceInfo;
 import com.baidu.idl.facesdk.FaceSDK;
 import com.baidu.idl.facesdk.FaceTracker;
+import com.ss.android.download.api.constant.BaseConstants;
 import com.umeng.commonsdk.framework.UMModuleRegister;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -89,7 +90,7 @@ public class FaceDetectManager {
         if (onFaceDetectListener != null) {
             onFaceDetectListener.onDetectFace(prepare_max_face_data_for_verify, faceInfoArr, borrowImageFrame);
         }
-        Ast.getInstance().faceHit("detect", 3600000, faceInfoArr);
+        Ast.getInstance().faceHit("detect", BaseConstants.Time.HOUR, faceInfoArr);
         borrowImageFrame.release();
     }
 

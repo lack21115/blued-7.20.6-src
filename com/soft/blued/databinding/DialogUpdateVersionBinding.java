@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogUpdateVersionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28726a;
+    private final LinearLayout f15036a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28726a;
+        return this.f15036a;
     }
 }

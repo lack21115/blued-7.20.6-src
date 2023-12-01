@@ -13,11 +13,11 @@ import javax.microedition.khronos.egl.EGL10;
 public class au {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile au f36885a;
+    private static volatile au f23194a;
     private Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.tencent.liteav.videobase.b.e f36886c;
+    private com.tencent.liteav.videobase.b.e f23195c;
 
     private au() {
         if (Looper.myLooper() == Looper.getMainLooper()) {
@@ -28,30 +28,30 @@ public class au {
     }
 
     public static au a() {
-        if (f36885a == null) {
+        if (f23194a == null) {
             synchronized (au.class) {
                 try {
-                    if (f36885a == null) {
-                        f36885a = new au();
+                    if (f23194a == null) {
+                        f23194a = new au();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f36885a;
+        return f23194a;
     }
 
     private void c() {
         com.tencent.liteav.videobase.b.e eVar = new com.tencent.liteav.videobase.b.e();
-        this.f36886c = eVar;
+        this.f23195c = eVar;
         try {
             eVar.a(null, null, 128, 128);
         } catch (com.tencent.liteav.videobase.b.g e) {
             LiteavLog.e("GlobalContextManager", "initializeEGL failed.", e);
-            this.f36886c = null;
+            this.f23195c = null;
         }
-        com.tencent.liteav.videobase.b.e eVar2 = this.f36886c;
+        com.tencent.liteav.videobase.b.e eVar2 = this.f23195c;
         if (eVar2 != null) {
             this.b = eVar2.d();
         }
@@ -64,14 +64,14 @@ public class au {
         }
         if (LiteavSystemInfo.getSystemOSVersionInt() >= 17) {
             EGLDisplay eglGetCurrentDisplay = EGL14.eglGetCurrentDisplay();
-            EGLSurface eglGetCurrentSurface = EGL14.eglGetCurrentSurface(12379);
+            EGLSurface eglGetCurrentSurface = EGL14.eglGetCurrentSurface(EGL14.EGL_CORE_NATIVE_ENGINE);
             EGLContext eglGetCurrentContext = EGL14.eglGetCurrentContext();
             c();
             EGL14.eglMakeCurrent(eglGetCurrentDisplay, eglGetCurrentSurface, eglGetCurrentSurface, eglGetCurrentContext);
         } else {
             EGL10 egl10 = (EGL10) javax.microedition.khronos.egl.EGLContext.getEGL();
             javax.microedition.khronos.egl.EGLDisplay eglGetCurrentDisplay2 = egl10.eglGetCurrentDisplay();
-            javax.microedition.khronos.egl.EGLSurface eglGetCurrentSurface2 = egl10.eglGetCurrentSurface(12379);
+            javax.microedition.khronos.egl.EGLSurface eglGetCurrentSurface2 = egl10.eglGetCurrentSurface(EGL14.EGL_CORE_NATIVE_ENGINE);
             javax.microedition.khronos.egl.EGLContext eglGetCurrentContext2 = egl10.eglGetCurrentContext();
             c();
             egl10.eglMakeCurrent(eglGetCurrentDisplay2, eglGetCurrentSurface2, eglGetCurrentSurface2, eglGetCurrentContext2);

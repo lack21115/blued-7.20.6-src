@@ -10,7 +10,7 @@ public class HostPartUtils {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final HostPartUtils f21498a = new HostPartUtils();
+        private static final HostPartUtils f7892a = new HostPartUtils();
     }
 
     public HostPartUtils() {
@@ -25,6 +25,6 @@ public class HostPartUtils {
     }
 
     public static final Class getFragmentActivityClass() {
-        return a.f21498a.fragmentActivityClazz;
+        return a.f7892a.fragmentActivityClazz;
     }
 }

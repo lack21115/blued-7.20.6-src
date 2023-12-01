@@ -13,9 +13,7 @@ import com.blued.android.module.media.selector.utils.LogUtils;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/fragment/MediaBaseFragment.class */
 public abstract class MediaBaseFragment<V, T extends MediaBasePresent<V>> extends BaseFragment {
     public T b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f15554c;
+    public Context c;
 
     protected abstract void A();
 
@@ -25,7 +23,6 @@ public abstract class MediaBaseFragment<V, T extends MediaBasePresent<V>> extend
 
     protected abstract void b(Bundle bundle);
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         T t = this.b;
@@ -34,13 +31,13 @@ public abstract class MediaBaseFragment<V, T extends MediaBasePresent<V>> extend
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.f15554c = getContext();
+        this.c = getContext();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         b(bundle);
         x();
@@ -54,7 +51,7 @@ public abstract class MediaBaseFragment<V, T extends MediaBasePresent<V>> extend
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         T t = this.b;
         if (t != null) {
@@ -64,7 +61,7 @@ public abstract class MediaBaseFragment<V, T extends MediaBasePresent<V>> extend
         LogUtils.a(MediaBaseFragment.class.getSimpleName() + " onDestroy()");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onSaveInstanceState(Bundle bundle) {
         T t;
         super.onSaveInstanceState(bundle);

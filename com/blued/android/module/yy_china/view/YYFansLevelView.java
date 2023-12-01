@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.module.yy_china.R;
@@ -14,9 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYFansLevelView.class */
 public final class YYFansLevelView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyFansLevelBinding f18146a;
+    private ViewYyFansLevelBinding a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public YYFansLevelView(Context context) {
@@ -34,9 +33,9 @@ public final class YYFansLevelView extends ConstraintLayout {
     public YYFansLevelView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewYyFansLevelBinding a2 = ViewYyFansLevelBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18146a = a2;
+        ViewYyFansLevelBinding a = ViewYyFansLevelBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
     }
 
     private final int a(int i) {
@@ -44,9 +43,9 @@ public final class YYFansLevelView extends ConstraintLayout {
     }
 
     private final void a() {
-        this.f18146a.f16909c.setTextColor(getContext().getResources().getColor(R.color.syc_dark_777777));
-        this.f18146a.b.setImageResource(R.drawable.icon_yy_fans_unavailable);
-        this.f18146a.f16908a.setImageResource(R.drawable.icon_yy_fans_heart_unavailable);
+        this.a.c.setTextColor(getContext().getResources().getColor(R.color.syc_dark_777777));
+        this.a.b.setImageResource(R.drawable.icon_yy_fans_unavailable);
+        this.a.a.setImageResource(R.drawable.icon_yy_fans_heart_unavailable);
     }
 
     private final int b(int i) {
@@ -59,13 +58,13 @@ public final class YYFansLevelView extends ConstraintLayout {
 
     public final void a(String str, String str2, boolean z) {
         String str3 = str2;
-        this.f18146a.f16909c.setText(str3);
-        this.f18146a.d.setText(String.valueOf(str));
-        int a2 = StringUtils.a(str, 0);
+        this.a.c.setText(str3);
+        this.a.d.setText(String.valueOf(str));
+        int a = StringUtils.a(str, 0);
         if (z) {
-            this.f18146a.f16909c.setTextColor(getContext().getResources().getColor(c(StringUtils.a(str, 0))));
-            this.f18146a.b.setImageResource(a(a2));
-            this.f18146a.f16908a.setImageResource(b(a2));
+            this.a.c.setTextColor(getContext().getResources().getColor(c(StringUtils.a(str, 0))));
+            this.a.b.setImageResource(a(a));
+            this.a.a.setImageResource(b(a));
         } else if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str3)) {
             setVisibility(8);
         } else {
@@ -74,11 +73,11 @@ public final class YYFansLevelView extends ConstraintLayout {
     }
 
     public final ViewYyFansLevelBinding getBinding() {
-        return this.f18146a;
+        return this.a;
     }
 
     public final void setBinding(ViewYyFansLevelBinding viewYyFansLevelBinding) {
         Intrinsics.e(viewYyFansLevelBinding, "<set-?>");
-        this.f18146a = viewYyFansLevelBinding;
+        this.a = viewYyFansLevelBinding;
     }
 }

@@ -17,20 +17,14 @@ import com.anythink.core.common.e.s;
 import com.anythink.core.common.e.z;
 import com.anythink.core.common.k.l;
 import com.anythink.core.common.p;
-import com.cdo.oaps.ad.OapsWrapper;
-import com.google.common.net.HttpHeaders;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f5852a = 1;
+    public static final int a = 1;
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f5853c = 3;
+    public static final int c = 3;
     public static final int d = 4;
     public static final int e = 6;
     public static final int f = 0;
@@ -56,33 +50,30 @@ public final class c {
     private final int A = 10;
     boolean v = false;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.basead.a.c$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/c$1.class */
-    public final class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.basead.c.i f5854a;
+    final class AnonymousClass1 implements Runnable {
+        final /* synthetic */ com.anythink.basead.c.i a;
 
         AnonymousClass1(com.anythink.basead.c.i iVar) {
-            this.f5854a = iVar;
+            this.a = iVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            if (c.a(c.this, this.f5854a)) {
+            if (c.a(c.this, this.a)) {
                 return;
             }
             int i = 0;
             if (c.this.q.m.l() != 2) {
-                i = c.this.b(this.f5854a, false) ? 1 : 2;
+                i = c.this.b(this.a, false) ? 1 : 2;
             }
             if (i == 1 && c.this.q.m.l() == 1) {
                 return;
             }
             IExHandler b = n.a().b();
             if (c.this.l.D() != 4 || 1 != c.this.q.m.o() || b == null || i == 1) {
-                c.a(c.this, i, this.f5854a);
+                c.a(c.this, i, this.a);
                 return;
             }
             final int i2 = i;
@@ -93,7 +84,7 @@ public final class c {
                         com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.basead.a.c.1.1.1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                c.a(c.this, i2, AnonymousClass1.this.f5854a);
+                                c.a(c.this, i2, AnonymousClass1.this.a);
                             }
                         });
                     } else {
@@ -108,17 +99,15 @@ public final class c {
     /* renamed from: com.anythink.basead.a.c$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/c$2.class */
     public final class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f5857a;
+        final /* synthetic */ boolean a;
 
         AnonymousClass2(boolean z) {
-            this.f5857a = z;
+            this.a = z;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            if (c.this.r != null && !this.f5857a) {
+            if (c.this.r != null && !this.a) {
                 c.this.r.a();
             }
             if (c.this.r != null) {
@@ -148,19 +137,15 @@ public final class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/a/c$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        long f5865a;
+        long a;
         long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        String f5866c;
+        String c;
 
         a() {
         }
 
         final boolean a() {
-            return System.currentTimeMillis() - this.f5865a <= this.b;
+            return System.currentTimeMillis() - this.a <= this.b;
         }
     }
 
@@ -208,7 +193,7 @@ public final class c {
             if (this.p) {
                 String y = this.l.y();
                 if (z) {
-                    y = this.t.f5866c;
+                    y = this.t.c;
                 }
                 z2 = true;
                 if (!TextUtils.isEmpty(y)) {
@@ -217,7 +202,7 @@ public final class c {
                 }
             }
             if (z) {
-                str2 = this.t.f5866c;
+                str2 = this.t.c;
             } else {
                 String b2 = b(a3);
                 str2 = b2;
@@ -229,7 +214,7 @@ public final class c {
             if (z2) {
                 String str4 = str2;
                 if (TextUtils.isEmpty(str2)) {
-                    str4 = dVar.f5895a;
+                    str4 = dVar.a;
                 }
                 a(str4, i2, iVar);
             }
@@ -241,37 +226,37 @@ public final class c {
                     str5 = b(a3);
                     String a4 = com.anythink.basead.d.b.a.a.a(str5);
                     dVar.b = str5;
-                    dVar.f5896c = a4;
+                    dVar.c = a4;
                     a(dVar);
                 }
             }
             String str6 = str5;
             if (TextUtils.isEmpty(str5)) {
-                str6 = dVar.f5895a;
+                str6 = dVar.a;
             }
             a(str6, i2, iVar);
         } else if (D != 4) {
-            a(TextUtils.isEmpty("") ? dVar.f5895a : "", i2, iVar);
+            a(TextUtils.isEmpty("") ? dVar.a : "", i2, iVar);
         } else {
-            if (g() && TextUtils.isEmpty(dVar.f5895a) && (a2 = com.anythink.basead.d.b.a.a.a(this.q, this.l, a3)) != null) {
-                dVar.f5895a = a2.f5895a;
-                dVar.f5896c = a2.f5896c;
+            if (g() && TextUtils.isEmpty(dVar.a) && (a2 = com.anythink.basead.d.b.a.a.a(this.q, this.l, a3)) != null) {
+                dVar.a = a2.a;
+                dVar.c = a2.c;
             }
             a aVar2 = this.t;
             if (aVar2 == null || !aVar2.a()) {
-                String b3 = b(dVar.f5895a);
+                String b3 = b(dVar.a);
                 str3 = b3;
                 if (!TextUtils.isEmpty(b3)) {
                     a(b3);
                     str3 = b3;
                 }
             } else {
-                str3 = this.t.f5866c;
+                str3 = this.t.c;
             }
             dVar.b = str3;
             a(dVar);
             if (TextUtils.isEmpty(str3)) {
-                str3 = dVar.f5895a;
+                str3 = dVar.a;
             } else {
                 iVar.j = true;
             }
@@ -303,7 +288,7 @@ public final class c {
             if (cVar.p) {
                 String y = cVar.l.y();
                 if (z) {
-                    y = cVar.t.f5866c;
+                    y = cVar.t.c;
                 }
                 z2 = true;
                 if (!TextUtils.isEmpty(y)) {
@@ -312,7 +297,7 @@ public final class c {
                 }
             }
             if (z) {
-                str2 = cVar.t.f5866c;
+                str2 = cVar.t.c;
             } else {
                 String b2 = cVar.b(a3);
                 str2 = b2;
@@ -324,7 +309,7 @@ public final class c {
             if (z2) {
                 String str4 = str2;
                 if (TextUtils.isEmpty(str2)) {
-                    str4 = dVar.f5895a;
+                    str4 = dVar.a;
                 }
                 cVar.a(str4, i2, iVar);
             }
@@ -336,37 +321,37 @@ public final class c {
                     str5 = cVar.b(a3);
                     String a4 = com.anythink.basead.d.b.a.a.a(str5);
                     dVar.b = str5;
-                    dVar.f5896c = a4;
+                    dVar.c = a4;
                     cVar.a(dVar);
                 }
             }
             String str6 = str5;
             if (TextUtils.isEmpty(str5)) {
-                str6 = dVar.f5895a;
+                str6 = dVar.a;
             }
             cVar.a(str6, i2, iVar);
         } else if (D != 4) {
-            cVar.a(TextUtils.isEmpty("") ? dVar.f5895a : "", i2, iVar);
+            cVar.a(TextUtils.isEmpty("") ? dVar.a : "", i2, iVar);
         } else {
-            if (cVar.g() && TextUtils.isEmpty(dVar.f5895a) && (a2 = com.anythink.basead.d.b.a.a.a(cVar.q, cVar.l, a3)) != null) {
-                dVar.f5895a = a2.f5895a;
-                dVar.f5896c = a2.f5896c;
+            if (cVar.g() && TextUtils.isEmpty(dVar.a) && (a2 = com.anythink.basead.d.b.a.a.a(cVar.q, cVar.l, a3)) != null) {
+                dVar.a = a2.a;
+                dVar.c = a2.c;
             }
             a aVar2 = cVar.t;
             if (aVar2 == null || !aVar2.a()) {
-                String b3 = cVar.b(dVar.f5895a);
+                String b3 = cVar.b(dVar.a);
                 str3 = b3;
                 if (!TextUtils.isEmpty(b3)) {
                     cVar.a(b3);
                     str3 = b3;
                 }
             } else {
-                str3 = cVar.t.f5866c;
+                str3 = cVar.t.c;
             }
             dVar.b = str3;
             cVar.a(dVar);
             if (TextUtils.isEmpty(str3)) {
-                str3 = dVar.f5895a;
+                str3 = dVar.a;
             } else {
                 iVar.j = true;
             }
@@ -383,9 +368,9 @@ public final class c {
             if (this.t == null) {
                 this.t = new a();
             }
-            this.t.f5866c = str;
+            this.t.c = str;
             this.t.b = this.q.m.P();
-            this.t.f5865a = System.currentTimeMillis();
+            this.t.a = System.currentTimeMillis();
         }
     }
 
@@ -419,7 +404,7 @@ public final class c {
                 boolean a2 = a(this.o, this.l.B());
                 iVar.i = new com.anythink.basead.c.b();
                 com.anythink.basead.c.d e2 = e();
-                iVar.i.f5892a = e2 != null ? e2.f5896c : "";
+                iVar.i.a = e2 != null ? e2.c : "";
                 if (iVar.g != null) {
                     iVar.g.j = a2 ? 5 : iVar.g.j;
                 }
@@ -453,7 +438,7 @@ public final class c {
                 str2 = this.l.y();
             }
             if (TextUtils.isEmpty(str2)) {
-                Log.e("anythink", "Offer click result is null.");
+                Log.e(com.anythink.core.common.b.g.n, "Offer click result is null.");
                 n.a().a(new Runnable() { // from class: com.anythink.basead.a.c.7
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -486,7 +471,7 @@ public final class c {
                 if (!com.anythink.core.basead.a.a.a(this.o, str2, z) && !z) {
                     if (this.q.m.k() == 2) {
                         com.anythink.core.basead.b.a aVar = new com.anythink.core.basead.b.a();
-                        aVar.f6395c = this.l;
+                        aVar.c = this.l;
                         aVar.h = this.q;
                         aVar.f = str2;
                         aVar.g = this.s;
@@ -499,7 +484,7 @@ public final class c {
                 l.a(this.o, str2);
             } else if (D == 3) {
                 com.anythink.core.basead.b.a aVar2 = new com.anythink.core.basead.b.a();
-                aVar2.f6395c = this.l;
+                aVar2.c = this.l;
                 aVar2.h = this.q;
                 aVar2.f = str2;
                 aVar2.g = this.s;
@@ -509,7 +494,7 @@ public final class c {
             } else if (D != 6) {
                 if (this.q.m.k() == 2) {
                     com.anythink.core.basead.b.a aVar3 = new com.anythink.core.basead.b.a();
-                    aVar3.f6395c = this.l;
+                    aVar3.c = this.l;
                     aVar3.h = this.q;
                     aVar3.f = str2;
                     aVar3.g = this.s;
@@ -519,7 +504,7 @@ public final class c {
                 }
             } else if (!f()) {
                 com.anythink.core.basead.b.a aVar4 = new com.anythink.core.basead.b.a();
-                aVar4.f6395c = this.l;
+                aVar4.c = this.l;
                 aVar4.h = this.q;
                 aVar4.f = str2;
                 aVar4.g = this.s;
@@ -567,7 +552,7 @@ public final class c {
     static /* synthetic */ boolean a(c cVar, com.anythink.basead.c.i iVar) {
         iVar.i = new com.anythink.basead.c.b();
         com.anythink.basead.c.d e2 = cVar.e();
-        iVar.i.f5892a = e2 != null ? e2.f5896c : "";
+        iVar.i.a = e2 != null ? e2.c : "";
         if (TextUtils.isEmpty(cVar.l.o())) {
             return false;
         }
@@ -589,7 +574,7 @@ public final class c {
     private boolean a(com.anythink.basead.c.i iVar, boolean z) {
         iVar.i = new com.anythink.basead.c.b();
         com.anythink.basead.c.d e2 = e();
-        iVar.i.f5892a = e2 != null ? e2.f5896c : "";
+        iVar.i.a = e2 != null ? e2.c : "";
         if (TextUtils.isEmpty(this.l.o())) {
             return false;
         }
@@ -659,8 +644,8 @@ public final class c {
                                 break;
                             }
                         }
-                        str5 = httpURLConnection2.getHeaderField(HttpHeaders.LOCATION);
-                        if (com.anythink.core.basead.a.a.b(str5) || str5.contains(".apk") || !str5.startsWith("http")) {
+                        str5 = httpURLConnection2.getHeaderField("Location");
+                        if (com.anythink.core.basead.a.a.b(str5) || str5.contains(com.anythink.china.common.a.a.g) || !str5.startsWith("http")) {
                             break;
                         }
                         httpURLConnection2.disconnect();
@@ -724,7 +709,7 @@ public final class c {
     public boolean b(com.anythink.basead.c.i iVar, final boolean z) {
         iVar.i = new com.anythink.basead.c.b();
         com.anythink.basead.c.d e2 = e();
-        iVar.i.f5892a = e2 != null ? e2.f5896c : "";
+        iVar.i.a = e2 != null ? e2.c : "";
         com.anythink.basead.a.b.a(23, this.l, iVar);
         if (TextUtils.isEmpty(this.l.z())) {
             return false;
@@ -795,7 +780,7 @@ public final class c {
                 Class<?> cls = Class.forName("com.tencent.mm.opensdk.modelbiz.WXLaunchMiniProgram$Req");
                 Object newInstance = cls.newInstance();
                 cls.getField("userName").set(newInstance, e2);
-                cls.getField(OapsWrapper.KEY_PATH).set(newInstance, f2);
+                cls.getField("path").set(newInstance, f2);
                 cls.getField("miniprogramType").set(newInstance, cls.getField("MINIPTOGRAM_TYPE_RELEASE").get(null));
                 Class.forName("com.tencent.mm.opensdk.openapi.IWXAPI").getMethod("sendReq", Class.forName("com.tencent.mm.opensdk.modelbase.BaseReq")).invoke(c2, newInstance);
                 com.anythink.core.common.j.c.a(this.q, this.l, 0);

@@ -20,18 +20,18 @@ public class EventDescription implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27342a;
+    private String f13654a;
 
     protected EventDescription(Parcel parcel) {
-        this.f27342a = parcel.readString();
+        this.f13654a = parcel.readString();
     }
 
     public EventDescription(String str) {
-        this.f27342a = str;
+        this.f13654a = str;
     }
 
     public String a() {
-        return this.f27342a;
+        return this.f13654a;
     }
 
     @Override // android.os.Parcelable
@@ -41,6 +41,6 @@ public class EventDescription implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f27342a);
+        parcel.writeString(this.f13654a);
     }
 }

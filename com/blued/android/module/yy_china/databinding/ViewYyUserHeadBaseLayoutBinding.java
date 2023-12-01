@@ -17,13 +17,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyUserHeadBaseLayoutBinding.class */
 public final class ViewYyUserHeadBaseLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f16967a;
+    public final ShapeFrameLayout a;
     public final CardView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16968c;
+    public final ShapeTextView c;
     public final CardView d;
     public final ImageView e;
     public final SquareImageView f;
@@ -38,9 +34,9 @@ public final class ViewYyUserHeadBaseLayoutBinding implements ViewBinding {
 
     private ViewYyUserHeadBaseLayoutBinding(RelativeLayout relativeLayout, ShapeFrameLayout shapeFrameLayout, CardView cardView, ShapeTextView shapeTextView, CardView cardView2, ImageView imageView, SquareImageView squareImageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, RelativeLayout relativeLayout2, FrameLayout frameLayout, SVGAImageView sVGAImageView, TextView textView) {
         this.n = relativeLayout;
-        this.f16967a = shapeFrameLayout;
+        this.a = shapeFrameLayout;
         this.b = cardView;
-        this.f16968c = shapeTextView;
+        this.c = shapeTextView;
         this.d = cardView2;
         this.e = imageView;
         this.f = squareImageView;
@@ -65,12 +61,12 @@ public final class ViewYyUserHeadBaseLayoutBinding implements ViewBinding {
         String str;
         ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.car_head);
         if (shapeFrameLayout != null) {
-            CardView cardView = (CardView) view.findViewById(R.id.card_1);
-            if (cardView != null) {
+            CardView findViewById = view.findViewById(R.id.card_1);
+            if (findViewById != null) {
                 ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.fl_disable_audience);
                 if (shapeTextView != null) {
-                    CardView cardView2 = (CardView) view.findViewById(R.id.fl_no_audience);
-                    if (cardView2 != null) {
+                    CardView findViewById2 = view.findViewById(R.id.fl_no_audience);
+                    if (findViewById2 != null) {
                         ImageView imageView = (ImageView) view.findViewById(R.id.iv_apng);
                         if (imageView != null) {
                             SquareImageView squareImageView = (SquareImageView) view.findViewById(R.id.iv_apply_seat);
@@ -89,7 +85,7 @@ public final class ViewYyUserHeadBaseLayoutBinding implements ViewBinding {
                                                     if (sVGAImageView != null) {
                                                         TextView textView = (TextView) view.findViewById(R.id.tv_role);
                                                         if (textView != null) {
-                                                            return new ViewYyUserHeadBaseLayoutBinding((RelativeLayout) view, shapeFrameLayout, cardView, shapeTextView, cardView2, imageView, squareImageView, imageView2, imageView3, imageView4, relativeLayout, frameLayout, sVGAImageView, textView);
+                                                            return new ViewYyUserHeadBaseLayoutBinding((RelativeLayout) view, shapeFrameLayout, findViewById, shapeTextView, findViewById2, imageView, squareImageView, imageView2, imageView3, imageView4, relativeLayout, frameLayout, sVGAImageView, textView);
                                                         }
                                                         str = "tvRole";
                                                     } else {
@@ -131,7 +127,6 @@ public final class ViewYyUserHeadBaseLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.n;

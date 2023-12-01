@@ -55,9 +55,8 @@ public class RequestAnchorLiveRewardFragment extends LiveBaseDialogFragment {
             notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.module.common.adapter.CommonAdapter
         public void a(CommonAdapter.ViewHolder viewHolder, RequestLiveRewardModel requestLiveRewardModel, final int i) {
-            viewHolder.c(R.id.request_anchor_reward_gift_iv, requestLiveRewardModel.images_static).a(R.id.request_anchor_reward_gift_name, requestLiveRewardModel.name).a(R.id.request_anchor_reward_gift_price, CommonStringUtils.a(requestLiveRewardModel.beans)).b(i == RequestAnchorLiveRewardFragment.this.n ? 2131236091 : BluedPreferences.cK() ? 2131236089 : 2131236088).a(new View.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$RequestAnchorLiveRewardFragment$1$urhdI61Qu_2h657FcHd6TrPP3Ls
+            viewHolder.c((int) R.id.request_anchor_reward_gift_iv, requestLiveRewardModel.images_static).a((int) R.id.request_anchor_reward_gift_name, requestLiveRewardModel.name).a((int) R.id.request_anchor_reward_gift_price, CommonStringUtils.a(requestLiveRewardModel.beans)).b(i == RequestAnchorLiveRewardFragment.this.n ? 2131236091 : BluedPreferences.cK() ? 2131236089 : 2131236088).a(new View.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$RequestAnchorLiveRewardFragment$1$urhdI61Qu_2h657FcHd6TrPP3Ls
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     RequestAnchorLiveRewardFragment.AnonymousClass1.this.a(i, view);
@@ -80,7 +79,7 @@ public class RequestAnchorLiveRewardFragment extends LiveBaseDialogFragment {
                 RequestAnchorLiveRewardFragment.this.k();
                 EventTrackLive.a(LiveProtos.Event.LIVE_ANCHOR_REWARD_GIFT_POP_TRUE_CLICK, RequestAnchorLiveRewardFragment.this.p, requestLiveRewardModel.goods_id, requestLiveRewardModel.beans, UserInfo.getInstance().getLoginUserInfo().getRich_level());
             }
-        }, getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$RequestAnchorLiveRewardFragment$UIPoxn4XnXPdVr26YGeZVIsFO4U
+        }, getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$RequestAnchorLiveRewardFragment$UIPoxn4XnXPdVr26YGeZVIsFO4U
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 RequestAnchorLiveRewardFragment.this.a(requestLiveRewardModel, dialogInterface, i);
@@ -123,7 +122,6 @@ public class RequestAnchorLiveRewardFragment extends LiveBaseDialogFragment {
         }
         final RequestLiveRewardModel requestLiveRewardModel = this.o.get(this.n);
         LiveHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<RequestLiveRewardModel>>(a()) { // from class: com.soft.blued.ui.live.fragment.RequestAnchorLiveRewardFragment.4
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<RequestLiveRewardModel> bluedEntityA) {
                 if (bluedEntityA != null) {
@@ -132,7 +130,6 @@ public class RequestAnchorLiveRewardFragment extends LiveBaseDialogFragment {
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 if (i == 4221008) {
                     BeansPrePayFragment.a(RequestAnchorLiveRewardFragment.this.getActivity(), 2);
@@ -142,12 +139,10 @@ public class RequestAnchorLiveRewardFragment extends LiveBaseDialogFragment {
         }, requestLiveRewardModel.goods_id, requestLiveRewardModel.beans, this.p, a());
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public int d() {
         return R.layout.fragment_request_anchor_reward;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void e() {
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$RequestAnchorLiveRewardFragment$0ysB33MhX252eGo_dObhOfW_oXQ
             @Override // android.view.View.OnClickListener
@@ -164,7 +159,7 @@ public class RequestAnchorLiveRewardFragment extends LiveBaseDialogFragment {
             }
         });
         this.l = (GridView) this.b.findViewById(R.id.request_anchor_reward_grid);
-        AnonymousClass1 anonymousClass1 = new AnonymousClass1(R.layout.item_request_anchor_reward_gift);
+        CommonAdapter anonymousClass1 = new AnonymousClass1(R.layout.item_request_anchor_reward_gift);
         this.m = anonymousClass1;
         this.l.setAdapter((ListAdapter) anonymousClass1);
         this.b.findViewById(R.id.request_anchor_reward_send).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.-$$Lambda$RequestAnchorLiveRewardFragment$Jiv6fXbGoc4ex7Qw3XCLLpoYarA
@@ -183,17 +178,14 @@ public class RequestAnchorLiveRewardFragment extends LiveBaseDialogFragment {
         this.k.setImageResource(2131236085);
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
         super.f();
-        this.p = this.f10822c.getString("anchor_id");
+        this.p = this.c.getString("anchor_id");
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void g() {
         super.g();
         LiveHttpUtils.d(new BluedUIHttpResponse<BluedEntityA<RequestLiveRewardModel>>(a()) { // from class: com.soft.blued.ui.live.fragment.RequestAnchorLiveRewardFragment.2
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<RequestLiveRewardModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {

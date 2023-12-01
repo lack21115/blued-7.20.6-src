@@ -1,6 +1,5 @@
 package com.tencent.map.lib.models;
 
-import com.alipay.sdk.util.e;
 import com.baidu.mobads.sdk.internal.bw;
 import com.tencent.map.lib.models.CommonParamsModelClass;
 import com.tencent.map.sdk.comps.vis.VisualLayer;
@@ -82,7 +81,7 @@ public class ReturnInfoModelClass {
         }
 
         public ErrorReturnInfo(ErrorMsg errorMsg) {
-            this.status = e.f4661a;
+            this.status = "failed";
             this.errorCode = errorMsg.getErrorCode();
             this.errorMsg = errorMsg.getErrorMsg();
         }

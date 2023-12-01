@@ -14,8 +14,8 @@ class StaggeredDelimiterProcessor implements DelimiterProcessor {
     private LinkedList<DelimiterProcessor> processors = new LinkedList<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public StaggeredDelimiterProcessor(char c2) {
-        this.delim = c2;
+    public StaggeredDelimiterProcessor(char c) {
+        this.delim = c;
     }
 
     private DelimiterProcessor findProcessor(int i) {

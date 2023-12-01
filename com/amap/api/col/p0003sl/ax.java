@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import com.alipay.sdk.util.i;
 import com.amap.api.maps.AMapException;
 import com.amap.api.maps.offlinemap.OfflineMapCity;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
@@ -16,9 +17,7 @@ import org.json.JSONException;
 /* renamed from: com.amap.api.col.3sl.ax  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ax.class */
 public class ax {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f4761a = "";
+    public static String a = "";
     public static boolean b = false;
     public static String d = "";
     private static volatile ax k;
@@ -29,9 +28,7 @@ public class ax {
     private bg m;
     private bm n;
     private boolean j = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    List<aw> f4762c = new Vector();
+    List<aw> c = new Vector();
     private lb o = null;
     private lb p = null;
     private lb q = null;
@@ -113,7 +110,7 @@ public class ax {
                 @Override // com.amap.api.col.p0003sl.lc
                 public final void runTask() {
                     try {
-                        if (awVar.c().equals(awVar.f4756a)) {
+                        if (awVar.c().equals(awVar.a)) {
                             if (ax.this.l != null) {
                                 ax.this.l.c(awVar);
                                 return;
@@ -180,10 +177,10 @@ public class ax {
                     try {
                         if (ax.this.j) {
                             ax.this.j();
-                            ay c2 = new az(ax.this.i, ax.d).c();
-                            if (c2 != null) {
+                            ay c = new az(ax.this.i, ax.d).c();
+                            if (c != null) {
                                 ax.f(ax.this);
-                                if (c2.a()) {
+                                if (c.a()) {
                                     ax.this.c();
                                 }
                             }
@@ -254,8 +251,8 @@ public class ax {
         if (str == null || str.length() <= 0) {
             return null;
         }
-        synchronized (this.f4762c) {
-            Iterator<aw> it = this.f4762c.iterator();
+        synchronized (this.c) {
+            Iterator<aw> it = this.c.iterator();
             do {
                 if (!it.hasNext()) {
                     return null;
@@ -293,7 +290,7 @@ public class ax {
                     StringBuffer stringBuffer = new StringBuffer();
                     for (String str : b2) {
                         stringBuffer.append(str);
-                        stringBuffer.append(";");
+                        stringBuffer.append(i.b);
                     }
                     i.a(stringBuffer.toString());
                     bb bbVar = this.f;
@@ -310,8 +307,8 @@ public class ax {
         if (str == null || str.length() <= 0) {
             return null;
         }
-        synchronized (this.f4762c) {
-            Iterator<aw> it = this.f4762c.iterator();
+        synchronized (this.c) {
+            Iterator<aw> it = this.c.iterator();
             do {
                 if (!it.hasNext()) {
                     return null;
@@ -335,7 +332,7 @@ public class ax {
     }
 
     private static void k(String str) {
-        f4761a = str;
+        a = str;
     }
 
     private void l() {
@@ -356,14 +353,14 @@ public class ax {
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        synchronized (this.f4762c) {
+        synchronized (this.c) {
             Iterator<OfflineMapProvince> it = this.f.a().iterator();
             while (it.hasNext()) {
                 Iterator<OfflineMapCity> it2 = it.next().getCityList().iterator();
                 while (it2.hasNext()) {
                     OfflineMapCity next = it2.next();
                     if (next != null) {
-                        this.f4762c.add(new aw(this.i, next));
+                        this.c.add(new aw(this.i, next));
                     }
                 }
             }
@@ -399,7 +396,7 @@ public class ax {
                     aw i = ax.this.i(str);
                     if (i != null) {
                         try {
-                            if (!i.c().equals(i.f4757c) && !i.c().equals(i.e)) {
+                            if (!i.c().equals(i.c) && !i.c().equals(i.e)) {
                                 String pinyin = i.getPinyin();
                                 if (pinyin.length() > 0) {
                                     String d2 = ax.this.n.d(pinyin);
@@ -443,9 +440,9 @@ public class ax {
                         }
                     }
                     ax.this.j();
-                    ay c2 = new az(ax.this.i, ax.d).c();
+                    ay c = new az(ax.this.i, ax.d).c();
                     if (ax.this.l != null) {
-                        if (c2 == null) {
+                        if (c == null) {
                             if (ax.this.l != null) {
                                 synchronized (ax.this) {
                                     try {
@@ -455,7 +452,7 @@ public class ax {
                                 return;
                             }
                             return;
-                        } else if (c2.a()) {
+                        } else if (c.a()) {
                             ax.this.c();
                         }
                     }
@@ -505,11 +502,11 @@ public class ax {
         }
         be beVar = new be(this.i, "");
         beVar.a(this.i);
-        List<OfflineMapProvince> c2 = beVar.c();
-        if (this.f4762c != null) {
-            this.f.a(c2);
+        List<OfflineMapProvince> c = beVar.c();
+        if (this.c != null) {
+            this.f.a(c);
         }
-        List<aw> list = this.f4762c;
+        List<aw> list = this.c;
         if (list != null) {
             synchronized (list) {
                 Iterator<OfflineMapProvince> it = this.f.a().iterator();
@@ -517,7 +514,7 @@ public class ax {
                     Iterator<OfflineMapCity> it2 = it.next().getCityList().iterator();
                     while (it2.hasNext()) {
                         OfflineMapCity next = it2.next();
-                        for (aw awVar : this.f4762c) {
+                        for (aw awVar : this.c) {
                             if (next.getPinyin().equals(awVar.getPinyin())) {
                                 String version = awVar.getVersion();
                                 if (awVar.getState() == 4 && d.length() > 0 && b(d, version)) {
@@ -574,9 +571,9 @@ public class ax {
     }
 
     public final void d() {
-        synchronized (this.f4762c) {
-            for (aw awVar : this.f4762c) {
-                if (awVar.c().equals(awVar.f4757c) || awVar.c().equals(awVar.b)) {
+        synchronized (this.c) {
+            for (aw awVar : this.c) {
+                if (awVar.c().equals(awVar.c) || awVar.c().equals(awVar.b)) {
                     d(awVar);
                     awVar.g();
                 }
@@ -599,14 +596,14 @@ public class ax {
     }
 
     public final void e() {
-        synchronized (this.f4762c) {
-            Iterator<aw> it = this.f4762c.iterator();
+        synchronized (this.c) {
+            Iterator<aw> it = this.c.iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;
                 }
                 aw next = it.next();
-                if (next.c().equals(next.f4757c)) {
+                if (next.c().equals(next.c)) {
                     next.g();
                     break;
                 }

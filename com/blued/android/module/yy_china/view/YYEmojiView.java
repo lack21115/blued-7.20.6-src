@@ -34,13 +34,9 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYEmojiView.class */
 public class YYEmojiView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f18135a;
+    private RecyclerView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseYYStudioFragment f18136c;
+    private BaseYYStudioFragment c;
     private YYEmojiAdapter d;
     private YYSoundAdapter e;
 
@@ -62,16 +58,16 @@ public class YYEmojiView extends LinearLayout {
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_emoji_layout, (ViewGroup) this, true);
         this.b = (TextView) findViewById(R.id.rv_text);
-        this.f18135a = (RecyclerView) findViewById(R.id.rv_list);
+        this.a = findViewById(R.id.rv_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(0);
-        this.f18135a.setLayoutManager(linearLayoutManager);
+        this.a.setLayoutManager(linearLayoutManager);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(YYEmojiModel yYEmojiModel, YYRoomModel yYRoomModel) {
         EventTrackYY.i(ChatRoomProtos.Event.CHAT_ROOM_TOOLBOX_EMOJI_CLICK, yYRoomModel.room_id, yYRoomModel.uid, yYEmojiModel.id);
-        YYRoomHttpUtils.g(yYRoomModel.room_id, yYEmojiModel.id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYMsgEmojiExtra>>(this.f18136c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.5
+        YYRoomHttpUtils.g(yYRoomModel.room_id, yYEmojiModel.id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYMsgEmojiExtra>>(this.c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.5
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -90,11 +86,11 @@ public class YYEmojiView extends LinearLayout {
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                if (YYEmojiView.this.f18136c != null) {
-                    YYEmojiView.this.f18136c.y();
+                if (YYEmojiView.this.c != null) {
+                    YYEmojiView.this.c.y();
                 }
             }
-        }, (IRequestHost) this.f18136c.getFragmentActive());
+        }, (IRequestHost) this.c.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -107,22 +103,22 @@ public class YYEmojiView extends LinearLayout {
         yYAudienceModel.setAvatar(YYRoomInfoManager.e().m());
         yYImModel.source_profile = yYAudienceModel;
         yYImModel.setMsgExtra(AppInfo.f().toJson(yYMsgEmojiExtra));
-        this.f18136c.a(YYRoomInfoManager.e().k(), yYMsgEmojiExtra.apng, yYImModel);
+        this.c.a(YYRoomInfoManager.e().k(), yYMsgEmojiExtra.apng, yYImModel);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, int i, final String str2) {
-        YYRoomHttpUtils.h(str, i + "", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(this.f18136c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.6
+        YYRoomHttpUtils.h(str, i + "", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(this.c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.6
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
-                if (YYEmojiView.this.f18136c != null) {
-                    YYEmojiView.this.f18136c.y();
+                if (YYEmojiView.this.c != null) {
+                    YYEmojiView.this.c.y();
                 }
                 AudioChannelManager.j().a(2, str2);
             }
-        }, (IRequestHost) this.f18136c.getFragmentActive());
+        }, (IRequestHost) this.c.getFragmentActive());
     }
 
     private void getEmojiList() {
@@ -130,7 +126,7 @@ public class YYEmojiView extends LinearLayout {
         if (b == null) {
             return;
         }
-        YYRoomHttpUtils.s(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYEmojiModel>>(this.f18136c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.3
+        YYRoomHttpUtils.s(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYEmojiModel>>(this.c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.3
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -140,7 +136,7 @@ public class YYEmojiView extends LinearLayout {
                 }
                 YYEmojiView.this.d.setNewData(bluedEntityA.data);
             }
-        }, (IRequestHost) this.f18136c.getFragmentActive());
+        }, (IRequestHost) this.c.getFragmentActive());
     }
 
     private void getSoundList() {
@@ -148,7 +144,7 @@ public class YYEmojiView extends LinearLayout {
         if (b == null) {
             return;
         }
-        YYRoomHttpUtils.t(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYSoundModel>>(this.f18136c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.4
+        YYRoomHttpUtils.t(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYSoundModel>>(this.c.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYEmojiView.4
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -163,17 +159,16 @@ public class YYEmojiView extends LinearLayout {
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
             }
-        }, (IRequestHost) this.f18136c.getFragmentActive());
+        }, (IRequestHost) this.c.getFragmentActive());
     }
 
     public void a(final BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18136c = baseYYStudioFragment;
+        this.c = baseYYStudioFragment;
         this.b.setText(getResources().getString(R.string.yy_mic_emoji));
         YYEmojiAdapter yYEmojiAdapter = new YYEmojiAdapter(baseYYStudioFragment.getFragmentActive());
         this.d = yYEmojiAdapter;
-        this.f18135a.setAdapter(yYEmojiAdapter);
+        this.a.setAdapter(yYEmojiAdapter);
         this.d.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYEmojiView.1
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYRoomModel b;
                 if (ClickUtils.a(view.getId()) || (b = YYRoomInfoManager.e().b()) == null) {
@@ -191,13 +186,12 @@ public class YYEmojiView extends LinearLayout {
     }
 
     public void b(BaseYYStudioFragment baseYYStudioFragment) {
-        this.f18136c = baseYYStudioFragment;
+        this.c = baseYYStudioFragment;
         this.b.setText(getResources().getString(R.string.yy_mic_sound));
         YYSoundAdapter yYSoundAdapter = new YYSoundAdapter(baseYYStudioFragment.getFragmentActive());
         this.e = yYSoundAdapter;
-        this.f18135a.setAdapter(yYSoundAdapter);
+        this.a.setAdapter(yYSoundAdapter);
         this.e.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYEmojiView.2
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYSoundModel yYSoundModel = (YYSoundModel) baseQuickAdapter.getData().get(i);
                 YYRoomModel b = YYRoomInfoManager.e().b();

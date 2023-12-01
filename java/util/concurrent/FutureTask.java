@@ -279,8 +279,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void set(V v) {
+    protected void set(V v) {
         if (UNSAFE.compareAndSwapInt(this, stateOffset, 0, 1)) {
             this.outcome = v;
             UNSAFE.putOrderedInt(this, stateOffset, 2);
@@ -288,8 +287,7 @@ public class FutureTask<V> implements RunnableFuture<V> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public void setException(Throwable th) {
+    protected void setException(Throwable th) {
         if (UNSAFE.compareAndSwapInt(this, stateOffset, 0, 1)) {
             this.outcome = th;
             UNSAFE.putOrderedInt(this, stateOffset, 3);

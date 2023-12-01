@@ -19,11 +19,11 @@ import org.json.JSONObject;
 public class H5JavaScriptInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashSet<Integer> f35205a = new HashSet<>();
+    private static HashSet<Integer> f21514a = new HashSet<>();
     private String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Thread f35206c = null;
+    private Thread f21515c = null;
     private String d = null;
     private Map<String, String> e = null;
 
@@ -38,16 +38,16 @@ public class H5JavaScriptInterface {
         try {
             JSONObject jSONObject = new JSONObject(str);
             bb bbVar = new bb();
-            bbVar.f35286a = jSONObject.getString("projectRoot");
-            if (bbVar.f35286a == null) {
+            bbVar.f21595a = jSONObject.getString("projectRoot");
+            if (bbVar.f21595a == null) {
                 return null;
             }
             bbVar.b = jSONObject.getString("context");
             if (bbVar.b == null) {
                 return null;
             }
-            bbVar.f35287c = jSONObject.getString("url");
-            if (bbVar.f35287c == null) {
+            bbVar.f21596c = jSONObject.getString("url");
+            if (bbVar.f21596c == null) {
                 return null;
             }
             bbVar.d = jSONObject.getString(TTDownloadField.TT_USERAGENT);
@@ -86,9 +86,9 @@ public class H5JavaScriptInterface {
                 return null;
             }
             al.a("H5 crash information is following: ", new Object[0]);
-            al.a("[projectRoot]: " + bbVar.f35286a, new Object[0]);
+            al.a("[projectRoot]: " + bbVar.f21595a, new Object[0]);
             al.a("[context]: " + bbVar.b, new Object[0]);
-            al.a("[url]: " + bbVar.f35287c, new Object[0]);
+            al.a("[url]: " + bbVar.f21596c, new Object[0]);
             al.a("[userAgent]: " + bbVar.d, new Object[0]);
             al.a("[language]: " + bbVar.e, new Object[0]);
             al.a("[name]: " + bbVar.f, new Object[0]);
@@ -109,13 +109,13 @@ public class H5JavaScriptInterface {
 
     public static H5JavaScriptInterface getInstance(CrashReport.a aVar) {
         String str = null;
-        if (aVar == null || f35205a.contains(Integer.valueOf(aVar.hashCode()))) {
+        if (aVar == null || f21514a.contains(Integer.valueOf(aVar.hashCode()))) {
             return null;
         }
         H5JavaScriptInterface h5JavaScriptInterface = new H5JavaScriptInterface();
-        f35205a.add(Integer.valueOf(aVar.hashCode()));
+        f21514a.add(Integer.valueOf(aVar.hashCode()));
         Thread currentThread = Thread.currentThread();
-        h5JavaScriptInterface.f35206c = currentThread;
+        h5JavaScriptInterface.f21515c = currentThread;
         if (currentThread != null) {
             StringBuilder sb = new StringBuilder();
             sb.append("\n");
@@ -169,14 +169,14 @@ public class H5JavaScriptInterface {
         }
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         LinkedHashMap linkedHashMap2 = new LinkedHashMap();
-        if (a2.f35286a != null) {
-            linkedHashMap2.put("[JS] projectRoot", a2.f35286a);
+        if (a2.f21595a != null) {
+            linkedHashMap2.put("[JS] projectRoot", a2.f21595a);
         }
         if (a2.b != null) {
             linkedHashMap2.put("[JS] context", a2.b);
         }
-        if (a2.f35287c != null) {
-            linkedHashMap2.put("[JS] url", a2.f35287c);
+        if (a2.f21596c != null) {
+            linkedHashMap2.put("[JS] url", a2.f21596c);
         }
         if (a2.d != null) {
             linkedHashMap2.put("[JS] userAgent", a2.d);
@@ -190,7 +190,7 @@ public class H5JavaScriptInterface {
         linkedHashMap.putAll(linkedHashMap2);
         linkedHashMap.putAll(this.e);
         linkedHashMap.put("Java Stack", this.d);
-        Thread thread = this.f35206c;
+        Thread thread = this.f21515c;
         if (a2 != null) {
             InnerApi.postH5CrashAsync(thread, a2.f, a2.g, a2.h, linkedHashMap);
         }

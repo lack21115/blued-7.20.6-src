@@ -10,21 +10,21 @@ import java.util.Map;
 public final class b {
 
     /* renamed from: a */
-    public final Map<String, Long> f21936a;
+    public final Map<String, Long> f8329a;
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dim/b/b$a.class */
     public static final class a {
 
         /* renamed from: a */
-        private static final b f21937a = new b((byte) 0);
+        private static final b f8330a = new b((byte) 0);
 
         public static /* synthetic */ b a() {
-            return f21937a;
+            return f8330a;
         }
     }
 
     private b() {
-        this.f21936a = new HashMap();
+        this.f8329a = new HashMap();
         try {
             DbManager.init(GtcProvider.context(), com.getui.gtc.dim.a.a.class, com.getui.gtc.dim.a.b.class);
             ((com.getui.gtc.dim.a.b) DbManager.getTable(com.getui.gtc.dim.a.a.class, com.getui.gtc.dim.a.b.class)).a();

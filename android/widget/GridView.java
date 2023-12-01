@@ -46,7 +46,7 @@ public class GridView extends AbsListView {
     }
 
     public GridView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842865);
+        this(context, attributeSet, R.attr.gridViewStyle);
     }
 
     public GridView(Context context, AttributeSet attributeSet, int i) {
@@ -804,9 +804,8 @@ public class GridView extends AbsListView {
         animationParameters2.row = (animationParameters2.rowsCount - 1) - (i3 / this.mNumColumns);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.AbsListView, android.view.View
-    public int computeVerticalScrollExtent() {
+    protected int computeVerticalScrollExtent() {
         int childCount = getChildCount();
         if (childCount > 0) {
             int i = this.mNumColumns;

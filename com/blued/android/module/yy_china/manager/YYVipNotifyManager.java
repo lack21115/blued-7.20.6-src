@@ -1,6 +1,7 @@
 package com.blued.android.module.yy_china.manager;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -21,12 +22,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYVipNotifyManager.class */
 public final class YYVipNotifyManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17597a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private ViewGroup f17598c;
+    public static final Companion a = new Companion(null);
+    private ViewGroup c;
     private ActivityFragmentActive d;
     private boolean f;
     private final ArrayList<YYMsgMarqueeModel> b = new ArrayList<>();
@@ -43,16 +40,14 @@ public final class YYVipNotifyManager {
         }
 
         public final YYVipNotifyManager a() {
-            return InstanceHelper.f17599a.a();
+            return InstanceHelper.a.a();
         }
     }
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYVipNotifyManager$InstanceHelper.class */
     public static final class InstanceHelper {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final InstanceHelper f17599a = new InstanceHelper();
+        public static final InstanceHelper a = new InstanceHelper();
         private static final YYVipNotifyManager b = new YYVipNotifyManager();
 
         private InstanceHelper() {
@@ -73,31 +68,31 @@ public final class YYVipNotifyManager {
         ActivityFragmentActive activityFragmentActive = this.d;
         if (activityFragmentActive != null) {
             if (!((activityFragmentActive == null || activityFragmentActive.isActive()) ? false : true)) {
-                ViewGroup viewGroup = this.f17598c;
+                ViewGroup viewGroup = this.c;
                 if (viewGroup == null) {
                     return;
                 }
                 this.f = true;
                 YYMsgMarqueeModel yYMsgMarqueeModel = remove;
                 String str = yYMsgMarqueeModel.type;
-                YYVipMarriageNotice yYVipMarriageNotice = null;
+                View view = null;
                 if (str != null) {
                     switch (str.hashCode()) {
                         case -1469220378:
                             if (!str.equals(YYMsgMarqueeModel.HOST_UP_MARRIAGE)) {
-                                yYVipMarriageNotice = null;
+                                view = null;
                                 break;
                             } else {
                                 Context context = viewGroup.getContext();
                                 Intrinsics.c(context, "it.context");
-                                YYHostUpMarriageNotice yYHostUpMarriageNotice = new YYHostUpMarriageNotice(context);
-                                YYHostUpMarriageNotice yYHostUpMarriageNotice2 = yYHostUpMarriageNotice;
+                                View view2 = (View) new YYHostUpMarriageNotice(context);
+                                YYHostUpMarriageNotice yYHostUpMarriageNotice = (YYHostUpMarriageNotice) view2;
                                 Object data = yYMsgMarqueeModel.getData();
                                 if (data == null) {
                                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.yy_china.model.YYHostUpMode");
                                 }
-                                yYHostUpMarriageNotice2.a((YYHostUpMode) data);
-                                yYHostUpMarriageNotice2.setAnimatorEndListener(new YYVipMarriageNotice.AnimatorEndListener() { // from class: com.blued.android.module.yy_china.manager.YYVipNotifyManager$loopMessage$1$3
+                                yYHostUpMarriageNotice.a((YYHostUpMode) data);
+                                yYHostUpMarriageNotice.setAnimatorEndListener(new YYVipMarriageNotice.AnimatorEndListener() { // from class: com.blued.android.module.yy_china.manager.YYVipNotifyManager$loopMessage$1$3
                                     @Override // com.blued.android.module.yy_china.view.YYVipMarriageNotice.AnimatorEndListener
                                     public void a() {
                                         YYVipNotifyManager.this.f = false;
@@ -105,24 +100,24 @@ public final class YYVipNotifyManager {
                                     }
                                 });
                                 ActivityFragmentActive activityFragmentActive2 = this.d;
-                                yYVipMarriageNotice = yYHostUpMarriageNotice;
+                                view = view2;
                                 if (activityFragmentActive2 != null) {
                                     Intrinsics.a(activityFragmentActive2);
-                                    yYHostUpMarriageNotice2.a(viewGroup, activityFragmentActive2);
-                                    yYVipMarriageNotice = yYHostUpMarriageNotice;
+                                    yYHostUpMarriageNotice.a(viewGroup, activityFragmentActive2);
+                                    view = view2;
                                     break;
                                 }
                             }
                             break;
                         case -25849794:
                             if (!str.equals(YYMsgMarqueeModel.DOUBLE_PEOPLE_MARRIAGE)) {
-                                yYVipMarriageNotice = null;
+                                view = null;
                                 break;
                             } else {
                                 Context context2 = viewGroup.getContext();
                                 Intrinsics.c(context2, "it.context");
-                                yYVipMarriageNotice = new YYDoublePeopleMarriageNotice(context2);
-                                YYDoublePeopleMarriageNotice yYDoublePeopleMarriageNotice = yYVipMarriageNotice;
+                                view = (View) new YYDoublePeopleMarriageNotice(context2);
+                                YYDoublePeopleMarriageNotice yYDoublePeopleMarriageNotice = (YYDoublePeopleMarriageNotice) view;
                                 Object data2 = yYMsgMarqueeModel.getData();
                                 if (data2 == null) {
                                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.yy_china.model.DoublePeopleNoticeImNode");
@@ -142,19 +137,19 @@ public final class YYVipNotifyManager {
                             }
                         case 414062110:
                             if (!str.equals(YYMsgMarqueeModel.UP_MARRIAGE)) {
-                                yYVipMarriageNotice = null;
+                                view = null;
                                 break;
                             } else {
                                 Context context3 = viewGroup.getContext();
                                 Intrinsics.c(context3, "it.context");
-                                YYHonorUpMarriageNotice yYHonorUpMarriageNotice = new YYHonorUpMarriageNotice(context3);
-                                YYHonorUpMarriageNotice yYHonorUpMarriageNotice2 = yYHonorUpMarriageNotice;
+                                View view3 = (View) new YYHonorUpMarriageNotice(context3);
+                                YYHonorUpMarriageNotice yYHonorUpMarriageNotice = (YYHonorUpMarriageNotice) view3;
                                 Object data3 = yYMsgMarqueeModel.getData();
                                 if (data3 == null) {
                                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.yy_china.model.YYUpMode");
                                 }
-                                yYHonorUpMarriageNotice2.a((YYUpMode) data3);
-                                yYHonorUpMarriageNotice2.setAnimatorEndListener(new YYVipMarriageNotice.AnimatorEndListener() { // from class: com.blued.android.module.yy_china.manager.YYVipNotifyManager$loopMessage$1$4
+                                yYHonorUpMarriageNotice.a((YYUpMode) data3);
+                                yYHonorUpMarriageNotice.setAnimatorEndListener(new YYVipMarriageNotice.AnimatorEndListener() { // from class: com.blued.android.module.yy_china.manager.YYVipNotifyManager$loopMessage$1$4
                                     @Override // com.blued.android.module.yy_china.view.YYVipMarriageNotice.AnimatorEndListener
                                     public void a() {
                                         YYVipNotifyManager.this.f = false;
@@ -162,30 +157,30 @@ public final class YYVipNotifyManager {
                                     }
                                 });
                                 ActivityFragmentActive activityFragmentActive4 = this.d;
-                                yYVipMarriageNotice = yYHonorUpMarriageNotice;
+                                view = view3;
                                 if (activityFragmentActive4 != null) {
                                     Intrinsics.a(activityFragmentActive4);
-                                    yYHonorUpMarriageNotice2.a(viewGroup, activityFragmentActive4);
-                                    yYVipMarriageNotice = yYHonorUpMarriageNotice;
+                                    yYHonorUpMarriageNotice.a(viewGroup, activityFragmentActive4);
+                                    view = view3;
                                     break;
                                 }
                             }
                             break;
                         case 1626324197:
                             if (!str.equals(YYMsgMarqueeModel.VIP_MARRIAGE)) {
-                                yYVipMarriageNotice = null;
+                                view = null;
                                 break;
                             } else {
                                 Context context4 = viewGroup.getContext();
                                 Intrinsics.c(context4, "it.context");
-                                YYVipMarriageNotice yYVipMarriageNotice2 = new YYVipMarriageNotice(context4);
-                                YYVipMarriageNotice yYVipMarriageNotice3 = yYVipMarriageNotice2;
+                                View view4 = (View) new YYVipMarriageNotice(context4);
+                                YYVipMarriageNotice yYVipMarriageNotice = (YYVipMarriageNotice) view4;
                                 Object data4 = yYMsgMarqueeModel.getData();
                                 if (data4 == null) {
                                     throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.yy_china.model.YYGlobalMsgMarqueeModel");
                                 }
-                                yYVipMarriageNotice3.a((YYGlobalMsgMarqueeModel) data4);
-                                yYVipMarriageNotice3.setAnimatorEndListener(new YYVipMarriageNotice.AnimatorEndListener() { // from class: com.blued.android.module.yy_china.manager.YYVipNotifyManager$loopMessage$1$2
+                                yYVipMarriageNotice.a((YYGlobalMsgMarqueeModel) data4);
+                                yYVipMarriageNotice.setAnimatorEndListener(new YYVipMarriageNotice.AnimatorEndListener() { // from class: com.blued.android.module.yy_china.manager.YYVipNotifyManager$loopMessage$1$2
                                     @Override // com.blued.android.module.yy_china.view.YYVipMarriageNotice.AnimatorEndListener
                                     public void a() {
                                         YYVipNotifyManager.this.f = false;
@@ -193,28 +188,28 @@ public final class YYVipNotifyManager {
                                     }
                                 });
                                 ActivityFragmentActive activityFragmentActive5 = this.d;
-                                yYVipMarriageNotice = yYVipMarriageNotice2;
+                                view = view4;
                                 if (activityFragmentActive5 != null) {
                                     Intrinsics.a(activityFragmentActive5);
-                                    yYVipMarriageNotice3.a(viewGroup, activityFragmentActive5);
-                                    yYVipMarriageNotice = yYVipMarriageNotice2;
+                                    yYVipMarriageNotice.a(viewGroup, activityFragmentActive5);
+                                    view = view4;
                                     break;
                                 }
                             }
                             break;
                         default:
-                            yYVipMarriageNotice = null;
+                            view = null;
                             break;
                     }
                 }
-                if (yYVipMarriageNotice == null) {
+                if (view == null) {
                     return;
                 }
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
                 Integer num = this.e;
                 Intrinsics.a(num);
                 layoutParams.topMargin = num.intValue();
-                viewGroup.addView(yYVipMarriageNotice, layoutParams);
+                viewGroup.addView(view, layoutParams);
                 return;
             }
         }
@@ -223,7 +218,7 @@ public final class YYVipNotifyManager {
     }
 
     public final void a() {
-        this.f17598c = null;
+        this.c = null;
         this.d = null;
         this.f = false;
         this.b.clear();
@@ -232,7 +227,7 @@ public final class YYVipNotifyManager {
     public final void a(ViewGroup rootView, ActivityFragmentActive active, int i) {
         Intrinsics.e(rootView, "rootView");
         Intrinsics.e(active, "active");
-        this.f17598c = rootView;
+        this.c = rootView;
         this.d = active;
         this.e = Integer.valueOf(i);
     }

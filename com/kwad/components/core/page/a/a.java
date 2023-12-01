@@ -30,7 +30,7 @@ public final class a extends Presenter {
                 Tracker.onClick(view);
                 if (com.kwad.sdk.core.response.a.a.ax(cb)) {
                     if (eVar.IM != null) {
-                        com.kwad.components.core.d.b.a.a(new a.C0519a(a.this.getActivity()).ao(false).ap(false).at(true).I(eVar.adTemplate).ar(false));
+                        com.kwad.components.core.d.b.a.a(new a.C0349a(a.this.getActivity()).ao(false).ap(false).at(true).I(eVar.adTemplate).ar(false));
                         com.kwad.sdk.core.report.a.a(eVar.adTemplate, 50, a.this.Lw.getTouchCoords());
                     }
                 } else if (eVar.MS == null || eVar.MS.getAdapter() == null || eVar.MS.getAdapter().getItemCount() <= 1) {
@@ -47,7 +47,7 @@ public final class a extends Presenter {
                     Tracker.onClick(view);
                     if (com.kwad.sdk.core.response.a.a.ax(cb)) {
                         if (eVar.IM != null) {
-                            com.kwad.components.core.d.b.a.a(new a.C0519a(a.this.getActivity()).ao(false).ap(false).at(true).I(eVar.adTemplate).ar(false));
+                            com.kwad.components.core.d.b.a.a(new a.C0349a(a.this.getActivity()).ao(false).ap(false).at(true).I(eVar.adTemplate).ar(false));
                             com.kwad.sdk.core.report.a.a(eVar.adTemplate, 171, a.this.Lw.getTouchCoords());
                         }
                     } else if (eVar.MS == null || eVar.MS.getAdapter() == null || eVar.MS.getAdapter().getItemCount() <= 1) {

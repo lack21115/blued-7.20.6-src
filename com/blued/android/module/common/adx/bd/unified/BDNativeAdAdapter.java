@@ -28,13 +28,9 @@ import kotlinx.coroutines.CoroutineScopeKt;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/bd/unified/BDNativeAdAdapter.class */
 public final class BDNativeAdAdapter extends BaseNativeExpressAd {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BluedADExtra f10535a;
+    private BluedADExtra a;
     private ADListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Context f10536c;
+    private final Context c;
     private BDNativeAdDataAdapter d;
     private int e;
     private Handler f;
@@ -43,21 +39,19 @@ public final class BDNativeAdAdapter extends BaseNativeExpressAd {
         Intrinsics.e(context, "context");
         Intrinsics.e(adExtra, "adExtra");
         Intrinsics.e(listener, "listener");
-        this.f10535a = adExtra;
+        this.a = adExtra;
         this.b = listener;
-        this.f10536c = context;
+        this.c = context;
         this.e = -1;
         this.f = new Handler(Looper.getMainLooper());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(final ADListener aDListener) {
-        new BaiduNativeManager(this.f10536c, this.f10535a.third_id).loadFeedAd(new RequestParameters.Builder().downloadAppConfirmPolicy(1).build(), new BaiduNativeManager.FeedAdListener() { // from class: com.blued.android.module.common.adx.bd.unified.BDNativeAdAdapter$loadExpressAd$1
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.FeedAdListener
+        new BaiduNativeManager(this.c, this.a.third_id).loadFeedAd(new RequestParameters.Builder().downloadAppConfirmPolicy(1).build(), new BaiduNativeManager.FeedAdListener() { // from class: com.blued.android.module.common.adx.bd.unified.BDNativeAdAdapter$loadExpressAd$1
             public void onLpClosed() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.FeedAdListener
             public void onNativeFail(int i, String str) {
                 BluedADExtra e = BDNativeAdAdapter.this.e();
                 e.errorMsg = i + " -- " + ((Object) str);
@@ -65,7 +59,6 @@ public final class BDNativeAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, BDNativeAdAdapter.this));
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.FeedAdListener
             public void onNativeLoad(List<NativeResponse> list) {
                 Context context;
                 ADListener aDListener2;
@@ -78,7 +71,7 @@ public final class BDNativeAdAdapter extends BaseNativeExpressAd {
                     aDListener.onADEvent(new ADEvent(101, BDNativeAdAdapter.this));
                 } else if (!list2.isEmpty()) {
                     NativeResponse nativeResponse = list.get(0);
-                    context = BDNativeAdAdapter.this.f10536c;
+                    context = BDNativeAdAdapter.this.c;
                     BDNativeAdDataAdapter bDNativeAdDataAdapter = new BDNativeAdDataAdapter(context, nativeResponse, BDNativeAdAdapter.this.e());
                     BDNativeAdAdapter.this.d = bDNativeAdDataAdapter;
                     aDListener2 = BDNativeAdAdapter.this.b;
@@ -101,7 +94,6 @@ public final class BDNativeAdAdapter extends BaseNativeExpressAd {
                 }
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.FeedAdListener
             public void onNoAd(int i, String str) {
                 BluedADExtra e = BDNativeAdAdapter.this.e();
                 e.errorMsg = i + " -- " + ((Object) str);
@@ -109,11 +101,9 @@ public final class BDNativeAdAdapter extends BaseNativeExpressAd {
                 aDListener.onADEvent(new ADEvent(101, BDNativeAdAdapter.this));
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.FeedAdListener
             public void onVideoDownloadFailed() {
             }
 
-            @Override // com.baidu.mobads.sdk.api.BaiduNativeManager.FeedAdListener
             public void onVideoDownloadSuccess() {
             }
         });
@@ -163,10 +153,10 @@ public final class BDNativeAdAdapter extends BaseNativeExpressAd {
 
     @Override // com.blued.android.module.common.adx.base.IBaseAd
     public Map<String, Object> d() {
-        return MapsKt.a(TuplesKt.a("original_ad", this.f10535a));
+        return MapsKt.a(TuplesKt.a("original_ad", this.a));
     }
 
     public final BluedADExtra e() {
-        return this.f10535a;
+        return this.a;
     }
 }

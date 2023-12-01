@@ -8,36 +8,30 @@ import java.util.ArrayList;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ei.class */
 public final class ei {
     private boolean b = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    ArrayList<a> f4907a = new ArrayList<>();
+    ArrayList<a> a = new ArrayList<>();
 
     /* renamed from: com.amap.api.col.3sl.ei$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ei$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f4908a;
+        private String a;
         private Object b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private Class<?>[] f4909c;
+        private Class<?>[] c;
         private Object[] d;
 
         public a(Object obj, String str, Object... objArr) {
             this.b = obj;
-            this.f4908a = str;
+            this.a = str;
             if (objArr == null || objArr.length <= 0) {
                 return;
             }
-            this.f4909c = new Class[objArr.length];
+            this.c = new Class[objArr.length];
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= objArr.length) {
                     break;
                 }
-                this.f4909c[i2] = objArr[i2].getClass();
+                this.c[i2] = objArr[i2].getClass();
                 i = i2 + 1;
             }
             this.d = new Object[objArr.length];
@@ -63,33 +57,33 @@ public final class ei {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f4907a.size()) {
-                    this.f4907a.clear();
+                if (i2 >= this.a.size()) {
+                    this.a.clear();
                     return;
                 }
-                a aVar = this.f4907a.get(i2);
+                a aVar = this.a.get(i2);
                 try {
                     try {
                         try {
                             if (aVar.b != null && (cls = aVar.b.getClass()) != null) {
                                 Method method = null;
                                 try {
-                                    method = cls.getDeclaredMethod(aVar.f4908a, aVar.f4909c);
+                                    method = cls.getDeclaredMethod(aVar.a, aVar.c);
                                 } catch (NoSuchMethodException e) {
-                                    if (aVar.f4909c.length > 0) {
-                                        Class<?>[] clsArr = new Class[aVar.f4909c.length];
+                                    if (aVar.c.length > 0) {
+                                        Class<?>[] clsArr = new Class[aVar.c.length];
                                         int i3 = 0;
                                         while (true) {
                                             int i4 = i3;
-                                            if (i4 >= aVar.f4909c.length) {
+                                            if (i4 >= aVar.c.length) {
                                                 break;
                                             }
-                                            if (aVar.f4909c[i4].getInterfaces().length > 0) {
-                                                clsArr[i4] = aVar.f4909c[i4].getInterfaces()[0];
+                                            if (aVar.c[i4].getInterfaces().length > 0) {
+                                                clsArr[i4] = aVar.c[i4].getInterfaces()[0];
                                             }
                                             i3 = i4 + 1;
                                         }
-                                        method = cls.getDeclaredMethod(aVar.f4908a, clsArr);
+                                        method = cls.getDeclaredMethod(aVar.a, clsArr);
                                     }
                                 }
                                 if (method != null) {
@@ -120,7 +114,7 @@ public final class ei {
             try {
                 StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
                 if (stackTrace != null && stackTrace.length >= 3) {
-                    this.f4907a.add(new a(obj, stackTrace[3].getMethodName(), objArr));
+                    this.a.add(new a(obj, stackTrace[3].getMethodName(), objArr));
                 }
             } catch (Throwable th) {
             }

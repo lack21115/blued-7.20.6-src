@@ -10,7 +10,6 @@ public class HomeContract {
     interface Presenter extends BasePresenter {
         void a(boolean z);
 
-        @Override // com.blued.android.framework.mvp_similarity.BasePresenter
         void ar_();
 
         void b();

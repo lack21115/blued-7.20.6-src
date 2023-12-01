@@ -17,35 +17,35 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21372a;
+    private static String f7766a;
     private static List<String> b = new CopyOnWriteArrayList();
 
     public static String a() {
-        if (TextUtils.isEmpty(f21372a)) {
+        if (TextUtils.isEmpty(f7766a)) {
             try {
                 if (Build.VERSION.SDK_INT >= 28) {
                     String processName = Application.getProcessName();
                     if (!TextUtils.isEmpty(processName)) {
-                        f21372a = processName;
+                        f7766a = processName;
                     }
-                    return f21372a;
+                    return f7766a;
                 }
             } catch (Throwable th) {
             }
             try {
                 Object invokeStaticMethod = MethodUtils.invokeStaticMethod(Class.forName("android.app.ActivityThread"), "currentProcessName", new Object[0]);
                 if (!TextUtils.isEmpty((String) invokeStaticMethod)) {
-                    f21372a = (String) invokeStaticMethod;
+                    f7766a = (String) invokeStaticMethod;
                 }
-                return f21372a;
+                return f7766a;
             } catch (Exception e) {
                 e.printStackTrace();
                 String b2 = b();
-                f21372a = b2;
+                f7766a = b2;
                 return b2;
             }
         }
-        return f21372a;
+        return f7766a;
     }
 
     public static String a(String str) {

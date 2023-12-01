@@ -1,5 +1,6 @@
 package com.google.android.material.ripple;
 
+import android.R;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
@@ -25,16 +26,16 @@ public class RippleUtils {
 
     static {
         USE_FRAMEWORK_RIPPLE = Build.VERSION.SDK_INT >= 21;
-        PRESSED_STATE_SET = new int[]{16842919};
-        HOVERED_FOCUSED_STATE_SET = new int[]{16843623, 16842908};
-        FOCUSED_STATE_SET = new int[]{16842908};
-        HOVERED_STATE_SET = new int[]{16843623};
-        SELECTED_PRESSED_STATE_SET = new int[]{16842913, 16842919};
-        SELECTED_HOVERED_FOCUSED_STATE_SET = new int[]{16842913, 16843623, 16842908};
-        SELECTED_FOCUSED_STATE_SET = new int[]{16842913, 16842908};
-        SELECTED_HOVERED_STATE_SET = new int[]{16842913, 16843623};
-        SELECTED_STATE_SET = new int[]{16842913};
-        ENABLED_PRESSED_STATE_SET = new int[]{16842910, 16842919};
+        PRESSED_STATE_SET = new int[]{R.attr.state_pressed};
+        HOVERED_FOCUSED_STATE_SET = new int[]{R.attr.state_hovered, R.attr.state_focused};
+        FOCUSED_STATE_SET = new int[]{R.attr.state_focused};
+        HOVERED_STATE_SET = new int[]{R.attr.state_hovered};
+        SELECTED_PRESSED_STATE_SET = new int[]{R.attr.state_selected, R.attr.state_pressed};
+        SELECTED_HOVERED_FOCUSED_STATE_SET = new int[]{R.attr.state_selected, R.attr.state_hovered, R.attr.state_focused};
+        SELECTED_FOCUSED_STATE_SET = new int[]{R.attr.state_selected, R.attr.state_focused};
+        SELECTED_HOVERED_STATE_SET = new int[]{R.attr.state_selected, R.attr.state_hovered};
+        SELECTED_STATE_SET = new int[]{R.attr.state_selected};
+        ENABLED_PRESSED_STATE_SET = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         LOG_TAG = RippleUtils.class.getSimpleName();
     }
 

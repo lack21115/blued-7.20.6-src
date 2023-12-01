@@ -1,5 +1,6 @@
 package com.kwad.components.core.webview.jshandler;
 
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.kwad.sdk.core.response.model.AdTemplate;
 import com.opos.mobad.activity.VideoActivity;
 import org.json.JSONException;
@@ -30,7 +31,7 @@ public class ac implements com.kwad.sdk.core.webview.b.a {
             }
             this.Tr = jSONObject.optInt(VideoActivity.EXTRA_KEY_ACTION_TYPE);
             this.Tt = jSONObject.optInt("refreshType");
-            this.Ts = jSONObject.optString("payload");
+            this.Ts = jSONObject.optString(AssistPushConsts.MSG_TYPE_PAYLOAD);
             try {
                 if (jSONObject.has("adTemplate")) {
                     String string = jSONObject.getString("adTemplate");
@@ -48,7 +49,7 @@ public class ac implements com.kwad.sdk.core.webview.b.a {
         public final JSONObject toJson() {
             JSONObject jSONObject = new JSONObject();
             com.kwad.sdk.utils.t.putValue(jSONObject, VideoActivity.EXTRA_KEY_ACTION_TYPE, this.Tr);
-            com.kwad.sdk.utils.t.putValue(jSONObject, "payload", this.Ts);
+            com.kwad.sdk.utils.t.putValue(jSONObject, AssistPushConsts.MSG_TYPE_PAYLOAD, this.Ts);
             com.kwad.sdk.utils.t.putValue(jSONObject, "refreshType", this.Tt);
             com.kwad.sdk.utils.t.a(jSONObject, "adTemplate", this.adTemplate);
             return jSONObject;

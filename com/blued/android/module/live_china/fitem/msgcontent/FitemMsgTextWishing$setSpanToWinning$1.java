@@ -21,22 +21,18 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgTextWishing$setSpanToWinning$1.class */
 final class FitemMsgTextWishing$setSpanToWinning$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FitemMsgTextWishing f12665a;
+    final /* synthetic */ FitemMsgTextWishing a;
     final /* synthetic */ LiveGiftModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Context f12666c;
+    final /* synthetic */ Context c;
     final /* synthetic */ TextView d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgTextWishing$setSpanToWinning$1(FitemMsgTextWishing fitemMsgTextWishing, LiveGiftModel liveGiftModel, Context context, TextView textView) {
         super(1);
-        this.f12665a = fitemMsgTextWishing;
+        this.a = fitemMsgTextWishing;
         this.b = liveGiftModel;
-        this.f12666c = context;
+        this.c = context;
         this.d = textView;
     }
 
@@ -46,12 +42,12 @@ final class FitemMsgTextWishing$setSpanToWinning$1 extends Lambda implements Fun
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(giftModel, "$giftModel");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
         FitemMsgGift.Companion companion = FitemMsgGift.b;
-        IRequestHost iRequestHost = this$0.f10935a.b;
+        IRequestHost iRequestHost = this$0.a.b;
         Intrinsics.c(iRequestHost, "viewHolder.requestHost");
         String str = giftModel.images_static;
         Intrinsics.c(str, "giftModel.images_static");
@@ -71,10 +67,10 @@ final class FitemMsgTextWishing$setSpanToWinning$1 extends Lambda implements Fun
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        buildSpannableString.a(' ' + this.f12665a.k() + ' ', new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextWishing$setSpanToWinning$1.2
+        buildSpannableString.a(' ' + this.a.k() + ' ', new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextWishing$setSpanToWinning$1.2
             public final void a(DslSpanBuilder addText) {
                 Intrinsics.e(addText, "$this$addText");
                 Context d = AppInfo.d();
@@ -85,7 +81,7 @@ final class FitemMsgTextWishing$setSpanToWinning$1 extends Lambda implements Fun
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
         buildSpannableString.a((char) 22312 + ((Object) this.b.source) + ((Object) this.b.sourceEvent) + "获得 " + ((Object) this.b.name) + ' ', new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgTextWishing$setSpanToWinning$1.3
@@ -99,16 +95,16 @@ final class FitemMsgTextWishing$setSpanToWinning$1 extends Lambda implements Fun
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                 a(dslSpanBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
-        int c2 = FitemMsgGift.b.c();
+        int c = FitemMsgGift.b.c();
         int b = FitemMsgGift.b.b();
-        final FitemMsgTextWishing fitemMsgTextWishing = this.f12665a;
-        final Context context = this.f12666c;
+        final FitemMsgTextWishing fitemMsgTextWishing = this.a;
+        final Context context = this.c;
         final TextView textView = this.d;
         final LiveGiftModel liveGiftModel = this.b;
-        buildSpannableString.a(new ColorDrawable(), 0, 0, c2, b, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextWishing$setSpanToWinning$1$BZJ1seJ1ZZ017Znt8O6qyfJQkH4
+        buildSpannableString.a(new ColorDrawable(), 0, 0, c, b, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgTextWishing$setSpanToWinning$1$BZJ1seJ1ZZ017Znt8O6qyfJQkH4
             @Override // com.blued.android.module.live_china.liveForMsg.ui.VerticalCenterImageSpan.SpanDrawCallback
             public final void drawFinish(int i, int i2) {
                 FitemMsgTextWishing$setSpanToWinning$1.a(FitemMsgTextWishing.this, context, textView, liveGiftModel, i, i2);
@@ -126,7 +122,7 @@ final class FitemMsgTextWishing$setSpanToWinning$1 extends Lambda implements Fun
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                     a(dslSpanBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
@@ -135,6 +131,6 @@ final class FitemMsgTextWishing$setSpanToWinning$1 extends Lambda implements Fun
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

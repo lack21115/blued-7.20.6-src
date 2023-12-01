@@ -1,8 +1,6 @@
 package com.soft.blued.ui.user.model;
 
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
-import com.alipay.sdk.util.l;
 import java.util.Map;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/model/AliPayResult.class */
@@ -16,11 +14,11 @@ public class AliPayResult {
             return;
         }
         for (String str : map.keySet()) {
-            if (TextUtils.equals(str, l.f4671a)) {
+            if (TextUtils.equals(str, "resultStatus")) {
                 this.resultStatus = map.get(str);
             } else if (TextUtils.equals(str, "result")) {
                 this.result = map.get(str);
-            } else if (TextUtils.equals(str, l.b)) {
+            } else if (TextUtils.equals(str, "memo")) {
                 this.memo = map.get(str);
             }
         }
@@ -39,6 +37,6 @@ public class AliPayResult {
     }
 
     public String toString() {
-        return "resultStatus={" + this.resultStatus + "};memo={" + this.memo + "};result={" + this.result + i.d;
+        return "resultStatus={" + this.resultStatus + "};memo={" + this.memo + "};result={" + this.result + "}";
     }
 }

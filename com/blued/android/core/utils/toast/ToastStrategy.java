@@ -18,13 +18,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/ToastStrategy.class */
 public class ToastStrategy implements IToastStrategy {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Handler f9761a = new Handler(Looper.getMainLooper());
+    private static final Handler a = new Handler(Looper.getMainLooper());
     private Application b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ActivityStack f9762c;
+    private ActivityStack c;
     private WeakReference<IToast> d;
     private IToastStyle<?> e;
     private volatile CharSequence f;
@@ -68,7 +64,7 @@ public class ToastStrategy implements IToastStrategy {
     @Override // com.blued.android.core.utils.toast.config.IToastStrategy
     public void a(Application application) {
         this.b = application;
-        this.f9762c = ActivityStack.a(application);
+        this.c = ActivityStack.a(application);
     }
 
     @Override // com.blued.android.core.utils.toast.config.IToastStrategy
@@ -80,15 +76,15 @@ public class ToastStrategy implements IToastStrategy {
     public void a(CharSequence charSequence, long j, int i) {
         this.f = charSequence;
         this.g.put(this.f, Integer.valueOf(i));
-        f9761a.removeCallbacks(this.h);
-        f9761a.postDelayed(this.h, j + 200);
+        a.removeCallbacks(this.h);
+        a.postDelayed(this.h, j + 200);
     }
 
     protected boolean a(Context context) {
         NotificationManager notificationManager;
         if (Build.VERSION.SDK_INT < 24 || (notificationManager = (NotificationManager) context.getSystemService(NotificationManager.class)) == null) {
             if (Build.VERSION.SDK_INT >= 19) {
-                AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+                AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService("appops");
                 try {
                     return ((Integer) appOpsManager.getClass().getMethod("checkOpNoThrow", Integer.TYPE, Integer.TYPE, String.class).invoke(appOpsManager, Integer.valueOf(((Integer) appOpsManager.getClass().getDeclaredField("OP_POST_NOTIFICATION").get(Integer.class)).intValue()), Integer.valueOf(context.getApplicationInfo().uid), context.getPackageName())).intValue() == 0;
                 } catch (IllegalAccessException | NoSuchFieldException | NoSuchMethodException | RuntimeException | InvocationTargetException e) {
@@ -102,7 +98,7 @@ public class ToastStrategy implements IToastStrategy {
     }
 
     public IToast b(Application application) {
-        Activity a2 = this.f9762c.a();
+        Activity a2 = this.c.a();
         IToast activityToast = (Build.VERSION.SDK_INT < 23 || !Settings.canDrawOverlays(application)) ? a2 != null ? new ActivityToast(a2) : Build.VERSION.SDK_INT == 25 ? new SafeToast(application) : (Build.VERSION.SDK_INT >= 29 || a((Context) application)) ? new SystemToast(application) : new NotificationToast(application) : new WindowToast(application);
         if ((activityToast instanceof CustomToast) || Build.VERSION.SDK_INT < 30 || application.getApplicationInfo().targetSdkVersion < 30) {
             activityToast.setView(this.e.a(application));

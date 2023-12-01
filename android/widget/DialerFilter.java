@@ -11,6 +11,7 @@ import android.text.method.KeyListener;
 import android.text.method.TextKeyListener;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
+import com.android.internal.R;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/DialerFilter.class */
 public class DialerFilter extends RelativeLayout {
@@ -126,7 +127,7 @@ public class DialerFilter extends RelativeLayout {
     public void onFinishInflate() {
         super.onFinishInflate();
         this.mInputFilters = new InputFilter[]{new InputFilter.AllCaps()};
-        this.mHint = (EditText) findViewById(16908293);
+        this.mHint = (EditText) findViewById(R.id.hint);
         if (this.mHint == null) {
             throw new IllegalStateException("DialerFilter must have a child EditText named hint");
         }
@@ -135,7 +136,7 @@ public class DialerFilter extends RelativeLayout {
         this.mLetters.setKeyListener(TextKeyListener.getInstance());
         this.mLetters.setMovementMethod(null);
         this.mLetters.setFocusable(false);
-        this.mPrimary = (EditText) findViewById(16908300);
+        this.mPrimary = (EditText) findViewById(R.id.primary);
         if (this.mPrimary == null) {
             throw new IllegalStateException("DialerFilter must have a child EditText named primary");
         }
@@ -144,7 +145,7 @@ public class DialerFilter extends RelativeLayout {
         this.mDigits.setKeyListener(DialerKeyListener.getInstance());
         this.mDigits.setMovementMethod(null);
         this.mDigits.setFocusable(false);
-        this.mIcon = (ImageView) findViewById(16908294);
+        this.mIcon = (ImageView) findViewById(R.id.icon);
         setFocusable(true);
         this.mIsQwerty = true;
         setMode(1);

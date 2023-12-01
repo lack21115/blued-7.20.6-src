@@ -4,8 +4,10 @@ import android.content.Context;
 import android.os.Environment;
 import android.os.StatFs;
 import android.text.TextUtils;
+import com.alipay.sdk.util.l;
 import com.amap.api.maps.offlinemap.OfflineMapCity;
 import com.amap.api.maps.offlinemap.OfflineMapProvince;
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.transform.OutputKeys;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,7 +27,7 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bu.class */
 public final class bu {
     public static long a() {
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+        if (Environment.getExternalStorageState().equals("mounted")) {
             StatFs statFs = new StatFs(Environment.getExternalStorageDirectory().getPath());
             return statFs.getFreeBlocks() * statFs.getBlockSize();
         }
@@ -63,8 +66,8 @@ public final class bu {
         offlineMapProvince.setJianpin(a(jSONObject, "jianpin"));
         offlineMapProvince.setPinyin(a(jSONObject, "pinyin"));
         offlineMapProvince.setProvinceCode(c(a(jSONObject, "adcode")));
-        offlineMapProvince.setVersion(a(jSONObject, "version"));
-        offlineMapProvince.setSize(Long.parseLong(a(jSONObject, "size")));
+        offlineMapProvince.setVersion(a(jSONObject, OutputKeys.VERSION));
+        offlineMapProvince.setSize(Long.parseLong(a(jSONObject, ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE)));
         offlineMapProvince.setCityList(b(jSONObject));
         return offlineMapProvince;
     }
@@ -101,16 +104,16 @@ public final class bu {
         JSONObject optJSONObject;
         JSONObject optJSONObject2;
         ArrayList arrayList = new ArrayList();
-        if (jSONObject.has("result")) {
-            optJSONObject = jSONObject.optJSONObject("result");
+        if (jSONObject.has(l.c)) {
+            optJSONObject = jSONObject.optJSONObject(l.c);
         } else {
             JSONObject jSONObject2 = new JSONObject();
             try {
-                jSONObject2.put("result", new JSONObject().put("offlinemap_with_province_vfour", jSONObject));
+                jSONObject2.put(l.c, new JSONObject().put("offlinemap_with_province_vfour", jSONObject));
                 c(jSONObject2.toString(), context);
-                optJSONObject = jSONObject2.optJSONObject("result");
+                optJSONObject = jSONObject2.optJSONObject(l.c);
             } catch (JSONException e) {
-                optJSONObject = jSONObject.optJSONObject("result");
+                optJSONObject = jSONObject.optJSONObject(l.c);
                 iw.c(e, "Utility", "parseJson");
                 e.printStackTrace();
             }
@@ -127,8 +130,8 @@ public final class bu {
         if (optJSONObject2 == null) {
             return arrayList;
         }
-        if (optJSONObject2.has("version")) {
-            ax.d = a(optJSONObject2, "version");
+        if (optJSONObject2.has(OutputKeys.VERSION)) {
+            ax.d = a(optJSONObject2, OutputKeys.VERSION);
         }
         JSONArray optJSONArray = optJSONObject2.optJSONArray("provinces");
         if (optJSONArray == null) {
@@ -276,8 +279,8 @@ public final class bu {
         offlineMapCity.setCode(a(jSONObject, "citycode"));
         offlineMapCity.setPinyin(a(jSONObject, "pinyin"));
         offlineMapCity.setJianpin(a(jSONObject, "jianpin"));
-        offlineMapCity.setVersion(a(jSONObject, "version"));
-        offlineMapCity.setSize(Long.parseLong(a(jSONObject, "size")));
+        offlineMapCity.setVersion(a(jSONObject, OutputKeys.VERSION));
+        offlineMapCity.setSize(Long.parseLong(a(jSONObject, ATAdConst.NETWORK_REQUEST_PARAMS_KEY.BANNER_SIZE)));
         return offlineMapCity;
     }
 

@@ -7,11 +7,11 @@ import com.sdk.tencent.f.c;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static a f28078a;
+    public static a f14390a;
     public static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f28079c;
+    public static String f14391c;
 
     static {
         boolean z = c.b;
@@ -21,15 +21,15 @@ public class a {
     }
 
     public static a a(Context context) {
-        if (f28078a == null) {
+        if (f14390a == null) {
             synchronized (a.class) {
                 try {
-                    f28078a = new a(context);
+                    f14390a = new a(context);
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f28078a;
+        return f14390a;
     }
 }

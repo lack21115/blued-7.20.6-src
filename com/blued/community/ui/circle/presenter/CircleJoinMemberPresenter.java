@@ -172,7 +172,7 @@ public class CircleJoinMemberPresenter extends MvpPresenter {
                     CircleJoinMemberPresenter.this.m.a(false);
                     CircleJoinMemberPresenter.this.m.b(true);
                     CircleJoinMemberPresenter.this.m.remove(i);
-                    CircleJoinMemberPresenter.this.m.addData((CircleMemberAdapter) member);
+                    CircleJoinMemberPresenter.this.m.addData(member);
                 }
             }, member.uid, "2", g());
         } else {
@@ -184,7 +184,7 @@ public class CircleJoinMemberPresenter extends MvpPresenter {
                     CircleJoinMemberPresenter.this.m.a(true);
                     CircleJoinMemberPresenter.this.m.b(false);
                     CircleJoinMemberPresenter.this.m.remove(i);
-                    CircleJoinMemberPresenter.this.m.addData(2, (int) member);
+                    CircleJoinMemberPresenter.this.m.addData(2, member);
                 }
             }, member.uid, "1", g());
         }

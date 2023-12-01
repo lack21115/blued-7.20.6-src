@@ -2,7 +2,6 @@ package android.hardware.display;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 import java.util.Arrays;
 
 /* loaded from: source-9557208-dex2jar.jar:android/hardware/display/WifiDisplayStatus.class */
@@ -98,7 +97,7 @@ public final class WifiDisplayStatus implements Parcelable {
     }
 
     public String toString() {
-        return "WifiDisplayStatus{featureState=" + this.mFeatureState + ", scanState=" + this.mScanState + ", activeDisplayState=" + this.mActiveDisplayState + ", activeDisplay=" + this.mActiveDisplay + ", displays=" + Arrays.toString(this.mDisplays) + ", sessionInfo=" + this.mSessionInfo + i.d;
+        return "WifiDisplayStatus{featureState=" + this.mFeatureState + ", scanState=" + this.mScanState + ", activeDisplayState=" + this.mActiveDisplayState + ", activeDisplay=" + this.mActiveDisplay + ", displays=" + Arrays.toString(this.mDisplays) + ", sessionInfo=" + this.mSessionInfo + "}";
     }
 
     @Override // android.os.Parcelable

@@ -6,15 +6,15 @@ import android.content.Context;
 public final class eCoqw implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f39947a;
+    public final /* synthetic */ Context f26256a;
     public final /* synthetic */ int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final /* synthetic */ rBDKv f39948c;
+    public final /* synthetic */ rBDKv f26257c;
 
     public eCoqw(rBDKv rbdkv, Context context, int i) {
-        this.f39948c = rbdkv;
-        this.f39947a = context;
+        this.f26257c = rbdkv;
+        this.f26256a = context;
         this.b = i;
     }
 

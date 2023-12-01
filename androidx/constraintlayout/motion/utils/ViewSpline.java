@@ -50,7 +50,7 @@ public abstract class ViewSpline extends SplineSet {
 
         @Override // androidx.constraintlayout.motion.utils.ViewSpline
         public void setProperty(View view, float f) {
-            this.f2057a.getPos(f, this.f);
+            this.f2009a.getPos(f, this.f);
             CustomSupport.setInterpolatedValue(this.e.valueAt(0), view, this.f);
         }
 
@@ -65,7 +65,7 @@ public abstract class ViewSpline extends SplineSet {
             while (true) {
                 int i3 = i2;
                 if (i3 >= size) {
-                    this.f2057a = CurveFit.get(i, dArr, dArr2);
+                    this.f2009a = CurveFit.get(i, dArr, dArr2);
                     return;
                 }
                 dArr[i3] = this.e.keyAt(i3) * 0.01d;
@@ -350,7 +350,7 @@ public abstract class ViewSpline extends SplineSet {
                 z = true;
                 break;
             case -40300674:
-                if (str.equals("rotation")) {
+                if (str.equals(Key.ROTATION)) {
                     z = true;
                     break;
                 }

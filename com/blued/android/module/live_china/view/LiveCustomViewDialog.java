@@ -8,12 +8,11 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import com.blued.android.module.live_china.R;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveCustomViewDialog.class */
 public class LiveCustomViewDialog extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private OnBackCallBack f14455a;
+    private OnBackCallBack a;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveCustomViewDialog$OnBackCallBack.class */
     public interface OnBackCallBack {
@@ -30,7 +29,7 @@ public class LiveCustomViewDialog extends Dialog {
         setCancelable(false);
         Window window = getWindow();
         if (Build.VERSION.SDK_INT >= 21 && window != null && window.getDecorView() != null) {
-            window.getDecorView().setSystemUiVisibility(1280);
+            window.getDecorView().setSystemUiVisibility(GL10.GL_INVALID_ENUM);
             window.addFlags(Integer.MIN_VALUE);
             window.setStatusBarColor(0);
         }
@@ -46,7 +45,7 @@ public class LiveCustomViewDialog extends Dialog {
     }
 
     public void a(OnBackCallBack onBackCallBack) {
-        this.f14455a = onBackCallBack;
+        this.a = onBackCallBack;
     }
 
     @Override // android.app.Dialog
@@ -55,7 +54,7 @@ public class LiveCustomViewDialog extends Dialog {
         if (isShowing()) {
             dismiss();
         }
-        OnBackCallBack onBackCallBack = this.f14455a;
+        OnBackCallBack onBackCallBack = this.a;
         if (onBackCallBack != null) {
             onBackCallBack.a();
         }

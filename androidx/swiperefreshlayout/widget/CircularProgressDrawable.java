@@ -25,12 +25,12 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
     public static final int LARGE = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Interpolator f3386c = new LinearInterpolator();
+    private static final Interpolator f3338c = new LinearInterpolator();
     private static final Interpolator d = new FastOutSlowInInterpolator();
     private static final int[] e = {-16777216};
 
     /* renamed from: a  reason: collision with root package name */
-    float f3387a;
+    float f3339a;
     boolean b;
     private final Ring f;
     private float g;
@@ -58,11 +58,11 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
         int u;
 
         /* renamed from: a  reason: collision with root package name */
-        final RectF f3390a = new RectF();
+        final RectF f3342a = new RectF();
         final Paint b = new Paint();
 
         /* renamed from: c  reason: collision with root package name */
-        final Paint f3391c = new Paint();
+        final Paint f3343c = new Paint();
         final Paint d = new Paint();
         float e = 0.0f;
         float f = 0.0f;
@@ -75,8 +75,8 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
             this.b.setStrokeCap(Paint.Cap.SQUARE);
             this.b.setAntiAlias(true);
             this.b.setStyle(Paint.Style.STROKE);
-            this.f3391c.setStyle(Paint.Style.FILL);
-            this.f3391c.setAntiAlias(true);
+            this.f3343c.setStyle(Paint.Style.FILL);
+            this.f3343c.setAntiAlias(true);
             this.d.setColor(0);
         }
 
@@ -118,17 +118,17 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
                 path3.lineTo((f4 * f5) / 2.0f, this.s * f5);
                 this.o.offset((min + rectF.centerX()) - f3, rectF.centerY() + (this.h / 2.0f));
                 this.o.close();
-                this.f3391c.setColor(this.u);
-                this.f3391c.setAlpha(this.t);
+                this.f3343c.setColor(this.u);
+                this.f3343c.setAlpha(this.t);
                 canvas.save();
                 canvas.rotate(f + f2, rectF.centerX(), rectF.centerY());
-                canvas.drawPath(this.o, this.f3391c);
+                canvas.drawPath(this.o, this.f3343c);
                 canvas.restore();
             }
         }
 
         void a(Canvas canvas, Rect rect) {
-            RectF rectF = this.f3390a;
+            RectF rectF = this.f3342a;
             float f = this.q;
             float f2 = (this.h / 2.0f) + f;
             if (f <= 0.0f) {
@@ -327,7 +327,7 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
         });
         ofFloat.setRepeatCount(-1);
         ofFloat.setRepeatMode(1);
-        ofFloat.setInterpolator(f3386c);
+        ofFloat.setInterpolator(f3338c);
         ofFloat.addListener(new Animator.AnimatorListener() { // from class: androidx.swiperefreshlayout.widget.CircularProgressDrawable.2
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationCancel(Animator animator) {
@@ -343,7 +343,7 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
                 ring.u();
                 ring.h();
                 if (!CircularProgressDrawable.this.b) {
-                    CircularProgressDrawable.this.f3387a += 1.0f;
+                    CircularProgressDrawable.this.f3339a += 1.0f;
                     return;
                 }
                 CircularProgressDrawable.this.b = false;
@@ -355,7 +355,7 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
 
             @Override // android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
-                CircularProgressDrawable.this.f3387a = 0.0f;
+                CircularProgressDrawable.this.f3339a = 0.0f;
             }
         });
         this.i = ofFloat;
@@ -403,7 +403,7 @@ public class CircularProgressDrawable extends Drawable implements Animatable {
                 l = ring.l() + 0.79f;
                 interpolation = l - (((1.0f - d.getInterpolation((f - 0.5f) / 0.5f)) * 0.79f) + 0.01f);
             }
-            float f2 = this.f3387a;
+            float f2 = this.f3339a;
             ring.b(interpolation);
             ring.c(l);
             ring.d(t + (0.20999998f * f));

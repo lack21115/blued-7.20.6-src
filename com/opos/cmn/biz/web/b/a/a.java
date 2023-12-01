@@ -7,10 +7,10 @@ import android.view.View;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.cmn.biz.web.b.b.b.b f24720a;
+    private com.opos.cmn.biz.web.b.b.b.b f11032a;
 
     public a(Context context, b bVar) {
-        this.f24720a = new com.opos.cmn.biz.web.b.b.b.b(context, bVar);
+        this.f11032a = new com.opos.cmn.biz.web.b.b.b.b(context, bVar);
     }
 
     public static boolean a(Context context) {
@@ -18,26 +18,26 @@ public class a {
     }
 
     public void a() {
-        this.f24720a.c();
+        this.f11032a.c();
     }
 
     public void a(String str) {
-        this.f24720a.a(str);
+        this.f11032a.a(str);
     }
 
     public View b() {
-        return this.f24720a.a();
+        return this.f11032a.a();
     }
 
     public boolean c() {
-        return this.f24720a.b();
+        return this.f11032a.b();
     }
 
     public boolean d() {
-        return this.f24720a.e();
+        return this.f11032a.e();
     }
 
     public void e() {
-        this.f24720a.d();
+        this.f11032a.d();
     }
 }

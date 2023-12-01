@@ -36,12 +36,12 @@ public final class PointKt {
         return point2;
     }
 
-    public static final Point minus(Point point, Point p) {
+    public static final Point minus(Point point, Point point2) {
         Intrinsics.e(point, "<this>");
-        Intrinsics.e(p, "p");
-        Point point2 = new Point(point.x, point.y);
-        point2.offset(-p.x, -p.y);
-        return point2;
+        Intrinsics.e(point2, "p");
+        Point point3 = new Point(point.x, point.y);
+        point3.offset(-point2.x, -point2.y);
+        return point3;
     }
 
     public static final PointF minus(PointF pointF, float f) {
@@ -52,12 +52,12 @@ public final class PointKt {
         return pointF2;
     }
 
-    public static final PointF minus(PointF pointF, PointF p) {
+    public static final PointF minus(PointF pointF, PointF pointF2) {
         Intrinsics.e(pointF, "<this>");
-        Intrinsics.e(p, "p");
-        PointF pointF2 = new PointF(pointF.x, pointF.y);
-        pointF2.offset(-p.x, -p.y);
-        return pointF2;
+        Intrinsics.e(pointF2, "p");
+        PointF pointF3 = new PointF(pointF.x, pointF.y);
+        pointF3.offset(-pointF2.x, -pointF2.y);
+        return pointF3;
     }
 
     public static final Point plus(Point point, int i) {
@@ -67,12 +67,12 @@ public final class PointKt {
         return point2;
     }
 
-    public static final Point plus(Point point, Point p) {
+    public static final Point plus(Point point, Point point2) {
         Intrinsics.e(point, "<this>");
-        Intrinsics.e(p, "p");
-        Point point2 = new Point(point.x, point.y);
-        point2.offset(p.x, p.y);
-        return point2;
+        Intrinsics.e(point2, "p");
+        Point point3 = new Point(point.x, point.y);
+        point3.offset(point2.x, point2.y);
+        return point3;
     }
 
     public static final PointF plus(PointF pointF, float f) {
@@ -82,12 +82,12 @@ public final class PointKt {
         return pointF2;
     }
 
-    public static final PointF plus(PointF pointF, PointF p) {
+    public static final PointF plus(PointF pointF, PointF pointF2) {
         Intrinsics.e(pointF, "<this>");
-        Intrinsics.e(p, "p");
-        PointF pointF2 = new PointF(pointF.x, pointF.y);
-        pointF2.offset(p.x, p.y);
-        return pointF2;
+        Intrinsics.e(pointF2, "p");
+        PointF pointF3 = new PointF(pointF.x, pointF.y);
+        pointF3.offset(pointF2.x, pointF2.y);
+        return pointF3;
     }
 
     public static final Point toPoint(PointF pointF) {

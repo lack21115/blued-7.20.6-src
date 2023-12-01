@@ -1,5 +1,6 @@
 package android.provider;
 
+import android.R;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -123,7 +124,7 @@ public class Contacts {
             switch (i) {
                 case 1:
                     if (i2 != 0) {
-                        return context.getResources().getTextArray(17235968)[i2 - 1];
+                        return context.getResources().getTextArray(R.array.emailAddressTypes)[i2 - 1];
                     }
                     str = "";
                     if (!TextUtils.isEmpty(charSequence)) {
@@ -132,7 +133,7 @@ public class Contacts {
                     break;
                 case 2:
                     if (i2 != 0) {
-                        return context.getResources().getTextArray(17235972)[i2 - 1];
+                        return context.getResources().getTextArray(R.array.postalAddressTypes)[i2 - 1];
                     }
                     str = "";
                     if (!TextUtils.isEmpty(charSequence)) {
@@ -140,7 +141,7 @@ public class Contacts {
                     }
                     break;
                 default:
-                    str = context.getString(17039375);
+                    str = context.getString(R.string.untitled);
                     break;
             }
             return str;
@@ -451,7 +452,7 @@ public class Contacts {
         public static final CharSequence getDisplayLabel(Context context, int i, CharSequence charSequence) {
             CharSequence charSequence2;
             if (i != 0) {
-                charSequence2 = context.getResources().getTextArray(17235970)[i - 1];
+                charSequence2 = context.getResources().getTextArray(R.array.organizationTypes)[i - 1];
             } else {
                 charSequence2 = "";
                 if (!TextUtils.isEmpty(charSequence)) {
@@ -745,7 +746,7 @@ public class Contacts {
             CharSequence charSequence2;
             if (i != 0) {
                 if (charSequenceArr == null) {
-                    charSequenceArr = context.getResources().getTextArray(17235971);
+                    charSequenceArr = context.getResources().getTextArray(R.array.phoneTypes);
                 }
                 charSequence2 = charSequenceArr[i - 1];
             } else {
@@ -832,16 +833,16 @@ public class Contacts {
         public static final int getPresenceIconResourceId(int i) {
             switch (i) {
                 case 1:
-                    return 17301609;
+                    return R.drawable.presence_invisible;
                 case 2:
                 case 3:
-                    return 17301607;
+                    return R.drawable.presence_away;
                 case 4:
-                    return 17301608;
+                    return R.drawable.presence_busy;
                 case 5:
-                    return 17301611;
+                    return R.drawable.presence_online;
                 default:
-                    return 17301610;
+                    return R.drawable.presence_offline;
             }
         }
 

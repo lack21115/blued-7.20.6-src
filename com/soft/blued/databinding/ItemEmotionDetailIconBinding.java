@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemEmotionDetailIconBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29171a;
+    private final FrameLayout f15481a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29171a;
+        return this.f15481a;
     }
 }

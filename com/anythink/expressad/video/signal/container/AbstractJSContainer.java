@@ -29,7 +29,7 @@ public abstract class AbstractJSContainer extends FrameLayout implements IJSFact
     protected static final String k = "AbstractJSContainer";
 
     /* renamed from: a  reason: collision with root package name */
-    private int f8712a;
+    private int f5872a;
     private int b;
     public Activity l;
     public String m;
@@ -49,7 +49,7 @@ public abstract class AbstractJSContainer extends FrameLayout implements IJSFact
 
     public AbstractJSContainer(Context context) {
         super(context);
-        this.f8712a = 0;
+        this.f5872a = 0;
         this.b = 1;
         this.s = 2;
         this.t = false;
@@ -60,7 +60,7 @@ public abstract class AbstractJSContainer extends FrameLayout implements IJSFact
 
     public AbstractJSContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f8712a = 0;
+        this.f5872a = 0;
         this.b = 1;
         this.s = 2;
         this.t = false;
@@ -131,7 +131,7 @@ public abstract class AbstractJSContainer extends FrameLayout implements IJSFact
         }
         boolean z = false;
         if (cVar != null) {
-            c.C0143c M = cVar.M();
+            c.C0072c M = cVar.M();
             z = false;
             if (M != null) {
                 z = b(M.c());
@@ -145,7 +145,7 @@ public abstract class AbstractJSContainer extends FrameLayout implements IJSFact
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(Object obj) {
-        j.a().a(obj, a(this.f8712a));
+        j.a().a(obj, a(this.f5872a));
     }
 
     public void a(String str) {
@@ -161,7 +161,7 @@ public abstract class AbstractJSContainer extends FrameLayout implements IJSFact
         if (cVar == null) {
             return null;
         }
-        a.C0164a a2 = com.anythink.expressad.videocommon.a.a(this.t ? 287 : 94, cVar);
+        a.C0093a a2 = com.anythink.expressad.videocommon.a.a(this.t ? 287 : 94, cVar);
         if (a2 == null || !a2.c()) {
             return null;
         }
@@ -259,7 +259,7 @@ public abstract class AbstractJSContainer extends FrameLayout implements IJSFact
     }
 
     public void onResume() {
-        if (com.anythink.expressad.foundation.f.b.f7818c) {
+        if (com.anythink.expressad.foundation.f.b.f4978c) {
             return;
         }
         if (getJSCommon().g()) {

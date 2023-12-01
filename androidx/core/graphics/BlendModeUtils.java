@@ -11,7 +11,7 @@ class BlendModeUtils {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2446a;
+        static final /* synthetic */ int[] f2398a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:101:0x01b1 -> B:153:0x0100). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:103:0x01b5 -> B:165:0x010c). Please submit an issue!!! */
@@ -43,121 +43,121 @@ class BlendModeUtils {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:99:0x01ad -> B:157:0x00f4). Please submit an issue!!! */
         static {
             int[] iArr = new int[BlendModeCompat.values().length];
-            f2446a = iArr;
+            f2398a = iArr;
             try {
                 iArr[BlendModeCompat.CLEAR.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2446a[BlendModeCompat.SRC.ordinal()] = 2;
+                f2398a[BlendModeCompat.SRC.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2446a[BlendModeCompat.DST.ordinal()] = 3;
+                f2398a[BlendModeCompat.DST.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2446a[BlendModeCompat.SRC_OVER.ordinal()] = 4;
+                f2398a[BlendModeCompat.SRC_OVER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2446a[BlendModeCompat.DST_OVER.ordinal()] = 5;
+                f2398a[BlendModeCompat.DST_OVER.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2446a[BlendModeCompat.SRC_IN.ordinal()] = 6;
+                f2398a[BlendModeCompat.SRC_IN.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2446a[BlendModeCompat.DST_IN.ordinal()] = 7;
+                f2398a[BlendModeCompat.DST_IN.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f2446a[BlendModeCompat.SRC_OUT.ordinal()] = 8;
+                f2398a[BlendModeCompat.SRC_OUT.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f2446a[BlendModeCompat.DST_OUT.ordinal()] = 9;
+                f2398a[BlendModeCompat.DST_OUT.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f2446a[BlendModeCompat.SRC_ATOP.ordinal()] = 10;
+                f2398a[BlendModeCompat.SRC_ATOP.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f2446a[BlendModeCompat.DST_ATOP.ordinal()] = 11;
+                f2398a[BlendModeCompat.DST_ATOP.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f2446a[BlendModeCompat.XOR.ordinal()] = 12;
+                f2398a[BlendModeCompat.XOR.ordinal()] = 12;
             } catch (NoSuchFieldError e12) {
             }
             try {
-                f2446a[BlendModeCompat.PLUS.ordinal()] = 13;
+                f2398a[BlendModeCompat.PLUS.ordinal()] = 13;
             } catch (NoSuchFieldError e13) {
             }
             try {
-                f2446a[BlendModeCompat.MODULATE.ordinal()] = 14;
+                f2398a[BlendModeCompat.MODULATE.ordinal()] = 14;
             } catch (NoSuchFieldError e14) {
             }
             try {
-                f2446a[BlendModeCompat.SCREEN.ordinal()] = 15;
+                f2398a[BlendModeCompat.SCREEN.ordinal()] = 15;
             } catch (NoSuchFieldError e15) {
             }
             try {
-                f2446a[BlendModeCompat.OVERLAY.ordinal()] = 16;
+                f2398a[BlendModeCompat.OVERLAY.ordinal()] = 16;
             } catch (NoSuchFieldError e16) {
             }
             try {
-                f2446a[BlendModeCompat.DARKEN.ordinal()] = 17;
+                f2398a[BlendModeCompat.DARKEN.ordinal()] = 17;
             } catch (NoSuchFieldError e17) {
             }
             try {
-                f2446a[BlendModeCompat.LIGHTEN.ordinal()] = 18;
+                f2398a[BlendModeCompat.LIGHTEN.ordinal()] = 18;
             } catch (NoSuchFieldError e18) {
             }
             try {
-                f2446a[BlendModeCompat.COLOR_DODGE.ordinal()] = 19;
+                f2398a[BlendModeCompat.COLOR_DODGE.ordinal()] = 19;
             } catch (NoSuchFieldError e19) {
             }
             try {
-                f2446a[BlendModeCompat.COLOR_BURN.ordinal()] = 20;
+                f2398a[BlendModeCompat.COLOR_BURN.ordinal()] = 20;
             } catch (NoSuchFieldError e20) {
             }
             try {
-                f2446a[BlendModeCompat.HARD_LIGHT.ordinal()] = 21;
+                f2398a[BlendModeCompat.HARD_LIGHT.ordinal()] = 21;
             } catch (NoSuchFieldError e21) {
             }
             try {
-                f2446a[BlendModeCompat.SOFT_LIGHT.ordinal()] = 22;
+                f2398a[BlendModeCompat.SOFT_LIGHT.ordinal()] = 22;
             } catch (NoSuchFieldError e22) {
             }
             try {
-                f2446a[BlendModeCompat.DIFFERENCE.ordinal()] = 23;
+                f2398a[BlendModeCompat.DIFFERENCE.ordinal()] = 23;
             } catch (NoSuchFieldError e23) {
             }
             try {
-                f2446a[BlendModeCompat.EXCLUSION.ordinal()] = 24;
+                f2398a[BlendModeCompat.EXCLUSION.ordinal()] = 24;
             } catch (NoSuchFieldError e24) {
             }
             try {
-                f2446a[BlendModeCompat.MULTIPLY.ordinal()] = 25;
+                f2398a[BlendModeCompat.MULTIPLY.ordinal()] = 25;
             } catch (NoSuchFieldError e25) {
             }
             try {
-                f2446a[BlendModeCompat.HUE.ordinal()] = 26;
+                f2398a[BlendModeCompat.HUE.ordinal()] = 26;
             } catch (NoSuchFieldError e26) {
             }
             try {
-                f2446a[BlendModeCompat.SATURATION.ordinal()] = 27;
+                f2398a[BlendModeCompat.SATURATION.ordinal()] = 27;
             } catch (NoSuchFieldError e27) {
             }
             try {
-                f2446a[BlendModeCompat.COLOR.ordinal()] = 28;
+                f2398a[BlendModeCompat.COLOR.ordinal()] = 28;
             } catch (NoSuchFieldError e28) {
             }
             try {
-                f2446a[BlendModeCompat.LUMINOSITY.ordinal()] = 29;
+                f2398a[BlendModeCompat.LUMINOSITY.ordinal()] = 29;
             } catch (NoSuchFieldError e29) {
             }
         }
@@ -168,7 +168,7 @@ class BlendModeUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static BlendMode a(BlendModeCompat blendModeCompat) {
-        switch (AnonymousClass1.f2446a[blendModeCompat.ordinal()]) {
+        switch (AnonymousClass1.f2398a[blendModeCompat.ordinal()]) {
             case 1:
                 return BlendMode.CLEAR;
             case 2:
@@ -235,7 +235,7 @@ class BlendModeUtils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static PorterDuff.Mode b(BlendModeCompat blendModeCompat) {
         if (blendModeCompat != null) {
-            switch (AnonymousClass1.f2446a[blendModeCompat.ordinal()]) {
+            switch (AnonymousClass1.f2398a[blendModeCompat.ordinal()]) {
                 case 1:
                     return PorterDuff.Mode.CLEAR;
                 case 2:

@@ -8,17 +8,17 @@ import com.xiaomi.push.service.bv;
 public class fg extends bv.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ ff f41405a;
+    final /* synthetic */ ff f27714a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public fg(ff ffVar) {
-        this.f41405a = ffVar;
+        this.f27714a = ffVar;
     }
 
     @Override // com.xiaomi.push.service.bv.a
     public void a(dv.b bVar) {
-        if (bVar.m11654e()) {
-            ff.m11747a().m11751a(bVar.e());
+        if (bVar.m8604e()) {
+            ff.m8697a().m8701a(bVar.e());
         }
     }
 }

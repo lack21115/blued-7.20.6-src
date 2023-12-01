@@ -20,11 +20,11 @@ import java.util.List;
 public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f29865a;
+    protected Context f16175a;
     private IRequestHost b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f29866c;
+    private int f16176c;
     private List<ChildImageInfo> d = new ArrayList();
     private List<AblumHolder> e = new ArrayList();
     private RecyclerView f;
@@ -35,11 +35,11 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
     public class AblumHolder extends RecyclerView.ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        ImageView f29868a;
+        ImageView f16178a;
         View b;
 
         /* renamed from: c  reason: collision with root package name */
-        String f29869c;
+        String f16179c;
 
         public AblumHolder(View view) {
             super(view);
@@ -52,8 +52,8 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
     }
 
     public MsgAblumAdapter(Context context, IRequestHost iRequestHost, RecyclerView recyclerView, ChildImageInfo childImageInfo) {
-        this.f29866c = -1;
-        this.f29865a = context;
+        this.f16176c = -1;
+        this.f16175a = context;
         this.b = iRequestHost;
         this.f = recyclerView;
         this.d.addAll(SelectPhotoManager.a().c());
@@ -64,7 +64,7 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
                 if (i2 >= this.d.size()) {
                     break;
                 } else if (TextUtils.equals(this.d.get(i2).mImagePath, childImageInfo.mImagePath)) {
-                    this.f29866c = i2;
+                    this.f16176c = i2;
                     break;
                 } else {
                     i = i2 + 1;
@@ -82,9 +82,9 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public AblumHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View inflate = LayoutInflater.from(this.f29865a).inflate(R.layout.msg_ablum_item, viewGroup, false);
+        View inflate = LayoutInflater.from(this.f16175a).inflate(R.layout.msg_ablum_item, viewGroup, false);
         AblumHolder ablumHolder = new AblumHolder(inflate);
-        ablumHolder.f29868a = (ImageView) inflate.findViewById(R.id.msg_thumb_image);
+        ablumHolder.f16178a = (ImageView) inflate.findViewById(R.id.msg_thumb_image);
         ablumHolder.b = inflate.findViewById(R.id.msg_thumb_stoke);
         this.e.add(ablumHolder);
         return ablumHolder;
@@ -95,7 +95,7 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
             return;
         }
         this.d.add(new ChildImageInfo(childImageInfo));
-        this.f29866c = this.d.size() - 1;
+        this.f16176c = this.d.size() - 1;
         if (this.d.size() == 1) {
             notifyDataSetChanged();
         } else {
@@ -113,15 +113,15 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
         if (i >= this.d.size()) {
             return;
         }
-        if (i == this.f29866c) {
+        if (i == this.f16176c) {
             ablumHolder.b.setVisibility(0);
         } else {
             ablumHolder.b.setVisibility(8);
         }
-        ablumHolder.f29869c = this.d.get(i).mImagePath;
-        ImageLoader.d(this.b, this.d.get(i).mImagePath).b(2131231620).a(6.0f).a(ablumHolder.f29868a);
+        ablumHolder.f16179c = this.d.get(i).mImagePath;
+        ImageLoader.d(this.b, this.d.get(i).mImagePath).b(2131231620).a(6.0f).a(ablumHolder.f16178a);
         final String str = this.d.get(i).mImagePath;
-        ablumHolder.f29868a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.adapter.MsgAblumAdapter.1
+        ablumHolder.f16178a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.adapter.MsgAblumAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -131,19 +131,19 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
                     if (i3 >= MsgAblumAdapter.this.d.size()) {
                         break;
                     } else if (TextUtils.equals(((ChildImageInfo) MsgAblumAdapter.this.d.get(i3)).mImagePath, str)) {
-                        MsgAblumAdapter.this.f29866c = i3;
+                        MsgAblumAdapter.this.f16176c = i3;
                         break;
                     } else {
                         i2 = i3 + 1;
                     }
                 }
-                if (MsgAblumAdapter.this.f29866c < 0 || MsgAblumAdapter.this.f29866c >= MsgAblumAdapter.this.d.size()) {
+                if (MsgAblumAdapter.this.f16176c < 0 || MsgAblumAdapter.this.f16176c >= MsgAblumAdapter.this.d.size()) {
                     return;
                 }
                 MsgAblumAdapter msgAblumAdapter = MsgAblumAdapter.this;
-                msgAblumAdapter.d((ChildImageInfo) msgAblumAdapter.d.get(MsgAblumAdapter.this.f29866c));
+                msgAblumAdapter.d((ChildImageInfo) msgAblumAdapter.d.get(MsgAblumAdapter.this.f16176c));
                 if (MsgAblumAdapter.this.g != null) {
-                    MsgAblumAdapter.this.g.a((ChildImageInfo) MsgAblumAdapter.this.d.get(MsgAblumAdapter.this.f29866c));
+                    MsgAblumAdapter.this.g.a((ChildImageInfo) MsgAblumAdapter.this.d.get(MsgAblumAdapter.this.f16176c));
                 }
             }
         });
@@ -158,7 +158,7 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
         if (childImageInfo == null) {
             return;
         }
-        this.f29866c = -1;
+        this.f16176c = -1;
         int i2 = 0;
         while (true) {
             i = i2;
@@ -188,7 +188,7 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
             if (i2 >= this.d.size()) {
                 break;
             } else if (TextUtils.equals(this.d.get(i2).mImagePath, childImageInfo.mImagePath)) {
-                this.f29866c = i2;
+                this.f16176c = i2;
                 this.f.scrollToPosition(i2);
                 break;
             } else {
@@ -200,7 +200,7 @@ public class MsgAblumAdapter extends RecyclerView.Adapter<AblumHolder> {
 
     public void d(ChildImageInfo childImageInfo) {
         for (AblumHolder ablumHolder : this.e) {
-            if (TextUtils.equals(ablumHolder.f29869c, childImageInfo.mImagePath)) {
+            if (TextUtils.equals(ablumHolder.f16179c, childImageInfo.mImagePath)) {
                 ablumHolder.b.setVisibility(0);
             } else {
                 ablumHolder.b.setVisibility(8);

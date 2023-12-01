@@ -1,6 +1,5 @@
 package com.soft.blued.ui.user.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.viewpager.widget.PagerAdapter;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.StatusBarHelper;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -44,11 +44,11 @@ import java.util.List;
 public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickListener, VIPBuyResultObserver.IVIPBuyResultObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f34099a;
+    public Context f20408a;
     public View b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LayoutInflater f34100c;
+    public LayoutInflater f20409c;
     private Dialog d;
     private String f;
     private int g;
@@ -70,18 +70,17 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
     private List<View> v = new ArrayList();
     private BluedUIHttpResponse w = new BluedUIHttpResponse<BluedEntityA<VIPBuyOptionForJsonParse>>("vip_dialog_goods", getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.1
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<VIPBuyOptionForJsonParse> bluedEntityA) {
             if (bluedEntityA != null && bluedEntityA.data != null && bluedEntityA.data.size() > 0 && bluedEntityA.data.get(0) != null) {
                 if (VIPBuyDialogFragment.this.e == 1) {
-                    if (bluedEntityA.data.get(0).vip_list != null) {
-                        VIPBuyDialogFragment.this.r = bluedEntityA.data.get(0).vip_list.list;
-                        VIPBuyDialogFragment.this.a(bluedEntityA.data.get(0).vip_list.privilege);
+                    if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list != null) {
+                        VIPBuyDialogFragment.this.r = ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.list;
+                        VIPBuyDialogFragment.this.a(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).vip_list.privilege);
                     }
-                } else if (bluedEntityA.data.get(0).svip_list != null) {
-                    VIPBuyDialogFragment.this.r = bluedEntityA.data.get(0).svip_list.list;
-                    VIPBuyDialogFragment.this.a(bluedEntityA.data.get(0).svip_list.privilege);
+                } else if (((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list != null) {
+                    VIPBuyDialogFragment.this.r = ((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.list;
+                    VIPBuyDialogFragment.this.a(((VIPBuyOptionForJsonParse) bluedEntityA.data.get(0)).svip_list.privilege);
                 }
                 VIPBuyDialogFragment.this.h.a();
             }
@@ -131,7 +130,7 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
     }
 
     public void a() {
-        PayHttpUtils.a(this.w, getFragmentActive(), "new_vip", this.g);
+        PayHttpUtils.a(this.w, (IRequestHost) getFragmentActive(), "new_vip", this.g);
     }
 
     public void a(int i) {
@@ -158,7 +157,7 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
             i2 = i3 + 1;
         }
         if (StringUtils.d(this.s.item.button)) {
-            this.o.setText(this.f34099a.getResources().getString(R.string.get_it_right_now));
+            this.o.setText(this.f20408a.getResources().getString(R.string.get_it_right_now));
         } else {
             this.o.setText(this.s.item.button);
         }
@@ -189,10 +188,10 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
     }
 
     public void b() {
-        this.d = DialogUtils.a(this.f34099a);
-        AutoScrollViewPager autoScrollViewPager = (AutoScrollViewPager) this.b.findViewById(2131373209);
-        this.h = autoScrollViewPager;
-        autoScrollViewPager.setInterval(4000L);
+        this.d = DialogUtils.a(this.f20408a);
+        AutoScrollViewPager findViewById = this.b.findViewById(R.id.view_pager);
+        this.h = findViewById;
+        findViewById.setInterval(4000L);
         this.i = (ImageView) this.b.findViewById(R.id.img_shift);
         TextView textView = (TextView) this.b.findViewById(R.id.tv_shift);
         this.j = textView;
@@ -201,10 +200,10 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
         } else {
             textView.setText(R.string.check_vip);
         }
-        this.k = (ImageView) this.b.findViewById(2131364488);
-        CirclePageIndicator circlePageIndicator = (CirclePageIndicator) this.b.findViewById(2131364744);
+        this.k = (ImageView) this.b.findViewById(R.id.img_close);
+        CirclePageIndicator circlePageIndicator = (CirclePageIndicator) this.b.findViewById(R.id.indicator);
         this.l = circlePageIndicator;
-        circlePageIndicator.setInterval(DensityUtils.a(this.f34099a, 5.0f));
+        circlePageIndicator.setInterval(DensityUtils.a(this.f20408a, 5.0f));
         this.m = (TextView) this.b.findViewById(R.id.tv_vip_desc);
         this.n = (LinearLayout) this.b.findViewById(R.id.ll_options);
         VIPDiaglogBuyOptionView vIPDiaglogBuyOptionView = (VIPDiaglogBuyOptionView) this.b.findViewById(R.id.option1);
@@ -215,7 +214,7 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
         this.q.add(vIPDiaglogBuyOptionView2);
         this.q.add(vIPDiaglogBuyOptionView3);
         this.q.add(vIPDiaglogBuyOptionView4);
-        this.o = (ShapeTextView) this.b.findViewById(R.id.tv_buy_btn);
+        this.o = this.b.findViewById(R.id.tv_buy_btn);
         this.p = (TextView) this.b.findViewById(2131372705);
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter();
         this.t = myPagerAdapter;
@@ -230,55 +229,55 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
         vIPDiaglogBuyOptionView4.setOnClickListener(this);
         this.o.setOnClickListener(this);
         if (this.e == 2) {
-            this.m.setText(this.f34099a.getResources().getString(R.string.svip_membership));
-            this.p.setText(this.f34099a.getResources().getString(R.string.vip_will_count_after_svip_end) + this.f34099a.getResources().getString(R.string.vip_buy_agreement_dialog));
-            TypefaceUtils.a(this.f34099a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.2
+            this.m.setText(this.f20408a.getResources().getString(R.string.svip_membership));
+            this.p.setText(this.f20408a.getResources().getString(R.string.vip_will_count_after_svip_end) + this.f20408a.getResources().getString(R.string.vip_buy_agreement_dialog));
+            TypefaceUtils.a(this.f20408a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f34099a, H5Url.a(35), 0);
+                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f20408a, H5Url.a(35), 0);
                 }
             }, new TypefaceUtils.SpannIndex(51, 64), new TypefaceUtils.SpannIndex(204, 235), true);
-            TypefaceUtils.a(this.f34099a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.3
+            TypefaceUtils.a(this.f20408a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.3
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f34099a, H5Url.a(22), 0);
+                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f20408a, H5Url.a(22), 0);
                 }
             }, new TypefaceUtils.SpannIndex(65, 69), new TypefaceUtils.SpannIndex(236, 250), true);
-            TypefaceUtils.a(this.f34099a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.4
+            TypefaceUtils.a(this.f20408a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.4
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f34099a, H5Url.a(34), 0);
+                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f20408a, H5Url.a(34), 0);
                 }
             }, new TypefaceUtils.SpannIndex(70, 83), new TypefaceUtils.SpannIndex(251, 297), true);
-            this.h.setBackgroundResource(R.drawable.bg_buy_vip_dialog_yellow);
+            this.h.setBackgroundResource((int) R.drawable.bg_buy_vip_dialog_yellow);
         } else {
-            this.m.setText(this.f34099a.getResources().getString(R.string.vip_membership));
-            this.p.setText(this.f34099a.getResources().getString(R.string.vip_buy_agreement_dialog));
-            TypefaceUtils.a(this.f34099a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.5
+            this.m.setText(this.f20408a.getResources().getString(R.string.vip_membership));
+            this.p.setText(this.f20408a.getResources().getString(R.string.vip_buy_agreement_dialog));
+            TypefaceUtils.a(this.f20408a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.5
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f34099a, H5Url.a(35), 0);
+                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f20408a, H5Url.a(35), 0);
                 }
             }, new TypefaceUtils.SpannIndex(27, 40), new TypefaceUtils.SpannIndex(122, 153), true);
-            TypefaceUtils.a(this.f34099a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.6
+            TypefaceUtils.a(this.f20408a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.6
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f34099a, H5Url.a(22), 0);
+                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f20408a, H5Url.a(22), 0);
                 }
             }, new TypefaceUtils.SpannIndex(41, 45), new TypefaceUtils.SpannIndex(154, 165), true);
-            TypefaceUtils.a(this.f34099a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.7
+            TypefaceUtils.a(this.f20408a, this.p, new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.VIPBuyDialogFragment.7
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f34099a, H5Url.a(34), 0);
+                    WebViewShowInfoFragment.show(VIPBuyDialogFragment.this.f20408a, H5Url.a(34), 0);
                 }
             }, new TypefaceUtils.SpannIndex(46, 59), new TypefaceUtils.SpannIndex(166, 215), true);
-            this.h.setBackgroundResource(R.drawable.bg_buy_vip_dialog_blue);
+            this.h.setBackgroundResource((int) R.drawable.bg_buy_vip_dialog_blue);
         }
         this.w.refresh();
         a();
@@ -296,10 +295,10 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
                 return;
             }
             VIPRightDescForSelling vIPRightDescForSelling = list.get(i2);
-            View inflate = this.f34100c.inflate(R.layout.item_vip_buy_head_vp, (ViewGroup) null);
+            View inflate = this.f20409c.inflate(R.layout.item_vip_buy_head_vp, (ViewGroup) null);
             ImageView imageView = (ImageView) inflate.findViewById(2131364552);
             TextView textView = (TextView) inflate.findViewById(2131372046);
-            TextView textView2 = (TextView) inflate.findViewById(2131371262);
+            TextView textView2 = (TextView) inflate.findViewById(R.id.tv_desc);
             ImageLoader.a(getFragmentActive(), vIPRightDescForSelling.icon).a(imageView);
             textView.setText(vIPRightDescForSelling.title);
             textView2.setText(vIPRightDescForSelling.description);
@@ -312,7 +311,7 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
     public void onClick(View view) {
         Tracker.onClick(view);
         switch (view.getId()) {
-            case 2131364488:
+            case R.id.img_close /* 2131364488 */:
                 EventTrackVIP.a(VipProtos.Event.VIP_BUY_BACK_BTN_CLICK);
                 getActivity().finish();
                 return;
@@ -320,9 +319,9 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
             case R.id.tv_shift /* 2131372588 */:
                 EventTrackVIP.a(VipProtos.Event.VIP_BUY_SWITCH_BTN_CLICK, this.e == 1 ? VipProtos.Name.VIP : VipProtos.Name.SVIP, VipProtos.PageVersion.V_0813);
                 if (this.e == 2) {
-                    PayUtils.a(this.f34099a, 1, this.f, this.g, this.u);
+                    PayUtils.a(this.f20408a, 1, this.f, this.g, this.u);
                 } else {
-                    PayUtils.a(this.f34099a, 2, this.f, this.g, this.u);
+                    PayUtils.a(this.f20408a, 2, this.f, this.g, this.u);
                 }
                 ActivityChangeAnimationUtils.k(getActivity());
                 getActivity().finish();
@@ -341,17 +340,16 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
                 return;
             case R.id.tv_buy_btn /* 2131371033 */:
                 EventTrackVIP.a(VipProtos.Event.VIP_BUY_OPEN_BTN_CLICK, this.e == 1 ? VipProtos.Name.VIP : VipProtos.Name.SVIP, this.u, VipProtos.PageVersion.V_0813);
-                PayPreOrderFragment.a(this.f34099a, this.s, "popup", "", "", "", this.f);
+                PayPreOrderFragment.a(this.f20408a, this.s, "popup", "", "", "", this.f);
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34099a = getActivity();
-        this.f34100c = layoutInflater;
+        this.f20408a = getActivity();
+        this.f20409c = layoutInflater;
         if (this.b == null) {
             Bundle arguments = getArguments();
             if (arguments != null) {
@@ -360,16 +358,15 @@ public class VIPBuyDialogFragment extends BaseFragment implements View.OnClickLi
                 this.g = arguments.getInt("KEY_RIGHT_ID");
                 this.u = (VipProtos.FromType) arguments.getSerializable("KEY_RIGHT_ID");
             }
-            this.b = this.f34100c.inflate(R.layout.fragment_vip_buy_new, viewGroup, false);
+            this.b = this.f20409c.inflate(R.layout.fragment_vip_buy_new, viewGroup, false);
             b();
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
             VIPBuyResultObserver.a().a(this, getLifecycle());
         }
         EventTrackVIP.a(VipProtos.Event.VIP_BUY_SHOW, this.e == 1 ? VipProtos.Name.VIP : VipProtos.Name.SVIP, this.u, VipProtos.PageVersion.V_0813);
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         Dialog dialog = this.d;

@@ -9,9 +9,7 @@ import kotlinx.coroutines.internal.Symbol;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SharedFlowKt.class */
 public final class SharedFlowKt {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Symbol f43416a = new Symbol("NO_VALUE");
+    public static final Symbol a = new Symbol("NO_VALUE");
 
     public static final <T> Flow<T> a(SharedFlow<? extends T> sharedFlow, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow) {
         return ((i == 0 || i == -3) && bufferOverflow == BufferOverflow.SUSPEND) ? sharedFlow : new ChannelFlowOperatorImpl(sharedFlow, coroutineContext, i, bufferOverflow);

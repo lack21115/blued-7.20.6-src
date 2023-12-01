@@ -9,7 +9,7 @@ import com.tencent.thumbplayer.core.downloadproxy.api.TPDownloadProxyEnum;
 public abstract class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24965a = i.class.getSimpleName();
+    private static final String f11277a = i.class.getSimpleName();
 
     public static String a(Context context) {
         SharedPreferences g = g(context);
@@ -76,7 +76,7 @@ public abstract class i {
 
     public static String d(Context context) {
         SharedPreferences g = g(context);
-        return g != null ? g.getString("gaid", "") : "";
+        return g != null ? g.getString(com.anythink.expressad.foundation.g.a.P, "") : "";
     }
 
     public static void d(Context context, String str) {
@@ -85,7 +85,7 @@ public abstract class i {
             return;
         }
         SharedPreferences.Editor edit = g.edit();
-        edit.putString("gaid", str);
+        edit.putString(com.anythink.expressad.foundation.g.a.P, str);
         edit.apply();
     }
 

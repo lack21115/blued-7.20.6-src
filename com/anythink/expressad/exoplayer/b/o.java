@@ -102,9 +102,9 @@ public final class o extends com.anythink.expressad.exoplayer.f.b implements com
     }
 
     private int a(com.anythink.expressad.exoplayer.f.a aVar, com.anythink.expressad.exoplayer.m mVar) {
-        if (af.f7632a < 24 && "OMX.google.raw.decoder".equals(aVar.f7330c)) {
+        if (af.f4793a < 24 && "OMX.google.raw.decoder".equals(aVar.f4491c)) {
             boolean z = true;
-            if (af.f7632a == 23) {
+            if (af.f4793a == 23) {
                 PackageManager packageManager = this.r.getPackageManager();
                 z = true;
                 if (packageManager != null) {
@@ -128,7 +128,7 @@ public final class o extends com.anythink.expressad.exoplayer.f.b implements com
         mediaFormat.setInteger(MediaFormat.KEY_SAMPLE_RATE, mVar.v);
         com.anythink.expressad.exoplayer.f.e.a(mediaFormat, mVar.j);
         com.anythink.expressad.exoplayer.f.e.a(mediaFormat, MediaFormat.KEY_MAX_INPUT_SIZE, i);
-        if (af.f7632a >= 23) {
+        if (af.f4793a >= 23) {
             mediaFormat.setInteger("priority", 0);
         }
         return mediaFormat;
@@ -144,9 +144,9 @@ public final class o extends com.anythink.expressad.exoplayer.f.b implements com
     }
 
     private int b(com.anythink.expressad.exoplayer.f.a aVar, com.anythink.expressad.exoplayer.m mVar) {
-        if (af.f7632a < 24 && "OMX.google.raw.decoder".equals(aVar.f7330c)) {
+        if (af.f4793a < 24 && "OMX.google.raw.decoder".equals(aVar.f4491c)) {
             boolean z = true;
-            if (af.f7632a == 23) {
+            if (af.f4793a == 23) {
                 PackageManager packageManager = this.r.getPackageManager();
                 z = true;
                 if (packageManager != null) {
@@ -169,7 +169,7 @@ public final class o extends com.anythink.expressad.exoplayer.f.b implements com
     }
 
     private static boolean b(String str) {
-        if (af.f7632a < 24 && "OMX.SEC.aac.dec".equals(str) && "samsung".equals(af.f7633c)) {
+        if (af.f4793a < 24 && "OMX.SEC.aac.dec".equals(str) && "samsung".equals(af.f4794c)) {
             return af.b.startsWith("zeroflte") || af.b.startsWith("herolte") || af.b.startsWith("heroqlte");
         }
         return false;

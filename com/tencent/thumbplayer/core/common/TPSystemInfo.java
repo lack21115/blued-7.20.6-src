@@ -209,19 +209,19 @@ public class TPSystemInfo {
         }
         int i2 = sCpuHWProducter;
         if (i2 >= 0 && sCpuHWProductIdx < 0) {
-            String[] strArr = sCpuPerfList[i2];
+            CharSequence[] charSequenceArr = sCpuPerfList[i2];
             int i3 = 0;
             int i4 = -1;
             while (true) {
                 i = i4;
-                if (i3 >= strArr.length) {
+                if (i3 >= charSequenceArr.length) {
                     break;
                 }
                 int i5 = i;
-                if (str.contains(strArr[i3])) {
+                if (str.contains(charSequenceArr[i3])) {
                     if (-1 != i) {
                         i5 = i;
-                        if (strArr[i3].length() <= strArr[i].length()) {
+                        if (charSequenceArr[i3].length() <= charSequenceArr[i].length()) {
                         }
                     }
                     i5 = i3;

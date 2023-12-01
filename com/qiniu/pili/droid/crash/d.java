@@ -11,11 +11,11 @@ import java.util.regex.Pattern;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27475a;
+    private Context f13787a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public d(Context context) {
-        this.f27475a = context;
+        this.f13787a = context;
     }
 
     private void c(i iVar) {
@@ -24,11 +24,11 @@ public class d {
         iVar.a(ReportField.os_platform, "android");
         iVar.a(ReportField.os_version, Build.VERSION.RELEASE);
         iVar.a(ReportField.sdk_version, "3.1.1");
-        iVar.a(ReportField.bundle_id, this.f27475a.getPackageName());
-        iVar.a(ReportField.app_name, k.b(this.f27475a));
-        iVar.a(ReportField.app_version, k.e(this.f27475a));
-        iVar.a(ReportField.device_id, k.c(this.f27475a));
-        iVar.a(ReportField.gl_version, k.d(this.f27475a));
+        iVar.a(ReportField.bundle_id, this.f13787a.getPackageName());
+        iVar.a(ReportField.app_name, k.b(this.f13787a));
+        iVar.a(ReportField.app_version, k.e(this.f13787a));
+        iVar.a(ReportField.device_id, k.c(this.f13787a));
+        iVar.a(ReportField.gl_version, k.d(this.f13787a));
         iVar.a(ReportField.crash_version, "1.0");
     }
 
@@ -64,7 +64,7 @@ public class d {
             } catch (Exception e) {
             }
         }
-        if (com.anythink.expressad.foundation.g.a.f.f7832a.equals(iVar.a(ReportField.crash_type))) {
+        if (com.anythink.expressad.foundation.g.a.f.f4992a.equals(iVar.a(ReportField.crash_type))) {
             String a3 = iVar.a("build id");
             if (a3 != null) {
                 iVar.a(ReportField.build_id, k.c(a3));
@@ -88,7 +88,7 @@ public class d {
         }
         if (LogType.ANR_TYPE.equals(iVar.a(ReportField.crash_type))) {
             try {
-                iVar.a(ReportField.dropbox, new e().a(this.f27475a));
+                iVar.a(ReportField.dropbox, new e().a(this.f13787a));
             } catch (Exception e2) {
             }
         }

@@ -14,6 +14,6 @@ public class TextKeyframeAnimation extends KeyframeAnimation<DocumentData> {
     @Override // com.airbnb.lottie.animation.keyframe.BaseKeyframeAnimation
     /* renamed from: b */
     public DocumentData a(Keyframe<DocumentData> keyframe, float f) {
-        return keyframe.f4418a;
+        return keyframe.a;
     }
 }

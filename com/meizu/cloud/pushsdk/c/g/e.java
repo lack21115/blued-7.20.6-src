@@ -15,18 +15,18 @@ import java.util.Arrays;
 public class e implements Serializable, Comparable<e> {
 
     /* renamed from: a  reason: collision with root package name */
-    static final char[] f24062a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    static final char[] f10451a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
     public static final e b = a(new byte[0]);
     private static final long serialVersionUID = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    final byte[] f24063c;
+    final byte[] f10452c;
     transient int d;
     transient String e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public e(byte[] bArr) {
-        this.f24063c = bArr;
+        this.f10452c = bArr;
     }
 
     public static e a(InputStream inputStream, int i) throws IOException {
@@ -53,7 +53,7 @@ public class e implements Serializable, Comparable<e> {
 
     public static e a(String str) {
         if (str != null) {
-            e eVar = new e(str.getBytes(o.f24078a));
+            e eVar = new e(str.getBytes(o.f10467a));
             eVar.e = str;
             return eVar;
         }
@@ -69,7 +69,7 @@ public class e implements Serializable, Comparable<e> {
 
     private e b(String str) {
         try {
-            return a(MessageDigest.getInstance(str).digest(this.f24063c));
+            return a(MessageDigest.getInstance(str).digest(this.f10452c));
         } catch (NoSuchAlgorithmException e) {
             throw new AssertionError(e);
         }
@@ -80,7 +80,7 @@ public class e implements Serializable, Comparable<e> {
         try {
             Field declaredField = e.class.getDeclaredField("c");
             declaredField.setAccessible(true);
-            declaredField.set(this, a2.f24063c);
+            declaredField.set(this, a2.f10452c);
         } catch (IllegalAccessException e) {
             throw new AssertionError();
         } catch (NoSuchFieldException e2) {
@@ -89,12 +89,12 @@ public class e implements Serializable, Comparable<e> {
     }
 
     private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
-        objectOutputStream.writeInt(this.f24063c.length);
-        objectOutputStream.write(this.f24063c);
+        objectOutputStream.writeInt(this.f10452c.length);
+        objectOutputStream.write(this.f10452c);
     }
 
     public byte a(int i) {
-        return this.f24063c[i];
+        return this.f10452c[i];
     }
 
     @Override // java.lang.Comparable
@@ -126,19 +126,19 @@ public class e implements Serializable, Comparable<e> {
         if (str != null) {
             return str;
         }
-        String str2 = new String(this.f24063c, o.f24078a);
+        String str2 = new String(this.f10452c, o.f10467a);
         this.e = str2;
         return str2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(b bVar) {
-        byte[] bArr = this.f24063c;
+        byte[] bArr = this.f10452c;
         bVar.c(bArr, 0, bArr.length);
     }
 
     public boolean a(int i, byte[] bArr, int i2, int i3) {
-        byte[] bArr2 = this.f24063c;
+        byte[] bArr2 = this.f10452c;
         return i <= bArr2.length - i3 && i2 <= bArr.length - i3 && o.a(bArr2, i, bArr, i2, i3);
     }
 
@@ -147,12 +147,12 @@ public class e implements Serializable, Comparable<e> {
     }
 
     public String c() {
-        byte[] bArr = this.f24063c;
+        byte[] bArr = this.f10452c;
         char[] cArr = new char[bArr.length * 2];
         int i = 0;
         for (byte b2 : bArr) {
             int i2 = i + 1;
-            char[] cArr2 = f24062a;
+            char[] cArr2 = f10451a;
             cArr[i] = cArr2[(b2 >> 4) & 15];
             i = i2 + 1;
             cArr[i2] = cArr2[b2 & 15];
@@ -161,7 +161,7 @@ public class e implements Serializable, Comparable<e> {
     }
 
     public int d() {
-        return this.f24063c.length;
+        return this.f10452c.length;
     }
 
     public boolean equals(Object obj) {
@@ -171,7 +171,7 @@ public class e implements Serializable, Comparable<e> {
         if (obj instanceof e) {
             e eVar = (e) obj;
             int d = eVar.d();
-            byte[] bArr = this.f24063c;
+            byte[] bArr = this.f10452c;
             return d == bArr.length && eVar.a(0, bArr, 0, bArr.length);
         }
         return false;
@@ -182,13 +182,13 @@ public class e implements Serializable, Comparable<e> {
         if (i != 0) {
             return i;
         }
-        int hashCode = Arrays.hashCode(this.f24063c);
+        int hashCode = Arrays.hashCode(this.f10452c);
         this.d = hashCode;
         return hashCode;
     }
 
     public String toString() {
-        byte[] bArr = this.f24063c;
+        byte[] bArr = this.f10452c;
         return bArr.length == 0 ? "ByteString[size=0]" : bArr.length <= 16 ? String.format("ByteString[size=%s data=%s]", Integer.valueOf(bArr.length), c()) : String.format("ByteString[size=%s md5=%s]", Integer.valueOf(bArr.length), b().c());
     }
 }

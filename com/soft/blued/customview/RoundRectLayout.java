@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public class RoundRectLayout extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private Path f28511a;
+    private Path f14821a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28512c;
+    private int f14822c;
     private int d;
     private float e;
     private int f;
@@ -34,38 +34,38 @@ public class RoundRectLayout extends RelativeLayout {
     }
 
     private void a() {
-        if (getWidth() == this.f28512c && getHeight() == this.d && this.e == this.b) {
+        if (getWidth() == this.f14822c && getHeight() == this.d && this.e == this.b) {
             return;
         }
-        this.f28512c = getWidth();
+        this.f14822c = getWidth();
         this.d = getHeight();
         this.e = this.b;
-        this.f28511a.reset();
+        this.f14821a.reset();
         int i = this.f;
         if (i == 1) {
-            Path path = this.f28511a;
-            RectF rectF = new RectF(0.0f, 0.0f, this.f28512c, this.d);
+            Path path = this.f14821a;
+            RectF rectF = new RectF(0.0f, 0.0f, this.f14822c, this.d);
             float f = this.b;
             path.addRoundRect(rectF, f, f, Path.Direction.CW);
         } else if (i == 2) {
-            Path path2 = this.f28511a;
-            RectF rectF2 = new RectF(0.0f, 0.0f, this.f28512c, this.d);
+            Path path2 = this.f14821a;
+            RectF rectF2 = new RectF(0.0f, 0.0f, this.f14822c, this.d);
             float f2 = this.b;
             path2.addRoundRect(rectF2, new float[]{f2, f2, 0.0f, 0.0f, 0.0f, 0.0f, f2, f2}, Path.Direction.CW);
         } else if (i == 3) {
-            Path path3 = this.f28511a;
-            RectF rectF3 = new RectF(0.0f, 0.0f, this.f28512c, this.d);
+            Path path3 = this.f14821a;
+            RectF rectF3 = new RectF(0.0f, 0.0f, this.f14822c, this.d);
             float f3 = this.b;
             path3.addRoundRect(rectF3, new float[]{f3, f3, f3, f3, 0.0f, 0.0f, 0.0f, 0.0f}, Path.Direction.CW);
         } else if (i == 4) {
-            Path path4 = this.f28511a;
-            RectF rectF4 = new RectF(0.0f, 0.0f, this.f28512c, this.d);
+            Path path4 = this.f14821a;
+            RectF rectF4 = new RectF(0.0f, 0.0f, this.f14822c, this.d);
             float f4 = this.b;
             path4.addRoundRect(rectF4, new float[]{0.0f, 0.0f, f4, f4, f4, f4, 0.0f, 0.0f}, Path.Direction.CW);
         } else if (i != 5) {
         } else {
-            Path path5 = this.f28511a;
-            RectF rectF5 = new RectF(0.0f, 0.0f, this.f28512c, this.d);
+            Path path5 = this.f14821a;
+            RectF rectF5 = new RectF(0.0f, 0.0f, this.f14822c, this.d);
             float f5 = this.b;
             path5.addRoundRect(rectF5, new float[]{0.0f, 0.0f, 0.0f, 0.0f, f5, f5, f5, f5}, Path.Direction.CW);
         }
@@ -76,7 +76,7 @@ public class RoundRectLayout extends RelativeLayout {
         this.b = obtainStyledAttributes.getDimension(7, 0.0f);
         obtainStyledAttributes.recycle();
         Path path = new Path();
-        this.f28511a = path;
+        this.f14821a = path;
         path.setFillType(Path.FillType.EVEN_ODD);
     }
 
@@ -88,7 +88,7 @@ public class RoundRectLayout extends RelativeLayout {
         }
         int save = canvas.save();
         a();
-        canvas.clipPath(this.f28511a);
+        canvas.clipPath(this.f14821a);
         super.draw(canvas);
         canvas.restoreToCount(save);
     }

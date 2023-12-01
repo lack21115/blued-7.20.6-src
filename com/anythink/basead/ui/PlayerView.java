@@ -37,13 +37,9 @@ public class PlayerView extends RelativeLayout {
     private View H;
     private w.c I;
     private g J;
-
-    /* renamed from: a */
-    int f6155a;
+    int a;
     int b;
-
-    /* renamed from: c */
-    int f6156c;
+    int c;
     boolean d;
     String e;
     private ad f;
@@ -76,7 +72,6 @@ public class PlayerView extends RelativeLayout {
             PlayerView.this = r4;
         }
 
-        @Override // com.anythink.expressad.exoplayer.w.a, com.anythink.expressad.exoplayer.w.c
         public final void onPlayerError(com.anythink.expressad.exoplayer.g gVar) {
             boolean z;
             long j;
@@ -128,7 +123,7 @@ public class PlayerView extends RelativeLayout {
                     j = 0;
                 }
                 String str5 = j <= 0 ? f.o : f.k;
-                String str6 = "videoUrl:" + PlayerView.this.j + ",readyRate:" + PlayerView.this.f6156c + ",cdRate:" + PlayerView.this.b + ",play process:" + j + ",errorMessage:" + str2;
+                String str6 = "videoUrl:" + PlayerView.this.j + ",readyRate:" + PlayerView.this.c + ",cdRate:" + PlayerView.this.b + ",play process:" + j + ",errorMessage:" + str2;
                 if (PlayerView.this.x) {
                     PlayerView.this.z.a(f.a(str5, f.C.concat(String.valueOf(str6))));
                 } else {
@@ -137,7 +132,6 @@ public class PlayerView extends RelativeLayout {
             }
         }
 
-        @Override // com.anythink.expressad.exoplayer.w.a, com.anythink.expressad.exoplayer.w.c
         public final void onPlayerStateChanged(boolean z, int i) {
             PlayerView playerView;
             PlayerView playerView2;
@@ -174,15 +168,15 @@ public class PlayerView extends RelativeLayout {
                     PlayerView.this.o = Math.round(playerView.n * 0.25f);
                     PlayerView.this.p = Math.round(playerView2.n * 0.5f);
                     PlayerView.this.q = Math.round(playerView3.n * 0.75f);
-                    if (PlayerView.this.f6156c <= 0 || PlayerView.this.f6156c >= 100) {
+                    if (PlayerView.this.c <= 0 || PlayerView.this.c >= 100) {
                         PlayerView.this.G = false;
                     } else {
-                        if (PlayerView.this.b > PlayerView.this.f6156c) {
+                        if (PlayerView.this.b > PlayerView.this.c) {
                             PlayerView playerView7 = PlayerView.this;
-                            playerView7.b = playerView7.f6156c / 2;
+                            playerView7.b = playerView7.c / 2;
                         }
-                        PlayerView.this.f6155a = Math.round(((playerView4.b * 1.0f) / 100.0f) * PlayerView.this.n);
-                        PlayerView.this.f6155a -= 2000;
+                        PlayerView.this.a = Math.round(((playerView4.b * 1.0f) / 100.0f) * PlayerView.this.n);
+                        PlayerView.this.a -= 2000;
                         PlayerView.this.G = true;
                     }
                 }
@@ -202,11 +196,9 @@ public class PlayerView extends RelativeLayout {
             PlayerView.this = r4;
         }
 
-        @Override // com.anythink.expressad.exoplayer.l.g
         public final void a() {
         }
 
-        @Override // com.anythink.expressad.exoplayer.l.g
         public final void a(int i, int i2) {
             PlayerView playerView = PlayerView.this;
             playerView.autoFitVideoSize(i, i2, playerView.h);
@@ -259,13 +251,9 @@ public class PlayerView extends RelativeLayout {
                 return new b[i];
             }
         };
-
-        /* renamed from: a */
-        int f6160a;
+        int a;
         boolean b;
-
-        /* renamed from: c */
-        boolean f6161c;
+        boolean c;
         boolean d;
         boolean e;
         boolean f;
@@ -274,11 +262,11 @@ public class PlayerView extends RelativeLayout {
 
         public b(Parcel parcel) {
             super(parcel);
-            this.f6160a = parcel.readInt();
+            this.a = parcel.readInt();
             boolean[] zArr = new boolean[7];
             parcel.readBooleanArray(zArr);
             this.b = zArr[0];
-            this.f6161c = zArr[1];
+            this.c = zArr[1];
             this.d = zArr[2];
             this.e = zArr[3];
             this.f = zArr[4];
@@ -291,14 +279,14 @@ public class PlayerView extends RelativeLayout {
         }
 
         public final String a() {
-            return "SavedState(\nsavePosition - " + this.f6160a + "\nsaveVideoPlay25 - " + this.b + "\nsaveVideoPlay50 - " + this.f6161c + "\nsaveVideoPlay75 - " + this.d + "\nsaveIsVideoStart - " + this.e + "\nsaveIsVideoPlayCompletion - " + this.f + "\nsaveIsMute - " + this.g + "\nsaveVideoNeedResumeByCdRate - " + this.h + "\n)";
+            return "SavedState(\nsavePosition - " + this.a + "\nsaveVideoPlay25 - " + this.b + "\nsaveVideoPlay50 - " + this.c + "\nsaveVideoPlay75 - " + this.d + "\nsaveIsVideoStart - " + this.e + "\nsaveIsVideoPlayCompletion - " + this.f + "\nsaveIsMute - " + this.g + "\nsaveVideoNeedResumeByCdRate - " + this.h + "\n)";
         }
 
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public final void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f6160a);
-            parcel.writeBooleanArray(new boolean[]{this.b, this.f6161c, this.d, this.e, this.f, this.g, this.h});
+            parcel.writeInt(this.a);
+            parcel.writeBooleanArray(new boolean[]{this.b, this.c, this.d, this.e, this.f, this.g, this.h});
         }
     }
 
@@ -313,7 +301,7 @@ public class PlayerView extends RelativeLayout {
         this.x = false;
         this.y = false;
         this.b = 0;
-        this.f6156c = 0;
+        this.c = 0;
         this.d = false;
         this.e = "";
         setSaveEnabled(true);
@@ -353,14 +341,14 @@ public class PlayerView extends RelativeLayout {
                         PlayerView.this.z.b(75);
                     }
                 }
-                if (!PlayerView.this.G || PlayerView.this.m < PlayerView.this.f6155a || PlayerView.this.z == null) {
+                if (!PlayerView.this.G || PlayerView.this.m < PlayerView.this.a || PlayerView.this.z == null) {
                     return;
                 }
                 PlayerView.this.G = false;
                 PlayerView.this.z.g();
             }
         };
-        setBackgroundColor(-16777216);
+        setBackgroundColor(View.MEASURED_STATE_MASK);
     }
 
     private void a() {
@@ -373,17 +361,17 @@ public class PlayerView extends RelativeLayout {
                 if (a2 == null) {
                     a2 = null;
                 } else {
-                    float f = (a2.f5851a * 1.0f) / a2.b;
+                    float f = (a2.a * 1.0f) / a2.b;
                     if (f < (i * 1.0f) / i2) {
                         a2.b = i2;
-                        a2.f5851a = (int) (a2.b * f);
+                        a2.a = (int) (a2.b * f);
                     } else {
-                        a2.f5851a = i;
-                        a2.b = (int) (a2.f5851a / f);
+                        a2.a = i;
+                        a2.b = (int) (a2.a / f);
                     }
                 }
                 if (a2 != null) {
-                    this.k = a2.f5851a;
+                    this.k = a2.a;
                     this.l = a2.b;
                 }
                 StringBuilder sb = new StringBuilder("computeVideoSize: ");
@@ -457,17 +445,17 @@ public class PlayerView extends RelativeLayout {
                 if (a2 == null) {
                     a2 = null;
                 } else {
-                    float f2 = (a2.f5851a * 1.0f) / a2.b;
+                    float f2 = (a2.a * 1.0f) / a2.b;
                     if (f2 < (i * 1.0f) / i2) {
                         a2.b = i2;
-                        a2.f5851a = (int) (a2.b * f2);
+                        a2.a = (int) (a2.b * f2);
                     } else {
-                        a2.f5851a = i;
-                        a2.b = (int) (a2.f5851a / f2);
+                        a2.a = i;
+                        a2.b = (int) (a2.a / f2);
                     }
                 }
                 if (a2 != null) {
-                    this.k = a2.f5851a;
+                    this.k = a2.a;
                     this.l = a2.b;
                 }
                 StringBuilder sb = new StringBuilder("computeVideoSize: ");
@@ -743,17 +731,17 @@ public class PlayerView extends RelativeLayout {
                 if (a2 == null) {
                     a2 = null;
                 } else {
-                    float f2 = (a2.f5851a * 1.0f) / a2.b;
+                    float f2 = (a2.a * 1.0f) / a2.b;
                     if (f2 < (i * 1.0f) / i2) {
                         a2.b = i2;
-                        a2.f5851a = (int) (a2.b * f2);
+                        a2.a = (int) (a2.b * f2);
                     } else {
-                        a2.f5851a = i;
-                        a2.b = (int) (a2.f5851a / f2);
+                        a2.a = i;
+                        a2.b = (int) (a2.a / f2);
                     }
                 }
                 if (a2 != null) {
-                    this.k = a2.f5851a;
+                    this.k = a2.a;
                     this.l = a2.b;
                 }
                 StringBuilder sb = new StringBuilder("computeVideoSize: ");
@@ -810,22 +798,20 @@ public class PlayerView extends RelativeLayout {
         setOnClickListener(new $$Lambda$PlayerView$uY09yVSBg64vhdOq_fVJ0Ufvngc(this));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         release();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public void onRestoreInstanceState(Parcelable parcelable) {
         b bVar = (b) parcelable;
         new StringBuilder("onRestoreInstanceState...").append(bVar.a());
         super.onRestoreInstanceState(bVar.getSuperState());
-        this.m = bVar.f6160a;
+        this.m = bVar.a;
         this.r = bVar.b;
-        this.s = bVar.f6161c;
+        this.s = bVar.c;
         this.t = bVar.d;
         this.v = bVar.e;
         this.w = bVar.f;
@@ -837,13 +823,12 @@ public class PlayerView extends RelativeLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public Parcelable onSaveInstanceState() {
         b bVar = new b(super.onSaveInstanceState());
-        bVar.f6160a = this.m;
+        bVar.a = this.m;
         bVar.b = this.r;
-        bVar.f6161c = this.s;
+        bVar.c = this.s;
         bVar.d = this.t;
         bVar.e = this.v;
         bVar.f = this.w;
@@ -921,7 +906,7 @@ public class PlayerView extends RelativeLayout {
     }
 
     public void setVideoRateConfig(int i, int i2) {
-        this.f6156c = i;
+        this.c = i;
         this.b = i2;
     }
 

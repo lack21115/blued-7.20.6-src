@@ -12,8 +12,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.anythink.basead.c.f;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.sdk.openadsdk.live.TTLiveConstants;
 import com.getui.gtc.api.GtcManager;
 import com.getui.gtc.base.GtcProvider;
@@ -55,7 +53,7 @@ public class PushManager {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final PushManager f23673a = new PushManager();
+        private static final PushManager f10065a = new PushManager();
 
         private a() {
         }
@@ -75,7 +73,7 @@ public class PushManager {
         int i2 = i;
         if (!TextUtils.isEmpty(str)) {
             i2 = i;
-            if (str.contains(BridgeUtil.UNDERLINE_STR)) {
+            if (str.contains("_")) {
                 if (i != 60001 && i != 60002) {
                     return i;
                 }
@@ -110,7 +108,7 @@ public class PushManager {
     }
 
     public static PushManager getInstance() {
-        return a.f23673a;
+        return a.f10065a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -250,7 +248,7 @@ public class PushManager {
             long currentTimeMillis = System.currentTimeMillis();
             if (currentTimeMillis - this.lastOpAliasTime < 1000) {
                 com.igexin.c.a.c.a.c.a().a("[PushManager] call - > bindAlias failed, it be called too frequently");
-                sendBindAliasResult(context, str2, f.i);
+                sendBindAliasResult(context, str2, "30001");
                 return false;
             }
             this.lastOpAliasTime = currentTimeMillis;
@@ -525,7 +523,7 @@ public class PushManager {
             if (this.uService != null) {
                 com.igexin.c.a.c.a.b(TAG, "start service to save intent service");
                 Intent intent = new Intent(context.getApplicationContext(), this.uService);
-                intent.putExtra(o.f23664c, this.intentService);
+                intent.putExtra(o.f10056c, this.intentService);
                 startService(context, intent);
             }
         } catch (Throwable th) {
@@ -558,11 +556,11 @@ public class PushManager {
             if (this.uService != null) {
                 Bundle bundle = new Bundle();
                 bundle.putString("action", "registerUserService");
-                bundle.putString(o.f23663a, this.uRegisteService);
+                bundle.putString(o.f10055a, this.uRegisteService);
                 Intent intent = new Intent(context.getApplicationContext(), this.uService);
                 intent.putExtra("action", PushConsts.ACTION_BROADCAST_PUSHMANAGER);
                 intent.putExtra(TTLiveConstants.BUNDLE_KEY, bundle);
-                intent.putExtra(o.f23663a, this.uRegisteService);
+                intent.putExtra(o.f10055a, this.uRegisteService);
                 startService(context, intent);
             }
         } catch (Throwable th) {
@@ -888,7 +886,7 @@ public class PushManager {
             if (tagArr == null) {
                 com.igexin.c.a.c.a.c.a().a("[PushManager] call -> setTag failed, parameter [tags] is null");
                 com.igexin.c.a.c.a.a("PushManager|tags is null", new Object[0]);
-                sendSetTagResult(context, str, f.h);
+                sendSetTagResult(context, str, "20006");
                 return PushConsts.SETTAG_ERROR_NULL;
             } else if (str == null) {
                 com.igexin.c.a.c.a.c.a().a("[PushManager] call -> setTag failed, parameter [sn] is null");
@@ -896,7 +894,7 @@ public class PushManager {
                 return 20007;
             } else if (tagArr.length > 200) {
                 com.igexin.c.a.c.a.c.a().a("[PushManager] call -> setTag failed, parameter [tags] len > 200 is exceeds");
-                sendSetTagResult(context, str, "20001");
+                sendSetTagResult(context, str, PushConsts.SEND_MESSAGE_ERROR_GENERAL);
                 return PushConsts.SETTAG_ERROR_COUNT;
             } else {
                 long currentTimeMillis = System.currentTimeMillis();
@@ -912,7 +910,7 @@ public class PushManager {
                     int i2 = i;
                     if (i2 >= length) {
                         if (sb.length() <= 0) {
-                            sendSetTagResult(context, str, f.h);
+                            sendSetTagResult(context, str, "20006");
                             return PushConsts.SETTAG_ERROR_NULL;
                         }
                         sb.deleteCharAt(sb.length() - 1);
@@ -1021,7 +1019,7 @@ public class PushManager {
             long currentTimeMillis = System.currentTimeMillis();
             if (currentTimeMillis - this.lastOpAliasTime < 1000) {
                 com.igexin.c.a.c.a.c.a().a("[PushManager] call - > unBindAlias failed, it be called too frequently");
-                sendUnBindAliasResult(context, str2, f.i);
+                sendUnBindAliasResult(context, str2, "30001");
                 return false;
             }
             this.lastOpAliasTime = currentTimeMillis;

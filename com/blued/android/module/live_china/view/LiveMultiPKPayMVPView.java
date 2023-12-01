@@ -11,7 +11,6 @@ import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.utils.DensityUtils;
@@ -29,13 +28,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMultiPKPayMVPView.class */
 public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14648a;
+    private Context a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f14649c;
+    private String c;
     private String d;
     private int e;
     private int f;
@@ -65,7 +60,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
     public LiveMultiPKPayMVPView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14649c = "";
+        this.c = "";
         this.d = "";
         this.g = DensityUtils.a(getContext(), 125.0f);
         this.h = DensityUtils.a(getContext(), 125.0f);
@@ -95,7 +90,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
                 LiveMultiPKPayMVPView.j(LiveMultiPKPayMVPView.this);
             }
         };
-        this.f14648a = context;
+        this.a = context;
         a();
     }
 
@@ -114,13 +109,13 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Float");
                 }
                 float floatValue = ((Float) animatedValue).floatValue();
-                LiveMultiPKPayMVPView.this.getViewBinding().f12298a.setScaleX(floatValue);
-                LiveMultiPKPayMVPView.this.getViewBinding().f12298a.setScaleY(floatValue);
-                LiveMultiPKPayMVPView.this.getViewBinding().f12298a.setAlpha(Math.max(floatValue, 1.0f));
+                LiveMultiPKPayMVPView.this.getViewBinding().a.setScaleX(floatValue);
+                LiveMultiPKPayMVPView.this.getViewBinding().a.setScaleY(floatValue);
+                LiveMultiPKPayMVPView.this.getViewBinding().a.setAlpha(Math.max(floatValue, 1.0f));
             }
         });
         ofFloat.start();
-        getViewBinding().f12298a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$F87VtewIqBIVcBbjPPzUOi9bpSY
+        getViewBinding().a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$F87VtewIqBIVcBbjPPzUOi9bpSY
             @Override // java.lang.Runnable
             public final void run() {
                 LiveMultiPKPayMVPView.g(LiveMultiPKPayMVPView.this);
@@ -136,7 +131,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
             public final void run() {
                 LiveMultiPKPayMVPView.h(LiveMultiPKPayMVPView.this);
             }
-        }, b.aC);
+        }, 1800L);
     }
 
     private final void d() {
@@ -151,8 +146,8 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
                     throw new NullPointerException("null cannot be cast to non-null type kotlin.Float");
                 }
                 float floatValue = ((Float) animatedValue).floatValue();
-                LiveMultiPKPayMVPView.this.getViewBinding().f12298a.setScaleX(floatValue);
-                LiveMultiPKPayMVPView.this.getViewBinding().f12298a.setScaleY(floatValue);
+                LiveMultiPKPayMVPView.this.getViewBinding().a.setScaleX(floatValue);
+                LiveMultiPKPayMVPView.this.getViewBinding().a.setScaleY(floatValue);
             }
         });
         ofFloat.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.view.LiveMultiPKPayMVPView$starFirstPayAnimStep3$2
@@ -213,7 +208,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
             }
         });
         ofFloat.start();
-        getViewBinding().f12298a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$k3G7hBN8T-7FXumPcpHAkF1L0iA
+        getViewBinding().a.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$k3G7hBN8T-7FXumPcpHAkF1L0iA
             @Override // java.lang.Runnable
             public final void run() {
                 LiveMultiPKPayMVPView.k(LiveMultiPKPayMVPView.this);
@@ -227,8 +222,8 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
         int i2;
         int i3;
         Intrinsics.e(this$0, "this$0");
-        int measuredWidth = this$0.getViewBinding().f12299c.getMeasuredWidth();
-        int measuredHeight = this$0.getViewBinding().f12299c.getMeasuredHeight();
+        int measuredWidth = this$0.getViewBinding().c.getMeasuredWidth();
+        int measuredHeight = this$0.getViewBinding().c.getMeasuredHeight();
         int i4 = this$0.e;
         int i5 = 0;
         if (i4 == 0) {
@@ -269,39 +264,39 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
             i5 = ((i9 - this$0.g) / 2) + i9;
             i = (measuredHeight - this$0.h) / 2;
         }
-        this$0.getViewBinding().f12298a.setTranslationX(i5 * 1.0f);
-        this$0.getViewBinding().f12298a.setTranslationY(i * 1.0f);
+        this$0.getViewBinding().a.setTranslationX(i5 * 1.0f);
+        this$0.getViewBinding().a.setTranslationY(i * 1.0f);
         this$0.b();
     }
 
     private final void f() {
         getViewBinding().f.setVisibility(0);
-        SVGAPlayer.Builder a2 = new SVGAPlayer.Builder().a("live_mvp_anim_btm.svga").a((Integer) 0).a(SVGAImageView.FillMode.Clear).a((Boolean) true);
+        SVGAPlayer.Builder a = new SVGAPlayer.Builder().a("live_mvp_anim_btm.svga").a((Integer) 0).a(SVGAImageView.FillMode.Clear).a((Boolean) true);
         SVGAImageView sVGAImageView = getViewBinding().f;
         Intrinsics.c(sVGAImageView, "viewBinding.ivMvpAnim1");
-        a2.a(sVGAImageView);
+        a.a(sVGAImageView);
         getViewBinding().g.setVisibility(0);
-        SVGAPlayer.Builder a3 = new SVGAPlayer.Builder().a("live_mvp_anim_top.svga").a((Integer) 0).a(SVGAImageView.FillMode.Clear).a((Boolean) true);
+        SVGAPlayer.Builder a2 = new SVGAPlayer.Builder().a("live_mvp_anim_top.svga").a((Integer) 0).a(SVGAImageView.FillMode.Clear).a((Boolean) true);
         SVGAImageView sVGAImageView2 = getViewBinding().g;
         Intrinsics.c(sVGAImageView2, "viewBinding.ivMvpAnim2");
-        a3.a(sVGAImageView2);
+        a2.a(sVGAImageView2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void f(final LiveMultiPKPayMVPView this$0) {
         Intrinsics.e(this$0, "this$0");
         this$0.setVisibility(0);
-        this$0.getViewBinding().f12298a.setVisibility(0);
+        this$0.getViewBinding().a.setVisibility(0);
         this$0.getViewBinding().b.setVisibility(8);
-        this$0.getViewBinding().f12298a.setAlpha(0.0f);
-        if (TextUtils.isEmpty(this$0.f14649c)) {
-            this$0.f14649c = "";
+        this$0.getViewBinding().a.setAlpha(0.0f);
+        if (TextUtils.isEmpty(this$0.c)) {
+            this$0.c = "";
         }
-        String str = this$0.f14649c;
+        String str = this$0.c;
         Intrinsics.a((Object) str);
         ImageLoader.a((IRequestHost) null, str).a(40.0f).a(this$0.getViewBinding().i);
         this$0.getViewBinding().l.setText(this$0.d);
-        this$0.getViewBinding().f12299c.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$USwYwXKBMEkGeJ2wn9kTPHqoSgQ
+        this$0.getViewBinding().c.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$USwYwXKBMEkGeJ2wn9kTPHqoSgQ
             @Override // java.lang.Runnable
             public final void run() {
                 LiveMultiPKPayMVPView.e(LiveMultiPKPayMVPView.this);
@@ -426,8 +421,8 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
     /* JADX INFO: Access modifiers changed from: private */
     public static final void i(LiveMultiPKPayMVPView this$0) {
         Intrinsics.e(this$0, "this$0");
-        int measuredWidth = this$0.getViewBinding().f12299c.getMeasuredWidth();
-        int measuredHeight = this$0.getViewBinding().f12299c.getMeasuredHeight();
+        int measuredWidth = this$0.getViewBinding().c.getMeasuredWidth();
+        int measuredHeight = this$0.getViewBinding().c.getMeasuredHeight();
         float f = (measuredWidth - this$0.g) / 2;
         float f2 = (measuredHeight - this$0.h) / 2;
         this$0.getViewBinding().b.setX(f);
@@ -477,17 +472,17 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
         Intrinsics.e(this$0, "this$0");
         this$0.b = true;
         this$0.setVisibility(0);
-        this$0.getViewBinding().f12298a.setVisibility(8);
+        this$0.getViewBinding().a.setVisibility(8);
         this$0.getViewBinding().b.setVisibility(0);
         this$0.getViewBinding().b.setAlpha(0.0f);
-        if (TextUtils.isEmpty(this$0.f14649c)) {
-            this$0.f14649c = "";
+        if (TextUtils.isEmpty(this$0.c)) {
+            this$0.c = "";
         }
-        String str = this$0.f14649c;
+        String str = this$0.c;
         Intrinsics.a((Object) str);
         ImageLoader.a((IRequestHost) null, str).a(40.0f).a(this$0.getViewBinding().h);
         this$0.getViewBinding().k.setText(this$0.d);
-        this$0.getViewBinding().f12299c.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$Tcm_OvBj_5AXnVVy0e6D_AbTHtU
+        this$0.getViewBinding().c.post(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$Tcm_OvBj_5AXnVVy0e6D_AbTHtU
             @Override // java.lang.Runnable
             public final void run() {
                 LiveMultiPKPayMVPView.i(LiveMultiPKPayMVPView.this);
@@ -506,7 +501,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
             return;
         }
         this.b = true;
-        this.f14649c = str2;
+        this.c = str2;
         this.d = str;
         this.e = i;
         this.f = i2;
@@ -518,7 +513,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
             return;
         }
         this.b = true;
-        this.f14649c = str2;
+        this.c = str2;
         this.d = str;
         postDelayed(this.n, 500L);
     }
@@ -528,7 +523,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
     }
 
     public final String getAvatar() {
-        return this.f14649c;
+        return this.c;
     }
 
     public final int getIconHeight() {
@@ -540,7 +535,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
     }
 
     public final Context getMContext() {
-        return this.f14648a;
+        return this.a;
     }
 
     public final int getMvpHeight() {
@@ -603,7 +598,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
     }
 
     public final void setAvatar(String str) {
-        this.f14649c = str;
+        this.c = str;
     }
 
     public final void setIconHeight(int i) {
@@ -615,7 +610,7 @@ public final class LiveMultiPKPayMVPView extends FrameLayout implements View.OnC
     }
 
     public final void setMContext(Context context) {
-        this.f14648a = context;
+        this.a = context;
     }
 
     public final void setMvpHeight(int i) {

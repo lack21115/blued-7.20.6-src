@@ -51,8 +51,9 @@ public interface IImsCallSessionListener extends IInterface {
         static final int TRANSACTION_callSessionUpdated = 14;
         static final int TRANSACTION_callSessionUssdMessageReceived = 25;
 
+        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-4181928-dex2jar.jar:com/android/ims/internal/IImsCallSessionListener$Stub$Proxy.class */
-        private static class Proxy implements IImsCallSessionListener {
+        public static class Proxy implements IImsCallSessionListener {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -907,7 +908,7 @@ public interface IImsCallSessionListener extends IInterface {
                     callSessionRetryErrorReceived(IImsCallSession.Stub.asInterface(parcel.readStrongBinder()), parcel.readInt() != 0 ? ImsReasonInfo.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

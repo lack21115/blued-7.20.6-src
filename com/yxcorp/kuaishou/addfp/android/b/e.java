@@ -4,19 +4,19 @@ package com.yxcorp.kuaishou.addfp.android.b;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f41858a;
+    public int f28167a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f41859c;
+    public String f28168c;
 
     public e(int i, String str, String str2) {
-        this.f41858a = i;
+        this.f28167a = i;
         this.b = str;
-        this.f41859c = str2;
+        this.f28168c = str2;
     }
 
     public String toString() {
-        return "CommandResult{result=" + this.f41858a + ", successMsg='" + this.b + "', errorMsg='" + this.f41859c + "'}";
+        return "CommandResult{result=" + this.f28167a + ", successMsg='" + this.b + "', errorMsg='" + this.f28168c + "'}";
     }
 }

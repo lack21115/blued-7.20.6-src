@@ -14,16 +14,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/CreateRoomLabelAdapter.class */
 public final class CreateRoomLabelAdapter extends BaseQuickAdapter<HomeTopicModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final OnClickRoomLabelListener f16117a;
+    private final OnClickRoomLabelListener a;
     private HomeTopicModel b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public CreateRoomLabelAdapter(OnClickRoomLabelListener clickRoomTypeListener) {
         super(R.layout.item_yy_create_room_laber);
         Intrinsics.e(clickRoomTypeListener, "clickRoomTypeListener");
-        this.f16117a = clickRoomTypeListener;
+        this.a = clickRoomTypeListener;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -33,7 +31,7 @@ public final class CreateRoomLabelAdapter extends BaseQuickAdapter<HomeTopicMode
             return;
         }
         this$0.a(homeTopicModel);
-        this$0.f16117a.a(homeTopicModel, "");
+        this$0.a.a(homeTopicModel, "");
     }
 
     public final void a(HomeTopicModel homeTopicModel) {
@@ -42,7 +40,6 @@ public final class CreateRoomLabelAdapter extends BaseQuickAdapter<HomeTopicMode
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final HomeTopicModel homeTopicModel) {
         View view;

@@ -17,13 +17,9 @@ public class MtopNetworkProp implements Serializable, IMTOPDataObject {
     public int n;
     public UserUnit p;
     public String q;
-
-    /* renamed from: a  reason: collision with root package name */
-    public ProtocolEnum f43709a = ProtocolEnum.HTTP;
+    public ProtocolEnum a = ProtocolEnum.HTTP;
     public MethodEnum b = MethodEnum.GET;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f43710c = true;
+    public boolean c = true;
     public int d = 1;
     public boolean f = false;
     public boolean h = false;
@@ -34,6 +30,6 @@ public class MtopNetworkProp implements Serializable, IMTOPDataObject {
     public EnvModeEnum o = EnvModeEnum.ONLINE;
 
     public String toString() {
-        return "MtopNetworkProp [protocol=" + this.f43709a + ", method=" + this.b + ", autoRedirect=" + this.f43710c + ", retryTimes=" + this.d + ", requestHeaders=" + this.e + ", correctTimeStamp=" + this.f + ", ttid=" + this.g + ", useCache=" + this.h + ", forceRefreshCache=" + this.i + ", wuaFlag=" + this.j + ", queryParameterMap=" + this.k + ", connTimeout=" + this.l + ", socketTimeout=" + this.m + ", bizId=" + this.n + ", envMode=" + this.o + ", userUnit=" + this.p + "]";
+        return "MtopNetworkProp [protocol=" + this.a + ", method=" + this.b + ", autoRedirect=" + this.c + ", retryTimes=" + this.d + ", requestHeaders=" + this.e + ", correctTimeStamp=" + this.f + ", ttid=" + this.g + ", useCache=" + this.h + ", forceRefreshCache=" + this.i + ", wuaFlag=" + this.j + ", queryParameterMap=" + this.k + ", connTimeout=" + this.l + ", socketTimeout=" + this.m + ", bizId=" + this.n + ", envMode=" + this.o + ", userUnit=" + this.p + "]";
     }
 }

@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
-import com.alipay.sdk.util.i;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.manager.ConnectivityMonitor;
@@ -33,14 +32,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBuilder<Drawable>>, LifecycleListener {
     private static final RequestOptions d = RequestOptions.c(Bitmap.class).i();
     private static final RequestOptions e = RequestOptions.c(GifDrawable.class).i();
-    private static final RequestOptions f = RequestOptions.c(DiskCacheStrategy.f20763c).b(Priority.LOW).d(true);
+    private static final RequestOptions f = RequestOptions.c(DiskCacheStrategy.f7157c).b(Priority.LOW).d(true);
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Glide f20667a;
+    protected final Glide f7061a;
     protected final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    final Lifecycle f20668c;
+    final Lifecycle f7062c;
     private final RequestTracker g;
     private final RequestManagerTreeNode h;
     private final TargetTracker i;
@@ -51,9 +50,8 @@ public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBu
     private RequestOptions n;
     private boolean o;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/RequestManager$ClearTarget.class */
-    public static class ClearTarget extends CustomViewTarget<View, Object> {
+    static class ClearTarget extends CustomViewTarget<View, Object> {
         ClearTarget(View view) {
             super(view);
         }
@@ -98,12 +96,12 @@ public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBu
         this.j = new Runnable() { // from class: com.bumptech.glide.RequestManager.1
             @Override // java.lang.Runnable
             public void run() {
-                RequestManager.this.f20668c.a(RequestManager.this);
+                RequestManager.this.f7062c.a(RequestManager.this);
             }
         };
         this.k = new Handler(Looper.getMainLooper());
-        this.f20667a = glide;
-        this.f20668c = lifecycle;
+        this.f7061a = glide;
+        this.f7062c = lifecycle;
         this.h = requestManagerTreeNode;
         this.g = requestTracker;
         this.b = context;
@@ -122,7 +120,7 @@ public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBu
     private void c(Target<?> target) {
         boolean b = b(target);
         Request request = target.getRequest();
-        if (b || this.f20667a.a(target) || request == null) {
+        if (b || this.f7061a.a(target) || request == null) {
             return;
         }
         target.setRequest(null);
@@ -155,7 +153,7 @@ public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBu
     }
 
     public <ResourceType> RequestBuilder<ResourceType> b(Class<ResourceType> cls) {
-        return new RequestBuilder<>(this.f20667a, this, cls, this.b);
+        return new RequestBuilder<>(this.f7061a, this, cls, this.b);
     }
 
     public RequestBuilder<Drawable> b(Integer num) {
@@ -184,7 +182,7 @@ public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBu
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public <T> TransitionOptions<?, T> c(Class<T> cls) {
-        return this.f20667a.d().a(cls);
+        return this.f7061a.d().a(cls);
     }
 
     public RequestBuilder<File> d() {
@@ -253,10 +251,10 @@ public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBu
             }
             this.i.b();
             this.g.d();
-            this.f20668c.b(this);
-            this.f20668c.b(this.l);
+            this.f7062c.b(this);
+            this.f7062c.b(this.l);
             this.k.removeCallbacks(this.j);
-            this.f20667a.b(this);
+            this.f7061a.b(this);
         }
     }
 
@@ -290,7 +288,7 @@ public class RequestManager implements ComponentCallbacks2, ModelTypes<RequestBu
     public String toString() {
         String str;
         synchronized (this) {
-            str = super.toString() + "{tracker=" + this.g + ", treeNode=" + this.h + i.d;
+            str = super.toString() + "{tracker=" + this.g + ", treeNode=" + this.h + "}";
         }
         return str;
     }

@@ -12,16 +12,16 @@ public class m4 implements SensorEventListener {
     public static volatile m4 e;
 
     /* renamed from: a  reason: collision with root package name */
-    public final SensorManager f3882a;
+    public final SensorManager f3834a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f3883c;
+    public boolean f3835c;
     public double d;
 
     public m4(Context context) {
         SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
-        this.f3882a = sensorManager;
+        this.f3834a = sensorManager;
         this.b = sensorManager != null;
     }
 
@@ -34,7 +34,7 @@ public class m4 implements SensorEventListener {
 
     public double a() {
         double d;
-        if (this.f3883c) {
+        if (this.f3835c) {
             synchronized (this) {
                 d = this.d;
             }
@@ -44,26 +44,26 @@ public class m4 implements SensorEventListener {
     }
 
     public void a(Handler handler) {
-        if (this.b && !this.f3883c) {
+        if (this.b && !this.f3835c) {
             try {
-                Sensor defaultSensor = this.f3882a.getDefaultSensor(11);
+                Sensor defaultSensor = this.f3834a.getDefaultSensor(11);
                 if (defaultSensor == null || handler == null) {
                     return;
                 }
-                this.f3882a.registerListener(this, defaultSensor, 3, handler);
-                this.f3883c = true;
+                this.f3834a.registerListener(this, defaultSensor, 3, handler);
+                this.f3835c = true;
             } catch (Throwable th) {
             }
         }
     }
 
     public void b() {
-        if (this.b && this.f3883c) {
-            this.f3883c = false;
+        if (this.b && this.f3835c) {
+            this.f3835c = false;
             synchronized (this) {
                 this.d = Double.NaN;
             }
-            this.f3882a.unregisterListener(this);
+            this.f3834a.unregisterListener(this);
         }
     }
 

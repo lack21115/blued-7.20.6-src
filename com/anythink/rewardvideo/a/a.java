@@ -5,11 +5,12 @@ import android.content.Context;
 import com.anythink.core.api.ATAdStatusInfo;
 import com.anythink.core.api.ATEventInterface;
 import com.anythink.core.api.AdError;
+import com.anythink.core.api.BaseAd;
 import com.anythink.core.api.ErrorCode;
 import com.anythink.core.api.IExHandler;
-import com.anythink.core.common.b.j;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.h;
+import com.anythink.core.common.j;
 import com.anythink.core.common.k.g;
 import com.anythink.core.common.k.s;
 import com.anythink.core.common.v;
@@ -23,7 +24,7 @@ import java.util.Map;
 public class a extends com.anythink.core.common.f<f> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9155a = a.class.getSimpleName();
+    public static final String f6315a = a.class.getSimpleName();
     Runnable n;
 
     private a(Context context, String str) {
@@ -38,8 +39,7 @@ public class a extends com.anythink.core.common.f<f> {
         };
     }
 
-    /* renamed from: a  reason: avoid collision after fix types in other method */
-    private static h a2(f fVar) {
+    private static h a(f fVar) {
         b bVar = new b(fVar.a());
         bVar.a(fVar.d);
         return bVar;
@@ -88,7 +88,6 @@ public class a extends com.anythink.core.common.f<f> {
         n.a().a(this.n, ((long) Math.pow(2.0d, this.h)) * 1000);
     }
 
-    @Override // com.anythink.core.common.f
     public final ATAdStatusInfo a(Context context, Map<String, Object> map) {
         ATAdStatusInfo a2 = super.a(context, map);
         if (!c() && a(a2)) {
@@ -97,22 +96,20 @@ public class a extends com.anythink.core.common.f<f> {
         return a2;
     }
 
-    @Override // com.anythink.core.common.f
-    public final /* synthetic */ h a(f fVar) {
-        f fVar2 = fVar;
-        b bVar = new b(fVar2.a());
-        bVar.a(fVar2.d);
+    public final /* synthetic */ h a(j jVar) {
+        f fVar = (f) jVar;
+        b bVar = new b(fVar.a());
+        bVar.a(fVar.d);
         return bVar;
     }
 
-    @Override // com.anythink.core.common.f
     public final String a() {
         return "1";
     }
 
     public final void a(final Activity activity, final String str, final ATRewardVideoListener aTRewardVideoListener, final ATEventInterface aTEventInterface, final Map<String, Object> map) {
         synchronized (this) {
-            final com.anythink.core.common.e.b a2 = a((Context) activity, false, true, map);
+            final com.anythink.core.common.e.b a2 = a(activity, false, true, map);
             if (a2 != null && (a2.e() instanceof CustomRewardVideoAdapter)) {
                 a(a2);
                 f();
@@ -143,7 +140,7 @@ public class a extends com.anythink.core.common.f<f> {
                                 IExHandler b = n.a().b();
                                 if (b != null) {
                                     CustomRewardVideoAdapter customRewardVideoAdapter2 = customRewardVideoAdapter;
-                                    customRewardVideoAdapter2.setAdDownloadListener(b.createDownloadListener(customRewardVideoAdapter2, null, aTEventInterface));
+                                    customRewardVideoAdapter2.setAdDownloadListener(b.createDownloadListener(customRewardVideoAdapter2, (BaseAd) null, aTEventInterface));
                                 }
                                 customRewardVideoAdapter.internalShow(activity, new e(customRewardVideoAdapter, n.a().B(), aTRewardVideoListener));
                             }
@@ -155,9 +152,9 @@ public class a extends com.anythink.core.common.f<f> {
             if (a((ATAdStatusInfo) null)) {
                 a(n.a().E(), 7, (com.anythink.core.common.b.a) null, (com.anythink.core.common.b.b) null, map);
             }
-            AdError errorCode = ErrorCode.getErrorCode(ErrorCode.noADError, "", "No Cache.");
+            AdError errorCode = ErrorCode.getErrorCode("4001", "", "No Cache.");
             if (aTRewardVideoListener != null) {
-                aTRewardVideoListener.onRewardedVideoAdPlayFailed(errorCode, j.a((com.anythink.core.common.b.d) null));
+                aTRewardVideoListener.onRewardedVideoAdPlayFailed(errorCode, com.anythink.core.common.b.j.a((com.anythink.core.common.b.d) null));
             }
         }
     }
@@ -173,38 +170,34 @@ public class a extends com.anythink.core.common.f<f> {
             } catch (Throwable th) {
             }
         }
-        super.a(this.b, "1", this.f6687c, (String) fVar, aVar);
+        super.a(this.b, "1", this.c, fVar, aVar);
     }
 
-    @Override // com.anythink.core.common.f
     public final void b(AdError adError) {
         super.b(adError);
         if (j()) {
             n.a().a(this.n, ((long) Math.pow(2.0d, this.h)) * 1000);
             ATRewardVideoAutoLoadListener aTRewardVideoAutoLoadListener = d.a().b;
             if (aTRewardVideoAutoLoadListener != null) {
-                aTRewardVideoAutoLoadListener.onRewardVideoAutoLoadFail(this.f6687c, adError);
+                aTRewardVideoAutoLoadListener.onRewardVideoAutoLoadFail(this.c, adError);
             }
         }
     }
 
-    @Override // com.anythink.core.common.f
     public final boolean j() {
-        return v.a().f(this.f6687c);
+        return v.a().f(this.c);
     }
 
-    @Override // com.anythink.core.common.f
     public final void k() {
         n.a().c(this.n);
     }
 
-    @Override // com.anythink.core.common.f
     public final void l() {
         ATRewardVideoAutoLoadListener aTRewardVideoAutoLoadListener;
         super.l();
         if (!j() || (aTRewardVideoAutoLoadListener = d.a().b) == null) {
             return;
         }
-        aTRewardVideoAutoLoadListener.onRewardVideoAutoLoaded(this.f6687c);
+        aTRewardVideoAutoLoadListener.onRewardVideoAutoLoaded(this.c);
     }
 }

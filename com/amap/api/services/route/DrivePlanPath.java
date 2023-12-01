@@ -22,23 +22,19 @@ public class DrivePlanPath implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    float f5698a;
+    float a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<DrivePlanStep> f5699c;
+    private List<DrivePlanStep> c;
 
     public DrivePlanPath() {
-        this.f5699c = new ArrayList();
+        this.c = new ArrayList();
     }
 
     public DrivePlanPath(Parcel parcel) {
-        this.f5699c = new ArrayList();
-        this.f5698a = parcel.readFloat();
+        this.c = new ArrayList();
+        this.a = parcel.readFloat();
         this.b = parcel.readInt();
-        this.f5699c = parcel.createTypedArrayList(DrivePlanStep.CREATOR);
+        this.c = parcel.createTypedArrayList(DrivePlanStep.CREATOR);
     }
 
     @Override // android.os.Parcelable
@@ -47,11 +43,11 @@ public class DrivePlanPath implements Parcelable {
     }
 
     public float getDistance() {
-        return this.f5698a;
+        return this.a;
     }
 
     public List<DrivePlanStep> getSteps() {
-        return this.f5699c;
+        return this.c;
     }
 
     public float getTrafficLights() {
@@ -59,11 +55,11 @@ public class DrivePlanPath implements Parcelable {
     }
 
     public void setDistance(float f) {
-        this.f5698a = f;
+        this.a = f;
     }
 
     public void setSteps(List<DrivePlanStep> list) {
-        this.f5699c = list;
+        this.c = list;
     }
 
     public void setTrafficLights(int i) {
@@ -72,8 +68,8 @@ public class DrivePlanPath implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeFloat(this.f5698a);
+        parcel.writeFloat(this.a);
         parcel.writeInt(this.b);
-        parcel.writeTypedList(this.f5699c);
+        parcel.writeTypedList(this.c);
     }
 }

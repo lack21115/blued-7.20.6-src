@@ -8,27 +8,27 @@ import com.xiaomi.push.service.XMPushService;
 class cr extends ContentObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ XMPushService f41675a;
+    final /* synthetic */ XMPushService f27984a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public cr(XMPushService xMPushService, Handler handler) {
         super(handler);
-        this.f41675a = xMPushService;
+        this.f27984a = xMPushService;
     }
 
     @Override // android.database.ContentObserver
     public void onChange(boolean z) {
-        boolean m12089g;
+        boolean m9039g;
         super.onChange(z);
-        m12089g = this.f41675a.m12089g();
-        com.xiaomi.channel.commonutils.logger.b.m11394a("SuperPowerMode:".concat(String.valueOf(m12089g)));
-        this.f41675a.e();
-        if (!m12089g) {
-            this.f41675a.a(true);
+        m9039g = this.f27984a.m9039g();
+        com.xiaomi.channel.commonutils.logger.b.m8344a("SuperPowerMode:".concat(String.valueOf(m9039g)));
+        this.f27984a.e();
+        if (!m9039g) {
+            this.f27984a.a(true);
             return;
         }
-        XMPushService xMPushService = this.f41675a;
+        XMPushService xMPushService = this.f27984a;
         xMPushService.a(new XMPushService.g(24, null));
     }
 }

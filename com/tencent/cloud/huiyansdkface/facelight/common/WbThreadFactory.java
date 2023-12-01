@@ -6,14 +6,14 @@ import java.util.concurrent.ThreadFactory;
 public class WbThreadFactory implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f35596a;
+    private String f21905a;
 
     public WbThreadFactory(String str) {
-        this.f35596a = str;
+        this.f21905a = str;
     }
 
     @Override // java.util.concurrent.ThreadFactory
     public Thread newThread(Runnable runnable) {
-        return new Thread(runnable, this.f35596a);
+        return new Thread(runnable, this.f21905a);
     }
 }

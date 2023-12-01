@@ -33,7 +33,7 @@ public class BaiduATNativePortraitVideoAd extends BaiduATNativeAd {
         this.g = z;
     }
 
-    @Override // com.anythink.network.baidu.BaiduATNativeAd, com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.network.baidu.BaiduATNativeAd, com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         super.destroy();
         FeedPortraitVideoView feedPortraitVideoView = this.h;
@@ -43,13 +43,13 @@ public class BaiduATNativePortraitVideoAd extends BaiduATNativeAd {
         }
     }
 
-    @Override // com.anythink.network.baidu.BaiduATNativeAd, com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.network.baidu.BaiduATNativeAd, com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
-        if (this.f8874a != null) {
+        if (this.f6034a != null) {
             if (this.h == null) {
                 FeedPortraitVideoView feedPortraitVideoView = new FeedPortraitVideoView(this.b);
                 this.h = feedPortraitVideoView;
-                feedPortraitVideoView.setAdData(this.f8874a);
+                feedPortraitVideoView.setAdData(this.f6034a);
                 this.h.setVideoMute(this.d);
                 this.h.setFeedPortraitListener(new IFeedPortraitListener() { // from class: com.anythink.network.baidu.BaiduATNativePortraitVideoAd.2
                     @Override // com.baidu.mobads.sdk.api.IFeedPortraitListener
@@ -85,7 +85,7 @@ public class BaiduATNativePortraitVideoAd extends BaiduATNativeAd {
         return null;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public double getVideoProgress() {
         FeedPortraitVideoView feedPortraitVideoView = this.h;
         if (feedPortraitVideoView != null) {
@@ -165,7 +165,7 @@ public class BaiduATNativePortraitVideoAd extends BaiduATNativeAd {
         }
     }
 
-    @Override // com.anythink.network.baidu.BaiduATNativeAd, com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.network.baidu.BaiduATNativeAd, com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void setVideoMute(boolean z) {
         super.setVideoMute(z);
         FeedPortraitVideoView feedPortraitVideoView = this.h;

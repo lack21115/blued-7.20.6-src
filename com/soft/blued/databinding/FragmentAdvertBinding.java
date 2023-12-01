@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentAdvertBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28782a;
+    private final RelativeLayout f15092a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28782a;
+        return this.f15092a;
     }
 }

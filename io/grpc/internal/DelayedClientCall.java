@@ -33,28 +33,22 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private ClientCall<ReqT, RespT> realCall;
     private static final Logger logger = Logger.getLogger(DelayedClientCall.class.getName());
     private static final ClientCall<Object, Object> NOOP_CALL = new ClientCall<Object, Object>() { // from class: io.grpc.internal.DelayedClientCall.7
-        @Override // io.grpc.ClientCall
         public void cancel(String str, Throwable th) {
         }
 
-        @Override // io.grpc.ClientCall
         public void halfClose() {
         }
 
-        @Override // io.grpc.ClientCall
         public boolean isReady() {
             return false;
         }
 
-        @Override // io.grpc.ClientCall
         public void request(int i) {
         }
 
-        @Override // io.grpc.ClientCall
         public void sendMessage(Object obj) {
         }
 
-        @Override // io.grpc.ClientCall
         public void start(ClientCall.Listener<Object> listener, Metadata metadata) {
         }
     };
@@ -122,7 +116,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             }
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onClose(final Status status, final Metadata metadata) {
             delayOrExecute(new Runnable() { // from class: io.grpc.internal.DelayedClientCall.DelayedListener.3
                 @Override // java.lang.Runnable
@@ -132,7 +125,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             });
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onHeaders(final Metadata metadata) {
             if (this.passThrough) {
                 this.realListener.onHeaders(metadata);
@@ -146,7 +138,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             }
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onMessage(final RespT respt) {
             if (this.passThrough) {
                 this.realListener.onMessage(respt);
@@ -160,7 +151,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             }
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onReady() {
             if (this.passThrough) {
                 this.realListener.onReady();
@@ -378,7 +368,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     public void callCancelled() {
     }
 
-    @Override // io.grpc.ClientCall
     public final void cancel(@Nullable String str, @Nullable Throwable th) {
         Status status = Status.CANCELLED;
         Status withDescription = str != null ? status.withDescription(str) : status.withDescription("Call cancelled without message");
@@ -389,7 +378,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         cancel(status2, false);
     }
 
-    @Override // io.grpc.ClientCall
     public final Attributes getAttributes() {
         ClientCall<ReqT, RespT> clientCall;
         synchronized (this) {
@@ -402,7 +390,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         return this.realCall;
     }
 
-    @Override // io.grpc.ClientCall
     public final void halfClose() {
         delayOrExecute(new Runnable() { // from class: io.grpc.internal.DelayedClientCall.6
             @Override // java.lang.Runnable
@@ -412,7 +399,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         });
     }
 
-    @Override // io.grpc.ClientCall
     public final boolean isReady() {
         if (this.passThrough) {
             return this.realCall.isReady();
@@ -420,7 +406,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         return false;
     }
 
-    @Override // io.grpc.ClientCall
     public final void request(final int i) {
         if (this.passThrough) {
             this.realCall.request(i);
@@ -434,13 +419,11 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ClientCall
     public final void sendMessage(final ReqT reqt) {
         if (this.passThrough) {
             this.realCall.sendMessage(reqt);
         } else {
             delayOrExecute(new Runnable() { // from class: io.grpc.internal.DelayedClientCall.3
-                /* JADX WARN: Multi-variable type inference failed */
                 @Override // java.lang.Runnable
                 public void run() {
                     DelayedClientCall.this.realCall.sendMessage(reqt);
@@ -460,7 +443,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ClientCall
     public final void setMessageCompression(final boolean z) {
         if (this.passThrough) {
             this.realCall.setMessageCompression(z);
@@ -474,7 +456,6 @@ class DelayedClientCall<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ClientCall
     public final void start(ClientCall.Listener<RespT> listener, final Metadata metadata) {
         Status status;
         boolean z;

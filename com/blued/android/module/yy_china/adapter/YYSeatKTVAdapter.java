@@ -97,13 +97,9 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
     private HashMap<Integer, YYMemberKtvView> M;
     private int N;
     private int O;
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f16245a;
+    private BaseYYStudioFragment a;
     private ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShapeTextView f16246c;
+    private ShapeTextView c;
     private ShapeTextView d;
     private ShapeTextView e;
     private ImageView f;
@@ -131,21 +127,17 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYSeatKTVAdapter$LrcAsyncTask.class */
     final class LrcAsyncTask extends AsyncTask<Object, Object, ArrayList<LineInfo>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYSeatKTVAdapter f16247a;
+        final /* synthetic */ YYSeatKTVAdapter a;
         private final File b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final LyricsReader f16248c;
+        private final LyricsReader c;
 
         public LrcAsyncTask(YYSeatKTVAdapter this$0, File file, LyricsReader mLyricsReader) {
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(file, "file");
             Intrinsics.e(mLyricsReader, "mLyricsReader");
-            this.f16247a = this$0;
+            this.a = this$0;
             this.b = file;
-            this.f16248c = mLyricsReader;
+            this.c = mLyricsReader;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -170,15 +162,15 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         /* renamed from: a */
         public void onPostExecute(ArrayList<LineInfo> arrayList) {
             LyricsView lyricsView;
-            BaseYYStudioFragment baseYYStudioFragment = this.f16247a.f16245a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a.a;
             boolean z = false;
             if (baseYYStudioFragment != null && baseYYStudioFragment.isDetached()) {
                 z = true;
             }
-            if (z || (lyricsView = this.f16247a.t) == null) {
+            if (z || (lyricsView = this.a.t) == null) {
                 return;
             }
-            lyricsView.setLyricsReader(this.f16248c);
+            lyricsView.setLyricsReader(this.c);
         }
     }
 
@@ -193,16 +185,14 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYSeatKTVAdapter$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f16251a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[ProgressRange.values().length];
             iArr[ProgressRange.HALF.ordinal()] = 1;
             iArr[ProgressRange.WHOLE.ordinal()] = 2;
             iArr[ProgressRange.NONE.ordinal()] = 3;
-            f16251a = iArr;
+            a = iArr;
         }
     }
 
@@ -213,14 +203,14 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         Intrinsics.e(fragmentActive, "fragmentActive");
         this.K = new ArrayList<>();
         this.mContext = context;
-        this.f16245a = fragmentActive;
+        this.a = fragmentActive;
         addItemType(8, R.layout.item_yy_connecting_ktv_layout);
         this.L = YYRoomInfoManager.e().b();
         this.M = new HashMap<>();
     }
 
     private final void A() {
-        final BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        final BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null || baseYYStudioFragment.Y.getVisibility() == 0) {
             return;
         }
@@ -343,7 +333,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
                 return;
             }
             YYSeatMemberModel yYSeatMemberModel = list.get(i);
-            BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a;
             if (baseYYStudioFragment == null) {
                 return;
             }
@@ -358,7 +348,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         if (yYMemberKtvView == null) {
             return;
         }
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment != null) {
             activityFragmentActive = baseYYStudioFragment.getFragmentActive();
         }
@@ -378,7 +368,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         YYConfiguredResourcesModel yYConfiguredResourcesModel5;
         String str2;
         YYConfiguredResourcesModel yYConfiguredResourcesModel6;
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -391,7 +381,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
         String str3 = (String) tag;
-        int i = WhenMappings.f16251a[progressRange.ordinal()];
+        int i = WhenMappings.a[progressRange.ordinal()];
         if (i == 1) {
             String str4 = str3;
             YYRoomModel yYRoomModel = this.L;
@@ -407,7 +397,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             if (yYRoomModel3 == null || (yYConfiguredResourcesModel2 = yYRoomModel3.resourcesModel) == null || (str = yYConfiguredResourcesModel2.top_light_single) == null) {
                 return;
             }
-            BaseYYStudioFragment baseYYStudioFragment2 = this.f16245a;
+            BaseYYStudioFragment baseYYStudioFragment2 = this.a;
             ImageLoader.a(baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive(), str).g(-1).f().a(baseYYStudioFragment.V);
         } else if (i != 2) {
             if (i != 3) {
@@ -429,7 +419,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             if (yYRoomModel6 == null || (yYConfiguredResourcesModel5 = yYRoomModel6.resourcesModel) == null || (str2 = yYConfiguredResourcesModel5.top_light) == null) {
                 return;
             }
-            BaseYYStudioFragment baseYYStudioFragment3 = this.f16245a;
+            BaseYYStudioFragment baseYYStudioFragment3 = this.a;
             ImageLoader.a(baseYYStudioFragment3 == null ? null : baseYYStudioFragment3.getFragmentActive(), str2).g(-1).f().a(baseYYStudioFragment.V);
         }
     }
@@ -474,8 +464,8 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         if (yYMsgKtvMusic == null) {
             return;
         }
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
-        ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), yYMsgKtvMusic.coverUrl).a(this.k);
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
+        ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), yYMsgKtvMusic.coverUrl).a((ImageView) this.k);
         TextView textView = this.l;
         if (textView != null) {
             textView.setText(yYMsgKtvMusic.musicName);
@@ -486,8 +476,8 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             textView2.setText(simpleDateFormat == null ? null : simpleDateFormat.format(Long.valueOf(yYMsgKtvMusic.duration)));
         }
         a(Boolean.valueOf(TextUtils.equals(yYMsgKtvMusic.isOriginal, "0")));
-        BaseYYStudioFragment baseYYStudioFragment2 = this.f16245a;
-        ImageLoader.a(baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive(), yYMsgKtvMusic.avatar).b(R.drawable.user_bg_round).a(this.r);
+        BaseYYStudioFragment baseYYStudioFragment2 = this.a;
+        ImageLoader.a(baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive(), yYMsgKtvMusic.avatar).b(R.drawable.user_bg_round).a((ImageView) this.r);
         if (!TextUtils.equals(YYRoomInfoManager.e().k(), yYMsgKtvMusic.uid)) {
             ShapeTextView shapeTextView = this.d;
             if (shapeTextView != null) {
@@ -583,7 +573,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
 
     private final String b(Boolean bool) {
         Resources resources;
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null || (resources = baseYYStudioFragment.getResources()) == null) {
             return null;
         }
@@ -605,7 +595,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         String str2;
         YYConfiguredResourcesModel yYConfiguredResourcesModel6;
         ImageView imageView;
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -622,7 +612,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             throw new NullPointerException("null cannot be cast to non-null type kotlin.String");
         }
         String str3 = (String) tag;
-        int i = WhenMappings.f16251a[progressRange.ordinal()];
+        int i = WhenMappings.a[progressRange.ordinal()];
         if (i == 1) {
             String str4 = str3;
             YYRoomModel yYRoomModel = this.L;
@@ -639,7 +629,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             if (yYRoomModel3 == null || (yYConfiguredResourcesModel2 = yYRoomModel3.resourcesModel) == null || (str = yYConfiguredResourcesModel2.foot_light_single) == null) {
                 return;
             }
-            BaseYYStudioFragment baseYYStudioFragment2 = this.f16245a;
+            BaseYYStudioFragment baseYYStudioFragment2 = this.a;
             ImageLoader.a(baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive(), str).g(-1).f().a(baseYYStudioFragment.W);
         } else if (i != 2) {
             if (i != 3) {
@@ -670,7 +660,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             if (yYRoomModel6 == null || (yYConfiguredResourcesModel5 = yYRoomModel6.resourcesModel) == null || (str2 = yYConfiguredResourcesModel5.foot_light) == null) {
                 return;
             }
-            BaseYYStudioFragment baseYYStudioFragment3 = this.f16245a;
+            BaseYYStudioFragment baseYYStudioFragment3 = this.a;
             ImageLoader.a(baseYYStudioFragment3 == null ? null : baseYYStudioFragment3.getFragmentActive(), str2).g(-1).f().a(baseYYStudioFragment.W);
         }
     }
@@ -692,7 +682,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         }
         EventTrackYY.k(event, str2, str3, str);
         YYKtvVoiceDialog yYKtvVoiceDialog = new YYKtvVoiceDialog();
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (parentFragmentManager = baseYYStudioFragment.getParentFragmentManager()) == null) {
             return;
         }
@@ -782,7 +772,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         FragmentManager parentFragmentManager;
         Intrinsics.e(this$0, "this$0");
         YYKtvSongListDialog yYKtvSongListDialog = new YYKtvSongListDialog();
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
         if (baseYYStudioFragment == null || (parentFragmentManager = baseYYStudioFragment.getParentFragmentManager()) == null) {
             return;
         }
@@ -802,8 +792,8 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         }
         YYGiftModel yYGiftModel = yyImSong1MlateTogiftModel.android_goods_info;
         Intrinsics.c(yYGiftModel, "it.android_goods_info");
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16245a;
-        if (baseYYStudioFragment == null || (yYImListView = baseYYStudioFragment.l) == null || (yYImMsgAdapter = yYImListView.f18257a) == null) {
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
+        if (baseYYStudioFragment == null || (yYImListView = baseYYStudioFragment.l) == null || (yYImMsgAdapter = yYImListView.a) == null) {
             return;
         }
         yYImMsgAdapter.a(yYGiftModel, "", false, yyImSong1MlateTogiftModel.host_id);
@@ -821,8 +811,8 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             return;
         }
         yyImSong1MlateTogiftModel.isClick = true;
-        BaseYYStudioFragment baseYYStudioFragment = this$0.f16245a;
-        if (baseYYStudioFragment != null && (yYImListView = baseYYStudioFragment.l) != null && (yYImMsgAdapter = yYImListView.f18257a) != null) {
+        BaseYYStudioFragment baseYYStudioFragment = this$0.a;
+        if (baseYYStudioFragment != null && (yYImListView = baseYYStudioFragment.l) != null && (yYImMsgAdapter = yYImListView.a) != null) {
             yYImMsgAdapter.notifyDataSetChanged();
         }
         if (YYRoomInfoManager.e().b() == null || YYRoomInfoManager.e().b().music == null) {
@@ -843,7 +833,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
                 LiveEventBus.get("event_ktv_show_applaud").post("");
             }
         };
-        BaseYYStudioFragment baseYYStudioFragment2 = this$0.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment2 = this$0.a;
         Intrinsics.a(baseYYStudioFragment2);
         YYRoomHttpUtils.b(str, str2, (BluedUIHttpResponse) bluedUIHttpResponse, baseYYStudioFragment2.getFragmentActive());
     }
@@ -896,7 +886,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
                 }
             });
         }
-        ShapeTextView shapeTextView5 = this.f16246c;
+        ShapeTextView shapeTextView5 = this.c;
         if (shapeTextView5 != null) {
             shapeTextView5.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYSeatKTVAdapter$mP9uDV3J3JX1Y5UXBobzRjgzHLU
                 @Override // android.view.View.OnClickListener
@@ -936,14 +926,14 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
     }
 
     private final void l() {
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         ImageLoader.c(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), "yy_ktv_applaud.png").g(1).e((int) SystemClock.elapsedRealtime()).a(this).a(this.f);
     }
 
     private final void m() {
         YYConfiguredResourcesModel yYConfiguredResourcesModel;
         String str;
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment == null) {
             return;
         }
@@ -1123,7 +1113,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
     }
 
     private final void y() {
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
         if (baseYYStudioFragment != null) {
             baseYYStudioFragment.W.setVisibility(8);
             baseYYStudioFragment.V.setVisibility(8);
@@ -1217,7 +1207,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             if (yYMemberKtvView == null) {
                 return;
             }
-            BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
+            BaseYYStudioFragment baseYYStudioFragment = this.a;
             if (baseYYStudioFragment != null) {
                 activityFragmentActive = baseYYStudioFragment.getFragmentActive();
             }
@@ -1255,7 +1245,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         if (surfaceRhythmView != null) {
             surfaceRhythmView.a(itemGrove);
         }
-        BuildersKt__Builders_commonKt.a(GlobalScope.f42827a, Dispatchers.b(), null, new YYSeatKTVAdapter$itemGrove$1(itemGrove, this, null), 2, null);
+        BuildersKt__Builders_commonKt.a(GlobalScope.a, Dispatchers.b(), null, new YYSeatKTVAdapter$itemGrove$1(itemGrove, this, null), 2, null);
     }
 
     @Override // com.blued.android.module.yy_china.observer.NewGiftComesObserver
@@ -1264,10 +1254,10 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         if (yYRoomModel == null ? false : Intrinsics.a((Object) yYRoomModel.getNormalKtv(), (Object) true)) {
             return;
         }
-        int a2 = StringUtils.a(yYGiftBeansModel == null ? null : yYGiftBeansModel.beans, 0);
+        int a = StringUtils.a(yYGiftBeansModel == null ? null : yYGiftBeansModel.beans, 0);
         YYKtvMusicGiftView yYKtvMusicGiftView = this.p;
         if (yYKtvMusicGiftView != null) {
-            yYKtvMusicGiftView.a(a2);
+            yYKtvMusicGiftView.a(a);
         }
         B();
     }
@@ -1335,10 +1325,10 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         if (yYMsgKtvSinger == null) {
             return;
         }
-        BaseYYStudioFragment baseYYStudioFragment = this.f16245a;
-        ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), yYMsgKtvSinger.avatar).b(R.drawable.user_bg_round).a(this.q);
-        BaseYYStudioFragment baseYYStudioFragment2 = this.f16245a;
-        ImageLoader.a(baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive(), yYMsgKtvSinger.avatar).b(R.drawable.user_bg_round).a(this.r);
+        BaseYYStudioFragment baseYYStudioFragment = this.a;
+        ImageLoader.a(baseYYStudioFragment == null ? null : baseYYStudioFragment.getFragmentActive(), yYMsgKtvSinger.avatar).b(R.drawable.user_bg_round).a((ImageView) this.q);
+        BaseYYStudioFragment baseYYStudioFragment2 = this.a;
+        ImageLoader.a(baseYYStudioFragment2 == null ? null : baseYYStudioFragment2.getFragmentActive(), yYMsgKtvSinger.avatar).b(R.drawable.user_bg_round).a((ImageView) this.r);
     }
 
     @Override // com.blued.android.module.yy_china.adapter.BaseConnectingAdapter
@@ -1359,7 +1349,6 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYSeatMemberModel yYSeatMemberModel) {
         View view;
@@ -1371,27 +1360,27 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
                 }
             });
         }
-        this.y = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.ll_prepare_view);
+        this.y = baseViewHolder == null ? null : baseViewHolder.getView(R.id.ll_prepare_view);
         this.x = baseViewHolder == null ? null : (LinearLayout) baseViewHolder.getView(R.id.ll_empty_song);
         this.D = baseViewHolder == null ? null : (ShapeFrameLayout) baseViewHolder.getView(R.id.ll_normal_view);
         this.p = baseViewHolder == null ? null : (YYKtvMusicGiftView) baseViewHolder.getView(R.id.ktv_gift_pro);
         this.o = baseViewHolder == null ? null : (YYKtvMusicProView) baseViewHolder.getView(R.id.ktv_music_pro);
         this.b = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.btn_pick_music);
-        this.f16246c = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.tv_music_count);
+        this.c = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.tv_music_count);
         this.h = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.btn_accompany_with);
         this.d = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.btn_give_up);
         this.e = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.tv_applaud);
         this.f = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.iv_applaud);
         this.g = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.btn_control_volume);
         this.i = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.btn_original_singer);
-        this.k = baseViewHolder == null ? null : (ShapeableImageView) baseViewHolder.getView(R.id.iv_music_cover);
+        this.k = baseViewHolder == null ? null : baseViewHolder.getView(R.id.iv_music_cover);
         this.l = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_music_name);
         this.m = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_play_time);
         this.n = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_no_singer);
         this.J = baseViewHolder == null ? null : (LinearLayout) baseViewHolder.getView(R.id.ll_lrc_start);
-        this.q = baseViewHolder == null ? null : (ShapeableImageView) baseViewHolder.getView(R.id.iv_singer_header);
-        this.r = baseViewHolder == null ? null : (ShapeableImageView) baseViewHolder.getView(R.id.img_gorgeous_singer);
-        this.t = baseViewHolder == null ? null : (LyricsView) baseViewHolder.getView(R.id.lrc_view);
+        this.q = baseViewHolder == null ? null : baseViewHolder.getView(R.id.iv_singer_header);
+        this.r = baseViewHolder == null ? null : baseViewHolder.getView(R.id.img_gorgeous_singer);
+        this.t = baseViewHolder == null ? null : baseViewHolder.getView(R.id.lrc_view);
         this.u = baseViewHolder == null ? null : (RelativeLayout) baseViewHolder.getView(R.id.sur_rhy_view);
         this.w = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_lrc_bg);
         RelativeLayout relativeLayout = this.u;
@@ -1402,12 +1391,12 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
             relativeLayout.addView(surfaceRhythmView, -1, -2);
         }
         this.j = baseViewHolder == null ? null : (ShapeTextView) baseViewHolder.getView(R.id.btn_choose_music);
-        this.A = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.ll_buttons);
+        this.A = baseViewHolder == null ? null : baseViewHolder.getView(R.id.ll_buttons);
         this.B = baseViewHolder == null ? null : (LinearLayout) baseViewHolder.getView(R.id.ll_music_info);
-        this.F = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.img_stage_bg);
-        this.C = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.ll_stage_view);
+        this.F = baseViewHolder == null ? null : baseViewHolder.getView(R.id.img_stage_bg);
+        this.C = baseViewHolder == null ? null : baseViewHolder.getView(R.id.ll_stage_view);
         this.E = baseViewHolder == null ? null : (LinearLayout) baseViewHolder.getView(R.id.ll_music_cover_mc);
-        this.z = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.ll_gorgeous_prepare_view);
+        this.z = baseViewHolder == null ? null : baseViewHolder.getView(R.id.ll_gorgeous_prepare_view);
         this.s = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_gorgeous_singer_name);
         this.G = baseViewHolder == null ? null : (HollowView) baseViewHolder.getView(R.id.btn_give_flower);
         this.H = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_flower);
@@ -1513,7 +1502,7 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
 
     public final void a(String str) {
         ShapeTextView shapeTextView;
-        if (str == null || (shapeTextView = this.f16246c) == null) {
+        if (str == null || (shapeTextView = this.c) == null) {
             return;
         }
         shapeTextView.setText(Intrinsics.a("已点", (Object) str));
@@ -1967,7 +1956,6 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         return this.O;
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter, androidx.recyclerview.widget.RecyclerView.Adapter
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         Intrinsics.e(recyclerView, "recyclerView");
         super.onAttachedToRecyclerView(recyclerView);
@@ -1976,18 +1964,27 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         YYObserverManager.a().a((NewGiftComesObserver) this);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v26, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
+    /* JADX WARN: Type inference failed for: r0v34, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
+    /* JADX WARN: Type inference failed for: r0v42, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
+    /* JADX WARN: Type inference failed for: r0v50, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
+    /* JADX WARN: Type inference failed for: r0v58, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
+    /* JADX WARN: Type inference failed for: r0v66, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
+    /* JADX WARN: Type inference failed for: r0v74, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
+    /* JADX WARN: Type inference failed for: r0v83, types: [com.blued.android.module.yy_china.view.YYMemberKtvView] */
     @Override // android.view.View.OnClickListener
     public void onClick(View v) {
         Tracker.onClick(v);
         Intrinsics.e(v, "v");
         int id = v.getId();
-        YYMemberKtvView yYMemberKtvView = null;
+        View view = null;
         if (id == R.id.user_1) {
             HashMap<Integer, YYMemberKtvView> hashMap = this.M;
             if (hashMap != null) {
-                yYMemberKtvView = hashMap.get(0);
+                view = hashMap.get(0);
             }
-            a(0, yYMemberKtvView);
+            a(0, view);
         } else if (id == R.id.user_2) {
             HashMap<Integer, YYMemberKtvView> hashMap2 = this.M;
             a(1, hashMap2 == null ? null : hashMap2.get(1));
@@ -2012,7 +2009,6 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         Intrinsics.e(recyclerView, "recyclerView");
         super.onDetachedFromRecyclerView(recyclerView);
@@ -2026,7 +2022,6 @@ public final class YYSeatKTVAdapter extends BaseConnectingAdapter<YYSeatMemberMo
         yYRoomModel.clearEmojiAndSendMessage();
     }
 
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     public void setNewData(List<? extends YYSeatMemberModel> list) {
         ArrayList arrayList = new ArrayList();
         YYSeatMemberModel yYSeatMemberModel = new YYSeatMemberModel();

@@ -49,7 +49,7 @@ public interface ReceiveChannel<E> {
                 r5 = r0
             L2f:
                 r0 = r5
-                java.lang.Object r0 = r0.f43003a
+                java.lang.Object r0 = r0.a
                 r8 = r0
                 java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
                 r7 = r0

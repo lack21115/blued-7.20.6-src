@@ -24,7 +24,7 @@ import javax.security.auth.x500.X500Principal;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f21900a = new Object();
+    private final Object f8293a = new Object();
     private final Object b = new Object();
 
     private KeyPair a(Context context, String str) throws NoSuchProviderException, NoSuchAlgorithmException, InvalidAlgorithmParameterException {
@@ -59,7 +59,7 @@ public final class a {
 
     public final SecretKey a(String str) throws KeyStoreException, CertificateException, NoSuchAlgorithmException, IOException, UnrecoverableKeyException, NoSuchProviderException, InvalidAlgorithmParameterException {
         SecretKey secretKey;
-        synchronized (this.f21900a) {
+        synchronized (this.f8293a) {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
             keyStore.load(null);
             keyStore.containsAlias(str);

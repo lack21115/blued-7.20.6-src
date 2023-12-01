@@ -19,7 +19,6 @@ import com.kwad.sdk.service.ServiceProvider;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -254,10 +253,12 @@ public class f {
             f.ayX.c(z);
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r0v59, types: [java.util.List] */
         private void b(Message message) {
             ArrayList arrayList;
             List list;
-            Collection<AppStatusRules.Strategy> collection;
+            ArrayList<AppStatusRules.Strategy> arrayList2;
             Bundle data = message.getData();
             if (data != null) {
                 try {
@@ -289,12 +290,12 @@ public class f {
                     B(list);
                 }
             }
-            if (f.ayW != null && f.ayW.get() != 0 && data != null) {
+            if (f.ayW != null && f.ayW.get() != null && data != null) {
                 if (data.containsKey("allStrategyJson")) {
                     String string = data.getString("allStrategyJson");
-                    collection = null;
+                    arrayList2 = null;
                     if (string != null) {
-                        collection = t.a(string, new com.kwad.sdk.core.c<AppStatusRules.Strategy>() { // from class: com.kwad.sdk.utils.f.c.2
+                        arrayList2 = t.a(string, new com.kwad.sdk.core.c<AppStatusRules.Strategy>() { // from class: com.kwad.sdk.utils.f.c.2
                             private static AppStatusRules.Strategy CP() {
                                 return new AppStatusRules.Strategy();
                             }
@@ -306,10 +307,10 @@ public class f {
                         });
                     }
                 } else {
-                    collection = (ArrayList) data.getSerializable("allStrategy");
+                    arrayList2 = (ArrayList) data.getSerializable("allStrategy");
                 }
-                if (collection != null) {
-                    for (AppStatusRules.Strategy strategy : collection) {
+                if (arrayList2 != null) {
+                    for (AppStatusRules.Strategy strategy : arrayList2) {
                         long needSaveLaunchTime = strategy.getNeedSaveLaunchTime();
                         if (needSaveLaunchTime >= 0) {
                             com.kwad.sdk.collector.i.a((Context) f.ayW.get(), strategy, needSaveLaunchTime);

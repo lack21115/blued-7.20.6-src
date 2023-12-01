@@ -154,7 +154,7 @@ public class e implements DownloadListener<AppDownloadTask>, com.huawei.openalli
             intentFilter.addAction("huawei.intent.action.DOWNLOAD");
             intentFilter.addAction("huawei.intent.action.OPEN");
             intentFilter.addAction(d.I);
-            intentFilter.addAction(d.f22967c);
+            intentFilter.addAction(d.f9359c);
             intentFilter.addAction(d.B);
             this.V.registerReceiver(this.C, intentFilter, "com.huawei.permission.app.DOWNLOAD", null);
             if (v.B(this.V)) {
@@ -243,7 +243,7 @@ public class e implements DownloadListener<AppDownloadTask>, com.huawei.openalli
             } else if (d.I.equals(str)) {
                 Code(safeIntent);
                 return;
-            } else if (d.f22967c.equals(str)) {
+            } else if (d.f9359c.equals(str)) {
                 ge.V(Code, "request intent");
                 V(safeIntent);
                 return;
@@ -340,7 +340,7 @@ public class e implements DownloadListener<AppDownloadTask>, com.huawei.openalli
             str = "msgData is empty!";
         } else {
             SafeIntent safeIntent = new SafeIntent(intent);
-            String stringExtra = safeIntent.getStringExtra(at.f22944ar);
+            String stringExtra = safeIntent.getStringExtra(at.f9336ar);
             if (stringExtra == null || stringExtra.equals(this.V.getPackageName())) {
                 String stringExtra2 = safeIntent.getStringExtra("contentRecord");
                 if (ge.Code()) {

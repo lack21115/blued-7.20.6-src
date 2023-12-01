@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.image.ImageLoader;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -44,7 +45,7 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
     public ActivityFragmentActive b;
 
     /* renamed from: c  reason: collision with root package name */
-    public BuySucceedListener f32507c;
+    public BuySucceedListener f18816c;
     private FragmentActivity d;
     private String e;
     private String f;
@@ -78,11 +79,11 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
     public static class UserGiftFmAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        public UserGiftFragment f32512a;
+        public UserGiftFragment f18821a;
         public UserGiftPackageFragment b;
 
         /* renamed from: c  reason: collision with root package name */
-        private List<GiftGivingOptionForJsonParse> f32513c;
+        private List<GiftGivingOptionForJsonParse> f18822c;
         private String d;
         private String e;
         private BuySucceedListener f;
@@ -92,7 +93,7 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
 
         public UserGiftFmAdapter(FragmentManager fragmentManager, List<GiftGivingOptionForJsonParse> list, String str, String str2, int i, String str3, BuySucceedListener buySucceedListener, UserGiftDialogFragment userGiftDialogFragment) {
             super(fragmentManager, 1);
-            this.f32513c = list;
+            this.f18822c = list;
             this.d = str;
             this.e = str2;
             this.f = buySucceedListener;
@@ -106,14 +107,16 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
             return 2;
         }
 
+        /* JADX WARN: Type inference failed for: r0v3, types: [androidx.fragment.app.Fragment, com.soft.blued.ui.msg.fragment.UserGiftPackageFragment] */
+        /* JADX WARN: Type inference failed for: r0v6, types: [androidx.fragment.app.Fragment, com.soft.blued.ui.msg.fragment.UserGiftFragment] */
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i == 0) {
-                UserGiftFragment userGiftFragment = new UserGiftFragment(this.f32513c, this.d, this.e, this.h, this.i, this.f, this.g);
-                this.f32512a = userGiftFragment;
+                ?? userGiftFragment = new UserGiftFragment(this.f18822c, this.d, this.e, this.h, this.i, this.f, this.g);
+                this.f18821a = userGiftFragment;
                 return userGiftFragment;
             } else if (i == 1) {
-                UserGiftPackageFragment userGiftPackageFragment = new UserGiftPackageFragment(this.d, this.e, this.i, this.f, this.g);
+                ?? userGiftPackageFragment = new UserGiftPackageFragment(this.d, this.e, this.i, this.f, this.g);
                 this.b = userGiftPackageFragment;
                 return userGiftPackageFragment;
             } else {
@@ -144,12 +147,11 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
     }
 
     public static void a(final Context context, final ActivityFragmentActive activityFragmentActive, final String str, final String str2, final BuySucceedListener buySucceedListener, final String str3, final String str4, final int... iArr) {
-        UserHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<UserGiftModel>>(activityFragmentActive) { // from class: com.soft.blued.ui.msg.pop.UserGiftDialogFragment.3
+        UserHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserGiftModel>>(activityFragmentActive) { // from class: com.soft.blued.ui.msg.pop.UserGiftDialogFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
             /* JADX WARN: Code restructure failed: missing block: B:30:0x0095, code lost:
                 if (r14 == 3) goto L51;
              */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -163,16 +165,14 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.msg.pop.UserGiftDialogFragment.AnonymousClass3.onUIUpdate(com.blued.android.framework.http.parser.BluedEntityA):void");
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str5) {
                 return super.onUIFailure(i, str5);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
             }
-        }, str, activityFragmentActive);
+        }, str, (IRequestHost) activityFragmentActive);
     }
 
     private void k() {
@@ -184,7 +184,6 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
         this.m.setVisibility(8);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public void a(View view) {
         FragmentActivity fragmentActivity = this.d;
         if (fragmentActivity == null) {
@@ -194,7 +193,7 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
         fragmentActivity.getWindow().setSoftInputMode(51);
         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.GIFT_BUY_PAGE_SHOW, this.e, "user_page_gift".equals(this.f) ? PersonalProfileProtos.GiftFrom.PERSONAL_PAGE : PersonalProfileProtos.GiftFrom.MESSAGE_PAGE);
         this.k = (AutoHeightViewPager) view.findViewById(R.id.auto_vp);
-        this.j = new UserGiftFmAdapter(getChildFragmentManager(), this.i, this.e, this.f, this.h, this.g, this.f32507c, this);
+        this.j = new UserGiftFmAdapter(getChildFragmentManager(), this.i, this.e, this.f, this.h, this.g, this.f18816c, this);
         this.k.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.msg.pop.UserGiftDialogFragment.1
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
@@ -219,8 +218,8 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
                 }
                 textView.setTextColor(ContextCompat.getColor(context, i2));
                 if (i == 0) {
-                    if (UserGiftDialogFragment.this.j.f32512a != null) {
-                        UserGiftDialogFragment.this.j.f32512a.e();
+                    if (UserGiftDialogFragment.this.j.f18821a != null) {
+                        UserGiftDialogFragment.this.j.f18821a.e();
                     }
                 } else if (i == 1 && UserGiftDialogFragment.this.j.b != null) {
                     UserGiftDialogFragment.this.j.b.e();
@@ -238,8 +237,8 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
         this.p = (LinearLayout) view.findViewById(2131367715);
         this.n = (TextView) view.findViewById(R.id.tv_top_hint);
         this.o = (TextView) view.findViewById(R.id.tv_fu_hint);
-        this.q = (TextView) view.findViewById(2131372795);
-        this.r = (TextView) view.findViewById(2131371524);
+        this.q = (TextView) view.findViewById(R.id.tv_top);
+        this.r = (TextView) view.findViewById(R.id.tv_gift);
         this.s = (TextView) view.findViewById(R.id.tv_package);
         this.u = view.findViewById(R.id.viewStub);
         this.v = (FrameLayout) view.findViewById(2131364006);
@@ -258,14 +257,14 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
                 UserGiftDialogFragment.this.m.setVisibility(8);
                 if (giftHintEvent.d) {
                     layoutParams.topMargin = -DensityUtil.a(16.0f);
-                    if (giftHintEvent.f32325a == 2 || giftHintEvent.f32325a == 3) {
+                    if (giftHintEvent.f18635a == 2 || giftHintEvent.f18635a == 3) {
                         UserGiftDialogFragment.this.m.setVisibility(0);
                         UserGiftDialogFragment.this.n.setText(giftHintEvent.b);
                         UserGiftDialogFragment.this.q.setVisibility(0);
-                        if (giftHintEvent.f32325a == 3) {
+                        if (giftHintEvent.f18635a == 3) {
                             UserGiftDialogFragment.this.q.setText(UserGiftDialogFragment.this.getString(R.string.msg_gift_card));
                         }
-                    } else if (giftHintEvent.f32325a == 1) {
+                    } else if (giftHintEvent.f18635a == 1) {
                         UserGiftDialogFragment.this.q.setVisibility(8);
                         UserGiftDialogFragment.this.m.setVisibility(0);
                         UserGiftDialogFragment.this.n.setText(giftHintEvent.b);
@@ -275,7 +274,7 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
                         }
                         UserGiftDialogFragment.this.l.setVisibility(0);
                         UserGiftDialogFragment.this.o.setText(giftHintEvent.b);
-                        UserGiftDialogFragment.this.w.setText(giftHintEvent.f32326c);
+                        UserGiftDialogFragment.this.w.setText(giftHintEvent.f18636c);
                     }
                 } else {
                     layoutParams.topMargin = 0;
@@ -296,17 +295,14 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
         }
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int d() {
         return R.layout.pop_user_gift_new;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int e() {
         return -1;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int f() {
         return -1;
     }
@@ -323,7 +319,6 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
         return this.y;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         k();
         return super.onBackPressed();
@@ -344,13 +339,11 @@ public class UserGiftDialogFragment extends CommonDialogFragment implements View
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setStyle(0, 16973834);
+        setStyle(0, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
     public void onDismiss(DialogInterface dialogInterface) {
         super.onDismiss(dialogInterface);
         k();

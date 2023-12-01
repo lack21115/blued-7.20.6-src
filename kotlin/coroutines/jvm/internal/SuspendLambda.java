@@ -28,9 +28,9 @@ public abstract class SuspendLambda extends ContinuationImpl implements SuspendF
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public String toString() {
         if (getCompletion() == null) {
-            String a2 = Reflection.a(this);
-            Intrinsics.c(a2, "renderLambdaToString(this)");
-            return a2;
+            String a = Reflection.a(this);
+            Intrinsics.c(a, "renderLambdaToString(this)");
+            return a;
         }
         return super.toString();
     }

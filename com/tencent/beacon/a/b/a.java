@@ -7,25 +7,25 @@ import java.util.concurrent.ScheduledExecutorService;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static volatile a f34921a;
+    protected static volatile a f21230a;
     private boolean b = true;
 
     /* renamed from: com.tencent.beacon.a.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/a/b/a$a.class */
-    static class C0894a {
+    static class C0724a {
 
         /* renamed from: a  reason: collision with root package name */
-        static final a f34922a = new i();
+        static final a f21231a = new i();
     }
 
     public static a a() {
         a aVar;
         synchronized (a.class) {
             try {
-                if (f34921a == null) {
-                    f34921a = new i();
+                if (f21230a == null) {
+                    f21230a = new i();
                 }
-                aVar = f34921a;
+                aVar = f21230a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -36,8 +36,8 @@ public abstract class a {
     public static void a(ScheduledExecutorService scheduledExecutorService) {
         synchronized (a.class) {
             try {
-                if (f34921a == null) {
-                    f34921a = new i(scheduledExecutorService);
+                if (f21230a == null) {
+                    f21230a = new i(scheduledExecutorService);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -46,7 +46,7 @@ public abstract class a {
     }
 
     public static a b() {
-        return C0894a.f34922a;
+        return C0724a.f21231a;
     }
 
     public abstract Handler a(int i);

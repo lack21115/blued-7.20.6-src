@@ -4,11 +4,11 @@ package com.opos.mobad.model.b;
 public class c extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f26389a;
+    private int f12701a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26390c;
+    private String f12702c;
     private int d;
     private int e;
     private int f;
@@ -34,7 +34,7 @@ public class c extends a {
     }
 
     public void b(int i) {
-        this.f26389a = i;
+        this.f12701a = i;
     }
 
     public void b(String str) {
@@ -42,7 +42,7 @@ public class c extends a {
     }
 
     public int c() {
-        return this.f26389a;
+        return this.f12701a;
     }
 
     public void c(int i) {
@@ -50,11 +50,11 @@ public class c extends a {
     }
 
     public void c(String str) {
-        this.f26390c = str;
+        this.f12702c = str;
     }
 
     public String d() {
-        return this.f26390c;
+        return this.f12702c;
     }
 
     public void d(int i) {
@@ -94,6 +94,6 @@ public class c extends a {
     }
 
     public String toString() {
-        return "FetchAdRequest{apiVer=" + this.f26389a + ", appId='" + this.b + "', posId='" + this.f26390c + "', posType=" + this.d + ", posHeight=" + this.e + ", posWidth=" + this.f + ", renderStyle=" + this.h + ", renderOri=" + this.i + '}';
+        return "FetchAdRequest{apiVer=" + this.f12701a + ", appId='" + this.b + "', posId='" + this.f12702c + "', posType=" + this.d + ", posHeight=" + this.e + ", posWidth=" + this.f + ", renderStyle=" + this.h + ", renderOri=" + this.i + '}';
     }
 }

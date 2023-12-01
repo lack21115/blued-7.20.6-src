@@ -22,15 +22,15 @@ public class RequestManager implements Handler.Callback {
     private static volatile RequestManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Handler f22658c;
+    private static Handler f9050c;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f22657a = new Object();
+    private static final Object f9049a = new Object();
     private static Queue<HuaweiApi.RequestHandler> d = new ConcurrentLinkedQueue();
     private static Map<String, HuaweiApi.RequestHandler> e = new LinkedHashMap();
 
     private RequestManager(Looper looper) {
-        f22658c = new Handler(looper, this);
+        f9050c = new Handler(looper, this);
     }
 
     private void a(Message message) {
@@ -50,14 +50,14 @@ public class RequestManager implements Handler.Callback {
     }
 
     public static void addToConnectedReqMap(final String str, final HuaweiApi.RequestHandler requestHandler) {
-        if (f22658c == null) {
+        if (f9050c == null) {
             return;
         }
         HMSLog.i("RequestManager", "addToConnectedReqMap");
-        f22658c.post(new Runnable() { // from class: com.huawei.hms.common.internal.RequestManager.1
+        f9050c.post(new Runnable() { // from class: com.huawei.hms.common.internal.RequestManager.1
             @Override // java.lang.Runnable
             public void run() {
-                RequestManager.e.put(String.this, requestHandler);
+                RequestManager.e.put(str, requestHandler);
             }
         });
     }
@@ -98,11 +98,11 @@ public class RequestManager implements Handler.Callback {
     }
 
     public static Handler getHandler() {
-        return f22658c;
+        return f9050c;
     }
 
     public static RequestManager getInstance() {
-        synchronized (f22657a) {
+        synchronized (f9049a) {
             if (b == null) {
                 HandlerThread handlerThread = new HandlerThread("RequestManager");
                 handlerThread.start();
@@ -113,14 +113,14 @@ public class RequestManager implements Handler.Callback {
     }
 
     public static void removeReqByTransId(final String str) {
-        if (f22658c == null) {
+        if (f9050c == null) {
             return;
         }
         HMSLog.i("RequestManager", "removeReqByTransId");
-        f22658c.post(new Runnable() { // from class: com.huawei.hms.common.internal.RequestManager.2
+        f9050c.post(new Runnable() { // from class: com.huawei.hms.common.internal.RequestManager.2
             @Override // java.lang.Runnable
             public void run() {
-                RequestManager.e.remove(String.this);
+                RequestManager.e.remove(str);
             }
         });
     }

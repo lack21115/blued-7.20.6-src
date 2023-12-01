@@ -26,7 +26,6 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.R;
 import androidx.constraintlayout.widget.StateSet;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.igexin.push.core.b;
 import com.j256.ormlite.stmt.query.SimpleComparison;
@@ -37,7 +36,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import javax.xml.XMLConstants;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -49,7 +47,7 @@ public class MotionScene {
     public static final int UNSET = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    final ViewTransitionController f2205c;
+    final ViewTransitionController f2157c;
     float d;
     float e;
     private final MotionLayout f;
@@ -58,7 +56,7 @@ public class MotionScene {
     private boolean u;
 
     /* renamed from: a  reason: collision with root package name */
-    StateSet f2204a = null;
+    StateSet f2156a = null;
     Transition b = null;
     private boolean g = false;
     private ArrayList<Transition> h = new ArrayList<>();
@@ -82,11 +80,11 @@ public class MotionScene {
         public static final int AUTO_NONE = 0;
 
         /* renamed from: a  reason: collision with root package name */
-        private int f2207a;
+        private int f2159a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f2208c;
+        private int f2160c;
         private int d;
         private int e;
         private String f;
@@ -112,16 +110,16 @@ public class MotionScene {
             public static final int JUMP_TO_START = 4096;
 
             /* renamed from: a  reason: collision with root package name */
-            int f2209a;
+            int f2161a;
             int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private final Transition f2210c;
+            private final Transition f2162c;
 
             public TransitionOnClick(Context context, Transition transition, XmlPullParser xmlPullParser) {
-                this.f2209a = -1;
+                this.f2161a = -1;
                 this.b = 17;
-                this.f2210c = transition;
+                this.f2162c = transition;
                 TypedArray obtainStyledAttributes = context.obtainStyledAttributes(Xml.asAttributeSet(xmlPullParser), R.styleable.OnClick);
                 int indexCount = obtainStyledAttributes.getIndexCount();
                 int i = 0;
@@ -133,7 +131,7 @@ public class MotionScene {
                     }
                     int index = obtainStyledAttributes.getIndex(i2);
                     if (index == R.styleable.OnClick_targetId) {
-                        this.f2209a = obtainStyledAttributes.getResourceId(index, this.f2209a);
+                        this.f2161a = obtainStyledAttributes.getResourceId(index, this.f2161a);
                     } else if (index == R.styleable.OnClick_clickAction) {
                         this.b = obtainStyledAttributes.getInt(index, this.b);
                     }
@@ -142,21 +140,21 @@ public class MotionScene {
             }
 
             public TransitionOnClick(Transition transition, int i, int i2) {
-                this.f2209a = -1;
+                this.f2161a = -1;
                 this.b = 17;
-                this.f2210c = transition;
-                this.f2209a = i;
+                this.f2162c = transition;
+                this.f2161a = i;
                 this.b = i2;
             }
 
             boolean a(Transition transition, MotionLayout motionLayout) {
-                Transition transition2 = this.f2210c;
+                Transition transition2 = this.f2162c;
                 boolean z = true;
                 if (transition2 == transition) {
                     return true;
                 }
-                int i = transition2.f2208c;
-                int i2 = this.f2210c.d;
+                int i = transition2.f2160c;
+                int i2 = this.f2162c.d;
                 if (i2 == -1) {
                     return motionLayout.e != i;
                 }
@@ -170,16 +168,16 @@ public class MotionScene {
             }
 
             public void addOnClickListeners(MotionLayout motionLayout, int i, Transition transition) {
-                int i2 = this.f2209a;
+                int i2 = this.f2161a;
                 if (i2 != -1) {
                     motionLayout = motionLayout.findViewById(i2);
                 }
                 if (motionLayout == null) {
-                    Log.e(TypedValues.MotionScene.NAME, "OnClick could not find id " + this.f2209a);
+                    Log.e(TypedValues.MotionScene.NAME, "OnClick could not find id " + this.f2161a);
                     return;
                 }
                 int i3 = transition.d;
-                int i4 = transition.f2208c;
+                int i4 = transition.f2160c;
                 if (i3 == -1) {
                     motionLayout.setOnClickListener(this);
                     return;
@@ -197,29 +195,29 @@ public class MotionScene {
                 boolean z;
                 boolean z2;
                 Tracker.onClick(view);
-                MotionLayout motionLayout = this.f2210c.j.f;
+                MotionLayout motionLayout = this.f2162c.j.f;
                 if (motionLayout.isInteractionEnabled()) {
-                    if (this.f2210c.d == -1) {
+                    if (this.f2162c.d == -1) {
                         int currentState = motionLayout.getCurrentState();
                         if (currentState == -1) {
-                            motionLayout.transitionToState(this.f2210c.f2208c);
+                            motionLayout.transitionToState(this.f2162c.f2160c);
                             return;
                         }
-                        Transition transition = new Transition(this.f2210c.j, this.f2210c);
+                        Transition transition = new Transition(this.f2162c.j, this.f2162c);
                         transition.d = currentState;
-                        transition.f2208c = this.f2210c.f2208c;
+                        transition.f2160c = this.f2162c.f2160c;
                         motionLayout.setTransition(transition);
                         motionLayout.transitionToEnd();
                         return;
                     }
-                    Transition transition2 = this.f2210c.j.b;
+                    Transition transition2 = this.f2162c.j.b;
                     int i = this.b;
                     boolean z3 = ((i & 1) == 0 && (i & 256) == 0) ? false : true;
                     int i2 = this.b;
                     boolean z4 = ((i2 & 16) == 0 && (i2 & 4096) == 0) ? false : true;
                     if (z3 && z4) {
-                        Transition transition3 = this.f2210c.j.b;
-                        Transition transition4 = this.f2210c;
+                        Transition transition3 = this.f2162c.j.b;
+                        Transition transition4 = this.f2162c;
                         if (transition3 != transition4) {
                             motionLayout.setTransition(transition4);
                         }
@@ -240,17 +238,17 @@ public class MotionScene {
                     }
                     if (a(transition2, motionLayout)) {
                         if (z && (this.b & 1) != 0) {
-                            motionLayout.setTransition(this.f2210c);
+                            motionLayout.setTransition(this.f2162c);
                             motionLayout.transitionToEnd();
                         } else if (z2 && (this.b & 16) != 0) {
-                            motionLayout.setTransition(this.f2210c);
+                            motionLayout.setTransition(this.f2162c);
                             motionLayout.transitionToStart();
                         } else if (z && (this.b & 256) != 0) {
-                            motionLayout.setTransition(this.f2210c);
+                            motionLayout.setTransition(this.f2162c);
                             motionLayout.setProgress(1.0f);
                         } else if (!z2 || (this.b & 4096) == 0) {
                         } else {
-                            motionLayout.setTransition(this.f2210c);
+                            motionLayout.setTransition(this.f2162c);
                             motionLayout.setProgress(0.0f);
                         }
                     }
@@ -258,7 +256,7 @@ public class MotionScene {
             }
 
             public void removeOnClickListeners(MotionLayout motionLayout) {
-                int i = this.f2209a;
+                int i = this.f2161a;
                 if (i == -1) {
                     return;
                 }
@@ -267,14 +265,14 @@ public class MotionScene {
                     findViewById.setOnClickListener(null);
                     return;
                 }
-                Log.e(TypedValues.MotionScene.NAME, " (*)  could not find id " + this.f2209a);
+                Log.e(TypedValues.MotionScene.NAME, " (*)  could not find id " + this.f2161a);
             }
         }
 
         public Transition(int i, MotionScene motionScene, int i2, int i3) {
-            this.f2207a = -1;
+            this.f2159a = -1;
             this.b = false;
-            this.f2208c = -1;
+            this.f2160c = -1;
             this.d = -1;
             this.e = 0;
             this.f = null;
@@ -289,18 +287,18 @@ public class MotionScene {
             this.p = -1;
             this.q = 0;
             this.r = 0;
-            this.f2207a = i;
+            this.f2159a = i;
             this.j = motionScene;
             this.d = i2;
-            this.f2208c = i3;
+            this.f2160c = i3;
             this.h = motionScene.o;
             this.q = motionScene.p;
         }
 
         Transition(MotionScene motionScene, Context context, XmlPullParser xmlPullParser) {
-            this.f2207a = -1;
+            this.f2159a = -1;
             this.b = false;
-            this.f2208c = -1;
+            this.f2160c = -1;
             this.d = -1;
             this.e = 0;
             this.f = null;
@@ -322,9 +320,9 @@ public class MotionScene {
         }
 
         Transition(MotionScene motionScene, Transition transition) {
-            this.f2207a = -1;
+            this.f2159a = -1;
             this.b = false;
-            this.f2208c = -1;
+            this.f2160c = -1;
             this.d = -1;
             this.e = 0;
             this.f = null;
@@ -363,14 +361,14 @@ public class MotionScene {
                 }
                 int index = typedArray.getIndex(i2);
                 if (index == R.styleable.Transition_constraintSetEnd) {
-                    this.f2208c = typedArray.getResourceId(index, -1);
-                    String resourceTypeName = context.getResources().getResourceTypeName(this.f2208c);
+                    this.f2160c = typedArray.getResourceId(index, -1);
+                    String resourceTypeName = context.getResources().getResourceTypeName(this.f2160c);
                     if ("layout".equals(resourceTypeName)) {
                         ConstraintSet constraintSet = new ConstraintSet();
-                        constraintSet.load(context, this.f2208c);
-                        motionScene.k.append(this.f2208c, constraintSet);
-                    } else if (XMLConstants.XML_NS_PREFIX.equals(resourceTypeName)) {
-                        this.f2208c = motionScene.b(context, this.f2208c);
+                        constraintSet.load(context, this.f2160c);
+                        motionScene.k.append(this.f2160c, constraintSet);
+                    } else if ("xml".equals(resourceTypeName)) {
+                        this.f2160c = motionScene.b(context, this.f2160c);
                     }
                 } else if (index == R.styleable.Transition_constraintSetStart) {
                     this.d = typedArray.getResourceId(index, this.d);
@@ -379,7 +377,7 @@ public class MotionScene {
                         ConstraintSet constraintSet2 = new ConstraintSet();
                         constraintSet2.load(context, this.d);
                         motionScene.k.append(this.d, constraintSet2);
-                    } else if (XMLConstants.XML_NS_PREFIX.equals(resourceTypeName2)) {
+                    } else if ("xml".equals(resourceTypeName2)) {
                         this.d = motionScene.b(context, this.d);
                     }
                 } else if (index == R.styleable.Transition_motionInterpolator) {
@@ -394,7 +392,7 @@ public class MotionScene {
                         String string = typedArray.getString(index);
                         this.f = string;
                         if (string != null) {
-                            if (string.indexOf(BridgeUtil.SPLIT_MARK) > 0) {
+                            if (string.indexOf("/") > 0) {
                                 this.g = typedArray.getResourceId(index, -1);
                                 this.e = -2;
                             } else {
@@ -415,7 +413,7 @@ public class MotionScene {
                 } else if (index == R.styleable.Transition_autoTransition) {
                     this.n = typedArray.getInteger(index, this.n);
                 } else if (index == R.styleable.Transition_android_id) {
-                    this.f2207a = typedArray.getResourceId(index, this.f2207a);
+                    this.f2159a = typedArray.getResourceId(index, this.f2159a);
                 } else if (index == R.styleable.Transition_transitionDisable) {
                     this.o = typedArray.getBoolean(index, this.o);
                 } else if (index == R.styleable.Transition_pathMotionArc) {
@@ -446,7 +444,7 @@ public class MotionScene {
             Iterator<TransitionOnClick> it = this.m.iterator();
             while (it.hasNext()) {
                 TransitionOnClick next = it.next();
-                if (next.f2209a == i) {
+                if (next.f2161a == i) {
                     next.b = i2;
                     return;
                 }
@@ -460,10 +458,10 @@ public class MotionScene {
 
         public String debugString(Context context) {
             String resourceEntryName = this.d == -1 ? b.l : context.getResources().getResourceEntryName(this.d);
-            if (this.f2208c == -1) {
+            if (this.f2160c == -1) {
                 return resourceEntryName + " -> null";
             }
-            return resourceEntryName + " -> " + context.getResources().getResourceEntryName(this.f2208c);
+            return resourceEntryName + " -> " + context.getResources().getResourceEntryName(this.f2160c);
         }
 
         public int getAutoTransition() {
@@ -475,11 +473,11 @@ public class MotionScene {
         }
 
         public int getEndConstraintSetId() {
-            return this.f2208c;
+            return this.f2160c;
         }
 
         public int getId() {
-            return this.f2207a;
+            return this.f2159a;
         }
 
         public List<KeyFrames> getKeyFrameList() {
@@ -527,7 +525,7 @@ public class MotionScene {
                     break;
                 }
                 transitionOnClick = it.next();
-                if (transitionOnClick.f2209a == i) {
+                if (transitionOnClick.f2161a == i) {
                     break;
                 }
             }
@@ -589,7 +587,7 @@ public class MotionScene {
     /* JADX INFO: Access modifiers changed from: package-private */
     public MotionScene(Context context, MotionLayout motionLayout, int i) {
         this.f = motionLayout;
-        this.f2205c = new ViewTransitionController(motionLayout);
+        this.f2157c = new ViewTransitionController(motionLayout);
         a(context, i);
         this.k.put(R.id.motion_base, new ConstraintSet());
         this.l.put("motion_base", Integer.valueOf(R.id.motion_base));
@@ -597,12 +595,12 @@ public class MotionScene {
 
     public MotionScene(MotionLayout motionLayout) {
         this.f = motionLayout;
-        this.f2205c = new ViewTransitionController(motionLayout);
+        this.f2157c = new ViewTransitionController(motionLayout);
     }
 
     private int a(Context context, String str) {
         int i;
-        if (str.contains(BridgeUtil.SPLIT_MARK)) {
+        if (str.contains("/")) {
             int identifier = context.getResources().getIdentifier(str.substring(str.indexOf(47) + 1), "id", context.getPackageName());
             i = identifier;
             if (this.n) {
@@ -622,7 +620,7 @@ public class MotionScene {
     }
 
     private int a(Transition transition) {
-        int i = transition.f2207a;
+        int i = transition.f2159a;
         if (i == -1) {
             throw new IllegalArgumentException("The transition must have an id");
         }
@@ -632,7 +630,7 @@ public class MotionScene {
             if (i3 >= this.h.size()) {
                 return -1;
             }
-            if (this.h.get(i3).f2207a == i) {
+            if (this.h.get(i3).f2159a == i) {
                 return i3;
             }
             i2 = i3 + 1;
@@ -650,7 +648,7 @@ public class MotionScene {
                 Log.e(TypedValues.MotionScene.NAME, "ERROR! invalid deriveConstraintsFrom: @id/" + Debug.getName(this.f.getContext(), i2));
                 return;
             }
-            constraintSet.derivedState += BridgeUtil.SPLIT_MARK + constraintSet2.derivedState;
+            constraintSet.derivedState += "/" + constraintSet2.derivedState;
             constraintSet.readFallback(constraintSet2);
         } else {
             constraintSet.derivedState += "  layout";
@@ -767,7 +765,7 @@ public class MotionScene {
                                 }
                             }
                             if (transition.b) {
-                                if (transition.f2208c == -1) {
+                                if (transition.f2160c == -1) {
                                     this.i = transition;
                                 } else {
                                     this.j.add(transition);
@@ -796,7 +794,7 @@ public class MotionScene {
                             }
                             break;
                         case true:
-                            this.f2204a = new StateSet(context, xml);
+                            this.f2156a = new StateSet(context, xml);
                             transition = transition2;
                             break;
                         case true:
@@ -818,7 +816,7 @@ public class MotionScene {
                             }
                             break;
                         case true:
-                            this.f2205c.add(new ViewTransition(context, xml));
+                            this.f2157c.add(new ViewTransition(context, xml));
                             transition = transition2;
                             break;
                         default:
@@ -864,7 +862,7 @@ public class MotionScene {
 
     private int b(int i) {
         int stateGetConstraintID;
-        StateSet stateSet = this.f2204a;
+        StateSet stateSet = this.f2156a;
         return (stateSet == null || (stateGetConstraintID = stateSet.stateGetConstraintID(i, -1, -1)) == -1) ? i : stateGetConstraintID;
     }
 
@@ -1057,7 +1055,7 @@ public class MotionScene {
                     Iterator<Key> it2 = keyFrames.getKeyFramesForView(num.intValue()).iterator();
                     while (it2.hasNext()) {
                         Key next = it2.next();
-                        if (next.f2169a == i3 && next.d == i) {
+                        if (next.f2121a == i3 && next.d == i) {
                             return next;
                         }
                     }
@@ -1080,7 +1078,7 @@ public class MotionScene {
             PrintStream printStream2 = System.out;
             printStream2.println("size " + this.k.size());
         }
-        StateSet stateSet = this.f2204a;
+        StateSet stateSet = this.f2156a;
         int i4 = i;
         if (stateSet != null) {
             int stateGetConstraintID = stateSet.stateGetConstraintID(i, i2, i3);
@@ -1237,7 +1235,7 @@ public class MotionScene {
         while (it.hasNext()) {
             Iterator<Key> it2 = ((KeyFrames) it.next()).getKeyFramesForView(view.getId()).iterator();
             while (it2.hasNext()) {
-                if (it2.next().f2169a == i) {
+                if (it2.next().f2121a == i) {
                     return true;
                 }
             }
@@ -1271,7 +1269,7 @@ public class MotionScene {
                     motionLayout.setState(MotionLayout.TransitionState.FINISHED);
                     motionLayout.b();
                     return true;
-                } else if (i == next.f2208c && (next.n == 3 || next.n == 1)) {
+                } else if (i == next.f2160c && (next.n == 3 || next.n == 1)) {
                     motionLayout.setState(MotionLayout.TransitionState.FINISHED);
                     motionLayout.setTransition(next);
                     if (next.n == 3) {
@@ -1346,7 +1344,7 @@ public class MotionScene {
     }
 
     public boolean applyViewTransition(int i, MotionController motionController) {
-        return this.f2205c.a(i, motionController);
+        return this.f2157c.a(i, motionController);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1384,13 +1382,13 @@ public class MotionScene {
                         if (b == null || motionEvent == null || b.contains(motionEvent.getX(), motionEvent.getY())) {
                             float f4 = transition2.l.f(f, f2);
                             float f5 = f4;
-                            if (transition2.l.f2214c) {
+                            if (transition2.l.f2166c) {
                                 f5 = f4;
                                 if (motionEvent != null) {
-                                    f5 = ((float) (Math.atan2(f2 + y, f + x) - Math.atan2(motionEvent.getX() - transition2.l.f2213a, motionEvent.getY() - transition2.l.b))) * 10.0f;
+                                    f5 = ((float) (Math.atan2(f2 + y, f + x) - Math.atan2(motionEvent.getX() - transition2.l.f2165a, motionEvent.getY() - transition2.l.b))) * 10.0f;
                                 }
                             }
-                            float f6 = f5 * (transition2.f2208c == i ? -1.0f : 1.1f);
+                            float f6 = f5 * (transition2.f2160c == i ? -1.0f : 1.1f);
                             if (f6 > f3) {
                                 transition = transition2;
                                 f3 = f6;
@@ -1419,7 +1417,7 @@ public class MotionScene {
         if (transition == null) {
             return -1;
         }
-        return transition.f2208c;
+        return transition.f2160c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1445,7 +1443,7 @@ public class MotionScene {
     }
 
     public void enableViewTransition(int i, boolean z) {
-        this.f2205c.a(i, z);
+        this.f2157c.a(i, z);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1592,7 +1590,7 @@ public class MotionScene {
         Iterator<Transition> it = this.h.iterator();
         while (it.hasNext()) {
             Transition next = it.next();
-            if (next.f2207a == i) {
+            if (next.f2159a == i) {
                 return next;
             }
         }
@@ -1605,7 +1603,7 @@ public class MotionScene {
         Iterator<Transition> it = this.h.iterator();
         while (it.hasNext()) {
             Transition next = it.next();
-            if (next.d == b || next.f2208c == b) {
+            if (next.d == b || next.f2160c == b) {
                 arrayList.add(next);
             }
         }
@@ -1631,7 +1629,7 @@ public class MotionScene {
     }
 
     public boolean isViewTransitionEnabled(int i) {
-        return this.f2205c.a(i);
+        return this.f2157c.a(i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -1717,7 +1715,7 @@ public class MotionScene {
         while (it.hasNext()) {
             Iterator<Key> it2 = ((KeyFrames) it.next()).getKeyFramesForView(view.getId()).iterator();
             while (it2.hasNext()) {
-                if (it2.next().f2169a == i) {
+                if (it2.next().f2121a == i) {
                     float floatValue = obj != null ? ((Float) obj).floatValue() : 0.0f;
                     str.equalsIgnoreCase("app:PerpendicularPath_percent");
                 }
@@ -1743,10 +1741,10 @@ public class MotionScene {
     }
 
     public boolean validateLayout(MotionLayout motionLayout) {
-        return motionLayout == this.f && motionLayout.f2184a == this;
+        return motionLayout == this.f && motionLayout.f2136a == this;
     }
 
     public void viewTransition(int i, View... viewArr) {
-        this.f2205c.a(i, viewArr);
+        this.f2157c.a(i, viewArr);
     }
 }

@@ -12,9 +12,7 @@ import kotlinx.coroutines.DebugKt;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/InlineList.class */
 public final class InlineList<E> {
-
-    /* renamed from: a */
-    private final Object f43536a;
+    private final Object a;
 
     public static /* synthetic */ Object a(Object obj, int i, DefaultConstructorMarker defaultConstructorMarker) {
         if ((i & 1) != 0) {
@@ -63,7 +61,7 @@ public final class InlineList<E> {
     }
 
     public final /* synthetic */ Object a() {
-        return this.f43536a;
+        return this.a;
     }
 
     public boolean equals(Object obj) {

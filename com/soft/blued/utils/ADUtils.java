@@ -3,7 +3,6 @@ package com.soft.blued.utils;
 import android.util.Log;
 import com.blued.android.core.utils.Md5;
 import com.blued.android.module.common.user.model.UserInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -31,7 +30,7 @@ public class ADUtils {
             i = fw + 1;
             BluedPreferences.y(i);
         }
-        String str2 = str + BridgeUtil.UNDERLINE_STR + i2 + BridgeUtil.UNDERLINE_STR + i;
+        String str2 = str + "_" + i2 + "_" + i;
         Log.v("drb", "--------requestId:" + str2);
         return str2;
     }

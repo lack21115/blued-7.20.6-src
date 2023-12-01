@@ -47,6 +47,7 @@ import com.blued.android.module.yy_china.view.YYConfessedUserListDialog;
 import com.blued.android.module.yy_china.view.YyConfessedGiftDialog;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -59,13 +60,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YyConfessedGiftDialog.class */
 public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogConfessedGiftBinding f18581a;
+    private DialogConfessedGiftBinding a;
     private final ConfessedUserAdapter b = new ConfessedUserAdapter(this);
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConfessedGiftAdapter f18582c = new ConfessedGiftAdapter(this);
+    private final ConfessedGiftAdapter c = new ConfessedGiftAdapter(this);
     private final ArrayList<YYGiftModel> d = new ArrayList<>();
     private ConfessedUserMode e;
 
@@ -73,9 +70,7 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YyConfessedGiftDialog$BusinessMode.class */
     public static final class BusinessMode {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final String f18583a = "confession";
+        private final String a = "confession";
         private String b = "";
 
         public final void a(String str) {
@@ -87,15 +82,13 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YyConfessedGiftDialog$ConfessedGiftAdapter.class */
     public final class ConfessedGiftAdapter extends BaseQuickAdapter<YYGiftModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YyConfessedGiftDialog f18584a;
+        final /* synthetic */ YyConfessedGiftDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ConfessedGiftAdapter(YyConfessedGiftDialog this$0) {
             super(R.layout.item_yy_confessed_gift);
             Intrinsics.e(this$0, "this$0");
-            this.f18584a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -123,26 +116,25 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, final YYGiftModel item) {
             Intrinsics.e(helper, "helper");
             Intrinsics.e(item, "item");
-            ItemYyConfessedGiftBinding a2 = ItemYyConfessedGiftBinding.a(helper.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.d.setText(item.name);
-            a2.f16683c.setText(String.valueOf(item.beans));
-            ImageLoader.a(this.f18584a.a(), item.images_static).a(a2.f16682a);
+            ItemYyConfessedGiftBinding a = ItemYyConfessedGiftBinding.a(helper.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.d.setText(item.name);
+            a.c.setText(String.valueOf(item.beans));
+            ImageLoader.a(this.a.a(), item.images_static).a(a.a);
             boolean z = false;
-            for (YYGiftModel yYGiftModel : this.f18584a.j()) {
+            for (YYGiftModel yYGiftModel : this.a.j()) {
                 if (StringUtils.a(yYGiftModel.goods_id, item.goods_id)) {
                     z = true;
                 }
             }
             if (z) {
-                a2.b.setVisibility(0);
-                ConstraintLayout root = a2.getRoot();
-                final YyConfessedGiftDialog yyConfessedGiftDialog = this.f18584a;
+                a.b.setVisibility(0);
+                ConstraintLayout root = a.getRoot();
+                final YyConfessedGiftDialog yyConfessedGiftDialog = this.a;
                 root.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$ConfessedGiftAdapter$TmAUS61_A_UaU4YkYP6c-SFPMwE
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -151,9 +143,9 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
                 });
                 return;
             }
-            a2.b.setVisibility(8);
-            ConstraintLayout root2 = a2.getRoot();
-            final YyConfessedGiftDialog yyConfessedGiftDialog2 = this.f18584a;
+            a.b.setVisibility(8);
+            ConstraintLayout root2 = a.getRoot();
+            final YyConfessedGiftDialog yyConfessedGiftDialog2 = this.a;
             root2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$ConfessedGiftAdapter$h7gjj1TcoTl4_jHqgvtMSP3bh4E
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -166,15 +158,13 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YyConfessedGiftDialog$ConfessedUserAdapter.class */
     public final class ConfessedUserAdapter extends BaseQuickAdapter<ConfessedUserMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YyConfessedGiftDialog f18585a;
+        final /* synthetic */ YyConfessedGiftDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ConfessedUserAdapter(YyConfessedGiftDialog this$0) {
             super(R.layout.item_yy_confessed_gift_user);
             Intrinsics.e(this$0, "this$0");
-            this.f18585a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -195,24 +185,23 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, final ConfessedUserMode item) {
             String uid;
             Intrinsics.e(helper, "helper");
             Intrinsics.e(item, "item");
-            ItemYyConfessedGiftUserBinding a2 = ItemYyConfessedGiftUserBinding.a(helper.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            YYRoomInfoManager.e().a(this.f18585a.a(), a2.f16684a, item.getUid(), item.getAvatar());
-            ConfessedUserMode k = this.f18585a.k();
+            ItemYyConfessedGiftUserBinding a = ItemYyConfessedGiftUserBinding.a(helper.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            YYRoomInfoManager.e().a(this.a.a(), a.a, item.getUid(), item.getAvatar());
+            ConfessedUserMode k = this.a.k();
             String str = "";
             if (k != null && (uid = k.getUid()) != null) {
                 str = uid;
             }
             if (StringUtils.a(str, item.getUid())) {
-                a2.b.setVisibility(0);
-                ConstraintLayout root = a2.getRoot();
-                final YyConfessedGiftDialog yyConfessedGiftDialog = this.f18585a;
+                a.b.setVisibility(0);
+                ConstraintLayout root = a.getRoot();
+                final YyConfessedGiftDialog yyConfessedGiftDialog = this.a;
                 root.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$ConfessedUserAdapter$BqSisrGz_g3YYH6vV0mcYKbr_qU
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -221,9 +210,9 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
                 });
                 return;
             }
-            a2.b.setVisibility(8);
-            ConstraintLayout root2 = a2.getRoot();
-            final YyConfessedGiftDialog yyConfessedGiftDialog2 = this.f18585a;
+            a.b.setVisibility(8);
+            ConstraintLayout root2 = a.getRoot();
+            final YyConfessedGiftDialog yyConfessedGiftDialog2 = this.a;
             root2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$ConfessedUserAdapter$kVBqKEP0yVU9K4J9IdVHywmUxIE
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -246,7 +235,7 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
             @Override // com.blued.android.module.yy_china.view.YYConfessedUserListDialog.ConfessedOnClickUserListListener
             public void a(ConfessedUserMode item) {
                 Intrinsics.e(item, "item");
-                List<ConfessedUserMode> data = YyConfessedGiftDialog.this.f().getData();
+                List data = YyConfessedGiftDialog.this.f().getData();
                 Intrinsics.c(data, "usAda.data");
                 List<ConfessedUserMode> list = data;
                 YyConfessedGiftDialog yyConfessedGiftDialog = YyConfessedGiftDialog.this;
@@ -254,13 +243,13 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
                     if (StringUtils.a(confessedUserMode.getUid(), item.getUid())) {
                         yyConfessedGiftDialog.a(confessedUserMode);
                         yyConfessedGiftDialog.f().getData().remove(confessedUserMode);
-                        yyConfessedGiftDialog.f().addData(0, (int) confessedUserMode);
+                        yyConfessedGiftDialog.f().addData(0, confessedUserMode);
                         yyConfessedGiftDialog.f().notifyDataSetChanged();
                         return;
                     }
                 }
                 YyConfessedGiftDialog.this.a(item);
-                YyConfessedGiftDialog.this.f().addData(0, (int) item);
+                YyConfessedGiftDialog.this.f().addData(0, item);
                 YyConfessedGiftDialog.this.f().notifyDataSetChanged();
             }
         });
@@ -289,16 +278,15 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogConfessedGiftBinding l() {
-        DialogConfessedGiftBinding dialogConfessedGiftBinding = this.f18581a;
+        DialogConfessedGiftBinding dialogConfessedGiftBinding = this.a;
         Intrinsics.a(dialogConfessedGiftBinding);
         return dialogConfessedGiftBinding;
     }
 
     private final void m() {
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_gift_url_bg")).a(l().f);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_gift_url_bg_star")).a(l().h);
-        ImageLoader.a(a(), ImgURLMap.f10885a.a("yy_confessed_gift_url_btn_bg")).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YyConfessedGiftDialog$initView$1
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_gift_url_bg")).a(l().f);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_gift_url_bg_star")).a(l().h);
+        ImageLoader.a(a(), ImgURLMap.a.a("yy_confessed_gift_url_btn_bg")).a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YyConfessedGiftDialog$initView$1
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 DialogConfessedGiftBinding l;
@@ -308,7 +296,7 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
             }
         });
         l().e.setFilters(new InputFilter[]{new EnglishCharFilter(50)});
-        l().f16309a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$rJ4XHGOv_-iRp1R7Im4YTe6gaOg
+        l().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$rJ4XHGOv_-iRp1R7Im4YTe6gaOg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YyConfessedGiftDialog.a(view);
@@ -320,7 +308,7 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
                 YyConfessedGiftDialog.a(YyConfessedGiftDialog.this, view);
             }
         });
-        l().f16310c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$3N5e_pQlYxvdctIfJ57k1I_QC2g
+        l().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YyConfessedGiftDialog$3N5e_pQlYxvdctIfJ57k1I_QC2g
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YyConfessedGiftDialog.b(YyConfessedGiftDialog.this, view);
@@ -335,7 +323,7 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
         l().j.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         l().i.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
         l().j.setAdapter(this.b);
-        l().i.setAdapter(this.f18582c);
+        l().i.setAdapter(this.c);
         h();
     }
 
@@ -385,7 +373,7 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
     }
 
     public final ConfessedGiftAdapter g() {
-        return this.f18582c;
+        return this.c;
     }
 
     public final void h() {
@@ -393,8 +381,8 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
             return;
         }
         String str = YYRoomInfoManager.e().b().room_id;
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.h(str, 1, new BluedUIHttpResponse<BluedEntityA<ConfessedUserGiftMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YyConfessedGiftDialog$loadData$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.h(str, 1, new BluedUIHttpResponse<BluedEntityA<ConfessedUserGiftMode>>(a) { // from class: com.blued.android.module.yy_china.view.YyConfessedGiftDialog$loadData$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -442,8 +430,8 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
             BusinessMode businessMode = new BusinessMode();
             businessMode.a(obj);
             String json = AppInfo.f().toJson(businessMode);
-            final ActivityFragmentActive a2 = a();
-            YYRoomHttpUtils.b(b.room_id, str, str2, json, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYPayMode>>(a2) { // from class: com.blued.android.module.yy_china.view.YyConfessedGiftDialog$play$2
+            final ActivityFragmentActive a = a();
+            YYRoomHttpUtils.b(b.room_id, str, str2, json, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYPayMode>>(a) { // from class: com.blued.android.module.yy_china.view.YyConfessedGiftDialog$play$2
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
@@ -471,7 +459,7 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
                                     if (sendGiftAndUserMode.isFirstToMicsInTeam()) {
                                         yYPayGoodsModel.json_contents_im = yYItemRainMode.getRain();
                                     } else {
-                                        YYMsgJsonGiftExtra yYMsgJsonGiftExtra = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(yYItemRainMode.getRain(), (Class<Object>) YYMsgJsonGiftExtra.class);
+                                        YYMsgJsonGiftExtra yYMsgJsonGiftExtra = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(yYItemRainMode.getRain(), YYMsgJsonGiftExtra.class);
                                         yYMsgJsonGiftExtra.setRain_level_ani_url("");
                                         yYPayGoodsModel.json_contents_im = AppInfo.f().toJson(yYMsgJsonGiftExtra);
                                     }
@@ -515,11 +503,11 @@ public final class YyConfessedGiftDialog extends BaseFullScreenDialog {
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_confessed_gift, (ViewGroup) null);
-        this.f18581a = DialogConfessedGiftBinding.a(inflate);
+        this.a = DialogConfessedGiftBinding.a(inflate);
         m();
         return inflate;
     }

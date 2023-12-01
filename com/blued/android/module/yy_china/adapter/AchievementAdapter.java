@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.yy_china.BluedGuideDialog;
@@ -45,14 +44,13 @@ public final class AchievementAdapter extends BaseQuickAdapter<YYShareAchievemen
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final YYShareAchievementModel yYShareAchievementModel) {
         ViewGroup.LayoutParams layoutParams;
         TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_name);
         TextView textView2 = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_value);
         ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_issues_icon);
-        int a2 = DensityUtils.a(textView == null ? null : textView.getContext(), 22.0f);
+        int a = DensityUtils.a(textView == null ? null : textView.getContext(), 22.0f);
         if (textView != null) {
             textView.setText(yYShareAchievementModel == null ? null : yYShareAchievementModel.getName());
         }
@@ -67,7 +65,7 @@ public final class AchievementAdapter extends BaseQuickAdapter<YYShareAchievemen
             if (layoutParams2 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
             }
-            ((ConstraintLayout.LayoutParams) layoutParams2).leftMargin = 0;
+            layoutParams2.leftMargin = 0;
         }
         if (baseViewHolder == null) {
             layoutParams = null;
@@ -78,9 +76,9 @@ public final class AchievementAdapter extends BaseQuickAdapter<YYShareAchievemen
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
         }
-        RecyclerView.LayoutParams layoutParams3 = (RecyclerView.LayoutParams) layoutParams;
+        RecyclerView.LayoutParams layoutParams3 = layoutParams;
         if (baseViewHolder.getAdapterPosition() > 1) {
-            layoutParams3.topMargin = a2;
+            layoutParams3.topMargin = a;
         } else {
             layoutParams3.topMargin = 0;
         }

@@ -14,10 +14,10 @@ public class a implements f {
     private g b;
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<Long, Long> f24813a = new HashMap<>();
+    private HashMap<Long, Long> f11125a = new HashMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private Object f24814c = new Object();
+    private Object f11126c = new Object();
     private Object d = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -26,21 +26,21 @@ public class a implements f {
     public class AnonymousClass1 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.opos.cmn.func.b.b.d f24815a;
+        final /* synthetic */ com.opos.cmn.func.b.b.d f11127a;
         final /* synthetic */ Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ com.opos.cmn.an.g.f f24816c;
+        final /* synthetic */ com.opos.cmn.an.g.f f11128c;
         final /* synthetic */ com.opos.cmn.func.b.b.c d;
         final /* synthetic */ a e;
 
         @Override // java.lang.Runnable
         public void run() {
             long a2 = h.a();
-            this.e.a(this.f24815a.e, a2);
+            this.e.a(this.f11127a.e, a2);
             try {
                 try {
-                    com.opos.cmn.func.b.b.e a3 = this.e.a(h.a(this.b, a2, this.f24816c), a2);
+                    com.opos.cmn.func.b.b.e a3 = this.e.a(h.a(this.b, a2, this.f11128c), a2);
                     StringBuilder sb = new StringBuilder();
                     sb.append("onResponse,");
                     sb.append(a3 == null ? com.igexin.push.core.b.l : a3.toString());
@@ -55,7 +55,7 @@ public class a implements f {
                     com.opos.cmn.an.f.a.b("AdNetHttpImpl", "", e);
                 }
             } finally {
-                this.e.a(this.f24815a.e);
+                this.e.a(this.f11127a.e);
             }
         }
     }
@@ -63,11 +63,11 @@ public class a implements f {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.cmn.func.b.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/cmn/func/b/a/a$a.class */
-    public static class C0636a<K, V> extends HashMap<K, V> {
-        private C0636a() {
+    public static class C0466a<K, V> extends HashMap<K, V> {
+        private C0466a() {
         }
 
-        /* synthetic */ C0636a(AnonymousClass1 anonymousClass1) {
+        /* synthetic */ C0466a(AnonymousClass1 anonymousClass1) {
             this();
         }
 
@@ -104,10 +104,10 @@ public class a implements f {
     public static class b implements com.opos.cmn.func.b.b.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Map<String, String> f24817a;
+        private Map<String, String> f11129a;
 
         public b(Map<String, String> map) {
-            this.f24817a = map;
+            this.f11129a = map;
         }
 
         @Override // com.opos.cmn.func.b.b.a
@@ -115,12 +115,12 @@ public class a implements f {
             if (str == null) {
                 return null;
             }
-            Map<String, String> map = this.f24817a;
+            Map<String, String> map = this.f11129a;
             String str2 = null;
             if (map != null) {
                 str2 = null;
                 if (map.size() != 0) {
-                    Iterator<Map.Entry<String, String>> it = this.f24817a.entrySet().iterator();
+                    Iterator<Map.Entry<String, String>> it = this.f11129a.entrySet().iterator();
                     while (true) {
                         str2 = null;
                         if (!it.hasNext()) {
@@ -143,31 +143,31 @@ public class a implements f {
         if (gVar == null) {
             return null;
         }
-        C0636a c0636a = null;
+        C0466a c0466a = null;
         if (gVar.e != null) {
             try {
                 gVar.e.remove(null);
-                c0636a = new C0636a(null);
+                c0466a = new C0466a(null);
                 try {
                     for (Map.Entry<String, String> entry : gVar.e.entrySet()) {
-                        c0636a.put(entry.getKey(), entry.getValue());
+                        c0466a.put(entry.getKey(), entry.getValue());
                     }
                 } catch (Exception e) {
                 }
             } catch (Exception e2) {
-                c0636a = null;
+                c0466a = null;
             }
         }
-        return new e.a().a(gVar.f24553a).a(gVar.b).a(gVar.d).a(c0636a).a(new b(gVar.e)).a(gVar.f24554c).b(j).a();
+        return new e.a().a(gVar.f10866a).a(gVar.b).a(gVar.d).a(c0466a).a(new b(gVar.e)).a(gVar.f10867c).b(j).a();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public Long a(long j) {
         try {
-            synchronized (this.f24814c) {
-                Long l = this.f24813a.get(Long.valueOf(j));
+            synchronized (this.f11126c) {
+                Long l = this.f11125a.get(Long.valueOf(j));
                 if (l != null) {
-                    this.f24813a.remove(Long.valueOf(j));
+                    this.f11125a.remove(Long.valueOf(j));
                     return l;
                 }
                 return null;
@@ -181,9 +181,9 @@ public class a implements f {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(long j, long j2) {
         com.opos.cmn.an.f.a.b("AdNetHttpImpl", "putCall requestId=" + j + " taskCode=" + j2);
-        synchronized (this.f24814c) {
-            this.f24813a.put(Long.valueOf(j), Long.valueOf(j2));
-            com.opos.cmn.an.f.a.b("AdNetHttpImpl", "putCall mCallsMap.size()=" + this.f24813a.size());
+        synchronized (this.f11126c) {
+            this.f11125a.put(Long.valueOf(j), Long.valueOf(j2));
+            com.opos.cmn.an.f.a.b("AdNetHttpImpl", "putCall mCallsMap.size()=" + this.f11125a.size());
         }
     }
 
@@ -208,22 +208,22 @@ public class a implements f {
         com.opos.cmn.func.b.b.d a2 = com.opos.cmn.func.b.a.a.b.a(context, dVar);
         f.a aVar = new f.a();
         aVar.b(a2.b);
-        if (a2.f24859c != null) {
-            aVar.a(a2.f24859c);
+        if (a2.f11171c != null) {
+            aVar.a(a2.f11171c);
         }
-        if (a2.f24858a == "GET") {
+        if (a2.f11170a == "GET") {
             aVar.a("GET");
         }
-        if (a2.f24858a == "POST") {
+        if (a2.f11170a == "POST") {
             aVar.a("POST");
         }
         if (a2.d != null) {
             aVar.a(a2.d);
         }
-        aVar.b(this.b.f24853a);
+        aVar.b(this.b.f11165a);
         aVar.c(this.b.b);
         aVar.a(this.b.d);
-        aVar.a(this.b.f24854c);
+        aVar.a(this.b.f11166c);
         return aVar.a();
     }
 

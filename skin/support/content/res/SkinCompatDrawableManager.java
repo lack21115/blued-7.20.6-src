@@ -30,9 +30,7 @@ import org.xmlpull.v1.XmlPullParserException;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:skin/support/content/res/SkinCompatDrawableManager.class */
 public final class SkinCompatDrawableManager {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static SkinCompatDrawableManager f44222c;
+    private static SkinCompatDrawableManager c;
     private WeakHashMap<Context, SparseArray<ColorStateList>> k;
     private ArrayMap<String, InflateDelegate> l;
     private SparseArray<String> m;
@@ -40,9 +38,7 @@ public final class SkinCompatDrawableManager {
     private final WeakHashMap<Context, LongSparseArray<WeakReference<Drawable.ConstantState>>> o = new WeakHashMap<>(0);
     private TypedValue p;
     private boolean q;
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f44221a = SkinCompatDrawableManager.class.getSimpleName();
+    private static final String a = SkinCompatDrawableManager.class.getSimpleName();
     private static final PorterDuff.Mode b = PorterDuff.Mode.SRC_IN;
     private static final ColorFilterLruCache d = new ColorFilterLruCache(6);
     private static final int[] e = {R.drawable.abc_textfield_search_default_mtrl_alpha, R.drawable.abc_textfield_default_mtrl_alpha, R.drawable.abc_ab_share_pack_mtrl_alpha};
@@ -81,11 +77,11 @@ public final class SkinCompatDrawableManager {
         }
 
         PorterDuffColorFilter a(int i, PorterDuff.Mode mode) {
-            return get(Integer.valueOf(b(i, mode)));
+            return (PorterDuffColorFilter) get(Integer.valueOf(b(i, mode)));
         }
 
         PorterDuffColorFilter a(int i, PorterDuff.Mode mode, PorterDuffColorFilter porterDuffColorFilter) {
-            return put(Integer.valueOf(b(i, mode)), porterDuffColorFilter);
+            return (PorterDuffColorFilter) put(Integer.valueOf(b(i, mode)), porterDuffColorFilter);
         }
     }
 
@@ -158,15 +154,15 @@ public final class SkinCompatDrawableManager {
             }
         } else if (i2 == R.drawable.abc_seekbar_track_material) {
             LayerDrawable layerDrawable = (LayerDrawable) drawable;
-            a(layerDrawable.findDrawableByLayerId(16908288), SkinCompatThemeUtils.a(context, R.attr.colorControlNormal), b);
-            a(layerDrawable.findDrawableByLayerId(16908303), SkinCompatThemeUtils.a(context, R.attr.colorControlNormal), b);
-            a(layerDrawable.findDrawableByLayerId(16908301), SkinCompatThemeUtils.a(context, R.attr.colorControlActivated), b);
+            a(layerDrawable.findDrawableByLayerId(com.android.internal.R.id.background), SkinCompatThemeUtils.a(context, R.attr.colorControlNormal), b);
+            a(layerDrawable.findDrawableByLayerId(com.android.internal.R.id.secondaryProgress), SkinCompatThemeUtils.a(context, R.attr.colorControlNormal), b);
+            a(layerDrawable.findDrawableByLayerId(com.android.internal.R.id.progress), SkinCompatThemeUtils.a(context, R.attr.colorControlActivated), b);
             return drawable;
         } else if (i2 == R.drawable.abc_ratingbar_material || i2 == R.drawable.abc_ratingbar_indicator_material || i2 == R.drawable.abc_ratingbar_small_material) {
             LayerDrawable layerDrawable2 = (LayerDrawable) drawable;
-            a(layerDrawable2.findDrawableByLayerId(16908288), SkinCompatThemeUtils.c(context, R.attr.colorControlNormal), b);
-            a(layerDrawable2.findDrawableByLayerId(16908303), SkinCompatThemeUtils.a(context, R.attr.colorControlActivated), b);
-            a(layerDrawable2.findDrawableByLayerId(16908301), SkinCompatThemeUtils.a(context, R.attr.colorControlActivated), b);
+            a(layerDrawable2.findDrawableByLayerId(com.android.internal.R.id.background), SkinCompatThemeUtils.c(context, R.attr.colorControlNormal), b);
+            a(layerDrawable2.findDrawableByLayerId(com.android.internal.R.id.secondaryProgress), SkinCompatThemeUtils.a(context, R.attr.colorControlActivated), b);
+            a(layerDrawable2.findDrawableByLayerId(com.android.internal.R.id.progress), SkinCompatThemeUtils.a(context, R.attr.colorControlActivated), b);
             drawable2 = drawable;
         } else {
             drawable2 = drawable;
@@ -186,9 +182,9 @@ public final class SkinCompatDrawableManager {
             if (longSparseArray == null) {
                 return null;
             }
-            WeakReference<Drawable.ConstantState> weakReference = longSparseArray.get(j2);
+            WeakReference weakReference = (WeakReference) longSparseArray.get(j2);
             if (weakReference != null) {
-                Drawable.ConstantState constantState = weakReference.get();
+                Drawable.ConstantState constantState = (Drawable.ConstantState) weakReference.get();
                 if (constantState != null) {
                     return constantState.newDrawable(context.getResources());
                 }
@@ -199,12 +195,12 @@ public final class SkinCompatDrawableManager {
     }
 
     public static SkinCompatDrawableManager a() {
-        if (f44222c == null) {
+        if (c == null) {
             SkinCompatDrawableManager skinCompatDrawableManager = new SkinCompatDrawableManager();
-            f44222c = skinCompatDrawableManager;
+            c = skinCompatDrawableManager;
             a(skinCompatDrawableManager);
         }
-        return f44222c;
+        return c;
     }
 
     private void a(Context context, int i2, ColorStateList colorStateList) {
@@ -360,7 +356,7 @@ public final class SkinCompatDrawableManager {
                     longSparseArray2 = new LongSparseArray<>();
                     this.o.put(context, longSparseArray2);
                 }
-                longSparseArray2.put(j2, new WeakReference<>(constantState));
+                longSparseArray2.put(j2, new WeakReference(constantState));
             }
             return true;
         }
@@ -422,14 +418,14 @@ public final class SkinCompatDrawableManager {
         int[] iArr = new int[3];
         ColorStateList b2 = SkinCompatThemeUtils.b(context, R.attr.colorSwitchThumbNormal);
         if (b2 == null || !b2.isStateful()) {
-            r0[0] = SkinCompatThemeUtils.f44225a;
+            r0[0] = SkinCompatThemeUtils.a;
             iArr[0] = SkinCompatThemeUtils.c(context, R.attr.colorSwitchThumbNormal);
             r0[1] = SkinCompatThemeUtils.k;
             iArr[1] = SkinCompatThemeUtils.a(context, R.attr.colorControlActivated);
             r0[2] = SkinCompatThemeUtils.n;
             iArr[2] = SkinCompatThemeUtils.a(context, R.attr.colorSwitchThumbNormal);
         } else {
-            r0[0] = SkinCompatThemeUtils.f44225a;
+            r0[0] = SkinCompatThemeUtils.a;
             iArr[0] = b2.getColorForState(r0[0], 0);
             r0[1] = SkinCompatThemeUtils.k;
             iArr[1] = SkinCompatThemeUtils.a(context, R.attr.colorControlActivated);
@@ -486,7 +482,7 @@ public final class SkinCompatDrawableManager {
                     }
                     String name = f2.getName();
                     this.m.append(i2, name);
-                    InflateDelegate inflateDelegate = this.l.get(name);
+                    InflateDelegate inflateDelegate = (InflateDelegate) this.l.get(name);
                     Drawable drawable2 = a3;
                     if (inflateDelegate != null) {
                         drawable2 = inflateDelegate.a(context, f2, asAttributeSet, null);
@@ -499,7 +495,7 @@ public final class SkinCompatDrawableManager {
                         drawable = drawable2;
                     }
                 } catch (Exception e2) {
-                    Log.e(f44221a, "Exception while inflating drawable", e2);
+                    Log.e(a, "Exception while inflating drawable", e2);
                 }
             }
         }
@@ -538,7 +534,7 @@ public final class SkinCompatDrawableManager {
     private ColorStateList f(Context context, int i2) {
         int a2 = SkinCompatThemeUtils.a(context, R.attr.colorControlHighlight);
         int c2 = SkinCompatThemeUtils.c(context, R.attr.colorButtonNormal);
-        int[] iArr = SkinCompatThemeUtils.f44225a;
+        int[] iArr = SkinCompatThemeUtils.a;
         int[] iArr2 = SkinCompatThemeUtils.j;
         int compositeColors = ColorUtils.compositeColors(a2, i2);
         return new ColorStateList(new int[]{iArr, iArr2, SkinCompatThemeUtils.d, SkinCompatThemeUtils.n}, new int[]{c2, compositeColors, ColorUtils.compositeColors(a2, i2), i2});

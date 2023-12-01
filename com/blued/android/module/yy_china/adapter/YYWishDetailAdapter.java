@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.utils.StringUtils;
@@ -24,9 +23,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYWishDetailAdapter.class */
 public final class YYWishDetailAdapter extends BaseQuickAdapter<YYWishGoodsModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private OnClickVoteListener f16284a;
+    private OnClickVoteListener a;
     private int b;
 
     @Metadata
@@ -43,7 +40,7 @@ public final class YYWishDetailAdapter extends BaseQuickAdapter<YYWishGoodsModel
     public static final void a(YYWishDetailAdapter this$0, YYWishGoodsModel it, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(it, "$it");
-        OnClickVoteListener onClickVoteListener = this$0.f16284a;
+        OnClickVoteListener onClickVoteListener = this$0.a;
         if (onClickVoteListener == null) {
             return;
         }
@@ -56,14 +53,13 @@ public final class YYWishDetailAdapter extends BaseQuickAdapter<YYWishGoodsModel
 
     public final void a(OnClickVoteListener listener) {
         Intrinsics.e(listener, "listener");
-        this.f16284a = listener;
+        this.a = listener;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final YYWishGoodsModel yYWishGoodsModel) {
-        ConstraintLayout constraintLayout = baseViewHolder == null ? null : (ConstraintLayout) baseViewHolder.getView(R.id.ll_wish_item);
+        ConstraintLayout view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.ll_wish_item);
         ProgressBar progressBar = baseViewHolder == null ? null : (ProgressBar) baseViewHolder.getView(R.id.wish_progress_bar);
         ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.iv_wish_icon);
         TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_wish_name);
@@ -73,11 +69,11 @@ public final class YYWishDetailAdapter extends BaseQuickAdapter<YYWishGoodsModel
         Intrinsics.a(baseViewHolder);
         ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_give);
         if (this.b > 0) {
-            ViewGroup.LayoutParams layoutParams = constraintLayout == null ? null : constraintLayout.getLayoutParams();
+            ViewGroup.LayoutParams layoutParams = view == null ? null : view.getLayoutParams();
             if (layoutParams == null) {
                 throw new NullPointerException("null cannot be cast to non-null type androidx.recyclerview.widget.RecyclerView.LayoutParams");
             }
-            ((RecyclerView.LayoutParams) layoutParams).width = this.b;
+            layoutParams.width = this.b;
         }
         shapeTextView.setVisibility(YYRoomInfoManager.e().y() ? 8 : 0);
         if (yYWishGoodsModel == null) {
@@ -108,8 +104,8 @@ public final class YYWishDetailAdapter extends BaseQuickAdapter<YYWishGoodsModel
         }
         shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$YYWishDetailAdapter$uJdaFXCtpMhRFJrZLZBuIjEGYqA
             @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                YYWishDetailAdapter.a(YYWishDetailAdapter.this, yYWishGoodsModel, view);
+            public final void onClick(View view2) {
+                YYWishDetailAdapter.a(YYWishDetailAdapter.this, yYWishGoodsModel, view2);
             }
         });
     }

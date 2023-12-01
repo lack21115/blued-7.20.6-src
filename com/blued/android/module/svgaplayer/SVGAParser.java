@@ -5,6 +5,8 @@ import android.content.res.AssetManager;
 import android.net.http.HttpResponseCache;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Window;
+import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.svgaplayer.SVGAParser;
 import com.blued.android.module.svgaplayer.cache.SVGAVideoDataCache;
@@ -44,9 +46,7 @@ import org.json.JSONObject;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAParser.class */
 public final class SVGAParser {
-
-    /* renamed from: a */
-    public static final Companion f15958a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final AtomicInteger f = new AtomicInteger(0);
     private static SVGAParser g = new SVGAParser(null);
     private static ExecutorService h = Executors.newCachedThreadPool(new ThreadFactory() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAParser$XkPHVMZfsDpBcVegQ9rnVEcvNc0
@@ -58,9 +58,7 @@ public final class SVGAParser {
         }
     });
     private Context b;
-
-    /* renamed from: c */
-    private volatile int f15959c;
+    private volatile int c;
     private volatile int d;
     private FileDownloader e;
 
@@ -86,9 +84,7 @@ public final class SVGAParser {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/SVGAParser$FileDownloader.class */
     public static class FileDownloader {
-
-        /* renamed from: a */
-        private boolean f15960a;
+        private boolean a;
 
         public static final void a(FileDownloader this$0, URL url, Function1 failure, Ref.BooleanRef cancelled, Function1 complete) {
             Intrinsics.e(this$0, "this$0");
@@ -97,17 +93,17 @@ public final class SVGAParser {
             Intrinsics.e(cancelled, "$cancelled");
             Intrinsics.e(complete, "$complete");
             try {
-                LogUtils.f16034a.a("SVGAParser", "================ svga file download start ================");
-                if (HttpResponseCache.getInstalled() == null && !this$0.f15960a) {
-                    LogUtils.f16034a.d("SVGAParser", "SVGAParser can not handle cache before install HttpResponseCache. see https://github.com/yyued/SVGAPlayer-Android#cache");
-                    LogUtils.f16034a.d("SVGAParser", "在配置 HttpResponseCache 前 SVGAParser 无法缓存. 查看 https://github.com/yyued/SVGAPlayer-Android#cache ");
+                LogUtils.a.a("SVGAParser", "================ svga file download start ================");
+                if (HttpResponseCache.getInstalled() == null && !this$0.a) {
+                    LogUtils.a.d("SVGAParser", "SVGAParser can not handle cache before install HttpResponseCache. see https://github.com/yyued/SVGAPlayer-Android#cache");
+                    LogUtils.a.d("SVGAParser", "在配置 HttpResponseCache 前 SVGAParser 无法缓存. 查看 https://github.com/yyued/SVGAPlayer-Android#cache ");
                 }
                 URLConnection openConnection = url.openConnection();
                 HttpURLConnection httpURLConnection = openConnection instanceof HttpURLConnection ? (HttpURLConnection) openConnection : null;
                 if (httpURLConnection != null) {
-                    httpURLConnection.setConnectTimeout(20000);
+                    httpURLConnection.setConnectTimeout(Window.PROGRESS_SECONDARY_START);
                     httpURLConnection.setRequestMethod("GET");
-                    httpURLConnection.setRequestProperty("Connection", "close");
+                    httpURLConnection.setRequestProperty("Connection", LoaderConstants.CLOSE);
                     httpURLConnection.connect();
                     InputStream inputStream = httpURLConnection.getInputStream();
                     InputStream inputStream2 = inputStream;
@@ -115,8 +111,8 @@ public final class SVGAParser {
                     ByteArrayOutputStream byteArrayOutputStream2 = byteArrayOutputStream;
                     byte[] bArr = new byte[4096];
                     while (true) {
-                        if (cancelled.f42538a) {
-                            LogUtils.f16034a.c("SVGAParser", "================ svga file download canceled ================");
+                        if (cancelled.a) {
+                            LogUtils.a.c("SVGAParser", "================ svga file download canceled ================");
                             break;
                         }
                         int read = inputStream2.read(bArr, 0, 4096);
@@ -125,21 +121,21 @@ public final class SVGAParser {
                         }
                         byteArrayOutputStream2.write(bArr, 0, read);
                     }
-                    if (cancelled.f42538a) {
-                        LogUtils.f16034a.c("SVGAParser", "================ svga file download canceled ================");
+                    if (cancelled.a) {
+                        LogUtils.a.c("SVGAParser", "================ svga file download canceled ================");
                         CloseableKt.a(byteArrayOutputStream, null);
                         CloseableKt.a(inputStream, null);
                         return;
                     }
                     ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream2.toByteArray());
                     try {
-                        LogUtils.f16034a.a("SVGAParser", "================ svga file download complete ================");
+                        LogUtils.a.a("SVGAParser", "================ svga file download complete ================");
                         complete.invoke(byteArrayInputStream);
-                        Unit unit = Unit.f42314a;
+                        Unit unit = Unit.a;
                         CloseableKt.a(byteArrayInputStream, null);
-                        Unit unit2 = Unit.f42314a;
+                        Unit unit2 = Unit.a;
                         CloseableKt.a(byteArrayOutputStream, null);
-                        Unit unit3 = Unit.f42314a;
+                        Unit unit3 = Unit.a;
                         CloseableKt.a(inputStream, null);
                     } catch (Throwable th) {
                         try {
@@ -151,8 +147,8 @@ public final class SVGAParser {
                     }
                 }
             } catch (Exception e) {
-                LogUtils.f16034a.d("SVGAParser", "================ svga file download fail ================");
-                LogUtils logUtils = LogUtils.f16034a;
+                LogUtils.a.d("SVGAParser", "================ svga file download fail ================");
+                LogUtils logUtils = LogUtils.a;
                 logUtils.d("SVGAParser", "error: " + e.getMessage());
                 e.printStackTrace();
                 failure.invoke(e);
@@ -171,16 +167,16 @@ public final class SVGAParser {
                 }
 
                 public final void a() {
-                    Ref.BooleanRef.this.f42538a = true;
+                    Ref.BooleanRef.this.a = true;
                 }
 
                 @Override // kotlin.jvm.functions.Function0
                 public /* synthetic */ Unit invoke() {
                     a();
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             };
-            SVGAParser.f15958a.a().execute(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAParser$FileDownloader$wQZVDxKSvjaYWxG_yIjnHwxK9nI
+            SVGAParser.a.a().execute(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAParser$FileDownloader$wQZVDxKSvjaYWxG_yIjnHwxK9nI
                 @Override // java.lang.Runnable
                 public final void run() {
                     SVGAParser.FileDownloader.a(SVGAParser.FileDownloader.this, url, failure, booleanRef, complete);
@@ -206,7 +202,7 @@ public final class SVGAParser {
 
     public SVGAParser(Context context) {
         this.b = context != null ? context.getApplicationContext() : null;
-        SVGACache.f15940a.a(context);
+        SVGACache.a.a(context);
         this.e = new FileDownloader();
     }
 
@@ -237,7 +233,7 @@ public final class SVGAParser {
             if (context == null || (assets = context.getAssets()) == null || (open = assets.open(name)) == null) {
                 return;
             }
-            SVGACache sVGACache = SVGACache.f15940a;
+            SVGACache sVGACache = SVGACache.a;
             this$0.a(open, sVGACache.c("file:///assets/" + name), parseCompletion, true, playCallback, name);
         } catch (Exception e) {
             this$0.a(e, parseCompletion, name);
@@ -255,7 +251,7 @@ public final class SVGAParser {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(cacheKey, "$cacheKey");
         Intrinsics.e(urlPath, "$urlPath");
-        if (SVGACache.f15940a.b()) {
+        if (SVGACache.a.b()) {
             this$0.a(cacheKey, parseCompletion, urlPath);
         } else {
             this$0.a(cacheKey, parseCompletion, playCallback, urlPath);
@@ -298,18 +294,18 @@ public final class SVGAParser {
     }
 
     private final void a(FileInputStream fileInputStream, File file, ParseCompletion parseCompletion, String str, String str2) {
-        LogUtils.f16034a.a("SVGAParser", "decode:: SVGAVideoEntity  start");
-        SVGAVideoDataDecode sVGAVideoDataDecode = SVGAVideoDataDecode.f15977a;
-        MovieEntity decode = MovieEntity.ADAPTER.decode(fileInputStream);
+        LogUtils.a.a("SVGAParser", "decode:: SVGAVideoEntity  start");
+        SVGAVideoDataDecode sVGAVideoDataDecode = SVGAVideoDataDecode.a;
+        Object decode = MovieEntity.ADAPTER.decode(fileInputStream);
         Intrinsics.c(decode, "ADAPTER.decode(it)");
-        SVGAVideoData a2 = sVGAVideoDataDecode.a(decode, file, this.f15959c, this.d);
+        SVGAVideoData a2 = sVGAVideoDataDecode.a((MovieEntity) decode, file, this.c, this.d);
         a(new SVGAVideoEntity(a2), parseCompletion, str);
-        SVGAVideoDataCache.f15986a.a(this.b).a(str2, a2);
+        SVGAVideoDataCache.a.a(this.b).a(str2, a2);
     }
 
     private final void a(InputStream inputStream, String str) {
-        LogUtils.f16034a.a("SVGAParser", "================ unzip prepare ================");
-        File d = SVGACache.f15940a.d(str);
+        LogUtils.a.a("SVGAParser", "================ unzip prepare ================");
+        File d = SVGACache.a.d(str);
         d.mkdirs();
         try {
             BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
@@ -319,9 +315,9 @@ public final class SVGAParser {
                 while (true) {
                     ZipEntry nextEntry = zipInputStream2.getNextEntry();
                     if (nextEntry == null) {
-                        Unit unit = Unit.f42314a;
+                        Unit unit = Unit.a;
                         CloseableKt.a(zipInputStream, null);
-                        Unit unit2 = Unit.f42314a;
+                        Unit unit2 = Unit.a;
                         CloseableKt.a(bufferedInputStream, null);
                         return;
                     }
@@ -346,9 +342,9 @@ public final class SVGAParser {
                                 }
                                 fileOutputStream2.write(bArr, 0, read);
                             }
-                            Unit unit3 = Unit.f42314a;
+                            Unit unit3 = Unit.a;
                             CloseableKt.a(fileOutputStream, null);
-                            LogUtils.f16034a.d("SVGAParser", "================ unzip complete ================");
+                            LogUtils.a.d("SVGAParser", "================ unzip complete ================");
                             zipInputStream2.closeEntry();
                         }
                     }
@@ -356,9 +352,9 @@ public final class SVGAParser {
             } finally {
             }
         } catch (Exception e) {
-            LogUtils.f16034a.d("SVGAParser", "================ unzip error ================");
-            LogUtils.f16034a.a("SVGAParser", "error", e);
-            SVGACache sVGACache = SVGACache.f15940a;
+            LogUtils.a.d("SVGAParser", "================ unzip error ================");
+            LogUtils.a.a("SVGAParser", "error", e);
+            SVGACache sVGACache = SVGACache.a;
             String absolutePath2 = d.getAbsolutePath();
             Intrinsics.c(absolutePath2, "cacheDir.absolutePath");
             sVGACache.a(absolutePath2);
@@ -369,9 +365,9 @@ public final class SVGAParser {
 
     public final void a(Exception exc, final ParseCompletion parseCompletion, String str) {
         exc.printStackTrace();
-        LogUtils logUtils = LogUtils.f16034a;
+        LogUtils logUtils = LogUtils.a;
         logUtils.d("SVGAParser", "================ " + str + " parser error ================");
-        LogUtils logUtils2 = LogUtils.f16034a;
+        LogUtils logUtils2 = LogUtils.a;
         logUtils2.a("SVGAParser", str + " parse error", exc);
         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAParser$Gxntlm-OW1gMQ8qqVQs8Yh_-Wcs
             @Override // java.lang.Runnable
@@ -383,7 +379,7 @@ public final class SVGAParser {
 
     public static final void a(String str, ParseCompletion parseCompletion, SVGAVideoEntity videoItem) {
         Intrinsics.e(videoItem, "$videoItem");
-        LogUtils logUtils = LogUtils.f16034a;
+        LogUtils logUtils = LogUtils.a;
         logUtils.a("SVGAParser", "================ " + str + " parser complete ================");
         if (parseCompletion != null) {
             parseCompletion.onComplete(videoItem);
@@ -392,10 +388,10 @@ public final class SVGAParser {
 
     private final void a(String str, ParseCompletion parseCompletion, String str2) {
         FileInputStream fileInputStream;
-        LogUtils.f16034a.a("SVGAParser", "================ decode " + str2 + " from cache ================");
-        LogUtils.f16034a.b("SVGAParser", "decodeFromCacheKey called with cacheKey : " + str);
+        LogUtils.a.a("SVGAParser", "================ decode " + str2 + " from cache ================");
+        LogUtils.a.b("SVGAParser", "decodeFromCacheKey called with cacheKey : " + str);
         if (this.b == null) {
-            LogUtils.f16034a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
+            LogUtils.a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
             return;
         }
         try {
@@ -406,24 +402,24 @@ public final class SVGAParser {
                 if (a(str, parseCompletion, str2, (PlayCallback) null)) {
                     return;
                 }
-                File d = SVGACache.f15940a.d(str);
+                File d = SVGACache.a.d(str);
                 File file = new File(d, "movie.binary");
                 if (!file.isFile()) {
                     file = null;
                 }
                 if (file != null) {
                     try {
-                        LogUtils.f16034a.a("SVGAParser", "binary change to entity");
+                        LogUtils.a.a("SVGAParser", "binary change to entity");
                         fileInputStream = new FileInputStream(file);
                         try {
-                            LogUtils.f16034a.a("SVGAParser", "binary change to entity success");
+                            LogUtils.a.a("SVGAParser", "binary change to entity success");
                             a(fileInputStream, d, parseCompletion, str2, str);
-                            Unit unit = Unit.f42314a;
+                            Unit unit = Unit.a;
                             CloseableKt.a(fileInputStream, null);
                         } finally {
                         }
                     } catch (Exception e) {
-                        LogUtils.f16034a.a("SVGAParser", "binary change to entity fail", e);
+                        LogUtils.a.a("SVGAParser", "binary change to entity fail", e);
                         d.delete();
                         file.delete();
                         throw e;
@@ -435,7 +431,7 @@ public final class SVGAParser {
                 }
                 if (file2 != null) {
                     try {
-                        LogUtils.f16034a.a("SVGAParser", "spec change to entity");
+                        LogUtils.a.a("SVGAParser", "spec change to entity");
                         fileInputStream = new FileInputStream(file2);
                         try {
                             FileInputStream fileInputStream2 = fileInputStream;
@@ -450,13 +446,13 @@ public final class SVGAParser {
                                 byteArrayOutputStream2.write(bArr, 0, read);
                             }
                             JSONObject jSONObject = new JSONObject(byteArrayOutputStream2.toString());
-                            LogUtils.f16034a.a("SVGAParser", "spec change to entity success");
+                            LogUtils.a.a("SVGAParser", "spec change to entity success");
                             a(jSONObject, d, parseCompletion, str2, str);
-                            Unit unit2 = Unit.f42314a;
+                            Unit unit2 = Unit.a;
                             CloseableKt.a(byteArrayOutputStream, null);
-                            Unit unit3 = Unit.f42314a;
+                            Unit unit3 = Unit.a;
                             CloseableKt.a(fileInputStream, null);
-                            Unit unit4 = Unit.f42314a;
+                            Unit unit4 = Unit.a;
                         } finally {
                             try {
                                 throw th;
@@ -464,7 +460,7 @@ public final class SVGAParser {
                             }
                         }
                     } catch (Exception e2) {
-                        LogUtils.f16034a.a("SVGAParser", str2 + " movie.spec change to entity fail", e2);
+                        LogUtils.a.a("SVGAParser", str2 + " movie.spec change to entity fail", e2);
                         d.delete();
                         file2.delete();
                         throw e2;
@@ -487,30 +483,30 @@ public final class SVGAParser {
         Intrinsics.e(cacheKey, "$cacheKey");
         try {
             try {
-                LogUtils.f16034a.a("SVGAParser", "decodeFromSVGAFileCacheKey:: ================ decode " + str + " from svga cachel file to entity ================");
+                LogUtils.a.a("SVGAParser", "decodeFromSVGAFileCacheKey:: ================ decode " + str + " from svga cachel file to entity ================");
             } catch (Exception e) {
                 this$0.a(e, parseCompletion, str);
-                logUtils = LogUtils.f16034a;
+                logUtils = LogUtils.a;
                 sb = new StringBuilder();
             }
             if (this$0.a(cacheKey, parseCompletion, str, playCallback)) {
-                logUtils2 = LogUtils.f16034a;
+                logUtils2 = LogUtils.a;
                 sb2 = new StringBuilder();
             } else {
                 synchronized (cacheKey) {
                     if (!this$0.a(cacheKey, parseCompletion, str, playCallback)) {
-                        FileInputStream fileInputStream = new FileInputStream(SVGACache.f15940a.e(cacheKey));
+                        FileInputStream fileInputStream = new FileInputStream(SVGACache.a.e(cacheKey));
                         byte[] a2 = this$0.a(fileInputStream);
                         if (a2 != null) {
                             if (this$0.b(a2)) {
                                 this$0.a(cacheKey, parseCompletion, str);
                             } else {
-                                LogUtils.f16034a.a("SVGAParser", "inflate start");
+                                LogUtils.a.a("SVGAParser", "inflate start");
                                 byte[] a3 = this$0.a(a2);
                                 if (a3 != null) {
-                                    LogUtils.f16034a.a("SVGAParser", "inflate complete");
+                                    LogUtils.a.a("SVGAParser", "inflate complete");
                                     this$0.a(a3, cacheKey, parseCompletion, str, playCallback);
-                                    unit2 = Unit.f42314a;
+                                    unit2 = Unit.a;
                                 } else {
                                     unit2 = null;
                                 }
@@ -518,17 +514,17 @@ public final class SVGAParser {
                                     this$0.a(new Exception("inflate(bytes) cause exception"), parseCompletion, str);
                                 }
                             }
-                            unit = Unit.f42314a;
+                            unit = Unit.a;
                         } else {
                             unit = null;
                         }
                         if (unit == null) {
                             this$0.a(new Exception("readAsBytes(inputStream) cause exception"), parseCompletion, str);
                         }
-                        Unit unit3 = Unit.f42314a;
+                        Unit unit3 = Unit.a;
                         CloseableKt.a(fileInputStream, null);
-                        Unit unit4 = Unit.f42314a;
-                        logUtils = LogUtils.f16034a;
+                        Unit unit4 = Unit.a;
+                        logUtils = LogUtils.a;
                         sb = new StringBuilder();
                         sb.append("decodeFromURL:: ================ decode ");
                         sb.append(str);
@@ -536,7 +532,7 @@ public final class SVGAParser {
                         logUtils.a("SVGAParser", sb.toString());
                         return;
                     }
-                    logUtils2 = LogUtils.f16034a;
+                    logUtils2 = LogUtils.a;
                     sb2 = new StringBuilder();
                 }
             }
@@ -545,7 +541,7 @@ public final class SVGAParser {
             sb2.append(" from svga cachel file to entity end ================");
             logUtils2.a("SVGAParser", sb2.toString());
         } catch (Throwable th) {
-            LogUtils.f16034a.a("SVGAParser", "decodeFromURL:: ================ decode " + str + " from svga cachel file to entity end ================");
+            LogUtils.a.a("SVGAParser", "decodeFromURL:: ================ decode " + str + " from svga cachel file to entity end ================");
             throw th;
         }
     }
@@ -553,7 +549,7 @@ public final class SVGAParser {
     public static final void a(String cacheKey, byte[] bytes) {
         Intrinsics.e(cacheKey, "$cacheKey");
         Intrinsics.e(bytes, "$bytes");
-        File e = SVGACache.f15940a.e(cacheKey);
+        File e = SVGACache.a.e(cacheKey);
         try {
             File file = e.exists() ^ true ? e : null;
             if (file != null) {
@@ -561,24 +557,24 @@ public final class SVGAParser {
             }
             new FileOutputStream(e).write(bytes);
         } catch (Exception e2) {
-            LogUtils.f16034a.a("SVGAParser", "create cache file fail.", e2);
+            LogUtils.a.a("SVGAParser", "create cache file fail.", e2);
             e.delete();
         }
     }
 
     private final void a(JSONObject jSONObject, File file, ParseCompletion parseCompletion, String str, String str2) {
-        LogUtils.f16034a.a("SVGAParser", "decodeFromJson:: SVGAVideoEntity  start");
-        SVGAVideoData a2 = SVGAVideoDataDecode.f15977a.a(jSONObject, file, this.f15959c, this.d);
+        LogUtils.a.a("SVGAParser", "decodeFromJson:: SVGAVideoEntity  start");
+        SVGAVideoData a2 = SVGAVideoDataDecode.a.a(jSONObject, file, this.c, this.d);
         a(new SVGAVideoEntity(a2), parseCompletion, str);
-        SVGAVideoDataCache.f15986a.a(this.b).a(str2, a2);
+        SVGAVideoDataCache.a.a(this.b).a(str2, a2);
     }
 
     private final void a(byte[] bArr, String str, final ParseCompletion parseCompletion, final String str2, PlayCallback playCallback) {
-        LogUtils.f16034a.a("SVGAParser", "decode:: SVGAVideoEntity  start");
-        SVGAVideoDataDecode sVGAVideoDataDecode = SVGAVideoDataDecode.f15977a;
-        MovieEntity decode = MovieEntity.ADAPTER.decode(bArr);
+        LogUtils.a.a("SVGAParser", "decode:: SVGAVideoEntity  start");
+        SVGAVideoDataDecode sVGAVideoDataDecode = SVGAVideoDataDecode.a;
+        Object decode = MovieEntity.ADAPTER.decode(bArr);
         Intrinsics.c(decode, "ADAPTER.decode(it)");
-        SVGAVideoData a2 = sVGAVideoDataDecode.a(decode, new File(str), this.f15959c, this.d);
+        SVGAVideoData a2 = sVGAVideoDataDecode.a((MovieEntity) decode, new File(str), this.c, this.d);
         final SVGAVideoEntity sVGAVideoEntity = new SVGAVideoEntity(a2);
         sVGAVideoEntity.a(new Function0<Unit>() { // from class: com.blued.android.module.svgaplayer.SVGAParser$decode$1
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -588,26 +584,26 @@ public final class SVGAParser {
             }
 
             public final void a() {
-                LogUtils.f16034a.a("SVGAParser", "decode:: SVGAVideoEntity prepare success");
+                LogUtils.a.a("SVGAParser", "decode:: SVGAVideoEntity prepare success");
                 SVGAParser.this.a(sVGAVideoEntity, parseCompletion, str2);
             }
 
             @Override // kotlin.jvm.functions.Function0
             public /* synthetic */ Unit invoke() {
                 a();
-                return Unit.f42314a;
+                return Unit.a;
             }
         }, playCallback);
-        SVGAVideoDataCache.f15986a.a(this.b).a(str, a2);
+        SVGAVideoDataCache.a.a(this.b).a(str, a2);
     }
 
     private final boolean a(String str, final ParseCompletion parseCompletion, final String str2, PlayCallback playCallback) {
-        SVGAVideoData a2 = SVGAVideoDataCache.f15986a.a(this.b).a(str);
+        SVGAVideoData a2 = SVGAVideoDataCache.a.a(this.b).a(str);
         if (a2 != null) {
-            LogUtils logUtils = LogUtils.f16034a;
+            LogUtils logUtils = LogUtils.a;
             logUtils.a("SVGAParser", "getCache:: cacheKey = " + str + " SVGAVideoEntity get from cache success");
             final SVGAVideoEntity sVGAVideoEntity = new SVGAVideoEntity(a2);
-            LogUtils.f16034a.a("SVGAParser", "getCache::SVGAVideoEntity prepare start");
+            LogUtils.a.a("SVGAParser", "getCache::SVGAVideoEntity prepare start");
             sVGAVideoEntity.a(new Function0<Unit>() { // from class: com.blued.android.module.svgaplayer.SVGAParser$getCache$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -616,14 +612,14 @@ public final class SVGAParser {
                 }
 
                 public final void a() {
-                    LogUtils.f16034a.a("SVGAParser", "getCache:: SVGAVideoEntity prepare success");
+                    LogUtils.a.a("SVGAParser", "getCache:: SVGAVideoEntity prepare success");
                     SVGAParser.this.a(sVGAVideoEntity, parseCompletion, str2);
                 }
 
                 @Override // kotlin.jvm.functions.Function0
                 public /* synthetic */ Unit invoke() {
                     a();
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             }, playCallback);
             return true;
@@ -683,22 +679,22 @@ public final class SVGAParser {
         String a2;
         Intrinsics.e(url, "url");
         if (this.b == null) {
-            LogUtils.f16034a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
+            LogUtils.a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
             return null;
         }
         final String url2 = url.toString();
         Intrinsics.c(url2, "url.toString()");
-        LogUtils logUtils = LogUtils.f16034a;
+        LogUtils logUtils = LogUtils.a;
         logUtils.a("SVGAParser", "================ decode from url: " + url2 + " ================");
         String str2 = str;
         if (str2 == null || str2.length() == 0) {
-            a2 = SVGACache.f15940a.a(url);
+            a2 = SVGACache.a.a(url);
         } else {
-            SVGACache sVGACache = SVGACache.f15940a;
+            SVGACache sVGACache = SVGACache.a;
             a2 = sVGACache.c(url.toString() + str);
         }
-        if (!SVGACache.f15940a.b(a2)) {
-            LogUtils.f16034a.a("SVGAParser", "no cached, prepare to download");
+        if (!SVGACache.a.b(a2)) {
+            LogUtils.a.a("SVGAParser", "no cached, prepare to download");
             final String str3 = a2;
             return this.e.a(url, new Function1<InputStream, Unit>() { // from class: com.blued.android.module.svgaplayer.SVGAParser$decodeFromURL$2
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -715,7 +711,7 @@ public final class SVGAParser {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(InputStream inputStream) {
                     a(inputStream);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             }, new Function1<Exception, Unit>() { // from class: com.blued.android.module.svgaplayer.SVGAParser$decodeFromURL$3
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -726,7 +722,7 @@ public final class SVGAParser {
 
                 public final void a(Exception it) {
                     Intrinsics.e(it, "it");
-                    LogUtils logUtils2 = LogUtils.f16034a;
+                    LogUtils logUtils2 = LogUtils.a;
                     logUtils2.d("SVGAParser", "================ svga file: " + URL.this + " download fail ================");
                     this.a(it, parseCompletion, url2);
                 }
@@ -734,11 +730,11 @@ public final class SVGAParser {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(Exception exc) {
                     a(exc);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
-        LogUtils.f16034a.a("SVGAParser", "this url cached");
+        LogUtils.a.a("SVGAParser", "this url cached");
         final String str4 = a2;
         h.execute(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAParser$JHa5sL8-rvnNQ0FRe2RrYVMdEHE
             @Override // java.lang.Runnable
@@ -752,17 +748,17 @@ public final class SVGAParser {
     public final void a(Context context) {
         Intrinsics.e(context, "context");
         this.b = context.getApplicationContext();
-        SVGACache.f15940a.a(this.b);
+        SVGACache.a.a(this.b);
     }
 
     public final void a(final InputStream inputStream, final String cacheKey, final ParseCompletion parseCompletion, final boolean z, final PlayCallback playCallback, final String str) {
         Intrinsics.e(inputStream, "inputStream");
         Intrinsics.e(cacheKey, "cacheKey");
         if (this.b == null) {
-            LogUtils.f16034a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
+            LogUtils.a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
             return;
         }
-        LogUtils logUtils = LogUtils.f16034a;
+        LogUtils logUtils = LogUtils.a;
         logUtils.a("SVGAParser", "decodeFromInputStream:: ================ decode " + str + " from input stream ================");
         h.execute(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAParser$vk2x-263PiPyAsfRbd-ZQehRYnc
             @Override // java.lang.Runnable
@@ -775,10 +771,10 @@ public final class SVGAParser {
     public final void a(final String name, final ParseCompletion parseCompletion, final PlayCallback playCallback) {
         Intrinsics.e(name, "name");
         if (this.b == null) {
-            LogUtils.f16034a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
+            LogUtils.a.d("SVGAParser", "在配置 SVGAParser context 前, 无法解析 SVGA 文件。");
             return;
         }
-        LogUtils logUtils = LogUtils.f16034a;
+        LogUtils logUtils = LogUtils.a;
         logUtils.a("SVGAParser", "================ decode " + name + " from assets ================");
         h.execute(new Runnable() { // from class: com.blued.android.module.svgaplayer.-$$Lambda$SVGAParser$5eWBplm59I2ZEBrBH6iSVspKam4
             @Override // java.lang.Runnable

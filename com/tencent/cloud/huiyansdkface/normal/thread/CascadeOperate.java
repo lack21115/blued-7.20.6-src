@@ -11,11 +11,11 @@ public class CascadeOperate {
     public class a {
 
         /* renamed from: a  reason: collision with root package name */
-        final b f35795a;
+        final b f22104a;
         final Runnable b;
 
         a(b bVar, Runnable runnable) {
-            this.f35795a = bVar;
+            this.f22104a = bVar;
             this.b = runnable;
         }
     }
@@ -40,7 +40,7 @@ public class CascadeOperate {
             return;
         }
         final a removeLast = linkedList.removeLast();
-        if (b.UI.equals(removeLast.f35795a)) {
+        if (b.UI.equals(removeLast.f22104a)) {
             ThreadOperate.runOnUiThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.normal.thread.CascadeOperate.1
                 @Override // java.lang.Runnable
                 public void run() {
@@ -49,7 +49,7 @@ public class CascadeOperate {
                 }
             });
         }
-        if (b.SUB.equals(removeLast.f35795a)) {
+        if (b.SUB.equals(removeLast.f22104a)) {
             ThreadOperate.runOnSubThread(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.normal.thread.CascadeOperate.2
                 @Override // java.lang.Runnable
                 public void run() {

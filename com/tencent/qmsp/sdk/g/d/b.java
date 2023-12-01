@@ -14,28 +14,28 @@ public class b {
     private static String e = "com.mdid.msa";
 
     /* renamed from: a  reason: collision with root package name */
-    private c f38626a;
+    private c f24935a;
     private ServiceConnection b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f38627c;
+    private Context f24936c;
     private com.tencent.qmsp.sdk.g.d.a d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/g/d/b$a.class */
     class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        c f38628a;
+        c f24937a;
 
         a(b bVar, c cVar) {
-            this.f38628a = cVar;
+            this.f24937a = cVar;
         }
 
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             synchronized (this) {
-                b.this.d = a.AbstractBinderC0997a.a(iBinder);
-                new d(b.this.d, this.f38628a).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
+                b.this.d = a.AbstractBinderC0827a.a(iBinder);
+                new d(b.this.d, this.f24937a).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, new Void[0]);
             }
         }
 
@@ -50,8 +50,8 @@ public class b {
         if (context == null) {
             throw new NullPointerException("Context can not be null.");
         }
-        this.f38627c = context;
-        this.f38626a = cVar;
+        this.f24936c = context;
+        this.f24935a = cVar;
         this.b = new a(this, cVar);
     }
 
@@ -91,7 +91,7 @@ public class b {
         intent.setClassName("com.mdid.msa", "com.mdid.msa.service.MsaIdService");
         intent.setAction("com.bun.msa.action.bindto.service");
         intent.putExtra("com.bun.msa.param.pkgname", str);
-        if (this.f38627c.bindService(intent, this.b, 1) || (cVar = this.f38626a) == null) {
+        if (this.f24936c.bindService(intent, this.b, 1) || (cVar = this.f24935a) == null) {
             return;
         }
         cVar.g();
@@ -123,7 +123,7 @@ public class b {
             try {
                 aVar.e();
                 if (this.b != null) {
-                    this.f38627c.unbindService(this.b);
+                    this.f24936c.unbindService(this.b);
                 }
             } catch (Exception e2) {
             }

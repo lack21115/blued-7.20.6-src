@@ -31,7 +31,7 @@ public class ac {
     private static String Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f22992a = 1800000;
+    private static long f9384a = 1800000;
     private static volatile boolean b = false;
 
     private static void B(final Context context) {
@@ -163,9 +163,9 @@ public class ac {
 
     private static boolean I(Context context) {
         long abs = Math.abs(System.currentTimeMillis() - S);
-        f22992a = fk.Code(context).S();
-        ge.Code(Code, "loc_tag isRefreshOk intervalRefreshTime = " + f22992a + ", intervalTime = " + abs);
-        if (abs < f22992a) {
+        f9384a = fk.Code(context).S();
+        ge.Code(Code, "loc_tag isRefreshOk intervalRefreshTime = " + f9384a + ", intervalTime = " + abs);
+        if (abs < f9384a) {
             ge.Code(Code, "loc_tag isRefreshOk = false, too frequently (no ok)");
             return false;
         }

@@ -34,12 +34,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGoodsWallFragment.class */
 public final class LiveGoodsWallFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private FragmentGoodsWallBinding f12940a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private FreedomAdapter f12941c;
+    private FragmentGoodsWallBinding a;
+    private FreedomAdapter c;
     private FreedomAdapter e;
     private final ArrayList<FitemGoodsWallCard> b = new ArrayList<>();
     private final ArrayList<FitemGoodsWallCard> d = new ArrayList<>();
@@ -52,7 +48,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
     }
 
     private final void a() {
-        FragmentGoodsWallBinding fragmentGoodsWallBinding = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding2 = fragmentGoodsWallBinding;
         if (fragmentGoodsWallBinding == null) {
             Intrinsics.c("vb");
@@ -65,7 +61,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
             public void onUIFinish() {
                 FragmentGoodsWallBinding fragmentGoodsWallBinding3;
                 super.onUIFinish();
-                fragmentGoodsWallBinding3 = LiveGoodsWallFragment.this.f12940a;
+                fragmentGoodsWallBinding3 = LiveGoodsWallFragment.this.a;
                 FragmentGoodsWallBinding fragmentGoodsWallBinding4 = fragmentGoodsWallBinding3;
                 if (fragmentGoodsWallBinding3 == null) {
                     Intrinsics.c("vb");
@@ -89,7 +85,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LiveGoodsWallFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveGoodsWallTaskDialogFragment.Companion companion = LiveGoodsWallTaskDialogFragment.f12945a;
+        LiveGoodsWallTaskDialogFragment.Companion companion = LiveGoodsWallTaskDialogFragment.a;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager, this$0);
@@ -122,7 +118,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
     }
 
     private final void b() {
-        FreedomAdapter freedomAdapter = this.f12941c;
+        FreedomAdapter freedomAdapter = this.c;
         if (freedomAdapter != null) {
             if (freedomAdapter == null) {
                 return;
@@ -130,10 +126,9 @@ public final class LiveGoodsWallFragment extends BaseFragment {
             freedomAdapter.notifyDataSetChanged();
             return;
         }
-        this.f12941c = new FreedomAdapter(getContext(), getFragmentActive(), this.b);
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
+        this.c = new FreedomAdapter(getContext(), getFragmentActive(), this.b);
+        final RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveGoodsWallFragment$notifyListAglow$1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 ArrayList arrayList;
                 arrayList = LiveGoodsWallFragment.this.b;
@@ -142,7 +137,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
                 return ((FreedomItem) obj).a(gridLayoutManager.getSpanCount());
             }
         });
-        FragmentGoodsWallBinding fragmentGoodsWallBinding = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding2 = fragmentGoodsWallBinding;
         if (fragmentGoodsWallBinding == null) {
             Intrinsics.c("vb");
@@ -152,7 +147,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
         if (recyclerView != null) {
             recyclerView.setLayoutManager(gridLayoutManager);
         }
-        FragmentGoodsWallBinding fragmentGoodsWallBinding3 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding3 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding4 = fragmentGoodsWallBinding3;
         if (fragmentGoodsWallBinding3 == null) {
             Intrinsics.c("vb");
@@ -162,11 +157,11 @@ public final class LiveGoodsWallFragment extends BaseFragment {
         if (recyclerView2 != null) {
             recyclerView2.setItemAnimator(new DefaultItemAnimator());
         }
-        FreedomAdapter freedomAdapter2 = this.f12941c;
+        FreedomAdapter freedomAdapter2 = this.c;
         if (freedomAdapter2 != null) {
             freedomAdapter2.b("BaseFragment", this);
         }
-        FragmentGoodsWallBinding fragmentGoodsWallBinding5 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding5 = this.a;
         if (fragmentGoodsWallBinding5 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding5 = null;
@@ -175,7 +170,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
         if (recyclerView3 == null) {
             return;
         }
-        recyclerView3.setAdapter(this.f12941c);
+        recyclerView3.setAdapter(this.c);
     }
 
     private final void c() {
@@ -188,9 +183,8 @@ public final class LiveGoodsWallFragment extends BaseFragment {
             return;
         }
         this.e = new FreedomAdapter(getContext(), getFragmentActive(), this.d);
-        final GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
+        final RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 4);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.android.module.live_china.fragment.LiveGoodsWallFragment$notifyListNotAglow$1
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
                 ArrayList arrayList;
                 arrayList = LiveGoodsWallFragment.this.d;
@@ -199,7 +193,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
                 return ((FreedomItem) obj).a(gridLayoutManager.getSpanCount());
             }
         });
-        FragmentGoodsWallBinding fragmentGoodsWallBinding = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding2 = fragmentGoodsWallBinding;
         if (fragmentGoodsWallBinding == null) {
             Intrinsics.c("vb");
@@ -209,7 +203,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
         if (recyclerView != null) {
             recyclerView.setLayoutManager(gridLayoutManager);
         }
-        FragmentGoodsWallBinding fragmentGoodsWallBinding3 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding3 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding4 = fragmentGoodsWallBinding3;
         if (fragmentGoodsWallBinding3 == null) {
             Intrinsics.c("vb");
@@ -223,7 +217,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
         if (freedomAdapter2 != null) {
             freedomAdapter2.b("BaseFragment", this);
         }
-        FragmentGoodsWallBinding fragmentGoodsWallBinding5 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding5 = this.a;
         if (fragmentGoodsWallBinding5 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding5 = null;
@@ -235,19 +229,19 @@ public final class LiveGoodsWallFragment extends BaseFragment {
         recyclerView3.setAdapter(this.e);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        FragmentGoodsWallBinding a2 = FragmentGoodsWallBinding.a(getLayoutInflater(), viewGroup, false);
-        Intrinsics.c(a2, "inflate(layoutInflater, container, false)");
-        this.f12940a = a2;
-        FragmentGoodsWallBinding fragmentGoodsWallBinding = a2;
-        if (a2 == null) {
+        FragmentGoodsWallBinding a = FragmentGoodsWallBinding.a(getLayoutInflater(), viewGroup, false);
+        Intrinsics.c(a, "inflate(layoutInflater, container, false)");
+        this.a = a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding = a;
+        if (a == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding = null;
         }
         if (fragmentGoodsWallBinding.getRoot().getParent() != null) {
-            FragmentGoodsWallBinding fragmentGoodsWallBinding2 = this.f12940a;
+            FragmentGoodsWallBinding fragmentGoodsWallBinding2 = this.a;
             FragmentGoodsWallBinding fragmentGoodsWallBinding3 = fragmentGoodsWallBinding2;
             if (fragmentGoodsWallBinding2 == null) {
                 Intrinsics.c("vb");
@@ -258,7 +252,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
                 throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup");
             }
             ViewGroup viewGroup2 = (ViewGroup) parent;
-            FragmentGoodsWallBinding fragmentGoodsWallBinding4 = this.f12940a;
+            FragmentGoodsWallBinding fragmentGoodsWallBinding4 = this.a;
             FragmentGoodsWallBinding fragmentGoodsWallBinding5 = fragmentGoodsWallBinding4;
             if (fragmentGoodsWallBinding4 == null) {
                 Intrinsics.c("vb");
@@ -266,42 +260,42 @@ public final class LiveGoodsWallFragment extends BaseFragment {
             }
             viewGroup2.removeView(fragmentGoodsWallBinding5.getRoot());
         }
-        FragmentGoodsWallBinding fragmentGoodsWallBinding6 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding6 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding7 = fragmentGoodsWallBinding6;
         if (fragmentGoodsWallBinding6 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding7 = null;
         }
         fragmentGoodsWallBinding7.q.getPaint().setFakeBoldText(true);
-        FragmentGoodsWallBinding fragmentGoodsWallBinding8 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding8 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding9 = fragmentGoodsWallBinding8;
         if (fragmentGoodsWallBinding8 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding9 = null;
         }
         fragmentGoodsWallBinding9.r.getPaint().setFakeBoldText(true);
-        FragmentGoodsWallBinding fragmentGoodsWallBinding10 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding10 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding11 = fragmentGoodsWallBinding10;
         if (fragmentGoodsWallBinding10 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding11 = null;
         }
         fragmentGoodsWallBinding11.w.getPaint().setFakeBoldText(true);
-        FragmentGoodsWallBinding fragmentGoodsWallBinding12 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding12 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding13 = fragmentGoodsWallBinding12;
         if (fragmentGoodsWallBinding12 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding13 = null;
         }
         fragmentGoodsWallBinding13.m.getPaint().setFakeBoldText(true);
-        FragmentGoodsWallBinding fragmentGoodsWallBinding14 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding14 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding15 = fragmentGoodsWallBinding14;
         if (fragmentGoodsWallBinding14 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding15 = null;
         }
         fragmentGoodsWallBinding15.s.getPaint().setFakeBoldText(true);
-        FragmentGoodsWallBinding fragmentGoodsWallBinding16 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding16 = this.a;
         FragmentGoodsWallBinding fragmentGoodsWallBinding17 = fragmentGoodsWallBinding16;
         if (fragmentGoodsWallBinding16 == null) {
             Intrinsics.c("vb");
@@ -314,7 +308,7 @@ public final class LiveGoodsWallFragment extends BaseFragment {
             }
         });
         a();
-        FragmentGoodsWallBinding fragmentGoodsWallBinding18 = this.f12940a;
+        FragmentGoodsWallBinding fragmentGoodsWallBinding18 = this.a;
         if (fragmentGoodsWallBinding18 == null) {
             Intrinsics.c("vb");
             fragmentGoodsWallBinding18 = null;

@@ -16,11 +16,11 @@ import com.opos.mobad.q.a.m;
 public class f extends m {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26185a;
-    private a.C0707a b;
+    private Context f12497a;
+    private a.C0537a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f26186c;
+    private long f12498c;
     private boolean d;
     private com.opos.mobad.cmn.a.a e;
     private com.opos.mobad.o.a.a f;
@@ -31,30 +31,30 @@ public class f extends m {
     private com.opos.mobad.ad.privacy.b k;
     private boolean p;
 
-    public f(Context context, a.C0707a c0707a, String str, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.o.a.a aVar2, com.opos.mobad.n.a aVar3, b.InterfaceC0687b interfaceC0687b, m.a aVar4, com.opos.mobad.ad.privacy.b bVar) {
-        super(context, str, aVar, interfaceC0687b, aVar4);
+    public f(Context context, a.C0537a c0537a, String str, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.o.a.a aVar2, com.opos.mobad.n.a aVar3, b.InterfaceC0517b interfaceC0517b, m.a aVar4, com.opos.mobad.ad.privacy.b bVar) {
+        super(context, str, aVar, interfaceC0517b, aVar4);
         this.d = false;
         this.h = false;
         this.i = false;
         this.j = false;
         this.p = false;
-        this.f26185a = context;
-        this.b = c0707a;
-        this.f26186c = c0707a.f26482a.h();
+        this.f12497a = context;
+        this.b = c0537a;
+        this.f12498c = c0537a.f12794a.h();
         this.e = aVar;
         this.g = aVar3;
         aVar3.a(this);
-        this.i = c0707a.f26483c.Z();
-        a(this.b.b, this.b.f26483c, aVar3.e());
+        this.i = c0537a.f12795c.Z();
+        a(this.b.b, this.b.f12795c, aVar3.e());
         this.f = aVar2;
         aVar2.a(new com.opos.mobad.o.a.b() { // from class: com.opos.mobad.h.b.f.1
             @Override // com.opos.mobad.o.a.b
             public void a(int i) {
                 f.this.l.c(i);
                 f.this.i = false;
-                f.this.g.a(com.opos.mobad.model.a.a(f.this.f26185a, f.this.b, f.this.h, f.this.i));
+                f.this.g.a(com.opos.mobad.model.a.a(f.this.f12497a, f.this.b, f.this.h, f.this.i));
                 f fVar = f.this;
-                if (fVar.a(fVar.b.f26483c)) {
+                if (fVar.a(fVar.b.f12795c)) {
                     f.this.d((View) null, (int[]) null);
                 }
             }
@@ -63,9 +63,9 @@ public class f extends m {
             public void a(boolean z) {
                 if (z) {
                     f.this.i = false;
-                    f.this.g.a(com.opos.mobad.model.a.a(f.this.f26185a, f.this.b, f.this.h, f.this.i));
+                    f.this.g.a(com.opos.mobad.model.a.a(f.this.f12497a, f.this.b, f.this.h, f.this.i));
                     f fVar = f.this;
-                    if (fVar.a(fVar.b.f26483c)) {
+                    if (fVar.a(fVar.b.f12795c)) {
                         f.this.d((View) null, (int[]) null);
                     }
                 }
@@ -94,7 +94,7 @@ public class f extends m {
         if (adItemData == null || adItemData.O() == null) {
             return null;
         }
-        return new ComplianceInfo(adItemData.O().b, adItemData.O().f26468a);
+        return new ComplianceInfo(adItemData.O().b, adItemData.O().f12780a);
     }
 
     public void a() {
@@ -103,19 +103,19 @@ public class f extends m {
         } else if (this.p) {
         } else {
             this.p = true;
-            this.g.a(com.opos.mobad.model.a.a(this.f26185a, this.b, this.h, this.i));
+            this.g.a(com.opos.mobad.model.a.a(this.f12497a, this.b, this.h, this.i));
         }
     }
 
-    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void a(long j, long j2) {
         super.a(j, j2);
         this.j = false;
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void a(View view, int[] iArr) {
-        if (a(this.b.f26483c)) {
+        if (a(this.b.f12795c)) {
             return;
         }
         this.f.a(view);
@@ -123,11 +123,11 @@ public class f extends m {
 
     public void a(String str) {
         com.opos.cmn.an.f.a.b("NativeTemplatePresenter", "notifyInstallCompletedEvent pkgname =" + str);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(this.b.f26483c.k()) || !this.b.f26483c.k().equals(str)) {
+        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(this.b.f12795c.k()) || !this.b.f12795c.k().equals(str)) {
             return;
         }
         this.h = true;
-        this.g.a(com.opos.mobad.model.a.a(this.f26185a, this.b, true, this.i));
+        this.g.a(com.opos.mobad.model.a.a(this.f12497a, this.b, true, this.i));
     }
 
     public boolean a(MaterialData materialData) {
@@ -148,23 +148,23 @@ public class f extends m {
         return false;
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void b() {
         super.a(this.g.c());
     }
 
-    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void b(long j, long j2) {
         super.b(j, j2);
         this.j = false;
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void b(View view, int[] iArr) {
         Activity activity = (view == null || !(view.getContext() instanceof Activity)) ? null : (Activity) view.getContext();
         com.opos.mobad.ad.privacy.b bVar = this.k;
         if (activity == null) {
-            activity = this.f26185a;
+            activity = this.f12497a;
         }
         bVar.a(activity, 0, a(this.b.b), null);
     }
@@ -180,32 +180,32 @@ public class f extends m {
         this.d = true;
     }
 
-    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void c(long j, long j2) {
         super.b(j, j2);
         this.j = true;
     }
 
-    @Override // com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.n.a.InterfaceC0538a
     public void c(View view, int[] iArr) {
         Activity activity = (view == null || !(view.getContext() instanceof Activity)) ? null : (Activity) view.getContext();
         com.opos.mobad.ad.privacy.b bVar = this.k;
         if (activity == null) {
-            activity = this.f26185a;
+            activity = this.f12497a;
         }
         bVar.a(activity, 1, a(this.b.b), null);
     }
 
-    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void d(View view, int[] iArr) {
-        if (this.i && a(this.b.f26483c)) {
+        if (this.i && a(this.b.f12795c)) {
             this.f.a(view);
         } else {
             super.d(view, iArr);
         }
     }
 
-    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0708a
+    @Override // com.opos.mobad.q.a.m, com.opos.mobad.n.a.InterfaceC0538a
     public void e(View view, int[] iArr) {
         if (a(view, iArr, com.opos.mobad.cmn.a.b.a.Video)) {
             return;

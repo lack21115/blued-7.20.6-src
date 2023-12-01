@@ -14,13 +14,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogSelectCityBinding.class */
 public final class DialogSelectCityBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FastIndexView f18805a;
+    public final FastIndexView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeLinearLayout f18806c;
+    public final ShapeLinearLayout c;
     public final RecyclerView d;
     public final ConstraintLayout e;
     public final ShapeTextView f;
@@ -28,9 +24,9 @@ public final class DialogSelectCityBinding implements ViewBinding {
 
     private DialogSelectCityBinding(ConstraintLayout constraintLayout, FastIndexView fastIndexView, ImageView imageView, ShapeLinearLayout shapeLinearLayout, RecyclerView recyclerView, ConstraintLayout constraintLayout2, ShapeTextView shapeTextView) {
         this.g = constraintLayout;
-        this.f18805a = fastIndexView;
+        this.a = fastIndexView;
         this.b = imageView;
-        this.f18806c = shapeLinearLayout;
+        this.c = shapeLinearLayout;
         this.d = recyclerView;
         this.e = constraintLayout2;
         this.f = shapeTextView;
@@ -56,13 +52,13 @@ public final class DialogSelectCityBinding implements ViewBinding {
             if (imageView != null) {
                 ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.layout_event_type);
                 if (shapeLinearLayout != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-                    if (recyclerView != null) {
-                        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.rootLayout);
-                        if (constraintLayout != null) {
+                    RecyclerView findViewById = view.findViewById(R.id.recycler_view);
+                    if (findViewById != null) {
+                        ConstraintLayout findViewById2 = view.findViewById(R.id.rootLayout);
+                        if (findViewById2 != null) {
                             ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_index);
                             if (shapeTextView != null) {
-                                return new DialogSelectCityBinding((ConstraintLayout) view, fastIndexView, imageView, shapeLinearLayout, recyclerView, constraintLayout, shapeTextView);
+                                return new DialogSelectCityBinding((ConstraintLayout) view, fastIndexView, imageView, shapeLinearLayout, findViewById, findViewById2, shapeTextView);
                             }
                             str = "tvIndex";
                         } else {
@@ -83,7 +79,6 @@ public final class DialogSelectCityBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

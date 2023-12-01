@@ -18,12 +18,8 @@ public final class SVGAVideoData {
     private File i;
     private int j;
     private int k;
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f16004a = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    private SVGARect f16005c = new SVGARect(0.0d, 0.0d, 0.0d, 0.0d);
+    private boolean a = true;
+    private SVGARect c = new SVGARect(0.0d, 0.0d, 0.0d, 0.0d);
     private int d = 15;
     private List<SVGAVideoSpriteEntity> f = CollectionsKt.b();
     private List<SVGAAudioEntity> g = CollectionsKt.b();
@@ -39,7 +35,7 @@ public final class SVGAVideoData {
 
     public final void a(SVGARect sVGARect) {
         Intrinsics.e(sVGARect, "<set-?>");
-        this.f16005c = sVGARect;
+        this.c = sVGARect;
     }
 
     public final void a(File file) {
@@ -52,11 +48,11 @@ public final class SVGAVideoData {
     }
 
     public final void a(boolean z) {
-        this.f16004a = z;
+        this.a = z;
     }
 
     public final boolean a() {
-        return this.f16004a;
+        return this.a;
     }
 
     public final MovieEntity b() {
@@ -73,7 +69,7 @@ public final class SVGAVideoData {
     }
 
     public final SVGARect c() {
-        return this.f16005c;
+        return this.c;
     }
 
     public final void c(int i) {

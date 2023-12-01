@@ -17,7 +17,7 @@ public class SDKWebAuthFragment extends WebViewShowInfoFragment {
     private long m = 0;
 
     public static void a(Context context, String str, String str2, long j) {
-        String a2 = H5Url.a(33, str);
+        String a2 = H5Url.a(33, new Object[]{str});
         Bundle bundle = new Bundle();
         bundle.putString("web_url", a2);
         bundle.putString("title_name", "");
@@ -39,9 +39,9 @@ public class SDKWebAuthFragment extends WebViewShowInfoFragment {
         int i;
         if ("blued_auth".equals(bluedUrlParser.a()) && getFragmentActive() != null && getFragmentActive().isActive()) {
             if (bluedUrlParser.b() != null) {
-                String str = bluedUrlParser.b().get("access_token");
-                String str2 = bluedUrlParser.b().get("expire");
-                String str3 = bluedUrlParser.b().get("package_name");
+                String str = (String) bluedUrlParser.b().get("access_token");
+                String str2 = (String) bluedUrlParser.b().get("expire");
+                String str3 = (String) bluedUrlParser.b().get("package_name");
                 try {
                     i = Integer.parseInt(str2);
                 } catch (Exception e) {
@@ -65,7 +65,7 @@ public class SDKWebAuthFragment extends WebViewShowInfoFragment {
         SDKActionManager.a(getActivity(), this.m);
     }
 
-    @Override // com.soft.blued.ui.web.WebViewShowInfoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.web.WebViewShowInfoFragment
     public void onResume() {
         super.onResume();
         if (SDKActionManager.a(this.m)) {

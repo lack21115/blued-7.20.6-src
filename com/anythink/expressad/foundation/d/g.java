@@ -4,30 +4,30 @@ package com.anythink.expressad.foundation.d;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f7783a;
+    public long f4943a;
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f7784c;
+    public int f4944c;
     public int d;
 
     private g(long j, long j2, int i, int i2) {
-        this.f7783a = j;
+        this.f4943a = j;
         this.b = j2;
         this.d = i2;
-        this.f7784c = i;
+        this.f4944c = i;
     }
 
     private long a() {
-        return this.f7783a;
+        return this.f4943a;
     }
 
     private void a(int i) {
-        this.f7784c = i;
+        this.f4944c = i;
     }
 
     private void a(long j) {
-        this.f7783a = j;
+        this.f4943a = j;
     }
 
     private long b() {
@@ -43,7 +43,7 @@ public final class g {
     }
 
     private int c() {
-        return this.f7784c;
+        return this.f4944c;
     }
 
     private int d() {

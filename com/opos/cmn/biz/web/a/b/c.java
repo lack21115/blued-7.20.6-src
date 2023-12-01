@@ -8,18 +8,18 @@ import java.util.List;
 public class c implements com.opos.cmn.biz.web.a.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f24718a = new byte[0];
+    private static final byte[] f11030a = new byte[0];
     private static c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.biz.web.a.a.a f24719c = new com.opos.cmn.biz.web.a.a.b();
+    private com.opos.cmn.biz.web.a.a.a f11031c = new com.opos.cmn.biz.web.a.a.b();
 
     private c() {
     }
 
     public static c a() {
         if (b == null) {
-            synchronized (f24718a) {
+            synchronized (f11030a) {
                 if (b == null) {
                     b = new c();
                 }
@@ -30,7 +30,7 @@ public class c implements com.opos.cmn.biz.web.a.a.a {
 
     @Override // com.opos.cmn.biz.web.a.a.a
     public WebResourceResponse a(String str) {
-        return this.f24719c.a(str);
+        return this.f11031c.a(str);
     }
 
     @Override // com.opos.cmn.biz.web.a.a.a
@@ -38,11 +38,11 @@ public class c implements com.opos.cmn.biz.web.a.a.a {
         if (context == null || bVar == null) {
             throw new Exception("init params error");
         }
-        this.f24719c.a(context, bVar);
+        this.f11031c.a(context, bVar);
     }
 
     @Override // com.opos.cmn.biz.web.a.a.a
     public void a(List<a> list) {
-        this.f24719c.a(list);
+        this.f11031c.a(list);
     }
 }

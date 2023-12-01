@@ -1,5 +1,6 @@
 package okhttp3.internal.http;
 
+import com.android.internal.location.GpsNetInitiatedHandler;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -15,13 +16,9 @@ import okhttp3.internal.connection.StreamAllocation;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/RealInterceptorChain.class */
 public final class RealInterceptorChain implements Interceptor.Chain {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<Interceptor> f43888a;
+    private final List<Interceptor> a;
     private final StreamAllocation b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final HttpCodec f43889c;
+    private final HttpCodec c;
     private final RealConnection d;
     private final int e;
     private final Request f;
@@ -33,10 +30,10 @@ public final class RealInterceptorChain implements Interceptor.Chain {
     private int l;
 
     public RealInterceptorChain(List<Interceptor> list, StreamAllocation streamAllocation, HttpCodec httpCodec, RealConnection realConnection, int i, Request request, Call call, EventListener eventListener, int i2, int i3, int i4) {
-        this.f43888a = list;
+        this.a = list;
         this.d = realConnection;
         this.b = streamAllocation;
-        this.f43889c = httpCodec;
+        this.c = httpCodec;
         this.e = i;
         this.f = request;
         this.g = call;
@@ -47,17 +44,17 @@ public final class RealInterceptorChain implements Interceptor.Chain {
     }
 
     public Response a(Request request, StreamAllocation streamAllocation, HttpCodec httpCodec, RealConnection realConnection) throws IOException {
-        if (this.e < this.f43888a.size()) {
+        if (this.e < this.a.size()) {
             this.l++;
-            if (this.f43889c != null && !this.d.a(request.url())) {
-                throw new IllegalStateException("network interceptor " + this.f43888a.get(this.e - 1) + " must retain the same host and port");
-            } else if (this.f43889c != null && this.l > 1) {
-                throw new IllegalStateException("network interceptor " + this.f43888a.get(this.e - 1) + " must call proceed() exactly once");
+            if (this.c != null && !this.d.a(request.url())) {
+                throw new IllegalStateException("network interceptor " + this.a.get(this.e - 1) + " must retain the same host and port");
+            } else if (this.c != null && this.l > 1) {
+                throw new IllegalStateException("network interceptor " + this.a.get(this.e - 1) + " must call proceed() exactly once");
             } else {
-                RealInterceptorChain realInterceptorChain = new RealInterceptorChain(this.f43888a, streamAllocation, httpCodec, realConnection, this.e + 1, request, this.g, this.h, this.i, this.j, this.k);
-                Interceptor interceptor = this.f43888a.get(this.e);
+                RealInterceptorChain realInterceptorChain = new RealInterceptorChain(this.a, streamAllocation, httpCodec, realConnection, this.e + 1, request, this.g, this.h, this.i, this.j, this.k);
+                Interceptor interceptor = this.a.get(this.e);
                 Response intercept = interceptor.intercept(realInterceptorChain);
-                if (httpCodec != null && this.e + 1 < this.f43888a.size() && realInterceptorChain.l != 1) {
+                if (httpCodec != null && this.e + 1 < this.a.size() && realInterceptorChain.l != 1) {
                     throw new IllegalStateException("network interceptor " + interceptor + " must call proceed() exactly once");
                 } else if (intercept == null) {
                     throw new NullPointerException("interceptor " + interceptor + " returned null");
@@ -76,7 +73,7 @@ public final class RealInterceptorChain implements Interceptor.Chain {
     }
 
     public HttpCodec b() {
-        return this.f43889c;
+        return this.c;
     }
 
     public EventListener c() {
@@ -100,7 +97,7 @@ public final class RealInterceptorChain implements Interceptor.Chain {
 
     @Override // okhttp3.Interceptor.Chain
     public Response proceed(Request request) throws IOException {
-        return a(request, this.b, this.f43889c, this.d);
+        return a(request, this.b, this.c, this.d);
     }
 
     @Override // okhttp3.Interceptor.Chain
@@ -115,17 +112,17 @@ public final class RealInterceptorChain implements Interceptor.Chain {
 
     @Override // okhttp3.Interceptor.Chain
     public Interceptor.Chain withConnectTimeout(int i, TimeUnit timeUnit) {
-        return new RealInterceptorChain(this.f43888a, this.b, this.f43889c, this.d, this.e, this.f, this.g, this.h, Util.a("timeout", i, timeUnit), this.j, this.k);
+        return new RealInterceptorChain(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, i, timeUnit), this.j, this.k);
     }
 
     @Override // okhttp3.Interceptor.Chain
     public Interceptor.Chain withReadTimeout(int i, TimeUnit timeUnit) {
-        return new RealInterceptorChain(this.f43888a, this.b, this.f43889c, this.d, this.e, this.f, this.g, this.h, this.i, Util.a("timeout", i, timeUnit), this.k);
+        return new RealInterceptorChain(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, i, timeUnit), this.k);
     }
 
     @Override // okhttp3.Interceptor.Chain
     public Interceptor.Chain withWriteTimeout(int i, TimeUnit timeUnit) {
-        return new RealInterceptorChain(this.f43888a, this.b, this.f43889c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, Util.a("timeout", i, timeUnit));
+        return new RealInterceptorChain(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, Util.a(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT, i, timeUnit));
     }
 
     @Override // okhttp3.Interceptor.Chain

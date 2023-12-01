@@ -28,7 +28,7 @@ import java.io.File;
 public class CommunityShareUtils extends ShareUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static CommunityShareUtils f20464a;
+    private static CommunityShareUtils f6858a;
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(Context context, BluedIngSelfFeed bluedIngSelfFeed, ShareEntity shareEntity, Bitmap bitmap) {
@@ -43,10 +43,10 @@ public class CommunityShareUtils extends ShareUtils {
     }
 
     public static CommunityShareUtils b() {
-        if (f20464a == null) {
-            f20464a = new CommunityShareUtils();
+        if (f6858a == null) {
+            f6858a = new CommunityShareUtils();
         }
-        return f20464a;
+        return f6858a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -65,17 +65,17 @@ public class CommunityShareUtils extends ShareUtils {
         StringBuilder sb = new StringBuilder();
         sb.append(EncryptTool.b(bluedIngSelfFeed.feed_id));
         sb.append(bluedIngSelfFeed.is_ads == 1 ? "&is_ads=1" : "");
-        shareEntity.linkUrl = H5Url.a(28, sb.toString());
+        shareEntity.linkUrl = H5Url.a(28, new Object[]{sb.toString()});
         shareEntity.shareBackLister = null;
         shareEntity.b = -1;
-        shareEntity.f9215a = bluedIngSelfFeed;
+        shareEntity.f6375a = bluedIngSelfFeed;
         if (bluedIngSelfFeed.is_feed_anonym == 1) {
             shareEntity.shareFrom = 15;
         } else {
             shareEntity.shareFrom = 4;
         }
         shareEntity.ifHideRepostToFeed = z;
-        shareEntity.f9216c = i;
+        shareEntity.f6376c = i;
         shareEntity.d = str2;
         shareEntity.e = i2;
         shareEntity.h = true;
@@ -128,7 +128,6 @@ public class CommunityShareUtils extends ShareUtils {
                     a(context, bluedIngSelfFeed, shareEntity, bitmap);
                 } else {
                     ImageFileLoader.a((IRequestHost) null).b(bluedIngSelfFeed.feed_videos[0]).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.community.utils.CommunityShareUtils.2
-                        @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                         public void onUIFinish(File file, Exception exc) {
                             if (file == null || !file.exists()) {
                                 CommunityShareUtils.this.a(context, bluedIngSelfFeed, shareEntity, (Bitmap) null);
@@ -161,10 +160,10 @@ public class CommunityShareUtils extends ShareUtils {
             }
         }
         shareEntity.flag = 1;
-        shareEntity.linkUrl = H5Url.a(29, EncryptTool.b(bluedIngSelfFeed.circle_id), EncryptTool.b(bluedIngSelfFeed.feed_id));
+        shareEntity.linkUrl = H5Url.a(29, new Object[]{EncryptTool.b(bluedIngSelfFeed.circle_id), EncryptTool.b(bluedIngSelfFeed.feed_id)});
         shareEntity.shareBackLister = null;
         shareEntity.b = -1;
-        shareEntity.f9215a = bluedIngSelfFeed;
+        shareEntity.f6375a = bluedIngSelfFeed;
         shareEntity.shareFrom = 11;
         shareEntity.i = i;
         shareEntity.l = true;
@@ -195,10 +194,10 @@ public class CommunityShareUtils extends ShareUtils {
             shareEntity.content = myCircleModel.description;
         }
         shareEntity.flag = 1;
-        shareEntity.linkUrl = H5Url.a(30, EncryptTool.b(myCircleModel.circle_id));
+        shareEntity.linkUrl = H5Url.a(30, new Object[]{EncryptTool.b(myCircleModel.circle_id)});
         shareEntity.shareBackLister = null;
         shareEntity.b = -1;
-        shareEntity.f9215a = myCircleModel;
+        shareEntity.f6375a = myCircleModel;
         shareEntity.m = true;
         shareEntity.ifHideRepostToFeed = false;
         shareEntity.shareType = 0;
@@ -223,10 +222,10 @@ public class CommunityShareUtils extends ShareUtils {
             }
         }
         shareEntity.flag = 1;
-        shareEntity.linkUrl = H5Url.a(31, EncryptTool.b(eventDetailsModel.id), EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().uid));
+        shareEntity.linkUrl = H5Url.a(31, new Object[]{EncryptTool.b(eventDetailsModel.id), EncryptTool.b(UserInfo.getInstance().getLoginUserInfo().uid)});
         shareEntity.shareBackLister = null;
         shareEntity.b = -1;
-        shareEntity.f9215a = eventDetailsModel;
+        shareEntity.f6375a = eventDetailsModel;
         shareEntity.n = true;
         shareEntity.ifHideRepostToFeed = false;
         shareEntity.shareType = 0;
@@ -245,10 +244,10 @@ public class CommunityShareUtils extends ShareUtils {
         ShareEntity shareEntity = new ShareEntity();
         shareEntity.content = "";
         shareEntity.flag = 1;
-        shareEntity.linkUrl = H5Url.a(43, bluedTopic.super_did);
+        shareEntity.linkUrl = H5Url.a(43, new Object[]{bluedTopic.super_did});
         shareEntity.shareBackLister = null;
         shareEntity.b = -1;
-        shareEntity.f9215a = bluedTopic;
+        shareEntity.f6375a = bluedTopic;
         shareEntity.ifHideRepostToFeed = false;
         shareEntity.shareFrom = 10;
         shareEntity.shareType = 0;

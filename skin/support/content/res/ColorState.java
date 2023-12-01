@@ -10,13 +10,9 @@ import skin.support.utils.Slog;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/content/res/ColorState.class */
 public final class ColorState {
-
-    /* renamed from: a  reason: collision with root package name */
-    boolean f44217a;
+    boolean a;
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f44218c;
+    String c;
     String d;
     String e;
     String f;
@@ -31,13 +27,9 @@ public final class ColorState {
 
     /* loaded from: source-3503164-dex2jar.jar:skin/support/content/res/ColorState$ColorBuilder.class */
     public static class ColorBuilder {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f44219a;
+        String a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        String f44220c;
+        String c;
         String d;
         String e;
         String f;
@@ -50,7 +42,7 @@ public final class ColorState {
 
         public ColorBuilder a(String str) {
             if (ColorState.a("colorWindowFocused", str)) {
-                this.f44219a = str;
+                this.a = str;
             }
             return this;
         }
@@ -59,7 +51,7 @@ public final class ColorState {
             if (TextUtils.isEmpty(this.l)) {
                 throw new SkinCompatException("Default color can not empty!");
             }
-            return new ColorState(this.f44219a, this.b, this.f44220c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l);
+            return new ColorState(this.a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l);
         }
 
         public ColorBuilder b(String str) {
@@ -71,7 +63,7 @@ public final class ColorState {
 
         public ColorBuilder c(String str) {
             if (ColorState.a("colorFocused", str)) {
-                this.f44220c = str;
+                this.c = str;
             }
             return this;
         }
@@ -143,14 +135,14 @@ public final class ColorState {
     ColorState(String str, String str2) {
         this.b = str;
         this.n = str2;
-        this.f44217a = true;
+        this.a = true;
         if (!str2.startsWith("#")) {
             throw new SkinCompatException("Default color cannot be a reference, when only default color is available!");
         }
     }
 
     ColorState(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12) {
-        this.f44218c = str;
+        this.c = str;
         this.d = str2;
         this.e = str3;
         this.f = str4;
@@ -163,7 +155,7 @@ public final class ColorState {
         this.m = str11;
         this.n = str12;
         boolean z = TextUtils.isEmpty(str) && TextUtils.isEmpty(str2) && TextUtils.isEmpty(str3) && TextUtils.isEmpty(str4) && TextUtils.isEmpty(str5) && TextUtils.isEmpty(str6) && TextUtils.isEmpty(str7) && TextUtils.isEmpty(str8) && TextUtils.isEmpty(str9) && TextUtils.isEmpty(str10) && TextUtils.isEmpty(str11);
-        this.f44217a = z;
+        this.a = z;
         if (z && !str12.startsWith("#")) {
             throw new SkinCompatException("Default color cannot be a reference, when only default color is available!");
         }
@@ -178,7 +170,7 @@ public final class ColorState {
             if (b.a()) {
                 return b.n;
             }
-            if (Slog.f44252a) {
+            if (Slog.a) {
                 Slog.a("ColorState", str + " cannot reference " + b.b);
                 return null;
             }
@@ -190,11 +182,11 @@ public final class ColorState {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static JSONObject a(ColorState colorState) throws JSONException {
         JSONObject jSONObject = new JSONObject();
-        if (colorState.f44217a) {
-            jSONObject.putOpt("colorName", colorState.b).putOpt("colorDefault", colorState.n).putOpt("onlyDefaultColor", Boolean.valueOf(colorState.f44217a));
+        if (colorState.a) {
+            jSONObject.putOpt("colorName", colorState.b).putOpt("colorDefault", colorState.n).putOpt("onlyDefaultColor", Boolean.valueOf(colorState.a));
             return jSONObject;
         }
-        jSONObject.putOpt("colorName", colorState.b).putOpt("colorWindowFocused", colorState.f44218c).putOpt("colorSelected", colorState.d).putOpt("colorFocused", colorState.e).putOpt("colorEnabled", colorState.f).putOpt("colorPressed", colorState.g).putOpt("colorChecked", colorState.h).putOpt("colorActivated", colorState.i).putOpt("colorAccelerated", colorState.j).putOpt("colorHovered", colorState.k).putOpt("colorDragCanAccept", colorState.l).putOpt("colorDragHovered", colorState.m).putOpt("colorDefault", colorState.n).putOpt("onlyDefaultColor", Boolean.valueOf(colorState.f44217a));
+        jSONObject.putOpt("colorName", colorState.b).putOpt("colorWindowFocused", colorState.c).putOpt("colorSelected", colorState.d).putOpt("colorFocused", colorState.e).putOpt("colorEnabled", colorState.f).putOpt("colorPressed", colorState.g).putOpt("colorChecked", colorState.h).putOpt("colorActivated", colorState.i).putOpt("colorAccelerated", colorState.j).putOpt("colorHovered", colorState.k).putOpt("colorDragCanAccept", colorState.l).putOpt("colorDragHovered", colorState.m).putOpt("colorDefault", colorState.n).putOpt("onlyDefaultColor", Boolean.valueOf(colorState.a));
         return jSONObject;
     }
 
@@ -243,9 +235,9 @@ public final class ColorState {
                 if (jSONObject.has("colorDragHovered")) {
                     colorBuilder.k(jSONObject.getString("colorDragHovered"));
                 }
-                ColorState a2 = colorBuilder.a();
-                a2.b = string;
-                return a2;
+                ColorState a = colorBuilder.a();
+                a.b = string;
+                return a;
             } catch (JSONException e) {
                 e.printStackTrace();
                 return null;
@@ -256,7 +248,7 @@ public final class ColorState {
 
     static boolean a(String str, String str2) {
         boolean z = !TextUtils.isEmpty(str2) && (!str2.startsWith("#") || str2.length() == 7 || str2.length() == 9);
-        if (Slog.f44252a && !z) {
+        if (Slog.a && !z) {
             Slog.a("ColorState", "Invalid color -> " + str + ": " + str2);
         }
         return z;
@@ -289,11 +281,11 @@ public final class ColorState {
     }
 
     public boolean a() {
-        return this.f44217a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ColorStateList b() {
-        return this.f44217a ? ColorStateList.valueOf(Color.parseColor(this.n)) : c();
+        return this.a ? ColorStateList.valueOf(Color.parseColor(this.n)) : c();
     }
 }

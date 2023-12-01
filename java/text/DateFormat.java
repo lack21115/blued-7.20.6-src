@@ -1,6 +1,5 @@
 package java.text;
 
-import android.provider.MediaStore;
 import java.text.Format;
 import java.util.Calendar;
 import java.util.Date;
@@ -46,7 +45,7 @@ public abstract class DateFormat extends Format {
         private int calendarField;
         private static Hashtable<Integer, Field> table = new Hashtable<>();
         public static final Field ERA = new Field("era", 0);
-        public static final Field YEAR = new Field(MediaStore.Audio.AudioColumns.YEAR, 1);
+        public static final Field YEAR = new Field("year", 1);
         public static final Field MONTH = new Field("month", 2);
         public static final Field HOUR_OF_DAY0 = new Field("hour of day", 11);
         public static final Field HOUR_OF_DAY1 = new Field("hour of day 1", -1);

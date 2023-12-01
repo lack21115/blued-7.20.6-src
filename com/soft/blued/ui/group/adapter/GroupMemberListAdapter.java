@@ -19,7 +19,6 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.common.user.UserInfoHelper;
 import com.blued.android.module.common.utils.DistanceUtils;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
 import com.soft.blued.ui.group.GroupMembersListFragment;
@@ -33,11 +32,11 @@ import java.util.List;
 public class GroupMemberListAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f30909a;
+    public boolean f17219a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f30910c;
+    private Context f17220c;
     private List<BluedGroupAllMembers> d;
     private LoadOptions e;
     private String f;
@@ -50,11 +49,11 @@ public class GroupMemberListAdapter extends BaseAdapter {
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        LinearLayout f30918a;
+        LinearLayout f17228a;
         ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        ImageView f30919c;
+        ImageView f17229c;
         TextView d;
         TextView e;
         TextView f;
@@ -68,7 +67,7 @@ public class GroupMemberListAdapter extends BaseAdapter {
     }
 
     public GroupMemberListAdapter(Context context, IRequestHost iRequestHost, List<BluedGroupAllMembers> list, TextView textView, TextView textView2) {
-        this.f30910c = context;
+        this.f17220c = context;
         this.j = iRequestHost;
         this.d = list;
         this.b = LayoutInflater.from(context);
@@ -116,10 +115,10 @@ public class GroupMemberListAdapter extends BaseAdapter {
         if (view == null) {
             viewHolder = new ViewHolder();
             view2 = this.b.inflate(R.layout.item_group_member_show, (ViewGroup) null);
-            viewHolder.f30918a = (LinearLayout) view2.findViewById(R.id.ll_group_member_list_item);
-            viewHolder.b = (ImageView) view2.findViewById(2131366011);
-            viewHolder.f30919c = (ImageView) view2.findViewById(R.id.member_img_verify);
-            viewHolder.d = (TextView) view2.findViewById(2131372879);
+            viewHolder.f17228a = (LinearLayout) view2.findViewById(R.id.ll_group_member_list_item);
+            viewHolder.b = (ImageView) view2.findViewById(R.id.iv_user_head);
+            viewHolder.f17229c = (ImageView) view2.findViewById(R.id.member_img_verify);
+            viewHolder.d = (TextView) view2.findViewById(R.id.tv_user_name);
             viewHolder.e = (TextView) view2.findViewById(R.id.tv_group_user_details);
             viewHolder.f = (TextView) view2.findViewById(R.id.tv_user_distance);
             viewHolder.g = (TextView) view2.findViewById(R.id.tv_last_activate_time);
@@ -132,10 +131,10 @@ public class GroupMemberListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         UserRelationshipUtils.a(viewHolder.j, bluedGroupAllMembers);
-        viewHolder.f30918a.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.group.adapter.GroupMemberListAdapter.1
+        viewHolder.f17228a.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.group.adapter.GroupMemberListAdapter.1
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view3, MotionEvent motionEvent) {
-                View currentFocus = ((Activity) GroupMemberListAdapter.this.f30910c).getCurrentFocus();
+                View currentFocus = ((Activity) GroupMemberListAdapter.this.f17220c).getCurrentFocus();
                 if (currentFocus != null) {
                     currentFocus.clearFocus();
                     return false;
@@ -144,11 +143,11 @@ public class GroupMemberListAdapter extends BaseAdapter {
             }
         });
         final ViewHolder viewHolder2 = viewHolder;
-        viewHolder.f30918a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.adapter.GroupMemberListAdapter.2
+        viewHolder.f17228a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.adapter.GroupMemberListAdapter.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {
                 Tracker.onClick(view3);
-                UserInfoFragmentNew.a(GroupMemberListAdapter.this.f30910c, bluedGroupAllMembers, "", viewHolder2.b);
+                UserInfoFragmentNew.a(GroupMemberListAdapter.this.f17220c, bluedGroupAllMembers, "", viewHolder2.b);
             }
         });
         if (GroupMembersListFragment.j.size() > 0) {
@@ -165,14 +164,14 @@ public class GroupMemberListAdapter extends BaseAdapter {
                 i2 = i3 + 1;
             }
         }
-        if (this.f30909a) {
+        if (this.f17219a) {
             viewHolder.i.setVisibility(0);
         } else {
             viewHolder.i.setVisibility(8);
         }
         viewHolder.h.setVisibility(8);
         ImageLoader.a(this.j, bluedGroupAllMembers.avatar).b(2131237310).c().a(viewHolder.b);
-        UserInfoHelper.a(viewHolder.f30919c, bluedGroupAllMembers.vbadge, 3);
+        UserInfoHelper.a(viewHolder.f17229c, bluedGroupAllMembers.vbadge, 3);
         if (!StringUtils.d(bluedGroupAllMembers.note)) {
             viewHolder.d.setText(bluedGroupAllMembers.note);
         } else if (StringUtils.d(bluedGroupAllMembers.name)) {
@@ -180,30 +179,30 @@ public class GroupMemberListAdapter extends BaseAdapter {
         } else {
             viewHolder.d.setText(bluedGroupAllMembers.name);
         }
-        UserRelationshipUtils.a(this.f30910c, viewHolder.d, bluedGroupAllMembers);
+        UserRelationshipUtils.a(this.f17220c, viewHolder.d, bluedGroupAllMembers);
         if (StringUtils.d(bluedGroupAllMembers.distance)) {
             viewHolder.f.setVisibility(4);
         } else {
             viewHolder.f.setText(DistanceUtils.a(bluedGroupAllMembers.distance, BlueAppLocal.c(), false));
         }
-        DistanceUtils.a(this.f30910c, viewHolder.f, bluedGroupAllMembers, 1);
+        DistanceUtils.a(this.f17220c, viewHolder.f, bluedGroupAllMembers, 1);
         if (StringUtils.d(bluedGroupAllMembers.last_active_time)) {
             viewHolder.g.setText("");
         } else {
-            viewHolder.g.setText(TimeAndDateUtils.g(this.f30910c, TimeAndDateUtils.c(bluedGroupAllMembers.last_active_time)));
+            viewHolder.g.setText(TimeAndDateUtils.g(this.f17220c, TimeAndDateUtils.c(bluedGroupAllMembers.last_active_time)));
         }
         TextView textView = viewHolder.e;
-        textView.setText(bluedGroupAllMembers.age + " / " + bluedGroupAllMembers.height + " / " + bluedGroupAllMembers.weight + " " + this.f30910c.getResources().getString(2131891624) + " " + UserInfoHelper.a(this.f30910c, bluedGroupAllMembers.role));
+        textView.setText(bluedGroupAllMembers.age + " / " + bluedGroupAllMembers.height + " / " + bluedGroupAllMembers.weight + " " + this.f17220c.getResources().getString(R.string.separator) + " " + UserInfoHelper.a(this.f17220c, bluedGroupAllMembers.role));
         if (!StringUtils.d(bluedGroupAllMembers.is_creator) && "1".equals(bluedGroupAllMembers.is_creator)) {
-            if (this.f30909a) {
+            if (this.f17219a) {
                 viewHolder.i.setVisibility(4);
             }
             viewHolder.h.setVisibility(0);
             viewHolder.h.setBackgroundResource(R.drawable.shape_common_round_yellow_solid);
-            viewHolder.h.setText(this.f30910c.getResources().getString(R.string.group_member_role));
+            viewHolder.h.setText(this.f17220c.getResources().getString(R.string.group_member_role));
         }
         if (!StringUtils.d(bluedGroupAllMembers.is_admin) && "1".equals(bluedGroupAllMembers.is_admin)) {
-            if (this.f30909a) {
+            if (this.f17219a) {
                 if (GroupMembersListFragment.q.equals("1")) {
                     viewHolder.i.setVisibility(0);
                 } else {
@@ -212,7 +211,7 @@ public class GroupMemberListAdapter extends BaseAdapter {
             }
             viewHolder.h.setVisibility(0);
             viewHolder.h.setBackgroundResource(R.drawable.shape_common_round_blue_solid_6px_corner);
-            viewHolder.h.setText(this.f30910c.getResources().getString(R.string.group_admin_show));
+            viewHolder.h.setText(this.f17220c.getResources().getString(R.string.group_admin_show));
         }
         final ViewHolder viewHolder3 = viewHolder;
         viewHolder.i.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.ui.group.adapter.GroupMemberListAdapter.3
@@ -231,12 +230,12 @@ public class GroupMemberListAdapter extends BaseAdapter {
                             }
                             GroupMembersListFragment.j.add(GroupMemberListAdapter.this.f);
                             if (GroupMembersListFragment.j.size() > 0) {
-                                GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f30910c.getResources().getString(2131887320));
+                                GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f17220c.getResources().getString(2131887320));
                             } else {
-                                GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f30910c.getResources().getString(2131886885));
+                                GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f17220c.getResources().getString(2131886885));
                             }
                             TextView textView2 = GroupMemberListAdapter.this.h;
-                            textView2.setText(" (" + GroupMembersListFragment.j.size() + BridgeUtil.SPLIT_MARK + GroupMembersListFragment.n + ") ");
+                            textView2.setText(" (" + GroupMembersListFragment.j.size() + "/" + GroupMembersListFragment.n + ") ");
                         }
                     });
                 } else {
@@ -251,11 +250,11 @@ public class GroupMemberListAdapter extends BaseAdapter {
                                     if (GroupMembersListFragment.j.get(i4).equals(GroupMemberListAdapter.this.g)) {
                                         GroupMembersListFragment.j.remove(GroupMembersListFragment.j.get(i4));
                                         if (GroupMembersListFragment.j.size() > 0) {
-                                            GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f30910c.getResources().getString(2131887320));
+                                            GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f17220c.getResources().getString(2131887320));
                                         } else {
-                                            GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f30910c.getResources().getString(2131886885));
+                                            GroupMemberListAdapter.this.i.setText(GroupMemberListAdapter.this.f17220c.getResources().getString(2131886885));
                                         }
-                                        GroupMemberListAdapter.this.h.setText(" (" + GroupMembersListFragment.j.size() + BridgeUtil.SPLIT_MARK + GroupMembersListFragment.n + ") ");
+                                        GroupMemberListAdapter.this.h.setText(" (" + GroupMembersListFragment.j.size() + "/" + GroupMembersListFragment.n + ") ");
                                     }
                                 }
                             }

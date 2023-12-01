@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.kpswitch.util;
 
+import android.R;
 import android.app.Activity;
 import android.os.Build;
 import android.util.Log;
@@ -13,7 +14,7 @@ public class ViewUtil {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean isFitsSystemWindows(Activity activity) {
         if (Build.VERSION.SDK_INT >= 16) {
-            return ((ViewGroup) activity.findViewById(16908290)).getChildAt(0).getFitsSystemWindows();
+            return ((ViewGroup) activity.findViewById(R.id.content)).getChildAt(0).getFitsSystemWindows();
         }
         return false;
     }

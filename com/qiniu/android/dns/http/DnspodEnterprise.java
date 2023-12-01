@@ -1,5 +1,6 @@
 package com.qiniu.android.dns.http;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.qiniu.android.dns.Domain;
 import com.qiniu.android.dns.IResolver;
 import com.qiniu.android.dns.NetworkInfo;
@@ -90,7 +91,7 @@ public final class DnspodEnterprise implements IResolver {
             }
             try {
                 int parseInt = Integer.parseInt(split[1]);
-                String[] split2 = split[0].split(";");
+                String[] split2 = split[0].split(t.aE);
                 if (split2.length != 0) {
                     Record[] recordArr2 = new Record[split2.length];
                     long currentTimeMillis = System.currentTimeMillis() / 1000;

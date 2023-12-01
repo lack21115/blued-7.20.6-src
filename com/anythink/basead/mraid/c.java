@@ -1,12 +1,9 @@
 package com.anythink.basead.mraid;
 
 import android.app.Dialog;
-import android.content.ClipDescription;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
-import android.hardware.Camera;
-import android.media.tv.TvContract;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -15,26 +12,23 @@ import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import com.anythink.core.common.b.g;
 import com.anythink.core.common.b.n;
 import com.anythink.expressad.atsignalcommon.mraid.CallMraidJS;
 import com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge;
 import com.anythink.expressad.atsignalcommon.windvane.WindVaneWebView;
 import com.anythink.expressad.foundation.h.k;
 import com.anythink.expressad.foundation.h.o;
+import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
-import com.google.android.material.badge.BadgeDrawable;
 import java.util.HashMap;
 import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/mraid/c.class */
 public final class c extends Dialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6020a;
+    private final String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f6021c;
+    private boolean c;
     private FrameLayout d;
     private WindVaneWebView e;
     private TextView f;
@@ -60,10 +54,9 @@ public final class c extends Dialog {
         AnonymousClass2() {
         }
 
-        @Override // com.anythink.expressad.atsignalcommon.a.b, com.anythink.expressad.atsignalcommon.windvane.e
         public final void onPageFinished(WebView webView, String str) {
             super.onPageFinished(webView, str);
-            StringBuilder sb = new StringBuilder("javascript:");
+            StringBuilder sb = new StringBuilder(BridgeUtil.JAVASCRIPT_STR);
             com.anythink.expressad.d.b.a.a();
             sb.append(com.anythink.expressad.d.b.a.b());
             if (Build.VERSION.SDK_INT <= 19) {
@@ -90,7 +83,7 @@ public final class c extends Dialog {
 
         @Override // android.content.DialogInterface.OnDismissListener
         public final void onDismiss(DialogInterface dialogInterface) {
-            c.this.e.loadDataWithBaseURL(null, "", ClipDescription.MIMETYPE_TEXT_HTML, "utf-8", null);
+            c.this.e.loadDataWithBaseURL((String) null, "", "text/html", "utf-8", (String) null);
             c.this.d.removeView(c.this.e);
             c.this.e.release();
             c.this.e = null;
@@ -100,23 +93,19 @@ public final class c extends Dialog {
 
     public c(Context context, Bundle bundle, b bVar) {
         super(context);
-        this.f6020a = "BannerExpandDialog";
+        this.a = "BannerExpandDialog";
         this.h = new IMraidJSBridge() { // from class: com.anythink.basead.mraid.c.4
-            @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public final void close() {
                 c.this.dismiss();
             }
 
-            @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public final void expand(String str, boolean z) {
             }
 
-            @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public final com.anythink.expressad.foundation.d.c getMraidCampaign() {
                 return null;
             }
 
-            @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public final void open(String str) {
                 try {
                     o.d("BannerExpandDialog", str);
@@ -128,12 +117,10 @@ public final class c extends Dialog {
                 }
             }
 
-            @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public final void unload() {
                 close();
             }
 
-            @Override // com.anythink.expressad.atsignalcommon.mraid.IMraidJSBridge
             public final void useCustomClose(boolean z) {
                 try {
                     c.this.f.setVisibility(z ? 4 : 0);
@@ -143,7 +130,7 @@ public final class c extends Dialog {
             }
         };
         this.b = bundle.getString("url");
-        this.f6021c = bundle.getBoolean("shouldUseCustomClose");
+        this.c = bundle.getBoolean("shouldUseCustomClose");
         this.g = bVar;
     }
 
@@ -159,10 +146,10 @@ public final class c extends Dialog {
         this.f = textView;
         textView.setBackgroundColor(0);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(96, 96);
-        layoutParams.gravity = BadgeDrawable.TOP_END;
+        layoutParams.gravity = 8388661;
         layoutParams.setMargins(30, 30, 30, 30);
         this.f.setLayoutParams(layoutParams);
-        this.f.setVisibility(this.f6021c ? 4 : 0);
+        this.f.setVisibility(this.c ? 4 : 0);
         this.f.setOnClickListener(new AnonymousClass1());
         this.d.addView(this.f);
         setContentView(this.d);
@@ -192,18 +179,18 @@ public final class c extends Dialog {
         try {
             int i = n.a().g().getResources().getConfiguration().orientation;
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("orientation", i == 2 ? Camera.Parameters.SCENE_MODE_LANDSCAPE : i == 1 ? Camera.Parameters.SCENE_MODE_PORTRAIT : "undefined");
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put("orientation", i == 2 ? "landscape" : i == 1 ? "portrait" : "undefined");
+            jSONObject.put("locked", "true");
             float e = k.e(n.a().g());
             float f = k.f(n.a().g());
             HashMap g = k.g(n.a().g());
             int intValue = ((Integer) g.get("width")).intValue();
             int intValue2 = ((Integer) g.get("height")).intValue();
             HashMap hashMap = new HashMap();
-            hashMap.put(CallMraidJS.f7085a, "Interstitial");
-            hashMap.put("state", CallMraidJS.g);
-            hashMap.put(CallMraidJS.f7086c, "true");
-            hashMap.put(CallMraidJS.d, jSONObject);
+            hashMap.put("placementType", g.C0060g.d);
+            hashMap.put("state", "expanded");
+            hashMap.put("viewable", "true");
+            hashMap.put("currentAppOrientation", jSONObject);
             cVar.e.getLocationInWindow(new int[2]);
             CallMraidJS.getInstance().fireSetDefaultPosition(cVar.e, iArr[0], iArr[1], cVar.e.getWidth(), cVar.e.getHeight());
             CallMraidJS.getInstance().fireSetCurrentPosition(cVar.e, iArr[0], iArr[1], cVar.e.getWidth(), cVar.e.getHeight());
@@ -221,18 +208,18 @@ public final class c extends Dialog {
         try {
             int i = n.a().g().getResources().getConfiguration().orientation;
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("orientation", i == 2 ? Camera.Parameters.SCENE_MODE_LANDSCAPE : i == 1 ? Camera.Parameters.SCENE_MODE_PORTRAIT : "undefined");
-            jSONObject.put(TvContract.Channels.COLUMN_LOCKED, "true");
+            jSONObject.put("orientation", i == 2 ? "landscape" : i == 1 ? "portrait" : "undefined");
+            jSONObject.put("locked", "true");
             float e = k.e(n.a().g());
             float f = k.f(n.a().g());
             HashMap g = k.g(n.a().g());
             int intValue = ((Integer) g.get("width")).intValue();
             int intValue2 = ((Integer) g.get("height")).intValue();
             HashMap hashMap = new HashMap();
-            hashMap.put(CallMraidJS.f7085a, "Interstitial");
-            hashMap.put("state", CallMraidJS.g);
-            hashMap.put(CallMraidJS.f7086c, "true");
-            hashMap.put(CallMraidJS.d, jSONObject);
+            hashMap.put("placementType", g.C0060g.d);
+            hashMap.put("state", "expanded");
+            hashMap.put("viewable", "true");
+            hashMap.put("currentAppOrientation", jSONObject);
             this.e.getLocationInWindow(new int[2]);
             CallMraidJS.getInstance().fireSetDefaultPosition(this.e, iArr[0], iArr[1], this.e.getWidth(), this.e.getHeight());
             CallMraidJS.getInstance().fireSetCurrentPosition(this.e, iArr[0], iArr[1], this.e.getWidth(), this.e.getHeight());
@@ -245,9 +232,8 @@ public final class c extends Dialog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Dialog
-    public final void onCreate(Bundle bundle) {
+    protected final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         requestWindowFeature(1);
         setCanceledOnTouchOutside(false);
@@ -263,10 +249,10 @@ public final class c extends Dialog {
         this.f = textView;
         textView.setBackgroundColor(0);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(96, 96);
-        layoutParams.gravity = BadgeDrawable.TOP_END;
+        layoutParams.gravity = 8388661;
         layoutParams.setMargins(30, 30, 30, 30);
         this.f.setLayoutParams(layoutParams);
-        this.f.setVisibility(this.f6021c ? 4 : 0);
+        this.f.setVisibility(this.c ? 4 : 0);
         this.f.setOnClickListener(new AnonymousClass1());
         this.d.addView(this.f);
         setContentView(this.d);

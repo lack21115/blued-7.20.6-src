@@ -15,10 +15,10 @@ import java.util.List;
 public final class r4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f3960a;
+    public volatile boolean f3912a;
 
     /* renamed from: c  reason: collision with root package name */
-    public final t3 f3961c;
+    public final t3 f3913c;
     public HandlerThread f;
     public b g;
     public c h;
@@ -42,12 +42,12 @@ public final class r4 {
     public final class b extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile boolean f3963a;
+        public volatile boolean f3915a;
 
         public b(Looper looper) {
             super(looper);
-            this.f3963a = false;
-            this.f3963a = false;
+            this.f3915a = false;
+            this.f3915a = false;
         }
 
         public /* synthetic */ b(r4 r4Var, Looper looper, a aVar) {
@@ -55,17 +55,17 @@ public final class r4 {
         }
 
         public void a() {
-            this.f3963a = true;
+            this.f3915a = true;
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            if (r4.this.f3960a) {
-                if ((r4.this.d == null || !r4.this.d.a(com.anythink.expressad.video.module.a.a.m.ag)) && r4.this.f3961c.d() != null) {
-                    a5 a2 = a5.a(r4.this.f3961c, v5.a(r4.this.f3961c));
+            if (r4.this.f3912a) {
+                if ((r4.this.d == null || !r4.this.d.a(com.anythink.expressad.video.module.a.a.m.ag)) && r4.this.f3913c.d() != null) {
+                    a5 a2 = a5.a(r4.this.f3913c, v5.a(r4.this.f3913c));
                     a5 a5Var = a2;
                     if (!a2.g()) {
-                        a5 a3 = a5.a(r4.this.f3961c, a5.p, r4.this.i);
+                        a5 a3 = a5.a(r4.this.f3913c, a5.p, r4.this.i);
                         a5Var = a3;
                         if (a3 != null) {
                             a3.g();
@@ -75,7 +75,7 @@ public final class r4 {
                     r4.this.a(a5Var, 2);
                 }
                 synchronized (r4.this.b) {
-                    if (r4.this.g != null && !this.f3963a) {
+                    if (r4.this.g != null && !this.f3915a) {
                         c3.a(r4.this.g, 0, 30000L);
                     }
                 }
@@ -95,7 +95,7 @@ public final class r4 {
 
         public final void a(int i) {
             try {
-                r4.this.f3961c.d().listen(this, i);
+                r4.this.f3913c.d().listen(this, i);
                 s3.a("cell", "lCS");
             } catch (Throwable th) {
                 th.toString();
@@ -107,14 +107,14 @@ public final class r4 {
             if (list != null) {
                 list.size();
             }
-            r4.this.a(a5.a(r4.this.f3961c, list), 0);
+            r4.this.a(a5.a(r4.this.f3913c, list), 0);
         }
 
         @Override // android.telephony.PhoneStateListener
         public void onCellLocationChanged(CellLocation cellLocation) {
             Thread.currentThread().getName();
             super.onCellLocationChanged(cellLocation);
-            r4.this.a(a5.a(r4.this.f3961c, cellLocation, r4.this.i), 1);
+            r4.this.a(a5.a(r4.this.f3913c, cellLocation, r4.this.i), 1);
         }
 
         @Override // android.telephony.PhoneStateListener
@@ -141,7 +141,7 @@ public final class r4 {
     }
 
     public r4(t3 t3Var) {
-        this.f3961c = t3Var;
+        this.f3913c = t3Var;
         f6.b = 0L;
     }
 
@@ -154,7 +154,7 @@ public final class r4 {
         /*
             r3 = this;
             r0 = r3
-            boolean r0 = r0.f3960a
+            boolean r0 = r0.f3912a
             if (r0 != 0) goto L8
             return
         L8:
@@ -189,12 +189,12 @@ public final class r4 {
             r4 = r0
         L3a:
             r0 = r3
-            c.t.m.g.t3 r0 = r0.f3961c
+            c.t.m.g.t3 r0 = r0.f3913c
             android.telephony.TelephonyManager r0 = r0.d()
             r9 = r0
             r0 = r3
-            c.t.m.g.t3 r0 = r0.f3961c
-            android.content.Context r0 = r0.f3992a
+            c.t.m.g.t3 r0 = r0.f3913c
+            android.content.Context r0 = r0.f3944a
             boolean r0 = c.t.m.g.v5.a(r0)
             r8 = r0
             r0 = r9
@@ -235,7 +235,7 @@ public final class r4 {
             r1 = r6
             r0.arg2 = r1
             r0 = r3
-            c.t.m.g.t3 r0 = r0.f3961c
+            c.t.m.g.t3 r0 = r0.f3913c
             r1 = r9
             r0.a(r1)
             return
@@ -244,7 +244,7 @@ public final class r4 {
     }
 
     public void a(Handler handler, boolean z) {
-        if (this.f3960a) {
+        if (this.f3912a) {
             return;
         }
         a5.a((a5) null, 0L);
@@ -258,7 +258,7 @@ public final class r4 {
             } catch (Throwable th) {
                 this.g = new b(this, handler.getLooper(), null);
             }
-            this.f3960a = true;
+            this.f3912a = true;
             if (!z) {
                 c3.b(this.g, 0);
             }
@@ -267,7 +267,7 @@ public final class r4 {
     }
 
     public final void a(a5 a5Var) {
-        if (!this.f3960a || a5Var == null || this.f3961c == null) {
+        if (!this.f3912a || a5Var == null || this.f3913c == null) {
             return;
         }
         synchronized (this) {
@@ -276,7 +276,7 @@ public final class r4 {
             }
             this.d = a5Var;
             a5Var.toString();
-            this.f3961c.a(a5Var);
+            this.f3913c.a(a5Var);
         }
     }
 
@@ -326,8 +326,8 @@ public final class r4 {
     }
 
     public void b() {
-        if (this.f3960a) {
-            this.f3960a = false;
+        if (this.f3912a) {
+            this.f3912a = false;
             f6.b = 0L;
             synchronized (this.b) {
                 if (this.h != null) {

@@ -14,11 +14,11 @@ import java.util.Locale;
 public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f9455a = 0;
+    private static final int f6615a = 0;
     private static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f9456c = 2;
+    private static final int f6616c = 2;
     private static final int d = 3;
     private static final int e = 4;
     private static final int f = -1;
@@ -46,19 +46,19 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
     public static final class ScrollEventValues {
 
         /* renamed from: a  reason: collision with root package name */
-        int f9457a;
+        int f6617a;
         float b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f9458c;
+        int f6618c;
 
         ScrollEventValues() {
         }
 
         void a() {
-            this.f9457a = -1;
+            this.f6617a = -1;
             this.b = 0.0f;
-            this.f9458c = 0;
+            this.f6618c = 0;
         }
     }
 
@@ -126,12 +126,12 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
         int top;
         int i;
         ScrollEventValues scrollEventValues = this.m;
-        scrollEventValues.f9457a = this.j.findFirstVisibleItemPosition();
-        if (scrollEventValues.f9457a == -1) {
+        scrollEventValues.f6617a = this.j.findFirstVisibleItemPosition();
+        if (scrollEventValues.f6617a == -1) {
             scrollEventValues.a();
             return;
         }
-        View findViewByPosition = this.j.findViewByPosition(scrollEventValues.f9457a);
+        View findViewByPosition = this.j.findViewByPosition(scrollEventValues.f6617a);
         if (findViewByPosition == null) {
             scrollEventValues.a();
             return;
@@ -165,11 +165,11 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
             top = (findViewByPosition.getTop() - i4) - this.i.getPaddingTop();
             i = height;
         }
-        scrollEventValues.f9458c = -top;
-        if (scrollEventValues.f9458c >= 0) {
-            scrollEventValues.b = i == 0 ? 0.0f : scrollEventValues.f9458c / i;
+        scrollEventValues.f6618c = -top;
+        if (scrollEventValues.f6618c >= 0) {
+            scrollEventValues.b = i == 0 ? 0.0f : scrollEventValues.f6618c / i;
         } else if (!new AnimateLayoutChangeDetector(this.j).a()) {
-            throw new IllegalStateException(String.format(Locale.US, "Page can only be offset by a positive amount, not by %d", Integer.valueOf(scrollEventValues.f9458c)));
+            throw new IllegalStateException(String.format(Locale.US, "Page can only be offset by a positive amount, not by %d", Integer.valueOf(scrollEventValues.f6618c)));
         } else {
             throw new IllegalStateException("Page(s) contain a ViewGroup with a LayoutTransition (or animateLayoutChanges=\"true\"), which interferes with the scrolling animation. Make sure to call getLayoutTransition().setAnimateParentHierarchy(false) on all ViewGroups with a LayoutTransition before an animation is started.");
         }
@@ -227,12 +227,12 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
         if (!f() || this.s) {
             this.s = false;
             j();
-            if (this.m.f9458c != 0) {
+            if (this.m.f6618c != 0) {
                 a(2);
                 return;
             }
-            if (this.m.f9457a != this.n) {
-                b(this.m.f9457a);
+            if (this.m.f6617a != this.n) {
+                b(this.m.f6617a);
             }
             a(0);
             i();
@@ -262,7 +262,7 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
     /* JADX INFO: Access modifiers changed from: package-private */
     public double h() {
         j();
-        return this.m.f9457a + this.m.b;
+        return this.m.f6617a + this.m.b;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -280,14 +280,14 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
                 j();
                 if (!this.q) {
                     z = true;
-                    if (this.m.f9457a != -1) {
-                        a(this.m.f9457a, 0.0f, 0);
+                    if (this.m.f6617a != -1) {
+                        a(this.m.f6617a, 0.0f, 0);
                         z = true;
                     }
-                } else if (this.m.f9458c == 0) {
+                } else if (this.m.f6618c == 0) {
                     z = true;
-                    if (this.n != this.m.f9457a) {
-                        b(this.m.f9457a);
+                    if (this.n != this.m.f6617a) {
+                        b(this.m.f6617a);
                         z = true;
                     }
                 } else {
@@ -300,9 +300,9 @@ public final class ScrollEventAdapter extends RecyclerView.OnScrollListener {
             }
             if (this.k == 2 && i == 0 && this.r) {
                 j();
-                if (this.m.f9458c == 0) {
-                    if (this.o != this.m.f9457a) {
-                        b(this.m.f9457a == -1 ? 0 : this.m.f9457a);
+                if (this.m.f6618c == 0) {
+                    if (this.o != this.m.f6617a) {
+                        b(this.m.f6617a == -1 ? 0 : this.m.f6617a);
                     }
                     a(0);
                     i();

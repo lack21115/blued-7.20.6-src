@@ -8,10 +8,10 @@ import com.bytedance.applog.tracker.Tracker;
 public final class FinishListener implements DialogInterface.OnCancelListener, DialogInterface.OnClickListener, Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Activity f9874a;
+    private final Activity f6672a;
 
     public FinishListener(Activity activity) {
-        this.f9874a = activity;
+        this.f6672a = activity;
     }
 
     @Override // android.content.DialogInterface.OnCancelListener
@@ -27,6 +27,6 @@ public final class FinishListener implements DialogInterface.OnCancelListener, D
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f9874a.finish();
+        this.f6672a.finish();
     }
 }

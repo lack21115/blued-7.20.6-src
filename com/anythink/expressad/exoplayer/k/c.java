@@ -7,7 +7,7 @@ import android.os.Looper;
 public interface c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final c f7640a = new aa();
+    public static final c f4801a = new aa();
 
     long a();
 

@@ -22,11 +22,11 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     private static final EngineResourceFactory e = new EngineResourceFactory();
 
     /* renamed from: a  reason: collision with root package name */
-    final ResourceCallbacksAndExecutors f20775a;
+    final ResourceCallbacksAndExecutors f7169a;
     DataSource b;
 
     /* renamed from: c  reason: collision with root package name */
-    GlideException f20776c;
+    GlideException f7170c;
     EngineResource<?> d;
     private final StateVerifier f;
     private final EngineResource.ResourceListener g;
@@ -62,7 +62,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
         public void run() {
             synchronized (this.b.h()) {
                 synchronized (EngineJob.this) {
-                    if (EngineJob.this.f20775a.b(this.b)) {
+                    if (EngineJob.this.f7169a.b(this.b)) {
                         EngineJob.this.b(this.b);
                     }
                     EngineJob.this.e();
@@ -84,7 +84,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
         public void run() {
             synchronized (this.b.h()) {
                 synchronized (EngineJob.this) {
-                    if (EngineJob.this.f20775a.b(this.b)) {
+                    if (EngineJob.this.f7169a.b(this.b)) {
                         EngineJob.this.d.g();
                         EngineJob.this.a(this.b);
                         EngineJob.this.c(this.b);
@@ -111,23 +111,23 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     public static final class ResourceCallbackAndExecutor {
 
         /* renamed from: a  reason: collision with root package name */
-        final ResourceCallback f20779a;
+        final ResourceCallback f7173a;
         final Executor b;
 
         ResourceCallbackAndExecutor(ResourceCallback resourceCallback, Executor executor) {
-            this.f20779a = resourceCallback;
+            this.f7173a = resourceCallback;
             this.b = executor;
         }
 
         public boolean equals(Object obj) {
             if (obj instanceof ResourceCallbackAndExecutor) {
-                return this.f20779a.equals(((ResourceCallbackAndExecutor) obj).f20779a);
+                return this.f7173a.equals(((ResourceCallbackAndExecutor) obj).f7173a);
             }
             return false;
         }
 
         public int hashCode() {
-            return this.f20779a.hashCode();
+            return this.f7173a.hashCode();
         }
     }
 
@@ -136,14 +136,14 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     public static final class ResourceCallbacksAndExecutors implements Iterable<ResourceCallbackAndExecutor> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<ResourceCallbackAndExecutor> f20780a;
+        private final List<ResourceCallbackAndExecutor> f7174a;
 
         ResourceCallbacksAndExecutors() {
             this(new ArrayList(2));
         }
 
         ResourceCallbacksAndExecutors(List<ResourceCallbackAndExecutor> list) {
-            this.f20780a = list;
+            this.f7174a = list;
         }
 
         private static ResourceCallbackAndExecutor c(ResourceCallback resourceCallback) {
@@ -151,36 +151,36 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
         }
 
         void a(ResourceCallback resourceCallback) {
-            this.f20780a.remove(c(resourceCallback));
+            this.f7174a.remove(c(resourceCallback));
         }
 
         void a(ResourceCallback resourceCallback, Executor executor) {
-            this.f20780a.add(new ResourceCallbackAndExecutor(resourceCallback, executor));
+            this.f7174a.add(new ResourceCallbackAndExecutor(resourceCallback, executor));
         }
 
         boolean a() {
-            return this.f20780a.isEmpty();
+            return this.f7174a.isEmpty();
         }
 
         int b() {
-            return this.f20780a.size();
+            return this.f7174a.size();
         }
 
         boolean b(ResourceCallback resourceCallback) {
-            return this.f20780a.contains(c(resourceCallback));
+            return this.f7174a.contains(c(resourceCallback));
         }
 
         void c() {
-            this.f20780a.clear();
+            this.f7174a.clear();
         }
 
         ResourceCallbacksAndExecutors d() {
-            return new ResourceCallbacksAndExecutors(new ArrayList(this.f20780a));
+            return new ResourceCallbacksAndExecutors(new ArrayList(this.f7174a));
         }
 
         @Override // java.lang.Iterable
         public Iterator<ResourceCallbackAndExecutor> iterator() {
-            return this.f20780a.iterator();
+            return this.f7174a.iterator();
         }
     }
 
@@ -190,7 +190,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     }
 
     EngineJob(GlideExecutor glideExecutor, GlideExecutor glideExecutor2, GlideExecutor glideExecutor3, GlideExecutor glideExecutor4, EngineJobListener engineJobListener, EngineResource.ResourceListener resourceListener, Pools.Pool<EngineJob<?>> pool, EngineResourceFactory engineResourceFactory) {
-        this.f20775a = new ResourceCallbacksAndExecutors();
+        this.f7169a = new ResourceCallbacksAndExecutors();
         this.f = StateVerifier.a();
         this.o = new AtomicInteger();
         this.k = glideExecutor;
@@ -216,7 +216,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
             if (this.p == null) {
                 throw new IllegalArgumentException();
             }
-            this.f20775a.c();
+            this.f7169a.c();
             this.p = null;
             this.d = null;
             this.u = null;
@@ -225,7 +225,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
             this.v = false;
             this.x.a(false);
             this.x = null;
-            this.f20776c = null;
+            this.f7170c = null;
             this.b = null;
             this.h.release(this);
         }
@@ -260,7 +260,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     @Override // com.bumptech.glide.load.engine.DecodeJob.Callback
     public void a(GlideException glideException) {
         synchronized (this) {
-            this.f20776c = glideException;
+            this.f7170c = glideException;
         }
         f();
     }
@@ -287,7 +287,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
     public void a(ResourceCallback resourceCallback, Executor executor) {
         synchronized (this) {
             this.f.b();
-            this.f20775a.a(resourceCallback, executor);
+            this.f7169a.a(resourceCallback, executor);
             boolean z = true;
             if (this.v) {
                 a(1);
@@ -327,7 +327,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
 
     void b(ResourceCallback resourceCallback) {
         try {
-            resourceCallback.a(this.f20776c);
+            resourceCallback.a(this.f7170c);
         } catch (Throwable th) {
             throw new CallbackException(th);
         }
@@ -339,7 +339,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
             if (this.y) {
                 this.u.c();
                 i();
-            } else if (this.f20775a.a()) {
+            } else if (this.f7169a.a()) {
                 throw new IllegalStateException("Received a resource without any callbacks to notify");
             } else {
                 if (this.v) {
@@ -347,13 +347,13 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
                 }
                 this.d = this.i.a(this.u, this.q, this.p, this.g);
                 this.v = true;
-                ResourceCallbacksAndExecutors d = this.f20775a.d();
+                ResourceCallbacksAndExecutors d = this.f7169a.d();
                 a(d.b() + 1);
                 this.j.a(this, this.p, this.d);
                 Iterator<ResourceCallbackAndExecutor> it = d.iterator();
                 while (it.hasNext()) {
                     ResourceCallbackAndExecutor next = it.next();
-                    next.b.execute(new CallResourceReady(next.f20779a));
+                    next.b.execute(new CallResourceReady(next.f7173a));
                 }
                 e();
             }
@@ -365,8 +365,8 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
         boolean z;
         synchronized (this) {
             this.f.b();
-            this.f20775a.a(resourceCallback);
-            if (this.f20775a.a()) {
+            this.f7169a.a(resourceCallback);
+            if (this.f7169a.a()) {
                 b();
                 if (!this.v && !this.w) {
                     z = false;
@@ -411,7 +411,7 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
             this.f.b();
             if (this.y) {
                 i();
-            } else if (this.f20775a.a()) {
+            } else if (this.f7169a.a()) {
                 throw new IllegalStateException("Received an exception without any callbacks to notify");
             } else {
                 if (this.w) {
@@ -419,13 +419,13 @@ class EngineJob<R> implements DecodeJob.Callback<R>, FactoryPools.Poolable {
                 }
                 this.w = true;
                 Key key = this.p;
-                ResourceCallbacksAndExecutors d = this.f20775a.d();
+                ResourceCallbacksAndExecutors d = this.f7169a.d();
                 a(d.b() + 1);
                 this.j.a(this, key, null);
                 Iterator<ResourceCallbackAndExecutor> it = d.iterator();
                 while (it.hasNext()) {
                     ResourceCallbackAndExecutor next = it.next();
-                    next.b.execute(new CallLoadFailed(next.f20779a));
+                    next.b.execute(new CallLoadFailed(next.f7173a));
                 }
                 e();
             }

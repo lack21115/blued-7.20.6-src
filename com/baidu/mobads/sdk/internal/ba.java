@@ -10,12 +10,12 @@ import java.util.concurrent.TimeUnit;
 public class ba {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9329a = "TaskScheduler";
+    private static final String f6489a = "TaskScheduler";
     private static volatile ba d;
     private ThreadPoolExecutor b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ScheduledThreadPoolExecutor f9330c;
+    private ScheduledThreadPoolExecutor f6490c;
 
     private ba() {
         b();
@@ -38,7 +38,7 @@ public class ba {
 
     private void b() {
         this.b = bb.a(1, 1);
-        this.f9330c = bb.a(1);
+        this.f6490c = bb.a(1);
     }
 
     public void a(h hVar) {
@@ -62,24 +62,24 @@ public class ba {
 
     public void a(h hVar, long j, long j2, TimeUnit timeUnit) {
         ScheduledThreadPoolExecutor scheduledThreadPoolExecutor;
-        if (hVar == null || (scheduledThreadPoolExecutor = this.f9330c) == null || scheduledThreadPoolExecutor.isShutdown()) {
+        if (hVar == null || (scheduledThreadPoolExecutor = this.f6490c) == null || scheduledThreadPoolExecutor.isShutdown()) {
             return;
         }
         try {
             hVar.a(System.currentTimeMillis());
-            hVar.a((Future) this.f9330c.scheduleAtFixedRate(hVar, j, j2, timeUnit));
+            hVar.a((Future) this.f6490c.scheduleAtFixedRate(hVar, j, j2, timeUnit));
         } catch (Throwable th) {
         }
     }
 
     public void a(h hVar, long j, TimeUnit timeUnit) {
         ScheduledThreadPoolExecutor scheduledThreadPoolExecutor;
-        if (hVar == null || (scheduledThreadPoolExecutor = this.f9330c) == null || scheduledThreadPoolExecutor.isShutdown()) {
+        if (hVar == null || (scheduledThreadPoolExecutor = this.f6490c) == null || scheduledThreadPoolExecutor.isShutdown()) {
             return;
         }
         try {
             hVar.a(System.currentTimeMillis());
-            hVar.a((Future) this.f9330c.schedule(hVar, j, timeUnit));
+            hVar.a((Future) this.f6490c.schedule(hVar, j, timeUnit));
         } catch (Throwable th) {
         }
     }

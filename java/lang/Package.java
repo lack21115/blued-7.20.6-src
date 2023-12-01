@@ -57,9 +57,9 @@ public class Package implements AnnotatedElement {
             if (i2 >= length) {
                 return null;
             }
-            A a2 = (A) annotations[i2];
-            if (cls.isInstance(a2)) {
-                return a2;
+            A a = (A) annotations[i2];
+            if (cls.isInstance(a)) {
+                return a;
             }
             i = i2 + 1;
         }

@@ -21,9 +21,8 @@ public interface IBluetoothPan extends IInterface {
         static final int TRANSACTION_isTetheringOn_0 = 1;
         static final int TRANSACTION_setBluetoothTethering = 2;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothPan$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothPan {
+        private static class Proxy implements IBluetoothPan {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

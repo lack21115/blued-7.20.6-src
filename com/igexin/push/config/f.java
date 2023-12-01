@@ -8,7 +8,7 @@ import org.json.JSONObject;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23378a = "IDCConfigParse";
+    private static final String f9770a = "IDCConfigParse";
 
     public static void a(String str, boolean z) {
         JSONObject jSONObject;
@@ -17,7 +17,7 @@ public final class f {
         String[] a4;
         String[] a5;
         String[] a6;
-        com.igexin.c.a.c.a.b(f23378a, " parse idc config data : ".concat(String.valueOf(str)));
+        com.igexin.c.a.c.a.b(f9770a, " parse idc config data : ".concat(String.valueOf(str)));
         try {
             jSONObject = new JSONObject(str);
         } catch (Exception e) {

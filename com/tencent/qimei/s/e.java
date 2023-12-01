@@ -6,5 +6,5 @@ import java.util.Random;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Random f38413a = new Random(System.currentTimeMillis());
+    public static final Random f24722a = new Random(System.currentTimeMillis());
 }

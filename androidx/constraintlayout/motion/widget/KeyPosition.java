@@ -43,23 +43,23 @@ public class KeyPosition extends KeyPositionBase {
     static class Loader {
 
         /* renamed from: a  reason: collision with root package name */
-        private static SparseIntArray f2174a;
+        private static SparseIntArray f2126a;
 
         static {
             SparseIntArray sparseIntArray = new SparseIntArray();
-            f2174a = sparseIntArray;
+            f2126a = sparseIntArray;
             sparseIntArray.append(R.styleable.KeyPosition_motionTarget, 1);
-            f2174a.append(R.styleable.KeyPosition_framePosition, 2);
-            f2174a.append(R.styleable.KeyPosition_transitionEasing, 3);
-            f2174a.append(R.styleable.KeyPosition_curveFit, 4);
-            f2174a.append(R.styleable.KeyPosition_drawPath, 5);
-            f2174a.append(R.styleable.KeyPosition_percentX, 6);
-            f2174a.append(R.styleable.KeyPosition_percentY, 7);
-            f2174a.append(R.styleable.KeyPosition_keyPositionType, 9);
-            f2174a.append(R.styleable.KeyPosition_sizePercent, 8);
-            f2174a.append(R.styleable.KeyPosition_percentWidth, 11);
-            f2174a.append(R.styleable.KeyPosition_percentHeight, 12);
-            f2174a.append(R.styleable.KeyPosition_pathMotionArc, 10);
+            f2126a.append(R.styleable.KeyPosition_framePosition, 2);
+            f2126a.append(R.styleable.KeyPosition_transitionEasing, 3);
+            f2126a.append(R.styleable.KeyPosition_curveFit, 4);
+            f2126a.append(R.styleable.KeyPosition_drawPath, 5);
+            f2126a.append(R.styleable.KeyPosition_percentX, 6);
+            f2126a.append(R.styleable.KeyPosition_percentY, 7);
+            f2126a.append(R.styleable.KeyPosition_keyPositionType, 9);
+            f2126a.append(R.styleable.KeyPosition_sizePercent, 8);
+            f2126a.append(R.styleable.KeyPosition_percentWidth, 11);
+            f2126a.append(R.styleable.KeyPosition_percentHeight, 12);
+            f2126a.append(R.styleable.KeyPosition_pathMotionArc, 10);
         }
 
         private Loader() {
@@ -72,21 +72,21 @@ public class KeyPosition extends KeyPositionBase {
             while (true) {
                 int i2 = i;
                 if (i2 >= indexCount) {
-                    if (keyPosition.f2169a == -1) {
+                    if (keyPosition.f2121a == -1) {
                         Log.e(TypedValues.PositionType.NAME, "no frame position");
                         return;
                     }
                     return;
                 }
                 int index = typedArray.getIndex(i2);
-                switch (f2174a.get(index)) {
+                switch (f2126a.get(index)) {
                     case 1:
                         if (!MotionLayout.IS_IN_EDIT_MODE) {
                             if (typedArray.peekValue(index).type != 3) {
                                 keyPosition.b = typedArray.getResourceId(index, keyPosition.b);
                                 break;
                             } else {
-                                keyPosition.f2170c = typedArray.getString(index);
+                                keyPosition.f2122c = typedArray.getString(index);
                                 break;
                             }
                         } else {
@@ -94,12 +94,12 @@ public class KeyPosition extends KeyPositionBase {
                             if (keyPosition.b != -1) {
                                 break;
                             } else {
-                                keyPosition.f2170c = typedArray.getString(index);
+                                keyPosition.f2122c = typedArray.getString(index);
                                 break;
                             }
                         }
                     case 2:
-                        keyPosition.f2169a = typedArray.getInt(index, keyPosition.f2169a);
+                        keyPosition.f2121a = typedArray.getInt(index, keyPosition.f2121a);
                         break;
                     case 3:
                         if (typedArray.peekValue(index).type != 3) {
@@ -139,7 +139,7 @@ public class KeyPosition extends KeyPositionBase {
                         keyPosition.j = typedArray.getFloat(index, keyPosition.j);
                         break;
                     default:
-                        Log.e(TypedValues.PositionType.NAME, "unused attribute 0x" + Integer.toHexString(index) + "   " + f2174a.get(index));
+                        Log.e(TypedValues.PositionType.NAME, "unused attribute 0x" + Integer.toHexString(index) + "   " + f2126a.get(index));
                         break;
                 }
                 i = i2 + 1;
@@ -273,7 +273,7 @@ public class KeyPosition extends KeyPositionBase {
 
     @Override // androidx.constraintlayout.motion.widget.Key
     /* renamed from: clone */
-    public Key mo1365clone() {
+    public Key mo1228clone() {
         return new KeyPosition().copy(this);
     }
 

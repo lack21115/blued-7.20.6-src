@@ -12,10 +12,10 @@ public final class InactivityTimer {
     private final Activity b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final ScheduledExecutorService f9875a = Executors.newSingleThreadScheduledExecutor(new DaemonThreadFactory());
+    private final ScheduledExecutorService f6673a = Executors.newSingleThreadScheduledExecutor(new DaemonThreadFactory());
 
     /* renamed from: c  reason: collision with root package name */
-    private ScheduledFuture<?> f9876c = null;
+    private ScheduledFuture<?> f6674c = null;
 
     /* loaded from: source-8756600-dex2jar.jar:com/blued/android/framework/qrcode/decoding/InactivityTimer$DaemonThreadFactory.class */
     static final class DaemonThreadFactory implements ThreadFactory {
@@ -36,20 +36,20 @@ public final class InactivityTimer {
     }
 
     private void c() {
-        ScheduledFuture<?> scheduledFuture = this.f9876c;
+        ScheduledFuture<?> scheduledFuture = this.f6674c;
         if (scheduledFuture != null) {
             scheduledFuture.cancel(true);
-            this.f9876c = null;
+            this.f6674c = null;
         }
     }
 
     public void a() {
         c();
-        this.f9876c = this.f9875a.schedule(new FinishListener(this.b), 300L, TimeUnit.SECONDS);
+        this.f6674c = this.f6673a.schedule(new FinishListener(this.b), 300L, TimeUnit.SECONDS);
     }
 
     public void b() {
         c();
-        this.f9875a.shutdown();
+        this.f6673a.shutdown();
     }
 }

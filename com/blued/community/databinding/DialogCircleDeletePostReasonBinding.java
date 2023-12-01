@@ -14,13 +14,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogCircleDeletePostReasonBinding.class */
 public final class DialogCircleDeletePostReasonBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RadioButton f18790a;
+    public final RadioButton a;
     public final RadioButton b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RadioButton f18791c;
+    public final RadioButton c;
     public final RadioButton d;
     public final RadioButton e;
     public final RadioButton f;
@@ -33,9 +29,9 @@ public final class DialogCircleDeletePostReasonBinding implements ViewBinding {
 
     private DialogCircleDeletePostReasonBinding(FrameLayout frameLayout, RadioButton radioButton, RadioButton radioButton2, RadioButton radioButton3, RadioButton radioButton4, RadioButton radioButton5, RadioButton radioButton6, ImageView imageView, ShapeLinearLayout shapeLinearLayout, RadioGroup radioGroup, FrameLayout frameLayout2, TextView textView) {
         this.l = frameLayout;
-        this.f18790a = radioButton;
+        this.a = radioButton;
         this.b = radioButton2;
-        this.f18791c = radioButton3;
+        this.c = radioButton3;
         this.d = radioButton4;
         this.e = radioButton5;
         this.f = radioButton6;
@@ -118,7 +114,6 @@ public final class DialogCircleDeletePostReasonBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.l;

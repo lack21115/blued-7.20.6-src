@@ -10,9 +10,7 @@ import kotlin.jvm.internal.Lambda;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$zip$1.class */
 final class ChannelsKt__DeprecatedKt$zip$1<E, R> extends Lambda implements Function2<E, R, Pair<? extends E, ? extends R>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ChannelsKt__DeprecatedKt$zip$1 f42986a = new ChannelsKt__DeprecatedKt$zip$1();
+    public static final ChannelsKt__DeprecatedKt$zip$1 a = new ChannelsKt__DeprecatedKt$zip$1();
 
     ChannelsKt__DeprecatedKt$zip$1() {
         super(2);

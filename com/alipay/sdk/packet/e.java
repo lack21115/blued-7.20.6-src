@@ -7,6 +7,7 @@ import com.alipay.sdk.app.i;
 import com.alipay.sdk.net.a;
 import com.alipay.sdk.util.m;
 import com.alipay.sdk.util.n;
+import com.android.internal.http.multipart.FilePart;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,13 +16,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/packet/e.class */
 public abstract class e {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4641a = "msp-gzip";
+    public static final String a = "msp-gzip";
     public static final String b = "Msp-Param";
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4642c = "Operation-Type";
+    public static final String c = "Operation-Type";
     public static final String d = "content-type";
     public static final String e = "Version";
     public static final String f = "AppId";
@@ -41,7 +38,7 @@ public abstract class e {
 
     protected static String a(a.b bVar, String str) {
         List<String> list;
-        if (bVar == null || str == null || bVar.f4636a == null || (list = bVar.f4636a.get(str)) == null) {
+        if (bVar == null || str == null || bVar.a == null || (list = bVar.a.get(str)) == null) {
             return null;
         }
         return TextUtils.join(",", list);
@@ -58,7 +55,7 @@ public abstract class e {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static boolean a(a.b bVar) {
-        return Boolean.valueOf(a(bVar, f4641a)).booleanValue();
+        return Boolean.valueOf(a(bVar, a)).booleanValue();
     }
 
     private static boolean a(String str) {
@@ -101,9 +98,9 @@ public abstract class e {
         b bVar = new b(c(), a(aVar, str, a()));
         Map<String, String> a2 = a(false, str);
         d a3 = cVar.a(bVar, this.r, a2.get("iSr"));
-        a.b a4 = com.alipay.sdk.net.a.a(context, new a.C0049a(str2, a(a3.a(), str), a3.b()));
+        a.b a4 = com.alipay.sdk.net.a.a(context, new a.C0009a(str2, a(a3.a(), str), a3.b()));
         if (a4 != null) {
-            b a5 = cVar.a(new d(a(a4), a4.f4637c), a2.get("iSr"));
+            b a5 = cVar.a(new d(a(a4), a4.c), a2.get("iSr"));
             b bVar2 = a5;
             if (a5 != null) {
                 bVar2 = a5;
@@ -126,7 +123,7 @@ public abstract class e {
         try {
             a4.put("tid", a3.a());
             a4.put(com.alipay.sdk.cons.b.b, a2.c().a(aVar, a3));
-            a4.put(com.alipay.sdk.cons.b.e, n.b(aVar, a2.b(), i.f4599a));
+            a4.put(com.alipay.sdk.cons.b.e, n.b(aVar, a2.b(), i.a));
             a4.put(com.alipay.sdk.cons.b.f, n.a(a2.b()));
             a4.put(com.alipay.sdk.cons.b.d, str);
             a4.put("app_key", com.alipay.sdk.cons.a.f);
@@ -161,9 +158,9 @@ public abstract class e {
 
     protected Map<String, String> a(boolean z, String str) {
         HashMap hashMap = new HashMap();
-        hashMap.put(f4641a, String.valueOf(z));
-        hashMap.put(f4642c, "alipay.msp.cashier.dispatch.bytes");
-        hashMap.put("content-type", "application/octet-stream");
+        hashMap.put(a, String.valueOf(z));
+        hashMap.put(c, "alipay.msp.cashier.dispatch.bytes");
+        hashMap.put(d, FilePart.DEFAULT_CONTENT_TYPE);
         hashMap.put(e, "2.0");
         hashMap.put(f, "TAOBAO");
         hashMap.put(b, a.a(str));
@@ -181,7 +178,7 @@ public abstract class e {
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("device", Build.MODEL);
         hashMap.put("namespace", "com.alipay.mobilecashier");
-        hashMap.put("api_name", "com.alipay.mcpay");
+        hashMap.put(i, "com.alipay.mcpay");
         hashMap.put(j, b());
         return a(hashMap, new HashMap<>());
     }

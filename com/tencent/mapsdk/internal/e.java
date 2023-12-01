@@ -89,7 +89,7 @@ public class e extends c {
     @Override // com.tencent.mapsdk.internal.c
     public boolean a(String str) {
         HashMap<String, byte[]> hashMap = this.f;
-        return hashMap != null ? hashMap.containsKey(str) : this.f37334a.containsKey(str);
+        return hashMap != null ? hashMap.containsKey(str) : this.f23643a.containsKey(str);
     }
 
     public <T> T b(String str, T t, T t2) throws b {
@@ -110,12 +110,12 @@ public class e extends c {
                 }
             }
             return t2;
-        } else if (this.f37334a.containsKey(str)) {
+        } else if (this.f23643a.containsKey(str)) {
             if (this.g.containsKey(str)) {
                 return (T) this.g.get(str);
             }
             byte[] bArr = new byte[0];
-            Iterator<Map.Entry<String, byte[]>> it = this.f37334a.get(str).entrySet().iterator();
+            Iterator<Map.Entry<String, byte[]>> it = this.f23643a.get(str).entrySet().iterator();
             if (it.hasNext()) {
                 Map.Entry<String, byte[]> next = it.next();
                 next.getKey();
@@ -206,12 +206,12 @@ public class e extends c {
                 }
             }
             return null;
-        } else if (this.f37334a.containsKey(str)) {
+        } else if (this.f23643a.containsKey(str)) {
             if (this.g.containsKey(str)) {
                 return (T) this.g.get(str);
             }
             byte[] bArr = new byte[0];
-            Iterator<Map.Entry<String, byte[]>> it = this.f37334a.get(str).entrySet().iterator();
+            Iterator<Map.Entry<String, byte[]>> it = this.f23643a.get(str).entrySet().iterator();
             if (it.hasNext()) {
                 Map.Entry<String, byte[]> next = it.next();
                 next.getKey();
@@ -247,7 +247,7 @@ public class e extends c {
     @Override // com.tencent.mapsdk.internal.c
     public Set<String> d() {
         HashMap<String, byte[]> hashMap = this.f;
-        return hashMap != null ? Collections.unmodifiableSet(hashMap.keySet()) : Collections.unmodifiableSet(this.f37334a.keySet());
+        return hashMap != null ? Collections.unmodifiableSet(hashMap.keySet()) : Collections.unmodifiableSet(this.f23643a.keySet());
     }
 
     public <T> T e(String str) throws b {
@@ -275,13 +275,13 @@ public class e extends c {
     @Override // com.tencent.mapsdk.internal.c
     public boolean e() {
         HashMap<String, byte[]> hashMap = this.f;
-        return hashMap != null ? hashMap.isEmpty() : this.f37334a.isEmpty();
+        return hashMap != null ? hashMap.isEmpty() : this.f23643a.isEmpty();
     }
 
     @Override // com.tencent.mapsdk.internal.c
     public int f() {
         HashMap<String, byte[]> hashMap = this.f;
-        return hashMap != null ? hashMap.size() : this.f37334a.size();
+        return hashMap != null ? hashMap.size() : this.f23643a.size();
     }
 
     public <T> T f(String str, T t) throws b {

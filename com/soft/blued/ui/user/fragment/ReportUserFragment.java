@@ -17,11 +17,11 @@ import com.soft.blued.ui.user.observer.ReportObserver;
 public class ReportUserFragment extends BaseFragment implements View.OnClickListener, ReportObserver.IReportObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33959a;
+    private View f20268a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33960c;
+    private View f20269c;
     private View d;
     private View e;
     private View f;
@@ -38,25 +38,25 @@ public class ReportUserFragment extends BaseFragment implements View.OnClickList
     }
 
     public void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33959a.findViewById(2131370694);
-        commonTopTitleNoTrans.setCenterText(this.b.getResources().getString(2131891497));
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        View findViewById = this.f33959a.findViewById(R.id.view_chat);
-        this.f33960c = findViewById;
-        ((TextView) findViewById.findViewById(2131372708)).setText(R.string.report_user_chat);
-        this.f33960c.setOnClickListener(this);
-        View findViewById2 = this.f33959a.findViewById(R.id.view_info);
-        this.d = findViewById2;
-        ((TextView) findViewById2.findViewById(2131372708)).setText(R.string.report_user_info);
+        CommonTopTitleNoTrans findViewById = this.f20268a.findViewById(2131370694);
+        findViewById.setCenterText(this.b.getResources().getString(2131891497));
+        findViewById.a();
+        findViewById.setLeftClickListener(this);
+        View findViewById2 = this.f20268a.findViewById(R.id.view_chat);
+        this.f20269c = findViewById2;
+        ((TextView) findViewById2.findViewById(2131372708)).setText(R.string.report_user_chat);
+        this.f20269c.setOnClickListener(this);
+        View findViewById3 = this.f20268a.findViewById(R.id.view_info);
+        this.d = findViewById3;
+        ((TextView) findViewById3.findViewById(2131372708)).setText(R.string.report_user_info);
         this.d.setOnClickListener(this);
-        View findViewById3 = this.f33959a.findViewById(R.id.view_feed);
-        this.e = findViewById3;
-        ((TextView) findViewById3.findViewById(2131372708)).setText(R.string.report_user_feed);
+        View findViewById4 = this.f20268a.findViewById(R.id.view_feed);
+        this.e = findViewById4;
+        ((TextView) findViewById4.findViewById(2131372708)).setText(R.string.report_user_feed);
         this.e.setOnClickListener(this);
-        View findViewById4 = this.f33959a.findViewById(R.id.view_comment);
-        this.f = findViewById4;
-        ((TextView) findViewById4.findViewById(2131372708)).setText(R.string.report_user_comment);
+        View findViewById5 = this.f20268a.findViewById(R.id.view_comment);
+        this.f = findViewById5;
+        ((TextView) findViewById5.findViewById(2131372708)).setText(R.string.report_user_comment);
         this.f.setOnClickListener(this);
     }
 
@@ -97,11 +97,10 @@ public class ReportUserFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        if (this.f33959a == null) {
-            this.f33959a = layoutInflater.inflate(R.layout.fragment_report_user, viewGroup, false);
+        if (this.f20268a == null) {
+            this.f20268a = layoutInflater.inflate(R.layout.fragment_report_user, viewGroup, false);
             if (getArguments() != null) {
                 this.g = getArguments().getString("KEY_REPORT_TARGET_ID");
                 this.h = getArguments().getString("KEY_REPORT_TARGET_TEXT");
@@ -110,10 +109,9 @@ public class ReportUserFragment extends BaseFragment implements View.OnClickList
             a();
             ReportObserver.a().a(this);
         }
-        return this.f33959a;
+        return this.f20268a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         ReportObserver.a().b(this);

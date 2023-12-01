@@ -14,13 +14,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseMediaAdView.class */
 public abstract class BaseMediaAdView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected i f6059a;
+    protected i a;
     protected k b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected j f6060c;
+    protected j c;
     protected a d;
     protected boolean e;
     protected FrameLayout f;
@@ -28,10 +24,9 @@ public abstract class BaseMediaAdView extends FrameLayout {
     private int h;
     private CloseImageView i;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.basead.ui.BaseMediaAdView$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseMediaAdView$1.class */
-    public final class AnonymousClass1 implements View.OnClickListener {
+    final class AnonymousClass1 implements View.OnClickListener {
         AnonymousClass1() {
         }
 
@@ -59,11 +54,11 @@ public abstract class BaseMediaAdView extends FrameLayout {
         super(context);
         this.g = 0;
         this.h = 0;
-        this.f6059a = iVar;
+        this.a = iVar;
         this.b = jVar.m;
         this.e = z;
         this.d = aVar;
-        this.f6060c = jVar;
+        this.c = jVar;
         LayoutInflater.from(getContext()).inflate(h.a(getContext(), "base_myoffer_media_ad_view", "layout"), this);
         this.f = (FrameLayout) findViewById(h.a(getContext(), "base_media_view_content", "id"));
         this.i = (CloseImageView) findViewById(h.a(getContext(), "base_media_ad_close", "id"));

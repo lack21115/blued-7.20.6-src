@@ -18,12 +18,12 @@ class mb implements lz {
     private int ww;
     private int x;
     private boolean b = false;
-    private C0886mb u = new C0886mb();
+    private C0716mb u = new C0716mb();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ss.android.socialbase.appdownloader.u.mb.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/socialbase/appdownloader/u/mb/mb$mb.class */
-    public static final class C0886mb {
+    public static final class C0716mb {
         private int b;
         private int[] mb = new int[32];
         private int ox;
@@ -35,7 +35,7 @@ class mb implements lz {
             int i3 = length - i2;
             if (i3 <= i) {
                 int[] iArr2 = new int[(iArr.length + i3) * 2];
-                System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, i2);
+                System.arraycopy(iArr, 0, iArr2, 0, i2);
                 this.mb = iArr2;
             }
         }

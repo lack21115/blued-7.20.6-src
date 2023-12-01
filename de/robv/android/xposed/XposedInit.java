@@ -18,7 +18,7 @@ import android.os.Process;
 import android.util.Log;
 import android.widget.Toast;
 import com.android.internal.os.ZygoteInit;
-import com.tencent.tendinsv.a.b;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import dalvik.system.DexFile;
 import dalvik.system.PathClassLoader;
 import de.robv.android.xposed.IXposedHookCmdInit;
@@ -242,7 +242,7 @@ public final class XposedInit {
             public void beforeHookedMethod(XC_MethodHook.MethodHookParam methodHookParam) throws Throwable {
                 ActivityThread activityThread = (ActivityThread) methodHookParam.thisObject;
                 ApplicationInfo applicationInfo = (ApplicationInfo) XposedHelpers.getObjectField(methodHookParam.args[0], "appInfo");
-                String str = applicationInfo.packageName.equals("android") ? "system" : applicationInfo.packageName;
+                String str = applicationInfo.packageName.equals(MsgBackupManager.PLATFORM_ANDROID) ? "system" : applicationInfo.packageName;
                 SELinuxHelper.initForProcess(str);
                 if (((ComponentName) XposedHelpers.getObjectField(methodHookParam.args[0], "instrumentationName")) != null) {
                     Log.w("Xposed", "Instrumentation detected, disabling framework for " + str);
@@ -257,7 +257,7 @@ public final class XposedInit {
                     XResources.setPackageNameForResDir(applicationInfo.packageName, packageInfoNoCheck.getResDir());
                     XC_LoadPackage.LoadPackageParam loadPackageParam = new XC_LoadPackage.LoadPackageParam(XposedBridge.sLoadedPackageCallbacks);
                     loadPackageParam.packageName = str;
-                    loadPackageParam.processName = (String) XposedHelpers.getObjectField(methodHookParam.args[0], b.a.u);
+                    loadPackageParam.processName = (String) XposedHelpers.getObjectField(methodHookParam.args[0], "processName");
                     loadPackageParam.classLoader = packageInfoNoCheck.getClassLoader();
                     loadPackageParam.appInfo = applicationInfo;
                     loadPackageParam.isFirstApplication = true;
@@ -273,11 +273,11 @@ public final class XposedInit {
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // de.robv.android.xposed.XC_MethodHook
                 public void beforeHookedMethod(XC_MethodHook.MethodHookParam methodHookParam) throws Throwable {
-                    SELinuxHelper.initForProcess("android");
-                    HashSet.this.add("android");
+                    SELinuxHelper.initForProcess(MsgBackupManager.PLATFORM_ANDROID);
+                    HashSet.this.add(MsgBackupManager.PLATFORM_ANDROID);
                     XC_LoadPackage.LoadPackageParam loadPackageParam = new XC_LoadPackage.LoadPackageParam(XposedBridge.sLoadedPackageCallbacks);
-                    loadPackageParam.packageName = "android";
-                    loadPackageParam.processName = "android";
+                    loadPackageParam.packageName = MsgBackupManager.PLATFORM_ANDROID;
+                    loadPackageParam.processName = MsgBackupManager.PLATFORM_ANDROID;
                     loadPackageParam.classLoader = XposedBridge.BOOTCLASSLOADER;
                     loadPackageParam.appInfo = null;
                     loadPackageParam.isFirstApplication = true;
@@ -296,11 +296,11 @@ public final class XposedInit {
                         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:18:0x00a5 -> B:22:0x0059). Please submit an issue!!! */
                         @Override // de.robv.android.xposed.XC_MethodHook
                         public void beforeHookedMethod(XC_MethodHook.MethodHookParam methodHookParam2) throws Throwable {
-                            SELinuxHelper.initForProcess("android");
-                            HashSet.this.add("android");
+                            SELinuxHelper.initForProcess(MsgBackupManager.PLATFORM_ANDROID);
+                            HashSet.this.add(MsgBackupManager.PLATFORM_ANDROID);
                             XC_LoadPackage.LoadPackageParam loadPackageParam = new XC_LoadPackage.LoadPackageParam(XposedBridge.sLoadedPackageCallbacks);
-                            loadPackageParam.packageName = "android";
-                            loadPackageParam.processName = "android";
+                            loadPackageParam.packageName = MsgBackupManager.PLATFORM_ANDROID;
+                            loadPackageParam.processName = MsgBackupManager.PLATFORM_ANDROID;
                             loadPackageParam.classLoader = contextClassLoader;
                             loadPackageParam.appInfo = null;
                             loadPackageParam.isFirstApplication = true;
@@ -327,7 +327,7 @@ public final class XposedInit {
                 LoadedApk loadedApk = (LoadedApk) methodHookParam.thisObject;
                 String packageName = loadedApk.getPackageName();
                 XResources.setPackageNameForResDir(packageName, loadedApk.getResDir());
-                if (!packageName.equals("android") && HashSet.this.add(packageName) && XposedHelpers.getBooleanField(loadedApk, "mIncludeCode")) {
+                if (!packageName.equals(MsgBackupManager.PLATFORM_ANDROID) && HashSet.this.add(packageName) && XposedHelpers.getBooleanField(loadedApk, "mIncludeCode")) {
                     XC_LoadPackage.LoadPackageParam loadPackageParam = new XC_LoadPackage.LoadPackageParam(XposedBridge.sLoadedPackageCallbacks);
                     loadPackageParam.packageName = packageName;
                     loadPackageParam.processName = AndroidAppHelper.currentProcessName();

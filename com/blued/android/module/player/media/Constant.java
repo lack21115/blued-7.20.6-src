@@ -23,13 +23,9 @@ public class Constant {
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/Constant$PATH.class */
     public interface PATH {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f15640a = Environment.getExternalStorageDirectory() + "/ShortVideo/";
+        public static final String a = Environment.getExternalStorageDirectory() + "/ShortVideo/";
         public static final String b = Environment.getExternalStorageDirectory() + "/ShortVideo/img/";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f15641c = Environment.getExternalStorageDirectory() + "/AutnVideo/";
+        public static final String c = Environment.getExternalStorageDirectory() + "/AutnVideo/";
     }
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/Constant$PHOTO_SIZE.class */

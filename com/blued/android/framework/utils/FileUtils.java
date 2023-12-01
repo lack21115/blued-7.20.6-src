@@ -251,11 +251,11 @@ public class FileUtils {
                 }
                 fileInputStream = fileInputStream3;
                 fileInputStream2 = fileInputStream3;
-                boolean a2 = a(fileInputStream3, str2);
-                z2 = a2;
+                boolean a = a(fileInputStream3, str2);
+                z2 = a;
                 if (fileInputStream3 != null) {
                     fileInputStream3.close();
-                    return a2;
+                    return a;
                 }
                 return z2;
             } catch (Exception e4) {
@@ -394,10 +394,10 @@ public class FileUtils {
                     } else {
                         z2 = z4;
                         if (file2.isDirectory()) {
-                            boolean c2 = c(file2.getAbsolutePath());
-                            z2 = c2;
-                            if (!c2) {
-                                z = c2;
+                            boolean c = c(file2.getAbsolutePath());
+                            z2 = c;
+                            if (!c) {
+                                z = c;
                                 break;
                             }
                         } else {

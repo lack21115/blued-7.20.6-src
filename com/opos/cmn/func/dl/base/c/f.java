@@ -9,7 +9,7 @@ import com.opos.cmn.func.dl.base.exception.DlException;
 public class f implements e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24904a = f.class.getSimpleName();
+    private static final String f11216a = f.class.getSimpleName();
     private String b;
 
     @Override // com.opos.cmn.func.dl.base.c.e
@@ -19,7 +19,7 @@ public class f implements e {
 
     @Override // com.opos.cmn.func.dl.base.c.e
     public final void a(Context context, d dVar, String str, b bVar) {
-        com.opos.cmn.an.f.a.b(f24904a, "RedirectHandler process ,url=".concat(String.valueOf(str)));
+        com.opos.cmn.an.f.a.b(f11216a, "RedirectHandler process ,url=".concat(String.valueOf(str)));
         int d = dVar.d();
         c cVar = dVar;
         int i = 0;
@@ -31,7 +31,7 @@ public class f implements e {
                 ((a) dVar).b = cVar;
                 return;
             }
-            com.opos.cmn.an.f.a.b(f24904a, "Deal redirect !");
+            com.opos.cmn.an.f.a.b(f11216a, "Deal redirect !");
             cVar.c();
             i++;
             if (i > 5) {

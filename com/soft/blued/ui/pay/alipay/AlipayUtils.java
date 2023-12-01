@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import com.alipay.sdk.app.PayTask;
-import com.alipay.sdk.sys.a;
 import com.blued.android.framework.pool.ThreadExecutor;
 import com.blued.android.framework.pool.ThreadManager;
 import com.blued.android.framework.pool.ThreadPriority;
@@ -25,9 +24,8 @@ public class AlipayUtils {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        final String str4 = str2 + "&sign=\"" + str3 + a.f4647a + a(str);
-        ThreadManager.a().a(new ThreadExecutor("alipay", ThreadPriority.HIGH) { // from class: com.soft.blued.ui.pay.alipay.AlipayUtils.1
-            @Override // com.blued.android.framework.pool.ThreadExecutor
+        final String str4 = str2 + "&sign=\"" + str3 + "\"&" + a(str);
+        ThreadManager.a().a(new ThreadExecutor("alipay", ThreadPriority.c) { // from class: com.soft.blued.ui.pay.alipay.AlipayUtils.1
             public void execute() {
                 String pay = new PayTask((Activity) context).pay(str4, true);
                 Message obtain = Message.obtain();

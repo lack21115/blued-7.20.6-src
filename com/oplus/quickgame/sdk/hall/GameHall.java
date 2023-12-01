@@ -7,7 +7,7 @@ public class GameHall {
     private static GameHall b;
 
     /* renamed from: a  reason: collision with root package name */
-    private GameHallRouter f24428a = new GameHallRouter();
+    private GameHallRouter f10741a = new GameHallRouter();
 
     private GameHall() {
     }
@@ -28,6 +28,6 @@ public class GameHall {
     }
 
     public GameHallRouter router() {
-        return this.f24428a;
+        return this.f10741a;
     }
 }

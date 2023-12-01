@@ -10,13 +10,9 @@ import kotlin.reflect.KVariance;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/TypeParameterReference.class */
 public final class TypeParameterReference implements KTypeParameter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42550a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f42551c;
+    private final String c;
     private final KVariance d;
     private volatile List<? extends KType> e;
 
@@ -27,16 +23,14 @@ public final class TypeParameterReference implements KTypeParameter {
         @Metadata
         /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/TypeParameterReference$Companion$WhenMappings.class */
         public final /* synthetic */ class WhenMappings {
-
-            /* renamed from: a  reason: collision with root package name */
-            public static final /* synthetic */ int[] f42552a;
+            public static final /* synthetic */ int[] a;
 
             static {
                 int[] iArr = new int[KVariance.values().length];
                 iArr[KVariance.INVARIANT.ordinal()] = 1;
                 iArr[KVariance.IN.ordinal()] = 2;
                 iArr[KVariance.OUT.ordinal()] = 3;
-                f42552a = iArr;
+                a = iArr;
             }
         }
 
@@ -50,7 +44,7 @@ public final class TypeParameterReference implements KTypeParameter {
         public final String a(KTypeParameter typeParameter) {
             Intrinsics.e(typeParameter, "typeParameter");
             StringBuilder sb = new StringBuilder();
-            int i = WhenMappings.f42552a[typeParameter.b().ordinal()];
+            int i = WhenMappings.a[typeParameter.b().ordinal()];
             if (i == 2) {
                 sb.append("in ");
             } else if (i == 3) {
@@ -65,7 +59,7 @@ public final class TypeParameterReference implements KTypeParameter {
 
     @Override // kotlin.reflect.KTypeParameter
     public String a() {
-        return this.f42551c;
+        return this.c;
     }
 
     @Override // kotlin.reflect.KTypeParameter
@@ -99,6 +93,6 @@ public final class TypeParameterReference implements KTypeParameter {
     }
 
     public String toString() {
-        return f42550a.a(this);
+        return a.a(this);
     }
 }

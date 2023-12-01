@@ -9,16 +9,14 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/TransformingSequence$iterator$1.class */
 public final class TransformingSequence$iterator$1<R> implements Iterator<R>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ TransformingSequence<T, R> f42708a;
+    final /* synthetic */ TransformingSequence<T, R> a;
     private final Iterator<T> b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public TransformingSequence$iterator$1(TransformingSequence<T, R> transformingSequence) {
         Sequence sequence;
-        this.f42708a = transformingSequence;
-        sequence = ((TransformingSequence) transformingSequence).f42707a;
+        this.a = transformingSequence;
+        sequence = ((TransformingSequence) transformingSequence).a;
         this.b = sequence.iterator();
     }
 
@@ -30,7 +28,7 @@ public final class TransformingSequence$iterator$1<R> implements Iterator<R>, KM
     @Override // java.util.Iterator
     public R next() {
         Function1 function1;
-        function1 = ((TransformingSequence) this.f42708a).b;
+        function1 = ((TransformingSequence) this.a).b;
         return (R) function1.invoke(this.b.next());
     }
 

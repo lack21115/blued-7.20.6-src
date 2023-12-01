@@ -5,30 +5,27 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.Looper;
+import com.android.internal.content.NativeLibraryHelper;
 import java.util.UUID;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/DUService.class */
 public class DUService extends Service {
     public static WakeListener callback;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f4164a;
+    private Context a;
     private t b = new t(this);
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f4165c;
+    private String c;
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
-        if (this.f4164a == null) {
-            this.f4164a = getApplicationContext();
+        if (this.a == null) {
+            this.a = getApplicationContext();
         }
-        this.f4165c = intent.getStringExtra("apikey");
+        this.c = intent.getStringExtra("apikey");
         if (Looper.myLooper() == null) {
             Looper.prepare();
         }
         if (Looper.myLooper() != null) {
-            DUHelper.init(this.f4164a, this.f4165c);
+            DUHelper.init(this.a, this.c);
         }
         return this.b;
     }
@@ -36,8 +33,8 @@ public class DUService extends Service {
     @Override // android.app.Service
     public void onCreate() {
         super.onCreate();
-        if (this.f4164a == null) {
-            this.f4164a = getApplicationContext();
+        if (this.a == null) {
+            this.a = getApplicationContext();
         }
         if (Looper.myLooper() == null) {
             Looper.prepare();
@@ -70,7 +67,7 @@ public class DUService extends Service {
         }
         if (str != null) {
             try {
-                String replace = UUID.randomUUID().toString().replace("-", "");
+                String replace = UUID.randomUUID().toString().replace(NativeLibraryHelper.CLEAR_ABI_OVERRIDE, "");
                 DUHelper.onIEvent(getApplicationContext(), str + "," + replace);
                 callback.handleWakeup(replace);
                 return 1;

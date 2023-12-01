@@ -16,7 +16,7 @@ public class f extends com.tencent.tmsbeacon.a.b.a {
     private static final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f39466c;
+    private static final int f25775c;
     private static final AtomicInteger d;
     private final ScheduledExecutorService e;
     private final SparseArray<b> f;
@@ -51,19 +51,19 @@ public class f extends com.tencent.tmsbeacon.a.b.a {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Runnable f39468a;
+        private final Runnable f25777a;
         private final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f39469c;
+        private final long f25778c;
         private final TimeUnit d;
         private Future<?> e;
 
         public b(Future<?> future, Runnable runnable, long j, long j2, TimeUnit timeUnit) {
             this.e = future;
-            this.f39468a = runnable;
+            this.f25777a = runnable;
             this.b = j;
-            this.f39469c = j2;
+            this.f25778c = j2;
             this.d = timeUnit;
         }
 
@@ -79,7 +79,7 @@ public class f extends com.tencent.tmsbeacon.a.b.a {
     static {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
         b = availableProcessors;
-        f39466c = Math.max(2, Math.min(availableProcessors - 1, 3));
+        f25775c = Math.max(2, Math.min(availableProcessors - 1, 3));
         d = new AtomicInteger(0);
     }
 
@@ -92,7 +92,7 @@ public class f extends com.tencent.tmsbeacon.a.b.a {
         this.j = true;
         g gVar = new g();
         this.h = gVar;
-        this.e = scheduledExecutorService == null ? Executors.newScheduledThreadPool(f39466c, gVar) : scheduledExecutorService;
+        this.e = scheduledExecutorService == null ? Executors.newScheduledThreadPool(f25775c, gVar) : scheduledExecutorService;
         this.f = new SparseArray<>();
         this.g = new SparseArray<>();
     }
@@ -212,7 +212,7 @@ public class f extends com.tencent.tmsbeacon.a.b.a {
                     if (!bVar.a()) {
                         return;
                     }
-                    bVar.e = this.e.scheduleAtFixedRate(bVar.f39468a, bVar.b, bVar.f39469c, bVar.d);
+                    bVar.e = this.e.scheduleAtFixedRate(bVar.f25777a, bVar.b, bVar.f25778c, bVar.d);
                 }
             }
         }

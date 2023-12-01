@@ -4,22 +4,22 @@ package com.opos.exoplayer.core.b;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f25067a;
+    private int f11379a;
 
     public void a() {
-        this.f25067a = 0;
+        this.f11379a = 0;
     }
 
     public final void a_(int i) {
-        this.f25067a = i;
+        this.f11379a = i;
     }
 
     public final void b(int i) {
-        this.f25067a = i | this.f25067a;
+        this.f11379a = i | this.f11379a;
     }
 
     public final void c(int i) {
-        this.f25067a = i & this.f25067a;
+        this.f11379a = i & this.f11379a;
     }
 
     public final boolean c() {
@@ -32,7 +32,7 @@ public abstract class a {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean d(int i) {
-        return (this.f25067a & i) == i;
+        return (this.f11379a & i) == i;
     }
 
     public final boolean d_() {

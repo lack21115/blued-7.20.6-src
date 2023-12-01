@@ -1,5 +1,6 @@
 package com.google.android.material.internal;
 
+import android.R;
 import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,7 +8,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.Checkable;
-import androidx.appcompat.R;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.view.AccessibilityDelegateCompat;
 import androidx.core.view.ViewCompat;
@@ -16,7 +16,7 @@ import androidx.customview.view.AbsSavedState;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/internal/CheckableImageButton.class */
 public class CheckableImageButton extends AppCompatImageButton implements Checkable {
-    private static final int[] DRAWABLE_STATE_CHECKED = {16842912};
+    private static final int[] DRAWABLE_STATE_CHECKED = {R.attr.state_checked};
     private boolean checkable;
     private boolean checked;
     private boolean pressable;
@@ -72,7 +72,7 @@ public class CheckableImageButton extends AppCompatImageButton implements Checka
     }
 
     public CheckableImageButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.imageButtonStyle);
+        this(context, attributeSet, androidx.appcompat.R.attr.imageButtonStyle);
     }
 
     public CheckableImageButton(Context context, AttributeSet attributeSet, int i) {
@@ -113,9 +113,8 @@ public class CheckableImageButton extends AppCompatImageButton implements Checka
         return this.checked ? mergeDrawableStates(super.onCreateDrawableState(i + DRAWABLE_STATE_CHECKED.length), DRAWABLE_STATE_CHECKED) : super.onCreateDrawableState(i);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
@@ -125,9 +124,8 @@ public class CheckableImageButton extends AppCompatImageButton implements Checka
         setChecked(savedState.checked);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
         savedState.checked = this.checked;
         return savedState;

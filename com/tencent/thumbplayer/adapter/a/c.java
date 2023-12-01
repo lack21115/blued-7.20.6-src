@@ -25,7 +25,7 @@ public class c {
 
     /* renamed from: com.tencent.thumbplayer.adapter.a.c$c  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/adapter/a/c$c.class */
-    public interface InterfaceC1013c {
+    public interface InterfaceC0843c {
         void b();
     }
 

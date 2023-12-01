@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.rank.LiveRankToolBarView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveRankAllBinding.class */
 public final class DialogLiveRankAllBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RelativeLayout f11813a;
+    public final RelativeLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LiveRankToolBarView f11814c;
+    public final LiveRankToolBarView c;
     public final CustomViewPager d;
     public final LinearLayout e;
     public final RelativeLayout f;
@@ -29,9 +25,9 @@ public final class DialogLiveRankAllBinding implements ViewBinding {
 
     private DialogLiveRankAllBinding(RelativeLayout relativeLayout, RelativeLayout relativeLayout2, ImageView imageView, LiveRankToolBarView liveRankToolBarView, CustomViewPager customViewPager, LinearLayout linearLayout, RelativeLayout relativeLayout3, LiveRankBarTitleBinding liveRankBarTitleBinding, View view) {
         this.i = relativeLayout;
-        this.f11813a = relativeLayout2;
+        this.a = relativeLayout2;
         this.b = imageView;
-        this.f11814c = liveRankToolBarView;
+        this.c = liveRankToolBarView;
         this.d = customViewPager;
         this.e = linearLayout;
         this.f = relativeLayout3;
@@ -67,10 +63,10 @@ public final class DialogLiveRankAllBinding implements ViewBinding {
                             if (relativeLayout2 != null) {
                                 View findViewById = view.findViewById(R.id.title_bar);
                                 if (findViewById != null) {
-                                    LiveRankBarTitleBinding a2 = LiveRankBarTitleBinding.a(findViewById);
+                                    LiveRankBarTitleBinding a = LiveRankBarTitleBinding.a(findViewById);
                                     View findViewById2 = view.findViewById(R.id.view_status_bar);
                                     if (findViewById2 != null) {
-                                        return new DialogLiveRankAllBinding((RelativeLayout) view, relativeLayout, imageView, liveRankToolBarView, customViewPager, linearLayout, relativeLayout2, a2, findViewById2);
+                                        return new DialogLiveRankAllBinding((RelativeLayout) view, relativeLayout, imageView, liveRankToolBarView, customViewPager, linearLayout, relativeLayout2, a, findViewById2);
                                     }
                                     str = "viewStatusBar";
                                 } else {
@@ -97,7 +93,6 @@ public final class DialogLiveRankAllBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.i;

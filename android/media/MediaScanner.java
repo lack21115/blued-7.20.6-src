@@ -26,9 +26,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Xml;
 import com.anythink.expressad.exoplayer.k.o;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.cdo.oaps.ad.OapsKey;
 import com.google.common.net.HttpHeaders;
+import com.huawei.hms.ads.fw;
 import com.kuaishou.weapon.p0.bh;
 import com.oplus.quickgame.sdk.hall.Constant;
 import com.tencent.connect.common.Constants;
@@ -743,7 +743,7 @@ public class MediaScanner {
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isDrmEnabled() {
         String str = SystemProperties.get("drm.service.enabled");
-        return str != null && str.equals("true");
+        return str != null && str.equals(fw.Code);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -934,7 +934,7 @@ public class MediaScanner {
                                 j = j2;
                                 if (string != null) {
                                     j = j2;
-                                    if (string.startsWith(BridgeUtil.SPLIT_MARK)) {
+                                    if (string.startsWith("/")) {
                                         boolean z2 = false;
                                         try {
                                             z2 = Os.access(string, OsConstants.F_OK);

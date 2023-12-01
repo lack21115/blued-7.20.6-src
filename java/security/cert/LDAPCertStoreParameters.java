@@ -8,15 +8,15 @@ public class LDAPCertStoreParameters implements CertStoreParameters {
     private final String serverName;
 
     public LDAPCertStoreParameters() {
-        this.serverName = "localhost";
-        this.port = 389;
+        this.serverName = DEFAULT_LDAP_SERVER_NAME;
+        this.port = DEFAULT_LDAP_PORT;
     }
 
     public LDAPCertStoreParameters(String str) {
         if (str == null) {
             throw new NullPointerException("serverName == null");
         }
-        this.port = 389;
+        this.port = DEFAULT_LDAP_PORT;
         this.serverName = str;
     }
 

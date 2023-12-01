@@ -40,11 +40,11 @@ import java.util.NoSuchElementException;
 public final class Cache implements Closeable, Flushable {
 
     /* renamed from: a  reason: collision with root package name */
-    final InternalCache f35807a;
+    final InternalCache f22116a;
     final DiskLruCache b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f35808c;
+    int f22117c;
     int d;
     private int e;
     private int f;
@@ -55,26 +55,26 @@ public final class Cache implements Closeable, Flushable {
     public final class CacheRequestImpl implements CacheRequest {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f35812a;
+        boolean f22121a;
 
         /* renamed from: c  reason: collision with root package name */
-        private final DiskLruCache.Editor f35813c;
+        private final DiskLruCache.Editor f22122c;
         private Sink d;
         private Sink e;
 
         CacheRequestImpl(final DiskLruCache.Editor editor) {
-            this.f35813c = editor;
+            this.f22122c = editor;
             Sink newSink = editor.newSink(1);
             this.d = newSink;
             this.e = new ForwardingSink(newSink) { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Cache.CacheRequestImpl.1
                 @Override // com.tencent.cloud.huiyansdkface.okio.ForwardingSink, com.tencent.cloud.huiyansdkface.okio.Sink, java.io.Closeable, java.lang.AutoCloseable
                 public void close() throws IOException {
                     synchronized (Cache.this) {
-                        if (CacheRequestImpl.this.f35812a) {
+                        if (CacheRequestImpl.this.f22121a) {
                             return;
                         }
-                        CacheRequestImpl.this.f35812a = true;
-                        Cache.this.f35808c++;
+                        CacheRequestImpl.this.f22121a = true;
+                        Cache.this.f22117c++;
                         super.close();
                         editor.commit();
                     }
@@ -85,14 +85,14 @@ public final class Cache implements Closeable, Flushable {
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.cache.CacheRequest
         public void abort() {
             synchronized (Cache.this) {
-                if (this.f35812a) {
+                if (this.f22121a) {
                     return;
                 }
-                this.f35812a = true;
+                this.f22121a = true;
                 Cache.this.d++;
                 Util.closeQuietly(this.d);
                 try {
-                    this.f35813c.abort();
+                    this.f22122c.abort();
                 } catch (IOException e) {
                 }
             }
@@ -109,16 +109,16 @@ public final class Cache implements Closeable, Flushable {
     public static class CacheResponseBody extends ResponseBody {
 
         /* renamed from: a  reason: collision with root package name */
-        final DiskLruCache.Snapshot f35816a;
+        final DiskLruCache.Snapshot f22125a;
         private final BufferedSource b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f35817c;
+        private final String f22126c;
         private final String d;
 
         CacheResponseBody(final DiskLruCache.Snapshot snapshot, String str, String str2) {
-            this.f35816a = snapshot;
-            this.f35817c = str;
+            this.f22125a = snapshot;
+            this.f22126c = str;
             this.d = str2;
             this.b = Okio.buffer(new ForwardingSource(snapshot.getSource(1)) { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Cache.CacheResponseBody.1
                 @Override // com.tencent.cloud.huiyansdkface.okio.ForwardingSource, com.tencent.cloud.huiyansdkface.okio.Source, java.io.Closeable, java.lang.AutoCloseable
@@ -144,7 +144,7 @@ public final class Cache implements Closeable, Flushable {
 
         @Override // com.tencent.cloud.huiyansdkface.okhttp3.ResponseBody
         public MediaType contentType() {
-            String str = this.f35817c;
+            String str = this.f22126c;
             if (str != null) {
                 return MediaType.parse(str);
             }
@@ -162,11 +162,11 @@ public final class Cache implements Closeable, Flushable {
     public static final class Entry {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final String f35819a = Platform.get().getPrefix() + "-Sent-Millis";
+        private static final String f22128a = Platform.get().getPrefix() + "-Sent-Millis";
         private static final String b = Platform.get().getPrefix() + "-Received-Millis";
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f35820c;
+        private final String f22129c;
         private final Headers d;
         private final String e;
         private final Protocol f;
@@ -178,7 +178,7 @@ public final class Cache implements Closeable, Flushable {
         private final long l;
 
         Entry(Response response) {
-            this.f35820c = response.request().url().toString();
+            this.f22129c = response.request().url().toString();
             this.d = HttpHeaders.varyHeaders(response);
             this.e = response.request().method();
             this.f = response.protocol();
@@ -193,7 +193,7 @@ public final class Cache implements Closeable, Flushable {
         Entry(Source source) throws IOException {
             try {
                 BufferedSource buffer = Okio.buffer(source);
-                this.f35820c = buffer.readUtf8LineStrict();
+                this.f22129c = buffer.readUtf8LineStrict();
                 this.e = buffer.readUtf8LineStrict();
                 Headers.Builder builder = new Headers.Builder();
                 int a2 = Cache.a(buffer);
@@ -208,9 +208,9 @@ public final class Cache implements Closeable, Flushable {
                 }
                 this.d = builder.build();
                 StatusLine parse = StatusLine.parse(buffer.readUtf8LineStrict());
-                this.f = parse.f35958a;
+                this.f = parse.f22267a;
                 this.g = parse.b;
-                this.h = parse.f35959c;
+                this.h = parse.f22268c;
                 Headers.Builder builder2 = new Headers.Builder();
                 int a3 = Cache.a(buffer);
                 int i3 = 0;
@@ -222,9 +222,9 @@ public final class Cache implements Closeable, Flushable {
                     builder2.a(buffer.readUtf8LineStrict());
                     i3 = i4 + 1;
                 }
-                String str = builder2.get(f35819a);
+                String str = builder2.get(f22128a);
                 String str2 = builder2.get(b);
-                builder2.removeAll(f35819a);
+                builder2.removeAll(f22128a);
                 builder2.removeAll(b);
                 this.k = str != null ? Long.parseLong(str) : 0L;
                 this.l = str2 != null ? Long.parseLong(str2) : 0L;
@@ -281,22 +281,22 @@ public final class Cache implements Closeable, Flushable {
         }
 
         private boolean a() {
-            return this.f35820c.startsWith("https://");
+            return this.f22129c.startsWith("https://");
         }
 
         public boolean matches(Request request, Response response) {
-            return this.f35820c.equals(request.url().toString()) && this.e.equals(request.method()) && HttpHeaders.varyMatches(response, this.d, request);
+            return this.f22129c.equals(request.url().toString()) && this.e.equals(request.method()) && HttpHeaders.varyMatches(response, this.d, request);
         }
 
         public Response response(DiskLruCache.Snapshot snapshot) {
             String str = this.i.get("Content-Type");
             String str2 = this.i.get("Content-Length");
-            return new Response.Builder().request(new Request.Builder().url(this.f35820c).method(this.e, null).headers(this.d).build()).protocol(this.f).code(this.g).message(this.h).headers(this.i).body(new CacheResponseBody(snapshot, str, str2)).handshake(this.j).sentRequestAtMillis(this.k).receivedResponseAtMillis(this.l).build();
+            return new Response.Builder().request(new Request.Builder().url(this.f22129c).method(this.e, null).headers(this.d).build()).protocol(this.f).code(this.g).message(this.h).headers(this.i).body(new CacheResponseBody(snapshot, str, str2)).handshake(this.j).sentRequestAtMillis(this.k).receivedResponseAtMillis(this.l).build();
         }
 
         public void writeTo(DiskLruCache.Editor editor) throws IOException {
             BufferedSink buffer = Okio.buffer(editor.newSink(0));
-            buffer.writeUtf8(this.f35820c).writeByte(10);
+            buffer.writeUtf8(this.f22129c).writeByte(10);
             buffer.writeUtf8(this.e).writeByte(10);
             buffer.writeDecimalLong(this.d.size()).writeByte(10);
             int size = this.d.size();
@@ -321,7 +321,7 @@ public final class Cache implements Closeable, Flushable {
                 buffer.writeUtf8(this.i.name(i4)).writeUtf8(": ").writeUtf8(this.i.value(i4)).writeByte(10);
                 i3 = i4 + 1;
             }
-            buffer.writeUtf8(f35819a).writeUtf8(": ").writeDecimalLong(this.k).writeByte(10);
+            buffer.writeUtf8(f22128a).writeUtf8(": ").writeDecimalLong(this.k).writeByte(10);
             buffer.writeUtf8(b).writeUtf8(": ").writeDecimalLong(this.l).writeByte(10);
             if (a()) {
                 buffer.writeByte(10);
@@ -335,11 +335,11 @@ public final class Cache implements Closeable, Flushable {
     }
 
     public Cache(File file, long j) {
-        this(file, j, FileSystem.f36018a);
+        this(file, j, FileSystem.f22327a);
     }
 
     Cache(File file, long j, FileSystem fileSystem) {
-        this.f35807a = new InternalCache() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Cache.1
+        this.f22116a = new InternalCache() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Cache.1
             @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.cache.InternalCache
             public Response get(Request request) throws IOException {
                 return Cache.this.a(request);
@@ -464,7 +464,7 @@ public final class Cache implements Closeable, Flushable {
         DiskLruCache.Editor editor;
         Entry entry = new Entry(response2);
         try {
-            editor = ((CacheResponseBody) response.body()).f35816a.edit();
+            editor = ((CacheResponseBody) response.body()).f22125a.edit();
             if (editor != null) {
                 try {
                     entry.writeTo(editor);
@@ -481,7 +481,7 @@ public final class Cache implements Closeable, Flushable {
     void a(CacheStrategy cacheStrategy) {
         synchronized (this) {
             this.g++;
-            if (cacheStrategy.f35910a != null) {
+            if (cacheStrategy.f22219a != null) {
                 this.e++;
             } else if (cacheStrategy.b != null) {
                 this.f++;
@@ -559,14 +559,14 @@ public final class Cache implements Closeable, Flushable {
         return new Iterator<String>() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.Cache.2
 
             /* renamed from: a  reason: collision with root package name */
-            final Iterator<DiskLruCache.Snapshot> f35810a;
+            final Iterator<DiskLruCache.Snapshot> f22119a;
             String b;
 
             /* renamed from: c  reason: collision with root package name */
-            boolean f35811c;
+            boolean f22120c;
 
             {
-                this.f35810a = Cache.this.b.snapshots();
+                this.f22119a = Cache.this.b.snapshots();
             }
 
             @Override // java.util.Iterator
@@ -574,9 +574,9 @@ public final class Cache implements Closeable, Flushable {
                 if (this.b != null) {
                     return true;
                 }
-                this.f35811c = false;
-                while (this.f35810a.hasNext()) {
-                    DiskLruCache.Snapshot next = this.f35810a.next();
+                this.f22120c = false;
+                while (this.f22119a.hasNext()) {
+                    DiskLruCache.Snapshot next = this.f22119a.next();
                     try {
                         this.b = Okio.buffer(next.getSource(0)).readUtf8LineStrict();
                         next.close();
@@ -596,7 +596,7 @@ public final class Cache implements Closeable, Flushable {
                 if (hasNext()) {
                     String str = this.b;
                     this.b = null;
-                    this.f35811c = true;
+                    this.f22120c = true;
                     return str;
                 }
                 throw new NoSuchElementException();
@@ -604,10 +604,10 @@ public final class Cache implements Closeable, Flushable {
 
             @Override // java.util.Iterator
             public void remove() {
-                if (!this.f35811c) {
+                if (!this.f22120c) {
                     throw new IllegalStateException("remove() before next()");
                 }
-                this.f35810a.remove();
+                this.f22119a.remove();
             }
         };
     }
@@ -623,7 +623,7 @@ public final class Cache implements Closeable, Flushable {
     public int writeSuccessCount() {
         int i;
         synchronized (this) {
-            i = this.f35808c;
+            i = this.f22117c;
         }
         return i;
     }

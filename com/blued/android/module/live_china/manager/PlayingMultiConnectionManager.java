@@ -17,13 +17,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayingMultiConnectionManager.class */
 public class PlayingMultiConnectionManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f13685a = 0;
+    public static int a = 0;
     public static double b = 0.85d;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static int f13686c;
+    public static int c;
     public static int e;
     public static int f;
     public static int g;
@@ -38,8 +34,8 @@ public class PlayingMultiConnectionManager {
         int i = (int) (AppInfo.l * b);
         f = i;
         g = i / 2;
-        f13685a = DensityUtils.a(this.h, 148);
-        f13686c = StatusBarHelper.a() ? f13685a - StatusBarHelper.a((Context) playingOnliveFragment.getActivity()) : f13685a;
+        a = DensityUtils.a(this.h, 148);
+        c = StatusBarHelper.a() ? a - StatusBarHelper.a((Context) playingOnliveFragment.getActivity()) : a;
     }
 
     private void e(List<LiveInviteUserModel> list) {
@@ -162,10 +158,10 @@ public class PlayingMultiConnectionManager {
         }
         this.i.d_(10);
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(AppInfo.l, f);
-        layoutParams.setMargins(0, f13685a, 0, 0);
+        layoutParams.setMargins(0, a, 0, 0);
         this.i.aN.setLayoutParams(layoutParams);
         FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(-2, -2);
-        layoutParams2.setMargins(0, f13685a, 0, 0);
+        layoutParams2.setMargins(0, a, 0, 0);
         this.i.bf.setLayoutParams(layoutParams2);
         LiveFloatManager.a().a(AppInfo.l, f);
         FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(AppInfo.l, f);

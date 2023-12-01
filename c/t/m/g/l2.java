@@ -9,7 +9,7 @@ import java.io.PrintStream;
 public class l2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final char[] f3872a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".toCharArray();
+    public static final char[] f3824a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".toCharArray();
 
     public static int a(char c2) {
         int i;
@@ -47,10 +47,10 @@ public class l2 {
                     break loop0;
                 }
                 int i4 = ((bArr[i] & 255) << 16) | ((bArr[i + 1] & 255) << 8) | (bArr[i + 2] & 255);
-                stringBuffer.append(f3872a[(i4 >> 18) & 63]);
-                stringBuffer.append(f3872a[(i4 >> 12) & 63]);
-                stringBuffer.append(f3872a[(i4 >> 6) & 63]);
-                stringBuffer.append(f3872a[i4 & 63]);
+                stringBuffer.append(f3824a[(i4 >> 18) & 63]);
+                stringBuffer.append(f3824a[(i4 >> 12) & 63]);
+                stringBuffer.append(f3824a[(i4 >> 6) & 63]);
+                stringBuffer.append(f3824a[i4 & 63]);
                 i += 3;
                 if (i3 >= 14) {
                     break;
@@ -61,14 +61,14 @@ public class l2 {
         int i5 = 0 + length;
         if (i == i5 - 2) {
             int i6 = ((bArr[i + 1] & 255) << 8) | ((bArr[i] & 255) << 16);
-            stringBuffer.append(f3872a[(i6 >> 18) & 63]);
-            stringBuffer.append(f3872a[(i6 >> 12) & 63]);
-            stringBuffer.append(f3872a[(i6 >> 6) & 63]);
+            stringBuffer.append(f3824a[(i6 >> 18) & 63]);
+            stringBuffer.append(f3824a[(i6 >> 12) & 63]);
+            stringBuffer.append(f3824a[(i6 >> 6) & 63]);
             stringBuffer.append("=");
         } else if (i == i5 - 1) {
             int i7 = (bArr[i] & 255) << 16;
-            stringBuffer.append(f3872a[(i7 >> 18) & 63]);
-            stringBuffer.append(f3872a[(i7 >> 12) & 63]);
+            stringBuffer.append(f3824a[(i7 >> 18) & 63]);
+            stringBuffer.append(f3824a[(i7 >> 12) & 63]);
             stringBuffer.append("==");
         }
         return stringBuffer.toString();

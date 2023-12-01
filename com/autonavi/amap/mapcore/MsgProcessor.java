@@ -1,7 +1,7 @@
 package com.autonavi.amap.mapcore;
 
 import android.content.Context;
-import com.amap.api.col.p0003sl.jf;
+import com.amap.api.col.3sl.jf;
 
 /* loaded from: source-8756600-dex2jar.jar:com/autonavi/amap/mapcore/MsgProcessor.class */
 public class MsgProcessor {

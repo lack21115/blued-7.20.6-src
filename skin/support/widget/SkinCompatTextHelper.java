@@ -13,20 +13,16 @@ import skin.support.content.res.SkinCompatVectorResources;
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatTextHelper.class */
 public class SkinCompatTextHelper extends SkinCompatHelper {
     private static final String f = SkinCompatTextHelper.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    final TextView f44288a;
+    final TextView a;
     private int g = 0;
     private int h = 0;
     protected int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f44289c = 0;
+    protected int c = 0;
     protected int d = 0;
     protected int e = 0;
 
     public SkinCompatTextHelper(TextView textView) {
-        this.f44288a = textView;
+        this.a = textView;
     }
 
     public static SkinCompatTextHelper a(TextView textView) {
@@ -38,7 +34,7 @@ public class SkinCompatTextHelper extends SkinCompatHelper {
         this.h = b;
         if (b != 0) {
             try {
-                this.f44288a.setHintTextColor(SkinCompatResources.d(this.f44288a.getContext(), this.h));
+                this.a.setHintTextColor(SkinCompatResources.d(this.a.getContext(), this.h));
             } catch (Exception e) {
             }
         }
@@ -49,7 +45,7 @@ public class SkinCompatTextHelper extends SkinCompatHelper {
         this.g = b;
         if (b != 0) {
             try {
-                this.f44288a.setTextColor(SkinCompatResources.d(this.f44288a.getContext(), this.g));
+                this.a.setTextColor(SkinCompatResources.d(this.a.getContext(), this.g));
             } catch (Exception e) {
             }
         }
@@ -60,7 +56,7 @@ public class SkinCompatTextHelper extends SkinCompatHelper {
     }
 
     public void a(int i, int i2, int i3, int i4) {
-        this.f44289c = i;
+        this.c = i;
         this.e = i2;
         this.d = i3;
         this.b = i4;
@@ -81,11 +77,11 @@ public class SkinCompatTextHelper extends SkinCompatHelper {
     }
 
     public void a(AttributeSet attributeSet, int i) {
-        Context context = this.f44288a.getContext();
+        Context context = this.a.getContext();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.SkinCompatTextHelper, i, 0);
         int resourceId = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatTextHelper_android_textAppearance, 0);
         if (obtainStyledAttributes.hasValue(R.styleable.SkinCompatTextHelper_android_drawableLeft)) {
-            this.f44289c = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatTextHelper_android_drawableLeft, 0);
+            this.c = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatTextHelper_android_drawableLeft, 0);
         }
         if (obtainStyledAttributes.hasValue(R.styleable.SkinCompatTextHelper_android_drawableTop)) {
             this.e = obtainStyledAttributes.getResourceId(R.styleable.SkinCompatTextHelper_android_drawableTop, 0);
@@ -119,29 +115,29 @@ public class SkinCompatTextHelper extends SkinCompatHelper {
     }
 
     protected void b() {
-        int b = b(this.f44289c);
-        this.f44289c = b;
+        int b = b(this.c);
+        this.c = b;
         Drawable drawable = null;
-        Drawable a2 = b != 0 ? SkinCompatVectorResources.a(this.f44288a.getContext(), this.f44289c) : null;
+        Drawable a = b != 0 ? SkinCompatVectorResources.a(this.a.getContext(), this.c) : null;
         int b2 = b(this.e);
         this.e = b2;
-        Drawable a3 = b2 != 0 ? SkinCompatVectorResources.a(this.f44288a.getContext(), this.e) : null;
+        Drawable a2 = b2 != 0 ? SkinCompatVectorResources.a(this.a.getContext(), this.e) : null;
         int b3 = b(this.d);
         this.d = b3;
-        Drawable a4 = b3 != 0 ? SkinCompatVectorResources.a(this.f44288a.getContext(), this.d) : null;
+        Drawable a3 = b3 != 0 ? SkinCompatVectorResources.a(this.a.getContext(), this.d) : null;
         int b4 = b(this.b);
         this.b = b4;
         if (b4 != 0) {
-            drawable = SkinCompatVectorResources.a(this.f44288a.getContext(), this.b);
+            drawable = SkinCompatVectorResources.a(this.a.getContext(), this.b);
         }
-        if (this.f44289c == 0 && this.e == 0 && this.d == 0 && this.b == 0) {
+        if (this.c == 0 && this.e == 0 && this.d == 0 && this.b == 0) {
             return;
         }
-        this.f44288a.setCompoundDrawablesWithIntrinsicBounds(a2, a3, a4, drawable);
+        this.a.setCompoundDrawablesWithIntrinsicBounds(a, a2, a3, drawable);
     }
 
     public void b(int i, int i2, int i3, int i4) {
-        this.f44289c = i;
+        this.c = i;
         this.e = i2;
         this.d = i3;
         this.b = i4;

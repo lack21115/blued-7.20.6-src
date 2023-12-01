@@ -11,21 +11,15 @@ import java.util.ListIterator;
 public class MergePathsContent implements GreedyContent, PathContent {
     private final String d;
     private final MergePaths f;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Path f4281a = new Path();
+    private final Path a = new Path();
     private final Path b = new Path();
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Path f4282c = new Path();
+    private final Path c = new Path();
     private final List<PathContent> e = new ArrayList();
 
     /* renamed from: com.airbnb.lottie.animation.content.MergePathsContent$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/content/MergePathsContent$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4283a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
@@ -33,25 +27,25 @@ public class MergePathsContent implements GreedyContent, PathContent {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
             int[] iArr = new int[MergePaths.MergePathsMode.values().length];
-            f4283a = iArr;
+            a = iArr;
             try {
                 iArr[MergePaths.MergePathsMode.MERGE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4283a[MergePaths.MergePathsMode.ADD.ordinal()] = 2;
+                a[MergePaths.MergePathsMode.ADD.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f4283a[MergePaths.MergePathsMode.SUBTRACT.ordinal()] = 3;
+                a[MergePaths.MergePathsMode.SUBTRACT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f4283a[MergePaths.MergePathsMode.INTERSECT.ordinal()] = 4;
+                a[MergePaths.MergePathsMode.INTERSECT.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f4283a[MergePaths.MergePathsMode.EXCLUDE_INTERSECTIONS.ordinal()] = 5;
+                a[MergePaths.MergePathsMode.EXCLUDE_INTERSECTIONS.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -72,14 +66,14 @@ public class MergePathsContent implements GreedyContent, PathContent {
             if (i2 >= this.e.size()) {
                 return;
             }
-            this.f4282c.addPath(this.e.get(i2).e());
+            this.c.addPath(this.e.get(i2).e());
             i = i2 + 1;
         }
     }
 
     private void a(Path.Op op) {
         this.b.reset();
-        this.f4281a.reset();
+        this.a.reset();
         int size = this.e.size();
         while (true) {
             int i = size - 1;
@@ -89,12 +83,12 @@ public class MergePathsContent implements GreedyContent, PathContent {
             PathContent pathContent = this.e.get(i);
             if (pathContent instanceof ContentGroup) {
                 ContentGroup contentGroup = (ContentGroup) pathContent;
-                List<PathContent> c2 = contentGroup.c();
-                int size2 = c2.size();
+                List<PathContent> c = contentGroup.c();
+                int size2 = c.size();
                 while (true) {
                     int i2 = size2 - 1;
                     if (i2 >= 0) {
-                        Path e = c2.get(i2).e();
+                        Path e = c.get(i2).e();
                         e.transform(contentGroup.d());
                         this.b.addPath(e);
                         size2 = i2;
@@ -108,16 +102,16 @@ public class MergePathsContent implements GreedyContent, PathContent {
         PathContent pathContent2 = this.e.get(0);
         if (pathContent2 instanceof ContentGroup) {
             ContentGroup contentGroup2 = (ContentGroup) pathContent2;
-            List<PathContent> c3 = contentGroup2.c();
-            for (int i3 = 0; i3 < c3.size(); i3++) {
-                Path e2 = c3.get(i3).e();
+            List<PathContent> c2 = contentGroup2.c();
+            for (int i3 = 0; i3 < c2.size(); i3++) {
+                Path e2 = c2.get(i3).e();
                 e2.transform(contentGroup2.d());
-                this.f4281a.addPath(e2);
+                this.a.addPath(e2);
             }
         } else {
-            this.f4281a.set(pathContent2.e());
+            this.a.set(pathContent2.e());
         }
-        this.f4282c.op(this.f4281a, this.b, op);
+        this.c.op(this.a, this.b, op);
     }
 
     @Override // com.airbnb.lottie.animation.content.Content
@@ -153,11 +147,11 @@ public class MergePathsContent implements GreedyContent, PathContent {
 
     @Override // com.airbnb.lottie.animation.content.PathContent
     public Path e() {
-        this.f4282c.reset();
+        this.c.reset();
         if (this.f.c()) {
-            return this.f4282c;
+            return this.c;
         }
-        int i = AnonymousClass1.f4283a[this.f.b().ordinal()];
+        int i = AnonymousClass1.a[this.f.b().ordinal()];
         if (i == 1) {
             a();
         } else if (i == 2) {
@@ -169,6 +163,6 @@ public class MergePathsContent implements GreedyContent, PathContent {
         } else if (i == 5) {
             a(Path.Op.XOR);
         }
-        return this.f4282c;
+        return this.c;
     }
 }

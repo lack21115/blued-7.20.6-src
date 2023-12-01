@@ -35,11 +35,11 @@ public class OnSwipe {
     public static final int SPRING_BOUNDARY_OVERSHOOT = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f2211a = 0;
+    private int f2163a = 0;
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2212c = -1;
+    private int f2164c = -1;
     private int d = -1;
     private int e = -1;
     private int f = 0;
@@ -62,7 +62,7 @@ public class OnSwipe {
     }
 
     public int getDragDirection() {
-        return this.f2211a;
+        return this.f2163a;
     }
 
     public float getDragScale() {
@@ -122,7 +122,7 @@ public class OnSwipe {
     }
 
     public int getTouchAnchorId() {
-        return this.f2212c;
+        return this.f2164c;
     }
 
     public int getTouchAnchorSide() {
@@ -138,7 +138,7 @@ public class OnSwipe {
     }
 
     public OnSwipe setDragDirection(int i) {
-        this.f2211a = i;
+        this.f2163a = i;
         return this;
     }
 
@@ -213,7 +213,7 @@ public class OnSwipe {
     }
 
     public OnSwipe setTouchAnchorId(int i) {
-        this.f2212c = i;
+        this.f2164c = i;
         return this;
     }
 

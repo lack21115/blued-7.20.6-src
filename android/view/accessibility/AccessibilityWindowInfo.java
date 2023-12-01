@@ -90,12 +90,12 @@ public final class AccessibilityWindowInfo implements Parcelable {
     }
 
     public static AccessibilityWindowInfo obtain() {
-        AccessibilityWindowInfo acquire = sPool.acquire();
-        AccessibilityWindowInfo accessibilityWindowInfo = acquire;
-        if (acquire == null) {
-            accessibilityWindowInfo = new AccessibilityWindowInfo();
+        AccessibilityWindowInfo accessibilityWindowInfo = (AccessibilityWindowInfo) sPool.acquire();
+        AccessibilityWindowInfo accessibilityWindowInfo2 = accessibilityWindowInfo;
+        if (accessibilityWindowInfo == null) {
+            accessibilityWindowInfo2 = new AccessibilityWindowInfo();
         }
-        return accessibilityWindowInfo;
+        return accessibilityWindowInfo2;
     }
 
     public static AccessibilityWindowInfo obtain(AccessibilityWindowInfo accessibilityWindowInfo) {
@@ -108,7 +108,7 @@ public final class AccessibilityWindowInfo implements Parcelable {
         obtain.mBoundsInScreen.set(accessibilityWindowInfo.mBoundsInScreen);
         if (accessibilityWindowInfo.mChildIds != null && accessibilityWindowInfo.mChildIds.size() > 0) {
             if (obtain.mChildIds == null) {
-                obtain.mChildIds = accessibilityWindowInfo.mChildIds.m1020clone();
+                obtain.mChildIds = accessibilityWindowInfo.mChildIds.clone();
             } else {
                 obtain.mChildIds.addAll(accessibilityWindowInfo.mChildIds);
             }

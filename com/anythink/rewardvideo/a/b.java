@@ -11,7 +11,6 @@ public final class b extends h {
         super(context);
     }
 
-    @Override // com.anythink.core.common.h
     public final void a(ATBaseAdAdapter aTBaseAdAdapter) {
     }
 }

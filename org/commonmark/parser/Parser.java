@@ -15,24 +15,16 @@ import org.commonmark.parser.delimiter.DelimiterProcessor;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/parser/Parser.class */
 public class Parser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<BlockParserFactory> f44069a;
+    private final List<BlockParserFactory> a;
     private final List<DelimiterProcessor> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final InlineParserFactory f44070c;
+    private final InlineParserFactory c;
     private final List<PostProcessor> d;
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/parser/Parser$Builder.class */
     public static class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final List<BlockParserFactory> f44071a = new ArrayList();
+        private final List<BlockParserFactory> a = new ArrayList();
         private final List<DelimiterProcessor> b = new ArrayList();
-
-        /* renamed from: c  reason: collision with root package name */
-        private final List<PostProcessor> f44072c = new ArrayList();
+        private final List<PostProcessor> c = new ArrayList();
         private Set<Class<? extends Block>> d = DocumentParser.a();
         private InlineParserFactory e;
 
@@ -78,16 +70,16 @@ public class Parser {
     }
 
     private Parser(Builder builder) {
-        this.f44069a = DocumentParser.a(builder.f44071a, builder.d);
-        this.f44070c = builder.b();
-        this.d = builder.f44072c;
+        this.a = DocumentParser.a(builder.a, builder.d);
+        this.c = builder.b();
+        this.d = builder.c;
         List<DelimiterProcessor> list = builder.b;
         this.b = list;
-        this.f44070c.create(new InlineParserContextImpl(list, Collections.emptyMap()));
+        this.c.create(new InlineParserContextImpl(list, Collections.emptyMap()));
     }
 
     private DocumentParser a() {
-        return new DocumentParser(this.f44069a, this.f44070c, this.b);
+        return new DocumentParser(this.a, this.c, this.b);
     }
 
     private Node a(Node node) {

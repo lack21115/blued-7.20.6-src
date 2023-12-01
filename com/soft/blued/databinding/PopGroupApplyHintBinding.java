@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopGroupApplyHintBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29521a;
+    private final ConstraintLayout f15831a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29521a;
+        return this.f15831a;
     }
 }

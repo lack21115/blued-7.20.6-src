@@ -79,7 +79,6 @@ public class StandaloneActionMode extends ActionMode implements MenuBuilder.Call
         return this.mContextView.isTitleOptional();
     }
 
-    @Override // android.view.ActionMode
     public boolean isUiFocusable() {
         return this.mFocusable;
     }

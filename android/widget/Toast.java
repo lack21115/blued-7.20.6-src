@@ -30,8 +30,9 @@ public class Toast {
     View mNextView;
     final TN mTN = new TN();
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:android/widget/Toast$TN.class */
-    private static class TN extends ITransientNotification.Stub {
+    public static class TN extends ITransientNotification.Stub {
         int mGravity;
         float mHorizontalMargin;
         View mNextView;
@@ -61,7 +62,7 @@ public class Toast {
             layoutParams.height = -2;
             layoutParams.width = -2;
             layoutParams.format = -3;
-            layoutParams.windowAnimations = 16973828;
+            layoutParams.windowAnimations = R.style.Animation_Toast;
             layoutParams.type = 2005;
             layoutParams.setTitle(Toast.TAG);
             layoutParams.flags = 152;
@@ -97,7 +98,7 @@ public class Toast {
                 if (applicationContext == null) {
                     context = this.mView.getContext();
                 }
-                ImageView imageView = (ImageView) this.mView.findViewById(16908294);
+                ImageView imageView = (ImageView) this.mView.findViewById(R.id.icon);
                 if (imageView != null) {
                     Drawable drawable = null;
                     try {
@@ -106,7 +107,7 @@ public class Toast {
                     }
                     imageView.setImageDrawable(drawable);
                 }
-                this.mWM = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+                this.mWM = (WindowManager) context.getSystemService("window");
                 int absoluteGravity = Gravity.getAbsoluteGravity(this.mGravity, this.mView.getContext().getResources().getConfiguration().getLayoutDirection());
                 this.mParams.gravity = absoluteGravity;
                 if ((absoluteGravity & 7) == 7) {
@@ -128,12 +129,10 @@ public class Toast {
             }
         }
 
-        @Override // android.app.ITransientNotification
         public void hide() {
             this.mHandler.post(this.mHide);
         }
 
-        @Override // android.app.ITransientNotification
         public void show() {
             this.mHandler.post(this.mShow);
         }
@@ -159,8 +158,8 @@ public class Toast {
 
     public static Toast makeText(Context context, CharSequence charSequence, int i) {
         Toast toast = new Toast(context);
-        View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.transient_notification, (ViewGroup) null);
-        ((TextView) inflate.findViewById(16908299)).setText(charSequence);
+        View inflate = ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(R.layout.transient_notification, (ViewGroup) null);
+        ((TextView) inflate.findViewById(R.id.message)).setText(charSequence);
         toast.mNextView = inflate;
         toast.mDuration = i;
         return toast;
@@ -229,7 +228,7 @@ public class Toast {
         if (this.mNextView == null) {
             throw new RuntimeException("This Toast was not created with Toast.makeText()");
         }
-        TextView textView = (TextView) this.mNextView.findViewById(16908299);
+        TextView textView = (TextView) this.mNextView.findViewById(R.id.message);
         if (textView == null) {
             throw new RuntimeException("This Toast was not created with Toast.makeText()");
         }

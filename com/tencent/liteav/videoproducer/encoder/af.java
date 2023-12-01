@@ -8,10 +8,10 @@ import com.tencent.liteav.base.util.r;
 final /* synthetic */ class af implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final x f36975a;
+    private final x f23284a;
 
     private af(x xVar) {
-        this.f36975a = xVar;
+        this.f23284a = xVar;
     }
 
     public static Runnable a(x xVar) {
@@ -20,29 +20,29 @@ final /* synthetic */ class af implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        final x xVar = this.f36975a;
-        LiteavLog.i(xVar.f37043a, "signalEndOfStream");
+        final x xVar = this.f23284a;
+        LiteavLog.i(xVar.f23352a, "signalEndOfStream");
         if (xVar.d != null) {
             try {
                 xVar.d.signalEndOfInputStream();
             } catch (Throwable th) {
-                LiteavLog.e(xVar.f37043a, "signalEndOfStream failed.", th);
+                LiteavLog.e(xVar.f23352a, "signalEndOfStream failed.", th);
             }
         }
         if (xVar.h == null) {
             xVar.h = new com.tencent.liteav.base.util.r(Looper.myLooper(), new r.a(xVar) { // from class: com.tencent.liteav.videoproducer.encoder.z
 
                 /* renamed from: a  reason: collision with root package name */
-                private final x f37046a;
+                private final x f23355a;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
-                    this.f37046a = xVar;
+                    this.f23355a = xVar;
                 }
 
                 @Override // com.tencent.liteav.base.util.r.a
                 public final void a_() {
-                    this.f37046a.c();
+                    this.f23355a.c();
                 }
             });
             xVar.h.a(0, 30);

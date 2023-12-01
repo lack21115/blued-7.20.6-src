@@ -91,8 +91,8 @@ public class StatusBarNotification implements Parcelable {
     }
 
     /* renamed from: clone */
-    public StatusBarNotification m868clone() {
-        return new StatusBarNotification(this.pkg, this.opPkg, this.id, this.tag, this.uid, this.initialPid, this.score, this.notification.m116clone(), this.user, this.postTime);
+    public StatusBarNotification m865clone() {
+        return new StatusBarNotification(this.pkg, this.opPkg, this.id, this.tag, this.uid, this.initialPid, this.score, this.notification.m115clone(), this.user, this.postTime);
     }
 
     public StatusBarNotification cloneLight() {

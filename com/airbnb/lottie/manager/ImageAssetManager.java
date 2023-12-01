@@ -17,22 +17,18 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/manager/ImageAssetManager.class */
 public class ImageAssetManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Object f4311a = new Object();
+    private static final Object a = new Object();
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f4312c;
+    private String c;
     private ImageAssetDelegate d;
     private final Map<String, LottieImageAsset> e;
 
     public ImageAssetManager(Drawable.Callback callback, String str, ImageAssetDelegate imageAssetDelegate, Map<String, LottieImageAsset> map) {
-        this.f4312c = str;
+        this.c = str;
         if (!TextUtils.isEmpty(str)) {
-            String str2 = this.f4312c;
+            String str2 = this.c;
             if (str2.charAt(str2.length() - 1) != '/') {
-                this.f4312c += '/';
+                this.c += '/';
             }
         }
         if (callback instanceof View) {
@@ -47,7 +43,7 @@ public class ImageAssetManager {
     }
 
     private Bitmap a(String str, Bitmap bitmap) {
-        synchronized (f4311a) {
+        synchronized (a) {
             this.e.get(str).a(bitmap);
         }
         return bitmap;
@@ -58,9 +54,9 @@ public class ImageAssetManager {
         if (lottieImageAsset == null) {
             return null;
         }
-        Bitmap c2 = lottieImageAsset.c();
-        if (c2 != null) {
-            return c2;
+        Bitmap c = lottieImageAsset.c();
+        if (c != null) {
+            return c;
         }
         ImageAssetDelegate imageAssetDelegate = this.d;
         if (imageAssetDelegate != null) {
@@ -84,11 +80,11 @@ public class ImageAssetManager {
             }
         }
         try {
-            if (TextUtils.isEmpty(this.f4312c)) {
+            if (TextUtils.isEmpty(this.c)) {
                 throw new IllegalStateException("You must set an images folder before loading an image. Set it with LottieComposition#setImagesFolder or LottieDrawable#setImagesFolder");
             }
             AssetManager assets = this.b.getAssets();
-            return a(str, BitmapFactory.decodeStream(assets.open(this.f4312c + b), null, options));
+            return a(str, BitmapFactory.decodeStream(assets.open(this.c + b), null, options));
         } catch (IOException e2) {
             Logger.a("Unable to open asset.", e2);
             return null;

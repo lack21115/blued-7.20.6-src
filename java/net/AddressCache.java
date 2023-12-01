@@ -1,6 +1,5 @@
 package java.net;
 
-import com.blued.das.live.LiveProtos;
 import libcore.util.BasicLruCache;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -44,7 +43,7 @@ public class AddressCache {
         }
 
         public int hashCode() {
-            return ((this.mNetId + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.mHostname.hashCode();
+            return ((this.mNetId + 527) * 31) + this.mHostname.hashCode();
         }
     }
 

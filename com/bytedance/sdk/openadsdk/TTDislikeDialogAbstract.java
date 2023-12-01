@@ -55,9 +55,8 @@ public abstract class TTDislikeDialogAbstract extends Dialog {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Dialog
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         try {
             View inflate = LayoutInflater.from(getContext()).inflate(getLayoutId(), (ViewGroup) null);

@@ -8,11 +8,11 @@ import java.io.OutputStream;
 public final class BufferedOutputStream extends OutputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private final OutputStream f20713a;
+    private final OutputStream f7107a;
     private byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayPool f20714c;
+    private ArrayPool f7108c;
     private int d;
 
     public BufferedOutputStream(OutputStream outputStream, ArrayPool arrayPool) {
@@ -20,15 +20,15 @@ public final class BufferedOutputStream extends OutputStream {
     }
 
     BufferedOutputStream(OutputStream outputStream, ArrayPool arrayPool, int i) {
-        this.f20713a = outputStream;
-        this.f20714c = arrayPool;
+        this.f7107a = outputStream;
+        this.f7108c = arrayPool;
         this.b = (byte[]) arrayPool.a(i, byte[].class);
     }
 
     private void a() throws IOException {
         int i = this.d;
         if (i > 0) {
-            this.f20713a.write(this.b, 0, i);
+            this.f7107a.write(this.b, 0, i);
             this.d = 0;
         }
     }
@@ -42,7 +42,7 @@ public final class BufferedOutputStream extends OutputStream {
     private void c() {
         byte[] bArr = this.b;
         if (bArr != null) {
-            this.f20714c.a((ArrayPool) bArr);
+            this.f7108c.a((ArrayPool) bArr);
             this.b = null;
         }
     }
@@ -51,10 +51,10 @@ public final class BufferedOutputStream extends OutputStream {
     public void close() throws IOException {
         try {
             flush();
-            this.f20713a.close();
+            this.f7107a.close();
             c();
         } catch (Throwable th) {
-            this.f20713a.close();
+            this.f7107a.close();
             throw th;
         }
     }
@@ -62,7 +62,7 @@ public final class BufferedOutputStream extends OutputStream {
     @Override // java.io.OutputStream, java.io.Flushable
     public void flush() throws IOException {
         a();
-        this.f20713a.flush();
+        this.f7107a.flush();
     }
 
     @Override // java.io.OutputStream
@@ -87,11 +87,11 @@ public final class BufferedOutputStream extends OutputStream {
             int i5 = i2 - i4;
             int i6 = i + i4;
             if (this.d == 0 && i5 >= this.b.length) {
-                this.f20713a.write(bArr, i6, i5);
+                this.f7107a.write(bArr, i6, i5);
                 return;
             }
             int min = Math.min(i5, this.b.length - this.d);
-            System.arraycopy((Object) bArr, i6, (Object) this.b, this.d, min);
+            System.arraycopy(bArr, i6, this.b, this.d, min);
             this.d += min;
             i3 = i4 + min;
             b();

@@ -10,7 +10,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.provider.Settings;
 import android.util.Log;
-import com.android.internal.R;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -84,11 +83,11 @@ public class UserManager {
         if (Build.ID.startsWith("JVP") || ActivityManager.isLowRamDeviceStatic()) {
             return 1;
         }
-        return SystemProperties.getInt("fw.max_users", Resources.getSystem().getInteger(R.integer.config_multiuserMaximumUsers));
+        return SystemProperties.getInt("fw.max_users", Resources.getSystem().getInteger(17694848));
     }
 
     public static boolean supportsMultipleUsers() {
-        return getMaxSupportedUsers() > 1 && SystemProperties.getBoolean("fw.show_multiuserui", Resources.getSystem().getBoolean(R.bool.config_enableMultiUserUI));
+        return getMaxSupportedUsers() > 1 && SystemProperties.getBoolean("fw.show_multiuserui", Resources.getSystem().getBoolean(17956986));
     }
 
     public boolean canAddMoreUsers() {

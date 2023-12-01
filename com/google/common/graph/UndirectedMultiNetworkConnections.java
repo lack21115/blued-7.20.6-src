@@ -48,7 +48,7 @@ final class UndirectedMultiNetworkConnections<N, E> extends AbstractUndirectedNe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <N, E> UndirectedMultiNetworkConnections<N, E> ofImmutable(Map<E, N> map) {
-        return new UndirectedMultiNetworkConnections<>(ImmutableMap.copyOf(map));
+        return new UndirectedMultiNetworkConnections<>(ImmutableMap.copyOf((Map) map));
     }
 
     @Override // com.google.common.graph.AbstractUndirectedNetworkConnections, com.google.common.graph.NetworkConnections
@@ -76,7 +76,7 @@ final class UndirectedMultiNetworkConnections<N, E> extends AbstractUndirectedNe
     @Override // com.google.common.graph.NetworkConnections
     public Set<E> edgesConnecting(final N n) {
         return new MultiEdgesConnecting<E>(this.incidentEdgeMap, n) { // from class: com.google.common.graph.UndirectedMultiNetworkConnections.1
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return UndirectedMultiNetworkConnections.this.adjacentNodesMultiset().count(n);
             }

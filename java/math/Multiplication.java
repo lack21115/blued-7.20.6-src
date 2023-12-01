@@ -1,13 +1,12 @@
 package java.math;
 
-import com.blued.das.live.LiveProtos;
-import com.huawei.hms.framework.common.ExceptionCode;
+import com.anythink.core.common.b.g;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:java/math/Multiplication.class */
 public class Multiplication {
-    static final int[] tenPows = {1, 10, 100, 1000, 10000, 100000, 1000000, ExceptionCode.CRASH_EXCEPTION, 100000000, 1000000000};
-    static final int[] fivePows = {1, 5, 25, 125, LiveProtos.Event.LIVE_BATTLE_PASS_NOTICE_BASIC_SHOW_VALUE, 3125, 15625, 78125, 390625, 1953125, 9765625, 48828125, 244140625, 1220703125};
+    static final int[] tenPows = {1, 10, 100, 1000, 10000, g.j.p, 1000000, 10000000, 100000000, 1000000000};
+    static final int[] fivePows = {1, 5, 25, 125, 625, 3125, 15625, 78125, 390625, 1953125, 9765625, 48828125, 244140625, 1220703125};
     static final BigInteger[] bigTenPows = new BigInteger[32];
     static final BigInteger[] bigFivePows = new BigInteger[32];
 

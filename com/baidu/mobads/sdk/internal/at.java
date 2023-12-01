@@ -11,11 +11,11 @@ import java.util.regex.Pattern;
 public class at extends av.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9319a = "local";
+    public static final String f6479a = "local";
     private static final int b = 4000;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f9320c = 23;
+    private static final int f6480c = 23;
     private static final int d = 5;
     private static final Pattern e = Pattern.compile("(\\$\\d+)+$");
     private static final char f = 9556;
@@ -38,7 +38,7 @@ public class at extends av.a {
 
     @Override // com.baidu.mobads.sdk.internal.av.a
     String a() {
-        return "local";
+        return f6479a;
     }
 
     protected String a(StackTraceElement stackTraceElement) {

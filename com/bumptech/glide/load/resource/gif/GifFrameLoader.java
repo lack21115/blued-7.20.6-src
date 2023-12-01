@@ -29,11 +29,11 @@ import java.util.List;
 public class GifFrameLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    final RequestManager f20994a;
+    final RequestManager f7388a;
     private final GifDecoder b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Handler f20995c;
+    private final Handler f7389c;
     private final List<FrameCallback> d;
     private final BitmapPool e;
     private boolean f;
@@ -56,17 +56,17 @@ public class GifFrameLoader {
     public static class DelayTarget extends CustomTarget<Bitmap> {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f20996a;
+        final int f7390a;
         private final Handler b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final long f20997c;
+        private final long f7391c;
         private Bitmap d;
 
         DelayTarget(Handler handler, int i, long j) {
             this.b = handler;
-            this.f20996a = i;
-            this.f20997c = j;
+            this.f7390a = i;
+            this.f7391c = j;
         }
 
         Bitmap a() {
@@ -77,7 +77,7 @@ public class GifFrameLoader {
         /* renamed from: a */
         public void onResourceReady(Bitmap bitmap, Transition<? super Bitmap> transition) {
             this.d = bitmap;
-            this.b.sendMessageAtTime(this.b.obtainMessage(1, this), this.f20997c);
+            this.b.sendMessageAtTime(this.b.obtainMessage(1, this), this.f7391c);
         }
 
         @Override // com.bumptech.glide.request.target.Target
@@ -102,7 +102,7 @@ public class GifFrameLoader {
                 GifFrameLoader.this.a((DelayTarget) message.obj);
                 return true;
             } else if (message.what == 2) {
-                GifFrameLoader.this.f20994a.a((DelayTarget) message.obj);
+                GifFrameLoader.this.f7388a.a((DelayTarget) message.obj);
                 return false;
             } else {
                 return false;
@@ -123,10 +123,10 @@ public class GifFrameLoader {
 
     GifFrameLoader(BitmapPool bitmapPool, RequestManager requestManager, GifDecoder gifDecoder, Handler handler, RequestBuilder<Bitmap> requestBuilder, Transformation<Bitmap> transformation, Bitmap bitmap) {
         this.d = new ArrayList();
-        this.f20994a = requestManager;
+        this.f7388a = requestManager;
         Handler handler2 = handler == null ? new Handler(Looper.getMainLooper(), new FrameLoaderCallback()) : handler;
         this.e = bitmapPool;
-        this.f20995c = handler2;
+        this.f7389c = handler2;
         this.i = requestBuilder;
         this.b = gifDecoder;
         a(transformation, bitmap);
@@ -167,7 +167,7 @@ public class GifFrameLoader {
         this.g = true;
         int c2 = this.b.c();
         this.b.b();
-        this.l = new DelayTarget(this.f20995c, this.b.e(), SystemClock.uptimeMillis() + c2);
+        this.l = new DelayTarget(this.f7389c, this.b.e(), SystemClock.uptimeMillis() + c2);
         this.i.b(RequestOptions.c(o())).b(this.b).a((RequestBuilder<Bitmap>) this.l);
     }
 
@@ -205,7 +205,7 @@ public class GifFrameLoader {
         }
         this.g = false;
         if (this.k) {
-            this.f20995c.obtainMessage(2, delayTarget).sendToTarget();
+            this.f7389c.obtainMessage(2, delayTarget).sendToTarget();
         } else if (!this.f) {
             this.o = delayTarget;
         } else {
@@ -223,7 +223,7 @@ public class GifFrameLoader {
                     size = i;
                 }
                 if (delayTarget2 != null) {
-                    this.f20995c.obtainMessage(2, delayTarget2).sendToTarget();
+                    this.f7389c.obtainMessage(2, delayTarget2).sendToTarget();
                 }
             }
             m();
@@ -272,7 +272,7 @@ public class GifFrameLoader {
     public int e() {
         DelayTarget delayTarget = this.j;
         if (delayTarget != null) {
-            return delayTarget.f20996a;
+            return delayTarget.f7390a;
         }
         return -1;
     }
@@ -299,17 +299,17 @@ public class GifFrameLoader {
         l();
         DelayTarget delayTarget = this.j;
         if (delayTarget != null) {
-            this.f20994a.a(delayTarget);
+            this.f7388a.a(delayTarget);
             this.j = null;
         }
         DelayTarget delayTarget2 = this.l;
         if (delayTarget2 != null) {
-            this.f20994a.a(delayTarget2);
+            this.f7388a.a(delayTarget2);
             this.l = null;
         }
         DelayTarget delayTarget3 = this.o;
         if (delayTarget3 != null) {
-            this.f20994a.a(delayTarget3);
+            this.f7388a.a(delayTarget3);
             this.o = null;
         }
         this.b.j();

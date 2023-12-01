@@ -58,9 +58,9 @@ public class UGCCombineFrameFilter {
         int i = 0;
         while (i < list.size()) {
             setAlphaBlendFilterParameter(list.get(i));
-            GLES20.glViewport(0, 0, this.mCanvasSize.f36340a, this.mCanvasSize.b);
+            GLES20.glViewport(0, 0, this.mCanvasSize.f22649a, this.mCanvasSize.b);
             com.tencent.liteav.base.util.n outputSize = this.mAlphaBlendFilter.getOutputSize();
-            com.tencent.liteav.videobase.frame.d a2 = this.mTexturePool.a(outputSize.f36340a, outputSize.b);
+            com.tencent.liteav.videobase.frame.d a2 = this.mTexturePool.a(outputSize.f22649a, outputSize.b);
             this.mAlphaBlendFilter.onDraw(backgroundTextureId, a2, this.mNormalCubeVerticesBuffer, this.mNormalTextureCoordsBuffer);
             if (dVar != null) {
                 dVar.release();
@@ -76,8 +76,8 @@ public class UGCCombineFrameFilter {
         com.tencent.liteav.videobase.a.b bVar;
         if (dVar != null && (bVar = this.mCropFilter) != null) {
             com.tencent.liteav.base.util.n outputSize = bVar.getOutputSize();
-            com.tencent.liteav.videobase.frame.d a2 = this.mTexturePool.a(outputSize.f36340a, outputSize.b);
-            GLES20.glViewport(0, 0, outputSize.f36340a, outputSize.b);
+            com.tencent.liteav.videobase.frame.d a2 = this.mTexturePool.a(outputSize.f22649a, outputSize.b);
+            GLES20.glViewport(0, 0, outputSize.f22649a, outputSize.b);
             this.mCropFilter.onDraw(dVar.a(), a2, this.mNormalCubeVerticesBuffer, this.mCropRectTextureCoordsBuffer);
             dVar.release();
             return a2;
@@ -87,7 +87,7 @@ public class UGCCombineFrameFilter {
 
     private int getBackgroundTextureId() {
         if (this.mBackgroundTexture == null) {
-            com.tencent.liteav.videobase.frame.d a2 = this.mTexturePool.a(this.mCanvasSize.f36340a, this.mCanvasSize.b);
+            com.tencent.liteav.videobase.frame.d a2 = this.mTexturePool.a(this.mCanvasSize.f22649a, this.mCanvasSize.b);
             this.mBackgroundTexture = a2;
             clearTexture(a2);
         }
@@ -143,7 +143,7 @@ public class UGCCombineFrameFilter {
             uGCWatermarkAlphaTextureFilter.initialize(this.mTexturePool);
         }
         this.mAlphaBlendFilter.enableWatermark(true);
-        this.mAlphaBlendFilter.onOutputSizeChanged(this.mCanvasSize.f36340a, this.mCanvasSize.b);
+        this.mAlphaBlendFilter.onOutputSizeChanged(this.mCanvasSize.f22649a, this.mCanvasSize.b);
         if (this.mCropRect != null) {
             if (this.mCropFilter == null) {
                 com.tencent.liteav.videobase.a.b bVar = new com.tencent.liteav.videobase.a.b();
@@ -193,7 +193,7 @@ public class UGCCombineFrameFilter {
             this.mAlphaBlendFilter.setAlpha(1.0f);
             this.mAlphaBlendFilter.setShowBackImageMoment(false);
         }
-        this.mAlphaBlendFilter.setTextureWatermark(tXCCombineFrame.drawInputFrame.getTextureId(), tXCCombineFrame.drawRect.width, tXCCombineFrame.drawRect.height, (tXCCombineFrame.drawRect.x * 1.0f) / this.mCanvasSize.f36340a, (tXCCombineFrame.drawRect.y * 1.0f) / this.mCanvasSize.b, (tXCCombineFrame.drawRect.width * 1.0f) / this.mCanvasSize.f36340a);
+        this.mAlphaBlendFilter.setTextureWatermark(tXCCombineFrame.drawInputFrame.getTextureId(), tXCCombineFrame.drawRect.width, tXCCombineFrame.drawRect.height, (tXCCombineFrame.drawRect.x * 1.0f) / this.mCanvasSize.f22649a, (tXCCombineFrame.drawRect.y * 1.0f) / this.mCanvasSize.b, (tXCCombineFrame.drawRect.width * 1.0f) / this.mCanvasSize.f22649a);
     }
 
     private void unInitFilter() {
@@ -240,12 +240,12 @@ public class UGCCombineFrameFilter {
 
     public void setCanvasSize(int i, int i2) {
         com.tencent.liteav.base.util.n nVar = this.mCanvasSize;
-        if (nVar != null && i == nVar.f36340a && i2 == this.mCanvasSize.b) {
+        if (nVar != null && i == nVar.f22649a && i2 == this.mCanvasSize.b) {
             return;
         }
         com.tencent.liteav.base.util.n nVar2 = new com.tencent.liteav.base.util.n(i, i2);
         this.mCanvasSize = nVar2;
-        this.mCropRectTextureCoordsBuffer = getCropRectTextureCoords(nVar2.f36340a, this.mCanvasSize.b, this.mCropRect);
+        this.mCropRectTextureCoordsBuffer = getCropRectTextureCoords(nVar2.f22649a, this.mCanvasSize.b, this.mCropRect);
     }
 
     public void setCropRect(TXVideoEditConstants.TXAbsoluteRect tXAbsoluteRect) {
@@ -254,6 +254,6 @@ public class UGCCombineFrameFilter {
             return;
         }
         this.mCropRect = tXAbsoluteRect;
-        this.mCropRectTextureCoordsBuffer = getCropRectTextureCoords(this.mCanvasSize.f36340a, this.mCanvasSize.b, this.mCropRect);
+        this.mCropRectTextureCoordsBuffer = getCropRectTextureCoords(this.mCanvasSize.f22649a, this.mCanvasSize.b, this.mCropRect);
     }
 }

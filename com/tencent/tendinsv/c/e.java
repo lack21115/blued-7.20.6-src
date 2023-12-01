@@ -29,11 +29,11 @@ import java.util.concurrent.TimeUnit;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile e f39017a;
+    private static volatile e f25326a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ExecutorService f39018c;
+    private ExecutorService f25327c;
     private ExecutorService d;
     private volatile ArrayList<InitListener> e = new ArrayList<>();
     private volatile ArrayList<GetPhoneInfoListener> f = new ArrayList<>();
@@ -46,18 +46,18 @@ public class e {
     }
 
     public static e a() {
-        if (f39017a == null) {
+        if (f25326a == null) {
             synchronized (e.class) {
                 try {
-                    if (f39017a == null) {
-                        f39017a = new e();
+                    if (f25326a == null) {
+                        f25326a = new e();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39017a;
+        return f25326a;
     }
 
     private void b(final Context context) {
@@ -109,14 +109,14 @@ public class e {
         try {
             if (com.tencent.tendinsv.utils.e.a(1, context)) {
                 this.b = context;
-                com.tencent.tendinsv.b.f38998ar = i;
+                com.tencent.tendinsv.b.f25307ar = i;
                 this.e.add(initListener);
                 l.a(com.tencent.tendinsv.b.H, "initialization_VERSION=", com.tencent.tendinsv.b.ao, "__appId=", str, "__packageSign=", h.b(context), "__packageName=", h.a(context));
-                if (this.f39018c == null || this.f39018c.isShutdown()) {
-                    this.f39018c = new ThreadPoolExecutor(1, Integer.MAX_VALUE, 120L, TimeUnit.SECONDS, new LinkedBlockingDeque());
+                if (this.f25327c == null || this.f25327c.isShutdown()) {
+                    this.f25327c = new ThreadPoolExecutor(1, Integer.MAX_VALUE, 120L, TimeUnit.SECONDS, new LinkedBlockingDeque());
                 }
                 b(context);
-                j.a().a(context, str, this.f39018c);
+                j.a().a(context, str, this.f25327c);
                 j.a().b();
             }
         } catch (Exception e) {

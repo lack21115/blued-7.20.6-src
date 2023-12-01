@@ -802,12 +802,12 @@ public class ConcurrentLinkedDeque<E> extends AbstractCollection<E> implements D
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return offerLast(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         Node<E> node;
         if (collection == this) {
@@ -878,13 +878,13 @@ public class ConcurrentLinkedDeque<E> extends AbstractCollection<E> implements D
         linkLast(e);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         do {
         } while (pollFirst() != null);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
@@ -950,7 +950,7 @@ public class ConcurrentLinkedDeque<E> extends AbstractCollection<E> implements D
         return screenNullResult(peekLast());
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return peekFirst() == null;
     }
@@ -1112,7 +1112,7 @@ public class ConcurrentLinkedDeque<E> extends AbstractCollection<E> implements D
         return removeFirst();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return removeFirstOccurrence(obj);
     }
@@ -1163,7 +1163,7 @@ public class ConcurrentLinkedDeque<E> extends AbstractCollection<E> implements D
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         int i;
         int i2 = 0;
@@ -1197,12 +1197,12 @@ public class ConcurrentLinkedDeque<E> extends AbstractCollection<E> implements D
         return node3;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         return toArrayList().toArray();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         return (T[]) toArrayList().toArray(tArr);
     }

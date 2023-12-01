@@ -2,7 +2,7 @@ package com.autonavi.base.amap.api.mapcore.infowindow;
 
 import android.os.RemoteException;
 import android.view.MotionEvent;
-import com.amap.api.col.p0003sl.au;
+import com.amap.api.col.3sl.au;
 import com.amap.api.maps.model.BasePointOverlay;
 import com.autonavi.base.amap.api.mapcore.BaseOverlayImp;
 

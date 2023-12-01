@@ -8,10 +8,10 @@ import java.util.List;
 public class DependencyNode implements Dependency {
 
     /* renamed from: a  reason: collision with root package name */
-    WidgetRun f2135a;
+    WidgetRun f2087a;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2136c;
+    int f2088c;
     public int value;
     public Dependency updateDelegate = null;
     public boolean delegateToWidgetRun = false;
@@ -36,7 +36,7 @@ public class DependencyNode implements Dependency {
     }
 
     public DependencyNode(WidgetRun widgetRun) {
-        this.f2135a = widgetRun;
+        this.f2087a = widgetRun;
     }
 
     public void addDependency(Dependency dependency) {
@@ -57,7 +57,7 @@ public class DependencyNode implements Dependency {
 
     public String name() {
         String str;
-        String debugName = this.f2135a.b.getDebugName();
+        String debugName = this.f2087a.b.getDebugName();
         if (this.b == Type.LEFT || this.b == Type.RIGHT) {
             str = debugName + "_HORIZONTAL";
         } else {
@@ -79,7 +79,7 @@ public class DependencyNode implements Dependency {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f2135a.b.getDebugName());
+        sb.append(this.f2087a.b.getDebugName());
         sb.append(":");
         sb.append(this.b);
         sb.append("(");
@@ -105,7 +105,7 @@ public class DependencyNode implements Dependency {
             dependency2.update(this);
         }
         if (this.delegateToWidgetRun) {
-            this.f2135a.update(this);
+            this.f2087a.update(this);
             return;
         }
         DependencyNode dependencyNode2 = null;
@@ -122,9 +122,9 @@ public class DependencyNode implements Dependency {
                 if (!dimensionDependency.resolved) {
                     return;
                 }
-                this.f2136c = this.d * this.e.value;
+                this.f2088c = this.d * this.e.value;
             }
-            resolve(dependencyNode2.value + this.f2136c);
+            resolve(dependencyNode2.value + this.f2088c);
         }
         Dependency dependency3 = this.updateDelegate;
         if (dependency3 != null) {

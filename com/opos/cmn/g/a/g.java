@@ -6,7 +6,7 @@ import android.content.Context;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f24960a = false;
+    private static volatile boolean f11272a = false;
     private static volatile com.opos.cmn.g.a.a b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -153,10 +153,10 @@ public class g {
     }
 
     private static void f(Context context) {
-        if (f24960a) {
+        if (f11272a) {
             return;
         }
         a().e(context);
-        f24960a = true;
+        f11272a = true;
     }
 }

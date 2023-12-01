@@ -53,12 +53,12 @@ public final class AppMonitorDelegate {
                     }
                     i.a(AppMonitorDelegate.TAG, "commitFail module:", str, " monitorPoint:", str2, " errorCode:", str4, "errorMsg:", str5);
                     com.alibaba.mtl.log.b.a.C();
-                    e.a().a(f.ALARM.m2139a(), str, str2, str3, str4, str5);
+                    e.a().a(f.ALARM.m8582a(), str, str2, str3, str4, str5);
                     return;
                 }
                 i.a(AppMonitorDelegate.TAG, "module & monitorPoint must not null");
             } catch (Throwable th) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                com.alibaba.mtl.appmonitor.b.b.m8587a(th);
             }
         }
 
@@ -76,12 +76,12 @@ public final class AppMonitorDelegate {
                     }
                     i.a(AppMonitorDelegate.TAG, "commitSuccess module:", str, " monitorPoint:", str2);
                     com.alibaba.mtl.log.b.a.C();
-                    e.a().a(f.ALARM.m2139a(), str, str2, str3);
+                    e.a().a(f.ALARM.m8582a(), str, str2, str3);
                     return;
                 }
                 i.a(AppMonitorDelegate.TAG, "module & monitorPoint must not null");
             } catch (Throwable th) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                com.alibaba.mtl.appmonitor.b.b.m8587a(th);
             }
         }
 
@@ -114,7 +114,7 @@ public final class AppMonitorDelegate {
                         if (AppMonitorDelegate.IS_DEBUG || j.a(f.COUNTER, str, str2)) {
                             i.a(AppMonitorDelegate.TAG, "commitCount module: ", str, " monitorPoint: ", str2, " value: ", Double.valueOf(d));
                             com.alibaba.mtl.log.b.a.A();
-                            e.a().a(f.COUNTER.m2139a(), str, str2, str3, d);
+                            e.a().a(f.COUNTER.m8582a(), str, str2, str3, d);
                             return;
                         }
                         return;
@@ -123,7 +123,7 @@ public final class AppMonitorDelegate {
                 }
                 i.a(AppMonitorDelegate.TAG, "module & monitorPoint must not null");
             } catch (Throwable th) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                com.alibaba.mtl.appmonitor.b.b.m8587a(th);
             }
         }
 
@@ -152,7 +152,7 @@ public final class AppMonitorDelegate {
                         if (AppMonitorDelegate.IS_DEBUG || j.a(f.OFFLINE_COUNTER, str, str2)) {
                             i.a(AppMonitorDelegate.TAG, "commitOffLineCount module: ", str, " monitorPoint: ", str2, " value: ", Double.valueOf(d));
                             com.alibaba.mtl.log.b.a.y();
-                            e.a().a(f.OFFLINE_COUNTER.m2139a(), str, str2, (String) null, d);
+                            e.a().a(f.OFFLINE_COUNTER.m8582a(), str, str2, (String) null, d);
                             return;
                         }
                         return;
@@ -161,7 +161,7 @@ public final class AppMonitorDelegate {
                 }
                 i.a(AppMonitorDelegate.TAG, "module & monitorPoint must not null");
             } catch (Throwable th) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                com.alibaba.mtl.appmonitor.b.b.m8587a(th);
             }
         }
 
@@ -182,11 +182,11 @@ public final class AppMonitorDelegate {
                 if (AppMonitorDelegate.i && com.alibaba.mtl.log.a.a.h() && f.STAT.isOpen()) {
                     if (AppMonitorDelegate.IS_DEBUG || j.a(f.STAT, str, str2)) {
                         i.a(AppMonitorDelegate.TAG, "statEvent begin. module: ", str, " monitorPoint: ", str2, " measureName: ", str3);
-                        e.a().a(Integer.valueOf(f.STAT.m2139a()), str, str2, str3);
+                        e.a().a(Integer.valueOf(f.STAT.m8582a()), str, str2, str3);
                     }
                 }
             } catch (Throwable th) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                com.alibaba.mtl.appmonitor.b.b.m8587a(th);
             }
         }
 
@@ -224,12 +224,12 @@ public final class AppMonitorDelegate {
                 }
                 i.a(AppMonitorDelegate.TAG, "module & monitorPoint must not null");
             } catch (Throwable th) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                com.alibaba.mtl.appmonitor.b.b.m8587a(th);
             }
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:19:0x004e, code lost:
-            if (com.alibaba.mtl.appmonitor.d.j.a(com.alibaba.mtl.appmonitor.a.f.STAT, r7, r8, r9 != null ? r9.getMap() : null) != false) goto L21;
+            if (com.alibaba.mtl.appmonitor.d.j.a(com.alibaba.mtl.appmonitor.a.f.d, r7, r8, r9 != null ? r9.getMap() : null) != false) goto L21;
          */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -296,7 +296,7 @@ public final class AppMonitorDelegate {
                 com.alibaba.mtl.log.b.a.w()     // Catch: java.lang.Throwable -> La4
                 com.alibaba.mtl.appmonitor.a.e r0 = com.alibaba.mtl.appmonitor.a.e.a()     // Catch: java.lang.Throwable -> La4
                 com.alibaba.mtl.appmonitor.a.f r1 = com.alibaba.mtl.appmonitor.a.f.STAT     // Catch: java.lang.Throwable -> La4
-                int r1 = r1.m2139a()     // Catch: java.lang.Throwable -> La4
+                int r1 = r1.m8582a()     // Catch: java.lang.Throwable -> La4
                 r2 = r7
                 r3 = r8
                 r4 = r10
@@ -333,7 +333,7 @@ public final class AppMonitorDelegate {
             La4:
                 r7 = move-exception
                 r0 = r7
-                com.alibaba.mtl.appmonitor.b.b.m2144a(r0)
+                com.alibaba.mtl.appmonitor.b.b.m8587a(r0)
                 return
             Laa:
                 r0 = 0
@@ -348,7 +348,7 @@ public final class AppMonitorDelegate {
         }
 
         public static Transaction createTransaction(String str, String str2, DimensionValueSet dimensionValueSet) {
-            return new Transaction(Integer.valueOf(f.STAT.m2139a()), str, str2, dimensionValueSet);
+            return new Transaction(Integer.valueOf(f.STAT.m8582a()), str, str2, dimensionValueSet);
         }
 
         public static void end(String str, String str2, String str3) {
@@ -360,7 +360,7 @@ public final class AppMonitorDelegate {
                     }
                 }
             } catch (Throwable th) {
-                com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                com.alibaba.mtl.appmonitor.b.b.m8587a(th);
             }
         }
 
@@ -389,7 +389,7 @@ public final class AppMonitorDelegate {
                 }
             } catch (Throwable th) {
                 try {
-                    com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                    com.alibaba.mtl.appmonitor.b.b.m8587a(th);
                 } catch (Throwable th2) {
                     throw th2;
                 }
@@ -441,7 +441,7 @@ public final class AppMonitorDelegate {
                 }
             }
         } catch (Throwable th) {
-            com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+            com.alibaba.mtl.appmonitor.b.b.m8587a(th);
         }
     }
 
@@ -489,14 +489,14 @@ public final class AppMonitorDelegate {
             if (!i || fVar == null) {
                 return;
             }
-            c.a(fVar.m2139a(), i2);
+            c.a(fVar.m8582a(), i2);
             if (i2 > 0) {
                 fVar.b(true);
             } else {
                 fVar.b(false);
             }
         } catch (Throwable th) {
-            com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+            com.alibaba.mtl.appmonitor.b.b.m8587a(th);
         }
     }
 
@@ -509,7 +509,7 @@ public final class AppMonitorDelegate {
                 }
             } catch (Throwable th) {
                 try {
-                    com.alibaba.mtl.appmonitor.b.b.m2144a(th);
+                    com.alibaba.mtl.appmonitor.b.b.m8587a(th);
                 } catch (Throwable th2) {
                     throw th2;
                 }

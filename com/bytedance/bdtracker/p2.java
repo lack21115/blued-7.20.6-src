@@ -19,14 +19,14 @@ public class p2 {
     public static final String[] b = {"tt_data", "device_platform"};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String[] f21287c = {"aid", "version_code", "ab_version", "iid", "device_platform"};
+    public static final String[] f7681c = {"aid", "version_code", "ab_version", "iid", "device_platform"};
     public static final String[] d = {"aid", "app_version", "tt_data", "device_id"};
 
     /* renamed from: a  reason: collision with root package name */
-    public final c f21288a;
+    public final c f7682a;
 
     public p2(c cVar) {
-        this.f21288a = cVar;
+        this.f7682a = cVar;
     }
 
     public static String a(byte[] bArr) {
@@ -122,7 +122,7 @@ public class p2 {
     }
 
     public String a(String str) {
-        if (!TextUtils.isEmpty(str) && this.f21288a.A) {
+        if (!TextUtils.isEmpty(str) && this.f7682a.A) {
             Uri parse = Uri.parse(str);
             String encodedQuery = parse.getEncodedQuery();
             ArrayList<Pair> arrayList = new ArrayList();
@@ -170,7 +170,7 @@ public class p2 {
             r0 = 0
             r7 = r0
             r0 = r4
-            com.bytedance.bdtracker.c r0 = r0.f21288a     // Catch: java.lang.Throwable -> L50
+            com.bytedance.bdtracker.c r0 = r0.f7682a     // Catch: java.lang.Throwable -> L50
             boolean r0 = r0.A     // Catch: java.lang.Throwable -> L50
             r6 = r0
             r0 = r6
@@ -220,17 +220,17 @@ public class p2 {
             r0 = r7
             r5 = r0
             r0 = r4
-            com.bytedance.bdtracker.c r0 = r0.f21288a
+            com.bytedance.bdtracker.c r0 = r0.f7682a
             boolean r0 = r0.A
             if (r0 == 0) goto L9c
             r0 = r7
             r5 = r0
             r0 = r4
-            com.bytedance.bdtracker.c r0 = r0.f21288a
+            com.bytedance.bdtracker.c r0 = r0.f7682a
             com.bytedance.applog.InitConfig r0 = r0.getInitConfig()
             if (r0 == 0) goto L9c
             r0 = r4
-            com.bytedance.bdtracker.c r0 = r0.f21288a
+            com.bytedance.bdtracker.c r0 = r0.f7682a
             com.bytedance.applog.InitConfig r0 = r0.getInitConfig()
             com.bytedance.mpaas.IEncryptor r0 = r0.getEncryptor()
             r5 = r0

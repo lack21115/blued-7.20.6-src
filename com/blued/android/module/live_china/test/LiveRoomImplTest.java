@@ -48,9 +48,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/test/LiveRoomImplTest.class */
 public final class LiveRoomImplTest {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14146a = new Companion(null);
+    public static final Companion a = new Companion(null);
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/test/LiveRoomImplTest$Companion.class */
@@ -201,13 +199,13 @@ public final class LiveRoomImplTest {
                     Intrinsics.e(context, "context");
                     Intrinsics.e(iAddOrRemoveAttentionDone, "iAddOrRemoveAttentionDone");
                     Intrinsics.e(fragmentActive, "fragmentActive");
-                    Map<String, String> a2 = BluedHttpTools.a();
+                    Map<String, String> a = BluedHttpTools.a();
                     String str3 = BluedHttpUrl.q() + "/users/" + ((Object) UserInfo.getInstance().getLoginUserInfo().getUid()) + "/followed/" + ((Object) str);
                     String str4 = str3;
                     if (!TextUtils.isEmpty(str2)) {
                         str4 = str3 + "?from=" + ((Object) str2);
                     }
-                    HttpManager.b(str4, null, fragmentActive).b(BluedHttpTools.a(true)).a(a2).h();
+                    HttpManager.b(str4, null, fragmentActive).b(BluedHttpTools.a(true)).a(a).h();
                 }
 
                 @Override // com.blued.android.module.live_china.live_info.ILiveRoomInfoCallBack
@@ -217,16 +215,14 @@ public final class LiveRoomImplTest {
                     Intrinsics.e(fragmentActive, "fragmentActive");
                     LiveRoomManager.a(str2, new BluedUIHttpResponse<BluedEntityA<LiveRelationModel>>(str2, iAddOrRemoveAttentionDone) { // from class: com.blued.android.module.live_china.test.LiveRoomImplTest$Companion$getFlashChatCallBack$1$addOrRemoveAttention$1
                         final /* synthetic */ String b;
-
-                        /* renamed from: c  reason: collision with root package name */
-                        final /* synthetic */ LiveUserRelationshipUtils.IAddOrRemoveAttentionDone f14148c;
+                        final /* synthetic */ LiveUserRelationshipUtils.IAddOrRemoveAttentionDone c;
 
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
                             super(IRequestHost.this);
                             this.b = str2;
-                            this.f14148c = iAddOrRemoveAttentionDone;
+                            this.c = iAddOrRemoveAttentionDone;
                         }
 
                         /* JADX INFO: Access modifiers changed from: protected */
@@ -243,14 +239,14 @@ public final class LiveRoomImplTest {
                                         Intrinsics.a(list2);
                                         String relationship = list2.get(0).getRelationship();
                                         if (TextUtils.equals("3", this.b) || TextUtils.equals("1", this.b)) {
-                                            LiveUserRelationshipUtils.IAddOrRemoveAttentionDone iAddOrRemoveAttentionDone2 = this.f14148c;
+                                            LiveUserRelationshipUtils.IAddOrRemoveAttentionDone iAddOrRemoveAttentionDone2 = this.c;
                                             if (iAddOrRemoveAttentionDone2 != null) {
                                                 iAddOrRemoveAttentionDone2.b(relationship);
                                                 return;
                                             }
                                             return;
                                         }
-                                        LiveUserRelationshipUtils.IAddOrRemoveAttentionDone iAddOrRemoveAttentionDone3 = this.f14148c;
+                                        LiveUserRelationshipUtils.IAddOrRemoveAttentionDone iAddOrRemoveAttentionDone3 = this.c;
                                         if (iAddOrRemoveAttentionDone3 != null) {
                                             iAddOrRemoveAttentionDone3.a(relationship);
                                         }

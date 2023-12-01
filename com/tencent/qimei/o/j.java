@@ -15,11 +15,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class j implements c.b, Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38376a = "j";
+    public static final String f24685a = "j";
     public static final Map<String, j> b = new ConcurrentHashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f38377c;
+    public final String f24686c;
     public int d;
     public int e;
     public int f;
@@ -29,7 +29,7 @@ public class j implements c.b, Runnable {
     public boolean j;
 
     public j(String str) {
-        this.f38377c = str;
+        this.f24686c = str;
     }
 
     public static j a(String str) {
@@ -63,7 +63,7 @@ public class j implements c.b, Runnable {
             r2 = r6
             android.content.Context r2 = r2.i
             r3 = r6
-            java.lang.String r3 = r3.f38377c
+            java.lang.String r3 = r3.f24686c
             r4 = r6
             r1.<init>(r2, r3, r4)
             r11 = r0
@@ -170,7 +170,7 @@ public class j implements c.b, Runnable {
     }
 
     public final boolean a(String str, String str2) {
-        com.tencent.qimei.i.f a2 = com.tencent.qimei.i.f.a(this.f38377c);
+        com.tencent.qimei.i.f a2 = com.tencent.qimei.i.f.a(this.f24686c);
         return com.tencent.qimei.a.a.a(a2.b(str + str2));
     }
 
@@ -204,7 +204,7 @@ public class j implements c.b, Runnable {
                     boolean booleanValue = ((Boolean) a2).booleanValue();
                     int intValue = ((Integer) a3).intValue();
                     if (!booleanValue || intValue == 0) {
-                        com.tencent.qimei.k.a.a(f38376a, "x5 not ready,isInited: %b x5Version: %d", Boolean.valueOf(booleanValue), a3);
+                        com.tencent.qimei.k.a.a(f24685a, "x5 not ready,isInited: %b x5Version: %d", Boolean.valueOf(booleanValue), a3);
                         z2 = false;
                     } else {
                         z2 = true;
@@ -219,17 +219,17 @@ public class j implements c.b, Runnable {
                 this.g = true;
                 com.tencent.qimei.y.k kVar = new com.tencent.qimei.y.k(this.i);
                 new Handler(Looper.getMainLooper()).post(new com.tencent.qimei.y.i(kVar));
-                kVar.f38454c.b();
+                kVar.f24763c.b();
                 new Handler(Looper.getMainLooper()).post(new com.tencent.qimei.y.j(kVar));
-                a(kVar.f38454c.a());
+                a(kVar.f24763c.a());
             }
         } else if (this.e != 0) {
             this.h = true;
             com.tencent.qimei.y.g gVar = new com.tencent.qimei.y.g(this.i);
             new Handler(Looper.getMainLooper()).post(new com.tencent.qimei.y.e(gVar));
-            gVar.f38450c.b();
+            gVar.f24759c.b();
             new Handler(Looper.getMainLooper()).post(new com.tencent.qimei.y.f(gVar));
-            a(gVar.f38450c.a());
+            a(gVar.f24759c.a());
         }
         com.tencent.qimei.b.a a4 = com.tencent.qimei.b.a.a();
         int i = 600;
@@ -250,7 +250,7 @@ public class j implements c.b, Runnable {
 
     @Override // java.lang.Runnable
     public void run() {
-        IQimeiSDK qimeiSDK = QimeiSDK.getInstance(this.f38377c);
+        IQimeiSDK qimeiSDK = QimeiSDK.getInstance(this.f24686c);
         Qimei qimei = qimeiSDK.getQimei();
         if (qimei == null || qimei.isEmpty()) {
             qimeiSDK.getQimei(new g(this));

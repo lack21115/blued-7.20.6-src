@@ -50,23 +50,23 @@ public class Collections {
             this.q = deque;
         }
 
-        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
         public boolean add(E e) {
             this.q.push(e);
             return true;
         }
 
-        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.q.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.q.contains(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             return this.q.containsAll(collection);
         }
@@ -76,7 +76,7 @@ public class Collections {
             return this.q.getFirst();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return this.q.isEmpty();
         }
@@ -106,32 +106,32 @@ public class Collections {
             return this.q.pop();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             return this.q.remove(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             return this.q.removeAll(collection);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             return this.q.retainAll(collection);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.q.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             return this.q.toArray();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) this.q.toArray(tArr);
         }
@@ -145,9 +145,7 @@ public class Collections {
     /* loaded from: source-2895416-dex2jar.jar:java/util/Collections$CheckedCollection.class */
     private static class CheckedCollection<E> implements Collection<E>, Serializable {
         private static final long serialVersionUID = 1578914078182001775L;
-
-        /* renamed from: c  reason: collision with root package name */
-        final Collection<E> f42263c;
+        final Collection<E> c;
         final Class<E> type;
 
         public CheckedCollection(Collection<E> collection, Class<E> cls) {
@@ -157,17 +155,17 @@ public class Collections {
             if (cls == null) {
                 throw new NullPointerException("type == null");
             }
-            this.f42263c = collection;
+            this.c = collection;
             this.type = cls;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean add(E e) {
-            return this.f42263c.add(Collections.checkType(e, this.type));
+            return this.c.add(Collections.checkType(e, this.type));
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             Object[] array = collection.toArray();
             int length = array.length;
@@ -175,36 +173,36 @@ public class Collections {
             while (true) {
                 int i2 = i;
                 if (i2 >= length) {
-                    return this.f42263c.addAll(Arrays.asList(array));
+                    return this.c.addAll(Arrays.asList(array));
                 }
                 Collections.checkType(array[i2], this.type);
                 i = i2 + 1;
             }
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public void clear() {
-            this.f42263c.clear();
+            this.c.clear();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean contains(Object obj) {
-            return this.f42263c.contains(obj);
+            return this.c.contains(obj);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean containsAll(Collection<?> collection) {
-            return this.f42263c.containsAll(collection);
+            return this.c.containsAll(collection);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean isEmpty() {
-            return this.f42263c.isEmpty();
+            return this.c.isEmpty();
         }
 
         @Override // java.util.Collection, java.lang.Iterable
         public Iterator<E> iterator() {
-            Iterator<E> it = this.f42263c.iterator();
+            Iterator<E> it = this.c.iterator();
             CheckedListIterator checkedListIterator = it;
             if (it instanceof ListIterator) {
                 checkedListIterator = new CheckedListIterator((ListIterator) it, this.type);
@@ -212,38 +210,38 @@ public class Collections {
             return checkedListIterator;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean remove(Object obj) {
-            return this.f42263c.remove(obj);
+            return this.c.remove(obj);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean removeAll(Collection<?> collection) {
-            return this.f42263c.removeAll(collection);
+            return this.c.removeAll(collection);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean retainAll(Collection<?> collection) {
-            return this.f42263c.retainAll(collection);
+            return this.c.retainAll(collection);
         }
 
-        @Override // java.util.Collection, java.util.List
+        @Override // java.util.Collection
         public int size() {
-            return this.f42263c.size();
+            return this.c.size();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public Object[] toArray() {
-            return this.f42263c.toArray();
+            return this.c.toArray();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public <T> T[] toArray(T[] tArr) {
-            return (T[]) this.f42263c.toArray(tArr);
+            return (T[]) this.c.toArray(tArr);
         }
 
         public String toString() {
-            return this.f42263c.toString();
+            return this.c.toString();
         }
     }
 
@@ -279,7 +277,7 @@ public class Collections {
             }
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(Object obj) {
             return this.l.equals(obj);
         }
@@ -289,7 +287,7 @@ public class Collections {
             return this.l.get(i);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
             return this.l.hashCode();
         }
@@ -474,7 +472,7 @@ public class Collections {
                 this.valueType = cls;
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public /* bridge */ /* synthetic */ boolean add(Object obj) {
                 return add((Map.Entry) ((Map.Entry) obj));
             }
@@ -483,37 +481,37 @@ public class Collections {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean addAll(Collection<? extends Map.Entry<K, V>> collection) {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public void clear() {
                 this.s.clear();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean contains(Object obj) {
                 return this.s.contains(obj);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean containsAll(Collection<?> collection) {
                 return this.s.containsAll(collection);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean equals(Object obj) {
                 return this.s.equals(obj);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public int hashCode() {
                 return this.s.hashCode();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean isEmpty() {
                 return this.s.isEmpty();
             }
@@ -523,27 +521,27 @@ public class Collections {
                 return new CheckedEntryIterator(this.s.iterator(), this.valueType);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean remove(Object obj) {
                 return this.s.remove(obj);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean removeAll(Collection<?> collection) {
                 return this.s.removeAll(collection);
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public boolean retainAll(Collection<?> collection) {
                 return this.s.retainAll(collection);
             }
 
-            @Override // java.util.Set, java.util.Collection, java.util.List
+            @Override // java.util.Set, java.util.Collection
             public int size() {
                 return this.s.size();
             }
 
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public Object[] toArray() {
                 int size = size();
                 Object[] objArr = new Object[size];
@@ -561,7 +559,7 @@ public class Collections {
 
             /* JADX WARN: Multi-variable type inference failed */
             /* JADX WARN: Type inference failed for: r0v21, types: [java.lang.Object[]] */
-            @Override // java.util.Set
+            @Override // java.util.Set, java.util.Collection
             public <T> T[] toArray(T[] tArr) {
                 int size = size();
                 T[] tArr2 = tArr;
@@ -721,14 +719,14 @@ public class Collections {
             super(set, cls);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(Object obj) {
-            return this.f42263c.equals(obj);
+            return this.c.equals(obj);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
-            return this.f42263c.hashCode();
+            return this.c.hashCode();
         }
     }
 
@@ -752,7 +750,7 @@ public class Collections {
             return this.sm.firstKey();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> headMap(K k) {
             return new CheckedSortedMap(this.sm.headMap(k), this.keyType, this.valueType);
         }
@@ -762,12 +760,12 @@ public class Collections {
             return this.sm.lastKey();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> subMap(K k, K k2) {
             return new CheckedSortedMap(this.sm.subMap(k, k2), this.keyType, this.valueType);
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> tailMap(K k) {
             return new CheckedSortedMap(this.sm.tailMap(k), this.keyType, this.valueType);
         }
@@ -793,7 +791,7 @@ public class Collections {
             return this.ss.first();
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> headSet(E e) {
             return new CheckedSortedSet(this.ss.headSet(e), this.type);
         }
@@ -803,12 +801,12 @@ public class Collections {
             return this.ss.last();
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> subSet(E e, E e2) {
             return new CheckedSortedSet(this.ss.subSet(e, e2), this.type);
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> tailSet(E e) {
             return new CheckedSortedSet(this.ss.tailSet(e), this.type);
         }
@@ -828,7 +826,7 @@ public class Collections {
             this.element = e;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.element == null ? obj == null : this.element.equals(obj);
         }
@@ -841,7 +839,7 @@ public class Collections {
             return this.element;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.n;
         }
@@ -858,7 +856,7 @@ public class Collections {
             return Collections.EMPTY_LIST;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return false;
         }
@@ -868,7 +866,7 @@ public class Collections {
             throw new IndexOutOfBoundsException();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return 0;
         }
@@ -927,7 +925,7 @@ public class Collections {
             return Collections.EMPTY_SET;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return false;
         }
@@ -937,7 +935,7 @@ public class Collections {
             return Collections.EMPTY_ITERATOR;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return 0;
         }
@@ -986,8 +984,9 @@ public class Collections {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/Collections$SetFromMap.class */
-    private static class SetFromMap<E> extends AbstractSet<E> implements Serializable {
+    public static class SetFromMap<E> extends AbstractSet<E> implements Serializable {
         private static final long serialVersionUID = 2454657854757543876L;
         private transient Set<E> backingSet;
         private final Map<E, Boolean> m;
@@ -1002,37 +1001,37 @@ public class Collections {
             this.backingSet = this.m.keySet();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean add(E e) {
             return this.m.put(e, Boolean.TRUE) == null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public void clear() {
             this.m.clear();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.backingSet.contains(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             return this.backingSet.containsAll(collection);
         }
 
-        @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.Collection
         public boolean equals(Object obj) {
             return this.backingSet.equals(obj);
         }
 
-        @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractSet, java.util.Collection
         public int hashCode() {
             return this.backingSet.hashCode();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean isEmpty() {
             return this.m.isEmpty();
         }
@@ -1042,27 +1041,27 @@ public class Collections {
             return this.backingSet.iterator();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean remove(Object obj) {
             return this.m.remove(obj) != null;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             return this.backingSet.retainAll(collection);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return this.m.size();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
             return this.backingSet.toArray();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             return (T[]) this.backingSet.toArray(tArr);
         }
@@ -1082,7 +1081,7 @@ public class Collections {
             this.element = e;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.element == null ? obj == null : this.element.equals(obj);
         }
@@ -1095,7 +1094,7 @@ public class Collections {
             throw new IndexOutOfBoundsException();
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return 1;
         }
@@ -1126,7 +1125,7 @@ public class Collections {
         @Override // java.util.AbstractMap, java.util.Map
         public Set<Map.Entry<K, V>> entrySet() {
             return new AbstractSet<Map.Entry<K, V>>() { // from class: java.util.Collections.SingletonMap.1
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public boolean contains(Object obj) {
                     boolean z = false;
                     if (obj instanceof Map.Entry) {
@@ -1173,7 +1172,7 @@ public class Collections {
                     };
                 }
 
-                @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+                @Override // java.util.AbstractCollection, java.util.Collection
                 public int size() {
                     return 1;
                 }
@@ -1203,7 +1202,7 @@ public class Collections {
             this.element = e;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             return this.element == null ? obj == null : this.element.equals(obj);
         }
@@ -1234,7 +1233,7 @@ public class Collections {
             };
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
             return 1;
         }
@@ -1243,18 +1242,16 @@ public class Collections {
     /* loaded from: source-2895416-dex2jar.jar:java/util/Collections$SynchronizedCollection.class */
     static class SynchronizedCollection<E> implements Collection<E>, Serializable {
         private static final long serialVersionUID = 3053995032091335093L;
-
-        /* renamed from: c  reason: collision with root package name */
-        final Collection<E> f42264c;
+        final Collection<E> c;
         final Object mutex;
 
         SynchronizedCollection(Collection<E> collection) {
-            this.f42264c = collection;
+            this.c = collection;
             this.mutex = this;
         }
 
         SynchronizedCollection(Collection<E> collection, Object obj) {
-            this.f42264c = collection;
+            this.c = collection;
             this.mutex = obj;
         }
 
@@ -1264,54 +1261,54 @@ public class Collections {
             }
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean add(E e) {
             boolean add;
             synchronized (this.mutex) {
-                add = this.f42264c.add(e);
+                add = this.c.add(e);
             }
             return add;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             boolean addAll;
             synchronized (this.mutex) {
-                addAll = this.f42264c.addAll(collection);
+                addAll = this.c.addAll(collection);
             }
             return addAll;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public void clear() {
             synchronized (this.mutex) {
-                this.f42264c.clear();
+                this.c.clear();
             }
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean contains(Object obj) {
             boolean contains;
             synchronized (this.mutex) {
-                contains = this.f42264c.contains(obj);
+                contains = this.c.contains(obj);
             }
             return contains;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean containsAll(Collection<?> collection) {
             boolean containsAll;
             synchronized (this.mutex) {
-                containsAll = this.f42264c.containsAll(collection);
+                containsAll = this.c.containsAll(collection);
             }
             return containsAll;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean isEmpty() {
             boolean isEmpty;
             synchronized (this.mutex) {
-                isEmpty = this.f42264c.isEmpty();
+                isEmpty = this.c.isEmpty();
             }
             return isEmpty;
         }
@@ -1320,61 +1317,61 @@ public class Collections {
         public Iterator<E> iterator() {
             Iterator<E> it;
             synchronized (this.mutex) {
-                it = this.f42264c.iterator();
+                it = this.c.iterator();
             }
             return it;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean remove(Object obj) {
             boolean remove;
             synchronized (this.mutex) {
-                remove = this.f42264c.remove(obj);
+                remove = this.c.remove(obj);
             }
             return remove;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             boolean removeAll;
             synchronized (this.mutex) {
-                removeAll = this.f42264c.removeAll(collection);
+                removeAll = this.c.removeAll(collection);
             }
             return removeAll;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             boolean retainAll;
             synchronized (this.mutex) {
-                retainAll = this.f42264c.retainAll(collection);
+                retainAll = this.c.retainAll(collection);
             }
             return retainAll;
         }
 
-        @Override // java.util.Collection, java.util.List
+        @Override // java.util.Collection
         public int size() {
             int size;
             synchronized (this.mutex) {
-                size = this.f42264c.size();
+                size = this.c.size();
             }
             return size;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public Object[] toArray() {
             Object[] array;
             synchronized (this.mutex) {
-                array = this.f42264c.toArray();
+                array = this.c.toArray();
             }
             return array;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             T[] tArr2;
             synchronized (this.mutex) {
-                tArr2 = (T[]) this.f42264c.toArray(tArr);
+                tArr2 = (T[]) this.c.toArray(tArr);
             }
             return tArr2;
         }
@@ -1382,7 +1379,7 @@ public class Collections {
         public String toString() {
             String obj;
             synchronized (this.mutex) {
-                obj = this.f42264c.toString();
+                obj = this.c.toString();
             }
             return obj;
         }
@@ -1433,7 +1430,7 @@ public class Collections {
             return addAll;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(Object obj) {
             boolean equals;
             synchronized (this.mutex) {
@@ -1451,7 +1448,7 @@ public class Collections {
             return e;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
             int hashCode;
             synchronized (this.mutex) {
@@ -1772,20 +1769,20 @@ public class Collections {
             }
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(Object obj) {
             boolean equals;
             synchronized (this.mutex) {
-                equals = this.f42264c.equals(obj);
+                equals = this.c.equals(obj);
             }
             return equals;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
             int hashCode;
             synchronized (this.mutex) {
-                hashCode = this.f42264c.hashCode();
+                hashCode = this.c.hashCode();
             }
             return hashCode;
         }
@@ -1830,7 +1827,7 @@ public class Collections {
             return firstKey;
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> headMap(K k) {
             SynchronizedSortedMap synchronizedSortedMap;
             synchronized (this.mutex) {
@@ -1848,7 +1845,7 @@ public class Collections {
             return lastKey;
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> subMap(K k, K k2) {
             SynchronizedSortedMap synchronizedSortedMap;
             synchronized (this.mutex) {
@@ -1857,7 +1854,7 @@ public class Collections {
             return synchronizedSortedMap;
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> tailMap(K k) {
             SynchronizedSortedMap synchronizedSortedMap;
             synchronized (this.mutex) {
@@ -1906,7 +1903,7 @@ public class Collections {
             return first;
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> headSet(E e) {
             SynchronizedSortedSet synchronizedSortedSet;
             synchronized (this.mutex) {
@@ -1924,7 +1921,7 @@ public class Collections {
             return last;
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> subSet(E e, E e2) {
             SynchronizedSortedSet synchronizedSortedSet;
             synchronized (this.mutex) {
@@ -1933,7 +1930,7 @@ public class Collections {
             return synchronizedSortedSet;
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> tailSet(E e) {
             SynchronizedSortedSet synchronizedSortedSet;
             synchronized (this.mutex) {
@@ -1946,42 +1943,40 @@ public class Collections {
     /* loaded from: source-2895416-dex2jar.jar:java/util/Collections$UnmodifiableCollection.class */
     private static class UnmodifiableCollection<E> implements Collection<E>, Serializable {
         private static final long serialVersionUID = 1820017752578914078L;
-
-        /* renamed from: c  reason: collision with root package name */
-        final Collection<E> f42265c;
+        final Collection<E> c;
 
         UnmodifiableCollection(Collection<E> collection) {
-            this.f42265c = collection;
+            this.c = collection;
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean add(E e) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean addAll(Collection<? extends E> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public void clear() {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean contains(Object obj) {
-            return this.f42265c.contains(obj);
+            return this.c.contains(obj);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean containsAll(Collection<?> collection) {
-            return this.f42265c.containsAll(collection);
+            return this.c.containsAll(collection);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean isEmpty() {
-            return this.f42265c.isEmpty();
+            return this.c.isEmpty();
         }
 
         @Override // java.util.Collection, java.lang.Iterable
@@ -1990,7 +1985,7 @@ public class Collections {
                 Iterator<E> iterator;
 
                 {
-                    this.iterator = UnmodifiableCollection.this.f42265c.iterator();
+                    this.iterator = UnmodifiableCollection.this.c.iterator();
                 }
 
                 @Override // java.util.Iterator
@@ -2010,38 +2005,38 @@ public class Collections {
             };
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean remove(Object obj) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean removeAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean retainAll(Collection<?> collection) {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.List
+        @Override // java.util.Collection
         public int size() {
-            return this.f42265c.size();
+            return this.c.size();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public Object[] toArray() {
-            return this.f42265c.toArray();
+            return this.c.toArray();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public <T> T[] toArray(T[] tArr) {
-            return (T[]) this.f42265c.toArray(tArr);
+            return (T[]) this.c.toArray(tArr);
         }
 
         public String toString() {
-            return this.f42265c.toString();
+            return this.c.toString();
         }
     }
 
@@ -2073,7 +2068,7 @@ public class Collections {
             throw new UnsupportedOperationException();
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(Object obj) {
             return this.list.equals(obj);
         }
@@ -2083,7 +2078,7 @@ public class Collections {
             return this.list.get(i);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
             return this.list.hashCode();
         }
@@ -2234,7 +2229,7 @@ public class Collections {
                     Iterator<Map.Entry<K, V>> iterator;
 
                     {
-                        this.iterator = UnmodifiableEntrySet.this.f42265c.iterator();
+                        this.iterator = UnmodifiableEntrySet.this.c.iterator();
                     }
 
                     @Override // java.util.Iterator
@@ -2254,9 +2249,9 @@ public class Collections {
                 };
             }
 
-            @Override // java.util.Collections.UnmodifiableCollection, java.util.Collection, java.util.Set
+            @Override // java.util.Collections.UnmodifiableCollection, java.util.Collection
             public Object[] toArray() {
-                int size = this.f42265c.size();
+                int size = this.c.size();
                 Object[] objArr = new Object[size];
                 Iterator<Map.Entry<K, V>> it = iterator();
                 int i = 0;
@@ -2272,11 +2267,11 @@ public class Collections {
 
             /* JADX WARN: Multi-variable type inference failed */
             /* JADX WARN: Type inference failed for: r0v21, types: [java.lang.Object[]] */
-            @Override // java.util.Collections.UnmodifiableCollection, java.util.Collection, java.util.Set
+            @Override // java.util.Collections.UnmodifiableCollection, java.util.Collection
             public <T> T[] toArray(T[] tArr) {
                 int i;
                 int i2;
-                int size = this.f42265c.size();
+                int size = this.c.size();
                 Iterator<Map.Entry<K, V>> it = iterator();
                 if (size > tArr.length) {
                     tArr = (Object[]) Array.newInstance(tArr.getClass().getComponentType(), size);
@@ -2405,14 +2400,14 @@ public class Collections {
             super(set);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public boolean equals(Object obj) {
-            return this.f42265c.equals(obj);
+            return this.c.equals(obj);
         }
 
-        @Override // java.util.Collection, java.util.Set
+        @Override // java.util.Collection
         public int hashCode() {
-            return this.f42265c.hashCode();
+            return this.c.hashCode();
         }
     }
 
@@ -2436,7 +2431,7 @@ public class Collections {
             return this.sm.firstKey();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> headMap(K k) {
             return new UnmodifiableSortedMap(this.sm.headMap(k));
         }
@@ -2446,12 +2441,12 @@ public class Collections {
             return this.sm.lastKey();
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> subMap(K k, K k2) {
             return new UnmodifiableSortedMap(this.sm.subMap(k, k2));
         }
 
-        @Override // java.util.SortedMap, java.util.NavigableMap
+        @Override // java.util.SortedMap
         public SortedMap<K, V> tailMap(K k) {
             return new UnmodifiableSortedMap(this.sm.tailMap(k));
         }
@@ -2477,7 +2472,7 @@ public class Collections {
             return this.ss.first();
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> headSet(E e) {
             return new UnmodifiableSortedSet(this.ss.headSet(e));
         }
@@ -2487,12 +2482,12 @@ public class Collections {
             return this.ss.last();
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> subSet(E e, E e2) {
             return new UnmodifiableSortedSet(this.ss.subSet(e, e2));
         }
 
-        @Override // java.util.SortedSet, java.util.NavigableSet
+        @Override // java.util.SortedSet
         public SortedSet<E> tailSet(E e) {
             return new UnmodifiableSortedSet(this.ss.tailSet(e));
         }

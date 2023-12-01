@@ -16,36 +16,36 @@ import android.widget.ImageView;
 public class TransitionUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final boolean f3483a;
+    private static final boolean f3435a;
     private static final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final boolean f3484c;
+    private static final boolean f3436c;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/transition/TransitionUtils$MatrixEvaluator.class */
     static class MatrixEvaluator implements TypeEvaluator<Matrix> {
 
         /* renamed from: a  reason: collision with root package name */
-        final float[] f3485a = new float[9];
+        final float[] f3437a = new float[9];
         final float[] b = new float[9];
 
         /* renamed from: c  reason: collision with root package name */
-        final Matrix f3486c = new Matrix();
+        final Matrix f3438c = new Matrix();
 
         @Override // android.animation.TypeEvaluator
         public Matrix evaluate(float f, Matrix matrix, Matrix matrix2) {
-            matrix.getValues(this.f3485a);
+            matrix.getValues(this.f3437a);
             matrix2.getValues(this.b);
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= 9) {
-                    this.f3486c.setValues(this.b);
-                    return this.f3486c;
+                    this.f3438c.setValues(this.b);
+                    return this.f3438c;
                 }
                 float[] fArr = this.b;
                 float f2 = fArr[i2];
-                float[] fArr2 = this.f3485a;
+                float[] fArr2 = this.f3437a;
                 fArr[i2] = fArr2[i2] + ((f2 - fArr2[i2]) * f);
                 i = i2 + 1;
             }
@@ -53,9 +53,9 @@ public class TransitionUtils {
     }
 
     static {
-        f3483a = Build.VERSION.SDK_INT >= 19;
+        f3435a = Build.VERSION.SDK_INT >= 19;
         b = Build.VERSION.SDK_INT >= 18;
-        f3484c = Build.VERSION.SDK_INT >= 28;
+        f3436c = Build.VERSION.SDK_INT >= 28;
     }
 
     private TransitionUtils() {

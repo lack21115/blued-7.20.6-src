@@ -11,35 +11,25 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/w.class */
 public class w {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile w f6933a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f6934c = "Waterfall_Final";
+    private static volatile w a;
+    private final String c = "Waterfall_Final";
     private ConcurrentHashMap<String, a> b = new ConcurrentHashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/w$a.class */
     public final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f6935a;
-        ConcurrentHashMap<String, C0110a> b = new ConcurrentHashMap<>();
+        String a;
+        ConcurrentHashMap<String, C0070a> b = new ConcurrentHashMap<>();
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.anythink.core.common.w$a$a  reason: collision with other inner class name */
         /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/w$a$a.class */
-        public final class C0110a {
-
-            /* renamed from: a  reason: collision with root package name */
-            com.anythink.core.c.d f6937a;
+        public final class C0070a {
+            com.anythink.core.c.d a;
             CopyOnWriteArrayList<ai> b;
+            boolean c;
 
-            /* renamed from: c  reason: collision with root package name */
-            boolean f6938c;
-
-            C0110a() {
+            C0070a() {
             }
 
             private List<ai> a() {
@@ -65,15 +55,15 @@ public class w {
             /* JADX INFO: Access modifiers changed from: private */
             public void b() {
                 synchronized (this) {
-                    if (this.f6938c) {
+                    if (this.c) {
                         return;
                     }
-                    this.f6938c = true;
+                    this.c = true;
                 }
             }
 
             private boolean c() {
-                return this.f6938c;
+                return this.c;
             }
         }
 
@@ -81,98 +71,98 @@ public class w {
         }
 
         private List<ai> a(String str) {
-            C0110a c0110a = this.b.get(str);
-            if (c0110a != null) {
-                return c0110a.b;
+            C0070a c0070a = this.b.get(str);
+            if (c0070a != null) {
+                return c0070a.b;
             }
             return null;
         }
 
         private static /* synthetic */ void a(a aVar, String str, com.anythink.core.c.d dVar, List list) {
-            C0110a c0110a = new C0110a();
-            c0110a.f6937a = dVar;
+            C0070a c0070a = new C0070a();
+            c0070a.a = dVar;
             CopyOnWriteArrayList<ai> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
             copyOnWriteArrayList.addAll(list);
-            c0110a.b = copyOnWriteArrayList;
-            aVar.b.put(str, c0110a);
+            c0070a.b = copyOnWriteArrayList;
+            aVar.b.put(str, c0070a);
         }
 
         private static /* synthetic */ void a(a aVar, String str, ai aiVar) {
-            C0110a c0110a = aVar.b.get(str);
-            if (c0110a != null) {
-                c0110a.a(aiVar);
+            C0070a c0070a = aVar.b.get(str);
+            if (c0070a != null) {
+                c0070a.a(aiVar);
             }
         }
 
         static /* synthetic */ void a(a aVar, String str, List list) {
-            C0110a c0110a = aVar.b.get(str);
-            if (c0110a != null) {
-                c0110a.a(list);
+            C0070a c0070a = aVar.b.get(str);
+            if (c0070a != null) {
+                c0070a.a(list);
             }
         }
 
         private void a(String str, com.anythink.core.c.d dVar, List<ai> list) {
-            C0110a c0110a = new C0110a();
-            c0110a.f6937a = dVar;
+            C0070a c0070a = new C0070a();
+            c0070a.a = dVar;
             CopyOnWriteArrayList<ai> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
             copyOnWriteArrayList.addAll(list);
-            c0110a.b = copyOnWriteArrayList;
-            this.b.put(str, c0110a);
+            c0070a.b = copyOnWriteArrayList;
+            this.b.put(str, c0070a);
         }
 
         private void a(String str, ai aiVar) {
-            C0110a c0110a = this.b.get(str);
-            if (c0110a != null) {
-                c0110a.a(aiVar);
+            C0070a c0070a = this.b.get(str);
+            if (c0070a != null) {
+                c0070a.a(aiVar);
             }
         }
 
         private void a(String str, List<ai> list) {
-            C0110a c0110a = this.b.get(str);
-            if (c0110a != null) {
-                c0110a.a(list);
+            C0070a c0070a = this.b.get(str);
+            if (c0070a != null) {
+                c0070a.a(list);
             }
         }
 
         static /* synthetic */ void b(a aVar, String str) {
-            C0110a c0110a = aVar.b.get(str);
-            if (c0110a != null) {
-                c0110a.b();
+            C0070a c0070a = aVar.b.get(str);
+            if (c0070a != null) {
+                c0070a.b();
             }
         }
 
         private boolean b(String str) {
-            C0110a c0110a = this.b.get(str);
-            if (c0110a != null) {
-                return c0110a.f6938c;
+            C0070a c0070a = this.b.get(str);
+            if (c0070a != null) {
+                return c0070a.c;
             }
             return false;
         }
 
         static /* synthetic */ List c(a aVar, String str) {
-            C0110a c0110a = aVar.b.get(str);
-            if (c0110a != null) {
-                return c0110a.b;
+            C0070a c0070a = aVar.b.get(str);
+            if (c0070a != null) {
+                return c0070a.b;
             }
             return null;
         }
 
         private void c(String str) {
-            C0110a c0110a = this.b.get(str);
-            if (c0110a != null) {
-                c0110a.b();
+            C0070a c0070a = this.b.get(str);
+            if (c0070a != null) {
+                c0070a.b();
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void d(String str) {
             synchronized (this) {
-                Iterator<Map.Entry<String, C0110a>> it = this.b.entrySet().iterator();
+                Iterator<Map.Entry<String, C0070a>> it = this.b.entrySet().iterator();
                 while (it.hasNext()) {
                     String key = it.next().getKey();
                     if (key != null) {
                         String obj = key.toString();
-                        if (this.b.get(obj).f6938c && !TextUtils.equals(str, obj)) {
+                        if (this.b.get(obj).c && !TextUtils.equals(str, obj)) {
                             it.remove();
                         }
                     }
@@ -181,9 +171,9 @@ public class w {
         }
 
         private static /* synthetic */ boolean d(a aVar, String str) {
-            C0110a c0110a = aVar.b.get(str);
-            if (c0110a != null) {
-                return c0110a.f6938c;
+            C0070a c0070a = aVar.b.get(str);
+            if (c0070a != null) {
+                return c0070a.c;
             }
             return false;
         }
@@ -193,26 +183,26 @@ public class w {
     }
 
     public static w a() {
-        if (f6933a == null) {
+        if (a == null) {
             synchronized (w.class) {
                 try {
-                    if (f6933a == null) {
-                        f6933a = new w();
+                    if (a == null) {
+                        a = new w();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6933a;
+        return a;
     }
 
     public final List<ai> a(String str) {
         a aVar = this.b.get(str);
-        List c2 = aVar != null ? a.c(aVar, aVar.f6935a) : null;
-        if (c2 != null) {
+        List c = aVar != null ? a.c(aVar, aVar.a) : null;
+        if (c != null) {
             ArrayList arrayList = new ArrayList();
-            arrayList.addAll(c2);
+            arrayList.addAll(c);
             return arrayList;
         }
         com.anythink.core.c.d a2 = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(str);
@@ -239,15 +229,15 @@ public class w {
             if (aVar == null) {
                 aVar2 = new a();
             }
-            a.C0110a c0110a = aVar2.b.get(str2);
-            boolean z = c0110a != null ? c0110a.f6938c : false;
-            a.C0110a c0110a2 = new a.C0110a();
-            c0110a2.f6937a = dVar;
+            a.C0070a c0070a = aVar2.b.get(str2);
+            boolean z = c0070a != null ? c0070a.c : false;
+            a.C0070a c0070a2 = new a.C0070a();
+            c0070a2.a = dVar;
             CopyOnWriteArrayList<ai> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
             copyOnWriteArrayList.addAll(list);
-            c0110a2.b = copyOnWriteArrayList;
-            aVar2.b.put(str2, c0110a2);
-            aVar2.f6935a = str2;
+            c0070a2.b = copyOnWriteArrayList;
+            aVar2.b.put(str2, c0070a2);
+            aVar2.a = str2;
             this.b.put(str, aVar2);
             aVar2.d(str2);
             if (z) {
@@ -275,9 +265,9 @@ public class w {
                 return;
             }
             for (ai aiVar : list) {
-                a.C0110a c0110a = aVar.b.get(str2);
-                if (c0110a != null) {
-                    c0110a.a(aiVar);
+                a.C0070a c0070a = aVar.b.get(str2);
+                if (c0070a != null) {
+                    c0070a.a(aiVar);
                 }
             }
         }
@@ -285,7 +275,7 @@ public class w {
 
     public final String b(String str) {
         a aVar = this.b.get(str);
-        return aVar != null ? aVar.f6935a : "";
+        return aVar != null ? aVar.a : "";
     }
 
     public final List<ai> b(String str, String str2) {

@@ -22,9 +22,8 @@ public interface IAccessibilityServiceClient extends IInterface {
         static final int TRANSACTION_onInterrupt = 3;
         static final int TRANSACTION_onKeyEvent = 6;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/accessibilityservice/IAccessibilityServiceClient$Stub$Proxy.class */
-        public static class Proxy implements IAccessibilityServiceClient {
+        private static class Proxy implements IAccessibilityServiceClient {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {
@@ -154,7 +153,7 @@ public interface IAccessibilityServiceClient extends IInterface {
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onAccessibilityEvent(parcel.readInt() != 0 ? AccessibilityEvent.CREATOR.createFromParcel(parcel) : null);
+                    onAccessibilityEvent(parcel.readInt() != 0 ? (AccessibilityEvent) AccessibilityEvent.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);

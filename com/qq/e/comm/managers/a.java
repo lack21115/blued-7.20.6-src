@@ -9,20 +9,20 @@ import com.qq.e.comm.util.GDTLogger;
 public class a implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ b f27910a;
+    final /* synthetic */ b f14222a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public a(b bVar) {
-        this.f27910a = bVar;
+        this.f14222a = bVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
         PM pm;
         try {
-            pm = this.f27910a.d;
+            pm = this.f14222a.d;
             pm.getPOFactory();
-            this.f27910a.b = true;
+            this.f14222a.b = true;
         } catch (e e) {
             GDTLogger.e(e.getMessage(), e);
         }

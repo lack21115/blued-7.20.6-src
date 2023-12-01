@@ -16,11 +16,11 @@ import java.util.concurrent.ExecutorService;
 public final class t implements u {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f7607a = 0;
+    public static final int f4768a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f7608c = 2;
+    public static final int f4769c = 2;
     public static final int d = 3;
     private final ExecutorService e;
     private b<? extends c> f;
@@ -40,7 +40,7 @@ public final class t implements u {
     public final class b<T extends c> extends Handler implements Runnable {
 
         /* renamed from: c  reason: collision with root package name */
-        private static final String f7609c = "LoadTask";
+        private static final String f4770c = "LoadTask";
         private static final int d = 0;
         private static final int e = 1;
         private static final int f = 2;
@@ -48,7 +48,7 @@ public final class t implements u {
         private static final int h = 4;
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7610a;
+        public final int f4771a;
         private final T i;
         private final long j;
         private a<T> k;
@@ -62,7 +62,7 @@ public final class t implements u {
             super(looper);
             this.i = t;
             this.k = aVar;
-            this.f7610a = i;
+            this.f4771a = i;
             this.j = j;
         }
 
@@ -143,7 +143,7 @@ public final class t implements u {
                     try {
                         this.k.a(this.i, elapsedRealtime, j);
                     } catch (RuntimeException e2) {
-                        Log.e(f7609c, "Unexpected exception handling load completed", e2);
+                        Log.e(f4770c, "Unexpected exception handling load completed", e2);
                         t.this.g = new g(e2);
                     }
                 } else if (i != 3) {
@@ -192,19 +192,19 @@ public final class t implements u {
                 }
                 sendEmptyMessage(2);
             } catch (Exception e4) {
-                Log.e(f7609c, "Unexpected exception loading stream", e4);
+                Log.e(f4770c, "Unexpected exception loading stream", e4);
                 if (this.p) {
                     return;
                 }
                 obtainMessage(3, new g(e4)).sendToTarget();
             } catch (OutOfMemoryError e5) {
-                Log.e(f7609c, "OutOfMemory error loading stream", e5);
+                Log.e(f4770c, "OutOfMemory error loading stream", e5);
                 if (this.p) {
                     return;
                 }
                 obtainMessage(3, new g(e5)).sendToTarget();
             } catch (Error e6) {
-                Log.e(f7609c, "Unexpected error loading stream", e6);
+                Log.e(f4770c, "Unexpected error loading stream", e6);
                 if (!this.p) {
                     obtainMessage(4, e6).sendToTarget();
                 }
@@ -230,15 +230,15 @@ public final class t implements u {
     public static final class e implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private final d f7611a;
+        private final d f4772a;
 
         public e(d dVar) {
-            this.f7611a = dVar;
+            this.f4772a = dVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            this.f7611a.g();
+            this.f4772a.g();
         }
     }
 
@@ -281,7 +281,7 @@ public final class t implements u {
         if (bVar != null) {
             int i2 = i;
             if (i == Integer.MIN_VALUE) {
-                i2 = bVar.f7610a;
+                i2 = bVar.f4771a;
             }
             bVar.a(i2);
         }

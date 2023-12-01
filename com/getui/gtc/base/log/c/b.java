@@ -1,9 +1,9 @@
 package com.getui.gtc.base.log.c;
 
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import com.getui.gtc.base.log.ILogDestination;
 import com.getui.gtc.base.log.ILogFormatter;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -14,20 +14,20 @@ import org.json.JSONObject;
 public final class b implements ILogFormatter {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f21916a;
+    public String f8309a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ILogDestination f21917c;
+    private ILogDestination f8310c;
 
     public b() {
         this(new com.getui.gtc.base.log.b.b());
     }
 
     public b(ILogDestination iLogDestination) {
-        this.f21916a = "";
+        this.f8309a = "";
         this.b = 8;
-        this.f21917c = (ILogDestination) com.getui.gtc.base.log.e.a.a(iLogDestination);
+        this.f8310c = (ILogDestination) com.getui.gtc.base.log.e.a.a(iLogDestination);
     }
 
     private String a() {
@@ -63,7 +63,7 @@ public final class b implements ILogFormatter {
         String str5 = trim;
         if (trim.startsWith("{")) {
             str5 = trim;
-            if (trim.endsWith(i.d)) {
+            if (trim.endsWith("}")) {
                 try {
                     str5 = new JSONObject(trim).toString(2);
                 } catch (Throwable th2) {
@@ -125,13 +125,13 @@ public final class b implements ILogFormatter {
         String a2 = a();
         String str4 = str;
         if (TextUtils.isEmpty(str)) {
-            str4 = this.f21916a;
+            str4 = this.f8309a;
         }
         if (TextUtils.isEmpty(str4)) {
             str3 = a2;
         } else {
-            str3 = str4 + "-" + a2;
+            str3 = str4 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + a2;
         }
-        this.f21917c.log(i, str3, a(str2, th));
+        this.f8310c.log(i, str3, a(str2, th));
     }
 }

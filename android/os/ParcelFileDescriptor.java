@@ -6,7 +6,6 @@ import android.system.Os;
 import android.system.OsConstants;
 import android.system.StructStat;
 import android.util.Log;
-import com.alipay.sdk.util.i;
 import com.anythink.expressad.d.a.b;
 import com.baidu.mobads.sdk.api.IAdInterListener;
 import dalvik.system.CloseGuard;
@@ -589,7 +588,7 @@ public class ParcelFileDescriptor implements Parcelable, Closeable {
     }
 
     public String toString() {
-        return this.mWrapped != null ? this.mWrapped.toString() : "{ParcelFileDescriptor: " + this.mFd + i.d;
+        return this.mWrapped != null ? this.mWrapped.toString() : "{ParcelFileDescriptor: " + this.mFd + "}";
     }
 
     @Override // android.os.Parcelable

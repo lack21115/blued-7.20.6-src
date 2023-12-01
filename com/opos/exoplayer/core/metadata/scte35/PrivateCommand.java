@@ -21,23 +21,23 @@ public final class PrivateCommand extends SpliceCommand {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f25541a;
+    public final long f11853a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final byte[] f25542c;
+    public final byte[] f11854c;
 
     private PrivateCommand(long j, byte[] bArr, long j2) {
-        this.f25541a = j2;
+        this.f11853a = j2;
         this.b = j;
-        this.f25542c = bArr;
+        this.f11854c = bArr;
     }
 
     private PrivateCommand(Parcel parcel) {
-        this.f25541a = parcel.readLong();
+        this.f11853a = parcel.readLong();
         this.b = parcel.readLong();
         byte[] bArr = new byte[parcel.readInt()];
-        this.f25542c = bArr;
+        this.f11854c = bArr;
         parcel.readByteArray(bArr);
     }
 
@@ -52,9 +52,9 @@ public final class PrivateCommand extends SpliceCommand {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f25541a);
+        parcel.writeLong(this.f11853a);
         parcel.writeLong(this.b);
-        parcel.writeInt(this.f25542c.length);
-        parcel.writeByteArray(this.f25542c);
+        parcel.writeInt(this.f11854c.length);
+        parcel.writeByteArray(this.f11854c);
     }
 }

@@ -4,7 +4,7 @@ package com.bun.miitmdid.b;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21126a;
+    private static String f7520a;
 
     public static native String a();
 }

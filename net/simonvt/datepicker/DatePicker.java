@@ -22,6 +22,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.blued.blued_third_library.R;
+import com.amap.api.services.core.AMapException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,13 +33,9 @@ import net.simonvt.numberpicker.NumberPicker;
 
 /* loaded from: source-3503164-dex2jar.jar:net/simonvt/datepicker/DatePicker.class */
 public class DatePicker extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f43813a = DatePicker.class.getSimpleName();
+    private static final String a = DatePicker.class.getSimpleName();
     private final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final NumberPicker f43814c;
+    private final NumberPicker c;
     private final NumberPicker d;
     private final NumberPicker e;
     private final EditText f;
@@ -77,34 +74,30 @@ public class DatePicker extends FrameLayout {
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        private final int f43817a;
+        private final int a;
         private final int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f43818c;
+        private final int c;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f43817a = parcel.readInt();
+            this.a = parcel.readInt();
             this.b = parcel.readInt();
-            this.f43818c = parcel.readInt();
+            this.c = parcel.readInt();
         }
 
         private SavedState(Parcelable parcelable, int i, int i2, int i3) {
             super(parcelable);
-            this.f43817a = i;
+            this.a = i;
             this.b = i2;
-            this.f43818c = i3;
+            this.c = i3;
         }
 
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeInt(this.f43817a);
+            parcel.writeInt(this.a);
             parcel.writeInt(this.b);
-            parcel.writeInt(this.f43818c);
+            parcel.writeInt(this.c);
         }
     }
 
@@ -124,19 +117,19 @@ public class DatePicker extends FrameLayout {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.DatePicker, i, 0);
         boolean z = obtainStyledAttributes.getBoolean(R.styleable.DatePicker_dp_spinnersShown, true);
         boolean z2 = obtainStyledAttributes.getBoolean(R.styleable.DatePicker_dp_calendarViewShown, true);
-        int i2 = obtainStyledAttributes.getInt(R.styleable.DatePicker_dp_startYear, 1900);
-        int i3 = obtainStyledAttributes.getInt(R.styleable.DatePicker_dp_endYear, 2100);
+        int i2 = obtainStyledAttributes.getInt(R.styleable.DatePicker_dp_startYear, AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR);
+        int i3 = obtainStyledAttributes.getInt(R.styleable.DatePicker_dp_endYear, AMapException.CODE_AMAP_NEARBY_INVALID_USERID);
         String string = obtainStyledAttributes.getString(R.styleable.DatePicker_dp_minDate);
         String string2 = obtainStyledAttributes.getString(R.styleable.DatePicker_dp_maxDate);
         int resourceId = obtainStyledAttributes.getResourceId(R.styleable.DatePicker_dp_internalLayout, R.layout.date_picker_holo);
         obtainStyledAttributes.recycle();
-        ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(resourceId, (ViewGroup) this, true);
+        ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(resourceId, (ViewGroup) this, true);
         NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener() { // from class: net.simonvt.datepicker.DatePicker.1
             @Override // net.simonvt.numberpicker.NumberPicker.OnValueChangeListener
             public void onValueChange(NumberPicker numberPicker, int i4, int i5) {
                 DatePicker.this.f();
                 DatePicker.this.o.setTimeInMillis(DatePicker.this.r.getTimeInMillis());
-                if (numberPicker == DatePicker.this.f43814c) {
+                if (numberPicker == DatePicker.this.c) {
                     int actualMaximum = DatePicker.this.o.getActualMaximum(5);
                     if (i4 == actualMaximum && i5 == 1) {
                         DatePicker.this.o.add(5, 1);
@@ -177,11 +170,11 @@ public class DatePicker extends FrameLayout {
             }
         });
         NumberPicker numberPicker = (NumberPicker) findViewById(R.id.day);
-        this.f43814c = numberPicker;
+        this.c = numberPicker;
         numberPicker.setFormatter(NumberPicker.getTwoDigitFormatter());
-        this.f43814c.setOnLongPressUpdateInterval(100L);
-        this.f43814c.setOnValueChangedListener(onValueChangeListener);
-        this.f = (EditText) this.f43814c.findViewById(R.id.np__numberpicker_input);
+        this.c.setOnLongPressUpdateInterval(100L);
+        this.c.setOnValueChangedListener(onValueChangeListener);
+        this.f = (EditText) this.c.findViewById(R.id.np__numberpicker_input);
         NumberPicker numberPicker2 = (NumberPicker) findViewById(R.id.month);
         this.d = numberPicker2;
         numberPicker2.setMinValue(0);
@@ -295,11 +288,11 @@ public class DatePicker extends FrameLayout {
             r0 = r5
             android.widget.LinearLayout r0 = r0.b     // Catch: java.lang.Exception -> L87
             r1 = r5
-            net.simonvt.numberpicker.NumberPicker r1 = r1.f43814c     // Catch: java.lang.Exception -> L87
+            net.simonvt.numberpicker.NumberPicker r1 = r1.c     // Catch: java.lang.Exception -> L87
             r0.addView(r1)     // Catch: java.lang.Exception -> L87
             r0 = r5
             r1 = r5
-            net.simonvt.numberpicker.NumberPicker r1 = r1.f43814c     // Catch: java.lang.Exception -> L87
+            net.simonvt.numberpicker.NumberPicker r1 = r1.c     // Catch: java.lang.Exception -> L87
             r2 = r7
             r3 = r6
             r0.a(r1, r2, r3)     // Catch: java.lang.Exception -> L87
@@ -350,7 +343,7 @@ public class DatePicker extends FrameLayout {
             calendar.setTime(this.m.parse(str));
             return true;
         } catch (ParseException e) {
-            String str2 = f43813a;
+            String str2 = a;
             Log.w(str2, "Date: " + str + " not in format: MM/dd/yyyy");
             return false;
         }
@@ -359,25 +352,25 @@ public class DatePicker extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         if (this.r.equals(this.p)) {
-            this.f43814c.setMinValue(this.r.get(5));
-            this.f43814c.setMaxValue(this.r.getActualMaximum(5));
-            this.f43814c.setWrapSelectorWheel(false);
+            this.c.setMinValue(this.r.get(5));
+            this.c.setMaxValue(this.r.getActualMaximum(5));
+            this.c.setWrapSelectorWheel(false);
             this.d.setDisplayedValues(null);
             this.d.setMinValue(this.r.get(2));
             this.d.setMaxValue(this.r.getActualMaximum(2));
             this.d.setWrapSelectorWheel(false);
         } else if (this.r.equals(this.q)) {
-            this.f43814c.setMinValue(this.r.getActualMinimum(5));
-            this.f43814c.setMaxValue(this.r.get(5));
-            this.f43814c.setWrapSelectorWheel(false);
+            this.c.setMinValue(this.r.getActualMinimum(5));
+            this.c.setMaxValue(this.r.get(5));
+            this.c.setWrapSelectorWheel(false);
             this.d.setDisplayedValues(null);
             this.d.setMinValue(this.r.getActualMinimum(2));
             this.d.setMaxValue(this.r.get(2));
             this.d.setWrapSelectorWheel(false);
         } else {
-            this.f43814c.setMinValue(1);
-            this.f43814c.setMaxValue(this.r.getActualMaximum(5));
-            this.f43814c.setWrapSelectorWheel(true);
+            this.c.setMinValue(1);
+            this.c.setMaxValue(this.r.getActualMaximum(5));
+            this.c.setWrapSelectorWheel(true);
             this.d.setDisplayedValues(null);
             this.d.setMinValue(0);
             this.d.setMaxValue(11);
@@ -389,7 +382,7 @@ public class DatePicker extends FrameLayout {
         this.e.setWrapSelectorWheel(false);
         this.e.setValue(this.r.get(1));
         this.d.setValue(this.r.get(2));
-        this.f43814c.setValue(this.r.get(5));
+        this.c.setValue(this.r.get(5));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -411,7 +404,7 @@ public class DatePicker extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService("input_method");
         if (inputMethodManager != null) {
             if (inputMethodManager.isActive(this.h)) {
                 this.h.clearFocus();
@@ -537,7 +530,7 @@ public class DatePicker extends FrameLayout {
     public void onRestoreInstanceState(Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        a(savedState.f43817a, savedState.b, savedState.f43818c);
+        a(savedState.a, savedState.b, savedState.c);
         b();
         c();
     }
@@ -558,7 +551,7 @@ public class DatePicker extends FrameLayout {
             return;
         }
         super.setEnabled(z);
-        this.f43814c.setEnabled(z);
+        this.c.setEnabled(z);
         this.d.setEnabled(z);
         this.e.setEnabled(z);
         this.i.setEnabled(z);
@@ -566,7 +559,7 @@ public class DatePicker extends FrameLayout {
     }
 
     public void setInputTextEnable(boolean z) {
-        this.f43814c.setInputTextEnable(z);
+        this.c.setInputTextEnable(z);
         this.d.setInputTextEnable(z);
         this.e.setInputTextEnable(z);
     }
@@ -602,7 +595,7 @@ public class DatePicker extends FrameLayout {
     }
 
     public void setWheelTextColor(int i) {
-        this.f43814c.setWheelTextColor(i);
+        this.c.setWheelTextColor(i);
         this.d.setWheelTextColor(i);
         this.e.setWheelTextColor(i);
         postInvalidate();

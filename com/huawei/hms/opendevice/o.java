@@ -24,11 +24,11 @@ import java.util.Map;
 public abstract class o {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22825a = "o";
+    private static final String f9217a = "o";
     private static Map<String, String> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f22826c = new Object();
+    private static final Object f9218c = new Object();
 
     private static String a() {
         return "2A57086C86EF54970C1E6EB37BFC72B1";
@@ -51,7 +51,7 @@ public abstract class o {
         try {
             a("s", str, c2 + "/files/s");
         } catch (IOException e) {
-            HMSLog.e(f22825a, "save keyS IOException.");
+            HMSLog.e(f9217a, "save keyS IOException.");
         }
     }
 
@@ -59,7 +59,7 @@ public abstract class o {
         OutputStreamWriter outputStreamWriter;
         BufferedWriter bufferedWriter;
         BufferedWriter bufferedWriter2;
-        HMSLog.i(f22825a, "save local secret key.");
+        HMSLog.i(f9217a, "save local secret key.");
         try {
             File file = new File(str3);
             p.a(file);
@@ -102,7 +102,7 @@ public abstract class o {
             a("t", str4, c2 + "/files/math/t");
             a("s", str5, c2 + "/files/s");
         } catch (IOException e) {
-            HMSLog.e(f22825a, "save key IOException.");
+            HMSLog.e(f9217a, "save key IOException.");
         }
     }
 
@@ -143,7 +143,7 @@ public abstract class o {
 
     public static String b(Context context) {
         if (!i()) {
-            HMSLog.i(f22825a, "work key is empty, execute init.");
+            HMSLog.i(f9217a, "work key is empty, execute init.");
             c(context);
         }
         String decryptWorkKey = WorkKeyCryptUtil.decryptWorkKey(f(), b());
@@ -159,16 +159,16 @@ public abstract class o {
     }
 
     public static void c(Context context) {
-        synchronized (f22826c) {
+        synchronized (f9218c) {
             d(context.getApplicationContext());
             if (i()) {
-                HMSLog.i(f22825a, "The local secret is already in separate file mode.");
+                HMSLog.i(f9217a, "The local secret is already in separate file mode.");
                 return;
             }
             File file = new File(d.c(context.getApplicationContext()) + "/shared_prefs/LocalAvengers.xml");
             if (file.exists()) {
                 IOUtil.deleteSecure(file);
-                HMSLog.i(f22825a, "destroy C, delete file LocalAvengers.xml.");
+                HMSLog.i(f9217a, "destroy C, delete file LocalAvengers.xml.");
             }
             byte[] generateSecureRandom = EncryptUtil.generateSecureRandom(32);
             byte[] generateSecureRandom2 = EncryptUtil.generateSecureRandom(32);
@@ -179,7 +179,7 @@ public abstract class o {
             String a4 = c.a(generateSecureRandom3);
             String a5 = c.a(generateSecureRandom4);
             a(a2, a3, a4, a5, WorkKeyCryptUtil.encryptWorkKey(c.a(EncryptUtil.generateSecureRandom(32)), a(a2, a3, a4, a5)), context);
-            HMSLog.i(f22825a, "generate D.");
+            HMSLog.i(f9217a, "generate D.");
         }
     }
 
@@ -189,7 +189,7 @@ public abstract class o {
 
     private static void d(Context context) {
         if (i()) {
-            HMSLog.i(f22825a, "secretKeyCache not empty.");
+            HMSLog.i(f9217a, "secretKeyCache not empty.");
             return;
         }
         b.clear();
@@ -220,21 +220,21 @@ public abstract class o {
             try {
                 String decryptWorkKey = WorkKeyCryptUtil.decryptWorkKey(f(), b());
                 if (q.a(decryptWorkKey)) {
-                    HMSLog.i(f22825a, "keyS has been upgraded, no require operate again.");
+                    HMSLog.i(f9217a, "keyS has been upgraded, no require operate again.");
                     return decryptWorkKey;
                 }
                 String decryptWorkKey2 = WorkKeyCryptUtil.decryptWorkKey(f(), h());
                 if (q.a(decryptWorkKey2)) {
-                    HMSLog.i(f22825a, "keyS is encrypt by RootKeyUtil, upgrade encrypt mode.");
+                    HMSLog.i(f9217a, "keyS is encrypt by RootKeyUtil, upgrade encrypt mode.");
                     a(WorkKeyCryptUtil.encryptWorkKey(decryptWorkKey2, b()), context);
                     return decryptWorkKey2;
                 }
                 String decryptWorkKey3 = WorkKeyCryptUtil.decryptWorkKey(f(), BaseKeyUtil.exportRootKey(d(), e(), c(), g(), 32, false));
                 if (!q.a(decryptWorkKey3)) {
-                    HMSLog.e(f22825a, "all mode unable to decrypt root key.");
+                    HMSLog.e(f9217a, "all mode unable to decrypt root key.");
                     return "";
                 }
-                HMSLog.i(f22825a, "keyS is encrypt by ExportRootKey with sha1, upgrade encrypt mode to sha256.");
+                HMSLog.i(f9217a, "keyS is encrypt by ExportRootKey with sha1, upgrade encrypt mode to sha256.");
                 a(WorkKeyCryptUtil.encryptWorkKey(decryptWorkKey3, b()), context);
                 return decryptWorkKey3;
             } catch (Throwable th) {

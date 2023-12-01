@@ -2,6 +2,7 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 
 import android.text.TextUtils;
 import com.google.common.net.HttpHeaders;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,11 +17,11 @@ public final class w {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public InputStream f40183a;
+        public InputStream f26492a;
         public final ByteArrayOutputStream b = new ByteArrayOutputStream();
 
         public final int a(byte[] bArr, int i, int i2) {
-            InputStream inputStream = this.f40183a;
+            InputStream inputStream = this.f26492a;
             if (inputStream == null) {
                 return -1;
             }
@@ -52,19 +53,19 @@ public final class w {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final w f40184a = new w();
+        public static final w f26493a = new w();
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/w$d.class */
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f40185a;
+        public int f26494a;
         public byte[] b;
         public int d;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f40186c = "";
+        public String f26495c = "";
         public String e = "";
     }
 
@@ -72,7 +73,7 @@ public final class w {
         d dVar;
         loop0: while (true) {
             dVar = new d();
-            dVar.f40185a = -1;
+            dVar.f26494a = -1;
             dVar.d = -1;
             boolean z = true;
             String str2 = str;
@@ -89,7 +90,7 @@ public final class w {
                         String str5 = str2;
                         sb.append(j);
                         String str6 = str2;
-                        sb.append("-");
+                        sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                         String str7 = str2;
                         httpURLConnection.setRequestProperty("range", sb.toString());
                     }
@@ -105,14 +106,14 @@ public final class w {
                         dVar.e = "getInputStream null";
                         return dVar;
                     }
-                    dVar.f40185a = httpURLConnection.getResponseCode();
+                    dVar.f26494a = httpURLConnection.getResponseCode();
                     String str12 = str2;
                     int contentLength = httpURLConnection.getContentLength();
                     if (contentLength != -1) {
                         dVar.d = contentLength;
                     }
                     String str13 = str2;
-                    if (dVar.f40185a == 302) {
+                    if (dVar.f26494a == 302) {
                         String str14 = str2;
                         str13 = httpURLConnection.getHeaderField(HttpHeaders.LOCATION);
                         str2 = str13;
@@ -120,7 +121,7 @@ public final class w {
                         }
                     }
                     z = false;
-                    dVar.f40186c = httpURLConnection.getContentType();
+                    dVar.f26495c = httpURLConnection.getContentType();
                     String str15 = str13;
                     dVar.b = a(httpURLConnection, aVar);
                     str2 = str13;
@@ -156,8 +157,8 @@ public final class w {
                 return null;
             }
             d dVar = new d();
-            dVar.f40185a = httpURLConnection.getResponseCode();
-            dVar.f40186c = httpURLConnection.getContentType();
+            dVar.f26494a = httpURLConnection.getResponseCode();
+            dVar.f26495c = httpURLConnection.getContentType();
             dVar.d = httpURLConnection.getContentLength();
             dVar.b = a(httpURLConnection, null);
             return dVar;
@@ -169,7 +170,7 @@ public final class w {
 
     public static d a(HttpURLConnection httpURLConnection) {
         d dVar = new d();
-        dVar.f40185a = -1;
+        dVar.f26494a = -1;
         try {
             httpURLConnection.setRequestMethod("GET");
             httpURLConnection.setConnectTimeout(15000);
@@ -179,8 +180,8 @@ public final class w {
                 dVar.e = "getInputStream null";
                 return dVar;
             }
-            dVar.f40185a = httpURLConnection.getResponseCode();
-            dVar.f40186c = httpURLConnection.getContentType();
+            dVar.f26494a = httpURLConnection.getResponseCode();
+            dVar.f26495c = httpURLConnection.getContentType();
             dVar.d = httpURLConnection.getContentLength();
             dVar.b = a(httpURLConnection, null);
             return dVar;

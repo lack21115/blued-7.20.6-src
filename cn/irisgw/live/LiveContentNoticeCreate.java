@@ -43,8 +43,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
     private volatile Object url_;
     private static final LiveContentNoticeCreate DEFAULT_INSTANCE = new LiveContentNoticeCreate();
     private static final Parser<LiveContentNoticeCreate> PARSER = new AbstractParser<LiveContentNoticeCreate>() { // from class: cn.irisgw.live.LiveContentNoticeCreate.1
-        @Override // com.google.protobuf.Parser
-        public LiveContentNoticeCreate parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LiveContentNoticeCreate m4806parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LiveContentNoticeCreate(codedInputStream, extensionRegistryLite);
         }
     };
@@ -86,22 +86,22 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             boolean unused = LiveContentNoticeCreate.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m4808addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveContentNoticeCreate build() {
-            LiveContentNoticeCreate buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LiveContentNoticeCreate m4810build() {
+            LiveContentNoticeCreate m4812buildPartial = m4812buildPartial();
+            if (m4812buildPartial.isInitialized()) {
+                return m4812buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m4812buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LiveContentNoticeCreate buildPartial() {
+        /* renamed from: buildPartial */
+        public LiveContentNoticeCreate m4812buildPartial() {
             LiveContentNoticeCreate liveContentNoticeCreate = new LiveContentNoticeCreate(this);
             liveContentNoticeCreate.count_ = this.count_;
             liveContentNoticeCreate.url_ = this.url_;
@@ -118,8 +118,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return liveContentNoticeCreate;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m4816clear() {
             super.clear();
             this.count_ = 0;
             this.url_ = "";
@@ -153,8 +153,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m4818clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -170,8 +170,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m4821clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -211,10 +211,9 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m4827clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.LiveContentNoticeCreateOrBuilder
@@ -249,12 +248,11 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return this.countdown_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LiveContentNoticeCreate getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LiveContentNoticeCreate m4829getDefaultInstanceForType() {
             return LiveContentNoticeCreate.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveContentNoticeCreate_descriptor;
         }
@@ -333,12 +331,10 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LiveContentNoticeCreate_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveContentNoticeCreate.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -383,18 +379,18 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
                 this.platform_ = liveContentNoticeCreate.platform_;
                 onChanged();
             }
-            mergeUnknownFields(liveContentNoticeCreate.unknownFields);
+            m4838mergeUnknownFields(liveContentNoticeCreate.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LiveContentNoticeCreate.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LiveContentNoticeCreate.Builder m4835mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -439,11 +435,11 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveContentNoticeCreate.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveContentNoticeCreate$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LiveContentNoticeCreate.Builder.m4835mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LiveContentNoticeCreate$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m4834mergeFrom(Message message) {
             if (message instanceof LiveContentNoticeCreate) {
                 return mergeFrom((LiveContentNoticeCreate) message);
             }
@@ -451,8 +447,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m4838mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -487,8 +483,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m4840setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -523,8 +519,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m4842setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -552,8 +548,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m4844setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
@@ -667,66 +663,65 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m4805toBuilder();
     }
 
     public static Builder newBuilder(LiveContentNoticeCreate liveContentNoticeCreate) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(liveContentNoticeCreate);
+        return DEFAULT_INSTANCE.m4805toBuilder().mergeFrom(liveContentNoticeCreate);
     }
 
     public static LiveContentNoticeCreate parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LiveContentNoticeCreate) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LiveContentNoticeCreate parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveContentNoticeCreate) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveContentNoticeCreate parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LiveContentNoticeCreate) PARSER.parseFrom(byteString);
     }
 
     public static LiveContentNoticeCreate parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LiveContentNoticeCreate) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LiveContentNoticeCreate parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LiveContentNoticeCreate) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LiveContentNoticeCreate parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveContentNoticeCreate) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LiveContentNoticeCreate parseFrom(InputStream inputStream) throws IOException {
-        return (LiveContentNoticeCreate) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LiveContentNoticeCreate parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LiveContentNoticeCreate) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LiveContentNoticeCreate parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LiveContentNoticeCreate) PARSER.parseFrom(byteBuffer);
     }
 
     public static LiveContentNoticeCreate parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LiveContentNoticeCreate) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LiveContentNoticeCreate parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LiveContentNoticeCreate) PARSER.parseFrom(bArr);
     }
 
     public static LiveContentNoticeCreate parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LiveContentNoticeCreate) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LiveContentNoticeCreate> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -770,8 +765,8 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
         return this.countdown_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LiveContentNoticeCreate getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LiveContentNoticeCreate m4800getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -785,7 +780,6 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
         return this.id_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LiveContentNoticeCreate> getParserForType() {
         return PARSER;
     }
@@ -812,7 +806,6 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -895,7 +888,6 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
         return this.type_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -922,7 +914,6 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -932,12 +923,10 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
         return hashCode;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LiveContentNoticeCreate_fieldAccessorTable.ensureFieldAccessorsInitialized(LiveContentNoticeCreate.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -950,28 +939,26 @@ public final class LiveContentNoticeCreate extends GeneratedMessageV3 implements
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m4803newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m4802newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LiveContentNoticeCreate();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m4805toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.count_;
         if (i != 0) {

@@ -176,7 +176,7 @@ public class p implements com.kwad.sdk.core.webview.b.a {
                             str2 = aVar.IY;
                         }
                     }
-                    p.this.afterHandleAdClick(com.kwad.components.core.d.b.a.a(new a.C0519a(p.this.mBridgeContext.LD.getContext()).I(adTemplate).b(apkDownloadHelper).ap(str2).ao(p.this.enablePauseByActionbar(aVar)).ap(p.this.dontShowDialog).d(p.this.mBridgeContext.mReportExtData).ap(aVar.TC).an(aVar.aqo).ao(aVar.jU).aq(p.this.mNeedReport || aVar.IQ).ar(p.this.mClickActionSource).a(p.this.getClientParams(aVar, adTemplate)).a(new a.b() { // from class: com.kwad.components.core.webview.jshandler.p.1.1
+                    p.this.afterHandleAdClick(com.kwad.components.core.d.b.a.a(new a.C0349a(p.this.mBridgeContext.LD.getContext()).I(adTemplate).b(apkDownloadHelper).ap(str2).ao(p.this.enablePauseByActionbar(aVar)).ap(p.this.dontShowDialog).d(p.this.mBridgeContext.mReportExtData).ap(aVar.TC).an(aVar.aqo).ao(aVar.jU).aq(p.this.mNeedReport || aVar.IQ).ar(p.this.mClickActionSource).a(p.this.getClientParams(aVar, adTemplate)).a(new a.b() { // from class: com.kwad.components.core.webview.jshandler.p.1.1
                         @Override // com.kwad.components.core.d.b.a.b
                         public final void onAdClicked() {
                             p.this.onAdClickListen();

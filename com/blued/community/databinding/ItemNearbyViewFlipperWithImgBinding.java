@@ -14,13 +14,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/ItemNearbyViewFlipperWithImgBinding.class */
 public final class ItemNearbyViewFlipperWithImgBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f19017a;
+    public final LinearLayout a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f19018c;
+    public final ImageView c;
     public final ShapeTextView d;
     public final TextView e;
     public final TextView f;
@@ -32,9 +28,9 @@ public final class ItemNearbyViewFlipperWithImgBinding implements ViewBinding {
 
     private ItemNearbyViewFlipperWithImgBinding(CardView cardView, LinearLayout linearLayout, LinearLayout linearLayout2, ImageView imageView, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, ViewFlipper viewFlipper) {
         this.k = cardView;
-        this.f19017a = linearLayout;
+        this.a = linearLayout;
         this.b = linearLayout2;
-        this.f19018c = imageView;
+        this.c = imageView;
         this.d = shapeTextView;
         this.e = textView;
         this.f = textView2;
@@ -111,7 +107,6 @@ public final class ItemNearbyViewFlipperWithImgBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
         return this.k;

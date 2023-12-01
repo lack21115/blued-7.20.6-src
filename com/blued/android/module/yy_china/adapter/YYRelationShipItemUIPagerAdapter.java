@@ -21,7 +21,6 @@ public final class YYRelationShipItemUIPagerAdapter extends BaseFragmentPagerAda
         this.b = fm;
     }
 
-    @Override // androidx.viewpager.widget.PagerAdapter
     /* renamed from: a */
     public String getPageTitle(int i) {
         return "";

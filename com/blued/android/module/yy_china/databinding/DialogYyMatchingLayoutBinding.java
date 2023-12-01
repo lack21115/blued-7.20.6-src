@@ -11,13 +11,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogYyMatchingLayoutBinding.class */
 public final class DialogYyMatchingLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16436a;
+    public final TextView a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final HollowView f16437c;
+    public final HollowView c;
     public final HollowView d;
     public final ImageView e;
     public final ShapeableImageView f;
@@ -29,9 +25,9 @@ public final class DialogYyMatchingLayoutBinding implements ViewBinding {
 
     private DialogYyMatchingLayoutBinding(FrameLayout frameLayout, TextView textView, View view, HollowView hollowView, HollowView hollowView2, ImageView imageView, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, TextView textView2, TextView textView3, TextView textView4) {
         this.k = frameLayout;
-        this.f16436a = textView;
+        this.a = textView;
         this.b = view;
-        this.f16437c = hollowView;
+        this.c = hollowView;
         this.d = hollowView2;
         this.e = imageView;
         this.f = shapeableImageView;
@@ -53,17 +49,17 @@ public final class DialogYyMatchingLayoutBinding implements ViewBinding {
                     if (hollowView2 != null) {
                         ImageView imageView = (ImageView) view.findViewById(R.id.img_matching);
                         if (imageView != null) {
-                            ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.pk_left);
-                            if (shapeableImageView != null) {
-                                ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.pk_right);
-                                if (shapeableImageView2 != null) {
+                            ShapeableImageView findViewById2 = view.findViewById(R.id.pk_left);
+                            if (findViewById2 != null) {
+                                ShapeableImageView findViewById3 = view.findViewById(R.id.pk_right);
+                                if (findViewById3 != null) {
                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_match_title);
                                     if (textView2 != null) {
                                         TextView textView3 = (TextView) view.findViewById(R.id.tv_player_left);
                                         if (textView3 != null) {
                                             TextView textView4 = (TextView) view.findViewById(R.id.tv_player_right);
                                             if (textView4 != null) {
-                                                return new DialogYyMatchingLayoutBinding((FrameLayout) view, textView, findViewById, hollowView, hollowView2, imageView, shapeableImageView, shapeableImageView2, textView2, textView3, textView4);
+                                                return new DialogYyMatchingLayoutBinding((FrameLayout) view, textView, findViewById, hollowView, hollowView2, imageView, findViewById2, findViewById3, textView2, textView3, textView4);
                                             }
                                             str = "tvPlayerRight";
                                         } else {
@@ -96,7 +92,6 @@ public final class DialogYyMatchingLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.k;

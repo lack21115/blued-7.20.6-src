@@ -6,11 +6,11 @@ import java.io.File;
 public class e implements Comparable<e> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f7557a;
+    public final String f4718a;
     public final long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f7558c;
+    public final long f4719c;
     public final boolean d;
     public final File e;
     public final long f;
@@ -20,27 +20,27 @@ public class e implements Comparable<e> {
     }
 
     public e(String str, long j, long j2, long j3, File file) {
-        this.f7557a = str;
+        this.f4718a = str;
         this.b = j;
-        this.f7558c = j2;
+        this.f4719c = j2;
         this.d = file != null;
         this.e = file;
         this.f = j3;
     }
 
     private int a(e eVar) {
-        if (this.f7557a.equals(eVar.f7557a)) {
+        if (this.f4718a.equals(eVar.f4718a)) {
             int i = ((this.b - eVar.b) > 0L ? 1 : ((this.b - eVar.b) == 0L ? 0 : -1));
             if (i == 0) {
                 return 0;
             }
             return i < 0 ? -1 : 1;
         }
-        return this.f7557a.compareTo(eVar.f7557a);
+        return this.f4718a.compareTo(eVar.f4718a);
     }
 
     public final boolean a() {
-        return this.f7558c == -1;
+        return this.f4719c == -1;
     }
 
     public final boolean b() {
@@ -50,13 +50,13 @@ public class e implements Comparable<e> {
     @Override // java.lang.Comparable
     public /* synthetic */ int compareTo(e eVar) {
         e eVar2 = eVar;
-        if (this.f7557a.equals(eVar2.f7557a)) {
+        if (this.f4718a.equals(eVar2.f4718a)) {
             int i = ((this.b - eVar2.b) > 0L ? 1 : ((this.b - eVar2.b) == 0L ? 0 : -1));
             if (i == 0) {
                 return 0;
             }
             return i < 0 ? -1 : 1;
         }
-        return this.f7557a.compareTo(eVar2.f7557a);
+        return this.f4718a.compareTo(eVar2.f4718a);
     }
 }

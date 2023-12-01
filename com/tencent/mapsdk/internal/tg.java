@@ -6,7 +6,7 @@ import android.content.Context;
 public class tg {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f38029a = 0;
+    private static final int f24338a = 0;
     private static int b;
 
     public static int a() {

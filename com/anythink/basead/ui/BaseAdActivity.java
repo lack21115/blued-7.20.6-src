@@ -16,6 +16,7 @@ import com.anythink.basead.e.b;
 import com.anythink.core.api.BaseAd;
 import com.anythink.core.basead.a;
 import com.anythink.core.common.b;
+import com.anythink.core.common.b.g;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.i;
 import com.anythink.core.common.e.j;
@@ -25,13 +26,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseAdActivity.class */
 public class BaseAdActivity extends Activity {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6044a = BaseAdActivity.class.getSimpleName();
+    public static final String a = BaseAdActivity.class.getSimpleName();
     boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    y f6045c;
+    y c;
     long d = 0;
     long e = 0;
     float f = 0.0f;
@@ -47,7 +44,7 @@ public class BaseAdActivity extends Activity {
                 if (BaseAdActivity.this.b) {
                     yVar.a(BaseAdActivity.this);
                 } else {
-                    BaseAdActivity.this.f6045c = yVar;
+                    BaseAdActivity.this.c = yVar;
                 }
             }
         }
@@ -56,7 +53,7 @@ public class BaseAdActivity extends Activity {
     private j j;
     private i k;
     private String l;
-    private b.InterfaceC0079b m;
+    private b.InterfaceC0039b m;
     private String n;
     private int o;
     private int p;
@@ -69,60 +66,60 @@ public class BaseAdActivity extends Activity {
 
     /* renamed from: com.anythink.basead.ui.BaseAdActivity$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseAdActivity$2.class */
-    final class AnonymousClass2 implements b.InterfaceC0079b {
+    final class AnonymousClass2 implements b.InterfaceC0039b {
         AnonymousClass2() {
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void a() {
             if (BaseAdActivity.this.m != null) {
                 BaseAdActivity.this.m.a();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void a(int i) {
             if (BaseAdActivity.this.m != null) {
                 BaseAdActivity.this.m.a(i);
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void a(e eVar) {
             if (BaseAdActivity.this.m != null) {
                 BaseAdActivity.this.m.a(eVar);
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void a(boolean z) {
             if (BaseAdActivity.this.m != null) {
                 BaseAdActivity.this.m.a(z);
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void b() {
             if (BaseAdActivity.this.m != null) {
                 BaseAdActivity.this.m.b();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void c() {
             if (BaseAdActivity.this.m != null) {
                 BaseAdActivity.this.m.c();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void d() {
             if (BaseAdActivity.this.m != null) {
                 BaseAdActivity.this.m.d();
             }
         }
 
-        @Override // com.anythink.basead.e.b.InterfaceC0079b
+        @Override // com.anythink.basead.e.b.InterfaceC0039b
         public final void e() {
             BaseAdActivity.this.finish();
             if (BaseAdActivity.this.u) {
@@ -138,14 +135,14 @@ public class BaseAdActivity extends Activity {
         Intent intent = getIntent();
         try {
             if (intent == null) {
-                Log.e("anythink", f6044a + " Intent is null.");
+                Log.e(g.n, a + " Intent is null.");
                 return;
             }
             this.n = intent.getStringExtra("extra_scenario");
-            this.o = intent.getIntExtra(a.C0092a.b, 1);
-            this.k = (i) intent.getSerializableExtra(a.C0092a.f6391c);
-            this.j = (j) intent.getSerializableExtra(a.C0092a.e);
-            this.l = intent.getStringExtra(a.C0092a.d);
+            this.o = intent.getIntExtra(a.C0052a.b, 1);
+            this.k = (i) intent.getSerializableExtra(a.C0052a.c);
+            this.j = (j) intent.getSerializableExtra(a.C0052a.e);
+            this.l = intent.getStringExtra(a.C0052a.d);
             this.u = a(this.o, this.j);
         } catch (Exception e) {
             e.printStackTrace();
@@ -159,7 +156,7 @@ public class BaseAdActivity extends Activity {
             Log.i("anythink_BaseAdActivity", "Activity is null");
             activity = g;
         }
-        boolean a2 = a(aVar.f6394a, aVar.h);
+        boolean a2 = a(aVar.a, aVar.h);
         if (aVar.e == 2) {
             if (a2) {
                 intent.setClass(activity, AdLandscapeTranslucentActivity.class);
@@ -172,17 +169,17 @@ public class BaseAdActivity extends Activity {
             intent.setClass(activity, AdPortraitActivity.class);
         }
         intent.putExtra("extra_scenario", aVar.b);
-        intent.putExtra(a.C0092a.b, aVar.f6394a);
-        intent.putExtra(a.C0092a.f6391c, aVar.f6395c);
-        intent.putExtra(a.C0092a.d, aVar.d);
-        intent.putExtra(a.C0092a.e, aVar.h);
+        intent.putExtra(a.C0052a.b, aVar.a);
+        intent.putExtra(a.C0052a.c, aVar.c);
+        intent.putExtra(a.C0052a.d, aVar.d);
+        intent.putExtra(a.C0052a.e, aVar.h);
         if (!(activity instanceof Activity)) {
             intent.addFlags(268435456);
         }
         try {
             activity.startActivity(intent);
         } catch (Throwable th) {
-            b.InterfaceC0079b a3 = com.anythink.basead.e.b.a().a(aVar.d);
+            b.InterfaceC0039b a3 = com.anythink.basead.e.b.a().a(aVar.d);
             if (a3 != null) {
                 a3.a(f.a("10000", th.getMessage()));
             }
@@ -191,14 +188,14 @@ public class BaseAdActivity extends Activity {
 
     private void a(Bundle bundle) {
         if (bundle != null) {
-            this.q = bundle.getBoolean(a.C0092a.f);
-            this.r = bundle.getBoolean(a.C0092a.g);
-            this.s = bundle.getBoolean(a.C0092a.h);
-            this.t = bundle.getBoolean(a.C0092a.k);
-            this.d = bundle.getLong(a.C0092a.m);
-            this.e = bundle.getLong(a.C0092a.n);
-            this.f = bundle.getFloat(a.C0092a.o);
-            this.g = bundle.getBoolean(a.C0092a.i);
+            this.q = bundle.getBoolean(a.C0052a.f);
+            this.r = bundle.getBoolean(a.C0052a.g);
+            this.s = bundle.getBoolean(a.C0052a.h);
+            this.t = bundle.getBoolean(a.C0052a.k);
+            this.d = bundle.getLong(a.C0052a.m);
+            this.e = bundle.getLong(a.C0052a.n);
+            this.f = bundle.getFloat(a.C0052a.o);
+            this.g = bundle.getBoolean(a.C0052a.i);
         }
     }
 
@@ -216,14 +213,14 @@ public class BaseAdActivity extends Activity {
     private void b(Bundle bundle) {
         this.i.setListener(new AnonymousClass2());
         if (bundle != null) {
-            this.q = bundle.getBoolean(a.C0092a.f);
-            this.r = bundle.getBoolean(a.C0092a.g);
-            this.s = bundle.getBoolean(a.C0092a.h);
-            this.t = bundle.getBoolean(a.C0092a.k);
-            this.d = bundle.getLong(a.C0092a.m);
-            this.e = bundle.getLong(a.C0092a.n);
-            this.f = bundle.getFloat(a.C0092a.o);
-            this.g = bundle.getBoolean(a.C0092a.i);
+            this.q = bundle.getBoolean(a.C0052a.f);
+            this.r = bundle.getBoolean(a.C0052a.g);
+            this.s = bundle.getBoolean(a.C0052a.h);
+            this.t = bundle.getBoolean(a.C0052a.k);
+            this.d = bundle.getLong(a.C0052a.m);
+            this.e = bundle.getLong(a.C0052a.n);
+            this.f = bundle.getFloat(a.C0052a.o);
+            this.g = bundle.getBoolean(a.C0052a.i);
         }
         this.i.setIsShowEndCard(this.q);
         this.i.setHideFeedbackButton(this.r);
@@ -271,13 +268,13 @@ public class BaseAdActivity extends Activity {
         try {
             if (intent != null) {
                 this.n = intent.getStringExtra("extra_scenario");
-                this.o = intent.getIntExtra(a.C0092a.b, 1);
-                this.k = (i) intent.getSerializableExtra(a.C0092a.f6391c);
-                this.j = (j) intent.getSerializableExtra(a.C0092a.e);
-                this.l = intent.getStringExtra(a.C0092a.d);
+                this.o = intent.getIntExtra(a.C0052a.b, 1);
+                this.k = (i) intent.getSerializableExtra(a.C0052a.c);
+                this.j = (j) intent.getSerializableExtra(a.C0052a.e);
+                this.l = intent.getStringExtra(a.C0052a.d);
                 this.u = a(this.o, this.j);
             } else {
-                Log.e("anythink", f6044a + " Intent is null.");
+                Log.e(g.n, a + " Intent is null.");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -286,22 +283,22 @@ public class BaseAdActivity extends Activity {
         this.v = com.anythink.basead.d.i.a().a(this.l);
         j jVar = this.j;
         if (jVar == null || jVar.m == null) {
-            Log.e("anythink", f6044a + "Start Screen Ad Error.");
+            Log.e(g.n, a + "Start Screen Ad Error.");
             try {
                 if (this.m != null) {
-                    b.InterfaceC0079b interfaceC0079b = this.m;
-                    interfaceC0079b.a(f.a(f.k, f6044a + "Start FullScreen Ad Error."));
+                    b.InterfaceC0039b interfaceC0039b = this.m;
+                    interfaceC0039b.a(f.a(f.k, a + "Start FullScreen Ad Error."));
                 }
             } catch (Throwable th) {
                 th.printStackTrace();
             }
             finish();
         } else if (this.k == null) {
-            Log.e("anythink", f6044a + " onCreate: OfferAd = null");
+            Log.e(g.n, a + " onCreate: OfferAd = null");
             try {
                 if (this.m != null) {
-                    b.InterfaceC0079b interfaceC0079b2 = this.m;
-                    interfaceC0079b2.a(f.a(f.k, f6044a + " onCreate: OfferAd = null"));
+                    b.InterfaceC0039b interfaceC0039b2 = this.m;
+                    interfaceC0039b2.a(f.a(f.k, a + " onCreate: OfferAd = null"));
                 }
             } catch (Throwable th2) {
                 th2.printStackTrace();
@@ -320,14 +317,14 @@ public class BaseAdActivity extends Activity {
             }
             this.i.setListener(new AnonymousClass2());
             if (bundle != null) {
-                this.q = bundle.getBoolean(a.C0092a.f);
-                this.r = bundle.getBoolean(a.C0092a.g);
-                this.s = bundle.getBoolean(a.C0092a.h);
-                this.t = bundle.getBoolean(a.C0092a.k);
-                this.d = bundle.getLong(a.C0092a.m);
-                this.e = bundle.getLong(a.C0092a.n);
-                this.f = bundle.getFloat(a.C0092a.o);
-                this.g = bundle.getBoolean(a.C0092a.i);
+                this.q = bundle.getBoolean(a.C0052a.f);
+                this.r = bundle.getBoolean(a.C0052a.g);
+                this.s = bundle.getBoolean(a.C0052a.h);
+                this.t = bundle.getBoolean(a.C0052a.k);
+                this.d = bundle.getLong(a.C0052a.m);
+                this.e = bundle.getLong(a.C0052a.n);
+                this.f = bundle.getFloat(a.C0052a.o);
+                this.g = bundle.getBoolean(a.C0052a.i);
             }
             this.i.setIsShowEndCard(this.q);
             this.i.setHideFeedbackButton(this.r);
@@ -357,7 +354,7 @@ public class BaseAdActivity extends Activity {
 
     @Override // android.app.Activity
     protected void onDestroy() {
-        this.f6045c = null;
+        this.c = null;
         com.anythink.core.common.b.a().b("1", this.h);
         BaseScreenAdView baseScreenAdView = this.i;
         if (baseScreenAdView != null) {
@@ -396,10 +393,10 @@ public class BaseAdActivity extends Activity {
         if (baseScreenAdView != null) {
             baseScreenAdView.r();
         }
-        y yVar = this.f6045c;
+        y yVar = this.c;
         if (yVar != null) {
             yVar.a(this);
-            this.f6045c = null;
+            this.c = null;
         }
     }
 
@@ -409,18 +406,18 @@ public class BaseAdActivity extends Activity {
         BaseScreenAdView baseScreenAdView = this.i;
         if (baseScreenAdView != null) {
             if (baseScreenAdView.isShowEndCard()) {
-                bundle.putBoolean(a.C0092a.f, true);
+                bundle.putBoolean(a.C0052a.f, true);
             }
-            bundle.putBoolean(a.C0092a.g, this.i.needHideFeedbackButton());
-            bundle.putBoolean(a.C0092a.h, this.i.isVideoMute());
-            bundle.putBoolean(a.C0092a.k, this.i.hasReward());
-            bundle.putLong(a.C0092a.m, this.i.getShowBannerTime());
-            bundle.putLong(a.C0092a.n, this.i.getHideBannerTime());
-            bundle.putFloat(a.C0092a.o, this.i.getCloseButtonScaleFactor());
+            bundle.putBoolean(a.C0052a.g, this.i.needHideFeedbackButton());
+            bundle.putBoolean(a.C0052a.h, this.i.isVideoMute());
+            bundle.putBoolean(a.C0052a.k, this.i.hasReward());
+            bundle.putLong(a.C0052a.m, this.i.getShowBannerTime());
+            bundle.putLong(a.C0052a.n, this.i.getHideBannerTime());
+            bundle.putFloat(a.C0052a.o, this.i.getCloseButtonScaleFactor());
         }
     }
 
-    @Override // android.view.ContextThemeWrapper, android.content.ContextWrapper, android.content.Context
+    @Override // android.app.Activity, android.view.ContextThemeWrapper, android.content.ContextWrapper, android.content.Context
     public void setTheme(int i) {
         if (Build.VERSION.SDK_INT == 26) {
             super.setTheme(h.a(this, "myoffer_half_screen_fit_by_o", "style"));

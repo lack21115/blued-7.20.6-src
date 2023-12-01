@@ -8,10 +8,10 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentWelcomeNewBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29042a;
+    private final ConstraintLayout f15352a;
 
     private FragmentWelcomeNewBinding(ConstraintLayout constraintLayout) {
-        this.f29042a = constraintLayout;
+        this.f15352a = constraintLayout;
     }
 
     public static FragmentWelcomeNewBinding a(View view) {
@@ -24,6 +24,6 @@ public final class FragmentWelcomeNewBinding implements ViewBinding {
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29042a;
+        return this.f15352a;
     }
 }

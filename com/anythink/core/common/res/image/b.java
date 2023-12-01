@@ -1,7 +1,7 @@
 package com.anythink.core.common.res.image;
 
 import android.os.SystemClock;
-import com.google.common.net.HttpHeaders;
+import android.view.Window;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
@@ -11,12 +11,8 @@ import org.apache.http.conn.ConnectTimeoutException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/image/b.class */
 public abstract class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6912a = getClass().getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    protected String f6913c;
+    private final String a = getClass().getSimpleName();
+    protected String c;
     protected boolean d;
     protected long e;
     protected long f;
@@ -24,10 +20,9 @@ public abstract class b {
     protected long h;
     protected long i;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.res.image.b$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/image/b$1.class */
-    public final class AnonymousClass1 extends com.anythink.core.common.k.b.b {
+    final class AnonymousClass1 extends com.anythink.core.common.k.b.b {
         AnonymousClass1() {
         }
 
@@ -43,19 +38,19 @@ public abstract class b {
             HttpURLConnection httpURLConnection7 = null;
             try {
                 try {
-                    String unused = b.this.f6912a;
+                    String unused = b.this.a;
                     HttpURLConnection httpURLConnection8 = (HttpURLConnection) new URL(str).openConnection();
                     try {
                         httpURLConnection8.setInstanceFollowRedirects(false);
-                        Map<String, String> a2 = b.this.a();
-                        if (a2 != null && a2.size() > 0) {
-                            for (String str2 : a2.keySet()) {
-                                httpURLConnection8.addRequestProperty(str2, a2.get(str2));
-                                String unused2 = b.this.f6912a;
+                        Map<String, String> a = b.this.a();
+                        if (a != null && a.size() > 0) {
+                            for (String str2 : a.keySet()) {
+                                httpURLConnection8.addRequestProperty(str2, a.get(str2));
+                                String unused2 = b.this.a;
                                 StringBuilder sb = new StringBuilder("REQUEST ADDED HEADER: \n");
                                 sb.append(str2);
                                 sb.append("  :  ");
-                                sb.append(a2.get(str2));
+                                sb.append(a.get(str2));
                             }
                         }
                         if (b.this.d) {
@@ -80,20 +75,20 @@ public abstract class b {
                             }
                             b.this.i = httpURLConnection8.getContentLength();
                             InputStream inputStream = httpURLConnection8.getInputStream();
-                            boolean a3 = b.this.a(inputStream);
+                            boolean a2 = b.this.a(inputStream);
                             if (inputStream != null) {
                                 inputStream.close();
                             }
                             b.this.g = System.currentTimeMillis();
                             b.this.h = SystemClock.elapsedRealtime();
-                            if (a3) {
-                                String unused3 = b.this.f6912a;
-                                new StringBuilder("download success --> ").append(b.this.f6913c);
+                            if (a2) {
+                                String unused3 = b.this.a;
+                                new StringBuilder("download success --> ").append(b.this.c);
                                 b.this.c();
                             } else {
-                                String unused4 = b.this.f6912a;
-                                new StringBuilder("download fail --> ").append(b.this.f6913c);
-                                b.this.a(c.f6915a, "Save fail!");
+                                String unused4 = b.this.a;
+                                new StringBuilder("download fail --> ").append(b.this.c);
+                                b.this.a(c.a, "Save fail!");
                             }
                             if (httpURLConnection8 != null) {
                                 httpURLConnection8.disconnect();
@@ -101,13 +96,13 @@ public abstract class b {
                             }
                             return;
                         }
-                        String unused5 = b.this.f6912a;
+                        String unused5 = b.this.a;
                         StringBuilder sb2 = new StringBuilder("http respond status code is ");
                         sb2.append(responseCode);
                         sb2.append(" ! url=");
                         sb2.append(str);
                         if (responseCode != 302 && responseCode != 301 && responseCode != 307) {
-                            b.this.a(c.f6915a, httpURLConnection8.getResponseMessage());
+                            b.this.a(c.a, httpURLConnection8.getResponseMessage());
                             if (httpURLConnection8 != null) {
                                 httpURLConnection8.disconnect();
                                 return;
@@ -117,10 +112,10 @@ public abstract class b {
                         if (b.this.d) {
                             b.this.a(c.b, "Task had been canceled.");
                         } else {
-                            String headerField = httpURLConnection8.getHeaderField(HttpHeaders.LOCATION);
+                            String headerField = httpURLConnection8.getHeaderField("Location");
                             if (headerField != null) {
                                 if (!headerField.toLowerCase().startsWith("http")) {
-                                    b.this.a(c.f6915a, "Final url is wrong:".concat(String.valueOf(headerField)));
+                                    b.this.a(c.a, "Final url is wrong:".concat(String.valueOf(headerField)));
                                     if (httpURLConnection8 != null) {
                                         httpURLConnection8.disconnect();
                                         return;
@@ -138,11 +133,11 @@ public abstract class b {
                         e = e;
                         System.gc();
                         HttpURLConnection httpURLConnection9 = httpURLConnection;
-                        String unused6 = b.this.f6912a;
+                        String unused6 = b.this.a;
                         HttpURLConnection httpURLConnection10 = httpURLConnection;
                         e.getMessage();
                         HttpURLConnection httpURLConnection11 = httpURLConnection;
-                        b.this.a(c.f6915a, e.getMessage());
+                        b.this.a(c.a, e.getMessage());
                         if (httpURLConnection != null) {
                             httpURLConnection.disconnect();
                         }
@@ -151,11 +146,11 @@ public abstract class b {
                         e = e2;
                         System.gc();
                         HttpURLConnection httpURLConnection12 = httpURLConnection6;
-                        String unused7 = b.this.f6912a;
+                        String unused7 = b.this.a;
                         HttpURLConnection httpURLConnection13 = httpURLConnection6;
                         e.getMessage();
                         HttpURLConnection httpURLConnection14 = httpURLConnection6;
-                        b.this.a(c.f6915a, e.getMessage());
+                        b.this.a(c.a, e.getMessage());
                         if (httpURLConnection6 != null) {
                             httpURLConnection6.disconnect();
                         }
@@ -164,38 +159,38 @@ public abstract class b {
                         e = e3;
                         System.gc();
                         HttpURLConnection httpURLConnection15 = httpURLConnection5;
-                        String unused8 = b.this.f6912a;
+                        String unused8 = b.this.a;
                         HttpURLConnection httpURLConnection16 = httpURLConnection5;
                         e.getMessage();
                         HttpURLConnection httpURLConnection17 = httpURLConnection5;
-                        b.this.a(c.f6915a, e.getMessage());
+                        b.this.a(c.a, e.getMessage());
                         if (httpURLConnection5 != null) {
                             httpURLConnection5.disconnect();
                         }
                     } catch (SocketTimeoutException e4) {
                         httpURLConnection4 = httpURLConnection8;
                         e = e4;
-                        b.this.a(c.f6915a, e.getMessage());
+                        b.this.a(c.a, e.getMessage());
                         httpURLConnection7 = httpURLConnection4;
-                        String unused9 = b.this.f6912a;
+                        String unused9 = b.this.a;
                         if (httpURLConnection4 != null) {
                             httpURLConnection4.disconnect();
                         }
                     } catch (ConnectTimeoutException e5) {
                         httpURLConnection3 = httpURLConnection8;
                         e = e5;
-                        b.this.a(c.f6915a, e.getMessage());
+                        b.this.a(c.a, e.getMessage());
                         if (httpURLConnection3 != null) {
                             httpURLConnection3.disconnect();
                         }
                     } catch (Exception e6) {
                         httpURLConnection2 = httpURLConnection8;
                         e = e6;
-                        String unused10 = b.this.f6912a;
+                        String unused10 = b.this.a;
                         HttpURLConnection httpURLConnection18 = httpURLConnection2;
                         e.getMessage();
                         HttpURLConnection httpURLConnection19 = httpURLConnection2;
-                        b.this.a(c.f6915a, e.getMessage());
+                        b.this.a(c.a, e.getMessage());
                         if (httpURLConnection2 != null) {
                             httpURLConnection2.disconnect();
                         }
@@ -234,25 +229,25 @@ public abstract class b {
         @Override // com.anythink.core.common.k.b.b
         public final void a() {
             try {
-                b(b.this.f6913c);
+                b(b.this.c);
             } catch (Exception e) {
-                String unused = b.this.f6912a;
+                String unused = b.this.a;
                 e.getMessage();
-                b.this.a(c.f6915a, e.getMessage());
+                b.this.a(c.a, e.getMessage());
             } catch (OutOfMemoryError e2) {
                 e = e2;
                 System.gc();
-                b.this.a(c.f6915a, e.getMessage());
+                b.this.a(c.a, e.getMessage());
             } catch (StackOverflowError e3) {
                 e = e3;
                 System.gc();
-                b.this.a(c.f6915a, e.getMessage());
+                b.this.a(c.a, e.getMessage());
             }
         }
     }
 
     public b(String str) {
-        this.f6913c = str;
+        this.c = str;
     }
 
     private void e() {
@@ -268,7 +263,7 @@ public abstract class b {
     }
 
     private static int h() {
-        return 20000;
+        return Window.PROGRESS_SECONDARY_START;
     }
 
     protected abstract Map<String, String> a();

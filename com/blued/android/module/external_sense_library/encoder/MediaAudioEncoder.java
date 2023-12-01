@@ -12,9 +12,7 @@ public class MediaAudioEncoder extends MediaEncoder {
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/encoder/MediaAudioEncoder$AudioThread.class */
     class AudioThread extends Thread {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MediaAudioEncoder f11239a;
+        final /* synthetic */ MediaAudioEncoder a;
 
         @Override // java.lang.Thread, java.lang.Runnable
         public void run() {
@@ -51,20 +49,20 @@ public class MediaAudioEncoder extends MediaEncoder {
                     Log.e("MediaAudioEncoder", "failed to initialize AudioRecord");
                     return;
                 }
-                if (this.f11239a.b) {
+                if (this.a.b) {
                     ByteBuffer allocateDirect = ByteBuffer.allocateDirect(1024);
                     audioRecord.startRecording();
-                    while (this.f11239a.b && !this.f11239a.f11241c && !this.f11239a.d) {
+                    while (this.a.b && !this.a.c && !this.a.d) {
                         allocateDirect.clear();
                         int read = audioRecord.read(allocateDirect, 1024);
                         if (read > 0) {
                             allocateDirect.position(read);
                             allocateDirect.flip();
-                            this.f11239a.a(allocateDirect, read, this.f11239a.f());
-                            this.f11239a.c();
+                            this.a.a(allocateDirect, read, this.a.f());
+                            this.a.c();
                         }
                     }
-                    this.f11239a.c();
+                    this.a.c();
                     audioRecord.stop();
                 }
                 audioRecord.release();

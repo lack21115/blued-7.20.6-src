@@ -66,10 +66,10 @@ public class IndentingPrintWriter extends PrintWriter {
                 break;
             }
             int i6 = i3 + 1;
-            char c2 = cArr[i3];
+            char c = cArr[i3];
             this.mCurrentLength++;
             int i7 = i4;
-            if (c2 == '\n') {
+            if (c == '\n') {
                 maybeWriteIndent();
                 super.write(cArr, i4, i6 - i4);
                 i7 = i6;

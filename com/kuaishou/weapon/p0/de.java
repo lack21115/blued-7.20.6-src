@@ -35,7 +35,7 @@ public class de {
     public static final String Z = "plc001_r_rcl_em";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23821a = "a1_p_s_p_s";
+    public static final String f10213a = "a1_p_s_p_s";
     public static final String aA = "plc001_b_bcl_n";
     public static final String aB = "plc001_b_bcl_s";
     public static final String aC = "plc001_b_bcl_w";
@@ -81,7 +81,7 @@ public class de {
     public static final String aq = "plc001_c_ccl_btm";
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final String f23822ar = "plc001_c_ccl_wi";
+    public static final String f10214ar = "plc001_c_ccl_wi";
     public static final String as = "plc001_c_ccl_ll";
     public static final String at = "plc001_b_v";
     public static final String au = "plc001_b_s";
@@ -107,7 +107,7 @@ public class de {
     private static de bo;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23823c = "plc001_pd_ptii_pi";
+    public static final String f10215c = "plc001_pd_ptii_pi";
     public static final String d = "plc001_t_d";
     public static final String e = "re_po_rt";
     public static final String f = "plc001_lss_v_s";
@@ -292,7 +292,7 @@ public class de {
                                 a2.a(ao, d3.e(), false);
                                 a2.a(ap, d3.b(), false);
                                 a2.a(aq, d3.f(), false);
-                                a2.a(f23822ar, d3.c(), false);
+                                a2.a(f10214ar, d3.c(), false);
                                 a2.a(as, d3.h(), false);
                             }
                         }

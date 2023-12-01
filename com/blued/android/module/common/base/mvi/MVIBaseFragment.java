@@ -3,7 +3,6 @@ package com.blued.android.module.common.base.mvi;
 import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
-import android.net.wifi.WifiEnterpriseConfig;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,24 +28,18 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/mvi/MVIBaseFragment.class */
 public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10678a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final int b;
     private View e;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f10679c = getClass().getSimpleName();
+    private final String c = getClass().getSimpleName();
     private final Lazy d = LazyKt.a(new Function0<M>(this) { // from class: com.blued.android.module.common.base.mvi.MVIBaseFragment$mViewModel$2
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MVIBaseFragment<M> f10681a;
+        final /* synthetic */ MVIBaseFragment<M> a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         {
             super(0);
-            this.f10681a = this;
+            this.a = this;
         }
 
         /* JADX WARN: Incorrect return type in method signature: ()TM; */
@@ -54,26 +47,24 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final MVIBaseViewModel invoke() {
-            return this.f10681a.x();
+            return this.a.x();
         }
     });
     private boolean f = true;
     private final Lazy g = LazyKt.a(new Function0<Dialog>(this) { // from class: com.blued.android.module.common.base.mvi.MVIBaseFragment$loadingDialog$2
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MVIBaseFragment<M> f10680a;
+        final /* synthetic */ MVIBaseFragment<M> a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         {
             super(0);
-            this.f10680a = this;
+            this.a = this;
         }
 
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */
         public final Dialog invoke() {
-            return DialogUtils.a(this.f10680a.getContext());
+            return DialogUtils.a(this.a.getContext());
         }
     });
 
@@ -121,7 +112,6 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
 
     private final void c() {
         y().getUiEvent().observe(getViewLifecycleOwner(), new Observer() { // from class: com.blued.android.module.common.base.mvi.-$$Lambda$MVIBaseFragment$iNLK7rDc9JkBqvV7-00Y_V1mevg
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 MVIBaseFragment.a(MVIBaseFragment.this, (UiEvent) obj);
             }
@@ -133,7 +123,7 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
         if (arguments == null) {
             return 0;
         }
-        return arguments.getInt(WifiEnterpriseConfig.PRIVATE_KEY_ID_KEY, 0);
+        return arguments.getInt("key_id", 0);
     }
 
     public <M> M B() {
@@ -151,13 +141,13 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
 
     protected abstract void o();
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         v();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         View view;
         Intrinsics.e(inflater, "inflater");
@@ -174,7 +164,7 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
         Intrinsics.e(event, "event");
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (this.f) {
@@ -183,7 +173,7 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
@@ -207,7 +197,7 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
     }
 
     protected ViewModelStoreOwner w() {
-        return this;
+        return (ViewModelStoreOwner) this;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -221,7 +211,7 @@ public abstract class MVIBaseFragment<M extends MVIBaseViewModel<?, ?>> extends 
         ViewModelProvider.AndroidViewModelFactory.Companion companion = ViewModelProvider.AndroidViewModelFactory.Companion;
         Context d = AppInfo.d();
         if (d != null) {
-            ViewModelProvider viewModelProvider = new ViewModelProvider(w, companion.getInstance((Application) d));
+            ViewModelProvider viewModelProvider = new ViewModelProvider(w, (ViewModelProvider.Factory) companion.getInstance((Application) d));
             if (type != null) {
                 return (M) viewModelProvider.get((Class) type);
             }

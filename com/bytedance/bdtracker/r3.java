@@ -29,14 +29,14 @@ public final class r3 {
     public final s3 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f21299c;
+    public final boolean f7693c;
     public final u3 d;
     public final Context e;
     public Map<String, String> g;
     public Long h;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ReentrantLock f21298a = new ReentrantLock();
+    public final ReentrantLock f7692a = new ReentrantLock();
     public final AtomicBoolean f = new AtomicBoolean(false);
 
     static {
@@ -101,9 +101,9 @@ public final class r3 {
         }
         this.b = m3Var;
         if (m3Var != null) {
-            this.f21299c = m3Var.b(context);
+            this.f7693c = m3Var.b(context);
         } else {
-            this.f21299c = false;
+            this.f7693c = false;
         }
         this.d = new u3(context);
     }
@@ -192,7 +192,7 @@ public final class r3 {
         if (r12 == false) goto L26;
      */
     /* JADX WARN: Code restructure failed: missing block: B:20:0x007e, code lost:
-        r6.f21298a.unlock();
+        r6.f7692a.unlock();
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -202,7 +202,7 @@ public final class r3 {
         /*
             r6 = this;
             r0 = r6
-            boolean r0 = r0.f21299c
+            boolean r0 = r0.f7693c
             if (r0 != 0) goto L9
             r0 = 0
             return r0
@@ -232,7 +232,7 @@ public final class r3 {
             r0 = 0
             r11 = r0
             r0 = r6
-            java.util.concurrent.locks.ReentrantLock r0 = r0.f21298a     // Catch: java.lang.Throwable -> L69 java.lang.InterruptedException -> L6e
+            java.util.concurrent.locks.ReentrantLock r0 = r0.f7692a     // Catch: java.lang.Throwable -> L69 java.lang.InterruptedException -> L6e
             r1 = r7
             java.util.concurrent.TimeUnit r2 = java.util.concurrent.TimeUnit.MILLISECONDS     // Catch: java.lang.Throwable -> L69 java.lang.InterruptedException -> L6e
             boolean r0 = r0.tryLock(r1, r2)     // Catch: java.lang.Throwable -> L69 java.lang.InterruptedException -> L6e
@@ -263,14 +263,14 @@ public final class r3 {
             if (r0 == 0) goto L97
         L7e:
             r0 = r6
-            java.util.concurrent.locks.ReentrantLock r0 = r0.f21298a
+            java.util.concurrent.locks.ReentrantLock r0 = r0.f7692a
             r0.unlock()
             goto L97
         L88:
             r0 = r11
             if (r0 == 0) goto L94
             r0 = r6
-            java.util.concurrent.locks.ReentrantLock r0 = r0.f21298a
+            java.util.concurrent.locks.ReentrantLock r0 = r0.f7692a
             r0.unlock()
         L94:
             r0 = r14
@@ -314,7 +314,7 @@ public final class r3 {
         s3.a a2;
         z2.a("Oaid#initOaid");
         try {
-            this.f21298a.lock();
+            this.f7692a.lock();
             z2.a("Oaid#initOaid exec");
             final t3 a3 = this.d.a();
             z2.a(new z2.a() { // from class: com.bytedance.bdtracker.-$$Lambda$Bno-E6N52Aw6n08T567sS_gUB9A
@@ -324,7 +324,7 @@ public final class r3 {
                 }
             });
             if (a3 != null) {
-                l = a3.f21312a;
+                l = a3.f7706a;
                 this.g = a3.a();
             }
             long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -334,12 +334,12 @@ public final class r3 {
                 str = null;
                 bool = null;
             } else {
-                String str2 = a2.f21305a;
+                String str2 = a2.f7699a;
                 Boolean valueOf = Boolean.valueOf(a2.b);
                 str = str2;
                 bool = valueOf;
                 if (a2 instanceof m3.b) {
-                    this.h = Long.valueOf(((m3.b) a2).f21262c);
+                    this.h = Long.valueOf(((m3.b) a2).f7656c);
                     str = str2;
                     bool = valueOf;
                 }
@@ -365,7 +365,7 @@ public final class r3 {
                 this.d.a(t3Var);
             }
             if (t3Var != null) {
-                l = t3Var.f21312a;
+                l = t3Var.f7706a;
                 this.g = t3Var.a();
             }
             final t3 t3Var2 = t3Var;
@@ -376,7 +376,7 @@ public final class r3 {
                 }
             });
         } finally {
-            this.f21298a.unlock();
+            this.f7692a.unlock();
             a(new IOaidObserver.Oaid(l), c());
         }
     }

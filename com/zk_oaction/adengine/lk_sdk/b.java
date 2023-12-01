@@ -10,26 +10,26 @@ import com.zk_oaction.adengine.lk_view.m;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public c f41929a;
+    public c f28238a;
 
     public b(Context context, com.zk_oaction.adengine.lk_interfaces.a aVar) {
-        this.f41929a = new c(context, aVar);
+        this.f28238a = new c(context, aVar);
     }
 
     public View a(String str) {
-        return this.f41929a.b(str);
+        return this.f28238a.b(str);
     }
 
     public View a(String str, com.zk_oaction.adengine.lk_interfaces.c cVar) {
-        return this.f41929a.a(str, cVar);
+        return this.f28238a.a(str, cVar);
     }
 
     public void a() {
-        this.f41929a.d();
+        this.f28238a.d();
     }
 
     public void a(int i) {
-        this.f41929a.a(i);
+        this.f28238a.a(i);
     }
 
     public void a(View view, String str) {
@@ -47,22 +47,22 @@ public class b {
     }
 
     public void a(com.zk_oaction.adengine.lk_interfaces.b bVar) {
-        this.f41929a.a(bVar);
+        this.f28238a.a(bVar);
     }
 
     public void a(String str, String str2) {
-        com.zk_oaction.adengine.lk_variable.g gVar = this.f41929a.n;
+        com.zk_oaction.adengine.lk_variable.g gVar = this.f28238a.n;
         if (gVar != null) {
             gVar.a(str, str2);
         }
     }
 
     public void a(boolean z) {
-        this.f41929a.a(z);
+        this.f28238a.a(z);
     }
 
     public String b(String str) {
-        com.zk_oaction.adengine.lk_variable.g gVar = this.f41929a.n;
+        com.zk_oaction.adengine.lk_variable.g gVar = this.f28238a.n;
         if (gVar != null) {
             return gVar.b(str);
         }
@@ -70,30 +70,30 @@ public class b {
     }
 
     public void b() {
-        this.f41929a.e();
+        this.f28238a.e();
     }
 
     public void b(int i) {
-        this.f41929a.b(i);
+        this.f28238a.b(i);
     }
 
     public void b(String str, String str2) {
-        this.f41929a.b(str, str2);
+        this.f28238a.b(str, str2);
     }
 
     public void c() {
-        this.f41929a.f();
+        this.f28238a.f();
     }
 
     public float d() {
-        return this.f41929a.t;
+        return this.f28238a.t;
     }
 
     public int e() {
-        return this.f41929a.D;
+        return this.f28238a.D;
     }
 
     public int f() {
-        return this.f41929a.E;
+        return this.f28238a.E;
     }
 }

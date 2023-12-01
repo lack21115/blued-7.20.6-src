@@ -17,13 +17,9 @@ import java.util.HashMap;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/video_gift/AlphaMovieView.class */
 class AlphaMovieView extends GLTextureView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private VideoRenderer f16059a;
+    private VideoRenderer a;
     private Surface b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private MediaPlayer f16060c;
+    private MediaPlayer c;
     private OnVideoStartedListener d;
     private OnVideoEndedListener e;
     private OnVideoErrorListener f;
@@ -36,25 +32,23 @@ class AlphaMovieView extends GLTextureView {
     /* renamed from: com.blued.android.module.video_gift.AlphaMovieView$6  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/video_gift/AlphaMovieView$6.class */
     public static /* synthetic */ class AnonymousClass6 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f16066a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PlayerState.values().length];
-            f16066a = iArr;
+            a = iArr;
             try {
                 iArr[PlayerState.PREPARED.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f16066a[PlayerState.PAUSED.ordinal()] = 2;
+                a[PlayerState.PAUSED.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f16066a[PlayerState.STOPPED.ordinal()] = 3;
+                a[PlayerState.STOPPED.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -100,10 +94,10 @@ class AlphaMovieView extends GLTextureView {
         a(8, 8, 8, 8, 16, 0);
         this.i = new FitViewHelper();
         k();
-        this.f16059a = new VideoRenderer();
+        this.a = new VideoRenderer();
         b(context, attributeSet);
         m();
-        setRenderer(this.f16059a);
+        setRenderer(this.a);
         bringToFront();
         setPreserveEGLContextOnPause(true);
         setOpaque(false);
@@ -127,9 +121,9 @@ class AlphaMovieView extends GLTextureView {
     }
 
     private void a(final MediaPlayer.OnPreparedListener onPreparedListener) {
-        if (this.f16060c != null) {
+        if (this.c != null) {
             if (this.j == PlayerState.NOT_PREPARED || this.j == PlayerState.STOPPED) {
-                this.f16060c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.blued.android.module.video_gift.AlphaMovieView.4
+                this.c.setOnPreparedListener(new MediaPlayer.OnPreparedListener() { // from class: com.blued.android.module.video_gift.AlphaMovieView.4
                     @Override // android.media.MediaPlayer.OnPreparedListener
                     public void onPrepared(MediaPlayer mediaPlayer) {
                         AlphaMovieView.this.j = PlayerState.PREPARED;
@@ -137,7 +131,7 @@ class AlphaMovieView extends GLTextureView {
                     }
                 });
                 try {
-                    this.f16060c.prepareAsync();
+                    this.c.prepareAsync();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -146,7 +140,7 @@ class AlphaMovieView extends GLTextureView {
     }
 
     private void b(Context context, AttributeSet attributeSet) {
-        this.f16059a.a(context.getString(R.string.video_gift_shader));
+        this.a.a(context.getString(R.string.video_gift_shader));
     }
 
     private void i() {
@@ -155,10 +149,10 @@ class AlphaMovieView extends GLTextureView {
     }
 
     private void k() {
-        this.f16060c = new MediaPlayer();
+        this.c = new MediaPlayer();
         setScreenOnWhilePlaying(true);
         setLooping(false);
-        this.f16060c.setOnCompletionListener(new MediaPlayer.OnCompletionListener() { // from class: com.blued.android.module.video_gift.AlphaMovieView.1
+        this.c.setOnCompletionListener(new MediaPlayer.OnCompletionListener() { // from class: com.blued.android.module.video_gift.AlphaMovieView.1
             @Override // android.media.MediaPlayer.OnCompletionListener
             public void onCompletion(MediaPlayer mediaPlayer) {
                 AlphaMovieView.this.j = PlayerState.PAUSED;
@@ -170,14 +164,14 @@ class AlphaMovieView extends GLTextureView {
     }
 
     private void m() {
-        VideoRenderer videoRenderer = this.f16059a;
+        VideoRenderer videoRenderer = this.a;
         if (videoRenderer != null) {
             videoRenderer.a(new VideoRenderer.OnSurfacePrepareListener() { // from class: com.blued.android.module.video_gift.AlphaMovieView.2
                 @Override // com.blued.android.module.video_gift.VideoRenderer.OnSurfacePrepareListener
                 public void a(Surface surface) {
                     AlphaMovieView.this.b = surface;
                     AlphaMovieView.this.g = true;
-                    AlphaMovieView.this.f16060c.setSurface(surface);
+                    AlphaMovieView.this.c.setSurface(surface);
                     if (AlphaMovieView.this.h) {
                         AlphaMovieView.this.n();
                     }
@@ -200,7 +194,7 @@ class AlphaMovieView extends GLTextureView {
         k();
         Surface surface = this.b;
         if (surface != null) {
-            this.f16060c.setSurface(surface);
+            this.c.setSurface(surface);
         }
         OnVideoErrorListener onVideoErrorListener = this.f;
         if (onVideoErrorListener != null) {
@@ -214,13 +208,13 @@ class AlphaMovieView extends GLTextureView {
     }
 
     public void a(int i) {
-        this.f16060c.seekTo(i);
+        this.c.seekTo(i);
     }
 
     public void a(Context context, Uri uri) {
         f();
         try {
-            this.f16060c.setDataSource(context, uri);
+            this.c.setDataSource(context, uri);
             MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
             mediaMetadataRetriever.setDataSource(context, uri);
             a(mediaMetadataRetriever);
@@ -237,24 +231,24 @@ class AlphaMovieView extends GLTextureView {
     }
 
     public void c() {
-        if (this.f16060c != null) {
-            int i = AnonymousClass6.f16066a[this.j.ordinal()];
+        if (this.c != null) {
+            int i = AnonymousClass6.a[this.j.ordinal()];
             if (i == 1) {
-                this.f16060c.start();
+                this.c.start();
                 this.j = PlayerState.STARTED;
                 OnVideoStartedListener onVideoStartedListener = this.d;
                 if (onVideoStartedListener != null) {
                     onVideoStartedListener.a();
                 }
             } else if (i == 2) {
-                this.f16060c.start();
+                this.c.start();
                 this.j = PlayerState.STARTED;
             } else if (i != 3) {
             } else {
                 a(new MediaPlayer.OnPreparedListener() { // from class: com.blued.android.module.video_gift.AlphaMovieView.5
                     @Override // android.media.MediaPlayer.OnPreparedListener
                     public void onPrepared(MediaPlayer mediaPlayer) {
-                        AlphaMovieView.this.f16060c.start();
+                        AlphaMovieView.this.c.start();
                         AlphaMovieView.this.j = PlayerState.STARTED;
                         if (AlphaMovieView.this.d != null) {
                             AlphaMovieView.this.d.a();
@@ -266,45 +260,45 @@ class AlphaMovieView extends GLTextureView {
     }
 
     public void d() {
-        if (this.f16060c == null || this.j != PlayerState.STARTED) {
+        if (this.c == null || this.j != PlayerState.STARTED) {
             return;
         }
-        this.f16060c.pause();
+        this.c.pause();
         this.j = PlayerState.PAUSED;
     }
 
     public void e() {
-        if (this.f16060c != null) {
+        if (this.c != null) {
             if (this.j == PlayerState.STARTED || this.j == PlayerState.PAUSED) {
-                this.f16060c.stop();
+                this.c.stop();
                 this.j = PlayerState.STOPPED;
             }
         }
     }
 
     public void f() {
-        if (this.f16060c != null) {
+        if (this.c != null) {
             if (this.j == PlayerState.STARTED || this.j == PlayerState.PAUSED || this.j == PlayerState.STOPPED) {
-                this.f16060c.reset();
+                this.c.reset();
                 this.j = PlayerState.NOT_PREPARED;
             }
         }
     }
 
     public void g() {
-        if (this.f16060c != null) {
+        if (this.c != null) {
             this.b.release();
-            this.f16060c.release();
+            this.c.release();
             this.j = PlayerState.RELEASE;
         }
     }
 
     public int getCurrentPosition() {
-        return this.f16060c.getCurrentPosition();
+        return this.c.getCurrentPosition();
     }
 
     public MediaPlayer getMediaPlayer() {
-        return this.f16060c;
+        return this.c;
     }
 
     public PlayerState getState() {
@@ -329,15 +323,15 @@ class AlphaMovieView extends GLTextureView {
     }
 
     public void setLooping(boolean z) {
-        this.f16060c.setLooping(z);
+        this.c.setLooping(z);
     }
 
     public void setOnErrorListener(MediaPlayer.OnErrorListener onErrorListener) {
-        this.f16060c.setOnErrorListener(onErrorListener);
+        this.c.setOnErrorListener(onErrorListener);
     }
 
     public void setOnSeekCompleteListener(MediaPlayer.OnSeekCompleteListener onSeekCompleteListener) {
-        this.f16060c.setOnSeekCompleteListener(onSeekCompleteListener);
+        this.c.setOnSeekCompleteListener(onSeekCompleteListener);
     }
 
     public void setOnVideoEndedListener(OnVideoEndedListener onVideoEndedListener) {
@@ -361,13 +355,13 @@ class AlphaMovieView extends GLTextureView {
     }
 
     public void setScreenOnWhilePlaying(boolean z) {
-        this.f16060c.setScreenOnWhilePlaying(z);
+        this.c.setScreenOnWhilePlaying(z);
     }
 
     public void setVideoByUrl(String str) {
         f();
         try {
-            this.f16060c.setDataSource(str);
+            this.c.setDataSource(str);
             MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
             mediaMetadataRetriever.setDataSource(str, new HashMap());
             a(mediaMetadataRetriever);
@@ -381,7 +375,7 @@ class AlphaMovieView extends GLTextureView {
         f();
         try {
             AssetFileDescriptor openFd = getContext().getAssets().openFd(str);
-            this.f16060c.setDataSource(openFd.getFileDescriptor(), openFd.getStartOffset(), openFd.getLength());
+            this.c.setDataSource(openFd.getFileDescriptor(), openFd.getStartOffset(), openFd.getLength());
             MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
             mediaMetadataRetriever.setDataSource(openFd.getFileDescriptor(), openFd.getStartOffset(), openFd.getLength());
             a(mediaMetadataRetriever);
@@ -394,7 +388,7 @@ class AlphaMovieView extends GLTextureView {
     public void setVideoFromFile(FileDescriptor fileDescriptor) {
         f();
         try {
-            this.f16060c.setDataSource(fileDescriptor);
+            this.c.setDataSource(fileDescriptor);
             MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
             mediaMetadataRetriever.setDataSource(fileDescriptor);
             a(mediaMetadataRetriever);
@@ -406,7 +400,7 @@ class AlphaMovieView extends GLTextureView {
 
     public void setVideoFromMediaDataSource(MediaDataSource mediaDataSource) {
         f();
-        this.f16060c.setDataSource(mediaDataSource);
+        this.c.setDataSource(mediaDataSource);
         MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
         mediaMetadataRetriever.setDataSource(mediaDataSource);
         a(mediaMetadataRetriever);

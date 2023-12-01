@@ -2,9 +2,8 @@ package com.google.common.collect;
 
 import com.google.common.base.Preconditions;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/collect/CollectPreconditions.class */
-public final class CollectPreconditions {
+final class CollectPreconditions {
     CollectPreconditions() {
     }
 

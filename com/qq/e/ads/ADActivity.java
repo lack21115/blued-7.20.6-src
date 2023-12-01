@@ -24,7 +24,7 @@ public class ADActivity extends Activity {
     public static final String NOTCH_CONTAINER_TAG = "NOTCH_CONTAINER";
 
     /* renamed from: a  reason: collision with root package name */
-    protected ACTD f27850a;
+    protected ACTD f14162a;
     private FrameLayout b;
 
     private void a() {
@@ -51,7 +51,7 @@ public class ADActivity extends Activity {
     @Override // android.app.Activity
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onActivityResult(i, i2, intent);
         }
@@ -59,7 +59,7 @@ public class ADActivity extends Activity {
 
     @Override // android.app.Activity
     public void onBackPressed() {
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onBackPressed();
         }
@@ -68,7 +68,7 @@ public class ADActivity extends Activity {
     @Override // android.app.Activity, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onConfigurationChanged(configuration);
         }
@@ -91,7 +91,7 @@ public class ADActivity extends Activity {
                     String string2 = extras.getString("appid");
                     if (!TextUtils.isEmpty(string) && !TextUtils.isEmpty(string2) && b.b().d()) {
                         ACTD activityDelegate = pOFactory.getActivityDelegate(string, this);
-                        this.f27850a = activityDelegate;
+                        this.f14162a = activityDelegate;
                         if (activityDelegate == null) {
                             StringBuilder sb = new StringBuilder();
                             sb.append("创建 ADActivity Delegate ");
@@ -106,7 +106,7 @@ public class ADActivity extends Activity {
         } catch (Throwable th) {
             GDTLogger.e("创建ADActivity Delegate" + str + "发生异常", th);
         }
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onBeforeCreate(bundle);
         } else {
@@ -122,7 +122,7 @@ public class ADActivity extends Activity {
             a.a(th3, "ADActivity onCreate 发生异常");
             GDTLogger.e("ADActivity onCreate 发生异常", th3);
         }
-        ACTD actd2 = this.f27850a;
+        ACTD actd2 = this.f14162a;
         if (actd2 != null) {
             actd2.onAfterCreate(bundle);
         }
@@ -132,7 +132,7 @@ public class ADActivity extends Activity {
     @Override // android.app.Activity
     public void onDestroy() {
         super.onDestroy();
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onDestroy();
         }
@@ -140,7 +140,7 @@ public class ADActivity extends Activity {
 
     @Override // android.app.Activity
     public void onPause() {
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onPause();
         }
@@ -151,7 +151,7 @@ public class ADActivity extends Activity {
     @Override // android.app.Activity
     public void onResume() {
         super.onResume();
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onResume();
         }
@@ -160,7 +160,7 @@ public class ADActivity extends Activity {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
     public void onStop() {
-        ACTD actd = this.f27850a;
+        ACTD actd = this.f14162a;
         if (actd != null) {
             actd.onStop();
         }

@@ -13,7 +13,7 @@ import com.soft.blued.utils.Logger;
 public class RemoteService extends Service {
 
     /* renamed from: a  reason: collision with root package name */
-    private MyConn f29765a;
+    private MyConn f16075a;
     private MyBinder b;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/service/RemoteService$MyBinder.class */
@@ -42,7 +42,7 @@ public class RemoteService extends Service {
             Logger.a("RemoteServices", "restart AutoStrartService onServiceDisconnected");
             try {
                 AutoStartService.startService(RemoteService.this);
-                RemoteService.this.bindService(new Intent(RemoteService.this, AutoStartService.class), RemoteService.this.f29765a, 64);
+                RemoteService.this.bindService(new Intent(RemoteService.this, AutoStartService.class), RemoteService.this.f16075a, 64);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -59,7 +59,7 @@ public class RemoteService extends Service {
     public void onCreate() {
         super.onCreate();
         Logger.a("RemoteServices", "RemoteService onCreate");
-        this.f29765a = new MyConn();
+        this.f16075a = new MyConn();
         this.b = new MyBinder();
     }
 
@@ -67,13 +67,13 @@ public class RemoteService extends Service {
     public void onDestroy() {
         super.onDestroy();
         Logger.a("RemoteServices", "RemoteService onDestroy");
-        unbindService(this.f29765a);
+        unbindService(this.f16075a);
     }
 
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int i, int i2) {
         Logger.a("RemoteServices", "RemoteService onStartCommand");
-        bindService(new Intent(this, AutoStartService.class), this.f29765a, 64);
+        bindService(new Intent(this, AutoStartService.class), this.f16075a, 64);
         return 1;
     }
 }

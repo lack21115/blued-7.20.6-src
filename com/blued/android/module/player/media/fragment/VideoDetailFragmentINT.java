@@ -21,9 +21,7 @@ import com.blued.android.module.player.media.view.ViewDragHelperLayout;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/fragment/VideoDetailFragmentINT.class */
 public class VideoDetailFragmentINT extends BaseFragment {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final String f15646c = VideoDetailFragmentINT.class.getSimpleName();
+    private static final String c = VideoDetailFragmentINT.class.getSimpleName();
     private View d;
     private ViewDragHelperLayout e;
     private LinearLayout f;
@@ -33,9 +31,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
     private boolean j;
     private VideoPlayConfig l;
     private boolean k = false;
-
-    /* renamed from: a  reason: collision with root package name */
-    ViewDragHelperLayout.OnLayoutStateListener f15647a = new ViewDragHelperLayout.OnLayoutStateListener() { // from class: com.blued.android.module.player.media.fragment.VideoDetailFragmentINT.1
+    ViewDragHelperLayout.OnLayoutStateListener a = new ViewDragHelperLayout.OnLayoutStateListener() { // from class: com.blued.android.module.player.media.fragment.VideoDetailFragmentINT.1
         @Override // com.blued.android.module.player.media.view.ViewDragHelperLayout.OnLayoutStateListener
         public void a() {
             if (VideoDetailFragmentINT.this.getActivity() != null) {
@@ -70,7 +66,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
     View.OnLongClickListener b = new View.OnLongClickListener() { // from class: com.blued.android.module.player.media.fragment.VideoDetailFragmentINT.2
         @Override // android.view.View.OnLongClickListener
         public boolean onLongClick(View view) {
-            EventCallbackObserver.a().a(VideoDetailFragmentINT.this.l.b, VideoDetailFragmentINT.this.l.f15652a, Integer.valueOf(VideoDetailFragmentINT.this.l.a()), Integer.valueOf(VideoDetailFragmentINT.this.l.b()));
+            EventCallbackObserver.a().a(VideoDetailFragmentINT.this.l.b, VideoDetailFragmentINT.this.l.a, Integer.valueOf(VideoDetailFragmentINT.this.l.a()), Integer.valueOf(VideoDetailFragmentINT.this.l.b()));
             return false;
         }
     };
@@ -83,7 +79,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
         this.g = (PLTextureVideoViewINT) this.h.findViewById(R.id.video_view);
         this.e.setScrollDisable(this.l.r);
         if (this.l.r) {
-            this.e.setOnLayoutStateListener(this.f15647a);
+            this.e.setOnLayoutStateListener(this.a);
         }
     }
 
@@ -115,12 +111,12 @@ public class VideoDetailFragmentINT extends BaseFragment {
         VideoPlayConfig serializable = getArguments() != null ? getArguments().getSerializable("video_config_data") : null;
         this.l = serializable;
         if (serializable == null || TextUtils.isEmpty(serializable.b)) {
-            Log.b(f15646c, " VideoDetailConfig is null || mConfigInfo.videoUrl == null");
+            Log.b(c, " VideoDetailConfig is null || mConfigInfo.videoUrl == null");
         } else if ("http".contains(this.l.b)) {
         } else {
-            int[] a2 = Utils.a(this.l.b);
-            this.l.a(a2[0]);
-            this.l.b(a2[1]);
+            int[] a = Utils.a(this.l.b);
+            this.l.a(a[0]);
+            this.l.b(a[1]);
         }
     }
 
@@ -128,7 +124,6 @@ public class VideoDetailFragmentINT extends BaseFragment {
         return true;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         d();
@@ -140,7 +135,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.d;
         if (view == null) {
@@ -155,7 +150,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         PLTextureVideoViewINT pLTextureVideoViewINT = this.g;
@@ -164,7 +159,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         this.g.g();
@@ -175,7 +170,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
         this.k = true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (getUserVisibleHint()) {
@@ -187,7 +182,7 @@ public class VideoDetailFragmentINT extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (this.j) {

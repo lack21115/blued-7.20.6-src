@@ -8,26 +8,25 @@ import java.io.File;
 public class hc {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f41466a = false;
+    private static boolean f27775a = false;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/hc$a.class */
-    public static class a implements Runnable {
+    static class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f41467a;
+        private Context f27776a;
 
         /* renamed from: a  reason: collision with other field name */
-        private hf f542a;
+        private hf f495a;
 
         public a(Context context, hf hfVar) {
-            this.f542a = hfVar;
-            this.f41467a = context;
+            this.f495a = hfVar;
+            this.f27776a = context;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            hc.c(this.f41467a, this.f542a);
+            hc.c(this.f27776a, this.f495a);
         }
     }
 
@@ -68,8 +67,6 @@ public class hc {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:46:0x014d  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0153  */
-    /* JADX WARN: Type inference failed for: r0v18, types: [java.nio.channels.FileLock] */
-    /* JADX WARN: Type inference failed for: r0v21, types: [java.nio.channels.FileLock] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

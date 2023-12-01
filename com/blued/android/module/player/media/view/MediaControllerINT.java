@@ -15,13 +15,9 @@ import java.util.Date;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/player/media/view/MediaControllerINT.class */
 public class MediaControllerINT extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public long f15664a;
+    public long a;
     public long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final SimpleDateFormat f15665c;
+    private final SimpleDateFormat c;
     private SeekBar d;
     private TextView e;
     private TextView f;
@@ -33,8 +29,8 @@ public class MediaControllerINT extends RelativeLayout {
 
     public MediaControllerINT(Context context) {
         super(context);
-        this.f15665c = new SimpleDateFormat("mm:ss");
-        this.f15664a = 0L;
+        this.c = new SimpleDateFormat("mm:ss");
+        this.a = 0L;
         this.b = 0L;
         this.j = new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.MediaControllerINT.1
             @Override // android.view.View.OnClickListener
@@ -66,8 +62,8 @@ public class MediaControllerINT extends RelativeLayout {
 
     public MediaControllerINT(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15665c = new SimpleDateFormat("mm:ss");
-        this.f15664a = 0L;
+        this.c = new SimpleDateFormat("mm:ss");
+        this.a = 0L;
         this.b = 0L;
         this.j = new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.MediaControllerINT.1
             @Override // android.view.View.OnClickListener
@@ -99,8 +95,8 @@ public class MediaControllerINT extends RelativeLayout {
 
     public MediaControllerINT(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15665c = new SimpleDateFormat("mm:ss");
-        this.f15664a = 0L;
+        this.c = new SimpleDateFormat("mm:ss");
+        this.a = 0L;
         this.b = 0L;
         this.j = new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.MediaControllerINT.1
             @Override // android.view.View.OnClickListener
@@ -132,8 +128,8 @@ public class MediaControllerINT extends RelativeLayout {
 
     public MediaControllerINT(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        this.f15665c = new SimpleDateFormat("mm:ss");
-        this.f15664a = 0L;
+        this.c = new SimpleDateFormat("mm:ss");
+        this.a = 0L;
         this.b = 0L;
         this.j = new View.OnClickListener() { // from class: com.blued.android.module.player.media.view.MediaControllerINT.1
             @Override // android.view.View.OnClickListener
@@ -210,7 +206,7 @@ public class MediaControllerINT extends RelativeLayout {
     }
 
     public void a(long j, long j2) {
-        this.f15664a = j;
+        this.a = j;
         this.b = j2;
         SeekBar seekBar = this.d;
         if (seekBar == null || seekBar.getVisibility() != 0 || j2 <= 0) {
@@ -229,14 +225,14 @@ public class MediaControllerINT extends RelativeLayout {
             }
         }
         this.d.setProgress((int) j5);
-        this.e.setText(this.f15665c.format(new Date(this.f15664a)));
-        this.f.setText(this.f15665c.format(new Date(this.b)));
+        this.e.setText(this.c.format(new Date(this.a)));
+        this.f.setText(this.c.format(new Date(this.b)));
         this.g = j5;
     }
 
     public void a(long j, long j2, int i) {
-        this.e.setText(this.f15665c.format(new Date(j)));
-        this.f.setText(this.f15665c.format(new Date(j2)));
+        this.e.setText(this.c.format(new Date(j)));
+        this.f.setText(this.c.format(new Date(j2)));
         AbBaseVideoView abBaseVideoView = this.i;
         if (abBaseVideoView != null) {
             abBaseVideoView.a(j);
@@ -249,8 +245,8 @@ public class MediaControllerINT extends RelativeLayout {
     }
 
     public void b(long j, long j2, int i) {
-        this.e.setText(this.f15665c.format(new Date(j)));
-        this.f.setText(this.f15665c.format(new Date(j2)));
+        this.e.setText(this.c.format(new Date(j)));
+        this.f.setText(this.c.format(new Date(j2)));
         if (this.e.getVisibility() != 0) {
             this.e.setVisibility(0);
         }

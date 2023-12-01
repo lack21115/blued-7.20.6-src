@@ -1,6 +1,6 @@
 package java.net;
 
-import com.tencent.qcloud.core.http.HttpConstants;
+import io.grpc.internal.GrpcUtil;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.Permission;
@@ -46,7 +46,7 @@ public abstract class HttpURLConnection extends URLConnection {
     public static final int HTTP_UNSUPPORTED_TYPE = 415;
     public static final int HTTP_USE_PROXY = 305;
     public static final int HTTP_VERSION = 505;
-    private static final String[] PERMITTED_USER_METHODS = {"OPTIONS", "GET", "HEAD", "POST", "PUT", "DELETE", HttpConstants.RequestMethod.TRACE};
+    private static final String[] PERMITTED_USER_METHODS = {"OPTIONS", "GET", "HEAD", GrpcUtil.HTTP_METHOD, "PUT", "DELETE", "TRACE"};
     private static boolean followRedirects = true;
     protected int chunkLength;
     protected int fixedContentLength;

@@ -22,7 +22,7 @@ public class LoadingActivity extends Activity {
     private RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f8060c;
+    private ImageView f5220c;
     private Bitmap d;
     private a e;
     private String f;
@@ -31,10 +31,10 @@ public class LoadingActivity extends Activity {
     private com.anythink.expressad.foundation.g.d.c g = new com.anythink.expressad.foundation.g.d.c() { // from class: com.anythink.expressad.out.LoadingActivity.1
         @Override // com.anythink.expressad.foundation.g.d.c
         public final void a(Bitmap bitmap, String str) {
-            if (LoadingActivity.this.f8060c == null || bitmap == null || bitmap.isRecycled() || !((String) LoadingActivity.this.f8060c.getTag()).equals(str)) {
+            if (LoadingActivity.this.f5220c == null || bitmap == null || bitmap.isRecycled() || !((String) LoadingActivity.this.f5220c.getTag()).equals(str)) {
                 return;
             }
-            LoadingActivity.this.f8060c.setImageBitmap(bitmap);
+            LoadingActivity.this.f5220c.setImageBitmap(bitmap);
             LoadingActivity.this.d = bitmap;
         }
 
@@ -44,7 +44,7 @@ public class LoadingActivity extends Activity {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    BroadcastReceiver f8059a = new BroadcastReceiver() { // from class: com.anythink.expressad.out.LoadingActivity.2
+    BroadcastReceiver f5219a = new BroadcastReceiver() { // from class: com.anythink.expressad.out.LoadingActivity.2
         @Override // android.content.BroadcastReceiver
         public final void onReceive(Context context, Intent intent) {
             LoadingActivity.this.finish();
@@ -62,26 +62,26 @@ public class LoadingActivity extends Activity {
             this.i = new RelativeLayout(this);
             int b = com.anythink.expressad.foundation.h.t.b(this, 15.0f);
             this.i.setPadding(b, b, b, b);
-            this.i.setBackgroundResource(getResources().getIdentifier("anythink_native_bg_loading_camera", com.anythink.expressad.foundation.h.i.f7952c, getPackageName()));
+            this.i.setBackgroundResource(getResources().getIdentifier("anythink_native_bg_loading_camera", com.anythink.expressad.foundation.h.i.f5112c, getPackageName()));
             this.i.addView(new TextView(this), new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.h.t.b(this, 140.0f), com.anythink.expressad.foundation.h.t.b(this, 31.5f)));
             ATImageView aTImageView = new ATImageView(this);
-            this.f8060c = aTImageView;
+            this.f5220c = aTImageView;
             aTImageView.setId(com.anythink.expressad.foundation.h.t.a());
-            this.f8060c.setTag(this.f);
+            this.f5220c.setTag(this.f);
             if (!TextUtils.isEmpty(this.f)) {
                 com.anythink.expressad.foundation.g.d.b.a(getApplicationContext()).a(this.f, this.g);
             }
             int b2 = com.anythink.expressad.foundation.h.t.b(this, 64.0f);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(b2, b2);
             layoutParams.addRule(13, -1);
-            this.i.addView(this.f8060c, layoutParams);
+            this.i.addView(this.f5220c, layoutParams);
             TextView textView = new TextView(this);
             textView.setSingleLine();
             textView.setTextColor(-1);
             textView.setTextSize(16.0f);
             textView.setText("Relax while loading....");
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
-            layoutParams2.addRule(3, this.f8060c.getId());
+            layoutParams2.addRule(3, this.f5220c.getId());
             layoutParams2.addRule(14, -1);
             this.i.addView(textView, layoutParams2);
             this.b.addView(this.i, new RelativeLayout.LayoutParams(-1, -1));
@@ -99,34 +99,34 @@ public class LoadingActivity extends Activity {
     @Override // android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        if (getIntent().hasExtra("icon_url")) {
-            this.f = getIntent().getStringExtra("icon_url");
+        if (getIntent().hasExtra(com.anythink.expressad.foundation.d.c.H)) {
+            this.f = getIntent().getStringExtra(com.anythink.expressad.foundation.d.c.H);
         }
         if (this.b == null) {
             this.b = new RelativeLayout(this);
             this.i = new RelativeLayout(this);
             int b = com.anythink.expressad.foundation.h.t.b(this, 15.0f);
             this.i.setPadding(b, b, b, b);
-            this.i.setBackgroundResource(getResources().getIdentifier("anythink_native_bg_loading_camera", com.anythink.expressad.foundation.h.i.f7952c, getPackageName()));
+            this.i.setBackgroundResource(getResources().getIdentifier("anythink_native_bg_loading_camera", com.anythink.expressad.foundation.h.i.f5112c, getPackageName()));
             this.i.addView(new TextView(this), new RelativeLayout.LayoutParams(com.anythink.expressad.foundation.h.t.b(this, 140.0f), com.anythink.expressad.foundation.h.t.b(this, 31.5f)));
             ATImageView aTImageView = new ATImageView(this);
-            this.f8060c = aTImageView;
+            this.f5220c = aTImageView;
             aTImageView.setId(com.anythink.expressad.foundation.h.t.a());
-            this.f8060c.setTag(this.f);
+            this.f5220c.setTag(this.f);
             if (!TextUtils.isEmpty(this.f)) {
                 com.anythink.expressad.foundation.g.d.b.a(getApplicationContext()).a(this.f, this.g);
             }
             int b2 = com.anythink.expressad.foundation.h.t.b(this, 64.0f);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(b2, b2);
             layoutParams.addRule(13, -1);
-            this.i.addView(this.f8060c, layoutParams);
+            this.i.addView(this.f5220c, layoutParams);
             TextView textView = new TextView(this);
             textView.setSingleLine();
             textView.setTextColor(-1);
             textView.setTextSize(16.0f);
             textView.setText("Relax while loading....");
             RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
-            layoutParams2.addRule(3, this.f8060c.getId());
+            layoutParams2.addRule(3, this.f5220c.getId());
             layoutParams2.addRule(14, -1);
             this.i.addView(textView, layoutParams2);
             this.b.addView(this.i, new RelativeLayout.LayoutParams(-1, -1));
@@ -137,14 +137,14 @@ public class LoadingActivity extends Activity {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
     public void onDestroy() {
-        if (this.f8059a != null) {
-            com.anythink.core.common.b.k.a(this).a(this.f8059a);
+        if (this.f5219a != null) {
+            com.anythink.core.common.b.k.a(this).a(this.f5219a);
         }
-        ImageView imageView = this.f8060c;
+        ImageView imageView = this.f5220c;
         if (imageView != null) {
             imageView.setImageBitmap(null);
         }
-        this.f8060c = null;
+        this.f5220c = null;
         this.b = null;
         this.g = null;
         this.h = null;
@@ -166,8 +166,8 @@ public class LoadingActivity extends Activity {
         super.onResume();
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("ExitApp");
-        if (this.f8059a != null) {
-            com.anythink.core.common.b.k.a(this).a(this.f8059a, intentFilter);
+        if (this.f5219a != null) {
+            com.anythink.core.common.b.k.a(this).a(this.f5219a, intentFilter);
         }
     }
 }

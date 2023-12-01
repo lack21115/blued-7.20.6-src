@@ -1,5 +1,6 @@
 package com.tencent.cloud.huiyansdkface.okhttp3.internal.http1;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
 import com.tencent.cloud.huiyansdkface.okhttp3.Headers;
 import com.tencent.cloud.huiyansdkface.okhttp3.HttpUrl;
@@ -34,11 +35,11 @@ import java.util.concurrent.TimeUnit;
 public final class Http1Codec implements HttpCodec {
 
     /* renamed from: a  reason: collision with root package name */
-    final OkHttpClient f35960a;
+    final OkHttpClient f22269a;
     final StreamAllocation b;
 
     /* renamed from: c  reason: collision with root package name */
-    final BufferedSource f35961c;
+    final BufferedSource f22270c;
     final BufferedSink d;
     int e = 0;
     private long f = 262144;
@@ -48,15 +49,15 @@ public final class Http1Codec implements HttpCodec {
     public abstract class AbstractSource implements Source {
 
         /* renamed from: a  reason: collision with root package name */
-        protected final ForwardingTimeout f35962a;
+        protected final ForwardingTimeout f22271a;
         protected boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        protected long f35963c;
+        protected long f22272c;
 
         private AbstractSource() {
-            this.f35962a = new ForwardingTimeout(Http1Codec.this.f35961c.timeout());
-            this.f35963c = 0L;
+            this.f22271a = new ForwardingTimeout(Http1Codec.this.f22270c.timeout());
+            this.f22272c = 0L;
         }
 
         protected final void a(boolean z, IOException iOException) throws IOException {
@@ -66,19 +67,19 @@ public final class Http1Codec implements HttpCodec {
             if (Http1Codec.this.e != 5) {
                 throw new IllegalStateException("state: " + Http1Codec.this.e);
             }
-            Http1Codec.this.a(this.f35962a);
+            Http1Codec.this.a(this.f22271a);
             Http1Codec.this.e = 6;
             if (Http1Codec.this.b != null) {
-                Http1Codec.this.b.streamFinished(!z, Http1Codec.this, this.f35963c, iOException);
+                Http1Codec.this.b.streamFinished(!z, Http1Codec.this, this.f22272c, iOException);
             }
         }
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Source
         public long read(Buffer buffer, long j) throws IOException {
             try {
-                long read = Http1Codec.this.f35961c.read(buffer, j);
+                long read = Http1Codec.this.f22270c.read(buffer, j);
                 if (read > 0) {
-                    this.f35963c += read;
+                    this.f22272c += read;
                 }
                 return read;
             } catch (IOException e) {
@@ -89,7 +90,7 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Source
         public Timeout timeout() {
-            return this.f35962a;
+            return this.f22271a;
         }
     }
 
@@ -99,7 +100,7 @@ public final class Http1Codec implements HttpCodec {
         private final ForwardingTimeout b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f35965c;
+        private boolean f22274c;
 
         ChunkedSink() {
             this.b = new ForwardingTimeout(Http1Codec.this.d.timeout());
@@ -108,10 +109,10 @@ public final class Http1Codec implements HttpCodec {
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             synchronized (this) {
-                if (this.f35965c) {
+                if (this.f22274c) {
                     return;
                 }
-                this.f35965c = true;
+                this.f22274c = true;
                 Http1Codec.this.d.writeUtf8("0\r\n\r\n");
                 Http1Codec.this.a(this.b);
                 Http1Codec.this.e = 3;
@@ -121,7 +122,7 @@ public final class Http1Codec implements HttpCodec {
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink, java.io.Flushable
         public void flush() throws IOException {
             synchronized (this) {
-                if (this.f35965c) {
+                if (this.f22274c) {
                     return;
                 }
                 Http1Codec.this.d.flush();
@@ -135,7 +136,7 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
-            if (this.f35965c) {
+            if (this.f22274c) {
                 throw new IllegalStateException("closed");
             }
             if (j == 0) {
@@ -164,16 +165,16 @@ public final class Http1Codec implements HttpCodec {
 
         private void a() throws IOException {
             if (this.g != -1) {
-                Http1Codec.this.f35961c.readUtf8LineStrict();
+                Http1Codec.this.f22270c.readUtf8LineStrict();
             }
             try {
-                this.g = Http1Codec.this.f35961c.readHexadecimalUnsignedLong();
-                String trim = Http1Codec.this.f35961c.readUtf8LineStrict().trim();
-                if (this.g < 0 || !(trim.isEmpty() || trim.startsWith(";"))) {
+                this.g = Http1Codec.this.f22270c.readHexadecimalUnsignedLong();
+                String trim = Http1Codec.this.f22270c.readUtf8LineStrict().trim();
+                if (this.g < 0 || !(trim.isEmpty() || trim.startsWith(t.aE))) {
                     throw new ProtocolException("expected chunk size and optional extensions but was \"" + this.g + trim + "\"");
                 } else if (this.g == 0) {
                     this.h = false;
-                    HttpHeaders.receiveHeaders(Http1Codec.this.f35960a.cookieJar(), this.f, Http1Codec.this.readHeaders());
+                    HttpHeaders.receiveHeaders(Http1Codec.this.f22269a.cookieJar(), this.f, Http1Codec.this.readHeaders());
                     a(true, null);
                 }
             } catch (NumberFormatException e) {
@@ -227,7 +228,7 @@ public final class Http1Codec implements HttpCodec {
         private final ForwardingTimeout b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f35967c;
+        private boolean f22276c;
         private long d;
 
         FixedLengthSink(long j) {
@@ -237,10 +238,10 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            if (this.f35967c) {
+            if (this.f22276c) {
                 return;
             }
-            this.f35967c = true;
+            this.f22276c = true;
             if (this.d > 0) {
                 throw new ProtocolException("unexpected end of stream");
             }
@@ -250,7 +251,7 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink, java.io.Flushable
         public void flush() throws IOException {
-            if (this.f35967c) {
+            if (this.f22276c) {
                 return;
             }
             Http1Codec.this.d.flush();
@@ -263,7 +264,7 @@ public final class Http1Codec implements HttpCodec {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
-            if (this.f35967c) {
+            if (this.f22276c) {
                 throw new IllegalStateException("closed");
             }
             Util.checkOffsetAndCount(buffer.size(), 0L, j);
@@ -369,14 +370,14 @@ public final class Http1Codec implements HttpCodec {
     }
 
     public Http1Codec(OkHttpClient okHttpClient, StreamAllocation streamAllocation, BufferedSource bufferedSource, BufferedSink bufferedSink) {
-        this.f35960a = okHttpClient;
+        this.f22269a = okHttpClient;
         this.b = streamAllocation;
-        this.f35961c = bufferedSource;
+        this.f22270c = bufferedSource;
         this.d = bufferedSink;
     }
 
     private String a() throws IOException {
-        String readUtf8LineStrict = this.f35961c.readUtf8LineStrict(this.f);
+        String readUtf8LineStrict = this.f22270c.readUtf8LineStrict(this.f);
         this.f -= readUtf8LineStrict.length();
         return readUtf8LineStrict;
     }
@@ -468,7 +469,7 @@ public final class Http1Codec implements HttpCodec {
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.http.HttpCodec
     public ResponseBody openResponseBody(Response response) throws IOException {
-        this.b.f35944c.responseBodyStart(this.b.b);
+        this.b.f22253c.responseBodyStart(this.b.b);
         String header = response.header("Content-Type");
         if (HttpHeaders.hasBody(response)) {
             if (DownloadUtils.VALUE_CHUNKED.equalsIgnoreCase(response.header("Transfer-Encoding"))) {
@@ -487,7 +488,7 @@ public final class Http1Codec implements HttpCodec {
             if (a2.length() == 0) {
                 return builder.build();
             }
-            Internal.f35902a.addLenient(builder, a2);
+            Internal.f22211a.addLenient(builder, a2);
         }
     }
 
@@ -499,7 +500,7 @@ public final class Http1Codec implements HttpCodec {
         }
         try {
             StatusLine parse = StatusLine.parse(a());
-            Response.Builder headers = new Response.Builder().protocol(parse.f35958a).code(parse.b).message(parse.f35959c).headers(readHeaders());
+            Response.Builder headers = new Response.Builder().protocol(parse.f22267a).code(parse.b).message(parse.f22268c).headers(readHeaders());
             if (z && parse.b == 100) {
                 return null;
             }

@@ -4,7 +4,7 @@ package com.tencent.map.b;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f37237a = false;
+    private static boolean f23546a = false;
 
     public static void a(String str) {
     }

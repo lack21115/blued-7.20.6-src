@@ -10,14 +10,12 @@ import kotlin.jvm.functions.Function1;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$minus$2.class */
 public final class SequencesKt___SequencesKt$minus$2<T> implements Sequence<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ T[] f42672a;
+    final /* synthetic */ T[] a;
     final /* synthetic */ Sequence<T> b;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<T> iterator() {
-        final Collection a2 = BrittleContainsOptimizationKt.a(this.f42672a);
+        final Collection a = BrittleContainsOptimizationKt.a(this.a);
         return SequencesKt.b(this.b, new Function1<T, Boolean>() { // from class: kotlin.sequences.SequencesKt___SequencesKt$minus$2$iterator$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -29,7 +27,7 @@ public final class SequencesKt___SequencesKt$minus$2<T> implements Sequence<T> {
             @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
             public final Boolean invoke(T t) {
-                return Boolean.valueOf(a2.contains(t));
+                return Boolean.valueOf(a.contains(t));
             }
         }).iterator();
     }

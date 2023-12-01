@@ -6,11 +6,11 @@ import java.util.List;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7793a = "key";
+    public static final String f4953a = "key";
     public static final String b = "time";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7794c = "ad_source_id";
+    public static final String f4954c = "ad_source_id";
     public static final String d = "num";
     public static final String e = "unit_id";
     public static final String f = "fb";

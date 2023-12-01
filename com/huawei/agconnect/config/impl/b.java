@@ -14,11 +14,11 @@ import org.json.JSONObject;
 public class b implements AGConnectOptions {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f22330a;
+    private final String f8722a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f22331c;
+    private final String f8723c;
     private final AGCRoutePolicy d;
     private final d e;
     private final e f;
@@ -59,7 +59,7 @@ public class b implements AGConnectOptions {
     }
 
     private String b() {
-        return String.valueOf(("{packageName='" + this.f22331c + "', routePolicy=" + this.d + ", reader=" + this.e.toString().hashCode() + ", customConfigMap=" + new JSONObject(this.g).toString().hashCode() + '}').hashCode());
+        return String.valueOf(("{packageName='" + this.f8723c + "', routePolicy=" + this.d + ", reader=" + this.e.toString().hashCode() + ", customConfigMap=" + new JSONObject(this.g).toString().hashCode() + '}').hashCode());
     }
 
     public List<Service> a() {
@@ -83,7 +83,7 @@ public class b implements AGConnectOptions {
 
     @Override // com.huawei.agconnect.AGConnectOptions
     public String getIdentifier() {
-        return this.f22330a;
+        return this.f8722a;
     }
 
     @Override // com.huawei.agconnect.AGConnectOptions
@@ -102,7 +102,7 @@ public class b implements AGConnectOptions {
 
     @Override // com.huawei.agconnect.AGConnectOptions
     public String getPackageName() {
-        return this.f22331c;
+        return this.f8723c;
     }
 
     @Override // com.huawei.agconnect.AGConnectOptions

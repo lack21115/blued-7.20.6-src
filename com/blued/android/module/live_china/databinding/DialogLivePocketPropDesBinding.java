@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLivePocketPropDesBinding.class */
 public final class DialogLivePocketPropDesBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11803a;
+    public final ImageView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f11804c;
+    public final ImageView c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class DialogLivePocketPropDesBinding implements ViewBinding {
 
     private DialogLivePocketPropDesBinding(FrameLayout frameLayout, ImageView imageView, ShapeTextView shapeTextView, ImageView imageView2, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.h = frameLayout;
-        this.f11803a = imageView;
+        this.a = imageView;
         this.b = shapeTextView;
-        this.f11804c = imageView2;
+        this.c = imageView2;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -88,7 +84,6 @@ public final class DialogLivePocketPropDesBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.h;

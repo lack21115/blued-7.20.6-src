@@ -32,16 +32,16 @@ public final class UProgressionUtilKt {
     private static final int b(int i, int i2, int i3) {
         int b = UnsignedKt.b(i, i3);
         int b2 = UnsignedKt.b(i2, i3);
-        int a2 = UnsignedKt.a(b, b2);
-        int c2 = UInt.c(b - b2);
-        return a2 >= 0 ? c2 : UInt.c(c2 + i3);
+        int a = UnsignedKt.a(b, b2);
+        int c = UInt.c(b - b2);
+        return a >= 0 ? c : UInt.c(c + i3);
     }
 
     private static final long b(long j, long j2, long j3) {
         long b = UnsignedKt.b(j, j3);
         long b2 = UnsignedKt.b(j2, j3);
-        int a2 = UnsignedKt.a(b, b2);
-        long c2 = ULong.c(b - b2);
-        return a2 >= 0 ? c2 : ULong.c(c2 + j3);
+        int a = UnsignedKt.a(b, b2);
+        long c = ULong.c(b - b2);
+        return a >= 0 ? c : ULong.c(c + j3);
     }
 }

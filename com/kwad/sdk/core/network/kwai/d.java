@@ -10,7 +10,6 @@ import okhttp3.Dns;
 public final class d implements Dns {
     private static final Dns SYSTEM = Dns.SYSTEM;
 
-    @Override // okhttp3.Dns
     public final List<InetAddress> lookup(String str) {
         String ea = com.kwad.sdk.ip.direct.a.ea(str);
         if (TextUtils.isEmpty(ea)) {

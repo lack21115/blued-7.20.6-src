@@ -9,13 +9,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMultiPKPayMVPView$starMVPAnimStep5$2.class */
 public final class LiveMultiPKPayMVPView$starMVPAnimStep5$2 implements Animator.AnimatorListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LiveMultiPKPayMVPView f14658a;
+    final /* synthetic */ LiveMultiPKPayMVPView a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public LiveMultiPKPayMVPView$starMVPAnimStep5$2(LiveMultiPKPayMVPView liveMultiPKPayMVPView) {
-        this.f14658a = liveMultiPKPayMVPView;
+        this.a = liveMultiPKPayMVPView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -31,7 +29,7 @@ public final class LiveMultiPKPayMVPView$starMVPAnimStep5$2 implements Animator.
     @Override // android.animation.Animator.AnimatorListener
     public void onAnimationEnd(Animator animator) {
         Handler n = AppInfo.n();
-        final LiveMultiPKPayMVPView liveMultiPKPayMVPView = this.f14658a;
+        final LiveMultiPKPayMVPView liveMultiPKPayMVPView = this.a;
         n.postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveMultiPKPayMVPView$starMVPAnimStep5$2$LGDh1cAeHmYPH1HrIdvjBKIxiqo
             @Override // java.lang.Runnable
             public final void run() {

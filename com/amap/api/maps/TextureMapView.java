@@ -3,9 +3,11 @@ package com.amap.api.maps;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.amap.api.col.p0003sl.aa;
+import com.android.internal.R;
 import com.autonavi.amap.mapcore.interfaces.IAMap;
 import com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate;
 
@@ -24,7 +26,7 @@ public class TextureMapView extends FrameLayout implements BaseMapView {
     public TextureMapView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.visibility = 0;
-        this.visibility = attributeSet.getAttributeIntValue(16842972, 0);
+        this.visibility = attributeSet.getAttributeIntValue(R.attr.visibility, 0);
         getMapFragmentDelegate().setContext(context);
         getMapFragmentDelegate().setVisibility(this.visibility);
     }
@@ -32,7 +34,7 @@ public class TextureMapView extends FrameLayout implements BaseMapView {
     public TextureMapView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.visibility = 0;
-        this.visibility = attributeSet.getAttributeIntValue(16842972, 0);
+        this.visibility = attributeSet.getAttributeIntValue(R.attr.visibility, 0);
         getMapFragmentDelegate().setContext(context);
         getMapFragmentDelegate().setVisibility(this.visibility);
     }
@@ -77,7 +79,7 @@ public class TextureMapView extends FrameLayout implements BaseMapView {
 
     public final void onCreate(Bundle bundle) {
         try {
-            addView(getMapFragmentDelegate().onCreateView(null, null, bundle), new ViewGroup.LayoutParams(-1, -1));
+            addView(getMapFragmentDelegate().onCreateView((LayoutInflater) null, (ViewGroup) null, bundle), new ViewGroup.LayoutParams(-1, -1));
         } catch (Throwable th) {
             th.printStackTrace();
         }

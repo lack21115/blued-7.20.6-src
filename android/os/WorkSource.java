@@ -1,7 +1,6 @@
 package android.os;
 
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 import java.util.Arrays;
 
 /* loaded from: source-9557208-dex2jar.jar:android/os/WorkSource.class */
@@ -662,7 +661,7 @@ public class WorkSource implements Parcelable {
         while (true) {
             int i2 = i;
             if (i2 >= this.mNum) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             if (i2 != 0) {

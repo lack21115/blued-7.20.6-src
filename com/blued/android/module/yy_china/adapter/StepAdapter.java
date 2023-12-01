@@ -16,7 +16,6 @@ public class StepAdapter extends BaseQuickAdapter<YYStepModel, BaseViewHolder> {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYStepModel yYStepModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.step_name);

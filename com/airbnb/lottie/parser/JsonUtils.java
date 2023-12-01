@@ -15,25 +15,23 @@ class JsonUtils {
     /* renamed from: com.airbnb.lottie.parser.JsonUtils$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/JsonUtils$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f4403a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[JsonToken.values().length];
-            f4403a = iArr;
+            a = iArr;
             try {
                 iArr[JsonToken.NUMBER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f4403a[JsonToken.BEGIN_ARRAY.ordinal()] = 2;
+                a[JsonToken.BEGIN_ARRAY.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f4403a[JsonToken.BEGIN_OBJECT.ordinal()] = 3;
+                a[JsonToken.BEGIN_OBJECT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -71,7 +69,7 @@ class JsonUtils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static float b(JsonReader jsonReader) throws IOException {
         JsonToken peek = jsonReader.peek();
-        int i = AnonymousClass1.f4403a[peek.ordinal()];
+        int i = AnonymousClass1.a[peek.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 throw new IllegalArgumentException("Unknown value for token of type " + peek);
@@ -89,7 +87,7 @@ class JsonUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static PointF b(JsonReader jsonReader, float f) throws IOException {
-        int i = AnonymousClass1.f4403a[jsonReader.peek().ordinal()];
+        int i = AnonymousClass1.a[jsonReader.peek().ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {

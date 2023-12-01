@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemReportChooseWithIconBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29300a;
+    private final LinearLayout f15610a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29300a;
+        return this.f15610a;
     }
 }

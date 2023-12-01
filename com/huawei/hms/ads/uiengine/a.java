@@ -12,7 +12,7 @@ public interface a extends IInterface {
 
     /* renamed from: com.huawei.hms.ads.uiengine.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/uiengine/a$a.class */
-    public static class C0423a implements a {
+    public static class C0253a implements a {
         @Override // com.huawei.hms.ads.uiengine.a
         public void Code(long j, long j2) {
         }
@@ -76,22 +76,22 @@ public interface a extends IInterface {
         static final int S = 3;
 
         /* renamed from: a  reason: collision with root package name */
-        static final int f22531a = 7;
+        static final int f8923a = 7;
         static final int b = 8;
 
         /* renamed from: c  reason: collision with root package name */
-        static final int f22532c = 9;
+        static final int f8924c = 9;
         static final int d = 10;
         static final int e = 11;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.huawei.hms.ads.uiengine.a$b$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/uiengine/a$b$a.class */
-        public static class C0424a implements a {
+        public static class C0254a implements a {
             public static a Code;
             private IBinder V;
 
-            C0424a(IBinder iBinder) {
+            C0254a(IBinder iBinder) {
                 this.V = iBinder;
             }
 
@@ -361,13 +361,13 @@ public interface a extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface(Code);
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C0424a(iBinder) : (a) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof a)) ? new C0254a(iBinder) : (a) queryLocalInterface;
         }
 
         public static boolean Code(a aVar) {
-            if (C0424a.Code == null) {
+            if (C0254a.Code == null) {
                 if (aVar != null) {
-                    C0424a.Code = aVar;
+                    C0254a.Code = aVar;
                     return true;
                 }
                 return false;
@@ -376,7 +376,7 @@ public interface a extends IInterface {
         }
 
         public static a I() {
-            return C0424a.Code;
+            return C0254a.Code;
         }
 
         @Override // android.os.IInterface

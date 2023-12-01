@@ -1,6 +1,5 @@
 package java.lang;
 
-import com.igexin.push.core.b;
 import java.io.InvalidObjectException;
 import java.util.Arrays;
 import libcore.util.EmptyArray;
@@ -71,21 +70,21 @@ public abstract class AbstractStringBuilder {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void append0(char c2) {
+    public final void append0(char c) {
         if (this.count == this.value.length) {
             enlargeBuffer(this.count + 1);
         }
         char[] cArr = this.value;
         int i = this.count;
         this.count = i + 1;
-        cArr[i] = c2;
+        cArr[i] = c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final void append0(CharSequence charSequence, int i, int i2) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         if ((i | i2) < 0 || i > i2 || i2 > charSequence2.length()) {
             throw new IndexOutOfBoundsException();
@@ -327,12 +326,12 @@ public abstract class AbstractStringBuilder {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public final void insert0(int i, char c2) {
+    public final void insert0(int i, char c) {
         if (i < 0 || i > this.count) {
             throw new ArrayIndexOutOfBoundsException(this.count, i);
         }
         move(1, i);
-        this.value[i] = c2;
+        this.value[i] = c;
         this.count++;
     }
 
@@ -340,7 +339,7 @@ public abstract class AbstractStringBuilder {
     public final void insert0(int i, CharSequence charSequence, int i2, int i3) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         if ((i | i2 | i3) < 0 || i > this.count || i2 > i3 || i3 > charSequence2.length()) {
             throw new IndexOutOfBoundsException();
@@ -355,7 +354,7 @@ public abstract class AbstractStringBuilder {
         }
         String str2 = str;
         if (str == null) {
-            str2 = b.l;
+            str2 = "null";
         }
         int length = str2.length();
         if (length != 0) {
@@ -511,25 +510,25 @@ public abstract class AbstractStringBuilder {
             int i = 0;
             int i2 = this.count;
             while (i < this.count) {
-                char c2 = this.value[i];
+                char c = this.value[i];
                 int i3 = i2;
                 int i4 = i;
                 if (i + 1 < this.count) {
                     i3 = i2;
                     i4 = i;
-                    if (c2 >= 55296) {
+                    if (c >= 55296) {
                         i3 = i2;
                         i4 = i;
-                        if (c2 <= 56319) {
-                            char c3 = this.value[i + 1];
+                        if (c <= 56319) {
+                            char c2 = this.value[i + 1];
                             i3 = i2;
                             i4 = i;
-                            if (c3 >= 56320) {
+                            if (c2 >= 56320) {
                                 i3 = i2;
                                 i4 = i;
-                                if (c3 <= 57343) {
+                                if (c2 <= 57343) {
                                     i3 = i2 - 1;
-                                    cArr[i3] = c3;
+                                    cArr[i3] = c2;
                                     i4 = i + 1;
                                 }
                             }
@@ -537,7 +536,7 @@ public abstract class AbstractStringBuilder {
                     }
                 }
                 i2 = i3 - 1;
-                cArr[i2] = c2;
+                cArr[i2] = c;
                 i = i4 + 1;
             }
             this.value = cArr;
@@ -545,49 +544,49 @@ public abstract class AbstractStringBuilder {
             return;
         }
         int i5 = this.count - 1;
-        char c4 = this.value[0];
-        char c5 = this.value[i5];
+        char c3 = this.value[0];
+        char c4 = this.value[i5];
         boolean z = true;
         boolean z2 = true;
         int i6 = 0;
         int i7 = this.count / 2;
         while (i6 < i7) {
-            char c6 = this.value[i6 + 1];
-            char c7 = this.value[i5 - 1];
-            boolean z3 = z && c6 >= 56320 && c6 <= 57343 && c4 >= 55296 && c4 <= 56319;
+            char c5 = this.value[i6 + 1];
+            char c6 = this.value[i5 - 1];
+            boolean z3 = z && c5 >= 56320 && c5 <= 57343 && c3 >= 55296 && c3 <= 56319;
             if (z3 && this.count < 3) {
                 return;
             }
-            if (z3 == (z2 && c7 >= 55296 && c7 <= 56319 && c5 >= 56320 && c5 <= 57343)) {
+            if (z3 == (z2 && c6 >= 55296 && c6 <= 56319 && c4 >= 56320 && c4 <= 57343)) {
                 if (z3) {
-                    this.value[i5] = c6;
-                    this.value[i5 - 1] = c4;
-                    this.value[i6] = c7;
-                    this.value[i6 + 1] = c5;
-                    c4 = this.value[i6 + 2];
-                    c5 = this.value[i5 - 2];
+                    this.value[i5] = c5;
+                    this.value[i5 - 1] = c3;
+                    this.value[i6] = c6;
+                    this.value[i6 + 1] = c4;
+                    c3 = this.value[i6 + 2];
+                    c4 = this.value[i5 - 2];
                     i6++;
                     i5--;
                     z = true;
                     z2 = true;
                 } else {
-                    this.value[i5] = c4;
-                    this.value[i6] = c5;
+                    this.value[i5] = c3;
+                    this.value[i6] = c4;
+                    c3 = c5;
                     c4 = c6;
-                    c5 = c7;
                     z2 = true;
                     z = true;
                 }
             } else if (z3) {
-                this.value[i5] = c6;
-                this.value[i6] = c5;
-                c5 = c7;
+                this.value[i5] = c5;
+                this.value[i6] = c4;
+                c4 = c6;
                 z = false;
                 z2 = true;
             } else {
-                this.value[i5] = c4;
-                this.value[i6] = c7;
-                c4 = c6;
+                this.value[i5] = c3;
+                this.value[i6] = c6;
+                c3 = c5;
                 z2 = false;
                 z = true;
             }
@@ -600,9 +599,9 @@ public abstract class AbstractStringBuilder {
             }
             char[] cArr2 = this.value;
             if (!z) {
-                c5 = c4;
+                c4 = c3;
             }
-            cArr2[i5] = c5;
+            cArr2[i5] = c4;
         }
     }
 
@@ -620,7 +619,7 @@ public abstract class AbstractStringBuilder {
         this.count = i;
     }
 
-    public void setCharAt(int i, char c2) {
+    public void setCharAt(int i, char c) {
         if (i < 0 || i >= this.count) {
             throw indexAndLength(i);
         }
@@ -628,7 +627,7 @@ public abstract class AbstractStringBuilder {
             this.value = (char[]) this.value.clone();
             this.shared = false;
         }
-        this.value[i] = c2;
+        this.value[i] = c;
     }
 
     public void setLength(int i) {

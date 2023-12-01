@@ -17,7 +17,7 @@ public class AnimatableFloatValue extends BaseAnimatableValue<Float, Float> {
 
     @Override // com.airbnb.lottie.model.animatable.AnimatableValue
     public BaseKeyframeAnimation<Float, Float> a() {
-        return new FloatKeyframeAnimation(this.f4334a);
+        return new FloatKeyframeAnimation(this.a);
     }
 
     @Override // com.airbnb.lottie.model.animatable.BaseAnimatableValue, com.airbnb.lottie.model.animatable.AnimatableValue

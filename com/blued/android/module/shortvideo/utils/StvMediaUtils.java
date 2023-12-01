@@ -4,7 +4,6 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.media.MediaExtractor;
-import android.media.MediaFormat;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.opengl.GLSurfaceView;
@@ -44,9 +43,7 @@ import java.io.OutputStream;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/utils/StvMediaUtils.class */
 public class StvMediaUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    static PLShortVideoEditor f15841a;
+    static PLShortVideoEditor a;
     static PLShortVideoTranscoder b;
 
     public static EditDataModel a(String str) {
@@ -66,7 +63,7 @@ public class StvMediaUtils {
                 if (i2 >= mediaExtractor.getTrackCount()) {
                     break;
                 }
-                String string = mediaExtractor.getTrackFormat(i2).getString(MediaFormat.KEY_MIME);
+                String string = mediaExtractor.getTrackFormat(i2).getString("mime");
                 if (string.startsWith("video/")) {
                     if (string.equals("video/avc")) {
                         editDataModel.getSerializableData().p = false;
@@ -112,16 +109,16 @@ public class StvMediaUtils {
         PLVideoEditSetting pLVideoEditSetting = new PLVideoEditSetting();
         pLVideoEditSetting.setSourceFilepath(videoPath);
         pLVideoEditSetting.setDestFilepath(StvTools.c());
-        f15841a = new PLShortVideoEditor(gLSurfaceView, pLVideoEditSetting);
+        a = new PLShortVideoEditor(gLSurfaceView, pLVideoEditSetting);
         if (editDataModel.getSerializableData().isHasBgMusic()) {
-            a(editDataModel, f15841a, editDataModel.getSerializableData().getMusicPath());
+            a(editDataModel, a, editDataModel.getSerializableData().getMusicPath());
         }
-        float f = editDataModel.getSerializableData().f15749a / 100.0f;
+        float f = editDataModel.getSerializableData().a / 100.0f;
         float f2 = 0.0f;
         if (editDataModel.getSerializableData().isHasBgMusic()) {
             f2 = editDataModel.getSerializableData().b / 100.0f;
         }
-        f15841a.setAudioMixVolume(f, f2);
+        a.setAudioMixVolume(f, f2);
         final SenseTimeQiniuEditVideoManager senseTimeQiniuEditVideoManager = (SenseTimeQiniuEditVideoManager) SenseTimeFactory.createInstance(context, 2);
         FilterItem selectedFilter = editDataModel.getSerializableData().getSelectedFilter();
         if (selectedFilter != null) {
@@ -133,13 +130,12 @@ public class StvMediaUtils {
             PLVideoEncodeSetting pLVideoEncodeSetting = new PLVideoEncodeSetting(context);
             pLVideoEncodeSetting.setEncodingBitrate(editDataModel.getEncodingVideoBitrate());
             pLVideoEncodeSetting.setEncodingFps(30);
-            pLVideoEncodeSetting.setHWCodecEnabled(VideoConfigData.f15874a.booleanValue());
+            pLVideoEncodeSetting.setHWCodecEnabled(VideoConfigData.a.booleanValue());
             pLVideoEncodeSetting.setEncodingBitrateMode(PLVideoEncodeSetting.BitrateMode.QUALITY_PRIORITY);
             pLVideoEncodeSetting.setPreferredEncodingSize(editDataModel.getEncodingW(), editDataModel.getEncodingH());
-            f15841a.setVideoEncodeSetting(pLVideoEncodeSetting);
+            a.setVideoEncodeSetting(pLVideoEncodeSetting);
         }
-        f15841a.setVideoSaveListener(new PLVideoSaveListener() { // from class: com.blued.android.module.shortvideo.utils.StvMediaUtils.1
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
+        a.setVideoSaveListener(new PLVideoSaveListener() { // from class: com.blued.android.module.shortvideo.utils.StvMediaUtils.1
             public void onProgressUpdate(float f3) {
                 ISaveInterface iSaveInterface2 = iSaveInterface;
                 if (iSaveInterface2 != null) {
@@ -147,25 +143,22 @@ public class StvMediaUtils {
                 }
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoCanceled() {
                 ISaveInterface iSaveInterface2 = iSaveInterface;
                 if (iSaveInterface2 != null) {
                     iSaveInterface2.a();
                 }
-                StvMediaUtils.f15841a = null;
+                StvMediaUtils.a = null;
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoFailed(int i3) {
                 ISaveInterface iSaveInterface2 = iSaveInterface;
                 if (iSaveInterface2 != null) {
                     iSaveInterface2.a(i3);
                 }
-                StvMediaUtils.f15841a = null;
+                StvMediaUtils.a = null;
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoSuccess(String str) {
                 int i3 = i;
                 if (i3 == 0 || i3 == 3) {
@@ -173,30 +166,26 @@ public class StvMediaUtils {
                 } else {
                     StvMediaUtils.b(editDataModel, str, context, i3, iSaveInterface);
                 }
-                StvMediaUtils.f15841a = null;
+                StvMediaUtils.a = null;
             }
         });
         if (selectedFilter != null) {
             if (iSaveInterface != null) {
                 iSaveInterface.b();
             }
-            f15841a.save(new PLVideoFilterListener() { // from class: com.blued.android.module.shortvideo.utils.StvMediaUtils.2
-                @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
+            a.save(new PLVideoFilterListener() { // from class: com.blued.android.module.shortvideo.utils.StvMediaUtils.2
                 public int onDrawFrame(int i3, int i4, int i5, long j, float[] fArr) {
                     return SenseTimeQiniuEditVideoManager.this.drawFrame(i3, i4, i5, false);
                 }
 
-                @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
                 public void onSurfaceChanged(int i3, int i4) {
                     SenseTimeQiniuEditVideoManager.this.adjustViewPort(i3, i4);
                 }
 
-                @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
                 public void onSurfaceCreated() {
                     SenseTimeQiniuEditVideoManager.this.onSurfaceCreated();
                 }
 
-                @Override // com.qiniu.pili.droid.shortvideo.PLVideoFilterListener
                 public void onSurfaceDestroy() {
                     SenseTimeQiniuEditVideoManager.this.onSurfaceDestroyed();
                 }
@@ -206,7 +195,7 @@ public class StvMediaUtils {
         if (editDataModel.getSerializableData().isHasBgMusic() && iSaveInterface != null) {
             iSaveInterface.b();
         }
-        f15841a.save();
+        a.save();
     }
 
     public static void a(final Context context, final String str) {
@@ -231,22 +220,18 @@ public class StvMediaUtils {
         PLShortVideoTranscoder pLShortVideoTranscoder = new PLShortVideoTranscoder(AppInfo.d(), editDataModel.getSaveVideoPath(), e);
         b = pLShortVideoTranscoder;
         pLShortVideoTranscoder.transcode(editDataModel.getEncodingW(), editDataModel.getEncodingH(), editDataModel.getEncodingVideoBitrate(), new PLVideoSaveListener() { // from class: com.blued.android.module.shortvideo.utils.StvMediaUtils.6
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onProgressUpdate(float f) {
                 ITranscodingVideoListener.this.a(editDataModel.getSaveVideoPath(), f * 100.0f);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoCanceled() {
                 ITranscodingVideoListener.this.a(false, editDataModel.getSaveVideoPath(), null);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoFailed(int i) {
                 ITranscodingVideoListener.this.a(false, editDataModel.getSaveVideoPath(), null);
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoSuccess(String str) {
                 ITranscodingVideoListener.this.a(true, editDataModel.getSaveVideoPath(), str);
                 editDataModel.setSaveVideoPath(str);
@@ -421,7 +406,6 @@ public class StvMediaUtils {
             iSaveInterface.b();
         }
         pLShortVideoTranscoder.transcode(editDataModel.getEncodingW(), editDataModel.getEncodingH(), editDataModel.getEncodingVideoBitrate(), new PLVideoSaveListener() { // from class: com.blued.android.module.shortvideo.utils.StvMediaUtils.3
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onProgressUpdate(float f) {
                 ISaveInterface iSaveInterface2 = iSaveInterface;
                 if (iSaveInterface2 != null) {
@@ -429,7 +413,6 @@ public class StvMediaUtils {
                 }
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoCanceled() {
                 ISaveInterface iSaveInterface2 = iSaveInterface;
                 if (iSaveInterface2 != null) {
@@ -437,7 +420,6 @@ public class StvMediaUtils {
                 }
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoFailed(int i2) {
                 ISaveInterface iSaveInterface2 = iSaveInterface;
                 if (iSaveInterface2 != null) {
@@ -445,7 +427,6 @@ public class StvMediaUtils {
                 }
             }
 
-            @Override // com.qiniu.pili.droid.shortvideo.PLVideoSaveListener
             public void onSaveVideoSuccess(String str2) {
                 StvMediaUtils.b(EditDataModel.this, context, str2, i, iSaveInterface);
             }

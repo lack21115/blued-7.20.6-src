@@ -33,7 +33,7 @@ public class mb {
 
     /* renamed from: com.ss.android.downloadlib.addownload.mb.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/addownload/mb/mb$mb.class */
-    public interface InterfaceC0871mb {
+    public interface InterfaceC0701mb {
         void mb();
     }
 
@@ -50,7 +50,7 @@ public class mb {
         return ox;
     }
 
-    private void mb(final Context context, final com.ss.android.downloadlib.addownload.model.mb mbVar, final InterfaceC0871mb interfaceC0871mb, boolean z) {
+    private void mb(final Context context, final com.ss.android.downloadlib.addownload.model.mb mbVar, final InterfaceC0701mb interfaceC0701mb, boolean z) {
         final com.ss.android.downloadad.api.mb.ox hj = u.mb().hj(mbVar.ox);
         if (hj == null) {
             com.ss.android.downloadlib.exception.b.mb().mb("showBackInstallDialog nativeModel null");
@@ -72,9 +72,9 @@ public class mb {
             @Override // com.ss.android.download.api.model.DownloadAlertDialogInfo.ox
             public void ox(DialogInterface dialogInterface) {
                 AdEventHandler.mb().ox(EventConstants.Label.BACK_DIALOG_EXIT, hj);
-                InterfaceC0871mb interfaceC0871mb2 = interfaceC0871mb;
-                if (interfaceC0871mb2 != null) {
-                    interfaceC0871mb2.mb();
+                InterfaceC0701mb interfaceC0701mb2 = interfaceC0701mb;
+                if (interfaceC0701mb2 != null) {
+                    interfaceC0701mb2.mb();
                 }
                 mb.this.ox("");
                 dialogInterface.dismiss();
@@ -84,7 +84,7 @@ public class mb {
         this.h = mbVar.hj;
     }
 
-    private boolean mb(Activity activity, DownloadInfo downloadInfo, boolean z, InterfaceC0871mb interfaceC0871mb) {
+    private boolean mb(Activity activity, DownloadInfo downloadInfo, boolean z, InterfaceC0701mb interfaceC0701mb) {
         boolean z2;
         if (downloadInfo == null) {
             try {
@@ -100,7 +100,7 @@ public class mb {
             return false;
         }
         if (downloadInfo != null && this.b.isEmpty()) {
-            mb(activity, new com.ss.android.downloadlib.addownload.model.mb(downloadInfo.getId(), 0L, 0L, downloadInfo.getPackageName(), downloadInfo.getTitle(), null, downloadInfo.getTargetFilePath()), z, interfaceC0871mb);
+            mb(activity, new com.ss.android.downloadlib.addownload.model.mb(downloadInfo.getId(), 0L, 0L, downloadInfo.getPackageName(), downloadInfo.getTitle(), null, downloadInfo.getTargetFilePath()), z, interfaceC0701mb);
             return true;
         }
         long j = 0;
@@ -116,10 +116,10 @@ public class mb {
             com.ss.android.downloadlib.addownload.model.mb previous = listIterator.previous();
             if (previous != null && !jb.hj(x.getContext(), previous.hj) && jb.mb(previous.ko)) {
                 if (new File(previous.ko).lastModified() >= j) {
-                    mb(activity, previous, z, interfaceC0871mb);
+                    mb(activity, previous, z, interfaceC0701mb);
                     z2 = true;
                 } else {
-                    mb(activity, new com.ss.android.downloadlib.addownload.model.mb(downloadInfo.getId(), 0L, 0L, downloadInfo.getPackageName(), downloadInfo.getTitle(), null, downloadInfo.getTargetFilePath()), z, interfaceC0871mb);
+                    mb(activity, new com.ss.android.downloadlib.addownload.model.mb(downloadInfo.getId(), 0L, 0L, downloadInfo.getPackageName(), downloadInfo.getTitle(), null, downloadInfo.getTargetFilePath()), z, interfaceC0701mb);
                     z2 = true;
                 }
             }
@@ -195,9 +195,9 @@ public class mb {
         }
     }
 
-    public void mb(Context context, com.ss.android.downloadlib.addownload.model.mb mbVar, boolean z, InterfaceC0871mb interfaceC0871mb) {
+    public void mb(Context context, com.ss.android.downloadlib.addownload.model.mb mbVar, boolean z, InterfaceC0701mb interfaceC0701mb) {
         this.b.clear();
-        mb(context, mbVar, interfaceC0871mb, z);
+        mb(context, mbVar, interfaceC0701mb, z);
         this.hj = true;
         ww.mb(context).b();
         this.u.ox("sp_ad_install_back_dialog", "key_uninstalled_list");
@@ -211,11 +211,11 @@ public class mb {
         }
     }
 
-    public boolean mb(Activity activity, boolean z, InterfaceC0871mb interfaceC0871mb) {
+    public boolean mb(Activity activity, boolean z, InterfaceC0701mb interfaceC0701mb) {
         if (x.lz().optInt("disable_install_app_dialog") == 1 || this.hj) {
             return false;
         }
-        return mb(activity, mb(activity), z, interfaceC0871mb);
+        return mb(activity, mb(activity), z, interfaceC0701mb);
     }
 
     public boolean mb(String str) {

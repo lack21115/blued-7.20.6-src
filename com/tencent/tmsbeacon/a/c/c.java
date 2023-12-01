@@ -8,11 +8,11 @@ import com.tencent.tmsbeacon.module.ModuleName;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f39474a;
+    private static volatile c f25783a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte f39475c;
+    private byte f25784c;
     private String d;
     private String f;
     private long g;
@@ -24,31 +24,31 @@ public class c {
     private boolean l = true;
 
     public c() {
-        this.f39475c = (byte) -1;
+        this.f25784c = (byte) -1;
         this.d = "";
         this.f = "";
-        this.f39475c = (byte) 1;
+        this.f25784c = (byte) 1;
         this.d = "tmsbeacon";
         this.f = "unknown";
     }
 
     public static c d() {
-        if (f39474a == null) {
+        if (f25783a == null) {
             synchronized (c.class) {
                 try {
-                    if (f39474a == null) {
-                        f39474a = new c();
+                    if (f25783a == null) {
+                        f25783a = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39474a;
+        return f25783a;
     }
 
     public BeaconModule a(ModuleName moduleName) {
-        return BeaconModule.f39592a.get(moduleName);
+        return BeaconModule.f25901a.get(moduleName);
     }
 
     public String a() {
@@ -116,7 +116,7 @@ public class c {
     public byte g() {
         byte b;
         synchronized (this) {
-            b = this.f39475c;
+            b = this.f25784c;
         }
         return b;
     }

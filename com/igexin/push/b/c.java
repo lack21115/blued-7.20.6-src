@@ -9,14 +9,14 @@ import java.util.List;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23306a = b.f23300a + c.class.getName();
+    private static final String f9698a = b.f9692a + c.class.getName();
     private static c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f23307c;
+    private static int f9699c;
 
     private c() {
-        f23307c = com.igexin.push.f.c.b() ? b.EnumC0449b.f23304a : b.EnumC0449b.b;
+        f9699c = com.igexin.push.f.c.b() ? b.EnumC0279b.f9696a : b.EnumC0279b.b;
     }
 
     public static c a() {
@@ -39,7 +39,7 @@ public class c {
             com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) f.g(), false, true);
             return;
         }
-        com.igexin.c.a.c.a.a(f23306a + "|xfr len = 1, detect = false", new Object[0]);
+        com.igexin.c.a.c.a.a(f9698a + "|xfr len = 1, detect = false", new Object[0]);
     }
 
     public final void c() {
@@ -94,14 +94,14 @@ public class c {
         synchronized (this) {
             a2 = com.igexin.push.f.c.b() ? j.a() : g.a();
             int c2 = a2.c();
-            if (c2 != f23307c) {
-                if (c2 == b.EnumC0449b.f23304a) {
+            if (c2 != f9699c) {
+                if (c2 == b.EnumC0279b.f9696a) {
                     g.a().f();
-                } else if (c2 == b.EnumC0449b.b) {
+                } else if (c2 == b.EnumC0279b.b) {
                     j.a().f();
                 }
             }
-            f23307c = c2;
+            f9699c = c2;
         }
         return a2;
     }

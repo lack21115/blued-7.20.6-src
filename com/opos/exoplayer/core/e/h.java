@@ -10,11 +10,11 @@ import java.nio.ByteBuffer;
 public final class h implements com.opos.exoplayer.core.c.n {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.exoplayer.core.h.b f25304a;
+    private final com.opos.exoplayer.core.h.b f11616a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final g f25305c = new g();
+    private final g f11617c = new g();
     private final g.a d = new g.a();
     private final com.opos.exoplayer.core.i.m e = new com.opos.exoplayer.core.i.m(32);
     private b f;
@@ -38,21 +38,21 @@ public final class h implements com.opos.exoplayer.core.c.n {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f25306a;
+        public final long f11618a;
         public final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public boolean f25307c;
+        public boolean f11619c;
         public com.opos.exoplayer.core.h.a d;
         public b e;
 
         public b(long j, int i) {
-            this.f25306a = j;
+            this.f11618a = j;
             this.b = i + j;
         }
 
         public int a(long j) {
-            return ((int) (j - this.f25306a)) + this.d.b;
+            return ((int) (j - this.f11618a)) + this.d.b;
         }
 
         public b a() {
@@ -65,12 +65,12 @@ public final class h implements com.opos.exoplayer.core.c.n {
         public void a(com.opos.exoplayer.core.h.a aVar, b bVar) {
             this.d = aVar;
             this.e = bVar;
-            this.f25307c = true;
+            this.f11619c = true;
         }
     }
 
     public h(com.opos.exoplayer.core.h.b bVar) {
-        this.f25304a = bVar;
+        this.f11616a = bVar;
         this.b = bVar.c();
         b bVar2 = new b(0L, this.b);
         this.f = bVar2;
@@ -79,8 +79,8 @@ public final class h implements com.opos.exoplayer.core.c.n {
     }
 
     private int a(int i) {
-        if (!this.h.f25307c) {
-            this.h.a(this.f25304a.a(), new b(this.h.b, this.b));
+        if (!this.h.f11619c) {
+            this.h.a(this.f11616a.a(), new b(this.h.b, this.b));
         }
         return Math.min(i, (int) (this.h.b - this.m));
     }
@@ -109,7 +109,7 @@ public final class h implements com.opos.exoplayer.core.c.n {
         a(j);
         while (i > 0) {
             int min = Math.min(i, (int) (this.g.b - j));
-            byteBuffer.put(this.g.d.f25441a, this.g.a(j), min);
+            byteBuffer.put(this.g.d.f11753a, this.g.a(j), min);
             int i2 = i - min;
             long j2 = j + min;
             j = j2;
@@ -127,7 +127,7 @@ public final class h implements com.opos.exoplayer.core.c.n {
         int i2 = i;
         while (i2 > 0) {
             int min = Math.min(i2, (int) (this.g.b - j));
-            System.arraycopy((Object) this.g.d.f25441a, this.g.a(j), (Object) bArr, i - i2, min);
+            System.arraycopy(this.g.d.f11753a, this.g.a(j), bArr, i - i2, min);
             int i3 = i2 - min;
             long j2 = j + min;
             i2 = i3;
@@ -176,17 +176,17 @@ public final class h implements com.opos.exoplayer.core.c.n {
             return;
         }
         while (j >= this.f.b) {
-            this.f25304a.a(this.f.d);
+            this.f11616a.a(this.f.d);
             this.f = this.f.a();
         }
-        if (this.g.f25306a < this.f.f25306a) {
+        if (this.g.f11618a < this.f.f11618a) {
             this.g = this.f;
         }
     }
 
     @Override // com.opos.exoplayer.core.c.n
     public int a(com.opos.exoplayer.core.c.f fVar, int i, boolean z) {
-        int a2 = fVar.a(this.h.d.f25441a, this.h.a(this.m), a(i));
+        int a2 = fVar.a(this.h.d.f11753a, this.h.a(this.m), a(i));
         if (a2 != -1) {
             b(a2);
             return a2;
@@ -198,9 +198,9 @@ public final class h implements com.opos.exoplayer.core.c.n {
     }
 
     public int a(com.opos.exoplayer.core.l lVar, com.opos.exoplayer.core.b.e eVar, boolean z, boolean z2, long j) {
-        int a2 = this.f25305c.a(lVar, eVar, z, z2, this.i, this.d);
+        int a2 = this.f11617c.a(lVar, eVar, z, z2, this.i, this.d);
         if (a2 == -5) {
-            this.i = lVar.f25515a;
+            this.i = lVar.f11827a;
             return -5;
         } else if (a2 != -4) {
             if (a2 == -3) {
@@ -210,14 +210,14 @@ public final class h implements com.opos.exoplayer.core.c.n {
         } else if (eVar.c()) {
             return -4;
         } else {
-            if (eVar.f25074c < j) {
+            if (eVar.f11386c < j) {
                 eVar.b(Integer.MIN_VALUE);
             }
             if (eVar.g()) {
                 a(eVar, this.d);
             }
-            eVar.e(this.d.f25302a);
-            a(this.d.b, eVar.b, this.d.f25302a);
+            eVar.e(this.d.f11614a);
+            a(this.d.b, eVar.b, this.d.f11614a);
             return -4;
         }
     }
@@ -232,22 +232,22 @@ public final class h implements com.opos.exoplayer.core.c.n {
             a(this.k);
         }
         if (this.n) {
-            if ((i & 1) == 0 || !this.f25305c.b(j)) {
+            if ((i & 1) == 0 || !this.f11617c.b(j)) {
                 return;
             }
             this.n = false;
         }
-        this.f25305c.a(j + this.l, i, (this.m - i2) - i3, i2, aVar);
+        this.f11617c.a(j + this.l, i, (this.m - i2) - i3, i2, aVar);
     }
 
     public void a(long j, boolean z, boolean z2) {
-        b(this.f25305c.b(j, z, z2));
+        b(this.f11617c.b(j, z, z2));
     }
 
     @Override // com.opos.exoplayer.core.c.n
     public void a(Format format) {
         Format a2 = a(format, this.l);
-        boolean a3 = this.f25305c.a(a2);
+        boolean a3 = this.f11617c.a(a2);
         this.k = format;
         this.j = false;
         a aVar = this.o;
@@ -265,57 +265,57 @@ public final class h implements com.opos.exoplayer.core.c.n {
     public void a(com.opos.exoplayer.core.i.m mVar, int i) {
         while (i > 0) {
             int a2 = a(i);
-            mVar.a(this.h.d.f25441a, this.h.a(this.m), a2);
+            mVar.a(this.h.d.f11753a, this.h.a(this.m), a2);
             i -= a2;
             b(a2);
         }
     }
 
     public void a(boolean z) {
-        this.f25305c.a(z);
+        this.f11617c.a(z);
         a(this.f);
         b bVar = new b(0L, this.b);
         this.f = bVar;
         this.g = bVar;
         this.h = bVar;
         this.m = 0L;
-        this.f25304a.b();
+        this.f11616a.b();
     }
 
     public int b() {
-        return this.f25305c.a();
+        return this.f11617c.a();
     }
 
     public int b(long j, boolean z, boolean z2) {
-        return this.f25305c.a(j, z, z2);
+        return this.f11617c.a(j, z, z2);
     }
 
     public boolean c() {
-        return this.f25305c.c();
+        return this.f11617c.c();
     }
 
     public int d() {
-        return this.f25305c.b();
+        return this.f11617c.b();
     }
 
     public Format e() {
-        return this.f25305c.d();
+        return this.f11617c.d();
     }
 
     public long f() {
-        return this.f25305c.e();
+        return this.f11617c.e();
     }
 
     public void g() {
-        this.f25305c.f();
+        this.f11617c.f();
         this.g = this.f;
     }
 
     public void h() {
-        b(this.f25305c.h());
+        b(this.f11617c.h());
     }
 
     public int i() {
-        return this.f25305c.g();
+        return this.f11617c.g();
     }
 }

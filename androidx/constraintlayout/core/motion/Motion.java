@@ -60,7 +60,7 @@ public class Motion implements TypedValues {
     private HashMap<String, SplineSet> z;
 
     /* renamed from: a  reason: collision with root package name */
-    Rect f2008a = new Rect();
+    Rect f1960a = new Rect();
     private int h = -1;
     private MotionPaths i = new MotionPaths();
     private MotionPaths j = new MotionPaths();
@@ -68,7 +68,7 @@ public class Motion implements TypedValues {
     private MotionConstrainedPoint l = new MotionConstrainedPoint();
 
     /* renamed from: c  reason: collision with root package name */
-    float f2009c = Float.NaN;
+    float f1961c = Float.NaN;
     float d = 0.0f;
     float e = 1.0f;
     private int t = 4;
@@ -217,17 +217,17 @@ public class Motion implements TypedValues {
         return new DifferentialInterpolator() { // from class: androidx.constraintlayout.core.motion.Motion.1
 
             /* renamed from: a  reason: collision with root package name */
-            float f2010a;
+            float f1962a;
 
             @Override // androidx.constraintlayout.core.motion.utils.DifferentialInterpolator
             public float getInterpolation(float f) {
-                this.f2010a = f;
+                this.f1962a = f;
                 return (float) Easing.this.get(f);
             }
 
             @Override // androidx.constraintlayout.core.motion.utils.DifferentialInterpolator
             public float getVelocity() {
-                return (float) Easing.this.getDiff(this.f2010a);
+                return (float) Easing.this.getDiff(this.f1962a);
             }
         };
     }
@@ -441,12 +441,12 @@ public class Motion implements TypedValues {
     }
 
     public int getDrawPath() {
-        int i = this.i.f2014c;
+        int i = this.i.f1966c;
         Iterator<MotionPaths> it = this.v.iterator();
         while (it.hasNext()) {
-            i = Math.max(i, it.next().f2014c);
+            i = Math.max(i, it.next().f1966c);
         }
-        return Math.max(i, this.j.f2014c);
+        return Math.max(i, this.j.f1966c);
     }
 
     public float getFinalHeight() {
@@ -616,7 +616,7 @@ public class Motion implements TypedValues {
                 this.i.p.get(this.r[i3 - 1]).setInterpolatedValue(motionWidget, this.u);
                 i2 = i3 + 1;
             }
-            if (this.k.f2012a == 0) {
+            if (this.k.f1964a == 0) {
                 if (f2 <= 0.0f) {
                     motionWidget.setVisibility(this.k.b);
                 } else if (f2 >= 1.0f) {
@@ -660,7 +660,7 @@ public class Motion implements TypedValues {
     }
 
     public void setDrawPath(int i) {
-        this.i.f2014c = i;
+        this.i.f1966c = i;
     }
 
     public void setEnd(MotionWidget motionWidget) {
@@ -755,7 +755,7 @@ public class Motion implements TypedValues {
         Integer num;
         SplineSet makeSpline2;
         CustomVariable customVariable3;
-        Class<Double> cls = Double.TYPE;
+        Class cls = Double.TYPE;
         new HashSet();
         HashSet<String> hashSet = new HashSet<>();
         HashSet<String> hashSet2 = new HashSet<>();
@@ -1005,8 +1005,8 @@ public class Motion implements TypedValues {
             if (i23 >= iArr2.length) {
                 break;
             }
-            if (iArr2[i23] < MotionPaths.f2013a.length) {
-                String str7 = MotionPaths.f2013a[this.o[i23]] + " [";
+            if (iArr2[i23] < MotionPaths.f1965a.length) {
+                String str7 = MotionPaths.f1965a[this.o[i23]] + " [";
                 int i24 = 0;
                 while (true) {
                     int i25 = i24;

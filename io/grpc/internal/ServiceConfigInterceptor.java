@@ -60,7 +60,6 @@ final class ServiceConfigInterceptor implements ClientInterceptor {
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00d5, code lost:
         if (r0.compareTo(r0) < 0) goto L24;
      */
-    @Override // io.grpc.ClientInterceptor
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

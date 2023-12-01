@@ -6,11 +6,11 @@ import java.util.Date;
 public class j implements a<byte[]> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final JceRequestEntity f34991a;
+    private final JceRequestEntity f21300a;
     private long b;
 
     public j(JceRequestEntity jceRequestEntity) {
-        this.f34991a = jceRequestEntity;
+        this.f21300a = jceRequestEntity;
     }
 
     public void a(Callback<byte[]> callback) {
@@ -23,6 +23,6 @@ public class j implements a<byte[]> {
 
     public void b(Callback<byte[]> callback) {
         this.b = new Date().getTime();
-        com.tencent.beacon.base.net.c.c().a(this.f34991a, new i(this, callback));
+        com.tencent.beacon.base.net.c.c().a(this.f21300a, new i(this, callback));
     }
 }

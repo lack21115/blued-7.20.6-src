@@ -17,7 +17,7 @@ class MediaBrowserServiceCompatApi23 {
         }
 
         public void onLoadItem(String str, MediaBrowserService.Result<MediaBrowser.MediaItem> result) {
-            ((ServiceCompatProxy) this.f3156a).onLoadItem(str, new MediaBrowserServiceCompatApi21.ResultWrapper<>(result));
+            ((ServiceCompatProxy) this.f3108a).onLoadItem(str, new MediaBrowserServiceCompatApi21.ResultWrapper<>(result));
         }
     }
 

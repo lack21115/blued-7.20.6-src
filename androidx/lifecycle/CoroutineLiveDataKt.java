@@ -20,22 +20,22 @@ public final class CoroutineLiveDataKt {
         return BuildersKt.a(Dispatchers.b().a(), new CoroutineLiveDataKt$addDisposableSource$2(mediatorLiveData, liveData, null), continuation);
     }
 
-    public static final <T> LiveData<T> liveData(CoroutineContext context, long j, Function2<? super LiveDataScope<T>, ? super Continuation<? super Unit>, ? extends Object> block) {
-        Intrinsics.e(context, "context");
-        Intrinsics.e(block, "block");
-        return new CoroutineLiveData(context, j, block);
+    public static final <T> LiveData<T> liveData(CoroutineContext coroutineContext, long j, Function2<? super LiveDataScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2) {
+        Intrinsics.e(coroutineContext, "context");
+        Intrinsics.e(function2, "block");
+        return new CoroutineLiveData(coroutineContext, j, function2);
     }
 
-    public static final <T> LiveData<T> liveData(CoroutineContext context, Duration timeout, Function2<? super LiveDataScope<T>, ? super Continuation<? super Unit>, ? extends Object> block) {
-        Intrinsics.e(context, "context");
-        Intrinsics.e(timeout, "timeout");
-        Intrinsics.e(block, "block");
-        return new CoroutineLiveData(context, timeout.toMillis(), block);
+    public static final <T> LiveData<T> liveData(CoroutineContext coroutineContext, Duration duration, Function2<? super LiveDataScope<T>, ? super Continuation<? super Unit>, ? extends Object> function2) {
+        Intrinsics.e(coroutineContext, "context");
+        Intrinsics.e(duration, "timeout");
+        Intrinsics.e(function2, "block");
+        return new CoroutineLiveData(coroutineContext, duration.toMillis(), function2);
     }
 
     public static /* synthetic */ LiveData liveData$default(CoroutineContext coroutineContext, long j, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {
-            coroutineContext = EmptyCoroutineContext.f42457a;
+            coroutineContext = (CoroutineContext) EmptyCoroutineContext.a;
         }
         if ((i & 2) != 0) {
             j = 5000;
@@ -45,7 +45,7 @@ public final class CoroutineLiveDataKt {
 
     public static /* synthetic */ LiveData liveData$default(CoroutineContext coroutineContext, Duration duration, Function2 function2, int i, Object obj) {
         if ((i & 1) != 0) {
-            coroutineContext = EmptyCoroutineContext.f42457a;
+            coroutineContext = (CoroutineContext) EmptyCoroutineContext.a;
         }
         return liveData(coroutineContext, duration, function2);
     }

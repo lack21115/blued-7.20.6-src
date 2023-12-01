@@ -5,6 +5,7 @@ import com.anythink.core.api.AdError;
 import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.o;
 import com.anythink.core.common.u;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -15,13 +16,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/m.class */
 public class m extends a {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f6733a = 1;
+    public static final int a = 1;
     public static final int b = 2;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final int f6734c = 3;
+    public static final int c = 3;
     public static final int d = 4;
     public static final int e = 5;
     public static final int f = 6;
@@ -117,7 +114,7 @@ public class m extends a {
     @Override // com.anythink.core.common.g.a
     protected final Map<String, String> c() {
         HashMap hashMap = new HashMap();
-        hashMap.put("Content-Encoding", "gzip");
+        hashMap.put("Content-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
     }
@@ -183,10 +180,10 @@ public class m extends a {
         String a5 = com.anythink.core.common.k.c.a(jSONArray.toString());
         String c2 = com.anythink.core.common.k.f.c(this.A + "api_ver=1.0&common=" + a2 + "&data=" + a5);
         try {
-            jSONObject.put("common", a2);
+            jSONObject.put(c.Z, a2);
             jSONObject.put("data", a5);
             jSONObject.put(c.O, "1.0");
-            jSONObject.put("sign", c2);
+            jSONObject.put(c.Y, c2);
         } catch (Exception e2) {
             e2.printStackTrace();
         }

@@ -27,9 +27,9 @@ import android.system.OsConstants;
 import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
-import com.alipay.sdk.util.i;
 import com.android.internal.app.IAppOpsService;
 import com.anythink.expressad.exoplayer.b;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileDescriptor;
@@ -510,7 +510,7 @@ public class MediaPlayer implements SubtitleController.Listener {
                             }
                             i = i2 + 1;
                         }
-                        sb.append(i.d);
+                        sb.append("}");
                         Log.d(TAG, sb.toString());
                     }
                     Vector vector = new Vector();
@@ -544,7 +544,7 @@ public class MediaPlayer implements SubtitleController.Listener {
                         }
                         scheduleNotification(0, j2 - currentTimeUs);
                     }
-                    Iterator<E> it = vector.iterator();
+                    Iterator it = vector.iterator();
                     while (it.hasNext()) {
                         ((MediaTimeProvider.OnMediaTimeListener) it.next()).onTimedEvent(currentTimeUs);
                     }
@@ -805,7 +805,7 @@ public class MediaPlayer implements SubtitleController.Listener {
             String string = this.mFormat.getString("language");
             String str = string;
             if (string == null) {
-                str = b.f7166ar;
+                str = b.f4327ar;
             }
             return str;
         }
@@ -832,11 +832,11 @@ public class MediaPlayer implements SubtitleController.Listener {
                     sb.append("SUBTITLE");
                     break;
                 default:
-                    sb.append("UNKNOWN");
+                    sb.append(GrsBaseInfo.CountryCodeSource.UNKNOWN);
                     break;
             }
             sb.append(", " + this.mFormat.toString());
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
 
@@ -1822,7 +1822,7 @@ public class MediaPlayer implements SubtitleController.Listener {
             }
             this.mWakeLock = null;
         }
-        this.mWakeLock = ((PowerManager) context.getSystemService("power")).newWakeLock(536870912 | i, MediaPlayer.class.getName());
+        this.mWakeLock = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(536870912 | i, MediaPlayer.class.getName());
         this.mWakeLock.setReferenceCounted(false);
         if (z) {
             this.mWakeLock.acquire();

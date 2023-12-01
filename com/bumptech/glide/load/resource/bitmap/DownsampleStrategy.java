@@ -7,11 +7,11 @@ import com.bumptech.glide.load.Option;
 public abstract class DownsampleStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final DownsampleStrategy f20947a = new AtLeast();
+    public static final DownsampleStrategy f7341a = new AtLeast();
     public static final DownsampleStrategy b = new AtMost();
 
     /* renamed from: c  reason: collision with root package name */
-    public static final DownsampleStrategy f20948c = new FitCenter();
+    public static final DownsampleStrategy f7342c = new FitCenter();
     public static final DownsampleStrategy d = new CenterInside();
     public static final DownsampleStrategy e = new CenterOutside();
     public static final DownsampleStrategy f = new None();
@@ -68,12 +68,12 @@ public abstract class DownsampleStrategy {
 
         @Override // com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
         public float a(int i, int i2, int i3, int i4) {
-            return Math.min(1.0f, f20948c.a(i, i2, i3, i4));
+            return Math.min(1.0f, f7342c.a(i, i2, i3, i4));
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DownsampleStrategy
         public SampleSizeRounding b(int i, int i2, int i3, int i4) {
-            return a(i, i2, i3, i4) == 1.0f ? SampleSizeRounding.QUALITY : f20948c.b(i, i2, i3, i4);
+            return a(i, i2, i3, i4) == 1.0f ? SampleSizeRounding.QUALITY : f7342c.b(i, i2, i3, i4);
         }
     }
 

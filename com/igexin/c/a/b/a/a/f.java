@@ -4,7 +4,7 @@ package com.igexin.c.a.b.a.a;
 public final class f extends com.igexin.c.a.b.f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f23232a = -2034;
+    public static final int f9624a = -2034;
     private static final String f = "GS-T";
 
     public f(String str, com.igexin.c.a.b.d dVar) {

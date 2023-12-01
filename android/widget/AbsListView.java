@@ -675,7 +675,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         public boolean performEditorAction(int i) {
             boolean z = false;
             if (i == 6) {
-                InputMethodManager inputMethodManager = (InputMethodManager) AbsListView.this.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager inputMethodManager = (InputMethodManager) AbsListView.this.getContext().getSystemService("input_method");
                 if (inputMethodManager != null) {
                     inputMethodManager.hideSoftInputFromWindow(AbsListView.this.getWindowToken(), 0);
                 }
@@ -1907,7 +1907,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     public AbsListView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842858);
+        this(context, attributeSet, R.attr.absListViewStyle);
     }
 
     public AbsListView(Context context, AttributeSet attributeSet, int i) {
@@ -2653,7 +2653,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     }
 
     private void useDefaultSelector() {
-        setSelector(getContext().getDrawable(17301602));
+        setSelector(getContext().getDrawable(R.drawable.list_selector_background));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -2732,9 +2732,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public int computeVerticalScrollExtent() {
+    protected int computeVerticalScrollExtent() {
         int childCount = getChildCount();
         if (childCount > 0) {
             if (this.mSmoothScrollbarEnabled) {
@@ -2986,9 +2985,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
         return new LayoutParams(-1, -2, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new LayoutParams(layoutParams);
     }
 
@@ -4091,7 +4089,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
             }
             savedState.inActionMode = this.mChoiceMode == 3 && this.mChoiceActionMode != null;
             if (this.mCheckStates != null) {
-                savedState.checkState = this.mCheckStates.m1030clone();
+                savedState.checkState = this.mCheckStates.clone();
             }
             if (this.mCheckedIdStates != null) {
                 LongSparseArray<Integer> longSparseArray = new LongSparseArray<>();
@@ -4633,7 +4631,7 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 
     View setAnimation(View view) {
         int i;
-        int i2 = Settings.System.getInt(this.mContext.getContentResolver(), Settings.System.LISTVIEW_ANIMATION, 1);
+        int i2 = Settings.System.getInt(this.mContext.getContentResolver(), "listview_animation", 1);
         boolean z = false;
         try {
             i = computeVerticalScrollOffset();
@@ -4692,27 +4690,27 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
                     break;
             }
             scaleAnimation.setDuration(500L);
-            switch (Settings.System.getInt(this.mContext.getContentResolver(), Settings.System.LISTVIEW_INTERPOLATOR, 0)) {
+            switch (Settings.System.getInt(this.mContext.getContentResolver(), "listview_interpolator", 0)) {
                 case 1:
-                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17432581));
+                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.anim.accelerate_interpolator));
                     break;
                 case 2:
-                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17432582));
+                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.anim.decelerate_interpolator));
                     break;
                 case 3:
-                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17432580));
+                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.anim.accelerate_decelerate_interpolator));
                     break;
                 case 4:
-                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17432583));
+                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.anim.anticipate_interpolator));
                     break;
                 case 5:
-                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17432584));
+                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.anim.overshoot_interpolator));
                     break;
                 case 6:
-                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17432585));
+                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.anim.anticipate_overshoot_interpolator));
                     break;
                 case 7:
-                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, 17432586));
+                    scaleAnimation.setInterpolator(AnimationUtils.loadInterpolator(this.mContext, R.anim.bounce_interpolator));
                     break;
             }
             if (view != null) {

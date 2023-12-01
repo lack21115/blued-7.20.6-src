@@ -26,9 +26,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveSetDataObserver.class */
 public class LiveSetDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveSetDataObserver f13951a = new LiveSetDataObserver();
+    private static LiveSetDataObserver a = new LiveSetDataObserver();
     private ArrayList<ILiveSetDataObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveSetDataObserver$ILiveSetDataObserver.class */
@@ -200,7 +198,7 @@ public class LiveSetDataObserver {
     }
 
     public static LiveSetDataObserver a() {
-        return f13951a;
+        return a;
     }
 
     public void A() {

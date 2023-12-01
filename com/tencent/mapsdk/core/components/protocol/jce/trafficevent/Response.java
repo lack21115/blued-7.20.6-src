@@ -10,13 +10,13 @@ import java.util.Collection;
 public final class Response extends MapJceStruct {
 
     /* renamed from: c  reason: collision with root package name */
-    public static ArrayList<Detail> f37274c = new ArrayList<>();
+    public static ArrayList<Detail> f23583c = new ArrayList<>();
     public ArrayList<Detail> detail;
     public short error;
     public String msg;
 
     static {
-        f37274c.add(new Detail());
+        f23583c.add(new Detail());
     }
 
     public Response() {
@@ -38,7 +38,7 @@ public final class Response extends MapJceStruct {
     public void readFrom(m mVar) {
         this.error = mVar.a(this.error, 0, true);
         this.msg = mVar.b(1, false);
-        this.detail = (ArrayList) mVar.a((m) f37274c, 2, false);
+        this.detail = (ArrayList) mVar.a((m) f23583c, 2, false);
     }
 
     @Override // com.tencent.mapsdk.internal.p

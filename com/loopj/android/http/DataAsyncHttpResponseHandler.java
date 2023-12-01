@@ -21,7 +21,7 @@ public abstract class DataAsyncHttpResponseHandler extends AsyncHttpResponseHand
             int i3 = i2 - i;
             int min = Math.min(i3, length - i);
             byte[] bArr2 = new byte[i3];
-            System.arraycopy((Object) bArr, i, (Object) bArr2, 0, min);
+            System.arraycopy(bArr, i, bArr2, 0, min);
             return bArr2;
         }
         throw new IllegalArgumentException();

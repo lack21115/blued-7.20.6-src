@@ -13,11 +13,11 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class a extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private ReadWriteLock f27138a;
+    private ReadWriteLock f13450a;
 
     public a(Context context) {
         super(context, "opos_mobad_app", null, 1);
-        this.f27138a = new ReentrantReadWriteLock();
+        this.f13450a = new ReentrantReadWriteLock();
     }
 
     private void a(String str, long j) {
@@ -59,7 +59,7 @@ public class a extends SQLiteOpenHelper {
     public void a(String str, Bundle bundle, long j) {
         try {
             try {
-                this.f27138a.writeLock().lock();
+                this.f13450a.writeLock().lock();
                 getWritableDatabase().beginTransaction();
                 for (String str2 : bundle.keySet()) {
                     byte[] byteArray = bundle.getByteArray(str2);
@@ -107,7 +107,7 @@ public class a extends SQLiteOpenHelper {
     }
 
     public void a(String str, byte[] bArr, long j) {
-        Lock writeLock = this.f27138a.writeLock();
+        Lock writeLock = this.f13450a.writeLock();
         try {
             try {
                 writeLock.lock();

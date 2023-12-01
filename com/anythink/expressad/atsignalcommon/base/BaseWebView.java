@@ -16,7 +16,7 @@ import java.util.Map;
 public class BaseWebView extends WebView {
 
     /* renamed from: a  reason: collision with root package name */
-    private View.OnTouchListener f7068a;
+    private View.OnTouchListener f4230a;
     private View.OnTouchListener b;
     protected Context e;
     public long lastTouchTime;
@@ -25,7 +25,7 @@ public class BaseWebView extends WebView {
     public BaseWebView(Context context) {
         super(context);
         this.lastTouchTime = 0L;
-        this.f7068a = new View.OnTouchListener() { // from class: com.anythink.expressad.atsignalcommon.base.BaseWebView.1
+        this.f4230a = new View.OnTouchListener() { // from class: com.anythink.expressad.atsignalcommon.base.BaseWebView.1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0) {
@@ -44,7 +44,7 @@ public class BaseWebView extends WebView {
     public BaseWebView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.lastTouchTime = 0L;
-        this.f7068a = new View.OnTouchListener() { // from class: com.anythink.expressad.atsignalcommon.base.BaseWebView.1
+        this.f4230a = new View.OnTouchListener() { // from class: com.anythink.expressad.atsignalcommon.base.BaseWebView.1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0) {
@@ -63,7 +63,7 @@ public class BaseWebView extends WebView {
     public BaseWebView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.lastTouchTime = 0L;
-        this.f7068a = new View.OnTouchListener() { // from class: com.anythink.expressad.atsignalcommon.base.BaseWebView.1
+        this.f4230a = new View.OnTouchListener() { // from class: com.anythink.expressad.atsignalcommon.base.BaseWebView.1
             @Override // android.view.View.OnTouchListener
             public final boolean onTouch(View view, MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0) {
@@ -206,7 +206,7 @@ public class BaseWebView extends WebView {
             declaredMethod.invoke(settings, Boolean.FALSE);
         } catch (Exception e2) {
         }
-        super.setOnTouchListener(this.f7068a);
+        super.setOnTouchListener(this.f4230a);
     }
 
     public b getBaseWebViewClient() {

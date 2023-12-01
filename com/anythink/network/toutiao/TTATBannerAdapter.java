@@ -17,6 +17,7 @@ import com.bytedance.sdk.openadsdk.TTAdDislike;
 import com.bytedance.sdk.openadsdk.TTAdNative;
 import com.bytedance.sdk.openadsdk.TTAppDownloadListener;
 import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
+import com.igexin.assist.sdk.AssistPushConsts;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +28,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    View f9087c;
+    View f6247c;
     int d;
     int e;
     int f;
@@ -38,7 +39,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
     private final String m = getClass().getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    String f9086a = "";
+    String f6246a = "";
     boolean i = false;
     TTAdNative.NativeExpressAdListener j = new TTAdNative.NativeExpressAdListener() { // from class: com.anythink.network.toutiao.TTATBannerAdapter.1
         @Override // com.bytedance.sdk.openadsdk.TTAdNative.NativeExpressAdListener, com.bytedance.sdk.openadsdk.common.CommonListener
@@ -73,7 +74,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
         @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
         public final void onAdShow(View view, int i) {
             try {
-                ViewParent parent = TTATBannerAdapter.this.f9087c.getParent();
+                ViewParent parent = TTATBannerAdapter.this.f6247c.getParent();
                 while (!(parent instanceof ViewGroup) && parent != null) {
                     parent = parent.getParent();
                 }
@@ -111,7 +112,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
 
         @Override // com.bytedance.sdk.openadsdk.TTNativeExpressAd.ExpressAdInteractionListener
         public final void onRenderSuccess(View view, float f, float f2) {
-            TTATBannerAdapter.this.f9087c = view;
+            TTATBannerAdapter.this.f6247c = view;
             try {
                 Map<String, Object> mediaExtraInfo = TTATBannerAdapter.this.n.getMediaExtraInfo();
                 if (mediaExtraInfo != null) {
@@ -142,14 +143,14 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
                 if (TTATBannerAdapter.this.mDownloadListener == null || !(TTATBannerAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                     return;
                 }
-                ((CustomAdapterDownloadListener) TTATBannerAdapter.this.mDownloadListener).onDownloadUpdate(j, j2, str, str2);
+                TTATBannerAdapter.this.mDownloadListener.onDownloadUpdate(j, j2, str, str2);
                 return;
             }
             TTATBannerAdapter.p(TTATBannerAdapter.this);
             if (TTATBannerAdapter.this.mDownloadListener == null || !(TTATBannerAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATBannerAdapter.this.mDownloadListener).onDownloadStart(j, j2, str, str2);
+            TTATBannerAdapter.this.mDownloadListener.onDownloadStart(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -157,7 +158,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
             if (TTATBannerAdapter.this.mDownloadListener == null || !(TTATBannerAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATBannerAdapter.this.mDownloadListener).onDownloadFail(j, j2, str, str2);
+            TTATBannerAdapter.this.mDownloadListener.onDownloadFail(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -165,7 +166,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
             if (TTATBannerAdapter.this.mDownloadListener == null || !(TTATBannerAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATBannerAdapter.this.mDownloadListener).onDownloadFinish(j, str, str2);
+            TTATBannerAdapter.this.mDownloadListener.onDownloadFinish(j, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -173,7 +174,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
             if (TTATBannerAdapter.this.mDownloadListener == null || !(TTATBannerAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATBannerAdapter.this.mDownloadListener).onDownloadPause(j, j2, str, str2);
+            TTATBannerAdapter.this.mDownloadListener.onDownloadPause(j, j2, str, str2);
         }
 
         @Override // com.bytedance.sdk.openadsdk.TTAppDownloadListener
@@ -185,7 +186,7 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
             if (TTATBannerAdapter.this.mDownloadListener == null || !(TTATBannerAdapter.this.mDownloadListener instanceof CustomAdapterDownloadListener)) {
                 return;
             }
-            ((CustomAdapterDownloadListener) TTATBannerAdapter.this.mDownloadListener).onInstalled(str, str2);
+            TTATBannerAdapter.this.mDownloadListener.onInstalled(str, str2);
         }
     };
 
@@ -195,16 +196,16 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
     public final class AnonymousClass3 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Map f9090a;
+        final /* synthetic */ Map f6250a;
         final /* synthetic */ Map b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Context f9091c;
+        final /* synthetic */ Context f6251c;
 
         AnonymousClass3(Map map, Map map2, Context context) {
-            this.f9090a = map;
+            this.f6250a = map;
             this.b = map2;
-            this.f9091c = context;
+            this.f6251c = context;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:35:0x0135  */
@@ -286,12 +287,12 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
 
     private boolean a(Map<String, Object> map) {
         String stringFromMap = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f9086a = ATInitMediation.getStringFromMap(map, "slot_id");
-        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f9086a)) {
+        this.f6246a = ATInitMediation.getStringFromMap(map, "slot_id");
+        if (TextUtils.isEmpty(stringFromMap) || TextUtils.isEmpty(this.f6246a)) {
             return false;
         }
         this.f = ATInitMediation.getIntFromMap(map, "nw_rft", 0);
-        this.g = ATInitMediation.getStringFromMap(map, "payload");
+        this.g = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
         return true;
     }
 
@@ -308,9 +309,8 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
         return true;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void destory() {
-        this.f9087c = null;
+        this.f6247c = null;
         TTNativeExpressAd tTNativeExpressAd = this.n;
         if (tTNativeExpressAd != null) {
             tTNativeExpressAd.setExpressInteractionListener((TTNativeExpressAd.AdInteractionListener) null);
@@ -322,42 +322,36 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
         this.b = null;
     }
 
-    @Override // com.anythink.banner.unitgroup.api.CustomBannerAdapter
     public View getBannerView() {
-        return this.f9087c;
+        return this.f6247c;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public Map<String, Object> getNetworkInfoMap() {
         return this.o;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkName() {
         return TTATInitManager.getInstance().getNetworkName();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkPlacementId() {
-        return this.f9086a;
+        return this.f6246a;
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public String getNetworkSDKVersion() {
         return TTATInitManager.getInstance().getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public void loadCustomNetworkAd(final Context context, final Map<String, Object> map, final Map<String, Object> map2) {
         String stringFromMap = ATInitMediation.getStringFromMap(map, "app_id");
-        this.f9086a = ATInitMediation.getStringFromMap(map, "slot_id");
+        this.f6246a = ATInitMediation.getStringFromMap(map, "slot_id");
         boolean z = false;
         if (!TextUtils.isEmpty(stringFromMap)) {
-            if (TextUtils.isEmpty(this.f9086a)) {
+            if (TextUtils.isEmpty(this.f6246a)) {
                 z = false;
             } else {
                 this.f = ATInitMediation.getIntFromMap(map, "nw_rft", 0);
-                this.g = ATInitMediation.getStringFromMap(map, "payload");
+                this.g = ATInitMediation.getStringFromMap(map, AssistPushConsts.MSG_TYPE_PAYLOAD);
                 z = true;
             }
         }
@@ -368,12 +362,10 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
         } else {
             this.b = context;
             TTATInitManager.getInstance().initSDK(context, map, new MediationInitCallback() { // from class: com.anythink.network.toutiao.TTATBannerAdapter.5
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onFail(String str) {
                     TTATBannerAdapter.this.notifyATLoadFail("", str);
                 }
 
-                @Override // com.anythink.core.api.MediationInitCallback
                 public final void onSuccess() {
                     try {
                         TTATBannerAdapter.a(TTATBannerAdapter.this, context, map, map2);
@@ -385,7 +377,6 @@ public class TTATBannerAdapter extends CustomBannerAdapter {
         }
     }
 
-    @Override // com.anythink.core.api.ATBaseAdAdapter
     public boolean startBiddingRequest(Context context, Map<String, Object> map, Map<String, Object> map2, ATBiddingListener aTBiddingListener) {
         this.i = true;
         loadCustomNetworkAd(context, map, map2);

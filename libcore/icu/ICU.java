@@ -1,5 +1,7 @@
 package libcore.icu;
 
+import com.alipay.sdk.util.i;
+import com.android.internal.content.NativeLibraryHelper;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -282,7 +284,7 @@ public final class ICU {
             HashMap hashMap3 = new HashMap();
             HashMap hashMap4 = new HashMap();
             HashSet hashSet2 = new HashSet();
-            String[] split = str.substring(indexOf + 1).split(";");
+            String[] split = str.substring(indexOf + 1).split(i.b);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -295,7 +297,7 @@ public final class ICU {
                 }
                 String str2 = split[i2];
                 if (str2.startsWith("attribute=")) {
-                    String[] split2 = str2.substring("attribute=".length()).split("-");
+                    String[] split2 = str2.substring("attribute=".length()).split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                     int length2 = split2.length;
                     int i3 = 0;
                     while (true) {

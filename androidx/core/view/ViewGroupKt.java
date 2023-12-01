@@ -2,6 +2,7 @@ package androidx.core.view;
 
 import android.view.View;
 import android.view.ViewGroup;
+import com.anythink.expressad.a;
 import java.util.Iterator;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -16,13 +17,13 @@ import kotlin.sequences.SequencesKt;
 public final class ViewGroupKt {
     public static final boolean contains(ViewGroup viewGroup, View view) {
         Intrinsics.e(viewGroup, "<this>");
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         return viewGroup.indexOfChild(view) != -1;
     }
 
-    public static final void forEach(ViewGroup viewGroup, Function1<? super View, Unit> action) {
+    public static final void forEach(ViewGroup viewGroup, Function1<? super View, Unit> function1) {
         Intrinsics.e(viewGroup, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function1, "action");
         int childCount = viewGroup.getChildCount();
         if (childCount <= 0) {
             return;
@@ -33,7 +34,7 @@ public final class ViewGroupKt {
             int i3 = i2 + 1;
             View childAt = viewGroup.getChildAt(i2);
             Intrinsics.c(childAt, "getChildAt(index)");
-            action.invoke(childAt);
+            function1.invoke(childAt);
             if (i3 >= childCount) {
                 return;
             }
@@ -41,9 +42,9 @@ public final class ViewGroupKt {
         }
     }
 
-    public static final void forEachIndexed(ViewGroup viewGroup, Function2<? super Integer, ? super View, Unit> action) {
+    public static final void forEachIndexed(ViewGroup viewGroup, Function2<? super Integer, ? super View, Unit> function2) {
         Intrinsics.e(viewGroup, "<this>");
-        Intrinsics.e(action, "action");
+        Intrinsics.e(function2, "action");
         int childCount = viewGroup.getChildCount();
         if (childCount <= 0) {
             return;
@@ -54,7 +55,7 @@ public final class ViewGroupKt {
             int i3 = i2 + 1;
             View childAt = viewGroup.getChildAt(i2);
             Intrinsics.c(childAt, "getChildAt(index)");
-            action.invoke(Integer.valueOf(i2), childAt);
+            function2.invoke(Integer.valueOf(i2), childAt);
             if (i3 >= childCount) {
                 return;
             }
@@ -74,9 +75,8 @@ public final class ViewGroupKt {
     public static final Sequence<View> getChildren(final ViewGroup viewGroup) {
         Intrinsics.e(viewGroup, "<this>");
         return new Sequence<View>() { // from class: androidx.core.view.ViewGroupKt$children$1
-            @Override // kotlin.sequences.Sequence
             public Iterator<View> iterator() {
-                return ViewGroupKt.iterator(ViewGroup.this);
+                return ViewGroupKt.iterator(viewGroup);
             }
         };
     }
@@ -108,13 +108,13 @@ public final class ViewGroupKt {
 
     public static final void minusAssign(ViewGroup viewGroup, View view) {
         Intrinsics.e(viewGroup, "<this>");
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         viewGroup.removeView(view);
     }
 
     public static final void plusAssign(ViewGroup viewGroup, View view) {
         Intrinsics.e(viewGroup, "<this>");
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         viewGroup.addView(view);
     }
 

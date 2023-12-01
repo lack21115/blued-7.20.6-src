@@ -7,7 +7,6 @@ public final class MusicVideoCollectFragment_MVP implements MvpDispatcher {
     /* JADX WARN: Code restructure failed: missing block: B:17:0x004f, code lost:
         if (r5.equals("collect_music") != false) goto L14;
      */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

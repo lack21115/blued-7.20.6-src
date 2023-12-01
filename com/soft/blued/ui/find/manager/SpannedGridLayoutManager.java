@@ -16,11 +16,11 @@ import java.util.List;
 public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private GridSpanLookup f30604a;
+    private GridSpanLookup f16914a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f30605c;
+    private float f16915c;
     private int d;
     private int[] e;
     private int f;
@@ -38,17 +38,17 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
     public static class GridCell {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f30607a;
+        final int f16917a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final int f30608c;
+        final int f16918c;
         final int d;
 
         GridCell(int i, int i2, int i3, int i4) {
-            this.f30607a = i;
+            this.f16917a = i;
             this.b = i2;
-            this.f30608c = i3;
+            this.f16918c = i3;
             this.d = i4;
         }
     }
@@ -62,7 +62,7 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
     public static class LayoutParams extends RecyclerView.LayoutParams {
 
         /* renamed from: a  reason: collision with root package name */
-        int f30609a;
+        int f16919a;
         int b;
 
         public LayoutParams(int i, int i2) {
@@ -86,24 +86,24 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
     public static class SpanInfo {
 
         /* renamed from: c  reason: collision with root package name */
-        public static final SpanInfo f30610c = new SpanInfo(1, 1);
+        public static final SpanInfo f16920c = new SpanInfo(1, 1);
 
         /* renamed from: a  reason: collision with root package name */
-        public int f30611a;
+        public int f16921a;
         public int b;
 
         public SpanInfo(int i, int i2) {
-            this.f30611a = i;
+            this.f16921a = i;
             this.b = i2;
         }
     }
 
     public SpannedGridLayoutManager(GridSpanLookup gridSpanLookup, int i, float f) {
         this.b = 1;
-        this.f30605c = 1.0f;
-        this.f30604a = gridSpanLookup;
+        this.f16915c = 1.0f;
+        this.f16914a = gridSpanLookup;
         this.b = i;
-        this.f30605c = f;
+        this.f16915c = f;
         setAutoMeasureEnabled(true);
     }
 
@@ -133,11 +133,11 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
                 boolean isItemRemoved = layoutParams.isItemRemoved();
                 GridCell gridCell = this.k.get(i3);
                 addView(view, childCount);
-                a(view, getChildMeasureSpec(this.e[gridCell.f30608c + gridCell.d] - this.e[gridCell.f30608c], 1073741824, 0, layoutParams.width, false), getChildMeasureSpec(gridCell.b * this.d, 1073741824, 0, layoutParams.height, true));
-                int i4 = layoutParams.leftMargin + this.e[gridCell.f30608c];
-                int i5 = layoutParams.topMargin + i2 + (gridCell.f30607a * this.d);
+                a(view, getChildMeasureSpec(this.e[gridCell.f16918c + gridCell.d] - this.e[gridCell.f16918c], 1073741824, 0, layoutParams.width, false), getChildMeasureSpec(gridCell.b * this.d, 1073741824, 0, layoutParams.height, true));
+                int i4 = layoutParams.leftMargin + this.e[gridCell.f16918c];
+                int i5 = layoutParams.topMargin + i2 + (gridCell.f16917a * this.d);
                 layoutDecorated(view, i4, i5, i4 + getDecoratedMeasuredWidth(view), i5 + getDecoratedMeasuredHeight(view));
-                layoutParams.f30609a = gridCell.d;
+                layoutParams.f16919a = gridCell.d;
                 layoutParams.b = gridCell.b;
                 z |= isItemRemoved;
             }
@@ -155,9 +155,9 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
         if (z) {
             return 0;
         }
-        GridCell gridCell2 = this.k.get(d) != null ? this.k.get(d) : new GridCell(d, a(d).b, this.b, a(d).f30611a);
-        GridCell gridCell3 = this.k.get(a2) != null ? this.k.get(a2) : new GridCell(a2, a(a2).b, this.b, a(a2).f30611a);
-        return ((gridCell3.f30607a + gridCell3.b) - gridCell2.f30607a) * this.d;
+        GridCell gridCell2 = this.k.get(d) != null ? this.k.get(d) : new GridCell(d, a(d).b, this.b, a(d).f16921a);
+        GridCell gridCell3 = this.k.get(a2) != null ? this.k.get(a2) : new GridCell(a2, a(a2).b, this.b, a(a2).f16921a);
+        return ((gridCell3.f16917a + gridCell3.b) - gridCell2.f16917a) * this.d;
     }
 
     private int a(int i, RecyclerView.State state) {
@@ -170,12 +170,12 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
         while (true) {
             int i3 = i2;
             if (i3 >= getChildCount()) {
-                return SpanInfo.f30610c;
+                return SpanInfo.f16920c;
             }
             View childAt = getChildAt(i3);
             if (i == getPosition(childAt)) {
                 LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
-                return new SpanInfo(layoutParams.f30609a, layoutParams.b);
+                return new SpanInfo(layoutParams.f16919a, layoutParams.b);
             }
             i2 = i3 + 1;
         }
@@ -233,17 +233,17 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
                 break;
             }
             int convertPreLayoutPositionToPostLayout = recycler.convertPreLayoutPositionToPostLayout(i2);
-            SpanInfo a2 = convertPreLayoutPositionToPostLayout != -1 ? this.f30604a.a(convertPreLayoutPositionToPostLayout) : a(i2);
-            int i6 = a2.f30611a;
+            SpanInfo a2 = convertPreLayoutPositionToPostLayout != -1 ? this.f16914a.a(convertPreLayoutPositionToPostLayout) : a(i2);
+            int i6 = a2.f16921a;
             int i7 = this.b;
             if (i6 > i7) {
-                a2.f30611a = i7;
+                a2.f16921a = i7;
             }
             int i8 = i2;
             int i9 = i3;
             int i10 = i5;
             SpanInfo spanInfo = a2;
-            if (a2.f30611a + i3 > this.b) {
+            if (a2.f16921a + i3 > this.b) {
                 int i11 = i5 + 1;
                 a(i11, i2);
                 spanInfo = a2;
@@ -254,7 +254,7 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
             while (iArr[i9] > i10) {
                 int i12 = i9 + 1;
                 i9 = i12;
-                if (spanInfo.f30611a + i12 > this.b) {
+                if (spanInfo.f16921a + i12 > this.b) {
                     int i13 = i10 + 1;
                     a(i13, i8);
                     spanInfo = spanInfo;
@@ -263,11 +263,11 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
                     i8 = i8;
                 }
             }
-            this.k.put(i8, new GridCell(i10, spanInfo.b, i9, spanInfo.f30611a));
+            this.k.put(i8, new GridCell(i10, spanInfo.b, i9, spanInfo.f16921a));
             int i14 = 0;
             while (true) {
                 int i15 = i14;
-                if (i15 >= spanInfo.f30611a) {
+                if (i15 >= spanInfo.f16921a) {
                     break;
                 }
                 iArr[i9 + i15] = spanInfo.b + i10;
@@ -284,7 +284,7 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
                     }
                 }
             }
-            i3 = i9 + spanInfo.f30611a;
+            i3 = i9 + spanInfo.f16921a;
             i2 = i8 + 1;
             i4 = i10;
         }
@@ -308,7 +308,7 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
         if (sparseArray == null || sparseArray.size() <= i || this.k.get(i) == null) {
             return -1;
         }
-        return this.k.get(i).f30607a;
+        return this.k.get(i).f16917a;
     }
 
     private int c(int i) {
@@ -339,7 +339,7 @@ public class SpannedGridLayoutManager extends RecyclerView.LayoutManager {
     }
 
     private void e() {
-        this.d = (int) Math.floor(((int) Math.floor(((getWidth() - getPaddingLeft()) - getPaddingRight()) / this.b)) * (1.0f / this.f30605c));
+        this.d = (int) Math.floor(((int) Math.floor(((getWidth() - getPaddingLeft()) - getPaddingRight()) / this.b)) * (1.0f / this.f16915c));
         i();
     }
 

@@ -6,7 +6,7 @@ import android.util.Log;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f39757a = "Qp.Log";
+    public static String f26066a = "Qp.Log";
     private static boolean b = false;
 
     public static void a(String str, int i, String str2) {

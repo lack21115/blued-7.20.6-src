@@ -195,13 +195,13 @@ public class ObjectCountHashMap<K> {
             int i5 = hash & (length - 1);
             int i6 = newTable[i5];
             newTable[i5] = i4;
-            jArr[i4] = (hash << 32) | (i6 & 4294967295L);
+            jArr[i4] = (hash << 32) | (i6 & NEXT_MASK);
             i3 = i4 + 1;
         }
     }
 
     private static long swapNext(long j, int i) {
-        return (j & HASH_MASK) | (i & 4294967295L);
+        return (j & HASH_MASK) | (i & NEXT_MASK);
     }
 
     public void clear() {
@@ -294,7 +294,7 @@ public class ObjectCountHashMap<K> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void insertEntry(int i, @NullableDecl K k, int i2, int i3) {
-        this.entries[i] = (i3 << 32) | 4294967295L;
+        this.entries[i] = (i3 << 32) | NEXT_MASK;
         this.keys[i] = k;
         this.values[i] = i2;
     }

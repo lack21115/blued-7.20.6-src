@@ -9,7 +9,6 @@ import android.text.TextUtils;
 import android.util.LruCache;
 import android.view.View;
 import android.widget.Toast;
-import com.alipay.sdk.widget.j;
 import com.opos.cmn.e.a.c.c.e;
 import com.opos.mobad.cmn.a.b.d;
 import com.opos.mobad.cmn.a.b.f;
@@ -23,15 +22,15 @@ import java.util.Set;
 public final class b implements com.opos.cmn.e.a.c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f25925a = new byte[0];
+    private static final byte[] f12237a = new byte[0];
     private static volatile b b;
     private Context d;
-    private LruCache<String, Set<InterfaceC0687b>> e;
+    private LruCache<String, Set<InterfaceC0517b>> e;
     private e f;
     private LruCache<String, List<AdItemData>> g;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25926c = -1;
+    private int f12238c = -1;
     private final Handler h = new Handler(Looper.getMainLooper()) { // from class: com.opos.mobad.cmn.service.pkginstall.b.1
         @Override // android.os.Handler
         public void handleMessage(Message message) {
@@ -94,7 +93,7 @@ public final class b implements com.opos.cmn.e.a.c.a {
 
     /* renamed from: com.opos.mobad.cmn.service.pkginstall.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/cmn/service/pkginstall/b$b.class */
-    public interface InterfaceC0687b {
+    public interface InterfaceC0517b {
         void a(AdItemData adItemData, String str);
 
         void b(AdItemData adItemData, String str);
@@ -111,7 +110,7 @@ public final class b implements com.opos.cmn.e.a.c.a {
         b bVar;
         b bVar2 = b;
         if (bVar2 == null) {
-            synchronized (f25925a) {
+            synchronized (f12237a) {
                 b bVar3 = b;
                 bVar = bVar3;
                 if (bVar3 == null) {
@@ -139,15 +138,15 @@ public final class b implements com.opos.cmn.e.a.c.a {
             this.h.post(new Runnable() { // from class: com.opos.mobad.cmn.service.pkginstall.b.6
                 @Override // java.lang.Runnable
                 public void run() {
-                    Set<InterfaceC0687b> f;
+                    Set<InterfaceC0517b> f;
                     if (!com.opos.cmn.an.c.a.a(str) && (f = b.this.f(str)) != null && f.size() > 0) {
-                        for (InterfaceC0687b interfaceC0687b : f) {
-                            if (interfaceC0687b != null) {
+                        for (InterfaceC0517b interfaceC0517b : f) {
+                            if (interfaceC0517b != null) {
                                 List e = b.this.e(str);
                                 if (e == null || e.size() <= 0 || e.get(0) == null) {
                                     com.opos.cmn.an.f.a.b("PkgInstallMgr", "notify but data empty");
                                 } else {
-                                    interfaceC0687b.b((AdItemData) e.get(0), str);
+                                    interfaceC0517b.b((AdItemData) e.get(0), str);
                                 }
                             }
                         }
@@ -327,19 +326,19 @@ public final class b implements com.opos.cmn.e.a.c.a {
         com.opos.cmn.an.f.a.b("PkgInstallMgr", sb.toString());
     }
 
-    private void b(String str, InterfaceC0687b interfaceC0687b) {
-        Set<InterfaceC0687b> f;
+    private void b(String str, InterfaceC0517b interfaceC0517b) {
+        Set<InterfaceC0517b> f;
         try {
-            if (!com.opos.cmn.an.c.a.a(str) && interfaceC0687b != null && (f = f(str)) != null) {
+            if (!com.opos.cmn.an.c.a.a(str) && interfaceC0517b != null && (f = f(str)) != null) {
                 if (f.size() > 0) {
-                    for (InterfaceC0687b interfaceC0687b2 : f) {
-                        if (interfaceC0687b2 != null && interfaceC0687b2.equals(interfaceC0687b)) {
+                    for (InterfaceC0517b interfaceC0517b2 : f) {
+                        if (interfaceC0517b2 != null && interfaceC0517b2.equals(interfaceC0517b)) {
                             com.opos.cmn.an.f.a.b("PkgInstallMgr", "addListener but has contain");
                             return;
                         }
                     }
                 }
-                f.add(interfaceC0687b);
+                f.add(interfaceC0517b);
                 com.opos.cmn.an.f.a.b("PkgInstallMgr", "addListener pkgName=" + str + ",listenerList.size=" + f.size());
                 this.e.put(str, f);
             }
@@ -353,10 +352,10 @@ public final class b implements com.opos.cmn.e.a.c.a {
         }
         sb.append(str);
         sb.append(",listener=");
-        if (interfaceC0687b == null) {
-            interfaceC0687b = com.igexin.push.core.b.l;
+        if (interfaceC0517b == null) {
+            interfaceC0517b = com.igexin.push.core.b.l;
         }
-        sb.append(interfaceC0687b);
+        sb.append(interfaceC0517b);
         sb.append(",sListenerMap.size=");
         sb.append(this.e.size());
         com.opos.cmn.an.f.a.b("PkgInstallMgr", sb.toString());
@@ -415,10 +414,10 @@ public final class b implements com.opos.cmn.e.a.c.a {
     }
 
     private void d() {
-        com.opos.cmn.an.f.a.b("PkgInstallMgr", "registerPkgInstallBR sDownloadBRListenerId=" + this.f25926c);
-        if (-1 == this.f25926c) {
+        com.opos.cmn.an.f.a.b("PkgInstallMgr", "registerPkgInstallBR sDownloadBRListenerId=" + this.f12238c);
+        if (-1 == this.f12238c) {
             com.opos.cmn.an.f.a.b("PkgInstallMgr", "really registerPkgInstallBR!!!");
-            this.f25926c = c.a().a(0, this.i);
+            this.f12238c = c.a().a(0, this.i);
         }
     }
 
@@ -517,16 +516,16 @@ public final class b implements com.opos.cmn.e.a.c.a {
     }
 
     private void e() {
-        com.opos.cmn.an.f.a.b("PkgInstallMgr", "unregisterPkgInstallBR sDownloadBRListenerId=" + this.f25926c);
-        if (-1 != this.f25926c) {
+        com.opos.cmn.an.f.a.b("PkgInstallMgr", "unregisterPkgInstallBR sDownloadBRListenerId=" + this.f12238c);
+        if (-1 != this.f12238c) {
             com.opos.cmn.an.f.a.b("PkgInstallMgr", "really unregisterPkgInstallBR!!!");
-            c.a().a(0, this.f25926c);
-            this.f25926c = -1;
+            c.a().a(0, this.f12238c);
+            this.f12238c = -1;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public Set<InterfaceC0687b> f(String str) {
+    public Set<InterfaceC0517b> f(String str) {
         HashSet hashSet;
         try {
             hashSet = this.e.get(str) != null ? this.e.get(str) : new HashSet();
@@ -753,19 +752,19 @@ public final class b implements com.opos.cmn.e.a.c.a {
             this.h.post(new Runnable() { // from class: com.opos.mobad.cmn.service.pkginstall.b.5
                 @Override // java.lang.Runnable
                 public void run() {
-                    Set<InterfaceC0687b> f;
+                    Set<InterfaceC0517b> f;
                     if (com.opos.cmn.an.c.a.a(str) || (f = b.this.f(str)) == null || f.size() <= 0) {
                         return;
                     }
-                    for (InterfaceC0687b interfaceC0687b : f) {
-                        com.opos.cmn.an.f.a.b("PkgInstallMgr", "notifyInstallCompletedEvent getListenerMap =" + interfaceC0687b);
-                        if (interfaceC0687b != null) {
+                    for (InterfaceC0517b interfaceC0517b : f) {
+                        com.opos.cmn.an.f.a.b("PkgInstallMgr", "notifyInstallCompletedEvent getListenerMap =" + interfaceC0517b);
+                        if (interfaceC0517b != null) {
                             List e = b.this.e(str);
                             if (e == null || e.size() <= 0 || e.get(0) == null) {
                                 com.opos.cmn.an.f.a.b("PkgInstallMgr", "notify but data empty");
                             } else {
-                                com.opos.cmn.an.f.a.b("PkgInstallMgr", "notifyInstallCompletedEvent listener = " + interfaceC0687b);
-                                interfaceC0687b.a((AdItemData) e.get(0), str);
+                                com.opos.cmn.an.f.a.b("PkgInstallMgr", "notifyInstallCompletedEvent listener = " + interfaceC0517b);
+                                interfaceC0517b.a((AdItemData) e.get(0), str);
                             }
                         }
                     }
@@ -777,7 +776,7 @@ public final class b implements com.opos.cmn.e.a.c.a {
     }
 
     public void a() {
-        com.opos.cmn.an.f.a.b("PkgInstallMgr", j.o);
+        com.opos.cmn.an.f.a.b("PkgInstallMgr", "exit");
         try {
             e();
             c();
@@ -826,20 +825,20 @@ public final class b implements com.opos.cmn.e.a.c.a {
         }
     }
 
-    public void a(InterfaceC0687b interfaceC0687b) {
-        if (interfaceC0687b != null) {
-            for (Set<InterfaceC0687b> set : this.e.snapshot().values()) {
-                set.remove(interfaceC0687b);
+    public void a(InterfaceC0517b interfaceC0517b) {
+        if (interfaceC0517b != null) {
+            for (Set<InterfaceC0517b> set : this.e.snapshot().values()) {
+                set.remove(interfaceC0517b);
             }
         }
     }
 
-    public void a(String str, InterfaceC0687b interfaceC0687b) {
-        if (interfaceC0687b != null) {
+    public void a(String str, InterfaceC0517b interfaceC0517b) {
+        if (interfaceC0517b != null) {
             try {
                 if (!com.opos.cmn.an.c.a.a(str)) {
                     d();
-                    b(str, interfaceC0687b);
+                    b(str, interfaceC0517b);
                 }
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("PkgInstallMgr", "", (Throwable) e);
@@ -852,23 +851,23 @@ public final class b implements com.opos.cmn.e.a.c.a {
         }
         sb.append(str);
         sb.append(",Listener=");
-        sb.append(interfaceC0687b);
+        sb.append(interfaceC0517b);
         com.opos.cmn.an.f.a.b("PkgInstallMgr", sb.toString());
     }
 
-    public void a(String str, InterfaceC0687b interfaceC0687b, AdItemData adItemData) {
-        if (interfaceC0687b != null && adItemData != null) {
+    public void a(String str, InterfaceC0517b interfaceC0517b, AdItemData adItemData) {
+        if (interfaceC0517b != null && adItemData != null) {
             try {
                 if (!com.opos.cmn.an.c.a.a(str)) {
                     d();
-                    b(str, interfaceC0687b);
+                    b(str, interfaceC0517b);
                     b(str, adItemData);
                 }
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("PkgInstallMgr", "", (Throwable) e);
             }
         }
-        com.opos.cmn.an.f.a.b("PkgInstallMgr", "addPkgInstallBRListener downloadPkgName=", str, "Listener=", interfaceC0687b, "adItemData=", adItemData);
+        com.opos.cmn.an.f.a.b("PkgInstallMgr", "addPkgInstallBRListener downloadPkgName=", str, "Listener=", interfaceC0517b, "adItemData=", adItemData);
     }
 
     public void a(String str, AdItemData adItemData) {

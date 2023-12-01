@@ -11,12 +11,12 @@ final class k implements f {
     private boolean e;
     private int[] f;
     private boolean i;
-    private ByteBuffer g = f7181a;
-    private ByteBuffer h = f7181a;
+    private ByteBuffer g = f4342a;
+    private ByteBuffer h = f4342a;
     private int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7200c = -1;
+    private int f4361c = -1;
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final void a(ByteBuffer byteBuffer) {
@@ -67,10 +67,10 @@ final class k implements f {
         } else if (i3 != 2) {
             throw new f.a(i, i2, i3);
         } else {
-            if (!z && this.f7200c == i && this.b == i2) {
+            if (!z && this.f4361c == i && this.b == i2) {
                 return false;
             }
-            this.f7200c = i;
+            this.f4361c = i;
             this.b = i2;
             this.e = i2 != this.f.length;
             int i4 = 0;
@@ -103,7 +103,7 @@ final class k implements f {
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final int d() {
-        return this.f7200c;
+        return this.f4361c;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
@@ -114,27 +114,27 @@ final class k implements f {
     @Override // com.anythink.expressad.exoplayer.b.f
     public final ByteBuffer f() {
         ByteBuffer byteBuffer = this.h;
-        this.h = f7181a;
+        this.h = f4342a;
         return byteBuffer;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final boolean g() {
-        return this.i && this.h == f7181a;
+        return this.i && this.h == f4342a;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final void h() {
-        this.h = f7181a;
+        this.h = f4342a;
         this.i = false;
     }
 
     @Override // com.anythink.expressad.exoplayer.b.f
     public final void i() {
         h();
-        this.g = f7181a;
+        this.g = f4342a;
         this.b = -1;
-        this.f7200c = -1;
+        this.f4361c = -1;
         this.f = null;
         this.d = null;
         this.e = false;

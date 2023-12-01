@@ -1,7 +1,6 @@
 package com.blued.community.ui.send.view;
 
 import android.content.Context;
-import android.media.MediaMetadataEditor;
 import android.util.AttributeSet;
 import android.view.View;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -15,25 +14,22 @@ import skin.support.widget.SkinCompatBackgroundHelper;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/view/FeedSendRecyclerView.class */
 public class FeedSendRecyclerView extends RecyclerView implements BluedSkinSupportable, FeedRefreshObserver.IFeedRefreshObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f20087a;
+    private Context a;
     private IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayoutManager f20088c;
+    private LinearLayoutManager c;
     private FeedSendRecyclerAdapter d;
     private SkinCompatBackgroundHelper e;
 
     public FeedSendRecyclerView(Context context) {
         super(context);
-        this.f20087a = context;
+        this.a = context;
         d();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public FeedSendRecyclerView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f20087a = context;
+        this.a = context;
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
         this.e = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, 0);
@@ -41,12 +37,12 @@ public class FeedSendRecyclerView extends RecyclerView implements BluedSkinSuppo
     }
 
     private void d() {
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.f20087a);
-        this.f20088c = linearLayoutManager;
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.a);
+        this.c = linearLayoutManager;
         setLayoutManager(linearLayoutManager);
         setHasFixedSize(true);
         setItemAnimator(new DefaultItemAnimator());
-        FeedSendRecyclerAdapter feedSendRecyclerAdapter = new FeedSendRecyclerAdapter(this.f20087a, this.b);
+        FeedSendRecyclerAdapter feedSendRecyclerAdapter = new FeedSendRecyclerAdapter(this.a, this.b);
         this.d = feedSendRecyclerAdapter;
         setAdapter(feedSendRecyclerAdapter);
     }
@@ -90,12 +86,10 @@ public class FeedSendRecyclerView extends RecyclerView implements BluedSkinSuppo
         FeedRefreshObserver.a().b(this);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(MediaMetadataEditor.KEY_EDITABLE_MASK, Integer.MIN_VALUE));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(536870911, Integer.MIN_VALUE));
     }
 
-    @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.e;

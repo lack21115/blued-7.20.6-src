@@ -135,13 +135,13 @@ public abstract class ImmutableCollection<E> extends AbstractCollection<E> imple
         public abstract ImmutableCollection<E> build();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     @Deprecated
     public final boolean add(E e) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     @Deprecated
     public final boolean addAll(Collection<? extends E> collection) {
         throw new UnsupportedOperationException();
@@ -151,7 +151,7 @@ public abstract class ImmutableCollection<E> extends AbstractCollection<E> imple
         return isEmpty() ? ImmutableList.of() : ImmutableList.asImmutableList(toArray());
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     @Deprecated
     public final void clear() {
         throw new UnsupportedOperationException();
@@ -189,35 +189,35 @@ public abstract class ImmutableCollection<E> extends AbstractCollection<E> imple
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract boolean isPartialView();
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set, com.google.common.collect.SortedIterable, java.util.NavigableSet
     public abstract UnmodifiableIterator<E> iterator();
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     @Deprecated
     public final boolean remove(Object obj) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     @Deprecated
     public final boolean removeAll(Collection<?> collection) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     @Deprecated
     public final boolean retainAll(Collection<?> collection) {
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final Object[] toArray() {
         return toArray(EMPTY_ARRAY);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v18, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final <T> T[] toArray(T[] tArr) {
         T[] tArr2;
         Preconditions.checkNotNull(tArr);

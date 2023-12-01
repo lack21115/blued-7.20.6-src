@@ -6,18 +6,16 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/ArraysKt___ArraysJvmKt$asList$6.class */
 public final class ArraysKt___ArraysJvmKt$asList$6 extends AbstractList<Double> implements RandomAccess {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ double[] f42341a;
+    final /* synthetic */ double[] a;
 
     @Override // kotlin.collections.AbstractList, java.util.List
     /* renamed from: a */
     public Double get(int i) {
-        return Double.valueOf(this.f42341a[i]);
+        return Double.valueOf(this.a[i]);
     }
 
     public boolean a(double d) {
-        double[] dArr = this.f42341a;
+        double[] dArr = this.a;
         int length = dArr.length;
         int i = 0;
         while (true) {
@@ -33,7 +31,7 @@ public final class ArraysKt___ArraysJvmKt$asList$6 extends AbstractList<Double> 
     }
 
     public int b(double d) {
-        double[] dArr = this.f42341a;
+        double[] dArr = this.a;
         int length = dArr.length;
         int i = 0;
         while (true) {
@@ -49,7 +47,7 @@ public final class ArraysKt___ArraysJvmKt$asList$6 extends AbstractList<Double> 
     }
 
     public int c(double d) {
-        double[] dArr = this.f42341a;
+        double[] dArr = this.a;
         int length = dArr.length - 1;
         if (length < 0) {
             return -1;
@@ -66,7 +64,7 @@ public final class ArraysKt___ArraysJvmKt$asList$6 extends AbstractList<Double> 
         }
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof Double) {
             return a(((Number) obj).doubleValue());
@@ -76,7 +74,7 @@ public final class ArraysKt___ArraysJvmKt$asList$6 extends AbstractList<Double> 
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return this.f42341a.length;
+        return this.a.length;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
@@ -87,9 +85,9 @@ public final class ArraysKt___ArraysJvmKt$asList$6 extends AbstractList<Double> 
         return -1;
     }
 
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return this.f42341a.length == 0;
+        return this.a.length == 0;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List

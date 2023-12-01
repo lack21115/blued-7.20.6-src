@@ -13,11 +13,11 @@ public class bh {
     public static final int I = 6;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23748a = "RISK_AUTH_FAILED";
+    public static final String f10140a = "RISK_AUTH_FAILED";
     public static final String b = "RISK_SERVICE_OBJECT_NULL";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23749c = "RISK_GET_FIELD_EMPTY";
+    public static final String f10141c = "RISK_GET_FIELD_EMPTY";
     public static final String d = "RISK_EXCEPTION_HAPPEN";
     public static final String e = "RISK_SWITCH_CLOSED";
     public static final String f = "RISK_NOT_ALLOWED";

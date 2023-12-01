@@ -10,11 +10,11 @@ public interface s {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7484a;
+        public final int f4645a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f7485c;
+        public final int f4646c;
         public final long d;
 
         public a(int i) {
@@ -22,9 +22,9 @@ public interface s {
         }
 
         public a(int i, int i2, int i3, long j) {
-            this.f7484a = i;
+            this.f4645a = i;
             this.b = i2;
-            this.f7485c = i3;
+            this.f4646c = i3;
             this.d = j;
         }
 
@@ -33,7 +33,7 @@ public interface s {
         }
 
         public final a a(int i) {
-            return this.f7484a == i ? this : new a(i, this.b, this.f7485c, this.d);
+            return this.f4645a == i ? this : new a(i, this.b, this.f4646c, this.d);
         }
 
         public final boolean a() {
@@ -48,11 +48,11 @@ public interface s {
                 return false;
             }
             a aVar = (a) obj;
-            return this.f7484a == aVar.f7484a && this.b == aVar.b && this.f7485c == aVar.f7485c && this.d == aVar.d;
+            return this.f4645a == aVar.f4645a && this.b == aVar.b && this.f4646c == aVar.f4646c && this.d == aVar.d;
         }
 
         public final int hashCode() {
-            return ((((((this.f7484a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f7485c) * 31) + ((int) this.d);
+            return ((((((this.f4645a + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.b) * 31) + this.f4646c) * 31) + ((int) this.d);
         }
     }
 

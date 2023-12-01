@@ -1,5 +1,6 @@
 package com.anythink.expressad.foundation.h;
 
+import android.app.backup.FullBackup;
 import android.content.Context;
 import android.os.BatteryManager;
 import com.anythink.core.api.IExHandler;
@@ -33,10 +34,10 @@ public class c {
     public JSONObject x;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f7947c = "android";
+    public String f5107c = "android";
 
     /* renamed from: a  reason: collision with root package name */
-    public String f7946a = k.b();
+    public String f5106a = k.b();
     public String b = k.c();
     public String f = com.anythink.core.common.k.d.f();
 
@@ -96,7 +97,7 @@ public class c {
     public JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("device", this.f7946a);
+            jSONObject.put("device", this.f5106a);
             jSONObject.put("system_version", this.b);
             jSONObject.put("network_type", this.g);
             jSONObject.put("network_type_str", this.h);
@@ -113,7 +114,7 @@ public class c {
                 jSONObject.put("wx_api_ver", sb2.toString());
             }
             jSONObject.put("brand", this.u);
-            jSONObject.put("plantform", this.f7947c);
+            jSONObject.put("plantform", this.f5107c);
             jSONObject.put(com.anythink.core.common.k.c.b("ZGV2aWNlX2ltZWk="), this.e);
             jSONObject.put("android_id", this.d);
             jSONObject.put("google_ad_id", this.f);
@@ -127,7 +128,7 @@ public class c {
             jSONObject.put("b", this.o);
             jSONObject.put("c", this.p);
             jSONObject.put("web_env", this.s);
-            jSONObject.put("f", this.t);
+            jSONObject.put(FullBackup.DATA_TREE_TOKEN, this.t);
             jSONObject.put("misk_spt", this.v);
             jSONObject.put("dvi", j.a(this.x.toString()));
             return jSONObject;

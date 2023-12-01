@@ -3,6 +3,7 @@ package com.kwad.sdk.core.report;
 import android.text.TextUtils;
 import com.blued.das.live.LiveProtos;
 import com.huawei.hms.ads.nativead.DetailedCreativeType;
+import com.huawei.openalliance.ad.constant.ab;
 import com.kwad.sdk.api.model.AdExposureFailedReason;
 import com.kwad.sdk.core.report.y;
 import com.kwad.sdk.core.response.model.AdInfo;
@@ -23,11 +24,11 @@ public final class a {
 
     /* renamed from: com.kwad.sdk.core.report.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/report/a$a.class */
-    public static class C0565a extends com.kwad.sdk.core.response.kwai.a {
+    public static class C0395a extends com.kwad.sdk.core.response.kwai.a {
         public int code;
         public String msg;
 
-        public C0565a(int i, String str) {
+        public C0395a(int i, String str) {
             this.code = i;
             this.msg = str;
         }
@@ -129,9 +130,9 @@ public final class a {
         b(adTemplate, 934, bVar, (JSONObject) null);
     }
 
-    public static void a(AdTemplate adTemplate, C0565a c0565a) {
+    public static void a(AdTemplate adTemplate, C0395a c0395a) {
         y.b bVar = new y.b();
-        bVar.aku = c0565a.toJson().toString();
+        bVar.aku = c0395a.toJson().toString();
         b(adTemplate, 40, bVar, (JSONObject) null);
     }
 
@@ -197,7 +198,7 @@ public final class a {
         y.a aVar = new y.a();
         aVar.aka = 1;
         iVar.a(aVar);
-        b(adTemplate, 804, iVar.wY(), (JSONObject) null);
+        b(adTemplate, (int) ab.Y, iVar.wY(), (JSONObject) null);
     }
 
     public static void aC(AdTemplate adTemplate) {
@@ -205,7 +206,7 @@ public final class a {
         y.a aVar = new y.a();
         aVar.aka = 2;
         iVar.a(aVar);
-        b(adTemplate, 804, iVar.wY(), (JSONObject) null);
+        b(adTemplate, (int) ab.Y, iVar.wY(), (JSONObject) null);
     }
 
     private static boolean aD(AdTemplate adTemplate) {

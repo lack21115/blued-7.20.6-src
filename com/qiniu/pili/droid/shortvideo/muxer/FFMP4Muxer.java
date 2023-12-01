@@ -40,7 +40,7 @@ public class FFMP4Muxer extends c {
             if (this.f != 0 && this.f != -1) {
                 if (this.b == i) {
                     writeVideoFrame2(this.f, byteBuffer, i2, z, j, j2, i4, i5);
-                } else if (this.f27734c == i) {
+                } else if (this.f14046c == i) {
                     writeAudioFrame2(this.f, byteBuffer, i2, j, i3, i4, i5);
                 }
                 return;
@@ -55,7 +55,7 @@ public class FFMP4Muxer extends c {
             if (this.f != 0 && this.f != -1) {
                 if (this.b == i) {
                     writeVideoFrame(this.f, byteBuffer, bufferInfo.size, (bufferInfo.flags & 1) != 0, bufferInfo.presentationTimeUs, bufferInfo.presentationTimeUs);
-                } else if (this.f27734c == i) {
+                } else if (this.f14046c == i) {
                     writeAudioFrame(this.f, byteBuffer, bufferInfo.size, bufferInfo.presentationTimeUs, 1152);
                 }
                 return;
@@ -117,7 +117,7 @@ public class FFMP4Muxer extends c {
                 }
                 boolean z = true;
                 this.b = fFMP4Demuxer.a();
-                this.f27734c = fFMP4Demuxer.b();
+                this.f14046c = fFMP4Demuxer.b();
                 int i2 = -1;
                 if (this.b >= 0) {
                     int addVideoStream2 = addVideoStream2(this.f, fFMP4Demuxer.c(), fFMP4Demuxer.d(), fFMP4Demuxer.j());
@@ -130,7 +130,7 @@ public class FFMP4Muxer extends c {
                     i = -1;
                 }
                 boolean z2 = z;
-                if (this.f27734c >= 0) {
+                if (this.f14046c >= 0) {
                     int addAudioStream2 = addAudioStream2(this.f, fFMP4Demuxer.k());
                     i2 = addAudioStream2;
                     z2 = z;

@@ -15,7 +15,7 @@ public final class e implements com.kwad.sdk.core.d<com.kwad.sdk.core.webview.c.
         aVar.aqn = jSONObject.optInt("convertPageType", new Integer("-1").intValue());
         aVar.TD = new com.kwad.sdk.core.webview.c.a.c();
         aVar.TD.parseJson(jSONObject.optJSONObject("logParam"));
-        aVar.IQ = jSONObject.optBoolean("needReport", new Boolean("true").booleanValue());
+        aVar.IQ = jSONObject.optBoolean("needReport", new Boolean(com.huawei.hms.ads.fw.Code).booleanValue());
         aVar.creativeId = jSONObject.optLong("creativeId", new Long("-1").longValue());
         aVar.IY = jSONObject.optString("liveItemId");
         if (aVar.IY == JSONObject.NULL) {

@@ -4,9 +4,9 @@ package com.tencent.beacon.e;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    protected long f35027a = -1;
+    protected long f21336a = -1;
     protected int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    protected byte[] f35028c = null;
+    protected byte[] f21337c = null;
 }

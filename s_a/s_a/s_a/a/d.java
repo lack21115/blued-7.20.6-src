@@ -7,9 +7,7 @@ import com.anythink.core.api.ErrorCode;
 
 /* loaded from: source-3503164-dex2jar.jar:s_a/s_a/s_a/a/d.class */
 public class d {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f44181a;
+    public static boolean a;
     public static boolean b;
 
     public static Context a(Context context) {
@@ -25,7 +23,7 @@ public class d {
 
     public static boolean a() {
         String str;
-        if (!f44181a) {
+        if (!a) {
             str = ErrorCode.networkError;
         } else if (!b) {
             str = ErrorCode.serverError;

@@ -63,7 +63,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
                 return false;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<EndpointPair<N>> iterator() {
                 return EndpointPairIterator.of(AbstractBaseGraph.this);
             }
@@ -73,7 +73,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
                 throw new UnsupportedOperationException();
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return Ints.saturatedCast(AbstractBaseGraph.this.edgeCount());
             }
@@ -120,7 +120,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
         Preconditions.checkNotNull(n);
         Preconditions.checkArgument(nodes().contains(n), "Node %s is not an element of this graph.", n);
         return new IncidentEdgeSet<N>(this, n) { // from class: com.google.common.graph.AbstractBaseGraph.2
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public UnmodifiableIterator<EndpointPair<N>> iterator() {
                 return this.graph.isDirected() ? Iterators.unmodifiableIterator(Iterators.concat(Iterators.transform(this.graph.predecessors((BaseGraph<N>) this.node).iterator(), new Function<N, EndpointPair<N>>() { // from class: com.google.common.graph.AbstractBaseGraph.2.1
                     @Override // com.google.common.base.Function
@@ -140,7 +140,7 @@ public abstract class AbstractBaseGraph<N> implements BaseGraph<N> {
 
                     @Override // com.google.common.base.Function
                     public /* bridge */ /* synthetic */ Object apply(Object obj) {
-                        return apply((C03742) obj);
+                        return apply((C02042) obj);
                     }
                 }))) : Iterators.unmodifiableIterator(Iterators.transform(this.graph.adjacentNodes(this.node).iterator(), new Function<N, EndpointPair<N>>() { // from class: com.google.common.graph.AbstractBaseGraph.2.3
                     @Override // com.google.common.base.Function

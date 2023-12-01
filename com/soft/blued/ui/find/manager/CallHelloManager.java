@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.view.View;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -39,11 +40,11 @@ import java.util.TimerTask;
 public class CallHelloManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile CallHelloManager f30561a;
+    private static volatile CallHelloManager f16871a;
     private volatile CallMeStatusData b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f30562c;
+    private int f16872c;
     private Timer d;
     private int e;
     private Timer f;
@@ -58,18 +59,18 @@ public class CallHelloManager {
     }
 
     public static CallHelloManager a() {
-        if (f30561a == null) {
+        if (f16871a == null) {
             synchronized (CallHelloManager.class) {
                 try {
-                    if (f30561a == null) {
-                        f30561a = new CallHelloManager();
+                    if (f16871a == null) {
+                        f16871a = new CallHelloManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f30561a;
+        return f16871a;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -165,12 +166,10 @@ public class CallHelloManager {
     /* JADX INFO: Access modifiers changed from: private */
     public void c(final Context context, final ToOpenListener toOpenListener, final boolean z) {
         PermissionUtils.c(new PermissionCallbacks() { // from class: com.soft.blued.ui.find.manager.CallHelloManager.10
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 CallHelloManager.this.b(context, toOpenListener, z);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
                 toOpenListener.done(false);
             }
@@ -226,15 +225,14 @@ public class CallHelloManager {
     public void a(final Context context, IRequestHost iRequestHost, final int i, final boolean z, final boolean z2, final ToOpenListener toOpenListener) {
         FindHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<CallMeStatusData>>(iRequestHost) { // from class: com.soft.blued.ui.find.manager.CallHelloManager.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<CallMeStatusData> bluedEntityA) {
                 if (bluedEntityA.data == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                CallHelloManager.this.b = bluedEntityA.getSingleData();
-                CallHelloManager.this.f30562c = BluedPreferences.bL();
-                if (CallHelloManager.this.f30562c == 1 && CallHelloManager.this.b.call_status == 0) {
+                CallHelloManager.this.b = (CallMeStatusData) bluedEntityA.getSingleData();
+                CallHelloManager.this.f16872c = BluedPreferences.bL();
+                if (CallHelloManager.this.f16872c == 1 && CallHelloManager.this.b.call_status == 0) {
                     BluedPreferences.o(5);
                     CallHelloManager.this.b.call_status = 5;
                 } else {
@@ -270,7 +268,6 @@ public class CallHelloManager {
         if (BluedConfig.a().ac()) {
             FindHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<CallMeStatusData>>(iRequestHost) { // from class: com.soft.blued.ui.find.manager.CallHelloManager.3
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(final BluedEntityA<CallMeStatusData> bluedEntityA) {
                     AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.find.manager.CallHelloManager.3.1
@@ -279,7 +276,7 @@ public class CallHelloManager {
                             String str;
                             String str2;
                             BluedEntityA bluedEntityA2 = bluedEntityA;
-                            if (bluedEntityA2 == null || bluedEntityA2.getSingleData() == 0) {
+                            if (bluedEntityA2 == null || bluedEntityA2.getSingleData() == null) {
                                 str = "";
                                 str2 = str;
                             } else {
@@ -299,54 +296,53 @@ public class CallHelloManager {
     public void a(final Context context, IRequestHost iRequestHost, boolean z, final int i, final boolean z2) {
         HelloHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<HelloOpenState>>(iRequestHost) { // from class: com.soft.blued.ui.find.manager.CallHelloManager.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<HelloOpenState> bluedEntityA) {
                 if (bluedEntityA.data == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                final HelloOpenState singleData = bluedEntityA.getSingleData();
-                CallHelloManager.this.b.is_quietly = singleData.is_quietly;
-                if (singleData.open_status == 0) {
+                final HelloOpenState helloOpenState = (HelloOpenState) bluedEntityA.getSingleData();
+                CallHelloManager.this.b.is_quietly = helloOpenState.is_quietly;
+                if (helloOpenState.open_status == 0) {
                     ToastUtils.a(context.getResources().getString(R.string.open_failed));
-                } else if (singleData.open_status == 2) {
+                } else if (helloOpenState.open_status == 2) {
                     if (BluedConfig.a().R() != 1 || z2) {
                         CallHelloManager.a(i, GuyProtos.VocativeType.VOCATIVE_COMMON, "", z2, "");
                     }
                     PrivilegeBuyDialogFragment.a(context, i, z2);
-                } else if (singleData.open_status == 3) {
+                } else if (helloOpenState.open_status == 3) {
                     CallHelloManager.this.b.call_status = 2;
                     HelloStateDialogFragment.a(context, CallHelloManager.this.b);
                     CallHelloObserver.a().a(CallHelloManager.this.b);
-                } else if (singleData.open_status != 1) {
-                    if (singleData.open_status == 4) {
+                } else if (helloOpenState.open_status != 1) {
+                    if (helloOpenState.open_status == 4) {
                         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.find.manager.CallHelloManager.4.1
                             @Override // java.lang.Runnable
                             public void run() {
-                                CommonAlertDialog.a(BDActivityManager.f34819a.a() != null ? BDActivityManager.f34819a.a() : context, 0, AppUtils.a((int) R.string.biao_new_signin_tip), String.format(AppUtils.a((int) R.string.hello_open_failed_tips), TimeAndDateUtils.d(singleData.expire_time * 1000)), null, AppUtils.a((int) R.string.hello_open_failed_ok), null, null, null, null, false, 0, 0, false, false);
+                                CommonAlertDialog.a(BDActivityManager.f21128a.a() != null ? BDActivityManager.f21128a.a() : context, 0, AppUtils.a((int) R.string.biao_new_signin_tip), String.format(AppUtils.a((int) R.string.hello_open_failed_tips), TimeAndDateUtils.d(helloOpenState.expire_time * 1000)), (View) null, AppUtils.a((int) R.string.hello_open_failed_ok), (DialogInterface.OnClickListener) null, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null, false, 0, 0, false, false);
                                 EventTrackGuy.b(GuyProtos.Event.VOCATIVE_MB_POP_SHOW);
                                 BluedPreferences.dc();
                             }
                         });
-                    } else if (singleData.open_status == 5) {
+                    } else if (helloOpenState.open_status == 5) {
                         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.find.manager.CallHelloManager.4.2
                             @Override // java.lang.Runnable
                             public void run() {
-                                int i2 = (int) ((singleData.expire_time / 60) / 60);
-                                float f = (float) ((singleData.expire_time - ((i2 * 60) * 60)) / 60);
+                                int i2 = (int) ((helloOpenState.expire_time / 60) / 60);
+                                float f = (float) ((helloOpenState.expire_time - ((i2 * 60) * 60)) / 60);
                                 int i3 = (int) f;
                                 int i4 = i3;
                                 if (f > i3) {
                                     i4 = i3 + 1;
                                 }
-                                CommonAlertDialog.a(BDActivityManager.f34819a.a() != null ? BDActivityManager.f34819a.a() : context, 0, AppUtils.a((int) R.string.hello_open_mute_title), String.format(AppUtils.a((int) R.string.hello_open_mute_tip), i2 + AppUtils.a((int) R.string.hello_open_mute_tip_hour) + i4 + AppUtils.a((int) R.string.hello_open_mute_tip_minutes)), null, AppUtils.a((int) R.string.hello_open_mute_ok), null, null, null, null, false, 0, 0, false, false);
+                                CommonAlertDialog.a(BDActivityManager.f21128a.a() != null ? BDActivityManager.f21128a.a() : context, 0, AppUtils.a((int) R.string.hello_open_mute_title), String.format(AppUtils.a((int) R.string.hello_open_mute_tip), i2 + AppUtils.a((int) R.string.hello_open_mute_tip_hour) + i4 + AppUtils.a((int) R.string.hello_open_mute_tip_minutes)), (View) null, AppUtils.a((int) R.string.hello_open_mute_ok), (DialogInterface.OnClickListener) null, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null, false, 0, 0, false, false);
                             }
                         });
                     }
                 } else {
                     CallHelloManager.this.b.call_status = 4;
-                    CallHelloManager.this.b.countdown = (int) singleData.countdown;
-                    CallHelloManager.this.b.multiples = singleData.multiples;
+                    CallHelloManager.this.b.countdown = (int) helloOpenState.countdown;
+                    CallHelloManager.this.b.multiples = helloOpenState.multiples;
                     if (z2) {
                         CallHelloManager.a().i();
                     }
@@ -423,7 +419,6 @@ public class CallHelloManager {
     public void a(IRequestHost iRequestHost) {
         FindHttpUtils.c(new BluedUIHttpResponse<BluedEntityA<CallMeStatusData>>(iRequestHost) { // from class: com.soft.blued.ui.find.manager.CallHelloManager.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<CallMeStatusData> bluedEntityA) {
                 if (bluedEntityA.data == null || !bluedEntityA.hasData()) {

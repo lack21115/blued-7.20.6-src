@@ -31,13 +31,9 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKPlusView.class */
 public class LivePKPlusView extends FrameLayout implements View.OnClickListener {
     private BaseFragment A;
-
-    /* renamed from: a  reason: collision with root package name */
-    Runnable f14772a;
+    Runnable a;
     Runnable b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Runnable f14773c;
+    Runnable c;
     Runnable d;
     private View e;
     private View f;
@@ -71,7 +67,7 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
         this.u = false;
         this.x = 0;
         this.y = 0;
-        this.f14772a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKPlusView.12
+        this.a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKPlusView.12
             @Override // java.lang.Runnable
             public void run() {
                 LivePKPlusView.this.f();
@@ -83,7 +79,7 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
                 LivePKPlusView.this.g();
             }
         };
-        this.f14773c = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKPlusView.14
+        this.c = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKPlusView.14
             @Override // java.lang.Runnable
             public void run() {
                 LivePKPlusView.this.h();
@@ -127,14 +123,14 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
                 this.m.setText(a(i));
             } else {
                 this.n.setText(a(i));
-                removeCallbacks(this.f14773c);
-                postDelayed(this.f14773c, 5000L);
+                removeCallbacks(this.c);
+                postDelayed(this.c, 5000L);
             }
             d();
         } else if (i > 0) {
             this.m.setText(a(i));
-            removeCallbacks(this.f14772a);
-            postDelayed(this.f14772a, i3 == -1 ? 500L : 5000L);
+            removeCallbacks(this.a);
+            postDelayed(this.a, i3 == -1 ? 500L : 5000L);
         } else {
             d();
         }
@@ -273,7 +269,7 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
         this.u = true;
         this.f.setVisibility(8);
         this.f.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-        final int a2 = DensityUtils.a(getContext(), 0.0f);
+        final int a = DensityUtils.a(getContext(), 0.0f);
         int measuredWidth = this.f.getMeasuredWidth();
         final int i = (AppInfo.l / 2) - measuredWidth;
         this.f.setX(i);
@@ -310,7 +306,7 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 View view = LivePKPlusView.this.f;
                 int i2 = i;
-                view.setX(i2 + ((a2 - i2) * floatValue));
+                view.setX(i2 + ((a - i2) * floatValue));
                 LivePKPlusView.this.f.setAlpha(floatValue);
             }
         });
@@ -322,7 +318,7 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
         this.u = true;
         this.g.setVisibility(8);
         this.g.measure(View.MeasureSpec.makeMeasureSpec(0, 0), View.MeasureSpec.makeMeasureSpec(0, 0));
-        int a2 = DensityUtils.a(getContext(), 10.0f);
+        int a = DensityUtils.a(getContext(), 10.0f);
         int measuredWidth = this.g.getMeasuredWidth();
         int i = AppInfo.l;
         final int i2 = i / 2;
@@ -354,7 +350,7 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
             }
         });
         ofFloat.setDuration(600L);
-        final int i3 = (i - measuredWidth) - a2;
+        final int i3 = (i - measuredWidth) - a;
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.view.LivePKPlusView.7
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -478,9 +474,9 @@ public class LivePKPlusView extends FrameLayout implements View.OnClickListener 
         this.u = false;
         this.x = 0;
         this.y = 0;
-        removeCallbacks(this.f14772a);
+        removeCallbacks(this.a);
         removeCallbacks(this.b);
-        removeCallbacks(this.f14773c);
+        removeCallbacks(this.c);
         removeCallbacks(this.d);
         this.f.clearAnimation();
         this.f.setVisibility(8);

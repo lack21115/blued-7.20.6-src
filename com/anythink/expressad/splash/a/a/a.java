@@ -9,6 +9,7 @@ import com.anythink.expressad.foundation.g.a.f;
 import com.anythink.expressad.foundation.h.o;
 import com.anythink.expressad.foundation.h.t;
 import com.anythink.expressad.foundation.h.w;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,7 +22,7 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8184a = a.class.getSimpleName();
+    private static final String f5344a = a.class.getSimpleName();
 
     public static c a(String str, c cVar) {
         String valueOf;
@@ -79,7 +80,7 @@ public class a {
                 Iterator<String> keys2 = optJSONObject.keys();
                 StringBuilder sb = new StringBuilder();
                 while (keys2.hasNext()) {
-                    sb.append("&");
+                    sb.append(ContainerUtils.FIELD_DELIMITER);
                     String next2 = keys2.next();
                     String optString3 = optJSONObject.optString(next2);
                     if (!com.anythink.expressad.foundation.g.a.cc.equals(next2)) {
@@ -116,7 +117,7 @@ public class a {
             String jSONObject2 = jSONObject.toString();
             return !TextUtils.isEmpty(jSONObject2) ? Base64.encodeToString(jSONObject2.getBytes(), 2) : "";
         } catch (Throwable th) {
-            o.d(f8184a, "code to string is error");
+            o.d(f5344a, "code to string is error");
             return "";
         }
     }
@@ -126,8 +127,8 @@ public class a {
         try {
             JSONObject jSONObject2 = new JSONObject();
             if (i == 4) {
-                jSONObject2.put(com.anythink.expressad.foundation.g.a.cc, com.anythink.expressad.video.bt.a.c.f8290a);
-                jSONObject2.put(com.anythink.expressad.foundation.g.a.cd, com.anythink.expressad.video.bt.a.c.f8290a);
+                jSONObject2.put(com.anythink.expressad.foundation.g.a.cc, com.anythink.expressad.video.bt.a.c.f5450a);
+                jSONObject2.put(com.anythink.expressad.foundation.g.a.cd, com.anythink.expressad.video.bt.a.c.f5450a);
             } else {
                 jSONObject2.put(com.anythink.expressad.foundation.g.a.cc, t.a(n.a().g(), f));
                 jSONObject2.put(com.anythink.expressad.foundation.g.a.cd, t.a(n.a().g(), f2));
@@ -209,9 +210,9 @@ public class a {
     }
 
     private static void a(Context context, List<c> list) {
-        o.b(f8184a, "updateInstallList 开始 更新本机已安装广告列表");
+        o.b(f5344a, "updateInstallList 开始 更新本机已安装广告列表");
         if (context == null || list == null || list.size() == 0) {
-            o.b(f8184a, "updateInstallList 列表为空 不做更新本机已安装广告列表");
+            o.b(f5344a, "updateInstallList 列表为空 不做更新本机已安装广告列表");
             return;
         }
         int i = 0;

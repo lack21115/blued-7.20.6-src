@@ -3,13 +3,9 @@ package com.amap.api.col.p0003sl;
 /* renamed from: com.amap.api.col.3sl.mr  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/mr.class */
 public final class mr {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile byte f5389a = -1;
+    private static volatile byte a = -1;
     private static volatile String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile String f5390c = "";
+    private static volatile String c = "";
     private static volatile String d = "";
     private static volatile String e = "";
     private static volatile String f = "";
@@ -30,7 +26,7 @@ public final class mr {
     private static final Object u = new Object();
 
     public static byte a() {
-        return f5389a;
+        return a;
     }
 
     public static void a(int i2) {
@@ -48,12 +44,12 @@ public final class mr {
     }
 
     public static void b() {
-        f5389a = (byte) 4;
+        a = (byte) 4;
     }
 
     public static void b(String str) {
         if (str != null) {
-            f5390c = str;
+            c = str;
         }
     }
 
@@ -68,7 +64,7 @@ public final class mr {
     }
 
     public static String d() {
-        return f5390c;
+        return c;
     }
 
     public static void d(String str) {

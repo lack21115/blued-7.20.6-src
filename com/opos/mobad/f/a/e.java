@@ -9,11 +9,11 @@ import java.util.List;
 public class e extends com.opos.mobad.l.d {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f26083a;
+    private String f12395a;
     private com.opos.mobad.f.a.a.n<com.opos.mobad.ad.b.c> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f26084c;
+    private boolean f12396c;
     private String d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -41,7 +41,7 @@ public class e extends com.opos.mobad.l.d {
             if (this.b != e.this.b.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().b(e.this.f26083a);
+            com.opos.mobad.service.j.n.a().b(e.this.f12395a);
             e.this.p();
         }
 
@@ -50,7 +50,7 @@ public class e extends com.opos.mobad.l.d {
             if (this.b != e.this.b.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().a(e.this.f26083a);
+            com.opos.mobad.service.j.n.a().a(e.this.f12395a);
             e.this.q();
         }
 
@@ -73,16 +73,16 @@ public class e extends com.opos.mobad.l.d {
 
     public e(final Activity activity, final String str, com.opos.mobad.f.a.d.a aVar, com.opos.mobad.ad.b.d dVar, final boolean z, List<e.a> list, e.a aVar2, long j, final com.opos.mobad.f.b bVar) {
         super(dVar);
-        this.f26083a = str;
+        this.f12395a = str;
         this.b = a(str, aVar, list, aVar2, j, new com.opos.mobad.f.a.b.b<com.opos.mobad.ad.b.c>() { // from class: com.opos.mobad.f.a.e.1
             @Override // com.opos.mobad.f.a.b.a
             /* renamed from: a */
             public com.opos.mobad.ad.b.c b(e.a aVar3, com.opos.mobad.f.a.a.n nVar) {
-                com.opos.mobad.ad.c b = bVar.b(aVar3.f27301a);
+                com.opos.mobad.ad.c b = bVar.b(aVar3.f13613a);
                 if (b == null) {
                     return null;
                 }
-                return b.a(activity, str, aVar3.b, z, new a(aVar3.f27301a, nVar));
+                return b.a(activity, str, aVar3.b, z, new a(aVar3.f13613a, nVar));
             }
         }, new com.opos.mobad.f.a.c.a(activity));
     }
@@ -114,9 +114,9 @@ public class e extends com.opos.mobad.l.d {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void a(int i, String str, int i2) {
-        if (com.opos.mobad.service.f.b().b(this.f26083a) && d() == 2 && !this.f26084c) {
-            this.f26084c = true;
-            com.opos.mobad.service.i.d.a().a(this.f26083a, this.d, i, str, this.b.j(), g(), i2);
+        if (com.opos.mobad.service.f.b().b(this.f12395a) && d() == 2 && !this.f12396c) {
+            this.f12396c = true;
+            com.opos.mobad.service.i.d.a().a(this.f12395a, this.d, i, str, this.b.j(), g(), i2);
         }
     }
 
@@ -128,9 +128,9 @@ public class e extends com.opos.mobad.l.d {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void b(int i) {
-        if (com.opos.mobad.service.f.b().b(this.f26083a) && d() == 2 && !this.f26084c) {
-            this.f26084c = true;
-            com.opos.mobad.service.i.d.a().a(this.f26083a, this.d, this.b.j(), g(), i);
+        if (com.opos.mobad.service.f.b().b(this.f12395a) && d() == 2 && !this.f12396c) {
+            this.f12396c = true;
+            com.opos.mobad.service.i.d.a().a(this.f12395a, this.d, this.b.j(), g(), i);
         }
     }
 
@@ -156,7 +156,7 @@ public class e extends com.opos.mobad.l.d {
 
     @Override // com.opos.mobad.l.j
     public boolean b(String str, int i) {
-        this.f26084c = false;
+        this.f12396c = false;
         this.d = str;
         this.b.a(str, i);
         return true;
@@ -170,7 +170,7 @@ public class e extends com.opos.mobad.l.d {
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void c(int i) {
         com.opos.mobad.ad.b.c i2;
-        if (com.opos.mobad.service.f.b().b(this.f26083a) && (i2 = this.b.i()) != null) {
+        if (com.opos.mobad.service.f.b().b(this.f12395a) && (i2 = this.b.i()) != null) {
             i2.c(i);
         }
     }
@@ -187,7 +187,7 @@ public class e extends com.opos.mobad.l.d {
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public int g() {
         com.opos.mobad.ad.b.c i;
-        if (com.opos.mobad.service.f.b().b(this.f26083a) && (i = this.b.i()) != null) {
+        if (com.opos.mobad.service.f.b().b(this.f12395a) && (i = this.b.i()) != null) {
             int g = i.g();
             if (g > 0) {
                 return g;

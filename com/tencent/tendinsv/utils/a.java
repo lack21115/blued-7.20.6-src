@@ -52,7 +52,7 @@ public class a {
         TreeSet<String> treeSet = new TreeSet(map.keySet());
         StringBuilder sb = new StringBuilder();
         for (String str : treeSet) {
-            if (!"sign".equals(str)) {
+            if (!com.anythink.expressad.d.a.b.d.equals(str)) {
                 sb.append(str);
                 sb.append(map.get(str));
             }
@@ -64,7 +64,7 @@ public class a {
         TreeSet<String> treeSet = new TreeSet(map.keySet());
         StringBuilder sb = new StringBuilder();
         for (String str2 : treeSet) {
-            if (!"sign".equals(str2)) {
+            if (!com.anythink.expressad.d.a.b.d.equals(str2)) {
                 sb.append(str2);
                 sb.append(map.get(str2));
             }
@@ -83,9 +83,9 @@ public class a {
             com.tencent.tendinsv.tool.e eVar = list.get(i2);
             JSONArray jSONArray2 = new JSONArray();
             try {
-                jSONArray2.put(eVar.f39051a);
+                jSONArray2.put(eVar.f25360a);
                 jSONArray2.put(eVar.b);
-                jSONArray2.put(eVar.f39052c);
+                jSONArray2.put(eVar.f25361c);
                 jSONArray2.put(eVar.d);
                 jSONArray2.put(eVar.e);
                 jSONArray2.put(eVar.f);
@@ -129,7 +129,7 @@ public class a {
         TreeSet<String> treeSet = new TreeSet(map.keySet());
         StringBuilder sb = new StringBuilder();
         for (String str2 : treeSet) {
-            if (!"sign".equals(str2)) {
+            if (!com.anythink.expressad.d.a.b.d.equals(str2)) {
                 sb.append(map.get(str2));
             }
         }
@@ -147,9 +147,9 @@ public class a {
             com.tencent.tendinsv.tool.f fVar = list.get(i2);
             JSONArray jSONArray2 = new JSONArray();
             try {
-                jSONArray2.put(fVar.f39053a);
+                jSONArray2.put(fVar.f25362a);
                 jSONArray2.put(fVar.b);
-                jSONArray2.put(fVar.f39054c);
+                jSONArray2.put(fVar.f25363c);
                 jSONArray2.put(fVar.d);
                 jSONArray2.put(fVar.e);
                 jSONArray2.put(fVar.f);
@@ -164,7 +164,16 @@ public class a {
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:68:0x0080 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r0v14, types: [java.io.ByteArrayOutputStream] */
+    /* JADX WARN: Type inference failed for: r0v15, types: [java.io.ByteArrayOutputStream] */
+    /* JADX WARN: Type inference failed for: r0v19, types: [java.io.ByteArrayOutputStream] */
+    /* JADX WARN: Type inference failed for: r0v20, types: [java.io.ByteArrayOutputStream] */
+    /* JADX WARN: Type inference failed for: r0v22, types: [java.io.ByteArrayOutputStream] */
+    /* JADX WARN: Type inference failed for: r0v26, types: [java.io.ByteArrayOutputStream] */
+    /* JADX WARN: Type inference failed for: r0v27, types: [java.io.ByteArrayOutputStream] */
+    /* JADX WARN: Type inference failed for: r0v39, types: [java.io.OutputStream, java.io.ByteArrayOutputStream] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

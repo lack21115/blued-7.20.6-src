@@ -44,7 +44,6 @@ public final class LivePlanetRecordModel implements MultiItemEntity, Serializabl
         return this.id;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type;
     }

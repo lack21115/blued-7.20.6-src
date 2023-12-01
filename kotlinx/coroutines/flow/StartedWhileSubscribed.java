@@ -1,5 +1,6 @@
 package kotlinx.coroutines.flow;
 
+import $r8;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
@@ -10,9 +11,7 @@ import kotlin.jvm.functions.Function3;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/StartedWhileSubscribed.class */
 final class StartedWhileSubscribed implements SharingStarted {
     private final long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final long f43428c;
+    private final long c;
 
     @Override // kotlinx.coroutines.flow.SharingStarted
     public Flow<SharingCommand> a(StateFlow<Integer> stateFlow) {
@@ -22,24 +21,24 @@ final class StartedWhileSubscribed implements SharingStarted {
     public boolean equals(Object obj) {
         if (obj instanceof StartedWhileSubscribed) {
             StartedWhileSubscribed startedWhileSubscribed = (StartedWhileSubscribed) obj;
-            return this.b == startedWhileSubscribed.b && this.f43428c == startedWhileSubscribed.f43428c;
+            return this.b == startedWhileSubscribed.b && this.c == startedWhileSubscribed.c;
         }
         return false;
     }
 
     public int hashCode() {
-        return (C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.b) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.f43428c);
+        return ($r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.b) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.c);
     }
 
     public String toString() {
-        List a2 = CollectionsKt.a(2);
+        List a = CollectionsKt.a(2);
         if (this.b > 0) {
-            a2.add("stopTimeout=" + this.b + "ms");
+            a.add("stopTimeout=" + this.b + "ms");
         }
-        if (this.f43428c < Long.MAX_VALUE) {
-            a2.add("replayExpiration=" + this.f43428c + "ms");
+        if (this.c < Long.MAX_VALUE) {
+            a.add("replayExpiration=" + this.c + "ms");
         }
-        List a3 = CollectionsKt.a(a2);
-        return "SharingStarted.WhileSubscribed(" + CollectionsKt.a(a3, null, null, null, 0, null, null, 63, null) + ')';
+        List a2 = CollectionsKt.a(a);
+        return "SharingStarted.WhileSubscribed(" + CollectionsKt.a(a2, null, null, null, 0, null, null, 63, null) + ')';
     }
 }

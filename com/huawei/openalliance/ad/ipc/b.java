@@ -21,29 +21,29 @@ public class b {
     private volatile Uri L;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22987a;
+    private Context f9379a;
     private static final byte[] I = new byte[0];
     private static final String S = "com.huawei.hwid.pps.apiprovider";
     private static final String F = "/pps/api/call";
     private static final Uri D = new Uri.Builder().scheme("content").authority(S).path(F).build();
 
     private b(Context context) {
-        this.f22987a = context.getApplicationContext();
+        this.f9379a = context.getApplicationContext();
     }
 
     private Uri Code(boolean z) {
         if (z) {
             return D;
         }
-        int t = fk.Code(this.f22987a).t();
+        int t = fk.Code(this.f9379a).t();
         ge.V(Code, "ads selection:" + t);
-        if (v.V(this.f22987a) && (t == 0 || t == 2)) {
+        if (v.V(this.f9379a) && (t == 0 || t == 2)) {
             return D;
         }
         if (v.I()) {
             if (this.L == null) {
                 Uri.Builder scheme = new Uri.Builder().scheme("content");
-                this.L = scheme.authority(this.f22987a.getPackageName() + C).path(F).build();
+                this.L = scheme.authority(this.f9379a.getPackageName() + C).path(F).build();
             }
             return this.L;
         }
@@ -80,7 +80,7 @@ public class b {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("sdk_version", "13.4.61.304");
                 jSONObject.put("content", str2);
-                Cursor query = this.f22987a.getContentResolver().query(Code(z), null, null, new String[]{str, jSONObject.toString()}, null);
+                Cursor query = this.f9379a.getContentResolver().query(Code(z), null, null, new String[]{str, jSONObject.toString()}, null);
                 cursor = query;
                 if (query != null) {
                     cursor = query;

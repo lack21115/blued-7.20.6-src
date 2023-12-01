@@ -6,31 +6,31 @@ import com.tencent.qcloud.core.util.IOUtils;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f21871a = !b.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f8264a = !b.class.desiredAssertionStatus();
 
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/a/a/b$a.class */
     public static abstract class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public byte[] f21872a;
+        public byte[] f8265a;
         public int b;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.getui.gtc.a.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/a/a/b$b.class */
-    public static final class C0339b extends a {
+    public static final class C0169b extends a {
 
         /* renamed from: c  reason: collision with root package name */
-        private static final int[] f21873c = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -2, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+        private static final int[] f8266c = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, -1, 63, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -2, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, -1, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
         private static final int[] d = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 62, -1, -1, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, -1, -1, -1, -2, -1, -1, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, -1, -1, -1, -1, 63, -1, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
         private int e;
         private int f;
         private final int[] g;
 
-        public C0339b(byte[] bArr) {
-            this.f21872a = bArr;
-            this.g = f21873c;
+        public C0169b(byte[] bArr) {
+            this.f8265a = bArr;
+            this.g = f8266c;
             this.e = 0;
             this.f = 0;
         }
@@ -79,7 +79,7 @@ public class b {
                 Method dump skipped, instructions count: 667
                 To view this dump change 'Code comments level' option to 'DEBUG'
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.getui.gtc.a.a.b.C0339b.a(byte[], int):boolean");
+            throw new UnsupportedOperationException("Method not decompiled: com.getui.gtc.a.a.b.C0169b.a(byte[], int):boolean");
         }
     }
 
@@ -135,13 +135,13 @@ public class b {
     }
 
     private static byte[] b(byte[] bArr, int i) {
-        C0339b c0339b = new C0339b(new byte[(i * 3) / 4]);
-        if (c0339b.a(bArr, i)) {
-            if (c0339b.b == c0339b.f21872a.length) {
-                return c0339b.f21872a;
+        C0169b c0169b = new C0169b(new byte[(i * 3) / 4]);
+        if (c0169b.a(bArr, i)) {
+            if (c0169b.b == c0169b.f8265a.length) {
+                return c0169b.f8265a;
             }
-            byte[] bArr2 = new byte[c0339b.b];
-            System.arraycopy((Object) c0339b.f21872a, 0, (Object) bArr2, 0, c0339b.b);
+            byte[] bArr2 = new byte[c0169b.b];
+            System.arraycopy(c0169b.f8265a, 0, bArr2, 0, c0169b.b);
             return bArr2;
         }
         throw new IllegalArgumentException("bad base-64");

@@ -8,19 +8,15 @@ import android.view.View;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredTimeProgressView.class */
 public class PkDaredTimeProgressView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f15423a;
+    protected int a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f15424c;
+    private float c;
     private float d;
     private float e;
 
     public PkDaredTimeProgressView(Context context) {
         super(context);
-        this.f15423a = 300;
+        this.a = 300;
         this.b = 300;
         this.e = -1.0f;
         a(context);
@@ -28,7 +24,7 @@ public class PkDaredTimeProgressView extends View {
 
     public PkDaredTimeProgressView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15423a = 300;
+        this.a = 300;
         this.b = 300;
         this.e = -1.0f;
         a(context);
@@ -36,7 +32,7 @@ public class PkDaredTimeProgressView extends View {
 
     public PkDaredTimeProgressView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f15423a = 300;
+        this.a = 300;
         this.b = 300;
         this.e = -1.0f;
         a(context);
@@ -48,7 +44,7 @@ public class PkDaredTimeProgressView extends View {
         float f3 = f - f2;
         float f4 = (f2 / 2.0f) + (f3 / 2.0f);
         float f5 = f / 2.0f;
-        float f6 = this.f15424c;
+        float f6 = this.c;
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
@@ -121,13 +117,13 @@ public class PkDaredTimeProgressView extends View {
         float f3 = f2 / 2.0f;
         float f4 = f2 / 2.0f;
         float f5 = f3 / 2.0f;
-        a(canvas, -1996488705, f - f2, this.f15424c - f2, 1.0f, f3, f4 + f5, (f2 / 2.0f) + f5);
+        a(canvas, -1996488705, f - f2, this.c - f2, 1.0f, f3, f4 + f5, (f2 / 2.0f) + f5);
     }
 
     private void c(Canvas canvas) {
         float f = this.d;
-        float f2 = this.f15424c;
-        float f3 = this.f15423a / this.b;
+        float f2 = this.c;
+        float f3 = this.a / this.b;
         float f4 = this.e;
         a(canvas, -1, f, f2, f3, f4, f4 / 2.0f, f4 / 2.0f);
     }
@@ -135,11 +131,11 @@ public class PkDaredTimeProgressView extends View {
     protected void a(Context context) {
         this.e = 7.0f;
         this.b = 300;
-        this.f15423a = 300;
+        this.a = 300;
     }
 
     public int getProgress() {
-        return this.f15423a;
+        return this.a;
     }
 
     public int getProgressMax() {
@@ -159,7 +155,7 @@ public class PkDaredTimeProgressView extends View {
     @Override // android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f15424c = getMeasuredWidth();
+        this.c = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         this.d = measuredHeight;
         this.e = measuredHeight / 12.0f;
@@ -179,7 +175,7 @@ public class PkDaredTimeProgressView extends View {
         if (i2 > i3) {
             i4 = i3;
         }
-        this.f15423a = i4;
+        this.a = i4;
         invalidate();
     }
 

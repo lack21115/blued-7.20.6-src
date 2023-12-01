@@ -1,7 +1,6 @@
 package android.util;
 
 import com.android.internal.util.Preconditions;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
@@ -216,6 +215,6 @@ public final class Rational extends Number implements Comparable<Rational> {
     }
 
     public String toString() {
-        return isNaN() ? "NaN" : isPosInf() ? "Infinity" : isNegInf() ? "-Infinity" : this.mNumerator + BridgeUtil.SPLIT_MARK + this.mDenominator;
+        return isNaN() ? "NaN" : isPosInf() ? "Infinity" : isNegInf() ? "-Infinity" : this.mNumerator + "/" + this.mDenominator;
     }
 }

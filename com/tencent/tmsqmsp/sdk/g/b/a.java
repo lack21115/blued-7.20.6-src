@@ -14,19 +14,19 @@ public class a {
 
     /* renamed from: com.tencent.tmsqmsp.sdk.g.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/b/a$a.class */
-    public static final class C1050a {
+    public static final class C0880a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f39765a;
+        private final String f26074a;
         private final boolean b;
 
-        public C1050a(String str, boolean z) {
-            this.f39765a = str;
+        public C0880a(String str, boolean z) {
+            this.f26074a = str;
             this.b = z;
         }
 
         public final String a() {
-            return this.f39765a;
+            return this.f26074a;
         }
 
         public final boolean b() {
@@ -34,7 +34,7 @@ public class a {
         }
     }
 
-    public static C1050a a(Context context) {
+    public static C0880a a(Context context) {
         String str;
         b bVar;
         Intent intent;
@@ -61,12 +61,12 @@ public class a {
         Log.i(a(), "bind ok");
         try {
             try {
-                if (bVar.f39766a) {
+                if (bVar.f26075a) {
                     throw new IllegalStateException();
                 }
-                bVar.f39766a = true;
+                bVar.f26075a = true;
                 d a3 = d.a.a((IBinder) bVar.b.take());
-                return new C1050a(a3.i(), a3.f());
+                return new C0880a(a3.i(), a3.f());
             } catch (RemoteException e2) {
                 str2 = "bind hms service RemoteException";
                 com.tencent.tmsqmsp.sdk.base.c.b(str2);

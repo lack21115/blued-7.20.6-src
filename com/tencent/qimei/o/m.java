@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final m f38382a = new m();
+    public static final m f24691a = new m();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qimei/o/m$a.class */
     public enum a {
@@ -22,7 +22,7 @@ public class m {
         KEY_PARAMS("params"),
         KEY_TIME("time"),
         KEY_NONCE("nonce"),
-        KEY_SIGN("sign"),
+        KEY_SIGN(com.anythink.expressad.d.a.b.d),
         KEY_EXTRA("extra"),
         KEY_PARAMS_AD(com.tencent.qimei.a.b.a(11)),
         KEY_PARAMS_PLATFORM_ID(ConstantsAPI.Token.WX_TOKEN_PLATFORMID_KEY),

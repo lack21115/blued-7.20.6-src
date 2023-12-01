@@ -43,9 +43,8 @@ public interface IBluetoothHeadsetClient extends IInterface {
         static final int TRANSACTION_stopVoiceRecognition = 11;
         static final int TRANSACTION_terminateCall = 17;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothHeadsetClient$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothHeadsetClient {
+        private static class Proxy implements IBluetoothHeadsetClient {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

@@ -1,10 +1,11 @@
 package com.blued.android.module.live_china.test;
 
-import android.Manifest;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import com.anythink.china.common.d;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.live_china.R;
 import com.blued.login.test.LoginFragment;
@@ -16,14 +17,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class LiveMainActivity extends AppCompatActivity {
     public final void a() {
         if (UserInfo.getInstance().isLogin()) {
-            LiveFragmentTest.f14136a.a(this);
+            LiveFragmentTest.a.a((Context) this);
         } else {
-            LoginFragment.f20569a.a(this);
+            LoginFragment.a.a((Context) this);
         }
         finish();
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.activity_live);
@@ -31,15 +31,14 @@ public final class LiveMainActivity extends AppCompatActivity {
             a();
             return;
         }
-        LiveMainActivity liveMainActivity = this;
-        if (ContextCompat.checkSelfPermission(liveMainActivity, Manifest.permission.CAMERA) == 0 && ContextCompat.checkSelfPermission(liveMainActivity, Manifest.permission.RECORD_AUDIO) == 0) {
+        Context context = (Context) this;
+        if (ContextCompat.checkSelfPermission(context, "android.permission.CAMERA") == 0 && ContextCompat.checkSelfPermission(context, "android.permission.RECORD_AUDIO") == 0) {
             a();
         } else {
-            requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO}, 101);
+            requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE", d.b, "android.permission.CAMERA", "android.permission.RECORD_AUDIO"}, 101);
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
     public void onRequestPermissionsResult(int i, String[] permissions, int[] grantResults) {
         Intrinsics.e(permissions, "permissions");
         Intrinsics.e(grantResults, "grantResults");

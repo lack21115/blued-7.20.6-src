@@ -75,7 +75,7 @@ public class LogReport {
             try {
                 httpPost = new HttpPost(str);
                 httpPost.setHeader("Content-Type", "application/x-www-form-urlencoded");
-                httpPost.setHeader("Connection", c.f7906c);
+                httpPost.setHeader("Connection", c.f5066c);
                 httpPost.addHeader("Content-Encoding", StatisticConfig.isNeedGizp() ? "gzip" : "charset=UTF-8");
                 httpPost.addHeader(HttpHeaders.ACCEPT, "*/*");
                 httpPost.addHeader(HttpHeaders.ACCEPT_LANGUAGE, "en-us");

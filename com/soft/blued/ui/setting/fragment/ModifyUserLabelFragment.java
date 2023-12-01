@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -37,11 +38,11 @@ import java.util.List;
 public class ModifyUserLabelFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33489a;
+    private Context f19798a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f33490c;
+    private Dialog f19799c;
     private CustomViewPager d;
     private UserLabelToolBarView e;
     private LabelPagerAdapter h;
@@ -92,27 +93,27 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             while (ModifyUserLabelFragment.this.g.size() < ModifyUserLabelFragment.this.f.size()) {
-                ModifyUserLabelFragment.this.g.add(LayoutInflater.from(ModifyUserLabelFragment.this.f33489a).inflate(R.layout.user_label_pager, viewGroup, false));
+                ModifyUserLabelFragment.this.g.add(LayoutInflater.from(ModifyUserLabelFragment.this.f19798a).inflate(R.layout.user_label_pager, viewGroup, false));
             }
             View view = (View) ModifyUserLabelFragment.this.g.get(i);
-            PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) view.findViewById(R.id.user_label_recycler_view);
-            RecyclerView refreshableView = pullToRefreshRecyclerView.getRefreshableView();
-            pullToRefreshRecyclerView.setRefreshEnabled(false);
-            refreshableView.setLayoutManager(new GridLayoutManager(ModifyUserLabelFragment.this.f33489a, 1));
+            PullToRefreshRecyclerView findViewById = view.findViewById(R.id.user_label_recycler_view);
+            RecyclerView recyclerView = (RecyclerView) findViewById.getRefreshableView();
+            findViewById.setRefreshEnabled(false);
+            recyclerView.setLayoutManager(new GridLayoutManager(ModifyUserLabelFragment.this.f19798a, 1));
             if (i != 0) {
                 if (i != 1) {
                     if (i != 2) {
-                        if (i == 3 && refreshableView.getAdapter() == null) {
-                            refreshableView.setAdapter(ModifyUserLabelFragment.this.n);
+                        if (i == 3 && recyclerView.getAdapter() == null) {
+                            recyclerView.setAdapter(ModifyUserLabelFragment.this.n);
                         }
-                    } else if (refreshableView.getAdapter() == null) {
-                        refreshableView.setAdapter(ModifyUserLabelFragment.this.m);
+                    } else if (recyclerView.getAdapter() == null) {
+                        recyclerView.setAdapter(ModifyUserLabelFragment.this.m);
                     }
-                } else if (refreshableView.getAdapter() == null) {
-                    refreshableView.setAdapter(ModifyUserLabelFragment.this.l);
+                } else if (recyclerView.getAdapter() == null) {
+                    recyclerView.setAdapter(ModifyUserLabelFragment.this.l);
                 }
-            } else if (refreshableView.getAdapter() == null) {
-                refreshableView.setAdapter(ModifyUserLabelFragment.this.k);
+            } else if (recyclerView.getAdapter() == null) {
+                recyclerView.setAdapter(ModifyUserLabelFragment.this.k);
             }
             if (view.getParent() != null) {
                 ((ViewGroup) view.getParent()).removeView(view);
@@ -140,7 +141,7 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
             this.i.addAll(arguments.getStringArrayList("choosedList"));
         }
         this.j = arguments.getInt(BrowserContract.Bookmarks.POSITION);
-        String[] stringArray = this.f33489a.getResources().getStringArray(R.array.user_label_title);
+        String[] stringArray = this.f19798a.getResources().getStringArray(R.array.user_label_title);
         int length = stringArray.length;
         int i = 0;
         while (true) {
@@ -154,20 +155,20 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
     }
 
     private void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.setCenterText(getString(R.string.my_label));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        commonTopTitleNoTrans.setRightText(R.string.done);
-        commonTopTitleNoTrans.f();
-        commonTopTitleNoTrans.setCenterTextColor(2131102254);
-        commonTopTitleNoTrans.setRightTextColor(2131102254);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.setCenterText(getString(R.string.my_label));
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        findViewById.setRightText((int) R.string.done);
+        findViewById.f();
+        findViewById.setCenterTextColor(2131102254);
+        findViewById.setRightTextColor(2131102254);
     }
 
     private void e() {
-        this.f33490c = DialogUtils.a(getActivity());
+        this.f19799c = DialogUtils.a(getActivity());
         this.e = (UserLabelToolBarView) this.b.findViewById(R.id.user_label_tool_bar_view);
-        CustomViewPager customViewPager = (CustomViewPager) this.b.findViewById(2131373209);
+        CustomViewPager customViewPager = (CustomViewPager) this.b.findViewById(R.id.view_pager);
         this.d = customViewPager;
         customViewPager.setOnPageChangeListener(this.o);
         LabelPagerAdapter labelPagerAdapter = new LabelPagerAdapter();
@@ -180,16 +181,16 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
                 ModifyUserLabelFragment.this.d.setCurrentItem(i);
             }
         });
-        this.k = new UserLabelAdapterNew(this.f33489a);
-        this.l = new UserLabelAdapterNew(this.f33489a);
-        this.m = new UserLabelAdapterNew(this.f33489a);
-        this.n = new UserLabelAdapterNew(this.f33489a);
+        this.k = new UserLabelAdapterNew(this.f19798a);
+        this.l = new UserLabelAdapterNew(this.f19798a);
+        this.m = new UserLabelAdapterNew(this.f19798a);
+        this.n = new UserLabelAdapterNew(this.f19798a);
         this.k.a(new UserLabelAdapterNew.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLabelFragment.2
             @Override // com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.OnItemClickListener
             public void a(UserTag userTag, int i) {
-                if (userTag.tagList.get(i).chooseable) {
-                    if (userTag.tagList.get(i).checked != 1) {
-                        userTag.tagList.get(i).checked = 1;
+                if (((UserTag) userTag.tagList.get(i)).chooseable) {
+                    if (((UserTag) userTag.tagList.get(i)).checked != 1) {
+                        ((UserTag) userTag.tagList.get(i)).checked = 1;
                         int i2 = 0;
                         while (true) {
                             int i3 = i2;
@@ -197,12 +198,12 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
                                 break;
                             }
                             if (i3 != i) {
-                                userTag.tagList.get(i3).checked = 0;
+                                ((UserTag) userTag.tagList.get(i3)).checked = 0;
                             }
                             i2 = i3 + 1;
                         }
                     } else {
-                        userTag.tagList.get(i).checked = 0;
+                        ((UserTag) userTag.tagList.get(i)).checked = 0;
                     }
                     ModifyUserLabelFragment.this.k.notifyDataSetChanged();
                 }
@@ -211,19 +212,19 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
         this.l.a(new UserLabelAdapterNew.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLabelFragment.3
             @Override // com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.OnItemClickListener
             public void a(UserTag userTag, int i) {
-                if (userTag.tagList.get(i).chooseable) {
-                    if (userTag.tagList.get(i).checked == 1) {
-                        userTag.tagList.get(i).checked = 0;
+                if (((UserTag) userTag.tagList.get(i)).chooseable) {
+                    if (((UserTag) userTag.tagList.get(i)).checked == 1) {
+                        ((UserTag) userTag.tagList.get(i)).checked = 0;
                     } else {
                         ModifyUserLabelFragment modifyUserLabelFragment = ModifyUserLabelFragment.this;
                         int a2 = modifyUserLabelFragment.a(modifyUserLabelFragment.l);
                         if (a2 < 5) {
-                            userTag.tagList.get(i).checked = 1;
+                            ((UserTag) userTag.tagList.get(i)).checked = 1;
                         } else if (a2 == 5) {
                             AppMethods.d((int) R.string.max_tags_5);
                         }
                     }
-                    ModifyUserLabelFragment.this.a(userTag.tagList.get(i), userTag.tagList);
+                    ModifyUserLabelFragment.this.a((UserTag) userTag.tagList.get(i), userTag.tagList);
                     ModifyUserLabelFragment.this.l.notifyDataSetChanged();
                 }
             }
@@ -231,14 +232,14 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
         this.m.a(new UserLabelAdapterNew.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLabelFragment.4
             @Override // com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.OnItemClickListener
             public void a(UserTag userTag, int i) {
-                if (userTag.tagList.get(i).chooseable) {
-                    if (userTag.tagList.get(i).checked == 1) {
-                        userTag.tagList.get(i).checked = 0;
+                if (((UserTag) userTag.tagList.get(i)).chooseable) {
+                    if (((UserTag) userTag.tagList.get(i)).checked == 1) {
+                        ((UserTag) userTag.tagList.get(i)).checked = 0;
                     } else {
                         ModifyUserLabelFragment modifyUserLabelFragment = ModifyUserLabelFragment.this;
                         int a2 = modifyUserLabelFragment.a(modifyUserLabelFragment.m);
                         if (a2 < 5) {
-                            userTag.tagList.get(i).checked = 1;
+                            ((UserTag) userTag.tagList.get(i)).checked = 1;
                         } else if (a2 == 5) {
                             AppMethods.d((int) R.string.max_tags_5);
                         }
@@ -250,14 +251,14 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
         this.n.a(new UserLabelAdapterNew.OnItemClickListener() { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLabelFragment.5
             @Override // com.soft.blued.ui.setting.adapter.UserLabelAdapterNew.OnItemClickListener
             public void a(UserTag userTag, int i) {
-                if (userTag.tagList.get(i).chooseable) {
-                    if (userTag.tagList.get(i).checked == 1) {
-                        userTag.tagList.get(i).checked = 0;
+                if (((UserTag) userTag.tagList.get(i)).chooseable) {
+                    if (((UserTag) userTag.tagList.get(i)).checked == 1) {
+                        ((UserTag) userTag.tagList.get(i)).checked = 0;
                     } else {
                         ModifyUserLabelFragment modifyUserLabelFragment = ModifyUserLabelFragment.this;
                         int a2 = modifyUserLabelFragment.a(modifyUserLabelFragment.n);
                         if (a2 < 5) {
-                            userTag.tagList.get(i).checked = 1;
+                            ((UserTag) userTag.tagList.get(i)).checked = 1;
                         } else if (a2 == 5) {
                             AppMethods.d((int) R.string.max_tags_5);
                         }
@@ -287,7 +288,7 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
                         i4 = i3;
                         if (i5 < userTag.tagList.size()) {
                             int i6 = i3;
-                            if (userTag.tagList.get(i5).checked == 1) {
+                            if (((UserTag) userTag.tagList.get(i5)).checked == 1) {
                                 i6 = i3 + 1;
                             }
                             i5++;
@@ -302,7 +303,6 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v11, types: [java.lang.Object] */
     public ArrayList<String> a(int i) {
         List arrayList = new ArrayList();
         if (i == 0) {
@@ -334,27 +334,26 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
     }
 
     public void a() {
-        FindHttpUtils.a(this.f33489a, new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLabelFragment.7
+        FindHttpUtils.a(this.f19798a, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<UserTagAll>>(getFragmentActive()) { // from class: com.soft.blued.ui.setting.fragment.ModifyUserLabelFragment.7
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<UserTagAll> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                List<UserTag> list = bluedEntityA.data.get(0).sports;
-                List<UserTag> list2 = bluedEntityA.data.get(0).art;
-                List<UserTag> list3 = bluedEntityA.data.get(0).leisure;
-                List<UserTag> list4 = bluedEntityA.data.get(0).food;
-                List<UserTag> list5 = bluedEntityA.data.get(0).fashion;
-                List<UserTag> list6 = bluedEntityA.data.get(0).collection;
-                List<UserTag> list7 = bluedEntityA.data.get(0).pets;
-                List<UserTag> list8 = bluedEntityA.data.get(0).technology;
-                List<UserTag> list9 = bluedEntityA.data.get(0).books;
-                List<UserTag> list10 = bluedEntityA.data.get(0).movies;
-                List<UserTag> list11 = bluedEntityA.data.get(0).music;
-                List<UserTag> list12 = bluedEntityA.data.get(0).type;
-                List<UserTag> list13 = bluedEntityA.data.get(0).character;
+                List<UserTag> list = ((UserTagAll) bluedEntityA.data.get(0)).sports;
+                List<UserTag> list2 = ((UserTagAll) bluedEntityA.data.get(0)).art;
+                List<UserTag> list3 = ((UserTagAll) bluedEntityA.data.get(0)).leisure;
+                List<UserTag> list4 = ((UserTagAll) bluedEntityA.data.get(0)).food;
+                List<UserTag> list5 = ((UserTagAll) bluedEntityA.data.get(0)).fashion;
+                List<UserTag> list6 = ((UserTagAll) bluedEntityA.data.get(0)).collection;
+                List<UserTag> list7 = ((UserTagAll) bluedEntityA.data.get(0)).pets;
+                List<UserTag> list8 = ((UserTagAll) bluedEntityA.data.get(0)).technology;
+                List<UserTag> list9 = ((UserTagAll) bluedEntityA.data.get(0)).books;
+                List<UserTag> list10 = ((UserTagAll) bluedEntityA.data.get(0)).movies;
+                List<UserTag> list11 = ((UserTagAll) bluedEntityA.data.get(0)).music;
+                List<UserTag> list12 = ((UserTagAll) bluedEntityA.data.get(0)).type;
+                List<UserTag> list13 = ((UserTagAll) bluedEntityA.data.get(0)).character;
                 ModifyUserLabelFragment modifyUserLabelFragment = ModifyUserLabelFragment.this;
                 modifyUserLabelFragment.a(modifyUserLabelFragment.i, list12);
                 ModifyUserLabelFragment modifyUserLabelFragment2 = ModifyUserLabelFragment.this;
@@ -382,28 +381,28 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
                 ModifyUserLabelFragment modifyUserLabelFragment13 = ModifyUserLabelFragment.this;
                 modifyUserLabelFragment13.a(modifyUserLabelFragment13.i, list11);
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.sports), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.sports), 1));
                 arrayList.add(new UserTag(list));
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.art), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.art), 1));
                 arrayList.add(new UserTag(list2));
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.leisure), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.leisure), 1));
                 arrayList.add(new UserTag(list3));
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.food), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.food), 1));
                 arrayList.add(new UserTag(list4));
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.fashion), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.fashion), 1));
                 arrayList.add(new UserTag(list5));
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.collection), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.collection), 1));
                 arrayList.add(new UserTag(list6));
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.pets), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.pets), 1));
                 arrayList.add(new UserTag(list7));
-                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.technology), 1));
+                arrayList.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.technology), 1));
                 arrayList.add(new UserTag(list8));
                 ArrayList arrayList2 = new ArrayList();
-                arrayList2.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.books), 1));
+                arrayList2.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.books), 1));
                 arrayList2.add(new UserTag(list9));
-                arrayList2.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.movies), 1));
+                arrayList2.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.movies), 1));
                 arrayList2.add(new UserTag(list10));
-                arrayList2.add(new UserTag(ModifyUserLabelFragment.this.f33489a.getResources().getString(R.string.music), 1));
+                arrayList2.add(new UserTag(ModifyUserLabelFragment.this.f19798a.getResources().getString(R.string.music), 1));
                 arrayList2.add(new UserTag(list11));
                 ModifyUserLabelFragment.this.k.addData((UserLabelAdapterNew) new UserTag(list12));
                 ModifyUserLabelFragment.this.l.addData((UserLabelAdapterNew) new UserTag(list13));
@@ -411,17 +410,15 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
                 ModifyUserLabelFragment.this.n.addData((Collection) arrayList2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
-                DialogUtils.b(ModifyUserLabelFragment.this.f33490c);
+                DialogUtils.b(ModifyUserLabelFragment.this.f19799c);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
-                DialogUtils.a(ModifyUserLabelFragment.this.f33490c);
+                DialogUtils.a(ModifyUserLabelFragment.this.f19799c);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     public void a(UserTag userTag, List<UserTag> list) {
@@ -591,9 +588,8 @@ public class ModifyUserLabelFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33489a = getActivity();
+        this.f19798a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_user_label_for_modify, viewGroup, false);

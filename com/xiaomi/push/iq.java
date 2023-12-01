@@ -7,7 +7,7 @@ import com.xiaomi.push.ji;
 /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/iq.class */
 public class iq {
     public static short a(Context context, ic icVar) {
-        return a(context, icVar.f713b);
+        return a(context, icVar.f666b);
     }
 
     public static short a(Context context, String str) {
@@ -15,7 +15,7 @@ public class iq {
         int a2 = g.a(context, str, false).a();
         int i2 = ah.b(context) ? 4 : 0;
         int i3 = ah.a(context) ? 8 : 0;
-        if (com.xiaomi.push.service.ax.m12133a(context)) {
+        if (com.xiaomi.push.service.ax.m9083a(context)) {
             i = 16;
         }
         return (short) (a2 + 0 + i2 + i3 + i);

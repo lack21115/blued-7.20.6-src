@@ -31,11 +31,11 @@ import java.util.List;
 public class GroupNotifyAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    public Dialog f30920a;
+    public Dialog f17230a;
     private List<BluedMyGroupNotify> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f30921c;
+    private LayoutInflater f17231c;
     private Context d;
     private LoadOptions e;
     private IRequestHost f;
@@ -46,16 +46,16 @@ public class GroupNotifyAdapter extends BaseAdapter {
     public class AnonymousClass5 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ int f30927a;
+        final /* synthetic */ int f17237a;
         final /* synthetic */ ViewHolder b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ BluedMyGroupNotify f30928c;
+        final /* synthetic */ BluedMyGroupNotify f17238c;
 
         AnonymousClass5(int i, ViewHolder viewHolder, BluedMyGroupNotify bluedMyGroupNotify) {
-            this.f30927a = i;
+            this.f17237a = i;
             this.b = viewHolder;
-            this.f30928c = bluedMyGroupNotify;
+            this.f17238c = bluedMyGroupNotify;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:56:0x01e0  */
@@ -81,7 +81,7 @@ public class GroupNotifyAdapter extends BaseAdapter {
         private RelativeLayout b;
 
         /* renamed from: c  reason: collision with root package name */
-        private LinearLayout f30935c;
+        private LinearLayout f17245c;
         private ImageView d;
         private ImageView e;
         private LinearLayout f;
@@ -99,9 +99,9 @@ public class GroupNotifyAdapter extends BaseAdapter {
 
         public ViewHolder(View view) {
             this.b = (RelativeLayout) view.findViewById(R.id.rl_group_notify);
-            this.d = (ImageView) view.findViewById(2131366011);
+            this.d = (ImageView) view.findViewById(R.id.iv_user_head);
             this.e = (ImageView) view.findViewById(R.id.iv_group_notify_verify_icon);
-            this.f30935c = (LinearLayout) view.findViewById(R.id.ll_group_notify_item);
+            this.f17245c = (LinearLayout) view.findViewById(R.id.ll_group_notify_item);
             this.f = (LinearLayout) view.findViewById(R.id.ll_group_notify_detail_3Lines);
             this.g = (TextView) view.findViewById(R.id.tv_user_name_3Lines);
             this.h = (TextView) view.findViewById(R.id.tv_group_join_name_3Lines);
@@ -121,12 +121,12 @@ public class GroupNotifyAdapter extends BaseAdapter {
         this.f = iRequestHost;
         this.b = list;
         this.d = context;
-        this.f30921c = LayoutInflater.from(context);
+        this.f17231c = LayoutInflater.from(context);
         LoadOptions loadOptions = new LoadOptions();
         this.e = loadOptions;
         loadOptions.d = 2131237310;
         this.e.b = 2131237310;
-        this.f30920a = DialogUtils.a(context);
+        this.f17230a = DialogUtils.a(context);
     }
 
     private void a(final ViewHolder viewHolder, final BluedMyGroupNotify bluedMyGroupNotify, int i) {
@@ -134,7 +134,7 @@ public class GroupNotifyAdapter extends BaseAdapter {
             return;
         }
         viewHolder.n.setVisibility(8);
-        viewHolder.f30935c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.adapter.GroupNotifyAdapter.1
+        viewHolder.f17245c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.adapter.GroupNotifyAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -248,7 +248,7 @@ public class GroupNotifyAdapter extends BaseAdapter {
         if (viewHolder == null || bluedMyGroupNotify == null) {
             return;
         }
-        viewHolder.f30935c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.adapter.GroupNotifyAdapter.6
+        viewHolder.f17245c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.adapter.GroupNotifyAdapter.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -333,7 +333,7 @@ public class GroupNotifyAdapter extends BaseAdapter {
         ViewHolder viewHolder;
         BluedMyGroupNotify bluedMyGroupNotify = this.b.get(i);
         if (view == null) {
-            view = this.f30921c.inflate(R.layout.item_group_notify_show, viewGroup, false);
+            view = this.f17231c.inflate(R.layout.item_group_notify_show, viewGroup, false);
             viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
         } else {

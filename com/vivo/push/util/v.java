@@ -8,12 +8,12 @@ import android.provider.Settings;
 final class v implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private ContentResolver f41146a;
+    private ContentResolver f27455a;
 
     @Override // com.vivo.push.util.d
     public final String a(String str, String str2) {
         try {
-            return Settings.System.getString(this.f41146a, str);
+            return Settings.System.getString(this.f27455a, str);
         } catch (Exception e) {
             e.printStackTrace();
             p.b("SettingsCache", "getString error by ".concat(String.valueOf(str)));
@@ -24,7 +24,7 @@ final class v implements d {
     @Override // com.vivo.push.util.d
     public final boolean a(Context context) {
         if (j.b()) {
-            this.f41146a = context.getContentResolver();
+            this.f27455a = context.getContentResolver();
             return true;
         }
         return false;
@@ -33,7 +33,7 @@ final class v implements d {
     @Override // com.vivo.push.util.d
     public final void b(String str, String str2) {
         try {
-            Settings.System.putString(this.f41146a, str, str2);
+            Settings.System.putString(this.f27455a, str, str2);
         } catch (Exception e) {
             e.printStackTrace();
             p.b("SettingsCache", "putString error by ".concat(String.valueOf(str)));

@@ -43,19 +43,14 @@ import com.blued.android.module.live_china.msg.LiveMsgSendManager;
 import com.blued.android.module.live_china.utils.LiveRoomHttpUtils;
 import com.blued.android.module.live_china.utils.LiveUtils;
 import com.bytedance.applog.tracker.Tracker;
-import com.soft.blued.ui.find.model.UserFindResult;
 import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveAnnounceDialogFragment.class */
 public class LiveAnnounceDialogFragment extends BaseDialogFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f12706a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f12707c;
+    private View c;
     private View d;
     private View e;
     private View f;
@@ -101,7 +96,7 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         }
         toggleButton.setChecked(z);
         this.g.setVisibility(this.k.isChecked() ? 8 : 0);
-        this.f12707c.setVisibility(this.k.isChecked() ? 0 : 8);
+        this.c.setVisibility(this.k.isChecked() ? 0 : 8);
         if (bluedEntity != null && bluedEntity.extra != null && bluedEntity.extra.option_notice != null) {
             this.w.clear();
             this.w.addAll(bluedEntity.extra.option_notice);
@@ -143,11 +138,11 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
     }
 
     private void n() {
-        String a2 = LiveUtils.a(this.v);
-        if (TextUtils.isEmpty(a2)) {
+        String a = LiveUtils.a(this.v);
+        if (TextUtils.isEmpty(a)) {
             this.i.setText(getText(R.string.live_announce_select));
         } else {
-            this.i.setText(a2);
+            this.i.setText(a);
         }
         ToggleButton toggleButton = this.m;
         int i = 0;
@@ -167,7 +162,7 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         if (this.v.fans_group_remind_time <= 0) {
             this.j.setText(getText(R.string.live_announce_select));
         } else {
-            this.j.setText(String.format(this.f12706a.getResources().getString(R.string.live_announce_fans_group_auto_remind_ahead), Integer.valueOf(this.v.fans_group_remind_time)));
+            this.j.setText(String.format(this.a.getResources().getString(R.string.live_announce_fans_group_auto_remind_ahead), Integer.valueOf(this.v.fans_group_remind_time)));
         }
         this.n.setChecked(this.v.fans_group_controller == 1);
         this.f.setVisibility(this.n.isChecked() ? 0 : 8);
@@ -179,13 +174,12 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         for (LiveAnnounceFansModel liveAnnounceFansModel : this.v.fans_group_info) {
             this.q.add(new FitemAnnounceFansGroup(liveAnnounceFansModel));
         }
-        this.o.setLayoutManager(new LinearLayoutManager(this.f12706a) { // from class: com.blued.android.module.live_china.fragment.LiveAnnounceDialogFragment.4
-            @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
+        this.o.setLayoutManager(new LinearLayoutManager(this.a) { // from class: com.blued.android.module.live_china.fragment.LiveAnnounceDialogFragment.4
             public boolean canScrollVertically() {
                 return false;
             }
         });
-        FreedomAdapter freedomAdapter = new FreedomAdapter(this.f12706a, a(), this.q);
+        FreedomAdapter freedomAdapter = new FreedomAdapter(this.a, a(), this.q);
         this.p = freedomAdapter;
         this.o.setAdapter(freedomAdapter);
         this.o.setVisibility(0);
@@ -215,33 +209,33 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         if (liveAnnounceInfoModel == null || liveAnnounceInfoModel.controller != 1) {
             return;
         }
-        String a2 = this.v.live_time_controller == 1 ? LiveUtils.a(this.v) : "";
+        String a = this.v.live_time_controller == 1 ? LiveUtils.a(this.v) : "";
         String str2 = this.v.notice_controller == 1 ? this.v.notice : "";
-        String a3 = this.x.live_time_controller == 1 ? LiveUtils.a(this.x) : "";
+        String a2 = this.x.live_time_controller == 1 ? LiveUtils.a(this.x) : "";
         String str3 = this.x.notice_controller == 1 ? this.x.notice : "";
-        if (TextUtils.equals(a3, a2) && TextUtils.equals(str3, str2)) {
+        if (TextUtils.equals(a2, a) && TextUtils.equals(str3, str2)) {
             return;
         }
-        if (TextUtils.isEmpty(a2) && TextUtils.isEmpty(str2)) {
+        if (TextUtils.isEmpty(a) && TextUtils.isEmpty(str2)) {
             return;
         }
-        if (!TextUtils.isEmpty(a2) && TextUtils.isEmpty(str2)) {
-            str = a2 + "直播";
-        } else if (!TextUtils.isEmpty(a2) || TextUtils.isEmpty(str2)) {
-            str = a2 + "直播，" + this.v.notice;
+        if (!TextUtils.isEmpty(a) && TextUtils.isEmpty(str2)) {
+            str = a + "直播";
+        } else if (!TextUtils.isEmpty(a) || TextUtils.isEmpty(str2)) {
+            str = a + "直播，" + this.v.notice;
         } else {
             str = this.v.notice;
         }
         long g = LiveRoomInfo.a().g();
-        String c2 = LiveRoomInfo.a().c();
+        String c = LiveRoomInfo.a().c();
         String d = LiveRoomInfo.a().d();
         int r = LiveRoomInfo.a().r();
         SessionProfileModel sessionProfileModel = new SessionProfileModel();
-        sessionProfileModel.nickname = c2;
+        sessionProfileModel.nickname = c;
         sessionProfileModel.avatar = d;
         LiveChattingModel copy = LiveChattingModel.copy(ChatHelper.getChattingModelForSendmsg(LiveRoomManager.a().d(), (short) 1, str, sessionProfileModel, "", LiveRoomManager.a().j()));
         copy.fromId = g;
-        copy.fromNickName = c2;
+        copy.fromNickName = c;
         copy.fromRichLevel = r;
         LiveMsgSendManager.a().a(copy);
     }
@@ -253,20 +247,20 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
             dismissAllowingStateLoss();
             return;
         }
-        BluedAlertDialog.Builder builder = new BluedAlertDialog.Builder(this.f12706a);
-        builder.a(this.f12706a.getResources().getString(R.string.live_announce_saved)).a(this.f12706a.getResources().getString(R.string.live_announce_saved_yes), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveAnnounceDialogFragment.7
+        BluedAlertDialog.Builder builder = new BluedAlertDialog.Builder(this.a);
+        builder.a(this.a.getResources().getString(R.string.live_announce_saved)).a(this.a.getResources().getString(R.string.live_announce_saved_yes), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveAnnounceDialogFragment.7
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 LiveAnnounceDialogFragment.this.k();
             }
-        }).b(this.f12706a.getResources().getString(R.string.live_announce_saved_no), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveAnnounceDialogFragment.6
+        }).b(this.a.getResources().getString(R.string.live_announce_saved_no), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.LiveAnnounceDialogFragment.6
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 LiveAnnounceDialogFragment.this.dismissAllowingStateLoss();
             }
-        }).a(false).b(true).h(this.f12706a.getResources().getColor(R.color.syc_dark_BABABA)).a((DialogInterface.OnDismissListener) null).a(0);
+        }).a(false).b(true).h(this.a.getResources().getColor(R.color.syc_dark_BABABA)).a((DialogInterface.OnDismissListener) null).a(0);
         builder.a().show();
     }
 
@@ -274,7 +268,7 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         this.r = new LiveAnnoContentDialogFragment();
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("announce", this.w);
-        bundle.putString(UserFindResult.USER_SORT_BY.SELECTED, this.v.notice);
+        bundle.putString("selected", this.v.notice);
         this.r.a(new LiveAnnoContentDialogFragment.IEventCallback() { // from class: com.blued.android.module.live_china.fragment.LiveAnnounceDialogFragment.2
             @Override // com.blued.android.module.live_china.fragment.LiveAnnoContentDialogFragment.IEventCallback
             public void a(String str) {
@@ -394,9 +388,8 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.copyTypes(TypeTransformer.java:311)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.fixTypes(TypeTransformer.java:226)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:207)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f12706a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_announce, (ViewGroup) null);
         int height = getActivity().getWindowManager().getDefaultDisplay().getHeight();
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -426,7 +419,7 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_announce, viewGroup);
@@ -437,12 +430,12 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         this.h = (TextView) this.b.findViewById(R.id.tv_selectd);
         this.i = (TextView) this.b.findViewById(R.id.tv_selectd_time);
         this.j = (TextView) this.b.findViewById(R.id.tv_selectd_remind_time);
-        this.f12707c = this.b.findViewById(R.id.fl_main);
+        this.c = this.b.findViewById(R.id.fl_main);
         this.k = (ToggleButton) this.b.findViewById(R.id.tglbtn_total_onoff);
         this.l = (ToggleButton) this.b.findViewById(R.id.tglbtn_content_onoff);
         this.m = (ToggleButton) this.b.findViewById(R.id.tglbtn_time_onoff);
         this.n = (ToggleButton) this.b.findViewById(R.id.tglbtn_fans_onoff);
-        this.o = (RecyclerView) this.b.findViewById(R.id.rv_fans_group);
+        this.o = this.b.findViewById(R.id.rv_fans_group);
         this.g = (TextView) this.b.findViewById(R.id.tv_notice_tip);
         this.b.findViewById(R.id.empty_view).setOnClickListener(this);
         this.b.findViewById(R.id.save).setOnClickListener(this);
@@ -461,7 +454,7 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         IEventCallback iEventCallback = this.u;
@@ -488,12 +481,12 @@ public class LiveAnnounceDialogFragment extends BaseDialogFragment implements Vi
         return super.onKey(dialogInterface, i, keyEvent);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onPause() {
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             com.blued.android.framework.utils.ReflectionUtils.a(this, "mDismissed", false);

@@ -64,28 +64,28 @@ public class GeneralTranslateAnimator extends OverlayAnimator {
     public class a implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Point f38979a;
+        public final /* synthetic */ Point f25288a;
         public final /* synthetic */ Point b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ int f38980c;
+        public final /* synthetic */ int f25289c;
 
         public a(Point point, Point point2, int i) {
-            this.f38979a = point;
+            this.f25288a = point;
             this.b = point2;
-            this.f38980c = i;
+            this.f25289c = i;
         }
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            if (this.f38979a.equals(this.b)) {
+            if (this.f25288a.equals(this.b)) {
                 return;
             }
             double parseDouble = Double.parseDouble(String.valueOf(valueAnimator.getAnimatedValue()));
-            double d = this.f38979a.x;
-            double d2 = ((this.b.x - d) * parseDouble) / GeneralTranslateAnimator.this.mDistances[this.f38980c];
-            double d3 = this.f38979a.y;
-            double d4 = ((this.b.y - d3) * parseDouble) / GeneralTranslateAnimator.this.mDistances[this.f38980c];
+            double d = this.f25288a.x;
+            double d2 = ((this.b.x - d) * parseDouble) / GeneralTranslateAnimator.this.mDistances[this.f25289c];
+            double d3 = this.f25288a.y;
+            double d4 = ((this.b.y - d3) * parseDouble) / GeneralTranslateAnimator.this.mDistances[this.f25289c];
             if (GeneralTranslateAnimator.this.mAnimatorModel == null) {
                 return;
             }

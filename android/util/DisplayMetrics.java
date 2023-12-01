@@ -2,7 +2,6 @@ package android.util;
 
 import android.graphics.Bitmap;
 import android.os.SystemProperties;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/util/DisplayMetrics.class */
 public class DisplayMetrics {
@@ -98,6 +97,6 @@ public class DisplayMetrics {
     }
 
     public String toString() {
-        return "DisplayMetrics{density=" + this.density + ", width=" + this.widthPixels + ", height=" + this.heightPixels + ", scaledDensity=" + this.scaledDensity + ", xdpi=" + this.xdpi + ", ydpi=" + this.ydpi + i.d;
+        return "DisplayMetrics{density=" + this.density + ", width=" + this.widthPixels + ", height=" + this.heightPixels + ", scaledDensity=" + this.scaledDensity + ", xdpi=" + this.xdpi + ", ydpi=" + this.ydpi + "}";
     }
 }

@@ -1,5 +1,6 @@
 package io.grpc.okhttp.internal;
 
+import com.anythink.core.common.k.f;
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -172,7 +173,7 @@ public final class Util {
 
     public static String md5Hex(String str) {
         try {
-            return ByteString.of(MessageDigest.getInstance("MD5").digest(str.getBytes("UTF-8"))).hex();
+            return ByteString.of(MessageDigest.getInstance(f.a).digest(str.getBytes("UTF-8"))).hex();
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         } catch (NoSuchAlgorithmException e2) {

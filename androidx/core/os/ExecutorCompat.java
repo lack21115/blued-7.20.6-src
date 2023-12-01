@@ -8,23 +8,22 @@ import java.util.concurrent.RejectedExecutionException;
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/os/ExecutorCompat.class */
 public final class ExecutorCompat {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/os/ExecutorCompat$HandlerExecutor.class */
-    public static class HandlerExecutor implements Executor {
+    static class HandlerExecutor implements Executor {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Handler f2507a;
+        private final Handler f2459a;
 
         HandlerExecutor(Handler handler) {
-            this.f2507a = (Handler) Preconditions.checkNotNull(handler);
+            this.f2459a = (Handler) Preconditions.checkNotNull(handler);
         }
 
         @Override // java.util.concurrent.Executor
         public void execute(Runnable runnable) {
-            if (this.f2507a.post((Runnable) Preconditions.checkNotNull(runnable))) {
+            if (this.f2459a.post((Runnable) Preconditions.checkNotNull(runnable))) {
                 return;
             }
-            throw new RejectedExecutionException(this.f2507a + " is shutting down");
+            throw new RejectedExecutionException(this.f2459a + " is shutting down");
         }
     }
 

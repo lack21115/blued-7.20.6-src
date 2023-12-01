@@ -2,7 +2,6 @@ package com.blued.android.module.live_china.fragment;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -74,12 +73,8 @@ import kotlin.ranges.RangesKt;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveVipDialogFragment.class */
 public final class LiveVipDialogFragment extends BaseDialogFragment implements OnClickCallback {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13281a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f13282c;
+    public static final Companion a = new Companion(null);
+    private int c;
     private VipDataModel d;
     private VipCardAdapter e;
     private FreedomAdapter g;
@@ -126,19 +121,16 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveVipDialogFragment$VipCardAdapter.class */
     public static final class VipCardAdapter extends PagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f13283a;
+        private final Context a;
         private final ArrayList<View> b;
 
         public VipCardAdapter(Context mContext, ArrayList<View> list) {
             Intrinsics.e(mContext, "mContext");
             Intrinsics.e(list, "list");
-            this.f13283a = mContext;
+            this.a = mContext;
             this.b = list;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
@@ -147,12 +139,10 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
             }
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             container.addView(this.b.get(i));
@@ -161,7 +151,6 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object object) {
             Intrinsics.e(view, "view");
             Intrinsics.e(object, "object");
@@ -305,11 +294,11 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
     public static final void a(LiveVipDialogFragment this$0, TextView currentLevelTv) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(currentLevelTv, "$currentLevelTv");
-        ViewGroup.LayoutParams layoutParams = this$0.e().t.getLayoutParams();
+        ConstraintLayout.LayoutParams layoutParams = this$0.e().t.getLayoutParams();
         if (layoutParams == null) {
             throw new NullPointerException("null cannot be cast to non-null type androidx.constraintlayout.widget.ConstraintLayout.LayoutParams");
         }
-        ConstraintLayout.LayoutParams layoutParams2 = (ConstraintLayout.LayoutParams) layoutParams;
+        ConstraintLayout.LayoutParams layoutParams2 = layoutParams;
         layoutParams2.width = currentLevelTv.getWidth();
         layoutParams2.height = currentLevelTv.getHeight();
         this$0.e().t.setTranslationX(currentLevelTv.getLeft());
@@ -355,7 +344,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
     public static final void a(LiveVipDialogFragment this$0, Ref.IntRef intRef) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(intRef, "$default");
-        this$0.onClick(null, intRef.f42543a, null);
+        this$0.onClick(null, intRef.a, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -465,15 +454,12 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
         e().L.setOffscreenPageLimit(2);
         e().L.setPageTransformer(true, new LiveVipCardTransformer(DisplayUtil.a(requireContext(), 40.0f)));
         e().L.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveVipDialogFragment$getDataSucceed$3$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 VipDataModel vipDataModel13;
                 vipDataModel13 = LiveVipDialogFragment.this.d;
@@ -570,10 +556,10 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
             this$0.a(it.getInfo_btn_url_online(), it.getInfo_btn_url_test(), it.getLive_suffix(), false);
         } else if (info_btn_type != 3) {
         } else {
-            if (this$0.f13282c == 0 && (arguments = this$0.getArguments()) != null) {
-                this$0.f13282c = arguments.getInt("from", -1);
+            if (this$0.c == 0 && (arguments = this$0.getArguments()) != null) {
+                this$0.c = arguments.getInt("from", -1);
             }
-            int i = this$0.f13282c;
+            int i = this$0.c;
             if (i > 0) {
                 if (i == 1) {
                     LiveRoomInfo.a().a(this$0.requireContext(), String.valueOf(it.getInfo_btn_uid()), it.getInfo_btn_nickname(), "", 0, 1);
@@ -589,16 +575,16 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
 
     private final void a(String str, String str2, String str3, boolean z) {
         Bundle arguments;
-        if (this.f13282c == 0 && (arguments = getArguments()) != null) {
-            this.f13282c = arguments.getInt("from", -1);
+        if (this.c == 0 && (arguments = getArguments()) != null) {
+            this.c = arguments.getInt("from", -1);
         }
-        if (this.f13282c <= 0) {
+        if (this.c <= 0) {
             return;
         }
         if (!LiveRoomInfo.a().j()) {
             str = str2;
         }
-        if (this.f13282c == 1) {
+        if (this.c == 1) {
             LiveRoomInfo.a().a(requireContext(), str);
             return;
         }
@@ -680,7 +666,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
     public static final void b(LiveVipDialogFragment this$0, Ref.IntRef intRef) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(intRef, "$default");
-        this$0.onClick(null, intRef.f42543a, null);
+        this$0.onClick(null, intRef.a, null);
     }
 
     private final void b(final VipModel vipModel) {
@@ -700,22 +686,22 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
             final Ref.IntRef intRef = new Ref.IntRef();
             FitemVipPrivilege d = d();
             if (d != null && (g = d.g()) != null) {
-                intRef.f42543a = g.intValue();
+                intRef.a = g.intValue();
             }
             this.f.clear();
             for (VipPrivilegeModel vipPrivilegeModel : privileges) {
                 this.f.add(new FitemVipPrivilege(vipPrivilegeModel));
             }
-            if (intRef.f42543a < 0 || intRef.f42543a > privileges.size() - 1) {
+            if (intRef.a < 0 || intRef.a > privileges.size() - 1) {
                 ArrayList<FitemVipPrivilege> arrayList = this.f;
                 a(arrayList.get(arrayList.size() - 1));
                 privileges.size();
             } else {
-                a(this.f.get(intRef.f42543a));
+                a(this.f.get(intRef.a));
             }
             FreedomAdapter freedomAdapter = this.g;
             if (freedomAdapter != null) {
-                freedomAdapter.b("lightItemPosition", Integer.valueOf(intRef.f42543a));
+                freedomAdapter.b("lightItemPosition", Integer.valueOf(intRef.a));
             }
             h();
             e().s.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveVipDialogFragment$E2cmL0uNP0mZLQePxoy1CksDpH8
@@ -729,7 +715,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
         int size = this.f.size();
         int size2 = privileges.size();
         final Ref.IntRef intRef2 = new Ref.IntRef();
-        intRef2.f42543a = -1;
+        intRef2.a = -1;
         FitemVipPrivilege d2 = d();
         if (d2 != null && (g2 = d2.g()) != null) {
             int intValue = g2.intValue();
@@ -737,7 +723,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
             if (intValue > privileges.size() - 1) {
                 i = privileges.size() - 1;
             }
-            intRef2.f42543a = i;
+            intRef2.a = i;
         }
         int i2 = 0;
         while (i2 < size - size2) {
@@ -755,7 +741,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
                 }
             }
         }
-        if (intRef2.f42543a >= 0) {
+        if (intRef2.a >= 0) {
             a((FitemVipPrivilege) null);
         }
         e().s.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveVipDialogFragment$s87FKye7d7ppHbliyFugSYv_M8A
@@ -769,7 +755,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(LiveVipDialogFragment this$0) {
         Intrinsics.e(this$0, "this$0");
-        StatusBarHelper.a((Activity) this$0.getActivity(), false);
+        StatusBarHelper.a(this$0.getActivity(), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -795,12 +781,12 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
         Bundle arguments = getArguments();
         if (arguments != null) {
             int i = arguments.getInt("from", -1);
-            this.f13282c = i;
+            this.c = i;
             if (i > 0) {
                 ImageView imageView = e().j;
                 Intrinsics.c(imageView, "vb.ivInfo");
                 BluedViewExKt.b(imageView);
-                if (this.f13282c == 1) {
+                if (this.c == 1) {
                     e().j.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveVipDialogFragment$m6r2ltQflfqvuK-oYfwuAaMuuJI
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -873,7 +859,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
     /* JADX INFO: Access modifiers changed from: private */
     public static final void f(LiveVipDialogFragment this$0) {
         Intrinsics.e(this$0, "this$0");
-        this$0.b(RangesKt.c(this$0.e().r.getHeight(), this$0.e().f11828a.getHeight()));
+        this$0.b(RangesKt.c(this$0.e().r.getHeight(), this$0.e().a.getHeight()));
     }
 
     private final void g() {
@@ -903,7 +889,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
     /* JADX INFO: Access modifiers changed from: private */
     public static final void g(LiveVipDialogFragment this$0) {
         Intrinsics.e(this$0, "this$0");
-        this$0.b(RangesKt.c(this$0.e().r.getHeight(), this$0.e().f11828a.getHeight()));
+        this$0.b(RangesKt.c(this$0.e().r.getHeight(), this$0.e().a.getHeight()));
     }
 
     private final void h() {
@@ -965,7 +951,6 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.module.live_china.fragment.LiveVipDialogFragment.onClick(android.view.View, int, com.blued.android.module.common.utils.freedom.BaseViewHolder):void");
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;
@@ -980,7 +965,7 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
         }
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
-        dialog.setContentView(e().getRoot(), new ViewGroup.LayoutParams(num2.intValue(), -1));
+        dialog.setContentView((View) e().getRoot(), new ViewGroup.LayoutParams(num2.intValue(), -1));
         Window window = dialog.getWindow();
         Intrinsics.a(window);
         window.setBackgroundDrawable(new ColorDrawable(0));
@@ -999,16 +984,15 @@ public final class LiveVipDialogFragment extends BaseDialogFragment implements O
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, android.content.DialogInterface.OnDismissListener
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDismiss(DialogInterface dialog) {
         Intrinsics.e(dialog, "dialog");
-        if (this.f13282c == 1) {
-            StatusBarHelper.a((Activity) getActivity(), true);
+        if (this.c == 1) {
+            StatusBarHelper.a(getActivity(), true);
         }
         super.onDismiss(dialog);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

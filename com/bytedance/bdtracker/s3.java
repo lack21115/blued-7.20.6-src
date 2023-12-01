@@ -9,7 +9,7 @@ public interface s3 {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f21305a;
+        public String f7699a;
         public boolean b;
     }
 

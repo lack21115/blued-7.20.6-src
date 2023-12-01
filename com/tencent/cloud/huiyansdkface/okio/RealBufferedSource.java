@@ -6,8 +6,9 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okio/RealBufferedSource.class */
-final class RealBufferedSource implements BufferedSource {
+public final class RealBufferedSource implements BufferedSource {
     public final Buffer buffer = new Buffer();
     boolean closed;
     public final Source source;

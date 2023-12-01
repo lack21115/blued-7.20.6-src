@@ -56,9 +56,7 @@ public final class LiveOnlineUserFragment extends MvpFragment<LiveOnLineUserPres
             return new LiveOnlineUserAdapter(requireContext, fragmentActive, false);
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f13086c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<DialogLiveOnlineUserFooterviewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineUserFragment$onlineUserMaxTipsBinding$2
+    private final Lazy c = LazyKt.a(LazyThreadSafetyMode.NONE, new Function0<DialogLiveOnlineUserFooterviewBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveOnlineUserFragment$onlineUserMaxTipsBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -107,7 +105,7 @@ public final class LiveOnlineUserFragment extends MvpFragment<LiveOnLineUserPres
                     b = LiveOnlineUserFragment.this.b();
                     b.loadMoreComplete();
                     u = LiveOnlineUserFragment.this.u();
-                    u.f12108c.j();
+                    u.c.g();
                     LiveOnlineUserEntityExtra liveOnlineUserEntityExtra = data.extra;
                     if (liveOnlineUserEntityExtra != null) {
                         LiveOnlineUserFragment liveOnlineUserFragment = LiveOnlineUserFragment.this;
@@ -116,7 +114,7 @@ public final class LiveOnlineUserFragment extends MvpFragment<LiveOnLineUserPres
                         b3.setEnableLoadMore(liveOnlineUserEntityExtra.hasmore == 1);
                         if (i2 == 1) {
                             t = liveOnlineUserFragment.t();
-                            t.f11794a.setText(liveOnlineUserEntityExtra.getFooter_desc());
+                            t.a.setText(liveOnlineUserEntityExtra.getFooter_desc());
                             LiveEventBus.get("update_online_user_count", LiveOnLineUserCountModel.class).post(new LiveOnLineUserCountModel(liveOnlineUserEntityExtra.getTitle(), liveOnlineUserEntityExtra.getNoble_title()));
                         }
                         b4 = liveOnlineUserFragment.b();
@@ -131,7 +129,7 @@ public final class LiveOnlineUserFragment extends MvpFragment<LiveOnLineUserPres
                     arrayList2 = LiveOnlineUserFragment.this.e;
                     if (arrayList2.size() == 0) {
                         u2 = LiveOnlineUserFragment.this.u();
-                        LinearLayout linearLayout = u2.f12107a;
+                        LinearLayout linearLayout = u2.a;
                         Intrinsics.c(linearLayout, "binding.llNoOnlineUserEmptyView");
                         BluedViewExKt.b(linearLayout);
                     }
@@ -179,7 +177,7 @@ public final class LiveOnlineUserFragment extends MvpFragment<LiveOnLineUserPres
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogLiveOnlineUserFooterviewBinding t() {
-        return (DialogLiveOnlineUserFooterviewBinding) this.f13086c.getValue();
+        return (DialogLiveOnlineUserFooterviewBinding) this.c.getValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -194,29 +192,26 @@ public final class LiveOnlineUserFragment extends MvpFragment<LiveOnLineUserPres
         u.b.setAdapter(b());
         b().setNewData(this.e);
         b().addFooterView(t().getRoot());
-        u.f12108c.l(false);
-        u.f12108c.i();
-        u.f12108c.a(new OnRefreshListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserFragment$gbyDHh8suiotxxNnsM99d6lqtEY
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
+        u.c.b(false);
+        u.c.i();
+        u.c.a(new OnRefreshListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserFragment$gbyDHh8suiotxxNnsM99d6lqtEY
             public final void onRefresh(RefreshLayout refreshLayout) {
                 LiveOnlineUserFragment.a(LiveOnlineUserFragment.this, refreshLayout);
             }
         });
         b().setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserFragment$p_AdM0h9PrRPBWGIb20sydPG1mQ
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.RequestLoadMoreListener
             public final void onLoadMoreRequested() {
                 LiveOnlineUserFragment.e(LiveOnlineUserFragment.this);
             }
         }, u.b);
         b().setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveOnlineUserFragment$v9uhICLT4Ih_XbPyIT-whmMr26Y
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public final void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 LiveOnlineUserFragment.a(LiveOnlineUserFragment.this, baseQuickAdapter, view, i);
             }
         });
     }
 
-    @Override // com.blued.android.module.ui.mvp.fragment.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.ui.mvp.fragment.MvpFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         a();
@@ -225,12 +220,12 @@ public final class LiveOnlineUserFragment extends MvpFragment<LiveOnLineUserPres
         return root;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         SmartRefreshLayout smartRefreshLayout;
         super.onResume();
         ArrayList<LiveOnlineUserEntity> arrayList = this.e;
-        if (!(arrayList == null || arrayList.isEmpty()) || (smartRefreshLayout = u().f12108c) == null) {
+        if (!(arrayList == null || arrayList.isEmpty()) || (smartRefreshLayout = u().c) == null) {
             return;
         }
         smartRefreshLayout.i();

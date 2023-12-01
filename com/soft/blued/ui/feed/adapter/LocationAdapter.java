@@ -18,11 +18,11 @@ import java.util.List;
 public class LocationAdapter extends BaseAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f29861a;
+    private Context f16171a;
     private LayoutInflater b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<PositionPOIModel> f29862c;
+    private List<PositionPOIModel> f16172c;
     private PositonItemClickListener d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/feed/adapter/LocationAdapter$PositonItemClickListener.class */
@@ -34,11 +34,11 @@ public class LocationAdapter extends BaseAdapter {
     class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public LinearLayout f29863a;
+        public LinearLayout f16173a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public TextView f29864c;
+        public TextView f16174c;
         public ImageView d;
         public TextView e;
 
@@ -53,11 +53,11 @@ public class LocationAdapter extends BaseAdapter {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f29862c.size()) {
+            if (i3 >= this.f16172c.size()) {
                 break;
             }
             if (i3 != i) {
-                this.f29862c.get(i3).mark_visible = false;
+                this.f16172c.get(i3).mark_visible = false;
             }
             i2 = i3 + 1;
         }
@@ -70,7 +70,7 @@ public class LocationAdapter extends BaseAdapter {
 
     @Override // android.widget.Adapter
     public int getCount() {
-        return this.f29862c.size();
+        return this.f16172c.size();
     }
 
     @Override // android.widget.Adapter
@@ -90,9 +90,9 @@ public class LocationAdapter extends BaseAdapter {
         if (view == null) {
             viewHolder = new ViewHolder();
             view2 = this.b.inflate(R.layout.item_location_poi, (ViewGroup) null);
-            viewHolder.f29863a = (LinearLayout) view2.findViewById(R.id.ll_item);
+            viewHolder.f16173a = (LinearLayout) view2.findViewById(R.id.ll_item);
             viewHolder.b = (TextView) view2.findViewById(R.id.tv_poi_shortname);
-            viewHolder.f29864c = (TextView) view2.findViewById(R.id.tv_poi_address);
+            viewHolder.f16174c = (TextView) view2.findViewById(R.id.tv_poi_address);
             viewHolder.d = (ImageView) view2.findViewById(R.id.img_choosen_mark);
             viewHolder.e = (TextView) view2.findViewById(2131371289);
             view2.setTag(viewHolder);
@@ -100,33 +100,33 @@ public class LocationAdapter extends BaseAdapter {
             view2 = view;
             viewHolder = (ViewHolder) view.getTag();
         }
-        final PositionPOIModel positionPOIModel = this.f29862c.get(i);
+        final PositionPOIModel positionPOIModel = this.f16172c.get(i);
         viewHolder.b.setText(positionPOIModel.name);
         if (positionPOIModel.mark_visible) {
             viewHolder.d.setVisibility(0);
         } else {
             viewHolder.d.setVisibility(4);
         }
-        viewHolder.f29863a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.adapter.-$$Lambda$LocationAdapter$G2L7Qi_8EeIyQJvXLYvSbbqYJT0
+        viewHolder.f16173a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.adapter.-$$Lambda$LocationAdapter$G2L7Qi_8EeIyQJvXLYvSbbqYJT0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view3) {
                 LocationAdapter.this.a(positionPOIModel, i, view3);
             }
         });
         if (i == 0) {
-            viewHolder.b.setTextColor(this.f29861a.getResources().getColor(2131101301));
+            viewHolder.b.setTextColor(this.f16171a.getResources().getColor(2131101301));
             viewHolder.e.setVisibility(8);
         } else {
-            viewHolder.b.setTextColor(this.f29861a.getResources().getColor(2131101287));
+            viewHolder.b.setTextColor(this.f16171a.getResources().getColor(2131101287));
             viewHolder.e.setVisibility(0);
         }
         if (TextUtils.isEmpty(positionPOIModel.address)) {
-            viewHolder.f29864c.setText("");
-            viewHolder.f29864c.setVisibility(8);
+            viewHolder.f16174c.setText("");
+            viewHolder.f16174c.setVisibility(8);
             return view2;
         }
-        viewHolder.f29864c.setText(positionPOIModel.address);
-        viewHolder.f29864c.setVisibility(0);
+        viewHolder.f16174c.setText(positionPOIModel.address);
+        viewHolder.f16174c.setVisibility(0);
         return view2;
     }
 }

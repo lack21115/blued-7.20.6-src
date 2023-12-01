@@ -7,16 +7,16 @@ import java.util.Locale;
 public final class TextDirectionHeuristicsCompat {
     public static final TextDirectionHeuristicCompat LTR = new TextDirectionHeuristicInternal(null, false);
     public static final TextDirectionHeuristicCompat RTL = new TextDirectionHeuristicInternal(null, true);
-    public static final TextDirectionHeuristicCompat FIRSTSTRONG_LTR = new TextDirectionHeuristicInternal(FirstStrong.f2575a, false);
-    public static final TextDirectionHeuristicCompat FIRSTSTRONG_RTL = new TextDirectionHeuristicInternal(FirstStrong.f2575a, true);
-    public static final TextDirectionHeuristicCompat ANYRTL_LTR = new TextDirectionHeuristicInternal(AnyStrong.f2574a, false);
-    public static final TextDirectionHeuristicCompat LOCALE = TextDirectionHeuristicLocale.f2578a;
+    public static final TextDirectionHeuristicCompat FIRSTSTRONG_LTR = new TextDirectionHeuristicInternal(FirstStrong.f2527a, false);
+    public static final TextDirectionHeuristicCompat FIRSTSTRONG_RTL = new TextDirectionHeuristicInternal(FirstStrong.f2527a, true);
+    public static final TextDirectionHeuristicCompat ANYRTL_LTR = new TextDirectionHeuristicInternal(AnyStrong.f2526a, false);
+    public static final TextDirectionHeuristicCompat LOCALE = TextDirectionHeuristicLocale.f2530a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/text/TextDirectionHeuristicsCompat$AnyStrong.class */
     static class AnyStrong implements TextDirectionAlgorithm {
 
         /* renamed from: a  reason: collision with root package name */
-        static final AnyStrong f2574a = new AnyStrong(true);
+        static final AnyStrong f2526a = new AnyStrong(true);
         private final boolean b;
 
         private AnyStrong(boolean z) {
@@ -34,7 +34,7 @@ public final class TextDirectionHeuristicsCompat {
     static class FirstStrong implements TextDirectionAlgorithm {
 
         /* renamed from: a  reason: collision with root package name */
-        static final FirstStrong f2575a = new FirstStrong();
+        static final FirstStrong f2527a = new FirstStrong();
 
         private FirstStrong() {
         }
@@ -65,14 +65,14 @@ public final class TextDirectionHeuristicsCompat {
     static abstract class TextDirectionHeuristicImpl implements TextDirectionHeuristicCompat {
 
         /* renamed from: a  reason: collision with root package name */
-        private final TextDirectionAlgorithm f2576a;
+        private final TextDirectionAlgorithm f2528a;
 
         TextDirectionHeuristicImpl(TextDirectionAlgorithm textDirectionAlgorithm) {
-            this.f2576a = textDirectionAlgorithm;
+            this.f2528a = textDirectionAlgorithm;
         }
 
         private boolean a(CharSequence charSequence, int i, int i2) {
-            int checkRtl = this.f2576a.checkRtl(charSequence, i, i2);
+            int checkRtl = this.f2528a.checkRtl(charSequence, i, i2);
             if (checkRtl != 0) {
                 if (checkRtl != 1) {
                     return a();
@@ -89,7 +89,7 @@ public final class TextDirectionHeuristicsCompat {
             if (charSequence == null || i < 0 || i2 < 0 || charSequence.length() - i2 < i) {
                 throw new IllegalArgumentException();
             }
-            return this.f2576a == null ? a() : a(charSequence, i, i2);
+            return this.f2528a == null ? a() : a(charSequence, i, i2);
         }
 
         @Override // androidx.core.text.TextDirectionHeuristicCompat
@@ -102,16 +102,16 @@ public final class TextDirectionHeuristicsCompat {
     static class TextDirectionHeuristicInternal extends TextDirectionHeuristicImpl {
 
         /* renamed from: a  reason: collision with root package name */
-        private final boolean f2577a;
+        private final boolean f2529a;
 
         TextDirectionHeuristicInternal(TextDirectionAlgorithm textDirectionAlgorithm, boolean z) {
             super(textDirectionAlgorithm);
-            this.f2577a = z;
+            this.f2529a = z;
         }
 
         @Override // androidx.core.text.TextDirectionHeuristicsCompat.TextDirectionHeuristicImpl
         protected boolean a() {
-            return this.f2577a;
+            return this.f2529a;
         }
     }
 
@@ -119,7 +119,7 @@ public final class TextDirectionHeuristicsCompat {
     static class TextDirectionHeuristicLocale extends TextDirectionHeuristicImpl {
 
         /* renamed from: a  reason: collision with root package name */
-        static final TextDirectionHeuristicLocale f2578a = new TextDirectionHeuristicLocale();
+        static final TextDirectionHeuristicLocale f2530a = new TextDirectionHeuristicLocale();
 
         TextDirectionHeuristicLocale() {
             super(null);

@@ -1,5 +1,7 @@
 package com.kwai.sodler.lib.ext;
 
+import com.tencent.tinker.loader.shareutil.ShareConstants;
+
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/sodler/lib/ext/c.class */
 public final class c {
     private final String aKG;
@@ -27,7 +29,7 @@ public final class c {
         private int aKt = 3;
         private String aKG = "sodler";
         private String aKH = "code-cache";
-        private String aKI = "lib";
+        private String aKI = ShareConstants.SO_PATH;
         private String aKJ = "temp";
         private String aKL = "base-1.apk";
         private String aKK = ".tmp";

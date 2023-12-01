@@ -27,10 +27,10 @@ public class BluedCameraView extends CameraView implements PermissionCallbacks {
     private static final int[] g = {3, 0, 1};
 
     /* renamed from: a  reason: collision with root package name */
-    CameraView.Callback f33043a;
+    CameraView.Callback f19352a;
 
     /* renamed from: c  reason: collision with root package name */
-    private OperationCallback f33044c;
+    private OperationCallback f19353c;
     private Handler d;
     private float e;
     private boolean f;
@@ -63,15 +63,15 @@ public class BluedCameraView extends CameraView implements PermissionCallbacks {
             if (AppInfo.m()) {
                 Logger.c(BluedCameraView.b, "onPictureTaken ", Integer.valueOf(bArr == null ? 0 : bArr.length));
             }
-            if (BluedCameraView.this.f33044c != null) {
-                BluedCameraView.this.f33044c.d();
+            if (BluedCameraView.this.f19353c != null) {
+                BluedCameraView.this.f19353c.d();
             }
             if (cameraView != null && bArr != null && bArr.length > 0) {
                 BluedCameraView.this.getBgHandler().post(new Runnable() { // from class: com.soft.blued.ui.photo.camera.view.BluedCameraView.1.1
                     @Override // java.lang.Runnable
                     public void run() {
                         byte[] bArr2 = bArr;
-                        final String absolutePath = CameraImageUtils.a(bArr2, (AppInfo.d().getExternalFilesDir(Environment.DIRECTORY_PICTURES) + CameraContents.f28312c + CameraContents.d.format(new Date())) + ".jpg").getAbsolutePath();
+                        final String absolutePath = CameraImageUtils.a(bArr2, (AppInfo.d().getExternalFilesDir(Environment.DIRECTORY_PICTURES) + CameraContents.f14622c + CameraContents.d.format(new Date())) + ".jpg").getAbsolutePath();
                         Houyi.a().a(absolutePath).b();
                         File a2 = CameraImageUtils.a(CameraImageUtils.a(absolutePath, BluedCameraView.this.e), absolutePath);
                         CameraImageUtils.a(absolutePath);
@@ -79,15 +79,15 @@ public class BluedCameraView extends CameraView implements PermissionCallbacks {
                         AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.photo.camera.view.BluedCameraView.1.1.1
                             @Override // java.lang.Runnable
                             public void run() {
-                                if (BluedCameraView.this.f33044c != null) {
-                                    BluedCameraView.this.f33044c.a(z, absolutePath);
+                                if (BluedCameraView.this.f19353c != null) {
+                                    BluedCameraView.this.f19353c.a(z, absolutePath);
                                 }
                             }
                         });
                     }
                 });
-            } else if (BluedCameraView.this.f33044c != null) {
-                BluedCameraView.this.f33044c.a(false, null);
+            } else if (BluedCameraView.this.f19353c != null) {
+                BluedCameraView.this.f19353c.a(false, null);
             }
         }
     }
@@ -113,7 +113,7 @@ public class BluedCameraView extends CameraView implements PermissionCallbacks {
         super(context, attributeSet, i);
         this.e = 1.0f;
         this.f = false;
-        this.f33043a = new AnonymousClass1();
+        this.f19352a = new AnonymousClass1();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.BluedCameraView, i, 0);
         String string = obtainStyledAttributes.getString(0);
         obtainStyledAttributes.recycle();
@@ -125,7 +125,7 @@ public class BluedCameraView extends CameraView implements PermissionCallbacks {
     }
 
     private void f() {
-        addCallback(this.f33043a);
+        addCallback(this.f19352a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -138,19 +138,17 @@ public class BluedCameraView extends CameraView implements PermissionCallbacks {
         return this.d;
     }
 
-    @Override // com.blued.android.framework.permission.PermissionCallbacks
     public void U_() {
         start();
     }
 
     public void a(OperationCallback operationCallback) {
-        this.f33044c = operationCallback;
+        this.f19353c = operationCallback;
         PermissionUtils.b(this);
     }
 
-    @Override // com.blued.android.framework.permission.PermissionCallbacks
     public void a(String[] strArr) {
-        OperationCallback operationCallback = this.f33044c;
+        OperationCallback operationCallback = this.f19353c;
         if (operationCallback != null) {
             operationCallback.b();
         }

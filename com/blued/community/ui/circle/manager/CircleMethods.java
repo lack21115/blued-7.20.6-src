@@ -43,7 +43,6 @@ import com.blued.community.utils.UserInfoUtils;
 import com.blued.das.client.feed.FeedProtos;
 import com.blued.das.message.MessageProtos;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.hms.ads.jsb.constant.Constant;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import java.util.Locale;
 
@@ -53,9 +52,7 @@ public class CircleMethods {
     /* renamed from: com.blued.community.ui.circle.manager.CircleMethods$6  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/manager/CircleMethods$6.class */
     class AnonymousClass6 extends BluedUIHttpResponse<BluedEntityA<CircleDetailsModel>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CircleJoinState f19318a;
+        final /* synthetic */ CircleJoinState a;
 
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -69,37 +66,35 @@ public class CircleMethods {
             if (z) {
                 return;
             }
-            CircleMethods.a(this.f19318a);
+            CircleMethods.a(this.a);
         }
     }
 
     /* renamed from: com.blued.community.ui.circle.manager.CircleMethods$8  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/manager/CircleMethods$8.class */
     static /* synthetic */ class AnonymousClass8 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f19320a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[FeedProtos.NoteSource.values().length];
-            f19320a = iArr;
+            a = iArr;
             try {
                 iArr[FeedProtos.NoteSource.CITY_NOTE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f19320a[FeedProtos.NoteSource.CITY_TIME_NOTE.ordinal()] = 2;
+                a[FeedProtos.NoteSource.CITY_TIME_NOTE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f19320a[FeedProtos.NoteSource.FEED_RECOMMEND_LIST.ordinal()] = 3;
+                a[FeedProtos.NoteSource.FEED_RECOMMEND_LIST.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f19320a[FeedProtos.NoteSource.CIRCLE_RECOMMEND_LIST.ordinal()] = 4;
+                a[FeedProtos.NoteSource.CIRCLE_RECOMMEND_LIST.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -179,7 +174,7 @@ public class CircleMethods {
     }
 
     public static String a(FeedProtos.NoteSource noteSource) {
-        int i = AnonymousClass8.f19320a[noteSource.ordinal()];
+        int i = AnonymousClass8.a[noteSource.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3 || i == 4) {
@@ -311,7 +306,6 @@ public class CircleMethods {
 
     public static void a(LifecycleOwner lifecycleOwner, final ICircleDataObserver iCircleDataObserver) {
         LiveEventBus.get("circle_join_state", CircleJoinState.class).observe(lifecycleOwner, new Observer<CircleJoinState>() { // from class: com.blued.community.ui.circle.manager.CircleMethods.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(CircleJoinState circleJoinState) {
                 if (circleJoinState == null) {
@@ -410,16 +404,16 @@ public class CircleMethods {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        String a2 = EncryptTool.a(str);
-        String c2 = UserInfoUtils.c();
-        if (str.equals(c2) || a2.equals(c2)) {
+        String a = EncryptTool.a(str);
+        String c = UserInfoUtils.c();
+        if (str.equals(c) || a.equals(c)) {
             z = true;
         }
         return z;
     }
 
     public static SpannableStringBuilder b(BluedIngSelfFeed bluedIngSelfFeed, CharSequence charSequence) {
-        if (TextUtils.equals(bluedIngSelfFeed.note_from, Constant.MAP_KEY_TOP)) {
+        if (TextUtils.equals(bluedIngSelfFeed.note_from, "top")) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("top " + ((Object) charSequence));
             Drawable drawable = AppInfo.d().getResources().getDrawable(R.drawable.circle_top_icon);
             drawable.setBounds(0, 0, AppMethods.a(32), AppMethods.a(18));
@@ -430,7 +424,7 @@ public class CircleMethods {
     }
 
     public static MessageProtos.StrangerSource b(FeedProtos.NoteSource noteSource) {
-        int i = AnonymousClass8.f19320a[noteSource.ordinal()];
+        int i = AnonymousClass8.a[noteSource.ordinal()];
         return i != 1 ? i != 2 ? i != 3 ? i != 4 ? MessageProtos.StrangerSource.CIRCLE_NOTE_DETAIL : MessageProtos.StrangerSource.FIND_PLAZA_RECOMMEND : MessageProtos.StrangerSource.FEED_FIND_PLAZA : MessageProtos.StrangerSource.CITY_TIME : MessageProtos.StrangerSource.FIND_PLAZA_NEARBY;
     }
 

@@ -6,23 +6,23 @@ import com.opos.mobad.f.e;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile e f22226a;
+    private static volatile e f8618a;
 
     private a() {
     }
 
     public static e a() {
-        if (f22226a == null) {
+        if (f8618a == null) {
             synchronized (a.class) {
                 try {
-                    if (f22226a == null) {
-                        f22226a = new e();
+                    if (f8618a == null) {
+                        f8618a = new e();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f22226a;
+        return f8618a;
     }
 }

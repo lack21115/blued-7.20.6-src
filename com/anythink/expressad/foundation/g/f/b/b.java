@@ -7,7 +7,7 @@ import com.anythink.expressad.foundation.g.f.k;
 public abstract class b extends f<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f7862a = b.class.getSimpleName();
+    private static final String f5022a = b.class.getSimpleName();
 
     @Override // com.anythink.expressad.foundation.g.f.f, com.anythink.expressad.foundation.g.f.e
     public final void a(com.anythink.expressad.foundation.g.f.a.a aVar) {
@@ -17,7 +17,7 @@ public abstract class b extends f<String> {
     @Override // com.anythink.expressad.foundation.g.f.f, com.anythink.expressad.foundation.g.f.e
     public final void a(k<String> kVar) {
         if (kVar != null) {
-            a(kVar.f7926a);
+            a(kVar.f5086a);
         }
     }
 

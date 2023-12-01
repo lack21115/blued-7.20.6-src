@@ -10,20 +10,16 @@ import com.blued.android.module.live_china.view.operation.LiveOperationListView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveOperationViewBinding.class */
 public final class LiveOperationViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeRelativeLayout f12313a;
+    public final ShapeRelativeLayout a;
     public final LiveOperationDescView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LiveOperationListView f12314c;
+    public final LiveOperationListView c;
     private final FrameLayout d;
 
     private LiveOperationViewBinding(FrameLayout frameLayout, ShapeRelativeLayout shapeRelativeLayout, LiveOperationDescView liveOperationDescView, LiveOperationListView liveOperationListView) {
         this.d = frameLayout;
-        this.f12313a = shapeRelativeLayout;
+        this.a = shapeRelativeLayout;
         this.b = liveOperationDescView;
-        this.f12314c = liveOperationListView;
+        this.c = liveOperationListView;
     }
 
     public static LiveOperationViewBinding a(View view) {
@@ -46,7 +42,6 @@ public final class LiveOperationViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

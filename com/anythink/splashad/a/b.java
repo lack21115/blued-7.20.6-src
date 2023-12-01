@@ -9,7 +9,6 @@ public abstract class b implements com.anythink.core.common.b.a {
     private volatile boolean isAdTimeout = false;
     private final com.anythink.core.common.i.a timeOutHandler = com.anythink.core.common.i.c.a();
     private final com.anythink.core.common.i.b timeoutRunnable = new com.anythink.core.common.i.b() { // from class: com.anythink.splashad.a.b.1
-        @Override // java.lang.Runnable
         public final void run() {
             if (b.this.mHasReturn) {
                 return;
@@ -20,7 +19,6 @@ public abstract class b implements com.anythink.core.common.b.a {
         }
     };
 
-    @Override // com.anythink.core.common.b.a
     public void onAdLoadFail(AdError adError) {
         this.timeOutHandler.a(this.timeoutRunnable);
         if (this.mHasReturn) {
@@ -30,7 +28,6 @@ public abstract class b implements com.anythink.core.common.b.a {
         onNoAdError(this.mRequestId, adError);
     }
 
-    @Override // com.anythink.core.common.b.a
     public void onAdLoaded() {
         this.timeOutHandler.a(this.timeoutRunnable);
         if (this.mHasReturn) {

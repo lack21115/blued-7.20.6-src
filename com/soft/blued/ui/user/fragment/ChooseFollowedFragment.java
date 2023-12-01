@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.activity.keyboardpage.KeyBoardFragment;
 import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLayout;
@@ -56,21 +57,20 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
     private int y = 0;
     private boolean z = false;
     BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<BluedRecommendUsers>>() { // from class: com.soft.blued.ui.user.fragment.ChooseFollowedFragment.6
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedRecommendUsers> bluedEntityA) {
             if (bluedEntityA.data == null || !bluedEntityA.hasData()) {
                 if (ChooseFollowedFragment.this.s == 1) {
                     ChooseFollowedFragment.this.r.a();
                 } else {
-                    AppMethods.a((CharSequence) ChooseFollowedFragment.this.j.getResources().getString(2131887275));
+                    AppMethods.a(ChooseFollowedFragment.this.j.getResources().getString(2131887275));
                 }
             } else if (ChooseFollowedFragment.this.s == 1) {
                 ChooseFollowedFragment.this.r.a(bluedEntityA.data);
             } else {
                 ChooseFollowedFragment.this.r.b(bluedEntityA.data);
             }
-            if (bluedEntityA.extra == 0 || bluedEntityA.extra.hasmore != 1) {
+            if (bluedEntityA.extra == null || bluedEntityA.extra.hasmore != 1) {
                 ChooseFollowedFragment.this.u = false;
                 ChooseFollowedFragment.this.o.l(false);
                 return;
@@ -79,13 +79,11 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
             ChooseFollowedFragment.this.o.l(true);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
             ChooseFollowedFragment.this.x = true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             if (ChooseFollowedFragment.this.x) {
                 ChooseFollowedFragment.this.x = false;
@@ -99,7 +97,7 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
                     ChooseFollowedFragment.this.q.d();
                 }
             } else if (ChooseFollowedFragment.this.r.getCount() == 0) {
-                ChooseFollowedFragment.this.q.setNoDataStr(R.string.no_follows);
+                ChooseFollowedFragment.this.q.setNoDataStr((int) R.string.no_follows);
                 ChooseFollowedFragment.this.q.setNoDataImg(2131233641);
                 ChooseFollowedFragment.this.q.a();
                 ChooseFollowedFragment.this.o.l(false);
@@ -113,22 +111,21 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    BluedUIHttpResponse f33832c = new BluedUIHttpResponse<BluedEntityA<BluedRecommendUsers>>() { // from class: com.soft.blued.ui.user.fragment.ChooseFollowedFragment.7
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    BluedUIHttpResponse f20141c = new BluedUIHttpResponse<BluedEntityA<BluedRecommendUsers>>() { // from class: com.soft.blued.ui.user.fragment.ChooseFollowedFragment.7
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedRecommendUsers> bluedEntityA) {
             if (bluedEntityA.data == null || !bluedEntityA.hasData()) {
                 if (ChooseFollowedFragment.this.s == 1) {
                     ChooseFollowedFragment.this.r.a();
                 } else {
-                    AppMethods.a((CharSequence) ChooseFollowedFragment.this.j.getResources().getString(2131887275));
+                    AppMethods.a(ChooseFollowedFragment.this.j.getResources().getString(2131887275));
                 }
             } else if (ChooseFollowedFragment.this.s == 1) {
                 ChooseFollowedFragment.this.r.a(bluedEntityA.data);
             } else {
                 ChooseFollowedFragment.this.r.b(bluedEntityA.data);
             }
-            if (bluedEntityA.extra == 0 || bluedEntityA.extra.hasmore != 1) {
+            if (bluedEntityA.extra == null || bluedEntityA.extra.hasmore != 1) {
                 ChooseFollowedFragment.this.u = false;
                 ChooseFollowedFragment.this.o.l(false);
                 return;
@@ -137,13 +134,11 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
             ChooseFollowedFragment.this.o.l(true);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             super.onFailure(th, i, str);
             ChooseFollowedFragment.this.x = true;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             if (ChooseFollowedFragment.this.x) {
                 ChooseFollowedFragment.this.x = false;
@@ -191,7 +186,7 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
         }
         if (!this.u && (i = this.s) != 1) {
             this.s = i - 1;
-            AppMethods.a((CharSequence) this.j.getResources().getString(2131887275));
+            AppMethods.a(this.j.getResources().getString(2131887275));
             this.o.j();
             this.o.h();
             return;
@@ -219,27 +214,25 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
     }
 
     private void i() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.k.findViewById(2131370694);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setLeftText(2131886885);
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseFollowedFragment.2
+        CommonTopTitleNoTrans findViewById = this.k.findViewById(2131370694);
+        findViewById.a();
+        findViewById.setLeftText(2131886885);
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ChooseFollowedFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 ChooseFollowedFragment.this.a(0, "", "");
             }
         });
-        commonTopTitleNoTrans.setCenterText(R.string.at_attention_list);
-        SearchView searchView = (SearchView) this.l.findViewById(2131369680);
-        this.w = searchView;
-        searchView.getEditView().setHint(R.string.at_attention_list_search_hint);
+        findViewById.setCenterText((int) R.string.at_attention_list);
+        SearchView findViewById2 = this.l.findViewById(R.id.search_view);
+        this.w = findViewById2;
+        findViewById2.getEditView().setHint((int) R.string.at_attention_list_search_hint);
         this.w.setOnSearchInfoListener(new SearchView.OnSearchInfoListener() { // from class: com.soft.blued.ui.user.fragment.ChooseFollowedFragment.3
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a() {
                 KeyboardUtils.a(ChooseFollowedFragment.this.getActivity());
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void a(String str) {
                 if (ChooseFollowedFragment.this.r != null) {
                     ChooseFollowedFragment.this.r.a(str);
@@ -247,23 +240,22 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
                 if (StringUtils.d(str)) {
                     ChooseFollowedFragment.this.a(true);
                 } else {
-                    MineHttpUtils.a(ChooseFollowedFragment.this.j, ChooseFollowedFragment.this.f33832c, str, ChooseFollowedFragment.this.s, ChooseFollowedFragment.this.t, ChooseFollowedFragment.this.getFragmentActive());
+                    MineHttpUtils.a(ChooseFollowedFragment.this.j, ChooseFollowedFragment.this.f20141c, str, ChooseFollowedFragment.this.s, ChooseFollowedFragment.this.t, (IRequestHost) ChooseFollowedFragment.this.getFragmentActive());
                 }
             }
 
-            @Override // com.blued.android.module.common.view.SearchView.OnSearchInfoListener
             public void b() {
             }
         });
-        this.m = (KeyboardListenLinearLayout) this.k.findViewById(2131366091);
-        this.n = this.k.findViewById(2131366095);
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) this.l.findViewById(2131368727);
-        this.q = noDataAndLoadFailView;
-        noDataAndLoadFailView.d();
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.k.findViewById(2131369119);
+        this.m = this.k.findViewById(R.id.keyboardRelativeLayout);
+        this.n = this.k.findViewById(R.id.keyboard_view);
+        NoDataAndLoadFailView findViewById3 = this.l.findViewById(R.id.no_data_view);
+        this.q = findViewById3;
+        findViewById3.d();
+        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) this.k.findViewById(R.id.refresh_layout);
         this.o = smartRefreshLayout;
         smartRefreshLayout.setBackgroundColor(BluedSkinUtils.a(this.j, 2131101780));
-        ListView listView = (ListView) this.k.findViewById(2131366898);
+        ListView listView = (ListView) this.k.findViewById(R.id.list_view);
         this.p = listView;
         listView.setBackgroundColor(BluedSkinUtils.a(this.j, 2131101780));
         this.p.setClipToPadding(false);
@@ -307,12 +299,10 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
         super.a(keyboardListenLinearLayout);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         if (BluedConstant.e == BluedConstant.g || BluedConstant.e == BluedConstant.f) {
             return;
@@ -349,7 +339,6 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         if (this.y == 1) {
             this.z = true;
@@ -358,7 +347,6 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.j = getActivity();
         View view = this.k;
@@ -375,13 +363,11 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
         return this.k;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroyView() {
         ShortVideoProxy.e().b(getClass().getSimpleName());
         super.onDestroyView();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         if (this.y == 1) {
@@ -389,7 +375,6 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.y == 1) {
@@ -398,12 +383,10 @@ public class ChooseFollowedFragment extends KeyBoardFragment {
         }
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         SmartRefreshLayout smartRefreshLayout;
         super.setUserVisibleHint(z);

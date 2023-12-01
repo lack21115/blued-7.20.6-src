@@ -5,10 +5,10 @@ import java.util.Queue;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/BlockingQueue.class */
 public interface BlockingQueue<E> extends Queue<E> {
-    @Override // java.util.Queue, java.util.Collection, java.util.Set
+    @Override // java.util.Queue, java.util.Collection
     boolean add(E e);
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     boolean contains(Object obj);
 
     int drainTo(Collection<? super E> collection);
@@ -26,7 +26,7 @@ public interface BlockingQueue<E> extends Queue<E> {
 
     int remainingCapacity();
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection
     boolean remove(Object obj);
 
     E take() throws InterruptedException;

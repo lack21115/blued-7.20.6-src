@@ -1,6 +1,5 @@
 package java.io;
 
-import com.igexin.push.core.b;
 import java.nio.charset.Charset;
 import java.nio.charset.IllegalCharsetNameException;
 import java.util.Arrays;
@@ -75,15 +74,15 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     }
 
     @Override // java.lang.Appendable
-    public PrintStream append(char c2) {
-        print(c2);
+    public PrintStream append(char c) {
+        print(c);
         return this;
     }
 
     @Override // java.lang.Appendable
     public PrintStream append(CharSequence charSequence) {
         if (charSequence == null) {
-            print(b.l);
+            print("null");
             return this;
         }
         print(charSequence.toString());
@@ -94,7 +93,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
     public PrintStream append(CharSequence charSequence, int i, int i2) {
         CharSequence charSequence2 = charSequence;
         if (charSequence == null) {
-            charSequence2 = b.l;
+            charSequence2 = "null";
         }
         print(charSequence2.subSequence(i, i2).toString());
         return this;
@@ -153,8 +152,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
         return this;
     }
 
-    public void print(char c2) {
-        print(String.valueOf(c2));
+    public void print(char c) {
+        print(String.valueOf(c));
     }
 
     public void print(double d) {
@@ -182,7 +181,7 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
             if (this.out == null) {
                 setError();
             } else if (str == null) {
-                print(b.l);
+                print("null");
             } else {
                 try {
                     if (this.encoding == null) {
@@ -217,8 +216,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
         newline();
     }
 
-    public void println(char c2) {
-        println(String.valueOf(c2));
+    public void println(char c) {
+        println(String.valueOf(c));
     }
 
     public void println(double d) {

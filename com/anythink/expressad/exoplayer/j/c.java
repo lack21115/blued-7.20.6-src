@@ -3,7 +3,6 @@ package com.anythink.expressad.exoplayer.j;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.net.Uri;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,11 +11,11 @@ import java.io.InputStream;
 public final class c implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AssetManager f7574a;
+    private final AssetManager f4735a;
     private final aa<? super c> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Uri f7575c;
+    private Uri f4736c;
     private InputStream d;
     private long e;
     private boolean f;
@@ -33,7 +32,7 @@ public final class c implements h {
     }
 
     public c(Context context, aa<? super c> aaVar) {
-        this.f7574a = context.getAssets();
+        this.f4735a = context.getAssets();
         this.b = aaVar;
     }
 
@@ -75,18 +74,18 @@ public final class c implements h {
     public final long a(k kVar) {
         String str;
         try {
-            Uri uri = kVar.f7584c;
-            this.f7575c = uri;
+            Uri uri = kVar.f4745c;
+            this.f4736c = uri;
             String path = uri.getPath();
             if (path.startsWith("/android_asset/")) {
                 str = path.substring(15);
             } else {
                 str = path;
-                if (path.startsWith(BridgeUtil.SPLIT_MARK)) {
+                if (path.startsWith("/")) {
                     str = path.substring(1);
                 }
             }
-            InputStream open = this.f7574a.open(str, 1);
+            InputStream open = this.f4735a.open(str, 1);
             this.d = open;
             if (open.skip(kVar.f) >= kVar.f) {
                 if (kVar.g != -1) {
@@ -113,12 +112,12 @@ public final class c implements h {
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final Uri a() {
-        return this.f7575c;
+        return this.f4736c;
     }
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final void b() {
-        this.f7575c = null;
+        this.f4736c = null;
         try {
             try {
                 if (this.d != null) {

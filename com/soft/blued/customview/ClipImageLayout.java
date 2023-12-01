@@ -11,40 +11,40 @@ import com.blued.android.module.common.utils.BitmapUtils;
 public class ClipImageLayout extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private ClipZoomImageView f28390a;
+    private ClipZoomImageView f14700a;
     private ClipImageBorderView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28391c;
+    private int f14701c;
     private int d;
 
     public ClipImageLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28391c = 20;
+        this.f14701c = 20;
         this.d = 0;
-        this.f28390a = new ClipZoomImageView(context);
+        this.f14700a = new ClipZoomImageView(context);
         this.b = new ClipImageBorderView(context);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
-        addView(this.f28390a, layoutParams);
+        addView(this.f14700a, layoutParams);
         addView(this.b, layoutParams);
-        this.f28391c = (int) TypedValue.applyDimension(1, this.f28391c, getResources().getDisplayMetrics());
+        this.f14701c = (int) TypedValue.applyDimension(1, this.f14701c, getResources().getDisplayMetrics());
     }
 
     public Bitmap a() {
-        return this.f28390a.a();
+        return this.f14700a.a();
     }
 
     public void setHorizontalPadding(int i) {
-        this.f28391c = i;
+        this.f14701c = i;
     }
 
     public void setImageBitmap(Bitmap bitmap) {
-        this.f28390a.setImageBitmap(BitmapUtils.a(bitmap));
+        this.f14700a.setImageBitmap(BitmapUtils.a(bitmap));
     }
 
     public void setVerticalPadding(int i) {
         this.d = i;
-        this.f28390a.setVerticalPadding(i);
+        this.f14700a.setVerticalPadding(i);
         this.b.setVerticalPadding(i);
     }
 }

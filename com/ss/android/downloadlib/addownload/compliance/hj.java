@@ -122,10 +122,10 @@ public class hj extends LruCache<Long, Bitmap> {
                     @Override // com.ss.android.downloadlib.utils.Chain.mb
                     public Object mb(Object obj) {
                         SoftReference softReference = (SoftReference) hj.this.mb.remove(Long.valueOf(j));
-                        if (softReference == null || softReference.get() == 0) {
+                        if (softReference == null || softReference.get() == null) {
                             return null;
                         }
-                        ((mb) softReference.get()).mb(hj.this.get(Long.valueOf(j)));
+                        ((mb) softReference.get()).mb((Bitmap) hj.this.get(Long.valueOf(j)));
                         return null;
                     }
                 }).mb();
@@ -136,12 +136,12 @@ public class hj extends LruCache<Long, Bitmap> {
         if (remove == null || remove.get() == null) {
             return;
         }
-        remove.get().mb(get(Long.valueOf(j)));
+        remove.get().mb((Bitmap) get(Long.valueOf(j)));
     }
 
     public void mb(long j, mb mbVar) {
         if (get(Long.valueOf(j)) != null) {
-            mbVar.mb(get(Long.valueOf(j)));
+            mbVar.mb((Bitmap) get(Long.valueOf(j)));
         } else {
             this.mb.put(Long.valueOf(j), new SoftReference<>(mbVar));
         }

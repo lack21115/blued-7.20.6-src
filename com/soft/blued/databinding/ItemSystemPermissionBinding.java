@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemSystemPermissionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29327a;
+    private final ConstraintLayout f15637a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29327a;
+        return this.f15637a;
     }
 }

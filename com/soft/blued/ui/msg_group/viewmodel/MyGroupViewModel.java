@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg_group.viewmodel;
 
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelKt;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -17,19 +18,21 @@ import com.soft.blued.utils.BluedPreferences;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineStart;
 
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/viewmodel/MyGroupViewModel.class */
 public final class MyGroupViewModel extends BaseViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    private final MutableLiveData<List<GroupInfoModel>> f32859a = new MutableLiveData<>();
+    private final MutableLiveData<List<GroupInfoModel>> f19168a = new MutableLiveData<>();
     private int b = BluedViewExtKt.a(58);
 
     /* renamed from: c  reason: collision with root package name */
-    private final MutableLiveData<GroupIdentifyModel> f32860c = new MutableLiveData<>();
+    private final MutableLiveData<GroupIdentifyModel> f19169c = new MutableLiveData<>();
     private final MutableLiveData<GroupPrivilegeModel> d = new MutableLiveData<>();
     private final MutableLiveData<Integer> e = new MutableLiveData<>();
     private final MutableLiveData<String> f = new MutableLiveData<>();
@@ -37,12 +40,12 @@ public final class MyGroupViewModel extends BaseViewModel {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(MyGroupModel myGroupModel) {
-        List<GroupInfoModel> a2 = GroupHelper.f32827a.a(myGroupModel, true);
+        List<GroupInfoModel> a2 = GroupHelper.f19136a.a(myGroupModel, true);
         List<GroupInfoModel> list = a2;
         if (!(list == null || list.isEmpty())) {
             this.b += BluedViewExtKt.a(176);
         }
-        this.f32859a.postValue(a2);
+        this.f19168a.postValue(a2);
         ArrayList arrayList = new ArrayList();
         int size = myGroupModel.groups.size();
         int i = 0;
@@ -61,18 +64,18 @@ public final class MyGroupViewModel extends BaseViewModel {
         if (arrayList.size() > 0) {
             long eF = BluedPreferences.eF();
             if (eF == 0 || eF + 86400000 < System.currentTimeMillis()) {
-                BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MyGroupViewModel$initData$1(arrayList, this, null), 3, null);
+                BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MyGroupViewModel$initData$1(arrayList, this, null), 3, (Object) null);
             }
         }
     }
 
-    public final void a(String gid) {
-        Intrinsics.e(gid, "gid");
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MyGroupViewModel$upgradeGroup$1(gid, this, null), 3, null);
+    public final void a(String str) {
+        Intrinsics.e(str, "gid");
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MyGroupViewModel$upgradeGroup$1(str, this, null), 3, (Object) null);
     }
 
     public final MutableLiveData<List<GroupInfoModel>> d() {
-        return this.f32859a;
+        return this.f19168a;
     }
 
     public final int e() {
@@ -80,7 +83,7 @@ public final class MyGroupViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<GroupIdentifyModel> f() {
-        return this.f32860c;
+        return this.f19169c;
     }
 
     public final MutableLiveData<GroupPrivilegeModel> g() {
@@ -100,17 +103,17 @@ public final class MyGroupViewModel extends BaseViewModel {
     }
 
     public final void k() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MyGroupViewModel$getIdentifyInfo$1(this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MyGroupViewModel$getIdentifyInfo$1(this, null), 3, (Object) null);
     }
 
     public final void l() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new MyGroupViewModel$getMyGroup$1(this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new MyGroupViewModel$getMyGroup$1(this, null), 3, (Object) null);
     }
 
     public final void m() {
         ChatHttpUtils.f(new BluedUIHttpResponse<BluedEntityA<GroupGuideModel>>() { // from class: com.soft.blued.ui.msg_group.viewmodel.MyGroupViewModel$getGroupGuideData$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+            /* JADX WARN: Type inference failed for: r1v1, types: [java.lang.Object] */
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<GroupGuideModel> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {

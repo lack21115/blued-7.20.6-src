@@ -14,13 +14,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYRobMusicManager$downloadMidi$1.class */
 public final class YYRobMusicManager$downloadMidi$1 extends FileHttpResponseHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ YYRobMusicManager f17573a;
+    final /* synthetic */ YYRobMusicManager a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public YYRobMusicManager$downloadMidi$1(YYRobMusicManager yYRobMusicManager) {
-        this.f17573a = yYRobMusicManager;
+        this.a = yYRobMusicManager;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -52,7 +50,7 @@ public final class YYRobMusicManager$downloadMidi$1 extends FileHttpResponseHand
     public void onSuccess(final File file) {
         Intrinsics.e(file, "file");
         Handler n = AppInfo.n();
-        final YYRobMusicManager yYRobMusicManager = this.f17573a;
+        final YYRobMusicManager yYRobMusicManager = this.a;
         n.post(new Runnable() { // from class: com.blued.android.module.yy_china.manager.-$$Lambda$YYRobMusicManager$downloadMidi$1$N0UPqpb44j8wqYszO9PTm88GHm0
             @Override // java.lang.Runnable
             public final void run() {

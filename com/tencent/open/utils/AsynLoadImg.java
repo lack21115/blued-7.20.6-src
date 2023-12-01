@@ -19,10 +19,10 @@ import java.net.URL;
 public class AsynLoadImg {
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f38270c;
+    private static String f24579c;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f38271a;
+    private String f24580a;
     private AsynLoadImgBack b;
     private long d;
     private Handler e;
@@ -31,8 +31,8 @@ public class AsynLoadImg {
         public void run() {
             boolean z;
             f.a("AsynLoadImg", "saveFileRunnable:");
-            String str = "share_qq_" + Util.encrypt(AsynLoadImg.this.f38271a) + ".jpg";
-            String str2 = AsynLoadImg.f38270c + str;
+            String str = "share_qq_" + Util.encrypt(AsynLoadImg.this.f24580a) + ".jpg";
+            String str2 = AsynLoadImg.f24579c + str;
             File file = new File(str2);
             Message obtainMessage = AsynLoadImg.this.e.obtainMessage();
             if (file.exists()) {
@@ -40,7 +40,7 @@ public class AsynLoadImg {
                 obtainMessage.obj = str2;
                 f.a("AsynLoadImg", "file exists: time:" + (System.currentTimeMillis() - AsynLoadImg.this.d));
             } else {
-                Bitmap bitmap = AsynLoadImg.getbitmap(AsynLoadImg.this.f38271a);
+                Bitmap bitmap = AsynLoadImg.getbitmap(AsynLoadImg.this.f24580a);
                 if (bitmap != null) {
                     z = AsynLoadImg.this.saveFile(bitmap, str);
                 } else {
@@ -102,9 +102,9 @@ public class AsynLoadImg {
         } else if (!Util.hasSDCard()) {
             asynLoadImgBack.saved(2, null);
         } else {
-            f38270c = Environment.getExternalStorageDirectory() + "/tmp/";
+            f24579c = Environment.getExternalStorageDirectory() + "/tmp/";
             this.d = System.currentTimeMillis();
-            this.f38271a = str;
+            this.f24580a = str;
             this.b = asynLoadImgBack;
             new Thread(this.f).start();
         }
@@ -112,7 +112,7 @@ public class AsynLoadImg {
 
     public boolean saveFile(Bitmap bitmap, String str) {
         BufferedOutputStream bufferedOutputStream;
-        String str2 = f38270c;
+        String str2 = f24579c;
         BufferedOutputStream bufferedOutputStream2 = null;
         try {
             try {

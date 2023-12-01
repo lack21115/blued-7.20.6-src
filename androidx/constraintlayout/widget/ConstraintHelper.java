@@ -25,7 +25,7 @@ import java.util.HashMap;
 public abstract class ConstraintHelper extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private View[] f2253a;
+    private View[] f2205a;
     protected int[] j;
     protected int k;
     protected Context l;
@@ -39,7 +39,7 @@ public abstract class ConstraintHelper extends View {
         super(context);
         this.j = new int[32];
         this.n = false;
-        this.f2253a = null;
+        this.f2205a = null;
         this.q = new HashMap<>();
         this.l = context;
         a((AttributeSet) null);
@@ -49,7 +49,7 @@ public abstract class ConstraintHelper extends View {
         super(context, attributeSet);
         this.j = new int[32];
         this.n = false;
-        this.f2253a = null;
+        this.f2205a = null;
         this.q = new HashMap<>();
         this.l = context;
         a(attributeSet);
@@ -59,7 +59,7 @@ public abstract class ConstraintHelper extends View {
         super(context, attributeSet, i);
         this.j = new int[32];
         this.n = false;
-        this.f2253a = null;
+        this.f2205a = null;
         this.q = new HashMap<>();
         this.l = context;
         a(attributeSet);
@@ -298,17 +298,17 @@ public abstract class ConstraintHelper extends View {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public View[] c(ConstraintLayout constraintLayout) {
-        View[] viewArr = this.f2253a;
+        View[] viewArr = this.f2205a;
         if (viewArr == null || viewArr.length != this.k) {
-            this.f2253a = new View[this.k];
+            this.f2205a = new View[this.k];
         }
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= this.k) {
-                return this.f2253a;
+                return this.f2205a;
             }
-            this.f2253a[i2] = constraintLayout.getViewById(this.j[i2]);
+            this.f2205a[i2] = constraintLayout.getViewById(this.j[i2]);
             i = i2 + 1;
         }
     }
@@ -399,9 +399,8 @@ public abstract class ConstraintHelper extends View {
     public void onDraw(Canvas canvas) {
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         if (this.n) {
             super.onMeasure(i, i2);
         } else {

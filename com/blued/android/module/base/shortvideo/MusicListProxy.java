@@ -27,15 +27,15 @@ public class MusicListProxy extends BaseProxy<IMusicList> implements IMusicList 
 
     @Override // com.blued.android.module.base.shortvideo.IMusicList
     public void a(BaseFragment baseFragment, int i) {
-        if (this.f10426a != 0) {
-            ((IMusicList) this.f10426a).a(baseFragment, i);
+        if (this.a != 0) {
+            ((IMusicList) this.a).a(baseFragment, i);
         }
     }
 
     @Override // com.blued.android.module.base.shortvideo.IMusicList
     public void b(BaseFragment baseFragment, int i) {
-        if (this.f10426a != 0) {
-            ((IMusicList) this.f10426a).b(baseFragment, i);
+        if (this.a != 0) {
+            ((IMusicList) this.a).b(baseFragment, i);
         }
     }
 }

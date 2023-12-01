@@ -36,10 +36,10 @@ public class AudioAttributesCompat implements VersionedParcelable {
     public static final int USAGE_VOICE_COMMUNICATION_SIGNALLING = 3;
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f3100a;
+    static boolean f3052a;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final SparseIntArray f3101c;
+    private static final SparseIntArray f3053c;
     private static final int[] d;
     AudioAttributesImpl b;
 
@@ -68,28 +68,28 @@ public class AudioAttributesCompat implements VersionedParcelable {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private int f3102a;
+        private int f3054a;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f3103c;
+        private int f3055c;
         private int d;
 
         public Builder() {
-            this.f3102a = 0;
+            this.f3054a = 0;
             this.b = 0;
-            this.f3103c = 0;
+            this.f3055c = 0;
             this.d = -1;
         }
 
         public Builder(AudioAttributesCompat audioAttributesCompat) {
-            this.f3102a = 0;
+            this.f3054a = 0;
             this.b = 0;
-            this.f3103c = 0;
+            this.f3055c = 0;
             this.d = -1;
-            this.f3102a = audioAttributesCompat.getUsage();
+            this.f3054a = audioAttributesCompat.getUsage();
             this.b = audioAttributesCompat.getContentType();
-            this.f3103c = audioAttributesCompat.getFlags();
+            this.f3055c = audioAttributesCompat.getFlags();
             this.d = audioAttributesCompat.a();
         }
 
@@ -116,10 +116,10 @@ public class AudioAttributesCompat implements VersionedParcelable {
                     break;
                 case 6:
                     this.b = 1;
-                    this.f3103c |= 4;
+                    this.f3055c |= 4;
                     break;
                 case 7:
-                    this.f3103c = 1 | this.f3103c;
+                    this.f3055c = 1 | this.f3055c;
                     this.b = 4;
                     break;
                 case 8:
@@ -135,16 +135,16 @@ public class AudioAttributesCompat implements VersionedParcelable {
                     Log.e("AudioAttributesCompat", "Invalid stream type " + i + " for AudioAttributesCompat");
                     break;
             }
-            this.f3102a = AudioAttributesCompat.b(i);
+            this.f3054a = AudioAttributesCompat.b(i);
             return this;
         }
 
         public AudioAttributesCompat build() {
             AudioAttributesImpl audioAttributesImplBase;
-            if (AudioAttributesCompat.f3100a || Build.VERSION.SDK_INT < 21) {
-                audioAttributesImplBase = new AudioAttributesImplBase(this.b, this.f3103c, this.f3102a, this.d);
+            if (AudioAttributesCompat.f3052a || Build.VERSION.SDK_INT < 21) {
+                audioAttributesImplBase = new AudioAttributesImplBase(this.b, this.f3055c, this.f3054a, this.d);
             } else {
-                AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(this.b).setFlags(this.f3103c).setUsage(this.f3102a);
+                AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(this.b).setFlags(this.f3055c).setUsage(this.f3054a);
                 int i = this.d;
                 if (i != -1) {
                     usage.setLegacyStreamType(i);
@@ -159,12 +159,12 @@ public class AudioAttributesCompat implements VersionedParcelable {
                 this.b = i;
                 return this;
             }
-            this.f3102a = 0;
+            this.f3054a = 0;
             return this;
         }
 
         public Builder setFlags(int i) {
-            this.f3103c = (i & 1023) | this.f3103c;
+            this.f3055c = (i & 1023) | this.f3055c;
             return this;
         }
 
@@ -194,17 +194,17 @@ public class AudioAttributesCompat implements VersionedParcelable {
                 case 13:
                 case 14:
                 case 15:
-                    this.f3102a = i;
+                    this.f3054a = i;
                     return this;
                 case 16:
-                    if (AudioAttributesCompat.f3100a || Build.VERSION.SDK_INT <= 25) {
-                        this.f3102a = 12;
+                    if (AudioAttributesCompat.f3052a || Build.VERSION.SDK_INT <= 25) {
+                        this.f3054a = 12;
                         return this;
                     }
-                    this.f3102a = i;
+                    this.f3054a = i;
                     return this;
                 default:
-                    this.f3102a = 0;
+                    this.f3054a = 0;
                     return this;
             }
         }
@@ -212,13 +212,13 @@ public class AudioAttributesCompat implements VersionedParcelable {
 
     static {
         SparseIntArray sparseIntArray = new SparseIntArray();
-        f3101c = sparseIntArray;
+        f3053c = sparseIntArray;
         sparseIntArray.put(5, 1);
-        f3101c.put(6, 2);
-        f3101c.put(7, 2);
-        f3101c.put(8, 1);
-        f3101c.put(9, 1);
-        f3101c.put(10, 1);
+        f3053c.put(6, 2);
+        f3053c.put(7, 2);
+        f3053c.put(8, 1);
+        f3053c.put(9, 1);
+        f3053c.put(10, 1);
         d = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16};
     }
 
@@ -362,11 +362,11 @@ public class AudioAttributesCompat implements VersionedParcelable {
     }
 
     public static void setForceLegacyBehavior(boolean z) {
-        f3100a = z;
+        f3052a = z;
     }
 
     public static AudioAttributesCompat wrap(Object obj) {
-        if (Build.VERSION.SDK_INT < 21 || f3100a) {
+        if (Build.VERSION.SDK_INT < 21 || f3052a) {
             return null;
         }
         AudioAttributesImplApi21 audioAttributesImplApi21 = new AudioAttributesImplApi21((AudioAttributes) obj);

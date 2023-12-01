@@ -228,7 +228,7 @@ public final class d extends AbstractKsNativeAd implements DialogInterface.OnDis
         if (activity == null) {
             context = view.getContext();
         }
-        a.C0519a ao = new a.C0519a(k.wrapContextIfNeed(context)).I(this.mAdTemplate).b(this.mApkDownloadHelper).aq(i).ao(true);
+        a.C0349a ao = new a.C0349a(k.wrapContextIfNeed(context)).I(this.mAdTemplate).b(this.mApkDownloadHelper).aq(i).ao(true);
         e eVar = this.mL;
         com.kwad.components.core.d.b.a.a(ao.q((eVar == null || eVar.eV == null) ? 0L : this.mL.eV.getPlayDuration()).av(z).a(new a.b() { // from class: com.kwad.components.ad.e.d.4
             @Override // com.kwad.components.core.d.b.a.b
@@ -300,8 +300,8 @@ public final class d extends AbstractKsNativeAd implements DialogInterface.OnDis
             c(viewGroup);
             com.kwad.components.core.widget.a aVar = new com.kwad.components.core.widget.a(viewGroup.getContext(), viewGroup);
             viewGroup.addView(aVar);
-            aVar.setViewCallback(new a.InterfaceC0544a() { // from class: com.kwad.components.ad.e.d.5
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+            aVar.setViewCallback(new a.InterfaceC0374a() { // from class: com.kwad.components.ad.e.d.5
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void eM() {
                     if (d.this.mAdTemplate.mPvReported && d.this.mN) {
                         com.kwad.sdk.core.report.a.a(d.this.mAdTemplate, d.this.getTimerHelper().EZ(), (JSONObject) null);
@@ -310,7 +310,7 @@ public final class d extends AbstractKsNativeAd implements DialogInterface.OnDis
                     }
                 }
 
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void k(View view) {
                     if (!d.this.mAdTemplate.mPvReported) {
                         d.this.mR.eO();
@@ -333,12 +333,12 @@ public final class d extends AbstractKsNativeAd implements DialogInterface.OnDis
                     d.this.mN = true;
                 }
 
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void onViewAttached() {
                     KsAdGlobalWatcher.getInstance().watch(d.this);
                 }
 
-                @Override // com.kwad.components.core.widget.a.InterfaceC0544a
+                @Override // com.kwad.components.core.widget.a.InterfaceC0374a
                 public final void onViewDetached() {
                     if (d.this.mAdTemplate.mPvReported && d.this.mN) {
                         com.kwad.sdk.core.report.a.a(d.this.mAdTemplate, d.this.getTimerHelper().EZ(), (JSONObject) null);
@@ -461,7 +461,7 @@ public final class d extends AbstractKsNativeAd implements DialogInterface.OnDis
                     if (d.this.mAdInfo.status == 3 || d.this.mAdInfo.status == 2) {
                         return;
                     }
-                    com.kwad.components.core.d.b.a.a(new a.C0519a(k.wrapContextIfNeed(view.getContext())).I(d.this.mAdTemplate).b(d.this.mApkDownloadHelper).av(false).a(new a.b() { // from class: com.kwad.components.ad.e.d.7.1
+                    com.kwad.components.core.d.b.a.a(new a.C0349a(k.wrapContextIfNeed(view.getContext())).I(d.this.mAdTemplate).b(d.this.mApkDownloadHelper).av(false).a(new a.b() { // from class: com.kwad.components.ad.e.d.7.1
                         @Override // com.kwad.components.core.d.b.a.b
                         public final void onAdClicked() {
                             com.kwad.sdk.core.report.a.a(d.this.mAdTemplate, new i().bj(157).i(d), (JSONObject) null);
@@ -661,12 +661,12 @@ public final class d extends AbstractKsNativeAd implements DialogInterface.OnDis
         Context context2 = context;
         try {
             Context wrapContextIfNeed = k.wrapContextIfNeed(context);
-            com.kwad.sdk.g.a.U(com.anythink.expressad.foundation.g.a.f.f7832a, "show");
+            com.kwad.sdk.g.a.U(com.anythink.expressad.foundation.g.a.f.f4992a, "show");
             KSAdVideoPlayConfigImpl kSAdVideoPlayConfigImpl = ksAdVideoPlayConfig instanceof KSAdVideoPlayConfigImpl ? (KSAdVideoPlayConfigImpl) ksAdVideoPlayConfig : new KSAdVideoPlayConfigImpl();
             View a2 = com.kwad.sdk.core.response.a.a.cq(this.mAdInfo) ? a(wrapContextIfNeed, kSAdVideoPlayConfigImpl) : b(wrapContextIfNeed, kSAdVideoPlayConfigImpl);
             view = a2;
             context2 = wrapContextIfNeed;
-            com.kwad.sdk.g.a.V(com.anythink.expressad.foundation.g.a.f.f7832a, "show");
+            com.kwad.sdk.g.a.V(com.anythink.expressad.foundation.g.a.f.f4992a, "show");
             return a2;
         } catch (Throwable th) {
             RuntimeException runtimeException = new RuntimeException("getVideoView fail--context:" + context2.getClass().getName() + "--classloader:" + context2.getClassLoader().getClass().getName());

@@ -1,6 +1,5 @@
 package com.tencent.tinker.ziputils.ziputil;
 
-import android.widget.ExpandableListView;
 import java.nio.ByteOrder;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tinker/ziputils/ziputil/Memory.class */
@@ -40,7 +39,7 @@ public final class Memory {
             int i7 = i6 + 1;
             byte b6 = bArr[i6];
             byte b7 = bArr[i7];
-            return ((((((b & 255) << 24) | ((b2 & 255) << 16)) | ((b3 & 255) << 8)) | ((b4 & 255) << 0)) << 32) | ((((bArr[i7 + 1] & 255) << 0) | ((b6 & 255) << 16) | ((b5 & 255) << 24) | ((b7 & 255) << 8)) & ExpandableListView.PACKED_POSITION_VALUE_NULL);
+            return ((((((b & 255) << 24) | ((b2 & 255) << 16)) | ((b3 & 255) << 8)) | ((b4 & 255) << 0)) << 32) | ((((bArr[i7 + 1] & 255) << 0) | ((b6 & 255) << 16) | ((b5 & 255) << 24) | ((b7 & 255) << 8)) & 4294967295L);
         }
         int i8 = i + 1;
         byte b8 = bArr[i];
@@ -53,7 +52,7 @@ public final class Memory {
         int i12 = i11 + 1;
         byte b12 = bArr[i11];
         int i13 = i12 + 1;
-        return ((((b8 & 255) << 0) | ((b9 & 255) << 8) | ((b10 & 255) << 16) | ((b11 & 255) << 24)) & ExpandableListView.PACKED_POSITION_VALUE_NULL) | ((((bArr[i13 + 1] & 255) << 24) | ((((bArr[i12] & 255) << 8) | ((b12 & 255) << 0)) | ((bArr[i13] & 255) << 16))) << 32);
+        return ((((b8 & 255) << 0) | ((b9 & 255) << 8) | ((b10 & 255) << 16) | ((b11 & 255) << 24)) & 4294967295L) | ((((bArr[i13 + 1] & 255) << 24) | ((((bArr[i12] & 255) << 8) | ((b12 & 255) << 0)) | ((bArr[i13] & 255) << 16))) << 32);
     }
 
     public static short peekShort(byte[] bArr, int i, ByteOrder byteOrder) {

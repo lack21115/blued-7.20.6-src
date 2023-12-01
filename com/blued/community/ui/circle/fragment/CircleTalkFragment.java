@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
@@ -21,13 +22,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/fragment/CircleTalkFragment.class */
 public class CircleTalkFragment extends BaseFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f19295a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public List<String> f19296c;
+    public List<String> c;
     public CustomViewPager d;
     public MyAdapter e;
     public PageTabLayout f;
@@ -38,27 +35,22 @@ public class CircleTalkFragment extends BaseFragment implements View.OnClickList
             super(fragmentManager);
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             super.destroyItem(viewGroup, i, obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return CircleTalkFragment.this.f19296c.size();
+            return CircleTalkFragment.this.c.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             return i == 0 ? new CircleMyPublishFragment() : new CircleMyRespondFragment();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return CircleTalkFragment.this.f19296c.get(i);
+            return CircleTalkFragment.this.c.get(i);
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             return super.instantiateItem(viewGroup, i);
         }
@@ -77,8 +69,8 @@ public class CircleTalkFragment extends BaseFragment implements View.OnClickList
     }
 
     private void b() {
-        this.f19296c = new ArrayList();
-        String[] stringArray = this.f19295a.getResources().getStringArray(R.array.my_base_talk);
+        this.c = new ArrayList();
+        String[] stringArray = this.a.getResources().getStringArray(R.array.my_base_talk);
         int length = stringArray.length;
         int i = 0;
         while (true) {
@@ -86,29 +78,26 @@ public class CircleTalkFragment extends BaseFragment implements View.OnClickList
             if (i2 >= length) {
                 return;
             }
-            this.f19296c.add(stringArray[i2]);
+            this.c.add(stringArray[i2]);
             i = i2 + 1;
         }
     }
 
     private void c() {
         this.d = (CustomViewPager) this.b.findViewById(R.id.viewPager);
-        MyAdapter myAdapter = new MyAdapter(getChildFragmentManager());
+        PagerAdapter myAdapter = new MyAdapter(getChildFragmentManager());
         this.e = myAdapter;
         this.d.setAdapter(myAdapter);
         PageTabLayout pageTabLayout = (PageTabLayout) this.b.findViewById(R.id.tablayout);
         this.f = pageTabLayout;
         pageTabLayout.setupWithViewPager(this.d);
         this.d.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.community.ui.circle.fragment.CircleTalkFragment.1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
             }
         });
@@ -122,9 +111,9 @@ public class CircleTalkFragment extends BaseFragment implements View.OnClickList
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f19295a = getActivity();
+        this.a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_my_base_talk, viewGroup, false);

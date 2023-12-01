@@ -7,11 +7,11 @@ import java.util.Arrays;
 public final class l implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f7585a = 100;
+    private static final int f4746a = 100;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f7586c;
+    private final int f4747c;
     private final byte[] d;
     private final a[] e;
     private int f;
@@ -23,7 +23,7 @@ public final class l implements b {
         com.anythink.expressad.exoplayer.k.a.a(true);
         com.anythink.expressad.exoplayer.k.a.a(true);
         this.b = true;
-        this.f7586c = 65536;
+        this.f4747c = 65536;
         this.h = 0;
         this.i = new a[100];
         this.d = null;
@@ -46,7 +46,7 @@ public final class l implements b {
                 aVar = aVarArr[i];
                 this.i[i] = null;
             } else {
-                aVar = new a(new byte[this.f7586c]);
+                aVar = new a(new byte[this.f4747c]);
             }
         }
         return aVar;
@@ -82,8 +82,8 @@ public final class l implements b {
                 int i2 = i;
                 if (i2 < length) {
                     a aVar = aVarArr[i2];
-                    if (aVar.f7550a != this.d && aVar.f7550a.length != this.f7586c) {
-                        throw new IllegalArgumentException("Unexpected allocation: " + System.identityHashCode(aVar.f7550a) + ", " + System.identityHashCode(this.d) + ", " + aVar.f7550a.length + ", " + this.f7586c);
+                    if (aVar.f4711a != this.d && aVar.f4711a.length != this.f4747c) {
+                        throw new IllegalArgumentException("Unexpected allocation: " + System.identityHashCode(aVar.f4711a) + ", " + System.identityHashCode(this.d) + ", " + aVar.f4711a.length + ", " + this.f4747c);
                     }
                     a[] aVarArr2 = this.i;
                     int i3 = this.h;
@@ -101,7 +101,7 @@ public final class l implements b {
     @Override // com.anythink.expressad.exoplayer.j.b
     public final void b() {
         synchronized (this) {
-            int max = Math.max(0, af.a(this.f, this.f7586c) - this.g);
+            int max = Math.max(0, af.a(this.f, this.f4747c) - this.g);
             if (max >= this.h) {
                 return;
             }
@@ -111,11 +111,11 @@ public final class l implements b {
                 int i3 = 0;
                 while (i3 <= i2) {
                     a aVar = this.i[i3];
-                    if (aVar.f7550a == this.d) {
+                    if (aVar.f4711a == this.d) {
                         i3++;
                     } else {
                         a aVar2 = this.i[i2];
-                        if (aVar2.f7550a != this.d) {
+                        if (aVar2.f4711a != this.d) {
                             i2--;
                         } else {
                             this.i[i3] = aVar2;
@@ -142,14 +142,14 @@ public final class l implements b {
         int i2;
         synchronized (this) {
             i = this.g;
-            i2 = this.f7586c;
+            i2 = this.f4747c;
         }
         return i * i2;
     }
 
     @Override // com.anythink.expressad.exoplayer.j.b
     public final int d() {
-        return this.f7586c;
+        return this.f4747c;
     }
 
     public final void e() {

@@ -12,7 +12,7 @@ import com.opos.exoplayer.core.i.u;
 public final class a implements com.opos.exoplayer.core.c.e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final h f25081a = new h() { // from class: com.opos.exoplayer.core.c.a.a.1
+    public static final h f11393a = new h() { // from class: com.opos.exoplayer.core.c.a.a.1
         @Override // com.opos.exoplayer.core.c.h
         public com.opos.exoplayer.core.c.e[] a() {
             return new com.opos.exoplayer.core.c.e[]{new a()};
@@ -29,7 +29,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
     private e q;
 
     /* renamed from: c  reason: collision with root package name */
-    private final m f25082c = new m(4);
+    private final m f11394c = new m(4);
     private final m d = new m(9);
     private final m e = new m(11);
     private final m f = new m();
@@ -49,7 +49,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
 
     private boolean b(f fVar) {
         boolean z = false;
-        if (fVar.a(this.d.f25496a, 0, 9, true)) {
+        if (fVar.a(this.d.f11808a, 0, 9, true)) {
             this.d.c(0);
             this.d.d(4);
             int g = this.d.g();
@@ -78,7 +78,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
     }
 
     private boolean d(f fVar) {
-        if (fVar.a(this.e.f25496a, 0, 11, true)) {
+        if (fVar.a(this.e.f11808a, 0, 11, true)) {
             this.e.c(0);
             this.l = this.e.g();
             this.m = this.e.k();
@@ -127,7 +127,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
             this.f.c(0);
         }
         this.f.b(this.m);
-        fVar.b(this.f.f25496a, 0, this.m);
+        fVar.b(this.f.f11808a, 0, this.m);
         return this.f;
     }
 
@@ -168,24 +168,24 @@ public final class a implements com.opos.exoplayer.core.c.e {
 
     @Override // com.opos.exoplayer.core.c.e
     public boolean a(f fVar) {
-        fVar.c(this.f25082c.f25496a, 0, 3);
-        this.f25082c.c(0);
-        if (this.f25082c.k() != b) {
+        fVar.c(this.f11394c.f11808a, 0, 3);
+        this.f11394c.c(0);
+        if (this.f11394c.k() != b) {
             return false;
         }
-        fVar.c(this.f25082c.f25496a, 0, 2);
-        this.f25082c.c(0);
+        fVar.c(this.f11394c.f11808a, 0, 2);
+        this.f11394c.c(0);
         boolean z = false;
-        if ((this.f25082c.h() & 250) == 0) {
-            fVar.c(this.f25082c.f25496a, 0, 4);
-            this.f25082c.c(0);
-            int o = this.f25082c.o();
+        if ((this.f11394c.h() & 250) == 0) {
+            fVar.c(this.f11394c.f11808a, 0, 4);
+            this.f11394c.c(0);
+            int o = this.f11394c.o();
             fVar.a();
             fVar.c(o);
-            fVar.c(this.f25082c.f25496a, 0, 4);
-            this.f25082c.c(0);
+            fVar.c(this.f11394c.f11808a, 0, 4);
+            this.f11394c.c(0);
             z = false;
-            if (this.f25082c.o() == 0) {
+            if (this.f11394c.o() == 0) {
                 z = true;
             }
         }

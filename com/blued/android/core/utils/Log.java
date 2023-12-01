@@ -1,7 +1,6 @@
 package com.blued.android.core.utils;
 
 import android.content.Context;
-import androidx.exifinterface.media.ExifInterface;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -14,21 +13,17 @@ import java.util.Date;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/Log.class */
 public final class Log {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static File f9732a;
+    private static File a;
     private static BufferedWriter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f9733c;
+    private static boolean c;
     private static Context d;
-    private static final String[] e = {"", "", ExifInterface.GPS_MEASUREMENT_INTERRUPTED, "D", "I", "W", ExifInterface.LONGITUDE_EAST, "A"};
+    private static final String[] e = {"", "", "V", "D", "I", "W", "E", "A"};
 
     private Log() {
     }
 
     private static int a(int i, String str, String str2) {
-        if (f9733c) {
+        if (c) {
             a();
             StringBuilder sb = new StringBuilder(new SimpleDateFormat("HH:mm:ss.SSS").format(new Date()));
             sb.append("\t");
@@ -86,17 +81,17 @@ public final class Log {
     }
 
     private static void a() {
-        if (f9732a == null) {
+        if (a == null) {
             throw new IllegalStateException("File path not initialized. Have you called Log.init() method?");
         }
     }
 
     public static void a(Context context, boolean z, File file) throws IOException {
         d = context;
-        f9733c = z;
+        c = z;
         if (z) {
-            f9732a = file;
-            b = new BufferedWriter(new FileWriter(f9732a, true));
+            a = file;
+            b = new BufferedWriter(new FileWriter(a, true));
         }
     }
 

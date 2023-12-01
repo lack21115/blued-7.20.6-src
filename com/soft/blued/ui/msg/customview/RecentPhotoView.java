@@ -14,7 +14,6 @@ import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.core.utils.skin.listener.BluedSkinSupportable;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.ui.xpop.enums.PopupPosition;
 import com.blued.android.framework.utils.DensityUtils;
@@ -41,11 +40,11 @@ import java.util.List;
 public class RecentPhotoView extends RelativeLayout implements BluedSkinSupportable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f32305a = RecentPhotoView.class.getSimpleName();
+    public static final String f18615a = RecentPhotoView.class.getSimpleName();
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private RecyclerView f32306c;
+    private RecyclerView f18616c;
     private SelectPhotoBarView d;
     private RecentPhotoAdapter e;
     private IRecentPhotoOperationCallback f;
@@ -71,15 +70,15 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
 
     private void a(Context context, AttributeSet attributeSet) {
         b(context);
-        this.f32306c = (RecyclerView) findViewById(R.id.msg_recent_pic_recycler);
+        this.f18616c = (RecyclerView) findViewById(R.id.msg_recent_pic_recycler);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         linearLayoutManager.setOrientation(0);
-        this.f32306c.setLayoutManager(linearLayoutManager);
+        this.f18616c.setLayoutManager(linearLayoutManager);
         SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(getContext(), 2.0f));
         spacesItemDecoration.a(0);
         spacesItemDecoration.a(DensityUtils.a(getContext(), 3.0f), 0, DensityUtils.a(getContext(), 3.0f), 0);
         spacesItemDecoration.a(true, true);
-        this.f32306c.addItemDecoration(spacesItemDecoration);
+        this.f18616c.addItemDecoration(spacesItemDecoration);
         this.b = findViewById(R.id.msg_recent_photos_no_pics_layout);
         this.d = (SelectPhotoBarView) findViewById(R.id.msg_recent_bar_view);
     }
@@ -93,12 +92,12 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
             return;
         }
         BluedPreferences.eh();
-        new XPopup.Builder(getContext()).a(view).b(false).a(PopupAnimation.ScaleAlphaFromCenter).a(PopupPosition.Top).b((Boolean) true).d((Boolean) false).a((BasePopupView) this.h).h();
+        new XPopup.Builder(getContext()).a(view).b(false).a(PopupAnimation.a).a(PopupPosition.c).b(true).d(false).a(this.h).h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final MsgRecentPhotoInfo msgRecentPhotoInfo, View view) {
-        new XPopup.Builder(getContext()).a(view).a(PopupAnimation.ScaleAlphaFromCenter).a(PopupPosition.Top).b((Boolean) true).d((Boolean) false).b(true).a((BasePopupView) new PicPinPop(getContext(), msgRecentPhotoInfo.isPin, new PicPinPop.OperateListener() { // from class: com.soft.blued.ui.msg.customview.RecentPhotoView.3
+        new XPopup.Builder(getContext()).a(view).a(PopupAnimation.a).a(PopupPosition.c).b(true).d(false).b(true).a(new PicPinPop(getContext(), msgRecentPhotoInfo.isPin, new PicPinPop.OperateListener() { // from class: com.soft.blued.ui.msg.customview.RecentPhotoView.3
             @Override // com.soft.blued.ui.msg.pop.PicPinPop.OperateListener
             public void a() {
                 CommonAlertDialog.a(RecentPhotoView.this.getContext(), RecentPhotoView.this.getContext().getResources().getString(R.string.msg_pic_remove_title), RecentPhotoView.this.getContext().getResources().getString(R.string.msg_pic_remove_hint), RecentPhotoView.this.getContext().getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.customview.RecentPhotoView.3.1
@@ -113,7 +112,7 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
                         }
                         RecentPhotoView.this.a(false);
                     }
-                }, RecentPhotoView.this.getContext().getResources().getString(2131887258), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.customview.RecentPhotoView.3.2
+                }, RecentPhotoView.this.getContext().getResources().getString(R.string.common_cancel), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg.customview.RecentPhotoView.3.2
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Tracker.onClick(dialogInterface, i);
@@ -158,7 +157,7 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
         if (view != null) {
             view.setVisibility(0);
         }
-        RecyclerView recyclerView = this.f32306c;
+        RecyclerView recyclerView = this.f18616c;
         if (recyclerView != null) {
             recyclerView.setVisibility(8);
         }
@@ -173,7 +172,7 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
                 RecentPhotoView.this.d();
                 EventTrackMessage.a(MessageProtos.Event.MSG_PHOTO_CLEAR_BTN_CLICK);
             }
-        }, getContext().getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+        }, getContext().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -181,7 +180,7 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.msg.customview.RecentPhotoView.7
             @Override // java.lang.Runnable
             public void run() {
-                if (RecentPhotoView.this.getVisibility() != 0 || RecentPhotoView.this.e == null || RecentPhotoView.this.e.getData().size() <= 0 || RecentPhotoView.this.f32306c == null || RecentPhotoView.this.f32306c.getChildCount() <= 0) {
+                if (RecentPhotoView.this.getVisibility() != 0 || RecentPhotoView.this.e == null || RecentPhotoView.this.e.getData().size() <= 0 || RecentPhotoView.this.f18616c == null || RecentPhotoView.this.f18616c.getChildCount() <= 0) {
                     return;
                 }
                 RecentPhotoView recentPhotoView = RecentPhotoView.this;
@@ -192,17 +191,17 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setFixForRecycleView(View view) {
-        if (this.f32306c == null || view == null) {
+        if (this.f18616c == null || view == null) {
             return;
         }
         int width = view.getWidth();
         Rect rect = new Rect();
         view.getLocalVisibleRect(rect);
         if (rect.left > 0 && rect.right == width) {
-            this.f32306c.scrollBy(-rect.left, 0);
+            this.f18616c.scrollBy(-rect.left, 0);
         } else if (rect.left != 0 || rect.right >= width) {
         } else {
-            this.f32306c.scrollBy(width - rect.right, 0);
+            this.f18616c.scrollBy(width - rect.right, 0);
         }
     }
 
@@ -216,11 +215,11 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
     public void a(Context context) {
         if (this.d != null) {
             if (TextUtils.isEmpty(FlashPhotoManager.a().b().flash_prompt)) {
-                this.d.setBurnBtnText(context.getString(2131890784));
+                this.d.setBurnBtnText(context.getString(R.string.msg_look_burn));
                 return;
             }
             SelectPhotoBarView selectPhotoBarView = this.d;
-            selectPhotoBarView.setBurnBtnText(context.getString(2131890784) + "\n" + FlashPhotoManager.a().b().flash_prompt);
+            selectPhotoBarView.setBurnBtnText(context.getString(R.string.msg_look_burn) + "\n" + FlashPhotoManager.a().b().flash_prompt);
         }
     }
 
@@ -228,8 +227,8 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
         this.f = iRecentPhotoOperationCallback;
         RecentPhotoAdapter recentPhotoAdapter = new RecentPhotoAdapter(iRequestHost, iRecentPhotoOperationCallback);
         this.e = recentPhotoAdapter;
-        recentPhotoAdapter.bindToRecyclerView(this.f32306c);
-        this.f32306c.setAdapter(this.e);
+        recentPhotoAdapter.bindToRecyclerView(this.f18616c);
+        this.f18616c.setAdapter(this.e);
         this.d.setOperationCallback(iRecentPhotoOperationCallback);
         this.e.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() { // from class: com.soft.blued.ui.msg.customview.RecentPhotoView.1
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemLongClickListener
@@ -248,7 +247,7 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
                 } else if (!RecentPhotoView.this.d.a() || RecentPhotoView.this.e.a()) {
                     RecentPhotoView.this.e.a(RecentPhotoView.this.e.getItem(i));
                 } else {
-                    PayVIPPopupWindow.f19924c.a(RecentPhotoView.this.getContext(), RecentPhotoView.this.e.b(), null);
+                    PayVIPPopupWindow.c.a(RecentPhotoView.this.getContext(), RecentPhotoView.this.e.b(), (DialogInterface.OnDismissListener) null);
                 }
             }
         });
@@ -265,7 +264,7 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
             if (view != null) {
                 view.setVisibility(0);
             }
-            RecyclerView recyclerView = this.f32306c;
+            RecyclerView recyclerView = this.f18616c;
             if (recyclerView != null) {
                 recyclerView.setVisibility(4);
             }
@@ -293,7 +292,7 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
         if (view2 != null) {
             view2.setVisibility(8);
         }
-        RecyclerView recyclerView2 = this.f32306c;
+        RecyclerView recyclerView2 = this.f18616c;
         if (recyclerView2 != null) {
             recyclerView2.setVisibility(0);
         }
@@ -302,11 +301,10 @@ public class RecentPhotoView extends RelativeLayout implements BluedSkinSupporta
             this.e.notifyDataSetChanged();
         }
         if (z) {
-            this.f32306c.scrollToPosition(0);
+            this.f18616c.scrollToPosition(0);
         }
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         findViewById(2131369264).setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
     }

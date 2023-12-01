@@ -365,7 +365,7 @@ public class MzSystemUtils {
     }
 
     public static boolean isInteractive(Context context) {
-        PowerManager powerManager = (PowerManager) context.getSystemService("power");
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         if (powerManager == null) {
             return true;
         }
@@ -378,7 +378,7 @@ public class MzSystemUtils {
     }
 
     public static boolean isInternational() {
-        if (com.meizu.cloud.pushsdk.b.a.a().f23973a) {
+        if (com.meizu.cloud.pushsdk.b.a.a().f10362a) {
             return com.meizu.cloud.pushsdk.b.a.a().b.booleanValue();
         }
         return false;
@@ -390,7 +390,7 @@ public class MzSystemUtils {
 
     public static boolean isMeizuAndFlyme() {
         com.meizu.cloud.pushsdk.b.b.d<Boolean> b = com.meizu.cloud.pushsdk.b.a.b();
-        if (b.f23973a) {
+        if (b.f10362a) {
             return !b.b.booleanValue();
         }
         return false;

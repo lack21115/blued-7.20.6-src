@@ -30,14 +30,29 @@ public class r {
         return Code2.get(0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v27, types: [com.huawei.openalliance.ad.uriaction.k] */
+    /* JADX WARN: Type inference failed for: r0v28, types: [com.huawei.openalliance.ad.uriaction.j] */
+    /* JADX WARN: Type inference failed for: r0v29, types: [com.huawei.openalliance.ad.uriaction.i] */
+    /* JADX WARN: Type inference failed for: r0v30, types: [com.huawei.openalliance.ad.uriaction.a] */
+    /* JADX WARN: Type inference failed for: r0v31, types: [com.huawei.openalliance.ad.uriaction.j] */
+    /* JADX WARN: Type inference failed for: r0v32, types: [com.huawei.openalliance.ad.uriaction.n] */
+    /* JADX WARN: Type inference failed for: r0v33, types: [com.huawei.openalliance.ad.uriaction.c] */
+    /* JADX WARN: Type inference failed for: r0v34, types: [com.huawei.openalliance.ad.uriaction.b] */
+    /* JADX WARN: Type inference failed for: r0v35, types: [com.huawei.openalliance.ad.uriaction.m] */
+    /* JADX WARN: Type inference failed for: r0v36, types: [com.huawei.openalliance.ad.uriaction.p] */
+    /* JADX WARN: Type inference failed for: r0v38, types: [com.huawei.openalliance.ad.uriaction.g] */
+    /* JADX WARN: Type inference failed for: r0v39, types: [com.huawei.openalliance.ad.uriaction.e] */
+    /* JADX WARN: Type inference failed for: r0v43, types: [com.huawei.openalliance.ad.uriaction.o] */
+    /* JADX WARN: Type inference failed for: r0v44, types: [com.huawei.openalliance.ad.uriaction.f] */
     private static List<q> Code(Context context, AdContentData adContentData, Map<String, String> map, List<Integer> list) {
-        f lVar;
+        l lVar;
         ArrayList arrayList = null;
         if (list != null) {
             arrayList = null;
             if (list.size() > 0) {
                 ArrayList arrayList2 = new ArrayList(list.size());
-                q qVar = null;
+                l lVar2 = null;
                 for (Integer num : list) {
                     int intValue = num.intValue();
                     if (intValue != 300) {
@@ -81,7 +96,7 @@ public class r {
                                         lVar = new e(context, adContentData);
                                         break;
                                     case 13:
-                                        lVar = qVar;
+                                        lVar = lVar2;
                                         if (kv.Code(context)) {
                                             lVar = new o(context, adContentData);
                                             break;
@@ -99,10 +114,10 @@ public class r {
                     } else {
                         lVar = new l(context, adContentData, map);
                     }
-                    qVar = lVar;
+                    lVar2 = lVar;
                     if (lVar != null) {
                         arrayList2.add(lVar);
-                        qVar = lVar;
+                        lVar2 = lVar;
                     }
                 }
                 arrayList = arrayList2;

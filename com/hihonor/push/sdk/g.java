@@ -7,11 +7,11 @@ import java.util.Arrays;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f22293a;
+    public final String f8685a;
     public final int b;
 
     public g(String str) {
-        this.f22293a = str;
+        this.f8685a = str;
         this.b = a(str);
     }
 
@@ -30,7 +30,7 @@ public class g {
         if (obj == null || g.class != obj.getClass()) {
             return false;
         }
-        return TextUtils.equals(this.f22293a, ((g) obj).f22293a);
+        return TextUtils.equals(this.f8685a, ((g) obj).f8685a);
     }
 
     public final int hashCode() {

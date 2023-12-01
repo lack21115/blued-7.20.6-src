@@ -18,10 +18,10 @@ public class a implements InvocationHandler {
     private static String b = "ZxExecutor";
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile a f23279c;
+    private static volatile a f9671c;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f23280a;
+    public Context f9672a;
 
     /* renamed from: com.igexin.d.a$1  reason: invalid class name */
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/d/a$1.class */
@@ -32,8 +32,8 @@ public class a implements InvocationHandler {
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                if (a.c(a.this.f23280a)) {
-                    a.a(a.this, a.this.f23280a);
+                if (a.c(a.this.f9672a)) {
+                    a.a(a.this, a.this.f9672a);
                 }
             } catch (Throwable th) {
                 com.igexin.c.a.c.a.a(th);
@@ -46,23 +46,23 @@ public class a implements InvocationHandler {
     final class AnonymousClass2 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f23282a;
+        final /* synthetic */ Context f9674a;
         final /* synthetic */ String b;
 
         AnonymousClass2(Context context, String str) {
-            this.f23282a = context;
+            this.f9674a = context;
             this.b = str;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                Class cls = d.a(this.f23282a, PushService.class).second;
+                Class cls = d.a(this.f9674a, PushService.class).second;
                 if (cls != null) {
-                    Intent intent = new Intent(this.f23282a, cls);
+                    Intent intent = new Intent(this.f9674a, cls);
                     intent.putExtra("action", PushConsts.ACTION_BROADCAST_UPLOAD_TYPE253);
                     intent.putExtra("id", this.b);
-                    c.a(this.f23282a, intent);
+                    c.a(this.f9674a, intent);
                 }
             } catch (Throwable th) {
                 com.igexin.c.a.c.a.a(th);
@@ -74,12 +74,12 @@ public class a implements InvocationHandler {
     }
 
     public static a a() {
-        if (f23279c == null) {
+        if (f9671c == null) {
             synchronized (a.class) {
                 try {
-                    if (f23279c == null) {
+                    if (f9671c == null) {
                         a aVar = new a();
-                        f23279c = aVar;
+                        f9671c = aVar;
                         return aVar;
                     }
                 } catch (Throwable th) {
@@ -87,7 +87,7 @@ public class a implements InvocationHandler {
                 }
             }
         }
-        return f23279c;
+        return f9671c;
     }
 
     static /* synthetic */ void a(a aVar, Context context) {
@@ -106,11 +106,11 @@ public class a implements InvocationHandler {
     }
 
     private void a(String str, Context context) {
-        com.igexin.b.a.a().f23194a.execute(new AnonymousClass2(context, str));
+        com.igexin.b.a.a().f9586a.execute(new AnonymousClass2(context, str));
     }
 
     private void b(Context context) {
-        this.f23280a = context.getApplicationContext();
+        this.f9672a = context.getApplicationContext();
         com.igexin.b.a.a().b().schedule(new AnonymousClass1(), 2000L, TimeUnit.MILLISECONDS);
     }
 
@@ -200,7 +200,7 @@ public class a implements InvocationHandler {
             if (!z) {
                 Object obj2 = objArr[0];
                 com.igexin.c.a.c.a.b(b, " get zxid success ".concat(String.valueOf(obj2)));
-                com.igexin.b.a.a().f23194a.execute(new AnonymousClass2(this.f23280a, obj2.toString()));
+                com.igexin.b.a.a().f9586a.execute(new AnonymousClass2(this.f9672a, obj2.toString()));
                 return null;
             } else if (!z) {
                 return null;

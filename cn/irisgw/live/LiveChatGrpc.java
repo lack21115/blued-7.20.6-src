@@ -97,7 +97,6 @@ public final class LiveChatGrpc {
 
     /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/LiveChatGrpc$LiveChatImplBase.class */
     public static abstract class LiveChatImplBase implements BindableService {
-        @Override // io.grpc.BindableService
         public final ServerServiceDefinition bindService() {
             return ServerServiceDefinition.builder(LiveChatGrpc.getServiceDescriptor()).addMethod(LiveChatGrpc.getSendMsgMethod(), ServerCalls.asyncUnaryCall(new MethodHandlers(this, 0))).addMethod(LiveChatGrpc.getSendLikeMethod(), ServerCalls.asyncUnaryCall(new MethodHandlers(this, 1))).build();
         }

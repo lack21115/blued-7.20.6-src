@@ -7,7 +7,7 @@ import java.util.Map;
 public class OnlineServiceWrapper extends BaseWrapper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f21540a = "gr";
+    private static final String f7934a = "gr";
 
     protected OnlineServiceWrapper(Map<String, Object> map) {
         super(map);
@@ -19,13 +19,13 @@ public class OnlineServiceWrapper extends BaseWrapper {
 
     public int getGrade() {
         try {
-            return getInt(f21540a);
+            return getInt(f7934a);
         } catch (ag | NumberFormatException e) {
             return 0;
         }
     }
 
     public OnlineServiceWrapper setGrade(int i) {
-        return (OnlineServiceWrapper) set(f21540a, Integer.valueOf(i));
+        return (OnlineServiceWrapper) set(f7934a, Integer.valueOf(i));
     }
 }

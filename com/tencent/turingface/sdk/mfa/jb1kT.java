@@ -12,7 +12,7 @@ public final class jb1kT extends CvowV {
     public static final class spXPg {
 
         /* renamed from: a  reason: collision with root package name */
-        public Context f39959a;
+        public Context f26268a;
         public n6fHX k;
         public ITuringDeviceInfoProvider l;
         public long o;
@@ -21,7 +21,7 @@ public final class jb1kT extends CvowV {
         public int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        public Map<Integer, String> f39960c = new HashMap();
+        public Map<Integer, String> f26269c = new HashMap();
         public boolean d = true;
         public String e = "";
         public String f = "";
@@ -33,7 +33,7 @@ public final class jb1kT extends CvowV {
         public ITuringNetwork n = null;
 
         public spXPg(Context context, n6fHX n6fhx) {
-            this.f39959a = context.getApplicationContext();
+            this.f26268a = context.getApplicationContext();
             this.k = n6fhx;
         }
 
@@ -109,7 +109,7 @@ public final class jb1kT extends CvowV {
     }
 
     public jb1kT(spXPg spxpg) {
-        this.e = spxpg.f39959a;
+        this.e = spxpg.f26268a;
         spXPg.g(spxpg);
         this.g = "";
         spXPg.r(spxpg);
@@ -124,7 +124,7 @@ public final class jb1kT extends CvowV {
         spXPg.c(spxpg);
         spXPg.d(spxpg);
         this.m = "";
-        this.n = spxpg.f39960c;
+        this.n = spxpg.f26269c;
         this.f = spxpg.b;
         this.h = spxpg.d;
         this.o = spxpg.e;
@@ -135,7 +135,7 @@ public final class jb1kT extends CvowV {
         spXPg.o(spxpg);
         this.q = false;
         this.t = spxpg.j;
-        this.f39866c = spxpg.k;
+        this.f26175c = spxpg.k;
         spXPg.s(spxpg);
         this.s = true;
         this.d = spxpg.l;

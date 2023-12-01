@@ -18,11 +18,11 @@ import androidx.core.view.ViewCompat;
 public class MenuPopupHelper implements MenuHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f1689a;
+    private final Context f1641a;
     private final MenuBuilder b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f1690c;
+    private final boolean f1642c;
     private final int d;
     private final int e;
     private View f;
@@ -53,10 +53,10 @@ public class MenuPopupHelper implements MenuHelper {
                 MenuPopupHelper.this.a();
             }
         };
-        this.f1689a = context;
+        this.f1641a = context;
         this.b = menuBuilder;
         this.f = view;
-        this.f1690c = z;
+        this.f1642c = z;
         this.d = i;
         this.e = i2;
     }
@@ -71,21 +71,21 @@ public class MenuPopupHelper implements MenuHelper {
             }
             popup.setHorizontalOffset(i3);
             popup.setVerticalOffset(i2);
-            int i4 = (int) ((this.f1689a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
+            int i4 = (int) ((this.f1641a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
             popup.setEpicenterBounds(new Rect(i3 - i4, i2 - i4, i3 + i4, i2 + i4));
         }
         popup.show();
     }
 
     private MenuPopup b() {
-        Display defaultDisplay = ((WindowManager) this.f1689a.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        Display defaultDisplay = ((WindowManager) this.f1641a.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         Point point = new Point();
         if (Build.VERSION.SDK_INT >= 17) {
             defaultDisplay.getRealSize(point);
         } else {
             defaultDisplay.getSize(point);
         }
-        MenuPopup cascadingMenuPopup = Math.min(point.x, point.y) >= this.f1689a.getResources().getDimensionPixelSize(R.dimen.abc_cascading_menus_min_smallest_width) ? new CascadingMenuPopup(this.f1689a, this.f, this.d, this.e, this.f1690c) : new StandardMenuPopup(this.f1689a, this.b, this.f, this.d, this.e, this.f1690c);
+        MenuPopup cascadingMenuPopup = Math.min(point.x, point.y) >= this.f1641a.getResources().getDimensionPixelSize(R.dimen.abc_cascading_menus_min_smallest_width) ? new CascadingMenuPopup(this.f1641a, this.f, this.d, this.e, this.f1642c) : new StandardMenuPopup(this.f1641a, this.b, this.f, this.d, this.e, this.f1642c);
         cascadingMenuPopup.addMenu(this.b);
         cascadingMenuPopup.setOnDismissListener(this.l);
         cascadingMenuPopup.setAnchorView(this.f);

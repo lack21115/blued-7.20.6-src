@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -31,19 +32,15 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYMagicalBoxFragment.class */
 public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYPreciousPackageModel f17332a;
+    private YYPreciousPackageModel a;
     private FragmentMagicalBoxBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f17333c;
+    private boolean c;
     private int d;
     private int e;
     private long f;
 
     public YYMagicalBoxFragment(YYPreciousPackageModel yYPreciousPackageModel) {
-        this.f17332a = yYPreciousPackageModel;
+        this.a = yYPreciousPackageModel;
     }
 
     private final void a(int i) {
@@ -123,7 +120,7 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYMagicalBoxFragment this$0, Long l) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f17333c = true;
+        this$0.c = true;
         this$0.a(l);
     }
 
@@ -182,7 +179,7 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYMagicalBoxFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        if (this$0.f17333c) {
+        if (this$0.c) {
             ToastUtils.a("宝箱雨即将掉落，请耐心等待");
         } else {
             this$0.dismissAllowingStateLoss();
@@ -195,41 +192,41 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
         if (yYPreciousPackageModel == null) {
             return;
         }
-        YYPreciousPackageModel yYPreciousPackageModel2 = this$0.f17332a;
+        YYPreciousPackageModel yYPreciousPackageModel2 = this$0.a;
         if (yYPreciousPackageModel2 != null) {
             if (yYPreciousPackageModel2 != null) {
                 yYPreciousPackageModel2.count_down = yYPreciousPackageModel.count_down;
             }
-            YYPreciousPackageModel yYPreciousPackageModel3 = this$0.f17332a;
+            YYPreciousPackageModel yYPreciousPackageModel3 = this$0.a;
             if (yYPreciousPackageModel3 != null) {
                 yYPreciousPackageModel3.level = yYPreciousPackageModel.level;
             }
-            YYPreciousPackageModel yYPreciousPackageModel4 = this$0.f17332a;
+            YYPreciousPackageModel yYPreciousPackageModel4 = this$0.a;
             if (yYPreciousPackageModel4 != null) {
                 yYPreciousPackageModel4.trigger_vanish_time = yYPreciousPackageModel.trigger_vanish_time;
             }
-            YYPreciousPackageModel yYPreciousPackageModel5 = this$0.f17332a;
+            YYPreciousPackageModel yYPreciousPackageModel5 = this$0.a;
             if (yYPreciousPackageModel5 != null) {
                 yYPreciousPackageModel5.animation = yYPreciousPackageModel.animation;
             }
-            YYPreciousPackageModel yYPreciousPackageModel6 = this$0.f17332a;
+            YYPreciousPackageModel yYPreciousPackageModel6 = this$0.a;
             if (yYPreciousPackageModel6 != null) {
                 yYPreciousPackageModel6.grant = yYPreciousPackageModel.grant;
             }
-            YYPreciousPackageModel yYPreciousPackageModel7 = this$0.f17332a;
+            YYPreciousPackageModel yYPreciousPackageModel7 = this$0.a;
             if (yYPreciousPackageModel7 != null) {
                 yYPreciousPackageModel7.icon_big = yYPreciousPackageModel.icon_big;
             }
-            YYPreciousPackageModel yYPreciousPackageModel8 = this$0.f17332a;
+            YYPreciousPackageModel yYPreciousPackageModel8 = this$0.a;
             if (yYPreciousPackageModel8 != null) {
                 yYPreciousPackageModel8.icon_middle = yYPreciousPackageModel.icon_middle;
             }
-            YYPreciousPackageModel yYPreciousPackageModel9 = this$0.f17332a;
+            YYPreciousPackageModel yYPreciousPackageModel9 = this$0.a;
             if (yYPreciousPackageModel9 != null) {
                 yYPreciousPackageModel9.icon_small = yYPreciousPackageModel.icon_middle;
             }
         } else {
-            this$0.f17332a = yYPreciousPackageModel;
+            this$0.a = yYPreciousPackageModel;
         }
         this$0.b(yYPreciousPackageModel);
     }
@@ -237,7 +234,7 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YYMagicalBoxFragment this$0, Long l) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f17333c = true;
+        this$0.c = true;
         this$0.a(l);
     }
 
@@ -287,9 +284,9 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
             return;
         }
         this$0.d = StringUtils.a(yYPreciousPackageModel.need_total_beans, 0);
-        int a2 = StringUtils.a(yYPreciousPackageModel.current_beans, 0);
-        this$0.e = a2;
-        this$0.a(a2);
+        int a = StringUtils.a(yYPreciousPackageModel.current_beans, 0);
+        this$0.e = a;
+        this$0.a(a);
         this$0.j();
     }
 
@@ -298,7 +295,7 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
         ImageView imageView2;
         View view;
         FragmentMagicalBoxBinding fragmentMagicalBoxBinding = this.b;
-        if (fragmentMagicalBoxBinding != null && (view = fragmentMagicalBoxBinding.f16476c) != null) {
+        if (fragmentMagicalBoxBinding != null && (view = fragmentMagicalBoxBinding.c) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$U-mZIbXOi2FB5wQx9_RI4gyxImk
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
@@ -316,7 +313,7 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
             });
         }
         FragmentMagicalBoxBinding fragmentMagicalBoxBinding3 = this.b;
-        if (fragmentMagicalBoxBinding3 == null || (imageView = fragmentMagicalBoxBinding3.f16475a) == null) {
+        if (fragmentMagicalBoxBinding3 == null || (imageView = fragmentMagicalBoxBinding3.a) == null) {
             return;
         }
         imageView.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$YekCZF1ChwNs19eGezvk_VJS9Mw
@@ -328,7 +325,7 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
     }
 
     private final void g() {
-        YYPreciousPackageModel yYPreciousPackageModel = this.f17332a;
+        YYPreciousPackageModel yYPreciousPackageModel = this.a;
         if (yYPreciousPackageModel == null) {
             return;
         }
@@ -419,7 +416,7 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_magical_box, viewGroup, true);
@@ -430,46 +427,40 @@ public final class YYMagicalBoxFragment extends BaseFullScreenDialog {
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
-        YYMagicalBoxFragment yYMagicalBoxFragment = this;
-        LiveEventBus.get("update_coin_num", YYPreciousPackageModel.class).observe(yYMagicalBoxFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$4gMwctaI_mQ0Ilr3dH5zioQDACI
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("update_coin_num", YYPreciousPackageModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$4gMwctaI_mQ0Ilr3dH5zioQDACI
             public final void onChanged(Object obj) {
                 YYMagicalBoxFragment.a(YYMagicalBoxFragment.this, (YYPreciousPackageModel) obj);
             }
         });
-        LiveEventBus.get("fall_down_prize", YYPreciousPackageModel.class).observe(yYMagicalBoxFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$IoS4HRppJvI5PBAy8HEpkWFLG4w
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("fall_down_prize", YYPreciousPackageModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$IoS4HRppJvI5PBAy8HEpkWFLG4w
             public final void onChanged(Object obj) {
                 YYMagicalBoxFragment.b(YYMagicalBoxFragment.this, (YYPreciousPackageModel) obj);
             }
         });
-        LiveEventBus.get("reset_magical_info", YYPreciousPackageModel.class).observe(yYMagicalBoxFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$noDML3ofyDs9lM-0sFwhpnxsQ_g
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("reset_magical_info", YYPreciousPackageModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$noDML3ofyDs9lM-0sFwhpnxsQ_g
             public final void onChanged(Object obj) {
                 YYMagicalBoxFragment.c(YYMagicalBoxFragment.this, (YYPreciousPackageModel) obj);
             }
         });
-        LiveEventBus.get("grab_prize_prepare", Long.TYPE).observe(yYMagicalBoxFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$dWeIdLDm-xegJGtrGHCZTmSyRp4
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("grab_prize_prepare", Long.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$dWeIdLDm-xegJGtrGHCZTmSyRp4
             public final void onChanged(Object obj) {
                 YYMagicalBoxFragment.a(YYMagicalBoxFragment.this, (Long) obj);
             }
         });
-        LiveEventBus.get("grab_prize_start", Long.TYPE).observe(yYMagicalBoxFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$iNccDpW5aJ2t7a5OiKaEd972FcU
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("grab_prize_start", Long.TYPE).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalBoxFragment$iNccDpW5aJ2t7a5OiKaEd972FcU
             public final void onChanged(Object obj) {
                 YYMagicalBoxFragment.b(YYMagicalBoxFragment.this, (Long) obj);
             }
         });
-        LiveEventBus.get("grab_prize_end", String.class).observe(yYMagicalBoxFragment, new Observer<String>() { // from class: com.blued.android.module.yy_china.fragment.YYMagicalBoxFragment$onViewCreated$6
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("grab_prize_end", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.fragment.YYMagicalBoxFragment$onViewCreated$6
             /* renamed from: a */
             public void onChanged(String str) {
-                YYMagicalBoxFragment.this.f17333c = false;
+                YYMagicalBoxFragment.this.c = false;
                 YYMagicalBoxFragment.this.i();
             }
         });

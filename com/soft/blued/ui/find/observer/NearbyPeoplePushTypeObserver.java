@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class NearbyPeoplePushTypeObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static NearbyPeoplePushTypeObserver f30622a = new NearbyPeoplePushTypeObserver();
+    private static NearbyPeoplePushTypeObserver f16932a = new NearbyPeoplePushTypeObserver();
     private ArrayList<INearbyPeoplePushTypeObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/NearbyPeoplePushTypeObserver$INearbyPeoplePushTypeObserver.class */
@@ -19,7 +19,7 @@ public class NearbyPeoplePushTypeObserver {
     }
 
     public static NearbyPeoplePushTypeObserver a() {
-        return f30622a;
+        return f16932a;
     }
 
     public void a(INearbyPeoplePushTypeObserver iNearbyPeoplePushTypeObserver) {

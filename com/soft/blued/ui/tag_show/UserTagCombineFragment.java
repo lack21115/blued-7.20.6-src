@@ -22,11 +22,11 @@ import com.soft.blued.customview.TabPageIndicatorWithDot;
 public class UserTagCombineFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f33726a = "TAG";
+    public static String f20035a = "TAG";
     public static String b = "TAGID";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f33727c = "tab";
+    public static String f20036c = "tab";
     public String d;
     public String e;
     public int f = 0;
@@ -75,15 +75,15 @@ public class UserTagCombineFragment extends BaseFragment {
     public static void a(Context context, String str, String str2, int i) {
         Bundle bundle = new Bundle();
         bundle.putString(b, str);
-        bundle.putString(f33726a, str2);
-        bundle.putInt(f33727c, i);
+        bundle.putString(f20035a, str2);
+        bundle.putInt(f20036c, i);
         TerminalActivity.d(context, UserTagCombineFragment.class, bundle);
     }
 
     private void b() {
         Bundle bundle = new Bundle();
         bundle.putString(TagUserFragment.b, this.e);
-        bundle.putString(TagUserFragment.f33719a, this.d);
+        bundle.putString(TagUserFragment.f20028a, this.d);
         TagUserFragment tagUserFragment = new TagUserFragment();
         this.k = tagUserFragment;
         tagUserFragment.setArguments(bundle);
@@ -103,16 +103,16 @@ public class UserTagCombineFragment extends BaseFragment {
         this.j = (ViewPager) this.h.findViewById(R.id.main_find_viewpager);
         this.j.setAdapter(new MyAdapter(getChildFragmentManager()));
         this.j.setOffscreenPageLimit(2);
-        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.h.findViewById(2131364744);
+        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.h.findViewById(R.id.indicator);
         this.n = tabPageIndicatorWithDot;
         tabPageIndicatorWithDot.setViewPager(this.j);
         this.j.setCurrentItem(this.f);
     }
 
     private void d() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.h.findViewById(2131370749);
-        this.i = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.h.findViewById(R.id.top_title);
+        this.i = findViewById;
+        findViewById.a();
         this.i.setCenterText("");
         this.i.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.tag_show.UserTagCombineFragment.1
             @Override // android.view.View.OnClickListener
@@ -125,9 +125,9 @@ public class UserTagCombineFragment extends BaseFragment {
         if (arguments == null) {
             return;
         }
-        this.d = arguments.getString(f33726a);
+        this.d = arguments.getString(f20035a);
         this.e = arguments.getString(b);
-        int i = arguments.getInt(f33727c);
+        int i = arguments.getInt(f20036c);
         this.f = i;
         if (i < 0 || i >= 2) {
             this.f = 0;
@@ -139,10 +139,9 @@ public class UserTagCombineFragment extends BaseFragment {
     }
 
     public String[] a() {
-        return new String[]{this.g.getResources().getString(2131891020)};
+        return new String[]{this.g.getResources().getString(R.string.nearby_feed)};
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.g = getActivity();
         View view = this.h;
@@ -157,7 +156,6 @@ public class UserTagCombineFragment extends BaseFragment {
         return this.h;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }

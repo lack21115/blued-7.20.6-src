@@ -135,7 +135,7 @@ public final class am {
                             return false;
                         }
                         boolean z = false;
-                        if (str4.startsWith(String.this)) {
+                        if (str4.startsWith(str2)) {
                             z = false;
                             if (str4.endsWith(str3)) {
                                 z = true;

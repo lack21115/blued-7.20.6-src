@@ -11,11 +11,11 @@ import java.lang.reflect.Method;
 class GhostViewPlatform implements GhostView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Class<?> f3449a;
+    private static Class<?> f3401a;
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f3450c;
+    private static Method f3402c;
     private static boolean d;
     private static Method e;
     private static boolean f;
@@ -28,7 +28,7 @@ class GhostViewPlatform implements GhostView {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static GhostView a(View view, ViewGroup viewGroup, Matrix matrix) {
         b();
-        Method method = f3450c;
+        Method method = f3402c;
         if (method != null) {
             try {
                 return new GhostViewPlatform((View) method.invoke(null, view, viewGroup, matrix));
@@ -46,7 +46,7 @@ class GhostViewPlatform implements GhostView {
             return;
         }
         try {
-            f3449a = Class.forName("android.view.GhostView");
+            f3401a = Class.forName("android.view.GhostView");
         } catch (ClassNotFoundException e2) {
             Log.i("GhostViewApi21", "Failed to retrieve GhostView class", e2);
         }
@@ -73,8 +73,8 @@ class GhostViewPlatform implements GhostView {
         }
         try {
             a();
-            Method declaredMethod = f3449a.getDeclaredMethod("addGhost", View.class, ViewGroup.class, Matrix.class);
-            f3450c = declaredMethod;
+            Method declaredMethod = f3401a.getDeclaredMethod("addGhost", View.class, ViewGroup.class, Matrix.class);
+            f3402c = declaredMethod;
             declaredMethod.setAccessible(true);
         } catch (NoSuchMethodException e2) {
             Log.i("GhostViewApi21", "Failed to retrieve addGhost method", e2);
@@ -88,7 +88,7 @@ class GhostViewPlatform implements GhostView {
         }
         try {
             a();
-            Method declaredMethod = f3449a.getDeclaredMethod("removeGhost", View.class);
+            Method declaredMethod = f3401a.getDeclaredMethod("removeGhost", View.class);
             e = declaredMethod;
             declaredMethod.setAccessible(true);
         } catch (NoSuchMethodException e2) {

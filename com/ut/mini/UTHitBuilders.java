@@ -4,8 +4,6 @@ import android.text.TextUtils;
 import com.alibaba.mtl.log.e.i;
 import com.alibaba.mtl.log.e.p;
 import com.alibaba.mtl.log.model.LogField;
-import com.anythink.core.api.ErrorCode;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,7 +22,7 @@ public class UTHitBuilders {
             }
             super.setProperty(UTHitBuilder.FIELD_PAGE, currentPageName);
             super.setProperty(UTHitBuilder.FIELD_EVENT_ID, "2101");
-            super.setProperty(UTHitBuilder.FIELD_ARG1, currentPageName + BridgeUtil.UNDERLINE_STR + str);
+            super.setProperty(UTHitBuilder.FIELD_ARG1, currentPageName + "_" + str);
         }
 
         public UTControlHitBuilder(String str, String str2) {
@@ -36,7 +34,7 @@ public class UTHitBuilders {
             }
             super.setProperty(UTHitBuilder.FIELD_PAGE, str);
             super.setProperty(UTHitBuilder.FIELD_EVENT_ID, "2101");
-            super.setProperty(UTHitBuilder.FIELD_ARG1, str + BridgeUtil.UNDERLINE_STR + str2);
+            super.setProperty(UTHitBuilder.FIELD_ARG1, str + "_" + str2);
         }
     }
 
@@ -234,7 +232,7 @@ public class UTHitBuilders {
             if (!TextUtils.isEmpty(str)) {
                 super.setProperty(UTHitBuilder.FIELD_PAGE, str);
             }
-            super.setProperty(UTHitBuilder.FIELD_EVENT_ID, ErrorCode.timeOutError);
+            super.setProperty(UTHitBuilder.FIELD_EVENT_ID, "2001");
             super.setProperty(UTHitBuilder.FIELD_ARG3, "0");
         }
 

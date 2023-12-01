@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.BottomPopupView;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
@@ -28,7 +27,7 @@ public class GiftVoucherPop extends BottomPopupView {
     public static GiftVoucherPop b;
 
     /* renamed from: c  reason: collision with root package name */
-    public List<GiftVoucherModel> f32484c;
+    public List<GiftVoucherModel> f18793c;
     public double d;
     public GiftVoucherModel e;
     private CommonTopTitleNoTrans f;
@@ -43,27 +42,26 @@ public class GiftVoucherPop extends BottomPopupView {
 
     private void c() {
         UpdateVoucherEvent updateVoucherEvent = new UpdateVoucherEvent();
-        updateVoucherEvent.f32330a = this.e;
+        updateVoucherEvent.f18640a = this.e;
         updateVoucherEvent.b = this.i;
         LiveEventBus.get(EventBusConstant.KEY_EVENT_UPDATE_VOUCHER).post(updateVoucherEvent);
         b = null;
         this.e = null;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         b = this;
-        findViewById(2131369389).setBackgroundDrawable(BluedSkinUtils.b(getContext(), R.drawable.shape_gift_voucher_pop_bg));
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) findViewById(2131370749);
-        this.f = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.getRightImg().setImageDrawable(BluedSkinUtils.b(getContext(), R.drawable.icon_gift_voucher_help));
+        findViewById(2131369389).setBackgroundDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.shape_gift_voucher_pop_bg));
+        CommonTopTitleNoTrans findViewById = findViewById(R.id.top_title);
+        this.f = findViewById;
+        findViewById.getRightImg().setImageDrawable(BluedSkinUtils.b(getContext(), (int) R.drawable.icon_gift_voucher_help));
         this.f.setLeftImg(2131233902);
         this.f.setRightClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.GiftVoucherPop.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                new XPopup.Builder(GiftVoucherPop.this.getContext()).a((BasePopupView) new GiftVoucherHelpPop(GiftVoucherPop.this.getContext())).h();
+                new XPopup.Builder(GiftVoucherPop.this.getContext()).a(new GiftVoucherHelpPop(GiftVoucherPop.this.getContext())).h();
             }
         });
         this.f.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.GiftVoucherPop.2
@@ -83,9 +81,9 @@ public class GiftVoucherPop extends BottomPopupView {
         SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(0, 0, 0, DensityUtils.a(AppInfo.d(), 9.0f));
         spacesItemDecoration.a(1);
         this.h.addItemDecoration(spacesItemDecoration);
-        this.g.f31977a = this.d;
+        this.g.f18287a = this.d;
         this.h.setAdapter(this.g);
-        this.g.setNewData(this.f32484c);
+        this.g.setNewData(this.f18793c);
         this.g.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg.pop.GiftVoucherPop.3
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
@@ -119,12 +117,10 @@ public class GiftVoucherPop extends BottomPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BottomPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_gift_voucher;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void r() {
         c();
         super.r();

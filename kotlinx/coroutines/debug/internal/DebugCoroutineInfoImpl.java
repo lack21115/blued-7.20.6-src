@@ -8,13 +8,9 @@ import kotlin.coroutines.jvm.internal.CoroutineStackFrame;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/debug/internal/DebugCoroutineInfoImpl.class */
 public final class DebugCoroutineInfoImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final long f43028a;
+    public final long a;
     private final WeakReference<CoroutineContext> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f43029c;
+    private String c;
     private WeakReference<CoroutineStackFrame> d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -38,7 +34,7 @@ public final class DebugCoroutineInfoImpl {
     }
 
     public final String a() {
-        return this.f43029c;
+        return this.c;
     }
 
     public final CoroutineStackFrame b() {

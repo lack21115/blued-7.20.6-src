@@ -64,11 +64,11 @@ public class CoverView extends EditBottomBaseView implements View.OnTouchListene
             return;
         }
         EditPresenter presenter = this.m.getPresenter();
-        int a2 = (this.i + DensityUtils.a(getContext(), 6.0f)) / 2;
-        int a3 = this.h - ((this.i + DensityUtils.a(getContext(), 6.0f)) / 2);
-        presenter.e(a2);
-        presenter.f(a3);
-        presenter.d(a3 - a2);
+        int a = (this.i + DensityUtils.a(getContext(), 6.0f)) / 2;
+        int a2 = this.h - ((this.i + DensityUtils.a(getContext(), 6.0f)) / 2);
+        presenter.e(a);
+        presenter.f(a2);
+        presenter.d(a2 - a);
         VideoFrameView videoFrameView = this.f;
         String z = presenter.z();
         long A = presenter.A();
@@ -97,10 +97,10 @@ public class CoverView extends EditBottomBaseView implements View.OnTouchListene
 
     @Override // com.blued.android.module.shortvideo.view.EditBottomBaseView
     protected void b() {
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.f15888c.getLayoutParams();
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.c.getLayoutParams();
         layoutParams.height = this.i + DensityUtils.a(getContext(), 6.0f);
-        this.f15888c.setLayoutParams(layoutParams);
-        StvViewUtils.a(this.f15888c, 0, 40, 0, 60);
+        this.c.setLayoutParams(layoutParams);
+        StvViewUtils.a(this.c, 0, 40, 0, 60);
     }
 
     @Override // com.blued.android.module.shortvideo.contract.ICoverSlideListener

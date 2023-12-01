@@ -9,9 +9,7 @@ class DurationUnitKt__DurationUnitKt extends DurationUnitKt__DurationUnitJvmKt {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/time/DurationUnitKt__DurationUnitKt$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f42768a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[DurationUnit.values().length];
@@ -22,7 +20,7 @@ class DurationUnitKt__DurationUnitKt extends DurationUnitKt__DurationUnitJvmKt {
             iArr[DurationUnit.MINUTES.ordinal()] = 5;
             iArr[DurationUnit.HOURS.ordinal()] = 6;
             iArr[DurationUnit.DAYS.ordinal()] = 7;
-            f42768a = iArr;
+            a = iArr;
         }
     }
 }

@@ -22,13 +22,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LivePKInviteAdapter.class */
 public class LivePKInviteAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f11673a;
+    public Context a;
     public List<LiveFriendModel> b = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    public LoadOptions f11674c;
+    public LoadOptions c;
     public LayoutInflater d;
     public LiveInviteListener e;
     public int f;
@@ -41,9 +37,7 @@ public class LivePKInviteAdapter extends BaseAdapter {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LivePKInviteAdapter$ViewHolder.class */
     class ViewHolder {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f11678c;
+        private ImageView c;
         private TextView d;
         private ImageView e;
         private TextView f;
@@ -53,16 +47,16 @@ public class LivePKInviteAdapter extends BaseAdapter {
     }
 
     public LivePKInviteAdapter(Context context, LiveInviteListener liveInviteListener) {
-        this.f11673a = context;
+        this.a = context;
         this.e = liveInviteListener;
         this.d = LayoutInflater.from(context);
-        int i = this.f11673a.getResources().getDisplayMetrics().widthPixels;
+        int i = this.a.getResources().getDisplayMetrics().widthPixels;
         LoadOptions loadOptions = new LoadOptions();
-        this.f11674c = loadOptions;
+        this.c = loadOptions;
         loadOptions.d = R.drawable.user_bg_round;
-        this.f11674c.b = R.drawable.user_bg_round;
+        this.c.b = R.drawable.user_bg_round;
         int i2 = i >> 1;
-        this.f11674c.a(i2, i2);
+        this.c.a(i2, i2);
     }
 
     public void a(int i) {
@@ -103,7 +97,7 @@ public class LivePKInviteAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             view2 = this.d.inflate(R.layout.item_live_pk_friend_list, viewGroup, false);
             viewHolder.b = (ImageView) view2.findViewById(R.id.img_header);
-            viewHolder.f11678c = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.c = (ImageView) view2.findViewById(R.id.img_verify);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_name);
             viewHolder.e = (ImageView) view2.findViewById(R.id.img_vip_icon);
             viewHolder.f = (TextView) view2.findViewById(R.id.invite_btn);
@@ -113,7 +107,7 @@ public class LivePKInviteAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         final LiveFriendModel liveFriendModel = this.b.get(i);
-        LiveRoomInfo.a().a(viewHolder.f11678c, liveFriendModel.vbadge);
+        LiveRoomInfo.a().a(viewHolder.c, liveFriendModel.vbadge);
         ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, liveFriendModel.avatar)).b(R.drawable.user_bg_round).c().a(viewHolder.b);
         LiveRoomUserModel liveRoomUserModel = new LiveRoomUserModel();
         liveRoomUserModel.vip_grade = liveFriendModel.vip_grade;
@@ -127,7 +121,7 @@ public class LivePKInviteAdapter extends BaseAdapter {
         } else {
             viewHolder.d.setText(liveFriendModel.name);
         }
-        LiveRoomInfo.a().a(this.f11673a, viewHolder.d, liveRoomUserModel, R.color.syc_dark_222222);
+        LiveRoomInfo.a().a(this.a, viewHolder.d, liveRoomUserModel, R.color.syc_dark_222222);
         if (this.f == 0) {
             viewHolder.f.setText(R.string.live_pk_invite);
         } else {

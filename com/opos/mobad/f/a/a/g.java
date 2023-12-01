@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class g<T extends com.opos.mobad.ad.b> extends i<T> implements m<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.opos.mobad.f.a.b.a<T> f26031a;
+    protected com.opos.mobad.f.a.b.a<T> f12343a;
     private List<T> d;
     private T g;
     private int h;
@@ -26,7 +26,7 @@ public class g<T extends com.opos.mobad.ad.b> extends i<T> implements m<T> {
         this.i = 0;
         this.k = new AtomicBoolean(false);
         this.j = context;
-        this.f26031a = bVar;
+        this.f12343a = bVar;
         this.d = new ArrayList(list.size());
         this.h = com.opos.cmn.an.h.f.a.b(context);
         this.i = com.opos.cmn.an.h.f.a.a(context, 57.0f);
@@ -60,8 +60,8 @@ public class g<T extends com.opos.mobad.ad.b> extends i<T> implements m<T> {
 
     @Override // com.opos.mobad.f.a.a.i
     protected void a(e.a aVar, T t) {
-        this.b.put(Integer.valueOf(aVar.f27301a), t);
-        this.f26040c.put(Integer.valueOf(aVar.f27301a), aVar);
+        this.b.put(Integer.valueOf(aVar.f13613a), t);
+        this.f12352c.put(Integer.valueOf(aVar.f13613a), aVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0058, code lost:
@@ -108,8 +108,8 @@ public class g<T extends com.opos.mobad.ad.b> extends i<T> implements m<T> {
     @Override // com.opos.mobad.f.a.a.i, com.opos.mobad.l.j, com.opos.mobad.ad.b
     public void b() {
         super.b();
-        if (!this.f26040c.isEmpty()) {
-            this.f26040c.clear();
+        if (!this.f12352c.isEmpty()) {
+            this.f12352c.clear();
         }
         h();
     }

@@ -40,7 +40,7 @@ import java.util.List;
 public class GroupFragmentRecommend extends BaseFragment implements View.OnClickListener, CommonTitleDoubleClickObserver.ITitleClickObserver {
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f30792c = "ISNEARBY";
+    public static String f17102c = "ISNEARBY";
     private static int y;
     private LinearLayout A;
     private List<BluedGroupCheck> B;
@@ -71,15 +71,14 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
     private List<FilterInfo> x = new ArrayList();
 
     /* renamed from: a  reason: collision with root package name */
-    List<String> f30793a = new ArrayList();
+    List<String> f17103a = new ArrayList();
     int d = 1;
     public BluedUIHttpResponse f = new BluedUIHttpResponse<BluedEntityA<BluedGroupLists>>() { // from class: com.soft.blued.ui.group.GroupFragmentRecommend.4
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f30797a;
+        boolean f17107a;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupLists> bluedEntityA) {
             if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -108,32 +107,29 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
             GroupFragmentRecommend.this.o.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onSuccess(String str) {
             super.onSuccess(str);
             FileCache.a("default_group_list", str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f30797a = true;
+            this.f17107a = true;
             if (GroupFragmentRecommend.this.l != 1) {
                 GroupFragmentRecommend.h(GroupFragmentRecommend.this);
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             GroupFragmentRecommend.this.h.j();
             GroupFragmentRecommend.this.h.q();
             if (GroupFragmentRecommend.this.o.getCount() != 0) {
                 GroupFragmentRecommend.this.F.d();
-            } else if (!this.f30797a) {
+            } else if (!this.f17107a) {
                 GroupFragmentRecommend.this.F.a();
             } else {
-                this.f30797a = false;
+                this.f17107a = false;
                 GroupFragmentRecommend.this.F.b();
             }
         }
@@ -162,7 +158,6 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.OnPullDownListener
         public void a() {
             GroupFragmentRecommend.this.l = 1;
             GroupFragmentRecommend.this.e = false;
@@ -170,7 +165,6 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
             GroupFragmentRecommend.this.a(false);
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.OnPullDownListener
         public void b() {
             GroupFragmentRecommend.j(GroupFragmentRecommend.this);
             GroupFragmentRecommend.this.a(false);
@@ -188,7 +182,7 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
         }
         if (!this.n && (i = this.l) != 1) {
             this.l = i - 1;
-            AppMethods.a((CharSequence) this.q.getResources().getString(2131887275));
+            AppMethods.a(this.q.getResources().getString(2131887275));
             this.h.j();
         } else if (y == 0) {
             GroupHttpUtils.e(this.q, this.f, this.l + "", this.m + "", getFragmentActive());
@@ -217,7 +211,7 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
         Bundle arguments = getArguments();
         this.D = arguments;
         if (arguments != null) {
-            this.E = arguments.getBoolean(f30792c);
+            this.E = arguments.getBoolean(f17102c);
         }
         LayoutInflater layoutInflater = (LayoutInflater) this.q.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.r = layoutInflater;
@@ -226,14 +220,14 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
         this.s = inflate;
         this.u = (TextView) inflate.findViewById(R.id.tv_same_city);
         this.v = (TextView) this.s.findViewById(R.id.tv_recommended_category);
-        this.t = (SearchView) this.s.findViewById(R.id.group_search);
+        this.t = this.s.findViewById(R.id.group_search);
         this.u.setOnClickListener(this);
         this.v.setOnClickListener(this);
         this.t.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.GroupFragmentRecommend.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                TerminalActivity.d(GroupFragmentRecommend.this.q, GroupSearchFragment.class, null);
+                TerminalActivity.d(GroupFragmentRecommend.this.q, GroupSearchFragment.class, (Bundle) null);
             }
         });
         LinearLayout linearLayout = (LinearLayout) this.s.findViewById(R.id.ll_group_options);
@@ -242,16 +236,16 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
     }
 
     private void d() {
-        this.F = (NoDataAndLoadFailView) this.p.findViewById(R.id.nodataview);
+        this.F = this.p.findViewById(R.id.nodataview);
         this.C = LayoutInflater.from(this.q);
         this.B = new ArrayList();
         this.b = new BluedGroupCheck.GroupFailureReason();
         this.z = new ArrayList();
         this.j = new ArrayList();
         this.k = new ArrayList();
-        RenrenPullToRefreshPinnedSectionListView renrenPullToRefreshPinnedSectionListView = (RenrenPullToRefreshPinnedSectionListView) this.p.findViewById(R.id.my_grouplist_pullrefresh);
-        this.h = renrenPullToRefreshPinnedSectionListView;
-        renrenPullToRefreshPinnedSectionListView.setRefreshEnabled(true);
+        RenrenPullToRefreshPinnedSectionListView findViewById = this.p.findViewById(R.id.my_grouplist_pullrefresh);
+        this.h = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.h.postDelayed(new Runnable() { // from class: com.soft.blued.ui.group.GroupFragmentRecommend.3
             @Override // java.lang.Runnable
             public void run() {
@@ -281,12 +275,10 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
         return i;
     }
 
-    @Override // com.blued.android.module.common.observer.CommonTitleDoubleClickObserver.ITitleClickObserver
     public void a() {
         this.i.smoothScrollToPosition(0);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i != 100) {
@@ -304,12 +296,10 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.q = getActivity();
         View view = this.p;
@@ -325,7 +315,6 @@ public class GroupFragmentRecommend extends BaseFragment implements View.OnClick
         return this.p;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         CommonTitleDoubleClickObserver.a().b(this);
         super.onDestroy();

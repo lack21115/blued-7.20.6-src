@@ -22,9 +22,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/HomeRightMenuAdapter.class */
 public final class HomeRightMenuAdapter extends BaseQuickAdapter<HomeRightMenuModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BaseFragment f16133a;
+    private final BaseFragment a;
     private final View.OnClickListener b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -32,7 +30,7 @@ public final class HomeRightMenuAdapter extends BaseQuickAdapter<HomeRightMenuMo
         super(R.layout.item_home_bott);
         Intrinsics.e(fra, "fra");
         Intrinsics.e(lis, "lis");
-        this.f16133a = fra;
+        this.a = fra;
         this.b = lis;
     }
 
@@ -43,26 +41,25 @@ public final class HomeRightMenuAdapter extends BaseQuickAdapter<HomeRightMenuMo
         SharedPreferences.Editor edit = SharedPreferencesUtils.b().edit();
         edit.putInt("YYHOME_RIGHT_MENU_DoT" + homeRightMenuModel.getName() + homeRightMenuModel.getDot().getVersion() + ((Object) YYRoomInfoManager.e().k()), 1).apply();
         this$0.b.onClick(null);
-        YYRoomInfoManager.e().c().a((Context) this$0.f16133a.getActivity(), homeRightMenuModel == null ? null : homeRightMenuModel.getUrl(), 0, true);
-        bind.f16619c.setVisibility(8);
+        YYRoomInfoManager.e().c().a((Context) this$0.a.getActivity(), homeRightMenuModel == null ? null : homeRightMenuModel.getUrl(), 0, true);
+        bind.c.setVisibility(8);
         EventTrackYY.d(ChatRoomProtos.Event.CHAT_ROOM_HALL_BTN_CLICK, homeRightMenuModel == null ? null : homeRightMenuModel.getName());
     }
 
     public final BaseFragment a() {
-        return this.f16133a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final HomeRightMenuModel homeRightMenuModel) {
         String icon_black;
         String icon;
         View view = baseViewHolder == null ? null : baseViewHolder.itemView;
         Intrinsics.a(view);
-        final ItemHomeBottBinding a2 = ItemHomeBottBinding.a(view);
-        Intrinsics.c(a2, "bind(helper?.itemView!!)");
-        a2.e.setText(homeRightMenuModel == null ? null : homeRightMenuModel.getName());
+        final ItemHomeBottBinding a = ItemHomeBottBinding.a(view);
+        Intrinsics.c(a, "bind(helper?.itemView!!)");
+        a.e.setText(homeRightMenuModel == null ? null : homeRightMenuModel.getName());
         if (homeRightMenuModel != null) {
             HomeRightMenuDotModel dot = homeRightMenuModel.getDot();
             boolean z = true;
@@ -70,28 +67,28 @@ public final class HomeRightMenuAdapter extends BaseQuickAdapter<HomeRightMenuMo
                 z = false;
             }
             if (z) {
-                a2.f16619c.setVisibility(0);
+                a.c.setVisibility(0);
             } else {
-                a2.f16619c.setVisibility(8);
+                a.c.setVisibility(8);
             }
-            a2.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$HomeRightMenuAdapter$rO0zZHZFaL2PUgp3xDIE1joaEJw
+            a.d.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$HomeRightMenuAdapter$rO0zZHZFaL2PUgp3xDIE1joaEJw
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    HomeRightMenuAdapter.a(HomeRightMenuModel.this, this, a2, view2);
+                    HomeRightMenuAdapter.a(HomeRightMenuModel.this, this, a, view2);
                 }
             });
         }
         if (!BluedSkinUtils.c()) {
             if (homeRightMenuModel != null && (icon_black = homeRightMenuModel.getIcon_black()) != null) {
-                ImageLoader.a(a().getFragmentActive(), icon_black).a(a2.f16618a);
+                ImageLoader.a(a().getFragmentActive(), icon_black).a(a.a);
             }
-            a2.b.setImageResource(R.drawable.icon_yy_home_black_hei);
+            a.b.setImageResource(R.drawable.icon_yy_home_black_hei);
             return;
         }
-        a2.b.setImageResource(R.drawable.icon_yy_home_black);
+        a.b.setImageResource(R.drawable.icon_yy_home_black);
         if (homeRightMenuModel == null || (icon = homeRightMenuModel.getIcon()) == null) {
             return;
         }
-        ImageLoader.a(a().getFragmentActive(), icon).a(a2.f16618a);
+        ImageLoader.a(a().getFragmentActive(), icon).a(a.a);
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import com.alipay.sdk.cons.b;
 import com.ut.device.UTDevice;
+import java.net.SocketOptions;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -26,58 +27,46 @@ import mtopsdk.xstate.util.PhoneInfo;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/deviceid/DeviceIDManager.class */
 public class DeviceIDManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Map f43723a = new HashMap();
+    private static Map a = new HashMap();
 
     /* renamed from: mtopsdk.mtop.deviceid.DeviceIDManager$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/deviceid/DeviceIDManager$1.class */
     class AnonymousClass1 implements Callable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f43724a;
+        final /* synthetic */ Context a;
         final /* synthetic */ String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ DeviceIDManager f43725c;
+        final /* synthetic */ DeviceIDManager c;
 
         @Override // java.util.concurrent.Callable
         public String call() {
-            String a2 = this.f43725c.a(this.f43724a, this.b);
-            String a3 = this.f43725c.a(this.f43724a);
-            if (StringUtils.b(a2) || StringUtils.b(a3)) {
-                a2 = this.f43725c.b(this.f43724a, this.b);
+            String a = this.c.a(this.a, this.b);
+            String a2 = this.c.a(this.a);
+            if (StringUtils.b(a) || StringUtils.b(a2)) {
+                a = this.c.b(this.a, this.b);
             }
-            if (StringUtils.a(a2)) {
-                SDKUtils.a(a2);
+            if (StringUtils.a(a)) {
+                SDKUtils.a(a);
             }
-            return a2;
+            return a;
         }
     }
 
     /* renamed from: mtopsdk.mtop.deviceid.DeviceIDManager$2  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/deviceid/DeviceIDManager$2.class */
     class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FutureTask f43726a;
+        final /* synthetic */ FutureTask a;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f43726a.run();
+            this.a.run();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/deviceid/DeviceIDManager$DeviceIdDomain.class */
     public class DeviceIdDomain {
-
-        /* renamed from: a  reason: collision with root package name */
-        public boolean f43727a;
+        public boolean a;
         public Future b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f43728c;
+        public String c;
 
         public DeviceIdDomain(Future future) {
             this.b = future;
@@ -95,14 +84,14 @@ public class DeviceIDManager {
         a2.a(context, "MtopConfigStore", "MTOPSDK_DEVICEID_STORE." + str, "deviceId", str2);
         ConfigStoreManager a3 = ConfigStoreManager.a();
         a3.a(context, "MtopConfigStore", "MTOPSDK_DEVICEID_STORE." + str, "deviceId_created", str3);
-        DeviceIdDomain deviceIdDomain = (DeviceIdDomain) f43723a.get(str);
+        DeviceIdDomain deviceIdDomain = (DeviceIdDomain) a.get(str);
         DeviceIdDomain deviceIdDomain2 = deviceIdDomain;
         if (deviceIdDomain == null) {
             deviceIdDomain2 = new DeviceIdDomain(null);
         }
-        deviceIdDomain2.f43728c = str2;
-        deviceIdDomain2.f43727a = true;
-        f43723a.put(str, deviceIdDomain2);
+        deviceIdDomain2.c = str2;
+        deviceIdDomain2.a = true;
+        a.put(str, deviceIdDomain2);
         if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
             TBSdkLog.b("mtopsdk.DeviceIDManager", "[saveDeviceIdToStore]appkey=" + str + "; deviceId=" + str2 + "; mCreated=" + str3);
         }
@@ -116,7 +105,7 @@ public class DeviceIDManager {
         }
         String a2 = a(context);
         String b = PhoneInfo.b(context);
-        String c2 = PhoneInfo.c(context);
+        String c = PhoneInfo.c(context);
         StringBuilder sb = new StringBuilder(64);
         if (StringUtils.a(a2)) {
             sb.append(a2);
@@ -124,8 +113,8 @@ public class DeviceIDManager {
         if (StringUtils.a(b)) {
             sb.append(b);
         }
-        if (StringUtils.a(c2)) {
-            sb.append(c2);
+        if (StringUtils.a(c)) {
+            sb.append(c);
         }
         if (StringUtils.b(sb.toString())) {
             TBSdkLog.d("mtopsdk.DeviceIDManager", "[getRemoteDeviceID]device_global_id is blank");
@@ -137,18 +126,18 @@ public class DeviceIDManager {
         mtopSysNewDeviceIdRequest.q = Build.BRAND;
         mtopSysNewDeviceIdRequest.n = Build.MODEL;
         mtopSysNewDeviceIdRequest.o = b;
-        mtopSysNewDeviceIdRequest.l = c2;
+        mtopSysNewDeviceIdRequest.l = c;
         mtopSysNewDeviceIdRequest.k = PhoneInfo.e(context);
         mtopSysNewDeviceIdRequest.j = PhoneInfo.a();
         mtopSysNewDeviceIdRequest.g = PhoneInfo.d(context);
-        MtopResponse syncRequest = Mtop.a(SDKConfig.a().b()).a(mtopSysNewDeviceIdRequest, SDKConfig.a().h()).setBizId(4099).syncRequest();
+        MtopResponse syncRequest = Mtop.a(SDKConfig.a().b()).a(mtopSysNewDeviceIdRequest, SDKConfig.a().h()).setBizId(SocketOptions.SO_OOBINLINE).syncRequest();
         String str3 = null;
         if (syncRequest.i()) {
             try {
                 BaseOutDo a3 = MtopConvert.a(syncRequest.d(), MtopSysNewDeviceIdResponse.class);
                 str3 = null;
                 if (a3 != null) {
-                    String str4 = ((MtopSysNewDeviceIdResponseData) a3.b()).f43732a;
+                    String str4 = ((MtopSysNewDeviceIdResponseData) a3.b()).a;
                     try {
                         if (StringUtils.a(str4)) {
                             a(context, str, str4, "1");
@@ -179,9 +168,9 @@ public class DeviceIDManager {
         ConfigStoreManager a4 = ConfigStoreManager.a();
         if ("1".equalsIgnoreCase(a4.a(context, "MtopConfigStore", "MTOPSDK_DEVICEID_STORE." + str, "deviceId_created"))) {
             DeviceIdDomain deviceIdDomain = new DeviceIdDomain(null);
-            deviceIdDomain.f43728c = a3;
-            deviceIdDomain.f43727a = true;
-            f43723a.put(str, deviceIdDomain);
+            deviceIdDomain.c = a3;
+            deviceIdDomain.a = true;
+            a.put(str, deviceIdDomain);
         }
         if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
             TBSdkLog.b("mtopsdk.DeviceIDManager", "[getDeviceIdFromStore] appkey=" + str + "; deviceId=" + a3);
@@ -207,7 +196,7 @@ public class DeviceIDManager {
     }
 
     public String a(Context context, String str) {
-        DeviceIdDomain deviceIdDomain = (DeviceIdDomain) f43723a.get(str);
-        return (deviceIdDomain == null || StringUtils.b(deviceIdDomain.f43728c)) ? c(context, str) : deviceIdDomain.f43728c;
+        DeviceIdDomain deviceIdDomain = (DeviceIdDomain) a.get(str);
+        return (deviceIdDomain == null || StringUtils.b(deviceIdDomain.c)) ? c(context, str) : deviceIdDomain.c;
     }
 }

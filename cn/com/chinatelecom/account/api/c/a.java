@@ -18,17 +18,17 @@ import org.json.JSONObject;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4101a = a.class.getSimpleName();
+    private static final String f4053a = a.class.getSimpleName();
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f4102c;
+    private Context f4054c;
     private String d;
     private String e;
     private c f;
 
     public a(Context context, String str, String str2) {
-        this.f4102c = context;
+        this.f4054c = context;
         this.d = str;
         this.e = str2;
     }
@@ -84,7 +84,7 @@ public final class a {
             JSONObject g = j.g();
             cn.com.chinatelecom.account.api.e.e a7 = f.a(str4);
             a7.g("gpm ：" + th.getMessage()).a(80102).e(cn.com.chinatelecom.account.api.a.d.a(j.k));
-            CtAuth.warn(f4101a, "GPM Throwable", th);
+            CtAuth.warn(f4053a, "GPM Throwable", th);
             return g;
         }
     }
@@ -113,7 +113,7 @@ public final class a {
             @Override // cn.com.chinatelecom.account.api.c.e
             public void a() {
                 a aVar = a.this;
-                JSONObject a2 = aVar.a(aVar.f4102c, a.this.d, a.this.e, str, ctSetting, network, str2, str3, i);
+                JSONObject a2 = aVar.a(aVar.f4054c, a.this.d, a.this.e, str, ctSetting, network, str2, str3, i);
                 synchronized (this) {
                     if (!c()) {
                         a(true);
@@ -135,7 +135,7 @@ public final class a {
                 synchronized (this) {
                     if (!c()) {
                         a(true);
-                        a.this.a(StCameraView.MEDIA_QUALITY_SORRY, cn.com.chinatelecom.account.api.a.d.a(j.f4148a), str2, 0L, "", resultListener);
+                        a.this.a(StCameraView.MEDIA_QUALITY_SORRY, cn.com.chinatelecom.account.api.a.d.a(j.f4100a), str2, 0L, "", resultListener);
                     }
                 }
                 if (network != null) {
@@ -148,20 +148,20 @@ public final class a {
     public void a(String str, CtSetting ctSetting, int i, ResultListener resultListener) {
         int totalTimeout = CtSetting.getTotalTimeout(ctSetting);
         String a2 = cn.com.chinatelecom.account.api.e.d.a();
-        String a3 = cn.com.chinatelecom.account.api.e.d.a(this.f4102c);
+        String a3 = cn.com.chinatelecom.account.api.e.d.a(this.f4054c);
         String a4 = cn.com.chinatelecom.account.api.e.a.a(i);
-        f.a(a2).a(a3).c(a4).b(cn.com.chinatelecom.account.api.e.g.e(this.f4102c)).f(cn.com.chinatelecom.account.api.e.g.i(this.f4102c));
+        f.a(a2).a(a3).c(a4).b(cn.com.chinatelecom.account.api.e.g.e(this.f4054c)).f(cn.com.chinatelecom.account.api.e.g.i(this.f4054c));
         a(str, ctSetting, null, resultListener, totalTimeout, a2, a4, i);
     }
 
     public void b(final String str, final CtSetting ctSetting, final int i, final ResultListener resultListener) {
         final int totalTimeout = CtSetting.getTotalTimeout(ctSetting);
         final String a2 = cn.com.chinatelecom.account.api.e.d.a();
-        String a3 = cn.com.chinatelecom.account.api.e.d.a(this.f4102c);
+        String a3 = cn.com.chinatelecom.account.api.e.d.a(this.f4054c);
         final String a4 = cn.com.chinatelecom.account.api.e.a.a(i);
-        f.a(a2).a(a3).c(a4).b("BOTH").f(cn.com.chinatelecom.account.api.e.g.i(this.f4102c));
+        f.a(a2).a(a3).c(a4).b("BOTH").f(cn.com.chinatelecom.account.api.e.g.i(this.f4054c));
         if (Build.VERSION.SDK_INT >= 21) {
-            c cVar = new c(this.f4102c);
+            c cVar = new c(this.f4054c);
             this.f = cVar;
             cVar.a(new b() { // from class: cn.com.chinatelecom.account.api.c.a.1
                 @Override // cn.com.chinatelecom.account.api.c.b
@@ -190,7 +190,7 @@ public final class a {
             });
             return;
         }
-        this.f = new c(this.f4102c);
+        this.f = new c(this.f4054c);
         String a5 = h.a();
         String str2 = a5;
         if (cn.com.chinatelecom.account.api.e.g.a() != null) {

@@ -8,7 +8,7 @@ public final class c extends a {
         if (bVar.b()) {
             return true;
         }
-        return (1 == bVar.f21764a.b && !bVar.b.f21766a) || 1 == bVar.f21764a.f21763c;
+        return (1 == bVar.f8158a.b && !bVar.b.f8160a) || 1 == bVar.f8158a.f8157c;
     }
 
     @Override // com.efs.sdk.base.core.e.a.a
@@ -17,7 +17,7 @@ public final class c extends a {
             b(bVar);
             return;
         }
-        byte[] a2 = com.efs.sdk.base.core.util.c.a(bVar.f21765c);
+        byte[] a2 = com.efs.sdk.base.core.util.c.a(bVar.f8159c);
         if (a2 == null) {
             Log.w("efs.base", "gzip error");
             b(bVar);

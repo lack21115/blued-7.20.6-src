@@ -21,7 +21,7 @@ import javax.net.ssl.SSLSocket;
 public abstract class Internal {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Internal f35902a;
+    public static Internal f22211a;
 
     public static void initializeInstanceForTests() {
         new OkHttpClient();

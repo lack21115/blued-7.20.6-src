@@ -9,11 +9,11 @@ public class l {
             int i = 0;
             for (int i2 = 0; i2 < 1; i2++) {
                 int[] iArr2 = (int[]) com.unikuwei.mianmi.account.shield.tencent.b.a.a(i2);
-                System.arraycopy((Object) iArr2, 0, (Object) iArr, i, iArr2.length);
+                System.arraycopy(iArr2, 0, iArr, i, iArr2.length);
                 i += iArr2.length;
             }
             byte[] a2 = m.a(iArr);
-            System.arraycopy((Object) a2, 0, (Object) bArr, 0, a2.length);
+            System.arraycopy(a2, 0, bArr, 0, a2.length);
             return bArr;
         } catch (Exception e) {
             return null;

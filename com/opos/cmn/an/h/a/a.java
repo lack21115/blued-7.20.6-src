@@ -16,14 +16,14 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ActivityManager f24559a;
+    private static ActivityManager f10872a;
     private static volatile String b = "";
 
     public static ActivityManager a(Context context) {
-        if (f24559a == null && context != null) {
-            f24559a = (ActivityManager) context.getApplicationContext().getSystemService("activity");
+        if (f10872a == null && context != null) {
+            f10872a = (ActivityManager) context.getApplicationContext().getSystemService("activity");
         }
-        return f24559a;
+        return f10872a;
     }
 
     private static String a() {

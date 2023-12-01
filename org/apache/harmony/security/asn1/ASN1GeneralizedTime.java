@@ -1,6 +1,5 @@
 package org.apache.harmony.security.asn1;
 
-import android.text.format.Time;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -39,7 +38,7 @@ public final class ASN1GeneralizedTime extends ASN1Time {
         String str;
         int length;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(GEN_PATTERN, Locale.US);
-        simpleDateFormat.setTimeZone(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         String format = simpleDateFormat.format(berOutputStream.content);
         while (true) {
             str = format;

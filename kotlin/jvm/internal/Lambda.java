@@ -18,8 +18,8 @@ public abstract class Lambda<R> implements Serializable, FunctionBase<R> {
     }
 
     public String toString() {
-        String a2 = Reflection.a((Lambda) this);
-        Intrinsics.c(a2, "renderLambdaToString(this)");
-        return a2;
+        String a = Reflection.a((Lambda) this);
+        Intrinsics.c(a, "renderLambdaToString(this)");
+        return a;
     }
 }

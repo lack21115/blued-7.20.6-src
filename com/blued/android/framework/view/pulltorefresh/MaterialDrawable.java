@@ -26,13 +26,9 @@ import java.util.ArrayList;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/MaterialDrawable.class */
 class MaterialDrawable extends RefreshDrawable implements Animatable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Interpolator f10217a = new LinearInterpolator();
+    private static final Interpolator a = new LinearInterpolator();
     private static final Interpolator b = new EndCurveInterpolator();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Interpolator f10218c = new StartCurveInterpolator();
+    private static final Interpolator c = new StartCurveInterpolator();
     private static final Interpolator d = new AccelerateDecelerateInterpolator();
     private final int[] e;
     private final ArrayList<Animation> f;
@@ -67,17 +63,15 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/MaterialDrawable$OvalShadow.class */
     public class OvalShadow extends OvalShape {
         private RadialGradient b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f10225c;
+        private int c;
         private Paint d = new Paint();
         private int e;
 
         public OvalShadow(int i, int i2) {
-            this.f10225c = i;
+            this.c = i;
             this.e = i2;
             int i3 = this.e;
-            RadialGradient radialGradient = new RadialGradient(i3 / 2, i3 / 2, this.f10225c, new int[]{1023410176, 0}, (float[]) null, Shader.TileMode.CLAMP);
+            RadialGradient radialGradient = new RadialGradient(i3 / 2, i3 / 2, this.c, new int[]{1023410176, 0}, (float[]) null, Shader.TileMode.CLAMP);
             this.b = radialGradient;
             this.d.setShader(radialGradient);
         }
@@ -86,7 +80,7 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
         public void draw(Canvas canvas, Paint paint) {
             float centerX = MaterialDrawable.this.getBounds().centerX();
             float centerY = MaterialDrawable.this.getBounds().centerY();
-            canvas.drawCircle(centerX, centerY, (this.e / 2) + this.f10225c, this.d);
+            canvas.drawCircle(centerX, centerY, (this.e / 2) + this.c, this.d);
             canvas.drawCircle(centerX, centerY, this.e / 2, paint);
         }
     }
@@ -112,13 +106,9 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
         private int s;
         private int t;
         private int v;
-
-        /* renamed from: a  reason: collision with root package name */
-        private final RectF f10226a = new RectF();
+        private final RectF a = new RectF();
         private final Paint b = new Paint();
-
-        /* renamed from: c  reason: collision with root package name */
-        private final Paint f10227c = new Paint();
+        private final Paint c = new Paint();
         private float e = 0.0f;
         private float f = 0.0f;
         private float g = 0.0f;
@@ -131,8 +121,8 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
             this.b.setStrokeCap(Paint.Cap.SQUARE);
             this.b.setAntiAlias(true);
             this.b.setStyle(Paint.Style.STROKE);
-            this.f10227c.setStyle(Paint.Style.FILL);
-            this.f10227c.setAntiAlias(true);
+            this.c.setStyle(Paint.Style.FILL);
+            this.c.setAntiAlias(true);
         }
 
         private void l() {
@@ -169,7 +159,7 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
         }
 
         public void a(Canvas canvas, Rect rect) {
-            RectF rectF = this.f10226a;
+            RectF rectF = this.a;
             rectF.set(rect);
             float f = this.i;
             rectF.inset(f, f);
@@ -294,7 +284,7 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
 
     public MaterialDrawable(Context context, PullRefreshLayout pullRefreshLayout) {
         super(context, pullRefreshLayout);
-        this.e = new int[]{-16777216};
+        this.e = new int[]{View.MEASURED_STATE_MASK};
         this.f = new ArrayList<>();
         this.u = new Drawable.Callback() { // from class: com.blued.android.framework.view.pulltorefresh.MaterialDrawable.5
             @Override // android.graphics.drawable.Drawable.Callback
@@ -393,7 +383,7 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
                 float f2 = ring.f();
                 float e = ring.e();
                 float i = ring.i();
-                ring.c(f2 + ((0.8f - radians) * MaterialDrawable.f10218c.getInterpolation(f)));
+                ring.c(f2 + ((0.8f - radians) * MaterialDrawable.c.getInterpolation(f)));
                 ring.b(e + (MaterialDrawable.b.getInterpolation(f) * 0.8f));
                 ring.d(i + (0.25f * f));
                 MaterialDrawable.this.d((f * 144.0f) + ((MaterialDrawable.this.l / 5.0f) * 720.0f));
@@ -401,7 +391,7 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
         };
         animation2.setRepeatCount(-1);
         animation2.setRepeatMode(1);
-        animation2.setInterpolator(f10217a);
+        animation2.setInterpolator(a);
         animation2.setDuration(1333L);
         animation2.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.framework.view.pulltorefresh.MaterialDrawable.4
             @Override // android.view.animation.Animation.AnimationListener
@@ -525,9 +515,8 @@ class MaterialDrawable extends RefreshDrawable implements Animatable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
     }
 

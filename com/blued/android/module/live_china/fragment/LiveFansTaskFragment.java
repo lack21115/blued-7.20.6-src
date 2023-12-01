@@ -15,17 +15,12 @@ import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.das.live.LiveProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
-import com.soft.blued.constant.EventBusConstant;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansTaskFragment.class */
 public class LiveFansTaskFragment extends MvpFragment<LiveFansTaskPresent> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    View f12877a;
+    View a;
     TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    TextView f12878c;
+    TextView c;
     View d;
     TextView e;
     TextView f;
@@ -74,13 +69,13 @@ public class LiveFansTaskFragment extends MvpFragment<LiveFansTaskPresent> imple
         Log.i("ddrb", "setLiveFansGoodsReceived");
         this.v.is_take_gift = 1;
         c();
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_LIVE_REFRESH_GIFT_LIST).post(true);
+        LiveEventBus.get("live_refresh_gift_list").post(true);
     }
 
     public void b() {
-        this.f12877a = this.i.findViewById(R.id.ll_to_wandou);
+        this.a = this.i.findViewById(R.id.ll_to_wandou);
         this.b = (TextView) this.i.findViewById(R.id.tv_get_wandou);
-        this.f12878c = (TextView) this.i.findViewById(R.id.tv_to_wandou);
+        this.c = (TextView) this.i.findViewById(R.id.tv_to_wandou);
         this.d = this.i.findViewById(R.id.ll_to_look);
         this.e = (TextView) this.i.findViewById(R.id.tv_get_look);
         this.f = (TextView) this.i.findViewById(R.id.tv_to_look);
@@ -96,7 +91,7 @@ public class LiveFansTaskFragment extends MvpFragment<LiveFansTaskPresent> imple
         this.s = this.i.findViewById(R.id.ll_receive_yingguang);
         this.t = (TextView) this.i.findViewById(R.id.tv_receive_yingguang);
         this.u = (TextView) this.i.findViewById(R.id.tv_to_receive_yingguang);
-        this.f12878c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.o.setOnClickListener(this);
         this.r.setOnClickListener(this);
         this.f.setOnClickListener(this);
@@ -171,7 +166,7 @@ public class LiveFansTaskFragment extends MvpFragment<LiveFansTaskPresent> imple
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {

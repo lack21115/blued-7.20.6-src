@@ -16,32 +16,31 @@ import org.json.JSONObject;
 public class QgRouterManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f24404a = false;
+    private static boolean f10717a = false;
     private static String b = "SP_GameEngineConfig";
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f24405c = "NEW_ENGINE_CONFIG_NATVIE_CACHE_KEY";
+    private static String f10718c = "NEW_ENGINE_CONFIG_NATVIE_CACHE_KEY";
     private static String d = "NEW_ENGINE_CONFIG_NATVIE_CACHE_SAVE_DATE";
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8303388-dex2jar.jar:com/oplus/quickgame/sdk/engine/utils/QgRouterManager$a.class */
-    public static final class a implements Runnable {
+    static final class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f24406a;
+        final /* synthetic */ Context f10719a;
 
         a(Context context) {
-            this.f24406a = context;
+            this.f10719a = context;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            QgRouterManager.e(this.f24406a);
+            QgRouterManager.e(this.f10719a);
         }
     }
 
     private static void a(Context context, String str) {
-        context.getSharedPreferences(b, 0).edit().putString(f24405c, str).putLong(d, System.currentTimeMillis()).apply();
+        context.getSharedPreferences(b, 0).edit().putString(f10718c, str).putLong(d, System.currentTimeMillis()).apply();
     }
 
     private static boolean a(String str, long j) {
@@ -82,7 +81,7 @@ public class QgRouterManager {
     }
 
     private static String b(Context context) {
-        return context.getSharedPreferences(b, 0).getString(f24405c, "");
+        return context.getSharedPreferences(b, 0).getString(f10718c, "");
     }
 
     private static long c(Context context) {
@@ -165,14 +164,14 @@ public class QgRouterManager {
     /* JADX INFO: Access modifiers changed from: private */
     public static void e(Context context) {
         String str;
-        f24404a = true;
+        f10717a = true;
         com.oplus.quickgame.sdk.engine.b.c a2 = new com.oplus.quickgame.sdk.engine.b.a().a(com.oplus.quickgame.sdk.engine.b.b.d().b(m.a()).a(MonitorConstants.CONNECT_TYPE_GET).a("Content-Type", "application/json;charset=UTF-8").a(HttpHeaders.ACCEPT, "application/json").a());
         if (a2 != null) {
             String a3 = a2.a();
             i.c("QuickGame", "快游戏下载引擎配置-> 成功，配置json：" + a3);
             if (configDataCache(a3)) {
                 a(context, a3);
-                f24404a = false;
+                f10717a = false;
             }
             a(context, "");
             str = "配置数据不符合json格式";
@@ -180,7 +179,7 @@ public class QgRouterManager {
             str = "快游戏下载引擎配置失败";
         }
         i.c("QuickGame", str);
-        f24404a = false;
+        f10717a = false;
     }
 
     public static boolean isUseEngine(Context context) {
@@ -209,7 +208,7 @@ public class QgRouterManager {
         if (!TextUtils.isEmpty(b2) && a(b2, c2)) {
             i.c("QuickGame", "缓存未失效");
             return b2;
-        } else if (f24404a) {
+        } else if (f10717a) {
             return "";
         } else {
             if (l.a()) {

@@ -26,7 +26,7 @@ public class SystemLoopbackRecorder {
     static class Recorder {
 
         /* renamed from: a  reason: collision with root package name */
-        private AudioRecord f36221a;
+        private AudioRecord f22530a;
         private AudioManager b;
 
         public Recorder() {
@@ -95,11 +95,11 @@ public class SystemLoopbackRecorder {
         }
 
         public int read(ByteBuffer byteBuffer, int i) {
-            if (this.f36221a == null) {
+            if (this.f22530a == null) {
                 return -1;
             }
             byteBuffer.position(0);
-            int read = this.f36221a.read(byteBuffer, i);
+            int read = this.f22530a.read(byteBuffer, i);
             if (read <= 0) {
                 Log.e(SystemLoopbackRecorder.TAG, "Read failed ".concat(String.valueOf(read)), new Object[0]);
                 return -1;
@@ -118,9 +118,9 @@ public class SystemLoopbackRecorder {
             AudioManager audioManager = this.b;
             int mode = audioManager != null ? audioManager.getMode() : 0;
             a(0);
-            this.f36221a = a(mediaProjection, i, i2, i3);
+            this.f22530a = a(mediaProjection, i, i2, i3);
             a(mode);
-            if (this.f36221a == null) {
+            if (this.f22530a == null) {
                 return -1;
             }
             Process.setThreadPriority(-19);
@@ -128,8 +128,8 @@ public class SystemLoopbackRecorder {
         }
 
         public void stopRecording() {
-            a(this.f36221a);
-            this.f36221a = null;
+            a(this.f22530a);
+            this.f22530a = null;
         }
     }
 

@@ -18,13 +18,9 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/sticker/StickerLoader.class */
 public class StickerLoader {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f11269a = "Blued_Sense_" + StickerLoader.class.getSimpleName();
+    private static final String a = "Blued_Sense_" + StickerLoader.class.getSimpleName();
     private Map<String, Integer> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private HashMap<String, IGetStickerListener> f11270c;
+    private HashMap<String, IGetStickerListener> c;
     private volatile Hashtable<String, StickerBaseModel> d;
     private volatile StickerDataModel e;
 
@@ -37,14 +33,14 @@ public class StickerLoader {
 
     private StickerLoader() {
         this.b = new HashMap();
-        this.f11270c = new HashMap<>();
+        this.c = new HashMap<>();
         this.d = new Hashtable<>();
         this.e = StickerUtils.a();
-        if (this.e.f11265a == null || this.e.f11265a.isEmpty()) {
+        if (this.e.a == null || this.e.a.isEmpty()) {
             return;
         }
         ArrayList<StickerBaseModel> arrayList = new ArrayList();
-        for (StickerBaseModel stickerBaseModel : this.e.f11265a) {
+        for (StickerBaseModel stickerBaseModel : this.e.a) {
             if (stickerBaseModel != null && !TextUtils.isEmpty(stickerBaseModel.name)) {
                 if (this.d.containsKey(stickerBaseModel.name)) {
                     arrayList.add(stickerBaseModel);
@@ -56,7 +52,7 @@ public class StickerLoader {
         }
         if (arrayList.size() > 0) {
             for (StickerBaseModel stickerBaseModel2 : arrayList) {
-                this.e.f11265a.remove(stickerBaseModel2);
+                this.e.a.remove(stickerBaseModel2);
             }
             StickerUtils.a(this.e);
         }
@@ -73,7 +69,7 @@ public class StickerLoader {
             }
             stickerBaseModel2.name = str;
             stickerBaseModel2.path = str2;
-            String str4 = f11269a;
+            String str4 = a;
             LogUtils.b(str4, str + " | 1 localPath:" + str3, new Object[0]);
             stickerBaseModel2.localPath = str3;
             stickerBaseModel2.stickerState = i;
@@ -90,7 +86,7 @@ public class StickerLoader {
 
     public void a(final String str, final String str2, IGetStickerListener iGetStickerListener, IRequestHost iRequestHost) {
         if (iGetStickerListener != null) {
-            this.f11270c.put(str, iGetStickerListener);
+            this.c.put(str, iGetStickerListener);
         }
         if (!StickerDownLoader.a(str)) {
             StickerDownLoader.a(str, str2, new IGetStickerListener() { // from class: com.blued.android.module.external_sense_library.sticker.StickerLoader.1
@@ -102,8 +98,8 @@ public class StickerLoader {
                     AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.external_sense_library.sticker.StickerLoader.1.3
                         @Override // java.lang.Runnable
                         public void run() {
-                            if (StickerLoader.this.f11270c.get(str) != null) {
-                                ((IGetStickerListener) StickerLoader.this.f11270c.get(str)).onFailed(playStickerCode, str3);
+                            if (StickerLoader.this.c.get(str) != null) {
+                                ((IGetStickerListener) StickerLoader.this.c.get(str)).onFailed(playStickerCode, str3);
                             }
                         }
                     });
@@ -115,8 +111,8 @@ public class StickerLoader {
                     AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.external_sense_library.sticker.StickerLoader.1.2
                         @Override // java.lang.Runnable
                         public void run() {
-                            if (StickerLoader.this.f11270c.get(str3) != null) {
-                                ((IGetStickerListener) StickerLoader.this.f11270c.get(str3)).onSuccess(str3, str4);
+                            if (StickerLoader.this.c.get(str3) != null) {
+                                ((IGetStickerListener) StickerLoader.this.c.get(str3)).onSuccess(str3, str4);
                             }
                         }
                     });
@@ -130,8 +126,8 @@ public class StickerLoader {
                     AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.external_sense_library.sticker.StickerLoader.1.1
                         @Override // java.lang.Runnable
                         public void run() {
-                            if (StickerLoader.this.f11270c.get(str) != null) {
-                                ((IGetStickerListener) StickerLoader.this.f11270c.get(str)).onSyncStart();
+                            if (StickerLoader.this.c.get(str) != null) {
+                                ((IGetStickerListener) StickerLoader.this.c.get(str)).onSyncStart();
                             }
                         }
                     });
@@ -140,7 +136,7 @@ public class StickerLoader {
             return;
         }
         a(str, str2, "", 1);
-        String str3 = f11269a;
+        String str3 = a;
         LogUtils.d(str3, str + " _贴纸正在下载...", new Object[0]);
     }
 
@@ -154,8 +150,8 @@ public class StickerLoader {
                     arrayList.add(stickerBaseModel);
                 }
             }
-            if ((this.e.f11265a == null || this.e.f11265a.size() <= 0) && arrayList.size() > 0) {
-                this.e.f11265a.addAll(arrayList);
+            if ((this.e.a == null || this.e.a.size() <= 0) && arrayList.size() > 0) {
+                this.e.a.addAll(arrayList);
                 StickerUtils.a(this.e);
             }
         }

@@ -2,7 +2,6 @@ package android.content.pm;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/pm/PackageInfoLite.class */
 public class PackageInfoLite implements Parcelable {
@@ -58,7 +57,7 @@ public class PackageInfoLite implements Parcelable {
     }
 
     public String toString() {
-        return "PackageInfoLite{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.packageName + i.d;
+        return "PackageInfoLite{" + Integer.toHexString(System.identityHashCode(this)) + " " + this.packageName + "}";
     }
 
     @Override // android.os.Parcelable

@@ -26,13 +26,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYCardOptionView.class */
 public class YYCardOptionView extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public PopYyDialog f18083a;
+    public PopYyDialog a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f18084c;
+    private TextView c;
     private TextView d;
     private TextView e;
     private BaseYYStudioFragment f;
@@ -57,10 +53,10 @@ public class YYCardOptionView extends LinearLayout implements View.OnClickListen
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_card_option_layout, (ViewGroup) this, true);
         this.d = (TextView) findViewById(R.id.tv_cancel);
-        this.f18084c = (TextView) findViewById(R.id.tv_report);
+        this.c = (TextView) findViewById(R.id.tv_report);
         this.b = (TextView) findViewById(R.id.tv_manager);
         this.e = (TextView) findViewById(R.id.tv_mute);
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         this.h = yYUserInfo;
         if (yYUserInfo == null) {
             return;
@@ -76,7 +72,7 @@ public class YYCardOptionView extends LinearLayout implements View.OnClickListen
             this.e.setVisibility(8);
         }
         this.d.setOnClickListener(this);
-        this.f18084c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.b.setOnClickListener(this);
         this.e.setOnClickListener(this);
     }
@@ -106,8 +102,8 @@ public class YYCardOptionView extends LinearLayout implements View.OnClickListen
                 if (i == 1) {
                     ToastUtils.a("设置成功", 0);
                 }
-                if (YYCardOptionView.this.f18083a != null) {
-                    YYCardOptionView.this.f18083a.dismissAllowingStateLoss();
+                if (YYCardOptionView.this.a != null) {
+                    YYCardOptionView.this.a.dismissAllowingStateLoss();
                 }
             }
         }, this.f.getFragmentActive());
@@ -134,8 +130,8 @@ public class YYCardOptionView extends LinearLayout implements View.OnClickListen
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
-                if (YYCardOptionView.this.f18083a != null) {
-                    YYCardOptionView.this.f18083a.dismissAllowingStateLoss();
+                if (YYCardOptionView.this.a != null) {
+                    YYCardOptionView.this.a.dismissAllowingStateLoss();
                 }
             }
 
@@ -187,7 +183,7 @@ public class YYCardOptionView extends LinearLayout implements View.OnClickListen
             return;
         }
         if (view.getId() == R.id.tv_cancel) {
-            PopYyDialog popYyDialog = this.f18083a;
+            PopYyDialog popYyDialog = this.a;
             if (popYyDialog != null) {
                 popYyDialog.dismissAllowingStateLoss();
             }
@@ -211,7 +207,7 @@ public class YYCardOptionView extends LinearLayout implements View.OnClickListen
             yYReportModel.uid = this.g.getUid();
             yYReportModel.reportType = 0;
             LiveEventBus.get("common_report_user").post(yYReportModel);
-            PopYyDialog popYyDialog2 = this.f18083a;
+            PopYyDialog popYyDialog2 = this.a;
             if (popYyDialog2 != null) {
                 popYyDialog2.dismissAllowingStateLoss();
             }

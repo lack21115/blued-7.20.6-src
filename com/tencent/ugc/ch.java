@@ -6,16 +6,16 @@ import com.tencent.ugc.TXVideoJoiner;
 final /* synthetic */ class ch implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoJoiner.AnonymousClass3 f40290a;
+    private final TXVideoJoiner.AnonymousClass3 f26599a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f40291c;
+    private final String f26600c;
 
     private ch(TXVideoJoiner.AnonymousClass3 anonymousClass3, int i, String str) {
-        this.f40290a = anonymousClass3;
+        this.f26599a = anonymousClass3;
         this.b = i;
-        this.f40291c = str;
+        this.f26600c = str;
     }
 
     public static Runnable a(TXVideoJoiner.AnonymousClass3 anonymousClass3, int i, String str) {
@@ -24,6 +24,6 @@ final /* synthetic */ class ch implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoJoiner.AnonymousClass3.a(this.f40290a, this.b, this.f40291c);
+        TXVideoJoiner.AnonymousClass3.a(this.f26599a, this.b, this.f26600c);
     }
 }

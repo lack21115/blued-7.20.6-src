@@ -12,7 +12,7 @@ import java.util.Collection;
 public final class Package extends MapJceStruct implements Cloneable {
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f37271c;
+    public static int f23580c;
     public static byte[] d;
     public static byte[] e;
     public static ArrayList<Tag> f;

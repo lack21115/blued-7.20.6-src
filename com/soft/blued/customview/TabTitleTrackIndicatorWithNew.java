@@ -22,22 +22,21 @@ public class TabTitleTrackIndicatorWithNew extends TabTitleTrackIndicatorWithDot
         super(context, attributeSet, i);
     }
 
-    @Override // com.blued.android.module.common.view.TabTitleTrackIndicatorWithDot
     public void a(final int i, String str) {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_tabtitle_new, (ViewGroup) null);
-        ColorTrackView colorTrackView = (ColorTrackView) inflate.findViewById(2131362978);
-        colorTrackView.setText(str);
-        colorTrackView.setTextSize(this.o);
-        colorTrackView.setTextOriginColor(this.q);
-        colorTrackView.setTextChangeColor(this.r);
-        colorTrackView.setFocusable(true);
+        ColorTrackView findViewById = inflate.findViewById(2131362978);
+        findViewById.setText(str);
+        findViewById.setTextSize(this.o);
+        findViewById.setTextOriginColor(this.q);
+        findViewById.setTextChangeColor(this.r);
+        findViewById.setFocusable(true);
         if (i == 0) {
-            colorTrackView.setProgress(1.0f);
-            colorTrackView.setTextSize(this.p);
+            findViewById.setProgress(1.0f);
+            findViewById.setTextSize(this.p);
         }
-        this.x.add(colorTrackView);
+        this.x.add(findViewById);
         LinearLayout linearLayout = (LinearLayout) inflate.findViewById(2131367999);
-        linearLayout.setLayoutParams(this.f11061c);
+        linearLayout.setLayoutParams(this.c);
         linearLayout.setPadding(this.k, this.m, this.l, this.n);
         ImageView imageView = (ImageView) inflate.findViewById(2131364507);
         imageView.setVisibility(4);

@@ -13,7 +13,7 @@ public final class d extends c {
     public d() {
         f fVar = new f();
         this.e = fVar;
-        fVar.f35383a = (short) 2;
+        fVar.f21692a = (short) 2;
     }
 
     public final void a(int i) {
@@ -38,7 +38,7 @@ public final class d extends c {
             i iVar = new i(bArr, 4);
             iVar.a(this.b);
             this.e.a(iVar);
-            if (this.e.f35383a == 3) {
+            if (this.e.f21692a == 3) {
                 i iVar2 = new i(this.e.e);
                 iVar2.a(this.b);
                 if (f == null) {
@@ -57,7 +57,7 @@ public final class d extends c {
                 hashMap2.put("", new byte[0]);
                 g.put("", hashMap2);
             }
-            this.f35356a = iVar3.a((Map) g, 0, false);
+            this.f21665a = iVar3.a((Map) g, 0, false);
             new HashMap();
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -66,14 +66,14 @@ public final class d extends c {
 
     @Override // com.tencent.bugly.proguard.c, com.tencent.bugly.proguard.a
     public final byte[] a() {
-        if (this.e.f35383a != 2) {
-            if (this.e.f35384c == null) {
-                this.e.f35384c = "";
+        if (this.e.f21692a != 2) {
+            if (this.e.f21693c == null) {
+                this.e.f21693c = "";
             }
             if (this.e.d == null) {
                 this.e.d = "";
             }
-        } else if (this.e.f35384c.equals("")) {
+        } else if (this.e.f21693c.equals("")) {
             throw new IllegalArgumentException("servantName can not is null");
         } else {
             if (this.e.d.equals("")) {
@@ -82,8 +82,8 @@ public final class d extends c {
         }
         j jVar = new j(0);
         jVar.a(this.b);
-        if (this.e.f35383a == 2) {
-            jVar.a((Map) this.f35356a, 0);
+        if (this.e.f21692a == 2) {
+            jVar.a((Map) this.f21665a, 0);
         } else {
             jVar.a((Map) this.d, 0);
         }
@@ -99,13 +99,13 @@ public final class d extends c {
     }
 
     public final void b(String str) {
-        this.e.f35384c = str;
+        this.e.f21693c = str;
     }
 
     @Override // com.tencent.bugly.proguard.c
     public final void c() {
         super.c();
-        this.e.f35383a = (short) 3;
+        this.e.f21692a = (short) 3;
     }
 
     public final void c(String str) {

@@ -9,10 +9,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
-import com.anythink.expressad.video.module.a.a.m;
+import com.amap.api.fence.GeoFence;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
@@ -54,9 +53,7 @@ import org.json.JSONObject;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/presenter/YYCPPresenter.class */
 public class YYCPPresenter extends AbstractBasePresenter {
-
-    /* renamed from: c  reason: collision with root package name */
-    private PopupWindow f17726c;
+    private PopupWindow c;
     private Handler d;
     private List<BlindMatchUserPairModel> e;
 
@@ -70,9 +67,9 @@ public class YYCPPresenter extends AbstractBasePresenter {
             super.handleMessage(message);
             int i = message.what;
             if (i == 10) {
-                if (YYCPPresenter.this.f17726c != null) {
-                    YYCPPresenter.this.f17726c.dismiss();
-                    YYCPPresenter.this.f17726c = null;
+                if (YYCPPresenter.this.c != null) {
+                    YYCPPresenter.this.c.dismiss();
+                    YYCPPresenter.this.c = null;
                     YYCPPresenter.this.k();
                 }
             } else if (i != 11 || YYCPPresenter.this.e == null || YYCPPresenter.this.e.isEmpty()) {
@@ -112,31 +109,31 @@ public class YYCPPresenter extends AbstractBasePresenter {
         ImageView imageView2 = (ImageView) i2.findViewById(R.id.iv_source);
         ImageView imageView3 = (ImageView) i2.findViewById(R.id.iv_target);
         SVGAImageView sVGAImageView = (SVGAImageView) i2.findViewById(R.id.cp_step_icon_svga);
-        ImageLoader.a(this.f17634a.getFragmentActive(), blindMatchUserPairModel.source.avatar).b(R.drawable.user_bg_round).a(imageView2);
-        ImageLoader.a(this.f17634a.getFragmentActive(), blindMatchUserPairModel.target.avatar).b(R.drawable.user_bg_round).a(imageView3);
+        ImageLoader.a(this.a.getFragmentActive(), blindMatchUserPairModel.source.avatar).b(R.drawable.user_bg_round).a(imageView2);
+        ImageLoader.a(this.a.getFragmentActive(), blindMatchUserPairModel.target.avatar).b(R.drawable.user_bg_round).a(imageView3);
         a(i2, sVGAImageView, imageView, imageView2, imageView3, i);
     }
 
     private void a(final View view, final SVGAImageView sVGAImageView, final ImageView imageView, final View view2, final View view3, final int i) {
         long j;
-        PopupWindow popupWindow = this.f17726c;
+        PopupWindow popupWindow = this.c;
         if (popupWindow == null || !popupWindow.isShowing()) {
             j = 0;
         } else {
-            this.f17726c.dismiss();
-            this.f17726c = null;
+            this.c.dismiss();
+            this.c = null;
             k();
             j = 300;
         }
-        this.f17634a.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.8
+        this.a.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.8
             @Override // java.lang.Runnable
             public void run() {
-                if (YYCPPresenter.this.f17634a == null) {
+                if (YYCPPresenter.this.a == null) {
                     return;
                 }
-                YYCPPresenter.this.f17634a.y();
+                YYCPPresenter.this.a.y();
                 YYCPPresenter yYCPPresenter = YYCPPresenter.this;
-                yYCPPresenter.f17726c = new PopupwindowFactory.Builder(yYCPPresenter.f17634a.getContext()).a(view).a(17).c(-2).b(-2).d(R.color.syc_66000000).e(R.style.yy_pop_scale_anim).a(false).a(new IPopShowAndDismissListener() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.8.1
+                yYCPPresenter.c = new PopupwindowFactory.Builder(yYCPPresenter.a.getContext()).a(view).a(17).c(-2).b(-2).d(R.color.syc_66000000).e(R.style.yy_pop_scale_anim).a(false).a(new IPopShowAndDismissListener() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.8.1
                     @Override // com.blued.android.module.yy_china.listener.IPopShowAndDismissListener
                     public void a() {
                         if (YYCPPresenter.this.d != null) {
@@ -146,15 +143,15 @@ public class YYCPPresenter extends AbstractBasePresenter {
                             YYCPPresenter.this.a(sVGAImageView, YYCPPresenter.this.f(i));
                         }
                         if (imageView != null) {
-                            ImageLoader.c(YYCPPresenter.this.f17634a.getFragmentActive(), "cp_show_heart.png").e(i).a().a(imageView);
+                            ImageLoader.c(YYCPPresenter.this.a.getFragmentActive(), "cp_show_heart.png").e(i).a().a(imageView);
                         }
                         if (view2 == null || view3 == null) {
                             return;
                         }
                         view2.setVisibility(0);
-                        view2.startAnimation(AnimationUtils.loadAnimation(YYCPPresenter.this.f17634a.getContext(), R.anim.yy_cp_match_left));
+                        view2.startAnimation(AnimationUtils.loadAnimation(YYCPPresenter.this.a.getContext(), R.anim.yy_cp_match_left));
                         view3.setVisibility(0);
-                        view3.startAnimation(AnimationUtils.loadAnimation(YYCPPresenter.this.f17634a.getContext(), R.anim.yy_cp_match_right));
+                        view3.startAnimation(AnimationUtils.loadAnimation(YYCPPresenter.this.a.getContext(), R.anim.yy_cp_match_right));
                     }
 
                     @Override // com.blued.android.module.yy_china.listener.IPopShowAndDismissListener
@@ -177,7 +174,7 @@ public class YYCPPresenter extends AbstractBasePresenter {
     public void a(final SVGAImageView sVGAImageView, String str) {
         sVGAImageView.setVisibility(0);
         sVGAImageView.setLoops(1);
-        new SVGAParser(this.f17634a.getContext()).a(str, new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.9
+        new SVGAParser(this.a.getContext()).a(str, new SVGAParser.ParseCompletion() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.9
             @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity sVGAVideoEntity) {
                 sVGAImageView.setImageDrawable(new SVGADrawable(sVGAVideoEntity, new SVGADynamicEntity()));
@@ -210,7 +207,7 @@ public class YYCPPresenter extends AbstractBasePresenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void b(int i) {
-        a(LayoutInflater.from(this.f17634a.getContext()).inflate(R.layout.dialog_cp_nothing_anim, (ViewGroup) null), null, null, null, null, i);
+        a(LayoutInflater.from(this.a.getContext()).inflate(R.layout.dialog_cp_nothing_anim, (ViewGroup) null), null, null, null, null, i);
     }
 
     private String c(int i) {
@@ -222,7 +219,7 @@ public class YYCPPresenter extends AbstractBasePresenter {
     }
 
     private String e(int i) {
-        return this.f17634a.getContext().getResources().getString(i);
+        return this.a.getContext().getResources().getString(i);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -232,35 +229,38 @@ public class YYCPPresenter extends AbstractBasePresenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        if (this.f17634a == null || this.f17634a.E == null || !(this.f17634a.E instanceof YYSeatCPAdapter)) {
+        if (this.a == null || this.a.E == null || !(this.a.E instanceof YYSeatCPAdapter)) {
             return;
         }
-        ((YYSeatCPAdapter) this.f17634a.E).a("");
+        ((YYSeatCPAdapter) this.a.E).a("");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public long g(int i) {
-        return (i == 1 || i == 2 || i == 3) ? m.ag : i != 4 ? 0L : 4000L;
+        if (i == 1 || i == 2 || i == 3) {
+            return 3000L;
+        }
+        return i != 4 ? 0L : 4000L;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g() {
-        if (this.f17634a == null) {
+        if (this.a == null) {
             return;
         }
-        this.f17634a.a(new YYCPGuideView(this.f17634a.getContext()), -2);
+        this.a.a(new YYCPGuideView(this.a.getContext()), -2);
     }
 
     private View h() {
-        return LayoutInflater.from(this.f17634a.getContext()).inflate(R.layout.dialog_cp_step_anim, (ViewGroup) null);
+        return LayoutInflater.from(this.a.getContext()).inflate(R.layout.dialog_cp_step_anim, (ViewGroup) null);
     }
 
     private View i() {
-        return LayoutInflater.from(this.f17634a.getContext()).inflate(R.layout.dialog_cp_last_step_anim, (ViewGroup) null);
+        return LayoutInflater.from(this.a.getContext()).inflate(R.layout.dialog_cp_last_step_anim, (ViewGroup) null);
     }
 
     private void j() {
-        YYRoomHttpUtils.n(new BluedUIHttpResponse<BluedEntityA<VeiledRoomInfoMode>>(this.f17634a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.10
+        YYRoomHttpUtils.n(new BluedUIHttpResponse<BluedEntityA<VeiledRoomInfoMode>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.10
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -271,7 +271,7 @@ public class YYCPPresenter extends AbstractBasePresenter {
                 }
                 YYRoomInfoManager.e().b().mMaskedVeiledRoominfo = singleData;
             }
-        }, this.f17634a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -285,22 +285,20 @@ public class YYCPPresenter extends AbstractBasePresenter {
     @Override // com.blued.android.module.yy_china.presenter.AbstractBasePresenter
     public void b(LifecycleOwner lifecycleOwner) {
         LiveEventBus.get("show_blind_guide", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 YYCPPresenter.this.g();
             }
         });
         LiveEventBus.get("update_cp_step", YYCPStepModel.class).observe(lifecycleOwner, new Observer<YYCPStepModel>() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYCPStepModel yYCPStepModel) {
-                if (yYCPStepModel == null || YYCPPresenter.this.f17634a == null) {
+                if (yYCPStepModel == null || YYCPPresenter.this.a == null) {
                     return;
                 }
-                YYCPPresenter.this.f17634a.E.a(yYCPStepModel.present_step, yYCPStepModel.next_step, true);
+                YYCPPresenter.this.a.E.a(yYCPStepModel.present_step, yYCPStepModel.next_step, true);
                 if (yYCPStepModel.present_step == 0) {
-                    YYCPPresenter.this.f17634a.E.c();
+                    YYCPPresenter.this.a.E.c();
                 }
                 if (yYCPStepModel.resend) {
                     return;
@@ -309,14 +307,13 @@ public class YYCPPresenter extends AbstractBasePresenter {
             }
         });
         LiveEventBus.get("show_blind_publish", YYMsgBlindPublishExtra.class).observe(lifecycleOwner, new Observer<YYMsgBlindPublishExtra>() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYMsgBlindPublishExtra yYMsgBlindPublishExtra) {
-                if (yYMsgBlindPublishExtra == null || YYCPPresenter.this.f17634a == null) {
+                if (yYMsgBlindPublishExtra == null || YYCPPresenter.this.a == null) {
                     return;
                 }
-                YYCPPresenter.this.f17634a.E.a(yYMsgBlindPublishExtra.present_step, yYMsgBlindPublishExtra.next_step, true);
-                YYCPPresenter.this.f17634a.E.a((List<BlindPublishModel>) null);
+                YYCPPresenter.this.a.E.a(yYMsgBlindPublishExtra.present_step, yYMsgBlindPublishExtra.next_step, true);
+                YYCPPresenter.this.a.E.a((List<BlindPublishModel>) null);
                 if (yYMsgBlindPublishExtra.resend) {
                     return;
                 }
@@ -324,18 +321,17 @@ public class YYCPPresenter extends AbstractBasePresenter {
             }
         });
         LiveEventBus.get("show_blind_result", YYMsgBlindResultExtra.class).observe(lifecycleOwner, new Observer<YYMsgBlindResultExtra>() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYMsgBlindResultExtra yYMsgBlindResultExtra) {
-                if (yYMsgBlindResultExtra == null || YYCPPresenter.this.f17634a == null) {
+                if (yYMsgBlindResultExtra == null || YYCPPresenter.this.a == null) {
                     return;
                 }
                 YYCPPresenter.this.e = yYMsgBlindResultExtra.match_users;
-                YYCPPresenter.this.f17634a.E.a(yYMsgBlindResultExtra.present_step, yYMsgBlindResultExtra.next_step, true);
+                YYCPPresenter.this.a.E.a(yYMsgBlindResultExtra.present_step, yYMsgBlindResultExtra.next_step, true);
                 if (yYMsgBlindResultExtra.seats != null && !yYMsgBlindResultExtra.seats.isEmpty()) {
-                    YYCPPresenter.this.f17634a.E.a((List<BlindPublishModel>) null);
+                    YYCPPresenter.this.a.E.a((List<BlindPublishModel>) null);
                 }
-                YYCPPresenter.this.f17634a.E.c();
+                YYCPPresenter.this.a.E.c();
                 if (!yYMsgBlindResultExtra.resend) {
                     if (YYCPPresenter.this.e == null || YYCPPresenter.this.e.isEmpty()) {
                         YYCPPresenter.this.b(yYMsgBlindResultExtra.present_step);
@@ -351,7 +347,7 @@ public class YYCPPresenter extends AbstractBasePresenter {
                             z = false;
                         }
                         if (!z || z) {
-                            new YYMarriageDialog(YYCPPresenter.this.f17634a, (ArrayList) YYCPPresenter.this.e).show(YYCPPresenter.this.f17634a.getParentFragmentManager(), "show_marriage_dialog");
+                            new YYMarriageDialog(YYCPPresenter.this.a, (ArrayList) YYCPPresenter.this.e).show(YYCPPresenter.this.a.getParentFragmentManager(), "show_marriage_dialog");
                         }
                     }
                 }
@@ -361,41 +357,38 @@ public class YYCPPresenter extends AbstractBasePresenter {
                     HashMap hashMap = new HashMap();
                     for (BlindMatchUserPairModel blindMatchUserPairModel : YYCPPresenter.this.e) {
                         hashMap.clear();
-                        MsgPackHelper.putMapValue(hashMap, TypedValues.AttributesType.S_TARGET, blindMatchUserPairModel.source.uid);
+                        MsgPackHelper.putMapValue(hashMap, "target", blindMatchUserPairModel.source.uid);
                         MsgPackHelper.putMapValue(hashMap, "match", blindMatchUserPairModel.target.uid);
                         arrayList.add(hashMap);
                     }
                     String json = AppInfo.f().toJson(arrayList);
-                    LogUtils.d("event", "match json: " + json);
+                    LogUtils.d(GeoFence.BUNDLE_KEY_FENCESTATUS, "match json: " + json);
                     EventTrackYY.l(ChatRoomProtos.Event.CHAT_ROOM_CP_MATCH_SUCCEED, b.room_id, b.uid, json);
                 }
             }
         });
         LiveEventBus.get("show_blind_heart", BlindMatchUserModel.class).observe(lifecycleOwner, new Observer<BlindMatchUserModel>() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BlindMatchUserModel blindMatchUserModel) {
-                if (blindMatchUserModel == null || YYCPPresenter.this.f17634a == null) {
+                if (blindMatchUserModel == null || YYCPPresenter.this.a == null) {
                     return;
                 }
-                YYCPPresenter.this.f17634a.E.a((List<BlindPublishModel>) null);
+                YYCPPresenter.this.a.E.a((List<BlindPublishModel>) null);
             }
         });
         LiveEventBus.get("to_take_off_mask", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.6
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                new YYTakeOffMaskDialog().show(YYCPPresenter.this.f17634a.getParentFragmentManager(), "take_off_mask_dialog");
+                new YYTakeOffMaskDialog().show(YYCPPresenter.this.a.getParentFragmentManager(), "take_off_mask_dialog");
             }
         });
         LiveEventBus.get("delay_take_off_mask", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYCPPresenter.7
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (YYCPPresenter.this.f17634a.E instanceof YYSeatCPAdapter) {
+                if (YYCPPresenter.this.a.E instanceof YYSeatCPAdapter) {
                     try {
                         JSONObject jSONObject = new JSONObject(str);
-                        ((YYSeatCPAdapter) YYCPPresenter.this.f17634a.E).a(jSONObject.getString("target_id"), jSONObject.getLong("countdown"));
+                        ((YYSeatCPAdapter) YYCPPresenter.this.a.E).a(jSONObject.getString("target_id"), jSONObject.getLong("countdown"));
                     } catch (JSONException e) {
                         LogUtils.d("YYCPPresenter", "json 解析失败");
                     }
@@ -411,10 +404,10 @@ public class YYCPPresenter extends AbstractBasePresenter {
         if (list != null) {
             list.clear();
         }
-        PopupWindow popupWindow = this.f17726c;
+        PopupWindow popupWindow = this.c;
         if (popupWindow != null) {
             popupWindow.dismiss();
-            this.f17726c = null;
+            this.c = null;
         }
         k();
         this.d = null;

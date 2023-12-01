@@ -1,21 +1,15 @@
 package com.amap.api.col.p0003sl;
 
-import android.content.pm.PackageManager;
-
 /* renamed from: com.amap.api.col.3sl.mq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/mq.class */
 public final class mq {
-
-    /* renamed from: a  reason: collision with root package name */
-    public long f5387a;
+    public long a;
     public String b;
     public int d;
     public long e;
     public short g;
     public boolean h;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f5388c = PackageManager.INSTALL_FAILED_NO_MATCHING_ABIS;
+    public int c = -113;
     public long f = 0;
 
     public mq(boolean z) {
@@ -85,9 +79,9 @@ public final class mq {
     /* renamed from: b */
     public mq clone() {
         mq mqVar = new mq(this.h);
-        mqVar.f5387a = this.f5387a;
+        mqVar.a = this.a;
         mqVar.b = this.b;
-        mqVar.f5388c = this.f5388c;
+        mqVar.c = this.c;
         mqVar.d = this.d;
         mqVar.e = this.e;
         mqVar.f = this.f;
@@ -97,10 +91,10 @@ public final class mq {
     }
 
     public final String a() {
-        return this.h + "#" + this.f5387a;
+        return this.h + "#" + this.a;
     }
 
     public final String toString() {
-        return "AmapWifi{mac=" + this.f5387a + ", ssid='" + this.b + "', rssi=" + this.f5388c + ", frequency=" + this.d + ", timestamp=" + this.e + ", lastUpdateUtcMills=" + this.f + ", freshness=" + ((int) this.g) + ", connected=" + this.h + '}';
+        return "AmapWifi{mac=" + this.a + ", ssid='" + this.b + "', rssi=" + this.c + ", frequency=" + this.d + ", timestamp=" + this.e + ", lastUpdateUtcMills=" + this.f + ", freshness=" + ((int) this.g) + ", connected=" + this.h + '}';
     }
 }

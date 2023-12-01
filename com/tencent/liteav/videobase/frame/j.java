@@ -15,13 +15,13 @@ import java.nio.FloatBuffer;
 public final class j {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final float[] f36642c = {0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f};
+    private static final float[] f22951c = {0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f};
     private static final float[] d = {0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f};
     private static final float[] e = {1.0f, 1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f};
     private static final float[] f = {1.0f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f};
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f36643a;
+    public final int f22952a;
     public final int b;
     private GLConstants.GLScaleType j;
     private c n;
@@ -29,7 +29,7 @@ public final class j {
     private PixelFrame k = null;
     private com.tencent.liteav.videobase.c.a l = null;
     private com.tencent.liteav.videobase.a.b m = null;
-    private final FloatBuffer g = ByteBuffer.allocateDirect(GLConstants.f36598c.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer().put(GLConstants.f36598c);
+    private final FloatBuffer g = ByteBuffer.allocateDirect(GLConstants.f22907c.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer().put(GLConstants.f22907c);
     private final FloatBuffer h = OpenGlUtils.createTextureCoordsBuffer(Rotation.NORMAL, false, false);
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,35 +38,35 @@ public final class j {
     public static final /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f36644a;
+        static final /* synthetic */ int[] f22953a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[Rotation.values().length];
-            f36644a = iArr;
+            f22953a = iArr;
             try {
                 iArr[Rotation.ROTATION_90.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f36644a[Rotation.ROTATION_180.ordinal()] = 2;
+                f22953a[Rotation.ROTATION_180.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f36644a[Rotation.ROTATION_270.ordinal()] = 3;
+                f22953a[Rotation.ROTATION_270.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f36644a[Rotation.NORMAL.ordinal()] = 4;
+                f22953a[Rotation.NORMAL.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
     }
 
     public j(int i, int i2) {
-        this.f36643a = i;
+        this.f22952a = i;
         this.b = i2;
     }
 
@@ -89,10 +89,10 @@ public final class j {
                 this.i[ordinal] = new com.tencent.liteav.videobase.d.c();
             }
             this.i[ordinal].initialize(null);
-            this.i[ordinal].onOutputSizeChanged(this.f36643a, this.b);
+            this.i[ordinal].onOutputSizeChanged(this.f22952a, this.b);
         }
         com.tencent.liteav.videobase.d.i iVar = (com.tencent.liteav.videobase.d.i) this.i[ordinal];
-        OpenGlUtils.glViewport(0, 0, this.f36643a, this.b);
+        OpenGlUtils.glViewport(0, 0, this.f22952a, this.b);
         if (this.k.getRotation() == Rotation.ROTATION_90 || this.k.getRotation() == Rotation.ROTATION_270) {
             iVar.a(byteBuffer, this.k.getHeight(), this.k.getWidth());
         } else {
@@ -122,7 +122,7 @@ public final class j {
 
     private void a(d dVar, int i) {
         c();
-        OpenGlUtils.glViewport(0, 0, this.f36643a, this.b);
+        OpenGlUtils.glViewport(0, 0, this.f22952a, this.b);
         this.m.onDraw(i, dVar, this.g, this.h);
     }
 
@@ -131,9 +131,9 @@ public final class j {
             com.tencent.liteav.videobase.c.a aVar = new com.tencent.liteav.videobase.c.a();
             this.l = aVar;
             aVar.initialize(null);
-            this.l.onOutputSizeChanged(this.f36643a, this.b);
+            this.l.onOutputSizeChanged(this.f22952a, this.b);
         }
-        OpenGlUtils.glViewport(0, 0, this.f36643a, this.b);
+        OpenGlUtils.glViewport(0, 0, this.f22952a, this.b);
         this.l.setTexutreTransform(fArr);
         this.l.onDraw(i, dVar, this.g, this.h);
     }
@@ -144,10 +144,10 @@ public final class j {
         if (bVarArr[ordinal] == null) {
             bVarArr[ordinal] = new com.tencent.liteav.videobase.c.b();
             this.i[ordinal].initialize(null);
-            this.i[ordinal].onOutputSizeChanged(this.f36643a, this.b);
+            this.i[ordinal].onOutputSizeChanged(this.f22952a, this.b);
         }
         com.tencent.liteav.videobase.c.b bVar = (com.tencent.liteav.videobase.c.b) this.i[ordinal];
-        OpenGlUtils.glViewport(0, 0, this.f36643a, this.b);
+        OpenGlUtils.glViewport(0, 0, this.f22952a, this.b);
         if (this.k.getRotation() == Rotation.ROTATION_90 || this.k.getRotation() == Rotation.ROTATION_270) {
             bVar.a(buffer, this.k.getHeight(), this.k.getWidth());
         } else {
@@ -157,12 +157,12 @@ public final class j {
     }
 
     private static void a(float[] fArr, Rotation rotation, boolean z, boolean z2) {
-        float[] fArr2 = f36642c;
+        float[] fArr2 = f22951c;
         if (rotation != null) {
-            int i = AnonymousClass1.f36644a[rotation.ordinal()];
-            fArr2 = i != 1 ? i != 2 ? i != 3 ? f36642c : e : f : d;
+            int i = AnonymousClass1.f22953a[rotation.ordinal()];
+            fArr2 = i != 1 ? i != 2 ? i != 3 ? f22951c : e : f : d;
         }
-        System.arraycopy((Object) fArr2, 0, (Object) fArr, 0, fArr2.length);
+        System.arraycopy(fArr2, 0, fArr, 0, fArr2.length);
         if (z) {
             fArr[0] = a(fArr[0]);
             fArr[2] = a(fArr[2]);
@@ -186,10 +186,10 @@ public final class j {
         float f3;
         float[] fArr;
         boolean z = this.k.getRotation() == Rotation.ROTATION_90 || this.k.getRotation() == Rotation.ROTATION_270;
-        float max = Math.max((this.f36643a * 1.0f) / this.k.getWidth(), (this.b * 1.0f) / this.k.getHeight());
-        float round = (Math.round(f2 * max) * 1.0f) / this.f36643a;
+        float max = Math.max((this.f22952a * 1.0f) / this.k.getWidth(), (this.b * 1.0f) / this.k.getHeight());
+        float round = (Math.round(f2 * max) * 1.0f) / this.f22952a;
         float round2 = (Math.round(f3 * max) * 1.0f) / this.b;
-        float[] fArr2 = GLConstants.f36598c;
+        float[] fArr2 = GLConstants.f22907c;
         float[] fArr3 = new float[8];
         if (this.k.getPixelBufferType() == GLConstants.PixelBufferType.TEXTURE_OES) {
             a(fArr3, this.k.getRotation(), this.k.isMirrorHorizontal(), this.k.isMirrorVertical());
@@ -227,7 +227,7 @@ public final class j {
         com.tencent.liteav.videobase.a.b bVar = new com.tencent.liteav.videobase.a.b();
         this.m = bVar;
         bVar.initialize(null);
-        this.m.onOutputSizeChanged(this.f36643a, this.b);
+        this.m.onOutputSizeChanged(this.f22952a, this.b);
     }
 
     private void d() {

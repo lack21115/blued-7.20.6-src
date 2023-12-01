@@ -11,11 +11,11 @@ import java.util.concurrent.TimeUnit;
 public class bb {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9331a = "ThreadPoolFactory";
+    private static final String f6491a = "ThreadPoolFactory";
     private static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f9332c = 60;
+    private static final int f6492c = 60;
     private static ThreadPoolExecutor d;
     private static LinkedBlockingQueue<Runnable> e;
     private static final ThreadFactory f = new bc();

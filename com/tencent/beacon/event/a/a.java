@@ -17,11 +17,11 @@ import java.util.Map;
 public class a implements d<EventBean> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f35033a;
+    private static volatile a f21342a;
     private final SQLiteStatement b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final SQLiteStatement f35034c;
+    private final SQLiteStatement f21343c;
     private final Object d = new Object();
     private final Object e = new Object();
     private com.tencent.beacon.event.c.b f = com.tencent.beacon.event.c.b.a();
@@ -36,7 +36,7 @@ public class a implements d<EventBean> {
         SQLiteDatabase readableDatabase = cVar.getReadableDatabase();
         this.h = readableDatabase;
         this.b = readableDatabase.compileStatement("INSERT INTO t_r_e (_appKey,_time,_length,_data )VALUES(?,?,?,?)");
-        this.f35034c = this.h.compileStatement("INSERT INTO t_n_e (_appKey,_time,_length,_data )VALUES(?,?,?,?)");
+        this.f21343c = this.h.compileStatement("INSERT INTO t_n_e (_appKey,_time,_length,_data )VALUES(?,?,?,?)");
         this.i = a("t_r_e");
         long a2 = a("t_n_e");
         this.j = a2;
@@ -49,18 +49,18 @@ public class a implements d<EventBean> {
     }
 
     public static a a() {
-        if (f35033a == null) {
+        if (f21342a == null) {
             synchronized (a.class) {
                 try {
-                    if (f35033a == null) {
-                        f35033a = new a();
+                    if (f21342a == null) {
+                        f21342a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f35033a;
+        return f21342a;
     }
 
     private List<EventBean> a(Cursor cursor) {
@@ -70,10 +70,10 @@ public class a implements d<EventBean> {
         ArrayList arrayList = new ArrayList();
         while (cursor.moveToNext()) {
             b bVar = new b();
-            bVar.f35035a = cursor.getLong(0);
+            bVar.f21344a = cursor.getLong(0);
             bVar.d = cursor.getString(1);
             bVar.b = cursor.getInt(2);
-            bVar.f35036c = cursor.getLong(3);
+            bVar.f21345c = cursor.getLong(3);
             bVar.e = cursor.getBlob(4);
             arrayList.add(this.f.c().a(bVar));
         }
@@ -202,7 +202,7 @@ public class a implements d<EventBean> {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x00bd, code lost:
-        if (r6.f35034c.executeInsert() >= 0) goto L16;
+        if (r6.f21343c.executeInsert() >= 0) goto L16;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

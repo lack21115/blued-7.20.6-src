@@ -9,33 +9,29 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/loadingIndicator/BaseIndicatorController.class */
 public abstract class BaseIndicatorController {
-
-    /* renamed from: a  reason: collision with root package name */
-    private WeakReference<View> f14112a;
+    private WeakReference<View> a;
     private List<Animator> b;
 
     /* renamed from: com.blued.android.module.live_china.same.loadingIndicator.BaseIndicatorController$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/loadingIndicator/BaseIndicatorController$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f14113a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[AnimStatus.values().length];
-            f14113a = iArr;
+            a = iArr;
             try {
                 iArr[AnimStatus.START.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f14113a[AnimStatus.END.ordinal()] = 2;
+                a[AnimStatus.END.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f14113a[AnimStatus.CANCEL.ordinal()] = 3;
+                a[AnimStatus.CANCEL.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -53,7 +49,7 @@ public abstract class BaseIndicatorController {
     public abstract void a(Canvas canvas, Paint paint);
 
     public void a(View view) {
-        this.f14112a = new WeakReference<>(view);
+        this.a = new WeakReference<>(view);
     }
 
     public void a(AnimStatus animStatus) {
@@ -70,7 +66,7 @@ public abstract class BaseIndicatorController {
             }
             Animator animator = this.b.get(i2);
             boolean isRunning = animator.isRunning();
-            int i3 = AnonymousClass1.f14113a[animStatus.ordinal()];
+            int i3 = AnonymousClass1.a[animStatus.ordinal()];
             if (i3 != 1) {
                 if (i3 != 2) {
                     if (i3 == 3 && isRunning) {
@@ -87,7 +83,7 @@ public abstract class BaseIndicatorController {
     }
 
     public View b() {
-        WeakReference<View> weakReference = this.f14112a;
+        WeakReference<View> weakReference = this.a;
         if (weakReference != null) {
             return weakReference.get();
         }

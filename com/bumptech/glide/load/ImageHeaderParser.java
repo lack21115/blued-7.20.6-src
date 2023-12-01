@@ -21,14 +21,14 @@ public interface ImageHeaderParser {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private final boolean f20700a;
+        private final boolean f7094a;
 
         ImageType(boolean z) {
-            this.f20700a = z;
+            this.f7094a = z;
         }
 
         public boolean hasAlpha() {
-            return this.f20700a;
+            return this.f7094a;
         }
     }
 

@@ -12,13 +12,9 @@ import java.util.Locale;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/CommonPreferences.class */
 public class CommonPreferences {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f10875a;
+    public static BluedSharedPreferences a;
     public static BluedSharedPreferences b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static BluedSharedPreferences f10876c;
+    public static BluedSharedPreferences c;
     public static BluedSharedPreferences d;
     public static String e = "unit_setting";
     public static String f = "binding_account";
@@ -57,10 +53,10 @@ public class CommonPreferences {
     }
 
     public static BluedSharedPreferences a() {
-        if (f10875a == null) {
-            f10875a = BluedSharedPreferences.a();
+        if (a == null) {
+            a = BluedSharedPreferences.a();
         }
-        return f10875a;
+        return a;
     }
 
     public static String a(String str) {
@@ -213,10 +209,10 @@ public class CommonPreferences {
     }
 
     public static BluedSharedPreferences j() {
-        if (f10876c == null) {
-            f10876c = BluedSharedPreferences.a("removed_def_emotion_packs", 0);
+        if (c == null) {
+            c = BluedSharedPreferences.a("removed_def_emotion_packs", 0);
         }
-        return f10876c;
+        return c;
     }
 
     public static void j(String str) {

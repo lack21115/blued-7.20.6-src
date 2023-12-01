@@ -12,11 +12,11 @@ import java.util.HashMap;
 public final class o implements q {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22560a = "DecompressedLdStrategy";
+    private static final String f8952a = "DecompressedLdStrategy";
     private static final String b = "loader";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22561c = "com.huawei.hms.kit.type";
+    private static final String f8953c = "com.huawei.hms.kit.type";
     private static final String d = "armeabi_type";
     private static HashMap<String, Integer> e = new HashMap<>();
 
@@ -25,7 +25,7 @@ public final class o implements q {
         String[] list = file.list();
         t tVar = new t();
         if (list == null || list.length == 0) {
-            aa.c(f22560a, "No version in module path.");
+            aa.c(f8952a, "No version in module path.");
             return tVar;
         }
         int length = list.length;
@@ -45,28 +45,28 @@ public final class o implements q {
             i3 = i4;
         }
         if (i == 0) {
-            aa.c(f22560a, "Cannot get module version path.");
+            aa.c(f8952a, "Cannot get module version path.");
             return tVar;
         }
-        r.a(i, file.getAbsolutePath(), list, f22560a);
+        r.a(i, file.getAbsolutePath(), list, f8952a);
         int i5 = 0;
         if (e.containsKey(str)) {
             Integer num = e.get(str);
             i5 = num == null ? 0 : num.intValue();
         }
         if (i5 > i) {
-            aa.b(f22560a, "There is a higher version in assets, assetsModuleVersion:" + i5 + ", decompressed version:" + i);
+            aa.b(f8952a, "There is a higher version in assets, assetsModuleVersion:" + i5 + ", decompressed version:" + i);
             return tVar;
         }
         File file2 = new File(file.getAbsolutePath() + File.separator + i + File.separator + str + ".apk");
         if (!file2.exists()) {
-            aa.c(f22560a, "Cannot find module apk int asset decompressed path.");
+            aa.c(f8952a, "Cannot find module apk int asset decompressed path.");
             return tVar;
         }
-        tVar.f22571a = str;
+        tVar.f8963a = str;
         tVar.b = file2.getAbsolutePath();
-        tVar.f22572c = i;
-        aa.b(f22560a, "Get module info from decompressed asset path success: ModuleName:" + str + ", ModuleVersion:" + i + ", ModulePath:" + file2.getAbsolutePath());
+        tVar.f8964c = i;
+        aa.b(f8952a, "Get module info from decompressed asset path success: ModuleName:" + str + ", ModuleVersion:" + i + ", ModulePath:" + file2.getAbsolutePath());
         return tVar;
     }
 
@@ -84,13 +84,13 @@ public final class o implements q {
                 str3 = null;
                 for (String str4 : bundle2.keySet()) {
                     String str5 = str3;
-                    if (str4.startsWith(f22561c)) {
+                    if (str4.startsWith(f8953c)) {
                         str5 = bundle2.getString(str4);
                     }
                     str3 = str5;
                     if (str4.startsWith(d)) {
                         int i = bundle2.getInt(str4);
-                        aa.b(f22560a, "The module defined the armeabiType:".concat(String.valueOf(i)));
+                        aa.b(f8952a, "The module defined the armeabiType:".concat(String.valueOf(i)));
                         bundle.putInt("armeabiType", i);
                         str3 = str5;
                     }
@@ -98,26 +98,26 @@ public final class o implements q {
                 str2 = "The moduleType is:".concat(String.valueOf(str3));
             }
         }
-        aa.c(f22560a, str2);
+        aa.c(f8952a, str2);
         return str3;
     }
 
     private static Context b(Context context, t tVar) throws com.huawei.hms.ads.dynamicloader.j {
         IDynamicLoader asInterface = IDynamicLoader.Stub.asInterface(r.a(context, tVar.d));
         if (asInterface == null) {
-            aa.c(f22560a, "Get iDynamicLoader failed: null.");
+            aa.c(f8952a, "Get iDynamicLoader failed: null.");
             return null;
         }
         Bundle bundle = new Bundle();
-        bundle.putString("module_name", tVar.f22571a);
+        bundle.putString("module_name", tVar.f8963a);
         bundle.putString("loader_path", tVar.d);
-        bundle.putInt("module_version", tVar.f22572c);
+        bundle.putInt("module_version", tVar.f8964c);
         bundle.putString(com.huawei.hms.ads.dynamicloader.b.e, tVar.e);
-        return r.a(context, tVar.f22571a, bundle, asInterface);
+        return r.a(context, tVar.f8963a, bundle, asInterface);
     }
 
     public static t b(Context context, String str) {
-        File file = new File(y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f22466a + File.separator + str);
+        File file = new File(y.a(context) + File.separator + com.huawei.hms.ads.dynamicloader.b.f8858a + File.separator + str);
         return file.exists() ? a(file, str) : new t();
     }
 
@@ -125,20 +125,20 @@ public final class o implements q {
         t tVar;
         t tVar2 = new t();
         if (context == null || TextUtils.isEmpty(str)) {
-            aa.c(f22560a, "The context or moduleName is null.");
+            aa.c(f8952a, "The context or moduleName is null.");
             return tVar2;
         }
         try {
             t b2 = b(context, str);
             tVar = b2;
-            if (b2.f22572c > 0) {
-                aa.b(f22560a, "Successfully get module info from decompressed asset path.");
+            if (b2.f8964c > 0) {
+                aa.b(f8952a, "Successfully get module info from decompressed asset path.");
                 tVar2 = b2;
-                p.a(context, str, b2.f22572c);
+                p.a(context, str, b2.f8964c);
                 return b2;
             }
         } catch (Exception e2) {
-            aa.b(f22560a, "getDataModuleInfo failed." + e2.getClass().getSimpleName());
+            aa.b(f8952a, "getDataModuleInfo failed." + e2.getClass().getSimpleName());
             tVar = tVar2;
         }
         return tVar;
@@ -157,32 +157,32 @@ public final class o implements q {
                 Bundle bundle = new Bundle();
                 bundle.putString("module_path", str2);
                 bundle.putString(com.huawei.hms.ads.dynamicloader.b.e, tVar.e);
-                bundle.putString("module_name", tVar.f22571a);
-                aa.b(f22560a, "modulePath is:" + str2 + " loaderVersionType is : " + tVar.e);
+                bundle.putString("module_name", tVar.f8963a);
+                aa.b(f8952a, "modulePath is:" + str2 + " loaderVersionType is : " + tVar.e);
                 try {
                     if (!TextUtils.equals(a(context, str2, bundle), b)) {
                         com.huawei.hms.ads.dynamicloader.h.a(context);
                         return com.huawei.hms.ads.dynamicloader.h.a(context, bundle);
                     }
-                    aa.b(f22560a, "The module is a loader, use it to load first.");
+                    aa.b(f8952a, "The module is a loader, use it to load first.");
                     tVar.d = str2;
                     IDynamicLoader asInterface = IDynamicLoader.Stub.asInterface(r.a(context, tVar.d));
                     if (asInterface == null) {
-                        aa.c(f22560a, "Get iDynamicLoader failed: null.");
+                        aa.c(f8952a, "Get iDynamicLoader failed: null.");
                         return null;
                     }
                     Bundle bundle2 = new Bundle();
-                    bundle2.putString("module_name", tVar.f22571a);
+                    bundle2.putString("module_name", tVar.f8963a);
                     bundle2.putString("loader_path", tVar.d);
-                    bundle2.putInt("module_version", tVar.f22572c);
+                    bundle2.putInt("module_version", tVar.f8964c);
                     bundle2.putString(com.huawei.hms.ads.dynamicloader.b.e, tVar.e);
-                    return r.a(context, tVar.f22571a, bundle2, asInterface);
+                    return r.a(context, tVar.f8963a, bundle2, asInterface);
                 } catch (Exception e2) {
                     str = "Get local assets module context failed, " + e2.getClass().getSimpleName();
                 }
             }
         }
-        aa.c(f22560a, str);
+        aa.c(f8952a, str);
         return null;
     }
 

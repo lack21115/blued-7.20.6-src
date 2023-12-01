@@ -1,8 +1,5 @@
 package kotlin.jvm.internal;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.tencent.lbssearch.object.param.Geo2AddressParam;
 import java.lang.annotation.Annotation;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,12 +45,8 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/jvm/internal/ClassReference.class */
 public final class ClassReference implements ClassBasedDeclarationContainer, KClass<Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42528a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final Map<Class<? extends Function<?>>, Integer> f42529c;
+    public static final Companion a = new Companion(null);
+    private static final Map<Class<? extends Function<?>>, Integer> c;
     private static final HashMap<String, String> d;
     private static final HashMap<String, String> e;
     private static final HashMap<String, String> f;
@@ -87,7 +80,7 @@ public final class ClassReference implements ClassBasedDeclarationContainer, KCl
 
         public final boolean a(Object obj, Class<?> jClass) {
             Intrinsics.e(jClass, "jClass");
-            Integer num = (Integer) ClassReference.f42529c.get(jClass);
+            Integer num = (Integer) ClassReference.c.get(jClass);
             if (num != null) {
                 return TypeIntrinsics.a(obj, num.intValue());
             }
@@ -140,14 +133,14 @@ public final class ClassReference implements ClassBasedDeclarationContainer, KCl
             arrayList.add(TuplesKt.a((Class) obj, Integer.valueOf(i)));
             i++;
         }
-        f42529c = MapsKt.a(arrayList);
+        c = MapsKt.a(arrayList);
         HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put(TypedValues.Custom.S_BOOLEAN, "kotlin.Boolean");
+        hashMap.put("boolean", "kotlin.Boolean");
         hashMap.put("char", "kotlin.Char");
         hashMap.put("byte", "kotlin.Byte");
-        hashMap.put(Geo2AddressParam.PoiOptions.ADDRESS_FORMAT_SHORT, "kotlin.Short");
-        hashMap.put(IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL, "kotlin.Int");
-        hashMap.put(TypedValues.Custom.S_FLOAT, "kotlin.Float");
+        hashMap.put("short", "kotlin.Short");
+        hashMap.put("int", "kotlin.Int");
+        hashMap.put("float", "kotlin.Float");
         hashMap.put("long", "kotlin.Long");
         hashMap.put("double", "kotlin.Double");
         d = hashMap;
@@ -196,7 +189,7 @@ public final class ClassReference implements ClassBasedDeclarationContainer, KCl
             Pair a2 = TuplesKt.a(sb.toString(), kotlinName + ".Companion");
             hashMap4.put(a2.a(), a2.b());
         }
-        for (Map.Entry<Class<? extends Function<?>>, Integer> entry : f42529c.entrySet()) {
+        for (Map.Entry<Class<? extends Function<?>>, Integer> entry : c.entrySet()) {
             hashMap3.put(entry.getKey().getName(), "kotlin.Function" + entry.getValue().intValue());
         }
         f = hashMap3;
@@ -224,17 +217,17 @@ public final class ClassReference implements ClassBasedDeclarationContainer, KCl
 
     @Override // kotlin.reflect.KClass
     public boolean a(Object obj) {
-        return f42528a.a(obj, a());
+        return a.a(obj, a());
     }
 
     @Override // kotlin.reflect.KClass
     public String b() {
-        return f42528a.a(a());
+        return a.a(a());
     }
 
     @Override // kotlin.reflect.KClass
     public String c() {
-        return f42528a.b(a());
+        return a.b(a());
     }
 
     public boolean equals(Object obj) {

@@ -1,6 +1,7 @@
 package java.net;
 
-import com.cdo.oaps.ad.OapsKey;
+import com.alipay.sdk.cons.b;
+import io.grpc.internal.GrpcUtil;
 import java.io.IOException;
 import java.net.Proxy;
 import java.util.Collections;
@@ -73,11 +74,11 @@ final class ProxySelectorImpl extends ProxySelector {
             i = 80;
             str = "http.nonProxyHosts";
             proxy = lookupProxy("http.proxyHost", "http.proxyPort", Proxy.Type.HTTP, 80);
-        } else if ("https".equalsIgnoreCase(scheme)) {
+        } else if (b.a.equalsIgnoreCase(scheme)) {
             i = 443;
             str = "https.nonProxyHosts";
-            proxy = lookupProxy("https.proxyHost", "https.proxyPort", Proxy.Type.HTTP, 443);
-        } else if (OapsKey.KEY_FILE_TYPE.equalsIgnoreCase(scheme)) {
+            proxy = lookupProxy("https.proxyHost", "https.proxyPort", Proxy.Type.HTTP, GrpcUtil.DEFAULT_PORT_SSL);
+        } else if ("ftp".equalsIgnoreCase(scheme)) {
             i = 80;
             str = "ftp.nonProxyHosts";
             proxy = lookupProxy("ftp.proxyHost", "ftp.proxyPort", Proxy.Type.HTTP, 80);

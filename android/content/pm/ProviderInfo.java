@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PatternMatcher;
 import android.util.Printer;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/pm/ProviderInfo.class */
 public final class ProviderInfo extends ComponentInfo implements Parcelable {
@@ -107,7 +106,7 @@ public final class ProviderInfo extends ComponentInfo implements Parcelable {
     }
 
     public String toString() {
-        return "ContentProviderInfo{name=" + this.authority + " className=" + this.name + i.d;
+        return "ContentProviderInfo{name=" + this.authority + " className=" + this.name + "}";
     }
 
     @Override // android.content.pm.ComponentInfo, android.content.pm.PackageItemInfo, android.os.Parcelable

@@ -11,11 +11,11 @@ import com.soft.blued.R;
 public final class FmMsgBackupBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f28751a;
+    public final LinearLayout f15061a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final CommonTopTitleNoTrans f28752c;
+    public final CommonTopTitleNoTrans f15062c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -23,9 +23,9 @@ public final class FmMsgBackupBinding implements ViewBinding {
 
     private FmMsgBackupBinding(LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, TextView textView2, TextView textView3) {
         this.g = linearLayout;
-        this.f28751a = linearLayout2;
+        this.f15061a = linearLayout2;
         this.b = linearLayout3;
-        this.f28752c = commonTopTitleNoTrans;
+        this.f15062c = commonTopTitleNoTrans;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -37,15 +37,15 @@ public final class FmMsgBackupBinding implements ViewBinding {
         if (linearLayout != null) {
             LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_restore_chat_record);
             if (linearLayout2 != null) {
-                CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-                if (commonTopTitleNoTrans != null) {
-                    TextView textView = (TextView) view.findViewById(2131371242);
+                CommonTopTitleNoTrans findViewById = view.findViewById(R.id.top_title);
+                if (findViewById != null) {
+                    TextView textView = (TextView) view.findViewById(R.id.tv_date);
                     if (textView != null) {
-                        TextView textView2 = (TextView) view.findViewById(2131371256);
+                        TextView textView2 = (TextView) view.findViewById(R.id.tv_delete);
                         if (textView2 != null) {
                             TextView textView3 = (TextView) view.findViewById(R.id.tv_link);
                             if (textView3 != null) {
-                                return new FmMsgBackupBinding((LinearLayout) view, linearLayout, linearLayout2, commonTopTitleNoTrans, textView, textView2, textView3);
+                                return new FmMsgBackupBinding((LinearLayout) view, linearLayout, linearLayout2, findViewById, textView, textView2, textView3);
                             }
                             str = "tvLink";
                         } else {

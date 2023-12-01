@@ -8,20 +8,16 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemPageLevelBinding.class */
 public final class ItemPageLevelBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16638a;
+    public final TextView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16639c;
+    public final TextView c;
     private final ConstraintLayout d;
 
     private ItemPageLevelBinding(ConstraintLayout constraintLayout, TextView textView, TextView textView2, TextView textView3) {
         this.d = constraintLayout;
-        this.f16638a = textView;
+        this.a = textView;
         this.b = textView2;
-        this.f16639c = textView3;
+        this.c = textView3;
     }
 
     public static ItemPageLevelBinding a(View view) {
@@ -44,7 +40,6 @@ public final class ItemPageLevelBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.d;

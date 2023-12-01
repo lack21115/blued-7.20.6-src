@@ -12,21 +12,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewAdInGiftListBinding.class */
 public final class ViewAdInGiftListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16836a;
+    public final ImageView a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f16837c;
+    public final ConstraintLayout c;
     public final ShapeTextView d;
     private final FrameLayout e;
 
     private ViewAdInGiftListBinding(FrameLayout frameLayout, ImageView imageView, ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ShapeTextView shapeTextView) {
         this.e = frameLayout;
-        this.f16836a = imageView;
+        this.a = imageView;
         this.b = constraintLayout;
-        this.f16837c = constraintLayout2;
+        this.c = constraintLayout2;
         this.d = shapeTextView;
     }
 
@@ -42,13 +38,13 @@ public final class ViewAdInGiftListBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.img_ad_background);
         if (imageView != null) {
-            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_ad_activity);
-            if (constraintLayout != null) {
-                ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.ll_ad_recharge);
-                if (constraintLayout2 != null) {
+            ConstraintLayout findViewById = view.findViewById(R.id.ll_ad_activity);
+            if (findViewById != null) {
+                ConstraintLayout findViewById2 = view.findViewById(R.id.ll_ad_recharge);
+                if (findViewById2 != null) {
                     ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_ad_content);
                     if (shapeTextView != null) {
-                        return new ViewAdInGiftListBinding((FrameLayout) view, imageView, constraintLayout, constraintLayout2, shapeTextView);
+                        return new ViewAdInGiftListBinding((FrameLayout) view, imageView, findViewById, findViewById2, shapeTextView);
                     }
                     str = "tvAdContent";
                 } else {
@@ -63,7 +59,6 @@ public final class ViewAdInGiftListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

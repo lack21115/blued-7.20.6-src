@@ -24,11 +24,11 @@ import org.json.JSONArray;
 public class TbsLogReport {
 
     /* renamed from: a  reason: collision with root package name */
-    private static TbsLogReport f38770a;
+    private static TbsLogReport f25079a;
     private Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f38771c;
+    private Context f25080c;
     private boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/smtt/sdk/TbsLogReport$EventType.class */
@@ -43,10 +43,10 @@ public class TbsLogReport {
         
 
         /* renamed from: a  reason: collision with root package name */
-        int f38775a;
+        int f25084a;
 
         EventType(int i) {
-            this.f38775a = i;
+            this.f25084a = i;
         }
     }
 
@@ -54,11 +54,11 @@ public class TbsLogReport {
     public static class TbsLogInfo implements Cloneable {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38776a;
+        int f25085a;
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f38777c;
+        private String f25086c;
         private String d;
         private int e;
         private int f;
@@ -92,7 +92,7 @@ public class TbsLogReport {
 
         public void resetArgs() {
             this.b = 0L;
-            this.f38777c = null;
+            this.f25086c = null;
             this.d = null;
             this.e = 0;
             this.f = 0;
@@ -104,7 +104,7 @@ public class TbsLogReport {
             this.l = 0L;
             this.m = 0L;
             this.n = 1;
-            this.f38776a = 0;
+            this.f25085a = 0;
             this.o = null;
             this.p = null;
             this.q = 0L;
@@ -136,10 +136,10 @@ public class TbsLogReport {
         }
 
         public void setDownloadUrl(String str) {
-            if (this.f38777c != null) {
-                str = this.f38777c + ";" + str;
+            if (this.f25086c != null) {
+                str = this.f25086c + com.huawei.openalliance.ad.constant.t.aE + str;
             }
-            this.f38777c = str;
+            this.f25086c = str;
         }
 
         public void setErrorCode(int i) {
@@ -149,7 +149,7 @@ public class TbsLogReport {
             if (i == 111) {
                 TbsLog.i(TbsDownloader.LOGTAG, "you are not in wifi, downloading stoped", true);
             }
-            this.f38776a = i;
+            this.f25085a = i;
         }
 
         public void setEventTime(long j) {
@@ -214,11 +214,11 @@ public class TbsLogReport {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f38778a;
+        private final String f25087a;
         private final String b;
 
         public a(String str, String str2) {
-            this.f38778a = str;
+            this.f25087a = str;
             this.b = str2;
         }
 
@@ -280,10 +280,9 @@ public class TbsLogReport {
         /* JADX WARN: Not initialized variable reg: 11, insn: 0x0224: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r11 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:115:0x0224 */
         /* JADX WARN: Removed duplicated region for block: B:52:0x0126  */
         /* JADX WARN: Removed duplicated region for block: B:59:0x0147  */
-        /* JADX WARN: Type inference failed for: r9v14 */
+        /* JADX WARN: Type inference failed for: r0v44, types: [java.io.FileInputStream] */
+        /* JADX WARN: Type inference failed for: r0v50, types: [java.io.BufferedInputStream] */
         /* JADX WARN: Type inference failed for: r9v15 */
-        /* JADX WARN: Type inference failed for: r9v16 */
-        /* JADX WARN: Type inference failed for: r9v17 */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -299,7 +298,7 @@ public class TbsLogReport {
 
     private TbsLogReport(Context context) {
         this.b = null;
-        this.f38771c = context.getApplicationContext();
+        this.f25080c = context.getApplicationContext();
         HandlerThread handlerThread = new HandlerThread("TbsLogReportThread");
         handlerThread.start();
         this.b = new Handler(handlerThread.getLooper()) { // from class: com.tencent.smtt.sdk.TbsLogReport.1
@@ -369,20 +368,20 @@ public class TbsLogReport {
     public void a(int i, TbsLogInfo tbsLogInfo) {
         StringBuilder sb = new StringBuilder();
         sb.append(a(i));
-        sb.append(a(com.tencent.smtt.utils.b.f(this.f38771c)));
-        sb.append(a(com.tencent.smtt.utils.j.a(this.f38771c)));
-        sb.append(a(o.a().i(this.f38771c)));
+        sb.append(a(com.tencent.smtt.utils.b.f(this.f25080c)));
+        sb.append(a(com.tencent.smtt.utils.j.a(this.f25080c)));
+        sb.append(a(o.a().i(this.f25080c)));
         String str = Build.MODEL;
         try {
             str = new String(str.getBytes("UTF-8"), "ISO8859-1");
         } catch (Exception e) {
         }
         sb.append(a(str));
-        String packageName = this.f38771c.getPackageName();
+        String packageName = this.f25080c.getPackageName();
         sb.append(a(packageName));
-        sb.append("com.tencent.mm".equals(packageName) ? a(com.tencent.smtt.utils.b.a(this.f38771c, TbsDownloader.TBS_METADATA)) : a(com.tencent.smtt.utils.b.d(this.f38771c)));
+        sb.append("com.tencent.mm".equals(packageName) ? a(com.tencent.smtt.utils.b.a(this.f25080c, TbsDownloader.TBS_METADATA)) : a(com.tencent.smtt.utils.b.d(this.f25080c)));
         sb.append(a(a(tbsLogInfo.b)));
-        sb.append(a(tbsLogInfo.f38777c));
+        sb.append(a(tbsLogInfo.f25086c));
         sb.append(a(tbsLogInfo.d));
         sb.append(a(tbsLogInfo.e));
         sb.append(a(tbsLogInfo.f));
@@ -395,11 +394,11 @@ public class TbsLogReport {
         sb.append(b(tbsLogInfo.l));
         sb.append(b(tbsLogInfo.m));
         sb.append(a(tbsLogInfo.n));
-        sb.append(a(tbsLogInfo.f38776a));
+        sb.append(a(tbsLogInfo.f25085a));
         sb.append(a(tbsLogInfo.o));
         sb.append(a(tbsLogInfo.p));
-        sb.append(a(TbsDownloadConfig.getInstance(this.f38771c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0)));
-        sb.append(a(com.tencent.smtt.utils.b.i(this.f38771c)));
+        sb.append(a(TbsDownloadConfig.getInstance(this.f25080c).mPreferences.getInt(TbsDownloadConfig.TbsConfigKey.KEY_TBS_DOWNLOAD_V, 0)));
+        sb.append(a(com.tencent.smtt.utils.b.i(this.f25080c)));
         sb.append(a("4.3.0.67_43967"));
         sb.append(false);
         SharedPreferences d = d();
@@ -426,7 +425,7 @@ public class TbsLogReport {
         SharedPreferences.Editor edit = d.edit();
         edit.putString("tbs_download_upload", jSONArray2.toString());
         edit.commit();
-        if (this.d || i != EventType.TYPE_LOAD.f38775a) {
+        if (this.d || i != EventType.TYPE_LOAD.f25084a) {
             b();
         }
     }
@@ -456,7 +455,7 @@ public class TbsLogReport {
             if (a2 != null && a2.length() != 0) {
                 TbsLog.i(TbsDownloader.LOGTAG, "[TbsApkDownloadStat.reportDownloadStat] jsonArray:" + a2);
                 try {
-                    String a3 = com.tencent.smtt.utils.f.a(com.tencent.smtt.utils.m.a(this.f38771c).c(), a2.toString().getBytes("utf-8"), new f.a() { // from class: com.tencent.smtt.sdk.TbsLogReport.3
+                    String a3 = com.tencent.smtt.utils.f.a(com.tencent.smtt.utils.m.a(this.f25080c).c(), a2.toString().getBytes("utf-8"), new f.a() { // from class: com.tencent.smtt.sdk.TbsLogReport.3
                         @Override // com.tencent.smtt.utils.f.a
                         public void a(int i) {
                             TbsLog.i(TbsDownloader.LOGTAG, "[TbsApkDownloadStat.reportDownloadStat] onHttpResponseCode:" + i);
@@ -485,22 +484,22 @@ public class TbsLogReport {
     }
 
     private SharedPreferences d() {
-        return this.f38771c.getSharedPreferences("tbs_download_stat", 4);
+        return this.f25080c.getSharedPreferences("tbs_download_stat", 4);
     }
 
     public static TbsLogReport getInstance(Context context) {
-        if (f38770a == null) {
+        if (f25079a == null) {
             synchronized (TbsLogReport.class) {
                 try {
-                    if (f38770a == null) {
-                        f38770a = new TbsLogReport(context);
+                    if (f25079a == null) {
+                        f25079a = new TbsLogReport(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f38770a;
+        return f25079a;
     }
 
     public void clear() {
@@ -521,7 +520,7 @@ public class TbsLogReport {
             TbsLogInfo tbsLogInfo2 = (TbsLogInfo) tbsLogInfo.clone();
             Message obtainMessage = this.b.obtainMessage();
             obtainMessage.what = 600;
-            obtainMessage.arg1 = eventType.f38775a;
+            obtainMessage.arg1 = eventType.f25084a;
             obtainMessage.obj = tbsLogInfo2;
             this.b.sendMessage(obtainMessage);
         } catch (Throwable th) {

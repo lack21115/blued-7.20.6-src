@@ -2,6 +2,7 @@ package com.soft.blued.ui.live.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.widget.ImageView;
 import com.anythink.expressad.foundation.h.i;
 import com.blued.android.core.AppMethods;
@@ -23,7 +24,7 @@ import com.soft.blued.utils.UserRelationshipUtils;
 public class LiveUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static NearbyLiveSourceModel f31305a;
+    public static NearbyLiveSourceModel f17615a;
 
     public static int a(Context context, ImageView imageView, int i, boolean z) {
         String str;
@@ -45,7 +46,7 @@ public class LiveUtils {
         } else {
             str = i2 + "";
         }
-        int identifier = context.getResources().getIdentifier("anchor_rich" + str, i.f7952c, context.getPackageName());
+        int identifier = context.getResources().getIdentifier("anchor_rich" + str, i.f5112c, context.getPackageName());
         if (imageView != null) {
             imageView.setImageResource(identifier);
             if (i2 == 0 && z) {
@@ -58,7 +59,7 @@ public class LiveUtils {
     }
 
     public static String a() {
-        NearbyLiveSourceModel nearbyLiveSourceModel = f31305a;
+        NearbyLiveSourceModel nearbyLiveSourceModel = f17615a;
         return nearbyLiveSourceModel == null ? "" : nearbyLiveSourceModel.b;
     }
 
@@ -69,15 +70,15 @@ public class LiveUtils {
         int i = bluedLiveState.is_permission;
         int a2 = UserRelationshipUtils.a(bluedLiveState.block, bluedLiveState.vbadge, bluedLiveState.verify, bluedLiveState.mobile);
         if (AudioChannelManager.j().n()) {
-            AppMethods.a(context.getResources().getText(2131893031));
+            AppMethods.a(context.getResources().getText(R.string.yy_in_use));
         } else if (bluedLiveState.avatar_v_status == 0) {
-            CommonAlertDialog.a(context, "", context.getResources().getString(2131891033), context.getResources().getString(2131892413), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.1
+            CommonAlertDialog.a(context, "", context.getResources().getString(2131891033), context.getResources().getString(R.string.upload), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.1
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i2) {
                     Tracker.onClick(dialogInterface, i2);
                     ModifyUserInfoFragment.a(Context.this, 602, true);
                 }
-            }, context.getResources().getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+            }, context.getResources().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
         } else if (bluedLiveState.avatar_v_status == 2) {
             CommonAlertDialog.a(context, "", context.getResources().getString(R.string.live_apply_avataring), context.getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.2
                 @Override // android.content.DialogInterface.OnClickListener
@@ -90,7 +91,7 @@ public class LiveUtils {
                 if (bluedLiveState.has_audited == 0) {
                     LiveApplyVerifyFragment.a(context, bluedLiveState);
                 } else {
-                    CommonAlertDialog.a(context, "", context.getResources().getString(2131889232), context.getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.8
+                    CommonAlertDialog.a(context, "", context.getResources().getString(R.string.live_applyHost_simple_applying_v_tip), context.getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.8
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i2) {
                             Tracker.onClick(dialogInterface, i2);
@@ -105,22 +106,22 @@ public class LiveUtils {
                 LiveApplySimpleFragment.a(context, bluedLiveState);
             }
         } else if (a2 == 1) {
-            CommonAlertDialog.a(context, "", context.getResources().getString(2131886128), context.getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.3
+            CommonAlertDialog.a(context, "", context.getResources().getString(R.string.Live_applyHost_forbidedHost), context.getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.3
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i2) {
                     Tracker.onClick(dialogInterface, i2);
                 }
             }, (DialogInterface.OnDismissListener) null, 1);
         } else if (a2 == 3) {
-            CommonAlertDialog.a(context, "", context.getResources().getString(2131886143), context.getResources().getString(2131886193), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.4
+            CommonAlertDialog.a(context, "", context.getResources().getString(R.string.Live_applyHost_phoneInvalid), context.getResources().getString(R.string.Live_liveList_binding), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.4
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i2) {
                     Tracker.onClick(dialogInterface, i2);
-                    TerminalActivity.d(Context.this, LinkMobileFragment.class, null);
+                    TerminalActivity.d(Context.this, LinkMobileFragment.class, (Bundle) null);
                 }
-            }, context.getResources().getString(2131887258), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
+            }, context.getResources().getString(R.string.common_cancel), (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
         } else if (a2 == 2) {
-            CommonAlertDialog.a(context, "", context.getResources().getString(2131886144), context.getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.5
+            CommonAlertDialog.a(context, "", context.getResources().getString(R.string.Live_applyHost_phoneIsAuthing), context.getResources().getString(R.string.dialog_positive), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.5
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i2) {
                     Tracker.onClick(dialogInterface, i2);
@@ -130,13 +131,13 @@ public class LiveUtils {
             RecordingOnliveFragment.a(context, bluedLiveState.is_official);
         } else {
             BluedAlertDialog.Builder builder = new BluedAlertDialog.Builder(context);
-            builder.a(context.getResources().getString(R.string.qr_scan_result_remind_title)).b(context.getResources().getString(2131886115)).a(context.getResources().getString(2131886116), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.7
+            builder.a(context.getResources().getString(R.string.qr_scan_result_remind_title)).b(context.getResources().getString(R.string.Live_applyHost_authInvalid)).a(context.getResources().getString(R.string.Live_applyHost_authInvalid_auth), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.7
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i2) {
                     Tracker.onClick(dialogInterface, i2);
                     LiveApplySimpleFragment.a(Context.this, bluedLiveState);
                 }
-            }).b(context.getResources().getString(2131886117), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.6
+            }).b(context.getResources().getString(R.string.Live_applyHost_authInvalid_avatar), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.live.utils.LiveUtils.6
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i2) {
                     Tracker.onClick(dialogInterface, i2);
@@ -149,22 +150,22 @@ public class LiveUtils {
 
     public static void a(String str, String str2, int i) {
         NearbyLiveSourceModel nearbyLiveSourceModel = new NearbyLiveSourceModel();
-        f31305a = nearbyLiveSourceModel;
+        f17615a = nearbyLiveSourceModel;
         nearbyLiveSourceModel.b = str;
-        f31305a.f31310a = str2;
-        f31305a.f31311c = i;
+        f17615a.f17620a = str2;
+        f17615a.f17621c = i;
     }
 
     public static String b() {
-        NearbyLiveSourceModel nearbyLiveSourceModel = f31305a;
-        return nearbyLiveSourceModel == null ? "" : nearbyLiveSourceModel.f31310a;
+        NearbyLiveSourceModel nearbyLiveSourceModel = f17615a;
+        return nearbyLiveSourceModel == null ? "" : nearbyLiveSourceModel.f17620a;
     }
 
     public static int c() {
-        NearbyLiveSourceModel nearbyLiveSourceModel = f31305a;
+        NearbyLiveSourceModel nearbyLiveSourceModel = f17615a;
         if (nearbyLiveSourceModel == null) {
             return 0;
         }
-        return nearbyLiveSourceModel.f31311c;
+        return nearbyLiveSourceModel.f17621c;
     }
 }

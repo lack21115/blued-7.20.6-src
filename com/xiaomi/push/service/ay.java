@@ -11,6 +11,7 @@ import android.os.Parcelable;
 import android.provider.BrowserContract;
 import android.provider.Settings;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,17 +21,17 @@ import java.util.Map;
 public class ay {
 
     /* renamed from: a  reason: collision with other field name */
-    private static final String[] f994a = {"com.mi.globalbrowser", BrowserContract.AUTHORITY};
+    private static final String[] f947a = {"com.mi.globalbrowser", BrowserContract.AUTHORITY};
 
     /* renamed from: a  reason: collision with other field name */
-    private static String f993a = null;
+    private static String f946a = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final a<String, String, String> f41620a = new a<>("setSound", "canSound", "canSound");
+    public static final a<String, String, String> f27929a = new a<>("setSound", "canSound", "canSound");
     public static final a<String, String, String> b = new a<>("setVibrate", "canVibrate", "canVibrate");
 
     /* renamed from: c  reason: collision with root package name */
-    public static final a<String, String, String> f41621c = new a<>("setLights", "canLights", "canLights");
+    public static final a<String, String, String> f27930c = new a<>("setLights", "canLights", "canLights");
     public static final a<String, String, String> d = new a<>("setShowOnKeyguard", "canShowOnKeyguard", "canShowOnKeyguard");
     public static final a<String, String, String> e = new a<>("setFloat", "canFloat", "canShowFloat");
     public static final a<String, String, String> f = new a<>("setShowBadge", "canShowBadge", "canShowBadge");
@@ -39,16 +40,16 @@ public class ay {
     public static class a<F, S, T> {
 
         /* renamed from: a  reason: collision with root package name */
-        F f41622a;
+        F f27931a;
         S b;
 
         /* renamed from: c  reason: collision with root package name */
-        T f41623c;
+        T f27932c;
 
         private a(F f, S s, T t) {
-            this.f41622a = f;
+            this.f27931a = f;
             this.b = s;
-            this.f41623c = t;
+            this.f27932c = t;
         }
     }
 
@@ -56,7 +57,7 @@ public class ay {
         try {
             return Settings.Global.getInt(contentResolver, "user_aggregate", 0);
         } catch (Exception e2) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("get user aggregate failed, ".concat(String.valueOf(e2)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("get user aggregate failed, ".concat(String.valueOf(e2)));
             return 0;
         }
     }
@@ -70,10 +71,10 @@ public class ay {
         if (aVar != null) {
             try {
                 Bundle a2 = a(context, aVar.b, str, str2, (Bundle) null);
-                if (a2 == null || !a2.containsKey(aVar.f41623c)) {
+                if (a2 == null || !a2.containsKey(aVar.f27932c)) {
                     return -1;
                 }
-                return a2.getBoolean(aVar.f41623c) ? 1 : 0;
+                return a2.getBoolean(aVar.f27932c) ? 1 : 0;
             } catch (Exception e2) {
                 return -1;
             }
@@ -112,7 +113,7 @@ public class ay {
         T t2;
         try {
         } catch (Exception e2) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("get value error ".concat(String.valueOf(e2)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("get value error ".concat(String.valueOf(e2)));
         }
         if (obj instanceof Notification) {
             t2 = a((Notification) obj, str);
@@ -121,7 +122,7 @@ public class ay {
         } else if (obj instanceof Bundle) {
             t2 = ((Bundle) obj).get(str);
         } else {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("not support get value from classType:".concat(String.valueOf(obj)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("not support get value from classType:".concat(String.valueOf(obj)));
             t2 = null;
         }
         return t2 == null ? t : t2;
@@ -176,7 +177,7 @@ public class ay {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: a  reason: collision with other method in class */
-    public static void m12143a(Notification notification, String str) {
+    public static void m9093a(Notification notification, String str) {
         try {
             if (notification.extras != null) {
                 notification.extras.putString(HiAnalyticsConstant.BI_KEY_TARGET_PACKAGE, str);
@@ -212,7 +213,7 @@ public class ay {
         if (!TextUtils.isEmpty(str)) {
             arrayList.add(str);
         }
-        arrayList.addAll(Arrays.asList(f994a));
+        arrayList.addAll(Arrays.asList(f947a));
         int size = arrayList.size();
         int i = 0;
         while (true) {
@@ -231,7 +232,7 @@ public class ay {
                     }
                     continue;
                 } catch (Exception e2) {
-                    com.xiaomi.channel.commonutils.logger.b.m11394a("can't match url intent. ".concat(String.valueOf(e2)));
+                    com.xiaomi.channel.commonutils.logger.b.m8344a("can't match url intent. ".concat(String.valueOf(e2)));
                 }
             }
             i = i2 + 1;
@@ -241,7 +242,7 @@ public class ay {
 
     public static void a(Map<String, String> map, Bundle bundle, String str) {
         if (map == null || bundle == null || TextUtils.isEmpty(str)) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("cp map to b fail:".concat(String.valueOf(str)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("cp map to b fail:".concat(String.valueOf(str)));
         } else if (TextUtils.isEmpty(map.get(str))) {
             bundle.remove(str);
         } else {
@@ -259,7 +260,7 @@ public class ay {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12144a(ContentResolver contentResolver) {
+    public static boolean m9094a(ContentResolver contentResolver) {
         int a2 = a(contentResolver);
         return a2 == 1 || a2 == 2;
     }
@@ -268,8 +269,8 @@ public class ay {
         if (aVar != null) {
             try {
                 Bundle bundle = new Bundle();
-                bundle.putBoolean(aVar.f41623c, z);
-                a(context, aVar.f41622a, str, str2, bundle);
+                bundle.putBoolean(aVar.f27932c, z);
+                a(context, aVar.f27931a, str, str2, bundle);
                 return true;
             } catch (Exception e2) {
                 return false;
@@ -279,11 +280,11 @@ public class ay {
     }
 
     public static boolean a(Map<String, String> map) {
-        return Boolean.parseBoolean((String) a(map, "not_suppress", "true"));
+        return Boolean.parseBoolean((String) a(map, "not_suppress", fw.Code));
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static Notification.Action[] m12145a(Notification notification) {
+    public static Notification.Action[] m9095a(Notification notification) {
         Parcelable[] parcelableArray;
         if (notification.actions != null) {
             return notification.actions;

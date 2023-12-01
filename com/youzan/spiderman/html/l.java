@@ -7,27 +7,27 @@ import com.youzan.spiderman.utils.MD5Utils;
 public final class l {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41845a;
+    private String f28154a;
     private Uri b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41846c;
+    private String f28155c;
 
     public l(Uri uri) {
         String uri2 = uri.toString();
-        this.f41845a = uri2;
+        this.f28154a = uri2;
         this.b = uri;
-        this.f41846c = MD5Utils.getStringMd5(uri2);
+        this.f28155c = MD5Utils.getStringMd5(uri2);
     }
 
     public l(String str) {
-        this.f41845a = str;
+        this.f28154a = str;
         this.b = Uri.parse(str);
-        this.f41846c = MD5Utils.getStringMd5(str);
+        this.f28155c = MD5Utils.getStringMd5(str);
     }
 
     public final String a() {
-        return this.f41845a;
+        return this.f28154a;
     }
 
     public final Uri b() {
@@ -35,6 +35,6 @@ public final class l {
     }
 
     public final String c() {
-        return this.f41846c;
+        return this.f28155c;
     }
 }

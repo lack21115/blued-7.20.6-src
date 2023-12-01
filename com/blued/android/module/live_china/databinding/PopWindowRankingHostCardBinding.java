@@ -12,13 +12,9 @@ import com.google.android.material.card.MaterialCardView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/PopWindowRankingHostCardBinding.class */
 public final class PopWindowRankingHostCardBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final MaterialCardView f12491a;
+    public final MaterialCardView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final CustomViewPager f12492c;
+    public final CustomViewPager c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class PopWindowRankingHostCardBinding implements ViewBinding {
 
     private PopWindowRankingHostCardBinding(RelativeLayout relativeLayout, MaterialCardView materialCardView, ImageView imageView, CustomViewPager customViewPager, TextView textView, TextView textView2, TextView textView3, ShapeTextView shapeTextView) {
         this.h = relativeLayout;
-        this.f12491a = materialCardView;
+        this.a = materialCardView;
         this.b = imageView;
-        this.f12492c = customViewPager;
+        this.c = customViewPager;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -38,8 +34,8 @@ public final class PopWindowRankingHostCardBinding implements ViewBinding {
 
     public static PopWindowRankingHostCardBinding a(View view) {
         String str;
-        MaterialCardView materialCardView = (MaterialCardView) view.findViewById(R.id.cv_tabbar_root);
-        if (materialCardView != null) {
+        MaterialCardView findViewById = view.findViewById(R.id.cv_tabbar_root);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_question);
             if (imageView != null) {
                 CustomViewPager customViewPager = (CustomViewPager) view.findViewById(R.id.live_hour_viewpager);
@@ -52,7 +48,7 @@ public final class PopWindowRankingHostCardBinding implements ViewBinding {
                             if (textView3 != null) {
                                 ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.view_cursor);
                                 if (shapeTextView != null) {
-                                    return new PopWindowRankingHostCardBinding((RelativeLayout) view, materialCardView, imageView, customViewPager, textView, textView2, textView3, shapeTextView);
+                                    return new PopWindowRankingHostCardBinding((RelativeLayout) view, findViewById, imageView, customViewPager, textView, textView2, textView3, shapeTextView);
                                 }
                                 str = "viewCursor";
                             } else {
@@ -76,7 +72,6 @@ public final class PopWindowRankingHostCardBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.h;

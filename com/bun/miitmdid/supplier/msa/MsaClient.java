@@ -19,10 +19,10 @@ public class MsaClient {
     class a implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.bun.miitmdid.c.e.a f21162a;
+        final /* synthetic */ com.bun.miitmdid.c.e.a f7556a;
 
         a(com.bun.miitmdid.c.e.a aVar) {
-            this.f21162a = aVar;
+            this.f7556a = aVar;
         }
 
         @Override // android.content.ServiceConnection

@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.app.Fragment;
 import android.app.FragmentBreadCrumbs;
 import android.app.FragmentTransaction;
@@ -30,7 +31,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.android.internal.R;
 import com.android.internal.util.XmlUtils;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -234,9 +234,9 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
             if (view == null) {
                 view2 = this.mInflater.inflate(this.mLayoutResId, viewGroup, false);
                 headerViewHolder = new HeaderViewHolder();
-                headerViewHolder.icon = (ImageView) view2.findViewById(16908294);
-                headerViewHolder.title = (TextView) view2.findViewById(16908310);
-                headerViewHolder.summary = (TextView) view2.findViewById(16908304);
+                headerViewHolder.icon = (ImageView) view2.findViewById(R.id.icon);
+                headerViewHolder.title = (TextView) view2.findViewById(R.id.title);
+                headerViewHolder.summary = (TextView) view2.findViewById(R.id.summary);
                 view2.setTag(headerViewHolder);
             } else {
                 view2 = view;
@@ -299,7 +299,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
         Fragment instantiate = Fragment.instantiate(this, str, bundle);
         FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
         beginTransaction.setTransition(4099);
-        beginTransaction.replace(R.id.prefs, instantiate);
+        beginTransaction.replace(16909151, instantiate);
         beginTransaction.commitAllowingStateLoss();
     }
 
@@ -475,7 +475,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
                     } else if (next2 != 3 && next2 != 4) {
                         if ("header".equals(xml.getName())) {
                             Header header = new Header();
-                            TypedArray obtainStyledAttributes = obtainStyledAttributes(asAttributeSet, R.styleable.PreferenceHeader);
+                            TypedArray obtainStyledAttributes = obtainStyledAttributes(asAttributeSet, com.android.internal.R.styleable.PreferenceHeader);
                             header.id = obtainStyledAttributes.getResourceId(1, -1);
                             TypedValue peekValue = obtainStyledAttributes.peekValue(2);
                             if (peekValue != null && peekValue.type == 3) {
@@ -595,14 +595,14 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     @Override // android.app.Activity
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        TypedArray obtainStyledAttributes = obtainStyledAttributes(null, R.styleable.PreferenceActivity, R.attr.preferenceActivityStyle, 0);
-        int resourceId = obtainStyledAttributes.getResourceId(0, R.layout.preference_list_content);
-        this.mPreferenceHeaderItemResId = obtainStyledAttributes.getResourceId(1, R.layout.preference_header_item);
+        TypedArray obtainStyledAttributes = obtainStyledAttributes(null, com.android.internal.R.styleable.PreferenceActivity, 18219034, 0);
+        int resourceId = obtainStyledAttributes.getResourceId(0, 17367196);
+        this.mPreferenceHeaderItemResId = obtainStyledAttributes.getResourceId(1, 17367190);
         this.mPreferenceHeaderRemoveEmptyIcon = obtainStyledAttributes.getBoolean(2, false);
         obtainStyledAttributes.recycle();
         setContentView(resourceId);
-        this.mListFooter = (FrameLayout) findViewById(R.id.list_footer);
-        this.mPrefsContainer = (ViewGroup) findViewById(R.id.prefs_frame);
+        this.mListFooter = (FrameLayout) findViewById(16909149);
+        this.mPrefsContainer = (ViewGroup) findViewById(16909150);
         this.mSinglePane = onIsHidingHeaders() || !onIsMultiPane();
         String stringExtra = getIntent().getStringExtra(EXTRA_SHOW_FRAGMENT);
         Bundle bundleExtra = getIntent().getBundleExtra(EXTRA_SHOW_FRAGMENT_ARGUMENTS);
@@ -633,7 +633,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
             }
         }
         if (stringExtra != null && this.mSinglePane) {
-            findViewById(R.id.headers).setVisibility(8);
+            findViewById(16909148).setVisibility(8);
             this.mPrefsContainer.setVisibility(0);
             if (intExtra != 0) {
                 showBreadCrumbs(getText(intExtra), intExtra2 != 0 ? getText(intExtra2) : null);
@@ -648,16 +648,16 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
                 this.mPrefsContainer.setVisibility(0);
             }
         } else {
-            setContentView(R.layout.preference_list_content_single);
-            this.mListFooter = (FrameLayout) findViewById(R.id.list_footer);
-            this.mPrefsContainer = (ViewGroup) findViewById(R.id.prefs);
+            setContentView(17367198);
+            this.mListFooter = (FrameLayout) findViewById(16909149);
+            this.mPrefsContainer = (ViewGroup) findViewById(16909151);
             this.mPreferenceManager = new PreferenceManager(this, 100);
             this.mPreferenceManager.setOnPreferenceTreeClickListener(this);
         }
         Intent intent = getIntent();
         if (intent.getBooleanExtra(EXTRA_PREFS_SHOW_BUTTON_BAR, false)) {
-            findViewById(R.id.button_bar).setVisibility(0);
-            Button button = (Button) findViewById(R.id.back_button);
+            findViewById(16909152).setVisibility(0);
+            Button button = (Button) findViewById(16909153);
             button.setOnClickListener(new View.OnClickListener() { // from class: android.preference.PreferenceActivity.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -665,7 +665,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
                     PreferenceActivity.this.finish();
                 }
             });
-            Button button2 = (Button) findViewById(R.id.skip_button);
+            Button button2 = (Button) findViewById(16909154);
             button2.setOnClickListener(new View.OnClickListener() { // from class: android.preference.PreferenceActivity.3
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -673,7 +673,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
                     PreferenceActivity.this.finish();
                 }
             });
-            this.mNextButton = (Button) findViewById(R.id.next_button);
+            this.mNextButton = (Button) findViewById(16909155);
             this.mNextButton.setOnClickListener(new View.OnClickListener() { // from class: android.preference.PreferenceActivity.4
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -757,7 +757,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     }
 
     public boolean onIsMultiPane() {
-        return getResources().getBoolean(R.bool.preferences_prefer_dual_pane);
+        return getResources().getBoolean(17956873);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -891,7 +891,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     public void showBreadCrumbs(CharSequence charSequence, CharSequence charSequence2) {
         if (this.mFragmentBreadCrumbs == null) {
             try {
-                this.mFragmentBreadCrumbs = (FragmentBreadCrumbs) findViewById(16908310);
+                this.mFragmentBreadCrumbs = (FragmentBreadCrumbs) findViewById(R.id.title);
                 if (this.mFragmentBreadCrumbs == null) {
                     if (charSequence != null) {
                         setTitle(charSequence);
@@ -901,7 +901,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
                 }
                 if (this.mSinglePane) {
                     this.mFragmentBreadCrumbs.setVisibility(8);
-                    View findViewById = findViewById(R.id.breadcrumb_section);
+                    View findViewById = findViewById(16909023);
                     if (findViewById != null) {
                         findViewById.setVisibility(8);
                     }
@@ -924,7 +924,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
 
     public void startPreferenceFragment(Fragment fragment, boolean z) {
         FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
-        beginTransaction.replace(R.id.prefs, fragment);
+        beginTransaction.replace(16909151, fragment);
         if (z) {
             beginTransaction.setTransition(4097);
             beginTransaction.addToBackStack(BACK_STACK_PREFS);
@@ -944,7 +944,7 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
             instantiate.setTargetFragment(fragment, i2);
         }
         FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
-        beginTransaction.replace(R.id.prefs, instantiate);
+        beginTransaction.replace(16909151, instantiate);
         if (i != 0) {
             beginTransaction.setBreadCrumbTitle(i);
         } else if (charSequence != null) {

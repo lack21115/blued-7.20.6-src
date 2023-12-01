@@ -1,6 +1,5 @@
 package org.msgpack.core;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import java.io.Closeable;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -33,9 +32,7 @@ public class MessageUnpacker implements Closeable {
     private CharBuffer decodeBuffer;
     private StringBuilder decodeStringBuffer;
     private CharsetDecoder decoder;
-
-    /* renamed from: in  reason: collision with root package name */
-    private MessageBufferInput f44098in;
+    private MessageBufferInput in;
     private int nextReadPosition;
     private int position;
     private final int stringDecoderBufferSize;
@@ -285,7 +282,7 @@ public class MessageUnpacker implements Closeable {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public MessageUnpacker(MessageBufferInput messageBufferInput, MessagePack.UnpackerConfig unpackerConfig) {
-        this.f44098in = (MessageBufferInput) Preconditions.checkNotNull(messageBufferInput, "MessageBufferInput is null");
+        this.in = (MessageBufferInput) Preconditions.checkNotNull(messageBufferInput, "MessageBufferInput is null");
         this.allowReadingStringAsBinary = unpackerConfig.getAllowReadingStringAsBinary();
         this.allowReadingBinaryAsString = unpackerConfig.getAllowReadingBinaryAsString();
         this.actionOnMalformedString = unpackerConfig.getActionOnMalformedString();
@@ -311,7 +308,7 @@ public class MessageUnpacker implements Closeable {
 
     private boolean ensureBuffer() throws IOException {
         while (this.buffer.size() <= this.position) {
-            MessageBuffer next = this.f44098in.next();
+            MessageBuffer next = this.in.next();
             if (next == null) {
                 return false;
             }
@@ -323,7 +320,7 @@ public class MessageUnpacker implements Closeable {
     }
 
     private MessageBuffer getNextBuffer() throws IOException {
-        MessageBuffer next = this.f44098in.next();
+        MessageBuffer next = this.in.next();
         if (next != null) {
             this.totalReadBytes += this.buffer.size();
             return next;
@@ -510,7 +507,7 @@ public class MessageUnpacker implements Closeable {
         switch (b) {
             case MessagePack.Code.STR8 /* -39 */:
                 return readNextLength8();
-            case -38:
+            case MessagePack.Code.STR16 /* -38 */:
                 return readNextLength16();
             case MessagePack.Code.STR32 /* -37 */:
                 return readNextLength32();
@@ -536,7 +533,7 @@ public class MessageUnpacker implements Closeable {
     public void close() throws IOException {
         this.buffer = EMPTY_BUFFER;
         this.position = 0;
-        this.f44098in.close();
+        this.in.close();
     }
 
     public MessageFormat getNextFormat() throws IOException {
@@ -600,8 +597,8 @@ public class MessageUnpacker implements Closeable {
 
     public MessageBufferInput reset(MessageBufferInput messageBufferInput) throws IOException {
         MessageBufferInput messageBufferInput2 = (MessageBufferInput) Preconditions.checkNotNull(messageBufferInput, "MessageBufferInput is null");
-        MessageBufferInput messageBufferInput3 = this.f44098in;
-        this.f44098in = messageBufferInput2;
+        MessageBufferInput messageBufferInput3 = this.in;
+        this.in = messageBufferInput2;
         this.buffer = EMPTY_BUFFER;
         this.position = 0;
         this.totalReadBytes = 0L;
@@ -794,7 +791,7 @@ public class MessageUnpacker implements Closeable {
         if (readByte == -61) {
             return true;
         }
-        throw unexpected(TypedValues.Custom.S_BOOLEAN, readByte);
+        throw unexpected("boolean", readByte);
     }
 
     public byte unpackByte() throws IOException {

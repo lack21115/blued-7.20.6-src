@@ -30,11 +30,11 @@ import java.util.WeakHashMap;
 public class d extends a.a.a.a.a.a.j.f {
 
     /* renamed from: a  reason: collision with root package name */
-    public h f1261a;
+    public h f1213a;
     public a.a.a.a.a.a.h.d b;
 
     /* renamed from: c  reason: collision with root package name */
-    public a.a.a.a.a.a.j.e f1262c;
+    public a.a.a.a.a.a.j.e f1214c;
     public j d;
     public p e;
     public o f;
@@ -56,10 +56,10 @@ public class d extends a.a.a.a.a.a.j.f {
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ WatermarkSetting f1263a;
+        public final /* synthetic */ WatermarkSetting f1215a;
 
         public a(WatermarkSetting watermarkSetting) {
-            this.f1263a = watermarkSetting;
+            this.f1215a = watermarkSetting;
         }
 
         @Override // java.lang.Runnable
@@ -68,10 +68,10 @@ public class d extends a.a.a.a.a.a.j.f {
                 d.this.e.a();
                 d.this.e = null;
             }
-            if (this.f1263a != null) {
-                a.a.a.a.a.e.f a2 = d.this.w.f1271a.d().a();
+            if (this.f1215a != null) {
+                a.a.a.a.a.e.f a2 = d.this.w.f1223a.d().a();
                 d dVar = d.this;
-                dVar.a(dVar.w.o, a2.a(), a2.b(), this.f1263a);
+                dVar.a(dVar.w.o, a2.a(), a2.b(), this.f1215a);
             }
         }
     }
@@ -80,15 +80,15 @@ public class d extends a.a.a.a.a.a.j.f {
     public class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean[] f1264a;
+        public final /* synthetic */ boolean[] f1216a;
 
         public b(d dVar, boolean[] zArr) {
-            this.f1264a = zArr;
+            this.f1216a = zArr;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f1264a[0] = true;
+            this.f1216a[0] = true;
         }
     }
 
@@ -96,7 +96,7 @@ public class d extends a.a.a.a.a.a.j.f {
     public class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ View f1265a;
+        public final /* synthetic */ View f1217a;
 
         /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/a/j/d$c$a.class */
         public class a implements ViewTreeObserver.OnGlobalLayoutListener {
@@ -106,23 +106,23 @@ public class d extends a.a.a.a.a.a.j.f {
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public void onGlobalLayout() {
                 a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f;
-                eVar.c("TextureMovieTransfer", "view size monitor got width: " + c.this.f1265a.getWidth() + " height: " + c.this.f1265a.getHeight());
+                eVar.c("TextureMovieTransfer", "view size monitor got width: " + c.this.f1217a.getWidth() + " height: " + c.this.f1217a.getHeight());
                 d.this.n = true;
             }
         }
 
         public c(View view) {
-            this.f1265a = view;
+            this.f1217a = view;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f1265a.getWidth() == 0 || this.f1265a.getHeight() == 0) {
-                this.f1265a.getViewTreeObserver().addOnGlobalLayoutListener(new a());
+            if (this.f1217a.getWidth() == 0 || this.f1217a.getHeight() == 0) {
+                this.f1217a.getViewTreeObserver().addOnGlobalLayoutListener(new a());
                 return;
             }
             a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f;
-            eVar.c("TextureMovieTransfer", "view size already got width: " + this.f1265a.getWidth() + " height: " + this.f1265a.getHeight());
+            eVar.c("TextureMovieTransfer", "view size already got width: " + this.f1217a.getWidth() + " height: " + this.f1217a.getHeight());
             d.this.n = true;
         }
     }
@@ -132,11 +132,11 @@ public class d extends a.a.a.a.a.a.j.f {
     public class C0003d {
 
         /* renamed from: a  reason: collision with root package name */
-        public View f1267a;
+        public View f1219a;
         public ViewGroup b;
 
         public C0003d(d dVar, View view, ViewGroup viewGroup) {
-            this.f1267a = view;
+            this.f1219a = view;
             this.b = viewGroup;
         }
     }
@@ -145,18 +145,18 @@ public class d extends a.a.a.a.a.a.j.f {
     public static class e extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<d> f1268a;
+        public WeakReference<d> f1220a;
 
         public e(Looper looper, d dVar) {
             super(looper);
-            this.f1268a = new WeakReference<>(dVar);
+            this.f1220a = new WeakReference<>(dVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             int i = message.what;
             Object obj = message.obj;
-            d dVar = this.f1268a.get();
+            d dVar = this.f1220a.get();
             a.a.a.a.a.e.e.f.b("TextureMovieTransfer", "EncoderHandler what:" + i + ",encoder=" + dVar);
             if (dVar == null) {
                 a.a.a.a.a.e.e.f.d("TextureMovieTransfer", "EncoderHandler.handleMessage: encoder is null");
@@ -200,11 +200,11 @@ public class d extends a.a.a.a.a.a.j.f {
     public class f {
 
         /* renamed from: a  reason: collision with root package name */
-        public View f1269a;
+        public View f1221a;
         public boolean b;
 
         public f(d dVar, View view, boolean z) {
-            this.f1269a = view;
+            this.f1221a = view;
             this.b = z;
         }
     }
@@ -225,7 +225,7 @@ public class d extends a.a.a.a.a.a.j.f {
     @Override // a.a.a.a.a.a.j.f
     public void a(int i) {
         synchronized (this) {
-            a.a.a.a.a.a.j.e eVar = this.f1262c;
+            a.a.a.a.a.a.j.e eVar = this.f1214c;
             if (eVar != null) {
                 eVar.a(i);
             }
@@ -239,13 +239,13 @@ public class d extends a.a.a.a.a.a.j.f {
     }
 
     public final void a(C0003d c0003d) {
-        this.i.put(c0003d.f1267a, c0003d.b);
-        c(c0003d.f1267a);
+        this.i.put(c0003d.f1219a, c0003d.b);
+        c(c0003d.f1219a);
     }
 
     public final void a(f fVar) {
         boolean z;
-        View view = fVar.f1269a;
+        View view = fVar.f1221a;
         synchronized (this.m) {
             Iterator<WeakReference<View>> it = this.h.iterator();
             while (true) {
@@ -386,7 +386,7 @@ public class d extends a.a.a.a.a.a.j.f {
     }
 
     public final void a(FrameCapturedCallback frameCapturedCallback) {
-        h hVar = this.f1261a;
+        h hVar = this.f1213a;
         if (hVar != null) {
             frameCapturedCallback.onFrameCaptured(hVar.f());
         }
@@ -465,16 +465,16 @@ public class d extends a.a.a.a.a.a.j.f {
     public final void b(int i, long j, boolean z) {
         int d;
         a.a.a.a.a.b.i.d dVar;
-        a.a.a.a.a.a.j.e eVar = this.f1262c;
+        a.a.a.a.a.a.j.e eVar = this.f1214c;
         if (eVar == null) {
             a.a.a.a.a.e.e eVar2 = a.a.a.a.a.e.e.f;
-            eVar2.c("TextureMovieTransfer", "ERROR. handleFrameAvailable mVideoEncoder:" + this.f1262c);
+            eVar2.c("TextureMovieTransfer", "ERROR. handleFrameAvailable mVideoEncoder:" + this.f1214c);
             return;
         }
         eVar.a(false);
-        if (this.g == null || this.f1261a == null) {
+        if (this.g == null || this.f1213a == null) {
             a.a.a.a.a.e.e eVar3 = a.a.a.a.a.e.e.f;
-            eVar3.c("TextureMovieTransfer", "ERROR. handleFrameAvailable mTextureDrawer:" + this.g + ",mInputWindowSurface:" + this.f1261a);
+            eVar3.c("TextureMovieTransfer", "ERROR. handleFrameAvailable mTextureDrawer:" + this.g + ",mInputWindowSurface:" + this.f1213a);
             return;
         }
         boolean z2 = this.w.m;
@@ -513,15 +513,15 @@ public class d extends a.a.a.a.a.a.j.f {
         SurfaceTextureCallback2 surfaceTextureCallback2 = this.q;
         int i3 = i2;
         if (surfaceTextureCallback2 != null) {
-            int onDrawFrame = surfaceTextureCallback2.onDrawFrame(i2, this.o, this.p, a.a.a.a.a.a.h.f.f1239c);
+            int onDrawFrame = surfaceTextureCallback2.onDrawFrame(i2, this.o, this.p, a.a.a.a.a.a.h.f.f1191c);
             i3 = i2;
             if (onDrawFrame > 0) {
                 i3 = onDrawFrame;
             }
         }
         this.g.b(i3);
-        this.f1261a.a(j);
-        this.f1261a.e();
+        this.f1213a.a(j);
+        this.f1213a.e();
     }
 
     @Override // a.a.a.a.a.a.j.f
@@ -558,7 +558,7 @@ public class d extends a.a.a.a.a.a.j.f {
 
     public final void c() {
         f.a aVar = this.w;
-        a(aVar.i, aVar.f1271a);
+        a(aVar.i, aVar.f1223a);
         a.a.a.a.a.a.c cVar = this.v;
         if (cVar != null) {
             cVar.d();
@@ -573,19 +573,19 @@ public class d extends a.a.a.a.a.a.j.f {
 
     public final void d() {
         a.a.a.a.a.e.e.f.c("TextureMovieTransfer", "releaseEncoder");
-        a.a.a.a.a.a.j.e eVar = this.f1262c;
+        a.a.a.a.a.a.j.e eVar = this.f1214c;
         if (eVar != null) {
             eVar.b();
-            this.f1262c = null;
+            this.f1214c = null;
         }
         SurfaceTextureCallback2 surfaceTextureCallback2 = this.q;
         if (surfaceTextureCallback2 != null) {
             surfaceTextureCallback2.onSurfaceDestroyed();
         }
-        h hVar = this.f1261a;
+        h hVar = this.f1213a;
         if (hVar != null) {
             hVar.g();
-            this.f1261a = null;
+            this.f1213a = null;
         }
         a.a.a.a.a.a.h.d dVar = this.b;
         if (dVar != null) {
@@ -617,10 +617,10 @@ public class d extends a.a.a.a.a.a.j.f {
 
     public final void e(boolean z) {
         Looper.myLooper().quit();
-        a.a.a.a.a.a.j.e eVar = this.f1262c;
+        a.a.a.a.a.a.j.e eVar = this.f1214c;
         if (eVar != null && z) {
             eVar.a();
-            this.f1262c.a(true);
+            this.f1214c.a(true);
         }
         d();
         a.a.a.a.a.a.c cVar = this.v;

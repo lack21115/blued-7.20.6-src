@@ -13,7 +13,7 @@ import java.lang.reflect.Field;
 public class AppBarLayoutBehavior extends AppBarLayout.Behavior {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f20485a;
+    private boolean f6879a;
     private boolean b;
 
     public AppBarLayoutBehavior(Context context, AttributeSet attributeSet) {
@@ -72,7 +72,7 @@ public class AppBarLayoutBehavior extends AppBarLayout.Behavior {
     /* renamed from: a */
     public boolean onInterceptTouchEvent(CoordinatorLayout coordinatorLayout, AppBarLayout appBarLayout, MotionEvent motionEvent) {
         this.b = false;
-        if (this.f20485a) {
+        if (this.f6879a) {
             this.b = true;
         }
         if (motionEvent.getActionMasked() == 0) {
@@ -84,7 +84,7 @@ public class AppBarLayoutBehavior extends AppBarLayout.Behavior {
     @Override // com.google.android.material.appbar.AppBarLayout.BaseBehavior, androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, AppBarLayout appBarLayout, View view, int i, int i2, int[] iArr, int i3) {
         if (i3 == 1) {
-            this.f20485a = true;
+            this.f6879a = true;
         }
         if (this.b) {
             return;
@@ -101,7 +101,7 @@ public class AppBarLayoutBehavior extends AppBarLayout.Behavior {
     @Override // com.google.android.material.appbar.AppBarLayout.BaseBehavior, androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onStopNestedScroll(CoordinatorLayout coordinatorLayout, AppBarLayout appBarLayout, View view, int i) {
         super.onStopNestedScroll(coordinatorLayout, appBarLayout, view, i);
-        this.f20485a = false;
+        this.f6879a = false;
         this.b = false;
     }
 

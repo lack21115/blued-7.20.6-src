@@ -23,6 +23,7 @@ import com.blued.community.track.EventTrackFeed;
 import com.blued.das.client.feed.FeedProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
+import com.soft.blued.R;
 import com.soft.blued.constant.EventBusConstant;
 import com.soft.blued.http.FindHttpUtils;
 import com.soft.blued.log.InstantLog;
@@ -47,15 +48,14 @@ public class SystemNoticePresenter extends MvpPresenter {
     public void a(final long j) {
         EventTrackFeed.b(FeedProtos.Event.MSG_NOTICE_DELETE_CLICK);
         InstantLog.b("delete_all", 1);
-        CommonAlertDialog.a(h(), AppUtils.a(2131891156), AppUtils.a(2131887475), AppUtils.a(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.notify.presenter.SystemNoticePresenter.7
+        CommonAlertDialog.a(h(), AppUtils.a((int) R.string.one_key_delete), AppUtils.a((int) R.string.delete_feed_notice_description), AppUtils.a(2131887320), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.notify.presenter.SystemNoticePresenter.7
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
                 FindHttpUtils.a(new BluedUIHttpResponse(SystemNoticePresenter.this.g()) { // from class: com.soft.blued.ui.notify.presenter.SystemNoticePresenter.7.1
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public void onUIUpdate(BluedEntity bluedEntity) {
                         SystemNoticePresenter.this.a("VIEW_POINT_CLEAR", false);
-                        SystemNoticePresenter.this.a("VIEW_POINT_LIST", (String) null);
+                        SystemNoticePresenter.this.a("VIEW_POINT_LIST", (Object) null);
                     }
                 }, SystemNoticePresenter.this.g(), ContactsContract.StreamItemsColumns.COMMENTS, String.valueOf(j));
             }
@@ -68,16 +68,14 @@ public class SystemNoticePresenter extends MvpPresenter {
 
     private BluedUIHttpResponse d(final IFetchDataListener iFetchDataListener) {
         return new BluedUIHttpResponse<BluedEntity<FeedNotice, BluedEntityBaseExtra>>(this.m == 1 ? "system_notice" : "", g()) { // from class: com.soft.blued.ui.notify.presenter.SystemNoticePresenter.5
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUICache(BluedEntity<FeedNotice, BluedEntityBaseExtra> bluedEntity) {
                 super.onUICache(bluedEntity);
                 if (bluedEntity == null || !bluedEntity.hasData()) {
                     return;
                 }
-                SystemNoticePresenter.this.a("VIEW_POINT_LIST", (String) bluedEntity.data);
+                SystemNoticePresenter.this.a("VIEW_POINT_LIST", bluedEntity.data);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (!z) {
@@ -90,7 +88,6 @@ public class SystemNoticePresenter extends MvpPresenter {
                 FindHttpUtils.a((BluedUIHttpResponse) null, SystemNoticePresenter.this.l, String.valueOf(SystemNoticePresenter.this.k.a()), SystemNoticePresenter.this.g());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<FeedNotice, BluedEntityBaseExtra> bluedEntity) {
                 if (bluedEntity == null || !bluedEntity.hasData()) {
                     SystemNoticePresenter.this.o = false;
@@ -117,13 +114,11 @@ public class SystemNoticePresenter extends MvpPresenter {
         return i;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
         this.h = (SystemNoticeViewModel) ViewModelProviders.of(fragmentActivity).get(SystemNoticeViewModel.class);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(LifecycleOwner lifecycleOwner) {
         super.a(lifecycleOwner);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_CLICK_RIGHT_DELETE, View.class).observe(lifecycleOwner, new Observer<View>() { // from class: com.soft.blued.ui.notify.presenter.SystemNoticePresenter.1
@@ -142,7 +137,7 @@ public class SystemNoticePresenter extends MvpPresenter {
             public void onChanged(Void r5) {
                 SystemNoticePresenter.this.p = new ViewpointNoticeCount();
                 SystemNoticePresenter systemNoticePresenter = SystemNoticePresenter.this;
-                systemNoticePresenter.a("VIEW_POINT", (String) systemNoticePresenter.p);
+                systemNoticePresenter.a("VIEW_POINT", systemNoticePresenter.p);
                 SystemNoticePresenter.this.a("CLEAR_NOTIFY", false);
                 SystemNoticePresenter.this.n();
                 SystemNoticePresenter.this.o();
@@ -165,7 +160,7 @@ public class SystemNoticePresenter extends MvpPresenter {
                 SystemNoticePresenter.this.p.groups = Math.max(SystemNoticePresenter.this.p.groups, viewpointNoticeCount.groups);
                 SystemNoticePresenter.this.p.circle = Math.max(SystemNoticePresenter.this.p.circle, viewpointNoticeCount.circle);
                 SystemNoticePresenter systemNoticePresenter = SystemNoticePresenter.this;
-                systemNoticePresenter.a("VIEW_POINT", (String) systemNoticePresenter.p);
+                systemNoticePresenter.a("VIEW_POINT", systemNoticePresenter.p);
             }
         });
         systemNoticeViewModel.g.observe(lifecycleOwner, new Observer<Integer>() { // from class: com.soft.blued.ui.notify.presenter.SystemNoticePresenter.4
@@ -179,7 +174,6 @@ public class SystemNoticePresenter extends MvpPresenter {
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.m = 1;
         m();
@@ -197,7 +191,6 @@ public class SystemNoticePresenter extends MvpPresenter {
         ChatManager.getInstance().updateSessionNoReadNum((short) 1, 24L, viewpointNoticeCount.circle);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.m++;
         c(iFetchDataListener);
@@ -207,11 +200,10 @@ public class SystemNoticePresenter extends MvpPresenter {
         if (viewpointNoticeCount != null) {
             this.h.b = viewpointNoticeCount;
         }
-        this.h.f.postValue(Integer.valueOf(this.h.b.getSum() + this.h.f29847c));
-        this.h.d.postValue(Integer.valueOf(this.h.f29846a + this.h.b.getSum() + this.h.f29847c));
+        this.h.f.postValue(Integer.valueOf(this.h.b.getSum() + this.h.f16157c));
+        this.h.d.postValue(Integer.valueOf(this.h.f16156a + this.h.b.getSum() + this.h.f16157c));
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void k() {
         super.k();
         d((IFetchDataListener) null).refresh();
@@ -219,21 +211,19 @@ public class SystemNoticePresenter extends MvpPresenter {
 
     public void m() {
         FindHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<ViewpointNoticeCount>>(g()) { // from class: com.soft.blued.ui.notify.presenter.SystemNoticePresenter.6
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ViewpointNoticeCount> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.isEmpty() || bluedEntityA.data.get(0) == null) {
                     return;
                 }
-                SystemNoticePresenter.this.p = bluedEntityA.getSingleData();
+                SystemNoticePresenter.this.p = (ViewpointNoticeCount) bluedEntityA.getSingleData();
                 SystemNoticePresenter.this.p.isHttp = true;
                 SystemNoticePresenter systemNoticePresenter = SystemNoticePresenter.this;
-                systemNoticePresenter.a("VIEW_POINT", (String) systemNoticePresenter.p);
+                systemNoticePresenter.a("VIEW_POINT", systemNoticePresenter.p);
                 SystemNoticePresenter systemNoticePresenter2 = SystemNoticePresenter.this;
                 systemNoticePresenter2.a(systemNoticePresenter2.p);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str) {
                 return super.onUIFailure(i, str);
             }

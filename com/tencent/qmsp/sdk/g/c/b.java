@@ -8,19 +8,19 @@ import com.tencent.qmsp.sdk.g.c.c;
 public class b implements com.tencent.qmsp.sdk.base.b, c.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private c f38621a;
+    private c f24930a;
     private IVendorCallback b;
 
     @Override // com.tencent.qmsp.sdk.base.b
     public String a() {
         String a2;
-        return (e() && (a2 = this.f38621a.a()) != null) ? a2 : "";
+        return (e() && (a2 = this.f24930a.a()) != null) ? a2 : "";
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
         this.b = iVendorCallback;
-        this.f38621a = new c(context, this);
+        this.f24930a = new c(context, this);
     }
 
     @Override // com.tencent.qmsp.sdk.g.c.c.b
@@ -40,7 +40,7 @@ public class b implements com.tencent.qmsp.sdk.base.b, c.b {
     @Override // com.tencent.qmsp.sdk.base.b
     public String b() {
         String c2;
-        return (e() && (c2 = this.f38621a.c()) != null) ? c2 : "";
+        return (e() && (c2 = this.f24930a.c()) != null) ? c2 : "";
     }
 
     @Override // com.tencent.qmsp.sdk.base.b
@@ -54,7 +54,7 @@ public class b implements com.tencent.qmsp.sdk.base.b, c.b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public boolean e() {
-        c cVar = this.f38621a;
+        c cVar = this.f24930a;
         if (cVar != null) {
             return cVar.b();
         }
@@ -63,7 +63,7 @@ public class b implements com.tencent.qmsp.sdk.base.b, c.b {
 
     @Override // com.tencent.qmsp.sdk.base.b
     public void f() {
-        c cVar = this.f38621a;
+        c cVar = this.f24930a;
         if (cVar != null) {
             cVar.d();
         }

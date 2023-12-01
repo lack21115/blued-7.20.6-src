@@ -11,16 +11,16 @@ import com.bumptech.glide.signature.ObjectKey;
 public class UnitModelLoader<Model> implements ModelLoader<Model, Model> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final UnitModelLoader<?> f20909a = new UnitModelLoader<>();
+    private static final UnitModelLoader<?> f7303a = new UnitModelLoader<>();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/UnitModelLoader$Factory.class */
     public static class Factory<Model> implements ModelLoaderFactory<Model, Model> {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final Factory<?> f20910a = new Factory<>();
+        private static final Factory<?> f7304a = new Factory<>();
 
         public static <T> Factory<T> b() {
-            return (Factory<T>) f20910a;
+            return (Factory<T>) f7304a;
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -37,10 +37,10 @@ public class UnitModelLoader<Model> implements ModelLoader<Model, Model> {
     static class UnitFetcher<Model> implements DataFetcher<Model> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Model f20911a;
+        private final Model f7305a;
 
         UnitFetcher(Model model) {
-            this.f20911a = model;
+            this.f7305a = model;
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
@@ -49,7 +49,7 @@ public class UnitModelLoader<Model> implements ModelLoader<Model, Model> {
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public void a(Priority priority, DataFetcher.DataCallback<? super Model> dataCallback) {
-            dataCallback.a((DataFetcher.DataCallback<? super Model>) ((Model) this.f20911a));
+            dataCallback.a((DataFetcher.DataCallback<? super Model>) ((Model) this.f7305a));
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
@@ -58,7 +58,7 @@ public class UnitModelLoader<Model> implements ModelLoader<Model, Model> {
 
         @Override // com.bumptech.glide.load.data.DataFetcher
         public Class<Model> c() {
-            return (Class<Model>) this.f20911a.getClass();
+            return (Class<Model>) this.f7305a.getClass();
         }
 
         @Override // com.bumptech.glide.load.data.DataFetcher
@@ -68,7 +68,7 @@ public class UnitModelLoader<Model> implements ModelLoader<Model, Model> {
     }
 
     public static <T> UnitModelLoader<T> a() {
-        return (UnitModelLoader<T>) f20909a;
+        return (UnitModelLoader<T>) f7303a;
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

@@ -23,6 +23,6 @@ final /* synthetic */ class CircleTypeListFragment$liveDataObserver$1 extends Fu
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(CircleTypeListModel circleTypeListModel) {
         a(circleTypeListModel);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -1,5 +1,6 @@
 package com.kwad.components.core.l;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -82,7 +83,7 @@ public abstract class d extends IActivityProxy {
                 return;
             }
             getWindow().setFlags(16777216, 16777216);
-            getActivity().setTheme(16973838);
+            getActivity().setTheme(R.style.Theme_Light_NoTitleBar_Fullscreen);
             long j = 0;
             if (intent != null) {
                 j = intent.getLongExtra("key_start_time", 0L);

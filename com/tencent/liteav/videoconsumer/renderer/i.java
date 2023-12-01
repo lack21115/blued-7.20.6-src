@@ -8,17 +8,17 @@ import java.nio.ByteBuffer;
 public final /* synthetic */ class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ByteBuffer f36828a;
+    private final ByteBuffer f23137a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f36829c;
+    private final int f23138c;
     private final TakeSnapshotListener d;
 
     private i(ByteBuffer byteBuffer, int i, int i2, TakeSnapshotListener takeSnapshotListener) {
-        this.f36828a = byteBuffer;
+        this.f23137a = byteBuffer;
         this.b = i;
-        this.f36829c = i2;
+        this.f23138c = i2;
         this.d = takeSnapshotListener;
     }
 
@@ -28,6 +28,6 @@ public final /* synthetic */ class i implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        g.a(this.f36828a, this.b, this.f36829c, this.d);
+        g.a(this.f23137a, this.b, this.f23138c, this.d);
     }
 }

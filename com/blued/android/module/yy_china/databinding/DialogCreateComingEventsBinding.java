@@ -13,13 +13,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogCreateComingEventsBinding.class */
 public final class DialogCreateComingEventsBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final View f16322a;
+    public final View a;
     public final CheckBox b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16323c;
+    public final ShapeTextView c;
     public final CheckBox d;
     public final CheckBox e;
     public final View f;
@@ -45,9 +41,9 @@ public final class DialogCreateComingEventsBinding implements ViewBinding {
 
     private DialogCreateComingEventsBinding(ConstraintLayout constraintLayout, View view, CheckBox checkBox, ShapeTextView shapeTextView, CheckBox checkBox2, CheckBox checkBox3, View view2, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, View view3, View view4, View view5, RecyclerView recyclerView, TextView textView, TextView textView2, EditText editText, TextView textView3, EditText editText2, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8) {
         this.y = constraintLayout;
-        this.f16322a = view;
+        this.a = view;
         this.b = checkBox;
-        this.f16323c = shapeTextView;
+        this.c = shapeTextView;
         this.d = checkBox2;
         this.e = checkBox3;
         this.f = view2;
@@ -99,8 +95,8 @@ public final class DialogCreateComingEventsBinding implements ViewBinding {
                                                     if (findViewById4 != null) {
                                                         View findViewById5 = view.findViewById(R.id.line_start_date);
                                                         if (findViewById5 != null) {
-                                                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_theme_list);
-                                                            if (recyclerView != null) {
+                                                            RecyclerView findViewById6 = view.findViewById(R.id.rv_theme_list);
+                                                            if (findViewById6 != null) {
                                                                 TextView textView = (TextView) view.findViewById(R.id.tv_date_title);
                                                                 if (textView != null) {
                                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_end_date);
@@ -121,7 +117,7 @@ public final class DialogCreateComingEventsBinding implements ViewBinding {
                                                                                                 if (textView7 != null) {
                                                                                                     TextView textView8 = (TextView) view.findViewById(R.id.tv_to_text);
                                                                                                     if (textView8 != null) {
-                                                                                                        return new DialogCreateComingEventsBinding((ConstraintLayout) view, findViewById, checkBox, shapeTextView, checkBox2, checkBox3, findViewById2, imageView, imageView2, imageView3, imageView4, findViewById3, findViewById4, findViewById5, recyclerView, textView, textView2, editText, textView3, editText2, textView4, textView5, textView6, textView7, textView8);
+                                                                                                        return new DialogCreateComingEventsBinding((ConstraintLayout) view, findViewById, checkBox, shapeTextView, checkBox2, checkBox3, findViewById2, imageView, imageView2, imageView3, imageView4, findViewById3, findViewById4, findViewById5, findViewById6, textView, textView2, editText, textView3, editText2, textView4, textView5, textView6, textView7, textView8);
                                                                                                     }
                                                                                                     str = "tvToText";
                                                                                                 } else {
@@ -196,7 +192,6 @@ public final class DialogCreateComingEventsBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.y;

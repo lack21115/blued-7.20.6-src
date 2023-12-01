@@ -7,10 +7,10 @@ import com.tencent.liteav.base.util.LiteavLog;
 public final /* synthetic */ class al implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDecodeController f36757a;
+    private final VideoDecodeController f23066a;
 
     private al(VideoDecodeController videoDecodeController) {
-        this.f36757a = videoDecodeController;
+        this.f23066a = videoDecodeController;
     }
 
     public static Runnable a(VideoDecodeController videoDecodeController) {
@@ -19,8 +19,8 @@ public final /* synthetic */ class al implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoDecodeController videoDecodeController = this.f36757a;
-        LiteavLog.i(videoDecodeController.f36734a, "decoder onAbandonDecodingFramesCompleted");
+        VideoDecodeController videoDecodeController = this.f23066a;
+        LiteavLog.i(videoDecodeController.f23043a, "decoder onAbandonDecodingFramesCompleted");
         videoDecodeController.n.b();
         videoDecodeController.m.set(0);
         if (videoDecodeController.g != null) {

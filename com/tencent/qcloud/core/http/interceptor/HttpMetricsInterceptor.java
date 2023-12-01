@@ -6,7 +6,6 @@ import com.tencent.qcloud.core.logger.QCloudLogger;
 import com.tencent.qcloud.core.task.TaskManager;
 import java.io.IOException;
 import java.net.Socket;
-import okhttp3.Connection;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -15,14 +14,13 @@ import okhttp3.internal.http.RealInterceptorChain;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/qcloud/core/http/interceptor/HttpMetricsInterceptor.class */
 public class HttpMetricsInterceptor implements Interceptor {
-    @Override // okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Request request = chain.request();
         try {
             if (chain instanceof RealInterceptorChain) {
-                Connection connection = chain.connection();
+                RealConnection connection = chain.connection();
                 if (connection instanceof RealConnection) {
-                    Socket socket = ((RealConnection) connection).socket();
+                    Socket socket = connection.socket();
                     HttpTaskMetrics metrics = ((HttpTask) TaskManager.getInstance().get((String) request.tag())).metrics();
                     if (metrics != null) {
                         metrics.recordConnectAddress(socket.getInetAddress());

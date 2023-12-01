@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 public class e extends com.sdk.tencent.i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28075a = "com.sdk.tencent.q.e";
+    public static final String f14387a = "com.sdk.tencent.q.e";
     public static boolean b = com.sdk.tencent.f.c.b;
 
     public static String a(String str) {
@@ -33,7 +33,7 @@ public class e extends com.sdk.tencent.i.a {
                 i = i2 + 1;
             }
         } catch (Exception e) {
-            com.sdk.tencent.i.a.logError(f28075a, "encrypt", e.getMessage(), b);
+            com.sdk.tencent.i.a.logError(f14387a, "encrypt", e.getMessage(), b);
             return null;
         }
     }

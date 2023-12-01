@@ -12,32 +12,26 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/i.class */
 public class i {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f6379a = i.class.getSimpleName();
+    public static String a = i.class.getSimpleName();
     com.anythink.core.common.e.a b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Map<String, Object> f6380c;
+    Map<String, Object> c;
     a d;
 
     /* renamed from: com.anythink.core.b.i$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/i$1.class */
     final class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATBaseAdAdapter f6381a;
+        final /* synthetic */ ATBaseAdAdapter a;
         final /* synthetic */ ai b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public AnonymousClass1(ATBaseAdAdapter aTBaseAdAdapter, ai aiVar) {
-            this.f6381a = aTBaseAdAdapter;
+            this.a = aTBaseAdAdapter;
             this.b = aiVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            i.a(i.this, this.f6381a, this.b);
+            i.a(i.this, this.a, this.b);
         }
     }
 
@@ -45,24 +39,22 @@ public class i {
     /* renamed from: com.anythink.core.b.i$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/i$2.class */
     public final class AnonymousClass2 implements ATBidRequestInfoListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ai f6383a;
+        final /* synthetic */ ai a;
 
         AnonymousClass2(ai aiVar) {
-            this.f6383a = aiVar;
+            this.a = aiVar;
         }
 
         @Override // com.anythink.core.api.ATBidRequestInfoListener
         public final void onFailed(String str) {
             if (i.this.d != null) {
-                i.this.d.a(str, this.f6383a);
+                i.this.d.a(str, this.a);
             }
         }
 
         @Override // com.anythink.core.api.ATBidRequestInfoListener
         public final void onSuccess(ATBidRequestInfo aTBidRequestInfo) {
-            i.a(i.this, this.f6383a, aTBidRequestInfo);
+            i.a(i.this, this.a, aTBidRequestInfo);
         }
     }
 
@@ -70,13 +62,11 @@ public class i {
     /* renamed from: com.anythink.core.b.i$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/i$3.class */
     public final class AnonymousClass3 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATBidRequestInfo f6384a;
+        final /* synthetic */ ATBidRequestInfo a;
         final /* synthetic */ ai b;
 
         AnonymousClass3(ATBidRequestInfo aTBidRequestInfo, ai aiVar) {
-            this.f6384a = aTBidRequestInfo;
+            this.a = aTBidRequestInfo;
             this.b = aiVar;
         }
 
@@ -84,7 +74,7 @@ public class i {
         public final void run() {
             JSONObject requestJSONObject;
             try {
-                if (this.f6384a == null || (requestJSONObject = this.f6384a.toRequestJSONObject()) == null) {
+                if (this.a == null || (requestJSONObject = this.a.toRequestJSONObject()) == null) {
                     if (i.this.d != null) {
                         i.this.d.a(ATBidRequestInfo.RETURN_PARAMS_ERROR_TYPE, this.b);
                         return;
@@ -119,16 +109,16 @@ public class i {
 
     public i(com.anythink.core.common.e.a aVar) {
         this.b = aVar;
-        this.f6380c = aVar.q;
+        this.c = aVar.q;
     }
 
     private void a(ATBaseAdAdapter aTBaseAdAdapter, ai aiVar) {
         try {
-            Map<String, Object> a2 = this.b.n.a(this.b.d, this.b.f6612c, aiVar);
+            Map<String, Object> a2 = this.b.n.a(this.b.d, this.b.c, aiVar);
             com.anythink.core.common.e.e N = this.b.s.N();
             s.a(N, aiVar, 0, false);
             com.anythink.core.common.k.g.a(a2, N);
-            aTBaseAdAdapter.getBidRequestInfo(this.b.f6611a, a2, this.f6380c, new AnonymousClass2(aiVar));
+            aTBaseAdAdapter.getBidRequestInfo(this.b.a, a2, this.c, new AnonymousClass2(aiVar));
             if (this.d != null) {
                 this.d.a(aiVar, aTBaseAdAdapter);
             }
@@ -143,11 +133,11 @@ public class i {
 
     static /* synthetic */ void a(i iVar, ATBaseAdAdapter aTBaseAdAdapter, ai aiVar) {
         try {
-            Map<String, Object> a2 = iVar.b.n.a(iVar.b.d, iVar.b.f6612c, aiVar);
+            Map<String, Object> a2 = iVar.b.n.a(iVar.b.d, iVar.b.c, aiVar);
             com.anythink.core.common.e.e N = iVar.b.s.N();
             s.a(N, aiVar, 0, false);
             com.anythink.core.common.k.g.a(a2, N);
-            aTBaseAdAdapter.getBidRequestInfo(iVar.b.f6611a, a2, iVar.f6380c, new AnonymousClass2(aiVar));
+            aTBaseAdAdapter.getBidRequestInfo(iVar.b.a, a2, iVar.c, new AnonymousClass2(aiVar));
             if (iVar.d != null) {
                 iVar.d.a(aiVar, aTBaseAdAdapter);
             }

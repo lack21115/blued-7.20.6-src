@@ -22,7 +22,7 @@ public class z {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static boolean m12223a() {
+    public static boolean m9173a() {
         try {
             return Environment.getExternalStorageState().equals(Environment.MEDIA_REMOVED);
         } catch (Exception e) {
@@ -45,6 +45,6 @@ public class z {
     }
 
     public static boolean d() {
-        return (b() || c() || m12223a()) ? false : true;
+        return (b() || c() || m9173a()) ? false : true;
     }
 }

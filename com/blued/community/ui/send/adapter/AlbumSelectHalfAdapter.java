@@ -13,27 +13,21 @@ import com.blued.community.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/AlbumSelectHalfAdapter.class */
 public class AlbumSelectHalfAdapter extends RecyclerView.Adapter<ViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f19887a = AlbumSelectHalfAdapter.class.getSimpleName();
+    private static final String a = AlbumSelectHalfAdapter.class.getSimpleName();
     private IAlbumBaseCallback b;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/send/adapter/AlbumSelectHalfAdapter$ViewHolder.class */
     public class ViewHolder extends RecyclerView.ViewHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public ImageView f19888a;
+        public ImageView a;
         public ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public RelativeLayout f19889c;
+        public RelativeLayout c;
         public RelativeLayout d;
         public TextView e;
 
         public ViewHolder(View view) {
             super(view);
-            this.f19889c = (RelativeLayout) view.findViewById(R.id.vr_select_item_v);
-            this.f19888a = (ImageView) view.findViewById(R.id.vr_header_view);
+            this.c = (RelativeLayout) view.findViewById(R.id.vr_select_item_v);
+            this.a = (ImageView) view.findViewById(R.id.vr_header_view);
             this.b = (ImageView) view.findViewById(R.id.vr_select_view);
             this.d = (RelativeLayout) view.findViewById(R.id.vr_video_type_cover_v);
             this.e = (TextView) view.findViewById(R.id.tv_video_time);
@@ -70,25 +64,21 @@ public class AlbumSelectHalfAdapter extends RecyclerView.Adapter<ViewHolder> {
         this.b = iAlbumBaseCallback;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         Log.c("", "onCreateViewHolder");
         return new ViewHolder(LayoutInflater.from(this.b.getContext()).inflate(R.layout.select_file_item_v, (ViewGroup) null));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         viewHolder.a(this.b.a(i), i);
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public int getItemCount() {
         return this.b.a();
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public long getItemId(int i) {
         return i;
     }

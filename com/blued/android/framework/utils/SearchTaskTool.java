@@ -14,13 +14,9 @@ import java.util.List;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/SearchTaskTool.class */
 public class SearchTaskTool implements TextWatcher, TextView.OnEditorActionListener {
     private List<TaskListener> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private EditText f10112c;
+    private EditText c;
     private String d;
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f10111a = 500;
+    private long a = 500;
     private Handler e = new Handler(new Handler.Callback() { // from class: com.blued.android.framework.utils.SearchTaskTool.1
         @Override // android.os.Handler.Callback
         public boolean handleMessage(Message message) {
@@ -42,7 +38,7 @@ public class SearchTaskTool implements TextWatcher, TextView.OnEditorActionListe
     }
 
     public SearchTaskTool(EditText editText) {
-        this.f10112c = editText;
+        this.c = editText;
         b();
     }
 
@@ -81,7 +77,7 @@ public class SearchTaskTool implements TextWatcher, TextView.OnEditorActionListe
 
     private void b() {
         this.b = new ArrayList();
-        EditText editText = this.f10112c;
+        EditText editText = this.c;
         if (editText != null) {
             editText.addTextChangedListener(this);
         }
@@ -99,7 +95,7 @@ public class SearchTaskTool implements TextWatcher, TextView.OnEditorActionListe
     }
 
     public void a(long j) {
-        this.f10111a = j;
+        this.a = j;
     }
 
     public void a(TaskListener taskListener) {
@@ -112,7 +108,7 @@ public class SearchTaskTool implements TextWatcher, TextView.OnEditorActionListe
 
     public void a(boolean z) {
         EditText editText;
-        if (!z || (editText = this.f10112c) == null) {
+        if (!z || (editText = this.c) == null) {
             return;
         }
         editText.setOnEditorActionListener(this);
@@ -123,7 +119,7 @@ public class SearchTaskTool implements TextWatcher, TextView.OnEditorActionListe
         if (TextUtils.isEmpty(editable.toString())) {
             b(editable.toString());
         } else {
-            a(editable.toString(), this.f10111a);
+            a(editable.toString(), this.a);
         }
     }
 

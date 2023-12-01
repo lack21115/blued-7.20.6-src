@@ -17,9 +17,9 @@ public final class ServiceCenterAdapter extends BaseQuickAdapter<StDocModel, Bas
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, StDocModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        helper.setText(2131370786, Intrinsics.a("· ", (Object) item.getQuestionTitle()));
+    public void convert(BaseViewHolder baseViewHolder, StDocModel stDocModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(stDocModel, "item");
+        baseViewHolder.setText(2131370786, Intrinsics.a("· ", stDocModel.getQuestionTitle()));
     }
 }

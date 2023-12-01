@@ -7,8 +7,9 @@ import java.security.KeyManagementException;
 import javax.net.ServerSocketFactory;
 import javax.net.ssl.SSLServerSocketFactory;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:org/conscrypt/OpenSSLServerSocketFactoryImpl.class */
-final class OpenSSLServerSocketFactoryImpl extends SSLServerSocketFactory {
+public final class OpenSSLServerSocketFactoryImpl extends SSLServerSocketFactory {
     private static boolean useEngineSocketByDefault = SSLUtils.USE_ENGINE_SOCKET_BY_DEFAULT;
     private IOException instantiationException;
     private SSLParametersImpl sslParameters;

@@ -6,13 +6,13 @@ import java.util.Stack;
 public class g extends h {
 
     /* renamed from: a  reason: collision with root package name */
-    private Stack<h> f27364a;
+    private Stack<h> f13676a;
     private h b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public g(String str) {
         super(str);
-        this.f27364a = new Stack<>();
+        this.f13676a = new Stack<>();
         this.b = null;
     }
 }

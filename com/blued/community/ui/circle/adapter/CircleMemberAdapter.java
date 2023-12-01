@@ -17,14 +17,12 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/circle/adapter/CircleMemberAdapter.class */
 public class CircleMemberAdapter extends BaseMultiItemQuickAdapter<CircleBaseMember.Member, BaseViewHolder> implements StickyHeaderHandler {
-
-    /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f19119a;
+    private IRequestHost a;
     private int b;
 
     public CircleMemberAdapter(IRequestHost iRequestHost, int i) {
-        super(null);
-        this.f19119a = iRequestHost;
+        super((List) null);
+        this.a = iRequestHost;
         this.b = i;
         addItemType(1, R.layout.item_circle_base_member_header);
         addItemType(2, R.layout.item_circle_base_member_header);
@@ -62,10 +60,10 @@ public class CircleMemberAdapter extends BaseMultiItemQuickAdapter<CircleBaseMem
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_name);
         if (member.is_locked == 1) {
             textView.setText(R.string.circle_member_list_removed_account);
-            ImageLoader.a(this.f19119a, R.drawable.user_bg_round).c().a(imageView);
+            ImageLoader.a(this.a, R.drawable.user_bg_round).c().a(imageView);
         } else {
             textView.setText(member.name);
-            ImageLoader.a(this.f19119a, member.avatar).b(R.drawable.user_bg_round).c().a(imageView);
+            ImageLoader.a(this.a, member.avatar).b(R.drawable.user_bg_round).c().a(imageView);
         }
         baseViewHolder.setGone(R.id.iv_anonymous, member.is_anonym == 1);
         baseViewHolder.addOnClickListener(R.id.cl_root);
@@ -89,13 +87,11 @@ public class CircleMemberAdapter extends BaseMultiItemQuickAdapter<CircleBaseMem
         }
     }
 
-    @Override // com.brandongogetap.stickyheaders.exposed.StickyHeaderHandler
     public List<?> a() {
         return getData();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, CircleBaseMember.Member member) {
         int i = member.adapterType;

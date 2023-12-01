@@ -74,7 +74,7 @@ public final class d extends f {
                                     if (!TextUtils.isEmpty(str6)) {
                                         jSONObject2.put(str6, invoke.toString());
                                     }
-                                    aVar.f40498a = jSONObject2;
+                                    aVar.f26807a = jSONObject2;
                                     return aVar;
                                 }
                                 continue;
@@ -104,7 +104,7 @@ public final class d extends f {
         try {
             ArrayList arrayList = new ArrayList();
             b(obj.getClass(), arrayList);
-            Iterator<E> it = arrayList.iterator();
+            Iterator it = arrayList.iterator();
             do {
                 if (!it.hasNext()) {
                     return null;

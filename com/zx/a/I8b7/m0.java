@@ -7,10 +7,10 @@ import java.util.List;
 public class m0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<c0> f42148a = new ArrayList();
+    public final List<c0> f28457a = new ArrayList();
 
     public void a(int i, String str, String str2, Throwable th) {
-        for (c0 c0Var : this.f42148a) {
+        for (c0 c0Var : this.f28457a) {
             try {
                 if (c0Var.a(i, null)) {
                     c0Var.a(i, null, str2, th);
@@ -22,6 +22,6 @@ public class m0 {
     }
 
     public void a(c0 c0Var) {
-        this.f42148a.add(c0Var);
+        this.f28457a.add(c0Var);
     }
 }

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.common.utils.ToastUtils;
@@ -21,13 +22,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMusicFloatView.class */
 public class YYMusicFloatView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public LiveMusicModel f18333a;
+    public LiveMusicModel a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f18334c;
+    private LayoutInflater c;
     private View d;
     private View e;
     private ImageView f;
@@ -35,21 +32,21 @@ public class YYMusicFloatView extends LinearLayout {
 
     public YYMusicFloatView(Context context) {
         super(context);
-        this.f18333a = new LiveMusicModel();
+        this.a = new LiveMusicModel();
         this.b = context;
         d();
     }
 
     public YYMusicFloatView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f18333a = new LiveMusicModel();
+        this.a = new LiveMusicModel();
         this.b = context;
         d();
     }
 
     private void d() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f18334c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.view_yy_music_float, (ViewGroup) this, true);
         this.d = inflate;
         this.e = inflate.findViewById(R.id.fl_music_avatar);
@@ -70,7 +67,7 @@ public class YYMusicFloatView extends LinearLayout {
 
     private void e() {
         if (this.g == null) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.e, "rotation", 0.0f, 360.0f);
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.e, QSConstants.TILE_ROTATION, 0.0f, 360.0f);
             this.g = ofFloat;
             ofFloat.setDuration(10000L);
             this.g.setInterpolator(new LinearInterpolator());
@@ -100,12 +97,12 @@ public class YYMusicFloatView extends LinearLayout {
     }
 
     public void setData(LiveMusicModel liveMusicModel) {
-        if (this.f18333a == null) {
+        if (this.a == null) {
             return;
         }
-        this.f18333a = liveMusicModel;
+        this.a = liveMusicModel;
         this.f.setVisibility(0);
-        ImageLoader.a((IRequestHost) null, this.f18333a.cover).c().a(this.f);
+        ImageLoader.a((IRequestHost) null, this.a.cover).c().a(this.f);
         setPlaying(true);
     }
 

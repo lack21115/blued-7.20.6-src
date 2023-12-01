@@ -15,13 +15,9 @@ import kotlin.jvm.functions.Function2;
 @DebugMetadata(b = "_Sequences.kt", c = {2693}, d = "invokeSuspend", e = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2")
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/SequencesKt___SequencesKt$zipWithNext$2.class */
 final class SequencesKt___SequencesKt$zipWithNext$2<R> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42693a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42694c;
+    int c;
     final /* synthetic */ Sequence<T> d;
     final /* synthetic */ Function2<T, T, R> e;
     private /* synthetic */ Object f;
@@ -37,7 +33,7 @@ final class SequencesKt___SequencesKt$zipWithNext$2<R> extends RestrictedSuspend
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(SequenceScope<? super R> sequenceScope, Continuation<? super Unit> continuation) {
-        return ((SequencesKt___SequencesKt$zipWithNext$2) create(sequenceScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((SequencesKt___SequencesKt$zipWithNext$2) create(sequenceScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -52,21 +48,21 @@ final class SequencesKt___SequencesKt$zipWithNext$2<R> extends RestrictedSuspend
         SequenceScope sequenceScope;
         Iterator it;
         Object next;
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f42694c;
+        Object a = IntrinsicsKt.a();
+        int i = this.c;
         if (i == 0) {
             ResultKt.a(obj);
             sequenceScope = (SequenceScope) this.f;
             it = this.d.iterator();
             if (!it.hasNext()) {
-                return Unit.f42314a;
+                return Unit.a;
             }
             next = it.next();
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             Object obj2 = this.b;
-            it = (Iterator) this.f42693a;
+            it = (Iterator) this.a;
             sequenceScope = (SequenceScope) this.f;
             ResultKt.a(obj);
             next = obj2;
@@ -74,15 +70,15 @@ final class SequencesKt___SequencesKt$zipWithNext$2<R> extends RestrictedSuspend
         while (true) {
             Object obj3 = next;
             if (!it.hasNext()) {
-                return Unit.f42314a;
+                return Unit.a;
             }
             Object next2 = it.next();
             this.f = sequenceScope;
-            this.f42693a = it;
+            this.a = it;
             this.b = next2;
-            this.f42694c = 1;
-            if (sequenceScope.a((SequenceScope) this.e.invoke(obj3, next2), (Continuation<? super Unit>) this) == a2) {
-                return a2;
+            this.c = 1;
+            if (sequenceScope.a((SequenceScope) this.e.invoke(obj3, next2), (Continuation<? super Unit>) this) == a) {
+                return a;
             }
             next = next2;
         }

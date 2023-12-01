@@ -33,6 +33,7 @@ public final class ServiceDescriptor {
             return this;
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
         public Builder addMethod(MethodDescriptor<?, ?> methodDescriptor) {
             this.methods.add(Preconditions.checkNotNull(methodDescriptor, "method"));
             return this;

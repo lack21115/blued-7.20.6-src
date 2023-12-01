@@ -4,14 +4,14 @@ package com.opos.acs.st.b;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f24453a;
+    public int f10766a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f24454c;
+    public String f10767c;
     public int d;
 
     public final String toString() {
-        return "StatBatchEntity{batchId=" + this.b + ",acsPosIds=" + this.f24454c + ", effectiveTag=" + this.d + '}';
+        return "StatBatchEntity{batchId=" + this.b + ",acsPosIds=" + this.f10767c + ", effectiveTag=" + this.d + '}';
     }
 }

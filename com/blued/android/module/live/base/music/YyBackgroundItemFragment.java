@@ -5,6 +5,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import androidx.fragment.app.DialogFragment;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,10 +31,8 @@ import com.bytedance.applog.tracker.Tracker;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnMultiPurposeListener;
 import com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.functions.Function1;
@@ -45,13 +44,9 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/music/YyBackgroundItemFragment.class */
 public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroundItemViewModel> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f11437a = {Reflection.a(new PropertyReference1Impl(YyBackgroundItemFragment.class, "vb", "getVb()Lcom/blued/android/module/live/base/databinding/FragmentYyMusicListBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] a = {Reflection.a(new PropertyReference1Impl(YyBackgroundItemFragment.class, "vb", "getVb()Lcom/blued/android/module/live/base/databinding/FragmentYyMusicListBinding;", 0))};
     private final ViewBindingProperty b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYBackgroundMusicListAdapter f11438c;
+    private YYBackgroundMusicListAdapter c;
     private BackgroundMusicView d;
     private BlackMusicListener e;
     private final Observer<String> f;
@@ -75,13 +70,11 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
             }
         });
         this.f = new Observer() { // from class: com.blued.android.module.live.base.music.-$$Lambda$YyBackgroundItemFragment$q3BPabKbEpyqAZhJ-BRzxMnIi6w
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YyBackgroundItemFragment.a(YyBackgroundItemFragment.this, (String) obj);
             }
         };
         this.g = new Observer() { // from class: com.blued.android.module.live.base.music.-$$Lambda$YyBackgroundItemFragment$DMR6fIF0_xWS46uM2yx6FZauLBk
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 YyBackgroundItemFragment.b(YyBackgroundItemFragment.this, (String) obj);
             }
@@ -91,7 +84,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YyBackgroundItemFragment this$0, String str) {
         Intrinsics.e(this$0, "this$0");
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this$0.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this$0.c;
         if (yYBackgroundMusicListAdapter == null) {
             return;
         }
@@ -101,16 +94,16 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<? extends YYKtvMusicModel> list) {
         YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter;
-        if (list == null || (yYBackgroundMusicListAdapter = this.f11438c) == null) {
+        if (list == null || (yYBackgroundMusicListAdapter = this.c) == null) {
             return;
         }
-        yYBackgroundMusicListAdapter.addData((Collection) list);
+        yYBackgroundMusicListAdapter.addData(list);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(YyBackgroundItemFragment this$0, String str) {
         Intrinsics.e(this$0, "this$0");
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this$0.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this$0.c;
         if (yYBackgroundMusicListAdapter == null) {
             return;
         }
@@ -128,7 +121,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         if (recyclerView != null) {
             recyclerView.setVisibility(0);
         }
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.c;
         if (yYBackgroundMusicListAdapter == null) {
             return;
         }
@@ -136,9 +129,8 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Multi-variable type inference failed */
     public final void b(boolean z) {
-        ArrayList arrayList;
+        ArrayList data;
         SmartRefreshLayout smartRefreshLayout;
         SmartRefreshLayout smartRefreshLayout2;
         FragmentYyMusicListBinding p = p();
@@ -146,27 +138,26 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         if (progressBar != null) {
             progressBar.setVisibility(8);
         }
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.c;
         if (yYBackgroundMusicListAdapter == null) {
-            arrayList = new ArrayList();
+            data = new ArrayList();
         } else {
-            List data = yYBackgroundMusicListAdapter == null ? null : yYBackgroundMusicListAdapter.getData();
+            data = yYBackgroundMusicListAdapter == null ? null : yYBackgroundMusicListAdapter.getData();
             Intrinsics.a(data);
             Intrinsics.c(data, "musicAdapter?.data!!");
-            arrayList = data;
         }
-        if (arrayList.size() <= 0) {
+        if (data.size() <= 0) {
             e(false);
             return;
         }
-        YYKtvMusicModel yYKtvMusicModel = (YYKtvMusicModel) arrayList.get(arrayList.size() - 1);
+        YYKtvMusicModel yYKtvMusicModel = (YYKtvMusicModel) data.get(data.size() - 1);
         if (yYKtvMusicModel != null && yYKtvMusicModel.type != 1) {
             YYKtvMusicModel yYKtvMusicModel2 = new YYKtvMusicModel();
             yYKtvMusicModel2.type = 1;
-            arrayList.add(yYKtvMusicModel2);
-            YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter2 = this.f11438c;
-            if (yYBackgroundMusicListAdapter2 != 0) {
-                yYBackgroundMusicListAdapter2.a(arrayList);
+            data.add(yYKtvMusicModel2);
+            YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter2 = this.c;
+            if (yYBackgroundMusicListAdapter2 != null) {
+                yYBackgroundMusicListAdapter2.a(data);
             }
         }
         FragmentYyMusicListBinding p2 = p();
@@ -177,7 +168,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         if (p3 == null || (smartRefreshLayout = p3.f) == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -187,7 +178,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         if (p == null || (smartRefreshLayout = p.f) == null) {
             return;
         }
-        smartRefreshLayout.l(true);
+        smartRefreshLayout.b(true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -196,7 +187,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         FrameLayout root;
         if (t()) {
             FragmentYyMusicListBinding p = p();
-            LinearLayout root2 = (p == null || (yyMusicListNoDataBinding = p.f11380a) == null) ? null : yyMusicListNoDataBinding.getRoot();
+            LinearLayout root2 = (p == null || (yyMusicListNoDataBinding = p.a) == null) ? null : yyMusicListNoDataBinding.getRoot();
             if (root2 != null) {
                 root2.setVisibility(8);
             }
@@ -212,7 +203,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
             if (p3 == null) {
                 root = null;
             } else {
-                YyMusicListLoadErrorBinding yyMusicListLoadErrorBinding = p3.f11381c;
+                YyMusicListLoadErrorBinding yyMusicListLoadErrorBinding = p3.c;
                 root = yyMusicListLoadErrorBinding == null ? null : yyMusicListLoadErrorBinding.getRoot();
             }
             if (root == null) {
@@ -236,7 +227,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
                 }
             } else {
                 FragmentYyMusicListBinding p2 = p();
-                LinearLayout root3 = (p2 == null || (yyMusicListNoDataBinding = p2.f11380a) == null) ? null : yyMusicListNoDataBinding.getRoot();
+                LinearLayout root3 = (p2 == null || (yyMusicListNoDataBinding = p2.a) == null) ? null : yyMusicListNoDataBinding.getRoot();
                 if (root3 != null) {
                     root3.setVisibility(0);
                 }
@@ -250,7 +241,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
             if (p4 == null) {
                 root = null;
             } else {
-                YyMusicListLoadErrorBinding yyMusicListLoadErrorBinding = p4.f11381c;
+                YyMusicListLoadErrorBinding yyMusicListLoadErrorBinding = p4.c;
                 root = yyMusicListLoadErrorBinding == null ? null : yyMusicListLoadErrorBinding.getRoot();
             }
             if (root == null) {
@@ -294,7 +285,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         if (p2 != null && (smartRefreshLayout = p2.f) != null) {
             smartRefreshLayout.h();
         }
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.c;
         if (yYBackgroundMusicListAdapter != null && yYBackgroundMusicListAdapter.c() > 0) {
             FragmentYyMusicListBinding p3 = p();
             LinearLayout root2 = (p3 == null || (yyMusicSearchNoDataBinding = p3.b) == null) ? null : yyMusicSearchNoDataBinding.getRoot();
@@ -302,7 +293,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
                 root2.setVisibility(8);
             }
             FragmentYyMusicListBinding p4 = p();
-            LinearLayout root3 = (p4 == null || (yyMusicListNoDataBinding = p4.f11380a) == null) ? null : yyMusicListNoDataBinding.getRoot();
+            LinearLayout root3 = (p4 == null || (yyMusicListNoDataBinding = p4.a) == null) ? null : yyMusicListNoDataBinding.getRoot();
             if (root3 != null) {
                 root3.setVisibility(8);
             }
@@ -315,7 +306,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
             if (p6 == null) {
                 root = null;
             } else {
-                YyMusicListLoadErrorBinding yyMusicListLoadErrorBinding = p6.f11381c;
+                YyMusicListLoadErrorBinding yyMusicListLoadErrorBinding = p6.c;
                 root = yyMusicListLoadErrorBinding == null ? null : yyMusicListLoadErrorBinding.getRoot();
             }
             if (root == null) {
@@ -337,7 +328,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
 
     public final void a(String searchKey) {
         Intrinsics.e(searchKey, "searchKey");
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = this.c;
         if (yYBackgroundMusicListAdapter != null && yYBackgroundMusicListAdapter != null) {
             yYBackgroundMusicListAdapter.a((List<? extends YYKtvMusicModel>) null);
         }
@@ -356,13 +347,13 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         SmartRefreshLayout smartRefreshLayout3;
         SmartRefreshLayout smartRefreshLayout4;
         YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter = new YYBackgroundMusicListAdapter();
-        this.f11438c = yYBackgroundMusicListAdapter;
+        this.c = yYBackgroundMusicListAdapter;
         if (yYBackgroundMusicListAdapter != null) {
             yYBackgroundMusicListAdapter.a(this.e);
         }
         FragmentYyMusicListBinding p = p();
         if (p != null && (smartRefreshLayout4 = p.f) != null) {
-            smartRefreshLayout4.l(false);
+            smartRefreshLayout4.b(false);
         }
         FragmentYyMusicListBinding p2 = p();
         if (p2 != null && (smartRefreshLayout3 = p2.f) != null) {
@@ -374,8 +365,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         }
         FragmentYyMusicListBinding p4 = p();
         if (p4 != null && (smartRefreshLayout = p4.f) != null) {
-            smartRefreshLayout.b((OnMultiPurposeListener) new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live.base.music.YyBackgroundItemFragment$initView$1
-                @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
+            smartRefreshLayout.a(new SimpleMultiPurposeListener() { // from class: com.blued.android.module.live.base.music.YyBackgroundItemFragment$initView$1
                 public void onLoadMore(RefreshLayout refreshLayout) {
                     YYBackgroundItemViewModel j;
                     Intrinsics.e(refreshLayout, "refreshLayout");
@@ -385,21 +375,20 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
                     j.a(fragmentActive);
                 }
 
-                @Override // com.scwang.smartrefresh.layout.listener.SimpleMultiPurposeListener, com.scwang.smartrefresh.layout.listener.OnRefreshListener
                 public void onRefresh(RefreshLayout refreshLayout) {
                     Intrinsics.e(refreshLayout, "refreshLayout");
                 }
             });
         }
         FragmentYyMusicListBinding p5 = p();
-        if (p5 != null && (yyMusicListLoadErrorBinding = p5.f11381c) != null && (shapeTextView = yyMusicListLoadErrorBinding.f11401a) != null) {
+        if (p5 != null && (yyMusicListLoadErrorBinding = p5.c) != null && (shapeTextView = yyMusicListLoadErrorBinding.a) != null) {
             shapeTextView.setOnClickListener(this);
         }
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter2 = this.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter2 = this.c;
         if (yYBackgroundMusicListAdapter2 != null) {
             yYBackgroundMusicListAdapter2.setEnableLoadMore(false);
         }
-        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter3 = this.f11438c;
+        YYBackgroundMusicListAdapter yYBackgroundMusicListAdapter3 = this.c;
         if (yYBackgroundMusicListAdapter3 != null) {
             yYBackgroundMusicListAdapter3.a(new YYMusicEventCallBack() { // from class: com.blued.android.module.live.base.music.YyBackgroundItemFragment$initView$2
                 @Override // com.blued.android.module.live.base.music.adapter.YYMusicEventCallBack
@@ -478,7 +467,7 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         FragmentYyMusicListBinding p7 = p();
         RecyclerView recyclerView2 = p7 == null ? null : p7.e;
         if (recyclerView2 != null) {
-            recyclerView2.setAdapter(this.f11438c);
+            recyclerView2.setAdapter(this.c);
         }
         YYBackgroundItemViewModel j = j();
         ActivityFragmentActive fragmentActive = getFragmentActive();
@@ -493,15 +482,15 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        YyBackgroundItemFragment yyBackgroundItemFragment = this;
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().g(), new YyBackgroundItemFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().h(), new YyBackgroundItemFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().i(), new YyBackgroundItemFragment$liveDataObserver$3(this));
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().m(), new YyBackgroundItemFragment$liveDataObserver$4(this));
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().n(), new YyBackgroundItemFragment$liveDataObserver$5(this));
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().k(), new YyBackgroundItemFragment$liveDataObserver$6(this));
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().l(), new YyBackgroundItemFragment$liveDataObserver$7(this));
-        LifecycleExtKt.a(yyBackgroundItemFragment, j().j(), new YyBackgroundItemFragment$liveDataObserver$8(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, j().g(), new YyBackgroundItemFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, j().h(), new YyBackgroundItemFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, j().i(), new YyBackgroundItemFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, j().m(), new YyBackgroundItemFragment$liveDataObserver$4(this));
+        LifecycleExtKt.a(lifecycleOwner, j().n(), new YyBackgroundItemFragment$liveDataObserver$5(this));
+        LifecycleExtKt.a(lifecycleOwner, j().k(), new YyBackgroundItemFragment$liveDataObserver$6(this));
+        LifecycleExtKt.a(lifecycleOwner, j().l(), new YyBackgroundItemFragment$liveDataObserver$7(this));
+        LifecycleExtKt.a(lifecycleOwner, j().j(), new YyBackgroundItemFragment$liveDataObserver$8(this));
         r();
     }
 
@@ -517,14 +506,14 @@ public final class YyBackgroundItemFragment extends MVVMBaseFragment<YYBackgroun
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         s();
     }
 
     public final FragmentYyMusicListBinding p() {
-        return (FragmentYyMusicListBinding) this.b.b(this, f11437a[0]);
+        return (FragmentYyMusicListBinding) this.b.b(this, a[0]);
     }
 
     public final BackgroundMusicView q() {

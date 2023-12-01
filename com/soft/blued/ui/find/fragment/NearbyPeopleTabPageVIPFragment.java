@@ -52,11 +52,10 @@ public class NearbyPeopleTabPageVIPFragment extends NearbyPeopleTabPageFragment 
         final AdvertFloatModel advertFloatModel = new AdvertFloatModel();
         advertFloatModel.advert_pic = guideMap.image;
         ImageFileLoader.a(getFragmentActive()).a(advertFloatModel.advert_pic).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageVIPFragment.2
-            @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public void onUIFinish(File file, Exception exc) {
                 if (file != null && file.exists() && NearbyPeopleTabPageVIPFragment.this.k) {
                     BluedPreferences.R(guideMap.code);
-                    AdvertFloatFragment.a(NearbyPeopleTabPageVIPFragment.this.f30524a, advertFloatModel, ADConstants.AD_POSITION.NONE);
+                    AdvertFloatFragment.a(NearbyPeopleTabPageVIPFragment.this.f16834a, advertFloatModel, ADConstants.AD_POSITION.NONE);
                 }
             }
         }).a();
@@ -74,7 +73,6 @@ public class NearbyPeopleTabPageVIPFragment extends NearbyPeopleTabPageFragment 
         this.f.clearOnScrollListeners();
         this.d.setRefreshEnabled(true);
         this.d.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageVIPFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 NearbyPeopleTabPageVIPFragment.this.a(true);
             }
@@ -91,7 +89,7 @@ public class NearbyPeopleTabPageVIPFragment extends NearbyPeopleTabPageFragment 
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                PayUtils.a(NearbyPeopleTabPageVIPFragment.this.f30524a, "nearby_choice_for_you_buy", 26, VipProtos.FromType.UNKNOWN_FROM);
+                PayUtils.a(NearbyPeopleTabPageVIPFragment.this.f16834a, "nearby_choice_for_you_buy", 26, VipProtos.FromType.UNKNOWN_FROM);
             }
         });
         this.w.setVisibility(8);
@@ -105,7 +103,7 @@ public class NearbyPeopleTabPageVIPFragment extends NearbyPeopleTabPageFragment 
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                PayUtils.a(NearbyPeopleTabPageVIPFragment.this.f30524a, "nearby_choice_for_you_buy", 26, VipProtos.FromType.UNKNOWN_FROM);
+                PayUtils.a(NearbyPeopleTabPageVIPFragment.this.f16834a, "nearby_choice_for_you_buy", 26, VipProtos.FromType.UNKNOWN_FROM);
             }
         });
         this.u.setVisibility(8);
@@ -147,7 +145,7 @@ public class NearbyPeopleTabPageVIPFragment extends NearbyPeopleTabPageFragment 
     public void a(BluedEntity<UserFindResult, FindDataExtra> bluedEntity, boolean z) {
         super.a(bluedEntity, z);
         if (bluedEntity != null) {
-            a(bluedEntity.extra);
+            a((FindDataExtra) bluedEntity.extra);
         }
         if (z) {
             this.h.setNewData(null);
@@ -206,22 +204,22 @@ public class NearbyPeopleTabPageVIPFragment extends NearbyPeopleTabPageFragment 
 
     @Override // com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment
     public void d() {
-        this.h = new PeopleVIPGridAdapter(new ArrayList(), getActivity(), getFragmentActive(), this.f30525c, this.f);
-        ValueAnimator ofInt = ValueAnimator.ofInt(DensityUtils.a(this.f30524a, -35.0f), DensityUtils.a(this.f30524a, 10.0f));
+        this.h = new PeopleVIPGridAdapter(new ArrayList(), getActivity(), getFragmentActive(), this.f16835c, this.f);
+        ValueAnimator ofInt = ValueAnimator.ofInt(DensityUtils.a(this.f16834a, -35.0f), DensityUtils.a(this.f16834a, 10.0f));
         this.r = ofInt;
         ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.find.fragment.NearbyPeopleTabPageVIPFragment.5
 
             /* renamed from: a  reason: collision with root package name */
-            FrameLayout.LayoutParams f30538a;
+            FrameLayout.LayoutParams f16848a;
 
             {
-                this.f30538a = (FrameLayout.LayoutParams) NearbyPeopleTabPageVIPFragment.this.n.getLayoutParams();
+                this.f16848a = (FrameLayout.LayoutParams) NearbyPeopleTabPageVIPFragment.this.n.getLayoutParams();
             }
 
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                this.f30538a.topMargin = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                NearbyPeopleTabPageVIPFragment.this.n.setLayoutParams(this.f30538a);
+                this.f16848a.topMargin = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                NearbyPeopleTabPageVIPFragment.this.n.setLayoutParams(this.f16848a);
             }
         });
         this.r.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -233,13 +231,13 @@ public class NearbyPeopleTabPageVIPFragment extends NearbyPeopleTabPageFragment 
         c(str);
     }
 
-    @Override // com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment
     public void onDestroy() {
         super.onDestroy();
         HomeTabClick.b("find", this);
     }
 
-    @Override // com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.find.fragment.NearbyPeopleTabPageFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (z) {

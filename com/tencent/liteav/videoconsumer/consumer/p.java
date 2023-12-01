@@ -9,16 +9,16 @@ import com.tencent.liteav.videoconsumer.decoder.VideoDecodeController;
 final /* synthetic */ class p implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36720a;
+    private final j f23029a;
     private final SnapshotSourceType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final TakeSnapshotListener f36721c;
+    private final TakeSnapshotListener f23030c;
 
     private p(j jVar, SnapshotSourceType snapshotSourceType, TakeSnapshotListener takeSnapshotListener) {
-        this.f36720a = jVar;
+        this.f23029a = jVar;
         this.b = snapshotSourceType;
-        this.f36721c = takeSnapshotListener;
+        this.f23030c = takeSnapshotListener;
     }
 
     public static Runnable a(j jVar, SnapshotSourceType snapshotSourceType, TakeSnapshotListener takeSnapshotListener) {
@@ -27,10 +27,10 @@ final /* synthetic */ class p implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36720a;
+        j jVar = this.f23029a;
         SnapshotSourceType snapshotSourceType = this.b;
-        final TakeSnapshotListener takeSnapshotListener = this.f36721c;
-        String str = jVar.f36705a;
+        final TakeSnapshotListener takeSnapshotListener = this.f23030c;
+        String str = jVar.f23014a;
         LiteavLog.i(str, "takeSnapshot: sourceType = " + snapshotSourceType + ", listener = " + takeSnapshotListener);
         if (snapshotSourceType == SnapshotSourceType.STREAM) {
             if (jVar.f != null) {
@@ -38,20 +38,20 @@ final /* synthetic */ class p implements Runnable {
                 videoDecodeController.a(new Runnable(videoDecodeController, takeSnapshotListener) { // from class: com.tencent.liteav.videoconsumer.decoder.ar
 
                     /* renamed from: a  reason: collision with root package name */
-                    private final VideoDecodeController f36763a;
+                    private final VideoDecodeController f23072a;
                     private final TakeSnapshotListener b;
 
                     {
-                        this.f36763a = videoDecodeController;
+                        this.f23072a = videoDecodeController;
                         this.b = takeSnapshotListener;
                     }
 
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VideoDecodeController videoDecodeController2 = this.f36763a;
+                        VideoDecodeController videoDecodeController2 = this.f23072a;
                         TakeSnapshotListener takeSnapshotListener2 = this.b;
-                        LiteavLog.i(videoDecodeController2.f36734a, "takeSnapshot ".concat(String.valueOf(takeSnapshotListener2)));
-                        videoDecodeController2.p.f36662a = takeSnapshotListener2;
+                        LiteavLog.i(videoDecodeController2.f23043a, "takeSnapshot ".concat(String.valueOf(takeSnapshotListener2)));
+                        videoDecodeController2.p.f22971a = takeSnapshotListener2;
                     }
                 });
             }
@@ -61,7 +61,7 @@ final /* synthetic */ class p implements Runnable {
             } else if (jVar.e != null) {
                 jVar.e.takeSnapshot(takeSnapshotListener);
             } else {
-                LiteavLog.w(jVar.f36705a, "takeSnapshot return null, no match render.");
+                LiteavLog.w(jVar.f23014a, "takeSnapshot return null, no match render.");
                 if (takeSnapshotListener != null) {
                     takeSnapshotListener.onComplete(null);
                 }

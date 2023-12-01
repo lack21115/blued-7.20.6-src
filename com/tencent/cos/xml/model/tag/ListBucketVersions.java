@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cos/xml/model/tag/ListBucketVersions.class */
@@ -35,7 +34,7 @@ public class ListBucketVersions {
                 sb.append(this.owner.toString());
                 sb.append("\n");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -54,7 +53,7 @@ public class ListBucketVersions {
         public String uid;
 
         public String toString() {
-            return "{Owner:\nUid:" + this.uid + "\n" + i.d;
+            return "{Owner:\nUid:" + this.uid + "\n}";
         }
     }
 
@@ -91,7 +90,7 @@ public class ListBucketVersions {
                 sb.append(this.owner.toString());
                 sb.append("\n");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -129,7 +128,7 @@ public class ListBucketVersions {
                 sb.append("\n");
             }
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

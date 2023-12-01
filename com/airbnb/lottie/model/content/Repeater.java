@@ -9,20 +9,16 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/Repeater.class */
 public class Repeater implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4358a;
+    private final String a;
     private final AnimatableFloatValue b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatableFloatValue f4359c;
+    private final AnimatableFloatValue c;
     private final AnimatableTransform d;
     private final boolean e;
 
     public Repeater(String str, AnimatableFloatValue animatableFloatValue, AnimatableFloatValue animatableFloatValue2, AnimatableTransform animatableTransform, boolean z) {
-        this.f4358a = str;
+        this.a = str;
         this.b = animatableFloatValue;
-        this.f4359c = animatableFloatValue2;
+        this.c = animatableFloatValue2;
         this.d = animatableTransform;
         this.e = z;
     }
@@ -33,7 +29,7 @@ public class Repeater implements ContentModel {
     }
 
     public String a() {
-        return this.f4358a;
+        return this.a;
     }
 
     public AnimatableFloatValue b() {
@@ -41,7 +37,7 @@ public class Repeater implements ContentModel {
     }
 
     public AnimatableFloatValue c() {
-        return this.f4359c;
+        return this.c;
     }
 
     public AnimatableTransform d() {

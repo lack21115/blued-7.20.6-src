@@ -9,7 +9,6 @@ import com.blued.android.module.common.extensions.BluedStructureExtKt;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.soft.blued.ui.user.api.UserApiService;
 import com.soft.blued.ui.user.state.VirtualImageEvent;
-import java.util.Collection;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
@@ -30,42 +29,39 @@ import kotlinx.coroutines.CoroutineScope;
 final class VirtualImageVM$save$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f34421a;
+    int f20730a;
     final /* synthetic */ String b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ VirtualImageVM f34422c;
+    final /* synthetic */ VirtualImageVM f20731c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public VirtualImageVM$save$1(String str, VirtualImageVM virtualImageVM, Continuation<? super VirtualImageVM$save$1> continuation) {
         super(2, continuation);
         this.b = str;
-        this.f34422c = virtualImageVM;
+        this.f20731c = virtualImageVM;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((VirtualImageVM$save$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new VirtualImageVM$save$1(this.b, this.f34422c, continuation);
+        return new VirtualImageVM$save$1(this.b, this.f20731c, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        ApiState error;
+        ApiState apiState;
         VirtualImageVM virtualImageVM;
         VirtualImageEvent.SaveEvent saveEvent;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f34421a;
+        int i = this.f20730a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f34421a = 1;
-            Object a3 = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).a(MapsKt.a(TuplesKt.a("uid", UserInfo.getInstance().getLoginUserInfo().uid)), this.b, this);
+            this.f20730a = 1;
+            Object a3 = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).a(MapsKt.a(TuplesKt.a("uid", UserInfo.getInstance().getLoginUserInfo().uid)), this.b, (Continuation) this);
             obj = a3;
             if (a3 == a2) {
                 return a2;
@@ -76,11 +72,10 @@ final class VirtualImageVM$save$1 extends SuspendLambda implements Function2<Cor
             ResultKt.a(obj);
         }
         BluedEntityA bluedEntityA = (BluedEntityA) obj;
-        VirtualImageVM virtualImageVM2 = this.f34422c;
+        VirtualImageVM virtualImageVM2 = this.f20731c;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                Collection data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                Intrinsics.c(bluedEntityA.data, "data");
                 bluedEntityA.hasMore();
                 virtualImageVM = virtualImageVM2;
                 saveEvent = new VirtualImageEvent.SaveEvent(true);
@@ -90,20 +85,20 @@ final class VirtualImageVM$save$1 extends SuspendLambda implements Function2<Cor
                 saveEvent = new VirtualImageEvent.SaveEvent(true);
             }
             BluedStructureExtKt.a(virtualImageVM, saveEvent);
-            error = Succeed.f10631a;
+            apiState = (ApiState) Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            error = new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            apiState = (ApiState) new Error(i2, str);
         }
-        VirtualImageVM virtualImageVM3 = this.f34422c;
-        if (error instanceof Error) {
-            Error error2 = (Error) error;
-            error2.a();
-            error2.b();
+        VirtualImageVM virtualImageVM3 = this.f20731c;
+        if (apiState instanceof Error) {
+            Error error = apiState;
+            error.a();
+            error.b();
             BluedStructureExtKt.a(virtualImageVM3, new VirtualImageEvent.SaveEvent(false));
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

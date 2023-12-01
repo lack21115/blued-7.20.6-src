@@ -20,11 +20,11 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     public static final int FLAG_REGISTER_CONTENT_OBSERVER = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    protected boolean f2766a;
+    protected boolean f2718a;
     protected boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Cursor f2767c;
+    protected Cursor f2719c;
     protected Context d;
     protected int e;
     protected ChangeObserver f;
@@ -58,13 +58,13 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
 
         @Override // android.database.DataSetObserver
         public void onChanged() {
-            CursorAdapter.this.f2766a = true;
+            CursorAdapter.this.f2718a = true;
             CursorAdapter.this.notifyDataSetChanged();
         }
 
         @Override // android.database.DataSetObserver
         public void onInvalidated() {
-            CursorAdapter.this.f2766a = false;
+            CursorAdapter.this.f2718a = false;
             CursorAdapter.this.notifyDataSetInvalidated();
         }
     }
@@ -84,10 +84,10 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
 
     protected void a() {
         Cursor cursor;
-        if (!this.b || (cursor = this.f2767c) == null || cursor.isClosed()) {
+        if (!this.b || (cursor = this.f2719c) == null || cursor.isClosed()) {
             return;
         }
-        this.f2766a = this.f2767c.requery();
+        this.f2718a = this.f2719c.requery();
     }
 
     void a(Context context, Cursor cursor, int i) {
@@ -101,8 +101,8 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
         if (cursor != null) {
             z = true;
         }
-        this.f2767c = cursor;
-        this.f2766a = z;
+        this.f2719c = cursor;
+        this.f2718a = z;
         this.d = context;
         this.e = z ? cursor.getColumnIndexOrThrow("_id") : -1;
         if ((i & 2) == 2) {
@@ -140,7 +140,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     @Override // android.widget.Adapter
     public int getCount() {
         Cursor cursor;
-        if (!this.f2766a || (cursor = this.f2767c) == null) {
+        if (!this.f2718a || (cursor = this.f2719c) == null) {
             return 0;
         }
         return cursor.getCount();
@@ -148,18 +148,18 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
 
     @Override // androidx.cursoradapter.widget.CursorFilter.CursorFilterClient
     public Cursor getCursor() {
-        return this.f2767c;
+        return this.f2719c;
     }
 
     @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
     public View getDropDownView(int i, View view, ViewGroup viewGroup) {
-        if (this.f2766a) {
-            this.f2767c.moveToPosition(i);
+        if (this.f2718a) {
+            this.f2719c.moveToPosition(i);
             View view2 = view;
             if (view == null) {
-                view2 = newDropDownView(this.d, this.f2767c, viewGroup);
+                view2 = newDropDownView(this.d, this.f2719c, viewGroup);
             }
-            bindView(view2, this.d, this.f2767c);
+            bindView(view2, this.d, this.f2719c);
             return view2;
         }
         return null;
@@ -180,33 +180,33 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     @Override // android.widget.Adapter
     public Object getItem(int i) {
         Cursor cursor;
-        if (!this.f2766a || (cursor = this.f2767c) == null) {
+        if (!this.f2718a || (cursor = this.f2719c) == null) {
             return null;
         }
         cursor.moveToPosition(i);
-        return this.f2767c;
+        return this.f2719c;
     }
 
     @Override // android.widget.Adapter
     public long getItemId(int i) {
         Cursor cursor;
-        if (this.f2766a && (cursor = this.f2767c) != null && cursor.moveToPosition(i)) {
-            return this.f2767c.getLong(this.e);
+        if (this.f2718a && (cursor = this.f2719c) != null && cursor.moveToPosition(i)) {
+            return this.f2719c.getLong(this.e);
         }
         return 0L;
     }
 
     @Override // android.widget.Adapter
     public View getView(int i, View view, ViewGroup viewGroup) {
-        if (this.f2766a) {
-            if (!this.f2767c.moveToPosition(i)) {
+        if (this.f2718a) {
+            if (!this.f2719c.moveToPosition(i)) {
                 throw new IllegalStateException("couldn't move cursor to position " + i);
             }
             View view2 = view;
             if (view == null) {
-                view2 = newView(this.d, this.f2767c, viewGroup);
+                view2 = newView(this.d, this.f2719c, viewGroup);
             }
-            bindView(view2, this.d, this.f2767c);
+            bindView(view2, this.d, this.f2719c);
             return view2;
         }
         throw new IllegalStateException("this should only be called when the cursor is valid");
@@ -225,7 +225,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
 
     public Cursor runQueryOnBackgroundThread(CharSequence charSequence) {
         FilterQueryProvider filterQueryProvider = this.i;
-        return filterQueryProvider != null ? filterQueryProvider.runQuery(charSequence) : this.f2767c;
+        return filterQueryProvider != null ? filterQueryProvider.runQuery(charSequence) : this.f2719c;
     }
 
     public void setFilterQueryProvider(FilterQueryProvider filterQueryProvider) {
@@ -233,7 +233,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
     }
 
     public Cursor swapCursor(Cursor cursor) {
-        Cursor cursor2 = this.f2767c;
+        Cursor cursor2 = this.f2719c;
         if (cursor == cursor2) {
             return null;
         }
@@ -247,10 +247,10 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
                 cursor2.unregisterDataSetObserver(dataSetObserver);
             }
         }
-        this.f2767c = cursor;
+        this.f2719c = cursor;
         if (cursor == null) {
             this.e = -1;
-            this.f2766a = false;
+            this.f2718a = false;
             notifyDataSetInvalidated();
             return cursor2;
         }
@@ -263,7 +263,7 @@ public abstract class CursorAdapter extends BaseAdapter implements Filterable, C
             cursor.registerDataSetObserver(dataSetObserver2);
         }
         this.e = cursor.getColumnIndexOrThrow("_id");
-        this.f2766a = true;
+        this.f2718a = true;
         notifyDataSetChanged();
         return cursor2;
     }

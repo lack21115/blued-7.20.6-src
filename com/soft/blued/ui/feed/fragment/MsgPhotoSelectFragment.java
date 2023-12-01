@@ -67,11 +67,11 @@ import java.util.Map;
 public class MsgPhotoSelectFragment extends BaseFragment implements MemoryRequest.MemoryListener, ISelectPhotoBarCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f29915a;
+    private Context f16225a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f29916c;
+    private TextView f16226c;
     private ImageView d;
     private View e;
     private TextView f;
@@ -106,17 +106,15 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
             MsgPhotoSelectFragment msgPhotoSelectFragment = MsgPhotoSelectFragment.this;
             String str = childImageInfo.mImagePath;
             int i = MsgPhotoSelectFragment.this.v ? 7 : 1;
-            e.a(msgPhotoSelectFragment, str, i, 1000, MsgPhotoSelectFragment.this.f29915a.getString(2131890784) + FlashPhotoManager.a().b().flash_prompt, FlashPhotoManager.a().b().flash_left_times, new DeleteAutoCheckedListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.3
-                @Override // com.blued.android.module.base.shortvideo.DeleteAutoCheckedListener
+            e.a(msgPhotoSelectFragment, str, i, 1000, MsgPhotoSelectFragment.this.f16225a.getString(R.string.msg_look_burn) + FlashPhotoManager.a().b().flash_prompt, FlashPhotoManager.a().b().flash_left_times, new DeleteAutoCheckedListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.3
                 public void a(final CheckBox checkBox) {
                     checkBox.setOnTouchListener(new SingleTouchProxy(new SingleTouchProxy.TouchListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.3.1
-                        @Override // com.blued.android.module.common.utils.click.SingleTouchProxy.TouchListener
                         public boolean a() {
-                            if (ComplianceUtils.f10878a.a(checkBox.getContext())) {
+                            if (ComplianceUtils.a.a(checkBox.getContext())) {
                                 return true;
                             }
                             if (FlashPhotoManager.a().b().flash_left_times < 1) {
-                                PayVIPPopupWindow.f19924c.a(MsgPhotoSelectFragment.this.f29915a, SelectPhotoManager.a().b(), null);
+                                PayVIPPopupWindow.c.a(MsgPhotoSelectFragment.this.f16225a, SelectPhotoManager.a().b(), (DialogInterface.OnDismissListener) null);
                                 return true;
                             }
                             return false;
@@ -147,10 +145,10 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
             if (view == null) {
                 view = MsgPhotoSelectFragment.this.i.inflate(R.layout.fragment_msg_photo_select, viewGroup, false);
                 viewHolder = new ViewHolder();
-                viewHolder.f29947a = view;
+                viewHolder.f16257a = view;
                 viewHolder.b = (ImageView) view.findViewById(2131364232);
-                viewHolder.f29948c = (ImageView) view.findViewById(2131369696);
-                viewHolder.e = (TextView) view.findViewById(2131371305);
+                viewHolder.f16258c = (ImageView) view.findViewById(R.id.select_view);
+                viewHolder.e = (TextView) view.findViewById(R.id.tv_duration);
                 viewHolder.f = view.findViewById(R.id.shade);
                 view.setTag(viewHolder);
                 MsgPhotoSelectFragment.this.x.add(viewHolder);
@@ -159,7 +157,7 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
             }
             final ChildImageInfo a2 = ChildPhotoManager.a().a(i);
             if (a2 != null) {
-                viewHolder.f29948c.setVisibility(0);
+                viewHolder.f16258c.setVisibility(0);
                 viewHolder.b.setVisibility(0);
                 viewHolder.d = a2.mSelect;
                 try {
@@ -172,10 +170,10 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                 } else {
                     viewHolder.e.setVisibility(8);
                 }
-                if (SelectPhotoManager.a().b() < PhotoConstants.CONFIG.f10707a || a2.mSelect) {
-                    viewHolder.f29947a.setAlpha(1.0f);
+                if (SelectPhotoManager.a().b() < PhotoConstants.CONFIG.a || a2.mSelect) {
+                    viewHolder.f16257a.setAlpha(1.0f);
                 } else {
-                    viewHolder.f29947a.setAlpha(0.5f);
+                    viewHolder.f16257a.setAlpha(0.5f);
                 }
                 viewHolder.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.1
                     @Override // android.view.View.OnClickListener
@@ -190,7 +188,7 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                     }
                 });
                 if (LocalMediaLoader.MediaType.a(a2.mediaType)) {
-                    viewHolder.f29948c.setVisibility(8);
+                    viewHolder.f16258c.setVisibility(8);
                     if (SelectPhotoManager.a().b() > 0) {
                         viewHolder.f.setVisibility(0);
                     } else {
@@ -198,15 +196,15 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                     }
                 } else {
                     viewHolder.f.setVisibility(8);
-                    viewHolder.f29948c.setVisibility(0);
+                    viewHolder.f16258c.setVisibility(0);
                     if (a2.mSelect) {
-                        viewHolder.f29948c.setImageResource(R.drawable.msg_photo_select);
+                        viewHolder.f16258c.setImageResource(R.drawable.msg_photo_select);
                     } else {
-                        viewHolder.f29948c.setImageResource(R.drawable.msg_photo_unselect);
+                        viewHolder.f16258c.setImageResource(R.drawable.msg_photo_unselect);
                     }
                 }
                 final ViewHolder viewHolder2 = viewHolder;
-                viewHolder.f29948c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.2
+                viewHolder.f16258c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.2
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view2) {
                         Tracker.onClick(view2);
@@ -214,20 +212,20 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                             a2.mSelect = false;
                             viewHolder2.d = a2.mSelect;
                             SelectPhotoManager.a().b(a2);
-                            viewHolder2.f29948c.setImageResource(R.drawable.msg_photo_unselect);
+                            viewHolder2.f16258c.setImageResource(R.drawable.msg_photo_unselect);
                             MsgPhotoSelectFragment.this.d();
-                        } else if (SelectPhotoManager.a().b() >= PhotoConstants.CONFIG.f10707a) {
-                            AppMethods.a((CharSequence) String.format(MsgPhotoSelectFragment.this.getResources().getString(2131890590), Integer.valueOf(PhotoConstants.CONFIG.f10707a)));
+                        } else if (SelectPhotoManager.a().b() >= PhotoConstants.CONFIG.a) {
+                            AppMethods.a(String.format(MsgPhotoSelectFragment.this.getResources().getString(R.string.max_select_num), Integer.valueOf(PhotoConstants.CONFIG.a)));
                         } else if (MsgPhotoSelectFragment.this.w && SelectPhotoManager.a().b() + 1 > FlashPhotoManager.a().b().flash_left_times) {
-                            PayVIPPopupWindow.f19924c.a(MsgPhotoSelectFragment.this.f29915a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.2.1
+                            PayVIPPopupWindow.c.a(MsgPhotoSelectFragment.this.f16225a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.MsgPhotoAdapter.2.1
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public void onDismiss(DialogInterface dialogInterface) {
                                     SelectPhotoBarView selectPhotoBarView = MsgPhotoSelectFragment.this.h;
-                                    selectPhotoBarView.setBurnBtnText(MsgPhotoSelectFragment.this.f29915a.getString(2131890784) + "\n" + FlashPhotoManager.a().b().flash_prompt);
+                                    selectPhotoBarView.setBurnBtnText(MsgPhotoSelectFragment.this.f16225a.getString(R.string.msg_look_burn) + "\n" + FlashPhotoManager.a().b().flash_prompt);
                                 }
                             });
                         } else {
-                            MsgPhotoSelectFragment.this.a(viewHolder2.f29948c);
+                            MsgPhotoSelectFragment.this.a(viewHolder2.f16258c);
                             a2.mSelect = true;
                             viewHolder2.d = a2.mSelect;
                             SelectPhotoManager.a().a(a2);
@@ -247,7 +245,7 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
         class ViewHolder {
 
             /* renamed from: a  reason: collision with root package name */
-            ImageView f29945a;
+            ImageView f16255a;
             TextView b;
 
             private ViewHolder() {
@@ -279,16 +277,16 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
         public View getView(int i, View view, ViewGroup viewGroup) {
             ViewHolder viewHolder;
             if (view == null) {
-                view = LayoutInflater.from(MsgPhotoSelectFragment.this.f29915a).inflate(R.layout.fragment_photo_select_list_item, viewGroup, false);
+                view = LayoutInflater.from(MsgPhotoSelectFragment.this.f16225a).inflate(R.layout.fragment_photo_select_list_item, viewGroup, false);
                 viewHolder = new ViewHolder();
                 view.setTag(viewHolder);
-                viewHolder.f29945a = (ImageView) view.findViewById(2131364232);
-                viewHolder.b = (TextView) view.findViewById(2131368652);
+                viewHolder.f16255a = (ImageView) view.findViewById(2131364232);
+                viewHolder.b = (TextView) view.findViewById(R.id.name_view);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
             }
             final GroupImageInfo groupImageInfo = (GroupImageInfo) MsgPhotoSelectFragment.this.k.get(i);
-            ImageLoader.d(MsgPhotoSelectFragment.this.getFragmentActive(), groupImageInfo.getTopImagePath()).b(2131231620).c().a(viewHolder.f29945a);
+            ImageLoader.d(MsgPhotoSelectFragment.this.getFragmentActive(), groupImageInfo.getTopImagePath()).b(2131231620).c().a(viewHolder.f16255a);
             if (TextUtils.isEmpty(groupImageInfo.getFolderName())) {
                 viewHolder.b.setText("");
             } else {
@@ -299,7 +297,7 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
                     ChildPhotoManager.a().a((List) MsgPhotoSelectFragment.this.j.get(groupImageInfo.getFolderName()));
-                    MsgPhotoSelectFragment.this.f29916c.setText(groupImageInfo.getFolderName());
+                    MsgPhotoSelectFragment.this.f16226c.setText(groupImageInfo.getFolderName());
                     BluedPreferences.C(groupImageInfo.getFolderName());
                     MsgPhotoSelectFragment.this.o.d();
                     MsgPhotoSelectFragment.this.n.notifyDataSetChanged();
@@ -313,11 +311,11 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
     public class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public View f29947a;
+        public View f16257a;
         public ImageView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ImageView f29948c;
+        public ImageView f16258c;
         public boolean d;
         public TextView e;
         public View f;
@@ -388,7 +386,6 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
 
     public static void a(final BaseFragment baseFragment, final int i, final boolean z, final int i2) {
         PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.1
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void U_() {
                 Bundle bundle = new Bundle();
                 bundle.putInt("select_photo", i);
@@ -396,7 +393,6 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                 TerminalActivity.a(baseFragment, MsgPhotoSelectFragment.class, bundle, i2);
             }
 
-            @Override // com.blued.android.framework.permission.PermissionCallbacks
             public void a(String[] strArr) {
             }
         });
@@ -423,15 +419,15 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
             this.u = arguments.getInt("select_photo");
             this.v = arguments.getBoolean("photo_from_group", false);
         }
-        PhotoConstants.CONFIG.f10707a = 9;
+        PhotoConstants.CONFIG.a = 9;
         SelectPhotoManager.a().d();
         j();
     }
 
     private void g() {
-        this.i = LayoutInflater.from(this.f29915a);
+        this.i = LayoutInflater.from(this.f16225a);
         this.m = (GridView) this.b.findViewById(R.id.gird_view);
-        this.l = DialogUtils.a(this.f29915a);
+        this.l = DialogUtils.a(this.f16225a);
         this.n = new MsgPhotoAdapter();
         this.m.setOnScrollListener(new AbsListView.OnScrollListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.2
             @Override // android.widget.AbsListView.OnScrollListener
@@ -462,12 +458,12 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
     }
 
     private void h() {
-        ListView listView = new ListView(this.f29915a);
+        ListView listView = new ListView(this.f16225a);
         listView.setDivider(null);
         PopAdapter popAdapter = new PopAdapter();
         this.p = popAdapter;
         listView.setAdapter((ListAdapter) popAdapter);
-        this.o = new PopMenu(this.f29915a, listView);
+        this.o = new PopMenu(this.f16225a, listView);
     }
 
     private void i() {
@@ -499,20 +495,20 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                 }
             }
         });
-        this.f29916c = (TextView) this.b.findViewById(2131363108);
-        this.d = (ImageView) this.b.findViewById(2131363113);
+        this.f16226c = (TextView) this.b.findViewById(2131363108);
+        this.d = (ImageView) this.b.findViewById(R.id.ctt_center_right);
         this.b.findViewById(R.id.lay_center).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 MsgPhotoSelectFragment.this.o.a(MsgPhotoSelectFragment.this.e);
-                MsgPhotoSelectFragment.this.d.setImageDrawable(BluedSkinUtils.b(MsgPhotoSelectFragment.this.f29915a, 2131235082));
+                MsgPhotoSelectFragment.this.d.setImageDrawable(BluedSkinUtils.b(MsgPhotoSelectFragment.this.f16225a, (int) R.drawable.live_icon_arrow_up));
             }
         });
         this.o.a(new PopupWindow.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.6
             @Override // android.widget.PopupWindow.OnDismissListener
             public void onDismiss() {
-                MsgPhotoSelectFragment.this.d.setImageDrawable(BluedSkinUtils.b(MsgPhotoSelectFragment.this.f29915a, 2131235081));
+                MsgPhotoSelectFragment.this.d.setImageDrawable(BluedSkinUtils.b(MsgPhotoSelectFragment.this.f16225a, (int) R.drawable.live_icon_arrow_down));
             }
         });
     }
@@ -535,7 +531,7 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
                     @Override // java.lang.Runnable
                     public void run() {
                         if (MsgPhotoSelectFragment.this.k != null && MsgPhotoSelectFragment.this.k.size() > 0) {
-                            MsgPhotoSelectFragment.this.f29916c.setText(((GroupImageInfo) MsgPhotoSelectFragment.this.k.get(0)).getFolderName());
+                            MsgPhotoSelectFragment.this.f16226c.setText(((GroupImageInfo) MsgPhotoSelectFragment.this.k.get(0)).getFolderName());
                             ChildPhotoManager.a().a((List) MsgPhotoSelectFragment.this.j.get(((GroupImageInfo) MsgPhotoSelectFragment.this.k.get(0)).getFolderName()));
                         }
                         MsgPhotoSelectFragment.this.m.setAdapter((ListAdapter) MsgPhotoSelectFragment.this.n);
@@ -564,7 +560,6 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
         d();
     }
 
-    @Override // com.blued.android.core.imagecache.MemoryRequest.MemoryListener
     public void a() {
     }
 
@@ -577,7 +572,7 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
 
     @Override // com.soft.blued.ui.common_contract.ISelectPhotoBarCallback
     public void a(boolean z) {
-        if (z && ComplianceUtils.f10878a.a(getContext())) {
+        if (z && ComplianceUtils.a.a(getContext())) {
             this.h.setBurnBtnChecked(false);
             return;
         }
@@ -597,11 +592,11 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
             }
         });
         this.w = false;
-        PayVIPPopupWindow.f19924c.a(this.f29915a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.9
+        PayVIPPopupWindow.c.a(this.f16225a, SelectPhotoManager.a().b(), new DialogInterface.OnDismissListener() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.9
             @Override // android.content.DialogInterface.OnDismissListener
             public void onDismiss(DialogInterface dialogInterface) {
                 SelectPhotoBarView selectPhotoBarView = MsgPhotoSelectFragment.this.h;
-                selectPhotoBarView.setBurnBtnText(MsgPhotoSelectFragment.this.f29915a.getString(2131890784) + "\n" + FlashPhotoManager.a().b().flash_prompt);
+                selectPhotoBarView.setBurnBtnText(MsgPhotoSelectFragment.this.f16225a.getString(R.string.msg_look_burn) + "\n" + FlashPhotoManager.a().b().flash_prompt);
             }
         });
     }
@@ -609,7 +604,6 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
     @Override // com.soft.blued.ui.common_contract.ISelectPhotoBarCallback
     public void b() {
         ThreadManager.a().a(new ThreadExecutor("copy-file") { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.10
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 MsgPhotoSelectFragment.this.k();
             }
@@ -636,10 +630,10 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
             this.g.setTextColor(getResources().getColor(2131101190));
         }
         for (ViewHolder viewHolder : this.x) {
-            if (b < PhotoConstants.CONFIG.f10707a || viewHolder.d) {
-                viewHolder.f29947a.setAlpha(1.0f);
+            if (b < PhotoConstants.CONFIG.a || viewHolder.d) {
+                viewHolder.f16257a.setAlpha(1.0f);
             } else {
-                viewHolder.f29947a.setAlpha(0.5f);
+                viewHolder.f16257a.setAlpha(0.5f);
             }
         }
         this.n.notifyDataSetChanged();
@@ -657,7 +651,6 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
         super.finalize();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(final int i, final int i2, final Intent intent) {
         postSafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.feed.fragment.MsgPhotoSelectFragment.13
             @Override // java.lang.Runnable
@@ -710,21 +703,18 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().setResult(-1);
         SelectPhotoManager.a().d();
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f29915a = getActivity();
+        this.f16225a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_msg_photo_select_gird, viewGroup, false);
@@ -742,32 +732,27 @@ public class MsgPhotoSelectFragment extends BaseFragment implements MemoryReques
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         this.x.clear();
         MemoryRequest.a().b(this);
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDetach() {
         e();
         super.onDetach();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         bundle.putString(OapsWrapper.KEY_PATH, this.y);
         super.onSaveInstanceState(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStart() {
         super.onStart();
         MemoryRequest.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
         MemoryRequest.a().a(this);

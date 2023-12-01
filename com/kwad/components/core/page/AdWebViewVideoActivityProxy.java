@@ -41,20 +41,20 @@ public class AdWebViewVideoActivityProxy extends com.kwad.components.core.l.a {
     private ViewGroup mWebDownloadContainer;
 
     private com.kwad.components.core.page.widget.a buildDialog() {
-        return new com.kwad.components.core.page.widget.a(getActivity(), new a.InterfaceC0532a() { // from class: com.kwad.components.core.page.AdWebViewVideoActivityProxy.4
-            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+        return new com.kwad.components.core.page.widget.a(getActivity(), new a.InterfaceC0362a() { // from class: com.kwad.components.core.page.AdWebViewVideoActivityProxy.4
+            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
             public final void a(DialogInterface dialogInterface) {
                 com.kwad.sdk.core.report.a.q(AdWebViewVideoActivityProxy.this.mAdTemplate, 104);
                 dialogInterface.dismiss();
             }
 
-            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
             public final void b(DialogInterface dialogInterface) {
                 AdWebViewVideoActivityProxy.super.onBackPressed();
                 com.kwad.sdk.core.report.a.q(AdWebViewVideoActivityProxy.this.mAdTemplate, 105);
             }
 
-            @Override // com.kwad.components.core.page.widget.a.InterfaceC0532a
+            @Override // com.kwad.components.core.page.widget.a.InterfaceC0362a
             public final void c(DialogInterface dialogInterface) {
                 com.kwad.sdk.core.report.a.q(AdWebViewVideoActivityProxy.this.mAdTemplate, 106);
                 dialogInterface.dismiss();
@@ -63,8 +63,8 @@ public class AdWebViewVideoActivityProxy extends com.kwad.components.core.l.a {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public a.C0519a getAdClickConfig(boolean z) {
-        return new a.C0519a(getActivity()).ao(z).at(true).ap(false).I(this.mAdTemplate).ar(false);
+    public a.C0349a getAdClickConfig(boolean z) {
+        return new a.C0349a(getActivity()).ao(z).at(true).ap(false).I(this.mAdTemplate).ar(false);
     }
 
     private void initView() {
@@ -126,13 +126,13 @@ public class AdWebViewVideoActivityProxy extends com.kwad.components.core.l.a {
         String bK = (this.mAdTemplate.adInfoList == null || this.mAdTemplate.adInfoList.size() <= 0 || this.mAdTemplate.adInfoList.get(0) == null) ? "详情页面" : com.kwad.sdk.core.response.a.a.bK(com.kwad.sdk.core.response.a.d.cb(this.mAdTemplate));
         com.kwad.components.core.a.a aVar2 = new com.kwad.components.core.a.a((ViewGroup) findViewById(R.id.ksad_kwad_web_title_bar));
         this.mTitleBarHelper = aVar2;
-        aVar2.a(new a.InterfaceC0509a() { // from class: com.kwad.components.core.page.AdWebViewVideoActivityProxy.3
-            @Override // com.kwad.components.core.a.a.InterfaceC0509a
+        aVar2.a(new a.InterfaceC0339a() { // from class: com.kwad.components.core.page.AdWebViewVideoActivityProxy.3
+            @Override // com.kwad.components.core.a.a.InterfaceC0339a
             public final void t(View view) {
                 AdWebViewVideoActivityProxy.this.onBackPressed();
             }
 
-            @Override // com.kwad.components.core.a.a.InterfaceC0509a
+            @Override // com.kwad.components.core.a.a.InterfaceC0339a
             public final void u(View view) {
                 AdWebViewVideoActivityProxy.this.finish();
             }

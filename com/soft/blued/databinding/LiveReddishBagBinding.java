@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LiveReddishBagBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29457a;
+    private final LinearLayout f15767a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29457a;
+        return this.f15767a;
     }
 }

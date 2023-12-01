@@ -159,10 +159,10 @@ public interface IMediaContainerService extends IInterface {
                     obtain.writeString(str2);
                     this.mRemote.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
-                    PackageInfoLite createFromParcel = obtain2.readInt() != 0 ? PackageInfoLite.CREATOR.createFromParcel(obtain2) : null;
+                    PackageInfoLite packageInfoLite = obtain2.readInt() != 0 ? (PackageInfoLite) PackageInfoLite.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return packageInfoLite;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -179,10 +179,10 @@ public interface IMediaContainerService extends IInterface {
                     obtain.writeString(str);
                     this.mRemote.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
-                    ObbInfo createFromParcel = obtain2.readInt() != 0 ? ObbInfo.CREATOR.createFromParcel(obtain2) : null;
+                    ObbInfo obbInfo = obtain2.readInt() != 0 ? (ObbInfo) ObbInfo.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return obbInfo;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -268,7 +268,7 @@ public interface IMediaContainerService extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeLong(calculateInstalledSize);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

@@ -5,21 +5,19 @@ import com.amap.api.services.core.AMapException;
 /* renamed from: com.amap.api.col.3sl.hf  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hf.class */
 public final class hf extends Exception {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5061a;
+    private String a;
     private int b;
 
     public hf() {
-        this.f5061a = "";
+        this.a = "";
         this.b = 1000;
     }
 
     public hf(String str) {
         super(str);
-        this.f5061a = "";
+        this.a = "";
         this.b = 1000;
-        this.f5061a = str;
+        this.a = str;
         a(str);
     }
 
@@ -51,21 +49,21 @@ public final class hf extends Exception {
         } else if (AMapException.AMAP_USER_KEY_RECYCLED.equals(str)) {
             this.b = 1013;
         } else if (AMapException.AMAP_ENGINE_RESPONSE_ERROR.equals(str)) {
-            this.b = 1100;
+            this.b = AMapException.CODE_AMAP_ENGINE_RESPONSE_ERROR;
         } else if (AMapException.AMAP_ENGINE_RESPONSE_DATA_ERROR.equals(str)) {
             this.b = 1101;
         } else if (AMapException.AMAP_ENGINE_CONNECT_TIMEOUT.equals(str)) {
             this.b = 1102;
         } else if (AMapException.AMAP_ENGINE_RETURN_TIMEOUT.equals(str)) {
-            this.b = 1103;
+            this.b = AMapException.CODE_AMAP_ENGINE_RETURN_TIMEOUT;
         } else if (AMapException.AMAP_SERVICE_INVALID_PARAMS.equals(str)) {
-            this.b = 1200;
+            this.b = AMapException.CODE_AMAP_SERVICE_INVALID_PARAMS;
         } else if (AMapException.AMAP_SERVICE_MISSING_REQUIRED_PARAMS.equals(str)) {
-            this.b = 1201;
+            this.b = AMapException.CODE_AMAP_SERVICE_MISSING_REQUIRED_PARAMS;
         } else if (AMapException.AMAP_SERVICE_ILLEGAL_REQUEST.equals(str)) {
-            this.b = 1202;
+            this.b = AMapException.CODE_AMAP_SERVICE_ILLEGAL_REQUEST;
         } else if (AMapException.AMAP_SERVICE_UNKNOWN_ERROR.equals(str)) {
-            this.b = 1203;
+            this.b = AMapException.CODE_AMAP_SERVICE_UNKNOWN_ERROR;
         } else if ("协议解析错误 - ProtocolException".equals(str)) {
             this.b = AMapException.CODE_AMAP_CLIENT_ERROR_PROTOCOL;
         } else if ("socket 连接超时 - SocketTimeoutException".equals(str)) {
@@ -73,23 +71,23 @@ public final class hf extends Exception {
         } else if ("url异常 - MalformedURLException".equals(str)) {
             this.b = AMapException.CODE_AMAP_CLIENT_URL_EXCEPTION;
         } else if ("未知主机 - UnKnowHostException".equals(str)) {
-            this.b = 1804;
+            this.b = AMapException.CODE_AMAP_CLIENT_UNKNOWHOST_EXCEPTION;
         } else if (AMapException.AMAP_CLIENT_UNKNOWN_ERROR.equals(str)) {
-            this.b = 1900;
+            this.b = AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
         } else if ("无效的参数 - IllegalArgumentException".equals(str)) {
             this.b = AMapException.CODE_AMAP_CLIENT_INVALID_PARAMETER;
         } else if (AMapException.AMAP_CLIENT_NETWORK_EXCEPTION.equals(str)) {
-            this.b = 1806;
+            this.b = AMapException.CODE_AMAP_CLIENT_NETWORK_EXCEPTION;
         } else if ("IO 操作异常 - IOException".equals(str)) {
             this.b = AMapException.CODE_AMAP_CLIENT_IO_EXCEPTION;
         } else if ("空指针异常 - NullPointException".equals(str)) {
             this.b = AMapException.CODE_AMAP_CLIENT_NULLPOINT_EXCEPTION;
         } else {
-            this.b = 1800;
+            this.b = AMapException.CODE_AMAP_CLIENT_ERRORCODE_MISSSING;
         }
     }
 
     public final String a() {
-        return this.f5061a;
+        return this.a;
     }
 }

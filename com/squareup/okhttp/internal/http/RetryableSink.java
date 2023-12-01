@@ -22,7 +22,6 @@ public final class RetryableSink implements Sink {
         this.limit = i;
     }
 
-    @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
     public void close() throws IOException {
         if (this.closed) {
             return;
@@ -38,16 +37,13 @@ public final class RetryableSink implements Sink {
         return this.content.size();
     }
 
-    @Override // okio.Sink, java.io.Flushable
     public void flush() throws IOException {
     }
 
-    @Override // okio.Sink
     public Timeout timeout() {
         return Timeout.NONE;
     }
 
-    @Override // okio.Sink
     public void write(Buffer buffer, long j) throws IOException {
         if (this.closed) {
             throw new IllegalStateException("closed");

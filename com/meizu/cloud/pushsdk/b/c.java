@@ -10,14 +10,14 @@ import com.meizu.cloud.pushinternal.DebugLogger;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f23974a = "";
+    private static String f10363a = "";
 
     public static String a(Context context) {
-        if (TextUtils.isEmpty(f23974a)) {
-            f23974a = !a() ? d(context) : b(context);
-            return f23974a;
+        if (TextUtils.isEmpty(f10363a)) {
+            f10363a = !a() ? d(context) : b(context);
+            return f10363a;
         }
-        return f23974a;
+        return f10363a;
     }
 
     public static boolean a() {
@@ -34,7 +34,7 @@ public class c {
         String deviceId;
         try {
             com.meizu.cloud.pushsdk.b.b.d a2 = com.meizu.cloud.pushsdk.b.b.a.a("android.telephony.MzTelephonyManager").a("getDeviceId", new Class[0]).a(new Object[0]);
-            if (!a2.f23973a || TextUtils.isEmpty((CharSequence) a2.b)) {
+            if (!a2.f10362a || TextUtils.isEmpty((CharSequence) a2.b)) {
                 TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
                 if (telephonyManager == null) {
                     return null;

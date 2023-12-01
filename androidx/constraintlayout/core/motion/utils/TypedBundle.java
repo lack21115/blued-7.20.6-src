@@ -6,11 +6,11 @@ import java.util.Arrays;
 public class TypedBundle {
 
     /* renamed from: a  reason: collision with root package name */
-    int[] f2066a = new int[10];
+    int[] f2018a = new int[10];
     int[] b = new int[10];
 
     /* renamed from: c  reason: collision with root package name */
-    int f2067c = 0;
+    int f2019c = 0;
     int[] d = new int[10];
     float[] e = new float[10];
     int f = 0;
@@ -38,18 +38,18 @@ public class TypedBundle {
     }
 
     public void add(int i, int i2) {
-        int i3 = this.f2067c;
-        int[] iArr = this.f2066a;
+        int i3 = this.f2019c;
+        int[] iArr = this.f2018a;
         if (i3 >= iArr.length) {
-            this.f2066a = Arrays.copyOf(iArr, iArr.length * 2);
+            this.f2018a = Arrays.copyOf(iArr, iArr.length * 2);
             int[] iArr2 = this.b;
             this.b = Arrays.copyOf(iArr2, iArr2.length * 2);
         }
-        int[] iArr3 = this.f2066a;
-        int i4 = this.f2067c;
+        int[] iArr3 = this.f2018a;
+        int i4 = this.f2019c;
         iArr3[i4] = i;
         int[] iArr4 = this.b;
-        this.f2067c = i4 + 1;
+        this.f2019c = i4 + 1;
         iArr4[i4] = i2;
     }
 
@@ -96,10 +96,10 @@ public class TypedBundle {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f2067c) {
+            if (i3 >= this.f2019c) {
                 break;
             }
-            typedBundle.add(this.f2066a[i3], this.b[i3]);
+            typedBundle.add(this.f2018a[i3], this.b[i3]);
             i2 = i3 + 1;
         }
         int i4 = 0;
@@ -130,10 +130,10 @@ public class TypedBundle {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f2067c) {
+            if (i3 >= this.f2019c) {
                 break;
             }
-            typedValues.setValue(this.f2066a[i3], this.b[i3]);
+            typedValues.setValue(this.f2018a[i3], this.b[i3]);
             i2 = i3 + 1;
         }
         int i4 = 0;
@@ -163,17 +163,17 @@ public class TypedBundle {
         this.l = 0;
         this.i = 0;
         this.f = 0;
-        this.f2067c = 0;
+        this.f2019c = 0;
     }
 
     public int getInteger(int i) {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f2067c) {
+            if (i3 >= this.f2019c) {
                 return -1;
             }
-            if (this.f2066a[i3] == i) {
+            if (this.f2018a[i3] == i) {
                 return this.b[i3];
             }
             i2 = i3 + 1;

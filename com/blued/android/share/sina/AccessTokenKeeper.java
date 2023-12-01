@@ -26,9 +26,9 @@ public class AccessTokenKeeper {
         }
         Oauth2AccessToken oauth2AccessToken = new Oauth2AccessToken();
         SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCES_NAME, 32768);
-        oauth2AccessToken.setUid(sharedPreferences.getString("uid", ""));
-        oauth2AccessToken.setToken(sharedPreferences.getString("access_token", ""));
-        oauth2AccessToken.setExpiresTime(sharedPreferences.getLong("expires_in", 0L));
+        oauth2AccessToken.setUid(sharedPreferences.getString(KEY_UID, ""));
+        oauth2AccessToken.setToken(sharedPreferences.getString(KEY_ACCESS_TOKEN, ""));
+        oauth2AccessToken.setExpiresTime(sharedPreferences.getLong(KEY_EXPIRES_IN, 0L));
         return oauth2AccessToken;
     }
 
@@ -37,9 +37,9 @@ public class AccessTokenKeeper {
             return;
         }
         SharedPreferences.Editor edit = context.getSharedPreferences(PREFERENCES_NAME, 32768).edit();
-        edit.putString("uid", oauth2AccessToken.getUid());
-        edit.putString("access_token", oauth2AccessToken.getToken());
-        edit.putLong("expires_in", oauth2AccessToken.getExpiresTime());
+        edit.putString(KEY_UID, oauth2AccessToken.getUid());
+        edit.putString(KEY_ACCESS_TOKEN, oauth2AccessToken.getToken());
+        edit.putLong(KEY_EXPIRES_IN, oauth2AccessToken.getExpiresTime());
         edit.commit();
     }
 }

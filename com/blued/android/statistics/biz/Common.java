@@ -11,13 +11,9 @@ import java.util.TimeZone;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Common.class */
 public class Common {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final CommonProtos.Common.Builder f18684a;
+    private final CommonProtos.Common.Builder a;
     private CommonProtos.Common b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f18685c;
+    private String c;
     private String d;
     private TimeZone e;
     private String f;
@@ -29,18 +25,16 @@ public class Common {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/statistics/biz/Common$InstanceHolder.class */
     public static class InstanceHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final Common f18686a = new Common();
+        private static final Common a = new Common();
 
         private InstanceHolder() {
         }
     }
 
     private Common() {
-        this.f18684a = CommonProtos.Common.newBuilder();
+        this.a = CommonProtos.Common.newBuilder();
         this.b = null;
-        this.f18685c = "";
+        this.c = "";
         this.d = "";
         this.e = TimeZone.getDefault();
         this.f = "";
@@ -52,7 +46,7 @@ public class Common {
     }
 
     public static Common a() {
-        return InstanceHolder.f18686a;
+        return InstanceHolder.a;
     }
 
     private void c() {
@@ -64,7 +58,7 @@ public class Common {
         } catch (AssertionError | Exception e) {
             str = null;
         }
-        this.f18684a.setDevice(n(DeviceUtils.a())).setOsVersion(n(Build.VERSION.RELEASE)).setTimezone(n(str)).setLanguage(n(locale.getLanguage())).setRegion(n(locale.getCountry())).setSdkVersionCode(108000);
+        this.a.setDevice(n(DeviceUtils.a())).setOsVersion(n(Build.VERSION.RELEASE)).setTimezone(n(str)).setLanguage(n(locale.getLanguage())).setRegion(n(locale.getCountry())).setSdkVersionCode(108000);
     }
 
     private String n(String str) {
@@ -74,92 +68,92 @@ public class Common {
 
     public Common a(int i) {
         this.j = true;
-        this.f18684a.setAppVersionCode(i);
+        this.a.setAppVersionCode(i);
         return this;
     }
 
     public Common a(Point point) {
         this.j = true;
-        this.f18684a.setScreenWidth(point == null ? 0 : point.x);
-        this.f18684a.setScreenHigh(point == null ? 0 : point.y);
+        this.a.setScreenWidth(point == null ? 0 : point.x);
+        this.a.setScreenHigh(point == null ? 0 : point.y);
         return this;
     }
 
     public Common a(String str) {
-        this.f18684a.setNetOp(n(str));
+        this.a.setNetOp(n(str));
         return this;
     }
 
     public Common b(String str) {
-        this.f18684a.setNet(n(str));
+        this.a.setNet(n(str));
         return this;
     }
 
     public CommonProtos.Common b() {
         if (this.b == null || this.j) {
-            this.b = this.f18684a.build();
+            this.b = this.a.build();
             this.j = false;
         }
         return this.b;
     }
 
     public Common c(String str) {
-        this.f18684a.setLat(n(str));
+        this.a.setLat(n(str));
         return this;
     }
 
     public Common d(String str) {
-        this.f18684a.setLon(n(str));
+        this.a.setLon(n(str));
         return this;
     }
 
     public Common e(String str) {
-        this.f18684a.setChannel(n(str));
+        this.a.setChannel(n(str));
         return this;
     }
 
     public Common f(String str) {
         this.j = true;
         if (TextUtils.isEmpty(str) || !TextUtils.isDigitsOnly(str)) {
-            this.f18684a.setUid(0L);
+            this.a.setUid(0L);
             return this;
         }
-        this.f18684a.setUid(Long.parseLong(str));
+        this.a.setUid(Long.parseLong(str));
         return this;
     }
 
     public Common g(String str) {
-        this.f18684a.setPlatform(n(str));
+        this.a.setPlatform(n(str));
         return this;
     }
 
     public Common h(String str) {
-        this.f18684a.setAppVersion(n(str));
+        this.a.setAppVersion(n(str));
         return this;
     }
 
     public Common i(String str) {
-        this.f18684a.setImei(n(str));
+        this.a.setImei(n(str));
         return this;
     }
 
     public Common j(String str) {
-        this.f18684a.setBoxId(n(str));
+        this.a.setBoxId(n(str));
         return this;
     }
 
     public Common k(String str) {
-        this.f18684a.setDevDna(n(str));
+        this.a.setDevDna(n(str));
         return this;
     }
 
     public Common l(String str) {
-        this.f18684a.setVipType(n(str));
+        this.a.setVipType(n(str));
         return this;
     }
 
     public Common m(String str) {
-        this.f18684a.setOaid(n(str));
+        this.a.setOaid(n(str));
         return this;
     }
 }

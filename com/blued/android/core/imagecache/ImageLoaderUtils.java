@@ -13,41 +13,35 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/ImageLoaderUtils.class */
 public class ImageLoaderUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f9582a = false;
+    public static boolean a = false;
     public static String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static String f9583c;
+    public static String c;
 
     /* renamed from: com.blued.android.core.imagecache.ImageLoaderUtils$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/ImageLoaderUtils$1.class */
     static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f9584a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[Bitmap.Config.values().length];
-            f9584a = iArr;
+            a = iArr;
             try {
                 iArr[Bitmap.Config.ALPHA_8.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f9584a[Bitmap.Config.RGB_565.ordinal()] = 2;
+                a[Bitmap.Config.RGB_565.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f9584a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
+                a[Bitmap.Config.ARGB_4444.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f9584a[Bitmap.Config.ARGB_8888.ordinal()] = 4;
+                a[Bitmap.Config.ARGB_8888.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }

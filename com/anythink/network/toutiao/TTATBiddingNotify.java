@@ -12,31 +12,28 @@ import java.util.Map;
 public class TTATBiddingNotify implements ATBiddingNotice {
 
     /* renamed from: a  reason: collision with root package name */
-    TTClientBidding f9097a;
+    TTClientBidding f6257a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public TTATBiddingNotify(TTClientBidding tTClientBidding) {
-        this.f9097a = tTClientBidding;
+        this.f6257a = tTClientBidding;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public ATAdConst.CURRENCY getNoticePriceCurrency() {
         return ATAdConst.CURRENCY.RMB_CENT;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidDisplay(boolean z, double d) {
         if (ATSDK.isNetworkLogDebug()) {
             Log.i("TTATBiddingNotify", "notifyBidDisplay :  price:" + d + ",isWinner:" + z);
         }
         try {
-            this.f9097a.setPrice(Double.valueOf(d));
+            this.f6257a.setPrice(Double.valueOf(d));
         } catch (Throwable th) {
         }
-        this.f9097a = null;
+        this.f6257a = null;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidLoss(String str, double d, Map<String, Object> map) {
         String str2;
         if (ATSDK.isNetworkLogDebug()) {
@@ -48,13 +45,13 @@ public class TTATBiddingNotify implements ATBiddingNotice {
             if (hashCode != 53) {
                 switch (hashCode) {
                     case 48627:
-                        if (str.equals(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB)) {
+                        if (str.equals("102")) {
                             z = true;
                             break;
                         }
                         break;
                     case 48628:
-                        if (str.equals(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_NORMAL)) {
+                        if (str.equals("103")) {
                             z = true;
                             break;
                         }
@@ -67,9 +64,9 @@ public class TTATBiddingNotify implements ATBiddingNotice {
             z = false;
         }
         if (z) {
-            str2 = ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB;
+            str2 = "102";
             if (!z) {
-                str2 = ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB;
+                str2 = "102";
                 if (!z) {
                     str2 = ErrorContants.REALTIME_LOADAD_ERROR;
                 }
@@ -78,19 +75,18 @@ public class TTATBiddingNotify implements ATBiddingNotice {
             str2 = "2";
         }
         try {
-            this.f9097a.loss(Double.valueOf(d), str2, null);
+            this.f6257a.loss(Double.valueOf(d), str2, null);
         } catch (Throwable th) {
         }
-        this.f9097a = null;
+        this.f6257a = null;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidWin(double d) {
         if (ATSDK.isNetworkLogDebug()) {
             Log.i("TTATBiddingNotify", "notifyBidWin : second price:".concat(String.valueOf(d)));
         }
         try {
-            this.f9097a.win(Double.valueOf(d));
+            this.f6257a.win(Double.valueOf(d));
         } catch (Throwable th) {
         }
     }

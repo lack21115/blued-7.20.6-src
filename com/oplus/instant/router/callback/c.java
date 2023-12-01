@@ -11,16 +11,16 @@ import com.oplus.instant.router.g.d;
 public class c extends Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f24283a;
+    private Context f10596a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Callback f24284c;
+    private Callback f10597c;
 
     public c(Context context, String str, Callback callback) {
-        this.f24283a = context;
+        this.f10596a = context;
         this.b = str;
-        this.f24284c = callback;
+        this.f10597c = callback;
     }
 
     private String a(String str) {
@@ -31,34 +31,34 @@ public class c extends Callback {
     public void onResponse(Callback.Response response) {
         String str;
         StringBuilder sb;
-        if (this.f24284c == null) {
+        if (this.f10597c == null) {
             return;
         }
-        if (this.f24283a instanceof Activity) {
-            if (response.f24281a == 1) {
+        if (this.f10596a instanceof Activity) {
+            if (response.f10594a == 1) {
                 Intent intent = new Intent("android.intent.action.instant.on_stack", Uri.parse(a(this.b)));
                 intent.putExtra("in_one_task", "1");
-                if (intent.resolveActivity(this.f24283a.getPackageManager()) != null) {
+                if (intent.resolveActivity(this.f10596a.getPackageManager()) != null) {
                     sb = new StringBuilder();
                 } else {
                     intent = new Intent("android.intent.action.VIEW", Uri.parse(this.b));
-                    if (intent.resolveActivity(this.f24283a.getPackageManager()) != null) {
+                    if (intent.resolveActivity(this.f10596a.getPackageManager()) != null) {
                         sb = new StringBuilder();
                     } else {
-                        response.f24281a = 200;
+                        response.f10594a = 200;
                         str = "QuickApp is not support";
                     }
                 }
                 sb.append("req_uri: ");
                 sb.append(intent.getDataString());
                 d.a("OneTaskCallback", sb.toString());
-                this.f24283a.startActivity(intent);
+                this.f10596a.startActivity(intent);
             }
-            this.f24284c.onResponse(response);
+            this.f10597c.onResponse(response);
         }
-        response.f24281a = 200;
+        response.f10594a = 200;
         str = "context is not activity";
         response.b = str;
-        this.f24284c.onResponse(response);
+        this.f10597c.onResponse(response);
     }
 }

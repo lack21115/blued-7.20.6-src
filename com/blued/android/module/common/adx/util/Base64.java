@@ -2,9 +2,7 @@ package com.blued.android.module.common.adx.util;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/util/Base64.class */
 public final class Base64 {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f10618a = new byte[128];
+    private static final byte[] a = new byte[128];
     private static final char[] b = new char[64];
 
     static {
@@ -17,7 +15,7 @@ public final class Base64 {
             if (i5 >= 128) {
                 break;
             }
-            f10618a[i5] = -1;
+            a[i5] = -1;
             i4 = i5 + 1;
         }
         int i6 = 90;
@@ -26,7 +24,7 @@ public final class Base64 {
             if (i7 < 65) {
                 break;
             }
-            f10618a[i7] = (byte) (i7 - 65);
+            a[i7] = (byte) (i7 - 65);
             i6 = i7 - 1;
         }
         int i8 = 122;
@@ -36,7 +34,7 @@ public final class Base64 {
             if (i9 < 97) {
                 break;
             }
-            f10618a[i9] = (byte) ((i9 - 97) + 26);
+            a[i9] = (byte) ((i9 - 97) + 26);
             i8 = i9 - 1;
         }
         int i10 = 57;
@@ -45,10 +43,10 @@ public final class Base64 {
             if (i11 < 48) {
                 break;
             }
-            f10618a[i11] = (byte) ((i11 - 48) + 52);
+            a[i11] = (byte) ((i11 - 48) + 52);
             i10 = i11 - 1;
         }
-        byte[] bArr = f10618a;
+        byte[] bArr = a;
         bArr[43] = 62;
         bArr[47] = 63;
         int i12 = 0;

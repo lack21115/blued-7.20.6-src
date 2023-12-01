@@ -3,9 +3,8 @@ package com.tencent.cloud.huiyansdkface.okio;
 import android.os.BatteryStats;
 import java.nio.charset.Charset;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okio/Util.class */
-public final class Util {
+final class Util {
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
     private Util() {

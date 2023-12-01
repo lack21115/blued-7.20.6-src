@@ -441,10 +441,10 @@ public class StackView extends AdapterViewAnimator {
         }
 
         private float rotationInterpolator(float f) {
-            if (f < 0.2f) {
+            if (f < StackView.SWIPE_THRESHOLD_RATIO) {
                 return 0.0f;
             }
-            return (f - 0.2f) / (1.0f - 0.2f);
+            return (f - StackView.SWIPE_THRESHOLD_RATIO) / (1.0f - StackView.SWIPE_THRESHOLD_RATIO);
         }
 
         private float viewAlphaInterpolator(float f) {
@@ -494,7 +494,7 @@ public class StackView extends AdapterViewAnimator {
             }
             LayoutParams layoutParams = (LayoutParams) this.mView.getLayoutParams();
             LayoutParams layoutParams2 = (LayoutParams) StackView.this.mHighlight.getLayoutParams();
-            float f2 = max * 0.2f;
+            float f2 = max * StackView.SWIPE_THRESHOLD_RATIO;
             layoutParams.setHorizontalOffset(Math.round(StackView.this.mSlideAmount * f2));
             layoutParams2.setHorizontalOffset(Math.round(StackView.this.mSlideAmount * f2));
         }
@@ -531,13 +531,13 @@ public class StackView extends AdapterViewAnimator {
                     StackView.this.mHighlight.setRotationX(i * 90.0f * rotationInterpolator(max));
                     return;
                 case 1:
-                    float f2 = (1.0f - max) * 0.2f;
+                    float f2 = (1.0f - max) * StackView.SWIPE_THRESHOLD_RATIO;
                     layoutParams.setVerticalOffset(Math.round(i * f2 * StackView.this.mSlideAmount));
                     layoutParams2.setVerticalOffset(Math.round(i * f2 * StackView.this.mSlideAmount));
                     StackView.this.mHighlight.setAlpha(highlightAlphaInterpolator(f2));
                     return;
                 case 2:
-                    float f3 = max * 0.2f;
+                    float f3 = max * StackView.SWIPE_THRESHOLD_RATIO;
                     layoutParams.setVerticalOffset(Math.round((-i) * f3 * StackView.this.mSlideAmount));
                     layoutParams2.setVerticalOffset(Math.round((-i) * f3 * StackView.this.mSlideAmount));
                     StackView.this.mHighlight.setAlpha(highlightAlphaInterpolator(f3));
@@ -553,7 +553,7 @@ public class StackView extends AdapterViewAnimator {
     }
 
     public StackView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843838);
+        this(context, attributeSet, R.attr.stackViewStyle);
     }
 
     public StackView(Context context, AttributeSet attributeSet, int i) {
@@ -736,10 +736,10 @@ public class StackView extends AdapterViewAnimator {
             this.mFirstLayoutHappened = true;
             updateChildTransforms();
         }
-        int round = Math.round(0.7f * getMeasuredHeight());
+        int round = Math.round(SLIDE_UP_RATIO * getMeasuredHeight());
         if (this.mSlideAmount != round) {
             this.mSlideAmount = round;
-            this.mSwipeThreshold = Math.round(0.2f * round);
+            this.mSwipeThreshold = Math.round(SWIPE_THRESHOLD_RATIO * round);
         }
         if (Float.compare(this.mPerspectiveShiftY, this.mNewPerspectiveShiftY) == 0 && Float.compare(this.mPerspectiveShiftX, this.mNewPerspectiveShiftX) == 0) {
             return;
@@ -786,7 +786,7 @@ public class StackView extends AdapterViewAnimator {
     }
 
     private void pacedScroll(boolean z) {
-        if (System.currentTimeMillis() - this.mLastScrollTime > 100) {
+        if (System.currentTimeMillis() - this.mLastScrollTime > MIN_TIME_BETWEEN_SCROLLS) {
             if (z) {
                 showPrevious();
             } else {
@@ -842,7 +842,7 @@ public class StackView extends AdapterViewAnimator {
             return;
         }
         ObjectAnimator ofPropertyValuesHolder = ObjectAnimator.ofPropertyValuesHolder(view, PropertyValuesHolder.ofFloat("scaleX", f4), PropertyValuesHolder.ofFloat("scaleY", f4), PropertyValuesHolder.ofFloat("translationY", measuredHeight), PropertyValuesHolder.ofFloat("translationX", measuredWidth));
-        ofPropertyValuesHolder.setDuration(100L);
+        ofPropertyValuesHolder.setDuration(MIN_TIME_BETWEEN_SCROLLS);
         if (view instanceof StackFrame) {
             ((StackFrame) view).setTransformAnimator(ofPropertyValuesHolder);
         }
@@ -1300,7 +1300,7 @@ public class StackView extends AdapterViewAnimator {
                     public void run() {
                         view.setAlpha(0.0f);
                     }
-                }, 100L);
+                }, MIN_TIME_BETWEEN_SCROLLS);
             } else {
                 view.setAlpha(0.0f);
             }

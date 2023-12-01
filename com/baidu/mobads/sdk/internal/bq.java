@@ -4,11 +4,11 @@ package com.baidu.mobads.sdk.internal;
 public class bq {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9354a = "logger";
+    public static final String f6514a = "logger";
     public static final int b = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f9355c = 3;
+    public static final int f6515c = 3;
     public static final int d = 4;
     public static final int e = 5;
     public static final int f = 6;
@@ -50,7 +50,7 @@ public class bq {
     }
 
     public void a(String str) {
-        a(f9354a, str);
+        a(f6514a, str);
     }
 
     public void a(String str, String str2) {
@@ -65,7 +65,7 @@ public class bq {
     public void a(String str, Throwable th) {
         if (a(3)) {
             try {
-                av.h(f9354a).b(th, str);
+                av.h(f6514a).b(th, str);
             } catch (Exception e2) {
             }
         }
@@ -82,7 +82,7 @@ public class bq {
     }
 
     public boolean a(int i2) {
-        return a(f9354a, i2);
+        return a(f6514a, i2);
     }
 
     public boolean a(String str, int i2) {
@@ -155,7 +155,7 @@ public class bq {
     }
 
     public void d(String str) {
-        b(f9354a, str);
+        b(f6514a, str);
     }
 
     public void d(String str, Throwable th) {

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemNewVipCenterPrivilegeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29269a;
+    private final ConstraintLayout f15579a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29269a;
+        return this.f15579a;
     }
 }

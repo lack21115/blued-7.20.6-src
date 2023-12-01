@@ -54,13 +54,9 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     private int O;
     private Map<View, Integer> P;
     private final ViewDragHelper.Callback Q;
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10645a;
+    int a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f10646c;
+    int c;
     float d;
     int e;
     float f;
@@ -118,36 +114,31 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        final int f10653a;
+        final int a;
         int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        boolean f10654c;
+        boolean c;
         boolean d;
         boolean e;
 
         public SavedState(Parcel parcel, ClassLoader classLoader) {
             super(parcel, classLoader);
-            this.f10653a = parcel.readInt();
+            this.a = parcel.readInt();
             this.b = parcel.readInt();
-            this.f10654c = parcel.readInt() == 1;
+            this.c = parcel.readInt() == 1;
             this.d = parcel.readInt() == 1;
             this.e = parcel.readInt() == 1;
         }
 
         public SavedState(Parcelable parcelable, BottomSheetBehavior<?> bottomSheetBehavior) {
             super(parcelable);
-            this.f10653a = bottomSheetBehavior.h;
+            this.a = bottomSheetBehavior.h;
             this.b = ((BottomSheetBehavior) bottomSheetBehavior).t;
-            this.f10654c = ((BottomSheetBehavior) bottomSheetBehavior).q;
+            this.c = ((BottomSheetBehavior) bottomSheetBehavior).q;
             this.d = bottomSheetBehavior.g;
             this.e = ((BottomSheetBehavior) bottomSheetBehavior).G;
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
-        @Override // androidx.customview.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             throw new Runtime("d2j fail translate: java.lang.RuntimeException: can not merge I and Z\r\n\tat com.googlecode.dex2jar.ir.TypeClass.merge(TypeClass.java:100)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeRef.updateTypeClass(TypeTransformer.java:174)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.provideAs(TypeTransformer.java:780)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.e1expr(TypeTransformer.java:496)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:713)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:703)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.enexpr(TypeTransformer.java:698)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:719)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.exExpr(TypeTransformer.java:703)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.s1stmt(TypeTransformer.java:810)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.sxStmt(TypeTransformer.java:840)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer$TypeAnalyze.analyze(TypeTransformer.java:206)\r\n\tat com.googlecode.dex2jar.ir.ts.TypeTransformer.transform(TypeTransformer.java:44)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.optimize(Dex2jar.java:162)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertCode(Dex2Asm.java:414)\r\n\tat com.googlecode.d2j.dex.ExDex2Asm.convertCode(ExDex2Asm.java:42)\r\n\tat com.googlecode.d2j.dex.Dex2jar$2.convertCode(Dex2jar.java:128)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertMethod(Dex2Asm.java:509)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertClass(Dex2Asm.java:406)\r\n\tat com.googlecode.d2j.dex.Dex2Asm.convertDex(Dex2Asm.java:422)\r\n\tat com.googlecode.d2j.dex.Dex2jar.doTranslate(Dex2jar.java:172)\r\n\tat com.googlecode.d2j.dex.Dex2jar.to(Dex2jar.java:272)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.doCommandLine(Dex2jarCmd.java:108)\r\n\tat com.googlecode.dex2jar.tools.BaseCmd.doMain(BaseCmd.java:288)\r\n\tat com.googlecode.dex2jar.tools.Dex2jarCmd.main(Dex2jarCmd.java:32)\r\n");
         }
@@ -156,25 +147,21 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/dialog/bottomsheet/BottomSheetBehavior$SettleRunnable.class */
     public class SettleRunnable implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f10655a;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final View f10656c;
+        int a;
+        private final View c;
         private boolean d;
 
         SettleRunnable(View view, int i) {
-            this.f10656c = view;
-            this.f10655a = i;
+            this.c = view;
+            this.a = i;
         }
 
         @Override // java.lang.Runnable
         public void run() {
             if (BottomSheetBehavior.this.i == null || !BottomSheetBehavior.this.i.continueSettling(true)) {
-                BottomSheetBehavior.this.e(this.f10655a);
+                BottomSheetBehavior.this.e(this.a);
             } else {
-                ViewCompat.postOnAnimation(this.f10656c, this);
+                ViewCompat.postOnAnimation(this.c, this);
             }
             this.d = false;
         }
@@ -200,55 +187,49 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 return view.getTop() > (BottomSheetBehavior.this.k + BottomSheetBehavior.this.a()) / 2;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int clampViewPositionHorizontal(View view, int i, int i2) {
                 return view.getLeft();
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int clampViewPositionVertical(View view, int i, int i2) {
                 return MathUtils.clamp(i, BottomSheetBehavior.this.a(), BottomSheetBehavior.this.g ? BottomSheetBehavior.this.k : BottomSheetBehavior.this.e);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int getViewVerticalDragRange(View view) {
                 return BottomSheetBehavior.this.g ? BottomSheetBehavior.this.k : BottomSheetBehavior.this.e;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewDragStateChanged(int i) {
                 if (i == 1 && BottomSheetBehavior.this.H) {
                     BottomSheetBehavior.this.e(1);
                 }
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewPositionChanged(View view, int i, int i2, int i3, int i4) {
                 BottomSheetBehavior.this.f(i2);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewReleased(View view, float f, float f2) {
                 int i;
                 int i2 = 4;
                 if (f2 < 0.0f) {
                     if (BottomSheetBehavior.this.q) {
                         i = BottomSheetBehavior.this.b;
-                    } else if (view.getTop() > BottomSheetBehavior.this.f10646c) {
-                        i = BottomSheetBehavior.this.f10646c;
+                    } else if (view.getTop() > BottomSheetBehavior.this.c) {
+                        i = BottomSheetBehavior.this.c;
                         i2 = 6;
                     } else {
-                        i = BottomSheetBehavior.this.f10645a;
+                        i = BottomSheetBehavior.this.a;
                     }
                     i2 = 3;
                 } else if (BottomSheetBehavior.this.g && BottomSheetBehavior.this.a(view, f2)) {
                     if ((Math.abs(f) >= Math.abs(f2) || f2 <= 500.0f) && !a(view)) {
                         if (BottomSheetBehavior.this.q) {
                             i = BottomSheetBehavior.this.b;
-                        } else if (Math.abs(view.getTop() - BottomSheetBehavior.this.f10645a) < Math.abs(view.getTop() - BottomSheetBehavior.this.f10646c)) {
-                            i = BottomSheetBehavior.this.f10645a;
+                        } else if (Math.abs(view.getTop() - BottomSheetBehavior.this.a) < Math.abs(view.getTop() - BottomSheetBehavior.this.c)) {
+                            i = BottomSheetBehavior.this.a;
                         } else {
-                            i = BottomSheetBehavior.this.f10646c;
+                            i = BottomSheetBehavior.this.c;
                             i2 = 6;
                         }
                         i2 = 3;
@@ -259,15 +240,15 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 } else if (f2 == 0.0f || Math.abs(f) > Math.abs(f2)) {
                     int top = view.getTop();
                     if (!BottomSheetBehavior.this.q) {
-                        if (top < BottomSheetBehavior.this.f10646c) {
+                        if (top < BottomSheetBehavior.this.c) {
                             if (top < Math.abs(top - BottomSheetBehavior.this.e)) {
-                                i = BottomSheetBehavior.this.f10645a;
+                                i = BottomSheetBehavior.this.a;
                                 i2 = 3;
                             } else {
-                                i = BottomSheetBehavior.this.f10646c;
+                                i = BottomSheetBehavior.this.c;
                             }
-                        } else if (Math.abs(top - BottomSheetBehavior.this.f10646c) < Math.abs(top - BottomSheetBehavior.this.e)) {
-                            i = BottomSheetBehavior.this.f10646c;
+                        } else if (Math.abs(top - BottomSheetBehavior.this.c) < Math.abs(top - BottomSheetBehavior.this.e)) {
+                            i = BottomSheetBehavior.this.c;
                         } else {
                             i = BottomSheetBehavior.this.e;
                         }
@@ -282,8 +263,8 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                     i = BottomSheetBehavior.this.e;
                 } else {
                     int top2 = view.getTop();
-                    if (Math.abs(top2 - BottomSheetBehavior.this.f10646c) < Math.abs(top2 - BottomSheetBehavior.this.e)) {
-                        i = BottomSheetBehavior.this.f10646c;
+                    if (Math.abs(top2 - BottomSheetBehavior.this.c) < Math.abs(top2 - BottomSheetBehavior.this.e)) {
+                        i = BottomSheetBehavior.this.c;
                         i2 = 6;
                     } else {
                         i = BottomSheetBehavior.this.e;
@@ -292,7 +273,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 BottomSheetBehavior.this.a(view, i2, i, true);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public boolean tryCaptureView(View view, int i) {
                 if (BottomSheetBehavior.this.h == 1 || BottomSheetBehavior.this.o) {
                     return false;
@@ -324,55 +304,49 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 return view.getTop() > (BottomSheetBehavior.this.k + BottomSheetBehavior.this.a()) / 2;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int clampViewPositionHorizontal(View view, int i, int i2) {
                 return view.getLeft();
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int clampViewPositionVertical(View view, int i, int i2) {
                 return MathUtils.clamp(i, BottomSheetBehavior.this.a(), BottomSheetBehavior.this.g ? BottomSheetBehavior.this.k : BottomSheetBehavior.this.e);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public int getViewVerticalDragRange(View view) {
                 return BottomSheetBehavior.this.g ? BottomSheetBehavior.this.k : BottomSheetBehavior.this.e;
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewDragStateChanged(int i) {
                 if (i == 1 && BottomSheetBehavior.this.H) {
                     BottomSheetBehavior.this.e(1);
                 }
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewPositionChanged(View view, int i, int i2, int i3, int i4) {
                 BottomSheetBehavior.this.f(i2);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public void onViewReleased(View view, float f, float f2) {
                 int i;
                 int i2 = 4;
                 if (f2 < 0.0f) {
                     if (BottomSheetBehavior.this.q) {
                         i = BottomSheetBehavior.this.b;
-                    } else if (view.getTop() > BottomSheetBehavior.this.f10646c) {
-                        i = BottomSheetBehavior.this.f10646c;
+                    } else if (view.getTop() > BottomSheetBehavior.this.c) {
+                        i = BottomSheetBehavior.this.c;
                         i2 = 6;
                     } else {
-                        i = BottomSheetBehavior.this.f10645a;
+                        i = BottomSheetBehavior.this.a;
                     }
                     i2 = 3;
                 } else if (BottomSheetBehavior.this.g && BottomSheetBehavior.this.a(view, f2)) {
                     if ((Math.abs(f) >= Math.abs(f2) || f2 <= 500.0f) && !a(view)) {
                         if (BottomSheetBehavior.this.q) {
                             i = BottomSheetBehavior.this.b;
-                        } else if (Math.abs(view.getTop() - BottomSheetBehavior.this.f10645a) < Math.abs(view.getTop() - BottomSheetBehavior.this.f10646c)) {
-                            i = BottomSheetBehavior.this.f10645a;
+                        } else if (Math.abs(view.getTop() - BottomSheetBehavior.this.a) < Math.abs(view.getTop() - BottomSheetBehavior.this.c)) {
+                            i = BottomSheetBehavior.this.a;
                         } else {
-                            i = BottomSheetBehavior.this.f10646c;
+                            i = BottomSheetBehavior.this.c;
                             i2 = 6;
                         }
                         i2 = 3;
@@ -383,15 +357,15 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 } else if (f2 == 0.0f || Math.abs(f) > Math.abs(f2)) {
                     int top = view.getTop();
                     if (!BottomSheetBehavior.this.q) {
-                        if (top < BottomSheetBehavior.this.f10646c) {
+                        if (top < BottomSheetBehavior.this.c) {
                             if (top < Math.abs(top - BottomSheetBehavior.this.e)) {
-                                i = BottomSheetBehavior.this.f10645a;
+                                i = BottomSheetBehavior.this.a;
                                 i2 = 3;
                             } else {
-                                i = BottomSheetBehavior.this.f10646c;
+                                i = BottomSheetBehavior.this.c;
                             }
-                        } else if (Math.abs(top - BottomSheetBehavior.this.f10646c) < Math.abs(top - BottomSheetBehavior.this.e)) {
-                            i = BottomSheetBehavior.this.f10646c;
+                        } else if (Math.abs(top - BottomSheetBehavior.this.c) < Math.abs(top - BottomSheetBehavior.this.e)) {
+                            i = BottomSheetBehavior.this.c;
                         } else {
                             i = BottomSheetBehavior.this.e;
                         }
@@ -406,8 +380,8 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                     i = BottomSheetBehavior.this.e;
                 } else {
                     int top2 = view.getTop();
-                    if (Math.abs(top2 - BottomSheetBehavior.this.f10646c) < Math.abs(top2 - BottomSheetBehavior.this.e)) {
-                        i = BottomSheetBehavior.this.f10646c;
+                    if (Math.abs(top2 - BottomSheetBehavior.this.c) < Math.abs(top2 - BottomSheetBehavior.this.e)) {
+                        i = BottomSheetBehavior.this.c;
                         i2 = 6;
                     } else {
                         i = BottomSheetBehavior.this.e;
@@ -416,7 +390,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 BottomSheetBehavior.this.a(view, i2, i, true);
             }
 
-            @Override // androidx.customview.widget.ViewDragHelper.Callback
             public boolean tryCaptureView(View view, int i) {
                 if (BottomSheetBehavior.this.h == 1 || BottomSheetBehavior.this.o) {
                     return false;
@@ -481,14 +454,13 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                 return;
             }
             TypedValue typedValue = new TypedValue();
-            context.getTheme().resolveAttribute(16842801, typedValue, true);
+            context.getTheme().resolveAttribute(com.android.internal.R.attr.colorBackground, typedValue, true);
             this.y.setTint(typedValue.data);
         }
     }
 
     private void a(V v, AccessibilityNodeInfoCompat.AccessibilityActionCompat accessibilityActionCompat, final int i) {
-        ViewCompat.replaceAccessibilityAction(v, accessibilityActionCompat, null, new AccessibilityViewCommand() { // from class: com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetBehavior.5
-            @Override // androidx.core.view.accessibility.AccessibilityViewCommand
+        ViewCompat.replaceAccessibilityAction(v, accessibilityActionCompat, (CharSequence) null, new AccessibilityViewCommand() { // from class: com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetBehavior.5
             public boolean perform(View view, AccessibilityViewCommand.CommandArguments commandArguments) {
                 BottomSheetBehavior.this.d(i);
                 return true;
@@ -506,7 +478,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         }
         int i2 = this.p;
         if (i2 == -1 || (i2 & 2) == 2) {
-            this.q = savedState.f10654c;
+            this.q = savedState.c;
         }
         int i3 = this.p;
         if (i3 == -1 || (i3 & 4) == 4) {
@@ -519,9 +491,9 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     }
 
     public static <V extends View> BottomSheetBehavior<V> b(V v) {
-        ViewGroup.LayoutParams layoutParams = v.getLayoutParams();
+        CoordinatorLayout.LayoutParams layoutParams = v.getLayoutParams();
         if (layoutParams instanceof CoordinatorLayout.LayoutParams) {
-            CoordinatorLayout.Behavior behavior = ((CoordinatorLayout.LayoutParams) layoutParams).getBehavior();
+            CoordinatorLayout.Behavior behavior = layoutParams.getBehavior();
             if (behavior instanceof BottomSheetBehavior) {
                 return (BottomSheetBehavior) behavior;
             }
@@ -535,7 +507,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             return;
         }
         ViewUtils.doOnApplyWindowInsets(view, new ViewUtils.OnApplyWindowInsetsListener() { // from class: com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetBehavior.3
-            @Override // com.google.android.material.internal.ViewUtils.OnApplyWindowInsetsListener
             public WindowInsetsCompat onApplyWindowInsets(View view2, WindowInsetsCompat windowInsetsCompat, ViewUtils.RelativePadding relativePadding) {
                 BottomSheetBehavior.this.z = windowInsetsCompat.getMandatorySystemGestureInsets().bottom;
                 BottomSheetBehavior.this.f(false);
@@ -575,7 +546,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     }
 
     private void g() {
-        this.f10646c = (int) (this.k * (1.0f - this.d));
+        this.c = (int) (this.k * (1.0f - this.d));
     }
 
     private void g(final int i) {
@@ -602,9 +573,9 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         if (weakReference == null) {
             return;
         }
-        ViewParent parent = weakReference.get().getParent();
+        CoordinatorLayout parent = weakReference.get().getParent();
         if (parent instanceof CoordinatorLayout) {
-            CoordinatorLayout coordinatorLayout = (CoordinatorLayout) parent;
+            CoordinatorLayout coordinatorLayout = parent;
             int childCount = coordinatorLayout.getChildCount();
             if (Build.VERSION.SDK_INT >= 16 && z) {
                 if (this.P != null) {
@@ -726,7 +697,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     }
 
     public int a() {
-        return this.q ? this.b : this.f10645a;
+        return this.q ? this.b : this.a;
     }
 
     View a(View view) {
@@ -737,9 +708,9 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             ViewGroup viewGroup = (ViewGroup) view;
             int childCount = viewGroup.getChildCount();
             for (int i = 0; i < childCount; i++) {
-                View a2 = a(viewGroup.getChildAt(i));
-                if (a2 != null) {
-                    return a2;
+                View a = a(viewGroup.getChildAt(i));
+                if (a != null) {
+                    return a;
                 }
             }
             return null;
@@ -788,7 +759,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         if (i == 4) {
             i2 = this.e;
         } else if (i == 6) {
-            i2 = this.f10646c;
+            i2 = this.c;
             if (this.q && i2 <= (i3 = this.b)) {
                 i2 = i3;
                 i = 3;
@@ -815,10 +786,10 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             this.D = new SettleRunnable(view, i);
         }
         if (((SettleRunnable) this.D).d) {
-            this.D.f10655a = i;
+            this.D.a = i;
             return;
         }
-        this.D.f10655a = i;
+        this.D.a = i;
         ViewCompat.postOnAnimation(view, this.D);
         ((SettleRunnable) this.D).d = true;
     }
@@ -856,7 +827,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         if (i < 0) {
             throw new IllegalArgumentException("offset must be greater than or equal to 0");
         }
-        this.f10645a = i;
+        this.a = i;
     }
 
     public void b(BottomSheetCallback bottomSheetCallback) {
@@ -963,21 +934,18 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         }
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onAttachedToLayoutParams(CoordinatorLayout.LayoutParams layoutParams) {
         super.onAttachedToLayoutParams(layoutParams);
         this.l = null;
         this.i = null;
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onDetachedFromLayoutParams() {
         super.onDetachedFromLayoutParams();
         this.l = null;
         this.i = null;
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onInterceptTouchEvent(CoordinatorLayout coordinatorLayout, V v, MotionEvent motionEvent) {
         ViewDragHelper viewDragHelper;
         if (!v.isShown() || !this.H) {
@@ -1045,7 +1013,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         return true;
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onLayoutChild(CoordinatorLayout coordinatorLayout, V v, int i) {
         MaterialShapeDrawable materialShapeDrawable;
         if (ViewCompat.getFitsSystemWindows(coordinatorLayout) && !ViewCompat.getFitsSystemWindows(v)) {
@@ -1091,7 +1058,7 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         if (i2 == 3) {
             ViewCompat.offsetTopAndBottom(v, a());
         } else if (i2 == 6) {
-            ViewCompat.offsetTopAndBottom(v, this.f10646c);
+            ViewCompat.offsetTopAndBottom(v, this.c);
         } else if (this.g && i2 == 5) {
             ViewCompat.offsetTopAndBottom(v, this.k);
         } else {
@@ -1109,7 +1076,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0036, code lost:
         if (super.onNestedPreFling(r8, r9, r10, r11, r12) != false) goto L9;
      */
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -1156,7 +1122,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         throw new UnsupportedOperationException("Method not decompiled: com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetBehavior.onNestedPreFling(androidx.coordinatorlayout.widget.CoordinatorLayout, android.view.View, android.view.View, float, float):boolean");
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onNestedPreScroll(CoordinatorLayout coordinatorLayout, V v, View view, int i, int i2, int[] iArr, int i3) {
         if (i3 == 1) {
             return;
@@ -1198,28 +1163,24 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         this.K = true;
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onNestedScroll(CoordinatorLayout coordinatorLayout, V v, View view, int i, int i2, int i3, int i4, int i5, int[] iArr) {
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onRestoreInstanceState(CoordinatorLayout coordinatorLayout, V v, Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(coordinatorLayout, v, savedState.getSuperState());
         a(savedState);
-        if (savedState.f10653a == 1 || savedState.f10653a == 2) {
+        if (savedState.a == 1 || savedState.a == 2) {
             this.h = 4;
         } else {
-            this.h = savedState.f10653a;
+            this.h = savedState.a;
         }
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public Parcelable onSaveInstanceState(CoordinatorLayout coordinatorLayout, V v) {
         return new SavedState(super.onSaveInstanceState(coordinatorLayout, v), (BottomSheetBehavior<?>) this);
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onStartNestedScroll(CoordinatorLayout coordinatorLayout, V v, View view, View view2, int i, int i2) {
         boolean z = false;
         this.J = 0;
@@ -1230,7 +1191,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         return z;
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public void onStopNestedScroll(CoordinatorLayout coordinatorLayout, V v, View view, int i) {
         int i2;
         int i3 = 3;
@@ -1245,9 +1205,9 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                     i2 = this.b;
                 } else {
                     int top = v.getTop();
-                    i2 = this.f10646c;
+                    i2 = this.c;
                     if (top <= i2) {
-                        i2 = this.f10645a;
+                        i2 = this.a;
                     }
                     i3 = 6;
                 }
@@ -1257,15 +1217,15 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
             } else if (this.J == 0) {
                 int top2 = v.getTop();
                 if (!this.q) {
-                    int i4 = this.f10646c;
+                    int i4 = this.c;
                     if (top2 < i4) {
                         if (top2 < Math.abs(top2 - this.e)) {
-                            i2 = this.f10645a;
+                            i2 = this.a;
                         } else {
-                            i2 = this.f10646c;
+                            i2 = this.c;
                         }
                     } else if (Math.abs(top2 - i4) < Math.abs(top2 - this.e)) {
-                        i2 = this.f10646c;
+                        i2 = this.c;
                     } else {
                         i2 = this.e;
                         i3 = 4;
@@ -1282,8 +1242,8 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
                     i2 = this.e;
                 } else {
                     int top3 = v.getTop();
-                    if (Math.abs(top3 - this.f10646c) < Math.abs(top3 - this.e)) {
-                        i2 = this.f10646c;
+                    if (Math.abs(top3 - this.c) < Math.abs(top3 - this.e)) {
+                        i2 = this.c;
                         i3 = 6;
                     } else {
                         i2 = this.e;
@@ -1296,7 +1256,6 @@ public class BottomSheetBehavior<V extends View> extends CoordinatorLayout.Behav
         }
     }
 
-    @Override // androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior
     public boolean onTouchEvent(CoordinatorLayout coordinatorLayout, V v, MotionEvent motionEvent) {
         if (v.isShown()) {
             int actionMasked = motionEvent.getActionMasked();

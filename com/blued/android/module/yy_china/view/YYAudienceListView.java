@@ -32,13 +32,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYAudienceListView.class */
 public class YYAudienceListView extends RelativeLayout implements AudienceCountObserver, AudiencesChangedObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f18036a;
+    private BaseYYStudioFragment a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private AudienceAdapter f18037c;
+    private AudienceAdapter c;
     private TextView d;
 
     public YYAudienceListView(Context context) {
@@ -61,7 +57,7 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
         YYObserverManager.a().a((AudienceCountObserver) this);
         YYObserverManager.a().a((AudiencesChangedObserver) this);
         LayoutInflater.from(getContext()).inflate(R.layout.view_yy_audience_list, (ViewGroup) this, true);
-        this.b = (RecyclerView) findViewById(R.id.rv_fans_list_view);
+        this.b = findViewById(R.id.rv_fans_list_view);
         this.d = (TextView) findViewById(R.id.tv_audience_view);
         BluedLinearLayoutManager bluedLinearLayoutManager = new BluedLinearLayoutManager(getContext());
         bluedLinearLayoutManager.setOrientation(0);
@@ -70,7 +66,7 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                YYAudienceListView.this.f18036a.c(0);
+                YYAudienceListView.this.a.c(0);
             }
         });
     }
@@ -80,7 +76,7 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
         if (b == null) {
             return;
         }
-        YYRoomHttpUtils.k(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYAudienceModel>>(this.f18036a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYAudienceListView.3
+        YYRoomHttpUtils.k(b.room_id, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYAudienceModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.view.YYAudienceListView.3
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -89,7 +85,7 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
                     YYAudienceListView.this.a(0);
                     return;
                 }
-                YYAudienceListView.this.f18037c.setNewData(null);
+                YYAudienceListView.this.c.setNewData(null);
                 YYRoomModel b2 = YYRoomInfoManager.e().b();
                 StringBuilder sb = new StringBuilder();
                 sb.append("response model is empty : ");
@@ -102,7 +98,7 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
                 YYAudienceListView.this.a(bluedEntityA.data);
                 YYAudienceListView.this.a(bluedEntityA.extra.total);
             }
-        }, (IRequestHost) this.f18036a.getFragmentActive());
+        }, (IRequestHost) this.a.getFragmentActive());
     }
 
     @Override // com.blued.android.module.yy_china.observer.AudienceCountObserver
@@ -112,17 +108,16 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
 
     public void a(final BaseYYStudioFragment baseYYStudioFragment) {
         Logger.e("YYAudienceListView", "YYAudienceListView init ... ");
-        this.f18036a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
         YYObserverManager.a().a((AudienceCountObserver) this);
         YYObserverManager.a().a((AudiencesChangedObserver) this);
         AudienceAdapter audienceAdapter = new AudienceAdapter(getContext(), baseYYStudioFragment);
-        this.f18037c = audienceAdapter;
+        this.c = audienceAdapter;
         this.b.setAdapter(audienceAdapter);
-        this.f18037c.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYAudienceListView.2
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
+        this.c.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYAudienceListView.2
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 YYAudienceModel yYAudienceModel;
-                if (YYAudienceListView.this.f18037c.getData().isEmpty() || i >= YYAudienceListView.this.f18037c.getData().size() || (yYAudienceModel = YYAudienceListView.this.f18037c.getData().get(i)) == null) {
+                if (YYAudienceListView.this.c.getData().isEmpty() || i >= YYAudienceListView.this.c.getData().size() || (yYAudienceModel = (YYAudienceModel) YYAudienceListView.this.c.getData().get(i)) == null) {
                     return;
                 }
                 BaseYYStudioFragment baseYYStudioFragment2 = baseYYStudioFragment;
@@ -137,11 +132,11 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
 
     @Override // com.blued.android.module.yy_china.observer.AudiencesChangedObserver
     public void a(List<YYAudienceModel> list) {
-        if (this.f18036a == null) {
+        if (this.a == null) {
             return;
         }
         if (list == null || list.isEmpty()) {
-            this.f18037c.setNewData(null);
+            this.c.setNewData(null);
             return;
         }
         if (getVisibility() != 0) {
@@ -152,7 +147,7 @@ public class YYAudienceListView extends RelativeLayout implements AudienceCountO
         for (int i = 0; it.hasNext() && i <= 2; i++) {
             arrayList.add(it.next().copy());
         }
-        this.f18037c.setNewData(arrayList);
+        this.c.setNewData(arrayList);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

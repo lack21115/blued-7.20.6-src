@@ -13,11 +13,11 @@ import com.blued.android.framework.utils.DensityUtils;
 public class HorizontalScrollView extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f28434a;
+    private RecyclerView f14744a;
     private VerticalTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f28435c;
+    private boolean f14745c;
     private float d;
     private int e;
     private float f;
@@ -42,7 +42,7 @@ public class HorizontalScrollView extends RelativeLayout {
 
     public HorizontalScrollView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28435c = true;
+        this.f14745c = true;
         this.d = 0.0f;
         this.e = 0;
         this.h = false;
@@ -52,7 +52,7 @@ public class HorizontalScrollView extends RelativeLayout {
 
     private void setHintTextTranslationX(float f) {
         VerticalTextView verticalTextView;
-        if (!this.f28435c || (verticalTextView = this.b) == null) {
+        if (!this.f14745c || (verticalTextView = this.b) == null) {
             return;
         }
         float f2 = this.d + f;
@@ -71,7 +71,7 @@ public class HorizontalScrollView extends RelativeLayout {
     @Override // android.view.ViewGroup
     public void addView(View view) {
         if (view instanceof RecyclerView) {
-            this.f28434a = (RecyclerView) view;
+            this.f14744a = (RecyclerView) view;
         } else if (view instanceof VerticalTextView) {
             this.b = (VerticalTextView) view;
         }
@@ -101,12 +101,11 @@ public class HorizontalScrollView extends RelativeLayout {
     }
 
     public boolean getShowMore() {
-        return this.f28435c;
+        return this.f14745c;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         VerticalTextView verticalTextView = this.b;
         if (verticalTextView != null) {
@@ -130,6 +129,6 @@ public class HorizontalScrollView extends RelativeLayout {
     }
 
     public void setShowMore(boolean z) {
-        this.f28435c = z;
+        this.f14745c = z;
     }
 }

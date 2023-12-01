@@ -9,24 +9,24 @@ import java.nio.ByteOrder;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f1236a = 12375;
+    public static int f1188a = 12375;
     public static int b = 12374;
 
     /* renamed from: c  reason: collision with root package name */
-    public d f1237c;
+    public d f1189c;
     public Object d = null;
     public int e = -1;
     public int f = -1;
 
     public e(d dVar) {
-        this.f1237c = dVar;
+        this.f1189c = dVar;
     }
 
     public int a() {
         int i = this.e;
         int i2 = i;
         if (i < 0) {
-            i2 = this.f1237c.a(this.d, f1236a);
+            i2 = this.f1189c.a(this.d, f1188a);
         }
         return i2;
     }
@@ -35,52 +35,52 @@ public class e {
         if (this.d != null) {
             throw new IllegalStateException("surface already created");
         }
-        this.d = this.f1237c.a(i, i2);
+        this.d = this.f1189c.a(i, i2);
         this.e = i;
         this.f = i2;
     }
 
     public void a(long j) {
-        this.f1237c.a(this.d, j);
+        this.f1189c.a(this.d, j);
     }
 
     public void a(Object obj) {
         if (this.d != null) {
             throw new IllegalStateException("surface already created");
         }
-        this.d = this.f1237c.b(obj);
+        this.d = this.f1189c.b(obj);
     }
 
     public int b() {
         int i = this.f;
         int i2 = i;
         if (i < 0) {
-            i2 = this.f1237c.a(this.d, b);
+            i2 = this.f1189c.a(this.d, b);
         }
         return i2;
     }
 
     public void c() {
-        this.f1237c.a(this.d);
+        this.f1189c.a(this.d);
         this.d = null;
         this.f = -1;
         this.e = -1;
     }
 
     public void d() {
-        this.f1237c.c(this.d);
+        this.f1189c.c(this.d);
     }
 
     public boolean e() {
-        boolean d = this.f1237c.d(this.d);
+        boolean d = this.f1189c.d(this.d);
         if (!d) {
-            a.a.a.a.a.e.e.f1361c.b("GlUtil", "WARNING: swapBuffers() failed");
+            a.a.a.a.a.e.e.f1313c.b("GlUtil", "WARNING: swapBuffers() failed");
         }
         return d;
     }
 
     public Bitmap f() {
-        if (this.f1237c.e(this.d)) {
+        if (this.f1189c.e(this.d)) {
             int a2 = a();
             int b2 = b();
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(a2 * b2 * 4);
@@ -90,7 +90,7 @@ public class e {
             allocateDirect.rewind();
             Bitmap createBitmap = Bitmap.createBitmap(a2, b2, Bitmap.Config.ARGB_8888);
             createBitmap.copyPixelsFromBuffer(allocateDirect);
-            a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f1361c;
+            a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f1313c;
             eVar.b("GlUtil", "captured " + a2 + "x" + b2);
             return createBitmap;
         }

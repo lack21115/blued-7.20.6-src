@@ -6,26 +6,24 @@ import java.io.File;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/http/PrevCacheFileDataFetcher.class */
 public class PrevCacheFileDataFetcher extends FileDataFetcher {
-
-    /* renamed from: a  reason: collision with root package name */
-    private File f9562a;
+    private File a;
 
     public PrevCacheFileDataFetcher(File file) {
         super(file.getPath());
-        this.f9562a = file;
+        this.a = file;
     }
 
-    @Override // com.blued.android.core.image.http.FileDataFetcher, com.bumptech.glide.load.data.DataFetcher
+    @Override // com.blued.android.core.image.http.FileDataFetcher
     public void a() {
         super.a();
-        File file = this.f9562a;
+        File file = this.a;
         if (file == null || !file.exists()) {
             return;
         }
         if (ImageLoader.a()) {
-            Log.e("IMAGE", "-- PrevCacheFileDataFetcher delete : " + this.f9562a.getPath());
+            Log.e("IMAGE", "-- PrevCacheFileDataFetcher delete : " + this.a.getPath());
         }
-        this.f9562a.delete();
-        this.f9562a = null;
+        this.a.delete();
+        this.a = null;
     }
 }

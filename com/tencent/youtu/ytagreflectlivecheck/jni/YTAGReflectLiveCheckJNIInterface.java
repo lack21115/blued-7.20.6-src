@@ -2,7 +2,6 @@ package com.tencent.youtu.ytagreflectlivecheck.jni;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.youtu.ytagreflectlivecheck.jni.cppDefine.FullPack;
 import com.tencent.youtu.ytagreflectlivecheck.jni.cppDefine.RawYuvData;
 import com.tencent.youtu.ytagreflectlivecheck.jni.cppDefine.Timeval;
@@ -64,7 +63,7 @@ public class YTAGReflectLiveCheckJNIInterface {
             if (!file.exists()) {
                 file.mkdirs();
             }
-            String str = "/sdcard/reflect/" + i + BridgeUtil.SPLIT_MARK;
+            String str = "/sdcard/reflect/" + i + "/";
             File file2 = new File(str);
             if (!file2.exists()) {
                 file2.mkdirs();

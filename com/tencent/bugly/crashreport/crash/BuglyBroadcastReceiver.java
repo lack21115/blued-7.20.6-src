@@ -14,11 +14,11 @@ public class BuglyBroadcastReceiver extends BroadcastReceiver {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35139c;
+    private String f21448c;
     private boolean e = true;
 
     /* renamed from: a  reason: collision with root package name */
-    private IntentFilter f35138a = new IntentFilter();
+    private IntentFilter f21447a = new IntentFilter();
 
     private boolean a(Context context, Intent intent) {
         synchronized (this) {
@@ -30,13 +30,13 @@ public class BuglyBroadcastReceiver extends BroadcastReceiver {
                     }
                     String b = com.tencent.bugly.crashreport.common.info.b.b(this.b);
                     x.c("is Connect BC " + b, new Object[0]);
-                    x.a("network %s changed to %s", this.f35139c, b);
+                    x.a("network %s changed to %s", this.f21448c, b);
                     if (b == null) {
-                        this.f35139c = null;
+                        this.f21448c = null;
                         return true;
                     }
-                    String str = this.f35139c;
-                    this.f35139c = b;
+                    String str = this.f21448c;
+                    this.f21448c = b;
                     long currentTimeMillis = System.currentTimeMillis();
                     com.tencent.bugly.crashreport.common.strategy.a a2 = com.tencent.bugly.crashreport.common.strategy.a.a();
                     u a3 = u.a();
@@ -46,7 +46,7 @@ public class BuglyBroadcastReceiver extends BroadcastReceiver {
                         return true;
                     }
                     if (!b.equals(str)) {
-                        if (currentTimeMillis - a3.a(c.f35162a) > 30000) {
+                        if (currentTimeMillis - a3.a(c.f21471a) > 30000) {
                             x.a("try to upload crash on network changed.", new Object[0]);
                             c a5 = c.a();
                             if (a5 != null) {
@@ -55,7 +55,7 @@ public class BuglyBroadcastReceiver extends BroadcastReceiver {
                         }
                         if (currentTimeMillis - a3.a(1001) > 30000) {
                             x.a("try to upload userinfo on network changed.", new Object[0]);
-                            com.tencent.bugly.crashreport.biz.b.f35123a.b();
+                            com.tencent.bugly.crashreport.biz.b.f21432a.b();
                         }
                     }
                     return true;
@@ -82,8 +82,8 @@ public class BuglyBroadcastReceiver extends BroadcastReceiver {
 
     public void addFilter(String str) {
         synchronized (this) {
-            if (!this.f35138a.hasAction(str)) {
-                this.f35138a.addAction(str);
+            if (!this.f21447a.hasAction(str)) {
+                this.f21447a.addAction(str);
             }
             x.c("add action %s", str);
         }
@@ -110,7 +110,7 @@ public class BuglyBroadcastReceiver extends BroadcastReceiver {
                     try {
                         x.a(BuglyBroadcastReceiver.d.getClass(), "Register broadcast receiver of Bugly.", new Object[0]);
                         synchronized (this) {
-                            BuglyBroadcastReceiver.this.b.registerReceiver(BuglyBroadcastReceiver.d, BuglyBroadcastReceiver.this.f35138a, "com.tencent.bugly.BuglyBroadcastReceiver.permission", null);
+                            BuglyBroadcastReceiver.this.b.registerReceiver(BuglyBroadcastReceiver.d, BuglyBroadcastReceiver.this.f21447a, "com.tencent.bugly.BuglyBroadcastReceiver.permission", null);
                         }
                     } catch (Throwable th) {
                         th.printStackTrace();

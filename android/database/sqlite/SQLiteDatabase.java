@@ -116,7 +116,7 @@ public final class SQLiteDatabase extends SQLiteClosable {
             File[] listFiles = parentFile.listFiles(new FileFilter() { // from class: android.database.sqlite.SQLiteDatabase.2
                 @Override // java.io.FileFilter
                 public boolean accept(File file2) {
-                    return file2.getName().startsWith(String.this);
+                    return file2.getName().startsWith(str);
                 }
             });
             z = delete;

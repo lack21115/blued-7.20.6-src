@@ -10,8 +10,8 @@ import com.blued.android.module.external_sense_library.glutils.GlUtil;
 import com.blued.android.module.external_sense_library.utils.Accelerometer;
 import com.blued.android.module.external_sense_library.utils.AppLogger;
 import com.blued.android.module.external_sense_library.utils.LogUtils;
-import com.sensetime.stmobile.STMobileHumanActionNative;
 import com.sensetime.stmobile.model.STHumanAction;
+import javax.microedition.khronos.opengles.GL10;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/manager/SenseTimeQiniuShortVideoManager.class */
 public class SenseTimeQiniuShortVideoManager extends SenseTimeBaseManager {
@@ -49,8 +49,8 @@ public class SenseTimeQiniuShortVideoManager extends SenseTimeBaseManager {
 
     @Override // com.blued.android.module.external_sense_library.contract.ISenseTimeProcessor
     public void adjustViewPort(int i, int i2) {
-        AppLogger a2 = AppLogger.a();
-        a2.a("Blued_Sense_SenseTimeManageradjustViewPort() | width:" + i + " height:" + i2, new Object[0]);
+        AppLogger a = AppLogger.a();
+        a.a("Blued_Sense_SenseTimeManageradjustViewPort() | width:" + i + " height:" + i2, new Object[0]);
         if (this.mSurfaceWidth == i && this.mSurfaceHeight == i2) {
             return;
         }
@@ -62,11 +62,11 @@ public class SenseTimeQiniuShortVideoManager extends SenseTimeBaseManager {
     protected void checkTextureOutId() {
         if (this.mBeautifyTextureId == null) {
             this.mBeautifyTextureId = new int[1];
-            GlUtil.a(this.mTexHeight, this.mTexWidth, this.mBeautifyTextureId, 3553);
+            GlUtil.a(this.mTexHeight, this.mTexWidth, this.mBeautifyTextureId, GL10.GL_TEXTURE_2D);
         }
         if (this.mStickerTextureOutId == null) {
             this.mStickerTextureOutId = new int[1];
-            GlUtil.a(this.mTexHeight, this.mTexWidth, this.mStickerTextureOutId, 3553);
+            GlUtil.a(this.mTexHeight, this.mTexWidth, this.mStickerTextureOutId, GL10.GL_TEXTURE_2D);
         }
     }
 
@@ -96,7 +96,7 @@ public class SenseTimeQiniuShortVideoManager extends SenseTimeBaseManager {
                 this.mOutputBuffer = new byte[i4];
             }
         }
-        GLES20.glDisable(2929);
+        GLES20.glDisable(GL10.GL_DEPTH_TEST);
         return this.mInputTextureId;
     }
 
@@ -114,11 +114,11 @@ public class SenseTimeQiniuShortVideoManager extends SenseTimeBaseManager {
 
     @Override // com.blued.android.module.external_sense_library.manager.SenseTimeBaseManager
     protected int getCurrentOrientation() {
-        int c2 = Accelerometer.c();
-        int i = c2 - 1;
+        int c = Accelerometer.c();
+        int i = c - 1;
         int i2 = i;
         if (i < 0) {
-            i2 = c2 ^ 3;
+            i2 = c ^ 3;
         }
         return i2;
     }
@@ -128,8 +128,8 @@ public class SenseTimeQiniuShortVideoManager extends SenseTimeBaseManager {
         this.mImageWidth = i2;
         this.mImageHeight = i;
         this.mImageRotation = i3;
-        AppLogger a2 = AppLogger.a();
-        a2.a("Blued_Sense_SenseTimeManager@@@ data:" + bArr.length + " | width:" + i + " | height:" + i2 + " | rotation:" + i3, new Object[0]);
+        AppLogger a = AppLogger.a();
+        a.a("Blued_Sense_SenseTimeManager@@@ data:" + bArr.length + " | width:" + i + " | height:" + i2 + " | rotation:" + i3, new Object[0]);
         synchronized (this.mImageDataLock) {
             if (this.mImageData == null || this.mImageData.length != ((this.mImageHeight * this.mImageWidth) * 3) / 2) {
                 this.mImageData = new byte[((this.mImageWidth * this.mImageHeight) * 3) / 2];
@@ -282,7 +282,7 @@ public class SenseTimeQiniuShortVideoManager extends SenseTimeBaseManager {
             j = 0;
         }
         if (z) {
-            this.mDetectConfig = j | 1 | 4 | STMobileHumanActionNative.ST_MOBILE_HAND_DETECT_FULL;
+            this.mDetectConfig = j | 1 | 4 | 71468272516864L;
         } else {
             this.mDetectConfig = j;
         }

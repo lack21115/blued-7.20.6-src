@@ -25,14 +25,14 @@ public class GroupSearchListFragment extends BaseFragment implements View.OnClic
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f30851c;
+    private View f17161c;
     private TabPageIndicatorWithDot d;
     private ViewPager e;
     private MyPagerAdapter f;
     private String g;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f30850a = GroupSearchListFragment.class.getSimpleName();
+    private String f17160a = GroupSearchListFragment.class.getSimpleName();
     private ViewPager.OnPageChangeListener h = new ViewPager.OnPageChangeListener() { // from class: com.soft.blued.ui.group.GroupSearchListFragment.1
         @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
         public void onPageScrollStateChanged(int i) {
@@ -51,7 +51,7 @@ public class GroupSearchListFragment extends BaseFragment implements View.OnClic
     public class MyPagerAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        public GroupSearchResultFragment f30853a;
+        public GroupSearchResultFragment f17163a;
         public GroupSearchResultFragment b;
         private final String[] d;
 
@@ -68,10 +68,10 @@ public class GroupSearchListFragment extends BaseFragment implements View.OnClic
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i == 0) {
-                if (this.f30853a == null) {
-                    this.f30853a = GroupSearchResultFragment.a(i, GroupSearchListFragment.this.g);
+                if (this.f17163a == null) {
+                    this.f17163a = GroupSearchResultFragment.a(i, GroupSearchListFragment.this.g);
                 }
-                return this.f30853a;
+                return this.f17163a;
             } else if (i != 1) {
                 return null;
             } else {
@@ -102,18 +102,18 @@ public class GroupSearchListFragment extends BaseFragment implements View.OnClic
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f30851c.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(this.g);
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        ((TextView) commonTopTitleNoTrans.findViewById(2131363108)).setOnTouchListener(new ClickUtils());
+        CommonTopTitleNoTrans findViewById = this.f17161c.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(this.g);
+        findViewById.setLeftClickListener(this);
+        ((TextView) findViewById.findViewById(2131363108)).setOnTouchListener(new ClickUtils());
     }
 
     private void c() {
-        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.f30851c.findViewById(2131364744);
+        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.f17161c.findViewById(R.id.indicator);
         this.d = tabPageIndicatorWithDot;
         tabPageIndicatorWithDot.setOnPageChangeListener(this.h);
-        this.e = (ViewPager) this.f30851c.findViewById(R.id.p_viewpager);
+        this.e = (ViewPager) this.f17161c.findViewById(R.id.p_viewpager);
         this.f = new MyPagerAdapter(getChildFragmentManager());
         this.e.setOffscreenPageLimit(2);
         this.e.setAdapter(this.f);
@@ -121,10 +121,9 @@ public class GroupSearchListFragment extends BaseFragment implements View.OnClic
         this.d.setVisibility(0);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
-        if (this.f.f30853a != null) {
-            this.f.f30853a.onActivityResult(i, i2, intent);
+        if (this.f.f17163a != null) {
+            this.f.f17163a.onActivityResult(i, i2, intent);
         }
         if (this.f.b != null) {
             this.f.b.onActivityResult(i, i2, intent);
@@ -140,23 +139,21 @@ public class GroupSearchListFragment extends BaseFragment implements View.OnClic
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        View view = this.f30851c;
+        View view = this.f17161c;
         if (view == null) {
-            this.f30851c = layoutInflater.inflate(R.layout.fragment_group_nearby_and_hot, viewGroup, false);
+            this.f17161c = layoutInflater.inflate(R.layout.fragment_group_nearby_and_hot, viewGroup, false);
             a();
             b();
             c();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f30851c.getParent()).removeView(this.f30851c);
+            ((ViewGroup) this.f17161c.getParent()).removeView(this.f17161c);
         }
-        return this.f30851c;
+        return this.f17161c;
     }
 }

@@ -9,10 +9,10 @@ import java.util.ArrayList;
 public class ld extends HeatmapInfo implements vc {
 
     /* renamed from: a  reason: collision with root package name */
-    private GradientVectorOverlayProvider f37621a;
+    private GradientVectorOverlayProvider f23930a;
 
     public ld(GradientVectorOverlayProvider gradientVectorOverlayProvider) {
-        this.f37621a = gradientVectorOverlayProvider;
+        this.f23930a = gradientVectorOverlayProvider;
         ArrayList arrayList = new ArrayList();
         arrayList.add(gradientVectorOverlayProvider.getData());
         setDataList(arrayList);
@@ -51,6 +51,6 @@ public class ld extends HeatmapInfo implements vc {
     }
 
     public GradientVectorOverlayProvider a() {
-        return this.f37621a;
+        return this.f23930a;
     }
 }

@@ -7,9 +7,7 @@ import java.io.IOException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/parser/ScaleXYParser.class */
 public class ScaleXYParser implements ValueParser<ScaleXY> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ScaleXYParser f4407a = new ScaleXYParser();
+    public static final ScaleXYParser a = new ScaleXYParser();
 
     private ScaleXYParser() {
     }

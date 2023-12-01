@@ -7,11 +7,11 @@ import java.util.Map;
 public class a implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f35014a;
+    private static volatile a f21323a;
     public boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35015c = "oth.str.mdt.qq.com";
+    private String f21324c = "oth.str.mdt.qq.com";
     private int d = 360;
     private int e = 100;
     private Map<String, String> f = null;
@@ -22,18 +22,18 @@ public class a implements d {
     }
 
     public static a a() {
-        if (f35014a == null) {
+        if (f21323a == null) {
             synchronized (a.class) {
                 try {
-                    if (f35014a == null) {
-                        f35014a = new a();
+                    if (f21323a == null) {
+                        f21323a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f35014a;
+        return f21323a;
     }
 
     public String a(String str) {

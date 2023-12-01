@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import com.alibaba.mtl.log.model.LogField;
 import com.android.internal.telephony.PhoneConstants;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Field;
 import java.util.Locale;
 import java.util.Map;
@@ -52,7 +51,7 @@ public class d {
             map.put(LogField.ACCESS_SUBTYPE.toString(), "Unknown");
         }
         try {
-            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
             String str = "";
             if (telephonyManager != null) {
                 str = "";
@@ -97,7 +96,7 @@ public class d {
     public static String c(String str) {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            return (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class).invoke(cls.newInstance(), str);
+            return (String) cls.getMethod("get", String.class).invoke(cls.newInstance(), str);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

@@ -7,16 +7,16 @@ import java.util.List;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41782a;
+    private String f28091a;
     private List<CacheUrl> b;
 
     public b(String str, List<CacheUrl> list) {
-        this.f41782a = str;
+        this.f28091a = str;
         this.b = list;
     }
 
     public final String a() {
-        return this.f41782a;
+        return this.f28091a;
     }
 
     public final List<CacheUrl> b() {

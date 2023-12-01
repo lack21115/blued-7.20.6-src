@@ -6,14 +6,14 @@ import android.text.TextUtils;
 public class c implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f21619a;
+    private b f8013a;
     private com.cmic.gen.sdk.tencent.c.d.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.cmic.gen.sdk.tencent.c.a f21620c = new com.cmic.gen.sdk.tencent.c.a();
+    private final com.cmic.gen.sdk.tencent.c.a f8014c = new com.cmic.gen.sdk.tencent.c.a();
 
     public void a(b bVar) {
-        this.f21619a = bVar;
+        this.f8013a = bVar;
     }
 
     @Override // com.cmic.gen.sdk.tencent.c.a.b
@@ -22,7 +22,7 @@ public class c implements b {
     }
 
     public void b(final com.cmic.gen.sdk.tencent.c.c.c cVar, final com.cmic.gen.sdk.tencent.c.d.c cVar2, final com.cmic.gen.sdk.tencent.a aVar) {
-        if (this.f21619a != null) {
+        if (this.f8013a != null) {
             this.b = new com.cmic.gen.sdk.tencent.c.d.c() { // from class: com.cmic.gen.sdk.tencent.c.a.c.1
                 @Override // com.cmic.gen.sdk.tencent.c.d.c
                 public void a(com.cmic.gen.sdk.tencent.c.d.a aVar2) {
@@ -38,18 +38,18 @@ public class c implements b {
                 public void a(com.cmic.gen.sdk.tencent.c.d.b bVar) {
                     com.cmic.gen.sdk.tencent.c.c.c b;
                     if (bVar.d()) {
-                        b = c.this.f21620c.a(cVar, bVar, aVar);
-                    } else if (TextUtils.isEmpty(c.this.f21620c.a())) {
+                        b = c.this.f8014c.a(cVar, bVar, aVar);
+                    } else if (TextUtils.isEmpty(c.this.f8014c.a())) {
                         cVar2.a(bVar);
                         return;
                     } else {
-                        b = c.this.f21620c.b(cVar, bVar, aVar);
+                        b = c.this.f8014c.b(cVar, bVar, aVar);
                     }
                     c.this.b(b, cVar2, aVar);
                 }
             };
             if (cVar.g()) {
-                this.f21619a.a(cVar, this.b, aVar);
+                this.f8013a.a(cVar, this.b, aVar);
             } else {
                 cVar2.a(com.cmic.gen.sdk.tencent.c.d.a.a(200025));
             }

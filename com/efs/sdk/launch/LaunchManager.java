@@ -21,20 +21,20 @@ public class LaunchManager {
     public static final String PAGE_ON_WINDOW = "page_on_window";
 
     /* renamed from: a  reason: collision with root package name */
-    private static LaunchConfigManager f21804a;
+    private static LaunchConfigManager f8197a;
     private static Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static EfsReporter f21805c;
+    private static EfsReporter f8198c;
     private static boolean d = false;
     public static boolean isDebug = true;
 
     public static LaunchConfigManager getLaunchConfigManager() {
-        return f21804a;
+        return f8197a;
     }
 
     public static EfsReporter getReporter() {
-        return f21805c;
+        return f8198c;
     }
 
     public static void init(Context context, EfsReporter efsReporter) {
@@ -60,8 +60,8 @@ public class LaunchManager {
             }
         } else {
             b = context.getApplicationContext();
-            f21805c = efsReporter;
-            f21804a = new LaunchConfigManager(context, efsReporter);
+            f8198c = efsReporter;
+            f8197a = new LaunchConfigManager(context, efsReporter);
             d = true;
             a.a(new Runnable() { // from class: com.efs.sdk.launch.LaunchManager.1
                 @Override // java.lang.Runnable

@@ -8,9 +8,7 @@ public abstract class b implements Runnable {
     protected c h;
     protected boolean g = true;
     protected int i = 1;
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f6800a = 0;
+    private long a = 0;
     private String b = "topon-default-thread";
 
     private void a(c cVar) {
@@ -24,7 +22,7 @@ public abstract class b implements Runnable {
     public abstract void a();
 
     public final void a(long j) {
-        this.f6800a = j;
+        this.a = j;
     }
 
     public final void a(String str) {
@@ -32,7 +30,7 @@ public abstract class b implements Runnable {
     }
 
     public final long b() {
-        return this.f6800a;
+        return this.a;
     }
 
     @Override // java.lang.Runnable

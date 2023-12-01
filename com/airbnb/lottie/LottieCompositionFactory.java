@@ -23,67 +23,57 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieCompositionFactory.class */
 public class LottieCompositionFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, LottieTask<LottieComposition>> f4217a = new HashMap();
+    private static final Map<String, LottieTask<LottieComposition>> a = new HashMap();
 
     /* renamed from: com.airbnb.lottie.LottieCompositionFactory$4  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieCompositionFactory$4.class */
     static final class AnonymousClass4 implements Callable<LottieResult<LottieComposition>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ InputStream f4223a;
+        final /* synthetic */ InputStream a;
         final /* synthetic */ String b;
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.util.concurrent.Callable
         public LottieResult<LottieComposition> call() {
-            return LottieCompositionFactory.a(this.f4223a, this.b);
+            return LottieCompositionFactory.a(this.a, this.b);
         }
     }
 
     /* renamed from: com.airbnb.lottie.LottieCompositionFactory$5  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieCompositionFactory$5.class */
     static final class AnonymousClass5 implements Callable<LottieResult<LottieComposition>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ JSONObject f4224a;
+        final /* synthetic */ JSONObject a;
         final /* synthetic */ String b;
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.util.concurrent.Callable
         public LottieResult<LottieComposition> call() {
-            return LottieCompositionFactory.a(this.f4224a, this.b);
+            return LottieCompositionFactory.a(this.a, this.b);
         }
     }
 
     /* renamed from: com.airbnb.lottie.LottieCompositionFactory$6  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieCompositionFactory$6.class */
     static final class AnonymousClass6 implements Callable<LottieResult<LottieComposition>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f4225a;
+        final /* synthetic */ String a;
         final /* synthetic */ String b;
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.util.concurrent.Callable
         public LottieResult<LottieComposition> call() {
-            return LottieCompositionFactory.a(this.f4225a, this.b);
+            return LottieCompositionFactory.a(this.a, this.b);
         }
     }
 
     /* renamed from: com.airbnb.lottie.LottieCompositionFactory$8  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieCompositionFactory$8.class */
     static final class AnonymousClass8 implements Callable<LottieResult<LottieComposition>> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ZipInputStream f4227a;
+        final /* synthetic */ ZipInputStream a;
         final /* synthetic */ String b;
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.util.concurrent.Callable
         public LottieResult<LottieComposition> call() {
-            return LottieCompositionFactory.a(this.f4227a, this.b);
+            return LottieCompositionFactory.a(this.a, this.b);
         }
     }
 
@@ -166,7 +156,7 @@ public class LottieCompositionFactory {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // java.util.concurrent.Callable
             public LottieResult<LottieComposition> call() {
-                return LottieCompositionFactory.b(Context.this, i);
+                return LottieCompositionFactory.b(applicationContext, i);
             }
         });
     }
@@ -176,7 +166,7 @@ public class LottieCompositionFactory {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // java.util.concurrent.Callable
             public LottieResult<LottieComposition> call() {
-                return NetworkFetcher.a(Context.this, str);
+                return NetworkFetcher.a(context, str);
             }
         });
     }
@@ -186,7 +176,7 @@ public class LottieCompositionFactory {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // java.util.concurrent.Callable
             public LottieResult<LottieComposition> call() {
-                return LottieCompositionFactory.b(JsonReader.this, str);
+                return LottieCompositionFactory.b(jsonReader, str);
             }
         });
     }
@@ -202,7 +192,7 @@ public class LottieCompositionFactory {
                     return new LottieResult<>(LottieComposition.this);
                 }
             });
-        } else if (str == null || !f4217a.containsKey(str)) {
+        } else if (str == null || !a.containsKey(str)) {
             LottieTask<LottieComposition> lottieTask = new LottieTask<>(callable);
             lottieTask.a(new LottieListener<LottieComposition>() { // from class: com.airbnb.lottie.LottieCompositionFactory.10
                 @Override // com.airbnb.lottie.LottieListener
@@ -210,19 +200,19 @@ public class LottieCompositionFactory {
                     if (String.this != null) {
                         LottieCompositionCache.a().a(String.this, lottieComposition2);
                     }
-                    LottieCompositionFactory.f4217a.remove(String.this);
+                    LottieCompositionFactory.a.remove(String.this);
                 }
             });
             lottieTask.c(new LottieListener<Throwable>() { // from class: com.airbnb.lottie.LottieCompositionFactory.11
                 @Override // com.airbnb.lottie.LottieListener
                 public void a(Throwable th) {
-                    LottieCompositionFactory.f4217a.remove(String.this);
+                    LottieCompositionFactory.a.remove(String.this);
                 }
             });
-            f4217a.put(str, lottieTask);
+            a.put(str, lottieTask);
             return lottieTask;
         } else {
-            return f4217a.get(str);
+            return a.get(str);
         }
     }
 
@@ -289,7 +279,7 @@ public class LottieCompositionFactory {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // java.util.concurrent.Callable
             public LottieResult<LottieComposition> call() {
-                return LottieCompositionFactory.c(Context.this, str);
+                return LottieCompositionFactory.c(applicationContext, str);
             }
         });
     }

@@ -14,11 +14,11 @@ import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 public class b extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35780a = b.class.getSimpleName();
+    private static final String f22089a = b.class.getSimpleName();
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35781c;
+    private int f22090c;
     private int d;
     private float[] e;
     private float[] f;
@@ -58,23 +58,23 @@ public class b extends View {
         float[] fArr;
         float[] fArr2 = this.e;
         if (fArr2 == null || (fArr = this.f) == null || this.g == null) {
-            WLogger.e(f35780a, "mYPositions is null！");
+            WLogger.e(f22089a, "mYPositions is null！");
             return;
         }
         int length = fArr2.length;
         int i = this.j;
         int i2 = length - i;
         if (i2 > 0) {
-            System.arraycopy((Object) fArr2, i, (Object) fArr, 0, i2);
-            System.arraycopy((Object) this.e, 0, (Object) this.f, i2, this.j);
+            System.arraycopy(fArr2, i, fArr, 0, i2);
+            System.arraycopy(this.e, 0, this.f, i2, this.j);
         }
         float[] fArr3 = this.e;
         int length2 = fArr3.length;
         int i3 = this.k;
         int i4 = length2 - i3;
         if (i4 > 0) {
-            System.arraycopy((Object) fArr3, i3, (Object) this.g, 0, i4);
-            System.arraycopy((Object) this.e, 0, (Object) this.g, i4, this.k);
+            System.arraycopy(fArr3, i3, this.g, 0, i4);
+            System.arraycopy(this.e, 0, this.g, i4, this.k);
         }
     }
 
@@ -128,9 +128,8 @@ public class b extends View {
         countDownTimer2.start();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int i;
         super.onDraw(canvas);
         canvas.setDrawFilter(this.m);
@@ -138,7 +137,7 @@ public class b extends View {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            i = this.f35781c;
+            i = this.f22090c;
             if (i3 >= i) {
                 break;
             }
@@ -155,17 +154,16 @@ public class b extends View {
         if (i6 >= i) {
             this.j = 0;
         }
-        if (this.k > this.f35781c) {
+        if (this.k > this.f22090c) {
             this.k = 0;
         }
         postInvalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
-        this.f35781c = i;
+        this.f22090c = i;
         this.d = i2;
         this.e = new float[i];
         this.f = new float[i];
@@ -174,7 +172,7 @@ public class b extends View {
         int i5 = 0;
         while (true) {
             int i6 = i5;
-            if (i6 >= this.f35781c) {
+            if (i6 >= this.f22090c) {
                 return;
             }
             this.e[i6] = (float) ((Math.sin(this.b * i6) * 24.0d) + 0.0d);

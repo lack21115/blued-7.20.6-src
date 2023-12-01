@@ -13,7 +13,7 @@ public class Constraints extends ViewGroup {
     public static final String TAG = "Constraints";
 
     /* renamed from: a  reason: collision with root package name */
-    ConstraintSet f2279a;
+    ConstraintSet f2231a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/widget/Constraints$LayoutParams.class */
     public static class LayoutParams extends ConstraintLayout.LayoutParams {
@@ -145,9 +145,8 @@ public class Constraints extends ViewGroup {
         return new LayoutParams(-2, -2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return new ConstraintLayout.LayoutParams(layoutParams);
     }
 
@@ -157,15 +156,14 @@ public class Constraints extends ViewGroup {
     }
 
     public ConstraintSet getConstraintSet() {
-        if (this.f2279a == null) {
-            this.f2279a = new ConstraintSet();
+        if (this.f2231a == null) {
+            this.f2231a = new ConstraintSet();
         }
-        this.f2279a.clone(this);
-        return this.f2279a;
+        this.f2231a.clone(this);
+        return this.f2231a;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
     }
 }

@@ -9,13 +9,9 @@ import java.util.List;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/ByteArrayPool.class */
 public class ByteArrayPool {
     protected static final Comparator<byte[]> BUF_COMPARATOR = new a();
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f24250a;
+    private final int a;
     private List<byte[]> d = new LinkedList();
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<byte[]> f24251c = new ArrayList(64);
+    private List<byte[]> c = new ArrayList(64);
     private int b = 0;
 
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/ByteArrayPool$a.class */
@@ -30,18 +26,18 @@ public class ByteArrayPool {
     }
 
     public ByteArrayPool(int i) {
-        this.f24250a = i;
+        this.a = i;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0038, code lost:
-        if (r4.b > r4.f24250a) goto L6;
+        if (r4.b > r4.a) goto L6;
      */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0005, code lost:
         if (com.mokee.volley.toolbox.ImageLoader.h != false) goto L6;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0009, code lost:
         r0 = r4.d.remove(0);
-        r4.f24251c.remove(r0);
+        r4.c.remove(r0);
         r4.b -= r0.length;
      */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0038 -> B:6:0x0008). Please submit an issue!!! */
@@ -64,7 +60,7 @@ public class ByteArrayPool {
             byte[] r0 = (byte[]) r0     // Catch: java.lang.Throwable -> L3e
             r7 = r0
             r0 = r4
-            java.util.List<byte[]> r0 = r0.f24251c     // Catch: java.lang.Throwable -> L3e
+            java.util.List<byte[]> r0 = r0.c     // Catch: java.lang.Throwable -> L3e
             r1 = r7
             boolean r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> L3e
             r0 = r4
@@ -79,7 +75,7 @@ public class ByteArrayPool {
             int r0 = r0.b     // Catch: java.lang.Throwable -> L3e
             r5 = r0
             r0 = r4
-            int r0 = r0.f24250a     // Catch: java.lang.Throwable -> L3e
+            int r0 = r0.a     // Catch: java.lang.Throwable -> L3e
             r6 = r0
             r0 = r5
             r1 = r6
@@ -104,7 +100,7 @@ public class ByteArrayPool {
         r7 = r6;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x005e, code lost:
-        if (r6 < r4.f24251c.size()) goto L7;
+        if (r6 < r4.c.size()) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0061, code lost:
         r9 = new byte[r5];
@@ -113,14 +109,14 @@ public class ByteArrayPool {
         if (com.mokee.volley.toolbox.ImageLoader.h != false) goto L7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0010, code lost:
-        r9 = r4.f24251c.get(r7);
+        r9 = r4.c.get(r7);
      */
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0023, code lost:
         if (r9.length < r5) goto L15;
      */
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0026, code lost:
         r4.b -= r9.length;
-        r4.f24251c.remove(r7);
+        r4.c.remove(r7);
         r4.d.remove(r9);
      */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x005e -> B:7:0x0010). Please submit an issue!!! */
@@ -143,7 +139,7 @@ public class ByteArrayPool {
             if (r0 == 0) goto L52
         L10:
             r0 = r4
-            java.util.List<byte[]> r0 = r0.f24251c     // Catch: java.lang.Throwable -> L69
+            java.util.List<byte[]> r0 = r0.c     // Catch: java.lang.Throwable -> L69
             r1 = r7
             java.lang.Object r0 = r0.get(r1)     // Catch: java.lang.Throwable -> L69
             byte[] r0 = (byte[]) r0     // Catch: java.lang.Throwable -> L69
@@ -160,7 +156,7 @@ public class ByteArrayPool {
             int r1 = r1 - r2
             r0.b = r1     // Catch: java.lang.Throwable -> L69
             r0 = r4
-            java.util.List<byte[]> r0 = r0.f24251c     // Catch: java.lang.Throwable -> L69
+            java.util.List<byte[]> r0 = r0.c     // Catch: java.lang.Throwable -> L69
             r1 = r7
             java.lang.Object r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> L69
             r0 = r4
@@ -182,7 +178,7 @@ public class ByteArrayPool {
             r7 = r0
             r0 = r6
             r1 = r4
-            java.util.List<byte[]> r1 = r1.f24251c     // Catch: java.lang.Throwable -> L69
+            java.util.List<byte[]> r1 = r1.c     // Catch: java.lang.Throwable -> L69
             int r1 = r1.size()     // Catch: java.lang.Throwable -> L69
             if (r0 < r1) goto L10
             r0 = r5
@@ -202,14 +198,14 @@ public class ByteArrayPool {
     public void returnBuf(byte[] bArr) {
         synchronized (this) {
             if (bArr != null) {
-                if (bArr.length <= this.f24250a) {
+                if (bArr.length <= this.a) {
                     this.d.add(bArr);
-                    int binarySearch = Collections.binarySearch(this.f24251c, bArr, BUF_COMPARATOR);
+                    int binarySearch = Collections.binarySearch(this.c, bArr, BUF_COMPARATOR);
                     int i = binarySearch;
                     if (binarySearch < 0) {
                         i = (-binarySearch) - 1;
                     }
-                    this.f24251c.add(i, bArr);
+                    this.c.add(i, bArr);
                     this.b += bArr.length;
                     a();
                 }

@@ -12,23 +12,23 @@ public class e1 extends v {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f22740a;
+        public static final /* synthetic */ int[] f9132a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[z0.values().length];
-            f22740a = iArr;
+            f9132a = iArr;
             try {
                 iArr[z0.SN.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22740a[z0.IMEI.ordinal()] = 2;
+                f9132a[z0.IMEI.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f22740a[z0.UDID.ordinal()] = 3;
+                f9132a[z0.UDID.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -40,7 +40,7 @@ public class e1 extends v {
         a2.g(a1.a().a(c.c(str, str2)));
         a2.f(c.o(str, str2));
         a2.c(a1.a().f(str, str2));
-        int i = a.f22740a[c2.a().ordinal()];
+        int i = a.f9132a[c2.a().ordinal()];
         if (i == 1) {
             a2.d(c2.b());
             return a2;
@@ -75,9 +75,9 @@ public class e1 extends v {
         return a2;
     }
 
-    public static C1138r a(List<q> list, String str, String str2, String str3, String str4) {
+    public static C0955r a(List<q> list, String str, String str2, String str3, String str4) {
         z.c("hmsSdk", "generate UploadData");
-        C1138r b = v.b(str, str2);
+        C0955r b = v.b(str, str2);
         if (b == null) {
             return null;
         }

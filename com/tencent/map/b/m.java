@@ -5,7 +5,7 @@ public final class m {
     private static m b;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f37244a = 0;
+    private int f23553a = 0;
 
     private m() {
     }

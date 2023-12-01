@@ -1,7 +1,7 @@
 package com.loopj.android.http;
 
 import android.util.Log;
-import com.alipay.sdk.util.i;
+import com.huawei.hms.ads.fw;
 import com.igexin.push.core.b;
 import com.loopj.android.http.RequestParams;
 import java.io.FileInputStream;
@@ -26,7 +26,7 @@ public class JsonStreamerEntity implements HttpEntity {
     private final ResponseHandlerInterface progressHandler;
     private static final UnsupportedOperationException ERR_UNSUPPORTED = new UnsupportedOperationException("Unsupported operation in this implementation.");
     private static final StringBuilder BUILDER = new StringBuilder(128);
-    private static final byte[] JSON_TRUE = "true".getBytes();
+    private static final byte[] JSON_TRUE = fw.Code.getBytes();
     private static final byte[] JSON_FALSE = "false".getBytes();
     private static final byte[] JSON_NULL = b.l.getBytes();
     private static final byte[] STREAM_NAME = escape("name");
@@ -251,7 +251,7 @@ public class JsonStreamerEntity implements HttpEntity {
         gZIPOutputStream.write(STREAM_ELAPSED);
         gZIPOutputStream.write(58);
         long currentTimeMillis2 = System.currentTimeMillis() - currentTimeMillis;
-        gZIPOutputStream.write((currentTimeMillis2 + i.d).getBytes());
+        gZIPOutputStream.write((currentTimeMillis2 + "}").getBytes());
         Log.i(LOG_TAG, "Uploaded JSON in " + Math.floor((double) (currentTimeMillis2 / 1000)) + " seconds");
         gZIPOutputStream.flush();
         AsyncHttpClient.silentCloseOutputStream(gZIPOutputStream);

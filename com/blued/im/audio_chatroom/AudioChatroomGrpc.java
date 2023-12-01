@@ -33,12 +33,10 @@ public final class AudioChatroomGrpc {
         AudioChatroomBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return AudioChatroomOuterClass.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("AudioChatroom");
         }
@@ -51,8 +49,8 @@ public final class AudioChatroomGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public AudioChatroomBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public AudioChatroomBlockingStub m2311build(Channel channel, CallOptions callOptions) {
             return new AudioChatroomBlockingStub(channel, callOptions);
         }
 
@@ -75,8 +73,8 @@ public final class AudioChatroomGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public AudioChatroomFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public AudioChatroomFutureStub m2312build(Channel channel, CallOptions callOptions) {
             return new AudioChatroomFutureStub(channel, callOptions);
         }
 
@@ -106,7 +104,6 @@ public final class AudioChatroomGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -119,8 +116,8 @@ public final class AudioChatroomGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public AudioChatroomStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public AudioChatroomStub m2313build(Channel channel, CallOptions callOptions) {
             return new AudioChatroomStub(channel, callOptions);
         }
 
@@ -139,12 +136,10 @@ public final class AudioChatroomGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             if (this.methodId != 0) {
                 throw new AssertionError();
@@ -199,30 +194,27 @@ public final class AudioChatroomGrpc {
     }
 
     public static AudioChatroomBlockingStub newBlockingStub(Channel channel) {
-        return (AudioChatroomBlockingStub) AudioChatroomBlockingStub.newStub(new AbstractStub.StubFactory<AudioChatroomBlockingStub>() { // from class: com.blued.im.audio_chatroom.AudioChatroomGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public AudioChatroomBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return AudioChatroomBlockingStub.newStub(new AbstractStub.StubFactory<AudioChatroomBlockingStub>() { // from class: com.blued.im.audio_chatroom.AudioChatroomGrpc.2
+            /* renamed from: newStub */
+            public AudioChatroomBlockingStub m2309newStub(Channel channel2, CallOptions callOptions) {
                 return new AudioChatroomBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static AudioChatroomFutureStub newFutureStub(Channel channel) {
-        return (AudioChatroomFutureStub) AudioChatroomFutureStub.newStub(new AbstractStub.StubFactory<AudioChatroomFutureStub>() { // from class: com.blued.im.audio_chatroom.AudioChatroomGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public AudioChatroomFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return AudioChatroomFutureStub.newStub(new AbstractStub.StubFactory<AudioChatroomFutureStub>() { // from class: com.blued.im.audio_chatroom.AudioChatroomGrpc.3
+            /* renamed from: newStub */
+            public AudioChatroomFutureStub m2310newStub(Channel channel2, CallOptions callOptions) {
                 return new AudioChatroomFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static AudioChatroomStub newStub(Channel channel) {
-        return (AudioChatroomStub) AudioChatroomStub.newStub(new AbstractStub.StubFactory<AudioChatroomStub>() { // from class: com.blued.im.audio_chatroom.AudioChatroomGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public AudioChatroomStub newStub(Channel channel2, CallOptions callOptions) {
+        return AudioChatroomStub.newStub(new AbstractStub.StubFactory<AudioChatroomStub>() { // from class: com.blued.im.audio_chatroom.AudioChatroomGrpc.1
+            /* renamed from: newStub */
+            public AudioChatroomStub m2308newStub(Channel channel2, CallOptions callOptions) {
                 return new AudioChatroomStub(channel2, callOptions);
             }
         }, channel);

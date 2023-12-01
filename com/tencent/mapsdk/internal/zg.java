@@ -9,7 +9,7 @@ public class zg extends ib {
     private static final int b = 3;
 
     /* renamed from: c  reason: collision with root package name */
-    private static zg f38164c;
+    private static zg f24473c;
 
     private byte[] a(RttResponse rttResponse) {
         if (rttResponse == null) {
@@ -44,10 +44,10 @@ public class zg extends ib {
         zg zgVar;
         synchronized (zg.class) {
             try {
-                if (f38164c == null) {
-                    f38164c = new zg();
+                if (f24473c == null) {
+                    f24473c = new zg();
                 }
-                zgVar = f38164c;
+                zgVar = f24473c;
             } catch (Throwable th) {
                 throw th;
             }

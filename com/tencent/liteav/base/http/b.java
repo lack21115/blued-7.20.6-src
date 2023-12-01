@@ -4,10 +4,10 @@ package com.tencent.liteav.base.http;
 final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final HttpClientAndroid f36297a;
+    private final HttpClientAndroid f22606a;
 
     private b(HttpClientAndroid httpClientAndroid) {
-        this.f36297a = httpClientAndroid;
+        this.f22606a = httpClientAndroid;
     }
 
     public static Runnable a(HttpClientAndroid httpClientAndroid) {
@@ -16,6 +16,6 @@ final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        HttpClientAndroid.lambda$cancelAll$1(this.f36297a);
+        HttpClientAndroid.lambda$cancelAll$1(this.f22606a);
     }
 }

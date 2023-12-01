@@ -11,23 +11,23 @@ import java.util.concurrent.ConcurrentHashMap;
 public class s1 extends u1 {
 
     /* renamed from: c  reason: collision with root package name */
-    public final AccountManager f21300c;
+    public final AccountManager f7694c;
     public Account d;
     public final ConcurrentHashMap<String, String> e = new ConcurrentHashMap<>();
 
     public s1(Context context) {
-        this.f21300c = AccountManager.get(context);
+        this.f7694c = AccountManager.get(context);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(Account account) {
         try {
-            if (this.e.size() <= 0 || this.f21300c == null) {
+            if (this.e.size() <= 0 || this.f7694c == null) {
                 return;
             }
             for (Map.Entry<String, String> entry : this.e.entrySet()) {
                 if (entry != null) {
-                    this.f21300c.setUserData(account, entry.getKey(), entry.getValue());
+                    this.f7694c.setUserData(account, entry.getKey(), entry.getValue());
                 }
             }
             this.e.clear();
@@ -55,12 +55,12 @@ public class s1 extends u1 {
     public void a(String str) {
         this.e.remove(str);
         try {
-            if (this.d != null && this.f21300c != null) {
-                this.f21300c.setUserData(this.d, str, null);
+            if (this.d != null && this.f7694c != null) {
+                this.f7694c.setUserData(this.d, str, null);
             }
         } catch (Exception e) {
         }
-        u1 u1Var = this.f21314a;
+        u1 u1Var = this.f7708a;
         if (u1Var != null) {
             u1Var.a(str);
         }
@@ -74,7 +74,7 @@ public class s1 extends u1 {
         } else if (str == null || str2 == null) {
         } else {
             try {
-                this.f21300c.setUserData(account, str, str2);
+                this.f7694c.setUserData(account, str, str2);
             } catch (Throwable th) {
                 z2.a(th);
             }
@@ -96,7 +96,7 @@ public class s1 extends u1 {
             return this.e.get(str);
         }
         try {
-            return this.f21300c.getUserData(account, str);
+            return this.f7694c.getUserData(account, str);
         } catch (Throwable th) {
             z2.a(th);
             return null;

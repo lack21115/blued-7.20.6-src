@@ -1,5 +1,7 @@
 package java.util.jar;
 
+import com.anythink.core.common.b.g;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.CloseGuard;
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,13 +68,13 @@ public final class StrictJarFile {
 
     public StrictJarFile(String str) throws IOException {
         this.nativeHandle = nativeOpenJarFile(str);
-        this.raf = new RandomAccessFile(str, "r");
+        this.raf = new RandomAccessFile(str, g.o.o);
         try {
             HashMap<String, byte[]> metaEntries = getMetaEntries();
             this.manifest = new Manifest(metaEntries.get(JarFile.MANIFEST_NAME), true);
             this.verifier = new JarVerifier(str, this.manifest, metaEntries);
             this.isSigned = this.verifier.readCertificates() && this.verifier.isSignedJar();
-            this.guard.open("close");
+            this.guard.open(LoaderConstants.CLOSE);
         } catch (IOException e) {
             nativeClose(this.nativeHandle);
             throw e;

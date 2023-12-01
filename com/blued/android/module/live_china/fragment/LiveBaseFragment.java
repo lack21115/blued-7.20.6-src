@@ -2,7 +2,6 @@ package com.blued.android.module.live_china.fragment;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.text.TextUtils;
@@ -15,6 +14,7 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import com.airbnb.lottie.LottieAnimationView;
+import com.alipay.sdk.util.i;
 import com.blued.android.chat.data.EntranceData;
 import com.blued.android.chat.data.JoinLiveResult;
 import com.blued.android.chat.data.ProfileData;
@@ -53,9 +53,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
     public LiveBunchLightView A;
     private Vibrator F;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public BubbleLayout f12722c;
+    public BubbleLayout c;
     public LottieAnimationView j;
     public LiveMakeFriendManageView k;
     public LiveMakeLoverOkDialogFragment l;
@@ -103,7 +101,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
         ValueAnimator valueAnimator2 = this.B;
         if (valueAnimator2 != null) {
             valueAnimator2.cancel();
-            this.B.mo53clone();
+            this.B.clone();
             this.B = null;
         }
     }
@@ -128,10 +126,10 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
         if (i2 <= 0) {
             i3 = layoutParams.bottomMargin;
         }
-        int a2 = DisplayUtil.a(getContext(), 53.0f);
+        int a = DisplayUtil.a(getContext(), 53.0f);
         int i4 = i;
-        if (i > a2) {
-            i4 = i - a2;
+        if (i > a) {
+            i4 = i - a;
         }
         ValueAnimator ofInt = ValueAnimator.ofInt(i3, i4);
         this.B = ofInt;
@@ -211,7 +209,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
     public boolean a_(LiveGiftModel liveGiftModel) {
         if (liveGiftModel != null && liveGiftModel.vibrate_status == 1 && LiveDataManager.a().j()) {
             if (this.F == null) {
-                this.F = (Vibrator) AppInfo.d().getSystemService(Context.VIBRATOR_SERVICE);
+                this.F = (Vibrator) AppInfo.d().getSystemService("vibrator");
             }
             this.F.vibrate(400L);
             return true;
@@ -247,7 +245,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
 
     public void c_(int i) {
         BubbleLayout bubbleLayout;
-        if (!p() || (bubbleLayout = this.f12722c) == null) {
+        if (!p() || (bubbleLayout = this.c) == null) {
             return;
         }
         bubbleLayout.a(false, i);
@@ -300,7 +298,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
         ValueAnimator valueAnimator = this.B;
         if (valueAnimator != null) {
             valueAnimator.cancel();
-            this.B.mo53clone();
+            this.B.clone();
             this.B = null;
         }
         if (this.D == i || (liveActivityView = this.m) == null) {
@@ -341,7 +339,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
     /* JADX INFO: Access modifiers changed from: protected */
     public void k() {
         this.q = this.b.findViewById(R.id.live_pk_user_layout_id);
-        this.f12722c = (BubbleLayout) this.b.findViewById(R.id.ll_bubble);
+        this.c = (BubbleLayout) this.b.findViewById(R.id.ll_bubble);
         this.j = (LottieAnimationView) this.b.findViewById(R.id.animation_view);
         this.k = (LiveMakeFriendManageView) this.b.findViewById(R.id.live_make_friend_manage_view);
         LiveActivityView liveActivityView = (LiveActivityView) this.b.findViewById(R.id.liveActivityView);
@@ -357,7 +355,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
                 LiveBaseFragment.this.h();
             }
         });
-        this.f12722c.a(LiveRoomPreferences.i().split(";"));
+        this.c.a(LiveRoomPreferences.i().split(i.b));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -367,7 +365,6 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
     /* JADX INFO: Access modifiers changed from: protected */
     public void m() {
         LiveEventBus.get(LiveEventBusUtil.b, LiveChattingModel.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$zALyJqV-33oGfBOCqs6RPyUC7vw
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveBaseFragment.this.a_((LiveChattingModel) obj);
             }
@@ -378,7 +375,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
     public void n() {
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Bundle arguments = getArguments();
         this.r = arguments;
@@ -396,7 +393,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         this.F = null;
@@ -410,7 +407,7 @@ public abstract class LiveBaseFragment extends KeyBoardFragment implements LiveC
     public void onJoinLive(JoinLiveResult joinLiveResult, String str, String str2, String str3) {
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         m();

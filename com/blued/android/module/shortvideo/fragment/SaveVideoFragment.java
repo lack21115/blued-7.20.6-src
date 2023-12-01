@@ -27,9 +27,7 @@ import com.blued.android.module.shortvideo.utils.StvMediaUtils;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/fragment/SaveVideoFragment.class */
 public class SaveVideoFragment extends KeyBoardFragment {
     private static String b = "from";
-
-    /* renamed from: c  reason: collision with root package name */
-    private ProgressBar f15727c;
+    private ProgressBar c;
     private TextView j;
     private View k;
     private View l;
@@ -64,7 +62,7 @@ public class SaveVideoFragment extends KeyBoardFragment {
                 SaveVideoFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.shortvideo.fragment.SaveVideoFragment.1.3
                     @Override // java.lang.Runnable
                     public void run() {
-                        SaveVideoFragment.this.f15727c.setVisibility(8);
+                        SaveVideoFragment.this.c.setVisibility(8);
                         AppMethods.d(R.string.common_net_error);
                         SaveVideoFragment.this.getActivity().finish();
                     }
@@ -90,7 +88,7 @@ public class SaveVideoFragment extends KeyBoardFragment {
                 SaveVideoFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.shortvideo.fragment.SaveVideoFragment.1.2
                     @Override // java.lang.Runnable
                     public void run() {
-                        SaveVideoFragment.this.f15727c.setVisibility(8);
+                        SaveVideoFragment.this.c.setVisibility(8);
                         AppMethods.d(R.string.common_net_error);
                         SaveVideoFragment.this.getActivity().finish();
                     }
@@ -104,7 +102,7 @@ public class SaveVideoFragment extends KeyBoardFragment {
                     @Override // java.lang.Runnable
                     public void run() {
                         SaveVideoFragment.this.j.setText("100%");
-                        SaveVideoFragment.this.f15727c.setVisibility(8);
+                        SaveVideoFragment.this.c.setVisibility(8);
                         SaveVideoFragment.this.a(stvResultModel);
                     }
                 });
@@ -158,28 +156,28 @@ public class SaveVideoFragment extends KeyBoardFragment {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.activity_stv_save, viewGroup, false);
         this.l = inflate;
-        this.f15727c = (ProgressBar) inflate.findViewById(R.id.pb);
+        this.c = (ProgressBar) inflate.findViewById(R.id.pb);
         this.j = (TextView) this.l.findViewById(R.id.progress);
         this.k = this.l.findViewById(R.id.pblayout);
         a(bundle);
         return this.l;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
     }

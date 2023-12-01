@@ -2,8 +2,9 @@ package com.google.common.graph;
 
 import java.util.Set;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/graph/ForwardingNetwork.class */
-abstract class ForwardingNetwork<N, E> extends AbstractNetwork<N, E> {
+public abstract class ForwardingNetwork<N, E> extends AbstractNetwork<N, E> {
     @Override // com.google.common.graph.AbstractNetwork, com.google.common.graph.Network
     public Set<E> adjacentEdges(E e) {
         return delegate().adjacentEdges(e);

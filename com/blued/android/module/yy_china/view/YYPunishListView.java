@@ -29,13 +29,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYPunishListView.class */
 public class YYPunishListView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private RecyclerView f18384a;
+    private RecyclerView a;
     private TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ShapeTextView f18385c;
+    private ShapeTextView c;
     private YYRewardAdapter d;
     private IPunishClickListener e;
 
@@ -56,17 +52,16 @@ public class YYPunishListView extends RelativeLayout {
 
     private void a() {
         LayoutInflater.from(getContext()).inflate(R.layout.pop_pk_reward_layout, (ViewGroup) this, true);
-        this.f18384a = (RecyclerView) findViewById(R.id.rv_reward_list);
+        this.a = findViewById(R.id.rv_reward_list);
         this.b = (TextView) findViewById(R.id.tv_create_title);
-        this.f18385c = (ShapeTextView) findViewById(R.id.tv_ok_reward);
+        this.c = (ShapeTextView) findViewById(R.id.tv_ok_reward);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        this.f18384a.setLayoutManager(linearLayoutManager);
+        this.a.setLayoutManager(linearLayoutManager);
         YYRewardAdapter yYRewardAdapter = new YYRewardAdapter();
         this.d = yYRewardAdapter;
-        this.f18384a.setAdapter(yYRewardAdapter);
+        this.a.setAdapter(yYRewardAdapter);
         this.d.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.android.module.yy_china.view.YYPunishListView.1
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int i2 = 0;
                 while (true) {
@@ -78,8 +73,8 @@ public class YYPunishListView extends RelativeLayout {
                     YYRewardModel yYRewardModel = (YYRewardModel) baseQuickAdapter.getData().get(i3);
                     if (i3 == i) {
                         yYRewardModel.selected = true;
-                        ShapeHelper.a(YYPunishListView.this.f18385c, R.color.syc_00E0AB, R.color.syc_3883FD);
-                        YYPunishListView.this.f18385c.setEnabled(true);
+                        ShapeHelper.a(YYPunishListView.this.c, R.color.syc_00E0AB, R.color.syc_3883FD);
+                        YYPunishListView.this.c.setEnabled(true);
                     } else {
                         yYRewardModel.selected = false;
                     }
@@ -87,19 +82,19 @@ public class YYPunishListView extends RelativeLayout {
                 }
             }
         });
-        this.f18385c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYPunishListView.2
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYPunishListView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 YYRewardModel yYRewardModel;
                 Tracker.onClick(view);
                 if (YYPunishListView.this.e != null) {
-                    Iterator<YYRewardModel> it = YYPunishListView.this.d.getData().iterator();
+                    Iterator it = YYPunishListView.this.d.getData().iterator();
                     do {
                         yYRewardModel = null;
                         if (!it.hasNext()) {
                             break;
                         }
-                        yYRewardModel = it.next();
+                        yYRewardModel = (YYRewardModel) it.next();
                     } while (!yYRewardModel.selected);
                     YYPunishListView.this.e.a(yYRewardModel);
                 }

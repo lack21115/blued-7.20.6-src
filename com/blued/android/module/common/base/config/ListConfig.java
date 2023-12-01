@@ -7,13 +7,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/config/ListConfig.class */
 public final class ListConfig {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f10634a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private boolean b = true;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10635c = true;
+    private boolean c = true;
     private boolean d = true;
     private int e = 20;
     private boolean f = true;
@@ -23,13 +19,9 @@ public final class ListConfig {
     @Metadata
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/base/config/ListConfig$Builder.class */
     public static final class Builder {
-
-        /* renamed from: a  reason: collision with root package name */
-        private boolean f10636a;
+        private boolean a;
         private boolean b = true;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f10637c = true;
+        private boolean c = true;
         private boolean d = true;
         private int e = 20;
         private boolean f = true;
@@ -53,18 +45,18 @@ public final class ListConfig {
 
         public final ListConfig a() {
             ListConfig listConfig = new ListConfig();
-            listConfig.b(this.f10637c);
+            listConfig.b(this.c);
             listConfig.c(this.d);
             listConfig.a(this.e);
             listConfig.d(this.f);
             listConfig.a(this.g);
             listConfig.a(this.b);
-            listConfig.e(this.f10636a);
+            listConfig.e(this.a);
             return listConfig;
         }
 
         public final Builder b(boolean z) {
-            this.f10637c = z;
+            this.c = z;
             return this;
         }
 
@@ -79,7 +71,7 @@ public final class ListConfig {
         }
 
         public final Builder e(boolean z) {
-            this.f10636a = z;
+            this.a = z;
             return this;
         }
     }
@@ -120,11 +112,11 @@ public final class ListConfig {
     }
 
     public final void b(boolean z) {
-        this.f10635c = z;
+        this.c = z;
     }
 
     public final boolean b() {
-        return this.f10635c;
+        return this.c;
     }
 
     public final void c(boolean z) {

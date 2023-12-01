@@ -13,7 +13,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class LogFileUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static OutputStream f38925a;
+    private static OutputStream f25234a;
 
     public static void closeOutputStream(OutputStream outputStream) {
         if (outputStream != null) {
@@ -33,7 +33,7 @@ public class LogFileUtils {
             bArr[0] = (byte) format.charAt(0);
             bArr[1] = (byte) format.charAt(1);
             bArr[2] = (byte) format.charAt(2);
-            System.arraycopy((Object) encryptKey, 0, (Object) bArr, 3, encryptKey.length);
+            System.arraycopy(encryptKey, 0, bArr, 3, encryptKey.length);
             return bArr;
         } catch (Exception e) {
             return null;
@@ -82,19 +82,19 @@ public class LogFileUtils {
                     file.delete();
                     file.createNewFile();
                 }
-                if (f38925a == null) {
-                    f38925a = new BufferedOutputStream(new FileOutputStream(file, z));
+                if (f25234a == null) {
+                    f25234a = new BufferedOutputStream(new FileOutputStream(file, z));
                 }
                 if (str2 != null) {
-                    f38925a.write(str2.getBytes());
+                    f25234a.write(str2.getBytes());
                 } else {
-                    f38925a.write(bArr);
-                    f38925a.write(encrypt);
-                    f38925a.write(new byte[]{10, 10});
+                    f25234a.write(bArr);
+                    f25234a.write(encrypt);
+                    f25234a.write(new byte[]{10, 10});
                 }
-                if (f38925a != null) {
+                if (f25234a != null) {
                     try {
-                        f38925a.flush();
+                        f25234a.flush();
                     } catch (Throwable th) {
                     }
                 }

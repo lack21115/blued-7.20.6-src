@@ -2,10 +2,12 @@ package com.blued.android.module.im.grpc;
 
 import android.os.Handler;
 import android.os.HandlerThread;
+import com.amap.api.services.core.AMapException;
 import com.blued.android.module.im.grpc.HeartBeat;
 import com.blued.android.statistics.BluedStatistics;
 import com.blued.android.statistics.util.Logger;
 import com.blued.das.apm.ApmProtos;
+import com.efs.sdk.base.Constants;
 import com.google.protobuf.Any;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
@@ -17,16 +19,12 @@ import java.util.Iterator;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/BaseConnector.class */
 public abstract class BaseConnector {
-    private static final int[] b = {3000, 3000, 5000, 5000, 10000, 10000, 30000, 30000, 30000, 60000, 60000, 60000};
-
-    /* renamed from: c  reason: collision with root package name */
-    private volatile ConnectState f11344c;
+    private static final int[] b = {AMapException.CODE_AMAP_ROUTE_OUT_OF_SERVICE, AMapException.CODE_AMAP_ROUTE_OUT_OF_SERVICE, 5000, 5000, 10000, 10000, 30000, 30000, 30000, 60000, 60000, 60000};
+    private volatile ConnectState c;
     private Logger e;
     private ChannelManager n;
     private HeartBeat o;
-
-    /* renamed from: a  reason: collision with root package name */
-    private volatile int f11343a = 30000;
+    private volatile int a = 30000;
     private volatile boolean d = false;
     private String f = "";
     private boolean g = false;
@@ -48,7 +46,6 @@ public abstract class BaseConnector {
     private volatile long q = 0;
     private ClientCall<Any, Any> r = null;
     private ClientCall.Listener<Any> s = new ClientCall.Listener<Any>() { // from class: com.blued.android.module.im.grpc.BaseConnector.2
-        @Override // io.grpc.ClientCall.Listener
         /* renamed from: a */
         public void onMessage(final Any any) {
             if (BaseConnector.this.b()) {
@@ -65,7 +62,6 @@ public abstract class BaseConnector {
             });
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onClose(final Status status, final Metadata metadata) {
             if (BaseConnector.this.b()) {
                 BaseConnector.this.e.e(" << onClose : @", Thread.currentThread().getName(), " ", status == null ? "status is null!" : status.toString(), "\n", metadata == null ? "trailers is null!" : metadata.toString());
@@ -78,7 +74,6 @@ public abstract class BaseConnector {
             });
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onHeaders(final Metadata metadata) {
             if (BaseConnector.this.b()) {
                 BaseConnector.this.e.a(" << onHeaders @", Thread.currentThread().getName(), metadata == null ? "" : metadata.toString());
@@ -91,7 +86,6 @@ public abstract class BaseConnector {
             });
         }
 
-        @Override // io.grpc.ClientCall.Listener
         public void onReady() {
             if (BaseConnector.this.b()) {
                 BaseConnector.this.e.a(" << onReady @", Thread.currentThread().getName());
@@ -103,9 +97,7 @@ public abstract class BaseConnector {
     /* renamed from: com.blued.android.module.im.grpc.BaseConnector$7  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/grpc/BaseConnector$7.class */
     public static /* synthetic */ class AnonymousClass7 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f11355a;
+        static final /* synthetic */ int[] a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:22:0x0076 -> B:46:0x0014). Please submit an issue!!! */
@@ -140,21 +132,21 @@ public abstract class BaseConnector {
             } catch (NoSuchFieldError e5) {
             }
             int[] iArr2 = new int[ConnectState.values().length];
-            f11355a = iArr2;
+            a = iArr2;
             try {
                 iArr2[ConnectState.CONNECTING.ordinal()] = 1;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f11355a[ConnectState.CONNECTED.ordinal()] = 2;
+                a[ConnectState.CONNECTED.ordinal()] = 2;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f11355a[ConnectState.RECEIVE.ordinal()] = 3;
+                a[ConnectState.RECEIVE.ordinal()] = 3;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f11355a[ConnectState.DISCONNECTED.ordinal()] = 4;
+                a[ConnectState.DISCONNECTED.ordinal()] = 4;
             } catch (NoSuchFieldError e9) {
             }
         }
@@ -186,7 +178,7 @@ public abstract class BaseConnector {
     }
 
     private void a(ConnectState connectState, Any any) {
-        this.f11344c = connectState;
+        this.c = connectState;
         HashSet hashSet = new HashSet();
         synchronized (this.i) {
             hashSet.addAll(this.i);
@@ -194,7 +186,7 @@ public abstract class BaseConnector {
         Iterator it = hashSet.iterator();
         while (it.hasNext()) {
             OnConnectStateListener onConnectStateListener = (OnConnectStateListener) it.next();
-            int i = AnonymousClass7.f11355a[connectState.ordinal()];
+            int i = AnonymousClass7.a[connectState.ordinal()];
             if (i == 1) {
                 onConnectStateListener.onConnecting();
             } else if (i == 2) {
@@ -268,9 +260,9 @@ public abstract class BaseConnector {
             p();
         }
         try {
-            Any a2 = a(any);
-            if (a2 != null) {
-                a(ConnectState.RECEIVE, a2);
+            Any a = a(any);
+            if (a != null) {
+                a(ConnectState.RECEIVE, a);
             }
         } catch (Exception e) {
             if (b()) {
@@ -330,7 +322,7 @@ public abstract class BaseConnector {
                     BaseConnector.this.e.e("**** cancel ****");
                 }
                 if (BaseConnector.this.r != null) {
-                    BaseConnector.this.r.cancel("blued_connector_cancel", null);
+                    BaseConnector.this.r.cancel("blued_connector_cancel", (Throwable) null);
                 }
             }
         });
@@ -341,7 +333,7 @@ public abstract class BaseConnector {
         ClientCall<Any, Any> clientCall;
         try {
             this.d = true;
-            this.r = this.n.e().newCall(c(), this.h ? CallOptions.DEFAULT.withCompression("gzip") : CallOptions.DEFAULT);
+            this.r = this.n.e().newCall(c(), this.h ? CallOptions.DEFAULT.withCompression(Constants.CP_GZIP) : CallOptions.DEFAULT);
             m();
             this.q = System.currentTimeMillis();
             if (b()) {
@@ -363,7 +355,7 @@ public abstract class BaseConnector {
         if (this.d || (clientCall = this.r) == null) {
             return;
         }
-        clientCall.cancel("blued_connector_cancel", null);
+        clientCall.cancel("blued_connector_cancel", (Throwable) null);
     }
 
     private void m() {
@@ -375,7 +367,7 @@ public abstract class BaseConnector {
                 @Override // java.lang.Runnable
                 public void run() {
                     if (BaseConnector.this.r != null) {
-                        BaseConnector.this.r.cancel("blued_connector_auth_timeout", null);
+                        BaseConnector.this.r.cancel("blued_connector_auth_timeout", (Throwable) null);
                         if (BaseConnector.this.b()) {
                             BaseConnector.this.e.d("AuthTimeout!");
                         }
@@ -383,7 +375,7 @@ public abstract class BaseConnector {
                 }
             };
             this.p = runnable;
-            a(runnable, this.f11343a);
+            a(runnable, this.a);
         }
     }
 
@@ -422,7 +414,7 @@ public abstract class BaseConnector {
                         BaseConnector.this.e.d("  -- HeartBeat onTimeOut @", Thread.currentThread().getName());
                     }
                     if (BaseConnector.this.r != null) {
-                        BaseConnector.this.r.cancel("blued_connector_ping_timeout", null);
+                        BaseConnector.this.r.cancel("blued_connector_ping_timeout", (Throwable) null);
                     }
                 }
             });

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.os.Binder;
 import android.os.IBinder;
+import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
 import android.os.ResultReceiver;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.InputChannel;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputBinding;
+import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodSession;
 import android.view.inputmethod.InputMethodSubtype;
@@ -70,7 +72,7 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
                 if (this.mChannel != null) {
                     this.mChannel.dispose();
                 }
-                this.mCb.sessionCreated(null);
+                this.mCb.sessionCreated((IInputMethodSession) null);
             } catch (RemoteException e) {
             }
         }
@@ -87,32 +89,27 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
     public IInputMethodWrapper(AbstractInputMethodService abstractInputMethodService, InputMethod inputMethod) {
         this.mTarget = new WeakReference<>(abstractInputMethodService);
         this.mContext = abstractInputMethodService.getApplicationContext();
-        this.mCaller = new HandlerCaller(this.mContext, null, this, true);
+        this.mCaller = new HandlerCaller(this.mContext, (Looper) null, this, true);
         this.mInputMethod = new WeakReference<>(inputMethod);
         this.mTargetSdkVersion = abstractInputMethodService.getApplicationInfo().targetSdkVersion;
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void attachToken(IBinder iBinder) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageO(10, iBinder));
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void bindInput(InputBinding inputBinding) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageO(20, new InputBinding(new InputConnectionWrapper(IInputContext.Stub.asInterface(inputBinding.getConnectionToken())), inputBinding)));
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void changeInputMethodSubtype(InputMethodSubtype inputMethodSubtype) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageO(80, inputMethodSubtype));
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void createSession(InputChannel inputChannel, IInputSessionCallback iInputSessionCallback) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageOO(40, inputChannel, iInputSessionCallback));
     }
 
-    @Override // android.os.Binder
     protected void dump(FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         AbstractInputMethodService abstractInputMethodService = this.mTarget.get();
         if (abstractInputMethodService == null) {
@@ -134,7 +131,6 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         }
     }
 
-    @Override // com.android.internal.os.HandlerCaller.Callback
     public void executeMessage(Message message) {
         boolean z = true;
         InputMethod inputMethod = this.mInputMethod.get();
@@ -171,25 +167,25 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
             case 32:
                 SomeArgs someArgs2 = (SomeArgs) message.obj;
                 IInputContext iInputContext = (IInputContext) someArgs2.arg1;
-                InputConnectionWrapper inputConnectionWrapper = null;
+                InputConnection inputConnection = null;
                 if (iInputContext != null) {
-                    inputConnectionWrapper = new InputConnectionWrapper(iInputContext);
+                    inputConnection = new InputConnectionWrapper(iInputContext);
                 }
                 EditorInfo editorInfo = (EditorInfo) someArgs2.arg2;
                 editorInfo.makeCompatible(this.mTargetSdkVersion);
-                inputMethod.startInput(inputConnectionWrapper, editorInfo);
+                inputMethod.startInput(inputConnection, editorInfo);
                 someArgs2.recycle();
                 return;
             case 34:
                 SomeArgs someArgs3 = (SomeArgs) message.obj;
                 IInputContext iInputContext2 = (IInputContext) someArgs3.arg1;
-                InputConnectionWrapper inputConnectionWrapper2 = null;
+                InputConnection inputConnection2 = null;
                 if (iInputContext2 != null) {
-                    inputConnectionWrapper2 = new InputConnectionWrapper(iInputContext2);
+                    inputConnection2 = new InputConnectionWrapper(iInputContext2);
                 }
                 EditorInfo editorInfo2 = (EditorInfo) someArgs3.arg2;
                 editorInfo2.makeCompatible(this.mTargetSdkVersion);
-                inputMethod.restartInput(inputConnectionWrapper2, editorInfo2);
+                inputMethod.restartInput(inputConnection2, editorInfo2);
                 someArgs3.recycle();
                 return;
             case 40:
@@ -226,17 +222,14 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         return this.mInputMethod.get();
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void hideSoftInput(int i, ResultReceiver resultReceiver) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageIO(70, i, resultReceiver));
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void restartInput(IInputContext iInputContext, EditorInfo editorInfo) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageOO(34, iInputContext, editorInfo));
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void revokeSession(IInputMethodSession iInputMethodSession) {
         try {
             InputMethodSession internalInputMethodSession = ((IInputMethodSessionWrapper) iInputMethodSession).getInternalInputMethodSession();
@@ -250,7 +243,6 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         }
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void setSessionEnabled(IInputMethodSession iInputMethodSession, boolean z) {
         try {
             InputMethodSession internalInputMethodSession = ((IInputMethodSessionWrapper) iInputMethodSession).getInternalInputMethodSession();
@@ -264,17 +256,14 @@ class IInputMethodWrapper extends IInputMethod.Stub implements HandlerCaller.Cal
         }
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void showSoftInput(int i, ResultReceiver resultReceiver) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageIO(60, i, resultReceiver));
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void startInput(IInputContext iInputContext, EditorInfo editorInfo) {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageOO(32, iInputContext, editorInfo));
     }
 
-    @Override // com.android.internal.view.IInputMethod
     public void unbindInput() {
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessage(30));
     }

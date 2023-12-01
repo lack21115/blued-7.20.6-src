@@ -47,7 +47,7 @@ public abstract class FluentIterable<E> implements Iterable<E> {
         return new FluentIterable<T>() { // from class: com.google.common.collect.FluentIterable.2
             @Override // java.lang.Iterable
             public Iterator<T> iterator() {
-                return Iterators.concat(Iterators.transform(Iterable.this.iterator(), Iterables.toIterator()));
+                return Iterators.concat(Iterators.transform(iterable.iterator(), Iterables.toIterator()));
             }
         };
     }

@@ -11,11 +11,11 @@ import com.anythink.expressad.exoplayer.k.o;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7329a = "MediaCodecInfo";
+    public static final String f4490a = "MediaCodecInfo";
     public static final int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public final String f7330c;
+    public final String f4491c;
     public final String d;
     public final MediaCodecInfo.CodecCapabilities e;
     public final boolean f;
@@ -38,7 +38,7 @@ public final class a {
             r1 = r4
             java.lang.Object r1 = com.anythink.expressad.exoplayer.k.a.a(r1)
             java.lang.String r1 = (java.lang.String) r1
-            r0.f7330c = r1
+            r0.f4491c = r1
             r0 = r3
             r1 = r5
             r0.d = r1
@@ -54,7 +54,7 @@ public final class a {
             if (r0 != 0) goto L50
             r0 = r6
             if (r0 == 0) goto L50
-            int r0 = com.anythink.expressad.exoplayer.k.af.f7632a
+            int r0 = com.anythink.expressad.exoplayer.k.af.f4793a
             r1 = 19
             if (r0 < r1) goto L42
             r0 = r6
@@ -82,7 +82,7 @@ public final class a {
             r0.f = r1
             r0 = r6
             if (r0 == 0) goto L82
-            int r0 = com.anythink.expressad.exoplayer.k.af.f7632a
+            int r0 = com.anythink.expressad.exoplayer.k.af.f4793a
             r1 = 21
             if (r0 < r1) goto L74
             r0 = r6
@@ -114,7 +114,7 @@ public final class a {
             if (r0 != 0) goto Lc1
             r0 = r6
             if (r0 == 0) goto Lbe
-            int r0 = com.anythink.expressad.exoplayer.k.af.f7632a
+            int r0 = com.anythink.expressad.exoplayer.k.af.f4793a
             r1 = 21
             if (r0 < r1) goto Laf
             r0 = r6
@@ -147,7 +147,7 @@ public final class a {
 
     private static int a(String str, String str2, int i) {
         if (i <= 1) {
-            if (af.f7632a >= 26 && i > 0) {
+            if (af.f4793a >= 26 && i > 0) {
                 return i;
             }
             if (!"audio/mpeg".equals(str2) && !"audio/3gpp".equals(str2) && !"audio/amr-wb".equals(str2) && !"audio/mp4a-latm".equals(str2) && !"audio/vorbis".equals(str2) && !"audio/opus".equals(str2) && !"audio/raw".equals(str2) && !"audio/flac".equals(str2) && !"audio/g711-alaw".equals(str2) && !"audio/g711-mlaw".equals(str2)) {
@@ -155,7 +155,7 @@ public final class a {
                     return i;
                 }
                 int i2 = "audio/ac3".equals(str2) ? 6 : "audio/eac3".equals(str2) ? 16 : 30;
-                Log.w(f7329a, "AssumedMaxChannelAdjustment: " + str + ", [" + i + " to " + i2 + "]");
+                Log.w(f4490a, "AssumedMaxChannelAdjustment: " + str + ", [" + i + " to " + i2 + "]");
                 return i2;
             }
         }
@@ -175,7 +175,7 @@ public final class a {
     }
 
     private static boolean a(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return af.f7632a >= 19 && codecCapabilities.isFeatureSupported(MediaCodecInfo.CodecCapabilities.FEATURE_AdaptivePlayback);
+        return af.f4793a >= 19 && codecCapabilities.isFeatureSupported(MediaCodecInfo.CodecCapabilities.FEATURE_AdaptivePlayback);
     }
 
     private static boolean a(MediaCodecInfo.VideoCapabilities videoCapabilities, int i, int i2, double d) {
@@ -184,7 +184,7 @@ public final class a {
 
     private int b() {
         MediaCodecInfo.CodecCapabilities codecCapabilities;
-        if (af.f7632a < 23 || (codecCapabilities = this.e) == null) {
+        if (af.f4793a < 23 || (codecCapabilities = this.e) == null) {
             return -1;
         }
         return codecCapabilities.getMaxSupportedInstances();
@@ -195,15 +195,15 @@ public final class a {
     }
 
     private void c(String str) {
-        Log.d(f7329a, "NoSupport [" + str + "] [" + this.f7330c + ", " + this.d + "] [" + af.e + "]");
+        Log.d(f4490a, "NoSupport [" + str + "] [" + this.f4491c + ", " + this.d + "] [" + af.e + "]");
     }
 
     private static boolean c(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return af.f7632a >= 21 && codecCapabilities.isFeatureSupported(MediaCodecInfo.CodecCapabilities.FEATURE_TunneledPlayback);
+        return af.f4793a >= 21 && codecCapabilities.isFeatureSupported(MediaCodecInfo.CodecCapabilities.FEATURE_TunneledPlayback);
     }
 
     private void d(String str) {
-        Log.d(f7329a, "AssumedSupport [" + str + "] [" + this.f7330c + ", " + this.d + "] [" + af.e + "]");
+        Log.d(f4490a, "AssumedSupport [" + str + "] [" + this.f4491c + ", " + this.d + "] [" + af.e + "]");
     }
 
     private static boolean d(MediaCodecInfo.CodecCapabilities codecCapabilities) {
@@ -211,7 +211,7 @@ public final class a {
     }
 
     private static boolean e(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return af.f7632a >= 21 && codecCapabilities.isFeatureSupported(MediaCodecInfo.CodecCapabilities.FEATURE_SecurePlayback);
+        return af.f4793a >= 21 && codecCapabilities.isFeatureSupported(MediaCodecInfo.CodecCapabilities.FEATURE_SecurePlayback);
     }
 
     private static boolean f(MediaCodecInfo.CodecCapabilities codecCapabilities) {
@@ -273,7 +273,7 @@ public final class a {
                 c("sizeAndRate.support, " + i + "x" + i2 + "x" + d);
                 return false;
             }
-            Log.d(f7329a, "AssumedSupport [" + ("sizeAndRate.rotated, " + i + "x" + i2 + "x" + d) + "] [" + this.f7330c + ", " + this.d + "] [" + af.e + "]");
+            Log.d(f4490a, "AssumedSupport [" + ("sizeAndRate.rotated, " + i + "x" + i2 + "x" + d) + "] [" + this.f4491c + ", " + this.d + "] [" + af.e + "]");
             return true;
         }
     }
@@ -294,12 +294,12 @@ public final class a {
             c("channelCount.aCaps");
             return false;
         }
-        String str = this.f7330c;
+        String str = this.f4491c;
         String str2 = this.d;
         int maxInputChannelCount = audioCapabilities.getMaxInputChannelCount();
         int i2 = maxInputChannelCount;
         if (maxInputChannelCount <= 1) {
-            if (af.f7632a < 26 || maxInputChannelCount <= 0) {
+            if (af.f4793a < 26 || maxInputChannelCount <= 0) {
                 i2 = maxInputChannelCount;
                 if (!"audio/mpeg".equals(str2)) {
                     i2 = maxInputChannelCount;
@@ -324,7 +324,7 @@ public final class a {
                                                             i2 = maxInputChannelCount;
                                                         } else {
                                                             i2 = "audio/ac3".equals(str2) ? 6 : "audio/eac3".equals(str2) ? 16 : 30;
-                                                            Log.w(f7329a, "AssumedMaxChannelAdjustment: " + str + ", [" + maxInputChannelCount + " to " + i2 + "]");
+                                                            Log.w(f4490a, "AssumedMaxChannelAdjustment: " + str + ", [" + maxInputChannelCount + " to " + i2 + "]");
                                                         }
                                                     }
                                                 }

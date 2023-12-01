@@ -25,46 +25,38 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYGiftExhibitionDialog.class */
 public final class YYGiftExhibitionDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17254a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f17255c;
+    private String c;
     private DialogGiftExhibitionLayoutBinding d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYGiftExhibitionDialog$GiftExhibitionPagerAdapter.class */
     public final class GiftExhibitionPagerAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYGiftExhibitionDialog f17256a;
+        final /* synthetic */ YYGiftExhibitionDialog a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public GiftExhibitionPagerAdapter(YYGiftExhibitionDialog this$0, FragmentManager fm) {
             super(fm, 1);
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(fm, "fm");
-            this.f17256a = this$0;
+            this.a = this$0;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return 2;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            return i == 0 ? new YYGiftExhibitionAllFragment(this.f17256a.f(), this.f17256a.g(), this.f17256a.h()) : new YYGiftExhibitionStarFragment(this.f17256a.f(), this.f17256a.g(), this.f17256a.h());
+            return i == 0 ? new YYGiftExhibitionAllFragment(this.a.f(), this.a.g(), this.a.h()) : new YYGiftExhibitionStarFragment(this.a.f(), this.a.g(), this.a.h());
         }
     }
 
     public YYGiftExhibitionDialog(String str, String str2, String str3) {
-        this.f17254a = str;
+        this.a = str;
         this.b = str2;
-        this.f17255c = str3;
+        this.c = str3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -124,15 +116,12 @@ public final class YYGiftExhibitionDialog extends BaseFullScreenDialog {
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         i().g.setAdapter(new GiftExhibitionPagerAdapter(this, childFragmentManager));
         i().g.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YYGiftExhibitionDialog$initRoomPager$1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 DialogGiftExhibitionLayoutBinding i2;
                 YYGiftExhibitionDialog.this.a(i);
@@ -143,7 +132,7 @@ public final class YYGiftExhibitionDialog extends BaseFullScreenDialog {
     }
 
     public final String f() {
-        return this.f17254a;
+        return this.a;
     }
 
     public final String g() {
@@ -151,10 +140,10 @@ public final class YYGiftExhibitionDialog extends BaseFullScreenDialog {
     }
 
     public final String h() {
-        return this.f17255c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         this.d = DialogGiftExhibitionLayoutBinding.a(inflater.inflate(R.layout.dialog_gift_exhibition_layout, viewGroup, true));
@@ -165,13 +154,13 @@ public final class YYGiftExhibitionDialog extends BaseFullScreenDialog {
                 YYGiftExhibitionDialog.a(YYGiftExhibitionDialog.this, view);
             }
         });
-        i().f16341c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYGiftExhibitionDialog$xo5ZoQVfCwNv9IDmuhJDwJM14x8
+        i().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYGiftExhibitionDialog$xo5ZoQVfCwNv9IDmuhJDwJM14x8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYGiftExhibitionDialog.b(YYGiftExhibitionDialog.this, view);
             }
         });
-        i().f16340a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYGiftExhibitionDialog$PyY8KxWe0LfFMSB7xoXSg7R5tOY
+        i().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYGiftExhibitionDialog$PyY8KxWe0LfFMSB7xoXSg7R5tOY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYGiftExhibitionDialog.a(view);

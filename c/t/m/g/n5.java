@@ -6,11 +6,11 @@ import org.json.JSONObject;
 public class n5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public double f3896a;
+    public double f3848a;
     public double b;
 
     /* renamed from: c  reason: collision with root package name */
-    public double f3897c;
+    public double f3849c;
     public float d;
     public int e;
     public String f;
@@ -20,9 +20,9 @@ public class n5 {
     }
 
     public n5(JSONObject jSONObject) {
-        this.f3896a = jSONObject.optDouble("latitude", 0.0d);
+        this.f3848a = jSONObject.optDouble("latitude", 0.0d);
         this.b = jSONObject.optDouble("longitude", 0.0d);
-        this.f3897c = jSONObject.optDouble("altitude", 0.0d);
+        this.f3849c = jSONObject.optDouble("altitude", 0.0d);
         this.d = (float) jSONObject.optDouble("accuracy", 0.0d);
         int optInt = jSONObject.optInt("type", -3);
         this.e = optInt;
@@ -36,9 +36,9 @@ public class n5 {
     public static n5 a(n5 n5Var) {
         n5 n5Var2 = new n5();
         if (n5Var != null) {
-            n5Var2.f3896a = n5Var.f3896a;
+            n5Var2.f3848a = n5Var.f3848a;
             n5Var2.b = n5Var.b;
-            n5Var2.f3897c = n5Var.f3897c;
+            n5Var2.f3849c = n5Var.f3849c;
             n5Var2.d = n5Var.d;
             n5Var2.f = n5Var.f;
             n5Var2.g = n5Var.g;

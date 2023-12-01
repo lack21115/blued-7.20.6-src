@@ -10,7 +10,7 @@ import com.bumptech.glide.util.pool.StateVerifier;
 public final class LockedResource<Z> implements Resource<Z>, FactoryPools.Poolable {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Pools.Pool<LockedResource<?>> f20790a = FactoryPools.a(20, new FactoryPools.Factory<LockedResource<?>>() { // from class: com.bumptech.glide.load.engine.LockedResource.1
+    private static final Pools.Pool<LockedResource<?>> f7184a = FactoryPools.a(20, new FactoryPools.Factory<LockedResource<?>>() { // from class: com.bumptech.glide.load.engine.LockedResource.1
         @Override // com.bumptech.glide.util.pool.FactoryPools.Factory
         /* renamed from: a */
         public LockedResource<?> b() {
@@ -20,7 +20,7 @@ public final class LockedResource<Z> implements Resource<Z>, FactoryPools.Poolab
     private final StateVerifier b = StateVerifier.a();
 
     /* renamed from: c  reason: collision with root package name */
-    private Resource<Z> f20791c;
+    private Resource<Z> f7185c;
     private boolean d;
     private boolean e;
 
@@ -29,7 +29,7 @@ public final class LockedResource<Z> implements Resource<Z>, FactoryPools.Poolab
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <Z> LockedResource<Z> a(Resource<Z> resource) {
-        LockedResource<Z> lockedResource = (LockedResource) Preconditions.a(f20790a.acquire());
+        LockedResource<Z> lockedResource = (LockedResource) Preconditions.a(f7184a.acquire());
         lockedResource.b(resource);
         return lockedResource;
     }
@@ -37,22 +37,22 @@ public final class LockedResource<Z> implements Resource<Z>, FactoryPools.Poolab
     private void b(Resource<Z> resource) {
         this.e = false;
         this.d = true;
-        this.f20791c = resource;
+        this.f7185c = resource;
     }
 
     private void g() {
-        this.f20791c = null;
-        f20790a.release(this);
+        this.f7185c = null;
+        f7184a.release(this);
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
     public Class<Z> a() {
-        return this.f20791c.a();
+        return this.f7185c.a();
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
     public int b() {
-        return this.f20791c.b();
+        return this.f7185c.b();
     }
 
     @Override // com.bumptech.glide.load.engine.Resource
@@ -61,7 +61,7 @@ public final class LockedResource<Z> implements Resource<Z>, FactoryPools.Poolab
             this.b.b();
             this.e = true;
             if (!this.d) {
-                this.f20791c.c();
+                this.f7185c.c();
                 g();
             }
         }
@@ -88,6 +88,6 @@ public final class LockedResource<Z> implements Resource<Z>, FactoryPools.Poolab
 
     @Override // com.bumptech.glide.load.engine.Resource
     public Z f() {
-        return this.f20791c.f();
+        return this.f7185c.f();
     }
 }

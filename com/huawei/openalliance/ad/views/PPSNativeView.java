@@ -72,11 +72,11 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
     private n S;
 
     /* renamed from: a  reason: collision with root package name */
-    private CusWhyThisAdView f23022a;
+    private CusWhyThisAdView f9414a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private b f23023c;
+    private b f9415c;
     private d d;
     private e e;
     private c f;
@@ -385,10 +385,10 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
             ge.Code("PPSNativeView", "do not need update choiceView");
             return;
         }
-        if (this.f23022a == null) {
+        if (this.f9414a == null) {
             Z();
         }
-        if (!this.n && this.f23022a != null) {
+        if (!this.n && this.f9414a != null) {
             ge.Code("PPSNativeView", "cusWhyView is not null, set choiceView as close.");
             this.D.V();
         } else if (TextUtils.isEmpty(this.p)) {
@@ -430,13 +430,13 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
-        CusWhyThisAdView cusWhyThisAdView = this.f23022a;
+        CusWhyThisAdView cusWhyThisAdView = this.f9414a;
         if (cusWhyThisAdView != null) {
             ViewGroup viewGroup = (ViewGroup) cusWhyThisAdView.getParent();
             if (viewGroup != null && (viewGroup instanceof ViewGroup)) {
                 V(viewGroup, 4);
             }
-            this.f23022a.setVisibility(0);
+            this.f9414a.setVisibility(0);
             setBackgroundColor(getResources().getColor(R.color.hiad_whythisad_root_bg));
         }
     }
@@ -625,8 +625,8 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
             Code(this.F);
             this.F = null;
             this.D = null;
-            Code(this.f23022a);
-            this.f23022a = null;
+            Code(this.f9414a);
+            this.f9414a = null;
         }
         ih ihVar = this.Code;
         if (ihVar != null) {
@@ -707,7 +707,7 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
             this.I = false;
             ge.V("PPSNativeView", "onClick");
             this.m = true;
-            b bVar = this.f23023c;
+            b bVar = this.f9415c;
             if (bVar != null) {
                 bVar.Code(view);
             }
@@ -753,7 +753,7 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
             this.t = V;
             if (V != null) {
                 V.Code(this.D, ir.OTHER, null);
-                this.t.Code(this.f23022a, ir.OTHER, null);
+                this.t.Code(this.f9414a, ir.OTHER, null);
                 this.t.Code(this.F, ir.OTHER, null);
             }
             Code(this.Code, nVar);
@@ -838,12 +838,12 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
     }
 
     public boolean Code() {
-        if (this.n || this.f23022a == null) {
+        if (this.n || this.f9414a == null) {
             return false;
         }
         setWhyAdViewStatus(CusWhyThisAdView.a.SHOWN);
         d();
-        this.f23022a.V();
+        this.f9414a.V();
         k();
         this.I = false;
         return true;
@@ -964,21 +964,21 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void Z() {
-        if (this.f23022a == null || getWhyAdViewStatus() != CusWhyThisAdView.a.INIT) {
-            View view = this.f23022a;
+        if (this.f9414a == null || getWhyAdViewStatus() != CusWhyThisAdView.a.INIT) {
+            View view = this.f9414a;
             if (view != null) {
                 Code(view);
-                this.f23022a = null;
+                this.f9414a = null;
             }
             setWhyAdViewStatus(CusWhyThisAdView.a.INIT);
             CusWhyThisAdView cusWhyThisAdView = new CusWhyThisAdView(getContext(), this);
-            this.f23022a = cusWhyThisAdView;
+            this.f9414a = cusWhyThisAdView;
             addView(cusWhyThisAdView);
-            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(this.f23022a.getLayoutParams());
+            RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(this.f9414a.getLayoutParams());
             layoutParams.addRule(13);
-            this.f23022a.setLayoutParams(layoutParams);
+            this.f9414a.setLayoutParams(layoutParams);
         }
-        this.f23022a.setOnCloseCallBack(new com.huawei.hms.ads.whythisad.b() { // from class: com.huawei.openalliance.ad.views.PPSNativeView.3
+        this.f9414a.setOnCloseCallBack(new com.huawei.hms.ads.whythisad.b() { // from class: com.huawei.openalliance.ad.views.PPSNativeView.3
             @Override // com.huawei.hms.ads.whythisad.b
             public void Code() {
                 PPSNativeView.this.d();
@@ -1092,9 +1092,8 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
         hideFeedback(getContext());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         hb hbVar = this.C;
         if (hbVar != null) {
@@ -1107,9 +1106,8 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
         kl.Code(getContext()).V(getContext());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ge.V("PPSNativeView", "onDetechedFromWindow");
         hb hbVar = this.C;
@@ -1129,9 +1127,8 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
         this.C.onGlobalLayout();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
         hb hbVar = this.C;
         if (hbVar != null) {
@@ -1208,7 +1205,7 @@ public class PPSNativeView extends RelativeLayout implements ha, hr, lf {
     }
 
     public void setOnNativeAdClickListener(b bVar) {
-        this.f23023c = bVar;
+        this.f9415c = bVar;
     }
 
     public void setOnNativeAdImpressionListener(c cVar) {

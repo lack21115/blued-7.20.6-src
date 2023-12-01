@@ -101,8 +101,8 @@ public class AnimationSet extends Animation {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.animation.Animation
     /* renamed from: clone */
-    public AnimationSet mo1105clone() throws CloneNotSupportedException {
-        AnimationSet animationSet = (AnimationSet) super.mo1105clone();
+    public AnimationSet mo39clone() throws CloneNotSupportedException {
+        AnimationSet animationSet = (AnimationSet) super.mo39clone();
         animationSet.mTempTransformation = new Transformation();
         animationSet.mAnimations = new ArrayList<>();
         int size = this.mAnimations.size();
@@ -113,7 +113,7 @@ public class AnimationSet extends Animation {
             if (i2 >= size) {
                 return animationSet;
             }
-            animationSet.mAnimations.add(arrayList.get(i2).mo1105clone());
+            animationSet.mAnimations.add(arrayList.get(i2).mo39clone());
             i = i2 + 1;
         }
     }

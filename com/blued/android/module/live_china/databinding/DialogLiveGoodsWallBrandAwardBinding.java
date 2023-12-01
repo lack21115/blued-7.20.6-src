@@ -15,13 +15,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveGoodsWallBrandAwardBinding.class */
 public final class DialogLiveGoodsWallBrandAwardBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ConstraintLayout f11773a;
+    public final ConstraintLayout a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final Group f11774c;
+    public final Group c;
     public final ImageView d;
     public final SlopeLoadingView e;
     public final RecyclerView f;
@@ -41,9 +37,9 @@ public final class DialogLiveGoodsWallBrandAwardBinding implements ViewBinding {
 
     private DialogLiveGoodsWallBrandAwardBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, Group group, ImageView imageView, SlopeLoadingView slopeLoadingView, RecyclerView recyclerView, TextView textView, TextView textView2, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, View view, View view2) {
         this.s = constraintLayout;
-        this.f11773a = constraintLayout2;
+        this.a = constraintLayout2;
         this.b = constraintLayout3;
-        this.f11774c = group;
+        this.c = group;
         this.d = imageView;
         this.e = slopeLoadingView;
         this.f = recyclerView;
@@ -75,18 +71,18 @@ public final class DialogLiveGoodsWallBrandAwardBinding implements ViewBinding {
 
     public static DialogLiveGoodsWallBrandAwardBinding a(View view) {
         String str;
-        ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_task_1);
-        if (constraintLayout != null) {
-            ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.cl_task_2);
-            if (constraintLayout2 != null) {
-                Group group = (Group) view.findViewById(R.id.group_list);
-                if (group != null) {
+        ConstraintLayout findViewById = view.findViewById(R.id.cl_task_1);
+        if (findViewById != null) {
+            ConstraintLayout findViewById2 = view.findViewById(R.id.cl_task_2);
+            if (findViewById2 != null) {
+                Group findViewById3 = view.findViewById(R.id.group_list);
+                if (findViewById3 != null) {
                     ImageView imageView = (ImageView) view.findViewById(R.id.iv_close);
                     if (imageView != null) {
                         SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
                         if (slopeLoadingView != null) {
-                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                            if (recyclerView != null) {
+                            RecyclerView findViewById4 = view.findViewById(R.id.rv_list);
+                            if (findViewById4 != null) {
                                 TextView textView = (TextView) view.findViewById(R.id.tv_brand_count);
                                 if (textView != null) {
                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_get_brand_count);
@@ -107,11 +103,11 @@ public final class DialogLiveGoodsWallBrandAwardBinding implements ViewBinding {
                                                                 if (textView7 != null) {
                                                                     TextView textView8 = (TextView) view.findViewById(R.id.tv_title);
                                                                     if (textView8 != null) {
-                                                                        View findViewById = view.findViewById(R.id.view_line);
-                                                                        if (findViewById != null) {
-                                                                            View findViewById2 = view.findViewById(R.id.view_top_bg);
-                                                                            if (findViewById2 != null) {
-                                                                                return new DialogLiveGoodsWallBrandAwardBinding((ConstraintLayout) view, constraintLayout, constraintLayout2, group, imageView, slopeLoadingView, recyclerView, textView, textView2, shapeTextView, shapeTextView2, textView3, textView4, textView5, textView6, textView7, textView8, findViewById, findViewById2);
+                                                                        View findViewById5 = view.findViewById(R.id.view_line);
+                                                                        if (findViewById5 != null) {
+                                                                            View findViewById6 = view.findViewById(R.id.view_top_bg);
+                                                                            if (findViewById6 != null) {
+                                                                                return new DialogLiveGoodsWallBrandAwardBinding((ConstraintLayout) view, findViewById, findViewById2, findViewById3, imageView, slopeLoadingView, findViewById4, textView, textView2, shapeTextView, shapeTextView2, textView3, textView4, textView5, textView6, textView7, textView8, findViewById5, findViewById6);
                                                                             }
                                                                             str = "viewTopBg";
                                                                         } else {
@@ -168,7 +164,6 @@ public final class DialogLiveGoodsWallBrandAwardBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.s;

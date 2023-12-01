@@ -187,7 +187,7 @@ public class AutoServiceProcessor extends AbstractProcessor {
     }
 
     /* renamed from: getSupportedAnnotationTypes */
-    public ImmutableSet<String> m6290getSupportedAnnotationTypes() {
+    public ImmutableSet<String> m3283getSupportedAnnotationTypes() {
         return ImmutableSet.of(AutoService.class.getName());
     }
 

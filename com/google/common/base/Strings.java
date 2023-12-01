@@ -306,10 +306,10 @@ public final class Strings {
             int i4 = i3;
             int i5 = i2 - i4;
             if (i4 >= i5) {
-                System.arraycopy((Object) cArr, 0, (Object) cArr, i4, i5);
+                System.arraycopy(cArr, 0, cArr, i4, i5);
                 return new String(cArr);
             }
-            System.arraycopy((Object) cArr, 0, (Object) cArr, i4, i4);
+            System.arraycopy(cArr, 0, cArr, i4, i4);
             i3 = i4 << 1;
         }
     }

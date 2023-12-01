@@ -25,10 +25,9 @@ public final class WireFormat {
     static final int MESSAGE_SET_TYPE_ID_TAG = makeTag(2, 0);
     static final int MESSAGE_SET_MESSAGE_TAG = makeTag(3, 2);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.WireFormat$1  reason: invalid class name */
     /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/WireFormat$1.class */
-    public static /* synthetic */ class AnonymousClass1 {
+    static /* synthetic */ class AnonymousClass1 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x00dd -> B:109:0x0014). Please submit an issue!!! */

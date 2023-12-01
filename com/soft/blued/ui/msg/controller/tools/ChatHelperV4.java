@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.media.tv.TvContract;
 import android.net.Uri;
 import android.os.Build;
@@ -12,7 +11,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.core.util.Pair;
-import com.android.internal.telephony.PhoneConstants;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.data.MsgType;
 import com.blued.android.chat.listener.MsgPreProcesser;
@@ -57,7 +55,6 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.ImageUtils;
 import com.blued.android.module.common.utils.ReflectionUtils;
 import com.blued.android.module.common.utils.third.QiniuUploadUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.live_china.liveForMsg.model.LiveMsgShareEntity;
 import com.blued.android.module.live_china.model.LiveRoomData;
 import com.blued.android.module.yy_china.utils.log.EventTrackYY;
@@ -129,7 +126,7 @@ public class ChatHelperV4 {
     private volatile boolean i;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f32198a = ChatHelperV4.class.getSimpleName();
+    private static final String f18508a = ChatHelperV4.class.getSimpleName();
     private static LinkedBlockingQueue<Pair<ChattingModel, MsgPreProcesserListener>> g = new LinkedBlockingQueue<>();
     private static AtomicLong j = new AtomicLong(0);
     private Gson b = AppInfo.f();
@@ -137,12 +134,11 @@ public class ChatHelperV4 {
     private int h = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private NotificationSender f32199c = NotificationSender.a();
+    private NotificationSender f18509c = NotificationSender.a();
 
     /* renamed from: com.soft.blued.ui.msg.controller.tools.ChatHelperV4$20  reason: invalid class name */
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/controller/tools/ChatHelperV4$20.class */
     class AnonymousClass20 implements MsgPreProcesser {
-        @Override // com.blued.android.chat.listener.MsgPreProcesser
         public void preProcess(ChattingModel chattingModel, MsgPreProcesserListener msgPreProcesserListener) {
             chattingModel.msgStateCode = (short) 2;
             msgPreProcesserListener.onProcessToSave(chattingModel);
@@ -153,7 +149,7 @@ public class ChatHelperV4 {
     }
 
     private LiveMsgShareEntity a(String str) {
-        Logger.b(f32198a, "直播通知 notification：extraJson==", str);
+        Logger.b(f18508a, "直播通知 notification：extraJson==", str);
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -189,7 +185,7 @@ public class ChatHelperV4 {
         }
         String str = pair.first;
         UploadModel uploadModel = pair.second;
-        String str2 = f32198a;
+        String str2 = f18508a;
         Logger.e(str2, "uploadQiNiu===url:" + uploadModel.url + ",compressPath:" + uploadModel.compressPath);
         Log.v("drb", "uploadQiNiu===url:" + uploadModel.url + ",compressPath:" + uploadModel.compressPath);
         try {
@@ -204,11 +200,11 @@ public class ChatHelperV4 {
                     LoadOptions loadOptions = new LoadOptions();
                     loadOptions.e = true;
                     loadOptions.j = true;
-                    Drawable a3 = RecyclingImageLoader.a(RecyclingUtils.a(RecyclingUtils.Scheme.FILE.b(uploadModel.compressPath), loadOptions));
+                    IRecyclingDrawable a3 = RecyclingImageLoader.a(RecyclingUtils.a(RecyclingUtils.Scheme.c.b(uploadModel.compressPath), loadOptions));
                     if (a3 == null || !(a3 instanceof IRecyclingDrawable)) {
-                        Logger.e(f32198a, "RecyclingUtils.getMemoryCache fail");
+                        Logger.e(f18508a, "RecyclingUtils.getMemoryCache fail");
                     } else {
-                        RecyclingImageLoader.a(RecyclingUtils.a(uploadModel.url, loadOptions), (IRecyclingDrawable) a3);
+                        RecyclingImageLoader.a(RecyclingUtils.a(uploadModel.url, loadOptions), a3);
                     }
                     RecyclingUtils.a(new File(uploadModel.compressPath), uploadModel.url);
                 }
@@ -218,7 +214,7 @@ public class ChatHelperV4 {
                     String str3 = "";
                     try {
                         String e = AesCrypto.e(uploadModel.url);
-                        String str4 = f32198a;
+                        String str4 = f18508a;
                         StringBuilder sb = new StringBuilder();
                         sb.append("解密服务器返回的地址===");
                         sb.append(e);
@@ -251,16 +247,14 @@ public class ChatHelperV4 {
             b(chattingModel, msgPreProcesserListener);
             return;
         }
-        List<Pair<String, String>> a2 = QiniuUploadUtils.a(str, "");
+        List a2 = QiniuUploadUtils.a(str, "");
         short s = chattingModel.msgType;
         if (s != 2) {
             if (s == 3) {
                 MediaSender.a(ChatHttpUtils.a(chattingModel), a2, new SenderListener() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.10
-                    @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                     public void a(String str2, int i) {
                     }
 
-                    @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                     public void a(String str2, final Pair<String, UploadModel> pair) {
                         ThreadManager.a().a(new Runnable() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.10.1
                             @Override // java.lang.Runnable
@@ -270,7 +264,6 @@ public class ChatHelperV4 {
                         });
                     }
 
-                    @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                     public void a(String str2, boolean z, List<Pair<String, String>> list) {
                     }
                 });
@@ -284,11 +277,9 @@ public class ChatHelperV4 {
                 }
             }
             MediaSender.a(ChatHttpUtils.a(chattingModel), new Pair(str, ""), new SenderListener() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.9
-                @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                 public void a(String str2, int i) {
                 }
 
-                @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                 public void a(String str2, final Pair<String, UploadModel> pair) {
                     ThreadManager.a().a(new Runnable() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.9.1
                         /* JADX WARN: Removed duplicated region for block: B:50:0x0189 A[Catch: Exception -> 0x030a, TryCatch #1 {Exception -> 0x030a, blocks: (B:13:0x0086, B:60:0x021f, B:48:0x016c, B:50:0x0189, B:52:0x01a1, B:46:0x0162, B:53:0x01c9, B:55:0x01e5, B:57:0x01eb, B:59:0x0218), top: B:70:0x0086 }] */
@@ -307,7 +298,6 @@ public class ChatHelperV4 {
                     });
                 }
 
-                @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
                 public void a(String str2, boolean z, List<Pair<String, String>> list) {
                 }
             });
@@ -315,11 +305,9 @@ public class ChatHelperV4 {
         }
         final boolean z = !a(new File(str));
         MediaSender.a(ChatHttpUtils.a(chattingModel), a2, z, new SenderListener() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.8
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str2, int i) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str2, final Pair<String, UploadModel> pair) {
                 ThreadManager.a().a(new Runnable() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.8.1
                     @Override // java.lang.Runnable
@@ -329,7 +317,6 @@ public class ChatHelperV4 {
                 });
             }
 
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str2, boolean z2, List<Pair<String, String>> list) {
             }
         });
@@ -455,7 +442,7 @@ public class ChatHelperV4 {
         } else if (3 == chattingModel.msgType) {
             notificationModel.setContentText(context.getResources().getString(R.string.biao_notify_msg_record));
         } else if (32 == chattingModel.msgType) {
-            notificationModel.setContentText(context.getResources().getString(2131889187));
+            notificationModel.setContentText(context.getResources().getString(R.string.liveVideo_push_label_shareLive));
         } else if (6 == chattingModel.msgType || 205 == chattingModel.msgType) {
             notificationModel.setContentText(context.getString(R.string.msg_hello_expression_tips));
         } else if (220 == chattingModel.msgType) {
@@ -474,7 +461,7 @@ public class ChatHelperV4 {
             if (snapSessionModel2 == null || snapSessionModel2.sessionType != 3) {
                 String str = chattingModel.fromNickName;
                 if (chattingModel.isMatchMsg == 1) {
-                    str = DateTodayManager.f32404a.c(chattingModel.fromNickName);
+                    str = DateTodayManager.f18714a.c(chattingModel.fromNickName);
                 }
                 notificationModel.setContentTitle(str);
             } else {
@@ -484,9 +471,9 @@ public class ChatHelperV4 {
         }
         notificationModel.setId(h());
         notificationModel.setTickerText(context.getResources().getString(R.string.biao_notify_new_havemsg));
-        notificationModel.setIconResId(R.drawable.blued_icon_0);
+        notificationModel.setIconResId((int) R.drawable.blued_icon_0);
         notificationModel.setBitmapDef(BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.blued_icon_0));
-        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + BridgeUtil.SPLIT_MARK + R.raw.ringtone_get));
+        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + "/" + R.raw.ringtone_get));
         notificationModel.setShakeEnable(BluedPreferences.af());
         notificationModel.setVoiceEnable(BluedPreferences.ae());
         notificationModel.setInnerVoiceEnable(BluedPreferences.ac());
@@ -500,7 +487,7 @@ public class ChatHelperV4 {
             }
         }
         notificationModel.setIntent(HomeArgumentHelper.b(context, "msg", bundle));
-        this.f32199c.a(notificationModel);
+        this.f18509c.a(notificationModel);
     }
 
     public static void b(List<SessionModel> list) {
@@ -513,7 +500,7 @@ public class ChatHelperV4 {
             if (next.sessionType != 2 && next.sessionType != 3) {
                 it.remove();
             }
-            SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f32449a;
+            SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f18759a;
             if (subscribeNumberManager.a(next.sessionId + "", Short.valueOf(next.sessionType))) {
                 it.remove();
             }
@@ -530,21 +517,21 @@ public class ChatHelperV4 {
         Intent b2 = HomeArgumentHelper.b(context, "live", b);
         NotificationModel notificationModel = new NotificationModel();
         notificationModel.setId(h());
-        notificationModel.setContentText(a2.name + " " + context.getResources().getString(2131889145));
+        notificationModel.setContentText(a2.name + " " + context.getResources().getString(R.string.liveVideo_followingHost_label_isLiving));
         notificationModel.setContentTitle(context.getResources().getString(2131886479));
         notificationModel.setTickerText(context.getResources().getString(R.string.biao_notify_new_havemsg));
         if (Build.VERSION.SDK_INT < 21) {
-            notificationModel.setIconResId(R.drawable.blued_icon_0);
+            notificationModel.setIconResId((int) R.drawable.blued_icon_0);
         } else {
-            notificationModel.setIconResId(R.drawable.icon_launcher_alpha);
+            notificationModel.setIconResId((int) R.drawable.icon_launcher_alpha);
         }
         notificationModel.setBitmapDef(BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.blued_icon_0));
-        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + BridgeUtil.SPLIT_MARK + R.raw.ringtone_get));
+        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + "/" + R.raw.ringtone_get));
         notificationModel.setShakeEnable(BluedPreferences.af());
         notificationModel.setVoiceEnable(BluedPreferences.ae());
         notificationModel.setInnerVoiceEnable(BluedPreferences.ac());
         notificationModel.setIntent(b2);
-        this.f32199c.a(notificationModel);
+        this.f18509c.a(notificationModel);
     }
 
     public static void c(List<SessionModel> list) {
@@ -594,12 +581,12 @@ public class ChatHelperV4 {
         notificationModel.setTickerText(str3);
         notificationModel.setId(100);
         if (Build.VERSION.SDK_INT < 21) {
-            notificationModel.setIconResId(R.drawable.blued_icon_0);
+            notificationModel.setIconResId((int) R.drawable.blued_icon_0);
         } else {
-            notificationModel.setIconResId(R.drawable.icon_launcher_alpha);
+            notificationModel.setIconResId((int) R.drawable.icon_launcher_alpha);
         }
         notificationModel.setBitmapDef(BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.blued_icon_0));
-        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + BridgeUtil.SPLIT_MARK + R.raw.ringtone_get));
+        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + "/" + R.raw.ringtone_get));
         notificationModel.setShakeEnable(BluedPreferences.af());
         notificationModel.setVoiceEnable(BluedPreferences.ae());
         notificationModel.setInnerVoiceEnable(BluedPreferences.ac());
@@ -616,7 +603,7 @@ public class ChatHelperV4 {
         bundle.putInt("action", 1);
         bundle.putBoolean("arg_bool_backtomain", true);
         notificationModel.setIntent(TransparentActivity.a(context, PendingFragment.class, bundle).a());
-        this.f32199c.a(notificationModel);
+        this.f18509c.a(notificationModel);
         final Activity foreActivity = BluedApplicationLike.getForeActivity();
         if (foreActivity != null) {
             VideoChatHintToast.a(foreActivity, chattingModel.fromAvatar, chattingModel.fromVBadge, str3, new VideoChatHintToast.onHintClickLisnter() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.23
@@ -644,12 +631,12 @@ public class ChatHelperV4 {
         notificationModel.setContentText(stringValue3);
         notificationModel.setTickerText(stringValue + " " + stringValue3);
         if (Build.VERSION.SDK_INT < 21) {
-            notificationModel.setIconResId(R.drawable.blued_icon_0);
+            notificationModel.setIconResId((int) R.drawable.blued_icon_0);
         } else {
-            notificationModel.setIconResId(R.drawable.icon_launcher_alpha);
+            notificationModel.setIconResId((int) R.drawable.icon_launcher_alpha);
         }
         notificationModel.setBitmapDef(BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.blued_icon_0));
-        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + BridgeUtil.SPLIT_MARK + R.raw.ringtone_get));
+        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + "/" + R.raw.ringtone_get));
         notificationModel.setShakeEnable(BluedPreferences.af());
         notificationModel.setVoiceEnable(BluedPreferences.ae());
         notificationModel.setInnerVoiceEnable(BluedPreferences.ac());
@@ -660,12 +647,11 @@ public class ChatHelperV4 {
             intent.setData(Uri.parse(stringValue2));
         }
         notificationModel.setIntent(intent);
-        this.f32199c.a(notificationModel);
+        this.f18509c.a(notificationModel);
         if (TextUtils.isEmpty(stringValue4)) {
             return;
         }
         ImageFileLoader.a((IRequestHost) null).a(stringValue4).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.24
-            @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public void onUIFinish(File file, Exception exc) {
                 if (file == null || !file.exists()) {
                     return;
@@ -673,7 +659,7 @@ public class ChatHelperV4 {
                 try {
                     notificationModel.setBitmap(Util.imageZoomToSize(BitmapFactory.decodeFile(file.getPath()), 30));
                     notificationModel.setRemindEnable(false);
-                    ChatHelperV4.this.f32199c.a(notificationModel);
+                    ChatHelperV4.this.f18509c.a(notificationModel);
                     Logger.b("xpf", "notifyMsg bitmap");
                 } catch (Exception | OutOfMemoryError e) {
                 }
@@ -694,7 +680,7 @@ public class ChatHelperV4 {
             notificationModel.setContentText(context.getResources().getString(R.string.biao_notify_new_havemsg_long));
             intent = b;
         } else if (chattingModel.sessionId == 3 && chattingModel.msgType == 19) {
-            notificationModel.setContentText(chattingModel.fromNickName + context.getResources().getString(2131891415));
+            notificationModel.setContentText(chattingModel.fromNickName + context.getResources().getString(R.string.receive_feed_comment));
             bundle.putString("from_tag_page", "from_notification_feed");
             bundle.putString("to_message_tab", "0");
             intent = HomeArgumentHelper.b(context, "msg", bundle);
@@ -710,23 +696,23 @@ public class ChatHelperV4 {
         }
         notificationModel.setId(h());
         if (Build.VERSION.SDK_INT < 21) {
-            notificationModel.setIconResId(R.drawable.blued_icon_0);
+            notificationModel.setIconResId((int) R.drawable.blued_icon_0);
         } else {
-            notificationModel.setIconResId(R.drawable.icon_launcher_alpha);
+            notificationModel.setIconResId((int) R.drawable.icon_launcher_alpha);
         }
         notificationModel.setBitmapDef(BitmapFactory.decodeResource(AppInfo.d().getResources(), R.drawable.blued_icon_0));
-        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + BridgeUtil.SPLIT_MARK + R.raw.ringtone_get));
+        notificationModel.setSoundFileUri(Uri.parse("android.resource://" + AppInfo.d().getPackageName() + "/" + R.raw.ringtone_get));
         notificationModel.setShakeEnable(BluedPreferences.af());
         notificationModel.setVoiceEnable(BluedPreferences.ae());
         notificationModel.setInnerVoiceEnable(BluedPreferences.ac());
         String str = chattingModel.fromNickName;
         if (chattingModel.isMatchMsg == 1) {
-            str = DateTodayManager.f32404a.c(chattingModel.fromNickName);
+            str = DateTodayManager.f18714a.c(chattingModel.fromNickName);
         }
         notificationModel.setContentTitle(str);
         notificationModel.setTickerText(context.getResources().getString(R.string.biao_notify_new_havemsg));
         notificationModel.setIntent(intent);
-        this.f32199c.a(notificationModel);
+        this.f18509c.a(notificationModel);
     }
 
     private int h() {
@@ -749,7 +735,7 @@ public class ChatHelperV4 {
         }
         final ChattingModel chattingModel = poll.first;
         if (!AppUtils.c(chattingModel.fromId + "")) {
-            com.blued.android.framework.utils.Logger.e(f32198a, "checkAndUpload===串号，列表还剩：" + g.size());
+            com.blued.android.framework.utils.Logger.e(f18508a, new Object[]{"checkAndUpload===串号，列表还剩：" + g.size()});
             if (!StringUtils.b(this.f)) {
                 MediaSender.a(this.f);
             }
@@ -769,11 +755,9 @@ public class ChatHelperV4 {
         }
         final boolean z = !a(new File(a2));
         this.f = MediaSender.a(ChatHttpUtils.a(chattingModel), QiniuUploadUtils.a(a2, ""), z, new SenderListener() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.11
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, int i) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, final Pair<String, UploadModel> pair) {
                 if (AppUtils.c(chattingModel.fromId + "") && ChatHelperV4.this.i) {
                     ThreadManager.a().a(new Runnable() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.11.1
@@ -785,7 +769,6 @@ public class ChatHelperV4 {
                 }
             }
 
-            @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, boolean z2, List<Pair<String, String>> list) {
                 ChatHelperV4.this.i();
             }
@@ -878,7 +861,7 @@ public class ChatHelperV4 {
 
     public ShareToMsgEntity a(ChattingModel chattingModel, HashMap<String, ShareToMsgEntity> hashMap) {
         ShareToMsgEntity shareToMsgEntity;
-        String str = chattingModel.sessionId + PhoneConstants.APN_TYPE_ALL + chattingModel.msgId + PhoneConstants.APN_TYPE_ALL + chattingModel.msgLocalId;
+        String str = chattingModel.sessionId + "*" + chattingModel.msgId + "*" + chattingModel.msgLocalId;
         if (hashMap.containsKey(str)) {
             return hashMap.get(str);
         }
@@ -1102,7 +1085,7 @@ public class ChatHelperV4 {
                 a(context, chattingModel);
             }
         } else if (chattingModel.sessionType == 3 && 1 != MsgType.getClassify(chattingModel.msgType)) {
-            if (BluedConstant.f28239a || !BluedPreferences.am()) {
+            if (BluedConstant.f14549a || !BluedPreferences.am()) {
                 return;
             }
             if (sessionSettingModel == null) {
@@ -1120,7 +1103,7 @@ public class ChatHelperV4 {
             if (chattingModel.sessionId == 6 || chattingModel.sessionId == 7) {
                 c(context, chattingModel);
             } else if (chattingModel.sessionId == 2) {
-                if (BluedConstant.f28239a) {
+                if (BluedConstant.f14549a) {
                     return;
                 }
                 try {
@@ -1147,7 +1130,7 @@ public class ChatHelperV4 {
             } else if (chattingModel.sessionId == 10) {
                 if (!com.soft.blued.utils.StringUtils.d(chattingModel.msgContent)) {
                     try {
-                        ReflectionUtils.a((Object) ((BluedLoginResult) AppInfo.f().fromJson(chattingModel.msgContent, (Class<Object>) BluedLoginResult.class)), (Object) UserInfo.getInstance().getLoginUserInfo(), true);
+                        ReflectionUtils.a((BluedLoginResult) AppInfo.f().fromJson(chattingModel.msgContent, (Class<Object>) BluedLoginResult.class), UserInfo.getInstance().getLoginUserInfo(), true);
                     } catch (Exception e) {
                     }
                 }
@@ -1213,7 +1196,6 @@ public class ChatHelperV4 {
         sessionProfileModel.avatar = str2;
         sessionProfileModel.vBadge = i;
         ChatManager.getInstance().sendMsg(chattingModel, sessionProfileModel, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.21
-            @Override // com.blued.android.chat.listener.MsgPreProcesser
             public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                 chattingModel2.msgStateCode = (short) 6;
                 msgPreProcesserListener.onProcessToSave(chattingModel2);
@@ -1233,18 +1215,16 @@ public class ChatHelperV4 {
         final Gson f = AppInfo.f();
         final MsgExtra msgExtra2 = (MsgExtra) f.fromJson(msgExtra, type);
         GroupHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntity<Object, ExtraGroupInvitationModel>>() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.6
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
             public void onFailure(Throwable th, int i6, String str3) {
                 super.onFailure(th, i6, str3);
                 ChatHelperV4.this.a(chattingModel, str, str2, i);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity<Object, ExtraGroupInvitationModel> bluedEntity) {
                 if (bluedEntity != null) {
                     try {
-                        if (bluedEntity.extra != null && bluedEntity.extra.iid != null && bluedEntity.extra.iid.size() > 0) {
-                            String str3 = bluedEntity.extra.iid.get(0).iid;
+                        if (bluedEntity.extra != null && ((ExtraGroupInvitationModel) bluedEntity.extra).iid != null && ((ExtraGroupInvitationModel) bluedEntity.extra).iid.size() > 0) {
+                            String str3 = ((ExtraGroupInvitationModel) bluedEntity.extra).iid.get(0).iid;
                             if (TextUtils.isEmpty(str3)) {
                                 ChatHelperV4.this.a(chattingModel, str, str2, i);
                                 return;
@@ -1263,7 +1243,6 @@ public class ChatHelperV4 {
                 ChatHelperV4.this.a(chattingModel, str, str2, i);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<Object, ExtraGroupInvitationModel> parseData(String str3) {
                 return super.parseData(str3);
             }
@@ -1275,14 +1254,12 @@ public class ChatHelperV4 {
         final String a3 = a(chattingModel);
         if (z) {
             ChatManager.getInstance().resendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.1
-                @Override // com.blued.android.chat.listener.MsgPreProcesser
                 public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                     ChatHelperV4.this.a(chattingModel2, msgPreProcesserListener, a3);
                 }
             });
         } else {
             ChatManager.getInstance().sendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.2
-                @Override // com.blued.android.chat.listener.MsgPreProcesser
                 public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                     ChatHelperV4.this.a(chattingModel2, msgPreProcesserListener, a3);
                 }
@@ -1295,14 +1272,12 @@ public class ChatHelperV4 {
         if ((chattingModel.msgType == 32 || chattingModel.msgType == 210) && IMManager.a().b(chattingModel)) {
             if (z) {
                 ChatManager.getInstance().resendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.17
-                    @Override // com.blued.android.chat.listener.MsgPreProcesser
                     public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                         IMManager.a().a(chattingModel2);
                     }
                 });
             } else {
                 ChatManager.getInstance().sendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.18
-                    @Override // com.blued.android.chat.listener.MsgPreProcesser
                     public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                         IMManager.a().a(chattingModel2);
                     }
@@ -1373,13 +1348,12 @@ public class ChatHelperV4 {
             case 11:
                 CircleHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<CircleAddPoints>>() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.12
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<CircleAddPoints> bluedEntityA) {
-                        if (bluedEntityA == null || !bluedEntityA.hasData() || bluedEntityA.getSingleData().circle_active_shared_posting <= 0) {
+                        if (bluedEntityA == null || !bluedEntityA.hasData() || ((CircleAddPoints) bluedEntityA.getSingleData()).circle_active_shared_posting <= 0) {
                             return;
                         }
-                        AppMethods.a((CharSequence) ("分享成功，积分+" + bluedEntityA.getSingleData().circle_active_shared_posting));
+                        AppMethods.a("分享成功，积分+" + ((CircleAddPoints) bluedEntityA.getSingleData()).circle_active_shared_posting);
                     }
                 }, str3);
                 s2 = 89;
@@ -1407,23 +1381,22 @@ public class ChatHelperV4 {
         } else if (s2 == 210) {
             LiveHttpUtils.b(shareToMsgEntity.sessionId + "", new BluedUIHttpResponse<BluedEntityA<LiveMsgShareEntity>>() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.13
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<LiveMsgShareEntity> bluedEntityA) {
                     if (bluedEntityA == null || !bluedEntityA.hasData()) {
                         return;
                     }
-                    LiveMsgShareEntity singleData = bluedEntityA.getSingleData();
+                    LiveMsgShareEntity liveMsgShareEntity = (LiveMsgShareEntity) bluedEntityA.getSingleData();
                     Gson f = AppInfo.f();
-                    singleData.name = shareToMsgEntity.name;
-                    singleData.pic_url = shareToMsgEntity.image;
-                    singleData.copywriting = shareToMsgEntity.title;
-                    singleData.description = singleData.room_type_name;
-                    String json = f.toJson(singleData);
+                    liveMsgShareEntity.name = shareToMsgEntity.name;
+                    liveMsgShareEntity.pic_url = shareToMsgEntity.image;
+                    liveMsgShareEntity.copywriting = shareToMsgEntity.title;
+                    liveMsgShareEntity.description = liveMsgShareEntity.room_type_name;
+                    String json = f.toJson(liveMsgShareEntity);
                     Logger.e("invite", "invite friends extra: " + json);
                     ChattingModel chattingModelForSendmsg = ChatHelper.getChattingModelForSendmsg(j2, (short) 210, AppInfo.d().getResources().getString(R.string.yy_share_to_chat), ChatHelperV4.this.b(), json, s);
-                    String str4 = singleData.room_id;
-                    String str5 = singleData.uid;
+                    String str4 = liveMsgShareEntity.room_id;
+                    String str5 = liveMsgShareEntity.uid;
                     EventTrackYY.a(str4, str5, j2 + "");
                     ChatHelperV4.a().a(chattingModelForSendmsg, false);
                 }
@@ -1435,14 +1408,13 @@ public class ChatHelperV4 {
             } else {
                 ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<UrlPicResult>>() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.14
                     /* JADX INFO: Access modifiers changed from: protected */
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     /* renamed from: a */
                     public void onUIUpdate(BluedEntityA<UrlPicResult> bluedEntityA) {
                         if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                             ChatHelperV4.this.c(chattingModelForSendmsg, str, str2, i, i2, i3, i4, i5, false);
                             return;
                         }
-                        UrlPicResult urlPicResult = bluedEntityA.data.get(0);
+                        UrlPicResult urlPicResult = (UrlPicResult) bluedEntityA.data.get(0);
                         if (TextUtils.isEmpty(urlPicResult.url)) {
                             ChatHelperV4.this.c(chattingModelForSendmsg, str, str2, i, i2, i3, i4, i5, false);
                             return;
@@ -1453,7 +1425,6 @@ public class ChatHelperV4 {
                         ChatHelperV4.this.c(chattingModelForSendmsg, str, str2, i, i2, i3, i4, i5, false);
                     }
 
-                    @Override // com.blued.android.framework.http.BluedUIHttpResponse
                     public boolean onUIFailure(int i8, String str4) {
                         ChatHelperV4.this.c(chattingModelForSendmsg, str, str2, i, i2, i3, i4, i5, false);
                         return super.onUIFailure(i8, str4);
@@ -1477,7 +1448,6 @@ public class ChatHelperV4 {
     public void a(List<ChattingModel> list, String str, String str2, int i, int i2, int i3, int i4, int i5) {
         for (ChattingModel chattingModel : list) {
             ChatManager.getInstance().sendMsg(chattingModel, a(str, str2, i, i2, i3, i4, i5), new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.7
-                @Override // com.blued.android.chat.listener.MsgPreProcesser
                 public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                     ChatHelperV4.g.add(new Pair(chattingModel2, msgPreProcesserListener));
                     if (ChatHelperV4.this.i) {
@@ -1681,7 +1651,6 @@ public class ChatHelperV4 {
 
     public void b(ChattingModel chattingModel, String str, String str2, int i, int i2, int i3, int i4, int i5) {
         ChatManager.getInstance().sendMsg(chattingModel, a(str, str2, i, i2, i3, i4, i5), new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.19
-            @Override // com.blued.android.chat.listener.MsgPreProcesser
             public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                 chattingModel2.msgStateCode = (short) 3;
                 msgPreProcesserListener.onProcessToSave(chattingModel2);
@@ -1694,14 +1663,12 @@ public class ChatHelperV4 {
         final String b = b(chattingModel);
         if (z) {
             ChatManager.getInstance().resendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.3
-                @Override // com.blued.android.chat.listener.MsgPreProcesser
                 public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                     ChatHelperV4.this.a(chattingModel2, msgPreProcesserListener, b);
                 }
             });
         } else {
             ChatManager.getInstance().sendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.4
-                @Override // com.blued.android.chat.listener.MsgPreProcesser
                 public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                     ChatHelperV4.this.a(chattingModel2, msgPreProcesserListener, b);
                 }
@@ -1714,7 +1681,7 @@ public class ChatHelperV4 {
     }
 
     public void c() {
-        this.f32199c.a(100);
+        this.f18509c.a(100);
     }
 
     public void c(SingleSessionListener singleSessionListener) {
@@ -1726,14 +1693,12 @@ public class ChatHelperV4 {
         if (IMManager.a().b(chattingModel)) {
             if (z) {
                 ChatManager.getInstance().resendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.15
-                    @Override // com.blued.android.chat.listener.MsgPreProcesser
                     public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                         IMManager.a().a(chattingModel2);
                     }
                 });
             } else {
                 ChatManager.getInstance().sendMsg(chattingModel, a2, new MsgPreProcesser() { // from class: com.soft.blued.ui.msg.controller.tools.ChatHelperV4.16
-                    @Override // com.blued.android.chat.listener.MsgPreProcesser
                     public void preProcess(ChattingModel chattingModel2, MsgPreProcesserListener msgPreProcesserListener) {
                         IMManager.a().a(chattingModel2);
                     }
@@ -1868,20 +1833,20 @@ public class ChatHelperV4 {
     }
 
     public void h(ChattingModel chattingModel) {
-        ChatManager.getInstance().sendMsg(chattingModel, null, null);
+        ChatManager.getInstance().sendMsg(chattingModel, (SessionProfileModel) null, (MsgPreProcesser) null);
     }
 
     public void i(ChattingModel chattingModel) {
         try {
-            if (this.e || IMV4Constant.f32240a) {
+            if (this.e || IMV4Constant.f18550a) {
                 return;
             }
             if (BluedPreferences.ae() || BluedPreferences.af()) {
-                if (ChatConstants.f28313a == chattingModel.sessionId && IMV4Constant.b) {
+                if (ChatConstants.f14623a == chattingModel.sessionId && IMV4Constant.b) {
                     return;
                 }
                 if (BluedPreferences.af() && BluedPreferences.ae()) {
-                    if (ChatConstants.f28313a != chattingModel.sessionId) {
+                    if (ChatConstants.f14623a != chattingModel.sessionId) {
                         if (BluedPreferences.ac()) {
                             MediaUtils.a().a(1);
                         } else {
@@ -1891,7 +1856,7 @@ public class ChatHelperV4 {
                     MediaUtils.a().a(1000L);
                 } else if (BluedPreferences.af()) {
                     MediaUtils.a().a(1000L);
-                } else if (!BluedPreferences.ae() || ChatConstants.f28313a == chattingModel.sessionId) {
+                } else if (!BluedPreferences.ae() || ChatConstants.f14623a == chattingModel.sessionId) {
                 } else {
                     if (BluedPreferences.ac()) {
                         MediaUtils.a().a(1);

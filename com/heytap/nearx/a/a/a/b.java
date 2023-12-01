@@ -56,7 +56,7 @@ public final class b {
         }
         List<T> list2 = list;
         if (list instanceof c) {
-            list2 = ((c) list).f22256a;
+            list2 = ((c) list).f8648a;
         }
         if (list2 != Collections.emptyList() && !(list2 instanceof a)) {
             a aVar = new a(list2);

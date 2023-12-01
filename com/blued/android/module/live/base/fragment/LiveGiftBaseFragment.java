@@ -115,12 +115,10 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/fragment/LiveGiftBaseFragment$LiveGiftComboTimer.class */
     public class LiveGiftComboTimer extends Timer {
-
-        /* renamed from: a  reason: collision with root package name */
-        CommonLiveGiftModel f11410a;
+        CommonLiveGiftModel a;
 
         public LiveGiftComboTimer(CommonLiveGiftModel commonLiveGiftModel) {
-            this.f11410a = commonLiveGiftModel;
+            this.a = commonLiveGiftModel;
         }
     }
 
@@ -203,13 +201,13 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
     }
 
     public void b(CommonLiveGiftModel commonLiveGiftModel) {
+        int a;
         int a2;
-        int a3;
         int i;
-        int a4;
+        int a3;
         float f;
         int i2;
-        int a5;
+        int a4;
         if (isHidden()) {
             return;
         }
@@ -252,48 +250,48 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
             return;
         }
         int i10 = i3 - (((i3 / (i5 * i6)) * i5) * i6);
-        int a6 = LiveDataManager.a().f() ? (AppInfo.m - DisplayUtil.a(getContext(), 200.0f)) / i6 : (AppInfo.l - DisplayUtil.a(getContext(), 30.0f)) / i6;
+        int a5 = LiveDataManager.a().f() ? (AppInfo.m - DisplayUtil.a(getContext(), 200.0f)) / i6 : (AppInfo.l - DisplayUtil.a(getContext(), 30.0f)) / i6;
         if (LiveDataManager.a().f()) {
-            a2 = DisplayUtil.a(getContext(), 30.0f) + ((i5 <= 1 ? i10 : i10 - (i6 * (i5 - 1))) * a6) + (a6 / 2);
-            a3 = DisplayUtil.a(getContext(), 33.0f);
+            a = DisplayUtil.a(getContext(), 30.0f) + ((i5 <= 1 ? i10 : i10 - (i6 * (i5 - 1))) * a5) + (a5 / 2);
+            a2 = DisplayUtil.a(getContext(), 33.0f);
         } else {
-            a2 = DisplayUtil.a(getContext(), 15.0f) + ((i10 % i6) * a6) + (a6 / 2);
-            a3 = DisplayUtil.a(getContext(), 33.0f);
+            a = DisplayUtil.a(getContext(), 15.0f) + ((i10 % i6) * a5) + (a5 / 2);
+            a2 = DisplayUtil.a(getContext(), 33.0f);
         }
-        int i11 = a2 - a3;
+        int i11 = a - a2;
         int[] iArr = this.B;
         if (iArr[0] == 0 || iArr[1] == 0) {
-            this.f10811a.getLocationInWindow(this.B);
+            this.a.getLocationInWindow(this.B);
         }
         int i12 = this.B[1];
         int i13 = i12;
         if (i12 == 0) {
             if (LiveDataManager.a().f()) {
                 i2 = AppInfo.l;
-                a5 = DisplayUtil.a(getContext(), 175.0f);
+                a4 = DisplayUtil.a(getContext(), 175.0f);
             } else {
                 i2 = AppInfo.m;
-                a5 = DisplayUtil.a(getContext(), 245.0f);
+                a4 = DisplayUtil.a(getContext(), 245.0f);
             }
-            i13 = i2 - a5;
+            i13 = i2 - a4;
         }
-        int a7 = ((i13 + ((i10 / 4) * a6)) + DisplayUtil.a(getContext(), 33.0f)) - (a6 / 2);
+        int a6 = ((i13 + ((i10 / 4) * a5)) + DisplayUtil.a(getContext(), 33.0f)) - (a5 / 2);
         if (LiveDataManager.a().f()) {
             i = AppInfo.m / 2;
-            a4 = DisplayUtil.a(getContext(), 120.0f);
+            a3 = DisplayUtil.a(getContext(), 120.0f);
         } else {
             i = AppInfo.l / 2;
-            a4 = DisplayUtil.a(getContext(), 190.0f);
+            a3 = DisplayUtil.a(getContext(), 190.0f);
         }
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(UiUtils.a(getContext(), 66.0f), UiUtils.a(getContext(), 66.0f));
         layoutParams.leftMargin = i11;
-        layoutParams.topMargin = a7;
+        layoutParams.topMargin = a6;
         s().addView(imageView, layoutParams);
         TranslateAnimation translateAnimation = new TranslateAnimation(0.0f, i - i11, 0.0f, 0.0f);
         translateAnimation.setInterpolator(new LinearInterpolator());
         translateAnimation.setRepeatCount(0);
         translateAnimation.setFillAfter(true);
-        TranslateAnimation translateAnimation2 = new TranslateAnimation(0.0f, 0.0f, 0.0f, a4 - a7);
+        TranslateAnimation translateAnimation2 = new TranslateAnimation(0.0f, 0.0f, 0.0f, a3 - a6);
         translateAnimation2.setInterpolator(new DecelerateInterpolator());
         translateAnimation2.setRepeatCount(0);
         translateAnimation.setFillAfter(true);
@@ -323,7 +321,7 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
     }
 
     protected void b(CommonLiveGiftModel commonLiveGiftModel, int i) {
-        CommonLiveGiftModel commonLiveGiftModel2 = (CommonLiveGiftModel) a(this.f10812c);
+        CommonLiveGiftModel commonLiveGiftModel2 = (CommonLiveGiftModel) a(this.c);
         if (commonLiveGiftModel2 == null || commonLiveGiftModel == null || !StringUtils.a(commonLiveGiftModel2.goods_id, commonLiveGiftModel.goods_id) || commonLiveGiftModel2.comboWaitTime <= 0) {
             r();
         } else {
@@ -339,14 +337,14 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
                 }
                 LiveGiftBaseFragment.a(LiveGiftBaseFragment.this);
                 LiveGiftBaseFragment liveGiftBaseFragment = LiveGiftBaseFragment.this;
-                CommonLiveGiftModel commonLiveGiftModel3 = (CommonLiveGiftModel) liveGiftBaseFragment.a(liveGiftBaseFragment.f10812c);
-                if (LiveGiftBaseFragment.this.z == null || LiveGiftBaseFragment.this.z.f11410a == null) {
+                CommonLiveGiftModel commonLiveGiftModel3 = (CommonLiveGiftModel) liveGiftBaseFragment.a(liveGiftBaseFragment.c);
+                if (LiveGiftBaseFragment.this.z == null || LiveGiftBaseFragment.this.z.a == null) {
                     LiveGiftBaseFragment.this.C = 0;
                     return;
                 }
                 if (commonLiveGiftModel3 != null) {
                     try {
-                        if (LiveGiftBaseFragment.this.z != null && LiveGiftBaseFragment.this.z.f11410a != null && StringUtils.a(commonLiveGiftModel3.goods_id, LiveGiftBaseFragment.this.z.f11410a.goods_id)) {
+                        if (LiveGiftBaseFragment.this.z != null && LiveGiftBaseFragment.this.z.a != null && StringUtils.a(commonLiveGiftModel3.goods_id, LiveGiftBaseFragment.this.z.a.goods_id)) {
                             LiveGiftBaseFragment.this.d(commonLiveGiftModel3, LiveGiftBaseFragment.this.C);
                             return;
                         }
@@ -367,7 +365,7 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(List<CommonGiftPackageModel> list) {
-        CommonLiveGiftModel commonLiveGiftModel = (CommonLiveGiftModel) a(this.f10812c);
+        CommonLiveGiftModel commonLiveGiftModel = (CommonLiveGiftModel) a(this.c);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -491,14 +489,14 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
     protected abstract int k();
 
     protected void l() {
-        if (this.f10812c == null) {
-            this.f10812c = b();
+        if (this.c == null) {
+            this.c = b();
         }
-        BaseGiftModel a2 = a(this.f10812c);
-        if (a2 != null) {
-            LiveEventBus.get("gift_item_selected").post(this.f10812c);
-            this.f10811a.setToolBtnSelect(a2.packageTabIndex);
-            this.h.setCurrentItem(a2.packageTabIndex, false);
+        BaseGiftModel a = a(this.c);
+        if (a != null) {
+            LiveEventBus.get("gift_item_selected").post(this.c);
+            this.a.setToolBtnSelect(a.packageTabIndex);
+            this.h.setCurrentItem(a.packageTabIndex, false);
         }
     }
 
@@ -512,7 +510,6 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
         return -1;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         View view = this.r;
         if (view == null || view.getVisibility() != 0) {
@@ -522,7 +519,6 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onHiddenChanged(boolean z) {
         super.onHiddenChanged(z);
         if (!z) {
@@ -548,7 +544,7 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
         }
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseGiftRootFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseGiftRootFragment
     @OverridingMethodsMustInvokeSuper
     public void onInitListener() {
         super.onInitListener();
@@ -568,7 +564,6 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
         });
         this.p.setOnClickListener(this);
         LiveEventBus.get("gold_remain_result", BasePayRemaining.class).observe(this, new Observer<BasePayRemaining>() { // from class: com.blued.android.module.live.base.fragment.LiveGiftBaseFragment.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BasePayRemaining basePayRemaining) {
                 LiveGiftBaseFragment.this.c(basePayRemaining);
@@ -590,13 +585,13 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
         });
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseGiftRootFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseGiftRootFragment, com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitView() {
         super.onInitView();
         this.E = g();
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseViewPagerParentFragment
     public void onInitViewFinished() {
         super.onInitViewFinished();
         List<CommonGiftPackageModel> b = LiveDataManager.a().b(h());
@@ -613,7 +608,6 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
         d();
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onLoadData() {
         c(new BasePayRemaining());
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live.base.fragment.-$$Lambda$LiveGiftBaseFragment$rsXuMVMWLL7FPtD5cNre6QoH9W4
@@ -647,7 +641,7 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
     protected void q() {
         LiveGiftComboTimer liveGiftComboTimer = this.z;
         if (liveGiftComboTimer != null) {
-            liveGiftComboTimer.f11410a = null;
+            liveGiftComboTimer.a = null;
             this.z.cancel();
             this.z = null;
         }
@@ -657,6 +651,6 @@ public abstract class LiveGiftBaseFragment extends BaseGiftRootFragment<CommonGi
     /* JADX INFO: Access modifiers changed from: protected */
     public void r() {
         q();
-        a((CommonLiveGiftModel) a(this.f10812c), 0);
+        a((CommonLiveGiftModel) a(this.c), 0);
     }
 }

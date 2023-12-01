@@ -4,7 +4,7 @@ package c.t.m.g;
 public final class y2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static double[] f4064a;
+    public static double[] f4016a;
     public static double[] b;
 
     public static void a(double[] dArr, double[] dArr2) {
@@ -16,11 +16,11 @@ public final class y2 {
         if ((1 << numberOfLeadingZeros) != length) {
             throw new IllegalArgumentException("Length is not a power of 2");
         }
-        double[] dArr3 = f4064a;
+        double[] dArr3 = f4016a;
         if (dArr3 == null || dArr3.length != length / 2) {
             int i = length / 2;
             b = new double[i];
-            f4064a = new double[i];
+            f4016a = new double[i];
             int i2 = 0;
             while (true) {
                 int i3 = i2;
@@ -29,7 +29,7 @@ public final class y2 {
                 }
                 double d = (i3 * 6.283185307179586d) / length;
                 b[i3] = Math.cos(d);
-                f4064a[i3] = Math.sin(d);
+                f4016a[i3] = Math.sin(d);
                 i2 = i3 + 1;
             }
         }
@@ -74,7 +74,7 @@ public final class y2 {
                         double[] dArr4 = b;
                         double d5 = dArr4[i14];
                         double d6 = dArr2[i15];
-                        double[] dArr5 = f4064a;
+                        double[] dArr5 = f4016a;
                         double d7 = (d4 * d5) + (d6 * dArr5[i14]);
                         double d8 = ((-dArr[i15]) * dArr5[i14]) + (dArr2[i15] * dArr4[i14]);
                         dArr[i15] = dArr[i12] - d7;

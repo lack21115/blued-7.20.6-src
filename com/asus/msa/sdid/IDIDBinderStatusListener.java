@@ -16,7 +16,7 @@ public interface IDIDBinderStatusListener extends IInterface {
         public static class Proxy implements IDIDBinderStatusListener {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f9218a;
+            public IBinder f6378a;
 
             @Override // com.asus.msa.sdid.IDIDBinderStatusListener
             public native void a(IDidAidlInterface iDidAidlInterface);

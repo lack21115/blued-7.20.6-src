@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 public class UTTracker {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Pattern f41020a = Pattern.compile("(\\|\\||[\t\r\n])+");
+    private static Pattern f27329a = Pattern.compile("(\\|\\||[\t\r\n])+");
     private String al = null;
     private Map<String, String> A = new HashMap();
 
@@ -42,7 +42,7 @@ public class UTTracker {
         if (str != null) {
             str2 = str;
             if (!"".equals(str)) {
-                str2 = f41020a.matcher(str).replaceAll("");
+                str2 = f27329a.matcher(str).replaceAll("");
             }
         }
         return str2;
@@ -131,7 +131,7 @@ public class UTTracker {
     }
 
     /* renamed from: g  reason: collision with other method in class */
-    private static void m11333g(Map<String, String> map) {
+    private static void m8290g(Map<String, String> map) {
         map.put(LogField.SDKTYPE.toString(), "mini");
     }
 
@@ -209,7 +209,7 @@ public class UTTracker {
             UTMIVariables.getInstance().isAliyunOSPlatform();
             f(g);
             d(g);
-            m11333g(g);
+            m8290g(g);
             h(g);
             a.a(g.remove(LogField.PAGE.toString()), g.remove(LogField.EVENTID.toString()), g.remove(LogField.ARG1.toString()), g.remove(LogField.ARG2.toString()), g.remove(LogField.ARG3.toString()), g);
         }

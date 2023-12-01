@@ -5,13 +5,9 @@ import java.lang.reflect.Method;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/utils/SkinCompatVersionUtils.class */
 public final class SkinCompatVersionUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Class<?> f44248a;
+    private static Class<?> a;
     private static Method b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static Method f44249c;
+    private static Method c;
     private static Class<?> d;
     private static Method e;
     private static Method f;
@@ -22,21 +18,21 @@ public final class SkinCompatVersionUtils {
         try {
             d = Class.forName("androidx.core.graphics.drawable.WrappedDrawable");
         } catch (ClassNotFoundException e2) {
-            if (Slog.f44252a) {
+            if (Slog.a) {
                 Slog.a("SkinCompatUtils", "hasV4WrappedDrawable = false");
             }
         }
         try {
-            f44248a = Class.forName("androidx.core.graphics.drawable.DrawableWrapper");
+            a = Class.forName("androidx.core.graphics.drawable.DrawableWrapper");
         } catch (ClassNotFoundException e3) {
-            if (Slog.f44252a) {
+            if (Slog.a) {
                 Slog.a("SkinCompatUtils", "hasV4DrawableWrapper = false");
             }
         }
         try {
             g = Class.forName("androidx.appcompat.graphics.drawable.DrawableWrapper");
         } catch (ClassNotFoundException e4) {
-            if (Slog.f44252a) {
+            if (Slog.a) {
                 Slog.a("SkinCompatUtils", "hasV7DrawableWrapper = false");
             }
         }
@@ -51,7 +47,7 @@ public final class SkinCompatVersionUtils {
                     f = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (Exception e2) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "setV4WrappedDrawableWrappedDrawable No Such Method");
                     }
                 }
@@ -61,7 +57,7 @@ public final class SkinCompatVersionUtils {
                 try {
                     method.invoke(drawable, drawable2);
                 } catch (Exception e3) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "setV4WrappedDrawableWrappedDrawable invoke error: " + e3);
                     }
                 }
@@ -83,7 +79,7 @@ public final class SkinCompatVersionUtils {
                     e = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (Exception e2) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "getV4WrappedDrawableWrappedDrawable No Such Method");
                     }
                 }
@@ -93,7 +89,7 @@ public final class SkinCompatVersionUtils {
                 try {
                     return (Drawable) method.invoke(drawable, new Object[0]);
                 } catch (Exception e3) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "getV4WrappedDrawableWrappedDrawable invoke error: " + e3);
                     }
                 }
@@ -103,25 +99,25 @@ public final class SkinCompatVersionUtils {
     }
 
     public static void b(Drawable drawable, Drawable drawable2) {
-        Class<?> cls = f44248a;
+        Class<?> cls = a;
         if (cls != null) {
-            if (f44249c == null) {
+            if (c == null) {
                 try {
                     Method declaredMethod = cls.getDeclaredMethod("setWrappedDrawable", Drawable.class);
-                    f44249c = declaredMethod;
+                    c = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (Exception e2) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "setV4DrawableWrapperWrappedDrawable No Such Method");
                     }
                 }
             }
-            Method method = f44249c;
+            Method method = c;
             if (method != null) {
                 try {
                     method.invoke(drawable, drawable2);
                 } catch (Exception e3) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "setV4DrawableWrapperWrappedDrawable invoke error: " + e3);
                     }
                 }
@@ -130,12 +126,12 @@ public final class SkinCompatVersionUtils {
     }
 
     public static boolean c(Drawable drawable) {
-        Class<?> cls = f44248a;
+        Class<?> cls = a;
         return cls != null && cls.isAssignableFrom(drawable.getClass());
     }
 
     public static Drawable d(Drawable drawable) {
-        Class<?> cls = f44248a;
+        Class<?> cls = a;
         if (cls != null) {
             if (b == null) {
                 try {
@@ -143,7 +139,7 @@ public final class SkinCompatVersionUtils {
                     b = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (Exception e2) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "getV4DrawableWrapperWrappedDrawable No Such Method");
                     }
                 }
@@ -153,7 +149,7 @@ public final class SkinCompatVersionUtils {
                 try {
                     return (Drawable) method.invoke(drawable, new Object[0]);
                 } catch (Exception e3) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "getV4DrawableWrapperWrappedDrawable invoke error: " + e3);
                     }
                 }
@@ -176,7 +172,7 @@ public final class SkinCompatVersionUtils {
                     h = declaredMethod;
                     declaredMethod.setAccessible(true);
                 } catch (Exception e2) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "getV7DrawableWrapperWrappedDrawable No Such Method");
                     }
                 }
@@ -186,7 +182,7 @@ public final class SkinCompatVersionUtils {
                 try {
                     return (Drawable) method.invoke(drawable, new Object[0]);
                 } catch (Exception e3) {
-                    if (Slog.f44252a) {
+                    if (Slog.a) {
                         Slog.a("SkinCompatUtils", "getV7DrawableWrapperWrappedDrawable invoke error: " + e3);
                     }
                 }

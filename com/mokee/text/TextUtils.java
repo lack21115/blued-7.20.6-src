@@ -2,9 +2,7 @@ package com.mokee.text;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/text/TextUtils.class */
 public class TextUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f24226a;
+    private static final String a;
     public static int b;
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x005c, code lost:
@@ -23,7 +21,7 @@ public class TextUtils {
         if (r7 > r8) goto L3;
      */
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0074, code lost:
-        com.mokee.text.TextUtils.f24226a = new java.lang.String(r11).intern();
+        com.mokee.text.TextUtils.a = new java.lang.String(r11).intern();
      */
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0083, code lost:
         return;
@@ -153,7 +151,7 @@ public class TextUtils {
             r2 = r11
             r1.<init>(r2)
             java.lang.String r0 = r0.intern()
-            com.mokee.text.TextUtils.f24226a = r0
+            com.mokee.text.TextUtils.a = r0
             return
         L84:
             r0 = 46
@@ -172,10 +170,10 @@ public class TextUtils {
             r5 = r0
             goto L4b
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.mokee.text.TextUtils.m8052clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.mokee.text.TextUtils.m11275clinit():void");
     }
 
-    public static boolean isChineseLetter(char c2) {
-        return String.valueOf(c2).matches(f24226a);
+    public static boolean isChineseLetter(char c) {
+        return String.valueOf(c).matches(a);
     }
 }

@@ -39,11 +39,11 @@ import java.util.Map;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8379a = "DataEnergizeWrapper";
+    public static final String f5539a = "DataEnergizeWrapper";
     private static boolean k = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.video.dynview.i.c.b f8380c;
+    private com.anythink.expressad.video.dynview.i.c.b f5540c;
     private Map<String, Bitmap> d;
     private volatile boolean e;
     private String f = "#FFFFFFFF";
@@ -57,10 +57,10 @@ public final class a {
     public com.anythink.expressad.video.dynview.e.a b = new com.anythink.expressad.video.dynview.e.a() { // from class: com.anythink.expressad.video.dynview.j.a.1
         @Override // com.anythink.expressad.video.dynview.e.a
         public final void a() {
-            if (!a.this.m || a.this.f8380c == null) {
+            if (!a.this.m || a.this.f5540c == null) {
                 return;
             }
-            a.this.f8380c.a(a.this.n * 1000, a.this.l);
+            a.this.f5540c.a(a.this.n * 1000, a.this.l);
             a.this.m = false;
         }
 
@@ -70,8 +70,8 @@ public final class a {
 
         @Override // com.anythink.expressad.video.dynview.e.a
         public final void c() {
-            if (a.this.f8380c != null) {
-                a.this.f8380c.c();
+            if (a.this.f5540c != null) {
+                a.this.f5540c.c();
                 a.this.m = true;
             }
         }
@@ -83,10 +83,10 @@ public final class a {
     public final class AnonymousClass5 extends com.anythink.expressad.widget.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Map f8390a;
+        final /* synthetic */ Map f5550a;
 
         AnonymousClass5(Map map) {
-            this.f8390a = map;
+            this.f5550a = map;
         }
 
         @Override // com.anythink.expressad.widget.a
@@ -95,7 +95,7 @@ public final class a {
                 return;
             }
             a.f(a.this);
-            a.a(a.this, this.f8390a);
+            a.a(a.this, this.f5550a);
         }
     }
 
@@ -105,11 +105,11 @@ public final class a {
     public final class AnonymousClass6 implements com.anythink.expressad.video.dynview.i.c.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TextView f8391a;
+        final /* synthetic */ TextView f5551a;
         final /* synthetic */ Map b;
 
         AnonymousClass6(TextView textView, Map map) {
-            this.f8391a = textView;
+            this.f5551a = textView;
             this.b = map;
         }
 
@@ -123,7 +123,7 @@ public final class a {
             String str;
             a.this.n = (int) (j / 1000);
             long j2 = a.this.n;
-            String f = d.f(this.f8391a.getContext());
+            String f = d.f(this.f5551a.getContext());
             if (f.startsWith(com.anythink.expressad.video.dynview.a.a.V)) {
                 if (f.contains("TW") || f.contains(com.anythink.expressad.video.dynview.a.a.ae)) {
                     str = j2 + com.anythink.expressad.video.dynview.a.a.G;
@@ -145,7 +145,7 @@ public final class a {
             } else {
                 str = com.anythink.expressad.video.dynview.a.a.H + j2 + " s";
             }
-            this.f8391a.setText(str);
+            this.f5551a.setText(str);
             a.this.j++;
         }
     }
@@ -162,7 +162,7 @@ public final class a {
             createBitmap.eraseColor(Color.parseColor(this.i));
             return createBitmap;
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
             return bitmap;
@@ -177,7 +177,7 @@ public final class a {
             @Override // com.anythink.expressad.foundation.g.d.c
             public final void a(Bitmap bitmap, String str2) {
                 if (bitmap == null || bitmap.isRecycled()) {
-                    int a2 = i.a(imageView.getContext(), "anythink_icon_play_bg", i.f7952c);
+                    int a2 = i.a(imageView.getContext(), "anythink_icon_play_bg", i.f5112c);
                     imageView.setBackgroundColor(Color.parseColor(a.this.h));
                     imageView.setImageResource(a2);
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -196,12 +196,12 @@ public final class a {
             @Override // com.anythink.expressad.foundation.g.d.c
             public final void a(String str2, String str3) {
                 try {
-                    int a2 = i.a(imageView.getContext(), "anythink_icon_play_bg", i.f7952c);
+                    int a2 = i.a(imageView.getContext(), "anythink_icon_play_bg", i.f5112c);
                     imageView.setBackgroundColor(Color.parseColor(a.this.h));
                     imageView.setImageResource(a2);
                     imageView.setScaleType(ImageView.ScaleType.CENTER);
                 } catch (Exception e) {
-                    o.a(a.f8379a, e.getMessage());
+                    o.a(a.f5539a, e.getMessage());
                 }
             }
         });
@@ -239,7 +239,7 @@ public final class a {
                     aVar.b();
                 }
             } catch (Exception e) {
-                o.d(f8379a, e.getMessage());
+                o.d(f5539a, e.getMessage());
             }
         }
     }
@@ -293,7 +293,7 @@ public final class a {
                 textView.setOnClickListener(new AnonymousClass5(map));
                 this.l = new AnonymousClass6(textView, map);
                 com.anythink.expressad.video.dynview.i.c.b a3 = new com.anythink.expressad.video.dynview.i.c.b().a(parseLong * 1000).a().a(this.l);
-                this.f8380c = a3;
+                this.f5540c = a3;
                 a3.b();
             }
         }
@@ -338,7 +338,7 @@ public final class a {
                     b();
                 }
             } catch (Exception e) {
-                o.d(f8379a, e.getMessage());
+                o.d(f5539a, e.getMessage());
             }
         }
     }
@@ -371,12 +371,12 @@ public final class a {
 
     private void b() {
         com.anythink.expressad.video.dynview.i.a.a.a().b();
-        com.anythink.expressad.video.dynview.i.c.b bVar = this.f8380c;
+        com.anythink.expressad.video.dynview.i.c.b bVar = this.f5540c;
         if (bVar != null) {
             bVar.c();
-            this.f8380c = null;
+            this.f5540c = null;
         }
-        com.anythink.expressad.video.dynview.b.a.a().f8352a = null;
+        com.anythink.expressad.video.dynview.b.a.a().f5512a = null;
         if (this.b != null) {
             this.b = null;
         }
@@ -401,7 +401,7 @@ public final class a {
     }
 
     private static void b(com.anythink.expressad.video.dynview.c cVar, View view) {
-        a.C0161a a2 = com.anythink.expressad.video.dynview.g.a.a();
+        a.C0090a a2 = com.anythink.expressad.video.dynview.g.a.a();
         a2.a(cVar.e()).a();
         if (cVar.e() != 2) {
             a2.a(cVar.d()).b(cVar.c());
@@ -423,7 +423,7 @@ public final class a {
                     aVar.b();
                 }
             } catch (Exception e) {
-                o.d(f8379a, e.getMessage());
+                o.d(f5539a, e.getMessage());
             }
         }
     }
@@ -436,7 +436,7 @@ public final class a {
                     b();
                 }
             } catch (Exception e) {
-                o.d(f8379a, e.getMessage());
+                o.d(f5539a, e.getMessage());
             }
         }
     }
@@ -465,7 +465,7 @@ public final class a {
             }
             eVar.a(view, new ArrayList());
         } catch (Exception e) {
-            o.a(f8379a, e.getMessage());
+            o.a(f5539a, e.getMessage());
             eVar.a(com.anythink.expressad.video.dynview.c.b.NOT_FOUND_VIEWOPTION);
         }
     }
@@ -632,7 +632,7 @@ public final class a {
                     textView3.setOnClickListener(new AnonymousClass5(map));
                     this.l = new AnonymousClass6(textView3, map);
                     com.anythink.expressad.video.dynview.i.c.b a3 = new com.anythink.expressad.video.dynview.i.c.b().a(parseLong * 1000).a().a(this.l);
-                    this.f8380c = a3;
+                    this.f5540c = a3;
                     a3.b();
                 }
             }

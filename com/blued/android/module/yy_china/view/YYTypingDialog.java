@@ -1,6 +1,6 @@
 package com.blued.android.module.yy_china.view;
 
-import android.content.Context;
+import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -33,13 +33,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYTypingDialog.class */
 public final class YYTypingDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogYytypingBinding f18528a;
+    private DialogYytypingBinding a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ISendMsgListener f18529c;
+    private final ISendMsgListener c;
     private BaseYYStudioFragment d;
     private String e;
     private String f;
@@ -47,15 +43,15 @@ public final class YYTypingDialog extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(YYTypingDialog this$0) {
         Intrinsics.e(this$0, "this$0");
-        this$0.f().f16460a.setFocusableInTouchMode(true);
-        this$0.f().f16460a.setFocusable(true);
-        this$0.f().f16460a.requestFocus();
-        Object systemService = this$0.f().f16460a.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        this$0.f().a.setFocusableInTouchMode(true);
+        this$0.f().a.setFocusable(true);
+        this$0.f().a.requestFocus();
+        Object systemService = this$0.f().a.getContext().getSystemService("input_method");
         if (systemService == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.view.inputmethod.InputMethodManager");
         }
-        ((InputMethodManager) systemService).showSoftInput(this$0.f().f16460a, 0);
-        this$0.f().f16460a.setSelection(this$0.f().f16460a.getText().length());
+        ((InputMethodManager) systemService).showSoftInput(this$0.f().a, 0);
+        this$0.f().a.setSelection(this$0.f().a.getText().length());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -65,12 +61,12 @@ public final class YYTypingDialog extends BaseFullScreenDialog {
         if (YYRoomInfoManager.e().c().a(this$0.getContext(), (View.OnClickListener) null)) {
             return;
         }
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo != null && TextUtils.equals(yYUserInfo.mute, "1")) {
             ToastUtils.a("你已被禁言，暂不可在此房间发言", 0);
             return;
         }
-        String obj = this$0.f().f16460a.getText().toString();
+        String obj = this$0.f().a.getText().toString();
         String str = obj;
         if (TextUtils.isEmpty(str)) {
             return;
@@ -96,7 +92,7 @@ public final class YYTypingDialog extends BaseFullScreenDialog {
         }
         Logger.e("IM msg", Intrinsics.a("原始 msg = ", (Object) obj));
         YYImMsgManager.a().a(EncryptTool.b(this$0.e), this$0.f, obj, this$0.b, this$0.d);
-        ISendMsgListener iSendMsgListener = this$0.f18529c;
+        ISendMsgListener iSendMsgListener = this$0.c;
         if (iSendMsgListener != null) {
             iSendMsgListener.a();
         }
@@ -104,7 +100,7 @@ public final class YYTypingDialog extends BaseFullScreenDialog {
         if (baseYYStudioFragment != null) {
             fragmentActivity = baseYYStudioFragment.getActivity();
         }
-        KeyboardUtils.a(fragmentActivity);
+        KeyboardUtils.a((Activity) fragmentActivity);
         this$0.dismissAllowingStateLoss();
     }
 
@@ -127,11 +123,11 @@ public final class YYTypingDialog extends BaseFullScreenDialog {
             sb.append((Object) YYRoomInfoManager.e().a(this.e, this.f));
             sb.append(' ');
             this.b = sb.toString();
-            YYRoomInfoManager.e().c().a(getContext(), f().f16460a, 16, getResources().getColor(R.color.syc_00E0AB), this.b, hashMap);
+            YYRoomInfoManager.e().c().a(getContext(), f().a, 16, getResources().getColor(R.color.syc_00E0AB), this.b, hashMap);
         }
-        f().f16460a.setFilters(new InputFilter[]{new EnglishCharFilter(280)});
+        f().a.setFilters(new InputFilter[]{new EnglishCharFilter(280)});
         f().d.setEnabled(false);
-        EditTextHeightAnimHelper.a(f().f16460a, 1.0f, 3.5f);
+        EditTextHeightAnimHelper.a(f().a, 1.0f, 3.5f);
         BaseYYStudioFragment baseYYStudioFragment = this.d;
         if (baseYYStudioFragment == null) {
             return;
@@ -151,7 +147,7 @@ public final class YYTypingDialog extends BaseFullScreenDialog {
                 YYTypingDialog.a(YYTypingDialog.this, view);
             }
         });
-        f().f16460a.addTextChangedListener(new ITextWatcher() { // from class: com.blued.android.module.yy_china.view.YYTypingDialog$initListener$2
+        f().a.addTextChangedListener(new ITextWatcher() { // from class: com.blued.android.module.yy_china.view.YYTypingDialog$initListener$2
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable s) {
                 Intrinsics.e(s, "s");
@@ -190,19 +186,19 @@ public final class YYTypingDialog extends BaseFullScreenDialog {
     }
 
     public final DialogYytypingBinding f() {
-        DialogYytypingBinding dialogYytypingBinding = this.f18528a;
+        DialogYytypingBinding dialogYytypingBinding = this.a;
         Intrinsics.a(dialogYytypingBinding);
         return dialogYytypingBinding;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18528a = DialogYytypingBinding.a(inflater.inflate(R.layout.dialog_yytyping, viewGroup, true));
+        this.a = DialogYytypingBinding.a(inflater.inflate(R.layout.dialog_yytyping, viewGroup, true));
         return f().getRoot();
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

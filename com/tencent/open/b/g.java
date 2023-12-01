@@ -8,7 +8,11 @@ import android.os.HandlerThread;
 import android.os.Message;
 import android.os.SystemClock;
 import android.provider.BrowserContract;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import com.anythink.pd.ExHandler;
+import com.huawei.hms.framework.common.ContainerUtils;
+import com.huawei.hms.support.hianalytics.HiAnalyticsConstant;
 import com.opos.process.bridge.provider.ProcessBridgeProvider;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.utils.Global;
@@ -30,14 +34,14 @@ import org.json.JSONObject;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static g f38249a;
+    protected static g f24558a;
     protected HandlerThread e;
     protected Handler f;
     protected Random b = new Random();
     protected List<Serializable> d = Collections.synchronizedList(new ArrayList());
 
     /* renamed from: c  reason: collision with root package name */
-    protected List<Serializable> f38250c = Collections.synchronizedList(new ArrayList());
+    protected List<Serializable> f24559c = Collections.synchronizedList(new ArrayList());
     protected Executor g = ThreadManager.newSerialExecutor();
     protected Executor h = ThreadManager.newSerialExecutor();
 
@@ -69,10 +73,10 @@ public class g {
         g gVar;
         synchronized (g.class) {
             try {
-                if (f38249a == null) {
-                    f38249a = new g();
+                if (f24558a == null) {
+                    f24558a = new g();
                 }
-                gVar = f38249a;
+                gVar = f24558a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -110,7 +114,7 @@ public class g {
                     try {
                         Bundle bundle2 = new Bundle();
                         bundle2.putString("uin", Constants.DEFAULT_UIN);
-                        bundle2.putString("imei", c.b(Global.getContext()));
+                        bundle2.putString(ExHandler.JSON_REQUEST_IMEI, c.b(Global.getContext()));
                         bundle2.putString("imsi", c.c(Global.getContext()));
                         bundle2.putString("android_id", c.d(Global.getContext()));
                         bundle2.putString("mac", c.a());
@@ -120,10 +124,10 @@ public class g {
                         bundle2.putString("network", a.a(Global.getContext()));
                         bundle2.putString("language", c.b());
                         bundle2.putString("resolution", c.a(Global.getContext()));
-                        bundle2.putString("apn", a.b(Global.getContext()));
+                        bundle2.putString(TelephonyManager.EXTRA_DATA_APN, a.b(Global.getContext()));
                         bundle2.putString("model_name", Build.MODEL);
                         bundle2.putString("timezone", TimeZone.getDefault().getID());
-                        bundle2.putString("sdk_ver", Constants.SDK_VERSION);
+                        bundle2.putString(HiAnalyticsConstant.BI_KEY_SDK_VER, Constants.SDK_VERSION);
                         bundle2.putString("qz_ver", Util.getAppVersionName(Global.getContext(), "com.qzone"));
                         bundle2.putString("qq_ver", Util.getVersionName(Global.getContext(), "com.tencent.mobileqq"));
                         bundle2.putString("qua", Util.getQUA3(Global.getContext(), Global.getPackageName()));
@@ -173,7 +177,7 @@ public class g {
                         long j4 = j;
                         Bundle bundle = new Bundle();
                         String a2 = a.a(Global.getContext());
-                        bundle.putString("apn", a2);
+                        bundle.putString(TelephonyManager.EXTRA_DATA_APN, a2);
                         bundle.putString("appid", "1000067");
                         bundle.putString("commandid", str);
                         bundle.putString("detail", str2);
@@ -199,8 +203,8 @@ public class g {
                         bundle.putString("rspSize", j3 + "");
                         bundle.putString("timeCost", (elapsedRealtime - j4) + "");
                         bundle.putString("uin", Constants.DEFAULT_UIN);
-                        g.this.f38250c.add(new b(bundle));
-                        int size = g.this.f38250c.size();
+                        g.this.f24559c.add(new b(bundle));
+                        int size = g.this.f24559c.size();
                         int i2 = OpenConfig.getInstance(Global.getContext(), null).getInt("Agent_ReportTimeInterval");
                         int i3 = i2;
                         if (i2 == 0) {
@@ -318,21 +322,21 @@ public class g {
     }
 
     protected Bundle c() {
-        if (this.f38250c.size() == 0) {
+        if (this.f24559c.size() == 0) {
             return null;
         }
-        b bVar = (b) this.f38250c.get(0);
+        b bVar = (b) this.f24559c.get(0);
         if (bVar == null) {
             com.tencent.open.a.f.b("openSDK_LOG.ReportManager", "-->prepareCgiData, the 0th cgireportitem is null.");
             return null;
         }
-        String str = bVar.f38244a.get("appid");
+        String str = bVar.f24553a.get("appid");
         List<Serializable> a2 = f.a().a("report_cgi");
         if (a2 != null) {
-            this.f38250c.addAll(a2);
+            this.f24559c.addAll(a2);
         }
-        com.tencent.open.a.f.b("openSDK_LOG.ReportManager", "-->prepareCgiData, mCgiList size: " + this.f38250c.size());
-        if (this.f38250c.size() == 0) {
+        com.tencent.open.a.f.b("openSDK_LOG.ReportManager", "-->prepareCgiData, mCgiList size: " + this.f24559c.size());
+        if (this.f24559c.size() == 0) {
             return null;
         }
         Bundle bundle = new Bundle();
@@ -342,18 +346,18 @@ public class g {
             bundle.putString("device", Build.DEVICE);
             bundle.putString("qua", Constants.SDK_QUA);
             bundle.putString("key", "apn,frequency,commandid,resultcode,tmcost,reqsize,rspsize,detail,touin,deviceinfo");
-            for (int i = 0; i < this.f38250c.size(); i++) {
-                b bVar2 = (b) this.f38250c.get(i);
-                bundle.putString(i + "_1", bVar2.f38244a.get("apn"));
-                bundle.putString(i + "_2", bVar2.f38244a.get("frequency"));
-                bundle.putString(i + "_3", bVar2.f38244a.get("commandid"));
-                bundle.putString(i + "_4", bVar2.f38244a.get(ProcessBridgeProvider.KEY_RESULT_CODE));
-                bundle.putString(i + "_5", bVar2.f38244a.get("timeCost"));
-                bundle.putString(i + "_6", bVar2.f38244a.get("reqSize"));
-                bundle.putString(i + "_7", bVar2.f38244a.get("rspSize"));
-                bundle.putString(i + "_8", bVar2.f38244a.get("detail"));
-                bundle.putString(i + "_9", bVar2.f38244a.get("uin"));
-                bundle.putString(i + "_10", c.e(Global.getContext()) + "&" + bVar2.f38244a.get("deviceInfo"));
+            for (int i = 0; i < this.f24559c.size(); i++) {
+                b bVar2 = (b) this.f24559c.get(i);
+                bundle.putString(i + "_1", bVar2.f24553a.get(TelephonyManager.EXTRA_DATA_APN));
+                bundle.putString(i + "_2", bVar2.f24553a.get("frequency"));
+                bundle.putString(i + "_3", bVar2.f24553a.get("commandid"));
+                bundle.putString(i + "_4", bVar2.f24553a.get(ProcessBridgeProvider.KEY_RESULT_CODE));
+                bundle.putString(i + "_5", bVar2.f24553a.get("timeCost"));
+                bundle.putString(i + "_6", bVar2.f24553a.get("reqSize"));
+                bundle.putString(i + "_7", bVar2.f24553a.get("rspSize"));
+                bundle.putString(i + "_8", bVar2.f24553a.get("detail"));
+                bundle.putString(i + "_9", bVar2.f24553a.get("uin"));
+                bundle.putString(i + "_10", c.e(Global.getContext()) + ContainerUtils.FIELD_DELIMITER + bVar2.f24553a.get("deviceInfo"));
             }
             com.tencent.open.a.f.a("openSDK_LOG.ReportManager", "-->prepareCgiData, end. params: " + bundle.toString());
             return bundle;
@@ -376,9 +380,9 @@ public class g {
         for (Serializable serializable : this.d) {
             JSONObject jSONObject = new JSONObject();
             b bVar = (b) serializable;
-            for (String str : bVar.f38244a.keySet()) {
+            for (String str : bVar.f24553a.keySet()) {
                 try {
-                    String str2 = bVar.f38244a.get(str);
+                    String str2 = bVar.f24553a.get(str);
                     String str3 = str2;
                     if (str2 == null) {
                         str3 = "";

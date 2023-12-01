@@ -11,29 +11,25 @@ import skin.support.widget.SkinCompatEditText;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/ClearEditText.class */
 public class ClearEditText extends SkinCompatEditText {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f10962a;
+    private final String a;
     private Drawable b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Rect f10963c;
+    private Rect c;
 
     public ClearEditText(Context context) {
         super(context);
-        this.f10962a = ClearEditText.class.getSimpleName();
+        this.a = ClearEditText.class.getSimpleName();
         c();
     }
 
     public ClearEditText(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10962a = ClearEditText.class.getSimpleName();
+        this.a = ClearEditText.class.getSimpleName();
         c();
     }
 
     public ClearEditText(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10962a = ClearEditText.class.getSimpleName();
+        this.a = ClearEditText.class.getSimpleName();
         c();
     }
 
@@ -67,15 +63,12 @@ public class ClearEditText extends SkinCompatEditText {
         setCompoundDrawables(null, null, null, null);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.b = null;
-        this.f10963c = null;
+        this.c = null;
     }
 
-    @Override // android.widget.TextView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         try {
             if (this.b != null) {
@@ -95,7 +88,6 @@ public class ClearEditText extends SkinCompatEditText {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.TextView
     public void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         if (drawable3 != null) {
             this.b = drawable3;
@@ -103,7 +95,6 @@ public class ClearEditText extends SkinCompatEditText {
         super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
     }
 
-    @Override // android.widget.TextView, android.view.View
     public void setEnabled(boolean z) {
         super.setEnabled(z);
         if (z) {

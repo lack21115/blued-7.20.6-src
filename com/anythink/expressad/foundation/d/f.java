@@ -6,11 +6,11 @@ import java.util.List;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7781a = "cid";
+    public static final String f4941a = "cid";
     public static final String b = "click_type";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7782c = "network_type";
+    public static final String f4942c = "network_type";
     public static final String d = "network_str";
     public static final String e = "click_duration";
     public static final String f = "last_url";

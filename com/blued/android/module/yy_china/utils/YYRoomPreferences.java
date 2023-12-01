@@ -9,17 +9,16 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/utils/YYRoomPreferences.class */
 public class YYRoomPreferences {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f17885a;
+    public static BluedSharedPreferences a;
 
     public static BluedSharedPreferences a() {
-        if (f17885a == null) {
-            f17885a = BluedSharedPreferences.a("blued_sf_yy", 0);
+        if (a == null) {
+            a = BluedSharedPreferences.a("blued_sf_yy", 0);
         }
-        return f17885a;
+        return a;
     }
 
+    /* JADX WARN: Type inference failed for: r2v1, types: [com.blued.android.module.yy_china.utils.YYRoomPreferences$2] */
     public static ArrayList<String> a(String str) {
         String a2 = a().a(str, "");
         return TextUtils.isEmpty(a2) ? new ArrayList<>() : (ArrayList) AppInfo.f().fromJson(a2, new TypeToken<List<String>>() { // from class: com.blued.android.module.yy_china.utils.YYRoomPreferences.2
@@ -52,6 +51,7 @@ public class YYRoomPreferences {
         a().c().a("SHOW_YY_PRE_PAY_DIALOG_GUIDEs", true).a();
     }
 
+    /* JADX WARN: Type inference failed for: r2v1, types: [com.blued.android.module.yy_china.utils.YYRoomPreferences$1] */
     public static ArrayList<String> d() {
         String a2 = a().a("ktv_search_records", "");
         return TextUtils.isEmpty(a2) ? new ArrayList<>() : (ArrayList) AppInfo.f().fromJson(a2, new TypeToken<List<String>>() { // from class: com.blued.android.module.yy_china.utils.YYRoomPreferences.1

@@ -15,7 +15,7 @@ import com.huawei.hms.support.log.HMSLog;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22847a = "j";
+    private static final String f9239a = "j";
 
     private static Bundle a(Context context, String str, String str2) {
         Bundle bundle = new Bundle();
@@ -39,7 +39,7 @@ public class j {
             return;
         }
         bundle.putString("sdk_version", String.valueOf(60700300));
-        String str2 = f22847a;
+        String str2 = f9239a;
         HMSLog.i(str2, "eventId:" + str);
         pushAnalytics.report(context, str, bundle);
     }
@@ -50,7 +50,7 @@ public class j {
             return;
         }
         Bundle a2 = a(context, str, str2);
-        String str4 = f22847a;
+        String str4 = f9239a;
         HMSLog.i(str4, "eventId:" + str3);
         pushAnalytics.report(context, str3, a2);
     }

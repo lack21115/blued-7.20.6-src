@@ -10,9 +10,7 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1.class */
 public final class FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1<T> implements Flow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43199a;
+    final /* synthetic */ Flow a;
     final /* synthetic */ Function2 b;
 
     @Metadata
@@ -20,9 +18,7 @@ public final class FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1<T> implements
     /* renamed from: kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43200a;
+        /* synthetic */ Object a;
         int b;
         Object d;
 
@@ -32,7 +28,7 @@ public final class FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1<T> implements
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43200a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1.this.a(null, this);
         }
@@ -77,7 +73,7 @@ public final class FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1<T> implements
             r7 = r0
         L35:
             r0 = r7
-            java.lang.Object r0 = r0.f43200a
+            java.lang.Object r0 = r0.a
             r10 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r9 = r0
@@ -112,7 +108,7 @@ public final class FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1<T> implements
             kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
             r10 = r0
             r0 = r5
-            kotlinx.coroutines.flow.Flow r0 = r0.f43199a
+            kotlinx.coroutines.flow.Flow r0 = r0.a
             r10 = r0
             kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$lambda-9$$inlined$collectWhile$1 r0 = new kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$lambda-9$$inlined$collectWhile$1
             r1 = r0
@@ -148,7 +144,7 @@ public final class FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1<T> implements
             kotlinx.coroutines.flow.FlowCollector r1 = (kotlinx.coroutines.flow.FlowCollector) r1
             kotlinx.coroutines.flow.internal.FlowExceptions_commonKt.a(r0, r1)
         Lb7:
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.FlowKt__LimitKt$takeWhile$$inlined$unsafeFlow$1.a(kotlinx.coroutines.flow.FlowCollector, kotlin.coroutines.Continuation):java.lang.Object");

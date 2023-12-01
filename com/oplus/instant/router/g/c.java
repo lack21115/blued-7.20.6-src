@@ -27,16 +27,16 @@ public class c {
     public static class b extends Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        private Callback f24295a;
+        private Callback f10608a;
         private Context b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f24296c;
+        private String f10609c;
 
         public b(Context context, String str, Callback callback) {
-            this.f24295a = callback;
+            this.f10608a = callback;
             this.b = context;
-            this.f24296c = str;
+            this.f10609c = str;
         }
 
         @Override // com.oplus.instant.router.callback.Callback
@@ -49,7 +49,7 @@ public class c {
                         d.c("GameUtil", "wrapper onResponse " + response);
                         Intent intent = new Intent();
                         intent.setComponent(new ComponentName(h.d(this.b), com.oplus.instant.router.g.a.a("Y29tLm5lYXJtZS5pbnN0YW50LnF1aWNrZ2FtZS5hY3Rpdml0eS5HYW1lVHJhbnNmZXJBY3Rpdml0eQ==")));
-                        intent.putExtra("req_uri", this.f24296c);
+                        intent.putExtra("req_uri", this.f10609c);
                         this.b.startActivity(intent);
                         response2 = response;
                     } catch (Exception e) {
@@ -60,7 +60,7 @@ public class c {
                     }
                 }
             }
-            Callback callback = this.f24295a;
+            Callback callback = this.f10608a;
             if (callback != null) {
                 callback.onResponse(response2);
             }

@@ -12,11 +12,11 @@ public final class ExternalPreferredCacheDiskCacheFactory extends DiskLruCacheFa
     class AnonymousClass1 implements DiskLruCacheFactory.CacheDirectoryGetter {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f20830a;
+        final /* synthetic */ Context f7224a;
         final /* synthetic */ String b;
 
         private File b() {
-            File cacheDir = this.f20830a.getCacheDir();
+            File cacheDir = this.f7224a.getCacheDir();
             if (cacheDir == null) {
                 return null;
             }
@@ -27,7 +27,7 @@ public final class ExternalPreferredCacheDiskCacheFactory extends DiskLruCacheFa
         public File a() {
             File externalCacheDir;
             File b = b();
-            if ((b == null || !b.exists()) && (externalCacheDir = this.f20830a.getExternalCacheDir()) != null && externalCacheDir.canWrite()) {
+            if ((b == null || !b.exists()) && (externalCacheDir = this.f7224a.getExternalCacheDir()) != null && externalCacheDir.canWrite()) {
                 return this.b != null ? new File(externalCacheDir, this.b) : externalCacheDir;
             }
             return b;

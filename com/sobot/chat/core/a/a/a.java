@@ -7,10 +7,10 @@ public class a {
     public static final int b = 15000;
 
     /* renamed from: a  reason: collision with root package name */
-    final a f28197a;
+    final a f14508a;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f28198c;
+    private a f14509c;
     private String d;
     private String e;
     private int f;
@@ -32,7 +32,7 @@ public class a {
     }
 
     public a(String str, String str2, int i) {
-        this.f28197a = this;
+        this.f14508a = this;
         this.d = str;
         this.e = str2;
         this.f = i;
@@ -50,7 +50,7 @@ public class a {
     }
 
     protected a a(a aVar) {
-        this.f28198c = aVar;
+        this.f14509c = aVar;
         return this;
     }
 
@@ -92,7 +92,7 @@ public class a {
     }
 
     public a e() {
-        a aVar = this.f28198c;
+        a aVar = this.f14509c;
         return aVar == null ? this : aVar;
     }
 

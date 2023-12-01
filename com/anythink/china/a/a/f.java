@@ -5,15 +5,14 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import com.anythink.core.common.b.g;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/china/a/a/f.class */
 public final class f {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f6227a;
+    private Context a;
 
     public f(Context context) {
-        this.f6227a = context;
+        this.a = context;
     }
 
     public final String a() {
@@ -21,7 +20,7 @@ public final class f {
         try {
             Uri parse = Uri.parse("content://cn.nubia.identity/identity");
             if (Build.VERSION.SDK_INT > 17) {
-                ContentProviderClient acquireContentProviderClient = this.f6227a.getContentResolver().acquireContentProviderClient(parse);
+                ContentProviderClient acquireContentProviderClient = this.a.getContentResolver().acquireContentProviderClient(parse);
                 Bundle call2 = acquireContentProviderClient.call("getOAID", null, null);
                 call = call2;
                 if (acquireContentProviderClient != null) {
@@ -34,11 +33,11 @@ public final class f {
                     }
                 }
             } else {
-                call = this.f6227a.getContentResolver().call(parse, "getOAID", null, null);
+                call = this.a.getContentResolver().call(parse, "getOAID", (String) null, (Bundle) null);
             }
             int i = -1;
             if (call != null) {
-                i = call.getInt("code", -1);
+                i = call.getInt(g.c.b, -1);
             }
             return i == 0 ? call.getString("id") : "";
         } catch (Exception e) {

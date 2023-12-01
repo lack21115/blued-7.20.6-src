@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import java.util.ArrayList;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -98,7 +99,7 @@ public final class YYFirstMeetMode {
     }
 
     public int hashCode() {
-        return (((((((this.is_show_meet * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.duration)) * 31) + this.goods_info.hashCode()) * 31) + this.gifts_list.hashCode()) * 31) + this.info.hashCode();
+        return (((((((this.is_show_meet * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.duration)) * 31) + this.goods_info.hashCode()) * 31) + this.gifts_list.hashCode()) * 31) + this.info.hashCode();
     }
 
     public final int is_show_meet() {

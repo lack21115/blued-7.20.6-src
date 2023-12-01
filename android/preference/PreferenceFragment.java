@@ -1,5 +1,6 @@
 package android.preference;
 
+import android.R;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.TypedArray;
@@ -12,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/preference/PreferenceFragment.class */
 public abstract class PreferenceFragment extends Fragment implements PreferenceManager.OnPreferenceTreeClickListener {
@@ -23,7 +23,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
     private boolean mInitDone;
     private ListView mList;
     private PreferenceManager mPreferenceManager;
-    private int mLayoutResId = R.layout.preference_list_fragment;
+    private int mLayoutResId = 17367199;
     private Handler mHandler = new Handler() { // from class: android.preference.PreferenceFragment.1
         @Override // android.os.Handler
         public void handleMessage(Message message) {
@@ -75,7 +75,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         if (view == null) {
             throw new IllegalStateException("Content view not yet created");
         }
-        View findViewById = view.findViewById(16908298);
+        View findViewById = view.findViewById(R.id.list);
         if (!(findViewById instanceof ListView)) {
             throw new RuntimeException("Content has view with id attribute 'android.R.id.list' that is not a ListView class");
         }
@@ -138,7 +138,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         if (view == null) {
             return false;
         }
-        View findViewById = view.findViewById(16908298);
+        View findViewById = view.findViewById(R.id.list);
         if (findViewById instanceof ListView) {
             this.mList = (ListView) findViewById;
             return this.mList != null;
@@ -179,7 +179,7 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
 
     @Override // android.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        TypedArray obtainStyledAttributes = getActivity().obtainStyledAttributes(null, R.styleable.PreferenceFragment, R.attr.preferenceFragmentStyle, 0);
+        TypedArray obtainStyledAttributes = getActivity().obtainStyledAttributes(null, com.android.internal.R.styleable.PreferenceFragment, 18219035, 0);
         this.mLayoutResId = obtainStyledAttributes.getResourceId(0, this.mLayoutResId);
         obtainStyledAttributes.recycle();
         return layoutInflater.inflate(this.mLayoutResId, viewGroup, false);

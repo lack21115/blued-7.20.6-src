@@ -253,7 +253,7 @@ public final class ColorCutQuantizer {
     }
 
     private static boolean isBlack(float[] fArr) {
-        return fArr[2] <= 0.05f;
+        return fArr[2] <= BLACK_MAX_LIGHTNESS;
     }
 
     private static boolean isNearRedILine(float[] fArr) {
@@ -261,7 +261,7 @@ public final class ColorCutQuantizer {
     }
 
     private static boolean isWhite(float[] fArr) {
-        return fArr[2] >= 0.95f;
+        return fArr[2] >= WHITE_MIN_LIGHTNESS;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

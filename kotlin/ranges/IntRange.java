@@ -7,9 +7,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/IntRange.class */
 public final class IntRange extends IntProgression implements ClosedRange<Integer> {
     public static final Companion b = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final IntRange f42580c = new IntRange(1, 0);
+    private static final IntRange c = new IntRange(1, 0);
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/IntRange$Companion.class */
@@ -22,7 +20,7 @@ public final class IntRange extends IntProgression implements ClosedRange<Intege
         }
 
         public final IntRange a() {
-            return IntRange.f42580c;
+            return IntRange.c;
         }
     }
 

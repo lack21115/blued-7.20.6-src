@@ -67,7 +67,7 @@ public class DexDataBuffer implements ByteInput, ByteOutput {
         }
         byte[] array = this.data.array();
         byte[] bArr = new byte[array.length + i + (array.length >> 1)];
-        System.arraycopy((Object) array, 0, (Object) bArr, 0, this.data.position());
+        System.arraycopy(array, 0, bArr, 0, this.data.position());
         int position = this.data.position();
         ByteBuffer wrap = ByteBuffer.wrap(bArr);
         this.data = wrap;
@@ -256,7 +256,7 @@ public class DexDataBuffer implements ByteInput, ByteOutput {
 
     public byte[] array() {
         byte[] bArr = new byte[this.dataBound];
-        System.arraycopy((Object) this.data.array(), 0, (Object) bArr, 0, this.dataBound);
+        System.arraycopy(this.data.array(), 0, bArr, 0, this.dataBound);
         return bArr;
     }
 

@@ -1,7 +1,6 @@
 package com.baidu.mobads.sdk.api;
 
 import android.text.TextUtils;
-import com.amap.api.services.district.DistrictSearchQuery;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,7 +26,7 @@ public class CPUWebAdRequestParam {
         }
 
         public Builder setCityIfLocalChannel(String str) {
-            this.mExtras.put(DistrictSearchQuery.KEYWORDS_CITY, str);
+            this.mExtras.put("city", str);
             return this;
         }
 

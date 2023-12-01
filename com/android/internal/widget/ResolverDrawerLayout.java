@@ -158,7 +158,7 @@ public class ResolverDrawerLayout extends ViewGroup {
         this.mMaxCollapsedHeight = obtainStyledAttributes.getDimensionPixelSize(1, 0);
         this.mMaxCollapsedHeightSmall = obtainStyledAttributes.getDimensionPixelSize(2, this.mMaxCollapsedHeight);
         obtainStyledAttributes.recycle();
-        this.mScroller = new OverScroller(context, AnimationUtils.loadInterpolator(context, 17563653));
+        this.mScroller = new OverScroller(context, AnimationUtils.loadInterpolator(context, R.interpolator.decelerate_quint));
         this.mVelocityTracker = VelocityTracker.obtain();
         ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
         this.mTouchSlop = viewConfiguration.getScaledTouchSlop();
@@ -366,9 +366,8 @@ public class ResolverDrawerLayout extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateDefaultLayoutParams() {
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(-1, -2);
     }
 
@@ -377,9 +376,8 @@ public class ResolverDrawerLayout extends ViewGroup {
         return new LayoutParams(getContext(), attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof LayoutParams ? new LayoutParams((LayoutParams) layoutParams) : layoutParams instanceof ViewGroup.MarginLayoutParams ? new LayoutParams((ViewGroup.MarginLayoutParams) layoutParams) : new LayoutParams(layoutParams);
     }
 

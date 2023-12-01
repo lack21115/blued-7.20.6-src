@@ -72,7 +72,7 @@ public enum MessageFormat {
             return FIXMAP;
         }
         switch (b) {
-            case -64:
+            case MessagePack.Code.NIL /* -64 */:
                 return NIL;
             case MessagePack.Code.NEVER_USED /* -63 */:
             default:
@@ -124,7 +124,7 @@ public enum MessageFormat {
                 return FIXEXT16;
             case MessagePack.Code.STR8 /* -39 */:
                 return STR8;
-            case -38:
+            case MessagePack.Code.STR16 /* -38 */:
                 return STR16;
             case MessagePack.Code.STR32 /* -37 */:
                 return STR32;

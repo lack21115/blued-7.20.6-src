@@ -4,13 +4,13 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.View;
+import com.anythink.core.common.g.c;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/TextOptions.class */
 public final class TextOptions implements Parcelable, Cloneable {
     public static final TextOptionsCreator CREATOR = new TextOptionsCreator();
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5539a;
+    String a;
     private Object object;
     private LatLng position;
     private float rotate;
@@ -19,7 +19,7 @@ public final class TextOptions implements Parcelable, Cloneable {
     private int alignX = 4;
     private int alignY = 32;
     private int backgroundColor = -1;
-    private int fontColor = -16777216;
+    private int fontColor = View.MEASURED_STATE_MASK;
     private int fontSize = 20;
     private float zIndex = 0.0f;
     private boolean isVisible = true;
@@ -36,14 +36,14 @@ public final class TextOptions implements Parcelable, Cloneable {
     }
 
     /* renamed from: clone */
-    public final TextOptions m2425clone() {
+    public final TextOptions m8868clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
         TextOptions textOptions = new TextOptions();
-        textOptions.f5539a = this.f5539a;
+        textOptions.a = this.a;
         textOptions.position = this.position;
         textOptions.text = this.text;
         textOptions.typeface = this.typeface;
@@ -156,11 +156,11 @@ public final class TextOptions implements Parcelable, Cloneable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5539a);
+        parcel.writeString(this.a);
         Bundle bundle = new Bundle();
         LatLng latLng = this.position;
         if (latLng != null) {
-            bundle.putDouble("lat", latLng.latitude);
+            bundle.putDouble(c.B, latLng.latitude);
             bundle.putDouble("lng", this.position.longitude);
         }
         parcel.writeBundle(bundle);

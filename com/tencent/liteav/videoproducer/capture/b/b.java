@@ -5,10 +5,10 @@ package com.tencent.liteav.videoproducer.capture.b;
 public final /* synthetic */ class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f36901a;
+    private final a f23210a;
 
     private b(a aVar) {
-        this.f36901a = aVar;
+        this.f23210a = aVar;
     }
 
     public static Runnable a(a aVar) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class b implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        a.a(this.f36901a);
+        a.a(this.f23210a);
     }
 }

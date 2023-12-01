@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.provider.CalendarContract;
 import android.text.TextUtils;
 import com.baidu.mobads.sdk.internal.bw;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.Objects;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telecom/DisconnectCause.class */
@@ -126,7 +127,7 @@ public final class DisconnectCause implements Parcelable {
                 break;
             case 4:
             default:
-                str = "UNKNOWN";
+                str = GrsBaseInfo.CountryCodeSource.UNKNOWN;
                 break;
             case 5:
                 str = "MISSED";

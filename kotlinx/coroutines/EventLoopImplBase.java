@@ -15,9 +15,7 @@ import kotlinx.coroutines.internal.ThreadSafeHeapNode;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/EventLoopImplBase.class */
 public abstract class EventLoopImplBase extends EventLoopImplPlatform implements Delay {
     private static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_queue");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final /* synthetic */ AtomicReferenceFieldUpdater f42817c = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_delayed");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater c = AtomicReferenceFieldUpdater.newUpdater(EventLoopImplBase.class, Object.class, "_delayed");
     private volatile /* synthetic */ Object _queue = null;
     private volatile /* synthetic */ Object _delayed = null;
     private volatile /* synthetic */ int _isCompleted = 0;
@@ -25,60 +23,53 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/EventLoopImplBase$DelayedResumeTask.class */
     final class DelayedResumeTask extends DelayedTask {
-
-        /* renamed from: c  reason: collision with root package name */
-        private final CancellableContinuation<Unit> f42819c;
+        private final CancellableContinuation<Unit> c;
 
         /* JADX WARN: Multi-variable type inference failed */
         public DelayedResumeTask(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
             super(j);
-            this.f42819c = cancellableContinuation;
+            this.c = cancellableContinuation;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f42819c.a((CoroutineDispatcher) EventLoopImplBase.this, (EventLoopImplBase) Unit.f42314a);
+            this.c.a((CoroutineDispatcher) EventLoopImplBase.this, (EventLoopImplBase) Unit.a);
         }
 
         @Override // kotlinx.coroutines.EventLoopImplBase.DelayedTask
         public String toString() {
-            return Intrinsics.a(super.toString(), (Object) this.f42819c);
+            return Intrinsics.a(super.toString(), (Object) this.c);
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/EventLoopImplBase$DelayedRunnableTask.class */
-    static final class DelayedRunnableTask extends DelayedTask {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Runnable f42820a;
+    public static final class DelayedRunnableTask extends DelayedTask {
+        private final Runnable a;
 
         public DelayedRunnableTask(long j, Runnable runnable) {
             super(j);
-            this.f42820a = runnable;
+            this.a = runnable;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f42820a.run();
+            this.a.run();
         }
 
         @Override // kotlinx.coroutines.EventLoopImplBase.DelayedTask
         public String toString() {
-            return Intrinsics.a(super.toString(), (Object) this.f42820a);
+            return Intrinsics.a(super.toString(), (Object) this.a);
         }
     }
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/EventLoopImplBase$DelayedTask.class */
     public static abstract class DelayedTask implements Comparable<DelayedTask>, Runnable, DisposableHandle, ThreadSafeHeapNode {
-
-        /* renamed from: a  reason: collision with root package name */
-        private Object f42821a;
+        private Object a;
         public long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f42822c = -1;
+        private int c = -1;
 
         public DelayedTask(long j) {
             this.b = j;
@@ -86,7 +77,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
         public final int a(long j, DelayedTaskQueue delayedTaskQueue, EventLoopImplBase eventLoopImplBase) {
             synchronized (this) {
-                if (this.f42821a == EventLoop_commonKt.b()) {
+                if (this.a == EventLoop_commonKt.b()) {
                     return 2;
                 }
                 DelayedTaskQueue delayedTaskQueue2 = delayedTaskQueue;
@@ -96,18 +87,18 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                         return 1;
                     }
                     if (e == null) {
-                        delayedTaskQueue.f42823a = j;
+                        delayedTaskQueue.a = j;
                     } else {
                         long j2 = e.b;
                         if (j2 - j < 0) {
                             j = j2;
                         }
-                        if (j - delayedTaskQueue.f42823a > 0) {
-                            delayedTaskQueue.f42823a = j;
+                        if (j - delayedTaskQueue.a > 0) {
+                            delayedTaskQueue.a = j;
                         }
                     }
-                    if (this.b - delayedTaskQueue.f42823a < 0) {
-                        this.b = delayedTaskQueue.f42823a;
+                    if (this.b - delayedTaskQueue.a < 0) {
+                        this.b = delayedTaskQueue.a;
                     }
                     delayedTaskQueue2.c((DelayedTaskQueue) this);
                     return 0;
@@ -127,7 +118,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
         @Override // kotlinx.coroutines.internal.ThreadSafeHeapNode
         public ThreadSafeHeap<?> a() {
-            Object obj = this.f42821a;
+            Object obj = this.a;
             if (obj instanceof ThreadSafeHeap) {
                 return (ThreadSafeHeap) obj;
             }
@@ -136,15 +127,15 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
         @Override // kotlinx.coroutines.internal.ThreadSafeHeapNode
         public void a(int i) {
-            this.f42822c = i;
+            this.c = i;
         }
 
         @Override // kotlinx.coroutines.internal.ThreadSafeHeapNode
         public void a(ThreadSafeHeap<?> threadSafeHeap) {
-            if (!(this.f42821a != EventLoop_commonKt.b())) {
+            if (!(this.a != EventLoop_commonKt.b())) {
                 throw new IllegalArgumentException("Failed requirement.".toString());
             }
-            this.f42821a = threadSafeHeap;
+            this.a = threadSafeHeap;
         }
 
         public final boolean a(long j) {
@@ -153,13 +144,13 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
         @Override // kotlinx.coroutines.internal.ThreadSafeHeapNode
         public int b() {
-            return this.f42822c;
+            return this.c;
         }
 
         @Override // kotlinx.coroutines.DisposableHandle
         public final void dispose() {
             synchronized (this) {
-                Object obj = this.f42821a;
+                Object obj = this.a;
                 if (obj == EventLoop_commonKt.b()) {
                     return;
                 }
@@ -167,7 +158,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                 if (delayedTaskQueue != null) {
                     delayedTaskQueue.b((DelayedTaskQueue) this);
                 }
-                this.f42821a = EventLoop_commonKt.b();
+                this.a = EventLoop_commonKt.b();
             }
         }
 
@@ -179,12 +170,10 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue.class */
     public static final class DelayedTaskQueue extends ThreadSafeHeap<DelayedTask> {
-
-        /* renamed from: a  reason: collision with root package name */
-        public long f42823a;
+        public long a;
 
         public DelayedTaskQueue(long j) {
-            this.f42823a = j;
+            this.a = j;
         }
     }
 
@@ -208,13 +197,13 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
                     throw new NullPointerException("null cannot be cast to non-null type kotlinx.coroutines.internal.LockFreeTaskQueueCore<java.lang.Runnable{ kotlinx.coroutines.RunnableKt.Runnable }>{ kotlinx.coroutines.EventLoop_commonKt.Queue<java.lang.Runnable{ kotlinx.coroutines.RunnableKt.Runnable }> }");
                 }
                 LockFreeTaskQueueCore lockFreeTaskQueueCore = (LockFreeTaskQueueCore) obj;
-                int a2 = lockFreeTaskQueueCore.a((LockFreeTaskQueueCore) runnable);
-                if (a2 == 0) {
+                int a = lockFreeTaskQueueCore.a((LockFreeTaskQueueCore) runnable);
+                if (a == 0) {
                     return true;
                 }
-                if (a2 == 1) {
+                if (a == 1) {
                     b.compareAndSet(this, obj, lockFreeTaskQueueCore.e());
-                } else if (a2 == 2) {
+                } else if (a == 2) {
                     return false;
                 }
             } else if (obj == EventLoop_commonKt.a()) {
@@ -241,7 +230,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
         DelayedTaskQueue delayedTaskQueue2 = delayedTaskQueue;
         if (delayedTaskQueue == null) {
             EventLoopImplBase eventLoopImplBase = this;
-            f42817c.compareAndSet(eventLoopImplBase, null, new DelayedTaskQueue(j));
+            c.compareAndSet(eventLoopImplBase, null, new DelayedTaskQueue(j));
             delayedTaskQueue2 = (DelayedTaskQueue) eventLoopImplBase._delayed;
             Intrinsics.a(delayedTaskQueue2);
         }
@@ -317,8 +306,8 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     }
 
     private final void n() {
-        AbstractTimeSource a2 = AbstractTimeSourceKt.a();
-        long nanoTime = a2 == null ? System.nanoTime() : a2.a();
+        AbstractTimeSource a = AbstractTimeSourceKt.a();
+        long nanoTime = a == null ? System.nanoTime() : a.a();
         while (true) {
             DelayedTaskQueue delayedTaskQueue = (DelayedTaskQueue) this._delayed;
             DelayedTask d = delayedTaskQueue == null ? null : delayedTaskQueue.d();
@@ -331,15 +320,15 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final DisposableHandle a(long j, Runnable runnable) {
-        long a2 = EventLoop_commonKt.a(j);
-        if (a2 < 4611686018427387903L) {
-            AbstractTimeSource a3 = AbstractTimeSourceKt.a();
-            long nanoTime = a3 == null ? System.nanoTime() : a3.a();
-            DelayedRunnableTask delayedRunnableTask = new DelayedRunnableTask(a2 + nanoTime, runnable);
+        long a = EventLoop_commonKt.a(j);
+        if (a < 4611686018427387903L) {
+            AbstractTimeSource a2 = AbstractTimeSourceKt.a();
+            long nanoTime = a2 == null ? System.nanoTime() : a2.a();
+            DelayedRunnableTask delayedRunnableTask = new DelayedRunnableTask(a + nanoTime, runnable);
             a(nanoTime, (DelayedTask) delayedRunnableTask);
             return delayedRunnableTask;
         }
-        return NonDisposableHandle.f42847a;
+        return NonDisposableHandle.a;
     }
 
     public DisposableHandle a(long j, Runnable runnable, CoroutineContext coroutineContext) {
@@ -348,11 +337,11 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.Delay
     public void a(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
-        long a2 = EventLoop_commonKt.a(j);
-        if (a2 < 4611686018427387903L) {
-            AbstractTimeSource a3 = AbstractTimeSourceKt.a();
-            long nanoTime = a3 == null ? System.nanoTime() : a3.a();
-            DelayedResumeTask delayedResumeTask = new DelayedResumeTask(a2 + nanoTime, cancellableContinuation);
+        long a = EventLoop_commonKt.a(j);
+        if (a < 4611686018427387903L) {
+            AbstractTimeSource a2 = AbstractTimeSourceKt.a();
+            long nanoTime = a2 == null ? System.nanoTime() : a2.a();
+            DelayedResumeTask delayedResumeTask = new DelayedResumeTask(a + nanoTime, cancellableContinuation);
             CancellableContinuationKt.a(cancellableContinuation, delayedResumeTask);
             a(nanoTime, (DelayedTask) delayedResumeTask);
         }
@@ -530,8 +519,8 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
             return Long.MAX_VALUE;
         }
         long j = c2.b;
-        AbstractTimeSource a2 = AbstractTimeSourceKt.a();
-        return RangesKt.a(j - (a2 == null ? System.nanoTime() : a2.a()), 0L);
+        AbstractTimeSource a = AbstractTimeSourceKt.a();
+        return RangesKt.a(j - (a == null ? System.nanoTime() : a.a()), 0L);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
@@ -541,7 +530,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.EventLoop
     protected void h() {
-        ThreadLocalEventLoop.f42855a.b();
+        ThreadLocalEventLoop.a.b();
         c(true);
         m();
         do {

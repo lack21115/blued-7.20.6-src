@@ -68,29 +68,26 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUICache(BluedEntityA<MineEntryInfo> bluedEntityA) {
                 super.onUICache(bluedEntityA);
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                a(bluedEntityA.getSingleData());
-                MinePresenter.this.a("MY_PAGE", (String) bluedEntityA.getSingleData());
+                a((MineEntryInfo) bluedEntityA.getSingleData());
+                MinePresenter.this.a("MY_PAGE", (MineEntryInfo) bluedEntityA.getSingleData());
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: b */
             public void onUIUpdate(BluedEntityA<MineEntryInfo> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                     return;
                 }
-                a(bluedEntityA.getSingleData());
-                MinePresenter.this.a("MY_PAGE", (String) bluedEntityA.getSingleData());
+                a((MineEntryInfo) bluedEntityA.getSingleData());
+                MinePresenter.this.a("MY_PAGE", (MineEntryInfo) bluedEntityA.getSingleData());
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish();
                 IFetchDataListener iFetchDataListener2 = iFetchDataListener;
@@ -107,37 +104,33 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                MinePresenter.this.j = bluedEntityA.data.get(0).is_hide_last_operate == 1;
+                MinePresenter.this.j = ((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_hide_last_operate == 1;
                 MinePresenter minePresenter = MinePresenter.this;
                 boolean z = false;
-                if (bluedEntityA.data.get(0).is_hide_distance == 1) {
+                if (((BluedBlackList.privacySettingEntity) bluedEntityA.data.get(0)).is_hide_distance == 1) {
                     z = true;
                 }
                 minePresenter.k = z;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<BluedBlackList.privacySettingEntity> parseData(String str) {
-                return (BluedEntityA) super.parseData(str);
+                return super.parseData(str);
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUICache(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
                 super.onUICache(bluedEntityA);
                 c(bluedEntityA);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: b */
             public void onUIUpdate(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA) {
                 c(bluedEntityA);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 MinePresenter.this.f_("PRIVACY");
@@ -145,12 +138,10 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
         };
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(FragmentActivity fragmentActivity, Bundle bundle, Bundle bundle2) {
         super.a(fragmentActivity, bundle, bundle2);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(final LifecycleOwner lifecycleOwner) {
         super.a(lifecycleOwner);
         HomeTabClick.a("mine", this);
@@ -165,7 +156,7 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
             @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
-                MinePresenter.this.a("PRIVACY", (String) num);
+                MinePresenter.this.a("PRIVACY", num);
             }
         });
         LiveEventBus.get(EventBusConstant.KEY_EVENT_REFRESH_USER_VIP_INFO, Boolean.class).observe(lifecycleOwner, new Observer<Boolean>() { // from class: com.soft.blued.ui.mine.presenter.MinePresenter.3
@@ -177,25 +168,23 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         d(iFetchDataListener);
         c(iFetchDataListener);
     }
 
     public void a(final boolean z, final boolean z2) {
-        Map<String, String> a2 = BluedHttpTools.a();
+        Map a2 = BluedHttpTools.a();
         a2.put("is_hide_last_operate", z ? "1" : "0");
         a2.put("is_hide_distance", z2 ? "1" : "0");
         ProfileHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(g()) { // from class: com.soft.blued.ui.mine.presenter.MinePresenter.6
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 if (bluedEntityA == null) {
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                     return;
                 }
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(R.string.lock_pattern_success_set));
+                AppMethods.a(AppInfo.d().getResources().getString(R.string.lock_pattern_success_set));
                 MinePresenter.this.j = z;
                 MinePresenter.this.k = z2;
                 MinePresenter.this.f_("PRIVACY");
@@ -203,7 +192,6 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), a2);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -218,7 +206,6 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public boolean c() {
         return true;
     }
@@ -228,13 +215,11 @@ public class MinePresenter extends MvpPresenter implements HomeTabClick.TabClick
         c(str);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void k() {
-        e((IFetchDataListener) null).refresh();
-        f((IFetchDataListener) null).refresh();
+        e(null).refresh();
+        f(null).refresh();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public String[] l() {
         return new String[]{"MY_PAGE"};
     }

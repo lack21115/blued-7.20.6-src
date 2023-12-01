@@ -15,8 +15,6 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 import android.view.WindowMetrics;
-import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.telephony.TelephonyProperties;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,7 +32,7 @@ public class bk {
             String a2 = bg.a("persist.service.bdroid.bdaddr");
             String str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {
@@ -45,10 +43,10 @@ public class bk {
     public static String B() {
         try {
             Class<?> cls = Class.forName("android.os.SystemProperties");
-            String str = (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class).invoke(cls, TelephonyProperties.PROPERTY_BASEBAND_VERSION);
+            String str = (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class).invoke(cls, "gsm.version.baseband");
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -86,7 +84,7 @@ public class bk {
     public static String F() {
         File externalStorageDirectory;
         try {
-            return (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || (externalStorageDirectory = Environment.getExternalStorageDirectory()) == null) ? bh.f23748a : BigDecimal.valueOf(((float) (new StatFs(externalStorageDirectory.getPath()).getTotalBytes() >> 20)) / 1024.0f).setScale(2, 4).toString();
+            return (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || (externalStorageDirectory = Environment.getExternalStorageDirectory()) == null) ? bh.f10140a : BigDecimal.valueOf(((float) (new StatFs(externalStorageDirectory.getPath()).getTotalBytes() >> 20)) / 1024.0f).setScale(2, 4).toString();
         } catch (Throwable th) {
             return bh.d;
         }
@@ -95,7 +93,7 @@ public class bk {
     public static String G() {
         File externalStorageDirectory;
         try {
-            return (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || (externalStorageDirectory = Environment.getExternalStorageDirectory()) == null) ? bh.f23748a : BigDecimal.valueOf(((float) (new StatFs(externalStorageDirectory.getPath()).getAvailableBytes() >> 20)) / 1024.0f).setScale(2, 4).toString();
+            return (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) || (externalStorageDirectory = Environment.getExternalStorageDirectory()) == null) ? bh.f10140a : BigDecimal.valueOf(((float) (new StatFs(externalStorageDirectory.getPath()).getAvailableBytes() >> 20)) / 1024.0f).setScale(2, 4).toString();
         } catch (Throwable th) {
             return bh.d;
         }
@@ -201,7 +199,7 @@ public class bk {
             String str = Build.MANUFACTURER;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -225,7 +223,7 @@ public class bk {
             String str = Build.BRAND;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -282,7 +280,7 @@ public class bk {
             String str = Build.MODEL;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -334,7 +332,7 @@ public class bk {
             String str = Build.HARDWARE;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -366,9 +364,9 @@ public class bk {
                 i = ((Integer) method.invoke(defaultDisplay, new Object[0])).intValue();
             }
             if (i2 > i) {
-                return i + PhoneConstants.APN_TYPE_ALL + i2;
+                return i + "*" + i2;
             }
-            return i2 + PhoneConstants.APN_TYPE_ALL + i;
+            return i2 + "*" + i;
         } catch (Throwable th) {
             return "";
         }
@@ -379,7 +377,7 @@ public class bk {
             String str = Build.PRODUCT;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -400,7 +398,7 @@ public class bk {
             String str = Build.DEVICE;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -436,12 +434,12 @@ public class bk {
                 }
                 if (exec != null) {
                     exec.destroy();
-                    return bh.f23749c;
+                    return bh.f10141c;
                 }
-                return bh.f23749c;
+                return bh.f10141c;
             }
             byte[] bArr2 = new byte[read];
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, read);
+            System.arraycopy(bArr, 0, bArr2, 0, read);
             String str = new String(bArr2, "utf-8");
             int indexOf = str.indexOf("version");
             String str2 = null;
@@ -472,9 +470,9 @@ public class bk {
             }
             if (exec != null) {
                 exec.destroy();
-                return bh.f23749c;
+                return bh.f10141c;
             }
-            return bh.f23749c;
+            return bh.f10141c;
         } catch (Throwable th6) {
             process = exec;
             if (inputStream != null) {
@@ -504,7 +502,7 @@ public class bk {
             String str = Build.BOARD;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -525,7 +523,7 @@ public class bk {
             String str = Build.HOST;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -548,7 +546,7 @@ public class bk {
             String str = Build.USER;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -572,7 +570,7 @@ public class bk {
             String str = Build.TYPE;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -585,7 +583,7 @@ public class bk {
             String str = Build.TAGS;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -598,7 +596,7 @@ public class bk {
             String str = Build.BOOTLOADER;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -611,7 +609,7 @@ public class bk {
             String str = Build.ID;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -624,7 +622,7 @@ public class bk {
             String str = Build.DISPLAY;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -637,7 +635,7 @@ public class bk {
             String str = Build.VERSION.CODENAME;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -650,7 +648,7 @@ public class bk {
             String a2 = bg.a("rild.libpath");
             String str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {
@@ -663,7 +661,7 @@ public class bk {
             String str = Build.VERSION.RELEASE;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -684,7 +682,7 @@ public class bk {
             String str = Build.FINGERPRINT;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -697,7 +695,7 @@ public class bk {
             String property = System.getProperty("http.agent");
             String str = property;
             if (TextUtils.isEmpty(property)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {
@@ -768,7 +766,7 @@ public class bk {
             String str = Build.RADIO;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -781,7 +779,7 @@ public class bk {
             String a2 = bg.a("ro.build.description");
             String str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {
@@ -794,7 +792,7 @@ public class bk {
             String str = Build.VERSION.INCREMENTAL;
             String str2 = str;
             if (TextUtils.isEmpty(str)) {
-                str2 = bh.f23749c;
+                str2 = bh.f10141c;
             }
             return str2;
         } catch (Throwable th) {
@@ -807,7 +805,7 @@ public class bk {
             String a2 = bg.a("ro.product.name");
             String str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {
@@ -820,7 +818,7 @@ public class bk {
             String a2 = bg.a("dalvik.vm.heapgrowthlimit");
             String str = a2;
             if (TextUtils.isEmpty(a2)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {

@@ -9,39 +9,39 @@ import org.json.JSONObject;
 public class o1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f21274a = {"aid", TtmlUtils.TAG_REGION, bh.x, "package", "app_version", "sdk_version", "os_version", "device_model", "resolution", "language", "timezone", bh.Q, "display_name", "channel", bh.P, "app_language", "app_region", "tz_name", "tz_offset", "install_id", "openudid", "mcc_mnc", "rom", "manifest_version_code", bh.H, "clientudid", "sig_hash", "display_density", "os_api", "update_version_code", "density_dpi", "version_code", "sim_serial_number", "release_build", "udid", "cpu_abi", "google_aid"};
+    public static final String[] f7668a = {"aid", TtmlUtils.TAG_REGION, bh.x, "package", "app_version", "sdk_version", "os_version", "device_model", "resolution", "language", "timezone", bh.Q, "display_name", "channel", bh.P, "app_language", "app_region", "tz_name", "tz_offset", "install_id", "openudid", "mcc_mnc", "rom", "manifest_version_code", bh.H, "clientudid", "sig_hash", "display_density", "os_api", "update_version_code", "density_dpi", "version_code", "sim_serial_number", "release_build", "udid", "cpu_abi", "google_aid"};
     public static final String[] b = {"setOnce", "synchronize"};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int[] f21275c = {-1, -1};
+    public static final int[] f7669c = {-1, -1};
     public static final long[] d = {-1, -1};
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/o1$a.class */
     public static final class a implements UserProfileCallback {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f21276a;
+        public final /* synthetic */ int f7670a;
         public final /* synthetic */ JSONObject b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ UserProfileCallback f21277c;
+        public final /* synthetic */ UserProfileCallback f7671c;
 
         public a(int i, JSONObject jSONObject, UserProfileCallback userProfileCallback) {
-            this.f21276a = i;
+            this.f7670a = i;
             this.b = jSONObject;
-            this.f21277c = userProfileCallback;
+            this.f7671c = userProfileCallback;
         }
 
         @Override // com.bytedance.applog.profile.UserProfileCallback
         public void onFail(int i) {
-            this.f21277c.onFail(i);
+            this.f7671c.onFail(i);
         }
 
         @Override // com.bytedance.applog.profile.UserProfileCallback
         public void onSuccess() {
-            o1.f21275c[this.f21276a] = this.b.toString().hashCode();
-            o1.d[this.f21276a] = System.currentTimeMillis();
-            this.f21277c.onSuccess();
+            o1.f7669c[this.f7670a] = this.b.toString().hashCode();
+            o1.d[this.f7670a] = System.currentTimeMillis();
+            this.f7671c.onSuccess();
         }
     }
 

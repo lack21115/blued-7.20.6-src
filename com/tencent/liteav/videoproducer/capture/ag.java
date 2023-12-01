@@ -6,13 +6,13 @@ import java.util.Comparator;
 final /* synthetic */ class ag implements Comparator {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ag f36863a = new ag();
+    private static final ag f23172a = new ag();
 
     private ag() {
     }
 
     public static Comparator a() {
-        return f36863a;
+        return f23172a;
     }
 
     @Override // java.util.Comparator

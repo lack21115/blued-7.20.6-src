@@ -12,13 +12,9 @@ import com.google.android.material.imageview.ShapeableImageView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogShareAchievementBinding.class */
 public final class DialogShareAchievementBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final CheckBox f16413a;
+    public final CheckBox a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f16414c;
+    public final View c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -45,9 +41,9 @@ public final class DialogShareAchievementBinding implements ViewBinding {
 
     private DialogShareAchievementBinding(ConstraintLayout constraintLayout, CheckBox checkBox, TextView textView, View view, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ShapeableImageView shapeableImageView, ShapeableImageView shapeableImageView2, ShapeableImageView shapeableImageView3, View view2, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, RecyclerView recyclerView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9) {
         this.z = constraintLayout;
-        this.f16413a = checkBox;
+        this.a = checkBox;
         this.b = textView;
-        this.f16414c = view;
+        this.c = view;
         this.d = imageView;
         this.e = imageView2;
         this.f = imageView3;
@@ -92,22 +88,22 @@ public final class DialogShareAchievementBinding implements ViewBinding {
                                     if (imageView5 != null) {
                                         ImageView imageView6 = (ImageView) view.findViewById(R.id.img_thanks_giving);
                                         if (imageView6 != null) {
-                                            ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.img_user_1);
-                                            if (shapeableImageView != null) {
-                                                ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.img_user_2);
-                                                if (shapeableImageView2 != null) {
-                                                    ShapeableImageView shapeableImageView3 = (ShapeableImageView) view.findViewById(R.id.img_user_3);
-                                                    if (shapeableImageView3 != null) {
-                                                        View findViewById2 = view.findViewById(R.id.line_center);
-                                                        if (findViewById2 != null) {
-                                                            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_content_view);
-                                                            if (constraintLayout != null) {
-                                                                ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.ll_dialog_view);
-                                                                if (constraintLayout2 != null) {
-                                                                    ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.ll_user_layout);
-                                                                    if (constraintLayout3 != null) {
-                                                                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_achievement_list);
-                                                                        if (recyclerView != null) {
+                                            ShapeableImageView findViewById2 = view.findViewById(R.id.img_user_1);
+                                            if (findViewById2 != null) {
+                                                ShapeableImageView findViewById3 = view.findViewById(R.id.img_user_2);
+                                                if (findViewById3 != null) {
+                                                    ShapeableImageView findViewById4 = view.findViewById(R.id.img_user_3);
+                                                    if (findViewById4 != null) {
+                                                        View findViewById5 = view.findViewById(R.id.line_center);
+                                                        if (findViewById5 != null) {
+                                                            ConstraintLayout findViewById6 = view.findViewById(R.id.ll_content_view);
+                                                            if (findViewById6 != null) {
+                                                                ConstraintLayout findViewById7 = view.findViewById(R.id.ll_dialog_view);
+                                                                if (findViewById7 != null) {
+                                                                    ConstraintLayout findViewById8 = view.findViewById(R.id.ll_user_layout);
+                                                                    if (findViewById8 != null) {
+                                                                        RecyclerView findViewById9 = view.findViewById(R.id.rv_achievement_list);
+                                                                        if (findViewById9 != null) {
                                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_first_name);
                                                                             if (textView2 != null) {
                                                                                 TextView textView3 = (TextView) view.findViewById(R.id.tv_first_unit);
@@ -124,7 +120,7 @@ public final class DialogShareAchievementBinding implements ViewBinding {
                                                                                                     if (textView8 != null) {
                                                                                                         TextView textView9 = (TextView) view.findViewById(R.id.tv_title);
                                                                                                         if (textView9 != null) {
-                                                                                                            return new DialogShareAchievementBinding((ConstraintLayout) view, checkBox, textView, findViewById, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, shapeableImageView, shapeableImageView2, shapeableImageView3, findViewById2, constraintLayout, constraintLayout2, constraintLayout3, recyclerView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9);
+                                                                                                            return new DialogShareAchievementBinding((ConstraintLayout) view, checkBox, textView, findViewById, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, findViewById7, findViewById8, findViewById9, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9);
                                                                                                         }
                                                                                                         str = "tvTitle";
                                                                                                     } else {
@@ -202,7 +198,6 @@ public final class DialogShareAchievementBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.z;

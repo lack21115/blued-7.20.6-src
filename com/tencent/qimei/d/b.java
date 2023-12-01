@@ -4,16 +4,16 @@ package com.tencent.qimei.d;
 public class b implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f38322a;
+    public final /* synthetic */ String f24631a;
     public final /* synthetic */ String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final /* synthetic */ c f38323c;
+    public final /* synthetic */ c f24632c;
 
     public b(String str, String str2, c cVar) {
-        this.f38322a = str;
+        this.f24631a = str;
         this.b = str2;
-        this.f38323c = cVar;
+        this.f24632c = cVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:58:0x0200  */

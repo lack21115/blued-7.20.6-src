@@ -1,7 +1,6 @@
 package okhttp3.internal.http;
 
 import com.android.internal.telephony.PhoneConstants;
-import com.ss.android.socialbase.downloader.utils.DownloadUtils;
 import java.io.EOFException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,9 +21,7 @@ import okio.ByteString;
 
 /* loaded from: source-3503164-dex2jar.jar:okhttp3/internal/http/HttpHeaders.class */
 public final class HttpHeaders {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final ByteString f43887a = ByteString.encodeUtf8("\"\\");
+    private static final ByteString a = ByteString.encodeUtf8("\"\\");
     private static final ByteString b = ByteString.encodeUtf8("\t ,=");
 
     private HttpHeaders() {
@@ -76,9 +73,9 @@ public final class HttpHeaders {
         return a(response.headers());
     }
 
-    private static String a(char c2, int i) {
+    private static String a(char c, int i) {
         char[] cArr = new char[i];
-        Arrays.fill(cArr, c2);
+        Arrays.fill(cArr, c);
         return new String(cArr);
     }
 
@@ -98,15 +95,15 @@ public final class HttpHeaders {
     }
 
     public static Headers a(Headers headers, Headers headers2) {
-        Set<String> c2 = c(headers2);
-        if (c2.isEmpty()) {
+        Set<String> c = c(headers2);
+        if (c.isEmpty()) {
             return new Headers.Builder().build();
         }
         Headers.Builder builder = new Headers.Builder();
         int size = headers.size();
         for (int i = 0; i < size; i++) {
             String name = headers.name(i);
-            if (c2.contains(name)) {
+            if (c.contains(name)) {
                 builder.add(name, headers.value(i));
             }
         }
@@ -189,7 +186,7 @@ public final class HttpHeaders {
         }
         Buffer buffer2 = new Buffer();
         while (true) {
-            long indexOfElement = buffer.indexOfElement(f43887a);
+            long indexOfElement = buffer.indexOfElement(a);
             if (indexOfElement == -1) {
                 return null;
             }
@@ -240,7 +237,7 @@ public final class HttpHeaders {
             if (i2 >= size) {
                 return emptySet;
             }
-            if (com.google.common.net.HttpHeaders.VARY.equalsIgnoreCase(headers.name(i2))) {
+            if ("Vary".equalsIgnoreCase(headers.name(i2))) {
                 String value = headers.value(i2);
                 TreeSet treeSet = emptySet;
                 if (emptySet.isEmpty()) {
@@ -271,7 +268,7 @@ public final class HttpHeaders {
             return false;
         }
         int code = response.code();
-        return (((code >= 100 && code < 200) || code == 204 || code == 304) && a(response) == -1 && !DownloadUtils.VALUE_CHUNKED.equalsIgnoreCase(response.header("Transfer-Encoding"))) ? false : true;
+        return (((code >= 100 && code < 200) || code == 204 || code == 304) && a(response) == -1 && !"chunked".equalsIgnoreCase(response.header("Transfer-Encoding"))) ? false : true;
     }
 
     private static Set<String> e(Response response) {

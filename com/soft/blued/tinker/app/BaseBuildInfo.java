@@ -4,6 +4,6 @@ package com.soft.blued.tinker.app;
 public class BaseBuildInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f29769a = "I won't change with tinker patch!";
+    public static String f16079a = "I won't change with tinker patch!";
     public static String b = "720063";
 }

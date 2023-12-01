@@ -6,7 +6,7 @@ import android.os.Bundle;
 public final class j extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    Bundle f22475a;
+    Bundle f8867a;
 
     public j(String str) {
         super(str);
@@ -14,10 +14,10 @@ public final class j extends Exception {
 
     public j(String str, Bundle bundle) {
         super(str);
-        this.f22475a = bundle;
+        this.f8867a = bundle;
     }
 
     private Bundle a() {
-        return this.f22475a;
+        return this.f8867a;
     }
 }

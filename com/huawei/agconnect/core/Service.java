@@ -9,11 +9,11 @@ import java.lang.reflect.Modifier;
 public class Service {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Class<?> f22341a;
+    private final Class<?> f8733a;
     private final Class<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f22342c;
+    private final Object f8734c;
     private boolean d;
     private boolean e;
     private boolean f;
@@ -22,21 +22,21 @@ public class Service {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        Class<?> f22343a;
+        Class<?> f8735a;
         Class<?> b;
 
         /* renamed from: c  reason: collision with root package name */
-        Object f22344c;
+        Object f8736c;
         private boolean d;
         private boolean e;
         private boolean f;
 
         public Service build() {
-            Class<?> cls = this.f22343a;
+            Class<?> cls = this.f8735a;
             if (cls != null) {
                 Class<?> cls2 = this.b;
                 if (cls2 == null) {
-                    Object obj = this.f22344c;
+                    Object obj = this.f8736c;
                     if (obj != null) {
                         Service service = new Service(cls, obj);
                         service.d = this.d;
@@ -46,7 +46,7 @@ public class Service {
                 } else if (cls2.isInterface() || !Modifier.isPublic(this.b.getModifiers())) {
                     throw new IllegalArgumentException("the clazz parameter cant be interface type or not public");
                 } else {
-                    Service service2 = new Service((Class) this.f22343a, (Class) this.b);
+                    Service service2 = new Service((Class) this.f8735a, (Class) this.b);
                     service2.d = this.d;
                     service2.e = this.e;
                     service2.f = this.f;
@@ -77,26 +77,26 @@ public class Service {
         }
 
         public Builder setInterface(Class<?> cls) {
-            this.f22343a = cls;
+            this.f8735a = cls;
             return this;
         }
 
         public Builder setObject(Object obj) {
-            this.f22344c = obj;
+            this.f8736c = obj;
             return this;
         }
     }
 
     private Service(Class<?> cls, Class<?> cls2) {
-        this.f22341a = cls;
+        this.f8733a = cls;
         this.b = cls2;
-        this.f22342c = null;
+        this.f8734c = null;
     }
 
     private Service(Class<?> cls, Object obj) {
-        this.f22341a = cls;
+        this.f8733a = cls;
         this.b = null;
-        this.f22342c = obj;
+        this.f8734c = obj;
     }
 
     public static Builder builder(Class<?> cls) {
@@ -112,11 +112,11 @@ public class Service {
     }
 
     public Object getInstance() {
-        return this.f22342c;
+        return this.f8734c;
     }
 
     public Class<?> getInterface() {
-        return this.f22341a;
+        return this.f8733a;
     }
 
     public Class<?> getType() {

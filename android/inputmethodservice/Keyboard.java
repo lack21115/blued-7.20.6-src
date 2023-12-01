@@ -1,5 +1,6 @@
 package android.inputmethodservice;
 
+import android.R;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -10,7 +11,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.util.Xml;
-import com.android.internal.R;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,23 +81,23 @@ public class Keyboard {
         public int width;
         public int x;
         public int y;
-        private static final int[] KEY_STATE_NORMAL_ON = {16842911, 16842912};
-        private static final int[] KEY_STATE_PRESSED_ON = {16842919, 16842911, 16842912};
-        private static final int[] KEY_STATE_NORMAL_OFF = {16842911};
-        private static final int[] KEY_STATE_PRESSED_OFF = {16842919, 16842911};
+        private static final int[] KEY_STATE_NORMAL_ON = {R.attr.state_checkable, R.attr.state_checked};
+        private static final int[] KEY_STATE_PRESSED_ON = {R.attr.state_pressed, R.attr.state_checkable, R.attr.state_checked};
+        private static final int[] KEY_STATE_NORMAL_OFF = {R.attr.state_checkable};
+        private static final int[] KEY_STATE_PRESSED_OFF = {R.attr.state_pressed, R.attr.state_checkable};
         private static final int[] KEY_STATE_NORMAL = new int[0];
-        private static final int[] KEY_STATE_PRESSED = {16842919};
+        private static final int[] KEY_STATE_PRESSED = {R.attr.state_pressed};
 
         public Key(Resources resources, Row row, int i, int i2, XmlResourceParser xmlResourceParser) {
             this(row);
             this.x = i;
             this.y = i2;
-            TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), R.styleable.Keyboard);
+            TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), com.android.internal.R.styleable.Keyboard);
             this.width = Keyboard.getDimensionOrFraction(obtainAttributes, 0, this.keyboard.mDisplayWidth, row.defaultWidth);
             this.height = Keyboard.getDimensionOrFraction(obtainAttributes, 1, this.keyboard.mDisplayHeight, row.defaultHeight);
             this.gap = Keyboard.getDimensionOrFraction(obtainAttributes, 2, this.keyboard.mDisplayWidth, row.defaultHorizontalGap);
             obtainAttributes.recycle();
-            TypedArray obtainAttributes2 = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), R.styleable.Keyboard_Key);
+            TypedArray obtainAttributes2 = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), com.android.internal.R.styleable.Keyboard_Key);
             this.x += this.gap;
             TypedValue typedValue = new TypedValue();
             obtainAttributes2.getValue(0, typedValue);
@@ -234,13 +234,13 @@ public class Keyboard {
 
         public Row(Resources resources, Keyboard keyboard, XmlResourceParser xmlResourceParser) {
             this.parent = keyboard;
-            TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), R.styleable.Keyboard);
+            TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), com.android.internal.R.styleable.Keyboard);
             this.defaultWidth = Keyboard.getDimensionOrFraction(obtainAttributes, 0, keyboard.mDisplayWidth, keyboard.mDefaultWidth);
             this.defaultHeight = Keyboard.getDimensionOrFraction(obtainAttributes, 1, keyboard.mDisplayHeight, keyboard.mDefaultHeight);
             this.defaultHorizontalGap = Keyboard.getDimensionOrFraction(obtainAttributes, 2, keyboard.mDisplayWidth, keyboard.mDefaultHorizontalGap);
             this.verticalGap = Keyboard.getDimensionOrFraction(obtainAttributes, 3, keyboard.mDisplayHeight, keyboard.mDefaultVerticalGap);
             obtainAttributes.recycle();
-            TypedArray obtainAttributes2 = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), R.styleable.Keyboard_Row);
+            TypedArray obtainAttributes2 = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), com.android.internal.R.styleable.Keyboard_Row);
             this.rowEdgeFlags = obtainAttributes2.getInt(0, 0);
             this.mode = obtainAttributes2.getResourceId(1, 0);
         }
@@ -375,7 +375,7 @@ public class Keyboard {
     }
 
     private void parseKeyboardAttributes(Resources resources, XmlResourceParser xmlResourceParser) {
-        TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), R.styleable.Keyboard);
+        TypedArray obtainAttributes = resources.obtainAttributes(Xml.asAttributeSet(xmlResourceParser), com.android.internal.R.styleable.Keyboard);
         this.mDefaultWidth = getDimensionOrFraction(obtainAttributes, 0, this.mDisplayWidth, this.mDisplayWidth / 10);
         this.mDefaultHeight = getDimensionOrFraction(obtainAttributes, 1, this.mDisplayHeight, 50);
         this.mDefaultHorizontalGap = getDimensionOrFraction(obtainAttributes, 2, this.mDisplayWidth, 0);

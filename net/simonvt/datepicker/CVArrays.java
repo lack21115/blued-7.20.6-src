@@ -2,8 +2,9 @@ package net.simonvt.datepicker;
 
 import java.lang.reflect.Array;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-3503164-dex2jar.jar:net/simonvt/datepicker/CVArrays.class */
-class CVArrays {
+public class CVArrays {
     CVArrays() {
     }
 

@@ -31,13 +31,9 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMicrophoneView.class */
 public class YYMicrophoneView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyMicrophoneLayoutBinding f18323a;
+    private ViewYyMicrophoneLayoutBinding a;
     private YYRoomModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ActivityFragmentActive f18324c;
+    private ActivityFragmentActive c;
 
     public YYMicrophoneView(Context context) {
         this(context, null);
@@ -54,9 +50,9 @@ public class YYMicrophoneView extends FrameLayout {
 
     private void a() {
         this.b = YYRoomInfoManager.e().b();
-        ViewYyMicrophoneLayoutBinding a2 = ViewYyMicrophoneLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
-        this.f18323a = a2;
-        a2.b.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYMicrophoneView.1
+        ViewYyMicrophoneLayoutBinding a = ViewYyMicrophoneLayoutBinding.a(LayoutInflater.from(getContext()), this, true);
+        this.a = a;
+        a.b.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYMicrophoneView.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -74,11 +70,11 @@ public class YYMicrophoneView extends FrameLayout {
                 }
             }
         }));
-        this.f18323a.f16939a.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYMicrophoneView.2
+        this.a.a.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.YYMicrophoneView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+                YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
                 if (yYUserInfo == null || yYUserInfo.is_open_mic != 0) {
                     YYMicrophoneView.this.a(0);
                 } else {
@@ -93,7 +89,7 @@ public class YYMicrophoneView extends FrameLayout {
         if (YYRoomInfoManager.e().b() == null) {
             return;
         }
-        YYRoomHttpUtils.b(YYRoomInfoManager.e().b().room_id, YYRoomInfoManager.e().k(), i, new BluedUIHttpResponse<BluedEntityA<YYMuteStatusModel>>(this.f18324c) { // from class: com.blued.android.module.yy_china.view.YYMicrophoneView.3
+        YYRoomHttpUtils.b(YYRoomInfoManager.e().b().room_id, YYRoomInfoManager.e().k(), i, new BluedUIHttpResponse<BluedEntityA<YYMuteStatusModel>>(this.c) { // from class: com.blued.android.module.yy_china.view.YYMicrophoneView.3
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -110,12 +106,12 @@ public class YYMicrophoneView extends FrameLayout {
                 }
                 YYObserverManager.a().c(bluedEntityA.getSingleData().mic_status);
             }
-        }, this.f18324c);
+        }, this.c);
     }
 
     public void a(boolean z) {
-        this.f18323a.b.setVisibility(z ? 0 : 8);
-        ImageView imageView = this.f18323a.f16939a;
+        this.a.b.setVisibility(z ? 0 : 8);
+        ImageView imageView = this.a.a;
         int i = 0;
         if (z) {
             i = 8;
@@ -126,18 +122,18 @@ public class YYMicrophoneView extends FrameLayout {
     public void b(int i) {
         if (i == 0) {
             AudioChannelManager.j().a(true);
-            this.f18323a.f16939a.setImageResource(R.drawable.icon_microphone_disable);
+            this.a.a.setImageResource(R.drawable.icon_microphone_disable);
         } else {
             AudioChannelManager.j().a(false);
-            this.f18323a.f16939a.setImageResource(R.drawable.icon_microphone);
+            this.a.a.setImageResource(R.drawable.icon_microphone);
         }
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo != null) {
             yYUserInfo.is_open_mic = i;
         }
     }
 
     public void setFragmentActive(ActivityFragmentActive activityFragmentActive) {
-        this.f18324c = activityFragmentActive;
+        this.c = activityFragmentActive;
     }
 }

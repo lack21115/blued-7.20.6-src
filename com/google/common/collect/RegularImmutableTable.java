@@ -48,7 +48,7 @@ public abstract class RegularImmutableTable<R, C, V> extends ImmutableTable<R, C
             return false;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return RegularImmutableTable.this.size();
         }
@@ -87,7 +87,7 @@ public abstract class RegularImmutableTable<R, C, V> extends ImmutableTable<R, C
         if (comparator != null || comparator2 != null) {
             Collections.sort(list, new Comparator<Table.Cell<R, C, V>>() { // from class: com.google.common.collect.RegularImmutableTable.1
                 public int compare(Table.Cell<R, C, V> cell, Table.Cell<R, C, V> cell2) {
-                    Comparator comparator3 = Comparator.this;
+                    Comparator comparator3 = comparator;
                     int compare = comparator3 == null ? 0 : comparator3.compare(cell.getRowKey(), cell2.getRowKey());
                     if (compare != 0) {
                         return compare;

@@ -8,14 +8,14 @@ import android.content.Intent;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f1391a;
+    public Context f1343a;
     public int b;
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/j/a$b.class */
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f1392a = new a();
+        public static final a f1344a = new a();
     }
 
     public a() {
@@ -23,7 +23,7 @@ public class a {
     }
 
     public static a a() {
-        return b.f1392a;
+        return b.f1344a;
     }
 
     public void a(int i) {
@@ -32,14 +32,14 @@ public class a {
 
     public void a(Context context) {
         if (context != null) {
-            this.f1391a = context.getApplicationContext();
+            this.f1343a = context.getApplicationContext();
         } else {
-            this.f1391a = null;
+            this.f1343a = null;
         }
     }
 
     public void a(Intent intent) {
-        if (this.f1391a == null) {
+        if (this.f1343a == null) {
             return;
         }
         if ("pldroid-qos-filter".equals(intent.getAction()) && intent.getIntExtra("pldroid-qos-msg-type", -1) == 161) {

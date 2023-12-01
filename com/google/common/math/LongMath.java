@@ -1,6 +1,5 @@
 package com.google.common.math;
 
-import android.widget.ExpandableListView;
 import com.blued.das.live.LiveProtos;
 import com.google.common.base.Preconditions;
 import com.google.common.primitives.UnsignedLongs;
@@ -71,9 +70,8 @@ public final class LongMath {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8110460-dex2jar.jar:com/google/common/math/LongMath$MillerRabinTester.class */
-    public enum MillerRabinTester {
+    enum MillerRabinTester {
         SMALL { // from class: com.google.common.math.LongMath.MillerRabinTester.1
             @Override // com.google.common.math.LongMath.MillerRabinTester
             long mulMod(long j, long j2, long j3) {
@@ -113,8 +111,8 @@ public final class LongMath {
             long mulMod(long j, long j2, long j3) {
                 long j4 = j >>> 32;
                 long j5 = j2 >>> 32;
-                long j6 = j & ExpandableListView.PACKED_POSITION_VALUE_NULL;
-                long j7 = j2 & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+                long j6 = j & 4294967295L;
+                long j7 = j2 & 4294967295L;
                 long times2ToThe32Mod = times2ToThe32Mod(j4 * j5, j3) + (j4 * j7);
                 long j8 = times2ToThe32Mod;
                 if (times2ToThe32Mod < 0) {
@@ -127,7 +125,7 @@ public final class LongMath {
             @Override // com.google.common.math.LongMath.MillerRabinTester
             long squareMod(long j, long j2) {
                 long j3 = j >>> 32;
-                long j4 = j & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+                long j4 = j & 4294967295L;
                 long times2ToThe32Mod = times2ToThe32Mod(j3 * j3, j2);
                 long j5 = j3 * j4 * 2;
                 long j6 = j5;

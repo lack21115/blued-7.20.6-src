@@ -20,10 +20,9 @@ public final class a implements Application.ActivityLifecycleCallbacks {
     private boolean mIsInBackground;
     private final List<c> mListeners;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.sdk.core.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/b/a$a.class */
-    public static final class C0554a {
+    static final class C0384a {
         static final a afP = new a((byte) 0);
     }
 
@@ -62,7 +61,7 @@ public final class a implements Application.ActivityLifecycleCallbacks {
     }
 
     public static a vQ() {
-        return C0554a.afP;
+        return C0384a.afP;
     }
 
     private boolean vR() {

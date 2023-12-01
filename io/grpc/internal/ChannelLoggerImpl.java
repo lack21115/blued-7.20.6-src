@@ -1,5 +1,6 @@
 package io.grpc.internal;
 
+import com.anythink.core.common.c.g;
 import com.google.common.base.Preconditions;
 import io.grpc.ChannelLogger;
 import io.grpc.InternalChannelz;
@@ -36,7 +37,7 @@ final class ChannelLoggerImpl extends ChannelLogger {
     /* JADX INFO: Access modifiers changed from: package-private */
     public ChannelLoggerImpl(ChannelTracer channelTracer, TimeProvider timeProvider) {
         this.tracer = (ChannelTracer) Preconditions.checkNotNull(channelTracer, "tracer");
-        this.time = (TimeProvider) Preconditions.checkNotNull(timeProvider, "time");
+        this.time = (TimeProvider) Preconditions.checkNotNull(timeProvider, g.a.g);
     }
 
     private boolean isTraceable(ChannelLogger.ChannelLogLevel channelLogLevel) {
@@ -76,7 +77,6 @@ final class ChannelLoggerImpl extends ChannelLogger {
         this.tracer.traceOnly(new InternalChannelz.ChannelTrace.Event.Builder().setDescription(str).setSeverity(toTracerSeverity(channelLogLevel)).setTimestampNanos(this.time.currentTimeNanos()).build());
     }
 
-    @Override // io.grpc.ChannelLogger
     public void log(ChannelLogger.ChannelLogLevel channelLogLevel, String str) {
         logOnly(this.tracer.getLogId(), channelLogLevel, str);
         if (isTraceable(channelLogLevel)) {
@@ -84,7 +84,6 @@ final class ChannelLoggerImpl extends ChannelLogger {
         }
     }
 
-    @Override // io.grpc.ChannelLogger
     public void log(ChannelLogger.ChannelLogLevel channelLogLevel, String str, Object... objArr) {
         log(channelLogLevel, (isTraceable(channelLogLevel) || ChannelTracer.logger.isLoggable(toJavaLogLevel(channelLogLevel))) ? MessageFormat.format(str, objArr) : null);
     }

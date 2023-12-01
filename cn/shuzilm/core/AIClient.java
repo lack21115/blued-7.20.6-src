@@ -17,17 +17,15 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.text.TextUtils;
 import android.util.Base64;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
-import com.youzan.androidsdk.tool.AppSigning;
+import com.android.internal.telephony.SmsConstants;
+import com.anythink.core.common.b.g;
 import java.security.MessageDigest;
 import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/AIClient.class */
 public class AIClient {
-
-    /* renamed from: a  reason: collision with root package name */
-    static int f4151a = 0;
+    static int a = 0;
     private static long al = 0;
     private static long am = 0;
     public static boolean isf = false;
@@ -35,18 +33,14 @@ public class AIClient {
     private String ao = null;
     private final int ap = 0;
     private final int aq = 1;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private final int f4153ar = 2;
+    private final int ar = 2;
     private final int as = 3;
     private final int at = 4;
     private final int au = 5;
     private final int av = 6;
     private final int aw = 7;
     private static int[] b = {245, 252, 251, 246, 252, 247, 228, 188, 246, 251, 253, 224, 246, 252, 243, 188, 255, 253, 241, 0};
-
-    /* renamed from: c  reason: collision with root package name */
-    private static int[] f4152c = {230, 224, 243, 230, 225, 156, 215, 209, 219, 196, 192, 215, 193, 156, 192, 215, 219, 212, 219, 198, 220, 215, 214, 219, 156, 193, 214, 211, 156, 193, 223, 213, 156, 214, 219, 221, 192, 214, 220, 211, 156, 215, 222, 213, 221, 221, 213, 156, 223, 221, 209, 0};
+    private static int[] c = {230, 224, 243, 230, 225, 156, 215, 209, 219, 196, 192, 215, 193, 156, 192, 215, 219, 212, 219, 198, 220, 215, 214, 219, 156, 193, 214, 211, 156, 193, 223, 213, 156, 214, 219, 221, 192, 214, 220, 211, 156, 215, 222, 213, 221, 221, 213, 156, 223, 221, 209, 0};
     private static int[] d = {230, 248, 242, 187, 241, 252, 250, 231, 241, 251, 244, 187, 240, 249, 242, 250, 250, 242, 187, 248, 250, 246, 0};
     private static int[] e = {166, 160, 170, 181, 177, 166, 144, 167, 138, 164, 173, 170, 176, 170, 183, 177, 166, 181, 167, 130, 138, 237, 175, 162, 173, 177, 166, 183, 173, 170, 237, 177, 166, 170, 165, 170, 183, 173, 166, 167, 170, 237, 176, 167, 162, 237, 176, 174, 164, 237, 167, 170, 172, 177, 167, 173, 162, 237, 166, 175, 164, 172, 172, 164, 237, 174, 172, 160, 0};
     private static int[] f = {218, 171, 169, 172, 218, 222, 170, 172, 168, 218, 222, 222, 171, 166, 170, 217, 168, 221, 174, 166, 168, 217, 169, 217, 175, 218, 173, 219, 173, 217, 173, 218, 0};
@@ -111,21 +105,19 @@ public class AIClient {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/AIClient$AC.class */
     public final class AC implements ServiceConnection {
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f4155a;
+        boolean a;
         private final LinkedBlockingQueue b;
 
         private AC() {
-            this.f4155a = false;
+            this.a = false;
             this.b = new LinkedBlockingQueue(1);
         }
 
         public IBinder getBinder() {
-            if (this.f4155a) {
+            if (this.a) {
                 throw new IllegalStateException();
             }
-            this.f4155a = true;
+            this.a = true;
             return (IBinder) this.b.take();
         }
 
@@ -143,14 +135,12 @@ public class AIClient {
     /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/AIClient$AI.class */
     public final class AI implements IInterface {
         private IBinder b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f4157c;
+        private String c;
         private int d;
 
         public AI(IBinder iBinder, String str, int i) {
             this.b = iBinder;
-            this.f4157c = str;
+            this.c = str;
             this.d = i;
         }
 
@@ -168,10 +158,10 @@ public class AIClient {
                 obtain2.recycle();
                 obtain.recycle();
             }
-            if (this.f4157c == null || this.d < 0) {
+            if (this.c == null || this.d < 0) {
                 return null;
             }
-            obtain.writeInterfaceToken(this.f4157c);
+            obtain.writeInterfaceToken(this.c);
             this.b.transact(this.d, obtain, obtain2, 0);
             obtain2.readException();
             str = obtain2.readString();
@@ -185,13 +175,11 @@ public class AIClient {
     /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/AIClient$AIO.class */
     public final class AIO implements IInterface {
         private IBinder b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f4159c;
+        private String c;
 
         public AIO(IBinder iBinder, String str) {
             this.b = iBinder;
-            this.f4159c = str;
+            this.c = str;
         }
 
         @Override // android.os.IInterface
@@ -209,10 +197,10 @@ public class AIClient {
                 obtain.recycle();
                 str4 = null;
             }
-            if (this.f4159c == null) {
+            if (this.c == null) {
                 return null;
             }
-            obtain.writeInterfaceToken(this.f4159c);
+            obtain.writeInterfaceToken(this.c);
             obtain.writeString(str);
             obtain.writeString(str2);
             obtain.writeString(str3);
@@ -228,15 +216,13 @@ public class AIClient {
     /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/AIClient$AO.class */
     class AO {
         private int[] b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int[] f4161c;
+        private int[] c;
         private Context d;
         private int[] e;
 
         private AO(Context context) {
             this.b = new int[]{246, 251, 243, 253, 157, 214, 251, 192, 215, 219, 212, 219, 198, 220, 215, 214, 251, 157, 192, 215, 214, 219, 196, 221, 192, 226, 214, 251, 156, 193, 223, 196, 156, 221, 196, 219, 196, 156, 223, 221, 209, 157, 157, 136, 198, 220, 215, 198, 220, 221, 209, 0};
-            this.f4161c = new int[]{231, 234, 226, 236, 0};
+            this.c = new int[]{231, 234, 226, 236, 0};
             this.e = new int[]{194, 207, 199, 201, 242, 227, 225, 0};
             this.d = context;
         }
@@ -259,12 +245,12 @@ public class AIClient {
                         acquireContentProviderClient.release();
                     }
                 } else {
-                    call = this.d.getContentResolver().call(parse, AIClient.this.a(this.e), null, null);
+                    call = this.d.getContentResolver().call(parse, AIClient.this.a(this.e), (String) null, (Bundle) null);
                 }
                 if (call == null) {
                     return null;
                 }
-                if (call.getInt("code", -1) == 0) {
+                if (call.getInt(g.c.b, -1) == 0) {
                     str = call.getString("id");
                 }
                 return str;
@@ -411,7 +397,7 @@ public class AIClient {
         }
         try {
             Class<?> cls = Class.forName(a(r));
-            return (String) cls.getMethod(MonitorConstants.CONNECT_TYPE_GET, String.class, String.class).invoke(cls, str, "unknown");
+            return (String) cls.getMethod("get", String.class, String.class).invoke(cls, str, SmsConstants.FORMAT_UNKNOWN);
         } catch (Exception e2) {
             return null;
         }
@@ -471,7 +457,7 @@ public class AIClient {
             if (signatureArr != null && signatureArr.length > 0) {
                 byte[] byteArray = signatureArr[0].toByteArray();
                 try {
-                    MessageDigest messageDigest = MessageDigest.getInstance(AppSigning.SHA1);
+                    MessageDigest messageDigest = MessageDigest.getInstance("SHA1");
                     if (messageDigest != null) {
                         byte[] digest = messageDigest.digest(byteArray);
                         StringBuilder sb = new StringBuilder();
@@ -577,7 +563,7 @@ public class AIClient {
 
     private boolean h() {
         String b2 = b(a(aa));
-        return (TextUtils.isEmpty(b2) || b2.equalsIgnoreCase("unknown")) ? false : true;
+        return (TextUtils.isEmpty(b2) || b2.equalsIgnoreCase(SmsConstants.FORMAT_UNKNOWN)) ? false : true;
     }
 
     private boolean i() {
@@ -610,7 +596,7 @@ public class AIClient {
                     } else {
                         acquireUnstableContentProviderClient.release();
                     }
-                    if (call.getInt("code", -1) == 0) {
+                    if (call.getInt(g.c.b, -1) == 0) {
                         return call.getBoolean("isSupport", true);
                     }
                     return false;
@@ -643,7 +629,7 @@ public class AIClient {
         String a5;
         String a6;
         isf = false;
-        if (f4151a > 0) {
+        if (a > 0) {
             return;
         }
         if (f() && d()) {
@@ -728,7 +714,7 @@ public class AIClient {
             if (b(a(b), 0) && e()) {
                 if (!d(">??>") && !d("E8E>") && !d(">=4?;DB")) {
                     a2 = a(b);
-                    a3 = a(f4152c);
+                    a3 = a(c);
                     a4 = a(d);
                     a5 = a(e);
                     a6 = a(f);
@@ -738,7 +724,7 @@ public class AIClient {
                     Thread.sleep(60L);
                     if (new Random().nextInt(3) == 0) {
                         a2 = a(b);
-                        a3 = a(f4152c);
+                        a3 = a(c);
                         a4 = a(d);
                         a5 = a(e);
                         a6 = a(f);
@@ -749,7 +735,7 @@ public class AIClient {
         } catch (Exception e13) {
         }
         isf = true;
-        f4151a++;
+        a++;
     }
 
     public String cm(String str) {

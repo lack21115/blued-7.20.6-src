@@ -14,11 +14,11 @@ public class a {
     private static final int[] m = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f38881a = {98, -24, 57, -84, -115, 117, 55, 121};
+    public static final byte[] f25190a = {98, -24, 57, -84, -115, 117, 55, 121};
     public static final byte[] b = {-25, -101, -115, 1, 47, 7, -27, -59, 18, Byte.MIN_VALUE, 123, 79, -44, 37, 46, 115};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte[] f38882c = {37, -110, 60, Byte.MAX_VALUE, 42, -27, -17, -110};
+    public static final byte[] f25191c = {37, -110, 60, Byte.MAX_VALUE, 42, -27, -17, -110};
     public static final byte[] d = {-122, -8, -23, -84, -125, 113, 84, 99};
     public static final byte[] e = "AL!#$AC9Ahg@KLJ1".getBytes();
 
@@ -230,17 +230,17 @@ public class a {
                     }
                     byte[] bArr4 = new byte[8];
                     byte[] bArr5 = new byte[8];
-                    System.arraycopy((Object) c2, 0, (Object) bArr4, 0, 8);
+                    System.arraycopy(c2, 0, bArr4, 0, 8);
                     int i6 = i5 * 8;
-                    System.arraycopy((Object) b2, i6, (Object) bArr5, 0, 8);
-                    System.arraycopy((Object) b(bArr4, bArr5, i2), 0, (Object) bArr3, i6, 8);
+                    System.arraycopy(b2, i6, bArr5, 0, 8);
+                    System.arraycopy(b(bArr4, bArr5, i2), 0, bArr3, i6, 8);
                     i4 = i5 + 1;
                 }
                 byte[] bArr6 = bArr3;
                 if (i2 == 0) {
                     int length2 = bArr2.length;
                     byte[] bArr7 = new byte[length2];
-                    System.arraycopy((Object) bArr3, 0, (Object) bArr7, 0, length2);
+                    System.arraycopy(bArr3, 0, bArr7, 0, length2);
                     int i7 = length2 - 1;
                     byte b3 = bArr7[i7];
                     bArr6 = bArr3;
@@ -264,7 +264,7 @@ public class a {
                             if (z) {
                                 int i10 = length2 - b3;
                                 bArr6 = new byte[i10];
-                                System.arraycopy((Object) bArr7, 0, (Object) bArr6, 0, i10);
+                                System.arraycopy(bArr7, 0, bArr6, 0, i10);
                             }
                         }
                     }
@@ -430,7 +430,7 @@ public class a {
         int i2 = 8 - (length % 8);
         int i3 = length + i2;
         byte[] bArr2 = new byte[i3];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, length);
+        System.arraycopy(bArr, 0, bArr2, 0, length);
         while (length < i3) {
             bArr2[length] = (byte) i2;
             length++;
@@ -460,7 +460,7 @@ public class a {
             bArr2[i3] = 0;
             i2 = i3 + 1;
         }
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, bArr.length > 8 ? 8 : bArr.length);
+        System.arraycopy(bArr, 0, bArr2, 0, bArr.length > 8 ? 8 : bArr.length);
         return bArr2;
     }
 }

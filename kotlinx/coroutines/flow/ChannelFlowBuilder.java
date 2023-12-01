@@ -24,7 +24,7 @@ public class ChannelFlowBuilder<T> extends ChannelFlow<T> {
 
     static /* synthetic */ Object a(ChannelFlowBuilder channelFlowBuilder, ProducerScope producerScope, Continuation continuation) {
         Object invoke = channelFlowBuilder.d.invoke(producerScope, continuation);
-        return invoke == IntrinsicsKt.a() ? invoke : Unit.f42314a;
+        return invoke == IntrinsicsKt.a() ? invoke : Unit.a;
     }
 
     @Override // kotlinx.coroutines.flow.internal.ChannelFlow

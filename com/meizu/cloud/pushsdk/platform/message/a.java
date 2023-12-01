@@ -20,8 +20,8 @@ public class a {
             if (!jSONObject.isNull(PushConstants.REGISTER_STATUS_PUSH_ID)) {
                 registerStatus2.setPushId(jSONObject.getString(PushConstants.REGISTER_STATUS_PUSH_ID));
             }
-            if (!jSONObject.isNull("expire_time")) {
-                registerStatus2.setExpireTime(jSONObject.getInt("expire_time"));
+            if (!jSONObject.isNull(PushConstants.REGISTER_STATUS_EXPIRE_TIME)) {
+                registerStatus2.setExpireTime(jSONObject.getInt(PushConstants.REGISTER_STATUS_EXPIRE_TIME));
             }
             DebugLogger.i("StatusSerialize", "register status serialize stringToRegisterStatus success, RegisterStatus=" + registerStatus2);
             return registerStatus2;
@@ -59,7 +59,7 @@ public class a {
                 a2.put(PushConstants.REGISTER_STATUS_PUSH_ID, registerStatus.getPushId());
             }
             if (registerStatus.getExpireTime() > 0) {
-                a2.put("expire_time", registerStatus.getExpireTime());
+                a2.put(PushConstants.REGISTER_STATUS_EXPIRE_TIME, registerStatus.getExpireTime());
             }
             String jSONObject = a2.toString();
             DebugLogger.i("StatusSerialize", "register status serialize registerStatusToString success, statusText=" + jSONObject);

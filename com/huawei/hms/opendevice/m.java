@@ -3,7 +3,6 @@ package com.huawei.hms.opendevice;
 import android.content.Context;
 import android.media.TtmlUtils;
 import android.text.TextUtils;
-import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.hms.android.HwBuildEx;
 import com.huawei.hms.android.SystemUtils;
@@ -13,7 +12,6 @@ import com.huawei.hms.utils.Util;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.UUID;
-import java.util.logging.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,11 +22,11 @@ public class m {
     class a extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f22820a;
+        final /* synthetic */ Context f9212a;
         final /* synthetic */ String b;
 
         a(Context context, String str) {
-            this.f22820a = context;
+            this.f9212a = context;
             this.b = str;
         }
 
@@ -36,26 +34,26 @@ public class m {
         public void run() {
             if (!d.b()) {
                 HMSLog.d("ReportAaidToken", "Not HW Phone.");
-            } else if (m.b(this.f22820a)) {
+            } else if (m.b(this.f9212a)) {
             } else {
-                String a2 = com.huawei.hms.opendevice.b.a(this.f22820a);
+                String a2 = com.huawei.hms.opendevice.b.a(this.f9212a);
                 if (TextUtils.isEmpty(a2)) {
                     HMSLog.w("ReportAaidToken", "AAID is empty.");
-                } else if (!m.d(this.f22820a, a2, this.b)) {
+                } else if (!m.d(this.f9212a, a2, this.b)) {
                     HMSLog.d("ReportAaidToken", "This time need not report.");
                 } else {
-                    String string = AGConnectServicesConfig.fromContext(this.f22820a).getString(TtmlUtils.TAG_REGION);
+                    String string = AGConnectServicesConfig.fromContext(this.f9212a).getString(TtmlUtils.TAG_REGION);
                     if (TextUtils.isEmpty(string)) {
                         HMSLog.i("ReportAaidToken", "The data storage region is empty.");
                         return;
                     }
-                    String a3 = k.a(this.f22820a, "com.huawei.hms.opendevicesdk", "ROOT", null, string);
+                    String a3 = k.a(this.f9212a, "com.huawei.hms.opendevicesdk", "ROOT", null, string);
                     if (TextUtils.isEmpty(a3)) {
                         return;
                     }
-                    String c2 = m.c(this.f22820a, a2, this.b);
-                    Context context = this.f22820a;
-                    m.b(this.f22820a, g.a(context, a3 + "/rest/appdata/v1/aaid/report", c2, (Map<String, String>) null), a2, this.b);
+                    String c2 = m.c(this.f9212a, a2, this.b);
+                    Context context = this.f9212a;
+                    m.b(this.f9212a, g.a(context, a3 + "/rest/appdata/v1/aaid/report", c2, (Map<String, String>) null), a2, this.b);
                 }
             }
         }
@@ -80,21 +78,21 @@ public class m {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private String f22822a;
+        private String f9214a;
 
         b(String str) {
-            this.f22822a = str;
+            this.f9214a = str;
         }
 
         public String a() {
-            return this.f22822a;
+            return this.f9214a;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/opendevice/m$c.class */
     public enum c {
-        IOS(MsgBackupManager.PLATFORM_IOS),
+        IOS("ios"),
         ANDROID("android"),
         HARMONY("harmony"),
         WINDOWS("windows"),
@@ -103,14 +101,14 @@ public class m {
         
 
         /* renamed from: a  reason: collision with root package name */
-        private String f22824a;
+        private String f9216a;
 
         c(String str) {
-            this.f22824a = str;
+            this.f9216a = str;
         }
 
         public String a() {
-            return this.f22824a;
+            return this.f9216a;
         }
     }
 
@@ -166,7 +164,7 @@ public class m {
             jSONObject4.put("os_type", c.ANDROID.a());
             jSONObject4.put("os_version", String.valueOf(HwBuildEx.VERSION.EMUI_SDK_INT));
             jSONObject.put("id", UUID.randomUUID().toString());
-            jSONObject.put(Logger.GLOBAL_LOGGER_NAME, jSONObject2);
+            jSONObject.put("global", jSONObject2);
             jSONObject.put("push_agent", jSONObject3);
             jSONObject.put("hardware", jSONObject4);
             jSONObject.put("aaid", str);

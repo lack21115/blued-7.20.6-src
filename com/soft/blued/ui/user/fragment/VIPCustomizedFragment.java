@@ -22,7 +22,7 @@ import com.soft.blued.utils.BluedPreferences;
 public class VIPCustomizedFragment extends MvpFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f34147a;
+    private Context f20456a;
     private int b = 0;
     @BindView
     CommonTopTitleNoTrans title;
@@ -50,13 +50,13 @@ public class VIPCustomizedFragment extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(View view) {
         Tracker.onClick(view);
-        ChangeBluedIconFragment.a(this.f34147a);
+        ChangeBluedIconFragment.a(this.f20456a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(View view) {
         Tracker.onClick(view);
-        DynamicSkinFragment.a(this.f34147a, this.b, "vip_center_dynamic_skin");
+        DynamicSkinFragment.a(this.f20456a, this.b, "vip_center_dynamic_skin");
         this.viewFeedBg.a((Boolean) false);
         BluedPreferences.dE();
     }
@@ -64,13 +64,13 @@ public class VIPCustomizedFragment extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void c(View view) {
         Tracker.onClick(view);
-        ChatBgSettingFragment.a(this.f34147a, 2);
+        ChatBgSettingFragment.a(this.f20456a, 2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void d(View view) {
         Tracker.onClick(view);
-        VipBubbleFragment.a(this.f34147a, this.b, "vip_center_msg_bubble");
+        VipBubbleFragment.a(this.f20456a, this.b, "vip_center_msg_bubble");
         this.viewBubble.a((Boolean) false);
         BluedPreferences.dy();
     }
@@ -81,13 +81,12 @@ public class VIPCustomizedFragment extends MvpFragment {
         getActivity().finish();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         if (getArguments() != null) {
             this.b = getArguments().getInt("KEY_VIP_GRADE");
         }
-        this.f34147a = getActivity();
+        this.f20456a = getActivity();
         this.title.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$VIPCustomizedFragment$jpcm2kPldpXFU6OsRuWJ08BcwYo
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -134,12 +133,11 @@ public class VIPCustomizedFragment extends MvpFragment {
                 EventTrackVIP.a(VipProtos.Event.VIP_CENTER_PHOTO_PENDANT_CLICK, VIPCustomizedFragment.this.b);
                 VIPCustomizedFragment.this.viewWidget.a((Boolean) false);
                 BluedPreferences.dA();
-                WidgetListFragment.a(VIPCustomizedFragment.this.f34147a, 2, "photo_pendant_vip_center", VipProtos.FromType.PHOTO_PENDANT_VIP_CENTER);
+                WidgetListFragment.a(VIPCustomizedFragment.this.f20456a, 2, "photo_pendant_vip_center", VipProtos.FromType.PHOTO_PENDANT_VIP_CENTER);
             }
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_customized_look;
     }

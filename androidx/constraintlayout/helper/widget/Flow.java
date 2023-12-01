@@ -32,7 +32,7 @@ public class Flow extends VirtualLayout {
     public static final int WRAP_NONE = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private androidx.constraintlayout.core.widgets.Flow f2158a;
+    private androidx.constraintlayout.core.widgets.Flow f2110a;
 
     public Flow(Context context) {
         super(context);
@@ -49,7 +49,7 @@ public class Flow extends VirtualLayout {
     @Override // androidx.constraintlayout.widget.VirtualLayout, androidx.constraintlayout.widget.ConstraintHelper
     public void a(AttributeSet attributeSet) {
         super.a(attributeSet);
-        this.f2158a = new androidx.constraintlayout.core.widgets.Flow();
+        this.f2110a = new androidx.constraintlayout.core.widgets.Flow();
         if (attributeSet != null) {
             TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.ConstraintLayout_Layout);
             int indexCount = obtainStyledAttributes.getIndexCount();
@@ -61,67 +61,67 @@ public class Flow extends VirtualLayout {
                 }
                 int index = obtainStyledAttributes.getIndex(i2);
                 if (index == R.styleable.ConstraintLayout_Layout_android_orientation) {
-                    this.f2158a.setOrientation(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setOrientation(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_android_padding) {
-                    this.f2158a.setPadding(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2110a.setPadding(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_android_paddingStart) {
                     if (Build.VERSION.SDK_INT >= 17) {
-                        this.f2158a.setPaddingStart(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                        this.f2110a.setPaddingStart(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                     }
                 } else if (index == R.styleable.ConstraintLayout_Layout_android_paddingEnd) {
                     if (Build.VERSION.SDK_INT >= 17) {
-                        this.f2158a.setPaddingEnd(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                        this.f2110a.setPaddingEnd(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                     }
                 } else if (index == R.styleable.ConstraintLayout_Layout_android_paddingLeft) {
-                    this.f2158a.setPaddingLeft(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2110a.setPaddingLeft(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_android_paddingTop) {
-                    this.f2158a.setPaddingTop(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2110a.setPaddingTop(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_android_paddingRight) {
-                    this.f2158a.setPaddingRight(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2110a.setPaddingRight(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_android_paddingBottom) {
-                    this.f2158a.setPaddingBottom(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2110a.setPaddingBottom(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_wrapMode) {
-                    this.f2158a.setWrapMode(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setWrapMode(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_horizontalStyle) {
-                    this.f2158a.setHorizontalStyle(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setHorizontalStyle(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_verticalStyle) {
-                    this.f2158a.setVerticalStyle(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setVerticalStyle(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_firstHorizontalStyle) {
-                    this.f2158a.setFirstHorizontalStyle(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setFirstHorizontalStyle(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_lastHorizontalStyle) {
-                    this.f2158a.setLastHorizontalStyle(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setLastHorizontalStyle(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_firstVerticalStyle) {
-                    this.f2158a.setFirstVerticalStyle(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setFirstVerticalStyle(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_lastVerticalStyle) {
-                    this.f2158a.setLastVerticalStyle(obtainStyledAttributes.getInt(index, 0));
+                    this.f2110a.setLastVerticalStyle(obtainStyledAttributes.getInt(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_horizontalBias) {
-                    this.f2158a.setHorizontalBias(obtainStyledAttributes.getFloat(index, 0.5f));
+                    this.f2110a.setHorizontalBias(obtainStyledAttributes.getFloat(index, 0.5f));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_firstHorizontalBias) {
-                    this.f2158a.setFirstHorizontalBias(obtainStyledAttributes.getFloat(index, 0.5f));
+                    this.f2110a.setFirstHorizontalBias(obtainStyledAttributes.getFloat(index, 0.5f));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_lastHorizontalBias) {
-                    this.f2158a.setLastHorizontalBias(obtainStyledAttributes.getFloat(index, 0.5f));
+                    this.f2110a.setLastHorizontalBias(obtainStyledAttributes.getFloat(index, 0.5f));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_firstVerticalBias) {
-                    this.f2158a.setFirstVerticalBias(obtainStyledAttributes.getFloat(index, 0.5f));
+                    this.f2110a.setFirstVerticalBias(obtainStyledAttributes.getFloat(index, 0.5f));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_lastVerticalBias) {
-                    this.f2158a.setLastVerticalBias(obtainStyledAttributes.getFloat(index, 0.5f));
+                    this.f2110a.setLastVerticalBias(obtainStyledAttributes.getFloat(index, 0.5f));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_verticalBias) {
-                    this.f2158a.setVerticalBias(obtainStyledAttributes.getFloat(index, 0.5f));
+                    this.f2110a.setVerticalBias(obtainStyledAttributes.getFloat(index, 0.5f));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_horizontalAlign) {
-                    this.f2158a.setHorizontalAlign(obtainStyledAttributes.getInt(index, 2));
+                    this.f2110a.setHorizontalAlign(obtainStyledAttributes.getInt(index, 2));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_verticalAlign) {
-                    this.f2158a.setVerticalAlign(obtainStyledAttributes.getInt(index, 2));
+                    this.f2110a.setVerticalAlign(obtainStyledAttributes.getInt(index, 2));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_horizontalGap) {
-                    this.f2158a.setHorizontalGap(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2110a.setHorizontalGap(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_verticalGap) {
-                    this.f2158a.setVerticalGap(obtainStyledAttributes.getDimensionPixelSize(index, 0));
+                    this.f2110a.setVerticalGap(obtainStyledAttributes.getDimensionPixelSize(index, 0));
                 } else if (index == R.styleable.ConstraintLayout_Layout_flow_maxElementsWrap) {
-                    this.f2158a.setMaxElementsWrap(obtainStyledAttributes.getInt(index, -1));
+                    this.f2110a.setMaxElementsWrap(obtainStyledAttributes.getInt(index, -1));
                 }
                 i = i2 + 1;
             }
             obtainStyledAttributes.recycle();
         }
-        this.m = this.f2158a;
+        this.m = this.f2110a;
         validateParams();
     }
 
@@ -138,7 +138,7 @@ public class Flow extends VirtualLayout {
 
     @Override // androidx.constraintlayout.widget.ConstraintHelper, android.view.View
     public void onMeasure(int i, int i2) {
-        onMeasure(this.f2158a, i, i2);
+        onMeasure(this.f2110a, i, i2);
     }
 
     @Override // androidx.constraintlayout.widget.VirtualLayout
@@ -157,126 +157,126 @@ public class Flow extends VirtualLayout {
 
     @Override // androidx.constraintlayout.widget.ConstraintHelper
     public void resolveRtl(ConstraintWidget constraintWidget, boolean z) {
-        this.f2158a.applyRtl(z);
+        this.f2110a.applyRtl(z);
     }
 
     public void setFirstHorizontalBias(float f) {
-        this.f2158a.setFirstHorizontalBias(f);
+        this.f2110a.setFirstHorizontalBias(f);
         requestLayout();
     }
 
     public void setFirstHorizontalStyle(int i) {
-        this.f2158a.setFirstHorizontalStyle(i);
+        this.f2110a.setFirstHorizontalStyle(i);
         requestLayout();
     }
 
     public void setFirstVerticalBias(float f) {
-        this.f2158a.setFirstVerticalBias(f);
+        this.f2110a.setFirstVerticalBias(f);
         requestLayout();
     }
 
     public void setFirstVerticalStyle(int i) {
-        this.f2158a.setFirstVerticalStyle(i);
+        this.f2110a.setFirstVerticalStyle(i);
         requestLayout();
     }
 
     public void setHorizontalAlign(int i) {
-        this.f2158a.setHorizontalAlign(i);
+        this.f2110a.setHorizontalAlign(i);
         requestLayout();
     }
 
     public void setHorizontalBias(float f) {
-        this.f2158a.setHorizontalBias(f);
+        this.f2110a.setHorizontalBias(f);
         requestLayout();
     }
 
     public void setHorizontalGap(int i) {
-        this.f2158a.setHorizontalGap(i);
+        this.f2110a.setHorizontalGap(i);
         requestLayout();
     }
 
     public void setHorizontalStyle(int i) {
-        this.f2158a.setHorizontalStyle(i);
+        this.f2110a.setHorizontalStyle(i);
         requestLayout();
     }
 
     public void setLastHorizontalBias(float f) {
-        this.f2158a.setLastHorizontalBias(f);
+        this.f2110a.setLastHorizontalBias(f);
         requestLayout();
     }
 
     public void setLastHorizontalStyle(int i) {
-        this.f2158a.setLastHorizontalStyle(i);
+        this.f2110a.setLastHorizontalStyle(i);
         requestLayout();
     }
 
     public void setLastVerticalBias(float f) {
-        this.f2158a.setLastVerticalBias(f);
+        this.f2110a.setLastVerticalBias(f);
         requestLayout();
     }
 
     public void setLastVerticalStyle(int i) {
-        this.f2158a.setLastVerticalStyle(i);
+        this.f2110a.setLastVerticalStyle(i);
         requestLayout();
     }
 
     public void setMaxElementsWrap(int i) {
-        this.f2158a.setMaxElementsWrap(i);
+        this.f2110a.setMaxElementsWrap(i);
         requestLayout();
     }
 
     public void setOrientation(int i) {
-        this.f2158a.setOrientation(i);
+        this.f2110a.setOrientation(i);
         requestLayout();
     }
 
     public void setPadding(int i) {
-        this.f2158a.setPadding(i);
+        this.f2110a.setPadding(i);
         requestLayout();
     }
 
     public void setPaddingBottom(int i) {
-        this.f2158a.setPaddingBottom(i);
+        this.f2110a.setPaddingBottom(i);
         requestLayout();
     }
 
     public void setPaddingLeft(int i) {
-        this.f2158a.setPaddingLeft(i);
+        this.f2110a.setPaddingLeft(i);
         requestLayout();
     }
 
     public void setPaddingRight(int i) {
-        this.f2158a.setPaddingRight(i);
+        this.f2110a.setPaddingRight(i);
         requestLayout();
     }
 
     public void setPaddingTop(int i) {
-        this.f2158a.setPaddingTop(i);
+        this.f2110a.setPaddingTop(i);
         requestLayout();
     }
 
     public void setVerticalAlign(int i) {
-        this.f2158a.setVerticalAlign(i);
+        this.f2110a.setVerticalAlign(i);
         requestLayout();
     }
 
     public void setVerticalBias(float f) {
-        this.f2158a.setVerticalBias(f);
+        this.f2110a.setVerticalBias(f);
         requestLayout();
     }
 
     public void setVerticalGap(int i) {
-        this.f2158a.setVerticalGap(i);
+        this.f2110a.setVerticalGap(i);
         requestLayout();
     }
 
     public void setVerticalStyle(int i) {
-        this.f2158a.setVerticalStyle(i);
+        this.f2110a.setVerticalStyle(i);
         requestLayout();
     }
 
     public void setWrapMode(int i) {
-        this.f2158a.setWrapMode(i);
+        this.f2110a.setWrapMode(i);
         requestLayout();
     }
 }

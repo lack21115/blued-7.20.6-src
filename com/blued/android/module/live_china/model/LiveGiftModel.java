@@ -3,7 +3,6 @@ package com.blued.android.module.live_china.model;
 import android.text.TextUtils;
 import com.blued.android.module.live.base.model.CommonLiveGiftModel;
 import com.blued.android.module.live.base.model.LiveGiftNumberModel;
-import com.igexin.push.core.b;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
@@ -175,7 +174,7 @@ public class LiveGiftModel extends CommonLiveGiftModel implements Serializable {
         sb.append(this.displayCount);
         sb.append(", advance_list: ");
         List<LiveGiftAdvancedModel> list = this.advance_list;
-        sb.append(list != null ? list.toString() : b.l);
+        sb.append(list != null ? list.toString() : "null");
         sb.append("]");
         return sb.toString();
     }

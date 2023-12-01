@@ -14,20 +14,20 @@ public interface ModelLoader<Model, Data> {
     public static class LoadData<Data> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final Key f20890a;
+        public final Key f7284a;
         public final List<Key> b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final DataFetcher<Data> f20891c;
+        public final DataFetcher<Data> f7285c;
 
         public LoadData(Key key, DataFetcher<Data> dataFetcher) {
             this(key, Collections.emptyList(), dataFetcher);
         }
 
         public LoadData(Key key, List<Key> list, DataFetcher<Data> dataFetcher) {
-            this.f20890a = (Key) Preconditions.a(key);
+            this.f7284a = (Key) Preconditions.a(key);
             this.b = (List) Preconditions.a(list);
-            this.f20891c = (DataFetcher) Preconditions.a(dataFetcher);
+            this.f7285c = (DataFetcher) Preconditions.a(dataFetcher);
         }
     }
 

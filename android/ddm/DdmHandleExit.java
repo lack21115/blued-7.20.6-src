@@ -16,15 +16,12 @@ public class DdmHandleExit extends ChunkHandler {
         DdmServer.registerHandler(CHUNK_EXIT, mInstance);
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void connected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public void disconnected() {
     }
 
-    @Override // org.apache.harmony.dalvik.ddmc.ChunkHandler
     public Chunk handleChunk(Chunk chunk) {
         Runtime.getRuntime().halt(wrapChunk(chunk).getInt());
         return null;

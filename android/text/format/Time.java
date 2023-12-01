@@ -1,6 +1,7 @@
 package android.text.format;
 
 import android.util.TimeFormatException;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.IOException;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -475,7 +476,7 @@ public class Time {
             return format(Y_M_D_T_H_M_S_000_Z);
         }
         String format = format(Y_M_D_T_H_M_S_000);
-        String str = this.gmtoff < 0 ? "-" : "+";
+        String str = this.gmtoff < 0 ? Constants.ACCEPT_TIME_SEPARATOR_SERVER : "+";
         int abs = (int) Math.abs(this.gmtoff);
         return String.format(Locale.US, "%s%s%02d:%02d", format, str, Integer.valueOf(abs / 3600), Integer.valueOf((abs % 3600) / 60));
     }

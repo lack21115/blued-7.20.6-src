@@ -11,9 +11,8 @@ public class MarshalRegistry {
     private static List<MarshalQueryable<?>> sRegisteredMarshalQueryables = new ArrayList();
     private static HashMap<MarshalToken<?>, Marshaler<?>> sMarshalerMap = new HashMap<>();
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/marshal/MarshalRegistry$MarshalToken.class */
-    public static class MarshalToken<T> {
+    private static class MarshalToken<T> {
         private final int hash;
         final int nativeType;
         final TypeReference<T> typeReference;

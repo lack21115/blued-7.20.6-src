@@ -1,6 +1,8 @@
 package io.github.inflationx.viewpump.internal;
 
 import android.util.Log;
+import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.opos.process.bridge.provider.ProcessBridgeProvider;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -14,10 +16,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ReflectionUtils {
     private static final String TAG = "ReflectionUtils";
 
-    public static final Method getAccessibleMethod(Class<?> receiver$0, String methodName) {
-        Intrinsics.d(receiver$0, "receiver$0");
-        Intrinsics.d(methodName, "methodName");
-        Method[] methods = receiver$0.getMethods();
+    public static final Method getAccessibleMethod(Class<?> cls, String str) {
+        Intrinsics.d(cls, "receiver$0");
+        Intrinsics.d(str, "methodName");
+        Method[] methods = cls.getMethods();
         int length = methods.length;
         int i = 0;
         while (true) {
@@ -27,7 +29,7 @@ public final class ReflectionUtils {
             }
             Method method = methods[i2];
             Intrinsics.b(method, "method");
-            if (Intrinsics.a((Object) method.getName(), (Object) methodName)) {
+            if (Intrinsics.a(method.getName(), str)) {
                 method.setAccessible(true);
                 return method;
             }
@@ -35,14 +37,14 @@ public final class ReflectionUtils {
         }
     }
 
-    public static final void invokeMethod(Method method, Object target, Object... args) {
-        Intrinsics.d(target, "target");
-        Intrinsics.d(args, "args");
+    public static final void invokeMethod(Method method, Object obj, Object... objArr) {
+        Intrinsics.d(obj, TypedValues.AttributesType.S_TARGET);
+        Intrinsics.d(objArr, ProcessBridgeProvider.KEY_ARGS);
         if (method == null) {
             return;
         }
         try {
-            method.invoke(target, Arrays.copyOf(args, args.length));
+            method.invoke(obj, Arrays.copyOf(objArr, objArr.length));
         } catch (IllegalAccessException e) {
             Log.d(TAG, "Can't access method using reflection", e);
         } catch (InvocationTargetException e2) {
@@ -50,12 +52,12 @@ public final class ReflectionUtils {
         }
     }
 
-    public static final void setValueQuietly(Field receiver$0, Object obj, Object value) {
-        Intrinsics.d(receiver$0, "receiver$0");
+    public static final void setValueQuietly(Field field, Object obj, Object obj2) {
+        Intrinsics.d(field, "receiver$0");
         Intrinsics.d(obj, "obj");
-        Intrinsics.d(value, "value");
+        Intrinsics.d(obj2, "value");
         try {
-            receiver$0.set(obj, value);
+            field.set(obj, obj2);
         } catch (IllegalAccessException e) {
         }
     }

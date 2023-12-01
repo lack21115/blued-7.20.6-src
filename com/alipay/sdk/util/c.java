@@ -9,18 +9,16 @@ import java.util.Locale;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/util/c.class */
 public class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Log.ISdkLogCallback f4658a;
+    private static Log.ISdkLogCallback a;
     private static final String b = "alipaysdk";
 
     public static void a(Log.ISdkLogCallback iSdkLogCallback) {
-        f4658a = iSdkLogCallback;
+        a = iSdkLogCallback;
     }
 
     private static void a(String str) {
         try {
-            Log.ISdkLogCallback iSdkLogCallback = f4658a;
+            Log.ISdkLogCallback iSdkLogCallback = a;
             if (iSdkLogCallback != null) {
                 iSdkLogCallback.onLogLine(String.format("[AlipaySDK] %s %s", new SimpleDateFormat("hh:mm:ss.SSS", Locale.getDefault()).format(new Date()), str));
             }

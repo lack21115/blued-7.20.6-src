@@ -1,5 +1,6 @@
 package com.bytedance.sdk.openadsdk.api.plugin.mb;
 
+import com.huawei.openalliance.ad.constant.t;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,9 +16,8 @@ import javax.net.ssl.X509TrustManager;
 /* loaded from: source-7206380-dex2jar.jar:com/bytedance/sdk/openadsdk/api/plugin/mb/b.class */
 public class b {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/sdk/openadsdk/api/plugin/mb/b$mb.class */
-    public static final class mb {
+    static final class mb {
         private static final b mb = new b();
     }
 
@@ -30,7 +30,7 @@ public class b {
 
     private static String mb(String str, String str2) {
         if (str != null) {
-            String[] split = str.split(";", 0);
+            String[] split = str.split(t.aE, 0);
             int i = 1;
             while (true) {
                 int i2 = i;

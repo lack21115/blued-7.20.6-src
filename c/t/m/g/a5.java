@@ -31,11 +31,11 @@ public class a5 extends d5 {
     public List<a5> l;
 
     /* renamed from: a  reason: collision with root package name */
-    public a f3749a = a.NONE;
+    public a f3701a = a.NONE;
     public int b = LiveProtos.Event.LIVE_ROOM_CONFIG_POP_SHOW_VALUE;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f3750c = 0;
+    public int f3702c = 0;
     public int d = 0;
     public int e = 0;
     public long f = 0;
@@ -200,9 +200,9 @@ public class a5 extends d5 {
             if (cellInfo instanceof CellInfoCdma) {
                 CellInfoCdma cellInfoCdma = (CellInfoCdma) cellInfo;
                 CellIdentityCdma cellIdentity = cellInfoCdma.getCellIdentity();
-                a5Var.f3749a = a.CDMA;
+                a5Var.f3701a = a.CDMA;
                 a5Var.a(d, a.CDMA);
-                a5Var.f3750c = cellIdentity.getSystemId();
+                a5Var.f3702c = cellIdentity.getSystemId();
                 a5Var.d = cellIdentity.getNetworkId();
                 a5Var.f = cellIdentity.getBasestationId();
                 a5Var.g = cellIdentity.getLatitude();
@@ -218,12 +218,12 @@ public class a5 extends d5 {
                 a5Var.e = i;
             } else if (cellInfo instanceof CellInfoGsm) {
                 CellInfoGsm cellInfoGsm = (CellInfoGsm) cellInfo;
-                a5Var.f3749a = a.GSM;
+                a5Var.f3701a = a.GSM;
                 CellIdentityGsm cellIdentity2 = cellInfoGsm.getCellIdentity();
                 a5Var.d = cellIdentity2.getLac();
                 a5Var.f = cellIdentity2.getCid();
                 a5Var.b = cellIdentity2.getMcc();
-                a5Var.f3750c = cellIdentity2.getMnc();
+                a5Var.f3702c = cellIdentity2.getMnc();
                 int dbm2 = cellInfoGsm.getCellSignalStrength().getDbm();
                 int i2 = -88;
                 if (dbm2 > -110) {
@@ -235,12 +235,12 @@ public class a5 extends d5 {
                 a5Var.e = i2;
             } else if (cellInfo instanceof CellInfoWcdma) {
                 CellInfoWcdma cellInfoWcdma = (CellInfoWcdma) cellInfo;
-                a5Var.f3749a = a.WCDMA;
+                a5Var.f3701a = a.WCDMA;
                 CellIdentityWcdma cellIdentity3 = cellInfoWcdma.getCellIdentity();
                 a5Var.d = cellIdentity3.getLac();
                 a5Var.f = cellIdentity3.getCid();
                 a5Var.b = cellIdentity3.getMcc();
-                a5Var.f3750c = cellIdentity3.getMnc();
+                a5Var.f3702c = cellIdentity3.getMnc();
                 int dbm3 = cellInfoWcdma.getCellSignalStrength().getDbm();
                 int i3 = -88;
                 if (dbm3 > -110) {
@@ -252,12 +252,12 @@ public class a5 extends d5 {
                 a5Var.e = i3;
             } else if (cellInfo instanceof CellInfoLte) {
                 CellInfoLte cellInfoLte = (CellInfoLte) cellInfo;
-                a5Var.f3749a = a.LTE;
+                a5Var.f3701a = a.LTE;
                 CellIdentityLte cellIdentity4 = cellInfoLte.getCellIdentity();
                 a5Var.d = cellIdentity4.getTac();
                 a5Var.f = cellIdentity4.getCi();
                 a5Var.b = cellIdentity4.getMcc();
-                a5Var.f3750c = cellIdentity4.getMnc();
+                a5Var.f3702c = cellIdentity4.getMnc();
                 int dbm4 = cellInfoLte.getCellSignalStrength().getDbm();
                 int i4 = -88;
                 if (dbm4 > -110) {
@@ -269,9 +269,9 @@ public class a5 extends d5 {
                 a5Var.e = i4;
             } else if (cellInfo instanceof CellInfoNr) {
                 CellInfoNr cellInfoNr = (CellInfoNr) cellInfo;
-                a5Var.f3749a = a.NR;
+                a5Var.f3701a = a.NR;
                 CellIdentityNr cellIdentityNr = (CellIdentityNr) cellInfoNr.getCellIdentity();
-                a5Var.f3750c = Integer.parseInt(cellIdentityNr.getMncString());
+                a5Var.f3702c = Integer.parseInt(cellIdentityNr.getMncString());
                 a5Var.b = Integer.parseInt(cellIdentityNr.getMccString());
                 a5Var.d = a(cellIdentityNr);
                 a5Var.f = cellIdentityNr.getNci();
@@ -281,11 +281,11 @@ public class a5 extends d5 {
             th.toString();
         }
         a5Var.j = a5Var.f();
-        if (a5Var.b == 460 && a5Var.f3750c == Integer.MAX_VALUE) {
-            a5Var.f3750c = 0;
+        if (a5Var.b == 460 && a5Var.f3702c == Integer.MAX_VALUE) {
+            a5Var.f3702c = 0;
         }
-        if (!y5.a().b(t3Var.f3992a)) {
-            a5Var.f3749a = a.NOSIM;
+        if (!y5.a().b(t3Var.f3944a)) {
+            a5Var.f3701a = a.NOSIM;
         }
         a5Var.m.add(a5Var.b());
         a(a5Var, System.currentTimeMillis());
@@ -305,9 +305,9 @@ public class a5 extends d5 {
         try {
             if (cellLocation instanceof CdmaCellLocation) {
                 CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) cellLocation;
-                a5Var.f3749a = a.CDMA;
+                a5Var.f3701a = a.CDMA;
                 a5Var.a(d, a.CDMA);
-                a5Var.f3750c = cdmaCellLocation.getSystemId();
+                a5Var.f3702c = cdmaCellLocation.getSystemId();
                 a5Var.d = cdmaCellLocation.getNetworkId();
                 a5Var.f = cdmaCellLocation.getBaseStationId();
                 a5Var.g = cdmaCellLocation.getBaseStationLatitude();
@@ -319,7 +319,7 @@ public class a5 extends d5 {
                 }
             } else {
                 GsmCellLocation gsmCellLocation = (GsmCellLocation) cellLocation;
-                a5Var.f3749a = a.GSM;
+                a5Var.f3701a = a.GSM;
                 a5Var.a(d, a.GSM);
                 a5Var.d = gsmCellLocation.getLac();
                 a5Var.f = gsmCellLocation.getCid();
@@ -336,8 +336,8 @@ public class a5 extends d5 {
         if (a5Var.f()) {
             a5Var.j = true;
         }
-        if (!y5.a().b(t3Var.f3992a)) {
-            a5Var.f3749a = a.NOSIM;
+        if (!y5.a().b(t3Var.f3944a)) {
+            a5Var.f3701a = a.NOSIM;
         }
         a5Var.m.add(a5Var.b());
         a(a5Var, System.currentTimeMillis());
@@ -449,7 +449,7 @@ public class a5 extends d5 {
             return;
         }
         this.b = i3;
-        this.f3750c = i4;
+        this.f3702c = i4;
     }
 
     public void a(List<NeighboringCellInfo> list) {
@@ -467,7 +467,7 @@ public class a5 extends d5 {
     }
 
     public String b() {
-        return "" + this.b + this.f3750c + this.d + this.f;
+        return "" + this.b + this.f3702c + this.d + this.f;
     }
 
     public List<a5> c() {
@@ -497,16 +497,16 @@ public class a5 extends d5 {
         int i2;
         int i3;
         int i4;
-        if (this.f3749a == a.CDMA) {
+        if (this.f3701a == a.CDMA) {
             int i5 = this.b;
-            if (i5 < 0 || (i = this.f3750c) < 0 || i5 == 535 || i == 535 || (i2 = this.d) < 0 || i2 == 65535) {
+            if (i5 < 0 || (i = this.f3702c) < 0 || i5 == 535 || i == 535 || (i2 = this.d) < 0 || i2 == 65535) {
                 return false;
             }
             long j = this.f;
             return j != 65535 && j > 0;
         }
         int i6 = this.b;
-        if (i6 < 0 || (i3 = this.f3750c) < 0 || i6 == 535 || i3 == 535 || (i4 = this.d) < 0 || i4 == 65535 || i4 == 25840) {
+        if (i6 < 0 || (i3 = this.f3702c) < 0 || i6 == 535 || i3 == 535 || (i4 = this.d) < 0 || i4 == 65535 || i4 == 25840) {
             return false;
         }
         long j2 = this.f;
@@ -518,10 +518,10 @@ public class a5 extends d5 {
     }
 
     public String h() {
-        return this.b + "," + this.f3750c + "," + this.d + "," + this.f + "," + this.e;
+        return this.b + "," + this.f3702c + "," + this.d + "," + this.f + "," + this.e;
     }
 
     public String toString() {
-        return "TxCellInfo [PhoneType=" + this.f3749a + ", MCC=" + this.b + ", MNC=" + this.f3750c + ", LAC=" + this.d + ", CID=" + this.f + ", RSSI=" + this.e + ", LAT=" + this.g + ", LNG=" + this.h + ", mTime=" + this.i + "]";
+        return "TxCellInfo [PhoneType=" + this.f3701a + ", MCC=" + this.b + ", MNC=" + this.f3702c + ", LAC=" + this.d + ", CID=" + this.f + ", RSSI=" + this.e + ", LAT=" + this.g + ", LNG=" + this.h + ", mTime=" + this.i + "]";
     }
 }

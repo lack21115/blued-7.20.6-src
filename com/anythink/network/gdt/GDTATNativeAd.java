@@ -22,11 +22,11 @@ public class GDTATNativeAd extends CustomNativeAd {
     private static final String l = GDTATNativeAd.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    WeakReference<Context> f8944a;
+    WeakReference<Context> f6104a;
     Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    NativeUnifiedADData f8945c;
+    NativeUnifiedADData f6105c;
     int d;
     int e;
     int f;
@@ -41,10 +41,10 @@ public class GDTATNativeAd extends CustomNativeAd {
     final class AnonymousClass2 extends NativeADEventListenerWithClickInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ NativeUnifiedADData f8947a;
+        final /* synthetic */ NativeUnifiedADData f6107a;
 
         AnonymousClass2(NativeUnifiedADData nativeUnifiedADData) {
-            this.f8947a = nativeUnifiedADData;
+            this.f6107a = nativeUnifiedADData;
         }
 
         @Override // com.qq.e.ads.nativ.NativeADEventListenerWithClickInfo
@@ -60,7 +60,7 @@ public class GDTATNativeAd extends CustomNativeAd {
 
         @Override // com.qq.e.ads.nativ.NativeADEventListener
         public final void onADExposed() {
-            GDTATInitManager.getInstance().a(GDTATNativeAd.this.getShowId(), new WeakReference(this.f8947a));
+            GDTATInitManager.getInstance().a(GDTATNativeAd.this.getShowId(), new WeakReference(this.f6107a));
             GDTATNativeAd.this.notifyAdImpression();
         }
 
@@ -117,21 +117,21 @@ public class GDTATNativeAd extends CustomNativeAd {
         a(view);
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void destroy() {
         super.destroy();
-        NativeUnifiedADData nativeUnifiedADData = this.f8945c;
+        NativeUnifiedADData nativeUnifiedADData = this.f6105c;
         if (nativeUnifiedADData != null) {
             nativeUnifiedADData.setNativeAdEventListener(null);
-            this.f8945c.destroy();
-            this.f8945c = null;
+            this.f6105c.destroy();
+            this.f6105c = null;
         }
         this.i = null;
         this.b = null;
-        WeakReference<Context> weakReference = this.f8944a;
+        WeakReference<Context> weakReference = this.f6104a;
         if (weakReference != null) {
             weakReference.clear();
-            this.f8944a = null;
+            this.f6104a = null;
         }
         NativeAdContainer nativeAdContainer = this.k;
         if (nativeAdContainer != null) {
@@ -140,9 +140,9 @@ public class GDTATNativeAd extends CustomNativeAd {
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public View getAdMediaView(Object... objArr) {
-        NativeUnifiedADData nativeUnifiedADData = this.f8945c;
+        NativeUnifiedADData nativeUnifiedADData = this.f6105c;
         if (nativeUnifiedADData != null && nativeUnifiedADData.getAdPatternType() == 2) {
             if (this.i == null) {
                 MediaView mediaView = new MediaView(this.b);
@@ -169,17 +169,17 @@ public class GDTATNativeAd extends CustomNativeAd {
         return nativeUnifiedADData.getCTAText();
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public ViewGroup getCustomAdContainer() {
-        if (this.f8945c != null) {
+        if (this.f6105c != null) {
             this.k = new NativeAdContainer(this.b);
         }
         return this.k;
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public double getVideoProgress() {
-        NativeUnifiedADData nativeUnifiedADData = this.f8945c;
+        NativeUnifiedADData nativeUnifiedADData = this.f6105c;
         return nativeUnifiedADData != null ? nativeUnifiedADData.getVideoCurrentPosition() / 1000.0d : super.getVideoProgress();
     }
 
@@ -190,7 +190,7 @@ public class GDTATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void onResume() {
-        NativeUnifiedADData nativeUnifiedADData = this.f8945c;
+        NativeUnifiedADData nativeUnifiedADData = this.f6105c;
         if (nativeUnifiedADData != null) {
             nativeUnifiedADData.resume();
         }
@@ -198,7 +198,7 @@ public class GDTATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void pauseVideo() {
-        NativeUnifiedADData nativeUnifiedADData = this.f8945c;
+        NativeUnifiedADData nativeUnifiedADData = this.f6105c;
         if (nativeUnifiedADData != null) {
             nativeUnifiedADData.pauseVideo();
         }
@@ -222,7 +222,7 @@ public class GDTATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void registerDownloadConfirmListener() {
-        this.f8945c.setDownloadConfirmListener(new DownloadConfirmListener() { // from class: com.anythink.network.gdt.GDTATNativeAd.1
+        this.f6105c.setDownloadConfirmListener(new DownloadConfirmListener() { // from class: com.anythink.network.gdt.GDTATNativeAd.1
             @Override // com.qq.e.comm.compliance.DownloadConfirmListener
             public final void onDownloadConfirm(Activity activity, int i, String str, DownloadConfirmCallBack downloadConfirmCallBack) {
                 Log.i("GDTATNativeAd", "onDownloadConfirm....");
@@ -239,16 +239,16 @@ public class GDTATNativeAd extends CustomNativeAd {
 
     @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.nativead.unitgroup.a
     public void resumeVideo() {
-        NativeUnifiedADData nativeUnifiedADData = this.f8945c;
+        NativeUnifiedADData nativeUnifiedADData = this.f6105c;
         if (nativeUnifiedADData != null) {
             nativeUnifiedADData.resumeVideo();
         }
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.BaseAd
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public void setVideoMute(boolean z) {
         this.g = z ? 1 : 2;
-        NativeUnifiedADData nativeUnifiedADData = this.f8945c;
+        NativeUnifiedADData nativeUnifiedADData = this.f6105c;
         if (nativeUnifiedADData != null) {
             nativeUnifiedADData.setVideoMute(z);
         }

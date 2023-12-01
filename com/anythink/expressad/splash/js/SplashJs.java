@@ -46,8 +46,8 @@ public class SplashJs extends AbsFeedBackForH5 {
         if (obj != null) {
             try {
                 a aVar = (a) obj;
-                if (aVar.f7101a != null) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a != null) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     if (windVaneWebView.getWebViewListener() != null) {
                         windVaneWebView.getWebViewListener().onReceivedError(windVaneWebView, 0, str.toString(), windVaneWebView.getUrl());
                     }
@@ -129,8 +129,8 @@ public class SplashJs extends AbsFeedBackForH5 {
             try {
                 a aVar = (a) obj;
                 int optInt = new JSONObject(str).optInt("isReady", 1);
-                if (aVar.f7101a != null) {
-                    WindVaneWebView windVaneWebView = aVar.f7101a;
+                if (aVar.f4263a != null) {
+                    WindVaneWebView windVaneWebView = aVar.f4263a;
                     if (windVaneWebView.getWebViewListener() != null) {
                         windVaneWebView.getWebViewListener().readyState(windVaneWebView, optInt);
                     }

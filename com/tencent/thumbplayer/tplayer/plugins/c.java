@@ -7,7 +7,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class c implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private CopyOnWriteArrayList<a> f39410a = new CopyOnWriteArrayList<>();
+    private CopyOnWriteArrayList<a> f25719a = new CopyOnWriteArrayList<>();
 
     @Override // com.tencent.thumbplayer.tplayer.plugins.a
     public void a() {
@@ -15,7 +15,7 @@ public class c implements b {
 
     @Override // com.tencent.thumbplayer.tplayer.plugins.a
     public void a(int i, int i2, int i3, String str, Object obj) {
-        CopyOnWriteArrayList<a> copyOnWriteArrayList = this.f39410a;
+        CopyOnWriteArrayList<a> copyOnWriteArrayList = this.f25719a;
         if (copyOnWriteArrayList != null) {
             Iterator<a> it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
@@ -29,12 +29,12 @@ public class c implements b {
 
     @Override // com.tencent.thumbplayer.tplayer.plugins.b
     public void a(a aVar) {
-        CopyOnWriteArrayList<a> copyOnWriteArrayList = this.f39410a;
+        CopyOnWriteArrayList<a> copyOnWriteArrayList = this.f25719a;
         if (copyOnWriteArrayList == null || copyOnWriteArrayList.contains(aVar)) {
             return;
         }
         aVar.a();
-        this.f39410a.add(aVar);
+        this.f25719a.add(aVar);
     }
 
     @Override // com.tencent.thumbplayer.tplayer.plugins.a
@@ -43,7 +43,7 @@ public class c implements b {
 
     @Override // com.tencent.thumbplayer.tplayer.plugins.b
     public void c() {
-        CopyOnWriteArrayList<a> copyOnWriteArrayList = this.f39410a;
+        CopyOnWriteArrayList<a> copyOnWriteArrayList = this.f25719a;
         if (copyOnWriteArrayList != null) {
             Iterator<a> it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
@@ -52,8 +52,8 @@ public class c implements b {
                     next.b();
                 }
             }
-            this.f39410a.clear();
+            this.f25719a.clear();
         }
-        this.f39410a = null;
+        this.f25719a = null;
     }
 }

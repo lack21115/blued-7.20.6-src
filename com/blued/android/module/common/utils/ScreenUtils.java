@@ -8,17 +8,16 @@ import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import com.blued.android.core.ui.StatusBarHelper;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/ScreenUtils.class */
 public class ScreenUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final String f10912a = ScreenUtils.class.getSimpleName();
+    static final String a = ScreenUtils.class.getSimpleName();
 
     public static int a(Context context) {
         Resources resources = context.getResources();
-        int identifier = resources.getIdentifier(Settings.System.NAVIGATION_BAR_HEIGHT, "dimen", "android");
+        int identifier = resources.getIdentifier("navigation_bar_height", "dimen", MsgBackupManager.PLATFORM_ANDROID);
         if (identifier > 0) {
             return resources.getDimensionPixelSize(identifier);
         }
@@ -26,7 +25,7 @@ public class ScreenUtils {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0042, code lost:
-        if (r0.equals(com.igexin.assist.util.AssistUtils.BRAND_XIAOMI) != false) goto L14;
+        if (r0.equals("xiaomi") != false) goto L14;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -144,7 +143,7 @@ public class ScreenUtils {
     }
 
     private static boolean f(Context context) {
-        Display defaultDisplay = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        Display defaultDisplay = ((WindowManager) context.getSystemService("window")).getDefaultDisplay();
         DisplayMetrics displayMetrics = new DisplayMetrics();
         if (Build.VERSION.SDK_INT >= 17) {
             defaultDisplay.getRealMetrics(displayMetrics);

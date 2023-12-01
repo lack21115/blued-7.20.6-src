@@ -62,7 +62,7 @@ public class RangerHelper {
         g.schedule(new aw() { // from class: com.kwad.sdk.ranger.RangerHelper.2
             @Override // com.kwad.sdk.utils.aw
             public final void doTask() {
-                RangerHelper.h(s.d(StreamAllocation.this, "call"));
+                RangerHelper.h(s.d(streamAllocation, "call"));
             }
         }, 0L, TimeUnit.SECONDS);
     }
@@ -115,69 +115,62 @@ public class RangerHelper {
             s.a(internal, "instance", new Internal() { // from class: com.kwad.sdk.ranger.RangerHelper.1
                 public final void acquire(ConnectionPool connectionPool, Address address, StreamAllocation streamAllocation, Route route) {
                     RangerHelper.a(streamAllocation);
-                    s.b((Object) Internal.this, "acquire", connectionPool, address, streamAllocation, route);
+                    s.b((Object) internal, "acquire", connectionPool, address, streamAllocation, route);
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final void addLenient(Headers.Builder builder, String str) {
                     try {
-                        Internal.this.addLenient(builder, str);
+                        internal.addLenient(builder, str);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final void addLenient(Headers.Builder builder, String str, String str2) {
                     try {
-                        Internal.this.addLenient(builder, str, str2);
+                        internal.addLenient(builder, str, str2);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final void apply(ConnectionSpec connectionSpec, SSLSocket sSLSocket, boolean z) {
                     try {
-                        Internal.this.apply(connectionSpec, sSLSocket, z);
+                        internal.apply(connectionSpec, sSLSocket, z);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final int code(Response.Builder builder) {
                     try {
-                        return Internal.this.code(builder);
+                        return internal.code(builder);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                         return -1;
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final boolean connectionBecameIdle(ConnectionPool connectionPool, RealConnection realConnection) {
                     try {
-                        return Internal.this.connectionBecameIdle(connectionPool, realConnection);
+                        return internal.connectionBecameIdle(connectionPool, realConnection);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                         return false;
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final Socket deduplicate(ConnectionPool connectionPool, Address address, StreamAllocation streamAllocation) {
                     try {
-                        return Internal.this.deduplicate(connectionPool, address, streamAllocation);
+                        return internal.deduplicate(connectionPool, address, streamAllocation);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                         return null;
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final boolean equalsNonHost(Address address, Address address2) {
-                    Boolean bool = (Boolean) s.b((Object) Internal.this, "equalsNonHost", address, address2);
+                    Boolean bool = (Boolean) s.b((Object) internal, "equalsNonHost", address, address2);
                     if (bool != null) {
                         return bool.booleanValue();
                     }
@@ -185,79 +178,71 @@ public class RangerHelper {
                 }
 
                 public final RealConnection get(ConnectionPool connectionPool, Address address, StreamAllocation streamAllocation) {
-                    return (RealConnection) s.b((Object) Internal.this, MonitorConstants.CONNECT_TYPE_GET, connectionPool, address, streamAllocation);
+                    return (RealConnection) s.b((Object) internal, MonitorConstants.CONNECT_TYPE_GET, connectionPool, address, streamAllocation);
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final RealConnection get(ConnectionPool connectionPool, Address address, StreamAllocation streamAllocation, Route route) {
                     RangerHelper.a(streamAllocation);
-                    return (RealConnection) s.b((Object) Internal.this, MonitorConstants.CONNECT_TYPE_GET, connectionPool, address, streamAllocation, route);
+                    return (RealConnection) s.b((Object) internal, MonitorConstants.CONNECT_TYPE_GET, connectionPool, address, streamAllocation, route);
                 }
 
                 public final HttpUrl getHttpUrlChecked(String str) {
-                    return (HttpUrl) s.b((Object) Internal.this, "getHttpUrlChecked", str);
+                    return (HttpUrl) s.b((Object) internal, "getHttpUrlChecked", str);
                 }
 
                 public final void initCodec(Response.Builder builder, HttpCodec httpCodec) {
-                    s.b((Object) Internal.this, "initCodec", builder, httpCodec);
+                    s.b((Object) internal, "initCodec", builder, httpCodec);
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final boolean isInvalidHttpUrlHost(IllegalArgumentException illegalArgumentException) {
-                    Boolean bool = (Boolean) s.b((Object) Internal.this, "isInvalidHttpUrlHost", illegalArgumentException);
+                    Boolean bool = (Boolean) s.b((Object) internal, "isInvalidHttpUrlHost", illegalArgumentException);
                     if (bool != null) {
                         return bool.booleanValue();
                     }
                     return false;
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final Call newWebSocketCall(OkHttpClient okHttpClient, Request request) {
                     try {
-                        return Internal.this.newWebSocketCall(okHttpClient, request);
+                        return internal.newWebSocketCall(okHttpClient, request);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                         return null;
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final void put(ConnectionPool connectionPool, RealConnection realConnection) {
-                    s.b((Object) Internal.this, "put", connectionPool, realConnection);
+                    s.b((Object) internal, "put", connectionPool, realConnection);
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final RouteDatabase routeDatabase(ConnectionPool connectionPool) {
                     try {
-                        return Internal.this.routeDatabase(connectionPool);
+                        return internal.routeDatabase(connectionPool);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                         return null;
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final void setCache(OkHttpClient.Builder builder, InternalCache internalCache) {
                     try {
-                        Internal.this.setCache(builder, internalCache);
+                        internal.setCache(builder, internalCache);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final StreamAllocation streamAllocation(Call call) {
                     try {
-                        return Internal.this.streamAllocation(call);
+                        return internal.streamAllocation(call);
                     } catch (Throwable th) {
                         com.kwad.sdk.core.d.b.e("Ranger_Helper", Log.getStackTraceString(th));
                         return null;
                     }
                 }
 
-                @Override // okhttp3.internal.Internal
                 public final IOException timeoutExit(Call call, IOException iOException) {
-                    return (IOException) s.b((Object) Internal.this, "timeoutExit", call, iOException);
+                    return (IOException) s.b((Object) internal, "timeoutExit", call, iOException);
                 }
             });
             aya = true;

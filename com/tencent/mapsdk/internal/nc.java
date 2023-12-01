@@ -9,16 +9,16 @@ import java.lang.ref.WeakReference;
 public class nc extends Paint {
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<TencentMapContext> f37664a;
+    private WeakReference<TencentMapContext> f23973a;
 
     public nc(TencentMapContext tencentMapContext) {
-        this.f37664a = new WeakReference<>(tencentMapContext);
+        this.f23973a = new WeakReference<>(tencentMapContext);
     }
 
     @Override // android.graphics.Paint
     public Typeface setTypeface(Typeface typeface) {
         TencentMapContext tencentMapContext;
-        WeakReference<TencentMapContext> weakReference = this.f37664a;
+        WeakReference<TencentMapContext> weakReference = this.f23973a;
         if (weakReference == null || (tencentMapContext = weakReference.get()) == null) {
             return super.setTypeface(typeface);
         }

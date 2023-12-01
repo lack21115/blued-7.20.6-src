@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
 public class WbCloudNetSecurityManger {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f35589a = WbCloudNetSecurityManger.class.getSimpleName();
+    private static final String f21898a = WbCloudNetSecurityManger.class.getSimpleName();
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/facelight/common/WbCloudNetSecurityManger$ResultCallback.class */
     public interface ResultCallback<T> {
@@ -90,12 +90,12 @@ public class WbCloudNetSecurityManger {
         try {
             str3 = WbSecureProviders.secureType(z).a(str.getBytes("utf8"));
             try {
-                WLogger.d(f35589a, "get enKey:" + str3);
+                WLogger.d(f21898a, "get enKey:" + str3);
                 return str3;
             } catch (Exception e) {
                 e = e;
                 e.printStackTrace();
-                WLogger.w(f35589a, "enKey failed:" + e.toString());
+                WLogger.w(f21898a, "enKey failed:" + e.toString());
                 KycWaSDK.getInstance().trackCustomKVEvent(null, "faceservice_encry_enkey_fail", str2 + e.toString(), null);
                 return str3;
             }
@@ -141,7 +141,7 @@ public class WbCloudNetSecurityManger {
             @Override // java.util.concurrent.Callable
             /* renamed from: a */
             public byte[] call() throws Exception {
-                int length = String.this.length() / 2;
+                int length = str.length() / 2;
                 byte[] bArr = new byte[length];
                 int i = 0;
                 while (true) {
@@ -150,7 +150,7 @@ public class WbCloudNetSecurityManger {
                         return bArr;
                     }
                     int i3 = i2 * 2;
-                    bArr[i2] = (byte) Integer.parseInt(String.this.substring(i3, i3 + 2), 16);
+                    bArr[i2] = (byte) Integer.parseInt(str.substring(i3, i3 + 2), 16);
                     i = i2 + 1;
                 }
             }

@@ -8,13 +8,11 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__LimitKt$collectWhile$collector$1.class */
 public final class FlowKt__LimitKt$collectWhile$collector$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function2<T, Continuation<? super Boolean>, Object> f43210a;
+    final /* synthetic */ Function2<T, Continuation<? super Boolean>, Object> a;
 
     /* JADX WARN: Multi-variable type inference failed */
     public FlowKt__LimitKt$collectWhile$collector$1(Function2<? super T, ? super Continuation<? super Boolean>, ? extends Object> function2) {
-        this.f43210a = function2;
+        this.a = function2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -71,7 +69,7 @@ public final class FlowKt__LimitKt$collectWhile$collector$1<T> implements FlowCo
             r1 = 1
             if (r0 != r1) goto L61
             r0 = r7
-            java.lang.Object r0 = r0.f43211a
+            java.lang.Object r0 = r0.a
             kotlinx.coroutines.flow.FlowKt__LimitKt$collectWhile$collector$1 r0 = (kotlinx.coroutines.flow.FlowKt__LimitKt$collectWhile$collector$1) r0
             r6 = r0
             r0 = r9
@@ -89,11 +87,11 @@ public final class FlowKt__LimitKt$collectWhile$collector$1<T> implements FlowCo
             r0 = r9
             kotlin.ResultKt.a(r0)
             r0 = r5
-            kotlin.jvm.functions.Function2<T, kotlin.coroutines.Continuation<? super java.lang.Boolean>, java.lang.Object> r0 = r0.f43210a
+            kotlin.jvm.functions.Function2<T, kotlin.coroutines.Continuation<? super java.lang.Boolean>, java.lang.Object> r0 = r0.a
             r9 = r0
             r0 = r7
             r1 = r5
-            r0.f43211a = r1
+            r0.a = r1
             r0 = r7
             r1 = 1
             r0.d = r1
@@ -115,7 +113,7 @@ public final class FlowKt__LimitKt$collectWhile$collector$1<T> implements FlowCo
             java.lang.Boolean r0 = (java.lang.Boolean) r0
             boolean r0 = r0.booleanValue()
             if (r0 == 0) goto La3
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         La3:
             kotlinx.coroutines.flow.internal.AbortFlowException r0 = new kotlinx.coroutines.flow.internal.AbortFlowException

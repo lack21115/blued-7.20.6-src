@@ -212,7 +212,7 @@ public final class y {
         g.execute(new aw() { // from class: com.kwad.sdk.utils.y.1
             @Override // com.kwad.sdk.utils.aw
             public final void doTask() {
-                y.aa(ServiceProvider.getContext(), String.this);
+                y.aa(ServiceProvider.getContext(), str);
             }
         });
     }

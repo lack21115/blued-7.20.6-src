@@ -44,11 +44,11 @@ public class d implements bq<d, e>, Serializable, Cloneable {
     private static final int k = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public Map<String, com.umeng.commonsdk.statistics.proto.e> f40951a;
+    public Map<String, com.umeng.commonsdk.statistics.proto.e> f27260a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f40952c;
+    public String f27261c;
     private byte l;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -66,13 +66,13 @@ public class d implements bq<d, e>, Serializable, Cloneable {
                 if (l.b == 0) {
                     break;
                 }
-                short s = l.f40700c;
+                short s = l.f27009c;
                 if (s != 1) {
                     if (s != 2) {
                         if (s != 3) {
                             cs.a(cpVar, l.b);
                         } else if (l.b == 11) {
-                            dVar.f40952c = cpVar.z();
+                            dVar.f27261c = cpVar.z();
                             dVar.c(true);
                         } else {
                             cs.a(cpVar, l.b);
@@ -85,17 +85,17 @@ public class d implements bq<d, e>, Serializable, Cloneable {
                     }
                 } else if (l.b == 13) {
                     cm n = cpVar.n();
-                    dVar.f40951a = new HashMap(n.f40703c * 2);
+                    dVar.f27260a = new HashMap(n.f27012c * 2);
                     int i = 0;
                     while (true) {
                         int i2 = i;
-                        if (i2 >= n.f40703c) {
+                        if (i2 >= n.f27012c) {
                             break;
                         }
                         String z = cpVar.z();
                         com.umeng.commonsdk.statistics.proto.e eVar = new com.umeng.commonsdk.statistics.proto.e();
                         eVar.read(cpVar);
-                        dVar.f40951a.put(z, eVar);
+                        dVar.f27260a.put(z, eVar);
                         i = i2 + 1;
                     }
                     cpVar.o();
@@ -118,10 +118,10 @@ public class d implements bq<d, e>, Serializable, Cloneable {
         public void a(cp cpVar, d dVar) throws bw {
             dVar.l();
             cpVar.a(d.f);
-            if (dVar.f40951a != null) {
+            if (dVar.f27260a != null) {
                 cpVar.a(d.g);
-                cpVar.a(new cm((byte) 11, (byte) 12, dVar.f40951a.size()));
-                for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : dVar.f40951a.entrySet()) {
+                cpVar.a(new cm((byte) 11, (byte) 12, dVar.f27260a.size()));
+                for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : dVar.f27260a.entrySet()) {
                     cpVar.a(entry.getKey());
                     entry.getValue().write(cpVar);
                 }
@@ -131,9 +131,9 @@ public class d implements bq<d, e>, Serializable, Cloneable {
             cpVar.a(d.h);
             cpVar.a(dVar.b);
             cpVar.c();
-            if (dVar.f40952c != null) {
+            if (dVar.f27261c != null) {
                 cpVar.a(d.i);
-                cpVar.a(dVar.f40952c);
+                cpVar.a(dVar.f27261c);
                 cpVar.c();
             }
             cpVar.d();
@@ -162,35 +162,35 @@ public class d implements bq<d, e>, Serializable, Cloneable {
         @Override // com.umeng.analytics.pro.cx
         public void a(cp cpVar, d dVar) throws bw {
             cv cvVar = (cv) cpVar;
-            cvVar.a(dVar.f40951a.size());
-            for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : dVar.f40951a.entrySet()) {
+            cvVar.a(dVar.f27260a.size());
+            for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : dVar.f27260a.entrySet()) {
                 cvVar.a(entry.getKey());
                 entry.getValue().write(cvVar);
             }
             cvVar.a(dVar.b);
-            cvVar.a(dVar.f40952c);
+            cvVar.a(dVar.f27261c);
         }
 
         @Override // com.umeng.analytics.pro.cx
         public void b(cp cpVar, d dVar) throws bw {
             cv cvVar = (cv) cpVar;
             cm cmVar = new cm((byte) 11, (byte) 12, cvVar.w());
-            dVar.f40951a = new HashMap(cmVar.f40703c * 2);
+            dVar.f27260a = new HashMap(cmVar.f27012c * 2);
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= cmVar.f40703c) {
+                if (i2 >= cmVar.f27012c) {
                     dVar.a(true);
                     dVar.b = cvVar.w();
                     dVar.b(true);
-                    dVar.f40952c = cvVar.z();
+                    dVar.f27261c = cvVar.z();
                     dVar.c(true);
                     return;
                 }
                 String z = cvVar.z();
                 com.umeng.commonsdk.statistics.proto.e eVar = new com.umeng.commonsdk.statistics.proto.e();
                 eVar.read(cvVar);
-                dVar.f40951a.put(z, eVar);
+                dVar.f27260a.put(z, eVar);
                 i = i2 + 1;
             }
         }
@@ -198,8 +198,8 @@ public class d implements bq<d, e>, Serializable, Cloneable {
 
     /* renamed from: com.umeng.commonsdk.statistics.proto.d$d  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/statistics/proto/d$d.class */
-    static class C1088d implements cy {
-        private C1088d() {
+    static class C0918d implements cy {
+        private C0918d() {
         }
 
         @Override // com.umeng.analytics.pro.cy
@@ -220,7 +220,7 @@ public class d implements bq<d, e>, Serializable, Cloneable {
         private final String f;
 
         static {
-            Iterator<E> it = EnumSet.allOf(e.class).iterator();
+            Iterator it = EnumSet.allOf(e.class).iterator();
             while (it.hasNext()) {
                 e eVar = (e) it.next();
                 d.put(eVar.b(), eVar);
@@ -272,7 +272,7 @@ public class d implements bq<d, e>, Serializable, Cloneable {
         HashMap hashMap = new HashMap();
         j = hashMap;
         hashMap.put(cz.class, new b());
-        j.put(da.class, new C1088d());
+        j.put(da.class, new C0918d());
         EnumMap enumMap = new EnumMap(e.class);
         enumMap.put((EnumMap) e.PROPERTY, (e) new cc("property", (byte) 1, new cf((byte) 13, new cd((byte) 11), new ch((byte) 12, com.umeng.commonsdk.statistics.proto.e.class))));
         enumMap.put((EnumMap) e.VERSION, (e) new cc("version", (byte) 1, new cd((byte) 8)));
@@ -291,23 +291,23 @@ public class d implements bq<d, e>, Serializable, Cloneable {
         this.l = dVar.l;
         if (dVar.e()) {
             HashMap hashMap = new HashMap();
-            for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : dVar.f40951a.entrySet()) {
+            for (Map.Entry<String, com.umeng.commonsdk.statistics.proto.e> entry : dVar.f27260a.entrySet()) {
                 hashMap.put(entry.getKey(), new com.umeng.commonsdk.statistics.proto.e(entry.getValue()));
             }
-            this.f40951a = hashMap;
+            this.f27260a = hashMap;
         }
         this.b = dVar.b;
         if (dVar.k()) {
-            this.f40952c = dVar.f40952c;
+            this.f27261c = dVar.f27261c;
         }
     }
 
     public d(Map<String, com.umeng.commonsdk.statistics.proto.e> map, int i2, String str) {
         this();
-        this.f40951a = map;
+        this.f27260a = map;
         this.b = i2;
         b(true);
-        this.f40952c = str;
+        this.f27261c = str;
     }
 
     private void a(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
@@ -340,31 +340,31 @@ public class d implements bq<d, e>, Serializable, Cloneable {
     }
 
     public d a(String str) {
-        this.f40952c = str;
+        this.f27261c = str;
         return this;
     }
 
     public d a(Map<String, com.umeng.commonsdk.statistics.proto.e> map) {
-        this.f40951a = map;
+        this.f27260a = map;
         return this;
     }
 
     public void a(String str, com.umeng.commonsdk.statistics.proto.e eVar) {
-        if (this.f40951a == null) {
-            this.f40951a = new HashMap();
+        if (this.f27260a == null) {
+            this.f27260a = new HashMap();
         }
-        this.f40951a.put(str, eVar);
+        this.f27260a.put(str, eVar);
     }
 
     public void a(boolean z) {
         if (z) {
             return;
         }
-        this.f40951a = null;
+        this.f27260a = null;
     }
 
     public int b() {
-        Map<String, com.umeng.commonsdk.statistics.proto.e> map = this.f40951a;
+        Map<String, com.umeng.commonsdk.statistics.proto.e> map = this.f27260a;
         if (map == null) {
             return 0;
         }
@@ -382,30 +382,30 @@ public class d implements bq<d, e>, Serializable, Cloneable {
     }
 
     public Map<String, com.umeng.commonsdk.statistics.proto.e> c() {
-        return this.f40951a;
+        return this.f27260a;
     }
 
     public void c(boolean z) {
         if (z) {
             return;
         }
-        this.f40952c = null;
+        this.f27261c = null;
     }
 
     @Override // com.umeng.analytics.pro.bq
     public void clear() {
-        this.f40951a = null;
+        this.f27260a = null;
         b(false);
         this.b = 0;
-        this.f40952c = null;
+        this.f27261c = null;
     }
 
     public void d() {
-        this.f40951a = null;
+        this.f27260a = null;
     }
 
     public boolean e() {
-        return this.f40951a != null;
+        return this.f27260a != null;
     }
 
     public int f() {
@@ -421,21 +421,21 @@ public class d implements bq<d, e>, Serializable, Cloneable {
     }
 
     public String i() {
-        return this.f40952c;
+        return this.f27261c;
     }
 
     public void j() {
-        this.f40952c = null;
+        this.f27261c = null;
     }
 
     public boolean k() {
-        return this.f40952c != null;
+        return this.f27261c != null;
     }
 
     public void l() throws bw {
-        if (this.f40951a == null) {
+        if (this.f27260a == null) {
             throw new cq("Required field 'property' was not present! Struct: " + toString());
-        } else if (this.f40952c != null) {
+        } else if (this.f27261c != null) {
         } else {
             throw new cq("Required field 'checksum' was not present! Struct: " + toString());
         }
@@ -449,7 +449,7 @@ public class d implements bq<d, e>, Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder("Imprint(");
         sb.append("property:");
-        Map<String, com.umeng.commonsdk.statistics.proto.e> map = this.f40951a;
+        Map<String, com.umeng.commonsdk.statistics.proto.e> map = this.f27260a;
         if (map == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {
@@ -460,7 +460,7 @@ public class d implements bq<d, e>, Serializable, Cloneable {
         sb.append(this.b);
         sb.append(", ");
         sb.append("checksum:");
-        String str = this.f40952c;
+        String str = this.f27261c;
         if (str == null) {
             sb.append(com.igexin.push.core.b.l);
         } else {

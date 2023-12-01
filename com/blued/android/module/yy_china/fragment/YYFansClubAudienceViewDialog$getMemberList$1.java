@@ -9,22 +9,19 @@ import com.blued.android.module.yy_china.adapter.FansClubAdapter;
 import com.blued.android.module.yy_china.databinding.DialogFansClubAudienceViewBinding;
 import com.blued.android.module.yy_china.model.YYClubRankMemberModel;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import java.util.Collection;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYFansClubAudienceViewDialog$getMemberList$1.class */
 public final class YYFansClubAudienceViewDialog$getMemberList$1 extends BluedUIHttpResponse<BluedEntityA<YYClubRankMemberModel>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ YYFansClubAudienceViewDialog f17228a;
+    final /* synthetic */ YYFansClubAudienceViewDialog a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public YYFansClubAudienceViewDialog$getMemberList$1(YYFansClubAudienceViewDialog yYFansClubAudienceViewDialog, ActivityFragmentActive activityFragmentActive) {
         super(activityFragmentActive);
-        this.f17228a = yYFansClubAudienceViewDialog;
+        this.a = yYFansClubAudienceViewDialog;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -32,11 +29,11 @@ public final class YYFansClubAudienceViewDialog$getMemberList$1 extends BluedUIH
         DialogFansClubAudienceViewBinding dialogFansClubAudienceViewBinding;
         SmartRefreshLayout smartRefreshLayout;
         Intrinsics.e(this$0, "this$0");
-        dialogFansClubAudienceViewBinding = this$0.f17226c;
+        dialogFansClubAudienceViewBinding = this$0.c;
         if (dialogFansClubAudienceViewBinding == null || (smartRefreshLayout = dialogFansClubAudienceViewBinding.j) == null) {
             return;
         }
-        smartRefreshLayout.l(false);
+        smartRefreshLayout.b(false);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -54,47 +51,47 @@ public final class YYFansClubAudienceViewDialog$getMemberList$1 extends BluedUIH
         SmartRefreshLayout smartRefreshLayout3;
         FansClubAdapter fansClubAdapter2;
         if (bluedEntityA == null || !bluedEntityA.hasData()) {
-            dialogFansClubAudienceViewBinding = this.f17228a.f17226c;
+            dialogFansClubAudienceViewBinding = this.a.c;
             if (dialogFansClubAudienceViewBinding == null || (smartRefreshLayout = dialogFansClubAudienceViewBinding.j) == null) {
                 return;
             }
-            smartRefreshLayout.l(false);
+            smartRefreshLayout.b(false);
             return;
         }
-        i = this.f17228a.e;
+        i = this.a.e;
         if (i <= 1) {
-            fansClubAdapter2 = this.f17228a.d;
+            fansClubAdapter2 = this.a.d;
             if (fansClubAdapter2 != null) {
                 fansClubAdapter2.setNewData(bluedEntityA.data);
             }
         } else {
-            fansClubAdapter = this.f17228a.d;
+            fansClubAdapter = this.a.d;
             if (fansClubAdapter != null) {
-                fansClubAdapter.addData((Collection) bluedEntityA.data);
+                fansClubAdapter.addData(bluedEntityA.data);
             }
         }
         if (!bluedEntityA.hasMore()) {
-            dialogFansClubAudienceViewBinding2 = this.f17228a.f17226c;
+            dialogFansClubAudienceViewBinding2 = this.a.c;
             if (dialogFansClubAudienceViewBinding2 == null || (smartRefreshLayout2 = dialogFansClubAudienceViewBinding2.j) == null) {
                 return;
             }
-            smartRefreshLayout2.l(false);
+            smartRefreshLayout2.b(false);
             return;
         }
-        YYFansClubAudienceViewDialog yYFansClubAudienceViewDialog = this.f17228a;
+        YYFansClubAudienceViewDialog yYFansClubAudienceViewDialog = this.a;
         i2 = yYFansClubAudienceViewDialog.e;
         yYFansClubAudienceViewDialog.e = i2 + 1;
-        dialogFansClubAudienceViewBinding3 = this.f17228a.f17226c;
+        dialogFansClubAudienceViewBinding3 = this.a.c;
         if (dialogFansClubAudienceViewBinding3 == null || (smartRefreshLayout3 = dialogFansClubAudienceViewBinding3.j) == null) {
             return;
         }
-        smartRefreshLayout3.l(true);
+        smartRefreshLayout3.b(true);
     }
 
     @Override // com.blued.android.framework.http.BluedUIHttpResponse
     public boolean onUIFailure(int i, String str, String str2) {
         Handler n = AppInfo.n();
-        final YYFansClubAudienceViewDialog yYFansClubAudienceViewDialog = this.f17228a;
+        final YYFansClubAudienceViewDialog yYFansClubAudienceViewDialog = this.a;
         n.post(new Runnable() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYFansClubAudienceViewDialog$getMemberList$1$tdXUKV0zdZVt0P9pBJdRFw9ykeQ
             @Override // java.lang.Runnable
             public final void run() {
@@ -111,14 +108,14 @@ public final class YYFansClubAudienceViewDialog$getMemberList$1 extends BluedUIH
         SmartRefreshLayout smartRefreshLayout;
         SmartRefreshLayout smartRefreshLayout2;
         super.onUIFinish();
-        dialogFansClubAudienceViewBinding = this.f17228a.f17226c;
+        dialogFansClubAudienceViewBinding = this.a.c;
         if (dialogFansClubAudienceViewBinding != null && (smartRefreshLayout2 = dialogFansClubAudienceViewBinding.j) != null) {
             smartRefreshLayout2.h();
         }
-        dialogFansClubAudienceViewBinding2 = this.f17228a.f17226c;
+        dialogFansClubAudienceViewBinding2 = this.a.c;
         if (dialogFansClubAudienceViewBinding2 == null || (smartRefreshLayout = dialogFansClubAudienceViewBinding2.j) == null) {
             return;
         }
-        smartRefreshLayout.j();
+        smartRefreshLayout.g();
     }
 }

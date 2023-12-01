@@ -8,11 +8,11 @@ import java.util.List;
 public final class za {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f38148a = "PoolUtil";
+    private static final String f24457a = "PoolUtil";
     private static final int b = 20;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final o<Object> f38149c = new a();
+    private static final o<Object> f24458c = new a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/za$a.class */
     public static final class a implements o<Object> {
@@ -30,8 +30,8 @@ public final class za {
         @Override // com.tencent.mapsdk.internal.za.i
         /* renamed from: b */
         public m<Bitmap> a() {
-            e eVar = this.f38152a;
-            return new m<>(Bitmap.createBitmap(eVar.f38150a, eVar.b, eVar.f38151c));
+            e eVar = this.f24461a;
+            return new m<>(Bitmap.createBitmap(eVar.f24459a, eVar.b, eVar.f24460c));
         }
     }
 
@@ -62,23 +62,23 @@ public final class za {
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f38150a;
+        public int f24459a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public Bitmap.Config f38151c;
+        public Bitmap.Config f24460c;
 
         public e(int i, int i2, Bitmap.Config config) {
-            this.f38150a = i;
+            this.f24459a = i;
             this.b = i2;
-            this.f38151c = config;
+            this.f24460c = config;
         }
 
         public void a(e eVar) {
             if (eVar != null) {
-                this.f38150a = eVar.f38150a;
+                this.f24459a = eVar.f24459a;
                 this.b = eVar.b;
-                this.f38151c = eVar.f38151c;
+                this.f24460c = eVar.f24460c;
             }
         }
     }
@@ -87,10 +87,10 @@ public final class za {
     public static abstract class f<T> implements i<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public e f38152a;
+        public e f24461a;
 
         public f(e eVar) {
-            this.f38152a = eVar;
+            this.f24461a = eVar;
         }
     }
 
@@ -141,25 +141,25 @@ public final class za {
     public static final class j<T> implements k<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final i<T> f38153a;
+        private final i<T> f24462a;
         private final o<T> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final k<T> f38154c;
+        private final k<T> f24463c;
 
         public j(k<T> kVar, i<T> iVar, o<T> oVar) {
-            this.f38154c = kVar;
-            this.f38153a = iVar;
+            this.f24463c = kVar;
+            this.f24462a = iVar;
             this.b = oVar;
         }
 
         @Override // com.tencent.mapsdk.internal.za.k
         public T a() {
-            T a2 = this.f38154c.a();
+            T a2 = this.f24463c.a();
             T t = a2;
             if (a2 == null) {
-                t = this.f38153a.a();
-                na.f(za.f38148a, "Created new " + t);
+                t = this.f24462a.a();
+                na.f(za.f24457a, "Created new " + t);
             }
             if (t instanceof l) {
                 ((l) t).a().a(false);
@@ -173,7 +173,7 @@ public final class za {
                 ((l) t).a().a(true);
             }
             this.b.a(t);
-            return this.f38154c.a(t);
+            return this.f24463c.a(t);
         }
     }
 
@@ -193,11 +193,11 @@ public final class za {
     public static final class m<T> implements l {
 
         /* renamed from: a  reason: collision with root package name */
-        private final T f38155a;
+        private final T f24464a;
         private p b = p.a();
 
         public m(T t) {
-            this.f38155a = t;
+            this.f24464a = t;
         }
 
         @Override // com.tencent.mapsdk.internal.za.l
@@ -206,7 +206,7 @@ public final class za {
         }
 
         public T b() {
-            return this.f38155a;
+            return this.f24464a;
         }
     }
 
@@ -217,14 +217,14 @@ public final class za {
         public static class a<T> implements k<T> {
 
             /* renamed from: a  reason: collision with root package name */
-            private final Object[] f38156a;
+            private final Object[] f24465a;
             private int b;
 
             public a(int i) {
                 if (i <= 0) {
                     throw new IllegalArgumentException("The max pool size must be > 0");
                 }
-                this.f38156a = new Object[i];
+                this.f24465a = new Object[i];
             }
 
             private boolean b(T t) {
@@ -234,7 +234,7 @@ public final class za {
                     if (i2 >= this.b) {
                         return false;
                     }
-                    if (this.f38156a[i2] == t) {
+                    if (this.f24465a[i2] == t) {
                         return true;
                     }
                     i = i2 + 1;
@@ -246,7 +246,7 @@ public final class za {
                 int i = this.b;
                 if (i > 0) {
                     int i2 = i - 1;
-                    Object[] objArr = this.f38156a;
+                    Object[] objArr = this.f24465a;
                     T t = (T) objArr[i2];
                     objArr[i2] = null;
                     this.b = i2;
@@ -261,7 +261,7 @@ public final class za {
                     throw new IllegalStateException("Already in the pool!");
                 }
                 int i = this.b;
-                Object[] objArr = this.f38156a;
+                Object[] objArr = this.f24465a;
                 if (i < objArr.length) {
                     objArr[i] = t;
                     this.b = i + 1;
@@ -275,17 +275,17 @@ public final class za {
         public static class b<T> extends a<T> {
 
             /* renamed from: c  reason: collision with root package name */
-            private final Object f38157c;
+            private final Object f24466c;
 
             public b(int i) {
                 super(i);
-                this.f38157c = new Object();
+                this.f24466c = new Object();
             }
 
             @Override // com.tencent.mapsdk.internal.za.n.a, com.tencent.mapsdk.internal.za.k
             public T a() {
                 T t;
-                synchronized (this.f38157c) {
+                synchronized (this.f24466c) {
                     t = (T) super.a();
                 }
                 return t;
@@ -294,7 +294,7 @@ public final class za {
             @Override // com.tencent.mapsdk.internal.za.n.a, com.tencent.mapsdk.internal.za.k
             public boolean a(T t) {
                 boolean a2;
-                synchronized (this.f38157c) {
+                synchronized (this.f24466c) {
                     a2 = super.a(t);
                 }
                 return a2;
@@ -314,7 +314,7 @@ public final class za {
     public static abstract class p {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final boolean f38158a = false;
+        private static final boolean f24467a = false;
 
         public static p a() {
             return new h();
@@ -353,7 +353,7 @@ public final class za {
     }
 
     private static <T> o<T> a() {
-        return (o<T>) f38149c;
+        return (o<T>) f24458c;
     }
 
     public static <T> k<List<T>> b() {

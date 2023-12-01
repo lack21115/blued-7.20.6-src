@@ -43,8 +43,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
     private int uid_;
     private static final FriendModeVoiceExtra DEFAULT_INSTANCE = new FriendModeVoiceExtra();
     private static final Parser<FriendModeVoiceExtra> PARSER = new AbstractParser<FriendModeVoiceExtra>() { // from class: cn.irisgw.live.FriendModeVoiceExtra.1
-        @Override // com.google.protobuf.Parser
-        public FriendModeVoiceExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public FriendModeVoiceExtra m2526parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new FriendModeVoiceExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -118,7 +118,7 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return this;
             }
             ensureFansIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.fans_);
+            AbstractMessageLite.Builder.addAll(iterable, this.fans_);
             onChanged();
             return this;
         }
@@ -126,11 +126,11 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         public Builder addFans(int i, Fan.Builder builder) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m2577build());
                 return this;
             }
             ensureFansIsMutable();
-            this.fans_.add(i, builder.build());
+            this.fans_.add(i, builder.m2577build());
             onChanged();
             return this;
         }
@@ -153,11 +153,11 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         public Builder addFans(Fan.Builder builder) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m2577build());
                 return this;
             }
             ensureFansIsMutable();
-            this.fans_.add(builder.build());
+            this.fans_.add(builder.m2577build());
             onChanged();
             return this;
         }
@@ -185,22 +185,22 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return getFansFieldBuilder().addBuilder(i, Fan.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2528addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public FriendModeVoiceExtra build() {
-            FriendModeVoiceExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public FriendModeVoiceExtra m2530build() {
+            FriendModeVoiceExtra m2532buildPartial = m2532buildPartial();
+            if (m2532buildPartial.isInitialized()) {
+                return m2532buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2532buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public FriendModeVoiceExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public FriendModeVoiceExtra m2532buildPartial() {
             FriendModeVoiceExtra friendModeVoiceExtra = new FriendModeVoiceExtra(this);
             friendModeVoiceExtra.count_ = this.count_;
             friendModeVoiceExtra.uid_ = this.uid_;
@@ -223,8 +223,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return friendModeVoiceExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2536clear() {
             super.clear();
             this.count_ = 0;
             this.uid_ = 0;
@@ -273,8 +273,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2538clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -290,8 +290,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2541clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -307,10 +307,9 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2547clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.FriendModeVoiceExtraOrBuilder
@@ -362,12 +361,11 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public FriendModeVoiceExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public FriendModeVoiceExtra m2549getDefaultInstanceForType() {
             return FriendModeVoiceExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_FriendModeVoiceExtra_descriptor;
         }
@@ -401,7 +399,7 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         @Override // cn.irisgw.live.FriendModeVoiceExtraOrBuilder
         public FanOrBuilder getFansOrBuilder(int i) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.fans_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.fans_.get(i) : (FanOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.FriendModeVoiceExtraOrBuilder
@@ -464,12 +462,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_FriendModeVoiceExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(FriendModeVoiceExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -529,18 +525,18 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 this.name_ = friendModeVoiceExtra.name_;
                 onChanged();
             }
-            mergeUnknownFields(friendModeVoiceExtra.unknownFields);
+            m2558mergeUnknownFields(friendModeVoiceExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.FriendModeVoiceExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.FriendModeVoiceExtra.Builder m2555mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -585,11 +581,11 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.FriendModeVoiceExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.FriendModeVoiceExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.FriendModeVoiceExtra.Builder.m2555mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.FriendModeVoiceExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2554mergeFrom(Message message) {
             if (message instanceof FriendModeVoiceExtra) {
                 return mergeFrom((FriendModeVoiceExtra) message);
             }
@@ -597,8 +593,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2558mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -661,11 +657,11 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         public Builder setFans(int i, Fan.Builder builder) {
             RepeatedFieldBuilderV3<Fan, Fan.Builder, FanOrBuilder> repeatedFieldBuilderV3 = this.fansBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m2577build());
                 return this;
             }
             ensureFansIsMutable();
-            this.fans_.set(i, builder.build());
+            this.fans_.set(i, builder.m2577build());
             onChanged();
             return this;
         }
@@ -685,8 +681,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2560setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -715,8 +711,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2562setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -745,8 +741,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2564setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -767,8 +763,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         private int voice_;
         private static final Fan DEFAULT_INSTANCE = new Fan();
         private static final Parser<Fan> PARSER = new AbstractParser<Fan>() { // from class: cn.irisgw.live.FriendModeVoiceExtra.Fan.1
-            @Override // com.google.protobuf.Parser
-            public Fan parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Fan m2573parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Fan(codedInputStream, extensionRegistryLite);
             }
         };
@@ -804,22 +800,22 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 boolean unused = Fan.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m2575addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Fan build() {
-                Fan buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Fan m2577build() {
+                Fan m2579buildPartial = m2579buildPartial();
+                if (m2579buildPartial.isInitialized()) {
+                    return m2579buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m2579buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Fan buildPartial() {
+            /* renamed from: buildPartial */
+            public Fan m2579buildPartial() {
                 Fan fan = new Fan(this);
                 fan.name_ = this.name_;
                 fan.avatar_ = this.avatar_;
@@ -830,8 +826,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return fan;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m2583clear() {
                 super.clear();
                 this.name_ = "";
                 this.avatar_ = "";
@@ -847,8 +843,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m2585clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -858,8 +854,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m2588clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -881,10 +877,9 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m2594clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.FriendModeVoiceExtra.FanOrBuilder
@@ -909,12 +904,11 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Fan getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Fan m2596getDefaultInstanceForType() {
                 return Fan.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_FriendModeVoiceExtra_Fan_descriptor;
             }
@@ -973,12 +967,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return this.voice_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_FriendModeVoiceExtra_Fan_fieldAccessorTable.ensureFieldAccessorsInitialized(Fan.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1005,18 +997,18 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                     this.stream_ = fan.stream_;
                     onChanged();
                 }
-                mergeUnknownFields(fan.unknownFields);
+                m2605mergeUnknownFields(fan.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.FriendModeVoiceExtra.Fan.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.FriendModeVoiceExtra.Fan.Builder m2602mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1061,11 +1053,11 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.FriendModeVoiceExtra.Fan.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.FriendModeVoiceExtra$Fan$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.FriendModeVoiceExtra.Fan.Builder.m2602mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.FriendModeVoiceExtra$Fan$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m2601mergeFrom(Message message) {
                 if (message instanceof Fan) {
                     return mergeFrom((Fan) message);
                 }
@@ -1073,8 +1065,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m2605mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -1097,8 +1089,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m2607setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -1121,8 +1113,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m2609setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -1151,8 +1143,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m2611setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -1196,10 +1188,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
                             }
                         }
                         z = true;
-                    } catch (InvalidProtocolBufferException e) {
-                        throw e.setUnfinishedMessage(this);
-                    } catch (IOException e2) {
-                        throw new InvalidProtocolBufferException(e2).setUnfinishedMessage(this);
+                    } catch (IOException e) {
+                        throw new InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+                    } catch (InvalidProtocolBufferException e2) {
+                        throw e2.setUnfinishedMessage(this);
                     }
                 } finally {
                     this.unknownFields = newBuilder.build();
@@ -1222,66 +1214,65 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m2572toBuilder();
         }
 
         public static Builder newBuilder(Fan fan) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(fan);
+            return DEFAULT_INSTANCE.m2572toBuilder().mergeFrom(fan);
         }
 
         public static Fan parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Fan) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Fan parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Fan) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Fan parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Fan) PARSER.parseFrom(byteString);
         }
 
         public static Fan parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Fan) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Fan parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Fan parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Fan parseFrom(InputStream inputStream) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Fan parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Fan) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Fan parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Fan) PARSER.parseFrom(byteBuffer);
         }
 
         public static Fan parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Fan) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Fan parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Fan) PARSER.parseFrom(bArr);
         }
 
         public static Fan parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Fan) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Fan> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1315,8 +1306,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Fan getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Fan m2567getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1342,12 +1333,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Fan> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1407,7 +1396,6 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -1417,7 +1405,6 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return this.voice_;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1427,12 +1414,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_FriendModeVoiceExtra_Fan_fieldAccessorTable.ensureFieldAccessorsInitialized(Fan.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1445,28 +1430,26 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m2570newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m2569newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Fan();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m2572toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getNameBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.name_);
@@ -1594,66 +1577,65 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2525toBuilder();
     }
 
     public static Builder newBuilder(FriendModeVoiceExtra friendModeVoiceExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(friendModeVoiceExtra);
+        return DEFAULT_INSTANCE.m2525toBuilder().mergeFrom(friendModeVoiceExtra);
     }
 
     public static FriendModeVoiceExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (FriendModeVoiceExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static FriendModeVoiceExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (FriendModeVoiceExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static FriendModeVoiceExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (FriendModeVoiceExtra) PARSER.parseFrom(byteString);
     }
 
     public static FriendModeVoiceExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (FriendModeVoiceExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static FriendModeVoiceExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (FriendModeVoiceExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static FriendModeVoiceExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (FriendModeVoiceExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static FriendModeVoiceExtra parseFrom(InputStream inputStream) throws IOException {
-        return (FriendModeVoiceExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static FriendModeVoiceExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (FriendModeVoiceExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static FriendModeVoiceExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (FriendModeVoiceExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static FriendModeVoiceExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (FriendModeVoiceExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static FriendModeVoiceExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (FriendModeVoiceExtra) PARSER.parseFrom(bArr);
     }
 
     public static FriendModeVoiceExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (FriendModeVoiceExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<FriendModeVoiceExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1714,8 +1696,8 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         return this.count_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public FriendModeVoiceExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public FriendModeVoiceExtra m2520getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1771,12 +1753,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<FriendModeVoiceExtra> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1848,12 +1828,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1868,12 +1846,10 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_FriendModeVoiceExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(FriendModeVoiceExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1886,28 +1862,26 @@ public final class FriendModeVoiceExtra extends GeneratedMessageV3 implements Fr
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2523newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2522newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new FriendModeVoiceExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2525toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.count_;
         if (i != 0) {

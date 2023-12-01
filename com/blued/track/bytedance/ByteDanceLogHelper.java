@@ -21,7 +21,7 @@ import org.json.JSONObject;
 public final class ByteDanceLogHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ByteDanceLogHelper f20623a = new ByteDanceLogHelper();
+    public static final ByteDanceLogHelper f7017a = new ByteDanceLogHelper();
 
     private ByteDanceLogHelper() {
     }
@@ -34,7 +34,7 @@ public final class ByteDanceLogHelper {
     @JvmStatic
     public static final void a(Application application, String str) {
         Intrinsics.e(application, "application");
-        Intrinsics.a((Object) str);
+        Intrinsics.a(str);
         InitConfig initConfig = new InitConfig("10000001", str);
         initConfig.setUriConfig(UriConfig.createByDomain("https://snssdk.irisdt.cn", null));
         initConfig.setAbEnable(true);
@@ -54,26 +54,26 @@ public final class ByteDanceLogHelper {
         initConfig.setAutoStart(true);
         AppLog.addDataObserver(new IDataObserver() { // from class: com.blued.track.bytedance.ByteDanceLogHelper$init$2
             @Override // com.bytedance.applog.IDataObserver
-            public void onAbVidsChange(String s, String s1) {
-                Intrinsics.e(s, "s");
-                Intrinsics.e(s1, "s1");
+            public void onAbVidsChange(String str2, String str3) {
+                Intrinsics.e(str2, "s");
+                Intrinsics.e(str3, "s1");
             }
 
             @Override // com.bytedance.applog.IDataObserver
-            public void onIdLoaded(String s, String s1, String s2) {
-                Intrinsics.e(s, "s");
-                Intrinsics.e(s1, "s1");
-                Intrinsics.e(s2, "s2");
+            public void onIdLoaded(String str2, String str3, String str4) {
+                Intrinsics.e(str2, "s");
+                Intrinsics.e(str3, "s1");
+                Intrinsics.e(str4, "s2");
             }
 
             @Override // com.bytedance.applog.IDataObserver
-            public void onRemoteAbConfigGet(boolean z, JSONObject jsonObject) {
-                Intrinsics.e(jsonObject, "jsonObject");
+            public void onRemoteAbConfigGet(boolean z, JSONObject jSONObject) {
+                Intrinsics.e(jSONObject, "jsonObject");
             }
 
             @Override // com.bytedance.applog.IDataObserver
-            public void onRemoteConfigGet(boolean z, JSONObject jsonObject) {
-                Intrinsics.e(jsonObject, "jsonObject");
+            public void onRemoteConfigGet(boolean z, JSONObject jSONObject) {
+                Intrinsics.e(jSONObject, "jsonObject");
             }
 
             @Override // com.bytedance.applog.IDataObserver
@@ -95,6 +95,6 @@ public final class ByteDanceLogHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(String str, Throwable th) {
-        Logger.c("ByteDanceLogHelper", Intrinsics.a("", (Object) str));
+        Logger.c("ByteDanceLogHelper", new Object[]{Intrinsics.a("", str)});
     }
 }

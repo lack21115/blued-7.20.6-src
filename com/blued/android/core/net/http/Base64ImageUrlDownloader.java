@@ -6,7 +6,6 @@ import com.blued.android.core.AppMethods;
 import com.blued.android.core.net.FileHttpResponseHandler;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.ByteArrayPool;
-import com.tencent.ugc.common.UGCConstants;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -51,7 +50,7 @@ public class Base64ImageUrlDownloader {
                 if (fileHttpResponseHandler != null) {
                     fileHttpResponseHandler.sendSuccessMessage(str, 200, file);
                 }
-                ByteArrayPool.f9730a.a((byte[]) null);
+                ByteArrayPool.a.a((byte[]) null);
                 AppMethods.a((OutputStream) str2);
                 if (fileHttpResponseHandler == null) {
                     return;
@@ -63,7 +62,7 @@ public class Base64ImageUrlDownloader {
                 if (fileHttpResponseHandler != null) {
                     fileHttpResponseHandler.sendFailureMessage(str, e, StatusCode.a(e), null);
                 }
-                ByteArrayPool.f9730a.a((byte[]) null);
+                ByteArrayPool.a.a((byte[]) null);
                 AppMethods.a(outputStream2);
                 if (fileHttpResponseHandler == null) {
                     return;
@@ -74,9 +73,9 @@ public class Base64ImageUrlDownloader {
                 outputStream = str2;
                 e.printStackTrace();
                 if (fileHttpResponseHandler != null) {
-                    fileHttpResponseHandler.sendFailureMessage(str, e, UGCConstants.ERR_BGM_UNSUPPORT_SYSTEM, null);
+                    fileHttpResponseHandler.sendFailureMessage(str, e, -2001, null);
                 }
-                ByteArrayPool.f9730a.a((byte[]) null);
+                ByteArrayPool.a.a((byte[]) null);
                 AppMethods.a(outputStream);
                 if (fileHttpResponseHandler == null) {
                     return;
@@ -84,7 +83,7 @@ public class Base64ImageUrlDownloader {
                 fileHttpResponseHandler.sendFinishMessage();
             } catch (Throwable th2) {
                 th = th2;
-                ByteArrayPool.f9730a.a((byte[]) null);
+                ByteArrayPool.a.a((byte[]) null);
                 AppMethods.a((OutputStream) str2);
                 if (fileHttpResponseHandler != null) {
                     fileHttpResponseHandler.sendFinishMessage();

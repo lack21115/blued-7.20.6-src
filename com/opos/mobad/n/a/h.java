@@ -18,13 +18,13 @@ public class h implements com.opos.mobad.n.a {
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private g f26504c;
+    private g f12816c;
     private ImageView d;
     private int e;
     private long g;
     private f h;
     private Context i;
-    private a.InterfaceC0708a j;
+    private a.InterfaceC0538a j;
     private com.opos.mobad.n.d.d k;
     private int l;
     private int m;
@@ -39,11 +39,11 @@ public class h implements com.opos.mobad.n.a {
     private m v;
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile int f26503a = 0;
+    private volatile int f12815a = 0;
     private Runnable w = new Runnable() { // from class: com.opos.mobad.n.a.h.1
         @Override // java.lang.Runnable
         public void run() {
-            if (h.this.f26503a == 4) {
+            if (h.this.f12815a == 4) {
                 return;
             }
             if (h.this.u <= 0) {
@@ -170,16 +170,16 @@ public class h implements com.opos.mobad.n.a {
                 @Override // java.lang.Runnable
                 public void run() {
                     String str;
-                    if (h.this.f26503a == 4) {
+                    if (h.this.f12815a == 4) {
                         str = "load ima but has destroyed";
                     } else {
-                        final Bitmap b = com.opos.mobad.n.e.b(dVar.m.f26633a, com.opos.cmn.an.h.f.a.a(h.this.i, 85.0f), com.opos.cmn.an.h.f.a.a(h.this.i, 85.0f));
+                        final Bitmap b = com.opos.mobad.n.e.b(dVar.m.f12945a, com.opos.cmn.an.h.f.a.a(h.this.i, 85.0f), com.opos.cmn.an.h.f.a.a(h.this.i, 85.0f));
                         final Bitmap a2 = com.opos.mobad.n.c.d.a(h.this.i, b, 75, 0.25f, 56.0f);
                         if (a2 != null) {
                             com.opos.mobad.c.b.b.a(new Runnable() { // from class: com.opos.mobad.n.a.h.5.1
                                 @Override // java.lang.Runnable
                                 public void run() {
-                                    if (h.this.f26503a == 4) {
+                                    if (h.this.f12815a == 4) {
                                         com.opos.cmn.an.f.a.b("LogoSplash", "load bitmap but has destroy");
                                         return;
                                     }
@@ -209,19 +209,19 @@ public class h implements com.opos.mobad.n.a {
             @Override // java.lang.Runnable
             public void run() {
                 String str;
-                if (h.this.f26503a == 4) {
+                if (h.this.f12815a == 4) {
                     str = "load ima but has destroyed";
                 } else if (dVar.g.get(0) == null) {
                     str = "null imgList";
                 } else {
-                    final Bitmap a2 = com.opos.mobad.n.e.a(dVar.g.get(0).f26633a, com.opos.cmn.an.h.f.a.b(h.this.i), h.this.e);
+                    final Bitmap a2 = com.opos.mobad.n.e.a(dVar.g.get(0).f12945a, com.opos.cmn.an.h.f.a.b(h.this.i), h.this.e);
                     if (a2 != null) {
                         h hVar = h.this;
                         final boolean a3 = hVar.a(hVar.e, com.opos.cmn.an.h.f.a.b(h.this.i), a2.getHeight(), a2.getWidth());
                         com.opos.mobad.c.b.b.a(new Runnable() { // from class: com.opos.mobad.n.a.h.6.1
                             @Override // java.lang.Runnable
                             public void run() {
-                                if (h.this.f26503a == 4) {
+                                if (h.this.f12815a == 4) {
                                     com.opos.cmn.an.f.a.b("LogoSplash", "load ima but has destroyed");
                                     return;
                                 }
@@ -246,7 +246,7 @@ public class h implements com.opos.mobad.n.a {
 
     private void d(com.opos.mobad.n.d.d dVar) {
         if (dVar.v != null) {
-            this.s.a(p(), dVar.v.f26626a, dVar.v.b);
+            this.s.a(p(), dVar.v.f12938a, dVar.v.b);
         }
         if (TextUtils.isEmpty(dVar.l)) {
             return;
@@ -286,13 +286,13 @@ public class h implements com.opos.mobad.n.a {
 
     private void f() {
         final com.opos.mobad.c.d.a aVar = new com.opos.mobad.c.d.a(this.i);
-        aVar.a(new a.InterfaceC0678a() { // from class: com.opos.mobad.n.a.h.2
-            @Override // com.opos.mobad.c.d.a.InterfaceC0678a
+        aVar.a(new a.InterfaceC0508a() { // from class: com.opos.mobad.n.a.h.2
+            @Override // com.opos.mobad.c.d.a.InterfaceC0508a
             public void a(boolean z) {
                 if (h.this.k == null) {
                     return;
                 }
-                if (z && h.this.f26503a == 0) {
+                if (z && h.this.f12815a == 0) {
                     h.this.b();
                     h.this.h.c();
                     if (h.this.j != null) {
@@ -300,10 +300,10 @@ public class h implements com.opos.mobad.n.a {
                     }
                 }
                 com.opos.cmn.an.f.a.b("LogoSplash", "splashView onWindowVisibilityChanged：" + z);
-                boolean z2 = h.this.u <= 0 || h.this.f26503a == 3;
+                boolean z2 = h.this.u <= 0 || h.this.f12815a == 3;
                 if (z && z2) {
                     h.this.r();
-                    aVar.a((a.InterfaceC0678a) null);
+                    aVar.a((a.InterfaceC0508a) null);
                 }
             }
         });
@@ -358,7 +358,7 @@ public class h implements com.opos.mobad.n.a {
         this.d = new ImageView(this.i);
         this.o.addView(this.d, new RelativeLayout.LayoutParams(-1, -1));
         g gVar = new g(this.i);
-        this.f26504c = gVar;
+        this.f12816c = gVar;
         this.o.addView(gVar);
         this.o.addView(this.b);
     }
@@ -430,10 +430,10 @@ public class h implements com.opos.mobad.n.a {
     public void r() {
         if (s()) {
             com.opos.cmn.an.f.a.b("LogoSplash", "handleAdClosed");
-            a.InterfaceC0708a interfaceC0708a = this.j;
-            if (interfaceC0708a != null) {
+            a.InterfaceC0538a interfaceC0538a = this.j;
+            if (interfaceC0538a != null) {
                 long j = this.g;
-                interfaceC0708a.a(j, j);
+                interfaceC0538a.a(j, j);
             }
         }
     }
@@ -462,19 +462,19 @@ public class h implements com.opos.mobad.n.a {
 
     @Override // com.opos.mobad.n.a
     public void a() {
-        if (this.f26503a != 2 && this.f26503a != 4) {
-            this.f26503a = 2;
+        if (this.f12815a != 2 && this.f12815a != 4) {
+            this.f12815a = 2;
             this.f.a();
             this.h.d();
             return;
         }
-        com.opos.cmn.an.f.a.b("LogoSplash", "current state has stop =" + this.f26503a);
+        com.opos.cmn.an.f.a.b("LogoSplash", "current state has stop =" + this.f12815a);
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.s.a(interfaceC0708a);
-        this.j = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.s.a(interfaceC0538a);
+        this.j = interfaceC0538a;
     }
 
     @Override // com.opos.mobad.n.a
@@ -483,7 +483,7 @@ public class h implements com.opos.mobad.n.a {
         com.opos.mobad.n.d.d a2 = hVar.a();
         if (a2 == null || a2.u == null) {
             str = "adShowData is null";
-        } else if (t() && (a2.m == null || TextUtils.isEmpty(a2.m.f26633a))) {
+        } else if (t() && (a2.m == null || TextUtils.isEmpty(a2.m.f12945a))) {
             str = "iconUrl is null";
         } else if (t() || (a2.g != null && a2.g.size() > 0)) {
             com.opos.cmn.an.f.a.b("LogoSplash", "render");
@@ -508,13 +508,13 @@ public class h implements com.opos.mobad.n.a {
     public void b() {
         q();
         com.opos.cmn.an.f.a.b("LogoSplash", "start countdown...");
-        if (this.f26503a != 1 && this.f26503a != 4) {
-            this.f26503a = 1;
+        if (this.f12815a != 1 && this.f12815a != 4) {
+            this.f12815a = 1;
             this.f.a(0L);
             this.h.e();
             return;
         }
-        com.opos.cmn.an.f.a.b("LogoSplash", "error state" + this.f26503a);
+        com.opos.cmn.an.f.a.b("LogoSplash", "error state" + this.f12815a);
     }
 
     @Override // com.opos.mobad.n.a
@@ -528,7 +528,7 @@ public class h implements com.opos.mobad.n.a {
         this.h.f();
         a();
         this.k = null;
-        this.f26503a = 4;
+        this.f12815a = 4;
         this.f.a();
         this.f.b();
     }

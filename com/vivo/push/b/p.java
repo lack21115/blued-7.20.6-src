@@ -7,11 +7,11 @@ import com.vivo.push.model.InsideNotificationItem;
 public final class p extends com.vivo.push.o {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41049a;
+    private String f27358a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f41050c;
+    private byte[] f27359c;
     private long d;
     private InsideNotificationItem e;
 
@@ -21,30 +21,30 @@ public final class p extends com.vivo.push.o {
 
     public p(String str, long j, InsideNotificationItem insideNotificationItem) {
         super(5);
-        this.f41049a = str;
+        this.f27358a = str;
         this.d = j;
         this.e = insideNotificationItem;
     }
 
     @Override // com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
-        aVar.a("package_name", this.f41049a);
+        aVar.a("package_name", this.f27358a);
         aVar.a("notify_id", this.d);
         aVar.a("notification_v1", com.vivo.push.util.q.b(this.e));
         aVar.a("open_pkg_name", this.b);
-        aVar.a("open_pkg_name_encode", this.f41050c);
+        aVar.a("open_pkg_name_encode", this.f27359c);
     }
 
     public final String d() {
-        return this.f41049a;
+        return this.f27358a;
     }
 
     @Override // com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
-        this.f41049a = aVar.a("package_name");
+        this.f27358a = aVar.a("package_name");
         this.d = aVar.b("notify_id", -1L);
         this.b = aVar.a("open_pkg_name");
-        this.f41050c = aVar.b("open_pkg_name_encode");
+        this.f27359c = aVar.b("open_pkg_name_encode");
         String a2 = aVar.a("notification_v1");
         if (!TextUtils.isEmpty(a2)) {
             this.e = com.vivo.push.util.q.a(a2);

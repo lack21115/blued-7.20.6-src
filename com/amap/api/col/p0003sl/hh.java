@@ -1,6 +1,7 @@
 package com.amap.api.col.p0003sl;
 
 import android.content.Context;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -37,7 +38,7 @@ public abstract class hh<T, V> extends hg<T, V> {
     public Map<String, String> getRequestHead() {
         HashMap hashMap = new HashMap(16);
         hashMap.put("Content-Type", " application/json");
-        hashMap.put("Accept-Encoding", "gzip");
+        hashMap.put("Accept-Encoding", Constants.CP_GZIP);
         hashMap.put("User-Agent", "AMAP SDK Android Trace 9.3.1");
         hashMap.put("x-INFO", hr.b(this.g));
         hashMap.put("platinfo", String.format(Locale.US, "platform=Android&sdkversion=%s&product=%s", "9.3.1", "trace"));

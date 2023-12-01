@@ -98,10 +98,10 @@ public class LiveGiftExpireDlgFragment extends LiveBaseDialogFragment {
     @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment
     public void f() {
         super.f();
-        this.o = (LiveGiftModel) this.f10822c.getSerializable("gift_model");
+        this.o = (LiveGiftModel) this.c.getSerializable("gift_model");
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         k();

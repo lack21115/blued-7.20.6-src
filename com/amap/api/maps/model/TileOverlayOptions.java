@@ -1,6 +1,5 @@
 package com.amap.api.maps.model;
 
-import android.content.IntentFilter;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.autonavi.base.ae.gmap.bean.TileProviderInner;
@@ -21,7 +20,7 @@ public final class TileOverlayOptions extends BaseOptions implements Parcelable 
 
     public TileOverlayOptions() {
         this.mVisible = true;
-        this.memCacheSize = IntentFilter.MATCH_CATEGORY_PATH;
+        this.memCacheSize = 5242880;
         this.diskCacheSize = 20971520L;
         this.diskCacheDir = null;
         this.memoryCacheEnabled = true;
@@ -33,7 +32,7 @@ public final class TileOverlayOptions extends BaseOptions implements Parcelable 
     /* JADX INFO: Access modifiers changed from: package-private */
     public TileOverlayOptions(int i, boolean z, float f) {
         this.mVisible = true;
-        this.memCacheSize = IntentFilter.MATCH_CATEGORY_PATH;
+        this.memCacheSize = 5242880;
         this.diskCacheSize = 20971520L;
         this.diskCacheDir = null;
         this.memoryCacheEnabled = true;

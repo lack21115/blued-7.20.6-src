@@ -23,13 +23,13 @@ public class BaiduATInitManager extends ATInitMediation {
     private static volatile BaiduATInitManager e;
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, Map<String, BaiduATBiddingInfo>> f8864a;
+    Map<String, Map<String, BaiduATBiddingInfo>> f6024a;
     private boolean f;
     private List<MediationInitCallback> h;
     boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    int f8865c = 0;
+    int f6025c = 0;
     private final Object i = new Object();
     private AtomicBoolean g = new AtomicBoolean(false);
 
@@ -46,7 +46,7 @@ public class BaiduATInitManager extends ATInitMediation {
     private BaiduATBiddingInfo a(String str, String str2) {
         Map<String, BaiduATBiddingInfo> map;
         synchronized (this) {
-            if (this.f8864a == null || (map = this.f8864a.get(str)) == null) {
+            if (this.f6024a == null || (map = this.f6024a.get(str)) == null) {
                 return null;
             }
             return map.remove(str2);
@@ -56,14 +56,14 @@ public class BaiduATInitManager extends ATInitMediation {
     private String a(String str, Object obj, double d2, Object obj2) {
         String str2;
         synchronized (this) {
-            if (this.f8864a == null) {
-                this.f8864a = new ConcurrentHashMap(3);
+            if (this.f6024a == null) {
+                this.f6024a = new ConcurrentHashMap(3);
             }
-            Map<String, BaiduATBiddingInfo> map = this.f8864a.get(str);
+            Map<String, BaiduATBiddingInfo> map = this.f6024a.get(str);
             ConcurrentHashMap concurrentHashMap = map;
             if (map == null) {
                 concurrentHashMap = new ConcurrentHashMap(2);
-                this.f8864a.put(str, concurrentHashMap);
+                this.f6024a.put(str, concurrentHashMap);
             }
             str2 = d + UUID.randomUUID().toString();
             concurrentHashMap.put(str2, new BaiduATBiddingInfo(obj, d2, obj2));
@@ -104,7 +104,7 @@ public class BaiduATInitManager extends ATInitMediation {
     private void b(String str, String str2) {
         Map<String, BaiduATBiddingInfo> map;
         synchronized (this) {
-            if (this.f8864a != null && (map = this.f8864a.get(str)) != null) {
+            if (this.f6024a != null && (map = this.f6024a.get(str)) != null) {
                 map.remove(str2);
             }
         }
@@ -131,7 +131,6 @@ public class BaiduATInitManager extends ATInitMediation {
         }
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getActivityStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add("com.baidu.mobads.sdk.api.AppActivity");
@@ -139,22 +138,18 @@ public class BaiduATInitManager extends ATInitMediation {
         return arrayList;
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkName() {
         return "Baidu";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkSDKClass() {
         return "com.baidu.mobads.sdk.api.BDAdConfig";
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public String getNetworkVersion() {
         return BaiduATConst.getNetworkVersion();
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public List getProviderStatus() {
         ArrayList arrayList = new ArrayList();
         arrayList.add("com.baidu.mobads.sdk.api.BdFileProvider");
@@ -167,7 +162,6 @@ public class BaiduATInitManager extends ATInitMediation {
         }
     }
 
-    @Override // com.anythink.core.api.ATInitMediation
     public void initSDK(Context context, Map<String, Object> map, MediationInitCallback mediationInitCallback) {
         synchronized (this) {
             initSDK(context, map, false, mediationInitCallback);
@@ -177,10 +171,10 @@ public class BaiduATInitManager extends ATInitMediation {
     public void initSDK(Context context, Map<String, Object> map, boolean z, MediationInitCallback mediationInitCallback) {
         synchronized (this) {
             try {
-                this.f8865c = ATSDK.getPersionalizedAdStatus();
+                this.f6025c = ATSDK.getPersionalizedAdStatus();
             } catch (Throwable th) {
             }
-            MobadsPermissionSettings.setLimitPersonalAds(this.f8865c == 2);
+            MobadsPermissionSettings.setLimitPersonalAds(this.f6025c == 2);
             if (!this.b) {
                 MobadsPermissionSettings.setPermissionReadDeviceID(true);
                 MobadsPermissionSettings.setPermissionOAID(true);

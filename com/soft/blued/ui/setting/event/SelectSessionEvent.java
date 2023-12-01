@@ -6,5 +6,5 @@ import java.util.List;
 public class SelectSessionEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public List<Long> f33314a;
+    public List<Long> f19623a;
 }

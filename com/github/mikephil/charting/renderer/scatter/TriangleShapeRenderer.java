@@ -11,7 +11,7 @@ import com.github.mikephil.charting.utils.ViewPortHandler;
 public class TriangleShapeRenderer implements IShapeRenderer {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Path f22196a = new Path();
+    protected Path f8589a = new Path();
 
     @Override // com.github.mikephil.charting.renderer.scatter.IShapeRenderer
     public void a(Canvas canvas, IScatterDataSet iScatterDataSet, ViewPortHandler viewPortHandler, float f, float f2, Paint paint) {
@@ -20,7 +20,7 @@ public class TriangleShapeRenderer implements IShapeRenderer {
         float a3 = (a2 - (Utils.a(iScatterDataSet.c()) * 2.0f)) / 2.0f;
         int d = iScatterDataSet.d();
         paint.setStyle(Paint.Style.FILL);
-        Path path = this.f22196a;
+        Path path = this.f8589a;
         path.reset();
         float f4 = f2 - f3;
         path.moveTo(f, f4);

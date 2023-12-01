@@ -11,10 +11,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class f<T extends com.opos.mobad.ad.b> extends h<T> implements m<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected com.opos.mobad.f.a.b.a<T> f26029a;
+    protected com.opos.mobad.f.a.b.a<T> f12341a;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<T> f26030c;
+    private List<T> f12342c;
     private T d;
     private int g;
     private int h;
@@ -28,21 +28,21 @@ public class f<T extends com.opos.mobad.ad.b> extends h<T> implements m<T> {
         this.h = 0;
         this.j = new AtomicBoolean(false);
         this.i = context;
-        this.f26029a = bVar;
-        this.f26030c = new ArrayList(list.size());
+        this.f12341a = bVar;
+        this.f12342c = new ArrayList(list.size());
         this.g = com.opos.cmn.an.h.f.a.b(context);
         this.h = com.opos.cmn.an.h.f.a.a(context, 57.0f);
     }
 
     private void h() {
-        com.opos.cmn.an.f.a.b("delegator", "clearCacheDestroyAd size =" + this.f26030c.size());
-        if (this.f26030c.isEmpty()) {
+        com.opos.cmn.an.f.a.b("delegator", "clearCacheDestroyAd size =" + this.f12342c.size());
+        if (this.f12342c.isEmpty()) {
             return;
         }
-        for (T t : this.f26030c) {
+        for (T t : this.f12342c) {
             t.b();
         }
-        this.f26030c.clear();
+        this.f12342c.clear();
     }
 
     private boolean i(int i) {
@@ -109,7 +109,7 @@ public class f<T extends com.opos.mobad.ad.b> extends h<T> implements m<T> {
         h();
         T t = this.d;
         if (t != null) {
-            this.f26030c.add(t);
+            this.f12342c.add(t);
         }
         this.d = this.b.get(Integer.valueOf(i));
         super.f(i);

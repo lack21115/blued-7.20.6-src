@@ -47,10 +47,9 @@ public abstract class BaseViewBakPagerParentFragment extends SimpleFragment {
         }
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitView() {
         super.onInitView();
-        this.h = (ViewPager) this.rootView.findViewById(R.id.base_view_pager_id);
+        this.h = this.rootView.findViewById(R.id.base_view_pager_id);
         BaseViewPagerFragmentPagerAdapter baseViewPagerFragmentPagerAdapter = new BaseViewPagerFragmentPagerAdapter(getChildFragmentManager()) { // from class: com.blued.android.module.live_china.mine.backpack.BaseViewBakPagerParentFragment.1
             @Override // com.blued.android.module.common.adapter.BaseViewPagerFragmentPagerAdapter
             public BaseFragment b(int i) {
@@ -62,7 +61,6 @@ public abstract class BaseViewBakPagerParentFragment extends SimpleFragment {
         this.h.setAdapter(this.i);
     }
 
-    @Override // com.blued.android.framework.ui.SimpleFragment
     public void onInitViewFinished() {
         super.onInitViewFinished();
         a();

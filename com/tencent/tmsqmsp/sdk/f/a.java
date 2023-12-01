@@ -9,19 +9,19 @@ import java.util.List;
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/f/a.class */
 public class a {
     private static a e = new a(102400);
-    public static final Comparator<byte[]> f = new C1047a();
+    public static final Comparator<byte[]> f = new C0877a();
 
     /* renamed from: a  reason: collision with root package name */
-    private List<byte[]> f39753a = new LinkedList();
+    private List<byte[]> f26062a = new LinkedList();
     private List<byte[]> b = new ArrayList(64);
 
     /* renamed from: c  reason: collision with root package name */
-    private int f39754c = 0;
+    private int f26063c = 0;
     private final int d;
 
     /* renamed from: com.tencent.tmsqmsp.sdk.f.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/f/a$a.class */
-    public static final class C1047a implements Comparator<byte[]> {
+    public static final class C0877a implements Comparator<byte[]> {
         @Override // java.util.Comparator
         /* renamed from: a */
         public int compare(byte[] bArr, byte[] bArr2) {
@@ -39,10 +39,10 @@ public class a {
 
     private void b() {
         synchronized (this) {
-            while (this.f39754c > this.d) {
-                byte[] remove = this.f39753a.remove(0);
+            while (this.f26063c > this.d) {
+                byte[] remove = this.f26062a.remove(0);
                 this.b.remove(remove);
-                this.f39754c -= remove.length;
+                this.f26063c -= remove.length;
             }
         }
     }
@@ -51,14 +51,14 @@ public class a {
         synchronized (this) {
             if (bArr != null) {
                 if (bArr.length <= this.d) {
-                    this.f39753a.add(bArr);
+                    this.f26062a.add(bArr);
                     int binarySearch = Collections.binarySearch(this.b, bArr, f);
                     int i = binarySearch;
                     if (binarySearch < 0) {
                         i = (-binarySearch) - 1;
                     }
                     this.b.add(i, bArr);
-                    this.f39754c += bArr.length;
+                    this.f26063c += bArr.length;
                     b();
                 }
             }
@@ -75,9 +75,9 @@ public class a {
                 }
                 byte[] bArr = this.b.get(i3);
                 if (bArr.length >= i) {
-                    this.f39754c -= bArr.length;
+                    this.f26063c -= bArr.length;
                     this.b.remove(i3);
-                    this.f39753a.remove(bArr);
+                    this.f26062a.remove(bArr);
                     return bArr;
                 }
                 i2 = i3 + 1;

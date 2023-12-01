@@ -44,15 +44,14 @@ public class RcFrameLayout extends FrameLayout {
         tkViewRCHelper.initAttrs(context, attributeSet);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         this.mViewRCHelper.beforeDispatchDraw(canvas);
         super.dispatchDraw(canvas);
         this.mViewRCHelper.afterDispatchDraw(canvas);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void draw(Canvas canvas) {
         this.mViewRCHelper.beforeDraw(canvas);
         super.draw(canvas);
@@ -67,9 +66,8 @@ public class RcFrameLayout extends FrameLayout {
         return this.widthBasedRatio;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3 = i;
         int i4 = i2;
         if (this.mRatio != 0.0f) {
@@ -84,9 +82,8 @@ public class RcFrameLayout extends FrameLayout {
         super.onMeasure(i3, i4);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         this.mViewRCHelper.onSizeChanged(i, i2);
     }

@@ -11,7 +11,7 @@ public final class dk {
         ev.vP().put(com.kwad.sdk.ranger.d.class, new gt());
         ev.vP().put(com.kwad.sdk.ranger.a.kwai.d.class, new ih());
         ev.vP().put(com.kwad.sdk.ranger.a.kwai.a.class, new dn());
-        ev.vP().put(a.C0577a.class, new ge());
+        ev.vP().put(a.C0407a.class, new ge());
         ev.vP().put(com.kwad.sdk.ranger.a.kwai.c.class, new ig());
         ev.vP().put(a.b.class, new in());
         ev.vP().put(com.kwad.sdk.ranger.kwai.a.class, new an());

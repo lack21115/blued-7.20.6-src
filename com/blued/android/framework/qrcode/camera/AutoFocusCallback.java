@@ -9,26 +9,26 @@ import com.igexin.push.config.c;
 final class AutoFocusCallback implements Camera.AutoFocusCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9854a = AutoFocusCallback.class.getSimpleName();
+    private static final String f6652a = AutoFocusCallback.class.getSimpleName();
     private Handler b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f9855c;
+    private int f6653c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Handler handler, int i) {
         this.b = handler;
-        this.f9855c = i;
+        this.f6653c = i;
     }
 
     @Override // android.hardware.Camera.AutoFocusCallback
     public void onAutoFocus(boolean z, Camera camera) {
         Handler handler = this.b;
         if (handler == null) {
-            Log.d(f9854a, "Got auto-focus callback, but no handler for it");
+            Log.d(f6652a, "Got auto-focus callback, but no handler for it");
             return;
         }
-        this.b.sendMessageDelayed(handler.obtainMessage(this.f9855c, Boolean.valueOf(z)), c.j);
+        this.b.sendMessageDelayed(handler.obtainMessage(this.f6653c, Boolean.valueOf(z)), c.j);
         this.b = null;
     }
 }

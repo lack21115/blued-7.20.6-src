@@ -10,20 +10,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class g implements f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AtomicInteger f21838a = new AtomicInteger(0);
+    private static AtomicInteger f8231a = new AtomicInteger(0);
 
     /* renamed from: c  reason: collision with root package name */
-    private static g f21839c;
+    private static g f8232c;
     private b b = new b();
 
     private g() {
     }
 
     public static g c() {
-        if (f21839c == null) {
-            f21839c = new g();
+        if (f8232c == null) {
+            f8232c = new g();
         }
-        return f21839c;
+        return f8232c;
     }
 
     @Override // com.efs.sdk.net.a.a.f
@@ -43,7 +43,7 @@ public final class g implements f {
         b bVar = this.b;
         try {
             String a2 = aVar.a();
-            bVar.f21833a.put(aVar.a(), Long.valueOf(System.currentTimeMillis()));
+            bVar.f8226a.put(aVar.a(), Long.valueOf(System.currentTimeMillis()));
             Log.i("NetTrace-Interceptor", "save request");
             com.efs.sdk.net.a.b a3 = com.efs.sdk.net.a.a.a().a(a2);
             String b = aVar.b();
@@ -63,7 +63,7 @@ public final class g implements f {
         b bVar = this.b;
         Log.i("NetTrace-Interceptor", "save response");
         String a2 = cVar.a();
-        if (bVar.f21833a != null) {
+        if (bVar.f8226a != null) {
             com.efs.sdk.net.a.a.a().a(a2).g = cVar.b();
         }
     }
@@ -71,6 +71,6 @@ public final class g implements f {
     @Override // com.efs.sdk.net.a.a.f
     public final String b() {
         Log.d("NetTrace-Interceptor", "next request id");
-        return String.valueOf(f21838a.getAndIncrement());
+        return String.valueOf(f8231a.getAndIncrement());
     }
 }

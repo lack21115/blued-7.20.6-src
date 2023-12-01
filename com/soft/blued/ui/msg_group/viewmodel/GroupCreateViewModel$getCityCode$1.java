@@ -1,6 +1,7 @@
 package com.soft.blued.ui.msg_group.viewmodel;
 
 import com.blued.android.framework.http.parser.BluedEntityA;
+import com.blued.android.module.common.api.ApiState;
 import com.blued.android.module.common.api.BluedApiProxy;
 import com.blued.android.module.common.api.Error;
 import com.blued.android.module.common.api.Succeed;
@@ -20,14 +21,13 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
 @DebugMetadata(b = "GroupCreateViewModel.kt", c = {38}, d = "invokeSuspend", e = "com.soft.blued.ui.msg_group.viewmodel.GroupCreateViewModel$getCityCode$1")
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/viewmodel/GroupCreateViewModel$getCityCode$1.class */
-public final class GroupCreateViewModel$getCityCode$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+final class GroupCreateViewModel$getCityCode$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f32843a;
+    int f19152a;
     final /* synthetic */ GroupCreateViewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -37,21 +37,18 @@ public final class GroupCreateViewModel$getCityCode$1 extends SuspendLambda impl
         this.b = groupCreateViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((GroupCreateViewModel$getCityCode$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new GroupCreateViewModel$getCityCode$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
-        int i = this.f32843a;
+        int i = this.f19152a;
         if (i == 0) {
             ResultKt.a(obj);
             GroupApiService groupApiService = (GroupApiService) BluedApiProxy.b().a(GroupApiService.class);
@@ -59,8 +56,8 @@ public final class GroupCreateViewModel$getCityCode$1 extends SuspendLambda impl
             Intrinsics.c(u, "getLONGITUDE()");
             String v = CommonPreferences.v();
             Intrinsics.c(v, "getLATITUDE()");
-            this.f32843a = 1;
-            Object b = groupApiService.b(u, v, this);
+            this.f19152a = 1;
+            Object b = groupApiService.b(u, v, (Continuation) this);
             obj = b;
             if (b == a2) {
                 return a2;
@@ -74,20 +71,20 @@ public final class GroupCreateViewModel$getCityCode$1 extends SuspendLambda impl
         GroupCreateViewModel groupCreateViewModel = this.b;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                List<T> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
                 bluedEntityA.hasMore();
-                groupCreateViewModel.e().setValue(((CityLocation) data.get(0)).city_code_plus);
+                groupCreateViewModel.e().setValue(((CityLocation) list.get(0)).city_code_plus);
             } else {
                 groupCreateViewModel.e().setValue(((CityLocation) CollectionsKt.b().get(0)).city_code_plus);
             }
-            Succeed succeed = Succeed.f10631a;
+            ApiState apiState = Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            new Error(i2, str);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

@@ -11,9 +11,7 @@ import java.util.concurrent.Executors;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/QueueFileDownloader.class */
 public class QueueFileDownloader {
-
-    /* renamed from: a  reason: collision with root package name */
-    static ExecutorService f9690a = Executors.newSingleThreadExecutor(new DefaultThreadFactory("queuefiledownload"));
+    static ExecutorService a = Executors.newSingleThreadExecutor(new DefaultThreadFactory("queuefiledownload"));
 
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/QueueFileDownloader$QueueFileListener.class */
     public interface QueueFileListener {
@@ -22,7 +20,7 @@ public class QueueFileDownloader {
 
     public static void a(final String[] strArr, final String[] strArr2, final QueueFileListener queueFileListener, final IRequestHost iRequestHost, final boolean z) {
         if (strArr != null && strArr2 != null && strArr.length == strArr2.length) {
-            f9690a.submit(new Runnable() { // from class: com.blued.android.core.net.http.QueueFileDownloader.1
+            a.submit(new Runnable() { // from class: com.blued.android.core.net.http.QueueFileDownloader.1
                 @Override // java.lang.Runnable
                 public void run() {
                     int i = 0;

@@ -6,13 +6,11 @@ import java.util.Locale;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/packet/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f4639a;
+    private boolean a;
     private String b = n.a(24);
 
     public c(boolean z) {
-        this.f4639a = z;
+        this.a = z;
     }
 
     private static int a(String str) {
@@ -81,6 +79,6 @@ public final class c {
                 bArr = bytes2;
             }
         }
-        return new d(z2, this.f4639a ? a((byte[][]) new byte[]{bytes, a(this.b, com.alipay.sdk.cons.a.e), a(this.b, bArr, str)}) : a((byte[][]) new byte[]{bytes, bArr}));
+        return new d(z2, this.a ? a((byte[][]) new byte[]{bytes, a(this.b, com.alipay.sdk.cons.a.e), a(this.b, bArr, str)}) : a((byte[][]) new byte[]{bytes, bArr}));
     }
 }

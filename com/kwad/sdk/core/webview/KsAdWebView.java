@@ -11,7 +11,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.sdk.core.webview.kwai.c;
 import com.kwad.sdk.j.k;
 import com.kwad.sdk.service.ServiceProvider;
@@ -162,7 +161,7 @@ public class KsAdWebView extends com.kwad.sdk.core.webview.c {
     }
 
     private String yV() {
-        return "KSADSDK_V3.3.40_" + getContext().getPackageName() + BridgeUtil.UNDERLINE_STR + com.kwad.sdk.utils.k.bH(getContext());
+        return "KSADSDK_V3.3.40_" + getContext().getPackageName() + "_" + com.kwad.sdk.utils.k.bH(getContext());
     }
 
     public c.a getClientConfig() {

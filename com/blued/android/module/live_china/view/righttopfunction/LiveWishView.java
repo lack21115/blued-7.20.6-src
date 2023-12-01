@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.viewpager.widget.PagerAdapter;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
@@ -32,13 +31,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/righttopfunction/LiveWishView.class */
 public class LiveWishView extends FrameLayout implements View.OnClickListener, RightTopFunction {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveAutoScrollViewPager f15442a;
+    private LiveAutoScrollViewPager a;
     private List<View> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<LiveWishItemModel> f15443c;
+    private List<LiveWishItemModel> c;
     private WishPagerAdapter d;
     private BaseFragment e;
     private LiveDesireDialogFragment f;
@@ -52,35 +47,31 @@ public class LiveWishView extends FrameLayout implements View.OnClickListener, R
 
         public void a(List<LiveWishItemModel> list) {
             if (list != null) {
-                if (LiveWishView.this.f15443c != null) {
-                    LiveWishView.this.f15443c.clear();
+                if (LiveWishView.this.c != null) {
+                    LiveWishView.this.c.clear();
                 } else {
-                    LiveWishView.this.f15443c = new ArrayList();
+                    LiveWishView.this.c = new ArrayList();
                 }
-                LiveWishView.this.f15443c.addAll(list);
+                LiveWishView.this.c.addAll(list);
             }
             notifyDataSetChanged();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             viewGroup.removeView((View) obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            if (LiveWishView.this.f15443c != null) {
-                return LiveWishView.this.f15443c.size();
+            if (LiveWishView.this.c != null) {
+                return LiveWishView.this.c.size();
             }
             return 0;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object obj) {
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
             View view = i < LiveWishView.this.b.size() ? (View) LiveWishView.this.b.get(i) : null;
             while (view == null) {
@@ -95,7 +86,6 @@ public class LiveWishView extends FrameLayout implements View.OnClickListener, R
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -108,7 +98,7 @@ public class LiveWishView extends FrameLayout implements View.OnClickListener, R
     public LiveWishView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.b = new ArrayList();
-        this.f15443c = new ArrayList();
+        this.c = new ArrayList();
         b();
     }
 
@@ -116,7 +106,7 @@ public class LiveWishView extends FrameLayout implements View.OnClickListener, R
     public void a(int i) {
         View view;
         final LiveWishItemModel liveWishItemModel;
-        if (i >= this.b.size() || i >= this.f15443c.size() || (view = this.b.get(i)) == null || (liveWishItemModel = this.f15443c.get(i)) == null) {
+        if (i >= this.b.size() || i >= this.c.size() || (view = this.b.get(i)) == null || (liveWishItemModel = this.c.get(i)) == null) {
             return;
         }
         TextView textView = (TextView) view.findViewById(R.id.tv_wish_name);
@@ -160,11 +150,11 @@ public class LiveWishView extends FrameLayout implements View.OnClickListener, R
     private void b() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_wish_view, this);
         LiveAutoScrollViewPager liveAutoScrollViewPager = (LiveAutoScrollViewPager) findViewById(R.id.view_page_wish);
-        this.f15442a = liveAutoScrollViewPager;
-        liveAutoScrollViewPager.setInterval(m.ag);
+        this.a = liveAutoScrollViewPager;
+        liveAutoScrollViewPager.setInterval(3000L);
         WishPagerAdapter wishPagerAdapter = new WishPagerAdapter();
         this.d = wishPagerAdapter;
-        this.f15442a.setAdapter(wishPagerAdapter);
+        this.a.setAdapter(wishPagerAdapter);
         setVisibility(8);
     }
 
@@ -175,10 +165,10 @@ public class LiveWishView extends FrameLayout implements View.OnClickListener, R
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f15443c.size()) {
+            if (i2 >= this.c.size()) {
                 return;
             }
-            LiveWishItemModel liveWishItemModel2 = this.f15443c.get(i2);
+            LiveWishItemModel liveWishItemModel2 = this.c.get(i2);
             if (liveWishItemModel2 != null && TextUtils.equals(liveWishItemModel2.id, liveWishItemModel.id)) {
                 liveWishItemModel2.progress += liveWishItemModel.progress;
                 a(i2);
@@ -220,9 +210,9 @@ public class LiveWishView extends FrameLayout implements View.OnClickListener, R
             return;
         }
         this.d.a(list);
-        this.f15442a.setAdapter(this.d);
-        this.f15442a.a();
-        this.f15442a.setCurrentItem(0, false);
+        this.a.setAdapter(this.d);
+        this.a.a();
+        this.a.setCurrentItem(0, false);
         setWishViewVisible(0);
     }
 

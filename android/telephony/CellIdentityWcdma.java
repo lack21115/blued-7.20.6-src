@@ -2,7 +2,6 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/CellIdentityWcdma.class */
 public final class CellIdentityWcdma implements Parcelable {
@@ -132,7 +131,7 @@ public final class CellIdentityWcdma implements Parcelable {
         sb.append(" mLac=").append(this.mLac);
         sb.append(" mCid=").append(this.mCid);
         sb.append(" mPsc=").append(this.mPsc);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

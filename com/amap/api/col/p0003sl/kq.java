@@ -7,9 +7,7 @@ import java.io.ByteArrayOutputStream;
 /* renamed from: com.amap.api.col.3sl.kq  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/kq.class */
 public final class kq extends ks {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f5286a = 13;
+    public static int a = 13;
     public static int b = 6;
     private Context e;
 
@@ -23,7 +21,7 @@ public final class kq extends ks {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         byte[] bArr = new byte[0];
         try {
-            ib.a(byteArrayOutputStream, "1.2." + f5286a + "." + b);
+            ib.a(byteArrayOutputStream, "1.2." + a + "." + b);
             ib.a(byteArrayOutputStream, "Android");
             ib.a(byteArrayOutputStream, hs.v(context));
             ib.a(byteArrayOutputStream, hs.k(context));

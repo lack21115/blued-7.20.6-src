@@ -38,7 +38,6 @@ import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.igexin.push.config.c;
 import java.util.Arrays;
 import java.util.List;
 import kotlin.Metadata;
@@ -49,35 +48,29 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDailyTaskFragment.class */
 public final class YYDailyTaskFragment extends BaseFullScreenDialog implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f17191a;
+    private BaseFragment a;
     private FragmentYyDailyTaskBinding b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DailyAdapter f17192c;
+    private DailyAdapter c;
     private YYRoomModel d;
     private View e;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDailyTaskFragment$DailyAdapter.class */
     public final class DailyAdapter extends BaseQuickAdapter<YYDailyModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYDailyTaskFragment f17193a;
+        final /* synthetic */ YYDailyTaskFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public DailyAdapter(YYDailyTaskFragment this$0) {
             super(R.layout.item_daily_task);
             Intrinsics.e(this$0, "this$0");
-            this.f17193a = this$0;
+            this.a = this$0;
         }
 
         private final String a(int i) {
-            if (this.f17193a.getDialog() == null) {
+            if (this.a.getDialog() == null) {
                 return "";
             }
-            Resources resources = this.f17193a.getResources();
+            Resources resources = this.a.getResources();
             if (resources == null) {
                 return null;
             }
@@ -87,12 +80,12 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
         private final void a(YYDailyModel yYDailyModel, int i) {
             String str = yYDailyModel == null ? null : yYDailyModel.task_type;
             String str2 = yYDailyModel == null ? null : yYDailyModel.current_level;
-            final ActivityFragmentActive a2 = this.f17193a.a();
-            final YYDailyTaskFragment yYDailyTaskFragment = this.f17193a;
-            YYRoomHttpUtils.h(str, str2, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYDailyTaskFragment$DailyAdapter$getDailyPrize$1
+            final ActivityFragmentActive a = this.a.a();
+            final YYDailyTaskFragment yYDailyTaskFragment = this.a;
+            YYRoomHttpUtils.h(str, str2, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYDailyTaskFragment$DailyAdapter$getDailyPrize$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
-                    super(a2);
+                    super(a);
                 }
 
                 /* JADX INFO: Access modifiers changed from: protected */
@@ -107,7 +100,7 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                     YYDailyTaskFragment.this.g();
                     return super.onUIFailure(i2, str3);
                 }
-            }, this.f17193a.a());
+            }, this.a.a());
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -133,7 +126,6 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(final BaseViewHolder baseViewHolder, final YYDailyModel yYDailyModel) {
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.item_image);
@@ -141,7 +133,7 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.item_title);
             TextView textView2 = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.item_value);
             if (yYDailyModel != null) {
-                ImageLoader.a(this.f17193a.a(), yYDailyModel.icon).b(R.drawable.gift_default_icon).a(imageView);
+                ImageLoader.a(this.a.a(), yYDailyModel.icon).b(R.drawable.gift_default_icon).a(imageView);
                 if (textView != null) {
                     textView.setText(yYDailyModel.name);
                 }
@@ -191,19 +183,19 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
             if (shapeTextView == null) {
                 return;
             }
-            final YYDailyTaskFragment yYDailyTaskFragment = this.f17193a;
+            final YYDailyTaskFragment yYDailyTaskFragment = this.a;
             shapeTextView.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDailyTaskFragment$DailyAdapter$r7GLUNH9_x5KplL4gq1BKuw_yiU
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     YYDailyTaskFragment.DailyAdapter.a(YYDailyModel.this, baseViewHolder, yYDailyTaskFragment, this, view);
                 }
-            }, c.j, null));
+            }, 1500L, null));
         }
     }
 
     public YYDailyTaskFragment(BaseFragment fragment) {
         Intrinsics.e(fragment, "fragment");
-        this.f17191a = fragment;
+        this.a = fragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -257,7 +249,7 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding3 = this.b;
                 if (fragmentYyDailyTaskBinding3 != null && (dailyPrizeView = fragmentYyDailyTaskBinding3.l) != null) {
-                    dailyPrizeView.a(this.f17191a);
+                    dailyPrizeView.a(this.a);
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding4 = this.b;
                 ShapeTextView shapeTextView6 = fragmentYyDailyTaskBinding4 == null ? null : fragmentYyDailyTaskBinding4.b;
@@ -282,7 +274,7 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding9 = this.b;
                 if (fragmentYyDailyTaskBinding9 != null && (dailyPrizeView3 = fragmentYyDailyTaskBinding9.n) != null) {
-                    dailyPrizeView3.a(this.f17191a);
+                    dailyPrizeView3.a(this.a);
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding10 = this.b;
                 ShapeTextView shapeTextView7 = fragmentYyDailyTaskBinding10 == null ? null : fragmentYyDailyTaskBinding10.d;
@@ -307,10 +299,10 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding15 = this.b;
                 if (fragmentYyDailyTaskBinding15 != null && (dailyPrizeView5 = fragmentYyDailyTaskBinding15.m) != null) {
-                    dailyPrizeView5.a(this.f17191a);
+                    dailyPrizeView5.a(this.a);
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding16 = this.b;
-                ShapeTextView shapeTextView8 = fragmentYyDailyTaskBinding16 == null ? null : fragmentYyDailyTaskBinding16.f16498c;
+                ShapeTextView shapeTextView8 = fragmentYyDailyTaskBinding16 == null ? null : fragmentYyDailyTaskBinding16.c;
                 if (shapeTextView8 != null) {
                     if (yYTaskRewardModel.status == 1) {
                         i5 = 0;
@@ -320,9 +312,9 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding17 = this.b;
                 DailyPrizeView dailyPrizeView11 = fragmentYyDailyTaskBinding17 == null ? null : fragmentYyDailyTaskBinding17.m;
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding18 = this.b;
-                a(dailyPrizeView11, fragmentYyDailyTaskBinding18 == null ? null : fragmentYyDailyTaskBinding18.f16498c);
+                a(dailyPrizeView11, fragmentYyDailyTaskBinding18 == null ? null : fragmentYyDailyTaskBinding18.c);
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding19 = this.b;
-                if (fragmentYyDailyTaskBinding19 != null && (shapeTextView3 = fragmentYyDailyTaskBinding19.f16498c) != null) {
+                if (fragmentYyDailyTaskBinding19 != null && (shapeTextView3 = fragmentYyDailyTaskBinding19.c) != null) {
                     shapeTextView3.setOnClickListener(this);
                 }
             } else if (i4 == 3) {
@@ -332,10 +324,10 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding21 = this.b;
                 if (fragmentYyDailyTaskBinding21 != null && (dailyPrizeView7 = fragmentYyDailyTaskBinding21.k) != null) {
-                    dailyPrizeView7.a(this.f17191a);
+                    dailyPrizeView7.a(this.a);
                 }
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding22 = this.b;
-                ShapeTextView shapeTextView9 = fragmentYyDailyTaskBinding22 == null ? null : fragmentYyDailyTaskBinding22.f16497a;
+                ShapeTextView shapeTextView9 = fragmentYyDailyTaskBinding22 == null ? null : fragmentYyDailyTaskBinding22.a;
                 if (shapeTextView9 != null) {
                     if (yYTaskRewardModel.status == 1) {
                         i5 = 0;
@@ -346,11 +338,11 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 DailyPrizeView dailyPrizeView12 = fragmentYyDailyTaskBinding23 == null ? null : fragmentYyDailyTaskBinding23.k;
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding24 = this.b;
                 if (fragmentYyDailyTaskBinding24 != null) {
-                    shapeTextView5 = fragmentYyDailyTaskBinding24.f16497a;
+                    shapeTextView5 = fragmentYyDailyTaskBinding24.a;
                 }
                 a(dailyPrizeView12, shapeTextView5);
                 FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding25 = this.b;
-                if (fragmentYyDailyTaskBinding25 != null && (shapeTextView4 = fragmentYyDailyTaskBinding25.f16497a) != null) {
+                if (fragmentYyDailyTaskBinding25 != null && (shapeTextView4 = fragmentYyDailyTaskBinding25.a) != null) {
                     shapeTextView4.setOnClickListener(this);
                 }
             }
@@ -417,7 +409,7 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
         View findViewById2 = inflate.findViewById(R.id.tv_week_title);
         Intrinsics.c(findViewById2, "headerView.findViewById(R.id.tv_week_title)");
         TextView textView = (TextView) findViewById2;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = getResources().getString(R.string.yy_task_week_title);
         Intrinsics.c(string, "resources.getString(R.string.yy_task_week_title)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(i)}, 1));
@@ -439,7 +431,7 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 layoutParams.rightMargin = DensityUtils.a(getContext(), 6.0f);
             }
             weeklyPrizeView.setLayoutParams(layoutParams);
-            BaseFragment baseFragment = this.f17191a;
+            BaseFragment baseFragment = this.a;
             FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding = this.b;
             ShapeConstraintLayout shapeConstraintLayout = fragmentYyDailyTaskBinding == null ? null : fragmentYyDailyTaskBinding.o;
             FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding2 = this.b;
@@ -459,10 +451,10 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
     /* JADX INFO: Access modifiers changed from: private */
     public static final void c(YYDailyTaskFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        YYWebViewDialogFragment a2 = new YYWebViewDialogFragment().a(this$0.f17191a, "https://activity.blued.cn/activityblued/work/7hsNIZlb");
+        YYWebViewDialogFragment a = new YYWebViewDialogFragment().a(this$0.a, "https://activity.blued.cn/activityblued/work/7hsNIZlb");
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        a2.show(childFragmentManager, "yy_daily_task_guide");
+        a.show(childFragmentManager, "yy_daily_task_guide");
     }
 
     private final void h() {
@@ -486,9 +478,9 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
                 }
             }));
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(1);
-        this.f17192c = new DailyAdapter(this);
+        this.c = new DailyAdapter(this);
         FragmentYyDailyTaskBinding fragmentYyDailyTaskBinding3 = this.b;
         RecyclerView recyclerView = fragmentYyDailyTaskBinding3 == null ? null : fragmentYyDailyTaskBinding3.q;
         if (recyclerView != null) {
@@ -499,16 +491,16 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
         if (recyclerView2 == null) {
             return;
         }
-        recyclerView2.setAdapter(this.f17192c);
+        recyclerView2.setAdapter(this.c);
     }
 
     public final DailyAdapter f() {
-        return this.f17192c;
+        return this.c;
     }
 
     public final void g() {
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYTaskModel>>(a2) { // from class: com.blued.android.module.yy_china.fragment.YYDailyTaskFragment$loadData$1
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<YYTaskModel>>(a) { // from class: com.blued.android.module.yy_china.fragment.YYDailyTaskFragment$loadData$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -594,13 +586,13 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
         dailyPrizeView.a();
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.d = YYRoomInfoManager.e().b();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_yy_daily_task, viewGroup, true);
@@ -610,7 +602,7 @@ public final class YYDailyTaskFragment extends BaseFullScreenDialog implements V
         return inflate;
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

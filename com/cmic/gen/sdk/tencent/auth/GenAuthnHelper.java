@@ -73,8 +73,8 @@ public class GenAuthnHelper extends c {
     @Override // com.cmic.gen.sdk.tencent.auth.c
     public void a(com.cmic.gen.sdk.tencent.a aVar) {
         final c.a aVar2 = new c.a(aVar);
-        this.d.postDelayed(aVar2, this.f21598c);
-        this.f21597a.a(aVar, new b() { // from class: com.cmic.gen.sdk.tencent.auth.GenAuthnHelper.4
+        this.d.postDelayed(aVar2, this.f7992c);
+        this.f7991a.a(aVar, new b() { // from class: com.cmic.gen.sdk.tencent.auth.GenAuthnHelper.4
             @Override // com.cmic.gen.sdk.tencent.auth.b
             public void a(String str, String str2, com.cmic.gen.sdk.tencent.a aVar3, JSONObject jSONObject) {
                 com.cmic.gen.sdk.tencent.e.c.b("onBusinessComplete", "onBusinessComplete");
@@ -96,7 +96,7 @@ public class GenAuthnHelper extends c {
     }
 
     public long getOverTime() {
-        return this.f21598c;
+        return this.f7992c;
     }
 
     @Override // com.cmic.gen.sdk.tencent.auth.c

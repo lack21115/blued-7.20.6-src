@@ -23,7 +23,7 @@ import java.util.Set;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23127a = "b";
+    private static final String f9519a = "b";
     private static final int b = 5;
 
     public static X509Certificate a(SslCertificate sslCertificate) {
@@ -32,7 +32,7 @@ public class b {
             try {
                 return (X509Certificate) CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(byteArray));
             } catch (CertificateException e) {
-                g.a(f23127a, "exception", e);
+                g.a(f9519a, "exception", e);
                 return null;
             }
         }
@@ -43,7 +43,7 @@ public class b {
         try {
             return (X509Certificate) CertificateFactory.getInstance("X509").generateCertificate(new ByteArrayInputStream(str.getBytes()));
         } catch (CertificateException e) {
-            String str2 = f23127a;
+            String str2 = f9519a;
             g.b(str2, "generateX509FromStr: CertificateException" + e.getMessage());
             return null;
         }
@@ -60,7 +60,7 @@ public class b {
         if (str.equals(x509Certificate.getSubjectDN().getName())) {
             return true;
         }
-        g.b(f23127a, "verify: subject name is error");
+        g.b(f9519a, "verify: subject name is error");
         return false;
     }
 
@@ -70,30 +70,30 @@ public class b {
             if (b(new X509Certificate[]{x509Certificate, x509Certificate2})) {
                 return true;
             }
-            g.b(f23127a, "verify: date not right");
+            g.b(f9519a, "verify: date not right");
             return false;
         } catch (InvalidKeyException e) {
-            String str = f23127a;
+            String str = f9519a;
             g.b(str, "verify: publickey InvalidKeyException " + e.getMessage());
             return false;
         } catch (NoSuchAlgorithmException e2) {
-            String str2 = f23127a;
+            String str2 = f9519a;
             g.b(str2, "verify: publickey NoSuchAlgorithmException " + e2.getMessage());
             return false;
         } catch (NoSuchProviderException e3) {
-            String str3 = f23127a;
+            String str3 = f9519a;
             g.b(str3, "verify: publickey NoSuchProviderException " + e3.getMessage());
             return false;
         } catch (SignatureException e4) {
-            String str4 = f23127a;
+            String str4 = f9519a;
             g.b(str4, "verify: publickey SignatureException " + e4.getMessage());
             return false;
         } catch (CertificateException e5) {
-            String str5 = f23127a;
+            String str5 = f9519a;
             g.b(str5, "verify: publickey CertificateException " + e5.getMessage());
             return false;
         } catch (Exception e6) {
-            String str6 = f23127a;
+            String str6 = f9519a;
             g.b(str6, "verify: Exception " + e6.getMessage());
             return false;
         }
@@ -108,7 +108,7 @@ public class b {
             Principal subjectDN = x509Certificate2.getSubjectDN();
             if (principal != null) {
                 if (!issuerDN.equals(principal)) {
-                    g.b(f23127a, "verify: principalIssuer not match");
+                    g.b(f9519a, "verify: principalIssuer not match");
                     return false;
                 }
                 x509CertificateArr[i].verify(x509CertificateArr[i - 1].getPublicKey());
@@ -161,10 +161,10 @@ public class b {
                         return true;
                     }
                 } while (!arrayList.contains(it.next().getSerialNumber()));
-                g.b(f23127a, "verify: certificate revoked");
+                g.b(f9519a, "verify: certificate revoked");
                 return false;
             } catch (Exception e) {
-                String str = f23127a;
+                String str = f9519a;
                 g.b(str, "verify: revoked verify exception : " + e.getMessage());
                 return false;
             }
@@ -186,16 +186,16 @@ public class b {
                 i = i2 + 1;
             } catch (CertificateExpiredException e) {
                 e = e;
-                String str = f23127a;
+                String str = f9519a;
                 g.b(str, "verifyCertificateDate: exception : " + e.getMessage());
                 return false;
             } catch (CertificateNotYetValidException e2) {
                 e = e2;
-                String str2 = f23127a;
+                String str2 = f9519a;
                 g.b(str2, "verifyCertificateDate: exception : " + e.getMessage());
                 return false;
             } catch (Exception e3) {
-                String str3 = f23127a;
+                String str3 = f9519a;
                 g.b(str3, "verifyCertificateDate : exception : " + e3.getMessage());
                 return false;
             }

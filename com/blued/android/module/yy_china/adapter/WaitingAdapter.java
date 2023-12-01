@@ -16,15 +16,13 @@ import java.util.ArrayList;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/WaitingAdapter.class */
 public class WaitingAdapter extends BaseQuickAdapter<YYAudienceModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseYYStudioFragment f16159a;
+    private BaseYYStudioFragment a;
     private ClickApplyHandleListener b;
 
     public WaitingAdapter(BaseYYStudioFragment baseYYStudioFragment) {
         super(R.layout.item_yy_waitting_layout, new ArrayList());
         this.mContext = baseYYStudioFragment.getContext();
-        this.f16159a = baseYYStudioFragment;
+        this.a = baseYYStudioFragment;
     }
 
     public void a(int i) {
@@ -40,7 +38,6 @@ public class WaitingAdapter extends BaseQuickAdapter<YYAudienceModel, BaseViewHo
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final YYAudienceModel yYAudienceModel) {
         ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.btn_reject);
@@ -49,7 +46,7 @@ public class WaitingAdapter extends BaseQuickAdapter<YYAudienceModel, BaseViewHo
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_seat);
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_header);
         textView.setText(YYRoomInfoManager.e().a(yYAudienceModel.getUid(), yYAudienceModel.getName()));
-        YYRoomInfoManager.e().b(this.f16159a.getFragmentActive(), imageView, yYAudienceModel.getUid(), yYAudienceModel.getAvatar());
+        YYRoomInfoManager.e().b(this.a.getFragmentActive(), imageView, yYAudienceModel.getUid(), yYAudienceModel.getAvatar());
         if (yYAudienceModel.mic_position == 0) {
             textView2.setText(this.mContext.getResources().getString(R.string.yy_up_seat));
         } else {

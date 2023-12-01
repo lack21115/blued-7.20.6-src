@@ -1,6 +1,7 @@
 package com.soft.blued.ui.setting.vm;
 
 import androidx.lifecycle.MutableLiveData;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -16,51 +17,59 @@ import kotlin.jvm.internal.Intrinsics;
 public final class LiveSettingViewModel extends BaseViewModel {
 
     /* renamed from: a  reason: collision with root package name */
-    private MutableLiveData<List<LiveSettingModel>> f33651a = new MutableLiveData<>();
+    private MutableLiveData<List<LiveSettingModel>> f19960a = new MutableLiveData<>();
 
-    public final void a(int i, int i2, final ActivityFragmentActive fragmentActive) {
-        Intrinsics.e(fragmentActive, "fragmentActive");
-        LiveRoomHttpUtils.b(i, i2, new BluedUIHttpResponse<BluedEntityA<LiveSettingModel>>() { // from class: com.soft.blued.ui.setting.vm.LiveSettingViewModel$onSetDataLiveSetting$1
+    public final void a(int i, int i2, final ActivityFragmentActive activityFragmentActive) {
+        Intrinsics.e(activityFragmentActive, "fragmentActive");
+        LiveRoomHttpUtils.b(i, i2, new BluedUIHttpResponse<BluedEntityA<LiveSettingModel>>(activityFragmentActive) { // from class: com.soft.blued.ui.setting.vm.LiveSettingViewModel$onSetDataLiveSetting$1
+
+            /* renamed from: a  reason: collision with root package name */
+            final /* synthetic */ ActivityFragmentActive f19962a;
+
             /* JADX INFO: Access modifiers changed from: package-private */
+            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(ActivityFragmentActive.this);
+                super((IRequestHost) activityFragmentActive);
+                this.f19962a = activityFragmentActive;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
-            public void onUIUpdate(BluedEntityA<LiveSettingModel> bluedEntity) {
-                Intrinsics.e(bluedEntity, "bluedEntity");
+            public void onUIUpdate(BluedEntityA<LiveSettingModel> bluedEntityA) {
+                Intrinsics.e(bluedEntityA, "bluedEntity");
             }
         });
     }
 
-    public final void a(final ActivityFragmentActive fragmentActive) {
-        Intrinsics.e(fragmentActive, "fragmentActive");
-        LiveRoomHttpUtils.G(new BluedUIHttpResponse<BluedEntityA<LiveSettingModel>>(this) { // from class: com.soft.blued.ui.setting.vm.LiveSettingViewModel$onLoadDataLiveSetting$1
+    public final void a(final ActivityFragmentActive activityFragmentActive) {
+        Intrinsics.e(activityFragmentActive, "fragmentActive");
+        LiveRoomHttpUtils.G(new BluedUIHttpResponse<BluedEntityA<LiveSettingModel>>(activityFragmentActive, this) { // from class: com.soft.blued.ui.setting.vm.LiveSettingViewModel$onLoadDataLiveSetting$1
+
+            /* renamed from: a  reason: collision with root package name */
+            final /* synthetic */ ActivityFragmentActive f19961a;
             final /* synthetic */ LiveSettingViewModel b;
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
-                super(ActivityFragmentActive.this);
+                super((IRequestHost) activityFragmentActive);
+                this.f19961a = activityFragmentActive;
                 this.b = this;
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
-            public void onUIUpdate(BluedEntityA<LiveSettingModel> bluedEntity) {
-                Intrinsics.e(bluedEntity, "bluedEntity");
-                if (bluedEntity.data == null) {
+            public void onUIUpdate(BluedEntityA<LiveSettingModel> bluedEntityA) {
+                Intrinsics.e(bluedEntityA, "bluedEntity");
+                if (bluedEntityA.data == null) {
                     return;
                 }
-                this.b.d().setValue(bluedEntity.data);
+                this.b.d().setValue(bluedEntityA.data);
             }
         });
     }
 
     public final MutableLiveData<List<LiveSettingModel>> d() {
-        return this.f33651a;
+        return this.f19960a;
     }
 }

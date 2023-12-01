@@ -24,18 +24,18 @@ public final class PrivFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25535a;
+    public final String f11847a;
     public final byte[] b;
 
     PrivFrame(Parcel parcel) {
-        super(j.f7360a);
-        this.f25535a = parcel.readString();
+        super(j.f4521a);
+        this.f11847a = parcel.readString();
         this.b = parcel.createByteArray();
     }
 
     public PrivFrame(String str, byte[] bArr) {
-        super(j.f7360a);
-        this.f25535a = str;
+        super(j.f4521a);
+        this.f11847a = str;
         this.b = bArr;
     }
 
@@ -49,7 +49,7 @@ public final class PrivFrame extends Id3Frame {
                 }
                 PrivFrame privFrame = (PrivFrame) obj;
                 z = false;
-                if (u.a(this.f25535a, privFrame.f25535a)) {
+                if (u.a(this.f11847a, privFrame.f11847a)) {
                     if (!Arrays.equals(this.b, privFrame.b)) {
                         return false;
                     }
@@ -62,13 +62,13 @@ public final class PrivFrame extends Id3Frame {
     }
 
     public int hashCode() {
-        String str = this.f25535a;
+        String str = this.f11847a;
         return (((str != null ? str.hashCode() : 0) + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + Arrays.hashCode(this.b);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25535a);
+        parcel.writeString(this.f11847a);
         parcel.writeByteArray(this.b);
     }
 }

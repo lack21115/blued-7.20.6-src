@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import com.blued.android.core.AppInfo;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.utils.DensityUtils;
@@ -17,7 +18,6 @@ import com.blued.android.module.common.base.dialog.CommonDialogFragment;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.ToastUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.live_china.model.LiveGuideType;
 import com.blued.das.message.MessageProtos;
 import com.blued.das.vip.VipProtos;
 import com.bytedance.applog.tracker.Tracker;
@@ -31,6 +31,7 @@ import com.soft.blued.ui.msg.manager.MsgBoxManager;
 import com.soft.blued.ui.user.presenter.PayUtils;
 import com.soft.blued.utils.BluedPreferences;
 import com.soft.blued.utils.StringUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,7 +40,7 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CommonTopTitleNoTrans f31732c;
+    private CommonTopTitleNoTrans f18042c;
     private View d;
     private String e;
     private TextView f;
@@ -79,7 +80,7 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
     }
 
     private void i() {
-        this.j = (TextView) this.d.findViewById(2131371285);
+        this.j = (TextView) this.d.findViewById(R.id.tv_distance);
         TwoWaysBar twoWaysBar = (TwoWaysBar) this.d.findViewById(R.id.bar_distance);
         this.i = twoWaysBar;
         twoWaysBar.d = 4;
@@ -87,7 +88,7 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
             @Override // com.soft.blued.ui.find.view.TwoWaysBar.TwoWaysBarListner
             public void a(int i, int i2) {
                 if (i == 0 && i2 == 0) {
-                    BluedPreferences.U(LiveGuideType.GUIDE_TYPE_OFFICIAL_SAFETY_NOTICE);
+                    BluedPreferences.U("0-0");
                 } else if (i == i2) {
                     int i3 = i;
                     if (i == 100) {
@@ -95,7 +96,7 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
                     }
                     StringBuilder sb = new StringBuilder();
                     sb.append(i3);
-                    sb.append("-");
+                    sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     int i4 = i3 + 1;
                     if (i4 >= 100) {
                         i4 = 100;
@@ -106,7 +107,7 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
                 } else {
                     StringBuilder sb2 = new StringBuilder();
                     sb2.append(i);
-                    sb2.append("-");
+                    sb2.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     sb2.append(i2 >= 100 ? 100 : i2);
                     BluedPreferences.U(sb2.toString());
                 }
@@ -188,7 +189,7 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
             }
         });
         this.m = this.d.findViewById(R.id.filter_lay);
-        this.l.setChecked(BluedPreferences.m9667do());
+        this.l.setChecked(BluedPreferences.m6618do());
         this.l.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() { // from class: com.soft.blued.ui.msg.MsgBoxSettingDialogFragment.6
             @Override // android.widget.CompoundButton.OnCheckedChangeListener
             public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
@@ -197,7 +198,7 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
                 MsgBoxSettingDialogFragment.this.b = z;
             }
         });
-        this.m.setVisibility(BluedPreferences.m9667do() ? 8 : 0);
+        this.m.setVisibility(BluedPreferences.m6618do() ? 8 : 0);
         this.m.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.msg.MsgBoxSettingDialogFragment.7
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -234,10 +235,9 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
             ToastUtils.a(getResources().getString(R.string.msg_mute_box_close));
         }
         ChatHttpUtils.a(new BluedUIHttpResponse(a()) { // from class: com.soft.blued.ui.msg.MsgBoxSettingDialogFragment.8
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
-        }, BluedPreferences.cG(), BluedPreferences.cH(), MsgBoxManager.a().c(), a());
+        }, BluedPreferences.cG(), BluedPreferences.cH(), MsgBoxManager.a().c(), (IRequestHost) a());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -245,22 +245,21 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
         PayUtils.a(getContext(), this.k, "msg_no_disturb", 28, VipProtos.FromType.UNKNOWN_FROM);
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public void a(View view) {
         this.d = view;
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-        this.f31732c = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(getResources().getString(R.string.msg_mute_box));
-        this.f31732c.setRightText(R.string.done);
-        this.f31732c.setLeftClickListener(this);
-        this.f31732c.setRightClickListener(this);
-        this.f31732c.getTitleBackground().setBackground(new ColorDrawable(0));
-        ShapeTextView rightTextView = this.f31732c.getRightTextView();
+        CommonTopTitleNoTrans findViewById = view.findViewById(R.id.top_title);
+        this.f18042c = findViewById;
+        findViewById.setCenterText(getResources().getString(R.string.msg_mute_box));
+        this.f18042c.setRightText((int) R.string.done);
+        this.f18042c.setLeftClickListener(this);
+        this.f18042c.setRightClickListener(this);
+        this.f18042c.getTitleBackground().setBackground(new ColorDrawable(0));
+        ShapeTextView rightTextView = this.f18042c.getRightTextView();
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) rightTextView.getLayoutParams();
         layoutParams.rightMargin = DensityUtils.a(getContext(), 10.0f);
         rightTextView.setLayoutParams(layoutParams);
         rightTextView.setTextColor(getResources().getColor(2131101766));
-        ImageView leftImg = this.f31732c.getLeftImg();
+        ImageView leftImg = this.f18042c.getLeftImg();
         RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) leftImg.getLayoutParams();
         layoutParams2.leftMargin = DensityUtils.a(getContext(), 10.0f);
         leftImg.setLayoutParams(layoutParams2);
@@ -276,12 +275,10 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
         this.k = getArguments().getInt("vipFrom");
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int d() {
         return R.layout.fragment_main_msg_box_setting;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int f() {
         return (int) ((AppInfo.m / 6.0f) * 5.0f);
     }
@@ -304,12 +301,11 @@ public class MsgBoxSettingDialogFragment extends CommonDialogFragment implements
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         this.n = false;
         if (UserInfo.getInstance().getLoginUserInfo().vip_grade == 0) {
-            this.i.a(LiveGuideType.GUIDE_TYPE_OFFICIAL_SAFETY_NOTICE, 101);
+            this.i.a("0-0", 101);
             this.i.setEnabled(false);
             return;
         }

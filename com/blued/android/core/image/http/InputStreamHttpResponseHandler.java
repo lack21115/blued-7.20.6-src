@@ -10,15 +10,13 @@ import okhttp3.ResponseBody;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/image/http/InputStreamHttpResponseHandler.class */
 public abstract class InputStreamHttpResponseHandler extends HttpResponseHandler<InputStream> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ResponseBody f9560a;
+    private ResponseBody a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.blued.android.core.net.http.AbstractHttpResponseHandler
     /* renamed from: a */
     public InputStream parseResponse(int i, ResponseBody responseBody) {
-        this.f9560a = responseBody;
+        this.a = responseBody;
         if (responseBody != null) {
             return new FilterInputStream(responseBody.byteStream()) { // from class: com.blued.android.core.image.http.InputStreamHttpResponseHandler.1
                 @Override // java.io.FilterInputStream, java.io.InputStream
@@ -39,10 +37,10 @@ public abstract class InputStreamHttpResponseHandler extends HttpResponseHandler
         if (ImageLoader.a()) {
             Log.e("IMAGE", "InputStreamHttpResponseHandler : close");
         }
-        ResponseBody responseBody = this.f9560a;
+        ResponseBody responseBody = this.a;
         if (responseBody != null) {
             responseBody.close();
-            this.f9560a = null;
+            this.a = null;
         }
     }
 

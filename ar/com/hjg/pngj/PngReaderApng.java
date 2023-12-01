@@ -40,9 +40,9 @@ public class PngReaderApng extends PngReaderByte {
             @Override // ar.com.hjg.pngj.ChunkSeqReaderPng, ar.com.hjg.pngj.ChunkSeqReader
             public void a(ChunkReader chunkReader) {
                 super.a(chunkReader);
-                if (chunkReader.a().f3660c.equals("fcTL")) {
+                if (chunkReader.a().f3612c.equals("fcTL")) {
                     PngReaderApng.this.h++;
-                    List<PngChunk> m = PngReaderApng.this.f3648c.m();
+                    List<PngChunk> m = PngReaderApng.this.f3600c.m();
                     PngReaderApng.this.k = (PngChunkFCTL) m.get(m.size() - 1);
                     if (chunkReader.a().d() != PngReaderApng.this.k.b().d()) {
                         throw new PngjInputException("something went wrong");

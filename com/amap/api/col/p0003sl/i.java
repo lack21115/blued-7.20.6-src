@@ -14,20 +14,17 @@ import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.services.district.DistrictSearchQuery;
 import com.anythink.core.common.l;
 import com.autonavi.aps.amapapi.utils.b;
+import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 import org.json.JSONObject;
 
 /* renamed from: com.amap.api.col.3sl.i  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/i.class */
 public final class i {
-
-    /* renamed from: c  reason: collision with root package name */
-    a f5130c;
+    a c;
     private Context d;
     private WebView f;
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f5129a = new Object();
+    Object a = new Object();
     private AMapLocationClient e = null;
     private String g = "AMap.Geolocation.cbk";
     AMapLocationClientOption b = null;
@@ -50,10 +47,10 @@ public final class i {
 
     public i(Context context, WebView webView) {
         this.f = null;
-        this.f5130c = null;
+        this.c = null;
         this.d = context.getApplicationContext();
         this.f = webView;
-        this.f5130c = new a();
+        this.c = new a();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:37:0x00c0 A[Catch: all -> 0x0114, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x0114, blocks: (B:35:0x00b2, B:37:0x00c0, B:40:0x00da, B:43:0x00e5, B:45:0x00f0, B:38:0x00ce), top: B:58:0x00b2 }] */
@@ -79,16 +76,16 @@ public final class i {
         JSONObject jSONObject = new JSONObject();
         try {
             if (aMapLocation == null) {
-                jSONObject.put("errorCode", -1);
+                jSONObject.put(MyLocationStyle.ERROR_CODE, -1);
                 jSONObject.put(MyLocationStyle.ERROR_INFO, "unknownError");
             } else if (aMapLocation.getErrorCode() == 0) {
-                jSONObject.put("errorCode", 0);
+                jSONObject.put(MyLocationStyle.ERROR_CODE, 0);
                 JSONObject jSONObject2 = new JSONObject();
                 jSONObject2.put("x", aMapLocation.getLongitude());
                 jSONObject2.put("y", aMapLocation.getLatitude());
                 jSONObject2.put(l.P, aMapLocation.getAccuracy());
                 jSONObject2.put("type", aMapLocation.getLocationType());
-                jSONObject2.put("country", aMapLocation.getCountry());
+                jSONObject2.put(DistrictSearchQuery.KEYWORDS_COUNTRY, aMapLocation.getCountry());
                 jSONObject2.put(DistrictSearchQuery.KEYWORDS_PROVINCE, aMapLocation.getProvince());
                 jSONObject2.put(DistrictSearchQuery.KEYWORDS_CITY, aMapLocation.getCity());
                 jSONObject2.put("cityCode", aMapLocation.getCityCode());
@@ -98,9 +95,9 @@ public final class i {
                 jSONObject2.put("streetNum", aMapLocation.getStreetNum());
                 jSONObject2.put("floor", aMapLocation.getFloor());
                 jSONObject2.put("address", aMapLocation.getAddress());
-                jSONObject.put("result", jSONObject2);
+                jSONObject.put(com.alipay.sdk.util.l.c, jSONObject2);
             } else {
-                jSONObject.put("errorCode", aMapLocation.getErrorCode());
+                jSONObject.put(MyLocationStyle.ERROR_CODE, aMapLocation.getErrorCode());
                 jSONObject.put(MyLocationStyle.ERROR_INFO, aMapLocation.getErrorInfo());
                 jSONObject.put("locationDetail", aMapLocation.getLocationDetail());
             }
@@ -118,13 +115,13 @@ public final class i {
                         @Override // java.lang.Runnable
                         public final void run() {
                             WebView webView = i.this.f;
-                            Tracker.loadUrl(webView, "javascript:" + i.this.g + "('" + str + "')");
+                            Tracker.loadUrl(webView, BridgeUtil.JAVASCRIPT_STR + i.this.g + "('" + str + "')");
                         }
                     });
                     return;
                 }
                 WebView webView = this.f;
-                webView.evaluateJavascript("javascript:" + this.g + "('" + str + "')", new ValueCallback<String>() { // from class: com.amap.api.col.3sl.i.1
+                webView.evaluateJavascript(BridgeUtil.JAVASCRIPT_STR + this.g + "('" + str + "')", new ValueCallback<String>() { // from class: com.amap.api.col.3sl.i.1
                     @Override // android.webkit.ValueCallback
                     public final /* bridge */ /* synthetic */ void onReceiveValue(String str2) {
                     }
@@ -148,7 +145,7 @@ public final class i {
             if (this.e == null) {
                 AMapLocationClient aMapLocationClient = new AMapLocationClient(this.d);
                 this.e = aMapLocationClient;
-                aMapLocationClient.setLocationListener(this.f5130c);
+                aMapLocationClient.setLocationListener(this.c);
             }
             this.h = true;
         } catch (Throwable th) {
@@ -156,10 +153,10 @@ public final class i {
     }
 
     public final void b() {
-        synchronized (this.f5129a) {
+        synchronized (this.a) {
             this.h = false;
             if (this.e != null) {
-                this.e.unRegisterLocationListener(this.f5130c);
+                this.e.unRegisterLocationListener(this.c);
                 this.e.stopLocation();
                 this.e.onDestroy();
                 this.e = null;
@@ -170,7 +167,7 @@ public final class i {
 
     @JavascriptInterface
     public final void getLocation(String str) {
-        synchronized (this.f5129a) {
+        synchronized (this.a) {
             if (this.h) {
                 a(str);
                 if (this.e != null) {

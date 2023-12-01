@@ -12,13 +12,12 @@ import java.lang.reflect.Method;
 /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/motion/utils/CustomSupport.class */
 public class CustomSupport {
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.constraintlayout.motion.utils.CustomSupport$1  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/motion/utils/CustomSupport$1.class */
-    public static /* synthetic */ class AnonymousClass1 {
+    static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2163a;
+        static final /* synthetic */ int[] f2115a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -28,33 +27,33 @@ public class CustomSupport {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ConstraintAttribute.AttributeType.values().length];
-            f2163a = iArr;
+            f2115a = iArr;
             try {
                 iArr[ConstraintAttribute.AttributeType.INT_TYPE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2163a[ConstraintAttribute.AttributeType.FLOAT_TYPE.ordinal()] = 2;
+                f2115a[ConstraintAttribute.AttributeType.FLOAT_TYPE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2163a[ConstraintAttribute.AttributeType.COLOR_DRAWABLE_TYPE.ordinal()] = 3;
+                f2115a[ConstraintAttribute.AttributeType.COLOR_DRAWABLE_TYPE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2163a[ConstraintAttribute.AttributeType.COLOR_TYPE.ordinal()] = 4;
+                f2115a[ConstraintAttribute.AttributeType.COLOR_TYPE.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f2163a[ConstraintAttribute.AttributeType.STRING_TYPE.ordinal()] = 5;
+                f2115a[ConstraintAttribute.AttributeType.STRING_TYPE.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f2163a[ConstraintAttribute.AttributeType.BOOLEAN_TYPE.ordinal()] = 6;
+                f2115a[ConstraintAttribute.AttributeType.BOOLEAN_TYPE.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f2163a[ConstraintAttribute.AttributeType.DIMENSION_TYPE.ordinal()] = 7;
+                f2115a[ConstraintAttribute.AttributeType.DIMENSION_TYPE.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -70,7 +69,7 @@ public class CustomSupport {
         String str = "set" + constraintAttribute.getName();
         try {
             boolean z = true;
-            switch (AnonymousClass1.f2163a[constraintAttribute.getType().ordinal()]) {
+            switch (AnonymousClass1.f2115a[constraintAttribute.getType().ordinal()]) {
                 case 1:
                     cls.getMethod(str, Integer.TYPE).invoke(view, Integer.valueOf((int) fArr[0]));
                     return;

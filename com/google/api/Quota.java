@@ -351,8 +351,8 @@ public final class Quota extends GeneratedMessageV3 implements QuotaOrBuilder {
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -676,6 +676,7 @@ public final class Quota extends GeneratedMessageV3 implements QuotaOrBuilder {
         this.metricRules_ = Collections.emptyList();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private Quota(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {

@@ -8,16 +8,16 @@ import java.lang.reflect.Field;
 public class ObjectWrapper<T> extends IObjectWrapper.Stub {
 
     /* renamed from: a  reason: collision with root package name */
-    private final T f22458a;
+    private final T f8850a;
 
     private ObjectWrapper(T t) {
-        this.f22458a = t;
+        this.f8850a = t;
     }
 
     public static <T> T unwrap(IObjectWrapper iObjectWrapper) {
         int i;
         if (iObjectWrapper instanceof ObjectWrapper) {
-            return ((ObjectWrapper) iObjectWrapper).f22458a;
+            return ((ObjectWrapper) iObjectWrapper).f8850a;
         }
         IBinder asBinder = iObjectWrapper.asBinder();
         Field[] declaredFields = asBinder.getClass().getDeclaredFields();

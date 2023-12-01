@@ -4,11 +4,11 @@ package com.opos.cmn.an.f.a.b;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f24518a;
+    public final String f10831a;
     public final Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Throwable f24519c;
+    public final Throwable f10832c;
     public final int d;
     public final long e;
     public final String f;
@@ -19,11 +19,11 @@ public class d {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24520a;
+        private String f10833a;
         private Object b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Throwable f24521c;
+        private Throwable f10834c;
         private int d;
         private long e = 0;
         private String f = "";
@@ -46,12 +46,12 @@ public class d {
         }
 
         public a a(String str) {
-            this.f24520a = str;
+            this.f10833a = str;
             return this;
         }
 
         public a a(Throwable th) {
-            this.f24521c = th;
+            this.f10834c = th;
             return this;
         }
 
@@ -76,9 +76,9 @@ public class d {
     }
 
     private d(a aVar) {
-        this.f24518a = aVar.f24520a;
+        this.f10831a = aVar.f10833a;
         this.b = aVar.b;
-        this.f24519c = aVar.f24521c;
+        this.f10832c = aVar.f10834c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;

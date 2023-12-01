@@ -8,11 +8,11 @@ import org.json.JSONObject;
 public class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ g f34955a;
+    final /* synthetic */ g f21264a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public e(g gVar) {
-        this.f34955a = gVar;
+        this.f21264a = gVar;
     }
 
     @Override // java.lang.Runnable
@@ -26,27 +26,27 @@ public class e implements Runnable {
         MappedByteBuffer mappedByteBuffer4;
         long j2;
         try {
-            obj = this.f34955a.f34957a;
+            obj = this.f21264a.f21266a;
             synchronized (obj) {
-                jSONObject = this.f34955a.f34958c;
+                jSONObject = this.f21264a.f21267c;
                 byte[] a2 = g.a(jSONObject.toString().getBytes("ISO8859-1"));
                 if (a2 == null) {
                     return;
                 }
-                j = this.f34955a.e;
+                j = this.f21264a.e;
                 if (a2.length + 10 > j) {
-                    this.f34955a.e = a2.length + 10;
-                    g gVar = this.f34955a;
-                    j2 = this.f34955a.e;
+                    this.f21264a.e = a2.length + 10;
+                    g gVar = this.f21264a;
+                    j2 = this.f21264a.e;
                     gVar.a(j2);
                 }
-                mappedByteBuffer = this.f34955a.d;
+                mappedByteBuffer = this.f21264a.d;
                 mappedByteBuffer.putInt(0, a2.length);
-                mappedByteBuffer2 = this.f34955a.d;
+                mappedByteBuffer2 = this.f21264a.d;
                 mappedByteBuffer2.position(10);
-                mappedByteBuffer3 = this.f34955a.d;
+                mappedByteBuffer3 = this.f21264a.d;
                 mappedByteBuffer3.put(a2);
-                mappedByteBuffer4 = this.f34955a.d;
+                mappedByteBuffer4 = this.f21264a.d;
                 mappedByteBuffer4.force();
             }
         } catch (Exception e) {

@@ -10,6 +10,7 @@ import com.airbnb.lottie.model.animatable.AnimatableSplitDimensionPathValue;
 import com.airbnb.lottie.model.animatable.AnimatableValue;
 import com.airbnb.lottie.utils.Utils;
 import com.airbnb.lottie.value.Keyframe;
+import com.amap.api.col.p0003sl.iu;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -52,7 +53,7 @@ public class AnimatablePathValueParser {
                 } else if (nextName.equals("x")) {
                     z2 = true;
                 }
-            } else if (nextName.equals("k")) {
+            } else if (nextName.equals(iu.k)) {
                 z2 = false;
             }
             if (!z2) {

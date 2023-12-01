@@ -7,9 +7,8 @@ import java.io.IOException;
 import java.io.Writer;
 import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/io/AppendableWriter.class */
-public class AppendableWriter extends Writer {
+class AppendableWriter extends Writer {
     private boolean closed;
     private final Appendable target;
 

@@ -1,6 +1,5 @@
 package com.soft.blued.ui.find.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -35,11 +34,11 @@ import java.util.TimerTask;
 public class HelloStateDialogFragment extends BaseDialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f30333a;
+    public View f16643a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f30334c;
+    private TextView f16644c;
     private ImageView d;
     private View e;
     private View f;
@@ -73,21 +72,21 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
     }
 
     private void d() {
-        this.f30334c = (TextView) this.f30333a.findViewById(2131372754);
-        this.d = (ImageView) this.f30333a.findViewById(R.id.iv_center);
-        this.e = this.f30333a.findViewById(R.id.fl_center);
-        this.f = this.f30333a.findViewById(2131365051);
-        this.g = (LinearLayout) this.f30333a.findViewById(R.id.ll_text);
-        this.h = (LinearLayout) this.f30333a.findViewById(R.id.ll_call_info);
-        this.i = (TextView) this.f30333a.findViewById(R.id.tv_recommend_people);
-        this.j = (TextView) this.f30333a.findViewById(R.id.tv_popularize);
-        this.k = (TextView) this.f30333a.findViewById(R.id.tv_visit_cnt);
-        this.l = (PileLayout) this.f30333a.findViewById(R.id.pile_layout);
-        this.m = (TextView) this.f30333a.findViewById(R.id.tv_contDown);
-        this.n = (TextView) this.f30333a.findViewById(R.id.tv_promoting);
-        this.o = (LinearLayout) this.f30333a.findViewById(R.id.ll_verify);
-        this.p = (ImageView) this.f30333a.findViewById(2131365207);
-        this.q = (TextView) this.f30333a.findViewById(2131371023);
+        this.f16644c = (TextView) this.f16643a.findViewById(2131372754);
+        this.d = (ImageView) this.f16643a.findViewById(R.id.iv_center);
+        this.e = this.f16643a.findViewById(R.id.fl_center);
+        this.f = this.f16643a.findViewById(R.id.iv_anim);
+        this.g = (LinearLayout) this.f16643a.findViewById(R.id.ll_text);
+        this.h = (LinearLayout) this.f16643a.findViewById(R.id.ll_call_info);
+        this.i = (TextView) this.f16643a.findViewById(R.id.tv_recommend_people);
+        this.j = (TextView) this.f16643a.findViewById(R.id.tv_popularize);
+        this.k = (TextView) this.f16643a.findViewById(R.id.tv_visit_cnt);
+        this.l = (PileLayout) this.f16643a.findViewById(R.id.pile_layout);
+        this.m = (TextView) this.f16643a.findViewById(R.id.tv_contDown);
+        this.n = (TextView) this.f16643a.findViewById(R.id.tv_promoting);
+        this.o = (LinearLayout) this.f16643a.findViewById(R.id.ll_verify);
+        this.p = (ImageView) this.f16643a.findViewById(2131365207);
+        this.q = (TextView) this.f16643a.findViewById(R.id.tv_btn);
         if (this.s.call_status == 5) {
             this.q.setText(getResources().getString(R.string.call_again));
         } else {
@@ -121,7 +120,7 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
                             @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
                             public void done(boolean z) {
                                 if (z) {
-                                    CallHelloManager.a().a((Context) HomeActivity.f30985c, (IRequestHost) null, false, 4);
+                                    CallHelloManager.a().a((Context) HomeActivity.f17295c, (IRequestHost) null, false, 4);
                                 }
                             }
                         });
@@ -137,13 +136,13 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
         this.o.setVisibility(8);
         this.h.setVisibility(8);
         if (CallHelloManager.a().b().is_quietly == 1) {
-            this.f30334c.setText(R.string.call_secret_open_successful);
+            this.f16644c.setText(R.string.call_secret_open_successful);
             this.n.setText(R.string.call_secret_running);
         } else {
             if (CallHelloManager.a().h()) {
-                this.f30334c.setText(R.string.open_twice_call_success);
+                this.f16644c.setText(R.string.open_twice_call_success);
             } else {
-                this.f30334c.setText(R.string.call_open_successful);
+                this.f16644c.setText(R.string.call_open_successful);
             }
             if (CallHelloManager.a().g()) {
                 this.n.setText(R.string.super_hello_name_ing);
@@ -168,7 +167,7 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
         this.n.setVisibility(8);
         this.o.setVisibility(0);
         this.h.setVisibility(8);
-        this.f30334c.setText(getResources().getString(R.string.call_under_review));
+        this.f16644c.setText(getResources().getString(R.string.call_under_review));
         this.d.setVisibility(0);
         this.d.setImageResource(R.drawable.icon_call_verify);
         this.e.setVisibility(8);
@@ -182,12 +181,12 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
         this.h.setVisibility(0);
         this.i.setText(R.string.call_recommend_people);
         if (CallHelloManager.a().b().is_quietly == 1) {
-            this.f30334c.setText(getResources().getString(R.string.call_secret_running));
+            this.f16644c.setText(getResources().getString(R.string.call_secret_running));
         } else if (CallHelloManager.a().g()) {
-            this.f30334c.setText(R.string.super_hello_name_ing);
+            this.f16644c.setText(R.string.super_hello_name_ing);
             this.i.setText(R.string.super_call_recommend_people);
         } else {
-            this.f30334c.setText(R.string.hello_name_ing);
+            this.f16644c.setText(R.string.hello_name_ing);
         }
         this.n.setText(R.string.call_spotlight_promoting);
         this.n.setVisibility(0);
@@ -212,12 +211,12 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
         this.h.setVisibility(0);
         this.i.setText(R.string.call_recommend_people);
         if (CallHelloManager.a().b().is_quietly == 1) {
-            this.f30334c.setText(getResources().getString(R.string.call_secret_complete));
+            this.f16644c.setText(getResources().getString(R.string.call_secret_complete));
         } else if (CallHelloManager.a().g()) {
             this.i.setText(R.string.super_call_recommend_people);
-            this.f30334c.setText(getResources().getString(R.string.super_call_complete));
+            this.f16644c.setText(getResources().getString(R.string.super_call_complete));
         } else {
-            this.f30334c.setText(getResources().getString(R.string.call_complete));
+            this.f16644c.setText(getResources().getString(R.string.call_complete));
         }
         this.n.setText(R.string.call_spotlight_promoted);
         this.n.setVisibility(0);
@@ -287,7 +286,6 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
         }, 0L, 1000L);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (getArguments() != null) {
@@ -298,18 +296,16 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        if (this.f30333a == null) {
-            this.f30333a = layoutInflater.inflate(R.layout.dialog_hello_state_new, viewGroup, false);
+        if (this.f16643a == null) {
+            this.f16643a = layoutInflater.inflate(R.layout.dialog_hello_state_new, viewGroup, false);
             d();
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
         }
-        return this.f30333a;
+        return this.f16643a;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         Timer timer = this.t;
@@ -319,7 +315,6 @@ public class HelloStateDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         View view = this.f;

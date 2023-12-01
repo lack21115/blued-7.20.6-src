@@ -24,8 +24,8 @@ public class LiveFloatManagerProxy extends BaseProxy<ILiveFloatManager> implemen
 
     @Override // com.blued.android.module.base.live.ILiveFloatManager
     public boolean a(Context context) {
-        if (this.f10426a != 0) {
-            return ((ILiveFloatManager) this.f10426a).a(context);
+        if (this.a != 0) {
+            return ((ILiveFloatManager) this.a).a(context);
         }
         return false;
     }

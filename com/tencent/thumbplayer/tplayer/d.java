@@ -13,12 +13,12 @@ import java.lang.reflect.Proxy;
 public class d implements InvocationHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f39407a;
+    private b f25716a;
     private q b;
 
     public d(b bVar) {
-        this.f39407a = bVar;
-        this.b = new q(bVar.b(), this.f39407a.a(), this.f39407a);
+        this.f25716a = bVar;
+        this.b = new q(bVar.b(), this.f25716a.a(), this.f25716a);
     }
 
     private int a(Object[] objArr) {
@@ -29,7 +29,7 @@ public class d implements InvocationHandler {
     }
 
     private boolean a(Method method, Object[] objArr) {
-        return n.a(this.f39407a.getClass(), method.getName(), objArr) != null;
+        return n.a(this.f25716a.getClass(), method.getName(), objArr) != null;
     }
 
     private Object b(Method method, Object[] objArr) {
@@ -43,7 +43,7 @@ public class d implements InvocationHandler {
             return null;
         }
         Object a2 = this.b.a(name, objArr2);
-        String b = this.f39407a.b();
+        String b = this.f25716a.b();
         TPLogUtil.i(b, "dealThreadSwitch: " + name + ", var count:" + a(objArr2) + ", result:" + a2);
         return a2;
     }
@@ -59,7 +59,7 @@ public class d implements InvocationHandler {
                 return objArr;
             } catch (Exception e) {
                 e = e;
-                b = this.f39407a.b();
+                b = this.f25716a.b();
                 sb = new StringBuilder("setDataSource, fromFd has exception:");
             }
         } else if (objArr[0] == null || !(objArr[0] instanceof AssetFileDescriptor)) {
@@ -72,7 +72,7 @@ public class d implements InvocationHandler {
                 return objArr;
             } catch (Exception e2) {
                 e = e2;
-                b = this.f39407a.b();
+                b = this.f25716a.b();
                 sb = new StringBuilder("setDataSource, fromFd has exception:");
             }
         }
@@ -82,11 +82,11 @@ public class d implements InvocationHandler {
     }
 
     public Object a() {
-        return Proxy.newProxyInstance(this.f39407a.getClass().getClassLoader(), this.f39407a.getClass().getInterfaces(), this);
+        return Proxy.newProxyInstance(this.f25716a.getClass().getClassLoader(), this.f25716a.getClass().getInterfaces(), this);
     }
 
     @Override // java.lang.reflect.InvocationHandler
     public Object invoke(Object obj, Method method, Object[] objArr) {
-        return !a(method, objArr) ? method.invoke(this.f39407a, objArr) : b(method, objArr);
+        return !a(method, objArr) ? method.invoke(this.f25716a, objArr) : b(method, objArr);
     }
 }

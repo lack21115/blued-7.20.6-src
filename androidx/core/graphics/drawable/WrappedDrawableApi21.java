@@ -57,7 +57,7 @@ public class WrappedDrawableApi21 extends WrappedDrawableApi14 {
             r1 = 21
             if (r0 != r1) goto L38
             r0 = r3
-            android.graphics.drawable.Drawable r0 = r0.f2474c
+            android.graphics.drawable.Drawable r0 = r0.f2426c
             r7 = r0
             r0 = r7
             boolean r0 = r0 instanceof android.graphics.drawable.GradientDrawable
@@ -85,22 +85,22 @@ public class WrappedDrawableApi21 extends WrappedDrawableApi14 {
 
     @Override // android.graphics.drawable.Drawable
     public Rect getDirtyBounds() {
-        return this.f2474c.getDirtyBounds();
+        return this.f2426c.getDirtyBounds();
     }
 
     @Override // android.graphics.drawable.Drawable
     public void getOutline(Outline outline) {
-        this.f2474c.getOutline(outline);
+        this.f2426c.getOutline(outline);
     }
 
     @Override // android.graphics.drawable.Drawable
     public boolean isProjected() {
         Method method;
-        if (this.f2474c == null || (method = d) == null) {
+        if (this.f2426c == null || (method = d) == null) {
             return false;
         }
         try {
-            return ((Boolean) method.invoke(this.f2474c, new Object[0])).booleanValue();
+            return ((Boolean) method.invoke(this.f2426c, new Object[0])).booleanValue();
         } catch (Exception e) {
             Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e);
             return false;
@@ -109,12 +109,12 @@ public class WrappedDrawableApi21 extends WrappedDrawableApi14 {
 
     @Override // android.graphics.drawable.Drawable
     public void setHotspot(float f, float f2) {
-        this.f2474c.setHotspot(f, f2);
+        this.f2426c.setHotspot(f, f2);
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setHotspotBounds(int i, int i2, int i3, int i4) {
-        this.f2474c.setHotspotBounds(i, i2, i3, i4);
+        this.f2426c.setHotspotBounds(i, i2, i3, i4);
     }
 
     @Override // androidx.core.graphics.drawable.WrappedDrawableApi14, android.graphics.drawable.Drawable
@@ -131,7 +131,7 @@ public class WrappedDrawableApi21 extends WrappedDrawableApi14 {
         if (a()) {
             super.setTint(i);
         } else {
-            this.f2474c.setTint(i);
+            this.f2426c.setTint(i);
         }
     }
 
@@ -140,7 +140,7 @@ public class WrappedDrawableApi21 extends WrappedDrawableApi14 {
         if (a()) {
             super.setTintList(colorStateList);
         } else {
-            this.f2474c.setTintList(colorStateList);
+            this.f2426c.setTintList(colorStateList);
         }
     }
 
@@ -149,7 +149,7 @@ public class WrappedDrawableApi21 extends WrappedDrawableApi14 {
         if (a()) {
             super.setTintMode(mode);
         } else {
-            this.f2474c.setTintMode(mode);
+            this.f2426c.setTintMode(mode);
         }
     }
 }

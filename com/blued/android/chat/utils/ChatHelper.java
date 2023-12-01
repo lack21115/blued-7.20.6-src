@@ -326,12 +326,12 @@ public class ChatHelper {
                 if (ChatManager.clientType != ChatManager.ClientType.CHINA || jSONObject.has("msgSource")) {
                     Gson gson2 = new Gson();
                     if (ChatManager.clientType == ChatManager.ClientType.INTERNATIONAL) {
-                        MsgReceiveModelInter msgReceiveModelInter = (MsgReceiveModelInter) gson2.fromJson(str, (Class<Object>) MsgReceiveModelInter.class);
+                        MsgReceiveModelInter msgReceiveModelInter = (MsgReceiveModelInter) gson2.fromJson(str, MsgReceiveModelInter.class);
                         if (msgReceiveModelInter != null) {
                             return msgReceiveModelInter.msg_receive_from;
                         }
                         return -1;
-                    } else if (ChatManager.clientType != ChatManager.ClientType.CHINA || (msgReceiveModelChina = (MsgReceiveModelChina) gson2.fromJson(str, (Class<Object>) MsgReceiveModelChina.class)) == null || msgReceiveModelChina.msgSource == null) {
+                    } else if (ChatManager.clientType != ChatManager.ClientType.CHINA || (msgReceiveModelChina = (MsgReceiveModelChina) gson2.fromJson(str, MsgReceiveModelChina.class)) == null || msgReceiveModelChina.msgSource == null) {
                         return -1;
                     } else {
                         return msgReceiveModelChina.msgSource.type;
@@ -395,7 +395,7 @@ public class ChatHelper {
             return false;
         }
         if (chattingModel.msgMapExtra == null && !TextUtils.isEmpty(chattingModel.getMsgExtra())) {
-            chattingModel.msgMapExtra = (Map) new Gson().fromJson(chattingModel.getMsgExtra(), (Class<Object>) HashMap.class);
+            chattingModel.msgMapExtra = (Map) new Gson().fromJson(chattingModel.getMsgExtra(), HashMap.class);
         }
         return chattingModel.msgMapExtra == null || MsgPackHelper.getIntValue(chattingModel.msgMapExtra, "notify_flag") != 1;
     }

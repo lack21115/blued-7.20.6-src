@@ -28,15 +28,13 @@ import kotlin.jvm.internal.StringCompanionObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/YYRedEnvRoomAdapter.class */
 public final class YYRedEnvRoomAdapter extends BaseQuickAdapter<YYHongbaoModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BaseFragmentActivity f16213a;
+    private final BaseFragmentActivity a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public YYRedEnvRoomAdapter(BaseFragmentActivity fragmentActive) {
         super(R.layout.item_red_env_room);
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f16213a = fragmentActive;
+        this.a = fragmentActive;
     }
 
     private final String a(TextView textView, int i, String str) {
@@ -45,7 +43,7 @@ public final class YYRedEnvRoomAdapter extends BaseQuickAdapter<YYHongbaoModel, 
         if (textView == null || (resources = textView.getResources()) == null || (string = resources.getString(i)) == null) {
             return null;
         }
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String format = String.format(string, Arrays.copyOf(new Object[]{str}, 1));
         Intrinsics.c(format, "format(format, *args)");
         return format;
@@ -66,15 +64,14 @@ public final class YYRedEnvRoomAdapter extends BaseQuickAdapter<YYHongbaoModel, 
             return;
         }
         EventTrackYY.f(ChatRoomProtos.Event.YY_REDBAG_PAGE_GET_CLICK, yYHongbaoModel.hongbao_beans);
-        YYRoomInfoManager.e().a(this.f16213a, yYHongbaoModel.room_id, "red_list");
+        YYRoomInfoManager.e().a(this.a, yYHongbaoModel.room_id, "red_list");
     }
 
     public final BaseFragmentActivity a() {
-        return this.f16213a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final YYHongbaoModel yYHongbaoModel) {
         if (yYHongbaoModel == null) {

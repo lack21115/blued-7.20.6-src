@@ -9,17 +9,17 @@ import com.tencent.liteav.videoproducer.capture.ah;
 final /* synthetic */ class ak implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ah f36872a;
+    private final ah f23181a;
     private final CaptureSourceInterface.CaptureParams b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final CaptureSourceInterface.a f36873c;
+    private final CaptureSourceInterface.a f23182c;
     private final Object d;
 
     private ak(ah ahVar, CaptureSourceInterface.CaptureParams captureParams, CaptureSourceInterface.a aVar, Object obj) {
-        this.f36872a = ahVar;
+        this.f23181a = ahVar;
         this.b = captureParams;
-        this.f36873c = aVar;
+        this.f23182c = aVar;
         this.d = obj;
     }
 
@@ -29,9 +29,9 @@ final /* synthetic */ class ak implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ah ahVar = this.f36872a;
+        ah ahVar = this.f23181a;
         CaptureSourceInterface.CaptureParams captureParams = this.b;
-        CaptureSourceInterface.a aVar = this.f36873c;
+        CaptureSourceInterface.a aVar = this.f23182c;
         Object obj = this.d;
         if (ahVar.k != ah.a.STOPED) {
             LiteavLog.w("CaptureController", "Start capture but mStatus is " + ahVar.k);
@@ -40,17 +40,17 @@ final /* synthetic */ class ak implements Runnable {
         ahVar.m.b();
         ahVar.k = ah.a.STARTED;
         if (captureParams instanceof CameraCaptureParams) {
-            ahVar.f36865c = new s(ahVar.h, ahVar.f);
+            ahVar.f23174c = new s(ahVar.h, ahVar.f);
         } else if (captureParams instanceof ScreenCapturer.ScreenCaptureParams) {
-            ahVar.f36865c = new ScreenCapturer(ahVar.g, ahVar.f, ahVar.h);
+            ahVar.f23174c = new ScreenCapturer(ahVar.g, ahVar.f, ahVar.h);
         } else {
             LiteavLog.w("CaptureController", "initCaptureSource： param is VirtualCameraParams");
         }
         ahVar.e = aVar;
         ahVar.d = captureParams;
         ahVar.i = obj;
-        if (ahVar.f36865c != null) {
-            ahVar.f36865c.start(obj, captureParams, ahVar.n);
+        if (ahVar.f23174c != null) {
+            ahVar.f23174c.start(obj, captureParams, ahVar.n);
         }
     }
 }

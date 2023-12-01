@@ -12,20 +12,14 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import com.anythink.expressad.d.a.b;
-import com.anythink.expressad.foundation.h.i;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.module.live.base.R;
-import com.igexin.push.config.c;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/animation/SuperShipView.class */
 public class SuperShipView extends BaseLiveAnimationView {
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f11537c;
+    private LayoutInflater c;
     private View d;
     private FrameLayout e;
     private ImageView f;
@@ -55,7 +49,7 @@ public class SuperShipView extends BaseLiveAnimationView {
         imageView.setVisibility(0);
         this.t = new AnimationDrawable();
         for (int i = 0; i <= 12; i++) {
-            this.t.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("sea_wave1_" + i, i.f7952c, this.b.getPackageName())), 30);
+            this.t.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("sea_wave1_" + i, "drawable", this.b.getPackageName())), 30);
         }
         imageView.setImageDrawable(this.t);
         this.t.start();
@@ -69,7 +63,7 @@ public class SuperShipView extends BaseLiveAnimationView {
 
     private void b() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f11537c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.layout_sports_ship_anim, (ViewGroup) null);
         this.d = inflate;
         this.e = (FrameLayout) inflate.findViewById(R.id.ship_root_view);
@@ -90,7 +84,7 @@ public class SuperShipView extends BaseLiveAnimationView {
         imageView.setVisibility(0);
         this.u = new AnimationDrawable();
         for (int i = 0; i <= 8; i++) {
-            this.u.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("sea_wave2_" + i, i.f7952c, this.b.getPackageName())), 100);
+            this.u.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("sea_wave2_" + i, "drawable", this.b.getPackageName())), 100);
         }
         imageView.setImageDrawable(this.u);
         this.u.start();
@@ -117,8 +111,8 @@ public class SuperShipView extends BaseLiveAnimationView {
                 SuperShipView.this.s = null;
                 SuperShipView.this.t = null;
                 SuperShipView.this.u = null;
-                if (SuperShipView.this.f11493a != null) {
-                    SuperShipView.this.f11493a.b();
+                if (SuperShipView.this.a != null) {
+                    SuperShipView.this.a.b();
                 }
             }
 
@@ -137,7 +131,7 @@ public class SuperShipView extends BaseLiveAnimationView {
         this.f.setVisibility(0);
         this.r = new AnimationDrawable();
         for (int i = 0; i <= 9; i++) {
-            this.r.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("sea_" + i, i.f7952c, this.b.getPackageName())), 300);
+            this.r.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("sea_" + i, "drawable", this.b.getPackageName())), 300);
         }
         this.f.setBackgroundDrawable(this.r);
         this.r.start();
@@ -154,7 +148,7 @@ public class SuperShipView extends BaseLiveAnimationView {
         this.g.setVisibility(0);
         this.s = new AnimationDrawable();
         for (int i = 0; i <= 14; i++) {
-            this.s.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("ship_smoke_" + i, i.f7952c, this.b.getPackageName())), 150);
+            this.s.addFrame(this.b.getResources().getDrawable(this.b.getResources().getIdentifier("ship_smoke_" + i, "drawable", this.b.getPackageName())), 150);
         }
         this.g.setImageDrawable(this.s);
         this.s.start();
@@ -175,7 +169,7 @@ public class SuperShipView extends BaseLiveAnimationView {
     public void a(IRequestHost iRequestHost) {
         this.d.setVisibility(0);
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
-        alphaAnimation.setDuration(c.j);
+        alphaAnimation.setDuration(1500L);
         TranslateAnimation translateAnimation = new TranslateAnimation(2, 0.4f, 2, -0.1f, 2, -0.1f, 2, 0.0f);
         this.p = translateAnimation;
         translateAnimation.setInterpolator(new LinearInterpolator());
@@ -194,15 +188,15 @@ public class SuperShipView extends BaseLiveAnimationView {
 
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationStart(Animation animation) {
-                if (SuperShipView.this.f11493a != null) {
-                    SuperShipView.this.f11493a.a();
+                if (SuperShipView.this.a != null) {
+                    SuperShipView.this.a.a();
                 }
                 AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live.base.view.animation.SuperShipView.1.1
                     @Override // java.lang.Runnable
                     public void run() {
                         SuperShipView.this.c();
                     }
-                }, m.ag);
+                }, 3000L);
                 SuperShipView.this.d();
                 SuperShipView.this.e();
                 SuperShipView superShipView = SuperShipView.this;
@@ -230,7 +224,7 @@ public class SuperShipView extends BaseLiveAnimationView {
                     public void run() {
                         SuperShipView.this.b(SuperShipView.this.m);
                     }
-                }, b.aC);
+                }, 1800L);
                 AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live.base.view.animation.SuperShipView.1.5
                     @Override // java.lang.Runnable
                     public void run() {

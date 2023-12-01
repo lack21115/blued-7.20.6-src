@@ -1,7 +1,6 @@
 package okhttp3;
 
 import com.android.org.conscrypt.NativeCrypto;
-import com.blued.das.live.LiveProtos;
 import java.util.Arrays;
 import java.util.List;
 import javax.annotation.Nullable;
@@ -134,18 +133,18 @@ public final class ConnectionSpec {
     }
 
     private ConnectionSpec supportedSpec(SSLSocket sSLSocket, boolean z) {
-        String[] a2 = this.cipherSuites != null ? Util.a(CipherSuite.ORDER_BY_NAME, sSLSocket.getEnabledCipherSuites(), this.cipherSuites) : sSLSocket.getEnabledCipherSuites();
-        String[] a3 = this.tlsVersions != null ? Util.a(Util.h, sSLSocket.getEnabledProtocols(), this.tlsVersions) : sSLSocket.getEnabledProtocols();
+        String[] a = this.cipherSuites != null ? Util.a(CipherSuite.ORDER_BY_NAME, sSLSocket.getEnabledCipherSuites(), this.cipherSuites) : sSLSocket.getEnabledCipherSuites();
+        String[] a2 = this.tlsVersions != null ? Util.a(Util.h, sSLSocket.getEnabledProtocols(), this.tlsVersions) : sSLSocket.getEnabledProtocols();
         String[] supportedCipherSuites = sSLSocket.getSupportedCipherSuites();
-        int a4 = Util.a(CipherSuite.ORDER_BY_NAME, supportedCipherSuites, NativeCrypto.TLS_FALLBACK_SCSV);
-        String[] strArr = a2;
+        int a3 = Util.a(CipherSuite.ORDER_BY_NAME, supportedCipherSuites, NativeCrypto.TLS_FALLBACK_SCSV);
+        String[] strArr = a;
         if (z) {
-            strArr = a2;
-            if (a4 != -1) {
-                strArr = Util.a(a2, supportedCipherSuites[a4]);
+            strArr = a;
+            if (a3 != -1) {
+                strArr = Util.a(a, supportedCipherSuites[a3]);
             }
         }
-        return new Builder(this).cipherSuites(strArr).tlsVersions(a3).build();
+        return new Builder(this).cipherSuites(strArr).tlsVersions(a2).build();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -190,7 +189,7 @@ public final class ConnectionSpec {
 
     public int hashCode() {
         if (this.tls) {
-            return ((((LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE + Arrays.hashCode(this.cipherSuites)) * 31) + Arrays.hashCode(this.tlsVersions)) * 31) + (!this.supportsTlsExtensions ? 1 : 0);
+            return ((((527 + Arrays.hashCode(this.cipherSuites)) * 31) + Arrays.hashCode(this.tlsVersions)) * 31) + (!this.supportsTlsExtensions ? 1 : 0);
         }
         return 17;
     }

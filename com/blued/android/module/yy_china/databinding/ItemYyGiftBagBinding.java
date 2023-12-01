@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.view.YYGiftHitLoadingView;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyGiftBagBinding.class */
 public final class ItemYyGiftBagBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16721a;
+    public final ShapeTextView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16722c;
+    public final TextView c;
     public final YYGiftHitLoadingView d;
     public final TextView e;
     public final SquareImageView f;
@@ -28,9 +24,9 @@ public final class ItemYyGiftBagBinding implements ViewBinding {
 
     private ItemYyGiftBagBinding(FrameLayout frameLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, TextView textView, YYGiftHitLoadingView yYGiftHitLoadingView, TextView textView2, SquareImageView squareImageView, ShapeTextView shapeTextView3, ImageView imageView) {
         this.i = frameLayout;
-        this.f16721a = shapeTextView;
+        this.a = shapeTextView;
         this.b = shapeTextView2;
-        this.f16722c = textView;
+        this.c = textView;
         this.d = yYGiftHitLoadingView;
         this.e = textView2;
         this.f = squareImageView;
@@ -83,7 +79,6 @@ public final class ItemYyGiftBagBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.i;

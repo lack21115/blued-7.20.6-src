@@ -1,6 +1,5 @@
 package android.view.inputmethod;
 
-import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -285,7 +284,6 @@ public final class InputMethodManager {
             super(inputChannel, looper);
         }
 
-        @Override // android.view.InputEventSender
         public void onInputEventFinished(int i, boolean z) {
             InputMethodManager.this.finishedInputEvent(i, z, false);
         }
@@ -377,7 +375,7 @@ public final class InputMethodManager {
         synchronized (InputMethodManager.class) {
             try {
                 if (sInstance == null) {
-                    sInstance = new InputMethodManager(IInputMethodManager.Stub.asInterface(ServiceManager.getService(Context.INPUT_METHOD_SERVICE)), Looper.getMainLooper());
+                    sInstance = new InputMethodManager(IInputMethodManager.Stub.asInterface(ServiceManager.getService("input_method")), Looper.getMainLooper());
                 }
                 inputMethodManager = sInstance;
             } catch (Throwable th) {
@@ -396,17 +394,17 @@ public final class InputMethodManager {
     }
 
     private PendingEvent obtainPendingEventLocked(InputEvent inputEvent, Object obj, String str, FinishedInputEventCallback finishedInputEventCallback, Handler handler) {
-        PendingEvent acquire = this.mPendingEventPool.acquire();
-        PendingEvent pendingEvent = acquire;
-        if (acquire == null) {
-            pendingEvent = new PendingEvent();
+        PendingEvent pendingEvent = (PendingEvent) this.mPendingEventPool.acquire();
+        PendingEvent pendingEvent2 = pendingEvent;
+        if (pendingEvent == null) {
+            pendingEvent2 = new PendingEvent();
         }
-        pendingEvent.mEvent = inputEvent;
-        pendingEvent.mToken = obj;
-        pendingEvent.mInputMethodId = str;
-        pendingEvent.mCallback = finishedInputEventCallback;
-        pendingEvent.mHandler = handler;
-        return pendingEvent;
+        pendingEvent2.mEvent = inputEvent;
+        pendingEvent2.mToken = obj;
+        pendingEvent2.mInputMethodId = str;
+        pendingEvent2.mCallback = finishedInputEventCallback;
+        pendingEvent2.mHandler = handler;
+        return pendingEvent2;
     }
 
     public static InputMethodManager peekInstance() {

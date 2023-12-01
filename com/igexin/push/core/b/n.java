@@ -6,11 +6,11 @@ import com.igexin.push.extension.mod.BaseActionBean;
 public final class n extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23452a = "";
+    public String f9844a = "";
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f23453c = "";
+    public String f9845c = "";
     public String d = "false";
     private String e;
 
@@ -23,11 +23,11 @@ public final class n extends BaseActionBean {
     }
 
     private String b() {
-        return this.f23452a;
+        return this.f9844a;
     }
 
     private void b(String str) {
-        this.f23452a = str;
+        this.f9844a = str;
     }
 
     private String c() {
@@ -39,11 +39,11 @@ public final class n extends BaseActionBean {
     }
 
     private String d() {
-        return this.f23453c;
+        return this.f9845c;
     }
 
     private void d(String str) {
-        this.f23453c = str;
+        this.f9845c = str;
     }
 
     private String e() {

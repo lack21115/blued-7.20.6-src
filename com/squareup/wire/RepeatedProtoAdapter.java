@@ -13,16 +13,16 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
     private final ProtoAdapter<E> originalAdapter;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RepeatedProtoAdapter(ProtoAdapter<E> originalAdapter) {
-        super(originalAdapter.getFieldEncoding$wire_runtime(), Reflection.b(List.class), (String) null, originalAdapter.getSyntax(), CollectionsKt.b());
-        Intrinsics.e(originalAdapter, "originalAdapter");
-        this.originalAdapter = originalAdapter;
+    public RepeatedProtoAdapter(ProtoAdapter<E> protoAdapter) {
+        super(protoAdapter.getFieldEncoding$wire_runtime(), Reflection.b(List.class), (String) null, protoAdapter.getSyntax(), CollectionsKt.b());
+        Intrinsics.e(protoAdapter, "originalAdapter");
+        this.originalAdapter = protoAdapter;
     }
 
     @Override // com.squareup.wire.ProtoAdapter
-    public List<E> decode(ProtoReader reader) throws IOException {
-        Intrinsics.e(reader, "reader");
-        return CollectionsKt.a(this.originalAdapter.decode(reader));
+    public List<E> decode(ProtoReader protoReader) throws IOException {
+        Intrinsics.e(protoReader, "reader");
+        return CollectionsKt.a(this.originalAdapter.decode(protoReader));
     }
 
     @Override // com.squareup.wire.ProtoAdapter
@@ -30,9 +30,9 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
         encode(protoWriter, (List) ((List) obj));
     }
 
-    public void encode(ProtoWriter writer, List<? extends E> value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
+    public void encode(ProtoWriter protoWriter, List<? extends E> list) {
+        Intrinsics.e(protoWriter, "writer");
+        Intrinsics.e(list, "value");
         throw new UnsupportedOperationException("Repeated values can only be encoded with a tag.");
     }
 
@@ -41,9 +41,9 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
         encode(reverseProtoWriter, (List) ((List) obj));
     }
 
-    public void encode(ReverseProtoWriter writer, List<? extends E> value) {
-        Intrinsics.e(writer, "writer");
-        Intrinsics.e(value, "value");
+    public void encode(ReverseProtoWriter reverseProtoWriter, List<? extends E> list) {
+        Intrinsics.e(reverseProtoWriter, "writer");
+        Intrinsics.e(list, "value");
         throw new UnsupportedOperationException("Repeated values can only be encoded with a tag.");
     }
 
@@ -52,14 +52,14 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
         encodeWithTag(protoWriter, i, (List) ((List) obj));
     }
 
-    public void encodeWithTag(ProtoWriter writer, int i, List<? extends E> list) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ProtoWriter protoWriter, int i, List<? extends E> list) throws IOException {
+        Intrinsics.e(protoWriter, "writer");
         if (list == null) {
             return;
         }
         int size = list.size();
         for (int i2 = 0; i2 < size; i2++) {
-            this.originalAdapter.encodeWithTag(writer, i, (int) list.get(i2));
+            this.originalAdapter.encodeWithTag(protoWriter, i, (int) list.get(i2));
         }
     }
 
@@ -68,8 +68,8 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
         encodeWithTag(reverseProtoWriter, i, (List) ((List) obj));
     }
 
-    public void encodeWithTag(ReverseProtoWriter writer, int i, List<? extends E> list) throws IOException {
-        Intrinsics.e(writer, "writer");
+    public void encodeWithTag(ReverseProtoWriter reverseProtoWriter, int i, List<? extends E> list) throws IOException {
+        Intrinsics.e(reverseProtoWriter, "writer");
         if (list == null) {
             return;
         }
@@ -79,7 +79,7 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
         }
         while (true) {
             int i2 = size - 1;
-            this.originalAdapter.encodeWithTag(writer, i, (int) list.get(size));
+            this.originalAdapter.encodeWithTag(reverseProtoWriter, i, (int) list.get(size));
             if (i2 < 0) {
                 return;
             }
@@ -92,8 +92,8 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
         return encodedSize((List) ((List) obj));
     }
 
-    public int encodedSize(List<? extends E> value) {
-        Intrinsics.e(value, "value");
+    public int encodedSize(List<? extends E> list) {
+        Intrinsics.e(list, "value");
         throw new UnsupportedOperationException("Repeated values can only be sized with a tag.");
     }
 
@@ -119,8 +119,8 @@ public final class RepeatedProtoAdapter<E> extends ProtoAdapter<List<? extends E
         return redact((List) ((List) obj));
     }
 
-    public List<E> redact(List<? extends E> value) {
-        Intrinsics.e(value, "value");
+    public List<E> redact(List<? extends E> list) {
+        Intrinsics.e(list, "value");
         return CollectionsKt.b();
     }
 }

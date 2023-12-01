@@ -58,7 +58,7 @@ import java.util.List;
 public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> implements BluedSkinSupportable, HomeTabClick.TabClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private SystemNoticeAdapter f32921a;
+    private SystemNoticeAdapter f19230a;
     @BindView
     AppBarLayout appbar;
     private NoDataAndLoadFailView b;
@@ -96,7 +96,7 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
     QBadgeContainer tvLikeCount;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<QBadgeContainer> f32922c = new ArrayList();
+    private List<QBadgeContainer> f19231c = new ArrayList();
     private boolean d = false;
 
     private void a(int i) {
@@ -125,13 +125,12 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
     /* JADX INFO: Access modifiers changed from: private */
     public void b(List<FeedNotice> list) {
         View viewByPosition;
-        if (list == null || list.size() <= 0 || list.get(0) == null || list.get(0).type != 12 || !BluedPreferences.fM() || (viewByPosition = this.f32921a.getViewByPosition(this.recycleView, 0, R.id.tv_feed_notice_reply)) == null) {
+        if (list == null || list.size() <= 0 || list.get(0) == null || list.get(0).type != 12 || !BluedPreferences.fM() || (viewByPosition = this.f19230a.getViewByPosition(this.recycleView, 0, R.id.tv_feed_notice_reply)) == null) {
             return;
         }
-        CommonGuidePop commonGuidePop = new CommonGuidePop(getContext(), getContext().getString(2131886832), NinePatchUtils.GuideArrowPosition.RIGHT, 2131232898);
-        final BasePopupView h = new XPopup.Builder(getContext()).a(viewByPosition).d((Boolean) false).b(DensityUtils.a(getContext(), 7.0f)).a(PopupPosition.Bottom).a(PopupAnimation.ScaleAlphaFromCenter).a((BasePopupView) commonGuidePop).h();
+        CommonGuidePop commonGuidePop = new CommonGuidePop(getContext(), getContext().getString(R.string.bubble_feed_notice_guide_content), NinePatchUtils.GuideArrowPosition.c, 2131232898);
+        final BasePopupView h = new XPopup.Builder(getContext()).a(viewByPosition).d(false).b(DensityUtils.a(getContext(), 7.0f)).a(PopupPosition.d).a(PopupAnimation.a).a(commonGuidePop).h();
         commonGuidePop.setOnClick(new CommonGuidePop.OnClickListener() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment.5
-            @Override // com.blued.android.module.common.view.CommonGuidePop.OnClickListener
             public void a() {
                 if (h.s()) {
                     h.p();
@@ -156,7 +155,7 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
     }
 
     private void b(boolean z) {
-        if (this.f32921a.getData().size() <= 0) {
+        if (this.f19230a.getData().size() <= 0) {
             if (z) {
                 this.b.a();
             } else {
@@ -181,7 +180,7 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
         qBadgeContainer.a(i);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
+    /* JADX WARN: Multi-variable type inference failed */
     public void a(Bundle bundle) {
         super.a(bundle);
         LiveEventBus.get(EventBusConstant.KEY_EVENT_NOTICE_NEED_REFRESH, Void.class).observe(this, new Observer<Void>() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment.1
@@ -189,56 +188,56 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
             /* renamed from: a */
             public void onChanged(Void r3) {
                 if (SystemNoticeFragment.this.getUserVisibleHint()) {
-                    SystemNoticeFragment.this.j().e();
+                    ((SystemNoticePresenter) SystemNoticeFragment.this.j()).e();
                 }
             }
         });
-        this.f32922c.clear();
+        this.f19231c.clear();
         this.tvAttentionCount.a(this.llAttention);
-        this.tvAttentionCount.d(BadgeDrawable.TOP_END);
+        this.tvAttentionCount.d((int) BadgeDrawable.TOP_END);
         this.tvAttentionCount.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         this.tvAttentionCount.a("");
-        this.f32922c.add(this.tvAttentionCount);
+        this.f19231c.add(this.tvAttentionCount);
         this.tvLikeCount.a(this.llLike);
-        this.tvLikeCount.d(BadgeDrawable.TOP_END);
+        this.tvLikeCount.d((int) BadgeDrawable.TOP_END);
         this.tvLikeCount.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         this.tvLikeCount.a("");
-        this.f32922c.add(this.tvLikeCount);
+        this.f19231c.add(this.tvLikeCount);
         this.tvGroupCount.a(this.llGroup);
-        this.tvGroupCount.d(BadgeDrawable.TOP_END);
+        this.tvGroupCount.d((int) BadgeDrawable.TOP_END);
         this.tvGroupCount.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         this.tvGroupCount.a("");
-        this.f32922c.add(this.tvGroupCount);
+        this.f19231c.add(this.tvGroupCount);
         this.tvCircleCount.a(this.llCircle);
-        this.tvCircleCount.d(BadgeDrawable.TOP_END);
+        this.tvCircleCount.d((int) BadgeDrawable.TOP_END);
         this.tvCircleCount.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         this.tvCircleCount.a("");
-        this.f32922c.add(this.tvCircleCount);
+        this.f19231c.add(this.tvCircleCount);
         SystemNoticeAdapter systemNoticeAdapter = new SystemNoticeAdapter(getContext(), getFragmentActive(), getFragmentManager(), true);
-        this.f32921a = systemNoticeAdapter;
+        this.f19230a = systemNoticeAdapter;
         systemNoticeAdapter.a(new SystemNoticeAdapter.OnReadListener() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment.2
             @Override // com.soft.blued.ui.notify.fragment.SystemNoticeAdapter.OnReadListener
             public void a() {
-                SystemNoticeFragment.this.j().h.f29847c = SystemNoticeFragment.this.f32921a.b();
-                SystemNoticeFragment.this.j().b((ViewpointNoticeCount) null);
+                ((SystemNoticePresenter) SystemNoticeFragment.this.j()).h.f16157c = SystemNoticeFragment.this.f19230a.b();
+                ((SystemNoticePresenter) SystemNoticeFragment.this.j()).b((ViewpointNoticeCount) null);
             }
         });
-        NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
+        View noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
         this.b = noDataAndLoadFailView;
-        this.f32921a.setEmptyView(noDataAndLoadFailView);
-        j().a(this.f32921a);
+        this.f19230a.setEmptyView(noDataAndLoadFailView);
+        ((SystemNoticePresenter) j()).a(this.f19230a);
         this.recycleView.setLayoutManager(new LinearLayoutManager(getContext()));
-        this.recycleView.setAdapter(this.f32921a);
+        this.recycleView.setAdapter(this.f19230a);
         this.srlList.a(new OnRefreshListener() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment.3
             @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
-                SystemNoticeFragment.this.j().e();
+                ((SystemNoticePresenter) SystemNoticeFragment.this.j()).e();
             }
         });
         this.srlList.a(new OnLoadMoreListener() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment.4
             @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
-                SystemNoticeFragment.this.j().f();
+                ((SystemNoticePresenter) SystemNoticeFragment.this.j()).f();
             }
         });
     }
@@ -248,12 +247,11 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
             b(viewpointNoticeCount);
             if (viewpointNoticeCount.isHttp) {
                 viewpointNoticeCount.isHttp = false;
-                j().b(viewpointNoticeCount);
+                ((SystemNoticePresenter) j()).b(viewpointNoticeCount);
             }
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void a(String str, boolean z) {
         super.a(str, z);
         if (str == null) {
@@ -277,9 +275,9 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(final List<FeedNotice> list) {
-        this.f32921a.setNewData(list);
-        j().h.f29847c = this.f32921a.b();
-        j().b((ViewpointNoticeCount) null);
+        this.f19230a.setNewData(list);
+        ((SystemNoticePresenter) j()).h.f16157c = this.f19230a.b();
+        ((SystemNoticePresenter) j()).b((ViewpointNoticeCount) null);
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.notify.fragment.SystemNoticeFragment.8
             @Override // java.lang.Runnable
             public void run() {
@@ -288,35 +286,33 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
         }, 300L);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void af_() {
         super.af_();
         this.b = null;
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        List<QBadgeContainer> list = this.f32922c;
+        List<QBadgeContainer> list = this.f19231c;
         if (list == null || list.isEmpty()) {
             return;
         }
-        for (QBadgeContainer qBadgeContainer : this.f32922c) {
+        for (QBadgeContainer qBadgeContainer : this.f19231c) {
             qBadgeContainer.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         }
-        this.f32921a.notifyDataSetChanged();
+        this.f19230a.notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b() {
-        this.f32921a.setNewData(null);
-        j().h.f29847c = 0;
-        j().b((ViewpointNoticeCount) null);
+        this.f19230a.setNewData(null);
+        ((SystemNoticePresenter) j()).h.f16157c = 0;
+        ((SystemNoticePresenter) j()).b((ViewpointNoticeCount) null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void c() {
         AppMethods.d((int) R.string.done);
-        this.f32921a.setNewData(null);
+        this.f19230a.setNewData(null);
         this.b.a();
     }
 
@@ -344,32 +340,27 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void e() {
-        this.f32921a.c();
+        this.f19230a.c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_system_notice;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void l() {
         this.srlList.i();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void o() {
         super.o();
         this.srlList.l(true);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
-        j().i = false;
+        ((SystemNoticePresenter) j()).i = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         this.srlList.setBackgroundColor(BluedSkinUtils.a(getContext(), 2131101780));
@@ -378,7 +369,7 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
         this.tvLikeCount.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         this.tvGroupCount.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
         this.tvCircleCount.a(BluedSkinUtils.a(getContext(), 2131101780), 1.0f, true);
-        j().i = true;
+        ((SystemNoticePresenter) j()).i = true;
     }
 
     @OnClick
@@ -390,7 +381,7 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
                 this.tvAttentionCount.a("");
                 ChatHelperV4.a().a(getContext(), 5L, 10L);
                 ChatManager.getInstance().ignoredNoReadNum((short) 1, 5L);
-                j().o();
+                ((SystemNoticePresenter) j()).o();
                 return;
             case R.id.tv_circle_count /* 2131371102 */:
                 if (!BluedConfig.a().K()) {
@@ -401,43 +392,39 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
                 EventTrackFeed.b(FeedProtos.Event.MSG_NOTICE_CIRCLE_CLICK);
                 this.tvCircleCount.a("");
                 CircleNotifyListFragment.a(getContext());
-                j().r();
+                ((SystemNoticePresenter) j()).r();
                 return;
             case R.id.tv_group_count /* 2131371584 */:
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_NEW_SYSTEM_MSG_READ_COUNT).post(Integer.valueOf(this.tvGroupCount.getBadgeNumber()));
                 this.tvGroupCount.a("");
-                TerminalActivity.d(getContext(), GroupNoticeNewFragment.class, null);
-                j().q();
+                TerminalActivity.d(getContext(), GroupNoticeNewFragment.class, (Bundle) null);
+                ((SystemNoticePresenter) j()).q();
                 return;
-            case 2131371808:
+            case R.id.tv_like_count /* 2131371808 */:
                 LiveEventBus.get(EventBusConstant.KEY_EVENT_NEW_SYSTEM_MSG_READ_COUNT).post(Integer.valueOf(this.tvLikeCount.getBadgeNumber()));
                 EventTrackFeed.b(FeedProtos.Event.MSG_NOTICE_LIKE_CLICK);
                 this.tvLikeCount.a("");
                 ViewpointNoticeLikeListFragment.a(getContext());
-                j().p();
+                ((SystemNoticePresenter) j()).p();
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
     public void p() {
         super.p();
         this.srlList.l(false);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean r() {
         return true;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         if (getActivity() == null || !(getActivity() instanceof HomeActivity)) {
@@ -445,10 +432,10 @@ public class SystemNoticeFragment extends MvpFragment<SystemNoticePresenter> imp
         }
         if (z && ((HomeActivity) getActivity()).g() == 0 && this.srlList != null) {
             if (this.d) {
-                j().e();
+                ((SystemNoticePresenter) j()).e();
             }
             this.d = true;
         }
-        j().j = z;
+        ((SystemNoticePresenter) j()).j = z;
     }
 }

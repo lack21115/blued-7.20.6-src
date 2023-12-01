@@ -13,11 +13,11 @@ import com.soft.blued.customview.loadingIndicator.BaseIndicatorController;
 public class AVLoadingIndicatorView extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    int f28604a;
+    int f14914a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    Paint f28605c;
+    Paint f14915c;
     BaseIndicatorController d;
     private boolean e;
 
@@ -54,19 +54,19 @@ public class AVLoadingIndicatorView extends View {
 
     private void a(AttributeSet attributeSet, int i) {
         TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(attributeSet, R.styleable.AVLoadingIndicatorView);
-        this.f28604a = obtainStyledAttributes.getInt(0, 0);
+        this.f14914a = obtainStyledAttributes.getInt(0, 0);
         this.b = obtainStyledAttributes.getColor(1, -1);
         obtainStyledAttributes.recycle();
         Paint paint = new Paint();
-        this.f28605c = paint;
+        this.f14915c = paint;
         paint.setColor(this.b);
-        this.f28605c.setStyle(Paint.Style.FILL);
-        this.f28605c.setAntiAlias(true);
+        this.f14915c.setStyle(Paint.Style.FILL);
+        this.f14915c.setAntiAlias(true);
         b();
     }
 
     private void b() {
-        switch (this.f28604a) {
+        switch (this.f14914a) {
             case 0:
             case 1:
             case 2:
@@ -115,35 +115,31 @@ public class AVLoadingIndicatorView extends View {
     }
 
     void a(Canvas canvas) {
-        this.d.a(canvas, this.f28605c);
+        this.d.a(canvas, this.f14915c);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.e) {
             this.d.a(BaseIndicatorController.AnimStatus.START);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.d.a(BaseIndicatorController.AnimStatus.CANCEL);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         a(canvas);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (this.e) {
             return;
@@ -152,9 +148,8 @@ public class AVLoadingIndicatorView extends View {
         a();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         setMeasuredDimension(a(a(45), i), a(a(45), i2));
     }
 

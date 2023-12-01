@@ -20,12 +20,12 @@ public class StatisticModel implements d {
         @Override // com.opos.process.bridge.provider.d.a
         public StatisticModel getInstance(Context context, IBridgeTargetIdentify iBridgeTargetIdentify) {
             StatisticModelIdentify statisticModelIdentify = (StatisticModelIdentify) iBridgeTargetIdentify;
-            return StatisticModel.a(context.getApplicationContext(), statisticModelIdentify.f27131a, statisticModelIdentify.b);
+            return StatisticModel.a(context.getApplicationContext(), statisticModelIdentify.f13443a, statisticModelIdentify.b);
         }
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile StatisticModel f27130a;
+    private static volatile StatisticModel f13442a;
     private Context b;
 
     private StatisticModel(Context context, boolean z, String str) {
@@ -40,15 +40,15 @@ public class StatisticModel implements d {
 
     public static StatisticModel a(Context context, boolean z, String str) {
         StatisticModel statisticModel;
-        StatisticModel statisticModel2 = f27130a;
+        StatisticModel statisticModel2 = f13442a;
         if (statisticModel2 == null) {
             synchronized (StatisticModel.class) {
                 try {
-                    StatisticModel statisticModel3 = f27130a;
+                    StatisticModel statisticModel3 = f13442a;
                     statisticModel = statisticModel3;
                     if (statisticModel3 == null) {
                         statisticModel = new StatisticModel(context, z, str);
-                        f27130a = statisticModel;
+                        f13442a = statisticModel;
                     }
                 } catch (Throwable th) {
                     throw th;

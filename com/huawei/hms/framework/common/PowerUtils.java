@@ -48,7 +48,7 @@ public class PowerUtils {
             Logger.i(TAG, "isDozeIdleMode Context is null!");
             return false;
         }
-        Object systemService = ContextCompat.getSystemService(context, "power");
+        Object systemService = ContextCompat.getSystemService(context, Context.POWER_SERVICE);
         PowerManager powerManager = systemService instanceof PowerManager ? (PowerManager) systemService : null;
         if (powerManager == null) {
             Logger.i(TAG, "isDozeIdleMode powerManager is null!");
@@ -68,7 +68,7 @@ public class PowerUtils {
 
     public static boolean isInteractive(Context context) {
         if (context != null) {
-            Object systemService = ContextCompat.getSystemService(context, "power");
+            Object systemService = ContextCompat.getSystemService(context, Context.POWER_SERVICE);
             if (systemService instanceof PowerManager) {
                 PowerManager powerManager = (PowerManager) systemService;
                 if (Build.VERSION.SDK_INT >= 20) {
@@ -88,7 +88,7 @@ public class PowerUtils {
 
     public static boolean isWhilteList(Context context) {
         if (context != null) {
-            Object systemService = ContextCompat.getSystemService(context, "power");
+            Object systemService = ContextCompat.getSystemService(context, Context.POWER_SERVICE);
             PowerManager powerManager = systemService instanceof PowerManager ? (PowerManager) systemService : null;
             String packageName = context.getPackageName();
             if (powerManager == null || Build.VERSION.SDK_INT < 23) {
@@ -134,7 +134,7 @@ public class PowerUtils {
             int systemInt = SettingUtil.getSystemInt(context.getContentResolver(), PowerMode.SMART_MODE_STATUS, PowerMode.POWER_MODE_DEFAULT_RETURN_VALUE);
             i = systemInt;
             if (systemInt == PowerMode.POWER_MODE_DEFAULT_RETURN_VALUE) {
-                Object systemService = ContextCompat.getSystemService(context, "power");
+                Object systemService = ContextCompat.getSystemService(context, Context.POWER_SERVICE);
                 PowerManager powerManager = null;
                 if (systemService instanceof PowerManager) {
                     powerManager = (PowerManager) systemService;

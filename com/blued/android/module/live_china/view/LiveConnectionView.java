@@ -16,13 +16,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveConnectionView.class */
 public class LiveConnectionView extends FrameLayout implements ILiveConnectionStateListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public RecordingOnliveFragment f14428a;
+    public RecordingOnliveFragment a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LayoutInflater f14429c;
+    private LayoutInflater c;
     private LivePKCenterView d;
     private LivePKFriendListView e;
     private LivePKInviteView f;
@@ -47,7 +43,7 @@ public class LiveConnectionView extends FrameLayout implements ILiveConnectionSt
 
     private void w() {
         LayoutInflater from = LayoutInflater.from(this.b);
-        this.f14429c = from;
+        this.c = from;
         View inflate = from.inflate(R.layout.live_connection_view, this);
         this.d = (LivePKCenterView) inflate.findViewById(R.id.live_pk_center_view);
         this.e = (LivePKFriendListView) inflate.findViewById(R.id.live_pk_friend_list_view);
@@ -69,7 +65,7 @@ public class LiveConnectionView extends FrameLayout implements ILiveConnectionSt
 
     @Override // com.blued.android.module.live_china.view.ILiveConnectionStateListener
     public void a() {
-        this.f14428a.O();
+        this.a.O();
     }
 
     public void a(int i, int i2, String str, List<LiveInviteUserModel> list) {
@@ -81,7 +77,7 @@ public class LiveConnectionView extends FrameLayout implements ILiveConnectionSt
     }
 
     public void a(RecordingOnliveFragment recordingOnliveFragment) {
-        this.f14428a = recordingOnliveFragment;
+        this.a = recordingOnliveFragment;
         x();
     }
 
@@ -116,7 +112,7 @@ public class LiveConnectionView extends FrameLayout implements ILiveConnectionSt
 
     @Override // com.blued.android.module.live_china.view.ILiveConnectionStateListener
     public void b() {
-        this.f14428a.P();
+        this.a.P();
     }
 
     public void b(List<LiveInviteUserModel> list) {
@@ -284,7 +280,7 @@ public class LiveConnectionView extends FrameLayout implements ILiveConnectionSt
 
     public boolean r() {
         LivePKWholeView livePKWholeView = this.g;
-        if (livePKWholeView == null || !(livePKWholeView.f14839a == 4 || this.g.f14839a == 2 || this.g.f14839a == 1)) {
+        if (livePKWholeView == null || !(livePKWholeView.a == 4 || this.g.a == 2 || this.g.a == 1)) {
             LivePKInviteView livePKInviteView = this.f;
             if (livePKInviteView != null) {
                 return livePKInviteView.b();
@@ -304,32 +300,32 @@ public class LiveConnectionView extends FrameLayout implements ILiveConnectionSt
     }
 
     public void t() {
-        RecordingOnliveFragment recordingOnliveFragment = this.f14428a;
+        RecordingOnliveFragment recordingOnliveFragment = this.a;
         if (recordingOnliveFragment == null || recordingOnliveFragment.ad == null) {
             return;
         }
-        this.f14428a.ad.j();
+        this.a.ad.j();
     }
 
     public void u() {
-        RecordingOnliveFragment recordingOnliveFragment = this.f14428a;
-        if (recordingOnliveFragment != null && (recordingOnliveFragment.r() || this.f14428a.aR())) {
-            this.f14428a.bO.a(0);
+        RecordingOnliveFragment recordingOnliveFragment = this.a;
+        if (recordingOnliveFragment != null && (recordingOnliveFragment.r() || this.a.aR())) {
+            this.a.bO.a(0);
         }
-        RecordingOnliveFragment recordingOnliveFragment2 = this.f14428a;
+        RecordingOnliveFragment recordingOnliveFragment2 = this.a;
         if (recordingOnliveFragment2 != null && recordingOnliveFragment2.aW()) {
             this.h.e();
         }
-        RecordingOnliveFragment recordingOnliveFragment3 = this.f14428a;
+        RecordingOnliveFragment recordingOnliveFragment3 = this.a;
         if (recordingOnliveFragment3 != null && recordingOnliveFragment3.aX()) {
             this.h.f();
         }
-        RecordingOnliveFragment recordingOnliveFragment4 = this.f14428a;
+        RecordingOnliveFragment recordingOnliveFragment4 = this.a;
         if (recordingOnliveFragment4 != null && recordingOnliveFragment4.aY()) {
             this.i.b();
         }
         LivePKWholeView livePKWholeView = this.g;
-        if (livePKWholeView != null && livePKWholeView.f14839a == 1) {
+        if (livePKWholeView != null && livePKWholeView.a == 1) {
             this.g.b();
         }
         LivePKInviteView livePKInviteView = this.f;

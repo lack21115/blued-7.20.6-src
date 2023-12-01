@@ -19,17 +19,16 @@ import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.imagecache.LoadOptions;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.permission.PermissionCallbacks;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.module.common.user.model.BluedAlbum;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.CommonPreferences;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.PermissionUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.android.module.common.widget.menu.ActionSheet;
 import com.blued.android.module.common.widget.menu.BottomMenuPop;
@@ -56,7 +55,7 @@ import java.util.List;
 public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33093c;
+    private Context f19402c;
     private View d;
     private LayoutInflater e;
     private ImagePagerAdapter f;
@@ -83,14 +82,14 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
     class AnonymousClass3 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PhotoView f33096a;
+        final /* synthetic */ PhotoView f19405a;
         final /* synthetic */ ShowPhotoFragment b;
 
         @Override // java.lang.Runnable
         public void run() {
             boolean z = false;
-            if (((int) this.f33096a.getScale()) != ((int) this.f33096a.getMinimumScale())) {
-                if (this.b.f33053a) {
+            if (((int) this.f19405a.getScale()) != ((int) this.f19405a.getMinimumScale())) {
+                if (this.b.f19362a) {
                     ShowPhotoFragment showPhotoFragment = this.b;
                     ImageView imageView = showPhotoFragment.l;
                     TextView textView = this.b.s;
@@ -99,7 +98,7 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
                     }
                     showPhotoFragment.a(imageView, textView, z);
                 }
-            } else if (this.b.f33053a) {
+            } else if (this.b.f19362a) {
             } else {
                 ShowPhotoFragment showPhotoFragment2 = this.b;
                 ImageView imageView2 = showPhotoFragment2.l;
@@ -134,19 +133,18 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final String str) {
         DialogUtils.a(this.j);
-        MineHttpUtils.c(this.f33093c, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.7
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        MineHttpUtils.c(this.f19402c, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.7
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
-                    List<BluedAlbum> vip_avatars = UserInfo.getInstance().getLoginUserInfo().getVip_avatars();
+                    List vip_avatars = UserInfo.getInstance().getLoginUserInfo().getVip_avatars();
                     if (vip_avatars != null && vip_avatars.size() > 0) {
                         int i = 0;
                         while (true) {
                             int i2 = i;
                             if (i2 >= vip_avatars.size()) {
                                 break;
-                            } else if (vip_avatars.get(i2).getPid().equals(str)) {
+                            } else if (((BluedAlbum) vip_avatars.get(i2)).getPid().equals(str)) {
                                 vip_avatars.remove(i2);
                                 break;
                             } else {
@@ -168,11 +166,10 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(ShowPhotoFragment.this.j);
                 if (ShowPhotoFragment.this.o.size() == 0) {
@@ -185,19 +182,18 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final String str) {
         DialogUtils.a(this.j);
-        ProfileHttpUtils.b(this.f33093c, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.8
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        ProfileHttpUtils.b(this.f19402c, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.8
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 try {
-                    List<BluedAlbum> album = UserInfo.getInstance().getLoginUserInfo().getAlbum();
+                    List album = UserInfo.getInstance().getLoginUserInfo().getAlbum();
                     if (album != null && album.size() > 0) {
                         int i = 0;
                         while (true) {
                             int i2 = i;
                             if (i2 >= album.size()) {
                                 break;
-                            } else if (album.get(i2).getPid().equals(str)) {
+                            } else if (((BluedAlbum) album.get(i2)).getPid().equals(str)) {
                                 album.remove(i2);
                                 break;
                             } else {
@@ -219,18 +215,17 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                    AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(ShowPhotoFragment.this.j);
                 if (ShowPhotoFragment.this.o.size() == 0) {
                     ShowPhotoFragment.this.getActivity().finish();
                 }
             }
-        }, str, getFragmentActive());
+        }, str, (IRequestHost) getFragmentActive());
     }
 
     private void h() {
@@ -240,7 +235,7 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
             this.m = getArguments().getInt("show_photo");
             this.n = getArguments().getString("WATER_MASK_NAME");
             this.h = arguments.getInt("photo_index", 0);
-            this.g = (LoadOptions) arguments.getSerializable("photo_options");
+            this.g = arguments.getSerializable("photo_options");
             this.u = arguments.getString("UID");
             this.v = arguments.getInt("avatar_widget");
             this.i = this.h;
@@ -272,12 +267,12 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
 
     private void i() {
         this.j = DialogUtils.a(getActivity());
-        this.e = LayoutInflater.from(this.f33093c);
+        this.e = LayoutInflater.from(this.f19402c);
         this.k = (HackyViewPager) this.d.findViewById(2131368810);
-        ImageView imageView = (ImageView) this.d.findViewById(2131362969);
+        ImageView imageView = (ImageView) this.d.findViewById(R.id.close_album_btn);
         this.l = imageView;
         imageView.setOnClickListener(this);
-        this.r = this.d.findViewById(2131371256);
+        this.r = this.d.findViewById(R.id.tv_delete);
         this.t = (TextView) this.d.findViewById(R.id.tv_avatar_widget);
         this.r.setOnClickListener(this);
         this.s = (TextView) this.d.findViewById(R.id.tv_position);
@@ -333,17 +328,17 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
             return;
         }
         TextView textView = this.s;
-        textView.setText((this.h + 1) + BridgeUtil.SPLIT_MARK + this.o.size());
-        if (this.f33053a) {
+        textView.setText((this.h + 1) + "/" + this.o.size());
+        if (this.f19362a) {
             this.s.setVisibility(0);
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(int i) {
         super.a(i);
         this.k.getBackground().setAlpha(i);
-        if (this.f33053a) {
+        if (this.f19362a) {
             ImageView imageView = this.l;
             TextView textView = this.s;
             boolean z = true;
@@ -354,13 +349,13 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(View view) {
         super.a(view);
         f();
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void a(Object... objArr) {
         super.a(objArr);
         if (objArr == null || objArr.length < 2) {
@@ -373,34 +368,31 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
         final File file = (File) objArr[1];
         ArrayList arrayList = new ArrayList();
         if (TextUtils.equals(UserInfo.getInstance().getLoginUserInfo().uid, this.u)) {
-            arrayList.add(this.f33093c.getResources().getString(2131887375));
+            arrayList.add(this.f19402c.getResources().getString(2131887375));
             EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_SET_PHOTO_PENDANT_SHOW);
         } else if (this.v != 0) {
-            arrayList.add(this.f33093c.getResources().getString(2131892575));
+            arrayList.add(this.f19402c.getResources().getString(2131892575));
             EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_LOOK_PHOTO_PENDANT_SHOW, this.u, this.v + "");
         } else {
             z = false;
         }
-        arrayList.add(this.f33093c.getResources().getString(2131887285));
+        arrayList.add(this.f19402c.getResources().getString(R.string.common_save));
         if (z) {
-            CommonShowBottomWindow.a((FragmentActivity) this.f33093c, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.4
-                @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
+            CommonShowBottomWindow.a((FragmentActivity) this.f19402c, (String[]) arrayList.toArray(new String[arrayList.size()]), new ActionSheet.ActionSheetListener() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.4
                 public void a(ActionSheet actionSheet, int i) {
                     String a2 = actionSheet.a(i);
-                    if (a2.equals(ShowPhotoFragment.this.f33093c.getResources().getString(2131887375))) {
+                    if (a2.equals(ShowPhotoFragment.this.f19402c.getResources().getString(2131887375))) {
                         CommonPreferences.o();
                         EventTrackPersonalProfile.a(PersonalProfileProtos.Event.PERSONAL_SET_PHOTO_PENDANT_CLICK);
-                        WidgetListFragment.a(ShowPhotoFragment.this.f33093c, 2, "photo_pendant_own", VipProtos.FromType.PHOTO_PENDANT_OWN);
-                    } else if (!a2.equals(ShowPhotoFragment.this.f33093c.getResources().getString(2131892575))) {
-                        if (a2.equals(ShowPhotoFragment.this.f33093c.getResources().getString(2131887285))) {
+                        WidgetListFragment.a(ShowPhotoFragment.this.f19402c, 2, "photo_pendant_own", VipProtos.FromType.PHOTO_PENDANT_OWN);
+                    } else if (!a2.equals(ShowPhotoFragment.this.f19402c.getResources().getString(2131892575))) {
+                        if (a2.equals(ShowPhotoFragment.this.f19402c.getResources().getString(R.string.common_save))) {
                             InstantLog.a("save_pic_click");
                             PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.4.1
-                                @Override // com.blued.android.framework.permission.PermissionCallbacks
                                 public void U_() {
                                     ShowPhotoFragment.this.a(file, ShowPhotoFragment.this.n);
                                 }
 
-                                @Override // com.blued.android.framework.permission.PermissionCallbacks
                                 public void a(String[] strArr) {
                                 }
                             });
@@ -409,11 +401,10 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
                         PersonalProfileProtos.Event event = PersonalProfileProtos.Event.PERSONAL_LOOK_PHOTO_PENDANT_CLICK;
                         String str = ShowPhotoFragment.this.u;
                         EventTrackPersonalProfile.a(event, str, ShowPhotoFragment.this.v + "");
-                        WidgetListFragment.a(ShowPhotoFragment.this.f33093c, 2, "photo_pendant_other", VipProtos.FromType.PHOTO_PENDANT_OTHER);
+                        WidgetListFragment.a(ShowPhotoFragment.this.f19402c, 2, "photo_pendant_other", VipProtos.FromType.PHOTO_PENDANT_OTHER);
                     }
                 }
 
-                @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
                 public void a(ActionSheet actionSheet, boolean z2) {
                 }
             });
@@ -423,7 +414,7 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
         if (stringArray.length > 0) {
             ArrayList arrayList2 = new ArrayList();
             BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-            menuItemInfo.f11214a = stringArray[0];
+            menuItemInfo.a = stringArray[0];
             menuItemInfo.b = 2131101766;
             menuItemInfo.d = new View.OnClickListener() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.5
                 @Override // android.view.View.OnClickListener
@@ -434,12 +425,10 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
                     }
                     InstantLog.a("save_pic_click");
                     PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.5.1
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void U_() {
                             ShowPhotoFragment.this.a(file, ShowPhotoFragment.this.n);
                         }
 
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void a(String[] strArr) {
                         }
                     });
@@ -449,14 +438,14 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
             BottomMenuPop bottomMenuPop = new BottomMenuPop(getContext());
             this.w = bottomMenuPop;
             bottomMenuPop.b = arrayList2;
-            new XPopup.Builder(getContext()).a((BasePopupView) this.w).h();
+            new XPopup.Builder(getContext()).a(this.w).h();
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void al_() {
         super.al_();
-        if (this.f33053a) {
+        if (this.f19362a) {
             return;
         }
         ImageView imageView = this.l;
@@ -468,13 +457,12 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
         b(imageView, textView, z);
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.module.player.media.observer.EventCallBackListener
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void b(View view) {
         super.b(view);
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
@@ -487,8 +475,8 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
             e();
         } else if (id != 2131371256) {
         } else {
-            Context context = this.f33093c;
-            CommonAlertDialog.a(context, (String) null, context.getResources().getString(R.string.feed_photo_delete_confirm), this.f33093c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.6
+            Context context = this.f19402c;
+            CommonAlertDialog.a(context, (String) null, context.getResources().getString(R.string.feed_photo_delete_confirm), this.f19402c.getResources().getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.photo.fragment.ShowPhotoFragment.6
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
@@ -510,7 +498,7 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
         }
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (Build.VERSION.SDK_INT >= 21) {
@@ -518,9 +506,8 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33093c = getActivity();
+        this.f19402c = getActivity();
         View view = this.d;
         if (view == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_show_album, viewGroup, false);
@@ -536,12 +523,11 @@ public class ShowPhotoFragment extends BasePhotoFragment implements View.OnClick
         return this.d;
     }
 
-    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.soft.blued.ui.photo.fragment.BasePhotoFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onSaveInstanceState(Bundle bundle) {
         bundle.putInt("state_position", this.k.getCurrentItem());
     }

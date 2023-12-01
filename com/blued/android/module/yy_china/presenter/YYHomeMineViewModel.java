@@ -16,13 +16,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/presenter/YYHomeMineViewModel.class */
 public final class YYHomeMineViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17761a;
+    private String a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f17762c = true;
+    private boolean c = true;
     private boolean d = true;
     private boolean e = true;
     private final MutableLiveData<Boolean> f = new MutableLiveData<>();
@@ -111,7 +107,7 @@ public final class YYHomeMineViewModel extends BaseViewModel {
     }
 
     public final void a(String str) {
-        this.f17761a = str;
+        this.a = str;
     }
 
     public final void c(boolean z) {
@@ -119,11 +115,11 @@ public final class YYHomeMineViewModel extends BaseViewModel {
     }
 
     public final String d() {
-        return this.f17761a;
+        return this.a;
     }
 
     public final void d(boolean z) {
-        this.f17762c = z;
+        this.c = z;
     }
 
     public final void e(boolean z) {
@@ -139,7 +135,7 @@ public final class YYHomeMineViewModel extends BaseViewModel {
     }
 
     public final boolean f() {
-        return this.f17762c;
+        return this.c;
     }
 
     public final boolean g() {

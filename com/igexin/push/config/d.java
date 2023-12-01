@@ -22,11 +22,11 @@ public final class d {
     public static boolean T = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public static long f23375a = 600;
+    public static long f9767a = 600;
     public static int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f23376c = 0;
+    public static int f9768c = 0;
     public static long d = 0;
     public static int e = 0;
     public static int f = 0;

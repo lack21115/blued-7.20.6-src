@@ -10,9 +10,7 @@ public final class XorWowRandom extends Random implements Serializable {
     private static final Companion b = new Companion(null);
     @Deprecated
     private static final long serialVersionUID = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f42567c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -37,9 +35,9 @@ public final class XorWowRandom extends Random implements Serializable {
 
     @Override // kotlin.random.Random
     public int b() {
-        int i = this.f42567c;
+        int i = this.c;
         int i2 = i ^ (i >>> 2);
-        this.f42567c = this.d;
+        this.c = this.d;
         this.d = this.e;
         this.e = this.f;
         int i3 = this.g;

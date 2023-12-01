@@ -10,14 +10,12 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/ItemNearbyTransformersFlipperEventBinding.class */
 public final class ItemNearbyTransformersFlipperEventBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f19008a;
+    public final ImageView a;
     private final FrameLayout b;
 
     private ItemNearbyTransformersFlipperEventBinding(FrameLayout frameLayout, ImageView imageView) {
         this.b = frameLayout;
-        this.f19008a = imageView;
+        this.a = imageView;
     }
 
     public static ItemNearbyTransformersFlipperEventBinding a(LayoutInflater layoutInflater) {
@@ -40,7 +38,6 @@ public final class ItemNearbyTransformersFlipperEventBinding implements ViewBind
         throw new NullPointerException("Missing required view with ID: ".concat("ivHeader"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.b;

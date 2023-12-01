@@ -10,18 +10,18 @@ import com.bumptech.glide.request.transition.ViewTransition;
 public class ViewAnimationFactory<R> implements TransitionFactory<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ViewTransition.ViewTransitionAnimationFactory f21084a;
+    private final ViewTransition.ViewTransitionAnimationFactory f7478a;
     private Transition<R> b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/request/transition/ViewAnimationFactory$ConcreteViewTransitionAnimationFactory.class */
     static class ConcreteViewTransitionAnimationFactory implements ViewTransition.ViewTransitionAnimationFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Animation f21085a;
+        private final Animation f7479a;
 
         @Override // com.bumptech.glide.request.transition.ViewTransition.ViewTransitionAnimationFactory
         public Animation a(Context context) {
-            return this.f21085a;
+            return this.f7479a;
         }
     }
 
@@ -29,11 +29,11 @@ public class ViewAnimationFactory<R> implements TransitionFactory<R> {
     static class ResourceViewTransitionAnimationFactory implements ViewTransition.ViewTransitionAnimationFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f21086a;
+        private final int f7480a;
 
         @Override // com.bumptech.glide.request.transition.ViewTransition.ViewTransitionAnimationFactory
         public Animation a(Context context) {
-            return AnimationUtils.loadAnimation(context, this.f21086a);
+            return AnimationUtils.loadAnimation(context, this.f7480a);
         }
     }
 
@@ -43,7 +43,7 @@ public class ViewAnimationFactory<R> implements TransitionFactory<R> {
             return NoTransition.b();
         }
         if (this.b == null) {
-            this.b = new ViewTransition(this.f21084a);
+            this.b = new ViewTransition(this.f7478a);
         }
         return this.b;
     }

@@ -41,11 +41,11 @@ import java.util.List;
 public class GroupFragmentNear extends BaseFragment implements View.OnClickListener, CommonTitleDoubleClickObserver.ITitleClickObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f30784a = "NEARBYGROUP1";
+    public static String f17094a = "NEARBYGROUP1";
     public static String b = "NEARBYGROUP2";
 
     /* renamed from: c  reason: collision with root package name */
-    public static int f30785c = 0;
+    public static int f17095c = 0;
     public static String f = "ISNEARBY";
     private List<BluedGroupTypeTags> A;
     private LinearLayout B;
@@ -80,10 +80,9 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
     public BluedUIHttpResponse i = new BluedUIHttpResponse<BluedEntityA<BluedGroupLists>>() { // from class: com.soft.blued.ui.group.GroupFragmentNear.4
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f30789a;
+        boolean f17099a;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupLists> bluedEntityA) {
             if (bluedEntityA == null || !bluedEntityA.hasData()) {
@@ -107,7 +106,7 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
             if (GroupFragmentNear.this.o == 1) {
                 GroupFragmentNear.this.m.clear();
                 GroupFragmentNear.this.n.clear();
-                if (GroupFragment.f30779a == 0) {
+                if (GroupFragment.f17089a == 0) {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(GroupFragmentNear.this.G);
                     arrayList.add(GroupFragmentNear.this.H);
@@ -122,7 +121,6 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
             GroupFragmentNear.this.r.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onSuccess(String str) {
             super.onSuccess(str);
             if (GroupFragmentNear.this.o == 1) {
@@ -130,26 +128,24 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
-            this.f30789a = true;
+            this.f17099a = true;
             if (GroupFragmentNear.this.o != 1) {
                 GroupFragmentNear.j(GroupFragmentNear.this);
             }
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             GroupFragmentNear.this.k.j();
             GroupFragmentNear.this.k.q();
             if (GroupFragmentNear.this.r.getCount() != 0) {
                 GroupFragmentNear.this.I.d();
-            } else if (!this.f30789a) {
+            } else if (!this.f17099a) {
                 GroupFragmentNear.this.I.a();
             } else {
-                this.f30789a = false;
+                this.f17099a = false;
                 GroupFragmentNear.this.I.b();
             }
         }
@@ -178,7 +174,6 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.OnPullDownListener
         public void a() {
             GroupFragmentNear.this.o = 1;
             GroupFragmentNear.this.h = false;
@@ -186,7 +181,6 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
             GroupFragmentNear.this.a(false);
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.OnPullDownListener
         public void b() {
             GroupFragmentNear.l(GroupFragmentNear.this);
             GroupFragmentNear.this.a(false);
@@ -204,9 +198,9 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
         }
         if (!this.q && (i = this.o) != 1) {
             this.o = i - 1;
-            AppMethods.a((CharSequence) this.t.getResources().getString(2131887275));
+            AppMethods.a(this.t.getResources().getString(2131887275));
             this.k.j();
-        } else if (f30785c == 0) {
+        } else if (f17095c == 0) {
             GroupHttpUtils.e(this.t, this.i, this.o + "", this.p + "", getFragmentActive());
         } else {
             GroupHttpUtils.d(this.t, this.i, "hot", this.o + "", this.p + "", "", "", getFragmentActive());
@@ -217,7 +211,7 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
         Bundle arguments = getArguments();
         this.F = arguments;
         if (arguments != null) {
-            BluedGroupLists bluedGroupLists = (BluedGroupLists) arguments.getSerializable(f30784a);
+            BluedGroupLists bluedGroupLists = (BluedGroupLists) arguments.getSerializable(f17094a);
             this.G = bluedGroupLists;
             bluedGroupLists.is_title = 2;
             BluedGroupLists bluedGroupLists2 = (BluedGroupLists) this.F.getSerializable(b);
@@ -230,7 +224,7 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
             if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                 return;
             }
-            if (GroupFragment.f30779a == 0) {
+            if (GroupFragment.f17089a == 0) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(this.G);
                 arrayList.add(this.H);
@@ -250,18 +244,18 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
     private void c() {
         LayoutInflater layoutInflater = (LayoutInflater) this.t.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.u = layoutInflater;
-        f30785c = 0;
+        f17095c = 0;
         View inflate = layoutInflater.inflate(R.layout.fragment_group_lists_header, (ViewGroup) null);
         this.v = inflate;
         this.w = (TextView) inflate.findViewById(R.id.tv_same_city);
         this.x = (TextView) this.v.findViewById(R.id.tv_recommended_category);
-        SearchView searchView = (SearchView) this.v.findViewById(R.id.group_search);
-        this.C = searchView;
-        searchView.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.GroupFragmentNear.2
+        SearchView findViewById = this.v.findViewById(R.id.group_search);
+        this.C = findViewById;
+        findViewById.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.group.GroupFragmentNear.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                TerminalActivity.d(GroupFragmentNear.this.t, GroupSearchFragment.class, null);
+                TerminalActivity.d(GroupFragmentNear.this.t, GroupSearchFragment.class, (Bundle) null);
             }
         });
         this.w.setOnClickListener(this);
@@ -273,15 +267,15 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
 
     private void d() {
         this.E = LayoutInflater.from(this.t);
-        this.I = (NoDataAndLoadFailView) this.s.findViewById(R.id.nodataview);
+        this.I = this.s.findViewById(R.id.nodataview);
         this.D = new ArrayList();
         this.e = new BluedGroupCheck.GroupFailureReason();
         this.A = new ArrayList();
         this.m = new ArrayList();
         this.n = new ArrayList();
-        RenrenPullToRefreshPinnedSectionListView renrenPullToRefreshPinnedSectionListView = (RenrenPullToRefreshPinnedSectionListView) this.s.findViewById(R.id.my_grouplist_pullrefresh);
-        this.k = renrenPullToRefreshPinnedSectionListView;
-        renrenPullToRefreshPinnedSectionListView.setRefreshEnabled(true);
+        RenrenPullToRefreshPinnedSectionListView findViewById = this.s.findViewById(R.id.my_grouplist_pullrefresh);
+        this.k = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.k.postDelayed(new Runnable() { // from class: com.soft.blued.ui.group.GroupFragmentNear.3
             @Override // java.lang.Runnable
             public void run() {
@@ -311,12 +305,10 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
         return i;
     }
 
-    @Override // com.blued.android.module.common.observer.CommonTitleDoubleClickObserver.ITitleClickObserver
     public void a() {
         this.l.smoothScrollToPosition(0);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i != 100) {
@@ -334,12 +326,10 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.t = getActivity();
         View view = this.s;
@@ -355,7 +345,6 @@ public class GroupFragmentNear extends BaseFragment implements View.OnClickListe
         return this.s;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         CommonTitleDoubleClickObserver.a().b(this);
         super.onDestroy();

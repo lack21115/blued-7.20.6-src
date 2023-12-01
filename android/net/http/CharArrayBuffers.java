@@ -3,9 +3,8 @@ package android.net.http;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/net/http/CharArrayBuffers.class */
-public class CharArrayBuffers {
+class CharArrayBuffers {
     static final char uppercaseAddon = ' ';
 
     CharArrayBuffers() {

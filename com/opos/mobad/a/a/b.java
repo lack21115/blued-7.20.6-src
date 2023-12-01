@@ -10,11 +10,11 @@ import com.opos.mobad.n.d.h;
 public class b implements com.opos.mobad.n.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private FrameLayout f25608a;
+    private FrameLayout f11920a;
     private com.opos.mobad.n.a b;
 
     public b(Context context) {
-        this.f25608a = new FrameLayout(context);
+        this.f11920a = new FrameLayout(context);
     }
 
     @Override // com.opos.mobad.n.a
@@ -22,12 +22,12 @@ public class b implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
+    public void a(a.InterfaceC0538a interfaceC0538a) {
         com.opos.mobad.n.a aVar = this.b;
         if (aVar == null) {
             return;
         }
-        aVar.a(interfaceC0708a);
+        aVar.a(interfaceC0538a);
     }
 
     public void a(com.opos.mobad.n.a aVar) {
@@ -42,11 +42,11 @@ public class b implements com.opos.mobad.n.a {
         }
         aVar.a(hVar);
         View c2 = this.b.c();
-        if (c2 == null || this.f25608a.indexOfChild(c2) >= 0) {
+        if (c2 == null || this.f11920a.indexOfChild(c2) >= 0) {
             return;
         }
-        this.f25608a.removeAllViews();
-        this.f25608a.addView(c2, new FrameLayout.LayoutParams(-1, -2));
+        this.f11920a.removeAllViews();
+        this.f11920a.addView(c2, new FrameLayout.LayoutParams(-1, -2));
     }
 
     @Override // com.opos.mobad.n.a
@@ -55,7 +55,7 @@ public class b implements com.opos.mobad.n.a {
 
     @Override // com.opos.mobad.n.a
     public View c() {
-        return this.f25608a;
+        return this.f11920a;
     }
 
     @Override // com.opos.mobad.n.a

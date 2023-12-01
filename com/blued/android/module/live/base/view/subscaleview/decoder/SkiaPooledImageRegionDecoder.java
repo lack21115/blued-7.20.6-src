@@ -14,7 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
-import com.anythink.expressad.foundation.h.i;
+import com.anythink.core.common.b.g;
 import com.blued.android.module.live.base.view.subscaleview.SubsamplingScaleImageView;
 import java.io.File;
 import java.io.FileFilter;
@@ -31,13 +31,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/decoder/SkiaPooledImageRegionDecoder.class */
 public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f11577a = SkiaPooledImageRegionDecoder.class.getSimpleName();
+    private static final String a = SkiaPooledImageRegionDecoder.class.getSimpleName();
     private static boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DecoderPool f11578c;
+    private DecoderPool c;
     private final ReadWriteLock d;
     private final Bitmap.Config e;
     private Context f;
@@ -49,20 +45,18 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/view/subscaleview/decoder/SkiaPooledImageRegionDecoder$DecoderPool.class */
     public static class DecoderPool {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Semaphore f11581a;
+        private final Semaphore a;
         private final Map<BitmapRegionDecoder, Boolean> b;
 
         private DecoderPool() {
-            this.f11581a = new Semaphore(0, true);
+            this.a = new Semaphore(0, true);
             this.b = new ConcurrentHashMap();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a(BitmapRegionDecoder bitmapRegionDecoder) {
             if (c(bitmapRegionDecoder)) {
-                this.f11581a.release();
+                this.a.release();
             }
         }
 
@@ -88,13 +82,13 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
         public void b(BitmapRegionDecoder bitmapRegionDecoder) {
             synchronized (this) {
                 this.b.put(bitmapRegionDecoder, false);
-                this.f11581a.release();
+                this.a.release();
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public BitmapRegionDecoder c() {
-            this.f11581a.acquireUninterruptibly();
+            this.a.acquireUninterruptibly();
             return e();
         }
 
@@ -120,9 +114,9 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
         public void d() {
             synchronized (this) {
                 while (!this.b.isEmpty()) {
-                    BitmapRegionDecoder c2 = c();
-                    c2.recycle();
-                    this.b.remove(c2);
+                    BitmapRegionDecoder c = c();
+                    c.recycle();
+                    this.b.remove(c);
                 }
             }
         }
@@ -148,7 +142,7 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     }
 
     public SkiaPooledImageRegionDecoder(Bitmap.Config config) {
-        this.f11578c = new DecoderPool();
+        this.c = new DecoderPool();
         this.d = new ReentrantReadWriteLock(true);
         this.h = Long.MAX_VALUE;
         this.i = new Point(0, 0);
@@ -166,7 +160,7 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str) {
         if (b) {
-            Log.d(f11577a, str);
+            Log.d(a, str);
         }
     }
 
@@ -178,13 +172,13 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
         new Thread() { // from class: com.blued.android.module.live.base.view.subscaleview.decoder.SkiaPooledImageRegionDecoder.1
             @Override // java.lang.Thread, java.lang.Runnable
             public void run() {
-                while (SkiaPooledImageRegionDecoder.this.f11578c != null) {
+                while (SkiaPooledImageRegionDecoder.this.c != null) {
                     SkiaPooledImageRegionDecoder skiaPooledImageRegionDecoder = SkiaPooledImageRegionDecoder.this;
-                    if (!skiaPooledImageRegionDecoder.a(skiaPooledImageRegionDecoder.f11578c.b(), SkiaPooledImageRegionDecoder.this.h)) {
+                    if (!skiaPooledImageRegionDecoder.a(skiaPooledImageRegionDecoder.c.b(), SkiaPooledImageRegionDecoder.this.h)) {
                         return;
                     }
                     try {
-                        if (SkiaPooledImageRegionDecoder.this.f11578c != null) {
+                        if (SkiaPooledImageRegionDecoder.this.c != null) {
                             long currentTimeMillis = System.currentTimeMillis();
                             SkiaPooledImageRegionDecoder.this.a("Starting decoder");
                             SkiaPooledImageRegionDecoder.this.d();
@@ -214,8 +208,8 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
             Resources resources = this.f.getPackageName().equals(authority) ? this.f.getResources() : this.f.getPackageManager().getResourcesForApplication(authority);
             List<String> pathSegments = this.g.getPathSegments();
             int size = pathSegments.size();
-            if (size == 2 && pathSegments.get(0).equals(i.f7952c)) {
-                i = resources.getIdentifier(pathSegments.get(1), i.f7952c, authority);
+            if (size == 2 && pathSegments.get(0).equals("drawable")) {
+                i = resources.getIdentifier(pathSegments.get(1), "drawable", authority);
             } else {
                 if (size == 1 && TextUtils.isDigitsOnly(pathSegments.get(0))) {
                     try {
@@ -256,7 +250,7 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
                 InputStream openInputStream = contentResolver.openInputStream(this.g);
                 BitmapRegionDecoder newInstance = BitmapRegionDecoder.newInstance(openInputStream, false);
                 try {
-                    AssetFileDescriptor openAssetFileDescriptor = contentResolver.openAssetFileDescriptor(this.g, "r");
+                    AssetFileDescriptor openAssetFileDescriptor = contentResolver.openAssetFileDescriptor(this.g, g.o.o);
                     j = Long.MAX_VALUE;
                     if (openAssetFileDescriptor != null) {
                         inputStream = openInputStream;
@@ -287,8 +281,8 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
         this.i.set(bitmapRegionDecoder.getWidth(), bitmapRegionDecoder.getHeight());
         this.d.writeLock().lock();
         try {
-            if (this.f11578c != null) {
-                this.f11578c.b(bitmapRegionDecoder);
+            if (this.c != null) {
+                this.c.b(bitmapRegionDecoder);
             }
         } finally {
             this.d.writeLock().unlock();
@@ -334,22 +328,22 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
         }
         this.d.readLock().lock();
         try {
-            if (this.f11578c != null) {
-                BitmapRegionDecoder c2 = this.f11578c.c();
-                if (c2 != null && !c2.isRecycled()) {
+            if (this.c != null) {
+                BitmapRegionDecoder c = this.c.c();
+                if (c != null && !c.isRecycled()) {
                     BitmapFactory.Options options = new BitmapFactory.Options();
                     options.inSampleSize = i;
                     options.inPreferredConfig = this.e;
-                    Bitmap decodeRegion = c2.decodeRegion(rect, options);
+                    Bitmap decodeRegion = c.decodeRegion(rect, options);
                     if (decodeRegion != null) {
-                        if (c2 != null) {
-                            this.f11578c.a(c2);
+                        if (c != null) {
+                            this.c.a(c);
                         }
                         return decodeRegion;
                     }
                     throw new RuntimeException("Skia image decoder returned null bitmap - image format may not be supported");
-                } else if (c2 != null) {
-                    this.f11578c.a(c2);
+                } else if (c != null) {
+                    this.c.a(c);
                 }
             }
             throw new IllegalStateException("Cannot decode region after decoder has been recycled");
@@ -370,8 +364,8 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     public boolean a() {
         boolean z;
         synchronized (this) {
-            if (this.f11578c != null) {
-                if (!this.f11578c.a()) {
+            if (this.c != null) {
+                if (!this.c.a()) {
                     z = true;
                 }
             }
@@ -405,9 +399,9 @@ public class SkiaPooledImageRegionDecoder implements ImageRegionDecoder {
     public void b() {
         synchronized (this) {
             this.d.writeLock().lock();
-            if (this.f11578c != null) {
-                this.f11578c.d();
-                this.f11578c = null;
+            if (this.c != null) {
+                this.c.d();
+                this.c = null;
                 this.f = null;
                 this.g = null;
             }

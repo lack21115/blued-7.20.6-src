@@ -22,11 +22,11 @@ import com.soft.blued.log.track.EventTrackMessage;
 public class RiskyMsgDeletedHint extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f28500a;
+    private Context f14810a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f28501c;
+    private boolean f14811c;
     private ValueAnimator d;
     private RelativeLayout.LayoutParams e;
     private TextView f;
@@ -68,7 +68,7 @@ public class RiskyMsgDeletedHint extends LinearLayout {
     }
 
     private void a(Context context) {
-        this.f28500a = context;
+        this.f14810a = context;
         this.b = LayoutInflater.from(context).inflate(R.layout.layout_msg_deleted_hint, this);
         this.g = (RelativeLayout) findViewById(2131369389);
         this.f = (TextView) this.b.findViewById(2131371675);
@@ -89,7 +89,7 @@ public class RiskyMsgDeletedHint extends LinearLayout {
     }
 
     public boolean a() {
-        return this.f28501c;
+        return this.f14811c;
     }
 
     public void b() {
@@ -97,8 +97,8 @@ public class RiskyMsgDeletedHint extends LinearLayout {
     }
 
     public void c() {
-        if (isEnabled() && !this.f28501c) {
-            this.f28501c = true;
+        if (isEnabled() && !this.f14811c) {
+            this.f14811c = true;
             EventTrackMessage.a(MessageProtos.Event.MSG_DELETE_POINT_SHOW);
             setVisibility(0);
             if (this.i) {
@@ -113,8 +113,8 @@ public class RiskyMsgDeletedHint extends LinearLayout {
     }
 
     public void d() {
-        if (this.f28501c) {
-            this.f28501c = false;
+        if (this.f14811c) {
+            this.f14811c = false;
             animate().translationY(-getHeight()).setDuration(200L).setListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.customview.RiskyMsgDeletedHint.3
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
@@ -125,9 +125,8 @@ public class RiskyMsgDeletedHint extends LinearLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.LinearLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
     }
 
@@ -150,12 +149,12 @@ public class RiskyMsgDeletedHint extends LinearLayout {
         if (this.e == null) {
             this.e = (RelativeLayout.LayoutParams) this.g.getLayoutParams();
         }
-        this.e.height = DensityUtils.a(this.f28500a, i);
+        this.e.height = DensityUtils.a(this.f14810a, i);
         if (this.d == null) {
             new ValueAnimator();
-            this.d = ValueAnimator.ofInt(-DensityUtils.a(this.f28500a, i + 1), 0);
+            this.d = ValueAnimator.ofInt(-DensityUtils.a(this.f14810a, i + 1), 0);
         }
-        this.d.setIntValues(-DensityUtils.a(this.f28500a, i + 1), 0);
+        this.d.setIntValues(-DensityUtils.a(this.f14810a, i + 1), 0);
     }
 
     public void setTheme(Theme theme) {

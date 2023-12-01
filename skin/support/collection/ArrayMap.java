@@ -6,13 +6,11 @@ import java.util.Set;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/collection/ArrayMap.class */
 public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    MapCollections<K, V> f44204a;
+    MapCollections<K, V> a;
 
     private MapCollections<K, V> b() {
-        if (this.f44204a == null) {
-            this.f44204a = new MapCollections<K, V>() { // from class: skin.support.collection.ArrayMap.1
+        if (this.a == null) {
+            this.a = new MapCollections<K, V>() { // from class: skin.support.collection.ArrayMap.1
                 @Override // skin.support.collection.MapCollections
                 protected int a() {
                     return ArrayMap.this.h;
@@ -59,7 +57,7 @@ public class ArrayMap<K, V> extends SimpleArrayMap<K, V> implements Map<K, V> {
                 }
             };
         }
-        return this.f44204a;
+        return this.a;
     }
 
     @Override // java.util.Map

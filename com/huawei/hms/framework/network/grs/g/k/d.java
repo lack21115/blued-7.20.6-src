@@ -6,15 +6,15 @@ import java.util.List;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<String> f22719a;
+    private List<String> f9111a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22720c;
+    private String f9112c;
     private int d;
 
     public List<String> a() {
-        return this.f22719a;
+        return this.f9111a;
     }
 
     public void a(int i) {
@@ -22,15 +22,15 @@ public class d {
     }
 
     public void a(String str) {
-        this.f22720c = str;
+        this.f9112c = str;
     }
 
     public void a(List<String> list) {
-        this.f22719a = list;
+        this.f9111a = list;
     }
 
     public String b() {
-        return this.f22720c;
+        return this.f9112c;
     }
 
     public void b(String str) {

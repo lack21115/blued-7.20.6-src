@@ -16,11 +16,11 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35115a;
+    private Context f21424a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f35116c;
+    private int f21425c;
     private boolean d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -44,15 +44,15 @@ public final class a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.bugly.crashreport.biz.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/crashreport/biz/a$a.class */
-    public final class RunnableC0900a implements Runnable {
+    public final class RunnableC0730a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f35119a;
+        private boolean f21428a;
         private UserInfoBean b;
 
-        public RunnableC0900a(UserInfoBean userInfoBean, boolean z) {
+        public RunnableC0730a(UserInfoBean userInfoBean, boolean z) {
             this.b = userInfoBean;
-            this.f35119a = z;
+            this.f21428a = z;
         }
 
         @Override // java.lang.Runnable
@@ -67,7 +67,7 @@ public final class a {
                     x.c("[UserInfo] Record user info.", new Object[0]);
                     a.a(a.this, this.b, false);
                 }
-                if (this.f35119a) {
+                if (this.f21428a) {
                     a aVar = a.this;
                     w a2 = w.a();
                     if (a2 != null) {
@@ -106,11 +106,11 @@ public final class a {
     public final class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f35122a;
+        private long f21431a;
 
         public c(long j) {
-            this.f35122a = com.anythink.expressad.d.a.b.aD;
-            this.f35122a = j;
+            this.f21431a = com.anythink.expressad.d.a.b.aD;
+            this.f21431a = j;
         }
 
         @Override // java.lang.Runnable
@@ -121,14 +121,14 @@ public final class a {
                 a2.a(new AnonymousClass2());
             }
             a aVar2 = a.this;
-            long j = this.f35122a;
+            long j = this.f21431a;
             w.a().a(new c(j), j);
         }
     }
 
     public a(Context context, boolean z) {
         this.d = true;
-        this.f35115a = context;
+        this.f21424a = context;
         this.d = z;
     }
 
@@ -138,13 +138,13 @@ public final class a {
         }
         try {
             ContentValues contentValues = new ContentValues();
-            if (userInfoBean.f35113a > 0) {
-                contentValues.put("_id", Long.valueOf(userInfoBean.f35113a));
+            if (userInfoBean.f21422a > 0) {
+                contentValues.put("_id", Long.valueOf(userInfoBean.f21422a));
             }
             contentValues.put("_tm", Long.valueOf(userInfoBean.e));
             contentValues.put("_ut", Long.valueOf(userInfoBean.f));
             contentValues.put(bl.e, Integer.valueOf(userInfoBean.b));
-            contentValues.put("_pc", userInfoBean.f35114c);
+            contentValues.put("_pc", userInfoBean.f21423c);
             contentValues.put("_dt", z.a(userInfoBean));
             return contentValues;
         } catch (Throwable th) {
@@ -168,7 +168,7 @@ public final class a {
             long j = cursor.getLong(cursor.getColumnIndex("_id"));
             UserInfoBean userInfoBean = (UserInfoBean) z.a(blob, UserInfoBean.CREATOR);
             if (userInfoBean != null) {
-                userInfoBean.f35113a = j;
+                userInfoBean.f21422a = j;
             }
             return userInfoBean;
         } catch (Throwable th) {
@@ -183,14 +183,14 @@ public final class a {
     static /* synthetic */ void a(a aVar, UserInfoBean userInfoBean, boolean z) {
         List<UserInfoBean> a2;
         if (userInfoBean != null) {
-            if (!z && userInfoBean.b != 1 && (a2 = aVar.a(com.tencent.bugly.crashreport.common.info.a.a(aVar.f35115a).d)) != null && a2.size() >= 20) {
+            if (!z && userInfoBean.b != 1 && (a2 = aVar.a(com.tencent.bugly.crashreport.common.info.a.a(aVar.f21424a).d)) != null && a2.size() >= 20) {
                 x.a("[UserInfo] There are too many user info in local: %d", Integer.valueOf(a2.size()));
                 return;
             }
             long a3 = p.a().a("t_ui", a(userInfoBean), (o) null, true);
             if (a3 >= 0) {
                 x.c("[Database] insert %s success with ID: %d", "t_ui", Long.valueOf(a3));
-                userInfoBean.f35113a = a3;
+                userInfoBean.f21422a = a3;
             }
         }
     }
@@ -208,7 +208,7 @@ public final class a {
             }
             sb.append(" or _id");
             sb.append(" = ");
-            sb.append(list.get(i2).f35113a);
+            sb.append(list.get(i2).f21422a);
             i = i2 + 1;
         }
         String sb2 = sb.toString();
@@ -325,12 +325,12 @@ public final class a {
             return;
         }
         if (i == 1 || i == 3) {
-            this.f35116c++;
+            this.f21425c++;
         }
-        com.tencent.bugly.crashreport.common.info.a a3 = com.tencent.bugly.crashreport.common.info.a.a(this.f35115a);
+        com.tencent.bugly.crashreport.common.info.a a3 = com.tencent.bugly.crashreport.common.info.a.a(this.f21424a);
         UserInfoBean userInfoBean = new UserInfoBean();
         userInfoBean.b = i;
-        userInfoBean.f35114c = a3.d;
+        userInfoBean.f21423c = a3.d;
         userInfoBean.d = a3.g();
         userInfoBean.e = System.currentTimeMillis();
         userInfoBean.f = -1L;
@@ -349,7 +349,7 @@ public final class a {
         userInfoBean.s = a3.y();
         userInfoBean.p = a3.z();
         userInfoBean.q = a3.A();
-        w.a().a(new RunnableC0900a(userInfoBean, z), 0L);
+        w.a().a(new RunnableC0730a(userInfoBean, z), 0L);
     }
 
     public final void b() {

@@ -24,21 +24,17 @@ import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveShowPhotoAdapter.class */
 public class LiveShowPhotoAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BaseFragment f11693a;
+    private BaseFragment a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11694c;
+    private int c;
     private int d;
 
     public LiveShowPhotoAdapter(BaseFragment baseFragment) {
         super(R.layout.item_live_show_photo_layout, new ArrayList());
         this.d = 0;
-        this.f11693a = baseFragment;
-        this.f11694c = DisplayUtil.a(AppInfo.d(), 3.0f);
-        this.b = (AppInfo.l - (this.f11694c * 2)) / 3;
+        this.a = baseFragment;
+        this.c = DisplayUtil.a(AppInfo.d(), 3.0f);
+        this.b = (AppInfo.l - (this.c * 2)) / 3;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -74,7 +70,6 @@ public class LiveShowPhotoAdapter extends BaseQuickAdapter<String, BaseViewHolde
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final String str) {
         ImageView imageView = (ImageView) baseViewHolder.getView(R.id.iv_photo);
@@ -82,12 +77,12 @@ public class LiveShowPhotoAdapter extends BaseQuickAdapter<String, BaseViewHolde
         layoutParams.weight = this.b;
         layoutParams.height = this.b;
         imageView.setLayoutParams(layoutParams);
-        ImageLoader.a(this.f11693a.getFragmentActive(), str).b(R.drawable.icon_live_show_photo_def).a(imageView);
+        ImageLoader.a(this.a.getFragmentActive(), str).b(R.drawable.icon_live_show_photo_def).a(imageView);
         imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveShowPhotoAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                ImageFileLoader.a(LiveShowPhotoAdapter.this.f11693a.getFragmentActive()).b(str).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.adapter.LiveShowPhotoAdapter.1.1
+                ImageFileLoader.a(LiveShowPhotoAdapter.this.a.getFragmentActive()).b(str).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.adapter.LiveShowPhotoAdapter.1.1
                     @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                     public void onUIFinish(File file, Exception exc) {
                         if (file == null || !file.exists()) {
@@ -95,22 +90,22 @@ public class LiveShowPhotoAdapter extends BaseQuickAdapter<String, BaseViewHolde
                         }
                         String str2 = LiveShowPhotoAdapter.TAG;
                         Logger.d(str2, "file size = " + file.length());
-                        Bitmap a2 = LiveShowPhotoAdapter.this.a(file.getPath(), 1080);
-                        int width = a2.getWidth();
-                        int height = a2.getHeight();
+                        Bitmap a = LiveShowPhotoAdapter.this.a(file.getPath(), 1080);
+                        int width = a.getWidth();
+                        int height = a.getHeight();
                         if (LiveShowPhotoAdapter.this.d != 0 && width >= 300 && height >= 300) {
                             Logger.d(LiveShowPhotoAdapter.TAG, "photoType = SHOW_FEED ... ");
-                            LiveRoomInfo.a().a(LiveShowPhotoAdapter.this.f11693a, str, file.getPath(), 100);
+                            LiveRoomInfo.a().a(LiveShowPhotoAdapter.this.a, str, file.getPath(), 100);
                             return;
                         }
                         Logger.d(LiveShowPhotoAdapter.TAG, "photoType = SHOW_ALBUM ... ");
-                        if (LiveShowPhotoAdapter.this.f11693a == null || LiveShowPhotoAdapter.this.f11693a.getParentFragment() == null || !(LiveShowPhotoAdapter.this.f11693a.getParentFragment() instanceof LiveBaseDialogFragment)) {
+                        if (LiveShowPhotoAdapter.this.a == null || LiveShowPhotoAdapter.this.a.getParentFragment() == null || !(LiveShowPhotoAdapter.this.a.getParentFragment() instanceof LiveBaseDialogFragment)) {
                             return;
                         }
                         LiveMakeLoverFansModel liveMakeLoverFansModel = new LiveMakeLoverFansModel();
                         liveMakeLoverFansModel.avatar = str;
                         liveMakeLoverFansModel.pic = file.getPath();
-                        ((LiveBaseDialogFragment) LiveShowPhotoAdapter.this.f11693a.getParentFragment()).a((LiveBaseDialogFragment) liveMakeLoverFansModel);
+                        LiveShowPhotoAdapter.this.a.getParentFragment().a((LiveBaseDialogFragment) liveMakeLoverFansModel);
                     }
                 }).a();
             }

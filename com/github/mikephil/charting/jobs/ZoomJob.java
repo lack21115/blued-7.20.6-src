@@ -13,11 +13,11 @@ public class ZoomJob extends ViewPortJob {
     private static ObjectPool<ZoomJob> e;
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f22157a;
+    protected float f8550a;
     protected float b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected YAxis.AxisDependency f22158c;
+    protected YAxis.AxisDependency f8551c;
     protected Matrix d;
 
     static {
@@ -29,9 +29,9 @@ public class ZoomJob extends ViewPortJob {
     public ZoomJob(ViewPortHandler viewPortHandler, float f, float f2, float f3, float f4, Transformer transformer, YAxis.AxisDependency axisDependency, View view) {
         super(viewPortHandler, f3, f4, transformer, view);
         this.d = new Matrix();
-        this.f22157a = f;
+        this.f8550a = f;
         this.b = f2;
-        this.f22158c = axisDependency;
+        this.f8551c = axisDependency;
     }
 
     public static void a(ZoomJob zoomJob) {
@@ -46,9 +46,9 @@ public class ZoomJob extends ViewPortJob {
     @Override // java.lang.Runnable
     public void run() {
         Matrix matrix = this.d;
-        this.m.a(this.f22157a, this.b, matrix);
+        this.m.a(this.f8550a, this.b, matrix);
         this.m.a(matrix, this.q, false);
-        float r = ((BarLineChartBase) this.q).b(this.f22158c).v / this.m.r();
+        float r = ((BarLineChartBase) this.q).b(this.f8551c).v / this.m.r();
         this.l[0] = this.n - ((((BarLineChartBase) this.q).getXAxis().v / this.m.q()) / 2.0f);
         this.l[1] = this.o + (r / 2.0f);
         this.p.a(this.l);

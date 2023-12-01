@@ -21,7 +21,7 @@ public abstract class AbstractMapBuilderEntrySet<E extends Map.Entry<? extends K
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final boolean contains(Object obj) {
         if (obj instanceof Map.Entry) {
             return a((Map.Entry) obj);
@@ -29,7 +29,7 @@ public abstract class AbstractMapBuilderEntrySet<E extends Map.Entry<? extends K
         return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final boolean remove(Object obj) {
         if (obj instanceof Map.Entry) {
             return c((Map.Entry) obj);

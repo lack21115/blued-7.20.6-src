@@ -51,10 +51,10 @@ public final class j extends b implements com.kwad.sdk.widget.c {
             }
         }
     };
-    private final a.InterfaceC0534a eS = new a.InterfaceC0534a() { // from class: com.kwad.components.ad.interstitial.c.j.4
+    private final a.InterfaceC0364a eS = new a.InterfaceC0364a() { // from class: com.kwad.components.ad.interstitial.c.j.4
         /* JADX WARN: Removed duplicated region for block: B:15:0x005a  */
         /* JADX WARN: Removed duplicated region for block: B:16:0x0060  */
-        @Override // com.kwad.components.core.video.a.InterfaceC0534a
+        @Override // com.kwad.components.core.video.a.InterfaceC0364a
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences

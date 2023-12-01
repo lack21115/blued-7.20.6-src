@@ -4,13 +4,13 @@ package com.tencent.qmsp.sdk.f;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    c f38600a = new c();
+    c f24909a = new c();
 
     public byte[] a(byte[] bArr, int i, int i2, byte[] bArr2) {
-        return this.f38600a.a(bArr, i, i2, bArr2);
+        return this.f24909a.a(bArr, i, i2, bArr2);
     }
 
     public byte[] a(byte[] bArr, byte[] bArr2) {
-        return this.f38600a.a(bArr, bArr2);
+        return this.f24909a.a(bArr, bArr2);
     }
 }

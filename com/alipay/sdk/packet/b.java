@@ -5,18 +5,16 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/packet/b.class */
 public final class b {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4638a;
+    private final String a;
     private final String b;
 
     public b(String str, String str2) {
-        this.f4638a = str;
+        this.a = str;
         this.b = str2;
     }
 
     public String a() {
-        return this.f4638a;
+        return this.a;
     }
 
     public String b() {
@@ -36,6 +34,6 @@ public final class b {
     }
 
     public String toString() {
-        return String.format("<Letter envelop=%s body=%s>", this.f4638a, this.b);
+        return String.format("<Letter envelop=%s body=%s>", this.a, this.b);
     }
 }

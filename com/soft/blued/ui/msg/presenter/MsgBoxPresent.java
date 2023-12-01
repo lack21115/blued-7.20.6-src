@@ -15,7 +15,6 @@ import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
 import com.blued.android.framework.ui.mvp.MvpPresenter;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.utils.AppUtils;
 import com.blued.android.module.common.log.oldtrack.LogData;
 import com.blued.android.module.common.user.model.UserInfo;
@@ -47,14 +46,13 @@ public class MsgBoxPresent extends MvpPresenter {
         public MsgSessionListener() {
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
         public void onUISessionDataChanged(List<SessionModel> list) {
             ChatHelperV4.a(list, true);
             MsgBoxPresent.this.j = new ArrayList();
             if (list != null) {
                 MsgBoxPresent.this.j.addAll(MsgBoxManager.a().a(list, true));
             }
-            if (BluedConstant.f28239a) {
+            if (BluedConstant.f14549a) {
                 Iterator it = MsgBoxPresent.this.j.iterator();
                 while (it.hasNext()) {
                     SessionModel sessionModel = (SessionModel) it.next();
@@ -66,7 +64,7 @@ public class MsgBoxPresent extends MvpPresenter {
                 }
             }
             MsgBoxPresent msgBoxPresent = MsgBoxPresent.this;
-            msgBoxPresent.a("session_list", (String) msgBoxPresent.j);
+            msgBoxPresent.a("session_list", msgBoxPresent.j);
         }
     }
 
@@ -124,7 +122,6 @@ public class MsgBoxPresent extends MvpPresenter {
         ChatManager.getInstance().deleteSession(sessionModel.sessionType, sessionModel.sessionId);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
     }
 
@@ -138,7 +135,6 @@ public class MsgBoxPresent extends MvpPresenter {
         PayUtils.a(h(), 6, "chat_msg_quiet_singe");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -168,9 +164,9 @@ public class MsgBoxPresent extends MvpPresenter {
                 ArrayList arrayList2 = new ArrayList();
                 for (final String str : arrayList) {
                     BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-                    menuItemInfo.f11214a = str;
+                    menuItemInfo.a = str;
                     if (TextUtils.equals(str, AppUtils.a(2131890773))) {
-                        menuItemInfo.f11215c = 2131233869;
+                        menuItemInfo.c = 2131233869;
                     }
                     menuItemInfo.d = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.presenter.MsgBoxPresent.1.1
                         @Override // android.view.View.OnClickListener
@@ -190,7 +186,7 @@ public class MsgBoxPresent extends MvpPresenter {
                 }
                 MsgBoxPresent.this.i = new BottomMenuPop(MsgBoxPresent.this.h());
                 MsgBoxPresent.this.i.b = arrayList2;
-                new XPopup.Builder(MsgBoxPresent.this.h()).a((BasePopupView) MsgBoxPresent.this.i).h();
+                new XPopup.Builder(MsgBoxPresent.this.h()).a(MsgBoxPresent.this.i).h();
                 return true;
             }
         };
@@ -215,7 +211,6 @@ public class MsgBoxPresent extends MvpPresenter {
 
     public void q() {
         ChatManager.getInstance().getSessionModelList(new FetchDataListener<List<SessionModel>>() { // from class: com.soft.blued.ui.msg.presenter.MsgBoxPresent.3
-            @Override // com.blued.android.chat.listener.FetchDataListener
             /* renamed from: a */
             public void onFetchData(final List<SessionModel> list) {
                 AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.msg.presenter.MsgBoxPresent.3.1

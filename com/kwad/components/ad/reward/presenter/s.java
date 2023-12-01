@@ -222,14 +222,14 @@ public final class s extends a implements View.OnClickListener, com.kwad.compone
     }
 
     private void a(AdInfo adInfo) {
-        String m7799do = com.kwad.sdk.core.response.a.b.m7799do(adInfo);
+        String m4792do = com.kwad.sdk.core.response.a.b.m4792do(adInfo);
         TextView textView = this.he;
         if (textView != null) {
-            textView.setText(m7799do);
+            textView.setText(m4792do);
         }
         TextView textView2 = this.hk;
         if (textView2 != null) {
-            textView2.setText(m7799do);
+            textView2.setText(m4792do);
         }
         String a2 = a(this.qt, adInfo);
         TextView textView3 = this.hf;

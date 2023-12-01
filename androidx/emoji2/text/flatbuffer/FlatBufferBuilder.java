@@ -12,11 +12,11 @@ public class FlatBufferBuilder {
     static final /* synthetic */ boolean o = !FlatBufferBuilder.class.desiredAssertionStatus();
 
     /* renamed from: a  reason: collision with root package name */
-    ByteBuffer f2852a;
+    ByteBuffer f2804a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2853c;
+    int f2805c;
     int[] d;
     int e;
     boolean f;
@@ -33,16 +33,16 @@ public class FlatBufferBuilder {
     static class ByteBufferBackedInputStream extends InputStream {
 
         /* renamed from: a  reason: collision with root package name */
-        ByteBuffer f2854a;
+        ByteBuffer f2806a;
 
         public ByteBufferBackedInputStream(ByteBuffer byteBuffer) {
-            this.f2854a = byteBuffer;
+            this.f2806a = byteBuffer;
         }
 
         @Override // java.io.InputStream
         public int read() throws IOException {
             try {
-                return this.f2854a.get() & 255;
+                return this.f2806a.get() & 255;
             } catch (BufferUnderflowException e) {
                 return -1;
             }
@@ -80,7 +80,7 @@ public class FlatBufferBuilder {
     }
 
     public FlatBufferBuilder(int i, ByteBufferFactory byteBufferFactory, ByteBuffer byteBuffer, Utf8 utf8) {
-        this.f2853c = 1;
+        this.f2805c = 1;
         this.d = null;
         this.e = 0;
         this.f = false;
@@ -92,14 +92,14 @@ public class FlatBufferBuilder {
         int i2 = i <= 0 ? 1 : i;
         this.m = byteBufferFactory;
         if (byteBuffer != null) {
-            this.f2852a = byteBuffer;
+            this.f2804a = byteBuffer;
             byteBuffer.clear();
-            this.f2852a.order(ByteOrder.LITTLE_ENDIAN);
+            this.f2804a.order(ByteOrder.LITTLE_ENDIAN);
         } else {
-            this.f2852a = byteBufferFactory.newByteBuffer(i2);
+            this.f2804a = byteBufferFactory.newByteBuffer(i2);
         }
         this.n = utf8;
-        this.b = this.f2852a.capacity();
+        this.b = this.f2804a.capacity();
     }
 
     public FlatBufferBuilder(ByteBuffer byteBuffer) {
@@ -134,7 +134,7 @@ public class FlatBufferBuilder {
     }
 
     protected void a(int i, String str, boolean z) {
-        prep(this.f2853c, (z ? 4 : 0) + 8);
+        prep(this.f2805c, (z ? 4 : 0) + 8);
         if (str.length() != 4) {
             throw new AssertionError("FlatBuffers: file identifier must be length 4");
         }
@@ -152,12 +152,12 @@ public class FlatBufferBuilder {
     }
 
     protected void a(int i, boolean z) {
-        prep(this.f2853c, (z ? 4 : 0) + 4);
+        prep(this.f2805c, (z ? 4 : 0) + 4);
         addOffset(i);
         if (z) {
-            addInt(this.f2852a.capacity() - this.b);
+            addInt(this.f2804a.capacity() - this.b);
         }
-        this.f2852a.position(this.b);
+        this.f2804a.position(this.b);
         this.g = true;
     }
 
@@ -268,9 +268,9 @@ public class FlatBufferBuilder {
     }
 
     public void clear() {
-        this.b = this.f2852a.capacity();
-        this.f2852a.clear();
-        this.f2853c = 1;
+        this.b = this.f2804a.capacity();
+        this.f2804a.clear();
+        this.f2805c = 1;
         while (true) {
             int i = this.e;
             if (i <= 0) {
@@ -292,37 +292,37 @@ public class FlatBufferBuilder {
     public int createByteVector(ByteBuffer byteBuffer) {
         int remaining = byteBuffer.remaining();
         startVector(1, remaining, 1);
-        ByteBuffer byteBuffer2 = this.f2852a;
+        ByteBuffer byteBuffer2 = this.f2804a;
         int i = this.b - remaining;
         this.b = i;
         byteBuffer2.position(i);
-        this.f2852a.put(byteBuffer);
+        this.f2804a.put(byteBuffer);
         return endVector();
     }
 
     public int createByteVector(byte[] bArr) {
         int length = bArr.length;
         startVector(1, length, 1);
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - length;
         this.b = i;
         byteBuffer.position(i);
-        this.f2852a.put(bArr);
+        this.f2804a.put(bArr);
         return endVector();
     }
 
     public int createByteVector(byte[] bArr, int i, int i2) {
         startVector(1, i2, 1);
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i3 = this.b - i2;
         this.b = i3;
         byteBuffer.position(i3);
-        this.f2852a.put(bArr, i, i2);
+        this.f2804a.put(bArr, i, i2);
         return endVector();
     }
 
     public <T extends Table> int createSortedVectorOfTables(T t, int[] iArr) {
-        t.a(iArr, this.f2852a);
+        t.a(iArr, this.f2804a);
         return createVectorOfTables(iArr);
     }
 
@@ -330,11 +330,11 @@ public class FlatBufferBuilder {
         int encodedLength = this.n.encodedLength(charSequence);
         addByte((byte) 0);
         startVector(1, encodedLength, 1);
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - encodedLength;
         this.b = i;
         byteBuffer.position(i);
-        this.n.encodeUtf8(charSequence, this.f2852a);
+        this.n.encodeUtf8(charSequence, this.f2804a);
         return endVector();
     }
 
@@ -342,22 +342,22 @@ public class FlatBufferBuilder {
         int remaining = byteBuffer.remaining();
         addByte((byte) 0);
         startVector(1, remaining, 1);
-        ByteBuffer byteBuffer2 = this.f2852a;
+        ByteBuffer byteBuffer2 = this.f2804a;
         int i = this.b - remaining;
         this.b = i;
         byteBuffer2.position(i);
-        this.f2852a.put(byteBuffer);
+        this.f2804a.put(byteBuffer);
         return endVector();
     }
 
     public ByteBuffer createUnintializedVector(int i, int i2, int i3) {
         int i4 = i * i2;
         startVector(i, i2, i3);
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i5 = this.b - i4;
         this.b = i5;
         byteBuffer.position(i5);
-        ByteBuffer order = this.f2852a.slice().order(ByteOrder.LITTLE_ENDIAN);
+        ByteBuffer order = this.f2804a.slice().order(ByteOrder.LITTLE_ENDIAN);
         order.limit(i4);
         return order;
     }
@@ -378,7 +378,7 @@ public class FlatBufferBuilder {
 
     public ByteBuffer dataBuffer() {
         finished();
-        return this.f2852a;
+        return this.f2804a;
     }
 
     public int endTable() {
@@ -416,17 +416,17 @@ public class FlatBufferBuilder {
                 i2 = 0;
                 break;
             }
-            int capacity = this.f2852a.capacity() - this.i[i7];
+            int capacity = this.f2804a.capacity() - this.i[i7];
             int i8 = this.b;
-            short s = this.f2852a.getShort(capacity);
-            if (s == this.f2852a.getShort(i8)) {
+            short s = this.f2804a.getShort(capacity);
+            if (s == this.f2804a.getShort(i8)) {
                 int i9 = 2;
                 while (true) {
                     int i10 = i9;
                     if (i10 >= s) {
                         i2 = this.i[i7];
                         break loop2;
-                    } else if (this.f2852a.getShort(capacity + i10) != this.f2852a.getShort(i8 + i10)) {
+                    } else if (this.f2804a.getShort(capacity + i10) != this.f2804a.getShort(i8 + i10)) {
                         break;
                     } else {
                         i9 = i10 + 2;
@@ -436,9 +436,9 @@ public class FlatBufferBuilder {
             i6 = i7 + 1;
         }
         if (i2 != 0) {
-            int capacity2 = this.f2852a.capacity() - offset;
+            int capacity2 = this.f2804a.capacity() - offset;
             this.b = capacity2;
-            this.f2852a.putInt(capacity2, i2 - offset);
+            this.f2804a.putInt(capacity2, i2 - offset);
         } else {
             int i11 = this.j;
             int[] iArr2 = this.i;
@@ -449,7 +449,7 @@ public class FlatBufferBuilder {
             int i12 = this.j;
             this.j = i12 + 1;
             iArr3[i12] = offset();
-            ByteBuffer byteBuffer = this.f2852a;
+            ByteBuffer byteBuffer = this.f2804a;
             byteBuffer.putInt(byteBuffer.capacity() - offset, offset() - offset);
         }
         this.f = false;
@@ -494,11 +494,11 @@ public class FlatBufferBuilder {
 
     public FlatBufferBuilder init(ByteBuffer byteBuffer, ByteBufferFactory byteBufferFactory) {
         this.m = byteBufferFactory;
-        this.f2852a = byteBuffer;
+        this.f2804a = byteBuffer;
         byteBuffer.clear();
-        this.f2852a.order(ByteOrder.LITTLE_ENDIAN);
-        this.f2853c = 1;
-        this.b = this.f2852a.capacity();
+        this.f2804a.order(ByteOrder.LITTLE_ENDIAN);
+        this.f2805c = 1;
+        this.b = this.f2804a.capacity();
         this.e = 0;
         this.f = false;
         this.g = false;
@@ -515,7 +515,7 @@ public class FlatBufferBuilder {
     }
 
     public int offset() {
-        return this.f2852a.capacity() - this.b;
+        return this.f2804a.capacity() - this.b;
     }
 
     public void pad(int i) {
@@ -525,7 +525,7 @@ public class FlatBufferBuilder {
             if (i3 >= i) {
                 return;
             }
-            ByteBuffer byteBuffer = this.f2852a;
+            ByteBuffer byteBuffer = this.f2804a;
             int i4 = this.b - 1;
             this.b = i4;
             byteBuffer.put(i4, (byte) 0);
@@ -534,97 +534,97 @@ public class FlatBufferBuilder {
     }
 
     public void prep(int i, int i2) {
-        if (i > this.f2853c) {
-            this.f2853c = i;
+        if (i > this.f2805c) {
+            this.f2805c = i;
         }
-        int capacity = ((this.f2852a.capacity() - this.b) + i2 + 1) & (i - 1);
+        int capacity = ((this.f2804a.capacity() - this.b) + i2 + 1) & (i - 1);
         while (this.b < capacity + i + i2) {
-            int capacity2 = this.f2852a.capacity();
-            ByteBuffer byteBuffer = this.f2852a;
+            int capacity2 = this.f2804a.capacity();
+            ByteBuffer byteBuffer = this.f2804a;
             ByteBuffer a2 = a(byteBuffer, this.m);
-            this.f2852a = a2;
+            this.f2804a = a2;
             if (byteBuffer != a2) {
                 this.m.releaseByteBuffer(byteBuffer);
             }
-            this.b += this.f2852a.capacity() - capacity2;
+            this.b += this.f2804a.capacity() - capacity2;
         }
         pad(capacity);
     }
 
     public void putBoolean(boolean z) {
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - 1;
         this.b = i;
         byteBuffer.put(i, z ? (byte) 1 : (byte) 0);
     }
 
     public void putByte(byte b) {
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - 1;
         this.b = i;
         byteBuffer.put(i, b);
     }
 
     public void putDouble(double d) {
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - 8;
         this.b = i;
         byteBuffer.putDouble(i, d);
     }
 
     public void putFloat(float f) {
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - 4;
         this.b = i;
         byteBuffer.putFloat(i, f);
     }
 
     public void putInt(int i) {
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i2 = this.b - 4;
         this.b = i2;
         byteBuffer.putInt(i2, i);
     }
 
     public void putLong(long j) {
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - 8;
         this.b = i;
         byteBuffer.putLong(i, j);
     }
 
     public void putShort(short s) {
-        ByteBuffer byteBuffer = this.f2852a;
+        ByteBuffer byteBuffer = this.f2804a;
         int i = this.b - 2;
         this.b = i;
         byteBuffer.putShort(i, s);
     }
 
     public void required(int i, int i2) {
-        int capacity = this.f2852a.capacity() - i;
-        if (this.f2852a.getShort((capacity - this.f2852a.getInt(capacity)) + i2) != 0) {
+        int capacity = this.f2804a.capacity() - i;
+        if (this.f2804a.getShort((capacity - this.f2804a.getInt(capacity)) + i2) != 0) {
             return;
         }
         throw new AssertionError("FlatBuffers: field " + i2 + " must be set");
     }
 
     public byte[] sizedByteArray() {
-        return sizedByteArray(this.b, this.f2852a.capacity() - this.b);
+        return sizedByteArray(this.b, this.f2804a.capacity() - this.b);
     }
 
     public byte[] sizedByteArray(int i, int i2) {
         finished();
         byte[] bArr = new byte[i2];
-        this.f2852a.position(i);
-        this.f2852a.get(bArr);
+        this.f2804a.position(i);
+        this.f2804a.get(bArr);
         return bArr;
     }
 
     public InputStream sizedInputStream() {
         finished();
-        ByteBuffer duplicate = this.f2852a.duplicate();
+        ByteBuffer duplicate = this.f2804a.duplicate();
         duplicate.position(this.b);
-        duplicate.limit(this.f2852a.capacity());
+        duplicate.limit(this.f2804a.capacity());
         return new ByteBufferBackedInputStream(duplicate);
     }
 

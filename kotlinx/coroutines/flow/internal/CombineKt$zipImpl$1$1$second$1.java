@@ -17,13 +17,9 @@ import kotlinx.coroutines.flow.FlowCollector;
 @DebugMetadata(b = "Combine.kt", c = {147}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$second$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/CombineKt$zipImpl$1$1$second$1.class */
 final class CombineKt$zipImpl$1$1$second$1 extends SuspendLambda implements Function2<ProducerScope<? super Object>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43489a;
+    int a;
     final /* synthetic */ Flow<T2> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private /* synthetic */ Object f43490c;
+    private /* synthetic */ Object c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -36,24 +32,24 @@ final class CombineKt$zipImpl$1$1$second$1 extends SuspendLambda implements Func
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<Object> producerScope, Continuation<? super Unit> continuation) {
-        return ((CombineKt$zipImpl$1$1$second$1) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((CombineKt$zipImpl$1$1$second$1) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         CombineKt$zipImpl$1$1$second$1 combineKt$zipImpl$1$1$second$1 = new CombineKt$zipImpl$1$1$second$1(this.b, continuation);
-        combineKt$zipImpl$1$1$second$1.f43490c = obj;
+        combineKt$zipImpl$1$1$second$1.c = obj;
         return combineKt$zipImpl$1$1$second$1;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43489a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
-            final ProducerScope producerScope = (ProducerScope) this.f43490c;
-            this.f43489a = 1;
+            final ProducerScope producerScope = (ProducerScope) this.c;
+            this.a = 1;
             if (this.b.a(new FlowCollector<T2>() { // from class: kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1$second$1$invokeSuspend$$inlined$collect$1
                 /* JADX WARN: Multi-variable type inference failed */
                 /* JADX WARN: Type inference failed for: r0v10, types: [kotlinx.coroutines.internal.Symbol] */
@@ -62,19 +58,19 @@ final class CombineKt$zipImpl$1$1$second$1 extends SuspendLambda implements Func
                     SendChannel r = ProducerScope.this.r();
                     T2 t22 = t2;
                     if (t2 == null) {
-                        t22 = NullSurrogateKt.f43498a;
+                        t22 = NullSurrogateKt.a;
                     }
-                    Object a3 = r.a(t22, continuation);
-                    return a3 == IntrinsicsKt.a() ? a3 : Unit.f42314a;
+                    Object a2 = r.a(t22, continuation);
+                    return a2 == IntrinsicsKt.a() ? a2 : Unit.a;
                 }
-            }, this) == a2) {
-                return a2;
+            }, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

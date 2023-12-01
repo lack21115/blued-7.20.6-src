@@ -37,7 +37,7 @@ public class hj {
     private String hj;
 
     /* renamed from: io  reason: collision with root package name */
-    private IInstallAppHandler f34889io;
+    private IInstallAppHandler f21198io;
     private com.ss.android.socialbase.appdownloader.b.ww jb;
     private com.ss.android.socialbase.appdownloader.b.ko je;
     private x lc;
@@ -393,7 +393,7 @@ public class hj {
     }
 
     public void mb(IInstallAppHandler iInstallAppHandler) {
-        this.f34889io = iInstallAppHandler;
+        this.f21198io = iInstallAppHandler;
     }
 
     public void mb(IOpenInstallerListener iOpenInstallerListener) {
@@ -416,7 +416,7 @@ public class hj {
     }
 
     public IInstallAppHandler o() {
-        return this.f34889io;
+        return this.f21198io;
     }
 
     public com.ss.android.socialbase.appdownloader.b.hj ox() {

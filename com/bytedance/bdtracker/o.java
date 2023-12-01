@@ -20,7 +20,7 @@ import org.json.JSONObject;
 public class o implements Application.ActivityLifecycleCallbacks {
 
     /* renamed from: c  reason: collision with root package name */
-    public static c2 f21273c;
+    public static c2 f7667c;
     public static c2 d;
     public static long e;
     public static String f;
@@ -32,7 +32,7 @@ public class o implements Application.ActivityLifecycleCallbacks {
     public static final /* synthetic */ boolean o = !o.class.desiredAssertionStatus();
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List<String> f21272a = Arrays.asList("androidx.lifecycle.ReportFragment", "androidx.lifecycle.ReportFragment");
+    public static final List<String> f7666a = Arrays.asList("androidx.lifecycle.ReportFragment", "androidx.lifecycle.ReportFragment");
     public static int b = 0;
     public static final Map<Integer, List<c2>> k = new HashMap();
     public static final HashSet<Integer> m = new HashSet<>(8);
@@ -54,7 +54,7 @@ public class o implements Application.ActivityLifecycleCallbacks {
     }
 
     public static c2 a() {
-        c2 c2Var = f21273c;
+        c2 c2Var = f7667c;
         c2 c2Var2 = d;
         if (c2Var2 != null) {
             return c2Var2;
@@ -98,7 +98,7 @@ public class o implements Application.ActivityLifecycleCallbacks {
     }
 
     public static c2 a(boolean z, c2 c2Var, long j2) {
-        c2 c2Var2 = (c2) c2Var.m5742clone();
+        c2 c2Var2 = (c2) c2Var.m2745clone();
         c2Var2.a(j2);
         long j3 = j2 - c2Var.b;
         long j4 = j3;
@@ -133,8 +133,8 @@ public class o implements Application.ActivityLifecycleCallbacks {
     }
 
     public static void a(final c2 c2Var, final boolean z) {
-        b.a(c2Var, new b.InterfaceC0306b() { // from class: com.bytedance.bdtracker.-$$Lambda$Co0BiTIIIvrkZer0A3v6V1ZAGQs
-            @Override // com.bytedance.bdtracker.b.InterfaceC0306b
+        b.a(c2Var, new b.InterfaceC0136b() { // from class: com.bytedance.bdtracker.-$$Lambda$Co0BiTIIIvrkZer0A3v6V1ZAGQs
+            @Override // com.bytedance.bdtracker.b.InterfaceC0136b
             public final boolean a(c cVar) {
                 return o.a(c2.this, z, cVar);
             }
@@ -216,7 +216,7 @@ public class o implements Application.ActivityLifecycleCallbacks {
         if (obj == null || h == obj) {
             return;
         }
-        if (obj != null && f21272a.contains(obj.getClass().getName())) {
+        if (obj != null && f7666a.contains(obj.getClass().getName())) {
             return;
         }
         long currentTimeMillis = System.currentTimeMillis();
@@ -237,7 +237,7 @@ public class o implements Application.ActivityLifecycleCallbacks {
 
     public void a(Activity activity, int i2) {
         c2 a2 = a(activity.getClass(), false, activity.getClass().getName(), "", t2.b(activity), t2.a(activity), System.currentTimeMillis(), f, t2.c(activity));
-        f21273c = a2;
+        f7667c = a2;
         a2.w = !m.remove(Integer.valueOf(i2)) ? 1 : 0;
     }
 
@@ -262,13 +262,13 @@ public class o implements Application.ActivityLifecycleCallbacks {
         if (d != null) {
             a(h);
         }
-        c2 c2Var = f21273c;
+        c2 c2Var = f7667c;
         if (c2Var != null) {
             f = c2Var.r;
             long currentTimeMillis = System.currentTimeMillis();
             e = currentTimeMillis;
-            a(false, f21273c, currentTimeMillis);
-            f21273c = null;
+            a(false, f7667c, currentTimeMillis);
+            f7667c = null;
             if (activity == null || activity.isChild()) {
                 return;
             }
@@ -285,7 +285,7 @@ public class o implements Application.ActivityLifecycleCallbacks {
             }
         });
         c2 a2 = a(activity.getClass(), false, activity.getClass().getName(), "", t2.b(activity), t2.a(activity), System.currentTimeMillis(), f, t2.c(activity));
-        f21273c = a2;
+        f7667c = a2;
         a2.w = !m.remove(Integer.valueOf(activity.hashCode())) ? 1 : 0;
         if (activity.isChild()) {
             return;

@@ -6,11 +6,11 @@ import com.tencent.turingface.sdk.mfa.BfUKf;
 public final class OF1Jz {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39900a = kC0XR.a(kC0XR.E0);
+    public static final String f26209a = kC0XR.a(kC0XR.E0);
     public static final OF1Jz b;
 
     /* renamed from: c  reason: collision with root package name */
-    public CvowV f39901c;
+    public CvowV f26210c;
     public DX7Nf d = null;
 
     static {

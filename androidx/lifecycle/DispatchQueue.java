@@ -28,12 +28,12 @@ public final class DispatchQueue {
         return this.finished || !this.paused;
     }
 
-    public final void dispatchAndEnqueue(CoroutineContext context, final Runnable runnable) {
-        Intrinsics.e(context, "context");
+    public final void dispatchAndEnqueue(CoroutineContext coroutineContext, final Runnable runnable) {
+        Intrinsics.e(coroutineContext, "context");
         Intrinsics.e(runnable, "runnable");
         MainCoroutineDispatcher a2 = Dispatchers.b().a();
-        if (a2.isDispatchNeeded(context) || canRun()) {
-            a2.dispatch(context, new Runnable() { // from class: androidx.lifecycle.DispatchQueue$dispatchAndEnqueue$1$1
+        if (a2.isDispatchNeeded(coroutineContext) || canRun()) {
+            a2.dispatch(coroutineContext, new Runnable() { // from class: androidx.lifecycle.DispatchQueue$dispatchAndEnqueue$1$1
                 @Override // java.lang.Runnable
                 public final void run() {
                     DispatchQueue.this.enqueue(runnable);

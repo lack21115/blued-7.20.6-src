@@ -18,15 +18,11 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/fragment/EmojiFragment.class */
 public class EmojiFragment extends Fragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f11123a;
+    private View a;
     private GridView b;
     private OnEmojiClickedListener d;
     private EmojiAdapter e;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final List<Emoji> f11124c = new ArrayList();
+    private final List<Emoji> c = new ArrayList();
     private boolean f = false;
     private boolean g = false;
     private boolean h = false;
@@ -37,9 +33,7 @@ public class EmojiFragment extends Fragment {
 
         /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/emoji/fragment/EmojiFragment$EmojiAdapter$ViewHolder.class */
         class ViewHolder {
-
-            /* renamed from: a  reason: collision with root package name */
-            TextView f11127a;
+            TextView a;
 
             ViewHolder() {
             }
@@ -55,19 +49,19 @@ public class EmojiFragment extends Fragment {
             if (view == null) {
                 view = View.inflate(getContext(), R.layout.emojicon_item, null);
                 viewHolder = new ViewHolder();
-                viewHolder.f11127a = (TextView) view.findViewById(R.id.emojicon_icon);
+                viewHolder.a = (TextView) view.findViewById(R.id.emojicon_icon);
                 view.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
             }
             final Emoji item = getItem(i);
             if (item == null) {
-                viewHolder.f11127a.setVisibility(4);
+                viewHolder.a.setVisibility(4);
                 return view;
             }
-            viewHolder.f11127a.setVisibility(0);
-            viewHolder.f11127a.setText(item.a());
-            viewHolder.f11127a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.emoji.fragment.EmojiFragment.EmojiAdapter.1
+            viewHolder.a.setVisibility(0);
+            viewHolder.a.setText(item.a());
+            viewHolder.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.common.widget.emoji.fragment.EmojiFragment.EmojiAdapter.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
@@ -84,7 +78,7 @@ public class EmojiFragment extends Fragment {
     }
 
     private void a() {
-        this.b = (GridView) this.f11123a.findViewById(R.id.fragment_emoji_grid);
+        this.b = (GridView) this.a.findViewById(R.id.fragment_emoji_grid);
     }
 
     private void b() {
@@ -93,7 +87,7 @@ public class EmojiFragment extends Fragment {
             emojiAdapter.notifyDataSetChanged();
             return;
         }
-        EmojiAdapter emojiAdapter2 = new EmojiAdapter(getContext(), this.f11124c);
+        EmojiAdapter emojiAdapter2 = new EmojiAdapter(getContext(), this.c);
         this.e = emojiAdapter2;
         this.b.setAdapter((ListAdapter) emojiAdapter2);
     }
@@ -110,7 +104,7 @@ public class EmojiFragment extends Fragment {
     }
 
     public void a(List<Emoji> list) {
-        this.f11124c.clear();
+        this.c.clear();
         int i = 0;
         while (true) {
             int i2 = i;
@@ -118,9 +112,9 @@ public class EmojiFragment extends Fragment {
                 break;
             }
             if (i2 < list.size()) {
-                this.f11124c.add(list.get(i2));
+                this.c.add(list.get(i2));
             } else {
-                this.f11124c.add(null);
+                this.c.add(null);
             }
             i = i2 + 1;
         }
@@ -130,40 +124,35 @@ public class EmojiFragment extends Fragment {
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        if (this.f11123a == null) {
+        if (this.a == null) {
             this.h = true;
-            this.f11123a = layoutInflater.inflate(R.layout.fragment_emoji, viewGroup, false);
+            this.a = layoutInflater.inflate(R.layout.fragment_emoji, viewGroup, false);
             a();
             c();
         }
-        ViewGroup viewGroup2 = (ViewGroup) this.f11123a.getParent();
+        ViewGroup viewGroup2 = (ViewGroup) this.a.getParent();
         if (viewGroup2 != null) {
-            viewGroup2.removeView(this.f11123a);
+            viewGroup2.removeView(this.a);
         }
-        return this.f11123a;
+        return this.a;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onHiddenChanged(boolean z) {
         Tracker.onHiddenChanged(this, z);
         super.onHiddenChanged(z);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onPause() {
         Tracker.onPause(this);
         super.onPause();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onResume() {
         Tracker.onResume(this);
         super.onResume();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void setUserVisibleHint(boolean z) {
         Tracker.setUserVisibleHint(this, z);
         super.setUserVisibleHint(z);

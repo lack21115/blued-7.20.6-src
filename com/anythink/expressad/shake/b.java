@@ -7,11 +7,11 @@ import android.hardware.SensorEventListener;
 public abstract class b implements SensorEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final int f8180a = 0;
+    public static final int f5340a = 0;
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f8181c = 2;
+    public static final int f5341c = 2;
     public float d = 0.0f;
     public float e = 0.0f;
     public float f = 0.0f;

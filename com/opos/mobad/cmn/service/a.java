@@ -6,25 +6,25 @@ import com.opos.mobad.cmn.a.d;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f25915a;
+    private static a f12227a;
     private volatile d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private volatile com.opos.mobad.activity.webview.a f25916c;
+    private volatile com.opos.mobad.activity.webview.a f12228c;
 
     public static final a a() {
         a aVar;
-        a aVar2 = f25915a;
+        a aVar2 = f12227a;
         if (aVar2 != null) {
             return aVar2;
         }
         synchronized (a.class) {
             try {
-                a aVar3 = f25915a;
+                a aVar3 = f12227a;
                 aVar = aVar3;
                 if (aVar3 == null) {
                     aVar = new a();
-                    f25915a = aVar;
+                    f12227a = aVar;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -35,7 +35,7 @@ public class a {
 
     public void a(d dVar, com.opos.mobad.activity.webview.a aVar) {
         this.b = dVar;
-        this.f25916c = aVar;
+        this.f12228c = aVar;
     }
 
     public d b() {
@@ -43,6 +43,6 @@ public class a {
     }
 
     public com.opos.mobad.activity.webview.a c() {
-        return this.f25916c;
+        return this.f12228c;
     }
 }

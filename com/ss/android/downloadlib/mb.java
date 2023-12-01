@@ -70,10 +70,10 @@ public class mb implements com.ss.android.downloadad.api.mb, ox.b, AppStatusMana
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.ss.android.downloadlib.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/downloadlib/mb$mb.class */
-    public class RunnableC0873mb implements Runnable {
+    public class RunnableC0703mb implements Runnable {
         private final int ox;
 
-        public RunnableC0873mb(int i) {
+        public RunnableC0703mb(int i) {
             this.ox = i;
         }
 
@@ -419,7 +419,7 @@ public class mb implements com.ss.android.downloadad.api.mb, ox.b, AppStatusMana
                     jSONObject.put(MonitorConstants.EXTRA_DOWNLOAD_NEED_HTTPS_DEGRADE, downloadInfo.isNeedHttpsToHttpRetry() ? 1 : 0);
                     jSONObject.put(MonitorConstants.EXTRA_DOWNLOAD_HTTPS_DEGRADE_RETRY_USED, downloadInfo.isHttpsToHttpRetryUsed() ? 1 : 0);
                     jSONObject.put("chunk_count", downloadInfo.getChunkCount());
-                    jSONObject.put("retry_count", downloadInfo.getRetryCount());
+                    jSONObject.put(MonitorConstants.EXTRA_DOWNLOAD_RETRY_COUNT, downloadInfo.getRetryCount());
                     jSONObject.put(MonitorConstants.EXTRA_DOWNLOAD_CUR_RETRY_TIME, downloadInfo.getCurRetryTime());
                     jSONObject.put(MonitorConstants.EXTRA_DOWNLOAD_NEED_RETRY_DELAY, downloadInfo.isNeedRetryDelay() ? 1 : 0);
                     jSONObject.put(MonitorConstants.EXTRA_DOWNLOAD_BACKUP_URL_USED, downloadInfo.isBackUpUrlUsed() ? 1 : 0);
@@ -625,7 +625,7 @@ public class mb implements com.ss.android.downloadad.api.mb, ox.b, AppStatusMana
         if (currentTimeMillis - this.ox < c.l) {
             return;
         }
-        hj.mb().mb(new RunnableC0873mb(i), this.ox > 0 ? 2000L : 8000L);
+        hj.mb().mb(new RunnableC0703mb(i), this.ox > 0 ? 2000L : 8000L);
         this.ox = currentTimeMillis;
     }
 

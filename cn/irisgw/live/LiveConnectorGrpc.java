@@ -78,7 +78,6 @@ public final class LiveConnectorGrpc {
 
     /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/LiveConnectorGrpc$LiveConnectorImplBase.class */
     public static abstract class LiveConnectorImplBase implements BindableService {
-        @Override // io.grpc.BindableService
         public final ServerServiceDefinition bindService() {
             return ServerServiceDefinition.builder(LiveConnectorGrpc.getServiceDescriptor()).addMethod(LiveConnectorGrpc.getConnectMethod(), ServerCalls.asyncBidiStreamingCall(new MethodHandlers(this, 0))).build();
         }

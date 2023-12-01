@@ -20,7 +20,7 @@ public class b extends c implements d {
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39560c;
+    private String f25869c;
 
     public b() {
         com.tencent.tmsbeacon.a.a.b.a().a(2, this);
@@ -57,10 +57,10 @@ public class b extends c implements d {
             params.put("A34", String.valueOf(com.tencent.tmsbeacon.base.util.b.c()));
             params.put("A156", c(beaconEvent) ? "Y" : "N");
             if (!params.containsKey("A88")) {
-                if (TextUtils.isEmpty(this.f39560c)) {
-                    this.f39560c = com.tencent.tmsbeacon.a.c.b.a(c2);
+                if (TextUtils.isEmpty(this.f25869c)) {
+                    this.f25869c = com.tencent.tmsbeacon.a.c.b.a(c2);
                 }
-                params.put("A88", this.f39560c);
+                params.put("A88", this.f25869c);
             }
             params.put("A100", g.a(c2, appKey).a(beaconEvent.getCode(), beaconEvent.getType()));
             Map<String, String> a2 = eventModule.a(appKey);
@@ -76,7 +76,7 @@ public class b extends c implements d {
     @Override // com.tencent.tmsbeacon.a.a.d
     public void onEvent(com.tencent.tmsbeacon.a.a.c cVar) {
         HashMap hashMap;
-        if (cVar.f39460a == 2 && (hashMap = (HashMap) cVar.b.get("d_m")) != null) {
+        if (cVar.f25769a == 2 && (hashMap = (HashMap) cVar.b.get("d_m")) != null) {
             this.b = com.tencent.tmsbeacon.base.util.b.a((String) hashMap.get("tidyEF"), this.b);
         }
     }

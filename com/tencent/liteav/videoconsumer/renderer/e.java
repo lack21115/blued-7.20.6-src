@@ -4,11 +4,11 @@ package com.tencent.liteav.videoconsumer.renderer;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    protected long f36820a = 0;
+    protected long f23129a = 0;
     protected long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    protected long f36821c = 0;
+    protected long f23130c = 0;
     protected long d = 0;
     protected long e = 0;
     protected final long f = Math.max(200L, 200L);
@@ -37,13 +37,13 @@ public final class e {
                 if (aVar != null) {
                     aVar.a(j3);
                 }
-                this.f36821c += j3;
-                if (this.f36820a < j3) {
-                    this.f36820a = j3;
+                this.f23130c += j3;
+                if (this.f23129a < j3) {
+                    this.f23129a = j3;
                 }
                 long j4 = this.b;
                 if (j4 != 0) {
-                    this.d = this.f36821c / j4;
+                    this.d = this.f23130c / j4;
                 }
             }
         }

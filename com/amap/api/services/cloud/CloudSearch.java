@@ -7,15 +7,12 @@ import com.amap.api.col.p0003sl.gt;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.interfaces.ICloudSearch;
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/cloud/CloudSearch.class */
 public class CloudSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ICloudSearch f5601a;
+    private ICloudSearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/cloud/CloudSearch$OnCloudSearchListener.class */
     public interface OnCloudSearchListener {
@@ -26,16 +23,12 @@ public class CloudSearch {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/cloud/CloudSearch$Query.class */
     public static class Query implements Cloneable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f5602a;
+        private String a;
         private String d;
         private SearchBound e;
         private Sortingrules f;
         private int b = 1;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5603c = 20;
+        private int c = 20;
         private ArrayList<fw> g = new ArrayList<>();
         private List<String> h = new ArrayList();
 
@@ -47,7 +40,7 @@ public class CloudSearch {
                 throw new AMapException("无效的参数 - IllegalArgumentException");
             }
             this.d = str;
-            this.f5602a = str2;
+            this.a = str2;
             this.e = searchBound;
         }
 
@@ -108,7 +101,7 @@ public class CloudSearch {
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public com.amap.api.services.cloud.CloudSearch.Query m2448clone() {
+        public com.amap.api.services.cloud.CloudSearch.Query m8891clone() {
             /*
                 r6 = this;
                 r0 = r6
@@ -124,7 +117,7 @@ public class CloudSearch {
                 r2 = r6
                 java.lang.String r2 = r2.d     // Catch: com.amap.api.services.core.AMapException -> L50
                 r3 = r6
-                java.lang.String r3 = r3.f5602a     // Catch: com.amap.api.services.core.AMapException -> L50
+                java.lang.String r3 = r3.a     // Catch: com.amap.api.services.core.AMapException -> L50
                 r4 = r6
                 com.amap.api.services.cloud.CloudSearch$SearchBound r4 = r4.e     // Catch: com.amap.api.services.core.AMapException -> L50
                 r1.<init>(r2, r3, r4)     // Catch: com.amap.api.services.core.AMapException -> L50
@@ -135,7 +128,7 @@ public class CloudSearch {
                 r0.setPageNum(r1)     // Catch: com.amap.api.services.core.AMapException -> L4c
                 r0 = r7
                 r1 = r6
-                int r1 = r1.f5603c     // Catch: com.amap.api.services.core.AMapException -> L4c
+                int r1 = r1.c     // Catch: com.amap.api.services.core.AMapException -> L4c
                 r0.setPageSize(r1)     // Catch: com.amap.api.services.core.AMapException -> L4c
                 r0 = r7
                 r1 = r6
@@ -171,7 +164,7 @@ public class CloudSearch {
                 r0 = r7
                 return r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.amap.api.services.cloud.CloudSearch.Query.m2448clone():com.amap.api.services.cloud.CloudSearch$Query");
+            throw new UnsupportedOperationException("Method not decompiled: com.amap.api.services.cloud.CloudSearch.Query.m8891clone():com.amap.api.services.cloud.CloudSearch$Query");
         }
 
         public boolean equals(Object obj) {
@@ -201,11 +194,11 @@ public class CloudSearch {
                     }
                     fw fwVar = this.g.get(i2);
                     stringBuffer.append(fwVar.a());
-                    stringBuffer.append(SimpleComparison.GREATER_THAN_EQUAL_TO_OPERATION);
+                    stringBuffer.append(">=");
                     stringBuffer.append(fwVar.b());
                     stringBuffer.append("&&");
                     stringBuffer.append(fwVar.a());
-                    stringBuffer.append(SimpleComparison.LESS_THAN_EQUAL_TO_OPERATION);
+                    stringBuffer.append("<=");
                     stringBuffer.append(fwVar.c());
                     if (i2 != size - 1) {
                         stringBuffer.append("&&");
@@ -245,11 +238,11 @@ public class CloudSearch {
         }
 
         public int getPageSize() {
-            return this.f5603c;
+            return this.c;
         }
 
         public String getQueryString() {
-            return this.f5602a;
+            return this.a;
         }
 
         public Sortingrules getSortingrules() {
@@ -269,8 +262,8 @@ public class CloudSearch {
             SearchBound searchBound = this.e;
             int hashCode3 = searchBound == null ? 0 : searchBound.hashCode();
             int i2 = this.b;
-            int i3 = this.f5603c;
-            String str = this.f5602a;
+            int i3 = this.c;
+            String str = this.a;
             int hashCode4 = str == null ? 0 : str.hashCode();
             Sortingrules sortingrules = this.f;
             int hashCode5 = sortingrules == null ? 0 : sortingrules.hashCode();
@@ -288,7 +281,7 @@ public class CloudSearch {
             if (query == this) {
                 return true;
             }
-            return CloudSearch.b(query.f5602a, this.f5602a) && CloudSearch.b(query.getTableID(), getTableID()) && CloudSearch.b(query.getFilterString(), getFilterString()) && CloudSearch.b(query.getFilterNumString(), getFilterNumString()) && query.f5603c == this.f5603c && a(query.getBound(), getBound()) && a(query.getSortingrules(), getSortingrules());
+            return CloudSearch.b(query.a, this.a) && CloudSearch.b(query.getTableID(), getTableID()) && CloudSearch.b(query.getFilterString(), getFilterString()) && CloudSearch.b(query.getFilterNumString(), getFilterNumString()) && query.c == this.c && a(query.getBound(), getBound()) && a(query.getSortingrules(), getSortingrules());
         }
 
         public void setBound(SearchBound searchBound) {
@@ -301,11 +294,11 @@ public class CloudSearch {
 
         public void setPageSize(int i) {
             if (i <= 0) {
-                this.f5603c = 20;
+                this.c = 20;
             } else if (i > 100) {
-                this.f5603c = 100;
+                this.c = 100;
             } else {
-                this.f5603c = i;
+                this.c = i;
             }
         }
 
@@ -324,13 +317,9 @@ public class CloudSearch {
         public static final String LOCAL_SHAPE = "Local";
         public static final String POLYGON_SHAPE = "Polygon";
         public static final String RECTANGLE_SHAPE = "Rectangle";
-
-        /* renamed from: a  reason: collision with root package name */
-        private LatLonPoint f5604a;
+        private LatLonPoint a;
         private LatLonPoint b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5605c;
+        private int c;
         private LatLonPoint d;
         private String e;
         private List<LatLonPoint> f;
@@ -338,7 +327,7 @@ public class CloudSearch {
 
         public SearchBound(LatLonPoint latLonPoint, int i) {
             this.e = "Bound";
-            this.f5605c = i;
+            this.c = i;
             this.d = latLonPoint;
         }
 
@@ -372,9 +361,9 @@ public class CloudSearch {
         }
 
         private boolean a(LatLonPoint latLonPoint, LatLonPoint latLonPoint2) {
-            this.f5604a = latLonPoint;
+            this.a = latLonPoint;
             this.b = latLonPoint2;
-            return latLonPoint != null && latLonPoint2 != null && latLonPoint.getLatitude() < this.b.getLatitude() && this.f5604a.getLongitude() < this.b.getLongitude();
+            return latLonPoint != null && latLonPoint2 != null && latLonPoint.getLatitude() < this.b.getLatitude() && this.a.getLongitude() < this.b.getLongitude();
         }
 
         private static boolean a(List<LatLonPoint> list, List<LatLonPoint> list2) {
@@ -399,13 +388,13 @@ public class CloudSearch {
         }
 
         /* renamed from: clone */
-        public SearchBound m2449clone() {
+        public SearchBound m8892clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 e.printStackTrace();
             }
-            return getShape().equals("Bound") ? new SearchBound(this.d, this.f5605c) : getShape().equals("Polygon") ? new SearchBound(a()) : getShape().equals(LOCAL_SHAPE) ? new SearchBound(this.g) : new SearchBound(this.f5604a, this.b);
+            return getShape().equals("Bound") ? new SearchBound(this.d, this.c) : getShape().equals("Polygon") ? new SearchBound(a()) : getShape().equals(LOCAL_SHAPE) ? new SearchBound(this.g) : new SearchBound(this.a, this.b);
         }
 
         public boolean equals(Object obj) {
@@ -414,7 +403,7 @@ public class CloudSearch {
             }
             SearchBound searchBound = (SearchBound) obj;
             if (getShape().equalsIgnoreCase(searchBound.getShape())) {
-                return getShape().equals("Bound") ? searchBound.d.equals(this.d) && searchBound.f5605c == this.f5605c : getShape().equals("Polygon") ? a(searchBound.f, this.f) : getShape().equals(LOCAL_SHAPE) ? searchBound.g.equals(this.g) : searchBound.f5604a.equals(this.f5604a) && searchBound.b.equals(this.b);
+                return getShape().equals("Bound") ? searchBound.d.equals(this.d) && searchBound.c == this.c : getShape().equals("Polygon") ? a(searchBound.f, this.f) : getShape().equals(LOCAL_SHAPE) ? searchBound.g.equals(this.g) : searchBound.a.equals(this.a) && searchBound.b.equals(this.b);
             }
             return false;
         }
@@ -428,7 +417,7 @@ public class CloudSearch {
         }
 
         public LatLonPoint getLowerLeft() {
-            return this.f5604a;
+            return this.a;
         }
 
         public List<LatLonPoint> getPolyGonList() {
@@ -436,7 +425,7 @@ public class CloudSearch {
         }
 
         public int getRange() {
-            return this.f5605c;
+            return this.c;
         }
 
         public String getShape() {
@@ -451,13 +440,13 @@ public class CloudSearch {
             LatLonPoint latLonPoint = this.d;
             int i = 0;
             int hashCode = latLonPoint == null ? 0 : latLonPoint.hashCode();
-            LatLonPoint latLonPoint2 = this.f5604a;
+            LatLonPoint latLonPoint2 = this.a;
             int hashCode2 = latLonPoint2 == null ? 0 : latLonPoint2.hashCode();
             LatLonPoint latLonPoint3 = this.b;
             int hashCode3 = latLonPoint3 == null ? 0 : latLonPoint3.hashCode();
             List<LatLonPoint> list = this.f;
             int hashCode4 = list == null ? 0 : list.hashCode();
-            int i2 = this.f5605c;
+            int i2 = this.c;
             String str = this.e;
             int hashCode5 = str == null ? 0 : str.hashCode();
             String str2 = this.g;
@@ -472,25 +461,21 @@ public class CloudSearch {
     public static class Sortingrules {
         public static final int DISTANCE = 1;
         public static final int WEIGHT = 0;
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f5606a;
+        private int a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private boolean f5607c;
+        private boolean c;
 
         public Sortingrules(int i) {
-            this.f5606a = 0;
-            this.f5607c = true;
-            this.f5606a = i;
+            this.a = 0;
+            this.c = true;
+            this.a = i;
         }
 
         public Sortingrules(String str, boolean z) {
-            this.f5606a = 0;
-            this.f5607c = true;
+            this.a = 0;
+            this.c = true;
             this.b = str;
-            this.f5607c = z;
+            this.c = z;
         }
 
         public boolean equals(Object obj) {
@@ -499,7 +484,7 @@ public class CloudSearch {
             }
             if (obj != null && getClass() == obj.getClass()) {
                 Sortingrules sortingrules = (Sortingrules) obj;
-                if (this.f5607c != sortingrules.f5607c) {
+                if (this.c != sortingrules.c) {
                     return false;
                 }
                 String str = this.b;
@@ -510,22 +495,22 @@ public class CloudSearch {
                 } else if (!str.equals(sortingrules.b)) {
                     return false;
                 }
-                return this.f5606a == sortingrules.f5606a;
+                return this.a == sortingrules.a;
             }
             return false;
         }
 
         public int hashCode() {
-            int i = this.f5607c ? 1231 : 1237;
+            int i = this.c ? 1231 : 1237;
             String str = this.b;
-            return ((((i + 31) * 31) + (str == null ? 0 : str.hashCode())) * 31) + this.f5606a;
+            return ((((i + 31) * 31) + (str == null ? 0 : str.hashCode())) * 31) + this.a;
         }
 
         public String toString() {
             if (fe.a(this.b)) {
-                int i = this.f5606a;
+                int i = this.a;
                 return i == 0 ? "_weight:desc" : i == 1 ? "_distance:asc" : "";
-            } else if (this.f5607c) {
+            } else if (this.c) {
                 return this.b + ":asc";
             } else {
                 return this.b + ":desc";
@@ -534,9 +519,9 @@ public class CloudSearch {
     }
 
     public CloudSearch(Context context) throws AMapException {
-        if (this.f5601a == null) {
+        if (this.a == null) {
             try {
-                this.f5601a = new gt(context);
+                this.a = new gt(context);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -558,21 +543,21 @@ public class CloudSearch {
     }
 
     public void searchCloudAsyn(Query query) {
-        ICloudSearch iCloudSearch = this.f5601a;
+        ICloudSearch iCloudSearch = this.a;
         if (iCloudSearch != null) {
             iCloudSearch.searchCloudAsyn(query);
         }
     }
 
     public void searchCloudDetailAsyn(String str, String str2) {
-        ICloudSearch iCloudSearch = this.f5601a;
+        ICloudSearch iCloudSearch = this.a;
         if (iCloudSearch != null) {
             iCloudSearch.searchCloudDetailAsyn(str, str2);
         }
     }
 
     public void setOnCloudSearchListener(OnCloudSearchListener onCloudSearchListener) {
-        ICloudSearch iCloudSearch = this.f5601a;
+        ICloudSearch iCloudSearch = this.a;
         if (iCloudSearch != null) {
             iCloudSearch.setOnCloudSearchListener(onCloudSearchListener);
         }

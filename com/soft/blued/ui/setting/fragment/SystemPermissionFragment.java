@@ -9,14 +9,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.RecyclerView;
-import com.blued.android.framework.view.shape.ShapeRelativeLayout;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListAction;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
 import com.blued.android.module.common.base.mvi.BaseListState;
+import com.blued.android.module.common.base.mvi.MVIBaseFragment;
+import com.blued.android.module.common.base.mvi.UiAction;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
 import com.blued.android.module.common.extensions.DialogFragmentViewBindingProperty;
 import com.blued.android.module.common.extensions.FragmentViewBindingProperty;
@@ -43,24 +46,24 @@ import kotlin.reflect.KProperty;
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/setting/fragment/SystemPermissionFragment.class */
 public final class SystemPermissionFragment extends BaseListFragment<SystemPermissionVM, PermissionModel> {
-    static final /* synthetic */ KProperty<Object>[] b = {Reflection.a(new PropertyReference1Impl(SystemPermissionFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmServiceCenterBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] b = {(KProperty) Reflection.a(new PropertyReference1Impl(SystemPermissionFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmServiceCenterBinding;", 0))};
 
     /* renamed from: c  reason: collision with root package name */
-    private final ViewBindingProperty f33618c;
+    private final ViewBindingProperty f19927c;
 
     public SystemPermissionFragment() {
-        super(R.layout.fm_service_center);
-        this.f33618c = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<SystemPermissionFragment, FmServiceCenterBinding>() { // from class: com.soft.blued.ui.setting.fragment.SystemPermissionFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fm_service_center);
+        this.f19927c = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<SystemPermissionFragment, FmServiceCenterBinding>() { // from class: com.soft.blued.ui.setting.fragment.SystemPermissionFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/SystemPermissionFragment;)Lcom/soft/blued/databinding/FmServiceCenterBinding; */
             /* renamed from: a */
-            public final FmServiceCenterBinding invoke(SystemPermissionFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmServiceCenterBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<SystemPermissionFragment, FmServiceCenterBinding>() { // from class: com.soft.blued.ui.setting.fragment.SystemPermissionFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/SystemPermissionFragment;)Lcom/soft/blued/databinding/FmServiceCenterBinding; */
             /* renamed from: a */
-            public final FmServiceCenterBinding invoke(SystemPermissionFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmServiceCenterBinding.a(fragment.requireView());
             }
@@ -68,14 +71,14 @@ public final class SystemPermissionFragment extends BaseListFragment<SystemPermi
     }
 
     private final FmServiceCenterBinding D() {
-        return (FmServiceCenterBinding) this.f33618c.b(this, b[0]);
+        return (FmServiceCenterBinding) this.f19927c.b(this, b[0]);
     }
 
     private final void E() {
         Intent intent = new Intent();
         intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         FragmentActivity activity = getActivity();
-        intent.setData(Uri.parse(Intrinsics.a("package:", (Object) (activity == null ? null : activity.getPackageName()))));
+        intent.setData(Uri.parse(Intrinsics.a("package:", activity == null ? null : activity.getPackageName())));
         FragmentActivity activity2 = getActivity();
         if (activity2 != null) {
             activity2.startActivity(intent);
@@ -84,10 +87,10 @@ public final class SystemPermissionFragment extends BaseListFragment<SystemPermi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SystemPermissionFragment this$0, View view) {
+    public static final void a(SystemPermissionFragment systemPermissionFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(systemPermissionFragment, "this$0");
+        FragmentActivity activity = systemPermissionFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -95,33 +98,29 @@ public final class SystemPermissionFragment extends BaseListFragment<SystemPermi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(SystemPermissionFragment this$0, View view) {
+    public static final void b(SystemPermissionFragment systemPermissionFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.E();
+        Intrinsics.e(systemPermissionFragment, "this$0");
+        systemPermissionFragment.E();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public SystemPermissionAdapter i() {
         return new SystemPermissionAdapter();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
         return new ListConfig.Builder().c(false).b(false).a(false).a();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public void j() {
         super.j();
         FmServiceCenterBinding D = D();
-        a(D == null ? null : D.f28768c);
+        a(D == null ? null : D.f15078c);
         FmServiceCenterBinding D2 = D();
         a(D2 == null ? null : D2.b);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         RecyclerView recyclerView;
         RecyclerView recyclerView2;
@@ -131,8 +130,7 @@ public final class SystemPermissionFragment extends BaseListFragment<SystemPermi
         super.m();
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
-        BluedStructureExtKt.a(this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.setting.fragment.SystemPermissionFragment$initView$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
+        BluedStructureExtKt.a((MVIBaseFragment) this, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.setting.fragment.SystemPermissionFragment$initView$1
             public Object a(Object obj) {
                 return ((BaseListState) obj).a();
             }
@@ -142,17 +140,16 @@ public final class SystemPermissionFragment extends BaseListFragment<SystemPermi
                 super(1);
             }
 
-            public final void a(List<PermissionModel> it) {
+            public final void a(List<PermissionModel> list) {
                 BaseQuickAdapter f;
-                Intrinsics.e(it, "it");
+                Intrinsics.e(list, "it");
                 f = SystemPermissionFragment.this.f();
-                f.setNewData(it);
+                f.setNewData(list);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(List<? extends PermissionModel> list) {
-                a(list);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((List) obj);
+                return Unit.a;
             }
         });
         FmServiceCenterBinding D = D();
@@ -173,8 +170,8 @@ public final class SystemPermissionFragment extends BaseListFragment<SystemPermi
         if (textView != null) {
             textView.setText(getString(R.string.system_permissions_hint));
         }
-        ((TextView) requireView().findViewById(2131371023)).setText(getString(R.string.system_to_setting));
-        ((ShapeRelativeLayout) requireView().findViewById(R.id.btn_service)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$SystemPermissionFragment$hIP5LDF-CvstkJ70R9TXjrM7q5w
+        ((TextView) requireView().findViewById(R.id.tv_btn)).setText(getString(R.string.system_to_setting));
+        requireView().findViewById(R.id.btn_service).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$SystemPermissionFragment$hIP5LDF-CvstkJ70R9TXjrM7q5w
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SystemPermissionFragment.b(SystemPermissionFragment.this, view);
@@ -185,19 +182,18 @@ public final class SystemPermissionFragment extends BaseListFragment<SystemPermi
             return;
         }
         FmServiceCenterBinding D4 = D();
-        if (D4 != null && (recyclerView2 = D4.f28768c) != null) {
+        if (D4 != null && (recyclerView2 = D4.f15078c) != null) {
             recyclerView2.setBackgroundColor(ContextCompat.getColor(context, 2131102388));
         }
         FmServiceCenterBinding D5 = D();
-        if (D5 == null || (recyclerView = D5.f28768c) == null) {
+        if (D5 == null || (recyclerView = D5.f15078c) == null) {
             return;
         }
         recyclerView.setPadding(0, 0, 0, 0);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        ((SystemPermissionVM) y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+        y().dispatchAction((UiAction) BaseListAction.RefreshData.a);
     }
 }

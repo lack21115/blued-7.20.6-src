@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class CommonGrayLineBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28685a;
+    private final LinearLayout f14995a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28685a;
+        return this.f14995a;
     }
 }

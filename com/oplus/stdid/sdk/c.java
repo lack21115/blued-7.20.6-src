@@ -1,6 +1,7 @@
 package com.oplus.stdid.sdk;
 
 import android.content.Context;
+import com.heytap.mcssdk.constant.Constants;
 import com.oplus.stdid.sdk.d;
 import java.util.HashMap;
 import s_a.s_a.s_a.a.e;
@@ -9,7 +10,7 @@ import s_a.s_a.s_a.a.e;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static c f24435a;
+    public static c f10748a;
     public HashMap<String, e> b;
 
     public c() {
@@ -18,18 +19,18 @@ public class c {
     }
 
     public static c a() {
-        if (f24435a == null) {
+        if (f10748a == null) {
             synchronized (c.class) {
                 try {
-                    if (f24435a == null) {
-                        f24435a = new c();
+                    if (f10748a == null) {
+                        f10748a = new c();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f24435a;
+        return f10748a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:7:0x0023, code lost:
@@ -53,22 +54,22 @@ public class c {
             if (eVar.a(str)) {
                 return;
             }
-            String a2 = d.b.f24439a.a(context, str);
+            String a2 = d.b.f10752a.a(context, str);
             long currentTimeMillis = System.currentTimeMillis();
             long b = s_a.s_a.s_a.a.a.b(str);
             if (a2.equals("") || a2 == "") {
                 return;
             }
-            eVar.f44182a = a2;
+            eVar.a = a2;
             eVar.b = currentTimeMillis + b;
             s_a.s_a.s_a.a.a.a(context, eVar, str);
         } else if (str.equals("OUID") || str.equals("OUID_STATUS") || str == "OUID" || str == "OUID_STATUS") {
-            String a3 = d.b.f24439a.a(context, str);
+            String a3 = d.b.f10752a.a(context, str);
             long currentTimeMillis2 = System.currentTimeMillis();
             if (a3.equals("") || a3 == "") {
                 return;
             }
-            this.b.put(str, new e(a3, currentTimeMillis2 + 7200000));
+            this.b.put(str, new e(a3, currentTimeMillis2 + Constants.MILLS_OF_WATCH_DOG));
         }
     }
 }

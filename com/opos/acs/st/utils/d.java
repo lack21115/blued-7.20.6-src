@@ -8,7 +8,7 @@ import com.opos.cmn.an.f.b.c;
 public abstract class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile boolean f24462a = false;
+    public static volatile boolean f10775a = false;
 
     public static void a() {
         com.opos.cmn.an.f.a.a();

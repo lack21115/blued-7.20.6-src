@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/databinding/LiveFansHeartLevelBadgeBinding.class */
 public final class LiveFansHeartLevelBadgeBinding implements ViewBinding {
+    private final FrameLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f10746a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f10746a;
+        return this.a;
     }
 }

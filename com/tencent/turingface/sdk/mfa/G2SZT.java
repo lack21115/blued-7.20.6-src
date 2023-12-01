@@ -6,5 +6,5 @@ import java.util.HashMap;
 public final class G2SZT {
 
     /* renamed from: a  reason: collision with root package name */
-    public static HashMap<String, byte[]> f39878a;
+    public static HashMap<String, byte[]> f26187a;
 }

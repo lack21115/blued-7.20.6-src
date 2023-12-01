@@ -9,22 +9,22 @@ import java.util.concurrent.Executor;
 public final class f<TResult> implements ExecuteResult<TResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    private OnFailureListener f22367a;
+    private OnFailureListener f8759a;
     private Executor b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f22368c = new Object();
+    private final Object f8760c = new Object();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public f(Executor executor, OnFailureListener onFailureListener) {
-        this.f22367a = onFailureListener;
+        this.f8759a = onFailureListener;
         this.b = executor;
     }
 
     @Override // com.huawei.hmf.tasks.ExecuteResult
     public final void cancel() {
-        synchronized (this.f22368c) {
-            this.f22367a = null;
+        synchronized (this.f8760c) {
+            this.f8759a = null;
         }
     }
 
@@ -36,9 +36,9 @@ public final class f<TResult> implements ExecuteResult<TResult> {
         this.b.execute(new Runnable() { // from class: com.huawei.hmf.tasks.a.f.1
             @Override // java.lang.Runnable
             public final void run() {
-                synchronized (f.this.f22368c) {
-                    if (f.this.f22367a != null) {
-                        f.this.f22367a.onFailure(task.getException());
+                synchronized (f.this.f8760c) {
+                    if (f.this.f8759a != null) {
+                        f.this.f8759a.onFailure(task.getException());
                     }
                 }
             }

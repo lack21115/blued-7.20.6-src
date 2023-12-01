@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundWaitView.class */
 public class LivePKRoundWaitView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    Runnable f14833a;
+    Runnable a;
     private ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BaseFragment f14834c;
+    private BaseFragment c;
     private ActivityFragmentActive d;
 
     public LivePKRoundWaitView(Context context) {
@@ -27,7 +23,7 @@ public class LivePKRoundWaitView extends FrameLayout {
 
     public LivePKRoundWaitView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14833a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKRoundWaitView.1
+        this.a = new Runnable() { // from class: com.blued.android.module.live_china.view.LivePKRoundWaitView.1
             @Override // java.lang.Runnable
             public void run() {
                 LivePKRoundWaitView.this.a();
@@ -44,7 +40,7 @@ public class LivePKRoundWaitView extends FrameLayout {
 
     public void a() {
         setVisibility(8);
-        removeCallbacks(this.f14833a);
+        removeCallbacks(this.a);
     }
 
     public void a(int i) {
@@ -53,12 +49,12 @@ public class LivePKRoundWaitView extends FrameLayout {
         }
         setVisibility(0);
         ImageLoader.c(this.d, "live_pk_round_wait_anim.png").e(((int) System.currentTimeMillis()) / 1000).g(-1).a(this.b);
-        removeCallbacks(this.f14833a);
-        postDelayed(this.f14833a, i * 1000);
+        removeCallbacks(this.a);
+        postDelayed(this.a, i * 1000);
     }
 
     public void setFragment(BaseFragment baseFragment) {
-        this.f14834c = baseFragment;
+        this.c = baseFragment;
         this.d = baseFragment.getFragmentActive();
     }
 }

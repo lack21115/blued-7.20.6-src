@@ -8,7 +8,7 @@ import java.util.Locale;
 public final class TextUtilsCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Locale f2579a = new Locale("", "");
+    private static final Locale f2531a = new Locale("", "");
 
     private TextUtilsCompat() {
     }
@@ -22,7 +22,7 @@ public final class TextUtilsCompat {
         if (Build.VERSION.SDK_INT >= 17) {
             return TextUtils.getLayoutDirectionFromLocale(locale);
         }
-        if (locale == null || locale.equals(f2579a)) {
+        if (locale == null || locale.equals(f2531a)) {
             return 0;
         }
         String maximizeAndGetScript = ICUCompat.maximizeAndGetScript(locale);

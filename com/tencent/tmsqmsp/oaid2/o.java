@@ -7,19 +7,19 @@ import com.tencent.tmsqmsp.oaid2.p;
 public class o implements b, p.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public p f39655a;
+    public p f25964a;
     public IVendorCallback b;
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public String a() {
         String a2;
-        return (e() && (a2 = this.f39655a.a()) != null) ? a2 : "";
+        return (e() && (a2 = this.f25964a.a()) != null) ? a2 : "";
     }
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public void a(Context context, IVendorCallback iVendorCallback) {
         this.b = iVendorCallback;
-        this.f39655a = new p(context, this);
+        this.f25964a = new p(context, this);
     }
 
     @Override // com.tencent.tmsqmsp.oaid2.p.b
@@ -40,12 +40,12 @@ public class o implements b, p.b {
     @Override // com.tencent.tmsqmsp.oaid2.b
     public String d() {
         String c2;
-        return (e() && (c2 = this.f39655a.c()) != null) ? c2 : "";
+        return (e() && (c2 = this.f25964a.c()) != null) ? c2 : "";
     }
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public boolean e() {
-        p pVar = this.f39655a;
+        p pVar = this.f25964a;
         if (pVar != null) {
             return pVar.b();
         }
@@ -63,7 +63,7 @@ public class o implements b, p.b {
 
     @Override // com.tencent.tmsqmsp.oaid2.b
     public void l() {
-        p pVar = this.f39655a;
+        p pVar = this.f25964a;
         if (pVar != null) {
             pVar.d();
         }

@@ -98,7 +98,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 return !StandardTable.this.containsColumn(Column.this.columnKey);
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Map.Entry<R, V>> iterator() {
                 return new EntrySetIterator();
             }
@@ -117,7 +117,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 return Column.this.removeFromColumnIf(Predicates.not(Predicates.in(collection)));
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 int i = 0;
                 for (Map<C, V> map : StandardTable.this.backingMap.values()) {
@@ -194,17 +194,17 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 super(Column.this);
             }
 
-            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
             public boolean remove(Object obj) {
                 return obj != null && Column.this.removeFromColumnIf(Maps.valuePredicateOnEntries(Predicates.equalTo(obj)));
             }
 
-            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
             public boolean removeAll(Collection<?> collection) {
                 return Column.this.removeFromColumnIf(Maps.valuePredicateOnEntries(Predicates.in(collection)));
             }
 
-            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
             public boolean retainAll(Collection<?> collection) {
                 return Column.this.removeFromColumnIf(Maps.valuePredicateOnEntries(Predicates.not(Predicates.in(collection))));
             }
@@ -312,7 +312,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
             return StandardTable.this.containsColumn(obj);
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<C> iterator() {
             return StandardTable.this.createColumnKeyIterator();
         }
@@ -373,7 +373,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
             return z;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return Iterators.size(iterator());
         }
@@ -402,7 +402,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 return false;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Map.Entry<C, Map<R, V>>> iterator() {
                 return Maps.asMapEntryIterator(StandardTable.this.columnKeySet(), new Function<C, Map<R, V>>() { // from class: com.google.common.collect.StandardTable.ColumnMap.ColumnMapEntrySet.1
                     @Override // com.google.common.base.Function
@@ -448,7 +448,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 return z;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return StandardTable.this.columnKeySet().size();
             }
@@ -460,7 +460,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 super(ColumnMap.this);
             }
 
-            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
             public boolean remove(Object obj) {
                 for (Map.Entry<C, Map<R, V>> entry : ColumnMap.this.entrySet()) {
                     if (entry.getValue().equals(obj)) {
@@ -472,7 +472,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
             }
 
             /* JADX WARN: Multi-variable type inference failed */
-            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
             public boolean removeAll(Collection<?> collection) {
                 Preconditions.checkNotNull(collection);
                 Iterator it = Lists.newArrayList(StandardTable.this.columnKeySet().iterator()).iterator();
@@ -488,7 +488,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
             }
 
             /* JADX WARN: Multi-variable type inference failed */
-            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection, java.util.Set
+            @Override // com.google.common.collect.Maps.Values, java.util.AbstractCollection, java.util.Collection
             public boolean retainAll(Collection<?> collection) {
                 Preconditions.checkNotNull(collection);
                 Iterator it = Lists.newArrayList(StandardTable.this.columnKeySet().iterator()).iterator();
@@ -710,7 +710,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 return z;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+            @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<Map.Entry<R, Map<C, V>>> iterator() {
                 return Maps.asMapEntryIterator(StandardTable.this.backingMap.keySet(), new Function<R, Map<C, V>>() { // from class: com.google.common.collect.StandardTable.RowMap.EntrySet.1
                     @Override // com.google.common.base.Function
@@ -744,7 +744,7 @@ public class StandardTable<R, C, V> extends AbstractTable<R, C, V> implements Se
                 return z;
             }
 
-            @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+            @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
             public int size() {
                 return StandardTable.this.backingMap.size();
             }

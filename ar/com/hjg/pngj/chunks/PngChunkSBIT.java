@@ -27,7 +27,7 @@ public class PngChunkSBIT extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        if (chunkRaw.f3659a != e()) {
+        if (chunkRaw.f3611a != e()) {
             throw new PngjException("bad chunk length " + chunkRaw);
         } else if (this.e.f) {
             this.h = PngHelperInternal.a(chunkRaw.d, 0);

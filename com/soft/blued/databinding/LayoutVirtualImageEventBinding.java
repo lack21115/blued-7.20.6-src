@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutVirtualImageEventBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29443a;
+    private final ConstraintLayout f15753a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29443a;
+        return this.f15753a;
     }
 }

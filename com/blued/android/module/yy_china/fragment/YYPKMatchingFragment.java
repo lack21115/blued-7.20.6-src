@@ -6,8 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
-import com.anythink.expressad.video.module.a.a.m;
+import com.android.internal.widget.LockPatternUtils;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -37,13 +38,9 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYPKMatchingFragment.class */
 public final class YYPKMatchingFragment extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17352a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DialogYyMatchingLayoutBinding f17353c;
+    private DialogYyMatchingLayoutBinding c;
     private YYEventMatching d;
 
     @Metadata
@@ -100,14 +97,14 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
                 DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2;
                 String a3;
                 YYRoomInfoManager.e().u();
-                dialogYyMatchingLayoutBinding = YYPKMatchingFragment.this.f17353c;
+                dialogYyMatchingLayoutBinding = YYPKMatchingFragment.this.c;
                 TextView textView = dialogYyMatchingLayoutBinding == null ? null : dialogYyMatchingLayoutBinding.h;
                 if (textView != null) {
                     a3 = YYPKMatchingFragment.this.a(2);
                     textView.setText(a3);
                 }
-                dialogYyMatchingLayoutBinding2 = YYPKMatchingFragment.this.f17353c;
-                TextView textView2 = dialogYyMatchingLayoutBinding2 == null ? null : dialogYyMatchingLayoutBinding2.f16436a;
+                dialogYyMatchingLayoutBinding2 = YYPKMatchingFragment.this.c;
+                TextView textView2 = dialogYyMatchingLayoutBinding2 == null ? null : dialogYyMatchingLayoutBinding2.a;
                 if (textView2 != null) {
                     textView2.setVisibility(8);
                 }
@@ -134,17 +131,17 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
     public static final void a(YYPKMatchingFragment this$0, YYGlobalMsgModel yYGlobalMsgModel) {
         YYMsgMatchingInfoNewExtra yYMsgMatchingInfoNewExtra;
         Intrinsics.e(this$0, "this$0");
-        if (yYGlobalMsgModel == null || yYGlobalMsgModel.type != 2 || (yYMsgMatchingInfoNewExtra = (YYMsgMatchingInfoNewExtra) AppInfo.f().fromJson(yYGlobalMsgModel.body, (Class<Object>) YYMsgMatchingInfoNewExtra.class)) == null) {
+        if (yYGlobalMsgModel == null || yYGlobalMsgModel.type != 2 || (yYMsgMatchingInfoNewExtra = (YYMsgMatchingInfoNewExtra) AppInfo.f().fromJson(yYGlobalMsgModel.body, YYMsgMatchingInfoNewExtra.class)) == null) {
             return;
         }
         YYRoomInfoManager.e().u();
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this$0.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this$0.c;
         TextView textView = dialogYyMatchingLayoutBinding == null ? null : dialogYyMatchingLayoutBinding.h;
         if (textView != null) {
             textView.setText(this$0.a(yYMsgMatchingInfoNewExtra.status));
         }
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this$0.f17353c;
-        TextView textView2 = dialogYyMatchingLayoutBinding2 == null ? null : dialogYyMatchingLayoutBinding2.f16436a;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this$0.c;
+        TextView textView2 = dialogYyMatchingLayoutBinding2 == null ? null : dialogYyMatchingLayoutBinding2.a;
         if (textView2 != null) {
             textView2.setVisibility(8);
         }
@@ -159,15 +156,15 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
         YYRoomModel b = YYRoomInfoManager.e().b();
         EventTrackYY.q(ChatRoomProtos.Event.YY_PK_CONNECT_SUCCESS, b == null ? null : b.room_id, yYMatchingRoomModel.room_id, yYMatchingRoomModel.uid);
         ImageWrapper b2 = ImageLoader.a(this$0.a(), yYMatchingRoomModel.avatar).b(R.color.syc_dark_b);
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding3 = this$0.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding3 = this$0.c;
         b2.a(dialogYyMatchingLayoutBinding3 == null ? null : dialogYyMatchingLayoutBinding3.g);
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding4 = this$0.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding4 = this$0.c;
         TextView textView3 = dialogYyMatchingLayoutBinding4 == null ? null : dialogYyMatchingLayoutBinding4.j;
         if (textView3 != null) {
             textView3.setText(yYMatchingRoomModel.name);
         }
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding5 = this$0.f17353c;
-        TextView textView4 = dialogYyMatchingLayoutBinding5 == null ? null : dialogYyMatchingLayoutBinding5.f16436a;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding5 = this$0.c;
+        TextView textView4 = dialogYyMatchingLayoutBinding5 == null ? null : dialogYyMatchingLayoutBinding5.a;
         if (textView4 != null) {
             textView4.setVisibility(8);
         }
@@ -179,7 +176,7 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
         TextView textView;
         Intrinsics.e(this$0, "this$0");
         if (!StringUtils.b(str)) {
-            DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this$0.f17353c;
+            DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this$0.c;
             TextView textView2 = dialogYyMatchingLayoutBinding == null ? null : dialogYyMatchingLayoutBinding.h;
             if (textView2 == null) {
                 return;
@@ -187,17 +184,17 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
             textView2.setText(str);
             return;
         }
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this$0.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this$0.c;
         TextView textView3 = dialogYyMatchingLayoutBinding2 == null ? null : dialogYyMatchingLayoutBinding2.h;
         if (textView3 != null) {
             textView3.setText(this$0.a(2));
         }
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding3 = this$0.f17353c;
-        TextView textView4 = dialogYyMatchingLayoutBinding3 == null ? null : dialogYyMatchingLayoutBinding3.f16436a;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding3 = this$0.c;
+        TextView textView4 = dialogYyMatchingLayoutBinding3 == null ? null : dialogYyMatchingLayoutBinding3.a;
         if (textView4 != null) {
             textView4.setVisibility(8);
         }
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding4 = this$0.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding4 = this$0.c;
         if (dialogYyMatchingLayoutBinding4 == null || (textView = dialogYyMatchingLayoutBinding4.j) == null) {
             return;
         }
@@ -206,7 +203,7 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
             public final void run() {
                 YYPKMatchingFragment.c(YYPKMatchingFragment.this);
             }
-        }, m.ag);
+        }, 3000L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -224,7 +221,7 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
     private final void f() {
         TextView textView;
         View view;
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.c;
         if (dialogYyMatchingLayoutBinding != null && (view = dialogYyMatchingLayoutBinding.b) != null) {
             view.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPKMatchingFragment$jWiRqLyUJb9jd9nx_HsHmrjP6Wk
                 @Override // android.view.View.OnClickListener
@@ -233,8 +230,8 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
                 }
             });
         }
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this.f17353c;
-        if (dialogYyMatchingLayoutBinding2 == null || (textView = dialogYyMatchingLayoutBinding2.f16436a) == null) {
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this.c;
+        if (dialogYyMatchingLayoutBinding2 == null || (textView = dialogYyMatchingLayoutBinding2.a) == null) {
             return;
         }
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPKMatchingFragment$KCtjYW_ZbuAhzPGKvTi60EFUMz8
@@ -248,7 +245,7 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
     /* JADX INFO: Access modifiers changed from: private */
     public final void g() {
         TextView textView;
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.c;
         if (dialogYyMatchingLayoutBinding == null || (textView = dialogYyMatchingLayoutBinding.j) == null) {
             return;
         }
@@ -257,11 +254,11 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
             public final void run() {
                 YYPKMatchingFragment.d(YYPKMatchingFragment.this);
             }
-        }, m.ag);
+        }, 3000L);
     }
 
     private final void h() {
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.c;
         TextView textView = dialogYyMatchingLayoutBinding == null ? null : dialogYyMatchingLayoutBinding.h;
         if (textView != null) {
             textView.setText(a(0));
@@ -269,36 +266,34 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null) {
             ImageWrapper a2 = ImageLoader.a(a(), b.avatar);
-            DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this.f17353c;
+            DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding2 = this.c;
             a2.a(dialogYyMatchingLayoutBinding2 == null ? null : dialogYyMatchingLayoutBinding2.f);
-            DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding3 = this.f17353c;
+            DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding3 = this.c;
             TextView textView2 = dialogYyMatchingLayoutBinding3 == null ? null : dialogYyMatchingLayoutBinding3.i;
             if (textView2 != null) {
                 textView2.setText(b.name);
             }
         }
-        YYRoomInfoManager.e().c(30000L);
+        YYRoomInfoManager.e().c(LockPatternUtils.FAILED_ATTEMPT_TIMEOUT_MS);
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        YYPKMatchingFragment yYPKMatchingFragment = this;
-        LiveEventBus.get("show_room_pk_connecting_time", String.class).observe(yYPKMatchingFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPKMatchingFragment$XHmWuIC8buFraWDqwoVtS-uGiIM
-            @Override // androidx.lifecycle.Observer
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("show_room_pk_connecting_time", String.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPKMatchingFragment$XHmWuIC8buFraWDqwoVtS-uGiIM
             public final void onChanged(Object obj) {
                 YYPKMatchingFragment.a(YYPKMatchingFragment.this, (String) obj);
             }
         });
-        LiveEventBus.get("room_pk_message", YYGlobalMsgModel.class).observe(yYPKMatchingFragment, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPKMatchingFragment$fQYw2hu1xlujQxk7WtgewTtvOrs
-            @Override // androidx.lifecycle.Observer
+        LiveEventBus.get("room_pk_message", YYGlobalMsgModel.class).observe(lifecycleOwner, new Observer() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYPKMatchingFragment$fQYw2hu1xlujQxk7WtgewTtvOrs
             public final void onChanged(Object obj) {
                 YYPKMatchingFragment.a(YYPKMatchingFragment.this, (YYGlobalMsgModel) obj);
             }
         });
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.b = getActivity();
@@ -310,22 +305,22 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
         this.d = (YYEventMatching) serializable;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_yy_matching_layout, viewGroup, false);
-        this.f17353c = DialogYyMatchingLayoutBinding.a(inflate);
+        this.c = DialogYyMatchingLayoutBinding.a(inflate);
         f();
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroyView() {
         YYEventMatching yYEventMatching;
         YYConstants.MatchingFromSource matchingFromSource;
         TextView textView;
         super.onDestroyView();
-        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.f17353c;
+        DialogYyMatchingLayoutBinding dialogYyMatchingLayoutBinding = this.c;
         CharSequence charSequence = null;
         if (dialogYyMatchingLayoutBinding != null && (textView = dialogYyMatchingLayoutBinding.h) != null) {
             charSequence = textView.getText();
@@ -336,7 +331,7 @@ public final class YYPKMatchingFragment extends BaseFullScreenDialog {
         YYRoomInfoManager.e().u();
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

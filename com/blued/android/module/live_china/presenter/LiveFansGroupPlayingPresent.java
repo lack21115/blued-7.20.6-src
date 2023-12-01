@@ -1,6 +1,5 @@
 package com.blued.android.module.live_china.presenter;
 
-import com.baidu.mobads.sdk.internal.ch;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
@@ -16,7 +15,7 @@ public class LiveFansGroupPlayingPresent extends MvpPresenter {
 
     public void a(LiveFansGroupModel liveFansGroupModel) {
         if (liveFansGroupModel == null) {
-            a("APPLY_JOIN_GROUP", ch.b, false);
+            a("APPLY_JOIN_GROUP", "404", false);
         } else {
             LiveRoomHttpUtils.a(liveFansGroupModel.group_id, liveFansGroupModel.allow_join, "", new BluedUIHttpResponse<BluedEntityA<Object>>(g()) { // from class: com.blued.android.module.live_china.presenter.LiveFansGroupPlayingPresent.3
                 /* JADX INFO: Access modifiers changed from: protected */

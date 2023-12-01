@@ -6,13 +6,11 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/mvp/MemoryDataCache.class */
 public class MemoryDataCache<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    List<Pair<String, List>> f9923a = new ArrayList();
+    List<Pair<String, List>> a = new ArrayList();
 
     private Pair<String, List> b(String str) {
-        for (Pair<String, List> pair : this.f9923a) {
-            if (pair.first.equals(str)) {
+        for (Pair<String, List> pair : this.a) {
+            if (((String) pair.first).equals(str)) {
                 return pair;
             }
         }
@@ -20,13 +18,13 @@ public class MemoryDataCache<T> {
     }
 
     public List<Pair<String, List>> a() {
-        return new ArrayList(this.f9923a);
+        return new ArrayList(this.a);
     }
 
     public List<Object> a(String str) {
         Pair<String, List> b = b(str);
         if (b != null) {
-            return b.second;
+            return (List) b.second;
         }
         return null;
     }
@@ -35,17 +33,17 @@ public class MemoryDataCache<T> {
         Pair<String, List> b = b(str);
         if (list == null) {
             if (b != null) {
-                return b.second;
+                return (List) b.second;
             }
             return null;
         } else if (b != null) {
-            b.second.clear();
-            b.second.addAll(list);
-            return b.second;
+            ((List) b.second).clear();
+            ((List) b.second).addAll(list);
+            return (List) b.second;
         } else {
             ArrayList arrayList = new ArrayList();
             arrayList.addAll(list);
-            this.f9923a.add(new Pair<>(str, arrayList));
+            this.a.add(new Pair<>(str, arrayList));
             return arrayList;
         }
     }
@@ -54,25 +52,25 @@ public class MemoryDataCache<T> {
         Pair<String, List> b = b(str);
         if (list == null) {
             if (b != null) {
-                return b.second;
+                return (List) b.second;
             }
             return null;
         } else if (b != null) {
-            b.second.addAll(list);
-            return b.second;
+            ((List) b.second).addAll(list);
+            return (List) b.second;
         } else {
             ArrayList arrayList = new ArrayList();
             arrayList.addAll(list);
-            this.f9923a.add(new Pair<>(str, arrayList));
+            this.a.add(new Pair<>(str, arrayList));
             return arrayList;
         }
     }
 
     public boolean b() {
-        return this.f9923a.isEmpty();
+        return this.a.isEmpty();
     }
 
     public void c() {
-        this.f9923a.clear();
+        this.a.clear();
     }
 }

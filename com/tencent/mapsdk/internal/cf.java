@@ -6,7 +6,6 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.text.TextPaint;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.map.lib.models.GeoPoint;
 import com.tencent.map.lib.models.PolygonInfo;
 import com.tencent.tencentmap.mapsdk.maps.interfaces.Coordinate;
@@ -51,15 +50,15 @@ public class cf extends ze<q0> implements h5, q0 {
     public class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public LatLng[] f37371a;
+        public LatLng[] f23680a;
 
         public b(LatLng latLng, LatLng latLng2) {
-            this.f37371a = r0;
+            this.f23680a = r0;
             LatLng[] latLngArr = {latLng, latLng2};
         }
 
         public String toString() {
-            return this.f37371a[0].toString() + "    " + this.f37371a[1].toString();
+            return this.f23680a[0].toString() + "    " + this.f23680a[1].toString();
         }
     }
 
@@ -69,26 +68,26 @@ public class cf extends ze<q0> implements h5, q0 {
         private static final int h = 180;
 
         /* renamed from: a  reason: collision with root package name */
-        private Bitmap f37372a;
+        private Bitmap f23681a;
         private TextPaint b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f37373c;
+        private int f23682c;
         private int d;
         private int e;
         private HashMap<String, Integer> f;
 
         private c() {
-            this.f37372a = null;
+            this.f23681a = null;
             this.b = null;
-            this.f37373c = 900;
+            this.f23682c = 900;
             this.d = 180;
             this.e = -1;
             this.f = new HashMap<>();
         }
 
         private String a(String str, String str2, int i) {
-            return str + BridgeUtil.UNDERLINE_STR + str2 + BridgeUtil.UNDERLINE_STR + i;
+            return str + "_" + str2 + "_" + i;
         }
 
         private void a(int i) {
@@ -111,9 +110,9 @@ public class cf extends ze<q0> implements h5, q0 {
         }
 
         private void a(String str, int i, int i2, Typeface typeface) {
-            if (this.f37372a == null) {
+            if (this.f23681a == null) {
                 try {
-                    this.f37372a = Bitmap.createBitmap(this.f37373c, this.d, Bitmap.Config.ARGB_8888);
+                    this.f23681a = Bitmap.createBitmap(this.f23682c, this.d, Bitmap.Config.ARGB_8888);
                 } catch (OutOfMemoryError e) {
                     e.printStackTrace();
                     return;
@@ -124,15 +123,15 @@ public class cf extends ze<q0> implements h5, q0 {
             this.b.getTextBounds(str, 0, str.length(), rect);
             int abs = Math.abs(rect.width());
             int abs2 = Math.abs(rect.height());
-            int i3 = this.f37373c;
+            int i3 = this.f23682c;
             if (abs > i3 || abs2 > this.d) {
-                this.f37373c = Math.max(abs, i3);
+                this.f23682c = Math.max(abs, i3);
                 int max = Math.max(abs2, this.d);
                 this.d = max;
-                this.f37372a = Bitmap.createBitmap(this.f37373c, max, Bitmap.Config.ARGB_8888);
+                this.f23681a = Bitmap.createBitmap(this.f23682c, max, Bitmap.Config.ARGB_8888);
             }
-            this.f37372a.eraseColor(0);
-            new Canvas(this.f37372a).drawText(str, this.f37373c / 2.0f, (this.d / 2.0f) - ((this.b.descent() + this.b.ascent()) / 2.0f), this.b);
+            this.f23681a.eraseColor(0);
+            new Canvas(this.f23681a).drawText(str, this.f23682c / 2.0f, (this.d / 2.0f) - ((this.b.descent() + this.b.ascent()) / 2.0f), this.b);
         }
 
         private int[] a(String str, int i, Rect rect) {
@@ -157,12 +156,12 @@ public class cf extends ze<q0> implements h5, q0 {
         }
 
         public void a() {
-            Bitmap bitmap = this.f37372a;
+            Bitmap bitmap = this.f23681a;
             if (bitmap == null || bitmap.isRecycled()) {
                 return;
             }
-            this.f37372a.recycle();
-            this.f37372a = null;
+            this.f23681a.recycle();
+            this.f23681a = null;
         }
 
         public Object[] a(String str, String str2, int i, int i2, Typeface typeface) {
@@ -175,7 +174,7 @@ public class cf extends ze<q0> implements h5, q0 {
                 a(str2, i3, i2, typeface);
                 this.e = i3;
             }
-            return new Object[]{a2, this.f37372a};
+            return new Object[]{a2, this.f23681a};
         }
     }
 
@@ -222,7 +221,7 @@ public class cf extends ze<q0> implements h5, q0 {
         int length = bVarArr.length;
         LatLng latLng3 = new LatLng(0.0d, 0.0d);
         LatLng latLng4 = new LatLng(0.0d, 0.0d);
-        LatLng[] latLngArr = bVarArr[0].f37371a;
+        LatLng[] latLngArr = bVarArr[0].f23680a;
         LatLng latLng5 = latLngArr[0];
         LatLng latLng6 = latLngArr[1];
         double c2 = xa.c((Coordinate) latLng, (Coordinate) latLng5, (Coordinate) latLng6);
@@ -232,7 +231,7 @@ public class cf extends ze<q0> implements h5, q0 {
         latLng4.longitude = latLng6.longitude;
         int i2 = 1;
         while (i2 < length) {
-            LatLng[] latLngArr2 = bVarArr[i2].f37371a;
+            LatLng[] latLngArr2 = bVarArr[i2].f23680a;
             LatLng latLng7 = latLngArr2[0];
             LatLng latLng8 = latLngArr2[1];
             double c3 = xa.c((Coordinate) latLng, (Coordinate) latLng7, (Coordinate) latLng8);
@@ -262,7 +261,7 @@ public class cf extends ze<q0> implements h5, q0 {
                 if (i6 >= length) {
                     break;
                 }
-                LatLng[] latLngArr3 = bVarArr[i6].f37371a;
+                LatLng[] latLngArr3 = bVarArr[i6].f23680a;
                 if (xa.a(a2, a3, latLngArr3[0], latLngArr3[1])) {
                     z = true;
                     break;
@@ -349,7 +348,7 @@ public class cf extends ze<q0> implements h5, q0 {
         GeoPoint geoPoint4 = new GeoPoint(rect3.bottom, rect3.right);
         Rect rect4 = this.N;
         p5[] a3 = a(new p5[]{t4Var.a(geoPoint2), t4Var.a(geoPoint3), t4Var.a(geoPoint4), t4Var.a(new GeoPoint(rect4.bottom, rect4.left))});
-        return a(new Rect((int) a3[0].b, (int) a3[0].f37683c, (int) a3[1].b, (int) a3[1].f37683c), str);
+        return a(new Rect((int) a3[0].b, (int) a3[0].f23992c, (int) a3[1].b, (int) a3[1].f23992c), str);
     }
 
     private int a(String str, t4 t4Var) {
@@ -361,7 +360,7 @@ public class cf extends ze<q0> implements h5, q0 {
         GeoPoint geoPoint3 = new GeoPoint(rect3.bottom, rect3.right);
         Rect rect4 = this.N;
         p5[] a2 = a(new p5[]{t4Var.a(geoPoint), t4Var.a(geoPoint2), t4Var.a(geoPoint3), t4Var.a(new GeoPoint(rect4.bottom, rect4.left))});
-        return a(new Rect((int) a2[0].b, (int) a2[0].f37683c, (int) a2[1].b, (int) a2[1].f37683c), str);
+        return a(new Rect((int) a2[0].b, (int) a2[0].f23992c, (int) a2[1].b, (int) a2[1].f23992c), str);
     }
 
     private Rect a(b[] bVarArr) {
@@ -476,13 +475,13 @@ public class cf extends ze<q0> implements h5, q0 {
     private p5[] a(p5[] p5VarArr) {
         int length = p5VarArr.length;
         double d = p5VarArr[0].b;
-        double d2 = p5VarArr[0].f37683c;
+        double d2 = p5VarArr[0].f23992c;
         double d3 = p5VarArr[0].b;
-        double d4 = p5VarArr[0].f37683c;
+        double d4 = p5VarArr[0].f23992c;
         int i = 1;
         while (i < length) {
             double d5 = p5VarArr[i].b;
-            double d6 = p5VarArr[i].f37683c;
+            double d6 = p5VarArr[i].f23992c;
             double d7 = d;
             if (d5 < d) {
                 d7 = d5;
@@ -523,7 +522,7 @@ public class cf extends ze<q0> implements h5, q0 {
                     return false;
                 }
                 p5[] a2 = a(new p5[]{t4Var.a(new GeoPoint(K.top, K.left)), t4Var.a(new GeoPoint(K.top, K.right)), t4Var.a(new GeoPoint(K.bottom, K.right)), t4Var.a(new GeoPoint(K.bottom, K.left))});
-                Rect rect = new Rect((int) a2[0].b, (int) a2[0].f37683c, (int) a2[1].b, (int) a2[1].f37683c);
+                Rect rect = new Rect((int) a2[0].b, (int) a2[0].f23992c, (int) a2[1].b, (int) a2[1].f23992c);
                 z = false;
                 if (Math.abs(rect.width()) > 5) {
                     z = false;
@@ -820,7 +819,7 @@ public class cf extends ze<q0> implements h5, q0 {
         p5 a3 = t4Var.a(geoPoint2);
         p5 a4 = t4Var.a(geoPoint3);
         p5 a5 = t4Var.a(geoPoint4);
-        return new Rect((int) Math.min(Math.min(a2.b, a3.b), Math.min(a4.b, a5.b)), (int) Math.min(Math.min(a2.f37683c, a3.f37683c), Math.min(a4.f37683c, a5.f37683c)), (int) Math.max(Math.max(a2.b, a3.b), Math.max(a4.b, a5.b)), (int) Math.max(Math.max(a2.f37683c, a3.f37683c), Math.max(a4.f37683c, a5.f37683c)));
+        return new Rect((int) Math.min(Math.min(a2.b, a3.b), Math.min(a4.b, a5.b)), (int) Math.min(Math.min(a2.f23992c, a3.f23992c), Math.min(a4.f23992c, a5.f23992c)), (int) Math.max(Math.max(a2.b, a3.b), Math.max(a4.b, a5.b)), (int) Math.max(Math.max(a2.f23992c, a3.f23992c), Math.max(a4.f23992c, a5.f23992c)));
     }
 
     @Override // com.tencent.tencentmap.mapsdk.maps.model.Polygon

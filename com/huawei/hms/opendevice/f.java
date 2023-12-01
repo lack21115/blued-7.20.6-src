@@ -20,12 +20,12 @@ import com.huawei.hms.utils.JsonUtil;
 public class f extends TaskApiCall<PushClient, TokenResult> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22813a;
+    private Context f9205a;
     private TokenReq b;
 
     public f(String str, TokenReq tokenReq, Context context, String str2) {
         super(str, JsonUtil.createJsonString(tokenReq), str2);
-        this.f22813a = context;
+        this.f9205a = context;
         this.b = tokenReq;
     }
 
@@ -39,11 +39,11 @@ public class f extends TaskApiCall<PushClient, TokenResult> {
     }
 
     private void a(String str, String str2) {
-        if (i.a(this.f22813a).b(str2).equals(str)) {
+        if (i.a(this.f9205a).b(str2).equals(str)) {
             return;
         }
         HMSLog.i(HmsInstanceId.TAG, "receive a token, refresh the local token");
-        i.a(this.f22813a).b(str2, str);
+        i.a(this.f9205a).b(str2, str);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -74,7 +74,7 @@ public class f extends TaskApiCall<PushClient, TokenResult> {
                     return;
                 }
                 a(token, this.b.getSubjectId());
-                m.a(this.f22813a, token);
+                m.a(this.f9205a, token);
             }
         }
         h.a(pushClient.getContext(), getUri(), responseErrorCode);

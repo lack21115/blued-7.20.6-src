@@ -2,6 +2,7 @@ package com.youzan.spiderman.cache;
 
 import android.net.Uri;
 import android.text.TextUtils;
+import com.bytedance.applog.util.WebViewJsUtil;
 import com.google.gson.JsonParseException;
 import com.youzan.spiderman.utils.JsonUtil;
 import com.youzan.spiderman.utils.Timing;
@@ -15,11 +16,11 @@ import java.util.TimerTask;
 public class CacheStatistic {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41786a;
+    private int f28095a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f41787c;
+    private int f28096c;
     private int d;
     private Timing e;
     private boolean f;
@@ -92,11 +93,11 @@ public class CacheStatistic {
 
     public void addStatisticCount(int i, boolean z) {
         if (z) {
-            this.f41787c += i;
+            this.f28096c += i;
             if (this.f) {
                 return;
             }
-            this.f41786a += i;
+            this.f28095a += i;
             return;
         }
         this.d += i;
@@ -123,18 +124,18 @@ public class CacheStatistic {
     public Map<String, String> getStatisticData() {
         HashMap hashMap = new HashMap();
         hashMap.put("url", this.g);
-        int i = this.f41786a;
+        int i = this.f28095a;
         int i2 = this.b + i;
         if (i2 != 0) {
             hashMap.put("load_hit_rate", String.format(Locale.ENGLISH, "%.2f", Double.valueOf(i / i2)));
-            hashMap.put("load_hit_count", String.valueOf(this.f41786a));
+            hashMap.put("load_hit_count", String.valueOf(this.f28095a));
             hashMap.put("load_miss_count", String.valueOf(this.b));
         }
-        int i3 = this.f41787c;
+        int i3 = this.f28096c;
         int i4 = this.d + i3;
         if (i4 != 0) {
             hashMap.put("hit_rate", String.format(Locale.ENGLISH, "%.2f", Double.valueOf(i3 / i4)));
-            hashMap.put("hit_count", String.valueOf(this.f41787c));
+            hashMap.put("hit_count", String.valueOf(this.f28096c));
             hashMap.put("miss_count", String.valueOf(this.d));
         }
         Timing timing = this.e;
@@ -173,10 +174,10 @@ public class CacheStatistic {
                 this.i = null;
             }
             this.j = false;
-            this.f41786a = 0;
+            this.f28095a = 0;
             this.b = 0;
             this.d = 0;
-            this.f41787c = 0;
+            this.f28096c = 0;
             this.e = null;
             this.g = null;
             this.f = false;
@@ -206,7 +207,7 @@ public class CacheStatistic {
     public void tryInjectJs(String str, InjectJsCallback injectJsCallback) {
         if (injectJsCallback != null) {
             this.g = str;
-            injectJsCallback.onInject("javascript:");
+            injectJsCallback.onInject(WebViewJsUtil.JS_URL_PREFIX);
         }
     }
 }

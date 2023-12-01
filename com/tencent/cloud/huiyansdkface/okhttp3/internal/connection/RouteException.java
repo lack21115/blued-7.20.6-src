@@ -7,22 +7,22 @@ import java.io.IOException;
 public final class RouteException extends RuntimeException {
 
     /* renamed from: a  reason: collision with root package name */
-    private IOException f35939a;
+    private IOException f22248a;
     private IOException b;
 
     public RouteException(IOException iOException) {
         super(iOException);
-        this.f35939a = iOException;
+        this.f22248a = iOException;
         this.b = iOException;
     }
 
     public void addConnectException(IOException iOException) {
-        Util.addSuppressedIfPossible(this.f35939a, iOException);
+        Util.addSuppressedIfPossible(this.f22248a, iOException);
         this.b = iOException;
     }
 
     public IOException getFirstConnectException() {
-        return this.f35939a;
+        return this.f22248a;
     }
 
     public IOException getLastConnectException() {

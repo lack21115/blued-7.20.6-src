@@ -15,6 +15,9 @@ import android.text.TextUtils;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.DPoint;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.android.internal.util.cm.QSConstants;
+import com.anythink.core.common.c.g;
 import com.anythink.core.common.g.c;
 import com.autonavi.aps.amapapi.utils.b;
 import com.autonavi.aps.amapapi.utils.d;
@@ -26,9 +29,7 @@ import java.util.List;
 /* renamed from: com.amap.api.col.3sl.g  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/g.class */
 public final class g {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static volatile AMapLocation f4978a;
+    public static volatile AMapLocation a;
     private static String b = "CoarseLocation";
     private static long q = 0;
     private static boolean r = false;
@@ -40,9 +41,7 @@ public final class g {
     private Context k;
     private LocationManager n;
     private AMapLocationClientOption o;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f4979c = 0;
+    private long c = 0;
     private boolean d = false;
     private int e = 0;
     private int g = 240;
@@ -59,23 +58,21 @@ public final class g {
     /* renamed from: com.amap.api.col.3sl.g$a */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/g$a.class */
     public static final class a implements LocationListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        private g f4980a;
+        private g a;
 
         a(g gVar) {
-            this.f4980a = gVar;
+            this.a = gVar;
         }
 
         final void a() {
-            this.f4980a = null;
+            this.a = null;
         }
 
         @Override // android.location.LocationListener
         public final void onLocationChanged(Location location) {
             try {
-                if (this.f4980a != null) {
-                    this.f4980a.a(location);
+                if (this.a != null) {
+                    this.a.a(location);
                 }
             } catch (Throwable th) {
             }
@@ -84,8 +81,8 @@ public final class g {
         @Override // android.location.LocationListener
         public final void onProviderDisabled(String str) {
             try {
-                if (this.f4980a != null) {
-                    this.f4980a.g();
+                if (this.a != null) {
+                    this.a.g();
                 }
             } catch (Throwable th) {
             }
@@ -93,14 +90,14 @@ public final class g {
 
         @Override // android.location.LocationListener
         public final void onProviderEnabled(String str) {
-            "gps".equalsIgnoreCase(str);
+            GeocodeSearch.GPS.equalsIgnoreCase(str);
         }
 
         @Override // android.location.LocationListener
         public final void onStatusChanged(String str, int i, Bundle bundle) {
             try {
-                if (this.f4980a != null) {
-                    this.f4980a.a(i);
+                if (this.a != null) {
+                    this.a.a(i);
                 }
             } catch (Throwable th) {
             }
@@ -112,7 +109,7 @@ public final class g {
         this.k = context;
         this.j = handler;
         try {
-            this.n = (LocationManager) context.getSystemService("location");
+            this.n = (LocationManager) context.getSystemService(QSConstants.TILE_LOCATION);
         } catch (Throwable th) {
             b.a(th, b, "<init>");
         }
@@ -164,14 +161,14 @@ public final class g {
         try {
             AMapLocation aMapLocation = new AMapLocation(location);
             if (i.a(aMapLocation)) {
-                if ("gps".equals(location.getProvider())) {
+                if (GeocodeSearch.GPS.equals(location.getProvider())) {
                     aMapLocation.setProvider("gps_coarse");
                 } else {
                     aMapLocation.setProvider("network_coarse");
                 }
                 aMapLocation.setLocationType(11);
                 if (!this.d && i.a(aMapLocation)) {
-                    com.autonavi.aps.amapapi.utils.g.b(this.k, i.b() - this.f4979c, b.a(aMapLocation.getLatitude(), aMapLocation.getLongitude()));
+                    com.autonavi.aps.amapapi.utils.g.b(this.k, i.b() - this.c, b.a(aMapLocation.getLatitude(), aMapLocation.getLongitude()));
                     this.d = true;
                 }
                 Boolean bool = Boolean.FALSE;
@@ -220,7 +217,7 @@ public final class g {
                 a(f);
                 b(f);
                 synchronized (this.p) {
-                    a(f, f4978a);
+                    a(f, a);
                 }
                 c(f);
             }
@@ -251,7 +248,7 @@ public final class g {
             if (allProviders == null || allProviders.size() <= 0) {
                 s = false;
             } else {
-                s = allProviders.contains("gps");
+                s = allProviders.contains(GeocodeSearch.GPS);
             }
             r = true;
             return s;
@@ -274,17 +271,17 @@ public final class g {
             long b2 = i.b();
             if (this.o.getInterval() <= 8000 || b2 - this.l > this.o.getInterval() - 8000) {
                 Bundle bundle = new Bundle();
-                bundle.putDouble("lat", aMapLocation.getLatitude());
+                bundle.putDouble(c.B, aMapLocation.getLatitude());
                 bundle.putDouble(c.C, aMapLocation.getLongitude());
                 bundle.putFloat("radius", aMapLocation.getAccuracy());
-                bundle.putLong("time", aMapLocation.getTime());
+                bundle.putLong(g.a.g, aMapLocation.getTime());
                 Message obtain = Message.obtain();
                 obtain.setData(bundle);
                 obtain.what = 102;
                 synchronized (this.p) {
-                    if (f4978a == null) {
+                    if (a == null) {
                         this.j.sendMessage(obtain);
-                    } else if (i.a(aMapLocation, f4978a) > this.h) {
+                    } else if (i.a(aMapLocation, a) > this.h) {
                         this.j.sendMessage(obtain);
                     }
                 }
@@ -323,7 +320,7 @@ public final class g {
         try {
             if (i.c() >= 28) {
                 if (this.n == null) {
-                    this.n = (LocationManager) this.k.getApplicationContext().getSystemService("location");
+                    this.n = (LocationManager) this.k.getApplicationContext().getSystemService(QSConstants.TILE_LOCATION);
                 }
                 z2 = ((Boolean) e.a(this.n, "isLocationEnabled", new Object[0])).booleanValue();
             }
@@ -333,7 +330,7 @@ public final class g {
                 if (i.c() < 28) {
                     z3 = z2;
                     z = z2;
-                    if (Settings.Secure.getInt(this.k.getContentResolver(), Settings.Secure.LOCATION_MODE, 0) == 0) {
+                    if (Settings.Secure.getInt(this.k.getContentResolver(), "location_mode", 0) == 0) {
                         return false;
                     }
                 }
@@ -404,7 +401,7 @@ public final class g {
             if (myLooper == null) {
                 looper = this.k.getMainLooper();
             }
-            this.f4979c = i.b();
+            this.c = i.b();
             if (b(this.n)) {
                 if (this.x == null) {
                     this.x = new a(this);
@@ -415,7 +412,7 @@ public final class g {
                 try {
                     if (i.a() - q >= 259200000) {
                         if (i.c(this.k, "WYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19MT0NBVElPTl9FWFRSQV9DT01NQU5EUw==")) {
-                            this.n.sendExtraCommand("gps", "force_xtra_injection", null);
+                            this.n.sendExtraCommand(GeocodeSearch.GPS, "force_xtra_injection", null);
                             q = i.a();
                             SharedPreferences.Editor a2 = h.a(this.k, "pref");
                             h.a(a2, "lagt", q);
@@ -430,7 +427,7 @@ public final class g {
                 if (this.x == null) {
                     this.x = new a(this);
                 }
-                this.n.requestLocationUpdates("gps", this.o.getInterval(), this.o.getDeviceModeDistanceFilter(), this.x, looper);
+                this.n.requestLocationUpdates(GeocodeSearch.GPS, this.o.getInterval(), this.o.getDeviceModeDistanceFilter(), this.x, looper);
             }
             if (s || u) {
                 a(100, "系统返回定位结果超时#2002", this.o.getHttpTimeOut());
@@ -490,7 +487,7 @@ public final class g {
         } catch (Throwable th2) {
         }
         this.i = 0;
-        this.f4979c = 0L;
+        this.c = 0L;
         this.l = 0L;
         this.e = 0;
         this.m = 0;
@@ -508,7 +505,7 @@ public final class g {
                     return;
                 }
                 synchronized (this.p) {
-                    f4978a = aMapLocation;
+                    a = aMapLocation;
                 }
             } catch (Throwable th) {
                 b.a(th, "CoarseLocation", "setLastGeoLocation");
@@ -539,14 +536,14 @@ public final class g {
         LocationManager locationManager = this.n;
         if (locationManager != null && a(locationManager)) {
             if (Build.VERSION.SDK_INT >= 19) {
-                int i = Settings.Secure.getInt(this.k.getContentResolver(), Settings.Secure.LOCATION_MODE, 0);
+                int i = Settings.Secure.getInt(this.k.getContentResolver(), "location_mode", 0);
                 if (i == 0) {
                     return 2;
                 }
                 if (i == 2) {
                     return 3;
                 }
-            } else if (!this.n.isProviderEnabled("gps")) {
+            } else if (!this.n.isProviderEnabled(GeocodeSearch.GPS)) {
                 return 2;
             }
             return !this.v ? 4 : 0;
@@ -564,7 +561,7 @@ public final class g {
         this.j.removeMessages(100);
         if (this.w != this.o.getGeoLanguage()) {
             synchronized (this.p) {
-                f4978a = null;
+                a = null;
             }
         }
         this.w = this.o.getGeoLanguage();

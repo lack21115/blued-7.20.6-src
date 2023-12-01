@@ -27,7 +27,7 @@ import kotlinx.coroutines.TimeoutKt;
 public final class WelcomeFragment$initData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f34620a;
+    int f20929a;
     final /* synthetic */ WelcomeFragment b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -37,28 +37,25 @@ public final class WelcomeFragment$initData$1 extends SuspendLambda implements F
         this.b = welcomeFragment;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((WelcomeFragment$initData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new WelcomeFragment$initData$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         String str;
         String str2;
         boolean z;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f34620a;
+        int i = this.f20929a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f34620a = 1;
-            Object a3 = TimeoutKt.a(5000L, new WelcomeFragment$initData$1$result$1(this.b, null), this);
+            this.f20929a = 1;
+            Object a3 = TimeoutKt.a(5000L, new WelcomeFragment$initData$1$result$1(this.b, null), (Continuation) this);
             obj = a3;
             if (a3 == a2) {
                 return a2;
@@ -75,16 +72,16 @@ public final class WelcomeFragment$initData$1 extends SuspendLambda implements F
             EventTrackLoginAndRegister.b(event, str);
             InstantLogBody instantLogBody = new InstantLogBody();
             instantLogBody.service = "AD_REQUEST_TIMEOUT";
-            Map<String, String> params = BluedHttpTools.a();
-            Intrinsics.c(params, "params");
+            Map a4 = BluedHttpTools.a();
+            Intrinsics.c(a4, "params");
             str2 = this.b.f;
-            params.put("req_id", str2);
-            InstantLog.a(instantLogBody, params);
-            WelcomeFragment.Companion companion = WelcomeFragment.f34618a;
+            a4.put("req_id", str2);
+            InstantLog.a(instantLogBody, a4);
+            WelcomeFragment.Companion companion = WelcomeFragment.f20927a;
             Context context = this.b.getContext();
-            z = this.b.f34619c;
+            z = this.b.f20928c;
             companion.b(context, z);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

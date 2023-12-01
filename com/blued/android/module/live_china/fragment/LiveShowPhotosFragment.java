@@ -15,7 +15,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.anythink.expressad.d.a.b;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.ui.mvp.MvpFragment;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
@@ -33,13 +32,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveShowPhotosFragment.class */
 public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    TextView f13269a;
+    TextView a;
     LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    RecyclerView f13270c;
+    RecyclerView c;
     LinearLayout d;
     TextView e;
     SmartRefreshLayout f;
@@ -101,53 +96,50 @@ public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter>
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
         this.g.measure(0, 0);
-        ValueAnimator a2 = a(this.g.getMeasuredHeight(), 0);
-        a2.addListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.fragment.LiveShowPhotosFragment.4
+        ValueAnimator a = a(this.g.getMeasuredHeight(), 0);
+        a.addListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.fragment.LiveShowPhotosFragment.4
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 LiveShowPhotosFragment.this.g.setVisibility(8);
             }
         });
-        a2.start();
+        a.start();
     }
 
     private void d(List<String> list) {
         this.d.setVisibility(8);
-        this.f13270c.setVisibility(0);
+        this.c.setVisibility(0);
         this.n.setNewData(list);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
-        this.f13269a = (TextView) this.i.findViewById(R.id.tv_cancel);
+        this.a = (TextView) this.i.findViewById(R.id.tv_cancel);
         this.b = (LinearLayout) this.i.findViewById(R.id.ll_center_view);
-        this.f13270c = (RecyclerView) this.i.findViewById(R.id.rv_photos);
+        this.c = this.i.findViewById(R.id.rv_photos);
         this.d = (LinearLayout) this.i.findViewById(R.id.no_data_view);
         this.e = (TextView) this.i.findViewById(R.id.tv_folder_name);
-        this.f = (SmartRefreshLayout) this.i.findViewById(R.id.refresh_layout);
+        this.f = this.i.findViewById(R.id.refresh_layout);
         this.g = (ListView) this.i.findViewById(R.id.folder_list);
         this.k = (TextView) this.i.findViewById(R.id.no_data_retry);
         this.l = (TextView) this.i.findViewById(R.id.no_data_text);
-        this.f13269a.setOnClickListener(this);
+        this.a.setOnClickListener(this);
         this.b.setOnClickListener(this);
         this.k.setOnClickListener(this);
         b();
         this.f.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.live_china.fragment.LiveShowPhotosFragment.1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 LiveShowPhotosFragment.this.j().f();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 LiveShowPhotosFragment.this.j().e();
             }
         });
         this.n = new LiveShowPhotoAdapter(this);
-        this.f13270c.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        this.f13270c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.fragment.LiveShowPhotosFragment.2
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+        this.c.setLayoutManager(new GridLayoutManager(getContext(), 3));
+        this.c.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.fragment.LiveShowPhotosFragment.2
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 rect.left = LiveShowPhotosFragment.this.o;
                 rect.top = LiveShowPhotosFragment.this.o;
@@ -156,7 +148,7 @@ public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter>
                 }
             }
         });
-        this.f13270c.setAdapter(this.n);
+        this.c.setAdapter(this.n);
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.framework.ui.mvp.MvpView
@@ -177,14 +169,14 @@ public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter>
             z2 = true;
         }
         if (!z2) {
-            this.f.j();
+            this.f.g();
         } else if (z2) {
             this.f.h();
         }
         LiveShowPhotoAdapter liveShowPhotoAdapter = this.n;
         if (liveShowPhotoAdapter == null || liveShowPhotoAdapter.getItemCount() <= 0) {
             this.d.setVisibility(0);
-            this.f13270c.setVisibility(8);
+            this.c.setVisibility(8);
             if (z) {
                 this.k.setVisibility(8);
                 this.l.setVisibility(0);
@@ -217,10 +209,10 @@ public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter>
     public void o() {
         super.o();
         Logger.d("LiveShowPhotosFragment", "enableLoadMore ... ");
-        this.f.l(true);
+        this.f.b(true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         this.f.c(false);
@@ -230,7 +222,7 @@ public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter>
     public void onClick(View view) {
         Tracker.onClick(view);
         if (view.getId() == R.id.tv_cancel) {
-            LiveEventBus.get("live_dialog_cancel").post(b.dO);
+            LiveEventBus.get("live_dialog_cancel").post("cancel");
         } else if (view.getId() != R.id.ll_center_view) {
             if (view.getId() == R.id.no_data_retry) {
                 j().e();
@@ -242,7 +234,7 @@ public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter>
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.o = DisplayUtil.a(AppInfo.d(), 3.0f);
@@ -252,6 +244,6 @@ public class LiveShowPhotosFragment extends MvpFragment<LiveShowPhotosPresenter>
     public void p() {
         super.p();
         Logger.d("LiveShowPhotosFragment", "disableLoadMore ... ");
-        this.f.l(false);
+        this.f.b(false);
     }
 }

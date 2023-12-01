@@ -7,11 +7,11 @@ import java.util.List;
 public interface d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f39743a = {52, 96, -116, 83, 40, 46, 72, -2, 42, 126, -75, 73, 41, 117, 115, -4, 49};
+    public static final byte[] f26052a = {52, 96, -116, 83, 40, 46, 72, -2, 42, 126, -75, 73, 41, 117, 115, -4, 49};
     public static final byte[] b = {52, 125, -96, 80, 17, 40, 113, -24, 26, 115, -68, 78, 40, 50, 112};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte[] f39744c = {41, 113, -96, 84, 17, 42, 98, -8, 55, 105, -116, 84, 39, 54, 114};
+    public static final byte[] f26053c = {41, 113, -96, 84, 17, 42, 98, -8, 55, 105, -116, 84, 39, 54, 114};
     public static final byte[] d = {41, 113, -96, 84, 17, 46, 103, -7, 36, 100, -74, Byte.MAX_VALUE, 45, 52, 121, -5, 44, 119, -116, 86, 43, 41, 100, -12, 42, 126};
     public static final byte[] e = {41, 113, -96, 84, 17, 46, 103, -7, 36, 100, -74, Byte.MAX_VALUE, 44, 50, 115, -18};
     public static final byte[] f = {41, 113, -96, 84, 17, 46, 103, -7, 36, 100, -74, Byte.MAX_VALUE, 61, 62, 116, -23, 44, Byte.MAX_VALUE, -67, 83};
@@ -21,11 +21,11 @@ public interface d {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f39745a = "";
+        public String f26054a = "";
         public String b = "";
 
         /* renamed from: c  reason: collision with root package name */
-        public String f39746c = "";
+        public String f26055c = "";
         public String d = "";
         public String e = "";
         public String f = "";
@@ -39,7 +39,7 @@ public interface d {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f39747a;
+        public long f26056a;
         public long b;
         public long f;
         public long g;
@@ -54,7 +54,7 @@ public interface d {
         public long s = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f39748c = "";
+        public String f26057c = "";
         public String d = "";
         public String e = "";
         public String h = "";

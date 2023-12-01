@@ -155,12 +155,12 @@ public final class NativeBreakIterator implements Cloneable {
         StringBuilder sb = new StringBuilder();
         char first = characterIterator.first();
         while (true) {
-            char c2 = first;
-            if (c2 == 65535) {
+            char c = first;
+            if (c == 65535) {
                 setText(sb.toString(), characterIterator);
                 return;
             } else {
-                sb.append(c2);
+                sb.append(c);
                 first = characterIterator.next();
             }
         }

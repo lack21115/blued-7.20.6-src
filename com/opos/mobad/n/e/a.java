@@ -14,7 +14,7 @@ import java.util.concurrent.Callable;
 public class a extends com.opos.mobad.n.i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26636a;
+    private Context f12948a;
     private d d;
     private com.opos.mobad.n.d.b e;
     private FrameLayout f;
@@ -25,22 +25,22 @@ public class a extends com.opos.mobad.n.i.a {
 
     public a(Context context, int i) {
         super(i);
-        this.f26636a = context;
+        this.f12948a = context;
         this.j = new i();
         a(context);
     }
 
     private void a(Context context) {
         this.g = new RelativeLayout(context);
-        this.f = new FrameLayout(this.f26636a);
+        this.f = new FrameLayout(this.f12948a);
         this.h = new RelativeLayout(context);
     }
 
     private void a(final com.opos.mobad.n.d.b bVar) {
-        if (TextUtils.isEmpty(bVar.f26627a)) {
+        if (TextUtils.isEmpty(bVar.f12939a)) {
             return;
         }
-        if (this.e != null && bVar.f26627a.equals(this.e.f26627a)) {
+        if (this.e != null && bVar.f12939a.equals(this.e.f12939a)) {
             b(bVar);
             return;
         }
@@ -49,13 +49,13 @@ public class a extends com.opos.mobad.n.i.a {
             this.d.d();
             this.d = null;
         }
-        if (com.opos.cmn.an.d.b.a.a(bVar.f26627a)) {
+        if (com.opos.cmn.an.d.b.a.a(bVar.f12939a)) {
             com.opos.mobad.c.b.b.b(new Runnable() { // from class: com.opos.mobad.n.e.a.1
                 @Override // java.lang.Runnable
                 public void run() {
                     a aVar = a.this;
                     com.opos.mobad.n.d.b bVar2 = bVar;
-                    aVar.a(bVar2, bVar2.f26627a);
+                    aVar.a(bVar2, bVar2.f12939a);
                 }
             });
         } else {
@@ -154,31 +154,31 @@ public class a extends com.opos.mobad.n.i.a {
             }
         });
         if (bVar.v != null) {
-            a2.a(bVar.v.b, bVar.v.f26626a);
+            a2.a(bVar.v.b, bVar.v.f12938a);
         }
-        if (bVar.j != null && !TextUtils.isEmpty(bVar.j.f26633a)) {
-            a2.d(bVar.j.f26633a);
+        if (bVar.j != null && !TextUtils.isEmpty(bVar.j.f12945a)) {
+            a2.d(bVar.j.f12945a);
         }
-        if (bVar.b != null && !TextUtils.isEmpty(bVar.b.f26633a)) {
-            a2.c((Object) bVar.b.f26633a);
+        if (bVar.b != null && !TextUtils.isEmpty(bVar.b.f12945a)) {
+            a2.c((Object) bVar.b.f12945a);
         }
-        if (bVar.m != null && !TextUtils.isEmpty(bVar.m.f26633a)) {
-            a2.e(bVar.m.f26633a);
+        if (bVar.m != null && !TextUtils.isEmpty(bVar.m.f12945a)) {
+            a2.e(bVar.m.f12945a);
         }
         if (bVar.g != null && bVar.g.size() > 0) {
             com.opos.mobad.n.d.g gVar = bVar.g.get(0);
             if (gVar != null) {
-                a2.a((Object) gVar.f26633a);
+                a2.a((Object) gVar.f12945a);
             }
             ArrayList arrayList = new ArrayList();
             for (com.opos.mobad.n.d.g gVar2 : bVar.g) {
                 if (gVar != null) {
-                    arrayList.add(gVar2.f26633a);
+                    arrayList.add(gVar2.f12945a);
                 }
             }
             a2.b(arrayList);
         }
-        d a3 = a2.a(this.f26636a, str);
+        d a3 = a2.a(this.f12948a, str);
         this.d = a3;
         View a4 = a3.a();
         com.opos.cmn.an.f.a.b("DyTemplate", "show view :" + a4 + ", costTime = " + currentTimeMillis);
@@ -207,10 +207,10 @@ public class a extends com.opos.mobad.n.i.a {
     /* JADX INFO: Access modifiers changed from: private */
     public void i() {
         if (this.i == null) {
-            com.opos.mobad.c.d.a aVar = new com.opos.mobad.c.d.a(this.f26636a);
+            com.opos.mobad.c.d.a aVar = new com.opos.mobad.c.d.a(this.f12948a);
             this.i = aVar;
-            aVar.a(new a.InterfaceC0678a() { // from class: com.opos.mobad.n.e.a.5
-                @Override // com.opos.mobad.c.d.a.InterfaceC0678a
+            aVar.a(new a.InterfaceC0508a() { // from class: com.opos.mobad.n.e.a.5
+                @Override // com.opos.mobad.c.d.a.InterfaceC0508a
                 public void a(boolean z) {
                     com.opos.cmn.an.f.a.b("DyTemplate", "visible change:" + z);
                     if (a.this.d == null) {

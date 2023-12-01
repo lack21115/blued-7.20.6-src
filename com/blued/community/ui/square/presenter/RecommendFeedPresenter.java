@@ -361,6 +361,9 @@ public class RecommendFeedPresenter extends MvpPresenter {
                 }
             }
 
+            /* JADX WARN: Type inference failed for: r0v19, types: [com.blued.community.ui.square.presenter.RecommendFeedPresenter$7$1] */
+            /* JADX WARN: Type inference failed for: r0v22, types: [com.blued.community.ui.square.presenter.RecommendFeedPresenter$7$2] */
+            /* JADX WARN: Type inference failed for: r0v25, types: [com.blued.community.ui.square.presenter.RecommendFeedPresenter$7$3] */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public BluedEntity<DiscoverRecommendModel, SquareRecommendExtra> parseData(String str) {
                 if (TextUtils.isEmpty(str)) {
@@ -421,14 +424,12 @@ public class RecommendFeedPresenter extends MvpPresenter {
             feedListAdapterForRecyclerView.a("recommend");
         }
         LiveEventBus.get("circle_delete_feed", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.community.ui.square.presenter.RecommendFeedPresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 RecommendFeedPresenter.this.a("delete_circle_feed", str, false);
             }
         });
         LiveEventBus.get("feed_delete", BluedIngSelfFeed.class).observe(lifecycleOwner, new Observer<BluedIngSelfFeed>() { // from class: com.blued.community.ui.square.presenter.RecommendFeedPresenter.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(BluedIngSelfFeed bluedIngSelfFeed) {
                 if (bluedIngSelfFeed == null) {
@@ -502,7 +503,7 @@ public class RecommendFeedPresenter extends MvpPresenter {
                 }
                 RecommendFeedPresenter.this.n();
             }
-        }, 2, CommunityManager.f19086a.a().c(), g());
+        }, 2, CommunityManager.a.a().c(), g());
     }
 
     @Override // com.blued.android.framework.ui.mvp.MvpPresenter

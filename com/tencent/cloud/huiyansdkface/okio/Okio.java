@@ -242,7 +242,7 @@ public final class Okio {
                 StringBuilder sb;
                 Exception exc;
                 try {
-                    Socket.this.close();
+                    socket.close();
                 } catch (AssertionError e) {
                     if (!Okio.isAndroidGetsocknameError(e)) {
                         throw e;
@@ -252,7 +252,7 @@ public final class Okio {
                     sb = new StringBuilder();
                     exc = e;
                     sb.append("Failed to close timed out socket ");
-                    sb.append(Socket.this);
+                    sb.append(socket);
                     logger2.log(level, sb.toString(), (Throwable) exc);
                 } catch (Exception e2) {
                     logger2 = Okio.logger;
@@ -260,7 +260,7 @@ public final class Okio {
                     sb = new StringBuilder();
                     exc = e2;
                     sb.append("Failed to close timed out socket ");
-                    sb.append(Socket.this);
+                    sb.append(socket);
                     logger2.log(level, sb.toString(), (Throwable) exc);
                 }
             }

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogMsgBoxGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28708a;
+    private final RelativeLayout f15018a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28708a;
+        return this.f15018a;
     }
 }

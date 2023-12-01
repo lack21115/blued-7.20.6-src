@@ -8,7 +8,7 @@ public final class g extends h implements i {
     private static g e;
 
     private g() {
-        super(com.igexin.push.core.e.ap, com.igexin.push.core.e.f23496ar);
+        super(com.igexin.push.core.e.ap, com.igexin.push.core.e.f9888ar);
         this.d.j = false;
     }
 
@@ -36,7 +36,7 @@ public final class g extends h implements i {
         a(dVar);
         a2.a();
         m();
-        if (i == b.a.f23302a) {
+        if (i == b.a.f9694a) {
             l();
         }
     }
@@ -47,7 +47,7 @@ public final class g extends h implements i {
 
     @Override // com.igexin.push.b.h
     public final int c() {
-        return b.EnumC0449b.b;
+        return b.EnumC0279b.b;
     }
 
     @Override // com.igexin.push.b.h

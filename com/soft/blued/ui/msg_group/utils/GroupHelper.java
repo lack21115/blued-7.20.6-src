@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ViewModelProvider;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.module.common.group.GroupInfoModel;
 import com.soft.blued.ui.msg_group.model.GroupPrivilegeModel;
@@ -28,13 +27,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class GroupHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final GroupHelper f32827a = new GroupHelper();
+    public static final GroupHelper f19136a = new GroupHelper();
     private static MyGroupViewModel b;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg_group/utils/GroupHelper$MyGroupsComparator.class */
-    public static final class MyGroupsComparator implements Comparator<GroupInfoModel> {
+    static final class MyGroupsComparator implements Comparator<GroupInfoModel> {
         @Override // java.util.Comparator
         /* renamed from: a */
         public int compare(GroupInfoModel groupInfoModel, GroupInfoModel groupInfoModel2) {
@@ -74,23 +72,23 @@ public final class GroupHelper {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FragmentActivity it, Context context, GroupPrivilegeModel groupPrivilegeModel) {
-        Intrinsics.e(it, "$it");
+    public static final void a(FragmentActivity fragmentActivity, Context context, GroupPrivilegeModel groupPrivilegeModel) {
+        Intrinsics.e(fragmentActivity, "$it");
         Intrinsics.e(context, "$context");
         if (b == null || groupPrivilegeModel == null) {
             return;
         }
-        XPopup.Builder a2 = new XPopup.Builder(it).a(PopupAnimation.ScaleAlphaFromCenter);
+        XPopup.Builder a2 = new XPopup.Builder(fragmentActivity).a(PopupAnimation.a);
         MyGroupViewModel myGroupViewModel = b;
         Intrinsics.a(myGroupViewModel);
-        a2.a((BasePopupView) new PopGroupRecover(context, myGroupViewModel, groupPrivilegeModel)).h();
+        a2.a(new PopGroupRecover(context, myGroupViewModel, groupPrivilegeModel)).h();
     }
 
-    public final List<GroupInfoModel> a(MyGroupModel myGroup, boolean z) {
-        Intrinsics.e(myGroup, "myGroup");
+    public final List<GroupInfoModel> a(MyGroupModel myGroupModel, boolean z) {
+        Intrinsics.e(myGroupModel, "myGroup");
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        List<GroupInfoModel> list = myGroup.groups;
+        List<GroupInfoModel> list = myGroupModel.groups;
         Intrinsics.c(list, "myGroup.groups");
         arrayList.addAll(list);
         Collections.sort(arrayList, new MyGroupsComparator());
@@ -131,7 +129,7 @@ public final class GroupHelper {
                 arrayList2.add(groupInfoModel);
             }
             arrayList2.addAll(arrayList6);
-            if (!z && myGroup.buy_privilege == 1) {
+            if (!z && myGroupModel.buy_privilege == 1) {
                 GroupInfoModel groupInfoModel2 = new GroupInfoModel();
                 groupInfoModel2.itemType = 4;
                 arrayList2.add(groupInfoModel2);
@@ -141,7 +139,7 @@ public final class GroupHelper {
         if (!arrayList7.isEmpty()) {
             GroupInfoModel groupInfoModel3 = new GroupInfoModel();
             groupInfoModel3.itemType = 2;
-            groupInfoModel3.max_join = myGroup.max_join;
+            groupInfoModel3.max_join = myGroupModel.max_join;
             if (!z) {
                 arrayList2.add(groupInfoModel3);
             }
@@ -166,7 +164,7 @@ public final class GroupHelper {
             fragmentActivity.getLifecycle().addObserver(new LifecycleObserver() { // from class: com.soft.blued.ui.msg_group.utils.GroupHelper$attachActivity$1$1
                 @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
                 public final void onDestroy() {
-                    GroupHelper groupHelper = GroupHelper.f32827a;
+                    GroupHelper groupHelper = GroupHelper.f19136a;
                     GroupHelper.b = null;
                 }
             });

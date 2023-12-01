@@ -9,10 +9,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static AtomicBoolean f39530a = new AtomicBoolean(false);
+    public static AtomicBoolean f25839a = new AtomicBoolean(false);
 
     public static void a(Context context) {
-        if (f39530a.get()) {
+        if (f25839a.get()) {
             if (com.tencent.tmsbeacon.a.c.b.b(context, "android.permission.INTERNET") && com.tencent.tmsbeacon.a.c.b.b(context, "android.permission.ACCESS_NETWORK_STATE")) {
                 return;
             }
@@ -22,13 +22,13 @@ public class e {
 
     public static void a(String str) {
         c.b("[strict]  " + str, new Object[0]);
-        if (f39530a.get()) {
+        if (f25839a.get()) {
             throw new IllegalStateException("[strict] " + str);
         }
     }
 
     public static void a(Map map) {
-        if (!f39530a.get() || map == null) {
+        if (!f25839a.get() || map == null) {
             return;
         }
         for (Object obj : map.keySet()) {
@@ -49,7 +49,7 @@ public class e {
         sb.append(obj == null ? "=" : "!");
         sb.append("= null!");
         c.a(sb.toString(), new Object[0]);
-        if (isEmpty && f39530a.get()) {
+        if (isEmpty && f25839a.get()) {
             throw new NullPointerException(str + " == null!");
         }
         return isEmpty;

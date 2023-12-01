@@ -1,7 +1,6 @@
 package com.tencent.beacon.base.net.b;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,11 +8,11 @@ import java.util.regex.Pattern;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f34972a = "https://otheve.beacon.qq.com/analytics/v2_upload";
+    public static String f21281a = "https://otheve.beacon.qq.com/analytics/v2_upload";
     public static String b = "https://othstr.beacon.qq.com/analytics/v2_upload";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f34973c = "oth.eve.mdt.qq.com";
+    public static String f21282c = "oth.eve.mdt.qq.com";
     public static String d = "oth.str.mdt.qq.com";
     private static boolean e = false;
 
@@ -26,7 +25,7 @@ public final class b {
         if (indexOf == -1) {
             return str;
         }
-        String substring = str.substring(indexOf + str2.length(), str.indexOf(BridgeUtil.SPLIT_MARK, str2.length()));
+        String substring = str.substring(indexOf + str2.length(), str.indexOf("/", str2.length()));
         int indexOf2 = substring.indexOf(":");
         String str3 = substring;
         if (indexOf2 != -1) {
@@ -36,7 +35,7 @@ public final class b {
     }
 
     public static String a(boolean z) {
-        return z ? f34973c : f34972a;
+        return z ? f21282c : f21281a;
     }
 
     public static void a(String str, String str2) {
@@ -48,8 +47,8 @@ public final class b {
         if (TextUtils.isEmpty(str2)) {
             return;
         }
-        f34973c = str2;
-        f34972a = f34972a.replace("otheve.beacon.qq.com", str2);
+        f21282c = str2;
+        f21281a = f21281a.replace("otheve.beacon.qq.com", str2);
         e = true;
     }
 
@@ -61,7 +60,7 @@ public final class b {
         if (TextUtils.isEmpty(str) || e) {
             return;
         }
-        f34973c = str;
+        f21282c = str;
     }
 
     public static void b(String str, String str2) {
@@ -74,17 +73,17 @@ public final class b {
         }
         d = str;
         b = b.replace("othstr.beacon.qq.com", str);
-        f34973c = str2;
-        String replace = f34972a.replace("otheve.beacon.qq.com", str2);
-        f34972a = replace;
-        com.tencent.beacon.base.util.c.a("[event url] ip modified by api, socketStrategyHost: %s, httpsStrategyUrl: %s, socketLogHost: %s ,httpsLogUrl: %s", d, b, f34973c, replace);
+        f21282c = str2;
+        String replace = f21281a.replace("otheve.beacon.qq.com", str2);
+        f21281a = replace;
+        com.tencent.beacon.base.util.c.a("[event url] ip modified by api, socketStrategyHost: %s, httpsStrategyUrl: %s, socketLogHost: %s ,httpsLogUrl: %s", d, b, f21282c, replace);
     }
 
     public static void c(String str) {
         if (TextUtils.isEmpty(str) || e) {
             return;
         }
-        f34972a = str;
+        f21281a = str;
     }
 
     public static void d(String str) {

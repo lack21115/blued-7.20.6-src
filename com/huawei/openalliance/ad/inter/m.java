@@ -42,11 +42,11 @@ public class m implements i {
     private com.huawei.openalliance.ad.inter.listeners.d Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f22980a;
+    private boolean f9372a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f22981c;
+    private boolean f9373c;
     private Context d;
     private int e;
     private RequestOptions f;
@@ -95,7 +95,7 @@ public class m implements i {
 
     public m(Context context, String[] strArr, boolean z) {
         this.B = a.IDLE;
-        this.f22981c = false;
+        this.f9373c = false;
         this.e = 3;
         this.A = new DelayInfo();
         if (!v.Code(context)) {
@@ -206,7 +206,7 @@ public class m implements i {
                 ac.Code(this.d, this.f);
                 this.B = a.LOADING;
                 final AdSlotParam.a aVar = new AdSlotParam.a();
-                aVar.Code(Arrays.asList(this.C)).V(i).Code(str).Code(1).I(com.huawei.openalliance.ad.utils.c.Z(this.d)).Z(com.huawei.openalliance.ad.utils.c.B(this.d)).Code(z).Code(this.f).Code(this.g).C(this.e).S(this.i).V(this.j).B(this.m).Code(this.l).I(this.k).Code(this.n).Code(this.w).C(this.h).Z(this.r).V(this.x).C(this.z).Z(this.f22981c);
+                aVar.Code(Arrays.asList(this.C)).V(i).Code(str).Code(1).I(com.huawei.openalliance.ad.utils.c.Z(this.d)).Z(com.huawei.openalliance.ad.utils.c.B(this.d)).Code(z).Code(this.f).Code(this.g).C(this.e).S(this.i).V(this.j).B(this.m).Code(this.l).I(this.k).Code(this.n).Code(this.w).C(this.h).Z(this.r).V(this.x).C(this.z).Z(this.f9373c);
                 Integer num = this.o;
                 if (num != null && this.p != null) {
                     aVar.V(num);
@@ -223,7 +223,7 @@ public class m implements i {
                 }
                 final NativeAdReqParam nativeAdReqParam = new NativeAdReqParam();
                 nativeAdReqParam.Code(this.D);
-                nativeAdReqParam.V(this.f22980a);
+                nativeAdReqParam.V(this.f9372a);
                 nativeAdReqParam.Code(this.L);
                 nativeAdReqParam.I(this.b);
                 nativeAdReqParam.Code(this.I);
@@ -341,7 +341,7 @@ public class m implements i {
     }
 
     public void Code(boolean z) {
-        this.f22980a = z;
+        this.f9372a = z;
     }
 
     public void I(int i) {

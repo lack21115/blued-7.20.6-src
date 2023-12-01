@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.AppInfo;
 import com.blued.android.module.common.user.model.UserInfo;
 import com.bytedance.applog.tracker.Tracker;
+import com.soft.blued.R;
 import com.soft.blued.ui.home.HomeArgumentHelper;
 import com.soft.blued.ui.login_register.SignInActivity;
 import java.util.ArrayList;
@@ -20,16 +21,16 @@ import java.util.List;
 public class NewfeatureGuideAdapter extends PagerAdapter implements View.OnClickListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewPager f34540c;
+    private ViewPager f20849c;
     private Activity d;
     private List<View> b = new ArrayList();
 
     /* renamed from: a  reason: collision with root package name */
-    public LayoutInflater f34539a = (LayoutInflater) AppInfo.d().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    public LayoutInflater f20848a = (LayoutInflater) AppInfo.d().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     public NewfeatureGuideAdapter(Activity activity, ViewPager viewPager) {
         this.d = activity;
-        this.f34540c = viewPager;
+        this.f20849c = viewPager;
     }
 
     @Override // androidx.viewpager.widget.PagerAdapter
@@ -46,7 +47,7 @@ public class NewfeatureGuideAdapter extends PagerAdapter implements View.OnClick
     public Object instantiateItem(ViewGroup viewGroup, int i) {
         View view = this.b.get(i);
         if (i == this.b.size() - 1) {
-            view.findViewById(2131371023).setOnClickListener(this);
+            view.findViewById(R.id.tv_btn).setOnClickListener(this);
         }
         viewGroup.addView(view);
         return view;
@@ -68,7 +69,7 @@ public class NewfeatureGuideAdapter extends PagerAdapter implements View.OnClick
         } else {
             SignInActivity.a(this.d, new Bundle[0]);
         }
-        this.f34540c.setEnabled(false);
+        this.f20849c.setEnabled(false);
         this.d.finish();
     }
 }

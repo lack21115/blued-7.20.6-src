@@ -1,6 +1,5 @@
 package com.tencent.liteav.videobase.videobase;
 
-import com.android.ims.ImsReasonInfo;
 import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
 import com.igexin.sdk.PushConsts;
 import java.util.HashMap;
@@ -10,7 +9,7 @@ import java.util.Map;
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<a, Integer> f36679a = new HashMap<a, Integer>() { // from class: com.tencent.liteav.videobase.videobase.h.1
+    private static final Map<a, Integer> f22988a = new HashMap<a, Integer>() { // from class: com.tencent.liteav.videobase.videobase.h.1
         {
             put(a.ERR_CODE_NONE, 0);
             put(a.ERR_VIDEO_CAPTURE_EGL_CORE_CREATE_FAILED, -1301);
@@ -46,7 +45,7 @@ public final class h {
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<b, Integer> f36680c = new HashMap<b, Integer>() { // from class: com.tencent.liteav.videobase.videobase.h.3
+    private static final Map<b, Integer> f22989c = new HashMap<b, Integer>() { // from class: com.tencent.liteav.videobase.videobase.h.3
         {
             put(b.EVT_VIDEO_DECODE_HW_TO_SW_DECODE_COST_TOO_HIGH, 2108);
             put(b.EVT_VIDEO_DECODE_HW_TO_SW_REMOTE_VIDEO_ENABLE_RPS, 2108);
@@ -56,7 +55,7 @@ public final class h {
     private static final Map<b, Integer> d = new HashMap<b, Integer>() { // from class: com.tencent.liteav.videobase.videobase.h.4
         {
             put(b.EVT_VIDEO_DECODE_FIRST_FRAME_DECODED, 10000);
-            put(b.EVT_VIDEO_RENDER_FIRST_FRAME_ON_VIEW, Integer.valueOf((int) ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE));
+            put(b.EVT_VIDEO_RENDER_FIRST_FRAME_ON_VIEW, 10004);
             put(b.EVT_VIDEO_RENDER_FIRST_FRAME, 10001);
             put(b.EVT_VIDEO_DECODE_TYPE_CHANGE, 10002);
             put(b.EVT_VIDEO_RENDER_RESOLUTION_CHANGE, Integer.valueOf((int) GLMapStaticValue.AM_CALLBACK_INDOOR_NETWORK_ERR));
@@ -141,15 +140,15 @@ public final class h {
     }
 
     public static int a(a aVar) {
-        if (f36679a.containsKey(aVar)) {
-            return f36679a.get(aVar).intValue();
+        if (f22988a.containsKey(aVar)) {
+            return f22988a.get(aVar).intValue();
         }
         return 0;
     }
 
     public static int a(b bVar) {
-        if (f36680c.containsKey(bVar)) {
-            return f36680c.get(bVar).intValue();
+        if (f22989c.containsKey(bVar)) {
+            return f22989c.get(bVar).intValue();
         }
         if (d.containsKey(bVar)) {
             return d.get(bVar).intValue();
@@ -165,6 +164,6 @@ public final class h {
     }
 
     public static boolean b(b bVar) {
-        return f36680c.containsKey(bVar);
+        return f22989c.containsKey(bVar);
     }
 }

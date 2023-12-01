@@ -27,10 +27,10 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
     private final Context r;
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f37658a = "marker_default.png";
+    private final String f23967a = "marker_default.png";
 
     /* renamed from: c  reason: collision with root package name */
-    private int f37659c = -1;
+    private int f23968c = -1;
     private String d = "";
     private String e = "";
     private String f = "";
@@ -39,11 +39,11 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/n5$a.class */
     public static class a implements Parcelable {
-        public static final Parcelable.Creator<a> CREATOR = new C0970a();
+        public static final Parcelable.Creator<a> CREATOR = new C0800a();
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public int f37660c;
+        public int f23969c;
         public int d;
         public float e;
         public int f;
@@ -52,7 +52,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
 
         /* renamed from: com.tencent.mapsdk.internal.n5$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/n5$a$a.class */
-        public static final class C0970a implements Parcelable.Creator<a> {
+        public static final class C0800a implements Parcelable.Creator<a> {
             @Override // android.os.Parcelable.Creator
             /* renamed from: a */
             public a createFromParcel(Parcel parcel) {
@@ -69,7 +69,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
         public a(Parcel parcel) {
             this.h = 1.0f;
             this.b = parcel.readString();
-            this.f37660c = parcel.readInt();
+            this.f23969c = parcel.readInt();
             this.d = parcel.readInt();
             this.e = parcel.readFloat();
             this.f = parcel.readInt();
@@ -79,7 +79,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
         public a(String str, int i, int i2) {
             this.h = 1.0f;
             this.b = str;
-            this.f37660c = i;
+            this.f23969c = i;
             this.d = i2;
         }
 
@@ -122,7 +122,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
             stringBuffer.append(this.b);
             stringBuffer.append('\'');
             stringBuffer.append(", textSize=");
-            stringBuffer.append(this.f37660c);
+            stringBuffer.append(this.f23969c);
             stringBuffer.append(", textColor=");
             stringBuffer.append(this.d);
             stringBuffer.append(", strokeWith=");
@@ -140,7 +140,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
         @Override // android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             parcel.writeString(this.b);
-            parcel.writeInt(this.f37660c);
+            parcel.writeInt(this.f23969c);
             parcel.writeInt(this.d);
             parcel.writeFloat(this.e);
             parcel.writeInt(this.f);
@@ -158,7 +158,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
         Bitmap bitmap;
         switch (i) {
             case 1:
-                return b7.a(context, this.f37659c);
+                return b7.a(context, this.f23968c);
             case 2:
                 Bitmap b = b7.b(context, this.d);
                 if (b != null) {
@@ -225,7 +225,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
         }
         pc pcVar = this.q;
         pcVar.setText(aVar.b);
-        pcVar.setTextSize(0, aVar.f37660c * aVar.h);
+        pcVar.setTextSize(0, aVar.f23969c * aVar.h);
         pcVar.setTextColor(aVar.d);
         pcVar.setStrokeColor(aVar.f);
         pcVar.setStrokeWidth(aVar.e * aVar.h);
@@ -257,7 +257,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
         if (TextUtils.isEmpty(this.i) || this.b == 10) {
             switch (this.b) {
                 case 1:
-                    this.i = "res_" + this.f37659c;
+                    this.i = "res_" + this.f23968c;
                     break;
                 case 2:
                     this.i = "asset_" + this.d;
@@ -360,7 +360,7 @@ public class n5 implements BitmapDescriptor.BitmapFormator {
     }
 
     public BitmapDescriptor.BitmapFormator a(int i) {
-        this.f37659c = i;
+        this.f23968c = i;
         return this;
     }
 

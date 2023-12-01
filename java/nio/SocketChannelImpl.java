@@ -72,19 +72,19 @@ class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
         @Override // java.io.FilterInputStream, java.io.InputStream
         public int read() throws IOException {
             checkBlocking();
-            return this.f42254in.read();
+            return this.in.read();
         }
 
         @Override // java.io.InputStream
         public int read(byte[] bArr) throws IOException {
             checkBlocking();
-            return this.f42254in.read(bArr);
+            return this.in.read(bArr);
         }
 
         @Override // java.io.FilterInputStream, java.io.InputStream
         public int read(byte[] bArr, int i, int i2) throws IOException {
             checkBlocking();
-            return this.f42254in.read(bArr, i, i2);
+            return this.in.read(bArr, i, i2);
         }
     }
 

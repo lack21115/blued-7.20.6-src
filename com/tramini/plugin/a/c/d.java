@@ -4,19 +4,19 @@ package com.tramini.plugin.a.c;
 public class d implements Comparable<d> {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f40504a;
+    public String f26813a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f40505c;
+    public long f26814c;
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(d dVar) {
-        return this.f40505c > dVar.f40505c ? 1 : -1;
+        return this.f26814c > dVar.f26814c ? 1 : -1;
     }
 
     public boolean equals(Object obj) {
-        if ((obj instanceof d) && (this == obj || this.f40504a.equals(((d) obj).f40504a))) {
+        if ((obj instanceof d) && (this == obj || this.f26813a.equals(((d) obj).f26813a))) {
             return true;
         }
         return super.equals(obj);
@@ -24,7 +24,7 @@ public class d implements Comparable<d> {
 
     public int hashCode() {
         try {
-            return Integer.parseInt(this.f40504a);
+            return Integer.parseInt(this.f26813a);
         } catch (Throwable th) {
             th.printStackTrace();
             return super.hashCode();
@@ -32,6 +32,6 @@ public class d implements Comparable<d> {
     }
 
     public String toString() {
-        return d.class.getSimpleName() + " [ id: " + this.f40504a + ", value: " + this.b + ", timeStamp: " + this.f40505c + " ]";
+        return d.class.getSimpleName() + " [ id: " + this.f26813a + ", value: " + this.b + ", timeStamp: " + this.f26814c + " ]";
     }
 }

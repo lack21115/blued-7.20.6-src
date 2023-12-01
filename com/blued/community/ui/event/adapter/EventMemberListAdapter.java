@@ -3,6 +3,7 @@ package com.blued.community.ui.event.adapter;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.fragment.app.FragmentManager;
+import com.amap.api.fence.GeoFence;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -31,13 +32,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/adapter/EventMemberListAdapter.class */
 public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final FragmentManager f19504a;
+    private final FragmentManager a;
     private final IRequestHost b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f19505c;
+    private final String c;
     private final boolean d;
     private final int e;
 
@@ -47,9 +44,9 @@ public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberMo
         Intrinsics.e(fragmentManager, "fragmentManager");
         Intrinsics.e(fragmentActive, "fragmentActive");
         Intrinsics.e(eventId, "eventId");
-        this.f19504a = fragmentManager;
+        this.a = fragmentManager;
         this.b = fragmentActive;
-        this.f19505c = eventId;
+        this.c = eventId;
         this.d = z;
         this.e = i;
     }
@@ -63,10 +60,10 @@ public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberMo
 
     private final void a(EventMemberModel eventMemberModel) {
         EventLogData eventLogData = new EventLogData();
-        eventLogData.setEventId(this.f19505c);
+        eventLogData.setEventId(this.c);
         eventLogData.setUid(eventMemberModel.uid);
         eventLogData.setSourcePage(FeedProtos.SourcePage.ENROLL_USERS);
-        EventUserInfoDlgFragment.f19559a.a(this.f19504a, eventMemberModel.uid, this.f19505c, eventLogData);
+        EventUserInfoDlgFragment.a.a(this.a, eventMemberModel.uid, this.c, eventLogData);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -74,7 +71,7 @@ public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberMo
         Intrinsics.e(item, "$item");
         Intrinsics.e(this$0, "this$0");
         if (item.user_info.is_followed() == 0) {
-            EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+            EventHttpUtils eventHttpUtils = EventHttpUtils.a;
             final IRequestHost iRequestHost = this$0.b;
             BluedUIHttpResponse<BluedEntityA<FeedUserInfoModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<FeedUserInfoModel>>(iRequestHost) { // from class: com.blued.community.ui.event.adapter.EventMemberListAdapter$convert$3$1
                 /* JADX INFO: Access modifiers changed from: protected */
@@ -91,10 +88,10 @@ public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberMo
             Intrinsics.c(str, "getInstance().loginUserInfo.uid");
             String str2 = item.uid;
             Intrinsics.c(str2, "item.uid");
-            eventHttpUtils.d(bluedUIHttpResponse, str, str2, "event", this$0.b);
+            eventHttpUtils.d(bluedUIHttpResponse, str, str2, GeoFence.BUNDLE_KEY_FENCESTATUS, this$0.b);
             return;
         }
-        EventHttpUtils eventHttpUtils2 = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils2 = EventHttpUtils.a;
         final IRequestHost iRequestHost2 = this$0.b;
         BluedUIHttpResponse<BluedEntityA<FeedUserInfoModel>> bluedUIHttpResponse2 = new BluedUIHttpResponse<BluedEntityA<FeedUserInfoModel>>(iRequestHost2) { // from class: com.blued.community.ui.event.adapter.EventMemberListAdapter$convert$3$2
             /* JADX INFO: Access modifiers changed from: protected */
@@ -111,7 +108,7 @@ public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberMo
         Intrinsics.c(str3, "getInstance().loginUserInfo.uid");
         String str4 = item.uid;
         Intrinsics.c(str4, "item.uid");
-        eventHttpUtils2.e(bluedUIHttpResponse2, str3, str4, "event", this$0.b);
+        eventHttpUtils2.e(bluedUIHttpResponse2, str3, str4, GeoFence.BUNDLE_KEY_FENCESTATUS, this$0.b);
     }
 
     private final void a(List<? extends AlbumFlow> list, int i) {
@@ -151,7 +148,6 @@ public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberMo
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, final EventMemberModel item) {
         Intrinsics.e(helper, "helper");
@@ -166,7 +162,7 @@ public final class EventMemberListAdapter extends BaseQuickAdapter<EventMemberMo
         } else {
             imageView2.setVisibility(8);
         }
-        helper.setText(R.id.tv_member_name, item.user_info.name).setText(R.id.tv_event_num, this.mContext.getString(R.string.register_time) + ((Object) FeedMethods.i().get(String.valueOf(item.user_info.getRegistration_time()))) + " | " + this.mContext.getString(R.string.join_event) + item.join_activity_num);
+        helper.setText(R.id.tv_member_name, item.user_info.name).setText(R.id.tv_event_num, this.mContext.getString(R.string.register_time) + FeedMethods.i().get(String.valueOf(item.user_info.getRegistration_time())) + " | " + this.mContext.getString(R.string.join_event) + item.join_activity_num);
         helper.setOnClickListener(R.id.cl_user_info, new View.OnClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventMemberListAdapter$gf4F5PS_kLTL098yNaYQiVHD_I8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

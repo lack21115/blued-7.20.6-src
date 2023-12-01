@@ -23,18 +23,18 @@ import java.lang.reflect.Method;
 class TypefaceCompatApi21Impl extends TypefaceCompatBaseImpl {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Class<?> f2458a;
+    private static Class<?> f2410a;
     private static Constructor<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f2459c;
+    private static Method f2411c;
     private static Method d;
     private static boolean e = false;
 
     private static Typeface a(Object obj) {
         a();
         try {
-            Object newInstance = Array.newInstance(f2458a, 1);
+            Object newInstance = Array.newInstance(f2410a, 1);
             Array.set(newInstance, 0, obj);
             return (Typeface) d.invoke(null, newInstance);
         } catch (IllegalAccessException | InvocationTargetException e2) {
@@ -76,15 +76,15 @@ class TypefaceCompatApi21Impl extends TypefaceCompatBaseImpl {
             constructor = null;
         }
         b = constructor;
-        f2458a = cls;
-        f2459c = method2;
+        f2410a = cls;
+        f2411c = method2;
         d = method;
     }
 
     private static boolean a(Object obj, String str, int i, boolean z) {
         a();
         try {
-            return ((Boolean) f2459c.invoke(obj, str, Integer.valueOf(i), Boolean.valueOf(z))).booleanValue();
+            return ((Boolean) f2411c.invoke(obj, str, Integer.valueOf(i), Boolean.valueOf(z))).booleanValue();
         } catch (IllegalAccessException | InvocationTargetException e2) {
             throw new RuntimeException(e2);
         }

@@ -9,10 +9,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f39457a;
+    private static volatile b f25766a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f39458c = new Object();
+    private final Object f25767c = new Object();
     private AtomicBoolean f = new AtomicBoolean(false);
     private final SparseArray<List<d>> b = new SparseArray<>();
     private final SparseArray<List<c>> d = new SparseArray<>();
@@ -36,23 +36,23 @@ public final class b {
     }
 
     public static b a() {
-        if (f39457a == null) {
+        if (f25766a == null) {
             synchronized (b.class) {
                 try {
-                    if (f39457a == null) {
-                        f39457a = new b();
+                    if (f25766a == null) {
+                        f25766a = new b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f39457a;
+        return f25766a;
     }
 
     private Object b(int i) {
         Object obj;
-        synchronized (this.f39458c) {
+        synchronized (this.f25767c) {
             Object obj2 = this.e.get(i);
             obj = obj2;
             if (obj2 == null) {
@@ -73,8 +73,8 @@ public final class b {
 
     private void c(c cVar) {
         d(cVar);
-        synchronized (b(cVar.f39460a)) {
-            List<d> c2 = c(cVar.f39460a);
+        synchronized (b(cVar.f25769a)) {
+            List<d> c2 = c(cVar.f25769a);
             if (c2 == null) {
                 return;
             }
@@ -122,13 +122,13 @@ public final class b {
     }
 
     public void b(c cVar) {
-        synchronized (b(cVar.f39460a)) {
-            c cVar2 = new c(cVar.f39460a, cVar.b);
-            List<c> list = this.d.get(cVar2.f39460a);
+        synchronized (b(cVar.f25769a)) {
+            c cVar2 = new c(cVar.f25769a, cVar.b);
+            List<c> list = this.d.get(cVar2.f25769a);
             ArrayList arrayList = list;
             if (list == null) {
                 arrayList = new ArrayList();
-                this.d.put(cVar2.f39460a, arrayList);
+                this.d.put(cVar2.f25769a, arrayList);
             }
             arrayList.add(cVar2);
             c(cVar);

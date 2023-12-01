@@ -170,14 +170,14 @@ public final class EnumMultiset<E extends Enum<E>> extends AbstractMultiset<E> i
         throw new ClassCastException("Expected an " + this.type + " but got " + obj);
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         Arrays.fill(this.counts, 0);
         this.size = 0L;
         this.distinctElements = 0;
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public /* bridge */ /* synthetic */ boolean contains(@NullableDecl Object obj) {
         return super.contains(obj);
     }
@@ -238,12 +238,12 @@ public final class EnumMultiset<E extends Enum<E>> extends AbstractMultiset<E> i
         return super.entrySet();
     }
 
-    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.common.collect.AbstractMultiset, java.util.AbstractCollection, java.util.Collection
     public /* bridge */ /* synthetic */ boolean isEmpty() {
         return super.isEmpty();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, com.google.common.collect.Multiset
     public Iterator<E> iterator() {
         return Multisets.iteratorImpl(this);
     }
@@ -299,7 +299,7 @@ public final class EnumMultiset<E extends Enum<E>> extends AbstractMultiset<E> i
         return setCount((EnumMultiset<E>) ((Enum) obj), i);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public int size() {
         return Ints.saturatedCast(this.size);
     }

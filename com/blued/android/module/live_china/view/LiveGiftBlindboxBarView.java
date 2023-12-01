@@ -26,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftBlindboxBarView.class */
 public final class LiveGiftBlindboxBarView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14469a;
+    private final Context a;
     private PlayingOnliveFragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveGiftBlindBoxModel f14470c;
+    private LiveGiftBlindBoxModel c;
     private String d;
     private final Lazy e;
 
@@ -52,7 +48,7 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
     public LiveGiftBlindboxBarView(Context mContext, AttributeSet attributeSet, int i) {
         super(mContext, attributeSet, i);
         Intrinsics.e(mContext, "mContext");
-        this.f14469a = mContext;
+        this.a = mContext;
         this.d = "";
         this.e = LazyKt.a(new Function0<LiveBlindBoxGiftBarViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveGiftBlindboxBarView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -63,9 +59,9 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveBlindBoxGiftBarViewBinding invoke() {
-                LiveBlindBoxGiftBarViewBinding a2 = LiveBlindBoxGiftBarViewBinding.a(LayoutInflater.from(LiveGiftBlindboxBarView.this.getMContext()).inflate(R.layout.live_blind_box_gift_bar_view, LiveGiftBlindboxBarView.this));
-                Intrinsics.c(a2, "bind(\n            Layout…bar_view, this)\n        )");
-                return a2;
+                LiveBlindBoxGiftBarViewBinding a = LiveBlindBoxGiftBarViewBinding.a(LayoutInflater.from(LiveGiftBlindboxBarView.this.getMContext()).inflate(R.layout.live_blind_box_gift_bar_view, LiveGiftBlindboxBarView.this));
+                Intrinsics.c(a, "bind(\n            Layout…bar_view, this)\n        )");
+                return a;
             }
         });
         a();
@@ -79,10 +75,10 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
     }
 
     private final void a(LiveGiftBlindBoxModel liveGiftBlindBoxModel) {
-        getVb().f12154c.getRoot().setVisibility(8);
+        getVb().c.getRoot().setVisibility(8);
         getVb().b.setVisibility(0);
         getVb().e.setVisibility(0);
-        getVb().f12153a.setVisibility(0);
+        getVb().a.setVisibility(0);
         ImageLoader.a((IRequestHost) null, liveGiftBlindBoxModel.getBlind_goods_image()).a(getVb().e);
         ImageLoader.a((IRequestHost) null, liveGiftBlindBoxModel.getGoods_image()).a(getVb().f);
         getVb().g.setText(liveGiftBlindBoxModel.getDesc());
@@ -93,7 +89,7 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(goodId, "$goodId");
         EventTrackLive.b(LiveProtos.Event.LIVE_BLIND_BOX_INTRODUCE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this$0.d);
-        LiveLuckyBagDialogFragment.Companion companion = LiveLuckyBagDialogFragment.f13008a;
+        LiveLuckyBagDialogFragment.Companion companion = LiveLuckyBagDialogFragment.a;
         PlayingOnliveFragment playingOnliveFragment = this$0.b;
         PlayingOnliveFragment playingOnliveFragment2 = playingOnliveFragment;
         if (playingOnliveFragment == null) {
@@ -109,19 +105,19 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
     }
 
     private final void b(LiveGiftBlindBoxModel liveGiftBlindBoxModel) {
-        getVb().f12154c.getRoot().setVisibility(0);
+        getVb().c.getRoot().setVisibility(0);
         getVb().b.setVisibility(8);
         getVb().e.setVisibility(8);
-        getVb().f12153a.setVisibility(8);
+        getVb().a.setVisibility(8);
         ImageLoader.a((IRequestHost) null, liveGiftBlindBoxModel.getBlind_goods_image()).a(getVb().e);
-        ImageLoader.a((IRequestHost) null, liveGiftBlindBoxModel.getGoods_image()).a(getVb().f12154c.f12152c);
-        getVb().f12154c.i.setText(liveGiftBlindBoxModel.getDesc());
-        getVb().f12154c.g.setText(liveGiftBlindBoxModel.getGoods_beans());
-        getVb().f12154c.h.setText(liveGiftBlindBoxModel.getGoods_name());
-        getVb().f12154c.e.setText(String.valueOf(liveGiftBlindBoxModel.getCurrent()));
-        getVb().f12154c.f.setText(Intrinsics.a(" / ", (Object) Integer.valueOf(liveGiftBlindBoxModel.getMax())));
+        ImageLoader.a((IRequestHost) null, liveGiftBlindBoxModel.getGoods_image()).a(getVb().c.c);
+        getVb().c.i.setText(liveGiftBlindBoxModel.getDesc());
+        getVb().c.g.setText(liveGiftBlindBoxModel.getGoods_beans());
+        getVb().c.h.setText(liveGiftBlindBoxModel.getGoods_name());
+        getVb().c.e.setText(String.valueOf(liveGiftBlindBoxModel.getCurrent()));
+        getVb().c.f.setText(Intrinsics.a(" / ", (Object) Integer.valueOf(liveGiftBlindBoxModel.getMax())));
         if (liveGiftBlindBoxModel.getMax() != 0) {
-            getVb().f12154c.b.a(liveGiftBlindBoxModel.getCurrent() / liveGiftBlindBoxModel.getMax());
+            getVb().c.b.a(liveGiftBlindBoxModel.getCurrent() / liveGiftBlindBoxModel.getMax());
         }
     }
 
@@ -130,8 +126,8 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
     }
 
     public final void a(int i, int i2) {
-        getVb().f12154c.e.setText(String.valueOf(i));
-        getVb().f12154c.b.a(i / i2);
+        getVb().c.e.setText(String.valueOf(i));
+        getVb().c.b.a(i / i2);
     }
 
     public final void a(PlayingOnliveFragment fragment, final String goodId, LiveGiftBlindBoxModel data) {
@@ -139,7 +135,7 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
         Intrinsics.e(goodId, "goodId");
         Intrinsics.e(data, "data");
         this.b = fragment;
-        this.f14470c = data;
+        this.c = data;
         this.d = goodId;
         if (data.getShow_type() == 1) {
             b(data);
@@ -160,7 +156,7 @@ public final class LiveGiftBlindboxBarView extends RelativeLayout {
     }
 
     public final Context getMContext() {
-        return this.f14469a;
+        return this.a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -48,7 +48,7 @@ public class e implements GLSurfaceView.Renderer {
     public c.i b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Looper f1305c;
+    public Looper f1257c;
     public int d;
     public int e;
     public long g;
@@ -71,7 +71,7 @@ public class e implements GLSurfaceView.Renderer {
     public l z;
 
     /* renamed from: a  reason: collision with root package name */
-    public final float[] f1304a = new float[16];
+    public final float[] f1256a = new float[16];
     public final Object f = new Object();
     public SurfaceTexture h = null;
     public List<SurfaceTextureCallback> i = new ArrayList();
@@ -86,7 +86,7 @@ public class e implements GLSurfaceView.Renderer {
             Process.setThreadPriority(-8);
             Looper.prepare();
             e.this.h = new SurfaceTexture(e.this.d);
-            e.this.f1305c = Looper.myLooper();
+            e.this.f1257c = Looper.myLooper();
             synchronized (e.this.f) {
                 e.this.f.notify();
             }
@@ -222,10 +222,10 @@ public class e implements GLSurfaceView.Renderer {
                 surfaceTextureCallback.onSurfaceDestroyed();
             }
         }
-        Looper looper = this.f1305c;
+        Looper looper = this.f1257c;
         if (looper != null) {
             looper.quit();
-            this.f1305c = null;
+            this.f1257c = null;
         }
         a.a.a.a.a.e.e.g.c("CameraSurfaceRenderer", "notifyPausing -");
     }
@@ -372,14 +372,14 @@ public class e implements GLSurfaceView.Renderer {
     }
 
     public final void l() {
-        Looper looper = this.f1305c;
+        Looper looper = this.f1257c;
         if (looper != null) {
             looper.quit();
-            this.f1305c = null;
+            this.f1257c = null;
         }
         new Thread(new a()).start();
         synchronized (this.f) {
-            while (this.f1305c == null) {
+            while (this.f1257c == null) {
                 try {
                     this.f.wait();
                 } catch (InterruptedException e) {
@@ -409,7 +409,7 @@ public class e implements GLSurfaceView.Renderer {
                     this.T = false;
                     return;
                 }
-                this.h.getTransformMatrix(this.f1304a);
+                this.h.getTransformMatrix(this.f1256a);
                 if (this.o == 0 || this.p == 0) {
                     return;
                 }
@@ -418,7 +418,7 @@ public class e implements GLSurfaceView.Renderer {
                 if (!this.i.isEmpty()) {
                     long currentTimeMillis = System.currentTimeMillis();
                     for (SurfaceTextureCallback surfaceTextureCallback : this.i) {
-                        int onDrawFrame = surfaceTextureCallback.onDrawFrame(i, this.o, this.p, this.f1304a);
+                        int onDrawFrame = surfaceTextureCallback.onDrawFrame(i, this.o, this.p, this.f1256a);
                         if (onDrawFrame > 0) {
                             i = onDrawFrame;
                         }
@@ -435,9 +435,9 @@ public class e implements GLSurfaceView.Renderer {
                 if (this.O) {
                     synchronized (a.a.a.a.a.a.h.f.d) {
                         if (i2 != this.d) {
-                            this.e = this.z.b(i2, this.f1304a);
+                            this.e = this.z.b(i2, this.f1256a);
                         } else {
-                            this.e = this.A.b(i2, this.f1304a);
+                            this.e = this.A.b(i2, this.f1256a);
                         }
                         if (this.G != null) {
                             this.e = this.G.d(this.e);

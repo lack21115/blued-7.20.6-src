@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.app.IWallpaperManager;
 import android.app.IWallpaperManagerCallback;
 import android.content.ComponentName;
@@ -27,7 +28,6 @@ import android.os.SystemProperties;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.WindowManagerGlobal;
-import com.android.internal.R;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -323,7 +323,7 @@ public class WallpaperManager {
         ComponentName unflattenFromString;
         String str = SystemProperties.get(PROP_WALLPAPER_COMPONENT);
         if (TextUtils.isEmpty(str) || (unflattenFromString = ComponentName.unflattenFromString(str)) == null) {
-            String string = context.getString(R.string.default_wallpaper_component);
+            String string = context.getString(17039587);
             if (TextUtils.isEmpty(string)) {
                 return null;
             }
@@ -379,7 +379,7 @@ public class WallpaperManager {
                 }
             }
         }
-        return context.getResources().openRawResource(R.drawable.default_wallpaper);
+        return context.getResources().openRawResource(17302155);
     }
 
     private void setWallpaper(InputStream inputStream, FileOutputStream fileOutputStream) throws IOException {
@@ -403,7 +403,7 @@ public class WallpaperManager {
             return;
         }
         Bitmap createBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.RGB_565);
-        createBitmap.setPixel(0, 0, this.mContext.getResources().getColor(17170444));
+        createBitmap.setPixel(0, 0, this.mContext.getResources().getColor(R.color.black));
         setBitmap(createBitmap);
     }
 

@@ -10,13 +10,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyRoomBannerBinding.class */
 public final class ItemYyRoomBannerBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16808a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f16809c;
+    public final LinearLayout c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -25,9 +21,9 @@ public final class ItemYyRoomBannerBinding implements ViewBinding {
 
     private ItemYyRoomBannerBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, LinearLayout linearLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.h = constraintLayout;
-        this.f16808a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16809c = linearLayout;
+        this.c = linearLayout;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -74,7 +70,6 @@ public final class ItemYyRoomBannerBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.h;

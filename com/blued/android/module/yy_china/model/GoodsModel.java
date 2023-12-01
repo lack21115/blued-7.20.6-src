@@ -8,19 +8,19 @@ import kotlin.jvm.internal.Intrinsics;
 public final class GoodsModel {
 
     /* renamed from: android  reason: collision with root package name */
-    private final String f17613android;
+    private final String f53android;
     private final String ios;
 
     public GoodsModel(String android2, String ios) {
         Intrinsics.e(android2, "android");
         Intrinsics.e(ios, "ios");
-        this.f17613android = android2;
+        this.f53android = android2;
         this.ios = ios;
     }
 
     public static /* synthetic */ GoodsModel copy$default(GoodsModel goodsModel, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = goodsModel.f17613android;
+            str = goodsModel.f53android;
         }
         if ((i & 2) != 0) {
             str2 = goodsModel.ios;
@@ -29,7 +29,7 @@ public final class GoodsModel {
     }
 
     public final String component1() {
-        return this.f17613android;
+        return this.f53android;
     }
 
     public final String component2() {
@@ -48,13 +48,13 @@ public final class GoodsModel {
         }
         if (obj instanceof GoodsModel) {
             GoodsModel goodsModel = (GoodsModel) obj;
-            return Intrinsics.a((Object) this.f17613android, (Object) goodsModel.f17613android) && Intrinsics.a((Object) this.ios, (Object) goodsModel.ios);
+            return Intrinsics.a((Object) this.f53android, (Object) goodsModel.f53android) && Intrinsics.a((Object) this.ios, (Object) goodsModel.ios);
         }
         return false;
     }
 
     public final String getAndroid() {
-        return this.f17613android;
+        return this.f53android;
     }
 
     public final String getIos() {
@@ -62,10 +62,10 @@ public final class GoodsModel {
     }
 
     public int hashCode() {
-        return (this.f17613android.hashCode() * 31) + this.ios.hashCode();
+        return (this.f53android.hashCode() * 31) + this.ios.hashCode();
     }
 
     public String toString() {
-        return "GoodsModel(android=" + this.f17613android + ", ios=" + this.ios + ')';
+        return "GoodsModel(android=" + this.f53android + ", ios=" + this.ios + ')';
     }
 }

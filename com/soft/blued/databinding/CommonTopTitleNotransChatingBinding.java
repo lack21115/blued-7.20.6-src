@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class CommonTopTitleNotransChatingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28688a;
+    private final LinearLayout f14998a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28688a;
+        return this.f14998a;
     }
 }

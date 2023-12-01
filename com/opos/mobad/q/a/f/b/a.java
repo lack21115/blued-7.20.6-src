@@ -18,11 +18,11 @@ import java.io.File;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f27198a;
+    private static a f13510a;
     private com.opos.mobad.c.a b = new com.opos.mobad.c.a() { // from class: com.opos.mobad.q.a.f.b.a.1
         @Override // com.opos.mobad.c.a
-        public void a(String str, String str2, int i, int i2, a.InterfaceC0676a interfaceC0676a) {
-            d.a().a(str, str2, i, i2, interfaceC0676a);
+        public void a(String str, String str2, int i, int i2, a.InterfaceC0506a interfaceC0506a) {
+            d.a().a(str, str2, i, i2, interfaceC0506a);
         }
     };
 
@@ -64,17 +64,17 @@ public class a {
 
     public static final a a() {
         a aVar;
-        a aVar2 = f27198a;
+        a aVar2 = f13510a;
         if (aVar2 != null) {
             return aVar2;
         }
         synchronized (a.class) {
             try {
-                a aVar3 = f27198a;
+                a aVar3 = f13510a;
                 aVar = aVar3;
                 if (aVar3 == null) {
                     aVar = new a();
-                    f27198a = aVar;
+                    f13510a = aVar;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -138,25 +138,25 @@ public class a {
         return i == 5 && a(floatLayerData);
     }
 
-    public com.opos.mobad.n.a a(Context context, int i, a.InterfaceC0708a interfaceC0708a) {
+    public com.opos.mobad.n.a a(Context context, int i, a.InterfaceC0538a interfaceC0538a) {
         if (i != 3) {
             if (i != 4) {
                 if (i != 5) {
                     if (i != 6) {
-                        return new b(context, i, interfaceC0708a);
+                        return new b(context, i, interfaceC0538a);
                     }
                     f a2 = f.a(context, this.b, i);
-                    a2.a(interfaceC0708a);
+                    a2.a(interfaceC0538a);
                     return a2;
                 }
-                return new c(context, i, interfaceC0708a);
+                return new c(context, i, interfaceC0538a);
             }
-            return new com.opos.mobad.q.a.f.a.d(context, i, interfaceC0708a);
+            return new com.opos.mobad.q.a.f.a.d(context, i, interfaceC0538a);
         }
-        return new e(context, i, interfaceC0708a);
+        return new e(context, i, interfaceC0538a);
     }
 
-    public com.opos.mobad.n.a a(Context context, AdItemData adItemData, a.InterfaceC0708a interfaceC0708a) {
-        return a(context, a(context, adItemData), interfaceC0708a);
+    public com.opos.mobad.n.a a(Context context, AdItemData adItemData, a.InterfaceC0538a interfaceC0538a) {
+        return a(context, a(context, adItemData), interfaceC0538a);
     }
 }

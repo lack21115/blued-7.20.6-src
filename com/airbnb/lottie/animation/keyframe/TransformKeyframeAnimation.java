@@ -13,13 +13,9 @@ import java.util.Collections;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/animation/keyframe/TransformKeyframeAnimation.class */
 public class TransformKeyframeAnimation {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Matrix f4306a = new Matrix();
+    private final Matrix a = new Matrix();
     private final Matrix b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Matrix f4307c;
+    private final Matrix c;
     private final Matrix d;
     private final float[] e;
     private BaseKeyframeAnimation<PointF, PointF> f;
@@ -41,12 +37,12 @@ public class TransformKeyframeAnimation {
         this.k = floatKeyframeAnimation;
         if (floatKeyframeAnimation != null) {
             this.b = new Matrix();
-            this.f4307c = new Matrix();
+            this.c = new Matrix();
             this.d = new Matrix();
             this.e = new float[9];
         } else {
             this.b = null;
-            this.f4307c = null;
+            this.c = null;
             this.d = null;
             this.e = null;
         }
@@ -209,7 +205,7 @@ public class TransformKeyframeAnimation {
             }
             baseKeyframeAnimation6.a((LottieValueCallback<Float>) lottieValueCallback);
             return true;
-        } else if (t == LottieProperty.f4255c) {
+        } else if (t == LottieProperty.c) {
             BaseKeyframeAnimation<Integer, Integer> baseKeyframeAnimation7 = this.j;
             if (baseKeyframeAnimation7 == null) {
                 this.j = new ValueCallbackKeyframeAnimation(lottieValueCallback, 100);
@@ -253,20 +249,20 @@ public class TransformKeyframeAnimation {
         PointF g = baseKeyframeAnimation == null ? null : baseKeyframeAnimation.g();
         BaseKeyframeAnimation<ScaleXY, ScaleXY> baseKeyframeAnimation2 = this.h;
         ScaleXY g2 = baseKeyframeAnimation2 == null ? null : baseKeyframeAnimation2.g();
-        this.f4306a.reset();
+        this.a.reset();
         if (g != null) {
-            this.f4306a.preTranslate(g.x * f, g.y * f);
+            this.a.preTranslate(g.x * f, g.y * f);
         }
         if (g2 != null) {
             double d = f;
-            this.f4306a.preScale((float) Math.pow(g2.a(), d), (float) Math.pow(g2.b(), d));
+            this.a.preScale((float) Math.pow(g2.a(), d), (float) Math.pow(g2.b(), d));
         }
         BaseKeyframeAnimation<Float, Float> baseKeyframeAnimation3 = this.i;
         if (baseKeyframeAnimation3 != null) {
             float floatValue = baseKeyframeAnimation3.g().floatValue();
             BaseKeyframeAnimation<PointF, PointF> baseKeyframeAnimation4 = this.f;
             PointF g3 = baseKeyframeAnimation4 == null ? null : baseKeyframeAnimation4.g();
-            Matrix matrix = this.f4306a;
+            Matrix matrix = this.a;
             float f2 = 0.0f;
             float f3 = g3 == null ? 0.0f : g3.x;
             if (g3 != null) {
@@ -274,7 +270,7 @@ public class TransformKeyframeAnimation {
             }
             matrix.preRotate(floatValue * f, f3, f2);
         }
-        return this.f4306a;
+        return this.a;
     }
 
     public BaseKeyframeAnimation<?, Float> b() {
@@ -286,19 +282,19 @@ public class TransformKeyframeAnimation {
     }
 
     public Matrix d() {
-        this.f4306a.reset();
+        this.a.reset();
         BaseKeyframeAnimation<?, PointF> baseKeyframeAnimation = this.g;
         if (baseKeyframeAnimation != null) {
             PointF g = baseKeyframeAnimation.g();
             if (g.x != 0.0f || g.y != 0.0f) {
-                this.f4306a.preTranslate(g.x, g.y);
+                this.a.preTranslate(g.x, g.y);
             }
         }
         BaseKeyframeAnimation<Float, Float> baseKeyframeAnimation2 = this.i;
         if (baseKeyframeAnimation2 != null) {
             float floatValue = baseKeyframeAnimation2 instanceof ValueCallbackKeyframeAnimation ? baseKeyframeAnimation2.g().floatValue() : ((FloatKeyframeAnimation) baseKeyframeAnimation2).i();
             if (floatValue != 0.0f) {
-                this.f4306a.preRotate(floatValue);
+                this.a.preRotate(floatValue);
             }
         }
         if (this.k != null) {
@@ -322,7 +318,7 @@ public class TransformKeyframeAnimation {
             fArr2[3] = tan;
             fArr2[4] = 1.0f;
             fArr2[8] = 1.0f;
-            this.f4307c.setValues(fArr2);
+            this.c.setValues(fArr2);
             e();
             float[] fArr3 = this.e;
             fArr3[0] = cos;
@@ -331,24 +327,24 @@ public class TransformKeyframeAnimation {
             fArr3[4] = cos;
             fArr3[8] = 1.0f;
             this.d.setValues(fArr3);
-            this.f4307c.preConcat(this.b);
-            this.d.preConcat(this.f4307c);
-            this.f4306a.preConcat(this.d);
+            this.c.preConcat(this.b);
+            this.d.preConcat(this.c);
+            this.a.preConcat(this.d);
         }
         BaseKeyframeAnimation<ScaleXY, ScaleXY> baseKeyframeAnimation3 = this.h;
         if (baseKeyframeAnimation3 != null) {
             ScaleXY g2 = baseKeyframeAnimation3.g();
             if (g2.a() != 1.0f || g2.b() != 1.0f) {
-                this.f4306a.preScale(g2.a(), g2.b());
+                this.a.preScale(g2.a(), g2.b());
             }
         }
         BaseKeyframeAnimation<PointF, PointF> baseKeyframeAnimation4 = this.f;
         if (baseKeyframeAnimation4 != null) {
             PointF g3 = baseKeyframeAnimation4.g();
             if (g3.x != 0.0f || g3.y != 0.0f) {
-                this.f4306a.preTranslate(-g3.x, -g3.y);
+                this.a.preTranslate(-g3.x, -g3.y);
             }
         }
-        return this.f4306a;
+        return this.a;
     }
 }

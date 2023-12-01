@@ -9,19 +9,13 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/d.class */
 public class d extends com.anythink.core.common.c.a<af> {
     private static final String b = d.class.getName();
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile d f6572c;
+    private static volatile d c;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/d$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6573a = "sdkconfig";
+        public static final String a = "sdkconfig";
         public static final String b = "key";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6574c = "type";
+        public static final String c = "type";
         public static final String d = "value";
         public static final String e = "lastupdatetime";
         public static final String f = "CREATE TABLE IF NOT EXISTS sdkconfig(key TEXT ,type TEXT ,lastupdatetime TEXT ,value TEXT )";
@@ -38,14 +32,14 @@ public class d extends com.anythink.core.common.c.a<af> {
             }
             try {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("key", afVar.b());
+                contentValues.put(a.b, afVar.b());
                 contentValues.put("type", afVar.c());
-                contentValues.put("value", afVar.d());
+                contentValues.put(a.d, afVar.d());
                 contentValues.put(a.e, afVar.a());
                 if (b(afVar.b(), afVar.a(), afVar.c())) {
-                    return b().update("sdkconfig", contentValues, "key = ? AND type = ? AND lastupdatetime = ?  ", new String[]{afVar.b(), afVar.c(), afVar.a()});
+                    return b().update(a.a, contentValues, "key = ? AND type = ? AND lastupdatetime = ?  ", new String[]{afVar.b(), afVar.c(), afVar.a()});
                 }
-                return b().insert("sdkconfig", null, contentValues);
+                return b().insert(a.a, null, contentValues);
             } catch (Exception e) {
                 return -1L;
             }
@@ -53,18 +47,18 @@ public class d extends com.anythink.core.common.c.a<af> {
     }
 
     public static d a(b bVar) {
-        if (f6572c == null) {
+        if (c == null) {
             synchronized (d.class) {
                 try {
-                    if (f6572c == null) {
-                        f6572c = new d(bVar);
+                    if (c == null) {
+                        c = new d(bVar);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6572c;
+        return c;
     }
 
     private List<af> a(Cursor cursor) {
@@ -74,9 +68,9 @@ public class d extends com.anythink.core.common.c.a<af> {
                     ArrayList arrayList = new ArrayList();
                     while (cursor.moveToNext()) {
                         af afVar = new af();
-                        afVar.b(cursor.getString(cursor.getColumnIndex("key")));
+                        afVar.b(cursor.getString(cursor.getColumnIndex(a.b)));
                         afVar.c(cursor.getString(cursor.getColumnIndex("type")));
-                        afVar.d(cursor.getString(cursor.getColumnIndex("value")));
+                        afVar.d(cursor.getString(cursor.getColumnIndex(a.d)));
                         afVar.a(cursor.getString(cursor.getColumnIndex(a.e)));
                         arrayList.add(afVar);
                     }
@@ -94,7 +88,7 @@ public class d extends com.anythink.core.common.c.a<af> {
                 if (b() == null) {
                     return;
                 }
-                b().delete("sdkconfig", "lastupdatetime< ? and type = ?", new String[]{str, af.a.f6628a});
+                b().delete(a.a, "lastupdatetime< ? and type = ?", new String[]{str, af.a.a});
             } catch (Exception e) {
             }
         }
@@ -227,7 +221,7 @@ public class d extends com.anythink.core.common.c.a<af> {
 
     private boolean b(String str, String str2) {
         synchronized (this) {
-            Cursor query = a().query("sdkconfig", new String[]{"key"}, "key=? AND type=?", new String[]{str, str2}, null, null, null);
+            Cursor query = a().query(a.a, new String[]{a.b}, "key=? AND type=?", new String[]{str, str2}, null, null, null);
             if (query != null && query.getCount() > 0) {
                 query.close();
                 return true;
@@ -241,7 +235,7 @@ public class d extends com.anythink.core.common.c.a<af> {
 
     private boolean b(String str, String str2, String str3) {
         synchronized (this) {
-            Cursor query = a().query("sdkconfig", new String[]{"key"}, "key=? AND type=? AND lastupdatetime=?", new String[]{str, str3, str2}, null, null, null);
+            Cursor query = a().query(a.a, new String[]{a.b}, "key=? AND type=? AND lastupdatetime=?", new String[]{str, str3, str2}, null, null, null);
             if (query != null && query.getCount() > 0) {
                 query.close();
                 return true;
@@ -388,12 +382,12 @@ public class d extends com.anythink.core.common.c.a<af> {
 
     private void c(String str, String str2) {
         synchronized (this) {
-            List<af> c2 = c(str, str2, af.a.f6628a);
+            List<af> c2 = c(str, str2, af.a.a);
             if (c2 == null || c2.size() <= 0) {
                 af afVar = new af();
                 afVar.a(str2);
                 afVar.d("1");
-                afVar.c(af.a.f6628a);
+                afVar.c(af.a.a);
                 afVar.b(str);
                 a(afVar);
                 return;
@@ -543,16 +537,16 @@ public class d extends com.anythink.core.common.c.a<af> {
             }
             try {
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("key", str);
+                contentValues.put(a.b, str);
                 contentValues.put("type", str3);
-                contentValues.put("value", str2);
+                contentValues.put(a.d, str2);
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
                 contentValues.put(a.e, sb.toString());
                 if (b(str, str3)) {
-                    return b().update("sdkconfig", contentValues, "key = ? AND type = ?", new String[]{str, str3});
+                    return b().update(a.a, contentValues, "key = ? AND type = ?", new String[]{str, str3});
                 }
-                return b().insert("sdkconfig", null, contentValues);
+                return b().insert(a.a, null, contentValues);
             } catch (Exception e) {
                 return -1L;
             }

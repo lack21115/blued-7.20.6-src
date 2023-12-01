@@ -9,18 +9,14 @@ import android.hardware.SensorManager;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/c.class */
 public class c implements SensorEventListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Context f4172a;
+    final /* synthetic */ Context a;
     final /* synthetic */ SensorManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ DUHelper f4173c;
+    final /* synthetic */ DUHelper c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(DUHelper dUHelper, Context context, SensorManager sensorManager) {
-        this.f4173c = dUHelper;
-        this.f4172a = context;
+        this.c = dUHelper;
+        this.a = context;
         this.b = sensorManager;
     }
 
@@ -44,7 +40,7 @@ public class c implements SensorEventListener {
                 sb.append(" , ");
                 i = i2 + 1;
             }
-            DUHelper.onSensorChanged(this.f4172a, sensorEvent);
+            DUHelper.onSensorChanged(this.a, sensorEvent);
         } catch (UnsatisfiedLinkError e) {
             e.printStackTrace();
         }

@@ -44,7 +44,7 @@ public class a extends com.huawei.openalliance.ad.inter.data.a implements IInter
         intent.setPackage(v.Z(activity));
         intent.putExtra("content_id", D());
         intent.putExtra("sdk_version", "13.4.61.304");
-        intent.putExtra("request_id", h_());
+        intent.putExtra(at.g, h_());
         intent.putExtra(at.e, o());
         intent.putExtra(at.N, E());
         intent.putExtra(at.O, G());
@@ -84,7 +84,7 @@ public class a extends com.huawei.openalliance.ad.inter.data.a implements IInter
         try {
             jSONObject.put("content_id", D());
             jSONObject.put("sdk_version", "13.4.61.304");
-            jSONObject.put("request_id", h_());
+            jSONObject.put(at.g, h_());
             jSONObject.put(at.e, o());
             jSONObject.put(at.N, E());
             jSONObject.put(at.O, G());

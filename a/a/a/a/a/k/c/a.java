@@ -34,11 +34,11 @@ public final class a {
     public static class C0014a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final float f1400a;
+        public final float f1352a;
         public final float b;
 
         public C0014a(float f, float f2) {
-            this.f1400a = f;
+            this.f1352a = f;
             this.b = f2;
         }
     }
@@ -47,16 +47,16 @@ public final class a {
     public static class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final long f1401a;
+        public final long f1353a;
         public final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long f1402c;
+        public final long f1354c;
 
         public b(long j, long j2, long j3, long j4) {
-            this.f1401a = j;
+            this.f1353a = j;
             this.b = j2;
-            this.f1402c = j4;
+            this.f1354c = j4;
         }
     }
 
@@ -151,7 +151,7 @@ public final class a {
             }
             return null;
         } catch (IOException e) {
-            e eVar = e.f1361c;
+            e eVar = e.f1313c;
             eVar.b("Exception in findDNSByExec: " + e);
             return null;
         }
@@ -166,12 +166,12 @@ public final class a {
         for (ActivityManager.RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
             if (packageName.equals(runningAppProcessInfo.processName)) {
                 if (runningAppProcessInfo.importance != 100) {
-                    e eVar = e.f1361c;
+                    e eVar = e.f1313c;
                     String packageName2 = context.getPackageName();
                     eVar.c(packageName2, "Background" + runningAppProcessInfo.processName);
                     return true;
                 }
-                e eVar2 = e.f1361c;
+                e eVar2 = e.f1313c;
                 String packageName3 = context.getPackageName();
                 eVar2.c(packageName3, "Foreground" + runningAppProcessInfo.processName);
                 return false;
@@ -203,7 +203,7 @@ public final class a {
             }
             return null;
         } catch (Exception e) {
-            e eVar = e.f1361c;
+            e eVar = e.f1313c;
             eVar.b("Exception in findDNSByReflection" + e);
             return null;
         }
@@ -293,9 +293,9 @@ public final class a {
 
     public static void f() {
         if (Build.VERSION.SDK_INT >= 16) {
-            a.a.a.a.a.k.d.a.f1403a.a();
+            a.a.a.a.a.k.d.a.f1355a.a();
             try {
-                Choreographer.getInstance().postFrameCallback(a.a.a.a.a.k.d.a.f1403a);
+                Choreographer.getInstance().postFrameCallback(a.a.a.a.a.k.d.a.f1355a);
             } catch (RuntimeException e) {
                 e.printStackTrace();
             }
@@ -313,7 +313,7 @@ public final class a {
 
     public static void g() {
         if (Build.VERSION.SDK_INT >= 16) {
-            a.a.a.a.a.k.d.a.f1403a.b();
+            a.a.a.a.a.k.d.a.f1355a.b();
         }
     }
 
@@ -362,7 +362,7 @@ public final class a {
 
     public static int h() {
         if (Build.VERSION.SDK_INT >= 16) {
-            return a.a.a.a.a.k.d.a.f1403a.c();
+            return a.a.a.a.a.k.d.a.f1355a.c();
         }
         return 60;
     }

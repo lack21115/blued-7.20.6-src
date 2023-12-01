@@ -19,13 +19,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/vm/EventMembersListViewModel.class */
 public final class EventMembersListViewModel extends BaseListViewModel<EventMemberModel> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f19592a = "";
+    private String a = "";
     private String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f19593c;
+    private int c;
     private boolean d;
     private boolean e;
 
@@ -68,7 +64,7 @@ public final class EventMembersListViewModel extends BaseListViewModel<EventMemb
     }
 
     public final int b() {
-        return this.f19593c;
+        return this.c;
     }
 
     public final boolean c() {
@@ -84,16 +80,16 @@ public final class EventMembersListViewModel extends BaseListViewModel<EventMemb
             this.b = string;
             String string2 = bundle.getString("event_uid", "");
             Intrinsics.c(string2, "arguments.getString(Even…ts.DataKey.EVENT_UID, \"\")");
-            this.f19592a = string2;
-            this.e = CommunityManager.f19086a.a().c(this.f19592a);
-            this.f19593c = bundle.getInt("event_quota_num", 0);
+            this.a = string2;
+            this.e = CommunityManager.a.a().c(this.a);
+            this.c = bundle.getInt("event_quota_num", 0);
             this.d = bundle.getBoolean("event_is_free", false);
         }
     }
 
     @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
-        EventHttpUtils eventHttpUtils = EventHttpUtils.f19079a;
+        EventHttpUtils eventHttpUtils = EventHttpUtils.a;
         BluedUIHttpResponse<BluedEntityA<EventMemberModel>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<EventMemberModel>>() { // from class: com.blued.community.ui.event.vm.EventMembersListViewModel$requestData$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {

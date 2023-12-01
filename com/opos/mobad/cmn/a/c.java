@@ -15,25 +15,25 @@ import com.opos.mobad.model.data.AdItemData;
 public abstract class c {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f25896a;
+    protected Context f12208a;
     protected TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected Drawable f25897c;
+    protected Drawable f12209c;
     public int[] d = new int[4];
     protected boolean e = false;
     protected AdItemData f;
     protected GradientDrawable g;
 
     public c(Context context) {
-        this.f25896a = com.opos.mobad.service.b.a(context);
+        this.f12208a = com.opos.mobad.service.b.a(context);
         k();
     }
 
     private void k() {
-        TextView textView = new TextView(this.f25896a);
+        TextView textView = new TextView(this.f12208a);
         this.b = textView;
-        textView.setPadding(com.opos.cmn.an.h.f.a.a(this.f25896a, 4.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 2.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 4.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 2.0f));
+        textView.setPadding(com.opos.cmn.an.h.f.a.a(this.f12208a, 4.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 2.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 4.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 2.0f));
         this.b.setTextColor(Color.parseColor("#FFFFFF"));
         this.b.setTextSize(1, 8.0f);
         this.b.setGravity(17);
@@ -68,7 +68,7 @@ public abstract class c {
             i = 8;
         } else {
             Drawable b = b(adItemData);
-            this.f25897c = b;
+            this.f12209c = b;
             if (b != null) {
                 g.a(this.b, b);
             } else {
@@ -84,7 +84,7 @@ public abstract class c {
     }
 
     protected Drawable b(AdItemData adItemData) {
-        Drawable b = (adItemData == null || adItemData.l() == null || com.opos.cmn.an.c.a.a(adItemData.l().a())) ? null : g.b(this.f25896a, adItemData.l().a());
+        Drawable b = (adItemData == null || adItemData.l() == null || com.opos.cmn.an.c.a.a(adItemData.l().a())) ? null : g.b(this.f12208a, adItemData.l().a());
         StringBuilder sb = new StringBuilder();
         sb.append("getLogoDrawable=");
         sb.append(b != null ? b : com.igexin.push.core.b.l);
@@ -94,7 +94,7 @@ public abstract class c {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String c(AdItemData adItemData) {
-        return g.a(this.f25896a, adItemData, this.e);
+        return g.a(this.f12208a, adItemData, this.e);
     }
 
     public void d() {
@@ -107,13 +107,13 @@ public abstract class c {
     public RelativeLayout.LayoutParams f() {
         StringBuilder sb = new StringBuilder();
         sb.append("getLogoLP mLogoDrawable=");
-        Drawable drawable = this.f25897c;
+        Drawable drawable = this.f12209c;
         if (drawable == null) {
             drawable = com.igexin.push.core.b.l;
         }
         sb.append(drawable);
         com.opos.cmn.an.f.a.b("BaseCreative", sb.toString());
-        return this.f25897c != null ? new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f25896a, 26.0f), com.opos.cmn.an.h.f.a.a(this.f25896a, 12.0f)) : new RelativeLayout.LayoutParams(-2, -2);
+        return this.f12209c != null ? new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(this.f12208a, 26.0f), com.opos.cmn.an.h.f.a.a(this.f12208a, 12.0f)) : new RelativeLayout.LayoutParams(-2, -2);
     }
 
     public abstract void g();

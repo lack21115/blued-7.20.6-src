@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class a implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<Long, b> f24544a = new ConcurrentHashMap();
+    private Map<Long, b> f10857a = new ConcurrentHashMap();
 
     @Override // com.opos.cmn.an.g.c
     public g a(Context context, long j, f fVar) throws Exception {
@@ -21,7 +21,7 @@ public class a implements c {
             gVar = null;
         } else {
             b bVar = new b(context, fVar);
-            this.f24544a.put(Long.valueOf(j), bVar);
+            this.f10857a.put(Long.valueOf(j), bVar);
             gVar = bVar.a();
         }
         StringBuilder sb = new StringBuilder();
@@ -42,14 +42,14 @@ public class a implements c {
     @Override // com.opos.cmn.an.g.c
     public void a(long j) throws Exception {
         com.opos.cmn.an.f.a.b("HttpsExecutorImpl", "shutDown taskCode=" + j);
-        Map<Long, b> map = this.f24544a;
+        Map<Long, b> map = this.f10857a;
         if (map == null || !map.containsKey(Long.valueOf(j))) {
             return;
         }
-        b bVar = this.f24544a.get(Long.valueOf(j));
+        b bVar = this.f10857a.get(Long.valueOf(j));
         if (bVar != null) {
             bVar.b();
         }
-        this.f24544a.remove(Long.valueOf(j));
+        this.f10857a.remove(Long.valueOf(j));
     }
 }

@@ -6,10 +6,10 @@ import android.util.Log;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23092a = "SecurityComp10105310: ";
+    private static final String f9484a = "SecurityComp10105310: ";
 
     private static String a(String str) {
-        return f23092a + str;
+        return f9484a + str;
     }
 
     public static void a(String str, String str2) {

@@ -8,15 +8,15 @@ import com.tencent.qimei.upload.BuildConfig;
 final class h implements IObservableLog {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ BeaconLogger f34946a;
+    final /* synthetic */ BeaconLogger f21255a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public h(BeaconLogger beaconLogger) {
-        this.f34946a = beaconLogger;
+        this.f21255a = beaconLogger;
     }
 
     @Override // com.tencent.qimei.log.IObservableLog
     public void onLog(String str) {
-        this.f34946a.d(BuildConfig.SDK_ID, str);
+        this.f21255a.d(BuildConfig.SDK_ID, str);
     }
 }

@@ -55,7 +55,7 @@ public class DeflaterInputStream extends FilterInputStream {
     public void close() throws IOException {
         this.closed = true;
         this.def.end();
-        this.f42254in.close();
+        this.in.close();
     }
 
     @Override // java.io.FilterInputStream, java.io.InputStream
@@ -90,7 +90,7 @@ public class DeflaterInputStream extends FilterInputStream {
                     break;
                 }
                 if (this.def.needsInput()) {
-                    int read = this.f42254in.read(this.buf);
+                    int read = this.in.read(this.buf);
                     if (read == -1) {
                         this.def.finish();
                     } else {

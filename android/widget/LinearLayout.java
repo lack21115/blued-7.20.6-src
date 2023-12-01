@@ -1,7 +1,6 @@
 package android.widget;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -16,7 +15,6 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.RemoteViews;
 import com.alipay.sdk.util.i;
 import com.android.internal.R;
-import com.google.android.material.badge.BadgeDrawable;
 
 @RemoteViews.RemoteView
 /* loaded from: source-4181928-dex2jar.jar:android/widget/LinearLayout.class */
@@ -124,7 +122,7 @@ public class LinearLayout extends ViewGroup {
         this.mBaselineAligned = true;
         this.mBaselineAlignedChildIndex = -1;
         this.mBaselineChildTop = 0;
-        this.mGravity = BadgeDrawable.TOP_START;
+        this.mGravity = 8388659;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.LinearLayout, i, i2);
         int i3 = obtainStyledAttributes.getInt(1, -1);
         if (i3 >= 0) {
@@ -977,7 +975,7 @@ public class LinearLayout extends ViewGroup {
     public void setVerticalGravity(int i) {
         int i2 = i & 112;
         if ((this.mGravity & 112) != i2) {
-            this.mGravity = (this.mGravity & PackageManager.INSTALL_FAILED_NO_MATCHING_ABIS) | i2;
+            this.mGravity = (this.mGravity & (-113)) | i2;
             requestLayout();
         }
     }

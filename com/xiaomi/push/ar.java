@@ -7,15 +7,15 @@ import com.xiaomi.push.ap;
 class ar implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ IBinder f41257a;
+    final /* synthetic */ IBinder f27566a;
 
     /* renamed from: a  reason: collision with other field name */
-    final /* synthetic */ ap.a f190a;
+    final /* synthetic */ ap.a f143a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ar(ap.a aVar, IBinder iBinder) {
-        this.f190a = aVar;
-        this.f41257a = iBinder;
+        this.f143a = aVar;
+        this.f27566a = iBinder;
     }
 
     @Override // java.lang.Runnable
@@ -27,36 +27,36 @@ class ar implements Runnable {
         Object obj5;
         Object obj6;
         try {
-            ap.this.f188a = ap.b.a(this.f41257a);
-            ap.this.f189b = ap.b.m11510a(this.f41257a);
+            ap.this.f141a = ap.b.a(this.f27566a);
+            ap.this.f142b = ap.b.m8460a(this.f27566a);
             ap.this.b();
-            ap.this.f184a = 2;
-            obj5 = ap.this.f187a;
+            ap.this.f137a = 2;
+            obj5 = ap.this.f140a;
             synchronized (obj5) {
                 try {
-                    obj6 = ap.this.f187a;
+                    obj6 = ap.this.f140a;
                     obj6.notifyAll();
                 } catch (Exception e) {
                 }
             }
         } catch (Exception e2) {
             ap.this.b();
-            ap.this.f184a = 2;
-            obj3 = ap.this.f187a;
+            ap.this.f137a = 2;
+            obj3 = ap.this.f140a;
             synchronized (obj3) {
                 try {
-                    obj4 = ap.this.f187a;
+                    obj4 = ap.this.f140a;
                     obj4.notifyAll();
                 } catch (Exception e3) {
                 }
             }
         } catch (Throwable th) {
             ap.this.b();
-            ap.this.f184a = 2;
-            obj = ap.this.f187a;
+            ap.this.f137a = 2;
+            obj = ap.this.f140a;
             synchronized (obj) {
                 try {
-                    obj2 = ap.this.f187a;
+                    obj2 = ap.this.f140a;
                     obj2.notifyAll();
                 } catch (Exception e4) {
                 }

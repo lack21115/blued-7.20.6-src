@@ -6,6 +6,8 @@ import com.kwad.sdk.crash.model.message.MemoryInfo;
 import com.kwad.sdk.crash.model.message.ThreadInfo;
 import com.kwad.sdk.utils.m;
 import com.kwad.sdk.utils.q;
+import com.tencent.cloud.huiyansdkface.facelight.api.WbCloudFaceContant;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileFilter;
@@ -116,7 +118,7 @@ public abstract class d {
         String str2 = str;
         if (str != null) {
             str2 = str;
-            if (str.contains("-")) {
+            if (str.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
                 str2 = str.substring(0, str.lastIndexOf(45));
             }
         }
@@ -133,7 +135,7 @@ public abstract class d {
         File[] listFiles;
         String dW = com.kwad.sdk.crash.utils.g.dW(file.getPath());
         File file2 = new File(dW + ".msg");
-        File file3 = new File(dW + com.anythink.china.common.a.a.f);
+        File file3 = new File(dW + ".log");
         File file4 = new File(dW + ".blog");
         File file5 = new File(dW + ".jtrace");
         File file6 = new File(dW + ".minfo");
@@ -198,7 +200,7 @@ public abstract class d {
                 }
             }
             com.kwad.sdk.crash.utils.g.z(file4);
-            ArrayList arrayList2 = new ArrayList();
+            List<File> arrayList2 = new ArrayList<>();
             Collections.addAll(arrayList2, file3, file4);
             Iterator<File> it = arrayList2.iterator();
             while (it.hasNext()) {
@@ -206,7 +208,7 @@ public abstract class d {
                     it.remove();
                 }
             }
-            File file10 = new File(file.getParentFile().getParent(), "custom");
+            File file10 = new File(file.getParentFile().getParent(), WbCloudFaceContant.CUSTOM);
             if (file10.exists()) {
                 for (File file11 : file10.listFiles()) {
                     if (!file11.isDirectory() && (file11.getName().startsWith(a2.mLogUUID) || file11.getName().startsWith(dS(a2.mLogUUID)))) {

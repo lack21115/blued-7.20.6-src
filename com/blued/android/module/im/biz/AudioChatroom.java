@@ -7,9 +7,7 @@ import com.blued.im.audio_chatroom.AudioChatroomOuterClass;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/biz/AudioChatroom.class */
 public final class AudioChatroom {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ChannelManager f11332a;
+    private ChannelManager a;
     private IMThreadManager b;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/biz/AudioChatroom$OnAudioChatroomResponseListener.class */
@@ -23,17 +21,14 @@ public final class AudioChatroom {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/biz/AudioChatroom$SendMessageRunnable.class */
     public class SendMessageRunnable extends NamedRunnable {
         private AudioChatroomOuterClass.Request b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private OnAudioChatroomResponseListener f11334c;
+        private OnAudioChatroomResponseListener c;
 
         public SendMessageRunnable(AudioChatroomOuterClass.Request request, OnAudioChatroomResponseListener onAudioChatroomResponseListener) {
             super("audio-chat");
             this.b = request;
-            this.f11334c = onAudioChatroomResponseListener;
+            this.c = onAudioChatroomResponseListener;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Not initialized variable reg: 14, insn: 0x02e6: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r14 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:86:0x02e6 */
         /* JADX WARN: Removed duplicated region for block: B:102:0x036d  */
         /* JADX WARN: Removed duplicated region for block: B:103:0x0374  */
@@ -54,12 +49,12 @@ public final class AudioChatroom {
     }
 
     public AudioChatroom(ChannelManager channelManager, IMThreadManager iMThreadManager) {
-        this.f11332a = channelManager;
+        this.a = channelManager;
         this.b = iMThreadManager;
     }
 
     public void a(AudioChatroomOuterClass.Request.Builder builder, OnAudioChatroomResponseListener onAudioChatroomResponseListener) {
-        if (this.f11332a == null || this.b == null) {
+        if (this.a == null || this.b == null) {
             return;
         }
         this.b.a(new SendMessageRunnable(builder.setCommon(Common.a().b()).build(), onAudioChatroomResponseListener));

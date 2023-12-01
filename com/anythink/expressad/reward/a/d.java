@@ -26,9 +26,9 @@ import com.anythink.expressad.videocommon.a;
 import com.anythink.expressad.videocommon.b.i;
 import com.anythink.expressad.videocommon.b.l;
 import com.anythink.expressad.videocommon.b.m;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -46,7 +46,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
     private static final int Q = 30000;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8113a = "APP ALREADY INSTALLED";
+    public static final String f5273a = "APP ALREADY INSTALLED";
     public static final String b = "Offer list is empty";
     public static final String d = "1";
     public static final String e = "1";
@@ -85,7 +85,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
     private boolean K = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public Object f8114c = new Object();
+    public Object f5274c = new Object();
     private CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> R = new CopyOnWriteArrayList<>();
     private int S = 2;
     private String V = "";
@@ -123,36 +123,36 @@ public final class d implements com.anythink.expressad.reward.a.a {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.reward.a.d$2  reason: invalid class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/reward/a/d$2.class */
-    public final class AnonymousClass2 implements c.InterfaceC0150c {
+    public final class AnonymousClass2 implements c.InterfaceC0079c {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f8116a;
+        final /* synthetic */ boolean f5276a;
         final /* synthetic */ com.anythink.expressad.foundation.d.c b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f8117c;
+        final /* synthetic */ int f5277c;
 
         AnonymousClass2(boolean z, com.anythink.expressad.foundation.d.c cVar, int i) {
-            this.f8116a = z;
+            this.f5276a = z;
             this.b = cVar;
-            this.f8117c = i;
+            this.f5277c = i;
         }
 
-        @Override // com.anythink.expressad.reward.a.c.InterfaceC0150c
+        @Override // com.anythink.expressad.reward.a.c.InterfaceC0079c
         public final void a(final String str, final String str2, final String str3, final CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList) {
             o.a(d.u, "Campaign 下载成功： " + copyOnWriteArrayList.size());
             d.this.p = true;
             if (copyOnWriteArrayList != null) {
                 copyOnWriteArrayList.size();
             }
-            if (this.f8116a) {
+            if (this.f5276a) {
                 o.a(d.u, "Campaign 下载成功： 大模板");
                 if (!d.this.q || d.this.r || d.this.ad == null) {
                     o.a(d.u, "Campaign 下载成功： 大模板，大模板下载不成功： isCampaignTPLDownloadSuccess： " + d.this.q + "  isCampaignTPLProLoad： " + d.this.r);
                     return;
                 }
                 o.a(d.u, "Campaign 下载成功： 大模板，大模板下载成功，开始预加载大模板");
-                synchronized (d.this.f8114c) {
+                synchronized (d.this.f5274c) {
                     if (d.this.r) {
                         return;
                     }
@@ -161,7 +161,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     d.this.ad.post(new Runnable() { // from class: com.anythink.expressad.reward.a.d.2.2
                         @Override // java.lang.Runnable
                         public final void run() {
-                            com.anythink.expressad.reward.a.c cVar = c.m.f8112a;
+                            com.anythink.expressad.reward.a.c cVar = c.m.f5272a;
                             boolean z = d.this.ab;
                             Handler handler = d.this.ad;
                             boolean z2 = d.this.T;
@@ -176,7 +176,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                                     } catch (Exception e) {
                                     }
                                     o.a(d.u, "Campaign 下载成功： 大模板预加载成功");
-                                    if (!d.this.a(d.this.aa, AnonymousClass2.this.f8116a, AnonymousClass2.this.f8117c)) {
+                                    if (!d.this.a(d.this.aa, AnonymousClass2.this.f5276a, AnonymousClass2.this.f5277c)) {
                                         o.a(d.u, "Campaign 下载成功： 大模板预加载成功,isReady false");
                                         List unused = d.this.ag;
                                         boolean unused2 = d.this.U;
@@ -242,7 +242,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 if (next == null || next.M() == null || TextUtils.isEmpty(next.M().e()) || next.M().e().contains(com.anythink.expressad.foundation.d.c.d) || d.this.ad == null) {
                     o.a(d.u, "Campaign 下载成功： 非大模板，不存在播放模板");
                     d dVar = d.this;
-                    if (dVar.a(dVar.aa, this.f8116a, this.f8117c)) {
+                    if (dVar.a(dVar.aa, this.f5276a, this.f5277c)) {
                         o.a(d.u, "Campaign 下载成功： 非大模板，不存在播放模板,isReay true");
                         o.a("HBOPTIMIZE", "模板加载成功 requestId " + copyOnWriteArrayList.get(0).Z());
                         String str4 = d.this.w;
@@ -280,7 +280,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     d.this.ad.post(new Runnable() { // from class: com.anythink.expressad.reward.a.d.2.1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            com.anythink.expressad.reward.a.c cVar = c.m.f8112a;
+                            com.anythink.expressad.reward.a.c cVar = c.m.f5272a;
                             boolean z = d.this.ab;
                             Handler handler = d.this.ad;
                             boolean z2 = d.this.T;
@@ -299,7 +299,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                                 public final void a(String str8) {
                                     o.a(d.u, "Campaign 下载成功： 非大模板，播放模板预加载成功");
                                     o.a("HBOPTIMIZE", "模板加载成功 requestId ".concat(String.valueOf(str8)));
-                                    if (!d.this.a(d.this.aa, AnonymousClass2.this.f8116a, AnonymousClass2.this.f8117c)) {
+                                    if (!d.this.a(d.this.aa, AnonymousClass2.this.f5276a, AnonymousClass2.this.f5277c)) {
                                         o.a(d.u, "Campaign 下载成功： 非大模板，播放模板预加载成功,isReay false");
                                         List unused4 = d.this.ag;
                                         boolean unused5 = d.this.U;
@@ -360,7 +360,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             }
         }
 
-        @Override // com.anythink.expressad.reward.a.c.InterfaceC0150c
+        @Override // com.anythink.expressad.reward.a.c.InterfaceC0079c
         public final void a(final String str, String str2, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList) {
             o.a(d.u, "Campaign 下载失败： " + copyOnWriteArrayList.size());
             o.d("HBOPTIMIZE", "模板加载失败 requestId ".concat(String.valueOf(str2)));
@@ -397,16 +397,16 @@ public final class d implements com.anythink.expressad.reward.a.a {
     public final class AnonymousClass4 implements c.i {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8129a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5289a;
         final /* synthetic */ boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f8130c;
+        final /* synthetic */ int f5290c;
 
         AnonymousClass4(com.anythink.expressad.foundation.d.c cVar, boolean z, int i) {
-            this.f8129a = cVar;
+            this.f5289a = cVar;
             this.b = z;
-            this.f8130c = i;
+            this.f5290c = i;
         }
 
         @Override // com.anythink.expressad.reward.a.c.i
@@ -416,11 +416,11 @@ public final class d implements com.anythink.expressad.reward.a.a {
             if (d.this.ag.get(0) != null) {
                 d.this.ag.size();
             }
-            if (this.f8129a.aB() != null && this.f8129a.aB().size() > 0) {
-                if (this.f8129a.aB().contains(3)) {
+            if (this.f5289a.aB() != null && this.f5289a.aB().size() > 0) {
+                if (this.f5289a.aB().contains(3)) {
                     o.b(d.u, "tpl download fail but hit ignoreCheckRule");
                     return;
-                } else if (this.f8129a.ar().equals(this.f8129a.I()) && this.f8129a.aB().contains(2)) {
+                } else if (this.f5289a.ar().equals(this.f5289a.I()) && this.f5289a.aB().contains(2)) {
                     o.b(d.u, "endcard download fail but hit ignoreCheckRule at 3203");
                     return;
                 }
@@ -449,7 +449,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             }
             o.a(d.u, "大模板业务，大模板下载成功，Campaign 下载成功，开始预加载大模板");
             o.a("test_pre_load_tpl", "大模板下载成功，Campaign 下载成功，开始预加载大模板");
-            synchronized (d.this.f8114c) {
+            synchronized (d.this.f5274c) {
                 if (d.this.r) {
                     return;
                 }
@@ -457,18 +457,18 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 d.this.ad.post(new Runnable() { // from class: com.anythink.expressad.reward.a.d.4.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        com.anythink.expressad.reward.a.c cVar = c.m.f8112a;
+                        com.anythink.expressad.reward.a.c cVar = c.m.f5272a;
                         boolean z = d.this.ab;
                         Handler handler = d.this.ad;
                         boolean z2 = d.this.T;
                         boolean z3 = d.this.U;
                         String str4 = str3;
-                        AnonymousClass4.this.f8129a.aa();
-                        cVar.a(z, handler, z2, z3, str4, str, str2, AnonymousClass4.this.f8129a.ar(), d.this.S, AnonymousClass4.this.f8129a, d.this.aa, com.anythink.expressad.videocommon.b.i.a().c(AnonymousClass4.this.f8129a.ar()), str2, d.this.I, new c.j() { // from class: com.anythink.expressad.reward.a.d.4.1.1
+                        AnonymousClass4.this.f5289a.aa();
+                        cVar.a(z, handler, z2, z3, str4, str, str2, AnonymousClass4.this.f5289a.ar(), d.this.S, AnonymousClass4.this.f5289a, d.this.aa, com.anythink.expressad.videocommon.b.i.a().c(AnonymousClass4.this.f5289a.ar()), str2, d.this.I, new c.j() { // from class: com.anythink.expressad.reward.a.d.4.1.1
                             @Override // com.anythink.expressad.reward.a.c.j
                             public final void a(String str5) {
                                 o.a("HBOPTIMIZE", "模板加载成功 requestId ".concat(String.valueOf(str5)));
-                                if (!d.this.a(d.this.aa, AnonymousClass4.this.b, AnonymousClass4.this.f8130c)) {
+                                if (!d.this.a(d.this.aa, AnonymousClass4.this.b, AnonymousClass4.this.f5290c)) {
                                     o.a(d.u, "大模板业务，大模板预加载成功，isReady false");
                                     List unused = d.this.ag;
                                     boolean unused2 = d.this.U;
@@ -530,18 +530,18 @@ public final class d implements com.anythink.expressad.reward.a.a {
     public final class AnonymousClass5 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.d f8134a;
+        final /* synthetic */ com.anythink.expressad.foundation.d.d f5294a;
 
         AnonymousClass5(com.anythink.expressad.foundation.d.d dVar) {
-            this.f8134a = dVar;
+            this.f5294a = dVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             o.b(d.u, "在子线程处理业务逻辑 开始");
-            com.anythink.expressad.foundation.d.d dVar = this.f8134a;
-            if (dVar != null && dVar.J != null && this.f8134a.J.size() > 0) {
-                d.a(d.this, this.f8134a.J);
+            com.anythink.expressad.foundation.d.d dVar = this.f5294a;
+            if (dVar != null && dVar.J != null && this.f5294a.J.size() > 0) {
+                d.a(d.this, this.f5294a.J);
             }
             o.b(d.u, "在子线程处理业务逻辑 完成");
         }
@@ -553,19 +553,19 @@ public final class d implements com.anythink.expressad.reward.a.a {
         private d b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f8135c;
+        private String f5295c;
         private String d;
-        private a.C0164a e;
+        private a.C0093a e;
         private com.anythink.expressad.foundation.d.c f;
         private boolean g;
         private boolean h;
         private g i;
         private Handler j;
 
-        public a(String str, String str2, a.C0164a c0164a, com.anythink.expressad.foundation.d.c cVar, d dVar, g gVar, Handler handler) {
-            this.f8135c = str;
+        public a(String str, String str2, a.C0093a c0093a, com.anythink.expressad.foundation.d.c cVar, d dVar, g gVar, Handler handler) {
+            this.f5295c = str;
             this.d = str2;
-            this.e = c0164a;
+            this.e = c0093a;
             if (dVar != null) {
                 this.b = dVar;
             }
@@ -622,14 +622,14 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 handler.removeCallbacks(gVar);
             }
             o.a("RVWindVaneWebView", "CampaignTPL templete preload readyState state = ".concat(String.valueOf(i)));
-            l.a().c(this.f8135c, true);
+            l.a().c(this.f5295c, true);
             StringBuilder sb = new StringBuilder();
             sb.append(this.d);
-            sb.append(BridgeUtil.UNDERLINE_STR);
-            sb.append(this.f8135c);
-            a.C0164a c0164a = this.e;
-            if (c0164a != null) {
-                c0164a.a(true);
+            sb.append("_");
+            sb.append(this.f5295c);
+            a.C0093a c0093a = this.e;
+            if (c0093a != null) {
+                c0093a.a(true);
             }
             this.h = true;
         }
@@ -639,11 +639,11 @@ public final class d implements com.anythink.expressad.reward.a.a {
     static final class b implements com.anythink.expressad.videocommon.d.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private d f8136a;
+        private d f5296a;
         private com.anythink.expressad.foundation.d.c b;
 
         public b(d dVar, com.anythink.expressad.foundation.d.c cVar) {
-            this.f8136a = dVar;
+            this.f5296a = dVar;
             this.b = cVar;
         }
 
@@ -652,19 +652,19 @@ public final class d implements com.anythink.expressad.reward.a.a {
             try {
                 l.a().a(str, true);
                 o.d(d.u, "CommonVideoDownloadListener VIDEO SUCCESS");
-                if (this.f8136a != null) {
-                    synchronized (this.f8136a) {
+                if (this.f5296a != null) {
+                    synchronized (this.f5296a) {
                         o.d(d.u, "adapter 1613");
-                        if (this.f8136a != null && this.f8136a.c()) {
+                        if (this.f5296a != null && this.f5296a.c()) {
                             o.d(d.u, "CommonVideoDownloadListener VIDEO SUCCESS callback success");
-                            if (this.f8136a.ad != null) {
+                            if (this.f5296a.ad != null) {
                                 Message obtain = Message.obtain();
                                 o.a(d.u, "WHAT_ON_RES_LOAD_SUCCESS CommonVideoDownloadListener");
                                 obtain.what = 6;
                                 obtain.obj = this.b;
-                                this.f8136a.ad.sendMessage(obtain);
-                                this.f8136a.ad.removeMessages(5);
-                                this.f8136a = null;
+                                this.f5296a.ad.sendMessage(obtain);
+                                this.f5296a.ad.removeMessages(5);
+                                this.f5296a = null;
                             }
                         }
                     }
@@ -677,11 +677,11 @@ public final class d implements com.anythink.expressad.reward.a.a {
         @Override // com.anythink.expressad.videocommon.d.b
         public final void a(String str, String str2) {
             try {
-                if (this.f8136a != null) {
-                    synchronized (this.f8136a) {
+                if (this.f5296a != null) {
+                    synchronized (this.f5296a) {
                         o.d(d.u, "CommonVideoDownloadListener VIDEO failed");
-                        d.a(this.f8136a, str, str2);
-                        this.f8136a = null;
+                        d.a(this.f5296a, str, str2);
+                        this.f5296a = null;
                     }
                 }
             } catch (Throwable th) {
@@ -694,16 +694,16 @@ public final class d implements com.anythink.expressad.reward.a.a {
     static final class c implements com.anythink.expressad.foundation.g.d.c {
 
         /* renamed from: a  reason: collision with root package name */
-        private d f8137a;
+        private d f5297a;
         private com.anythink.expressad.foundation.d.c b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f8138c;
+        private String f5298c;
 
         public c(d dVar, com.anythink.expressad.foundation.d.c cVar, String str) {
-            this.f8137a = dVar;
+            this.f5297a = dVar;
             this.b = cVar;
-            this.f8138c = str;
+            this.f5298c = str;
         }
 
         @Override // com.anythink.expressad.foundation.g.d.c
@@ -717,20 +717,20 @@ public final class d implements com.anythink.expressad.reward.a.a {
 
     /* renamed from: com.anythink.expressad.reward.a.d$d  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/reward/a/d$d.class */
-    static final class C0154d implements i.b {
+    static final class C0083d implements i.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private com.anythink.expressad.foundation.d.c f8139a;
+        private com.anythink.expressad.foundation.d.c f5299a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private com.anythink.expressad.videocommon.e.d f8140c;
+        private com.anythink.expressad.videocommon.e.d f5300c;
         private d d;
 
-        public C0154d(d dVar, com.anythink.expressad.foundation.d.c cVar, String str, com.anythink.expressad.videocommon.e.d dVar2) {
-            this.f8139a = cVar;
+        public C0083d(d dVar, com.anythink.expressad.foundation.d.c cVar, String str, com.anythink.expressad.videocommon.e.d dVar2) {
+            this.f5299a = cVar;
             this.b = str;
-            this.f8140c = dVar2;
+            this.f5300c = dVar2;
             this.d = dVar;
         }
 
@@ -738,7 +738,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
         public final void a(String str) {
             d dVar = this.d;
             if (dVar != null) {
-                dVar.a(this.f8139a, str, this.b, this.f8140c);
+                dVar.a(this.f5299a, str, this.b, this.f5300c);
             }
         }
 
@@ -755,16 +755,16 @@ public final class d implements com.anythink.expressad.reward.a.a {
     static final class e implements com.anythink.expressad.foundation.g.d.c {
 
         /* renamed from: a  reason: collision with root package name */
-        private d f8141a;
+        private d f5301a;
         private com.anythink.expressad.foundation.d.c b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f8142c;
+        private String f5302c;
 
         public e(d dVar, com.anythink.expressad.foundation.d.c cVar, String str) {
-            this.f8141a = dVar;
+            this.f5301a = dVar;
             this.b = cVar;
-            this.f8142c = str;
+            this.f5302c = str;
         }
 
         @Override // com.anythink.expressad.foundation.g.d.c
@@ -773,17 +773,17 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 l.a();
                 l.c(str);
                 o.d(d.u, "DownTemplateImgCommonImageLoaderListener IMAGE SUCCESS".concat(String.valueOf(str)));
-                if (this.f8141a != null) {
-                    synchronized (this.f8141a) {
+                if (this.f5301a != null) {
+                    synchronized (this.f5301a) {
                         o.d(d.u, "adapter 1433");
-                        if (this.f8141a.c() && this.f8141a.ad != null) {
+                        if (this.f5301a.c() && this.f5301a.ad != null) {
                             Message obtain = Message.obtain();
                             o.a(d.u, "WHAT_ON_RES_LOAD_SUCCESS DownTemplateImgCommonImageLoaderListener");
                             obtain.what = 6;
                             obtain.obj = this.b;
-                            this.f8141a.ad.sendMessage(obtain);
-                            this.f8141a.ad.removeMessages(5);
-                            this.f8141a = null;
+                            this.f5301a.ad.sendMessage(obtain);
+                            this.f5301a.ad.removeMessages(5);
+                            this.f5301a = null;
                         }
                     }
                 }
@@ -795,11 +795,11 @@ public final class d implements com.anythink.expressad.reward.a.a {
         @Override // com.anythink.expressad.foundation.g.d.c
         public final void a(String str, String str2) {
             try {
-                if (this.f8141a != null) {
-                    synchronized (this.f8141a) {
+                if (this.f5301a != null) {
+                    synchronized (this.f5301a) {
                         o.d(d.u, "DownTemplateImgCommonImageLoaderListener IMAGE failed");
-                        d.a(this.f8141a, str, str2);
-                        this.f8141a = null;
+                        d.a(this.f5301a, str, str2);
+                        this.f5301a = null;
                     }
                 }
             } catch (Throwable th) {
@@ -812,18 +812,18 @@ public final class d implements com.anythink.expressad.reward.a.a {
     static final class f implements i.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private d f8143a;
+        private d f5303a;
         private com.anythink.expressad.foundation.d.c b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f8144c = System.currentTimeMillis();
+        private long f5304c = System.currentTimeMillis();
         private String d;
         private boolean e;
 
         public f(d dVar, com.anythink.expressad.foundation.d.c cVar, String str, boolean z) {
             this.e = true;
             this.d = str;
-            this.f8143a = dVar;
+            this.f5303a = dVar;
             this.b = cVar;
             this.e = z;
         }
@@ -831,13 +831,13 @@ public final class d implements com.anythink.expressad.reward.a.a {
         @Override // com.anythink.expressad.videocommon.b.i.a
         public final void a(String str) {
             try {
-                if (this.f8143a.ad != null) {
+                if (this.f5303a.ad != null) {
                     o.d(d.u, "H5SourceDownloadListener 源码下载成功 cid:" + this.b.aZ() + "  url:" + str);
-                    this.f8143a.ad.removeMessages(5);
+                    this.f5303a.ad.removeMessages(5);
                     Message obtain = Message.obtain();
                     obtain.what = 8;
                     obtain.obj = this.b;
-                    this.f8143a.ad.sendMessage(obtain);
+                    this.f5303a.ad.sendMessage(obtain);
                 }
             } catch (Throwable th) {
                 o.b(d.u, th.getMessage(), th);
@@ -848,8 +848,8 @@ public final class d implements com.anythink.expressad.reward.a.a {
         public final void a(String str, String str2) {
             try {
                 o.d(d.u, "H5SourceDownloadListener 源码下载失败 cid:" + this.b.aZ() + "  url:" + str);
-                if (this.f8143a != null) {
-                    d.a(this.f8143a, "H5 code resource download failed ", str);
+                if (this.f5303a != null) {
+                    d.a(this.f5303a, "H5 code resource download failed ", str);
                 }
             } catch (Throwable th) {
                 o.b(d.u, th.getMessage(), th);
@@ -863,7 +863,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private com.anythink.expressad.foundation.d.c f8146c;
+        private com.anythink.expressad.foundation.d.c f5306c;
         private String d;
         private String e;
         private com.anythink.expressad.videocommon.e.d f;
@@ -872,7 +872,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
 
         public g(String str, com.anythink.expressad.foundation.d.c cVar, String str2, String str3, com.anythink.expressad.videocommon.e.d dVar, int i, d dVar2) {
             this.b = str;
-            this.f8146c = cVar;
+            this.f5306c = cVar;
             this.d = str2;
             this.e = str3;
             this.f = dVar;
@@ -884,23 +884,23 @@ public final class d implements com.anythink.expressad.reward.a.a {
         public final void run() {
             try {
                 o.b(d.u, "retry load tpl url = " + this.d);
-                a.C0164a c0164a = new a.C0164a();
+                a.C0093a c0093a = new a.C0093a();
                 WindVaneWebView windVaneWebView = new WindVaneWebView(n.a().g());
-                c0164a.a(windVaneWebView);
+                c0093a.a(windVaneWebView);
                 com.anythink.expressad.video.bt.a.c.a();
                 String b = com.anythink.expressad.video.bt.a.c.b();
-                c0164a.a(b);
-                com.anythink.expressad.video.signal.a.j jVar = (d.this.Z.J == null || d.this.Z.J.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, this.f8146c) : new com.anythink.expressad.video.signal.a.j(null, this.f8146c, d.this.Z.J);
+                c0093a.a(b);
+                com.anythink.expressad.video.signal.a.j jVar = (d.this.Z.J == null || d.this.Z.J.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, this.f5306c) : new com.anythink.expressad.video.signal.a.j(null, this.f5306c, d.this.Z.J);
                 jVar.a(this.g);
                 jVar.a(this.e);
                 jVar.c(b);
                 jVar.a(this.f);
                 jVar.b(d.this.ab);
-                windVaneWebView.setWebViewListener(new a(this.d, this.b, c0164a, this.f8146c, this.h, null, null));
+                windVaneWebView.setWebViewListener(new a(this.d, this.b, c0093a, this.f5306c, this.h, null, null));
                 windVaneWebView.setObject(jVar);
                 windVaneWebView.loadUrl(this.d);
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e.printStackTrace();
                 }
             } catch (Throwable th) {
@@ -915,7 +915,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
         private WindVaneWebView b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f8148c;
+        private String f5308c;
         private com.anythink.expressad.foundation.d.c d;
         private List<com.anythink.expressad.foundation.d.c> e;
         private String f;
@@ -926,7 +926,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
 
         public h(WindVaneWebView windVaneWebView, String str, com.anythink.expressad.foundation.d.c cVar, List<com.anythink.expressad.foundation.d.c> list, String str2, String str3, com.anythink.expressad.videocommon.e.d dVar, int i, d dVar2) {
             this.b = windVaneWebView;
-            this.f8148c = str;
+            this.f5308c = str;
             this.d = cVar;
             this.e = list;
             this.f = str2;
@@ -940,19 +940,19 @@ public final class d implements com.anythink.expressad.reward.a.a {
         public final void run() {
             try {
                 o.b(d.u, "retry load template url = " + this.f);
-                a.C0164a c0164a = new a.C0164a();
+                a.C0093a c0093a = new a.C0093a();
                 WindVaneWebView windVaneWebView = new WindVaneWebView(n.a().g());
-                c0164a.a(windVaneWebView);
+                c0093a.a(windVaneWebView);
                 com.anythink.expressad.video.signal.a.j jVar = (this.e == null || this.e.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, this.d) : new com.anythink.expressad.video.signal.a.j(null, this.d, this.e);
                 jVar.a(this.i);
                 jVar.a(this.g);
                 jVar.a(this.h);
                 jVar.b(d.this.ab);
-                windVaneWebView.setWebViewListener(new j(this.b, this.f, this.f8148c, c0164a, this.d, this.j, null, null));
+                windVaneWebView.setWebViewListener(new j(this.b, this.f, this.f5308c, c0093a, this.d, this.j, null, null));
                 windVaneWebView.setObject(jVar);
                 windVaneWebView.loadUrl(this.f);
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e.printStackTrace();
                 }
             } catch (Throwable th) {
@@ -965,11 +965,11 @@ public final class d implements com.anythink.expressad.reward.a.a {
     static final class i implements i.d {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f8149a = 497;
+        public static final int f5309a = 497;
         public static final int b = 859;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f8150c = 313;
+        public static final int f5310c = 313;
         public static final int d = 502;
         private com.anythink.expressad.foundation.d.c e;
         private d f;
@@ -1134,28 +1134,28 @@ public final class d implements com.anythink.expressad.reward.a.a {
     public static final class j extends com.anythink.expressad.atsignalcommon.a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f8151a = 0;
+        public static final int f5311a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        private d f8152c;
+        private d f5312c;
         private WindVaneWebView e;
         private String f;
         private String g;
-        private a.C0164a h;
+        private a.C0093a h;
         private com.anythink.expressad.foundation.d.c i;
         private boolean j;
         private boolean k;
         private h l;
         private Handler m;
 
-        public j(WindVaneWebView windVaneWebView, String str, String str2, a.C0164a c0164a, com.anythink.expressad.foundation.d.c cVar, d dVar, h hVar, Handler handler) {
+        public j(WindVaneWebView windVaneWebView, String str, String str2, a.C0093a c0093a, com.anythink.expressad.foundation.d.c cVar, d dVar, h hVar, Handler handler) {
             this.e = windVaneWebView;
             this.f = str;
             this.g = str2;
-            this.h = c0164a;
+            this.h = c0093a;
             if (dVar != null) {
-                this.f8152c = dVar;
+                this.f5312c = dVar;
             }
             this.i = cVar;
             this.l = hVar;
@@ -1178,11 +1178,11 @@ public final class d implements com.anythink.expressad.reward.a.a {
             super.onReceivedError(webView, i, str, str2);
             try {
                 o.d("WindVaneWebView", "Tempalte TempalteWindVaneWebviewClient tempalte load failed");
-                if (this.f8152c != null) {
-                    synchronized (this.f8152c) {
+                if (this.f5312c != null) {
+                    synchronized (this.f5312c) {
                         o.d("WindVaneWebView", "Tempalte TempalteWindVaneWebviewClient tempalte load callback failed");
-                        d.a(this.f8152c, str, str2);
-                        this.f8152c = null;
+                        d.a(this.f5312c, str, str2);
+                        this.f5312c = null;
                     }
                 }
             } catch (Throwable th) {
@@ -1200,10 +1200,10 @@ public final class d implements com.anythink.expressad.reward.a.a {
             if (hVar != null && (handler = this.m) != null) {
                 handler.removeCallbacks(hVar);
             }
-            String str = this.g + BridgeUtil.UNDERLINE_STR + this.f;
-            a.C0164a c0164a = this.h;
-            if (c0164a != null) {
-                c0164a.a(true);
+            String str = this.g + "_" + this.f;
+            a.C0093a c0093a = this.h;
+            if (c0093a != null) {
+                c0093a.a(true);
             }
             JSONObject jSONObject = new JSONObject();
             try {
@@ -1215,7 +1215,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             }
             o.a("WindVaneWebView", "Tempalte templete preload readyState state = ".concat(String.valueOf(i)));
             l.a().c(this.f, true);
-            d dVar = this.f8152c;
+            d dVar = this.f5312c;
             if (dVar == null || !dVar.T) {
                 if (this.i.A()) {
                     o.a("WindVaneWebView", "Tempalte put templeteCache in bidRVCache ");
@@ -1231,19 +1231,19 @@ public final class d implements com.anythink.expressad.reward.a.a {
             }
             try {
                 o.d("WindVaneWebView", "Tempalte TempalteWindVaneWebviewClient tempalte load SUCCESS ");
-                if (this.f8152c != null) {
-                    synchronized (this.f8152c) {
+                if (this.f5312c != null) {
+                    synchronized (this.f5312c) {
                         o.d("WindVaneWebView", "Tempalte adapter 341");
-                        if (this.f8152c != null && this.f8152c.c()) {
+                        if (this.f5312c != null && this.f5312c.c()) {
                             o.d("WindVaneWebView", "Tempalte TempalteWindVaneWebviewClient tempalte load  callback success");
-                            if (this.f8152c.ad != null) {
+                            if (this.f5312c.ad != null) {
                                 Message obtain = Message.obtain();
                                 obtain.what = 6;
                                 o.a("WindVaneWebView", "WHAT_ON_RES_LOAD_SUCCESS Template");
                                 obtain.obj = this.i;
-                                this.f8152c.ad.sendMessage(obtain);
-                                this.f8152c.ad.removeMessages(5);
-                                this.f8152c = null;
+                                this.f5312c.ad.sendMessage(obtain);
+                                this.f5312c.ad.removeMessages(5);
+                                this.f5312c = null;
                             }
                         }
                     }
@@ -1269,21 +1269,21 @@ public final class d implements com.anythink.expressad.reward.a.a {
 
     private void a(WindVaneWebView windVaneWebView, String str, com.anythink.expressad.foundation.d.c cVar, List<com.anythink.expressad.foundation.d.c> list, String str2, String str3, com.anythink.expressad.videocommon.e.d dVar) {
         try {
-            a.C0164a c0164a = new a.C0164a();
+            a.C0093a c0093a = new a.C0093a();
             WindVaneWebView windVaneWebView2 = new WindVaneWebView(n.a().g());
-            c0164a.a(windVaneWebView2);
+            c0093a.a(windVaneWebView2);
             com.anythink.expressad.video.signal.a.j jVar = (list == null || list.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, cVar) : new com.anythink.expressad.video.signal.a.j(null, cVar, list);
             jVar.a(this.S);
             jVar.a(str3);
             jVar.a(dVar);
             jVar.b(this.ab);
             h hVar = new h(windVaneWebView, str3, cVar, list, str2, str3, dVar, this.S, this);
-            windVaneWebView2.setWebViewListener(new j(windVaneWebView, str, str3, c0164a, cVar, this, hVar, this.ad));
+            windVaneWebView2.setWebViewListener(new j(windVaneWebView, str, str3, c0093a, cVar, this, hVar, this.ad));
             windVaneWebView2.setObject(jVar);
             windVaneWebView2.loadUrl(str2);
             this.ad.postDelayed(hVar, 5000L);
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         } catch (Throwable th) {
@@ -1310,21 +1310,21 @@ public final class d implements com.anythink.expressad.reward.a.a {
 
     static /* synthetic */ void a(d dVar, WindVaneWebView windVaneWebView, String str, com.anythink.expressad.foundation.d.c cVar, List list, String str2, String str3, com.anythink.expressad.videocommon.e.d dVar2) {
         try {
-            a.C0164a c0164a = new a.C0164a();
+            a.C0093a c0093a = new a.C0093a();
             WindVaneWebView windVaneWebView2 = new WindVaneWebView(n.a().g());
-            c0164a.a(windVaneWebView2);
+            c0093a.a(windVaneWebView2);
             com.anythink.expressad.video.signal.a.j jVar = (list == null || list.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, cVar) : new com.anythink.expressad.video.signal.a.j(null, cVar, list);
             jVar.a(dVar.S);
             jVar.a(str3);
             jVar.a(dVar2);
             jVar.b(dVar.ab);
             h hVar = new h(windVaneWebView, str3, cVar, list, str2, str3, dVar2, dVar.S, dVar);
-            windVaneWebView2.setWebViewListener(new j(windVaneWebView, str, str3, c0164a, cVar, dVar, hVar, dVar.ad));
+            windVaneWebView2.setWebViewListener(new j(windVaneWebView, str, str3, c0093a, cVar, dVar, hVar, dVar.ad));
             windVaneWebView2.setObject(jVar);
             windVaneWebView2.loadUrl(str2);
             dVar.ad.postDelayed(hVar, 5000L);
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         } catch (Throwable th) {
@@ -1334,12 +1334,12 @@ public final class d implements com.anythink.expressad.reward.a.a {
 
     static /* synthetic */ void a(d dVar, String str, com.anythink.expressad.foundation.d.c cVar, String str2, String str3, com.anythink.expressad.videocommon.e.d dVar2) {
         try {
-            a.C0164a c0164a = new a.C0164a();
+            a.C0093a c0093a = new a.C0093a();
             WindVaneWebView windVaneWebView = new WindVaneWebView(n.a().g());
-            c0164a.a(windVaneWebView);
+            c0093a.a(windVaneWebView);
             com.anythink.expressad.video.bt.a.c.a();
             String b2 = com.anythink.expressad.video.bt.a.c.b();
-            c0164a.a(b2);
+            c0093a.a(b2);
             com.anythink.expressad.video.signal.a.j jVar = (dVar.Z == null || dVar.Z.J == null || dVar.Z.J.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, cVar) : new com.anythink.expressad.video.signal.a.j(null, cVar, dVar.Z.J);
             jVar.a(dVar.S);
             jVar.a(str3);
@@ -1347,12 +1347,12 @@ public final class d implements com.anythink.expressad.reward.a.a {
             jVar.a(dVar2);
             jVar.b(dVar.ab);
             g gVar = new g(str3, cVar, str2, str3, dVar2, dVar.S, dVar);
-            windVaneWebView.setWebViewListener(new a(str, str3, c0164a, cVar, dVar, gVar, dVar.ad));
+            windVaneWebView.setWebViewListener(new a(str, str3, c0093a, cVar, dVar, gVar, dVar.ad));
             windVaneWebView.setObject(jVar);
             windVaneWebView.loadUrl(str2);
             dVar.ad.postDelayed(gVar, 5000L);
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         } catch (Throwable th) {
@@ -1392,16 +1392,16 @@ public final class d implements com.anythink.expressad.reward.a.a {
                         dVar.R.remove(next);
                         break;
                     }
-                    c.C0143c M2 = next.M();
+                    c.C0072c M2 = next.M();
                     if (M2 != null) {
-                        List<c.C0143c.a> f2 = M2.f();
+                        List<c.C0072c.a> f2 = M2.f();
                         if (f2 != null) {
-                            Iterator<c.C0143c.a> it2 = f2.iterator();
+                            Iterator<c.C0072c.a> it2 = f2.iterator();
                             while (true) {
                                 if (!it2.hasNext()) {
                                     break;
                                 }
-                                c.C0143c.a next2 = it2.next();
+                                c.C0072c.a next2 = it2.next();
                                 if (next2 != null && next2.b != null && next2.b.contains(str2)) {
                                     dVar.R.remove(next);
                                     break;
@@ -1483,12 +1483,12 @@ public final class d implements com.anythink.expressad.reward.a.a {
 
     private void a(String str, com.anythink.expressad.foundation.d.c cVar, String str2, String str3, com.anythink.expressad.videocommon.e.d dVar) {
         try {
-            a.C0164a c0164a = new a.C0164a();
+            a.C0093a c0093a = new a.C0093a();
             WindVaneWebView windVaneWebView = new WindVaneWebView(n.a().g());
-            c0164a.a(windVaneWebView);
+            c0093a.a(windVaneWebView);
             com.anythink.expressad.video.bt.a.c.a();
             String b2 = com.anythink.expressad.video.bt.a.c.b();
-            c0164a.a(b2);
+            c0093a.a(b2);
             com.anythink.expressad.video.signal.a.j jVar = (this.Z == null || this.Z.J == null || this.Z.J.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, cVar) : new com.anythink.expressad.video.signal.a.j(null, cVar, this.Z.J);
             jVar.a(this.S);
             jVar.a(str3);
@@ -1496,12 +1496,12 @@ public final class d implements com.anythink.expressad.reward.a.a {
             jVar.a(dVar);
             jVar.b(this.ab);
             g gVar = new g(str3, cVar, str2, str3, dVar, this.S, this);
-            windVaneWebView.setWebViewListener(new a(str, str3, c0164a, cVar, this, gVar, this.ad));
+            windVaneWebView.setWebViewListener(new a(str, str3, c0093a, cVar, this, gVar, this.ad));
             windVaneWebView.setObject(jVar);
             windVaneWebView.loadUrl(str2);
             this.ad.postDelayed(gVar, 5000L);
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         } catch (Throwable th) {
@@ -1541,16 +1541,16 @@ public final class d implements com.anythink.expressad.reward.a.a {
                         this.R.remove(next);
                         break;
                     }
-                    c.C0143c M2 = next.M();
+                    c.C0072c M2 = next.M();
                     if (M2 != null) {
-                        List<c.C0143c.a> f2 = M2.f();
+                        List<c.C0072c.a> f2 = M2.f();
                         if (f2 != null) {
-                            Iterator<c.C0143c.a> it2 = f2.iterator();
+                            Iterator<c.C0072c.a> it2 = f2.iterator();
                             while (true) {
                                 if (!it2.hasNext()) {
                                     break;
                                 }
-                                c.C0143c.a next2 = it2.next();
+                                c.C0072c.a next2 = it2.next();
                                 if (next2 != null && next2.b != null && next2.b.contains(str2)) {
                                     this.R.remove(next);
                                     break;
@@ -1601,7 +1601,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
         while (it.hasNext()) {
             com.anythink.expressad.foundation.d.c cVar = (com.anythink.expressad.foundation.d.c) it.next();
             if (cVar.M() != null && !TextUtils.isEmpty(cVar.M().e())) {
-                com.anythink.expressad.videocommon.a.b(str + BridgeUtil.UNDERLINE_STR + cVar.aZ() + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + cVar.M().e());
+                com.anythink.expressad.videocommon.a.b(str + "_" + cVar.aZ() + "_" + cVar.Z() + "_" + cVar.M().e());
                 com.anythink.expressad.videocommon.a.b(cVar.w(), cVar);
             }
         }
@@ -1656,7 +1656,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     }
                 }
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                 }
             }
@@ -1702,7 +1702,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             c(this.Z);
             this.m = this.Z.f();
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
             o.b(u, "onLoadCompaginSuccess 数据刚请求失败");
@@ -1716,7 +1716,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             }
             this.p = false;
             this.q = false;
-            synchronized (this.f8114c) {
+            synchronized (this.f5274c) {
                 if (this.r) {
                     this.r = false;
                 }
@@ -1753,7 +1753,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
         o.a("test_isReay_db", "标记缓存数据 ： " + list.size());
         for (com.anythink.expressad.foundation.d.c cVar : list) {
             if (cVar.M() != null && !TextUtils.isEmpty(cVar.M().e())) {
-                com.anythink.expressad.videocommon.a.b(str + BridgeUtil.UNDERLINE_STR + cVar.aZ() + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + cVar.M().e());
+                com.anythink.expressad.videocommon.a.b(str + "_" + cVar.aZ() + "_" + cVar.Z() + "_" + cVar.M().e());
                 com.anythink.expressad.videocommon.a.b(cVar.w(), cVar);
             }
         }
@@ -1769,7 +1769,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     com.anythink.expressad.videocommon.b.i.a().b(cVar.P());
                 }
                 if (cVar.M() != null) {
-                    c.C0143c M2 = cVar.M();
+                    c.C0072c M2 = cVar.M();
                     if (!TextUtils.isEmpty(M2.d())) {
                         if (M2.d().contains(".zip")) {
                             o.a(u, "下载 paused url zip");
@@ -1785,7 +1785,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                             com.anythink.expressad.videocommon.b.i.a().b(M2.e(), (i.a) new i(cVar, this, this.w, 859, this.I, false));
                         } else {
                             o.a(u, "下载 template h5");
-                            com.anythink.expressad.videocommon.b.i.a().b(M2.e(), new C0154d(this, cVar, this.w, this.I));
+                            com.anythink.expressad.videocommon.b.i.a().b(M2.e(), new C0083d(this, cVar, this.w, this.I));
                         }
                     }
                 }
@@ -1829,7 +1829,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     }
                 }
                 l a2 = l.a();
-                if (a2.d(this.w + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + cVar.ar())) {
+                if (a2.d(this.w + "_" + cVar.Z() + "_" + cVar.ar())) {
                     o.a("RewardVideoController", "大模板业务，开始检查大模板预加载情况，大模板预加载成功");
                     return true;
                 }
@@ -1843,7 +1843,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     return true;
                 } else {
                     l a3 = l.a();
-                    if (a3.d(this.w + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + cVar.M().e())) {
+                    if (a3.d(this.w + "_" + cVar.Z() + "_" + cVar.M().e())) {
                         o.a("RewardVideoController", "非大模板业务，存在播放模板，播放模板预加载成功");
                         return true;
                     }
@@ -1864,7 +1864,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             com.anythink.expressad.videocommon.b.i.a().b(cVar.P());
         }
         if (cVar.M() != null) {
-            c.C0143c M2 = cVar.M();
+            c.C0072c M2 = cVar.M();
             if (!TextUtils.isEmpty(M2.d())) {
                 if (M2.d().contains(".zip")) {
                     o.a(u, "下载 paused url zip");
@@ -1883,7 +1883,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 return;
             }
             o.a(u, "下载 template h5");
-            com.anythink.expressad.videocommon.b.i.a().b(M2.e(), new C0154d(this, cVar, this.w, this.I));
+            com.anythink.expressad.videocommon.b.i.a().b(M2.e(), new C0083d(this, cVar, this.w, this.I));
         }
     }
 
@@ -1940,14 +1940,14 @@ public final class d implements com.anythink.expressad.reward.a.a {
         final int ap = cVar.ap();
         this.p = false;
         this.q = false;
-        synchronized (this.f8114c) {
+        synchronized (this.f5274c) {
             if (this.r) {
                 this.r = false;
             }
         }
         this.t = false;
         this.s = false;
-        c.m.f8112a.a(this.v, z, ap, this.U, this.T ? 287 : 94, this.x, this.w, cVar.Z(), this.aa, new AnonymousClass2(z, cVar, ap), new c.i() { // from class: com.anythink.expressad.reward.a.d.3
+        c.m.f5272a.a(this.v, z, ap, this.U, this.T ? 287 : 94, this.x, this.w, cVar.Z(), this.aa, new AnonymousClass2(z, cVar, ap), new c.i() { // from class: com.anythink.expressad.reward.a.d.3
             @Override // com.anythink.expressad.reward.a.c.i
             public final void a(final String str, String str2) {
                 o.a(d.u, "template 下载失败： ");
@@ -2011,7 +2011,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             }
         });
         if (z) {
-            c.m.f8112a.a(this.v, cVar, this.x, this.w, cVar.Z(), new AnonymousClass4(cVar, z, ap));
+            c.m.f5272a.a(this.v, cVar, this.x, this.w, cVar.Z(), new AnonymousClass4(cVar, z, ap));
         }
     }
 
@@ -2155,7 +2155,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                                 if (t.a(cVar2)) {
                                     copyOnWriteArrayList.add(cVar2);
                                 } else {
-                                    this.af = f8113a;
+                                    this.af = f5273a;
                                 }
                             }
                             copyOnWriteArrayList.add(cVar2);
@@ -2201,13 +2201,13 @@ public final class d implements com.anythink.expressad.reward.a.a {
     }
 
     private void e(List<com.anythink.expressad.foundation.d.c> list) {
-        List<c.C0143c.a> f2;
+        List<c.C0072c.a> f2;
         if (list != null) {
             try {
                 if (list.size() > 0) {
                     for (com.anythink.expressad.foundation.d.c cVar : list) {
                         if (cVar.M() != null && cVar.M().f() != null && (f2 = cVar.M().f()) != null) {
-                            for (c.C0143c.a aVar : f2) {
+                            for (c.C0072c.a aVar : f2) {
                                 if (aVar != null && aVar.b != null) {
                                     for (String str : aVar.b) {
                                         if (w.b(str)) {
@@ -2220,7 +2220,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     }
                 }
             } catch (Throwable th) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     th.printStackTrace();
                 }
             }
@@ -2232,7 +2232,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             try {
                 return cVar.J() == 2;
             } catch (Throwable th) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     th.printStackTrace();
                     return false;
                 }
@@ -2373,7 +2373,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
             }
             com.anythink.expressad.foundation.g.a.f.h.clear();
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }
@@ -2416,14 +2416,14 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 if (!(activity instanceof Activity)) {
                     intent.addFlags(268435456);
                 }
-                intent.putExtra(ATRewardVideoActivity.f8166a, this.w);
+                intent.putExtra(ATRewardVideoActivity.f5326a, this.w);
                 intent.putExtra(com.anythink.expressad.a.y, this.x);
-                intent.putExtra(ATRewardVideoActivity.f8167c, str);
+                intent.putExtra(ATRewardVideoActivity.f5327c, str);
                 intent.putExtra(ATRewardVideoActivity.d, i2);
                 intent.putExtra(ATRewardVideoActivity.e, this.T);
                 intent.putExtra(ATRewardVideoActivity.f, this.U);
                 intent.putExtra(ATRewardVideoActivity.l, str3);
-                intent.putExtra(ATRewardVideoActivity.m, jVar);
+                intent.putExtra(ATRewardVideoActivity.m, (Serializable) jVar);
                 List<com.anythink.expressad.foundation.d.c> a2 = com.anythink.expressad.videocommon.b.e.a().a(this.w);
                 StringBuilder sb = new StringBuilder("当前展示的Offer requestId");
                 sb.append(a2.get(0).Z());
@@ -2458,7 +2458,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 if (!TextUtils.isEmpty(str2)) {
                     intent.putExtra(ATRewardVideoActivity.b, str2);
                 }
-                e.a.f8154a.a(this.x, this.w, this.I);
+                e.a.f5314a.a(this.x, this.w, this.I);
                 activity.startActivity(intent);
                 return;
             }
@@ -2489,7 +2489,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
         }
         this.p = false;
         this.q = false;
-        synchronized (this.f8114c) {
+        synchronized (this.f5274c) {
             if (this.r) {
                 this.r = false;
             }
@@ -2508,7 +2508,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     com.anythink.expressad.foundation.g.a.f.h.clear();
                 }
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e2.printStackTrace();
                 }
             }
@@ -2523,7 +2523,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 c(this.Z);
                 this.m = this.Z.f();
             } catch (Exception e3) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     e3.printStackTrace();
                 }
                 o.b(u, "onLoadCompaginSuccess 数据刚请求失败");
@@ -2537,7 +2537,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 }
                 this.p = false;
                 this.q = false;
-                synchronized (this.f8114c) {
+                synchronized (this.f5274c) {
                     if (this.r) {
                         this.r = false;
                     }
@@ -2642,7 +2642,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     cVar.l(0);
                     if (cVar.M() != null && !TextUtils.isEmpty(cVar.M().e())) {
                         l a2 = l.a();
-                        a2.c(this.w + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + cVar.M().e(), false);
+                        a2.c(this.w + "_" + cVar.Z() + "_" + cVar.M().e(), false);
                     }
                 }
             }
@@ -2659,7 +2659,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 next.l(0);
                 if (next.M() != null && !TextUtils.isEmpty(next.M().e())) {
                     l a3 = l.a();
-                    a3.c(this.w + BridgeUtil.UNDERLINE_STR + next.Z() + BridgeUtil.UNDERLINE_STR + next.M().e(), false);
+                    a3.c(this.w + "_" + next.Z() + "_" + next.M().e(), false);
                 }
             }
         }
@@ -2680,7 +2680,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                     cVar.l(1);
                     if (cVar.M() != null && !TextUtils.isEmpty(cVar.M().e())) {
                         l a2 = l.a();
-                        a2.c(this.w + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + cVar.M().e(), true);
+                        a2.c(this.w + "_" + cVar.Z() + "_" + cVar.M().e(), true);
                     }
                 }
             }
@@ -2697,7 +2697,7 @@ public final class d implements com.anythink.expressad.reward.a.a {
                 next.l(1);
                 if (next.M() != null && !TextUtils.isEmpty(next.M().e())) {
                     l a3 = l.a();
-                    a3.c(this.w + BridgeUtil.UNDERLINE_STR + next.Z() + BridgeUtil.UNDERLINE_STR + next.M().e(), true);
+                    a3.c(this.w + "_" + next.Z() + "_" + next.M().e(), true);
                 }
             }
         }

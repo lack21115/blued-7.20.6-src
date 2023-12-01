@@ -1,8 +1,6 @@
 package com.kwad.sdk.utils.kwai;
 
-import android.view.View;
 import java.nio.charset.Charset;
-import okio.Utf8;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/utils/kwai/b.class */
 public final class b {
@@ -83,7 +81,7 @@ public final class b {
                 int i8 = i7 + 1;
                 int i9 = ((b & 7) << 18) | ((b2 & 63) << 12) | ((bArr[i7] & 63) << 6) | (bArr[i8] & 63);
                 int i10 = i4 + 1;
-                cm[i4] = (char) ((i9 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
+                cm[i4] = (char) ((i9 >>> 10) + 55232);
                 i4 = i10 + 1;
                 cm[i10] = (char) ((i9 & 1023) + 56320);
                 i2 = i8 + 1;
@@ -126,7 +124,7 @@ public final class b {
                 int i8 = i7 + 1;
                 int i9 = ((b & 7) << 18) | ((b2 & 63) << 12) | ((bArr[i7] & 63) << 6) | (bArr[i8] & 63);
                 int i10 = i4 + 1;
-                cm[i4] = (char) ((i9 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
+                cm[i4] = (char) ((i9 >>> 10) + 55232);
                 i4 = i10 + 1;
                 cm[i10] = (char) ((i9 & 1023) + 56320);
                 i2 = i8 + 1;
@@ -293,7 +291,7 @@ public final class b {
                 int i7 = i6 + 1;
                 int i8 = ((b & 7) << 18) | ((b2 & 63) << 12) | ((bArr[i6] & 63) << 6) | (bArr[i7] & 63);
                 int i9 = i3 + 1;
-                cArr[i3] = (char) ((i8 >>> 10) + Utf8.HIGH_SURROGATE_HEADER);
+                cArr[i3] = (char) ((i8 >>> 10) + 55232);
                 i3 = i9 + 1;
                 cArr[i9] = (char) ((i8 & 1023) + 56320);
                 i2 = i7 + 1;
@@ -332,7 +330,7 @@ public final class b {
         }
         int i5 = i3 + 1;
         this.position = i5;
-        int i6 = (i4 & View.PUBLIC_STATUS_BAR_VISIBILITY_MASK) | (bArr[i3] << 14);
+        int i6 = (i4 & 16383) | (bArr[i3] << 14);
         if ((i6 >> 21) == 0) {
             return i6;
         }
@@ -434,7 +432,7 @@ public final class b {
 
     public final byte[] getBytes(int i) {
         byte[] bArr = new byte[i];
-        System.arraycopy((Object) this.aBO, this.position, (Object) bArr, 0, i);
+        System.arraycopy(this.aBO, this.position, bArr, 0, i);
         this.position += i;
         return bArr;
     }
@@ -494,7 +492,7 @@ public final class b {
     public final void n(byte[] bArr) {
         int length = bArr.length;
         if (length > 0) {
-            System.arraycopy((Object) bArr, 0, (Object) this.aBO, this.position, length);
+            System.arraycopy(bArr, 0, this.aBO, this.position, length);
             this.position += length;
         }
     }

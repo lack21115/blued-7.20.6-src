@@ -7,11 +7,11 @@ import java.util.List;
 public final /* synthetic */ class de implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40319a;
+    private final UGCMediaListSource f26628a;
     private final List b;
 
     private de(UGCMediaListSource uGCMediaListSource, List list) {
-        this.f40319a = uGCMediaListSource;
+        this.f26628a = uGCMediaListSource;
         this.b = list;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class de implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCMediaListSource.lambda$setRepeatPlay$10(this.f40319a, this.b);
+        UGCMediaListSource.lambda$setRepeatPlay$10(this.f26628a, this.b);
     }
 }

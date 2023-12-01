@@ -1,5 +1,6 @@
 package android.inputmethodservice;
 
+import android.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.Button;
@@ -11,7 +12,7 @@ class ExtractButton extends Button {
     }
 
     public ExtractButton(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, 16842824);
+        super(context, attributeSet, R.attr.buttonStyle);
     }
 
     public ExtractButton(Context context, AttributeSet attributeSet, int i) {

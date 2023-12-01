@@ -91,7 +91,7 @@ public class MediaAdView extends BaseMediaAdView {
         this.j = (TextView) findViewById(h.a(getContext(), "myoffer_privacy_agreement", "id"));
         this.k = (TextView) findViewById(h.a(getContext(), "myoffer_permission_manage", "id"));
         this.l = (TextView) findViewById(h.a(getContext(), "myoffer_version_name", "id"));
-        String r = this.f6059a.r();
+        String r = this.a.r();
         if (TextUtils.isEmpty(r)) {
             this.n.setVisibility(8);
             ViewGroup.LayoutParams layoutParams = this.t.getLayoutParams();
@@ -102,14 +102,14 @@ public class MediaAdView extends BaseMediaAdView {
         } else {
             this.n.setText(r);
         }
-        String w = this.f6059a.w();
+        String w = this.a.w();
         if (TextUtils.isEmpty(w)) {
             this.o.setText(h.a(getContext(), "myoffer_cta_learn_more", "string"));
         } else {
             this.o.setText(w);
         }
         this.q.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.f6059a.u()), i, i2, new b.a() { // from class: com.anythink.basead.ui.MediaAdView.1
+        com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.a.u()), i, i2, new b.a() { // from class: com.anythink.basead.ui.MediaAdView.1
             @Override // com.anythink.core.common.res.b.a
             public final void onFail(String str, String str2) {
                 Log.e(MediaAdView.TAG, "load: image load fail:".concat(String.valueOf(str2)));
@@ -117,31 +117,31 @@ public class MediaAdView extends BaseMediaAdView {
 
             @Override // com.anythink.core.common.res.b.a
             public final void onSuccess(String str, final Bitmap bitmap) {
-                if (TextUtils.equals(MediaAdView.this.f6059a.u(), str)) {
+                if (TextUtils.equals(MediaAdView.this.a.u(), str)) {
                     MediaAdView.this.q.setImageBitmap(bitmap);
                     MediaAdView.this.post(new Runnable() { // from class: com.anythink.basead.ui.MediaAdView.1.1
                         @Override // java.lang.Runnable
                         public final void run() {
-                            int[] a2 = u.a(MediaAdView.this.getWidth(), MediaAdView.this.getHeight(), bitmap.getWidth() / bitmap.getHeight());
+                            int[] a = u.a(MediaAdView.this.getWidth(), MediaAdView.this.getHeight(), bitmap.getWidth() / bitmap.getHeight());
                             RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) MediaAdView.this.q.getLayoutParams();
                             if (layoutParams2 != null) {
-                                layoutParams2.width = a2[0];
-                                layoutParams2.height = a2[1];
+                                layoutParams2.width = a[0];
+                                layoutParams2.height = a[1];
                                 layoutParams2.addRule(13);
                                 MediaAdView.this.q.setLayoutParams(layoutParams2);
                             }
                         }
                     });
-                    Bitmap a2 = com.anythink.core.common.k.b.a(MediaAdView.this.getContext(), bitmap);
+                    Bitmap a = com.anythink.core.common.k.b.a(MediaAdView.this.getContext(), bitmap);
                     MediaAdView.this.p.setScaleType(ImageView.ScaleType.FIT_XY);
-                    MediaAdView.this.p.setImageBitmap(a2);
+                    MediaAdView.this.p.setImageBitmap(a);
                 }
             }
         });
-        if (TextUtils.isEmpty(this.f6059a.v())) {
+        if (TextUtils.isEmpty(this.a.v())) {
             this.r.setVisibility(8);
         } else {
-            com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.f6059a.v()), new b.a() { // from class: com.anythink.basead.ui.MediaAdView.2
+            com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.a.v()), new b.a() { // from class: com.anythink.basead.ui.MediaAdView.2
                 @Override // com.anythink.core.common.res.b.a
                 public final void onFail(String str, String str2) {
                     MediaAdView.this.r.setVisibility(8);
@@ -149,7 +149,7 @@ public class MediaAdView extends BaseMediaAdView {
 
                 @Override // com.anythink.core.common.res.b.a
                 public final void onSuccess(String str, Bitmap bitmap) {
-                    if (TextUtils.equals(MediaAdView.this.f6059a.v(), str)) {
+                    if (TextUtils.equals(MediaAdView.this.a.v(), str)) {
                         MediaAdView.this.r.setImageBitmap(bitmap);
                         float width = (bitmap.getWidth() * 1.0f) / bitmap.getHeight();
                         ViewGroup.LayoutParams layoutParams2 = MediaAdView.this.r.getLayoutParams();
@@ -164,32 +164,32 @@ public class MediaAdView extends BaseMediaAdView {
                 }
             });
         }
-        String s = this.f6059a.s();
+        String s = this.a.s();
         if (TextUtils.isEmpty(s)) {
             this.t.setVisibility(8);
         } else {
             this.t.setText(s);
         }
-        if (TextUtils.isEmpty(this.f6059a.t())) {
+        if (TextUtils.isEmpty(this.a.t())) {
             this.s.setVisibility(8);
         } else {
             this.s.setRadiusInDip(6);
             this.s.setNeedRadiu(true);
             ViewGroup.LayoutParams layoutParams2 = this.s.getLayoutParams();
-            com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.f6059a.t()), layoutParams2.width, layoutParams2.height, new b.a() { // from class: com.anythink.basead.ui.MediaAdView.3
+            com.anythink.core.common.res.b.a(getContext()).a(new e(1, this.a.t()), layoutParams2.width, layoutParams2.height, new b.a() { // from class: com.anythink.basead.ui.MediaAdView.3
                 @Override // com.anythink.core.common.res.b.a
                 public final void onFail(String str, String str2) {
                 }
 
                 @Override // com.anythink.core.common.res.b.a
                 public final void onSuccess(String str, Bitmap bitmap) {
-                    if (TextUtils.equals(MediaAdView.this.f6059a.t(), str)) {
+                    if (TextUtils.equals(MediaAdView.this.a.t(), str)) {
                         MediaAdView.this.s.setImageBitmap(bitmap);
                     }
                 }
             });
         }
-        if (this.f6059a.K()) {
+        if (this.a.K()) {
             RelativeLayout relativeLayout = this.h;
             if (relativeLayout != null) {
                 relativeLayout.setVisibility(0);
@@ -203,7 +203,7 @@ public class MediaAdView extends BaseMediaAdView {
             TextView textView = this.i;
             if (textView != null) {
                 textView.setVisibility(0);
-                this.i.setText(this.f6059a.F());
+                this.i.setText(this.a.F());
                 this.i.setOnClickListener(new View.OnClickListener() { // from class: com.anythink.basead.ui.MediaAdView.5
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -218,7 +218,7 @@ public class MediaAdView extends BaseMediaAdView {
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         Tracker.onClick(view);
-                        l.b(n.a().g(), MediaAdView.this.f6059a.H());
+                        l.b(n.a().g(), MediaAdView.this.a.H());
                     }
                 });
             }
@@ -229,14 +229,14 @@ public class MediaAdView extends BaseMediaAdView {
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         Tracker.onClick(view);
-                        l.b(n.a().g(), MediaAdView.this.f6059a.I());
+                        l.b(n.a().g(), MediaAdView.this.a.I());
                     }
                 });
             }
             TextView textView4 = this.l;
             if (textView4 != null) {
                 textView4.setVisibility(0);
-                this.l.setText(getContext().getResources().getString(h.a(getContext(), "myoffer_panel_version", "string"), this.f6059a.G()));
+                this.l.setText(getContext().getResources().getString(h.a(getContext(), "myoffer_panel_version", "string"), this.a.G()));
                 this.l.setOnClickListener(new View.OnClickListener() { // from class: com.anythink.basead.ui.MediaAdView.8
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
@@ -245,7 +245,7 @@ public class MediaAdView extends BaseMediaAdView {
                 });
             }
         }
-        if (com.anythink.basead.a.e.a(this.f6059a) || (findViewById = findViewById(h.a(getContext(), "myoffer_media_ad_main_image_container", "id"))) == null) {
+        if (com.anythink.basead.a.e.a(this.a) || (findViewById = findViewById(h.a(getContext(), "myoffer_media_ad_main_image_container", "id"))) == null) {
             return;
         }
         ViewGroup.LayoutParams layoutParams3 = findViewById.getLayoutParams();

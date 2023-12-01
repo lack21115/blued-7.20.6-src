@@ -16,7 +16,7 @@ import java.util.List;
 class MediaBrowserServiceCompatApi26 {
 
     /* renamed from: a  reason: collision with root package name */
-    static Field f3158a;
+    static Field f3110a;
 
     /* loaded from: source-8756600-dex2jar.jar:androidx/media/MediaBrowserServiceCompatApi26$MediaBrowserServiceAdaptor.class */
     static class MediaBrowserServiceAdaptor extends MediaBrowserServiceCompatApi23.MediaBrowserServiceAdaptor {
@@ -26,7 +26,7 @@ class MediaBrowserServiceCompatApi26 {
 
         public void onLoadChildren(String str, MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result, Bundle bundle) {
             MediaSessionCompat.ensureClassLoader(bundle);
-            ((ServiceCompatProxy) this.f3156a).onLoadChildren(str, new ResultWrapper(result), bundle);
+            ((ServiceCompatProxy) this.f3108a).onLoadChildren(str, new ResultWrapper(result), bundle);
         }
     }
 
@@ -34,10 +34,10 @@ class MediaBrowserServiceCompatApi26 {
     static class ResultWrapper {
 
         /* renamed from: a  reason: collision with root package name */
-        MediaBrowserService.Result f3159a;
+        MediaBrowserService.Result f3111a;
 
         ResultWrapper(MediaBrowserService.Result result) {
-            this.f3159a = result;
+            this.f3111a = result;
         }
 
         List<MediaBrowser.MediaItem> a(List<Parcel> list) {
@@ -54,16 +54,16 @@ class MediaBrowserServiceCompatApi26 {
         }
 
         public void detach() {
-            this.f3159a.detach();
+            this.f3111a.detach();
         }
 
         public void sendResult(List<Parcel> list, int i) {
             try {
-                MediaBrowserServiceCompatApi26.f3158a.setInt(this.f3159a, i);
+                MediaBrowserServiceCompatApi26.f3110a.setInt(this.f3111a, i);
             } catch (IllegalAccessException e) {
                 Log.w("MBSCompatApi26", e);
             }
-            this.f3159a.sendResult(a(list));
+            this.f3111a.sendResult(a(list));
         }
     }
 
@@ -75,7 +75,7 @@ class MediaBrowserServiceCompatApi26 {
     static {
         try {
             Field declaredField = MediaBrowserService.Result.class.getDeclaredField("mFlags");
-            f3158a = declaredField;
+            f3110a = declaredField;
             declaredField.setAccessible(true);
         } catch (NoSuchFieldException e) {
             Log.w("MBSCompatApi26", e);

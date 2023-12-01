@@ -5,11 +5,11 @@ package com.tencent.liteav.videoconsumer.renderer;
 public final /* synthetic */ class l implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final g f36833a;
+    private final g f23142a;
     private final boolean b;
 
     private l(g gVar, boolean z) {
-        this.f36833a = gVar;
+        this.f23142a = gVar;
         this.b = z;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class l implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        g.c(this.f36833a, this.b);
+        g.c(this.f23142a, this.b);
     }
 }

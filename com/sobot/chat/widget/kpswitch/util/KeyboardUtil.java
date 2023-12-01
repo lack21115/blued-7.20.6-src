@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.kpswitch.util;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
@@ -148,7 +149,7 @@ public class KeyboardUtil {
 
     public static ViewTreeObserver.OnGlobalLayoutListener attach(Activity activity, IPanelHeightTarget iPanelHeightTarget, OnKeyboardShowingListener onKeyboardShowingListener) {
         int height;
-        ViewGroup viewGroup = (ViewGroup) activity.findViewById(16908290);
+        ViewGroup viewGroup = (ViewGroup) activity.findViewById(R.id.content);
         boolean isFullScreen = ViewUtil.isFullScreen(activity);
         boolean isTranslucentStatus = ViewUtil.isTranslucentStatus(activity);
         boolean isFitsSystemWindows = ViewUtil.isFitsSystemWindows(activity);
@@ -166,7 +167,7 @@ public class KeyboardUtil {
     }
 
     public static void detach(Activity activity, ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener) {
-        ViewGroup viewGroup = (ViewGroup) activity.findViewById(16908290);
+        ViewGroup viewGroup = (ViewGroup) activity.findViewById(R.id.content);
         if (Build.VERSION.SDK_INT >= 16) {
             viewGroup.getViewTreeObserver().removeOnGlobalLayoutListener(onGlobalLayoutListener);
         } else {

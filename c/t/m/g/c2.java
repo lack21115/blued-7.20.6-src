@@ -9,7 +9,7 @@ import android.os.Message;
 public abstract class c2 extends f2 {
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile HandlerThread f3773c = null;
+    public volatile HandlerThread f3725c = null;
     public volatile a d = null;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/c2$a.class */
@@ -33,13 +33,13 @@ public abstract class c2 extends f2 {
 
     public void a(long j) {
         synchronized (this.b) {
-            if (this.f3808a) {
+            if (this.f3760a) {
                 if (g3.a()) {
                     a();
                 }
                 c();
                 b(j);
-                this.f3808a = false;
+                this.f3760a = false;
             }
         }
     }
@@ -67,14 +67,14 @@ public abstract class c2 extends f2 {
             if (b()) {
                 return -1;
             }
-            this.f3808a = true;
+            this.f3760a = true;
             if (g3.a()) {
                 a();
             }
             if (looper == null) {
-                this.f3773c = new HandlerThread("th_" + a());
-                this.f3773c.start();
-                this.d = new a(this.f3773c.getLooper());
+                this.f3725c = new HandlerThread("th_" + a());
+                this.f3725c.start();
+                this.d = new a(this.f3725c.getLooper());
             } else {
                 this.d = new a(looper);
             }
@@ -84,8 +84,8 @@ public abstract class c2 extends f2 {
 
     public final void b(long j) {
         try {
-            b3.a(this.f3773c, this.d, j, false);
-            this.f3773c = null;
+            b3.a(this.f3725c, this.d, j, false);
+            this.f3725c = null;
             this.d = null;
         } catch (Throwable th) {
             if (g3.a()) {
@@ -105,7 +105,7 @@ public abstract class c2 extends f2 {
     public HandlerThread e() {
         HandlerThread handlerThread;
         synchronized (this.b) {
-            handlerThread = this.f3773c;
+            handlerThread = this.f3725c;
         }
         return handlerThread;
     }

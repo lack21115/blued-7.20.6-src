@@ -7,11 +7,11 @@ import com.blued.android.framework.view.shape.ShapeRelativeLayout;
 public final class ItemMyGroupDataHorizontalBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ShapeRelativeLayout f29256a;
+    private final ShapeRelativeLayout f15566a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ShapeRelativeLayout getRoot() {
-        return this.f29256a;
+        return this.f15566a;
     }
 }

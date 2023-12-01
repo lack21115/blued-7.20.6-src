@@ -1,6 +1,7 @@
 package com.youzan.spiderman.c.a;
 
 import com.google.gson.annotations.SerializedName;
+import com.heytap.mcssdk.constant.Constants;
 import com.youzan.spiderman.c.b.c;
 import com.youzan.spiderman.c.b.d;
 import com.youzan.spiderman.c.b.e;
@@ -14,7 +15,7 @@ public class b {
     @SerializedName("config_entity")
 
     /* renamed from: a  reason: collision with root package name */
-    private c f41741a;
+    private c f28050a;
 
     public static void a(c cVar) {
         if (cVar.a() == null) {
@@ -65,7 +66,7 @@ public class b {
 
     private static f e() {
         f fVar = new f();
-        fVar.a(7200000L);
+        fVar.a(Constants.MILLS_OF_WATCH_DOG);
         fVar.a("wifi");
         return fVar;
     }
@@ -81,26 +82,26 @@ public class b {
         d dVar = new d();
         dVar.a(true);
         dVar.a("wifi");
-        dVar.a(7200000L);
+        dVar.a(Constants.MILLS_OF_WATCH_DOG);
         dVar.b(43200000L);
         dVar.a(new ArrayList());
         return dVar;
     }
 
     public final c a() {
-        c cVar = this.f41741a;
+        c cVar = this.f28050a;
         if (cVar == null) {
             c cVar2 = new c();
-            this.f41741a = cVar2;
+            this.f28050a = cVar2;
             cVar2.a(c());
-            this.f41741a.a(b());
+            this.f28050a.a(b());
         } else {
             a(cVar);
         }
-        return this.f41741a;
+        return this.f28050a;
     }
 
     public final void b(c cVar) {
-        this.f41741a = cVar;
+        this.f28050a = cVar;
     }
 }

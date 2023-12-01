@@ -53,14 +53,14 @@ public class ao {
     }
 
     public boolean c() {
-        return a(an.f23726c);
+        return a(an.f10118c);
     }
 
     public boolean d() {
         ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
         if (systemClassLoader != null) {
             try {
-                systemClassLoader.loadClass(an.f23725a).newInstance();
+                systemClassLoader.loadClass(an.f10117a).newInstance();
             } catch (ClassNotFoundException e) {
                 return false;
             } catch (IllegalAccessException | InstantiationException e2) {

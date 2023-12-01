@@ -87,7 +87,7 @@ public abstract class AbstractBiMap<K, V> extends ForwardingMap<K, V> implements
             return this.esDelegate;
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Map.Entry<K, V>> iterator() {
             return AbstractBiMap.this.entrySetIterator();
         }
@@ -185,7 +185,7 @@ public abstract class AbstractBiMap<K, V> extends ForwardingMap<K, V> implements
             return AbstractBiMap.this.delegate.keySet();
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<K> iterator() {
             return Maps.keyIterator(AbstractBiMap.this.entrySet().iterator());
         }
@@ -225,7 +225,7 @@ public abstract class AbstractBiMap<K, V> extends ForwardingMap<K, V> implements
             return this.valuesDelegate;
         }
 
-        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<V> iterator() {
             return Maps.valueIterator(AbstractBiMap.this.entrySet().iterator());
         }
@@ -383,12 +383,12 @@ public abstract class AbstractBiMap<K, V> extends ForwardingMap<K, V> implements
         return new Inverse(map, this);
     }
 
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     public V put(@NullableDecl K k, @NullableDecl V v) {
         return putInBothMaps(k, v, false);
     }
 
-    @Override // com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     public void putAll(Map<? extends K, ? extends V> map) {
         for (Map.Entry<? extends K, ? extends V> entry : map.entrySet()) {
             put(entry.getKey(), entry.getValue());

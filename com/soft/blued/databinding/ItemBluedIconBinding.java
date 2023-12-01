@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemBluedIconBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29077a;
+    private final RelativeLayout f15387a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29077a;
+        return this.f15387a;
     }
 }

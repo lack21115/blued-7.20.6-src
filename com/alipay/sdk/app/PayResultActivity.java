@@ -15,13 +15,9 @@ import java.util.HashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/PayResultActivity.class */
 public final class PayResultActivity extends Activity {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f4581a = "{\"isLogin\":\"false\"}";
+    public static final String a = "{\"isLogin\":\"false\"}";
     public static final HashMap<String, Object> b = new HashMap<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final String f4582c = "hk.alipay.wallet";
+    public static final String c = "hk.alipay.wallet";
     public static final String d = "phonecashier.pay.hash";
     public static final String e = "orderSuffix";
     public static final String f = "externalPkgName";
@@ -31,9 +27,7 @@ public final class PayResultActivity extends Activity {
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/app/PayResultActivity$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static volatile String f4583a;
+        public static volatile String a;
         public static volatile String b;
     }
 
@@ -47,7 +41,7 @@ public final class PayResultActivity extends Activity {
         }
         Intent intent = new Intent();
         try {
-            intent.setPackage(f4582c);
+            intent.setPackage(c);
             intent.setData(Uri.parse("alipayhk://platformapi/startApp?appId=20000125&schemePaySession=" + URLEncoder.encode(str, "UTF-8") + "&orderSuffix=" + URLEncoder.encode(str2, "UTF-8") + "&packageName=" + URLEncoder.encode(str3, "UTF-8") + "&externalPkgName=" + URLEncoder.encode(str3, "UTF-8")));
         } catch (UnsupportedEncodingException e2) {
             com.alipay.sdk.util.c.a(e2);
@@ -88,22 +82,21 @@ public final class PayResultActivity extends Activity {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         try {
             Intent intent = getIntent();
             if (!TextUtils.isEmpty(intent.getStringExtra(e))) {
-                a.f4583a = intent.getStringExtra(d);
+                a.a = intent.getStringExtra(d);
                 String stringExtra = intent.getStringExtra(e);
                 String stringExtra2 = intent.getStringExtra(f);
-                com.alipay.sdk.sys.a a2 = a.C0050a.a(intent);
+                com.alipay.sdk.sys.a a2 = a.C0010a.a(intent);
                 this.i = a2;
                 if (a2 == null) {
                     finish();
                 }
-                a(this, a.f4583a, stringExtra, stringExtra2);
+                a(this, a.a, stringExtra, stringExtra2);
                 a(this, 300);
                 return;
             }
@@ -112,19 +105,19 @@ public final class PayResultActivity extends Activity {
             }
             String stringExtra3 = intent.getStringExtra(g);
             int intExtra = intent.getIntExtra(h, 0);
-            if (intExtra != 0 && TextUtils.equals(a.f4583a, String.valueOf(intExtra))) {
+            if (intExtra != 0 && TextUtils.equals(a.a, String.valueOf(intExtra))) {
                 if (TextUtils.isEmpty(stringExtra3)) {
-                    a(a.f4583a);
+                    a(a.a);
                 } else {
-                    a(stringExtra3, a.f4583a);
+                    a(stringExtra3, a.a);
                 }
-                a.f4583a = "";
+                a.a = "";
                 a(this, 300);
                 return;
             }
             com.alipay.sdk.sys.a aVar = this.i;
-            com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.ad, "Expected " + a.f4583a + ", got " + intExtra);
-            a(a.f4583a);
+            com.alipay.sdk.app.statistic.a.a(aVar, com.alipay.sdk.app.statistic.c.b, com.alipay.sdk.app.statistic.c.ad, "Expected " + a.a + ", got " + intExtra);
+            a(a.a);
             a(this, 300);
         } catch (Throwable th) {
             finish();

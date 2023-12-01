@@ -9,13 +9,9 @@ import android.view.View;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/pkdared/PkDaredPropProgressView.class */
 public class PkDaredPropProgressView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f15414a;
+    protected int a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f15415c;
+    private float c;
     private float d;
     private float e;
     private float f;
@@ -43,7 +39,7 @@ public class PkDaredPropProgressView extends View {
     }
 
     private void a(Canvas canvas) {
-        if (this.f15414a == 0) {
+        if (this.a == 0) {
             return;
         }
         float min = (int) ((Math.min(getMeasuredWidth(), getMeasuredHeight()) - this.e) / 2.0f);
@@ -52,7 +48,7 @@ public class PkDaredPropProgressView extends View {
         Paint paint = getPaint();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(this.f);
-        canvas.drawArc(rectF, -90.0f, (-(this.f15414a / this.b)) * 360.0f, false, paint);
+        canvas.drawArc(rectF, -90.0f, (-(this.a / this.b)) * 360.0f, false, paint);
     }
 
     private Paint getPaint() {
@@ -65,7 +61,7 @@ public class PkDaredPropProgressView extends View {
     }
 
     protected void a(Context context) {
-        this.f15414a = 90;
+        this.a = 90;
         this.b = 100;
     }
 
@@ -74,7 +70,7 @@ public class PkDaredPropProgressView extends View {
     }
 
     public int getProgress() {
-        return this.f15414a;
+        return this.a;
     }
 
     public int getProgressMax() {
@@ -92,10 +88,10 @@ public class PkDaredPropProgressView extends View {
     @Override // android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f15415c = getMeasuredWidth();
+        this.c = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         this.d = measuredHeight;
-        float min = Math.min(this.f15415c, measuredHeight);
+        float min = Math.min(this.c, measuredHeight);
         float f = (min / 18.0f) * 1.5f;
         this.f = f;
         this.e = min - (f * 2.0f);
@@ -120,7 +116,7 @@ public class PkDaredPropProgressView extends View {
         if (i2 > i3) {
             i4 = i3;
         }
-        this.f15414a = i4;
+        this.a = i4;
         invalidate();
     }
 

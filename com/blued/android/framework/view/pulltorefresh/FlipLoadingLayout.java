@@ -13,29 +13,25 @@ import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/FlipLoadingLayout.class */
 public class FlipLoadingLayout extends LoadingLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Animation f10210a;
+    private final Animation a;
     private final Animation b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.framework.view.pulltorefresh.FlipLoadingLayout$1  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/FlipLoadingLayout$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f10211a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[PullToRefreshBase.Mode.values().length];
-            f10211a = iArr;
+            a = iArr;
             try {
                 iArr[PullToRefreshBase.Mode.PULL_FROM_END.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f10211a[PullToRefreshBase.Mode.PULL_FROM_START.ordinal()] = 2;
+                a[PullToRefreshBase.Mode.PULL_FROM_START.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
@@ -45,10 +41,10 @@ public class FlipLoadingLayout extends LoadingLayout {
         super(context, mode, orientation, typedArray);
         float f = mode == PullToRefreshBase.Mode.PULL_FROM_START ? -180 : 180;
         RotateAnimation rotateAnimation = new RotateAnimation(0.0f, f, 1, 0.5f, 1, 0.5f);
-        this.f10210a = rotateAnimation;
+        this.a = rotateAnimation;
         rotateAnimation.setInterpolator(ANIMATION_INTERPOLATOR);
-        this.f10210a.setDuration(150L);
-        this.f10210a.setFillAfter(true);
+        this.a.setDuration(150L);
+        this.a.setFillAfter(true);
         RotateAnimation rotateAnimation2 = new RotateAnimation(f, 0.0f, 1, 0.5f, 1, 0.5f);
         this.b = rotateAnimation2;
         rotateAnimation2.setInterpolator(ANIMATION_INTERPOLATOR);
@@ -57,7 +53,7 @@ public class FlipLoadingLayout extends LoadingLayout {
     }
 
     private float getDrawableRotationAngle() {
-        int i = AnonymousClass1.f10211a[this.mMode.ordinal()];
+        int i = AnonymousClass1.a[this.mMode.ordinal()];
         return i != 1 ? (i == 2 && this.mScrollDirection == PullToRefreshBase.Orientation.HORIZONTAL) ? 270.0f : 0.0f : this.mScrollDirection == PullToRefreshBase.Orientation.HORIZONTAL ? 90.0f : 180.0f;
     }
 
@@ -90,7 +86,7 @@ public class FlipLoadingLayout extends LoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     protected void pullToRefreshImpl() {
-        if (this.f10210a == this.mHeaderImage.getAnimation()) {
+        if (this.a == this.mHeaderImage.getAnimation()) {
             this.mHeaderImage.startAnimation(this.b);
         }
     }
@@ -104,7 +100,7 @@ public class FlipLoadingLayout extends LoadingLayout {
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout
     protected void releaseToRefreshImpl() {
-        this.mHeaderImage.startAnimation(this.f10210a);
+        this.mHeaderImage.startAnimation(this.a);
     }
 
     @Override // com.blued.android.framework.view.pulltorefresh.LoadingLayout

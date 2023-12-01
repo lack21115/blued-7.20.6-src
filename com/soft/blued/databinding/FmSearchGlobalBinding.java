@@ -16,11 +16,11 @@ import com.soft.blued.R;
 public final class FmSearchGlobalBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final FlowLayout f28761a;
+    public final FlowLayout f15071a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final LinearLayout f28762c;
+    public final LinearLayout f15072c;
     public final NoDataAndLoadFailView d;
     public final RecyclerView e;
     public final SearchView f;
@@ -29,9 +29,9 @@ public final class FmSearchGlobalBinding implements ViewBinding {
 
     private FmSearchGlobalBinding(ConstraintLayout constraintLayout, FlowLayout flowLayout, ImageView imageView, LinearLayout linearLayout, NoDataAndLoadFailView noDataAndLoadFailView, RecyclerView recyclerView, SearchView searchView, TextView textView) {
         this.h = constraintLayout;
-        this.f28761a = flowLayout;
+        this.f15071a = flowLayout;
         this.b = imageView;
-        this.f28762c = linearLayout;
+        this.f15072c = linearLayout;
         this.d = noDataAndLoadFailView;
         this.e = recyclerView;
         this.f = searchView;
@@ -40,21 +40,21 @@ public final class FmSearchGlobalBinding implements ViewBinding {
 
     public static FmSearchGlobalBinding a(View view) {
         String str;
-        FlowLayout flowLayout = (FlowLayout) view.findViewById(2131363977);
-        if (flowLayout != null) {
-            ImageView imageView = (ImageView) view.findViewById(2131365254);
+        FlowLayout findViewById = view.findViewById(2131363977);
+        if (findViewById != null) {
+            ImageView imageView = (ImageView) view.findViewById(R.id.iv_delete);
             if (imageView != null) {
                 LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_search_recent);
                 if (linearLayout != null) {
-                    NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(2131368727);
-                    if (noDataAndLoadFailView != null) {
-                        RecyclerView recyclerView = (RecyclerView) view.findViewById(2131369093);
+                    NoDataAndLoadFailView findViewById2 = view.findViewById(R.id.no_data_view);
+                    if (findViewById2 != null) {
+                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
                         if (recyclerView != null) {
-                            SearchView searchView = (SearchView) view.findViewById(2131369680);
-                            if (searchView != null) {
+                            SearchView findViewById3 = view.findViewById(R.id.search_view);
+                            if (findViewById3 != null) {
                                 TextView textView = (TextView) view.findViewById(2131372754);
                                 if (textView != null) {
-                                    return new FmSearchGlobalBinding((ConstraintLayout) view, flowLayout, imageView, linearLayout, noDataAndLoadFailView, recyclerView, searchView, textView);
+                                    return new FmSearchGlobalBinding((ConstraintLayout) view, findViewById, imageView, linearLayout, findViewById2, recyclerView, findViewById3, textView);
                                 }
                                 str = "tvTitle";
                             } else {

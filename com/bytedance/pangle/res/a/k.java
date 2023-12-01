@@ -11,7 +11,7 @@ import java.util.Iterator;
 public final class k {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static int a(g gVar) {
-        return (int) gVar.f21480a.a().b();
+        return (int) gVar.f7874a.a().b();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -64,7 +64,7 @@ public final class k {
                 return;
             }
             byte[] bArr2 = (byte[]) hashMap2.get(Integer.valueOf(((Integer) hashMap3.get((Integer) it.next())).intValue()));
-            System.arraycopy((Object) bArr2, 0, (Object) bArr, ((i11 + i3) * 5 * 4) + i, bArr2.length);
+            System.arraycopy(bArr2, 0, bArr, ((i11 + i3) * 5 * 4) + i, bArr2.length);
             i10 = i11 + 1;
         }
     }
@@ -74,7 +74,7 @@ public final class k {
         b bVar = new b(bArr, hVar);
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArr);
         bVar.a();
-        bVar.f21474c = new g(new i(new e(byteArrayInputStream)));
+        bVar.f7868c = new g(new i(new e(byteArrayInputStream)));
         do {
         } while (bVar.b() != 1);
     }

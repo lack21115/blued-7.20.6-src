@@ -12,13 +12,9 @@ import kotlin.jvm.functions.Function2;
 @DebugMetadata(b = "Deprecated.kt", c = {279, 280, 280}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$flatMap$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$flatMap$1.class */
 final class ChannelsKt__DeprecatedKt$flatMap$1<R> extends SuspendLambda implements Function2<ProducerScope<? super R>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42948a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ReceiveChannel<E> f42949c;
+    final /* synthetic */ ReceiveChannel<E> c;
     final /* synthetic */ Function2<E, Continuation<? super ReceiveChannel<? extends R>>, Object> d;
     private /* synthetic */ Object e;
 
@@ -26,19 +22,19 @@ final class ChannelsKt__DeprecatedKt$flatMap$1<R> extends SuspendLambda implemen
     /* JADX WARN: Multi-variable type inference failed */
     ChannelsKt__DeprecatedKt$flatMap$1(ReceiveChannel<? extends E> receiveChannel, Function2<? super E, ? super Continuation<? super ReceiveChannel<? extends R>>, ? extends Object> function2, Continuation<? super ChannelsKt__DeprecatedKt$flatMap$1> continuation) {
         super(2, continuation);
-        this.f42949c = receiveChannel;
+        this.c = receiveChannel;
         this.d = function2;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<? super R> producerScope, Continuation<? super Unit> continuation) {
-        return ((ChannelsKt__DeprecatedKt$flatMap$1) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((ChannelsKt__DeprecatedKt$flatMap$1) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        ChannelsKt__DeprecatedKt$flatMap$1 channelsKt__DeprecatedKt$flatMap$1 = new ChannelsKt__DeprecatedKt$flatMap$1(this.f42949c, this.d, continuation);
+        ChannelsKt__DeprecatedKt$flatMap$1 channelsKt__DeprecatedKt$flatMap$1 = new ChannelsKt__DeprecatedKt$flatMap$1(this.c, this.d, continuation);
         channelsKt__DeprecatedKt$flatMap$1.e = obj;
         return channelsKt__DeprecatedKt$flatMap$1;
     }

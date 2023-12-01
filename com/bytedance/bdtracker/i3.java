@@ -26,7 +26,7 @@ public final class i3 extends g3<h4> {
             if (h4Var2 == null) {
                 return null;
             }
-            return ((h4.a.C0312a) h4Var2).a();
+            return ((h4.a.C0142a) h4Var2).a();
         }
     }
 

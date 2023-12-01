@@ -8,10 +8,10 @@ import java.io.IOException;
 public class l extends d implements ITPMediaUrlAsset {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39234a;
+    private String f25543a;
 
     public l(String str) {
-        this.f39234a = str;
+        this.f25543a = str;
     }
 
     @Override // com.tencent.thumbplayer.b.d, com.tencent.thumbplayer.api.composition.ITPMediaAsset
@@ -21,7 +21,7 @@ public class l extends d implements ITPMediaUrlAsset {
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaUrlAsset
     public String getStreamUrl() {
-        return this.f39234a;
+        return this.f25543a;
     }
 
     @Override // com.tencent.thumbplayer.b.d, com.tencent.thumbplayer.api.composition.ITPMediaAsset
@@ -36,6 +36,6 @@ public class l extends d implements ITPMediaUrlAsset {
 
     @Override // com.tencent.thumbplayer.api.composition.ITPMediaUrlAsset
     public void setStreamUrl(String str) {
-        this.f39234a = str;
+        this.f25543a = str;
     }
 }

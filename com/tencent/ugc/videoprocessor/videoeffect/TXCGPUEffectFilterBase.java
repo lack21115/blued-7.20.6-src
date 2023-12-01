@@ -12,7 +12,7 @@ public abstract class TXCGPUEffectFilterBase extends b {
     }
 
     public TXCGPUEffectFilterBase() {
-        this(b.NO_FILTER_VERTEX_SHADER, "varying highp vec2 textureCoordinate;\n \nuniform sampler2D inputImageTexture;\n \nvoid main()\n{\n     gl_FragColor = texture2D(inputImageTexture, textureCoordinate);\n}");
+        this(b.NO_FILTER_VERTEX_SHADER, b.NO_FILTER_FRAGMENT_SHADER);
     }
 
     public TXCGPUEffectFilterBase(String str, String str2) {

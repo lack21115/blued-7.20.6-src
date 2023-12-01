@@ -16,14 +16,14 @@ public class a extends com.kwad.sdk.i.a {
     private c bD;
     private Service bF;
     private final Map<String, Integer> bE = new ConcurrentHashMap();
-    private final HandlerC0462a bG = new HandlerC0462a(this);
+    private final HandlerC0292a bG = new HandlerC0292a(this);
 
     /* renamed from: com.ksad.download.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ksad/download/b/a$a.class */
-    static final class HandlerC0462a extends Handler {
+    static final class HandlerC0292a extends Handler {
         final WeakReference<a> bH;
 
-        public HandlerC0462a(a aVar) {
+        public HandlerC0292a(a aVar) {
             this.bH = new WeakReference<>(aVar);
         }
 

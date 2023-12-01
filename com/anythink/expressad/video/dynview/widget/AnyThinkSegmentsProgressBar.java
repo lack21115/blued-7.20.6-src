@@ -1,5 +1,6 @@
 package com.anythink.expressad.video.dynview.widget;
 
+import android.R;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -22,11 +23,11 @@ import java.util.List;
 public class AnyThinkSegmentsProgressBar extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f8424a;
+    private final String f5584a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f8425c;
+    private int f5585c;
     private int d;
     private int e;
     private int f;
@@ -39,8 +40,8 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
 
     public AnyThinkSegmentsProgressBar(Context context) {
         super(context);
-        this.f8424a = "AnyThinkSegmentsProgressBar";
-        this.f8425c = 1;
+        this.f5584a = "AnyThinkSegmentsProgressBar";
+        this.f5585c = 1;
         this.d = 20;
         this.e = 10;
         this.f = 1;
@@ -52,8 +53,8 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
 
     public AnyThinkSegmentsProgressBar(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f8424a = "AnyThinkSegmentsProgressBar";
-        this.f8425c = 1;
+        this.f5584a = "AnyThinkSegmentsProgressBar";
+        this.f5585c = 1;
         this.d = 20;
         this.e = 10;
         this.f = 1;
@@ -65,8 +66,8 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
 
     public AnyThinkSegmentsProgressBar(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f8424a = "AnyThinkSegmentsProgressBar";
-        this.f8425c = 1;
+        this.f5584a = "AnyThinkSegmentsProgressBar";
+        this.f5585c = 1;
         this.d = 20;
         this.e = 10;
         this.f = 1;
@@ -78,8 +79,8 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
 
     public AnyThinkSegmentsProgressBar(Context context, AttributeSet attributeSet, int i, int i2) {
         super(context, attributeSet, i, i2);
-        this.f8424a = "AnyThinkSegmentsProgressBar";
-        this.f8425c = 1;
+        this.f5584a = "AnyThinkSegmentsProgressBar";
+        this.f5585c = 1;
         this.d = 20;
         this.e = 10;
         this.f = 1;
@@ -112,13 +113,13 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
             o.d("AnyThinkSegmentsProgressBar", th.getMessage());
         }
         try {
-            if (this.f8425c == 1) {
+            if (this.f5585c == 1) {
                 setOrientation(1);
                 if (TextUtils.isEmpty(this.k)) {
                     this.k = this.l ? "正在播放第%s个，共%s个视频" : "The %s is playing, %s videos.";
                 }
             }
-            if (this.f8425c == 2) {
+            if (this.f5585c == 2) {
                 setOrientation(0);
                 if (TextUtils.isEmpty(this.k)) {
                     this.k = this.l ? "广告 %s/%s" : "ADS %s/%s";
@@ -133,15 +134,15 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
             this.j.setTextSize(12.0f);
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
             this.j.setLayoutParams(layoutParams);
-            if (this.f8425c == 1) {
+            if (this.f5585c == 1) {
                 layoutParams.gravity = 5;
                 this.j.setPadding(this.d / 2, 15, this.d / 2, 5);
             }
-            if (this.f8425c == 2) {
+            if (this.f5585c == 2) {
                 this.j.setGravity(16);
                 this.j.setPadding(this.d / 2, 0, this.d / 2, 0);
             }
-            int a2 = i.a(getContext(), "anythink_reward_video_icon", i.f7952c);
+            int a2 = i.a(getContext(), "anythink_reward_video_icon", i.f5112c);
             if (a2 != 0 && (drawable = getContext().getResources().getDrawable(a2)) != null) {
                 drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
                 this.j.setCompoundDrawables(drawable, null, null, null);
@@ -158,7 +159,7 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
                 if (i2 >= this.b) {
                     break;
                 }
-                ProgressBar progressBar = new ProgressBar(getContext(), null, 16842872);
+                ProgressBar progressBar = new ProgressBar(getContext(), null, R.attr.progressBarStyleHorizontal);
                 progressBar.setMax(100);
                 progressBar.setProgress(0);
                 progressBar.setProgressDrawable(b());
@@ -170,12 +171,12 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
                 this.i.add(progressBar);
                 i = i2 + 1;
             }
-            if (this.f8425c == 1) {
+            if (this.f5585c == 1) {
                 setPadding(15, 10, 15, 25);
                 addView(this.j);
                 addView(linearLayout);
             }
-            if (this.f8425c == 2) {
+            if (this.f5585c == 2) {
                 setPadding(15, 0, 15, 25);
                 layoutParams2.gravity = 16;
                 layoutParams2.weight = 1.0f;
@@ -197,8 +198,8 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
         gradientDrawable2.setCornerRadius(this.e);
         gradientDrawable2.setColor(this.h);
         LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{gradientDrawable, new ScaleDrawable(gradientDrawable2, 3, 1.0f, -1.0f)});
-        layerDrawable.setId(0, 16908288);
-        layerDrawable.setId(1, 16908301);
+        layerDrawable.setId(0, R.id.background);
+        layerDrawable.setId(1, R.id.progress);
         return layerDrawable;
     }
 
@@ -239,13 +240,13 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
 
     public void init(int i, int i2) {
         this.b = i;
-        this.f8425c = i2;
+        this.f5585c = i2;
         a();
     }
 
     public void init(int i, int i2, int i3, int i4) {
         this.b = i;
-        this.f8425c = i2;
+        this.f5585c = i2;
         this.h = i3;
         this.g = i4;
         a();
@@ -253,7 +254,7 @@ public class AnyThinkSegmentsProgressBar extends LinearLayout {
 
     public void init(int i, int i2, int i3, int i4, int i5, int i6) {
         this.b = i;
-        this.f8425c = i2;
+        this.f5585c = i2;
         this.h = i3;
         this.g = i4;
         this.d = i5;

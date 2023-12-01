@@ -45,13 +45,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftSetBannerView.class */
 public final class LiveGiftSetBannerView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Lazy f14479a;
+    private final Lazy a;
     private MyAdapter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f14480c;
+    private IRequestHost c;
     private Fragment d;
     private boolean e;
     private String f;
@@ -67,15 +63,13 @@ public final class LiveGiftSetBannerView extends FrameLayout {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveGiftSetBannerView$MyAdapter.class */
     public final class MyAdapter extends CommonRecycleAdapter<LiveGiftSetItemModel> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveGiftSetBannerView f14481a;
+        final /* synthetic */ LiveGiftSetBannerView a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MyAdapter(LiveGiftSetBannerView this$0) {
             super(this$0.getContext());
             Intrinsics.e(this$0, "this$0");
-            this.f14481a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -97,9 +91,9 @@ public final class LiveGiftSetBannerView extends FrameLayout {
             sb.append('/');
             sb.append(item.getTotal());
             textView.setText(sb.toString());
-            View a2 = helper.a(R.id.ll_root);
-            final LiveGiftSetBannerView liveGiftSetBannerView = this.f14481a;
-            a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftSetBannerView$MyAdapter$PMm3TxCwTHejDCjOg-sMTG6_03Q
+            View a = helper.a(R.id.ll_root);
+            final LiveGiftSetBannerView liveGiftSetBannerView = this.a;
+            a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftSetBannerView$MyAdapter$PMm3TxCwTHejDCjOg-sMTG6_03Q
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     LiveGiftSetBannerView.MyAdapter.a(LiveGiftSetBannerView.this, view);
@@ -129,7 +123,7 @@ public final class LiveGiftSetBannerView extends FrameLayout {
     public LiveGiftSetBannerView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14479a = LazyKt.a(new Function0<LiveGiftSetBannerViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveGiftSetBannerView$vb$2
+        this.a = LazyKt.a(new Function0<LiveGiftSetBannerViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveGiftSetBannerView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -183,11 +177,11 @@ public final class LiveGiftSetBannerView extends FrameLayout {
         Intrinsics.e(this$0, "this$0");
         this$0.n = false;
         if (this$0.d != null) {
-            LiveRoomInfo a2 = LiveRoomInfo.a();
+            LiveRoomInfo a = LiveRoomInfo.a();
             Context context = this$0.getContext();
             Fragment fragment = this$0.d;
             Intrinsics.a(fragment);
-            a2.a(context, fragment.getChildFragmentManager(), 2);
+            a.a(context, fragment.getChildFragmentManager(), 2);
         }
     }
 
@@ -218,9 +212,9 @@ public final class LiveGiftSetBannerView extends FrameLayout {
 
     public final void a() {
         getVb().b.setVisibility(8);
-        getVb().f12226c.setVisibility(8);
+        getVb().c.setVisibility(8);
         getVb().b.clearAnimation();
-        getVb().f12226c.clearAnimation();
+        getVb().c.clearAnimation();
         this.l = false;
         this.k = false;
     }
@@ -230,7 +224,7 @@ public final class LiveGiftSetBannerView extends FrameLayout {
             return;
         }
         this.h = liveGiftSetInfoModel;
-        this.f14480c = iRequestHost;
+        this.c = iRequestHost;
         this.d = fragment;
         this.f = String.valueOf(liveGiftSetInfoModel.getId());
         EventTrackLive.b(LiveProtos.Event.LIVE_SET_GIFT_EXPLAIN_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.f);
@@ -262,7 +256,7 @@ public final class LiveGiftSetBannerView extends FrameLayout {
                 }
             });
         }
-        getVb().f12225a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftSetBannerView$xUai6HI9I8SP_lO4nkVGQgRB5tM
+        getVb().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.-$$Lambda$LiveGiftSetBannerView$xUai6HI9I8SP_lO4nkVGQgRB5tM
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveGiftSetBannerView.c(LiveGiftSetBannerView.this, view);
@@ -281,14 +275,14 @@ public final class LiveGiftSetBannerView extends FrameLayout {
             }
             b();
             getVb().b.setVisibility(8);
-            getVb().f12226c.setVisibility(8);
+            getVb().c.setVisibility(8);
         }
     }
 
     public final void a(final String id, String goodsId) {
         Intrinsics.e(id, "id");
         Intrinsics.e(goodsId, "goodsId");
-        final IRequestHost iRequestHost = this.f14480c;
+        final IRequestHost iRequestHost = this.c;
         LiveRoomHttpUtils.a(id, goodsId, 1, new BluedUIHttpResponse<BluedEntityA<LiveGiftSetBuyModel>>(iRequestHost) { // from class: com.blued.android.module.live_china.view.LiveGiftSetBannerView$buyGiftSet$1
             /* JADX INFO: Access modifiers changed from: protected */
             /* JADX WARN: Removed duplicated region for block: B:56:0x0236  */
@@ -322,7 +316,7 @@ public final class LiveGiftSetBannerView extends FrameLayout {
             public void onUIStart() {
                 super.onUIStart();
             }
-        }, this.f14480c);
+        }, this.c);
     }
 
     public final void b() {
@@ -363,7 +357,7 @@ public final class LiveGiftSetBannerView extends FrameLayout {
         }
         EventTrackLive.b(LiveProtos.Event.LIVE_SET_GIFT_EXPLAIN_PAGE_DETAIL_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.f);
         if (this.d != null) {
-            LiveGiftSetDialogFragment.Companion companion = LiveGiftSetDialogFragment.f12907a;
+            LiveGiftSetDialogFragment.Companion companion = LiveGiftSetDialogFragment.a;
             Fragment fragment = this.d;
             Intrinsics.a(fragment);
             companion.a(fragment, this.f, this.g);
@@ -392,22 +386,22 @@ public final class LiveGiftSetBannerView extends FrameLayout {
                     LiveGiftSetBannerView.this.getVb().b.setVisibility(0);
                 }
             }).start();
-            getVb().f12226c.clearAnimation();
-            getVb().f12226c.setAlpha(0.3f);
-            getVb().f12226c.setTranslationX(-DensityUtils.a(getContext(), 44.0f));
-            getVb().f12226c.animate().translationX(DensityUtils.a(getContext(), 307.0f)).setDuration(1000L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.view.LiveGiftSetBannerView$anim$2
+            getVb().c.clearAnimation();
+            getVb().c.setAlpha(0.3f);
+            getVb().c.setTranslationX(-DensityUtils.a(getContext(), 44.0f));
+            getVb().c.animate().translationX(DensityUtils.a(getContext(), 307.0f)).setDuration(1000L).setListener(new AnimatorListenerAdapter() { // from class: com.blued.android.module.live_china.view.LiveGiftSetBannerView$anim$2
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animation) {
                     Intrinsics.e(animation, "animation");
                     super.onAnimationEnd(animation);
-                    LiveGiftSetBannerView.this.getVb().f12226c.setVisibility(8);
+                    LiveGiftSetBannerView.this.getVb().c.setVisibility(8);
                     AppInfo.n().postDelayed(LiveGiftSetBannerView.this.getTransRunable(), 400L);
                 }
 
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationStart(Animator animator) {
                     super.onAnimationStart(animator);
-                    LiveGiftSetBannerView.this.getVb().f12226c.setVisibility(0);
+                    LiveGiftSetBannerView.this.getVb().c.setVisibility(0);
                 }
             }).setStartDelay(320L);
         }
@@ -440,7 +434,7 @@ public final class LiveGiftSetBannerView extends FrameLayout {
     }
 
     public final IRequestHost getActive() {
-        return this.f14480c;
+        return this.c;
     }
 
     public final boolean getAniming() {
@@ -484,7 +478,7 @@ public final class LiveGiftSetBannerView extends FrameLayout {
     }
 
     public final LiveGiftSetBannerViewBinding getVb() {
-        return (LiveGiftSetBannerViewBinding) this.f14479a.getValue();
+        return (LiveGiftSetBannerViewBinding) this.a.getValue();
     }
 
     public final int getWindowHeight() {
@@ -503,13 +497,13 @@ public final class LiveGiftSetBannerView extends FrameLayout {
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         a();
-        this.f14480c = null;
+        this.c = null;
         this.d = null;
         this.e = false;
     }
 
     public final void setActive(IRequestHost iRequestHost) {
-        this.f14480c = iRequestHost;
+        this.c = iRequestHost;
     }
 
     public final void setAniming(boolean z) {

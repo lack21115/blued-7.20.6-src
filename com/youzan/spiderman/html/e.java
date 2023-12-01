@@ -10,14 +10,14 @@ import java.io.File;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private l f41833a;
+    private l f28142a;
 
     public e(l lVar) {
-        this.f41833a = lVar;
+        this.f28142a = lVar;
     }
 
     public final void a() {
-        String c2 = this.f41833a.c();
+        String c2 = this.f28142a.c();
         File file = new File(com.youzan.spiderman.cache.g.i(), c2);
         if (file.exists()) {
             file.delete();
@@ -26,14 +26,14 @@ public final class e {
         if (file2.exists()) {
             file2.delete();
         }
-        h hVar = h.a.f41839a;
+        h hVar = h.a.f28148a;
         if (hVar.b(c2) != null) {
             hVar.a();
         }
     }
 
     public final void a(HtmlHeader htmlHeader, g gVar, byte[] bArr) {
-        String c2 = this.f41833a.c();
+        String c2 = this.f28142a.c();
         File file = new File(com.youzan.spiderman.cache.g.i(), c2);
         if (!FileUtil.writeContentToFile(file, HtmlHeader.toJson(htmlHeader))) {
             Logger.e("HtmlCacheWriter", "write html header to local failed, headerFile:" + file, new Object[0]);
@@ -45,7 +45,7 @@ public final class e {
             return;
         }
         com.youzan.spiderman.b.f.a().a(gVar.b());
-        h hVar = h.a.f41839a;
+        h hVar = h.a.f28148a;
         hVar.a(gVar);
         hVar.a();
     }

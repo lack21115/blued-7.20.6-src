@@ -5,13 +5,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/c.class */
 public class c<K, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap<K, V> f6905a;
+    private final LinkedHashMap<K, V> a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f6906c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -22,8 +18,8 @@ public class c<K, V> {
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
-        this.f6906c = i;
-        this.f6905a = new LinkedHashMap<>(0, 0.75f, true);
+        this.c = i;
+        this.a = new LinkedHashMap<>(0, 0.75f, true);
     }
 
     private void a(int i) {
@@ -31,7 +27,7 @@ public class c<K, V> {
             throw new IllegalArgumentException("maxSize <= 0");
         }
         synchronized (this) {
-            this.f6906c = i;
+            this.c = i;
         }
         b(i);
     }
@@ -44,7 +40,7 @@ public class c<K, V> {
         V remove;
         if (k != null) {
             synchronized (this) {
-                remove = this.f6905a.remove(k);
+                remove = this.a.remove(k);
                 if (remove != null) {
                     this.b -= c(k, remove);
                 }
@@ -63,18 +59,18 @@ public class c<K, V> {
         while (true) {
             synchronized (this) {
                 try {
-                    if (this.b < 0 || (this.f6905a.isEmpty() && this.b != 0)) {
+                    if (this.b < 0 || (this.a.isEmpty() && this.b != 0)) {
                         break;
                     } else if (this.b <= i) {
                         return;
                     } else {
-                        Map.Entry<K, V> next = this.f6905a.entrySet().size() > 0 ? this.f6905a.entrySet().iterator().next() : null;
+                        Map.Entry<K, V> next = this.a.entrySet().size() > 0 ? this.a.entrySet().iterator().next() : null;
                         if (next == null) {
                             return;
                         }
                         key = next.getKey();
                         value = next.getValue();
-                        this.f6905a.remove(key);
+                        this.a.remove(key);
                         this.b -= c(key, value);
                         this.f++;
                     }
@@ -86,7 +82,7 @@ public class c<K, V> {
             a(true, key, value, null);
         }
         this.b = 0;
-        throw new IllegalStateException(getClass().getName() + ".sizeOf() is reporting inconsistent results! --> size: " + this.b + ", map.isEmpty(): " + this.f6905a.isEmpty());
+        throw new IllegalStateException(getClass().getName() + ".sizeOf() is reporting inconsistent results! --> size: " + this.b + ", map.isEmpty(): " + this.a.isEmpty());
     }
 
     private int c() {
@@ -98,9 +94,9 @@ public class c<K, V> {
     }
 
     private int c(K k, V v) {
-        int a2 = a(k, v);
-        if (a2 >= 0) {
-            return a2;
+        int a = a(k, v);
+        if (a >= 0) {
+            return a;
         }
         throw new IllegalStateException("Negative size: " + k + "=" + v);
     }
@@ -108,7 +104,7 @@ public class c<K, V> {
     private int d() {
         int i;
         synchronized (this) {
-            i = this.f6906c;
+            i = this.c;
         }
         return i;
     }
@@ -156,13 +152,13 @@ public class c<K, V> {
     private Map<K, V> j() {
         LinkedHashMap linkedHashMap;
         synchronized (this) {
-            linkedHashMap = new LinkedHashMap(this.f6905a);
+            linkedHashMap = new LinkedHashMap(this.a);
         }
         return linkedHashMap;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:27:0x005b, code lost:
-        r6.f6905a.clear();
+        r6.a.clear();
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -183,7 +179,7 @@ public class c<K, V> {
     public final V a(K k) {
         if (k != null) {
             synchronized (this) {
-                V v = this.f6905a.get(k);
+                V v = this.a.get(k);
                 if (v != null) {
                     this.g++;
                     return v;
@@ -209,7 +205,7 @@ public class c<K, V> {
             synchronized (this) {
                 this.d++;
                 this.b += c(k, v);
-                put = this.f6905a.put(k, v);
+                put = this.a.put(k, v);
                 if (put != null) {
                     this.b -= c(k, put);
                 }
@@ -217,7 +213,7 @@ public class c<K, V> {
             if (put != null) {
                 a(false, k, put, v);
             }
-            b(this.f6906c);
+            b(this.c);
             return put;
         }
         throw new NullPointerException("key == null || value == null");
@@ -227,7 +223,7 @@ public class c<K, V> {
         String format;
         synchronized (this) {
             int i = this.g + this.h;
-            format = String.format("LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.f6906c), Integer.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(i != 0 ? (this.g * 100) / i : 0));
+            format = String.format("LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]", Integer.valueOf(this.c), Integer.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(i != 0 ? (this.g * 100) / i : 0));
         }
         return format;
     }

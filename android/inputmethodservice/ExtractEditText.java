@@ -1,5 +1,6 @@
 package android.inputmethodservice;
 
+import android.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.inputmethod.ExtractedText;
@@ -16,7 +17,7 @@ public class ExtractEditText extends EditText {
     }
 
     public ExtractEditText(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, 16842862);
+        super(context, attributeSet, R.attr.editTextStyle);
     }
 
     public ExtractEditText(Context context, AttributeSet attributeSet, int i) {
@@ -27,9 +28,7 @@ public class ExtractEditText extends EditText {
         super(context, attributeSet, i, i2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView
-    public void deleteText_internal(int i, int i2) {
+    protected void deleteText_internal(int i, int i2) {
         this.mIME.onExtractedDeleteText(i, i2);
     }
 
@@ -61,9 +60,8 @@ public class ExtractEditText extends EditText {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView
-    public void onSelectionChanged(int i, int i2) {
+    protected void onSelectionChanged(int i, int i2) {
         if (this.mSettingExtractedText != 0 || this.mIME == null || i < 0 || i2 < 0) {
             return;
         }
@@ -91,15 +89,11 @@ public class ExtractEditText extends EditText {
         return true;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView
-    public void replaceText_internal(int i, int i2, CharSequence charSequence) {
+    protected void replaceText_internal(int i, int i2, CharSequence charSequence) {
         this.mIME.onExtractedReplaceText(i, i2, charSequence);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView
-    public void setCursorPosition_internal(int i, int i2) {
+    protected void setCursorPosition_internal(int i, int i2) {
         this.mIME.onExtractedSelectionChanged(i, i2);
     }
 
@@ -118,9 +112,7 @@ public class ExtractEditText extends EditText {
         this.mIME = inputMethodService;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TextView
-    public void setSpan_internal(Object obj, int i, int i2, int i3) {
+    protected void setSpan_internal(Object obj, int i, int i2, int i3) {
         this.mIME.onExtractedSetSpan(obj, i, i2, i3);
     }
 
@@ -128,7 +120,6 @@ public class ExtractEditText extends EditText {
         this.mSettingExtractedText++;
     }
 
-    @Override // android.widget.TextView
     protected void viewClicked(InputMethodManager inputMethodManager) {
         if (this.mIME != null) {
             this.mIME.onViewClicked(false);

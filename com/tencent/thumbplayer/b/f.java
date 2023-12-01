@@ -4,11 +4,11 @@ package com.tencent.thumbplayer.b;
 class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f39224a = "base_video";
+    public static String f25533a = "base_video";
     private static int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f39225c;
+    private static int f25534c;
     private static int d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -22,8 +22,8 @@ class f {
             b = i3 + 1;
             return i3;
         } else if (i == 3) {
-            int i4 = f39225c;
-            f39225c = i4 + 1;
+            int i4 = f25534c;
+            f25534c = i4 + 1;
             return i4;
         } else {
             return -1;

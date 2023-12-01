@@ -8,23 +8,22 @@ import android.widget.TextView;
 import androidx.appcompat.R;
 import androidx.emoji2.viewsintegration.EmojiTextViewHelper;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatEmojiTextHelper.class */
-public class AppCompatEmojiTextHelper {
+class AppCompatEmojiTextHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TextView f1760a;
+    private final TextView f1712a;
     private final EmojiTextViewHelper b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AppCompatEmojiTextHelper(TextView textView) {
-        this.f1760a = textView;
+        this.f1712a = textView;
         this.b = new EmojiTextViewHelper(textView, false);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(AttributeSet attributeSet, int i) {
-        TypedArray obtainStyledAttributes = this.f1760a.getContext().obtainStyledAttributes(attributeSet, R.styleable.AppCompatTextView, i, 0);
+        TypedArray obtainStyledAttributes = this.f1712a.getContext().obtainStyledAttributes(attributeSet, R.styleable.AppCompatTextView, i, 0);
         try {
             boolean z = true;
             if (obtainStyledAttributes.hasValue(R.styleable.AppCompatTextView_emojiCompatEnabled)) {

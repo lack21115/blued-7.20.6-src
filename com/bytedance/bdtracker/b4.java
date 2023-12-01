@@ -8,25 +8,25 @@ import java.lang.reflect.Method;
 public final class b4 implements s3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Object f21198a;
+    public static Object f7592a;
     public static Class<?> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static Method f21199c;
+    public static Method f7593c;
 
     static {
         try {
             Class<?> cls = Class.forName("com.android.id.impl.IdProviderImpl");
             b = cls;
-            f21198a = cls.newInstance();
-            f21199c = b.getMethod("getOAID", Context.class);
+            f7592a = cls.newInstance();
+            f7593c = b.getMethod("getOAID", Context.class);
         } catch (Exception e) {
             z2.a("Api#static reflect exception! ", e);
         }
     }
 
     public static boolean a() {
-        return (b == null || f21198a == null || f21199c == null) ? false : true;
+        return (b == null || f7592a == null || f7593c == null) ? false : true;
     }
 
     @Override // com.bytedance.bdtracker.s3
@@ -35,8 +35,8 @@ public final class b4 implements s3 {
         Object invoke;
         try {
             s3.a aVar = new s3.a();
-            Method method = f21199c;
-            Object obj = f21198a;
+            Method method = f7593c;
+            Object obj = f7592a;
             if (obj != null && method != null) {
                 try {
                     invoke = method.invoke(obj, context);
@@ -44,12 +44,12 @@ public final class b4 implements s3 {
                 }
                 if (invoke != null) {
                     str = (String) invoke;
-                    aVar.f21305a = str;
+                    aVar.f7699a = str;
                     return aVar;
                 }
             }
             str = null;
-            aVar.f21305a = str;
+            aVar.f7699a = str;
             return aVar;
         } catch (Exception e2) {
             z2.a(e2);
@@ -59,6 +59,6 @@ public final class b4 implements s3 {
 
     @Override // com.bytedance.bdtracker.s3
     public boolean b(Context context) {
-        return (b == null || f21198a == null || f21199c == null) ? false : true;
+        return (b == null || f7592a == null || f7593c == null) ? false : true;
     }
 }

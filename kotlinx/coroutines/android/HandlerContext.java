@@ -19,9 +19,7 @@ import kotlinx.coroutines.DisposableHandle;
 public final class HandlerContext extends HandlerDispatcher implements Delay {
     private volatile HandlerContext _immediate;
     private final Handler b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f42863c;
+    private final String c;
     private final boolean d;
     private final HandlerContext e;
 
@@ -36,15 +34,15 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
     private HandlerContext(Handler handler, String str, boolean z) {
         super(null);
         this.b = handler;
-        this.f42863c = str;
+        this.c = str;
         this.d = z;
         this._immediate = z ? this : null;
         HandlerContext handlerContext = this._immediate;
         HandlerContext handlerContext2 = handlerContext;
         if (handlerContext == null) {
-            handlerContext2 = new HandlerContext(this.b, this.f42863c, true);
+            handlerContext2 = new HandlerContext(this.b, this.c, true);
             this._immediate = handlerContext2;
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
         this.e = handlerContext2;
     }
@@ -67,7 +65,7 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
         final Runnable runnable = new Runnable() { // from class: kotlinx.coroutines.android.HandlerContext$scheduleResumeAfterDelay$$inlined$Runnable$1
             @Override // java.lang.Runnable
             public final void run() {
-                CancellableContinuation.this.a((CoroutineDispatcher) this, (HandlerContext) Unit.f42314a);
+                CancellableContinuation.this.a((CoroutineDispatcher) this, (HandlerContext) Unit.a);
             }
         };
         this.b.postDelayed(runnable, RangesKt.b(j, 4611686018427387903L));
@@ -87,7 +85,7 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(Throwable th) {
                 a(th);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -122,7 +120,7 @@ public final class HandlerContext extends HandlerDispatcher implements Delay {
         String str = b;
         if (b == null) {
             HandlerContext handlerContext = this;
-            String str2 = handlerContext.f42863c;
+            String str2 = handlerContext.c;
             str = str2;
             if (str2 == null) {
                 str = handlerContext.b.toString();

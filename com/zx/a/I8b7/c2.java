@@ -11,7 +11,7 @@ public class c2 implements Runnable {
     public void run() {
         try {
             t2.o = 0;
-            u1.a.f42208a.f42207a.c(0);
+            u1.a.f28517a.f28516a.c(0);
         } catch (Exception e) {
             StringBuilder a2 = m2.a("卓信ID拒绝授权 error: ");
             a2.append(e.getMessage());

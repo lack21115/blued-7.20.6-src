@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FitemLiveLuckyBagSubtitleBinding.class */
 public final class FitemLiveLuckyBagSubtitleBinding implements ViewBinding {
+    private final ConstraintLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f11860a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f11860a;
+        return this.a;
     }
 }

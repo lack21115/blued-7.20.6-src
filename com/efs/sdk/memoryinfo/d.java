@@ -92,7 +92,7 @@ final class d implements UMMemoryMonitorApi {
             this.u = true;
             final b bVar = new b(context, efsReporter);
             this.w = bVar;
-            bVar.f21813a.getAllSdkConfig(new String[]{"apm_memperf_sampling_rate", "apm_memperf_collect_interval", "apm_memperf_collect_max_period_sec"}, new IConfigCallback() { // from class: com.efs.sdk.memoryinfo.b.1
+            bVar.f8206a.getAllSdkConfig(new String[]{"apm_memperf_sampling_rate", "apm_memperf_collect_interval", "apm_memperf_collect_max_period_sec"}, new IConfigCallback() { // from class: com.efs.sdk.memoryinfo.b.1
                 @Override // com.efs.sdk.base.observer.IConfigCallback
                 public final void onChange(Map<String, Object> map) {
                     Object obj;
@@ -136,7 +136,7 @@ final class d implements UMMemoryMonitorApi {
                                         final Handler handler2 = handler;
                                         final int i = parseInt2;
                                         final int i2 = parseInt3;
-                                        final e eVar = new e(bVar2.mContext, bVar2.f21813a);
+                                        final e eVar = new e(bVar2.mContext, bVar2.f8206a);
                                         final long elapsedRealtime = SystemClock.elapsedRealtime();
                                         handler2.post(new Runnable() { // from class: com.efs.sdk.memoryinfo.b.2
                                             @Override // java.lang.Runnable
@@ -190,7 +190,7 @@ final class d implements UMMemoryMonitorApi {
                                     final Handler handler22 = handler2;
                                     final int i = parseInt22;
                                     final int i2 = parseInt32;
-                                    final e eVar = new e(bVar2.mContext, bVar2.f21813a);
+                                    final e eVar = new e(bVar2.mContext, bVar2.f8206a);
                                     final long elapsedRealtime = SystemClock.elapsedRealtime();
                                     handler22.post(new Runnable() { // from class: com.efs.sdk.memoryinfo.b.2
                                         @Override // java.lang.Runnable

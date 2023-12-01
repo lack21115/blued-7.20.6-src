@@ -22,6 +22,6 @@ public class PngChunkICCP extends PngChunkSingle {
         int i = c2 + 2;
         int length = chunkRaw.d.length - i;
         this.i = new byte[length];
-        System.arraycopy((Object) chunkRaw.d, i, (Object) this.i, 0, length);
+        System.arraycopy(chunkRaw.d, i, this.i, 0, length);
     }
 }

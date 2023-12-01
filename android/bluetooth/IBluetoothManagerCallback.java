@@ -16,9 +16,8 @@ public interface IBluetoothManagerCallback extends IInterface {
         static final int TRANSACTION_onBluetoothServiceDown = 2;
         static final int TRANSACTION_onBluetoothServiceUp_0 = 1;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/bluetooth/IBluetoothManagerCallback$Stub$Proxy.class */
-        public static class Proxy implements IBluetoothManagerCallback {
+        private static class Proxy implements IBluetoothManagerCallback {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

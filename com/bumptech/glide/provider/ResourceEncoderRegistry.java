@@ -8,19 +8,18 @@ import java.util.List;
 public class ResourceEncoderRegistry {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<Entry<?>> f21037a = new ArrayList();
+    private final List<Entry<?>> f7431a = new ArrayList();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/provider/ResourceEncoderRegistry$Entry.class */
-    public static final class Entry<T> {
+    static final class Entry<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        final ResourceEncoder<T> f21038a;
+        final ResourceEncoder<T> f7432a;
         private final Class<T> b;
 
         Entry(Class<T> cls, ResourceEncoder<T> resourceEncoder) {
             this.b = cls;
-            this.f21038a = resourceEncoder;
+            this.f7432a = resourceEncoder;
         }
 
         boolean a(Class<?> cls) {
@@ -30,11 +29,11 @@ public class ResourceEncoderRegistry {
 
     public <Z> ResourceEncoder<Z> a(Class<Z> cls) {
         synchronized (this) {
-            int size = this.f21037a.size();
+            int size = this.f7431a.size();
             for (int i = 0; i < size; i++) {
-                Entry<?> entry = this.f21037a.get(i);
+                Entry<?> entry = this.f7431a.get(i);
                 if (entry.a(cls)) {
-                    return (ResourceEncoder<Z>) entry.f21038a;
+                    return (ResourceEncoder<Z>) entry.f7432a;
                 }
             }
             return null;
@@ -43,7 +42,7 @@ public class ResourceEncoderRegistry {
 
     public <Z> void a(Class<Z> cls, ResourceEncoder<Z> resourceEncoder) {
         synchronized (this) {
-            this.f21037a.add(new Entry<>(cls, resourceEncoder));
+            this.f7431a.add(new Entry<>(cls, resourceEncoder));
         }
     }
 }

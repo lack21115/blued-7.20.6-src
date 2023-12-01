@@ -74,25 +74,25 @@ public final class DistinguishedNameParser {
         if (i + 1 >= this.length) {
             throw new IllegalStateException("Malformed DN: " + this.dn);
         }
-        char c2 = this.chars[i];
+        char c = this.chars[i];
+        if (c >= '0' && c <= '9') {
+            i2 = c - '0';
+        } else if (c >= 'a' && c <= 'f') {
+            i2 = c - 'W';
+        } else if (c < 'A' || c > 'F') {
+            throw new IllegalStateException("Malformed DN: " + this.dn);
+        } else {
+            i2 = c - '7';
+        }
+        char c2 = this.chars[i + 1];
         if (c2 >= '0' && c2 <= '9') {
-            i2 = c2 - '0';
+            i3 = c2 - '0';
         } else if (c2 >= 'a' && c2 <= 'f') {
-            i2 = c2 - 'W';
+            i3 = c2 - 'W';
         } else if (c2 < 'A' || c2 > 'F') {
             throw new IllegalStateException("Malformed DN: " + this.dn);
         } else {
-            i2 = c2 - '7';
-        }
-        char c3 = this.chars[i + 1];
-        if (c3 >= '0' && c3 <= '9') {
-            i3 = c3 - '0';
-        } else if (c3 >= 'a' && c3 <= 'f') {
-            i3 = c3 - 'W';
-        } else if (c3 < 'A' || c3 > 'F') {
-            throw new IllegalStateException("Malformed DN: " + this.dn);
-        } else {
-            i3 = c3 - '7';
+            i3 = c2 - '7';
         }
         return (i2 << 4) + i3;
     }
@@ -123,17 +123,17 @@ public final class DistinguishedNameParser {
     }
 
     private char getUTF8() {
-        char c2;
+        char c;
         int i;
         int i2;
         int i3 = getByte(this.pos);
         this.pos++;
         if (i3 < 128) {
-            c2 = (char) i3;
+            c = (char) i3;
         } else {
-            c2 = '?';
+            c = '?';
             if (i3 >= 192) {
-                c2 = '?';
+                c = '?';
                 if (i3 <= 247) {
                     if (i3 <= 223) {
                         i = 1;
@@ -153,18 +153,18 @@ public final class DistinguishedNameParser {
                             return (char) i4;
                         }
                         this.pos++;
-                        c2 = '?';
+                        c = '?';
                         if (this.pos == this.length) {
                             break;
                         }
-                        c2 = '?';
+                        c = '?';
                         if (this.chars[this.pos] != '\\') {
                             break;
                         }
                         this.pos++;
                         int i7 = getByte(this.pos);
                         this.pos++;
-                        c2 = '?';
+                        c = '?';
                         if ((i7 & 192) != 128) {
                             break;
                         }
@@ -174,7 +174,7 @@ public final class DistinguishedNameParser {
                 }
             }
         }
-        return c2;
+        return c;
     }
 
     private String hexAV() {

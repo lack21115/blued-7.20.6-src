@@ -9,27 +9,23 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyKtvMusicListBinding.class */
 public final class FragmentYyKtvMusicListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SmartRefreshLayout f16519a;
+    public final SmartRefreshLayout a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16520c;
+    private final ConstraintLayout c;
 
     private FragmentYyKtvMusicListBinding(ConstraintLayout constraintLayout, SmartRefreshLayout smartRefreshLayout, RecyclerView recyclerView) {
-        this.f16520c = constraintLayout;
-        this.f16519a = smartRefreshLayout;
+        this.c = constraintLayout;
+        this.a = smartRefreshLayout;
         this.b = recyclerView;
     }
 
     public static FragmentYyKtvMusicListBinding a(View view) {
         String str;
-        SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
-        if (smartRefreshLayout != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_room_list);
-            if (recyclerView != null) {
-                return new FragmentYyKtvMusicListBinding((ConstraintLayout) view, smartRefreshLayout, recyclerView);
+        SmartRefreshLayout findViewById = view.findViewById(R.id.refresh_layout);
+        if (findViewById != null) {
+            RecyclerView findViewById2 = view.findViewById(R.id.rv_room_list);
+            if (findViewById2 != null) {
+                return new FragmentYyKtvMusicListBinding((ConstraintLayout) view, findViewById, findViewById2);
             }
             str = "rvRoomList";
         } else {
@@ -38,9 +34,8 @@ public final class FragmentYyKtvMusicListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16520c;
+        return this.c;
     }
 }

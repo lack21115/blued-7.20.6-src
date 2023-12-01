@@ -6,23 +6,23 @@ import android.graphics.drawable.Drawable;
 public abstract class BaseEntry {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f22123a;
+    private float f8516a;
     private Object b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Drawable f22124c;
+    private Drawable f8517c;
 
     public BaseEntry() {
-        this.f22123a = 0.0f;
+        this.f8516a = 0.0f;
         this.b = null;
-        this.f22124c = null;
+        this.f8517c = null;
     }
 
     public BaseEntry(float f) {
-        this.f22123a = 0.0f;
+        this.f8516a = 0.0f;
         this.b = null;
-        this.f22124c = null;
-        this.f22123a = f;
+        this.f8517c = null;
+        this.f8516a = f;
     }
 
     public BaseEntry(float f, Object obj) {
@@ -31,7 +31,7 @@ public abstract class BaseEntry {
     }
 
     public void a(float f) {
-        this.f22123a = f;
+        this.f8516a = f;
     }
 
     public void a(Object obj) {
@@ -39,11 +39,11 @@ public abstract class BaseEntry {
     }
 
     public float b() {
-        return this.f22123a;
+        return this.f8516a;
     }
 
     public Drawable g() {
-        return this.f22124c;
+        return this.f8517c;
     }
 
     public Object h() {

@@ -36,37 +36,31 @@ public class LiveCommonPopNew extends AttachPopupView {
     /* renamed from: com.blued.android.module.live_china.pop.LiveCommonPopNew$2  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveCommonPopNew$2.class */
     class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveCommonPopNew f13968a;
+        final /* synthetic */ LiveCommonPopNew a;
 
         @Override // java.lang.Runnable
         public void run() {
-            if (this.f13968a.t()) {
+            if (this.a.t()) {
                 return;
             }
-            this.f13968a.p();
+            this.a.p();
         }
     }
 
     /* renamed from: com.blued.android.module.live_china.pop.LiveCommonPopNew$4  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveCommonPopNew$4.class */
     class AnonymousClass4 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ View f13970a;
+        final /* synthetic */ View a;
         final /* synthetic */ XPopupCallback b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ boolean f13971c;
+        final /* synthetic */ boolean c;
         final /* synthetic */ LiveCommonPopNew d;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f13970a.getLocationOnScreen(this.d.y);
-            this.d.z[0] = this.f13970a.getMeasuredWidth();
-            this.d.z[1] = this.f13970a.getMeasuredHeight();
-            new XPopup.Builder(this.d.getContext()).a(this.b).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) false).a(PopupPosition.Top).b(this.f13971c).a(this.f13970a).a((BasePopupView) this.d).h();
+            this.a.getLocationOnScreen(this.d.y);
+            this.d.z[0] = this.a.getMeasuredWidth();
+            this.d.z[1] = this.a.getMeasuredHeight();
+            new XPopup.Builder(this.d.getContext()).a(this.b).a(PopupAnimation.ScaleAlphaFromCenter).d((Boolean) false).a(PopupPosition.Top).b(this.c).a(this.a).a((BasePopupView) this.d).h();
         }
     }
 

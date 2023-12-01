@@ -64,7 +64,7 @@ public class ITvInputSessionWrapper extends ITvInputSession.Stub implements Hand
     }
 
     public ITvInputSessionWrapper(Context context, TvInputService.Session session, InputChannel inputChannel) {
-        this.mCaller = new HandlerCaller(context, null, this, true);
+        this.mCaller = new HandlerCaller(context, (Looper) null, this, true);
         this.mTvInputSessionImpl = session;
         this.mChannel = inputChannel;
         if (inputChannel != null) {
@@ -87,7 +87,6 @@ public class ITvInputSessionWrapper extends ITvInputSession.Stub implements Hand
         this.mCaller.executeOrSendMessage(this.mCaller.obtainMessageIIII(4, i, i2, i3, 0));
     }
 
-    @Override // com.android.internal.os.HandlerCaller.Callback
     public void executeMessage(Message message) {
         if (this.mTvInputSessionImpl == null) {
             return;

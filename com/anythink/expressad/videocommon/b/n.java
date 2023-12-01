@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import com.anythink.expressad.foundation.h.t;
 import com.anythink.expressad.foundation.h.w;
 import com.anythink.expressad.videocommon.b.j;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +19,7 @@ import java.util.concurrent.ExecutorService;
 public final class n {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f8756c = "UnitCacheCtroller";
+    private static final String f5916c = "UnitCacheCtroller";
     private com.anythink.expressad.videocommon.d.b f;
     private ConcurrentHashMap<String, com.anythink.expressad.videocommon.d.b> g;
     private ExecutorService k;
@@ -47,7 +46,7 @@ public final class n {
     private int o = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    com.anythink.expressad.d.c f8757a = null;
+    com.anythink.expressad.d.c f5917a = null;
     com.anythink.expressad.d.c b = null;
     private Context j = com.anythink.core.common.b.n.a().g();
 
@@ -95,13 +94,13 @@ public final class n {
 
     private boolean a(com.anythink.expressad.foundation.d.c cVar, String str) {
         if (TextUtils.isEmpty(cVar.ar())) {
-            com.anythink.expressad.foundation.h.o.a(f8756c, "check template pre load ".concat(String.valueOf(str)));
+            com.anythink.expressad.foundation.h.o.a(f5916c, "check template pre load ".concat(String.valueOf(str)));
             if (TextUtils.isEmpty(str)) {
                 return true;
             }
             l a2 = l.a();
-            boolean d = a2.d(this.m + BridgeUtil.UNDERLINE_STR + cVar.Z() + BridgeUtil.UNDERLINE_STR + str);
-            com.anythink.expressad.foundation.h.o.a(f8756c, "check template 预加载情况：".concat(String.valueOf(d)));
+            boolean d = a2.d(this.m + "_" + cVar.Z() + "_" + str);
+            com.anythink.expressad.foundation.h.o.a(f5916c, "check template 预加载情况：".concat(String.valueOf(d)));
             return d;
         }
         return true;
@@ -111,7 +110,7 @@ public final class n {
         long p = cVar.p();
         long f = cVar.f();
         if (TextUtils.isEmpty(cVar.a())) {
-            com.anythink.expressad.foundation.h.o.a(f8756c, "checkVideoDownload video done return true");
+            com.anythink.expressad.foundation.h.o.a(f5916c, "checkVideoDownload video done return true");
             return true;
         } else if (i == 0) {
             if (cVar.n() == null || TextUtils.isEmpty(cVar.n().S())) {
@@ -135,21 +134,21 @@ public final class n {
     private static boolean a(String str, com.anythink.expressad.foundation.d.c cVar) {
         try {
         } catch (Throwable th) {
-            com.anythink.expressad.foundation.h.o.b(f8756c, th.getMessage(), th);
+            com.anythink.expressad.foundation.h.o.b(f5916c, th.getMessage(), th);
         }
         if (cVar.aB() != null && cVar.aB().size() > 0 && cVar.aB().contains(2)) {
-            com.anythink.expressad.foundation.h.o.b(f8756c, "Is not check endCard download status : ".concat(String.valueOf(str)));
+            com.anythink.expressad.foundation.h.o.b(f5916c, "Is not check endCard download status : ".concat(String.valueOf(str)));
             return true;
         } else if (!cVar.j() || t.f(str)) {
             if (w.a(str)) {
-                com.anythink.expressad.foundation.h.o.b(f8756c, "checkEndcardDownload endcardUrl is null return true");
+                com.anythink.expressad.foundation.h.o.b(f5916c, "checkEndcardDownload endcardUrl is null return true");
                 return true;
             }
             if (b(str, cVar)) {
-                com.anythink.expressad.foundation.h.o.b(f8756c, "checkEndcardDownload endcardUrl done return true");
+                com.anythink.expressad.foundation.h.o.b(f5916c, "checkEndcardDownload endcardUrl done return true");
                 return true;
             }
-            com.anythink.expressad.foundation.h.o.b(f8756c, "checkEndcardDownload endcardUrl return false");
+            com.anythink.expressad.foundation.h.o.b(f5916c, "checkEndcardDownload endcardUrl return false");
             return false;
         } else {
             return true;
@@ -172,7 +171,7 @@ public final class n {
             }
             return false;
         } catch (Throwable th) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 th.printStackTrace();
                 return false;
             }
@@ -185,11 +184,11 @@ public final class n {
         if (cVar != null) {
             if (cVar.ao() != -1) {
                 int ao = cVar.ao();
-                com.anythink.expressad.foundation.h.o.a(f8756c, "ready_rate(campaign): ".concat(String.valueOf(ao)));
+                com.anythink.expressad.foundation.h.o.a(f5916c, "ready_rate(campaign): ".concat(String.valueOf(ao)));
                 return ao;
             }
             i = d(cVar);
-            com.anythink.expressad.foundation.h.o.a(f8756c, "ready_rate(reward_unit_setting): ".concat(String.valueOf(i)));
+            com.anythink.expressad.foundation.h.o.a(f5916c, "ready_rate(reward_unit_setting): ".concat(String.valueOf(i)));
         }
         return i;
     }
@@ -247,7 +246,7 @@ public final class n {
                                 }
                             }
                         } catch (Exception e) {
-                            com.anythink.expressad.foundation.h.o.d(f8756c, "make sure your had put feeds jar into your project");
+                            com.anythink.expressad.foundation.h.o.d(f5916c, "make sure your had put feeds jar into your project");
                             return;
                         }
                     }
@@ -269,7 +268,7 @@ public final class n {
                     this.o = this.n.F();
                 }
             } catch (Exception e2) {
-                com.anythink.expressad.foundation.h.o.d(f8756c, "make sure your had put reward jar into your project");
+                com.anythink.expressad.foundation.h.o.d(f5916c, "make sure your had put reward jar into your project");
                 return;
             }
         } else {
@@ -277,17 +276,17 @@ public final class n {
                 if (!TextUtils.isEmpty(this.m)) {
                     com.anythink.expressad.d.b.a();
                     com.anythink.expressad.d.c c3 = com.anythink.expressad.d.b.c(com.anythink.expressad.foundation.b.a.b().e(), this.m);
-                    this.f8757a = c3;
+                    this.f5917a = c3;
                     if (c3 == null) {
-                        this.f8757a = com.anythink.expressad.d.c.c(this.m);
+                        this.f5917a = com.anythink.expressad.d.c.c(this.m);
                     }
-                    if (this.f8757a != null) {
-                        this.l = this.f8757a.i();
-                        this.o = this.f8757a.m();
+                    if (this.f5917a != null) {
+                        this.l = this.f5917a.i();
+                        this.o = this.f5917a.m();
                     }
                 }
             } catch (Exception e3) {
-                com.anythink.expressad.foundation.h.o.d(f8756c, "make sure your had put feeds jar into your project");
+                com.anythink.expressad.foundation.h.o.d(f5916c, "make sure your had put feeds jar into your project");
                 return;
             }
         }
@@ -352,17 +351,17 @@ public final class n {
     }
 
     private static boolean b(com.anythink.expressad.foundation.d.c cVar, String str) {
-        com.anythink.expressad.foundation.h.o.a(f8756c, "check template ".concat(String.valueOf(str)));
+        com.anythink.expressad.foundation.h.o.a(f5916c, "check template ".concat(String.valueOf(str)));
         if (cVar.j()) {
             return true;
         }
         if (cVar.aB() != null && cVar.aB().size() > 0 && cVar.aB().contains(1)) {
-            com.anythink.expressad.foundation.h.o.b(f8756c, "Is not check template download status");
+            com.anythink.expressad.foundation.h.o.b(f5916c, "Is not check template download status");
             return true;
         } else if (TextUtils.isEmpty(str) || cVar.av() != 0) {
             return true;
         } else {
-            com.anythink.expressad.foundation.h.o.a(f8756c, "check template 下载情况：" + i.a().c(str));
+            com.anythink.expressad.foundation.h.o.a(f5916c, "check template 下载情况：" + i.a().c(str));
             return i.a().c(str) != null;
         }
     }
@@ -373,20 +372,20 @@ public final class n {
 
     private static boolean b(String str, com.anythink.expressad.foundation.d.c cVar) {
         if (cVar.H() || TextUtils.isEmpty(str)) {
-            com.anythink.expressad.foundation.h.o.b(f8756c, "Campaign is Mraid, do not need download endcardurl or Campaign load timeout");
+            com.anythink.expressad.foundation.h.o.b(f5916c, "Campaign is Mraid, do not need download endcardurl or Campaign load timeout");
             return true;
         } else if (cVar.av() != 1 || c(cVar)) {
             if (cVar.aB() != null && cVar.aB().size() > 0 && cVar.aB().contains(2)) {
-                com.anythink.expressad.foundation.h.o.b(f8756c, "Is not check endCard download status : ".concat(String.valueOf(str)));
+                com.anythink.expressad.foundation.h.o.b(f5916c, "Is not check endCard download status : ".concat(String.valueOf(str)));
                 return true;
             } else if (w.b(i.a().c(str))) {
-                com.anythink.expressad.foundation.h.o.b(f8756c, "endcard zip 下载完成 return true endcardUrl:".concat(String.valueOf(str)));
+                com.anythink.expressad.foundation.h.o.b(f5916c, "endcard zip 下载完成 return true endcardUrl:".concat(String.valueOf(str)));
                 return true;
-            } else if (w.b(j.a.f8748a.b(str))) {
-                com.anythink.expressad.foundation.h.o.b(f8756c, "endcard url 源码 下载完成 return true endcardUrl:".concat(String.valueOf(str)));
+            } else if (w.b(j.a.f5908a.b(str))) {
+                com.anythink.expressad.foundation.h.o.b(f5916c, "endcard url 源码 下载完成 return true endcardUrl:".concat(String.valueOf(str)));
                 return true;
             } else {
-                com.anythink.expressad.foundation.h.o.b(f8756c, "checkEndcardZipOrSourceDownLoad endcardUrl return false endcardUrl:".concat(String.valueOf(str)));
+                com.anythink.expressad.foundation.h.o.b(f5916c, "checkEndcardZipOrSourceDownLoad endcardUrl return false endcardUrl:".concat(String.valueOf(str)));
                 return false;
             }
         } else {
@@ -424,7 +423,7 @@ public final class n {
             try {
                 return cVar.J() == 2;
             } catch (Throwable th) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     th.printStackTrace();
                     return false;
                 }
@@ -451,7 +450,7 @@ public final class n {
                 return this.n.v();
             }
         } catch (Throwable th) {
-            com.anythink.expressad.foundation.h.o.b(f8756c, th.getMessage(), th);
+            com.anythink.expressad.foundation.h.o.b(f5916c, th.getMessage(), th);
             return 100;
         }
     }
@@ -526,7 +525,7 @@ public final class n {
                     }
                 }
             } catch (Throwable th) {
-                com.anythink.expressad.foundation.h.o.d(f8756c, "cleanDisplayTask ERROR");
+                com.anythink.expressad.foundation.h.o.d(f5916c, "cleanDisplayTask ERROR");
             }
         }
     }
@@ -538,8 +537,8 @@ public final class n {
     private int h() {
         int i = 100;
         try {
-            if (this.f8757a != null) {
-                i = this.f8757a.f();
+            if (this.f5917a != null) {
+                i = this.f5917a.f();
             }
             return i;
         } catch (Exception e) {
@@ -610,7 +609,7 @@ public final class n {
                                 }
                             }
                             if (!z2) {
-                                com.anythink.expressad.foundation.h.o.b(f8756c, "UnitCache isReady ==== Campaign isAvailable = ".concat(String.valueOf(z2)));
+                                com.anythink.expressad.foundation.h.o.b(f5916c, "UnitCache isReady ==== Campaign isAvailable = ".concat(String.valueOf(z2)));
                             } else if ((!z || n.A()) && (z || !n.A())) {
                                 String I = n.I();
                                 String S = n.S();
@@ -626,36 +625,36 @@ public final class n {
                                     if (b(I, n)) {
                                         if (value.b()) {
                                             value.o();
-                                            com.anythink.expressad.foundation.h.o.b(f8756c, "isready endcard下载完 但是offer展示过 continue");
+                                            com.anythink.expressad.foundation.h.o.b(f5916c, "isready endcard下载完 但是offer展示过 continue");
                                         } else if (w.a(S)) {
-                                            com.anythink.expressad.foundation.h.o.b(f8756c, "endcard为基准 endcard和图片下载完成 videourl为空不用下载 return task");
+                                            com.anythink.expressad.foundation.h.o.b(f5916c, "endcard为基准 endcard和图片下载完成 videourl为空不用下载 return task");
                                             arrayList.add(value);
                                         } else if (a(value, b(n))) {
-                                            com.anythink.expressad.foundation.h.o.b(f8756c, "endcard为基准 endcard 图片 和 videourl 下载完成 return task");
+                                            com.anythink.expressad.foundation.h.o.b(f5916c, "endcard为基准 endcard 图片 和 videourl 下载完成 return task");
                                             arrayList.add(value);
                                         }
                                     }
                                     boolean isEmpty = TextUtils.isEmpty(value.m());
                                     int k = value.k();
-                                    com.anythink.expressad.foundation.h.o.a(f8756c, "isready unit state:".concat(String.valueOf(k)));
+                                    com.anythink.expressad.foundation.h.o.a(f5916c, "isready unit state:".concat(String.valueOf(k)));
                                     if (k != 5) {
                                         long c2 = value.c();
                                         if (value.k() == 1 && currentTimeMillis - c2 > this.l * 1000) {
                                             value.j();
                                             this.i.remove(map);
                                             i = i3 - 1;
-                                            com.anythink.expressad.foundation.h.o.b(f8756c, "isready download !timeout continue");
+                                            com.anythink.expressad.foundation.h.o.b(f5916c, "isready download !timeout continue");
                                         } else if (k == 4 || k == 2) {
                                             this.i.remove(map);
                                             i = i3 - 1;
-                                            com.anythink.expressad.foundation.h.o.b(f8756c, "isready stop continue");
+                                            com.anythink.expressad.foundation.h.o.b(f5916c, "isready stop continue");
                                         } else {
                                             if (k == 1) {
                                                 if (value.b()) {
-                                                    com.anythink.expressad.foundation.h.o.b(f8756c, "isready run 已经被展示过 continue");
+                                                    com.anythink.expressad.foundation.h.o.b(f5916c, "isready run 已经被展示过 continue");
                                                     i = i3;
                                                 } else if (!com.anythink.expressad.a.p && a(value, b(n)) && a(I, n)) {
-                                                    com.anythink.expressad.foundation.h.o.b(f8756c, "isready  IS_DOWANLOAD_FINSH_PLAY is :" + com.anythink.expressad.a.p);
+                                                    com.anythink.expressad.foundation.h.o.b(f5916c, "isready  IS_DOWANLOAD_FINSH_PLAY is :" + com.anythink.expressad.a.p);
                                                     arrayList.add(value);
                                                     i = i3;
                                                 }
@@ -674,27 +673,27 @@ public final class n {
                                         value.o();
                                         this.i.remove(map);
                                         i3--;
-                                        com.anythink.expressad.foundation.h.o.b(f8756c, "isready state == DownLoadConstant.DOWNLOAD_DONE 但是offer展示过 continue");
+                                        com.anythink.expressad.foundation.h.o.b(f5916c, "isready state == DownLoadConstant.DOWNLOAD_DONE 但是offer展示过 continue");
                                     } else if (!isEmpty) {
                                         value.l();
-                                        com.anythink.expressad.foundation.h.o.b(f8756c, "isready !isEffectivePath continue");
+                                        com.anythink.expressad.foundation.h.o.b(f5916c, "isready !isEffectivePath continue");
                                     } else if (!a(I, n)) {
-                                        com.anythink.expressad.foundation.h.o.b(f8756c, "isready done but continue");
+                                        com.anythink.expressad.foundation.h.o.b(f5916c, "isready done but continue");
                                         return null;
                                     } else {
-                                        com.anythink.expressad.foundation.h.o.b(f8756c, "isready videourl为基准 state＝done endcard 图片 和 videourl 下载完成 return task");
+                                        com.anythink.expressad.foundation.h.o.b(f5916c, "isready videourl为基准 state＝done endcard 图片 和 videourl 下载完成 return task");
                                         arrayList.add(value);
                                     }
                                 } else {
-                                    com.anythink.expressad.foundation.h.o.b(f8756c, "UnitCache isReady ====  templateZipDownload check false continue");
+                                    com.anythink.expressad.foundation.h.o.b(f5916c, "UnitCache isReady ====  templateZipDownload check false continue");
                                 }
                             } else {
-                                com.anythink.expressad.foundation.h.o.b(f8756c, "UnitCache isReady ==== isBidCampaign = " + z + " campaign.isBidCampaign() = " + n.A());
+                                com.anythink.expressad.foundation.h.o.b(f5916c, "UnitCache isReady ==== isBidCampaign = " + z + " campaign.isBidCampaign() = " + n.A());
                             }
                             i = i3;
                             i3 = i;
                         }
-                        com.anythink.expressad.foundation.h.o.b(f8756c, "UnitCache isReady ==== task 或者 campaign为空 continue");
+                        com.anythink.expressad.foundation.h.o.b(f5916c, "UnitCache isReady ==== task 或者 campaign为空 continue");
                         i = i3;
                         i3 = i;
                     }
@@ -758,7 +757,7 @@ public final class n {
         try {
             return a(i, z);
         } catch (Throwable th) {
-            com.anythink.expressad.foundation.h.o.b(f8756c, th.getMessage(), th);
+            com.anythink.expressad.foundation.h.o.b(f5916c, th.getMessage(), th);
             return null;
         }
     }
@@ -828,7 +827,7 @@ public final class n {
                             for (Map.Entry<String, c> entry : next.entrySet()) {
                                 c value = entry.getValue();
                                 if (value != null && value.k() == 1) {
-                                    com.anythink.expressad.foundation.h.o.b(f8756c, "暂停所有下载");
+                                    com.anythink.expressad.foundation.h.o.b(f5916c, "暂停所有下载");
                                     value.j();
                                     this.i.remove(next);
                                     return;
@@ -864,7 +863,7 @@ public final class n {
                     this.i.clear();
                 }
             } catch (Throwable th) {
-                com.anythink.expressad.foundation.h.o.d(f8756c, "campaignDownLoadTaskList clean failed");
+                com.anythink.expressad.foundation.h.o.d(f5916c, "campaignDownLoadTaskList clean failed");
             }
         }
         List<com.anythink.expressad.foundation.d.c> list = this.d;

@@ -1,6 +1,7 @@
 package com.soft.blued.ui.live.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,11 +25,11 @@ import java.util.List;
 public class LiveCategoryAdapter extends BaseQuickAdapter<LiveTabModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private LiveHomeFragment f31060a;
+    private LiveHomeFragment f17370a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f31061c;
+    private ImageView f17371c;
     private TextView d;
     private ImageView e;
     private ImageView f;
@@ -36,7 +37,7 @@ public class LiveCategoryAdapter extends BaseQuickAdapter<LiveTabModel, BaseView
 
     public LiveCategoryAdapter(LiveHomeFragment liveHomeFragment) {
         super(R.layout.live_category_item_view, null);
-        this.f31060a = liveHomeFragment;
+        this.f17370a = liveHomeFragment;
         this.b = liveHomeFragment.getContext();
         this.g = new LoadOptions();
         setNewData(new ArrayList());
@@ -50,7 +51,7 @@ public class LiveCategoryAdapter extends BaseQuickAdapter<LiveTabModel, BaseView
         if (baseViewHolder == null || liveTabModel == null) {
             return;
         }
-        this.f31061c = (ImageView) baseViewHolder.getView(R.id.iv_category);
+        this.f17371c = (ImageView) baseViewHolder.getView(R.id.iv_category);
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_category);
         this.d = textView;
         textView.setText(liveTabModel.name);
@@ -61,12 +62,12 @@ public class LiveCategoryAdapter extends BaseQuickAdapter<LiveTabModel, BaseView
         int i = 0;
         if (TextUtils.equals("15", liveTabModel.id)) {
             this.e.setVisibility(8);
-            if (this.f31060a.e) {
+            if (this.f17370a.e) {
                 this.f.setVisibility(0);
             } else {
                 this.f.setVisibility(8);
             }
-            str = this.f31060a.d ? liveTabModel.less_cate_icon : liveTabModel.more_cate_icon;
+            str = this.f17370a.d ? liveTabModel.less_cate_icon : liveTabModel.more_cate_icon;
         } else {
             ImageView imageView2 = this.e;
             if (!liveTabModel.showNew) {
@@ -76,25 +77,25 @@ public class LiveCategoryAdapter extends BaseQuickAdapter<LiveTabModel, BaseView
             this.f.setVisibility(8);
             str = liveTabModel.icon;
         }
-        ImageLoader.a(this.f31060a.getFragmentActive(), str).a(this.f31061c);
+        ImageLoader.a(this.f17370a.getFragmentActive(), str).a(this.f17371c);
         baseViewHolder.itemView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.adapter.LiveCategoryAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 if (TextUtils.equals("15", liveTabModel.id)) {
-                    LiveCategoryAdapter.this.f31060a.e = false;
-                    if (LiveCategoryAdapter.this.f31060a.d) {
-                        LiveCategoryAdapter.this.f31060a.z();
+                    LiveCategoryAdapter.this.f17370a.e = false;
+                    if (LiveCategoryAdapter.this.f17370a.d) {
+                        LiveCategoryAdapter.this.f17370a.z();
                     } else {
-                        LiveCategoryAdapter.this.f31060a.y();
+                        LiveCategoryAdapter.this.f17370a.y();
                     }
                     LiveCategoryAdapter.this.f.setVisibility(8);
                 } else if (CommonStringUtils.a(liveTabModel.id) == 18) {
-                    LiveCategoryAdapter.this.f31060a.a(baseViewHolder.getLayoutPosition());
+                    LiveCategoryAdapter.this.f17370a.a(baseViewHolder.getLayoutPosition());
                     LiveCategoryAdapter.this.notifyDataSetChanged();
-                    TerminalActivity.d(LiveCategoryAdapter.this.b, LiveFootPrintFragmentN.class, null);
+                    TerminalActivity.d(LiveCategoryAdapter.this.b, LiveFootPrintFragmentN.class, (Bundle) null);
                 } else {
-                    LiveCategoryAdapter.this.f31060a.a(baseViewHolder.getLayoutPosition());
+                    LiveCategoryAdapter.this.f17370a.a(baseViewHolder.getLayoutPosition());
                     LiveCategoryAdapter.this.notifyDataSetChanged();
                     LiveListTabFragment.a(LiveCategoryAdapter.this.b, liveTabModel.id, liveTabModel.name, liveTabModel.type);
                 }

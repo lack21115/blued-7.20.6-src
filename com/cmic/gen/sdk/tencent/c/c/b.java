@@ -8,17 +8,17 @@ public class b extends c {
     private final e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f21645c;
+    private boolean f8039c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(String str, e eVar, String str2, String str3) {
         super(str, eVar, str2, str3);
-        this.f21645c = false;
+        this.f8039c = false;
         this.b = eVar;
     }
 
     public void a(com.cmic.gen.sdk.tencent.a aVar) {
-        if (this.f21645c) {
+        if (this.f8039c) {
             return;
         }
         com.cmic.gen.sdk.tencent.c.b.a c2 = this.b.c();
@@ -37,7 +37,7 @@ public class b extends c {
         c2.n(c2.u(aVar.b("appkey")));
         this.b.a(c2);
         this.b.a(true);
-        this.f21646a = this.b.b().toString();
-        this.f21645c = true;
+        this.f8040a = this.b.b().toString();
+        this.f8039c = true;
     }
 }

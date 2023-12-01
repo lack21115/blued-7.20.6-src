@@ -13,11 +13,11 @@ import org.json.JSONObject;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public RandomAccessFile f38336a;
+    public RandomAccessFile f24645a;
     public FileChannel b;
 
     /* renamed from: c  reason: collision with root package name */
-    public JSONObject f38337c;
+    public JSONObject f24646c;
     public MappedByteBuffer d;
     public long e;
     public Runnable f;
@@ -28,11 +28,11 @@ public class e {
     public e(File file) throws IOException {
         byte[] bArr;
         byte[] a2;
-        this.f38337c = new JSONObject();
+        this.f24646c = new JSONObject();
         RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
-        this.f38336a = randomAccessFile;
+        this.f24645a = randomAccessFile;
         this.b = randomAccessFile.getChannel();
-        long length = this.f38336a.length();
+        long length = this.f24645a.length();
         this.e = length;
         if (length <= 10) {
             this.i = true;
@@ -69,11 +69,11 @@ public class e {
                 byte[] a4 = a(bArr, com.tencent.qimei.c.c.j().b());
                 a2 = a4 != null ? a4 : a(bArr, "");
             }
-            this.f38337c = new JSONObject(new String(a2, "ISO8859-1"));
+            this.f24646c = new JSONObject(new String(a2, "ISO8859-1"));
         } catch (Exception e) {
             e.getMessage();
         }
-        this.f38337c.toString();
+        this.f24646c.toString();
     }
 
     public static e a(Context context, String str) throws IOException {
@@ -93,7 +93,7 @@ public class e {
         Object obj2 = null;
         try {
             synchronized (this.g) {
-                obj = this.f38337c.get(str);
+                obj = this.f24646c.get(str);
                 obj2 = obj;
             }
             return obj;
@@ -118,10 +118,10 @@ public class e {
     public void a() {
         synchronized (this) {
             try {
-                this.f38337c = null;
+                this.f24646c = null;
                 this.h = true;
                 this.d.clear();
-                this.f38336a.close();
+                this.f24645a.close();
             } catch (Exception e) {
             }
         }

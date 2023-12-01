@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.a.kwai;
 
+import com.igexin.assist.sdk.AssistPushConsts;
 import com.kwad.sdk.core.report.y;
 import com.qq.e.comm.pi.IBidding;
 import org.json.JSONObject;
@@ -30,7 +31,7 @@ public final class bk implements com.kwad.sdk.core.d<y.b> {
         }
         bVar.akn = jSONObject.optInt("retainCodeType");
         bVar.ako = jSONObject.optInt("photoSizeStyle");
-        bVar.Ts = jSONObject.optString("payload");
+        bVar.Ts = jSONObject.optString(AssistPushConsts.MSG_TYPE_PAYLOAD);
         if (bVar.Ts == JSONObject.NULL) {
             bVar.Ts = "";
         }
@@ -141,7 +142,7 @@ public final class bk implements com.kwad.sdk.core.d<y.b> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "photoSizeStyle", bVar.ako);
         }
         if (bVar.Ts != null && !bVar.Ts.equals("")) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "payload", bVar.Ts);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, AssistPushConsts.MSG_TYPE_PAYLOAD, bVar.Ts);
         }
         if (bVar.akp != 0) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "deeplinkType", bVar.akp);

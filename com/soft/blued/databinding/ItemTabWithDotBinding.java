@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemTabWithDotBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29328a;
+    private final LinearLayout f15638a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29328a;
+        return this.f15638a;
     }
 }

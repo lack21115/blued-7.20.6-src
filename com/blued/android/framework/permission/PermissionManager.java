@@ -10,7 +10,6 @@ import android.util.Log;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.PermissionChecker;
 import com.blued.android.core.AppInfo;
-import com.igexin.assist.util.AssistUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,13 +17,9 @@ import java.util.Iterator;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/permission/PermissionManager.class */
 public class PermissionManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static PermissionCallbacks f9827a;
+    private static PermissionCallbacks a;
     private static HashMap<String, Integer> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f9828c = false;
+    private static boolean c = false;
     private static String d;
     private static String e;
 
@@ -75,9 +70,9 @@ public class PermissionManager {
             return;
         }
         if (permissionCallbacks != null) {
-            f9827a = permissionCallbacks;
+            a = permissionCallbacks;
         }
-        f9828c = true;
+        c = true;
         Bundle bundle = new Bundle();
         bundle.putStringArray("com.blued.android.framework.reqeust_permission_code", c2);
         Intent intent = new Intent(AppInfo.d(), PermissionActivity.class);
@@ -127,25 +122,25 @@ public class PermissionManager {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void b(String... strArr) {
-        f9828c = false;
-        if (f9827a != null) {
+        c = false;
+        if (a != null) {
             if (AppInfo.m()) {
                 Log.v("PermissionManager", "permission Denied or Cancel, " + Arrays.toString(strArr));
             }
-            f9827a.a(c(strArr));
-            f9827a = null;
+            a.a(c(strArr));
+            a = null;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public static void c() {
-        f9828c = false;
-        if (f9827a != null) {
+        c = false;
+        if (a != null) {
             if (AppInfo.m()) {
                 Log.v("PermissionManager", "permission Granted.");
             }
-            f9827a.U_();
-            f9827a = null;
+            a.U_();
+            a = null;
         }
     }
 
@@ -175,6 +170,6 @@ public class PermissionManager {
     }
 
     private static boolean d() {
-        return AssistUtils.BRAND_XIAOMI.equalsIgnoreCase(Build.MANUFACTURER);
+        return "xiaomi".equalsIgnoreCase(Build.MANUFACTURER);
     }
 }

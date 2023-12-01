@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.view.View;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/cardview/widget/CardViewApi21Impl.class */
-public class CardViewApi21Impl implements CardViewImpl {
+class CardViewApi21Impl implements CardViewImpl {
     private RoundRectDrawable a(CardViewDelegate cardViewDelegate) {
         return (RoundRectDrawable) cardViewDelegate.getCardBackground();
     }

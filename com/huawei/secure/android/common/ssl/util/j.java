@@ -14,7 +14,7 @@ public class j {
     private static final String b = "X509CertificateUtil";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23135c = "hmsrootcas.bks";
+    public static final String f9527c = "hmsrootcas.bks";
     public static final String d = "";
     public static final String e = "bks";
     public static final String f = "052root";
@@ -22,10 +22,10 @@ public class j {
     private static final String h = "huawei cbg application integration ca";
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23136a;
+    private Context f9528a;
 
     public j(Context context) {
-        this.f23136a = context;
+        this.f9528a = context;
     }
 
     public X509Certificate a() {
@@ -41,7 +41,7 @@ public class j {
         try {
             try {
                 keyStore = KeyStore.getInstance(e);
-                inputStream2 = this.f23136a.getAssets().open(str);
+                inputStream2 = this.f9528a.getAssets().open(str);
             } catch (IOException e2) {
                 e = e2;
                 inputStream = null;

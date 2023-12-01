@@ -1,7 +1,6 @@
 package com.opos.mobad.model.d;
 
 import android.content.Context;
-import com.android.ims.ImsReasonInfo;
 import com.autonavi.base.amap.mapcore.tools.GLMapStaticValue;
 import com.opos.mobad.b.a.y;
 import com.opos.mobad.model.d.m;
@@ -12,14 +11,14 @@ public class e extends a {
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26414c;
+    private String f12726c;
     private String d;
     private com.opos.mobad.model.b.d e;
 
     public e(Context context, String str, String str2, com.opos.mobad.model.b.c cVar, boolean z, m.a aVar) {
         super(context, str, cVar, z, new i(str, str2, true), aVar);
         this.b = context;
-        this.f26414c = str;
+        this.f12726c = str;
         this.d = str2;
     }
 
@@ -71,11 +70,11 @@ public class e extends a {
                             com.opos.cmn.an.f.a.b("cAdLoader", "cache data:", a2);
                             if (a2 != null && a2.h() != null && a2.h().size() > 0) {
                                 e eVar3 = e.this;
-                                e.this.a(eVar3.a(a2, eVar3.f26398a));
+                                e.this.a(eVar3.a(a2, eVar3.f12710a));
                                 return;
                             }
                             eVar = e.this;
-                            bVar = new com.opos.mobad.model.b.b(ImsReasonInfo.CODE_CALL_DROP_IWLAN_TO_LTE_UNAVAILABLE, "adItemList is null.");
+                            bVar = new com.opos.mobad.model.b.b(10004, "adItemList is null.");
                             eVar.a(bVar);
                             return;
                         }
@@ -99,7 +98,7 @@ public class e extends a {
 
     @Override // com.opos.mobad.model.d.a
     public void a(com.opos.mobad.model.b.c cVar) {
-        a(this.f26414c, this.d, cVar);
+        a(this.f12726c, this.d, cVar);
     }
 
     @Override // com.opos.mobad.model.d.a
@@ -113,7 +112,7 @@ public class e extends a {
         }
         com.opos.cmn.an.f.a.b("cAdLoader", "cache origin cache");
         c a2 = c.a(this.b);
-        String str = this.f26414c;
+        String str = this.f12726c;
         com.opos.mobad.model.b.d dVar = this.e;
         a2.a(str, dVar, dVar.h());
     }

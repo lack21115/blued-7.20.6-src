@@ -6,7 +6,7 @@ import c.t.m.g.d;
 public class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int[] f3835a = {0, 8, 10, 33, 65535, 50594049, 268435455, Integer.MAX_VALUE};
+    public static int[] f3787a = {0, 8, 10, 33, 65535, 50594049, 268435455, Integer.MAX_VALUE};
 
     public static boolean a(int i) {
         return i == d.a.CDMA.ordinal();
@@ -19,7 +19,7 @@ public class i {
         if (a(i)) {
             return true;
         }
-        return (i4 == 25840 || a(j, f3835a)) ? false : true;
+        return (i4 == 25840 || a(j, f3787a)) ? false : true;
     }
 
     public static boolean a(long j, int[] iArr) {

@@ -251,7 +251,7 @@ public abstract class AbsDownloadEngine implements WeakDownloadHandler.IHandler 
         int i;
         boolean z2;
         DownloadInfo downloadInfo2;
-        DownloadTask remove;
+        DownloadTask downloadTask2;
         if (downloadTask == null || (downloadInfo = downloadTask.getDownloadInfo()) == null) {
             return;
         }
@@ -286,12 +286,12 @@ public abstract class AbsDownloadEngine implements WeakDownloadHandler.IHandler 
             if (downloadInfo.canReStartAsyncTask()) {
                 downloadInfo.setAsyncHandleStatus(AsyncHandleStatus.ASYNC_HANDLE_RESTART);
             }
-            if (DownloadExpSwitchCode.isSwitchEnable(32768) && (remove = this.pengingTaskCache.remove(Integer.valueOf(id))) != null) {
-                downloadTask.copyListenerFromPendingTask(remove);
+            if (DownloadExpSwitchCode.isSwitchEnable(32768) && (downloadTask2 = (DownloadTask) this.pengingTaskCache.remove(Integer.valueOf(id))) != null) {
+                downloadTask.copyListenerFromPendingTask(downloadTask2);
             }
             long uptimeMillis = SystemClock.uptimeMillis();
-            DownloadTask downloadTask2 = this.downloadTaskMap.get(id);
-            if (downloadTask2 == null || (downloadInfo2 = downloadTask2.getDownloadInfo()) == null) {
+            DownloadTask downloadTask3 = this.downloadTaskMap.get(id);
+            if (downloadTask3 == null || (downloadInfo2 = downloadTask3.getDownloadInfo()) == null) {
                 i = 0;
                 z2 = false;
             } else {

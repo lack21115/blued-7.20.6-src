@@ -44,13 +44,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/HornViewNew.class */
 public class HornViewNew extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f14323a;
+    private Context a;
     private LayoutInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f14324c;
+    private View c;
     private View d;
     private View e;
     private ScrollTextViewNew f;
@@ -74,22 +70,22 @@ public class HornViewNew extends LinearLayout {
     public HornViewNew(Context context) {
         super(context);
         this.m = new ArrayList();
-        this.f14323a = context;
+        this.a = context;
         b();
     }
 
     public HornViewNew(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.m = new ArrayList();
-        this.f14323a = context;
+        this.a = context;
         b();
     }
 
     private void b() {
-        LayoutInflater from = LayoutInflater.from(this.f14323a);
+        LayoutInflater from = LayoutInflater.from(this.a);
         this.b = from;
         View inflate = from.inflate(R.layout.live_horn_layout_new, (ViewGroup) this, true);
-        this.f14324c = inflate.findViewById(R.id.horn_layout);
+        this.c = inflate.findViewById(R.id.horn_layout);
         this.d = inflate.findViewById(R.id.ll_bar);
         this.e = inflate.findViewById(R.id.fl_horn_icon_root);
         this.f = (ScrollTextViewNew) inflate.findViewById(R.id.horn_text);
@@ -99,7 +95,7 @@ public class HornViewNew extends LinearLayout {
         this.j = (ImageView) inflate.findViewById(R.id.horn_icon);
         this.k = (ScanningImageView) inflate.findViewById(R.id.scanning_bar);
         this.l = (ScanningImageView) inflate.findViewById(R.id.scanning_icon);
-        this.f14324c.setVisibility(8);
+        this.c.setVisibility(8);
         this.f.setVisibility(4);
     }
 
@@ -132,14 +128,14 @@ public class HornViewNew extends LinearLayout {
             @Override // com.blued.android.module.live_china.view.ScrollTextViewNew.OnScrollListener
             public void a() {
                 HornViewNew.this.f.setVisibility(4);
-                HornViewNew.this.f14324c.startAnimation(alphaAnimation);
+                HornViewNew.this.c.startAnimation(alphaAnimation);
             }
         });
         alphaAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.live_china.view.HornViewNew.9
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
                 HornViewNew.this.m.remove(liveHornModelNew);
-                HornViewNew.this.f14324c.setVisibility(8);
+                HornViewNew.this.c.setVisibility(8);
                 HornViewNew.this.n = false;
                 HornViewNew.this.c();
             }
@@ -297,7 +293,7 @@ public class HornViewNew extends LinearLayout {
                 }, 500L);
             }
             setScrollText(liveHornModelNew);
-            this.f14324c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.HornViewNew.1
+            this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.view.HornViewNew.1
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -341,9 +337,9 @@ public class HornViewNew extends LinearLayout {
                 public void onAnimationStart(Animation animation) {
                 }
             });
-            this.f14324c.setVisibility(0);
-            this.f14324c.clearAnimation();
-            this.f14324c.startAnimation(translateAnimation);
+            this.c.setVisibility(0);
+            this.c.clearAnimation();
+            this.c.startAnimation(translateAnimation);
             EventTrackLive.e(LiveProtos.Event.LIVE_HORN_SHOW, liveHornModelNew.lid, liveHornModelNew.uid, String.valueOf(liveHornModelNew.scene), liveHornModelNew.report_id);
         }
     }

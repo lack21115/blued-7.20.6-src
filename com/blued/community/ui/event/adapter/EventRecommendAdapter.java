@@ -18,25 +18,22 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/adapter/EventRecommendAdapter.class */
 public final class EventRecommendAdapter extends BaseQuickAdapter<EventDetailsModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f19515a;
+    private final IRequestHost a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EventRecommendAdapter(IRequestHost fragmentActive) {
         super(R.layout.item_event_recommend);
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f19515a = fragmentActive;
+        this.a = fragmentActive;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, EventDetailsModel item) {
         String str;
         Intrinsics.e(helper, "helper");
         Intrinsics.e(item, "item");
-        ImageLoader.a(this.f19515a, item.pic).b(R.drawable.event_avatar_square).a((ImageView) helper.getView(R.id.iv_event_avatar));
+        ImageLoader.a(this.a, item.pic).b(R.drawable.event_avatar_square).a((ImageView) helper.getView(R.id.iv_event_avatar));
         helper.setText(R.id.tv_event_name, item.name);
         helper.setText(R.id.tv_event_time, TimeAndDateUtils.c(TimeAndDateUtils.j(item.activity_date), true));
         ImageView imageView = (ImageView) helper.getView(R.id.iv_event_address);

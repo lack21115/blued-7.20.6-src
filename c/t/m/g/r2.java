@@ -57,7 +57,7 @@ public class r2 {
             byteArrayOutputStream.close();
             return byteArray;
         } catch (Throwable th) {
-            return k2.f3860a;
+            return k2.f3812a;
         }
     }
 }

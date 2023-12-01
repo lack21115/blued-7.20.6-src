@@ -9,11 +9,11 @@ import java.util.ArrayDeque;
 public abstract class g<I extends e, O extends f, E extends Exception> implements c<I, O, E> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Thread f7229a;
+    private final Thread f4390a;
     private final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayDeque<I> f7230c = new ArrayDeque<>();
+    private final ArrayDeque<I> f4391c = new ArrayDeque<>();
     private final ArrayDeque<O> d = new ArrayDeque<>();
     private final I[] e;
     private final O[] f;
@@ -49,7 +49,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
                         g.a(g.this);
                     }
                 };
-                this.f7229a = thread;
+                this.f4390a = thread;
                 thread.start();
                 return;
             }
@@ -120,7 +120,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
             if (this.l) {
                 return false;
             }
-            I removeFirst = this.f7230c.removeFirst();
+            I removeFirst = this.f4391c.removeFirst();
             O[] oArr = this.f;
             int i = this.h - 1;
             this.h = i;
@@ -163,14 +163,14 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
     }
 
     private boolean p() {
-        return !this.f7230c.isEmpty() && this.h > 0;
+        return !this.f4391c.isEmpty() && this.h > 0;
     }
 
     public final void a(I i) {
         synchronized (this.b) {
             l();
             com.anythink.expressad.exoplayer.k.a.a(i == this.i);
-            this.f7230c.addLast(i);
+            this.f4391c.addLast(i);
             m();
             this.i = null;
         }
@@ -199,8 +199,8 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
                 b((g<I, O, E>) this.i);
                 this.i = null;
             }
-            while (!this.f7230c.isEmpty()) {
-                b((g<I, O, E>) this.f7230c.removeFirst());
+            while (!this.f4391c.isEmpty()) {
+                b((g<I, O, E>) this.f4391c.removeFirst());
             }
             while (!this.d.isEmpty()) {
                 b((g<I, O, E>) this.d.removeFirst());
@@ -215,7 +215,7 @@ public abstract class g<I extends e, O extends f, E extends Exception> implement
             this.b.notify();
         }
         try {
-            this.f7229a.join();
+            this.f4390a.join();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

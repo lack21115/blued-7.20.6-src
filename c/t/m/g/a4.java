@@ -16,7 +16,6 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.os.SystemClock;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.igexin.assist.util.AssistUtils;
 import com.tencent.map.geolocation.TencentGeofence;
 import com.tencent.map.geolocation.TencentLocation;
@@ -37,11 +36,11 @@ import java.util.Map;
 public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, TencentLocationListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f3742a;
+    public final Context f3694a;
     public final p4 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final PowerManager.WakeLock f3743c;
+    public final PowerManager.WakeLock f3695c;
     public final PowerManager.WakeLock d;
     public final b e;
     public final d f;
@@ -67,7 +66,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
             } else if (i != 2) {
             } else {
                 a4.b("handleMessage: mock alarm --> wakeup");
-                a4.this.f3742a.sendBroadcast(a4.this.b());
+                a4.this.f3694a.sendBroadcast(a4.this.b());
             }
         }
     }
@@ -76,19 +75,19 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     public static class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public final List<x3> f3745a = new LinkedList();
+        public final List<x3> f3697a = new LinkedList();
         public boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f3746c = 60000;
+        public long f3698c = 60000;
         public Location d = null;
         public boolean e = false;
         public final float[] f = {-1.0f, -1.0f};
 
         public void a() {
-            this.f3745a.clear();
+            this.f3697a.clear();
             this.b = false;
-            this.f3746c = 60000L;
+            this.f3698c = 60000L;
             this.d = null;
             this.e = false;
         }
@@ -98,39 +97,39 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     public final class d implements TxGeofenceManagerState {
 
         /* renamed from: a  reason: collision with root package name */
-        public LinkedList<TencentLocation> f3747a;
+        public LinkedList<TencentLocation> f3699a;
         public List<Map<String, String>> b;
 
         public d() {
-            this.f3747a = new LinkedList<>();
+            this.f3699a = new LinkedList<>();
             this.b = new ArrayList();
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
         public void add(int i, TencentLocation tencentLocation) {
             if (i == 0) {
-                this.f3747a.add(tencentLocation);
+                this.f3699a.add(tencentLocation);
             } else {
-                this.f3747a.add(q5.q.a(System.currentTimeMillis()));
+                this.f3699a.add(q5.q.a(System.currentTimeMillis()));
             }
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
         public long getLastInterval() {
-            return a4.this.g.f3746c;
+            return a4.this.g.f3698c;
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
         public TencentLocation getLastLocation() {
-            return this.f3747a.isEmpty() ? q5.q : this.f3747a.getLast();
+            return this.f3699a.isEmpty() ? q5.q : this.f3699a.getLast();
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
         public long getLastLocationTime() {
-            if (this.f3747a.isEmpty()) {
+            if (this.f3699a.isEmpty()) {
                 return 0L;
             }
-            return this.f3747a.getLast().getTime();
+            return this.f3699a.getLast().getTime();
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
@@ -144,25 +143,25 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
         public String getLocationTimes() {
-            int size = this.f3747a.size();
-            Iterator<TencentLocation> it = this.f3747a.iterator();
+            int size = this.f3699a.size();
+            Iterator<TencentLocation> it = this.f3699a.iterator();
             int i = 0;
             while (it.hasNext()) {
                 if (it.next() == q5.q) {
                     i++;
                 }
             }
-            return size + BridgeUtil.SPLIT_MARK + i;
+            return size + "/" + i;
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
         public List<TencentLocation> getLocations() {
-            return new ArrayList(this.f3747a);
+            return new ArrayList(this.f3699a);
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
         public long getNextLocationTime() {
-            return getLastLocationTime() + a4.this.g.f3746c;
+            return getLastLocationTime() + a4.this.g.f3698c;
         }
 
         @Override // com.tencent.map.geolocation.fence.TxGeofenceManagerState
@@ -190,10 +189,10 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
         this.i = false;
         this.k = TencentLocationRequest.create().setRequestLevel(0).setInterval(0L);
         this.m = 1.0d;
-        this.f3742a = context;
+        this.f3694a = context;
         this.b = new p4(t3.a(context));
-        PowerManager powerManager = (PowerManager) this.f3742a.getSystemService("power");
-        this.f3743c = powerManager.newWakeLock(1, "GeofenceManager");
+        PowerManager powerManager = (PowerManager) this.f3694a.getSystemService(Context.POWER_SERVICE);
+        this.f3695c = powerManager.newWakeLock(1, "GeofenceManager");
         PowerManager.WakeLock newWakeLock = powerManager.newWakeLock(1, "tencent_location");
         this.d = newWakeLock;
         newWakeLock.setReferenceCounted(false);
@@ -225,7 +224,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     }
 
     public final PendingIntent a(long j) {
-        AlarmManager alarmManager = (AlarmManager) this.f3742a.getSystemService("alarm");
+        AlarmManager alarmManager = (AlarmManager) this.f3694a.getSystemService("alarm");
         PendingIntent pendingIntent = null;
         if (alarmManager == null) {
             return null;
@@ -266,12 +265,12 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     }
 
     public final void a(PendingIntent pendingIntent, Intent intent) {
-        this.f3743c.acquire();
+        this.f3695c.acquire();
         try {
-            pendingIntent.send(this.f3742a, 0, intent, this, null);
+            pendingIntent.send(this.f3694a, 0, intent, this, null);
         } catch (PendingIntent.CanceledException e) {
             b(null, pendingIntent);
-            this.f3743c.release();
+            this.f3695c.release();
         }
     }
 
@@ -282,9 +281,9 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
         }
         String str = "removeFence: fence=" + tencentGeofence;
         synchronized (this.g) {
-            Iterator<x3> it = this.g.f3745a.iterator();
+            Iterator<x3> it = this.g.f3697a.iterator();
             while (it.hasNext()) {
-                if (tencentGeofence.equals(it.next().f4053a)) {
+                if (tencentGeofence.equals(it.next().f4005a)) {
                     it.remove();
                 }
             }
@@ -300,7 +299,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
         String str = "addFence: , geofence=" + tencentGeofence + ", intent=" + pendingIntent;
         x3 x3Var = new x3(tencentGeofence, tencentGeofence.getExpireAt(), "packageName", pendingIntent);
         c cVar = this.g;
-        List<x3> list = cVar.f3745a;
+        List<x3> list = cVar.f3697a;
         synchronized (cVar) {
             int size = list.size();
             while (true) {
@@ -309,7 +308,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
                     break;
                 }
                 x3 x3Var2 = list.get(i);
-                if (tencentGeofence.equals(x3Var2.f4053a) && pendingIntent.equals(x3Var2.d)) {
+                if (tencentGeofence.equals(x3Var2.f4005a) && pendingIntent.equals(x3Var2.d)) {
                     list.remove(i);
                     break;
                 }
@@ -331,7 +330,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
             Location e = e();
             b("updateFences: fresh_location=" + e);
             ArrayList arrayList = new ArrayList();
-            List<x3> list = this.g.f3745a;
+            List<x3> list = this.g.f3697a;
             boolean isEmpty = list.isEmpty() ^ true;
             if (e != null) {
                 y3.a(e);
@@ -389,7 +388,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
                         j = 305000;
                     }
                 }
-                this.g.f3746c = j;
+                this.g.f3698c = j;
                 boolean z2 = z && e == null;
                 b(String.format(Locale.getDefault(), "updateFences: needUpdates=%s, interval=%d, minDist=%5g, speed=%.2f, reschedule=%s, rate=%.2f", Boolean.valueOf(isEmpty), Long.valueOf(j), Double.valueOf(d2), Double.valueOf(f), Boolean.valueOf(z2), Double.valueOf(this.m)));
                 if (!this.g.b) {
@@ -409,7 +408,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
             }
             HashMap hashMap = new HashMap();
             for (x3 x3Var : list) {
-                hashMap.put(x3Var.f4053a.getTag(), x3Var.toString());
+                hashMap.put(x3Var.f4005a.getTag(), x3Var.toString());
             }
             this.f.b.add(hashMap);
         }
@@ -437,13 +436,13 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     public final void b(TencentGeofence tencentGeofence, PendingIntent pendingIntent) {
         String str = "removeFence: fence=" + tencentGeofence + ", intent=" + pendingIntent;
         synchronized (this.g) {
-            Iterator<x3> it = this.g.f3745a.iterator();
+            Iterator<x3> it = this.g.f3697a.iterator();
             while (it.hasNext()) {
                 x3 next = it.next();
                 if (next.d.equals(pendingIntent)) {
                     if (tencentGeofence == null) {
                         it.remove();
-                    } else if (tencentGeofence.equals(next.f4053a)) {
+                    } else if (tencentGeofence.equals(next.f4005a)) {
                         it.remove();
                     }
                 }
@@ -453,15 +452,15 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     }
 
     public final PendingIntent c() {
-        return Build.VERSION.SDK_INT >= 31 ? PendingIntent.getBroadcast(this.f3742a, 0, b(), 201326592) : PendingIntent.getBroadcast(this.f3742a, 0, b(), 134217728);
+        return Build.VERSION.SDK_INT >= 31 ? PendingIntent.getBroadcast(this.f3694a, 0, b(), 201326592) : PendingIntent.getBroadcast(this.f3694a, 0, b(), 134217728);
     }
 
     public void c(String str) {
         a();
         synchronized (this.g) {
-            Iterator<x3> it = this.g.f3745a.iterator();
+            Iterator<x3> it = this.g.f3697a.iterator();
             while (it.hasNext()) {
-                TencentGeofence tencentGeofence = it.next().f4053a;
+                TencentGeofence tencentGeofence = it.next().f4005a;
                 if (tencentGeofence == null || TextUtils.equals(tencentGeofence.getTag(), str)) {
                     it.remove();
                 }
@@ -475,7 +474,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
             return;
         }
         k();
-        this.f3742a.unregisterReceiver(this);
+        this.f3694a.unregisterReceiver(this);
         synchronized (this.g) {
             Arrays.fill(this.g.f, -1.0f);
             j();
@@ -485,7 +484,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     }
 
     public final void d(String str) {
-        if (a6.c(this.f3742a)) {
+        if (a6.c(this.f3694a)) {
             if (this.g.e) {
                 return;
             }
@@ -500,7 +499,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
     public final Location e() {
         c cVar = this.g;
         Location location = cVar.d;
-        List<x3> list = cVar.f3745a;
+        List<x3> list = cVar.f3697a;
         Location location2 = location;
         if (location == null) {
             location2 = location;
@@ -525,18 +524,18 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
 
     public final double f() {
         float f;
-        if (z3.a(this.f3742a)) {
+        if (z3.a(this.f3694a)) {
             return 1.0d;
         }
         float f2 = 1.0f;
         float f3 = 25.0f;
-        if (h6.b(t3.a(this.f3742a))) {
+        if (h6.b(t3.a(this.f3694a))) {
             f3 = (float) (25.0f * 0.6d);
         } else {
             f2 = 3.0f;
         }
         if (this.g.f[0] < f2) {
-            return a6.d(this.f3742a) ? f3 * 0.3d : f3;
+            return a6.d(this.f3694a) ? f3 * 0.3d : f3;
         }
         double min = (Math.min(Math.max(f2, f), 10.0f + f3) * 0.8d) + ((f3 + f2) * 0.1d);
         double d2 = f2;
@@ -553,7 +552,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
         intentFilter.addAction("com.tencent.map.geolocation.wakeup");
         intentFilter.addAction(Intent.ACTION_POWER_DISCONNECTED);
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        this.f3742a.registerReceiver(this, intentFilter, null, this.e);
+        this.f3694a.registerReceiver(this, intentFilter, null, this.e);
     }
 
     public void h() {
@@ -566,9 +565,9 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
 
     public final void i() {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        Iterator<x3> it = this.g.f3745a.iterator();
+        Iterator<x3> it = this.g.f3697a.iterator();
         while (it.hasNext()) {
-            if (it.next().f4054c < elapsedRealtime) {
+            if (it.next().f4006c < elapsedRealtime) {
                 it.remove();
             }
         }
@@ -607,12 +606,12 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
                     b("onLocationChanged: fresh location got --> update fences");
                     a(false);
                 } else {
-                    this.g.f3746c = 60000L;
+                    this.g.f3698c = 60000L;
                     this.f.add(i, tencentLocation);
                 }
                 if (this.g.b) {
-                    b("onLocationChanged: set a new repeat alarm, interval=" + this.g.f3746c);
-                    a(this.g.f3746c);
+                    b("onLocationChanged: set a new repeat alarm, interval=" + this.g.f3698c);
+                    a(this.g.f3698c);
                 }
             }
             if (this.d.isHeld()) {
@@ -632,7 +631,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
                 }
             } else if ("com.tencent.map.geolocation.wakeup".equals(action)) {
                 try {
-                    b4.a(this.f3742a);
+                    b4.a(this.f3694a);
                     this.e.removeMessages(2);
                     e("onReceive: alarm --> schedule update fence");
                 } catch (Exception e) {
@@ -643,10 +642,10 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
                     d("onReceive: power_disconnected --> schedule update fence");
                 }
             } else if ("android.net.conn.CONNECTIVITY_CHANGE".equals(action)) {
-                if (!a6.c(this.f3742a)) {
+                if (!a6.c(this.f3694a)) {
                     b("onReceive: disconnected and stop location updates temporaryly");
                     this.g.b = false;
-                    this.g.f3746c = 60000L;
+                    this.g.f3698c = 60000L;
                     k();
                 }
                 d("onReceive: connected and no_fresh_location --> schedule update fence");
@@ -656,7 +655,7 @@ public class a4 extends BroadcastReceiver implements PendingIntent.OnFinished, T
 
     @Override // android.app.PendingIntent.OnFinished
     public void onSendFinished(PendingIntent pendingIntent, Intent intent, int i, String str, Bundle bundle) {
-        this.f3743c.release();
+        this.f3695c.release();
     }
 
     @Override // com.tencent.map.geolocation.TencentLocationListener

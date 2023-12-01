@@ -8,21 +8,21 @@ import java.io.File;
 public class a extends c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f21395a;
+    private static volatile a f7789a;
 
     public static a b() {
-        if (f21395a == null) {
+        if (f7789a == null) {
             synchronized (a.class) {
                 try {
-                    if (f21395a == null) {
-                        f21395a = new a();
+                    if (f7789a == null) {
+                        f7789a = new a();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21395a;
+        return f7789a;
     }
 
     @Override // com.bytedance.pangle.c

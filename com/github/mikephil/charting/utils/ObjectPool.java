@@ -6,11 +6,11 @@ import com.github.mikephil.charting.utils.ObjectPool.Poolable;
 public class ObjectPool<T extends Poolable> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f22205a;
+    private static int f8598a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f22206c;
+    private int f8599c;
     private Object[] d;
     private int e;
     private T f;
@@ -28,7 +28,7 @@ public class ObjectPool<T extends Poolable> {
         if (i <= 0) {
             throw new IllegalArgumentException("Object Pool must be instantiated with a capacity greater than 0!");
         }
-        this.f22206c = i;
+        this.f8599c = i;
         this.d = new Object[i];
         this.e = 0;
         this.f = t;
@@ -41,8 +41,8 @@ public class ObjectPool<T extends Poolable> {
         synchronized (ObjectPool.class) {
             try {
                 objectPool = new ObjectPool(i, poolable);
-                objectPool.b = f22205a;
-                f22205a++;
+                objectPool.b = f8598a;
+                f8598a++;
             } catch (Throwable th) {
                 throw th;
             }
@@ -55,7 +55,7 @@ public class ObjectPool<T extends Poolable> {
     }
 
     private void b(float f) {
-        int i = this.f22206c;
+        int i = this.f8599c;
         int i2 = (int) (i * f);
         if (i2 < 1) {
             i = 1;
@@ -76,9 +76,9 @@ public class ObjectPool<T extends Poolable> {
     }
 
     private void c() {
-        int i = this.f22206c;
+        int i = this.f8599c;
         int i2 = i * 2;
-        this.f22206c = i2;
+        this.f8599c = i2;
         Object[] objArr = new Object[i2];
         int i3 = 0;
         while (true) {

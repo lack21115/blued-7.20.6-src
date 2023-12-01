@@ -216,8 +216,8 @@ public final class ListValue extends GeneratedMessageV3 implements ListValueOrBu
 
         @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder mo2030clone() {
+            return (Builder) super.mo2030clone();
         }
 
         @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
@@ -441,6 +441,7 @@ public final class ListValue extends GeneratedMessageV3 implements ListValueOrBu
         this.values_ = Collections.emptyList();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private ListValue(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
         this();
         if (extensionRegistryLite == null) {

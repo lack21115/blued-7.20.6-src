@@ -9,25 +9,25 @@ public class c {
     public static final c b = new c();
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Object f22609c = new Object();
+    public static final Object f9001c = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<Activity> f22610a = new ArrayList(1);
+    public final List<Activity> f9002a = new ArrayList(1);
 
     public void a(Activity activity) {
-        synchronized (f22609c) {
-            for (Activity activity2 : this.f22610a) {
+        synchronized (f9001c) {
+            for (Activity activity2 : this.f9002a) {
                 if (activity2 != null && activity2 != activity && !activity2.isFinishing()) {
                     activity2.finish();
                 }
             }
-            this.f22610a.add(activity);
+            this.f9002a.add(activity);
         }
     }
 
     public void b(Activity activity) {
-        synchronized (f22609c) {
-            this.f22610a.remove(activity);
+        synchronized (f9001c) {
+            this.f9002a.remove(activity);
         }
     }
 }

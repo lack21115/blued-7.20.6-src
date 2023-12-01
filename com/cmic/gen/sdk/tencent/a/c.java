@@ -9,11 +9,11 @@ import com.cmic.gen.sdk.tencent.e.k;
 public class c implements b.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f21584a;
+    private static c f7978a;
     private a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private a f21585c;
+    private a f7979c;
     private b d;
     private Context e;
 
@@ -23,18 +23,18 @@ public class c implements b.a {
     }
 
     public static c a(Context context) {
-        if (f21584a == null) {
+        if (f7978a == null) {
             synchronized (c.class) {
                 try {
-                    if (f21584a == null) {
-                        f21584a = new c(context);
+                    if (f7978a == null) {
+                        f7978a = new c(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f21584a;
+        return f7978a;
     }
 
     private void b() {
@@ -52,7 +52,7 @@ public class c implements b.a {
             this.b = a3.b();
         }
         this.d.a(this);
-        this.f21585c = this.d.a();
+        this.f7979c = this.d.a();
     }
 
     private void c() {
@@ -64,7 +64,7 @@ public class c implements b.a {
         try {
             return this.b.clone();
         } catch (CloneNotSupportedException e) {
-            return this.f21585c;
+            return this.f7979c;
         }
     }
 

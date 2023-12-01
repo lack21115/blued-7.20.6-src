@@ -1,5 +1,6 @@
 package androidx.fragment.app;
 
+import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TabWidget;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 
 @Deprecated
@@ -19,30 +19,31 @@ import java.util.ArrayList;
 public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<TabInfo> f3005a;
+    private final ArrayList<TabInfo> f2957a;
     private FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f3006c;
+    private Context f2958c;
     private FragmentManager d;
     private int e;
     private TabHost.OnTabChangeListener f;
     private TabInfo g;
     private boolean h;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/fragment/app/FragmentTabHost$DummyTabFactory.class */
-    static class DummyTabFactory implements TabHost.TabContentFactory {
+    public static class DummyTabFactory implements TabHost.TabContentFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Context f3007a;
+        private final Context f2959a;
 
         public DummyTabFactory(Context context) {
-            this.f3007a = context;
+            this.f2959a = context;
         }
 
         @Override // android.widget.TabHost.TabContentFactory
         public View createTabContent(String str) {
-            View view = new View(this.f3007a);
+            View view = new View(this.f2959a);
             view.setMinimumWidth(0);
             view.setMinimumHeight(0);
             return view;
@@ -67,11 +68,11 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         };
 
         /* renamed from: a  reason: collision with root package name */
-        String f3008a;
+        String f2960a;
 
         SavedState(Parcel parcel) {
             super(parcel);
-            this.f3008a = parcel.readString();
+            this.f2960a = parcel.readString();
         }
 
         SavedState(Parcelable parcelable) {
@@ -79,13 +80,13 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         }
 
         public String toString() {
-            return "FragmentTabHost.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " curTab=" + this.f3008a + i.d;
+            return "FragmentTabHost.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " curTab=" + this.f2960a + "}";
         }
 
-        @Override // android.view.AbsSavedState, android.os.Parcelable
+        @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeString(this.f3008a);
+            parcel.writeString(this.f2960a);
         }
     }
 
@@ -94,44 +95,44 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
     public static final class TabInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f3009a;
+        final String f2961a;
         final Class<?> b;
 
         /* renamed from: c  reason: collision with root package name */
-        final Bundle f3010c;
+        final Bundle f2962c;
         Fragment d;
 
         TabInfo(String str, Class<?> cls, Bundle bundle) {
-            this.f3009a = str;
+            this.f2961a = str;
             this.b = cls;
-            this.f3010c = bundle;
+            this.f2962c = bundle;
         }
     }
 
     @Deprecated
     public FragmentTabHost(Context context) {
         super(context, null);
-        this.f3005a = new ArrayList<>();
+        this.f2957a = new ArrayList<>();
         a(context, (AttributeSet) null);
     }
 
     @Deprecated
     public FragmentTabHost(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f3005a = new ArrayList<>();
+        this.f2957a = new ArrayList<>();
         a(context, attributeSet);
     }
 
     private TabInfo a(String str) {
-        int size = this.f3005a.size();
+        int size = this.f2957a.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 return null;
             }
-            TabInfo tabInfo = this.f3005a.get(i2);
-            if (tabInfo.f3009a.equals(str)) {
+            TabInfo tabInfo = this.f2957a.get(i2);
+            if (tabInfo.f2961a.equals(str)) {
                 return tabInfo;
             }
             i = i2 + 1;
@@ -152,9 +153,9 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
             }
             if (a2 != null) {
                 if (a2.d == null) {
-                    a2.d = this.d.getFragmentFactory().instantiate(this.f3006c.getClassLoader(), a2.b.getName());
-                    a2.d.setArguments(a2.f3010c);
-                    fragmentTransaction2.add(this.e, a2.d, a2.f3009a);
+                    a2.d = this.d.getFragmentFactory().instantiate(this.f2958c.getClassLoader(), a2.b.getName());
+                    a2.d.setArguments(a2.f2962c);
+                    fragmentTransaction2.add(this.e, a2.d, a2.f2961a);
                 } else {
                     fragmentTransaction2.attach(a2.d);
                 }
@@ -176,16 +177,16 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
     }
 
     private void a(Context context) {
-        if (findViewById(16908307) == null) {
+        if (findViewById(R.id.tabs) == null) {
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
             addView(linearLayout, new FrameLayout.LayoutParams(-1, -1));
             TabWidget tabWidget = new TabWidget(context);
-            tabWidget.setId(16908307);
+            tabWidget.setId(R.id.tabs);
             tabWidget.setOrientation(0);
             linearLayout.addView(tabWidget, new LinearLayout.LayoutParams(-1, -2, 0.0f));
             FrameLayout frameLayout = new FrameLayout(context);
-            frameLayout.setId(16908305);
+            frameLayout.setId(R.id.tabcontent);
             linearLayout.addView(frameLayout, new LinearLayout.LayoutParams(0, 0, 0.0f));
             FrameLayout frameLayout2 = new FrameLayout(context);
             this.b = frameLayout2;
@@ -195,7 +196,7 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
     }
 
     private void a(Context context, AttributeSet attributeSet) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16842995}, 0, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{R.attr.inflatedId}, 0, 0);
         this.e = obtainStyledAttributes.getResourceId(0, 0);
         obtainStyledAttributes.recycle();
         super.setOnTabChangedListener(this);
@@ -203,7 +204,7 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
 
     @Deprecated
     public void addTab(TabHost.TabSpec tabSpec, Class<?> cls, Bundle bundle) {
-        tabSpec.setContent(new DummyTabFactory(this.f3006c));
+        tabSpec.setContent(new DummyTabFactory(this.f2958c));
         String tag = tabSpec.getTag();
         TabInfo tabInfo = new TabInfo(tag, cls, bundle);
         if (this.h) {
@@ -214,26 +215,26 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
                 beginTransaction.commit();
             }
         }
-        this.f3005a.add(tabInfo);
+        this.f2957a.add(tabInfo);
         addTab(tabSpec);
     }
 
-    @Override // android.widget.TabHost, android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     @Deprecated
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         String currentTabTag = getCurrentTabTag();
-        int size = this.f3005a.size();
+        int size = this.f2957a.size();
         FragmentTransaction fragmentTransaction = null;
         int i = 0;
         while (i < size) {
-            TabInfo tabInfo = this.f3005a.get(i);
-            tabInfo.d = this.d.findFragmentByTag(tabInfo.f3009a);
+            TabInfo tabInfo = this.f2957a.get(i);
+            tabInfo.d = this.d.findFragmentByTag(tabInfo.f2961a);
             FragmentTransaction fragmentTransaction2 = fragmentTransaction;
             if (tabInfo.d != null) {
                 fragmentTransaction2 = fragmentTransaction;
                 if (!tabInfo.d.isDetached()) {
-                    if (tabInfo.f3009a.equals(currentTabTag)) {
+                    if (tabInfo.f2961a.equals(currentTabTag)) {
                         this.g = tabInfo;
                         fragmentTransaction2 = fragmentTransaction;
                     } else {
@@ -256,33 +257,30 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.TabHost, android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
     @Deprecated
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.h = false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     @Deprecated
-    public void onRestoreInstanceState(Parcelable parcelable) {
+    protected void onRestoreInstanceState(Parcelable parcelable) {
         if (!(parcelable instanceof SavedState)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        setCurrentTabByTag(savedState.f3008a);
+        setCurrentTabByTag(savedState.f2960a);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     @Deprecated
-    public Parcelable onSaveInstanceState() {
+    protected Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f3008a = getCurrentTabTag();
+        savedState.f2960a = getCurrentTabTag();
         return savedState;
     }
 
@@ -315,7 +313,7 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
     public void setup(Context context, FragmentManager fragmentManager) {
         a(context);
         super.setup();
-        this.f3006c = context;
+        this.f2958c = context;
         this.d = fragmentManager;
         a();
     }
@@ -324,13 +322,13 @@ public class FragmentTabHost extends TabHost implements TabHost.OnTabChangeListe
     public void setup(Context context, FragmentManager fragmentManager, int i) {
         a(context);
         super.setup();
-        this.f3006c = context;
+        this.f2958c = context;
         this.d = fragmentManager;
         this.e = i;
         a();
         this.b.setId(i);
         if (getId() == -1) {
-            setId(16908306);
+            setId(R.id.tabhost);
         }
     }
 }

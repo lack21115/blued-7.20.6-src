@@ -22,19 +22,19 @@ import org.json.JSONObject;
 public class JsonUtil {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static Gson f1138;
+    private static Gson f1091;
 
     static {
         JsonUtil.class.getSimpleName();
-        f1138 = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ").setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
+        f1091 = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ").setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES).create();
     }
 
     public static <T> T fromJson(String str, Class<T> cls) {
-        return (T) f1138.fromJson(str, (Class<Object>) cls);
+        return (T) f1091.fromJson(str, (Class<Object>) cls);
     }
 
     public static <T> T fromJson(String str, Type type) {
-        return (T) f1138.fromJson(str, type);
+        return (T) f1091.fromJson(str, type);
     }
 
     public static <T> T fromJsonObj(JSONObject jSONObject, Class<T> cls) {
@@ -42,7 +42,7 @@ public class JsonUtil {
     }
 
     public static HashMap<String, String> fromJsonToMap(String str) {
-        return (HashMap) f1138.fromJson(str, new TypeToken<HashMap<String, String>>() { // from class: com.youzan.androidsdk.tool.JsonUtil.1
+        return (HashMap) f1091.fromJson(str, new TypeToken<HashMap<String, String>>() { // from class: com.youzan.androidsdk.tool.JsonUtil.1
         }.getType());
     }
 
@@ -57,7 +57,7 @@ public class JsonUtil {
             if (i2 >= jsonArray.size()) {
                 return arrayList;
             }
-            arrayList.add(f1138.fromJson(jsonArray.get(i2), (Class<Object>) cls));
+            arrayList.add(f1091.fromJson(jsonArray.get(i2), (Class<Object>) cls));
             i = i2 + 1;
         }
     }
@@ -71,42 +71,42 @@ public class JsonUtil {
     }
 
     public static JSONObject readJSONObject(JsonReader jsonReader) throws IOException, JSONException {
-        JSONArray m12245;
+        JSONArray m9195;
         jsonReader.beginObject();
         JSONObject jSONObject = new JSONObject();
         while (jsonReader.hasNext()) {
             String nextName = jsonReader.nextName();
             if (jsonReader.peek() == JsonToken.BEGIN_ARRAY) {
-                m12245 = new JSONArray();
+                m9195 = new JSONArray();
                 jsonReader.beginArray();
                 while (jsonReader.hasNext()) {
-                    m12245.put(m12245(jsonReader));
+                    m9195.put(m9195(jsonReader));
                 }
                 jsonReader.endArray();
             } else {
-                m12245 = m12245(jsonReader);
+                m9195 = m9195(jsonReader);
             }
-            jSONObject.put(nextName, m12245);
+            jSONObject.put(nextName, m9195);
         }
         jsonReader.endObject();
         return jSONObject;
     }
 
     public static <T> List<T> toArrayList(JSONArray jSONArray) {
-        return jSONArray == null ? new ArrayList() : (List) f1138.fromJson(jSONArray.toString(), new TypeToken<List<T>>() { // from class: com.youzan.androidsdk.tool.JsonUtil.2
+        return jSONArray == null ? new ArrayList() : (List) f1091.fromJson(jSONArray.toString(), new TypeToken<List<T>>() { // from class: com.youzan.androidsdk.tool.JsonUtil.2
         }.getType());
     }
 
     public static String toJson(Object obj) {
-        return f1138.toJson(obj);
+        return f1091.toJson(obj);
     }
 
     public static String toJson(Object obj, Type type) {
-        return f1138.toJson(obj, type);
+        return f1091.toJson(obj, type);
     }
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static Object m12245(JsonReader jsonReader) throws IOException, JSONException {
+    private static Object m9195(JsonReader jsonReader) throws IOException, JSONException {
         JsonToken peek = jsonReader.peek();
         if (peek == JsonToken.BEGIN_OBJECT) {
             return readJSONObject(jsonReader);

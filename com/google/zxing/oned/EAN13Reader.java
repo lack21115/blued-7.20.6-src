@@ -24,9 +24,8 @@ public final class EAN13Reader extends UPCEANReader {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.zxing.oned.UPCEANReader
-    public int decodeMiddle(BitArray bitArray, int[] iArr, StringBuilder sb) throws NotFoundException {
+    protected int decodeMiddle(BitArray bitArray, int[] iArr, StringBuilder sb) throws NotFoundException {
         int i;
         int[] iArr2 = this.decodeMiddleCounters;
         iArr2[0] = 0;

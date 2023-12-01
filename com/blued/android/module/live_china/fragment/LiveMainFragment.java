@@ -11,8 +11,8 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.viewpager.widget.ViewPager;
-import com.anythink.expressad.video.dynview.a.a;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -47,7 +47,6 @@ import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.android.module.live_china.view.BluedViewExKt;
 import com.blued.android.module.live_china.view_model.LiveMainViewModel;
 import com.blued.das.live.LiveProtos;
-import com.opos.acs.st.STManager;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -63,13 +62,9 @@ import skin.support.observe.SkinObservable;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMainFragment.class */
 public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> implements BluedSkinObserver, LiveTagsSetSelectedTab.iLiveTagsSetSelectedTab {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f13017a = {Reflection.a(new PropertyReference1Impl(LiveMainFragment.class, "viewBinding", "getViewBinding()Lcom/blued/android/module/live_china/databinding/FragmentLiveMainBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] a = {Reflection.a(new PropertyReference1Impl(LiveMainFragment.class, "viewBinding", "getViewBinding()Lcom/blued/android/module/live_china/databinding/FragmentLiveMainBinding;", 0))};
     private final ViewBindingProperty b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveTabInfo f13018c;
+    private LiveTabInfo c;
     private List<LiveTabModel> d;
     private LiveLiangIDReceivedPop e;
     private LiveLiangExpirePop f;
@@ -85,9 +80,7 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMainFragment$MyAdapter.class */
     public static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final LiveMainViewModel f13019a;
+        private final LiveMainViewModel a;
         private List<? extends LiveTabModel> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -96,25 +89,22 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
             Intrinsics.e(tabs, "tabs");
             Intrinsics.e(mViewModel, "mViewModel");
             Intrinsics.a(fragmentManager);
-            this.f13019a = mViewModel;
+            this.a = mViewModel;
             this.b = tabs;
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
             super.destroyItem(container, i, object);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             List<? extends LiveTabModel> list = this.b;
             Intrinsics.a(list);
             return list.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             LiveTabModel liveTabModel;
             LiveTabModel liveTabModel2;
@@ -128,7 +118,7 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
                 LiveTabFragmentNew liveTabFragmentNew = new LiveTabFragmentNew();
                 Bundle bundle = new Bundle();
                 List<? extends LiveTabModel> list2 = this.b;
-                bundle.putString(STManager.KEY_TAB_ID, (list2 == null || (liveTabModel2 = list2.get(i)) == null) ? null : liveTabModel2.id);
+                bundle.putString("tabId", (list2 == null || (liveTabModel2 = list2.get(i)) == null) ? null : liveTabModel2.id);
                 List<? extends LiveTabModel> list3 = this.b;
                 bundle.putString("tabName", (list3 == null || (liveTabModel3 = list3.get(i)) == null) ? null : liveTabModel3.name);
                 List<? extends LiveTabModel> list4 = this.b;
@@ -139,16 +129,16 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
                     str = liveTabModel6 == null ? null : liveTabModel6.data_point;
                 }
                 bundle.putString("tabPoint", str);
-                bundle.putString("live_pay_beans_details", this.f13019a.h());
-                this.f13019a.a("");
+                bundle.putString("live_pay_beans_details", this.a.h());
+                this.a.a("");
                 liveTabFragmentNew.setArguments(bundle);
                 return liveTabFragmentNew;
             }
-            LiveFootPrintFragmentN liveFootPrintFragmentN = new LiveFootPrintFragmentN();
+            Fragment liveFootPrintFragmentN = new LiveFootPrintFragmentN();
             Bundle bundle2 = new Bundle();
             bundle2.putInt("from", 1);
             List<? extends LiveTabModel> list5 = this.b;
-            bundle2.putString(STManager.KEY_TAB_ID, (list5 == null || (liveTabModel4 = list5.get(i)) == null) ? null : liveTabModel4.id);
+            bundle2.putString("tabId", (list5 == null || (liveTabModel4 = list5.get(i)) == null) ? null : liveTabModel4.id);
             List<? extends LiveTabModel> list6 = this.b;
             bundle2.putString("tabName", (list6 == null || (liveTabModel5 = list6.get(i)) == null) ? null : liveTabModel5.name);
             List<? extends LiveTabModel> list7 = this.b;
@@ -159,19 +149,17 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
                 str2 = liveTabModel7 == null ? null : liveTabModel7.data_point;
             }
             bundle2.putString("tabPoint", str2);
-            bundle2.putString("live_pay_beans_details", this.f13019a.h());
-            this.f13019a.a("");
+            bundle2.putString("live_pay_beans_details", this.a.h());
+            this.a.a("");
             liveFootPrintFragmentN.setArguments(bundle2);
             return liveFootPrintFragmentN;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object object) {
             Intrinsics.e(object, "object");
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             LiveTabModel liveTabModel;
             List<? extends LiveTabModel> list = this.b;
@@ -182,7 +170,6 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
             return str;
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup container, int i) {
             Intrinsics.e(container, "container");
             Object instantiateItem = super.instantiateItem(container, i);
@@ -190,7 +177,6 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
             return instantiateItem;
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void setPrimaryItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
@@ -295,11 +281,11 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
         if (p == null) {
             return;
         }
-        View view = p.f11948a;
+        View view = p.a;
         if (view != null) {
             view.setAlpha(1 - Math.min(f * 1.8f, 1.0f));
         }
-        FrameLayout frameLayout = p.f11949c;
+        FrameLayout frameLayout = p.c;
         if (frameLayout == null) {
             return;
         }
@@ -318,7 +304,7 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
         PageTabLayout.Tab a3;
         PageTabLayout pageTabLayout4;
         Intrinsics.e(data, "data");
-        this.f13018c = data;
+        this.c = data;
         if (data == null) {
             return;
         }
@@ -364,15 +350,15 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
             ShapeHelper.a((ShapeHelper.ShapeView) shapeTextView, R.color.syc_h);
             String language = BlueAppLocal.c().getLanguage();
             if (TextUtils.isEmpty(next.rectangular_icon)) {
-                BluedViewExKt.b(shapeTextView);
+                BluedViewExKt.b((View) shapeTextView);
                 BluedViewExKt.a(imageView);
-                if (Intrinsics.a((Object) a.V, (Object) language)) {
+                if (Intrinsics.a((Object) "zh", (Object) language)) {
                     shapeTextView.setText(next.name);
                 } else {
                     shapeTextView.setText(next.en_name);
                 }
             } else {
-                BluedViewExKt.c(shapeTextView);
+                BluedViewExKt.c((View) shapeTextView);
                 BluedViewExKt.b(imageView);
                 ImageLoader.a(getFragmentActive(), next.rectangular_icon).a(imageView);
             }
@@ -381,9 +367,9 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
                 a3.a(inflate);
             }
             if (next.red_point == 1) {
-                BluedViewExKt.b(shapeTextView2);
+                BluedViewExKt.b((View) shapeTextView2);
             } else {
-                BluedViewExKt.a(shapeTextView2);
+                BluedViewExKt.a((View) shapeTextView2);
             }
             if (i2 == u()) {
                 c(i2);
@@ -593,7 +579,7 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
         if (shapeTextView == null) {
             return;
         }
-        BluedViewExKt.a(shapeTextView);
+        BluedViewExKt.a((View) shapeTextView);
     }
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
@@ -602,15 +588,12 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
         if (p != null) {
             EventTrackLive.g(LiveProtos.Event.LIVE_FIRST_TAB_SHOW, "recommend");
             p.d.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveMainFragment$initView$1$1
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrolled(int i, float f, int i2) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageSelected(int i) {
                     int size = LiveMainFragment.this.q().size();
                     int i2 = 0;
@@ -656,45 +639,45 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
 
     @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
-        LiveMainFragment liveMainFragment = this;
-        LifecycleExtKt.a(liveMainFragment, a().d(), new LiveMainFragment$liveDataObserver$1(this));
-        LifecycleExtKt.a(liveMainFragment, a().e(), new LiveMainFragment$liveDataObserver$2(this));
-        LifecycleExtKt.a(liveMainFragment, a().f(), new LiveMainFragment$liveDataObserver$3(this));
-        LifecycleExtKt.a(liveMainFragment, a().g(), new LiveMainFragment$liveDataObserver$4(this));
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LifecycleExtKt.a(lifecycleOwner, a().d(), new LiveMainFragment$liveDataObserver$1(this));
+        LifecycleExtKt.a(lifecycleOwner, a().e(), new LiveMainFragment$liveDataObserver$2(this));
+        LifecycleExtKt.a(lifecycleOwner, a().f(), new LiveMainFragment$liveDataObserver$3(this));
+        LifecycleExtKt.a(lifecycleOwner, a().g(), new LiveMainFragment$liveDataObserver$4(this));
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         BluedSkinUtils.a(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         BluedSkinUtils.b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         this.h = true;
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         this.h = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         this.h = true;
     }
 
     public final FragmentLiveMainBinding p() {
-        return (FragmentLiveMainBinding) this.b.b(this, f13017a[0]);
+        return (FragmentLiveMainBinding) this.b.b(this, a[0]);
     }
 
     public final List<LiveTabModel> q() {
@@ -709,7 +692,7 @@ public final class LiveMainFragment extends MVVMBaseFragment<LiveMainViewModel> 
         return this.j;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
         this.i = z;

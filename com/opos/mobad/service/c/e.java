@@ -74,22 +74,22 @@ public class e {
             return false;
         }
         ZipInputStream zipInputStream = null;
-        AutoCloseable autoCloseable = null;
-        AutoCloseable autoCloseable2 = null;
+        ZipInputStream zipInputStream2 = null;
+        ZipInputStream zipInputStream3 = null;
         try {
             try {
                 FileInputStream fileInputStream = new FileInputStream(file);
                 try {
                     CheckedInputStream checkedInputStream = new CheckedInputStream(fileInputStream, new CRC32());
-                    ZipInputStream zipInputStream2 = Build.VERSION.SDK_INT >= 24 ? new ZipInputStream(checkedInputStream, Charset.forName("gbk")) : new ZipInputStream(checkedInputStream);
-                    ZipInputStream zipInputStream3 = zipInputStream2;
-                    boolean a2 = a(zipInputStream2, new File(str2));
-                    zipInputStream = zipInputStream2;
+                    ZipInputStream zipInputStream4 = Build.VERSION.SDK_INT >= 24 ? new ZipInputStream(checkedInputStream, Charset.forName("gbk")) : new ZipInputStream(checkedInputStream);
+                    ZipInputStream zipInputStream5 = zipInputStream4;
+                    boolean a2 = a(zipInputStream4, new File(str2));
+                    zipInputStream = zipInputStream4;
                     checkedInputStream.close();
-                    ZipInputStream zipInputStream4 = zipInputStream2;
+                    ZipInputStream zipInputStream6 = zipInputStream4;
                     fileInputStream.close();
                     try {
-                        zipInputStream2.close();
+                        zipInputStream4.close();
                         return a2;
                     } catch (Exception e) {
                         com.opos.cmn.an.f.a.d("Dynamic-ZipTool", "unzipFile", e);
@@ -104,7 +104,7 @@ public class e {
                         } catch (Throwable th3) {
                             th.addSuppressed(th3);
                         }
-                        ZipInputStream zipInputStream5 = zipInputStream;
+                        ZipInputStream zipInputStream7 = zipInputStream;
                         throw th2;
                     }
                 }
@@ -112,7 +112,7 @@ public class e {
                 com.opos.cmn.an.f.a.d("Dynamic-ZipTool", "unzipFile", e2);
                 if (0 != 0) {
                     try {
-                        autoCloseable.close();
+                        zipInputStream2.close();
                         return false;
                     } catch (Exception e3) {
                         com.opos.cmn.an.f.a.d("Dynamic-ZipTool", "unzipFile", e3);
@@ -124,7 +124,7 @@ public class e {
         } catch (Throwable th4) {
             if (0 != 0) {
                 try {
-                    autoCloseable2.close();
+                    zipInputStream3.close();
                 } catch (Exception e4) {
                     com.opos.cmn.an.f.a.d("Dynamic-ZipTool", "unzipFile", e4);
                 }
@@ -253,7 +253,7 @@ public class e {
             @Override // java.lang.Runnable
             public void run() {
                 try {
-                    e.c(File.this);
+                    e.c(file);
                     com.opos.cmn.an.f.a.b("Dynamic-ZipTool", "clear succ");
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.b("", "clear temp fail", e);

@@ -1,6 +1,5 @@
 package cn.shuzilm.core;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
@@ -15,8 +14,10 @@ import android.net.wifi.rtt.RangingResult;
 import android.net.wifi.rtt.RangingResultCallback;
 import android.net.wifi.rtt.WifiRttManager;
 import android.os.Build;
+import android.view.Window;
+import com.android.internal.content.NativeLibraryHelper;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.umeng.analytics.pro.bh;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -27,9 +28,7 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/dl.class */
 public class dl {
     private static Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static NsdManager f4176c;
+    private static NsdManager c;
     private static LinkedList d = new LinkedList();
     private static JSONObject e = new JSONObject();
     private static JSONObject f = null;
@@ -39,26 +38,20 @@ public class dl {
     private static String j = "";
     private static String k = "";
     private static String l = "";
-
-    /* renamed from: a  reason: collision with root package name */
-    static int f4175a = 0;
+    static int a = 0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:cn/shuzilm/core/dl$sd.class */
     public class sd extends TimerTask {
-
-        /* renamed from: a  reason: collision with root package name */
-        NsdManager.DiscoveryListener f4179a;
+        NsdManager.DiscoveryListener a;
         NsdManager b;
-
-        /* renamed from: c  reason: collision with root package name */
-        int f4180c;
+        int c;
         String d;
 
         public sd(NsdManager nsdManager, NsdManager.DiscoveryListener discoveryListener, int i, String str) {
-            this.f4179a = discoveryListener;
+            this.a = discoveryListener;
             this.b = nsdManager;
-            this.f4180c = i;
+            this.c = i;
             this.d = str;
         }
 
@@ -67,8 +60,8 @@ public class dl {
             String str;
             synchronized (this) {
                 try {
-                    dl.b(this.b, this.f4179a);
-                    if (this.f4180c == 2) {
+                    dl.b(this.b, this.a);
+                    if (this.c == 2) {
                         int length = dl.f.length();
                         if (dl.f != null && length > 0 && dl.e.length() + length < 4096) {
                             dl.e.put(this.d, dl.f);
@@ -114,7 +107,7 @@ public class dl {
             nsdServiceInfo.setServiceName(str);
             nsdServiceInfo.setServiceType(l);
             nsdServiceInfo.setPort(i2);
-            f4176c.registerService(nsdServiceInfo, 1, registrationListener);
+            c.registerService(nsdServiceInfo, 1, registrationListener);
         } catch (Throwable th) {
         }
     }
@@ -150,20 +143,20 @@ public class dl {
 
                     @Override // android.net.nsd.NsdManager.DiscoveryListener
                     public void onStartDiscoveryFailed(String str2, int i3) {
-                        dl.b(dl.f4176c, this);
+                        dl.b(dl.c, this);
                     }
 
                     @Override // android.net.nsd.NsdManager.DiscoveryListener
                     public void onStopDiscoveryFailed(String str2, int i3) {
-                        dl.b(dl.f4176c, this);
+                        dl.b(dl.c, this);
                     }
                 };
                 f = new JSONObject();
-                f4176c.discoverServices(str, 1, discoveryListener);
+                c.discoverServices(str, 1, discoveryListener);
                 if (g == null) {
                     g = new Timer();
                 }
-                g.schedule(new sd(f4176c, discoveryListener, i2, str), 500L);
+                g.schedule(new sd(c, discoveryListener, i2, str), 500L);
             } catch (Throwable th) {
             }
         }
@@ -185,7 +178,7 @@ public class dl {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0039 -> B:12:0x0030). Please submit an issue!!! */
     public static void d(Context context, final String str) {
         Context applicationContext;
-        if (f4175a <= 0 && Build.VERSION.SDK_INT >= 21) {
+        if (a <= 0 && Build.VERSION.SDK_INT >= 21) {
             try {
                 applicationContext = context.getApplicationContext();
                 b = applicationContext;
@@ -200,10 +193,10 @@ public class dl {
                 public void run() {
                     synchronized (this) {
                         try {
-                            dl.f4175a++;
+                            dl.a++;
                             int e3 = dl.e();
                             if (y.a(dl.b) && dl.h <= 0) {
-                                String unused = dl.j = (String.this == null || String.this.length() <= 10) ? "a60c" : String.this.substring(2, 10).replace("-", "Z").replace(BridgeUtil.UNDERLINE_STR, "l");
+                                String unused = dl.j = (String.this == null || String.this.length() <= 10) ? "a60c" : String.this.substring(2, 10).replace(NativeLibraryHelper.CLEAR_ABI_OVERRIDE, "Z").replace(BridgeUtil.UNDERLINE_STR, "l");
                                 String unused2 = dl.k = Integer.toHexString(dl.b.getPackageName().hashCode());
                                 dl.e(dl.f("h#TYch\"hY#TjYe"));
                                 dl.n();
@@ -222,7 +215,7 @@ public class dl {
                     }
                 }
             }).start();
-            f4175a++;
+            a++;
         }
     }
 
@@ -230,8 +223,8 @@ public class dl {
     public static void d(String str, String str2) {
         synchronized (dl.class) {
             try {
-                if (str2.equals(l) && str != null && str.contains("-")) {
-                    String[] split = str.split("-");
+                if (str2.equals(l) && str != null && str.contains(NativeLibraryHelper.CLEAR_ABI_OVERRIDE)) {
+                    String[] split = str.split(NativeLibraryHelper.CLEAR_ABI_OVERRIDE);
                     if (split.length >= 3) {
                         if ((split[1] + split[2]).equals(k + j)) {
                             i = 1;
@@ -257,7 +250,7 @@ public class dl {
             if (e == null || e.length() > 0 || d == null || d.size() > 0) {
                 return;
             }
-            f4176c = (NsdManager) b.getSystemService(Context.NSD_SERVICE);
+            c = (NsdManager) b.getSystemService("servicediscovery");
             c("_service" + str + ".", 1);
         } catch (Throwable th) {
         }
@@ -285,8 +278,8 @@ public class dl {
     public static void k() {
         try {
             if (h <= 0 && i == 0) {
-                h = new Random().nextInt(20000) + 40000;
-                String str = bh.aG + Long.toHexString(System.currentTimeMillis()) + "-" + k + "-" + j;
+                h = new Random().nextInt(Window.PROGRESS_SECONDARY_START) + 40000;
+                String str = "z" + Long.toHexString(System.currentTimeMillis()) + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + k + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + j;
                 b(str, h);
                 e.put("sn", str);
             }
@@ -306,7 +299,7 @@ public class dl {
             if (Build.VERSION.SDK_INT < 23) {
                 return "";
             }
-            ConnectivityManager connectivityManager = (ConnectivityManager) b.getSystemService(Context.CONNECTIVITY_SERVICE);
+            ConnectivityManager connectivityManager = (ConnectivityManager) b.getSystemService("connectivity");
             LinkProperties linkProperties = connectivityManager.getLinkProperties(connectivityManager.getActiveNetwork());
             if (linkProperties == null) {
                 return "";
@@ -373,7 +366,7 @@ public class dl {
             PackageManager packageManager = b.getPackageManager();
             String packageName = b.getPackageName();
             int checkPermission = packageManager.checkPermission("android.permission.ACCESS_FINE_LOCATION", packageName);
-            int checkPermission2 = packageManager.checkPermission(Manifest.permission.CHANGE_WIFI_STATE, packageName);
+            int checkPermission2 = packageManager.checkPermission("android.permission.CHANGE_WIFI_STATE", packageName);
             int checkPermission3 = packageManager.checkPermission("android.permission.ACCESS_WIFI_STATE", packageName);
             if (checkPermission != 0 || checkPermission2 != 0 || checkPermission3 != 0) {
                 return -2;
@@ -393,7 +386,7 @@ public class dl {
             if (!wifiRttManager.isAvailable() || !b.getPackageManager().hasSystemFeature("android.hardware.wifi.rtt")) {
                 return -3;
             }
-            WifiManager wifiManager = (WifiManager) b.getSystemService("wifi");
+            WifiManager wifiManager = (WifiManager) b.getSystemService(QSConstants.TILE_WIFI);
             if (wifiManager.getWifiState() != 3) {
                 return -3;
             }
@@ -416,7 +409,7 @@ public class dl {
                             try {
                                 long currentTimeMillis = System.currentTimeMillis();
                                 JSONObject jSONObject = dl.e;
-                                jSONObject.put("wr", currentTimeMillis + ";err_" + i6 + ";");
+                                jSONObject.put("wr", currentTimeMillis + ";err_" + i6 + com.alipay.sdk.util.i.b);
                             } catch (Exception e2) {
                             }
                         }
@@ -429,7 +422,7 @@ public class dl {
                             try {
                                 StringBuilder sb = new StringBuilder();
                                 long currentTimeMillis = System.currentTimeMillis();
-                                sb.append(currentTimeMillis + ";");
+                                sb.append(currentTimeMillis + com.alipay.sdk.util.i.b);
                                 int i6 = 0;
                                 while (true) {
                                     int i7 = i6;
@@ -450,7 +443,7 @@ public class dl {
                                         int distanceMm = rangingResult.getDistanceMm();
                                         int rssi = rangingResult.getRssi();
                                         sb.append(distanceMm + "," + rssi);
-                                        sb.append(";");
+                                        sb.append(com.alipay.sdk.util.i.b);
                                     }
                                     i6 = i7 + 1;
                                 }

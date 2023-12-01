@@ -13,25 +13,25 @@ public class b {
 
     /* renamed from: com.opos.mobad.service.h.b$b  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/service/h/b$b.class */
-    public static final class C0737b<T> {
+    public static final class C0567b<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f27378a;
+        public final int f13690a;
         public final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final T f27379c;
+        public final T f13691c;
 
-        public C0737b(int i, T t) {
-            this.f27378a = i;
+        public C0567b(int i, T t) {
+            this.f13690a = i;
             this.b = null;
-            this.f27379c = t;
+            this.f13691c = t;
         }
 
-        public C0737b(int i, String str) {
-            this.f27378a = i;
+        public C0567b(int i, String str) {
+            this.f13690a = i;
             this.b = str;
-            this.f27379c = null;
+            this.f13691c = null;
         }
     }
 
@@ -52,7 +52,7 @@ public class b {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public static final <T> com.opos.mobad.service.h.b.C0737b a(android.content.Context r6, java.lang.String r7, byte[] r8, com.opos.mobad.service.h.b.a<T> r9) {
+    public static final <T> com.opos.mobad.service.h.b.C0567b a(android.content.Context r6, java.lang.String r7, byte[] r8, com.opos.mobad.service.h.b.a<T> r9) {
         /*
             Method dump skipped, instructions count: 425
             To view this dump change 'Code comments level' option to 'DEBUG'

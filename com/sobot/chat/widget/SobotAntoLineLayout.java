@@ -122,9 +122,8 @@ public class SobotAntoLineLayout extends ViewGroup {
         super.addView(view);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         if (this.mFillMode == 0) {
             layoutModeFillParent();
         } else {
@@ -132,9 +131,8 @@ public class SobotAntoLineLayout extends ViewGroup {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         int i3;
         super.onMeasure(i, i2);
         this.childOfLine = new ArrayList();

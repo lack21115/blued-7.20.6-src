@@ -101,13 +101,13 @@ public class TinkerZipOutputStream extends FilterOutputStream implements ZipCons
         long j = 30;
         if (tinkerZipEntry.getMethod() != 0) {
             j = 46;
-            writeLongAsUint32(this.out, 134695760L);
+            writeLongAsUint32(this.out, ZipConstants.EXTSIG);
             writeLongAsUint32(this.out, this.currentEntry.crc);
             writeLongAsUint32(this.out, this.currentEntry.compressedSize);
             writeLongAsUint32(this.out, this.currentEntry.size);
         }
         int i = this.currentEntry.getMethod() == 0 ? 0 : 8;
-        writeLongAsUint32(this.cDir, 33639248L);
+        writeLongAsUint32(this.cDir, ZipConstants.CENSIG);
         writeIntAsUint16(this.cDir, 20);
         writeIntAsUint16(this.cDir, 20);
         writeIntAsUint16(this.cDir, i | 2048);
@@ -157,7 +157,7 @@ public class TinkerZipOutputStream extends FilterOutputStream implements ZipCons
             closeEntry();
         }
         int size = this.cDir.size();
-        writeLongAsUint32(this.cDir, 101010256L);
+        writeLongAsUint32(this.cDir, ZipConstants.ENDSIG);
         writeIntAsUint16(this.cDir, 0);
         writeIntAsUint16(this.cDir, 0);
         if (this.archiveNeedsZip64EocdRecord) {
@@ -224,7 +224,7 @@ public class TinkerZipOutputStream extends FilterOutputStream implements ZipCons
         tinkerZipEntry.localHeaderRelOffset = this.offset;
         this.entries.add(this.currentEntry.name);
         int i2 = i == 0 ? 0 : 8;
-        writeLongAsUint32(this.out, 67324752L);
+        writeLongAsUint32(this.out, ZipConstants.LOCSIG);
         writeIntAsUint16(this.out, 20);
         writeIntAsUint16(this.out, i2 | 2048);
         writeIntAsUint16(this.out, i);

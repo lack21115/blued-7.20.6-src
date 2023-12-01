@@ -6,23 +6,23 @@ import com.tencent.txcopyrightedmedia.ITXSongScoreCallback;
 public final class s implements ITXSongScoreCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ITXSongScoreCallback f40144a;
+    private final ITXSongScoreCallback f26453a;
     private final ai b = (ai) m.a().b(m.d);
 
     public s(ITXSongScoreCallback iTXSongScoreCallback) {
-        this.f40144a = iTXSongScoreCallback;
+        this.f26453a = iTXSongScoreCallback;
     }
 
     @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
     public final void onMIDIGroveAndHint(final boolean z, final float f, final float f2, final int i) {
         ai aiVar;
-        if (this.f40144a == null || (aiVar = this.b) == null) {
+        if (this.f26453a == null || (aiVar = this.b) == null) {
             return;
         }
         aiVar.a(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.s.2
             @Override // java.lang.Runnable
             public final void run() {
-                s.this.f40144a.onMIDIGroveAndHint(z, f, f2, i);
+                s.this.f26453a.onMIDIGroveAndHint(z, f, f2, i);
             }
         });
     }
@@ -30,13 +30,13 @@ public final class s implements ITXSongScoreCallback {
     @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
     public final void onMIDISCoreUpdate(final int i, final int i2, final int i3) {
         ai aiVar;
-        if (this.f40144a == null || (aiVar = this.b) == null) {
+        if (this.f26453a == null || (aiVar = this.b) == null) {
             return;
         }
         aiVar.a(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.s.1
             @Override // java.lang.Runnable
             public final void run() {
-                s.this.f40144a.onMIDISCoreUpdate(i, i2, i3);
+                s.this.f26453a.onMIDISCoreUpdate(i, i2, i3);
             }
         });
     }
@@ -44,13 +44,13 @@ public final class s implements ITXSongScoreCallback {
     @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
     public final void onMIDIScoreError(final int i, final String str) {
         ai aiVar;
-        if (this.f40144a == null || (aiVar = this.b) == null) {
+        if (this.f26453a == null || (aiVar = this.b) == null) {
             return;
         }
         aiVar.a(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.s.5
             @Override // java.lang.Runnable
             public final void run() {
-                s.this.f40144a.onMIDIScoreError(i, str);
+                s.this.f26453a.onMIDIScoreError(i, str);
             }
         });
     }
@@ -58,13 +58,13 @@ public final class s implements ITXSongScoreCallback {
     @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
     public final void onMIDIScoreFinish(final int[] iArr, final int i) {
         ai aiVar;
-        if (this.f40144a == null || (aiVar = this.b) == null) {
+        if (this.f26453a == null || (aiVar = this.b) == null) {
             return;
         }
         aiVar.a(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.s.3
             @Override // java.lang.Runnable
             public final void run() {
-                s.this.f40144a.onMIDIScoreFinish(iArr, i);
+                s.this.f26453a.onMIDIScoreFinish(iArr, i);
             }
         });
     }
@@ -72,13 +72,13 @@ public final class s implements ITXSongScoreCallback {
     @Override // com.tencent.txcopyrightedmedia.ITXSongScoreCallback
     public final void onMIDIScorePrepared() {
         ai aiVar;
-        if (this.f40144a == null || (aiVar = this.b) == null) {
+        if (this.f26453a == null || (aiVar = this.b) == null) {
             return;
         }
         aiVar.a(new Runnable() { // from class: com.tencent.txcopyrightedmedia.impl.utils.s.4
             @Override // java.lang.Runnable
             public final void run() {
-                s.this.f40144a.onMIDIScorePrepared();
+                s.this.f26453a.onMIDIScorePrepared();
             }
         });
     }

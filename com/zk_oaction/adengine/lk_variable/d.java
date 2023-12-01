@@ -3,7 +3,6 @@ package com.zk_oaction.adengine.lk_variable;
 import com.zk_oaction.adengine.lk_animation.i;
 import com.zk_oaction.adengine.lk_expression.a;
 import com.zk_oaction.adengine.lk_expression.c;
-import java.util.AbstractCollection;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 
@@ -11,7 +10,7 @@ import org.xmlpull.v1.XmlPullParser;
 public class d implements a.w, c.b {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f42008a;
+    public String f28317a;
     private com.zk_oaction.adengine.lk_sdk.c b;
     private String d;
     private String e;
@@ -20,7 +19,7 @@ public class d implements a.w, c.b {
     private float h = 0.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private ArrayList<f> f42009c = new ArrayList<>();
+    private ArrayList<f> f28318c = new ArrayList<>();
     private ArrayList<com.zk_oaction.adengine.lk_animation.b> f = new ArrayList<>();
 
     public d(com.zk_oaction.adengine.lk_sdk.c cVar, String str) {
@@ -36,14 +35,14 @@ public class d implements a.w, c.b {
     /* JADX WARN: Type inference failed for: r0v23, types: [com.zk_oaction.adengine.lk_animation.c] */
     private void b(XmlPullParser xmlPullParser) {
         com.zk_oaction.adengine.lk_command.g gVar;
-        AbstractCollection abstractCollection;
+        ArrayList arrayList;
         if (xmlPullParser.getName().equals("VariableAnimation")) {
             ?? iVar = new i(this.b, this);
             if (!iVar.a(xmlPullParser)) {
                 return;
             }
             this.b.o.a(iVar);
-            abstractCollection = this.f;
+            arrayList = this.f;
             gVar = iVar;
         } else if (!xmlPullParser.getName().equals("Trigger")) {
             return;
@@ -56,16 +55,16 @@ public class d implements a.w, c.b {
                 this.i = new ArrayList<>();
             }
             gVar = gVar2;
-            abstractCollection = this.i;
+            arrayList = this.i;
         }
-        abstractCollection.add(gVar);
+        arrayList.add(gVar);
     }
 
     public void a(f fVar) {
-        if (this.f42009c.contains(fVar)) {
+        if (this.f28318c.contains(fVar)) {
             return;
         }
-        this.f42009c.add(fVar);
+        this.f28318c.add(fVar);
     }
 
     @Override // com.zk_oaction.adengine.lk_expression.a.w
@@ -74,12 +73,12 @@ public class d implements a.w, c.b {
     }
 
     public boolean a() {
-        String str = this.f42008a;
+        String str = this.f28317a;
         return str == null || str.equals("number");
     }
 
     public boolean a(XmlPullParser xmlPullParser) {
-        this.f42008a = xmlPullParser.getAttributeValue(null, "type");
+        this.f28317a = xmlPullParser.getAttributeValue(null, "type");
         String attributeValue = xmlPullParser.getAttributeValue(null, "threshold");
         if (attributeValue != null) {
             try {
@@ -97,7 +96,7 @@ public class d implements a.w, c.b {
             if (a()) {
                 com.zk_oaction.adengine.lk_expression.a aVar = new com.zk_oaction.adengine.lk_expression.a(this.b, this.d, attributeValue3, 0.0f, null, false);
                 String str = this.d;
-                if (str != null && this.b.a(str, aVar.f41919c)) {
+                if (str != null && this.b.a(str, aVar.f28228c)) {
                     aVar.a(this);
                 }
             } else {

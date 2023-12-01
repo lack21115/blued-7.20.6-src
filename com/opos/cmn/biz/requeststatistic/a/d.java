@@ -19,12 +19,12 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24679a = d.class.getSimpleName();
+    public static final String f10991a = d.class.getSimpleName();
     private static d g;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public b f24680c;
+    public b f10992c;
     public a e;
     public a f;
     private ReadWriteLock h = new ReentrantReadWriteLock();
@@ -52,7 +52,7 @@ public class d {
         return dVar;
     }
 
-    static /* synthetic */ void a(d dVar, final a.InterfaceC0631a interfaceC0631a) {
+    static /* synthetic */ void a(d dVar, final a.InterfaceC0461a interfaceC0461a) {
         com.opos.cmn.an.j.b.a().execute(new Runnable() { // from class: com.opos.cmn.biz.requeststatistic.a.d.3
             @Override // java.lang.Runnable
             public final void run() {
@@ -69,21 +69,21 @@ public class d {
                             linkedList.add(cVar);
                             poll = d.this.d.poll();
                         }
-                        d.this.f24680c.a(linkedList);
-                        String str = d.f24679a;
+                        d.this.f10992c.a(linkedList);
+                        String str = d.f10991a;
                         com.opos.cmn.an.f.a.b(str, "write cache size:" + linkedList.size());
                     } catch (Exception e) {
-                        com.opos.cmn.an.f.a.b(d.f24679a, "write fail", e);
-                        if (interfaceC0631a != null) {
-                            interfaceC0631a.b();
+                        com.opos.cmn.an.f.a.b(d.f10991a, "write fail", e);
+                        if (interfaceC0461a != null) {
+                            interfaceC0461a.b();
                             d.this.h.writeLock().unlock();
                             return;
                         }
                     }
                     d.this.h.writeLock().unlock();
-                    a.InterfaceC0631a interfaceC0631a2 = interfaceC0631a;
-                    if (interfaceC0631a2 != null) {
-                        interfaceC0631a2.a();
+                    a.InterfaceC0461a interfaceC0461a2 = interfaceC0461a;
+                    if (interfaceC0461a2 != null) {
+                        interfaceC0461a2.a();
                     }
                 } catch (Throwable th) {
                     d.this.h.writeLock().unlock();
@@ -98,7 +98,7 @@ public class d {
         this.h.writeLock().lock();
         try {
             try {
-                b bVar = this.f24680c;
+                b bVar = this.f10992c;
                 if (list != null && list.size() > 0) {
                     StringBuilder sb = new StringBuilder();
                     sb.append("(");
@@ -109,7 +109,7 @@ public class d {
                             break;
                         }
                         sb.append("'");
-                        sb.append(list.get(i2).f24677a);
+                        sb.append(list.get(i2).f10989a);
                         sb.append("'");
                         if (i2 < list.size() - 1) {
                             sb.append(",");
@@ -123,7 +123,7 @@ public class d {
                 this.h.writeLock().unlock();
                 return true;
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.b(f24679a, "delete data", e);
+                com.opos.cmn.an.f.a.b(f10991a, "delete data", e);
                 this.h.writeLock().unlock();
                 return false;
             }
@@ -133,24 +133,24 @@ public class d {
         }
     }
 
-    static /* synthetic */ void b(d dVar, final a.InterfaceC0631a interfaceC0631a) {
+    static /* synthetic */ void b(d dVar, final a.InterfaceC0461a interfaceC0461a) {
         com.opos.cmn.an.j.b.a().execute(new Runnable() { // from class: com.opos.cmn.biz.requeststatistic.a.d.5
             @Override // java.lang.Runnable
             public final void run() {
-                d.c(d.this, new a.InterfaceC0631a() { // from class: com.opos.cmn.biz.requeststatistic.a.d.5.1
-                    @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0631a
+                d.c(d.this, new a.InterfaceC0461a() { // from class: com.opos.cmn.biz.requeststatistic.a.d.5.1
+                    @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0461a
                     public final void a() {
                         d.d(d.this);
-                        if (interfaceC0631a != null) {
-                            interfaceC0631a.a();
+                        if (interfaceC0461a != null) {
+                            interfaceC0461a.a();
                         }
                     }
 
-                    @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0631a
+                    @Override // com.opos.cmn.biz.requeststatistic.a.a.InterfaceC0461a
                     public final void b() {
                         d.d(d.this);
-                        if (interfaceC0631a != null) {
-                            interfaceC0631a.b();
+                        if (interfaceC0461a != null) {
+                            interfaceC0461a.b();
                         }
                     }
                 });
@@ -158,17 +158,17 @@ public class d {
         });
     }
 
-    static /* synthetic */ void c(d dVar, final a.InterfaceC0631a interfaceC0631a) {
+    static /* synthetic */ void c(d dVar, final a.InterfaceC0461a interfaceC0461a) {
         dVar.h.readLock().lock();
         long currentTimeMillis = System.currentTimeMillis() - 604800000;
         long currentTimeMillis2 = System.currentTimeMillis() - 60000;
-        String str = f24679a;
+        String str = f10991a;
         com.opos.cmn.an.f.a.b(str, "do report cache with start Time:" + currentTimeMillis + ", endTime:" + currentTimeMillis2);
         try {
             try {
-                final List<c> a2 = dVar.f24680c.a(currentTimeMillis, currentTimeMillis2);
+                final List<c> a2 = dVar.f10992c.a(currentTimeMillis, currentTimeMillis2);
                 dVar.h.readLock().unlock();
-                String str2 = f24679a;
+                String str2 = f10991a;
                 com.opos.cmn.an.f.a.b(str2, "report cache size:" + a2.size());
                 if (a2.size() > 0) {
                     JSONArray jSONArray = new JSONArray();
@@ -176,59 +176,59 @@ public class d {
                         try {
                             jSONArray.put(new JSONObject(cVar.b));
                         } catch (JSONException e) {
-                            com.opos.cmn.an.f.a.b(f24679a, "parse data fail", e);
+                            com.opos.cmn.an.f.a.b(f10991a, "parse data fail", e);
                         }
                     }
                     if (jSONArray.length() > 0) {
                         final Context context = dVar.b;
                         final String jSONArray2 = jSONArray.toString();
-                        final a.InterfaceC0630a interfaceC0630a = new a.InterfaceC0630a() { // from class: com.opos.cmn.biz.requeststatistic.a.d.6
-                            @Override // com.opos.cmn.biz.requeststatistic.a.InterfaceC0630a
+                        final a.InterfaceC0460a interfaceC0460a = new a.InterfaceC0460a() { // from class: com.opos.cmn.biz.requeststatistic.a.d.6
+                            @Override // com.opos.cmn.biz.requeststatistic.a.InterfaceC0460a
                             public final void onFail() {
-                                com.opos.cmn.an.f.a.b(d.f24679a, "report cache fail");
-                                a.InterfaceC0631a interfaceC0631a2 = interfaceC0631a;
-                                if (interfaceC0631a2 != null) {
-                                    interfaceC0631a2.b();
+                                com.opos.cmn.an.f.a.b(d.f10991a, "report cache fail");
+                                a.InterfaceC0461a interfaceC0461a2 = interfaceC0461a;
+                                if (interfaceC0461a2 != null) {
+                                    interfaceC0461a2.b();
                                 }
                             }
 
-                            @Override // com.opos.cmn.biz.requeststatistic.a.InterfaceC0630a
+                            @Override // com.opos.cmn.biz.requeststatistic.a.InterfaceC0460a
                             public final void onSuccess() {
-                                a.InterfaceC0631a interfaceC0631a2;
-                                com.opos.cmn.an.f.a.b(d.f24679a, "report cache success");
-                                if (!d.this.a(a2) && (interfaceC0631a2 = interfaceC0631a) != null) {
-                                    interfaceC0631a2.b();
+                                a.InterfaceC0461a interfaceC0461a2;
+                                com.opos.cmn.an.f.a.b(d.f10991a, "report cache success");
+                                if (!d.this.a(a2) && (interfaceC0461a2 = interfaceC0461a) != null) {
+                                    interfaceC0461a2.b();
                                 } else if (d.e(d.this)) {
-                                    d.c(d.this, interfaceC0631a);
+                                    d.c(d.this, interfaceC0461a);
                                 } else {
-                                    interfaceC0631a.a();
+                                    interfaceC0461a.a();
                                 }
                             }
                         };
                         com.opos.cmn.an.j.b.a().execute(new Runnable() { // from class: com.opos.cmn.biz.requeststatistic.a.1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                a.a(context, jSONArray2, interfaceC0630a);
+                                a.a(context, jSONArray2, interfaceC0460a);
                             }
                         });
                         return;
                     } else if (!dVar.a(a2)) {
-                        if (interfaceC0631a != null) {
-                            interfaceC0631a.b();
+                        if (interfaceC0461a != null) {
+                            interfaceC0461a.b();
                             return;
                         }
                         return;
-                    } else if (interfaceC0631a == null) {
+                    } else if (interfaceC0461a == null) {
                         return;
                     }
-                } else if (interfaceC0631a == null) {
+                } else if (interfaceC0461a == null) {
                     return;
                 }
-                interfaceC0631a.a();
+                interfaceC0461a.a();
             } catch (Exception e2) {
-                com.opos.cmn.an.f.a.b(f24679a, "get cache fail", e2);
-                if (interfaceC0631a != null) {
-                    interfaceC0631a.b();
+                com.opos.cmn.an.f.a.b(f10991a, "get cache fail", e2);
+                if (interfaceC0461a != null) {
+                    interfaceC0461a.b();
                 }
                 dVar.h.readLock().unlock();
             }
@@ -243,12 +243,12 @@ public class d {
         int i = 0;
         try {
             try {
-                i = dVar.f24680c.getWritableDatabase().delete("request_statistic", "createTime<= ?", new String[]{String.valueOf(System.currentTimeMillis() - 604800000)});
+                i = dVar.f10992c.getWritableDatabase().delete("request_statistic", "createTime<= ?", new String[]{String.valueOf(System.currentTimeMillis() - 604800000)});
             } catch (Exception e) {
-                com.opos.cmn.an.f.a.b(f24679a, "delete cache expired fail", e);
+                com.opos.cmn.an.f.a.b(f10991a, "delete cache expired fail", e);
             }
             dVar.h.writeLock().unlock();
-            com.opos.cmn.an.f.a.b(f24679a, "delete cache expired size:".concat(String.valueOf(i)));
+            com.opos.cmn.an.f.a.b(f10991a, "delete cache expired size:".concat(String.valueOf(i)));
         } catch (Throwable th) {
             dVar.h.writeLock().unlock();
             throw th;

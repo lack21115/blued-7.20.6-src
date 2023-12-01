@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
 public class BluedWebViewCacheClient extends WebViewClient {
     @Override // android.webkit.WebViewClient
     public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        WebResourceResponse a2 = BluedWebViewCache.a(webResourceRequest);
-        return a2 == null ? super.shouldInterceptRequest(webView, webResourceRequest) : a2;
+        WebResourceResponse a = BluedWebViewCache.a(webResourceRequest);
+        return a == null ? super.shouldInterceptRequest(webView, webResourceRequest) : a;
     }
 }

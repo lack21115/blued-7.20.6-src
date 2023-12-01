@@ -54,10 +54,10 @@ public interface IMms extends IInterface {
                     }
                     this.mRemote.transact(11, obtain, obtain2, 0);
                     obtain2.readException();
-                    Uri createFromParcel = obtain2.readInt() != 0 ? Uri.CREATOR.createFromParcel(obtain2) : null;
+                    Uri uri2 = obtain2.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return uri2;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -76,10 +76,10 @@ public interface IMms extends IInterface {
                     obtain.writeString(str3);
                     this.mRemote.transact(10, obtain, obtain2, 0);
                     obtain2.readException();
-                    Uri createFromParcel = obtain2.readInt() != 0 ? Uri.CREATOR.createFromParcel(obtain2) : null;
+                    Uri uri = obtain2.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return uri;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -233,10 +233,10 @@ public interface IMms extends IInterface {
                     obtain.writeInt(i);
                     this.mRemote.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
-                    Bundle createFromParcel = obtain2.readInt() != 0 ? Bundle.CREATOR.createFromParcel(obtain2) : null;
+                    Bundle bundle = obtain2.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return bundle;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -267,10 +267,10 @@ public interface IMms extends IInterface {
                     obtain.writeInt(z2 ? 1 : 0);
                     this.mRemote.transact(5, obtain, obtain2, 0);
                     obtain2.readException();
-                    Uri createFromParcel = obtain2.readInt() != 0 ? Uri.CREATOR.createFromParcel(obtain2) : null;
+                    Uri uri2 = obtain2.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return uri2;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -293,10 +293,10 @@ public interface IMms extends IInterface {
                     obtain.writeInt(z2 ? 1 : 0);
                     this.mRemote.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
-                    Uri createFromParcel = obtain2.readInt() != 0 ? Uri.CREATOR.createFromParcel(obtain2) : null;
+                    Uri uri = obtain2.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(obtain2) : null;
                     obtain2.recycle();
                     obtain.recycle();
-                    return createFromParcel;
+                    return uri;
                 } catch (Throwable th) {
                     obtain2.recycle();
                     obtain.recycle();
@@ -451,12 +451,12 @@ public interface IMms extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    sendMessage(parcel.readInt(), parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? PendingIntent.CREATOR.createFromParcel(parcel) : null);
+                    sendMessage(parcel.readInt(), parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    downloadMessage(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? PendingIntent.CREATOR.createFromParcel(parcel) : null);
+                    downloadMessage(parcel.readInt(), parcel.readString(), parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 3:
@@ -483,7 +483,7 @@ public interface IMms extends IInterface {
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
-                    Uri importMultimediaMessage = importMultimediaMessage(parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readLong(), parcel.readInt() != 0, parcel.readInt() != 0);
+                    Uri importMultimediaMessage = importMultimediaMessage(parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null, parcel.readString(), parcel.readLong(), parcel.readInt() != 0, parcel.readInt() != 0);
                     parcel2.writeNoException();
                     if (importMultimediaMessage == null) {
                         parcel2.writeInt(0);
@@ -494,7 +494,7 @@ public interface IMms extends IInterface {
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean deleteStoredMessage = deleteStoredMessage(parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null);
+                    boolean deleteStoredMessage = deleteStoredMessage(parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(deleteStoredMessage ? 1 : 0);
                     return true;
@@ -506,7 +506,7 @@ public interface IMms extends IInterface {
                     return true;
                 case 8:
                     parcel.enforceInterface(DESCRIPTOR);
-                    boolean updateStoredMessageStatus = updateStoredMessageStatus(parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? ContentValues.CREATOR.createFromParcel(parcel) : null);
+                    boolean updateStoredMessageStatus = updateStoredMessageStatus(parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (ContentValues) ContentValues.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     parcel2.writeInt(updateStoredMessageStatus ? 1 : 0);
                     return true;
@@ -529,7 +529,7 @@ public interface IMms extends IInterface {
                     return true;
                 case 11:
                     parcel.enforceInterface(DESCRIPTOR);
-                    Uri addMultimediaMessageDraft = addMultimediaMessageDraft(parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null);
+                    Uri addMultimediaMessageDraft = addMultimediaMessageDraft(parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     if (addMultimediaMessageDraft == null) {
                         parcel2.writeInt(0);
@@ -540,7 +540,7 @@ public interface IMms extends IInterface {
                     return true;
                 case 12:
                     parcel.enforceInterface(DESCRIPTOR);
-                    sendStoredMessage(parcel.readInt(), parcel.readString(), parcel.readInt() != 0 ? Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? PendingIntent.CREATOR.createFromParcel(parcel) : null);
+                    sendStoredMessage(parcel.readInt(), parcel.readString(), parcel.readInt() != 0 ? (Uri) Uri.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, parcel.readInt() != 0 ? (PendingIntent) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                     parcel2.writeNoException();
                     return true;
                 case 13:
@@ -554,7 +554,7 @@ public interface IMms extends IInterface {
                     parcel2.writeNoException();
                     parcel2.writeInt(autoPersisting ? 1 : 0);
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

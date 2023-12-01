@@ -16,18 +16,18 @@ public class m {
     private static String k = m.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f40109a = "STORAGE_SERVICE";
+    public static String f26418a = "STORAGE_SERVICE";
     public static String b = "THREAD_POOL";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f40110c = "DATA_BUFFER_SERVER";
+    public static String f26419c = "DATA_BUFFER_SERVER";
     public static String d = "CALLBACK_SERVICE";
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/m$a.class */
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final m f40111a = new m((byte) 0);
+        private static final m f26420a = new m((byte) 0);
     }
 
     private m() {
@@ -47,7 +47,7 @@ public class m {
     }
 
     public static m a() {
-        return a.f40111a;
+        return a.f26420a;
     }
 
     public final String a(String str) {
@@ -73,11 +73,11 @@ public class m {
     public final Object b(String str) {
         synchronized (m.class) {
             try {
-                if (TextUtils.equals(f40109a, str)) {
+                if (TextUtils.equals(f26418a, str)) {
                     return this.h;
                 } else if (TextUtils.equals(b, str)) {
                     return this.i;
-                } else if (TextUtils.equals(f40110c, str)) {
+                } else if (TextUtils.equals(f26419c, str)) {
                     return this.g;
                 } else if (TextUtils.equals(d, str)) {
                     return this.j;

@@ -8,14 +8,14 @@ import java.util.HashMap;
 public class a extends Callback {
 
     /* renamed from: a  reason: collision with root package name */
-    private Callback f24282a;
+    private Callback f10595a;
 
     public void a(Callback callback) {
         b bVar = callback;
         if (callback == null) {
             bVar = new b();
         }
-        this.f24282a = bVar;
+        this.f10595a = bVar;
     }
 
     @Override // com.oplus.instant.router.callback.Callback
@@ -26,10 +26,10 @@ public class a extends Callback {
             com.oplus.instant.router.f.a.a().b().onStat(hashMap);
         }
         d.b("router_response", response.toString());
-        Callback callback = this.f24282a;
+        Callback callback = this.f10595a;
         if (callback != null) {
             callback.onResponse(response);
-            this.f24282a = null;
+            this.f10595a = null;
         }
     }
 }

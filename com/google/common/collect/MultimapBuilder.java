@@ -247,7 +247,7 @@ public abstract class MultimapBuilder<K0, V0> {
         return new MultimapBuilderWithKeys<K0>() { // from class: com.google.common.collect.MultimapBuilder.4
             @Override // com.google.common.collect.MultimapBuilder.MultimapBuilderWithKeys
             <K extends K0, V> Map<K, Collection<V>> createMap() {
-                return new EnumMap(Class.this);
+                return new EnumMap(cls);
             }
         };
     }
@@ -289,7 +289,7 @@ public abstract class MultimapBuilder<K0, V0> {
         return new MultimapBuilderWithKeys<K0>() { // from class: com.google.common.collect.MultimapBuilder.3
             @Override // com.google.common.collect.MultimapBuilder.MultimapBuilderWithKeys
             <K extends K0, V> Map<K, Collection<V>> createMap() {
-                return new TreeMap(Comparator.this);
+                return new TreeMap(comparator);
             }
         };
     }

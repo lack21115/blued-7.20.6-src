@@ -18,11 +18,9 @@ public class PageInfoFetcher implements DataFetcher {
         this.bridgeManager = bridgeManager;
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher
     public void cancel() {
     }
 
-    @Override // com.blued.android.module.common.web.modelloader.fetcher.DataFetcher
     public void loadData(String str, CallBackFunction callBackFunction, DataFetcher.DataFetcherCallback dataFetcherCallback) {
         this.lifecycle.addObserver(new LifecycleObserver() { // from class: com.soft.blued.ui.web.modelloader.fetcher.PageInfoFetcher.1
             @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)

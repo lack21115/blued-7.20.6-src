@@ -30,7 +30,7 @@ public class ExperimentalCoroutineDispatcher extends ExecutorCoroutineDispatcher
     }
 
     public /* synthetic */ ExperimentalCoroutineDispatcher(int i, int i2, String str, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-        this((i3 & 1) != 0 ? TasksKt.f43587c : i, (i3 & 2) != 0 ? TasksKt.d : i2, (i3 & 4) != 0 ? "DefaultDispatcher" : str);
+        this((i3 & 1) != 0 ? TasksKt.c : i, (i3 & 2) != 0 ? TasksKt.d : i2, (i3 & 4) != 0 ? "DefaultDispatcher" : str);
     }
 
     private final CoroutineScheduler b() {

@@ -9,20 +9,20 @@ import com.tencent.smtt.sdk.WebViewCallbackClient;
 public class YouzanX5WebViewCallbackClient implements WebViewCallbackClient {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    WebView f1170;
+    WebView f1123;
 
     public YouzanX5WebViewCallbackClient(WebView webView) {
-        this.f1170 = webView;
+        this.f1123 = webView;
     }
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
     public void computeScroll(View view) {
-        this.f1170.super_computeScroll();
+        this.f1123.super_computeScroll();
     }
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
     public boolean dispatchTouchEvent(MotionEvent motionEvent, View view) {
-        return this.f1170.super_dispatchTouchEvent(motionEvent);
+        return this.f1123.super_dispatchTouchEvent(motionEvent);
     }
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
@@ -31,26 +31,26 @@ public class YouzanX5WebViewCallbackClient implements WebViewCallbackClient {
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
     public boolean onInterceptTouchEvent(MotionEvent motionEvent, View view) {
-        return this.f1170.super_onInterceptTouchEvent(motionEvent);
+        return this.f1123.super_onInterceptTouchEvent(motionEvent);
     }
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
     public void onOverScrolled(int i, int i2, boolean z, boolean z2, View view) {
-        this.f1170.super_onOverScrolled(i, i2, z, z2);
+        this.f1123.super_onOverScrolled(i, i2, z, z2);
     }
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
     public void onScrollChanged(int i, int i2, int i3, int i4, View view) {
-        this.f1170.super_onScrollChanged(i, i2, i3, i4);
+        this.f1123.super_onScrollChanged(i, i2, i3, i4);
     }
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
     public boolean onTouchEvent(MotionEvent motionEvent, View view) {
-        return this.f1170.super_onTouchEvent(motionEvent);
+        return this.f1123.super_onTouchEvent(motionEvent);
     }
 
     @Override // com.tencent.smtt.sdk.WebViewCallbackClient
     public boolean overScrollBy(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, boolean z, View view) {
-        return this.f1170.super_overScrollBy(i, i2, i3, i4, i5, i6, i7, i8, z);
+        return this.f1123.super_overScrollBy(i, i2, i3, i4, i5, i6, i7, i8, z);
     }
 }

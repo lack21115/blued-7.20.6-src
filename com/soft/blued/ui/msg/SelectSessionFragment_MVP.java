@@ -7,7 +7,6 @@ import java.util.List;
 
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/SelectSessionFragment_MVP.class */
 public final class SelectSessionFragment_MVP implements MvpDispatcher {
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         SelectSessionFragment selectSessionFragment = (SelectSessionFragment) mvpFragment;
         if (list == null || list.size() <= 0) {

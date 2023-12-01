@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public final class MessageEventUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final MessageEventUtils f29689a = new MessageEventUtils();
+    public static final MessageEventUtils f15999a = new MessageEventUtils();
 
     private MessageEventUtils() {
     }
@@ -29,14 +29,14 @@ public final class MessageEventUtils {
     }
 
     @JvmStatic
-    public static final void a(MessageProtos.Event event, String room_uid, String room_id) {
+    public static final void a(MessageProtos.Event event, String str, String str2) {
         Intrinsics.e(event, "event");
-        Intrinsics.e(room_uid, "room_uid");
-        Intrinsics.e(room_id, "room_id");
+        Intrinsics.e(str, "room_uid");
+        Intrinsics.e(str2, TTLiveConstants.ROOMID_KEY);
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("room_uid", room_uid);
-            jSONObject.put(TTLiveConstants.ROOMID_KEY, room_id);
+            jSONObject.put("room_uid", str);
+            jSONObject.put(TTLiveConstants.ROOMID_KEY, str2);
             ByteDanceLogUtils.a(event.name(), jSONObject);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -44,11 +44,11 @@ public final class MessageEventUtils {
     }
 
     @JvmStatic
-    public static final void a(String status) {
-        Intrinsics.e(status, "status");
+    public static final void a(String str) {
+        Intrinsics.e(str, "status");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("status", status);
+            jSONObject.put("status", str);
             ByteDanceLogUtils.a("MSG_VOCATIV_BTN_CLICK", jSONObject);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -82,11 +82,11 @@ public final class MessageEventUtils {
     }
 
     @JvmStatic
-    public static final void b(String url) {
-        Intrinsics.e(url, "url");
+    public static final void b(String str) {
+        Intrinsics.e(str, "url");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("url", url);
+            jSONObject.put("url", str);
             ByteDanceLogUtils.a("BLUED_MSG_CLICK", jSONObject);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -94,8 +94,8 @@ public final class MessageEventUtils {
     }
 
     @JvmStatic
-    public static final void c(String event) {
-        Intrinsics.e(event, "event");
-        ByteDanceLogUtils.a(event);
+    public static final void c(String str) {
+        Intrinsics.e(str, "event");
+        ByteDanceLogUtils.a(str);
     }
 }

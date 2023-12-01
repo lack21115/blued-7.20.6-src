@@ -8,17 +8,17 @@ import android.graphics.RectF;
 public class c extends d {
 
     /* renamed from: c  reason: collision with root package name */
-    private float f24754c;
+    private float f11066c;
 
     public c(Context context, float f) {
         super(context);
-        this.f24754c = f;
+        this.f11066c = f;
     }
 
     @Override // com.opos.cmn.e.a.a.d
     protected void a(Canvas canvas, int i, int i2) {
         RectF rectF = new RectF(0.0f, 0.0f, getWidth(), getHeight());
-        float f = this.f24754c;
-        canvas.drawRoundRect(rectF, f, f, this.f24755a);
+        float f = this.f11066c;
+        canvas.drawRoundRect(rectF, f, f, this.f11067a);
     }
 }

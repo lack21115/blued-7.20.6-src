@@ -55,8 +55,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, Serializable {
         private static final long serialVersionUID = -5992448646407690164L;
         private final Sync sync;
 
-        /* JADX INFO: Access modifiers changed from: protected */
-        public ReadLock(ReentrantReadWriteLock reentrantReadWriteLock) {
+        protected ReadLock(ReentrantReadWriteLock reentrantReadWriteLock) {
             this.sync = reentrantReadWriteLock.sync;
         }
 
@@ -95,9 +94,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, Serializable {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/concurrent/locks/ReentrantReadWriteLock$Sync.class */
-    public static abstract class Sync extends AbstractQueuedSynchronizer {
+    static abstract class Sync extends AbstractQueuedSynchronizer {
         static final int EXCLUSIVE_MASK = 65535;
         static final int MAX_COUNT = 65535;
         static final int SHARED_SHIFT = 16;
@@ -464,8 +462,7 @@ public class ReentrantReadWriteLock implements ReadWriteLock, Serializable {
         private static final long serialVersionUID = -4992448646407690164L;
         private final Sync sync;
 
-        /* JADX INFO: Access modifiers changed from: protected */
-        public WriteLock(ReentrantReadWriteLock reentrantReadWriteLock) {
+        protected WriteLock(ReentrantReadWriteLock reentrantReadWriteLock) {
             this.sync = reentrantReadWriteLock.sync;
         }
 

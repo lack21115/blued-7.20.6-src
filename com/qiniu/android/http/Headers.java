@@ -49,7 +49,7 @@ public final class Headers {
                         charAt = str2.charAt(i3);
                         i2 = ((charAt > 31 || charAt == '\t') && charAt < 127) ? i3 + 1 : 0;
                     }
-                    throw new IllegalArgumentException(Util.a("Unexpected char %#04x at %d in %s value: %s", Integer.valueOf(charAt), Integer.valueOf(i3), str, str2));
+                    throw new IllegalArgumentException(Util.a("Unexpected char %#04x at %d in %s value: %s", new Object[]{Integer.valueOf(charAt), Integer.valueOf(i3), str, str2}));
                 }
                 charAt2 = str.charAt(i);
                 if (charAt2 <= ' ' || charAt2 >= 127) {
@@ -57,7 +57,7 @@ public final class Headers {
                 }
                 i4 = i + 1;
             }
-            throw new IllegalArgumentException(Util.a("Unexpected char %#04x at %d in header name: %s", Integer.valueOf(charAt2), Integer.valueOf(i), str));
+            throw new IllegalArgumentException(Util.a("Unexpected char %#04x at %d in header name: %s", new Object[]{Integer.valueOf(charAt2), Integer.valueOf(i), str}));
         }
 
         public Builder add(String str) {

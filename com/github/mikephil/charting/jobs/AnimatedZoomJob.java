@@ -28,7 +28,7 @@ public class AnimatedZoomJob extends AnimatedViewPortJob implements Animator.Ani
         this.h = f7;
         this.e = f8;
         this.f = f9;
-        this.f22154a.addListener(this);
+        this.f8547a.addListener(this);
         this.i = yAxis;
         this.j = f;
     }
@@ -62,9 +62,9 @@ public class AnimatedZoomJob extends AnimatedViewPortJob implements Animator.Ani
 
     @Override // com.github.mikephil.charting.jobs.AnimatedViewPortJob, android.animation.ValueAnimator.AnimatorUpdateListener
     public void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float f = this.f22155c;
+        float f = this.f8548c;
         float f2 = this.n;
-        float f3 = this.f22155c;
+        float f3 = this.f8548c;
         float f4 = this.b;
         float f5 = this.d;
         float f6 = this.o;

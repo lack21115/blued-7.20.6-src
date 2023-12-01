@@ -1,20 +1,11 @@
 package libcore.net;
 
-import android.app.backup.FullBackup;
-import android.content.ClipDescription;
-import android.provider.ContactsContract;
-import androidx.constraintlayout.core.motion.utils.TypedValues;
+import com.amap.api.col.p0003sl.iu;
+import com.android.internal.content.NativeLibraryHelper;
+import com.android.internal.http.multipart.StringPart;
 import com.android.internal.telephony.SmsConstants;
-import com.anythink.expressad.exoplayer.k.o;
-import com.anythink.expressad.foundation.d.l;
-import com.baidu.mobads.sdk.internal.a;
-import com.cdo.oaps.ad.OapsKey;
-import com.huawei.openalliance.ad.constant.ax;
-import com.kuaishou.weapon.p0.t;
-import com.ss.android.downloadad.api.constant.AdBaseConstants;
-import com.tencent.tinker.loader.shareutil.SharePatchInfo;
-import com.uc.crashsdk.export.LogType;
-import com.youzan.spiderman.utils.Stone;
+import com.anythink.core.common.c.d;
+import com.anythink.core.common.g.c;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -34,13 +25,13 @@ public final class MimeUtils {
         add("application/dsptype", "tsp");
         add("application/hta", "hta");
         add("application/mac-binhex40", "hqx");
-        add("application/mathematica", FullBackup.NO_BACKUP_TREE_TOKEN);
+        add("application/mathematica", "nb");
         add("application/msaccess", "mdb");
         add("application/oda", "oda");
         add("application/ogg", "ogg");
         add("application/ogg", "oga");
         add("application/pdf", "pdf");
-        add("application/pgp-keys", "key");
+        add("application/pgp-keys", d.a.b);
         add("application/pgp-signature", "pgp");
         add("application/pics-rules", "prf");
         add("application/pkix-cert", "cer");
@@ -48,7 +39,7 @@ public final class MimeUtils {
         add("application/rdf+xml", "rdf");
         add("application/rss+xml", "rss");
         add("application/zip", "zip");
-        add(AdBaseConstants.MIME_APK, "apk");
+        add("application/vnd.android.package-archive", "apk");
         add("application/vnd.cinderella", "cdy");
         add("application/vnd.ms-pki.stl", "stl");
         add("application/vnd.oasis.opendocument.database", "odb");
@@ -110,7 +101,7 @@ public final class MimeUtils {
         add("application/x-debian-package", "deb");
         add("application/x-debian-package", "udeb");
         add("application/x-director", "dcr");
-        add("application/x-director", SharePatchInfo.OAT_DIR);
+        add("application/x-director", "dir");
         add("application/x-director", "dxr");
         add("application/x-dms", "dms");
         add("application/x-doom", "wad");
@@ -153,8 +144,8 @@ public final class MimeUtils {
         add("application/x-lzx", "lzx");
         add("application/x-maker", "frm");
         add("application/x-maker", "maker");
-        add("application/x-maker", TypedValues.AttributesType.S_FRAME);
-        add("application/x-maker", l.f);
+        add("application/x-maker", "frame");
+        add("application/x-maker", "fb");
         add("application/x-maker", "book");
         add("application/x-maker", "fbdoc");
         add("application/x-mif", "mif");
@@ -183,7 +174,7 @@ public final class MimeUtils {
         add("application/x-troff", "roff");
         add("application/x-troff-man", "man");
         add("application/x-ustar", "ustar");
-        add("application/x-wais-source", OapsKey.KEY_SRC);
+        add("application/x-wais-source", "src");
         add("application/x-wingz", "wz");
         add("application/x-webarchive", "webarchive");
         add("application/x-webarchive-xml", "webarchivexml");
@@ -225,7 +216,7 @@ public final class MimeUtils {
         add("audio/x-ms-wma", "wma");
         add("audio/x-ms-wax", "wax");
         add("audio/x-pn-realaudio", "ra");
-        add("audio/x-pn-realaudio", t.w);
+        add("audio/x-pn-realaudio", "rm");
         add("audio/x-pn-realaudio", "ram");
         add("audio/x-realaudio", "ra");
         add("audio/x-scpls", "pls");
@@ -233,16 +224,16 @@ public final class MimeUtils {
         add("audio/x-wav", "wav");
         add("image/x-ms-bmp", "bmp");
         add("image/bmp", "bmp");
-        add(ax.B, "gif");
+        add("image/gif", "gif");
         add("image/x-icon", "ico");
         add("image/ico", "cur");
         add("image/ico", "ico");
         add("image/ief", "ief");
-        add(ax.V, "jpg");
-        add(ax.V, "jpeg");
-        add(ax.V, "jpe");
+        add("image/jpeg", "jpg");
+        add("image/jpeg", "jpeg");
+        add("image/jpeg", "jpe");
         add("image/pcx", "pcx");
-        add(ax.Z, "png");
+        add("image/png", "png");
         add("image/svg+xml", "svg");
         add("image/svg+xml", "svgz");
         add("image/tiff", "tiff");
@@ -275,17 +266,17 @@ public final class MimeUtils {
         add("text/calendar", "ics");
         add("text/calendar", "icz");
         add("text/comma-separated-values", "csv");
-        add("text/css", Stone.CSS_SUFFIX);
-        add(ClipDescription.MIMETYPE_TEXT_HTML, "htm");
-        add(ClipDescription.MIMETYPE_TEXT_HTML, a.f);
+        add("text/css", "css");
+        add("text/html", "htm");
+        add("text/html", "html");
         add("text/h323", "323");
         add("text/iuls", "uls");
         add("text/mathml", "mml");
-        add("text/plain", "txt");
-        add("text/plain", "asc");
-        add("text/plain", "text");
-        add("text/plain", "diff");
-        add("text/plain", "po");
+        add(StringPart.DEFAULT_CONTENT_TYPE, "txt");
+        add(StringPart.DEFAULT_CONTENT_TYPE, "asc");
+        add(StringPart.DEFAULT_CONTENT_TYPE, "text");
+        add(StringPart.DEFAULT_CONTENT_TYPE, "diff");
+        add(StringPart.DEFAULT_CONTENT_TYPE, "po");
         add("text/richtext", "rtx");
         add("text/rtf", "rtf");
         add("text/text", "phps");
@@ -301,16 +292,16 @@ public final class MimeUtils {
         add("text/x-c++src", "c++");
         add("text/x-c++src", "cc");
         add("text/x-c++src", "cxx");
-        add("text/x-chdr", "h");
+        add("text/x-chdr", iu.g);
         add("text/x-component", "htc");
         add("text/x-csh", "csh");
         add("text/x-csrc", "c");
         add("text/x-dsrc", "d");
         add("text/x-haskell", "hs");
-        add("text/x-java", LogType.JAVA_TYPE);
+        add("text/x-java", "java");
         add("text/x-literate-haskell", "lhs");
         add("text/x-moc", "moc");
-        add("text/x-pascal", "p");
+        add("text/x-pascal", c.W);
         add("text/x-pascal", "pas");
         add("text/x-pcs-gcd", "gcd");
         add("text/x-setext", "etx");
@@ -320,7 +311,7 @@ public final class MimeUtils {
         add("text/x-tex", "sty");
         add("text/x-tex", "cls");
         add("text/x-vcalendar", "vcs");
-        add(ContactsContract.Contacts.CONTENT_VCARD_TYPE, "vcf");
+        add("text/x-vcard", "vcf");
         add("video/3gpp", SmsConstants.FORMAT_3GPP);
         add("video/3gpp", "3gp");
         add("video/3gpp2", SmsConstants.FORMAT_3GPP2);
@@ -332,15 +323,15 @@ public final class MimeUtils {
         add("video/fli", "fli");
         add("video/m4v", "m4v");
         add("video/mp2ts", "ts");
-        add(o.m, "mpeg");
-        add(o.m, "mpg");
-        add(o.m, "mpe");
+        add("video/mpeg", "mpeg");
+        add("video/mpeg", "mpg");
+        add("video/mpeg", "mpe");
         add("video/mp4", "mp4");
-        add(o.m, "VOB");
+        add("video/mpeg", "VOB");
         add("video/quicktime", "qt");
         add("video/quicktime", "mov");
         add("video/vnd.mpegurl", "mxu");
-        add(o.f, "webm");
+        add("video/webm", "webm");
         add("video/x-la-asf", "lsf");
         add("video/x-la-asf", "lsx");
         add("video/x-matroska", "mkv");
@@ -397,7 +388,7 @@ public final class MimeUtils {
                 }
             }
         }
-        File file2 = new File(System.getProperty("java.home"), "lib" + File.separator + "content-types.properties");
+        File file2 = new File(System.getProperty("java.home"), NativeLibraryHelper.LIB_DIR_NAME + File.separator + "content-types.properties");
         if (file2.exists()) {
             try {
                 return new FileInputStream(file2);

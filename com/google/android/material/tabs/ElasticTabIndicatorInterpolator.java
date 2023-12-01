@@ -5,8 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import com.google.android.material.animation.AnimationUtils;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/tabs/ElasticTabIndicatorInterpolator.class */
-class ElasticTabIndicatorInterpolator extends TabIndicatorInterpolator {
+public class ElasticTabIndicatorInterpolator extends TabIndicatorInterpolator {
     private static float accInterp(float f) {
         return (float) (1.0d - Math.cos((f * 3.141592653589793d) / 2.0d));
     }
@@ -15,8 +16,9 @@ class ElasticTabIndicatorInterpolator extends TabIndicatorInterpolator {
         return (float) Math.sin((f * 3.141592653589793d) / 2.0d);
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.material.tabs.TabIndicatorInterpolator
-    void setIndicatorBoundsForOffset(TabLayout tabLayout, View view, View view2, float f, Drawable drawable) {
+    public void setIndicatorBoundsForOffset(TabLayout tabLayout, View view, View view2, float f, Drawable drawable) {
         float accInterp;
         float f2;
         RectF calculateIndicatorWidthForTab = calculateIndicatorWidthForTab(tabLayout, view);

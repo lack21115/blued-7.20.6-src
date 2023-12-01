@@ -1,6 +1,7 @@
 package com.zx.a.I8b7;
 
 import android.text.TextUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -11,14 +12,14 @@ import org.json.JSONObject;
 public class j0 implements e0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public d0 f42136a;
+    public d0 f28445a;
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public int f42137c = 8;
+    public int f28446c = 8;
 
     public j0(d0 d0Var) {
-        this.f42136a = (d0) o1.a(d0Var);
+        this.f28445a = (d0) o1.a(d0Var);
     }
 
     public static String a(Throwable th) {
@@ -42,7 +43,7 @@ public class j0 implements e0 {
         String str3;
         String str4;
         try {
-            StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[this.f42137c];
+            StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[this.f28446c];
             String className = stackTraceElement.getClassName();
             str3 = String.format("%s.%s", className.substring(className.lastIndexOf(".") + 1), stackTraceElement.getMethodName());
         } catch (Throwable th2) {
@@ -53,7 +54,7 @@ public class j0 implements e0 {
             str5 = this.b;
         }
         if (!TextUtils.isEmpty(str5)) {
-            str3 = str5 + "-" + str3;
+            str3 = str5 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str3;
         }
         String str6 = str2;
         if (th != null) {
@@ -77,7 +78,7 @@ public class j0 implements e0 {
         String str9 = trim;
         if (trim.startsWith("{")) {
             str9 = trim;
-            if (trim.endsWith(com.alipay.sdk.util.i.d)) {
+            if (trim.endsWith("}")) {
                 try {
                     str9 = new JSONObject(trim).toString(2);
                 } catch (Throwable th3) {
@@ -97,7 +98,7 @@ public class j0 implements e0 {
             }
         }
         try {
-            StackTraceElement stackTraceElement2 = Thread.currentThread().getStackTrace()[this.f42137c];
+            StackTraceElement stackTraceElement2 = Thread.currentThread().getStackTrace()[this.f28446c];
             String className2 = stackTraceElement2.getClassName();
             str4 = String.format("(%s:%d)", className2.substring(className2.lastIndexOf(".") + 1) + ".java", Integer.valueOf(stackTraceElement2.getLineNumber()));
         } catch (Throwable th5) {
@@ -107,6 +108,6 @@ public class j0 implements e0 {
         if (th == null) {
             str11 = str10 + " " + str4;
         }
-        this.f42136a.a(i, str3, str11);
+        this.f28445a.a(i, str3, str11);
     }
 }

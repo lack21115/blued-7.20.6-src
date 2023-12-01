@@ -25,13 +25,9 @@ public final class FragmentYyCreateRoomBinding implements ViewBinding {
     public final ImageView G;
     public final ImageView H;
     private final ConstraintLayout I;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final EditText f16495a;
+    public final EditText a;
     public final FrameLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final Group f16496c;
+    public final Group c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -58,9 +54,9 @@ public final class FragmentYyCreateRoomBinding implements ViewBinding {
 
     private FragmentYyCreateRoomBinding(ConstraintLayout constraintLayout, EditText editText, FrameLayout frameLayout, Group group, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ShapeTextView shapeTextView, LinearLayout linearLayout, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, RecyclerView recyclerView, RecyclerView recyclerView2, RecyclerView recyclerView3, ShapeRelativeLayout shapeRelativeLayout, TextView textView, ShapeTextView shapeTextView2, TextView textView2, ShapeTextView shapeTextView3, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, ImageView imageView10, ImageView imageView11) {
         this.I = constraintLayout;
-        this.f16495a = editText;
+        this.a = editText;
         this.b = frameLayout;
-        this.f16496c = group;
+        this.c = group;
         this.d = imageView;
         this.e = imageView2;
         this.f = imageView3;
@@ -100,8 +96,8 @@ public final class FragmentYyCreateRoomBinding implements ViewBinding {
         if (editText != null) {
             FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_outside_view);
             if (frameLayout != null) {
-                Group group = (Group) view.findViewById(R.id.gro_masked_guide);
-                if (group != null) {
+                Group findViewById = view.findViewById(R.id.gro_masked_guide);
+                if (findViewById != null) {
                     ImageView imageView = (ImageView) view.findViewById(R.id.img_model_mask_icon);
                     if (imageView != null) {
                         ImageView imageView2 = (ImageView) view.findViewById(R.id.img_model_normal_icon);
@@ -124,18 +120,18 @@ public final class FragmentYyCreateRoomBinding implements ViewBinding {
                                                         if (shapeTextView != null) {
                                                             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_im_notic);
                                                             if (linearLayout != null) {
-                                                                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_mask_layout);
-                                                                if (constraintLayout != null) {
-                                                                    ConstraintLayout constraintLayout2 = (ConstraintLayout) view.findViewById(R.id.ll_mask_model);
-                                                                    if (constraintLayout2 != null) {
-                                                                        ConstraintLayout constraintLayout3 = (ConstraintLayout) view.findViewById(R.id.ll_normal_model);
-                                                                        if (constraintLayout3 != null) {
-                                                                            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv);
-                                                                            if (recyclerView != null) {
-                                                                                RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rcv_bg);
-                                                                                if (recyclerView2 != null) {
-                                                                                    RecyclerView recyclerView3 = (RecyclerView) view.findViewById(R.id.rcv_label);
-                                                                                    if (recyclerView3 != null) {
+                                                                ConstraintLayout findViewById2 = view.findViewById(R.id.ll_mask_layout);
+                                                                if (findViewById2 != null) {
+                                                                    ConstraintLayout findViewById3 = view.findViewById(R.id.ll_mask_model);
+                                                                    if (findViewById3 != null) {
+                                                                        ConstraintLayout findViewById4 = view.findViewById(R.id.ll_normal_model);
+                                                                        if (findViewById4 != null) {
+                                                                            RecyclerView findViewById5 = view.findViewById(R.id.rcv);
+                                                                            if (findViewById5 != null) {
+                                                                                RecyclerView findViewById6 = view.findViewById(R.id.rcv_bg);
+                                                                                if (findViewById6 != null) {
+                                                                                    RecyclerView findViewById7 = view.findViewById(R.id.rcv_label);
+                                                                                    if (findViewById7 != null) {
                                                                                         ShapeRelativeLayout shapeRelativeLayout = (ShapeRelativeLayout) view.findViewById(R.id.sha);
                                                                                         if (shapeRelativeLayout != null) {
                                                                                             TextView textView = (TextView) view.findViewById(R.id.tv_background_title);
@@ -164,7 +160,7 @@ public final class FragmentYyCreateRoomBinding implements ViewBinding {
                                                                                                                                         if (imageView10 != null) {
                                                                                                                                             ImageView imageView11 = (ImageView) view.findViewById(R.id.view_border_normal);
                                                                                                                                             if (imageView11 != null) {
-                                                                                                                                                return new FragmentYyCreateRoomBinding((ConstraintLayout) view, editText, frameLayout, group, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, shapeTextView, linearLayout, constraintLayout, constraintLayout2, constraintLayout3, recyclerView, recyclerView2, recyclerView3, shapeRelativeLayout, textView, shapeTextView2, textView2, shapeTextView3, textView3, textView4, textView5, textView6, textView7, textView8, textView9, imageView10, imageView11);
+                                                                                                                                                return new FragmentYyCreateRoomBinding((ConstraintLayout) view, editText, frameLayout, findViewById, imageView, imageView2, imageView3, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, shapeTextView, linearLayout, findViewById2, findViewById3, findViewById4, findViewById5, findViewById6, findViewById7, shapeRelativeLayout, textView, shapeTextView2, textView2, shapeTextView3, textView3, textView4, textView5, textView6, textView7, textView8, textView9, imageView10, imageView11);
                                                                                                                                             }
                                                                                                                                             str = "viewBorderNormal";
                                                                                                                                         } else {
@@ -269,7 +265,6 @@ public final class FragmentYyCreateRoomBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.I;

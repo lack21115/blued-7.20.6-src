@@ -30,7 +30,7 @@ import org.json.JSONObject;
 public class ph extends p1 implements z3 {
 
     /* renamed from: c  reason: collision with root package name */
-    private Map<String, kh> f37697c;
+    private Map<String, kh> f24006c;
     private File d;
     private File e;
     private String f;
@@ -62,16 +62,16 @@ public class ph extends p1 implements z3 {
         public final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Callback f37698c;
+        public final /* synthetic */ Callback f24007c;
 
         public b(String str, Callback callback) {
             this.b = str;
-            this.f37698c = callback;
+            this.f24007c = callback;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            this.f37698c.callback(ga.h(ph.this.j(this.b)));
+            this.f24007c.callback(ga.h(ph.this.j(this.b)));
         }
     }
 
@@ -79,16 +79,16 @@ public class ph extends p1 implements z3 {
     public class c extends Condition<e4> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37699a;
+        public final /* synthetic */ String f24008a;
 
         public c(String str) {
-            this.f37699a = str;
+            this.f24008a = str;
         }
 
         @Override // com.tencent.map.tools.Condition
         /* renamed from: a */
         public boolean condition(e4 e4Var) {
-            return e4Var != null && e4Var.c().equals(this.f37699a);
+            return e4Var != null && e4Var.c().equals(this.f24008a);
         }
     }
 
@@ -96,16 +96,16 @@ public class ph extends p1 implements z3 {
     public class d extends Condition<kh> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f37700a;
+        public final /* synthetic */ String f24009a;
 
         public d(String str) {
-            this.f37700a = str;
+            this.f24009a = str;
         }
 
         @Override // com.tencent.map.tools.Condition
         /* renamed from: a */
         public boolean condition(kh khVar) {
-            return khVar != null && khVar.getId().equals(this.f37700a);
+            return khVar != null && khVar.getId().equals(this.f24009a);
         }
     }
 
@@ -113,31 +113,31 @@ public class ph extends p1 implements z3 {
     public static /* synthetic */ class e {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37701a;
+        public static final /* synthetic */ int[] f24010a;
 
         static {
             a4.values();
             int[] iArr = new int[7];
-            f37701a = iArr;
+            f24010a = iArr;
             try {
                 a4 a4Var = a4.Gradient;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37701a;
+                int[] iArr2 = f24010a;
                 a4 a4Var2 = a4.Aggregation;
                 iArr2[2] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37701a;
+                int[] iArr3 = f24010a;
                 a4 a4Var3 = a4.ArcLine;
                 iArr3[3] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                int[] iArr4 = f37701a;
+                int[] iArr4 = f24010a;
                 a4 a4Var4 = a4.GLModel;
                 iArr4[4] = 4;
             } catch (NoSuchFieldError e4) {
@@ -149,14 +149,14 @@ public class ph extends p1 implements z3 {
     public class f extends qb implements jb {
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f37702c;
+        private final String f24011c;
         private final String d;
         private ByteArrayOutputStream e;
         private Callback<byte[]> f;
         private String g;
 
         public f(String str, String str2) {
-            this.f37702c = str;
+            this.f24011c = str;
             this.d = str2;
         }
 
@@ -180,14 +180,14 @@ public class ph extends p1 implements z3 {
 
         @Override // com.tencent.mapsdk.internal.jb
         public void a(String str) {
-            na.a(ma.x, "#completed download {" + this.f37702c + "} [" + str + "]");
+            na.a(ma.x, "#completed download {" + this.f24011c + "} [" + str + "]");
             ph.this.k.b(this);
             if (this.f != null) {
                 byte[] byteArray = this.e.toByteArray();
                 byte[] c2 = "gzip".equals(this.g) ? ja.c(byteArray) : byteArray;
                 StringBuilder sb = new StringBuilder();
                 sb.append("数据量大小 {");
-                sb.append(this.f37702c);
+                sb.append(this.f24011c);
                 sb.append("} [");
                 sb.append(byteArray != null ? byteArray.length : 0);
                 sb.append(" : ");
@@ -220,9 +220,9 @@ public class ph extends p1 implements z3 {
 
         @Override // com.tencent.mapsdk.internal.jb
         public void b(String str) {
-            na.a(ma.x, "#fail download {" + this.f37702c + "} [" + str + "]");
+            na.a(ma.x, "#fail download {" + this.f24011c + "} [" + str + "]");
             ha.a(this.e);
-            kh i = ph.this.i(this.f37702c);
+            kh i = ph.this.i(this.f24011c);
             if (i != null) {
                 i.b(1);
             }
@@ -230,9 +230,9 @@ public class ph extends p1 implements z3 {
 
         @Override // com.tencent.mapsdk.internal.jb
         public void c(String str) {
-            na.a(ma.x, "#cancel download {" + this.f37702c + "} [" + str + "]");
+            na.a(ma.x, "#cancel download {" + this.f24011c + "} [" + str + "]");
             ha.a(this.e);
-            kh i = ph.this.i(this.f37702c);
+            kh i = ph.this.i(this.f24011c);
             if (i != null) {
                 i.b(1);
             }
@@ -240,7 +240,7 @@ public class ph extends p1 implements z3 {
 
         @Override // com.tencent.mapsdk.internal.jb
         public void d(String str) {
-            na.a(ma.x, "#start download {" + this.f37702c + "} [" + str + "]");
+            na.a(ma.x, "#start download {" + this.f24011c + "} [" + str + "]");
             this.e = new ByteArrayOutputStream();
         }
     }
@@ -249,17 +249,17 @@ public class ph extends p1 implements z3 {
     public static class g extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public WeakReference<ph> f37703a;
+        public WeakReference<ph> f24012a;
 
         public g(ph phVar) {
             super(Looper.myLooper());
-            this.f37703a = new WeakReference<>(phVar);
+            this.f24012a = new WeakReference<>(phVar);
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             super.handleMessage(message);
-            ph phVar = this.f37703a.get();
+            ph phVar = this.f24012a.get();
             if (phVar == null || message.what == 0) {
                 return;
             }
@@ -332,7 +332,7 @@ public class ph extends p1 implements z3 {
 
     /* JADX INFO: Access modifiers changed from: private */
     public kh i(String str) {
-        return (kh) Util.singleWhere(this.f37697c.values(), new d(str));
+        return (kh) Util.singleWhere(this.f24006c.values(), new d(str));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -347,7 +347,7 @@ public class ph extends p1 implements z3 {
     /* JADX INFO: Access modifiers changed from: private */
     public void l(String str) {
         na.a(ma.x, "#refreshLayerData[" + str + "]");
-        kh khVar = this.f37697c.get(str);
+        kh khVar = this.f24006c.get(str);
         if (khVar != null) {
             khVar.c(this);
         }
@@ -360,13 +360,13 @@ public class ph extends p1 implements z3 {
         }
         String layerId = visualLayerOptions.getLayerId();
         na.a(ma.x, "#createLayer[" + layerId + "]");
-        kh khVar = this.f37697c.get(visualLayerOptions.getLayerId());
+        kh khVar = this.f24006c.get(visualLayerOptions.getLayerId());
         if (khVar != null) {
             khVar.a(visualLayerOptions);
             return khVar;
         }
         kh khVar2 = new kh(visualLayerOptions);
-        this.f37697c.put(visualLayerOptions.getLayerId(), khVar2);
+        this.f24006c.put(visualLayerOptions.getLayerId(), khVar2);
         khVar2.b(this);
         return khVar2;
     }
@@ -376,7 +376,7 @@ public class ph extends p1 implements z3 {
         super.a(q1Var);
         this.m = false;
         this.j = new g(this);
-        this.f37697c = new ConcurrentHashMap();
+        this.f24006c = new ConcurrentHashMap();
         this.h = new CopyOnWriteArrayList();
         this.k = new kb();
         this.l = new HashSet();
@@ -465,7 +465,7 @@ public class ph extends p1 implements z3 {
                 if (!this.l.isEmpty()) {
                     na.a(ma.x, "初始化等待队列图层[" + this.l.size() + "]");
                     for (String str : this.l) {
-                        kh khVar = this.f37697c.get(str);
+                        kh khVar = this.f24006c.get(str);
                         if (khVar != null) {
                             khVar.b(this);
                         }
@@ -482,20 +482,20 @@ public class ph extends p1 implements z3 {
         if (z && this.g) {
             return;
         }
-        Util.foreach(this.f37697c.values(), new a());
+        Util.foreach(this.f24006c.values(), new a());
     }
 
     @Override // com.tencent.mapsdk.internal.p1
     public void b(q1 q1Var) {
         super.b(q1Var);
-        Map<String, kh> map = this.f37697c;
+        Map<String, kh> map = this.f24006c;
         if (map != null) {
             for (kh khVar : map.values()) {
                 if (!khVar.isRemoved()) {
                     khVar.remove();
                 }
             }
-            this.f37697c.clear();
+            this.f24006c.clear();
         }
         h();
         oh.b();
@@ -505,7 +505,7 @@ public class ph extends p1 implements z3 {
     @Override // com.tencent.mapsdk.internal.z3
     public void b(String str) {
         na.a(ma.x, "#removeLayer[" + str + "]");
-        Map<String, kh> map = this.f37697c;
+        Map<String, kh> map = this.f24006c;
         if (map != null) {
             map.remove(str);
         }

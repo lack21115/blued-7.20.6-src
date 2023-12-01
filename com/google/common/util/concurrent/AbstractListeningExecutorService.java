@@ -8,15 +8,13 @@ import org.checkerframework.checker.nullness.compatqual.NullableDecl;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/util/concurrent/AbstractListeningExecutorService.class */
 public abstract class AbstractListeningExecutorService extends AbstractExecutorService implements ListeningExecutorService {
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.AbstractExecutorService
-    public final <T> RunnableFuture<T> newTaskFor(Runnable runnable, T t) {
+    protected final <T> RunnableFuture<T> newTaskFor(Runnable runnable, T t) {
         return TrustedListenableFutureTask.create(runnable, t);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // java.util.concurrent.AbstractExecutorService
-    public final <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
+    protected final <T> RunnableFuture<T> newTaskFor(Callable<T> callable) {
         return TrustedListenableFutureTask.create(callable);
     }
 
@@ -25,7 +23,7 @@ public abstract class AbstractListeningExecutorService extends AbstractExecutorS
         return (ListenableFuture) super.submit(runnable);
     }
 
-    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService, com.google.common.util.concurrent.ListeningExecutorService
     public <T> ListenableFuture<T> submit(Runnable runnable, @NullableDecl T t) {
         return (ListenableFuture) super.submit(runnable, (Runnable) t);
     }

@@ -2,6 +2,7 @@ package java.io;
 
 import android.system.ErrnoException;
 import android.system.OsConstants;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.CloseGuard;
 import java.nio.NioUtils;
 import java.nio.channels.FileChannel;
@@ -23,7 +24,7 @@ public class FileInputStream extends InputStream {
         }
         this.fd = IoBridge.open(file.getPath(), OsConstants.O_RDONLY);
         this.shouldClose = true;
-        this.guard.open("close");
+        this.guard.open(LoaderConstants.CLOSE);
     }
 
     public FileInputStream(FileDescriptor fileDescriptor) {

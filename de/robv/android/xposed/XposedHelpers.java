@@ -1,7 +1,7 @@
 package de.robv.android.xposed;
 
 import android.content.res.Resources;
-import com.igexin.push.core.b;
+import com.anythink.core.common.k.f;
 import dalvik.system.DexFile;
 import de.robv.android.xposed.XC_MethodHook;
 import external.org.apache.commons.lang3.ClassUtils;
@@ -760,7 +760,7 @@ public final class XposedHelpers {
 
     public static String getMD5Sum(String str) throws IOException {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance(f.a);
             FileInputStream fileInputStream = new FileInputStream(str);
             byte[] bArr = new byte[8192];
             while (true) {
@@ -950,7 +950,7 @@ public final class XposedHelpers {
             if (cls != null) {
                 sb.append(cls.getCanonicalName());
             } else {
-                sb.append(b.l);
+                sb.append("null");
             }
             i = i2 + 1;
         }
@@ -1204,9 +1204,9 @@ public final class XposedHelpers {
         }
     }
 
-    public static void setCharField(Object obj, String str, char c2) {
+    public static void setCharField(Object obj, String str, char c) {
         try {
-            findField(obj.getClass(), str).setChar(obj, c2);
+            findField(obj.getClass(), str).setChar(obj, c);
         } catch (IllegalAccessException e) {
             XposedBridge.log(e);
             throw new IllegalAccessError(e.getMessage());
@@ -1303,9 +1303,9 @@ public final class XposedHelpers {
         }
     }
 
-    public static void setStaticCharField(Class<?> cls, String str, char c2) {
+    public static void setStaticCharField(Class<?> cls, String str, char c) {
         try {
-            findField(cls, str).setChar(null, c2);
+            findField(cls, str).setChar(null, c);
         } catch (IllegalAccessException e) {
             XposedBridge.log(e);
             throw new IllegalAccessError(e.getMessage());

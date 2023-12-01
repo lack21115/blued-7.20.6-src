@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 import java.io.Closeable;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -78,7 +77,7 @@ public class AssetFileDescriptor implements Parcelable, Closeable {
             return bArr[0] & 255;
         }
 
-        @Override // java.io.InputStream
+        @Override // java.io.FileInputStream, java.io.InputStream
         public int read(byte[] bArr) throws IOException {
             return read(bArr, 0, bArr.length);
         }
@@ -162,7 +161,7 @@ public class AssetFileDescriptor implements Parcelable, Closeable {
             }
         }
 
-        @Override // java.io.OutputStream
+        @Override // java.io.FileOutputStream, java.io.OutputStream
         public void write(byte[] bArr) throws IOException {
             if (this.mRemaining < 0) {
                 super.write(bArr);
@@ -275,7 +274,7 @@ public class AssetFileDescriptor implements Parcelable, Closeable {
     }
 
     public String toString() {
-        return "{AssetFileDescriptor: " + this.mFd + " start=" + this.mStartOffset + " len=" + this.mLength + i.d;
+        return "{AssetFileDescriptor: " + this.mFd + " start=" + this.mStartOffset + " len=" + this.mLength + "}";
     }
 
     @Override // android.os.Parcelable

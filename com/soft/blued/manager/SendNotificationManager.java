@@ -64,14 +64,14 @@ import java.util.List;
 public class SendNotificationManager {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile SendNotificationManager f29711c;
+    private static volatile SendNotificationManager f16021c;
     private String d;
     private WeakReference<Activity> e;
     private float h;
     private final SparseArray<ViewState> f = new SparseArray<>();
 
     /* renamed from: a  reason: collision with root package name */
-    Handler f29712a = new Handler(Looper.getMainLooper());
+    Handler f16022a = new Handler(Looper.getMainLooper());
     public boolean b = false;
     private boolean g = false;
 
@@ -81,24 +81,24 @@ public class SendNotificationManager {
         private FrameLayout b;
 
         /* renamed from: c  reason: collision with root package name */
-        private View f29720c;
+        private View f16030c;
         private BluedIngSelfFeed d;
         private boolean e;
 
         public RemoveRunnable(FrameLayout frameLayout, View view, BluedIngSelfFeed bluedIngSelfFeed, boolean z) {
             this.b = frameLayout;
-            this.f29720c = view;
+            this.f16030c = view;
             this.d = bluedIngSelfFeed;
             this.e = z;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            View view = this.f29720c;
+            View view = this.f16030c;
             if (view == null || view.getParent() == null) {
                 return;
             }
-            SendNotificationManager.this.a(this.b, this.f29720c, (BluedIngSelfFeed) null, false);
+            SendNotificationManager.this.a(this.b, this.f16030c, (BluedIngSelfFeed) null, false);
         }
     }
 
@@ -107,11 +107,11 @@ public class SendNotificationManager {
     public static class ViewState {
 
         /* renamed from: a  reason: collision with root package name */
-        View f29721a;
+        View f16031a;
         RemoveRunnable b;
 
         public ViewState(View view) {
-            this.f29721a = view;
+            this.f16031a = view;
         }
     }
 
@@ -119,18 +119,18 @@ public class SendNotificationManager {
     }
 
     public static SendNotificationManager a() {
-        if (f29711c == null) {
+        if (f16021c == null) {
             synchronized (SendNotificationManager.class) {
                 try {
-                    if (f29711c == null) {
-                        f29711c = new SendNotificationManager();
+                    if (f16021c == null) {
+                        f16021c = new SendNotificationManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f29711c;
+        return f16021c;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -149,7 +149,7 @@ public class SendNotificationManager {
             viewGroup.removeView(view);
             ViewState viewState = this.f.get(viewGroup.hashCode());
             if (viewState != null && viewState.b != null) {
-                this.f29712a.removeCallbacks(viewState.b);
+                this.f16022a.removeCallbacks(viewState.b);
             }
             this.f.remove(viewGroup.hashCode());
         } catch (Exception e) {
@@ -173,7 +173,7 @@ public class SendNotificationManager {
                     viewState2 = new ViewState(view);
                 }
                 viewState2.b = removeRunnable;
-                SendNotificationManager.this.f29712a.postDelayed(removeRunnable, 4000L);
+                SendNotificationManager.this.f16022a.postDelayed(removeRunnable, 4000L);
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -200,7 +200,7 @@ public class SendNotificationManager {
             public void onAnimationEnd(Animation animation) {
                 SendNotificationManager.this.a((ViewGroup) frameLayout, view);
                 if (bluedIngSelfFeed != null) {
-                    SendNotificationManager.this.f29712a.postDelayed(new Runnable() { // from class: com.soft.blued.manager.SendNotificationManager.1.1
+                    SendNotificationManager.this.f16022a.postDelayed(new Runnable() { // from class: com.soft.blued.manager.SendNotificationManager.1.1
                         @Override // java.lang.Runnable
                         public void run() {
                             SendNotificationManager.this.a(frameLayout, bluedIngSelfFeed, z);
@@ -309,7 +309,7 @@ public class SendNotificationManager {
         inflate.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.manager.-$$Lambda$SendNotificationManager$3Ip6ScrwDKwarOOq9aXeLnOaM0M
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                SendNotificationManager.a(BluedIngSelfFeed.this, view);
+                SendNotificationManager.a(bluedIngSelfFeed, view);
             }
         });
         inflate.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.manager.-$$Lambda$SendNotificationManager$Z2itgWr9iCTpHYgE6pMG24ijq4Q
@@ -355,12 +355,12 @@ public class SendNotificationManager {
         Activity b = b();
         if (UiUtils.a(b)) {
             FrameLayout frameLayout = (FrameLayout) b.getWindow().getDecorView();
-            FrameLayout frameLayout2 = (FrameLayout) b.findViewById(16908290);
+            FrameLayout frameLayout2 = (FrameLayout) b.findViewById(android.R.id.content);
             ViewState viewState = this.f.get(frameLayout.hashCode());
-            if (viewState == null || viewState.f29721a == null) {
+            if (viewState == null || viewState.f16031a == null) {
                 a(frameLayout, bluedIngSelfFeed, z);
             } else {
-                a(frameLayout, viewState.f29721a, bluedIngSelfFeed, z);
+                a(frameLayout, viewState.f16031a, bluedIngSelfFeed, z);
             }
             EventTrackFeed.b(FeedProtos.Event.FEED_PUBLISH_STATUS_NOTIFICATION_SHOW, bluedIngSelfFeed.feed_id);
         }
@@ -398,10 +398,10 @@ public class SendNotificationManager {
         if (activity != null) {
             FrameLayout frameLayout = (FrameLayout) activity.getWindow().getDecorView();
             ViewState viewState = this.f.get(frameLayout.hashCode());
-            if (viewState == null || viewState.f29721a == null) {
+            if (viewState == null || viewState.f16031a == null) {
                 return;
             }
-            a((ViewGroup) frameLayout, viewState.f29721a);
+            a((ViewGroup) frameLayout, viewState.f16031a);
         }
     }
 
@@ -428,9 +428,9 @@ public class SendNotificationManager {
         if (obj != null && (obj instanceof BluedIngSelfFeed)) {
             BluedIngSelfFeed bluedIngSelfFeed = (BluedIngSelfFeed) obj;
             if (bluedIngSelfFeed.circle_active_posting > 0) {
-                AppMethods.a((CharSequence) ("发布成功，积分+" + bluedIngSelfFeed.circle_active_posting));
+                AppMethods.a("发布成功，积分+" + bluedIngSelfFeed.circle_active_posting);
             } else if (bluedIngSelfFeed.circle_active_shared_posting > 0) {
-                AppMethods.a((CharSequence) ("分享成功，积分+" + bluedIngSelfFeed.circle_active_shared_posting));
+                AppMethods.a("分享成功，积分+" + bluedIngSelfFeed.circle_active_shared_posting);
             }
         }
         if (obj == null || !d()) {
@@ -448,7 +448,7 @@ public class SendNotificationManager {
                 if (this.b) {
                     EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_SUCCESS_POP_SHOW);
                     final String str2 = str + "&detail=feed_success_go_hot";
-                    CommonAlertDialog.a(b, b.getString(2131891358), b.getString(2131891357), b.getString(2131887976), new DialogInterface.OnClickListener() { // from class: com.soft.blued.manager.-$$Lambda$SendNotificationManager$p0zxCoqLBQfN2y5KD9gRKdc-IiM
+                    CommonAlertDialog.a(b, b.getString(R.string.promotion_dialog_tip_title), b.getString(R.string.promotion_dialog_tip_content), b.getString(R.string.feed_pay_for_hot), new DialogInterface.OnClickListener() { // from class: com.soft.blued.manager.-$$Lambda$SendNotificationManager$p0zxCoqLBQfN2y5KD9gRKdc-IiM
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             SendNotificationManager.a(Activity.this, str2, dialogInterface, i);

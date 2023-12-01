@@ -9,14 +9,12 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentLiveBackgroundMusicBinding.class */
 public final class FragmentLiveBackgroundMusicBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f11917a;
+    public final LinearLayout a;
     private final LinearLayout b;
 
     private FragmentLiveBackgroundMusicBinding(LinearLayout linearLayout, LinearLayout linearLayout2) {
         this.b = linearLayout;
-        this.f11917a = linearLayout2;
+        this.a = linearLayout2;
     }
 
     public static FragmentLiveBackgroundMusicBinding a(LayoutInflater layoutInflater) {
@@ -39,7 +37,6 @@ public final class FragmentLiveBackgroundMusicBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("ll"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.b;

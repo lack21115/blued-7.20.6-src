@@ -13,11 +13,11 @@ import com.igexin.push.core.e.f;
 public final class b extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23288a = "DownDBHelper";
+    private static final String f9680a = "DownDBHelper";
     private static final String b = "pushsdk.db";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f23289c = 7;
+    private static final int f9681c = 7;
     private static final String d = "create table if not exists config (id integer primary key,value text)";
     private static final String e = "create table if not exists runtime (id integer primary key,value text)";
     private static final String f = "create table if not exists ral (id integer primary key,data text,type integer,time integer,send_times integer)";
@@ -93,7 +93,7 @@ public final class b extends SQLiteOpenHelper {
                     sQLiteDatabase.close();
                 }
             } catch (Exception e2) {
-                com.igexin.c.a.c.a.a(f23288a, "closecurrentDatabase fail");
+                com.igexin.c.a.c.a.a(f9680a, "closecurrentDatabase fail");
             }
         }
     }
@@ -243,7 +243,7 @@ public final class b extends SQLiteOpenHelper {
                 sQLiteDatabase.update(str, contentValues, strArr[0] + "='" + strArr2[0] + "'", null);
                 this.q.setTransactionSuccessful();
             } catch (Exception e2) {
-                com.igexin.c.a.c.a.a(f23288a, str + "_Update Error!");
+                com.igexin.c.a.c.a.a(f9680a, str + "_Update Error!");
             }
         } finally {
             b(this.q);
@@ -265,7 +265,7 @@ public final class b extends SQLiteOpenHelper {
                 }
                 this.q.setTransactionSuccessful();
             } catch (Exception e2) {
-                com.igexin.c.a.c.a.a(f23288a, str + "_Delete Error!");
+                com.igexin.c.a.c.a.a(f9680a, str + "_Delete Error!");
             }
         } finally {
             b(this.q);
@@ -305,7 +305,7 @@ public final class b extends SQLiteOpenHelper {
             } catch (Exception e2) {
                 com.igexin.c.a.c.a.a(e2);
             }
-            com.igexin.c.a.c.a.a(f.f23510a + "|db version changed, save session = " + e.z, new Object[0]);
+            com.igexin.c.a.c.a.a(f.f9902a + "|db version changed, save session = " + e.z, new Object[0]);
         }
         byte[] a3 = f.a(sQLiteDatabase, 20);
         if (a3 != null) {
@@ -316,7 +316,7 @@ public final class b extends SQLiteOpenHelper {
             }
             e.B = str3;
             e.A = str3;
-            com.igexin.c.a.c.a.a(f.f23510a + "|db version changed, save cid = " + str3, new Object[0]);
+            com.igexin.c.a.c.a.a(f.f9902a + "|db version changed, save cid = " + str3, new Object[0]);
         }
         String b2 = f.b(sQLiteDatabase, 3);
         if (!TextUtils.isEmpty(b2)) {

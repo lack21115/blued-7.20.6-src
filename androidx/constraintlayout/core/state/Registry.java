@@ -7,11 +7,11 @@ import java.util.Set;
 public class Registry {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Registry f2093a = new Registry();
+    private static final Registry f2045a = new Registry();
     private HashMap<String, RegistryCallback> b = new HashMap<>();
 
     public static Registry getInstance() {
-        return f2093a;
+        return f2045a;
     }
 
     public String currentContent(String str) {

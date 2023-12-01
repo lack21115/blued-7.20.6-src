@@ -28,11 +28,11 @@ import java.util.List;
 public class LineChartRenderer extends LineRadarRenderer {
 
     /* renamed from: a  reason: collision with root package name */
-    protected LineDataProvider f22185a;
+    protected LineDataProvider f8578a;
     protected Paint b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected WeakReference<Bitmap> f22186c;
+    protected WeakReference<Bitmap> f8579c;
     protected Canvas d;
     protected Bitmap.Config e;
     protected Path l;
@@ -48,28 +48,28 @@ public class LineChartRenderer extends LineRadarRenderer {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22187a;
+        static final /* synthetic */ int[] f8580a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[LineDataSet.Mode.values().length];
-            f22187a = iArr;
+            f8580a = iArr;
             try {
                 iArr[LineDataSet.Mode.LINEAR.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22187a[LineDataSet.Mode.STEPPED.ordinal()] = 2;
+                f8580a[LineDataSet.Mode.STEPPED.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f22187a[LineDataSet.Mode.CUBIC_BEZIER.ordinal()] = 3;
+                f8580a[LineDataSet.Mode.CUBIC_BEZIER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f22187a[LineDataSet.Mode.HORIZONTAL_BEZIER.ordinal()] = 4;
+                f8580a[LineDataSet.Mode.HORIZONTAL_BEZIER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -81,7 +81,7 @@ public class LineChartRenderer extends LineRadarRenderer {
         private Path b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Bitmap[] f22189c;
+        private Bitmap[] f8582c;
 
         private DataSetImageCache() {
             this.b = new Path();
@@ -92,7 +92,7 @@ public class LineChartRenderer extends LineRadarRenderer {
         }
 
         protected Bitmap a(int i) {
-            Bitmap[] bitmapArr = this.f22189c;
+            Bitmap[] bitmapArr = this.f8582c;
             return bitmapArr[i % bitmapArr.length];
         }
 
@@ -109,7 +109,7 @@ public class LineChartRenderer extends LineRadarRenderer {
                 int i3 = (int) (c2 * 2.1d);
                 Bitmap createBitmap = Bitmap.createBitmap(i3, i3, Bitmap.Config.ARGB_4444);
                 Canvas canvas = new Canvas(createBitmap);
-                this.f22189c[i2] = createBitmap;
+                this.f8582c[i2] = createBitmap;
                 LineChartRenderer.this.h.setColor(iLineDataSet.f(i2));
                 if (z2) {
                     this.b.reset();
@@ -128,12 +128,12 @@ public class LineChartRenderer extends LineRadarRenderer {
 
         protected boolean a(ILineDataSet iLineDataSet) {
             int D = iLineDataSet.D();
-            Bitmap[] bitmapArr = this.f22189c;
+            Bitmap[] bitmapArr = this.f8582c;
             if (bitmapArr == null) {
-                this.f22189c = new Bitmap[D];
+                this.f8582c = new Bitmap[D];
                 return true;
             } else if (bitmapArr.length != D) {
-                this.f22189c = new Bitmap[D];
+                this.f8582c = new Bitmap[D];
                 return true;
             } else {
                 return false;
@@ -150,7 +150,7 @@ public class LineChartRenderer extends LineRadarRenderer {
         this.n = new Path();
         this.q = new HashMap<>();
         this.r = new float[2];
-        this.f22185a = lineDataProvider;
+        this.f8578a = lineDataProvider;
         Paint paint = new Paint(1);
         this.b = paint;
         paint.setStyle(Paint.Style.FILL);
@@ -161,7 +161,7 @@ public class LineChartRenderer extends LineRadarRenderer {
     /* JADX WARN: Type inference failed for: r0v11, types: [com.github.mikephil.charting.data.Entry] */
     /* JADX WARN: Type inference failed for: r0v22, types: [com.github.mikephil.charting.data.Entry] */
     private void a(ILineDataSet iLineDataSet, int i, int i2, Path path) {
-        float fillLinePosition = iLineDataSet.N().getFillLinePosition(iLineDataSet, this.f22185a);
+        float fillLinePosition = iLineDataSet.N().getFillLinePosition(iLineDataSet, this.f8578a);
         float a2 = this.g.a();
         boolean z = iLineDataSet.a() == LineDataSet.Mode.STEPPED;
         path.reset();
@@ -211,7 +211,7 @@ public class LineChartRenderer extends LineRadarRenderer {
             int r0 = (int) r0
             r9 = r0
             r0 = r6
-            java.lang.ref.WeakReference<android.graphics.Bitmap> r0 = r0.f22186c
+            java.lang.ref.WeakReference<android.graphics.Bitmap> r0 = r0.f8579c
             r10 = r0
             r0 = r10
             if (r0 != 0) goto L23
@@ -252,7 +252,7 @@ public class LineChartRenderer extends LineRadarRenderer {
             r2 = r1
             r3 = r11
             r2.<init>(r3)
-            r0.f22186c = r1
+            r0.f8579c = r1
             r0 = r6
             android.graphics.Canvas r1 = new android.graphics.Canvas
             r2 = r1
@@ -264,7 +264,7 @@ public class LineChartRenderer extends LineRadarRenderer {
             r1 = 0
             r0.eraseColor(r1)
             r0 = r6
-            com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider r0 = r0.f22185a
+            com.github.mikephil.charting.interfaces.dataprovider.LineDataProvider r0 = r0.f8578a
             com.github.mikephil.charting.data.LineData r0 = r0.getLineData()
             java.util.List r0 = r0.i()
             java.util.Iterator r0 = r0.iterator()
@@ -305,7 +305,7 @@ public class LineChartRenderer extends LineRadarRenderer {
         }
         this.h.setStrokeWidth(iLineDataSet.R());
         this.h.setPathEffect(iLineDataSet.f());
-        int i = AnonymousClass1.f22187a[iLineDataSet.a().ordinal()];
+        int i = AnonymousClass1.f8580a[iLineDataSet.a().ordinal()];
         if (i == 3) {
             b(iLineDataSet);
         } else if (i != 4) {
@@ -319,9 +319,9 @@ public class LineChartRenderer extends LineRadarRenderer {
     /* JADX WARN: Type inference failed for: r1v2, types: [com.github.mikephil.charting.data.Entry] */
     /* JADX WARN: Type inference failed for: r1v5, types: [com.github.mikephil.charting.data.Entry] */
     protected void a(Canvas canvas, ILineDataSet iLineDataSet, Path path, Transformer transformer, BarLineScatterCandleBubbleRenderer.XBounds xBounds) {
-        float fillLinePosition = iLineDataSet.N().getFillLinePosition(iLineDataSet, this.f22185a);
-        path.lineTo(iLineDataSet.e(xBounds.f22172a + xBounds.f22173c).i(), fillLinePosition);
-        path.lineTo(iLineDataSet.e(xBounds.f22172a).i(), fillLinePosition);
+        float fillLinePosition = iLineDataSet.N().getFillLinePosition(iLineDataSet, this.f8578a);
+        path.lineTo(iLineDataSet.e(xBounds.f8565a + xBounds.f8566c).i(), fillLinePosition);
+        path.lineTo(iLineDataSet.e(xBounds.f8565a).i(), fillLinePosition);
         path.close();
         transformer.a(path);
         Drawable P = iLineDataSet.P();
@@ -336,8 +336,8 @@ public class LineChartRenderer extends LineRadarRenderer {
         int i;
         int i2;
         Path path = this.n;
-        int i3 = xBounds.f22172a;
-        int i4 = xBounds.f22173c + xBounds.f22172a;
+        int i3 = xBounds.f8565a;
+        int i4 = xBounds.f8566c + xBounds.f8565a;
         int i5 = 0;
         do {
             i = (i5 * 128) + i3;
@@ -369,7 +369,7 @@ public class LineChartRenderer extends LineRadarRenderer {
     /* JADX WARN: Type inference failed for: r0v19, types: [com.github.mikephil.charting.data.Entry] */
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void a(Canvas canvas, Highlight[] highlightArr) {
-        LineData lineData = this.f22185a.getLineData();
+        LineData lineData = this.f8578a.getLineData();
         int length = highlightArr.length;
         int i = 0;
         while (true) {
@@ -382,9 +382,9 @@ public class LineChartRenderer extends LineRadarRenderer {
             if (iLineDataSet != null && iLineDataSet.p()) {
                 ?? b = iLineDataSet.b(highlight.a(), highlight.b());
                 if (a((Entry) b, iLineDataSet)) {
-                    MPPointD b2 = this.f22185a.a(iLineDataSet.C()).b(b.i(), b.b() * this.g.a());
-                    highlight.a((float) b2.f22202a, (float) b2.b);
-                    a(canvas, (float) b2.f22202a, (float) b2.b, iLineDataSet);
+                    MPPointD b2 = this.f8578a.a(iLineDataSet.C()).b(b.i(), b.b() * this.g.a());
+                    highlight.a((float) b2.f8595a, (float) b2.b);
+                    a(canvas, (float) b2.f8595a, (float) b2.b, iLineDataSet);
                 }
             }
             i = i2 + 1;
@@ -396,14 +396,14 @@ public class LineChartRenderer extends LineRadarRenderer {
     /* JADX WARN: Type inference failed for: r0v40, types: [com.github.mikephil.charting.data.Entry] */
     protected void a(ILineDataSet iLineDataSet) {
         float a2 = this.g.a();
-        Transformer a3 = this.f22185a.a(iLineDataSet.C());
-        this.f.a(this.f22185a, iLineDataSet);
+        Transformer a3 = this.f8578a.a(iLineDataSet.C());
+        this.f.a(this.f8578a, iLineDataSet);
         this.l.reset();
-        if (this.f.f22173c >= 1) {
-            Entry e = iLineDataSet.e(this.f.f22172a);
+        if (this.f.f8566c >= 1) {
+            Entry e = iLineDataSet.e(this.f.f8565a);
             this.l.moveTo(e.i(), e.b() * a2);
-            int i = this.f.f22172a + 1;
-            while (i <= this.f.f22173c + this.f.f22172a) {
+            int i = this.f.f8565a + 1;
+            while (i <= this.f.f8566c + this.f.f8565a) {
                 ?? e2 = iLineDataSet.e(i);
                 float i2 = e.i() + ((e2.i() - e.i()) / 2.0f);
                 this.l.cubicTo(i2, e.b() * a2, i2, e2.b() * a2, e2.i(), e2.b() * a2);
@@ -429,23 +429,23 @@ public class LineChartRenderer extends LineRadarRenderer {
             canvas.setBitmap(null);
             this.d = null;
         }
-        WeakReference<Bitmap> weakReference = this.f22186c;
+        WeakReference<Bitmap> weakReference = this.f8579c;
         if (weakReference != null) {
             Bitmap bitmap = weakReference.get();
             if (bitmap != null) {
                 bitmap.recycle();
             }
-            this.f22186c.clear();
-            this.f22186c = null;
+            this.f8579c.clear();
+            this.f8579c = null;
         }
     }
 
     @Override // com.github.mikephil.charting.renderer.DataRenderer
     public void b(Canvas canvas) {
-        if (!a(this.f22185a)) {
+        if (!a(this.f8578a)) {
             return;
         }
-        List<T> i = this.f22185a.getLineData().i();
+        List<T> i = this.f8578a.getLineData().i();
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -455,17 +455,17 @@ public class LineChartRenderer extends LineRadarRenderer {
             ILineDataSet iLineDataSet = (ILineDataSet) i.get(i3);
             if (a((IDataSet) iLineDataSet) && iLineDataSet.H() >= 1) {
                 b((IDataSet) iLineDataSet);
-                Transformer a2 = this.f22185a.a(iLineDataSet.C());
+                Transformer a2 = this.f8578a.a(iLineDataSet.C());
                 int c2 = (int) (iLineDataSet.c() * 1.75f);
                 int i4 = c2;
                 if (!iLineDataSet.g()) {
                     i4 = c2 / 2;
                 }
-                this.f.a(this.f22185a, iLineDataSet);
-                float[] a3 = a2.a(iLineDataSet, this.g.b(), this.g.a(), this.f.f22172a, this.f.b);
+                this.f.a(this.f8578a, iLineDataSet);
+                float[] a3 = a2.a(iLineDataSet, this.g.b(), this.g.a(), this.f.f8565a, this.f.b);
                 ValueFormatter q = iLineDataSet.q();
                 MPPointF a4 = MPPointF.a(iLineDataSet.A());
-                a4.f22204a = Utils.a(a4.f22204a);
+                a4.f8597a = Utils.a(a4.f8597a);
                 a4.b = Utils.a(a4.b);
                 int i5 = 0;
                 while (true) {
@@ -480,13 +480,13 @@ public class LineChartRenderer extends LineRadarRenderer {
                     }
                     if (this.o.g(f) && this.o.f(f2)) {
                         int i7 = i6 / 2;
-                        Entry e = iLineDataSet.e(this.f.f22172a + i7);
+                        Entry e = iLineDataSet.e(this.f.f8565a + i7);
                         if (iLineDataSet.y()) {
                             a(canvas, q.a(e), f, f2 - i4, iLineDataSet.d(i7));
                         }
                         if (e.g() != null && iLineDataSet.z()) {
                             Drawable g = e.g();
-                            Utils.a(canvas, g, (int) (f + a4.f22204a), (int) (f2 + a4.b), g.getIntrinsicWidth(), g.getIntrinsicHeight());
+                            Utils.a(canvas, g, (int) (f + a4.f8597a), (int) (f2 + a4.b), g.getIntrinsicWidth(), g.getIntrinsicHeight());
                         }
                     }
                     i5 = i6 + 2;
@@ -506,11 +506,11 @@ public class LineChartRenderer extends LineRadarRenderer {
         int H = iLineDataSet.H();
         boolean z = iLineDataSet.a() == LineDataSet.Mode.STEPPED;
         int i2 = z ? 4 : 2;
-        Transformer a2 = this.f22185a.a(iLineDataSet.C());
+        Transformer a2 = this.f8578a.a(iLineDataSet.C());
         float a3 = this.g.a();
         this.h.setStyle(Paint.Style.STROKE);
         Canvas canvas2 = iLineDataSet.e() ? this.d : canvas;
-        this.f.a(this.f22185a, iLineDataSet);
+        this.f.a(this.f8578a, iLineDataSet);
         if (iLineDataSet.S() && H > 0) {
             a(canvas, iLineDataSet, a2, this.f);
         }
@@ -519,10 +519,10 @@ public class LineChartRenderer extends LineRadarRenderer {
             if (this.p.length <= i3) {
                 this.p = new float[i2 * 4];
             }
-            int i4 = this.f.f22172a;
+            int i4 = this.f.f8565a;
             while (true) {
                 int i5 = i4;
-                if (i5 > this.f.f22173c + this.f.f22172a) {
+                if (i5 > this.f.f8566c + this.f.f8565a) {
                     break;
                 }
                 ?? e = iLineDataSet.e(i5);
@@ -565,12 +565,12 @@ public class LineChartRenderer extends LineRadarRenderer {
             if (this.p.length < Math.max(i6, i2) * 2) {
                 this.p = new float[Math.max(i6, i2) * 4];
             }
-            if (iLineDataSet.e(this.f.f22172a) != 0) {
-                int i7 = this.f.f22172a;
+            if (iLineDataSet.e(this.f.f8565a) != 0) {
+                int i7 = this.f.f8565a;
                 int i8 = 0;
                 while (true) {
                     i = i8;
-                    if (i7 > this.f.f22173c + this.f.f22172a) {
+                    if (i7 > this.f.f8566c + this.f.f8565a) {
                         break;
                     }
                     ?? e3 = iLineDataSet.e(i7 == 0 ? 0 : i7 - 1);
@@ -606,7 +606,7 @@ public class LineChartRenderer extends LineRadarRenderer {
                 }
                 if (i > 0) {
                     a2.a(this.p);
-                    int max = Math.max((this.f.f22173c + 1) * i2, i2);
+                    int max = Math.max((this.f.f8566c + 1) * i2, i2);
                     this.h.setColor(iLineDataSet.k());
                     canvas2.drawLines(this.p, 0, max * 2, this.h);
                 }
@@ -622,14 +622,14 @@ public class LineChartRenderer extends LineRadarRenderer {
     /* JADX WARN: Type inference failed for: r0v87, types: [com.github.mikephil.charting.data.Entry] */
     protected void b(ILineDataSet iLineDataSet) {
         float a2 = this.g.a();
-        Transformer a3 = this.f22185a.a(iLineDataSet.C());
-        this.f.a(this.f22185a, iLineDataSet);
+        Transformer a3 = this.f8578a.a(iLineDataSet.C());
+        this.f.a(this.f8578a, iLineDataSet);
         float b = iLineDataSet.b();
         this.l.reset();
-        if (this.f.f22173c >= 1) {
-            int i = this.f.f22172a + 1;
-            int i2 = this.f.f22172a;
-            int i3 = this.f.f22173c;
+        if (this.f.f8566c >= 1) {
+            int i = this.f.f8565a + 1;
+            int i2 = this.f.f8565a;
+            int i3 = this.f.f8566c;
             Entry e = iLineDataSet.e(Math.max(i - 2, 0));
             Entry e2 = iLineDataSet.e(Math.max(i - 1, 0));
             int i4 = -1;
@@ -637,9 +637,9 @@ public class LineChartRenderer extends LineRadarRenderer {
                 return;
             }
             this.l.moveTo(e2.i(), e2.b() * a2);
-            int i5 = this.f.f22172a + 1;
+            int i5 = this.f.f8565a + 1;
             Entry entry = e2;
-            while (i5 <= this.f.f22173c + this.f.f22172a) {
+            while (i5 <= this.f.f8566c + this.f.f8565a) {
                 if (i4 != i5) {
                     e2 = iLineDataSet.e(i5);
                 }
@@ -683,7 +683,7 @@ public class LineChartRenderer extends LineRadarRenderer {
         float[] fArr = this.r;
         fArr[0] = 0.0f;
         fArr[1] = 0.0f;
-        List<T> i = this.f22185a.getLineData().i();
+        List<T> i = this.f8578a.getLineData().i();
         int i2 = 0;
         while (true) {
             int i3 = i2;
@@ -693,8 +693,8 @@ public class LineChartRenderer extends LineRadarRenderer {
             ILineDataSet iLineDataSet = (ILineDataSet) i.get(i3);
             if (iLineDataSet.B() && iLineDataSet.g() && iLineDataSet.H() != 0) {
                 this.b.setColor(iLineDataSet.E());
-                Transformer a4 = this.f22185a.a(iLineDataSet.C());
-                this.f.a(this.f22185a, iLineDataSet);
+                Transformer a4 = this.f8578a.a(iLineDataSet.C());
+                this.f.a(this.f8578a, iLineDataSet);
                 float c2 = iLineDataSet.c();
                 float d = iLineDataSet.d();
                 boolean z = iLineDataSet.F() && d < c2 && d > 0.0f;
@@ -708,9 +708,9 @@ public class LineChartRenderer extends LineRadarRenderer {
                 if (dataSetImageCache.a(iLineDataSet)) {
                     dataSetImageCache.a(iLineDataSet, z, z2);
                 }
-                int i4 = this.f.f22173c;
-                int i5 = this.f.f22172a;
-                int i6 = this.f.f22172a;
+                int i4 = this.f.f8566c;
+                int i5 = this.f.f8565a;
+                int i6 = this.f.f8565a;
                 while (true) {
                     int i7 = i6;
                     if (i7 <= i4 + i5 && (e = iLineDataSet.e(i7)) != 0) {

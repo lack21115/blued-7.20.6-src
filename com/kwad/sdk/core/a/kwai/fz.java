@@ -1,6 +1,5 @@
 package com.kwad.sdk.core.a.kwai;
 
-import com.android.internal.util.cm.SpamFilter;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,7 +16,7 @@ public final class fz implements com.kwad.sdk.core.d<com.kwad.sdk.f.kwai.a> {
             aVar.sceneId = "";
         }
         aVar.atl = new ArrayList();
-        JSONArray optJSONArray = jSONObject.optJSONArray(SpamFilter.SpamContract.PackageTable.TABLE_NAME);
+        JSONArray optJSONArray = jSONObject.optJSONArray("packages");
         if (optJSONArray == null) {
             return;
         }
@@ -43,7 +42,7 @@ public final class fz implements com.kwad.sdk.core.d<com.kwad.sdk.f.kwai.a> {
         if (aVar.sceneId != null && !aVar.sceneId.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "sceneId", aVar.sceneId);
         }
-        com.kwad.sdk.utils.t.putValue(jSONObject2, SpamFilter.SpamContract.PackageTable.TABLE_NAME, aVar.atl);
+        com.kwad.sdk.utils.t.putValue(jSONObject2, "packages", aVar.atl);
         return jSONObject2;
     }
 

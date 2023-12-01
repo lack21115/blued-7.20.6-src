@@ -6,7 +6,7 @@ import com.xiaomi.push.service.XMPushService;
 public class bf implements XMPushService.n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f41629a;
+    private static a f27938a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/service/bf$a.class */
     public interface a {
@@ -15,8 +15,8 @@ public class bf implements XMPushService.n {
 
     @Override // com.xiaomi.push.service.XMPushService.n
     /* renamed from: a */
-    public void mo11843a() {
-        a aVar = f41629a;
+    public void mo8793a() {
+        a aVar = f27938a;
         if (aVar != null) {
             aVar.a();
         }

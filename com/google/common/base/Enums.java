@@ -88,7 +88,7 @@ public final class Enums {
 
     private static <T extends Enum<T>> Map<String, WeakReference<? extends Enum<?>>> populateCache(Class<T> cls) {
         HashMap hashMap = new HashMap();
-        Iterator<E> it = EnumSet.allOf(cls).iterator();
+        Iterator it = EnumSet.allOf(cls).iterator();
         while (it.hasNext()) {
             Enum r0 = (Enum) it.next();
             hashMap.put(r0.name(), new WeakReference(r0));

@@ -9,22 +9,22 @@ import java.nio.ByteBuffer;
 public class b extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    public Object f1224a = new Object();
+    public Object f1176a = new Object();
     public volatile PLAACEncoder b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile a f1225c;
+    public volatile a f1177c;
     public ByteBuffer d;
 
     @Override // a.a.a.a.a.a.e.c
     public void a() {
         e.f.c("SoftMicrophoneTransfer", "stopEncoding");
-        synchronized (this.f1224a) {
-            if (this.f1225c != null) {
-                this.f1225c.a();
-                this.f1225c.a(true);
-                this.f1225c.b();
-                this.f1225c = null;
+        synchronized (this.f1176a) {
+            if (this.f1177c != null) {
+                this.f1177c.a();
+                this.f1177c.a(true);
+                this.f1177c.b();
+                this.f1177c = null;
                 this.b = null;
             }
         }
@@ -33,15 +33,15 @@ public class b extends c {
     @Override // a.a.a.a.a.a.e.c
     public void a(a.a.a.a.a.a.i.c cVar) {
         e.f.c("SoftMicrophoneTransfer", "startEncoding");
-        synchronized (this.f1224a) {
-            this.f1225c = new a(cVar);
-            this.b = this.f1225c.d();
+        synchronized (this.f1176a) {
+            this.f1177c = new a(cVar);
+            this.b = this.f1177c.d();
         }
     }
 
     @Override // a.a.a.a.a.a.e.c
     public void a(ByteBuffer byteBuffer, int i, long j, boolean z) {
-        synchronized (this.f1224a) {
+        synchronized (this.f1176a) {
             if (this.b != null) {
                 this.b.encode(byteBuffer, i, j);
             }

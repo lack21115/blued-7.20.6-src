@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import com.anythink.expressad.foundation.h.p;
 import com.anythink.expressad.foundation.h.x;
 import com.anythink.expressad.videocommon.b.h;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.List;
 
@@ -13,21 +12,20 @@ import java.util.List;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f8752a = "foldername";
+    public static final String f5912a = "foldername";
     public static final String b = "md5filename";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f8753c = "nc";
+    public static final String f5913c = "nc";
     public static final int d = 259200000;
     private static String e = "ResourceManager";
     private String f;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/videocommon/b/m$a.class */
-    public static final class a {
+    static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static m f8755a = new m((byte) 0);
+        public static m f5915a = new m((byte) 0);
 
         private a() {
         }
@@ -42,11 +40,11 @@ public final class m {
     }
 
     public static m a() {
-        return a.f8755a;
+        return a.f5915a;
     }
 
     private String a(String str, String str2, File file) {
-        String a2 = com.anythink.expressad.foundation.h.m.a(str2, this.f + BridgeUtil.SPLIT_MARK + p.a(x.a(str)));
+        String a2 = com.anythink.expressad.foundation.h.m.a(str2, this.f + "/" + p.a(x.a(str)));
         String str3 = a2;
         if (TextUtils.isEmpty(a2)) {
             str3 = com.anythink.expressad.foundation.h.m.b(file);
@@ -61,8 +59,8 @@ public final class m {
     public final String a(String str) {
         String str2;
         try {
-            String str3 = this.f + BridgeUtil.SPLIT_MARK + p.a(x.a(str));
-            List<String> queryParameters = Uri.parse(str).getQueryParameters(f8752a);
+            String str3 = this.f + "/" + p.a(x.a(str));
+            List<String> queryParameters = Uri.parse(str).getQueryParameters(f5912a);
             if (queryParameters == null || queryParameters.size() <= 0) {
                 return null;
             }
@@ -70,7 +68,7 @@ public final class m {
             if (TextUtils.isEmpty(str4)) {
                 return null;
             }
-            String str5 = str3 + BridgeUtil.SPLIT_MARK + str4 + BridgeUtil.SPLIT_MARK + str4 + ".html";
+            String str5 = str3 + "/" + str4 + "/" + str4 + ".html";
             if (com.anythink.expressad.foundation.h.m.a(str5)) {
                 try {
                     str2 = str.substring(str.indexOf("?") + 1);
@@ -81,7 +79,7 @@ public final class m {
             }
             return null;
         } catch (Exception e3) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e3.printStackTrace();
                 return null;
             }
@@ -97,12 +95,12 @@ public final class m {
                 str2 = "unknow exception ";
                 try {
                     if (bArr.length > 0) {
-                        String str3 = this.f + BridgeUtil.SPLIT_MARK + p.a(x.a(str)) + ".zip";
+                        String str3 = this.f + "/" + p.a(x.a(str)) + ".zip";
                         File file = new File(str3);
                         String str4 = "unknow exception ";
                         if (com.anythink.expressad.foundation.h.m.a(bArr, file)) {
                             Uri parse = Uri.parse(str);
-                            List<String> queryParameters = parse.getQueryParameters(f8753c);
+                            List<String> queryParameters = parse.getQueryParameters(f5913c);
                             if (queryParameters != null && queryParameters.size() != 0) {
                                 str4 = a(str, str3, file);
                             }
@@ -129,7 +127,7 @@ public final class m {
                         }
                     }
                 } catch (Exception e2) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         e2.printStackTrace();
                     }
                     str2 = e2.getMessage();
@@ -144,7 +142,7 @@ public final class m {
             if (TextUtils.isEmpty(this.f)) {
                 return;
             }
-            h.a.f8740a.a(new com.anythink.expressad.foundation.g.g.a() { // from class: com.anythink.expressad.videocommon.b.m.1
+            h.a.f5900a.a(new com.anythink.expressad.foundation.g.g.a() { // from class: com.anythink.expressad.videocommon.b.m.1
                 @Override // com.anythink.expressad.foundation.g.g.a
                 public final void a() {
                     com.anythink.expressad.foundation.h.m.c(m.this.f);
@@ -159,7 +157,7 @@ public final class m {
                 }
             });
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e2.printStackTrace();
             }
         }

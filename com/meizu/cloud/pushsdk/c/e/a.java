@@ -10,7 +10,7 @@ import java.io.IOException;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f24051a;
+    private static String f10440a;
 
     public static k a(com.meizu.cloud.pushsdk.c.a.b bVar) throws com.meizu.cloud.pushsdk.c.b.a {
         try {
@@ -59,14 +59,14 @@ public final class a {
             com.meizu.cloud.pushsdk.c.c.i$a r0 = r0.a(r1, r2)
             goto L2b
         L17:
-            java.lang.String r0 = com.meizu.cloud.pushsdk.c.e.a.f24051a
+            java.lang.String r0 = com.meizu.cloud.pushsdk.c.e.a.f10440a
             r6 = r0
             r0 = r6
             if (r0 == 0) goto L2b
             r0 = r5
             r1 = r6
             r0.a(r1)
-            java.lang.String r0 = com.meizu.cloud.pushsdk.c.e.a.f24051a
+            java.lang.String r0 = com.meizu.cloud.pushsdk.c.e.a.f10440a
             r6 = r0
             goto Lc
         L2b:

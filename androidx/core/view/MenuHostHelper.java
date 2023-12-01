@@ -15,34 +15,34 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class MenuHostHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Runnable f2643a;
+    private final Runnable f2595a;
     private final CopyOnWriteArrayList<MenuProvider> b = new CopyOnWriteArrayList<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<MenuProvider, LifecycleContainer> f2644c = new HashMap();
+    private final Map<MenuProvider, LifecycleContainer> f2596c = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/core/view/MenuHostHelper$LifecycleContainer.class */
     public static class LifecycleContainer {
 
         /* renamed from: a  reason: collision with root package name */
-        final Lifecycle f2645a;
+        final Lifecycle f2597a;
         private LifecycleEventObserver b;
 
         LifecycleContainer(Lifecycle lifecycle, LifecycleEventObserver lifecycleEventObserver) {
-            this.f2645a = lifecycle;
+            this.f2597a = lifecycle;
             this.b = lifecycleEventObserver;
             lifecycle.addObserver(lifecycleEventObserver);
         }
 
         void a() {
-            this.f2645a.removeObserver(this.b);
+            this.f2597a.removeObserver(this.b);
             this.b = null;
         }
     }
 
     public MenuHostHelper(Runnable runnable) {
-        this.f2643a = runnable;
+        this.f2595a = runnable;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -60,23 +60,23 @@ public class MenuHostHelper {
             removeMenuProvider(menuProvider);
         } else if (event == Lifecycle.Event.downFrom(state)) {
             this.b.remove(menuProvider);
-            this.f2643a.run();
+            this.f2595a.run();
         }
     }
 
     public void addMenuProvider(MenuProvider menuProvider) {
         this.b.add(menuProvider);
-        this.f2643a.run();
+        this.f2595a.run();
     }
 
     public void addMenuProvider(final MenuProvider menuProvider, LifecycleOwner lifecycleOwner) {
         addMenuProvider(menuProvider);
         Lifecycle lifecycle = lifecycleOwner.getLifecycle();
-        LifecycleContainer remove = this.f2644c.remove(menuProvider);
+        LifecycleContainer remove = this.f2596c.remove(menuProvider);
         if (remove != null) {
             remove.a();
         }
-        this.f2644c.put(menuProvider, new LifecycleContainer(lifecycle, new LifecycleEventObserver() { // from class: androidx.core.view.-$$Lambda$MenuHostHelper$Q-OE79gGLiIXVCrKe2yY7FTX9zc
+        this.f2596c.put(menuProvider, new LifecycleContainer(lifecycle, new LifecycleEventObserver() { // from class: androidx.core.view.-$$Lambda$MenuHostHelper$Q-OE79gGLiIXVCrKe2yY7FTX9zc
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
                 MenuHostHelper.this.a(menuProvider, lifecycleOwner2, event);
@@ -86,11 +86,11 @@ public class MenuHostHelper {
 
     public void addMenuProvider(final MenuProvider menuProvider, LifecycleOwner lifecycleOwner, final Lifecycle.State state) {
         Lifecycle lifecycle = lifecycleOwner.getLifecycle();
-        LifecycleContainer remove = this.f2644c.remove(menuProvider);
+        LifecycleContainer remove = this.f2596c.remove(menuProvider);
         if (remove != null) {
             remove.a();
         }
-        this.f2644c.put(menuProvider, new LifecycleContainer(lifecycle, new LifecycleEventObserver() { // from class: androidx.core.view.-$$Lambda$MenuHostHelper$U1SPABELr4QFuUXGVHQwbvgMOTA
+        this.f2596c.put(menuProvider, new LifecycleContainer(lifecycle, new LifecycleEventObserver() { // from class: androidx.core.view.-$$Lambda$MenuHostHelper$U1SPABELr4QFuUXGVHQwbvgMOTA
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner2, Lifecycle.Event event) {
                 MenuHostHelper.this.a(state, menuProvider, lifecycleOwner2, event);
@@ -117,10 +117,10 @@ public class MenuHostHelper {
 
     public void removeMenuProvider(MenuProvider menuProvider) {
         this.b.remove(menuProvider);
-        LifecycleContainer remove = this.f2644c.remove(menuProvider);
+        LifecycleContainer remove = this.f2596c.remove(menuProvider);
         if (remove != null) {
             remove.a();
         }
-        this.f2643a.run();
+        this.f2595a.run();
     }
 }

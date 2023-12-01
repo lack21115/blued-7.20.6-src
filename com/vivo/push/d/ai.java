@@ -11,7 +11,7 @@ public final class ai extends com.vivo.push.l {
     @Override // com.vivo.push.l
     public final void a(com.vivo.push.o oVar) {
         com.vivo.push.b.c cVar = (com.vivo.push.b.c) oVar;
-        com.vivo.push.model.b a2 = com.vivo.push.util.t.a(this.f41105a);
+        com.vivo.push.model.b a2 = com.vivo.push.util.t.a(this.f27414a);
         if (a2 == null) {
             com.vivo.push.e.a().a(cVar.h(), 1005, new Object[0]);
             return;
@@ -27,6 +27,6 @@ public final class ai extends com.vivo.push.l {
                 return;
             }
         }
-        com.vivo.push.a.a.a(this.f41105a, a3, oVar);
+        com.vivo.push.a.a.a(this.f27414a, a3, oVar);
     }
 }

@@ -2,6 +2,7 @@ package com.anythink.basead.g;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.AdError;
 import com.anythink.core.api.ErrorCode;
 import com.anythink.core.common.b.n;
@@ -9,6 +10,8 @@ import com.anythink.core.common.c.k;
 import com.anythink.core.common.e.j;
 import com.anythink.core.common.g.g;
 import com.anythink.core.common.i;
+import com.blued.android.chat.core.pack.ReqAckPackage;
+import com.efs.sdk.base.Constants;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONException;
@@ -16,22 +19,18 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/g/a.class */
 public final class a extends com.anythink.core.common.g.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f6004a;
+    String a;
     String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    String f6005c;
+    String c;
     int d;
     int e;
     String f;
     String g;
 
     public a(j jVar) {
-        this.f6004a = jVar.f6663a;
+        this.a = jVar.a;
         this.b = jVar.d;
-        this.f6005c = jVar.b;
+        this.c = jVar.b;
         this.d = jVar.h;
         this.e = jVar.i;
         this.f = jVar.k;
@@ -61,7 +60,7 @@ public final class a extends com.anythink.core.common.g.a {
                 super.a(i, obj);
             }
         } catch (Throwable th) {
-            a(i, -99999, "Return Empty Ad.", ErrorCode.getErrorCode(ErrorCode.noADError, "", obj != null ? obj.toString() : "Adx Service Error."));
+            a(i, g.l, "Return Empty Ad.", ErrorCode.getErrorCode(ErrorCode.noADError, "", obj != null ? obj.toString() : "Adx Service Error."));
         }
     }
 
@@ -90,7 +89,7 @@ public final class a extends com.anythink.core.common.g.a {
     @Override // com.anythink.core.common.g.a
     public final Map<String, String> c() {
         HashMap hashMap = new HashMap();
-        hashMap.put("Content-Encoding", "gzip");
+        hashMap.put("Content-Encoding", Constants.CP_GZIP);
         hashMap.put("Content-Type", "application/json;charset=utf-8");
         return hashMap;
     }
@@ -109,8 +108,8 @@ public final class a extends com.anythink.core.common.g.a {
         JSONObject e = super.e();
         try {
             e.put("app_id", n.a().p());
-            e.put("pl_id", this.f6005c);
-            e.put("session_id", n.a().g(this.f6005c));
+            e.put("pl_id", this.c);
+            e.put(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_ID, n.a().g(this.c));
             e.put("t_g_id", this.d);
             e.put("gro_id", this.e);
             String y = n.a().y();
@@ -127,9 +126,9 @@ public final class a extends com.anythink.core.common.g.a {
             if (n.a().b() != null) {
                 e.put("deny", com.anythink.core.common.k.d.o(n.a().g()));
             }
-            JSONObject a2 = com.anythink.core.common.g.c.a(this.f6005c);
-            if (a2 != null) {
-                e.put("customs", a2);
+            JSONObject a = com.anythink.core.common.g.c.a(this.c);
+            if (a != null) {
+                e.put("customs", a);
             }
             return e;
         } catch (Exception e2) {
@@ -153,12 +152,12 @@ public final class a extends com.anythink.core.common.g.a {
     @Override // com.anythink.core.common.g.a
     public final String g() {
         HashMap hashMap = new HashMap();
-        String a2 = com.anythink.core.common.k.c.a(e().toString());
-        String a3 = com.anythink.core.common.k.c.a(f().toString());
-        hashMap.put("p", a2);
-        hashMap.put(com.anythink.core.common.g.c.X, a3);
-        hashMap.put("request_id", this.b);
-        hashMap.put(k.a.b, this.f6004a);
+        String a = com.anythink.core.common.k.c.a(e().toString());
+        String a2 = com.anythink.core.common.k.c.a(f().toString());
+        hashMap.put(com.anythink.core.common.g.c.W, a);
+        hashMap.put(com.anythink.core.common.g.c.X, a2);
+        hashMap.put(ATAdConst.NETWORK_CUSTOM_KEY.NETWORK_REQUEST_ID, this.b);
+        hashMap.put(k.a.b, this.a);
         return new JSONObject(hashMap).toString();
     }
 

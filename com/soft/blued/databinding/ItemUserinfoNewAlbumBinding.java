@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemUserinfoNewAlbumBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29343a;
+    private final FrameLayout f15653a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29343a;
+        return this.f15653a;
     }
 }

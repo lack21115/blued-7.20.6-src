@@ -19,7 +19,7 @@ import com.opos.mobad.n.d.h;
 public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad.n.a {
     protected int h;
     protected int i;
-    protected a.InterfaceC0708a j;
+    protected a.InterfaceC0538a j;
     protected float k;
     protected RelativeLayout l;
     protected RelativeLayout m;
@@ -42,31 +42,31 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     public static /* synthetic */ class AnonymousClass4 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f26202a;
+        static final /* synthetic */ int[] f12514a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:7:0x0020 -> B:11:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[com.opos.mobad.cmn.a.b.a.values().length];
-            f26202a = iArr;
+            f12514a = iArr;
             try {
                 iArr[com.opos.mobad.cmn.a.b.a.NonClickBt.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f26202a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
+                f12514a[com.opos.mobad.cmn.a.b.a.ClickBt.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
         }
     }
 
-    public a(Context context, a.InterfaceC0708a interfaceC0708a, float f) {
+    public a(Context context, a.InterfaceC0538a interfaceC0538a, float f) {
         super(context);
         this.h = 0;
         this.i = 0;
         this.k = 1.0f;
         this.v = 0;
         this.x = false;
-        this.j = interfaceC0708a;
+        this.j = interfaceC0538a;
         b(f);
         g();
         s();
@@ -74,7 +74,7 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(View view, int[] iArr, com.opos.mobad.cmn.a.b.a aVar) {
-        int i = AnonymousClass4.f26202a[aVar.ordinal()];
+        int i = AnonymousClass4.f12514a[aVar.ordinal()];
         if (i == 1) {
             this.j.g(view, iArr);
         } else if (i != 2) {
@@ -93,11 +93,11 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     private void b(float f) {
-        int b = com.opos.cmn.an.h.f.a.b(this.f25896a);
-        j jVar = new j(this.f25896a, new j.a(b, (int) (b * 0.6f), f));
+        int b = com.opos.cmn.an.h.f.a.b(this.f12208a);
+        j jVar = new j(this.f12208a, new j.a(b, (int) (b * 0.6f), f));
         this.t = jVar;
         jVar.setVisibility(4);
-        RelativeLayout relativeLayout = new RelativeLayout(this.f25896a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f12208a);
         this.l = relativeLayout;
         relativeLayout.setBackgroundColor(-1);
         this.l.setVisibility(4);
@@ -107,7 +107,7 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     private void o() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f25896a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f12208a);
         this.m = relativeLayout;
         relativeLayout.setId(1);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(n(), l());
@@ -118,8 +118,8 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     private void p() {
-        this.p = new RelativeLayout(this.f25896a);
-        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f25896a, 6.66f);
+        this.p = new RelativeLayout(this.f12208a);
+        com.opos.cmn.e.a.a.c cVar = new com.opos.cmn.e.a.a.c(this.f12208a, 6.66f);
         cVar.setImageDrawable(new ColorDrawable(Color.parseColor("#f5f5f5")));
         this.p.addView(cVar, new RelativeLayout.LayoutParams(-1, -1));
         q();
@@ -134,7 +134,7 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     private void q() {
-        TextView textView = new TextView(this.f25896a);
+        TextView textView = new TextView(this.f12208a);
         this.q = textView;
         textView.setGravity(17);
         this.q.setTextColor(Color.parseColor("#999999"));
@@ -150,7 +150,7 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     private void r() {
-        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f25896a, "opos_module_biz_ui_native_templet_click_bn_normal_bg_img.png", "opos_module_biz_ui_native_templet_click_bn_pressed_bg_img.png");
+        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f12208a, "opos_module_biz_ui_native_templet_click_bn_normal_bg_img.png", "opos_module_biz_ui_native_templet_click_bn_pressed_bg_img.png");
         this.r = aVar;
         aVar.setGravity(17);
         this.r.setTextColor(Color.parseColor("#0095ff"));
@@ -164,7 +164,7 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     private void s() {
-        com.opos.cmn.j.b bVar = new com.opos.cmn.j.b(this.f25896a);
+        com.opos.cmn.j.b bVar = new com.opos.cmn.j.b(this.f12208a);
         this.w = bVar;
         bVar.a(new b.a() { // from class: com.opos.mobad.h.d.a.3
             @Override // com.opos.cmn.j.b.a
@@ -192,9 +192,9 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
         if (this.v == 1) {
             this.v = 3;
             com.opos.cmn.an.f.a.b("BaseNativeTempletCreative", "NT onWindowVisibility");
-            a.InterfaceC0708a interfaceC0708a = this.j;
-            if (interfaceC0708a != null) {
-                interfaceC0708a.b();
+            a.InterfaceC0538a interfaceC0538a = this.j;
+            if (interfaceC0538a != null) {
+                interfaceC0538a.b();
             }
             this.w.a((b.a) null);
         }
@@ -202,7 +202,7 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int a(float f) {
-        return com.opos.cmn.an.h.f.a.a(this.f25896a, m() * f);
+        return com.opos.cmn.an.h.f.a.a(this.f12208a, m() * f);
     }
 
     @Override // com.opos.mobad.n.a
@@ -259,8 +259,8 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.j = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.j = interfaceC0538a;
     }
 
     @Override // com.opos.mobad.n.a
@@ -292,7 +292,7 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(RelativeLayout.LayoutParams layoutParams) {
-        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f25896a, "opos_module_biz_ui_cmn_close_bn_bg_img.png", "opos_module_biz_ui_cmn_close_bn_bg_img.png");
+        com.opos.cmn.e.a.a.a aVar = new com.opos.cmn.e.a.a.a(this.f12208a, "opos_module_biz_ui_cmn_close_bn_bg_img.png", "opos_module_biz_ui_cmn_close_bn_bg_img.png");
         this.o = aVar;
         aVar.setGravity(17);
         this.o.setTextColor(-1);
@@ -337,6 +337,6 @@ public abstract class a extends com.opos.mobad.cmn.a.c implements com.opos.mobad
     }
 
     protected int n() {
-        return (int) (com.opos.cmn.an.h.f.a.b(this.f25896a) * m());
+        return (int) (com.opos.cmn.an.h.f.a.b(this.f12208a) * m());
     }
 }

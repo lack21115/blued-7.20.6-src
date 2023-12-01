@@ -15,31 +15,27 @@ import kotlinx.coroutines.flow.FlowCollector;
 @DebugMetadata(b = "ChannelFlow.kt", c = {212}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.internal.UndispatchedContextCollector$emitRef$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/internal/UndispatchedContextCollector$emitRef$1.class */
 final class UndispatchedContextCollector$emitRef$1<T> extends SuspendLambda implements Function2<T, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43513a;
+    int a;
     /* synthetic */ Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ FlowCollector<T> f43514c;
+    final /* synthetic */ FlowCollector<T> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
     public UndispatchedContextCollector$emitRef$1(FlowCollector<? super T> flowCollector, Continuation<? super UndispatchedContextCollector$emitRef$1> continuation) {
         super(2, continuation);
-        this.f43514c = flowCollector;
+        this.c = flowCollector;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(T t, Continuation<? super Unit> continuation) {
-        return ((UndispatchedContextCollector$emitRef$1) create(t, continuation)).invokeSuspend(Unit.f42314a);
+        return ((UndispatchedContextCollector$emitRef$1) create(t, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        UndispatchedContextCollector$emitRef$1 undispatchedContextCollector$emitRef$1 = new UndispatchedContextCollector$emitRef$1(this.f43514c, continuation);
+        UndispatchedContextCollector$emitRef$1 undispatchedContextCollector$emitRef$1 = new UndispatchedContextCollector$emitRef$1(this.c, continuation);
         undispatchedContextCollector$emitRef$1.b = obj;
         return undispatchedContextCollector$emitRef$1;
     }
@@ -47,20 +43,20 @@ final class UndispatchedContextCollector$emitRef$1<T> extends SuspendLambda impl
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f43513a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
             Object obj2 = this.b;
-            this.f43513a = 1;
-            if (this.f43514c.emit(obj2, this) == a2) {
-                return a2;
+            this.a = 1;
+            if (this.c.emit(obj2, this) == a) {
+                return a;
             }
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

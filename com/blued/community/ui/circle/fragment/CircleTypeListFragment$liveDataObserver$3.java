@@ -20,6 +20,6 @@ final /* synthetic */ class CircleTypeListFragment$liveDataObserver$3 extends Fu
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(Boolean bool) {
         a(bool.booleanValue());
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

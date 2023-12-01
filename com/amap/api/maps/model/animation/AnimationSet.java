@@ -16,12 +16,12 @@ public class AnimationSet extends Animation {
     }
 
     public void addAnimation(Animation animation) {
-        ((GLAnimationSet) this.glAnimation).addAnimation(animation);
+        this.glAnimation.addAnimation(animation);
         this.mAnimations.add(animation);
     }
 
     public void cleanAnimation() {
-        ((GLAnimationSet) this.glAnimation).cleanAnimation();
+        this.glAnimation.cleanAnimation();
         this.mAnimations.clear();
     }
 

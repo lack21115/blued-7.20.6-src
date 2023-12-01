@@ -6,11 +6,11 @@ import android.content.Context;
 public abstract class a implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f24785a;
+    protected Context f11097a;
     protected com.opos.cmn.e.a.c.b.a b;
 
     public a(Context context, com.opos.cmn.e.a.c.b.a aVar) {
-        this.f24785a = context.getApplicationContext();
+        this.f11097a = context.getApplicationContext();
         this.b = aVar;
     }
 }

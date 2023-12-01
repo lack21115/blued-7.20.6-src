@@ -12,25 +12,25 @@ import java.util.concurrent.atomic.AtomicReference;
 public abstract class RYhXO implements Xjpd8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public OTVRM f39914a;
+    public OTVRM f26223a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/turingface/sdk/mfa/RYhXO$ShGzN.class */
     public final class ShGzN extends Thread {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ AtomicReference f39915a;
+        public final /* synthetic */ AtomicReference f26224a;
         public final /* synthetic */ AtomicReference b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ AtomicReference f39916c;
+        public final /* synthetic */ AtomicReference f26225c;
         public final /* synthetic */ Context d;
         public final /* synthetic */ AtomicReference e;
         public final /* synthetic */ Object f;
 
         public ShGzN(AtomicReference atomicReference, AtomicReference atomicReference2, AtomicReference atomicReference3, Context context, AtomicReference atomicReference4, Object obj) {
-            this.f39915a = atomicReference;
+            this.f26224a = atomicReference;
             this.b = atomicReference2;
-            this.f39916c = atomicReference3;
+            this.f26225c = atomicReference3;
             this.d = context;
             this.e = atomicReference4;
             this.f = obj;
@@ -40,12 +40,12 @@ public abstract class RYhXO implements Xjpd8 {
         public final void run() {
             String str;
             try {
-                str = RYhXO.this.a((IBinder) this.f39915a.get());
+                str = RYhXO.this.a((IBinder) this.f26224a.get());
             } catch (Throwable th) {
                 this.b.set(Integer.valueOf((int) PackageManager.INSTALL_PARSE_FAILED_UNEXPECTED_EXCEPTION));
                 str = "";
             }
-            this.f39916c.set(str);
+            this.f26225c.set(str);
             try {
                 this.d.unbindService((ServiceConnection) this.e.get());
             } catch (Throwable th2) {
@@ -64,25 +64,25 @@ public abstract class RYhXO implements Xjpd8 {
     public final class spXPg implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ AtomicReference f39917a;
+        public final /* synthetic */ AtomicReference f26226a;
         public final /* synthetic */ AtomicReference b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Object f39918c;
+        public final /* synthetic */ Object f26227c;
 
         public spXPg(AtomicReference atomicReference, AtomicReference atomicReference2, Object obj) {
-            this.f39917a = atomicReference;
+            this.f26226a = atomicReference;
             this.b = atomicReference2;
-            this.f39918c = obj;
+            this.f26227c = obj;
         }
 
         @Override // android.content.ServiceConnection
         public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            this.f39917a.set(iBinder);
+            this.f26226a.set(iBinder);
             this.b.set(this);
-            synchronized (this.f39918c) {
+            synchronized (this.f26227c) {
                 try {
-                    this.f39918c.notifyAll();
+                    this.f26227c.notifyAll();
                 } catch (Throwable th) {
                 }
             }
@@ -131,16 +131,16 @@ public abstract class RYhXO implements Xjpd8 {
 
     @Override // com.tencent.turingface.sdk.mfa.Xjpd8
     public final void a(Context context) {
-        this.f39914a = c(context);
+        this.f26223a = c(context);
     }
 
     @Override // com.tencent.turingface.sdk.mfa.Xjpd8
     public final OTVRM b(Context context) {
-        OTVRM otvrm = this.f39914a;
+        OTVRM otvrm = this.f26223a;
         if (otvrm == null || otvrm.b != 0) {
-            this.f39914a = c(context);
+            this.f26223a = c(context);
         }
-        return this.f39914a;
+        return this.f26223a;
     }
 
     public final OTVRM c(Context context) {

@@ -4,13 +4,12 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.Application;
 import android.app.PendingIntent;
+import android.app.backup.FullBackup;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Process;
 import android.util.Log;
-import com.amap.api.col.p0003sl.iu;
-import com.anythink.basead.b.a;
 import com.uc.crashsdk.a.h;
 import java.io.File;
 import java.io.RandomAccessFile;
@@ -42,11 +41,11 @@ public class b {
     private static String w = null;
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f40574a = false;
+    public static boolean f26883a = false;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f40575c = false;
+    public static boolean f26884c = false;
     public static boolean d = false;
     public static final Object e = new Object();
     public static boolean f = false;
@@ -128,7 +127,7 @@ public class b {
 
     public static boolean F() {
         if (!ae) {
-            if (!com.uc.crashsdk.a.g.a(a.f40557a) && a.f40557a.equals(e.h())) {
+            if (!com.uc.crashsdk.a.g.a(a.f26866a) && a.f26866a.equals(e.h())) {
                 af = true;
                 if (d) {
                     JNIBridge.set(2, true);
@@ -239,7 +238,7 @@ public class b {
 
     private static String Q() {
         if (j == null) {
-            j = d("ss");
+            j = d(com.anythink.expressad.foundation.g.a.ac);
         }
         return j;
     }
@@ -253,7 +252,7 @@ public class b {
 
     private static String S() {
         if (m == null) {
-            m = d(a.C0070a.k);
+            m = d("cta");
         }
         return m;
     }
@@ -270,7 +269,7 @@ public class b {
             String p2 = p();
             File file = new File(b());
             File file2 = new File(R());
-            A = "f".equals(p2);
+            A = FullBackup.DATA_TREE_TOKEN.equals(p2);
             B = "b".equals(p2);
             D = file.exists();
             boolean exists = file2.exists();
@@ -704,10 +703,10 @@ public class b {
             long j2 = W + 1;
             W = j2;
             if (x) {
-                return new Object[]{iu.h, Long.valueOf(j2)};
+                return new Object[]{"e", Long.valueOf(j2)};
             }
             if (B()) {
-                return new Object[]{"f", Long.valueOf(W)};
+                return new Object[]{FullBackup.DATA_TREE_TOKEN, Long.valueOf(W)};
             }
             return new Object[]{"b", Long.valueOf(W)};
         }

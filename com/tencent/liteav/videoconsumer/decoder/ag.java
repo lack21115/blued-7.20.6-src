@@ -7,10 +7,10 @@ import com.tencent.liteav.base.util.LiteavLog;
 public final /* synthetic */ class ag implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDecodeController f36751a;
+    private final VideoDecodeController f23060a;
 
     private ag(VideoDecodeController videoDecodeController) {
-        this.f36751a = videoDecodeController;
+        this.f23060a = videoDecodeController;
     }
 
     public static Runnable a(VideoDecodeController videoDecodeController) {
@@ -19,8 +19,8 @@ public final /* synthetic */ class ag implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoDecodeController videoDecodeController = this.f36751a;
-        String str = videoDecodeController.f36734a;
+        VideoDecodeController videoDecodeController = this.f23060a;
+        String str = videoDecodeController.f23043a;
         LiteavLog.i(str, "pixelFrameQueue:" + videoDecodeController.n.c());
     }
 }

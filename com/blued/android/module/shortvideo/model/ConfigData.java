@@ -39,13 +39,13 @@ public class ConfigData extends IModel {
             if (!commonModel.isUseData() || (selectedFilter2 = commonModel.getSelectedFilter()) == null) {
                 return;
             }
-            setFilter(selectedFilter2.b, selectedFilter2.f15755c);
+            setFilter(selectedFilter2.b, selectedFilter2.c);
         } else if (this.mPageType == 1) {
             setBeauty(commonModel.isOpenBeauty());
             if (!commonModel.isUseData() || (selectedFilter = commonModel.getSelectedFilter()) == null) {
                 return;
             }
-            setFilter(selectedFilter.b, selectedFilter.f15755c);
+            setFilter(selectedFilter.b, selectedFilter.c);
         }
     }
 

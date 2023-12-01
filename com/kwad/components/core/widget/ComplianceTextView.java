@@ -125,7 +125,7 @@ public class ComplianceTextView extends TextView {
             spannableStringBuilder.setSpan(new ClickableSpan() { // from class: com.kwad.components.core.widget.ComplianceTextView.2
                 @Override // android.text.style.ClickableSpan
                 public final void onClick(View view) {
-                    AdWebViewActivityProxy.launch(ComplianceTextView.this.getContext(), new AdWebViewActivityProxy.a.C0529a().au(str).av(ComplianceTextView.this.VY).aA(true).L(ComplianceTextView.this.mAdTemplate).oc());
+                    AdWebViewActivityProxy.launch(ComplianceTextView.this.getContext(), new AdWebViewActivityProxy.a.C0359a().au(str).av(ComplianceTextView.this.VY).aA(true).L(ComplianceTextView.this.mAdTemplate).oc());
                 }
 
                 @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
@@ -145,7 +145,7 @@ public class ComplianceTextView extends TextView {
             spannableStringBuilder.setSpan(new ClickableSpan() { // from class: com.kwad.components.core.widget.ComplianceTextView.3
                 @Override // android.text.style.ClickableSpan
                 public final void onClick(View view) {
-                    AdWebViewActivityProxy.launch(ComplianceTextView.this.getContext(), new AdWebViewActivityProxy.a.C0529a().au(str2).av(ComplianceTextView.this.VZ).aA(true).L(ComplianceTextView.this.mAdTemplate).oc());
+                    AdWebViewActivityProxy.launch(ComplianceTextView.this.getContext(), new AdWebViewActivityProxy.a.C0359a().au(str2).av(ComplianceTextView.this.VZ).aA(true).L(ComplianceTextView.this.mAdTemplate).oc());
                 }
 
                 @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle

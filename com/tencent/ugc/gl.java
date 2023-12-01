@@ -4,11 +4,11 @@ package com.tencent.ugc;
 final /* synthetic */ class gl implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDemuxerFFmpeg f40422a;
+    private final VideoDemuxerFFmpeg f26731a;
     private final String b;
 
     private gl(VideoDemuxerFFmpeg videoDemuxerFFmpeg, String str) {
-        this.f40422a = videoDemuxerFFmpeg;
+        this.f26731a = videoDemuxerFFmpeg;
         this.b = str;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class gl implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoDemuxerFFmpeg.lambda$open$0(this.f40422a, this.b);
+        VideoDemuxerFFmpeg.lambda$open$0(this.f26731a, this.b);
     }
 }

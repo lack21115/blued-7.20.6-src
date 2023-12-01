@@ -10,7 +10,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 import android.util.Xml;
-import com.alipay.sdk.util.i;
 import com.android.internal.R;
 import java.io.IOException;
 import org.xmlpull.v1.XmlPullParserException;
@@ -189,7 +188,7 @@ public final class PrintServiceInfo implements Parcelable {
         sb.append(", settingsActivityName=").append(this.mSettingsActivityName);
         sb.append(", addPrintersActivityName=").append(this.mAddPrintersActivityName);
         sb.append(", advancedPrintOptionsActivityName=").append(this.mAdvancedPrintOptionsActivityName);
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

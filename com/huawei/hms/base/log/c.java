@@ -11,7 +11,7 @@ public class c {
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f22614c;
+    public String f9006c;
     public int d;
     public String g;
     public int h;
@@ -19,20 +19,20 @@ public class c {
     public int j;
 
     /* renamed from: a  reason: collision with root package name */
-    public final StringBuilder f22613a = new StringBuilder();
+    public final StringBuilder f9005a = new StringBuilder();
     public long e = 0;
     public long f = 0;
 
     public c(int i, String str, int i2, String str2) {
         this.b = null;
-        this.f22614c = "HMS";
+        this.f9006c = "HMS";
         this.d = 0;
         this.j = 0;
         this.j = i;
         this.b = str;
         this.d = i2;
         if (str2 != null) {
-            this.f22614c = str2;
+            this.f9006c = str2;
         }
         b();
     }
@@ -42,7 +42,7 @@ public class c {
     }
 
     public <T> c a(T t) {
-        this.f22613a.append(t);
+        this.f9005a.append(t);
         return this;
     }
 
@@ -59,7 +59,7 @@ public class c {
 
     public final StringBuilder a(StringBuilder sb) {
         sb.append(' ');
-        sb.append(this.f22613a.toString());
+        sb.append(this.f9005a.toString());
         return sb;
     }
 
@@ -87,7 +87,7 @@ public class c {
         sb.append(' ');
         sb.append(a2);
         sb.append('/');
-        sb.append(this.f22614c);
+        sb.append(this.f9006c);
         sb.append('/');
         sb.append(this.b);
         sb.append(' ');

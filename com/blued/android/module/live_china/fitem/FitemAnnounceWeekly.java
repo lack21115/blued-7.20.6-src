@@ -10,15 +10,13 @@ import java.util.List;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemAnnounceWeekly.class */
 public class FitemAnnounceWeekly extends FreedomItem {
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public boolean f12522c;
+    public boolean c;
     public View d;
 
     public FitemAnnounceWeekly(String str, boolean z) {
-        this.f12522c = false;
+        this.c = false;
         this.b = str;
-        this.f12522c = z;
+        this.c = z;
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -29,24 +27,24 @@ public class FitemAnnounceWeekly extends FreedomItem {
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
     public void a(Context context, BaseViewHolder baseViewHolder, List<FreedomItem> list, int i) {
         baseViewHolder.a(R.id.tv_text, (CharSequence) this.b).a(R.id.tv_text_select, (CharSequence) this.b);
-        View a2 = baseViewHolder.a(R.id.tv_text_select);
-        if (a2.animate() != null) {
-            a2.animate().cancel();
+        View a = baseViewHolder.a(R.id.tv_text_select);
+        if (a.animate() != null) {
+            a.animate().cancel();
         }
-        if (this.f12522c) {
-            a2.setScaleX(1.0f);
-            a2.setScaleY(1.0f);
-            a2.setAlpha(1.0f);
+        if (this.c) {
+            a.setScaleX(1.0f);
+            a.setScaleY(1.0f);
+            a.setAlpha(1.0f);
         } else {
-            a2.setScaleX(0.8f);
-            a2.setScaleY(0.8f);
-            a2.setAlpha(0.0f);
+            a.setScaleX(0.8f);
+            a.setScaleY(0.8f);
+            a.setAlpha(0.0f);
         }
-        this.d = a2;
+        this.d = a;
     }
 
     public void a(boolean z) {
-        this.f12522c = z;
+        this.c = z;
         View view = this.d;
         if (view == null) {
             return;
@@ -60,6 +58,6 @@ public class FitemAnnounceWeekly extends FreedomItem {
     }
 
     public boolean e() {
-        return this.f12522c;
+        return this.c;
     }
 }

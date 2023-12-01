@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.ui.StatusBarHelper;
@@ -21,7 +22,7 @@ public class FilterDialogFragment extends CommonDialogFragment {
     public static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f30190c;
+    public static boolean f16500c;
     private FilterFragment d;
     private FilterNewFragment e;
 
@@ -29,7 +30,7 @@ public class FilterDialogFragment extends CommonDialogFragment {
     static class OutsideClickDialog extends Dialog {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f30192a;
+        private boolean f16502a;
         private OnOutsideClickListener b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -57,7 +58,7 @@ public class FilterDialogFragment extends CommonDialogFragment {
 
         @Override // android.app.Dialog
         public boolean onTouchEvent(MotionEvent motionEvent) {
-            if (this.f30192a && isShowing()) {
+            if (this.f16502a && isShowing()) {
                 if (((motionEvent.getAction() != 1 || !a(getContext(), motionEvent)) && motionEvent.getAction() != 4) || this.b.a()) {
                 }
                 return true;
@@ -68,32 +69,27 @@ public class FilterDialogFragment extends CommonDialogFragment {
         @Override // android.app.Dialog
         public void setCanceledOnTouchOutside(boolean z) {
             super.setCanceledOnTouchOutside(z);
-            this.f30192a = z;
+            this.f16502a = z;
         }
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public void a(View view) {
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int d() {
         return R.layout.dialog_fragment_filter;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int f() {
         return BluedConfig.a().S() > 0 ? AppInfo.m - StatusBarHelper.a(AppInfo.d()) : (int) ((AppInfo.m / 6.0f) * 5.0f);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         EventTrackGuy.a(GuyProtos.Event.SCREEN_PAGE_SHOW);
         b = true;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment, androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         OutsideClickDialog outsideClickDialog = new OutsideClickDialog(getContext(), 2131951921);
         outsideClickDialog.setCanceledOnTouchOutside(true);
@@ -116,20 +112,19 @@ public class FilterDialogFragment extends CommonDialogFragment {
         return outsideClickDialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         getActivity().getWindow().setSoftInputMode(35);
         b = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    /* JADX WARN: Type inference failed for: r0v20, types: [com.soft.blued.ui.find.fragment.FilterNewFragment, androidx.fragment.app.Fragment] */
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         if (BluedConfig.a().S() <= 0) {
             FilterFragment filterFragment = new FilterFragment();
             this.d = filterFragment;
-            filterFragment.f30193a = this;
+            filterFragment.f16503a = this;
             getChildFragmentManager().beginTransaction().replace(R.id.fm_content, this.d).commitAllowingStateLoss();
             return;
         }
@@ -138,7 +133,7 @@ public class FilterDialogFragment extends CommonDialogFragment {
         filterNewFragment.setArguments(new Bundle());
         this.e.a(this);
         FragmentTransaction beginTransaction = getChildFragmentManager().beginTransaction();
-        FilterNewFragment filterNewFragment2 = this.e;
-        beginTransaction.add(R.id.fm_content, filterNewFragment2, filterNewFragment2.getSimpleName()).commitAllowingStateLoss();
+        ?? r0 = this.e;
+        beginTransaction.add(R.id.fm_content, (Fragment) r0, r0.getSimpleName()).commitAllowingStateLoss();
     }
 }

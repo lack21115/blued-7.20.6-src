@@ -3,7 +3,7 @@ package android.media.tv;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import com.alipay.sdk.util.i;
+import com.huawei.openalliance.ad.constant.t;
 
 /* loaded from: source-9557208-dex2jar.jar:android/media/tv/TvStreamConfig.class */
 public class TvStreamConfig implements Parcelable {
@@ -120,9 +120,9 @@ public class TvStreamConfig implements Parcelable {
     public String toString() {
         StringBuilder sb = new StringBuilder(128);
         sb.append("TvStreamConfig {");
-        sb.append("mStreamId=").append(this.mStreamId).append(";");
-        sb.append("mType=").append(this.mType).append(";");
-        sb.append("mGeneration=").append(this.mGeneration).append(i.d);
+        sb.append("mStreamId=").append(this.mStreamId).append(t.aE);
+        sb.append("mType=").append(this.mType).append(t.aE);
+        sb.append("mGeneration=").append(this.mGeneration).append("}");
         return sb.toString();
     }
 

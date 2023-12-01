@@ -16,7 +16,7 @@ public abstract class ForwardingMultiset<E> extends ForwardingCollection<E> impl
         public StandardElementSet() {
         }
 
-        @Override // com.google.common.collect.Multisets.ElementSet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.Multisets.ElementSet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<E> iterator() {
             return Multisets.elementIterator(multiset().entrySet().iterator());
         }
@@ -49,12 +49,12 @@ public abstract class ForwardingMultiset<E> extends ForwardingCollection<E> impl
         return delegate().entrySet();
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, com.google.common.collect.Multiset
     public boolean equals(@NullableDecl Object obj) {
         return obj == this || delegate().equals(obj);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, com.google.common.collect.Multiset
     public int hashCode() {
         return delegate().hashCode();
     }

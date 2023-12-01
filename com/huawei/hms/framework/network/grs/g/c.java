@@ -26,11 +26,11 @@ public class c {
     private static final String n = "c";
 
     /* renamed from: a  reason: collision with root package name */
-    private final GrsBaseInfo f22701a;
+    private final GrsBaseInfo f9093a;
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final com.huawei.hms.framework.network.grs.e.a f22702c;
+    private final com.huawei.hms.framework.network.grs.e.a f9094c;
     private d d;
     private final com.huawei.hms.framework.network.grs.g.k.c j;
     private com.huawei.hms.framework.network.grs.g.k.d k;
@@ -47,30 +47,30 @@ public class c {
     public class a implements Callable<d> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ExecutorService f22703a;
+        final /* synthetic */ ExecutorService f9095a;
         final /* synthetic */ String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ com.huawei.hms.framework.network.grs.e.c f22704c;
+        final /* synthetic */ com.huawei.hms.framework.network.grs.e.c f9096c;
 
         a(ExecutorService executorService, String str, com.huawei.hms.framework.network.grs.e.c cVar) {
-            this.f22703a = executorService;
+            this.f9095a = executorService;
             this.b = str;
-            this.f22704c = cVar;
+            this.f9096c = cVar;
         }
 
         /* JADX WARN: Can't rename method to resolve collision */
         @Override // java.util.concurrent.Callable
         public d call() {
-            return c.this.b(this.f22703a, this.b, this.f22704c);
+            return c.this.b(this.f9095a, this.b, this.f9096c);
         }
     }
 
     public c(com.huawei.hms.framework.network.grs.g.k.c cVar, com.huawei.hms.framework.network.grs.e.a aVar) {
         this.j = cVar;
-        this.f22701a = cVar.b();
+        this.f9093a = cVar.b();
         this.b = cVar.a();
-        this.f22702c = aVar;
+        this.f9094c = aVar;
         c();
         d();
     }
@@ -93,7 +93,7 @@ public class c {
         StringBuilder sb = new StringBuilder();
         sb.append(str2);
         sb.append(str);
-        String grsReqParamJoint = this.f22701a.getGrsReqParamJoint(false, false, e(), this.b);
+        String grsReqParamJoint = this.f9093a.getGrsReqParamJoint(false, false, e(), this.b);
         if (!TextUtils.isEmpty(grsReqParamJoint)) {
             sb.append("?");
             sb.append(grsReqParamJoint);
@@ -139,7 +139,7 @@ public class c {
         int b = a2 == null ? 0 : a2.b();
         Logger.v(n, "use 2.0 interface return http's code is：{%s}", Integer.valueOf(b));
         if (b == 404 || b == 401) {
-            if (TextUtils.isEmpty(e()) && TextUtils.isEmpty(this.f22701a.getAppName())) {
+            if (TextUtils.isEmpty(e()) && TextUtils.isEmpty(this.f9093a.getAppName())) {
                 Logger.i(n, "request grs server use 1.0 API must set appName,please check.");
                 return null;
             }
@@ -153,13 +153,13 @@ public class c {
     }
 
     private void b(String str, String str2) {
-        if (TextUtils.isEmpty(this.f22701a.getAppName()) && TextUtils.isEmpty(e())) {
+        if (TextUtils.isEmpty(this.f9093a.getAppName()) && TextUtils.isEmpty(e())) {
             return;
         }
         StringBuilder sb = new StringBuilder();
         sb.append(str2);
-        sb.append(String.format(Locale.ROOT, str, TextUtils.isEmpty(e()) ? this.f22701a.getAppName() : e()));
-        String grsReqParamJoint = this.f22701a.getGrsReqParamJoint(false, false, "1.0", this.b);
+        sb.append(String.format(Locale.ROOT, str, TextUtils.isEmpty(e()) ? this.f9093a.getAppName() : e()));
+        String grsReqParamJoint = this.f9093a.getGrsReqParamJoint(false, false, "1.0", this.b);
         if (!TextUtils.isEmpty(grsReqParamJoint)) {
             sb.append("?");
             sb.append(grsReqParamJoint);
@@ -197,13 +197,13 @@ public class c {
     }
 
     private void d() {
-        String grsParasKey = this.f22701a.getGrsParasKey(true, true, this.b);
-        com.huawei.hms.framework.network.grs.e.c a2 = this.f22702c.a();
+        String grsParasKey = this.f9093a.getGrsParasKey(true, true, this.b);
+        com.huawei.hms.framework.network.grs.e.c a2 = this.f9094c.a();
         this.l = a2.a(grsParasKey + "ETag", "");
     }
 
     private String e() {
-        com.huawei.hms.framework.network.grs.f.b a2 = com.huawei.hms.framework.network.grs.f.b.a(this.b.getPackageName(), this.f22701a);
+        com.huawei.hms.framework.network.grs.f.b a2 = com.huawei.hms.framework.network.grs.f.b.a(this.b.getPackageName(), this.f9093a);
         com.huawei.hms.framework.network.grs.local.model.a a3 = a2 != null ? a2.a() : null;
         if (a3 != null) {
             String b = a3.b();
@@ -261,7 +261,7 @@ public class c {
                 Logger.v(n, "grsResponseResult is ok");
             } else if (dVar.n()) {
                 Logger.i(n, "GRS server open 503 limiting strategy.");
-                com.huawei.hms.framework.network.grs.h.d.a(this.f22701a.getGrsParasKey(true, true, this.b), new d.a(dVar.k(), SystemClock.elapsedRealtime()));
+                com.huawei.hms.framework.network.grs.h.d.a(this.f9093a.getGrsParasKey(true, true, this.b), new d.a(dVar.k(), SystemClock.elapsedRealtime()));
             } else {
                 if (dVar.m()) {
                     Logger.i(n, "GRS server open 304 Not Modified.");
@@ -271,8 +271,8 @@ public class c {
                     return;
                 }
                 this.d = dVar;
-                this.f22702c.a(this.f22701a, dVar, this.b, this.j);
-                com.huawei.hms.framework.network.grs.f.b.a(this.b, this.f22701a);
+                this.f9094c.a(this.f9093a, dVar, this.b, this.j);
+                com.huawei.hms.framework.network.grs.f.b.a(this.b, this.f9093a);
                 for (Map.Entry<String, Future<d>> entry : this.e.entrySet()) {
                     if (!entry.getKey().equals(dVar.l()) && !entry.getValue().isCancelled()) {
                         Logger.i(n, "future cancel");

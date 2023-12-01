@@ -8,14 +8,12 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/SubscribedFlowCollector.class */
 public final class SubscribedFlowCollector<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final FlowCollector<T> f43437a;
+    private final FlowCollector<T> a;
     private final Function2<FlowCollector<? super T>, Continuation<? super Unit>, Object> b;
 
     /* JADX WARN: Multi-variable type inference failed */
     public SubscribedFlowCollector(FlowCollector<? super T> flowCollector, Function2<? super FlowCollector<? super T>, ? super Continuation<? super Unit>, ? extends Object> function2) {
-        this.f43437a = flowCollector;
+        this.a = flowCollector;
         this.b = function2;
     }
 
@@ -37,6 +35,6 @@ public final class SubscribedFlowCollector<T> implements FlowCollector<T> {
 
     @Override // kotlinx.coroutines.flow.FlowCollector
     public Object emit(T t, Continuation<? super Unit> continuation) {
-        return this.f43437a.emit(t, continuation);
+        return this.a.emit(t, continuation);
     }
 }

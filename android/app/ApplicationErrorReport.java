@@ -9,8 +9,8 @@ import android.os.Parcelable;
 import android.util.Printer;
 import android.util.Slog;
 import com.android.internal.util.FastPrintWriter;
+import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.io.Writer;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/ApplicationErrorReport.class */
 public class ApplicationErrorReport implements Parcelable {
@@ -130,8 +130,8 @@ public class ApplicationErrorReport implements Parcelable {
 
         public CrashInfo(Throwable th) {
             StringWriter stringWriter = new StringWriter();
-            FastPrintWriter fastPrintWriter = new FastPrintWriter((Writer) stringWriter, false, 256);
-            th.printStackTrace(fastPrintWriter);
+            FastPrintWriter fastPrintWriter = new FastPrintWriter(stringWriter, false, 256);
+            th.printStackTrace((PrintWriter) fastPrintWriter);
             fastPrintWriter.flush();
             this.stackTrace = stringWriter.toString();
             this.exceptionMessage = th.getMessage();

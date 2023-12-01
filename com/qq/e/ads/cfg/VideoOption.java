@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public class VideoOption {
 
     /* renamed from: a  reason: collision with root package name */
-    private final boolean f27864a;
+    private final boolean f14176a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f27865c;
+    private final boolean f14177c;
     private final boolean d;
     private final boolean e;
     private final boolean f;
@@ -30,11 +30,11 @@ public class VideoOption {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f27866a = true;
+        private boolean f14178a = true;
         private int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f27867c = true;
+        private boolean f14179c = true;
         private boolean d = true;
         private boolean e = true;
         private boolean f = false;
@@ -47,7 +47,7 @@ public class VideoOption {
         }
 
         public Builder setAutoPlayMuted(boolean z) {
-            this.f27866a = z;
+            this.f14178a = z;
             return this;
         }
 
@@ -125,15 +125,15 @@ public class VideoOption {
         }
 
         public Builder setNeedProgressBar(boolean z) {
-            this.f27867c = z;
+            this.f14179c = z;
             return this;
         }
     }
 
     private VideoOption(Builder builder) {
-        this.f27864a = builder.f27866a;
+        this.f14176a = builder.f14178a;
         this.b = builder.b;
-        this.f27865c = builder.f27867c;
+        this.f14177c = builder.f14179c;
         this.d = builder.d;
         this.e = builder.e;
         this.f = builder.f;
@@ -143,7 +143,7 @@ public class VideoOption {
     }
 
     public boolean getAutoPlayMuted() {
-        return this.f27864a;
+        return this.f14176a;
     }
 
     public int getAutoPlayPolicy() {
@@ -161,7 +161,7 @@ public class VideoOption {
     public JSONObject getOptions() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.putOpt("autoPlayMuted", Boolean.valueOf(this.f27864a));
+            jSONObject.putOpt("autoPlayMuted", Boolean.valueOf(this.f14176a));
             jSONObject.putOpt("autoPlayPolicy", Integer.valueOf(this.b));
             jSONObject.putOpt("detailPageMuted", Boolean.valueOf(this.g));
             return jSONObject;
@@ -188,6 +188,6 @@ public class VideoOption {
     }
 
     public boolean isNeedProgressBar() {
-        return this.f27865c;
+        return this.f14177c;
     }
 }

@@ -3,9 +3,8 @@ package com.google.common.base;
 import com.google.common.base.CharMatcher;
 import java.util.BitSet;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/base/SmallCharMatcher.class */
-public final class SmallCharMatcher extends CharMatcher.NamedFastMatcher {
+final class SmallCharMatcher extends CharMatcher.NamedFastMatcher {
     private static final int C1 = -862048943;
     private static final int C2 = 461845907;
     private static final double DESIRED_LOAD_FACTOR = 0.5d;

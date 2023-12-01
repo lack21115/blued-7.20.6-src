@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class TextSelectorPanelBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29598a;
+    private final FrameLayout f15908a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29598a;
+        return this.f15908a;
     }
 }

@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ColorFilterImageView extends AppCompatImageView implements View.OnTouchListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f32603a;
+    private boolean f18912a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public ColorFilterImageView(Context context) {
@@ -41,15 +41,15 @@ public final class ColorFilterImageView extends AppCompatImageView implements Vi
     }
 
     public final boolean getEnable() {
-        return this.f32603a;
+        return this.f18912a;
     }
 
     @Override // android.view.View.OnTouchListener
-    public boolean onTouch(View v, MotionEvent event) {
-        Intrinsics.e(v, "v");
-        Intrinsics.e(event, "event");
-        if (this.f32603a) {
-            int action = event.getAction();
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        Intrinsics.e(view, "v");
+        Intrinsics.e(motionEvent, "event");
+        if (this.f18912a) {
+            int action = motionEvent.getAction();
             if (action == 0) {
                 setColorFilter(Color.GRAY, PorterDuff.Mode.MULTIPLY);
                 return false;
@@ -64,6 +64,6 @@ public final class ColorFilterImageView extends AppCompatImageView implements Vi
     }
 
     public final void setEnable(boolean z) {
-        this.f32603a = z;
+        this.f18912a = z;
     }
 }

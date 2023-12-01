@@ -16,9 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/presenter/LiveOnLineUserPresenter.class */
 public final class LiveOnLineUserPresenter extends MvpPresenter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f14044a = 1;
+    private final int a = 1;
     private final int b = 2;
 
     @Metadata
@@ -28,7 +26,7 @@ public final class LiveOnLineUserPresenter extends MvpPresenter {
     }
 
     public final int a() {
-        return this.f14044a;
+        return this.a;
     }
 
     public final void a(final IRequestHost requestActive, int i, int i2, final OnLineUserDataSuccess onLineUserDataSuccess) {

@@ -5,10 +5,10 @@ public class a extends d {
     public static final char[] b = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte[] f28056c = new byte[256];
+    public static final byte[] f14368c = new byte[256];
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f28057a = new byte[4];
+    public byte[] f14369a = new byte[4];
 
     static {
         int i;
@@ -19,7 +19,7 @@ public class a extends d {
             if (i3 >= 255) {
                 break;
             }
-            f28056c[i3] = -1;
+            f14368c[i3] = -1;
             i2 = i3 + 1;
         }
         while (true) {
@@ -27,7 +27,7 @@ public class a extends d {
             if (i >= cArr.length) {
                 return;
             }
-            f28056c[cArr[i]] = (byte) i;
+            f14368c[cArr[i]] = (byte) i;
             i++;
         }
     }

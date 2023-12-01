@@ -7,11 +7,11 @@ import java.util.HashMap;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static HashMap<String, Class> f7107a = new HashMap<>();
+    private static HashMap<String, Class> f4269a = new HashMap<>();
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Object f7108c;
+    private Object f4270c;
     private WindVaneWebView d;
 
     public i(Context context, WindVaneWebView windVaneWebView) {
@@ -44,13 +44,13 @@ public final class i {
     }
 
     private Object a(String str, WindVaneWebView windVaneWebView, Context context) {
-        Class cls = f7107a.get(str);
+        Class cls = f4269a.get(str);
         if (cls != null) {
             try {
                 if (l.class.isAssignableFrom(cls)) {
                     l lVar = (l) cls.newInstance();
                     lVar.initialize(context, windVaneWebView);
-                    lVar.initialize(this.f7108c, windVaneWebView);
+                    lVar.initialize(this.f4270c, windVaneWebView);
                     return lVar;
                 }
                 return null;
@@ -90,22 +90,22 @@ public final class i {
     }
 
     public static void a(Class cls) {
-        if (f7107a == null) {
-            f7107a = new HashMap<>();
+        if (f4269a == null) {
+            f4269a = new HashMap<>();
         }
-        f7107a.put(cls.getSimpleName(), cls);
+        f4269a.put(cls.getSimpleName(), cls);
     }
 
     private static void b(String str) {
-        if (f7107a == null) {
-            f7107a = new HashMap<>();
+        if (f4269a == null) {
+            f4269a = new HashMap<>();
         }
-        f7107a.remove(str);
+        f4269a.remove(str);
     }
 
     public final Object a(String str) {
-        if (f7107a == null) {
-            f7107a = new HashMap<>();
+        if (f4269a == null) {
+            f4269a = new HashMap<>();
         }
         return a(str, this.d, this.b);
     }
@@ -115,6 +115,6 @@ public final class i {
     }
 
     public final void a(Object obj) {
-        this.f7108c = obj;
+        this.f4270c = obj;
     }
 }

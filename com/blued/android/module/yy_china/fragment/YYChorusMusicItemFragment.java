@@ -23,20 +23,18 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYChorusMusicItemFragment.class */
 public final class YYChorusMusicItemFragment extends BaseMusicItemFragment<YYKtvMusicModel> {
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f17136c;
+    private String c;
 
     public YYChorusMusicItemFragment(String sheetId) {
         Intrinsics.e(sheetId, "sheetId");
         this.b = sheetId;
-        this.f17136c = "";
+        this.c = "";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void a(List<YYKtvMusicModel> list) {
         BaseQuickAdapter<YYKtvMusicModel, BaseViewHolder> b;
-        if (TextUtils.isEmpty(this.f17136c)) {
+        if (TextUtils.isEmpty(this.c)) {
             BaseQuickAdapter<YYKtvMusicModel, BaseViewHolder> b2 = b();
             if (b2 == null) {
                 return;
@@ -50,7 +48,7 @@ public final class YYChorusMusicItemFragment extends BaseMusicItemFragment<YYKtv
 
     private final void i() {
         String str = this.b;
-        String str2 = this.f17136c;
+        String str2 = this.c;
         YYRoomModel d = d();
         String str3 = d == null ? null : d.room_id;
         final ActivityFragmentActive fragmentActive = getFragmentActive();
@@ -60,7 +58,7 @@ public final class YYChorusMusicItemFragment extends BaseMusicItemFragment<YYKtv
                 String str4;
                 super.onUIFinish(z);
                 YYChorusMusicItemFragment yYChorusMusicItemFragment = YYChorusMusicItemFragment.this;
-                str4 = yYChorusMusicItemFragment.f17136c;
+                str4 = yYChorusMusicItemFragment.c;
                 yYChorusMusicItemFragment.a(!TextUtils.isEmpty(str4));
             }
 
@@ -68,11 +66,11 @@ public final class YYChorusMusicItemFragment extends BaseMusicItemFragment<YYKtv
             public void onUIUpdate(BluedEntity<YYKtvMusicModel, YYKtvMusicExtra> bluedEntity) {
                 String str4;
                 if (bluedEntity == null || !bluedEntity.hasData()) {
-                    str4 = YYChorusMusicItemFragment.this.f17136c;
+                    str4 = YYChorusMusicItemFragment.this.c;
                     if (TextUtils.isEmpty(str4)) {
                         YYChorusMusicItemFragment.this.a((List<YYKtvMusicModel>) null);
                     }
-                    YYChorusMusicItemFragment.this.f17136c = "";
+                    YYChorusMusicItemFragment.this.c = "";
                     YYChorusMusicItemFragment.this.a(false);
                     return;
                 }
@@ -89,7 +87,7 @@ public final class YYChorusMusicItemFragment extends BaseMusicItemFragment<YYKtv
                 YYChorusMusicItemFragment yYChorusMusicItemFragment = YYChorusMusicItemFragment.this;
                 String str5 = yYKtvMusicExtra.ScrollToken;
                 Intrinsics.c(str5, "it.ScrollToken");
-                yYChorusMusicItemFragment.f17136c = str5;
+                yYChorusMusicItemFragment.c = str5;
             }
         }, getFragmentActive());
     }
@@ -101,7 +99,7 @@ public final class YYChorusMusicItemFragment extends BaseMusicItemFragment<YYKtv
 
     @Override // com.blued.android.module.yy_china.fragment.BaseMusicItemFragment
     public void f() {
-        this.f17136c = "";
+        this.c = "";
         i();
     }
 
@@ -114,32 +112,32 @@ public final class YYChorusMusicItemFragment extends BaseMusicItemFragment<YYKtv
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
         if (TextUtils.equals(this.b, "wish-choosed")) {
+            NoDataAndLoadFailView c = c();
+            if (c != null) {
+                c.setNoDataImg(R.drawable.icon_chorus_no_music);
+            }
             NoDataAndLoadFailView c2 = c();
             if (c2 != null) {
-                c2.setNoDataImg(R.drawable.icon_chorus_no_music);
+                c2.setTopSpace(DensityUtils.a(getContext(), 40.0f));
             }
             NoDataAndLoadFailView c3 = c();
             if (c3 != null) {
-                c3.setTopSpace(DensityUtils.a(getContext(), 40.0f));
+                c3.setNoDataTextColor(R.color.syc_999999);
             }
             NoDataAndLoadFailView c4 = c();
             if (c4 != null) {
-                c4.setNoDataTextColor(R.color.syc_999999);
+                c4.setNoDataTextSize(14.0f);
             }
             NoDataAndLoadFailView c5 = c();
-            if (c5 != null) {
-                c5.setNoDataTextSize(14.0f);
-            }
-            NoDataAndLoadFailView c6 = c();
-            if (c6 == null) {
+            if (c5 == null) {
                 return;
             }
-            c6.setNoDataStr(R.string.yy_no_music);
+            c5.setNoDataStr(R.string.yy_no_music);
         }
     }
 }

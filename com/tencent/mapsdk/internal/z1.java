@@ -7,11 +7,11 @@ import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 public class z1 implements y5.a {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final double f38143c = 1.0d;
+    public static final double f24452c = 1.0d;
     private static final a6 d = new a6(1.0d);
 
     /* renamed from: a  reason: collision with root package name */
-    private p5 f38144a;
+    private p5 f24453a;
     private double b;
 
     public z1(LatLng latLng) {
@@ -25,7 +25,7 @@ public class z1 implements y5.a {
 
     @Override // com.tencent.mapsdk.internal.y5.a
     public p5 a() {
-        return this.f38144a;
+        return this.f24453a;
     }
 
     public void a(double d2) {
@@ -37,7 +37,7 @@ public class z1 implements y5.a {
     }
 
     public void a(LatLng latLng) {
-        this.f38144a = d.c(latLng);
+        this.f24453a = d.c(latLng);
     }
 
     public double b() {
@@ -45,6 +45,6 @@ public class z1 implements y5.a {
     }
 
     public LatLng c() {
-        return d.b(this.f38144a);
+        return d.b(this.f24453a);
     }
 }

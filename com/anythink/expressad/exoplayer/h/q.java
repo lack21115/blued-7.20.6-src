@@ -7,11 +7,11 @@ import com.anythink.expressad.exoplayer.h.s;
 public final class q extends f<Void> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final s f7481a;
+    private final s f4642a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7482c;
+    private int f4643c;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/h/q$a.class */
     static final class a extends p {
@@ -45,7 +45,7 @@ public final class q extends f<Void> {
         private final com.anythink.expressad.exoplayer.ae b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f7483c;
+        private final int f4644c;
         private final int d;
         private final int e;
 
@@ -54,10 +54,10 @@ public final class q extends f<Void> {
             super(false, new aa.b(i));
             boolean z = false;
             this.b = aeVar;
-            this.f7483c = aeVar.c();
+            this.f4644c = aeVar.c();
             this.d = aeVar.b();
             this.e = i;
-            int i2 = this.f7483c;
+            int i2 = this.f4644c;
             if (i2 > 0) {
                 com.anythink.expressad.exoplayer.k.a.b(i <= Integer.MAX_VALUE / i2 ? true : z, "LoopingMediaSource contains too many periods");
             }
@@ -65,7 +65,7 @@ public final class q extends f<Void> {
 
         @Override // com.anythink.expressad.exoplayer.h.a
         protected final int a(int i) {
-            return i / this.f7483c;
+            return i / this.f4644c;
         }
 
         @Override // com.anythink.expressad.exoplayer.ae
@@ -88,7 +88,7 @@ public final class q extends f<Void> {
 
         @Override // com.anythink.expressad.exoplayer.ae
         public final int c() {
-            return this.f7483c * this.e;
+            return this.f4644c * this.e;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.a
@@ -98,7 +98,7 @@ public final class q extends f<Void> {
 
         @Override // com.anythink.expressad.exoplayer.h.a
         protected final int d(int i) {
-            return i * this.f7483c;
+            return i * this.f4644c;
         }
 
         @Override // com.anythink.expressad.exoplayer.h.a
@@ -118,40 +118,40 @@ public final class q extends f<Void> {
 
     private q(s sVar, byte b2) {
         com.anythink.expressad.exoplayer.k.a.a(true);
-        this.f7481a = sVar;
+        this.f4642a = sVar;
         this.b = Integer.MAX_VALUE;
     }
 
     private void b(com.anythink.expressad.exoplayer.ae aeVar, Object obj) {
-        this.f7482c = aeVar.c();
+        this.f4643c = aeVar.c();
         a(this.b != Integer.MAX_VALUE ? new b(aeVar, this.b) : new a(aeVar), obj);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final r a(s.a aVar, com.anythink.expressad.exoplayer.j.b bVar) {
-        return this.b != Integer.MAX_VALUE ? this.f7481a.a(aVar.a(aVar.f7484a % this.f7482c), bVar) : this.f7481a.a(aVar, bVar);
+        return this.b != Integer.MAX_VALUE ? this.f4642a.a(aVar.a(aVar.f4645a % this.f4643c), bVar) : this.f4642a.a(aVar, bVar);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.f, com.anythink.expressad.exoplayer.h.c
     public final void a() {
         super.a();
-        this.f7482c = 0;
+        this.f4643c = 0;
     }
 
     @Override // com.anythink.expressad.exoplayer.h.s
     public final void a(r rVar) {
-        this.f7481a.a(rVar);
+        this.f4642a.a(rVar);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.f, com.anythink.expressad.exoplayer.h.c
     public final void a(com.anythink.expressad.exoplayer.h hVar, boolean z) {
         super.a(hVar, z);
-        a((q) null, this.f7481a);
+        a((q) null, this.f4642a);
     }
 
     @Override // com.anythink.expressad.exoplayer.h.f
     protected final /* synthetic */ void a(Void r6, s sVar, com.anythink.expressad.exoplayer.ae aeVar, Object obj) {
-        this.f7482c = aeVar.c();
+        this.f4643c = aeVar.c();
         a(this.b != Integer.MAX_VALUE ? new b(aeVar, this.b) : new a(aeVar), obj);
     }
 }

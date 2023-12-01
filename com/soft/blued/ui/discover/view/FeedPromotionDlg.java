@@ -26,17 +26,18 @@ import com.soft.blued.R;
 import com.soft.blued.ui.login_register.model.AppConfigModel;
 import com.soft.blued.ui.web.WebViewShowInfoFragment;
 import com.soft.blued.user.BluedConfig;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.List;
 
 /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/discover/view/FeedPromotionDlg.class */
 public class FeedPromotionDlg extends Dialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f29851a;
+    private View f16161a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f29852c;
+    private ImageView f16162c;
     private TextView d;
     private TextView e;
     private View f;
@@ -54,17 +55,17 @@ public class FeedPromotionDlg extends Dialog {
 
     private void a() {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dlg_feed_promotion_layout, (ViewGroup) null);
-        this.f29851a = inflate;
+        this.f16161a = inflate;
         this.b = inflate.findViewById(R.id.dlg_feed_promotion_mask);
         AppConfigModel.FeedPromotion feedPromotion = this.j;
         if (feedPromotion != null) {
             this.h = feedPromotion.type;
         }
         if (b()) {
-            View findViewById = this.f29851a.findViewById(R.id.dlg_feed_promotion_content);
+            View findViewById = this.f16161a.findViewById(R.id.dlg_feed_promotion_content);
             this.f = findViewById;
             findViewById.setVisibility(0);
-            View findViewById2 = this.f29851a.findViewById(R.id.dlg_feed_promotion_close);
+            View findViewById2 = this.f16161a.findViewById(R.id.dlg_feed_promotion_close);
             this.g = findViewById2;
             findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.view.-$$Lambda$FeedPromotionDlg$eEHie-Ct5hjLLodtRV897LOwHjA
                 @Override // android.view.View.OnClickListener
@@ -72,16 +73,16 @@ public class FeedPromotionDlg extends Dialog {
                     FeedPromotionDlg.this.d(view);
                 }
             });
-            this.e = (TextView) this.f29851a.findViewById(R.id.dlg_feed_promotion_buy);
+            this.e = (TextView) this.f16161a.findViewById(R.id.dlg_feed_promotion_buy);
             if (BluedConfig.a().k() != null) {
                 if (!TextUtils.isEmpty(BluedConfig.a().k().btn)) {
                     this.e.setText(BluedConfig.a().k().btn);
                 }
                 if (!TextUtils.isEmpty(BluedConfig.a().k().img)) {
-                    ImageLoader.a((IRequestHost) null, BluedConfig.a().k().img).f().a(this.f29852c);
+                    ImageLoader.a((IRequestHost) null, BluedConfig.a().k().img).f().a(this.f16162c);
                 }
             }
-            TextView textView = (TextView) this.f29851a.findViewById(R.id.dlg_feed_promotion_tv);
+            TextView textView = (TextView) this.f16161a.findViewById(R.id.dlg_feed_promotion_tv);
             this.d = textView;
             textView.setText(BluedConfig.a().k().text);
             this.e.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.discover.view.-$$Lambda$FeedPromotionDlg$jVtPi-uNmCgpfrBTBL7_5SzUzj0
@@ -91,23 +92,23 @@ public class FeedPromotionDlg extends Dialog {
                 }
             });
         } else {
-            View findViewById3 = this.f29851a.findViewById(R.id.cl_promotion_dialog);
+            View findViewById3 = this.f16161a.findViewById(R.id.cl_promotion_dialog);
             this.f = findViewById3;
             findViewById3.setVisibility(0);
-            TextView textView2 = (TextView) this.f29851a.findViewById(R.id.tv_feed_promotion_title);
-            TextView textView3 = (TextView) this.f29851a.findViewById(R.id.tv_feed_promotion_subtitle);
-            TextView textView4 = (TextView) this.f29851a.findViewById(R.id.tv_promotion_item_title);
-            TextView textView5 = (TextView) this.f29851a.findViewById(R.id.tv_promotion_item_subtitle);
-            TextView textView6 = (TextView) this.f29851a.findViewById(R.id.tv_promotion_item1_title);
-            TextView textView7 = (TextView) this.f29851a.findViewById(R.id.tv_promotion_item1_subtitle1);
-            TextView textView8 = (TextView) this.f29851a.findViewById(R.id.tv_promotion_pay);
-            TextView textView9 = (TextView) this.f29851a.findViewById(2131371062);
-            ImageView imageView = (ImageView) this.f29851a.findViewById(2131365207);
+            TextView textView2 = (TextView) this.f16161a.findViewById(R.id.tv_feed_promotion_title);
+            TextView textView3 = (TextView) this.f16161a.findViewById(R.id.tv_feed_promotion_subtitle);
+            TextView textView4 = (TextView) this.f16161a.findViewById(R.id.tv_promotion_item_title);
+            TextView textView5 = (TextView) this.f16161a.findViewById(R.id.tv_promotion_item_subtitle);
+            TextView textView6 = (TextView) this.f16161a.findViewById(R.id.tv_promotion_item1_title);
+            TextView textView7 = (TextView) this.f16161a.findViewById(R.id.tv_promotion_item1_subtitle1);
+            TextView textView8 = (TextView) this.f16161a.findViewById(R.id.tv_promotion_pay);
+            TextView textView9 = (TextView) this.f16161a.findViewById(R.id.tv_card_title);
+            ImageView imageView = (ImageView) this.f16161a.findViewById(2131365207);
             textView2.setText(this.j.title);
             textView3.setText(this.j.subtitle);
             List<String> list = this.j.subhead;
-            String[] split = list.get(0).split("-");
-            String[] split2 = list.get(1).split("-");
+            String[] split = list.get(0).split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
+            String[] split2 = list.get(1).split(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             textView4.setText(split[0]);
             textView5.setText(split[1]);
             textView6.setText(split2[0]);
@@ -127,17 +128,17 @@ public class FeedPromotionDlg extends Dialog {
                 }
             });
         }
-        ImageView imageView2 = (ImageView) this.f29851a.findViewById(R.id.dlg_feed_promotion_iv);
-        this.f29852c = imageView2;
+        ImageView imageView2 = (ImageView) this.f16161a.findViewById(R.id.dlg_feed_promotion_iv);
+        this.f16162c = imageView2;
         if (imageView2 != null) {
-            ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("icon_feed_promotion_dialog_top_bg")).a(this.f29852c);
+            ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("icon_feed_promotion_dialog_top_bg")).a(this.f16162c);
         }
-        ImageView imageView3 = (ImageView) this.f29851a.findViewById(R.id.iv_promotion_bg);
+        ImageView imageView3 = (ImageView) this.f16161a.findViewById(R.id.iv_promotion_bg);
         if (imageView3 != null) {
             ImageLoader.a((IRequestHost) null, (int) R.drawable.feed_promotion_tip_bg).a(imageView3);
         }
-        ImageLoader.a((IRequestHost) null, ImgURLMap.f10885a.a("feed_promotion_blued_cover")).a((ImageView) this.f29851a.findViewById(R.id.iv_blued_cover));
-        setContentView(this.f29851a);
+        ImageLoader.a((IRequestHost) null, ImgURLMap.a.a("feed_promotion_blued_cover")).a((ImageView) this.f16161a.findViewById(R.id.iv_blued_cover));
+        setContentView(this.f16161a);
         StatusBarHelper.a(getWindow());
         setCancelable(false);
         EventTrackSuperExpose.a(SuperExposeProtos.Event.AFTER_PUBLISH_PAGE_SUPER_EXPOSE_SHOW);

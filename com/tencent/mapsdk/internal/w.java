@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.mapsdk.engine.jni.models.IconImageInfo;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,11 +22,11 @@ public class w {
     private static final int l = 255;
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<Context> f38082a;
+    private WeakReference<Context> f24391a;
     private e1 b;
 
     /* renamed from: c  reason: collision with root package name */
-    private de f38083c;
+    private de f24392c;
     private float d;
     private zd e;
     private w6 f;
@@ -36,9 +35,9 @@ public class w {
 
     public w(Context context, e1 e1Var, de deVar, zd zdVar) {
         this.d = 1.0f;
-        this.f38082a = new WeakReference<>(context);
+        this.f24391a = new WeakReference<>(context);
         this.b = e1Var;
-        this.f38083c = deVar;
+        this.f24392c = deVar;
         this.e = zdVar;
         this.d = g7.d(context);
         if (e1Var == null || e1Var.j() == null) {
@@ -84,14 +83,14 @@ public class w {
 
     private Bitmap a(String str, Bitmap.Config config, boolean z) {
         WeakReference<Context> weakReference;
-        if (!new File(str).exists() || (weakReference = this.f38082a) == null || weakReference.get() == null) {
+        if (!new File(str).exists() || (weakReference = this.f24391a) == null || weakReference.get() == null) {
             return null;
         }
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inPreferredConfig = config;
         if (z) {
             options.inDensity = 320;
-            options.inTargetDensity = this.f38082a.get().getResources().getDisplayMetrics().densityDpi;
+            options.inTargetDensity = this.f24391a.get().getResources().getDisplayMetrics().densityDpi;
         }
         try {
             return BitmapFactory.decodeFile(str, options);
@@ -104,7 +103,7 @@ public class w {
         if (file == null || f7.b(str) || bArr == null || bArr.length == 0) {
             return false;
         }
-        String str2 = str + BridgeUtil.UNDERLINE_STR + Arrays.hashCode(bArr);
+        String str2 = str + "_" + Arrays.hashCode(bArr);
         try {
             if (!file.exists()) {
                 file.mkdirs();
@@ -159,7 +158,7 @@ public class w {
     }
 
     public boolean a(String str, byte[] bArr) {
-        de deVar = this.f38083c;
+        de deVar = this.f24392c;
         if (deVar == null) {
             return false;
         }
@@ -190,7 +189,7 @@ public class w {
             this.e.a(str, iconImageInfo);
             this.h.unlock();
             if (iconImageInfo.bitmap == null && str != null) {
-                str.equals(zd.f38161a);
+                str.equals(zd.f24470a);
             }
             if (iconImageInfo.bitmap != null || (w6Var2 = this.f) == null) {
                 return iconImageInfo;
@@ -212,7 +211,7 @@ public class w {
     }
 
     public boolean b(String str, byte[] bArr) {
-        de deVar = this.f38083c;
+        de deVar = this.f24392c;
         if (deVar == null) {
             return false;
         }

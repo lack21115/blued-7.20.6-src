@@ -52,7 +52,7 @@ public final class FragmentMineNewBinding implements ViewBinding {
     public final ShapeLinearLayout Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public final BluedADConstraintLayout f28892a;
+    public final BluedADConstraintLayout f15202a;
     public final TextView aA;
     public final View aB;
     public final ViewFlipper aC;
@@ -77,7 +77,7 @@ public final class FragmentMineNewBinding implements ViewBinding {
     public final TextView aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    public final TextView f28893ar;
+    public final TextView f15203ar;
     public final TextView as;
     public final TextView at;
     public final TextView au;
@@ -89,7 +89,7 @@ public final class FragmentMineNewBinding implements ViewBinding {
     public final QBadgeContainer b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f28894c;
+    public final ShapeTextView f15204c;
     public final View d;
     public final CardView e;
     public final ConstraintLayout f;
@@ -116,9 +116,9 @@ public final class FragmentMineNewBinding implements ViewBinding {
 
     private FragmentMineNewBinding(ConstraintLayout constraintLayout, BluedADConstraintLayout bluedADConstraintLayout, QBadgeContainer qBadgeContainer, ShapeTextView shapeTextView, View view, CardView cardView, ConstraintLayout constraintLayout2, ConstraintLayout constraintLayout3, ConstraintLayout constraintLayout4, LinearLayout linearLayout, ConstraintLayout constraintLayout5, ConstraintLayout constraintLayout6, CardView cardView2, ShapeTextView shapeTextView2, ShapeTextView shapeTextView3, ShapeTextView shapeTextView4, ShapeTextView shapeTextView5, ShapeTextView shapeTextView6, GridLayout gridLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, LinePageIndicator linePageIndicator, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, ImageView imageView9, ImageView imageView10, ImageView imageView11, ImageView imageView12, ImageView imageView13, ImageView imageView14, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, ShapeLinearLayout shapeLinearLayout, ShapeConstraintLayout shapeConstraintLayout, LinearLayout linearLayout5, ShapeLinearLayout shapeLinearLayout2, ShapeLinearLayout shapeLinearLayout3, LinearLayout linearLayout6, ShapeLinearLayout shapeLinearLayout4, ShapeLinearLayout shapeLinearLayout5, ShapeLinearLayout shapeLinearLayout6, ShapeLinearLayout shapeLinearLayout7, LinearLayout linearLayout7, LinearLayout linearLayout8, ShapeLinearLayout shapeLinearLayout8, LinearLayout linearLayout9, LinearLayout linearLayout10, ShapeLinearLayout shapeLinearLayout9, LinearLayout linearLayout11, LinearLayout linearLayout12, LinearLayout linearLayout13, ShapeLinearLayout shapeLinearLayout10, AutoScrollViewPager autoScrollViewPager, ResourcePromotionView resourcePromotionView, ObservableScrollView observableScrollView, ShapeTextView shapeTextView7, LinearLayout linearLayout14, ImageView imageView15, ImageView imageView16, TextView textView, ImageView imageView17, FrameLayout frameLayout, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, TextView textView13, TextView textView14, View view2, ViewFlipper viewFlipper, ViewFlipper viewFlipper2) {
         this.aE = constraintLayout;
-        this.f28892a = bluedADConstraintLayout;
+        this.f15202a = bluedADConstraintLayout;
         this.b = qBadgeContainer;
-        this.f28894c = shapeTextView;
+        this.f15204c = shapeTextView;
         this.d = view;
         this.e = cardView;
         this.f = constraintLayout2;
@@ -185,7 +185,7 @@ public final class FragmentMineNewBinding implements ViewBinding {
         this.ao = textView2;
         this.ap = textView3;
         this.aq = textView4;
-        this.f28893ar = textView5;
+        this.f15203ar = textView5;
         this.as = textView6;
         this.at = textView7;
         this.au = textView8;
@@ -204,12 +204,12 @@ public final class FragmentMineNewBinding implements ViewBinding {
         String str;
         BluedADConstraintLayout bluedADConstraintLayout = (BluedADConstraintLayout) view.findViewById(R.id.ad_view_layout);
         if (bluedADConstraintLayout != null) {
-            QBadgeContainer qBadgeContainer = (QBadgeContainer) view.findViewById(R.id.badge_container);
-            if (qBadgeContainer != null) {
-                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.beans_icon);
-                if (shapeTextView != null) {
-                    View findViewById = view.findViewById(R.id.bindView);
-                    if (findViewById != null) {
+            QBadgeContainer findViewById = view.findViewById(R.id.badge_container);
+            if (findViewById != null) {
+                ShapeTextView findViewById2 = view.findViewById(R.id.beans_icon);
+                if (findViewById2 != null) {
+                    View findViewById3 = view.findViewById(R.id.bindView);
+                    if (findViewById3 != null) {
                         CardView cardView = (CardView) view.findViewById(R.id.card_vip);
                         if (cardView != null) {
                             ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.cl_feed);
@@ -220,33 +220,33 @@ public final class FragmentMineNewBinding implements ViewBinding {
                                     if (constraintLayout3 != null) {
                                         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.cl_per_entry);
                                         if (linearLayout != null) {
-                                            ConstraintLayout constraintLayout4 = (ConstraintLayout) view.findViewById(2131362949);
+                                            ConstraintLayout constraintLayout4 = (ConstraintLayout) view.findViewById(R.id.cl_user_info);
                                             if (constraintLayout4 != null) {
                                                 ConstraintLayout constraintLayout5 = (ConstraintLayout) view.findViewById(R.id.cl_visit);
                                                 if (constraintLayout5 != null) {
                                                     CardView cardView2 = (CardView) view.findViewById(R.id.cv_ad);
                                                     if (cardView2 != null) {
-                                                        ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.dot_feed);
-                                                        if (shapeTextView2 != null) {
-                                                            ShapeTextView shapeTextView3 = (ShapeTextView) view.findViewById(R.id.dot_group);
-                                                            if (shapeTextView3 != null) {
-                                                                ShapeTextView shapeTextView4 = (ShapeTextView) view.findViewById(R.id.dot_interact);
-                                                                if (shapeTextView4 != null) {
-                                                                    ShapeTextView shapeTextView5 = (ShapeTextView) view.findViewById(R.id.dot_setting);
-                                                                    if (shapeTextView5 != null) {
-                                                                        ShapeTextView shapeTextView6 = (ShapeTextView) view.findViewById(R.id.dot_visit);
-                                                                        if (shapeTextView6 != null) {
+                                                        ShapeTextView findViewById4 = view.findViewById(R.id.dot_feed);
+                                                        if (findViewById4 != null) {
+                                                            ShapeTextView findViewById5 = view.findViewById(R.id.dot_group);
+                                                            if (findViewById5 != null) {
+                                                                ShapeTextView findViewById6 = view.findViewById(R.id.dot_interact);
+                                                                if (findViewById6 != null) {
+                                                                    ShapeTextView findViewById7 = view.findViewById(R.id.dot_setting);
+                                                                    if (findViewById7 != null) {
+                                                                        ShapeTextView findViewById8 = view.findViewById(R.id.dot_visit);
+                                                                        if (findViewById8 != null) {
                                                                             GridLayout gridLayout = (GridLayout) view.findViewById(R.id.gl_vas_entry);
                                                                             if (gridLayout != null) {
                                                                                 ImageView imageView = (ImageView) view.findViewById(2131364232);
                                                                                 if (imageView != null) {
                                                                                     ImageView imageView2 = (ImageView) view.findViewById(R.id.helper_arrow);
                                                                                     if (imageView2 != null) {
-                                                                                        ImageView imageView3 = (ImageView) view.findViewById(2131364414);
+                                                                                        ImageView imageView3 = (ImageView) view.findViewById(R.id.img_ad);
                                                                                         if (imageView3 != null) {
-                                                                                            LinePageIndicator linePageIndicator = (LinePageIndicator) view.findViewById(R.id.indicator_emotion);
-                                                                                            if (linePageIndicator != null) {
-                                                                                                ImageView imageView4 = (ImageView) view.findViewById(2131365108);
+                                                                                            LinePageIndicator findViewById9 = view.findViewById(R.id.indicator_emotion);
+                                                                                            if (findViewById9 != null) {
+                                                                                                ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_avatar_widget);
                                                                                                 if (imageView4 != null) {
                                                                                                     ImageView imageView5 = (ImageView) view.findViewById(R.id.iv_edit_profile);
                                                                                                     if (imageView5 != null) {
@@ -258,9 +258,9 @@ public final class FragmentMineNewBinding implements ViewBinding {
                                                                                                                 if (imageView8 != null) {
                                                                                                                     ImageView imageView9 = (ImageView) view.findViewById(R.id.iv_live_level);
                                                                                                                     if (imageView9 != null) {
-                                                                                                                        ImageView imageView10 = (ImageView) view.findViewById(2131366029);
+                                                                                                                        ImageView imageView10 = (ImageView) view.findViewById(R.id.iv_verify);
                                                                                                                         if (imageView10 != null) {
-                                                                                                                            ImageView imageView11 = (ImageView) view.findViewById(2131366044);
+                                                                                                                            ImageView imageView11 = (ImageView) view.findViewById(R.id.iv_vip_bg);
                                                                                                                             if (imageView11 != null) {
                                                                                                                                 ImageView imageView12 = (ImageView) view.findViewById(R.id.iv_vip_btn);
                                                                                                                                 if (imageView12 != null) {
@@ -272,56 +272,56 @@ public final class FragmentMineNewBinding implements ViewBinding {
                                                                                                                                             if (linearLayout2 != null) {
                                                                                                                                                 LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.layout_vip_btn);
                                                                                                                                                 if (linearLayout3 != null) {
-                                                                                                                                                    LinearLayout linearLayout4 = (LinearLayout) view.findViewById(2131367640);
+                                                                                                                                                    LinearLayout linearLayout4 = (LinearLayout) view.findViewById(R.id.ll_attention);
                                                                                                                                                     if (linearLayout4 != null) {
-                                                                                                                                                        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(2131367655);
-                                                                                                                                                        if (shapeLinearLayout != null) {
-                                                                                                                                                            ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.ll_emotion);
-                                                                                                                                                            if (shapeConstraintLayout != null) {
+                                                                                                                                                        ShapeLinearLayout findViewById10 = view.findViewById(R.id.ll_beans);
+                                                                                                                                                        if (findViewById10 != null) {
+                                                                                                                                                            ShapeConstraintLayout findViewById11 = view.findViewById(R.id.ll_emotion);
+                                                                                                                                                            if (findViewById11 != null) {
                                                                                                                                                                 LinearLayout linearLayout5 = (LinearLayout) view.findViewById(R.id.ll_health);
                                                                                                                                                                 if (linearLayout5 != null) {
-                                                                                                                                                                    ShapeLinearLayout shapeLinearLayout2 = (ShapeLinearLayout) view.findViewById(R.id.ll_health_entry);
-                                                                                                                                                                    if (shapeLinearLayout2 != null) {
-                                                                                                                                                                        ShapeLinearLayout shapeLinearLayout3 = (ShapeLinearLayout) view.findViewById(R.id.ll_help);
-                                                                                                                                                                        if (shapeLinearLayout3 != null) {
+                                                                                                                                                                    ShapeLinearLayout findViewById12 = view.findViewById(R.id.ll_health_entry);
+                                                                                                                                                                    if (findViewById12 != null) {
+                                                                                                                                                                        ShapeLinearLayout findViewById13 = view.findViewById(R.id.ll_help);
+                                                                                                                                                                        if (findViewById13 != null) {
                                                                                                                                                                             LinearLayout linearLayout6 = (LinearLayout) view.findViewById(R.id.ll_live);
                                                                                                                                                                             if (linearLayout6 != null) {
-                                                                                                                                                                                ShapeLinearLayout shapeLinearLayout4 = (ShapeLinearLayout) view.findViewById(R.id.ll_live_fans);
-                                                                                                                                                                                if (shapeLinearLayout4 != null) {
-                                                                                                                                                                                    ShapeLinearLayout shapeLinearLayout5 = (ShapeLinearLayout) view.findViewById(R.id.ll_live_level);
-                                                                                                                                                                                    if (shapeLinearLayout5 != null) {
-                                                                                                                                                                                        ShapeLinearLayout shapeLinearLayout6 = (ShapeLinearLayout) view.findViewById(R.id.ll_live_table);
-                                                                                                                                                                                        if (shapeLinearLayout6 != null) {
-                                                                                                                                                                                            ShapeLinearLayout shapeLinearLayout7 = (ShapeLinearLayout) view.findViewById(R.id.ll_live_wealth);
-                                                                                                                                                                                            if (shapeLinearLayout7 != null) {
+                                                                                                                                                                                ShapeLinearLayout findViewById14 = view.findViewById(R.id.ll_live_fans);
+                                                                                                                                                                                if (findViewById14 != null) {
+                                                                                                                                                                                    ShapeLinearLayout findViewById15 = view.findViewById(R.id.ll_live_level);
+                                                                                                                                                                                    if (findViewById15 != null) {
+                                                                                                                                                                                        ShapeLinearLayout findViewById16 = view.findViewById(R.id.ll_live_table);
+                                                                                                                                                                                        if (findViewById16 != null) {
+                                                                                                                                                                                            ShapeLinearLayout findViewById17 = view.findViewById(R.id.ll_live_wealth);
+                                                                                                                                                                                            if (findViewById17 != null) {
                                                                                                                                                                                                 LinearLayout linearLayout7 = (LinearLayout) view.findViewById(R.id.ll_my_attentions);
                                                                                                                                                                                                 if (linearLayout7 != null) {
                                                                                                                                                                                                     LinearLayout linearLayout8 = (LinearLayout) view.findViewById(R.id.ll_my_fans);
                                                                                                                                                                                                     if (linearLayout8 != null) {
-                                                                                                                                                                                                        ShapeLinearLayout shapeLinearLayout8 = (ShapeLinearLayout) view.findViewById(R.id.ll_number_collection_table);
-                                                                                                                                                                                                        if (shapeLinearLayout8 != null) {
+                                                                                                                                                                                                        ShapeLinearLayout findViewById18 = view.findViewById(R.id.ll_number_collection_table);
+                                                                                                                                                                                                        if (findViewById18 != null) {
                                                                                                                                                                                                             LinearLayout linearLayout9 = (LinearLayout) view.findViewById(R.id.ll_other);
                                                                                                                                                                                                             if (linearLayout9 != null) {
                                                                                                                                                                                                                 LinearLayout linearLayout10 = (LinearLayout) view.findViewById(R.id.ll_other_entry);
                                                                                                                                                                                                                 if (linearLayout10 != null) {
-                                                                                                                                                                                                                    ShapeLinearLayout shapeLinearLayout9 = (ShapeLinearLayout) view.findViewById(R.id.ll_rainbow);
-                                                                                                                                                                                                                    if (shapeLinearLayout9 != null) {
+                                                                                                                                                                                                                    ShapeLinearLayout findViewById19 = view.findViewById(R.id.ll_rainbow);
+                                                                                                                                                                                                                    if (findViewById19 != null) {
                                                                                                                                                                                                                         LinearLayout linearLayout11 = (LinearLayout) view.findViewById(R.id.ll_top_entry);
                                                                                                                                                                                                                         if (linearLayout11 != null) {
                                                                                                                                                                                                                             LinearLayout linearLayout12 = (LinearLayout) view.findViewById(R.id.ll_vas);
                                                                                                                                                                                                                             if (linearLayout12 != null) {
                                                                                                                                                                                                                                 LinearLayout linearLayout13 = (LinearLayout) view.findViewById(R.id.ll_vf);
                                                                                                                                                                                                                                 if (linearLayout13 != null) {
-                                                                                                                                                                                                                                    ShapeLinearLayout shapeLinearLayout10 = (ShapeLinearLayout) view.findViewById(R.id.ll_vip_btn);
-                                                                                                                                                                                                                                    if (shapeLinearLayout10 != null) {
-                                                                                                                                                                                                                                        AutoScrollViewPager autoScrollViewPager = (AutoScrollViewPager) view.findViewById(R.id.pager_emotion);
-                                                                                                                                                                                                                                        if (autoScrollViewPager != null) {
+                                                                                                                                                                                                                                    ShapeLinearLayout findViewById20 = view.findViewById(R.id.ll_vip_btn);
+                                                                                                                                                                                                                                    if (findViewById20 != null) {
+                                                                                                                                                                                                                                        AutoScrollViewPager findViewById21 = view.findViewById(R.id.pager_emotion);
+                                                                                                                                                                                                                                        if (findViewById21 != null) {
                                                                                                                                                                                                                                             ResourcePromotionView resourcePromotionView = (ResourcePromotionView) view.findViewById(R.id.rv_resource_promotion);
                                                                                                                                                                                                                                             if (resourcePromotionView != null) {
-                                                                                                                                                                                                                                                ObservableScrollView observableScrollView = (ObservableScrollView) view.findViewById(2131369645);
-                                                                                                                                                                                                                                                if (observableScrollView != null) {
-                                                                                                                                                                                                                                                    ShapeTextView shapeTextView7 = (ShapeTextView) view.findViewById(R.id.stv_audited_status);
-                                                                                                                                                                                                                                                    if (shapeTextView7 != null) {
+                                                                                                                                                                                                                                                ObservableScrollView findViewById22 = view.findViewById(R.id.scroll_view);
+                                                                                                                                                                                                                                                if (findViewById22 != null) {
+                                                                                                                                                                                                                                                    ShapeTextView findViewById23 = view.findViewById(R.id.stv_audited_status);
+                                                                                                                                                                                                                                                    if (findViewById23 != null) {
                                                                                                                                                                                                                                                         LinearLayout linearLayout14 = (LinearLayout) view.findViewById(2131370694);
                                                                                                                                                                                                                                                         if (linearLayout14 != null) {
                                                                                                                                                                                                                                                             ImageView imageView15 = (ImageView) view.findViewById(R.id.title_header);
@@ -336,7 +336,7 @@ public final class FragmentMineNewBinding implements ViewBinding {
                                                                                                                                                                                                                                                                             if (frameLayout != null) {
                                                                                                                                                                                                                                                                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_attentions_count);
                                                                                                                                                                                                                                                                                 if (textView2 != null) {
-                                                                                                                                                                                                                                                                                    TextView textView3 = (TextView) view.findViewById(2131370967);
+                                                                                                                                                                                                                                                                                    TextView textView3 = (TextView) view.findViewById(R.id.tv_beans);
                                                                                                                                                                                                                                                                                     if (textView3 != null) {
                                                                                                                                                                                                                                                                                         TextView textView4 = (TextView) view.findViewById(R.id.tv_edit_profile);
                                                                                                                                                                                                                                                                                         if (textView4 != null) {
@@ -344,7 +344,7 @@ public final class FragmentMineNewBinding implements ViewBinding {
                                                                                                                                                                                                                                                                                             if (textView5 != null) {
                                                                                                                                                                                                                                                                                                 TextView textView6 = (TextView) view.findViewById(R.id.tv_feed);
                                                                                                                                                                                                                                                                                                 if (textView6 != null) {
-                                                                                                                                                                                                                                                                                                    TextView textView7 = (TextView) view.findViewById(2131371577);
+                                                                                                                                                                                                                                                                                                    TextView textView7 = (TextView) view.findViewById(R.id.tv_group);
                                                                                                                                                                                                                                                                                                     if (textView7 != null) {
                                                                                                                                                                                                                                                                                                         TextView textView8 = (TextView) view.findViewById(R.id.tv_interact);
                                                                                                                                                                                                                                                                                                         if (textView8 != null) {
@@ -358,15 +358,15 @@ public final class FragmentMineNewBinding implements ViewBinding {
                                                                                                                                                                                                                                                                                                                         if (textView12 != null) {
                                                                                                                                                                                                                                                                                                                             TextView textView13 = (TextView) view.findViewById(R.id.tv_vip_title);
                                                                                                                                                                                                                                                                                                                             if (textView13 != null) {
-                                                                                                                                                                                                                                                                                                                                TextView textView14 = (TextView) view.findViewById(2131372933);
+                                                                                                                                                                                                                                                                                                                                TextView textView14 = (TextView) view.findViewById(R.id.tv_visit);
                                                                                                                                                                                                                                                                                                                                 if (textView14 != null) {
-                                                                                                                                                                                                                                                                                                                                    View findViewById2 = view.findViewById(R.id.v_sign);
-                                                                                                                                                                                                                                                                                                                                    if (findViewById2 != null) {
+                                                                                                                                                                                                                                                                                                                                    View findViewById24 = view.findViewById(R.id.v_sign);
+                                                                                                                                                                                                                                                                                                                                    if (findViewById24 != null) {
                                                                                                                                                                                                                                                                                                                                         ViewFlipper viewFlipper = (ViewFlipper) view.findViewById(R.id.vf_health);
                                                                                                                                                                                                                                                                                                                                         if (viewFlipper != null) {
                                                                                                                                                                                                                                                                                                                                             ViewFlipper viewFlipper2 = (ViewFlipper) view.findViewById(R.id.vf_vip_ad);
                                                                                                                                                                                                                                                                                                                                             if (viewFlipper2 != null) {
-                                                                                                                                                                                                                                                                                                                                                return new FragmentMineNewBinding((ConstraintLayout) view, bluedADConstraintLayout, qBadgeContainer, shapeTextView, findViewById, cardView, constraintLayout, constraintLayout2, constraintLayout3, linearLayout, constraintLayout4, constraintLayout5, cardView2, shapeTextView2, shapeTextView3, shapeTextView4, shapeTextView5, shapeTextView6, gridLayout, imageView, imageView2, imageView3, linePageIndicator, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, linearLayout2, linearLayout3, linearLayout4, shapeLinearLayout, shapeConstraintLayout, linearLayout5, shapeLinearLayout2, shapeLinearLayout3, linearLayout6, shapeLinearLayout4, shapeLinearLayout5, shapeLinearLayout6, shapeLinearLayout7, linearLayout7, linearLayout8, shapeLinearLayout8, linearLayout9, linearLayout10, shapeLinearLayout9, linearLayout11, linearLayout12, linearLayout13, shapeLinearLayout10, autoScrollViewPager, resourcePromotionView, observableScrollView, shapeTextView7, linearLayout14, imageView15, imageView16, textView, imageView17, frameLayout, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, findViewById2, viewFlipper, viewFlipper2);
+                                                                                                                                                                                                                                                                                                                                                return new FragmentMineNewBinding((ConstraintLayout) view, bluedADConstraintLayout, findViewById, findViewById2, findViewById3, cardView, constraintLayout, constraintLayout2, constraintLayout3, linearLayout, constraintLayout4, constraintLayout5, cardView2, findViewById4, findViewById5, findViewById6, findViewById7, findViewById8, gridLayout, imageView, imageView2, imageView3, findViewById9, imageView4, imageView5, imageView6, imageView7, imageView8, imageView9, imageView10, imageView11, imageView12, imageView13, imageView14, linearLayout2, linearLayout3, linearLayout4, findViewById10, findViewById11, linearLayout5, findViewById12, findViewById13, linearLayout6, findViewById14, findViewById15, findViewById16, findViewById17, linearLayout7, linearLayout8, findViewById18, linearLayout9, linearLayout10, findViewById19, linearLayout11, linearLayout12, linearLayout13, findViewById20, findViewById21, resourcePromotionView, findViewById22, findViewById23, linearLayout14, imageView15, imageView16, textView, imageView17, frameLayout, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, findViewById24, viewFlipper, viewFlipper2);
                                                                                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                                                                                             str = "vfVipAd";
                                                                                                                                                                                                                                                                                                                                         } else {

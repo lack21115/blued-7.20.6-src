@@ -49,7 +49,7 @@ public class OauthManager extends SDKManager {
         }
         a aVar2 = new a(this.mContext, i, callBack);
         Context context = aVar2.b;
-        b.b(com.sdk.tencent.b.a.f28016a, "cache clear", com.sdk.tencent.b.a.b);
+        b.b(com.sdk.tencent.b.a.f14328a, "cache clear", com.sdk.tencent.b.a.b);
         com.sdk.tencent.j.a.a(context, "accessCode");
         com.sdk.tencent.x.a aVar3 = new com.sdk.tencent.x.a(aVar2.b, new c(aVar2));
         if (b.a(null).booleanValue()) {
@@ -85,7 +85,7 @@ public class OauthManager extends SDKManager {
         } else if (!b.a(str2).booleanValue()) {
             a aVar2 = new a(this.mContext, i, callBack);
             Context context = aVar2.b;
-            b.b(com.sdk.tencent.b.a.f28016a, "oauth cache clear", com.sdk.tencent.b.a.b);
+            b.b(com.sdk.tencent.b.a.f14328a, "oauth cache clear", com.sdk.tencent.b.a.b);
             com.sdk.tencent.j.a.a(context, "accessCode1");
             com.sdk.tencent.x.a aVar3 = new com.sdk.tencent.x.a(aVar2.b, new com.sdk.tencent.v.b(aVar2));
             if (b.a(str2).booleanValue()) {

@@ -18,11 +18,11 @@ public class FlashDragLayout extends RelativeLayout implements GestureDetector.O
     private static int e = 100;
 
     /* renamed from: a  reason: collision with root package name */
-    GestureDetector f30691a;
+    GestureDetector f17001a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f30692c;
+    private int f17002c;
     private int d;
     private boolean f;
     private boolean g;
@@ -43,7 +43,7 @@ public class FlashDragLayout extends RelativeLayout implements GestureDetector.O
         this.f = true;
         this.h = 0;
         this.i = 100.0f;
-        this.f30691a = new GestureDetector(this);
+        this.f17001a = new GestureDetector(this);
         b();
     }
 
@@ -56,30 +56,30 @@ public class FlashDragLayout extends RelativeLayout implements GestureDetector.O
             int i2 = i + x;
             if (i2 <= 0) {
                 this.b.setX(0.0f);
-            } else if (i2 >= this.f30692c) {
-                this.b.setX(this.f30692c);
+            } else if (i2 >= this.f17002c) {
+                this.b.setX(this.f17002c);
             } else {
                 this.b.setX(i2);
                 if (this.k != null) {
-                    this.k.a(1.0f - ((x * (this.i / this.f30692c)) / this.i));
+                    this.k.a(1.0f - ((x * (this.i / this.f17002c)) / this.i));
                 }
             }
         }
     }
 
     private void b() {
-        this.f30692c = LiveFloatManager.a().E();
+        this.f17002c = LiveFloatManager.a().E();
         this.d = LiveFloatManager.a().F();
         this.j = DensityUtils.a(getContext(), 50.0f);
         setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.find.view.FlashDragLayout.1
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                FlashDragLayout.this.f30691a.onTouchEvent(motionEvent);
+                FlashDragLayout.this.f17001a.onTouchEvent(motionEvent);
                 try {
                     if (motionEvent.getAction() == 1) {
                         if (motionEvent.getX() < FlashDragLayout.this.j && motionEvent.getY() < FlashDragLayout.this.j) {
                             FlashDragLayout.this.a();
-                        } else if (FlashDragLayout.this.b.getX() > FlashDragLayout.this.f30692c / 2) {
+                        } else if (FlashDragLayout.this.b.getX() > FlashDragLayout.this.f17002c / 2) {
                             FlashDragLayout.this.a(1, 300);
                         } else {
                             FlashDragLayout.this.a(0, 300);
@@ -109,7 +109,7 @@ public class FlashDragLayout extends RelativeLayout implements GestureDetector.O
             }
             this.g = true;
             final int x = (int) this.b.getX();
-            int i3 = i == 0 ? 0 : this.f30692c;
+            int i3 = i == 0 ? 0 : this.f17002c;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.setInterpolator(new DecelerateInterpolator());
             ofFloat.setDuration(i2);
@@ -119,7 +119,7 @@ public class FlashDragLayout extends RelativeLayout implements GestureDetector.O
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
                     float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     if (FlashDragLayout.this.k != null) {
-                        FlashDragLayout.this.k.a(1.0f - ((((i4 * floatValue) + x) * (FlashDragLayout.this.i / FlashDragLayout.this.f30692c)) / FlashDragLayout.this.i));
+                        FlashDragLayout.this.k.a(1.0f - ((((i4 * floatValue) + x) * (FlashDragLayout.this.i / FlashDragLayout.this.f17002c)) / FlashDragLayout.this.i));
                     }
                     FlashDragLayout.this.b.setX(((int) (i4 * floatValue)) + x);
                 }
@@ -131,7 +131,7 @@ public class FlashDragLayout extends RelativeLayout implements GestureDetector.O
 
                 @Override // android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
-                    FlashDragLayout.this.b.setX(i == 0 ? 0.0f : FlashDragLayout.this.f30692c);
+                    FlashDragLayout.this.b.setX(i == 0 ? 0.0f : FlashDragLayout.this.f17002c);
                     int i5 = 1;
                     int i6 = i == 0 ? 1 : 0;
                     if (FlashDragLayout.this.k != null) {
@@ -164,9 +164,8 @@ public class FlashDragLayout extends RelativeLayout implements GestureDetector.O
         return false;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         View childAt = getChildAt(0);
         this.b = childAt;

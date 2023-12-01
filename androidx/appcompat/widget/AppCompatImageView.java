@@ -25,30 +25,30 @@ public class AppCompatImageView extends ImageView implements TintableBackgroundV
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatImageView> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1765a = false;
+        private boolean f1717a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1766c;
+        private int f1718c;
         private int d;
         private int e;
 
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("backgroundTint", R.attr.backgroundTint);
-            this.f1766c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
+            this.f1718c = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
             this.d = propertyMapper.mapObject("tint", R.attr.tint);
             this.e = propertyMapper.mapObject("tintMode", R.attr.tintMode);
-            this.f1765a = true;
+            this.f1717a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatImageView appCompatImageView, PropertyReader propertyReader) {
-            if (!this.f1765a) {
+            if (!this.f1717a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, appCompatImageView.getBackgroundTintList());
-            propertyReader.readObject(this.f1766c, appCompatImageView.getBackgroundTintMode());
+            propertyReader.readObject(this.f1718c, appCompatImageView.getBackgroundTintMode());
             propertyReader.readObject(this.d, appCompatImageView.getImageTintList());
             propertyReader.readObject(this.e, appCompatImageView.getImageTintMode());
         }

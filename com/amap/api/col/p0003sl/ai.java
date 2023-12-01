@@ -11,11 +11,9 @@ public final class ai extends AbstractCameraUpdateMessage {
         iGLMapState.screenToP20Point(i, i2, point);
     }
 
-    @Override // com.autonavi.amap.mapcore.AbstractCameraUpdateMessage
     public final void mergeCameraUpdateDelegate(AbstractCameraUpdateMessage abstractCameraUpdateMessage) {
     }
 
-    @Override // com.autonavi.amap.mapcore.AbstractCameraUpdateMessage
     public final void runCameraUpdate(IGLMapState iGLMapState) {
         float f = this.xPixel;
         float f2 = this.yPixel;

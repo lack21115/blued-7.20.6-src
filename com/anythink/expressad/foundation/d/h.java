@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import com.anythink.expressad.a.c;
 import com.anythink.expressad.foundation.h.t;
+import com.huawei.hms.framework.common.ContainerUtils;
 import java.io.Serializable;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -60,11 +61,11 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
     private c.b v;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f7785a = 0;
+    private int f4945a = 0;
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f7786c = "";
+    private String f4946c = "";
     private int e = 0;
     private int f = 0;
     private int g = 0;
@@ -104,7 +105,7 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
                     }
                     ((h) cVar).k = jSONObject.optString(cF);
                 }
-                ((h) cVar).f7785a = jSONObject.optInt(cp, 0);
+                ((h) cVar).f4945a = jSONObject.optInt(cp, 0);
                 ((h) cVar).b = jSONObject.optInt(cq, 0);
                 ((h) cVar).d = a.a(jSONObject.optString(cr));
                 ((h) cVar).f = jSONObject.optInt(ct, 0);
@@ -284,7 +285,7 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
                 }
                 cVar.e(jSONObject.optString("cam_html"));
                 cVar.b(jSONObject.optString("cam_html"));
-                ((h) cVar).f7785a = jSONObject.optInt(cp, 0);
+                ((h) cVar).f4945a = jSONObject.optInt(cp, 0);
                 ((h) cVar).b = jSONObject.optInt(cq, 0);
                 ((h) cVar).d = a.a(jSONObject.optString(cr));
                 ((h) cVar).f = jSONObject.optInt(ct, 0);
@@ -307,7 +308,7 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
     }
 
     private void b(int i) {
-        this.f7785a = i;
+        this.f4945a = i;
     }
 
     private void b(String str) {
@@ -326,7 +327,7 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
         jSONObject.put(cD, ((h) cVar).i);
         jSONObject.put(cE, com.anythink.expressad.foundation.h.j.a(((h) cVar).j));
         jSONObject.put(cF, ((h) cVar).k);
-        jSONObject.put(cp, ((h) cVar).f7785a);
+        jSONObject.put(cp, ((h) cVar).f4945a);
         jSONObject.put(cq, ((h) cVar).b);
         a aVar = ((h) cVar).d;
         if (aVar != null) {
@@ -428,7 +429,7 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
     }
 
     public final int aI() {
-        return this.f7785a;
+        return this.f4945a;
     }
 
     public final int aJ() {
@@ -494,7 +495,7 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
 
     public final boolean b(c cVar) {
         boolean z = true;
-        if (this.f7785a != 1 || cVar.Q() != 3 || ((h) cVar).b == 1) {
+        if (this.f4945a != 1 || cVar.Q() != 3 || ((h) cVar).b == 1) {
             z = false;
         }
         if (z) {
@@ -521,7 +522,7 @@ public class h extends com.anythink.expressad.out.j implements com.anythink.expr
                     String str3 = map.get("key");
                     String str4 = map.get("value");
                     if (!str.contains(str3) && TextUtils.isEmpty(parse.getQueryParameter(str3)) && !TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
-                        return str + "&" + str3 + "=" + str4;
+                        return str + ContainerUtils.FIELD_DELIMITER + str3 + "=" + str4;
                     } else if (!TextUtils.isEmpty(str3) && !TextUtils.isEmpty(str4)) {
                         return str.replace(str3 + "=" + (!TextUtils.isEmpty(parse.getQueryParameter(str3)) ? parse.getQueryParameter(str3) : ""), str3 + "=" + str4);
                     }

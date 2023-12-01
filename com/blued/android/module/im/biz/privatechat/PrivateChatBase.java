@@ -11,25 +11,20 @@ import com.google.protobuf.Any;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/biz/privatechat/PrivateChatBase.class */
 public abstract class PrivateChatBase {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ChannelManager f11340a;
+    protected ChannelManager a;
     protected IMThreadManager b;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/biz/privatechat/PrivateChatBase$SendMessageRunnable.class */
     class SendMessageRunnable extends NamedRunnable {
         private PrivateChatOuterClass.Request b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private OnPrivateChatResponseListener f11342c;
+        private OnPrivateChatResponseListener c;
 
         public SendMessageRunnable(PrivateChatOuterClass.Request request, OnPrivateChatResponseListener onPrivateChatResponseListener) {
             super("private-chat");
             this.b = request;
-            this.f11342c = onPrivateChatResponseListener;
+            this.c = onPrivateChatResponseListener;
         }
 
-        /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Not initialized variable reg: 14, insn: 0x02f2: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r14 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:86:0x02f2 */
         /* JADX WARN: Removed duplicated region for block: B:102:0x0392  */
         /* JADX WARN: Removed duplicated region for block: B:103:0x0399  */
@@ -50,7 +45,7 @@ public abstract class PrivateChatBase {
     }
 
     public PrivateChatBase(ChannelManager channelManager, IMThreadManager iMThreadManager) {
-        this.f11340a = channelManager;
+        this.a = channelManager;
         this.b = iMThreadManager;
     }
 
@@ -59,7 +54,7 @@ public abstract class PrivateChatBase {
     protected abstract PrivateChatOuterClass.Response a(PrivateChatOuterClass.Request request);
 
     public void a(int i, int i2, int i3, int i4, Any any, OnPrivateChatResponseListener onPrivateChatResponseListener) {
-        if (this.f11340a == null || this.b == null) {
+        if (this.a == null || this.b == null) {
             return;
         }
         try {

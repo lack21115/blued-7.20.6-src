@@ -22,13 +22,9 @@ public class DrivePath extends Path implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5694a;
+    private String a;
     private float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5695c;
+    private float c;
     private int d;
     private List<DriveStep> e;
     private int f;
@@ -40,9 +36,9 @@ public class DrivePath extends Path implements Parcelable {
     public DrivePath(Parcel parcel) {
         super(parcel);
         this.e = new ArrayList();
-        this.f5694a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readFloat();
-        this.f5695c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.e = parcel.createTypedArrayList(DriveStep.CREATOR);
         this.d = parcel.readInt();
     }
@@ -61,11 +57,11 @@ public class DrivePath extends Path implements Parcelable {
     }
 
     public String getStrategy() {
-        return this.f5694a;
+        return this.a;
     }
 
     public float getTollDistance() {
-        return this.f5695c;
+        return this.c;
     }
 
     public float getTolls() {
@@ -85,11 +81,11 @@ public class DrivePath extends Path implements Parcelable {
     }
 
     public void setStrategy(String str) {
-        this.f5694a = str;
+        this.a = str;
     }
 
     public void setTollDistance(float f) {
-        this.f5695c = f;
+        this.c = f;
     }
 
     public void setTolls(float f) {
@@ -103,9 +99,9 @@ public class DrivePath extends Path implements Parcelable {
     @Override // com.amap.api.services.route.Path, android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeString(this.f5694a);
+        parcel.writeString(this.a);
         parcel.writeFloat(this.b);
-        parcel.writeFloat(this.f5695c);
+        parcel.writeFloat(this.c);
         parcel.writeTypedList(this.e);
         parcel.writeInt(this.d);
     }

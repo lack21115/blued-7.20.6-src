@@ -24,7 +24,7 @@ public final class Http2Stream {
     long b;
 
     /* renamed from: c  reason: collision with root package name */
-    final int f36003c;
+    final int f22312c;
     final Http2Connection d;
     final FramingSink e;
     private Header.Listener k;
@@ -32,7 +32,7 @@ public final class Http2Stream {
     private final FramingSource m;
 
     /* renamed from: a  reason: collision with root package name */
-    long f36002a = 0;
+    long f22311a = 0;
     private final Deque<Headers> j = new ArrayDeque();
     final StreamTimeout f = new StreamTimeout();
     final StreamTimeout g = new StreamTimeout();
@@ -43,10 +43,10 @@ public final class Http2Stream {
     public final class FramingSink implements Sink {
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ boolean f36004c = !Http2Stream.class.desiredAssertionStatus();
+        static final /* synthetic */ boolean f22313c = !Http2Stream.class.desiredAssertionStatus();
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f36005a;
+        boolean f22314a;
         boolean b;
         private final Buffer e = new Buffer();
 
@@ -57,7 +57,7 @@ public final class Http2Stream {
             long min;
             synchronized (Http2Stream.this) {
                 Http2Stream.this.g.enter();
-                while (Http2Stream.this.b <= 0 && !this.b && !this.f36005a && Http2Stream.this.h == null) {
+                while (Http2Stream.this.b <= 0 && !this.b && !this.f22314a && Http2Stream.this.h == null) {
                     Http2Stream.this.d();
                 }
                 Http2Stream.this.g.exitAndThrowIfTimedOut();
@@ -67,7 +67,7 @@ public final class Http2Stream {
             }
             Http2Stream.this.g.enter();
             try {
-                Http2Stream.this.d.writeData(Http2Stream.this.f36003c, z && min == this.e.size(), this.e, min);
+                Http2Stream.this.d.writeData(Http2Stream.this.f22312c, z && min == this.e.size(), this.e, min);
             } finally {
                 Http2Stream.this.g.exitAndThrowIfTimedOut();
             }
@@ -75,11 +75,11 @@ public final class Http2Stream {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            if (!f36004c && Thread.holdsLock(Http2Stream.this)) {
+            if (!f22313c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             synchronized (Http2Stream.this) {
-                if (this.f36005a) {
+                if (this.f22314a) {
                     return;
                 }
                 if (!Http2Stream.this.e.b) {
@@ -88,11 +88,11 @@ public final class Http2Stream {
                             a(true);
                         }
                     } else {
-                        Http2Stream.this.d.writeData(Http2Stream.this.f36003c, true, null, 0L);
+                        Http2Stream.this.d.writeData(Http2Stream.this.f22312c, true, null, 0L);
                     }
                 }
                 synchronized (Http2Stream.this) {
-                    this.f36005a = true;
+                    this.f22314a = true;
                 }
                 Http2Stream.this.d.flush();
                 Http2Stream.this.b();
@@ -101,7 +101,7 @@ public final class Http2Stream {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink, java.io.Flushable
         public void flush() throws IOException {
-            if (!f36004c && Thread.holdsLock(Http2Stream.this)) {
+            if (!f22313c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             synchronized (Http2Stream.this) {
@@ -120,7 +120,7 @@ public final class Http2Stream {
 
         @Override // com.tencent.cloud.huiyansdkface.okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
-            if (!f36004c && Thread.holdsLock(Http2Stream.this)) {
+            if (!f22313c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             this.e.write(buffer, j);
@@ -135,10 +135,10 @@ public final class Http2Stream {
     public final class FramingSource implements Source {
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ boolean f36006c = !Http2Stream.class.desiredAssertionStatus();
+        static final /* synthetic */ boolean f22315c = !Http2Stream.class.desiredAssertionStatus();
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f36007a;
+        boolean f22316a;
         boolean b;
         private final Buffer e = new Buffer();
         private final Buffer f = new Buffer();
@@ -149,7 +149,7 @@ public final class Http2Stream {
         }
 
         private void a(long j) {
-            if (!f36006c && Thread.holdsLock(Http2Stream.this)) {
+            if (!f22315c && Thread.holdsLock(Http2Stream.this)) {
                 throw new AssertionError();
             }
             Http2Stream.this.d.a(j);
@@ -159,7 +159,7 @@ public final class Http2Stream {
             boolean z;
             boolean z2;
             long j2 = j;
-            if (!f36006c) {
+            if (!f22315c) {
                 if (Thread.holdsLock(Http2Stream.this)) {
                     throw new AssertionError();
                 }
@@ -200,7 +200,7 @@ public final class Http2Stream {
             Header.Listener listener;
             ArrayList<Headers> arrayList;
             synchronized (Http2Stream.this) {
-                this.f36007a = true;
+                this.f22316a = true;
                 size = this.f.size();
                 this.f.clear();
                 listener = null;
@@ -296,7 +296,7 @@ public final class Http2Stream {
         if (http2Connection == null) {
             throw new NullPointerException("connection == null");
         }
-        this.f36003c = i2;
+        this.f22312c = i2;
         this.d = http2Connection;
         this.b = http2Connection.l.d();
         this.m = new FramingSource(http2Connection.k.d());
@@ -325,7 +325,7 @@ public final class Http2Stream {
                 }
                 this.h = errorCode;
                 notifyAll();
-                this.d.b(this.f36003c);
+                this.d.b(this.f22312c);
                 return true;
             }
         }
@@ -346,7 +346,7 @@ public final class Http2Stream {
         if (isOpen) {
             return;
         }
-        this.d.b(this.f36003c);
+        this.d.b(this.f22312c);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -390,7 +390,7 @@ public final class Http2Stream {
         if (isOpen) {
             return;
         }
-        this.d.b(this.f36003c);
+        this.d.b(this.f22312c);
     }
 
     void b() throws IOException {
@@ -400,7 +400,7 @@ public final class Http2Stream {
             throw new AssertionError();
         }
         synchronized (this) {
-            if (this.m.b || !this.m.f36007a || (!this.e.b && !this.e.f36005a)) {
+            if (this.m.b || !this.m.f22316a || (!this.e.b && !this.e.f22314a)) {
                 z = false;
                 isOpen = isOpen();
             }
@@ -411,12 +411,12 @@ public final class Http2Stream {
             close(ErrorCode.CANCEL);
         } else if (isOpen) {
         } else {
-            this.d.b(this.f36003c);
+            this.d.b(this.f22312c);
         }
     }
 
     void c() throws IOException {
-        if (this.e.f36005a) {
+        if (this.e.f22314a) {
             throw new IOException("stream closed");
         }
         if (this.e.b) {
@@ -429,13 +429,13 @@ public final class Http2Stream {
 
     public void close(ErrorCode errorCode) throws IOException {
         if (b(errorCode)) {
-            this.d.b(this.f36003c, errorCode);
+            this.d.b(this.f22312c, errorCode);
         }
     }
 
     public void closeLater(ErrorCode errorCode) {
         if (b(errorCode)) {
-            this.d.a(this.f36003c, errorCode);
+            this.d.a(this.f22312c, errorCode);
         }
     }
 
@@ -461,7 +461,7 @@ public final class Http2Stream {
     }
 
     public int getId() {
-        return this.f36003c;
+        return this.f22312c;
     }
 
     public Sink getSink() {
@@ -478,7 +478,7 @@ public final class Http2Stream {
     }
 
     public boolean isLocallyInitiated() {
-        return this.d.f35983a == ((this.f36003c & 1) == 1);
+        return this.d.f22292a == ((this.f22312c & 1) == 1);
     }
 
     public boolean isOpen() {
@@ -486,7 +486,7 @@ public final class Http2Stream {
             if (this.h != null) {
                 return false;
             }
-            if ((this.m.b || this.m.f36007a) && (this.e.b || this.e.f36005a)) {
+            if ((this.m.b || this.m.f22316a) && (this.e.b || this.e.f22314a)) {
                 if (this.l) {
                     return false;
                 }
@@ -552,7 +552,7 @@ public final class Http2Stream {
             }
             z5 = z4;
         }
-        this.d.a(this.f36003c, z3, list);
+        this.d.a(this.f22312c, z3, list);
         if (z5) {
             this.d.flush();
         }

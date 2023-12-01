@@ -9,18 +9,18 @@ import java.util.LinkedHashMap;
 public final class c implements e<String, b> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinkedHashMap<String, b> f6953a;
+    private final LinkedHashMap<String, b> f4115a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f6954c;
+    private int f4116c;
 
     public c(int i) {
         if (i <= 0) {
             throw new IllegalArgumentException("maxSize <= 0");
         }
         this.b = i;
-        this.f6953a = new LinkedHashMap<>(0, 0.75f, true);
+        this.f4115a = new LinkedHashMap<>(0, 0.75f, true);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x009d, code lost:
@@ -37,28 +37,28 @@ public final class c implements e<String, b> {
             r0 = r4
             monitor-enter(r0)
             r0 = r4
-            int r0 = r0.f6954c     // Catch: java.lang.Throwable -> L9e
+            int r0 = r0.f4116c     // Catch: java.lang.Throwable -> L9e
             if (r0 < 0) goto L77
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f6953a     // Catch: java.lang.Throwable -> L9e
+            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f4115a     // Catch: java.lang.Throwable -> L9e
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> L9e
             if (r0 == 0) goto L1a
             r0 = r4
-            int r0 = r0.f6954c     // Catch: java.lang.Throwable -> L9e
+            int r0 = r0.f4116c     // Catch: java.lang.Throwable -> L9e
             if (r0 != 0) goto L77
         L1a:
             r0 = r4
-            int r0 = r0.f6954c     // Catch: java.lang.Throwable -> L9e
+            int r0 = r0.f4116c     // Catch: java.lang.Throwable -> L9e
             r1 = r5
             if (r0 <= r1) goto L74
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f6953a     // Catch: java.lang.Throwable -> L9e
+            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f4115a     // Catch: java.lang.Throwable -> L9e
             boolean r0 = r0.isEmpty()     // Catch: java.lang.Throwable -> L9e
             if (r0 == 0) goto L2f
             goto L74
         L2f:
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f6953a     // Catch: java.lang.Throwable -> L9e
+            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f4115a     // Catch: java.lang.Throwable -> L9e
             java.util.Set r0 = r0.entrySet()     // Catch: java.lang.Throwable -> L9e
             java.util.Iterator r0 = r0.iterator()     // Catch: java.lang.Throwable -> L9e
             java.lang.Object r0 = r0.next()     // Catch: java.lang.Throwable -> L9e
@@ -77,15 +77,15 @@ public final class c implements e<String, b> {
             r0 = r6
             java.lang.Object r0 = r0.getValue()     // Catch: java.lang.Throwable -> L9e
             r0 = r4
-            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f6953a     // Catch: java.lang.Throwable -> La3
+            java.util.LinkedHashMap<java.lang.String, com.anythink.expressad.a.a.b> r0 = r0.f4115a     // Catch: java.lang.Throwable -> La3
             r1 = r7
             java.lang.Object r0 = r0.remove(r1)     // Catch: java.lang.Throwable -> La3
             r0 = r4
             r1 = r4
-            int r1 = r1.f6954c     // Catch: java.lang.Throwable -> La3
+            int r1 = r1.f4116c     // Catch: java.lang.Throwable -> La3
             r2 = 1
             int r1 = r1 - r2
-            r0.f6954c = r1     // Catch: java.lang.Throwable -> La3
+            r0.f4116c = r1     // Catch: java.lang.Throwable -> La3
         L6f:
             r0 = r4
             monitor-exit(r0)     // Catch: java.lang.Throwable -> L9e
@@ -135,7 +135,7 @@ public final class c implements e<String, b> {
     public final b b(String str) {
         if (str != null) {
             synchronized (this) {
-                b bVar = this.f6953a.get(str);
+                b bVar = this.f4115a.get(str);
                 if (bVar != null) {
                     return bVar;
                 }
@@ -149,7 +149,7 @@ public final class c implements e<String, b> {
     public final Collection<String> a() {
         HashSet hashSet;
         synchronized (this) {
-            hashSet = new HashSet(this.f6953a.keySet());
+            hashSet = new HashSet(this.f4115a.keySet());
         }
         return hashSet;
     }
@@ -160,9 +160,9 @@ public final class c implements e<String, b> {
             throw new NullPointerException("key == null || value == null");
         }
         synchronized (this) {
-            this.f6954c++;
-            if (this.f6953a.put(str, bVar) != null) {
-                this.f6954c--;
+            this.f4116c++;
+            if (this.f4115a.put(str, bVar) != null) {
+                this.f4116c--;
             }
         }
         a(this.b);
@@ -181,8 +181,8 @@ public final class c implements e<String, b> {
             throw new NullPointerException("key == null");
         }
         synchronized (this) {
-            if (this.f6953a.remove(str) != null) {
-                this.f6954c--;
+            if (this.f4115a.remove(str) != null) {
+                this.f4116c--;
             }
         }
     }

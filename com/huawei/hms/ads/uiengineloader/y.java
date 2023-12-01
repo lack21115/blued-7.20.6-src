@@ -8,7 +8,7 @@ import java.io.File;
 public final class y {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22582a = "dl_FileUtil";
+    private static final String f8974a = "dl_FileUtil";
 
     public static String a(Context context) {
         if (Build.VERSION.SDK_INT >= 24) {
@@ -27,7 +27,7 @@ public final class y {
             }
             return file.mkdirs();
         } catch (Exception e) {
-            aa.d(f22582a, "makeDirectory Exception: " + e.getMessage());
+            aa.d(f8974a, "makeDirectory Exception: " + e.getMessage());
             return false;
         }
     }
@@ -66,7 +66,7 @@ public final class y {
                             }
                         } catch (Throwable th) {
                             th = th;
-                            aa.b(f22582a, " delete err: " + th.getClass().getSimpleName());
+                            aa.b(f8974a, " delete err: " + th.getClass().getSimpleName());
                             return z2;
                         }
                     }

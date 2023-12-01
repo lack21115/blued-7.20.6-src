@@ -18,41 +18,41 @@ import org.xmlpull.v1.XmlSerializer;
 class a implements XmlSerializer {
 
     /* renamed from: a  reason: collision with other field name */
-    private OutputStream f58a;
+    private OutputStream f11a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Writer f59a;
+    private Writer f12a;
 
     /* renamed from: a  reason: collision with other field name */
-    private CharsetEncoder f61a;
+    private CharsetEncoder f14a;
     private boolean e;
     private int mPos;
 
     /* renamed from: a  reason: collision with other field name */
-    private static final String[] f57a = {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "&quot;", null, null, null, "&amp;", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "&lt;", null, "&gt;", null};
+    private static final String[] f10a = {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "&quot;", null, null, null, "&amp;", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "&lt;", null, "&gt;", null};
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f34899a = "xmlpull.org/v1/doc/features.html#indent-output";
+    private static String f21208a = "xmlpull.org/v1/doc/features.html#indent-output";
 
     /* renamed from: a  reason: collision with other field name */
-    private final char[] f62a = new char[8192];
+    private final char[] f15a = new char[8192];
 
     /* renamed from: a  reason: collision with other field name */
-    private ByteBuffer f60a = ByteBuffer.allocate(8192);
+    private ByteBuffer f13a = ByteBuffer.allocate(8192);
 
     private void a() throws IOException {
-        int position = this.f60a.position();
+        int position = this.f13a.position();
         if (position > 0) {
-            this.f60a.flip();
-            this.f58a.write(this.f60a.array(), 0, position);
-            this.f60a.clear();
+            this.f13a.flip();
+            this.f11a.write(this.f13a.array(), 0, position);
+            this.f13a.clear();
         }
     }
 
     private void a(String str) throws IOException {
         String str2;
         int length = str.length();
-        String[] strArr = f57a;
+        String[] strArr = f10a;
         char length2 = (char) strArr.length;
         int i = 0;
         int i2 = 0;
@@ -88,14 +88,14 @@ class a implements XmlSerializer {
             flush();
             i6 = this.mPos;
         }
-        str.getChars(i, i + i2, this.f62a, i6);
+        str.getChars(i, i + i2, this.f15a, i6);
         this.mPos = i6 + i2;
     }
 
     private void a(char[] cArr, int i, int i2) throws IOException {
         int i3;
         String str;
-        String[] strArr = f57a;
+        String[] strArr = f10a;
         char length = (char) strArr.length;
         int i4 = i;
         int i5 = i;
@@ -126,7 +126,7 @@ class a implements XmlSerializer {
             flush();
             i2 = this.mPos;
         }
-        this.f62a[i2] = c2;
+        this.f15a[i2] = c2;
         this.mPos = i2 + 1;
     }
 
@@ -150,13 +150,13 @@ class a implements XmlSerializer {
             flush();
             i6 = this.mPos;
         }
-        System.arraycopy((Object) cArr, i, (Object) this.f62a, i6, i2);
+        System.arraycopy(cArr, i, this.f15a, i6, i2);
         this.mPos = i6 + i2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String d() {
-        return "http://" + f34899a;
+        return "http://" + f21208a;
     }
 
     @Override // org.xmlpull.v1.XmlSerializer
@@ -219,26 +219,26 @@ class a implements XmlSerializer {
     public void flush() throws IOException {
         int i = this.mPos;
         if (i > 0) {
-            if (this.f58a != null) {
-                CharBuffer wrap = CharBuffer.wrap(this.f62a, 0, i);
-                CoderResult encode = this.f61a.encode(wrap, this.f60a, true);
+            if (this.f11a != null) {
+                CharBuffer wrap = CharBuffer.wrap(this.f15a, 0, i);
+                CoderResult encode = this.f14a.encode(wrap, this.f13a, true);
                 while (true) {
                     CoderResult coderResult = encode;
                     if (!coderResult.isError()) {
                         if (!coderResult.isOverflow()) {
                             a();
-                            this.f58a.flush();
+                            this.f11a.flush();
                             break;
                         }
                         a();
-                        encode = this.f61a.encode(wrap, this.f60a, true);
+                        encode = this.f14a.encode(wrap, this.f13a, true);
                     } else {
                         throw new IOException(coderResult.toString());
                     }
                 }
             } else {
-                this.f59a.write(this.f62a, 0, i);
-                this.f59a.flush();
+                this.f12a.write(this.f15a, 0, i);
+                this.f12a.flush();
             }
             this.mPos = 0;
         }
@@ -297,8 +297,8 @@ class a implements XmlSerializer {
             throw new IllegalArgumentException();
         }
         try {
-            this.f61a = Charset.forName(str).newEncoder();
-            this.f58a = outputStream;
+            this.f14a = Charset.forName(str).newEncoder();
+            this.f11a = outputStream;
         } catch (IllegalCharsetNameException e) {
             throw ((UnsupportedEncodingException) new UnsupportedEncodingException(str).initCause(e));
         } catch (UnsupportedCharsetException e2) {
@@ -308,7 +308,7 @@ class a implements XmlSerializer {
 
     @Override // org.xmlpull.v1.XmlSerializer
     public void setOutput(Writer writer) throws IOException, IllegalArgumentException, IllegalStateException {
-        this.f59a = writer;
+        this.f12a = writer;
     }
 
     @Override // org.xmlpull.v1.XmlSerializer

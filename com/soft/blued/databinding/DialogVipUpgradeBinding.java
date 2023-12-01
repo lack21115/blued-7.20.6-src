@@ -16,11 +16,11 @@ import com.soft.blued.R;
 public final class DialogVipUpgradeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f28732a;
+    public final LinearLayout f15042a;
     public final FrameLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f28733c;
+    public final ImageView f15043c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -40,9 +40,9 @@ public final class DialogVipUpgradeBinding implements ViewBinding {
 
     private DialogVipUpgradeBinding(ShapeConstraintLayout shapeConstraintLayout, LinearLayout linearLayout, FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, RecyclerView recyclerView, ShapeConstraintLayout shapeConstraintLayout2, LinearLayout linearLayout5, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         this.s = shapeConstraintLayout;
-        this.f28732a = linearLayout;
+        this.f15042a = linearLayout;
         this.b = frameLayout;
-        this.f28733c = imageView;
+        this.f15043c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = imageView4;
@@ -86,7 +86,7 @@ public final class DialogVipUpgradeBinding implements ViewBinding {
                         if (imageView3 != null) {
                             ImageView imageView4 = (ImageView) view.findViewById(R.id.iv_buy_btn);
                             if (imageView4 != null) {
-                                ImageView imageView5 = (ImageView) view.findViewById(2131365773);
+                                ImageView imageView5 = (ImageView) view.findViewById(R.id.iv_question);
                                 if (imageView5 != null) {
                                     LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_alipay);
                                     if (linearLayout2 != null) {
@@ -96,8 +96,8 @@ public final class DialogVipUpgradeBinding implements ViewBinding {
                                             if (linearLayout4 != null) {
                                                 RecyclerView recyclerView = (RecyclerView) view.findViewById(2131369105);
                                                 if (recyclerView != null) {
-                                                    ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(2131369468);
-                                                    if (shapeConstraintLayout != null) {
+                                                    ShapeConstraintLayout findViewById = view.findViewById(2131369468);
+                                                    if (findViewById != null) {
                                                         LinearLayout linearLayout5 = (LinearLayout) view.findViewById(R.id.to_vip_buy_page);
                                                         if (linearLayout5 != null) {
                                                             TextView textView = (TextView) view.findViewById(R.id.tv_agreement_text);
@@ -110,7 +110,7 @@ public final class DialogVipUpgradeBinding implements ViewBinding {
                                                                         if (textView4 != null) {
                                                                             TextView textView5 = (TextView) view.findViewById(2131372754);
                                                                             if (textView5 != null) {
-                                                                                return new DialogVipUpgradeBinding((ShapeConstraintLayout) view, linearLayout, frameLayout, imageView, imageView2, imageView3, imageView4, imageView5, linearLayout2, linearLayout3, linearLayout4, recyclerView, shapeConstraintLayout, linearLayout5, textView, textView2, textView3, textView4, textView5);
+                                                                                return new DialogVipUpgradeBinding((ShapeConstraintLayout) view, linearLayout, frameLayout, imageView, imageView2, imageView3, imageView4, imageView5, linearLayout2, linearLayout3, linearLayout4, recyclerView, findViewById, linearLayout5, textView, textView2, textView3, textView4, textView5);
                                                                             }
                                                                             str = "tvTitle";
                                                                         } else {

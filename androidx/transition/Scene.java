@@ -10,30 +10,30 @@ import android.view.ViewGroup;
 public class Scene {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f3462a;
+    private Context f3414a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewGroup f3463c;
+    private ViewGroup f3415c;
     private View d;
     private Runnable e;
     private Runnable f;
 
     public Scene(ViewGroup viewGroup) {
         this.b = -1;
-        this.f3463c = viewGroup;
+        this.f3415c = viewGroup;
     }
 
     private Scene(ViewGroup viewGroup, int i, Context context) {
         this.b = -1;
-        this.f3462a = context;
-        this.f3463c = viewGroup;
+        this.f3414a = context;
+        this.f3415c = viewGroup;
         this.b = i;
     }
 
     public Scene(ViewGroup viewGroup, View view) {
         this.b = -1;
-        this.f3463c = viewGroup;
+        this.f3415c = viewGroup;
         this.d = view;
     }
 
@@ -71,28 +71,28 @@ public class Scene {
         if (this.b > 0 || this.d != null) {
             getSceneRoot().removeAllViews();
             if (this.b > 0) {
-                LayoutInflater.from(this.f3462a).inflate(this.b, this.f3463c);
+                LayoutInflater.from(this.f3414a).inflate(this.b, this.f3415c);
             } else {
-                this.f3463c.addView(this.d);
+                this.f3415c.addView(this.d);
             }
         }
         Runnable runnable = this.e;
         if (runnable != null) {
             runnable.run();
         }
-        a(this.f3463c, this);
+        a(this.f3415c, this);
     }
 
     public void exit() {
         Runnable runnable;
-        if (getCurrentScene(this.f3463c) != this || (runnable = this.f) == null) {
+        if (getCurrentScene(this.f3415c) != this || (runnable = this.f) == null) {
             return;
         }
         runnable.run();
     }
 
     public ViewGroup getSceneRoot() {
-        return this.f3463c;
+        return this.f3415c;
     }
 
     public void setEnterAction(Runnable runnable) {

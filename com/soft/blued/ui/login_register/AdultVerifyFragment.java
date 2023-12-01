@@ -42,7 +42,7 @@ import java.lang.annotation.RetentionPolicy;
 public class AdultVerifyFragment extends MvpFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f31336a;
+    public Context f17646a;
     @BindView
     ShapeTextView btnSolid;
     @BindView
@@ -66,7 +66,7 @@ public class AdultVerifyFragment extends MvpFragment {
     public int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f31337c = "";
+    private String f17647c = "";
     private int d = 0;
     private int e = 0;
     private String f = "";
@@ -96,20 +96,19 @@ public class AdultVerifyFragment extends MvpFragment {
     }
 
     public static void a(Context context, int i, AdultVerifyModel adultVerifyModel, String str) {
-        TerminalActivity.d(context, AdultIdentifyFragment.class, null);
+        TerminalActivity.d(context, AdultIdentifyFragment.class, (Bundle) null);
     }
 
     public static void a(Context context, AV_START_PAGE av_start_page) {
         if (context == null) {
             return;
         }
-        TerminalActivity.d(context, AdultIdentifyFragment.class, null);
+        TerminalActivity.d(context, AdultIdentifyFragment.class, (Bundle) null);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         BaiduFaceDetectUtils.a(AppInfo.d());
-        this.f31336a = getActivity();
+        this.f17646a = getActivity();
         super.a(bundle);
         b();
     }
@@ -117,7 +116,7 @@ public class AdultVerifyFragment extends MvpFragment {
     public void b() {
         if (getArguments() != null) {
             this.b = getArguments().getInt("KEY_STAGE");
-            this.f31337c = getArguments().getString("KEY_FILE_PATH");
+            this.f17647c = getArguments().getString("KEY_FILE_PATH");
             if (this.b == 0) {
                 CameraContents.e = (AV_START_PAGE) getArguments().getSerializable("KEY_START_PAGE");
             }
@@ -165,14 +164,14 @@ public class AdultVerifyFragment extends MvpFragment {
             }
         });
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.flCover.getLayoutParams();
-        layoutParams.leftMargin = DensityUtils.a(this.f31336a, 30.0f);
-        layoutParams.rightMargin = DensityUtils.a(this.f31336a, 30.0f);
-        layoutParams.topMargin = DensityUtils.a(this.f31336a, 10.0f);
+        layoutParams.leftMargin = DensityUtils.a(this.f17646a, 30.0f);
+        layoutParams.rightMargin = DensityUtils.a(this.f17646a, 30.0f);
+        layoutParams.topMargin = DensityUtils.a(this.f17646a, 10.0f);
         this.flCover.setLayoutParams(layoutParams);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.imgCover.getLayoutParams();
-        layoutParams2.height = AppInfo.l - DensityUtils.a(this.f31336a, 60.0f);
+        layoutParams2.height = AppInfo.l - DensityUtils.a(this.f17646a, 60.0f);
         this.imgCover.setLayoutParams(layoutParams2);
-        ImageLoader.d(getFragmentActive(), this.f31337c).b(R.drawable.camera_default_face_bg).a(this.imgCover);
+        ImageLoader.d(getFragmentActive(), this.f17647c).b((int) R.drawable.camera_default_face_bg).a(this.imgCover);
         this.tvTitle.setVisibility(0);
         this.imgBtmIcon.setVisibility(0);
         int i = this.d;
@@ -180,16 +179,16 @@ public class AdultVerifyFragment extends MvpFragment {
             UserInfo.getInstance().getLoginUserInfo().setNeedAdultVerify(1);
             this.imgBtmIcon.setImageResource(R.drawable.icon_av_fail);
             this.tvTitle.setText(this.g);
-            this.tvContent.setTextColor(this.f31336a.getResources().getColor(2131101204));
+            this.tvContent.setTextColor(this.f17646a.getResources().getColor(2131101204));
             this.tvContent.setText(this.f);
             this.tvConfirmToSubmit.setVisibility(0);
             this.btnStroke.setVisibility(8);
             if (this.e <= 0) {
-                this.btnSolid.setText(this.f31336a.getResources().getString(R.string.av_take_photo_no_time));
+                this.btnSolid.setText(this.f17646a.getResources().getString(R.string.av_take_photo_no_time));
                 this.btnSolid.setEnabled(false);
                 return;
             }
-            String string = this.f31336a.getResources().getString(R.string.av_take_photo_again);
+            String string = this.f17646a.getResources().getString(R.string.av_take_photo_again);
             this.btnSolid.setText(String.format(string, this.e + ""));
             this.btnSolid.setEnabled(true);
             this.btnSolid.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.AdultVerifyFragment.2
@@ -208,23 +207,23 @@ public class AdultVerifyFragment extends MvpFragment {
             this.tvContent.setVisibility(8);
             this.tvConfirmToSubmit.setVisibility(8);
             this.btnStroke.setVisibility(8);
-            this.btnSolid.setText(R.string.av_verify_id_card);
+            this.btnSolid.setText((int) R.string.av_verify_id_card);
             this.btnSolid.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.AdultVerifyFragment.3
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    AdultVerifyFragment.a(AdultVerifyFragment.this.f31336a, 2, null, "");
+                    AdultVerifyFragment.a(AdultVerifyFragment.this.f17646a, 2, null, "");
                 }
             });
         } else {
             UserInfo.getInstance().getLoginUserInfo().setNeedAdultVerify(0);
             UserRelationshipUtils.b();
-            if (AVConfig.a().f20536a) {
+            if (AVConfig.a().f6930a) {
                 if (UserInfo.getInstance().isBindPhone()) {
-                    FinishProfile1Fragment.f20540a.a(this.f31336a);
+                    FinishProfile1Fragment.f6934a.a(this.f17646a);
                     return;
                 } else {
-                    LoginServiceManager.a().c(this.f31336a);
+                    LoginServiceManager.a().c(this.f17646a);
                     return;
                 }
             }
@@ -238,7 +237,7 @@ public class AdultVerifyFragment extends MvpFragment {
     public void e() {
         InstantLog.a("av_idcard_result_show");
         EventTrackSettings.a(SettingsProtos.Event.AV_IDCARD_RESULT_SHOW);
-        this.title.setCenterText(R.string.av_result);
+        this.title.setCenterText((int) R.string.av_result);
         this.title.setLeftImg(2131233902);
         this.title.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.AdultVerifyFragment.4
             @Override // android.view.View.OnClickListener
@@ -254,14 +253,14 @@ public class AdultVerifyFragment extends MvpFragment {
             }
         });
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.flCover.getLayoutParams();
-        layoutParams.leftMargin = DensityUtils.a(this.f31336a, 30.0f);
-        layoutParams.rightMargin = DensityUtils.a(this.f31336a, 30.0f);
-        layoutParams.topMargin = DensityUtils.a(this.f31336a, 10.0f);
+        layoutParams.leftMargin = DensityUtils.a(this.f17646a, 30.0f);
+        layoutParams.rightMargin = DensityUtils.a(this.f17646a, 30.0f);
+        layoutParams.topMargin = DensityUtils.a(this.f17646a, 10.0f);
         this.flCover.setLayoutParams(layoutParams);
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.imgCover.getLayoutParams();
-        layoutParams2.height = AppInfo.l - DensityUtils.a(this.f31336a, 60.0f);
+        layoutParams2.height = AppInfo.l - DensityUtils.a(this.f17646a, 60.0f);
         this.imgCover.setLayoutParams(layoutParams2);
-        ImageLoader.d(getFragmentActive(), this.f31337c).b(R.drawable.cover_id_card).a(this.imgCover);
+        ImageLoader.d(getFragmentActive(), this.f17647c).b((int) R.drawable.cover_id_card).a(this.imgCover);
         this.tvTitle.setVisibility(0);
         this.imgBtmIcon.setVisibility(0);
         int i = this.d;
@@ -270,15 +269,15 @@ public class AdultVerifyFragment extends MvpFragment {
             this.imgBtmIcon.setImageResource(R.drawable.icon_av_fail);
             this.tvTitle.setText(R.string.av_take_idcard_error);
             this.tvContent.setText(this.f);
-            this.tvContent.setTextColor(this.f31336a.getResources().getColor(2131101204));
+            this.tvContent.setTextColor(this.f17646a.getResources().getColor(2131101204));
             this.tvConfirmToSubmit.setVisibility(0);
             this.btnStroke.setVisibility(8);
             if (this.e <= 0) {
-                this.btnSolid.setText(this.f31336a.getResources().getString(R.string.av_take_photo_no_time));
+                this.btnSolid.setText(this.f17646a.getResources().getString(R.string.av_take_photo_no_time));
                 this.btnSolid.setEnabled(false);
                 return;
             }
-            String string = this.f31336a.getResources().getString(R.string.av_take_photo_again);
+            String string = this.f17646a.getResources().getString(R.string.av_take_photo_again);
             this.btnSolid.setText(String.format(string, this.e + ""));
             this.btnSolid.setEnabled(true);
             this.btnSolid.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.AdultVerifyFragment.5
@@ -294,7 +293,7 @@ public class AdultVerifyFragment extends MvpFragment {
             this.title.d();
             this.imgBtmIcon.setImageResource(R.drawable.icon_av_success);
             this.tvTitle.setText(R.string.av_success);
-            this.tvContent.setTextColor(this.f31336a.getResources().getColor(2131101204));
+            this.tvContent.setTextColor(this.f17646a.getResources().getColor(2131101204));
             this.tvContent.setText(this.f);
             this.tvConfirmToSubmit.setVisibility(8);
             this.btnSolid.setText(2131887320);
@@ -303,8 +302,8 @@ public class AdultVerifyFragment extends MvpFragment {
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
-                    if (AVConfig.a().f20536a) {
-                        FinishProfile1Fragment.f20540a.a(AdultVerifyFragment.this.f31336a);
+                    if (AVConfig.a().f6930a) {
+                        FinishProfile1Fragment.f6934a.a(AdultVerifyFragment.this.f17646a);
                         return;
                     }
                     AdultVerifyFragment.this.getActivity().setResult(-1);
@@ -317,9 +316,9 @@ public class AdultVerifyFragment extends MvpFragment {
         } else {
             UserInfo.getInstance().getLoginUserInfo().setNeedAdultVerify(1);
             LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) this.flCover.getLayoutParams();
-            layoutParams3.leftMargin = DensityUtils.a(this.f31336a, 0.0f);
-            layoutParams3.rightMargin = DensityUtils.a(this.f31336a, 0.0f);
-            layoutParams3.topMargin = DensityUtils.a(this.f31336a, 0.0f);
+            layoutParams3.leftMargin = DensityUtils.a(this.f17646a, 0.0f);
+            layoutParams3.rightMargin = DensityUtils.a(this.f17646a, 0.0f);
+            layoutParams3.topMargin = DensityUtils.a(this.f17646a, 0.0f);
             this.flCover.setLayoutParams(layoutParams);
             this.imgCover.setImageResource(R.drawable.cover_non_adult);
             FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) this.imgCover.getLayoutParams();
@@ -334,12 +333,10 @@ public class AdultVerifyFragment extends MvpFragment {
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.adult_verify_fragment;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i2 != -1 || intent == null) {
@@ -348,14 +345,13 @@ public class AdultVerifyFragment extends MvpFragment {
         AdultVerifyModel adultVerifyModel = (AdultVerifyModel) intent.getSerializableExtra("KEY_AV_MODEL");
         String stringExtra = intent.getStringExtra("KEY_FILE_PATH");
         if (i == 101) {
-            a(this.f31336a, 1, adultVerifyModel, stringExtra);
+            a(this.f17646a, 1, adultVerifyModel, stringExtra);
         } else if (i != 102) {
         } else {
-            a(this.f31336a, 3, adultVerifyModel, stringExtra);
+            a(this.f17646a, 3, adultVerifyModel, stringExtra);
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         this.title.getLeftImg().callOnClick();
         return true;
@@ -364,9 +360,9 @@ public class AdultVerifyFragment extends MvpFragment {
     public void v() {
         InstantLog.a("av_idcard_start_show");
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.flCover.getLayoutParams();
-        layoutParams.leftMargin = DensityUtils.a(this.f31336a, 30.0f);
-        layoutParams.rightMargin = DensityUtils.a(this.f31336a, 30.0f);
-        layoutParams.topMargin = DensityUtils.a(this.f31336a, 10.0f);
+        layoutParams.leftMargin = DensityUtils.a(this.f17646a, 30.0f);
+        layoutParams.rightMargin = DensityUtils.a(this.f17646a, 30.0f);
+        layoutParams.topMargin = DensityUtils.a(this.f17646a, 10.0f);
         this.flCover.setLayoutParams(layoutParams);
         this.title.setLeftImg(2131233902);
         this.title.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.AdultVerifyFragment.7
@@ -383,7 +379,7 @@ public class AdultVerifyFragment extends MvpFragment {
             }
         });
         this.tvUpIdFront.setVisibility(0);
-        this.title.setCenterText(R.string.av_verify_id_card);
+        this.title.setCenterText((int) R.string.av_verify_id_card);
         this.imgCover.setImageResource(R.drawable.cover_id_card);
         this.imgCover.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.AdultVerifyFragment.8
             @Override // android.view.View.OnClickListener
@@ -399,13 +395,13 @@ public class AdultVerifyFragment extends MvpFragment {
         this.imgBtmIcon.setLayoutParams(layoutParams2);
         this.tvTitle.setVisibility(0);
         this.tvTitle.setText(R.string.av_idcard_start_hint);
-        this.tvTitle.setTextColor(this.f31336a.getResources().getColor(2131101204));
+        this.tvTitle.setTextColor(this.f17646a.getResources().getColor(2131101204));
         this.tvTitle.setTextSize(14.0f);
         this.tvContent.setVisibility(8);
         this.tvConfirmToSubmit.setVisibility(8);
         this.btnStroke.setVisibility(8);
-        this.btnSolid.setText(R.string.av_start_photo);
-        this.btnSolid.setTextColor(this.f31336a.getResources().getColor(2131101191));
+        this.btnSolid.setText((int) R.string.av_start_photo);
+        this.btnSolid.setTextColor(this.f17646a.getResources().getColor(2131101191));
         this.btnSolid.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.login_register.AdultVerifyFragment.9
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {

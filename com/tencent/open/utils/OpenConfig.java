@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
+import com.ss.android.download.api.constant.BaseConstants;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.a.f;
 import java.io.BufferedReader;
@@ -23,11 +24,11 @@ import org.json.JSONObject;
 public class OpenConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Map<String, OpenConfig> f38279a = Collections.synchronizedMap(new HashMap());
+    private static Map<String, OpenConfig> f24588a = Collections.synchronizedMap(new HashMap());
     private static String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f38280c;
+    private Context f24589c;
     private String d;
     private JSONObject e = null;
     private long f = 0;
@@ -35,9 +36,9 @@ public class OpenConfig {
     private boolean h = true;
 
     private OpenConfig(Context context, String str) {
-        this.f38280c = null;
+        this.f24589c = null;
         this.d = null;
-        this.f38280c = context.getApplicationContext();
+        this.f24589c = context.getApplicationContext();
         this.d = str;
         a();
         b();
@@ -54,9 +55,9 @@ public class OpenConfig {
                 } else {
                     str2 = str;
                 }
-                open = this.f38280c.openFileInput(str2);
+                open = this.f24589c.openFileInput(str2);
             } catch (FileNotFoundException e) {
-                open = this.f38280c.getAssets().open(str);
+                open = this.f24589c.getAssets().open(str);
             }
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(open, Charset.forName("UTF-8")));
             ?? stringBuffer = new StringBuffer();
@@ -112,7 +113,7 @@ public class OpenConfig {
             if (this.d != null) {
                 str3 = str + "." + this.d;
             }
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(this.f38280c.openFileOutput(str3, 0), Charset.forName("UTF-8"));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(this.f24589c.openFileOutput(str3, 0), Charset.forName("UTF-8"));
             outputStreamWriter.write(str2);
             outputStreamWriter.flush();
             outputStreamWriter.close();
@@ -129,6 +130,7 @@ public class OpenConfig {
         this.f = SystemClock.elapsedRealtime();
     }
 
+    /* JADX WARN: Type inference failed for: r0v11, types: [com.tencent.open.utils.OpenConfig$1] */
     private void b() {
         if (this.g != 0) {
             b("update thread is running, return");
@@ -147,7 +149,7 @@ public class OpenConfig {
             @Override // java.lang.Thread, java.lang.Runnable
             public void run() {
                 try {
-                    OpenConfig.this.a(Util.parseJson(HttpUtils.openUrl2(OpenConfig.this.f38280c, "http://cgi.connect.qq.com/qqconnectopen/openapi/policy_conf", "GET", bundle).response));
+                    OpenConfig.this.a(Util.parseJson(HttpUtils.openUrl2(OpenConfig.this.f24589c, "http://cgi.connect.qq.com/qqconnectopen/openapi/policy_conf", "GET", bundle).response));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -168,14 +170,14 @@ public class OpenConfig {
         if (optInt == 0) {
             i = 1;
         }
-        if (SystemClock.elapsedRealtime() - this.f >= i * 3600000) {
+        if (SystemClock.elapsedRealtime() - this.f >= i * BaseConstants.Time.HOUR) {
             b();
         }
     }
 
     public static OpenConfig getInstance(Context context, String str) {
         OpenConfig openConfig;
-        synchronized (f38279a) {
+        synchronized (f24588a) {
             f.a("openSDK_LOG.OpenConfig", "getInstance begin");
             if (str != null) {
                 b = str;
@@ -184,11 +186,11 @@ public class OpenConfig {
             if (str == null) {
                 str2 = b != null ? b : "0";
             }
-            OpenConfig openConfig2 = f38279a.get(str2);
+            OpenConfig openConfig2 = f24588a.get(str2);
             openConfig = openConfig2;
             if (openConfig2 == null) {
                 openConfig = new OpenConfig(context, str2);
-                f38279a.put(str2, openConfig);
+                f24588a.put(str2, openConfig);
             }
             f.a("openSDK_LOG.OpenConfig", "getInstance end");
         }

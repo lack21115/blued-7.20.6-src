@@ -18,34 +18,34 @@ import java.util.List;
 public class GuideFragment extends BaseDialogFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private ProhibitedSlidingViewPager f29648a;
+    private ProhibitedSlidingViewPager f15958a;
     private GuideAdapter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int[] f29649c;
+    private int[] f15959c;
     private boolean d = false;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/fragment/GuideFragment$GuideAdapter.class */
     public static class GuideAdapter extends PagerAdapter implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private List<View> f29651a = new ArrayList();
+        private List<View> f15961a = new ArrayList();
         private LayoutInflater b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ProhibitedSlidingViewPager f29652c;
+        private ProhibitedSlidingViewPager f15962c;
         private Activity d;
         private boolean e;
 
         public GuideAdapter(Activity activity, ProhibitedSlidingViewPager prohibitedSlidingViewPager, int[] iArr, boolean z) {
             this.e = false;
             this.d = activity;
-            this.f29652c = prohibitedSlidingViewPager;
+            this.f15962c = prohibitedSlidingViewPager;
             this.e = z;
             this.b = LayoutInflater.from(activity);
             if (z) {
                 for (int i : iArr) {
-                    this.f29651a.add(this.b.inflate(i, (ViewGroup) null));
+                    this.f15961a.add(this.b.inflate(i, (ViewGroup) null));
                 }
                 return;
             }
@@ -58,8 +58,8 @@ public class GuideFragment extends BaseDialogFragment {
                 }
                 int i4 = iArr[i3];
                 View inflate = this.b.inflate(R.layout.layout_guide_item, (ViewGroup) null);
-                ((ImageView) inflate.findViewById(2131364541)).setImageResource(i4);
-                this.f29651a.add(inflate);
+                ((ImageView) inflate.findViewById(R.id.img_guide)).setImageResource(i4);
+                this.f15961a.add(inflate);
                 i2 = i3 + 1;
             }
         }
@@ -71,12 +71,12 @@ public class GuideFragment extends BaseDialogFragment {
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f29651a.size();
+            return this.f15961a.size();
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
-            View view = this.f29651a.get(i);
+            View view = this.f15961a.get(i);
             view.setTag(Integer.valueOf(i));
             view.setOnClickListener(this);
             viewGroup.addView(view);
@@ -92,8 +92,8 @@ public class GuideFragment extends BaseDialogFragment {
         public void onClick(View view) {
             Tracker.onClick(view);
             int intValue = ((Integer) view.getTag()).intValue();
-            if (intValue != this.f29651a.size() - 1) {
-                this.f29652c.setCurrentItem(intValue + 1, true);
+            if (intValue != this.f15961a.size() - 1) {
+                this.f15962c.setCurrentItem(intValue + 1, true);
                 return;
             }
             this.d.setResult(-1);
@@ -103,9 +103,9 @@ public class GuideFragment extends BaseDialogFragment {
 
     private void a(View view) {
         ProhibitedSlidingViewPager prohibitedSlidingViewPager = (ProhibitedSlidingViewPager) view.findViewById(R.id.guide_vewpager);
-        this.f29648a = prohibitedSlidingViewPager;
+        this.f15958a = prohibitedSlidingViewPager;
         prohibitedSlidingViewPager.setAllowedSwipeDirection(ProhibitedSlidingViewPager.SwipeDirection.right);
-        this.f29648a.setLastPageToRightListener(new ProhibitedSlidingViewPager.ILastPageScrollToRightListener() { // from class: com.soft.blued.fragment.GuideFragment.1
+        this.f15958a.setLastPageToRightListener(new ProhibitedSlidingViewPager.ILastPageScrollToRightListener() { // from class: com.soft.blued.fragment.GuideFragment.1
             @Override // com.soft.blued.customview.ProhibitedSlidingViewPager.ILastPageScrollToRightListener
             public boolean a() {
                 GuideFragment.this.getActivity().setResult(-1);
@@ -113,9 +113,9 @@ public class GuideFragment extends BaseDialogFragment {
                 return true;
             }
         });
-        GuideAdapter guideAdapter = new GuideAdapter(getActivity(), this.f29648a, this.f29649c, this.d);
+        GuideAdapter guideAdapter = new GuideAdapter(getActivity(), this.f15958a, this.f15959c, this.d);
         this.b = guideAdapter;
-        this.f29648a.setAdapter(guideAdapter);
+        this.f15958a.setAdapter(guideAdapter);
     }
 
     private void d() {
@@ -125,7 +125,7 @@ public class GuideFragment extends BaseDialogFragment {
             return;
         }
         int[] intArray = arguments.getIntArray("guide_ids");
-        this.f29649c = intArray;
+        this.f15959c = intArray;
         if (intArray == null || intArray.length <= 0) {
             getActivity().finish();
         } else {
@@ -133,18 +133,15 @@ public class GuideFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setCancelable(false);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = layoutInflater.inflate(R.layout.fragment_common_guide, (ViewGroup) null);
         d();

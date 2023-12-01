@@ -6,11 +6,11 @@ import java.io.Serializable;
 public final class m implements Serializable, Comparable<m> {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f35389a;
+    public long f21698a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f35390c;
+    public long f21699c;
     public int d;
     public String e;
     public String f;
@@ -18,6 +18,6 @@ public final class m implements Serializable, Comparable<m> {
 
     @Override // java.lang.Comparable
     public final /* bridge */ /* synthetic */ int compareTo(m mVar) {
-        return (int) (this.f35390c - mVar.f35390c);
+        return (int) (this.f21699c - mVar.f21699c);
     }
 }

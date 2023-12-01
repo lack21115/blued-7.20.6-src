@@ -35,9 +35,7 @@ public enum CharDirectionality {
     POP_DIRECTIONAL_FORMAT(18);
     
     private final int v;
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42715a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private static final Lazy<Map<Integer, CharDirectionality>> w = LazyKt.a(new Function0<Map<Integer, ? extends CharDirectionality>>() { // from class: kotlin.text.CharDirectionality$Companion$directionalityMap$2
         @Override // kotlin.jvm.functions.Function0
         /* renamed from: a */

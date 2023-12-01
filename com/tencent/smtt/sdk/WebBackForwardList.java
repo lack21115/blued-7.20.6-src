@@ -6,7 +6,7 @@ import com.tencent.smtt.export.external.interfaces.IX5WebBackForwardList;
 public class WebBackForwardList {
 
     /* renamed from: a  reason: collision with root package name */
-    private IX5WebBackForwardList f38796a = null;
+    private IX5WebBackForwardList f25105a = null;
     private android.webkit.WebBackForwardList b = null;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -25,27 +25,27 @@ public class WebBackForwardList {
             return null;
         }
         WebBackForwardList webBackForwardList = new WebBackForwardList();
-        webBackForwardList.f38796a = iX5WebBackForwardList;
+        webBackForwardList.f25105a = iX5WebBackForwardList;
         return webBackForwardList;
     }
 
     public int getCurrentIndex() {
-        IX5WebBackForwardList iX5WebBackForwardList = this.f38796a;
+        IX5WebBackForwardList iX5WebBackForwardList = this.f25105a;
         return iX5WebBackForwardList != null ? iX5WebBackForwardList.getCurrentIndex() : this.b.getCurrentIndex();
     }
 
     public WebHistoryItem getCurrentItem() {
-        IX5WebBackForwardList iX5WebBackForwardList = this.f38796a;
+        IX5WebBackForwardList iX5WebBackForwardList = this.f25105a;
         return iX5WebBackForwardList != null ? WebHistoryItem.a(iX5WebBackForwardList.getCurrentItem()) : WebHistoryItem.a(this.b.getCurrentItem());
     }
 
     public WebHistoryItem getItemAtIndex(int i) {
-        IX5WebBackForwardList iX5WebBackForwardList = this.f38796a;
+        IX5WebBackForwardList iX5WebBackForwardList = this.f25105a;
         return iX5WebBackForwardList != null ? WebHistoryItem.a(iX5WebBackForwardList.getItemAtIndex(i)) : WebHistoryItem.a(this.b.getItemAtIndex(i));
     }
 
     public int getSize() {
-        IX5WebBackForwardList iX5WebBackForwardList = this.f38796a;
+        IX5WebBackForwardList iX5WebBackForwardList = this.f25105a;
         return iX5WebBackForwardList != null ? iX5WebBackForwardList.getSize() : this.b.getSize();
     }
 }

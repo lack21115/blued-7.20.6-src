@@ -11,6 +11,6 @@ import kotlinx.coroutines.debug.internal.DebugProbesImpl;
 public final class DebugProbesImpl$dumpCoroutinesInfoImpl$lambda14$$inlined$sortedBy$1<T> implements Comparator<T> {
     @Override // java.util.Comparator
     public final int compare(T t, T t2) {
-        return ComparisonsKt.a(Long.valueOf(((DebugProbesImpl.CoroutineOwner) t).b.f43028a), Long.valueOf(((DebugProbesImpl.CoroutineOwner) t2).b.f43028a));
+        return ComparisonsKt.a(Long.valueOf(((DebugProbesImpl.CoroutineOwner) t).b.a), Long.valueOf(((DebugProbesImpl.CoroutineOwner) t2).b.a));
     }
 }

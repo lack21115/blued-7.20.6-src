@@ -9,11 +9,11 @@ import org.json.JSONException;
 final /* synthetic */ class q implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36722a;
+    private final j f23031a;
     private final String b;
 
     private q(j jVar, String str) {
-        this.f36722a = jVar;
+        this.f23031a = jVar;
         this.b = str;
     }
 
@@ -23,35 +23,35 @@ final /* synthetic */ class q implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36722a;
+        j jVar = this.f23031a;
         String str = this.b;
         try {
-            LiteavLog.i(jVar.f36705a, "setHWDecoderDeviceRelatedParams: ".concat(String.valueOf(str)));
+            LiteavLog.i(jVar.f23014a, "setHWDecoderDeviceRelatedParams: ".concat(String.valueOf(str)));
             final JSONArray jSONArray = new JSONArray(str);
             if (jVar.f != null) {
                 final VideoDecodeController videoDecodeController = jVar.f;
                 videoDecodeController.a(new Runnable(videoDecodeController, jSONArray) { // from class: com.tencent.liteav.videoconsumer.decoder.ae
 
                     /* renamed from: a  reason: collision with root package name */
-                    private final VideoDecodeController f36749a;
+                    private final VideoDecodeController f23058a;
                     private final JSONArray b;
 
                     {
-                        this.f36749a = videoDecodeController;
+                        this.f23058a = videoDecodeController;
                         this.b = jSONArray;
                     }
 
                     @Override // java.lang.Runnable
                     public final void run() {
-                        VideoDecodeController videoDecodeController2 = this.f36749a;
+                        VideoDecodeController videoDecodeController2 = this.f23058a;
                         JSONArray jSONArray2 = this.b;
                         videoDecodeController2.l = jSONArray2;
-                        LiteavLog.i(videoDecodeController2.f36734a, "set MediaCodec device related params to %s", jSONArray2);
+                        LiteavLog.i(videoDecodeController2.f23043a, "set MediaCodec device related params to %s", jSONArray2);
                     }
                 });
             }
         } catch (JSONException e) {
-            LiteavLog.e(jVar.f36705a, "setHWDecoderDeviceRelatedParams error ".concat(String.valueOf(e)));
+            LiteavLog.e(jVar.f23014a, "setHWDecoderDeviceRelatedParams error ".concat(String.valueOf(e)));
         }
     }
 }

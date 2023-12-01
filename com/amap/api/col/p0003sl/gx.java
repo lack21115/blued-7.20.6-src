@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
+import com.alipay.sdk.util.l;
 import com.amap.api.col.p0003sl.hx;
 import com.amap.api.services.core.AMapException;
 import com.amap.api.services.help.Inputtips;
@@ -16,40 +17,36 @@ import java.util.ArrayList;
 /* renamed from: com.amap.api.col.3sl.gx  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gx.class */
 public final class gx implements IInputtipsSearch {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f5018a;
+    private Context a;
     private Inputtips.InputtipsListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Handler f5019c;
+    private Handler c;
     private InputtipsQuery d;
 
     public gx(Context context, Inputtips.InputtipsListener inputtipsListener) throws AMapException {
-        hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        hy a = hx.a(context, fd.a(false));
+        if (a.a != hx.c.SuccessCode) {
+            throw new AMapException(a.b, 1, a.b, a.a.a());
         }
-        this.f5018a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.b = inputtipsListener;
-        this.f5019c = fp.a();
+        this.c = fp.a();
     }
 
     public gx(Context context, InputtipsQuery inputtipsQuery) {
-        this.f5018a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.d = inputtipsQuery;
-        this.f5019c = fp.a();
+        this.c = fp.a();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public ArrayList<Tip> a(InputtipsQuery inputtipsQuery) throws AMapException {
         try {
-            fn.a(this.f5018a);
+            fn.a(this.a);
             if (inputtipsQuery != null) {
                 if (inputtipsQuery.getKeyword() == null || inputtipsQuery.getKeyword().equals("")) {
                     throw new AMapException("无效的参数 - IllegalArgumentException");
                 }
-                return new fl(this.f5018a, inputtipsQuery).d();
+                return new fl(this.a, inputtipsQuery).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (Throwable th) {
@@ -97,15 +94,15 @@ public final class gx implements IInputtipsSearch {
                     obtainMessage.obj = gx.this.b;
                     obtainMessage.arg1 = 5;
                     try {
-                        ArrayList<? extends Parcelable> a2 = gx.this.a(gx.this.d);
+                        ArrayList<? extends Parcelable> a = gx.this.a(gx.this.d);
                         Bundle bundle = new Bundle();
-                        bundle.putParcelableArrayList("result", a2);
+                        bundle.putParcelableArrayList(l.c, a);
                         obtainMessage.setData(bundle);
                         obtainMessage.what = 1000;
                     } catch (AMapException e) {
                         obtainMessage.what = e.getErrorCode();
                     } finally {
-                        gx.this.f5019c.sendMessage(obtainMessage);
+                        gx.this.c.sendMessage(obtainMessage);
                     }
                 }
             });

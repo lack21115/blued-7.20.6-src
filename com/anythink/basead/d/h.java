@@ -18,7 +18,6 @@ import com.anythink.core.common.b.n;
 import com.anythink.core.common.e.aa;
 import com.anythink.core.common.e.j;
 import com.anythink.core.common.e.z;
-import com.anythink.expressad.advanced.view.ATOutNativeAdvancedViewGroup;
 import com.anythink.expressad.out.o;
 import com.bytedance.applog.tracker.Tracker;
 import java.util.List;
@@ -26,13 +25,9 @@ import java.util.Random;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/h.class */
 public class h {
-
-    /* renamed from: a  reason: collision with root package name */
-    Context f5969a;
+    Context a;
     com.anythink.basead.e.a b;
-
-    /* renamed from: c  reason: collision with root package name */
-    com.anythink.core.common.k.a.c f5970c;
+    com.anythink.core.common.k.a.c c;
     com.anythink.basead.a.c d;
     View e;
     volatile boolean f;
@@ -57,17 +52,15 @@ public class h {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/h$a.class */
     static final class a implements BaseMediaAdView.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final BaseMediaAdView.a f5978a;
+        private final BaseMediaAdView.a a;
 
         public a(BaseMediaAdView.a aVar) {
-            this.f5978a = aVar;
+            this.a = aVar;
         }
 
         @Override // com.anythink.basead.ui.BaseMediaAdView.a
         public final void onClickCloseView() {
-            BaseMediaAdView.a aVar = this.f5978a;
+            BaseMediaAdView.a aVar = this.a;
             if (aVar != null) {
                 aVar.onClickCloseView();
             }
@@ -75,18 +68,16 @@ public class h {
     }
 
     public h(Context context, aa aaVar, j jVar, com.anythink.core.common.a.g gVar) {
-        this.f5969a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.g = aaVar;
         this.h = jVar;
         if (gVar instanceof com.anythink.expressad.advanced.d.c) {
             com.anythink.expressad.advanced.d.c cVar = (com.anythink.expressad.advanced.d.c) gVar;
             this.k = cVar;
             cVar.a(new o() { // from class: com.anythink.basead.d.h.3
-                @Override // com.anythink.expressad.out.o
                 public final void a() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void a(com.anythink.expressad.foundation.d.c cVar2) {
                     Context g = n.a().g();
                     if (h.this.d == null) {
@@ -113,40 +104,34 @@ public class h {
                         });
                     }
                     com.anythink.basead.d.a.b.a(h.this.d.b(), cVar2);
-                    ATOutNativeAdvancedViewGroup c2 = h.this.k != null ? h.this.k.c() : null;
+                    View c = h.this.k != null ? h.this.k.c() : null;
                     com.anythink.basead.c.i iVar = new com.anythink.basead.c.i(h.this.h.d, "");
-                    if (c2 != null) {
-                        iVar.f = c2.getHeight();
-                        iVar.e = c2.getWidth();
+                    if (c != null) {
+                        iVar.f = c.getHeight();
+                        iVar.e = c.getWidth();
                     }
                     iVar.g = new com.anythink.basead.c.a();
                     h.this.d.a(iVar);
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void a(String str) {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void b() {
                     if (h.this.b != null) {
                         h.this.b.onAdShow();
                     }
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void c() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void d() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void e() {
                 }
 
-                @Override // com.anythink.expressad.out.o
                 public final void f() {
                     if (h.this.b != null) {
                         h.this.b.onAdClosed();
@@ -208,7 +193,7 @@ public class h {
 
     private View b(Context context, boolean z, boolean z2, BaseMediaAdView.a aVar) {
         a aVar2 = new a(aVar);
-        OwnNativeAdView ownNativeAdView = new OwnNativeAdView(this.f5969a);
+        OwnNativeAdView ownNativeAdView = new OwnNativeAdView(this.a);
         if (z) {
             this.q = ownNativeAdView;
             MraidMediaView mraidMediaView = new MraidMediaView(context, this.g, this.h, z2, aVar2);
@@ -257,13 +242,13 @@ public class h {
         int a2 = a(width);
         int a3 = a(height);
         com.anythink.basead.c.a aVar = new com.anythink.basead.c.a();
-        aVar.f5890a = i + a2;
+        aVar.a = i + a2;
         aVar.b = i2 + a3;
         aVar.e = a2;
         aVar.f = a3;
-        aVar.f5891c = aVar.f5890a + ((int) (Math.random() * 15.0d));
+        aVar.c = aVar.a + ((int) (Math.random() * 15.0d));
         aVar.d = aVar.b + ((int) (Math.random() * 15.0d));
-        aVar.g = aVar.f5891c - i;
+        aVar.g = aVar.c - i;
         aVar.h = aVar.d - i2;
         return aVar;
     }
@@ -272,10 +257,10 @@ public class h {
         OwnNativeAdView[] ownNativeAdViewArr = new OwnNativeAdView[1];
         a(ownNativeAdViewArr, view);
         if (ownNativeAdViewArr[0] == null) {
-            Log.i("anythink", "Register View don't contain OwnNativeAdView.");
+            Log.i(com.anythink.core.common.b.g.n, "Register View don't contain OwnNativeAdView.");
             return false;
         } else if (ownNativeAdViewArr[0].getChildCount() == 0) {
-            Log.i("anythink", "OwnNativeAdView View don't contain any child views.");
+            Log.i(com.anythink.core.common.b.g.n, "OwnNativeAdView View don't contain any child views.");
             return false;
         } else {
             this.q = ownNativeAdViewArr[0];
@@ -312,17 +297,17 @@ public class h {
             }
         }
         if (this.g instanceof z) {
-            com.anythink.basead.d.c.c.a().a(this.f5969a, com.anythink.basead.d.c.c.a(this.h.b, this.h.f6664c), this.g, this.h.m);
+            com.anythink.basead.d.c.c.a().a(this.a, com.anythink.basead.d.c.c.a(this.h.b, this.h.c), this.g, this.h.m);
         }
         com.anythink.expressad.advanced.d.c cVar = this.k;
-        View c2 = cVar != null ? cVar.c() : this.q;
+        FrameLayout c = cVar != null ? cVar.c() : this.q;
         if (this.g.g()) {
-            c2 = this.l;
+            c = this.l;
         }
-        if (c2 != null) {
+        if (c != null) {
             com.anythink.basead.c.i iVar = new com.anythink.basead.c.i(this.h.d, "");
-            iVar.f = c2.getHeight();
-            iVar.e = c2.getWidth();
+            iVar.f = c.getHeight();
+            iVar.e = c.getWidth();
             com.anythink.basead.a.b.a(8, this.g, iVar);
             com.anythink.basead.e.a aVar = this.b;
             if (aVar != null) {
@@ -349,8 +334,8 @@ public class h {
             return;
         }
         final View p = p();
-        this.p = new com.anythink.basead.a.a(p, this.h, new a.InterfaceC0066a() { // from class: com.anythink.basead.d.h.6
-            @Override // com.anythink.basead.a.a.InterfaceC0066a
+        this.p = new com.anythink.basead.a.a(p, this.h, new a.InterfaceC0026a() { // from class: com.anythink.basead.d.h.6
+            @Override // com.anythink.basead.a.a.InterfaceC0026a
             public final void a(int i) {
                 h.this.a(p, 2);
             }
@@ -435,13 +420,13 @@ public class h {
                 int a2 = a(width);
                 int a3 = a(height);
                 adClickRecord = new com.anythink.basead.c.a();
-                adClickRecord.f5890a = i2 + a2;
+                adClickRecord.a = i2 + a2;
                 adClickRecord.b = i3 + a3;
                 adClickRecord.e = a2;
                 adClickRecord.f = a3;
-                adClickRecord.f5891c = adClickRecord.f5890a + ((int) (Math.random() * 15.0d));
+                adClickRecord.c = adClickRecord.a + ((int) (Math.random() * 15.0d));
                 adClickRecord.d = adClickRecord.b + ((int) (Math.random() * 15.0d));
-                adClickRecord.g = adClickRecord.f5891c - i2;
+                adClickRecord.g = adClickRecord.c - i2;
                 adClickRecord.h = adClickRecord.d - i3;
             }
             iVar.g = adClickRecord;
@@ -539,11 +524,11 @@ public class h {
                 h.this.o();
             }
         };
-        if (this.f5970c == null) {
+        if (this.c == null) {
             view.getContext();
-            this.f5970c = new com.anythink.core.common.k.a.c(this.h.m.R() <= 0 ? 100 : this.h.m.R());
+            this.c = new com.anythink.core.common.k.a.c(this.h.m.R() <= 0 ? 100 : this.h.m.R());
         }
-        this.f5970c.a(view, aVar);
+        this.c.a(view, aVar);
     }
 
     public final String c() {
@@ -576,7 +561,7 @@ public class h {
     }
 
     public final void i() {
-        com.anythink.core.common.k.a.c cVar = this.f5970c;
+        com.anythink.core.common.k.a.c cVar = this.c;
         if (cVar != null) {
             cVar.a();
         }
@@ -600,10 +585,10 @@ public class h {
             cVar.d();
             this.d = null;
         }
-        com.anythink.core.common.k.a.c cVar2 = this.f5970c;
+        com.anythink.core.common.k.a.c cVar2 = this.c;
         if (cVar2 != null) {
             cVar2.b();
-            this.f5970c = null;
+            this.c = null;
         }
         BaseMediaAdView baseMediaAdView = this.l;
         if (baseMediaAdView != null) {

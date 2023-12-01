@@ -1,6 +1,6 @@
 package io.grpc.internal;
 
-import android.provider.Downloads;
+import com.efs.sdk.base.Constants;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -57,7 +57,7 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private final Tag tag;
     private final boolean unaryRequest;
     private static final Logger log = Logger.getLogger(ClientCallImpl.class.getName());
-    private static final byte[] FULL_STREAM_DECOMPRESSION_ENCODINGS = "gzip".getBytes(Charset.forName("US-ASCII"));
+    private static final byte[] FULL_STREAM_DECOMPRESSION_ENCODINGS = Constants.CP_GZIP.getBytes(Charset.forName("US-ASCII"));
     static final long DEADLINE_EXPIRATION_CANCEL_DELAY_NANOS = TimeUnit.SECONDS.toNanos(1);
     private DecompressorRegistry decompressorRegistry = DecompressorRegistry.getDefaultInstance();
     private CompressorRegistry compressorRegistry = CompressorRegistry.getDefaultInstance();
@@ -310,7 +310,6 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
             this.observer = listener;
         }
 
-        @Override // io.grpc.Context.CancellationListener
         public void cancelled(Context context) {
             if (context.getDeadline() == null || !context.getDeadline().isExpired()) {
                 ClientCallImpl.this.stream.cancel(Contexts.statusFromCancelled(context));
@@ -523,7 +522,7 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         Preconditions.checkState(this.stream == null, "Already started");
         Preconditions.checkState(!this.cancelCalled, "call was cancelled");
         Preconditions.checkNotNull(listener, "observer");
-        Preconditions.checkNotNull(metadata, Downloads.Impl.RequestHeaders.URI_SEGMENT);
+        Preconditions.checkNotNull(metadata, "headers");
         if (this.context.isCancelled()) {
             this.stream = NoopClientStream.INSTANCE;
             executeCloseObserverInContext(listener, Contexts.statusFromCancelled(this.context));
@@ -531,9 +530,9 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
         String compressor = this.callOptions.getCompressor();
         if (compressor != null) {
-            Compressor lookupCompressor = this.compressorRegistry.lookupCompressor(compressor);
+            Codec lookupCompressor = this.compressorRegistry.lookupCompressor(compressor);
             codec = lookupCompressor;
-            if (lookupCompressor == 0) {
+            if (lookupCompressor == null) {
                 this.stream = NoopClientStream.INSTANCE;
                 executeCloseObserverInContext(listener, Status.INTERNAL.withDescription(String.format("Unable to find compressor by name %s", compressor)));
                 return;
@@ -589,7 +588,6 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ClientCall
     public void cancel(@Nullable String str, @Nullable Throwable th) {
         PerfMark.startTask("ClientCall.cancel", this.tag);
         try {
@@ -601,13 +599,11 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ClientCall
     public Attributes getAttributes() {
         ClientStream clientStream = this.stream;
         return clientStream != null ? clientStream.getAttributes() : Attributes.EMPTY;
     }
 
-    @Override // io.grpc.ClientCall
     public void halfClose() {
         PerfMark.startTask("ClientCall.halfClose", this.tag);
         try {
@@ -619,12 +615,10 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ClientCall
     public boolean isReady() {
         return this.stream.isReady();
     }
 
-    @Override // io.grpc.ClientCall
     public void request(int i) {
         PerfMark.startTask("ClientCall.request", this.tag);
         try {
@@ -638,7 +632,6 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         }
     }
 
-    @Override // io.grpc.ClientCall
     public void sendMessage(ReqT reqt) {
         PerfMark.startTask("ClientCall.sendMessage", this.tag);
         try {
@@ -668,13 +661,11 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
         return this;
     }
 
-    @Override // io.grpc.ClientCall
     public void setMessageCompression(boolean z) {
         Preconditions.checkState(this.stream != null, "Not started");
         this.stream.setMessageCompression(z);
     }
 
-    @Override // io.grpc.ClientCall
     public void start(ClientCall.Listener<RespT> listener, Metadata metadata) {
         PerfMark.startTask("ClientCall.start", this.tag);
         try {

@@ -9,20 +9,16 @@ import android.view.View;
 /* renamed from: com.amap.api.col.3sl.ec  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ec.class */
 public final class ec extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final int f4881a = Color.argb(255, 235, 235, 235);
+    public static final int a = Color.argb(255, 235, 235, 235);
     public static final int b = Color.argb(255, 21, 21, 21);
-
-    /* renamed from: c  reason: collision with root package name */
-    private Paint f4882c;
+    private Paint c;
 
     public ec(Context context) {
         super(context);
         Paint paint = new Paint();
-        this.f4882c = paint;
+        this.c = paint;
         paint.setAntiAlias(true);
-        this.f4882c.setColor(f4881a);
+        this.c.setColor(a);
     }
 
     public final void a() {
@@ -30,7 +26,7 @@ public final class ec extends View {
     }
 
     public final void a(int i) {
-        Paint paint = this.f4882c;
+        Paint paint = this.c;
         if (paint != null) {
             paint.setColor(i);
             try {
@@ -44,6 +40,6 @@ public final class ec extends View {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.f4882c);
+        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.c);
     }
 }

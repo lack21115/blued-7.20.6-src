@@ -10,14 +10,14 @@ public abstract class ActivityResultContract<I, O> {
     public static final class SynchronousResult<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final T f1526a;
+        private final T f1478a;
 
         public SynchronousResult(T t) {
-            this.f1526a = t;
+            this.f1478a = t;
         }
 
         public T getValue() {
-            return this.f1526a;
+            return this.f1478a;
         }
     }
 

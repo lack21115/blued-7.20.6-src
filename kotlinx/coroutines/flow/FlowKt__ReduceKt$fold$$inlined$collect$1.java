@@ -11,9 +11,7 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$fold$$inlined$collect$1.class */
 public final class FlowKt__ReduceKt$fold$$inlined$collect$1<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Ref.ObjectRef f43247a;
+    final /* synthetic */ Ref.ObjectRef a;
     final /* synthetic */ Function3 b;
 
     @Metadata
@@ -21,9 +19,7 @@ public final class FlowKt__ReduceKt$fold$$inlined$collect$1<T> implements FlowCo
     /* renamed from: kotlinx.coroutines.flow.FlowKt__ReduceKt$fold$$inlined$collect$1$1  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__ReduceKt$fold$$inlined$collect$1$1.class */
     public static final class AnonymousClass1 extends ContinuationImpl {
-
-        /* renamed from: a  reason: collision with root package name */
-        /* synthetic */ Object f43248a;
+        /* synthetic */ Object a;
         int b;
         Object d;
 
@@ -33,14 +29,14 @@ public final class FlowKt__ReduceKt$fold$$inlined$collect$1<T> implements FlowCo
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            this.f43248a = obj;
+            this.a = obj;
             this.b |= Integer.MIN_VALUE;
             return FlowKt__ReduceKt$fold$$inlined$collect$1.this.emit(null, this);
         }
     }
 
     public FlowKt__ReduceKt$fold$$inlined$collect$1(Ref.ObjectRef objectRef, Function3 function3) {
-        this.f43247a = objectRef;
+        this.a = objectRef;
         this.b = function3;
     }
 
@@ -83,7 +79,7 @@ public final class FlowKt__ReduceKt$fold$$inlined$collect$1<T> implements FlowCo
             r7 = r0
         L35:
             r0 = r7
-            java.lang.Object r0 = r0.f43248a
+            java.lang.Object r0 = r0.a
             r9 = r0
             java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
             r10 = r0
@@ -117,13 +113,13 @@ public final class FlowKt__ReduceKt$fold$$inlined$collect$1<T> implements FlowCo
             kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
             r9 = r0
             r0 = r5
-            kotlin.jvm.internal.Ref$ObjectRef r0 = r0.f43247a
+            kotlin.jvm.internal.Ref$ObjectRef r0 = r0.a
             r9 = r0
             r0 = r5
             kotlin.jvm.functions.Function3 r0 = r0.b
             r11 = r0
             r0 = r9
-            T r0 = r0.f42545a
+            T r0 = r0.a
             r12 = r0
             r0 = r7
             r1 = r9
@@ -148,8 +144,8 @@ public final class FlowKt__ReduceKt$fold$$inlined$collect$1<T> implements FlowCo
         Lac:
             r0 = r7
             r1 = r6
-            r0.f42545a = r1
-            kotlin.Unit r0 = kotlin.Unit.f42314a
+            r0.a = r1
+            kotlin.Unit r0 = kotlin.Unit.a
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.FlowKt__ReduceKt$fold$$inlined$collect$1.emit(java.lang.Object, kotlin.coroutines.Continuation):java.lang.Object");

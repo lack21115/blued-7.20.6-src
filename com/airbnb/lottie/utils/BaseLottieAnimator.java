@@ -9,9 +9,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/utils/BaseLottieAnimator.class */
 public abstract class BaseLottieAnimator extends ValueAnimator {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Set<ValueAnimator.AnimatorUpdateListener> f4409a = new CopyOnWriteArraySet();
+    private final Set<ValueAnimator.AnimatorUpdateListener> a = new CopyOnWriteArraySet();
     private final Set<Animator.AnimatorListener> b = new CopyOnWriteArraySet();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -39,7 +37,7 @@ public abstract class BaseLottieAnimator extends ValueAnimator {
 
     @Override // android.animation.ValueAnimator
     public void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.f4409a.add(animatorUpdateListener);
+        this.a.add(animatorUpdateListener);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -62,7 +60,7 @@ public abstract class BaseLottieAnimator extends ValueAnimator {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c() {
-        for (ValueAnimator.AnimatorUpdateListener animatorUpdateListener : this.f4409a) {
+        for (ValueAnimator.AnimatorUpdateListener animatorUpdateListener : this.a) {
             animatorUpdateListener.onAnimationUpdate(this);
         }
     }
@@ -79,7 +77,7 @@ public abstract class BaseLottieAnimator extends ValueAnimator {
 
     @Override // android.animation.ValueAnimator
     public void removeAllUpdateListeners() {
-        this.f4409a.clear();
+        this.a.clear();
     }
 
     @Override // android.animation.Animator
@@ -89,7 +87,7 @@ public abstract class BaseLottieAnimator extends ValueAnimator {
 
     @Override // android.animation.ValueAnimator
     public void removeUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.f4409a.remove(animatorUpdateListener);
+        this.a.remove(animatorUpdateListener);
     }
 
     @Override // android.animation.ValueAnimator, android.animation.Animator

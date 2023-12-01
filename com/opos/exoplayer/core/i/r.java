@@ -4,16 +4,16 @@ package com.opos.exoplayer.core.i;
 public final class r implements i {
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f25506a;
+    private final b f11818a;
     private boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f25507c;
+    private long f11819c;
     private long d;
-    private com.opos.exoplayer.core.p e = com.opos.exoplayer.core.p.f25554a;
+    private com.opos.exoplayer.core.p e = com.opos.exoplayer.core.p.f11866a;
 
     public r(b bVar) {
-        this.f25506a = bVar;
+        this.f11818a = bVar;
     }
 
     @Override // com.opos.exoplayer.core.i.i
@@ -29,14 +29,14 @@ public final class r implements i {
         if (this.b) {
             return;
         }
-        this.d = this.f25506a.a();
+        this.d = this.f11818a.a();
         this.b = true;
     }
 
     public void a(long j) {
-        this.f25507c = j;
+        this.f11819c = j;
         if (this.b) {
-            this.d = this.f25506a.a();
+            this.d = this.f11818a.a();
         }
     }
 
@@ -49,10 +49,10 @@ public final class r implements i {
 
     @Override // com.opos.exoplayer.core.i.i
     public long d() {
-        long j = this.f25507c;
+        long j = this.f11819c;
         long j2 = j;
         if (this.b) {
-            long a2 = this.f25506a.a() - this.d;
+            long a2 = this.f11818a.a() - this.d;
             j2 = j + (this.e.b == 1.0f ? com.opos.exoplayer.core.b.b(a2) : this.e.a(a2));
         }
         return j2;

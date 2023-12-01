@@ -31,13 +31,9 @@ import skin.support.content.res.SkinCompatResources;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/BaseFragmentActivity.class */
 public class BaseFragmentActivity extends AppCompatActivity implements PageTimeUtils.APMInterface, BluedSkinSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static String f9721a = "";
+    public static String a = "";
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ActivityFragmentActive f9722c = new ActivityFragmentActive(getLifecycle());
+    private ActivityFragmentActive c = new ActivityFragmentActive(getLifecycle());
     private IOnBackPressedListener d = null;
     private IOnKeyListener e = null;
 
@@ -89,13 +85,13 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
 
     private void h() {
         if (TextUtils.isEmpty(this.b)) {
-            if (TextUtils.isEmpty(BaseActivity.f9718a)) {
+            if (TextUtils.isEmpty(BaseActivity.a)) {
                 this.b = i();
             } else {
-                this.b = BaseActivity.f9718a + "," + i();
+                this.b = BaseActivity.a + "," + i();
             }
         }
-        BaseActivity.f9718a = this.b;
+        BaseActivity.a = this.b;
         Page d = BluedStatistics.d();
         String b = b();
         String hexString = Integer.toHexString(hashCode());
@@ -115,11 +111,11 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
     }
 
     public ActivityFragmentActive a() {
-        ActivityFragmentActive activityFragmentActive = this.f9722c;
+        ActivityFragmentActive activityFragmentActive = this.c;
         ActivityFragmentActive activityFragmentActive2 = activityFragmentActive;
         if (activityFragmentActive == null) {
             Log.e("BaseFragmentActivity", "current activityActive is null, but someone want to use it");
-            activityFragmentActive2 = ActivityFragmentActive.f9713a;
+            activityFragmentActive2 = ActivityFragmentActive.a;
         }
         return activityFragmentActive2;
     }
@@ -133,9 +129,10 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
     }
 
     public boolean a(Runnable runnable) {
-        return UIRunnableManager.a(this.f9722c, runnable, 0L);
+        return UIRunnableManager.a(this.c, runnable, 0L);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         if (SkinCompatManager.a() != null) {
@@ -143,7 +140,6 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         }
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, android.view.ContextThemeWrapper, android.content.ContextWrapper
     public void attachBaseContext(Context context) {
         if (AppInfo.b() != null) {
             super.attachBaseContext(AppInfo.b().a(context));
@@ -168,12 +164,11 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         return false;
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, android.app.Activity
     public <T extends View> T findViewById(int i) {
         return (T) super.findViewById(i);
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity
+    /* JADX WARN: Multi-variable type inference failed */
     public AppCompatDelegate getDelegate() {
         return SkinAppCompatDelegateImpl.get(this, this);
     }
@@ -183,19 +178,16 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         return null;
     }
 
-    @Override // android.app.Activity
     public void onAttachFragment(Fragment fragment) {
         super.onAttachFragment(fragment);
-        f9721a = fragment.getClass().getSimpleName();
+        a = fragment.getClass().getSimpleName();
     }
 
-    @Override // androidx.fragment.app.FragmentActivity
     public void onAttachFragment(androidx.fragment.app.Fragment fragment) {
         super.onAttachFragment(fragment);
-        f9721a = fragment.getClass().getSimpleName();
+        a = fragment.getClass().getSimpleName();
     }
 
-    @Override // androidx.activity.ComponentActivity, android.app.Activity
     public void onBackPressed() {
         IOnBackPressedListener iOnBackPressedListener = this.d;
         if (iOnBackPressedListener == null || !iOnBackPressedListener.onBackPressed()) {
@@ -203,7 +195,7 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         if (bundle != null) {
             FixedBadParcelHelper.a(this, bundle);
@@ -214,28 +206,26 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         }
         super.onCreate(bundle);
         Log.a("BaseFragmentActivity", getClass().getName() + " onCreate()");
-        ImageLoaderHostManager.a(this.f9722c, this);
-        AppInfo.b(this);
+        ImageLoaderHostManager.a(this.c, this);
+        AppInfo.b((Activity) this);
         if (StatusBarHelper.a() && SkinCompatManager.a() != null) {
             StatusBarHelper.b(this, BluedSkinUtils.c());
         }
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onDestroy() {
         super.onDestroy();
         Log.a("BaseFragmentActivity", getClass().getName() + " onDestroy()");
-        ActivityFragmentActive activityFragmentActive = this.f9722c;
+        ActivityFragmentActive activityFragmentActive = this.c;
         if (activityFragmentActive != null) {
             HttpManager.a(activityFragmentActive);
-            UIRunnableManager.a(this.f9722c);
-            ImageLoaderHostManager.b(this.f9722c);
-            this.f9722c.a();
-            this.f9722c = null;
+            UIRunnableManager.a(this.c);
+            ImageLoaderHostManager.b(this.c);
+            this.c.a();
+            this.c = null;
         }
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, android.app.Activity, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         IOnKeyListener iOnKeyListener = this.e;
         if (iOnKeyListener == null || !iOnKeyListener.onKeyDown(i, keyEvent)) {
@@ -244,7 +234,6 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         return true;
     }
 
-    @Override // android.app.Activity, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i, KeyEvent keyEvent) {
         IOnKeyListener iOnKeyListener = this.e;
         if (iOnKeyListener == null || !iOnKeyListener.onKeyUp(i, keyEvent)) {
@@ -253,19 +242,17 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         return true;
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onPause() {
         super.onPause();
         Log.a("BaseFragmentActivity", getClass().getName() + " onPause()");
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, android.app.Activity
     public void onPostCreate(Bundle bundle) {
         super.onPostCreate(bundle);
         Log.a("BaseFragmentActivity", getClass().getName() + " onPostCreate()");
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
+    /* JADX WARN: Multi-variable type inference failed */
     public void onRequestPermissionsResult(int i, String[] strArr, int[] iArr) {
         if (AppInfo.b() != null) {
             AppInfo.b().a(this, i, strArr, iArr);
@@ -273,9 +260,8 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         super.onRequestPermissionsResult(i, strArr, iArr);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.app.Activity
-    public void onRestoreInstanceState(Bundle bundle) {
+    /* JADX WARN: Multi-variable type inference failed */
+    protected void onRestoreInstanceState(Bundle bundle) {
         if (bundle != null) {
             FixedBadParcelHelper.a(this, bundle);
         }
@@ -289,7 +275,6 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         }
     }
 
-    @Override // androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onResume() {
         super.onResume();
         Log.a("BaseFragmentActivity", getClass().getName() + " onResume()");
@@ -297,15 +282,15 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
             h();
             return;
         }
-        List<androidx.fragment.app.Fragment> fragments = getSupportFragmentManager().getFragments();
+        List fragments = getSupportFragmentManager().getFragments();
         if (fragments == null || fragments.size() == 0) {
             h();
         } else if (TextUtils.isEmpty(this.b)) {
-            this.b = BaseActivity.f9718a;
+            this.b = BaseActivity.a;
         }
     }
 
-    @Override // androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onSaveInstanceState(Bundle bundle) {
         if (bundle != null) {
             FixedBadParcelHelper.a(this, bundle);
@@ -322,7 +307,6 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         }
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStart() {
         super.onStart();
         Log.a("BaseFragmentActivity", getClass().getName() + " onStart()");
@@ -332,7 +316,6 @@ public class BaseFragmentActivity extends AppCompatActivity implements PageTimeU
         PageTimeUtils.a((PageTimeUtils.APMInterface) this);
     }
 
-    @Override // androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
     public void onStop() {
         super.onStop();
         Log.a("BaseFragmentActivity", getClass().getName() + " onStop()");

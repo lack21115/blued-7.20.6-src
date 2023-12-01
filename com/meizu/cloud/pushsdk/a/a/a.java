@@ -34,11 +34,11 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f23948a;
+    private static a f10337a;
     private static final Object b = new Object();
 
     /* renamed from: c  reason: collision with root package name */
-    private byte[] f23949c;
+    private byte[] f10338c;
     private byte[] d;
     private byte[] e;
     private byte[] f;
@@ -54,7 +54,7 @@ public class a {
         Integer.parseInt(this.i.getString("keyTimeout", "0"));
         this.i.getLong("createDate", 0L);
         e();
-        byte[] bArr = this.f23949c;
+        byte[] bArr = this.f10338c;
         if (bArr != null && bArr.length != 0) {
             byte[] bArr2 = this.d;
             if (bArr2 == null || bArr2.length == 0) {
@@ -88,7 +88,7 @@ public class a {
     }
 
     public static a a() {
-        a aVar = f23948a;
+        a aVar = f10337a;
         if (aVar != null) {
             return aVar;
         }
@@ -128,10 +128,10 @@ public class a {
     }
 
     public static void a(Context context) {
-        if (f23948a == null) {
+        if (f10337a == null) {
             synchronized (b) {
-                if (f23948a == null) {
-                    f23948a = new a(context);
+                if (f10337a == null) {
+                    f10337a = new a(context);
                 }
             }
         }
@@ -249,8 +249,8 @@ public class a {
         }
         byte[] bytes2 = string3.getBytes();
         this.e = bytes2;
-        this.f23949c = Base64.decode(bytes2, 2);
-        b("saved rKey: " + new String(this.f23949c));
+        this.f10338c = Base64.decode(bytes2, 2);
+        b("saved rKey: " + new String(this.f10338c));
     }
 
     private void f() {
@@ -263,7 +263,7 @@ public class a {
             KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
             keyGenerator.init(128);
             byte[] encoded = keyGenerator.generateKey().getEncoded();
-            this.f23949c = encoded;
+            this.f10338c = encoded;
             this.e = Base64.encode(encoded, 2);
             b("***** rKey64: " + new String(this.e));
             SharedPreferences.Editor edit = this.i.edit();
@@ -278,7 +278,7 @@ public class a {
         try {
             Cipher cipher = Cipher.getInstance("RSA/ECB/PKCS1Padding");
             cipher.init(1, this.h);
-            byte[] doFinal = cipher.doFinal(this.f23949c);
+            byte[] doFinal = cipher.doFinal(this.f10338c);
             this.d = doFinal;
             this.f = Base64.encode(doFinal, 2);
             b("***** aKey64: " + new String(this.f));
@@ -307,7 +307,7 @@ public class a {
 
     public byte[] a(byte[] bArr) {
         String str;
-        byte[] bArr2 = this.f23949c;
+        byte[] bArr2 = this.f10338c;
         if (bArr2 == null || bArr2.length == 0) {
             str = "rKey null!";
         } else if (bArr != null && bArr.length != 0) {
@@ -315,7 +315,7 @@ public class a {
             b("<<<<<<<<<< encrypt input <<<<<<<<<<");
             try {
                 Cipher cipher = Cipher.getInstance(JceEncryptionConstants.SYMMETRIC_CIPHER_METHOD);
-                cipher.init(1, new SecretKeySpec(this.f23949c, "AES"), new IvParameterSpec(this.f23949c));
+                cipher.init(1, new SecretKeySpec(this.f10338c, "AES"), new IvParameterSpec(this.f10338c));
                 byte[] doFinal = cipher.doFinal(bArr);
                 b(">>>>>>>>>> encrypt output >>>>>>>>>>\n" + new String(Base64.encode(doFinal, 2)));
                 b("<<<<<<<<<< encrypt output <<<<<<<<<<");

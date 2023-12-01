@@ -19,7 +19,7 @@ public class l111l11111lIl {
     private static final String l1111l111111Il = "sm";
     private Map<String, l111l11111I1l> l111l11111I1l;
     private Map<String, l111l11111Il> l111l11111Il;
-    private Map<String, C0459l111l11111lIl> l111l11111lIl;
+    private Map<String, C0289l111l11111lIl> l111l11111lIl;
     private Set<String> l111l1111l1Il;
     private String l111l1111lI1l;
     private String l111l1111lIl;
@@ -150,7 +150,7 @@ public class l111l11111lIl {
 
     /* renamed from: com.ishumei.l111l11111lIl.l111l11111lIl$l111l11111lIl  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/ishumei/l111l11111lIl/l111l11111lIl$l111l11111lIl.class */
-    public static final class C0459l111l11111lIl {
+    public static final class C0289l111l11111lIl {
         private String l1111l111111Il;
         private String l111l11111I1l;
         private String l111l11111lIl;
@@ -180,7 +180,7 @@ public class l111l11111lIl {
         }
     }
 
-    private static Map<String, C0459l111l11111lIl> l1111l111111Il(JSONArray jSONArray) {
+    private static Map<String, C0289l111l11111lIl> l1111l111111Il(JSONArray jSONArray) {
         HashMap hashMap = new HashMap();
         int i = 0;
         while (true) {
@@ -190,13 +190,13 @@ public class l111l11111lIl {
             }
             try {
                 JSONObject jSONObject = jSONArray.getJSONObject(i2);
-                C0459l111l11111lIl c0459l111l11111lIl = new C0459l111l11111lIl();
+                C0289l111l11111lIl c0289l111l11111lIl = new C0289l111l11111lIl();
                 String next = jSONObject.keys().next();
                 JSONObject jSONObject2 = jSONObject.getJSONObject(next);
-                c0459l111l11111lIl.l1111l111111Il(next);
-                c0459l111l11111lIl.l111l11111lIl(jSONObject2.getString("pn"));
-                c0459l111l11111lIl.l111l11111I1l(jSONObject2.getString("uri"));
-                hashMap.put(c0459l111l11111lIl.l1111l111111Il(), c0459l111l11111lIl);
+                c0289l111l11111lIl.l1111l111111Il(next);
+                c0289l111l11111lIl.l111l11111lIl(jSONObject2.getString("pn"));
+                c0289l111l11111lIl.l111l11111I1l(jSONObject2.getString("uri"));
+                hashMap.put(c0289l111l11111lIl.l1111l111111Il(), c0289l111l11111lIl);
             } catch (JSONException e) {
             }
             i = i2 + 1;
@@ -226,7 +226,7 @@ public class l111l11111lIl {
         this.l111l1111llIl = list;
     }
 
-    private void l1111l111111Il(Map<String, C0459l111l11111lIl> map) {
+    private void l1111l111111Il(Map<String, C0289l111l11111lIl> map) {
         this.l111l11111lIl = map;
     }
 
@@ -304,18 +304,18 @@ public class l111l11111lIl {
         }
     }
 
-    private static Map<String, C0459l111l11111lIl> l111l11111I1l(JSONObject jSONObject) {
+    private static Map<String, C0289l111l11111lIl> l111l11111I1l(JSONObject jSONObject) {
         HashMap hashMap = new HashMap();
         Iterator<String> keys = jSONObject.keys();
         while (keys.hasNext()) {
             try {
-                C0459l111l11111lIl c0459l111l11111lIl = new C0459l111l11111lIl();
+                C0289l111l11111lIl c0289l111l11111lIl = new C0289l111l11111lIl();
                 String next = keys.next();
                 JSONObject jSONObject2 = jSONObject.getJSONObject(next);
-                c0459l111l11111lIl.l1111l111111Il(next);
-                c0459l111l11111lIl.l111l11111lIl(jSONObject2.getString("pn"));
-                c0459l111l11111lIl.l111l11111I1l(jSONObject2.getString("uri"));
-                hashMap.put(c0459l111l11111lIl.l1111l111111Il(), c0459l111l11111lIl);
+                c0289l111l11111lIl.l1111l111111Il(next);
+                c0289l111l11111lIl.l111l11111lIl(jSONObject2.getString("pn"));
+                c0289l111l11111lIl.l111l11111I1l(jSONObject2.getString("uri"));
+                hashMap.put(c0289l111l11111lIl.l1111l111111Il(), c0289l111l11111lIl);
             } catch (Exception e) {
             }
         }
@@ -662,7 +662,7 @@ public class l111l11111lIl {
         return this.l111l11111Il;
     }
 
-    public final Map<String, C0459l111l11111lIl> l11l11IlIIll() {
+    public final Map<String, C0289l111l11111lIl> l11l11IlIIll() {
         return this.l111l11111lIl;
     }
 }

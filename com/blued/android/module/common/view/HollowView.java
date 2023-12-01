@@ -22,13 +22,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/HollowView.class */
 public final class HollowView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f10992a;
+    private final int a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Paint f10993c;
+    private Paint c;
     private float d;
     private float e;
     private int f;
@@ -57,19 +53,19 @@ public final class HollowView extends View {
 
     private final void a() {
         Paint paint = new Paint();
-        this.f10993c = paint;
+        this.c = paint;
         if (paint != null) {
             paint.setXfermode(null);
         }
-        Paint paint2 = this.f10993c;
+        Paint paint2 = this.c;
         if (paint2 != null) {
             paint2.setTextSize(DensityUtils.a(getContext(), 12.0f));
         }
-        Paint paint3 = this.f10993c;
+        Paint paint3 = this.c;
         if (paint3 != null) {
             paint3.setAntiAlias(true);
         }
-        Paint paint4 = this.f10993c;
+        Paint paint4 = this.c;
         if (paint4 == null) {
             return;
         }
@@ -90,7 +86,7 @@ public final class HollowView extends View {
         }
         this.d = obtainStyledAttributes.getDimension(R.styleable.HollowView_stroke_width, 0.0f);
         this.e = obtainStyledAttributes.getDimension(R.styleable.HollowView_corner_radius, 0.0f);
-        this.f = obtainStyledAttributes.getInt(R.styleable.HollowView_gradient_orientation, this.f10992a);
+        this.f = obtainStyledAttributes.getInt(R.styleable.HollowView_gradient_orientation, this.a);
         obtainStyledAttributes.recycle();
         if (this.g.size() <= 0) {
             this.g.get(-1);
@@ -103,7 +99,7 @@ public final class HollowView extends View {
     }
 
     private final void a(Canvas canvas) {
-        Paint paint = this.f10993c;
+        Paint paint = this.c;
         if (paint == null) {
             return;
         }
@@ -121,7 +117,7 @@ public final class HollowView extends View {
     }
 
     private final void b(Canvas canvas) {
-        Paint paint = this.f10993c;
+        Paint paint = this.c;
         if (paint == null) {
             return;
         }
@@ -148,7 +144,7 @@ public final class HollowView extends View {
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Integer valueOf = canvas == null ? null : Integer.valueOf(canvas.saveLayer(0.0f, 0.0f, getWidth() * 1.0f, getHeight() * 1.0f, this.f10993c));
+        Integer valueOf = canvas == null ? null : Integer.valueOf(canvas.saveLayer(0.0f, 0.0f, getWidth() * 1.0f, getHeight() * 1.0f, this.c));
         a(canvas);
         b(canvas);
         if (valueOf != null) {

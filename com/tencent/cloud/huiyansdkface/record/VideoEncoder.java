@@ -21,13 +21,13 @@ public class VideoEncoder {
     public static final int COLOR_FORMAT_YUV_420_SEMI_PLANAR = 21;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f36051a = VideoEncoder.class.getSimpleName();
+    private static final String f22360a = VideoEncoder.class.getSimpleName();
     private static int m;
     private static int n;
     private IYUVToVideoEncoderCallback b;
 
     /* renamed from: c  reason: collision with root package name */
-    private File f36052c;
+    private File f22361c;
     private byte[] f;
     private MediaCodec g;
     private MediaMuxer h;
@@ -75,7 +75,7 @@ public class VideoEncoder {
                 return 0;
             }
             int i3 = capabilitiesForType.colorFormats[i2];
-            String str2 = f36051a;
+            String str2 = f22360a;
             WLogger.d(str2, "found colorformat: " + i3);
             if (a(i3)) {
                 return i3;
@@ -153,19 +153,19 @@ public class VideoEncoder {
     }
 
     private void a() {
-        WLogger.d(f36051a, "release");
+        WLogger.d(f22360a, "release");
         synchronized (this.k) {
             if (this.g != null) {
                 try {
                     this.g.stop();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    String str = f36051a;
+                    String str = f22360a;
                     WLogger.w(str, "videoEncoder stop failed:" + e.toString());
                 }
                 this.g.release();
                 this.g = null;
-                WLogger.d(f36051a, "RELEASE Video CODEC");
+                WLogger.d(f22360a, "RELEASE Video CODEC");
             }
             if (this.h != null) {
                 try {
@@ -173,12 +173,12 @@ public class VideoEncoder {
                     this.h.release();
                 } catch (Exception e2) {
                     e2.printStackTrace();
-                    String str2 = f36051a;
+                    String str2 = f22360a;
                     WLogger.e(str2, "media muxer stop failed:" + e2.toString());
                 }
                 this.h = null;
                 this.i = false;
-                WLogger.d(f36051a, "RELEASE MUXER");
+                WLogger.d(f22360a, "RELEASE MUXER");
             }
         }
     }
@@ -191,7 +191,7 @@ public class VideoEncoder {
                     this.r++;
                 }
                 if (this.r >= 1) {
-                    WLogger.d(f36051a, "Media muxer is starting...");
+                    WLogger.d(f22360a, "Media muxer is starting...");
                     this.h.start();
                     this.i = true;
                     this.k.notifyAll();
@@ -229,7 +229,7 @@ public class VideoEncoder {
         byte[] yuvData = yuvImage.getYuvData();
         int i3 = i * i2;
         if (i3 >= 0) {
-            System.arraycopy((Object) yuvData, 0, (Object) this.f, 0, i3);
+            System.arraycopy(yuvData, 0, this.f, 0, i3);
         }
         int i4 = i3;
         while (true) {
@@ -255,7 +255,7 @@ public class VideoEncoder {
         byte[] yuvData = yuvImage.getYuvData();
         int i3 = i * i2;
         if (i3 >= 0) {
-            System.arraycopy((Object) yuvData, 0, (Object) this.f, 0, i3);
+            System.arraycopy(yuvData, 0, this.f, 0, i3);
         }
         int i4 = (i3 / 4) + i3;
         int i5 = i3;
@@ -273,10 +273,10 @@ public class VideoEncoder {
 
     public void abortEncoding() {
         this.u = false;
-        if (this.f36052c != null) {
-            WLogger.d(f36051a, "Clean up record file");
-            this.f36052c.delete();
-            this.f36052c = null;
+        if (this.f22361c != null) {
+            WLogger.d(f22360a, "Clean up record file");
+            this.f22361c.delete();
+            this.f22361c = null;
         }
         ByteArrayOutputStream byteArrayOutputStream = this.y;
         if (byteArrayOutputStream != null) {
@@ -284,18 +284,18 @@ public class VideoEncoder {
                 byteArrayOutputStream.close();
             } catch (Exception e) {
                 e.printStackTrace();
-                String str = f36051a;
+                String str = f22360a;
                 WLogger.e(str, "byteOutput close failed:" + e.toString());
             }
             this.y = null;
-            WLogger.d(f36051a, "RELEASE byteOutput");
+            WLogger.d(f22360a, "RELEASE byteOutput");
         }
         if (this.o) {
             if (this.g == null || this.h == null) {
-                WLogger.i(f36051a, "Failed to abort encoding since it never started");
+                WLogger.i(f22360a, "Failed to abort encoding since it never started");
                 return;
             }
-            WLogger.i(f36051a, "Aborting encoding");
+            WLogger.i(f22360a, "Aborting encoding");
             a();
             this.s = true;
             this.t = true;
@@ -345,13 +345,13 @@ public class VideoEncoder {
                     MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
                     int dequeueOutputBuffer = this.g.dequeueOutputBuffer(bufferInfo, 200000L);
                     if (dequeueOutputBuffer == -1) {
-                        str = f36051a;
+                        str = f22360a;
                         str2 = "No output from encoder available";
                     } else if (dequeueOutputBuffer == -2) {
                         a(a.VideoType, this.g.getOutputFormat());
                         return;
                     } else if (dequeueOutputBuffer < 0) {
-                        str = f36051a;
+                        str = f22360a;
                         str2 = "unexpected result from encoder.dequeueOutputBuffer: " + dequeueOutputBuffer;
                     } else if (bufferInfo.size == 0) {
                         return;
@@ -360,14 +360,14 @@ public class VideoEncoder {
                         if (b != null) {
                             b.position(bufferInfo.offset);
                             b.limit(bufferInfo.offset + bufferInfo.size);
-                            WLogger.d(f36051a, "media muxer write video data outputindex " + this.p);
+                            WLogger.d(f22360a, "media muxer write video data outputindex " + this.p);
                             synchronized (this.h) {
                                 this.h.writeSampleData(this.q, b, bufferInfo);
                             }
                             this.g.releaseOutputBuffer(dequeueOutputBuffer, false);
                             return;
                         }
-                        str = f36051a;
+                        str = f22360a;
                         str2 = "encoderOutputBuffer " + dequeueOutputBuffer + " was null";
                     }
                     WLogger.e(str, str2);
@@ -382,7 +382,7 @@ public class VideoEncoder {
                     } catch (Exception e3) {
                         e3.printStackTrace();
                     }
-                    WLogger.e(f36051a, stringWriter2);
+                    WLogger.e(f22360a, stringWriter2);
                     e2.printStackTrace();
                 }
             }
@@ -397,7 +397,7 @@ public class VideoEncoder {
         String str4;
         CountDownLatch countDownLatch;
         if (this.o && this.u) {
-            WLogger.d(f36051a, "Encoder started");
+            WLogger.d(f22360a, "Encoder started");
             if (this.s && this.d.size() == 0) {
                 return;
             }
@@ -431,10 +431,10 @@ public class VideoEncoder {
                     int dequeueOutputBuffer = this.g.dequeueOutputBuffer(bufferInfo, 200000L);
                     if (dequeueOutputBuffer != -1) {
                         if (dequeueOutputBuffer == -2) {
-                            str = f36051a;
+                            str = f22360a;
                             str2 = "start output";
                         } else if (dequeueOutputBuffer < 0) {
-                            str3 = f36051a;
+                            str3 = f22360a;
                             str4 = "unexpected result from encoder.dequeueOutputBuffer: " + dequeueOutputBuffer;
                         } else if (bufferInfo.size == 0) {
                             return;
@@ -458,8 +458,8 @@ public class VideoEncoder {
                                                 bArr = bArr2;
                                                 if (bArr2[4] == 101) {
                                                     bArr = new byte[this.x.length + i];
-                                                    System.arraycopy((Object) this.x, 0, (Object) bArr, 0, this.x.length);
-                                                    System.arraycopy((Object) bArr2, 0, (Object) bArr, this.x.length, i);
+                                                    System.arraycopy(this.x, 0, bArr, 0, this.x.length);
+                                                    System.arraycopy(bArr2, 0, bArr, this.x.length, i);
                                                 }
                                             }
                                         }
@@ -468,13 +468,13 @@ public class VideoEncoder {
                             }
                             this.y.write(bArr);
                             this.g.releaseOutputBuffer(dequeueOutputBuffer, false);
-                            str = f36051a;
+                            str = f22360a;
                             str2 = "videoEncoder releaseOutputBuffer";
                         }
                         WLogger.d(str, str2);
                         return;
                     }
-                    str3 = f36051a;
+                    str3 = f22360a;
                     str4 = "No output from encoder available";
                     WLogger.e(str3, str4);
                 } catch (Exception e2) {
@@ -488,7 +488,7 @@ public class VideoEncoder {
                     } catch (Exception e3) {
                         e3.printStackTrace();
                     }
-                    WLogger.e(f36051a, stringWriter2);
+                    WLogger.e(f22360a, stringWriter2);
                     e2.printStackTrace();
                 }
             }
@@ -510,10 +510,10 @@ public class VideoEncoder {
     public void queueFrame(YuvImage yuvImage) {
         if (this.o) {
             if (this.g == null || this.h == null) {
-                Log.d(f36051a, "Failed to queue frame. Encoding not started");
+                Log.d(f22360a, "Failed to queue frame. Encoding not started");
                 return;
             }
-            WLogger.d(f36051a, "Queueing frame");
+            WLogger.d(f22360a, "Queueing frame");
             this.d.add(yuvImage);
             synchronized (this.j) {
                 if (this.l != null && this.l.getCount() > 0) {
@@ -526,7 +526,7 @@ public class VideoEncoder {
     public void queueFrameH264(YuvImage yuvImage) {
         if (this.o) {
             if (this.g == null) {
-                Log.d(f36051a, "Failed to queue frame. Encoding not started");
+                Log.d(f22360a, "Failed to queue frame. Encoding not started");
                 return;
             }
             this.d.add(yuvImage);
@@ -540,27 +540,27 @@ public class VideoEncoder {
 
     public void startEncoding(int i, int i2, File file, int i3, int i4, int i5) {
         if (Build.VERSION.SDK_INT < 18) {
-            WLogger.w(f36051a, "not support recording!");
+            WLogger.w(f22360a, "not support recording!");
             return;
         }
-        WLogger.d(f36051a, "startEncoding");
+        WLogger.d(f22360a, "startEncoding");
         if (this.o) {
             m = i;
             n = i2;
-            this.f36052c = file;
+            this.f22361c = file;
             try {
                 String canonicalPath = file.getCanonicalPath();
-                WLogger.d(f36051a, "new MediaMuxer");
+                WLogger.d(f22360a, "new MediaMuxer");
                 if (this.h == null) {
                     this.h = new MediaMuxer(canonicalPath, 0);
                 }
-                WLogger.d(f36051a, "selectCodec");
+                WLogger.d(f22360a, "selectCodec");
                 MediaCodecInfo a2 = a("video/avc");
                 if (a2 == null) {
-                    WLogger.e(f36051a, "Unable to find an appropriate codec for video/avc");
+                    WLogger.e(f22360a, "Unable to find an appropriate codec for video/avc");
                     return;
                 }
-                String str = f36051a;
+                String str = f22360a;
                 WLogger.i(str, "found codec: " + a2.getName());
                 this.v = 21;
                 try {
@@ -569,12 +569,12 @@ public class VideoEncoder {
                     this.w = a3;
                 } catch (Exception e) {
                     e.printStackTrace();
-                    WLogger.e(f36051a, "Unable to find color format use default");
+                    WLogger.e(f22360a, "Unable to find color format use default");
                     this.v = 21;
                 }
                 try {
                     this.g = MediaCodec.createByCodecName(a2.getName());
-                    WLogger.d(f36051a, "Create videoEncoder createByCodecName");
+                    WLogger.d(f22360a, "Create videoEncoder createByCodecName");
                     try {
                         MediaFormat createVideoFormat = MediaFormat.createVideoFormat("video/avc", m, n);
                         createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, i3);
@@ -583,22 +583,22 @@ public class VideoEncoder {
                         createVideoFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, i5);
                         this.g.configure(createVideoFormat, null, null, 1);
                         this.g.start();
-                        String str2 = f36051a;
+                        String str2 = f22360a;
                         WLogger.i(str2, "Initialization complete. Starting encoder..." + Thread.currentThread().getName());
                         this.u = true;
                     } catch (Exception e2) {
                         e2.printStackTrace();
-                        String str3 = f36051a;
+                        String str3 = f22360a;
                         WLogger.e(str3, "encoder configure failed:" + e2.toString());
                     }
                 } catch (Exception e3) {
                     e3.printStackTrace();
-                    String str4 = f36051a;
+                    String str4 = f22360a;
                     WLogger.w(str4, "Unable to create MediaCodec " + e3.toString());
                 }
             } catch (Exception e4) {
                 e4.printStackTrace();
-                String str5 = f36051a;
+                String str5 = f22360a;
                 WLogger.w(str5, "Unable to get path for " + file + "," + e4.toString());
             }
         }
@@ -606,22 +606,22 @@ public class VideoEncoder {
 
     public void startEncodingH264(int i, int i2, ByteArrayOutputStream byteArrayOutputStream, int i3, int i4, int i5) {
         if (Build.VERSION.SDK_INT < 18) {
-            WLogger.w(f36051a, "not support recording!");
+            WLogger.w(f22360a, "not support recording!");
             return;
         }
-        String str = f36051a;
+        String str = f22360a;
         WLogger.d(str, "startEncoding:" + i + "," + i2);
         if (this.o) {
             m = i;
             n = i2;
             this.y = byteArrayOutputStream;
-            WLogger.d(f36051a, "selectCodec");
+            WLogger.d(f22360a, "selectCodec");
             MediaCodecInfo a2 = a("video/avc");
             if (a2 == null) {
-                WLogger.e(f36051a, "Unable to find an appropriate codec for video/avc");
+                WLogger.e(f22360a, "Unable to find an appropriate codec for video/avc");
                 return;
             }
-            String str2 = f36051a;
+            String str2 = f22360a;
             WLogger.i(str2, "found codec: " + a2.getName());
             this.v = 21;
             try {
@@ -630,12 +630,12 @@ public class VideoEncoder {
                 this.w = a3;
             } catch (Exception e) {
                 e.printStackTrace();
-                WLogger.e(f36051a, "Unable to find color format use default");
+                WLogger.e(f22360a, "Unable to find color format use default");
                 this.v = 21;
             }
             try {
                 this.g = MediaCodec.createByCodecName(a2.getName());
-                WLogger.d(f36051a, "Create videoEncoder createByCodecName");
+                WLogger.d(f22360a, "Create videoEncoder createByCodecName");
                 try {
                     MediaFormat createVideoFormat = MediaFormat.createVideoFormat("video/avc", m, n);
                     createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, i3);
@@ -644,17 +644,17 @@ public class VideoEncoder {
                     createVideoFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, i5);
                     this.g.configure(createVideoFormat, null, null, 1);
                     this.g.start();
-                    String str3 = f36051a;
+                    String str3 = f22360a;
                     WLogger.i(str3, "Initialization complete. Starting encoder..." + Thread.currentThread().getName());
                     this.u = true;
                 } catch (Exception e2) {
                     e2.printStackTrace();
-                    String str4 = f36051a;
+                    String str4 = f22360a;
                     WLogger.e(str4, "encoder configure failed:" + e2.toString());
                 }
             } catch (Exception e3) {
                 e3.printStackTrace();
-                String str5 = f36051a;
+                String str5 = f22360a;
                 WLogger.w(str5, "Unable to create MediaCodec " + e3.toString());
             }
         }
@@ -664,10 +664,10 @@ public class VideoEncoder {
         this.u = false;
         if (this.o) {
             if (this.g == null || this.h == null) {
-                Log.i(f36051a, "Failed to stop encoding since it never started");
+                Log.i(f22360a, "Failed to stop encoding since it never started");
                 return;
             }
-            WLogger.i(f36051a, "Stopping encoding");
+            WLogger.i(f22360a, "Stopping encoding");
             this.s = true;
             synchronized (this.j) {
                 if (this.l != null && this.l.getCount() > 0) {
@@ -682,10 +682,10 @@ public class VideoEncoder {
         this.u = false;
         if (this.o) {
             if (this.g == null) {
-                Log.i(f36051a, "Failed to stop encoding since it never started");
+                Log.i(f22360a, "Failed to stop encoding since it never started");
                 return;
             }
-            WLogger.i(f36051a, "Stopping encodingH264");
+            WLogger.i(f22360a, "Stopping encodingH264");
             this.s = true;
             synchronized (this.j) {
                 if (this.l != null && this.l.getCount() > 0) {

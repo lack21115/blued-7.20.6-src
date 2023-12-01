@@ -1,5 +1,6 @@
 package com.soft.blued.ui.mine.fragment;
 
+import com.kuaishou.weapon.p0.bp;
 import com.soft.blued.ui.mine.model.MinePageModel;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -15,14 +16,13 @@ final /* synthetic */ class MineNewFragment$liveDataObserver$1 extends FunctionR
         super(1, obj, MineNewFragment.class, "setMineData", "setMineData(Lcom/soft/blued/ui/mine/model/MinePageModel;)V", 0);
     }
 
-    public final void a(MinePageModel p0) {
-        Intrinsics.e(p0, "p0");
-        ((MineNewFragment) this.receiver).a(p0);
+    public final void a(MinePageModel minePageModel) {
+        Intrinsics.e(minePageModel, bp.g);
+        ((MineNewFragment) this.receiver).a(minePageModel);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* synthetic */ Unit invoke(MinePageModel minePageModel) {
-        a(minePageModel);
-        return Unit.f42314a;
+    public /* synthetic */ Object invoke(Object obj) {
+        a((MinePageModel) obj);
+        return Unit.a;
     }
 }

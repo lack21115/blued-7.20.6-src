@@ -12,16 +12,12 @@ import skin.support.widget.SkinCompatSupportable;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/app/SkinCompatDelegate.class */
 public class SkinCompatDelegate implements LayoutInflater.Factory2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f44198a;
+    private final Context a;
     private SkinCompatViewInflater b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<WeakReference<SkinCompatSupportable>> f44199c = new CopyOnWriteArrayList();
+    private List<WeakReference<SkinCompatSupportable>> c = new CopyOnWriteArrayList();
 
     private SkinCompatDelegate(Context context) {
-        this.f44198a = context;
+        this.a = context;
     }
 
     public static SkinCompatDelegate a(Context context) {
@@ -33,20 +29,20 @@ public class SkinCompatDelegate implements LayoutInflater.Factory2 {
             this.b = new SkinCompatViewInflater();
         }
         for (SkinWrapper skinWrapper : SkinCompatManager.a().c()) {
-            Context a2 = skinWrapper.a(this.f44198a, view, attributeSet);
-            if (a2 != null) {
-                context = a2;
+            Context a = skinWrapper.a(this.a, view, attributeSet);
+            if (a != null) {
+                context = a;
             }
         }
         return this.b.a(view, str, context, attributeSet);
     }
 
     public void a() {
-        List<WeakReference<SkinCompatSupportable>> list = this.f44199c;
+        List<WeakReference<SkinCompatSupportable>> list = this.c;
         if (list == null || list.isEmpty()) {
             return;
         }
-        for (WeakReference<SkinCompatSupportable> weakReference : this.f44199c) {
+        for (WeakReference<SkinCompatSupportable> weakReference : this.c) {
             if (weakReference != null && weakReference.get() != null) {
                 weakReference.get().applySkin();
             }
@@ -55,25 +51,25 @@ public class SkinCompatDelegate implements LayoutInflater.Factory2 {
 
     @Override // android.view.LayoutInflater.Factory2
     public View onCreateView(View view, String str, Context context, AttributeSet attributeSet) {
-        View a2 = a(view, str, context, attributeSet);
-        if (a2 == null) {
+        View a = a(view, str, context, attributeSet);
+        if (a == null) {
             return null;
         }
-        if (a2 instanceof SkinCompatSupportable) {
-            this.f44199c.add(new WeakReference<>((SkinCompatSupportable) a2));
+        if (a instanceof SkinCompatSupportable) {
+            this.c.add(new WeakReference<>((SkinCompatSupportable) a));
         }
-        return a2;
+        return a;
     }
 
     @Override // android.view.LayoutInflater.Factory
     public View onCreateView(String str, Context context, AttributeSet attributeSet) {
-        View a2 = a(null, str, context, attributeSet);
-        if (a2 == null) {
+        View a = a(null, str, context, attributeSet);
+        if (a == null) {
             return null;
         }
-        if (a2 instanceof SkinCompatSupportable) {
-            this.f44199c.add(new WeakReference<>((SkinCompatSupportable) a2));
+        if (a instanceof SkinCompatSupportable) {
+            this.c.add(new WeakReference<>((SkinCompatSupportable) a));
         }
-        return a2;
+        return a;
     }
 }

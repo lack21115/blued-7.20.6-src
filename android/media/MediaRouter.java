@@ -27,7 +27,6 @@ import android.os.UserHandle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Display;
-import com.android.internal.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -814,7 +813,7 @@ public class MediaRouter {
         final Resources mResources = Resources.getSystem();
         final IAudioService mAudioService = IAudioService.Stub.asInterface(ServiceManager.getService("audio"));
         final IMediaRouterService mMediaRouterService = IMediaRouterService.Stub.asInterface(ServiceManager.getService(Context.MEDIA_ROUTER_SERVICE));
-        final RouteCategory mSystemCategory = new RouteCategory((int) R.string.default_audio_route_category_name, 3, false);
+        final RouteCategory mSystemCategory = new RouteCategory(17041064, 3, false);
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: source-9557208-dex2jar.jar:android/media/MediaRouter$Static$Client.class */
@@ -994,7 +993,7 @@ public class MediaRouter {
 
         void startMonitoringRoutes(Context context) {
             this.mDefaultAudioVideo = new RouteInfo(this.mSystemCategory);
-            this.mDefaultAudioVideo.mNameResId = R.string.default_audio_route_name;
+            this.mDefaultAudioVideo.mNameResId = 17041060;
             this.mDefaultAudioVideo.mSupportedTypes = 3;
             this.mDefaultAudioVideo.updatePresentationDisplay();
             MediaRouter.addRouteStatic(this.mDefaultAudioVideo);
@@ -1029,7 +1028,7 @@ public class MediaRouter {
                     if (MediaRouter.sStatic.mBluetoothA2dpRoute == null) {
                         RouteInfo routeInfo = new RouteInfo(MediaRouter.sStatic.mSystemCategory);
                         routeInfo.mName = this.mCurAudioRoutesInfo.mBluetoothName;
-                        routeInfo.mDescription = MediaRouter.sStatic.mResources.getText(R.string.bluetooth_a2dp_audio_route_name);
+                        routeInfo.mDescription = MediaRouter.sStatic.mResources.getText(17041065);
                         routeInfo.mSupportedTypes = 1;
                         MediaRouter.sStatic.mBluetoothA2dpRoute = routeInfo;
                         MediaRouter.addRouteStatic(MediaRouter.sStatic.mBluetoothA2dpRoute);
@@ -1664,7 +1663,7 @@ public class MediaRouter {
         routeInfo.setRealStatusCode(getWifiDisplayStatusCode(wifiDisplay, wifiDisplayStatus));
         routeInfo.mEnabled = isWifiDisplayEnabled(wifiDisplay, wifiDisplayStatus);
         routeInfo.mName = wifiDisplay.getFriendlyDisplayName();
-        routeInfo.mDescription = sStatic.mResources.getText(R.string.wireless_display_route_description);
+        routeInfo.mDescription = sStatic.mResources.getText(17041066);
         routeInfo.updatePresentationDisplay();
         return routeInfo;
     }

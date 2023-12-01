@@ -6,7 +6,7 @@ import java.util.HashMap;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.c f42011a;
+    private com.zk_oaction.adengine.lk_sdk.c f28320a;
     private HashMap<String, d> b = new HashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -14,20 +14,20 @@ public class g {
     public class a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f42012a;
+        final /* synthetic */ String f28321a;
         final /* synthetic */ String b;
 
         a(String str, String str2) {
-            this.f42012a = str;
+            this.f28321a = str;
             this.b = str2;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            d dVar = (d) g.this.b.get(this.f42012a);
+            d dVar = (d) g.this.b.get(this.f28321a);
             d dVar2 = dVar;
             if (dVar == null) {
-                dVar2 = new d(g.this.f42011a, this.f42012a);
+                dVar2 = new d(g.this.f28320a, this.f28321a);
                 g.this.a(dVar2);
             }
             dVar2.b(this.b);
@@ -35,7 +35,7 @@ public class g {
     }
 
     public g(com.zk_oaction.adengine.lk_sdk.c cVar) {
-        this.f42011a = cVar;
+        this.f28320a = cVar;
     }
 
     public d a(String str) {
@@ -65,7 +65,7 @@ public class g {
             d dVar = this.b.get(str);
             d dVar2 = dVar;
             if (dVar == null) {
-                dVar2 = new d(this.f42011a, str);
+                dVar2 = new d(this.f28320a, str);
                 a(dVar2);
             }
             dVar2.a(fVar);
@@ -75,9 +75,9 @@ public class g {
     public void a(String str, String str2) {
         synchronized (this) {
             a aVar = new a(str, str2);
-            if (this.f42011a != null) {
+            if (this.f28320a != null) {
                 Thread currentThread = Thread.currentThread();
-                com.zk_oaction.adengine.lk_sdk.c cVar = this.f42011a;
+                com.zk_oaction.adengine.lk_sdk.c cVar = this.f28320a;
                 if (currentThread != cVar.w) {
                     cVar.y.post(aVar);
                 }
@@ -90,21 +90,21 @@ public class g {
         String b;
         StringBuilder sb;
         synchronized (this) {
-            if ("screen_height".equals(str) && this.f42011a.g() != 0.0f) {
+            if ("screen_height".equals(str) && this.f28320a.g() != 0.0f) {
                 sb = new StringBuilder();
-                sb.append(this.f42011a.g());
+                sb.append(this.f28320a.g());
                 sb.append("");
-            } else if (!"screen_width".equals(str) || this.f42011a.h() == 0.0f) {
+            } else if (!"screen_width".equals(str) || this.f28320a.h() == 0.0f) {
                 d dVar = this.b.get(str);
                 d dVar2 = dVar;
                 if (dVar == null) {
-                    dVar2 = new d(this.f42011a, str);
+                    dVar2 = new d(this.f28320a, str);
                     a(dVar2);
                 }
                 b = dVar2.b();
             } else {
                 sb = new StringBuilder();
-                sb.append(this.f42011a.h());
+                sb.append(this.f28320a.h());
                 sb.append("");
             }
             b = sb.toString();

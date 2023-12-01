@@ -14,11 +14,11 @@ import javax.crypto.spec.PBEKeySpec;
 public abstract class PBKDF2 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23069a = "PBKDF2";
+    private static final String f9461a = "PBKDF2";
     private static final String b = "PBKDF2WithHmacSHA1";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23070c = "PBKDF2WithHmacSHA256";
+    private static final String f9462c = "PBKDF2WithHmacSHA256";
     private static final String d = "";
     private static final int e = 8;
     private static final int f = 16;
@@ -52,9 +52,9 @@ public abstract class PBKDF2 {
 
     private static byte[] a(char[] cArr, byte[] bArr, int i2, int i3, boolean z) {
         try {
-            return (z ? SecretKeyFactory.getInstance(f23070c) : SecretKeyFactory.getInstance(b)).generateSecret(new PBEKeySpec(cArr, bArr, i2, i3)).getEncoded();
+            return (z ? SecretKeyFactory.getInstance(f9462c) : SecretKeyFactory.getInstance(b)).generateSecret(new PBEKeySpec(cArr, bArr, i2, i3)).getEncoded();
         } catch (NoSuchAlgorithmException | InvalidKeySpecException e2) {
-            String str = f23069a;
+            String str = f9461a;
             b.b(str, "pbkdf exception : " + e2.getMessage());
             return new byte[0];
         }
@@ -77,16 +77,16 @@ public abstract class PBKDF2 {
     @Deprecated
     public static String pbkdf2Encrypt(String str, byte[] bArr, int i2, int i3) {
         if (TextUtils.isEmpty(str)) {
-            b.b(f23069a, "pwd is null.");
+            b.b(f9461a, "pwd is null.");
             return "";
         } else if (i2 < 1000) {
-            b.b(f23069a, "iterations times is not enough.");
+            b.b(f9461a, "iterations times is not enough.");
             return "";
         } else if (bArr == null || bArr.length < 8) {
-            b.b(f23069a, "salt parameter is null or length is not enough");
+            b.b(f9461a, "salt parameter is null or length is not enough");
             return "";
         } else if (i3 < 32) {
-            b.b(f23069a, "cipherLen length is not enough");
+            b.b(f9461a, "cipherLen length is not enough");
             return "";
         } else {
             byte[] pbkdf2 = pbkdf2(str.toCharArray(), bArr, i2, i3 * 8);
@@ -105,23 +105,23 @@ public abstract class PBKDF2 {
     public static String pbkdf2EncryptNew(String str, byte[] bArr, int i2, int i3) {
         byte[] pbkdf2SHA256;
         if (TextUtils.isEmpty(str)) {
-            b.b(f23069a, "pwd is null.");
+            b.b(f9461a, "pwd is null.");
             return "";
         } else if (i2 < 1000) {
-            b.b(f23069a, "iterations times is not enough.");
+            b.b(f9461a, "iterations times is not enough.");
             return "";
         } else if (bArr == null || bArr.length < 16) {
-            b.b(f23069a, "salt parameter is null or length is not enough");
+            b.b(f9461a, "salt parameter is null or length is not enough");
             return "";
         } else if (i3 < 32) {
-            b.b(f23069a, "cipherLen length is not enough");
+            b.b(f9461a, "cipherLen length is not enough");
             return "";
         } else {
             if (Build.VERSION.SDK_INT < 26) {
-                b.c(f23069a, "sha 1");
+                b.c(f9461a, "sha 1");
                 pbkdf2SHA256 = pbkdf2(str.toCharArray(), bArr, i2, i3 * 8);
             } else {
-                b.c(f23069a, "sha 256");
+                b.c(f9461a, "sha 256");
                 pbkdf2SHA256 = pbkdf2SHA256(str.toCharArray(), bArr, i2, i3 * 8);
             }
             return HexUtil.byteArray2HexStr(bArr) + HexUtil.byteArray2HexStr(pbkdf2SHA256);
@@ -130,7 +130,7 @@ public abstract class PBKDF2 {
 
     public static byte[] pbkdf2SHA256(char[] cArr, byte[] bArr, int i2, int i3) {
         if (Build.VERSION.SDK_INT < 26) {
-            b.b(f23069a, "system version not high than 26");
+            b.b(f9461a, "system version not high than 26");
             return new byte[0];
         }
         return a(cArr, bArr, i2, i3, true);

@@ -7,7 +7,7 @@ import java.io.File;
 public class DiskLruCacheFactory implements DiskCache.Factory {
 
     /* renamed from: a  reason: collision with root package name */
-    private final long f20824a;
+    private final long f7218a;
     private final CacheDirectoryGetter b;
 
     /* renamed from: com.bumptech.glide.load.engine.cache.DiskLruCacheFactory$2  reason: invalid class name */
@@ -15,12 +15,12 @@ public class DiskLruCacheFactory implements DiskCache.Factory {
     class AnonymousClass2 implements CacheDirectoryGetter {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f20826a;
+        final /* synthetic */ String f7220a;
         final /* synthetic */ String b;
 
         @Override // com.bumptech.glide.load.engine.cache.DiskLruCacheFactory.CacheDirectoryGetter
         public File a() {
-            return new File(this.f20826a, this.b);
+            return new File(this.f7220a, this.b);
         }
     }
 
@@ -30,7 +30,7 @@ public class DiskLruCacheFactory implements DiskCache.Factory {
     }
 
     public DiskLruCacheFactory(CacheDirectoryGetter cacheDirectoryGetter, long j) {
-        this.f20824a = j;
+        this.f7218a = j;
         this.b = cacheDirectoryGetter;
     }
 
@@ -38,7 +38,7 @@ public class DiskLruCacheFactory implements DiskCache.Factory {
         this(new CacheDirectoryGetter() { // from class: com.bumptech.glide.load.engine.cache.DiskLruCacheFactory.1
             @Override // com.bumptech.glide.load.engine.cache.DiskLruCacheFactory.CacheDirectoryGetter
             public File a() {
-                return new File(String.this);
+                return new File(str);
             }
         }, j);
     }
@@ -50,7 +50,7 @@ public class DiskLruCacheFactory implements DiskCache.Factory {
             return null;
         }
         if (a2.mkdirs() || (a2.exists() && a2.isDirectory())) {
-            return DiskLruCacheWrapper.a(a2, this.f20824a);
+            return DiskLruCacheWrapper.a(a2, this.f7218a);
         }
         return null;
     }

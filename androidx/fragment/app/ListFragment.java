@@ -1,5 +1,6 @@
 package androidx.fragment.app;
 
+import android.R;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,11 +21,11 @@ import com.bytedance.applog.tracker.Tracker;
 public class ListFragment extends Fragment {
 
     /* renamed from: a  reason: collision with root package name */
-    ListAdapter f3047a;
+    ListAdapter f2999a;
     ListView b;
 
     /* renamed from: c  reason: collision with root package name */
-    View f3048c;
+    View f3000c;
     TextView d;
     View e;
     View f;
@@ -59,13 +60,13 @@ public class ListFragment extends Fragment {
             TextView textView = (TextView) view.findViewById(16711681);
             this.d = textView;
             if (textView == null) {
-                this.f3048c = view.findViewById(16908292);
+                this.f3000c = view.findViewById(R.id.empty);
             } else {
                 textView.setVisibility(8);
             }
             this.e = view.findViewById(16711682);
             this.f = view.findViewById(16711683);
-            View findViewById = view.findViewById(16908298);
+            View findViewById = view.findViewById(R.id.list);
             if (!(findViewById instanceof ListView)) {
                 if (findViewById != null) {
                     throw new RuntimeException("Content has view with id attribute 'android.R.id.list' that is not a ListView class");
@@ -74,7 +75,7 @@ public class ListFragment extends Fragment {
             }
             ListView listView = (ListView) findViewById;
             this.b = listView;
-            View view2 = this.f3048c;
+            View view2 = this.f3000c;
             if (view2 != null) {
                 listView.setEmptyView(view2);
             } else {
@@ -87,9 +88,9 @@ public class ListFragment extends Fragment {
         }
         this.h = true;
         this.b.setOnItemClickListener(this.k);
-        ListAdapter listAdapter = this.f3047a;
+        ListAdapter listAdapter = this.f2999a;
         if (listAdapter != null) {
-            this.f3047a = null;
+            this.f2999a = null;
             setListAdapter(listAdapter);
         } else if (this.e != null) {
             a(false, false);
@@ -109,8 +110,8 @@ public class ListFragment extends Fragment {
         this.h = z;
         if (z) {
             if (z2) {
-                view.startAnimation(AnimationUtils.loadAnimation(getContext(), 17432577));
-                this.f.startAnimation(AnimationUtils.loadAnimation(getContext(), 17432576));
+                view.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
+                this.f.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
             } else {
                 view.clearAnimation();
                 this.f.clearAnimation();
@@ -120,8 +121,8 @@ public class ListFragment extends Fragment {
             return;
         }
         if (z2) {
-            view.startAnimation(AnimationUtils.loadAnimation(getContext(), 17432576));
-            this.f.startAnimation(AnimationUtils.loadAnimation(getContext(), 17432577));
+            view.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_in));
+            this.f.startAnimation(AnimationUtils.loadAnimation(getContext(), R.anim.fade_out));
         } else {
             view.clearAnimation();
             this.f.clearAnimation();
@@ -131,7 +132,7 @@ public class ListFragment extends Fragment {
     }
 
     public ListAdapter getListAdapter() {
-        return this.f3047a;
+        return this.f2999a;
     }
 
     public ListView getListView() {
@@ -158,7 +159,7 @@ public class ListFragment extends Fragment {
         linearLayout.setOrientation(1);
         linearLayout.setVisibility(8);
         linearLayout.setGravity(17);
-        linearLayout.addView(new ProgressBar(requireContext, null, 16842874), new FrameLayout.LayoutParams(-2, -2));
+        linearLayout.addView(new ProgressBar(requireContext, null, R.attr.progressBarStyleLarge), new FrameLayout.LayoutParams(-2, -2));
         frameLayout.addView(linearLayout, new FrameLayout.LayoutParams(-1, -1));
         FrameLayout frameLayout2 = new FrameLayout(requireContext);
         frameLayout2.setId(16711683);
@@ -167,7 +168,7 @@ public class ListFragment extends Fragment {
         textView.setGravity(17);
         frameLayout2.addView(textView, new FrameLayout.LayoutParams(-1, -1));
         ListView listView = new ListView(requireContext);
-        listView.setId(16908298);
+        listView.setId(R.id.list);
         listView.setDrawSelectorOnTop(false);
         frameLayout2.addView(listView, new FrameLayout.LayoutParams(-1, -1));
         frameLayout.addView(frameLayout2, new FrameLayout.LayoutParams(-1, -1));
@@ -182,7 +183,7 @@ public class ListFragment extends Fragment {
         this.h = false;
         this.f = null;
         this.e = null;
-        this.f3048c = null;
+        this.f3000c = null;
         this.d = null;
         super.onDestroyView();
     }
@@ -237,8 +238,8 @@ public class ListFragment extends Fragment {
 
     public void setListAdapter(ListAdapter listAdapter) {
         boolean z = false;
-        boolean z2 = this.f3047a != null;
-        this.f3047a = listAdapter;
+        boolean z2 = this.f2999a != null;
+        this.f2999a = listAdapter;
         ListView listView = this.b;
         if (listView != null) {
             listView.setAdapter(listAdapter);

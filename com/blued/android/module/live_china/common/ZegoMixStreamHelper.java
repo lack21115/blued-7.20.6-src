@@ -2,6 +2,7 @@ package com.blued.android.module.live_china.common;
 
 import android.text.TextUtils;
 import android.util.Log;
+import com.android.internal.content.NativeLibraryHelper;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.module.live_china.live_info.LiveRoomInfo;
 import com.blued.android.module.live_china.manager.LiveRoomManager;
@@ -23,18 +24,14 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/common/ZegoMixStreamHelper.class */
 public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSoundLevelInMixStreamCallback {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static ZegoMixStreamHelper f11733c;
+    private static ZegoMixStreamHelper c;
     private ZegoStreamMixer d = null;
     private ZegoMixStreamConfig e = null;
     private List<ZegoMixStreamInfo> f = new ArrayList();
     private MixStreamCallback g = null;
     private String h = "rtmp://pili-publish.blued.cn/blued/test-zego-deploy-1?key=e437838e9cc37958";
     private String i = "";
-
-    /* renamed from: a  reason: collision with root package name */
-    List<String> f11734a = new ArrayList();
+    List<String> a = new ArrayList();
     List<String> b = new ArrayList();
     private long j = 0;
     private long k = 0;
@@ -53,14 +50,14 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
     public static ZegoMixStreamHelper a() {
         synchronized (ZegoMixStreamHelper.class) {
             try {
-                if (f11733c == null) {
-                    f11733c = new ZegoMixStreamHelper();
+                if (c == null) {
+                    c = new ZegoMixStreamHelper();
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return f11733c;
+        return c;
     }
 
     public int a(ZegoMixStreamInfo zegoMixStreamInfo, String str) {
@@ -128,7 +125,7 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
         this.e.outputList = new ZegoMixStreamOutput[]{zegoMixStreamOutput};
         this.e.withSoundLevel = false;
         this.e.outputAudioConfig = 1;
-        this.i = "mixStream-" + LiveRoomManager.a().e() + "-" + LiveRoomManager.a().g();
+        this.i = "mixStream-" + LiveRoomManager.a().e() + NativeLibraryHelper.CLEAR_ABI_OVERRIDE + LiveRoomManager.a().g();
         StringBuilder sb2 = new StringBuilder();
         sb2.append("mix stream id:");
         sb2.append(this.i);
@@ -273,7 +270,7 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
     }
 
     public void a(List<String> list, List<String> list2) {
-        this.f11734a.clear();
+        this.a.clear();
         if (list != null) {
             Iterator<String> it = list.iterator();
             while (it.hasNext()) {
@@ -281,7 +278,7 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
                     it.remove();
                 }
             }
-            this.f11734a.addAll(list);
+            this.a.addAll(list);
         }
         this.b.clear();
         if (list2 != null) {
@@ -326,7 +323,7 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
         if (this.g != null) {
             this.g = null;
         }
-        f11733c = null;
+        c = null;
     }
 
     public void c(String str) {
@@ -410,13 +407,13 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
 
     public void f() {
         this.n.clear();
-        this.n.addAll(this.f11734a);
+        this.n.addAll(this.a);
         this.o.clear();
         this.o.addAll(this.b);
     }
 
     public void g() {
-        this.f11734a.clear();
+        this.a.clear();
         this.b.clear();
         this.n.clear();
         this.o.clear();
@@ -445,7 +442,6 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
         this.m = this.f.size();
     }
 
-    @Override // com.zego.zegoavkit2.mixstream.IZegoMixStreamExCallback
     public void onMixStreamExConfigUpdate(int i, String str, ZegoMixStreamResultEx zegoMixStreamResultEx) {
         MixStreamCallback mixStreamCallback = this.g;
         if (mixStreamCallback != null) {
@@ -453,7 +449,6 @@ public class ZegoMixStreamHelper implements IZegoMixStreamExCallback, IZegoSound
         }
     }
 
-    @Override // com.zego.zegoavkit2.mixstream.IZegoSoundLevelInMixStreamCallback
     public void onSoundLevelInMixStream(ArrayList<ZegoSoundLevelInMixStreamInfo> arrayList) {
         MixStreamCallback mixStreamCallback = this.g;
         if (mixStreamCallback != null) {

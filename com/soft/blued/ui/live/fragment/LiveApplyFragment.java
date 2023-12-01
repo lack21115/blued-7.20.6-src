@@ -26,6 +26,7 @@ import android.widget.TextView;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.LoadOptions;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -136,31 +137,30 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     private boolean C = true;
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f31115a = false;
+    boolean f17425a = false;
     private boolean S = true;
     private boolean T = true;
     private boolean U = true;
     private boolean V = true;
 
     /* renamed from: ar  reason: collision with root package name */
-    private final int f31116ar = 0;
+    private final int f17426ar = 0;
     private final int as = 1;
     private final int at = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public BluedUIHttpResponse f31117c = new BluedUIHttpResponse<BluedEntityA<BluedLiveListData>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.6
+    public BluedUIHttpResponse f17427c = new BluedUIHttpResponse<BluedEntityA<BluedLiveListData>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.6
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedLiveListData> bluedEntityA) {
             LiveApplyFragment.this.t.setBackgroundColor(-4144960);
             LiveApplyFragment.this.t.setOnClickListener(null);
-            LiveApplyFragment.this.u.setText(2131886109);
+            LiveApplyFragment.this.u.setText(R.string.Live_applyHost_applied);
             LiveApplyFragment.this.x.setVisibility(8);
             LiveApplyFragment.this.w.setVisibility(8);
             LiveApplyFragment.this.v.setVisibility(8);
-            LiveApplyFragment.this.r.setText(LiveApplyFragment.this.getResources().getString(2131886112));
-            LiveApplyFragment.this.s.setText(LiveApplyFragment.this.getResources().getString(2131886113));
+            LiveApplyFragment.this.r.setText(LiveApplyFragment.this.getResources().getString(R.string.Live_applyHost_applying));
+            LiveApplyFragment.this.s.setText(LiveApplyFragment.this.getResources().getString(R.string.Live_applyHost_applying1));
             LiveApplyFragment.this.aj.setVisibility(8);
             LiveApplyFragment.this.an.setVisibility(8);
             LiveApplyFragment.this.af.setVisibility(8);
@@ -168,7 +168,6 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
             LiveApplyFragment.this.ap.setEnabled(false);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str) {
             if (i == 4036703) {
                 LiveApplyFragment.this.d();
@@ -186,13 +185,11 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             super.onUIFinish();
             DialogUtils.b(LiveApplyFragment.this.ab);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             super.onUIStart();
             DialogUtils.a(LiveApplyFragment.this.ab);
@@ -202,12 +199,12 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f31122c;
+        private int f17432c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = LiveApplyFragment.this.ao.getSelectionStart();
-            this.f31122c = LiveApplyFragment.this.ao.getSelectionEnd();
+            this.f17432c = LiveApplyFragment.this.ao.getSelectionEnd();
             LiveApplyFragment.this.ao.removeTextChangedListener(LiveApplyFragment.this.ay);
             if (editable.length() > 0) {
                 LiveApplyFragment.this.U = true;
@@ -220,9 +217,9 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 LiveApplyFragment.this.al.setVisibility(8);
             }
             while (editable.length() > 10) {
-                editable.delete(this.b - 1, this.f31122c);
+                editable.delete(this.b - 1, this.f17432c);
                 this.b--;
-                this.f31122c--;
+                this.f17432c--;
             }
             LiveApplyFragment.this.ao.setSelection(this.b);
             LiveApplyFragment.this.i();
@@ -241,12 +238,12 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f31124c;
+        private int f17434c;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = LiveApplyFragment.this.ap.getSelectionStart();
-            this.f31124c = LiveApplyFragment.this.ap.getSelectionEnd();
+            this.f17434c = LiveApplyFragment.this.ap.getSelectionEnd();
             LiveApplyFragment.this.ap.removeTextChangedListener(LiveApplyFragment.this.az);
             if (editable.length() > 0) {
                 LiveApplyFragment.this.V = true;
@@ -259,9 +256,9 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 LiveApplyFragment.this.am.setVisibility(8);
             }
             while (editable.length() > 18) {
-                editable.delete(this.b - 1, this.f31124c);
+                editable.delete(this.b - 1, this.f17434c);
                 this.b--;
-                this.f31124c--;
+                this.f17434c--;
             }
             LiveApplyFragment.this.ap.setSelection(this.b);
             LiveApplyFragment.this.i();
@@ -292,7 +289,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         dialog.requestWindowFeature(1);
         this.b.setContentView(inflate, new ViewGroup.LayoutParams(-1, -1));
         Window window = this.b.getWindow();
-        window.setWindowAnimations(2131952889);
+        window.setWindowAnimations(R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.x = 0;
         attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight();
@@ -315,34 +312,33 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     public void a(final int i, String str) {
         LiveHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<LiveIDCardUploadResult>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.9
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<LiveIDCardUploadResult> bluedEntityA) {
                 if (bluedEntityA == null || bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                String str2 = bluedEntityA.data.get(0).pic;
+                String str2 = ((LiveIDCardUploadResult) bluedEntityA.data.get(0)).pic;
                 Log.v("pk", "上传图片成功：" + i);
                 int i2 = i;
                 if (i2 == 0) {
                     LiveApplyFragment.this.O = true;
                     LiveApplyFragment.this.J = str2;
                     LiveApplyFragment.this.y.setVisibility(0);
-                    ImageLoader.d(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.G).b(R.drawable.live_id_card_default).a(LiveApplyFragment.this.y);
+                    ImageLoader.d(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.G).b((int) R.drawable.live_id_card_default).a(LiveApplyFragment.this.y);
                     LiveApplyFragment.this.v.setVisibility(0);
                     InstantLog.b("verify_photo_uploaded", 0);
                 } else if (i2 == 1) {
                     LiveApplyFragment.this.P = true;
                     LiveApplyFragment.this.K = str2;
                     LiveApplyFragment.this.z.setVisibility(0);
-                    ImageLoader.d(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.H).b(R.drawable.live_id_card_default).a(LiveApplyFragment.this.z);
+                    ImageLoader.d(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.H).b((int) R.drawable.live_id_card_default).a(LiveApplyFragment.this.z);
                     LiveApplyFragment.this.w.setVisibility(0);
                     InstantLog.b("verify_photo_uploaded", 1);
                 } else if (i2 == 2) {
                     LiveApplyFragment.this.Q = true;
                     LiveApplyFragment.this.L = str2;
                     LiveApplyFragment.this.A.setVisibility(0);
-                    ImageLoader.d(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.I).b(R.drawable.live_id_card_default).a(LiveApplyFragment.this.A);
+                    ImageLoader.d(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.I).b((int) R.drawable.live_id_card_default).a(LiveApplyFragment.this.A);
                     LiveApplyFragment.this.x.setVisibility(0);
                 }
                 LiveApplyFragment.this.T = true;
@@ -352,43 +348,37 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     }
 
     private void a(final String str, final int i) {
-        LiveHttpUtils.a(this.f, new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.7
+        LiveHttpUtils.a(this.f, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<BluedAlbum>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.7
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedAlbum> bluedEntityA) {
                 if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                     return;
                 }
-                LiveApplyFragment.this.a(str, bluedEntityA.data.get(0), i);
+                LiveApplyFragment.this.a(str, (BluedAlbum) bluedEntityA.data.get(0), i);
                 Log.v("pk", "获取token成功：" + i);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 LiveApplyFragment.this.D = false;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 LiveApplyFragment.this.D = true;
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(String str, BluedAlbum bluedAlbum, final int i) {
         QiniuUploadUtils.a(str, bluedAlbum, new QiniuUploadTools.QiNiuListener() { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.8
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2) {
                 LiveApplyFragment.this.D = false;
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, double d) {
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public void a(String str2, String str3) {
                 int i2 = i;
                 if (i2 == 0) {
@@ -402,7 +392,6 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 LiveApplyFragment.this.a(i, str2);
             }
 
-            @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
             public boolean a() {
                 return LiveApplyFragment.this.E;
             }
@@ -411,7 +400,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
 
     private void b() {
         this.Y = DialogUtils.a(getActivity());
-        this.ab = DialogUtils.a(getActivity(), this.f.getResources().getString(2131889392), false);
+        this.ab = DialogUtils.a(getActivity(), this.f.getResources().getString(R.string.live_dealing_id_photos), false);
         this.y = (ImageView) this.e.findViewById(R.id.live_card1);
         this.z = (ImageView) this.e.findViewById(R.id.live_card2);
         this.A = (ImageView) this.e.findViewById(R.id.live_card3);
@@ -421,20 +410,20 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         this.v.setVisibility(8);
         this.w.setVisibility(8);
         this.x.setVisibility(8);
-        this.i = (TextView) this.e.findViewById(2131366920);
+        this.i = (TextView) this.e.findViewById(R.id.live_agree);
         this.j = (TextView) this.e.findViewById(R.id.live_agree1);
         this.k = (TextView) this.e.findViewById(R.id.live_agree2);
         this.l = (TextView) this.e.findViewById(R.id.live_agree3);
         this.m = (TextView) this.e.findViewById(R.id.live_agree4);
         TextView textView = this.j;
-        textView.setText("1." + getString(2131886180));
+        textView.setText("1." + getString(R.string.Live_applyHost_wormNotice1));
         TextView textView2 = this.k;
-        textView2.setText("2." + getString(2131886181));
+        textView2.setText("2." + getString(R.string.Live_applyHost_wormNotice2));
         TextView textView3 = this.l;
-        textView3.setText("3." + getString(2131886182));
+        textView3.setText("3." + getString(R.string.Live_applyHost_wormNotice3));
         TextView textView4 = this.m;
-        textView4.setText("4." + getString(2131886183));
-        this.t = (LinearLayout) this.e.findViewById(2131367669);
+        textView4.setText("4." + getString(R.string.Live_applyHost_wormNotice4));
+        this.t = (LinearLayout) this.e.findViewById(R.id.ll_bottom_button);
         this.u = (TextView) this.e.findViewById(R.id.tv_start_verify);
         this.r = (TextView) this.e.findViewById(R.id.tv_live_apply_title);
         this.s = (TextView) this.e.findViewById(R.id.tv_live_apply_title1);
@@ -462,7 +451,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         this.ap = (EditText) this.e.findViewById(R.id.live_document_number_edit_text);
         View findViewById = this.e.findViewById(R.id.live_apply_tips);
         this.av = findViewById;
-        this.aw = (TextView) findViewById.findViewById(2131370691);
+        this.aw = (TextView) findViewById.findViewById(R.id.tips_message);
         this.ax = (TextView) this.av.findViewById(R.id.tips_btn);
         this.aq = (ImageView) this.e.findViewById(R.id.live_clause);
         this.ag.setOnClickListener(this);
@@ -482,7 +471,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         this.av.setOnClickListener(this);
         this.Z = (ImageView) this.e.findViewById(2131364232);
         ImageLoader.a(getFragmentActive(), UserInfo.getInstance().getLoginUserInfo().getAvatar()).b(2131237310).c().a(this.Z);
-        ImageView imageView = (ImageView) this.e.findViewById(2131364720);
+        ImageView imageView = (ImageView) this.e.findViewById(R.id.img_verify);
         this.aa = imageView;
         UserInfoHelper.a(imageView, UserInfo.getInstance().getLoginUserInfo().getVBadge(), 3);
         if (this.aa.getVisibility() == 8 || this.aa.getVisibility() == 4) {
@@ -498,13 +487,11 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     private void b(final int i, String str) {
         DialogUtils.a(this.Y);
         LiveHttpUtils.c(new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.10
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(LiveApplyFragment.this.Y);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 try {
                     int i2 = i;
@@ -549,8 +536,8 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
         this.av.setVisibility(0);
-        this.aw.setText(this.f.getString(2131886134));
-        this.ax.setText(this.f.getString(2131886178));
+        this.aw.setText(this.f.getString(R.string.Live_applyHost_id_card_failed));
+        this.ax.setText(this.f.getString(R.string.Live_applyHost_upload));
         this.ax.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -564,8 +551,8 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     /* JADX INFO: Access modifiers changed from: private */
     public void e() {
         this.av.setVisibility(0);
-        this.aw.setText(this.f.getString(2131886135));
-        this.ax.setText(this.f.getString(2131886177));
+        this.aw.setText(this.f.getString(R.string.Live_applyHost_id_card_failed_detail));
+        this.ax.setText(this.f.getString(R.string.Live_applyHost_update));
         this.ax.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -577,10 +564,10 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     }
 
     private void f() {
-        String string = this.f.getString(2131886107);
-        String string2 = this.f.getString(2131886123);
-        String string3 = this.f.getString(2131886108);
-        String string4 = this.f.getString(2131889213);
+        String string = this.f.getString(R.string.Live_applyHost_agree);
+        String string2 = this.f.getString(R.string.Live_applyHost_bluedAgreement);
+        String string3 = this.f.getString(R.string.Live_applyHost_and);
+        String string4 = this.f.getString(R.string.live_anchor_protocol_title);
         String str = string + " " + string2 + " " + string3 + " " + string4;
         SpannableString spannableString = new SpannableString(str);
         this.i.setMovementMethod(LinkMovementMethod.getInstance());
@@ -612,20 +599,19 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
     }
 
     private void g() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.e.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(2131886176));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setCenterTextColor(2131102254);
+        CommonTopTitleNoTrans findViewById = this.e.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(R.string.Live_applyHost_title));
+        findViewById.setLeftClickListener(this);
+        findViewById.setCenterTextColor(2131102254);
     }
 
     private void h() {
         LiveRoomHttpUtils.e(new BluedUIHttpResponse<BluedEntityA<BluedLiveState>>(getFragmentActive()) { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.5
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedLiveState> bluedEntityA) {
-                BluedLiveState bluedLiveState = bluedEntityA.data.get(0);
+                BluedLiveState bluedLiveState = (BluedLiveState) bluedEntityA.data.get(0);
                 if (bluedLiveState.vbadge != 2 && bluedLiveState.vbadge != 4 && bluedLiveState.vbadge != 7 && bluedLiveState.vbadge != 5 && (bluedLiveState.vbadge != 0 || (bluedLiveState.verify != 0 && bluedLiveState.verify != 1 && bluedLiveState.verify != 2 && bluedLiveState.verify != -1))) {
                     LiveApplyFragment.this.M = false;
                     LiveApplyFragment.this.g.setVisibility(8);
@@ -667,7 +653,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 if (bluedLiveState.mobile == 1) {
                     LiveApplyFragment.this.N = true;
                     LiveApplyFragment.this.h.setVisibility(0);
-                    LiveApplyFragment.this.h.setText(LiveApplyFragment.this.getResources().getString(2131886121));
+                    LiveApplyFragment.this.h.setText(LiveApplyFragment.this.getResources().getString(R.string.Live_applyHost_beBindinged));
                     LiveApplyFragment.this.o.setVisibility(8);
                     LiveApplyFragment.this.ad.setVisibility(0);
                 } else {
@@ -694,7 +680,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                     LiveApplyFragment.this.v.setVisibility(8);
                 } else {
                     LiveApplyFragment.this.y.setVisibility(0);
-                    ImageLoader.a(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.J).b(R.drawable.live_id_card_default).a(LiveApplyFragment.this.y);
+                    ImageLoader.a(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.J).b((int) R.drawable.live_id_card_default).a(LiveApplyFragment.this.y);
                     LiveApplyFragment.this.O = true;
                     LiveApplyFragment.this.v.setVisibility(0);
                 }
@@ -702,7 +688,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                     LiveApplyFragment.this.w.setVisibility(8);
                 } else {
                     LiveApplyFragment.this.z.setVisibility(0);
-                    ImageLoader.a(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.K).b(R.drawable.live_id_card_default).a(LiveApplyFragment.this.z);
+                    ImageLoader.a(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.K).b((int) R.drawable.live_id_card_default).a(LiveApplyFragment.this.z);
                     LiveApplyFragment.this.P = true;
                     LiveApplyFragment.this.w.setVisibility(0);
                 }
@@ -710,32 +696,32 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                     LiveApplyFragment.this.x.setVisibility(8);
                 } else {
                     LiveApplyFragment.this.A.setVisibility(0);
-                    ImageLoader.a(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.L).b(R.drawable.live_id_card_default).a(LiveApplyFragment.this.A);
+                    ImageLoader.a(LiveApplyFragment.this.getFragmentActive(), LiveApplyFragment.this.L).b((int) R.drawable.live_id_card_default).a(LiveApplyFragment.this.A);
                     LiveApplyFragment.this.Q = true;
                     LiveApplyFragment.this.x.setVisibility(0);
                 }
                 if (bluedLiveState.has_audited == 0) {
                     LiveApplyFragment.this.t.setBackgroundColor(-4144960);
                     LiveApplyFragment.this.t.setOnClickListener(null);
-                    LiveApplyFragment.this.u.setText(2131886109);
-                    LiveApplyFragment.this.r.setText(LiveApplyFragment.this.getResources().getString(2131886112));
-                    LiveApplyFragment.this.s.setText(LiveApplyFragment.this.getResources().getString(2131886113));
+                    LiveApplyFragment.this.u.setText(R.string.Live_applyHost_applied);
+                    LiveApplyFragment.this.r.setText(LiveApplyFragment.this.getResources().getString(R.string.Live_applyHost_applying));
+                    LiveApplyFragment.this.s.setText(LiveApplyFragment.this.getResources().getString(R.string.Live_applyHost_applying1));
                     LiveApplyFragment.this.x.setVisibility(8);
                     LiveApplyFragment.this.w.setVisibility(8);
                     LiveApplyFragment.this.v.setVisibility(8);
                 } else if (bluedLiveState.has_audited == 1) {
                     LiveApplyFragment.this.t.setBackgroundColor(-4144960);
                     LiveApplyFragment.this.t.setOnClickListener(null);
-                    LiveApplyFragment.this.u.setText(2131886111);
+                    LiveApplyFragment.this.u.setText(R.string.Live_applyHost_applyPassed);
                     LiveApplyFragment.this.x.setVisibility(8);
                     LiveApplyFragment.this.w.setVisibility(8);
                     LiveApplyFragment.this.v.setVisibility(8);
                 } else if (bluedLiveState.has_audited == 2) {
                     LiveApplyFragment.this.t.setBackgroundColor(-4144960);
                     LiveApplyFragment.this.t.setOnClickListener(null);
-                    LiveApplyFragment.this.u.setText(2131886110);
-                    LiveApplyFragment.this.r.setText(2131886145);
-                    LiveApplyFragment.this.s.setText(2131886146);
+                    LiveApplyFragment.this.u.setText(R.string.Live_applyHost_applyNotPassed);
+                    LiveApplyFragment.this.r.setText(R.string.Live_applyHost_reApply);
+                    LiveApplyFragment.this.s.setText(R.string.Live_applyHost_reApply1);
                     if (TextUtils.isEmpty(LiveApplyFragment.this.J)) {
                         LiveApplyFragment.this.v.setVisibility(8);
                     } else {
@@ -806,15 +792,16 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         Log.v("pk", "isCardVerifyOk = " + this.T);
         if (this.M && this.N && this.O && this.P && this.R && this.Q && this.S && this.U && this.V && this.T) {
             this.t.setBackgroundColor(-16738064);
-            this.u.setText(getResources().getString(2131886126));
+            this.u.setText(getResources().getString(R.string.Live_applyHost_confirm));
             this.t.setOnClickListener(this);
             return;
         }
         this.t.setBackgroundColor(-4144960);
-        this.u.setText(getResources().getString(2131886126));
+        this.u.setText(getResources().getString(R.string.Live_applyHost_confirm));
         this.t.setOnClickListener(null);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void j() {
         this.F = CameraUtils.a(this);
     }
@@ -825,7 +812,6 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         b(this.au, i != 0 ? i != 1 ? i != 2 ? "" : this.L : this.K : this.J);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i == 0) {
@@ -860,7 +846,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 b(1, this.K);
                 return;
             case R.id.cover_del_btn3 /* 2131363094 */:
-                AppMethods.a((CharSequence) "删除第三张照片");
+                AppMethods.a("删除第三张照片");
                 b(2, this.L);
                 return;
             case 2131363120:
@@ -903,9 +889,9 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 }
                 i();
                 return;
-            case 2131367669:
+            case R.id.ll_bottom_button /* 2131367669 */:
                 EventTrackLive.a(LiveProtos.Event.LIVE_APPLY_PAGE_CONFIRM_BTN_CLICK);
-                LiveRoomHttpUtils.a(this.f31117c, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive(), this.ak.getVisibility() == 0 ? 1 : 0, this.ao.getText().toString(), this.ap.getText().toString(), 0);
+                LiveRoomHttpUtils.a(this.f17427c, UserInfo.getInstance().getLoginUserInfo().getUid(), getFragmentActive(), this.ak.getVisibility() == 0 ? 1 : 0, this.ao.getText().toString(), this.ap.getText().toString(), 0);
                 return;
             case R.id.openCamera /* 2131368772 */:
                 this.W = false;
@@ -919,12 +905,10 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 this.W = false;
                 this.b.cancel();
                 PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.live.fragment.LiveApplyFragment.11
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void U_() {
                         PhotoSelectFragment.a(LiveApplyFragment.this, 9, 22);
                     }
 
-                    @Override // com.blued.android.framework.permission.PermissionCallbacks
                     public void a(String[] strArr) {
                     }
                 });
@@ -934,7 +918,7 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
                 this.W = true;
                 String b = LoginRegisterTools.b();
                 if (TextUtils.isEmpty(b)) {
-                    TerminalActivity.d(getActivity(), LinkMobileFragment.class, null);
+                    TerminalActivity.d(getActivity(), LinkMobileFragment.class, (Bundle) null);
                     return;
                 }
                 String[] g = LoginRegisterTools.g(b);
@@ -968,12 +952,10 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.f = getActivity();
         View view = this.e;
@@ -993,19 +975,16 @@ public class LiveApplyFragment extends BaseFragment implements View.OnClickListe
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         LiveApplyDelPhotoObserver.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         this.W = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.W || this.X) {

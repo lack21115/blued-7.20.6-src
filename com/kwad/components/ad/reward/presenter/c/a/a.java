@@ -82,7 +82,7 @@ public final class a extends com.kwad.components.ad.reward.presenter.a implement
     public final void onClick(View view) {
         Tracker.onClick(view);
         if (view == this.vk || view == this.vl) {
-            com.kwad.components.core.d.b.a.a(new a.C0519a(view.getContext()).I(this.qt.mAdTemplate).b(this.qt.mApkDownloadHelper).ao(false).ap(1).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.c.a.a.2
+            com.kwad.components.core.d.b.a.a(new a.C0349a(view.getContext()).I(this.qt.mAdTemplate).b(this.qt.mApkDownloadHelper).ao(false).ap(1).a(new a.b() { // from class: com.kwad.components.ad.reward.presenter.c.a.a.2
                 @Override // com.kwad.components.core.d.b.a.b
                 public final void onAdClicked() {
                     a.this.iy();

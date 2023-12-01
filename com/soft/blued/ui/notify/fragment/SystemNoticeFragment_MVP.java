@@ -57,7 +57,6 @@ public final class SystemNoticeFragment_MVP implements MvpDispatcher {
      */
     /* JADX WARN: Removed duplicated region for block: B:22:0x005d  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0076  */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

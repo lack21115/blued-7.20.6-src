@@ -14,7 +14,7 @@ public class AssistUtils {
     public static final String BRAND_XIAOMI = "xiaomi";
 
     /* renamed from: a  reason: collision with root package name */
-    static String f23193a = "";
+    static String f9585a = "";
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0023, code lost:
         if (com.igexin.push.f.b.a(r0, com.igexin.assist.util.AssistUtils.BRAND_HON) != false) goto L10;
@@ -25,10 +25,10 @@ public class AssistUtils {
     */
     public static java.lang.String getDeviceBrand() {
         /*
-            java.lang.String r0 = com.igexin.assist.util.AssistUtils.f23193a
+            java.lang.String r0 = com.igexin.assist.util.AssistUtils.f9585a
             boolean r0 = android.text.TextUtils.isEmpty(r0)
             if (r0 != 0) goto Ld
-            java.lang.String r0 = com.igexin.assist.util.AssistUtils.f23193a
+            java.lang.String r0 = com.igexin.assist.util.AssistUtils.f9585a
             return r0
         Ld:
             boolean r0 = com.igexin.push.config.d.U
@@ -55,7 +55,7 @@ public class AssistUtils {
             if (r0 == 0) goto L43
         L3c:
             r0 = r3
-            com.igexin.assist.util.AssistUtils.f23193a = r0
+            com.igexin.assist.util.AssistUtils.f9585a = r0
             goto Lb2
         L43:
             android.content.Context r0 = com.igexin.push.core.ServiceManager.b
@@ -113,9 +113,9 @@ public class AssistUtils {
             r3 = r0
         Lae:
             r0 = r3
-            com.igexin.assist.util.AssistUtils.f23193a = r0
+            com.igexin.assist.util.AssistUtils.f9585a = r0
         Lb2:
-            java.lang.String r0 = com.igexin.assist.util.AssistUtils.f23193a
+            java.lang.String r0 = com.igexin.assist.util.AssistUtils.f9585a
             java.lang.String r0 = r0.toLowerCase()
             return r0
         */

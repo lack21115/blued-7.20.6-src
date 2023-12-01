@@ -14,9 +14,7 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieComposition.class */
 public class LottieComposition {
-
-    /* renamed from: c  reason: collision with root package name */
-    private Map<String, List<Layer>> f4215c;
+    private Map<String, List<Layer>> c;
     private Map<String, LottieImageAsset> d;
     private Map<String, Font> e;
     private List<Marker> f;
@@ -28,9 +26,7 @@ public class LottieComposition {
     private float l;
     private float m;
     private boolean n;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final PerformanceTracker f4214a = new PerformanceTracker();
+    private final PerformanceTracker a = new PerformanceTracker();
     private final HashSet<String> b = new HashSet<>();
     private int o = 0;
 
@@ -40,9 +36,7 @@ public class LottieComposition {
 
         /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/LottieComposition$Factory$ListenerAdapter.class */
         static final class ListenerAdapter implements Cancellable, LottieListener<LottieComposition> {
-
-            /* renamed from: a  reason: collision with root package name */
-            private final OnCompositionLoadedListener f4216a;
+            private final OnCompositionLoadedListener a;
             private boolean b;
 
             @Override // com.airbnb.lottie.LottieListener
@@ -50,7 +44,7 @@ public class LottieComposition {
                 if (this.b) {
                     return;
                 }
-                this.f4216a.a(lottieComposition);
+                this.a.a(lottieComposition);
             }
         }
 
@@ -59,7 +53,7 @@ public class LottieComposition {
     }
 
     public Layer a(long j) {
-        return this.h.get(j);
+        return (Layer) this.h.get(j);
     }
 
     public void a(int i) {
@@ -73,7 +67,7 @@ public class LottieComposition {
         this.m = f3;
         this.i = list;
         this.h = longSparseArray;
-        this.f4215c = map;
+        this.c = map;
         this.d = map2;
         this.g = sparseArrayCompat;
         this.e = map3;
@@ -98,15 +92,15 @@ public class LottieComposition {
     }
 
     public List<Layer> b(String str) {
-        return this.f4215c.get(str);
+        return this.c.get(str);
     }
 
     public void b(boolean z) {
-        this.f4214a.a(z);
+        this.a.a(z);
     }
 
     public PerformanceTracker c() {
-        return this.f4214a;
+        return this.a;
     }
 
     public Marker c(String str) {

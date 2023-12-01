@@ -9,11 +9,11 @@ public final class bq extends m {
     static Map<String, String> z;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f35306a = 0;
+    public int f21615a = 0;
     public String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35307c = "";
+    public String f21616c = "";
     public String d = "";
     public String e = "";
     public String f = "";
@@ -46,9 +46,9 @@ public final class bq extends m {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(k kVar) {
-        this.f35306a = kVar.a(this.f35306a, 0, true);
+        this.f21615a = kVar.a(this.f21615a, 0, true);
         this.b = kVar.b(1, true);
-        this.f35307c = kVar.b(2, true);
+        this.f21616c = kVar.b(2, true);
         this.d = kVar.b(3, true);
         this.e = kVar.b(4, false);
         this.f = kVar.b(5, true);
@@ -74,9 +74,9 @@ public final class bq extends m {
 
     @Override // com.tencent.bugly.idasc.proguard.m
     public final void a(l lVar) {
-        lVar.a(this.f35306a, 0);
+        lVar.a(this.f21615a, 0);
         lVar.a(this.b, 1);
-        lVar.a(this.f35307c, 2);
+        lVar.a(this.f21616c, 2);
         lVar.a(this.d, 3);
         String str = this.e;
         if (str != null) {

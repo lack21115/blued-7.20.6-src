@@ -9,18 +9,18 @@ public final class p {
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private InputStream f36798c;
+    private InputStream f23107c;
     private int d;
     private int e;
     private final OutputStream f;
     private int h;
 
     /* renamed from: a  reason: collision with root package name */
-    protected a f36797a = new a();
+    protected a f23106a = new a();
     private int[] g = new int[8];
 
     public p(InputStream inputStream, OutputStream outputStream) throws IOException {
-        this.f36798c = inputStream;
+        this.f23107c = inputStream;
         this.f = outputStream;
         this.d = inputStream.read();
         this.e = inputStream.read();
@@ -73,7 +73,7 @@ public final class p {
 
     private void f() throws IOException {
         this.d = this.e;
-        this.e = this.f36798c.read();
+        this.e = this.f23107c.read();
         this.b = 0;
     }
 

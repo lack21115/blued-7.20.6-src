@@ -19,9 +19,7 @@ import javax.crypto.spec.SecretKeySpec;
 /* renamed from: com.amap.api.col.3sl.ht  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/ht.class */
 public final class ht {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final char[] f5109a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
+    private static final char[] a = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'};
     private static final byte[] b = new byte[128];
 
     static {
@@ -211,25 +209,25 @@ public final class ht {
             int i3 = i2 + 1;
             int i4 = bArr[i2] & 255;
             if (i3 == length) {
-                stringBuffer.append(f5109a[i4 >>> 2]);
-                stringBuffer.append(f5109a[(i4 & 3) << 4]);
+                stringBuffer.append(a[i4 >>> 2]);
+                stringBuffer.append(a[(i4 & 3) << 4]);
                 stringBuffer.append("==");
                 break;
             }
             int i5 = i3 + 1;
             int i6 = bArr[i3] & 255;
             if (i5 == length) {
-                stringBuffer.append(f5109a[i4 >>> 2]);
-                stringBuffer.append(f5109a[((i4 & 3) << 4) | ((i6 & 240) >>> 4)]);
-                stringBuffer.append(f5109a[(i6 & 15) << 2]);
+                stringBuffer.append(a[i4 >>> 2]);
+                stringBuffer.append(a[((i4 & 3) << 4) | ((i6 & 240) >>> 4)]);
+                stringBuffer.append(a[(i6 & 15) << 2]);
                 stringBuffer.append("=");
                 break;
             }
             int i7 = bArr[i5] & 255;
-            stringBuffer.append(f5109a[i4 >>> 2]);
-            stringBuffer.append(f5109a[((i4 & 3) << 4) | ((i6 & 240) >>> 4)]);
-            stringBuffer.append(f5109a[((i6 & 15) << 2) | ((i7 & 192) >>> 6)]);
-            stringBuffer.append(f5109a[i7 & 63]);
+            stringBuffer.append(a[i4 >>> 2]);
+            stringBuffer.append(a[((i4 & 3) << 4) | ((i6 & 240) >>> 4)]);
+            stringBuffer.append(a[((i6 & 15) << 2) | ((i7 & 192) >>> 6)]);
+            stringBuffer.append(a[i7 & 63]);
             i = i5 + 1;
         }
         return stringBuffer.toString();

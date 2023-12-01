@@ -7,19 +7,19 @@ import com.igexin.push.extension.mod.BaseActionBean;
 public final class q extends BaseActionBean {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23456a;
+    public String f9848a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f23457c;
+    public boolean f9849c;
     public String d;
 
     private void a(String str) {
-        this.f23456a = str;
+        this.f9848a = str;
     }
 
     private String b() {
-        return this.f23456a;
+        return this.f9848a;
     }
 
     private void b(String str) {
@@ -35,11 +35,11 @@ public final class q extends BaseActionBean {
     }
 
     private boolean e() {
-        return this.f23457c;
+        return this.f9849c;
     }
 
     private void f() {
-        this.f23457c = true;
+        this.f9849c = true;
     }
 
     private String g() {
@@ -51,7 +51,7 @@ public final class q extends BaseActionBean {
         String str;
         StringBuilder sb2;
         String str2;
-        String str3 = this.f23456a;
+        String str3 = this.f9848a;
         String str4 = str3;
         if (this.b) {
             if (str3.indexOf("?") > 0) {
@@ -70,8 +70,8 @@ public final class q extends BaseActionBean {
             str4 = sb2.toString();
         }
         String str5 = str4;
-        if (this.f23457c) {
-            com.igexin.push.core.d unused = d.a.f23474a;
+        if (this.f9849c) {
+            com.igexin.push.core.d unused = d.a.f9866a;
             String d = com.igexin.push.core.d.d();
             str5 = str4;
             if (d != null) {

@@ -8,22 +8,22 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile com.opos.cmn.an.d.d.a f26485a;
+    private static volatile com.opos.cmn.an.d.d.a f12797a;
     private static final byte[] b = new byte[0];
 
     /* renamed from: c  reason: collision with root package name */
-    private static Map<String, Boolean> f26486c = new ConcurrentHashMap();
+    private static Map<String, Boolean> f12798c = new ConcurrentHashMap();
 
     private static com.opos.cmn.an.d.d.a a(Context context) {
         com.opos.cmn.an.d.d.a aVar;
-        com.opos.cmn.an.d.d.a aVar2 = f26485a;
+        com.opos.cmn.an.d.d.a aVar2 = f12797a;
         if (aVar2 == null) {
             synchronized (b) {
-                com.opos.cmn.an.d.d.a aVar3 = f26485a;
+                com.opos.cmn.an.d.d.a aVar3 = f12797a;
                 aVar = aVar3;
                 if (aVar3 == null) {
                     aVar = new com.opos.cmn.an.d.d.a(context, "mobad.record.show.prefs", 0);
-                    f26485a = aVar;
+                    f12797a = aVar;
                 }
             }
             return aVar;
@@ -45,7 +45,7 @@ public final class d {
                 sb.append(",record=");
                 sb.append(z);
                 com.opos.cmn.an.f.a.b("Utils", sb.toString());
-                f26486c.put(str, Boolean.valueOf(z));
+                f12798c.put(str, Boolean.valueOf(z));
                 b(context, str, z);
             }
         } catch (Exception e) {
@@ -60,13 +60,13 @@ public final class d {
             z = false;
             try {
                 if (!com.opos.cmn.an.c.a.a(str)) {
-                    if (f26486c.containsKey(str)) {
+                    if (f12798c.containsKey(str)) {
                         z2 = false;
-                        z = f26486c.get(str).booleanValue();
+                        z = f12798c.get(str).booleanValue();
                     } else {
                         z = b(context, str);
                         z2 = z;
-                        f26486c.put(str, Boolean.valueOf(z));
+                        f12798c.put(str, Boolean.valueOf(z));
                     }
                 }
             } catch (Exception e) {

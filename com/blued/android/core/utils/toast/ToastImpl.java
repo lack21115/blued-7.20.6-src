@@ -16,13 +16,9 @@ import com.blued.android.core.utils.toast.ToastImpl;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/toast/ToastImpl.class */
 public final class ToastImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Handler f9757a = new Handler(Looper.getMainLooper());
+    private static final Handler a = new Handler(Looper.getMainLooper());
     private final CustomToast b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private WindowLifecycle f9758c;
+    private WindowLifecycle c;
     private final String d;
     private boolean e;
     private boolean f;
@@ -43,8 +39,8 @@ public final class ToastImpl {
 
         @Override // java.lang.Runnable
         public void run() {
-            WindowManager a2 = ToastImpl.this.f9758c.a();
-            if (a2 == null) {
+            WindowManager a = ToastImpl.this.c.a();
+            if (a == null) {
                 return;
             }
             WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
@@ -67,14 +63,14 @@ public final class ToastImpl {
                 }
             }
             try {
-                a2.addView(ToastImpl.this.b.a(), layoutParams);
-                ToastImpl.f9757a.postDelayed(new Runnable() { // from class: com.blued.android.core.utils.toast.-$$Lambda$ToastImpl$1$wuYqxjhtn6fgPDJpRnEykKenJUY
+                a.addView(ToastImpl.this.b.a(), layoutParams);
+                ToastImpl.a.postDelayed(new Runnable() { // from class: com.blued.android.core.utils.toast.-$$Lambda$ToastImpl$1$wuYqxjhtn6fgPDJpRnEykKenJUY
                     @Override // java.lang.Runnable
                     public final void run() {
                         ToastImpl.AnonymousClass1.this.a();
                     }
                 }, ToastImpl.this.b.b() == 1 ? ToastImpl.this.b.j() : ToastImpl.this.b.i());
-                ToastImpl.this.f9758c.a(ToastImpl.this);
+                ToastImpl.this.c.a(ToastImpl.this);
                 ToastImpl.this.a(true);
                 ToastImpl.this.a(ToastImpl.this.b.a());
             } catch (WindowManager.BadTokenException | IllegalStateException e) {
@@ -87,14 +83,14 @@ public final class ToastImpl {
     public ToastImpl(Activity activity, CustomToast customToast) {
         this((Context) activity, customToast);
         this.f = false;
-        this.f9758c = new WindowLifecycle(activity);
+        this.c = new WindowLifecycle(activity);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ToastImpl(Application application, CustomToast customToast) {
         this((Context) application, customToast);
         this.f = true;
-        this.f9758c = new WindowLifecycle(application);
+        this.c = new WindowLifecycle(application);
     }
 
     private ToastImpl(Context context, CustomToast customToast) {
@@ -105,7 +101,7 @@ public final class ToastImpl {
                 WindowManager a2;
                 try {
                     try {
-                        a2 = ToastImpl.this.f9758c.a();
+                        a2 = ToastImpl.this.c.a();
                     } catch (IllegalArgumentException e) {
                         e.printStackTrace();
                     }
@@ -114,7 +110,7 @@ public final class ToastImpl {
                     }
                     a2.removeViewImmediate(ToastImpl.this.b.a());
                 } finally {
-                    ToastImpl.this.f9758c.b();
+                    ToastImpl.this.c.b();
                     ToastImpl.this.a(false);
                 }
             }
@@ -126,7 +122,7 @@ public final class ToastImpl {
     /* JADX INFO: Access modifiers changed from: private */
     public void a(View view) {
         Context context = view.getContext();
-        AccessibilityManager accessibilityManager = (AccessibilityManager) context.getSystemService(Context.ACCESSIBILITY_SERVICE);
+        AccessibilityManager accessibilityManager = (AccessibilityManager) context.getSystemService("accessibility");
         if (accessibilityManager.isEnabled()) {
             AccessibilityEvent obtain = AccessibilityEvent.obtain(64);
             obtain.setClassName(Toast.class.getName());
@@ -157,20 +153,20 @@ public final class ToastImpl {
             this.g.run();
             return;
         }
-        f9757a.removeCallbacks(this.g);
-        f9757a.post(this.g);
+        a.removeCallbacks(this.g);
+        a.post(this.g);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c() {
         if (a()) {
-            f9757a.removeCallbacks(this.g);
+            a.removeCallbacks(this.g);
             if (e()) {
                 this.h.run();
                 return;
             }
-            f9757a.removeCallbacks(this.h);
-            f9757a.post(this.h);
+            a.removeCallbacks(this.h);
+            a.post(this.h);
         }
     }
 }

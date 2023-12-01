@@ -13,24 +13,24 @@ import java.util.HashMap;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile d f9409a;
+    private static volatile d f6569a;
 
     private d() {
     }
 
     public static d a() {
-        if (f9409a == null) {
+        if (f6569a == null) {
             synchronized (d.class) {
                 try {
-                    if (f9409a == null) {
-                        f9409a = new d();
+                    if (f6569a == null) {
+                        f6569a = new d();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9409a;
+        return f6569a;
     }
 
     public DexClassLoader a(String str, String str2, String str3, ClassLoader classLoader) {
@@ -50,7 +50,7 @@ public class d {
 
     public void a(double d, am.b bVar) {
         cn a2 = cn.a();
-        String c2 = a2.c(w.f9443a);
+        String c2 = a2.c(w.f6603a);
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("v", "" + d);
         hashMap.put(com.umeng.analytics.pro.bh.x, "android");

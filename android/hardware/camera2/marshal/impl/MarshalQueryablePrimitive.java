@@ -112,7 +112,7 @@ public final class MarshalQueryablePrimitive<T> implements MarshalQueryable<T> {
     @Override // android.hardware.camera2.marshal.MarshalQueryable
     public boolean isTypeMappingSupported(TypeReference<T> typeReference, int i) {
         if (typeReference.getType() instanceof Class) {
-            Class<Double> cls = (Class) typeReference.getType();
+            Class cls = (Class) typeReference.getType();
             return (cls == Byte.TYPE || cls == Byte.class) ? i == 0 : (cls == Integer.TYPE || cls == Integer.class) ? i == 1 : (cls == Float.TYPE || cls == Float.class) ? i == 2 : (cls == Long.TYPE || cls == Long.class) ? i == 3 : (cls == Double.TYPE || cls == Double.class) ? i == 4 : cls == Rational.class && i == 5;
         }
         return false;

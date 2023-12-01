@@ -27,10 +27,10 @@ public final class a implements Camera.ErrorCallback, ad {
     private float l;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f36852a = true;
+    private boolean f23161a = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private Rotation f36853c = Rotation.NORMAL;
+    private Rotation f23162c = Rotation.NORMAL;
     private boolean h = true;
     private int i = 0;
     private boolean k = false;
@@ -118,7 +118,7 @@ public final class a implements Camera.ErrorCallback, ad {
 
     private Rect a(float f, float f2, float f3) {
         int i = (int) (f3 * 200.0f);
-        int i2 = (int) (((f / this.e.f36340a) * 2000.0f) - 1000.0f);
+        int i2 = (int) (((f / this.e.f22649a) * 2000.0f) - 1000.0f);
         int i3 = (int) (((f2 / this.e.b) * 2000.0f) - 1000.0f);
         int i4 = i / 2;
         int a2 = h.a(i2 - i4, -1000, 1000);
@@ -236,7 +236,7 @@ public final class a implements Camera.ErrorCallback, ad {
     @Override // com.tencent.liteav.videoproducer.capture.ad
     public final void a(int i, int i2) {
         if (this.h) {
-            if (i < 0 || i >= this.e.f36340a || i2 < 0 || i2 >= this.e.b) {
+            if (i < 0 || i >= this.e.f22649a || i2 < 0 || i2 >= this.e.b) {
                 LiteavLog.w("CameraController", "Start auto focus at (%d, %d) invalid ", Integer.valueOf(i), Integer.valueOf(i2));
                 return;
             }
@@ -302,9 +302,9 @@ public final class a implements Camera.ErrorCallback, ad {
             if (i3 == null) {
                 return true;
             }
-            n a2 = a(i3, this.f36853c, i, i2);
+            n a2 = a(i3, this.f23162c, i, i2);
             if (a2 != null) {
-                if (a2.f36340a * a2.b > this.e.b * this.e.f36340a) {
+                if (a2.f22649a * a2.b > this.e.b * this.e.f22649a) {
                     z3 = false;
                 }
                 z2 = (!z || Math.abs(a2.c() - this.e.c()) <= 0.001d) ? z3 : false;
@@ -334,7 +334,7 @@ public final class a implements Camera.ErrorCallback, ad {
 
     @Override // com.tencent.liteav.videoproducer.capture.ad
     public final Rotation b() {
-        return this.f36853c;
+        return this.f23162c;
     }
 
     @Override // com.tencent.liteav.videoproducer.capture.ad

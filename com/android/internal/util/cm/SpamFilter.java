@@ -4,12 +4,13 @@ import android.app.Notification;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import com.anythink.core.common.l;
 
 /* loaded from: source-4181928-dex2jar.jar:com/android/internal/util/cm/SpamFilter.class */
 public class SpamFilter {
     public static final String MESSAGE_PATH = "message";
     public static final String AUTHORITY = "com.cyanogenmod.spam";
-    public static final Uri NOTIFICATION_URI = new Uri.Builder().scheme("content").authority(AUTHORITY).appendEncodedPath("message").build();
+    public static final Uri NOTIFICATION_URI = new Uri.Builder().scheme(l.y).authority(AUTHORITY).appendEncodedPath("message").build();
 
     /* loaded from: source-4181928-dex2jar.jar:com/android/internal/util/cm/SpamFilter$SpamContract.class */
     public static final class SpamContract {

@@ -98,7 +98,6 @@ public class EditInputNumView extends AppCompatTextView implements BluedSkinSupp
         }
     }
 
-    @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.mBackgroundTintHelper;
         if (skinCompatBackgroundHelper != null) {

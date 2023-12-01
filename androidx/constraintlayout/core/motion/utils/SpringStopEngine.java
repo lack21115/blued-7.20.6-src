@@ -4,7 +4,7 @@ package androidx.constraintlayout.core.motion.utils;
 public class SpringStopEngine implements StopEngine {
 
     /* renamed from: c  reason: collision with root package name */
-    private double f2060c;
+    private double f2012c;
     private double d;
     private double e;
     private float f;
@@ -14,13 +14,13 @@ public class SpringStopEngine implements StopEngine {
     private float j;
 
     /* renamed from: a  reason: collision with root package name */
-    double f2059a = 0.5d;
+    double f2011a = 0.5d;
     private boolean b = false;
     private int k = 0;
 
     private void a(double d) {
-        double d2 = this.f2060c;
-        double d3 = this.f2059a;
+        double d2 = this.f2012c;
+        double d3 = this.f2011a;
         int sqrt = (int) ((9.0d / ((Math.sqrt(d2 / this.i) * d) * 4.0d)) + 1.0d);
         double d4 = d / sqrt;
         for (int i = 0; i < sqrt; i++) {
@@ -60,7 +60,7 @@ public class SpringStopEngine implements StopEngine {
     }
 
     public float getAcceleration() {
-        return ((float) (((-this.f2060c) * (this.g - this.d)) - (this.f2059a * this.h))) / this.i;
+        return ((float) (((-this.f2012c) * (this.g - this.d)) - (this.f2011a * this.h))) / this.i;
     }
 
     @Override // androidx.constraintlayout.core.motion.utils.StopEngine
@@ -83,18 +83,18 @@ public class SpringStopEngine implements StopEngine {
     @Override // androidx.constraintlayout.core.motion.utils.StopEngine
     public boolean isStopped() {
         double d = this.g - this.d;
-        double d2 = this.f2060c;
+        double d2 = this.f2012c;
         double d3 = this.h;
         return Math.sqrt((((d3 * d3) * ((double) this.i)) + ((d2 * d) * d)) / d2) <= ((double) this.j);
     }
 
     public void springConfig(float f, float f2, float f3, float f4, float f5, float f6, float f7, int i) {
         this.d = f2;
-        this.f2059a = f6;
+        this.f2011a = f6;
         this.b = false;
         this.g = f;
         this.e = f3;
-        this.f2060c = f5;
+        this.f2012c = f5;
         this.i = f4;
         this.j = f7;
         this.k = i;

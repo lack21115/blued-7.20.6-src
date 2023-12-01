@@ -3,7 +3,7 @@ package com.soft.blued.ui.user.fragment;
 import android.content.Context;
 import android.net.wifi.WifiEnterpriseConfig;
 import android.os.Bundle;
-import com.blued.android.core.ui.ActivityFragmentActive;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
 import com.blued.android.module.common.log.oldtrack.LogData;
@@ -35,27 +35,25 @@ public final class RecommendUserMoreFragment extends BaseListFragment<RecommendU
             this();
         }
 
-        public final void a(Context context, String uid, LogData logData) {
+        public final void a(Context context, String str, LogData logData) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(uid, "uid");
+            Intrinsics.e(str, "uid");
             Intrinsics.e(logData, "logData");
             Bundle bundle = new Bundle();
-            bundle.putString(WifiEnterpriseConfig.PRIVATE_KEY_ID_KEY, uid);
-            bundle.putSerializable("key_data", logData);
-            Unit unit = Unit.f42314a;
+            bundle.putString(WifiEnterpriseConfig.PRIVATE_KEY_ID_KEY, str);
+            bundle.putSerializable("key_data", (Serializable) logData);
+            Unit unit = Unit.a;
             TerminalActivity.d(context, RecommendUserMoreFragment.class, bundle);
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public RecommendUserMoreAdapter i() {
-        ActivityFragmentActive fragmentActive = getFragmentActive();
+        IRequestHost fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
         return new RecommendUserMoreAdapter(fragmentActive);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
         EventTrackPersonalProfile.d(PersonalProfileProtos.Event.PERSONAL_SAME_PAGE_SHOW, "");
@@ -66,16 +64,15 @@ public final class RecommendUserMoreFragment extends BaseListFragment<RecommendU
         RecommendUserMoreAdapter recommendUserMoreAdapter = (RecommendUserMoreAdapter) f();
         Bundle arguments = getArguments();
         Serializable serializable = arguments == null ? null : arguments.getSerializable("key_data");
-        LogData logData = serializable;
+        Serializable serializable2 = serializable;
         if (serializable == null) {
-            logData = new LogData();
+            serializable2 = (Serializable) new LogData();
         }
-        recommendUserMoreAdapter.a((LogData) logData);
+        recommendUserMoreAdapter.a((LogData) serializable2);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        ((RecommendUserMoreVM) y()).a(getFragmentActive());
+        y().a((IRequestHost) getFragmentActive());
     }
 }

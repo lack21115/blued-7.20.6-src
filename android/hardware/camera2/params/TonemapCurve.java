@@ -2,7 +2,6 @@ package android.hardware.camera2.params;
 
 import android.graphics.PointF;
 import android.hardware.camera2.utils.HashCodeHelpers;
-import com.alipay.sdk.util.i;
 import com.android.internal.util.Preconditions;
 import java.util.Arrays;
 
@@ -154,6 +153,6 @@ public final class TonemapCurve {
     }
 
     public String toString() {
-        return "TonemapCurve{R:" + curveToString(0) + ", G:" + curveToString(1) + ", B:" + curveToString(2) + i.d;
+        return "TonemapCurve{R:" + curveToString(0) + ", G:" + curveToString(1) + ", B:" + curveToString(2) + "}";
     }
 }

@@ -2,22 +2,21 @@ package com.xiaomi.push;
 
 import android.content.Context;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8829756-dex2jar.jar:com/xiaomi/push/av.class */
-public class av {
+class av {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f41262a = false;
+    private static volatile boolean f27571a = false;
 
     private static void a(Class<?> cls, Context context) {
-        if (f41262a) {
+        if (f27571a) {
             return;
         }
         try {
-            f41262a = true;
+            f27571a = true;
             cls.getDeclaredMethod("InitEntry", Context.class).invoke(cls, context);
         } catch (Throwable th) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("mdid:load lib error ".concat(String.valueOf(th)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("mdid:load lib error ".concat(String.valueOf(th)));
         }
     }
 
@@ -30,7 +29,7 @@ public class av {
             }
             return false;
         } catch (Throwable th) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("mdid:check error ".concat(String.valueOf(th)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("mdid:check error ".concat(String.valueOf(th)));
             return false;
         }
     }

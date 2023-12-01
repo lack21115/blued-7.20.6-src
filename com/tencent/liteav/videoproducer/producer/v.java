@@ -6,17 +6,17 @@ import com.tencent.liteav.videoproducer.producer.VideoProducerDef;
 final /* synthetic */ class v implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final f f37182a;
+    private final f f23491a;
     private final VideoProducerDef.StreamType b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f37183c;
+    private final int f23492c;
     private final int d;
 
     private v(f fVar, VideoProducerDef.StreamType streamType, int i, int i2) {
-        this.f37182a = fVar;
+        this.f23491a = fVar;
         this.b = streamType;
-        this.f37183c = i;
+        this.f23492c = i;
         this.d = i2;
     }
 
@@ -26,6 +26,6 @@ final /* synthetic */ class v implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        f.a(this.f37182a, this.b, this.f37183c, this.d);
+        f.a(this.f23491a, this.b, this.f23492c, this.d);
     }
 }

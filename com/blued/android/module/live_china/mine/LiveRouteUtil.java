@@ -31,13 +31,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/mine/LiveRouteUtil.class */
 public class LiveRouteUtil {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f13871a = false;
+    public static boolean a = false;
     private static int b = -1;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static LiveRechargeDlgFragment f13872c;
+    private static LiveRechargeDlgFragment c;
 
     public static void a() {
         b = -1;
@@ -49,7 +45,7 @@ public class LiveRouteUtil {
     }
 
     public static void a(Fragment fragment, Bundle bundle, int i) {
-        if (f13871a) {
+        if (a) {
             return;
         }
         LiveSetPayPwdFragment liveSetPayPwdFragment = new LiveSetPayPwdFragment();
@@ -64,7 +60,7 @@ public class LiveRouteUtil {
             return;
         }
         if (!(fragment instanceof BaseFragment) || ((BaseFragment) fragment).isVisible()) {
-            LiveFirstChargeDialogFragment.f12881a.a(fragment, i, z);
+            LiveFirstChargeDialogFragment.a.a(fragment, i, z);
             EventTrackLive.a(LiveProtos.Event.LIVE_FIRST_PAY_SHOW, i);
         }
     }
@@ -152,18 +148,18 @@ public class LiveRouteUtil {
     }
 
     public static void a(BaseFragment baseFragment, boolean z) {
-        if (PushGuideObserver.d().a() || baseFragment == null || baseFragment.getContext() == null || baseFragment.getFragmentActive() == null || !baseFragment.getFragmentActive().isActive() || !LiveFloatManager.a().y() || LiveFloatManager.a().x() || LiveRoomManager.a().E() == null || f13872c != null) {
+        if (PushGuideObserver.d().a() || baseFragment == null || baseFragment.getContext() == null || baseFragment.getFragmentActive() == null || !baseFragment.getFragmentActive().isActive() || !LiveFloatManager.a().y() || LiveFloatManager.a().x() || LiveRoomManager.a().E() == null || c != null) {
             return;
         }
         LiveRechargeDlgFragment liveRechargeDlgFragment = new LiveRechargeDlgFragment(z);
-        f13872c = liveRechargeDlgFragment;
+        c = liveRechargeDlgFragment;
         liveRechargeDlgFragment.a(new DialogInterface.OnDismissListener() { // from class: com.blued.android.module.live_china.mine.-$$Lambda$LiveRouteUtil$r7rK70MbHnOtmWyQwE0rrKMKLf8
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {
-                LiveRouteUtil.f13872c = null;
+                LiveRouteUtil.c = null;
             }
         });
-        f13872c.show(baseFragment.getFragmentManager(), f13872c.b());
+        c.show(baseFragment.getFragmentManager(), c.b());
     }
 
     public static void a(PlayingOnliveFragment playingOnliveFragment) {

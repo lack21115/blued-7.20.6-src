@@ -30,7 +30,7 @@ public final class a extends c {
     public static final String Z = "isplayableec";
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f6941a = false;
+    public static boolean f4103a = false;
     public static final String aa = "0";
     public static final String ab = "https://mores.toponad.com/image/default/mintegral_logo.png";
     public static final int ac = 1;
@@ -39,7 +39,7 @@ public final class a extends c {
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f6942c = 0;
+    public static final int f4104c = 0;
     public static final String d = "dsp_anythink_appid";
     public static final String e = "dsp_anythink_appkey";
     public static final String f = "unit_id";

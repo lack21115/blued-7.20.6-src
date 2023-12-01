@@ -10,14 +10,14 @@ import com.kwad.sdk.R;
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/a/a.class */
 public final class a implements View.OnClickListener {
     private ImageView HA;
-    private InterfaceC0509a HB;
+    private InterfaceC0339a HB;
     private TextView Hy;
     private ImageView Hz;
     private ViewGroup sn;
 
     /* renamed from: com.kwad.components.core.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/a/a$a.class */
-    public interface InterfaceC0509a {
+    public interface InterfaceC0339a {
         void t(View view);
 
         void u(View view);
@@ -44,8 +44,8 @@ public final class a implements View.OnClickListener {
         this.Hz.setOnClickListener(this);
     }
 
-    public final void a(InterfaceC0509a interfaceC0509a) {
-        this.HB = interfaceC0509a;
+    public final void a(InterfaceC0339a interfaceC0339a) {
+        this.HB = interfaceC0339a;
     }
 
     public final void a(b bVar) {

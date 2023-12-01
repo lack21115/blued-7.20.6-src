@@ -14,11 +14,11 @@ public final class e {
     private boolean l;
 
     /* renamed from: a  reason: collision with root package name */
-    public ArrayList<byte[]> f39326a = new ArrayList<>();
+    public ArrayList<byte[]> f25635a = new ArrayList<>();
     public int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f39327c = -1;
+    public int f25636c = -1;
     public int g = -1;
     public int h = -1;
     public int i = -1;
@@ -40,7 +40,7 @@ public final class e {
         try {
             eVar.f = a(mediaFormat, MediaFormat.KEY_SAMPLE_RATE);
             eVar.i = a(mediaFormat, MediaFormat.KEY_MAX_INPUT_SIZE);
-            eVar.f39326a = com.tencent.thumbplayer.g.h.c.a(mediaFormat);
+            eVar.f25635a = com.tencent.thumbplayer.g.h.c.a(mediaFormat);
         } catch (Throwable th) {
             com.tencent.thumbplayer.g.h.b.b("FormatWrapper", "create format error", th);
         }
@@ -50,7 +50,7 @@ public final class e {
         }
         eVar.d = a(mediaFormat, "rotation-degrees");
         eVar.b = a(mediaFormat, "width");
-        eVar.f39327c = a(mediaFormat, "height");
+        eVar.f25636c = a(mediaFormat, "height");
         if (Build.VERSION.SDK_INT >= 19) {
             eVar.g = a(mediaFormat, MediaFormat.KEY_MAX_WIDTH);
             eVar.h = a(mediaFormat, MediaFormat.KEY_MAX_HEIGHT);
@@ -91,7 +91,7 @@ public final class e {
                 com.tencent.thumbplayer.g.h.b.b("FormatWrapper", "csdData size:" + arrayList.size() + "    " + sb.toString());
                 return;
             }
-            sb.append(a(com.tencent.thumbplayer.g.h.c.f39360a[i2], arrayList.get(i2)));
+            sb.append(a(com.tencent.thumbplayer.g.h.c.f25669a[i2], arrayList.get(i2)));
             sb.append("\n");
             i = i2 + 1;
         }
@@ -106,16 +106,16 @@ public final class e {
     }
 
     public final boolean a(e eVar) {
-        if (this.f39326a.size() != eVar.f39326a.size()) {
+        if (this.f25635a.size() != eVar.f25635a.size()) {
             return false;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f39326a.size()) {
+            if (i2 >= this.f25635a.size()) {
                 return true;
             }
-            if (!this.f39326a.get(i2).equals(eVar.f39326a.get(i2))) {
+            if (!this.f25635a.get(i2).equals(eVar.f25635a.get(i2))) {
                 return false;
             }
             i = i2 + 1;

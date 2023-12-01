@@ -20,7 +20,7 @@ import java.util.Locale;
 public class e extends AsyncTask<Bitmap, Void, HashMap<String, Object>> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final SimpleDateFormat f38266a = new SimpleDateFormat("yyyy-MM-dd-HHmmss", Locale.CHINA);
+    private static final SimpleDateFormat f24575a = new SimpleDateFormat("yyyy-MM-dd-HHmmss", Locale.CHINA);
     private a b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/e$a.class */
@@ -81,7 +81,7 @@ public class e extends AsyncTask<Bitmap, Void, HashMap<String, Object>> {
     }
 
     private String a(long j) {
-        return f38266a.format(new Date(j));
+        return f24575a.format(new Date(j));
     }
 
     public static void a(String str) {

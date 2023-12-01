@@ -1,6 +1,7 @@
 package com.tencent.tendinsv.d;
 
 import android.content.Context;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.tendinsv.utils.t;
 import java.net.HttpURLConnection;
 import java.net.URLEncoder;
@@ -14,18 +15,18 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f39032a;
+    private String f25341a;
     private Map<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f39033c;
+    private Context f25342c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public d(String str, Context context) {
-        this.f39032a = null;
+        this.f25341a = null;
         this.b = null;
-        this.f39032a = str;
-        this.f39033c = context;
+        this.f25341a = str;
+        this.f25342c = context;
         this.b = new HashMap();
     }
 
@@ -69,7 +70,7 @@ public class d {
             sb.append(URLEncoder.encode(entry.getKey(), "utf-8"));
             sb.append("=");
             sb.append(URLEncoder.encode(entry.getValue(), "utf-8"));
-            sb.append("&");
+            sb.append(ContainerUtils.FIELD_DELIMITER);
         }
         return (sb.length() > 0 ? sb.substring(0, sb.length() - 1) : sb.toString()).getBytes("UTF_8");
     }
@@ -105,7 +106,7 @@ public class d {
     public void a(f fVar, Map<String, String> map, c cVar, Boolean bool, String str) {
         int round;
         int i;
-        int b = t.b(this.f39033c, t.G, 4);
+        int b = t.b(this.f25342c, t.G, 4);
         if (bool.booleanValue()) {
             round = 5000;
             i = 25000;
@@ -113,7 +114,7 @@ public class d {
             round = Math.round(((b * 1000) - com.tencent.tendinsv.b.ak) / 2);
             i = round;
         }
-        if (this.f39032a.startsWith("https")) {
+        if (this.f25341a.startsWith("https")) {
             b(fVar, map, cVar, bool, str, round, i);
         } else {
             a(fVar, map, cVar, bool, str, round, i);

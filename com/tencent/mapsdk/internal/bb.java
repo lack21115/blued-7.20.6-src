@@ -10,7 +10,7 @@ import java.util.Random;
 public class bb {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Random f37322a = new Random();
+    public static final Random f23631a = new Random();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/bb$a.class */
     public static final class a implements Comparator<Integer> {
@@ -35,7 +35,7 @@ public class bb {
     }
 
     private static <E> int a(ArrayList<E> arrayList, int i, int i2, Comparator<? super E> comparator) {
-        int nextInt = f37322a.nextInt((i2 - i) + 1) + i;
+        int nextInt = f23631a.nextInt((i2 - i) + 1) + i;
         E e = arrayList.get(nextInt);
         a(arrayList, nextInt, i2);
         int i3 = i;

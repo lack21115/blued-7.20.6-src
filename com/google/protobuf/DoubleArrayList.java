@@ -36,11 +36,11 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         }
         double[] dArr = this.array;
         if (i2 < dArr.length) {
-            System.arraycopy((Object) dArr, i, (Object) dArr, i + 1, i2 - i);
+            System.arraycopy(dArr, i, dArr, i + 1, i2 - i);
         } else {
             double[] dArr2 = new double[((i2 * 3) / 2) + 1];
-            System.arraycopy((Object) dArr, 0, (Object) dArr2, 0, i);
-            System.arraycopy((Object) this.array, i, (Object) dArr2, i + 1, this.size - i);
+            System.arraycopy(dArr, 0, dArr2, 0, i);
+            System.arraycopy(this.array, i, dArr2, i + 1, this.size - i);
             this.array = dArr2;
         }
         this.array[i] = d;
@@ -67,13 +67,13 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         addDouble(i, d.doubleValue());
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean add(Double d) {
         addDouble(d.doubleValue());
         return true;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean addAll(Collection<? extends Double> collection) {
         ensureIsMutable();
         Internal.checkNotNull(collection);
@@ -90,7 +90,7 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
                 if (i3 > dArr.length) {
                     this.array = Arrays.copyOf(dArr, i3);
                 }
-                System.arraycopy((Object) doubleArrayList.array, 0, (Object) this.array, this.size, doubleArrayList.size);
+                System.arraycopy(doubleArrayList.array, 0, this.array, this.size, doubleArrayList.size);
                 this.size = i3;
                 this.modCount++;
                 return true;
@@ -107,7 +107,7 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         double[] dArr = this.array;
         if (i == dArr.length) {
             double[] dArr2 = new double[((i * 3) / 2) + 1];
-            System.arraycopy((Object) dArr, 0, (Object) dArr2, 0, i);
+            System.arraycopy(dArr, 0, dArr2, 0, i);
             this.array = dArr2;
         }
         double[] dArr3 = this.array;
@@ -116,12 +116,12 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         dArr3[i2] = d;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean contains(Object obj) {
         return indexOf(obj) != -1;
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -158,7 +158,7 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         return this.array[i];
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int i = 1;
         int i2 = 0;
@@ -209,14 +209,14 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
         double d = dArr[i];
         int i2 = this.size;
         if (i < i2 - 1) {
-            System.arraycopy((Object) dArr, i + 1, (Object) dArr, i, (i2 - i) - 1);
+            System.arraycopy(dArr, i + 1, dArr, i, (i2 - i) - 1);
         }
         this.size--;
         this.modCount++;
         return Double.valueOf(d);
     }
 
-    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // com.google.protobuf.AbstractProtobufList, java.util.AbstractCollection, java.util.Collection, java.util.List
     public boolean remove(Object obj) {
         ensureIsMutable();
         int i = 0;
@@ -227,7 +227,7 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
             }
             if (obj.equals(Double.valueOf(this.array[i2]))) {
                 double[] dArr = this.array;
-                System.arraycopy((Object) dArr, i2 + 1, (Object) dArr, i2, (this.size - i2) - 1);
+                System.arraycopy(dArr, i2 + 1, dArr, i2, (this.size - i2) - 1);
                 this.size--;
                 this.modCount++;
                 return true;
@@ -243,7 +243,7 @@ public final class DoubleArrayList extends AbstractProtobufList<Double> implemen
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
         double[] dArr = this.array;
-        System.arraycopy((Object) dArr, i2, (Object) dArr, i, this.size - i2);
+        System.arraycopy(dArr, i2, dArr, i, this.size - i2);
         this.size -= i2 - i;
         this.modCount++;
     }

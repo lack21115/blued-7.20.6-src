@@ -40,7 +40,7 @@ public class SparseLongArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseLongArray m1032clone() {
+    public SparseLongArray m1028clone() {
         SparseLongArray sparseLongArray = null;
         try {
             SparseLongArray sparseLongArray2 = (SparseLongArray) super.clone();

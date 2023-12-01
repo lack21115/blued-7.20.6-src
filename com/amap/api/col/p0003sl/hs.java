@@ -27,8 +27,9 @@ import android.util.DisplayMetrics;
 import android.util.Xml;
 import android.view.WindowManager;
 import com.android.internal.telephony.PhoneConstants;
+import com.android.internal.util.cm.QSConstants;
+import com.anythink.core.common.b.g;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.igexin.assist.util.AssistUtils;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
@@ -68,13 +69,9 @@ public final class hs {
     private static int R = -1;
     private static boolean S = false;
     private static volatile b T;
-
-    /* renamed from: a  reason: collision with root package name */
-    static String f5099a = "";
+    static String a = "";
     static String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    static volatile boolean f5100c = true;
+    static volatile boolean c = true;
     public static boolean d = false;
     static String e = "";
     static boolean f = false;
@@ -116,13 +113,9 @@ public final class hs {
     /* renamed from: com.amap.api.col.3sl.hs$b */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hs$b.class */
     public static final class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static Context f5103a;
+        private static Context a;
         private static BroadcastReceiver b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private static ConnectivityManager f5104c;
+        private static ConnectivityManager c;
         private static NetworkRequest d;
         private static ConnectivityManager.NetworkCallback e;
 
@@ -142,9 +135,9 @@ public final class hs {
                 IntentFilter intentFilter = new IntentFilter();
                 intentFilter.addAction(ib.c("WYW5kcm9pZC5uZXQuY29ubi5DT05ORUNUSVZJVFlfQ0hBTkdF"));
                 context.registerReceiver(b, intentFilter);
-            } else if (hs.c(context, ib.c("AYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19ORVRXT1JLX1NUQVRF")) && context != null && f5104c == null) {
-                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                f5104c = connectivityManager;
+            } else if (hs.c(context, ib.c("AYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19ORVRXT1JLX1NUQVRF")) && context != null && c == null) {
+                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
+                c = connectivityManager;
                 if (connectivityManager != null) {
                     d = new NetworkRequest.Builder().addCapability(0).addCapability(1).build();
                     ConnectivityManager.NetworkCallback networkCallback = new ConnectivityManager.NetworkCallback() { // from class: com.amap.api.col.3sl.hs.b.2
@@ -161,8 +154,8 @@ public final class hs {
                         }
                     };
                     e = networkCallback;
-                    f5104c.registerNetworkCallback(d, networkCallback);
-                    f5103a = context;
+                    c.registerNetworkCallback(d, networkCallback);
+                    a = context;
                 }
             }
         }
@@ -172,22 +165,18 @@ public final class hs {
     /* renamed from: com.amap.api.col.3sl.hs$c */
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/hs$c.class */
     public static final class c implements ServiceConnection {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static String f5107a;
+        private static String a;
         private Context b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5108c;
+        private int c;
 
         c(Context context, int i) {
             this.b = context;
-            this.f5108c = i;
+            this.c = i;
         }
 
         private String a() {
             try {
-                if (TextUtils.isEmpty(f5107a)) {
+                if (TextUtils.isEmpty(a)) {
                     byte[] digest = MessageDigest.getInstance(ib.c("IU0hBMQ")).digest(this.b.getPackageManager().getPackageInfo(this.b.getPackageName(), 64).signatures[0].toByteArray());
                     StringBuffer stringBuffer = new StringBuffer();
                     for (byte b : digest) {
@@ -195,11 +184,11 @@ public final class hs {
                     }
                     String stringBuffer2 = stringBuffer.toString();
                     if (!TextUtils.isEmpty(stringBuffer2)) {
-                        f5107a = stringBuffer2;
+                        a = stringBuffer2;
                     }
                     return stringBuffer2;
                 }
-                return f5107a;
+                return a;
             } catch (Throwable th) {
                 return "";
             }
@@ -219,7 +208,7 @@ public final class hs {
                 android.os.Parcel r0 = android.os.Parcel.obtain()
                 r10 = r0
                 r0 = r6
-                int r0 = r0.f5108c     // Catch: java.lang.Throwable -> L8a
+                int r0 = r0.c     // Catch: java.lang.Throwable -> L8a
                 r9 = r0
                 r0 = r9
                 r1 = 2
@@ -289,7 +278,7 @@ public final class hs {
                 r0 = r8
                 java.lang.String r1 = "oac"
                 r2 = r6
-                int r2 = r2.f5108c     // Catch: java.lang.Throwable -> La2
+                int r2 = r2.c     // Catch: java.lang.Throwable -> La2
                 java.lang.String r2 = java.lang.String.valueOf(r2)     // Catch: java.lang.Throwable -> La2
                 com.amap.api.col.p0003sl.it.a(r0, r1, r2)     // Catch: java.lang.Throwable -> La2
                 r0 = r10
@@ -348,7 +337,7 @@ public final class hs {
         try {
             if (ib.a(context, "android.permission.READ_EXTERNAL_STORAGE")) {
                 fileInputStream2 = null;
-                if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())) {
+                if ("mounted".equals(Environment.getExternalStorageState())) {
                     File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/.UTSystemConfig/Global/Alvin2.xml");
                     XmlPullParser newPullParser = Xml.newPullParser();
                     fileInputStream = new FileInputStream(file);
@@ -453,7 +442,7 @@ public final class hs {
             }
         } catch (Throwable th) {
             o = true;
-            it.a(th, "oa", AssistUtils.BRAND_VIVO);
+            it.a(th, "oa", "vivo");
         }
         return n;
     }
@@ -715,7 +704,7 @@ public final class hs {
     }
 
     private static ConnectivityManager N(Context context) {
-        return (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        return (ConnectivityManager) context.getSystemService("connectivity");
     }
 
     private static int O(Context context) {
@@ -734,25 +723,25 @@ public final class hs {
     }
 
     private static TelephonyManager P(Context context) {
-        return (TelephonyManager) context.getSystemService("phone");
+        return (TelephonyManager) context.getSystemService(PhoneConstants.PHONE_KEY);
     }
 
     private static String Q(Context context) {
         String str;
-        if (f5100c) {
+        if (c) {
             try {
                 str = R(context);
             } catch (Throwable th) {
                 str = null;
             }
             if (TextUtils.isEmpty(str)) {
-                f5100c = false;
+                c = false;
                 return "";
             }
             try {
                 return new String(ht.a(ib.c("HYW1hcGFkaXVhbWFwYWRpdWFtYXBhZGl1YW1hcGFkaXU").getBytes("UTF-8"), ht.b(str), ib.c("MAAAAAAAAAAAAAAAAAAAAAA").getBytes("UTF-8")), "UTF-8");
             } catch (Throwable th2) {
-                f5100c = false;
+                c = false;
                 return "";
             }
         }
@@ -786,7 +775,7 @@ public final class hs {
                 }
                 ByteArrayOutputStream byteArrayOutputStream = null;
                 try {
-                    randomAccessFile = new RandomAccessFile(file, "r");
+                    randomAccessFile = new RandomAccessFile(file, g.o.o);
                     try {
                         byte[] bArr = new byte[1024];
                         ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
@@ -832,7 +821,7 @@ public final class hs {
             return null;
         }
         try {
-            StorageManager storageManager = (StorageManager) context.getSystemService(Context.STORAGE_SERVICE);
+            StorageManager storageManager = (StorageManager) context.getSystemService("storage");
             Class<?> cls = Class.forName(ib.c("SYW5kcm9pZC5vcy5zdG9yYWdlLlN0b3JhZ2VWb2x1bWU"));
             Method method = storageManager.getClass().getMethod(ib.c("MZ2V0Vm9sdW1lTGlzdA"), new Class[0]);
             Method method2 = cls.getMethod(ib.c("FZ2V0UGF0aA"), new Class[0]);
@@ -896,12 +885,12 @@ public final class hs {
                         public final void runTask() {
                             try {
                                 Map<String, String> b2 = hs.g.b();
-                                String a2 = hs.g.a(hs.h(Context.this), "", "", hs.y(Context.this));
+                                String a2 = hs.g.a(hs.h(context), "", "", hs.y(context));
                                 if (TextUtils.isEmpty(a2)) {
                                     return;
                                 }
                                 ju.a();
-                                String a3 = hs.g.a(Context.this, new String(ju.a(hs.g.a(a2.getBytes(), b2)).f5264a));
+                                String a3 = hs.g.a(context, new String(ju.a(hs.g.a(a2.getBytes(), b2)).a));
                                 if (TextUtils.isEmpty(a3)) {
                                     return;
                                 }
@@ -1148,7 +1137,7 @@ public final class hs {
                 lb.a().a(new lc() { // from class: com.amap.api.col.3sl.hs.2
                     @Override // com.amap.api.col.p0003sl.lc
                     public final void runTask() {
-                        hs.G(Context.this);
+                        hs.G(context);
                         hs.i();
                     }
                 });
@@ -1162,34 +1151,34 @@ public final class hs {
 
     public static String h(Context context) {
         if (q) {
-            String str = f5099a;
+            String str = a;
             return str == null ? "" : str;
-        } else if (f5099a == null || "".equals(f5099a)) {
+        } else if (a == null || "".equals(a)) {
             if (c(context, ib.c("WYW5kcm9pZC5wZXJtaXNzaW9uLldSSVRFX1NFVFRJTkdT"))) {
-                f5099a = Settings.System.getString(context.getContentResolver(), "mqBRboGZkQPcAkyk");
+                a = Settings.System.getString(context.getContentResolver(), "mqBRboGZkQPcAkyk");
             }
-            if (!TextUtils.isEmpty(f5099a)) {
+            if (!TextUtils.isEmpty(a)) {
                 q = true;
-                return f5099a;
+                return a;
             }
             try {
                 String C2 = C(context);
-                f5099a = C2;
+                a = C2;
                 if (!TextUtils.isEmpty(C2)) {
                     q = true;
-                    return f5099a;
+                    return a;
                 }
             } catch (Throwable th) {
             }
             try {
-                f5099a = D(context);
+                a = D(context);
                 q = true;
             } catch (Throwable th2) {
             }
-            String str2 = f5099a;
+            String str2 = a;
             return str2 == null ? "" : str2;
         } else {
-            return f5099a;
+            return a;
         }
     }
 
@@ -1254,7 +1243,7 @@ public final class hs {
         if (Build.VERSION.SDK_INT < 30 || context.getApplicationInfo().targetSdkVersion < 30) {
             try {
                 if ((v == null || "".equals(v)) && !w && c(context, ib.c("WYW5kcm9pZC5wZXJtaXNzaW9uLkFDQ0VTU19XSUZJX1NUQVRF"))) {
-                    WifiManager wifiManager = (WifiManager) context.getSystemService("wifi");
+                    WifiManager wifiManager = (WifiManager) context.getSystemService(QSConstants.TILE_WIFI);
                     if (wifiManager == null) {
                         return "";
                     }
@@ -1358,7 +1347,7 @@ public final class hs {
         StringBuilder sb;
         if (z == null || "".equals(z)) {
             DisplayMetrics displayMetrics = new DisplayMetrics();
-            WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+            WindowManager windowManager = (WindowManager) context.getSystemService("window");
             if (windowManager == null) {
                 return "";
             }

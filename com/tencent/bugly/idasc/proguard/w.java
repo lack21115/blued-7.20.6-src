@@ -12,11 +12,11 @@ import java.util.Map;
 public final class w {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f35347a = false;
+    public static boolean f21656a = false;
     private static w b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static x f35348c;
+    private static x f21657c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/bugly/idasc/proguard/w$a.class */
@@ -24,7 +24,7 @@ public final class w {
         private int b = 4;
 
         /* renamed from: c  reason: collision with root package name */
-        private v f35350c = null;
+        private v f21659c = null;
         private String d;
         private ContentValues e;
         private boolean f;
@@ -54,26 +54,26 @@ public final class w {
         public final void run() {
             switch (this.b) {
                 case 1:
-                    w.this.a(this.d, this.e, this.f35350c);
+                    w.this.a(this.d, this.e, this.f21659c);
                     return;
                 case 2:
-                    w.this.a(this.d, this.n, this.o, this.f35350c);
+                    w.this.a(this.d, this.n, this.o, this.f21659c);
                     return;
                 case 3:
-                    Cursor a2 = w.this.a(this.f, this.d, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.f35350c);
+                    Cursor a2 = w.this.a(this.f, this.d, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.f21659c);
                     if (a2 != null) {
                         a2.close();
                         return;
                     }
                     return;
                 case 4:
-                    w.this.a(this.p, this.q, this.r, this.f35350c);
+                    w.this.a(this.p, this.q, this.r, this.f21659c);
                     return;
                 case 5:
-                    w.this.a(this.p, this.f35350c);
+                    w.this.a(this.p, this.f21659c);
                     return;
                 case 6:
-                    w.this.a(this.p, this.q, this.f35350c);
+                    w.this.a(this.p, this.q, this.f21659c);
                     return;
                 default:
                     return;
@@ -82,7 +82,7 @@ public final class w {
     }
 
     private w(Context context, List<o> list) {
-        f35348c = new x(context, list);
+        f21657c = new x(context, list);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -90,14 +90,14 @@ public final class w {
         int i;
         synchronized (this) {
             int i2 = 0;
-            SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
             if (writableDatabase != null) {
                 i2 = writableDatabase.delete(str, str2, strArr);
             }
             if (vVar != null) {
             }
             i = i2;
-            if (f35347a) {
+            if (f21656a) {
                 i = i2;
                 if (writableDatabase != null) {
                     writableDatabase.close();
@@ -113,7 +113,7 @@ public final class w {
         Cursor cursor;
         synchronized (this) {
             try {
-                SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+                SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
                 cursor = null;
                 if (writableDatabase != null) {
                     cursor = writableDatabase.query(z, str, strArr, str2, strArr2, str3, str4, str5, str6);
@@ -166,9 +166,9 @@ public final class w {
         }
         try {
             y yVar = new y();
-            yVar.f35353a = cursor.getLong(cursor.getColumnIndex("_id"));
+            yVar.f21662a = cursor.getLong(cursor.getColumnIndex("_id"));
             yVar.b = cursor.getInt(cursor.getColumnIndex(com.umeng.analytics.pro.bl.e));
-            yVar.f35354c = cursor.getString(cursor.getColumnIndex("_pc"));
+            yVar.f21663c = cursor.getString(cursor.getColumnIndex("_pc"));
             yVar.d = cursor.getString(cursor.getColumnIndex("_th"));
             yVar.e = cursor.getLong(cursor.getColumnIndex("_tm"));
             yVar.g = cursor.getBlob(cursor.getColumnIndex("_dt"));
@@ -189,7 +189,7 @@ public final class w {
         String str2;
         synchronized (this) {
             try {
-                SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+                SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
                 boolean z2 = false;
                 if (writableDatabase != null) {
                     try {
@@ -214,7 +214,7 @@ public final class w {
                             Boolean bool = Boolean.FALSE;
                         }
                         z = false;
-                        if (f35347a) {
+                        if (f21656a) {
                             z = false;
                             if (sQLiteDatabase != null) {
                                 sQLiteDatabase.close();
@@ -227,7 +227,7 @@ public final class w {
                 if (vVar != null) {
                 }
                 z = z2;
-                if (f35347a) {
+                if (f21656a) {
                     z = z2;
                     if (writableDatabase != null) {
                         writableDatabase.close();
@@ -247,7 +247,7 @@ public final class w {
         boolean z;
         try {
             y yVar = new y();
-            yVar.f35353a = i;
+            yVar.f21662a = i;
             yVar.f = str;
             yVar.e = System.currentTimeMillis();
             yVar.g = bArr;
@@ -277,7 +277,7 @@ public final class w {
         }
         try {
             y yVar = new y();
-            yVar.f35353a = cursor.getLong(cursor.getColumnIndex("_id"));
+            yVar.f21662a = cursor.getLong(cursor.getColumnIndex("_id"));
             yVar.e = cursor.getLong(cursor.getColumnIndex("_tm"));
             yVar.f = cursor.getString(cursor.getColumnIndex(com.umeng.analytics.pro.bl.e));
             yVar.g = cursor.getBlob(cursor.getColumnIndex("_dt"));
@@ -294,23 +294,23 @@ public final class w {
     private boolean b(y yVar) {
         ContentValues d;
         synchronized (this) {
-            SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
             if (writableDatabase == null || (d = d(yVar)) == null) {
-                if (f35347a && writableDatabase != null) {
+                if (f21656a && writableDatabase != null) {
                     writableDatabase.close();
                 }
                 return false;
             }
             long replace = writableDatabase.replace("t_pf", "_id", d);
             if (replace < 0) {
-                if (f35347a && writableDatabase != null) {
+                if (f21656a && writableDatabase != null) {
                     writableDatabase.close();
                 }
                 return false;
             }
             al.c("[Database] insert %s success.", "t_pf");
-            yVar.f35353a = replace;
-            if (f35347a && writableDatabase != null) {
+            yVar.f21662a = replace;
+            if (f21656a && writableDatabase != null) {
                 writableDatabase.close();
             }
             return true;
@@ -323,11 +323,11 @@ public final class w {
         }
         try {
             ContentValues contentValues = new ContentValues();
-            if (yVar.f35353a > 0) {
-                contentValues.put("_id", Long.valueOf(yVar.f35353a));
+            if (yVar.f21662a > 0) {
+                contentValues.put("_id", Long.valueOf(yVar.f21662a));
             }
             contentValues.put(com.umeng.analytics.pro.bl.e, Integer.valueOf(yVar.b));
-            contentValues.put("_pc", yVar.f35354c);
+            contentValues.put("_pc", yVar.f21663c);
             contentValues.put("_th", yVar.d);
             contentValues.put("_tm", Long.valueOf(yVar.e));
             if (yVar.g != null) {
@@ -370,8 +370,8 @@ public final class w {
         }
         try {
             ContentValues contentValues = new ContentValues();
-            if (yVar.f35353a > 0) {
-                contentValues.put("_id", Long.valueOf(yVar.f35353a));
+            if (yVar.f21662a > 0) {
+                contentValues.put("_id", Long.valueOf(yVar.f21662a));
             }
             contentValues.put(com.umeng.analytics.pro.bl.e, yVar.f);
             contentValues.put("_tm", Long.valueOf(yVar.e));
@@ -395,7 +395,7 @@ public final class w {
     public final long a(String str, ContentValues contentValues, v vVar) {
         long j;
         synchronized (this) {
-            SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
             long j2 = -1;
             if (writableDatabase != null) {
                 j2 = -1;
@@ -411,7 +411,7 @@ public final class w {
             if (vVar != null) {
             }
             j = j2;
-            if (f35347a) {
+            if (f21656a) {
                 j = j2;
                 if (writableDatabase != null) {
                     writableDatabase.close();
@@ -480,12 +480,12 @@ public final class w {
         synchronized (this) {
             if (list != null) {
                 if (list.size() != 0) {
-                    SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+                    SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
                     if (writableDatabase != null) {
                         StringBuilder sb = new StringBuilder();
                         for (y yVar : list) {
                             sb.append(" or _id = ");
-                            sb.append(yVar.f35353a);
+                            sb.append(yVar.f21662a);
                         }
                         String sb2 = sb.toString();
                         String str = sb2;
@@ -494,7 +494,7 @@ public final class w {
                         }
                         sb.setLength(0);
                         al.c("[Database] deleted %s data %d", "t_lr", Integer.valueOf(writableDatabase.delete("t_lr", str, null)));
-                        if (f35347a) {
+                        if (f21656a) {
                             writableDatabase.close();
                         }
                     }
@@ -516,23 +516,23 @@ public final class w {
     public final boolean a(y yVar) {
         ContentValues c2;
         synchronized (this) {
-            SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
             if (writableDatabase == null || (c2 = c(yVar)) == null) {
-                if (f35347a && writableDatabase != null) {
+                if (f21656a && writableDatabase != null) {
                     writableDatabase.close();
                 }
                 return false;
             }
             long replace = writableDatabase.replace("t_lr", "_id", c2);
             if (replace < 0) {
-                if (f35347a && writableDatabase != null) {
+                if (f21656a && writableDatabase != null) {
                     writableDatabase.close();
                 }
                 return false;
             }
             al.c("[Database] insert %s success.", "t_lr");
-            yVar.f35353a = replace;
-            if (f35347a && writableDatabase != null) {
+            yVar.f21662a = replace;
+            if (f21656a && writableDatabase != null) {
                 writableDatabase.close();
             }
             return true;
@@ -541,10 +541,10 @@ public final class w {
 
     public final void b(int i) {
         synchronized (this) {
-            SQLiteDatabase writableDatabase = f35348c.getWritableDatabase();
+            SQLiteDatabase writableDatabase = f21657c.getWritableDatabase();
             if (writableDatabase != null) {
                 al.c("[Database] deleted %s data %d", "t_lr", Integer.valueOf(writableDatabase.delete("t_lr", i >= 0 ? "_tp = ".concat(String.valueOf(i)) : null, null)));
-                if (f35347a && writableDatabase != null) {
+                if (f21656a && writableDatabase != null) {
                     writableDatabase.close();
                 }
             }

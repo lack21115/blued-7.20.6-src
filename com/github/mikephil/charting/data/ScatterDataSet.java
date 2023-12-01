@@ -16,7 +16,7 @@ public class ScatterDataSet extends LineScatterCandleRadarDataSet<Entry> impleme
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f22139a;
+        static final /* synthetic */ int[] f8532a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -26,33 +26,33 @@ public class ScatterDataSet extends LineScatterCandleRadarDataSet<Entry> impleme
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ScatterChart.ScatterShape.values().length];
-            f22139a = iArr;
+            f8532a = iArr;
             try {
                 iArr[ScatterChart.ScatterShape.SQUARE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f22139a[ScatterChart.ScatterShape.CIRCLE.ordinal()] = 2;
+                f8532a[ScatterChart.ScatterShape.CIRCLE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f22139a[ScatterChart.ScatterShape.TRIANGLE.ordinal()] = 3;
+                f8532a[ScatterChart.ScatterShape.TRIANGLE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f22139a[ScatterChart.ScatterShape.CROSS.ordinal()] = 4;
+                f8532a[ScatterChart.ScatterShape.CROSS.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f22139a[ScatterChart.ScatterShape.X.ordinal()] = 5;
+                f8532a[ScatterChart.ScatterShape.X.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f22139a[ScatterChart.ScatterShape.CHEVRON_UP.ordinal()] = 6;
+                f8532a[ScatterChart.ScatterShape.CHEVRON_UP.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f22139a[ScatterChart.ScatterShape.CHEVRON_DOWN.ordinal()] = 7;
+                f8532a[ScatterChart.ScatterShape.CHEVRON_DOWN.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }

@@ -1,5 +1,6 @@
 package com.meizu.cloud.pushsdk.c.c;
 
+import com.blued.das.live.LiveProtos;
 import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,11 +11,11 @@ import java.util.List;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f24024a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    private static final char[] f10413a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f24025c;
+    private final String f10414c;
     private final String d;
     private final String e;
     private final int f;
@@ -29,33 +30,33 @@ public class f {
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f24026a;
+        static final /* synthetic */ int[] f10415a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x0041 -> B:27:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x0045 -> B:25:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0049 -> B:23:0x002a). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x004d -> B:29:0x0035). Please submit an issue!!! */
         static {
-            int[] iArr = new int[a.EnumC0607a.values().length];
-            f24026a = iArr;
+            int[] iArr = new int[a.EnumC0437a.values().length];
+            f10415a = iArr;
             try {
-                iArr[a.EnumC0607a.SUCCESS.ordinal()] = 1;
+                iArr[a.EnumC0437a.SUCCESS.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f24026a[a.EnumC0607a.INVALID_HOST.ordinal()] = 2;
+                f10415a[a.EnumC0437a.INVALID_HOST.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f24026a[a.EnumC0607a.UNSUPPORTED_SCHEME.ordinal()] = 3;
+                f10415a[a.EnumC0437a.UNSUPPORTED_SCHEME.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f24026a[a.EnumC0607a.MISSING_SCHEME.ordinal()] = 4;
+                f10415a[a.EnumC0437a.MISSING_SCHEME.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f24026a[a.EnumC0607a.INVALID_PORT.ordinal()] = 5;
+                f10415a[a.EnumC0437a.INVALID_PORT.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
         }
@@ -65,7 +66,7 @@ public class f {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        String f24027a;
+        String f10416a;
         String d;
         final List<String> f;
         List<String> g;
@@ -73,13 +74,13 @@ public class f {
         String b = "";
 
         /* renamed from: c  reason: collision with root package name */
-        String f24028c = "";
+        String f10417c = "";
         int e = -1;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.meizu.cloud.pushsdk.c.c.f$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/c/c/f$a$a.class */
-        public enum EnumC0607a {
+        public enum EnumC0437a {
             SUCCESS,
             MISSING_SCHEME,
             UNSUPPORTED_SCHEME,
@@ -408,7 +409,7 @@ public class f {
          */
         /* JADX WARN: Code restructure failed: missing block: B:58:0x0131, code lost:
             r0 = r12 - r14;
-            java.lang.System.arraycopy((java.lang.Object) r0, r14, (java.lang.Object) r0, 16 - r0, r0);
+            java.lang.System.arraycopy(r0, r14, r0, 16 - r0, r0);
             java.util.Arrays.fill(r0, r14, (16 - r12) + r14, (byte) 0);
          */
         /* JADX WARN: Code restructure failed: missing block: B:60:0x015c, code lost:
@@ -443,7 +444,7 @@ public class f {
 
         int a() {
             int i = this.e;
-            return i != -1 ? i : f.a(this.f24027a);
+            return i != -1 ? i : f.a(this.f10416a);
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:25:0x00d1, code lost:
@@ -453,7 +454,7 @@ public class f {
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        com.meizu.cloud.pushsdk.c.c.f.a.EnumC0607a a(com.meizu.cloud.pushsdk.c.c.f r11, java.lang.String r12) {
+        com.meizu.cloud.pushsdk.c.c.f.a.EnumC0437a a(com.meizu.cloud.pushsdk.c.c.f r11, java.lang.String r12) {
             /*
                 Method dump skipped, instructions count: 712
                 To view this dump change 'Code comments level' option to 'DEBUG'
@@ -479,7 +480,7 @@ public class f {
         }
 
         public f b() {
-            if (this.f24027a != null) {
+            if (this.f10416a != null) {
                 if (this.d != null) {
                     return new f(this, null);
                 }
@@ -490,13 +491,13 @@ public class f {
 
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.f24027a);
+            sb.append(this.f10416a);
             sb.append("://");
-            if (!this.b.isEmpty() || !this.f24028c.isEmpty()) {
+            if (!this.b.isEmpty() || !this.f10417c.isEmpty()) {
                 sb.append(this.b);
-                if (!this.f24028c.isEmpty()) {
+                if (!this.f10417c.isEmpty()) {
                     sb.append(':');
-                    sb.append(this.f24028c);
+                    sb.append(this.f10417c);
                 }
                 sb.append('@');
             }
@@ -508,7 +509,7 @@ public class f {
                 sb.append(this.d);
             }
             int a2 = a();
-            if (a2 != f.a(this.f24027a)) {
+            if (a2 != f.a(this.f10416a)) {
                 sb.append(':');
                 sb.append(a2);
             }
@@ -526,9 +527,9 @@ public class f {
     }
 
     private f(a aVar) {
-        this.b = aVar.f24027a;
-        this.f24025c = a(aVar.b, false);
-        this.d = a(aVar.f24028c, false);
+        this.b = aVar.f10416a;
+        this.f10414c = a(aVar.b, false);
+        this.d = a(aVar.f10417c, false);
         this.e = aVar.d;
         this.f = aVar.a();
         this.g = a(aVar.f, false);
@@ -545,7 +546,10 @@ public class f {
         if ("http".equals(str)) {
             return 80;
         }
-        return "https".equals(str) ? 443 : -1;
+        if ("https".equals(str)) {
+            return LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE;
+        }
+        return -1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -584,8 +588,8 @@ public class f {
                     if (!bVar3.c()) {
                         int f = bVar3.f() & 255;
                         bVar.b(37);
-                        bVar.b((int) f24024a[(f >> 4) & 15]);
-                        bVar.b((int) f24024a[f & 15]);
+                        bVar.b((int) f10413a[(f >> 4) & 15]);
+                        bVar.b((int) f10413a[f & 15]);
                     }
                 }
             } else {
@@ -772,14 +776,14 @@ public class f {
     public static f c(String str) {
         a aVar = new a();
         f fVar = null;
-        if (aVar.a((f) null, str) == a.EnumC0607a.SUCCESS) {
+        if (aVar.a((f) null, str) == a.EnumC0437a.SUCCESS) {
             fVar = aVar.b();
         }
         return fVar;
     }
 
     public String a() {
-        if (this.f24025c.isEmpty()) {
+        if (this.f10414c.isEmpty()) {
             return "";
         }
         int length = this.b.length() + 3;
@@ -830,9 +834,9 @@ public class f {
 
     public a f() {
         a aVar = new a();
-        aVar.f24027a = this.b;
+        aVar.f10416a = this.b;
         aVar.b = a();
-        aVar.f24028c = b();
+        aVar.f10417c = b();
         aVar.d = this.e;
         aVar.e = this.f != a(this.b) ? this.f : -1;
         aVar.f.clear();

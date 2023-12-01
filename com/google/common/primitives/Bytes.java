@@ -31,12 +31,12 @@ public final class Bytes {
             this.end = i2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean contains(Object obj) {
             return (obj instanceof Byte) && Bytes.indexOf(this.array, ((Byte) obj).byteValue(), this.start, this.end) != -1;
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public boolean equals(@NullableDecl Object obj) {
             if (obj == this) {
                 return true;
@@ -68,7 +68,7 @@ public final class Bytes {
             return Byte.valueOf(this.array[this.start + i]);
         }
 
-        @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractList, java.util.Collection, java.util.List
         public int hashCode() {
             int i = 1;
             for (int i2 = this.start; i2 < this.end; i2++) {
@@ -86,7 +86,7 @@ public final class Bytes {
             return indexOf - this.start;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
         public boolean isEmpty() {
             return false;
         }
@@ -163,7 +163,7 @@ public final class Bytes {
         byte[] bArr3 = new byte[i];
         int i2 = 0;
         for (byte[] bArr4 : bArr) {
-            System.arraycopy((Object) bArr4, 0, (Object) bArr3, i2, bArr4.length);
+            System.arraycopy(bArr4, 0, bArr3, i2, bArr4.length);
             i2 += bArr4.length;
         }
         return bArr3;

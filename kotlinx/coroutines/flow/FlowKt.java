@@ -15,8 +15,8 @@ import kotlinx.coroutines.channels.ReceiveChannel;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt.class */
 public final class FlowKt {
-    public static final <T, C extends Collection<? super T>> Object a(Flow<? extends T> flow, C c2, Continuation<? super C> continuation) {
-        return FlowKt__CollectionKt.a(flow, c2, continuation);
+    public static final <T, C extends Collection<? super T>> Object a(Flow<? extends T> flow, C c, Continuation<? super C> continuation) {
+        return FlowKt__CollectionKt.a(flow, c, continuation);
     }
 
     public static final Object a(Flow<?> flow, Continuation<? super Unit> continuation) {

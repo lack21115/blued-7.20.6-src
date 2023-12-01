@@ -1,7 +1,6 @@
 package com.tencent.thumbplayer.tplayer.a;
 
 import android.content.Context;
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.thumbplayer.api.reportv2.ITPReportChannelListener;
 import com.tencent.thumbplayer.api.reportv2.ITPReportInfoGetter;
 import com.tencent.thumbplayer.api.reportv2.TPExtendCommonKey;
@@ -23,11 +22,11 @@ public class c implements a {
     private static com.tencent.thumbplayer.utils.c i;
 
     /* renamed from: a  reason: collision with root package name */
-    protected ITPReportInfoGetter f39387a;
+    protected ITPReportInfoGetter f25696a;
     protected com.tencent.thumbplayer.tplayer.a.a.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected CopyOnWriteArrayList<WeakReference<ITPReportChannelListener>> f39388c;
+    protected CopyOnWriteArrayList<WeakReference<ITPReportChannelListener>> f25697c;
     protected Context d;
     protected l e;
     protected j f = null;
@@ -167,10 +166,10 @@ public class c implements a {
 
     @Override // com.tencent.thumbplayer.tplayer.a.a
     public void a() {
-        CopyOnWriteArrayList<WeakReference<ITPReportChannelListener>> copyOnWriteArrayList = this.f39388c;
+        CopyOnWriteArrayList<WeakReference<ITPReportChannelListener>> copyOnWriteArrayList = this.f25697c;
         if (copyOnWriteArrayList != null) {
             copyOnWriteArrayList.clear();
-            this.f39388c = null;
+            this.f25697c = null;
         }
     }
 
@@ -181,7 +180,7 @@ public class c implements a {
     @Override // com.tencent.thumbplayer.tplayer.a.a
     public void a(Context context, l lVar) {
         this.d = context;
-        this.f39388c = new CopyOnWriteArrayList<>();
+        this.f25697c = new CopyOnWriteArrayList<>();
         this.e = lVar;
         this.f = new j(context);
         a(context, "TPReporterCache");
@@ -190,7 +189,7 @@ public class c implements a {
 
     @Override // com.tencent.thumbplayer.tplayer.a.a
     public void a(ITPReportChannelListener iTPReportChannelListener) {
-        CopyOnWriteArrayList<WeakReference<ITPReportChannelListener>> copyOnWriteArrayList = this.f39388c;
+        CopyOnWriteArrayList<WeakReference<ITPReportChannelListener>> copyOnWriteArrayList = this.f25697c;
         if (copyOnWriteArrayList == null) {
             TPLogUtil.w("TPBaseReporter", "mReportChannelListenerList is null");
             return;
@@ -202,12 +201,12 @@ public class c implements a {
                 return;
             }
         }
-        this.f39388c.add(new WeakReference<>(iTPReportChannelListener));
+        this.f25697c.add(new WeakReference<>(iTPReportChannelListener));
     }
 
     @Override // com.tencent.thumbplayer.tplayer.a.a
     public void a(ITPReportInfoGetter iTPReportInfoGetter) {
-        this.f39387a = iTPReportInfoGetter;
+        this.f25696a = iTPReportInfoGetter;
     }
 
     @Override // com.tencent.thumbplayer.tplayer.a.a
@@ -223,25 +222,25 @@ public class c implements a {
             return;
         }
         TPGeneralPlayFlowParams a2 = aVar.a();
-        bVar.f39365a.a(this.e.i);
-        bVar.f39365a.a(a2.mPlayerBaseMediaParams.mDurationMs);
-        bVar.f39365a.e(a2.mPlayerBaseMediaParams.mHlsSourceType);
-        bVar.f39365a.f(this.e.g);
-        bVar.f39365a.g(this.e.f);
-        bVar.f39365a.i(a2.mPlayerBaseMediaParams.mFormatContainer);
-        bVar.f39365a.h(a2.mPlayerBaseMediaParams.mVideoEncodeFormat);
-        bVar.f39365a.i(a2.mPlayerBaseMediaParams.mAudioEncodeFormat);
-        bVar.f39365a.j(a2.mPlayerBaseMediaParams.mSubtitleEncodeFormat);
-        bVar.f39365a.b(a2.mPlayerBaseMediaParams.mVideoStreamBitrateKbps);
-        bVar.f39365a.a(a2.mPlayerBaseMediaParams.mVideoFrameRate);
-        bVar.f39365a.j(this.e.e);
-        bVar.f39365a.k(a2.mPlayerBaseMediaParams.mVideoWidth + PhoneConstants.APN_TYPE_ALL + a2.mPlayerBaseMediaParams.mVideoHeight);
-        bVar.f39365a.l(TPDownloadProxyHelper.getNativeLibVersion());
-        bVar.f39365a.k(bVar.b);
-        bVar.f39365a.o(bVar.e);
-        bVar.f39365a.m(bVar.d);
-        bVar.f39365a.n(bVar.f39366c);
-        bVar.f39365a.l(this.e.h);
+        bVar.f25674a.a(this.e.i);
+        bVar.f25674a.a(a2.mPlayerBaseMediaParams.mDurationMs);
+        bVar.f25674a.e(a2.mPlayerBaseMediaParams.mHlsSourceType);
+        bVar.f25674a.f(this.e.g);
+        bVar.f25674a.g(this.e.f);
+        bVar.f25674a.i(a2.mPlayerBaseMediaParams.mFormatContainer);
+        bVar.f25674a.h(a2.mPlayerBaseMediaParams.mVideoEncodeFormat);
+        bVar.f25674a.i(a2.mPlayerBaseMediaParams.mAudioEncodeFormat);
+        bVar.f25674a.j(a2.mPlayerBaseMediaParams.mSubtitleEncodeFormat);
+        bVar.f25674a.b(a2.mPlayerBaseMediaParams.mVideoStreamBitrateKbps);
+        bVar.f25674a.a(a2.mPlayerBaseMediaParams.mVideoFrameRate);
+        bVar.f25674a.j(this.e.e);
+        bVar.f25674a.k(a2.mPlayerBaseMediaParams.mVideoWidth + "*" + a2.mPlayerBaseMediaParams.mVideoHeight);
+        bVar.f25674a.l(TPDownloadProxyHelper.getNativeLibVersion());
+        bVar.f25674a.k(bVar.b);
+        bVar.f25674a.o(bVar.e);
+        bVar.f25674a.m(bVar.d);
+        bVar.f25674a.n(bVar.f25675c);
+        bVar.f25674a.l(this.e.h);
         this.h.put("buffermintotaldurationms", Long.valueOf(a2.mPlayerConfigParams.mBufferMinTotalDurationMs));
         this.h.put("buffermaxtotaldurationms", Long.valueOf(a2.mPlayerConfigParams.mBufferMaxTotalDurationMs));
         this.h.put("preloadtotaldurationms", Long.valueOf(a2.mPlayerConfigParams.mPreloadTotalDurationMs));
@@ -252,7 +251,7 @@ public class c implements a {
         this.h.put("reducelatencyspeed", Float.valueOf(a2.mPlayerConfigParams.mReduceLatencyPlaySpeed));
         this.h.put("buffertype", Integer.valueOf(a2.mPlayerConfigParams.mBufferType));
         try {
-            bVar.f39365a.p(new JSONObject(this.h).toString());
+            bVar.f25674a.p(new JSONObject(this.h).toString());
         } catch (NullPointerException e) {
             TPLogUtil.e("TPBaseReporter", e);
         }
@@ -296,7 +295,7 @@ public class c implements a {
         while (true) {
             sb.append(str2);
             if (!it.hasNext()) {
-                sb.append(com.alipay.sdk.util.i.d);
+                sb.append("}");
                 TPLogUtil.i("TPBaseReporter", sb.toString());
                 return;
             }
@@ -340,7 +339,7 @@ public class c implements a {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(b bVar) {
-        ITPReportInfoGetter iTPReportInfoGetter = this.f39387a;
+        ITPReportInfoGetter iTPReportInfoGetter = this.f25696a;
         if (iTPReportInfoGetter == null) {
             return;
         }
@@ -352,22 +351,22 @@ public class c implements a {
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
         a(initExtendReportInfo, hashMap, hashMap2);
-        bVar.f39365a.a(hashMap);
-        bVar.f39365a.b(hashMap2);
+        bVar.f25674a.a(hashMap);
+        bVar.f25674a.b(hashMap2);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(String str, Map<String, String> map) {
-        if (this.f39388c.size() == 0) {
+        if (this.f25697c.size() == 0) {
             return;
         }
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f39388c.size()) {
+            if (i3 >= this.f25697c.size()) {
                 return;
             }
-            ITPReportChannelListener iTPReportChannelListener = this.f39388c.get(i3).get();
+            ITPReportChannelListener iTPReportChannelListener = this.f25697c.get(i3).get();
             if (iTPReportChannelListener != null) {
                 iTPReportChannelListener.reportEvent(str, map);
             }

@@ -339,9 +339,8 @@ public class ContainsEmojiEditText extends EditText implements View.OnFocusChang
         return popupWindow.isShowing();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         removeTextChangedListener(this.myWatcher);
         HttpUtils.getInstance().cancelTag(SOBOT_AUTO_COMPLETE_REQUEST_CANCEL_TAG);
         dismissPop();

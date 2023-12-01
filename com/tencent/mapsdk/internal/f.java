@@ -18,7 +18,7 @@ public class f extends e {
         this.i = hVar;
         this.j = 0;
         this.k = 0;
-        hVar.f37496c = (short) 2;
+        hVar.f23805c = (short) 2;
     }
 
     public f(boolean z) {
@@ -29,7 +29,7 @@ public class f extends e {
         if (z) {
             g();
         } else {
-            hVar.f37496c = (short) 2;
+            hVar.f23805c = (short) 2;
         }
     }
 
@@ -42,7 +42,7 @@ public class f extends e {
             hashMap.put("", new byte[0]);
             n.put("", hashMap);
         }
-        this.f37334a = mVar.a((Map) n, 0, false);
+        this.f23643a = mVar.a((Map) n, 0, false);
         this.b = new HashMap<>();
     }
 
@@ -89,14 +89,14 @@ public class f extends e {
         }
         ByteBuffer allocate = ByteBuffer.allocate(4);
         byte[] bArr2 = new byte[4];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, 0, bArr2, 0, 4);
         allocate.put(bArr2).flip();
         this.j = allocate.getInt();
         try {
             m mVar = new m(bArr, 4);
             mVar.a(this.d);
             this.i.readFrom(mVar);
-            if (this.i.f37496c == 3) {
+            if (this.i.f23805c == 3) {
                 q();
                 return;
             }
@@ -118,7 +118,7 @@ public class f extends e {
         }
         ByteBuffer allocate = ByteBuffer.allocate(4);
         byte[] bArr2 = new byte[4];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 4);
+        System.arraycopy(bArr, 0, bArr2, 0, 4);
         allocate.put(bArr2).flip();
         this.j = allocate.getInt();
         try {
@@ -134,7 +134,7 @@ public class f extends e {
     @Override // com.tencent.mapsdk.internal.e, com.tencent.mapsdk.internal.c
     public byte[] b() {
         h hVar = this.i;
-        if (hVar.f37496c == 2) {
+        if (hVar.f23805c == 2) {
             String str = hVar.g;
             if (str == null || str.equals("")) {
                 throw new IllegalArgumentException("servantName can not is null");
@@ -153,9 +153,9 @@ public class f extends e {
         }
         n nVar = new n(0);
         nVar.a(this.d);
-        short s = this.i.f37496c;
+        short s = this.i.f23805c;
         if (s == 2 || s == 1) {
-            nVar.a((Map) this.f37334a, 0);
+            nVar.a((Map) this.f23643a, 0);
         } else {
             nVar.a((Map) this.f, 0);
         }
@@ -192,7 +192,7 @@ public class f extends e {
     @Override // com.tencent.mapsdk.internal.e
     public void g() {
         super.g();
-        this.i.f37496c = (short) 3;
+        this.i.f23805c = (short) 3;
     }
 
     public void g(String str) {
@@ -202,11 +202,11 @@ public class f extends e {
     public byte[] h() {
         n nVar = new n(0);
         nVar.a(this.d);
-        nVar.a((Map) this.f37334a, 0);
+        nVar.a((Map) this.f23643a, 0);
         byte[] b = q.b(nVar.a());
         n nVar2 = new n(0);
         nVar2.a(this.d);
-        nVar2.a(this.i.f37496c, 1);
+        nVar2.a(this.i.f23805c, 1);
         nVar2.a(this.i.d, 2);
         nVar2.a(this.i.f, 3);
         nVar2.a(this.i.e, 4);
@@ -222,7 +222,7 @@ public class f extends e {
         fVar.g(o());
         fVar.f(j());
         fVar.b(this.d);
-        fVar.i.f37496c = this.i.f37496c;
+        fVar.i.f23805c = this.i.f23805c;
         return fVar;
     }
 
@@ -235,7 +235,7 @@ public class f extends e {
     }
 
     public int l() {
-        return this.i.f37496c;
+        return this.i.f23805c;
     }
 
     public int m() {

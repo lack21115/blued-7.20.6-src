@@ -10,9 +10,7 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKRoundToastView.class */
 public class LivePKRoundToastView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private TextView f14832a;
+    private TextView a;
     private boolean b;
 
     public LivePKRoundToastView(Context context) {
@@ -27,7 +25,7 @@ public class LivePKRoundToastView extends FrameLayout {
 
     private void b() {
         LayoutInflater.from(getContext()).inflate(R.layout.live_pk_round_toast_view, this);
-        this.f14832a = (TextView) findViewById(R.id.tv_content);
+        this.a = (TextView) findViewById(R.id.tv_content);
         setVisibility(8);
     }
 
@@ -37,7 +35,7 @@ public class LivePKRoundToastView extends FrameLayout {
 
     public void a(String str) {
         setVisibility(8);
-        this.f14832a.setText(str);
+        this.a.setText(str);
         ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f, 1.0f, 0.8f, 1.0f, 1, 0.5f, 1, 0.5f);
         scaleAnimation.setDuration(300L);
         clearAnimation();

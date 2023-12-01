@@ -16,16 +16,16 @@ import com.meizu.cloud.pushsdk.notification.model.AdvanceSetting;
 public final class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static PackageInfo f22010c;
+    private static PackageInfo f8403c;
 
     /* renamed from: a  reason: collision with root package name */
-    Handler f22011a;
+    Handler f8404a;
     public GtPushInterface b;
 
     public a(final b bVar) {
         final HandlerThread handlerThread = new HandlerThread("Plugin Handler Thread");
         handlerThread.start();
-        this.f22011a = new Handler(handlerThread.getLooper()) { // from class: com.getui.gtc.g.a.a.1
+        this.f8404a = new Handler(handlerThread.getLooper()) { // from class: com.getui.gtc.g.a.a.1
             @Override // android.os.Handler
             public final void handleMessage(Message message) {
                 try {
@@ -48,7 +48,7 @@ public final class a {
                     bVar.a(loadSdk);
                 }
                 handlerThread.quit();
-                a.this.f22011a = null;
+                a.this.f8404a = null;
             }
         };
     }
@@ -56,10 +56,10 @@ public final class a {
     public static Pair<ServiceInfo, Class> a(Context context, Class cls) {
         boolean z;
         try {
-            if (f22010c == null) {
-                f22010c = context.getPackageManager().getPackageInfo(context.getPackageName(), 4);
+            if (f8403c == null) {
+                f8403c = context.getPackageManager().getPackageInfo(context.getPackageName(), 4);
             }
-            ServiceInfo[] serviceInfoArr = f22010c.services;
+            ServiceInfo[] serviceInfoArr = f8403c.services;
             if (serviceInfoArr != null && serviceInfoArr.length > 0) {
                 int length = serviceInfoArr.length;
                 int i = 0;
@@ -112,7 +112,7 @@ public final class a {
         Message obtain = Message.obtain();
         obtain.setData(bundle);
         obtain.what = 0;
-        Handler handler = this.f22011a;
+        Handler handler = this.f8404a;
         if (handler != null) {
             obtain.setTarget(handler);
             obtain.sendToTarget();

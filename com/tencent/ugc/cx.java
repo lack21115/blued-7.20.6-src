@@ -7,16 +7,16 @@ import java.util.List;
 public final /* synthetic */ class cx implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMediaListSource f40308a;
+    private final UGCMediaListSource f26617a;
     private final List b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f40309c;
+    private final int f26618c;
 
     private cx(UGCMediaListSource uGCMediaListSource, List list, int i) {
-        this.f40308a = uGCMediaListSource;
+        this.f26617a = uGCMediaListSource;
         this.b = list;
-        this.f40309c = i;
+        this.f26618c = i;
     }
 
     public static Runnable a(UGCMediaListSource uGCMediaListSource, List list, int i) {
@@ -25,6 +25,6 @@ public final /* synthetic */ class cx implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCMediaListSource.lambda$setPictureList$5(this.f40308a, this.b, this.f40309c);
+        UGCMediaListSource.lambda$setPictureList$5(this.f26617a, this.b, this.f26618c);
     }
 }

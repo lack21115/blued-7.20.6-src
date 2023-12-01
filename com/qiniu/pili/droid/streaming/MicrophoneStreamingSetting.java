@@ -10,10 +10,10 @@ import org.json.JSONObject;
 public class MicrophoneStreamingSetting {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f27821a;
+    public boolean f14133a;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f27822c;
+    public boolean f14134c;
     public boolean b = true;
     public int d = 44100;
     public int e = 16;
@@ -30,7 +30,7 @@ public class MicrophoneStreamingSetting {
     }
 
     public boolean c() {
-        return this.f27822c;
+        return this.f14134c;
     }
 
     public int getAudioSource() {
@@ -50,7 +50,7 @@ public class MicrophoneStreamingSetting {
     }
 
     public boolean isBluetoothSCOEnabled() {
-        return this.f27821a;
+        return this.f14133a;
     }
 
     public boolean setAECEnabled(boolean z) {
@@ -79,12 +79,12 @@ public class MicrophoneStreamingSetting {
     }
 
     public MicrophoneStreamingSetting setBluetoothSCOEnabled(boolean z) {
-        this.f27821a = z;
+        this.f14133a = z;
         return this;
     }
 
     public MicrophoneStreamingSetting setCaptureAudioFrameOnly(boolean z) {
-        this.f27822c = z;
+        this.f14134c = z;
         return this;
     }
 
@@ -104,7 +104,7 @@ public class MicrophoneStreamingSetting {
         try {
             jSONObject.put("SampleRate", this.d);
             jSONObject.put("Channel", this.e);
-            jSONObject.put("BluetoothSCOEnabled", this.f27821a);
+            jSONObject.put("BluetoothSCOEnabled", this.f14133a);
             jSONObject.put("AudioPtsOptimizeEnable", this.b);
             jSONObject.put("IsAECEnabled", this.g);
             return jSONObject.toString();

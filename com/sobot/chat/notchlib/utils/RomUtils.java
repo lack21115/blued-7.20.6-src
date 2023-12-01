@@ -3,8 +3,6 @@ package com.sobot.chat.notchlib.utils;
 import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.BufferedReader;
 import java.io.File;
@@ -40,7 +38,7 @@ public final class RomUtils {
         }
 
         public String toString() {
-            return "RomInfo{name=" + this.name + ", version=" + this.version + i.d;
+            return "RomInfo{name=" + this.name + ", version=" + this.version + "}";
         }
     }
 
@@ -77,7 +75,7 @@ public final class RomUtils {
         if (isRightRom(brand, manufacturer, "huawei")) {
             bean.name = "huawei";
             String romVersion = getRomVersion(VERSION_PROPERTY_HUAWEI);
-            String[] split = romVersion.split(BridgeUtil.UNDERLINE_STR);
+            String[] split = romVersion.split("_");
             if (split.length > 1) {
                 bean.version = split[1];
             } else {

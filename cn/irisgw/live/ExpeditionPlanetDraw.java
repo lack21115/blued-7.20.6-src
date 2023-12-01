@@ -50,8 +50,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
     private int shipCount_;
     private static final ExpeditionPlanetDraw DEFAULT_INSTANCE = new ExpeditionPlanetDraw();
     private static final Parser<ExpeditionPlanetDraw> PARSER = new AbstractParser<ExpeditionPlanetDraw>() { // from class: cn.irisgw.live.ExpeditionPlanetDraw.1
-        @Override // com.google.protobuf.Parser
-        public ExpeditionPlanetDraw parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public ExpeditionPlanetDraw m2289parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new ExpeditionPlanetDraw(codedInputStream, extensionRegistryLite);
         }
     };
@@ -126,7 +126,7 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return this;
             }
             ensureGoodsInfoIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.goodsInfo_);
+            AbstractMessageLite.Builder.addAll(iterable, this.goodsInfo_);
             onChanged();
             return this;
         }
@@ -134,11 +134,11 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         public Builder addGoodsInfo(int i, Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m2340build());
                 return this;
             }
             ensureGoodsInfoIsMutable();
-            this.goodsInfo_.add(i, builder.build());
+            this.goodsInfo_.add(i, builder.m2340build());
             onChanged();
             return this;
         }
@@ -161,11 +161,11 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         public Builder addGoodsInfo(Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m2340build());
                 return this;
             }
             ensureGoodsInfoIsMutable();
-            this.goodsInfo_.add(builder.build());
+            this.goodsInfo_.add(builder.m2340build());
             onChanged();
             return this;
         }
@@ -193,22 +193,22 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return getGoodsInfoFieldBuilder().addBuilder(i, Goods.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m2291addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ExpeditionPlanetDraw build() {
-            ExpeditionPlanetDraw buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public ExpeditionPlanetDraw m2293build() {
+            ExpeditionPlanetDraw m2295buildPartial = m2295buildPartial();
+            if (m2295buildPartial.isInitialized()) {
+                return m2295buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m2295buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ExpeditionPlanetDraw buildPartial() {
+        /* renamed from: buildPartial */
+        public ExpeditionPlanetDraw m2295buildPartial() {
             ExpeditionPlanetDraw expeditionPlanetDraw = new ExpeditionPlanetDraw(this);
             expeditionPlanetDraw.planetId_ = this.planetId_;
             expeditionPlanetDraw.planetName_ = this.planetName_;
@@ -234,8 +234,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return expeditionPlanetDraw;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m2299clear() {
             super.clear();
             this.planetId_ = 0;
             this.planetName_ = "";
@@ -263,8 +263,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m2301clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -292,8 +292,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m2304clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -339,10 +339,9 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m2310clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.ExpeditionPlanetDrawOrBuilder
@@ -350,12 +349,11 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this.beans_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public ExpeditionPlanetDraw getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public ExpeditionPlanetDraw m2312getDefaultInstanceForType() {
             return ExpeditionPlanetDraw.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetDraw_descriptor;
         }
@@ -389,7 +387,7 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         @Override // cn.irisgw.live.ExpeditionPlanetDrawOrBuilder
         public GoodsOrBuilder getGoodsInfoOrBuilder(int i) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsInfoBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.goodsInfo_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.goodsInfo_.get(i) : (GoodsOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.ExpeditionPlanetDrawOrBuilder
@@ -494,12 +492,10 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this.shipCount_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetDraw_fieldAccessorTable.ensureFieldAccessorsInitialized(ExpeditionPlanetDraw.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -567,18 +563,18 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                     this.goodsInfoBuilder_.addAllMessages(expeditionPlanetDraw.goodsInfo_);
                 }
             }
-            mergeUnknownFields(expeditionPlanetDraw.unknownFields);
+            m2321mergeUnknownFields(expeditionPlanetDraw.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.ExpeditionPlanetDraw.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.ExpeditionPlanetDraw.Builder m2318mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -623,11 +619,11 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ExpeditionPlanetDraw.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ExpeditionPlanetDraw$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ExpeditionPlanetDraw.Builder.m2318mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ExpeditionPlanetDraw$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m2317mergeFrom(Message message) {
             if (message instanceof ExpeditionPlanetDraw) {
                 return mergeFrom((ExpeditionPlanetDraw) message);
             }
@@ -635,8 +631,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m2321mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -658,19 +654,19 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m2323setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
         public Builder setGoodsInfo(int i, Goods.Builder builder) {
             RepeatedFieldBuilderV3<Goods, Goods.Builder, GoodsOrBuilder> repeatedFieldBuilderV3 = this.goodsInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m2340build());
                 return this;
             }
             ensureGoodsInfoIsMutable();
-            this.goodsInfo_.set(i, builder.build());
+            this.goodsInfo_.set(i, builder.m2340build());
             onChanged();
             return this;
         }
@@ -777,8 +773,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m2325setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -788,8 +784,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m2327setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -808,8 +804,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         private volatile Object name_;
         private static final Goods DEFAULT_INSTANCE = new Goods();
         private static final Parser<Goods> PARSER = new AbstractParser<Goods>() { // from class: cn.irisgw.live.ExpeditionPlanetDraw.Goods.1
-            @Override // com.google.protobuf.Parser
-            public Goods parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public Goods m2336parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new Goods(codedInputStream, extensionRegistryLite);
             }
         };
@@ -842,22 +838,22 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 boolean unused = Goods.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m2338addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Goods build() {
-                Goods buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public Goods m2340build() {
+                Goods m2342buildPartial = m2342buildPartial();
+                if (m2342buildPartial.isInitialized()) {
+                    return m2342buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m2342buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Goods buildPartial() {
+            /* renamed from: buildPartial */
+            public Goods m2342buildPartial() {
                 Goods goods = new Goods(this);
                 goods.id_ = this.id_;
                 goods.name_ = this.name_;
@@ -867,8 +863,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return goods;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m2346clear() {
                 super.clear();
                 this.id_ = 0;
                 this.name_ = "";
@@ -883,8 +879,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m2348clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -906,15 +902,14 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m2351clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m2357clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.ExpeditionPlanetDraw.GoodsOrBuilder
@@ -922,12 +917,11 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return this.count_;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public Goods getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public Goods m2359getDefaultInstanceForType() {
                 return Goods.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetDraw_Goods_descriptor;
             }
@@ -981,12 +975,10 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetDraw_Goods_fieldAccessorTable.ensureFieldAccessorsInitialized(Goods.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1009,18 +1001,18 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 if (goods.getCount() != 0) {
                     setCount(goods.getCount());
                 }
-                mergeUnknownFields(goods.unknownFields);
+                m2368mergeUnknownFields(goods.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.ExpeditionPlanetDraw.Goods.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.ExpeditionPlanetDraw.Goods.Builder m2365mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1065,11 +1057,11 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ExpeditionPlanetDraw.Goods.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ExpeditionPlanetDraw$Goods$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ExpeditionPlanetDraw.Goods.Builder.m2365mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ExpeditionPlanetDraw$Goods$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m2364mergeFrom(Message message) {
                 if (message instanceof Goods) {
                     return mergeFrom((Goods) message);
                 }
@@ -1077,8 +1069,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m2368mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -1088,8 +1080,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m2370setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -1137,13 +1129,13 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m2372setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m2374setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1204,66 +1196,65 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m2335toBuilder();
         }
 
         public static Builder newBuilder(Goods goods) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(goods);
+            return DEFAULT_INSTANCE.m2335toBuilder().mergeFrom(goods);
         }
 
         public static Goods parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static Goods parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (Goods) PARSER.parseFrom(byteString);
         }
 
         public static Goods parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static Goods parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static Goods parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(InputStream inputStream) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static Goods parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (Goods) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static Goods parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (Goods) PARSER.parseFrom(byteBuffer);
         }
 
         public static Goods parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static Goods parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (Goods) PARSER.parseFrom(bArr);
         }
 
         public static Goods parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (Goods) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<Goods> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1280,8 +1271,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public Goods getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public Goods m2330getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1334,12 +1325,10 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<Goods> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1368,12 +1357,10 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1383,12 +1370,10 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetDraw_Goods_fieldAccessorTable.ensureFieldAccessorsInitialized(Goods.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1401,28 +1386,26 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m2333newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m2332newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new Goods();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m2335toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             int i = this.id_;
             if (i != 0) {
@@ -1563,66 +1546,65 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m2288toBuilder();
     }
 
     public static Builder newBuilder(ExpeditionPlanetDraw expeditionPlanetDraw) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(expeditionPlanetDraw);
+        return DEFAULT_INSTANCE.m2288toBuilder().mergeFrom(expeditionPlanetDraw);
     }
 
     public static ExpeditionPlanetDraw parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (ExpeditionPlanetDraw) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static ExpeditionPlanetDraw parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ExpeditionPlanetDraw) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetDraw parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (ExpeditionPlanetDraw) PARSER.parseFrom(byteString);
     }
 
     public static ExpeditionPlanetDraw parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (ExpeditionPlanetDraw) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetDraw parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (ExpeditionPlanetDraw) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static ExpeditionPlanetDraw parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ExpeditionPlanetDraw) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetDraw parseFrom(InputStream inputStream) throws IOException {
-        return (ExpeditionPlanetDraw) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static ExpeditionPlanetDraw parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ExpeditionPlanetDraw) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetDraw parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (ExpeditionPlanetDraw) PARSER.parseFrom(byteBuffer);
     }
 
     public static ExpeditionPlanetDraw parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (ExpeditionPlanetDraw) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static ExpeditionPlanetDraw parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (ExpeditionPlanetDraw) PARSER.parseFrom(bArr);
     }
 
     public static ExpeditionPlanetDraw parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (ExpeditionPlanetDraw) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<ExpeditionPlanetDraw> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1639,8 +1621,8 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         return this.beans_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public ExpeditionPlanetDraw getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public ExpeditionPlanetDraw m2283getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1679,7 +1661,6 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         return this.isLucky_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<ExpeditionPlanetDraw> getParserForType() {
         return PARSER;
     }
@@ -1765,7 +1746,6 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         return this.remainTime_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1831,12 +1811,10 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         return this.shipCount_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1851,12 +1829,10 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_ExpeditionPlanetDraw_fieldAccessorTable.ensureFieldAccessorsInitialized(ExpeditionPlanetDraw.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1869,28 +1845,26 @@ public final class ExpeditionPlanetDraw extends GeneratedMessageV3 implements Ex
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m2286newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m2285newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new ExpeditionPlanetDraw();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m2288toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.planetId_;
         if (i != 0) {

@@ -4,11 +4,11 @@ package com.huawei.hms.hatool;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f22752a;
+    public boolean f9144a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f22753c;
+    public boolean f9145c;
     public boolean d;
     public String e;
     public String f;
@@ -20,7 +20,7 @@ public class j {
     }
 
     public void a(boolean z) {
-        this.f22752a = z;
+        this.f9144a = z;
     }
 
     public String b() {
@@ -36,7 +36,7 @@ public class j {
     }
 
     public void c(boolean z) {
-        this.f22753c = z;
+        this.f9145c = z;
     }
 
     public String d() {
@@ -48,7 +48,7 @@ public class j {
     }
 
     public boolean f() {
-        return this.f22752a;
+        return this.f9144a;
     }
 
     public boolean g() {
@@ -56,6 +56,6 @@ public class j {
     }
 
     public boolean h() {
-        return this.f22753c;
+        return this.f9145c;
     }
 }

@@ -1,5 +1,6 @@
 package com.blued.android.core.utils;
 
+import com.anythink.core.common.k.f;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,20 +10,18 @@ import java.security.NoSuchAlgorithmException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/Md5.class */
 public final class Md5 {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static char[] f9734a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
+    protected static char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
     public static String a(File file) throws IOException {
         try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+            MessageDigest messageDigest = MessageDigest.getInstance(f.a);
             FileInputStream fileInputStream = new FileInputStream(file);
-            byte[] a2 = ByteArrayPool.f9730a.a(1024);
+            byte[] a2 = ByteArrayPool.a.a(1024);
             while (true) {
                 int read = fileInputStream.read(a2);
                 if (read <= 0) {
                     fileInputStream.close();
-                    ByteArrayPool.f9730a.a(a2);
+                    ByteArrayPool.a.a(a2);
                     return b(messageDigest.digest());
                 }
                 messageDigest.update(a2, 0, read);
@@ -62,7 +61,7 @@ public final class Md5 {
         synchronized (Md5.class) {
             try {
                 try {
-                    MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+                    MessageDigest messageDigest = MessageDigest.getInstance(f.a);
                     messageDigest.update(bArr);
                     byte[] digest = messageDigest.digest();
                     StringBuilder sb2 = new StringBuilder();
@@ -105,7 +104,7 @@ public final class Md5 {
         synchronized (Md5.class) {
             try {
                 try {
-                    MessageDigest messageDigest = MessageDigest.getInstance("MD5");
+                    MessageDigest messageDigest = MessageDigest.getInstance(f.a);
                     messageDigest.update(bArr);
                     messageDigest.update(bArr2);
                     byte[] digest = messageDigest.digest();
@@ -132,11 +131,11 @@ public final class Md5 {
     }
 
     private static void a(byte b, StringBuffer stringBuffer) {
-        char[] cArr = f9734a;
-        char c2 = cArr[(b & 240) >> 4];
-        char c3 = cArr[b & 15];
+        char[] cArr = a;
+        char c = cArr[(b & 240) >> 4];
+        char c2 = cArr[b & 15];
+        stringBuffer.append(c);
         stringBuffer.append(c2);
-        stringBuffer.append(c3);
     }
 
     private static String b(byte[] bArr) {

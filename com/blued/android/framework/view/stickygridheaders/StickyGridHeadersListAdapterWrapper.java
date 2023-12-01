@@ -8,9 +8,7 @@ import android.widget.ListAdapter;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersListAdapterWrapper.class */
 public class StickyGridHeadersListAdapterWrapper extends BaseAdapter implements StickyGridHeadersBaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DataSetObserver f10316a;
+    private DataSetObserver a;
     private ListAdapter b;
 
     public StickyGridHeadersListAdapterWrapper(ListAdapter listAdapter) {
@@ -25,7 +23,7 @@ public class StickyGridHeadersListAdapterWrapper extends BaseAdapter implements 
                 StickyGridHeadersListAdapterWrapper.this.notifyDataSetInvalidated();
             }
         };
-        this.f10316a = dataSetObserver;
+        this.a = dataSetObserver;
         this.b = listAdapter;
         if (listAdapter != null) {
             listAdapter.registerDataSetObserver(dataSetObserver);

@@ -4,13 +4,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.media.AudioAttributes;
 import android.media.AudioDeviceInfo;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
-import android.media.AudioSystem;
-import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,8 +15,8 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.util.Log;
 import com.alipay.sdk.util.e;
+import com.android.internal.util.cm.PowerMenuConstants;
 import com.blued.android.module.media.audio.audio_manager.BLBluetoothManager;
-import com.zego.zegoliveroom.constants.ZegoConstants;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,13 +24,9 @@ import java.util.Set;
 public class BLAudioManager {
     private static boolean i = false;
     private static BLAudioManager v;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f15503a;
+    private final Context a;
     private AudioManager b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private AudioFocusRequest f15504c;
+    private AudioFocusRequest c;
     private PowerManager d;
     private PowerManager.WakeLock e;
     private AudioManagerEvents f;
@@ -54,9 +47,9 @@ public class BLAudioManager {
     private final Handler w = new Handler(Looper.getMainLooper(), new Handler.Callback() { // from class: com.blued.android.module.media.audio.audio_manager.-$$Lambda$BLAudioManager$1UVZwexKHqiTpvN_66T23A_Xl-Y
         @Override // android.os.Handler.Callback
         public final boolean handleMessage(Message message) {
-            boolean a2;
-            a2 = BLAudioManager.this.a(message);
-            return a2;
+            boolean a;
+            a = BLAudioManager.this.a(message);
+            return a;
         }
     });
 
@@ -64,30 +57,28 @@ public class BLAudioManager {
     /* renamed from: com.blued.android.module.media.audio.audio_manager.BLAudioManager$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/audio/audio_manager/BLAudioManager$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15505a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[AudioDevice.values().length];
-            f15505a = iArr;
+            a = iArr;
             try {
                 iArr[AudioDevice.SPEAKER_PHONE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15505a[AudioDevice.EARPIECE.ordinal()] = 2;
+                a[AudioDevice.EARPIECE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15505a[AudioDevice.WIRED_HEADSET.ordinal()] = 3;
+                a[AudioDevice.WIRED_HEADSET.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15505a[AudioDevice.BLUETOOTH.ordinal()] = 4;
+                a[AudioDevice.BLUETOOTH.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
@@ -133,7 +124,7 @@ public class BLAudioManager {
         public void onReceive(Context context, Intent intent) {
             boolean z = false;
             int intExtra = intent.getIntExtra("state", 0);
-            int intExtra2 = intent.getIntExtra(ZegoConstants.DeviceNameType.DeviceNameMicrophone, 0);
+            int intExtra2 = intent.getIntExtra("microphone", 0);
             String stringExtra = intent.getStringExtra("name");
             StringBuilder sb = new StringBuilder();
             sb.append("WiredHeadsetReceiver.onReceive");
@@ -141,9 +132,9 @@ public class BLAudioManager {
             sb.append(": a=");
             sb.append(intent.getAction());
             sb.append(", s=");
-            sb.append(intExtra == 0 ? "unplugged" : BatteryManager.EXTRA_PLUGGED);
+            sb.append(intExtra == 0 ? "unplugged" : "plugged");
             sb.append(", m=");
-            sb.append(intExtra2 == 1 ? AudioSystem.DEVICE_IN_BUILTIN_MIC_NAME : "no mic");
+            sb.append(intExtra2 == 1 ? "mic" : "no mic");
             sb.append(", n=");
             sb.append(stringExtra);
             sb.append(", sb=");
@@ -161,7 +152,7 @@ public class BLAudioManager {
     private BLAudioManager(Context context) {
         Log.d("BLAudioManager", "ctor");
         ThreadUtils.a();
-        this.f15503a = context.getApplicationContext();
+        this.a = context.getApplicationContext();
         this.b = (AudioManager) context.getSystemService("audio");
         this.r = BLBluetoothManager.a(context, this);
         this.t = new WiredHeadsetReceiver(this, null);
@@ -177,7 +168,7 @@ public class BLAudioManager {
         s();
         BLUtils.a("BLAudioManager");
         if (i) {
-            this.d = (PowerManager) context.getSystemService("power");
+            this.d = (PowerManager) context.getSystemService(PowerMenuConstants.GLOBAL_ACTION_KEY_POWER);
         }
     }
 
@@ -207,7 +198,7 @@ public class BLAudioManager {
         }
         Log.d("BLAudioManager", "setAudioDeviceInternal(device=" + audioDevice + ")");
         a(audioDevice == AudioDevice.EARPIECE ? 3 : 0);
-        int i2 = AnonymousClass1.f15505a[audioDevice.ordinal()];
+        int i2 = AnonymousClass1.a[audioDevice.ordinal()];
         if (i2 == 1) {
             a(true);
         } else if (i2 == 2) {
@@ -269,7 +260,7 @@ public class BLAudioManager {
             return;
         }
         if (this.e == null) {
-            this.e = powerManager.newWakeLock(32, this.f15503a.getPackageName() + ";manager_proximity_sensor");
+            this.e = powerManager.newWakeLock(32, this.a.getPackageName() + ";manager_proximity_sensor");
         }
         if (this.e.isHeld()) {
             return;
@@ -299,17 +290,17 @@ public class BLAudioManager {
     }
 
     private void l() {
-        if (this.f15504c != null) {
+        if (this.c != null) {
             return;
         }
-        this.f15504c = new AudioFocusRequest.Builder(2).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(2).build()).setOnAudioFocusChangeListener(this.u).setAcceptsDelayedFocusGain(true).build();
+        this.c = new AudioFocusRequest.Builder(2).setAudioAttributes(new AudioAttributes.Builder().setUsage(1).setContentType(2).build()).setOnAudioFocusChangeListener(this.u).setAcceptsDelayedFocusGain(true).build();
     }
 
     private int m() {
         int requestAudioFocus;
         if (k()) {
             l();
-            requestAudioFocus = this.b.requestAudioFocus(this.f15504c);
+            requestAudioFocus = this.b.requestAudioFocus(this.c);
         } else {
             requestAudioFocus = this.b.requestAudioFocus(this.u, 3, 2);
         }
@@ -326,7 +317,7 @@ public class BLAudioManager {
         int abandonAudioFocus;
         if (k()) {
             l();
-            abandonAudioFocus = this.b.abandonAudioFocusRequest(this.f15504c);
+            abandonAudioFocus = this.b.abandonAudioFocusRequest(this.c);
         } else {
             abandonAudioFocus = this.b.abandonAudioFocus(this.u);
         }
@@ -372,7 +363,7 @@ public class BLAudioManager {
     }
 
     private void registerReceiver(BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
-        this.f15503a.registerReceiver(broadcastReceiver, intentFilter);
+        this.a.registerReceiver(broadcastReceiver, intentFilter);
     }
 
     private void s() {
@@ -388,7 +379,7 @@ public class BLAudioManager {
     }
 
     private boolean t() {
-        return this.f15503a.getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+        return this.a.getPackageManager().hasSystemFeature("android.hardware.telephony");
     }
 
     @Deprecated
@@ -418,7 +409,7 @@ public class BLAudioManager {
     }
 
     private void unregisterReceiver(BroadcastReceiver broadcastReceiver) {
-        this.f15503a.unregisterReceiver(broadcastReceiver);
+        this.a.unregisterReceiver(broadcastReceiver);
     }
 
     public void a() {
@@ -438,7 +429,7 @@ public class BLAudioManager {
         int m = m();
         StringBuilder sb = new StringBuilder();
         sb.append("Audio focus request ");
-        sb.append(m == 1 ? "granted" : e.f4661a);
+        sb.append(m == 1 ? "granted" : e.a);
         Log.d("BLAudioManager", sb.toString());
         this.p = AudioDevice.NONE;
         this.o = AudioDevice.NONE;

@@ -10,22 +10,22 @@ import org.json.JSONObject;
 public class r0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile boolean f3955a = true;
+    public static volatile boolean f3907a = true;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/r0$a.class */
     public static final class a extends TimerTask {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ Timer f3956a;
+        public final /* synthetic */ Timer f3908a;
 
         public a(Timer timer) {
-            this.f3956a = timer;
+            this.f3908a = timer;
         }
 
         @Override // java.util.TimerTask, java.lang.Runnable
         public void run() {
             a3.a("th_loc_task_t_consume", new b(null));
-            this.f3956a.cancel();
+            this.f3908a.cancel();
         }
     }
 
@@ -68,7 +68,7 @@ public class r0 {
 
         @Override // java.lang.Runnable
         public void run() {
-            if (r0.f3955a) {
+            if (r0.f3907a) {
                 d3.a("https://cs.map.qq.com/key", new a(this));
             }
         }

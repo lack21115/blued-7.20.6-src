@@ -8,20 +8,19 @@ import skin.support.widget.SkinCompatSupportable;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/design/widget/SkinMaterialAppBarLayout.class */
 public class SkinMaterialAppBarLayout extends AppBarLayout implements SkinCompatSupportable {
+    private SkinCompatBackgroundHelper a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f44232a;
-
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinMaterialAppBarLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f44232a = skinCompatBackgroundHelper;
+        this.a = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, 0);
     }
 
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44232a;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.a;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }

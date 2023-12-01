@@ -12,13 +12,9 @@ import kotlinx.coroutines.CoroutineScope;
 @DebugMetadata(b = "CommunitySampleViewModel.kt", c = {71, 78}, d = "invokeSuspend", e = "com.blued.community.manager.CommunitySampleViewModel$requestDataAsync$1")
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/manager/CommunitySampleViewModel$requestDataAsync$1.class */
 final class CommunitySampleViewModel$requestDataAsync$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f19092a;
+    int a;
     final /* synthetic */ CommunitySampleViewModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private /* synthetic */ Object f19093c;
+    private /* synthetic */ Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     CommunitySampleViewModel$requestDataAsync$1(CommunitySampleViewModel communitySampleViewModel, Continuation<? super CommunitySampleViewModel$requestDataAsync$1> continuation) {
@@ -29,13 +25,13 @@ final class CommunitySampleViewModel$requestDataAsync$1 extends SuspendLambda im
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((CommunitySampleViewModel$requestDataAsync$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((CommunitySampleViewModel$requestDataAsync$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         CommunitySampleViewModel$requestDataAsync$1 communitySampleViewModel$requestDataAsync$1 = new CommunitySampleViewModel$requestDataAsync$1(this.b, continuation);
-        communitySampleViewModel$requestDataAsync$1.f19093c = obj;
+        communitySampleViewModel$requestDataAsync$1.c = obj;
         return communitySampleViewModel$requestDataAsync$1;
     }
 

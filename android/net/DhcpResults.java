@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.util.Objects;
@@ -113,7 +112,7 @@ public class DhcpResults extends StaticIpConfiguration {
             this.ipAddress = new LinkAddress((Inet4Address) NetworkUtils.numericToInetAddress(str), i);
             return false;
         } catch (ClassCastException | IllegalArgumentException e) {
-            Log.e(TAG, "setIpAddress failed with addrString " + str + BridgeUtil.SPLIT_MARK + i);
+            Log.e(TAG, "setIpAddress failed with addrString " + str + "/" + i);
             return true;
         }
     }

@@ -21,11 +21,11 @@ import okio.Okio;
 public class c implements com.opos.mobad.c.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private f f25974a;
+    private f f12286a;
     private LruCache<String, Buffer> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LruCache<String, WeakReference<Buffer>> f25975c;
+    private LruCache<String, WeakReference<Buffer>> f12287c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(Context context) {
@@ -33,12 +33,12 @@ public class c implements com.opos.mobad.c.a {
     }
 
     c(f fVar) {
-        this.f25974a = fVar;
-        this.f25975c = new LruCache<>(50);
+        this.f12286a = fVar;
+        this.f12287c = new LruCache<>(50);
         this.b = new com.opos.cmn.i.c(20, new c.a<String, Buffer>() { // from class: com.opos.mobad.d.c.1
             @Override // com.opos.cmn.i.c.a
             public void a(String str, Buffer buffer) {
-                c.this.f25975c.put(str, new WeakReference(buffer));
+                c.this.f12287c.put(str, new WeakReference(buffer));
             }
         });
     }
@@ -111,7 +111,7 @@ public class c implements com.opos.mobad.c.a {
     }
 
     private final File a(String str, String str2) {
-        return TextUtils.isEmpty(str2) ? this.f25974a.a(str) : this.f25974a.a(str, str2);
+        return TextUtils.isEmpty(str2) ? this.f12286a.a(str) : this.f12286a.a(str, str2);
     }
 
     private void a(Closeable closeable) {
@@ -124,7 +124,7 @@ public class c implements com.opos.mobad.c.a {
         }
     }
 
-    private void a(final File file, final String str, final int i, final int i2, final a.InterfaceC0676a interfaceC0676a) {
+    private void a(final File file, final String str, final int i, final int i2, final a.InterfaceC0506a interfaceC0506a) {
         com.opos.cmn.an.j.b.c(new Runnable() { // from class: com.opos.mobad.d.c.3
             @Override // java.lang.Runnable
             public void run() {
@@ -132,7 +132,7 @@ public class c implements com.opos.mobad.c.a {
                     Buffer buffer = (Buffer) c.this.b.remove(file.getAbsolutePath());
                     Buffer buffer2 = buffer;
                     if (buffer == null) {
-                        WeakReference weakReference = (WeakReference) c.this.f25975c.get(file.getAbsolutePath());
+                        WeakReference weakReference = (WeakReference) c.this.f12287c.get(file.getAbsolutePath());
                         buffer2 = buffer;
                         if (weakReference != null) {
                             buffer2 = (Buffer) weakReference.get();
@@ -140,21 +140,21 @@ public class c implements com.opos.mobad.c.a {
                     }
                     if (buffer2 != null) {
                         com.opos.cmn.an.f.a.b("fCache", "decode cache");
-                        if (c.this.a(buffer2, str, i, i2, interfaceC0676a)) {
+                        if (c.this.a(buffer2, str, i, i2, interfaceC0506a)) {
                             return;
                         }
                         com.opos.cmn.an.f.a.c("fCache", "decode cache fail");
                     }
                     com.opos.cmn.an.f.a.b("fCache", "decode file");
-                    if (c.this.b(file, str, i, i2, interfaceC0676a)) {
+                    if (c.this.b(file, str, i, i2, interfaceC0506a)) {
                         return;
                     }
                 } catch (Throwable th) {
                     Log.d("fCache", "decode fail", th);
                 }
-                a.InterfaceC0676a interfaceC0676a2 = interfaceC0676a;
-                if (interfaceC0676a2 != null) {
-                    interfaceC0676a2.a(2, null);
+                a.InterfaceC0506a interfaceC0506a2 = interfaceC0506a;
+                if (interfaceC0506a2 != null) {
+                    interfaceC0506a2.a(2, null);
                 }
             }
         });
@@ -266,7 +266,7 @@ public class c implements com.opos.mobad.c.a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public boolean a(okio.Buffer r5, java.lang.String r6, int r7, int r8, com.opos.mobad.c.a.InterfaceC0676a r9) {
+    public boolean a(okio.Buffer r5, java.lang.String r6, int r7, int r8, com.opos.mobad.c.a.InterfaceC0506a r9) {
         /*
             r4 = this;
             r0 = 0
@@ -396,7 +396,7 @@ public class c implements com.opos.mobad.c.a {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public boolean b(java.io.File r8, java.lang.String r9, int r10, int r11, com.opos.mobad.c.a.InterfaceC0676a r12) {
+    public boolean b(java.io.File r8, java.lang.String r9, int r10, int r11, com.opos.mobad.c.a.InterfaceC0506a r12) {
         /*
             Method dump skipped, instructions count: 576
             To view this dump change 'Code comments level' option to 'DEBUG'
@@ -436,8 +436,8 @@ public class c implements com.opos.mobad.c.a {
                         if (TextUtils.isEmpty(str2) || str2.equals(com.opos.cmn.an.a.c.a(b))) {
                             b.renameTo(a2);
                             i = 0;
-                            a(bufferedSource);
-                            a(buffer);
+                            a((Closeable) bufferedSource);
+                            a((Closeable) buffer);
                             if (buffer2 != null) {
                                 buffer2.flush();
                                 buffer2.close();
@@ -447,8 +447,8 @@ public class c implements com.opos.mobad.c.a {
                             com.opos.cmn.an.f.a.b("fCache", "write but md5 fail");
                             b.delete();
                             i = 1;
-                            a(bufferedSource);
-                            a(buffer);
+                            a((Closeable) bufferedSource);
+                            a((Closeable) buffer);
                             if (buffer2 != null) {
                                 buffer2.flush();
                                 buffer2.close();
@@ -461,8 +461,8 @@ public class c implements com.opos.mobad.c.a {
                     }
                 } catch (Exception e2) {
                     com.opos.cmn.an.f.a.b("fCache", "is", e2);
-                    a(bufferedSource);
-                    a(buffer);
+                    a((Closeable) bufferedSource);
+                    a((Closeable) buffer);
                     if (0 != 0) {
                         try {
                             bufferedSink.flush();
@@ -474,8 +474,8 @@ public class c implements com.opos.mobad.c.a {
                 }
                 return i;
             } catch (Throwable th) {
-                a(bufferedSource);
-                a(buffer);
+                a((Closeable) bufferedSource);
+                a((Closeable) buffer);
                 if (0 != 0) {
                     try {
                         bufferedSink2.flush();
@@ -498,8 +498,8 @@ public class c implements com.opos.mobad.c.a {
     }
 
     @Override // com.opos.mobad.c.a
-    public void a(String str, String str2, int i, int i2, a.InterfaceC0676a interfaceC0676a) {
-        a(new File(str), str2, i, i2, interfaceC0676a);
+    public void a(String str, String str2, int i, int i2, a.InterfaceC0506a interfaceC0506a) {
+        a(new File(str), str2, i, i2, interfaceC0506a);
     }
 
     public void a(String str, Buffer buffer, String str2) throws Exception {

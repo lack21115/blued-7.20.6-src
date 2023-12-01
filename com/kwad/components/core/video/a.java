@@ -39,7 +39,7 @@ public class a extends com.kwad.sdk.core.video.videoview.b implements View.OnCli
     private ViewGroup Qv;
     private TextView Qw;
     private c Qx;
-    private InterfaceC0534a Qy;
+    private InterfaceC0364a Qy;
     private final com.kwad.sdk.core.download.kwai.a Qz;
     protected AdInfo mAdInfo;
     protected AdTemplate mAdTemplate;
@@ -54,7 +54,7 @@ public class a extends com.kwad.sdk.core.video.videoview.b implements View.OnCli
 
     /* renamed from: com.kwad.components.core.video.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/video/a$a.class */
-    public interface InterfaceC0534a {
+    public interface InterfaceC0364a {
         void a(int i, ac.a aVar);
     }
 
@@ -123,9 +123,9 @@ public class a extends com.kwad.sdk.core.video.videoview.b implements View.OnCli
     }
 
     private void aL(int i) {
-        InterfaceC0534a interfaceC0534a = this.Qy;
-        if (interfaceC0534a != null) {
-            interfaceC0534a.a(i, this.Qo.getTouchCoords());
+        InterfaceC0364a interfaceC0364a = this.Qy;
+        if (interfaceC0364a != null) {
+            interfaceC0364a.a(i, this.Qo.getTouchCoords());
         }
     }
 
@@ -388,8 +388,8 @@ public class a extends com.kwad.sdk.core.video.videoview.b implements View.OnCli
         pU();
     }
 
-    public void setAdClickListener(InterfaceC0534a interfaceC0534a) {
-        this.Qy = interfaceC0534a;
+    public void setAdClickListener(InterfaceC0364a interfaceC0364a) {
+        this.Qy = interfaceC0364a;
     }
 
     public void setCanControlPlay(boolean z) {

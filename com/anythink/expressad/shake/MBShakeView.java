@@ -19,11 +19,11 @@ import com.anythink.expressad.foundation.h.t;
 public class MBShakeView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8176a = "MBSplashShakeView";
+    private static final String f5336a = "MBSplashShakeView";
     private ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Animation f8177c;
+    private Animation f5337c;
 
     public MBShakeView(Context context) {
         super(context);
@@ -54,11 +54,11 @@ public class MBShakeView extends LinearLayout {
 
     private void a() {
         RotateAnimation rotateAnimation = new RotateAnimation(-10.0f, 10.0f, 1, 0.5f, 1, 0.5f);
-        this.f8177c = rotateAnimation;
+        this.f5337c = rotateAnimation;
         rotateAnimation.setDuration(100L);
-        this.f8177c.setRepeatMode(2);
-        this.f8177c.setRepeatCount(-1);
-        this.b.startAnimation(this.f8177c);
+        this.f5337c.setRepeatMode(2);
+        this.f5337c.setRepeatCount(-1);
+        this.b.startAnimation(this.f5337c);
     }
 
     private static void a(View view) {
@@ -76,7 +76,7 @@ public class MBShakeView extends LinearLayout {
     public void initView(String str, boolean z) {
         setOrientation(1);
         setGravity(1);
-        View imageView = new ImageView(getContext());
+        ImageView imageView = new ImageView(getContext());
         imageView.setLayoutParams(new LinearLayout.LayoutParams(t.b(getContext(), z ? 60.0f : 80.0f), t.b(getContext(), z ? 60.0f : 80.0f)));
         int parseColor = Color.parseColor("#80000000");
         GradientDrawable gradientDrawable = new GradientDrawable();
@@ -93,7 +93,7 @@ public class MBShakeView extends LinearLayout {
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(b, t.b(context, f));
         layoutParams.gravity = 17;
         this.b.setLayoutParams(layoutParams);
-        this.b.setImageResource(getResources().getIdentifier("anythink_splash_btn_shake", i.f7952c, com.anythink.expressad.foundation.b.a.b().a()));
+        this.b.setImageResource(getResources().getIdentifier("anythink_splash_btn_shake", i.f5112c, com.anythink.expressad.foundation.b.a.b().a()));
         FrameLayout frameLayout = new FrameLayout(getContext());
         frameLayout.setLayoutParams(new LinearLayout.LayoutParams(-2, -2));
         frameLayout.addView(imageView);
@@ -137,15 +137,14 @@ public class MBShakeView extends LinearLayout {
         addView(textView2);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         RotateAnimation rotateAnimation = new RotateAnimation(-10.0f, 10.0f, 1, 0.5f, 1, 0.5f);
-        this.f8177c = rotateAnimation;
+        this.f5337c = rotateAnimation;
         rotateAnimation.setDuration(100L);
-        this.f8177c.setRepeatMode(2);
-        this.f8177c.setRepeatCount(-1);
-        this.b.startAnimation(this.f8177c);
+        this.f5337c.setRepeatMode(2);
+        this.f5337c.setRepeatCount(-1);
+        this.b.startAnimation(this.f5337c);
     }
 }

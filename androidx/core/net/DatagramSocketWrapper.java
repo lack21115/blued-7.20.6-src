@@ -21,9 +21,8 @@ class DatagramSocketWrapper extends Socket {
             this.fd = fileDescriptor;
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void accept(SocketImpl socketImpl) throws IOException {
+        protected void accept(SocketImpl socketImpl) throws IOException {
             throw new UnsupportedOperationException();
         }
 
@@ -32,15 +31,13 @@ class DatagramSocketWrapper extends Socket {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void bind(InetAddress inetAddress, int i) throws IOException {
+        protected void bind(InetAddress inetAddress, int i) throws IOException {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void close() throws IOException {
+        protected void close() throws IOException {
             throw new UnsupportedOperationException();
         }
 
@@ -49,27 +46,23 @@ class DatagramSocketWrapper extends Socket {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void connect(InetAddress inetAddress, int i) throws IOException {
+        protected void connect(InetAddress inetAddress, int i) throws IOException {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void connect(SocketAddress socketAddress, int i) throws IOException {
+        protected void connect(SocketAddress socketAddress, int i) throws IOException {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void create(boolean z) throws IOException {
+        protected void create(boolean z) throws IOException {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public InputStream getInputStream() throws IOException {
+        protected InputStream getInputStream() throws IOException {
             throw new UnsupportedOperationException();
         }
 
@@ -78,21 +71,18 @@ class DatagramSocketWrapper extends Socket {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public OutputStream getOutputStream() throws IOException {
+        protected OutputStream getOutputStream() throws IOException {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void listen(int i) throws IOException {
+        protected void listen(int i) throws IOException {
             throw new UnsupportedOperationException();
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // java.net.SocketImpl
-        public void sendUrgentData(int i) throws IOException {
+        protected void sendUrgentData(int i) throws IOException {
             throw new UnsupportedOperationException();
         }
 

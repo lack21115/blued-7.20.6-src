@@ -12,14 +12,14 @@ public abstract class TimeCycleSplineSet {
     protected static float h = 6.2831855f;
 
     /* renamed from: a  reason: collision with root package name */
-    protected CurveFit f2064a;
+    protected CurveFit f2016a;
     protected int e;
     protected String f;
     protected long j;
     protected int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    protected int[] f2065c = new int[10];
+    protected int[] f2017c = new int[10];
     protected float[][] d = (float[][]) Array.newInstance(Float.TYPE, 10, 3);
     protected float[] g = new float[3];
     protected boolean i = false;
@@ -50,7 +50,7 @@ public abstract class TimeCycleSplineSet {
         }
 
         public boolean setProperty(MotionWidget motionWidget, float f, long j, KeyCache keyCache) {
-            this.f2064a.getPos(f, this.o);
+            this.f2016a.getPos(f, this.o);
             float[] fArr = this.o;
             float f2 = fArr[fArr.length - 2];
             float f3 = fArr[fArr.length - 1];
@@ -95,7 +95,7 @@ public abstract class TimeCycleSplineSet {
             while (true) {
                 int i4 = i3;
                 if (i4 >= size) {
-                    this.f2064a = CurveFit.get(i, dArr, dArr2);
+                    this.f2016a = CurveFit.get(i, dArr, dArr2);
                     return;
                 }
                 int keyAt = this.m.keyAt(i4);
@@ -144,7 +144,7 @@ public abstract class TimeCycleSplineSet {
         }
 
         public boolean setProperty(MotionWidget motionWidget, float f, long j, KeyCache keyCache) {
-            this.f2064a.getPos(f, this.o);
+            this.f2016a.getPos(f, this.o);
             float[] fArr = this.o;
             float f2 = fArr[fArr.length - 2];
             float f3 = fArr[fArr.length - 1];
@@ -189,7 +189,7 @@ public abstract class TimeCycleSplineSet {
             while (true) {
                 int i4 = i3;
                 if (i4 >= size) {
-                    this.f2064a = CurveFit.get(i, dArr, dArr2);
+                    this.f2016a = CurveFit.get(i, dArr, dArr2);
                     return;
                 }
                 int keyAt = this.m.keyAt(i4);
@@ -303,11 +303,11 @@ public abstract class TimeCycleSplineSet {
     }
 
     public CurveFit getCurveFit() {
-        return this.f2064a;
+        return this.f2016a;
     }
 
     public void setPoint(int i, float f, float f2, int i2, float f3) {
-        int[] iArr = this.f2065c;
+        int[] iArr = this.f2017c;
         int i3 = this.e;
         iArr[i3] = i;
         float[][] fArr = this.d;
@@ -330,12 +330,12 @@ public abstract class TimeCycleSplineSet {
             System.err.println("Error no points added to " + this.f);
             return;
         }
-        Sort.a(this.f2065c, this.d, 0, i4 - 1);
+        Sort.a(this.f2017c, this.d, 0, i4 - 1);
         int i5 = 1;
         int i6 = 0;
         while (true) {
             i2 = i6;
-            int[] iArr = this.f2065c;
+            int[] iArr = this.f2017c;
             if (i5 >= iArr.length) {
                 break;
             }
@@ -355,10 +355,10 @@ public abstract class TimeCycleSplineSet {
         int i9 = 0;
         for (i3 = 0; i3 < this.e; i3 = i3 + 1) {
             if (i3 > 0) {
-                int[] iArr2 = this.f2065c;
+                int[] iArr2 = this.f2017c;
                 i3 = iArr2[i3] == iArr2[i3 - 1] ? i3 + 1 : 0;
             }
-            dArr[i9] = this.f2065c[i3] * 0.01d;
+            dArr[i9] = this.f2017c[i3] * 0.01d;
             double[] dArr3 = dArr2[i9];
             float[][] fArr = this.d;
             dArr3[0] = fArr[i3][0];
@@ -366,7 +366,7 @@ public abstract class TimeCycleSplineSet {
             dArr2[i9][2] = fArr[i3][2];
             i9++;
         }
-        this.f2064a = CurveFit.get(i, dArr, dArr2);
+        this.f2016a = CurveFit.get(i, dArr, dArr2);
     }
 
     public String toString() {
@@ -378,7 +378,7 @@ public abstract class TimeCycleSplineSet {
             if (i2 >= this.e) {
                 return str;
             }
-            str = str + "[" + this.f2065c[i2] + " , " + decimalFormat.format(this.d[i2]) + "] ";
+            str = str + "[" + this.f2017c[i2] + " , " + decimalFormat.format(this.d[i2]) + "] ";
             i = i2 + 1;
         }
     }

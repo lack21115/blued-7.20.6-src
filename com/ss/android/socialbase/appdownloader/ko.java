@@ -4,7 +4,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
-import com.alipay.sdk.util.i;
 import com.ss.android.socialbase.downloader.downloader.DownloadComponentManager;
 
 /* loaded from: source-8457232-dex2jar.jar:com/ss/android/socialbase/appdownloader/ko.class */
@@ -83,7 +82,7 @@ public final class ko {
         }
 
         public String toString() {
-            return "{\n  pkg name: " + b() + "\n  app icon: " + mb() + "\n  app name: " + hj() + "\n  app path: " + h() + "\n  app v name: " + ko() + "\n  app v code: " + u() + "\n  is system: " + ox() + i.d;
+            return "{\n  pkg name: " + b() + "\n  app icon: " + mb() + "\n  app name: " + hj() + "\n  app path: " + h() + "\n  app v name: " + ko() + "\n  app v code: " + u() + "\n  is system: " + ox() + "}";
         }
 
         public int u() {

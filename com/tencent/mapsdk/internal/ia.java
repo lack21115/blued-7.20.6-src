@@ -11,40 +11,40 @@ public class ia {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private SharedPreferences.Editor f37551a;
+        private SharedPreferences.Editor f23860a;
 
         public a(SharedPreferences.Editor editor) {
-            this.f37551a = editor;
+            this.f23860a = editor;
         }
 
         public void a(String str, float f) {
-            this.f37551a.putFloat(str, f);
-            this.f37551a.commit();
+            this.f23860a.putFloat(str, f);
+            this.f23860a.commit();
         }
 
         public void a(String str, int i) {
-            this.f37551a.putInt(str, i);
-            this.f37551a.commit();
+            this.f23860a.putInt(str, i);
+            this.f23860a.commit();
         }
 
         public void a(String str, long j) {
-            this.f37551a.putLong(str, j);
-            this.f37551a.commit();
+            this.f23860a.putLong(str, j);
+            this.f23860a.commit();
         }
 
         public void a(String str, String str2) {
-            this.f37551a.putString(str, str2);
-            this.f37551a.commit();
+            this.f23860a.putString(str, str2);
+            this.f23860a.commit();
         }
 
         public void a(String str, Set<String> set) {
-            this.f37551a.putStringSet(str, set);
-            this.f37551a.commit();
+            this.f23860a.putStringSet(str, set);
+            this.f23860a.commit();
         }
 
         public void a(String str, boolean z) {
-            this.f37551a.putBoolean(str, z);
-            this.f37551a.commit();
+            this.f23860a.putBoolean(str, z);
+            this.f23860a.commit();
         }
     }
 

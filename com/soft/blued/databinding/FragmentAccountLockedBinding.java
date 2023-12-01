@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentAccountLockedBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28777a;
+    private final LinearLayout f15087a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28777a;
+        return this.f15087a;
     }
 }

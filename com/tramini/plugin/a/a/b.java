@@ -10,10 +10,10 @@ public class b {
     private static volatile b b;
 
     /* renamed from: a  reason: collision with root package name */
-    Context f40477a;
+    Context f26786a;
 
     private b(Context context) {
-        this.f40477a = context;
+        this.f26786a = context;
     }
 
     public static b a(Context context) {
@@ -33,22 +33,22 @@ public class b {
 
     public final void a(BroadcastReceiver broadcastReceiver) {
         try {
-            LocalBroadcastManager.getInstance(this.f40477a).unregisterReceiver(broadcastReceiver);
+            LocalBroadcastManager.getInstance(this.f26786a).unregisterReceiver(broadcastReceiver);
         } catch (Throwable th) {
         }
         try {
-            LocalBroadcastManager.getInstance(this.f40477a).unregisterReceiver(broadcastReceiver);
+            LocalBroadcastManager.getInstance(this.f26786a).unregisterReceiver(broadcastReceiver);
         } catch (Throwable th2) {
         }
     }
 
     public final void a(BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
         try {
-            LocalBroadcastManager.getInstance(this.f40477a).registerReceiver(broadcastReceiver, intentFilter);
+            LocalBroadcastManager.getInstance(this.f26786a).registerReceiver(broadcastReceiver, intentFilter);
         } catch (Throwable th) {
         }
         try {
-            LocalBroadcastManager.getInstance(this.f40477a).registerReceiver(broadcastReceiver, intentFilter);
+            LocalBroadcastManager.getInstance(this.f26786a).registerReceiver(broadcastReceiver, intentFilter);
         } catch (Throwable th2) {
         }
     }

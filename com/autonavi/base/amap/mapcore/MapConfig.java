@@ -2,6 +2,7 @@ package com.autonavi.base.amap.mapcore;
 
 import android.opengl.Matrix;
 import com.amap.api.maps.model.LatLngBounds;
+import com.autonavi.amap.mapcore.AMapEngineUtils;
 import com.autonavi.amap.mapcore.DPoint;
 import com.autonavi.amap.mapcore.IPoint;
 import com.autonavi.amap.mapcore.interfaces.IMapConfig;
@@ -63,7 +64,7 @@ public class MapConfig implements IMapConfig, Cloneable {
     private int mMapStyleTime = 0;
     private int mMapStyleState = 0;
     private int anchorX = 0;
-    private String mMapLanguage = "zh_cn";
+    private String mMapLanguage = AMapEngineUtils.DEFAULT_MAPLANGUAGE;
     private boolean isHideLogoEnable = false;
     private boolean isWorldMapEnable = false;
     private boolean isTouchPoiEnable = true;

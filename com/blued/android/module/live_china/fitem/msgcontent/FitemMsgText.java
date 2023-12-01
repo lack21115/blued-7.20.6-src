@@ -9,6 +9,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.core.AppInfo;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.framework.view.badgeview.DisplayUtil;
@@ -53,7 +54,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
     public static final void a(final View it, FitemMsgText this$0) {
         Intrinsics.e(it, "$it");
         Intrinsics.e(this$0, "this$0");
-        final float a2 = DisplayUtil.a(AppInfo.d(), 15.0f);
+        final float a = DisplayUtil.a(AppInfo.d(), 15.0f);
         final float width = it.getWidth();
         final float height = it.getHeight();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -63,17 +64,17 @@ public final class FitemMsgText extends FitemMsgAboutUser {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgText$p5JJ1RSqESp9kArqxgZpDBOtVDA
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                FitemMsgText.a(AccelerateInterpolator.this, it, a2, width, a2, height, valueAnimator);
+                FitemMsgText.a(AccelerateInterpolator.this, it, a, width, a, height, valueAnimator);
             }
         });
         ofFloat.start();
         it.animate().alpha(1.0f).setDuration(300L).start();
-        ImageView imageView = (ImageView) this$0.f10935a.a(R.id.live_msg_content_star);
+        ImageView imageView = (ImageView) this$0.a.a(R.id.live_msg_content_star);
         if (imageView != null && imageView.getVisibility() == 0) {
             imageView.setPivotX(0.0f);
             imageView.setPivotY(imageView.getHeight());
             imageView.getRotation();
-            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(imageView, "rotation", 0.0f, -18.0f, -25.0f, 0.0f);
+            ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(imageView, QSConstants.TILE_ROTATION, 0.0f, -18.0f, -25.0f, 0.0f);
             ofFloat2.setDuration(900L);
             ofFloat2.setInterpolator(new DecelerateInterpolator(1.5f));
             ofFloat2.start();
@@ -127,7 +128,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                     StringBuilder sb = new StringBuilder();
@@ -145,7 +146,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                     String string = context.getResources().getString(R.string.live_coming);
@@ -161,7 +162,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                 }
@@ -169,7 +170,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                     a(dslSpannableStringBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
             return;
@@ -198,7 +199,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                             @Override // kotlin.jvm.functions.Function1
                             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                                 a(dslSpanBuilder);
-                                return Unit.f42314a;
+                                return Unit.a;
                             }
                         });
                         buildSpannableString.a(" 大驾光临", new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgText$setSpanToEnter$2.2
@@ -212,7 +213,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                             @Override // kotlin.jvm.functions.Function1
                             public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                                 a(dslSpanBuilder);
-                                return Unit.f42314a;
+                                return Unit.a;
                             }
                         });
                     }
@@ -220,18 +221,18 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                         a(dslSpannableStringBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
-                View a2 = this.f10935a.a(R.id.live_msg_content_root);
-                if (a2 != null) {
-                    a2.setBackgroundResource(R.drawable.live_msg_vip_join_item_bg);
+                View a = this.a.a(R.id.live_msg_content_root);
+                if (a != null) {
+                    a.setBackgroundResource(R.drawable.live_msg_vip_join_item_bg);
                 }
-                View a3 = this.f10935a.a(R.id.live_msg_vip_shadow);
-                if (a3 == null) {
+                View a2 = this.a.a(R.id.live_msg_vip_shadow);
+                if (a2 == null) {
                     return;
                 }
-                a3.setVisibility(0);
+                a2.setVisibility(0);
                 return;
             }
         }
@@ -256,7 +257,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                     u = FitemMsgText.this.u();
@@ -271,7 +272,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                 }
@@ -279,14 +280,14 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                     a(dslSpannableStringBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
-            View a4 = this.f10935a.a(R.id.live_msg_content_root);
-            if (a4 == null) {
+            View a3 = this.a.a(R.id.live_msg_content_root);
+            if (a3 == null) {
                 return;
             }
-            a4.setBackgroundResource(R.drawable.live_msg_noble_join_item_bg);
+            a3.setBackgroundResource(R.drawable.live_msg_noble_join_item_bg);
         } else if (TextUtils.isEmpty(s())) {
             LiveTextSpanExKt.a(textView, new Function1<DslSpannableStringBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgText$setSpanToEnter$5
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -308,7 +309,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                 }
@@ -316,7 +317,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                     a(dslSpannableStringBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         } else {
@@ -339,7 +340,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                     buildSpannableString.a(" 大驾光临", new Function1<DslSpanBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgText$setSpanToEnter$4.2
@@ -353,7 +354,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                         @Override // kotlin.jvm.functions.Function1
                         public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                             a(dslSpanBuilder);
-                            return Unit.f42314a;
+                            return Unit.a;
                         }
                     });
                 }
@@ -361,18 +362,18 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                     a(dslSpannableStringBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
-            View a5 = this.f10935a.a(R.id.live_msg_content_root);
-            if (a5 != null) {
-                a5.setBackgroundResource(R.drawable.live_msg_vip_join_item_bg);
+            View a4 = this.a.a(R.id.live_msg_content_root);
+            if (a4 != null) {
+                a4.setBackgroundResource(R.drawable.live_msg_vip_join_item_bg);
             }
-            View a6 = this.f10935a.a(R.id.live_msg_vip_shadow);
-            if (a6 == null) {
+            View a5 = this.a.a(R.id.live_msg_vip_shadow);
+            if (a5 == null) {
                 return;
             }
-            a6.setVisibility(0);
+            a5.setVisibility(0);
         }
     }
 
@@ -397,7 +398,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -405,7 +406,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -431,7 +432,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -439,7 +440,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -465,7 +466,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                     @Override // kotlin.jvm.functions.Function1
                     public /* synthetic */ Unit invoke(DslSpanBuilder dslSpanBuilder) {
                         a(dslSpanBuilder);
-                        return Unit.f42314a;
+                        return Unit.a;
                     }
                 });
             }
@@ -473,7 +474,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
@@ -484,27 +485,27 @@ public final class FitemMsgText extends FitemMsgAboutUser {
     }
 
     private final void v() {
-        boolean a2 = LiveMsgContentManager.f13470a.a(e());
-        View a3 = this.f10935a.a(R.id.live_msg_content_root);
-        a3.setAlpha(a2 ? 0.0f : 1.0f);
-        a3.getLayoutParams().width = -2;
-        a3.getLayoutParams().height = -2;
-        a3.setLayoutParams(a3.getLayoutParams());
-        View view = this.f10935a.itemView;
+        boolean a = LiveMsgContentManager.a.a(e());
+        View a2 = this.a.a(R.id.live_msg_content_root);
+        a2.setAlpha(a ? 0.0f : 1.0f);
+        a2.getLayoutParams().width = -2;
+        a2.getLayoutParams().height = -2;
+        a2.setLayoutParams(a2.getLayoutParams());
+        View view = this.a.itemView;
         if (view != null) {
             view.getLayoutParams().height = -2;
             view.setLayoutParams(view.getLayoutParams());
         }
-        View a4 = this.f10935a.a(R.id.live_msg_vip_shadow);
-        if (a4 == null) {
+        View a3 = this.a.a(R.id.live_msg_vip_shadow);
+        if (a3 == null) {
             return;
         }
-        a4.setVisibility(8);
+        a3.setVisibility(8);
     }
 
     private final void w() {
-        if (LiveMsgContentManager.f13470a.a(e())) {
-            final View view = this.f10935a.itemView;
+        if (LiveMsgContentManager.a.a(e())) {
+            final View view = this.a.itemView;
             if (view != null) {
                 view.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgText$LA2-CEjEwmymIiGRIcWU5_X7HG0
                     @Override // java.lang.Runnable
@@ -513,11 +514,11 @@ public final class FitemMsgText extends FitemMsgAboutUser {
                     }
                 });
             }
-            final View a2 = this.f10935a.a(R.id.live_msg_content_root);
-            if (a2 == null) {
+            final View a = this.a.a(R.id.live_msg_content_root);
+            if (a == null) {
                 return;
             }
-            a2.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgText$IflfMmJsqcvpRCTF1blBQL7tt4g
+            a.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgText$IflfMmJsqcvpRCTF1blBQL7tt4g
                 @Override // java.lang.Runnable
                 public final void run() {
                     FitemMsgText.a(View.this, this);
@@ -657,7 +658,7 @@ public final class FitemMsgText extends FitemMsgAboutUser {
 
     public final LiveEmojiModel t() {
         try {
-            LiveEmojiModel liveEmojiModel = (LiveEmojiModel) AppInfo.f().fromJson(e().getMsgExtra(), (Class<Object>) LiveEmojiModel.class);
+            LiveEmojiModel liveEmojiModel = (LiveEmojiModel) AppInfo.f().fromJson(e().getMsgExtra(), LiveEmojiModel.class);
             if (liveEmojiModel == null || StringUtils.a(liveEmojiModel.getEmoji_id(), 0) <= 0 || TextUtils.isEmpty(liveEmojiModel.getEmoji_url()) || liveEmojiModel.getEmoji_w() <= 0) {
                 return null;
             }

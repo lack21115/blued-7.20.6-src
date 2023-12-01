@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 public class Utf8Old extends Utf8 {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<Cache> f2875a = ThreadLocal.withInitial(new Supplier() { // from class: androidx.emoji2.text.flatbuffer.-$$Lambda$Utf8Old$VCpeJ9GC5Wd3BIBG07DGosj7pWk
+    private static final ThreadLocal<Cache> f2827a = ThreadLocal.withInitial(new Supplier() { // from class: androidx.emoji2.text.flatbuffer.-$$Lambda$Utf8Old$VCpeJ9GC5Wd3BIBG07DGosj7pWk
         @Override // java.util.function.Supplier
         public final Object get() {
             Utf8Old.Cache a2;
@@ -28,11 +28,11 @@ public class Utf8Old extends Utf8 {
     public static class Cache {
 
         /* renamed from: c  reason: collision with root package name */
-        CharSequence f2877c = null;
+        CharSequence f2829c = null;
         ByteBuffer d = null;
 
         /* renamed from: a  reason: collision with root package name */
-        final CharsetEncoder f2876a = StandardCharsets.UTF_8.newEncoder();
+        final CharsetEncoder f2828a = StandardCharsets.UTF_8.newEncoder();
         final CharsetDecoder b = StandardCharsets.UTF_8.newDecoder();
 
         Cache() {
@@ -46,7 +46,7 @@ public class Utf8Old extends Utf8 {
 
     @Override // androidx.emoji2.text.flatbuffer.Utf8
     public String decodeUtf8(ByteBuffer byteBuffer, int i, int i2) {
-        CharsetDecoder charsetDecoder = f2875a.get().b;
+        CharsetDecoder charsetDecoder = f2827a.get().b;
         charsetDecoder.reset();
         ByteBuffer duplicate = byteBuffer.duplicate();
         duplicate.position(i);
@@ -60,8 +60,8 @@ public class Utf8Old extends Utf8 {
 
     @Override // androidx.emoji2.text.flatbuffer.Utf8
     public void encodeUtf8(CharSequence charSequence, ByteBuffer byteBuffer) {
-        Cache cache = f2875a.get();
-        if (cache.f2877c != charSequence) {
+        Cache cache = f2827a.get();
+        if (cache.f2829c != charSequence) {
             encodedLength(charSequence);
         }
         byteBuffer.put(cache.d);
@@ -69,14 +69,14 @@ public class Utf8Old extends Utf8 {
 
     @Override // androidx.emoji2.text.flatbuffer.Utf8
     public int encodedLength(CharSequence charSequence) {
-        Cache cache = f2875a.get();
-        int length = (int) (charSequence.length() * cache.f2876a.maxBytesPerChar());
+        Cache cache = f2827a.get();
+        int length = (int) (charSequence.length() * cache.f2828a.maxBytesPerChar());
         if (cache.d == null || cache.d.capacity() < length) {
             cache.d = ByteBuffer.allocate(Math.max(128, length));
         }
         cache.d.clear();
-        cache.f2877c = charSequence;
-        CoderResult encode = cache.f2876a.encode(charSequence instanceof CharBuffer ? (CharBuffer) charSequence : CharBuffer.wrap(charSequence), cache.d, true);
+        cache.f2829c = charSequence;
+        CoderResult encode = cache.f2828a.encode(charSequence instanceof CharBuffer ? (CharBuffer) charSequence : CharBuffer.wrap(charSequence), cache.d, true);
         if (encode.isError()) {
             try {
                 encode.throwException();

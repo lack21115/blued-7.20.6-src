@@ -1,12 +1,10 @@
 package com.blued.android.framework.urlroute;
 
 import android.net.Uri;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
+import com.alipay.sdk.sys.a;
 import com.blued.android.core.AppInfo;
-import com.oplus.quickgame.sdk.hall.Constant;
-import com.opos.process.bridge.provider.ProcessBridgeProvider;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -17,13 +15,9 @@ import org.json.JSONObject;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/urlroute/BluedURIRouter.class */
 public class BluedURIRouter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f10056a = BluedURIRouter.class.getName();
+    private static final String a = BluedURIRouter.class.getName();
     private static volatile BluedURIRouter b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ConcurrentHashMap<String, Action> f10057c = new ConcurrentHashMap<>();
+    private ConcurrentHashMap<String, Action> c = new ConcurrentHashMap<>();
     private String d = null;
     private String[] e = null;
     private String[] f = null;
@@ -36,13 +30,9 @@ public class BluedURIRouter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/urlroute/BluedURIRouter$Action.class */
     public class Action {
-
-        /* renamed from: a  reason: collision with root package name */
-        String f10058a;
+        String a;
         String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        String f10059c;
+        String c;
         boolean d;
         FunctionArguments[] e;
 
@@ -55,19 +45,15 @@ public class BluedURIRouter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/urlroute/BluedURIRouter$FunctionArguments.class */
     public class FunctionArguments {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f10060a;
+        public String a;
         public String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f10061c;
+        public String c;
         public boolean d;
 
         private FunctionArguments() {
-            this.f10060a = "";
+            this.a = "";
             this.b = "";
-            this.f10061c = "";
+            this.c = "";
             this.d = false;
         }
     }
@@ -112,7 +98,7 @@ public class BluedURIRouter {
                     return false;
                 }
                 JSONObject jSONObject = new JSONObject(h);
-                String optString = jSONObject.optString(ContactsContract.PresenceColumns.PROTOCOL);
+                String optString = jSONObject.optString("protocol");
                 this.d = optString;
                 if (TextUtils.isEmpty(optString)) {
                     if (AppInfo.m()) {
@@ -181,7 +167,7 @@ public class BluedURIRouter {
     private boolean g() {
         JSONArray optJSONArray;
         int length;
-        ConcurrentHashMap<String, Action> concurrentHashMap = this.f10057c;
+        ConcurrentHashMap<String, Action> concurrentHashMap = this.c;
         if (concurrentHashMap == null || concurrentHashMap.size() == 0) {
             try {
                 String h = h(this.i);
@@ -207,11 +193,11 @@ public class BluedURIRouter {
                             }
                             String optString3 = optJSONObject.optString("return", "");
                             Action action = new Action();
-                            action.f10058a = next;
+                            action.a = next;
                             action.b = str;
-                            action.f10059c = optString;
+                            action.c = optString;
                             action.d = optString3.equalsIgnoreCase("void");
-                            if (optJSONObject.has(ProcessBridgeProvider.KEY_ARGS) && !optJSONObject.isNull(ProcessBridgeProvider.KEY_ARGS) && (optJSONArray = optJSONObject.optJSONArray(ProcessBridgeProvider.KEY_ARGS)) != null && (length = optJSONArray.length()) > 0) {
+                            if (optJSONObject.has("args") && !optJSONObject.isNull("args") && (optJSONArray = optJSONObject.optJSONArray("args")) != null && (length = optJSONArray.length()) > 0) {
                                 FunctionArguments[] functionArgumentsArr = new FunctionArguments[length];
                                 int i = 0;
                                 while (true) {
@@ -221,11 +207,11 @@ public class BluedURIRouter {
                                     }
                                     JSONObject jSONObject2 = optJSONArray.getJSONObject(i2);
                                     FunctionArguments functionArguments = new FunctionArguments();
-                                    functionArguments.f10060a = jSONObject2.keys().next();
-                                    if (!jSONObject2.isNull(functionArguments.f10060a)) {
-                                        JSONObject optJSONObject2 = jSONObject2.optJSONObject(functionArguments.f10060a);
+                                    functionArguments.a = jSONObject2.keys().next();
+                                    if (!jSONObject2.isNull(functionArguments.a)) {
+                                        JSONObject optJSONObject2 = jSONObject2.optJSONObject(functionArguments.a);
                                         functionArguments.b = optJSONObject2.optString("type", "");
-                                        functionArguments.f10061c = optJSONObject2.optString("default", "");
+                                        functionArguments.c = optJSONObject2.optString("default", "");
                                         functionArguments.d = optJSONObject2.optBoolean("require", false);
                                     }
                                     functionArgumentsArr[i2] = functionArguments;
@@ -233,7 +219,7 @@ public class BluedURIRouter {
                                 }
                                 action.e = functionArgumentsArr;
                             }
-                            this.f10057c.put(next, action);
+                            this.c.put(next, action);
                         }
                     }
                 }
@@ -311,7 +297,7 @@ public class BluedURIRouter {
         if (TextUtils.isEmpty(str) || str.trim().length() <= 0) {
             return null;
         }
-        return a("http://common.blued.com", "webbrowse", new String[]{Constant.Param.KEY_URL, "webFromPage"}, new String[]{str, "" + i});
+        return a("http://common.blued.com", "webbrowse", new String[]{"weburl", "webFromPage"}, new String[]{str, "" + i});
     }
 
     public Uri a(String str, String str2, String[] strArr, String[] strArr2) {
@@ -330,7 +316,7 @@ public class BluedURIRouter {
                 }
                 if (!TextUtils.isEmpty(strArr[i2]) && strArr[i2].trim().length() != 0) {
                     try {
-                        sb.append("&");
+                        sb.append(a.b);
                         sb.append(strArr[i2]);
                         sb.append("=");
                         sb.append(URLEncoder.encode(strArr2[i2], "UTF-8"));
@@ -366,15 +352,15 @@ public class BluedURIRouter {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        String[] c2 = c();
-        int length = c2.length;
+        String[] c = c();
+        int length = c.length;
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= length) {
                 return false;
             }
-            if (c2[i2].trim().equalsIgnoreCase(str)) {
+            if (c[i2].trim().equalsIgnoreCase(str)) {
                 return true;
             }
             i = i2 + 1;
@@ -442,7 +428,7 @@ public class BluedURIRouter {
 
     public Uri f(String str) {
         if (AppInfo.m()) {
-            String str2 = f10056a;
+            String str2 = a;
             Log.d(str2, "url:" + str);
         }
         if (TextUtils.isEmpty(str)) {
@@ -456,7 +442,7 @@ public class BluedURIRouter {
                         return null;
                     }
                     String queryParameter = parse.getQueryParameter("action");
-                    if (TextUtils.isEmpty(queryParameter) || this.f10057c.get(queryParameter) == null) {
+                    if (TextUtils.isEmpty(queryParameter) || this.c.get(queryParameter) == null) {
                         return null;
                     }
                     return parse;
@@ -464,7 +450,7 @@ public class BluedURIRouter {
                 return null;
             }
             if (AppInfo.m()) {
-                String str3 = f10056a;
+                String str3 = a;
                 Log.d(str3, "uri.getScheme():" + parse.getScheme());
                 return null;
             }

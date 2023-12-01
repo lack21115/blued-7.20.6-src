@@ -1,6 +1,7 @@
 package com.kwad.sdk.crash.utils;
 
 import android.content.Context;
+import android.content.res.ThemeConfig;
 import android.os.Build;
 import android.os.Debug;
 import android.os.Environment;
@@ -21,6 +22,7 @@ import com.kwad.sdk.utils.SystemUtil;
 import com.kwad.sdk.utils.ao;
 import com.kwad.sdk.utils.q;
 import com.kwad.sdk.utils.s;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.Closeable;
@@ -718,7 +720,7 @@ public final class g {
     }
 
     public static int getIndex(String str) {
-        if (str.contains("-")) {
+        if (str.contains(Constants.ACCEPT_TIME_SEPARATOR_SERVER)) {
             return Integer.parseInt(str.substring(str.lastIndexOf(45)));
         }
         return -1;
@@ -771,7 +773,7 @@ public final class g {
 
     public static void z(File file) {
         try {
-            d.a(SystemUtil.ch(21) ? new String[]{"logcat", "-v", "threadtime", "-b", "main", "-b", "system", "-b", com.umeng.analytics.pro.d.f40716ar, "-b", CrashHianalyticsData.EVENT_ID_CRASH, "-d", "-f", file.getPath()} : new String[]{"logcat", "-v", "threadtime", "-b", "main", "-b", "system", "-b", com.umeng.analytics.pro.d.f40716ar, "-d", "-f", file.getPath()}, 0);
+            d.a(SystemUtil.ch(21) ? new String[]{"logcat", "-v", "threadtime", "-b", "main", "-b", ThemeConfig.SYSTEM_DEFAULT, "-b", com.umeng.analytics.pro.d.f27025ar, "-b", CrashHianalyticsData.EVENT_ID_CRASH, "-d", "-f", file.getPath()} : new String[]{"logcat", "-v", "threadtime", "-b", "main", "-b", ThemeConfig.SYSTEM_DEFAULT, "-b", com.umeng.analytics.pro.d.f27025ar, "-d", "-f", file.getPath()}, 0);
         } catch (IOException e) {
             com.kwad.sdk.core.d.b.printStackTraceOnly(e);
         }

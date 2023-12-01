@@ -10,18 +10,16 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/g/l.class */
 public final class l extends a {
-
-    /* renamed from: a  reason: collision with root package name */
-    o f6732a;
+    o a;
     boolean b = true;
 
     public l(o oVar) {
-        this.f6732a = oVar;
+        this.a = oVar;
     }
 
     @Override // com.anythink.core.common.g.a
     protected final int a() {
-        return this.f6732a.b;
+        return this.a.b;
     }
 
     @Override // com.anythink.core.common.g.a
@@ -40,7 +38,7 @@ public final class l extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final String b() {
-        return this.f6732a.d;
+        return this.a.d;
     }
 
     @Override // com.anythink.core.common.g.a
@@ -49,7 +47,7 @@ public final class l extends a {
 
     @Override // com.anythink.core.common.g.a
     protected final Map<String, String> c() {
-        String str = this.f6732a.f6672c;
+        String str = this.a.c;
         HashMap hashMap = new HashMap();
         try {
             JSONObject jSONObject = new JSONObject(str);
@@ -75,12 +73,12 @@ public final class l extends a {
         /*
             r4 = this;
             r0 = r4
-            com.anythink.core.common.e.o r0 = r0.f6732a
-            java.lang.String r0 = r0.f6672c
+            com.anythink.core.common.e.o r0 = r0.a
+            java.lang.String r0 = r0.c
             if (r0 == 0) goto L1e
             r0 = r4
-            com.anythink.core.common.e.o r0 = r0.f6732a
-            java.lang.String r0 = r0.f6672c
+            com.anythink.core.common.e.o r0 = r0.a
+            java.lang.String r0 = r0.c
             java.lang.String r1 = "gzip"
             boolean r0 = r0.contains(r1)
             if (r0 == 0) goto L1e
@@ -96,7 +94,7 @@ public final class l extends a {
             org.json.JSONObject r0 = new org.json.JSONObject     // Catch: java.lang.Exception -> L4b
             r1 = r0
             r2 = r4
-            com.anythink.core.common.e.o r2 = r2.f6732a     // Catch: java.lang.Exception -> L4b
+            com.anythink.core.common.e.o r2 = r2.a     // Catch: java.lang.Exception -> L4b
             java.lang.String r2 = r2.e     // Catch: java.lang.Exception -> L4b
             r1.<init>(r2)     // Catch: java.lang.Exception -> L4b
             r6 = r0
@@ -189,6 +187,6 @@ public final class l extends a {
     }
 
     public final o q() {
-        return this.f6732a;
+        return this.a;
     }
 }

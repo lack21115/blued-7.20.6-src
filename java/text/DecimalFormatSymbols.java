@@ -1,9 +1,5 @@
 package java.text;
 
-import android.hardware.Camera;
-import android.provider.UserDictionary;
-import androidx.exifinterface.media.ExifInterface;
-import com.blued.das.live.LiveProtos;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -16,7 +12,7 @@ import libcore.icu.LocaleData;
 
 /* loaded from: source-2895416-dex2jar.jar:java/text/DecimalFormatSymbols.class */
 public class DecimalFormatSymbols implements Cloneable, Serializable {
-    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("currencySymbol", String.class), new ObjectStreamField("decimalSeparator", Character.TYPE), new ObjectStreamField("digit", Character.TYPE), new ObjectStreamField("exponential", Character.TYPE), new ObjectStreamField("exponentialSeparator", String.class), new ObjectStreamField("groupingSeparator", Character.TYPE), new ObjectStreamField(Camera.Parameters.FOCUS_MODE_INFINITY, String.class), new ObjectStreamField("intlCurrencySymbol", String.class), new ObjectStreamField("minusSign", Character.TYPE), new ObjectStreamField("monetarySeparator", Character.TYPE), new ObjectStreamField("NaN", String.class), new ObjectStreamField("patternSeparator", Character.TYPE), new ObjectStreamField("percent", Character.TYPE), new ObjectStreamField("perMill", Character.TYPE), new ObjectStreamField("serialVersionOnStream", Integer.TYPE), new ObjectStreamField("zeroDigit", Character.TYPE), new ObjectStreamField(UserDictionary.Words.LOCALE, Locale.class)};
+    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("currencySymbol", String.class), new ObjectStreamField("decimalSeparator", Character.TYPE), new ObjectStreamField("digit", Character.TYPE), new ObjectStreamField("exponential", Character.TYPE), new ObjectStreamField("exponentialSeparator", String.class), new ObjectStreamField("groupingSeparator", Character.TYPE), new ObjectStreamField("infinity", String.class), new ObjectStreamField("intlCurrencySymbol", String.class), new ObjectStreamField("minusSign", Character.TYPE), new ObjectStreamField("monetarySeparator", Character.TYPE), new ObjectStreamField("NaN", String.class), new ObjectStreamField("patternSeparator", Character.TYPE), new ObjectStreamField("percent", Character.TYPE), new ObjectStreamField("perMill", Character.TYPE), new ObjectStreamField("serialVersionOnStream", Integer.TYPE), new ObjectStreamField("zeroDigit", Character.TYPE), new ObjectStreamField("locale", Locale.class)};
     private static final long serialVersionUID = 5772796243397350300L;
     private String NaN;
     private transient Currency currency;
@@ -91,7 +87,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         setDecimalSeparator(readFields.get("decimalSeparator", '.'));
         setDigit(readFields.get("digit", '#'));
         setGroupingSeparator(readFields.get("groupingSeparator", ','));
-        this.infinity = (String) readFields.get(Camera.Parameters.FOCUS_MODE_INFINITY, "");
+        this.infinity = (String) readFields.get("infinity", "");
         this.intlCurrencySymbol = (String) readFields.get("intlCurrencySymbol", "");
         setMinusSign(readFields.get("minusSign", '-'));
         this.NaN = (String) readFields.get("NaN", "");
@@ -99,18 +95,18 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         setPercent(readFields.get("percent", '%'));
         setPerMill(readFields.get("perMill", (char) 8240));
         setZeroDigit(readFields.get("zeroDigit", '0'));
-        this.locale = (Locale) readFields.get(UserDictionary.Words.LOCALE, (Object) null);
+        this.locale = (Locale) readFields.get("locale", (Object) null);
         if (i == 0) {
             setMonetaryDecimalSeparator(getDecimalSeparator());
         } else {
             setMonetaryDecimalSeparator(readFields.get("monetarySeparator", '.'));
         }
         if (i == 0) {
-            this.exponentSeparator = ExifInterface.LONGITUDE_EAST;
+            this.exponentSeparator = "E";
         } else if (i < 3) {
             setExponentSeparator(String.valueOf(readFields.get("exponential", 'E')));
         } else {
-            setExponentSeparator((String) readFields.get("exponentialSeparator", ExifInterface.LONGITUDE_EAST));
+            setExponentSeparator((String) readFields.get("exponentialSeparator", "E"));
         }
         try {
             this.currency = Currency.getInstance(this.intlCurrencySymbol);
@@ -127,7 +123,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         putFields.put("exponential", this.exponentSeparator.charAt(0));
         putFields.put("exponentialSeparator", this.exponentSeparator);
         putFields.put("groupingSeparator", getGroupingSeparator());
-        putFields.put(Camera.Parameters.FOCUS_MODE_INFINITY, this.infinity);
+        putFields.put("infinity", this.infinity);
         putFields.put("intlCurrencySymbol", this.intlCurrencySymbol);
         putFields.put("minusSign", getMinusSign());
         putFields.put("monetarySeparator", getMonetaryDecimalSeparator());
@@ -137,7 +133,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         putFields.put("perMill", getPerMill());
         putFields.put("serialVersionOnStream", 3);
         putFields.put("zeroDigit", getZeroDigit());
-        putFields.put(UserDictionary.Words.LOCALE, this.locale);
+        putFields.put("locale", this.locale);
         objectOutputStream.writeFields();
     }
 
@@ -235,7 +231,7 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
     }
 
     public int hashCode() {
-        return ((((((((((((((((((((((((((this.zeroDigit + LiveProtos.Event.LIVE_END_PAGE_CLOSE_CLICK_VALUE) * 31) + this.digit) * 31) + this.decimalSeparator) * 31) + this.groupingSeparator) * 31) + this.patternSeparator) * 31) + this.percent.hashCode()) * 31) + this.perMill) * 31) + this.monetarySeparator) * 31) + this.minusSign.hashCode()) * 31) + this.exponentSeparator.hashCode()) * 31) + this.infinity.hashCode()) * 31) + this.NaN.hashCode()) * 31) + this.currencySymbol.hashCode()) * 31) + this.intlCurrencySymbol.hashCode();
+        return ((((((((((((((((((((((((((this.zeroDigit + 527) * 31) + this.digit) * 31) + this.decimalSeparator) * 31) + this.groupingSeparator) * 31) + this.patternSeparator) * 31) + this.percent.hashCode()) * 31) + this.perMill) * 31) + this.monetarySeparator) * 31) + this.minusSign.hashCode()) * 31) + this.exponentSeparator.hashCode()) * 31) + this.infinity.hashCode()) * 31) + this.NaN.hashCode()) * 31) + this.currencySymbol.hashCode()) * 31) + this.intlCurrencySymbol.hashCode();
     }
 
     public void setCurrency(Currency currency) {
@@ -251,12 +247,12 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         this.currencySymbol = str;
     }
 
-    public void setDecimalSeparator(char c2) {
-        this.decimalSeparator = c2;
+    public void setDecimalSeparator(char c) {
+        this.decimalSeparator = c;
     }
 
-    public void setDigit(char c2) {
-        this.digit = c2;
+    public void setDigit(char c) {
+        this.digit = c;
     }
 
     public void setExponentSeparator(String str) {
@@ -266,8 +262,8 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         this.exponentSeparator = str;
     }
 
-    public void setGroupingSeparator(char c2) {
-        this.groupingSeparator = c2;
+    public void setGroupingSeparator(char c) {
+        this.groupingSeparator = c;
     }
 
     public void setInfinity(String str) {
@@ -290,32 +286,32 @@ public class DecimalFormatSymbols implements Cloneable, Serializable {
         }
     }
 
-    public void setMinusSign(char c2) {
-        this.minusSign = String.valueOf(c2);
+    public void setMinusSign(char c) {
+        this.minusSign = String.valueOf(c);
     }
 
-    public void setMonetaryDecimalSeparator(char c2) {
-        this.monetarySeparator = c2;
+    public void setMonetaryDecimalSeparator(char c) {
+        this.monetarySeparator = c;
     }
 
     public void setNaN(String str) {
         this.NaN = str;
     }
 
-    public void setPatternSeparator(char c2) {
-        this.patternSeparator = c2;
+    public void setPatternSeparator(char c) {
+        this.patternSeparator = c;
     }
 
-    public void setPerMill(char c2) {
-        this.perMill = c2;
+    public void setPerMill(char c) {
+        this.perMill = c;
     }
 
-    public void setPercent(char c2) {
-        this.percent = String.valueOf(c2);
+    public void setPercent(char c) {
+        this.percent = String.valueOf(c);
     }
 
-    public void setZeroDigit(char c2) {
-        this.zeroDigit = c2;
+    public void setZeroDigit(char c) {
+        this.zeroDigit = c;
     }
 
     public String toString() {

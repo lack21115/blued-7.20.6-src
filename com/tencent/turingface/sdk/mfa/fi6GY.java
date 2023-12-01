@@ -31,7 +31,7 @@ public final class fi6GY {
     public static byte[] a(ByteBuffer byteBuffer) {
         int position = byteBuffer.position();
         byte[] bArr = new byte[position];
-        System.arraycopy((Object) byteBuffer.array(), 0, (Object) bArr, 0, position);
+        System.arraycopy(byteBuffer.array(), 0, bArr, 0, position);
         return bArr;
     }
 }

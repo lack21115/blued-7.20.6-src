@@ -26,16 +26,12 @@ import java.util.regex.Pattern;
 public final class gy implements INearbySearch {
     private static long e;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f5022c;
+    private Context c;
     private fp d;
     private ExecutorService f;
     private UploadInfoCallback k;
     private TimerTask l;
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<NearbySearch.NearbyListener> f5021a = new ArrayList();
+    private List<NearbySearch.NearbyListener> a = new ArrayList();
     private LatLonPoint g = null;
     private String h = null;
     private boolean i = false;
@@ -58,7 +54,7 @@ public final class gy implements INearbySearch {
                     int b = gy.this.b(gy.this.k.OnUploadInfoCallback());
                     Message obtainMessage = gy.this.d.obtainMessage();
                     obtainMessage.arg1 = 10;
-                    obtainMessage.obj = gy.this.f5021a;
+                    obtainMessage.obj = gy.this.a;
                     obtainMessage.what = b;
                     gy.this.d.sendMessage(obtainMessage);
                 }
@@ -70,10 +66,10 @@ public final class gy implements INearbySearch {
 
     public gy(Context context) throws AMapException {
         hy a2 = hx.a(context, fd.a(false));
-        if (a2.f5127a != hx.c.SuccessCode) {
-            throw new AMapException(a2.b, 1, a2.b, a2.f5127a.a());
+        if (a2.a != hx.c.SuccessCode) {
+            throw new AMapException(a2.b, 1, a2.b, a2.a.a());
         }
-        this.f5022c = context.getApplicationContext();
+        this.c = context.getApplicationContext();
         this.d = fp.a();
     }
 
@@ -85,8 +81,8 @@ public final class gy implements INearbySearch {
                     throw new AMapException(AMapException.AMAP_CLIENT_UPLOADAUTO_STARTED_ERROR);
                 }
                 if (a(this.b)) {
-                    fn.a(this.f5022c);
-                    return new fq(this.f5022c, this.b).d().intValue();
+                    fn.a(this.c);
+                    return new fq(this.c, this.b).d().intValue();
                 }
                 throw new AMapException(AMapException.AMAP_CLIENT_USERID_ILLEGAL);
             } catch (Throwable th) {
@@ -99,10 +95,7 @@ public final class gy implements INearbySearch {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int a(UploadInfo uploadInfo) {
-        if (this.i) {
-            return 2200;
-        }
-        return b(uploadInfo);
+        return this.i ? AMapException.CODE_AMAP_CLIENT_UPLOADAUTO_STARTED_ERROR : b(uploadInfo);
     }
 
     private static boolean a(NearbySearch.NearbyQuery nearbyQuery) {
@@ -119,9 +112,9 @@ public final class gy implements INearbySearch {
     /* JADX INFO: Access modifiers changed from: private */
     public int b(UploadInfo uploadInfo) {
         try {
-            fn.a(this.f5022c);
+            fn.a(this.c);
             if (uploadInfo == null) {
-                return 2202;
+                return AMapException.CODE_AMAP_CLIENT_NEARBY_NULL_RESULT;
             }
             long time = new Date().getTime();
             if (time - e < 6500) {
@@ -136,19 +129,19 @@ public final class gy implements INearbySearch {
                 if (userID.equals(this.h)) {
                     LatLonPoint point = uploadInfo.getPoint();
                     if (point != null && !point.equals(this.g)) {
-                        new fs(this.f5022c, uploadInfo).d();
+                        new fs(this.c, uploadInfo).d();
                         this.g = point.copy();
                         return 1000;
                     }
                     return AMapException.CODE_AMAP_CLIENT_UPLOAD_LOCATION_ERROR;
                 }
-                return 2201;
+                return AMapException.CODE_AMAP_CLIENT_USERID_ILLEGAL;
             }
-            return 2201;
+            return AMapException.CODE_AMAP_CLIENT_USERID_ILLEGAL;
         } catch (AMapException e2) {
             return e2.getErrorCode();
         } catch (Throwable th) {
-            return 1900;
+            return AMapException.CODE_AMAP_CLIENT_UNKNOWN_ERROR;
         }
     }
 
@@ -156,7 +149,7 @@ public final class gy implements INearbySearch {
     public final void addNearbyListener(NearbySearch.NearbyListener nearbyListener) {
         synchronized (this) {
             try {
-                this.f5021a.add(nearbyListener);
+                this.a.add(nearbyListener);
             } catch (Throwable th) {
                 fe.a(th, "NearbySearch", "addNearbyListener");
             }
@@ -171,7 +164,7 @@ public final class gy implements INearbySearch {
                 public final void run() {
                     Message obtainMessage = gy.this.d.obtainMessage();
                     obtainMessage.arg1 = 8;
-                    obtainMessage.obj = gy.this.f5021a;
+                    obtainMessage.obj = gy.this.a;
                     try {
                         try {
                             gy.this.a();
@@ -217,7 +210,7 @@ public final class gy implements INearbySearch {
                 return;
             }
             try {
-                this.f5021a.remove(nearbyListener);
+                this.a.remove(nearbyListener);
             } catch (Throwable th) {
                 fe.a(th, "NearbySearch", "removeNearbyListener");
             }
@@ -227,9 +220,9 @@ public final class gy implements INearbySearch {
     @Override // com.amap.api.services.interfaces.INearbySearch
     public final NearbySearchResult searchNearbyInfo(NearbySearch.NearbyQuery nearbyQuery) throws AMapException {
         try {
-            fn.a(this.f5022c);
+            fn.a(this.c);
             if (a(nearbyQuery)) {
-                return new fr(this.f5022c, nearbyQuery).d();
+                return new fr(this.c, nearbyQuery).d();
             }
             throw new AMapException("无效的参数 - IllegalArgumentException");
         } catch (AMapException e2) {
@@ -249,7 +242,7 @@ public final class gy implements INearbySearch {
                     Message obtainMessage = gy.this.d.obtainMessage();
                     obtainMessage.arg1 = 9;
                     fp.f fVar = new fp.f();
-                    fVar.f4966a = gy.this.f5021a;
+                    fVar.a = gy.this.a;
                     obtainMessage.obj = fVar;
                     try {
                         try {
@@ -329,7 +322,7 @@ public final class gy implements INearbySearch {
                 try {
                     Message obtainMessage = gy.this.d.obtainMessage();
                     obtainMessage.arg1 = 10;
-                    obtainMessage.obj = gy.this.f5021a;
+                    obtainMessage.obj = gy.this.a;
                     obtainMessage.what = gy.this.a(uploadInfo);
                     gy.this.d.sendMessage(obtainMessage);
                 } catch (Throwable th) {

@@ -1,5 +1,6 @@
 package android.text.method;
 
+import android.R;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -14,7 +15,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ListAdapter;
-import com.android.internal.R;
 
 /* loaded from: source-9557208-dex2jar.jar:android/text/method/CharacterPickerDialog.class */
 public class CharacterPickerDialog extends Dialog implements AdapterView.OnItemClickListener, View.OnClickListener {
@@ -47,7 +47,7 @@ public class CharacterPickerDialog extends Dialog implements AdapterView.OnItemC
 
         @Override // android.widget.Adapter
         public View getView(int i, View view, ViewGroup viewGroup) {
-            Button button = (Button) CharacterPickerDialog.this.mInflater.inflate(R.layout.character_picker_button, (ViewGroup) null);
+            Button button = (Button) CharacterPickerDialog.this.mInflater.inflate(17367099, (ViewGroup) null);
             button.setText(String.valueOf(CharacterPickerDialog.this.mOptions.charAt(i)));
             button.setOnClickListener(CharacterPickerDialog.this);
             return button;
@@ -55,7 +55,7 @@ public class CharacterPickerDialog extends Dialog implements AdapterView.OnItemC
     }
 
     public CharacterPickerDialog(Context context, View view, Editable editable, String str, boolean z) {
-        super(context, 16973913);
+        super(context, R.style.Theme_Panel);
         this.mView = view;
         this.mText = editable;
         this.mOptions = str;
@@ -90,11 +90,11 @@ public class CharacterPickerDialog extends Dialog implements AdapterView.OnItemC
         attributes.token = this.mView.getApplicationWindowToken();
         attributes.type = 1003;
         attributes.flags |= 1;
-        setContentView(R.layout.character_picker);
-        GridView gridView = (GridView) findViewById(R.id.characterPicker);
+        setContentView(17367098);
+        GridView gridView = (GridView) findViewById(16909026);
         gridView.setAdapter((ListAdapter) new OptionsAdapter(getContext()));
         gridView.setOnItemClickListener(this);
-        this.mCancelButton = (Button) findViewById(R.id.cancel);
+        this.mCancelButton = (Button) findViewById(16909027);
         this.mCancelButton.setOnClickListener(this);
     }
 

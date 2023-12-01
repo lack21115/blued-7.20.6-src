@@ -11,6 +11,7 @@ import com.baidu.mobads.sdk.api.RequestParameters;
 import com.baidu.mobads.sdk.api.SplashAd;
 import com.baidu.mobads.sdk.api.SplashAdListener;
 import com.baidu.mobads.sdk.api.SplashInteractionListener;
+import com.huawei.hms.ads.fw;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class dn extends bf {
     private HashMap<String, String> M;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f9425a;
+    public boolean f6585a;
     public boolean q;
     public boolean r;
     public boolean s;
@@ -133,7 +134,7 @@ public class dn extends bf {
             return;
         }
         this.l = true;
-        if (!this.f9425a) {
+        if (!this.f6585a) {
             this.k.setAdContainer(this.t);
         }
         this.k.loadAd(k(), l());
@@ -348,7 +349,7 @@ public class dn extends bf {
     }
 
     public void f() {
-        if (this.f9425a || this.k == null) {
+        if (this.f6585a || this.k == null) {
             return;
         }
         this.k.setAdContainer(this.t);
@@ -445,13 +446,13 @@ public class dn extends bf {
             jSONObject.put("timeout", this.y);
             jSONObject.put("splashTipStyle", this.x);
             jSONObject.put("bitmapDisplayMode", E);
-            jSONObject.put("countDownNew", "true");
+            jSONObject.put("countDownNew", fw.Code);
             jSONObject.put("Display_Down_Info", "" + this.z);
             jSONObject.put("popDialogIfDl", "" + this.A);
             jSONObject.put("limitRegionClick", "" + this.B);
             jSONObject.put("displayClickButton", "" + this.C);
             jSONObject.put("needCache", true);
-            jSONObject.put("onlyLoadAd", this.f9425a);
+            jSONObject.put("onlyLoadAd", this.f6585a);
             jSONObject.put("cacheVideoOnlyWifi", true);
             jSONObject.put("shakeLogoSize", this.D);
             if (this.I != null) {

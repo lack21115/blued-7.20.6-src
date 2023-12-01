@@ -1,6 +1,5 @@
 package java.lang;
 
-import com.igexin.push.core.b;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
@@ -294,18 +293,18 @@ public final class String implements Serializable, Comparable<String>, CharSeque
 
     private native int fastIndexOf(int i, int i2);
 
-    private char foldCase(char c2) {
-        if (c2 < 128) {
-            char c3 = c2;
-            if ('A' <= c2) {
-                c3 = c2;
-                if (c2 <= 'Z') {
-                    c3 = (char) (c2 + ' ');
+    private char foldCase(char c) {
+        if (c < 128) {
+            char c2 = c;
+            if ('A' <= c) {
+                c2 = c;
+                if (c <= 'Z') {
+                    c2 = (char) (c + ' ');
                 }
             }
-            return c3;
+            return c2;
         }
-        return Character.toLowerCase(Character.toUpperCase(c2));
+        return Character.toLowerCase(Character.toUpperCase(c));
     }
 
     public static String format(String str, Object... objArr) {
@@ -324,7 +323,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     @FindBugsSuppressWarnings({"UPM_UNCALLED_PRIVATE_METHOD"})
-    private static int indexOf(String str, String str2, int i, int i2, char c2) {
+    private static int indexOf(String str, String str2, int i, int i2, char c) {
         char[] cArr = str.value;
         int i3 = str.offset;
         int i4 = str.count;
@@ -338,7 +337,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             if (i9 >= i3 + i4) {
                 return -1;
             }
-            if (c2 == cArr[i9]) {
+            if (c == cArr[i9]) {
                 int i10 = 0;
                 while (true) {
                     int i11 = i10;
@@ -387,9 +386,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         throw new StringIndexOutOfBoundsException(this, i, i2 - i);
     }
 
-    public static String valueOf(char c2) {
-        String str = c2 < 128 ? new String(c2, 1, ASCII) : new String(0, 1, new char[]{c2});
-        str.hashCode = c2;
+    public static String valueOf(char c) {
+        String str = c < 128 ? new String(c, 1, ASCII) : new String(0, 1, new char[]{c});
+        str.hashCode = c;
         return str;
     }
 
@@ -410,7 +409,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
     }
 
     public static String valueOf(Object obj) {
-        return obj != null ? obj.toString() : b.l;
+        return obj != null ? obj.toString() : "null";
     }
 
     public static String valueOf(boolean z) {
@@ -470,14 +469,14 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         char[] cArr = str.value;
         while (i < i3 + i4) {
             int i5 = i + 1;
-            char c2 = this.value[i];
+            char c = this.value[i];
             int i6 = i2 + 1;
-            char c3 = cArr[i2];
-            if (c2 == c3) {
+            char c2 = cArr[i2];
+            if (c == c2) {
                 i2 = i6;
                 i = i5;
             } else {
-                int foldCase = foldCase(c2) - foldCase(c3);
+                int foldCase = foldCase(c) - foldCase(c2);
                 if (foldCase != 0) {
                     return foldCase;
                 }
@@ -575,9 +574,9 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         int i3 = this.count;
         char[] cArr = str.value;
         for (int i4 = this.offset; i4 < i2 + i3; i4++) {
-            char c2 = this.value[i4];
-            char c3 = cArr[i];
-            if (c2 != c3 && foldCase(c2) != foldCase(c3)) {
+            char c = this.value[i4];
+            char c2 = cArr[i];
+            if (c != c2 && foldCase(c) != foldCase(c2)) {
                 return false;
             }
             i++;
@@ -692,10 +691,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         if (i5 <= i6) {
             char[] cArr = str.value;
             int i8 = str.offset;
-            char c2 = cArr[i8];
+            char c = cArr[i8];
             int i9 = i8 + i5;
             while (true) {
-                int indexOf = indexOf(c2, i4);
+                int indexOf = indexOf(c, i4);
                 if (indexOf != -1 && i5 + indexOf <= i6) {
                     int i10 = this.offset + indexOf;
                     int i11 = i8;
@@ -744,10 +743,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         if (i6 + i5 <= i7) {
             char[] cArr = str.value;
             int i9 = str.offset;
-            char c2 = cArr[i9];
+            char c = cArr[i9];
             int i10 = i9 + i6;
             while (true) {
-                int indexOf = indexOf(c2, i5);
+                int indexOf = indexOf(c, i5);
                 if (indexOf != -1 && i6 + indexOf <= i7) {
                     int i11 = this.offset + indexOf;
                     int i12 = i9;
@@ -853,10 +852,10 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         }
         char[] cArr = str.value;
         int i7 = str.offset;
-        char c2 = cArr[i7];
+        char c = cArr[i7];
         int i8 = i7 + i5;
         while (true) {
-            int lastIndexOf = lastIndexOf(c2, i6);
+            int lastIndexOf = lastIndexOf(c, i6);
             if (lastIndexOf != -1) {
                 int i9 = this.offset + lastIndexOf;
                 int i10 = i7;
@@ -953,11 +952,11 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                                 if (i8 >= i4 + i3) {
                                     return true;
                                 }
-                                char c2 = this.value[i8];
-                                char c3 = cArr[i6];
-                                if (c2 != c3) {
+                                char c = this.value[i8];
+                                char c2 = cArr[i6];
+                                if (c != c2) {
                                     z2 = false;
-                                    if (foldCase(c2) != foldCase(c3)) {
+                                    if (foldCase(c) != foldCase(c2)) {
                                         break;
                                     }
                                 }
@@ -972,7 +971,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
         return z2;
     }
 
-    public String replace(char c2, char c3) {
+    public String replace(char c, char c2) {
         char[] cArr = this.value;
         int i = this.offset;
         int i2 = this.count;
@@ -984,7 +983,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
             boolean z2 = z;
             int i5 = i3;
             int i6 = i4;
-            if (cArr[i3] == c2) {
+            if (cArr[i3] == c) {
                 cArr2 = cArr;
                 z2 = z;
                 i5 = i3;
@@ -996,7 +995,7 @@ public final class String implements Serializable, Comparable<String>, CharSeque
                     i6 = i4 - i;
                     z2 = true;
                 }
-                cArr2[i5] = c3;
+                cArr2[i5] = c2;
             }
             i3 = i5 + 1;
             cArr = cArr2;

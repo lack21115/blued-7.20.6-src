@@ -48,9 +48,9 @@ public class ReplyCommentFragment extends CommonWriteTextFragment {
     public static void a(Context context, FeedNotice feedNotice) {
         Bundle bundle = new Bundle();
         bundle.putString(DownloadSettingKeys.RetryScheduleConfig.MAX_COUNT, "256");
-        bundle.putString("string_edit_hint", context.getResources().getString(2131892810));
+        bundle.putString("string_edit_hint", context.getResources().getString(R.string.write_comment));
         bundle.putString("string_edit", "");
-        bundle.putString("string_center", context.getResources().getString(2131891494));
+        bundle.putString("string_center", context.getResources().getString(R.string.reply_comment));
         bundle.putString("string_right", context.getResources().getString(R.string.send));
         bundle.putInt("REQUEST_CODE_KEY", 3);
         bundle.putString(k, feedNotice.comment_id);
@@ -69,7 +69,7 @@ public class ReplyCommentFragment extends CommonWriteTextFragment {
 
     @Override // com.soft.blued.fragment.CommonWriteTextFragment
     public void a() {
-        this.j.setCenterText(getString(2131891494));
+        this.j.setCenterText(getString(R.string.reply_comment));
         this.j.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.ReplyCommentFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -77,9 +77,9 @@ public class ReplyCommentFragment extends CommonWriteTextFragment {
                 ReplyCommentFragment.this.a(0);
             }
         });
-        this.j.setRightText(R.string.send);
+        this.j.setRightText((int) R.string.send);
         this.j.setRightTextColor(2131101204);
-        this.j.setRightClickListener(null);
+        this.j.setRightClickListener((View.OnClickListener) null);
         if (getArguments() != null) {
             this.t = getArguments().getString(k);
             this.u = getArguments().getString(l);
@@ -105,7 +105,7 @@ public class ReplyCommentFragment extends CommonWriteTextFragment {
                 }
                 if (StringUtils.d(editable.toString())) {
                     ReplyCommentFragment.this.j.setRightTextColor(2131101219);
-                    ReplyCommentFragment.this.j.setRightClickListener(null);
+                    ReplyCommentFragment.this.j.setRightClickListener((View.OnClickListener) null);
                     return;
                 }
                 ReplyCommentFragment.this.j.setRightTextColor(2131101190);
@@ -114,7 +114,7 @@ public class ReplyCommentFragment extends CommonWriteTextFragment {
                     public void onClick(View view) {
                         Tracker.onClick(view);
                         if (ReplyCommentFragment.this.d.length() > ReplyCommentFragment.this.b) {
-                            AppMethods.a((CharSequence) String.format(ReplyCommentFragment.this.f29642a.getResources().getString(R.string.max_input_limit), Integer.valueOf(ReplyCommentFragment.this.b)));
+                            AppMethods.a(String.format(ReplyCommentFragment.this.f15952a.getResources().getString(R.string.max_input_limit), Integer.valueOf(ReplyCommentFragment.this.b)));
                         } else {
                             ReplyCommentFragment.this.a(-1);
                         }
@@ -155,19 +155,16 @@ public class ReplyCommentFragment extends CommonWriteTextFragment {
         BluedIngSelfFeed bluedIngSelfFeed = new BluedIngSelfFeed();
         bluedIngSelfFeed.feed_id = this.w;
         BluedUIHttpResponse bluedUIHttpResponse = new BluedUIHttpResponse(getFragmentActive()) { // from class: com.soft.blued.ui.feed.fragment.ReplyCommentFragment.3
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ReplyCommentFragment.this.C);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ReplyCommentFragment.this.C);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
                 AppMethods.d((int) R.string.done);
                 ReplyCommentFragment.this.getActivity().finish();

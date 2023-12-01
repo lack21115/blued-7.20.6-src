@@ -11,7 +11,7 @@ import javax.crypto.SecretKey;
 public final class a implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private KeyStore f41061a;
+    private KeyStore f27370a;
     private SecretKey b;
 
     public a() {
@@ -22,7 +22,7 @@ public final class a implements c {
     private void a() {
         try {
             KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-            this.f41061a = keyStore;
+            this.f27370a = keyStore;
             keyStore.load(null);
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,10 +56,10 @@ public final class a implements c {
 
     private boolean c() {
         try {
-            if (this.f41061a == null) {
+            if (this.f27370a == null) {
                 a();
             }
-            return this.f41061a.containsAlias("AesKeyAlias");
+            return this.f27370a.containsAlias("AesKeyAlias");
         } catch (Exception e) {
             e.printStackTrace();
             p.a("AesSecurity", "hasAESKey error" + e.getMessage());
@@ -69,7 +69,7 @@ public final class a implements c {
 
     private SecretKey d() {
         try {
-            return ((KeyStore.SecretKeyEntry) this.f41061a.getEntry("AesKeyAlias", null)).getSecretKey();
+            return ((KeyStore.SecretKeyEntry) this.f27370a.getEntry("AesKeyAlias", null)).getSecretKey();
         } catch (Exception e) {
             e.printStackTrace();
             p.a("AesSecurity", "getAESSecretKey error" + e.getMessage());

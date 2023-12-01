@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.view;
 
 import android.animation.ValueAnimator;
-import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -18,18 +17,15 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.Log;
 import android.view.Choreographer;
+import android.view.View;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/WaveDrawable.class */
 public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpdateListener, Animatable {
     private static final PorterDuffXfermode p = new PorterDuffXfermode(PorterDuff.Mode.DST_IN);
     private static ColorFilter q = new ColorMatrixColorFilter(new float[]{0.264f, 0.472f, 0.088f, 0.0f, 0.0f, 0.264f, 0.472f, 0.088f, 0.0f, 0.0f, 0.264f, 0.472f, 0.088f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f});
-
-    /* renamed from: a  reason: collision with root package name */
-    private Drawable f15299a;
+    private Drawable a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f15300c;
+    private int c;
     private Paint k;
     private Bitmap l;
     private int d = Integer.MIN_VALUE;
@@ -59,7 +55,7 @@ public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpda
 
     private void a(float f) {
         this.j = f;
-        int i = this.f15300c;
+        int i = this.c;
         this.h = i - ((int) ((this.d + i) * f));
         invalidateSelf();
     }
@@ -67,7 +63,7 @@ public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpda
     private void a(int i, int i2, int i3) {
         float f;
         if (i <= 0 || i2 <= 0 || i3 <= 0) {
-            Log.w(ContentValues.TAG, "updateMask: size must > 0");
+            Log.w("ContentValues", "updateMask: size must > 0");
             this.l = null;
             return;
         }
@@ -101,10 +97,10 @@ public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpda
         if (rect.width() <= 0 || rect.height() <= 0) {
             return;
         }
-        if (this.b < 0 || this.f15300c < 0) {
+        if (this.b < 0 || this.c < 0) {
             this.b = rect.width();
             int height = rect.height();
-            this.f15300c = height;
+            this.c = height;
             if (this.d == Integer.MIN_VALUE) {
                 this.d = Math.max(8, (int) (height * 0.2f));
             }
@@ -119,16 +115,16 @@ public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpda
     }
 
     private void a(Drawable drawable) {
-        this.f15299a = drawable;
+        this.a = drawable;
         this.m.reset();
         Paint paint = new Paint();
         this.k = paint;
         paint.setFilterBitmap(false);
-        this.k.setColor(-16777216);
+        this.k.setColor(View.MEASURED_STATE_MASK);
         this.k.setXfermode(p);
-        this.b = this.f15299a.getIntrinsicWidth();
-        int intrinsicHeight = this.f15299a.getIntrinsicHeight();
-        this.f15300c = intrinsicHeight;
+        this.b = this.a.getIntrinsicWidth();
+        int intrinsicHeight = this.a.getIntrinsicHeight();
+        this.c = intrinsicHeight;
         int i = this.b;
         if (i > 0 && intrinsicHeight > 0) {
             this.e = i;
@@ -142,18 +138,18 @@ public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpda
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        this.f15299a.setColorFilter(q);
-        this.f15299a.draw(canvas);
-        this.f15299a.setColorFilter(this.r);
+        this.a.setColorFilter(q);
+        this.a.draw(canvas);
+        this.a.setColorFilter(this.r);
         if (this.j <= 0.001f) {
             return;
         }
-        int saveLayer = canvas.saveLayer(0.0f, 0.0f, this.b, this.f15300c, null, 31);
+        int saveLayer = canvas.saveLayer(0.0f, 0.0f, this.b, this.c, null, 31);
         int i = this.h;
         if (i > 0) {
-            canvas.clipRect(0, i, this.b, this.f15300c);
+            canvas.clipRect(0, i, this.b, this.c);
         }
-        this.f15299a.draw(canvas);
+        this.a.draw(canvas);
         if (this.j >= 0.999f) {
             return;
         }
@@ -172,7 +168,7 @@ public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpda
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return this.f15300c;
+        return this.c;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -201,29 +197,27 @@ public class WaveDrawable extends Drawable implements ValueAnimator.AnimatorUpda
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
+    protected void onBoundsChange(Rect rect) {
         super.onBoundsChange(rect);
         a(rect);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.Drawable
-    public boolean onLevelChange(int i) {
+    protected boolean onLevelChange(int i) {
         a(i / 10000.0f);
         return true;
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setAlpha(int i) {
-        this.f15299a.setAlpha(i);
+        this.a.setAlpha(i);
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setBounds(int i, int i2, int i3, int i4) {
         super.setBounds(i, i2, i3, i4);
-        this.f15299a.setBounds(i, i2, i3, i4);
+        this.a.setBounds(i, i2, i3, i4);
     }
 
     @Override // android.graphics.drawable.Drawable

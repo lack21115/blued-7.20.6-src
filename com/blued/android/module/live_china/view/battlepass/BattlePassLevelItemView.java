@@ -15,13 +15,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/battlepass/BattlePassLevelItemView.class */
 public final class BattlePassLevelItemView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private BattlePassLevelDataModel f15317a;
+    private BattlePassLevelDataModel a;
     private BattlePassLevelProgressItemView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f15318c;
+    private TextView c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BattlePassLevelItemView(Context context, BattlePassLevelDataModel model) {
@@ -34,11 +30,11 @@ public final class BattlePassLevelItemView extends FrameLayout {
         this.b = (BattlePassLevelProgressItemView) findViewById;
         View findViewById2 = inflate.findViewById(R.id.tv_level);
         Intrinsics.c(findViewById2, "inflate.findViewById(R.id.tv_level)");
-        this.f15318c = (TextView) findViewById2;
+        this.c = (TextView) findViewById2;
     }
 
     private final void a() {
-        BattlePassLevelDataModel battlePassLevelDataModel = this.f15317a;
+        BattlePassLevelDataModel battlePassLevelDataModel = this.a;
         if (battlePassLevelDataModel == null) {
             return;
         }
@@ -59,7 +55,7 @@ public final class BattlePassLevelItemView extends FrameLayout {
     }
 
     public final int a(int i) {
-        BattlePassLevelDataModel battlePassLevelDataModel = this.f15317a;
+        BattlePassLevelDataModel battlePassLevelDataModel = this.a;
         if (battlePassLevelDataModel == null) {
             return -1;
         }
@@ -88,7 +84,7 @@ public final class BattlePassLevelItemView extends FrameLayout {
     }
 
     public final BattlePassLevelDataModel getModel() {
-        return this.f15317a;
+        return this.a;
     }
 
     public final int getProgress() {
@@ -96,7 +92,7 @@ public final class BattlePassLevelItemView extends FrameLayout {
     }
 
     public final TextView getTv_level() {
-        return this.f15318c;
+        return this.c;
     }
 
     public final void setBppiv(BattlePassLevelProgressItemView battlePassLevelProgressItemView) {
@@ -106,12 +102,12 @@ public final class BattlePassLevelItemView extends FrameLayout {
 
     public final void setData(BattlePassLevelDataModel model) {
         Intrinsics.e(model, "model");
-        this.f15317a = model;
+        this.a = model;
         a();
     }
 
     public final void setModel(BattlePassLevelDataModel battlePassLevelDataModel) {
-        this.f15317a = battlePassLevelDataModel;
+        this.a = battlePassLevelDataModel;
     }
 
     public final void setProgress(int i) {
@@ -120,6 +116,6 @@ public final class BattlePassLevelItemView extends FrameLayout {
 
     public final void setTv_level(TextView textView) {
         Intrinsics.e(textView, "<set-?>");
-        this.f15318c = textView;
+        this.c = textView;
     }
 }

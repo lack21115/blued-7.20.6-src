@@ -1,5 +1,6 @@
 package com.blued.android.module.common.utils;
 
+import com.anythink.core.api.ATAdConst;
 import com.blued.android.framework.view.shape.ShapeHelper;
 import com.blued.android.module.common.R;
 import kotlin.Metadata;
@@ -8,9 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/utils/YyChatRoomTagShapeUtils.class */
 public final class YyChatRoomTagShapeUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final YyChatRoomTagShapeUtils f10915a = new YyChatRoomTagShapeUtils();
+    public static final YyChatRoomTagShapeUtils a = new YyChatRoomTagShapeUtils();
 
     private YyChatRoomTagShapeUtils() {
     }
@@ -47,13 +46,13 @@ public final class YyChatRoomTagShapeUtils {
                             }
                             break;
                         case 54:
-                            if (str.equals("6")) {
+                            if (str.equals(ATAdConst.ATDevFrameworkType.FLUTTER)) {
                                 ShapeHelper.a(con, R.color.syc_B353FC, R.color.syc_8A29F7);
                                 return;
                             }
                             break;
                         case 55:
-                            if (str.equals("7")) {
+                            if (str.equals(ATAdConst.ATDevFrameworkType.ADOBIE_AIR)) {
                                 ShapeHelper.a(con, R.color.syc_FFB200, R.color.syc_FF7B00);
                                 return;
                             }
@@ -103,13 +102,13 @@ public final class YyChatRoomTagShapeUtils {
                             }
                             break;
                         case 54:
-                            if (str.equals("6")) {
+                            if (str.equals(ATAdConst.ATDevFrameworkType.FLUTTER)) {
                                 ShapeHelper.a(con, R.color.syc_30A900FF, R.color.syc_00FF00AB);
                                 return;
                             }
                             break;
                         case 55:
-                            if (str.equals("7")) {
+                            if (str.equals(ATAdConst.ATDevFrameworkType.ADOBIE_AIR)) {
                                 ShapeHelper.a(con, R.color.syc_30FFAC00, R.color.syc_00FFCD00);
                                 return;
                             }

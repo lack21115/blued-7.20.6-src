@@ -5,8 +5,10 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.os.Process;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.huawei.openalliance.ad.constant.bc;
 import com.tencent.bugly.idasc.crashreport.common.info.PlugInBean;
+import com.xiaomi.mipush.sdk.Constants;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +35,7 @@ public final class aa {
     private String aj;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35213c;
+    public String f21522c;
     public final String d;
     public String e;
     public final String k;
@@ -72,7 +74,7 @@ public final class aa {
     public int x = -1;
 
     /* renamed from: ar  reason: collision with root package name */
-    private final Map<String, String> f35212ar = new HashMap();
+    private final Map<String, String> f21521ar = new HashMap();
     private final Map<String, String> as = new HashMap();
     private final Map<String, String> at = new HashMap();
     public String y = "unknown";
@@ -98,7 +100,7 @@ public final class aa {
     private final List<Integer> ay = new ArrayList();
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f35211a = System.currentTimeMillis();
+    public final long f21520a = System.currentTimeMillis();
     public final byte b = 1;
 
     private aa(Context context) {
@@ -128,7 +130,7 @@ public final class aa {
                 }
             }
         }
-        this.f35213c = z.a(context);
+        this.f21522c = z.a(context);
         this.d = z.a(Process.myPid());
         this.q = z.c(context);
         this.k = "Android " + ab.b() + ",level " + ab.c();
@@ -151,7 +153,7 @@ public final class aa {
                 }
                 String str5 = d.get("BUGLY_ENABLE_DEBUG");
                 if (str5 != null) {
-                    this.D = str5.equalsIgnoreCase("true");
+                    this.D = str5.equalsIgnoreCase(fw.Code);
                 }
                 String str6 = d.get("com.tencent.rdm.uuid");
                 if (str6 != null) {
@@ -177,7 +179,7 @@ public final class aa {
                 al.c("App is first time to be installed on the device.", new Object[0]);
             }
         } catch (Throwable th3) {
-            if (p.f35328c) {
+            if (p.f21637c) {
                 th3.printStackTrace();
             }
         }
@@ -231,7 +233,7 @@ public final class aa {
         String uuid = UUID.randomUUID().toString();
         String str = uuid;
         if (!ap.b(uuid)) {
-            str = uuid.replaceAll("-", "");
+            str = uuid.replaceAll(Constants.ACCEPT_TIME_SEPARATOR_SERVER, "");
         }
         return str;
     }
@@ -334,7 +336,7 @@ public final class aa {
             return;
         }
         synchronized (this.av) {
-            this.f35212ar.put(str, str2);
+            this.f21521ar.put(str, str2);
         }
     }
 
@@ -418,7 +420,7 @@ public final class aa {
             return null;
         }
         synchronized (this.av) {
-            remove = this.f35212ar.remove(str);
+            remove = this.f21521ar.remove(str);
         }
         return remove;
     }
@@ -453,7 +455,7 @@ public final class aa {
             return null;
         }
         synchronized (this.av) {
-            str2 = this.f35212ar.get(str);
+            str2 = this.f21521ar.get(str);
         }
         return str2;
     }
@@ -588,23 +590,23 @@ public final class aa {
 
     public final Map<String, String> t() {
         synchronized (this.av) {
-            if (this.f35212ar.size() <= 0) {
+            if (this.f21521ar.size() <= 0) {
                 return null;
             }
-            return new HashMap(this.f35212ar);
+            return new HashMap(this.f21521ar);
         }
     }
 
     public final void u() {
         synchronized (this.av) {
-            this.f35212ar.clear();
+            this.f21521ar.clear();
         }
     }
 
     public final int v() {
         int size;
         synchronized (this.av) {
-            size = this.f35212ar.size();
+            size = this.f21521ar.size();
         }
         return size;
     }
@@ -612,7 +614,7 @@ public final class aa {
     public final Set<String> w() {
         Set<String> keySet;
         synchronized (this.av) {
-            keySet = this.f35212ar.keySet();
+            keySet = this.f21521ar.keySet();
         }
         return keySet;
     }

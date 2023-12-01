@@ -7,22 +7,20 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/collections/AbstractMap$keys$1.class */
 public final class AbstractMap$keys$1<K> extends AbstractSet<K> {
+    final /* synthetic */ AbstractMap<K, V> a;
 
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ AbstractMap<K, V> f42328a;
-
-    @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
-        return this.f42328a.containsKey(obj);
+        return this.a.containsKey(obj);
     }
 
     @Override // kotlin.collections.AbstractCollection
     public int getSize() {
-        return this.f42328a.size();
+        return this.a.size();
     }
 
     @Override // kotlin.collections.AbstractSet, kotlin.collections.AbstractCollection, java.util.Collection, java.lang.Iterable
     public Iterator<K> iterator() {
-        return new AbstractMap$keys$1$iterator$1(this.f42328a.entrySet().iterator());
+        return new AbstractMap$keys$1$iterator$1(this.a.entrySet().iterator());
     }
 }

@@ -15,9 +15,7 @@ import com.jeremyliao.liveeventbus.LiveEventBus;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveDesireResetPop.class */
 public class LiveDesireResetPop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f13974c;
+    public Context c;
     public final String d;
     private ImageView e;
     private TextView f;
@@ -26,7 +24,7 @@ public class LiveDesireResetPop extends CenterPopupView {
     public LiveDesireResetPop(Context context, IRequestHost iRequestHost) {
         super(context);
         this.d = "LiveDesireResetPop";
-        this.f13974c = context;
+        this.c = context;
         this.g = iRequestHost;
     }
 

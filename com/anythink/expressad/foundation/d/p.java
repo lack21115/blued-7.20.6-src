@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public final class p implements com.anythink.expressad.e.b, Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f7800a = "amount_max";
+    public static final String f4960a = "amount_max";
     public static final String b = "callback_rule";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f7801c = "virtual_currency";
+    public static final String f4961c = "virtual_currency";
     public static final String d = "amount";
     public static final String e = "icon";
     public static final String f = "currency_id";

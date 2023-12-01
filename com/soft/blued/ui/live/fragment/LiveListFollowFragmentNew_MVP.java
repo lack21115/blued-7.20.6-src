@@ -30,7 +30,6 @@ public final class LiveListFollowFragmentNew_MVP implements MvpDispatcher {
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0059, code lost:
         if (r6.equals("more_recommend_list_new_user") != false) goto L11;
      */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

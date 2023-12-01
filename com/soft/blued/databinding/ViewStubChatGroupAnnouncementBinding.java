@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewStubChatGroupAnnouncementBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29631a;
+    private final RelativeLayout f15941a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29631a;
+        return this.f15941a;
     }
 }

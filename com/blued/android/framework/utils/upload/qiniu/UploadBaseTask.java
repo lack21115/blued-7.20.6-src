@@ -23,17 +23,13 @@ import java.util.Map;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/upload/qiniu/UploadBaseTask.class */
 public abstract class UploadBaseTask implements IUploadTask, UploadProcessManager.IUpdateProcessListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static final String f10136a = UploadVideoTask.class.getSimpleName();
+    protected static final String a = UploadVideoTask.class.getSimpleName();
     protected String b;
     protected List<Pair<String, String>> h;
     protected IUploadTask.IUploadStateListener i;
     protected SenderListener j;
     protected UploadProcessManager n;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected List<Pair<String, String>> f10137c = new ArrayList();
+    protected List<Pair<String, String>> c = new ArrayList();
     protected List<Pair<String, String>> d = new ArrayList();
     protected List<Pair<String, String>> e = new ArrayList();
     protected Map<String, Long> f = new HashMap();
@@ -111,13 +107,13 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
     public void a(int i, String str, String str2, Pair<String, String> pair) {
         synchronized (this) {
             this.e.add(pair);
-            if (!TextUtils.isEmpty(pair.first) && !TextUtils.isEmpty(pair.second)) {
-                a(pair.first, str2, 1.0d);
+            if (!TextUtils.isEmpty((CharSequence) pair.first) && !TextUtils.isEmpty((CharSequence) pair.second)) {
+                a((String) pair.first, str2, 1.0d);
                 UploadModel uploadModel = new UploadModel();
-                uploadModel.url = pair.second;
+                uploadModel.url = (String) pair.second;
                 uploadModel.compressPath = str;
                 uploadModel.type = i;
-                final Pair pair2 = new Pair(pair.first, uploadModel);
+                final Pair pair2 = new Pair((String) pair.first, uploadModel);
                 b("更新记录并回调:" + pair2.toString());
                 a(new Runnable() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadBaseTask.4
                     @Override // java.lang.Runnable
@@ -134,10 +130,10 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
             }
             this.h.add(pair);
             UploadModel uploadModel2 = new UploadModel();
-            uploadModel2.url = pair.second;
+            uploadModel2.url = (String) pair.second;
             uploadModel2.compressPath = str;
             uploadModel2.type = i;
-            final Pair pair22 = new Pair(pair.first, uploadModel2);
+            final Pair pair22 = new Pair((String) pair.first, uploadModel2);
             b("更新记录并回调:" + pair22.toString());
             a(new Runnable() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadBaseTask.4
                 @Override // java.lang.Runnable
@@ -171,7 +167,7 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(String str, int i, boolean z, Pair<String, String> pair, IUploadTask.IUploadStateListener iUploadStateListener) {
         synchronized (this) {
-            a(str, i, z, pair, pair.first, iUploadStateListener);
+            a(str, i, z, pair, (String) pair.first, iUploadStateListener);
         }
     }
 
@@ -179,14 +175,12 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
         synchronized (this) {
             b("获取token！");
             QiniuTokenUtils.a(str, 1, new BluedUIHttpResponse<BluedEntity<BluedToken, QiniuUploadExtra>>() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadBaseTask.3
-
-                /* renamed from: a  reason: collision with root package name */
-                boolean f10144a;
+                boolean a;
                 String b;
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i2, String str3) {
-                    this.f10144a = true;
+                    this.a = true;
                     UploadBaseTask uploadBaseTask = UploadBaseTask.this;
                     uploadBaseTask.c("getToken Error ! errorCode:" + i2 + " | errorMessage:" + str3);
                     return super.onUIFailure(i2, str3);
@@ -195,7 +189,7 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     super.onUIFinish();
-                    if (this.f10144a) {
+                    if (this.a) {
                         UploadBaseTask.this.a(0, str2, this.b, pair);
                         IUploadTask.IUploadStateListener iUploadStateListener2 = iUploadStateListener;
                         if (iUploadStateListener2 != null) {
@@ -206,18 +200,18 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
-                    this.f10144a = false;
+                    this.a = false;
                     super.onUIStart();
                 }
 
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIUpdate(BluedEntity<BluedToken, QiniuUploadExtra> bluedEntity) {
                     if (!bluedEntity.hasData()) {
-                        this.f10144a = true;
+                        this.a = true;
                         UploadBaseTask.this.c("getToken Error !  No Data");
                         return;
                     }
-                    this.f10144a = false;
+                    this.a = false;
                     UploadBaseTask uploadBaseTask = UploadBaseTask.this;
                     uploadBaseTask.b("获取token成功！！！ " + bluedEntity.toString());
                     BluedToken bluedToken = bluedEntity.data.get(0);
@@ -240,13 +234,13 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(final String str, final String str2, final QiniuUploadExtra qiniuUploadExtra, final int i, final Pair<String, String> pair, final String str3, final IUploadTask.IUploadStateListener iUploadStateListener, final int i2) {
-        b("开始走上传流程:" + pair.first);
+        b("开始走上传流程:" + ((String) pair.first));
         if (TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
-            a(i, str3, str, new Pair<>(pair.first, ""));
+            a(i, str3, str, new Pair<>((String) pair.first, ""));
             if (iUploadStateListener != null) {
                 iUploadStateListener.a();
             }
-        } else if (pair == null || TextUtils.isEmpty(pair.first)) {
+        } else if (pair == null || TextUtils.isEmpty((CharSequence) pair.first)) {
             if (iUploadStateListener != null) {
                 iUploadStateListener.a();
             }
@@ -259,7 +253,7 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
                     qiniuUpload2 = qiniuUploadExtra.upload;
                 }
             }
-            final boolean a2 = a(pair.first);
+            final boolean a2 = a((String) pair.first);
             QiniuUploadUtils.a(i, qiniuUpload2.host, qiniuUpload2.backup, str3, str, str2, new QiniuUploadTools.QiNiuListener() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadBaseTask.1
                 @Override // com.blued.android.framework.utils.upload.QiniuUploadTools.QiNiuListener
                 public void a(String str4) {
@@ -313,10 +307,10 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(final String str, final String str2, final QiniuUploadExtra qiniuUploadExtra, final Pair<String, String> pair, final IUploadTask.IUploadStateListener iUploadStateListener, final int i, final int i2) {
-        if (TextUtils.isEmpty(pair.second)) {
-            final String e = RecyclingUtils.e(pair.first);
-            b("压缩图:" + pair.first + " | 压缩后地址：" + e);
-            Houyi.a().a(pair.first, e).a(new Houyi.OnCompressListener() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadBaseTask.2
+        if (TextUtils.isEmpty((CharSequence) pair.second)) {
+            final String e = RecyclingUtils.e((String) pair.first);
+            b("压缩图:" + ((String) pair.first) + " | 压缩后地址：" + e);
+            Houyi.a().a((String) pair.first, e).a(new Houyi.OnCompressListener() { // from class: com.blued.android.framework.utils.upload.qiniu.UploadBaseTask.2
                 @Override // com.blued.android.framework.utils.Houyi.OnCompressListener
                 public void a() {
                 }
@@ -353,8 +347,8 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
             }).a();
             return;
         }
-        b("检测当前图已上传完成 更新记录:" + pair.first);
-        a(0, pair.first, str, new Pair<>(pair.first, pair.second));
+        b("检测当前图已上传完成 更新记录:" + ((String) pair.first));
+        a(0, (String) pair.first, str, new Pair<>((String) pair.first, (String) pair.second));
         if (iUploadStateListener != null) {
             iUploadStateListener.a();
         }
@@ -397,14 +391,14 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
     /* JADX INFO: Access modifiers changed from: protected */
     public void b(String str) {
         if (AppInfo.m()) {
-            Logger.c(MediaSender.f10132a, str);
+            Logger.c(MediaSender.a, str);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void c(String str) {
         if (AppInfo.m()) {
-            Logger.e(MediaSender.f10132a, str);
+            Logger.e(MediaSender.a, str);
         }
     }
 
@@ -437,7 +431,7 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
     protected void f() {
         Pair pair;
         synchronized (this) {
-            if (this.e.size() >= this.f10137c.size()) {
+            if (this.e.size() >= this.c.size()) {
                 boolean z = true;
                 if (this.h != null) {
                     z = true;
@@ -447,15 +441,15 @@ public abstract class UploadBaseTask implements IUploadTask, UploadProcessManage
                 }
                 final ArrayList arrayList = new ArrayList();
                 String str = "";
-                for (Pair<String, String> pair2 : this.f10137c) {
+                for (Pair<String, String> pair2 : this.c) {
                     Iterator<Pair<String, String>> it = this.e.iterator();
                     while (true) {
                         if (!it.hasNext()) {
                             break;
                         }
                         Pair<String, String> next = it.next();
-                        if (next != null && pair2.first.equals(next.first)) {
-                            arrayList.add(new Pair(pair2.first, next.second));
+                        if (next != null && ((String) pair2.first).equals(next.first)) {
+                            arrayList.add(new Pair((String) pair2.first, (String) next.second));
                             str = str + pair.toString();
                             break;
                         }

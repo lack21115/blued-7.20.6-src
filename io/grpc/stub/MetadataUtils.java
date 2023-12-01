@@ -26,7 +26,6 @@ public final class MetadataUtils {
                 super(clientCall);
             }
 
-            @Override // io.grpc.ForwardingClientCall, io.grpc.ClientCall
             public void start(ClientCall.Listener<RespT> listener, Metadata metadata) {
                 metadata.merge(HeaderAttachingClientInterceptor.this.extraHeaders);
                 super.start(listener, metadata);
@@ -37,7 +36,6 @@ public final class MetadataUtils {
             this.extraHeaders = (Metadata) Preconditions.checkNotNull(metadata, "extraHeaders");
         }
 
-        @Override // io.grpc.ClientInterceptor
         public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
             return new HeaderAttachingClientCall(channel.newCall(methodDescriptor, callOptions));
         }
@@ -58,13 +56,11 @@ public final class MetadataUtils {
                     super(listener);
                 }
 
-                @Override // io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener, io.grpc.ForwardingClientCallListener, io.grpc.PartialForwardingClientCallListener, io.grpc.ClientCall.Listener
                 public void onClose(Status status, Metadata metadata) {
                     MetadataCapturingClientInterceptor.this.trailersCapture.set(metadata);
                     super.onClose(status, metadata);
                 }
 
-                @Override // io.grpc.ForwardingClientCallListener.SimpleForwardingClientCallListener, io.grpc.ForwardingClientCallListener, io.grpc.PartialForwardingClientCallListener, io.grpc.ClientCall.Listener
                 public void onHeaders(Metadata metadata) {
                     MetadataCapturingClientInterceptor.this.headersCapture.set(metadata);
                     super.onHeaders(metadata);
@@ -75,7 +71,6 @@ public final class MetadataUtils {
                 super(clientCall);
             }
 
-            @Override // io.grpc.ForwardingClientCall, io.grpc.ClientCall
             public void start(ClientCall.Listener<RespT> listener, Metadata metadata) {
                 MetadataCapturingClientInterceptor.this.headersCapture.set(null);
                 MetadataCapturingClientInterceptor.this.trailersCapture.set(null);
@@ -88,7 +83,6 @@ public final class MetadataUtils {
             this.trailersCapture = (AtomicReference) Preconditions.checkNotNull(atomicReference2, "trailersCapture");
         }
 
-        @Override // io.grpc.ClientInterceptor
         public <ReqT, RespT> ClientCall<ReqT, RespT> interceptCall(MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions, Channel channel) {
             return new MetadataCapturingClientCall(channel.newCall(methodDescriptor, callOptions));
         }

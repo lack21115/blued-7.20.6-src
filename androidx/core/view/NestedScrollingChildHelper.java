@@ -7,16 +7,16 @@ import android.view.ViewParent;
 public class NestedScrollingChildHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private ViewParent f2649a;
+    private ViewParent f2601a;
     private ViewParent b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final View f2650c;
+    private final View f2602c;
     private boolean d;
     private int[] e;
 
     public NestedScrollingChildHelper(View view) {
-        this.f2650c = view;
+        this.f2602c = view;
     }
 
     private ViewParent a(int i) {
@@ -26,12 +26,12 @@ public class NestedScrollingChildHelper {
             }
             return this.b;
         }
-        return this.f2649a;
+        return this.f2601a;
     }
 
     private void a(int i, ViewParent viewParent) {
         if (i == 0) {
-            this.f2649a = viewParent;
+            this.f2601a = viewParent;
         } else if (i != 1) {
         } else {
             this.b = viewParent;
@@ -54,7 +54,7 @@ public class NestedScrollingChildHelper {
             return false;
         }
         if (iArr != null) {
-            this.f2650c.getLocationInWindow(iArr);
+            this.f2602c.getLocationInWindow(iArr);
             i6 = iArr[0];
             i7 = iArr[1];
         } else {
@@ -66,9 +66,9 @@ public class NestedScrollingChildHelper {
             iArr2[0] = 0;
             iArr2[1] = 0;
         }
-        ViewParentCompat.onNestedScroll(a2, this.f2650c, i, i2, i3, i4, i5, iArr2);
+        ViewParentCompat.onNestedScroll(a2, this.f2602c, i, i2, i3, i4, i5, iArr2);
         if (iArr != null) {
-            this.f2650c.getLocationInWindow(iArr);
+            this.f2602c.getLocationInWindow(iArr);
             iArr[0] = iArr[0] - i6;
             iArr[1] = iArr[1] - i7;
             return true;
@@ -88,7 +88,7 @@ public class NestedScrollingChildHelper {
         if (!isNestedScrollingEnabled() || (a2 = a(0)) == null) {
             return false;
         }
-        return ViewParentCompat.onNestedFling(a2, this.f2650c, f, f2, z);
+        return ViewParentCompat.onNestedFling(a2, this.f2602c, f, f2, z);
     }
 
     public boolean dispatchNestedPreFling(float f, float f2) {
@@ -96,7 +96,7 @@ public class NestedScrollingChildHelper {
         if (!isNestedScrollingEnabled() || (a2 = a(0)) == null) {
             return false;
         }
-        return ViewParentCompat.onNestedPreFling(a2, this.f2650c, f, f2);
+        return ViewParentCompat.onNestedPreFling(a2, this.f2602c, f, f2);
     }
 
     public boolean dispatchNestedPreScroll(int i, int i2, int[] iArr, int[] iArr2) {
@@ -143,16 +143,16 @@ public class NestedScrollingChildHelper {
     }
 
     public void onDetachedFromWindow() {
-        ViewCompat.stopNestedScroll(this.f2650c);
+        ViewCompat.stopNestedScroll(this.f2602c);
     }
 
     public void onStopNestedScroll(View view) {
-        ViewCompat.stopNestedScroll(this.f2650c);
+        ViewCompat.stopNestedScroll(this.f2602c);
     }
 
     public void setNestedScrollingEnabled(boolean z) {
         if (this.d) {
-            ViewCompat.stopNestedScroll(this.f2650c);
+            ViewCompat.stopNestedScroll(this.f2602c);
         }
         this.d = z;
     }
@@ -166,11 +166,11 @@ public class NestedScrollingChildHelper {
             return true;
         }
         if (isNestedScrollingEnabled()) {
-            View view = this.f2650c;
-            for (ViewParent parent = this.f2650c.getParent(); parent != null; parent = parent.getParent()) {
-                if (ViewParentCompat.onStartNestedScroll(parent, view, this.f2650c, i, i2)) {
+            View view = this.f2602c;
+            for (ViewParent parent = this.f2602c.getParent(); parent != null; parent = parent.getParent()) {
+                if (ViewParentCompat.onStartNestedScroll(parent, view, this.f2602c, i, i2)) {
                     a(i2, parent);
-                    ViewParentCompat.onNestedScrollAccepted(parent, view, this.f2650c, i, i2);
+                    ViewParentCompat.onNestedScrollAccepted(parent, view, this.f2602c, i, i2);
                     return true;
                 }
                 if (parent instanceof View) {
@@ -189,7 +189,7 @@ public class NestedScrollingChildHelper {
     public void stopNestedScroll(int i) {
         ViewParent a2 = a(i);
         if (a2 != null) {
-            ViewParentCompat.onStopNestedScroll(a2, this.f2650c, i);
+            ViewParentCompat.onStopNestedScroll(a2, this.f2602c, i);
             a(i, null);
         }
     }

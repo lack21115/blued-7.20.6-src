@@ -1,7 +1,5 @@
 package androidx.core.util;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/util/Pair.class */
 public class Pair<F, S> {
     public final F first;
@@ -43,6 +41,6 @@ public class Pair<F, S> {
     }
 
     public String toString() {
-        return "Pair{" + this.first + " " + this.second + i.d;
+        return "Pair{" + this.first + " " + this.second + "}";
     }
 }

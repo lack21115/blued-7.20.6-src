@@ -1,5 +1,6 @@
 package android.app;
 
+import android.R;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
@@ -14,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import com.android.internal.R;
 import com.android.internal.app.AlertController;
 
 /* loaded from: source-9557208-dex2jar.jar:android/app/AlertDialog.class */
@@ -318,21 +318,21 @@ public class AlertDialog extends Dialog implements DialogInterface {
         if (i == 1) {
             i2 = 16974973;
         } else if (i == 2) {
-            return R.style.Theme_Holo_Dialog_Alert;
+            return 16974982;
         } else {
             if (i == 3) {
-                return R.style.Theme_Holo_Light_Dialog_Alert;
+                return 16974983;
             }
             if (i == 4) {
-                return 16974545;
+                return R.style.Theme_DeviceDefault_Dialog_Alert;
             }
             if (i == 5) {
-                return 16974546;
+                return R.style.Theme_DeviceDefault_Light_Dialog_Alert;
             }
             i2 = i;
             if (i < 16777216) {
                 TypedValue typedValue = new TypedValue();
-                context.getTheme().resolveAttribute(16843529, typedValue, true);
+                context.getTheme().resolveAttribute(R.attr.alertDialogTheme, typedValue, true);
                 return typedValue.resourceId;
             }
         }
@@ -371,11 +371,11 @@ public class AlertDialog extends Dialog implements DialogInterface {
     }
 
     public void setButton(int i, CharSequence charSequence, DialogInterface.OnClickListener onClickListener) {
-        this.mAlert.setButton(i, charSequence, onClickListener, null);
+        this.mAlert.setButton(i, charSequence, onClickListener, (Message) null);
     }
 
     public void setButton(int i, CharSequence charSequence, Message message) {
-        this.mAlert.setButton(i, charSequence, null, message);
+        this.mAlert.setButton(i, charSequence, (DialogInterface.OnClickListener) null, message);
     }
 
     @Deprecated

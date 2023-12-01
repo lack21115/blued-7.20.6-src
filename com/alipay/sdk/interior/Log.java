@@ -8,9 +8,7 @@ import com.alipay.sdk.util.c;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/interior/Log.class */
 public class Log {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static long f4631a;
+    private static long a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/alipay/sdk/interior/Log$ISdkLogCallback.class */
     public interface ISdkLogCallback {
@@ -21,10 +19,10 @@ public class Log {
         try {
             b.a().a(context);
             long elapsedRealtime = SystemClock.elapsedRealtime() / 1000;
-            if (elapsedRealtime - f4631a < 600) {
+            if (elapsedRealtime - a < 600) {
                 return false;
             }
-            f4631a = elapsedRealtime;
+            a = elapsedRealtime;
             a.a(context);
             return true;
         } catch (Exception e) {

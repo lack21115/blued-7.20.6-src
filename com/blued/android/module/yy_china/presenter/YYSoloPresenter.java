@@ -32,7 +32,7 @@ public class YYSoloPresenter extends AbstractBasePresenter {
         if (b == null) {
             return;
         }
-        YYRoomHttpUtils.S(b.room_id, new BluedUIHttpResponse<BluedEntityA<YYWishGoodsModel>>(this.f17634a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.7
+        YYRoomHttpUtils.S(b.room_id, new BluedUIHttpResponse<BluedEntityA<YYWishGoodsModel>>(this.a.getFragmentActive()) { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.7
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -44,7 +44,7 @@ public class YYSoloPresenter extends AbstractBasePresenter {
                         ToastUtils.a(R.string.yy_not_gift);
                     }
                 } else if (YYRoomInfoManager.e().y()) {
-                    YYSoloPresenter.this.f17634a.u();
+                    YYSoloPresenter.this.a.u();
                 } else {
                     YYSoloPresenter.this.f();
                 }
@@ -54,37 +54,37 @@ public class YYSoloPresenter extends AbstractBasePresenter {
             public boolean onUIFailure(int i, String str) {
                 if (i == 40380002) {
                     ToastUtils.a("房间已关闭");
-                    YYSoloPresenter.this.f17634a.G();
+                    YYSoloPresenter.this.a.G();
                 }
                 return super.onUIFailure(i, str);
             }
-        }, this.f17634a.getFragmentActive());
+        }, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        if (this.f17634a == null) {
+        if (this.a == null) {
             return;
         }
-        YYSetSoloGiftView yYSetSoloGiftView = new YYSetSoloGiftView(this.f17634a.getContext());
-        yYSetSoloGiftView.a(this.f17634a);
-        this.f17634a.a(yYSetSoloGiftView, -2);
+        YYSetSoloGiftView yYSetSoloGiftView = new YYSetSoloGiftView(this.a.getContext());
+        yYSetSoloGiftView.a(this.a);
+        this.a.a(yYSetSoloGiftView, -2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g() {
-        if (this.f17634a == null) {
+        if (this.a == null) {
             return;
         }
-        YYConsumptionView yYConsumptionView = new YYConsumptionView(this.f17634a.getContext());
-        yYConsumptionView.a(this.f17634a);
-        this.f17634a.a(yYConsumptionView, -2);
+        YYConsumptionView yYConsumptionView = new YYConsumptionView(this.a.getContext());
+        yYConsumptionView.a(this.a);
+        this.a.a(yYConsumptionView, -2);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void h() {
-        if (this.f17634a != null) {
-            this.f17634a.c(0);
+        if (this.a != null) {
+            this.a.c(0);
         }
     }
 
@@ -96,7 +96,6 @@ public class YYSoloPresenter extends AbstractBasePresenter {
     @Override // com.blued.android.module.yy_china.presenter.AbstractBasePresenter
     public void b(LifecycleOwner lifecycleOwner) {
         LiveEventBus.get("event_solo_friend", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 YYRoomModel b = YYRoomInfoManager.e().b();
@@ -110,51 +109,46 @@ public class YYSoloPresenter extends AbstractBasePresenter {
             }
         });
         LiveEventBus.get("event_solo_fans", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 YYSoloPresenter.this.b(new YYClickApplyEvent(YYConstants.ApplyFromSource.SoloFans, "3"));
             }
         });
         LiveEventBus.get("event_solo_edit_topic", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (YYSoloPresenter.this.f17634a == null) {
+                if (YYSoloPresenter.this.a == null) {
                     return;
                 }
-                new TopicListDialog().show(YYSoloPresenter.this.f17634a.getChildFragmentManager(), "TopicListDialog");
+                new TopicListDialog().show(YYSoloPresenter.this.a.getChildFragmentManager(), "TopicListDialog");
             }
         });
         LiveEventBus.get("event_solo_set_gift", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
-                if (YYSoloPresenter.this.f17634a == null || YYSoloPresenter.this.f17634a.E == null || !(YYSoloPresenter.this.f17634a.E instanceof YYSeatSoloAdapter)) {
+                if (YYSoloPresenter.this.a == null || YYSoloPresenter.this.a.E == null || !(YYSoloPresenter.this.a.E instanceof YYSeatSoloAdapter)) {
                     return;
                 }
-                ((YYSeatSoloAdapter) YYSoloPresenter.this.f17634a.E).a();
+                ((YYSeatSoloAdapter) YYSoloPresenter.this.a.E).a();
             }
         });
         LiveEventBus.get("event_solo_auto_apply", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 YYSoloPresenter.super.c(new YYClickApplyEvent(YYConstants.ApplyFromSource.SoloAutoApply, "3"));
             }
         });
         LiveEventBus.get("event_solo_lock", Boolean.class).observe(lifecycleOwner, new Observer<Boolean>() { // from class: com.blued.android.module.yy_china.presenter.YYSoloPresenter.6
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 YYRoomModel b = YYRoomInfoManager.e().b();
                 if (b != null && YYRoomInfoManager.e().y()) {
                     EventTrackYY.d(ChatRoomProtos.Event.SINGLE_ROOM_ACCOMPANY_UNLOCK, b.room_id, b.uid);
                 }
-                if (YYSoloPresenter.this.f17634a == null || YYSoloPresenter.this.f17634a.E == null || !(YYSoloPresenter.this.f17634a.E instanceof YYSeatSoloAdapter)) {
+                if (YYSoloPresenter.this.a == null || YYSoloPresenter.this.a.E == null || !(YYSoloPresenter.this.a.E instanceof YYSeatSoloAdapter)) {
                     return;
                 }
-                ((YYSeatSoloAdapter) YYSoloPresenter.this.f17634a.E).a(bool.booleanValue());
+                ((YYSeatSoloAdapter) YYSoloPresenter.this.a.E).a(bool.booleanValue());
             }
         });
     }

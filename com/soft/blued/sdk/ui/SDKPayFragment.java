@@ -26,11 +26,11 @@ import com.soft.blued.view.dialog.DialogWith6PW;
 public class SDKPayFragment extends BaseFragment implements View.OnClickListener, SDKPayContract.IView {
 
     /* renamed from: a  reason: collision with root package name */
-    CommonTopTitleNoTrans f29751a;
+    CommonTopTitleNoTrans f16061a;
     private long b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f29752c;
+    private int f16062c;
     private String d;
     private String e;
     private String f;
@@ -64,19 +64,19 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
 
     private void i() {
         this.b = getArguments().getLong("action_id");
-        this.f29752c = getArguments().getInt("goods_id");
+        this.f16062c = getArguments().getInt("goods_id");
         this.d = getArguments().getString("app_key");
         this.e = getArguments().getString("secret_key");
         this.g = getArguments().getString("app_sign");
         this.h = getArguments().getString("app_sign_t");
         this.f = getArguments().getString("app_token");
         this.i = getArguments().getString("app_body");
-        this.j = new SDKPayPresenter(getActivity(), this.b, this.f29752c, this.d, this.e, this.g, this.h, this.f, this.i, this);
+        this.j = new SDKPayPresenter(getActivity(), this.b, this.f16062c, this.d, this.e, this.g, this.h, this.f, this.i, this);
         this.l = (TextView) this.k.findViewById(R.id.tv_beans_count);
         this.m = (TextView) this.k.findViewById(R.id.tv_order_id);
         this.n = (TextView) this.k.findViewById(R.id.tv_payee_name);
-        this.o = (TextView) this.k.findViewById(2131371571);
-        Button button = (Button) this.k.findViewById(2131362616);
+        this.o = (TextView) this.k.findViewById(R.id.tv_goods_name);
+        Button button = (Button) this.k.findViewById(R.id.btn_pay);
         this.p = button;
         button.setOnClickListener(this);
         this.q = DialogUtils.b(getActivity());
@@ -85,11 +85,11 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
         this.s = textView;
         textView.setOnClickListener(this);
         this.j.ar_();
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.k.findViewById(2131370699);
-        this.f29751a = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setCenterText(getString(R.string.sdk_pay_title));
-        this.f29751a.setLeftClickListener(this);
-        this.f29751a.a();
+        CommonTopTitleNoTrans findViewById = this.k.findViewById(2131370699);
+        this.f16061a = findViewById;
+        findViewById.setCenterText(getString(R.string.sdk_pay_title));
+        this.f16061a.setLeftClickListener(this);
+        this.f16061a.a();
     }
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
@@ -99,7 +99,7 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
     public void a(double d) {
-        this.r.setText(getString(R.string.sdk_pay_balance_count, Long.valueOf((long) d)));
+        this.r.setText(getString(R.string.sdk_pay_balance_count, new Object[]{Long.valueOf((long) d)}));
     }
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
@@ -119,7 +119,7 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
     public void b(String str) {
-        this.m.setText(getString(R.string.sdk_pay_order_number, str));
+        this.m.setText(getString(R.string.sdk_pay_order_number, new Object[]{str}));
     }
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
@@ -139,7 +139,7 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
     public void e() {
-        CommonAlertDialog2.a(getActivity(), getString(2131886103), getString(R.string.sdk_pay_verify_paycode), true, true, true, false, new CommonAlertDialog2.PWDListener() { // from class: com.soft.blued.sdk.ui.SDKPayFragment.1
+        CommonAlertDialog2.a(getActivity(), getString(R.string.Live_SendPresent_verifyPassword), getString(R.string.sdk_pay_verify_paycode), true, true, true, false, new CommonAlertDialog2.PWDListener() { // from class: com.soft.blued.sdk.ui.SDKPayFragment.1
             @Override // com.soft.blued.view.dialog.CommonAlertDialog2.PWDListener
             public void onClick(String str, boolean z, DialogWith6PW dialogWith6PW) {
                 SDKPayFragment.this.j.a(str);
@@ -157,7 +157,7 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
     public void g() {
-        CommonAlertDialog.a((Context) getActivity(), (View) null, "", getString(R.string.sdk_pay_no_money), getString(2131887258), getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.sdk.ui.SDKPayFragment.2
+        CommonAlertDialog.a(getActivity(), (View) null, "", getString(R.string.sdk_pay_no_money), getString(R.string.common_cancel), getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.sdk.ui.SDKPayFragment.2
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
@@ -168,7 +168,7 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
 
     @Override // com.soft.blued.sdk.ui.SDKPayContract.IView
     public void h() {
-        CommonAlertDialog.a((Context) getActivity(), (View) null, "", getString(R.string.sdk_pay_no_paycode), getString(2131887258), getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.sdk.ui.SDKPayFragment.3
+        CommonAlertDialog.a(getActivity(), (View) null, "", getString(R.string.sdk_pay_no_paycode), getString(R.string.common_cancel), getString(2131887281), new DialogInterface.OnClickListener() { // from class: com.soft.blued.sdk.ui.SDKPayFragment.3
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
@@ -177,7 +177,6 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
         }, (DialogInterface.OnClickListener) null, (DialogInterface.OnCancelListener) null, true);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         SDKActionManager.a(getActivity(), this.b);
         getActivity().finish();
@@ -202,7 +201,6 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.k;
         if (view == null) {
@@ -214,7 +212,6 @@ public class SDKPayFragment extends BaseFragment implements View.OnClickListener
         return this.k;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (SDKActionManager.a(this.b)) {

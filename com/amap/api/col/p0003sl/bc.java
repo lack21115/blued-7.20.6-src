@@ -9,13 +9,9 @@ import java.io.IOException;
 /* renamed from: com.amap.api.col.3sl.bc  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/bc.class */
 public final class bc extends lc implements br.a {
-
-    /* renamed from: a  reason: collision with root package name */
-    private br f4773a;
+    private br a;
     private bt b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private bw f4774c;
+    private bw c;
     private Context d;
     private Bundle e;
     private boolean g;
@@ -23,7 +19,7 @@ public final class bc extends lc implements br.a {
     private bc(bw bwVar, Context context) {
         this.e = new Bundle();
         this.g = false;
-        this.f4774c = bwVar;
+        this.c = bwVar;
         this.d = context;
     }
 
@@ -36,20 +32,20 @@ public final class bc extends lc implements br.a {
     }
 
     private void e() throws IOException {
-        br brVar = new br(new bs(this.f4774c.getUrl(), d(), this.f4774c.v(), this.f4774c.w()), this.f4774c.getUrl(), this.d, this.f4774c);
-        this.f4773a = brVar;
+        br brVar = new br(new bs(this.c.getUrl(), d(), this.c.v(), this.c.w()), this.c.getUrl(), this.d, this.c);
+        this.a = brVar;
         brVar.a(this);
-        bw bwVar = this.f4774c;
+        bw bwVar = this.c;
         this.b = new bt(bwVar, bwVar);
         if (this.g) {
             return;
         }
-        this.f4773a.a();
+        this.a.a();
     }
 
     public final void a() {
         this.g = true;
-        br brVar = this.f4773a;
+        br brVar = this.a;
         if (brVar != null) {
             brVar.b();
         } else {
@@ -79,8 +75,8 @@ public final class bc extends lc implements br.a {
 
     @Override // com.amap.api.col.p0003sl.lc
     public final void runTask() {
-        if (this.f4774c.u()) {
-            this.f4774c.a(bx.a.file_io_exception);
+        if (this.c.u()) {
+            this.c.a(bx.a.file_io_exception);
             return;
         }
         try {

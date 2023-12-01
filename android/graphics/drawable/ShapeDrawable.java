@@ -276,7 +276,7 @@ public class ShapeDrawable extends Drawable {
             } else if (next == 2) {
                 String name = xmlPullParser.getName();
                 if (!inflateTag(name, resources, xmlPullParser, attributeSet)) {
-                    Log.w(i.f7952c, "Unknown element: " + name + " for ShapeDrawable " + this);
+                    Log.w(i.f5112c, "Unknown element: " + name + " for ShapeDrawable " + this);
                 }
             }
         }
@@ -317,7 +317,7 @@ public class ShapeDrawable extends Drawable {
                 this.mShapeState.mPadding = new Rect();
             }
             try {
-                this.mShapeState.mShape = this.mShapeState.mShape.mo346clone();
+                this.mShapeState.mShape = this.mShapeState.mShape.mo343clone();
                 this.mMutated = true;
             } catch (CloneNotSupportedException e) {
                 return null;

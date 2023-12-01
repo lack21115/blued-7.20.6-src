@@ -39,7 +39,7 @@ public final class ProduceKt {
                 @Override // kotlin.jvm.functions.Function0
                 public /* synthetic */ Unit invoke() {
                     a();
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             };
         }
@@ -52,7 +52,7 @@ public final class ProduceKt {
 
     public static /* synthetic */ ReceiveChannel a(CoroutineScope coroutineScope, CoroutineContext coroutineContext, int i, Function2 function2, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            coroutineContext = EmptyCoroutineContext.f42457a;
+            coroutineContext = EmptyCoroutineContext.a;
         }
         if ((i2 & 2) != 0) {
             i = 0;
@@ -71,7 +71,7 @@ public final class ProduceKt {
 
     public static /* synthetic */ ReceiveChannel a(CoroutineScope coroutineScope, CoroutineContext coroutineContext, int i, BufferOverflow bufferOverflow, CoroutineStart coroutineStart, Function1 function1, Function2 function2, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            coroutineContext = EmptyCoroutineContext.f42457a;
+            coroutineContext = EmptyCoroutineContext.a;
         }
         if ((i2 & 2) != 0) {
             i = 0;

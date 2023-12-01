@@ -413,11 +413,11 @@ public class Spinner extends AbsSpinner implements DialogInterface.OnClickListen
     }
 
     public Spinner(Context context, int i) {
-        this(context, null, 16842881, i);
+        this(context, null, R.attr.spinnerStyle, i);
     }
 
     public Spinner(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842881);
+        this(context, attributeSet, R.attr.spinnerStyle);
     }
 
     public Spinner(Context context, AttributeSet attributeSet, int i) {

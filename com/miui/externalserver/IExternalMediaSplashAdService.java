@@ -35,7 +35,7 @@ public interface IExternalMediaSplashAdService extends IInterface {
         public static class Proxy implements IExternalMediaSplashAdService {
 
             /* renamed from: a  reason: collision with root package name */
-            public static IExternalMediaSplashAdService f24200a;
+            public static IExternalMediaSplashAdService f10585a;
             private IBinder b;
 
             Proxy(IBinder iBinder) {
@@ -96,7 +96,7 @@ public interface IExternalMediaSplashAdService extends IInterface {
         }
 
         public static IExternalMediaSplashAdService a() {
-            return Proxy.f24200a;
+            return Proxy.f10585a;
         }
 
         public static IExternalMediaSplashAdService a(IBinder iBinder) {

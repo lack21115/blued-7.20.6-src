@@ -22,7 +22,7 @@ import com.huawei.hms.utils.JsonUtil;
 public class HmsConsent {
 
     /* renamed from: a  reason: collision with root package name */
-    private HuaweiApi<Api.ApiOptions.NoOptions> f22830a;
+    private HuaweiApi<Api.ApiOptions.NoOptions> f9222a;
     private Context b;
 
     private HmsConsent(Context context) {
@@ -30,11 +30,11 @@ public class HmsConsent {
         this.b = context;
         Api api = new Api(HuaweiApiAvailability.HMS_API_NAME_PUSH);
         if (context instanceof Activity) {
-            this.f22830a = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
+            this.f9222a = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
         } else {
-            this.f22830a = new HuaweiApi<>(context, api, (Api.ApiOptions) null, new PushClientBuilder());
+            this.f9222a = new HuaweiApi<>(context, api, (Api.ApiOptions) null, new PushClientBuilder());
         }
-        this.f22830a.setKitSdkVersion(60700300);
+        this.f9222a.setKitSdkVersion(60700300);
     }
 
     private Task<Void> a(boolean z) {
@@ -52,7 +52,7 @@ public class HmsConsent {
                 EnableConsentReq enableConsentReq = new EnableConsentReq();
                 enableConsentReq.setPackageName(this.b.getPackageName());
                 enableConsentReq.setEnable(z);
-                return this.f22830a.doWrite(new ConsentTask(PushNaming.PUSH_CONSENT, JsonUtil.createJsonString(enableConsentReq), reportEntry));
+                return this.f9222a.doWrite(new ConsentTask(PushNaming.PUSH_CONSENT, JsonUtil.createJsonString(enableConsentReq), reportEntry));
             }
             throw ErrorEnum.ERROR_OPERATION_NOT_SUPPORTED.toApiException();
         } catch (Exception e2) {

@@ -1,5 +1,6 @@
 package com.tencent.smtt.sdk.ui.dialog;
 
+import android.R;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -33,11 +34,11 @@ import java.util.List;
 public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private ArrayList<b> f38889a;
+    private ArrayList<b> f25198a;
     private b b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Intent f38890c;
+    private Intent f25199c;
     private WeakReference<ListView> d;
     private WeakReference<d> e;
     private b f;
@@ -52,7 +53,7 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
         a(dVar);
         a(listView);
         this.g = bVar;
-        this.f38890c = intent;
+        this.f25199c = intent;
         if ("com.tencent.rtxlite".equalsIgnoreCase(context.getApplicationContext().getPackageName()) || MttLoader.isBrowserInstalled(context)) {
             this.f = null;
         } else {
@@ -80,7 +81,7 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
         linearLayout.setLayoutParams(new AbsListView.LayoutParams(-1, -2));
         linearLayout.setOrientation(1);
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{16842919}, new ColorDrawable(Color.argb(41, 0, 0, 0)));
+        stateListDrawable.addState(new int[]{R.attr.state_pressed}, new ColorDrawable(Color.argb(41, 0, 0, 0)));
         stateListDrawable.addState(new int[]{-16842919}, new ColorDrawable(0));
         linearLayout.setBackgroundDrawable(stateListDrawable);
         RelativeLayout relativeLayout = new RelativeLayout(context);
@@ -229,7 +230,7 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
         if (bVar == null || TextUtils.isEmpty(bVar.d())) {
             return null;
         }
-        for (ResolveInfo resolveInfo : getContext().getPackageManager().queryIntentActivities(this.f38890c, 65536)) {
+        for (ResolveInfo resolveInfo : getContext().getPackageManager().queryIntentActivities(this.f25199c, 65536)) {
             if (bVar.d().equals(resolveInfo.activityInfo.packageName)) {
                 return resolveInfo;
             }
@@ -244,23 +245,23 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
     @Override // android.widget.ArrayAdapter, android.widget.Adapter
     /* renamed from: a */
     public b getItem(int i) {
-        if (i < 0 || i >= this.f38889a.size()) {
+        if (i < 0 || i >= this.f25198a.size()) {
             return null;
         }
-        return this.f38889a.get(i);
+        return this.f25198a.get(i);
     }
 
     void a(Context context, b bVar) {
         b bVar2;
         boolean z;
-        this.f38889a = new ArrayList<>();
+        this.f25198a = new ArrayList<>();
         List<b> list = this.h;
         if (list != null && list.size() != 0) {
-            this.f38889a.addAll(this.h);
+            this.f25198a.addAll(this.h);
         }
         boolean z2 = false;
         boolean z3 = false;
-        for (ResolveInfo resolveInfo : context.getPackageManager().queryIntentActivities(this.f38890c, 65536)) {
+        for (ResolveInfo resolveInfo : context.getPackageManager().queryIntentActivities(this.f25199c, 65536)) {
             if (b.a(context, resolveInfo.activityInfo.packageName) != null || resolveInfo.loadIcon(context.getPackageManager()) != null) {
                 b bVar3 = new b(context, resolveInfo);
                 b bVar4 = this.f;
@@ -268,7 +269,7 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
                     bVar3.a(this.f.f());
                     bVar3.a(this.f.h());
                     bVar3.a(this.f.a());
-                    this.f38889a.add(0, bVar3);
+                    this.f25198a.add(0, bVar3);
                     z = true;
                 } else if (TbsConfig.APP_QB.equals(resolveInfo.activityInfo.packageName)) {
                     b bVar5 = this.g;
@@ -277,10 +278,10 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
                         bVar3.a(this.g.h());
                         bVar3.a(this.g.a());
                     }
-                    this.f38889a.add(0, bVar3);
+                    this.f25198a.add(0, bVar3);
                     z = z2;
                 } else {
-                    this.f38889a.add(bVar3);
+                    this.f25198a.add(bVar3);
                     z = z2;
                 }
                 z2 = z;
@@ -298,12 +299,12 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
             }
         }
         if (!z2 && (bVar2 = this.f) != null) {
-            this.f38889a.add(0, bVar2);
+            this.f25198a.add(0, bVar2);
         }
-        if (z3 || this.f38889a.size() <= 0) {
+        if (z3 || this.f25198a.size() <= 0) {
             return;
         }
-        b(context, this.f38889a.get(0));
+        b(context, this.f25198a.get(0));
     }
 
     void a(ListView listView) {
@@ -329,7 +330,7 @@ public class a extends ArrayAdapter<b> implements View.OnClickListener, ListAdap
 
     @Override // android.widget.ArrayAdapter, android.widget.Adapter
     public int getCount() {
-        return this.f38889a.size();
+        return this.f25198a.size();
     }
 
     @Override // android.widget.ArrayAdapter, android.widget.Adapter

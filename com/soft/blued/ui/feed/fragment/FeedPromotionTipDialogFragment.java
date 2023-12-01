@@ -1,6 +1,5 @@
 package com.soft.blued.ui.feed.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -29,11 +28,11 @@ import com.soft.blued.user.BluedConfig;
 public class FeedPromotionTipDialogFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public View f29890a;
+    public View f16200a;
     public CardView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public LayoutInflater f29891c;
+    public LayoutInflater f16201c;
     private Context d;
     private ImageView e;
     private ImageView f;
@@ -51,12 +50,12 @@ public class FeedPromotionTipDialogFragment extends BaseFragment implements View
     }
 
     private void b() {
-        CardView cardView = (CardView) this.f29890a.findViewById(2131362749);
+        CardView cardView = (CardView) this.f16200a.findViewById(2131362749);
         this.b = cardView;
         if (this.j) {
             cardView.setVisibility(8);
             EventTrackFeed.a(FeedProtos.Event.FEED_PUBLISH_SUCCESS_POP_SHOW);
-            CommonAlertDialog.a(getActivity(), getResources().getString(2131891358), getResources().getString(2131891357), getResources().getString(2131887976), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.FeedPromotionTipDialogFragment.1
+            CommonAlertDialog.a(getActivity(), getResources().getString(R.string.promotion_dialog_tip_title), getResources().getString(R.string.promotion_dialog_tip_content), getResources().getString(R.string.feed_pay_for_hot), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.feed.fragment.FeedPromotionTipDialogFragment.1
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
@@ -72,9 +71,9 @@ public class FeedPromotionTipDialogFragment extends BaseFragment implements View
             return;
         }
         cardView.setVisibility(0);
-        this.e = (ImageView) this.f29890a.findViewById(2131365207);
-        this.h = (TextView) this.f29890a.findViewById(R.id.tv_buy_now);
-        this.f = (ImageView) this.f29890a.findViewById(R.id.img_tip);
+        this.e = (ImageView) this.f16200a.findViewById(2131365207);
+        this.h = (TextView) this.f16200a.findViewById(R.id.tv_buy_now);
+        this.f = (ImageView) this.f16200a.findViewById(R.id.img_tip);
         if (BluedConfig.a().k() != null) {
             if (!TextUtils.isEmpty(BluedConfig.a().k().btn)) {
                 this.h.setText(BluedConfig.a().k().btn);
@@ -83,7 +82,7 @@ public class FeedPromotionTipDialogFragment extends BaseFragment implements View
                 ImageLoader.a(getFragmentActive(), BluedConfig.a().k().img).f().a(this.f);
             }
         }
-        TextView textView = (TextView) this.f29890a.findViewById(2131372735);
+        TextView textView = (TextView) this.f16200a.findViewById(R.id.tv_tip);
         this.g = textView;
         textView.setText(BluedConfig.a().k().text);
         this.e.setOnClickListener(this);
@@ -104,17 +103,16 @@ public class FeedPromotionTipDialogFragment extends BaseFragment implements View
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
         this.d = activity;
-        this.f29891c = LayoutInflater.from(activity);
-        if (this.f29890a == null) {
-            this.f29890a = layoutInflater.inflate(R.layout.dialog_feed_promotion, viewGroup, false);
+        this.f16201c = LayoutInflater.from(activity);
+        if (this.f16200a == null) {
+            this.f16200a = layoutInflater.inflate(R.layout.dialog_feed_promotion, viewGroup, false);
             a();
             b();
-            StatusBarHelper.a((Activity) getActivity(), false);
+            StatusBarHelper.a(getActivity(), false);
         }
-        return this.f29890a;
+        return this.f16200a;
     }
 }

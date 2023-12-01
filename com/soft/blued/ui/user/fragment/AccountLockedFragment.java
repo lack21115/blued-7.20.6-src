@@ -10,7 +10,6 @@ import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.trace.EventTrackSettings;
 import com.blued.android.module.common.url.BluedHttpUrl;
-import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.das.settings.SettingsProtos;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
@@ -21,11 +20,11 @@ import com.soft.blued.ui.web.WebViewShowInfoFragment;
 public class AccountLockedFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f33819a;
+    public String f20128a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public Context f33820c;
+    public Context f20129c;
     public View d;
 
     public static void a(Context context, String str, String str2) {
@@ -40,7 +39,7 @@ public class AccountLockedFragment extends BaseFragment {
         Tracker.onClick(view);
         EventTrackSettings.a(SettingsProtos.Event.ACCOUNT_LOCK_APPEAL_CLICK);
         InstantLog.a("account_lock_appeal_click");
-        WebViewShowInfoFragment.a(this.f33820c, BluedHttpUrl.a(this.b, 2), getResources().getString(R.string.contact_with_us), 16);
+        WebViewShowInfoFragment.a(this.f20129c, BluedHttpUrl.a(this.b, 2), getResources().getString(R.string.contact_with_us), 16);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -50,13 +49,13 @@ public class AccountLockedFragment extends BaseFragment {
     }
 
     public void a() {
-        ((CommonTopTitleNoTrans) this.d.findViewById(2131370694)).setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$AccountLockedFragment$sjwVbZyhxJfyQDAaZni-I8Yrrfw
+        this.d.findViewById(2131370694).setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$AccountLockedFragment$sjwVbZyhxJfyQDAaZni-I8Yrrfw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 AccountLockedFragment.this.b(view);
             }
         });
-        ((TextView) this.d.findViewById(2131371186)).setText(this.f33819a);
+        ((TextView) this.d.findViewById(2131371186)).setText(this.f20128a);
         ((TextView) this.d.findViewById(R.id.tv_appeal)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$AccountLockedFragment$KLkIzpPzicRSxH4LiFBGpcPF1I8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -65,13 +64,12 @@ public class AccountLockedFragment extends BaseFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33820c = getActivity();
+        this.f20129c = getActivity();
         if (this.d == null) {
             this.d = layoutInflater.inflate(R.layout.fragment_account_locked, viewGroup, false);
             if (getArguments() != null) {
-                this.f33819a = getArguments().getString("KEY_CONTENT");
+                this.f20128a = getArguments().getString("KEY_CONTENT");
                 this.b = getArguments().getString("KEY_UID");
             }
             a();

@@ -20,11 +20,11 @@ import java.util.List;
 public final class a extends e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f25327a = {11, 1, 3, 12, 14, 5, 7, 9};
+    private static final int[] f11639a = {11, 1, 3, 12, 14, 5, 7, 9};
     private static final int[] b = {0, 4, 8, 12, 16, 20, 24, 28};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int[] f25328c = {-1, Color.GREEN, Color.BLUE, Color.CYAN, -65536, -256, Color.MAGENTA};
+    private static final int[] f11640c = {-1, Color.GREEN, Color.BLUE, Color.CYAN, -65536, -256, Color.MAGENTA};
     private static final int[] d = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 225, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 233, 93, 237, 243, 250, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 231, 247, 209, 241, 9632};
     private static final int[] e = {174, 176, 189, 191, 8482, 162, 163, 9834, 224, 32, 232, 226, 234, 238, 244, 251};
     private static final int[] f = {193, 201, 211, 218, 220, 252, MtpConstants.RESPONSE_CAPTURE_ALREADY_TERMINATED, 161, 42, 39, 8212, 169, 8480, 8226, MtpConstants.RESPONSE_INVALID_DEVICE_PROP_VALUE, MtpConstants.RESPONSE_INVALID_PARAMETER, 192, 194, 199, 200, 202, 203, 235, 206, 207, 239, 212, 217, 249, 219, 171, 187};
@@ -39,20 +39,20 @@ public final class a extends e {
     private byte r;
     private byte s;
     private final m h = new m();
-    private final ArrayList<C0659a> k = new ArrayList<>();
-    private C0659a l = new C0659a(0, 4);
+    private final ArrayList<C0489a> k = new ArrayList<>();
+    private C0489a l = new C0489a(0, 4);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.opos.exoplayer.core.f.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/f/a/a$a.class */
-    public static class C0659a {
+    public static class C0489a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final List<CharacterStyle> f25329a = new ArrayList();
-        private final List<C0660a> b = new ArrayList();
+        private final List<CharacterStyle> f11641a = new ArrayList();
+        private final List<C0490a> b = new ArrayList();
 
         /* renamed from: c  reason: collision with root package name */
-        private final List<SpannableString> f25330c = new ArrayList();
+        private final List<SpannableString> f11642c = new ArrayList();
         private final SpannableStringBuilder d = new SpannableStringBuilder();
         private int e;
         private int f;
@@ -64,23 +64,23 @@ public final class a extends e {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.opos.exoplayer.core.f.a.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/f/a/a$a$a.class */
-        public static class C0660a {
+        public static class C0490a {
 
             /* renamed from: a  reason: collision with root package name */
-            public final CharacterStyle f25331a;
+            public final CharacterStyle f11643a;
             public final int b;
 
             /* renamed from: c  reason: collision with root package name */
-            public final int f25332c;
+            public final int f11644c;
 
-            public C0660a(CharacterStyle characterStyle, int i, int i2) {
-                this.f25331a = characterStyle;
+            public C0490a(CharacterStyle characterStyle, int i, int i2) {
+                this.f11643a = characterStyle;
                 this.b = i;
-                this.f25332c = i2;
+                this.f11644c = i2;
             }
         }
 
-        public C0659a(int i, int i2) {
+        public C0489a(int i, int i2) {
             a(i);
             b(i2);
         }
@@ -91,9 +91,9 @@ public final class a extends e {
 
         public void a(int i) {
             this.h = i;
-            this.f25329a.clear();
+            this.f11641a.clear();
             this.b.clear();
-            this.f25330c.clear();
+            this.f11642c.clear();
             this.d.clear();
             this.e = 15;
             this.f = 0;
@@ -102,11 +102,11 @@ public final class a extends e {
         }
 
         public void a(CharacterStyle characterStyle) {
-            this.f25329a.add(characterStyle);
+            this.f11641a.add(characterStyle);
         }
 
         public void a(CharacterStyle characterStyle, int i) {
-            this.b.add(new C0660a(characterStyle, this.d.length(), i));
+            this.b.add(new C0490a(characterStyle, this.d.length(), i));
         }
 
         public void a(boolean z) {
@@ -119,7 +119,7 @@ public final class a extends e {
         }
 
         public boolean a() {
-            return this.f25329a.isEmpty() && this.b.isEmpty() && this.f25330c.isEmpty() && this.d.length() == 0;
+            return this.f11641a.isEmpty() && this.b.isEmpty() && this.f11642c.isEmpty() && this.d.length() == 0;
         }
 
         public void b() {
@@ -142,14 +142,14 @@ public final class a extends e {
         }
 
         public void d() {
-            this.f25330c.add(e());
+            this.f11642c.add(e());
             this.d.clear();
-            this.f25329a.clear();
+            this.f11641a.clear();
             this.b.clear();
             this.j = -1;
             int min = Math.min(this.i, this.e);
-            while (this.f25330c.size() >= min) {
-                this.f25330c.remove(0);
+            while (this.f11642c.size() >= min) {
+                this.f11642c.remove(0);
             }
         }
 
@@ -164,15 +164,15 @@ public final class a extends e {
             while (true) {
                 int i3 = i2;
                 i = 0;
-                if (i3 >= this.f25329a.size()) {
+                if (i3 >= this.f11641a.size()) {
                     break;
                 }
-                this.d.setSpan(this.f25329a.get(i3), 0, length, 33);
+                this.d.setSpan(this.f11641a.get(i3), 0, length, 33);
                 i2 = i3 + 1;
             }
             while (i < this.b.size()) {
-                C0660a c0660a = this.b.get(i);
-                this.d.setSpan(c0660a.f25331a, c0660a.b, i < this.b.size() - c0660a.f25332c ? this.b.get(c0660a.f25332c + i).b : length, 33);
+                C0490a c0490a = this.b.get(i);
+                this.d.setSpan(c0490a.f11643a, c0490a.b, i < this.b.size() - c0490a.f11644c ? this.b.get(c0490a.f11644c + i).b : length, 33);
                 i++;
             }
             if (this.j != -1) {
@@ -194,10 +194,10 @@ public final class a extends e {
             int i4 = 0;
             while (true) {
                 int i5 = i4;
-                if (i5 >= this.f25330c.size()) {
+                if (i5 >= this.f11642c.size()) {
                     break;
                 }
-                spannableStringBuilder.append((CharSequence) this.f25330c.get(i5));
+                spannableStringBuilder.append((CharSequence) this.f11642c.get(i5));
                 spannableStringBuilder.append('\n');
                 i4 = i5 + 1;
             }
@@ -250,7 +250,7 @@ public final class a extends e {
         this.l.a((b2 & 1) == 1);
         int i = (b2 >> 1) & 15;
         if (i != 7) {
-            this.l.a(new ForegroundColorSpan(f25328c[i]), 1);
+            this.l.a(new ForegroundColorSpan(f11640c[i]), 1);
             return;
         }
         this.l.a(new StyleSpan(2), 2);
@@ -353,16 +353,16 @@ public final class a extends e {
     }
 
     private void b(byte b2, byte b3) {
-        int i = f25327a[b2 & 7];
+        int i = f11639a[b2 & 7];
         int i2 = i;
         if ((b3 & 32) != 0) {
             i2 = i + 1;
         }
         if (i2 != this.l.c()) {
             if (this.o != 1 && !this.l.a()) {
-                C0659a c0659a = new C0659a(this.o, this.p);
-                this.l = c0659a;
-                this.k.add(c0659a);
+                C0489a c0489a = new C0489a(this.o, this.p);
+                this.l = c0489a;
+                this.k.add(c0489a);
             }
             this.l.c(i2);
         }
@@ -373,7 +373,7 @@ public final class a extends e {
         if (i3 > 7) {
             this.l.d(b[i3 & 7]);
         } else if (i3 != 7) {
-            this.l.a(new ForegroundColorSpan(f25328c[i3]));
+            this.l.a(new ForegroundColorSpan(f11640c[i3]));
         } else {
             this.l.a(new StyleSpan(2));
             this.l.a(new ForegroundColorSpan(-1));
@@ -451,7 +451,7 @@ public final class a extends e {
     @Override // com.opos.exoplayer.core.f.a.e
     protected void a(h hVar) {
         boolean z;
-        C0659a c0659a;
+        C0489a c0489a;
         char c2;
         this.h.a(hVar.b.array(), hVar.b.limit());
         boolean z2 = false;
@@ -469,15 +469,15 @@ public final class a extends e {
                 if (this.j != 2 || (g2 & 1) == 1) {
                     if (g3 != 0 || g4 != 0) {
                         if ((g3 & 247) == 17 && (g4 & 240) == 48) {
-                            c0659a = this.l;
+                            c0489a = this.l;
                             c2 = d(g4);
                         } else if ((g3 & 246) == 18 && (g4 & 224) == 32) {
                             this.l.b();
                             if ((g3 & 1) == 0) {
-                                c0659a = this.l;
+                                c0489a = this.l;
                                 c2 = e(g4);
                             } else {
-                                c0659a = this.l;
+                                c0489a = this.l;
                                 c2 = f(g4);
                             }
                         } else {
@@ -487,14 +487,14 @@ public final class a extends e {
                                 this.l.a(c(g3));
                                 z = z3;
                                 if ((g4 & 224) != 0) {
-                                    c0659a = this.l;
+                                    c0489a = this.l;
                                     c2 = c(g4);
                                 }
                             }
                             z2 = true;
                             z3 = z;
                         }
-                        c0659a.a(c2);
+                        c0489a.a(c2);
                         z = z3;
                         z2 = true;
                         z3 = z;

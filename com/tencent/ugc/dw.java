@@ -4,10 +4,10 @@ package com.tencent.ugc;
 final /* synthetic */ class dw implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCMultiFileAudioFrameProvider f40337a;
+    private final UGCMultiFileAudioFrameProvider f26646a;
 
     private dw(UGCMultiFileAudioFrameProvider uGCMultiFileAudioFrameProvider) {
-        this.f40337a = uGCMultiFileAudioFrameProvider;
+        this.f26646a = uGCMultiFileAudioFrameProvider;
     }
 
     public static Runnable a(UGCMultiFileAudioFrameProvider uGCMultiFileAudioFrameProvider) {
@@ -16,6 +16,6 @@ final /* synthetic */ class dw implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCMultiFileAudioFrameProvider.lambda$start$0(this.f40337a);
+        UGCMultiFileAudioFrameProvider.lambda$start$0(this.f26646a);
     }
 }

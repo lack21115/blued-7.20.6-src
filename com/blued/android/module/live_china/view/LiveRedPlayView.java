@@ -16,13 +16,9 @@ import com.blued.android.module.player.txplayer.view.BlLiveView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRedPlayView.class */
 public class LiveRedPlayView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    ImageView f14919a;
+    ImageView a;
     boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Runnable f14920c;
+    Runnable c;
     Runnable d;
     private long e;
     private int f;
@@ -54,10 +50,10 @@ public class LiveRedPlayView extends FrameLayout {
         this.l = true;
         this.m = false;
         this.o = true;
-        this.f14919a = null;
+        this.a = null;
         this.p = null;
         this.b = true;
-        this.f14920c = new Runnable() { // from class: com.blued.android.module.live_china.view.LiveRedPlayView.1
+        this.c = new Runnable() { // from class: com.blued.android.module.live_china.view.LiveRedPlayView.1
             @Override // java.lang.Runnable
             public void run() {
                 Log.i("LiveRedPlayView", "resumeRunnable");
@@ -114,9 +110,9 @@ public class LiveRedPlayView extends FrameLayout {
     void a() {
         this.p = LiveAutoPlayManager.b();
         ImageView imageView = new ImageView(getContext());
-        this.f14919a = imageView;
+        this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        addView(this.f14919a, new FrameLayout.LayoutParams(-1, -1));
+        addView(this.a, new FrameLayout.LayoutParams(-1, -1));
     }
 
     public void a(LiveListAutoPlay liveListAutoPlay, BluedLiveListData bluedLiveListData, String str, int i, int i2) {
@@ -146,18 +142,18 @@ public class LiveRedPlayView extends FrameLayout {
     public void a(boolean z) {
         this.m = z;
         if (z) {
-            removeCallbacks(this.f14920c);
+            removeCallbacks(this.c);
         }
     }
 
     public void b() {
-        removeCallbacks(this.f14920c);
-        AppInfo.n().postDelayed(this.f14920c, 300L);
+        removeCallbacks(this.c);
+        AppInfo.n().postDelayed(this.c, 300L);
     }
 
     public void c() {
         Log.i("LiveRedPlayView", "redplay pause");
-        removeCallbacks(this.f14920c);
+        removeCallbacks(this.c);
         this.p.f();
     }
 
@@ -215,8 +211,8 @@ public class LiveRedPlayView extends FrameLayout {
         if (this.f == 0) {
             Log.i("LiveRedPlayView", "onDetachedFromWindow： " + this.g.title + this.g.description);
         }
-        removeCallbacks(this.f14920c);
-        if (LiveAutoPlayManager.a().f14368a != null && LiveAutoPlayManager.a().f14368a.getParent() == this) {
+        removeCallbacks(this.c);
+        if (LiveAutoPlayManager.a().a != null && LiveAutoPlayManager.a().a.getParent() == this) {
             c();
             d();
         }

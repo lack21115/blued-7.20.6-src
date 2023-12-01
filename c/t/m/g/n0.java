@@ -18,25 +18,25 @@ public class n0 implements Observer {
     public volatile ConcurrentHashMap<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public volatile ConcurrentHashMap<String, List<l0>> f3889c;
+    public volatile ConcurrentHashMap<String, List<l0>> f3841c;
 
     /* renamed from: a  reason: collision with root package name */
-    public HashMap<Class<?>, Object> f3888a = new HashMap<>();
+    public HashMap<Class<?>, Object> f3840a = new HashMap<>();
     public volatile boolean d = false;
     public AtomicBoolean e = new AtomicBoolean(true);
     public AtomicBoolean f = new AtomicBoolean(true);
 
     public n0() {
         this.b = null;
-        this.f3889c = null;
+        this.f3841c = null;
         this.b = new ConcurrentHashMap<>(((j.size() * 4) / 3) + 1);
-        this.f3889c = new ConcurrentHashMap<>(((j.size() * 4) / 3) + 1);
-        this.f3888a.put(String.class, "");
-        this.f3888a.put(Integer.class, Integer.MIN_VALUE);
-        this.f3888a.put(Float.class, Float.valueOf(Float.MIN_VALUE));
-        this.f3888a.put(Double.class, Double.valueOf(Double.MIN_VALUE));
-        this.f3888a.put(Long.class, Long.MIN_VALUE);
-        this.f3888a.put(Boolean.class, Boolean.FALSE);
+        this.f3841c = new ConcurrentHashMap<>(((j.size() * 4) / 3) + 1);
+        this.f3840a.put(String.class, "");
+        this.f3840a.put(Integer.class, Integer.MIN_VALUE);
+        this.f3840a.put(Float.class, Float.valueOf(Float.MIN_VALUE));
+        this.f3840a.put(Double.class, Double.valueOf(Double.MIN_VALUE));
+        this.f3840a.put(Long.class, Long.MIN_VALUE);
+        this.f3840a.put(Boolean.class, Boolean.FALSE);
         c();
     }
 
@@ -191,7 +191,7 @@ public class n0 implements Observer {
     }
 
     public void f() {
-        this.f3889c.clear();
+        this.f3841c.clear();
     }
 
     public final void g(String str) {
@@ -216,7 +216,7 @@ public class n0 implements Observer {
         String str2 = "update [" + str + "] : " + this.b.get(str) + " --> ";
         g(str);
         this.b.get(str);
-        List<l0> list = this.f3889c.get(str);
+        List<l0> list = this.f3841c.get(str);
         if (list == null || list.isEmpty()) {
             return;
         }

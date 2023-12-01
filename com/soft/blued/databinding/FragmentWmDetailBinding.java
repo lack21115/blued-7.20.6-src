@@ -9,12 +9,12 @@ import com.web.library.groups.webviewsdk.core.WMWebView;
 public final class FragmentWmDetailBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final WMWebView f29043a;
+    public final WMWebView f15353a;
     private final LinearLayout b;
 
     private FragmentWmDetailBinding(LinearLayout linearLayout, WMWebView wMWebView) {
         this.b = linearLayout;
-        this.f29043a = wMWebView;
+        this.f15353a = wMWebView;
     }
 
     public static FragmentWmDetailBinding a(View view) {

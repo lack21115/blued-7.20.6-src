@@ -4,9 +4,7 @@ import android.content.Context;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/external_sense_library/utils/STLicenseUtils.class */
 public class STLicenseUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f11319a = false;
+    private static boolean a = false;
     private static boolean b = false;
 
     @Deprecated

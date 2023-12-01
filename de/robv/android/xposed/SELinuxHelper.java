@@ -1,6 +1,7 @@
 package de.robv.android.xposed;
 
 import android.os.SELinux;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import de.robv.android.xposed.services.BaseService;
 import de.robv.android.xposed.services.BinderService;
 import de.robv.android.xposed.services.DirectAccessService;
@@ -34,7 +35,7 @@ public final class SELinuxHelper {
             sServiceAppDataFile = new DirectAccessService();
         } else if (str == null) {
             sServiceAppDataFile = new ZygoteService();
-        } else if (str.equals("android")) {
+        } else if (str.equals(MsgBackupManager.PLATFORM_ANDROID)) {
             sServiceAppDataFile = BinderService.getService(0);
         } else {
             sServiceAppDataFile = new DirectAccessService();

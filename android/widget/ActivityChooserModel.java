@@ -148,7 +148,7 @@ public class ActivityChooserModel extends DataSetObservable {
                 float f2 = f;
                 if (activityResolveInfo2 != null) {
                     activityResolveInfo2.weight += historicalRecord.weight * f;
-                    f2 = f * 0.95f;
+                    f2 = f * WEIGHT_DECAY_COEFFICIENT;
                 }
                 size2--;
                 f = f2;
@@ -238,7 +238,7 @@ public class ActivityChooserModel extends DataSetObservable {
                             }
                             HistoricalRecord historicalRecord = (HistoricalRecord) list.remove(0);
                             newSerializer.startTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORD);
-                            newSerializer.attribute(null, "activity", historicalRecord.activity.flattenToString());
+                            newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_ACTIVITY, historicalRecord.activity.flattenToString());
                             newSerializer.attribute(null, "time", String.valueOf(historicalRecord.time));
                             newSerializer.attribute(null, ActivityChooserModel.ATTRIBUTE_WEIGHT, String.valueOf(historicalRecord.weight));
                             newSerializer.endTag(null, ActivityChooserModel.TAG_HISTORICAL_RECORD);
@@ -453,7 +453,7 @@ public class ActivityChooserModel extends DataSetObservable {
                             if (!TAG_HISTORICAL_RECORD.equals(newPullParser.getName())) {
                                 throw new XmlPullParserException("Share records file not well-formed.");
                             }
-                            list.add(new HistoricalRecord(newPullParser.getAttributeValue(null, "activity"), Long.parseLong(newPullParser.getAttributeValue(null, "time")), Float.parseFloat(newPullParser.getAttributeValue(null, ATTRIBUTE_WEIGHT))));
+                            list.add(new HistoricalRecord(newPullParser.getAttributeValue(null, ATTRIBUTE_ACTIVITY), Long.parseLong(newPullParser.getAttributeValue(null, "time")), Float.parseFloat(newPullParser.getAttributeValue(null, ATTRIBUTE_WEIGHT))));
                         }
                     }
                 } catch (IOException e2) {

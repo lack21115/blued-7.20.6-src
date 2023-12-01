@@ -11,11 +11,11 @@ public class WorkThreadUtil {
     public static final int DEFAULT_THREAD_POOL_MAX_CNT = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    private static ThreadPoolExecutor f21794a = new ThreadPoolExecutor(2, 2, 10, TimeUnit.MINUTES, new LinkedBlockingQueue(Integer.MAX_VALUE), new ThreadPoolExecutor.DiscardOldestPolicy());
+    private static ThreadPoolExecutor f8188a = new ThreadPoolExecutor(2, 2, 10, TimeUnit.MINUTES, new LinkedBlockingQueue(Integer.MAX_VALUE), new ThreadPoolExecutor.DiscardOldestPolicy());
 
     public static Future<?> submit(Runnable runnable) {
         try {
-            return f21794a.submit(runnable);
+            return f8188a.submit(runnable);
         } catch (Throwable th) {
             Log.e("efs.util.concurrent", "submit task error!", th);
             return null;

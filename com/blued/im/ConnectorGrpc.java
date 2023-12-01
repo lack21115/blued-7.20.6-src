@@ -37,12 +37,10 @@ public final class ConnectorGrpc {
         ConnectorBaseDescriptorSupplier() {
         }
 
-        @Override // io.grpc.protobuf.ProtoFileDescriptorSupplier
         public Descriptors.FileDescriptor getFileDescriptor() {
             return ConnectorOuterClass.getDescriptor();
         }
 
-        @Override // io.grpc.protobuf.ProtoServiceDescriptorSupplier
         public Descriptors.ServiceDescriptor getServiceDescriptor() {
             return getFileDescriptor().findServiceByName("Connector");
         }
@@ -55,8 +53,8 @@ public final class ConnectorGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ConnectorBlockingStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ConnectorBlockingStub m2300build(Channel channel, CallOptions callOptions) {
             return new ConnectorBlockingStub(channel, callOptions);
         }
 
@@ -83,8 +81,8 @@ public final class ConnectorGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ConnectorFutureStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ConnectorFutureStub m2301build(Channel channel, CallOptions callOptions) {
             return new ConnectorFutureStub(channel, callOptions);
         }
 
@@ -126,7 +124,6 @@ public final class ConnectorGrpc {
             this.methodName = str;
         }
 
-        @Override // io.grpc.protobuf.ProtoMethodDescriptorSupplier
         public Descriptors.MethodDescriptor getMethodDescriptor() {
             return getServiceDescriptor().findMethodByName(this.methodName);
         }
@@ -139,8 +136,8 @@ public final class ConnectorGrpc {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // io.grpc.stub.AbstractStub
-        public ConnectorStub build(Channel channel, CallOptions callOptions) {
+        /* renamed from: build */
+        public ConnectorStub m2302build(Channel channel, CallOptions callOptions) {
             return new ConnectorStub(channel, callOptions);
         }
 
@@ -167,7 +164,6 @@ public final class ConnectorGrpc {
             this.methodId = i;
         }
 
-        @Override // io.grpc.stub.ServerCalls.BidiStreamingMethod, io.grpc.stub.ServerCalls.StreamingRequestMethod, io.grpc.stub.ServerCalls.ClientStreamingMethod
         public StreamObserver<Req> invoke(StreamObserver<Resp> streamObserver) {
             if (this.methodId == 2) {
                 return (StreamObserver<Req>) this.serviceImpl.connect(streamObserver);
@@ -175,7 +171,6 @@ public final class ConnectorGrpc {
             throw new AssertionError();
         }
 
-        @Override // io.grpc.stub.ServerCalls.ServerStreamingMethod, io.grpc.stub.ServerCalls.UnaryRequestMethod, io.grpc.stub.ServerCalls.UnaryMethod
         public void invoke(Req req, StreamObserver<Resp> streamObserver) {
             int i = this.methodId;
             if (i == 0) {
@@ -276,30 +271,27 @@ public final class ConnectorGrpc {
     }
 
     public static ConnectorBlockingStub newBlockingStub(Channel channel) {
-        return (ConnectorBlockingStub) ConnectorBlockingStub.newStub(new AbstractStub.StubFactory<ConnectorBlockingStub>() { // from class: com.blued.im.ConnectorGrpc.2
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ConnectorBlockingStub newStub(Channel channel2, CallOptions callOptions) {
+        return ConnectorBlockingStub.newStub(new AbstractStub.StubFactory<ConnectorBlockingStub>() { // from class: com.blued.im.ConnectorGrpc.2
+            /* renamed from: newStub */
+            public ConnectorBlockingStub m2298newStub(Channel channel2, CallOptions callOptions) {
                 return new ConnectorBlockingStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ConnectorFutureStub newFutureStub(Channel channel) {
-        return (ConnectorFutureStub) ConnectorFutureStub.newStub(new AbstractStub.StubFactory<ConnectorFutureStub>() { // from class: com.blued.im.ConnectorGrpc.3
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ConnectorFutureStub newStub(Channel channel2, CallOptions callOptions) {
+        return ConnectorFutureStub.newStub(new AbstractStub.StubFactory<ConnectorFutureStub>() { // from class: com.blued.im.ConnectorGrpc.3
+            /* renamed from: newStub */
+            public ConnectorFutureStub m2299newStub(Channel channel2, CallOptions callOptions) {
                 return new ConnectorFutureStub(channel2, callOptions);
             }
         }, channel);
     }
 
     public static ConnectorStub newStub(Channel channel) {
-        return (ConnectorStub) ConnectorStub.newStub(new AbstractStub.StubFactory<ConnectorStub>() { // from class: com.blued.im.ConnectorGrpc.1
-            /* JADX WARN: Can't rename method to resolve collision */
-            @Override // io.grpc.stub.AbstractStub.StubFactory
-            public ConnectorStub newStub(Channel channel2, CallOptions callOptions) {
+        return ConnectorStub.newStub(new AbstractStub.StubFactory<ConnectorStub>() { // from class: com.blued.im.ConnectorGrpc.1
+            /* renamed from: newStub */
+            public ConnectorStub m2297newStub(Channel channel2, CallOptions callOptions) {
                 return new ConnectorStub(channel2, callOptions);
             }
         }, channel);

@@ -15,12 +15,12 @@ public class ds extends dr {
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public String mo11550a() {
+    public String mo8500a() {
         return "23";
     }
 
     @Override // com.xiaomi.push.dr
     public String b() {
-        return "ram:" + i.m11926a() + ",rom:" + i.m11929b() + "|ramOriginal:" + i.c() + ",romOriginal:" + i.d();
+        return "ram:" + i.m8876a() + ",rom:" + i.m8879b() + "|ramOriginal:" + i.c() + ",romOriginal:" + i.d();
     }
 }

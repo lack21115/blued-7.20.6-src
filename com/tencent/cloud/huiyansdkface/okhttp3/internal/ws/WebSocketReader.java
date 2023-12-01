@@ -11,11 +11,11 @@ import java.util.concurrent.TimeUnit;
 final class WebSocketReader {
 
     /* renamed from: a  reason: collision with root package name */
-    final boolean f36045a;
+    final boolean f22354a;
     final BufferedSource b;
 
     /* renamed from: c  reason: collision with root package name */
-    final FrameCallback f36046c;
+    final FrameCallback f22355c;
     boolean d;
     int e;
     long f;
@@ -47,9 +47,9 @@ final class WebSocketReader {
         if (frameCallback == null) {
             throw new NullPointerException("frameCallback == null");
         }
-        this.f36045a = z;
+        this.f22354a = z;
         this.b = bufferedSource;
-        this.f36046c = frameCallback;
+        this.f22355c = frameCallback;
         this.k = z ? null : new byte[4];
         this.l = z ? null : new Buffer.UnsafeCursor();
     }
@@ -79,8 +79,8 @@ final class WebSocketReader {
             }
             int readByte2 = this.b.readByte() & 255;
             boolean z5 = (readByte2 & 128) != 0;
-            if (z5 == this.f36045a) {
-                throw new ProtocolException(this.f36045a ? "Server-sent frames must not be masked." : "Client-sent frames must be masked.");
+            if (z5 == this.f22354a) {
+                throw new ProtocolException(this.f22354a ? "Server-sent frames must not be masked." : "Client-sent frames must be masked.");
             }
             long j = readByte2 & 127;
             this.f = j;
@@ -110,7 +110,7 @@ final class WebSocketReader {
         long j = this.f;
         if (j > 0) {
             this.b.readFully(this.i, j);
-            if (!this.f36045a) {
+            if (!this.f22354a) {
                 this.i.readAndWriteUnsafe(this.l);
                 this.l.seek(0L);
                 WebSocketProtocol.a(this.l, this.k);
@@ -134,14 +134,14 @@ final class WebSocketReader {
                 } else {
                     str = "";
                 }
-                this.f36046c.onReadClose(s, str);
+                this.f22355c.onReadClose(s, str);
                 this.d = true;
                 return;
             case 9:
-                this.f36046c.onReadPing(this.i.readByteString());
+                this.f22355c.onReadPing(this.i.readByteString());
                 return;
             case 10:
-                this.f36046c.onReadPong(this.i.readByteString());
+                this.f22355c.onReadPong(this.i.readByteString());
                 return;
             default:
                 throw new ProtocolException("Unknown control opcode: " + Integer.toHexString(this.e));
@@ -155,9 +155,9 @@ final class WebSocketReader {
         }
         f();
         if (i == 1) {
-            this.f36046c.onReadMessage(this.j.readUtf8());
+            this.f22355c.onReadMessage(this.j.readUtf8());
         } else {
-            this.f36046c.onReadMessage(this.j.readByteString());
+            this.f22355c.onReadMessage(this.j.readByteString());
         }
     }
 
@@ -176,7 +176,7 @@ final class WebSocketReader {
             long j = this.f;
             if (j > 0) {
                 this.b.readFully(this.j, j);
-                if (!this.f36045a) {
+                if (!this.f22354a) {
                     this.j.readAndWriteUnsafe(this.l);
                     this.l.seek(this.j.size() - this.f);
                     WebSocketProtocol.a(this.l, this.k);

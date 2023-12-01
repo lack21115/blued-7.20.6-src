@@ -73,9 +73,8 @@ public class TextProgressBar extends ProgressBar {
         invalidate();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         int width;
         synchronized (this) {
             if (this.Nz) {
@@ -150,9 +149,8 @@ public class TextProgressBar extends ProgressBar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         synchronized (this) {
             ViewGroup.LayoutParams layoutParams = getLayoutParams();
             int i3 = i;
@@ -185,9 +183,8 @@ public class TextProgressBar extends ProgressBar {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ProgressBar, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         if (this.Nz) {
             super.onSizeChanged(i2, i, i3, i4);
         } else {

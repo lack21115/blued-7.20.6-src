@@ -19,6 +19,7 @@ import com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetBehavi
 import com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialog;
 import com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment;
 import com.blued.android.module.common.utils.ToastUtils;
+import com.blued.android.module.common.web.LoaderConstants;
 import com.blued.android.module.live_china.R;
 import com.blued.android.module.live_china.databinding.FragmentLiveRoomFuctionBinding;
 import com.blued.android.module.live_china.manager.LiveRoomManager;
@@ -39,12 +40,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRoomFunctionDlgFragment.class */
 public final class LiveRoomFunctionDlgFragment extends BottomSheetDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13241a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private CommonAdapter<LiveRoomFunctionModel> f13242c;
+    public static final Companion a = new Companion(null);
+    private CommonAdapter<LiveRoomFunctionModel> c;
     private boolean e;
     private final Lazy b = LazyKt.a(new Function0<FragmentLiveRoomFuctionBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveRoomFunctionDlgFragment$viewBinding$2
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -90,7 +87,7 @@ public final class LiveRoomFunctionDlgFragment extends BottomSheetDialogFragment
         if (Intrinsics.a((Object) liveRoomFunctionItemModel.getLink(), (Object) ConstFunction.LIVE_ROOM_GIFT_ANIMATION)) {
             LiveRoomManager.a().b(!LiveRoomManager.a().H());
             ToastUtils.a(LiveRoomManager.a().H() ? this.e ? R.string.live_gift_anim_switch_host_on : R.string.live_gift_anim_switch_on : this.e ? R.string.live_gift_anim_switch_host_off : R.string.live_gift_anim_switch_off);
-            EventTrackLive.o(LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), LiveRoomManager.a().H() ? "open" : "close");
+            EventTrackLive.o(LiveProtos.Event.LIVE_GIFT_EFFECT_BTN_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), LiveRoomManager.a().H() ? "open" : LoaderConstants.CLOSE);
         }
         n();
         LiveEventBusUtil.a(liveRoomFunctionItemModel);
@@ -117,28 +114,28 @@ public final class LiveRoomFunctionDlgFragment extends BottomSheetDialogFragment
     private final void l() {
         this.d = (int) ((AppInfo.l - DisplayUtil.a(getContext(), 7.5f)) / 5.5f);
         final int i = R.layout.item_live_room_fuction;
-        this.f13242c = new CommonAdapter<LiveRoomFunctionModel>(i) { // from class: com.blued.android.module.live_china.fragment.LiveRoomFunctionDlgFragment$onInitView$1
+        this.c = new CommonAdapter<LiveRoomFunctionModel>(i) { // from class: com.blued.android.module.live_china.fragment.LiveRoomFunctionDlgFragment$onInitView$1
             @Override // com.blued.android.module.common.adapter.CommonAdapter
             public void a(CommonAdapter.ViewHolder viewHolder, LiveRoomFunctionModel liveRoomFunctionModel, int i2) {
                 if (viewHolder != null) {
                     viewHolder.a(R.id.item_live_room_func_title, liveRoomFunctionModel == null ? null : liveRoomFunctionModel.getTitle());
                 }
-                RecyclerView recyclerView = viewHolder == null ? null : (RecyclerView) viewHolder.a(R.id.item_live_room_func_rv);
-                if (recyclerView != null) {
-                    if (recyclerView.getAdapter() == null) {
-                        recyclerView.setAdapter(new LiveRoomFunctionDlgFragment$onInitView$1$convert$1(LiveRoomFunctionDlgFragment.this, LiveRoomFunctionDlgFragment.this.getContext()));
-                        recyclerView.setLayoutManager(new LinearLayoutManager(LiveRoomFunctionDlgFragment.this.getContext(), 0, false));
+                RecyclerView a2 = viewHolder == null ? null : viewHolder.a(R.id.item_live_room_func_rv);
+                if (a2 != null) {
+                    if (a2.getAdapter() == null) {
+                        a2.setAdapter(new LiveRoomFunctionDlgFragment$onInitView$1$convert$1(LiveRoomFunctionDlgFragment.this, LiveRoomFunctionDlgFragment.this.getContext()));
+                        a2.setLayoutManager(new LinearLayoutManager(LiveRoomFunctionDlgFragment.this.getContext(), 0, false));
                     }
-                    RecyclerView.Adapter adapter = recyclerView.getAdapter();
+                    RecyclerView.Adapter adapter = a2.getAdapter();
                     if (adapter == null) {
                         throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.adapter.CommonRecycleAdapter<com.blued.android.module.live_china.model.LiveRoomFunctionItemModel>");
                     }
                     ((CommonRecycleAdapter) adapter).setDataAndNotify(liveRoomFunctionModel == null ? null : liveRoomFunctionModel.getData());
-                    recyclerView.setHasFixedSize(true);
+                    a2.setHasFixedSize(true);
                 }
             }
         };
-        h().f11971a.setAdapter((ListAdapter) this.f13242c);
+        h().a.setAdapter((ListAdapter) this.c);
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -175,7 +172,7 @@ public final class LiveRoomFunctionDlgFragment extends BottomSheetDialogFragment
     }
 
     public final CommonAdapter<LiveRoomFunctionModel> i() {
-        return this.f13242c;
+        return this.c;
     }
 
     public final int j() {
@@ -186,7 +183,7 @@ public final class LiveRoomFunctionDlgFragment extends BottomSheetDialogFragment
         return this.e;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.module.common.base.dialog.bottomsheet.BottomSheetDialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

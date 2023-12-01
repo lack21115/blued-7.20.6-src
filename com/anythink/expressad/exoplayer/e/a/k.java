@@ -8,11 +8,11 @@ public final class k {
     private static final String f = "TrackEncryptionBox";
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f7306a;
+    public final boolean f4467a;
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final m.a f7307c;
+    public final m.a f4468c;
     public final int d;
     public final byte[] e;
 
@@ -21,7 +21,7 @@ public final class k {
         boolean z2;
         int i4;
         com.anythink.expressad.exoplayer.k.a.a((i == 0) ^ (bArr2 == null));
-        this.f7306a = z;
+        this.f4467a = z;
         this.b = str;
         this.d = i;
         this.e = bArr2;
@@ -74,7 +74,7 @@ public final class k {
                 }
             }
         }
-        this.f7307c = new m.a(i4, bArr, i2, i3);
+        this.f4468c = new m.a(i4, bArr, i2, i3);
     }
 
     private static int a(String str) {

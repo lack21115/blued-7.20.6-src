@@ -7,9 +7,7 @@ public class ComparableTimSort {
     private static final int INITIAL_TMP_STORAGE_LENGTH = 256;
     private static final int MIN_GALLOP = 7;
     private static final int MIN_MERGE = 32;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Object[] f42266a;
+    private final Object[] a;
     private final int[] runBase;
     private final int[] runLen;
     private Object[] tmp;
@@ -17,7 +15,7 @@ public class ComparableTimSort {
     private int stackSize = 0;
 
     private ComparableTimSort(Object[] objArr) {
-        this.f42266a = objArr;
+        this.a = objArr;
         int length = objArr.length;
         this.tmp = new Object[length < 512 ? length >>> 1 : 256];
         int i = length < 120 ? 5 : length < 1542 ? 10 : length < 119151 ? 19 : 40;
@@ -98,7 +96,7 @@ public class ComparableTimSort {
             int i5 = i4 | (i4 >> 8);
             int i6 = (i5 | (i5 >> 16)) + 1;
             if (i6 >= 0) {
-                i = Math.min(i6, this.f42266a.length >>> 1);
+                i = Math.min(i6, this.a.length >>> 1);
             }
             this.tmp = new Object[i];
         }
@@ -231,10 +229,10 @@ public class ComparableTimSort {
             this.runLen[i + 1] = this.runLen[i + 2];
         }
         this.stackSize--;
-        int gallopRight = gallopRight((Comparable) this.f42266a[i4], this.f42266a, i2, i3, 0);
+        int gallopRight = gallopRight((Comparable) this.a[i4], this.a, i2, i3, 0);
         int i6 = i2 + gallopRight;
         int i7 = i3 - gallopRight;
-        if (i7 == 0 || (gallopLeft = gallopLeft((Comparable) this.f42266a[(i6 + i7) - 1], this.f42266a, i4, i5, i5 - 1)) == 0) {
+        if (i7 == 0 || (gallopLeft = gallopLeft((Comparable) this.a[(i6 + i7) - 1], this.a, i4, i5, i5 - 1)) == 0) {
             return;
         }
         if (i7 <= gallopLeft) {

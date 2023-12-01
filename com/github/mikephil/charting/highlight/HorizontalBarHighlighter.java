@@ -23,7 +23,7 @@ public class HorizontalBarHighlighter extends BarHighlighter {
 
     @Override // com.github.mikephil.charting.highlight.BarHighlighter, com.github.mikephil.charting.highlight.ChartHighlighter, com.github.mikephil.charting.highlight.IHighlighter
     public Highlight a(float f, float f2) {
-        BarData barData = ((BarDataProvider) this.f22148a).getBarData();
+        BarData barData = ((BarDataProvider) this.f8541a).getBarData();
         MPPointD b = b(f2, f);
         Highlight a2 = a((float) b.b, f2, f);
         if (a2 == null) {
@@ -31,7 +31,7 @@ public class HorizontalBarHighlighter extends BarHighlighter {
         }
         IBarDataSet iBarDataSet = (IBarDataSet) barData.a(a2.f());
         if (iBarDataSet.b()) {
-            return a(a2, iBarDataSet, (float) b.b, (float) b.f22202a);
+            return a(a2, iBarDataSet, (float) b.b, (float) b.f8595a);
         }
         MPPointD.a(b);
         return a2;
@@ -54,8 +54,8 @@ public class HorizontalBarHighlighter extends BarHighlighter {
             return arrayList;
         }
         for (Entry entry : list) {
-            MPPointD b2 = ((BarDataProvider) this.f22148a).a(iDataSet.C()).b(entry.b(), entry.i());
-            arrayList.add(new Highlight(entry.i(), entry.b(), (float) b2.f22202a, (float) b2.b, i, iDataSet.C()));
+            MPPointD b2 = ((BarDataProvider) this.f8541a).a(iDataSet.C()).b(entry.b(), entry.i());
+            arrayList.add(new Highlight(entry.i(), entry.b(), (float) b2.f8595a, (float) b2.b, i, iDataSet.C()));
         }
         return arrayList;
     }

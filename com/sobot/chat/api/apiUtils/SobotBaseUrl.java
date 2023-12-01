@@ -1,7 +1,6 @@
 package com.sobot.chat.api.apiUtils;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sobot/chat/api/apiUtils/SobotBaseUrl.class */
 public class SobotBaseUrl {
@@ -27,12 +26,12 @@ public class SobotBaseUrl {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        if (str.endsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str.endsWith("/")) {
             api_host = str;
             mHost = str;
             return;
         }
-        String str2 = str + BridgeUtil.SPLIT_MARK;
+        String str2 = str + "/";
         api_host = str2;
         mHost = str2;
     }
@@ -42,12 +41,12 @@ public class SobotBaseUrl {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        if (str.endsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str.endsWith("/")) {
             mHost = str;
             api_host = str;
             return;
         }
-        String str2 = str + BridgeUtil.SPLIT_MARK;
+        String str2 = str + "/";
         mHost = str2;
         api_host = str2;
     }

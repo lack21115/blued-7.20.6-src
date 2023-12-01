@@ -106,7 +106,7 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
     public KeyboardListenLinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public View f20386c;
+    public View f6780c;
     public ImageView j;
     public EditText k;
     public Dialog l;
@@ -125,16 +125,16 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f20398c;
+        private int f6792c;
         private String d;
         private String e;
 
         @Override // android.text.TextWatcher
         public void afterTextChanged(Editable editable) {
             this.b = VideoScanFragment.this.k.getSelectionStart();
-            this.f20398c = VideoScanFragment.this.k.getSelectionEnd();
+            this.f6792c = VideoScanFragment.this.k.getSelectionEnd();
             VideoScanFragment.this.k.removeTextChangedListener(VideoScanFragment.this.ai);
-            if (!VideoScanFragment.this.S.a(VideoScanFragment.this, this.d, this.e, editable, this.f20398c)) {
+            if (!VideoScanFragment.this.S.a(VideoScanFragment.this, this.d, this.e, editable, this.f6792c)) {
                 VideoScanFragment.this.k.setSelection(this.b);
             }
             VideoScanFragment.this.k.addTextChangedListener(VideoScanFragment.this.ai);
@@ -264,10 +264,10 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         this.P = (ViewGroup) this.s.findViewById(R.id.input_layout_up);
         this.k = (EditText) this.s.findViewById(R.id.edit_view);
         this.Q = (TextView) this.s.findViewById(R.id.send_btn);
-        this.b = (KeyboardListenLinearLayout) this.s.findViewById(R.id.keyboardRelativeLayout);
+        this.b = this.s.findViewById(R.id.keyboardRelativeLayout);
         this.k = (EditText) this.s.findViewById(R.id.edit_view);
         this.j = (ImageView) this.s.findViewById(R.id.expression_btn);
-        this.f20386c = this.s.findViewById(R.id.emoticon_layout);
+        this.f6780c = this.s.findViewById(R.id.emoticon_layout);
         this.O = this.s.findViewById(R.id.keyboard_view);
         this.l = DialogUtils.a(this.r);
         View findViewById3 = this.s.findViewById(R.id.no_data_view);
@@ -296,41 +296,35 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         this.R = new Emotion(this.r);
         ArrayList arrayList = new ArrayList();
         arrayList.add(EmotionManager.g());
-        this.L = (EmoticonsPageView) this.f20386c.findViewById(R.id.view_epv);
-        this.M = (EmoticonsIndicatorView) this.f20386c.findViewById(R.id.view_eiv);
-        EmoticonsToolBarView emoticonsToolBarView = (EmoticonsToolBarView) this.f20386c.findViewById(R.id.view_etv);
-        this.N = emoticonsToolBarView;
-        emoticonsToolBarView.setModel(true);
+        this.L = this.f6780c.findViewById(R.id.view_epv);
+        this.M = this.f6780c.findViewById(R.id.view_eiv);
+        EmoticonsToolBarView findViewById4 = this.f6780c.findViewById(R.id.view_etv);
+        this.N = findViewById4;
+        findViewById4.setModel(true);
         this.N.a(getFragmentActive(), arrayList);
         this.L.a(getFragmentActive(), arrayList);
         this.L.setOnIndicatorListener(new EmoticonsPageView.OnEmoticonsPageViewListener() { // from class: com.blued.community.ui.video.fragment.VideoScanFragment.2
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void a(int i) {
                 VideoScanFragment.this.M.a(i);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void a(int i, int i2) {
                 VideoScanFragment.this.M.a(i, i2);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void b(int i) {
                 VideoScanFragment.this.M.setIndicatorCount(i);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsPageView.OnEmoticonsPageViewListener
             public void c(int i) {
                 VideoScanFragment.this.M.b(i);
             }
         });
         this.L.setIViewListener(new IViewStateListener() { // from class: com.blued.community.ui.video.fragment.VideoScanFragment.3
-            @Override // com.blued.android.module.common.widget.emoticon.ui.IViewStateListener
             public void a(int i) {
                 VideoScanFragment.this.N.setToolBtnSelect(i);
             }
 
-            @Override // com.blued.android.module.common.widget.emoticon.ui.IViewStateListener
             public void a(EmoticonModel emoticonModel) {
                 if (VideoScanFragment.this.k != null) {
                     VideoScanFragment.this.k.setFocusable(true);
@@ -350,7 +344,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
             }
         });
         this.N.setOnToolBarItemClickListener(new EmoticonsToolBarView.OnToolBarItemClickListener() { // from class: com.blued.community.ui.video.fragment.VideoScanFragment.4
-            @Override // com.blued.android.module.common.widget.emoticon.ui.EmoticonsToolBarView.OnToolBarItemClickListener
             public void a(int i) {
                 VideoScanFragment.this.L.setPageSelect(i);
             }
@@ -361,9 +354,9 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         HorInterceptFrameLayout horInterceptFrameLayout = (HorInterceptFrameLayout) this.s.findViewById(R.id.hor_frame);
         this.H = horInterceptFrameLayout;
         horInterceptFrameLayout.setOnHorScrollListener(this);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.s.findViewById(R.id.lv_comment);
-        this.I = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.s.findViewById(R.id.lv_comment);
+        this.I = findViewById;
+        findViewById.setRefreshEnabled(true);
         ListView listView = (ListView) this.I.getRefreshableView();
         this.J = listView;
         listView.setClipToPadding(false);
@@ -371,14 +364,12 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         this.J.setHeaderDividersEnabled(false);
         this.J.setDividerHeight(0);
         this.I.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.blued.community.ui.video.fragment.VideoScanFragment.5
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 VideoScanFragment.this.W.f().e = 1;
                 VideoScanFragment.this.W.f().b = true;
                 VideoScanFragment.this.W.c();
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 VideoScanFragment.this.W.d();
             }
@@ -387,7 +378,7 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         this.z = this.s.findViewById(R.id.des_bg);
         Bitmap decodeResource = BitmapFactory.decodeResource(this.r.getResources(), R.drawable.show_video_comment_cover);
         if (decodeResource == null) {
-            Logger.b("VideoScanFragment", "2 null");
+            Logger.b("VideoScanFragment", new Object[]{"2 null"});
             return;
         }
         try {
@@ -512,7 +503,7 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
 
     @Override // com.blued.community.ui.video.observer.IFeedDetailContract.IView
     public void c(BluedIngSelfFeed bluedIngSelfFeed) {
-        Logger.b("VideoScanFragment", "setDataToView");
+        Logger.b("VideoScanFragment", new Object[]{"setDataToView"});
         if (!ShineVideoDataManager.a().e() || ShineVideoDataManager.a().c().feed_videos != null) {
             ShineVideoDataManager.a().c(bluedIngSelfFeed);
             return;
@@ -582,10 +573,10 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
             }
             this.Y.setVisibility(4);
         }
-        Logger.b("VideoScanFragment", "barCurrentLength:", Integer.valueOf(this.ae));
+        Logger.b("VideoScanFragment", new Object[]{"barCurrentLength:", Integer.valueOf(this.ae)});
         int i2 = (int) (this.ae + (2.0f * f));
         this.ae = i2;
-        Logger.b("VideoScanFragment", "barCurrentLength 1:", Integer.valueOf(i2));
+        Logger.b("VideoScanFragment", new Object[]{"barCurrentLength 1:", Integer.valueOf(i2)});
         int i3 = this.ae;
         int i4 = this.ad;
         if (i3 > i4) {
@@ -594,10 +585,10 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         if (this.ae < 0) {
             this.ae = 0;
         }
-        Logger.b("VideoScanFragment", "barCurrentLength 1:", Integer.valueOf(this.ae));
-        Logger.b("VideoScanFragment", "barCurrentLength 1:", Integer.valueOf(this.ad));
+        Logger.b("VideoScanFragment", new Object[]{"barCurrentLength 1:", Integer.valueOf(this.ae)});
+        Logger.b("VideoScanFragment", new Object[]{"barCurrentLength 1:", Integer.valueOf(this.ad)});
         int i5 = (int) ((this.ae / this.ad) * 1000.0f);
-        Logger.b("VideoScanFragment", "progress:", Integer.valueOf(i5));
+        Logger.b("VideoScanFragment", new Object[]{"progress:", Integer.valueOf(i5)});
         long j = this.o;
         long j2 = ((float) j) * (this.ae / this.ad);
         this.p = j2;
@@ -623,7 +614,7 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
     }
 
     public void j() {
-        Logger.b("VideoScanFragment", "showComment");
+        Logger.b("VideoScanFragment", new Object[]{"showComment"});
         if (this.K.a()) {
             this.K.b();
             this.I.k();
@@ -634,7 +625,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         this.x.setVisibility(0);
     }
 
-    @Override // com.blued.android.framework.activity.keyboardpage.KeyBoardFragment
     public void j_(int i) {
         if (i == -3) {
             this.P.setVisibility(0);
@@ -645,18 +635,18 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
                 public void onClick(View view) {
                     Tracker.onClick(view);
                     KeyboardUtils.a(VideoScanFragment.this.getActivity());
-                    if (VideoScanFragment.this.f20386c.getVisibility() == 0) {
-                        VideoScanFragment.this.f20386c.setVisibility(8);
+                    if (VideoScanFragment.this.f6780c.getVisibility() == 0) {
+                        VideoScanFragment.this.f6780c.setVisibility(8);
                         VideoScanFragment.this.P.setVisibility(8);
                         VideoScanFragment.this.O.setVisibility(8);
                     }
                 }
             });
-            this.f20386c.setVisibility(8);
+            this.f6780c.setVisibility(8);
         } else if (i != -2) {
         } else {
             this.P.setVisibility(8);
-            if (this.f20386c.getVisibility() != 0) {
+            if (this.f6780c.getVisibility() != 0) {
                 this.O.setVisibility(8);
             } else {
                 this.P.setVisibility(0);
@@ -676,7 +666,7 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         this.af = true;
         this.k.setHint("");
         this.k.setText("");
-        this.f20386c.setVisibility(8);
+        this.f6780c.setVisibility(8);
         KeyboardUtils.a(getActivity());
         this.P.setVisibility(8);
         this.O.setVisibility(8);
@@ -696,7 +686,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         this.I.p();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         if (i2 == -1) {
             if (i == 9090) {
@@ -723,7 +712,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         super.onActivityResult(i, i2, intent);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         h();
         return super.onBackPressed();
@@ -760,7 +748,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.r = getActivity();
@@ -773,7 +760,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         v();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(16);
         getActivity().getWindow().addFlags(128);
@@ -785,14 +771,13 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
             x();
             FeedMethods.a(getActivity(), this.W);
             ShineVideoDataManager.a().a(this);
-            super.a(this.f20386c, this.b, this.k);
+            super.a(this.f6780c, this.b, this.k);
         } else {
             ((ViewGroup) view.getParent()).removeView(this.s);
         }
         return this.s;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         VideoScanAdapter videoScanAdapter = this.u;
@@ -803,7 +788,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         ShineVideoDataManager.a().b(this);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnKeyListener
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (i == 24) {
             f(A());
@@ -816,7 +800,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
         CommunityServiceManager.d().a(1);
@@ -827,7 +810,6 @@ public class VideoScanFragment extends KeyBoardFragment implements View.OnClickL
         AudioManagerUtils.a().a(true);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         AudioManagerUtils.a().b();

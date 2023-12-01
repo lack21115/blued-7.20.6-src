@@ -7,7 +7,6 @@ import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Process;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.qq.e.comm.constants.CustomPkgConstants;
 import com.qq.e.comm.constants.Sig;
 import com.qq.e.comm.managers.status.SDKStatus;
@@ -27,16 +26,16 @@ import java.util.List;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile String f27919a;
+    private static volatile String f14231a;
 
     public static String a(Context context) {
         synchronized (b.class) {
             try {
-                if (!TextUtils.isEmpty(f27919a)) {
-                    return f27919a;
+                if (!TextUtils.isEmpty(f14231a)) {
+                    return f14231a;
                 } else if (Build.VERSION.SDK_INT >= 28) {
-                    f27919a = Application.getProcessName();
-                    return f27919a;
+                    f14231a = Application.getProcessName();
+                    return f14231a;
                 } else {
                     int myPid = Process.myPid();
                     List<ActivityManager.RunningAppProcessInfo> runningAppProcesses = ((ActivityManager) context.getSystemService("activity")).getRunningAppProcesses();
@@ -46,8 +45,8 @@ public class b {
                             } catch (Exception e) {
                             }
                             if (runningAppProcessInfo.pid == myPid) {
-                                f27919a = runningAppProcessInfo.processName;
-                                return f27919a;
+                                f14231a = runningAppProcessInfo.processName;
+                                return f14231a;
                             }
                             continue;
                         }
@@ -66,14 +65,14 @@ public class b {
                 if (TextUtils.isEmpty(str)) {
                     return str;
                 }
-                String str2 = f27919a;
+                String str2 = f14231a;
                 if (TextUtils.isEmpty(str2)) {
                     return str;
                 }
-                boolean endsWith = str2.endsWith(BridgeUtil.UNDERLINE_STR);
+                boolean endsWith = str2.endsWith("_");
                 StringBuilder sb = new StringBuilder();
                 sb.append(str);
-                sb.append(endsWith ? "" : BridgeUtil.UNDERLINE_STR);
+                sb.append(endsWith ? "" : "_");
                 String str3 = null;
                 try {
                     String str4 = new String(str2);

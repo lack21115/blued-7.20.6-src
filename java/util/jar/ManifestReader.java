@@ -8,9 +8,8 @@ import java.util.Map;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-2895416-dex2jar.jar:java/util/jar/ManifestReader.class */
-public class ManifestReader {
+class ManifestReader {
     private final byte[] buf;
     private final int endOfMainSection;
     private Attributes.Name name;

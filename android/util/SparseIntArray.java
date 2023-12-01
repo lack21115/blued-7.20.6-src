@@ -40,7 +40,7 @@ public class SparseIntArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public SparseIntArray m1031clone() {
+    public SparseIntArray m1027clone() {
         SparseIntArray sparseIntArray = null;
         try {
             SparseIntArray sparseIntArray2 = (SparseIntArray) super.clone();

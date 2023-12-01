@@ -36,11 +36,11 @@ import java.util.List;
 public class ShineVideoListFragment extends BaseFragment implements ShineVideoDataManager.IShineVideoDataDownloadListner, BaseQuickAdapter.RequestLoadMoreListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f20380a = "KEY_FROM_INDEPENDENT";
+    public static String f6774a = "KEY_FROM_INDEPENDENT";
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f20381c;
+    private View f6775c;
     private CommonTopTitleNoTrans d;
     private PullToRefreshRecyclerView e;
     private RecyclerView f;
@@ -52,7 +52,7 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
     private float l;
 
     public static void a(Context context) {
-        TerminalActivity.d(context, ShineVideoListFragment.class, null);
+        TerminalActivity.d(context, ShineVideoListFragment.class, (Bundle) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,16 +63,16 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
     }
 
     public void a() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f20381c.findViewById(R.id.title);
-        this.d = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.fragment.ShineVideoListFragment.1
+        CommonTopTitleNoTrans findViewById = this.f6775c.findViewById(R.id.title);
+        this.d = findViewById;
+        findViewById.setLeftClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.video.fragment.ShineVideoListFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 ShineVideoListFragment.this.getActivity().finish();
             }
         });
-        FloatFooterView floatFooterView = (FloatFooterView) this.f20381c.findViewById(R.id.ll_feed_post);
+        FloatFooterView floatFooterView = (FloatFooterView) this.f6775c.findViewById(R.id.ll_feed_post);
         this.i = floatFooterView;
         floatFooterView.setOnBtnClickListener(new FloatFooterView.OnBtnClickListener() { // from class: com.blued.community.ui.video.fragment.ShineVideoListFragment.2
             @Override // com.blued.community.view.FloatFooterView.OnBtnClickListener
@@ -83,11 +83,11 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(this.b);
         this.g = noDataAndLoadFailView;
         noDataAndLoadFailView.a();
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.f20381c.findViewById(R.id.list_view);
-        this.e = pullToRefreshRecyclerView;
-        this.f = pullToRefreshRecyclerView.getRefreshableView();
+        PullToRefreshRecyclerView findViewById2 = this.f6775c.findViewById(R.id.list_view);
+        this.e = findViewById2;
+        this.f = (RecyclerView) findViewById2.getRefreshableView();
         this.f.setLayoutManager(new StaggeredGridLayoutManager(2, 1));
-        SpacesItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(this.b, 2.5f));
+        RecyclerView.ItemDecoration spacesItemDecoration = new SpacesItemDecoration(DensityUtils.a(this.b, 2.5f));
         spacesItemDecoration.a(5);
         spacesItemDecoration.a(true, true, true, true);
         spacesItemDecoration.a(DensityUtils.a(this.b, 7.5f), DensityUtils.a(this.b, 9.5f), DensityUtils.a(this.b, 7.5f), 0);
@@ -95,12 +95,11 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
         ShineVideoListAdapter shineVideoListAdapter = new ShineVideoListAdapter(this.b, getFragmentActive());
         this.h = shineVideoListAdapter;
         this.f.setAdapter(shineVideoListAdapter);
-        this.h.setEmptyView(this.g);
+        this.h.setEmptyView((View) this.g);
         this.h.setOnLoadMoreListener(this, this.f);
         this.e.setRefreshEnabled(true);
         ShineVideoDataManager.a().i().refresh();
         this.e.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.blued.community.ui.video.fragment.ShineVideoListFragment.3
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 CommunityServiceManager.d().a(0, 0);
                 ShineVideoDataManager.a().i().refresh();
@@ -188,7 +187,7 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
         }
         this.h.loadMoreEnd();
         this.h.setEnableLoadMore(false);
-        AppMethods.a((CharSequence) this.b.getResources().getString(R.string.no_more_please_try_again));
+        AppMethods.a(this.b.getResources().getString(R.string.no_more_please_try_again));
     }
 
     @Override // com.blued.community.ui.video.manager.ShineVideoDataManager.IShineVideoDataDownloadListner
@@ -210,22 +209,20 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         FragmentActivity activity = getActivity();
         this.b = activity;
-        View view = this.f20381c;
+        View view = this.f6775c;
         if (view == null) {
-            this.f20381c = LayoutInflater.from(activity).inflate(R.layout.fragment_shine_video_list, (ViewGroup) null);
+            this.f6775c = LayoutInflater.from(activity).inflate(R.layout.fragment_shine_video_list, (ViewGroup) null);
             a();
             ShineVideoDataManager.a().a(this);
         } else {
-            ((ViewGroup) view.getParent()).removeView(this.f20381c);
+            ((ViewGroup) view.getParent()).removeView(this.f6775c);
         }
-        return this.f20381c;
+        return this.f6775c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         ShineVideoDataManager.a().b(this);
@@ -237,12 +234,10 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
         ShineVideoDataManager.a().a(false, (IRequestHost) getFragmentActive());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onPause() {
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         RecyclerView recyclerView;
         super.onResume();
@@ -252,7 +247,6 @@ public class ShineVideoListFragment extends BaseFragment implements ShineVideoDa
         recyclerView.scrollToPosition(ShineVideoDataManager.a().j());
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         super.onStop();
     }

@@ -8,19 +8,19 @@ import com.tencent.beacon.base.net.call.Callback;
 public class b implements Callback<BResponse> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ String f34923a;
+    final /* synthetic */ String f21232a;
     final /* synthetic */ String b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ Throwable f34924c;
+    final /* synthetic */ Throwable f21233c;
     final /* synthetic */ e d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public b(e eVar, String str, String str2, Throwable th) {
         this.d = eVar;
-        this.f34923a = str;
+        this.f21232a = str;
         this.b = str2;
-        this.f34924c = th;
+        this.f21233c = th;
     }
 
     @Override // com.tencent.beacon.base.net.call.Callback
@@ -31,6 +31,6 @@ public class b implements Callback<BResponse> {
 
     @Override // com.tencent.beacon.base.net.call.Callback
     public void onFailure(com.tencent.beacon.base.net.d dVar) {
-        this.d.b(this.f34923a, this.b, this.f34924c);
+        this.d.b(this.f21232a, this.b, this.f21233c);
     }
 }

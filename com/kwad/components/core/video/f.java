@@ -72,18 +72,16 @@ public final class f extends com.kwad.components.core.video.a implements bm.a {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
+    protected final void onAttachedToWindow() {
         super.onAttachedToWindow();
         com.kwad.sdk.core.d.b.i("InterstitialVideoPlayerController", "onAttachedToWindow");
         qy();
         onViewAttached();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
+    protected final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         com.kwad.sdk.core.d.b.i("InterstitialVideoPlayerController", "onDetachedFromWindow");
         onViewDetached();
@@ -108,9 +106,8 @@ public final class f extends com.kwad.components.core.video.a implements bm.a {
         super.onWindowFocusChanged(z);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public final void onWindowVisibilityChanged(int i) {
+    protected final void onWindowVisibilityChanged(int i) {
         super.onWindowVisibilityChanged(i);
     }
 

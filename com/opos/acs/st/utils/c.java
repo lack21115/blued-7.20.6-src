@@ -7,11 +7,11 @@ import android.text.TextUtils;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f24460a = false;
+    public static boolean f10773a = false;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile boolean f24461c = false;
+    private static volatile boolean f10774c = false;
 
     public static String a(Context context) {
         if (TextUtils.isEmpty(b)) {
@@ -21,7 +21,7 @@ public final class c {
     }
 
     public static void a() {
-        f24461c = true;
+        f10774c = true;
     }
 
     public static void a(Context context, String str) {
@@ -29,7 +29,7 @@ public final class c {
     }
 
     public static void a(boolean z) {
-        f24460a = z;
+        f10773a = z;
     }
 
     public static String b(Context context) {
@@ -45,7 +45,7 @@ public final class c {
     }
 
     public static boolean b() {
-        return f24461c;
+        return f10774c;
     }
 
     public static void c(Context context) {

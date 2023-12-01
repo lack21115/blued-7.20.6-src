@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.os.Process;
 import android.util.Log;
 import androidx.exifinterface.media.ExifInterface;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,11 +25,11 @@ public class b implements f {
     private boolean i = false;
 
     /* renamed from: a  reason: collision with root package name */
-    private final SimpleDateFormat f23962a = new SimpleDateFormat("MM-dd HH:mm:ss");
+    private final SimpleDateFormat f10351a = new SimpleDateFormat("MM-dd HH:mm:ss");
     private final List<a> b = Collections.synchronizedList(new ArrayList());
 
     /* renamed from: c  reason: collision with root package name */
-    private final Handler f23963c = new Handler(Looper.getMainLooper());
+    private final Handler f10352c = new Handler(Looper.getMainLooper());
     private String g = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Android/data/pushSdk/defaultLog";
     private final e f = new e();
     private final String h = String.valueOf(Process.myPid());
@@ -39,16 +39,16 @@ public class b implements f {
     public class a {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f23968a;
+        final String f10357a;
         final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final String f23969c;
+        final String f10358c;
 
         public a(String str, String str2, String str3) {
-            this.f23968a = b.this.f23962a.format(new Date()) + " " + b.this.h + "-" + Thread.currentThread().getId() + " " + str + BridgeUtil.SPLIT_MARK;
+            this.f10357a = b.this.f10351a.format(new Date()) + " " + b.this.h + Constants.ACCEPT_TIME_SEPARATOR_SERVER + Thread.currentThread().getId() + " " + str + "/";
             this.b = str2;
-            this.f23969c = str3;
+            this.f10358c = str3;
         }
     }
 
@@ -68,7 +68,7 @@ public class b implements f {
 
     private void b() {
         if (this.b.size() == 0) {
-            this.f23963c.postDelayed(new Runnable() { // from class: com.meizu.cloud.pushsdk.b.b.1
+            this.f10352c.postDelayed(new Runnable() { // from class: com.meizu.cloud.pushsdk.b.b.1
                 @Override // java.lang.Runnable
                 public void run() {
                     b.this.a(true);
@@ -121,7 +121,7 @@ public class b implements f {
                 ArrayList<a> arrayList;
                 b bVar;
                 synchronized (b.this.b) {
-                    b.this.f23963c.removeCallbacksAndMessages(null);
+                    b.this.f10352c.removeCallbacksAndMessages(null);
                     arrayList = new ArrayList(b.this.b);
                     b.this.b.clear();
                     try {
@@ -132,7 +132,7 @@ public class b implements f {
                 try {
                     b.this.f.a(b.this.g);
                     for (a aVar : arrayList) {
-                        b.this.f.a(aVar.f23968a, aVar.b, aVar.f23969c);
+                        b.this.f.a(aVar.f10357a, aVar.b, aVar.f10358c);
                     }
                     bVar = b.this;
                 } catch (Exception e2) {

@@ -10,14 +10,14 @@ import com.tencent.beacon.pack.ResponsePackage;
 public final class a extends c.a<byte[], AbstractJceStruct> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0896a f34961a = new C0896a();
+    private final C0726a f21270a = new C0726a();
     private final b b = new b();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.beacon.base.net.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/beacon/base/net/a/a$a.class */
-    public static final class C0896a implements c<RequestPackage, byte[]> {
-        C0896a() {
+    public static final class C0726a implements c<RequestPackage, byte[]> {
+        C0726a() {
         }
 
         private byte[] a(byte[] bArr) {
@@ -95,6 +95,6 @@ public final class a extends c.a<byte[], AbstractJceStruct> {
     }
 
     public c<RequestPackage, byte[]> c() {
-        return this.f34961a;
+        return this.f21270a;
     }
 }

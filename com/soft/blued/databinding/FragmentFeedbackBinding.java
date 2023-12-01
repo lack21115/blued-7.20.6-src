@@ -17,11 +17,11 @@ import com.soft.blued.R;
 public final class FragmentFeedbackBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final EditText f28819a;
+    public final EditText f15129a;
     public final EditInputNumView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f28820c;
+    public final RecyclerView f15130c;
     public final CommonTopTitleNoTrans d;
     public final TextView e;
     public final ShapeTextView f;
@@ -30,9 +30,9 @@ public final class FragmentFeedbackBinding implements ViewBinding {
 
     private FragmentFeedbackBinding(ConstraintLayout constraintLayout, EditText editText, EditInputNumView editInputNumView, RecyclerView recyclerView, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, ShapeTextView shapeTextView, TextView textView2) {
         this.h = constraintLayout;
-        this.f28819a = editText;
+        this.f15129a = editText;
         this.b = editInputNumView;
-        this.f28820c = recyclerView;
+        this.f15130c = recyclerView;
         this.d = commonTopTitleNoTrans;
         this.e = textView;
         this.f = shapeTextView;
@@ -51,19 +51,19 @@ public final class FragmentFeedbackBinding implements ViewBinding {
         String str;
         EditText editText = (EditText) view.findViewById(R.id.et_question);
         if (editText != null) {
-            EditInputNumView editInputNumView = (EditInputNumView) view.findViewById(2131364757);
+            EditInputNumView editInputNumView = (EditInputNumView) view.findViewById(R.id.inv_word_count);
             if (editInputNumView != null) {
                 RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_type_list);
                 if (recyclerView != null) {
-                    CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-                    if (commonTopTitleNoTrans != null) {
+                    CommonTopTitleNoTrans findViewById = view.findViewById(R.id.top_title);
+                    if (findViewById != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_question_title);
                         if (textView != null) {
-                            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_submit);
-                            if (shapeTextView != null) {
+                            ShapeTextView findViewById2 = view.findViewById(R.id.tv_submit);
+                            if (findViewById2 != null) {
                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_type_title);
                                 if (textView2 != null) {
-                                    return new FragmentFeedbackBinding((ConstraintLayout) view, editText, editInputNumView, recyclerView, commonTopTitleNoTrans, textView, shapeTextView, textView2);
+                                    return new FragmentFeedbackBinding((ConstraintLayout) view, editText, editInputNumView, recyclerView, findViewById, textView, findViewById2, textView2);
                                 }
                                 str = "tvTypeTitle";
                             } else {

@@ -1,5 +1,6 @@
 package android.graphics.drawable;
 
+import android.R;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -19,7 +20,6 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import com.android.internal.R;
 import java.io.IOException;
 import java.util.Arrays;
 import org.xmlpull.v1.XmlPullParser;
@@ -108,7 +108,7 @@ public class RippleDrawable extends LayerDrawable {
             addLayer(drawable, null, 0, 0, 0, 0, 0);
         }
         if (drawable2 != null) {
-            addLayer(drawable2, null, 16908334, 0, 0, 0, 0);
+            addLayer(drawable2, null, R.id.mask, 0, 0, 0, 0);
         }
         setColor(colorStateList);
         ensurePadding();
@@ -285,7 +285,7 @@ public class RippleDrawable extends LayerDrawable {
     }
 
     private void initializeFromState() {
-        this.mMask = findDrawableByLayerId(16908334);
+        this.mMask = findDrawableByLayerId(R.id.mask);
     }
 
     private void onHotspotBoundsChanged() {
@@ -455,7 +455,7 @@ public class RippleDrawable extends LayerDrawable {
         if (rippleState == null || rippleState.mTouchThemeAttrs == null) {
             return;
         }
-        TypedArray resolveAttributes = theme.resolveAttributes(rippleState.mTouchThemeAttrs, R.styleable.RippleDrawable);
+        TypedArray resolveAttributes = theme.resolveAttributes(rippleState.mTouchThemeAttrs, com.android.internal.R.styleable.RippleDrawable);
         try {
             try {
                 updateStateFromTypedArray(resolveAttributes);
@@ -569,7 +569,7 @@ public class RippleDrawable extends LayerDrawable {
 
     @Override // android.graphics.drawable.LayerDrawable, android.graphics.drawable.Drawable
     public void inflate(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) throws XmlPullParserException, IOException {
-        TypedArray obtainAttributes = obtainAttributes(resources, theme, attributeSet, R.styleable.RippleDrawable);
+        TypedArray obtainAttributes = obtainAttributes(resources, theme, attributeSet, com.android.internal.R.styleable.RippleDrawable);
         updateStateFromTypedArray(obtainAttributes);
         obtainAttributes.recycle();
         setPaddingMode(1);
@@ -611,7 +611,7 @@ public class RippleDrawable extends LayerDrawable {
     public Drawable mutate() {
         super.mutate();
         this.mState = (RippleState) this.mLayerState;
-        this.mMask = findDrawableByLayerId(16908334);
+        this.mMask = findDrawableByLayerId(R.id.mask);
         return this;
     }
 

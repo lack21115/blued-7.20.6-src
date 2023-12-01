@@ -18,13 +18,9 @@ import com.tencent.rtmp.TXLivePlayer;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/livegame/GameVideoPlayer.class */
 public class GameVideoPlayer extends AbsVideoView {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String f15335a = GameVideoPlayer.class.getSimpleName();
+    private static final String a = GameVideoPlayer.class.getSimpleName();
     private SurfaceView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Surface f15336c;
+    private Surface c;
     private TXLivePlayer d;
     private int e;
     private String f;
@@ -39,45 +35,41 @@ public class GameVideoPlayer extends AbsVideoView {
         super(context);
         this.e = 1;
         this.k = new SurfaceHolder.Callback() { // from class: com.blued.android.module.live_china.view.livegame.GameVideoPlayer.1
-
-            /* renamed from: a  reason: collision with root package name */
-            int f15337a;
+            int a;
             int b;
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
-                String str = GameVideoPlayer.f15335a;
+                String str = GameVideoPlayer.a;
                 Log.c(str, "surfaceChanged mSurfaceHeight" + GameVideoPlayer.this.h + "mSurfaceWidth " + GameVideoPlayer.this.g);
-                if (this.b == i3 && this.f15337a == i2) {
+                if (this.b == i3 && this.a == i2) {
                     return;
                 }
                 GameVideoPlayer.this.d.setSurfaceSize(GameVideoPlayer.this.g, GameVideoPlayer.this.h);
-                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.f15336c);
+                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
-                GameVideoPlayer.this.f15336c = surfaceHolder.getSurface();
-                this.f15337a = GameVideoPlayer.this.g;
+                GameVideoPlayer.this.c = surfaceHolder.getSurface();
+                this.a = GameVideoPlayer.this.g;
                 this.b = GameVideoPlayer.this.h;
-                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.f15336c);
+                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-                if (GameVideoPlayer.this.f15336c != null) {
-                    GameVideoPlayer.this.f15336c.release();
+                if (GameVideoPlayer.this.c != null) {
+                    GameVideoPlayer.this.c.release();
                 }
             }
         };
         this.l = new ITXLivePlayListener() { // from class: com.blued.android.module.live_china.view.livegame.GameVideoPlayer.2
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             public void onNetStatus(Bundle bundle) {
             }
 
             /* JADX WARN: Removed duplicated region for block: B:21:0x00ed  */
             /* JADX WARN: Removed duplicated region for block: B:23:? A[RETURN, SYNTHETIC] */
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -97,43 +89,39 @@ public class GameVideoPlayer extends AbsVideoView {
         super(context, attributeSet);
         this.e = 1;
         this.k = new SurfaceHolder.Callback() { // from class: com.blued.android.module.live_china.view.livegame.GameVideoPlayer.1
-
-            /* renamed from: a  reason: collision with root package name */
-            int f15337a;
+            int a;
             int b;
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
-                String str = GameVideoPlayer.f15335a;
+                String str = GameVideoPlayer.a;
                 Log.c(str, "surfaceChanged mSurfaceHeight" + GameVideoPlayer.this.h + "mSurfaceWidth " + GameVideoPlayer.this.g);
-                if (this.b == i3 && this.f15337a == i2) {
+                if (this.b == i3 && this.a == i2) {
                     return;
                 }
                 GameVideoPlayer.this.d.setSurfaceSize(GameVideoPlayer.this.g, GameVideoPlayer.this.h);
-                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.f15336c);
+                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
-                GameVideoPlayer.this.f15336c = surfaceHolder.getSurface();
-                this.f15337a = GameVideoPlayer.this.g;
+                GameVideoPlayer.this.c = surfaceHolder.getSurface();
+                this.a = GameVideoPlayer.this.g;
                 this.b = GameVideoPlayer.this.h;
-                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.f15336c);
+                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-                if (GameVideoPlayer.this.f15336c != null) {
-                    GameVideoPlayer.this.f15336c.release();
+                if (GameVideoPlayer.this.c != null) {
+                    GameVideoPlayer.this.c.release();
                 }
             }
         };
         this.l = new ITXLivePlayListener() { // from class: com.blued.android.module.live_china.view.livegame.GameVideoPlayer.2
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             public void onNetStatus(Bundle bundle) {
             }
 
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -153,43 +141,39 @@ public class GameVideoPlayer extends AbsVideoView {
         super(context, attributeSet, i);
         this.e = 1;
         this.k = new SurfaceHolder.Callback() { // from class: com.blued.android.module.live_china.view.livegame.GameVideoPlayer.1
-
-            /* renamed from: a  reason: collision with root package name */
-            int f15337a;
+            int a;
             int b;
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceChanged(SurfaceHolder surfaceHolder, int i2, int i22, int i3) {
-                String str = GameVideoPlayer.f15335a;
+                String str = GameVideoPlayer.a;
                 Log.c(str, "surfaceChanged mSurfaceHeight" + GameVideoPlayer.this.h + "mSurfaceWidth " + GameVideoPlayer.this.g);
-                if (this.b == i3 && this.f15337a == i22) {
+                if (this.b == i3 && this.a == i22) {
                     return;
                 }
                 GameVideoPlayer.this.d.setSurfaceSize(GameVideoPlayer.this.g, GameVideoPlayer.this.h);
-                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.f15336c);
+                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
-                GameVideoPlayer.this.f15336c = surfaceHolder.getSurface();
-                this.f15337a = GameVideoPlayer.this.g;
+                GameVideoPlayer.this.c = surfaceHolder.getSurface();
+                this.a = GameVideoPlayer.this.g;
                 this.b = GameVideoPlayer.this.h;
-                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.f15336c);
+                GameVideoPlayer.this.d.setSurface(GameVideoPlayer.this.c);
             }
 
             @Override // android.view.SurfaceHolder.Callback
             public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-                if (GameVideoPlayer.this.f15336c != null) {
-                    GameVideoPlayer.this.f15336c.release();
+                if (GameVideoPlayer.this.c != null) {
+                    GameVideoPlayer.this.c.release();
                 }
             }
         };
         this.l = new ITXLivePlayListener() { // from class: com.blued.android.module.live_china.view.livegame.GameVideoPlayer.2
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             public void onNetStatus(Bundle bundle) {
             }
 
-            @Override // com.tencent.rtmp.ITXLivePlayListener
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -214,13 +198,13 @@ public class GameVideoPlayer extends AbsVideoView {
 
     private boolean a(String str) {
         if (TextUtils.isEmpty(str) || !(str.startsWith("http://") || str.startsWith("https://") || str.startsWith("rtmp://") || str.startsWith(BridgeUtil.SPLIT_MARK))) {
-            Log.c(f15335a, "url is invalid");
+            Log.c(a, "url is invalid");
             return false;
         }
         if (str.startsWith("rtmp://")) {
             this.e = 0;
         } else if ((!str.startsWith("http://") && !str.startsWith("https://")) || !str.contains(".flv")) {
-            Log.c(f15335a, "url is invalide");
+            Log.c(a, "url is invalide");
             return false;
         } else {
             this.e = 1;
@@ -238,7 +222,7 @@ public class GameVideoPlayer extends AbsVideoView {
         this.g = AppInfo.m;
         this.h = AppInfo.l;
         g();
-        this.d.setSurface(this.f15336c);
+        this.d.setSurface(this.c);
         this.d.setSurfaceSize(this.g, this.h);
         this.d.setPlayListener(this.l);
     }
@@ -252,7 +236,7 @@ public class GameVideoPlayer extends AbsVideoView {
                 layoutParams.width = this.g;
                 layoutParams.height = this.h;
             }
-            if (GameVideoView.f15340a == 0) {
+            if (GameVideoView.a == 0) {
                 layoutParams.gravity = 17;
             } else if (GameVideoView.b) {
                 layoutParams.gravity = 17;
@@ -275,7 +259,7 @@ public class GameVideoPlayer extends AbsVideoView {
     public void a(int i, int i2) {
         this.g = i;
         this.h = i2;
-        String str = f15335a;
+        String str = a;
         Log.a(str, "setSurfaceWidthHeight width = " + i + " -- height = " + i2);
         d();
     }
@@ -297,10 +281,10 @@ public class GameVideoPlayer extends AbsVideoView {
     public void c() {
         TXLivePlayer tXLivePlayer = this.d;
         if (tXLivePlayer != null) {
-            tXLivePlayer.setPlayListener(null);
+            tXLivePlayer.setPlayListener((ITXLivePlayListener) null);
             this.d.stopPlay(true);
         }
-        Surface surface = this.f15336c;
+        Surface surface = this.c;
         if (surface != null) {
             surface.release();
         }
@@ -314,7 +298,7 @@ public class GameVideoPlayer extends AbsVideoView {
             if (this.i != 0 && this.j != 0 && this.g != 0 && this.h != 0) {
                 float f2 = this.i / this.g;
                 float f3 = this.j / this.h;
-                if (GameVideoView.f15340a == 0) {
+                if (GameVideoView.a == 0) {
                     f = Math.min(f2, f3);
                 } else {
                     f = f2;
@@ -322,9 +306,9 @@ public class GameVideoPlayer extends AbsVideoView {
                         f = Math.max(f2, f3);
                     }
                 }
-                String str = f15335a;
+                String str = a;
                 Log.c(str, "before data: mVideoWidth:" + this.i + "   mVideoHeight:" + this.j + " mSurfaceWidth:" + this.g + "   mSurfaceHeight:" + this.h);
-                String str2 = f15335a;
+                String str2 = a;
                 StringBuilder sb = new StringBuilder();
                 sb.append("====ratio:");
                 sb.append(f);
@@ -332,7 +316,7 @@ public class GameVideoPlayer extends AbsVideoView {
                 this.g = (int) Math.ceil((double) (((float) this.i) / f));
                 this.h = (int) Math.ceil((double) (((float) this.j) / f));
             }
-            String str3 = f15335a;
+            String str3 = a;
             Log.c(str3, "after data: mVideoWidth:" + this.i + "   mVideoHeight:" + this.j + " mSurfaceWidth:" + this.g + "   mSurfaceHeight:" + this.h);
             g();
         }

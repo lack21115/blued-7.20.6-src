@@ -10,6 +10,7 @@ import android.media.MediaFormat;
 import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.view.Surface;
+import androidx.constraintlayout.motion.widget.Key;
 import com.baidu.mobads.sdk.internal.bw;
 import com.huawei.openalliance.ad.constant.bc;
 import com.qiniu.pili.droid.shortvideo.PLAudioEncodeSetting;
@@ -27,6 +28,7 @@ import com.qiniu.pili.droid.shortvideo.encode.a;
 import com.qiniu.pili.droid.shortvideo.gl.b.a;
 import com.qiniu.pili.droid.shortvideo.process.audio.MultiAudioMixer;
 import com.qiniu.pili.droid.shortvideo.transcoder.audio.AudioMixer;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -65,7 +67,7 @@ public class q {
     private int Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27593a;
+    private Context f13905a;
     private com.qiniu.pili.droid.shortvideo.core.a ab;
     private ArrayList<PLSpeedTimeRange> ac;
     private volatile int ad;
@@ -82,7 +84,7 @@ public class q {
     private volatile long aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private int f27594ar;
+    private int f13906ar;
     private int as;
     private int at;
     private int au;
@@ -91,7 +93,7 @@ public class q {
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27595c;
+    private String f13907c;
     private Object i;
     private MediaExtractor j;
     private MediaExtractor k;
@@ -122,13 +124,13 @@ public class q {
     private Object ak = new Object();
     private Object am = new Object();
     private JSONObject ax = new JSONObject();
-    private a.InterfaceC0745a ay = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.q.7
+    private a.InterfaceC0575a ay = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.q.7
         private long b;
 
         /* renamed from: c  reason: collision with root package name */
-        private long f27607c;
+        private long f13919c;
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.s;
             eVar.c("ShortVideoTranscoderCore", "video encode format: " + mediaFormat);
@@ -138,7 +140,7 @@ public class q {
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r0v124, types: [java.util.List] */
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             int i;
             int i2;
@@ -164,8 +166,8 @@ public class q {
                 i = q.this.m.getInteger("rotation-degrees");
             } else {
                 i = 0;
-                if (q.this.m.containsKey("rotation")) {
-                    i = q.this.m.getInteger("rotation");
+                if (q.this.m.containsKey(Key.ROTATION)) {
+                    i = q.this.m.getInteger(Key.ROTATION);
                 }
             }
             q qVar = q.this;
@@ -178,7 +180,7 @@ public class q {
                 q.this.G.a(q.this.E);
             }
             if (q.this.at > 0 && q.this.au > 0) {
-                q.this.G.a(q.this.f27594ar, q.this.as, q.this.at, q.this.au);
+                q.this.G.a(q.this.f13906ar, q.this.as, q.this.at, q.this.au);
             }
             if (q.this.V != 0) {
                 q.this.G.a(q.this.V, q.this.W, q.this.aA);
@@ -203,7 +205,7 @@ public class q {
             q.this.G.a();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             double d;
             com.qiniu.pili.droid.shortvideo.f.e.s.b("ShortVideoTranscoderCore", "encoded video frame count: " + q.L(q.this) + " info.presentationTimeUs " + bufferInfo.presentationTimeUs);
@@ -222,9 +224,9 @@ public class q {
                         }
                     }
                     long j = bufferInfo.presentationTimeUs;
-                    bufferInfo.presentationTimeUs = this.b + ((long) ((bufferInfo.presentationTimeUs - this.f27607c) / d));
+                    bufferInfo.presentationTimeUs = this.b + ((long) ((bufferInfo.presentationTimeUs - this.f13919c) / d));
                     this.b = bufferInfo.presentationTimeUs;
-                    this.f27607c = j;
+                    this.f13919c = j;
                 }
                 q.this.B.a(byteBuffer, bufferInfo);
                 if (q.this.ae) {
@@ -239,7 +241,7 @@ public class q {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.s;
             eVar.c("ShortVideoTranscoderCore", "video encode started result: " + z);
@@ -260,7 +262,7 @@ public class q {
             q.this.x.a();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             if (z) {
                 com.qiniu.pili.droid.shortvideo.f.e.s.e("ShortVideoTranscoderCore", "video encoder exceptional stopped !");
@@ -275,8 +277,8 @@ public class q {
             q.this.g();
         }
     };
-    private a.InterfaceC0745a az = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.q.8
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a az = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.q.8
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.s;
             eVar.c("ShortVideoTranscoderCore", "audio encode format: " + mediaFormat);
@@ -284,11 +286,11 @@ public class q {
             q.this.f();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.s;
             eVar.b("ShortVideoTranscoderCore", "encoded audio frame: " + bufferInfo.presentationTimeUs);
@@ -302,7 +304,7 @@ public class q {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.s;
             eVar.c("ShortVideoTranscoderCore", "audio encode started result: " + z);
@@ -318,8 +320,8 @@ public class q {
                     if (q.this.ac != null) {
                         q.this.ab.a(true);
                     }
-                    q.this.ab.a(new a.InterfaceC0743a() { // from class: com.qiniu.pili.droid.shortvideo.core.q.8.1
-                        @Override // com.qiniu.pili.droid.shortvideo.core.a.InterfaceC0743a
+                    q.this.ab.a(new a.InterfaceC0573a() { // from class: com.qiniu.pili.droid.shortvideo.core.q.8.1
+                        @Override // com.qiniu.pili.droid.shortvideo.core.a.InterfaceC0573a
                         public void a(ByteBuffer byteBuffer, int i, long j) {
                             q.this.y.a(byteBuffer, i, j);
                         }
@@ -329,7 +331,7 @@ public class q {
             }
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.s.c("ShortVideoTranscoderCore", "audio encode stopped");
             if (q.this.k != null) {
@@ -535,7 +537,7 @@ public class q {
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f27612c;
+        private int f13924c;
 
         private a() {
             this.b = false;
@@ -639,11 +641,11 @@ public class q {
 
         @Override // com.qiniu.pili.droid.shortvideo.d.b.c
         public void a(ByteBuffer byteBuffer, int i, long j, long j2, boolean z) {
-            if (this.f27612c == 0) {
+            if (this.f13924c == 0) {
                 q qVar = q.this;
-                this.f27612c = qVar.b(qVar.o);
+                this.f13924c = qVar.b(qVar.o);
             }
-            int a2 = q.this.a(byteBuffer, i, this.f27612c);
+            int a2 = q.this.a(byteBuffer, i, this.f13924c);
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.s;
             eVar.b("ShortVideoTranscoderCore", "music audio frame size: " + a2 + " ts: " + j + " eof: " + z);
             q.this.u = Thread.currentThread();
@@ -761,11 +763,11 @@ public class q {
     public q(Context context, String str, String str2) {
         com.qiniu.pili.droid.shortvideo.f.e.s.c("ShortVideoTranscoderCore", "init +");
         Context applicationContext = context.getApplicationContext();
-        this.f27593a = applicationContext;
+        this.f13905a = applicationContext;
         l.a(applicationContext);
         QosManager.a().a(QosManager.KeyPoint.transcode_init);
         this.b = str;
-        this.f27595c = l.a(this.f27593a, str2);
+        this.f13907c = l.a(this.f13905a, str2);
         this.R = 0L;
         long a2 = com.qiniu.pili.droid.shortvideo.f.g.a((Object) this.b) * 1000;
         this.S = a2;
@@ -797,7 +799,7 @@ public class q {
         Bitmap bitmap = pLWatermarkSetting.getBitmap();
         Bitmap bitmap2 = bitmap;
         if (bitmap == null) {
-            bitmap2 = BitmapFactory.decodeResource(this.f27593a.getResources(), pLWatermarkSetting.getResourceId());
+            bitmap2 = BitmapFactory.decodeResource(this.f13905a.getResources(), pLWatermarkSetting.getResourceId());
         }
         com.qiniu.pili.droid.shortvideo.gl.c.d dVar = new com.qiniu.pili.droid.shortvideo.gl.c.d(bitmap2);
         dVar.a(pLWatermarkSetting.getAlpha() / 255.0f);
@@ -814,7 +816,7 @@ public class q {
     public void a(int i, int i2, int i3) {
         b(i, i2, i3);
         if (this.F == null) {
-            PLVideoEncodeSetting pLVideoEncodeSetting = new PLVideoEncodeSetting(this.f27593a);
+            PLVideoEncodeSetting pLVideoEncodeSetting = new PLVideoEncodeSetting(this.f13905a);
             this.F = pLVideoEncodeSetting;
             pLVideoEncodeSetting.setEncodingBitrate(i3);
             if (this.m.containsKey(MediaFormat.KEY_FRAME_RATE)) {
@@ -1157,7 +1159,7 @@ public class q {
             }
             com.qiniu.pili.droid.shortvideo.muxer.b bVar = new com.qiniu.pili.droid.shortvideo.muxer.b();
             this.B = bVar;
-            if (bVar.a(this.f27595c, this.v, this.w, 0)) {
+            if (bVar.a(this.f13907c, this.v, this.w, 0)) {
                 com.qiniu.pili.droid.shortvideo.f.e.s.c("ShortVideoTranscoderCore", "start muxer success!");
                 notify();
             } else {
@@ -1219,7 +1221,7 @@ public class q {
             this.A = false;
             if (this.O) {
                 this.O = false;
-                new File(this.f27595c).delete();
+                new File(this.f13907c).delete();
                 if (!this.P && !j()) {
                     this.M.onSaveVideoCanceled();
                 } else if (j()) {
@@ -1231,7 +1233,7 @@ public class q {
             } else {
                 this.M.onProgressUpdate(1.0f);
                 if (z) {
-                    this.M.onSaveVideoSuccess(this.f27595c);
+                    this.M.onSaveVideoSuccess(this.f13907c);
                     try {
                         this.ax.put("transcode_time", System.currentTimeMillis() - this.ax.getLong("transcode_time"));
                         this.ax.put("data_type", QosManager.a.transcode);
@@ -1275,7 +1277,7 @@ public class q {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean k() {
-        ActivityManager activityManager = (ActivityManager) this.f27593a.getSystemService("activity");
+        ActivityManager activityManager = (ActivityManager) this.f13905a.getSystemService("activity");
         ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
         activityManager.getMemoryInfo(memoryInfo);
         long j = this.af * 10;
@@ -1338,7 +1340,7 @@ public class q {
 
     public void a(int i, int i2, int i3, int i4) {
         if (u.a().a(b.a.transcode_clip_video)) {
-            this.f27594ar = i;
+            this.f13906ar = i;
             this.as = i2;
             this.at = i3;
             this.au = i4;
@@ -1357,7 +1359,7 @@ public class q {
         this.S = j2;
         d();
         com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.s;
-        eVar.c("ShortVideoTranscoderCore", "set range to: " + j + "-" + j2 + " duration: " + this.T);
+        eVar.c("ShortVideoTranscoderCore", "set range to: " + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER + j2 + " duration: " + this.T);
     }
 
     public void a(PLVideoEncodeSetting pLVideoEncodeSetting) {
@@ -1428,7 +1430,7 @@ public class q {
             }
             this.M = pLVideoSaveListener2;
             if (u.a().a(b.a.transcode_video, this.M)) {
-                if (this.b.equals(this.f27595c)) {
+                if (this.b.equals(this.f13907c)) {
                     com.qiniu.pili.droid.shortvideo.f.e.s.e("ShortVideoTranscoderCore", "the dst video path must be different with src video path, please check the constructor's param!");
                     this.M.onSaveVideoFailed(14);
                     return false;

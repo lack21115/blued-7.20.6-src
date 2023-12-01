@@ -24,13 +24,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile b f25968a;
+    private static volatile b f12280a;
     private static final byte[] b = new byte[0];
     private static int g = 3;
     private static boolean h = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private Messenger f25969c;
+    private Messenger f12281c;
     private Context d;
     private ConcurrentHashMap<String, com.opos.mobad.d.b.a> e = new ConcurrentHashMap<>();
     private List<com.opos.mobad.d.b.a> f = new CopyOnWriteArrayList();
@@ -98,7 +98,7 @@ public class b {
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             com.opos.cmn.an.f.a.b("DownloaderMgr", "onServiceConnected");
-            b.this.f25969c = new Messenger(iBinder);
+            b.this.f12281c = new Messenger(iBinder);
             b();
             a();
         }
@@ -106,7 +106,7 @@ public class b {
         @Override // android.content.ServiceConnection
         public void onServiceDisconnected(ComponentName componentName) {
             com.opos.cmn.an.f.a.b("DownloaderMgr", "onServiceDisconnected");
-            b.this.f25969c = null;
+            b.this.f12281c = null;
             if (b.a(b.this) < 3) {
                 b.this.d();
             }
@@ -125,14 +125,14 @@ public class b {
 
     public static b a(Context context) {
         b bVar;
-        b bVar2 = f25968a;
+        b bVar2 = f12280a;
         if (bVar2 == null) {
             synchronized (b) {
-                b bVar3 = f25968a;
+                b bVar3 = f12280a;
                 bVar = bVar3;
                 if (bVar3 == null) {
                     bVar = new b(context);
-                    f25968a = bVar;
+                    f12280a = bVar;
                 }
             }
             return bVar;
@@ -247,7 +247,7 @@ public class b {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean a(com.opos.mobad.d.b.a aVar) {
-        boolean a2 = (aVar == null || com.opos.cmn.an.c.a.a(aVar.d) || com.opos.cmn.an.c.a.a(aVar.b)) ? false : a(aVar.d, aVar.b, aVar.f25973c, aVar.f25972a);
+        boolean a2 = (aVar == null || com.opos.cmn.an.c.a.a(aVar.d) || com.opos.cmn.an.c.a.a(aVar.b)) ? false : a(aVar.d, aVar.b, aVar.f12285c, aVar.f12284a);
         com.opos.cmn.an.f.a.b("DownloaderMgr", "addDownloader result:" + a2 + ", downloadData:" + aVar);
         return a2;
     }
@@ -255,7 +255,7 @@ public class b {
     private boolean a(String str, String str2, String str3, String str4) {
         com.opos.cmn.an.f.a.b("DownloaderMgr", "addDownloader pkgName:" + str2 + ",url:" + str + ",md5:" + str3 + ",appName:" + str4);
         boolean z = true;
-        if (!com.opos.cmn.an.c.a.a(str) && !com.opos.cmn.an.c.a.a(str2) && this.f25969c != null) {
+        if (!com.opos.cmn.an.c.a.a(str) && !com.opos.cmn.an.c.a.a(str2) && this.f12281c != null) {
             try {
                 Message obtain = Message.obtain();
                 obtain.what = 1;
@@ -270,7 +270,7 @@ public class b {
                 }
                 obtain.setData(bundle);
                 obtain.replyTo = this.k;
-                this.f25969c.send(obtain);
+                this.f12281c.send(obtain);
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("DownloaderMgr", "", (Throwable) e);
             }
@@ -359,20 +359,20 @@ public class b {
     }
 
     private void c() {
-        if (this.f25969c != null) {
+        if (this.f12281c != null) {
             try {
                 Message obtain = Message.obtain();
                 obtain.what = 7;
                 obtain.replyTo = this.k;
                 try {
-                    this.f25969c.send(obtain);
+                    this.f12281c.send(obtain);
                 } catch (RemoteException e) {
                     com.opos.cmn.an.f.a.b("DownloaderMgr", "", e);
                 }
                 if (this.d != null && this.l != null) {
                     this.d.unbindService(this.l);
                 }
-                this.f25969c = null;
+                this.f12281c = null;
                 com.opos.cmn.an.f.a.b("DownloaderMgr", "task download mgr ,unBindService");
             } catch (Exception e2) {
                 com.opos.cmn.an.f.a.a("DownloaderMgr", "", (Throwable) e2);
@@ -430,7 +430,7 @@ public class b {
 
     public void a(String str) {
         com.opos.cmn.an.f.a.b("DownloaderMgr", "pauseDownloader url:" + str);
-        if (com.opos.cmn.an.c.a.a(str) || this.f25969c == null) {
+        if (com.opos.cmn.an.c.a.a(str) || this.f12281c == null) {
             return;
         }
         try {
@@ -439,7 +439,7 @@ public class b {
             Bundle bundle = new Bundle();
             bundle.putString("key_url", str);
             obtain.setData(bundle);
-            this.f25969c.send(obtain);
+            this.f12281c.send(obtain);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("DownloaderMgr", "", (Throwable) e);
         }
@@ -463,7 +463,7 @@ public class b {
             this.e.put(str, aVar3);
             aVar = aVar3;
         }
-        if (this.f25969c == null) {
+        if (this.f12281c == null) {
             d();
             this.f.add(aVar);
         } else {
@@ -485,7 +485,7 @@ public class b {
 
     public void b(String str) {
         com.opos.cmn.an.f.a.b("DownloaderMgr", "cancelDownloader url:" + str);
-        if (com.opos.cmn.an.c.a.a(str) || this.f25969c == null) {
+        if (com.opos.cmn.an.c.a.a(str) || this.f12281c == null) {
             return;
         }
         try {
@@ -494,7 +494,7 @@ public class b {
             Bundle bundle = new Bundle();
             bundle.putString("key_url", str);
             obtain.setData(bundle);
-            this.f25969c.send(obtain);
+            this.f12281c.send(obtain);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("DownloaderMgr", "", (Throwable) e);
         }
@@ -502,7 +502,7 @@ public class b {
 
     public void c(String str) {
         com.opos.cmn.an.f.a.b("DownloaderMgr", "notifyInstallEvent pkgName:" + str);
-        if (com.opos.cmn.an.c.a.a(str) || this.f25969c == null) {
+        if (com.opos.cmn.an.c.a.a(str) || this.f12281c == null) {
             return;
         }
         try {
@@ -511,7 +511,7 @@ public class b {
             Bundle bundle = new Bundle();
             bundle.putString("key_pkg_name", str);
             obtain.setData(bundle);
-            this.f25969c.send(obtain);
+            this.f12281c.send(obtain);
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("DownloaderMgr", "", (Throwable) e);
         }

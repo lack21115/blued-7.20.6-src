@@ -5,7 +5,6 @@ import com.alibaba.mtl.appmonitor.AppMonitor;
 import com.alibaba.mtl.log.a;
 import com.alibaba.mtl.log.b;
 import com.alibaba.mtl.log.c;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ut.device.UTDevice;
 import com.ut.mini.base.UTMIVariables;
 import java.util.Map;
@@ -14,16 +13,16 @@ import java.util.Map;
 public class UTTeamWork {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTTeamWork f41026a;
+    private static UTTeamWork f27335a;
 
     public static UTTeamWork getInstance() {
         UTTeamWork uTTeamWork;
         synchronized (UTTeamWork.class) {
             try {
-                if (f41026a == null) {
-                    f41026a = new UTTeamWork();
+                if (f27335a == null) {
+                    f27335a = new UTTeamWork();
                 }
-                uTTeamWork = f41026a;
+                uTTeamWork = f27335a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -49,7 +48,7 @@ public class UTTeamWork {
             if (TextUtils.isEmpty(appkey) || TextUtils.isEmpty(utdid)) {
                 return null;
             }
-            return utdid + BridgeUtil.UNDERLINE_STR + appkey + BridgeUtil.UNDERLINE_STR + longValue;
+            return utdid + "_" + appkey + "_" + longValue;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

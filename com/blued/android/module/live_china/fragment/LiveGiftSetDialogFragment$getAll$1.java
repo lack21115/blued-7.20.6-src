@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -25,15 +26,13 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGiftSetDialogFragment$getAll$1.class */
 public final class LiveGiftSetDialogFragment$getAll$1 extends BluedUIHttpResponse<BluedEntityA<LiveGiftSetModel>> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ LiveGiftSetDialogFragment f12911a;
+    final /* synthetic */ LiveGiftSetDialogFragment a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public LiveGiftSetDialogFragment$getAll$1(LiveGiftSetDialogFragment liveGiftSetDialogFragment, ActivityFragmentActive activityFragmentActive) {
         super(activityFragmentActive);
-        this.f12911a = liveGiftSetDialogFragment;
+        this.a = liveGiftSetDialogFragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -42,7 +41,7 @@ public final class LiveGiftSetDialogFragment$getAll$1 extends BluedUIHttpRespons
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(position, "$position");
         g = this$0.g();
-        g.h.setCurrentItem(position.f42543a);
+        g.h.setCurrentItem(position.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -50,12 +49,12 @@ public final class LiveGiftSetDialogFragment$getAll$1 extends BluedUIHttpRespons
         FragmentLiveGiftSetViewBinding g;
         Intrinsics.e(model, "$model");
         Intrinsics.e(this$0, "this$0");
-        if (TextUtils.isEmpty(((LiveGiftSetModel) model.f42545a).getLink())) {
+        if (TextUtils.isEmpty(((LiveGiftSetModel) model.a).getLink())) {
             return;
         }
         LiveHalfWebDialogFragment liveHalfWebDialogFragment = new LiveHalfWebDialogFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("url", ((LiveGiftSetModel) model.f42545a).getLink());
+        bundle.putString("url", ((LiveGiftSetModel) model.a).getLink());
         g = this$0.g();
         bundle.putInt("height", g.h.getHeight());
         bundle.putBoolean("fullScreen", false);
@@ -85,18 +84,18 @@ public final class LiveGiftSetDialogFragment$getAll$1 extends BluedUIHttpRespons
             return;
         }
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = bluedEntity.data.get(0);
-        if (objectRef.f42545a != 0) {
-            ((LiveGiftSetModel) objectRef.f42545a).setId(StringUtils.a(this.f12911a.d(), 0));
-            LiveGiftSetDialogFragment liveGiftSetDialogFragment = this.f12911a;
-            T model = objectRef.f42545a;
+        objectRef.a = bluedEntity.data.get(0);
+        if (objectRef.a != 0) {
+            ((LiveGiftSetModel) objectRef.a).setId(StringUtils.a(this.a.d(), 0));
+            LiveGiftSetDialogFragment liveGiftSetDialogFragment = this.a;
+            T model = objectRef.a;
             Intrinsics.c(model, "model");
             liveGiftSetDialogFragment.a((LiveGiftSetModel) model);
-            T t = objectRef.f42545a;
+            T t = objectRef.a;
             Intrinsics.a(t);
             ArrayList<LiveGiftSetTabModel> all_name = ((LiveGiftSetModel) t).getAll_name();
             if (all_name != null) {
-                final LiveGiftSetDialogFragment liveGiftSetDialogFragment2 = this.f12911a;
+                final LiveGiftSetDialogFragment liveGiftSetDialogFragment2 = this.a;
                 final Ref.IntRef intRef = new Ref.IntRef();
                 Iterator<LiveGiftSetTabModel> it = all_name.iterator();
                 int i = 0;
@@ -107,12 +106,12 @@ public final class LiveGiftSetDialogFragment$getAll$1 extends BluedUIHttpRespons
                     }
                     LiveGiftSetTabModel next = it.next();
                     if (next != null && TextUtils.equals(next.getId(), liveGiftSetDialogFragment2.d())) {
-                        intRef.f42543a = i2;
+                        intRef.a = i2;
                         break;
                     }
                     i = i2 + 1;
                 }
-                if (intRef.f42543a >= 0) {
+                if (intRef.a >= 0) {
                     g12 = liveGiftSetDialogFragment2.g();
                     g12.h.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGiftSetDialogFragment$getAll$1$hI25yhMJklv_QTtl--9u2r39weE
                         @Override // java.lang.Runnable
@@ -124,16 +123,16 @@ public final class LiveGiftSetDialogFragment$getAll$1 extends BluedUIHttpRespons
                 Context context = liveGiftSetDialogFragment2.getContext();
                 FragmentManager childFragmentManager = liveGiftSetDialogFragment2.getChildFragmentManager();
                 Intrinsics.c(childFragmentManager, "childFragmentManager");
-                LiveGiftSetDialogFragment.MyAdapter myAdapter = new LiveGiftSetDialogFragment.MyAdapter(context, childFragmentManager);
-                T t2 = objectRef.f42545a;
+                PagerAdapter myAdapter = new LiveGiftSetDialogFragment.MyAdapter(context, childFragmentManager);
+                T t2 = objectRef.a;
                 Intrinsics.a(t2);
                 ArrayList<LiveGiftSetTabModel> all_name2 = ((LiveGiftSetModel) t2).getAll_name();
-                T model2 = objectRef.f42545a;
+                T model2 = objectRef.a;
                 Intrinsics.c(model2, "model");
-                myAdapter.a(all_name2, (LiveGiftSetModel) model2, intRef.f42543a);
+                myAdapter.a(all_name2, (LiveGiftSetModel) model2, intRef.a);
                 g2 = liveGiftSetDialogFragment2.g();
                 ViewPager viewPager = g2.h;
-                T t3 = objectRef.f42545a;
+                T t3 = objectRef.a;
                 Intrinsics.a(t3);
                 ArrayList<LiveGiftSetTabModel> all_name3 = ((LiveGiftSetModel) t3).getAll_name();
                 Intrinsics.a(all_name3);
@@ -160,9 +159,9 @@ public final class LiveGiftSetDialogFragment$getAll$1 extends BluedUIHttpRespons
                     pageTabLayout2.setupWithViewPager(g7.h);
                 }
             }
-            g = this.f12911a.g();
+            g = this.a.g();
             ImageView imageView = g.e;
-            final LiveGiftSetDialogFragment liveGiftSetDialogFragment3 = this.f12911a;
+            final LiveGiftSetDialogFragment liveGiftSetDialogFragment3 = this.a;
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGiftSetDialogFragment$getAll$1$ZYwS3EGJqyVh3R34TFk0uVT08_4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {

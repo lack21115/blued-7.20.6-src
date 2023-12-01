@@ -12,11 +12,11 @@ import com.anythink.rewardvideo.api.ATRewardVideoExListener;
 public final class c implements ATRewardVideoExListener {
 
     /* renamed from: a  reason: collision with root package name */
-    ATRewardVideoAutoEventListener f9160a;
+    ATRewardVideoAutoEventListener f6320a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public c(ATRewardVideoAutoEventListener aTRewardVideoAutoEventListener) {
-        this.f9160a = aTRewardVideoAutoEventListener;
+        this.f6320a = aTRewardVideoAutoEventListener;
     }
 
     @Override // com.anythink.rewardvideo.api.ATRewardVideoExListener
@@ -24,8 +24,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.11
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onAgainReward(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onAgainReward(aTAdInfo);
                 }
             }
         });
@@ -36,8 +36,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.1
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onDeeplinkCallback(aTAdInfo, z);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onDeeplinkCallback(aTAdInfo, z);
                 }
             }
         });
@@ -48,8 +48,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.6
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onDownloadConfirm(context, aTAdInfo, aTNetworkConfirmInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onDownloadConfirm(context, aTAdInfo, aTNetworkConfirmInfo);
                 }
             }
         });
@@ -60,8 +60,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.5
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onReward(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onReward(aTAdInfo);
                 }
             }
         });
@@ -72,8 +72,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.10
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdAgainPlayClicked(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdAgainPlayClicked(aTAdInfo);
                 }
             }
         });
@@ -84,8 +84,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.8
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdAgainPlayEnd(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdAgainPlayEnd(aTAdInfo);
                 }
             }
         });
@@ -96,8 +96,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.9
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdAgainPlayFailed(adError, aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdAgainPlayFailed(adError, aTAdInfo);
                 }
             }
         });
@@ -108,8 +108,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.7
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdAgainPlayStart(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdAgainPlayStart(aTAdInfo);
                 }
             }
         });
@@ -120,8 +120,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.3
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdClosed(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdClosed(aTAdInfo);
                 }
             }
         });
@@ -140,8 +140,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.4
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdPlayClicked(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdPlayClicked(aTAdInfo);
                 }
             }
         });
@@ -152,8 +152,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.13
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdPlayEnd(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdPlayEnd(aTAdInfo);
                 }
             }
         });
@@ -164,8 +164,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.2
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdPlayFailed(adError, aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdPlayFailed(adError, aTAdInfo);
                 }
             }
         });
@@ -176,8 +176,8 @@ public final class c implements ATRewardVideoExListener {
         n.a().a(new Runnable() { // from class: com.anythink.rewardvideo.a.c.12
             @Override // java.lang.Runnable
             public final void run() {
-                if (c.this.f9160a != null) {
-                    c.this.f9160a.onRewardedVideoAdPlayStart(aTAdInfo);
+                if (c.this.f6320a != null) {
+                    c.this.f6320a.onRewardedVideoAdPlayStart(aTAdInfo);
                 }
             }
         });

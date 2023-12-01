@@ -35,7 +35,7 @@ public class PopMenuFromBottom extends PopMenu {
             return;
         }
         this.b.clearAnimation();
-        this.f28469c.clearAnimation();
+        this.f14779c.clearAnimation();
         if (this.e.isShowing()) {
             this.e.a();
         }
@@ -49,8 +49,8 @@ public class PopMenuFromBottom extends PopMenu {
         alphaAnimation.setDuration(400L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f28469c.setVisibility(0);
-        this.f28469c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.pop_down_in));
+        this.f14779c.setVisibility(0);
+        this.f14779c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.pop_down_in));
     }
 
     @Override // com.soft.blued.customview.PopMenu
@@ -71,8 +71,8 @@ public class PopMenuFromBottom extends PopMenu {
         alphaAnimation.setDuration(200L);
         alphaAnimation.setFillAfter(true);
         this.b.startAnimation(alphaAnimation);
-        this.f28469c.setVisibility(8);
-        this.f28469c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.pop_down_out));
+        this.f14779c.setVisibility(8);
+        this.f14779c.startAnimation(AnimationUtils.loadAnimation(this.d, R.anim.pop_down_out));
         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.customview.-$$Lambda$PopMenuFromBottom$IK6A8-otKZI1uiQf1nO_j7GTL-8
             @Override // java.lang.Runnable
             public final void run() {

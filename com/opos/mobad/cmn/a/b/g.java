@@ -26,7 +26,7 @@ public class g {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f25895a;
+        static final /* synthetic */ int[] f12207a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x004d -> B:37:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0051 -> B:33:0x001f). Please submit an issue!!! */
@@ -35,29 +35,29 @@ public class g {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x005d -> B:35:0x0040). Please submit an issue!!! */
         static {
             int[] iArr = new int[a.values().length];
-            f25895a = iArr;
+            f12207a = iArr;
             try {
                 iArr[a.NonClickBt.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f25895a[a.ClickBt.ordinal()] = 2;
+                f12207a[a.ClickBt.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f25895a[a.Video.ordinal()] = 3;
+                f12207a[a.Video.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f25895a[a.FloatLayerClickBt.ordinal()] = 4;
+                f12207a[a.FloatLayerClickBt.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f25895a[a.FloatLayerNonClickBt.ordinal()] = 5;
+                f12207a[a.FloatLayerNonClickBt.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f25895a[a.Pendant.ordinal()] = 6;
+                f12207a[a.Pendant.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
         }
@@ -292,7 +292,7 @@ public class g {
             r5 = r0
             r0 = r3
             if (r0 == 0) goto La4
-            int[] r0 = com.opos.mobad.cmn.a.b.g.AnonymousClass1.f25895a
+            int[] r0 = com.opos.mobad.cmn.a.b.g.AnonymousClass1.f12207a
             r1 = r4
             int r1 = r1.ordinal()
             r0 = r0[r1]

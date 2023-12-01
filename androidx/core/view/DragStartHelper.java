@@ -8,11 +8,11 @@ import android.view.View;
 public class DragStartHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f2630a;
+    private final View f2582a;
     private final OnDragStartListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f2631c;
+    private int f2583c;
     private int d;
     private boolean e;
     private final View.OnLongClickListener f = new View.OnLongClickListener() { // from class: androidx.core.view.DragStartHelper.1
@@ -34,22 +34,22 @@ public class DragStartHelper {
     }
 
     public DragStartHelper(View view, OnDragStartListener onDragStartListener) {
-        this.f2630a = view;
+        this.f2582a = view;
         this.b = onDragStartListener;
     }
 
     public void attach() {
-        this.f2630a.setOnLongClickListener(this.f);
-        this.f2630a.setOnTouchListener(this.g);
+        this.f2582a.setOnLongClickListener(this.f);
+        this.f2582a.setOnTouchListener(this.g);
     }
 
     public void detach() {
-        this.f2630a.setOnLongClickListener(null);
-        this.f2630a.setOnTouchListener(null);
+        this.f2582a.setOnLongClickListener(null);
+        this.f2582a.setOnTouchListener(null);
     }
 
     public void getTouchPosition(Point point) {
-        point.set(this.f2631c, this.d);
+        point.set(this.f2583c, this.d);
     }
 
     public boolean onLongClick(View view) {
@@ -61,7 +61,7 @@ public class DragStartHelper {
         int y = (int) motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            this.f2631c = x;
+            this.f2583c = x;
             this.d = y;
             return false;
         }
@@ -70,10 +70,10 @@ public class DragStartHelper {
                 if (!MotionEventCompat.isFromSource(motionEvent, 8194) || (motionEvent.getButtonState() & 1) == 0 || this.e) {
                     return false;
                 }
-                if (this.f2631c == x && this.d == y) {
+                if (this.f2583c == x && this.d == y) {
                     return false;
                 }
-                this.f2631c = x;
+                this.f2583c = x;
                 this.d = y;
                 boolean onDragStart = this.b.onDragStart(view, this);
                 this.e = onDragStart;

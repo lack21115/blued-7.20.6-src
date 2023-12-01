@@ -9,11 +9,11 @@ import java.util.Comparator;
 public class Table {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f2871a;
+    protected int f2823a;
     protected ByteBuffer b;
 
     /* renamed from: c  reason: collision with root package name */
-    Utf8 f2872c = Utf8.getDefault();
+    Utf8 f2824c = Utf8.getDefault();
     private int d;
     private int e;
 
@@ -112,19 +112,19 @@ public class Table {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String c(int i) {
-        return a(i, this.b, this.f2872c);
+        return a(i, this.b, this.f2824c);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void c(int i, ByteBuffer byteBuffer) {
         this.b = byteBuffer;
         if (byteBuffer == null) {
-            this.f2871a = 0;
+            this.f2823a = 0;
             this.d = 0;
             this.e = 0;
             return;
         }
-        this.f2871a = i;
+        this.f2823a = i;
         int i2 = i - byteBuffer.getInt(i);
         this.d = i2;
         this.e = this.b.getShort(i2);
@@ -132,13 +132,13 @@ public class Table {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int d(int i) {
-        int i2 = i + this.f2871a;
+        int i2 = i + this.f2823a;
         return this.b.getInt(i2 + this.b.getInt(i2));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int e(int i) {
-        int i2 = i + this.f2871a;
+        int i2 = i + this.f2823a;
         return i2 + this.b.getInt(i2) + 4;
     }
 

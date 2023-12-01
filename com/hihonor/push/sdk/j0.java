@@ -9,15 +9,15 @@ public final class j0<TResult> {
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public TResult f22308c;
+    public TResult f8700c;
     public Exception d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Object f22307a = new Object();
+    public final Object f8699a = new Object();
     public List<t<TResult>> e = new ArrayList();
 
     public final j0<TResult> a(t<TResult> tVar) {
-        synchronized (this.f22307a) {
+        synchronized (this.f8699a) {
             if (this.b) {
                 tVar.a(this);
             } else {
@@ -28,7 +28,7 @@ public final class j0<TResult> {
     }
 
     public final void a() {
-        synchronized (this.f22307a) {
+        synchronized (this.f8699a) {
             for (t<TResult> tVar : this.e) {
                 try {
                     tVar.a(this);
@@ -44,7 +44,7 @@ public final class j0<TResult> {
 
     public final Exception b() {
         Exception exc;
-        synchronized (this.f22307a) {
+        synchronized (this.f8699a) {
             exc = this.d;
         }
         return exc;
@@ -52,24 +52,24 @@ public final class j0<TResult> {
 
     public final TResult c() {
         TResult tresult;
-        synchronized (this.f22307a) {
+        synchronized (this.f8699a) {
             if (this.d != null) {
                 throw new RuntimeException(this.d);
             }
-            tresult = this.f22308c;
+            tresult = this.f8700c;
         }
         return tresult;
     }
 
     public final boolean d() {
-        synchronized (this.f22307a) {
+        synchronized (this.f8699a) {
         }
         return false;
     }
 
     public final boolean e() {
         boolean z;
-        synchronized (this.f22307a) {
+        synchronized (this.f8699a) {
             if (this.b) {
                 d();
                 if (this.d == null) {

@@ -12,19 +12,13 @@ import java.util.List;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/BottomMenuPop.class */
 public class BottomMenuPop extends BottomPopupView {
     public List<MenuItemInfo> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View.OnClickListener f11212c;
+    public View.OnClickListener c;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/menu/BottomMenuPop$MenuItemInfo.class */
     public static class MenuItemInfo {
-
-        /* renamed from: a  reason: collision with root package name */
-        public String f11214a;
+        public String a;
         public int b = R.color.syc_h;
-
-        /* renamed from: c  reason: collision with root package name */
-        public int f11215c;
+        public int c;
         public View.OnClickListener d;
     }
 
@@ -49,8 +43,8 @@ public class BottomMenuPop extends BottomPopupView {
             public void onClick(View view) {
                 Tracker.onClick(view);
                 BottomMenuPop.this.p();
-                if (BottomMenuPop.this.f11212c != null) {
-                    BottomMenuPop.this.f11212c.onClick(view);
+                if (BottomMenuPop.this.c != null) {
+                    BottomMenuPop.this.c.onClick(view);
                 }
             }
         });

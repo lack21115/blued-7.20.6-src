@@ -7,21 +7,22 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.os.Build;
 import androidx.core.util.Pair;
+import com.tencent.tinker.android.dex.DexFormat;
 
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/graphics/PaintCompat.class */
 public final class PaintCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<Pair<Rect, Rect>> f2450a = new ThreadLocal<>();
+    private static final ThreadLocal<Pair<Rect, Rect>> f2402a = new ThreadLocal<>();
 
     private PaintCompat() {
     }
 
     private static Pair<Rect, Rect> a() {
-        Pair<Rect, Rect> pair = f2450a.get();
+        Pair<Rect, Rect> pair = f2402a.get();
         if (pair == null) {
             Pair<Rect, Rect> pair2 = new Pair<>(new Rect(), new Rect());
-            f2450a.set(pair2);
+            f2402a.set(pair2);
             return pair2;
         }
         pair.first.setEmpty();
@@ -37,7 +38,7 @@ public final class PaintCompat {
         if (length == 1 && Character.isWhitespace(str.charAt(0))) {
             return true;
         }
-        float measureText = paint.measureText("��");
+        float measureText = paint.measureText(DexFormat.MAGIC_SUFFIX);
         float measureText2 = paint.measureText("m");
         float measureText3 = paint.measureText(str);
         float f = 0.0f;
@@ -66,7 +67,7 @@ public final class PaintCompat {
             return true;
         }
         Pair<Rect, Rect> a2 = a();
-        paint.getTextBounds("��", 0, 2, a2.first);
+        paint.getTextBounds(DexFormat.MAGIC_SUFFIX, 0, 2, a2.first);
         paint.getTextBounds(str, 0, length, a2.second);
         return !a2.first.equals(a2.second);
     }

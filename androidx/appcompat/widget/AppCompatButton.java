@@ -30,11 +30,11 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<AppCompatButton> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1740a = false;
+        private boolean f1692a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1741c;
+        private int f1693c;
         private int d;
         private int e;
         private int f;
@@ -45,7 +45,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapInt("autoSizeMaxTextSize", R.attr.autoSizeMaxTextSize);
-            this.f1741c = propertyMapper.mapInt("autoSizeMinTextSize", R.attr.autoSizeMinTextSize);
+            this.f1693c = propertyMapper.mapInt("autoSizeMinTextSize", R.attr.autoSizeMinTextSize);
             this.d = propertyMapper.mapInt("autoSizeStepGranularity", R.attr.autoSizeStepGranularity);
             this.e = propertyMapper.mapIntEnum("autoSizeTextType", R.attr.autoSizeTextType, new IntFunction<String>() { // from class: androidx.appcompat.widget.AppCompatButton.InspectionCompanion.1
                 @Override // java.util.function.IntFunction
@@ -57,16 +57,16 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
             this.g = propertyMapper.mapObject("backgroundTintMode", R.attr.backgroundTintMode);
             this.h = propertyMapper.mapObject("drawableTint", R.attr.drawableTint);
             this.i = propertyMapper.mapObject("drawableTintMode", R.attr.drawableTintMode);
-            this.f1740a = true;
+            this.f1692a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(AppCompatButton appCompatButton, PropertyReader propertyReader) {
-            if (!this.f1740a) {
+            if (!this.f1692a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readInt(this.b, appCompatButton.getAutoSizeMaxTextSize());
-            propertyReader.readInt(this.f1741c, appCompatButton.getAutoSizeMinTextSize());
+            propertyReader.readInt(this.f1693c, appCompatButton.getAutoSizeMinTextSize());
             propertyReader.readInt(this.d, appCompatButton.getAutoSizeStepGranularity());
             propertyReader.readIntEnum(this.e, appCompatButton.getAutoSizeTextType());
             propertyReader.readObject(this.f, appCompatButton.getBackgroundTintList());
@@ -104,9 +104,8 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         return this.mAppCompatEmojiTextHelper;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void drawableStateChanged() {
+    protected void drawableStateChanged() {
         super.drawableStateChanged();
         AppCompatBackgroundHelper appCompatBackgroundHelper = this.mBackgroundTintHelper;
         if (appCompatBackgroundHelper != null) {
@@ -118,7 +117,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         }
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeMaxTextSize() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeMaxTextSize();
@@ -130,7 +129,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         return -1;
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeMinTextSize() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeMinTextSize();
@@ -142,7 +141,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         return -1;
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeStepGranularity() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeStepGranularity();
@@ -154,7 +153,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         return -1;
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int[] getAutoSizeTextAvailableSizes() {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             return super.getAutoSizeTextAvailableSizes();
@@ -163,7 +162,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         return appCompatTextHelper != null ? appCompatTextHelper.i() : new int[0];
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public int getAutoSizeTextType() {
         int i = 0;
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
@@ -217,13 +216,13 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         return getEmojiTextViewHelper().isEnabled();
     }
 
-    @Override // android.widget.Button, android.widget.TextView, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         super.onInitializeAccessibilityEvent(accessibilityEvent);
         accessibilityEvent.setClassName(Button.class.getName());
     }
 
-    @Override // android.widget.Button, android.widget.TextView, android.view.View
+    @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(Button.class.getName());
@@ -253,7 +252,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         getEmojiTextViewHelper().b(z);
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public void setAutoSizeTextTypeUniformWithConfiguration(int i, int i2, int i3, int i4) throws IllegalArgumentException {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeUniformWithConfiguration(i, i2, i3, i4);
@@ -265,7 +264,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         }
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i) throws IllegalArgumentException {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i);
@@ -277,7 +276,7 @@ public class AppCompatButton extends Button implements EmojiCompatConfigurationV
         }
     }
 
-    @Override // androidx.core.widget.AutoSizeableTextView
+    @Override // android.widget.TextView, androidx.core.widget.AutoSizeableTextView
     public void setAutoSizeTextTypeWithDefaults(int i) {
         if (PLATFORM_SUPPORTS_AUTOSIZE) {
             super.setAutoSizeTextTypeWithDefaults(i);

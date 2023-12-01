@@ -14,32 +14,32 @@ import java.util.concurrent.TimeUnit;
 public abstract class a<T extends k> {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f36627a = TimeUnit.SECONDS.toMillis(1);
+    private static final long f22936a = TimeUnit.SECONDS.toMillis(1);
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<InterfaceC0936a, Deque<T>> f36628c = new HashMap();
+    private final Map<InterfaceC0766a, Deque<T>> f22937c = new HashMap();
     private volatile boolean d = false;
-    private final com.tencent.liteav.base.b.a e = new com.tencent.liteav.base.b.a(f36627a);
+    private final com.tencent.liteav.base.b.a e = new com.tencent.liteav.base.b.a(f22936a);
     private final g<T> f = new g(this) { // from class: com.tencent.liteav.videobase.frame.b
 
         /* renamed from: a  reason: collision with root package name */
-        private final a f36629a;
+        private final a f22938a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         {
-            this.f36629a = this;
+            this.f22938a = this;
         }
 
         @Override // com.tencent.liteav.videobase.frame.g
         public final void a(k kVar) {
-            a.a(this.f36629a, kVar);
+            a.a(this.f22938a, kVar);
         }
     };
     private final String b = null;
 
     /* renamed from: com.tencent.liteav.videobase.frame.a$a  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/videobase/frame/a$a.class */
-    public interface InterfaceC0936a {
+    public interface InterfaceC0766a {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -48,7 +48,7 @@ public abstract class a<T extends k> {
         if (kVar == 0) {
             return;
         }
-        synchronized (aVar.f36628c) {
+        synchronized (aVar.f22937c) {
             if (aVar.d) {
                 aVar.a((a) kVar);
                 return;
@@ -60,12 +60,12 @@ public abstract class a<T extends k> {
         }
     }
 
-    private Deque<T> b(InterfaceC0936a interfaceC0936a) {
-        Deque<T> deque = this.f36628c.get(interfaceC0936a);
+    private Deque<T> b(InterfaceC0766a interfaceC0766a) {
+        Deque<T> deque = this.f22937c.get(interfaceC0766a);
         LinkedList linkedList = deque;
         if (deque == null) {
             linkedList = new LinkedList();
-            this.f36628c.put(interfaceC0936a, linkedList);
+            this.f22937c.put(interfaceC0766a, linkedList);
         }
         return linkedList;
     }
@@ -76,9 +76,9 @@ public abstract class a<T extends k> {
         if (this.e.a()) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             ArrayList<k> arrayList = new ArrayList();
-            synchronized (this.f36628c) {
-                for (Deque<T> deque : this.f36628c.values()) {
-                    while (!deque.isEmpty() && ((peekLast = deque.peekLast()) == null || elapsedRealtime - peekLast.getLastUsedTimestamp() >= f36627a)) {
+            synchronized (this.f22937c) {
+                for (Deque<T> deque : this.f22937c.values()) {
+                    while (!deque.isEmpty() && ((peekLast = deque.peekLast()) == null || elapsedRealtime - peekLast.getLastUsedTimestamp() >= f22936a)) {
                         deque.pollLast();
                         arrayList.add(peekLast);
                     }
@@ -91,16 +91,16 @@ public abstract class a<T extends k> {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final T a(InterfaceC0936a interfaceC0936a) {
+    public final T a(InterfaceC0766a interfaceC0766a) {
         T removeFirst;
-        synchronized (this.f36628c) {
-            Deque<T> b = b(interfaceC0936a);
+        synchronized (this.f22937c) {
+            Deque<T> b = b(interfaceC0766a);
             removeFirst = !b.isEmpty() ? b.removeFirst() : null;
         }
         c();
         T t = removeFirst;
         if (removeFirst == null) {
-            t = a(this.f, interfaceC0936a);
+            t = a(this.f, interfaceC0766a);
         }
         if (t.retain() != 1) {
             LiteavLog.e("FramePool", "invalid reference count for %s", t);
@@ -108,16 +108,16 @@ public abstract class a<T extends k> {
         return t;
     }
 
-    protected abstract T a(g<T> gVar, InterfaceC0936a interfaceC0936a);
+    protected abstract T a(g<T> gVar, InterfaceC0766a interfaceC0766a);
 
     /* JADX WARN: Multi-variable type inference failed */
     public void a() {
         ArrayList<k> arrayList = new ArrayList();
-        synchronized (this.f36628c) {
-            for (Deque<T> deque : this.f36628c.values()) {
+        synchronized (this.f22937c) {
+            for (Deque<T> deque : this.f22937c.values()) {
                 arrayList.addAll(deque);
             }
-            this.f36628c.clear();
+            this.f22937c.clear();
         }
         for (k kVar : arrayList) {
             a((a<T>) kVar);
@@ -126,7 +126,7 @@ public abstract class a<T extends k> {
 
     protected abstract void a(T t);
 
-    protected abstract InterfaceC0936a b(T t);
+    protected abstract InterfaceC0766a b(T t);
 
     public void b() {
         this.d = true;

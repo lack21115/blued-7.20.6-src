@@ -22,11 +22,11 @@ import java.util.Map;
 public class NativeUnifiedADDataAdapter implements NativeUnifiedADData, DownloadConfirmListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private NativeUnifiedADData f27887a;
+    private NativeUnifiedADData f14199a;
     private NativeADEventListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private NativeADMediaListener f27888c;
+    private NativeADMediaListener f14200c;
     private DownloadConfirmListener d;
     private NegativeFeedbackListener e;
 
@@ -49,7 +49,7 @@ public class NativeUnifiedADDataAdapter implements NativeUnifiedADData, Download
     }
 
     public NativeUnifiedADDataAdapter(NativeUnifiedADData nativeUnifiedADData) {
-        this.f27887a = nativeUnifiedADData;
+        this.f14199a = nativeUnifiedADData;
         if (nativeUnifiedADData instanceof ADEventListener) {
             ((ADEventListener) nativeUnifiedADData).setAdListener(new UnifiedAdListener());
         }
@@ -88,50 +88,50 @@ public class NativeUnifiedADDataAdapter implements NativeUnifiedADData, Download
     }
 
     static boolean b(NativeUnifiedADDataAdapter nativeUnifiedADDataAdapter, ADEvent aDEvent) {
-        if (nativeUnifiedADDataAdapter.f27888c == null) {
+        if (nativeUnifiedADDataAdapter.f14200c == null) {
             return false;
         }
         switch (aDEvent.getType()) {
             case 201:
                 Integer num = (Integer) aDEvent.getParam(Integer.class);
                 if (num != null) {
-                    nativeUnifiedADDataAdapter.f27888c.onVideoLoaded(num.intValue());
+                    nativeUnifiedADDataAdapter.f14200c.onVideoLoaded(num.intValue());
                     return true;
                 }
                 return true;
             case 202:
-                nativeUnifiedADDataAdapter.f27888c.onVideoStart();
+                nativeUnifiedADDataAdapter.f14200c.onVideoStart();
                 return true;
             case 203:
-                nativeUnifiedADDataAdapter.f27888c.onVideoResume();
+                nativeUnifiedADDataAdapter.f14200c.onVideoResume();
                 return true;
             case 204:
-                nativeUnifiedADDataAdapter.f27888c.onVideoPause();
+                nativeUnifiedADDataAdapter.f14200c.onVideoPause();
                 return true;
             case 205:
-                nativeUnifiedADDataAdapter.f27888c.onVideoStop();
+                nativeUnifiedADDataAdapter.f14200c.onVideoStop();
                 return true;
             case 206:
-                nativeUnifiedADDataAdapter.f27888c.onVideoCompleted();
+                nativeUnifiedADDataAdapter.f14200c.onVideoCompleted();
                 return true;
             case 207:
                 Integer num2 = (Integer) aDEvent.getParam(Integer.class);
                 if (num2 != null) {
-                    nativeUnifiedADDataAdapter.f27888c.onVideoError(AdErrorConvertor.formatErrorCode(num2.intValue()));
+                    nativeUnifiedADDataAdapter.f14200c.onVideoError(AdErrorConvertor.formatErrorCode(num2.intValue()));
                     return true;
                 }
                 return true;
             case 208:
-                nativeUnifiedADDataAdapter.f27888c.onVideoClicked();
+                nativeUnifiedADDataAdapter.f14200c.onVideoClicked();
                 return true;
             case 209:
-                nativeUnifiedADDataAdapter.f27888c.onVideoInit();
+                nativeUnifiedADDataAdapter.f14200c.onVideoInit();
                 return true;
             case 210:
-                nativeUnifiedADDataAdapter.f27888c.onVideoReady();
+                nativeUnifiedADDataAdapter.f14200c.onVideoReady();
                 return true;
             case 211:
-                nativeUnifiedADDataAdapter.f27888c.onVideoLoading();
+                nativeUnifiedADDataAdapter.f14200c.onVideoLoading();
                 return true;
             default:
                 return false;
@@ -148,187 +148,187 @@ public class NativeUnifiedADDataAdapter implements NativeUnifiedADData, Download
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToCustomVideo(ViewGroup viewGroup, Context context, List<View> list, List<View> list2) {
-        this.f27887a.bindAdToCustomVideo(viewGroup, context, list, list2);
+        this.f14199a.bindAdToCustomVideo(viewGroup, context, list, list2);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToView(Context context, NativeAdContainer nativeAdContainer, FrameLayout.LayoutParams layoutParams, List<View> list) {
-        this.f27887a.bindAdToView(context, nativeAdContainer, layoutParams, list);
+        this.f14199a.bindAdToView(context, nativeAdContainer, layoutParams, list);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindAdToView(Context context, NativeAdContainer nativeAdContainer, FrameLayout.LayoutParams layoutParams, List<View> list, List<View> list2) {
-        this.f27887a.bindAdToView(context, nativeAdContainer, layoutParams, list, list2);
+        this.f14199a.bindAdToView(context, nativeAdContainer, layoutParams, list, list2);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindCTAViews(List<View> list) {
-        this.f27887a.bindCTAViews(list);
+        this.f14199a.bindCTAViews(list);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindImageViews(List<ImageView> list, int i) {
-        this.f27887a.bindImageViews(list, i);
+        this.f14199a.bindImageViews(list, i);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindImageViews(List<ImageView> list, byte[] bArr) {
-        this.f27887a.bindImageViews(list, bArr);
+        this.f14199a.bindImageViews(list, bArr);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void bindMediaView(MediaView mediaView, VideoOption videoOption, NativeADMediaListener nativeADMediaListener) {
-        this.f27888c = nativeADMediaListener;
-        this.f27887a.bindMediaView(mediaView, videoOption, nativeADMediaListener);
+        this.f14200c = nativeADMediaListener;
+        this.f14199a.bindMediaView(mediaView, videoOption, nativeADMediaListener);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void destroy() {
-        this.f27887a.destroy();
+        this.f14199a.destroy();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean equalsAdData(NativeUnifiedADData nativeUnifiedADData) {
-        return this.f27887a.equalsAdData(nativeUnifiedADData);
+        return this.f14199a.equalsAdData(nativeUnifiedADData);
     }
 
     public NativeUnifiedADData getAdData() {
-        return this.f27887a;
+        return this.f14199a;
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAdPatternType() {
-        return this.f27887a.getAdPatternType();
+        return this.f14199a.getAdPatternType();
     }
 
     @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public String getApkInfoUrl() {
-        return this.f27887a.getApkInfoUrl();
+        return this.f14199a.getApkInfoUrl();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public NativeUnifiedADAppMiitInfo getAppMiitInfo() {
-        return this.f27887a.getAppMiitInfo();
+        return this.f14199a.getAppMiitInfo();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public double getAppPrice() {
-        return this.f27887a.getAppPrice();
+        return this.f14199a.getAppPrice();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAppScore() {
-        return this.f27887a.getAppScore();
+        return this.f14199a.getAppScore();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getAppStatus() {
-        return this.f27887a.getAppStatus();
+        return this.f14199a.getAppStatus();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getButtonText() {
-        return this.f27887a.getButtonText();
+        return this.f14199a.getButtonText();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getCTAText() {
-        return this.f27887a.getCTAText();
+        return this.f14199a.getCTAText();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public CustomizeVideo getCustomizeVideo() {
-        return this.f27887a.getCustomizeVideo();
+        return this.f14199a.getCustomizeVideo();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getDesc() {
-        return this.f27887a.getDesc();
+        return this.f14199a.getDesc();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public long getDownloadCount() {
-        return this.f27887a.getDownloadCount();
+        return this.f14199a.getDownloadCount();
     }
 
     @Override // com.qq.e.comm.pi.LADI
     public int getECPM() {
-        return this.f27887a.getECPM();
+        return this.f14199a.getECPM();
     }
 
     @Override // com.qq.e.comm.pi.LADI
     public String getECPMLevel() {
-        return this.f27887a.getECPMLevel();
+        return this.f14199a.getECPMLevel();
     }
 
     @Override // com.qq.e.comm.pi.LADI
     public Map<String, Object> getExtraInfo() {
-        return this.f27887a.getExtraInfo();
+        return this.f14199a.getExtraInfo();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getIconUrl() {
-        return this.f27887a.getIconUrl();
+        return this.f14199a.getIconUrl();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public List<String> getImgList() {
-        return this.f27887a.getImgList();
+        return this.f14199a.getImgList();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getImgUrl() {
-        return this.f27887a.getImgUrl();
+        return this.f14199a.getImgUrl();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getPictureHeight() {
-        return this.f27887a.getPictureHeight();
+        return this.f14199a.getPictureHeight();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getPictureWidth() {
-        return this.f27887a.getPictureWidth();
+        return this.f14199a.getPictureWidth();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getProgress() {
-        return this.f27887a.getProgress();
+        return this.f14199a.getProgress();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public String getTitle() {
-        return this.f27887a.getTitle();
+        return this.f14199a.getTitle();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getVideoCurrentPosition() {
-        return this.f27887a.getVideoCurrentPosition();
+        return this.f14199a.getVideoCurrentPosition();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public int getVideoDuration() {
-        return this.f27887a.getVideoDuration();
+        return this.f14199a.getVideoDuration();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean isAppAd() {
-        return this.f27887a.isAppAd();
+        return this.f14199a.isAppAd();
     }
 
     @Override // com.qq.e.comm.pi.LADI
     public boolean isValid() {
-        return this.f27887a.isValid();
+        return this.f14199a.isValid();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public boolean isWeChatCanvasAd() {
-        return this.f27887a.isWeChatCanvasAd();
+        return this.f14199a.isWeChatCanvasAd();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void negativeFeedback() {
-        this.f27887a.negativeFeedback();
+        this.f14199a.negativeFeedback();
     }
 
     @Override // com.qq.e.comm.compliance.DownloadConfirmListener
@@ -341,12 +341,12 @@ public class NativeUnifiedADDataAdapter implements NativeUnifiedADData, Download
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void pauseAppDownload() {
-        this.f27887a.pauseAppDownload();
+        this.f14199a.pauseAppDownload();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void pauseVideo() {
-        this.f27887a.pauseVideo();
+        this.f14199a.pauseVideo();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
@@ -355,43 +355,43 @@ public class NativeUnifiedADDataAdapter implements NativeUnifiedADData, Download
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resumeAppDownload() {
-        this.f27887a.resumeAppDownload();
+        this.f14199a.resumeAppDownload();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void resumeVideo() {
-        this.f27887a.resumeVideo();
+        this.f14199a.resumeVideo();
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(int i, int i2, String str) {
-        this.f27887a.sendLossNotification(i, i2, str);
+        this.f14199a.sendLossNotification(i, i2, str);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(Map<String, Object> map) {
-        this.f27887a.sendLossNotification(map);
+        this.f14199a.sendLossNotification(map);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(int i) {
-        this.f27887a.sendWinNotification(i);
+        this.f14199a.sendWinNotification(i);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(Map<String, Object> map) {
-        this.f27887a.sendWinNotification(map);
+        this.f14199a.sendWinNotification(map);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void setBidECPM(int i) {
-        this.f27887a.setBidECPM(i);
+        this.f14199a.setBidECPM(i);
     }
 
     @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public void setDownloadConfirmListener(DownloadConfirmListener downloadConfirmListener) {
         this.d = downloadConfirmListener;
-        NativeUnifiedADData nativeUnifiedADData = this.f27887a;
+        NativeUnifiedADData nativeUnifiedADData = this.f14199a;
         if (nativeUnifiedADData != null) {
             nativeUnifiedADData.setDownloadConfirmListener(this);
         }
@@ -409,16 +409,16 @@ public class NativeUnifiedADDataAdapter implements NativeUnifiedADData, Download
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void setVideoMute(boolean z) {
-        this.f27887a.setVideoMute(z);
+        this.f14199a.setVideoMute(z);
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void startVideo() {
-        this.f27887a.startVideo();
+        this.f14199a.startVideo();
     }
 
     @Override // com.qq.e.ads.nativ.NativeUnifiedADData
     public void stopVideo() {
-        this.f27887a.stopVideo();
+        this.f14199a.stopVideo();
     }
 }

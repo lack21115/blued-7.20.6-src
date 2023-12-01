@@ -4,10 +4,10 @@ package com.tencent.mapsdk.internal;
 public class si extends yf {
 
     /* renamed from: a  reason: collision with root package name */
-    private yi f38012a;
+    private yi f24321a;
 
     public si(yi yiVar) {
-        this.f38012a = yiVar;
+        this.f24321a = yiVar;
     }
 
     @Override // com.tencent.mapsdk.internal.yf
@@ -17,19 +17,19 @@ public class si extends yf {
 
     @Override // com.tencent.mapsdk.internal.yf
     public boolean b() {
-        yi yiVar = this.f38012a;
+        yi yiVar = this.f24321a;
         return yiVar == null ? super.b() : yiVar.K0;
     }
 
     @Override // com.tencent.mapsdk.internal.yf
     public boolean d() {
-        yi yiVar = this.f38012a;
+        yi yiVar = this.f24321a;
         return yiVar == null ? super.d() : yiVar.K0;
     }
 
     @Override // com.tencent.mapsdk.internal.yf
     public boolean e() {
-        yi yiVar = this.f38012a;
+        yi yiVar = this.f24321a;
         return yiVar == null ? super.e() : yiVar.I0;
     }
 
@@ -40,13 +40,13 @@ public class si extends yf {
 
     @Override // com.tencent.mapsdk.internal.yf
     public boolean g() {
-        yi yiVar = this.f38012a;
+        yi yiVar = this.f24321a;
         return yiVar == null ? super.g() : yiVar.M0;
     }
 
     @Override // com.tencent.mapsdk.internal.yf
     public boolean h() {
-        yi yiVar = this.f38012a;
+        yi yiVar = this.f24321a;
         return yiVar == null ? super.h() : yiVar.J0;
     }
 
@@ -57,13 +57,13 @@ public class si extends yf {
 
     @Override // com.tencent.mapsdk.internal.yf
     public boolean j() {
-        yi yiVar = this.f38012a;
+        yi yiVar = this.f24321a;
         return yiVar == null ? super.j() : yiVar.L0;
     }
 
     @Override // com.tencent.mapsdk.internal.yf
     public boolean k() {
-        yi yiVar = this.f38012a;
+        yi yiVar = this.f24321a;
         return yiVar == null ? super.k() : yiVar.K0;
     }
 }

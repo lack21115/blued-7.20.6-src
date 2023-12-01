@@ -16,20 +16,16 @@ import org.commonmark.parser.block.ParserState;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ListBlockParser.class */
 public class ListBlockParser extends AbstractBlockParser {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ListBlock f44031a;
+    private final ListBlock a;
     private boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f44032c;
+    private int c;
 
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ListBlockParser$Factory.class */
     public static class Factory extends AbstractBlockParserFactory {
         @Override // org.commonmark.parser.block.BlockParserFactory
         public BlockStart a(ParserState parserState, MatchedBlockParser matchedBlockParser) {
-            BlockParser a2 = matchedBlockParser.a();
-            if (parserState.f() >= Parsing.f44049a) {
+            BlockParser a = matchedBlockParser.a();
+            if (parserState.f() >= Parsing.a) {
                 return BlockStart.f();
             }
             ListData b = ListBlockParser.b(parserState.b(), parserState.d(), parserState.e() + parserState.f(), matchedBlockParser.b() != null);
@@ -38,11 +34,11 @@ public class ListBlockParser extends AbstractBlockParser {
             }
             int i = b.b;
             ListItemParser listItemParser = new ListItemParser(i - parserState.e());
-            if ((a2 instanceof ListBlockParser) && ListBlockParser.b((ListBlock) a2.c(), b.f44033a)) {
+            if ((a instanceof ListBlockParser) && ListBlockParser.b((ListBlock) a.c(), b.a)) {
                 return BlockStart.a(listItemParser).b(i);
             }
-            ListBlockParser listBlockParser = new ListBlockParser(b.f44033a);
-            b.f44033a.a(true);
+            ListBlockParser listBlockParser = new ListBlockParser(b.a);
+            b.a.a(true);
             return BlockStart.a(listBlockParser, listItemParser).b(i);
         }
     }
@@ -50,13 +46,11 @@ public class ListBlockParser extends AbstractBlockParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ListBlockParser$ListData.class */
     public static class ListData {
-
-        /* renamed from: a  reason: collision with root package name */
-        final ListBlock f44033a;
+        final ListBlock a;
         final int b;
 
         ListData(ListBlock listBlock, int i) {
-            this.f44033a = listBlock;
+            this.a = listBlock;
             this.b = i;
         }
     }
@@ -64,19 +58,17 @@ public class ListBlockParser extends AbstractBlockParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-3503164-dex2jar.jar:org/commonmark/internal/ListBlockParser$ListMarkerData.class */
     public static class ListMarkerData {
-
-        /* renamed from: a  reason: collision with root package name */
-        final ListBlock f44034a;
+        final ListBlock a;
         final int b;
 
         ListMarkerData(ListBlock listBlock, int i) {
-            this.f44034a = listBlock;
+            this.a = listBlock;
             this.b = i;
         }
     }
 
     public ListBlockParser(ListBlock listBlock) {
-        this.f44031a = listBlock;
+        this.a = listBlock;
     }
 
     private static ListMarkerData a(CharSequence charSequence, int i) {
@@ -99,7 +91,7 @@ public class ListBlockParser extends AbstractBlockParser {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code restructure failed: missing block: B:32:0x009d, code lost:
-        if ((r6 - r0) > org.commonmark.internal.util.Parsing.f44049a) goto L35;
+        if ((r6 - r0) > org.commonmark.internal.util.Parsing.a) goto L35;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -117,7 +109,7 @@ public class ListBlockParser extends AbstractBlockParser {
             return r0
         Le:
             r0 = r13
-            org.commonmark.node.ListBlock r0 = r0.f44034a
+            org.commonmark.node.ListBlock r0 = r0.a
             r14 = r0
             r0 = r13
             int r0 = r0.b
@@ -199,7 +191,7 @@ public class ListBlockParser extends AbstractBlockParser {
             r0 = r6
             r1 = r10
             int r0 = r0 - r1
-            int r1 = org.commonmark.internal.util.Parsing.f44049a
+            int r1 = org.commonmark.internal.util.Parsing.a
             if (r0 <= r1) goto La5
         La0:
             r0 = r10
@@ -285,9 +277,9 @@ public class ListBlockParser extends AbstractBlockParser {
     public BlockContinue a(ParserState parserState) {
         if (parserState.g()) {
             this.b = true;
-            this.f44032c = 0;
+            this.c = 0;
         } else if (this.b) {
-            this.f44032c++;
+            this.c++;
         }
         return BlockContinue.a(parserState.c());
     }
@@ -300,8 +292,8 @@ public class ListBlockParser extends AbstractBlockParser {
     @Override // org.commonmark.parser.block.AbstractBlockParser, org.commonmark.parser.block.BlockParser
     public boolean a(Block block) {
         if (block instanceof ListItem) {
-            if (this.b && this.f44032c == 1) {
-                this.f44031a.a(false);
+            if (this.b && this.c == 1) {
+                this.a.a(false);
                 this.b = false;
                 return true;
             }
@@ -312,6 +304,6 @@ public class ListBlockParser extends AbstractBlockParser {
 
     @Override // org.commonmark.parser.block.BlockParser
     public Block c() {
-        return this.f44031a;
+        return this.a;
     }
 }

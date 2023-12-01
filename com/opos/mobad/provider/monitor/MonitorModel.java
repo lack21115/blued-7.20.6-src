@@ -16,7 +16,7 @@ public class MonitorModel implements d {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile MonitorModel f27115a;
+    private static volatile MonitorModel f13427a;
     private Context b;
 
     private MonitorModel(Context context) {
@@ -26,18 +26,18 @@ public class MonitorModel implements d {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final MonitorModel b(Context context) {
-        if (f27115a == null) {
+        if (f13427a == null) {
             synchronized (MonitorModel.class) {
                 try {
-                    if (f27115a == null) {
-                        f27115a = new MonitorModel(context);
+                    if (f13427a == null) {
+                        f13427a = new MonitorModel(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f27115a;
+        return f13427a;
     }
 
     @BridgeMethod(a = 1)

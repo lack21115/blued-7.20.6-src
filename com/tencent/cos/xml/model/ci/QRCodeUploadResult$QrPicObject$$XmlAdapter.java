@@ -28,6 +28,7 @@ public class QRCodeUploadResult$QrPicObject$$XmlAdapter implements IXmlAdapter<Q
             }
         });
         this.childElementBinders.put("QRcodeInfo", new ChildElementBinder<QRCodeUploadResult.QrPicObject>() { // from class: com.tencent.cos.xml.model.ci.QRCodeUploadResult$QrPicObject$$XmlAdapter.2
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, QRCodeUploadResult.QrPicObject qrPicObject, String str) throws IOException, XmlPullParserException {
                 if (qrPicObject.qrCodeInfo == null) {

@@ -33,7 +33,7 @@ import java.util.Collection;
 public class TagUserFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f33719a = "TAG_STR";
+    public static String f20028a = "TAG_STR";
     public static String b = "TAG_ID";
     private Context d;
     private View e;
@@ -53,8 +53,7 @@ public class TagUserFragment extends BaseFragment {
     private boolean o = true;
 
     /* renamed from: c  reason: collision with root package name */
-    BluedUIHttpResponse f33720c = new BluedUIHttpResponse<BluedEntity<UserFindResult, BluedMyExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.tag_show.TagUserFragment.5
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    BluedUIHttpResponse f20029c = new BluedUIHttpResponse<BluedEntity<UserFindResult, BluedMyExtra>>(getFragmentActive()) { // from class: com.soft.blued.ui.tag_show.TagUserFragment.5
         public void onUIFinish() {
             super.onUIFinish();
             TagUserFragment.this.f.j();
@@ -65,16 +64,15 @@ public class TagUserFragment extends BaseFragment {
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<UserFindResult, BluedMyExtra> bluedEntity) {
             if (bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                 if (TagUserFragment.this.m != 1) {
                     TagUserFragment.h(TagUserFragment.this);
                 }
                 if (BluedPreferences.H()) {
-                    AppMethods.a((CharSequence) TagUserFragment.this.d.getResources().getString(R.string.biao_find_sift_nodata));
+                    AppMethods.a(TagUserFragment.this.d.getResources().getString(R.string.biao_find_sift_nodata));
                 } else {
-                    AppMethods.a((CharSequence) TagUserFragment.this.d.getResources().getString(2131887275));
+                    AppMethods.a(TagUserFragment.this.d.getResources().getString(2131887275));
                 }
                 if (TagUserFragment.this.i) {
                     TagUserFragment.this.q.setEnableLoadMore(false);
@@ -111,12 +109,11 @@ public class TagUserFragment extends BaseFragment {
                 TagUserFragment.this.p.addData((Collection<? extends UserFindResult>) bluedEntity.data);
             }
             if (bluedEntity.extra != null) {
-                TagUserFragment.this.k = bluedEntity.extra.getNext_min_dist();
-                TagUserFragment.this.l = bluedEntity.extra.getNext_skip_uid();
+                TagUserFragment.this.k = ((BluedMyExtra) bluedEntity.extra).getNext_min_dist();
+                TagUserFragment.this.l = ((BluedMyExtra) bluedEntity.extra).getNext_skip_uid();
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<UserFindResult, BluedMyExtra> parseData(String str) {
             BluedEntity<UserFindResult, BluedMyExtra> parseData = super.parseData(str);
             if (parseData != null) {
@@ -126,8 +123,8 @@ public class TagUserFragment extends BaseFragment {
                     if (i2 >= parseData.data.size()) {
                         break;
                     }
-                    parseData.data.get(i2).distance = DistanceUtils.a(parseData.data.get(i2).distance, BlueAppLocal.c(), false);
-                    parseData.data.get(i2).last_operate = TimeAndDateUtils.a(TagUserFragment.this.d, TimeAndDateUtils.c(parseData.data.get(i2).last_operate));
+                    ((UserFindResult) parseData.data.get(i2)).distance = DistanceUtils.a(((UserFindResult) parseData.data.get(i2)).distance, BlueAppLocal.c(), false);
+                    ((UserFindResult) parseData.data.get(i2)).last_operate = TimeAndDateUtils.a(TagUserFragment.this.d, TimeAndDateUtils.c(((UserFindResult) parseData.data.get(i2)).last_operate));
                     i = i2 + 1;
                 }
             }
@@ -145,7 +142,7 @@ public class TagUserFragment extends BaseFragment {
         Bundle arguments = getArguments();
         if (arguments != null) {
             this.r = arguments.getString(b);
-            this.s = arguments.getString(f33719a);
+            this.s = arguments.getString(f20028a);
         }
         int aF = BluedPreferences.aF();
         if (aF == 1) {
@@ -158,20 +155,19 @@ public class TagUserFragment extends BaseFragment {
 
     private void d() {
         this.h = PeopleGridQuickAdapter.a(this.d);
-        PullToRefreshRecyclerView pullToRefreshRecyclerView = (PullToRefreshRecyclerView) this.e.findViewById(2131366898);
-        this.f = pullToRefreshRecyclerView;
+        PullToRefreshRecyclerView findViewById = this.e.findViewById(R.id.list_view);
+        this.f = findViewById;
         boolean z = true;
-        pullToRefreshRecyclerView.setRefreshEnabled(true);
-        RecyclerView refreshableView = this.f.getRefreshableView();
-        this.g = refreshableView;
-        refreshableView.setClipToPadding(false);
+        findViewById.setRefreshEnabled(true);
+        RecyclerView recyclerView = (RecyclerView) this.f.getRefreshableView();
+        this.g = recyclerView;
+        recyclerView.setClipToPadding(false);
         this.g.setScrollBarStyle(33554432);
         if (BluedPreferences.J() != 1) {
             z = false;
         }
         this.i = z;
         this.f.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<RecyclerView>() { // from class: com.soft.blued.ui.tag_show.TagUserFragment.1
-            @Override // com.blued.android.framework.view.pulltorefresh.PullToRefreshBase.OnRefreshListener
             public void onRefresh(PullToRefreshBase<RecyclerView> pullToRefreshBase) {
                 TagUserFragment.this.a(true);
             }
@@ -213,7 +209,7 @@ public class TagUserFragment extends BaseFragment {
             this.o = true;
         }
         if (!this.o) {
-            AppMethods.a((CharSequence) this.d.getResources().getString(2131887275));
+            AppMethods.a(this.d.getResources().getString(2131887275));
             this.f.j();
             return;
         }
@@ -229,12 +225,12 @@ public class TagUserFragment extends BaseFragment {
         filterEntity.source = "tag";
         filterEntity.column = PeopleGridQuickAdapter.a(this.d);
         if (this.m == 1) {
-            NearbyHttpUtils.b(getActivity(), this.f33720c, filterEntity, "", getFragmentActive());
+            NearbyHttpUtils.b(getActivity(), this.f20029c, filterEntity, "", getFragmentActive());
             return;
         }
         filterEntity.next_min_dist = this.k;
         filterEntity.next_skip_uid = this.l;
-        NearbyHttpUtils.b(getActivity(), this.f33720c, filterEntity, "", getFragmentActive());
+        NearbyHttpUtils.b(getActivity(), this.f20029c, filterEntity, "", getFragmentActive());
     }
 
     public void b() {
@@ -267,7 +263,6 @@ public class TagUserFragment extends BaseFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.d = getActivity();
         View view = this.e;
@@ -281,7 +276,6 @@ public class TagUserFragment extends BaseFragment {
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

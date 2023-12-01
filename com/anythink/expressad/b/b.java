@@ -8,31 +8,27 @@ import java.util.Map;
 public final class b extends com.anythink.core.common.res.image.b {
 
     /* renamed from: a  reason: collision with root package name */
-    String f7119a;
+    String f4281a;
 
     private b(String str, String str2) {
         super(str);
-        this.f7119a = str2;
+        this.f4281a = str2;
     }
 
-    @Override // com.anythink.core.common.res.image.b
     public final Map<String, String> a() {
         return null;
     }
 
-    @Override // com.anythink.core.common.res.image.b
     public final void a(com.anythink.core.common.k.b.b bVar) {
         com.anythink.core.common.k.b.a.a().a(bVar, 2);
     }
 
-    @Override // com.anythink.core.common.res.image.b
     public final void a(String str, String str2) {
     }
 
-    @Override // com.anythink.core.common.res.image.b
     public final boolean a(InputStream inputStream) {
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(this.f7119a);
+            FileOutputStream fileOutputStream = new FileOutputStream(this.f4281a);
             byte[] bArr = new byte[2048];
             while (true) {
                 int read = inputStream.read(bArr);
@@ -47,11 +43,9 @@ public final class b extends com.anythink.core.common.res.image.b {
         }
     }
 
-    @Override // com.anythink.core.common.res.image.b
     public final void b() {
     }
 
-    @Override // com.anythink.core.common.res.image.b
     public final void c() {
     }
 }

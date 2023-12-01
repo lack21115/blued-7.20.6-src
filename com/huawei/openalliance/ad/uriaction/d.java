@@ -29,8 +29,10 @@ public class d {
         return V.get(0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v23, types: [com.huawei.openalliance.ad.uriaction.f] */
     private static List<q> V(Context context, AdContentData adContentData, Map<String, String> map, List<Integer> list) {
-        f kVar;
+        k kVar;
         ArrayList arrayList = null;
         if (list != null) {
             arrayList = null;

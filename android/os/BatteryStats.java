@@ -1,5 +1,6 @@
 package android.os;
 
+import android.app.backup.FullBackup;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.hardware.usb.UsbManager;
@@ -12,16 +13,14 @@ import android.util.SparseIntArray;
 import android.util.TimeUtils;
 import android.view.SurfaceControl;
 import androidx.exifinterface.media.ExifInterface;
-import com.alipay.sdk.app.statistic.c;
 import com.android.internal.os.BatterySipper;
 import com.android.internal.os.BatteryStatsHelper;
-import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.util.cm.QSConstants;
 import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.blued.android.chat.data.MsgType;
+import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import com.igexin.push.core.b;
 import com.umeng.analytics.pro.at;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Formatter;
@@ -177,13 +176,13 @@ public abstract class BatteryStats implements Parcelable {
     private static final String[] STAT_NAMES = {"l", "c", "u"};
     static final String[] SCREEN_BRIGHTNESS_NAMES = {"dark", "dim", "medium", "light", "bright"};
     static final String[] SCREEN_BRIGHTNESS_SHORT_NAMES = {"0", "1", "2", "3", "4"};
-    static final String[] DATA_CONNECTION_NAMES = {"none", "gprs", "edge", "umts", "cdma", "evdo_0", "evdo_A", "1xrtt", "hsdpa", "hsupa", "hspa", "iden", "evdo_b", QSConstants.TILE_LTE, "ehrpd", "hspap", "other"};
+    static final String[] DATA_CONNECTION_NAMES = {"none", "gprs", "edge", "umts", "cdma", "evdo_0", "evdo_A", "1xrtt", "hsdpa", "hsupa", "hspa", "iden", "evdo_b", "lte", "ehrpd", "hspap", "other"};
     static final String[] WIFI_SUPPL_STATE_NAMES = {"invalid", "disconn", "disabled", "inactive", "scanning", "authenticating", "associating", "associated", "4-way-handshake", "group-handshake", "completed", "dormant", "uninit"};
-    static final String[] WIFI_SUPPL_STATE_SHORT_NAMES = {"inv", "dsc", "dis", "inact", "scan", c.d, "ascing", "asced", "4-way", "group", "compl", "dorm", "uninit"};
-    public static final BitDescription[] HISTORY_STATE_DESCRIPTIONS = {new BitDescription(Integer.MIN_VALUE, "running", "r"), new BitDescription(1073741824, "wake_lock", IAdInterListener.AdReqParam.WIDTH), new BitDescription(8388608, "sensor", "s"), new BitDescription(536870912, "gps", "g"), new BitDescription(268435456, "wifi_full_lock", "Wl"), new BitDescription(134217728, "wifi_scan", "Ws"), new BitDescription(67108864, "wifi_multicast", "Wm"), new BitDescription(33554432, "mobile_radio", "Pr"), new BitDescription(2097152, "phone_scanning", "Psc"), new BitDescription(4194304, "audio", "a"), new BitDescription(1048576, "screen", ExifInterface.LATITUDE_SOUTH), new BitDescription(524288, BatteryManager.EXTRA_PLUGGED, "BP"), new BitDescription(262144, "phone_in_call", "Pcl"), new BitDescription(65536, "bluetooth", "b"), new BitDescription(HistoryItem.STATE_DATA_CONNECTION_MASK, 9, "data_conn", "Pcn", DATA_CONNECTION_NAMES, DATA_CONNECTION_NAMES), new BitDescription(448, 6, "phone_state", "Pst", new String[]{"in", "out", PhoneConstants.APN_TYPE_EMERGENCY, "off"}, new String[]{"in", "out", "em", "off"}), new BitDescription(56, 3, "phone_signal_strength", "Pss", SignalStrength.SIGNAL_STRENGTH_NAMES, new String[]{"0", "1", "2", "3", "4"}), new BitDescription(7, 0, "brightness", "Sb", SCREEN_BRIGHTNESS_NAMES, SCREEN_BRIGHTNESS_SHORT_NAMES)};
-    public static final BitDescription[] HISTORY_STATE2_DESCRIPTIONS = {new BitDescription(Integer.MIN_VALUE, Settings.Global.LOW_POWER_MODE, "lp"), new BitDescription(1073741824, "video", "v"), new BitDescription(536870912, "wifi_running", "Wr"), new BitDescription(268435456, "wifi", "W"), new BitDescription(134217728, QSConstants.TILE_FLASHLIGHT, "fl"), new BitDescription(112, 4, "wifi_signal_strength", "Wss", new String[]{"0", "1", "2", "3", "4"}, new String[]{"0", "1", "2", "3", "4"}), new BitDescription(15, 0, "wifi_suppl", "Wsp", WIFI_SUPPL_STATE_NAMES, WIFI_SUPPL_STATE_SHORT_NAMES)};
+    static final String[] WIFI_SUPPL_STATE_SHORT_NAMES = {"inv", "dsc", "dis", "inact", "scan", "auth", "ascing", "asced", "4-way", "group", "compl", "dorm", "uninit"};
+    public static final BitDescription[] HISTORY_STATE_DESCRIPTIONS = {new BitDescription(Integer.MIN_VALUE, "running", "r"), new BitDescription(1073741824, "wake_lock", IAdInterListener.AdReqParam.WIDTH), new BitDescription(8388608, "sensor", "s"), new BitDescription(536870912, "gps", OapsKey.KEY_GRADE), new BitDescription(268435456, "wifi_full_lock", "Wl"), new BitDescription(134217728, "wifi_scan", "Ws"), new BitDescription(67108864, "wifi_multicast", "Wm"), new BitDescription(33554432, "mobile_radio", "Pr"), new BitDescription(2097152, "phone_scanning", "Psc"), new BitDescription(4194304, "audio", "a"), new BitDescription(1048576, "screen", ExifInterface.LATITUDE_SOUTH), new BitDescription(524288, BatteryManager.EXTRA_PLUGGED, "BP"), new BitDescription(262144, "phone_in_call", "Pcl"), new BitDescription(65536, "bluetooth", "b"), new BitDescription(HistoryItem.STATE_DATA_CONNECTION_MASK, 9, "data_conn", "Pcn", DATA_CONNECTION_NAMES, DATA_CONNECTION_NAMES), new BitDescription(448, 6, "phone_state", "Pst", new String[]{"in", "out", "emergency", "off"}, new String[]{"in", "out", "em", "off"}), new BitDescription(56, 3, "phone_signal_strength", "Pss", SignalStrength.SIGNAL_STRENGTH_NAMES, new String[]{"0", "1", "2", "3", "4"}), new BitDescription(7, 0, "brightness", "Sb", SCREEN_BRIGHTNESS_NAMES, SCREEN_BRIGHTNESS_SHORT_NAMES)};
+    public static final BitDescription[] HISTORY_STATE2_DESCRIPTIONS = {new BitDescription(Integer.MIN_VALUE, Settings.Global.LOW_POWER_MODE, "lp"), new BitDescription(1073741824, "video", "v"), new BitDescription(536870912, "wifi_running", "Wr"), new BitDescription(268435456, "wifi", "W"), new BitDescription(134217728, "flashlight", "fl"), new BitDescription(112, 4, "wifi_signal_strength", "Wss", new String[]{"0", "1", "2", "3", "4"}, new String[]{"0", "1", "2", "3", "4"}), new BitDescription(15, 0, "wifi_suppl", "Wsp", WIFI_SUPPL_STATE_NAMES, WIFI_SUPPL_STATE_SHORT_NAMES)};
     private static final String FOREGROUND_DATA = "fg";
-    public static final String[] HISTORY_EVENT_NAMES = {b.l, "proc", FOREGROUND_DATA, Constant.MAP_KEY_TOP, QSConstants.TILE_SYNC, "wake_lock_in", "job", "user", "userfg", "conn"};
+    public static final String[] HISTORY_EVENT_NAMES = {b.l, "proc", FOREGROUND_DATA, Constant.MAP_KEY_TOP, "sync", "wake_lock_in", "job", "user", "userfg", "conn"};
     public static final String[] HISTORY_EVENT_CHECKIN_NAMES = {"Enl", "Epr", "Efg", "Etp", "Esy", "Ewl", "Ejb", "Eur", "Euf", "Ecn"};
     static final String[] WIFI_STATE_NAMES = {"off", "scanning", "no_net", "disconn", at.x, "p2p", "sta_p2p", "soft_ap"};
     static final String[] BLUETOOTH_STATE_NAMES = {"inactive", "low", "med", "high"};
@@ -688,7 +687,7 @@ public abstract class BatteryStats implements Parcelable {
                             if (historyItem.states < 16) {
                                 printWriter.print("0000000");
                             } else if (historyItem.states < 256) {
-                                printWriter.print(MsgType.UID_GROUP_AT_ALL);
+                                printWriter.print("000000");
                             } else if (historyItem.states < 4096) {
                                 printWriter.print("00000");
                             } else if (historyItem.states < 65536) {
@@ -725,7 +724,7 @@ public abstract class BatteryStats implements Parcelable {
                             printWriter.print(z ? "n" : "not-charging");
                             break;
                         case 5:
-                            printWriter.print(z ? "f" : com.anythink.expressad.d.a.b.ax);
+                            printWriter.print(z ? FullBackup.DATA_TREE_TOKEN : com.anythink.expressad.d.a.b.ax);
                             break;
                         default:
                             printWriter.print(this.oldStatus);
@@ -740,7 +739,7 @@ public abstract class BatteryStats implements Parcelable {
                             printWriter.print(z ? "?" : "unknown");
                             break;
                         case 2:
-                            printWriter.print(z ? "g" : "good");
+                            printWriter.print(z ? OapsKey.KEY_GRADE : "good");
                             break;
                         case 3:
                             printWriter.print(z ? "h" : "overheat");
@@ -752,7 +751,7 @@ public abstract class BatteryStats implements Parcelable {
                             printWriter.print(z ? "v" : "over-voltage");
                             break;
                         case 6:
-                            printWriter.print(z ? "f" : "failure");
+                            printWriter.print(z ? FullBackup.DATA_TREE_TOKEN : "failure");
                             break;
                         case 7:
                             printWriter.print(z ? "c" : "cold");
@@ -813,7 +812,7 @@ public abstract class BatteryStats implements Parcelable {
                     if ((historyItem.eventCode & 32768) != 0) {
                         printWriter.print("+");
                     } else if ((historyItem.eventCode & 16384) != 0) {
-                        printWriter.print("-");
+                        printWriter.print(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     }
                     String[] strArr = z ? BatteryStats.HISTORY_EVENT_CHECKIN_NAMES : BatteryStats.HISTORY_EVENT_NAMES;
                     int i = historyItem.eventCode & HistoryItem.EVENT_TYPE_MASK;
@@ -1401,7 +1400,7 @@ public abstract class BatteryStats implements Parcelable {
             if ((bitDescription.mask & i3) != 0) {
                 printWriter.print(z ? " " : ",");
                 if (bitDescription.shift < 0) {
-                    printWriter.print((bitDescription.mask & i2) != 0 ? "+" : "-");
+                    printWriter.print((bitDescription.mask & i2) != 0 ? "+" : Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     printWriter.print(z ? bitDescription.name : bitDescription.shortName);
                     z3 = z2;
                     if (bitDescription.mask == 1073741824) {
@@ -1567,7 +1566,7 @@ public abstract class BatteryStats implements Parcelable {
         SparseArray<? extends Uid> uidStats = getUidStats();
         int size = uidStats.size();
         String str2 = STAT_NAMES[i];
-        dumpLine(printWriter, 0, str2, "bt", i == 0 ? Integer.valueOf(getStartCount()) : "N/A", Long.valueOf(computeBatteryRealtime / 1000), Long.valueOf(computeBatteryUptime / 1000), Long.valueOf(computeRealtime / 1000), Long.valueOf(computeUptime / 1000), Long.valueOf(getStartClockTime()), Long.valueOf(computeBatteryScreenOffRealtime / 1000), Long.valueOf(computeBatteryScreenOffUptime / 1000));
+        dumpLine(printWriter, 0, str2, BATTERY_DATA, i == 0 ? Integer.valueOf(getStartCount()) : "N/A", Long.valueOf(computeBatteryRealtime / 1000), Long.valueOf(computeBatteryUptime / 1000), Long.valueOf(computeRealtime / 1000), Long.valueOf(computeUptime / 1000), Long.valueOf(getStartClockTime()), Long.valueOf(computeBatteryScreenOffRealtime / 1000), Long.valueOf(computeBatteryScreenOffUptime / 1000));
         long j = 0;
         long j2 = 0;
         int i3 = 0;
@@ -1771,14 +1770,14 @@ public abstract class BatteryStats implements Parcelable {
         BatteryStatsHelper batteryStatsHelper = new BatteryStatsHelper(context, false, z);
         batteryStatsHelper.create(this);
         batteryStatsHelper.refreshStats(i, -1);
-        List<BatterySipper> usageList = batteryStatsHelper.getUsageList();
+        List usageList = batteryStatsHelper.getUsageList();
         if (usageList != null && usageList.size() > 0) {
             dumpLine(printWriter, 0, str2, POWER_USE_SUMMARY_DATA, BatteryStatsHelper.makemAh(batteryStatsHelper.getPowerProfile().getBatteryCapacity()), BatteryStatsHelper.makemAh(batteryStatsHelper.getComputedPower()), BatteryStatsHelper.makemAh(batteryStatsHelper.getMinDrainedPower()), BatteryStatsHelper.makemAh(batteryStatsHelper.getMaxDrainedPower()));
             int i30 = 0;
             while (true) {
                 int i31 = i30;
                 if (i31 < usageList.size()) {
-                    BatterySipper batterySipper = usageList.get(i31);
+                    BatterySipper batterySipper = (BatterySipper) usageList.get(i31);
                     int i32 = 0;
                     switch (AnonymousClass2.$SwitchMap$com$android$internal$os$BatterySipper$DrainType[batterySipper.drainType.ordinal()]) {
                         case 1:
@@ -1800,7 +1799,7 @@ public abstract class BatteryStats implements Parcelable {
                             str = "scrn";
                             break;
                         case 7:
-                            str = QSConstants.TILE_FLASHLIGHT;
+                            str = "flashlight";
                             break;
                         case 8:
                             i32 = batterySipper.uidObj.getUid();
@@ -1876,7 +1875,7 @@ public abstract class BatteryStats implements Parcelable {
                     for (Map.Entry<String, ? extends Uid.Wakelock> entry3 : wakelockStats2.entrySet()) {
                         Uid.Wakelock value2 = entry3.getValue();
                         sb.setLength(0);
-                        printWakeLockCheckin(sb, value2.getWakeTime(2), elapsedRealtime, IAdInterListener.AdReqParam.WIDTH, i, printWakeLockCheckin(sb, value2.getWakeTime(0), elapsedRealtime, "p", i, printWakeLockCheckin(sb, value2.getWakeTime(1), elapsedRealtime, "f", i, "")));
+                        printWakeLockCheckin(sb, value2.getWakeTime(2), elapsedRealtime, IAdInterListener.AdReqParam.WIDTH, i, printWakeLockCheckin(sb, value2.getWakeTime(0), elapsedRealtime, "p", i, printWakeLockCheckin(sb, value2.getWakeTime(1), elapsedRealtime, FullBackup.DATA_TREE_TOKEN, i, "")));
                         if (sb.length() > 0) {
                             String key = entry3.getKey();
                             String str3 = key;

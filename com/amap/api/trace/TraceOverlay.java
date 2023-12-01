@@ -16,13 +16,9 @@ public class TraceOverlay {
     public static final int TRACE_STATUS_FINISH = 2;
     public static final int TRACE_STATUS_PREPARE = 4;
     public static final int TRACE_STATUS_PROCESSING = 1;
-
-    /* renamed from: a  reason: collision with root package name */
-    private Polyline f5810a;
+    private Polyline a;
     private PolylineOptions b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private AMap f5811c;
+    private AMap c;
     private List<LatLng> d;
     private int e;
     private int f;
@@ -31,18 +27,18 @@ public class TraceOverlay {
     public TraceOverlay(AMap aMap) {
         this.d = new ArrayList();
         this.e = 4;
-        this.f5811c = aMap;
+        this.c = aMap;
         a();
     }
 
     public TraceOverlay(AMap aMap, List<LatLng> list) {
         this.d = new ArrayList();
         this.e = 4;
-        this.f5811c = aMap;
+        this.c = aMap;
         a();
         this.d = list;
         this.b.addAll(list);
-        this.f5810a = aMap.addPolyline(this.b);
+        this.a = aMap.addPolyline(this.b);
     }
 
     private PolylineOptions a() {
@@ -61,10 +57,10 @@ public class TraceOverlay {
         }
         this.d.addAll(list);
         a();
-        if (this.f5810a == null) {
-            this.f5810a = this.f5811c.addPolyline(this.b);
+        if (this.a == null) {
+            this.a = this.c.addPolyline(this.b);
         }
-        Polyline polyline = this.f5810a;
+        Polyline polyline = this.a;
         if (polyline != null) {
             polyline.setPoints(this.d);
         }
@@ -83,7 +79,7 @@ public class TraceOverlay {
     }
 
     public void remove() {
-        Polyline polyline = this.f5810a;
+        Polyline polyline = this.a;
         if (polyline != null) {
             polyline.remove();
         }
@@ -102,7 +98,7 @@ public class TraceOverlay {
             builder.include(latLng);
         }
         try {
-            this.f5811c.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 20));
+            this.c.moveCamera(CameraUpdateFactory.newLatLngBounds(builder.build(), 20));
         } catch (Throwable th) {
             th.printStackTrace();
         }

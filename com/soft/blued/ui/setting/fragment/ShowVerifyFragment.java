@@ -36,7 +36,6 @@ import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
 import com.blued.android.module.common.utils.area.AreaUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.bytedance.applog.tracker.Tracker;
 import com.soft.blued.R;
@@ -48,11 +47,11 @@ import java.io.File;
 public class ShowVerifyFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f33604a;
+    private Context f19913a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f33605c = "";
+    private String f19914c = "";
     private String d = "";
     private String e = "";
     private boolean f = false;
@@ -80,13 +79,13 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
     }
 
     private void b() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.b.findViewById(2131370749);
-        commonTopTitleNoTrans.a();
-        commonTopTitleNoTrans.setCenterText(getString(2131891257));
-        commonTopTitleNoTrans.setRightImgDrawable(BluedSkinUtils.b(this.f33604a, 2131233917));
-        commonTopTitleNoTrans.setLeftClickListener(this);
-        commonTopTitleNoTrans.setRightClickListener(this);
-        commonTopTitleNoTrans.setCenterTextColor(2131102254);
+        CommonTopTitleNoTrans findViewById = this.b.findViewById(R.id.top_title);
+        findViewById.a();
+        findViewById.setCenterText(getString(2131891257));
+        findViewById.setRightImgDrawable(BluedSkinUtils.b(this.f19913a, 2131233917));
+        findViewById.setLeftClickListener(this);
+        findViewById.setRightClickListener(this);
+        findViewById.setCenterTextColor(2131102254);
     }
 
     private void c() {
@@ -102,7 +101,7 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
         this.q = DialogUtils.a(getActivity());
         TextView textView = (TextView) this.b.findViewById(2131372046);
         this.i = textView;
-        textView.setText(this.f33605c);
+        textView.setText(this.f19914c);
         this.j = (TextView) this.b.findViewById(R.id.tv_verify_description);
         e();
         this.r = (RelativeLayout) this.b.findViewById(2131363811);
@@ -113,9 +112,9 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
         TextView textView2 = (TextView) this.b.findViewById(R.id.tv_start_verify);
         this.k = textView2;
         textView2.setOnClickListener(this);
-        this.o = (LinearLayout) this.b.findViewById(2131367669);
+        this.o = (LinearLayout) this.b.findViewById(R.id.ll_bottom_button);
         this.l = (TextView) this.b.findViewById(R.id.tv_verify_hint);
-        this.l.setText(this.f33604a.getResources().getString(2131891340));
+        this.l.setText(this.f19913a.getResources().getString(2131891340));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -131,19 +130,17 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
     private void f() {
         GroupHttpUtils.k(getActivity(), new BluedUIHttpResponse<BluedEntityA<VerifyStatus>>() { // from class: com.soft.blued.ui.setting.fragment.ShowVerifyFragment.4
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<VerifyStatus> parseData(String str) {
-                return (BluedEntityA) super.parseData(str);
+                return super.parseData(str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VerifyStatus> bluedEntityA) {
                 if (bluedEntityA != null) {
                     try {
                         if (bluedEntityA.hasData()) {
-                            ShowVerifyFragment.this.f = "1".equals(bluedEntityA.data.get(0).has_audited);
+                            ShowVerifyFragment.this.f = "1".equals(((VerifyStatus) bluedEntityA.data.get(0)).has_audited);
                             if (ShowVerifyFragment.this.f) {
                                 ShowVerifyFragment.this.k.setVisibility(8);
                                 ShowVerifyFragment.this.o.setVisibility(8);
@@ -155,7 +152,7 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                         return;
                     }
                 }
@@ -171,37 +168,33 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
         }
         GroupHttpUtils.k(getActivity(), new BluedUIHttpResponse<BluedEntityA<VerifyStatus>>() { // from class: com.soft.blued.ui.setting.fragment.ShowVerifyFragment.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public BluedEntityA<VerifyStatus> parseData(String str) {
-                return (BluedEntityA) super.parseData(str);
+                return super.parseData(str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<VerifyStatus> bluedEntityA) {
                 if (bluedEntityA != null) {
                     try {
                         if (bluedEntityA.hasData()) {
-                            ShowVerifyFragment.this.e = TimeAndDateUtils.b(TimeAndDateUtils.c(bluedEntityA.data.get(0).verified_time));
+                            ShowVerifyFragment.this.e = TimeAndDateUtils.b(TimeAndDateUtils.c(((VerifyStatus) bluedEntityA.data.get(0)).verified_time));
                             ShowVerifyFragment.this.e();
                             return;
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131887272));
+                        AppMethods.a(AppInfo.d().getResources().getString(2131887272));
                         return;
                     }
                 }
                 AppMethods.d(2131887272);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 DialogUtils.b(ShowVerifyFragment.this.q);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 DialogUtils.a(ShowVerifyFragment.this.q);
             }
@@ -219,11 +212,11 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
                 return;
             }
             if (StringUtils.d(UserInfo.getInstance().getLoginUserInfo().getAvatar())) {
-                CommonAlertDialog.a(getActivity(), (String) null, getResources().getString(2131891033), getResources().getString(2131892413), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ShowVerifyFragment.2
+                CommonAlertDialog.a(getActivity(), (String) null, getResources().getString(2131891033), getResources().getString(R.string.upload), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.ShowVerifyFragment.2
                     @Override // android.content.DialogInterface.OnClickListener
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Tracker.onClick(dialogInterface, i);
-                        ModifyUserInfoFragment.a(ShowVerifyFragment.this.f33604a, true);
+                        ModifyUserInfoFragment.a(ShowVerifyFragment.this.f19913a, true);
                     }
                 }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null);
             } else {
@@ -231,32 +224,30 @@ public class ShowVerifyFragment extends BaseFragment implements View.OnClickList
             }
         } else {
             final BluedLoginResult loginUserInfo = UserInfo.getInstance().getLoginUserInfo();
-            String str = loginUserInfo.getAge() + getResources().getString(2131886374) + BridgeUtil.SPLIT_MARK + StringUtils.a(loginUserInfo.getHeight(), BlueAppLocal.c(), false) + BridgeUtil.SPLIT_MARK + StringUtils.b(loginUserInfo.getWeight(), BlueAppLocal.c(), false) + BridgeUtil.SPLIT_MARK + UserInfoHelper.a(this.f33604a, loginUserInfo.getRole());
+            String str = loginUserInfo.getAge() + getResources().getString(2131886374) + "/" + StringUtils.a(loginUserInfo.getHeight(), BlueAppLocal.c(), false) + "/" + StringUtils.b(loginUserInfo.getWeight(), BlueAppLocal.c(), false) + "/" + UserInfoHelper.a(this.f19913a, loginUserInfo.getRole());
             final String a2 = BluedHttpUrl.a(this.g);
-            final String str2 = getResources().getString(2131891701) + this.f33605c + getResources().getString(2131891702);
+            final String str2 = getResources().getString(2131891701) + this.f19914c + getResources().getString(2131891702);
             final String str3 = AreaUtils.getAreaTxt(UserInfo.getInstance().getLoginUserInfo().getCity_settled(), BlueAppLocal.c()) + "\n" + str;
             ImageFileLoader.a(getFragmentActive()).b(UserInfo.getInstance().getLoginUserInfo().getAvatar()).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.soft.blued.ui.setting.fragment.ShowVerifyFragment.1
-                @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
                 public void onUIFinish(File file, Exception exc) {
                     Bitmap decodeFile = (file == null || !file.exists()) ? null : BitmapFactory.decodeFile(file.getPath());
                     UserBasicModel userBasicModel = new UserBasicModel();
                     userBasicModel.uid = loginUserInfo.getUid();
                     userBasicModel.name = loginUserInfo.getName();
                     userBasicModel.description = loginUserInfo.getDescription();
-                    ShareUtils.a().a(ShowVerifyFragment.this.f33604a, ShareUtils.a().a(ShowVerifyFragment.this.f33604a, ShowVerifyFragment.this.d, null, decodeFile, a2, str2, str3, str3, userBasicModel));
+                    ShareUtils.a().a(ShowVerifyFragment.this.f19913a, ShareUtils.a().a(ShowVerifyFragment.this.f19913a, ShowVerifyFragment.this.d, null, decodeFile, a2, str2, str3, str3, userBasicModel));
                 }
             }).a();
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f33604a = getActivity();
+        this.f19913a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_show_verify, viewGroup, false);
             if (getArguments() != null) {
-                this.f33605c = getArguments().getString("USER_NAME");
+                this.f19914c = getArguments().getString("USER_NAME");
                 this.d = getArguments().getString("user_avatar");
                 this.e = getArguments().getString("user_verify_date");
                 this.g = getArguments().getString("UID");

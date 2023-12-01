@@ -23,11 +23,11 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
     private boolean B;
 
     /* renamed from: a  reason: collision with root package name */
-    private WeakReference<GLSurfaceView> f27640a;
+    private WeakReference<GLSurfaceView> f13952a;
     private MediaPlayer b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27641c;
+    private int f13953c;
     private int d;
     private Surface g;
     private SurfaceTexture h;
@@ -54,7 +54,7 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
     private Queue<Runnable> A = new LinkedList();
 
     public b(GLSurfaceView gLSurfaceView) {
-        this.f27640a = new WeakReference<>(gLSurfaceView);
+        this.f13952a = new WeakReference<>(gLSurfaceView);
         gLSurfaceView.setEGLContextClientVersion(2);
         gLSurfaceView.setRenderer(this);
         gLSurfaceView.setRenderMode(0);
@@ -81,7 +81,7 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
     }
 
     private void c(int i, int i2) {
-        this.f27641c = i;
+        this.f13953c = i;
         this.d = i2;
         this.o.a(i, i2);
         e eVar = e.k;
@@ -186,7 +186,7 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
                 return;
             }
             this.u = true;
-            GLSurfaceView gLSurfaceView = this.f27640a.get();
+            GLSurfaceView gLSurfaceView = this.f13952a.get();
             if (gLSurfaceView == null) {
                 e.k.d("FilterVideoPlayer", "glSurfaceView released !");
                 return;
@@ -342,7 +342,7 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
 
     public void d() {
         e.k.c("FilterVideoPlayer", "startMediaPlayer");
-        GLSurfaceView gLSurfaceView = this.f27640a.get();
+        GLSurfaceView gLSurfaceView = this.f13952a.get();
         if (gLSurfaceView == null) {
             e.k.d("FilterVideoPlayer", "glSurfaceView released !");
         } else {
@@ -386,7 +386,7 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
 
     public void f() {
         e.k.c("FilterVideoPlayer", "stop +");
-        GLSurfaceView gLSurfaceView = this.f27640a.get();
+        GLSurfaceView gLSurfaceView = this.f13952a.get();
         if (this.x) {
             this.x = false;
         } else {
@@ -397,7 +397,7 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
                 k();
             }
         }
-        this.f27641c = 0;
+        this.f13953c = 0;
         this.d = 0;
         gLSurfaceView.queueEvent(new Runnable() { // from class: com.qiniu.pili.droid.shortvideo.e.b.3
             @Override // java.lang.Runnable
@@ -466,14 +466,14 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
             if (this.t) {
                 PLVideoFilterListener pLVideoFilterListener = this.q;
                 if (pLVideoFilterListener != null) {
-                    i = pLVideoFilterListener.onDrawFrame(this.i, this.f27641c, this.d, timestamp, this.j);
+                    i = pLVideoFilterListener.onDrawFrame(this.i, this.f13953c, this.d, timestamp, this.j);
                 }
             } else {
                 int c2 = this.o.c(this.i, this.j, this.y);
                 PLVideoFilterListener pLVideoFilterListener2 = this.q;
                 i = c2;
                 if (pLVideoFilterListener2 != null) {
-                    i = pLVideoFilterListener2.onDrawFrame(c2, this.f27641c, this.d, timestamp, d.f);
+                    i = pLVideoFilterListener2.onDrawFrame(c2, this.f13953c, this.d, timestamp, d.f);
                 }
             }
             while (!this.A.isEmpty()) {
@@ -488,7 +488,7 @@ public class b implements SurfaceTexture.OnFrameAvailableListener, MediaPlayer.O
 
     @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
     public void onFrameAvailable(SurfaceTexture surfaceTexture) {
-        GLSurfaceView gLSurfaceView = this.f27640a.get();
+        GLSurfaceView gLSurfaceView = this.f13952a.get();
         if (gLSurfaceView != null) {
             gLSurfaceView.requestRender();
         }

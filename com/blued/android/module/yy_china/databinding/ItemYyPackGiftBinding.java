@@ -10,22 +10,18 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyPackGiftBinding.class */
 public final class ItemYyPackGiftBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16771a;
+    public final SquareImageView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16772c;
+    public final TextView c;
     public final TextView d;
     public final TextView e;
     private final ConstraintLayout f;
 
     private ItemYyPackGiftBinding(ConstraintLayout constraintLayout, SquareImageView squareImageView, ShapeTextView shapeTextView, TextView textView, TextView textView2, TextView textView3) {
         this.f = constraintLayout;
-        this.f16771a = squareImageView;
+        this.a = squareImageView;
         this.b = shapeTextView;
-        this.f16772c = textView;
+        this.c = textView;
         this.d = textView2;
         this.e = textView3;
     }
@@ -60,7 +56,6 @@ public final class ItemYyPackGiftBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

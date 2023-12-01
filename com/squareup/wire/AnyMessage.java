@@ -44,63 +44,63 @@ public final class AnyMessage extends Message {
         ADAPTER = new ProtoAdapter<AnyMessage>(fieldEncoding, b, syntax) { // from class: com.squareup.wire.AnyMessage$Companion$ADAPTER$1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // com.squareup.wire.ProtoAdapter
-            public AnyMessage decode(ProtoReader reader) {
-                Intrinsics.e(reader, "reader");
+            public AnyMessage decode(ProtoReader protoReader) {
+                Intrinsics.e(protoReader, "reader");
                 ByteString byteString = ByteString.EMPTY;
-                long beginMessage = reader.beginMessage();
+                long beginMessage = protoReader.beginMessage();
                 String str = "";
                 while (true) {
-                    int nextTag = reader.nextTag();
+                    int nextTag = protoReader.nextTag();
                     if (nextTag == -1) {
-                        reader.endMessageAndGetUnknownFields(beginMessage);
+                        protoReader.endMessageAndGetUnknownFields(beginMessage);
                         return new AnyMessage(str, byteString);
                     } else if (nextTag == 1) {
-                        str = ProtoAdapter.STRING.decode(reader);
+                        str = ProtoAdapter.STRING.decode(protoReader);
                     } else if (nextTag != 2) {
-                        reader.readUnknownField(nextTag);
+                        protoReader.readUnknownField(nextTag);
                     } else {
-                        byteString = ProtoAdapter.BYTES.decode(reader);
+                        byteString = ProtoAdapter.BYTES.decode(protoReader);
                     }
                 }
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ProtoWriter writer, AnyMessage value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                ProtoAdapter.STRING.encodeWithTag(writer, 1, (int) value.getTypeUrl());
-                ProtoAdapter.BYTES.encodeWithTag(writer, 2, (int) value.getValue());
+            public void encode(ProtoWriter protoWriter, AnyMessage anyMessage) {
+                Intrinsics.e(protoWriter, "writer");
+                Intrinsics.e(anyMessage, "value");
+                ProtoAdapter.STRING.encodeWithTag(protoWriter, 1, (int) anyMessage.getTypeUrl());
+                ProtoAdapter.BYTES.encodeWithTag(protoWriter, 2, (int) anyMessage.getValue());
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public void encode(ReverseProtoWriter writer, AnyMessage value) {
-                Intrinsics.e(writer, "writer");
-                Intrinsics.e(value, "value");
-                ProtoAdapter.BYTES.encodeWithTag(writer, 2, (int) value.getValue());
-                ProtoAdapter.STRING.encodeWithTag(writer, 1, (int) value.getTypeUrl());
+            public void encode(ReverseProtoWriter reverseProtoWriter, AnyMessage anyMessage) {
+                Intrinsics.e(reverseProtoWriter, "writer");
+                Intrinsics.e(anyMessage, "value");
+                ProtoAdapter.BYTES.encodeWithTag(reverseProtoWriter, 2, (int) anyMessage.getValue());
+                ProtoAdapter.STRING.encodeWithTag(reverseProtoWriter, 1, (int) anyMessage.getTypeUrl());
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public int encodedSize(AnyMessage value) {
-                Intrinsics.e(value, "value");
-                return ProtoAdapter.STRING.encodedSizeWithTag(1, value.getTypeUrl()) + ProtoAdapter.BYTES.encodedSizeWithTag(2, value.getValue());
+            public int encodedSize(AnyMessage anyMessage) {
+                Intrinsics.e(anyMessage, "value");
+                return ProtoAdapter.STRING.encodedSizeWithTag(1, anyMessage.getTypeUrl()) + ProtoAdapter.BYTES.encodedSizeWithTag(2, anyMessage.getValue());
             }
 
             @Override // com.squareup.wire.ProtoAdapter
-            public AnyMessage redact(AnyMessage value) {
-                Intrinsics.e(value, "value");
+            public AnyMessage redact(AnyMessage anyMessage) {
+                Intrinsics.e(anyMessage, "value");
                 return new AnyMessage("square.github.io/wire/redacted", ByteString.EMPTY);
             }
         };
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public AnyMessage(String typeUrl, ByteString value) {
+    public AnyMessage(String str, ByteString byteString) {
         super(ADAPTER, ByteString.EMPTY);
-        Intrinsics.e(typeUrl, "typeUrl");
-        Intrinsics.e(value, "value");
-        this.typeUrl = typeUrl;
-        this.value = value;
+        Intrinsics.e(str, "typeUrl");
+        Intrinsics.e(byteString, "value");
+        this.typeUrl = str;
+        this.value = byteString;
     }
 
     public /* synthetic */ AnyMessage(String str, ByteString byteString, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -117,10 +117,10 @@ public final class AnyMessage extends Message {
         return anyMessage.copy(str, byteString);
     }
 
-    public final AnyMessage copy(String typeUrl, ByteString value) {
-        Intrinsics.e(typeUrl, "typeUrl");
-        Intrinsics.e(value, "value");
-        return new AnyMessage(typeUrl, value);
+    public final AnyMessage copy(String str, ByteString byteString) {
+        Intrinsics.e(str, "typeUrl");
+        Intrinsics.e(byteString, "value");
+        return new AnyMessage(str, byteString);
     }
 
     public boolean equals(Object obj) {
@@ -129,7 +129,7 @@ public final class AnyMessage extends Message {
         }
         if (obj instanceof AnyMessage) {
             AnyMessage anyMessage = (AnyMessage) obj;
-            return Intrinsics.a((Object) this.typeUrl, (Object) anyMessage.typeUrl) && Intrinsics.a(this.value, anyMessage.value);
+            return Intrinsics.a(this.typeUrl, anyMessage.typeUrl) && Intrinsics.a(this.value, anyMessage.value);
         }
         return false;
     }
@@ -154,12 +154,12 @@ public final class AnyMessage extends Message {
 
     @Override // com.squareup.wire.Message
     public /* bridge */ /* synthetic */ Message.Builder newBuilder() {
-        return (Message.Builder) m9740newBuilder();
+        return (Message.Builder) m6691newBuilder();
     }
 
     @Deprecated
     /* renamed from: newBuilder  reason: collision with other method in class */
-    public /* synthetic */ Void m9740newBuilder() {
+    public /* synthetic */ Void m6691newBuilder() {
         throw new AssertionError();
     }
 
@@ -168,18 +168,18 @@ public final class AnyMessage extends Message {
         return "Any{type_url=" + this.typeUrl + ", value=" + this.value + '}';
     }
 
-    public final <T> T unpack(ProtoAdapter<T> adapter) {
-        Intrinsics.e(adapter, "adapter");
-        if (Intrinsics.a((Object) this.typeUrl, (Object) adapter.getTypeUrl())) {
-            return adapter.decode(this.value);
+    public final <T> T unpack(ProtoAdapter<T> protoAdapter) {
+        Intrinsics.e(protoAdapter, "adapter");
+        if (Intrinsics.a(this.typeUrl, protoAdapter.getTypeUrl())) {
+            return protoAdapter.decode(this.value);
         }
-        throw new IllegalStateException(("type mismatch: " + getTypeUrl() + " != " + ((Object) adapter.getTypeUrl())).toString());
+        throw new IllegalStateException(("type mismatch: " + getTypeUrl() + " != " + ((Object) protoAdapter.getTypeUrl())).toString());
     }
 
-    public final <T> T unpackOrNull(ProtoAdapter<T> adapter) {
-        Intrinsics.e(adapter, "adapter");
-        if (Intrinsics.a((Object) this.typeUrl, (Object) adapter.getTypeUrl())) {
-            return adapter.decode(this.value);
+    public final <T> T unpackOrNull(ProtoAdapter<T> protoAdapter) {
+        Intrinsics.e(protoAdapter, "adapter");
+        if (Intrinsics.a(this.typeUrl, protoAdapter.getTypeUrl())) {
+            return protoAdapter.decode(this.value);
         }
         return null;
     }

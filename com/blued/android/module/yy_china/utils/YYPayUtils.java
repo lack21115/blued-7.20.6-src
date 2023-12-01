@@ -1,10 +1,12 @@
 package com.blued.android.module.yy_china.utils;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import androidx.fragment.app.Fragment;
+import com.anythink.core.common.l;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -24,6 +26,7 @@ import com.blued.android.module.yy_china.YYConstants;
 import com.blued.android.module.yy_china.manager.YYRoomInfoManager;
 import com.blued.android.module.yy_china.model.YYDouZiPayRequestModel;
 import com.blued.android.module.yy_china.model.YYGiftModel;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import com.blued.android.module.yy_china.model.YYGiftWantSelectMode;
 import com.blued.android.module.yy_china.model.YYPayGoodsExtraMode;
 import com.blued.android.module.yy_china.model.YYPayGoodsModel;
@@ -51,13 +54,11 @@ public class YYPayUtils {
     /* renamed from: com.blued.android.module.yy_china.utils.YYPayUtils$8  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/utils/YYPayUtils$8.class */
     public static /* synthetic */ class AnonymousClass8 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f17882a;
+        static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[YYConstants.PayFromSource.values().length];
-            f17882a = iArr;
+            a = iArr;
             try {
                 iArr[YYConstants.PayFromSource.Pay_Gift.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
@@ -173,7 +174,7 @@ public class YYPayUtils {
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<YYPayGoodsModel> bluedEntityA) {
                     if (YYPayUtils.b(baseFragment, activityFragmentActive)) {
-                        KeyboardUtils.a(baseFragment.getActivity());
+                        KeyboardUtils.a((Activity) baseFragment.getActivity());
                         if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                             LogUtils.c("buyGift onUIUpdate failure ... ");
                             YYPayUtils.b(yYDouZiPayRequestModel, 0, null, baseFragment, payGiftStatusListener);
@@ -193,7 +194,7 @@ public class YYPayUtils {
                 public boolean onUIFailure(int i, String str) {
                     LogUtils.c("buyGift failure: errorCode=" + i + "; message:" + str);
                     if (YYPayUtils.b(baseFragment, activityFragmentActive)) {
-                        KeyboardUtils.a(baseFragment.getActivity());
+                        KeyboardUtils.a((Activity) baseFragment.getActivity());
                         YYPayUtils.b(yYDouZiPayRequestModel, i, str, baseFragment, payGiftStatusListener);
                         return true;
                     }
@@ -255,10 +256,11 @@ public class YYPayUtils {
                     yYPayRequestModel.gift.yy_password_success_event = str;
                 }
             }
-            YYRoomHttpUtils.a(yYPayRequestModel.isFirstToMicsInTeam ? "1" : "0", yYPayRequestModel.hit_id + "", yYPayRequestModel.goods_id, yYPayRequestModel.giftCount, yYPayRequestModel.giftCount > 1 ? 1 : 0, yYPayRequestModel.room_id, yYPayRequestModel.target_uid, yYPayRequestModel.beans + "", yYPayRequestModel.payCode, TextUtils.isEmpty(yYPayRequestModel.payCode) ? LiveBasePreferences.a("") : "", yYPayRequestModel.remember_me, yYPayRequestModel.goods_type == new Integer("-1").intValue() ? "1" : "0", TextUtils.isEmpty(yYPayRequestModel.redPacket_group_id) ? "" : yYPayRequestModel.redPacket_group_id, yYPayRequestModel.extra_contents, bluedUIHttpResponse, activityFragmentActive);
+            YYRoomHttpUtils.a(yYPayRequestModel.isFirstToMicsInTeam ? "1" : "0", yYPayRequestModel.hit_id + "", yYPayRequestModel.goods_id, yYPayRequestModel.giftCount, yYPayRequestModel.giftCount > 1 ? 1 : 0, yYPayRequestModel.room_id, yYPayRequestModel.target_uid, yYPayRequestModel.beans + "", yYPayRequestModel.payCode, TextUtils.isEmpty(yYPayRequestModel.payCode) ? LiveBasePreferences.a("") : "", yYPayRequestModel.remember_me, yYPayRequestModel.goods_type == new Integer(YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID).intValue() ? "1" : "0", TextUtils.isEmpty(yYPayRequestModel.redPacket_group_id) ? "" : yYPayRequestModel.redPacket_group_id, yYPayRequestModel.extra_contents, bluedUIHttpResponse, activityFragmentActive);
         }
     }
 
+    /* JADX WARN: Type inference failed for: r2v0, types: [com.blued.android.module.yy_china.utils.YYPayUtils$6] */
     private static void a(String str) {
         LogUtils.c("checkSavePayToken: " + str);
         if (TextUtils.isEmpty(str)) {
@@ -291,7 +293,7 @@ public class YYPayUtils {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("selected_model", t);
                 bundle.putString("title", AppUtils.a(R.string.yy_reset_pay_password));
-                bundle.putString("content", AppUtils.a(R.string.yy_set_6_num));
+                bundle.putString(l.y, AppUtils.a(R.string.yy_set_6_num));
                 bundle.putString("http_host", YYRoomInfoManager.e().c().f());
                 YYRouteUtil.a(baseFragment, bundle, i);
                 return;
@@ -304,7 +306,7 @@ public class YYPayUtils {
                 } else {
                     bundle2.putString("title", str);
                 }
-                bundle2.putString("content", AppUtils.a(R.string.yy_verify_6_num));
+                bundle2.putString(l.y, AppUtils.a(R.string.yy_verify_6_num));
                 YYRouteUtil.a(baseFragment, bundle2, i);
                 return;
             default:
@@ -323,7 +325,7 @@ public class YYPayUtils {
     public static <T extends Serializable> void b(T t, String str, int i, int i2, int i3, String str2, Fragment fragment, PayGiftStatusListener payGiftStatusListener, YYConstants.PayFromSource payFromSource, ArrayList<YYSeatMemberModel> arrayList, boolean z) {
         LogUtils.c("buyGiftFail: " + t.toString() + ", giftCount:" + i + ", errorCode:" + i3 + ", errorMessage:" + str2);
         StringUtils.b(str);
-        if (AnonymousClass8.f17882a[payFromSource.ordinal()] == 1) {
+        if (AnonymousClass8.a[payFromSource.ordinal()] == 1) {
             ((YYGiftModel) t).sendGiftStatus = 2;
             LiveEventBus.get("gift_item_update").post(t);
         }
@@ -353,7 +355,7 @@ public class YYPayUtils {
                 }
                 bundle.putInt("gift_count", i);
                 bundle.putString("title", AppUtils.a(R.string.yy_reset_pay_password));
-                bundle.putString("content", AppUtils.a(R.string.yy_set_6_num));
+                bundle.putString(l.y, AppUtils.a(R.string.yy_set_6_num));
                 bundle.putString("http_host", YYRoomInfoManager.e().c().f());
                 bundle.putBoolean("need_charge_dialog", z);
                 YYRouteUtil.a(fragment, bundle, i3);
@@ -371,7 +373,7 @@ public class YYPayUtils {
                 } else {
                     bundle2.putString("title", str2);
                 }
-                bundle2.putString("content", AppUtils.a(R.string.yy_verify_6_num));
+                bundle2.putString(l.y, AppUtils.a(R.string.yy_verify_6_num));
                 bundle2.putBoolean("need_charge_dialog", z);
                 YYRouteUtil.a(fragment, bundle2, i3);
                 return;

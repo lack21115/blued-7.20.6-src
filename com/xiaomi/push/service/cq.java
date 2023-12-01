@@ -7,18 +7,18 @@ import com.xiaomi.push.service.bg;
 class cq implements bg.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ XMPushService f41674a;
+    final /* synthetic */ XMPushService f27983a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public cq(XMPushService xMPushService) {
-        this.f41674a = xMPushService;
+        this.f27983a = xMPushService;
     }
 
     @Override // com.xiaomi.push.service.bg.a
     public void a() {
-        this.f41674a.e();
-        if (bg.a().m12148a() <= 0) {
-            XMPushService xMPushService = this.f41674a;
+        this.f27983a.e();
+        if (bg.a().m9098a() <= 0) {
+            XMPushService xMPushService = this.f27983a;
             xMPushService.a(new XMPushService.g(12, null));
         }
     }

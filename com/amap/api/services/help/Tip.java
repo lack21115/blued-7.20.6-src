@@ -21,13 +21,9 @@ public class Tip implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5647a;
+    private String a;
     private LatLonPoint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5648c;
+    private String c;
     private String d;
     private String e;
     private String f;
@@ -40,10 +36,10 @@ public class Tip implements Parcelable {
 
     private Tip(Parcel parcel) {
         this.h = "";
-        this.f5648c = parcel.readString();
+        this.c = parcel.readString();
         this.e = parcel.readString();
         this.d = parcel.readString();
-        this.f5647a = parcel.readString();
+        this.a = parcel.readString();
         this.b = (LatLonPoint) parcel.readValue(LatLonPoint.class.getClassLoader());
         this.f = parcel.readString();
         this.g = parcel.readString();
@@ -72,11 +68,11 @@ public class Tip implements Parcelable {
     }
 
     public String getName() {
-        return this.f5648c;
+        return this.c;
     }
 
     public String getPoiID() {
-        return this.f5647a;
+        return this.a;
     }
 
     public LatLonPoint getPoint() {
@@ -100,11 +96,11 @@ public class Tip implements Parcelable {
     }
 
     public void setID(String str) {
-        this.f5647a = str;
+        this.a = str;
     }
 
     public void setName(String str) {
-        this.f5648c = str;
+        this.c = str;
     }
 
     public void setPostion(LatLonPoint latLonPoint) {
@@ -116,15 +112,15 @@ public class Tip implements Parcelable {
     }
 
     public String toString() {
-        return "name:" + this.f5648c + " district:" + this.d + " adcode:" + this.e;
+        return "name:" + this.c + " district:" + this.d + " adcode:" + this.e;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5648c);
+        parcel.writeString(this.c);
         parcel.writeString(this.e);
         parcel.writeString(this.d);
-        parcel.writeString(this.f5647a);
+        parcel.writeString(this.a);
         parcel.writeValue(this.b);
         parcel.writeString(this.f);
         parcel.writeString(this.g);

@@ -4,14 +4,14 @@ package com.youzan.spiderman.html;
 public class HtmlCacheStrategy {
 
     /* renamed from: a  reason: collision with root package name */
-    private Boolean f41817a;
+    private Boolean f28126a;
     private Long b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/youzan/spiderman/html/HtmlCacheStrategy$Builder.class */
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        Boolean f41818a = null;
+        Boolean f28127a = null;
         Long b = null;
 
         public final HtmlCacheStrategy build() {
@@ -19,7 +19,7 @@ public class HtmlCacheStrategy {
         }
 
         public final Builder htmlCacheEnable(boolean z) {
-            this.f41818a = Boolean.valueOf(z);
+            this.f28127a = Boolean.valueOf(z);
             return this;
         }
 
@@ -30,13 +30,13 @@ public class HtmlCacheStrategy {
     }
 
     public HtmlCacheStrategy(Builder builder) {
-        this.f41817a = builder.f41818a;
+        this.f28126a = builder.f28127a;
         this.b = builder.b;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final Boolean a() {
-        return this.f41817a;
+        return this.f28126a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

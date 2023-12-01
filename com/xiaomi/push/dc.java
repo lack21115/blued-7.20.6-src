@@ -2,6 +2,7 @@ package com.xiaomi.push;
 
 import android.content.Context;
 import android.os.Build;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -23,26 +24,26 @@ import java.util.regex.Pattern;
 class dc {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41326a = "/MiPushLog";
+    private static String f27635a = "/MiPushLog";
 
     /* renamed from: a  reason: collision with other field name */
-    private int f279a;
+    private int f232a;
 
     /* renamed from: a  reason: collision with other field name */
-    private boolean f282a;
+    private boolean f235a;
 
     /* renamed from: b  reason: collision with other field name */
-    private String f283b;
+    private String f236b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41327c;
+    private String f27636c;
 
     /* renamed from: a  reason: collision with other field name */
-    private final SimpleDateFormat f280a = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    private final SimpleDateFormat f233a = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     private int b = 2097152;
 
     /* renamed from: a  reason: collision with other field name */
-    private ArrayList<File> f281a = new ArrayList<>();
+    private ArrayList<File> f234a = new ArrayList<>();
 
     private void a(BufferedReader bufferedReader, BufferedWriter bufferedWriter, Pattern pattern) {
         int i;
@@ -74,33 +75,33 @@ class dc {
                     break;
                 }
                 int start = matcher.start();
-                String substring = str.substring(start, this.f283b.length() + start);
-                if (this.f282a) {
+                String substring = str.substring(start, this.f236b.length() + start);
+                if (this.f235a) {
                     i3 = i;
-                    if (substring.compareTo(this.f41327c) > 0) {
+                    if (substring.compareTo(this.f27636c) > 0) {
                         z = true;
                         i2 = start;
                         break;
                     }
                 } else {
                     i3 = i;
-                    if (substring.compareTo(this.f283b) >= 0) {
-                        this.f282a = true;
+                    if (substring.compareTo(this.f236b) >= 0) {
+                        this.f235a = true;
                         i3 = start;
                     }
                 }
                 int indexOf = str.indexOf(10, start);
                 if (indexOf == -1) {
-                    indexOf = this.f283b.length();
+                    indexOf = this.f236b.length();
                 }
                 i4 = start + indexOf;
                 i5 = i3;
             }
-            if (this.f282a) {
+            if (this.f235a) {
                 int i6 = i2 - i;
-                this.f279a += i6;
+                this.f232a += i6;
                 bufferedWriter.write(cArr, i, i6);
-                if (z || this.f279a > this.b) {
+                if (z || this.f232a > this.b) {
                     return;
                 }
             }
@@ -134,7 +135,7 @@ class dc {
                     sb.append("; os :");
                     sb.append(Build.VERSION.INCREMENTAL);
                     sb.append("; uid :");
-                    sb.append(com.xiaomi.push.service.bv.m12168a());
+                    sb.append(com.xiaomi.push.service.bv.m9118a());
                     sb.append("; lng :");
                     sb.append(Locale.getDefault().toString());
                     sb.append("; sdk :48");
@@ -142,8 +143,8 @@ class dc {
                     sb.append(Build.VERSION.SDK_INT);
                     sb.append("\n");
                     bufferedWriter.write(sb.toString());
-                    this.f279a = 0;
-                    Iterator<File> it = this.f281a.iterator();
+                    this.f232a = 0;
+                    Iterator<File> it = this.f234a.iterator();
                     BufferedReader bufferedReader6 = null;
                     while (it.hasNext()) {
                         BufferedReader bufferedReader7 = bufferedReader6;
@@ -220,9 +221,9 @@ class dc {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    dc m11613a(File file) {
+    dc m8563a(File file) {
         if (file.exists()) {
-            this.f281a.add(file);
+            this.f234a.add(file);
         }
         return this;
     }
@@ -230,13 +231,13 @@ class dc {
     dc a(Date date, Date date2) {
         String format;
         if (date.after(date2)) {
-            this.f283b = this.f280a.format(date2);
-            format = this.f280a.format(date);
+            this.f236b = this.f233a.format(date2);
+            format = this.f233a.format(date);
         } else {
-            this.f283b = this.f280a.format(date);
-            format = this.f280a.format(date2);
+            this.f236b = this.f233a.format(date);
+            format = this.f233a.format(date2);
         }
-        this.f41327c = format;
+        this.f27636c = format;
         return this;
     }
 
@@ -254,16 +255,16 @@ class dc {
             if (!file5.exists()) {
                 file2 = context.getFilesDir();
             }
-            m11613a(new File(file2, "xmsf.log.1"));
+            m8563a(new File(file2, "xmsf.log.1"));
             file3 = new File(file2, "xmsf.log");
         } else {
-            file2 = new File(context.getExternalFilesDir(null) + f41326a);
-            m11613a(new File(file2, "log0.txt"));
+            file2 = new File(context.getExternalFilesDir(null) + f27635a);
+            m8563a(new File(file2, "log0.txt"));
             file3 = new File(file2, "log1.txt");
         }
-        m11613a(file3);
+        m8563a(file3);
         if (file2.isDirectory()) {
-            File file6 = new File(file, date.getTime() + "-" + date2.getTime() + ".zip");
+            File file6 = new File(file, date.getTime() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + date2.getTime() + ".zip");
             if (file6.exists()) {
                 return null;
             }

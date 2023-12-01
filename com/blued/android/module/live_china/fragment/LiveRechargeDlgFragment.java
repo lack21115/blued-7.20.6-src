@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,6 @@ import android.widget.TextView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
-import com.anythink.expressad.video.module.a.a.m;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.utils.DensityUtils;
@@ -38,6 +38,7 @@ import com.blued.android.module.live_china.msg.LiveEventBusUtil;
 import com.blued.android.module.live_china.utils.log.trackUtils.EventTrackLive;
 import com.blued.das.live.LiveProtos;
 import com.jeremyliao.liveeventbus.LiveEventBus;
+import java.net.HttpURLConnection;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRechargeDlgFragment.class */
 public class LiveRechargeDlgFragment extends com.blued.android.module.common.fragment.LiveBaseDialogFragment {
@@ -131,7 +132,7 @@ public class LiveRechargeDlgFragment extends com.blued.android.module.common.fra
                 public final void run() {
                     LiveRechargeDlgFragment.AnonymousClass3.this.a();
                 }
-            }, m.ag);
+            }, 3000L);
         }
     }
 
@@ -257,11 +258,11 @@ public class LiveRechargeDlgFragment extends com.blued.android.module.common.fra
             return;
         }
         this.k = false;
-        LiveRoomInfo.a().a(getActivity(), _pay_listVar, "liveFirstN");
+        LiveRoomInfo.a().a((Context) getActivity(), _pay_listVar, "liveFirstN");
     }
 
     private void I() {
-        int a2 = DensityUtils.a(getActivity());
+        int a = DensityUtils.a(getActivity());
         int childCount = this.A.getChildCount();
         int i = 0;
         while (true) {
@@ -285,7 +286,7 @@ public class LiveRechargeDlgFragment extends com.blued.android.module.common.fra
             this.N.addView(childAt);
             RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
             layoutParams.leftMargin = iArr[0];
-            layoutParams.topMargin = iArr[1] - a2;
+            layoutParams.topMargin = iArr[1] - a;
             childAt.setLayoutParams(layoutParams);
             i = i2 + 1;
         }
@@ -340,7 +341,7 @@ public class LiveRechargeDlgFragment extends com.blued.android.module.common.fra
         ObjectAnimator ofFloat5 = ObjectAnimator.ofFloat(view, "ScaleX", 1.0f, 0.0f);
         ofFloat5.setInterpolator(this.P);
         ofFloat5.setDuration(j2);
-        long j3 = i6 + 400;
+        long j3 = i6 + HttpURLConnection.HTTP_BAD_REQUEST;
         ofFloat5.setStartDelay(j3);
         ObjectAnimator ofFloat6 = ObjectAnimator.ofFloat(view, "ScaleY", 1.0f, 0.0f);
         ofFloat6.setInterpolator(this.P);
@@ -653,12 +654,10 @@ public class LiveRechargeDlgFragment extends com.blued.android.module.common.fra
         return R.layout.fragment_live_recharge;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismiss() {
         super.dismissAllowingStateLoss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismissAllowingStateLoss() {
         if (this.j) {
             return;
@@ -674,7 +673,6 @@ public class LiveRechargeDlgFragment extends com.blued.android.module.common.fra
         k();
         o();
         LiveEventBus.get(LiveEventBusUtil.d, PayResultEvent.class).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRechargeDlgFragment$cS2_bDhJfbD6IZ-TaQBy0eXHnnI
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 LiveRechargeDlgFragment.this.a((PayResultEvent) obj);
             }
@@ -738,13 +736,13 @@ public class LiveRechargeDlgFragment extends com.blued.android.module.common.fra
         return true;
     }
 
-    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.h = 0;
         return super.onCreateView(layoutInflater, viewGroup, bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

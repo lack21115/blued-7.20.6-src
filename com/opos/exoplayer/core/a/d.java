@@ -7,7 +7,7 @@ import java.nio.ByteOrder;
 public interface d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ByteBuffer f25014a = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
+    public static final ByteBuffer f11326a = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/a/d$a.class */
     public static final class a extends Exception {

@@ -9,36 +9,36 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile ScheduledThreadPoolExecutor f40979a;
+    public static volatile ScheduledThreadPoolExecutor f27288a;
     public static ThreadFactory b = new a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/umzid/c$a.class */
     public static final class a implements ThreadFactory {
 
         /* renamed from: a  reason: collision with root package name */
-        public AtomicInteger f40980a = new AtomicInteger(0);
+        public AtomicInteger f27289a = new AtomicInteger(0);
 
         @Override // java.util.concurrent.ThreadFactory
         public Thread newThread(Runnable runnable) {
             Thread thread = new Thread(runnable);
-            thread.setName("ZIDThreadPoolExecutor" + this.f40980a.addAndGet(1));
+            thread.setName("ZIDThreadPoolExecutor" + this.f27289a.addAndGet(1));
             return thread;
         }
     }
 
     public static ScheduledThreadPoolExecutor a() {
-        if (f40979a == null) {
+        if (f27288a == null) {
             synchronized (c.class) {
                 try {
-                    if (f40979a == null) {
-                        f40979a = new ScheduledThreadPoolExecutor(Runtime.getRuntime().availableProcessors() * 4, b);
+                    if (f27288a == null) {
+                        f27288a = new ScheduledThreadPoolExecutor(Runtime.getRuntime().availableProcessors() * 4, b);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f40979a;
+        return f27288a;
     }
 
     public static void a(Runnable runnable) {

@@ -14,25 +14,21 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/LiveBunchLightTaskManager.class */
 public final class LiveBunchLightTaskManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final LiveBaseFragment f13614a;
+    private final LiveBaseFragment a;
     private final Handler b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<LiveBunchLightModel> f13615c;
+    private final ArrayList<LiveBunchLightModel> c;
     private long d;
     private long e;
 
     public LiveBunchLightTaskManager(LiveBaseFragment fragmentActive) {
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f13614a = fragmentActive;
+        this.a = fragmentActive;
         this.b = new Handler();
-        this.f13615c = new ArrayList<>();
+        this.c = new ArrayList<>();
     }
 
     private final void a(int i, int i2) {
-        LiveRoomHttpUtils.a(i, i2, this.f13614a.getFragmentActive());
+        LiveRoomHttpUtils.a(i, i2, this.a.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -42,14 +38,14 @@ public final class LiveBunchLightTaskManager {
     }
 
     private final void b() {
-        ArrayList<LiveBunchLightModel> arrayList = this.f13615c;
+        ArrayList<LiveBunchLightModel> arrayList = this.c;
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
         long j = 1000;
         long currentTimeMillis = (this.d + (System.currentTimeMillis() / j)) - this.e;
         long j2 = -1;
-        for (LiveBunchLightModel liveBunchLightModel : this.f13615c) {
+        for (LiveBunchLightModel liveBunchLightModel : this.c) {
             if (liveBunchLightModel.getTaskList() == null) {
                 liveBunchLightModel.setTaskList(new ArrayList<>());
                 long end_time = (liveBunchLightModel.getEnd_time() - liveBunchLightModel.getStart_time()) / (liveBunchLightModel.getFrequency() * 60);
@@ -116,7 +112,7 @@ public final class LiveBunchLightTaskManager {
         long j = 1000;
         long currentTimeMillis = (this.d + (System.currentTimeMillis() / j)) - this.e;
         long j2 = -1;
-        for (LiveBunchLightModel liveBunchLightModel : this.f13615c) {
+        for (LiveBunchLightModel liveBunchLightModel : this.c) {
             ArrayList<Long> taskList = liveBunchLightModel.getTaskList();
             if (taskList == null || taskList.isEmpty()) {
                 return;
@@ -160,7 +156,7 @@ public final class LiveBunchLightTaskManager {
     }
 
     public final void a() {
-        this.f13615c.clear();
+        this.c.clear();
         this.b.removeCallbacksAndMessages(null);
     }
 
@@ -197,7 +193,7 @@ public final class LiveBunchLightTaskManager {
             return;
         }
         a();
-        this.f13615c.addAll(taskList);
+        this.c.addAll(taskList);
         this.d = j;
         this.e = System.currentTimeMillis() / 1000;
         b();

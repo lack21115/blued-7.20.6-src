@@ -4,6 +4,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
+import kotlinx.coroutines.Job;
 import kotlinx.coroutines.SupervisorKt;
 
 @Metadata
@@ -17,7 +18,7 @@ public final class ViewModelKt {
         if (coroutineScope != null) {
             return coroutineScope;
         }
-        Object tagIfAbsent = viewModel.setTagIfAbsent(JOB_KEY, new CloseableCoroutineScope(SupervisorKt.a(null, 1, null).plus(Dispatchers.b().a())));
+        Object tagIfAbsent = viewModel.setTagIfAbsent(JOB_KEY, new CloseableCoroutineScope(SupervisorKt.a((Job) null, 1, (Object) null).plus(Dispatchers.b().a())));
         Intrinsics.c(tagIfAbsent, "setTagIfAbsent(\n        …Main.immediate)\n        )");
         return (CoroutineScope) tagIfAbsent;
     }

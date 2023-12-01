@@ -1,7 +1,6 @@
 package com.kwad.sdk.utils;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -174,9 +173,9 @@ public final class bq {
                             String name = nextEntry.getName();
                             if (!name.contains("../")) {
                                 if (nextEntry.isDirectory()) {
-                                    new File(str + BridgeUtil.SPLIT_MARK + name).mkdirs();
+                                    new File(str + "/" + name).mkdirs();
                                 } else {
-                                    File file2 = new File(str + BridgeUtil.SPLIT_MARK + name);
+                                    File file2 = new File(str + "/" + name);
                                     if (!file2.getParentFile().exists()) {
                                         file2.getParentFile().mkdirs();
                                     }

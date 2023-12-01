@@ -7,11 +7,11 @@ import com.tencent.liteav.base.util.LiteavLog;
 public final class c extends com.tencent.liteav.videobase.a.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36364a;
+    private int f22673a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f36365c;
+    private int f22674c;
     private int d;
 
     public c() {
@@ -26,14 +26,14 @@ public final class c extends com.tencent.liteav.videobase.a.b {
     public final void a(float f) {
         this.b = 0.7f + f;
         LiteavLog.i("GPUSharpen", "set Sharpness ".concat(String.valueOf(f)));
-        setFloatOnDraw(this.f36364a, this.b);
+        setFloatOnDraw(this.f22673a, this.b);
     }
 
     @Override // com.tencent.liteav.videobase.a.b
     public final void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
-        this.f36364a = GLES20.glGetUniformLocation(getProgramId(), "sharpness");
-        this.f36365c = GLES20.glGetUniformLocation(getProgramId(), "imageWidthFactor");
+        this.f22673a = GLES20.glGetUniformLocation(getProgramId(), "sharpness");
+        this.f22674c = GLES20.glGetUniformLocation(getProgramId(), "imageWidthFactor");
         this.d = GLES20.glGetUniformLocation(getProgramId(), "imageHeightFactor");
         a(this.b);
     }
@@ -41,7 +41,7 @@ public final class c extends com.tencent.liteav.videobase.a.b {
     @Override // com.tencent.liteav.videobase.a.b
     public final void onOutputSizeChanged(int i, int i2) {
         super.onOutputSizeChanged(i, i2);
-        setFloatOnDraw(this.f36365c, 1.0f / i);
+        setFloatOnDraw(this.f22674c, 1.0f / i);
         setFloatOnDraw(this.d, 1.0f / i2);
     }
 }

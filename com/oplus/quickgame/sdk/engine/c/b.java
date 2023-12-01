@@ -1,5 +1,6 @@
 package com.oplus.quickgame.sdk.engine.c;
 
+import android.app.backup.FullBackup;
 import com.cdo.oaps.ad.OapsKey;
 import com.google.common.net.HttpHeaders;
 import com.oplus.quickgame.sdk.QuickGame;
@@ -11,11 +12,11 @@ import java.util.Map;
 public class b extends QuickGame.Builder {
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, String> f24396a = new HashMap();
+    Map<String, String> f10709a = new HashMap();
     Map<String, String> b = new HashMap();
 
     /* renamed from: c  reason: collision with root package name */
-    Map<String, String> f24397c = null;
+    Map<String, String> f10710c = null;
     Map<String, String> d = null;
     Callback e;
     String f;
@@ -42,10 +43,10 @@ public class b extends QuickGame.Builder {
 
     @Override // com.oplus.quickgame.sdk.QuickGame.Builder
     public QuickGame.Builder putDeepLink(String str, String str2) {
-        if (this.f24396a == null) {
-            this.f24396a = new HashMap();
+        if (this.f10709a == null) {
+            this.f10709a = new HashMap();
         }
-        this.f24396a.put(str, str2);
+        this.f10709a.put(str, str2);
         return this;
     }
 
@@ -66,10 +67,10 @@ public class b extends QuickGame.Builder {
 
     @Override // com.oplus.quickgame.sdk.QuickGame.Builder
     public QuickGame.Builder putStat(String str, String str2) {
-        if (this.f24397c == null) {
-            this.f24397c = new HashMap();
+        if (this.f10710c == null) {
+            this.f10710c = new HashMap();
         }
-        this.f24397c.put(str, str2);
+        this.f10710c.put(str, str2);
         return this;
     }
 
@@ -81,20 +82,20 @@ public class b extends QuickGame.Builder {
 
     @Override // com.oplus.quickgame.sdk.QuickGame.Builder
     public QuickGame.Builder setExtra(String str) {
-        this.f24396a.put("ext", str);
+        this.f10709a.put("ext", str);
         return this;
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.Builder
     public QuickGame.Builder setFrom(String str) {
-        this.f24396a.put("f", str);
+        this.f10709a.put(FullBackup.DATA_TREE_TOKEN, str);
         return this;
     }
 
     @Override // com.oplus.quickgame.sdk.QuickGame.Builder
     @Deprecated
     public QuickGame.Builder setPackage(String str) {
-        this.f24396a.put("pkg", str);
+        this.f10709a.put("pkg", str);
         return this;
     }
 

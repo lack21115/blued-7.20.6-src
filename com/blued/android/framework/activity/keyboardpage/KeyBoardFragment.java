@@ -1,5 +1,6 @@
 package com.blued.android.framework.activity.keyboardpage;
 
+import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -33,7 +34,7 @@ public class KeyBoardFragment extends HomeTabFragment {
         }
         if (this.e.getVisibility() != 0) {
             this.e.setVisibility(0);
-            KeyboardUtils.a(getActivity());
+            KeyboardUtils.a((Activity) getActivity());
             W_();
             j_(-4);
             return;
@@ -57,7 +58,7 @@ public class KeyBoardFragment extends HomeTabFragment {
         }
         this.e.setVisibility(0);
         this.g.setVisibility(0);
-        KeyboardUtils.a(getActivity());
+        KeyboardUtils.a((Activity) getActivity());
         W_();
         j_(-4);
     }

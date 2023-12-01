@@ -8,9 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 @JvmInline
 /* loaded from: source-3503164-dex2jar.jar:kotlin/UByte.class */
 public final class UByte implements Comparable<UByte> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42301a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final byte b;
 
     @Metadata

@@ -1,5 +1,6 @@
 package android.util;
 
+import com.anythink.expressad.exoplayer.b;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -21,9 +22,9 @@ public class Xml {
 
     /* loaded from: source-9557208-dex2jar.jar:android/util/Xml$Encoding.class */
     public enum Encoding {
-        US_ASCII("US-ASCII"),
+        US_ASCII(b.i),
         UTF_8("UTF-8"),
-        UTF_16("UTF-16"),
+        UTF_16(b.k),
         ISO_8859_1("ISO-8859-1");
         
         final String expatName;
@@ -33,9 +34,8 @@ public class Xml {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/util/Xml$XmlSerializerFactory.class */
-    public static class XmlSerializerFactory {
+    static class XmlSerializerFactory {
         static final String TYPE = "org.kxml2.io.KXmlParser,org.kxml2.io.KXmlSerializer";
         static final XmlPullParserFactory instance;
 
@@ -82,8 +82,8 @@ public class Xml {
     public static XmlPullParser newPullParser() {
         try {
             KXmlParser kXmlParser = new KXmlParser();
-            kXmlParser.setFeature(XmlPullParser.FEATURE_PROCESS_DOCDECL, true);
-            kXmlParser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true);
+            kXmlParser.setFeature("http://xmlpull.org/v1/doc/features.html#process-docdecl", true);
+            kXmlParser.setFeature("http://xmlpull.org/v1/doc/features.html#process-namespaces", true);
             return kXmlParser;
         } catch (XmlPullParserException e) {
             throw new AssertionError();

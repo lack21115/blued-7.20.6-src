@@ -11,24 +11,24 @@ import org.json.JSONObject;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1349a;
+    public String f1301a;
     public long b;
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/d/g$b.class */
     public class b implements Callable<Integer> {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f1350a;
+        public int f1302a;
 
         public b() {
-            this.f1350a = 0;
+            this.f1302a = 0;
         }
 
         public final Integer a() {
-            int i = this.f1350a + 1;
-            this.f1350a = i;
+            int i = this.f1302a + 1;
+            this.f1302a = i;
             if (i > 2) {
-                this.f1350a = 0;
+                this.f1302a = 0;
                 return 400;
             }
             try {
@@ -48,7 +48,7 @@ public class g {
                 if (responseCode != 200) {
                     return responseCode >= 500 ? a() : Integer.valueOf(responseCode);
                 }
-                this.f1350a = 0;
+                this.f1302a = 0;
                 InputStreamReader inputStreamReader = new InputStreamReader(httpURLConnection.getInputStream());
                 char[] cArr = new char[1024];
                 StringBuilder sb = new StringBuilder();
@@ -58,7 +58,7 @@ public class g {
                 inputStreamReader.close();
                 String sb2 = sb.toString();
                 httpURLConnection.disconnect();
-                g.this.f1349a = new JSONObject(sb2).optString("token");
+                g.this.f1301a = new JSONObject(sb2).optString("token");
                 return Integer.valueOf(responseCode);
             } catch (UnknownHostException e) {
                 return a();
@@ -69,18 +69,18 @@ public class g {
     }
 
     public boolean a() {
-        return System.currentTimeMillis() - this.b > a.a.a.a.a.d.a.f1342a;
+        return System.currentTimeMillis() - this.b > a.a.a.a.a.d.a.f1294a;
     }
 
     public void b() {
         if (new b().call().intValue() == 200) {
             this.b = System.currentTimeMillis();
         } else {
-            this.f1349a = com.igexin.push.core.b.l;
+            this.f1301a = com.igexin.push.core.b.l;
         }
     }
 
     public String c() {
-        return this.f1349a;
+        return this.f1301a;
     }
 }

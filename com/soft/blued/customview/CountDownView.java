@@ -17,11 +17,11 @@ import com.soft.blued.R;
 public class CountDownView extends TextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f28399a;
+    private int f14709a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28400c;
+    private int f14710c;
     private int d;
     private int e;
     private Paint f;
@@ -37,12 +37,12 @@ public class CountDownView extends TextView {
     class AnonymousClass1 implements ValueAnimator.AnimatorUpdateListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CountDownView f28401a;
+        final /* synthetic */ CountDownView f14711a;
 
         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
         public void onAnimationUpdate(ValueAnimator valueAnimator) {
-            this.f28401a.k = (int) ((Float.valueOf(String.valueOf(valueAnimator.getAnimatedValue())).floatValue() / 100.0f) * 360.0f);
-            this.f28401a.invalidate();
+            this.f14711a.k = (int) ((Float.valueOf(String.valueOf(valueAnimator.getAnimatedValue())).floatValue() / 100.0f) * 360.0f);
+            this.f14711a.invalidate();
         }
     }
 
@@ -51,15 +51,15 @@ public class CountDownView extends TextView {
     class AnonymousClass2 extends AnimatorListenerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ CountDownView f28402a;
+        final /* synthetic */ CountDownView f14712a;
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
         public void onAnimationEnd(Animator animator) {
             super.onAnimationEnd(animator);
-            if (this.f28402a.l != null) {
-                this.f28402a.l.a();
+            if (this.f14712a.l != null) {
+                this.f14712a.l.a();
             }
-            this.f28402a.setClickable(true);
+            this.f14712a.setClickable(true);
         }
     }
 
@@ -75,9 +75,9 @@ public class CountDownView extends TextView {
     public CountDownView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.CountDownView);
-        this.f28399a = obtainStyledAttributes.getColor(3, context.getResources().getColor(2131101191));
+        this.f14709a = obtainStyledAttributes.getColor(3, context.getResources().getColor(2131101191));
         this.b = obtainStyledAttributes.getFloat(4, 2.0f);
-        this.f28400c = obtainStyledAttributes.getDimensionPixelSize(2, a(18.0f));
+        this.f14710c = obtainStyledAttributes.getDimensionPixelSize(2, a(18.0f));
         this.i = obtainStyledAttributes.getColor(1, context.getResources().getColor(2131101191));
         this.j = obtainStyledAttributes.getInteger(0, 5);
         obtainStyledAttributes.recycle();
@@ -92,11 +92,10 @@ public class CountDownView extends TextView {
         return (int) TypedValue.applyDimension(2, f, getResources().getDisplayMetrics());
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        this.f.setColor(this.f28399a);
+        this.f.setColor(this.f14709a);
         this.f.setStyle(Paint.Style.STROKE);
         this.f.setStrokeWidth(this.b);
         canvas.drawArc(this.g, -90.0f, this.k, false, this.f);
@@ -108,15 +107,14 @@ public class CountDownView extends TextView {
         sb.append(i - ((int) ((this.k / 360.0f) * i)));
         sb.append("");
         String sb2 = sb.toString();
-        paint.setTextSize(this.f28400c);
+        paint.setTextSize(this.f14710c);
         paint.setColor(this.i);
         Paint.FontMetricsInt fontMetricsInt = paint.getFontMetricsInt();
         canvas.drawText(sb2, this.g.centerX(), (int) ((((this.g.bottom + this.g.top) - fontMetricsInt.bottom) - fontMetricsInt.top) / 2.0f), paint);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         this.d = getMeasuredWidth();
         this.e = getMeasuredHeight();

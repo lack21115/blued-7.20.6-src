@@ -45,7 +45,7 @@ public final class TvContentRating {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("ratingString cannot be empty");
         }
-        String[] split = str.split("/");
+        String[] split = str.split(DELIMITER);
         if (split.length < 3) {
             throw new IllegalArgumentException("Invalid rating string: " + str);
         }
@@ -92,9 +92,9 @@ public final class TvContentRating {
     public String flattenToString() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.mDomain);
-        sb.append("/");
+        sb.append(DELIMITER);
         sb.append(this.mRatingSystem);
-        sb.append("/");
+        sb.append(DELIMITER);
         sb.append(this.mRating);
         if (this.mSubRatings != null) {
             String[] strArr = this.mSubRatings;
@@ -106,7 +106,7 @@ public final class TvContentRating {
                     break;
                 }
                 String str = strArr[i2];
-                sb.append("/");
+                sb.append(DELIMITER);
                 sb.append(str);
                 i = i2 + 1;
             }

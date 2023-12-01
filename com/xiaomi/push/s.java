@@ -14,10 +14,10 @@ public class s {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f41566a;
+        private final String f27875a;
 
         /* renamed from: a  reason: collision with other field name */
-        private final StringBuilder f906a;
+        private final StringBuilder f859a;
         private final String b;
 
         public a() {
@@ -25,26 +25,26 @@ public class s {
         }
 
         public a(String str, String str2) {
-            this.f906a = new StringBuilder();
-            this.f41566a = str;
+            this.f859a = new StringBuilder();
+            this.f27875a = str;
             this.b = str2;
         }
 
         public a a(String str, Object obj) {
             if (!TextUtils.isEmpty(str)) {
-                if (this.f906a.length() > 0) {
-                    this.f906a.append(this.b);
+                if (this.f859a.length() > 0) {
+                    this.f859a.append(this.b);
                 }
-                StringBuilder sb = this.f906a;
+                StringBuilder sb = this.f859a;
                 sb.append(str);
-                sb.append(this.f41566a);
+                sb.append(this.f27875a);
                 sb.append(obj);
             }
             return this;
         }
 
         public String toString() {
-            return this.f906a.toString();
+            return this.f859a.toString();
         }
     }
 
@@ -65,7 +65,7 @@ public class s {
     }
 
     public static boolean a(Context context) {
-        PowerManager powerManager = (PowerManager) context.getSystemService("power");
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         return Build.VERSION.SDK_INT >= 20 ? powerManager != null && powerManager.isInteractive() : powerManager != null && powerManager.isScreenOn();
     }
 

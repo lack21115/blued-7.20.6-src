@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class c implements e.a, Callback<byte[]>, Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f39612a;
+    private final Context f25921a;
     private AtomicInteger b = new AtomicInteger();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsbeacon/qimei/c$a.class */
@@ -28,7 +28,7 @@ public final class c implements e.a, Callback<byte[]>, Runnable {
         @Override // java.lang.Runnable
         public void run() {
             e.d();
-            String a2 = e.a(c.this.f39612a);
+            String a2 = e.a(c.this.f25921a);
             com.tencent.tmsbeacon.base.util.c.a(QimeiSDK.TAG, "non-main process check local qimei: " + a2, new Object[0]);
             if (TextUtils.isEmpty(a2)) {
                 if (c.this.b.getAndIncrement() > 30) {
@@ -44,7 +44,7 @@ public final class c implements e.a, Callback<byte[]>, Runnable {
     }
 
     public c(Context context) {
-        this.f39612a = context;
+        this.f25921a = context;
     }
 
     private void a(HashMap<String, String> hashMap) {
@@ -91,7 +91,7 @@ public final class c implements e.a, Callback<byte[]>, Runnable {
         }
         com.tencent.tmsbeacon.base.util.c.a(QimeiSDK.TAG, 3, "dispatch qimei to listener and save qimei!", new Object[0]);
         a(str);
-        e.a(this.f39612a, str);
+        e.a(this.f25921a, str);
         e.a(System.currentTimeMillis());
         d();
     }
@@ -115,9 +115,9 @@ public final class c implements e.a, Callback<byte[]>, Runnable {
 
     @Override // java.lang.Runnable
     public void run() {
-        com.tencent.tmsbeacon.base.net.b.e.a(this.f39612a, this);
+        com.tencent.tmsbeacon.base.net.b.e.a(this.f25921a, this);
         if (com.tencent.tmsbeacon.base.net.b.d.d()) {
-            if (!com.tencent.tmsbeacon.a.c.b.f(this.f39612a)) {
+            if (!com.tencent.tmsbeacon.a.c.b.f(this.f25921a)) {
                 c();
                 return;
             }

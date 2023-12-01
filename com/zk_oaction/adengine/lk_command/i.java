@@ -20,14 +20,14 @@ public class i extends b {
     public void a() {
         if (this.l.a() != -1.0f) {
             float a2 = this.l.a();
-            this.f41909a.a(this.i, a2);
-            this.f41909a.b(this.i, a2);
+            this.f28218a.a(this.i, a2);
+            this.f28218a.b(this.i, a2);
             return;
         }
         boolean z = false;
         boolean z2 = false;
         if (this.j == null) {
-            com.zk_oaction.adengine.lk_sdk.c cVar = this.f41909a;
+            com.zk_oaction.adengine.lk_sdk.c cVar = this.f28218a;
             String str = this.i;
             boolean z3 = this.k.a() == 1.0f;
             if (this.m.a() == 1.0f) {
@@ -36,14 +36,14 @@ public class i extends b {
             cVar.a(str, z3, z);
             return;
         }
-        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f41909a;
+        com.zk_oaction.adengine.lk_sdk.c cVar2 = this.f28218a;
         String str2 = this.i;
-        String str3 = this.f41909a.l + this.j;
+        String str3 = this.f28218a.l + this.j;
         String str4 = this.e;
         int i = this.f;
         com.zk_oaction.adengine.lk_expression.c cVar3 = this.g;
         cVar2.a(str2, str3, str4, i, cVar3 != null ? cVar3.a() : "", this.h);
-        com.zk_oaction.adengine.lk_sdk.c cVar4 = this.f41909a;
+        com.zk_oaction.adengine.lk_sdk.c cVar4 = this.f28218a;
         String str5 = this.i;
         if (this.m.a() == 1.0f) {
             z2 = true;
@@ -56,9 +56,9 @@ public class i extends b {
         try {
             this.i = xmlPullParser.getAttributeValue(null, "name");
             this.j = xmlPullParser.getAttributeValue(null, OapsKey.KEY_SRC);
-            this.k = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, "play", xmlPullParser.getAttributeValue(null, "play"), -1.0f, null, false);
-            this.l = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, RemoteMessageConst.Notification.SOUND, xmlPullParser.getAttributeValue(null, RemoteMessageConst.Notification.SOUND), -1.0f, null, false);
-            this.m = new com.zk_oaction.adengine.lk_expression.a(this.f41909a, "reset", xmlPullParser.getAttributeValue(null, "reset"), 1.0f, null, false);
+            this.k = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, "play", xmlPullParser.getAttributeValue(null, "play"), -1.0f, null, false);
+            this.l = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, RemoteMessageConst.Notification.SOUND, xmlPullParser.getAttributeValue(null, RemoteMessageConst.Notification.SOUND), -1.0f, null, false);
+            this.m = new com.zk_oaction.adengine.lk_expression.a(this.f28218a, "reset", xmlPullParser.getAttributeValue(null, "reset"), 1.0f, null, false);
             a(xmlPullParser);
             return true;
         } catch (Exception e) {

@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.RemoteViews;
+import com.android.internal.R;
 
 @RemoteViews.RemoteView
 /* loaded from: source-4181928-dex2jar.jar:android/widget/Button.class */
@@ -14,7 +15,7 @@ public class Button extends TextView {
     }
 
     public Button(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842824);
+        this(context, attributeSet, R.attr.buttonStyle);
     }
 
     public Button(Context context, AttributeSet attributeSet, int i) {

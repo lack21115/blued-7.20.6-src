@@ -23,17 +23,17 @@ public class d {
     private static volatile d d;
 
     /* renamed from: a  reason: collision with root package name */
-    private e f41853a;
+    private e f28162a;
     private ConcurrentHashMap b = new ConcurrentHashMap(10);
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f41854c;
+    private Context f28163c;
 
     private d(Context context) {
-        this.f41853a = null;
+        this.f28162a = null;
         try {
-            this.f41854c = context;
-            this.f41853a = new e(context);
+            this.f28163c = context;
+            this.f28162a = new e(context);
         } catch (Throwable th) {
             th.printStackTrace();
         }
@@ -152,7 +152,7 @@ public class d {
                     }
                 }
                 this.b.clear();
-                String b = this.f41853a.b();
+                String b = this.f28162a.b();
                 if (!TextUtils.isEmpty(b)) {
                     try {
                         bArr = Base64.decode(b, 0);
@@ -190,7 +190,7 @@ public class d {
 
     public String a(String str) {
         try {
-            File file = new File(com.yxcorp.kuaishou.addfp.android.b.b.a(this.f41854c, false), new String(Base64.decode(str, 0)));
+            File file = new File(com.yxcorp.kuaishou.addfp.android.b.b.a(this.f28163c, false), new String(Base64.decode(str, 0)));
             if (!file.exists()) {
                 return "";
             }

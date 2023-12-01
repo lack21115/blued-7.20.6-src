@@ -37,13 +37,9 @@ import java.io.File;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRecordDialogFragment.class */
 public class LiveRecordDialogFragment extends BaseDialogFragment {
     public static String d = "";
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13219a;
+    public Context a;
     public String b = "";
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f13220c = "";
+    public String c = "";
     public EventCallback e;
     private TextureView f;
     private TextView g;
@@ -72,7 +68,7 @@ public class LiveRecordDialogFragment extends BaseDialogFragment {
                 MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
                 mediaMetadataRetriever.setDataSource(str);
                 Bitmap frameAtTime = mediaMetadataRetriever.getFrameAtTime();
-                this.f13220c = BitmapUtils.a(frameAtTime, false);
+                this.c = BitmapUtils.a(frameAtTime, false);
                 return frameAtTime;
             }
             return null;
@@ -112,9 +108,8 @@ public class LiveRecordDialogFragment extends BaseDialogFragment {
         dismiss();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f13219a = getActivity();
+        this.a = getActivity();
         int i = AppInfo.m;
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_record_screen, (ViewGroup) null);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -133,7 +128,7 @@ public class LiveRecordDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         Log.i("xpm", "videopath:" + this.b);
         Log.i("xpm", "savePath:" + d);
@@ -220,7 +215,7 @@ public class LiveRecordDialogFragment extends BaseDialogFragment {
                 Tracker.onClick(view);
                 EventTrackLive.b(LiveProtos.Event.LIVE_RECORD_SCREEN_PAGE_SHARE_CLICK, LiveRoomManager.a().e());
                 if (LiveRecordDialogFragment.this.e != null) {
-                    LiveRecordDialogFragment.this.e.a(LiveRecordDialogFragment.this.b, LiveRecordDialogFragment.this.f13220c);
+                    LiveRecordDialogFragment.this.e.a(LiveRecordDialogFragment.this.b, LiveRecordDialogFragment.this.c);
                 }
                 LiveRecordDialogFragment.this.dismiss();
             }
@@ -241,7 +236,7 @@ public class LiveRecordDialogFragment extends BaseDialogFragment {
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         if (this.j) {
@@ -254,12 +249,12 @@ public class LiveRecordDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onPause() {
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

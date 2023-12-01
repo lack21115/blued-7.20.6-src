@@ -9,11 +9,11 @@ import java.io.RandomAccessFile;
 public final class r implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final aa<? super r> f7600a;
+    private final aa<? super r> f4761a;
     private RandomAccessFile b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Uri f7601c;
+    private Uri f4762c;
     private long d;
     private boolean e;
 
@@ -29,7 +29,7 @@ public final class r implements h {
     }
 
     public r(aa<? super r> aaVar) {
-        this.f7600a = aaVar;
+        this.f4761a = aaVar;
     }
 
     @Override // com.anythink.expressad.exoplayer.j.h
@@ -45,7 +45,7 @@ public final class r implements h {
             int read = this.b.read(bArr, i, (int) Math.min(j, i2));
             if (read > 0) {
                 this.d -= read;
-                aa<? super r> aaVar = this.f7600a;
+                aa<? super r> aaVar = this.f4761a;
                 if (aaVar != null) {
                     aaVar.a(read);
                 }
@@ -59,8 +59,8 @@ public final class r implements h {
     @Override // com.anythink.expressad.exoplayer.j.h
     public final long a(k kVar) {
         try {
-            this.f7601c = kVar.f7584c;
-            RandomAccessFile randomAccessFile = new RandomAccessFile(kVar.f7584c.getPath(), "r");
+            this.f4762c = kVar.f4745c;
+            RandomAccessFile randomAccessFile = new RandomAccessFile(kVar.f4745c.getPath(), "r");
             this.b = randomAccessFile;
             randomAccessFile.seek(kVar.f);
             long length = kVar.g == -1 ? this.b.length() - kVar.f : kVar.g;
@@ -69,7 +69,7 @@ public final class r implements h {
                 throw new EOFException();
             }
             this.e = true;
-            aa<? super r> aaVar = this.f7600a;
+            aa<? super r> aaVar = this.f4761a;
             if (aaVar != null) {
                 aaVar.b();
             }
@@ -81,12 +81,12 @@ public final class r implements h {
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final Uri a() {
-        return this.f7601c;
+        return this.f4762c;
     }
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final void b() {
-        this.f7601c = null;
+        this.f4762c = null;
         try {
             try {
                 if (this.b != null) {
@@ -99,7 +99,7 @@ public final class r implements h {
             this.b = null;
             if (this.e) {
                 this.e = false;
-                aa<? super r> aaVar = this.f7600a;
+                aa<? super r> aaVar = this.f4761a;
                 if (aaVar != null) {
                     aaVar.c();
                 }

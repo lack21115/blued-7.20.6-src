@@ -29,11 +29,11 @@ import java.util.concurrent.Executor;
 public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBuilder<TranscodeType>> implements ModelTypes<RequestBuilder<TranscodeType>>, Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final RequestOptions f20664a = new RequestOptions().b(DiskCacheStrategy.f20763c).b(Priority.LOW).d(true);
+    protected static final RequestOptions f7058a = new RequestOptions().b(DiskCacheStrategy.f7157c).b(Priority.LOW).d(true);
     private final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RequestManager f20665c;
+    private final RequestManager f7059c;
     private final Class<TranscodeType> d;
     private final Glide e;
     private final GlideContext f;
@@ -53,7 +53,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f20666a;
+        static final /* synthetic */ int[] f7060a;
         static final /* synthetic */ int[] b;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x009a -> B:56:0x0014). Please submit an issue!!! */
@@ -87,37 +87,37 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
             } catch (NoSuchFieldError e4) {
             }
             int[] iArr2 = new int[ImageView.ScaleType.values().length];
-            f20666a = iArr2;
+            f7060a = iArr2;
             try {
                 iArr2[ImageView.ScaleType.CENTER_CROP.ordinal()] = 1;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f20666a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 2;
+                f7060a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 2;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f20666a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 3;
+                f7060a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 3;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f20666a[ImageView.ScaleType.FIT_START.ordinal()] = 4;
+                f7060a[ImageView.ScaleType.FIT_START.ordinal()] = 4;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f20666a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
+                f7060a[ImageView.ScaleType.FIT_END.ordinal()] = 5;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f20666a[ImageView.ScaleType.FIT_XY.ordinal()] = 6;
+                f7060a[ImageView.ScaleType.FIT_XY.ordinal()] = 6;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f20666a[ImageView.ScaleType.CENTER.ordinal()] = 7;
+                f7060a[ImageView.ScaleType.CENTER.ordinal()] = 7;
             } catch (NoSuchFieldError e11) {
             }
             try {
-                f20666a[ImageView.ScaleType.MATRIX.ordinal()] = 8;
+                f7060a[ImageView.ScaleType.MATRIX.ordinal()] = 8;
             } catch (NoSuchFieldError e12) {
             }
         }
@@ -125,7 +125,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
 
     public RequestBuilder(Glide glide, RequestManager requestManager, Class<TranscodeType> cls, Context context) {
         this.e = glide;
-        this.f20665c = requestManager;
+        this.f7059c = requestManager;
         this.d = cls;
         this.b = context;
         this.g = requestManager.c(cls);
@@ -202,9 +202,9 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
                 }
                 return y;
             }
-            this.f20665c.a((Target<?>) y);
+            this.f7059c.a((Target<?>) y);
             y.setRequest(b);
-            this.f20665c.a(y, b);
+            this.f7059c.a(y, b);
             return y;
         }
         throw new IllegalArgumentException("You must call #load() before calling #into()");
@@ -278,7 +278,7 @@ public class RequestBuilder<TranscodeType> extends BaseRequestOptions<RequestBui
         Util.a();
         Preconditions.a(imageView);
         if (!p() && o() && imageView.getScaleType() != null) {
-            switch (AnonymousClass1.f20666a[imageView.getScaleType().ordinal()]) {
+            switch (AnonymousClass1.f7060a[imageView.getScaleType().ordinal()]) {
                 case 1:
                     requestBuilder = clone().m();
                     break;

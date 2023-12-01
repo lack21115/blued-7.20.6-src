@@ -17,7 +17,6 @@ import android.text.style.TextAppearanceSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
-import com.android.internal.R;
 import com.cdo.oaps.ad.OapsKey;
 import com.sobot.chat.widget.html.SobotCustomTagHandler;
 import java.io.IOException;
@@ -350,7 +349,7 @@ public class HtmlToSpannedConverter implements ContentHandler {
         }
         Drawable drawable2 = drawable;
         if (drawable == null) {
-            drawable2 = Resources.getSystem().getDrawable(R.drawable.unknown_image);
+            drawable2 = Resources.getSystem().getDrawable(17303378);
             drawable2.setBounds(0, 0, drawable2.getIntrinsicWidth(), drawable2.getIntrinsicHeight());
         }
         int length = spannableStringBuilder.length();

@@ -1,5 +1,6 @@
 package com.opos.mobad.f.a;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
@@ -16,11 +17,11 @@ import java.util.List;
 public class j extends com.opos.mobad.l.i {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f26113a = j.class.getSimpleName();
+    public static final String f12425a = j.class.getSimpleName();
     private com.opos.mobad.ad.e.f b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f26114c;
+    private String f12426c;
     private RelativeLayout d;
     private ViewGroup g;
     private Context h;
@@ -33,11 +34,11 @@ public class j extends com.opos.mobad.l.i {
     public class a extends com.opos.mobad.f.a.a.b implements com.opos.mobad.ad.e.c {
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f26122c;
+        private final int f12434c;
 
         public a(int i, com.opos.mobad.f.a.a.n nVar) {
             super(i, nVar);
-            this.f26122c = i;
+            this.f12434c = i;
         }
 
         @Override // com.opos.mobad.f.a.a.b, com.opos.mobad.ad.b.a
@@ -46,40 +47,40 @@ public class j extends com.opos.mobad.l.i {
             jVar.c("ad failed:" + i + ",msg:" + str + ", state=" + j.this.d());
             if (1 == j.this.d()) {
                 super.a(i, str);
-            } else if (2 == j.this.d() && this.f26122c == j.this.i.j()) {
+            } else if (2 == j.this.d() && this.f12434c == j.this.i.j()) {
                 j.this.c(i, str);
             } else {
                 j jVar2 = j.this;
-                jVar2.c("ignore fail:" + this.f26122c);
+                jVar2.c("ignore fail:" + this.f12434c);
             }
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(long j) {
             j jVar = j.this;
-            jVar.c("ad click:" + this.f26122c + "," + j.this.i.i());
-            if (this.f26122c != j.this.i.j()) {
+            jVar.c("ad click:" + this.f12434c + "," + j.this.i.i());
+            if (this.f12434c != j.this.i.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().b(j.this.f26114c);
+            com.opos.mobad.service.j.n.a().b(j.this.f12426c);
             j.this.i();
         }
 
         @Override // com.opos.mobad.ad.i.b
         public void a(String str) {
             j.this.c("ad show");
-            if (this.f26122c != j.this.i.j()) {
+            if (this.f12434c != j.this.i.j()) {
                 return;
             }
-            com.opos.mobad.service.j.n.a().a(j.this.f26114c);
+            com.opos.mobad.service.j.n.a().a(j.this.f12426c);
             j.this.d(str);
         }
 
         @Override // com.opos.mobad.f.a.a.b, com.opos.mobad.ad.b.a
         public void b() {
             j jVar = j.this;
-            jVar.c("ad close:" + this.f26122c + "," + j.this.i.i());
-            if (this.f26122c != j.this.i.j()) {
+            jVar.c("ad close:" + this.f12434c + "," + j.this.i.i());
+            if (this.f12434c != j.this.i.j()) {
                 return;
             }
             j.this.i_();
@@ -91,23 +92,23 @@ public class j extends com.opos.mobad.l.i {
         String str2;
         String str3;
         if (fVar == null) {
-            str2 = f26113a;
+            str2 = f12425a;
             str3 = "SplashAd params null.";
         } else if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
             com.opos.cmn.an.f.a.c("", "SplashAd constructor param activity error.");
             c(-1, "SplashAd Constructor param Activity was died.");
             return;
         } else if (com.opos.cmn.an.h.f.a.a(activity)) {
-            this.f26114c = str;
+            this.f12426c = str;
             this.h = activity.getApplicationContext();
             this.b = a(fVar);
             this.d = new RelativeLayout(this.h);
-            this.g = (ViewGroup) activity.getWindow().getDecorView().findViewById(16908290);
+            this.g = (ViewGroup) activity.getWindow().getDecorView().findViewById(R.id.content);
             this.k = bVar;
             if (a(this.b.e.a())) {
                 String a2 = com.opos.mobad.ad.a.a(10502);
                 c(10502, a2);
-                com.opos.cmn.an.f.a.c(f26113a, a2);
+                com.opos.cmn.an.f.a.c(f12425a, a2);
                 return;
             }
             if (fVar.h) {
@@ -117,16 +118,16 @@ public class j extends com.opos.mobad.l.i {
                 @Override // com.opos.mobad.f.a.b.a
                 /* renamed from: a */
                 public com.opos.mobad.ad.e.b b(e.a aVar, com.opos.mobad.f.a.a.n nVar) {
-                    com.opos.mobad.ad.c b = bVar.b(aVar.f27301a);
+                    com.opos.mobad.ad.c b = bVar.b(aVar.f13613a);
                     if (b == null) {
                         return null;
                     }
-                    return b.a(activity, str, aVar.b, j.this.b, (com.opos.mobad.ad.e.c) new a(aVar.f27301a, nVar));
+                    return b.a(activity, str, aVar.b, j.this.b, (com.opos.mobad.ad.e.c) new a(aVar.f13613a, nVar));
                 }
             }, new com.opos.mobad.f.a.c.a(this.h));
             return;
         } else {
-            str2 = f26113a;
+            str2 = f12425a;
             str3 = "SplashAd must be displayed in full screen mode.";
         }
         com.opos.cmn.an.f.a.c(str2, str3);
@@ -135,14 +136,14 @@ public class j extends com.opos.mobad.l.i {
 
     private com.opos.mobad.ad.e.f a(com.opos.mobad.ad.e.f fVar) {
         String str;
-        f.a a2 = new f.a(this.h).a(fVar.f25680a).a(fVar.d).b(fVar.f).c(fVar.h).a(fVar.g);
+        f.a a2 = new f.a(this.h).a(fVar.f11992a).a(fVar.d).b(fVar.f).c(fVar.h).a(fVar.g);
         if (TextUtils.isEmpty(fVar.b)) {
             Context context = this.h;
             str = com.opos.mobad.l.n.a(context, context.getPackageName());
         } else {
             str = fVar.b;
         }
-        String str2 = TextUtils.isEmpty(fVar.f25681c) ? "欢迎使用" : fVar.f25681c;
+        String str2 = TextUtils.isEmpty(fVar.f11993c) ? "欢迎使用" : fVar.f11993c;
         return a2.b(str2).a(str).a(k.a(fVar.e, this.h, str, str2)).a();
     }
 

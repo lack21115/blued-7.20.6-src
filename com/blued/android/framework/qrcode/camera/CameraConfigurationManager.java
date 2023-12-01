@@ -19,11 +19,11 @@ import java.util.regex.Pattern;
 public final class CameraConfigurationManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9856a = CameraConfigurationManager.class.getSimpleName();
+    private static final String f6654a = CameraConfigurationManager.class.getSimpleName();
     private static final Pattern b = Pattern.compile(",");
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f9857c;
+    private final Context f6655c;
     private Point d;
     private Point e;
     private int f;
@@ -31,7 +31,7 @@ public final class CameraConfigurationManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public CameraConfigurationManager(Context context) {
-        this.f9857c = context;
+        this.f6655c = context;
     }
 
     private static int a(CharSequence charSequence, int i) {
@@ -67,7 +67,7 @@ public final class CameraConfigurationManager {
         }
         Point point2 = null;
         if (str2 != null) {
-            Log.d(f9856a, "preview-size-values parameter: " + str2);
+            Log.d(f6654a, "preview-size-values parameter: " + str2);
             point2 = b(parameters, point);
         }
         Point point3 = point2;
@@ -78,7 +78,7 @@ public final class CameraConfigurationManager {
     }
 
     private void a(Camera.Parameters parameters) {
-        if (Build.MODEL.contains("Behold II") && CameraManager.f9858a == 3) {
+        if (Build.MODEL.contains("Behold II") && CameraManager.f6656a == 3) {
             parameters.set("flash-value", 1);
         } else {
             parameters.set("flash-value", 2);
@@ -89,7 +89,7 @@ public final class CameraConfigurationManager {
     private static Point b(Camera.Parameters parameters, Point point) {
         List<Camera.Size> supportedPreviewSizes = parameters.getSupportedPreviewSizes();
         if (supportedPreviewSizes == null) {
-            Log.w(f9856a, "Device returned no supported preview sizes; using default");
+            Log.w(f6654a, "Device returned no supported preview sizes; using default");
             Camera.Size previewSize = parameters.getPreviewSize();
             return new Point(previewSize.width, previewSize.height);
         }
@@ -107,19 +107,19 @@ public final class CameraConfigurationManager {
             }
         });
         double d = point.x / point.y;
-        Iterator<E> it = arrayList.iterator();
+        Iterator it = arrayList.iterator();
         while (true) {
             boolean z = false;
             if (!it.hasNext()) {
                 if (arrayList.isEmpty()) {
                     Camera.Size previewSize2 = parameters.getPreviewSize();
                     Point point2 = new Point(previewSize2.width, previewSize2.height);
-                    Log.i(f9856a, "No suitable preview sizes, using default: " + point2);
+                    Log.i(f6654a, "No suitable preview sizes, using default: " + point2);
                     return point2;
                 }
                 Camera.Size size = (Camera.Size) arrayList.get(0);
                 Point point3 = new Point(size.width, size.height);
-                Log.i(f9856a, "Using largest suitable preview size: " + point3);
+                Log.i(f6654a, "Using largest suitable preview size: " + point3);
                 return point3;
             }
             Camera.Size size2 = (Camera.Size) it.next();
@@ -137,7 +137,7 @@ public final class CameraConfigurationManager {
                     it.remove();
                 } else if (i3 == point.x && i4 == point.y) {
                     Point point4 = new Point(i, i2);
-                    Log.i(f9856a, "Found preview size exactly matching screen size: " + point4);
+                    Log.i(f6654a, "Found preview size exactly matching screen size: " + point4);
                     return point4;
                 }
             }
@@ -157,7 +157,7 @@ public final class CameraConfigurationManager {
                         i = parseDouble;
                     }
                 } catch (NumberFormatException e) {
-                    Log.w(f9856a, "Bad max-zoom: " + str2);
+                    Log.w(f6654a, "Bad max-zoom: " + str2);
                     i = 27;
                 }
             }
@@ -171,7 +171,7 @@ public final class CameraConfigurationManager {
                         i2 = parseInt;
                     }
                 } catch (NumberFormatException e2) {
-                    Log.w(f9856a, "Bad taking-picture-zoom-max: " + str3);
+                    Log.w(f6654a, "Bad taking-picture-zoom-max: " + str3);
                     i2 = i;
                 }
             }
@@ -212,11 +212,11 @@ public final class CameraConfigurationManager {
         Camera.Parameters parameters = camera.getParameters();
         this.f = parameters.getPreviewFormat();
         this.g = parameters.get("preview-format");
-        String str = f9856a;
+        String str = f6654a;
         Log.d(str, "Default preview format: " + this.f + '/' + this.g);
-        Display defaultDisplay = ((WindowManager) this.f9857c.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        Display defaultDisplay = ((WindowManager) this.f6655c.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         this.d = new Point(defaultDisplay.getWidth(), defaultDisplay.getHeight());
-        String str2 = f9856a;
+        String str2 = f6654a;
         Log.d(str2, "Screen resolution: " + this.d);
         Point point = new Point();
         point.x = this.d.x;
@@ -226,14 +226,14 @@ public final class CameraConfigurationManager {
             point.y = this.d.x;
         }
         this.e = a(parameters, point);
-        String str3 = f9856a;
+        String str3 = f6654a;
         Log.d(str3, "Camera resolution: " + this.d);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b(Camera camera) {
         Camera.Parameters parameters = camera.getParameters();
-        String str = f9856a;
+        String str = f6654a;
         Log.d(str, "Setting preview size: " + this.e);
         parameters.setPreviewSize(this.e.x, this.e.y);
         a(parameters);

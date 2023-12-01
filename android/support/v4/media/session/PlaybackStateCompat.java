@@ -7,7 +7,6 @@ import android.os.Parcelable;
 import android.os.SystemClock;
 import android.support.v4.media.session.PlaybackStateCompatApi21;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
@@ -499,7 +498,7 @@ public final class PlaybackStateCompat implements Parcelable {
     }
 
     public String toString() {
-        return "PlaybackState {state=" + this.mState + ", position=" + this.mPosition + ", buffered position=" + this.mBufferedPosition + ", speed=" + this.mSpeed + ", updated=" + this.mUpdateTime + ", actions=" + this.mActions + ", error code=" + this.mErrorCode + ", error message=" + this.mErrorMessage + ", custom actions=" + this.mCustomActions + ", active item id=" + this.mActiveItemId + i.d;
+        return "PlaybackState {state=" + this.mState + ", position=" + this.mPosition + ", buffered position=" + this.mBufferedPosition + ", speed=" + this.mSpeed + ", updated=" + this.mUpdateTime + ", actions=" + this.mActions + ", error code=" + this.mErrorCode + ", error message=" + this.mErrorMessage + ", custom actions=" + this.mCustomActions + ", active item id=" + this.mActiveItemId + "}";
     }
 
     @Override // android.os.Parcelable

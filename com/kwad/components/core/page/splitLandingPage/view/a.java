@@ -40,7 +40,7 @@ public final class a {
     private FrameLayout Nf;
     private e Ng;
     private final WindowManager.LayoutParams Nh = new WindowManager.LayoutParams();
-    private InterfaceC0531a Ni;
+    private InterfaceC0361a Ni;
     private ImageView eM;
     private com.kwad.sdk.core.video.videoview.a eN;
     private Context mContext;
@@ -48,7 +48,7 @@ public final class a {
 
     /* renamed from: com.kwad.components.core.page.splitLandingPage.view.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/page/splitLandingPage/view/a$a.class */
-    public interface InterfaceC0531a {
+    public interface InterfaceC0361a {
         boolean oQ();
     }
 
@@ -193,8 +193,8 @@ public final class a {
         });
     }
 
-    public final void a(InterfaceC0531a interfaceC0531a) {
-        this.Ni = interfaceC0531a;
+    public final void a(InterfaceC0361a interfaceC0361a) {
+        this.Ni = interfaceC0361a;
     }
 
     public final Animator aE(boolean z) {

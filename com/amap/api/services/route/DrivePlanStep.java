@@ -23,13 +23,9 @@ public class DrivePlanStep implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5700a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f5701c;
+    private float c;
     private boolean d;
     private List<LatLonPoint> e;
 
@@ -39,11 +35,11 @@ public class DrivePlanStep implements Parcelable {
 
     public DrivePlanStep(Parcel parcel) {
         this.e = new ArrayList();
-        this.f5700a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5701c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.d = parcel.readInt() != 1 ? false : true;
-        this.f5701c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.e = parcel.createTypedArrayList(LatLonPoint.CREATOR);
     }
 
@@ -57,7 +53,7 @@ public class DrivePlanStep implements Parcelable {
     }
 
     public float getDistance() {
-        return this.f5701c;
+        return this.c;
     }
 
     public List<LatLonPoint> getPolyline() {
@@ -65,7 +61,7 @@ public class DrivePlanStep implements Parcelable {
     }
 
     public String getRoad() {
-        return this.f5700a;
+        return this.a;
     }
 
     public boolean getToll() {
@@ -77,7 +73,7 @@ public class DrivePlanStep implements Parcelable {
     }
 
     public void setDistance(float f) {
-        this.f5701c = f;
+        this.c = f;
     }
 
     public void setPolyline(List<LatLonPoint> list) {
@@ -85,7 +81,7 @@ public class DrivePlanStep implements Parcelable {
     }
 
     public void setRoad(String str) {
-        this.f5700a = str;
+        this.a = str;
     }
 
     public void setToll(boolean z) {

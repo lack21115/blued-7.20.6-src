@@ -16,19 +16,19 @@ public final class InterceptorChain implements Interceptor.Chain {
     private final InflateRequest request;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public InterceptorChain(List<? extends Interceptor> interceptors, int i, InflateRequest request) {
-        Intrinsics.d(interceptors, "interceptors");
-        Intrinsics.d(request, "request");
-        this.interceptors = interceptors;
+    public InterceptorChain(List<? extends Interceptor> list, int i, InflateRequest inflateRequest) {
+        Intrinsics.d(list, "interceptors");
+        Intrinsics.d(inflateRequest, "request");
+        this.interceptors = list;
         this.index = i;
-        this.request = request;
+        this.request = inflateRequest;
     }
 
     @Override // io.github.inflationx.viewpump.Interceptor.Chain
-    public InflateResult proceed(InflateRequest request) {
-        Intrinsics.d(request, "request");
+    public InflateResult proceed(InflateRequest inflateRequest) {
+        Intrinsics.d(inflateRequest, "request");
         if (this.index < this.interceptors.size()) {
-            return this.interceptors.get(this.index).intercept(new InterceptorChain(this.interceptors, this.index + 1, request));
+            return this.interceptors.get(this.index).intercept(new InterceptorChain(this.interceptors, this.index + 1, inflateRequest));
         }
         throw new AssertionError("no interceptors added to the chain");
     }

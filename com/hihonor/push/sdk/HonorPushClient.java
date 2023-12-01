@@ -7,10 +7,10 @@ import java.util.List;
 public class HonorPushClient {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final HonorPushClient f22276a = new HonorPushClient();
+    public static final HonorPushClient f8668a = new HonorPushClient();
 
     public static HonorPushClient getInstance() {
-        return f22276a;
+        return f8668a;
     }
 
     public void deletePushToken(HonorPushCallback<Void> honorPushCallback) {
@@ -32,7 +32,7 @@ public class HonorPushClient {
     public void init(Context context, boolean z) {
         d dVar = d.e;
         f fVar = new f();
-        fVar.f22290a = context.getApplicationContext();
+        fVar.f8682a = context.getApplicationContext();
         fVar.b = z;
         dVar.a(fVar);
     }

@@ -6,7 +6,7 @@ import android.util.Log;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final c f21659a = new c();
+    private static final c f8053a = new c();
     private static boolean b = false;
 
     public static void a(String str, String str2) {

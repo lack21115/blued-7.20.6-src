@@ -4,7 +4,7 @@ package com.opos.cmn.biz.ststrategy.c;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f24703a = b.class.getSimpleName();
+    private static final String f11015a = b.class.getSimpleName();
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
     /*
@@ -25,7 +25,7 @@ public class b {
             goto L21
         L14:
             r4 = move-exception
-            java.lang.String r0 = com.opos.cmn.biz.ststrategy.c.b.f24703a
+            java.lang.String r0 = com.opos.cmn.biz.ststrategy.c.b.f11015a
             java.lang.String r1 = "getAnId"
             r2 = r4
             com.opos.cmn.an.f.a.c(r0, r1, r2)

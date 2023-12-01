@@ -16,11 +16,11 @@ public class MotionPaths implements Comparable<MotionPaths> {
     public static final String TAG = "MotionPaths";
 
     /* renamed from: a  reason: collision with root package name */
-    static String[] f2013a = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
+    static String[] f1965a = {BrowserContract.Bookmarks.POSITION, "x", "y", "width", "height", "pathRotate"};
     Easing b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2014c;
+    int f1966c;
     float d;
     float e;
     float f;
@@ -40,7 +40,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
     double[] t;
 
     public MotionPaths() {
-        this.f2014c = 0;
+        this.f1966c = 0;
         this.j = Float.NaN;
         this.k = Float.NaN;
         this.l = -1;
@@ -54,7 +54,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
     }
 
     public MotionPaths(int i, int i2, MotionKeyPosition motionKeyPosition, MotionPaths motionPaths, MotionPaths motionPaths2) {
-        this.f2014c = 0;
+        this.f1966c = 0;
         this.j = Float.NaN;
         this.k = Float.NaN;
         this.l = -1;
@@ -344,7 +344,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
         float f;
         float f2 = motionKeyPosition.mFramePosition / 100.0f;
         this.d = f2;
-        this.f2014c = motionKeyPosition.mDrawPath;
+        this.f1966c = motionKeyPosition.mDrawPath;
         this.q = motionKeyPosition.mPositionType;
         float f3 = Float.isNaN(motionKeyPosition.mPercentWidth) ? f2 : motionKeyPosition.mPercentWidth;
         float f4 = Float.isNaN(motionKeyPosition.mPercentHeight) ? f2 : motionKeyPosition.mPercentHeight;
@@ -418,7 +418,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
         float f2;
         float f3 = motionKeyPosition.mFramePosition / 100.0f;
         this.d = f3;
-        this.f2014c = motionKeyPosition.mDrawPath;
+        this.f1966c = motionKeyPosition.mDrawPath;
         float f4 = Float.isNaN(motionKeyPosition.mPercentWidth) ? f3 : motionKeyPosition.mPercentWidth;
         float f5 = Float.isNaN(motionKeyPosition.mPercentHeight) ? f3 : motionKeyPosition.mPercentHeight;
         float f6 = motionPaths2.h;
@@ -548,9 +548,9 @@ public class MotionPaths implements Comparable<MotionPaths> {
         this.l = motionWidget.b.mPathMotionArc;
         this.m = motionWidget.b.mAnimateRelativeTo;
         this.j = motionWidget.b.mPathRotate;
-        this.f2014c = motionWidget.b.mDrawPath;
+        this.f1966c = motionWidget.b.mDrawPath;
         this.r = motionWidget.b.mAnimateCircleAngleTo;
-        this.k = motionWidget.f2016c.mProgress;
+        this.k = motionWidget.f1968c.mProgress;
         this.n = 0.0f;
         for (String str : motionWidget.getCustomAttributeNames()) {
             CustomVariable customAttribute = motionWidget.getCustomAttribute(str);
@@ -572,7 +572,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
     void b(int i, int i2, MotionKeyPosition motionKeyPosition, MotionPaths motionPaths, MotionPaths motionPaths2) {
         float f = motionKeyPosition.mFramePosition / 100.0f;
         this.d = f;
-        this.f2014c = motionKeyPosition.mDrawPath;
+        this.f1966c = motionKeyPosition.mDrawPath;
         float f2 = Float.isNaN(motionKeyPosition.mPercentWidth) ? f : motionKeyPosition.mPercentWidth;
         float f3 = Float.isNaN(motionKeyPosition.mPercentHeight) ? f : motionKeyPosition.mPercentHeight;
         float f4 = motionPaths2.h;
@@ -613,7 +613,7 @@ public class MotionPaths implements Comparable<MotionPaths> {
         float f4;
         float f5 = motionKeyPosition.mFramePosition / 100.0f;
         this.d = f5;
-        this.f2014c = motionKeyPosition.mDrawPath;
+        this.f1966c = motionKeyPosition.mDrawPath;
         float f6 = Float.isNaN(motionKeyPosition.mPercentWidth) ? f5 : motionKeyPosition.mPercentWidth;
         float f7 = Float.isNaN(motionKeyPosition.mPercentHeight) ? f5 : motionKeyPosition.mPercentHeight;
         float f8 = motionPaths2.h;

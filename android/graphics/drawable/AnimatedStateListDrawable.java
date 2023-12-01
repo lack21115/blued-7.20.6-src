@@ -75,8 +75,8 @@ public class AnimatedStateListDrawable extends StateListDrawable {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void mutate() {
-            this.mTransitions = this.mTransitions.m1023clone();
-            this.mStateIds = this.mStateIds.m1031clone();
+            this.mTransitions = this.mTransitions.m1019clone();
+            this.mStateIds = this.mStateIds.m1027clone();
         }
 
         int addStateSet(int[] iArr, Drawable drawable, int i) {
@@ -522,8 +522,9 @@ public class AnimatedStateListDrawable extends StateListDrawable {
         return z2;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.graphics.drawable.StateListDrawable, android.graphics.drawable.DrawableContainer
-    protected void setConstantState(DrawableContainer.DrawableContainerState drawableContainerState) {
+    public void setConstantState(DrawableContainer.DrawableContainerState drawableContainerState) {
         super.setConstantState(drawableContainerState);
         if (drawableContainerState instanceof AnimatedStateListState) {
             this.mState = (AnimatedStateListState) drawableContainerState;

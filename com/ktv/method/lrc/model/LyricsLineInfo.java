@@ -6,11 +6,11 @@ import java.util.List;
 public class LyricsLineInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f23695a;
+    private int f10087a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23696c;
+    private String f10088c;
     private String[] d;
     private int[] e;
     private List<LyricsLineInfo> f;
@@ -20,7 +20,7 @@ public class LyricsLineInfo {
     }
 
     public void a(int i) {
-        this.f23695a = i;
+        this.f10087a = i;
     }
 
     public void a(LyricsLineInfo lyricsLineInfo, LyricsLineInfo lyricsLineInfo2) {
@@ -36,7 +36,7 @@ public class LyricsLineInfo {
     }
 
     public void a(String str) {
-        this.f23696c = str.replaceAll("\r|\n", "");
+        this.f10088c = str.replaceAll("\r|\n", "");
     }
 
     public void a(List<LyricsLineInfo> list) {
@@ -74,7 +74,7 @@ public class LyricsLineInfo {
     }
 
     public int d() {
-        return this.f23695a;
+        return this.f10087a;
     }
 
     public int e() {
@@ -82,6 +82,6 @@ public class LyricsLineInfo {
     }
 
     public String f() {
-        return this.f23696c;
+        return this.f10088c;
     }
 }

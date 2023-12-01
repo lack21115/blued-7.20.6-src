@@ -3,6 +3,7 @@ package mtopsdk.mtop.unit;
 import android.content.Context;
 import com.alibaba.fastjson.JSON;
 import java.io.IOException;
+import java.net.SocketOptions;
 import java.util.HashMap;
 import java.util.Map;
 import mtopsdk.a.b.c;
@@ -90,12 +91,12 @@ public final class UnitConfigManager {
             return;
         }
         ApiUnit l = SDKConfig.a().l();
-        if (l == null || !str.equals(l.f43775a)) {
+        if (l == null || !str.equals(l.a)) {
             MtopSDKThreadPoolExecutorFactory.a(new Runnable() { // from class: mtopsdk.mtop.unit.UnitConfigManager.1
                 @Override // java.lang.Runnable
                 public final void run() {
                     String str4;
-                    i c2;
+                    i c;
                     try {
                         if (String.this.startsWith(ProtocolEnum.HTTP.a())) {
                             str4 = String.this;
@@ -104,22 +105,22 @@ public final class UnitConfigManager {
                         }
                         Context b = SDKConfig.a().b();
                         try {
-                            g b2 = SDKConfig.a().m().a(new c().a(str4).d(4099).a()).b();
-                            if (b2 == null || b2.a() != 200 || (c2 = b2.c()) == null) {
+                            g b2 = SDKConfig.a().m().a(new c().a(str4).d(SocketOptions.SO_OOBINLINE).a()).b();
+                            if (b2 == null || b2.a() != 200 || (c = b2.c()) == null) {
                                 return;
                             }
                             try {
                                 ApiUnit apiUnit = null;
                                 try {
-                                    apiUnit = (ApiUnit) JSON.parseObject(new String(c2.c(), "utf-8"), ApiUnit.class);
+                                    apiUnit = (ApiUnit) JSON.parseObject(new String(c.c(), "utf-8"), ApiUnit.class);
                                 } catch (Exception e) {
                                     TBSdkLog.d("mtopsdk.UnitConfigManager", str3, "[updateAndStoreApiUnitInfo]parse apiUnit json from cdn error ---" + e.toString());
                                 }
-                                if (apiUnit == null || !StringUtils.a(apiUnit.f43775a)) {
+                                if (apiUnit == null || !StringUtils.a(apiUnit.a)) {
                                     return;
                                 }
                                 ApiUnit l2 = SDKConfig.a().l();
-                                if (l2 == null || !apiUnit.f43775a.equals(l2.f43775a)) {
+                                if (l2 == null || !apiUnit.a.equals(l2.a)) {
                                     SDKConfig.a().a(apiUnit);
                                     MtopUtils.a(apiUnit, b.getFilesDir(), "UNIT_SETTING_STORE.API_UNIT_ITEM");
                                     TBSdkLog.b("mtopsdk.UnitConfigManager", str3, "[updateAndStoreApiUnitInfo] update apiUnit succeed.apiUnit=" + apiUnit);
@@ -145,13 +146,13 @@ public final class UnitConfigManager {
             TBSdkLog.b("mtopsdk.UnitConfigManager", str, "[parseUnitSettingHeader]unitSwitchOpen is false");
         } else if (map == null || map.isEmpty()) {
         } else {
-            String a2 = com.taobao.tao.remotebusiness.listener.c.a(map, "x-m-update-unitinfo");
-            if (StringUtils.a(a2)) {
-                a(a(a2, str), str);
+            String a = com.taobao.tao.remotebusiness.listener.c.a(map, "x-m-update-unitinfo");
+            if (StringUtils.a(a)) {
+                a(a(a, str), str);
             }
-            String a3 = com.taobao.tao.remotebusiness.listener.c.a(map, "x-m-update-unitapi");
-            if (StringUtils.a(a3)) {
-                Map b = b(a3, str);
+            String a2 = com.taobao.tao.remotebusiness.listener.c.a(map, "x-m-update-unitapi");
+            if (StringUtils.a(a2)) {
+                Map b = b(a2, str);
                 a((String) b.get("v="), (String) b.get("url="), str);
             }
         }
@@ -161,7 +162,7 @@ public final class UnitConfigManager {
         if (userUnit == null) {
             TBSdkLog.c("mtopsdk.UnitConfigManager", str, "[updateAndStoreUserUnitInfo]  invalid userUnit,userUnit=" + userUnit);
         } else if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
-            TBSdkLog.b("mtopsdk.UnitConfigManager", str, String.format("[updateAndStoreUserUnitInfo] update userUnitinfo succeed.userid=%s ;utdid=%s ;unitPrefix=%s", userUnit.f43777a, SDKConfig.a().g(), userUnit.f43778c));
+            TBSdkLog.b("mtopsdk.UnitConfigManager", str, String.format("[updateAndStoreUserUnitInfo] update userUnitinfo succeed.userid=%s ;utdid=%s ;unitPrefix=%s", userUnit.a, SDKConfig.a().g(), userUnit.c));
         }
     }
 
@@ -194,12 +195,12 @@ public final class UnitConfigManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void c() {
-        SDKConfig a2 = SDKConfig.a();
-        if (a2.l() == null) {
+        SDKConfig a = SDKConfig.a();
+        if (a.l() == null) {
             try {
-                ApiUnit apiUnit = (ApiUnit) MtopUtils.a(a2.b().getFilesDir(), "UNIT_SETTING_STORE.API_UNIT_ITEM");
+                ApiUnit apiUnit = (ApiUnit) MtopUtils.a(a.b().getFilesDir(), "UNIT_SETTING_STORE.API_UNIT_ITEM");
                 if (apiUnit != null) {
-                    a2.a(apiUnit);
+                    a.a(apiUnit);
                     if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
                         TBSdkLog.b("mtopsdk.UnitConfigManager", "[loadUnitInfoFromLocalStore] load ApiUnit info from local Storage succeed.");
                     }

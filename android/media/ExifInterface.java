@@ -1,7 +1,7 @@
 package android.media;
 
 import android.text.format.Time;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.hms.ads.fw;
 import java.io.IOException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -72,11 +72,11 @@ public class ExifInterface {
     private static float convertRationalLatLonToFloat(String str, String str2) {
         try {
             String[] split = str.split(",");
-            String[] split2 = split[0].split(BridgeUtil.SPLIT_MARK);
+            String[] split2 = split[0].split("/");
             double parseDouble = Double.parseDouble(split2[0].trim()) / Double.parseDouble(split2[1].trim());
-            String[] split3 = split[1].split(BridgeUtil.SPLIT_MARK);
+            String[] split3 = split[1].split("/");
             double parseDouble2 = Double.parseDouble(split3[0].trim()) / Double.parseDouble(split3[1].trim());
-            String[] split4 = split[2].split(BridgeUtil.SPLIT_MARK);
+            String[] split4 = split[2].split("/");
             double parseDouble3 = (parseDouble2 / 60.0d) + parseDouble + ((Double.parseDouble(split4[0].trim()) / Double.parseDouble(split4[1].trim())) / 3600.0d);
             if (!str2.equals(androidx.exifinterface.media.ExifInterface.LATITUDE_SOUTH)) {
                 if (!str2.equals("W")) {
@@ -121,7 +121,7 @@ public class ExifInterface {
             String substring2 = attributesNative.substring(i5, i5 + parseInt2);
             i = i5 + parseInt2;
             if (substring.equals("hasThumbnail")) {
-                this.mHasThumbnail = substring2.equalsIgnoreCase("true");
+                this.mHasThumbnail = substring2.equalsIgnoreCase(fw.Code);
             } else {
                 this.mAttributes.put(substring, substring2);
             }
@@ -156,7 +156,7 @@ public class ExifInterface {
         String str2 = this.mAttributes.get(str);
         if (str2 != null) {
             try {
-                int indexOf = str2.indexOf(BridgeUtil.SPLIT_MARK);
+                int indexOf = str2.indexOf("/");
                 if (indexOf != -1) {
                     double parseDouble = Double.parseDouble(str2.substring(indexOf + 1));
                     if (parseDouble != 0.0d) {

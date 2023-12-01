@@ -4,11 +4,11 @@ package com.oplus.log.core;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f24351a;
+    public String f10664a;
     public byte b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f24352c;
+    public String f10665c;
     public long d;
     public String e = "";
     public long f;

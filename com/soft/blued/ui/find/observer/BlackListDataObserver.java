@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class BlackListDataObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static BlackListDataObserver f30615a = new BlackListDataObserver();
+    private static BlackListDataObserver f16925a = new BlackListDataObserver();
     private ArrayList<IBlackListDataObserver> b = new ArrayList<>();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/find/observer/BlackListDataObserver$IBlackListDataObserver.class */
@@ -17,7 +17,7 @@ public class BlackListDataObserver {
     }
 
     public static BlackListDataObserver a() {
-        return f30615a;
+        return f16925a;
     }
 
     public void a(IBlackListDataObserver iBlackListDataObserver) {

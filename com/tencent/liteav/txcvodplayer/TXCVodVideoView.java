@@ -12,8 +12,6 @@ import android.util.AttributeSet;
 import android.view.Surface;
 import android.view.View;
 import android.widget.FrameLayout;
-import com.android.internal.telephony.PhoneConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.system.LiteavSystemInfo;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.txcplayer.ITXVCubePlayer;
@@ -63,17 +61,17 @@ public class TXCVodVideoView extends FrameLayout {
     private boolean W;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f36490a;
+    public int f22799a;
     public int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ITXVCubePlayer f36491c;
+    public ITXVCubePlayer f22800c;
     protected boolean d;
     protected final int e;
     public Object f;
     ITXVCubePlayer.l g;
     ITXVCubePlayer.h h;
-    a.InterfaceC0935a i;
+    a.InterfaceC0765a i;
     private a.b j;
     private int k;
     private int l;
@@ -97,41 +95,41 @@ public class TXCVodVideoView extends FrameLayout {
     public static final class a extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<TXCVodVideoView> f36505a;
+        private final WeakReference<TXCVodVideoView> f22814a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f36506c;
+        private final String f22815c;
 
         public a(TXCVodVideoView tXCVodVideoView, Looper looper) {
             super(looper);
             this.b = 500;
-            this.f36506c = "TXCVodeVideoView_Eventhandler";
-            this.f36505a = new WeakReference<>(tXCVodVideoView);
+            this.f22815c = "TXCVodeVideoView_Eventhandler";
+            this.f22814a = new WeakReference<>(tXCVodVideoView);
         }
 
         @Override // android.os.Handler
         public final void handleMessage(Message message) {
-            TXCVodVideoView tXCVodVideoView = this.f36505a.get();
+            TXCVodVideoView tXCVodVideoView = this.f22814a.get();
             if (tXCVodVideoView == null || tXCVodVideoView.U == null) {
                 return;
             }
             switch (message.what) {
                 case 100:
                     float f = 0.0f;
-                    if (tXCVodVideoView.f36491c == null) {
+                    if (tXCVodVideoView.f22800c == null) {
                         return;
                     }
                     try {
-                        float propertyLong = (float) tXCVodVideoView.f36491c.getPropertyLong(206);
-                        long currentPosition = tXCVodVideoView.f36491c.getCurrentPosition();
-                        long propertyLong2 = tXCVodVideoView.f36491c.getPropertyLong(208);
+                        float propertyLong = (float) tXCVodVideoView.f22800c.getPropertyLong(206);
+                        long currentPosition = tXCVodVideoView.f22800c.getCurrentPosition();
+                        long propertyLong2 = tXCVodVideoView.f22800c.getPropertyLong(208);
                         if (currentPosition > 0) {
                             f = (float) ((propertyLong2 * 1000) / currentPosition);
                         }
-                        long propertyLong3 = tXCVodVideoView.f36491c.getPropertyLong(302);
-                        long propertyLong4 = tXCVodVideoView.f36491c.getPropertyLong(301);
-                        long propertyLong5 = tXCVodVideoView.f36491c.getPropertyLong(303);
+                        long propertyLong3 = tXCVodVideoView.f22800c.getPropertyLong(302);
+                        long propertyLong4 = tXCVodVideoView.f22800c.getPropertyLong(301);
+                        long propertyLong5 = tXCVodVideoView.f22800c.getPropertyLong(303);
                         Bundle bundle = new Bundle();
                         bundle.putFloat("fps", propertyLong);
                         bundle.putFloat("dps", f);
@@ -168,11 +166,11 @@ public class TXCVodVideoView extends FrameLayout {
                     bundle2.putInt("EVT_PLAY_PROGRESS_MS", (int) currentPosition2);
                     bundle2.putInt("EVT_PLAY_DURATION_MS", (int) duration);
                     bundle2.putInt("EVT_PLAYABLE_DURATION_MS", (int) bufferDuration);
-                    if (tXCVodVideoView.f36491c != null) {
-                        bundle2.putFloat("EVT_PLAYABLE_RATE", tXCVodVideoView.f36491c.getRate());
+                    if (tXCVodVideoView.f22800c != null) {
+                        bundle2.putFloat("EVT_PLAYABLE_RATE", tXCVodVideoView.f22800c.getRate());
                     }
                     tXCVodVideoView.U.a(2005, bundle2);
-                    if (tXCVodVideoView.f36491c != null) {
+                    if (tXCVodVideoView.f22800c != null) {
                         if (tXCVodVideoView.v.l <= 0) {
                             tXCVodVideoView.v.l = 500;
                         }
@@ -189,10 +187,10 @@ public class TXCVodVideoView extends FrameLayout {
 
     public TXCVodVideoView(Context context) {
         super(context);
-        this.f36490a = 0;
+        this.f22799a = 0;
         this.b = 0;
         this.j = null;
-        this.f36491c = null;
+        this.f22800c = null;
         this.t = false;
         this.B = 1.0f;
         this.d = true;
@@ -229,7 +227,7 @@ public class TXCVodVideoView extends FrameLayout {
                     message.arg1 = 2009;
                     Bundle bundle = new Bundle();
                     String str2 = i + "," + i2 + "," + str;
-                    bundle.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str2 + ")");
+                    bundle.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str2 + ")");
                     bundle.putInt("EVT_PARAM1", TXCVodVideoView.this.k);
                     bundle.putInt("EVT_PARAM2", TXCVodVideoView.this.l);
                     bundle.putString("EVT_PARAM3", str2);
@@ -247,10 +245,10 @@ public class TXCVodVideoView extends FrameLayout {
                 bundle2.putInt("EVT_PARAM1", TXCVodVideoView.this.k);
                 bundle2.putInt("EVT_PARAM2", TXCVodVideoView.this.l);
                 if (TXCVodVideoView.this.t || str == null) {
-                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l);
+                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l);
                 } else if (str != null) {
                     String str3 = i + "," + i2 + "," + str;
-                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str3 + ")");
+                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str3 + ")");
                     bundle2.putString("EVT_PARAM3", str3);
                 }
                 message2.setData(bundle2);
@@ -265,18 +263,18 @@ public class TXCVodVideoView extends FrameLayout {
                 if (RenderProcessService.getInstance().setSurfaceBufferSize(iTXVCubePlayer)) {
                     LiteavLog.i("TXCVodVideoView", "setSurfaceBufferSize succeed");
                 }
-                if (TXCVodVideoView.this.f36490a == 1) {
+                if (TXCVodVideoView.this.f22799a == 1) {
                     TXCVodVideoView.this.a(2013, "VOD ready", "prepared");
                     if (!TXCVodVideoView.this.v.p) {
                         TXCVodVideoView.this.b = 4;
                     } else if (TXCVodVideoView.this.b != 4) {
                         TXCVodVideoView.this.b = 3;
                     }
-                    TXCVodVideoView.this.f36490a = 2;
+                    TXCVodVideoView.this.f22799a = 2;
                 }
                 TXCVodVideoView.k(TXCVodVideoView.this);
-                if (TXCVodVideoView.this.f36490a == -1) {
-                    TXCVodVideoView.this.f36490a = 3;
+                if (TXCVodVideoView.this.f22799a == -1) {
+                    TXCVodVideoView.this.f22799a = 3;
                     TXCVodVideoView.this.b = 3;
                 }
                 if (TXCVodVideoView.this.V != null) {
@@ -297,7 +295,7 @@ public class TXCVodVideoView extends FrameLayout {
         this.K = new ITXVCubePlayer.c() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.9
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.c
             public final void a() {
-                TXCVodVideoView.this.f36490a = 5;
+                TXCVodVideoView.this.f22799a = 5;
                 TXCVodVideoView.this.b = 5;
                 TXCVodVideoView.this.a(2006, "Playback completed", "play end");
             }
@@ -350,7 +348,7 @@ public class TXCVodVideoView extends FrameLayout {
                     }
                     if (TXCVodVideoView.this.b == 3) {
                         TXCVodVideoView.this.a(2004, "Playback started", "playing");
-                        TXCVodVideoView.this.f36490a = 3;
+                        TXCVodVideoView.this.f22799a = 3;
                         TXCVodVideoView.this.V.sendEmptyMessage(100);
                         TXCVodVideoView.this.V.sendEmptyMessage(103);
                         return true;
@@ -401,7 +399,7 @@ public class TXCVodVideoView extends FrameLayout {
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.d
             public final boolean a(int i, int i2) {
                 LiteavLog.e("TXCVodVideoView", "onError: " + i + "," + i2);
-                TXCVodVideoView.this.f36490a = -1;
+                TXCVodVideoView.this.f22799a = -1;
                 TXCVodVideoView.this.b = -1;
                 if (i == -1010 || i == -1007 || i == -1004 || i == 200) {
                     if (i2 == -2303) {
@@ -417,7 +415,7 @@ public class TXCVodVideoView extends FrameLayout {
                 }
                 TXCVodVideoView tXCVodVideoView = TXCVodVideoView.this;
                 tXCVodVideoView.C = tXCVodVideoView.getCurrentPosition();
-                if (TXCVodVideoView.s(TXCVodVideoView.this) >= TXCVodVideoView.this.v.f36487a) {
+                if (TXCVodVideoView.s(TXCVodVideoView.this) >= TXCVodVideoView.this.v.f22796a) {
                     TXCVodVideoView.this.a(-2301, "Disconnected from the network. Playback error", "disconnect");
                     TXCVodVideoView.this.b();
                     return true;
@@ -440,7 +438,7 @@ public class TXCVodVideoView extends FrameLayout {
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.k
             public final void a() {
                 LiteavLog.d("TXCVodVideoView", "onVideoDecoderError");
-                if (TXCVodVideoView.this.f36490a != 4) {
+                if (TXCVodVideoView.this.f22799a != 4) {
                     TXCVodVideoView.this.a(2106, "VOD decoding failed", "decode fail");
                 }
                 if (TXCVodVideoView.this.J || !TXCVodVideoView.this.v.d || Math.min(TXCVodVideoView.this.l, TXCVodVideoView.this.k) >= 1080 || !TXCVodVideoView.this.v.d) {
@@ -465,21 +463,21 @@ public class TXCVodVideoView extends FrameLayout {
             public final void a() {
                 LiteavLog.e("TXCVodVideoView", "onHLSKeyError");
                 TXCVodVideoView.this.a(-2305, "HLS decypt key get failed", "hls key error");
-                if (TXCVodVideoView.this.f36491c != null) {
+                if (TXCVodVideoView.this.f22800c != null) {
                     try {
-                        TXCVodVideoView.this.f36491c.stop();
+                        TXCVodVideoView.this.f22800c.stop();
                     } catch (Exception e) {
                         LiteavLog.e("TXCVodVideoView", "onHLSKeyError stop Exception: " + e.getMessage());
                     }
-                    TXCVodVideoView.this.f36491c.release();
+                    TXCVodVideoView.this.f22800c.release();
                     TXCVodVideoView.x(TXCVodVideoView.this);
                 }
-                TXCVodVideoView.this.f36490a = -1;
+                TXCVodVideoView.this.f22799a = -1;
                 TXCVodVideoView.this.b = -1;
             }
         };
-        this.i = new a.InterfaceC0935a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.5
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+        this.i = new a.InterfaceC0765a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.5
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void a(a.b bVar) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceCreated: unmatched render callback\n");
@@ -488,14 +486,14 @@ public class TXCVodVideoView extends FrameLayout {
                 LiteavLog.i("TXCVodVideoView", "onSurfaceCreated");
                 TXCVodVideoView.this.t = true;
                 TXCVodVideoView.this.j = bVar;
-                if (TXCVodVideoView.this.f36491c != null) {
-                    TXCVodVideoView.b(TXCVodVideoView.this.f36491c, bVar);
+                if (TXCVodVideoView.this.f22800c != null) {
+                    TXCVodVideoView.b(TXCVodVideoView.this.f22800c, bVar);
                 } else {
                     TXCVodVideoView.this.e();
                 }
             }
 
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void a(a.b bVar, int i, int i2) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceChanged: unmatched render callback\n");
@@ -509,12 +507,12 @@ public class TXCVodVideoView extends FrameLayout {
                 if (TXCVodVideoView.this.x.a()) {
                     z2 = TXCVodVideoView.this.k == i && TXCVodVideoView.this.l == i2;
                 }
-                if (TXCVodVideoView.this.f36491c != null && z && z2 && TXCVodVideoView.this.b == 3) {
+                if (TXCVodVideoView.this.f22800c != null && z && z2 && TXCVodVideoView.this.b == 3) {
                     TXCVodVideoView.this.a();
                 }
             }
 
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void b(a.b bVar) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceDestroyed: unmatched render callback\n");
@@ -523,12 +521,12 @@ public class TXCVodVideoView extends FrameLayout {
                 LiteavLog.i("TXCVodVideoView", "onSurfaceDestroyed");
                 TXCVodVideoView.this.t = false;
                 TXCVodVideoView.this.j = null;
-                if (TXCVodVideoView.this.f36491c != null) {
-                    TXCVodVideoView.this.f36491c.setSurface(null);
+                if (TXCVodVideoView.this.f22800c != null) {
+                    TXCVodVideoView.this.f22800c.setSurface(null);
                 }
                 TXCVodVideoView tXCVodVideoView = TXCVodVideoView.this;
-                if (tXCVodVideoView.f36491c != null) {
-                    tXCVodVideoView.f36491c.setDisplay(null);
+                if (tXCVodVideoView.f22800c != null) {
+                    tXCVodVideoView.f22800c.setDisplay(null);
                 }
             }
         };
@@ -539,10 +537,10 @@ public class TXCVodVideoView extends FrameLayout {
 
     public TXCVodVideoView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f36490a = 0;
+        this.f22799a = 0;
         this.b = 0;
         this.j = null;
-        this.f36491c = null;
+        this.f22800c = null;
         this.t = false;
         this.B = 1.0f;
         this.d = true;
@@ -579,7 +577,7 @@ public class TXCVodVideoView extends FrameLayout {
                     message.arg1 = 2009;
                     Bundle bundle = new Bundle();
                     String str2 = i + "," + i2 + "," + str;
-                    bundle.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str2 + ")");
+                    bundle.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str2 + ")");
                     bundle.putInt("EVT_PARAM1", TXCVodVideoView.this.k);
                     bundle.putInt("EVT_PARAM2", TXCVodVideoView.this.l);
                     bundle.putString("EVT_PARAM3", str2);
@@ -597,10 +595,10 @@ public class TXCVodVideoView extends FrameLayout {
                 bundle2.putInt("EVT_PARAM1", TXCVodVideoView.this.k);
                 bundle2.putInt("EVT_PARAM2", TXCVodVideoView.this.l);
                 if (TXCVodVideoView.this.t || str == null) {
-                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l);
+                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l);
                 } else if (str != null) {
                     String str3 = i + "," + i2 + "," + str;
-                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str3 + ")");
+                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str3 + ")");
                     bundle2.putString("EVT_PARAM3", str3);
                 }
                 message2.setData(bundle2);
@@ -615,18 +613,18 @@ public class TXCVodVideoView extends FrameLayout {
                 if (RenderProcessService.getInstance().setSurfaceBufferSize(iTXVCubePlayer)) {
                     LiteavLog.i("TXCVodVideoView", "setSurfaceBufferSize succeed");
                 }
-                if (TXCVodVideoView.this.f36490a == 1) {
+                if (TXCVodVideoView.this.f22799a == 1) {
                     TXCVodVideoView.this.a(2013, "VOD ready", "prepared");
                     if (!TXCVodVideoView.this.v.p) {
                         TXCVodVideoView.this.b = 4;
                     } else if (TXCVodVideoView.this.b != 4) {
                         TXCVodVideoView.this.b = 3;
                     }
-                    TXCVodVideoView.this.f36490a = 2;
+                    TXCVodVideoView.this.f22799a = 2;
                 }
                 TXCVodVideoView.k(TXCVodVideoView.this);
-                if (TXCVodVideoView.this.f36490a == -1) {
-                    TXCVodVideoView.this.f36490a = 3;
+                if (TXCVodVideoView.this.f22799a == -1) {
+                    TXCVodVideoView.this.f22799a = 3;
                     TXCVodVideoView.this.b = 3;
                 }
                 if (TXCVodVideoView.this.V != null) {
@@ -647,7 +645,7 @@ public class TXCVodVideoView extends FrameLayout {
         this.K = new ITXVCubePlayer.c() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.9
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.c
             public final void a() {
-                TXCVodVideoView.this.f36490a = 5;
+                TXCVodVideoView.this.f22799a = 5;
                 TXCVodVideoView.this.b = 5;
                 TXCVodVideoView.this.a(2006, "Playback completed", "play end");
             }
@@ -700,7 +698,7 @@ public class TXCVodVideoView extends FrameLayout {
                     }
                     if (TXCVodVideoView.this.b == 3) {
                         TXCVodVideoView.this.a(2004, "Playback started", "playing");
-                        TXCVodVideoView.this.f36490a = 3;
+                        TXCVodVideoView.this.f22799a = 3;
                         TXCVodVideoView.this.V.sendEmptyMessage(100);
                         TXCVodVideoView.this.V.sendEmptyMessage(103);
                         return true;
@@ -751,7 +749,7 @@ public class TXCVodVideoView extends FrameLayout {
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.d
             public final boolean a(int i, int i2) {
                 LiteavLog.e("TXCVodVideoView", "onError: " + i + "," + i2);
-                TXCVodVideoView.this.f36490a = -1;
+                TXCVodVideoView.this.f22799a = -1;
                 TXCVodVideoView.this.b = -1;
                 if (i == -1010 || i == -1007 || i == -1004 || i == 200) {
                     if (i2 == -2303) {
@@ -767,7 +765,7 @@ public class TXCVodVideoView extends FrameLayout {
                 }
                 TXCVodVideoView tXCVodVideoView = TXCVodVideoView.this;
                 tXCVodVideoView.C = tXCVodVideoView.getCurrentPosition();
-                if (TXCVodVideoView.s(TXCVodVideoView.this) >= TXCVodVideoView.this.v.f36487a) {
+                if (TXCVodVideoView.s(TXCVodVideoView.this) >= TXCVodVideoView.this.v.f22796a) {
                     TXCVodVideoView.this.a(-2301, "Disconnected from the network. Playback error", "disconnect");
                     TXCVodVideoView.this.b();
                     return true;
@@ -790,7 +788,7 @@ public class TXCVodVideoView extends FrameLayout {
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.k
             public final void a() {
                 LiteavLog.d("TXCVodVideoView", "onVideoDecoderError");
-                if (TXCVodVideoView.this.f36490a != 4) {
+                if (TXCVodVideoView.this.f22799a != 4) {
                     TXCVodVideoView.this.a(2106, "VOD decoding failed", "decode fail");
                 }
                 if (TXCVodVideoView.this.J || !TXCVodVideoView.this.v.d || Math.min(TXCVodVideoView.this.l, TXCVodVideoView.this.k) >= 1080 || !TXCVodVideoView.this.v.d) {
@@ -815,21 +813,21 @@ public class TXCVodVideoView extends FrameLayout {
             public final void a() {
                 LiteavLog.e("TXCVodVideoView", "onHLSKeyError");
                 TXCVodVideoView.this.a(-2305, "HLS decypt key get failed", "hls key error");
-                if (TXCVodVideoView.this.f36491c != null) {
+                if (TXCVodVideoView.this.f22800c != null) {
                     try {
-                        TXCVodVideoView.this.f36491c.stop();
+                        TXCVodVideoView.this.f22800c.stop();
                     } catch (Exception e) {
                         LiteavLog.e("TXCVodVideoView", "onHLSKeyError stop Exception: " + e.getMessage());
                     }
-                    TXCVodVideoView.this.f36491c.release();
+                    TXCVodVideoView.this.f22800c.release();
                     TXCVodVideoView.x(TXCVodVideoView.this);
                 }
-                TXCVodVideoView.this.f36490a = -1;
+                TXCVodVideoView.this.f22799a = -1;
                 TXCVodVideoView.this.b = -1;
             }
         };
-        this.i = new a.InterfaceC0935a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.5
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+        this.i = new a.InterfaceC0765a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.5
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void a(a.b bVar) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceCreated: unmatched render callback\n");
@@ -838,14 +836,14 @@ public class TXCVodVideoView extends FrameLayout {
                 LiteavLog.i("TXCVodVideoView", "onSurfaceCreated");
                 TXCVodVideoView.this.t = true;
                 TXCVodVideoView.this.j = bVar;
-                if (TXCVodVideoView.this.f36491c != null) {
-                    TXCVodVideoView.b(TXCVodVideoView.this.f36491c, bVar);
+                if (TXCVodVideoView.this.f22800c != null) {
+                    TXCVodVideoView.b(TXCVodVideoView.this.f22800c, bVar);
                 } else {
                     TXCVodVideoView.this.e();
                 }
             }
 
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void a(a.b bVar, int i, int i2) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceChanged: unmatched render callback\n");
@@ -859,12 +857,12 @@ public class TXCVodVideoView extends FrameLayout {
                 if (TXCVodVideoView.this.x.a()) {
                     z2 = TXCVodVideoView.this.k == i && TXCVodVideoView.this.l == i2;
                 }
-                if (TXCVodVideoView.this.f36491c != null && z && z2 && TXCVodVideoView.this.b == 3) {
+                if (TXCVodVideoView.this.f22800c != null && z && z2 && TXCVodVideoView.this.b == 3) {
                     TXCVodVideoView.this.a();
                 }
             }
 
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void b(a.b bVar) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceDestroyed: unmatched render callback\n");
@@ -873,12 +871,12 @@ public class TXCVodVideoView extends FrameLayout {
                 LiteavLog.i("TXCVodVideoView", "onSurfaceDestroyed");
                 TXCVodVideoView.this.t = false;
                 TXCVodVideoView.this.j = null;
-                if (TXCVodVideoView.this.f36491c != null) {
-                    TXCVodVideoView.this.f36491c.setSurface(null);
+                if (TXCVodVideoView.this.f22800c != null) {
+                    TXCVodVideoView.this.f22800c.setSurface(null);
                 }
                 TXCVodVideoView tXCVodVideoView = TXCVodVideoView.this;
-                if (tXCVodVideoView.f36491c != null) {
-                    tXCVodVideoView.f36491c.setDisplay(null);
+                if (tXCVodVideoView.f22800c != null) {
+                    tXCVodVideoView.f22800c.setDisplay(null);
                 }
             }
         };
@@ -889,10 +887,10 @@ public class TXCVodVideoView extends FrameLayout {
 
     public TXCVodVideoView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f36490a = 0;
+        this.f22799a = 0;
         this.b = 0;
         this.j = null;
-        this.f36491c = null;
+        this.f22800c = null;
         this.t = false;
         this.B = 1.0f;
         this.d = true;
@@ -929,7 +927,7 @@ public class TXCVodVideoView extends FrameLayout {
                     message.arg1 = 2009;
                     Bundle bundle = new Bundle();
                     String str2 = i2 + "," + i22 + "," + str;
-                    bundle.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str2 + ")");
+                    bundle.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str2 + ")");
                     bundle.putInt("EVT_PARAM1", TXCVodVideoView.this.k);
                     bundle.putInt("EVT_PARAM2", TXCVodVideoView.this.l);
                     bundle.putString("EVT_PARAM3", str2);
@@ -947,10 +945,10 @@ public class TXCVodVideoView extends FrameLayout {
                 bundle2.putInt("EVT_PARAM1", TXCVodVideoView.this.k);
                 bundle2.putInt("EVT_PARAM2", TXCVodVideoView.this.l);
                 if (TXCVodVideoView.this.t || str == null) {
-                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l);
+                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l);
                 } else if (str != null) {
                     String str3 = i2 + "," + i22 + "," + str;
-                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + PhoneConstants.APN_TYPE_ALL + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str3 + ")");
+                    bundle2.putString("description", "Resolution change:" + TXCVodVideoView.this.k + "*" + TXCVodVideoView.this.l + " Crop(width,height,crop_left,crop_top,crop_right,crop_bottom):(" + str3 + ")");
                     bundle2.putString("EVT_PARAM3", str3);
                 }
                 message2.setData(bundle2);
@@ -965,18 +963,18 @@ public class TXCVodVideoView extends FrameLayout {
                 if (RenderProcessService.getInstance().setSurfaceBufferSize(iTXVCubePlayer)) {
                     LiteavLog.i("TXCVodVideoView", "setSurfaceBufferSize succeed");
                 }
-                if (TXCVodVideoView.this.f36490a == 1) {
+                if (TXCVodVideoView.this.f22799a == 1) {
                     TXCVodVideoView.this.a(2013, "VOD ready", "prepared");
                     if (!TXCVodVideoView.this.v.p) {
                         TXCVodVideoView.this.b = 4;
                     } else if (TXCVodVideoView.this.b != 4) {
                         TXCVodVideoView.this.b = 3;
                     }
-                    TXCVodVideoView.this.f36490a = 2;
+                    TXCVodVideoView.this.f22799a = 2;
                 }
                 TXCVodVideoView.k(TXCVodVideoView.this);
-                if (TXCVodVideoView.this.f36490a == -1) {
-                    TXCVodVideoView.this.f36490a = 3;
+                if (TXCVodVideoView.this.f22799a == -1) {
+                    TXCVodVideoView.this.f22799a = 3;
                     TXCVodVideoView.this.b = 3;
                 }
                 if (TXCVodVideoView.this.V != null) {
@@ -997,7 +995,7 @@ public class TXCVodVideoView extends FrameLayout {
         this.K = new ITXVCubePlayer.c() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.9
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.c
             public final void a() {
-                TXCVodVideoView.this.f36490a = 5;
+                TXCVodVideoView.this.f22799a = 5;
                 TXCVodVideoView.this.b = 5;
                 TXCVodVideoView.this.a(2006, "Playback completed", "play end");
             }
@@ -1050,7 +1048,7 @@ public class TXCVodVideoView extends FrameLayout {
                     }
                     if (TXCVodVideoView.this.b == 3) {
                         TXCVodVideoView.this.a(2004, "Playback started", "playing");
-                        TXCVodVideoView.this.f36490a = 3;
+                        TXCVodVideoView.this.f22799a = 3;
                         TXCVodVideoView.this.V.sendEmptyMessage(100);
                         TXCVodVideoView.this.V.sendEmptyMessage(103);
                         return true;
@@ -1101,7 +1099,7 @@ public class TXCVodVideoView extends FrameLayout {
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.d
             public final boolean a(int i2, int i22) {
                 LiteavLog.e("TXCVodVideoView", "onError: " + i2 + "," + i22);
-                TXCVodVideoView.this.f36490a = -1;
+                TXCVodVideoView.this.f22799a = -1;
                 TXCVodVideoView.this.b = -1;
                 if (i2 == -1010 || i2 == -1007 || i2 == -1004 || i2 == 200) {
                     if (i22 == -2303) {
@@ -1117,7 +1115,7 @@ public class TXCVodVideoView extends FrameLayout {
                 }
                 TXCVodVideoView tXCVodVideoView = TXCVodVideoView.this;
                 tXCVodVideoView.C = tXCVodVideoView.getCurrentPosition();
-                if (TXCVodVideoView.s(TXCVodVideoView.this) >= TXCVodVideoView.this.v.f36487a) {
+                if (TXCVodVideoView.s(TXCVodVideoView.this) >= TXCVodVideoView.this.v.f22796a) {
                     TXCVodVideoView.this.a(-2301, "Disconnected from the network. Playback error", "disconnect");
                     TXCVodVideoView.this.b();
                     return true;
@@ -1140,7 +1138,7 @@ public class TXCVodVideoView extends FrameLayout {
             @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.k
             public final void a() {
                 LiteavLog.d("TXCVodVideoView", "onVideoDecoderError");
-                if (TXCVodVideoView.this.f36490a != 4) {
+                if (TXCVodVideoView.this.f22799a != 4) {
                     TXCVodVideoView.this.a(2106, "VOD decoding failed", "decode fail");
                 }
                 if (TXCVodVideoView.this.J || !TXCVodVideoView.this.v.d || Math.min(TXCVodVideoView.this.l, TXCVodVideoView.this.k) >= 1080 || !TXCVodVideoView.this.v.d) {
@@ -1165,21 +1163,21 @@ public class TXCVodVideoView extends FrameLayout {
             public final void a() {
                 LiteavLog.e("TXCVodVideoView", "onHLSKeyError");
                 TXCVodVideoView.this.a(-2305, "HLS decypt key get failed", "hls key error");
-                if (TXCVodVideoView.this.f36491c != null) {
+                if (TXCVodVideoView.this.f22800c != null) {
                     try {
-                        TXCVodVideoView.this.f36491c.stop();
+                        TXCVodVideoView.this.f22800c.stop();
                     } catch (Exception e) {
                         LiteavLog.e("TXCVodVideoView", "onHLSKeyError stop Exception: " + e.getMessage());
                     }
-                    TXCVodVideoView.this.f36491c.release();
+                    TXCVodVideoView.this.f22800c.release();
                     TXCVodVideoView.x(TXCVodVideoView.this);
                 }
-                TXCVodVideoView.this.f36490a = -1;
+                TXCVodVideoView.this.f22799a = -1;
                 TXCVodVideoView.this.b = -1;
             }
         };
-        this.i = new a.InterfaceC0935a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.5
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+        this.i = new a.InterfaceC0765a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.5
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void a(a.b bVar) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceCreated: unmatched render callback\n");
@@ -1188,14 +1186,14 @@ public class TXCVodVideoView extends FrameLayout {
                 LiteavLog.i("TXCVodVideoView", "onSurfaceCreated");
                 TXCVodVideoView.this.t = true;
                 TXCVodVideoView.this.j = bVar;
-                if (TXCVodVideoView.this.f36491c != null) {
-                    TXCVodVideoView.b(TXCVodVideoView.this.f36491c, bVar);
+                if (TXCVodVideoView.this.f22800c != null) {
+                    TXCVodVideoView.b(TXCVodVideoView.this.f22800c, bVar);
                 } else {
                     TXCVodVideoView.this.e();
                 }
             }
 
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void a(a.b bVar, int i2, int i22) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceChanged: unmatched render callback\n");
@@ -1209,12 +1207,12 @@ public class TXCVodVideoView extends FrameLayout {
                 if (TXCVodVideoView.this.x.a()) {
                     z2 = TXCVodVideoView.this.k == i2 && TXCVodVideoView.this.l == i22;
                 }
-                if (TXCVodVideoView.this.f36491c != null && z && z2 && TXCVodVideoView.this.b == 3) {
+                if (TXCVodVideoView.this.f22800c != null && z && z2 && TXCVodVideoView.this.b == 3) {
                     TXCVodVideoView.this.a();
                 }
             }
 
-            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0935a
+            @Override // com.tencent.liteav.txcvodplayer.renderer.a.InterfaceC0765a
             public final void b(a.b bVar) {
                 if (bVar.a() != TXCVodVideoView.this.x) {
                     LiteavLog.e("TXCVodVideoView", "onSurfaceDestroyed: unmatched render callback\n");
@@ -1223,12 +1221,12 @@ public class TXCVodVideoView extends FrameLayout {
                 LiteavLog.i("TXCVodVideoView", "onSurfaceDestroyed");
                 TXCVodVideoView.this.t = false;
                 TXCVodVideoView.this.j = null;
-                if (TXCVodVideoView.this.f36491c != null) {
-                    TXCVodVideoView.this.f36491c.setSurface(null);
+                if (TXCVodVideoView.this.f22800c != null) {
+                    TXCVodVideoView.this.f22800c.setSurface(null);
                 }
                 TXCVodVideoView tXCVodVideoView = TXCVodVideoView.this;
-                if (tXCVodVideoView.f36491c != null) {
-                    tXCVodVideoView.f36491c.setDisplay(null);
+                if (tXCVodVideoView.f22800c != null) {
+                    tXCVodVideoView.f22800c.setDisplay(null);
                 }
             }
         };
@@ -1267,7 +1265,7 @@ public class TXCVodVideoView extends FrameLayout {
         setFocusable(true);
         setFocusableInTouchMode(true);
         requestFocus();
-        this.f36490a = 0;
+        this.f22799a = 0;
         this.b = 0;
         Looper mainLooper = Looper.getMainLooper();
         if (mainLooper != null) {
@@ -1305,13 +1303,13 @@ public class TXCVodVideoView extends FrameLayout {
     }
 
     private void b(boolean z) {
-        if (this.f36491c != null) {
-            LiteavLog.i("TXCVodVideoView", "release player " + this.f36491c);
-            a(this.f36491c);
-            this.f36491c.release();
+        if (this.f22800c != null) {
+            LiteavLog.i("TXCVodVideoView", "release player " + this.f22800c);
+            a(this.f22800c);
+            this.f22800c.release();
             f();
-            this.f36491c = null;
-            this.f36490a = 0;
+            this.f22800c = null;
+            this.f22799a = 0;
             this.D = false;
             this.E = -1;
             if (z) {
@@ -1379,7 +1377,7 @@ public class TXCVodVideoView extends FrameLayout {
             int r0 = (r0 > r1 ? 1 : (r0 == r1 ? 0 : -1))
             if (r0 != 0) goto L83
             r0 = r5
-            com.tencent.liteav.txcplayer.ITXVCubePlayer r0 = r0.f36491c
+            com.tencent.liteav.txcplayer.ITXVCubePlayer r0 = r0.f22800c
             r10 = r0
             r0 = r10
             if (r0 == 0) goto L83
@@ -1431,12 +1429,12 @@ public class TXCVodVideoView extends FrameLayout {
         }
         try {
             ITXVCubePlayer a2 = f.a(this.u);
-            this.f36491c = a2;
+            this.f22800c = a2;
             if (this.f != null && a2 != null) {
                 a2.attachTRTC(this.f);
             }
             String str = this.v.q;
-            if (str.startsWith(BridgeUtil.SPLIT_MARK)) {
+            if (str.startsWith("/")) {
                 if (!new File(str.contains(".hls") ? str.substring(0, str.indexOf(".hls") + 4) : str).exists()) {
                     throw new FileNotFoundException();
                 }
@@ -1451,49 +1449,49 @@ public class TXCVodVideoView extends FrameLayout {
                 this.v.w = false;
             }
             if (this.H == -1) {
-                this.f36491c.enableAdaptiveBitrate();
+                this.f22800c.enableAdaptiveBitrate();
             } else if (this.H != -1000) {
-                this.f36491c.setBitrateIndex(this.H);
+                this.f22800c.setBitrateIndex(this.H);
             }
-            this.f36491c.setConfig(this.v);
-            this.f36491c.setPrivateConfig(this.w);
+            this.f22800c.setConfig(this.v);
+            this.f22800c.setPrivateConfig(this.w);
             if (this.v.h != null) {
-                this.f36491c.setDataSource(this.u, Uri.parse(str), this.v.h);
+                this.f22800c.setDataSource(this.u, Uri.parse(str), this.v.h);
             } else {
-                this.f36491c.setDataSource(str);
+                this.f22800c.setDataSource(str);
             }
-            this.f36491c.setOnPreparedListener(this.h);
-            this.f36491c.setOnVideoSizeChangedListener(this.g);
-            this.f36491c.setOnCompletionListener(this.K);
-            this.f36491c.setOnErrorListener(this.N);
-            this.f36491c.setOnInfoListener(this.L);
-            this.f36491c.setOnSeekCompleteListener(this.Q);
-            this.f36491c.setOnTimedTextListener(this.R);
-            this.f36491c.setOnHLSKeyErrorListener(this.S);
-            this.f36491c.setOnHevcVideoDecoderErrorListener(this.O);
-            this.f36491c.setOnVideoDecoderErrorListener(this.P);
-            this.f36491c.setOnGetTXCVodVideoViewTargetState(new ITXVCubePlayer.a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.6
+            this.f22800c.setOnPreparedListener(this.h);
+            this.f22800c.setOnVideoSizeChangedListener(this.g);
+            this.f22800c.setOnCompletionListener(this.K);
+            this.f22800c.setOnErrorListener(this.N);
+            this.f22800c.setOnInfoListener(this.L);
+            this.f22800c.setOnSeekCompleteListener(this.Q);
+            this.f22800c.setOnTimedTextListener(this.R);
+            this.f22800c.setOnHLSKeyErrorListener(this.S);
+            this.f22800c.setOnHevcVideoDecoderErrorListener(this.O);
+            this.f22800c.setOnVideoDecoderErrorListener(this.P);
+            this.f22800c.setOnGetTXCVodVideoViewTargetState(new ITXVCubePlayer.a() { // from class: com.tencent.liteav.txcvodplayer.TXCVodVideoView.6
                 @Override // com.tencent.liteav.txcplayer.ITXVCubePlayer.a
                 public final int a() {
                     return TXCVodVideoView.this.b;
                 }
             });
-            b(this.f36491c, this.j);
-            this.f36491c.setAudioStreamType(3);
-            this.f36491c.setScreenOnWhilePlaying(true);
-            this.f36491c.prepareAsync();
-            this.f36491c.setAudioVolume(this.F);
+            b(this.f22800c, this.j);
+            this.f22800c.setAudioStreamType(3);
+            this.f22800c.setScreenOnWhilePlaying(true);
+            this.f22800c.prepareAsync();
+            this.f22800c.setAudioVolume(this.F);
             setMute(this.G);
-            this.f36490a = 1;
+            this.f22799a = 1;
             return true;
         } catch (FileNotFoundException e) {
-            this.f36490a = -1;
+            this.f22799a = -1;
             this.b = -1;
             this.N.a(-1004, -2303);
             return true;
         } catch (Exception e2) {
             LiteavLog.w("TXCVodVideoView", e2.toString());
-            this.f36490a = -1;
+            this.f22799a = -1;
             this.b = -1;
             this.N.a(1, 0);
             return true;
@@ -1501,20 +1499,20 @@ public class TXCVodVideoView extends FrameLayout {
     }
 
     private void f() {
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             iTXVCubePlayer.setOnPreparedListener(null);
-            this.f36491c.setOnVideoSizeChangedListener(null);
-            this.f36491c.setOnCompletionListener(null);
-            this.f36491c.setOnErrorListener(null);
-            this.f36491c.setOnInfoListener(null);
-            this.f36491c.setOnBufferingUpdateListener(null);
-            this.f36491c.setOnSeekCompleteListener(null);
-            this.f36491c.setOnTimedTextListener(null);
-            this.f36491c.setOnHLSKeyErrorListener(null);
-            this.f36491c.setOnHevcVideoDecoderErrorListener(null);
-            this.f36491c.setOnVideoDecoderErrorListener(null);
-            this.f36491c.setOnGetTXCVodVideoViewTargetState(null);
+            this.f22800c.setOnVideoSizeChangedListener(null);
+            this.f22800c.setOnCompletionListener(null);
+            this.f22800c.setOnErrorListener(null);
+            this.f22800c.setOnInfoListener(null);
+            this.f22800c.setOnBufferingUpdateListener(null);
+            this.f22800c.setOnSeekCompleteListener(null);
+            this.f22800c.setOnTimedTextListener(null);
+            this.f22800c.setOnHLSKeyErrorListener(null);
+            this.f22800c.setOnHevcVideoDecoderErrorListener(null);
+            this.f22800c.setOnVideoDecoderErrorListener(null);
+            this.f22800c.setOnGetTXCVodVideoViewTargetState(null);
         }
     }
 
@@ -1545,7 +1543,7 @@ public class TXCVodVideoView extends FrameLayout {
     }
 
     static /* synthetic */ ITXVCubePlayer x(TXCVodVideoView tXCVodVideoView) {
-        tXCVodVideoView.f36491c = null;
+        tXCVodVideoView.f22800c = null;
         return null;
     }
 
@@ -1553,15 +1551,15 @@ public class TXCVodVideoView extends FrameLayout {
         LiteavLog.i("TXCVodVideoView", "start vod=" + hashCode());
         if (c()) {
             try {
-                if (this.f36490a != 3 && !this.D) {
-                    this.f36490a = 3;
+                if (this.f22799a != 3 && !this.D) {
+                    this.f22799a = 3;
                     a(2004, "Playback started", "playing");
                     if (this.V != null) {
                         this.V.sendEmptyMessage(100);
                         this.V.sendEmptyMessage(103);
                     }
                 }
-                this.f36491c.start();
+                this.f22800c.start();
             } catch (Exception e) {
                 LiteavLog.e("TXCVodVideoView", "start exception: " + e.getMessage());
             }
@@ -1585,9 +1583,9 @@ public class TXCVodVideoView extends FrameLayout {
             }
             try {
                 this.E = i3;
-                this.f36491c.seekTo(i3);
+                this.f22800c.seekTo(i3);
                 this.D = true;
-                if (this.f36490a == 5) {
+                if (this.f22799a == 5) {
                     this.b = 3;
                 }
             } catch (Exception e) {
@@ -1597,7 +1595,7 @@ public class TXCVodVideoView extends FrameLayout {
     }
 
     public final boolean a(boolean z) {
-        if (this.f36490a == 0) {
+        if (this.f22799a == 0) {
             this.d = z;
             return true;
         }
@@ -1611,7 +1609,7 @@ public class TXCVodVideoView extends FrameLayout {
             this.V.removeMessages(100);
             this.V.removeMessages(103);
         }
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             try {
                 iTXVCubePlayer.stop();
@@ -1625,11 +1623,11 @@ public class TXCVodVideoView extends FrameLayout {
 
     public final boolean c() {
         int i;
-        return (this.f36491c == null || (i = this.f36490a) == -1 || i == 0 || i == 1) ? false : true;
+        return (this.f22800c == null || (i = this.f22799a) == -1 || i == 0 || i == 1) ? false : true;
     }
 
     public final void d() {
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             iTXVCubePlayer.publishAudioToNetwork();
         }
@@ -1640,7 +1638,7 @@ public class TXCVodVideoView extends FrameLayout {
         if (i == -1) {
             return i;
         }
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             this.H = iTXVCubePlayer.getBitrateIndex();
         }
@@ -1649,11 +1647,11 @@ public class TXCVodVideoView extends FrameLayout {
 
     public long getBufferDuration() {
         long j;
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             long playableDurationMs = iTXVCubePlayer.getPlayableDurationMs();
             long currentPosition = getCurrentPosition();
-            if (this.f36490a == 3) {
+            if (this.f22799a == 3) {
                 this.q = currentPosition;
             }
             long j2 = playableDurationMs;
@@ -1677,7 +1675,7 @@ public class TXCVodVideoView extends FrameLayout {
         }
         long j = this.r;
         if (j <= 0) {
-            ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+            ITXVCubePlayer iTXVCubePlayer = this.f22800c;
             j = iTXVCubePlayer != null ? iTXVCubePlayer.getCurrentPosition() : 0L;
         }
         long j2 = j;
@@ -1692,7 +1690,7 @@ public class TXCVodVideoView extends FrameLayout {
     }
 
     public int getDuration() {
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null && this.s <= 0) {
             this.s = (int) iTXVCubePlayer.getDuration();
         }
@@ -1701,10 +1699,10 @@ public class TXCVodVideoView extends FrameLayout {
 
     public b getMediaInfo() {
         try {
-            if (this.f36491c == null) {
+            if (this.f22800c == null) {
                 return null;
             }
-            return this.f36491c.getMediaInfo();
+            return this.f22800c.getMediaInfo();
         } catch (Throwable th) {
             th.printStackTrace();
             return null;
@@ -1725,7 +1723,7 @@ public class TXCVodVideoView extends FrameLayout {
 
     public ArrayList<com.tencent.liteav.txcplayer.d.a> getSupportedBitrates() {
         try {
-            return this.f36491c != null ? this.f36491c.getSupportedBitrates() : new ArrayList<>();
+            return this.f22800c != null ? this.f22800c.getSupportedBitrates() : new ArrayList<>();
         } catch (Throwable th) {
             th.printStackTrace();
             return new ArrayList<>();
@@ -1753,7 +1751,7 @@ public class TXCVodVideoView extends FrameLayout {
         if (i > 0) {
             this.F = i;
         }
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             iTXVCubePlayer.setAudioVolume(i);
         }
@@ -1769,7 +1767,7 @@ public class TXCVodVideoView extends FrameLayout {
             return;
         }
         this.H = i;
-        if (this.f36490a == 5) {
+        if (this.f22799a == 5) {
             return;
         }
         try {
@@ -1781,17 +1779,17 @@ public class TXCVodVideoView extends FrameLayout {
                         break;
                     }
                     com.tencent.liteav.txcplayer.d.a next = it.next();
-                    if (next != null && next.f36478a == i) {
+                    if (next != null && next.f22787a == i) {
                         this.I = next.d;
                         break;
                     }
                 }
             }
-            if (this.f36491c != null) {
-                if (!this.v.j || i == -1 || this.f36491c.getBitrateIndex() == -1) {
+            if (this.f22800c != null) {
+                if (!this.v.j || i == -1 || this.f22800c.getBitrateIndex() == -1) {
                     c(false);
                 } else {
-                    this.f36491c.setBitrateIndex(i);
+                    this.f22800c.setBitrateIndex(i);
                 }
             }
         } catch (Throwable th) {
@@ -1811,7 +1809,7 @@ public class TXCVodVideoView extends FrameLayout {
 
     public void setMute(boolean z) {
         this.G = z;
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer == null) {
             return;
         }
@@ -1827,7 +1825,7 @@ public class TXCVodVideoView extends FrameLayout {
 
     public void setPrivateConfig(Map<String, Object> map) {
         this.w = map;
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             iTXVCubePlayer.setPrivateConfig(map);
         }
@@ -1835,7 +1833,7 @@ public class TXCVodVideoView extends FrameLayout {
 
     public void setRate(float f) {
         LiteavLog.i("TXCVodVideoView", "setRate ".concat(String.valueOf(f)));
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             iTXVCubePlayer.setRate(f);
         }
@@ -1851,10 +1849,10 @@ public class TXCVodVideoView extends FrameLayout {
             LiteavLog.e("TXCVodVideoView", String.format(Locale.getDefault(), "invalid render %d\n", Integer.valueOf(i)));
         } else {
             TextureRenderView textureRenderView = new TextureRenderView(this.u);
-            if (this.f36491c != null) {
-                textureRenderView.getSurfaceHolder().a(this.f36491c);
-                textureRenderView.a(this.f36491c.getVideoWidth(), this.f36491c.getVideoHeight());
-                textureRenderView.b(this.f36491c.getVideoSarNum(), this.f36491c.getVideoSarDen());
+            if (this.f22800c != null) {
+                textureRenderView.getSurfaceHolder().a(this.f22800c);
+                textureRenderView.a(this.f22800c.getVideoWidth(), this.f22800c.getVideoHeight());
+                textureRenderView.b(this.f22800c.getVideoSarNum(), this.f22800c.getVideoSarDen());
                 textureRenderView.setAspectRatio(this.T);
             }
             setRenderView(textureRenderView);
@@ -1896,7 +1894,7 @@ public class TXCVodVideoView extends FrameLayout {
             }
         };
         this.j = bVar;
-        ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+        ITXVCubePlayer iTXVCubePlayer = this.f22800c;
         if (iTXVCubePlayer != null) {
             b(iTXVCubePlayer, bVar);
         }
@@ -1907,7 +1905,7 @@ public class TXCVodVideoView extends FrameLayout {
         int i2;
         LiteavLog.i("TXCVodVideoView", "setRenderView ".concat(String.valueOf(aVar)));
         if (this.x != null) {
-            ITXVCubePlayer iTXVCubePlayer = this.f36491c;
+            ITXVCubePlayer iTXVCubePlayer = this.f22800c;
             if (iTXVCubePlayer != null) {
                 iTXVCubePlayer.setDisplay(null);
             }
@@ -1946,10 +1944,10 @@ public class TXCVodVideoView extends FrameLayout {
 
     public void setTextureRenderView(TextureRenderView textureRenderView) {
         LiteavLog.i("TXCVodVideoView", "setTextureRenderView ".concat(String.valueOf(textureRenderView)));
-        if (this.f36491c != null) {
-            textureRenderView.getSurfaceHolder().a(this.f36491c);
-            textureRenderView.a(this.f36491c.getVideoWidth(), this.f36491c.getVideoHeight());
-            textureRenderView.b(this.f36491c.getVideoSarNum(), this.f36491c.getVideoSarDen());
+        if (this.f22800c != null) {
+            textureRenderView.getSurfaceHolder().a(this.f22800c);
+            textureRenderView.a(this.f22800c.getVideoWidth(), this.f22800c.getVideoHeight());
+            textureRenderView.b(this.f22800c.getVideoSarNum(), this.f22800c.getVideoSarDen());
             textureRenderView.setAspectRatio(this.T);
         }
         setRenderView(textureRenderView);

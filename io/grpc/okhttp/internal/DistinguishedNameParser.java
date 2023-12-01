@@ -44,25 +44,25 @@ final class DistinguishedNameParser {
         if (i4 >= this.length) {
             throw new IllegalStateException("Malformed DN: " + this.dn);
         }
-        char c2 = this.chars[i];
+        char c = this.chars[i];
+        if (c >= '0' && c <= '9') {
+            i2 = c - '0';
+        } else if (c >= 'a' && c <= 'f') {
+            i2 = c - 'W';
+        } else if (c < 'A' || c > 'F') {
+            throw new IllegalStateException("Malformed DN: " + this.dn);
+        } else {
+            i2 = c - '7';
+        }
+        char c2 = this.chars[i4];
         if (c2 >= '0' && c2 <= '9') {
-            i2 = c2 - '0';
+            i3 = c2 - '0';
         } else if (c2 >= 'a' && c2 <= 'f') {
-            i2 = c2 - 'W';
+            i3 = c2 - 'W';
         } else if (c2 < 'A' || c2 > 'F') {
             throw new IllegalStateException("Malformed DN: " + this.dn);
         } else {
-            i2 = c2 - '7';
-        }
-        char c3 = this.chars[i4];
-        if (c3 >= '0' && c3 <= '9') {
-            i3 = c3 - '0';
-        } else if (c3 >= 'a' && c3 <= 'f') {
-            i3 = c3 - 'W';
-        } else if (c3 < 'A' || c3 > 'F') {
-            throw new IllegalStateException("Malformed DN: " + this.dn);
-        } else {
-            i3 = c3 - '7';
+            i3 = c2 - '7';
         }
         return (i2 << 4) + i3;
     }
@@ -73,15 +73,15 @@ final class DistinguishedNameParser {
         if (i == this.length) {
             throw new IllegalStateException("Unexpected end of DN: " + this.dn);
         }
-        char c2 = this.chars[i];
-        if (c2 != ' ' && c2 != '%' && c2 != '\\' && c2 != '_' && c2 != '\"' && c2 != '#') {
-            switch (c2) {
+        char c = this.chars[i];
+        if (c != ' ' && c != '%' && c != '\\' && c != '_' && c != '\"' && c != '#') {
+            switch (c) {
                 case '*':
                 case '+':
                 case ',':
                     break;
                 default:
-                    switch (c2) {
+                    switch (c) {
                         case ';':
                         case '<':
                         case '=':
@@ -315,8 +315,8 @@ final class DistinguishedNameParser {
             if (i == this.length) {
                 return null;
             }
-            char c2 = this.chars[i];
-            String escapedAV = c2 != '\"' ? c2 != '#' ? (c2 == '+' || c2 == ',' || c2 == ';') ? "" : escapedAV() : hexAV() : quotedAV();
+            char c = this.chars[i];
+            String escapedAV = c != '\"' ? c != '#' ? (c == '+' || c == ',' || c == ';') ? "" : escapedAV() : hexAV() : quotedAV();
             if (str.equalsIgnoreCase(str2)) {
                 return escapedAV;
             }

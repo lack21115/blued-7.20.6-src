@@ -5,11 +5,11 @@ package com.tencent.liteav.videoproducer.preprocessor;
 public final /* synthetic */ class x implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37093a;
+    private final VideoPreprocessor f23402a;
     private final com.tencent.liteav.videobase.a.a b;
 
     private x(VideoPreprocessor videoPreprocessor, com.tencent.liteav.videobase.a.a aVar) {
-        this.f37093a = videoPreprocessor;
+        this.f23402a = videoPreprocessor;
         this.b = aVar;
     }
 
@@ -19,6 +19,6 @@ public final /* synthetic */ class x implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoPreprocessor.lambda$setInterceptorBeforeWatermark$14(this.f37093a, this.b);
+        VideoPreprocessor.lambda$setInterceptorBeforeWatermark$14(this.f23402a, this.b);
     }
 }

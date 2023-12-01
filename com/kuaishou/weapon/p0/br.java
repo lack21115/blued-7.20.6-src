@@ -11,15 +11,15 @@ import java.util.UUID;
 public final class br {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23759a = "weapon.set";
+    public static final String f10151a = "weapon.set";
     private static String e;
     private static String b = c.b("Y29tLmt3YWkud2VhcG9u", 2);
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f23760c = c.b(f23760c, 2);
+    private static String f10152c = c.b(f10152c, 2);
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f23760c = c.b(f23760c, 2);
+    private static String f10152c = c.b(f10152c, 2);
     private static String d = c.b(d, 2);
     private static String d = c.b(d, 2);
 
@@ -74,10 +74,10 @@ public final class br {
         try {
             if (b(context)) {
                 ContentResolver contentResolver = context.getContentResolver();
-                Settings.System.putString(contentResolver, f23760c, str);
+                Settings.System.putString(contentResolver, f10152c, str);
                 StringBuilder sb = new StringBuilder();
                 sb.append(System.currentTimeMillis());
-                Settings.System.putString(contentResolver, f23759a, sb.toString());
+                Settings.System.putString(contentResolver, f10151a, sb.toString());
             }
         } catch (Exception e2) {
         }
@@ -117,7 +117,7 @@ public final class br {
     }
 
     private static String e(Context context) {
-        String a2 = a(context, f23760c);
+        String a2 = a(context, f10152c);
         String f = f(context);
         if (TextUtils.isEmpty(a2) || !TextUtils.equals(a2, f)) {
             if (!TextUtils.isEmpty(a2)) {

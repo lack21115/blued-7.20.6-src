@@ -1,5 +1,6 @@
 package okio;
 
+import com.android.internal.location.GpsNetInitiatedHandler;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.concurrent.TimeUnit;
@@ -183,7 +184,7 @@ public class Timeout {
                 j = System.nanoTime() - nanoTime;
             }
             if (j >= timeoutNanos) {
-                throw new InterruptedIOException("timeout");
+                throw new InterruptedIOException(GpsNetInitiatedHandler.NI_INTENT_KEY_TIMEOUT);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

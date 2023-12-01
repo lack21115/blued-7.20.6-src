@@ -15,17 +15,17 @@ import java.util.Map;
 public class b implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.cmn.biz.web.b.a.a f27094a;
+    private com.opos.cmn.biz.web.b.a.a f13406a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private e.b f27095c;
+    private e.b f13407c;
 
     public b(Context context, e.b bVar) {
         Context a2 = com.opos.mobad.service.b.a(context);
         this.b = a2;
-        this.f27095c = bVar;
-        this.f27094a = new com.opos.cmn.biz.web.b.a.a(a2, new b.a().a((com.opos.cmn.biz.web.b.a.a.b) null).a((Map<String, Object>) null).a(false).a(new com.opos.cmn.biz.web.b.a.a.a() { // from class: com.opos.mobad.o.d.b.1
+        this.f13407c = bVar;
+        this.f13406a = new com.opos.cmn.biz.web.b.a.a(a2, new b.a().a((com.opos.cmn.biz.web.b.a.a.b) null).a((Map<String, Object>) null).a(false).a(new com.opos.cmn.biz.web.b.a.a.a() { // from class: com.opos.mobad.o.d.b.1
             @Override // com.opos.cmn.biz.web.b.a.a.a
             public void a(final SslErrorHandler sslErrorHandler, SslError sslError) {
                 com.opos.cmn.an.f.a.b("privacyTool", "onReceivedSslError");
@@ -40,12 +40,12 @@ public class b implements d {
                         public void a(View view, int[] iArr) {
                             ViewGroup viewGroup;
                             sslErrorHandler.cancel();
-                            View b2 = b.this.f27094a.b();
+                            View b2 = b.this.f13406a.b();
                             if (b2 != null && (viewGroup = (ViewGroup) b2.getParent()) != null && viewGroup.indexOfChild(b) > 0) {
                                 viewGroup.removeView(b);
                             }
-                            if (b.this.f27095c != null) {
-                                b.this.f27095c.a();
+                            if (b.this.f13407c != null) {
+                                b.this.f13407c.a();
                             }
                         }
 
@@ -53,7 +53,7 @@ public class b implements d {
                         public void b(View view, int[] iArr) {
                             ViewGroup viewGroup;
                             sslErrorHandler.proceed();
-                            View b2 = b.this.f27094a.b();
+                            View b2 = b.this.f13406a.b();
                             if (b2 == null || (viewGroup = (ViewGroup) b2.getParent()) == null || viewGroup.indexOfChild(b) <= 0) {
                                 return;
                             }
@@ -62,7 +62,7 @@ public class b implements d {
                     });
                     RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
                     layoutParams.addRule(13);
-                    ((ViewGroup) b.this.f27094a.b().getParent()).addView(b, layoutParams);
+                    ((ViewGroup) b.this.f13406a.b().getParent()).addView(b, layoutParams);
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.c("ComplianceWebView", "", e);
                 }
@@ -80,7 +80,7 @@ public class b implements d {
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        this.f27094a.a(str);
+        this.f13406a.a(str);
     }
 
     @Override // com.opos.mobad.o.d.d
@@ -89,11 +89,11 @@ public class b implements d {
 
     @Override // com.opos.mobad.o.d.d
     public View b() {
-        return this.f27094a.b();
+        return this.f13406a.b();
     }
 
     @Override // com.opos.mobad.o.d.d
     public void c() {
-        this.f27094a.a();
+        this.f13406a.a();
     }
 }

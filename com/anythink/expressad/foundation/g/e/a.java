@@ -4,28 +4,28 @@ package com.anythink.expressad.foundation.g.e;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f7854a;
+    private String f5014a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f7855c;
+    private long f5015c;
 
     public a(String str, long j) {
-        this.f7854a = str;
-        this.f7855c = j;
+        this.f5014a = str;
+        this.f5015c = j;
     }
 
     public a(String str, String str2) {
-        this.f7854a = str;
+        this.f5014a = str;
         this.b = str2;
     }
 
     private void a(long j) {
-        this.f7855c = j;
+        this.f5015c = j;
     }
 
     private void a(String str) {
-        this.f7854a = str;
+        this.f5014a = str;
     }
 
     private void b(String str) {
@@ -33,7 +33,7 @@ public final class a {
     }
 
     public final String a() {
-        return this.f7854a;
+        return this.f5014a;
     }
 
     public final String b() {
@@ -41,6 +41,6 @@ public final class a {
     }
 
     public final long c() {
-        return this.f7855c;
+        return this.f5015c;
     }
 }

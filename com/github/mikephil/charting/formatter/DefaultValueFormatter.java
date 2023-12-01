@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 public class DefaultValueFormatter extends ValueFormatter {
 
     /* renamed from: a  reason: collision with root package name */
-    protected DecimalFormat f22141a;
+    protected DecimalFormat f8534a;
     protected int b;
 
     public DefaultValueFormatter(int i) {
@@ -15,7 +15,7 @@ public class DefaultValueFormatter extends ValueFormatter {
 
     @Override // com.github.mikephil.charting.formatter.ValueFormatter
     public String a(float f) {
-        return this.f22141a.format(f);
+        return this.f8534a.format(f);
     }
 
     public void a(int i) {
@@ -25,7 +25,7 @@ public class DefaultValueFormatter extends ValueFormatter {
         while (true) {
             int i3 = i2;
             if (i3 >= i) {
-                this.f22141a = new DecimalFormat("###,###,###,##0" + stringBuffer.toString());
+                this.f8534a = new DecimalFormat("###,###,###,##0" + stringBuffer.toString());
                 return;
             }
             if (i3 == 0) {

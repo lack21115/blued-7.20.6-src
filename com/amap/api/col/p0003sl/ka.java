@@ -122,16 +122,16 @@ public final class ka extends ju {
         boolean z2 = false;
         Map<String, String> map = null;
         if (b(kbVar)) {
-            boolean c2 = c(kbVar);
+            boolean c = c(kbVar);
             j = 0;
             try {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 j = elapsedRealtime;
-                map = a(kbVar, a(kbVar, c2), c(kbVar, c2));
+                map = a(kbVar, a(kbVar, c), c(kbVar, c));
                 j = elapsedRealtime;
                 z2 = false;
             } catch (hn e) {
-                if (!c2) {
+                if (!c) {
                     throw e;
                 }
                 z2 = true;
@@ -160,26 +160,26 @@ public final class ka extends ju {
         boolean z2 = false;
         kc kcVar = null;
         if (b(kbVar)) {
-            boolean c2 = c(kbVar);
+            boolean c = c(kbVar);
             j = 0;
             try {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 j = elapsedRealtime;
-                kcVar = b(kbVar, a(kbVar, c2), c(kbVar, c2));
+                kcVar = b(kbVar, a(kbVar, c), c(kbVar, c));
                 j = elapsedRealtime;
                 z2 = false;
             } catch (hn e) {
                 if (e.f() == 21 && kbVar.getDegradeAbility() == kb.a.INTERRUPT_IO) {
                     throw e;
                 }
-                if (!c2) {
+                if (!c) {
                     throw e;
                 }
                 z2 = true;
                 kcVar = null;
             }
         }
-        if (kcVar == null || kcVar.f5264a == null || kcVar.f5264a.length <= 0) {
+        if (kcVar == null || kcVar.a == null || kcVar.a.length <= 0) {
             try {
                 return b(kbVar, b(kbVar, z2), a(kbVar, j));
             } catch (hn e2) {

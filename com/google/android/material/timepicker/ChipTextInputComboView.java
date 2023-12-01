@@ -104,9 +104,8 @@ public class ChipTextInputComboView extends FrameLayout implements Checkable {
         return this.chip.isChecked();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onConfigurationChanged(Configuration configuration) {
+    protected void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         updateHintLocales();
     }

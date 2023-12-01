@@ -1,6 +1,7 @@
 package java.lang;
 
-import com.igexin.push.core.b;
+import com.android.internal.util.cm.SpamFilter;
+import com.anythink.core.common.c.d;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -9,7 +10,7 @@ import java.io.Serializable;
 
 /* loaded from: source-2895416-dex2jar.jar:java/lang/StringBuffer.class */
 public final class StringBuffer extends AbstractStringBuilder implements Appendable, Serializable, CharSequence {
-    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField("count", Integer.TYPE), new ObjectStreamField("shared", Boolean.TYPE), new ObjectStreamField("value", char[].class)};
+    private static final ObjectStreamField[] serialPersistentFields = {new ObjectStreamField(SpamFilter.SpamContract.NotificationTable.COUNT, Integer.TYPE), new ObjectStreamField("shared", Boolean.TYPE), new ObjectStreamField(d.a.d, char[].class)};
     private static final long serialVersionUID = 3388685877147921107L;
 
     public StringBuffer() {
@@ -29,23 +30,23 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
 
     private void readObject(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
         ObjectInputStream.GetField readFields = objectInputStream.readFields();
-        set((char[]) readFields.get("value", (Object) null), readFields.get("count", 0));
+        set((char[]) readFields.get(d.a.d, (Object) null), readFields.get(SpamFilter.SpamContract.NotificationTable.COUNT, 0));
     }
 
     private void writeObject(ObjectOutputStream objectOutputStream) throws IOException {
         synchronized (this) {
             ObjectOutputStream.PutField putFields = objectOutputStream.putFields();
-            putFields.put("count", length());
+            putFields.put(SpamFilter.SpamContract.NotificationTable.COUNT, length());
             putFields.put("shared", false);
-            putFields.put("value", getValue());
+            putFields.put(d.a.d, getValue());
             objectOutputStream.writeFields();
         }
     }
 
     @Override // java.lang.Appendable
-    public StringBuffer append(char c2) {
+    public StringBuffer append(char c) {
         synchronized (this) {
-            append0(c2);
+            append0(c);
         }
         return this;
     }
@@ -226,9 +227,9 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
         return indexOf;
     }
 
-    public StringBuffer insert(int i, char c2) {
+    public StringBuffer insert(int i, char c) {
         synchronized (this) {
-            insert0(i, c2);
+            insert0(i, c);
         }
         return this;
     }
@@ -251,7 +252,7 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
 
     public StringBuffer insert(int i, CharSequence charSequence) {
         synchronized (this) {
-            insert0(i, charSequence == null ? b.l : charSequence.toString());
+            insert0(i, charSequence == null ? "null" : charSequence.toString());
         }
         return this;
     }
@@ -264,7 +265,7 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     public StringBuffer insert(int i, Object obj) {
-        return insert(i, obj == null ? b.l : obj.toString());
+        return insert(i, obj == null ? "null" : obj.toString());
     }
 
     public StringBuffer insert(int i, String str) {
@@ -335,9 +336,9 @@ public final class StringBuffer extends AbstractStringBuilder implements Appenda
     }
 
     @Override // java.lang.AbstractStringBuilder
-    public void setCharAt(int i, char c2) {
+    public void setCharAt(int i, char c) {
         synchronized (this) {
-            super.setCharAt(i, c2);
+            super.setCharAt(i, c);
         }
     }
 

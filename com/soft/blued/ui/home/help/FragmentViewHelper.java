@@ -1,5 +1,6 @@
 package com.soft.blued.ui.home.help;
 
+import android.R;
 import android.content.DialogInterface;
 import android.util.SparseArray;
 import android.view.View;
@@ -18,7 +19,7 @@ import java.util.List;
 public class FragmentViewHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f31039a;
+    private int f17349a;
     private AlertDialog b;
 
     /* renamed from: com.soft.blued.ui.home.help.FragmentViewHelper$1  reason: invalid class name */
@@ -26,16 +27,16 @@ public class FragmentViewHelper {
     class AnonymousClass1 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FragmentActivity f31040a;
+        final /* synthetic */ FragmentActivity f17350a;
         final /* synthetic */ FragmentViewHelper b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
             FragmentViewHelper fragmentViewHelper = this.b;
-            fragmentViewHelper.f31039a = fragmentViewHelper.a(this.f31040a.getSupportFragmentManager());
-            this.b.a(this.f31040a);
-            ToastUtils.a("" + this.b.f31039a);
+            fragmentViewHelper.f17349a = fragmentViewHelper.a(this.f17350a.getSupportFragmentManager());
+            this.b.a(this.f17350a);
+            ToastUtils.a("" + this.b.f17349a);
         }
     }
 
@@ -58,7 +59,7 @@ public class FragmentViewHelper {
             FragmentViewContainer fragmentViewContainer = new FragmentViewContainer(fragmentActivity);
             fragmentViewContainer.a(b(fragmentActivity));
             fragmentViewContainer.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
-            AlertDialog create = new AlertDialog.Builder(fragmentActivity).setView(fragmentViewContainer).setPositiveButton(17039360, (DialogInterface.OnClickListener) null).setCancelable(true).create();
+            AlertDialog create = new AlertDialog.Builder(fragmentActivity).setView(fragmentViewContainer).setPositiveButton(R.string.cancel, (DialogInterface.OnClickListener) null).setCancelable(true).create();
             this.b = create;
             create.show();
         }

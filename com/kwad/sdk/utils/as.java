@@ -15,11 +15,11 @@ public final class as {
     }
 
     public static boolean DR() {
-        return aV(com.tencent.tendinsv.utils.r.f39112a);
+        return aV(com.tencent.tendinsv.utils.r.f25421a);
     }
 
     public static boolean DS() {
-        return aV(com.tencent.tendinsv.utils.r.f39113c);
+        return aV(com.tencent.tendinsv.utils.r.f25422c);
     }
 
     private static boolean aV(String str) {
@@ -51,8 +51,8 @@ public final class as {
                                     String str10 = Build.DISPLAY;
                                     aAl = str10;
                                     String upperCase2 = str10.toUpperCase();
-                                    str9 = com.tencent.tendinsv.utils.r.f39113c;
-                                    if (!upperCase2.contains(com.tencent.tendinsv.utils.r.f39113c)) {
+                                    str9 = com.tencent.tendinsv.utils.r.f25422c;
+                                    if (!upperCase2.contains(com.tencent.tendinsv.utils.r.f25422c)) {
                                         aAl = "unknown";
                                         upperCase = Build.MANUFACTURER.toUpperCase();
                                     }
@@ -65,7 +65,7 @@ public final class as {
                             upperCase = "OnePlus";
                         }
                     } else {
-                        upperCase = com.tencent.tendinsv.utils.r.f39112a;
+                        upperCase = com.tencent.tendinsv.utils.r.f25421a;
                     }
                 } else {
                     upperCase = com.tencent.tendinsv.utils.r.b;

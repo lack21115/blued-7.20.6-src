@@ -43,8 +43,8 @@ public class RenderProcessService {
         } else {
             HashMap hashMap = new HashMap();
             HostEngine.getInstance().sendSyncRequestToPlugin(2, 104, null, hashMap);
-            V v = hashMap.get("KEY_RET_PARAM1");
-            if ((v == 0 || !(v instanceof Boolean)) ? false : ((Boolean) v).booleanValue()) {
+            Object obj = hashMap.get("KEY_RET_PARAM1");
+            if ((obj == null || !(obj instanceof Boolean)) ? false : ((Boolean) obj).booleanValue()) {
                 LiteavLog.i(TAG, "[canRenderProcessWork], finally return true");
                 return true;
             }
@@ -71,12 +71,12 @@ public class RenderProcessService {
             hashMap.put(EngineConst.ArgsKey.KEY_PARAM2, surface);
             HostEngine.getInstance().sendSyncRequestToPlugin(2, 100, hashMap, hashMap2);
             Boolean bool = Boolean.FALSE;
-            V v = hashMap2.get("KEY_RET_PARAM1");
+            Object obj = hashMap2.get("KEY_RET_PARAM1");
             Boolean bool2 = bool;
-            if (v != 0) {
+            if (obj != null) {
                 bool2 = bool;
-                if (v instanceof Boolean) {
-                    bool2 = (Boolean) v;
+                if (obj instanceof Boolean) {
+                    bool2 = (Boolean) obj;
                 }
             }
             return bool2.booleanValue();
@@ -115,12 +115,12 @@ public class RenderProcessService {
             hashMap.put(EngineConst.ArgsKey.KEY_PARAM1, iTXVCubePlayer);
             HostEngine.getInstance().sendSyncRequestToPlugin(2, 101, hashMap, hashMap2);
             Boolean bool = Boolean.FALSE;
-            V v = hashMap2.get("KEY_RET_PARAM1");
+            Object obj = hashMap2.get("KEY_RET_PARAM1");
             Boolean bool2 = bool;
-            if (v != 0) {
+            if (obj != null) {
                 bool2 = bool;
-                if (v instanceof Boolean) {
-                    bool2 = (Boolean) v;
+                if (obj instanceof Boolean) {
+                    bool2 = (Boolean) obj;
                 }
             }
             return bool2.booleanValue();

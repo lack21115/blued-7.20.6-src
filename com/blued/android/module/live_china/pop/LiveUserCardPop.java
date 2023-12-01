@@ -94,13 +94,9 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
     private ImageView ao;
     private TextView ap;
     private int aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private LiveMsgReportModel f13988ar;
+    private LiveMsgReportModel ar;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public View f13989c;
+    public View c;
     public Context d;
     public LayoutInflater e;
     public LiveRoomUserModel f;
@@ -454,9 +450,7 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
 
     public void A() {
         LiveRoomHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<LiveRoomUserModel>>(this.af) { // from class: com.blued.android.module.live_china.pop.LiveUserCardPop.5
-
-            /* renamed from: a  reason: collision with root package name */
-            boolean f13996a = false;
+            boolean a = false;
             String b;
 
             /* JADX INFO: Access modifiers changed from: protected */
@@ -473,7 +467,7 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
             public boolean onUIFailure(int i, String str) {
                 if (i == 403903) {
                     this.b = str;
-                    this.f13996a = true;
+                    this.a = true;
                     return true;
                 }
                 return super.onUIFailure(i, str);
@@ -482,7 +476,7 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f13996a) {
+                if (this.a) {
                     CommonAlertDialog.a(LiveUserCardPop.this.d, (View) null, "", this.b, LiveUserCardPop.this.d.getString(R.string.live_manager_manage), LiveUserCardPop.this.d.getString(R.string.live_ok), (DialogInterface.OnClickListener) null, new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.pop.LiveUserCardPop.5.1
                         @Override // android.content.DialogInterface.OnClickListener
                         public void onClick(DialogInterface dialogInterface, int i) {
@@ -490,7 +484,7 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
                             LiveUserCardPop.this.ag.d();
                         }
                     }, (DialogInterface.OnCancelListener) null, true);
-                    this.f13996a = false;
+                    this.a = false;
                 }
             }
         }, this.af, String.valueOf(this.ah), this.f.uid);
@@ -682,7 +676,7 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
 
     public void a(LiveRoomUserModel liveRoomUserModel, int i, LiveMsgReportModel liveMsgReportModel) {
         if (liveRoomUserModel != null) {
-            this.f13988ar = liveMsgReportModel;
+            this.ar = liveMsgReportModel;
             this.aq = i;
             if (this.ag == null) {
                 this.ag = new UserCardOnclickListner() { // from class: com.blued.android.module.live_china.pop.LiveUserCardPop.11
@@ -856,7 +850,7 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
         this.D = (TextView) this.H.findViewById(R.id.tv_block);
         this.b = this.H.findViewById(R.id.tv_bg);
         this.L = (TextView) this.H.findViewById(R.id.tv_distance);
-        this.ak = (RecyclerView) this.H.findViewById(R.id.lv_medals);
+        this.ak = this.H.findViewById(R.id.lv_medals);
         this.b.setBackgroundColor(this.d.getResources().getColor(R.color.transparent));
         this.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.pop.LiveUserCardPop.2
             @Override // android.view.View.OnClickListener
@@ -866,9 +860,9 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
             }
         });
         View findViewById2 = this.H.findViewById(R.id.ll_content);
-        this.f13989c = findViewById2;
+        this.c = findViewById2;
         findViewById2.setBackgroundColor(this.d.getResources().getColor(R.color.transparent));
-        this.f13989c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.pop.LiveUserCardPop.3
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.pop.LiveUserCardPop.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -920,7 +914,7 @@ public class LiveUserCardPop extends BottomPopupView implements View.OnClickList
             }
         } else if (view.getId() == R.id.tv_report) {
             E();
-            this.ag.a(this.f.uid, this.f13988ar);
+            this.ag.a(this.f.uid, this.ar);
         } else if (view.getId() == R.id.ll_reply) {
             if (LiveRoomInfo.a().a(this.d, (View.OnClickListener) null)) {
                 return;

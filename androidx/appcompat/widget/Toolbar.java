@@ -44,7 +44,6 @@ import androidx.core.view.ViewCompat;
 import androidx.customview.view.AbsSavedState;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
-import com.android.internal.util.cm.NavigationRingConstants;
 import com.bytedance.applog.tracker.Tracker;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -102,7 +101,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
     public class ExpandedActionViewMenuPresenter implements MenuPresenter {
 
         /* renamed from: a  reason: collision with root package name */
-        MenuBuilder f1903a;
+        MenuBuilder f1855a;
         MenuItemImpl b;
 
         ExpandedActionViewMenuPresenter() {
@@ -147,7 +146,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
                 }
                 LayoutParams generateDefaultLayoutParams = Toolbar.this.generateDefaultLayoutParams();
                 generateDefaultLayoutParams.gravity = 8388611 | (Toolbar.this.mButtonGravity & 112);
-                generateDefaultLayoutParams.f1907a = 2;
+                generateDefaultLayoutParams.f1859a = 2;
                 Toolbar.this.mExpandedActionView.setLayoutParams(generateDefaultLayoutParams);
                 Toolbar toolbar4 = Toolbar.this;
                 toolbar4.addView(toolbar4.mExpandedActionView);
@@ -180,11 +179,11 @@ public class Toolbar extends ViewGroup implements MenuHost {
         @Override // androidx.appcompat.view.menu.MenuPresenter
         public void initForMenu(Context context, MenuBuilder menuBuilder) {
             MenuItemImpl menuItemImpl;
-            MenuBuilder menuBuilder2 = this.f1903a;
+            MenuBuilder menuBuilder2 = this.f1855a;
             if (menuBuilder2 != null && (menuItemImpl = this.b) != null) {
                 menuBuilder2.collapseItemActionView(menuItemImpl);
             }
-            this.f1903a = menuBuilder;
+            this.f1855a = menuBuilder;
         }
 
         @Override // androidx.appcompat.view.menu.MenuPresenter
@@ -212,7 +211,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         @Override // androidx.appcompat.view.menu.MenuPresenter
         public void updateMenuView(boolean z) {
             if (this.b != null) {
-                MenuBuilder menuBuilder = this.f1903a;
+                MenuBuilder menuBuilder = this.f1855a;
                 boolean z2 = false;
                 if (menuBuilder != null) {
                     int size = menuBuilder.size();
@@ -222,7 +221,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
                         z2 = false;
                         if (i2 >= size) {
                             break;
-                        } else if (this.f1903a.getItem(i2) == this.b) {
+                        } else if (this.f1855a.getItem(i2) == this.b) {
                             z2 = true;
                             break;
                         } else {
@@ -233,7 +232,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
                 if (z2) {
                     return;
                 }
-                collapseItemActionView(this.f1903a, this.b);
+                collapseItemActionView(this.f1855a, this.b);
             }
         }
     }
@@ -242,11 +241,11 @@ public class Toolbar extends ViewGroup implements MenuHost {
     public final class InspectionCompanion implements android.view.inspector.InspectionCompanion<Toolbar> {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f1905a = false;
+        private boolean f1857a = false;
         private int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private int f1906c;
+        private int f1858c;
         private int d;
         private int e;
         private int f;
@@ -269,7 +268,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         @Override // android.view.inspector.InspectionCompanion
         public void mapProperties(PropertyMapper propertyMapper) {
             this.b = propertyMapper.mapObject("collapseContentDescription", R.attr.collapseContentDescription);
-            this.f1906c = propertyMapper.mapObject("collapseIcon", R.attr.collapseIcon);
+            this.f1858c = propertyMapper.mapObject("collapseIcon", R.attr.collapseIcon);
             this.d = propertyMapper.mapInt("contentInsetEnd", R.attr.contentInsetEnd);
             this.e = propertyMapper.mapInt("contentInsetEndWithActions", R.attr.contentInsetEndWithActions);
             this.f = propertyMapper.mapInt("contentInsetLeft", R.attr.contentInsetLeft);
@@ -278,7 +277,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
             this.i = propertyMapper.mapInt("contentInsetStartWithNavigation", R.attr.contentInsetStartWithNavigation);
             this.j = propertyMapper.mapObject(TvContract.Channels.Logo.CONTENT_DIRECTORY, R.attr.logo);
             this.k = propertyMapper.mapObject("logoDescription", R.attr.logoDescription);
-            this.l = propertyMapper.mapObject(NavigationRingConstants.ACTION_MENU, R.attr.menu);
+            this.l = propertyMapper.mapObject("menu", R.attr.menu);
             this.m = propertyMapper.mapObject("navigationContentDescription", R.attr.navigationContentDescription);
             this.n = propertyMapper.mapObject("navigationIcon", R.attr.navigationIcon);
             this.o = propertyMapper.mapResourceId("popupTheme", R.attr.popupTheme);
@@ -288,16 +287,16 @@ public class Toolbar extends ViewGroup implements MenuHost {
             this.s = propertyMapper.mapInt("titleMarginEnd", R.attr.titleMarginEnd);
             this.t = propertyMapper.mapInt("titleMarginStart", R.attr.titleMarginStart);
             this.u = propertyMapper.mapInt("titleMarginTop", R.attr.titleMarginTop);
-            this.f1905a = true;
+            this.f1857a = true;
         }
 
         @Override // android.view.inspector.InspectionCompanion
         public void readProperties(Toolbar toolbar, PropertyReader propertyReader) {
-            if (!this.f1905a) {
+            if (!this.f1857a) {
                 throw new InspectionCompanion.UninitializedPropertyMapException();
             }
             propertyReader.readObject(this.b, toolbar.getCollapseContentDescription());
-            propertyReader.readObject(this.f1906c, toolbar.getCollapseIcon());
+            propertyReader.readObject(this.f1858c, toolbar.getCollapseIcon());
             propertyReader.readInt(this.d, toolbar.getContentInsetEnd());
             propertyReader.readInt(this.e, toolbar.getContentInsetEndWithActions());
             propertyReader.readInt(this.f, toolbar.getContentInsetLeft());
@@ -323,7 +322,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
     public static class LayoutParams extends ActionBar.LayoutParams {
 
         /* renamed from: a  reason: collision with root package name */
-        int f1907a;
+        int f1859a;
 
         public LayoutParams(int i) {
             this(-2, -1, i);
@@ -331,41 +330,41 @@ public class Toolbar extends ViewGroup implements MenuHost {
 
         public LayoutParams(int i, int i2) {
             super(i, i2);
-            this.f1907a = 0;
+            this.f1859a = 0;
             this.gravity = 8388627;
         }
 
         public LayoutParams(int i, int i2, int i3) {
             super(i, i2);
-            this.f1907a = 0;
+            this.f1859a = 0;
             this.gravity = i3;
         }
 
         public LayoutParams(Context context, AttributeSet attributeSet) {
             super(context, attributeSet);
-            this.f1907a = 0;
+            this.f1859a = 0;
         }
 
         public LayoutParams(ViewGroup.LayoutParams layoutParams) {
             super(layoutParams);
-            this.f1907a = 0;
+            this.f1859a = 0;
         }
 
         public LayoutParams(ViewGroup.MarginLayoutParams marginLayoutParams) {
             super(marginLayoutParams);
-            this.f1907a = 0;
+            this.f1859a = 0;
             a(marginLayoutParams);
         }
 
         public LayoutParams(ActionBar.LayoutParams layoutParams) {
             super(layoutParams);
-            this.f1907a = 0;
+            this.f1859a = 0;
         }
 
         public LayoutParams(LayoutParams layoutParams) {
             super((ActionBar.LayoutParams) layoutParams);
-            this.f1907a = 0;
-            this.f1907a = layoutParams.f1907a;
+            this.f1859a = 0;
+            this.f1859a = layoutParams.f1859a;
         }
 
         void a(ViewGroup.MarginLayoutParams marginLayoutParams) {
@@ -402,7 +401,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         };
 
         /* renamed from: a  reason: collision with root package name */
-        int f1908a;
+        int f1860a;
         boolean b;
 
         public SavedState(Parcel parcel) {
@@ -411,7 +410,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
 
         public SavedState(Parcel parcel, ClassLoader classLoader) {
             super(parcel, classLoader);
-            this.f1908a = parcel.readInt();
+            this.f1860a = parcel.readInt();
             this.b = parcel.readInt() != 0;
         }
 
@@ -554,7 +553,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
             for (int i2 = 0; i2 < childCount; i2++) {
                 View childAt = getChildAt(i2);
                 LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
-                if (layoutParams.f1907a == 0 && shouldLayout(childAt) && getChildHorizontalGravity(layoutParams.gravity) == absoluteGravity) {
+                if (layoutParams.f1859a == 0 && shouldLayout(childAt) && getChildHorizontalGravity(layoutParams.gravity) == absoluteGravity) {
                     list.add(childAt);
                 }
             }
@@ -568,7 +567,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
             }
             View childAt2 = getChildAt(i4);
             LayoutParams layoutParams2 = (LayoutParams) childAt2.getLayoutParams();
-            if (layoutParams2.f1907a == 0 && shouldLayout(childAt2) && getChildHorizontalGravity(layoutParams2.gravity) == absoluteGravity) {
+            if (layoutParams2.f1859a == 0 && shouldLayout(childAt2) && getChildHorizontalGravity(layoutParams2.gravity) == absoluteGravity) {
                 list.add(childAt2);
             }
             i3 = i4;
@@ -578,7 +577,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
     private void addSystemView(View view, boolean z) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         LayoutParams generateDefaultLayoutParams = layoutParams == null ? generateDefaultLayoutParams() : !checkLayoutParams(layoutParams) ? generateLayoutParams(layoutParams) : (LayoutParams) layoutParams;
-        generateDefaultLayoutParams.f1907a = 1;
+        generateDefaultLayoutParams.f1859a = 1;
         if (!z || this.mExpandedActionView == null) {
             addView(view, generateDefaultLayoutParams);
             return;
@@ -865,9 +864,8 @@ public class Toolbar extends ViewGroup implements MenuHost {
         return getVisibility() == 0 && (actionMenuView = this.mMenuView) != null && actionMenuView.isOverflowReserved();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return super.checkLayoutParams(layoutParams) && (layoutParams instanceof LayoutParams);
     }
 
@@ -894,7 +892,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
             this.mCollapseButtonView.setContentDescription(this.mCollapseDescription);
             LayoutParams generateDefaultLayoutParams = generateDefaultLayoutParams();
             generateDefaultLayoutParams.gravity = 8388611 | (this.mButtonGravity & 112);
-            generateDefaultLayoutParams.f1907a = 2;
+            generateDefaultLayoutParams.f1859a = 2;
             this.mCollapseButtonView.setLayoutParams(generateDefaultLayoutParams);
             this.mCollapseButtonView.setOnClickListener(new View.OnClickListener() { // from class: androidx.appcompat.widget.Toolbar.3
                 @Override // android.view.View.OnClickListener
@@ -1149,9 +1147,8 @@ public class Toolbar extends ViewGroup implements MenuHost {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         removeCallbacks(this.mShowOverflowMenuRunnable);
     }
@@ -1210,9 +1207,8 @@ public class Toolbar extends ViewGroup implements MenuHost {
         throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.Toolbar.onLayout(boolean, int, int, int, int):void");
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         byte b;
         byte b2;
         int i3;
@@ -1286,7 +1282,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
             int i20 = i18;
             int i21 = i16;
             int i22 = i17;
-            if (((LayoutParams) childAt.getLayoutParams()).f1907a == 0) {
+            if (((LayoutParams) childAt.getLayoutParams()).f1859a == 0) {
                 if (shouldLayout(childAt)) {
                     i22 = i17 + measureChildCollapseMargins(childAt, i, i17, i2, 0, iArr);
                     i20 = Math.max(i18, childAt.getMeasuredHeight() + getVerticalMargins(childAt));
@@ -1346,7 +1342,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         super.onRestoreInstanceState(savedState.getSuperState());
         ActionMenuView actionMenuView = this.mMenuView;
         MenuBuilder peekMenu = actionMenuView != null ? actionMenuView.peekMenu() : null;
-        if (savedState.f1908a != 0 && this.mExpandedMenuPresenter != null && peekMenu != null && (findItem = peekMenu.findItem(savedState.f1908a)) != null) {
+        if (savedState.f1860a != 0 && this.mExpandedMenuPresenter != null && peekMenu != null && (findItem = peekMenu.findItem(savedState.f1860a)) != null) {
             findItem.expandActionView();
         }
         if (savedState.b) {
@@ -1373,7 +1369,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
         ExpandedActionViewMenuPresenter expandedActionViewMenuPresenter = this.mExpandedMenuPresenter;
         if (expandedActionViewMenuPresenter != null && expandedActionViewMenuPresenter.b != null) {
-            savedState.f1908a = this.mExpandedMenuPresenter.b.getItemId();
+            savedState.f1860a = this.mExpandedMenuPresenter.b.getItemId();
         }
         savedState.b = isOverflowMenuShowing();
         return savedState;
@@ -1406,7 +1402,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
                 return;
             }
             View childAt = getChildAt(i);
-            if (((LayoutParams) childAt.getLayoutParams()).f1907a != 2 && childAt != this.mMenuView) {
+            if (((LayoutParams) childAt.getLayoutParams()).f1859a != 2 && childAt != this.mMenuView) {
                 removeViewAt(i);
                 this.mHiddenViews.add(childAt);
             }

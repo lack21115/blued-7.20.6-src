@@ -5,7 +5,6 @@ import android.system.Os;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Slog;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -122,8 +121,8 @@ public class FileUtils {
             return true;
         }
         String str = absolutePath;
-        if (!absolutePath.endsWith(BridgeUtil.SPLIT_MARK)) {
-            str = absolutePath + BridgeUtil.SPLIT_MARK;
+        if (!absolutePath.endsWith("/")) {
+            str = absolutePath + "/";
         }
         return absolutePath2.startsWith(str);
     }

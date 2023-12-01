@@ -18,7 +18,7 @@ import java.util.TimerTask;
 public class MediaRecordHelper {
 
     /* renamed from: c  reason: collision with root package name */
-    private String f32255c;
+    private String f18565c;
     private BluedMp3Recorder d;
     private MediaPlayer e;
     private BLAudioManager f;
@@ -29,7 +29,7 @@ public class MediaRecordHelper {
     private MediaPlayer.OnCompletionListener p;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f32254a = false;
+    public boolean f18564a = false;
     private boolean b = false;
     private long j = 0;
     private final int l = 0;
@@ -64,7 +64,7 @@ public class MediaRecordHelper {
     }
 
     public MediaRecordHelper(String str) {
-        this.f32255c = str;
+        this.f18565c = str;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -85,7 +85,7 @@ public class MediaRecordHelper {
         }
         Log.c("MediaRecordHelper", "onAudioDeviceChanged: selectedAudioDevice = " + audioDevice);
         this.h = audioDevice;
-        if (audioDevice == BLAudioManager.AudioDevice.EARPIECE) {
+        if (audioDevice == BLAudioManager.AudioDevice.c) {
             h();
         }
     }
@@ -135,7 +135,7 @@ public class MediaRecordHelper {
             }
         });
         try {
-            this.e.setDataSource(this.f32255c);
+            this.e.setDataSource(this.f18565c);
             this.e.prepare();
             this.e.start();
         } catch (IOException e) {
@@ -166,13 +166,12 @@ public class MediaRecordHelper {
             if (this.f == null) {
                 this.f = BLAudioManager.a(AppInfo.d());
                 this.g = new BLAudioManager.AudioManagerEvents() { // from class: com.soft.blued.ui.msg.controller.tools.-$$Lambda$MediaRecordHelper$fHSdCsq0AeUfT2tC-R5tWFIrGvc
-                    @Override // com.blued.android.module.media.audio.audio_manager.BLAudioManager.AudioManagerEvents
                     public final void onAudioDeviceChanged(BLAudioManager.AudioDevice audioDevice, Set set) {
                         MediaRecordHelper.this.a(audioDevice, set);
                     }
                 };
             }
-            this.f.a(BluedPreferences.aV() ? BLAudioManager.AudioSwitchMode.EARPIECE_MODE : BLAudioManager.AudioSwitchMode.SPEAKERPHONE_MODE);
+            this.f.a(BluedPreferences.aV() ? BLAudioManager.AudioSwitchMode.b : BLAudioManager.AudioSwitchMode.a);
             this.f.a(this.g);
             this.f.a();
         } catch (Throwable th) {
@@ -207,7 +206,7 @@ public class MediaRecordHelper {
                 return;
             }
             try {
-                BluedMp3Recorder bluedMp3Recorder = new BluedMp3Recorder(this.f32255c);
+                BluedMp3Recorder bluedMp3Recorder = new BluedMp3Recorder(this.f18565c);
                 this.d = bluedMp3Recorder;
                 bluedMp3Recorder.a();
                 this.n = 1;
@@ -217,7 +216,7 @@ public class MediaRecordHelper {
                     private int b = 0;
 
                     /* renamed from: c  reason: collision with root package name */
-                    private int f32259c = 0;
+                    private int f18569c = 0;
 
                     @Override // java.util.TimerTask, java.lang.Runnable
                     public void run() {
@@ -228,7 +227,7 @@ public class MediaRecordHelper {
                         int i = this.b + 1;
                         this.b = i;
                         if (i % 5 == 0) {
-                            this.f32259c = i / 5;
+                            this.f18569c = i / 5;
                         }
                         int i2 = 100;
                         try {
@@ -237,13 +236,13 @@ public class MediaRecordHelper {
                             }
                         } catch (Exception e) {
                             i2 = 100;
-                            if (MediaRecordHelper.this.f32254a) {
+                            if (MediaRecordHelper.this.f18564a) {
                                 Logger.e("debug", "录音-->getMaxAmplitude异常-->", e);
                                 i2 = 100;
                             }
                         }
                         Message obtain = Message.obtain();
-                        obtain.arg1 = this.f32259c;
+                        obtain.arg1 = this.f18569c;
                         obtain.arg2 = i2;
                         MediaRecordHelper.this.q.sendMessage(obtain);
                     }
@@ -263,7 +262,7 @@ public class MediaRecordHelper {
     }
 
     public void a(String str) {
-        this.f32255c = str;
+        this.f18565c = str;
     }
 
     public void a(boolean z) {
@@ -302,7 +301,7 @@ public class MediaRecordHelper {
     }
 
     public void b(String str) {
-        this.f32255c = str;
+        this.f18565c = str;
         d();
     }
 

@@ -12,49 +12,49 @@ import com.qiniu.pili.droid.shortvideo.f.g;
 import java.nio.ByteBuffer;
 
 /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/encode/e.class */
-public class e extends d implements a.InterfaceC0745a {
+public class e extends d implements a.InterfaceC0575a {
     private PLVideoEncodeSetting g;
-    private a.InterfaceC0745a h;
+    private a.InterfaceC0575a h;
 
     public e(PLVideoEncodeSetting pLVideoEncodeSetting) {
         this.g = pLVideoEncodeSetting;
         super.a(this);
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
     public void a(MediaFormat mediaFormat) {
-        a.InterfaceC0745a interfaceC0745a = this.h;
-        if (interfaceC0745a != null) {
-            interfaceC0745a.a(mediaFormat);
+        a.InterfaceC0575a interfaceC0575a = this.h;
+        if (interfaceC0575a != null) {
+            interfaceC0575a.a(mediaFormat);
         }
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
     public void a(Surface surface) {
-        a.InterfaceC0745a interfaceC0745a = this.h;
-        if (interfaceC0745a != null) {
-            interfaceC0745a.a(surface);
+        a.InterfaceC0575a interfaceC0575a = this.h;
+        if (interfaceC0575a != null) {
+            interfaceC0575a.a(surface);
         }
     }
 
     @Override // com.qiniu.pili.droid.shortvideo.encode.a
-    public void a(a.InterfaceC0745a interfaceC0745a) {
-        this.h = interfaceC0745a;
+    public void a(a.InterfaceC0575a interfaceC0575a) {
+        this.h = interfaceC0575a;
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
     public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        a.InterfaceC0745a interfaceC0745a = this.h;
-        if (interfaceC0745a != null) {
-            interfaceC0745a.a(byteBuffer, bufferInfo);
+        a.InterfaceC0575a interfaceC0575a = this.h;
+        if (interfaceC0575a != null) {
+            interfaceC0575a.a(byteBuffer, bufferInfo);
         }
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
     public void a(boolean z) {
-        a.InterfaceC0745a interfaceC0745a = this.h;
-        if (interfaceC0745a != null) {
-            interfaceC0745a.a(z);
+        a.InterfaceC0575a interfaceC0575a = this.h;
+        if (interfaceC0575a != null) {
+            interfaceC0575a.a(z);
         }
     }
 
@@ -81,11 +81,11 @@ public class e extends d implements a.InterfaceC0745a {
         }
     }
 
-    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
     public void b(boolean z) {
-        a.InterfaceC0745a interfaceC0745a = this.h;
-        if (interfaceC0745a != null) {
-            interfaceC0745a.b(z);
+        a.InterfaceC0575a interfaceC0575a = this.h;
+        if (interfaceC0575a != null) {
+            interfaceC0575a.b(z);
         }
     }
 
@@ -94,8 +94,8 @@ public class e extends d implements a.InterfaceC0745a {
         MediaFormat createVideoFormat = MediaFormat.createVideoFormat("video/avc", this.g.getVideoEncodingWidth(), this.g.getVideoEncodingHeight());
         int round = Math.round((this.g.getIFrameInterval() * 1.0f) / this.g.getVideoEncodingFps());
         createVideoFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
-        createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, (int) (this.g.getEncodingBitrate() * (this.g.IsConstFrameRateEnabled() ? 1.0d : this.f27649a)));
-        createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, (int) (this.g.getVideoEncodingFps() * (this.g.IsConstFrameRateEnabled() ? 1.0d : this.f27649a)));
+        createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, (int) (this.g.getEncodingBitrate() * (this.g.IsConstFrameRateEnabled() ? 1.0d : this.f13961a)));
+        createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, (int) (this.g.getVideoEncodingFps() * (this.g.IsConstFrameRateEnabled() ? 1.0d : this.f13961a)));
         createVideoFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, round);
         createVideoFormat.setInteger(MediaFormat.KEY_PROFILE, g.a(this.g.getProfileMode()));
         int i = 1;

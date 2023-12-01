@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.exifinterface.media.ExifInterface;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -24,13 +23,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMakeLoverApplyGuestFragment.class */
 public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverApplyGuestPresent> implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    View f13021a;
+    View a;
     TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    View f13022c;
+    View c;
     View d;
     View e;
     View f;
@@ -50,26 +45,21 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveMakeLoverApplyGuestFragment$MyAdapter.class */
     public class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        FragmentManager f13024a;
+        FragmentManager a;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f13024a = fragmentManager;
+            this.a = fragmentManager;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             super.destroyItem(viewGroup, i, obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return LiveMakeLoverApplyGuestFragment.this.p;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i != 0) {
                 return null;
@@ -85,13 +75,13 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
     }
 
     private void A() {
-        this.f13021a = this.i.findViewById(R.id.empty_view);
+        this.a = this.i.findViewById(R.id.empty_view);
         this.b = (TextView) this.i.findViewById(R.id.tv_title);
-        this.f13022c = this.i.findViewById(R.id.ll_apply);
+        this.c = this.i.findViewById(R.id.ll_apply);
         this.d = this.i.findViewById(R.id.tv_apply_selected);
         this.e = this.i.findViewById(R.id.tv_apply_select);
         this.f = this.i.findViewById(R.id.tv_apply_cancel);
-        this.g = (ViewPager) this.i.findViewById(R.id.view_pager);
+        this.g = this.i.findViewById(R.id.view_pager);
         this.k = this.i.findViewById(R.id.fl_time);
         this.l = this.i.findViewById(R.id.tv_time_cancel);
         this.m = this.i.findViewById(R.id.tv_time_start);
@@ -108,7 +98,7 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
     private void B() {
         if (LiveMakeLoverManager.a() == 1) {
             this.u = false;
-            this.f13022c.setVisibility(0);
+            this.c.setVisibility(0);
             this.k.setVisibility(8);
             this.d.setVisibility(0);
             this.e.setVisibility(0);
@@ -116,17 +106,17 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
             this.b.setText(R.string.live_make_friend_apply);
             this.d.setOnClickListener(this);
             this.e.setOnClickListener(this);
-            this.f13021a.setOnClickListener(this);
+            this.a.setOnClickListener(this);
         } else if (LiveMakeLoverManager.a() == 2) {
             this.u = false;
-            this.f13022c.setVisibility(0);
+            this.c.setVisibility(0);
             this.k.setVisibility(8);
             this.d.setVisibility(8);
             this.e.setVisibility(8);
             this.f.setVisibility(0);
             this.b.setText(R.string.live_make_lover_apply_wait);
             this.f.setOnClickListener(this);
-            this.f13021a.setOnClickListener(this);
+            this.a.setOnClickListener(this);
         } else if (LiveMakeLoverManager.a() == 3) {
             this.u = false;
             this.v = true;
@@ -135,8 +125,8 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
                 y.getDialog().setCancelable(false);
                 y.getDialog().setCanceledOnTouchOutside(false);
             }
-            this.f13021a.setOnClickListener(null);
-            this.f13022c.setVisibility(8);
+            this.a.setOnClickListener(null);
+            this.c.setVisibility(8);
             this.k.setVisibility(0);
             this.l.setOnClickListener(this);
             this.m.setOnClickListener(this);
@@ -193,6 +183,7 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
         super.af_();
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.fragment.LiveMakeLoverApplyGuestFragment$1] */
     public void b() {
         c();
         this.t = new CountDownTimer(5000L, 500L) { // from class: com.blued.android.module.live_china.fragment.LiveMakeLoverApplyGuestFragment.1
@@ -204,7 +195,7 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
                 TextView textView = LiveMakeLoverApplyGuestFragment.this.n;
-                textView.setText(((j / 1000) + 1) + ExifInterface.LATITUDE_SOUTH);
+                textView.setText(((j / 1000) + 1) + "S");
             }
         }.start();
     }
@@ -291,19 +282,19 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         z();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         c();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onStop() {
         super.onStop();
         if (this.v) {
@@ -317,7 +308,7 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
         super.p();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void setUserVisibleHint(boolean z) {
         super.setUserVisibleHint(z);
     }
@@ -348,7 +339,7 @@ public class LiveMakeLoverApplyGuestFragment extends MvpFragment<LiveMakeLoverAp
 
     public LiveMakeLoverDialogFragment y() {
         if (getParentFragment() instanceof LiveMakeLoverDialogFragment) {
-            return (LiveMakeLoverDialogFragment) getParentFragment();
+            return getParentFragment();
         }
         return null;
     }

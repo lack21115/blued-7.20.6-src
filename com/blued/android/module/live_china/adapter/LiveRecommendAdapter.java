@@ -17,9 +17,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveRecommendAdapter.class */
 public class LiveRecommendAdapter extends BaseMultiItemQuickAdapter<LiverecommendListData, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveClickCallBack f11690a;
+    private LiveClickCallBack a;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveRecommendAdapter$LiveClickCallBack.class */
     public interface LiveClickCallBack {
@@ -29,13 +27,13 @@ public class LiveRecommendAdapter extends BaseMultiItemQuickAdapter<Liverecommen
     public LiveRecommendAdapter(Context context, LiveClickCallBack liveClickCallBack) {
         super(new ArrayList());
         this.mContext = context;
-        this.f11690a = liveClickCallBack;
+        this.a = liveClickCallBack;
         addItemType(0, R.layout.item_live_recommend);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(LiverecommendListData liverecommendListData, View view) {
-        LiveClickCallBack liveClickCallBack = this.f11690a;
+        LiveClickCallBack liveClickCallBack = this.a;
         if (liveClickCallBack != null) {
             liveClickCallBack.addDesireSuccess(liverecommendListData);
         }
@@ -117,7 +115,6 @@ public class LiveRecommendAdapter extends BaseMultiItemQuickAdapter<Liverecommen
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final LiverecommendListData liverecommendListData) {
         ImageLoader.a((IRequestHost) null, liverecommendListData.pic_url).b(R.drawable.live_recommend_item_placeholder).a((ImageView) baseViewHolder.getView(R.id.iv_pic));

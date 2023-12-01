@@ -14,11 +14,11 @@ import com.blued.login.R;
 public final class FmFinishProfile3Binding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TextView f20515a;
+    public final TextView f6909a;
     public final RelativeLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final RelativeLayout f20516c;
+    public final RelativeLayout f6910c;
     public final FlowLayout d;
     public final CommonTopTitleNoTrans e;
     public final TextView f;
@@ -28,9 +28,9 @@ public final class FmFinishProfile3Binding implements ViewBinding {
 
     private FmFinishProfile3Binding(ConstraintLayout constraintLayout, TextView textView, RelativeLayout relativeLayout, RelativeLayout relativeLayout2, FlowLayout flowLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView2, ShapeTextView shapeTextView, TextView textView3) {
         this.i = constraintLayout;
-        this.f20515a = textView;
+        this.f6909a = textView;
         this.b = relativeLayout;
-        this.f20516c = relativeLayout2;
+        this.f6910c = relativeLayout2;
         this.d = flowLayout;
         this.e = commonTopTitleNoTrans;
         this.f = textView2;
@@ -46,17 +46,17 @@ public final class FmFinishProfile3Binding implements ViewBinding {
             if (relativeLayout != null) {
                 RelativeLayout relativeLayout2 = (RelativeLayout) view.findViewById(R.id.rl_role);
                 if (relativeLayout2 != null) {
-                    FlowLayout flowLayout = (FlowLayout) view.findViewById(R.id.role_flow_layout);
-                    if (flowLayout != null) {
-                        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.title);
-                        if (commonTopTitleNoTrans != null) {
+                    FlowLayout findViewById = view.findViewById(R.id.role_flow_layout);
+                    if (findViewById != null) {
+                        CommonTopTitleNoTrans findViewById2 = view.findViewById(R.id.title);
+                        if (findViewById2 != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_health);
                             if (textView2 != null) {
-                                ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_next);
-                                if (shapeTextView != null) {
+                                ShapeTextView findViewById3 = view.findViewById(R.id.tv_next);
+                                if (findViewById3 != null) {
                                     TextView textView3 = (TextView) view.findViewById(R.id.tv_role);
                                     if (textView3 != null) {
-                                        return new FmFinishProfile3Binding((ConstraintLayout) view, textView, relativeLayout, relativeLayout2, flowLayout, commonTopTitleNoTrans, textView2, shapeTextView, textView3);
+                                        return new FmFinishProfile3Binding((ConstraintLayout) view, textView, relativeLayout, relativeLayout2, findViewById, findViewById2, textView2, findViewById3, textView3);
                                     }
                                     str = "tvRole";
                                 } else {

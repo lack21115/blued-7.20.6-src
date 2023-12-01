@@ -45,20 +45,20 @@ public class WbFaceError {
     public static final String WBFaceErrorDomainSeverFailed = "WBFaceErrorDomainSeverFailed";
 
     /* renamed from: a  reason: collision with root package name */
-    private String f35524a;
+    private String f21833a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f35525c;
+    private String f21834c;
     private String d;
 
     public WbFaceError() {
     }
 
     public WbFaceError(String str, String str2, String str3, String str4) {
-        this.f35524a = str;
+        this.f21833a = str;
         this.b = str2;
-        this.f35525c = str3;
+        this.f21834c = str3;
         this.d = str4;
     }
 
@@ -67,11 +67,11 @@ public class WbFaceError {
     }
 
     public String getDesc() {
-        return this.f35525c;
+        return this.f21834c;
     }
 
     public String getDomain() {
-        return this.f35524a;
+        return this.f21833a;
     }
 
     public String getReason() {
@@ -83,11 +83,11 @@ public class WbFaceError {
     }
 
     public void setDesc(String str) {
-        this.f35525c = str;
+        this.f21834c = str;
     }
 
     public void setDomain(String str) {
-        this.f35524a = str;
+        this.f21833a = str;
     }
 
     public void setReason(String str) {
@@ -95,6 +95,6 @@ public class WbFaceError {
     }
 
     public String toString() {
-        return "WbFaceError{domain='" + this.f35524a + "', code='" + this.b + "', desc='" + this.f35525c + "', reason='" + this.d + "'}";
+        return "WbFaceError{domain='" + this.f21833a + "', code='" + this.b + "', desc='" + this.f21834c + "', reason='" + this.d + "'}";
     }
 }

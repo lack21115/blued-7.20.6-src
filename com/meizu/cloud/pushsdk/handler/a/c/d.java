@@ -7,26 +7,26 @@ import com.meizu.cloud.pushsdk.constants.PushConstants;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f24143a;
+    private String f10528a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f24144c;
+    private String f10529c;
     private String d;
 
     /* loaded from: source-8303388-dex2jar.jar:com/meizu/cloud/pushsdk/handler/a/c/d$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f24145a;
+        private String f10530a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f24146c;
+        private String f10531c;
         private String d;
 
         public a a(String str) {
-            this.f24145a = str;
+            this.f10530a = str;
             return this;
         }
 
@@ -40,7 +40,7 @@ public class d {
         }
 
         public a c(String str) {
-            this.f24146c = str;
+            this.f10531c = str;
             return this;
         }
 
@@ -54,9 +54,9 @@ public class d {
     }
 
     public d(a aVar) {
-        this.f24143a = !TextUtils.isEmpty(aVar.f24145a) ? aVar.f24145a : "";
+        this.f10528a = !TextUtils.isEmpty(aVar.f10530a) ? aVar.f10530a : "";
         this.b = !TextUtils.isEmpty(aVar.b) ? aVar.b : "";
-        this.f24144c = !TextUtils.isEmpty(aVar.f24146c) ? aVar.f24146c : "";
+        this.f10529c = !TextUtils.isEmpty(aVar.f10531c) ? aVar.f10531c : "";
         this.d = TextUtils.isEmpty(aVar.d) ? "" : aVar.d;
     }
 
@@ -66,15 +66,15 @@ public class d {
 
     public String b() {
         com.meizu.cloud.pushsdk.d.a.c cVar = new com.meizu.cloud.pushsdk.d.a.c();
-        cVar.a("task_id", this.f24143a);
+        cVar.a("task_id", this.f10528a);
         cVar.a(PushConstants.SEQ_ID, this.b);
-        cVar.a(PushConstants.PUSH_TIMESTAMP, this.f24144c);
+        cVar.a(PushConstants.PUSH_TIMESTAMP, this.f10529c);
         cVar.a("device_id", this.d);
         return cVar.toString();
     }
 
     public String c() {
-        return this.f24143a;
+        return this.f10528a;
     }
 
     public String d() {
@@ -82,7 +82,7 @@ public class d {
     }
 
     public String e() {
-        return this.f24144c;
+        return this.f10529c;
     }
 
     public String f() {

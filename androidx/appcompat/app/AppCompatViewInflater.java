@@ -1,5 +1,6 @@
 package androidx.appcompat.app;
 
+import android.R;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.TypedArray;
@@ -34,7 +35,7 @@ public class AppCompatViewInflater {
     private static final String LOG_TAG = "AppCompatViewInflater";
     private final Object[] mConstructorArgs = new Object[2];
     private static final Class<?>[] sConstructorSignature = {Context.class, AttributeSet.class};
-    private static final int[] sOnClickAttrs = {16843375};
+    private static final int[] sOnClickAttrs = {R.attr.onClick};
     private static final int[] sAccessibilityHeading = {16844160};
     private static final int[] sAccessibilityPaneTitle = {16844156};
     private static final int[] sScreenReaderFocusable = {16844148};
@@ -46,15 +47,15 @@ public class AppCompatViewInflater {
     public static class DeclaredOnClickListener implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private final View f1591a;
+        private final View f1543a;
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private Method f1592c;
+        private Method f1544c;
         private Context d;
 
         public DeclaredOnClickListener(View view, String str) {
-            this.f1591a = view;
+            this.f1543a = view;
             this.b = str;
         }
 
@@ -65,7 +66,7 @@ public class AppCompatViewInflater {
             while (context != null) {
                 try {
                     if (!context.isRestricted() && (method = context.getClass().getMethod(this.b, View.class)) != null) {
-                        this.f1592c = method;
+                        this.f1544c = method;
                         this.d = context;
                         return;
                     }
@@ -73,22 +74,22 @@ public class AppCompatViewInflater {
                 }
                 context = context instanceof ContextWrapper ? ((ContextWrapper) context).getBaseContext() : null;
             }
-            if (this.f1591a.getId() == -1) {
+            if (this.f1543a.getId() == -1) {
                 str = "";
             } else {
-                str = " with id '" + this.f1591a.getContext().getResources().getResourceEntryName(id) + "'";
+                str = " with id '" + this.f1543a.getContext().getResources().getResourceEntryName(id) + "'";
             }
-            throw new IllegalStateException("Could not find method " + this.b + "(View) in a parent or ancestor Context for android:onClick attribute defined on view " + this.f1591a.getClass() + str);
+            throw new IllegalStateException("Could not find method " + this.b + "(View) in a parent or ancestor Context for android:onClick attribute defined on view " + this.f1543a.getClass() + str);
         }
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (this.f1592c == null) {
-                a(this.f1591a.getContext());
+            if (this.f1544c == null) {
+                a(this.f1543a.getContext());
             }
             try {
-                this.f1592c.invoke(this.d, view);
+                this.f1544c.invoke(this.d, view);
             } catch (IllegalAccessException e) {
                 throw new IllegalStateException("Could not execute non-public method for android:onClick", e);
             } catch (InvocationTargetException e2) {

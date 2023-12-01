@@ -148,9 +148,9 @@ public class FaceSDK {
                         public void run() {
                             try {
                                 Log.e(FaceSDK.TAG, "init license");
-                                if (!"".equals(String.this) && !"".equals(str2)) {
+                                if (!"".equals(str) && !"".equals(str2)) {
                                     AndroidLicenser androidLicenser = AndroidLicenser.getInstance();
-                                    androidLicenser.init(context, String.this, str2, 3);
+                                    androidLicenser.init(context, str, str2, 3);
                                     androidLicenser.is_remote_authorize = z;
                                     int unused = FaceSDK.mAuthorityStatus = androidLicenser.authenticate(context);
                                 }

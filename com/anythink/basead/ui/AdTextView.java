@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.TextView;
 import com.anythink.core.common.k.h;
-import com.anythink.expressad.foundation.h.i;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/AdTextView.class */
 public class AdTextView extends TextView {
@@ -24,7 +23,7 @@ public class AdTextView extends TextView {
     }
 
     private void a(Context context) {
-        setBackgroundResource(h.a(context, "myoffer_bg_banner_ad_choice", i.f7952c));
+        setBackgroundResource(h.a(context, "myoffer_bg_banner_ad_choice", "drawable"));
         setTextColor(-1);
         setText(context.getResources().getString(h.a(context, "basead_ad_text", "string")));
         setTextSize(8.0f);

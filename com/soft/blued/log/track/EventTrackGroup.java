@@ -1,5 +1,6 @@
 package com.soft.blued.log.track;
 
+import android.provider.Contacts;
 import com.blued.android.module.common.group.GroupInfoModel;
 import com.blued.das.client.socialnet.SocialNetWorkProtos;
 import com.blued.track.trackUtils.EventTrackUtils;
@@ -14,7 +15,7 @@ import kotlin.text.StringsKt;
 public final class EventTrackGroup {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final EventTrackGroup f29692a = new EventTrackGroup();
+    public static final EventTrackGroup f16002a = new EventTrackGroup();
 
     private EventTrackGroup() {
     }
@@ -26,25 +27,25 @@ public final class EventTrackGroup {
     }
 
     @JvmStatic
-    public static final void a(SocialNetWorkProtos.Event event, String searchWords) {
+    public static final void a(SocialNetWorkProtos.Event event, String str) {
         Intrinsics.e(event, "event");
-        Intrinsics.e(searchWords, "searchWords");
-        EventTrackUtils.a(SocialNetWorkProtos.SocialNetWorkProto.newBuilder().setEvent(event).setName(searchWords).build());
+        Intrinsics.e(str, "searchWords");
+        EventTrackUtils.a(SocialNetWorkProtos.SocialNetWorkProto.newBuilder().setEvent(event).setName(str).build());
     }
 
     @JvmStatic
-    public static final void a(SocialNetWorkProtos.Event event, String group_id, SocialNetWorkProtos.SourceType sourceType) {
+    public static final void a(SocialNetWorkProtos.Event event, String str, SocialNetWorkProtos.SourceType sourceType) {
         Intrinsics.e(event, "event");
-        Intrinsics.e(group_id, "group_id");
+        Intrinsics.e(str, Contacts.GroupMembership.GROUP_ID);
         Intrinsics.e(sourceType, "sourceType");
-        EventTrackUtils.a(SocialNetWorkProtos.SocialNetWorkProto.newBuilder().setGroupId(group_id).setSource(sourceType).setEvent(event).build());
+        EventTrackUtils.a(SocialNetWorkProtos.SocialNetWorkProto.newBuilder().setGroupId(str).setSource(sourceType).setEvent(event).build());
     }
 
     @JvmStatic
-    public static final void a(SocialNetWorkProtos.Event event, List<? extends GroupInfoModel.Label> list, SocialNetWorkProtos.SourceType source, String groupId) {
+    public static final void a(SocialNetWorkProtos.Event event, List<? extends GroupInfoModel.Label> list, SocialNetWorkProtos.SourceType sourceType, String str) {
         Intrinsics.e(event, "event");
-        Intrinsics.e(source, "source");
-        Intrinsics.e(groupId, "groupId");
+        Intrinsics.e(sourceType, "source");
+        Intrinsics.e(str, "groupId");
         StringBuilder sb = new StringBuilder("");
         if (list != null) {
             for (GroupInfoModel.Label label : list) {
@@ -54,11 +55,11 @@ public final class EventTrackGroup {
         }
         String sb2 = sb.toString();
         Intrinsics.c(sb2, "sb.toString()");
-        String str = sb2;
+        String str2 = sb2;
         if (StringsKt.b(sb2, ",", false, 2, (Object) null)) {
-            str = sb2.substring(0, sb2.length() - 1);
-            Intrinsics.c(str, "this as java.lang.String…ing(startIndex, endIndex)");
+            str2 = sb2.substring(0, sb2.length() - 1);
+            Intrinsics.c(str2, "this as java.lang.String…ing(startIndex, endIndex)");
         }
-        EventTrackUtils.a(SocialNetWorkProtos.SocialNetWorkProto.newBuilder().setGroupId(groupId).setEvent(event).setType(str).setSource(source).build());
+        EventTrackUtils.a(SocialNetWorkProtos.SocialNetWorkProto.newBuilder().setGroupId(str).setEvent(event).setType(str2).setSource(sourceType).build());
     }
 }

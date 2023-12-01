@@ -47,7 +47,7 @@ public abstract class gj extends r1<rc, VectorMap> implements a1, be, pe {
         public final /* synthetic */ float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ float f37494c;
+        public final /* synthetic */ float f23803c;
         public final /* synthetic */ float d;
         public final /* synthetic */ float e;
         public final /* synthetic */ boolean f;
@@ -55,8 +55,8 @@ public abstract class gj extends r1<rc, VectorMap> implements a1, be, pe {
 
         /* renamed from: com.tencent.mapsdk.internal.gj$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/gj$a$a.class */
-        public class RunnableC0960a implements Runnable {
-            public RunnableC0960a() {
+        public class RunnableC0790a implements Runnable {
+            public RunnableC0790a() {
             }
 
             @Override // java.lang.Runnable
@@ -67,7 +67,7 @@ public abstract class gj extends r1<rc, VectorMap> implements a1, be, pe {
 
         public a(float f, float f2, float f3, float f4, boolean z, float f5) {
             this.b = f;
-            this.f37494c = f2;
+            this.f23803c = f2;
             this.d = f3;
             this.e = f4;
             this.f = z;
@@ -78,12 +78,12 @@ public abstract class gj extends r1<rc, VectorMap> implements a1, be, pe {
         public void run() {
             gj.this.y += this.b;
             gj gjVar = gj.this;
-            gjVar.a(this.f37494c, gjVar.y, true);
+            gjVar.a(this.f23803c, gjVar.y, true);
             if (gj.b(gj.this) < 10) {
                 ca.a(this, 16L);
                 return;
             }
-            gj.this.a(this.f37494c, this.d, true);
+            gj.this.a(this.f23803c, this.d, true);
             float f = this.e;
             if (f < 3.0f || f > 20.0f) {
                 return;
@@ -92,7 +92,7 @@ public abstract class gj extends r1<rc, VectorMap> implements a1, be, pe {
                 gj.this.u.h().b(this.g);
                 return;
             }
-            gj.this.u.h().a((int) this.e, (Runnable) new RunnableC0960a(), false);
+            gj.this.u.h().a((int) this.e, (Runnable) new RunnableC0790a(), false);
         }
     }
 
@@ -115,25 +115,25 @@ public abstract class gj extends r1<rc, VectorMap> implements a1, be, pe {
     public static /* synthetic */ class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f37495a;
+        public static final /* synthetic */ int[] f23804a;
 
         static {
             MapViewType.values();
             int[] iArr = new int[3];
-            f37495a = iArr;
+            f23804a = iArr;
             try {
                 MapViewType mapViewType = MapViewType.TextureView;
                 iArr[1] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f37495a;
+                int[] iArr2 = f23804a;
                 MapViewType mapViewType2 = MapViewType.RenderLayer;
                 iArr2[2] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f37495a;
+                int[] iArr3 = f23804a;
                 MapViewType mapViewType3 = MapViewType.SurfaceView;
                 iArr3[0] = 3;
             } catch (NoSuchFieldError e3) {

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.text.TextUtils;
+import com.alipay.sdk.cons.b;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.imagecache.RecyclingUtils;
@@ -31,26 +32,20 @@ import java.text.DecimalFormat;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/Tools.class */
 public class Tools {
     private static final String b = Tools.class.getSimpleName();
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f15588a = FileUtils.f15572a + "/blued/BLPlayer";
+    public static final String a = FileUtils.a + "/blued/BLPlayer";
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.module.media.selector.utils.Tools$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/media/selector/utils/Tools$1.class */
     public class AnonymousClass1 extends FileHttpResponseHandler {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f15589a;
+        final /* synthetic */ String a;
         final /* synthetic */ String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f15590c;
+        final /* synthetic */ String c;
 
         AnonymousClass1(String str, String str2, String str3) {
-            this.f15589a = str;
+            this.a = str;
             this.b = str2;
-            this.f15590c = str3;
+            this.c = str3;
         }
 
         @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
@@ -61,7 +56,7 @@ public class Tools {
             ThreadManager.a().a(new ThreadExecutor("CopyVideoToPicDir") { // from class: com.blued.android.module.media.selector.utils.Tools.1.1
                 @Override // com.blued.android.framework.pool.ThreadExecutor
                 public void execute() {
-                    com.blued.android.framework.utils.FileUtils.a(AnonymousClass1.this.f15589a, AnonymousClass1.this.b, AnonymousClass1.this.f15590c);
+                    com.blued.android.framework.utils.FileUtils.a(AnonymousClass1.this.a, AnonymousClass1.this.b, AnonymousClass1.this.c);
                     AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.media.selector.utils.Tools.1.1.1
                         @Override // java.lang.Runnable
                         public void run() {
@@ -113,7 +108,7 @@ public class Tools {
             });
             return;
         }
-        Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        Intent intent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
         Uri fromFile = Uri.fromFile(new File(str));
         intent.addFlags(1);
         intent.addFlags(2);
@@ -240,7 +235,7 @@ public class Tools {
         Logger.b(b, "to download finalVideoPath   " + str);
         File externalStoragePublicDirectory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM);
         final String str3 = externalStoragePublicDirectory.getAbsolutePath() + File.separator + "blued" + File.separator + str2;
-        if (str.startsWith("http") || str.startsWith("https")) {
+        if (str.startsWith("http") || str.startsWith(b.a)) {
             FileDownloader.a(str, absolutePath, new AnonymousClass1(absolutePath, str3, str2), null);
             return;
         }

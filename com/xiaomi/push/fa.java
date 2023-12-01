@@ -8,31 +8,31 @@ import com.xiaomi.push.service.bg;
 public class fa implements bg.b.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f41397a;
+    private int f27706a;
 
     /* renamed from: a  reason: collision with other field name */
-    private fu f430a;
+    private fu f383a;
 
     /* renamed from: a  reason: collision with other field name */
-    private XMPushService f431a;
+    private XMPushService f384a;
 
     /* renamed from: a  reason: collision with other field name */
-    private bg.b f432a;
+    private bg.b f385a;
 
     /* renamed from: a  reason: collision with other field name */
-    private boolean f434a = false;
+    private boolean f387a = false;
 
     /* renamed from: a  reason: collision with other field name */
-    private bg.c f433a = bg.c.binding;
+    private bg.c f386a = bg.c.binding;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public fa(XMPushService xMPushService, bg.b bVar) {
-        this.f431a = xMPushService;
-        this.f432a = bVar;
+        this.f384a = xMPushService;
+        this.f385a = bVar;
     }
 
     private void b() {
-        this.f432a.b(this);
+        this.f385a.b(this);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -53,17 +53,17 @@ public class fa implements bg.b.a {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
-        this.f432a.a(this);
-        this.f430a = this.f431a.m12092a();
+        this.f385a.a(this);
+        this.f383a = this.f384a.m9042a();
     }
 
     @Override // com.xiaomi.push.service.bg.b.a
     public void a(bg.c cVar, bg.c cVar2, int i) {
-        if (!this.f434a && cVar == bg.c.binding) {
-            this.f433a = cVar2;
-            this.f41397a = i;
-            this.f434a = true;
+        if (!this.f387a && cVar == bg.c.binding) {
+            this.f386a = cVar2;
+            this.f27706a = i;
+            this.f387a = true;
         }
-        this.f431a.a(new fb(this, 4));
+        this.f384a.a(new fb(this, 4));
     }
 }

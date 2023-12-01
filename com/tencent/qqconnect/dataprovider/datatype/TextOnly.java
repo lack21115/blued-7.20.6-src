@@ -20,14 +20,14 @@ public class TextOnly implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private String f38658a;
+    private String f24967a;
 
     private TextOnly(Parcel parcel) {
-        this.f38658a = parcel.readString();
+        this.f24967a = parcel.readString();
     }
 
     public TextOnly(String str) {
-        this.f38658a = str;
+        this.f24967a = str;
     }
 
     @Override // android.os.Parcelable
@@ -36,11 +36,11 @@ public class TextOnly implements Parcelable {
     }
 
     public String getText() {
-        return this.f38658a;
+        return this.f24967a;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f38658a);
+        parcel.writeString(this.f24967a);
     }
 }

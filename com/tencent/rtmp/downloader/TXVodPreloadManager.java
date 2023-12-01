@@ -28,21 +28,21 @@ public class TXVodPreloadManager {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        static TXVodPreloadManager f38669a = new TXVodPreloadManager();
+        static TXVodPreloadManager f24978a = new TXVodPreloadManager();
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/rtmp/downloader/TXVodPreloadManager$b.class */
     static final class b implements ITPPreLoadListener {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38670a = -1;
+        int f24979a = -1;
         private final ITXVodPreloadListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f38671c;
+        private final String f24980c;
 
         public b(String str, ITXVodPreloadListener iTXVodPreloadListener) {
-            this.f38671c = str;
+            this.f24980c = str;
             this.b = iTXVodPreloadListener;
         }
 
@@ -56,7 +56,7 @@ public class TXVodPreloadManager {
             LiteavLog.d(TXVodPreloadManager.TAG, "preload error: moduleId: " + i + ", errorCode: " + i2 + ", extInfo: " + str);
             ITXVodPreloadListener iTXVodPreloadListener = this.b;
             if (iTXVodPreloadListener != null) {
-                iTXVodPreloadListener.onError(this.f38670a, this.f38671c, i2, str);
+                iTXVodPreloadListener.onError(this.f24979a, this.f24980c, i2, str);
             }
         }
 
@@ -65,7 +65,7 @@ public class TXVodPreloadManager {
             LiteavLog.d(TXVodPreloadManager.TAG, "preload: onPrepareOK");
             ITXVodPreloadListener iTXVodPreloadListener = this.b;
             if (iTXVodPreloadListener != null) {
-                iTXVodPreloadListener.onComplete(this.f38670a, this.f38671c);
+                iTXVodPreloadListener.onComplete(this.f24979a, this.f24980c);
             }
         }
     }
@@ -111,7 +111,7 @@ public class TXVodPreloadManager {
             mAppContext = applicationContext;
             ContextUtils.initApplicationContext(applicationContext);
             ContextUtils.setDataDirectorySuffix("liteav");
-            return a.f38669a;
+            return a.f24978a;
         }
         return null;
     }
@@ -133,7 +133,7 @@ public class TXVodPreloadManager {
         TPDownloadParam tPDownloadParam = new TPDownloadParam(arrayList, 0, hashMap);
         b bVar = new b(str, iTXVodPreloadListener);
         int startPreload = this.mTpDownloadProxy.startPreload(com.tencent.liteav.txcplayer.e.a.d(str), tPDownloadParam, bVar);
-        bVar.f38670a = startPreload;
+        bVar.f24979a = startPreload;
         return startPreload;
     }
 

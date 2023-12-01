@@ -11,13 +11,9 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/ranges/UIntProgression.class */
 public class UIntProgression implements Iterable<UInt>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f42586a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f42587c;
+    private final int c;
     private final int d;
 
     @Metadata
@@ -39,7 +35,7 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.b = i;
-        this.f42587c = UProgressionUtilKt.a(i, i2, i3);
+        this.c = UProgressionUtilKt.a(i, i2, i3);
         this.d = i3;
     }
 
@@ -52,7 +48,7 @@ public class UIntProgression implements Iterable<UInt>, KMappedMarker {
     }
 
     public final int b() {
-        return this.f42587c;
+        return this.c;
     }
 
     public boolean c() {

@@ -22,7 +22,7 @@ public class MultiPointOverlayOptions extends BaseOptions implements Cloneable {
     }
 
     /* renamed from: clone */
-    public MultiPointOverlayOptions m2413clone() {
+    public MultiPointOverlayOptions m8856clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {

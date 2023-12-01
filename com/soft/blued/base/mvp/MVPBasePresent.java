@@ -9,18 +9,18 @@ import java.lang.ref.WeakReference;
 public abstract class MVPBasePresent<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    protected WeakReference<T> f28296a;
+    protected WeakReference<T> f14606a;
 
     public abstract void a(Activity activity, int i, int i2, Intent intent);
 
     public abstract void a(Bundle bundle);
 
     public void a(T t) {
-        this.f28296a = new WeakReference<>(t);
+        this.f14606a = new WeakReference<>(t);
     }
 
     public T ao_() {
-        WeakReference<T> weakReference = this.f28296a;
+        WeakReference<T> weakReference = this.f14606a;
         if (weakReference != null) {
             return weakReference.get();
         }
@@ -28,10 +28,10 @@ public abstract class MVPBasePresent<T> {
     }
 
     public void b() {
-        WeakReference<T> weakReference = this.f28296a;
+        WeakReference<T> weakReference = this.f14606a;
         if (weakReference != null) {
             weakReference.clear();
-            this.f28296a = null;
+            this.f14606a = null;
         }
         c();
     }

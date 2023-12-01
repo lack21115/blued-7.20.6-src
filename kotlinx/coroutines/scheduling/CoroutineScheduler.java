@@ -1,6 +1,5 @@
 package kotlinx.coroutines.scheduling;
 
-import com.sensetime.stmobile.STMobileHumanActionNative;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,9 +26,7 @@ import kotlinx.coroutines.internal.Symbol;
 public final class CoroutineScheduler implements Closeable, Executor {
     private volatile /* synthetic */ int _isTerminated;
     public final int b;
-
-    /* renamed from: c */
-    public final int f43577c;
+    public final int c;
     volatile /* synthetic */ long controlState;
     public final long d;
     public final String e;
@@ -37,9 +34,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
     public final GlobalQueue g;
     public final AtomicReferenceArray<Worker> h;
     private volatile /* synthetic */ long parkedWorkersStack;
-
-    /* renamed from: a */
-    public static final Companion f43576a = new Companion(null);
+    public static final Companion a = new Companion(null);
     public static final Symbol j = new Symbol("NOT_IN_STACK");
     private static final /* synthetic */ AtomicLongFieldUpdater k = AtomicLongFieldUpdater.newUpdater(CoroutineScheduler.class, "parkedWorkersStack");
     static final /* synthetic */ AtomicLongFieldUpdater i = AtomicLongFieldUpdater.newUpdater(CoroutineScheduler.class, "controlState");
@@ -59,9 +54,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/scheduling/CoroutineScheduler$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a */
-        public static final /* synthetic */ int[] f43578a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[WorkerState.valuesCustom().length];
@@ -70,19 +63,15 @@ public final class CoroutineScheduler implements Closeable, Executor {
             iArr[WorkerState.CPU_ACQUIRED.ordinal()] = 3;
             iArr[WorkerState.DORMANT.ordinal()] = 4;
             iArr[WorkerState.TERMINATED.ordinal()] = 5;
-            f43578a = iArr;
+            a = iArr;
         }
     }
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/scheduling/CoroutineScheduler$Worker.class */
     public final class Worker extends Thread {
-
-        /* renamed from: c */
-        static final /* synthetic */ AtomicIntegerFieldUpdater f43579c = AtomicIntegerFieldUpdater.newUpdater(Worker.class, "workerCtl");
-
-        /* renamed from: a */
-        public final WorkQueue f43580a;
+        static final /* synthetic */ AtomicIntegerFieldUpdater c = AtomicIntegerFieldUpdater.newUpdater(Worker.class, "workerCtl");
+        public final WorkQueue a;
         public WorkerState b;
         public boolean d;
         private long f;
@@ -93,19 +82,16 @@ public final class CoroutineScheduler implements Closeable, Executor {
         volatile /* synthetic */ int workerCtl;
 
         private Worker() {
-            CoroutineScheduler.this = r5;
             setDaemon(true);
-            this.f43580a = new WorkQueue();
+            this.a = new WorkQueue();
             this.b = WorkerState.DORMANT;
             this.workerCtl = 0;
             this.nextParkedWorker = CoroutineScheduler.j;
-            this.h = Random.f42565a.b();
+            this.h = Random.a.b();
         }
 
-        /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
         public Worker(int i) {
             this();
-            CoroutineScheduler.this = r4;
             a(i);
         }
 
@@ -117,7 +103,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
             d(b);
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:58:0x0058, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:27:0x0058, code lost:
             if (r0 == null) goto L21;
          */
         /*
@@ -157,7 +143,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
                 return r0
             L2d:
                 r0 = r4
-                kotlinx.coroutines.scheduling.WorkQueue r0 = r0.f43580a
+                kotlinx.coroutines.scheduling.WorkQueue r0 = r0.a
                 kotlinx.coroutines.scheduling.Task r0 = r0.c()
                 r7 = r0
                 r0 = r7
@@ -198,7 +184,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
 
         private final Task c(boolean z) {
             if (DebugKt.a()) {
-                if (!(this.f43580a.b() == 0)) {
+                if (!(this.a.b() == 0)) {
                     throw new AssertionError();
                 }
             }
@@ -224,13 +210,13 @@ public final class CoroutineScheduler implements Closeable, Executor {
                         continue;
                     } else {
                         if (DebugKt.a()) {
-                            if (!(this.f43580a.b() == 0)) {
+                            if (!(this.a.b() == 0)) {
                                 throw new AssertionError();
                             }
                         }
-                        long b2 = z ? this.f43580a.b(worker.f43580a) : this.f43580a.a(worker.f43580a);
+                        long b2 = z ? this.a.b(worker.a) : this.a.a(worker.a);
                         if (b2 == -1) {
-                            return this.f43580a.c();
+                            return this.a.c();
                         }
                         j2 = j;
                         if (b2 > 0) {
@@ -263,7 +249,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
             while (true) {
                 long j = coroutineScheduler.controlState;
                 if (((int) ((9223367638808264704L & j) >> 42)) != 0) {
-                    if (CoroutineScheduler.i.compareAndSet(coroutineScheduler, j, j - STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D)) {
+                    if (CoroutineScheduler.i.compareAndSet(coroutineScheduler, j, j - 4398046511104L)) {
                         z = true;
                         break;
                     }
@@ -283,10 +269,10 @@ public final class CoroutineScheduler implements Closeable, Executor {
             loop0: while (true) {
                 boolean z = false;
                 while (!CoroutineScheduler.this.a() && this.b != WorkerState.TERMINATED) {
-                    Task a2 = a(this.d);
-                    if (a2 != null) {
+                    Task a = a(this.d);
+                    if (a != null) {
                         this.g = 0L;
-                        a(a2);
+                        a(a);
                     } else {
                         this.d = false;
                         if (this.g == 0) {
@@ -327,7 +313,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
                 return;
             }
             if (DebugKt.a()) {
-                if (!(this.f43580a.b() == 0)) {
+                if (!(this.a.b() == 0)) {
                     throw new AssertionError();
                 }
             }
@@ -376,20 +362,20 @@ public final class CoroutineScheduler implements Closeable, Executor {
                 if (((int) (coroutineScheduler.controlState & 2097151)) <= coroutineScheduler.b) {
                     return;
                 }
-                if (f43579c.compareAndSet(this, -1, 1)) {
-                    int a2 = a();
+                if (c.compareAndSet(this, -1, 1)) {
+                    int a = a();
                     a(0);
-                    coroutineScheduler.a(this, a2, 0);
+                    coroutineScheduler.a(this, a, 0);
                     int andDecrement = (int) (CoroutineScheduler.i.getAndDecrement(coroutineScheduler) & 2097151);
-                    if (andDecrement != a2) {
+                    if (andDecrement != a) {
                         Worker worker = coroutineScheduler.h.get(andDecrement);
                         Intrinsics.a(worker);
-                        coroutineScheduler.h.set(a2, worker);
-                        worker.a(a2);
-                        coroutineScheduler.a(worker, andDecrement, a2);
+                        coroutineScheduler.h.set(a, worker);
+                        worker.a(a);
+                        coroutineScheduler.a(worker, andDecrement, a);
                     }
                     coroutineScheduler.h.set(andDecrement, null);
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     this.b = WorkerState.TERMINATED;
                 }
             }
@@ -422,7 +408,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
                 return b(z);
             }
             if (z) {
-                Task c3 = this.f43580a.c();
+                Task c3 = this.a.c();
                 c2 = c3;
                 if (c3 == null) {
                     c2 = CoroutineScheduler.this.g.c();
@@ -454,7 +440,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
             WorkerState workerState2 = this.b;
             boolean z = workerState2 == WorkerState.CPU_ACQUIRED;
             if (z) {
-                CoroutineScheduler.i.addAndGet(CoroutineScheduler.this, STMobileHumanActionNative.ST_MOBILE_DETECT_HAND_SKELETON_KEYPOINTS_3D);
+                CoroutineScheduler.i.addAndGet(CoroutineScheduler.this, 4398046511104L);
             }
             if (workerState2 != workerState) {
                 this.b = workerState;
@@ -500,17 +486,17 @@ public final class CoroutineScheduler implements Closeable, Executor {
 
     public CoroutineScheduler(int i2, int i3, long j2, String str) {
         this.b = i2;
-        this.f43577c = i3;
+        this.c = i3;
         this.d = j2;
         this.e = str;
         if (!(i2 >= 1)) {
             throw new IllegalArgumentException(("Core pool size " + this.b + " should be at least 1").toString());
         }
-        if (!(this.f43577c >= this.b)) {
-            throw new IllegalArgumentException(("Max pool size " + this.f43577c + " should be greater than or equals to core pool size " + this.b).toString());
+        if (!(this.c >= this.b)) {
+            throw new IllegalArgumentException(("Max pool size " + this.c + " should be greater than or equals to core pool size " + this.b).toString());
         }
-        if (!(this.f43577c <= 2097150)) {
-            throw new IllegalArgumentException(("Max pool size " + this.f43577c + " should not exceed maximal supported number of threads 2097150").toString());
+        if (!(this.c <= 2097150)) {
+            throw new IllegalArgumentException(("Max pool size " + this.c + " should not exceed maximal supported number of threads 2097150").toString());
         }
         if (!(this.d > 0)) {
             throw new IllegalArgumentException(("Idle worker keep alive time " + this.d + " must be positive").toString());
@@ -518,7 +504,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
         this.f = new GlobalQueue();
         this.g = new GlobalQueue();
         this.parkedWorkersStack = 0L;
-        this.h = new AtomicReferenceArray<>(this.f43577c + 1);
+        this.h = new AtomicReferenceArray<>(this.c + 1);
         this.controlState = this.b << 42;
         this._isTerminated = 0;
     }
@@ -529,14 +515,14 @@ public final class CoroutineScheduler implements Closeable, Executor {
                 return task;
             }
             worker.d = true;
-            return worker.f43580a.a(task, z);
+            return worker.a.a(task, z);
         }
         return task;
     }
 
     public static /* synthetic */ void a(CoroutineScheduler coroutineScheduler, Runnable runnable, TaskContext taskContext, boolean z, int i2, Object obj) {
         if ((i2 & 2) != 0) {
-            taskContext = NonBlockingContext.f43584a;
+            taskContext = NonBlockingContext.a;
         }
         if ((i2 & 4) != 0) {
             z = false;
@@ -613,14 +599,14 @@ public final class CoroutineScheduler implements Closeable, Executor {
     }
 
     private final boolean d() {
-        Worker c2;
+        Worker c;
         do {
-            c2 = c();
-            if (c2 == null) {
+            c = c();
+            if (c == null) {
                 return false;
             }
-        } while (!Worker.f43579c.compareAndSet(c2, -1, 0));
-        LockSupport.unpark(c2);
+        } while (!Worker.c.compareAndSet(c, -1, 0));
+        LockSupport.unpark(c);
         return true;
     }
 
@@ -631,11 +617,11 @@ public final class CoroutineScheduler implements Closeable, Executor {
             }
             long j2 = this.controlState;
             int i2 = (int) (j2 & 2097151);
-            int c2 = RangesKt.c(i2 - ((int) ((j2 & 4398044413952L) >> 21)), 0);
-            if (c2 >= this.b) {
+            int c = RangesKt.c(i2 - ((int) ((j2 & 4398044413952L) >> 21)), 0);
+            if (c >= this.b) {
                 return 0;
             }
-            if (i2 >= this.f43577c) {
+            if (i2 >= this.c) {
                 return 0;
             }
             int i3 = ((int) (this.controlState & 2097151)) + 1;
@@ -648,7 +634,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
                 }
                 if (z) {
                     worker.start();
-                    return c2 + 1;
+                    return c + 1;
                 }
                 throw new IllegalArgumentException("Failed requirement.".toString());
             }
@@ -704,7 +690,7 @@ public final class CoroutineScheduler implements Closeable, Executor {
                                 throw new AssertionError();
                             }
                         }
-                        worker.f43580a.a(this.g);
+                        worker.a.a(this.g);
                     }
                     if (i4 == i2) {
                         break;
@@ -722,9 +708,9 @@ public final class CoroutineScheduler implements Closeable, Executor {
                 }
                 Task task2 = task;
                 if (task == null) {
-                    Task c2 = this.g.c();
-                    task2 = c2;
-                    if (c2 == null) {
+                    Task c = this.g.c();
+                    task2 = c;
+                    if (c == null) {
                         break;
                     }
                 }
@@ -876,8 +862,8 @@ public final class CoroutineScheduler implements Closeable, Executor {
                     i6 = i9;
                     i5 = i10;
                 } else {
-                    int b = worker.f43580a.b();
-                    int i14 = WhenMappings.f43578a[worker.b.ordinal()];
+                    int b = worker.a.b();
+                    int i14 = WhenMappings.a[worker.b.ordinal()];
                     if (i14 == 1) {
                         i2 = i7 + 1;
                         i5 = i10;
@@ -950,6 +936,6 @@ public final class CoroutineScheduler implements Closeable, Executor {
             i5 = 0;
         }
         long j2 = this.controlState;
-        return this.e + '@' + DebugStringsKt.a(this) + "[Pool Size {core = " + this.b + ", max = " + this.f43577c + "}, Worker States {CPU = " + i6 + ", blocking = " + i3 + ", parked = " + i2 + ", dormant = " + i4 + ", terminated = " + i5 + "}, running workers queues = " + arrayList + ", global CPU queue size = " + this.f.a() + ", global blocking queue size = " + this.g.a() + ", Control State {created workers= " + ((int) (2097151 & j2)) + ", blocking tasks = " + ((int) ((4398044413952L & j2) >> 21)) + ", CPUs acquired = " + (this.b - ((int) ((9223367638808264704L & j2) >> 42))) + "}]";
+        return this.e + '@' + DebugStringsKt.a(this) + "[Pool Size {core = " + this.b + ", max = " + this.c + "}, Worker States {CPU = " + i6 + ", blocking = " + i3 + ", parked = " + i2 + ", dormant = " + i4 + ", terminated = " + i5 + "}, running workers queues = " + arrayList + ", global CPU queue size = " + this.f.a() + ", global blocking queue size = " + this.g.a() + ", Control State {created workers= " + ((int) (2097151 & j2)) + ", blocking tasks = " + ((int) ((4398044413952L & j2) >> 21)) + ", CPUs acquired = " + (this.b - ((int) ((9223367638808264704L & j2) >> 42))) + "}]";
     }
 }

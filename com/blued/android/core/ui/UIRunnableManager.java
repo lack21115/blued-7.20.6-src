@@ -8,29 +8,25 @@ import java.util.WeakHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/UIRunnableManager.class */
 public class UIRunnableManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final WeakHashMap<IRequestHost, HashSet<UITask>> f9726a = new WeakHashMap<>();
+    private static final WeakHashMap<IRequestHost, HashSet<UITask>> a = new WeakHashMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/ui/UIRunnableManager$UITask.class */
     public static class UITask implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final IRequestHost f9727a;
+        private final IRequestHost a;
         private final Runnable b;
 
         public UITask(IRequestHost iRequestHost, Runnable runnable) {
-            this.f9727a = iRequestHost;
+            this.a = iRequestHost;
             this.b = runnable;
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            IRequestHost iRequestHost = this.f9727a;
+            IRequestHost iRequestHost = this.a;
             if (iRequestHost != null) {
                 UIRunnableManager.b(iRequestHost, this);
-                if (this.f9727a.isActive()) {
+                if (this.a.isActive()) {
                     this.b.run();
                 }
             }
@@ -41,8 +37,8 @@ public class UIRunnableManager {
         if (iRequestHost == null) {
             return;
         }
-        synchronized (f9726a) {
-            HashSet<UITask> hashSet = f9726a.get(iRequestHost);
+        synchronized (a) {
+            HashSet<UITask> hashSet = a.get(iRequestHost);
             if (hashSet != null) {
                 Iterator<UITask> it = hashSet.iterator();
                 while (it.hasNext()) {
@@ -53,7 +49,7 @@ public class UIRunnableManager {
                 }
                 hashSet.clear();
             }
-            f9726a.remove(iRequestHost);
+            a.remove(iRequestHost);
         }
     }
 
@@ -67,12 +63,12 @@ public class UIRunnableManager {
         } else {
             AppInfo.n().postDelayed(uITask, j);
         }
-        synchronized (f9726a) {
-            HashSet<UITask> hashSet = f9726a.get(iRequestHost);
+        synchronized (a) {
+            HashSet<UITask> hashSet = a.get(iRequestHost);
             HashSet<UITask> hashSet2 = hashSet;
             if (hashSet == null) {
                 hashSet2 = new HashSet<>();
-                f9726a.put(iRequestHost, hashSet2);
+                a.put(iRequestHost, hashSet2);
             }
             hashSet2.add(uITask);
         }
@@ -84,8 +80,8 @@ public class UIRunnableManager {
         if (iRequestHost == null || uITask == null) {
             return;
         }
-        synchronized (f9726a) {
-            HashSet<UITask> hashSet = f9726a.get(iRequestHost);
+        synchronized (a) {
+            HashSet<UITask> hashSet = a.get(iRequestHost);
             if (hashSet != null) {
                 hashSet.remove(uITask);
             }

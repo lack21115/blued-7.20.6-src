@@ -51,11 +51,11 @@ public class ExpandableListView extends ListView {
     private OnGroupCollapseListener mOnGroupCollapseListener;
     private OnGroupExpandListener mOnGroupExpandListener;
     private static final int[] EMPTY_STATE_SET = new int[0];
-    private static final int[] GROUP_EXPANDED_STATE_SET = {16842920};
-    private static final int[] GROUP_EMPTY_STATE_SET = {16842921};
-    private static final int[] GROUP_EXPANDED_EMPTY_STATE_SET = {16842920, 16842921};
+    private static final int[] GROUP_EXPANDED_STATE_SET = {R.attr.state_expanded};
+    private static final int[] GROUP_EMPTY_STATE_SET = {R.attr.state_empty};
+    private static final int[] GROUP_EXPANDED_EMPTY_STATE_SET = {R.attr.state_expanded, R.attr.state_empty};
     private static final int[][] GROUP_STATE_SETS = {EMPTY_STATE_SET, GROUP_EXPANDED_STATE_SET, GROUP_EMPTY_STATE_SET, GROUP_EXPANDED_EMPTY_STATE_SET};
-    private static final int[] CHILD_LAST_STATE_SET = {16842918};
+    private static final int[] CHILD_LAST_STATE_SET = {R.attr.state_last};
 
     /* loaded from: source-4181928-dex2jar.jar:android/widget/ExpandableListView$ExpandableListContextMenuInfo.class */
     public static class ExpandableListContextMenuInfo implements ContextMenu.ContextMenuInfo {
@@ -131,7 +131,7 @@ public class ExpandableListView extends ListView {
     }
 
     public ExpandableListView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842863);
+        this(context, attributeSet, R.attr.expandableListViewStyle);
     }
 
     public ExpandableListView(Context context, AttributeSet attributeSet, int i) {
@@ -216,18 +216,18 @@ public class ExpandableListView extends ListView {
     }
 
     public static long getPackedPositionForChild(int i, int i2) {
-        return Long.MIN_VALUE | ((i & PACKED_POSITION_INT_MASK_GROUP) << 32) | (i2 & (-1));
+        return Long.MIN_VALUE | ((i & PACKED_POSITION_INT_MASK_GROUP) << PACKED_POSITION_SHIFT_GROUP) | (i2 & (-1));
     }
 
     public static long getPackedPositionForGroup(int i) {
-        return (i & PACKED_POSITION_INT_MASK_GROUP) << 32;
+        return (i & PACKED_POSITION_INT_MASK_GROUP) << PACKED_POSITION_SHIFT_GROUP;
     }
 
     public static int getPackedPositionGroup(long j) {
         if (j == 4294967295L) {
             return -1;
         }
-        return (int) ((PACKED_POSITION_MASK_GROUP & j) >> 32);
+        return (int) ((PACKED_POSITION_MASK_GROUP & j) >> PACKED_POSITION_SHIFT_GROUP);
     }
 
     public static int getPackedPositionType(long j) {

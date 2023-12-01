@@ -15,19 +15,19 @@ import java.nio.channels.FileLock;
 public abstract class dr extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected int f41343a;
+    protected int f27652a;
 
     /* renamed from: a  reason: collision with other field name */
-    protected Context f310a;
+    protected Context f263a;
 
     public dr(Context context, int i) {
-        this.f41343a = i;
-        this.f310a = context;
+        this.f27652a = i;
+        this.f263a = context;
     }
 
     public static void a(Context context, ho hoVar) {
-        dk m11623a = dl.a().m11623a();
-        String a2 = m11623a == null ? "" : m11623a.a();
+        dk m8573a = dl.a().m8573a();
+        String a2 = m8573a == null ? "" : m8573a.a();
         if (TextUtils.isEmpty(a2) || TextUtils.isEmpty(hoVar.a())) {
             return;
         }
@@ -45,10 +45,10 @@ public abstract class dr extends ai.a {
         if (b == null || b.length == 0) {
             return;
         }
-        synchronized (Cdo.f41340a) {
+        synchronized (Cdo.f27649a) {
             try {
                 File file2 = new File(context.getExternalFilesDir(null), "push_cdata.lock");
-                x.m12222a(file2);
+                x.m9172a(file2);
                 RandomAccessFile randomAccessFile3 = new RandomAccessFile(file2, "rw");
                 try {
                     fileLock = randomAccessFile3.getChannel().lock();
@@ -150,19 +150,19 @@ public abstract class dr extends ai.a {
     public abstract hi a();
 
     /* renamed from: a  reason: collision with other method in class */
-    protected boolean m11626a() {
-        return dn.a(this.f310a, String.valueOf(a()), this.f41343a);
+    protected boolean m8576a() {
+        return dn.a(this.f263a, String.valueOf(a()), this.f27652a);
     }
 
     public abstract String b();
 
     /* renamed from: b  reason: collision with other method in class */
-    protected boolean m11627b() {
+    protected boolean m8577b() {
         return true;
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    protected boolean m11628c() {
+    protected boolean m8578c() {
         return false;
     }
 
@@ -172,21 +172,21 @@ public abstract class dr extends ai.a {
         if (TextUtils.isEmpty(b)) {
             return;
         }
-        if (m11626a()) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("DC run job mutual: " + a());
+        if (m8576a()) {
+            com.xiaomi.channel.commonutils.logger.b.m8344a("DC run job mutual: " + a());
             return;
         }
-        dk m11623a = dl.a().m11623a();
-        String a2 = m11623a == null ? "" : m11623a.a();
-        if (!TextUtils.isEmpty(a2) && m11627b()) {
+        dk m8573a = dl.a().m8573a();
+        String a2 = m8573a == null ? "" : m8573a.a();
+        if (!TextUtils.isEmpty(a2) && m8577b()) {
             String str = b;
-            if (m11628c()) {
-                SharedPreferences sharedPreferences = this.f310a.getSharedPreferences("mipush_extra", 0);
+            if (m8578c()) {
+                SharedPreferences sharedPreferences = this.f263a.getSharedPreferences("mipush_extra", 0);
                 str = b;
                 if (bn.a(b).equals(sharedPreferences.getString(d(), null))) {
                     long j = sharedPreferences.getLong(c(), 0L);
-                    int a3 = com.xiaomi.push.service.ba.a(this.f310a).a(hl.DCJobUploadRepeatedInterval.a(), 604800);
-                    if ((System.currentTimeMillis() - j) / 1000 < this.f41343a) {
+                    int a3 = com.xiaomi.push.service.ba.a(this.f263a).a(hl.DCJobUploadRepeatedInterval.a(), 604800);
+                    if ((System.currentTimeMillis() - j) / 1000 < this.f27652a) {
                         return;
                     }
                     str = b;
@@ -199,7 +199,7 @@ public abstract class dr extends ai.a {
             hoVar.a(str);
             hoVar.a(System.currentTimeMillis());
             hoVar.a(a());
-            a(this.f310a, hoVar, a2);
+            a(this.f263a, hoVar, a2);
         }
     }
 }

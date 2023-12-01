@@ -11,11 +11,11 @@ import android.os.Handler;
 public final class b implements SensorEventListener {
 
     /* renamed from: a  reason: collision with root package name */
-    SensorManager f9244a;
+    SensorManager f6404a;
     Sensor b;
 
     /* renamed from: c  reason: collision with root package name */
-    Sensor f9245c;
+    Sensor f6405c;
     Sensor d;
     private Context s;
     public boolean e = false;
@@ -37,25 +37,25 @@ public final class b implements SensorEventListener {
 
     public b(Context context) {
         this.s = null;
-        this.f9244a = null;
+        this.f6404a = null;
         this.b = null;
-        this.f9245c = null;
+        this.f6405c = null;
         this.d = null;
         try {
             this.s = context;
-            if (this.f9244a == null) {
-                this.f9244a = (SensorManager) context.getSystemService("sensor");
+            if (this.f6404a == null) {
+                this.f6404a = (SensorManager) context.getSystemService("sensor");
             }
             try {
-                this.b = this.f9244a.getDefaultSensor(6);
+                this.b = this.f6404a.getDefaultSensor(6);
             } catch (Throwable th) {
             }
             try {
-                this.f9245c = this.f9244a.getDefaultSensor(11);
+                this.f6405c = this.f6404a.getDefaultSensor(11);
             } catch (Throwable th2) {
             }
             try {
-                this.d = this.f9244a.getDefaultSensor(1);
+                this.d = this.f6404a.getDefaultSensor(1);
             } catch (Throwable th3) {
             }
         } catch (Throwable th4) {
@@ -111,7 +111,7 @@ public final class b implements SensorEventListener {
     }
 
     public final void a() {
-        SensorManager sensorManager = this.f9244a;
+        SensorManager sensorManager = this.f6404a;
         if (sensorManager == null || this.e) {
             return;
         }
@@ -124,15 +124,15 @@ public final class b implements SensorEventListener {
             com.autonavi.aps.amapapi.utils.b.a(th, "AMapSensorManager", "registerListener mPressure");
         }
         try {
-            if (this.f9245c != null) {
-                this.f9244a.registerListener(this, this.f9245c, 3, this.h);
+            if (this.f6405c != null) {
+                this.f6404a.registerListener(this, this.f6405c, 3, this.h);
             }
         } catch (Throwable th2) {
             com.autonavi.aps.amapapi.utils.b.a(th2, "AMapSensorManager", "registerListener mRotationVector");
         }
         try {
             if (this.d != null) {
-                this.f9244a.registerListener(this, this.d, 3, this.h);
+                this.f6404a.registerListener(this, this.d, 3, this.h);
             }
         } catch (Throwable th3) {
             com.autonavi.aps.amapapi.utils.b.a(th3, "AMapSensorManager", "registerListener mAcceleroMeterVector");
@@ -140,7 +140,7 @@ public final class b implements SensorEventListener {
     }
 
     public final void b() {
-        SensorManager sensorManager = this.f9244a;
+        SensorManager sensorManager = this.f6404a;
         if (sensorManager == null || !this.e) {
             return;
         }
@@ -152,14 +152,14 @@ public final class b implements SensorEventListener {
         } catch (Throwable th) {
         }
         try {
-            if (this.f9245c != null) {
-                this.f9244a.unregisterListener(this, this.f9245c);
+            if (this.f6405c != null) {
+                this.f6404a.unregisterListener(this, this.f6405c);
             }
         } catch (Throwable th2) {
         }
         try {
             if (this.d != null) {
-                this.f9244a.unregisterListener(this, this.d);
+                this.f6404a.unregisterListener(this, this.d);
             }
         } catch (Throwable th3) {
         }
@@ -181,8 +181,8 @@ public final class b implements SensorEventListener {
         try {
             b();
             this.b = null;
-            this.f9245c = null;
-            this.f9244a = null;
+            this.f6405c = null;
+            this.f6404a = null;
             this.d = null;
             this.e = false;
         } catch (Throwable th) {
@@ -210,7 +210,7 @@ public final class b implements SensorEventListener {
                     return;
                 }
                 try {
-                    if (this.f9245c != null) {
+                    if (this.f6405c != null) {
                         c((float[]) sensorEvent.values.clone());
                     }
                 } catch (Throwable th) {

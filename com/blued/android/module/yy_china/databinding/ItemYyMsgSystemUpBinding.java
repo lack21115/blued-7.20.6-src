@@ -8,14 +8,12 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyMsgSystemUpBinding.class */
 public final class ItemYyMsgSystemUpBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f16764a;
+    public final TextView a;
     private final LinearLayout b;
 
     private ItemYyMsgSystemUpBinding(LinearLayout linearLayout, TextView textView) {
         this.b = linearLayout;
-        this.f16764a = textView;
+        this.a = textView;
     }
 
     public static ItemYyMsgSystemUpBinding a(View view) {
@@ -26,7 +24,6 @@ public final class ItemYyMsgSystemUpBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat("tvMsgContent"));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.b;

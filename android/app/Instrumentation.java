@@ -492,7 +492,7 @@ public class Instrumentation {
                 activity.mReferrer = str;
             }
         }
-        callActivityOnNewIntent(activity, referrerIntent != null ? new Intent(referrerIntent) : null);
+        callActivityOnNewIntent(activity, referrerIntent != null ? new Intent((Intent) referrerIntent) : null);
     }
 
     public void callActivityOnPause(Activity activity) {

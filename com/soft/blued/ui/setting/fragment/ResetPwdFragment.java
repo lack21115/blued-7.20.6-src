@@ -3,12 +3,16 @@ package com.soft.blued.ui.setting.fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.module.common.base.mvi.MVIBaseFragment;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
@@ -53,7 +57,7 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
     private boolean g;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f33586c = {Reflection.a(new PropertyReference1Impl(ResetPwdFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FragmentResetPwdBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f19895c = {(KProperty) Reflection.a(new PropertyReference1Impl(ResetPwdFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FragmentResetPwdBinding;", 0))};
     public static final Companion b = new Companion(null);
 
     @Metadata
@@ -68,18 +72,18 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
     }
 
     public ResetPwdFragment() {
-        super(R.layout.fragment_reset_pwd);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<ResetPwdFragment, FragmentResetPwdBinding>() { // from class: com.soft.blued.ui.setting.fragment.ResetPwdFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fragment_reset_pwd);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<ResetPwdFragment, FragmentResetPwdBinding>() { // from class: com.soft.blued.ui.setting.fragment.ResetPwdFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/ResetPwdFragment;)Lcom/soft/blued/databinding/FragmentResetPwdBinding; */
             /* renamed from: a */
-            public final FragmentResetPwdBinding invoke(ResetPwdFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentResetPwdBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<ResetPwdFragment, FragmentResetPwdBinding>() { // from class: com.soft.blued.ui.setting.fragment.ResetPwdFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/ResetPwdFragment;)Lcom/soft/blued/databinding/FragmentResetPwdBinding; */
             /* renamed from: a */
-            public final FragmentResetPwdBinding invoke(ResetPwdFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FragmentResetPwdBinding.a(fragment.requireView());
             }
@@ -90,19 +94,19 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FragmentResetPwdBinding a() {
-        return (FragmentResetPwdBinding) this.d.b(this, f33586c[0]);
+        return (FragmentResetPwdBinding) this.d.b(this, f19895c[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(ResetPwdFragment this$0, BluedActionSheet bluedActionSheet) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.f = "login_mobile";
-        FragmentResetPwdBinding a2 = this$0.a();
+    public static final void a(ResetPwdFragment resetPwdFragment, BluedActionSheet bluedActionSheet) {
+        Intrinsics.e(resetPwdFragment, "this$0");
+        resetPwdFragment.f = "login_mobile";
+        FragmentResetPwdBinding a2 = resetPwdFragment.a();
         TextView textView = a2 == null ? null : a2.k;
         if (textView == null) {
             return;
         }
-        ResetPwdModel resetPwdModel = this$0.e;
+        ResetPwdModel resetPwdModel = resetPwdFragment.e;
         textView.setText(resetPwdModel == null ? null : resetPwdModel.getLogin_mobile());
     }
 
@@ -126,7 +130,7 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
             r1 = r5
             r0.g = r1
             r0 = r4
-            android.widget.TextView r0 = r0.f28955a
+            android.widget.TextView r0 = r0.f15265a
             r8 = r0
             r0 = r3
             boolean r0 = r0.g
@@ -191,22 +195,22 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
             return;
         }
         FragmentResetPwdBinding a3 = a();
-        if (!(String.valueOf((a3 != null && (commonEdittextView = a3.f28956c) != null && (editText = commonEdittextView.getEditText()) != null) ? editText.getText() : null).length() == 0)) {
+        if (!(String.valueOf((a3 != null && (commonEdittextView = a3.f15266c) != null && (editText = commonEdittextView.getEditText()) != null) ? editText.getText() : null).length() == 0)) {
             FragmentResetPwdBinding a4 = a();
             if (!(String.valueOf((a4 != null && (commonEdittextView2 = a4.d) != null && (editText2 = commonEdittextView2.getEditText()) != null) ? editText2.getText() : null).length() == 0)) {
                 FragmentResetPwdBinding a5 = a();
-                if (String.valueOf((a5 == null || (commonEdittextView3 = a5.f28956c) == null || (editText3 = commonEdittextView3.getEditText()) == null) ? null : editText3.getText()).length() < 8) {
+                if (String.valueOf((a5 == null || (commonEdittextView3 = a5.f15266c) == null || (editText3 = commonEdittextView3.getEditText()) == null) ? null : editText3.getText()).length() < 8) {
                     AppMethods.d(2131886713);
                     return;
                 }
                 FragmentResetPwdBinding a6 = a();
-                String valueOf = String.valueOf((a6 == null || (commonEdittextView4 = a6.f28956c) == null || (editText4 = commonEdittextView4.getEditText()) == null) ? null : editText4.getText());
+                String valueOf = String.valueOf((a6 == null || (commonEdittextView4 = a6.f15266c) == null || (editText4 = commonEdittextView4.getEditText()) == null) ? null : editText4.getText());
                 FragmentResetPwdBinding a7 = a();
-                if (!Intrinsics.a((Object) valueOf, (Object) String.valueOf((a7 == null || (commonEdittextView5 = a7.d) == null || (editText5 = commonEdittextView5.getEditText()) == null) ? null : editText5.getText()))) {
+                if (!Intrinsics.a(valueOf, String.valueOf((a7 == null || (commonEdittextView5 = a7.d) == null || (editText5 = commonEdittextView5.getEditText()) == null) ? null : editText5.getText()))) {
                     AppMethods.d((int) R.string.pwd_errorthree);
                     return;
                 }
-                ResetPwdVM y = y();
+                ResetPwdVM resetPwdVM = (ResetPwdVM) y();
                 ResetPwdModel resetPwdModel = this.e;
                 String token = resetPwdModel == null ? null : resetPwdModel.getToken();
                 FragmentResetPwdBinding a8 = a();
@@ -218,7 +222,7 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
                     ClearEditText clearEditText2 = a9.b;
                     text = clearEditText2 == null ? null : clearEditText2.getText();
                 }
-                y.dispatchAction((ResetPwdUiAction) new ResetPwdUiAction.ModifyPwd(token, valueOf2, String.valueOf(text)));
+                resetPwdVM.dispatchAction((ResetPwdUiAction) new ResetPwdUiAction.ModifyPwd(token, valueOf2, String.valueOf(text)));
                 return;
             }
         }
@@ -226,15 +230,15 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(ResetPwdFragment this$0, BluedActionSheet bluedActionSheet) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.f = "relation_mobile";
-        FragmentResetPwdBinding a2 = this$0.a();
+    public static final void b(ResetPwdFragment resetPwdFragment, BluedActionSheet bluedActionSheet) {
+        Intrinsics.e(resetPwdFragment, "this$0");
+        resetPwdFragment.f = "relation_mobile";
+        FragmentResetPwdBinding a2 = resetPwdFragment.a();
         TextView textView = a2 == null ? null : a2.k;
         if (textView == null) {
             return;
         }
-        ResetPwdModel resetPwdModel = this$0.e;
+        ResetPwdModel resetPwdModel = resetPwdFragment.e;
         textView.setText(resetPwdModel == null ? null : resetPwdModel.getRelation_mobile());
     }
 
@@ -296,16 +300,14 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
             BluedActionSheet.Builder builder = new BluedActionSheet.Builder(getContext());
             ActionSheetDefaultItem a3 = ActionSheetDefaultItem.a();
             ResetPwdModel resetPwdModel = this.e;
-            builder.a(a3.a(resetPwdModel == null ? null : resetPwdModel.getLogin_mobile()).b(new BluedActionSheet.OnClickActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ResetPwdFragment$BwoDtZmo0VQsNM6zy--oiquGM5Q
-                @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnClickActionSheetListener
+            builder.a(a3.a(resetPwdModel == null ? null : resetPwdModel.getLogin_mobile()).a(new BluedActionSheet.OnClickActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ResetPwdFragment$BwoDtZmo0VQsNM6zy--oiquGM5Q
                 public final void onClickActionSheet(BluedActionSheet bluedActionSheet) {
                     ResetPwdFragment.a(ResetPwdFragment.this, bluedActionSheet);
                 }
             }));
             ActionSheetDefaultItem a4 = ActionSheetDefaultItem.a();
             ResetPwdModel resetPwdModel2 = this.e;
-            builder.a(a4.a(resetPwdModel2 == null ? null : resetPwdModel2.getRelation_mobile()).b(new BluedActionSheet.OnClickActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ResetPwdFragment$VijnZkyQ3AhEESXAf73294miaqI
-                @Override // com.blued.android.module.common.widget.menu.BluedActionSheet.OnClickActionSheetListener
+            builder.a(a4.a(resetPwdModel2 == null ? null : resetPwdModel2.getRelation_mobile()).a(new BluedActionSheet.OnClickActionSheetListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ResetPwdFragment$VijnZkyQ3AhEESXAf73294miaqI
                 public final void onClickActionSheet(BluedActionSheet bluedActionSheet) {
                     ResetPwdFragment.b(ResetPwdFragment.this, bluedActionSheet);
                 }
@@ -314,7 +316,6 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         final FragmentResetPwdBinding a2 = a();
         if (a2 != null) {
@@ -325,11 +326,11 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
             a2.l.setTextColor(BluedSkinUtils.a(getContext(), 2131101766));
             a2.l.setOnClickListener(resetPwdFragment);
             a2.h.setOnClickListener(resetPwdFragment);
-            a2.f28955a.setOnClickListener(resetPwdFragment);
-            a2.f28955a.setEnabled(false);
-            a2.f28956c.getEditText().setInputType(128);
+            a2.f15265a.setOnClickListener(resetPwdFragment);
+            a2.f15265a.setEnabled(false);
+            a2.f15266c.getEditText().setInputType(128);
             a2.d.getEditText().setInputType(128);
-            a2.g.a(a2.f28956c.getEditText(), a2.d.getEditText(), UserInfo.getInstance().getUserName(), UserInfo.getInstance().getLoginUserInfo().name, PasswordCheckUtils.PWD_CHECK_PAGE.MODIFY_PWD, getFragmentActive(), new PasswordStatusView.OnCheckResult() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ResetPwdFragment$BWA2bhIVFpiQgxJpxw-zrWRx0T0
+            a2.g.a((EditText) a2.f15266c.getEditText(), (EditText) a2.d.getEditText(), UserInfo.getInstance().getUserName(), UserInfo.getInstance().getLoginUserInfo().name, PasswordCheckUtils.PWD_CHECK_PAGE.MODIFY_PWD, (IRequestHost) getFragmentActive(), new PasswordStatusView.OnCheckResult() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$ResetPwdFragment$BWA2bhIVFpiQgxJpxw-zrWRx0T0
                 @Override // com.soft.blued.utils.password.PasswordStatusView.OnCheckResult
                 public final void onResult(boolean z) {
                     ResetPwdFragment.a(ResetPwdFragment.this, a2, z);
@@ -359,7 +360,7 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
                         com.soft.blued.ui.setting.fragment.ResetPwdFragment r0 = com.soft.blued.ui.setting.fragment.ResetPwdFragment.this
                         r9 = r0
                         r0 = r8
-                        android.widget.TextView r0 = r0.f28955a
+                        android.widget.TextView r0 = r0.f15265a
                         r4 = r0
                         r0 = r9
                         boolean r0 = com.soft.blued.ui.setting.fragment.ResetPwdFragment.c(r0)
@@ -412,17 +413,15 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
                 }
             });
         }
-        BluedStructureExtKt.a(this, ResetPwdUiAction.GetPhone.f33642a);
+        BluedStructureExtKt.a(this, ResetPwdUiAction.GetPhone.f19951a);
         EventTrackSettings.a(SettingsProtos.Event.PASSWORD_SET_PAGE_SHOW);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         ResetPwdFragment resetPwdFragment = this;
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(resetPwdFragment, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.setting.fragment.ResetPwdFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((ResetPwdState) obj).getPhoneModel();
             }
@@ -432,22 +431,20 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
                 super(1);
             }
 
-            public final void a(ResetPwdModel it) {
-                Intrinsics.e(it, "it");
-                ResetPwdFragment.this.e = it;
+            public final void a(ResetPwdModel resetPwdModel) {
+                Intrinsics.e(resetPwdModel, "it");
+                ResetPwdFragment.this.e = resetPwdModel;
                 ResetPwdFragment.this.c();
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(ResetPwdModel resetPwdModel) {
-                a(resetPwdModel);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((ResetPwdModel) obj);
+                return Unit.a;
             }
         });
         LifecycleOwner viewLifecycleOwner2 = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner2, "viewLifecycleOwner");
         BluedStructureExtKt.a(resetPwdFragment, viewLifecycleOwner2, new PropertyReference1Impl() { // from class: com.soft.blued.ui.setting.fragment.ResetPwdFragment$liveDataObserver$3
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((ResetPwdState) obj).getCountdown();
             }
@@ -466,22 +463,20 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
                 if (textView == null) {
                     return;
                 }
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(i)}, 1));
                 Intrinsics.c(format, "format(format, *args)");
                 textView.setText(format);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(Integer num) {
-                a(num.intValue());
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a(((Number) obj).intValue());
+                return Unit.a;
             }
         });
         LifecycleOwner viewLifecycleOwner3 = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner3, "viewLifecycleOwner");
         BluedStructureExtKt.a(resetPwdFragment, viewLifecycleOwner3, new PropertyReference1Impl() { // from class: com.soft.blued.ui.setting.fragment.ResetPwdFragment$liveDataObserver$5
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((ResetPwdState) obj).getSmsClickable();
             }
@@ -492,7 +487,7 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
             }
 
             /* JADX WARN: Code restructure failed: missing block: B:23:0x0061, code lost:
-                r0 = r4.f33593a.a();
+                r0 = r4.f19902a.a();
              */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
@@ -583,16 +578,14 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
                 throw new UnsupportedOperationException("Method not decompiled: com.soft.blued.ui.setting.fragment.ResetPwdFragment$liveDataObserver$6.a(boolean):void");
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(Boolean bool) {
-                a(bool.booleanValue());
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a(((Boolean) obj).booleanValue());
+                return Unit.a;
             }
         });
         LifecycleOwner viewLifecycleOwner4 = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner4, "viewLifecycleOwner");
         BluedStructureExtKt.a(resetPwdFragment, viewLifecycleOwner4, new PropertyReference1Impl() { // from class: com.soft.blued.ui.setting.fragment.ResetPwdFragment$liveDataObserver$7
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((ResetPwdState) obj).getModifySucceed();
             }
@@ -612,10 +605,9 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
                 }
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(Boolean bool) {
-                a(bool.booleanValue());
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a(((Boolean) obj).booleanValue());
+                return Unit.a;
             }
         });
     }
@@ -631,10 +623,10 @@ public final class ResetPwdFragment extends MVIBaseFragment<ResetPwdVM> implemen
             }
             activity.finish();
         } else if (valueOf != null && valueOf.intValue() == 2131372899) {
-            ResetPwdVM y = y();
+            ResetPwdVM resetPwdVM = (ResetPwdVM) y();
             String str = this.f;
             ResetPwdModel resetPwdModel = this.e;
-            y.dispatchAction((ResetPwdUiAction) new ResetPwdUiAction.GetCode(str, resetPwdModel == null ? null : resetPwdModel.getToken()));
+            resetPwdVM.dispatchAction((ResetPwdUiAction) new ResetPwdUiAction.GetCode(str, resetPwdModel == null ? null : resetPwdModel.getToken()));
         } else if (valueOf != null && valueOf.intValue() == 2131369369) {
             d();
         } else if (valueOf != null && valueOf.intValue() == 2131362557) {

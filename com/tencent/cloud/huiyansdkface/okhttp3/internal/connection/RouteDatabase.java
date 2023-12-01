@@ -8,24 +8,24 @@ import java.util.Set;
 public final class RouteDatabase {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Set<Route> f35938a = new LinkedHashSet();
+    private final Set<Route> f22247a = new LinkedHashSet();
 
     public void connected(Route route) {
         synchronized (this) {
-            this.f35938a.remove(route);
+            this.f22247a.remove(route);
         }
     }
 
     public void failed(Route route) {
         synchronized (this) {
-            this.f35938a.add(route);
+            this.f22247a.add(route);
         }
     }
 
     public boolean shouldPostpone(Route route) {
         boolean contains;
         synchronized (this) {
-            contains = this.f35938a.contains(route);
+            contains = this.f22247a.contains(route);
         }
         return contains;
     }

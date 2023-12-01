@@ -4,11 +4,11 @@ package com.umeng.analytics.pro;
 public final class cw {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte f40713a = 0;
+    public static final byte f27022a = 0;
     public static final byte b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final byte f40714c = 2;
+    public static final byte f27023c = 2;
     public static final byte d = 3;
     public static final byte e = 4;
     public static final byte f = 6;

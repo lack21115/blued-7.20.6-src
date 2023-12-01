@@ -3,8 +3,6 @@ package com.alibaba.fastjson;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.util.TypeUtils;
-import com.bytedance.sdk.openadsdk.downloadnew.core.TTDownloadField;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.io.Serializable;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -286,13 +284,13 @@ public class JSONObject extends JSON implements Serializable, Cloneable, Invocat
                 String str3 = str2;
                 if (str2 == null) {
                     String name3 = method.getName();
-                    if (name3.startsWith(MonitorConstants.CONNECT_TYPE_GET)) {
+                    if (name3.startsWith("get")) {
                         if (name3.substring(3).length() == 0) {
                             throw new JSONException("illegal getter");
                         }
                         str3 = Character.toLowerCase(substring2.charAt(0)) + substring2.substring(1);
                     } else if (!name3.startsWith("is")) {
-                        if (name3.startsWith(TTDownloadField.TT_HASHCODE)) {
+                        if (name3.startsWith("hashCode")) {
                             return Integer.valueOf(hashCode());
                         }
                         if (name3.startsWith("toString")) {

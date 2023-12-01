@@ -15,7 +15,6 @@ import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/tinker/loader/hotplug/interceptor/ServiceBinderInterceptor.class */
 public class ServiceBinderInterceptor extends Interceptor<IBinder> {
@@ -115,12 +114,11 @@ public class ServiceBinderInterceptor extends Interceptor<IBinder> {
                 hashSet.add(clsArr2[i].getClassLoader());
             }
             ClassLoader classLoader = hashSet.size() == 1 ? (ClassLoader) hashSet.iterator().next() : new ClassLoader() { // from class: com.tencent.tinker.loader.hotplug.interceptor.ServiceBinderInterceptor.1
-                /* JADX INFO: Access modifiers changed from: protected */
                 @Override // java.lang.ClassLoader
-                public Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
+                protected Class<?> loadClass(String str, boolean z) throws ClassNotFoundException {
                     Class<?> cls;
                     Class<?> cls2 = null;
-                    for (ClassLoader classLoader2 : Set.this) {
+                    for (ClassLoader classLoader2 : hashSet) {
                         try {
                             cls = classLoader2.loadClass(str);
                         } catch (Throwable th2) {

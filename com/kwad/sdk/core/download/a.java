@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.webkit.URLUtil;
 import androidx.core.app.NotificationCompat;
 import com.google.common.net.HttpHeaders;
+import com.huawei.openalliance.ad.utils.ay;
 import com.ksad.download.DownloadTask;
 import com.kwad.sdk.core.network.s;
 import com.kwad.sdk.core.response.model.AdInfo;
@@ -37,10 +38,10 @@ public final class a {
 
     /* renamed from: com.kwad.sdk.core.download.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/download/a$a.class */
-    public static final class C0559a implements c {
+    public static final class C0389a implements c {
         final OutputStream aeV;
 
-        public C0559a(File file, boolean z) {
+        public C0389a(File file, boolean z) {
             this.aeV = new FileOutputStream(file, z);
         }
 
@@ -113,7 +114,7 @@ public final class a {
         try {
             URLConnection openConnection = new URL(str).openConnection();
             s.wrapHttpURLConnection(openConnection);
-            openConnection.setRequestProperty(HttpHeaders.ACCEPT_LANGUAGE, "zh-CN");
+            openConnection.setRequestProperty(HttpHeaders.ACCEPT_LANGUAGE, ay.Code);
             openConnection.setConnectTimeout(10000);
             if (i2 > 0) {
                 openConnection.setReadTimeout(i2);
@@ -161,42 +162,42 @@ public final class a {
     }
 
     private static boolean a(String str, File file, b bVar, int i) {
-        C0559a c0559a;
+        C0389a c0389a;
         try {
-            C0559a c0559a2 = new C0559a(file, false);
+            C0389a c0389a2 = new C0389a(file, false);
             try {
-                boolean a2 = a(str, (String) null, c0559a2, (b) null, 0);
-                com.kwad.sdk.crash.utils.b.closeQuietly(c0559a2);
+                boolean a2 = a(str, (String) null, c0389a2, (b) null, 0);
+                com.kwad.sdk.crash.utils.b.closeQuietly(c0389a2);
                 return a2;
             } catch (Throwable th) {
-                c0559a = c0559a2;
+                c0389a = c0389a2;
                 th = th;
-                com.kwad.sdk.crash.utils.b.closeQuietly(c0559a);
+                com.kwad.sdk.crash.utils.b.closeQuietly(c0389a);
                 throw th;
             }
         } catch (Throwable th2) {
             th = th2;
-            c0559a = null;
+            c0389a = null;
         }
     }
 
     public static boolean a(String str, File file, b bVar, int i, boolean z) {
-        C0559a c0559a;
-        C0559a c0559a2;
+        C0389a c0389a;
+        C0389a c0389a2;
         try {
-            c0559a2 = new C0559a(file, true);
+            c0389a2 = new C0389a(file, true);
         } catch (Throwable th) {
             th = th;
-            c0559a = null;
+            c0389a = null;
         }
         try {
-            boolean a2 = a(str, (String) null, (c) c0559a2, (b) null, -1, file.length(), -1L, true);
-            com.kwad.sdk.crash.utils.b.closeQuietly(c0559a2);
+            boolean a2 = a(str, (String) null, (c) c0389a2, (b) null, -1, file.length(), -1L, true);
+            com.kwad.sdk.crash.utils.b.closeQuietly(c0389a2);
             return a2;
         } catch (Throwable th2) {
             th = th2;
-            c0559a = c0559a2;
-            com.kwad.sdk.crash.utils.b.closeQuietly(c0559a);
+            c0389a = c0389a2;
+            com.kwad.sdk.crash.utils.b.closeQuietly(c0389a);
             throw th;
         }
     }

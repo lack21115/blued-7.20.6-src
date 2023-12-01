@@ -9,9 +9,7 @@ import com.bytedance.applog.tracker.Tracker;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/BaseBannerAdView.class */
 public abstract class BaseBannerAdView extends BaseAdView {
     public final String TAG;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected com.anythink.basead.e.a f6054a;
+    protected com.anythink.basead.e.a a;
     protected CloseImageView t;
 
     public BaseBannerAdView(Context context) {
@@ -22,13 +20,13 @@ public abstract class BaseBannerAdView extends BaseAdView {
     public BaseBannerAdView(Context context, j jVar, i iVar, com.anythink.basead.e.a aVar) {
         super(context, jVar, iVar);
         this.TAG = getClass().getSimpleName();
-        this.f6054a = aVar;
+        this.a = aVar;
     }
 
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void a(int i) {
-        a(this.t, this.f6049c.m.g());
-        com.anythink.basead.e.a aVar = this.f6054a;
+        a(this.t, this.c.m.g());
+        com.anythink.basead.e.a aVar = this.a;
         if (aVar != null) {
             aVar.onAdClick(i);
         }
@@ -36,7 +34,7 @@ public abstract class BaseBannerAdView extends BaseAdView {
 
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void a(boolean z) {
-        com.anythink.basead.e.a aVar = this.f6054a;
+        com.anythink.basead.e.a aVar = this.a;
         if (aVar != null) {
             aVar.onDeeplinkCallback(z);
         }
@@ -44,7 +42,7 @@ public abstract class BaseBannerAdView extends BaseAdView {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void b() {
-        a(this.f6049c.m.R() < 0 ? 100 : this.f6049c.m.R(), new Runnable() { // from class: com.anythink.basead.ui.BaseBannerAdView.1
+        a(this.c.m.R() < 0 ? 100 : this.c.m.R(), new Runnable() { // from class: com.anythink.basead.ui.BaseBannerAdView.1
             @Override // java.lang.Runnable
             public final void run() {
                 BaseBannerAdView.super.h();
@@ -58,8 +56,8 @@ public abstract class BaseBannerAdView extends BaseAdView {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Tracker.onClick(view);
-                if (BaseBannerAdView.this.f6054a != null) {
-                    BaseBannerAdView.this.f6054a.onAdClosed();
+                if (BaseBannerAdView.this.a != null) {
+                    BaseBannerAdView.this.a.onAdClosed();
                 }
             }
         });
@@ -68,7 +66,7 @@ public abstract class BaseBannerAdView extends BaseAdView {
     @Override // com.anythink.basead.ui.BaseAdView
     protected final void e() {
         com.anythink.basead.a.b.a(8, this.d, i());
-        com.anythink.basead.e.a aVar = this.f6054a;
+        com.anythink.basead.e.a aVar = this.a;
         if (aVar != null) {
             aVar.onAdShow();
         }

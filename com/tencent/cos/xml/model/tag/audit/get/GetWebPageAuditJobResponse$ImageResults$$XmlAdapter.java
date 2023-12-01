@@ -19,6 +19,7 @@ public class GetWebPageAuditJobResponse$ImageResults$$XmlAdapter implements IXml
         HashMap<String, ChildElementBinder<GetWebPageAuditJobResponse.ImageResults>> hashMap = new HashMap<>();
         this.childElementBinders = hashMap;
         hashMap.put("Results", new ChildElementBinder<GetWebPageAuditJobResponse.ImageResults>() { // from class: com.tencent.cos.xml.model.tag.audit.get.GetWebPageAuditJobResponse$ImageResults$$XmlAdapter.1
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, GetWebPageAuditJobResponse.ImageResults imageResults, String str) throws IOException, XmlPullParserException {
                 if (imageResults.results == null) {

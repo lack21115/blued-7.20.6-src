@@ -22,11 +22,11 @@ import com.soft.blued.utils.password.PasswordCheckUtils;
 public class PasswordStatusView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private View f34828a;
+    private View f21137a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ImageView f34829c;
+    private ImageView f21138c;
     private TextView d;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/utils/password/PasswordStatusView$OnCheckResult.class */
@@ -54,11 +54,11 @@ public class PasswordStatusView extends LinearLayout {
 
     private void a() {
         View inflate = LayoutInflater.from(this.b).inflate(R.layout.layout_pwd_check_result_view, this);
-        this.f34828a = inflate;
+        this.f21137a = inflate;
         ImageView imageView = (ImageView) inflate.findViewById(R.id.img_pwd_status);
-        this.f34829c = imageView;
+        this.f21138c = imageView;
         imageView.setVisibility(8);
-        this.d = (TextView) this.f34828a.findViewById(R.id.tv_pwd_str);
+        this.d = (TextView) this.f21137a.findViewById(R.id.tv_pwd_str);
     }
 
     public void a(final EditText editText, final EditText editText2, final String str, final PasswordCheckUtils.PWD_CHECK_PAGE pwd_check_page, IRequestHost iRequestHost, final OnCheckResult onCheckResult) {
@@ -69,23 +69,23 @@ public class PasswordStatusView extends LinearLayout {
             @Override // com.soft.blued.utils.password.PasswordCheckUtils.CheckCallBackListener
             public void a() {
                 PasswordStatusView.this.setVisibility(0);
-                PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_checking);
+                PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_checking);
                 PasswordStatusView.this.d.setText(PasswordStatusView.this.b.getResources().getString(R.string.pwd_checking));
                 Animation loadAnimation = AnimationUtils.loadAnimation(PasswordStatusView.this.b, R.anim.anim_rotate);
                 if (loadAnimation != null) {
-                    PasswordStatusView.this.f34829c.setAnimation(loadAnimation);
-                    PasswordStatusView.this.f34829c.startAnimation(loadAnimation);
+                    PasswordStatusView.this.f21138c.setAnimation(loadAnimation);
+                    PasswordStatusView.this.f21138c.startAnimation(loadAnimation);
                 }
             }
 
             @Override // com.soft.blued.utils.password.PasswordCheckUtils.CheckCallBackListener
             public void a(int i, String str2) {
                 PasswordStatusView.this.d.setText(str2);
-                PasswordStatusView.this.f34829c.clearAnimation();
+                PasswordStatusView.this.f21138c.clearAnimation();
                 if (i == 0) {
-                    PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_forbidden);
+                    PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_forbidden);
                 } else {
-                    PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_ok);
+                    PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_ok);
                 }
                 OnCheckResult onCheckResult2 = onCheckResult;
                 if (onCheckResult2 != null) {
@@ -119,23 +119,23 @@ public class PasswordStatusView extends LinearLayout {
             @Override // com.soft.blued.utils.password.PasswordCheckUtils.CheckCallBackListener
             public void a() {
                 PasswordStatusView.this.setVisibility(0);
-                PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_checking);
+                PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_checking);
                 PasswordStatusView.this.d.setText(PasswordStatusView.this.b.getResources().getString(R.string.pwd_checking));
                 Animation loadAnimation = AnimationUtils.loadAnimation(PasswordStatusView.this.b, R.anim.anim_rotate);
                 if (loadAnimation != null) {
-                    PasswordStatusView.this.f34829c.setAnimation(loadAnimation);
-                    PasswordStatusView.this.f34829c.startAnimation(loadAnimation);
+                    PasswordStatusView.this.f21138c.setAnimation(loadAnimation);
+                    PasswordStatusView.this.f21138c.startAnimation(loadAnimation);
                 }
             }
 
             @Override // com.soft.blued.utils.password.PasswordCheckUtils.CheckCallBackListener
             public void a(int i, String str3) {
                 PasswordStatusView.this.d.setText(str3);
-                PasswordStatusView.this.f34829c.clearAnimation();
+                PasswordStatusView.this.f21138c.clearAnimation();
                 if (i == 0) {
-                    PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_forbidden);
+                    PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_forbidden);
                 } else {
-                    PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_ok);
+                    PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_ok);
                 }
                 OnCheckResult onCheckResult2 = onCheckResult;
                 if (onCheckResult2 != null) {
@@ -148,7 +148,7 @@ public class PasswordStatusView extends LinearLayout {
             public void afterTextChanged(Editable editable) {
                 if (StringUtils.d(editText.getText().toString()) || StringUtils.d(editText2.getText().toString())) {
                     PasswordStatusView.this.d.setText(PasswordStatusView.this.b.getResources().getString(2131890457));
-                    PasswordStatusView.this.f34829c.setVisibility(8);
+                    PasswordStatusView.this.f21138c.setVisibility(8);
                     OnCheckResult onCheckResult2 = onCheckResult;
                     if (onCheckResult2 != null) {
                         onCheckResult2.onResult(true);
@@ -156,14 +156,14 @@ public class PasswordStatusView extends LinearLayout {
                     }
                     return;
                 }
-                PasswordStatusView.this.f34829c.setVisibility(0);
+                PasswordStatusView.this.f21138c.setVisibility(0);
                 if (editText.getText().toString().equals(editText2.getText().toString())) {
                     PasswordCheckUtils.a().a(editText.getText().toString(), UserInfo.getInstance().getAccessToken(), pwd_check_page);
                     return;
                 }
                 PasswordStatusView.this.setVisibility(0);
-                PasswordStatusView.this.f34829c.clearAnimation();
-                PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_forbidden);
+                PasswordStatusView.this.f21138c.clearAnimation();
+                PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_forbidden);
                 PasswordStatusView.this.d.setText(PasswordStatusView.this.b.getResources().getString(R.string.pwd_check_2_times_same_fail));
                 OnCheckResult onCheckResult3 = onCheckResult;
                 if (onCheckResult3 != null) {
@@ -184,7 +184,7 @@ public class PasswordStatusView extends LinearLayout {
             public void afterTextChanged(Editable editable) {
                 if (StringUtils.d(editText.getText().toString()) || StringUtils.d(editText2.getText().toString())) {
                     PasswordStatusView.this.d.setText(PasswordStatusView.this.b.getResources().getString(2131890457));
-                    PasswordStatusView.this.f34829c.setVisibility(8);
+                    PasswordStatusView.this.f21138c.setVisibility(8);
                     OnCheckResult onCheckResult2 = onCheckResult;
                     if (onCheckResult2 != null) {
                         onCheckResult2.onResult(true);
@@ -192,14 +192,14 @@ public class PasswordStatusView extends LinearLayout {
                     }
                     return;
                 }
-                PasswordStatusView.this.f34829c.setVisibility(0);
+                PasswordStatusView.this.f21138c.setVisibility(0);
                 if (editText.getText().toString().equals(editText2.getText().toString())) {
                     PasswordCheckUtils.a().a(editText.getText().toString(), UserInfo.getInstance().getAccessToken(), pwd_check_page);
                     return;
                 }
                 PasswordStatusView.this.setVisibility(0);
-                PasswordStatusView.this.f34829c.clearAnimation();
-                PasswordStatusView.this.f34829c.setImageResource(R.drawable.icon_pwd_forbidden);
+                PasswordStatusView.this.f21138c.clearAnimation();
+                PasswordStatusView.this.f21138c.setImageResource(R.drawable.icon_pwd_forbidden);
                 PasswordStatusView.this.d.setText(PasswordStatusView.this.b.getResources().getString(R.string.pwd_check_2_times_same_fail));
                 OnCheckResult onCheckResult3 = onCheckResult;
                 if (onCheckResult3 != null) {

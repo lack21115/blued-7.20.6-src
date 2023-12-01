@@ -20,11 +20,11 @@ import javax.crypto.spec.SecretKeySpec;
 public final class AesCbc {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23059a = "security:";
+    private static final String f9451a = "security:";
     private static final String b = "AES/CBC/PKCS5Padding";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23060c = "AES";
+    private static final String f9452c = "AES";
     private static final String d = "CBC";
     private static final String e = "";
     private static final int f = 16;
@@ -89,8 +89,8 @@ public final class AesCbc {
 
     private static byte[] a(byte[] bArr, byte[] bArr2) {
         byte[] bArr3 = new byte[bArr.length + bArr2.length];
-        System.arraycopy((Object) bArr, 0, (Object) bArr3, 0, bArr.length);
-        System.arraycopy((Object) bArr2, 0, (Object) bArr3, bArr.length, bArr2.length);
+        System.arraycopy(bArr, 0, bArr3, 0, bArr.length);
+        System.arraycopy(bArr2, 0, bArr3, bArr.length, bArr2.length);
         return bArr3;
     }
 
@@ -108,18 +108,18 @@ public final class AesCbc {
 
     private static byte[] b(byte[] bArr) {
         byte[] bArr2 = new byte[bArr.length - 16];
-        System.arraycopy((Object) bArr, 16, (Object) bArr2, 0, bArr.length - 16);
+        System.arraycopy(bArr, 16, bArr2, 0, bArr.length - 16);
         return bArr2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String c(String str) {
-        return (TextUtils.isEmpty(str) || str.indexOf(f23059a) == -1) ? "" : str.substring(9);
+        return (TextUtils.isEmpty(str) || str.indexOf(f9451a) == -1) ? "" : str.substring(9);
     }
 
     private static byte[] c(byte[] bArr) {
         byte[] bArr2 = new byte[16];
-        System.arraycopy((Object) bArr, 0, (Object) bArr2, 0, 16);
+        System.arraycopy(bArr, 0, bArr2, 0, 16);
         return bArr2;
     }
 
@@ -132,11 +132,11 @@ public final class AesCbc {
             b.b(d, "stripCryptHead: exception : " + e2.getMessage());
             str = "";
         }
-        if (str.startsWith(f23059a)) {
+        if (str.startsWith(f9451a)) {
             if (bArr.length > 9) {
                 int length = bArr.length - 9;
                 byte[] bArr2 = new byte[length];
-                System.arraycopy((Object) bArr, 9, (Object) bArr2, 0, length);
+                System.arraycopy(bArr, 9, bArr2, 0, length);
                 return bArr2;
             }
             return new byte[0];
@@ -330,7 +330,7 @@ public final class AesCbc {
         byte[] copyOf = Arrays.copyOf(d2, a2);
         int length = (d2.length - copyOf.length) - 1;
         byte[] bArr3 = new byte[length];
-        System.arraycopy((Object) d2, a2 + 1, (Object) bArr3, 0, length);
+        System.arraycopy(d2, a2 + 1, bArr3, 0, length);
         return decrypt(bArr3, bArr2, copyOf);
     }
 

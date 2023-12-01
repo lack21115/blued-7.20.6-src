@@ -22,10 +22,10 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    static String f21979a = "MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhAJp1rROuvBF7sBSnvLaesj2iFhMcY8aXyLvpnNLKs2wjL3JmEnyr++SlVa35liUlzi83tnAFkn3A9GB7pHBNzawyUkBh8WUhq5bnFIkk2RaDa6+5MpG84DEv52p7RR+aWwIDAQAB";
+    static String f8372a = "MHwwDQYJKoZIhvcNAQEBBQADawAwaAJhAJp1rROuvBF7sBSnvLaesj2iFhMcY8aXyLvpnNLKs2wjL3JmEnyr++SlVa35liUlzi83tnAFkn3A9GB7pHBNzawyUkBh8WUhq5bnFIkk2RaDa6+5MpG84DEv52p7RR+aWwIDAQAB";
 
     /* renamed from: c  reason: collision with root package name */
-    static String f21980c = "69d747c4b9f641baf4004be4297e9f3b";
+    static String f8373c = "69d747c4b9f641baf4004be4297e9f3b";
     static GtHttpClient d = new GtHttpClient.Builder().addInterceptor(new LoggerInterceptor(com.getui.gtc.dyc.a.a.a.a())).addInterceptor(new Interceptor() { // from class: com.getui.gtc.dyc.d.1
         @Override // com.getui.gtc.base.http.Interceptor
         public final Response intercept(Interceptor.Chain chain) throws IOException {
@@ -48,7 +48,7 @@ public class d {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public h a(b bVar) throws Exception {
-        Request.Builder cryptInterceptor = new Request.Builder().url(bVar.a()).method("POST").body(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), c(bVar))).cryptInterceptor(new GtRASCryptoInterceptor(f21980c, f21979a));
+        Request.Builder cryptInterceptor = new Request.Builder().url(bVar.a()).method("POST").body(RequestBody.create(MediaType.parse("application/json; charset=utf-8"), c(bVar))).cryptInterceptor(new GtRASCryptoInterceptor(f8373c, f8372a));
         return a(bVar, d.newCall(cryptInterceptor.tag("sdk config" + bVar.g()).build()).execute());
     }
 

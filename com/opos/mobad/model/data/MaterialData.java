@@ -87,7 +87,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
                     z = true;
                 }
                 materialData.aq = z;
-                materialData.f26474ar = (PendantData) parcel.readParcelable(PendantData.class.getClassLoader());
+                materialData.f12786ar = (PendantData) parcel.readParcelable(PendantData.class.getClassLoader());
                 materialData.as = parcel.readInt();
                 materialData.q = parcel.createTypedArrayList(MaterialFileData.CREATOR);
                 materialData.at = parcel.readLong();
@@ -134,7 +134,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
     private String Z;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f26473a;
+    public String f12785a;
     private boolean aa;
     private int ab;
     private boolean ac;
@@ -154,7 +154,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
     private boolean aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private PendantData f26474ar;
+    private PendantData f12786ar;
     private int as;
     private long at;
     private int au;
@@ -164,7 +164,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int f26475c;
+    public int f12787c;
     public int d;
     public boolean e;
     public boolean f;
@@ -195,11 +195,11 @@ public class MaterialData extends a implements Parcelable, Comparable {
     public static /* synthetic */ class AnonymousClass2 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f26476a;
+        static final /* synthetic */ int[] f12788a;
         static final /* synthetic */ int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ int[] f26477c;
+        static final /* synthetic */ int[] f12789c;
         static final /* synthetic */ int[] d;
         static final /* synthetic */ int[] e;
         static final /* synthetic */ int[] f;
@@ -432,17 +432,17 @@ public class MaterialData extends a implements Parcelable, Comparable {
             } catch (NoSuchFieldError e39) {
             }
             int[] iArr10 = new int[y.d.values().length];
-            f26477c = iArr10;
+            f12789c = iArr10;
             try {
                 iArr10[y.d.DEFAULT.ordinal()] = 1;
             } catch (NoSuchFieldError e40) {
             }
             try {
-                f26477c[y.d.MODEL_A.ordinal()] = 2;
+                f12789c[y.d.MODEL_A.ordinal()] = 2;
             } catch (NoSuchFieldError e41) {
             }
             try {
-                f26477c[y.d.MODEL_INTERACTION.ordinal()] = 3;
+                f12789c[y.d.MODEL_INTERACTION.ordinal()] = 3;
             } catch (NoSuchFieldError e42) {
             }
             int[] iArr11 = new int[ag.c.values().length];
@@ -476,17 +476,17 @@ public class MaterialData extends a implements Parcelable, Comparable {
             } catch (NoSuchFieldError e49) {
             }
             int[] iArr12 = new int[q.b.values().length];
-            f26476a = iArr12;
+            f12788a = iArr12;
             try {
                 iArr12[q.b.DOWNLOAD_START.ordinal()] = 1;
             } catch (NoSuchFieldError e50) {
             }
             try {
-                f26476a[q.b.DOWNLOAD_COMPLETE.ordinal()] = 2;
+                f12788a[q.b.DOWNLOAD_COMPLETE.ordinal()] = 2;
             } catch (NoSuchFieldError e51) {
             }
             try {
-                f26476a[q.b.INSTALL_COMPLETE.ordinal()] = 3;
+                f12788a[q.b.INSTALL_COMPLETE.ordinal()] = 3;
             } catch (NoSuchFieldError e52) {
             }
         }
@@ -543,7 +543,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
         this.O = a(yVar.an);
         this.P = a(yVar.ao);
         this.Q = (yVar.ap != null ? yVar.ap : y.n).booleanValue();
-        this.S = a(yVar.f25773ar);
+        this.S = a(yVar.f12085ar);
         this.T = (yVar.as != null ? yVar.as : y.p).intValue();
         this.X = (yVar.aw != null ? yVar.aw : y.t).booleanValue();
         this.Y = a(yVar.ax);
@@ -552,10 +552,10 @@ public class MaterialData extends a implements Parcelable, Comparable {
         this.ai = yVar.aE != null ? yVar.aE : "";
         this.aj = a(yVar.aG);
         this.an = (yVar.aK != null ? yVar.aK : y.B).booleanValue();
-        this.f26473a = yVar.aM != null ? yVar.aM : "";
+        this.f12785a = yVar.aM != null ? yVar.aM : "";
         this.b = (yVar.aN != null ? yVar.aN : y.D).booleanValue();
         this.d = a(yVar.aO);
-        this.f26475c = a(yVar.aP);
+        this.f12787c = a(yVar.aP);
         this.e = (yVar.aQ != null ? yVar.aQ : y.G).booleanValue();
         this.f = (yVar.aR != null ? yVar.aR : y.H).booleanValue();
         this.aa = (yVar.aB != null ? yVar.aB : y.x).booleanValue();
@@ -572,7 +572,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
         this.ao = (yVar.aW != null ? yVar.aW : y.J).booleanValue();
         this.ap = yVar.aU != null ? yVar.aU : "";
         this.aq = (yVar.aX != null ? yVar.aX : y.K).booleanValue();
-        this.f26474ar = pendantData;
+        this.f12786ar = pendantData;
         this.as = (yVar.aZ != null ? yVar.aZ : y.L).intValue();
         List<String> list10 = this.x;
         if ((list10 == null || list10.size() <= 0) && (list5 = this.M) != null && list5.size() > 0) {
@@ -695,7 +695,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
             r4 = r0
             r0 = r3
             if (r0 == 0) goto L1e
-            int[] r0 = com.opos.mobad.model.data.MaterialData.AnonymousClass2.f26477c
+            int[] r0 = com.opos.mobad.model.data.MaterialData.AnonymousClass2.f12789c
             r1 = r3
             int r1 = r1.ordinal()
             r0 = r0[r1]
@@ -883,7 +883,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
             return;
         }
         for (q qVar : list) {
-            int i = AnonymousClass2.f26476a[qVar.e.ordinal()];
+            int i = AnonymousClass2.f12788a[qVar.e.ordinal()];
             if (i == 1) {
                 this.ae = qVar.f;
             } else if (i == 2) {
@@ -1022,7 +1022,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
     }
 
     public String Y() {
-        return this.f26473a;
+        return this.f12785a;
     }
 
     public boolean Z() {
@@ -1066,11 +1066,11 @@ public class MaterialData extends a implements Parcelable, Comparable {
     }
 
     public PendantData ab() {
-        return this.f26474ar;
+        return this.f12786ar;
     }
 
     public boolean ac() {
-        return this.f26474ar != null;
+        return this.f12786ar != null;
     }
 
     public long ad() {
@@ -1351,7 +1351,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
     }
 
     public void n(String str) {
-        this.f26473a = str;
+        this.f12785a = str;
     }
 
     public void n(List<String> list) {
@@ -1391,7 +1391,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
     }
 
     public void q(int i) {
-        this.f26475c = i;
+        this.f12787c = i;
     }
 
     public String r() {
@@ -1415,7 +1415,7 @@ public class MaterialData extends a implements Parcelable, Comparable {
     }
 
     public String toString() {
-        return "MaterialData{materialId='" + this.j + "', creativeType=" + this.k + ", interactionType=" + this.l + ", imgFileList=" + this.m + ", interactiveFileList=" + this.q + ", title='" + this.n + "', desc='" + this.o + "', iconFileList=" + this.p + ", gbClick=" + this.r + ", downloadPkgName='" + this.s + "', apkSize=" + this.t + ", targetUrl='" + this.u + "', expStartUrls=" + this.v + ", expEndUrls=" + this.w + ", clickUrls=" + this.x + ", traceId='" + this.y + "', transparent='" + this.z + "', currentIndex=" + this.A + ", forceJsInit=" + this.B + ", extraUrl='" + this.C + "', dlChannel='" + this.D + "', videoDuration=" + this.E + ", showOffBnTime=" + this.F + ", landingPageUrl='" + this.G + "', videoStartUrls=" + this.H + ", video25PercentUrls=" + this.I + ", video50PercentUrls=" + this.J + ", video75PercentUrls=" + this.K + ", videoCompleteUrls=" + this.L + ", videoClickUrls=" + this.M + ", videoCloseUrls=" + this.N + ", installCompleteAction=" + this.O + ", surfingType=" + this.P + ", isGbClickToast=" + this.Q + ", videoFileList=" + this.R + ", tipBarType=" + this.S + ", rewardLimitTime=" + this.T + ", installedAction=" + this.U + ", extraActionType=" + this.V + ", videoActionType=" + this.W + ", isRemoveRepeatAd=" + this.X + ", downloadStyle=" + this.Y + ", downloadUrl=" + this.Z + ", maxDownloaderNums='" + this.ab + "', showDownloadNotification='" + this.ac + "', wifiRemindAtCellular='" + this.aa + "', trackContent=" + this.ah + ", trackReference=" + this.ai + ", appDownloadData=" + this.ad + "', downloadStartUrls=" + this.ae + "', downloadCompleteUrls=" + this.af + "', downloadInstalledUrls=" + this.ag + "', videoCompleteAction=" + this.aj + "', floatLayerData=" + this.ak + "', floatLayerBtAction=" + this.al + "', floatLayerExtraAction=" + this.am + "', isMobileAutoPlay=" + this.an + "', buttonTitle=" + this.f26473a + "', isShowMediaInfo=" + this.b + "', isShowConvertBar=" + this.e + "', isDynamicPopUpConvert=" + this.f + "', portEndPageModelType=" + this.d + "', landEndPageModelType=" + this.f26475c + "', imgType=" + this.g + "', isShowFeedBack=" + this.ao + "', isVertical=" + this.aq + "', pendantInfo=" + this.f26474ar + "', templateId=" + this.as + "', apkDownloadTimes=" + this.at + "', specificationId=" + this.au + "'}";
+        return "MaterialData{materialId='" + this.j + "', creativeType=" + this.k + ", interactionType=" + this.l + ", imgFileList=" + this.m + ", interactiveFileList=" + this.q + ", title='" + this.n + "', desc='" + this.o + "', iconFileList=" + this.p + ", gbClick=" + this.r + ", downloadPkgName='" + this.s + "', apkSize=" + this.t + ", targetUrl='" + this.u + "', expStartUrls=" + this.v + ", expEndUrls=" + this.w + ", clickUrls=" + this.x + ", traceId='" + this.y + "', transparent='" + this.z + "', currentIndex=" + this.A + ", forceJsInit=" + this.B + ", extraUrl='" + this.C + "', dlChannel='" + this.D + "', videoDuration=" + this.E + ", showOffBnTime=" + this.F + ", landingPageUrl='" + this.G + "', videoStartUrls=" + this.H + ", video25PercentUrls=" + this.I + ", video50PercentUrls=" + this.J + ", video75PercentUrls=" + this.K + ", videoCompleteUrls=" + this.L + ", videoClickUrls=" + this.M + ", videoCloseUrls=" + this.N + ", installCompleteAction=" + this.O + ", surfingType=" + this.P + ", isGbClickToast=" + this.Q + ", videoFileList=" + this.R + ", tipBarType=" + this.S + ", rewardLimitTime=" + this.T + ", installedAction=" + this.U + ", extraActionType=" + this.V + ", videoActionType=" + this.W + ", isRemoveRepeatAd=" + this.X + ", downloadStyle=" + this.Y + ", downloadUrl=" + this.Z + ", maxDownloaderNums='" + this.ab + "', showDownloadNotification='" + this.ac + "', wifiRemindAtCellular='" + this.aa + "', trackContent=" + this.ah + ", trackReference=" + this.ai + ", appDownloadData=" + this.ad + "', downloadStartUrls=" + this.ae + "', downloadCompleteUrls=" + this.af + "', downloadInstalledUrls=" + this.ag + "', videoCompleteAction=" + this.aj + "', floatLayerData=" + this.ak + "', floatLayerBtAction=" + this.al + "', floatLayerExtraAction=" + this.am + "', isMobileAutoPlay=" + this.an + "', buttonTitle=" + this.f12785a + "', isShowMediaInfo=" + this.b + "', isShowConvertBar=" + this.e + "', isDynamicPopUpConvert=" + this.f + "', portEndPageModelType=" + this.d + "', landEndPageModelType=" + this.f12787c + "', imgType=" + this.g + "', isShowFeedBack=" + this.ao + "', isVertical=" + this.aq + "', pendantInfo=" + this.f12786ar + "', templateId=" + this.as + "', apkDownloadTimes=" + this.at + "', specificationId=" + this.au + "'}";
     }
 
     public long u() {
@@ -1488,17 +1488,17 @@ public class MaterialData extends a implements Parcelable, Comparable {
         parcel.writeInt(this.al);
         parcel.writeInt(this.am);
         parcel.writeByte(this.an ? (byte) 1 : (byte) 0);
-        parcel.writeString(this.f26473a);
+        parcel.writeString(this.f12785a);
         parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
         parcel.writeInt(this.d);
-        parcel.writeInt(this.f26475c);
+        parcel.writeInt(this.f12787c);
         parcel.writeByte(this.e ? (byte) 1 : (byte) 0);
         parcel.writeByte(this.f ? (byte) 1 : (byte) 0);
         parcel.writeInt(this.g);
         parcel.writeByte(this.ao ? (byte) 1 : (byte) 0);
         parcel.writeString(this.ap);
         parcel.writeByte(this.aq ? (byte) 1 : (byte) 0);
-        parcel.writeParcelable(this.f26474ar, i);
+        parcel.writeParcelable(this.f12786ar, i);
         parcel.writeInt(this.as);
         parcel.writeTypedList(this.q);
         parcel.writeLong(this.at);

@@ -31,11 +31,11 @@ public class kv {
     private static final String Z = "cct_extension_version";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f22515a = "com.huawei.browser.cct_vertical_menu_items";
+    private static final String f8907a = "com.huawei.browser.cct_vertical_menu_items";
     private static final String b = "com.huawei.browser.cct_auto_refresh";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f22516c = "com.huawei.browser.cct_emui_style";
+    private static final String f8908c = "com.huawei.browser.cct_emui_style";
     private static final String d = "com.huawei.browser.cct_enable_pps";
     private static final String e = "com.huawei.browser.cct_show_open_in_browser_menu";
     private static final String f = "com.huawei.browser.cct_copy_link";
@@ -81,14 +81,14 @@ public class kv {
         build.intent.putExtra(F, true);
         build.intent.putExtra(D, true);
         build.intent.putExtra(b, true);
-        build.intent.putExtra(f22516c, true);
+        build.intent.putExtra(f8908c, true);
         build.intent.putExtra(e, false);
         build.intent.putExtra(d, z);
         build.intent.putExtra(f, true);
         build.intent.putExtra(g, true);
         ArrayList<String> arrayList = new ArrayList<>(10);
         arrayList.add(kw.REFRESH.Code());
-        build.intent.putStringArrayListExtra(f22515a, arrayList);
+        build.intent.putStringArrayListExtra(f8907a, arrayList);
         build.intent.putStringArrayListExtra(L, new ArrayList<>(10));
         return build;
     }

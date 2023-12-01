@@ -7,11 +7,11 @@ import com.tencent.ugc.TXVideoEditer;
 public final /* synthetic */ class bg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f40254a;
+    private final int f26563a;
     private final TXVideoEditer.TXVideoProcessListener b;
 
     private bg(int i, TXVideoEditer.TXVideoProcessListener tXVideoProcessListener) {
-        this.f40254a = i;
+        this.f26563a = i;
         this.b = tXVideoProcessListener;
     }
 
@@ -21,6 +21,6 @@ public final /* synthetic */ class bg implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$notifyProcessComplete$59(this.f40254a, this.b);
+        TXVideoEditer.lambda$notifyProcessComplete$59(this.f26563a, this.b);
     }
 }

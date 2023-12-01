@@ -7,7 +7,7 @@ import kotlin.Metadata;
 public final class ByteDanceLogConstant {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final ByteDanceLogConstant f20622a = new ByteDanceLogConstant();
+    public static final ByteDanceLogConstant f7016a = new ByteDanceLogConstant();
 
     private ByteDanceLogConstant() {
     }

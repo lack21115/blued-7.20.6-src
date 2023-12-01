@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 final class BitmapPreFillRunner implements Runnable {
 
     /* renamed from: c  reason: collision with root package name */
-    private final BitmapPool f20853c;
+    private final BitmapPool f7247c;
     private final MemoryCache d;
     private final PreFillQueue e;
     private final Clock f;
@@ -28,7 +28,7 @@ final class BitmapPreFillRunner implements Runnable {
     private static final Clock b = new Clock();
 
     /* renamed from: a  reason: collision with root package name */
-    static final long f20852a = TimeUnit.SECONDS.toMillis(1);
+    static final long f7246a = TimeUnit.SECONDS.toMillis(1);
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/prefill/BitmapPreFillRunner$Clock.class */
@@ -63,7 +63,7 @@ final class BitmapPreFillRunner implements Runnable {
 
     private long c() {
         long j = this.i;
-        this.i = Math.min(4 * j, f20852a);
+        this.i = Math.min(4 * j, f7246a);
         return j;
     }
 
@@ -76,13 +76,13 @@ final class BitmapPreFillRunner implements Runnable {
                 createBitmap = Bitmap.createBitmap(a3.a(), a3.b(), a3.c());
             } else {
                 this.g.add(a3);
-                createBitmap = this.f20853c.b(a3.a(), a3.b(), a3.c());
+                createBitmap = this.f7247c.b(a3.a(), a3.b(), a3.c());
             }
             int a4 = Util.a(createBitmap);
             if (b() >= a4) {
-                this.d.b(new UniqueKey(), BitmapResource.a(createBitmap, this.f20853c));
+                this.d.b(new UniqueKey(), BitmapResource.a(createBitmap, this.f7247c));
             } else {
-                this.f20853c.a(createBitmap);
+                this.f7247c.a(createBitmap);
             }
             if (Log.isLoggable("PreFillRunner", 3)) {
                 Log.d("PreFillRunner", "allocated [" + a3.a() + "x" + a3.b() + "] " + a3.c() + " size: " + a4);

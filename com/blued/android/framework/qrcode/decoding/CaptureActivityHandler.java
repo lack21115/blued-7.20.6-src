@@ -16,11 +16,11 @@ import java.util.Vector;
 public final class CaptureActivityHandler extends Handler {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9864a = CaptureActivityHandler.class.getSimpleName();
+    private static final String f6662a = CaptureActivityHandler.class.getSimpleName();
     private final OnCaptureHandlerListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final DecodeThread f9865c;
+    private final DecodeThread f6663c;
     private State d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -35,7 +35,7 @@ public final class CaptureActivityHandler extends Handler {
     public CaptureActivityHandler(OnCaptureHandlerListener onCaptureHandlerListener, Vector<BarcodeFormat> vector, String str) {
         this.b = onCaptureHandlerListener;
         DecodeThread decodeThread = new DecodeThread(onCaptureHandlerListener, vector, str);
-        this.f9865c = decodeThread;
+        this.f6663c = decodeThread;
         decodeThread.start();
         this.d = State.SUCCESS;
         CameraManager.a().d();
@@ -45,7 +45,7 @@ public final class CaptureActivityHandler extends Handler {
     private void b() {
         if (this.d == State.SUCCESS) {
             this.d = State.PREVIEW;
-            CameraManager.a().a(this.f9865c.a(), 2000);
+            CameraManager.a().a(this.f6663c.a(), 2000);
             CameraManager.a().b(this, 1001);
         }
     }
@@ -53,9 +53,9 @@ public final class CaptureActivityHandler extends Handler {
     public void a() {
         this.d = State.DONE;
         CameraManager.a().e();
-        Message.obtain(this.f9865c.a(), 4002).sendToTarget();
+        Message.obtain(this.f6663c.a(), 4002).sendToTarget();
         try {
-            this.f9865c.join();
+            this.f6663c.join();
         } catch (InterruptedException e) {
         }
         removeMessages(2002);
@@ -70,24 +70,24 @@ public final class CaptureActivityHandler extends Handler {
                 CameraManager.a().b(this, 1001);
             }
         } else if (i == 4001) {
-            Log.d(f9864a, "Got product query message");
+            Log.d(f6662a, "Got product query message");
             Intent intent = new Intent("android.intent.action.VIEW", Uri.parse((String) message.obj));
             intent.addFlags(524288);
             this.b.a(intent);
         } else if (i == 2001) {
             this.d = State.PREVIEW;
-            CameraManager.a().a(this.f9865c.a(), 2000);
+            CameraManager.a().a(this.f6663c.a(), 2000);
         } else if (i == 2002) {
-            Log.d(f9864a, "Got decode succeeded message");
+            Log.d(f6662a, "Got decode succeeded message");
             this.d = State.SUCCESS;
             Bundle data = message.getData();
             this.b.a((Result) message.obj, data == null ? null : (Bitmap) data.getParcelable("barcode_bitmap"));
         } else if (i == 4003) {
-            Log.d(f9864a, "Got restart preview message");
+            Log.d(f6662a, "Got restart preview message");
             b();
         } else if (i != 4004) {
         } else {
-            Log.d(f9864a, "Got return scan result message");
+            Log.d(f6662a, "Got return scan result message");
             this.b.a(-1, (Intent) message.obj);
         }
     }

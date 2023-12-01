@@ -9,39 +9,39 @@ import org.xmlpull.v1.XmlPullParserException;
 public class a extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.zk_oaction.adengine.lk_sdk.interfaces.b f41881a;
+    private com.zk_oaction.adengine.lk_sdk.interfaces.b f28190a;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f41882c;
-    private ArrayList<C1102a> b = new ArrayList<>();
+    private long f28191c;
+    private ArrayList<C0932a> b = new ArrayList<>();
     private float d = -1.0f;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.zk_oaction.adengine.lk_animation.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/zk_oaction/adengine/lk_animation/a$a.class */
-    public static class C1102a {
+    public static class C0932a {
 
         /* renamed from: a  reason: collision with root package name */
-        com.zk_oaction.adengine.lk_expression.a f41883a;
+        com.zk_oaction.adengine.lk_expression.a f28192a;
         long b;
 
-        public C1102a(com.zk_oaction.adengine.lk_expression.a aVar, long j) {
-            this.f41883a = aVar;
+        public C0932a(com.zk_oaction.adengine.lk_expression.a aVar, long j) {
+            this.f28192a = aVar;
             this.b = j;
         }
     }
 
     public a(com.zk_oaction.adengine.lk_sdk.interfaces.b bVar) {
-        this.f41881a = bVar;
+        this.f28190a = bVar;
     }
 
     private void a(com.zk_oaction.adengine.lk_expression.a aVar, long j) {
-        this.b.add(new C1102a(aVar, j));
+        this.b.add(new C0932a(aVar, j));
     }
 
     @Override // com.zk_oaction.adengine.lk_animation.b
     public long a() {
-        return this.f41882c;
+        return this.f28191c;
     }
 
     @Override // com.zk_oaction.adengine.lk_animation.b
@@ -55,28 +55,28 @@ public class a extends b {
             if (i2 >= size) {
                 return;
             }
-            C1102a c1102a = this.b.get(i2);
-            long j3 = c1102a.b;
+            C0932a c0932a = this.b.get(i2);
+            long j3 = c0932a.b;
             int i3 = (j > j3 ? 1 : (j == j3 ? 0 : -1));
             if (i3 <= 0) {
                 if (i3 == 0) {
-                    if (Float.valueOf(c1102a.f41883a.a()).equals(Float.valueOf(this.d))) {
+                    if (Float.valueOf(c0932a.f28192a.a()).equals(Float.valueOf(this.d))) {
                         return;
                     }
-                    this.f41881a.a(c1102a.f41883a.a());
-                    this.d = c1102a.f41883a.a();
+                    this.f28190a.a(c0932a.f28192a.a());
+                    this.d = c0932a.f28192a.a();
                     return;
                 }
-                float a2 = ((c1102a.f41883a.a() - f) * (((float) (j - j2)) / ((float) (j3 - j2)))) + f;
+                float a2 = ((c0932a.f28192a.a() - f) * (((float) (j - j2)) / ((float) (j3 - j2)))) + f;
                 if (Float.valueOf(a2).equals(Float.valueOf(this.d))) {
                     return;
                 }
-                this.f41881a.a(a2);
+                this.f28190a.a(a2);
                 this.d = a2;
                 return;
             }
-            f = c1102a.f41883a.a();
-            j2 = c1102a.b;
+            f = c0932a.f28192a.a();
+            j2 = c0932a.b;
             i = i2 + 1;
         }
     }
@@ -94,10 +94,10 @@ public class a extends b {
                         return true;
                     }
                 } else if (xmlPullParser.getName().equals("Alpha")) {
-                    com.zk_oaction.adengine.lk_expression.a aVar = new com.zk_oaction.adengine.lk_expression.a(this.f41881a.b(), null, xmlPullParser.getAttributeValue(null, "a"), 0.0f, null, false);
+                    com.zk_oaction.adengine.lk_expression.a aVar = new com.zk_oaction.adengine.lk_expression.a(this.f28190a.b(), null, xmlPullParser.getAttributeValue(null, "a"), 0.0f, null, false);
                     long parseLong = Long.parseLong(xmlPullParser.getAttributeValue(null, "time"));
-                    if (parseLong > this.f41882c) {
-                        this.f41882c = parseLong;
+                    if (parseLong > this.f28191c) {
+                        this.f28191c = parseLong;
                     }
                     a(aVar, parseLong);
                 }

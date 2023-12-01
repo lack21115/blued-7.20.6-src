@@ -398,7 +398,7 @@ public final class GeofenceHardwareImpl {
 
     private void acquireWakeLock() {
         if (this.mWakeLock == null) {
-            this.mWakeLock = ((PowerManager) this.mContext.getSystemService("power")).newWakeLock(1, TAG);
+            this.mWakeLock = ((PowerManager) this.mContext.getSystemService(Context.POWER_SERVICE)).newWakeLock(1, TAG);
         }
         this.mWakeLock.acquire();
     }

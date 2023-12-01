@@ -13,58 +13,55 @@ import skin.support.widget.SkinCompatSupportable;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/design/widget/SkinMaterialCollapsingToolbarLayout.class */
 public class SkinMaterialCollapsingToolbarLayout extends CollapsingToolbarLayout implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f44235a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f44236c;
+    private SkinCompatBackgroundHelper c;
 
     public SkinMaterialCollapsingToolbarLayout(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinMaterialCollapsingToolbarLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f44235a = 0;
+        this.a = 0;
         this.b = 0;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.CollapsingToolbarLayout, i, R.style.Widget_Design_CollapsingToolbar);
-        this.f44235a = obtainStyledAttributes.getResourceId(R.styleable.CollapsingToolbarLayout_contentScrim, 0);
+        this.a = obtainStyledAttributes.getResourceId(R.styleable.CollapsingToolbarLayout_contentScrim, 0);
         this.b = obtainStyledAttributes.getResourceId(R.styleable.CollapsingToolbarLayout_statusBarScrim, 0);
         obtainStyledAttributes.recycle();
         b();
         a();
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f44236c = skinCompatBackgroundHelper;
+        this.c = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, 0);
     }
 
     private void a() {
-        Drawable a2;
+        Drawable a;
         int b = SkinCompatHelper.b(this.b);
         this.b = b;
-        if (b == 0 || (a2 = SkinCompatVectorResources.a(getContext(), this.b)) == null) {
+        if (b == 0 || (a = SkinCompatVectorResources.a(getContext(), this.b)) == null) {
             return;
         }
-        setStatusBarScrim(a2);
+        setStatusBarScrim(a);
     }
 
     private void b() {
-        Drawable a2;
-        int b = SkinCompatHelper.b(this.f44235a);
-        this.f44235a = b;
-        if (b == 0 || (a2 = SkinCompatVectorResources.a(getContext(), this.f44235a)) == null) {
+        Drawable a;
+        int b = SkinCompatHelper.b(this.a);
+        this.a = b;
+        if (b == 0 || (a = SkinCompatVectorResources.a(getContext(), this.a)) == null) {
             return;
         }
-        setContentScrim(a2);
+        setContentScrim(a);
     }
 
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
         b();
         a();
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44236c;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.c;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }

@@ -23,10 +23,10 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f21071c = R.id.glide_custom_view_target_tag;
+    private static int f7465c = R.id.glide_custom_view_target_tag;
 
     /* renamed from: a  reason: collision with root package name */
-    protected final T f21072a;
+    protected final T f7466a;
     private final SizeDeterminer d;
     private View.OnAttachStateChangeListener e;
     private boolean f;
@@ -37,16 +37,16 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
     class AnonymousClass1 implements View.OnAttachStateChangeListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ViewTarget f21073a;
+        final /* synthetic */ ViewTarget f7467a;
 
         @Override // android.view.View.OnAttachStateChangeListener
         public void onViewAttachedToWindow(View view) {
-            this.f21073a.b();
+            this.f7467a.b();
         }
 
         @Override // android.view.View.OnAttachStateChangeListener
         public void onViewDetachedFromWindow(View view) {
-            this.f21073a.c();
+            this.f7467a.c();
         }
     }
 
@@ -55,11 +55,11 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
     public static final class SizeDeterminer {
 
         /* renamed from: a  reason: collision with root package name */
-        static Integer f21074a;
+        static Integer f7468a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final View f21075c;
+        private final View f7469c;
         private final List<SizeReadyCallback> d = new ArrayList();
         private SizeDeterminerLayoutListener e;
 
@@ -68,10 +68,10 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
         public static final class SizeDeterminerLayoutListener implements ViewTreeObserver.OnPreDrawListener {
 
             /* renamed from: a  reason: collision with root package name */
-            private final WeakReference<SizeDeterminer> f21076a;
+            private final WeakReference<SizeDeterminer> f7470a;
 
             SizeDeterminerLayoutListener(SizeDeterminer sizeDeterminer) {
-                this.f21076a = new WeakReference<>(sizeDeterminer);
+                this.f7470a = new WeakReference<>(sizeDeterminer);
             }
 
             @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -79,7 +79,7 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
                 if (Log.isLoggable("ViewTarget", 2)) {
                     Log.v("ViewTarget", "OnGlobalLayoutListener called attachStateListener=" + this);
                 }
-                SizeDeterminer sizeDeterminer = this.f21076a.get();
+                SizeDeterminer sizeDeterminer = this.f7470a.get();
                 if (sizeDeterminer != null) {
                     sizeDeterminer.a();
                     return true;
@@ -89,7 +89,7 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
         }
 
         SizeDeterminer(View view) {
-            this.f21075c = view;
+            this.f7469c = view;
         }
 
         private int a(int i, int i2, int i3) {
@@ -97,30 +97,30 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
             if (i4 > 0) {
                 return i4;
             }
-            if (this.b && this.f21075c.isLayoutRequested()) {
+            if (this.b && this.f7469c.isLayoutRequested()) {
                 return 0;
             }
             int i5 = i - i3;
             if (i5 > 0) {
                 return i5;
             }
-            if (this.f21075c.isLayoutRequested() || i2 != -2) {
+            if (this.f7469c.isLayoutRequested() || i2 != -2) {
                 return 0;
             }
             if (Log.isLoggable("ViewTarget", 4)) {
                 Log.i("ViewTarget", "Glide treats LayoutParams.WRAP_CONTENT as a request for an image the size of this device's screen dimensions. If you want to load the original image and are ok with the corresponding memory cost and OOMs (depending on the input size), use override(Target.SIZE_ORIGINAL). Otherwise, use LayoutParams.MATCH_PARENT, set layout_width and layout_height to fixed dimension, or use .override() with fixed dimensions.");
             }
-            return a(this.f21075c.getContext());
+            return a(this.f7469c.getContext());
         }
 
         private static int a(Context context) {
-            if (f21074a == null) {
+            if (f7468a == null) {
                 Display defaultDisplay = ((WindowManager) Preconditions.a((WindowManager) context.getSystemService(Context.WINDOW_SERVICE))).getDefaultDisplay();
                 Point point = new Point();
                 defaultDisplay.getSize(point);
-                f21074a = Integer.valueOf(Math.max(point.x, point.y));
+                f7468a = Integer.valueOf(Math.max(point.x, point.y));
             }
-            return f21074a.intValue();
+            return f7468a.intValue();
         }
 
         private void a(int i, int i2) {
@@ -139,17 +139,17 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
         }
 
         private int c() {
-            int paddingTop = this.f21075c.getPaddingTop();
-            int paddingBottom = this.f21075c.getPaddingBottom();
-            ViewGroup.LayoutParams layoutParams = this.f21075c.getLayoutParams();
-            return a(this.f21075c.getHeight(), layoutParams != null ? layoutParams.height : 0, paddingTop + paddingBottom);
+            int paddingTop = this.f7469c.getPaddingTop();
+            int paddingBottom = this.f7469c.getPaddingBottom();
+            ViewGroup.LayoutParams layoutParams = this.f7469c.getLayoutParams();
+            return a(this.f7469c.getHeight(), layoutParams != null ? layoutParams.height : 0, paddingTop + paddingBottom);
         }
 
         private int d() {
-            int paddingLeft = this.f21075c.getPaddingLeft();
-            int paddingRight = this.f21075c.getPaddingRight();
-            ViewGroup.LayoutParams layoutParams = this.f21075c.getLayoutParams();
-            return a(this.f21075c.getWidth(), layoutParams != null ? layoutParams.width : 0, paddingLeft + paddingRight);
+            int paddingLeft = this.f7469c.getPaddingLeft();
+            int paddingRight = this.f7469c.getPaddingRight();
+            ViewGroup.LayoutParams layoutParams = this.f7469c.getLayoutParams();
+            return a(this.f7469c.getWidth(), layoutParams != null ? layoutParams.width : 0, paddingLeft + paddingRight);
         }
 
         void a() {
@@ -175,7 +175,7 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
                 this.d.add(sizeReadyCallback);
             }
             if (this.e == null) {
-                ViewTreeObserver viewTreeObserver = this.f21075c.getViewTreeObserver();
+                ViewTreeObserver viewTreeObserver = this.f7469c.getViewTreeObserver();
                 SizeDeterminerLayoutListener sizeDeterminerLayoutListener = new SizeDeterminerLayoutListener(this);
                 this.e = sizeDeterminerLayoutListener;
                 viewTreeObserver.addOnPreDrawListener(sizeDeterminerLayoutListener);
@@ -183,7 +183,7 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
         }
 
         void b() {
-            ViewTreeObserver viewTreeObserver = this.f21075c.getViewTreeObserver();
+            ViewTreeObserver viewTreeObserver = this.f7469c.getViewTreeObserver();
             if (viewTreeObserver.isAlive()) {
                 viewTreeObserver.removeOnPreDrawListener(this.e);
             }
@@ -197,13 +197,13 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
     }
 
     public ViewTarget(T t) {
-        this.f21072a = (T) Preconditions.a(t);
+        this.f7466a = (T) Preconditions.a(t);
         this.d = new SizeDeterminer(t);
     }
 
     private void a(Object obj) {
         b = true;
-        this.f21072a.setTag(f21071c, obj);
+        this.f7466a.setTag(f7465c, obj);
     }
 
     private void e() {
@@ -211,7 +211,7 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
         if (onAttachStateChangeListener == null || this.g) {
             return;
         }
-        this.f21072a.addOnAttachStateChangeListener(onAttachStateChangeListener);
+        this.f7466a.addOnAttachStateChangeListener(onAttachStateChangeListener);
         this.g = true;
     }
 
@@ -220,12 +220,12 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
         if (onAttachStateChangeListener == null || !this.g) {
             return;
         }
-        this.f21072a.removeOnAttachStateChangeListener(onAttachStateChangeListener);
+        this.f7466a.removeOnAttachStateChangeListener(onAttachStateChangeListener);
         this.g = false;
     }
 
     private Object g() {
-        return this.f21072a.getTag(f21071c);
+        return this.f7466a.getTag(f7465c);
     }
 
     void b() {
@@ -246,7 +246,7 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
     }
 
     public T d() {
-        return this.f21072a;
+        return this.f7466a;
     }
 
     @Override // com.bumptech.glide.request.target.BaseTarget, com.bumptech.glide.request.target.Target
@@ -293,6 +293,6 @@ public abstract class ViewTarget<T extends View, Z> extends BaseTarget<Z> {
     }
 
     public String toString() {
-        return "Target for: " + this.f21072a;
+        return "Target for: " + this.f7466a;
     }
 }

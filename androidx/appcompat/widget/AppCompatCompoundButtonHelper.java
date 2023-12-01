@@ -8,30 +8,29 @@ import android.widget.CompoundButton;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.CompoundButtonCompat;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/appcompat/widget/AppCompatCompoundButtonHelper.class */
-public class AppCompatCompoundButtonHelper {
+class AppCompatCompoundButtonHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CompoundButton f1751a;
+    private final CompoundButton f1703a;
     private ColorStateList b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private PorterDuff.Mode f1752c = null;
+    private PorterDuff.Mode f1704c = null;
     private boolean d = false;
     private boolean e = false;
     private boolean f;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AppCompatCompoundButtonHelper(CompoundButton compoundButton) {
-        this.f1751a = compoundButton;
+        this.f1703a = compoundButton;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int a(int i) {
         int i2 = i;
         if (Build.VERSION.SDK_INT < 17) {
-            Drawable buttonDrawable = CompoundButtonCompat.getButtonDrawable(this.f1751a);
+            Drawable buttonDrawable = CompoundButtonCompat.getButtonDrawable(this.f1703a);
             i2 = i;
             if (buttonDrawable != null) {
                 i2 = i + buttonDrawable.getIntrinsicWidth();
@@ -54,7 +53,7 @@ public class AppCompatCompoundButtonHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(PorterDuff.Mode mode) {
-        this.f1752c = mode;
+        this.f1704c = mode;
         this.e = true;
         d();
     }
@@ -70,7 +69,7 @@ public class AppCompatCompoundButtonHelper {
         /*
             r8 = this;
             r0 = r8
-            android.widget.CompoundButton r0 = r0.f1751a
+            android.widget.CompoundButton r0 = r0.f1703a
             android.content.Context r0 = r0.getContext()
             r1 = r9
             int[] r2 = androidx.appcompat.R.styleable.CompoundButton
@@ -79,7 +78,7 @@ public class AppCompatCompoundButtonHelper {
             androidx.appcompat.widget.TintTypedArray r0 = androidx.appcompat.widget.TintTypedArray.obtainStyledAttributes(r0, r1, r2, r3, r4)
             r11 = r0
             r0 = r8
-            android.widget.CompoundButton r0 = r0.f1751a
+            android.widget.CompoundButton r0 = r0.f1703a
             r12 = r0
             r0 = r12
             r1 = r12
@@ -103,9 +102,9 @@ public class AppCompatCompoundButtonHelper {
             r0 = r10
             if (r0 == 0) goto L59
             r0 = r8
-            android.widget.CompoundButton r0 = r0.f1751a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
+            android.widget.CompoundButton r0 = r0.f1703a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
             r1 = r8
-            android.widget.CompoundButton r1 = r1.f1751a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
+            android.widget.CompoundButton r1 = r1.f1703a     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
             android.content.Context r1 = r1.getContext()     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
             r2 = r10
             android.graphics.drawable.Drawable r1 = androidx.appcompat.content.res.AppCompatResources.getDrawable(r1, r2)     // Catch: java.lang.Throwable -> Lc2 android.content.res.Resources.NotFoundException -> Lc9
@@ -131,9 +130,9 @@ public class AppCompatCompoundButtonHelper {
             r0 = r10
             if (r0 == 0) goto L88
             r0 = r8
-            android.widget.CompoundButton r0 = r0.f1751a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CompoundButton r0 = r0.f1703a     // Catch: java.lang.Throwable -> Lc2
             r1 = r8
-            android.widget.CompoundButton r1 = r1.f1751a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CompoundButton r1 = r1.f1703a     // Catch: java.lang.Throwable -> Lc2
             android.content.Context r1 = r1.getContext()     // Catch: java.lang.Throwable -> Lc2
             r2 = r10
             android.graphics.drawable.Drawable r1 = androidx.appcompat.content.res.AppCompatResources.getDrawable(r1, r2)     // Catch: java.lang.Throwable -> Lc2
@@ -144,7 +143,7 @@ public class AppCompatCompoundButtonHelper {
             boolean r0 = r0.hasValue(r1)     // Catch: java.lang.Throwable -> Lc2
             if (r0 == 0) goto La0
             r0 = r8
-            android.widget.CompoundButton r0 = r0.f1751a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CompoundButton r0 = r0.f1703a     // Catch: java.lang.Throwable -> Lc2
             r1 = r11
             int r2 = androidx.appcompat.R.styleable.CompoundButton_buttonTint     // Catch: java.lang.Throwable -> Lc2
             android.content.res.ColorStateList r1 = r1.getColorStateList(r2)     // Catch: java.lang.Throwable -> Lc2
@@ -155,7 +154,7 @@ public class AppCompatCompoundButtonHelper {
             boolean r0 = r0.hasValue(r1)     // Catch: java.lang.Throwable -> Lc2
             if (r0 == 0) goto Lbd
             r0 = r8
-            android.widget.CompoundButton r0 = r0.f1751a     // Catch: java.lang.Throwable -> Lc2
+            android.widget.CompoundButton r0 = r0.f1703a     // Catch: java.lang.Throwable -> Lc2
             r1 = r11
             int r2 = androidx.appcompat.R.styleable.CompoundButton_buttonTintMode     // Catch: java.lang.Throwable -> Lc2
             r3 = -1
@@ -182,7 +181,7 @@ public class AppCompatCompoundButtonHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public PorterDuff.Mode b() {
-        return this.f1752c;
+        return this.f1704c;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -196,7 +195,7 @@ public class AppCompatCompoundButtonHelper {
     }
 
     void d() {
-        Drawable buttonDrawable = CompoundButtonCompat.getButtonDrawable(this.f1751a);
+        Drawable buttonDrawable = CompoundButtonCompat.getButtonDrawable(this.f1703a);
         if (buttonDrawable != null) {
             if (this.d || this.e) {
                 Drawable mutate = DrawableCompat.wrap(buttonDrawable).mutate();
@@ -204,12 +203,12 @@ public class AppCompatCompoundButtonHelper {
                     DrawableCompat.setTintList(mutate, this.b);
                 }
                 if (this.e) {
-                    DrawableCompat.setTintMode(mutate, this.f1752c);
+                    DrawableCompat.setTintMode(mutate, this.f1704c);
                 }
                 if (mutate.isStateful()) {
-                    mutate.setState(this.f1751a.getDrawableState());
+                    mutate.setState(this.f1703a.getDrawableState());
                 }
-                this.f1751a.setButtonDrawable(mutate);
+                this.f1703a.setButtonDrawable(mutate);
             }
         }
     }

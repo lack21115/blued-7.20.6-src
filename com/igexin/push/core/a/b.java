@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.SparseArray;
+import com.anythink.pd.ExHandler;
 import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.push.constant.RemoteMessageConst;
 import com.igexin.assist.sdk.AssistPushManager;
@@ -49,19 +50,19 @@ public class b extends a implements com.igexin.push.d.b {
     private static final String b = "CoreAction";
 
     /* renamed from: c  reason: collision with root package name */
-    private static SparseArray<a> f23397c;
+    private static SparseArray<a> f9789c;
     private static volatile b d;
 
     private b() {
         SparseArray<a> sparseArray = new SparseArray<>();
-        f23397c = sparseArray;
+        f9789c = sparseArray;
         sparseArray.put(0, new com.igexin.push.core.a.a.a());
-        f23397c.put(5, new c());
-        f23397c.put(37, new d());
-        f23397c.put(9, new f());
-        f23397c.put(20, new e());
-        f23397c.put(26, new com.igexin.push.core.a.b.d());
-        f23397c.put(97, new com.igexin.push.core.a.a.b());
+        f9789c.put(5, new c());
+        f9789c.put(37, new d());
+        f9789c.put(9, new f());
+        f9789c.put(20, new e());
+        f9789c.put(26, new com.igexin.push.core.a.b.d());
+        f9789c.put(97, new com.igexin.push.core.a.a.b());
     }
 
     public static Class a(Context context) {
@@ -261,7 +262,7 @@ public class b extends a implements com.igexin.push.d.b {
                             jSONObject.put("action", "set_tag");
                             jSONObject.put("id", String.valueOf(currentTimeMillis));
                             jSONObject.put("cid", com.igexin.push.core.e.A);
-                            jSONObject.put("appid", com.igexin.push.core.e.f23495a);
+                            jSONObject.put("appid", com.igexin.push.core.e.f9887a);
                             jSONObject.put("tags", URLEncoder.encode(string2, "utf-8"));
                             jSONObject.put("sn", string3);
                         } catch (Exception e) {
@@ -271,7 +272,7 @@ public class b extends a implements com.igexin.push.d.b {
                         String jSONObject2 = jSONObject.toString();
                         com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis, jSONObject2, (byte) 2, com.igexin.push.core.e.u ? currentTimeMillis : 0L));
                         com.igexin.push.c.c.o oVar = new com.igexin.push.c.c.o();
-                        oVar.f23334c = 128;
+                        oVar.f9726c = 128;
                         oVar.e = com.igexin.push.core.b.K;
                         oVar.f = jSONObject2;
                         d.a.a().h.a("C-" + com.igexin.push.core.e.A, oVar, false);
@@ -307,13 +308,13 @@ public class b extends a implements com.igexin.push.d.b {
                         jSONObject3.put("action", "sendmessage");
                         jSONObject3.put("id", String.valueOf(currentTimeMillis2));
                         jSONObject3.put("cid", com.igexin.push.core.e.A);
-                        jSONObject3.put("appid", com.igexin.push.core.e.f23495a);
+                        jSONObject3.put("appid", com.igexin.push.core.e.f9887a);
                         jSONObject3.put("taskid", string4);
                         jSONObject3.put("extraData", Base64.encodeToString(byteArray, 0));
                         String jSONObject4 = jSONObject3.toString();
                         com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis2, jSONObject4, (byte) 6, currentTimeMillis2));
                         com.igexin.push.c.c.b bVar = new com.igexin.push.c.c.b();
-                        bVar.f23334c = 128;
+                        bVar.f9726c = 128;
                         bVar.b = (int) currentTimeMillis2;
                         bVar.e = com.igexin.push.core.e.A;
                         bVar.f = jSONObject4;
@@ -375,7 +376,7 @@ public class b extends a implements com.igexin.push.d.b {
                     PushTaskBean pushTaskBean = new PushTaskBean();
                     pushTaskBean.setTaskId(string5);
                     pushTaskBean.setMessageId(string6);
-                    pushTaskBean.setAppid(com.igexin.push.core.e.f23495a);
+                    pushTaskBean.setAppid(com.igexin.push.core.e.f9887a);
                     FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean, string7);
                     com.igexin.push.core.e.am++;
                     com.igexin.push.core.e.al.put(str, Long.valueOf(currentTimeMillis3));
@@ -398,7 +399,7 @@ public class b extends a implements com.igexin.push.d.b {
                 com.igexin.c.a.c.a.a("PushController|onPushManagerMessage bindAlias...", new Object[0]);
                 if (TextUtils.isEmpty(com.igexin.push.core.e.A)) {
                     com.igexin.c.a.c.a.d.a().a("bindAlias : " + string8 + ", failed, has not get clientid");
-                    l.a().b(string9, com.anythink.basead.c.f.n);
+                    l.a().b(string9, "30005");
                     return;
                 }
                 long currentTimeMillis4 = System.currentTimeMillis();
@@ -426,7 +427,7 @@ public class b extends a implements com.igexin.push.d.b {
                 }
                 com.igexin.c.a.c.a.a("PushController|bindAlias times exceed", new Object[0]);
                 com.igexin.c.a.c.a.d.a().a("bindAlias : " + string8 + ", failed, , the number of calls per day cannot exceed 100");
-                l.a().b(string9, com.anythink.basead.c.f.l);
+                l.a().b(string9, "30003");
                 return;
             case true:
                 String string10 = bundle.getString("alias");
@@ -435,7 +436,7 @@ public class b extends a implements com.igexin.push.d.b {
                 com.igexin.c.a.c.a.a("PushController|onPushManagerMessage unbindAlias...", new Object[0]);
                 if (TextUtils.isEmpty(com.igexin.push.core.e.A)) {
                     com.igexin.c.a.c.a.d.a().a("unbindAlias : " + string10 + ", failed, has not get clientid");
-                    l.a().c(string11, com.anythink.basead.c.f.n);
+                    l.a().c(string11, "30005");
                     return;
                 } else if (z8 && TextUtils.isEmpty(com.igexin.push.core.e.A)) {
                     return;
@@ -462,7 +463,7 @@ public class b extends a implements com.igexin.push.d.b {
                     }
                     com.igexin.c.a.c.a.a("PushController|unbindAlias times exceed", new Object[0]);
                     com.igexin.c.a.c.a.d.a().a("unbindAlias : " + string10 + ", failed, , the number of calls per day cannot exceed 100");
-                    l.a().c(string11, com.anythink.basead.c.f.l);
+                    l.a().c(string11, "30003");
                     return;
                 }
             case true:
@@ -487,7 +488,7 @@ public class b extends a implements com.igexin.push.d.b {
                             PushTaskBean pushTaskBean2 = new PushTaskBean();
                             pushTaskBean2.setTaskId("getuiapplinkup");
                             pushTaskBean2.setMessageId(queryParameter);
-                            pushTaskBean2.setAppid(com.igexin.push.core.e.f23495a);
+                            pushTaskBean2.setAppid(com.igexin.push.core.e.f9887a);
                             FeedbackImpl.getInstance().feedbackMessageAction(pushTaskBean2, PushConsts.SEND_MESSAGE_ERROR);
                             return;
                         }
@@ -542,7 +543,7 @@ public class b extends a implements com.igexin.push.d.b {
                 if (TextUtils.isEmpty(com.igexin.push.core.e.A)) {
                     return;
                 }
-                if (System.currentTimeMillis() - com.igexin.push.core.e.f23497c < com.igexin.push.config.d.f23375a * 1000 && com.igexin.push.core.e.d != null) {
+                if (System.currentTimeMillis() - com.igexin.push.core.e.f9889c < com.igexin.push.config.d.f9767a * 1000 && com.igexin.push.core.e.d != null) {
                     String str4 = com.igexin.push.core.e.d;
                     com.igexin.c.a.c.a.a("PushController|query tag already cache, tag = " + com.igexin.push.core.e.d, new Object[0]);
                     l.a().a(string13, "0", com.igexin.push.core.e.d);
@@ -555,7 +556,7 @@ public class b extends a implements com.igexin.push.d.b {
                         jSONObject5.put("action", "query_tag");
                         jSONObject5.put("id", String.valueOf(currentTimeMillis6));
                         jSONObject5.put("cid", com.igexin.push.core.e.A);
-                        jSONObject5.put("appid", com.igexin.push.core.e.f23495a);
+                        jSONObject5.put("appid", com.igexin.push.core.e.f9887a);
                         jSONObject5.put("sn", string13);
                     } catch (Exception e4) {
                         com.igexin.c.a.c.a.a(e4);
@@ -563,13 +564,13 @@ public class b extends a implements com.igexin.push.d.b {
                     String jSONObject6 = jSONObject5.toString();
                     com.igexin.push.core.e.e.a().b(new com.igexin.push.core.b.l(currentTimeMillis6, jSONObject6, (byte) 11, currentTimeMillis6));
                     com.igexin.push.c.c.o oVar2 = new com.igexin.push.c.c.o();
-                    oVar2.f23334c = 128;
+                    oVar2.f9726c = 128;
                     oVar2.e = com.igexin.push.core.b.K;
                     oVar2.f = jSONObject6;
                     d.a.a().h.a("C-" + com.igexin.push.core.e.A, oVar2, false);
                     com.igexin.push.core.e.f a3 = com.igexin.push.core.e.f.a();
-                    if (com.igexin.push.core.e.f23497c != currentTimeMillis6) {
-                        com.igexin.push.core.e.f23497c = currentTimeMillis6;
+                    if (com.igexin.push.core.e.f9889c != currentTimeMillis6) {
+                        com.igexin.push.core.e.f9889c = currentTimeMillis6;
                         com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new f.AnonymousClass20(), false, true);
                     }
                     com.igexin.c.a.c.a.a("PushController｜queryTag", new Object[0]);
@@ -611,7 +612,7 @@ public class b extends a implements com.igexin.push.d.b {
         }
         String jSONObject2 = jSONObject.toString();
         com.igexin.push.c.c.o oVar = new com.igexin.push.c.c.o();
-        oVar.f23334c = 128;
+        oVar.f9726c = 128;
         ((com.igexin.push.c.c.b) oVar).b = (int) System.currentTimeMillis();
         oVar.e = com.igexin.push.core.b.K;
         oVar.f = jSONObject2;
@@ -672,7 +673,7 @@ public class b extends a implements com.igexin.push.d.b {
             } else if (com.igexin.push.core.b.H.equals(action)) {
                 com.igexin.push.core.n.a().a(intent);
             } else if ("android.intent.action.TIME_SET".equals(action)) {
-                if (com.igexin.push.config.d.f23376c != 0) {
+                if (com.igexin.push.config.d.f9768c != 0) {
                     com.igexin.push.e.f.c().d();
                 }
             } else if (!Intent.ACTION_SCREEN_ON.equals(action)) {
@@ -727,14 +728,14 @@ public class b extends a implements com.igexin.push.d.b {
 
     public static void g() {
         try {
-            for (com.igexin.push.core.b.l lVar : com.igexin.push.core.e.e.a().f23506a) {
+            for (com.igexin.push.core.b.l lVar : com.igexin.push.core.e.e.a().f9898a) {
                 if (lVar.e >= com.igexin.push.config.d.N - 1) {
-                    com.igexin.c.a.c.a.a("CoreAction|data.getSendTimes=" + lVar.e + " id=" + lVar.f23448a, new Object[0]);
+                    com.igexin.c.a.c.a.a("CoreAction|data.getSendTimes=" + lVar.e + " id=" + lVar.f9840a, new Object[0]);
                 } else if (lVar.d + 20000 <= System.currentTimeMillis()) {
                     long currentTimeMillis = System.currentTimeMillis();
                     JSONObject jSONObject = new JSONObject(lVar.b);
                     com.igexin.push.c.c.b bVar = new com.igexin.push.c.c.b();
-                    bVar.f23334c = 128;
+                    bVar.f9726c = 128;
                     bVar.b = (int) currentTimeMillis;
                     bVar.e = com.igexin.push.core.b.K;
                     if (jSONObject.has("extraData")) {
@@ -745,7 +746,7 @@ public class b extends a implements com.igexin.push.d.b {
                     bVar.h = com.igexin.push.core.e.A;
                     com.igexin.c.a.c.a.a("freshral|" + lVar.b, new Object[0]);
                     com.igexin.push.core.e.e a2 = com.igexin.push.core.e.e.a();
-                    long j = lVar.f23448a;
+                    long j = lVar.f9840a;
                     long currentTimeMillis2 = System.currentTimeMillis();
                     com.igexin.push.core.b.l a3 = a2.a(j);
                     if (a3 != null) {
@@ -773,7 +774,7 @@ public class b extends a implements com.igexin.push.d.b {
         }
         String jSONObject2 = jSONObject.toString();
         com.igexin.push.c.c.b bVar = new com.igexin.push.c.c.b();
-        bVar.f23334c = 128;
+        bVar.f9726c = 128;
         bVar.b = (int) currentTimeMillis;
         bVar.e = com.igexin.push.core.b.K;
         bVar.f = jSONObject2;
@@ -818,7 +819,7 @@ public class b extends a implements com.igexin.push.d.b {
     @Override // com.igexin.push.d.b
     public final boolean a(com.igexin.push.c.c.c cVar) {
         if (cVar != null) {
-            a aVar = f23397c.get(cVar.m);
+            a aVar = f9789c.get(cVar.m);
             cVar.getClass().getName();
             com.igexin.c.a.c.a.a("CoreAction|receive : " + cVar.getClass().getName() + " resp ~~~~", new Object[0]);
             if ((cVar instanceof h) || (cVar instanceof k) || (cVar instanceof com.igexin.push.c.c.m) || (cVar instanceof p) || (cVar instanceof com.igexin.push.c.c.f) || (cVar instanceof q)) {
@@ -847,13 +848,13 @@ public class b extends a implements com.igexin.push.d.b {
             com.igexin.c.a.c.a.a("CoreAction|TcpExceptionNotify###", new Object[0]);
             com.igexin.push.b.c.a().d().c();
             com.igexin.push.b.a d2 = com.igexin.push.b.c.a().d();
-            com.igexin.push.core.j.a().a(j.a.f23567c);
+            com.igexin.push.core.j.a().a(j.a.f9959c);
             d2.f();
             if (com.igexin.push.d.a.d()) {
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a, "sdkOn = false or pushOn = false, disconect|user");
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a + "|sdkOn = false or pushOn = false, disconect|user", new Object[0]);
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a, "sdkOn = false or pushOn = false, disconect|user");
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a + "|sdkOn = false or pushOn = false, disconect|user", new Object[0]);
             } else {
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a + "|disconnect by network", new Object[0]);
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a + "|disconnect by network", new Object[0]);
             }
             com.igexin.c.a.d.e<com.igexin.c.a.d.f> eVar = com.igexin.c.a.b.e.a().s;
             if (eVar != null) {
@@ -870,20 +871,20 @@ public class b extends a implements com.igexin.push.d.b {
             }
             com.igexin.push.c.a.c.b = -1;
             if (com.igexin.push.core.e.q) {
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a, "isAppidWrong = true");
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a + "|isAppidWrong = true", new Object[0]);
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a, "isAppidWrong = true");
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a + "|isAppidWrong = true", new Object[0]);
                 com.igexin.c.a.c.a.d.a().a("isAppidWrong = true");
                 return false;
             } else if (!g.a()) {
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a, "so error ++++++++");
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a + "|so error ++++++++", new Object[0]);
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a, "so error ++++++++");
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a + "|so error ++++++++", new Object[0]);
                 return false;
             } else if (com.igexin.push.core.e.az) {
                 com.igexin.push.d.a.c();
                 return false;
             } else {
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a, "initSuccess = false");
-                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f23591a + "|initSuccess = false", new Object[0]);
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a, "initSuccess = false");
+                com.igexin.c.a.c.a.a(com.igexin.push.d.a.f9983a + "|initSuccess = false", new Object[0]);
                 return false;
             }
         } else {
@@ -907,7 +908,7 @@ public class b extends a implements com.igexin.push.d.b {
                 com.igexin.c.a.b.e.a().a((com.igexin.c.a.d.f) new com.igexin.push.e.d() { // from class: com.igexin.push.core.a.b.1
 
                     /* renamed from: c  reason: collision with root package name */
-                    private boolean f23399c = true;
+                    private boolean f9791c = true;
 
                     @Override // com.igexin.push.e.d
                     public final void b() {
@@ -916,9 +917,9 @@ public class b extends a implements com.igexin.push.d.b {
                             com.igexin.push.core.b.a aVar = new com.igexin.push.core.b.a();
                             long j = aVar.n;
                             JSONObject jSONObject = new JSONObject();
-                            jSONObject.put("model", aVar.f23429a == null ? "" : aVar.f23429a);
+                            jSONObject.put("model", aVar.f9821a == null ? "" : aVar.f9821a);
                             jSONObject.put("sim", aVar.b == null ? "" : aVar.b);
-                            jSONObject.put("imei", aVar.f23430c == null ? "" : aVar.f23430c);
+                            jSONObject.put(ExHandler.JSON_REQUEST_IMEI, aVar.f9822c == null ? "" : aVar.f9822c);
                             jSONObject.put("mac", aVar.d == null ? "" : n.c());
                             jSONObject.put("version", aVar.e == null ? "" : aVar.e);
                             jSONObject.put("channelid", aVar.f == null ? "" : aVar.f);
@@ -938,7 +939,7 @@ public class b extends a implements com.igexin.push.d.b {
                             ServiceManager.getInstance();
                             String e = ServiceManager.e(com.igexin.push.core.e.l);
                             if (!com.igexin.push.core.b.al.equals(e)) {
-                                jSONObject.put(o.f23663a, e);
+                                jSONObject.put(o.f10055a, e);
                             }
                             ServiceManager.getInstance();
                             jSONObject.put("ua", ServiceManager.d(com.igexin.push.core.e.l));
@@ -959,7 +960,7 @@ public class b extends a implements com.igexin.push.d.b {
                                 a2.b(new com.igexin.push.core.b.l(j, jSONObject4, (byte) 5, j));
                             }
                             com.igexin.push.c.c.b bVar = new com.igexin.push.c.c.b();
-                            bVar.f23334c = 128;
+                            bVar.f9726c = 128;
                             bVar.b = (int) j;
                             bVar.e = com.igexin.push.core.b.K;
                             bVar.f = jSONObject4;

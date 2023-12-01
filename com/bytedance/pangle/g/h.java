@@ -6,27 +6,27 @@ import java.nio.ByteBuffer;
 final class h implements k {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ByteBuffer f21419a;
+    private final ByteBuffer f7813a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public h(ByteBuffer byteBuffer) {
-        this.f21419a = byteBuffer.slice();
+        this.f7813a = byteBuffer.slice();
     }
 
     @Override // com.bytedance.pangle.g.k
     public final long a() {
-        return this.f21419a.capacity();
+        return this.f7813a.capacity();
     }
 
     @Override // com.bytedance.pangle.g.k
     public final void a(j jVar, long j, int i) {
         ByteBuffer slice;
-        synchronized (this.f21419a) {
-            this.f21419a.position(0);
+        synchronized (this.f7813a) {
+            this.f7813a.position(0);
             int i2 = (int) j;
-            this.f21419a.limit(i + i2);
-            this.f21419a.position(i2);
-            slice = this.f21419a.slice();
+            this.f7813a.limit(i + i2);
+            this.f7813a.position(i2);
+            slice = this.f7813a.slice();
         }
         jVar.a(slice);
     }

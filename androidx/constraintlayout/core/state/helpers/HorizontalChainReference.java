@@ -12,23 +12,23 @@ public class HorizontalChainReference extends ChainReference {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2110a;
+        static final /* synthetic */ int[] f2062a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[State.Chain.values().length];
-            f2110a = iArr;
+            f2062a = iArr;
             try {
                 iArr[State.Chain.SPREAD.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2110a[State.Chain.SPREAD_INSIDE.ordinal()] = 2;
+                f2062a[State.Chain.SPREAD_INSIDE.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2110a[State.Chain.PACKED.ordinal()] = 3;
+                f2062a[State.Chain.PACKED.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -95,7 +95,7 @@ public class HorizontalChainReference extends ChainReference {
         if (this.af != 0.5f) {
             constraintReference.horizontalBias(this.af);
         }
-        int i = AnonymousClass1.f2110a[this.ag.ordinal()];
+        int i = AnonymousClass1.f2062a[this.ag.ordinal()];
         if (i == 1) {
             constraintReference.setHorizontalChainStyle(0);
         } else if (i == 2) {

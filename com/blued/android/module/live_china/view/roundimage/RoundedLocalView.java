@@ -12,6 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
 import android.net.Uri;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.widget.AppCompatImageView;
 import com.blued.android.module.live_china.R;
@@ -34,20 +35,14 @@ public class RoundedLocalView extends AppCompatImageView {
     private Shader.TileMode q;
     private Shader.TileMode r;
     static final /* synthetic */ boolean b = !RoundedLocalView.class.desiredAssertionStatus();
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Shader.TileMode f15449a = Shader.TileMode.CLAMP;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final ImageView.ScaleType[] f15450c = {ImageView.ScaleType.MATRIX, ImageView.ScaleType.FIT_XY, ImageView.ScaleType.FIT_START, ImageView.ScaleType.FIT_CENTER, ImageView.ScaleType.FIT_END, ImageView.ScaleType.CENTER, ImageView.ScaleType.CENTER_CROP, ImageView.ScaleType.CENTER_INSIDE};
+    public static final Shader.TileMode a = Shader.TileMode.CLAMP;
+    private static final ImageView.ScaleType[] c = {ImageView.ScaleType.MATRIX, ImageView.ScaleType.FIT_XY, ImageView.ScaleType.FIT_START, ImageView.ScaleType.FIT_CENTER, ImageView.ScaleType.FIT_END, ImageView.ScaleType.CENTER, ImageView.ScaleType.CENTER_CROP, ImageView.ScaleType.CENTER_INSIDE};
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.blued.android.module.live_china.view.roundimage.RoundedLocalView$1  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/roundimage/RoundedLocalView$1.class */
     public static /* synthetic */ class AnonymousClass1 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15451a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x0059 -> B:33:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x005d -> B:43:0x001f). Please submit an issue!!! */
@@ -57,33 +52,33 @@ public class RoundedLocalView extends AppCompatImageView {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x006d -> B:41:0x004c). Please submit an issue!!! */
         static {
             int[] iArr = new int[ImageView.ScaleType.values().length];
-            f15451a = iArr;
+            a = iArr;
             try {
                 iArr[ImageView.ScaleType.CENTER.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15451a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
+                a[ImageView.ScaleType.CENTER_CROP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15451a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
+                a[ImageView.ScaleType.CENTER_INSIDE.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15451a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
+                a[ImageView.ScaleType.FIT_CENTER.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15451a[ImageView.ScaleType.FIT_START.ordinal()] = 5;
+                a[ImageView.ScaleType.FIT_START.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15451a[ImageView.ScaleType.FIT_END.ordinal()] = 6;
+                a[ImageView.ScaleType.FIT_END.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f15451a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
+                a[ImageView.ScaleType.FIT_XY.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
         }
@@ -96,20 +91,20 @@ public class RoundedLocalView extends AppCompatImageView {
     public RoundedLocalView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.d = new float[]{0.0f, 0.0f, 0.0f, 0.0f};
-        this.f = ColorStateList.valueOf(-16777216);
+        this.f = ColorStateList.valueOf(View.MEASURED_STATE_MASK);
         this.g = 0.0f;
         this.h = null;
         this.i = false;
         this.k = false;
         this.l = false;
         this.m = false;
-        Shader.TileMode tileMode = f15449a;
+        Shader.TileMode tileMode = a;
         this.q = tileMode;
         this.r = tileMode;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.RoundedLocalView, i, 0);
         int i2 = obtainStyledAttributes.getInt(R.styleable.RoundedImageView_android_scaleType, -1);
         if (i2 >= 0) {
-            setScaleType(f15450c[i2]);
+            setScaleType(c[i2]);
         } else {
             setScaleType(ImageView.ScaleType.FIT_CENTER);
         }
@@ -149,7 +144,7 @@ public class RoundedLocalView extends AppCompatImageView {
         ColorStateList colorStateList = obtainStyledAttributes.getColorStateList(R.styleable.RoundedLocalView_riv_border_color);
         this.f = colorStateList;
         if (colorStateList == null) {
-            this.f = ColorStateList.valueOf(-16777216);
+            this.f = ColorStateList.valueOf(View.MEASURED_STATE_MASK);
         }
         this.m = obtainStyledAttributes.getBoolean(R.styleable.RoundedLocalView_riv_mutate_background, false);
         this.l = obtainStyledAttributes.getBoolean(R.styleable.RoundedLocalView_riv_oval, false);
@@ -284,7 +279,6 @@ public class RoundedLocalView extends AppCompatImageView {
         invalidate();
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView, android.view.View
     public void drawableStateChanged() {
         super.drawableStateChanged();
         invalidate();
@@ -321,7 +315,6 @@ public class RoundedLocalView extends AppCompatImageView {
         }
     }
 
-    @Override // android.widget.ImageView
     public ImageView.ScaleType getScaleType() {
         return this.p;
     }
@@ -334,19 +327,16 @@ public class RoundedLocalView extends AppCompatImageView {
         return this.r;
     }
 
-    @Override // android.view.View
     public void setBackground(Drawable drawable) {
         setBackgroundDrawable(drawable);
     }
 
-    @Override // android.view.View
     public void setBackgroundColor(int i) {
         ColorDrawable colorDrawable = new ColorDrawable(i);
         this.e = colorDrawable;
         setBackgroundDrawable(colorDrawable);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.view.View
     @Deprecated
     public void setBackgroundDrawable(Drawable drawable) {
         this.e = drawable;
@@ -354,7 +344,6 @@ public class RoundedLocalView extends AppCompatImageView {
         super.setBackgroundDrawable(this.e);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.view.View
     public void setBackgroundResource(int i) {
         if (this.o != i) {
             this.o = i;
@@ -373,7 +362,7 @@ public class RoundedLocalView extends AppCompatImageView {
             return;
         }
         if (colorStateList == null) {
-            colorStateList = ColorStateList.valueOf(-16777216);
+            colorStateList = ColorStateList.valueOf(View.MEASURED_STATE_MASK);
         }
         this.f = colorStateList;
         c();
@@ -397,7 +386,6 @@ public class RoundedLocalView extends AppCompatImageView {
         setBorderWidth(getResources().getDimension(i));
     }
 
-    @Override // android.widget.ImageView
     public void setColorFilter(ColorFilter colorFilter) {
         if (this.h != colorFilter) {
             this.h = colorFilter;
@@ -417,7 +405,6 @@ public class RoundedLocalView extends AppCompatImageView {
         a(dimension, dimension, dimension, dimension);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageBitmap(Bitmap bitmap) {
         this.n = 0;
         this.j = RoundedDrawable.a(bitmap);
@@ -425,7 +412,6 @@ public class RoundedLocalView extends AppCompatImageView {
         super.setImageDrawable(this.j);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageDrawable(Drawable drawable) {
         this.n = 0;
         this.j = RoundedDrawable.a(drawable);
@@ -433,7 +419,6 @@ public class RoundedLocalView extends AppCompatImageView {
         super.setImageDrawable(this.j);
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageResource(int i) {
         if (this.n != i) {
             this.n = i;
@@ -443,7 +428,6 @@ public class RoundedLocalView extends AppCompatImageView {
         }
     }
 
-    @Override // androidx.appcompat.widget.AppCompatImageView, android.widget.ImageView
     public void setImageURI(Uri uri) {
         super.setImageURI(uri);
         setImageDrawable(getDrawable());
@@ -456,14 +440,13 @@ public class RoundedLocalView extends AppCompatImageView {
         invalidate();
     }
 
-    @Override // android.widget.ImageView
     public void setScaleType(ImageView.ScaleType scaleType) {
         if (!b && scaleType == null) {
             throw new AssertionError();
         }
         if (this.p != scaleType) {
             this.p = scaleType;
-            switch (AnonymousClass1.f15451a[scaleType.ordinal()]) {
+            switch (AnonymousClass1.a[scaleType.ordinal()]) {
                 case 1:
                 case 2:
                 case 3:

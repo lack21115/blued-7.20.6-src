@@ -12,32 +12,32 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class n implements l {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AtomicInteger f22313a = new AtomicInteger(1);
+    public final AtomicInteger f8705a = new AtomicInteger(1);
     public volatile IPushInvoke b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final l.a f22314c;
+    public final l.a f8706c;
     public p d;
 
     public n(l.a aVar) {
-        this.f22314c = aVar;
+        this.f8706c = aVar;
     }
 
     public final void a(int i) {
         Log.i("PushConnectionClient", "notifyFailed result: ".concat(String.valueOf(i)));
-        l.a aVar = this.f22314c;
+        l.a aVar = this.f8706c;
         if (aVar != null) {
             j.a aVar2 = (j.a) aVar;
             aVar2.getClass();
-            if (Looper.myLooper() == j.this.f22303a.getLooper()) {
+            if (Looper.myLooper() == j.this.f8695a.getLooper()) {
                 aVar2.a(HonorPushErrorEnum.fromCode(i));
             } else {
-                j.this.f22303a.post(new i(aVar2, i));
+                j.this.f8695a.post(new i(aVar2, i));
             }
         }
     }
 
     public boolean a() {
-        return this.f22313a.get() == 3 || this.f22313a.get() == 4;
+        return this.f8705a.get() == 3 || this.f8705a.get() == 4;
     }
 }

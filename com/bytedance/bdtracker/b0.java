@@ -11,7 +11,7 @@ public class b0 extends a0 {
 
     @Override // com.bytedance.bdtracker.a0
     public boolean a(String str) {
-        return !this.f21188a.contains(str);
+        return !this.f7582a.contains(str);
     }
 
     @Override // com.bytedance.bdtracker.a0

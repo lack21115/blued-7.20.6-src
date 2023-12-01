@@ -14,7 +14,7 @@ public class MsgBoxFragment_ViewBinding implements Unbinder {
 
     public MsgBoxFragment_ViewBinding(MsgBoxFragment msgBoxFragment, View view) {
         this.b = msgBoxFragment;
-        msgBoxFragment.title = (CommonTopTitleNoTrans) Utils.a(view, 2131370749, "field 'title'", CommonTopTitleNoTrans.class);
+        msgBoxFragment.title = (CommonTopTitleNoTrans) Utils.a(view, R.id.top_title, "field 'title'", CommonTopTitleNoTrans.class);
         msgBoxFragment.pullRefresh = (RenrenPullToRefreshListView) Utils.a(view, R.id.friend_list, "field 'pullRefresh'", RenrenPullToRefreshListView.class);
         msgBoxFragment.nodataview = (NoDataAndLoadFailView) Utils.a(view, R.id.nodataview, "field 'nodataview'", NoDataAndLoadFailView.class);
     }

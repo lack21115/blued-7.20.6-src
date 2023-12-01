@@ -15,9 +15,7 @@ public class PoiSearch {
     public static final String ENGLISH = "en";
     public static final String EXTENSIONS_ALL = "all";
     public static final String EXTENSIONS_BASE = "base";
-
-    /* renamed from: a  reason: collision with root package name */
-    private IPoiSearch f5665a;
+    private IPoiSearch a;
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/poisearch/PoiSearch$OnPoiSearchListener.class */
     public interface OnPoiSearchListener {
@@ -28,13 +26,9 @@ public class PoiSearch {
 
     /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/poisearch/PoiSearch$Query.class */
     public static class Query implements Cloneable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private String f5666a;
+        private String a;
         private String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private String f5667c;
+        private String c;
         private int d;
         private int e;
         private String f;
@@ -59,9 +53,9 @@ public class PoiSearch {
             this.j = true;
             this.l = true;
             this.m = "base";
-            this.f5666a = str;
+            this.a = str;
             this.b = str2;
-            this.f5667c = str3;
+            this.c = str3;
         }
 
         private static String a() {
@@ -69,13 +63,13 @@ public class PoiSearch {
         }
 
         /* renamed from: clone */
-        public Query m2468clone() {
+        public Query m8911clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "PoiSearch", "queryclone");
             }
-            Query query = new Query(this.f5666a, this.b, this.f5667c);
+            Query query = new Query(this.a, this.b, this.c);
             query.setPageNum(this.d);
             query.setPageSize(this.e);
             query.setQueryLanguage(this.f);
@@ -103,12 +97,12 @@ public class PoiSearch {
                 } else if (!str.equals(query.b)) {
                     return false;
                 }
-                String str2 = this.f5667c;
+                String str2 = this.c;
                 if (str2 == null) {
-                    if (query.f5667c != null) {
+                    if (query.c != null) {
                         return false;
                     }
-                } else if (!str2.equals(query.f5667c)) {
+                } else if (!str2.equals(query.c)) {
                     return false;
                 }
                 String str3 = this.f;
@@ -120,12 +114,12 @@ public class PoiSearch {
                     return false;
                 }
                 if (this.d == query.d && this.e == query.e) {
-                    String str4 = this.f5666a;
+                    String str4 = this.a;
                     if (str4 == null) {
-                        if (query.f5666a != null) {
+                        if (query.a != null) {
                             return false;
                         }
-                    } else if (!str4.equals(query.f5666a)) {
+                    } else if (!str4.equals(query.a)) {
                         return false;
                     }
                     String str5 = this.i;
@@ -157,7 +151,7 @@ public class PoiSearch {
         }
 
         public String getCity() {
-            return this.f5667c;
+            return this.c;
         }
 
         public boolean getCityLimit() {
@@ -185,14 +179,14 @@ public class PoiSearch {
         }
 
         public String getQueryString() {
-            return this.f5666a;
+            return this.a;
         }
 
         public int hashCode() {
             String str = this.b;
             int i = 0;
             int hashCode = str == null ? 0 : str.hashCode();
-            String str2 = this.f5667c;
+            String str2 = this.c;
             int hashCode2 = str2 == null ? 0 : str2.hashCode();
             int i2 = 1231;
             int i3 = this.g ? 1231 : 1237;
@@ -203,7 +197,7 @@ public class PoiSearch {
             int hashCode3 = str3 == null ? 0 : str3.hashCode();
             int i4 = this.d;
             int i5 = this.e;
-            String str4 = this.f5666a;
+            String str4 = this.a;
             int hashCode4 = str4 == null ? 0 : str4.hashCode();
             String str5 = this.i;
             if (str5 != null) {
@@ -231,7 +225,7 @@ public class PoiSearch {
             if (query == this) {
                 return true;
             }
-            return PoiSearch.b(query.f5666a, this.f5666a) && PoiSearch.b(query.b, this.b) && PoiSearch.b(query.f, this.f) && PoiSearch.b(query.f5667c, this.f5667c) && PoiSearch.b(query.m, this.m) && PoiSearch.b(query.i, this.i) && query.g == this.g && query.e == this.e && query.j == this.j && query.l == this.l;
+            return PoiSearch.b(query.a, this.a) && PoiSearch.b(query.b, this.b) && PoiSearch.b(query.f, this.f) && PoiSearch.b(query.c, this.c) && PoiSearch.b(query.m, this.m) && PoiSearch.b(query.i, this.i) && query.g == this.g && query.e == this.e && query.j == this.j && query.l == this.l;
         }
 
         public void requireSubPois(boolean z) {
@@ -295,48 +289,44 @@ public class PoiSearch {
         public static final String ELLIPSE_SHAPE = "Ellipse";
         public static final String POLYGON_SHAPE = "Polygon";
         public static final String RECTANGLE_SHAPE = "Rectangle";
-
-        /* renamed from: a  reason: collision with root package name */
-        private LatLonPoint f5668a;
+        private LatLonPoint a;
         private LatLonPoint b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f5669c;
+        private int c;
         private LatLonPoint d;
         private String e;
         private boolean f;
         private List<LatLonPoint> g;
 
         public SearchBound(LatLonPoint latLonPoint, int i) {
-            this.f5669c = 1500;
+            this.c = 1500;
             this.f = true;
             this.e = "Bound";
-            this.f5669c = i;
+            this.c = i;
             this.d = latLonPoint;
         }
 
         public SearchBound(LatLonPoint latLonPoint, int i, boolean z) {
-            this.f5669c = 1500;
+            this.c = 1500;
             this.f = true;
             this.e = "Bound";
-            this.f5669c = i;
+            this.c = i;
             this.d = latLonPoint;
             this.f = z;
         }
 
         public SearchBound(LatLonPoint latLonPoint, LatLonPoint latLonPoint2) {
-            this.f5669c = 1500;
+            this.c = 1500;
             this.f = true;
             this.e = "Rectangle";
             a(latLonPoint, latLonPoint2);
         }
 
         private SearchBound(LatLonPoint latLonPoint, LatLonPoint latLonPoint2, int i, LatLonPoint latLonPoint3, String str, List<LatLonPoint> list, boolean z) {
-            this.f5669c = 1500;
+            this.c = 1500;
             this.f = true;
-            this.f5668a = latLonPoint;
+            this.a = latLonPoint;
             this.b = latLonPoint2;
-            this.f5669c = i;
+            this.c = i;
             this.d = latLonPoint3;
             this.e = str;
             this.g = list;
@@ -344,29 +334,29 @@ public class PoiSearch {
         }
 
         public SearchBound(List<LatLonPoint> list) {
-            this.f5669c = 1500;
+            this.c = 1500;
             this.f = true;
             this.e = "Polygon";
             this.g = list;
         }
 
         private void a(LatLonPoint latLonPoint, LatLonPoint latLonPoint2) {
-            this.f5668a = latLonPoint;
+            this.a = latLonPoint;
             this.b = latLonPoint2;
-            if (latLonPoint.getLatitude() >= this.b.getLatitude() || this.f5668a.getLongitude() >= this.b.getLongitude()) {
+            if (latLonPoint.getLatitude() >= this.b.getLatitude() || this.a.getLongitude() >= this.b.getLongitude()) {
                 new IllegalArgumentException("invalid rect ").printStackTrace();
             }
-            this.d = new LatLonPoint((this.f5668a.getLatitude() + this.b.getLatitude()) / 2.0d, (this.f5668a.getLongitude() + this.b.getLongitude()) / 2.0d);
+            this.d = new LatLonPoint((this.a.getLatitude() + this.b.getLatitude()) / 2.0d, (this.a.getLongitude() + this.b.getLongitude()) / 2.0d);
         }
 
         /* renamed from: clone */
-        public SearchBound m2469clone() {
+        public SearchBound m8912clone() {
             try {
                 super.clone();
             } catch (CloneNotSupportedException e) {
                 fe.a(e, "PoiSearch", "SearchBoundClone");
             }
-            return new SearchBound(this.f5668a, this.b, this.f5669c, this.d, this.e, this.g, this.f);
+            return new SearchBound(this.a, this.b, this.c, this.d, this.e, this.g, this.f);
         }
 
         public boolean equals(Object obj) {
@@ -386,12 +376,12 @@ public class PoiSearch {
                 if (this.f != searchBound.f) {
                     return false;
                 }
-                LatLonPoint latLonPoint2 = this.f5668a;
+                LatLonPoint latLonPoint2 = this.a;
                 if (latLonPoint2 == null) {
-                    if (searchBound.f5668a != null) {
+                    if (searchBound.a != null) {
                         return false;
                     }
-                } else if (!latLonPoint2.equals(searchBound.f5668a)) {
+                } else if (!latLonPoint2.equals(searchBound.a)) {
                     return false;
                 }
                 LatLonPoint latLonPoint3 = this.b;
@@ -410,7 +400,7 @@ public class PoiSearch {
                 } else if (!list.equals(searchBound.g)) {
                     return false;
                 }
-                if (this.f5669c != searchBound.f5669c) {
+                if (this.c != searchBound.c) {
                     return false;
                 }
                 String str = this.e;
@@ -424,7 +414,7 @@ public class PoiSearch {
         }
 
         public LatLonPoint getLowerLeft() {
-            return this.f5668a;
+            return this.a;
         }
 
         public List<LatLonPoint> getPolyGonList() {
@@ -432,7 +422,7 @@ public class PoiSearch {
         }
 
         public int getRange() {
-            return this.f5669c;
+            return this.c;
         }
 
         public String getShape() {
@@ -448,13 +438,13 @@ public class PoiSearch {
             int i = 0;
             int hashCode = latLonPoint == null ? 0 : latLonPoint.hashCode();
             int i2 = this.f ? 1231 : 1237;
-            LatLonPoint latLonPoint2 = this.f5668a;
+            LatLonPoint latLonPoint2 = this.a;
             int hashCode2 = latLonPoint2 == null ? 0 : latLonPoint2.hashCode();
             LatLonPoint latLonPoint3 = this.b;
             int hashCode3 = latLonPoint3 == null ? 0 : latLonPoint3.hashCode();
             List<LatLonPoint> list = this.g;
             int hashCode4 = list == null ? 0 : list.hashCode();
-            int i3 = this.f5669c;
+            int i3 = this.c;
             String str = this.e;
             if (str != null) {
                 i = str.hashCode();
@@ -468,10 +458,10 @@ public class PoiSearch {
     }
 
     public PoiSearch(Context context, Query query) throws AMapException {
-        this.f5665a = null;
+        this.a = null;
         if (0 == 0) {
             try {
-                this.f5665a = new gz(context, query);
+                this.a = new gz(context, query);
             } catch (Exception e) {
                 e.printStackTrace();
                 if (e instanceof AMapException) {
@@ -493,7 +483,7 @@ public class PoiSearch {
     }
 
     public SearchBound getBound() {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             return iPoiSearch.getBound();
         }
@@ -501,7 +491,7 @@ public class PoiSearch {
     }
 
     public String getLanguage() {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             return iPoiSearch.getLanguage();
         }
@@ -509,7 +499,7 @@ public class PoiSearch {
     }
 
     public Query getQuery() {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             return iPoiSearch.getQuery();
         }
@@ -517,7 +507,7 @@ public class PoiSearch {
     }
 
     public PoiResult searchPOI() throws AMapException {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             return iPoiSearch.searchPOI();
         }
@@ -525,14 +515,14 @@ public class PoiSearch {
     }
 
     public void searchPOIAsyn() {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             iPoiSearch.searchPOIAsyn();
         }
     }
 
     public PoiItem searchPOIId(String str) throws AMapException {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             return iPoiSearch.searchPOIId(str);
         }
@@ -540,35 +530,35 @@ public class PoiSearch {
     }
 
     public void searchPOIIdAsyn(String str) {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             iPoiSearch.searchPOIIdAsyn(str);
         }
     }
 
     public void setBound(SearchBound searchBound) {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             iPoiSearch.setBound(searchBound);
         }
     }
 
     public void setLanguage(String str) {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             iPoiSearch.setLanguage(str);
         }
     }
 
     public void setOnPoiSearchListener(OnPoiSearchListener onPoiSearchListener) {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             iPoiSearch.setOnPoiSearchListener(onPoiSearchListener);
         }
     }
 
     public void setQuery(Query query) {
-        IPoiSearch iPoiSearch = this.f5665a;
+        IPoiSearch iPoiSearch = this.a;
         if (iPoiSearch != null) {
             iPoiSearch.setQuery(query);
         }

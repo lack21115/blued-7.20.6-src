@@ -3,15 +3,16 @@ package com.tencent.open.a;
 import android.text.format.Time;
 import android.util.Log;
 import androidx.exifinterface.media.ExifInterface;
+import com.xiaomi.mipush.sdk.Constants;
 
 /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/a/h.class */
 public final class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final h f38239a = new h();
+    public static final h f24548a = new h();
 
     public final String a(int i) {
-        return i != 1 ? i != 2 ? i != 4 ? i != 8 ? i != 16 ? i != 32 ? "-" : "A" : ExifInterface.LONGITUDE_EAST : "W" : "I" : "D" : ExifInterface.GPS_MEASUREMENT_INTERRUPTED;
+        return i != 1 ? i != 2 ? i != 4 ? i != 8 ? i != 16 ? i != 32 ? Constants.ACCEPT_TIME_SEPARATOR_SERVER : "A" : ExifInterface.LONGITUDE_EAST : "W" : "I" : "D" : ExifInterface.GPS_MEASUREMENT_INTERRUPTED;
     }
 
     public String a(int i, Thread thread, long j, String str, String str2, Throwable th) {

@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag;
 
-import com.alipay.sdk.util.i;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
 import java.util.Set;
 
@@ -50,7 +49,7 @@ public class InventoryConfiguration {
                 sb.append(encryption.toString());
                 sb.append("\n");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -66,7 +65,7 @@ public class InventoryConfiguration {
                 sb.append(cOSBucketDestination.toString());
                 sb.append("\n");
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -76,7 +75,7 @@ public class InventoryConfiguration {
         public String sSECOS;
 
         public String toString() {
-            return "{Encryption:\nSSE-COS:" + this.sSECOS + "\n" + i.d;
+            return "{Encryption:\nSSE-COS:" + this.sSECOS + "\n}";
         }
     }
 
@@ -105,7 +104,7 @@ public class InventoryConfiguration {
         public String prefix;
 
         public String toString() {
-            return "{Filter:\nPrefix:" + this.prefix + "\n" + i.d;
+            return "{Filter:\nPrefix:" + this.prefix + "\n}";
         }
     }
 
@@ -154,7 +153,7 @@ public class InventoryConfiguration {
                     sb.append("\n");
                 }
             }
-            sb.append(i.d);
+            sb.append("}");
             return sb.toString();
         }
     }
@@ -164,7 +163,7 @@ public class InventoryConfiguration {
         public String frequency;
 
         public String toString() {
-            return "{Schedule:\nFrequency:" + this.frequency + "\n" + i.d;
+            return "{Schedule:\nFrequency:" + this.frequency + "\n}";
         }
     }
 
@@ -199,7 +198,7 @@ public class InventoryConfiguration {
             sb.append(optionalFields.toString());
             sb.append("\n");
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 }

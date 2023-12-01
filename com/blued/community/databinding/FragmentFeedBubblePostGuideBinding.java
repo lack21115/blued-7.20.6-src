@@ -11,13 +11,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentFeedBubblePostGuideBinding.class */
 public final class FragmentFeedBubblePostGuideBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeLinearLayout f18862a;
+    public final ShapeLinearLayout a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f18863c;
+    public final RecyclerView c;
     public final FrameLayout d;
     public final TextView e;
     public final TextView f;
@@ -25,9 +21,9 @@ public final class FragmentFeedBubblePostGuideBinding implements ViewBinding {
 
     private FragmentFeedBubblePostGuideBinding(FrameLayout frameLayout, ShapeLinearLayout shapeLinearLayout, ShapeTextView shapeTextView, RecyclerView recyclerView, FrameLayout frameLayout2, TextView textView, TextView textView2) {
         this.g = frameLayout;
-        this.f18862a = shapeLinearLayout;
+        this.a = shapeLinearLayout;
         this.b = shapeTextView;
-        this.f18863c = recyclerView;
+        this.c = recyclerView;
         this.d = frameLayout2;
         this.e = textView;
         this.f = textView2;
@@ -39,15 +35,15 @@ public final class FragmentFeedBubblePostGuideBinding implements ViewBinding {
         if (shapeLinearLayout != null) {
             ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.discard_btn);
             if (shapeTextView != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
-                if (recyclerView != null) {
+                RecyclerView findViewById = view.findViewById(R.id.recycle_view);
+                if (findViewById != null) {
                     FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.root_layout);
                     if (frameLayout != null) {
                         TextView textView = (TextView) view.findViewById(R.id.send_btn);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_title);
                             if (textView2 != null) {
-                                return new FragmentFeedBubblePostGuideBinding((FrameLayout) view, shapeLinearLayout, shapeTextView, recyclerView, frameLayout, textView, textView2);
+                                return new FragmentFeedBubblePostGuideBinding((FrameLayout) view, shapeLinearLayout, shapeTextView, findViewById, frameLayout, textView, textView2);
                             }
                             str = "tvTitle";
                         } else {
@@ -68,7 +64,6 @@ public final class FragmentFeedBubblePostGuideBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

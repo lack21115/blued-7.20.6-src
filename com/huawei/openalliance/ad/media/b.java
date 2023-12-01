@@ -39,11 +39,11 @@ public class b {
     private static final int Z = -10000;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f22988a = 0;
+    private static final int f9380a = 0;
     private static final String b = "progress_task";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f22989c = 100;
+    private static final int f9381c = 100;
     private static final int d = 200;
     private static final int e = 0;
     private Object A;

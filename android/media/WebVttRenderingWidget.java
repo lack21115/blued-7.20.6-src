@@ -106,9 +106,8 @@ public class WebVttRenderingWidget extends ViewGroup implements SubtitleTrack.Re
             measure(View.MeasureSpec.makeMeasureSpec((Math.min(textTrackCue.mSize, i3) * size) / 100, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(size2, Integer.MIN_VALUE));
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.widget.LinearLayout, android.view.View
-        public void onMeasure(int i, int i2) {
+        protected void onMeasure(int i, int i2) {
             super.onMeasure(i, i2);
         }
 
@@ -138,6 +137,8 @@ public class WebVttRenderingWidget extends ViewGroup implements SubtitleTrack.Re
             this.mOrder = i;
         }
 
+        /* JADX WARN: Multi-variable type inference failed */
+        /* JADX WARN: Type inference failed for: r0v19, types: [android.media.WebVttRenderingWidget$SpanLayout, android.view.View] */
         public void update() {
             Layout.Alignment alignment;
             this.mActive = true;
@@ -163,10 +164,10 @@ public class WebVttRenderingWidget extends ViewGroup implements SubtitleTrack.Re
                 if (i2 >= length) {
                     return;
                 }
-                SpanLayout spanLayout = new SpanLayout(getContext(), textTrackCueSpanArr[i2]);
+                ?? spanLayout = new SpanLayout(getContext(), textTrackCueSpanArr[i2]);
                 spanLayout.setAlignment(alignment);
                 spanLayout.setCaptionStyle(captionStyle, f);
-                addView(spanLayout, -2, -2);
+                addView((View) spanLayout, -2, -2);
                 i = i2 + 1;
             }
         }
@@ -545,21 +546,20 @@ public class WebVttRenderingWidget extends ViewGroup implements SubtitleTrack.Re
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View, android.media.SubtitleTrack.RenderingWidget
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         manageChangeListener();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View, android.media.SubtitleTrack.RenderingWidget
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         manageChangeListener();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5 = i3 - i;
         int i6 = i4 - i2;
         setCaptionStyle(this.mCaptionStyle, this.mManager.getFontScale() * LINE_HEIGHT_RATIO * i6);
@@ -585,9 +585,8 @@ public class WebVttRenderingWidget extends ViewGroup implements SubtitleTrack.Re
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int size = this.mRegionBoxes.size();
         int i3 = 0;

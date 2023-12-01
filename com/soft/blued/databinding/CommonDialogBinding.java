@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class CommonDialogBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28684a;
+    private final LinearLayout f14994a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28684a;
+        return this.f14994a;
     }
 }

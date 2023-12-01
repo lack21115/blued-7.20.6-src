@@ -7,7 +7,6 @@ import com.alibaba.mtl.appmonitor.a.h;
 import com.alibaba.mtl.appmonitor.model.UTDimensionValueSet;
 import com.alibaba.mtl.log.e.i;
 import com.alibaba.mtl.log.model.LogField;
-import com.bytedance.sdk.openadsdk.downloadnew.core.TTDownloadField;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,20 +25,20 @@ public class c {
     public static void a(UTDimensionValueSet uTDimensionValueSet, d dVar) {
         Integer eventId = uTDimensionValueSet.getEventId();
         if (eventId != null) {
-            f a2 = f.a(eventId.intValue());
+            f a = f.a(eventId.intValue());
             h hVar = (h) com.alibaba.mtl.appmonitor.c.a.a().a(h.class, new Object[0]);
             hVar.e = 6699;
             if (uTDimensionValueSet.getMap() != null) {
                 hVar.k.putAll(uTDimensionValueSet.getMap());
             }
             HashMap hashMap = new HashMap();
-            hashMap.put(TTDownloadField.TT_META, SdkMeta.getSDKMetaData());
+            hashMap.put("meta", SdkMeta.getSDKMetaData());
             hashMap.put("_event_id", eventId);
             com.alibaba.mtl.appmonitor.c.d dVar2 = (com.alibaba.mtl.appmonitor.c.d) com.alibaba.mtl.appmonitor.c.a.a().a(com.alibaba.mtl.appmonitor.c.d.class, new Object[0]);
             dVar2.put(dVar.a());
             com.alibaba.mtl.appmonitor.c.a.a().a((com.alibaba.mtl.appmonitor.c.a) dVar);
             hashMap.put("data", dVar2);
-            hVar.k.put(a2.m2140a(), new JSONObject(hashMap).toString());
+            hVar.k.put(a.m8583a(), new JSONObject(hashMap).toString());
             hVar.k.put(LogField.EVENTID.toString(), String.valueOf(6699));
             b(hVar);
             com.alibaba.mtl.appmonitor.c.a.a().a((com.alibaba.mtl.appmonitor.c.a) dVar2);
@@ -60,7 +59,7 @@ public class c {
             UTDimensionValueSet key = entry.getKey();
             List<d> value = entry.getValue();
             if (value.size() != 0 && (eventId = key.getEventId()) != null) {
-                f a2 = f.a(eventId.intValue());
+                f a = f.a(eventId.intValue());
                 int i = 0;
                 h hVar = (h) com.alibaba.mtl.appmonitor.c.a.a().a(h.class, new Object[0]);
                 hVar.e = eventId.intValue();
@@ -68,7 +67,7 @@ public class c {
                     hVar.k.putAll(key.getMap());
                 }
                 HashMap hashMap = new HashMap();
-                hashMap.put(TTDownloadField.TT_META, SdkMeta.getSDKMetaData());
+                hashMap.put("meta", SdkMeta.getSDKMetaData());
                 com.alibaba.mtl.appmonitor.c.d dVar = (com.alibaba.mtl.appmonitor.c.d) com.alibaba.mtl.appmonitor.c.a.a().a(com.alibaba.mtl.appmonitor.c.d.class, new Object[0]);
                 for (d dVar2 : value) {
                     dVar.put(dVar2.a());
@@ -85,7 +84,7 @@ public class c {
                     com.alibaba.mtl.appmonitor.c.a.a().a((com.alibaba.mtl.appmonitor.c.a) dVar2);
                 }
                 hashMap.put("data", dVar);
-                hVar.k.put(a2.m2140a(), new JSONObject(hashMap).toString());
+                hVar.k.put(a.m8583a(), new JSONObject(hashMap).toString());
                 String sb3 = sb.toString();
                 String sb4 = sb2.toString();
                 hVar.k.put(LogField.ARG1.toString(), sb3);

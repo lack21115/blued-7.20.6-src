@@ -6,27 +6,27 @@ import android.content.Context;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile String f24602a = "";
+    private static volatile String f10915a = "";
 
     public static String a(Context context) {
         String str;
-        if (!a(f24602a)) {
+        if (!a(f10915a)) {
             if (context != null) {
-                f24602a = f.a(context);
+                f10915a = f.a(context);
             }
-            if (!a(f24602a)) {
-                f24602a = com.opos.cmn.an.b.c.d();
-                com.opos.cmn.an.f.a.b("BrandTool", "get brand by os:" + f24602a);
-                if (!a(f24602a)) {
-                    f24602a = a.f24601c;
+            if (!a(f10915a)) {
+                f10915a = com.opos.cmn.an.b.c.d();
+                com.opos.cmn.an.f.a.b("BrandTool", "get brand by os:" + f10915a);
+                if (!a(f10915a)) {
+                    f10915a = a.f10914c;
                     str = "set default brand";
                 }
             }
-            return f24602a;
+            return f10915a;
         }
-        str = "get Brand result= " + f24602a;
+        str = "get Brand result= " + f10915a;
         com.opos.cmn.an.f.a.b("BrandTool", str);
-        return f24602a;
+        return f10915a;
     }
 
     public static void a(Context context, String str) {
@@ -37,14 +37,14 @@ public final class b {
                 } else {
                     try {
                         String upperCase = str.toUpperCase();
-                        if (a(upperCase) && !upperCase.contentEquals(f24602a)) {
-                            f24602a = upperCase;
+                        if (a(upperCase) && !upperCase.contentEquals(f10915a)) {
+                            f10915a = upperCase;
                             if (context != null) {
                                 final Context applicationContext = context.getApplicationContext();
                                 new Thread(new Runnable() { // from class: com.opos.cmn.biz.a.b.1
                                     @Override // java.lang.Runnable
                                     public void run() {
-                                        f.a(Context.this, b.f24602a);
+                                        f.a(Context.this, b.f10915a);
                                     }
                                 }).start();
                             }
@@ -77,13 +77,13 @@ public final class b {
             if (r0 != 0) goto L30
             r0 = r5
             r4 = r0
-            java.lang.String r0 = com.opos.cmn.biz.a.a.f24601c
+            java.lang.String r0 = com.opos.cmn.biz.a.a.f10914c
             r1 = r3
             boolean r0 = r0.equalsIgnoreCase(r1)
             if (r0 != 0) goto L35
             r0 = r5
             r4 = r0
-            java.lang.String r0 = com.opos.cmn.biz.a.a.f24600a
+            java.lang.String r0 = com.opos.cmn.biz.a.a.f10913a
             r1 = r3
             boolean r0 = r0.equalsIgnoreCase(r1)
             if (r0 != 0) goto L35

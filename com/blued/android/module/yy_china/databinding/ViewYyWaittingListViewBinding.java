@@ -12,21 +12,17 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYyWaittingListViewBinding.class */
 public final class ViewYyWaittingListViewBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RecyclerView f16972a;
+    public final RecyclerView a;
     public final SmartRefreshLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16973c;
+    public final TextView c;
     public final TextView d;
     private final LinearLayout e;
 
     private ViewYyWaittingListViewBinding(LinearLayout linearLayout, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, TextView textView, TextView textView2) {
         this.e = linearLayout;
-        this.f16972a = recyclerView;
+        this.a = recyclerView;
         this.b = smartRefreshLayout;
-        this.f16973c = textView;
+        this.c = textView;
         this.d = textView2;
     }
 
@@ -40,15 +36,15 @@ public final class ViewYyWaittingListViewBinding implements ViewBinding {
 
     public static ViewYyWaittingListViewBinding a(View view) {
         String str;
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
-        if (recyclerView != null) {
-            SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_view);
-            if (smartRefreshLayout != null) {
+        RecyclerView findViewById = view.findViewById(R.id.recycler_view);
+        if (findViewById != null) {
+            SmartRefreshLayout findViewById2 = view.findViewById(R.id.refresh_view);
+            if (findViewById2 != null) {
                 TextView textView = (TextView) view.findViewById(R.id.tv_gift_info);
                 if (textView != null) {
                     TextView textView2 = (TextView) view.findViewById(R.id.tv_title);
                     if (textView2 != null) {
-                        return new ViewYyWaittingListViewBinding((LinearLayout) view, recyclerView, smartRefreshLayout, textView, textView2);
+                        return new ViewYyWaittingListViewBinding((LinearLayout) view, findViewById, findViewById2, textView, textView2);
                     }
                     str = "tvTitle";
                 } else {
@@ -63,7 +59,6 @@ public final class ViewYyWaittingListViewBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.e;

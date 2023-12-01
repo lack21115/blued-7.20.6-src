@@ -9,7 +9,6 @@ import android.content.res.ColorStateList;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.text.TextUtils;
-import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -83,14 +82,14 @@ public final class IndicatorViewController {
     }
 
     private ObjectAnimator createCaptionOpacityAnimator(TextView textView, boolean z) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) View.ALPHA, z ? 1.0f : 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, View.ALPHA, z ? 1.0f : 0.0f);
         ofFloat.setDuration(167L);
         ofFloat.setInterpolator(AnimationUtils.LINEAR_INTERPOLATOR);
         return ofFloat;
     }
 
     private ObjectAnimator createCaptionTranslationYAnimator(TextView textView) {
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) View.TRANSLATION_Y, -this.captionTranslationYPx, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textView, View.TRANSLATION_Y, -this.captionTranslationYPx, 0.0f);
         ofFloat.setDuration(217L);
         ofFloat.setInterpolator(AnimationUtils.LINEAR_OUT_SLOW_IN_INTERPOLATOR);
         return ofFloat;

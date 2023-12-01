@@ -1,8 +1,7 @@
 package com.google.common.base;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8110460-dex2jar.jar:com/google/common/base/CommonMatcher.class */
-public abstract class CommonMatcher {
+abstract class CommonMatcher {
     public abstract int end();
 
     public abstract boolean find();

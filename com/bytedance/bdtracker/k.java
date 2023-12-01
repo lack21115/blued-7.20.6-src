@@ -1,5 +1,6 @@
 package com.bytedance.bdtracker;
 
+import com.anythink.pd.ExHandler;
 import com.tencent.tendinsv.a.b;
 import com.umeng.analytics.pro.bh;
 import org.json.JSONObject;
@@ -9,7 +10,7 @@ public final class k extends l {
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21241c;
+    public String f7635c;
     public String d;
     public String e;
     public String f;
@@ -31,13 +32,13 @@ public final class k extends l {
     public JSONObject a() {
         JSONObject jSONObject = new JSONObject();
         jSONObject.put("aid", this.b);
-        jSONObject.put("device_id", this.f21241c);
+        jSONObject.put("device_id", this.f7635c);
         jSONObject.put("bd_did", this.d);
         jSONObject.put("install_id", this.e);
         jSONObject.put(bh.x, this.f);
         jSONObject.put("caid", this.g);
         jSONObject.put("androidid", this.l);
-        jSONObject.put("imei", this.m);
+        jSONObject.put(ExHandler.JSON_REQUEST_IMEI, this.m);
         jSONObject.put("oaid", this.n);
         jSONObject.put("google_aid", this.o);
         jSONObject.put(b.a.q, this.p);

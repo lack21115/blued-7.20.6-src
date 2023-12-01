@@ -6,8 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Process;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.thumbplayer.core.utils.TPThreadPool;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
@@ -237,7 +237,7 @@ public class LocalCache {
             int i3 = i2 - i;
             if (i3 >= 0) {
                 byte[] bArr2 = new byte[i3];
-                System.arraycopy((Object) bArr, i, (Object) bArr2, 0, Math.min(bArr.length - i, i3));
+                System.arraycopy(bArr, i, bArr2, 0, Math.min(bArr.length - i, i3));
                 return bArr2;
             }
             throw new IllegalArgumentException(i + " > " + i2);
@@ -250,7 +250,7 @@ public class LocalCache {
             while (true) {
                 String str = sb2;
                 if (str.length() >= 13) {
-                    return str + "-" + i + ' ';
+                    return str + Constants.ACCEPT_TIME_SEPARATOR_SERVER + i + ' ';
                 }
                 sb2 = "0".concat(String.valueOf(str));
             }
@@ -326,8 +326,8 @@ public class LocalCache {
         public static byte[] newByteArrayWithDateInfo(int i, byte[] bArr) {
             byte[] bytes = createDateInfo(i).getBytes();
             byte[] bArr2 = new byte[bytes.length + bArr.length];
-            System.arraycopy((Object) bytes, 0, (Object) bArr2, 0, bytes.length);
-            System.arraycopy((Object) bArr, 0, (Object) bArr2, bytes.length, bArr.length);
+            System.arraycopy(bytes, 0, bArr2, 0, bytes.length);
+            System.arraycopy(bArr, 0, bArr2, bytes.length, bArr.length);
             return bArr2;
         }
 
@@ -384,7 +384,7 @@ public class LocalCache {
     }
 
     private static String myPid() {
-        return BridgeUtil.UNDERLINE_STR + Process.myPid();
+        return "_" + Process.myPid();
     }
 
     public void clear() {
@@ -410,7 +410,7 @@ public class LocalCache {
     public byte[] getAsBinary(String str) {
         RandomAccessFile randomAccessFile;
         ACacheManager aCacheManager = this.mCache;
-        AutoCloseable autoCloseable = null;
+        RandomAccessFile randomAccessFile2 = null;
         try {
             if (aCacheManager == null) {
                 return null;
@@ -418,12 +418,12 @@ public class LocalCache {
             try {
                 File file = aCacheManager.get(str);
                 if (file.exists()) {
-                    RandomAccessFile randomAccessFile2 = new RandomAccessFile(file, "r");
+                    RandomAccessFile randomAccessFile3 = new RandomAccessFile(file, "r");
                     try {
-                        byte[] bArr = new byte[(int) randomAccessFile2.length()];
-                        if (randomAccessFile2.read(bArr) <= 0) {
+                        byte[] bArr = new byte[(int) randomAccessFile3.length()];
+                        if (randomAccessFile3.read(bArr) <= 0) {
                             try {
-                                randomAccessFile2.close();
+                                randomAccessFile3.close();
                                 return null;
                             } catch (IOException e) {
                                 e.printStackTrace();
@@ -431,7 +431,7 @@ public class LocalCache {
                             }
                         } else if (Utils.isDue(bArr)) {
                             try {
-                                randomAccessFile2.close();
+                                randomAccessFile3.close();
                             } catch (IOException e2) {
                                 e2.printStackTrace();
                             }
@@ -440,7 +440,7 @@ public class LocalCache {
                         } else {
                             byte[] clearDateInfo = Utils.clearDateInfo(bArr);
                             try {
-                                randomAccessFile2.close();
+                                randomAccessFile3.close();
                                 return clearDateInfo;
                             } catch (IOException e3) {
                                 e3.printStackTrace();
@@ -448,7 +448,7 @@ public class LocalCache {
                             }
                         }
                     } catch (Exception e4) {
-                        randomAccessFile = randomAccessFile2;
+                        randomAccessFile = randomAccessFile3;
                         e = e4;
                         e.printStackTrace();
                         if (randomAccessFile != null) {
@@ -471,7 +471,7 @@ public class LocalCache {
                 th = th;
                 if (0 != 0) {
                     try {
-                        autoCloseable.close();
+                        randomAccessFile2.close();
                     } catch (IOException e7) {
                         e7.printStackTrace();
                     }
@@ -520,24 +520,24 @@ public class LocalCache {
         ByteArrayInputStream byteArrayInputStream;
         ByteArrayInputStream byteArrayInputStream2;
         Throwable th;
-        AutoCloseable autoCloseable;
         ObjectInputStream objectInputStream;
-        ByteArrayInputStream byteArrayInputStream3;
         ObjectInputStream objectInputStream2;
+        ByteArrayInputStream byteArrayInputStream3;
+        ObjectInputStream objectInputStream3;
         byte[] asBinary = getAsBinary(str);
         try {
             if (asBinary != null) {
                 try {
                     byteArrayInputStream2 = new ByteArrayInputStream(asBinary);
                     try {
-                        objectInputStream2 = new ObjectInputStream(byteArrayInputStream2);
+                        objectInputStream3 = new ObjectInputStream(byteArrayInputStream2);
                     } catch (Exception e) {
                         e = e;
                         byteArrayInputStream3 = byteArrayInputStream2;
-                        objectInputStream = null;
+                        objectInputStream2 = null;
                     } catch (Throwable th2) {
                         th = th2;
-                        autoCloseable = null;
+                        objectInputStream = null;
                         if (byteArrayInputStream2 != null) {
                             try {
                                 byteArrayInputStream2.close();
@@ -545,9 +545,9 @@ public class LocalCache {
                                 e2.printStackTrace();
                             }
                         }
-                        if (autoCloseable != null) {
+                        if (objectInputStream != null) {
                             try {
-                                autoCloseable.close();
+                                objectInputStream.close();
                             } catch (IOException e3) {
                                 e3.printStackTrace();
                             }
@@ -556,22 +556,22 @@ public class LocalCache {
                     }
                 } catch (Exception e4) {
                     e = e4;
-                    objectInputStream = null;
+                    objectInputStream2 = null;
                     byteArrayInputStream3 = null;
                 } catch (Throwable th3) {
                     th = th3;
                     byteArrayInputStream2 = null;
-                    autoCloseable = null;
+                    objectInputStream = null;
                 }
                 try {
-                    Object readObject = objectInputStream2.readObject();
+                    Object readObject = objectInputStream3.readObject();
                     try {
                         byteArrayInputStream2.close();
                     } catch (IOException e5) {
                         e5.printStackTrace();
                     }
                     try {
-                        objectInputStream2.close();
+                        objectInputStream3.close();
                         return readObject;
                     } catch (IOException e6) {
                         e6.printStackTrace();
@@ -580,7 +580,7 @@ public class LocalCache {
                 } catch (Exception e7) {
                     e = e7;
                     byteArrayInputStream3 = byteArrayInputStream2;
-                    objectInputStream = objectInputStream2;
+                    objectInputStream2 = objectInputStream3;
                     e.printStackTrace();
                     if (byteArrayInputStream3 != null) {
                         try {
@@ -589,9 +589,9 @@ public class LocalCache {
                             e8.printStackTrace();
                         }
                     }
-                    if (objectInputStream != null) {
+                    if (objectInputStream2 != null) {
                         try {
-                            objectInputStream.close();
+                            objectInputStream2.close();
                             return null;
                         } catch (IOException e9) {
                             e9.printStackTrace();

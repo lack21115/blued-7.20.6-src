@@ -15,11 +15,11 @@ public abstract class oqKCa {
     public static final class ShGzN extends oqKCa {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f39971a;
+        public final String f26280a;
         public int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String[] f39972c;
+        public String[] f26281c;
         public String[] d;
 
         public ShGzN(String str, int i) {
@@ -29,7 +29,7 @@ public abstract class oqKCa {
             if (str.isEmpty()) {
                 throw new IllegalArgumentException("keystoreAlias must not be empty");
             }
-            this.f39971a = str;
+            this.f26280a = str;
             this.b = i;
         }
 
@@ -39,16 +39,16 @@ public abstract class oqKCa {
             if (strArr.length > 0) {
                 strArr2 = (String[]) strArr.clone();
             }
-            this.f39972c = strArr2;
+            this.f26281c = strArr2;
             return this;
         }
 
         @Override // com.tencent.turingface.sdk.mfa.oqKCa
         public final AlgorithmParameterSpec a() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
             Class<?> cls = Class.forName("android.security.keystore.KeyGenParameterSpec");
-            Class<Integer> cls2 = Integer.TYPE;
-            Class<Boolean> cls3 = Boolean.TYPE;
-            return (AlgorithmParameterSpec) cls.getConstructor(String.class, cls2, AlgorithmParameterSpec.class, X500Principal.class, BigInteger.class, Date.class, Date.class, Date.class, Date.class, Date.class, cls2, String[].class, String[].class, String[].class, String[].class, cls3, cls3, cls2).newInstance(this.f39971a, -1, null, null, null, null, null, null, null, null, Integer.valueOf(this.b), this.f39972c, null, this.d, null, Boolean.TRUE, Boolean.FALSE, -1);
+            Class<?> cls2 = Integer.TYPE;
+            Class<?> cls3 = Boolean.TYPE;
+            return (AlgorithmParameterSpec) cls.getConstructor(String.class, cls2, AlgorithmParameterSpec.class, X500Principal.class, BigInteger.class, Date.class, Date.class, Date.class, Date.class, Date.class, cls2, String[].class, String[].class, String[].class, String[].class, cls3, cls3, cls2).newInstance(this.f26280a, -1, null, null, null, null, null, null, null, null, Integer.valueOf(this.b), this.f26281c, null, this.d, null, Boolean.TRUE, Boolean.FALSE, -1);
         }
 
         @Override // com.tencent.turingface.sdk.mfa.oqKCa
@@ -66,27 +66,27 @@ public abstract class oqKCa {
     public static final class spXPg extends oqKCa {
 
         /* renamed from: a  reason: collision with root package name */
-        public KeyGenParameterSpec.Builder f39973a;
+        public KeyGenParameterSpec.Builder f26282a;
 
         public spXPg(String str, int i) {
-            this.f39973a = null;
-            this.f39973a = new KeyGenParameterSpec.Builder(str, i);
+            this.f26282a = null;
+            this.f26282a = new KeyGenParameterSpec.Builder(str, i);
         }
 
         @Override // com.tencent.turingface.sdk.mfa.oqKCa
         public final oqKCa a(String... strArr) {
-            this.f39973a.setDigests(strArr);
+            this.f26282a.setDigests(strArr);
             return this;
         }
 
         @Override // com.tencent.turingface.sdk.mfa.oqKCa
         public final AlgorithmParameterSpec a() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-            return this.f39973a.build();
+            return this.f26282a.build();
         }
 
         @Override // com.tencent.turingface.sdk.mfa.oqKCa
         public final oqKCa b(String... strArr) {
-            this.f39973a.setSignaturePaddings(strArr);
+            this.f26282a.setSignaturePaddings(strArr);
             return this;
         }
     }

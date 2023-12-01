@@ -8,11 +8,11 @@ import com.umeng.commonsdk.service.UMGlobalContext;
 public class af implements aa {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f40616a;
+    private int f26925a;
 
     public af(int i) {
-        this.f40616a = 0;
-        this.f40616a = i;
+        this.f26925a = 0;
+        this.f26925a = i;
     }
 
     @Override // com.umeng.analytics.pro.aa
@@ -22,16 +22,16 @@ public class af implements aa {
             SharedPreferences a2 = aq.a(UMGlobalContext.getAppContext());
             j = 0;
             if (a2 != null) {
-                long j2 = a2.getLong(aq.f40628a, 0L);
+                long j2 = a2.getLong(aq.f26937a, 0L);
                 j = j2;
                 j = j2;
-                if (j2 >= this.f40616a) {
+                if (j2 >= this.f26925a) {
                     return true;
                 }
             }
         } catch (Throwable th) {
         }
-        UMRTLog.i(UMRTLog.RTLOG_TAG, "launch times skipped. times: " + j + " ; config: " + this.f40616a);
+        UMRTLog.i(UMRTLog.RTLOG_TAG, "launch times skipped. times: " + j + " ; config: " + this.f26925a);
         return false;
     }
 

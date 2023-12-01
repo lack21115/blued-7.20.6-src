@@ -24,7 +24,7 @@ public final class EventSubscribeFragment extends BaseListFragment<EventSubscrib
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(NoDataAndLoadFailView this_apply, View view) {
         Intrinsics.e(this_apply, "$this_apply");
-        EventListFragment.Companion companion = EventListFragment.f19546a;
+        EventListFragment.Companion companion = EventListFragment.a;
         Context context = this_apply.getContext();
         Intrinsics.c(context, "context");
         companion.a(context);
@@ -61,13 +61,13 @@ public final class EventSubscribeFragment extends BaseListFragment<EventSubscrib
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
-        final NoDataAndLoadFailView c2 = c();
-        if (c2 != null) {
-            c2.setNoDataImg(R.drawable.icon_no_data_common);
-            c2.setNoDataStr(R.string.event_sub_list_no_data_tips);
-            c2.setNoDataBtnStr(R.string.event_sub_list_no_data_btn);
-            c2.setNoDataBtnVisibility(0);
-            c2.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventSubscribeFragment$IoE1gGuoaFyoegsrK2daYj2NMFo
+        final NoDataAndLoadFailView c = c();
+        if (c != null) {
+            c.setNoDataImg(R.drawable.icon_no_data_common);
+            c.setNoDataStr(R.string.event_sub_list_no_data_tips);
+            c.setNoDataBtnStr(R.string.event_sub_list_no_data_btn);
+            c.setNoDataBtnVisibility(0);
+            c.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventSubscribeFragment$IoE1gGuoaFyoegsrK2daYj2NMFo
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     EventSubscribeFragment.a(NoDataAndLoadFailView.this, view);
@@ -75,18 +75,17 @@ public final class EventSubscribeFragment extends BaseListFragment<EventSubscrib
             });
         }
         LiveEventBus.get("EVENT_BUS_ACTIVITY_CANCEL_SUBSCRIBE", String.class).observeForever(new Observer() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventSubscribeFragment$BANn9RObhRsPyMFJok0pWlpr3Gc
-            @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 EventSubscribeFragment.a(EventSubscribeFragment.this, (String) obj);
             }
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         if (f().getData().size() == 0) {
-            ((EventSubscribeViewModel) y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+            ((EventSubscribeViewModel) y()).dispatchAction(BaseListAction.RefreshData.a);
         }
     }
 }

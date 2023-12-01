@@ -15,20 +15,20 @@ import com.youzan.androidsdk.tool.WebParameter;
 public class YouzanX5Compat extends WebViewCompat {
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private WebView f1169;
+    private WebView f1122;
 
     public YouzanX5Compat(WebView webView) {
-        this.f1169 = webView;
+        this.f1122 = webView;
     }
 
     @Override // com.youzan.androidsdk.WebViewCompat
     public Context getContext() {
-        return this.f1169.getContext();
+        return this.f1122.getContext();
     }
 
     @Override // com.youzan.androidsdk.WebViewCompat
     public String getPreviousUrl() {
-        WebView webView = this.f1169;
+        WebView webView = this.f1122;
         String str = null;
         if (webView != null) {
             WebBackForwardList copyBackForwardList = webView.copyBackForwardList();
@@ -48,14 +48,14 @@ public class YouzanX5Compat extends WebViewCompat {
 
     @Override // com.youzan.androidsdk.WebViewCompat
     public void initWebViewParameter() {
-        WebView webView = this.f1169;
+        WebView webView = this.f1122;
         if (webView == null) {
             return;
         }
         webView.setOverScrollMode(2);
         try {
-            Context context = this.f1169.getContext();
-            WebSettings settings = this.f1169.getSettings();
+            Context context = this.f1122.getContext();
+            WebSettings settings = this.f1122.getSettings();
             settings.setJavaScriptEnabled(true);
             settings.setCacheMode(-1);
             settings.setTextZoom(100);
@@ -79,12 +79,12 @@ public class YouzanX5Compat extends WebViewCompat {
 
     @Override // com.youzan.androidsdk.WebViewCompat
     public void loadUrl(String str) {
-        this.f1169.loadUrl(str);
+        this.f1122.loadUrl(str);
     }
 
     @Override // com.youzan.androidsdk.WebViewCompat
     public void removeJavascriptInterface(String str) {
-        this.f1169.removeJavascriptInterface(str);
+        this.f1122.removeJavascriptInterface(str);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x004c, code lost:
@@ -99,7 +99,7 @@ public class YouzanX5Compat extends WebViewCompat {
         /*
             r3 = this;
             r0 = r3
-            com.tencent.smtt.sdk.WebView r0 = r0.f1169
+            com.tencent.smtt.sdk.WebView r0 = r0.f1122
             r7 = r0
             r0 = 0
             r6 = r0
@@ -164,7 +164,7 @@ public class YouzanX5Compat extends WebViewCompat {
         if (str2 == null) {
             str3 = "";
         }
-        WebSettings settings = this.f1169.getSettings();
+        WebSettings settings = this.f1122.getSettings();
         settings.setUserAgentString(settings.getUserAgentString() + " " + str + " " + str3);
     }
 }

@@ -19,11 +19,11 @@ import com.qiniu.pili.droid.streaming.screen.ScreenCaptureRequestActivity;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static a f1439a;
+    public static a f1391a;
     public boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public boolean f1440c;
+    public boolean f1392c;
     public VirtualDisplay d;
     public MediaProjection e;
     public c f;
@@ -69,7 +69,7 @@ public final class a {
             if (a.this.f != null) {
                 a.this.f.b(a.this.b);
             }
-            a.this.f1440c = false;
+            a.this.f1392c = false;
         }
     }
 
@@ -82,10 +82,10 @@ public final class a {
 
     public static a a() {
         e.g.c("ScreenCapturer", "get screenCapturer instance");
-        if (f1439a == null) {
-            f1439a = new a();
+        if (f1391a == null) {
+            f1391a = new a();
         }
-        return f1439a;
+        return f1391a;
     }
 
     public void a(c cVar) {
@@ -98,15 +98,15 @@ public final class a {
     }
 
     public void a(Context context, c cVar) {
-        if (this.f1440c || this.b) {
+        if (this.f1392c || this.b) {
             if (this.b && cVar != null) {
-                e.f1361c.d("ScreenCapturer", "already inited");
+                e.f1313c.d("ScreenCapturer", "already inited");
                 cVar.b(true);
             }
-            e.f1361c.d("ScreenCapturer", "initing or inited");
+            e.f1313c.d("ScreenCapturer", "initing or inited");
             return;
         }
-        this.f1440c = true;
+        this.f1392c = true;
         this.f = cVar;
         LocalBroadcastManager.getInstance(context).registerReceiver(this.p, new IntentFilter(ScreenCaptureRequestActivity.ACTION_REQUEST_SCREEN_CAPTURE_RESULT));
         ScreenCaptureSessionListener screenCaptureSessionListener = this.g;
@@ -115,7 +115,7 @@ public final class a {
             intent.setFlags(268435456);
             context.startActivity(intent);
         }
-        e.f1361c.c("ScreenCapturer", "init to request permission for screen capturer");
+        e.f1313c.c("ScreenCapturer", "init to request permission for screen capturer");
     }
 
     public void a(ScreenCaptureSessionListener screenCaptureSessionListener) {
@@ -125,10 +125,10 @@ public final class a {
     public boolean a(Context context, int i, int i2, int i3, Surface surface) {
         if (this.d != null && this.e != null) {
             if (this.j == i && this.k == i2 && this.l == i3 && this.m == surface) {
-                e.f1361c.d("ScreenCapturer", "Capturing is ongoing!!!");
+                e.f1313c.d("ScreenCapturer", "Capturing is ongoing!!!");
                 return false;
             }
-            e.f1361c.d("ScreenCapturer", "Stopping the previous capturing...");
+            e.f1313c.d("ScreenCapturer", "Stopping the previous capturing...");
             b();
         }
         this.j = i;
@@ -143,7 +143,7 @@ public final class a {
         }
         this.d = mediaProjection.createVirtualDisplay("ScreenCapturer-display", i, i2, i3, 16, surface, (VirtualDisplay.Callback) null, (Handler) null);
         this.n.post(this.o);
-        e eVar = e.f1361c;
+        e eVar = e.f1313c;
         eVar.c("ScreenCapturer", "Capturing for width:" + i + " height:" + i2 + " dpi:" + i3);
         return true;
     }

@@ -48,7 +48,7 @@ public final class Pipe {
                         pipe.getBuffer$okio().notifyAll();
                         sink = null;
                     }
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     if (sink == null) {
                         return;
                     }
@@ -63,7 +63,7 @@ public final class Pipe {
                         }
                         try {
                             sink.close();
-                            Unit unit2 = Unit.f42314a;
+                            Unit unit2 = Unit.a;
                             if (hasDeadline) {
                                 return;
                             }
@@ -81,7 +81,7 @@ public final class Pipe {
                     }
                     try {
                         sink.close();
-                        Unit unit3 = Unit.f42314a;
+                        Unit unit3 = Unit.a;
                     } finally {
                         timeout.timeout(timeoutNanos, TimeUnit.NANOSECONDS);
                         if (timeout2.hasDeadline()) {
@@ -112,7 +112,7 @@ public final class Pipe {
                         }
                         sink = null;
                     }
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                 }
                 if (sink == null) {
                     return;
@@ -128,7 +128,7 @@ public final class Pipe {
                     }
                     try {
                         sink.flush();
-                        Unit unit2 = Unit.f42314a;
+                        Unit unit2 = Unit.a;
                         if (hasDeadline) {
                             return;
                         }
@@ -146,7 +146,7 @@ public final class Pipe {
                 }
                 try {
                     sink.flush();
-                    Unit unit3 = Unit.f42314a;
+                    Unit unit3 = Unit.a;
                 } finally {
                     timeout.timeout(timeoutNanos, TimeUnit.NANOSECONDS);
                     if (timeout2.hasDeadline()) {
@@ -200,7 +200,7 @@ public final class Pipe {
                             }
                         }
                     }
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                 }
                 if (sink == null) {
                     return;
@@ -216,7 +216,7 @@ public final class Pipe {
                     }
                     try {
                         sink.write(source, j2);
-                        Unit unit2 = Unit.f42314a;
+                        Unit unit2 = Unit.a;
                         if (hasDeadline) {
                             return;
                         }
@@ -234,7 +234,7 @@ public final class Pipe {
                 }
                 try {
                     sink.write(source, j2);
-                    Unit unit3 = Unit.f42314a;
+                    Unit unit3 = Unit.a;
                 } finally {
                     timeout.timeout(timeoutNanos, TimeUnit.NANOSECONDS);
                     if (timeout2.hasDeadline()) {
@@ -253,7 +253,7 @@ public final class Pipe {
                 synchronized (buffer$okio) {
                     pipe.setSourceClosed$okio(true);
                     pipe.getBuffer$okio().notifyAll();
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                 }
             }
 
@@ -302,7 +302,7 @@ public final class Pipe {
             }
             try {
                 function1.invoke(sink);
-                Unit unit = Unit.f42314a;
+                Unit unit = Unit.a;
                 InlineMarker.b(1);
                 timeout.timeout(timeoutNanos, TimeUnit.NANOSECONDS);
                 if (timeout2.hasDeadline()) {
@@ -326,7 +326,7 @@ public final class Pipe {
         }
         try {
             function1.invoke(sink);
-            Unit unit2 = Unit.f42314a;
+            Unit unit2 = Unit.a;
             InlineMarker.b(1);
             timeout.timeout(timeoutNanos, TimeUnit.NANOSECONDS);
             if (timeout2.hasDeadline()) {
@@ -346,13 +346,13 @@ public final class Pipe {
 
     @Deprecated
     /* renamed from: -deprecated_sink  reason: not valid java name */
-    public final Sink m13302deprecated_sink() {
+    public final Sink m12211deprecated_sink() {
         return this.sink;
     }
 
     @Deprecated
     /* renamed from: -deprecated_source  reason: not valid java name */
-    public final Source m13303deprecated_source() {
+    public final Source m12212deprecated_source() {
         return this.source;
     }
 
@@ -361,7 +361,7 @@ public final class Pipe {
             setCanceled$okio(true);
             getBuffer$okio().clear();
             getBuffer$okio().notifyAll();
-            Unit unit = Unit.f42314a;
+            Unit unit = Unit.a;
         }
     }
 
@@ -386,7 +386,7 @@ public final class Pipe {
                     buffer = new Buffer();
                     buffer.write(getBuffer$okio(), getBuffer$okio().size());
                     getBuffer$okio().notifyAll();
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                 }
             }
             try {
@@ -400,7 +400,7 @@ public final class Pipe {
                 synchronized (this.buffer) {
                     setSourceClosed$okio(true);
                     getBuffer$okio().notifyAll();
-                    Unit unit2 = Unit.f42314a;
+                    Unit unit2 = Unit.a;
                     throw th;
                 }
             }

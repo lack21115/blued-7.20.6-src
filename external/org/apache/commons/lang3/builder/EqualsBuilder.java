@@ -146,9 +146,9 @@ public class EqualsBuilder implements Builder<Boolean> {
         return this;
     }
 
-    public EqualsBuilder append(char c2, char c3) {
+    public EqualsBuilder append(char c, char c2) {
         if (this.isEquals) {
-            this.isEquals = c2 == c3;
+            this.isEquals = c == c2;
             return this;
         }
         return this;

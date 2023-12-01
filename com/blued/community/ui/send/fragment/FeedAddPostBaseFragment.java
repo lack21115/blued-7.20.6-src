@@ -27,14 +27,13 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.core.util.Pair;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import com.alipay.sdk.util.i;
 import com.app.share.model.ShareEntity;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageFileLoader;
@@ -173,9 +172,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     protected boolean ao;
     protected boolean ap;
     protected String aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    protected boolean f19991ar;
+    protected boolean ar;
     protected boolean as;
     protected boolean at;
     protected boolean au;
@@ -184,9 +181,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     protected String ax;
     protected EditDataModel.SerializableData ay;
     public SelectAlbumViewModel az;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected Context f19992c;
+    protected Context c;
     protected View j;
     protected KeyboardListenLinearLayout k;
     protected LinearLayout l;
@@ -307,18 +302,15 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             FeedAddPostBaseFragment.this.ac.b();
         }
 
-        @Override // com.chad.library.adapter.base.listener.OnItemDragListener
         public void a(RecyclerView.ViewHolder viewHolder, int i) {
             FeedAddPostBaseFragment.this.ah();
             FeedAddPostBaseFragment.this.d("onItemDragStart");
             ((BaseViewHolder) viewHolder).setGone(R.id.drag, true);
         }
 
-        @Override // com.chad.library.adapter.base.listener.OnItemDragListener
         public void a(RecyclerView.ViewHolder viewHolder, int i, RecyclerView.ViewHolder viewHolder2, int i2) {
         }
 
-        @Override // com.chad.library.adapter.base.listener.OnItemDragListener
         public void b(RecyclerView.ViewHolder viewHolder, int i) {
             ((BaseViewHolder) viewHolder).setGone(R.id.drag, false);
             FeedAddPostBaseFragment.this.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.community.ui.send.fragment.-$$Lambda$FeedAddPostBaseFragment$11$4_Jm0GUGtoHGhe6i6aRjGHWByA4
@@ -347,7 +339,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                 BluedIngSelfFeed bluedIngSelfFeed3 = this.ag.repost;
                 bluedIngSelfFeed3.feed_content = StringUtils.b(this.ag.repost.user_name, this.ag.repost.feed_uid) + "：" + this.ag.repost.feed_content;
             }
-            this.C.setText(StringUtils.a(AtUserHelper.a(StringUtils.a(this.ag.repost.feed_content, (int) this.C.getTextSize(), 0), BluedSkinUtils.a(this.f19992c, R.color.syc_m)), true, new boolean[0]));
+            this.C.setText(StringUtils.a(AtUserHelper.a(StringUtils.a(this.ag.repost.feed_content, (int) this.C.getTextSize(), 0), BluedSkinUtils.a(this.c, R.color.syc_m)), true, new boolean[0]));
             this.C.setVisibility(0);
             if (this.ag.repost.feed_extras != null) {
                 if (!TextUtils.isEmpty(this.ag.repost.feed_extras.title)) {
@@ -368,13 +360,13 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                 this.v.setText(bluedIngSelfFeed4.share_s_t_name);
                 ImageLoader.a(getFragmentActive(), bluedIngSelfFeed4.share_s_t_avatar).b(R.drawable.defaultpicture).a(this.u);
                 if (TextUtils.isEmpty(bluedIngSelfFeed4.share_s_t_des)) {
-                    this.w.setText(this.f19992c.getResources().getString(R.string.share_topic_to_you));
+                    this.w.setText(this.c.getResources().getString(R.string.share_topic_to_you));
                 } else {
                     this.w.setText(a(bluedIngSelfFeed4.share_s_t_des));
                 }
                 this.s.findViewById(R.id.view_share_corner).setVisibility(0);
             } else if (this.ag.is_share_posting == 1) {
-                this.f19991ar = true;
+                this.ar = true;
                 this.Y.setVisibility(0);
                 this.v.setText(bluedIngSelfFeed4.circle_title);
                 if (bluedIngSelfFeed4.is_video_posts == 1 && bluedIngSelfFeed4.feed_videos != null && bluedIngSelfFeed4.feed_videos.length > 0) {
@@ -386,7 +378,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                 }
                 this.w.setText(a(bluedIngSelfFeed4.feed_pure_content));
             } else if (bluedIngSelfFeed4.is_share_posting == 1) {
-                this.f19991ar = true;
+                this.ar = true;
                 this.Y.setVisibility(0);
                 this.v.setText(bluedIngSelfFeed4.share_circle_title);
                 ImageLoader.a(getFragmentActive(), bluedIngSelfFeed4.share_circle_posting_pic).b(R.drawable.circle_default_icon).d(R.drawable.circle_default_icon).a(this.u);
@@ -417,9 +409,9 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                 if (!TextUtils.isEmpty(bluedIngSelfFeed4.feed_content)) {
                     this.w.setText(a(bluedIngSelfFeed4.feed_content));
                 } else if ("1".equals(bluedIngSelfFeed4.is_videos)) {
-                    this.w.setText(this.f19992c.getResources().getString(R.string.repost_share_video));
+                    this.w.setText(this.c.getResources().getString(R.string.repost_share_video));
                 } else {
-                    this.w.setText(this.f19992c.getResources().getString(R.string.repost_share_pic));
+                    this.w.setText(this.c.getResources().getString(R.string.repost_share_pic));
                 }
             } else {
                 if (this.ag.is_share_activity == 1) {
@@ -513,10 +505,10 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     }
 
     private void D() {
-        this.o = (SelectionEditText) this.j.findViewById(R.id.edt_news_feed);
+        this.o = this.j.findViewById(R.id.edt_news_feed);
         this.p = this.j.findViewById(R.id.feed_add_post_text_num_layout);
-        this.q = (EditInputNumView) this.j.findViewById(R.id.inv_word_count);
-        this.af = new Emotion(this.f19992c);
+        this.q = this.j.findViewById(R.id.inv_word_count);
+        this.af = new Emotion(this.c);
         this.o.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.8
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -559,7 +551,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     private void F() {
         KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) this.j.findViewById(R.id.keyboardLinearLayout);
         this.k = keyboardListenLinearLayout;
-        keyboardListenLinearLayout.setBackgroundColor(BluedSkinUtils.a(this.f19992c, R.color.syc_b));
+        keyboardListenLinearLayout.setBackgroundColor(BluedSkinUtils.a(this.c, R.color.syc_b));
         super.a(this.X, this.k, this.o);
     }
 
@@ -567,7 +559,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         if (TextUtils.isEmpty(str)) {
             return null;
         }
-        return AtUserHelper.a(MarkDownLinkHelper.a(AppInfo.d(), StringUtils.a(new SpannableStringBuilder(str), DensityUtils.a(this.f19992c, 14.0f), 1), true, R.color.syc_m, false, (MarkDownLinkHelper.MDLinkOnClickListener) null), BluedSkinUtils.a(this.f19992c, R.color.syc_m));
+        return AtUserHelper.a(MarkDownLinkHelper.a(AppInfo.d(), StringUtils.a(new SpannableStringBuilder(str), DensityUtils.a(this.c, 14.0f), 1), true, R.color.syc_m, false, (MarkDownLinkHelper.MDLinkOnClickListener) null), BluedSkinUtils.a(this.c, R.color.syc_m));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -613,12 +605,11 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     }
 
     private void ai() {
-        this.ab = (RecyclerView) this.j.findViewById(R.id.rv_photo);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.f19992c, 3);
+        this.ab = this.j.findViewById(R.id.rv_photo);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this.c, 3);
         gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.10
-            @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i) {
-                return FeedAddPostBaseFragment.this.ac.getData().get(i).itemType == 1 ? 2 : 1;
+                return ((ChildImageInfo) FeedAddPostBaseFragment.this.ac.getData().get(i)).itemType == 1 ? 2 : 1;
             }
         });
         this.ab.setLayoutManager(gridLayoutManager);
@@ -633,14 +624,12 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         this.ac.a(itemTouchHelper);
         this.ac.a(anonymousClass11);
         this.ac.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.12
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 FeedAddPostBaseFragment.this.ah();
-                CommunityServiceManager.b().a(FeedAddPostBaseFragment.this.getActivity(), i, 0, (LoadOptions) null);
+                CommunityServiceManager.b().a((Context) FeedAddPostBaseFragment.this.getActivity(), i, 0, (LoadOptions) null);
             }
         });
         this.ac.setOnItemChildClickListener(new SingleItemChildClickProxy(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.13
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 int id = view.getId();
                 if (id != R.id.iv_image_delete) {
@@ -652,12 +641,12 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                     FeedAddPostBaseFragment.this.al();
                     return;
                 }
-                SelectPhotoManager.a().b(FeedAddPostBaseFragment.this.ac.getData().get(i));
-                AlbumSelectInfo value = FeedAddPostBaseFragment.this.az.f().getValue();
-                if (value != null) {
-                    value.a(FeedAddPostBaseFragment.this.ac.getData().get(i).mImagePath);
+                SelectPhotoManager.a().b((ChildImageInfo) FeedAddPostBaseFragment.this.ac.getData().get(i));
+                AlbumSelectInfo albumSelectInfo = (AlbumSelectInfo) FeedAddPostBaseFragment.this.az.f().getValue();
+                if (albumSelectInfo != null) {
+                    albumSelectInfo.a(((ChildImageInfo) FeedAddPostBaseFragment.this.ac.getData().get(i)).mImagePath);
                 }
-                FeedAddPostBaseFragment.this.az.h().setValue(FeedAddPostBaseFragment.this.ac.getData().get(i).mImagePath);
+                FeedAddPostBaseFragment.this.az.h().setValue(((ChildImageInfo) FeedAddPostBaseFragment.this.ac.getData().get(i)).mImagePath);
                 FeedAddPostBaseFragment.this.ac.a();
                 FeedAddPostBaseFragment.this.aa_();
                 FeedAddPostBaseFragment.this.S();
@@ -669,13 +658,13 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
 
     /* JADX INFO: Access modifiers changed from: private */
     public void aj() {
-        if (TextUtils.isEmpty(this.aS.f().getValue())) {
+        if (TextUtils.isEmpty((CharSequence) this.aS.f().getValue())) {
             this.N.setText(R.string.feed_post_location);
             ShapeHelper.b(this.L, R.color.syc_x);
             this.O.setVisibility(8);
             return;
         }
-        this.N.setText(this.aS.f().getValue());
+        this.N.setText((CharSequence) this.aS.f().getValue());
         ShapeHelper.b(this.L, R.color.syc_a_10);
         this.O.setVisibility(0);
     }
@@ -703,13 +692,13 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         ag();
         int f = this.ac.f();
         if (t() || 9 - f != 9) {
-            AlbumSelectDialogFragment a2 = AlbumSelectDialogFragment.f19909a.a(getActivity(), 4, 1, 9, 109, this.Z);
+            AlbumSelectDialogFragment a = AlbumSelectDialogFragment.a.a(getActivity(), 4, 1, 9, 109, this.Z);
+            this.aa = a;
+            a.a(this.aZ);
+        } else {
+            AlbumSelectDialogFragment a2 = AlbumSelectDialogFragment.a.a(getActivity(), 4, 3, 9, 109, this.Z);
             this.aa = a2;
             a2.a(this.aZ);
-        } else {
-            AlbumSelectDialogFragment a3 = AlbumSelectDialogFragment.f19909a.a(getActivity(), 4, 3, 9, 109, this.Z);
-            this.aa = a3;
-            a3.a(this.aZ);
             this.aQ = 1;
         }
         this.Z = false;
@@ -853,12 +842,12 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     /* JADX INFO: Access modifiers changed from: private */
     public void av() {
         if (w() && CommunityPreferences.e() && this.aN == null) {
-            GestureAnimTipView gestureAnimTipView = new GestureAnimTipView(this.f19992c);
+            GestureAnimTipView gestureAnimTipView = new GestureAnimTipView(this.c);
             this.aN = gestureAnimTipView;
             gestureAnimTipView.setText(R.string.feed_post_drag_photo_tip);
-            BluedPopupWindow a2 = BluedPopupWindow.Builder.a((Activity) getContext(), this.aN).a(true).a();
-            this.aM = a2;
-            a2.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.23
+            BluedPopupWindow a = BluedPopupWindow.Builder.a((Activity) getContext(), this.aN).a(true).a();
+            this.aM = a;
+            a.setOnDismissListener(new PopupWindow.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.23
                 @Override // android.widget.PopupWindow.OnDismissListener
                 public void onDismiss() {
                     FeedAddPostBaseFragment.this.aM = null;
@@ -873,7 +862,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                 }
             });
             this.aM.setOutsideTouchable(false);
-            this.aM.a(this.ab, 1, 3, DensityUtils.a(this.f19992c, 15.0f), 0, false);
+            this.aM.a(this.ab, 1, 3, DensityUtils.a(this.c, 15.0f), 0, false);
             this.aN.a("gesture_anim_tip_anim_774.png", getFragmentActive());
             CommunityPreferences.d();
         }
@@ -919,10 +908,10 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     protected void J() {
         this.aR.a(u());
         EventTrackFeed.a(FeedProtos.Event.FEED_ADD_PHOTO, FeedProtos.AddType.HALF_SCREEN, u());
-        AlbumSelectDialogFragment a2 = AlbumSelectDialogFragment.f19909a.a(getActivity(), 4, t() ? 1 : 3, 9, 109, this.Z);
-        this.aa = a2;
+        AlbumSelectDialogFragment a = AlbumSelectDialogFragment.a.a(getActivity(), 4, t() ? 1 : 3, 9, 109, this.Z);
+        this.aa = a;
         this.Z = false;
-        a2.a(new AlbumSelectDialogFragment.AlbumSelectOnDismissListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.3
+        a.a(new AlbumSelectDialogFragment.AlbumSelectOnDismissListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.3
             @Override // com.blued.community.ui.send.dialog.AlbumSelectDialogFragment.AlbumSelectOnDismissListener
             public View a(MotionEvent motionEvent) {
                 return FeedAddPostBaseFragment.this.a(motionEvent);
@@ -942,14 +931,12 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         SelectLocationViewModel selectLocationViewModel = (SelectLocationViewModel) new ViewModelProvider(getActivity().getViewModelStore(), new ViewModelProvider.AndroidViewModelFactory(getActivity().getApplication())).get(SelectLocationViewModel.class);
         this.aS = selectLocationViewModel;
         selectLocationViewModel.f().observe(getViewLifecycleOwner(), new Observer<String>() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.4
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 FeedAddPostBaseFragment.this.aj();
             }
         });
         this.az.e().observe(getViewLifecycleOwner(), new Observer<Integer>() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.5
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Integer num) {
                 if (num.intValue() > 0) {
@@ -962,7 +949,6 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             }
         });
         this.az.j().observe(getViewLifecycleOwner(), new Observer<Boolean>() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.6
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Boolean bool) {
                 FeedAddPostBaseFragment.this.R();
@@ -974,7 +960,6 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             }
         });
         this.az.g().observe(getViewLifecycleOwner(), new Observer<Intent>() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.7
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(Intent intent) {
                 FeedAddPostBaseFragment.this.a(intent);
@@ -996,15 +981,15 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             this.ak = (MyCircleModel) arguments.getSerializable("share_circle_key");
             this.am = (EventDetailsModel) arguments.getSerializable("share_event_key");
             this.al = (StvResultModel) arguments.getSerializable("music_video_data");
-            ShareEntity shareEntity = (ShareEntity) arguments.getSerializable("share_entity");
-            this.ai = shareEntity;
-            if (shareEntity != null) {
-                this.an = shareEntity.shareType;
+            ShareEntity serializable = arguments.getSerializable("share_entity");
+            this.ai = serializable;
+            if (serializable != null) {
+                this.an = serializable.shareType;
             }
             this.aO = arguments.getBoolean("is_attention_show_dot");
             this.aP = arguments.getBoolean("is_show_promotion");
             if (arguments.getBoolean("is_back")) {
-                this.m.setImageDrawable(BluedSkinUtils.b(this.f19992c, R.drawable.icon_title_back));
+                this.m.setImageDrawable(BluedSkinUtils.b(this.c, R.drawable.icon_title_back));
             }
         }
         StvResultModel stvResultModel = this.al;
@@ -1039,7 +1024,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         if (TextUtils.isEmpty(pics)) {
             return;
         }
-        String[] split = pics.split(";");
+        String[] split = pics.split(i.b);
         int i = 0;
         while (true) {
             int i2 = i;
@@ -1079,16 +1064,16 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             if (!TextUtils.isEmpty(this.ah.forwardContent)) {
                 this.w.setText(a(this.ah.forwardContent));
             } else if (this.ah.isVideo == 1) {
-                this.w.setText(this.f19992c.getResources().getString(R.string.repost_share_video));
+                this.w.setText(this.c.getResources().getString(R.string.repost_share_video));
             } else {
-                this.w.setText(this.f19992c.getResources().getString(R.string.repost_share_pic));
+                this.w.setText(this.c.getResources().getString(R.string.repost_share_pic));
             }
         } else if (this.ah.isVideo != 1) {
             if (TextUtils.isEmpty(this.ah.share_posting_id)) {
                 return;
             }
             Log.v("drb", "重新编辑 mNewFeedModel.share_posting_id :" + this.ah.share_posting_id);
-            this.f19991ar = true;
+            this.ar = true;
             this.s.setVisibility(0);
             this.v.setText(this.ah.forwardName);
             ImageLoader.a(getFragmentActive(), this.ah.forwardImage).b(R.drawable.circle_default_icon).a(this.u);
@@ -1133,8 +1118,8 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             newFeedModel2.is_share_circle = 1;
             this.ah.share_circle_id = this.ak.circle_id;
             NewFeedModel newFeedModel3 = this.ah;
-            newFeedModel3.forwardName = this.ak.title + this.f19992c.getString(R.string.base);
-            this.ah.forwardContent = StringUtils.d(this.ak.description) ? this.f19992c.getString(R.string.circle_share_default) : this.ak.description;
+            newFeedModel3.forwardName = this.ak.title + this.c.getString(R.string.base);
+            this.ah.forwardContent = StringUtils.d(this.ak.description) ? this.c.getString(R.string.circle_share_default) : this.ak.description;
             this.ah.forwardImage = this.ak.cover;
         }
         if (this.am != null) {
@@ -1155,7 +1140,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                 NewFeedModel newFeedModel5 = this.ah;
                 newFeedModel5.share_activity_location = this.am.city + "·" + this.am.location;
             } else {
-                this.ah.share_activity_location = this.f19992c.getString(R.string.event_online_event);
+                this.ah.share_activity_location = this.c.getString(R.string.event_online_event);
             }
         }
         NewFeedModel newFeedModel6 = this.ah;
@@ -1206,9 +1191,9 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             this.y.setText(this.ah.share_activity_time);
             this.A.setText(this.ah.share_activity_location);
             if (this.ah.share_activity_mode_id == 1) {
-                this.z.setImageDrawable(BluedSkinUtils.b(this.f19992c, R.drawable.icon_eventcard_location));
+                this.z.setImageDrawable(BluedSkinUtils.b(this.c, R.drawable.icon_eventcard_location));
             } else {
-                this.z.setImageDrawable(BluedSkinUtils.b(this.f19992c, R.drawable.icon_share_event_icon));
+                this.z.setImageDrawable(BluedSkinUtils.b(this.c, R.drawable.icon_share_event_icon));
             }
         }
     }
@@ -1223,7 +1208,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             this.l.setVisibility(8);
         }
         this.r = (LinearLayout) this.j.findViewById(R.id.layout_res);
-        this.s = (CardView) this.j.findViewById(R.id.layout_forward);
+        this.s = this.j.findViewById(R.id.layout_forward);
         this.t = (LinearLayout) this.j.findViewById(R.id.layout_forward_bg);
         this.u = (ImageView) this.j.findViewById(R.id.forward_image);
         this.v = (TextView) this.j.findViewById(R.id.forward_name);
@@ -1233,11 +1218,11 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         this.z = (ImageView) this.j.findViewById(R.id.iv_event_address);
         this.A = (TextView) this.j.findViewById(R.id.forward_event_location);
         this.B = (LinearLayout) this.j.findViewById(R.id.ll_share_root_view);
-        this.C = (TextViewFixTouchForDynamic) this.j.findViewById(R.id.tv_origin_share_content);
+        this.C = this.j.findViewById(R.id.tv_origin_share_content);
         this.D = (LinearLayout) this.j.findViewById(R.id.share_content_layout);
         this.E = (ImageView) this.j.findViewById(R.id.img_share);
         this.F = (TextView) this.j.findViewById(R.id.tv_share_content);
-        this.G = (CardView) this.j.findViewById(R.id.layout_video);
+        this.G = this.j.findViewById(R.id.layout_video);
         this.H = (ImageView) this.j.findViewById(R.id.img_video);
         ImageView imageView = (ImageView) this.j.findViewById(R.id.iv_video_delete);
         this.I = imageView;
@@ -1310,19 +1295,19 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             return true;
         }
         if ((!this.av || this.aw == null) && !this.ao) {
-            return this.ap ? !this.f19991ar : this.as || this.au;
+            return this.ap ? !this.ar : this.as || this.au;
         }
         return true;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean U() {
-        return this.ap || this.f19991ar || this.ao || this.at || this.as || this.au;
+        return this.ap || this.ar || this.ao || this.at || this.as || this.au;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean V() {
-        if (this.f19991ar) {
+        if (this.ar) {
             AppMethods.d(R.string.circle_post_repost_no);
             return true;
         }
@@ -1378,7 +1363,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     public NewFeedModel a(NewFeedModel newFeedModel) {
         if (newFeedModel != null) {
             StringBuffer stringBuffer = new StringBuffer();
-            List<ChildImageInfo> data = this.ac.getData();
+            List data = this.ac.getData();
             int i = 0;
             while (true) {
                 int i2 = i;
@@ -1386,10 +1371,10 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                     break;
                 }
                 if (i2 == 0) {
-                    newFeedModel.localPath = data.get(i2).mImagePath;
+                    newFeedModel.localPath = ((ChildImageInfo) data.get(i2)).mImagePath;
                 }
-                if (!TextUtils.isEmpty(data.get(i2).mImagePath)) {
-                    stringBuffer.append(data.get(i2).mImagePath + ";");
+                if (!TextUtils.isEmpty(((ChildImageInfo) data.get(i2)).mImagePath)) {
+                    stringBuffer.append(((ChildImageInfo) data.get(i2)).mImagePath + i.b);
                 }
                 i = i2 + 1;
             }
@@ -1492,22 +1477,22 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         }
         EventTrackFeed.c(FeedProtos.Event.PUBLISH_RETAIN_POP_SHOW, v());
         ArrayList arrayList = new ArrayList();
-        arrayList.add(this.f19992c.getResources().getString(R.string.feed_post_save_title));
-        arrayList.add(this.f19992c.getResources().getString(R.string.feed_post_save));
-        arrayList.add(this.f19992c.getResources().getString(R.string.feed_post_not_save));
-        CommonShowBottomWindow.a((FragmentActivity) this.f19992c, (String[]) arrayList.toArray(new String[arrayList.size()]), true, new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.19
+        arrayList.add(this.c.getResources().getString(R.string.feed_post_save_title));
+        arrayList.add(this.c.getResources().getString(R.string.feed_post_save));
+        arrayList.add(this.c.getResources().getString(R.string.feed_post_not_save));
+        CommonShowBottomWindow.a(this.c, (String[]) arrayList.toArray(new String[arrayList.size()]), true, new ActionSheet.ActionSheetListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.19
             @Override // com.blued.android.module.common.widget.menu.ActionSheet.ActionSheetListener
             public void a(ActionSheet actionSheet, int i) {
-                String a2 = actionSheet.a(i);
-                if (a2.equals(FeedAddPostBaseFragment.this.f19992c.getResources().getString(R.string.feed_post_save))) {
+                String a = actionSheet.a(i);
+                if (a.equals(FeedAddPostBaseFragment.this.c.getResources().getString(R.string.feed_post_save))) {
                     EventTrackFeed.c(FeedProtos.Event.PUBLISH_RETAIN_POP_YES_CLICK, FeedAddPostBaseFragment.this.v());
                     FeedAddPostBaseFragment.this.n();
-                    FeedAddPostBaseFragment.this.d(a2);
+                    FeedAddPostBaseFragment.this.d(a);
                     FeedAddPostBaseFragment.this.as();
-                } else if (a2.equals(FeedAddPostBaseFragment.this.f19992c.getResources().getString(R.string.feed_post_not_save))) {
+                } else if (a.equals(FeedAddPostBaseFragment.this.c.getResources().getString(R.string.feed_post_not_save))) {
                     EventTrackFeed.c(FeedProtos.Event.PUBLISH_RETAIN_POP_NO_CLICK, FeedAddPostBaseFragment.this.v());
                     FeedMethods.c();
-                    FeedAddPostBaseFragment.this.d(a2);
+                    FeedAddPostBaseFragment.this.d(a);
                     FeedAddPostBaseFragment.this.as();
                 }
             }
@@ -1520,7 +1505,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void ab_() {
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.R.setImageResource(R.drawable.feed_post_tools_image_dark);
             this.S.setImageResource(R.drawable.feed_post_tools_photograph_dark);
             this.T.setImageResource(R.drawable.feed_post_tools_at_dark);
@@ -1539,7 +1524,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     }
 
     protected void ad() {
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             this.U.setImageResource(R.drawable.feed_post_tools_emoji_dark);
         } else {
             this.U.setImageResource(R.drawable.feed_post_tools_emoji);
@@ -1603,7 +1588,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             return;
         }
         String str = newFeedModel.activity_id;
-        int length = !StringUtils.d(newFeedModel.getPics()) ? newFeedModel.getPics().split(";").length : 0;
+        int length = !StringUtils.d(newFeedModel.getPics()) ? newFeedModel.getPics().split(i.b).length : 0;
         aa();
         StvResultModel stvResultModel = this.aw;
         EventTrackFeed.a(newFeedModel, stvResultModel != null ? stvResultModel.j() : "", this.Y.isChecked(), this.ad, str, length, this.aB, this.aC, this.aD, this.aL);
@@ -1632,7 +1617,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         }
         if (this.aI == 2) {
             this.W.setVisibility(0);
-            this.U.setImageDrawable(BluedSkinUtils.b(this.f19992c, R.drawable.feed_post_keyboard));
+            this.U.setImageDrawable(BluedSkinUtils.b(this.c, R.drawable.feed_post_keyboard));
         } else {
             ad();
             this.W.setVisibility(8);
@@ -1642,7 +1627,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void c(String str) {
-        this.o.setText(AtUserHelper.a(MarkDownLinkHelper.a(getContext(), StringUtils.a(str, (int) this.o.getTextSize(), 3), true, R.color.syc_m), BluedSkinUtils.a(this.f19992c, R.color.syc_m)));
+        this.o.setText(AtUserHelper.a(MarkDownLinkHelper.a(getContext(), StringUtils.a(str, (int) this.o.getTextSize(), 3), true, R.color.syc_m), BluedSkinUtils.a(this.c, R.color.syc_m)));
         SelectionEditText selectionEditText = this.o;
         selectionEditText.setSelection(selectionEditText.length());
     }
@@ -1660,7 +1645,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     /* JADX INFO: Access modifiers changed from: protected */
     public void d(String str) {
         if (this.ae) {
-            KeyboardUtils.a(getActivity());
+            KeyboardUtils.a((Activity) getActivity());
             LogUtils.c(str + ".closeKeyboard");
         }
     }
@@ -1723,7 +1708,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         if (!TextUtils.isEmpty(obj)) {
             str = obj;
             if (obj.equals(this.aq)) {
-                str = this.f19992c.getString(R.string.feed_meanwhile_forward_) + obj;
+                str = this.c.getString(R.string.feed_meanwhile_forward_) + obj;
             }
         }
         NewFeedModel newFeedModel = new NewFeedModel();
@@ -1737,12 +1722,12 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         if (bluedIngSelfFeed != null) {
             str2 = str;
             if (TextUtils.equals(bluedIngSelfFeed.feed_content, str)) {
-                str2 = this.f19992c.getString(R.string.feed_meanwhile_forward_) + str;
+                str2 = this.c.getString(R.string.feed_meanwhile_forward_) + str;
             }
         }
         newFeedModel.setContent(str2);
         newFeedModel.setLoadName(Long.parseLong(UserInfoUtils.c()));
-        newFeedModel.address = this.aS.f().getValue();
+        newFeedModel.address = (String) this.aS.f().getValue();
         newFeedModel.setLat(String.valueOf(this.aS.i()));
         newFeedModel.setLng(String.valueOf(this.aS.h()));
         newFeedModel.reading_scope = this.P.getAuthValue() != null ? this.P.getAuthValue().intValue() : 0;
@@ -1882,14 +1867,13 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean o() {
-        if ((TextUtils.isEmpty(this.o.getText().toString().trim()) && !this.ac.d() && (!this.av || this.aw == null)) || this.ao || this.ap || this.f19991ar || this.as || this.au || this.at || this.ag != null) {
+        if ((TextUtils.isEmpty(this.o.getText().toString().trim()) && !this.ac.d() && (!this.av || this.aw == null)) || this.ao || this.ap || this.ar || this.as || this.au || this.at || this.ag != null) {
             return false;
         }
         NewFeedModel newFeedModel = this.ah;
         return (newFeedModel == null || newFeedModel.is_draft == 1) && this.ai == null && this.aj == null && this.al == null;
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         StvResultModel stvResultModel;
         super.onActivityResult(i, i2, intent);
@@ -1898,7 +1882,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
                 a(intent);
             } else if (i != 120) {
                 if (i == 9090) {
-                    AtUserHelper.a(this.o, intent.getStringExtra("USER_NAME"), EncryptTool.b(intent.getStringExtra("UID")), this.aU, BluedSkinUtils.a(this.f19992c, R.color.syc_m));
+                    AtUserHelper.a(this.o, intent.getStringExtra("USER_NAME"), EncryptTool.b(intent.getStringExtra("UID")), this.aU, BluedSkinUtils.a(this.c, R.color.syc_m));
                 }
             } else if (intent != null && (stvResultModel = (StvResultModel) intent.getSerializableExtra("result_model")) != null && stvResultModel.a()) {
                 this.av = true;
@@ -1971,7 +1955,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
             if (this.aI == 2) {
                 ag();
             }
-            SelectLocationDialogFragment.f19932a.a(getFragmentManager()).a(new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.15
+            SelectLocationDialogFragment.a.a(getFragmentManager()).a(new DialogInterface.OnDismissListener() { // from class: com.blued.community.ui.send.fragment.FeedAddPostBaseFragment.15
                 @Override // android.content.DialogInterface.OnDismissListener
                 public void onDismiss(DialogInterface dialogInterface) {
                     FeedAddPostBaseFragment.this.c(z);
@@ -1997,7 +1981,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         } else {
             d("iv_photograph");
             ag();
-            if (CommunityServiceManager.a().b(this.f19992c)) {
+            if (CommunityServiceManager.a().b(this.c)) {
                 return;
             }
             if (t()) {
@@ -2009,9 +1993,9 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f19992c = getActivity();
+        this.c = getActivity();
         Bundle arguments = getArguments();
         this.aA = arguments;
         if (arguments == null) {
@@ -2052,13 +2036,13 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         return this.j;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         ac();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         R();
@@ -2066,7 +2050,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
         S();
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
         ab_();
@@ -2103,7 +2087,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
 
     /* JADX INFO: Access modifiers changed from: protected */
     public boolean r() {
-        return this.ap || this.av || this.ao || this.at || this.f19991ar || this.as || this.au;
+        return this.ap || this.av || this.ao || this.at || this.ar || this.as || this.au;
     }
 
     public int s() {
@@ -2121,7 +2105,7 @@ public class FeedAddPostBaseFragment extends BroadcastFragment implements View.O
     }
 
     protected String v() {
-        return IAdInterListener.AdProdType.PRODUCT_FEEDS;
+        return "feed";
     }
 
     protected boolean w() {

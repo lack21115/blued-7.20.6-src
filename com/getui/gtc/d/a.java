@@ -18,15 +18,15 @@ import java.util.Map;
 public final class a {
 
     /* renamed from: a */
-    final c f21923a;
+    final c f8316a;
     private final Handler b;
 
     /* renamed from: com.getui.gtc.d.a$a */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/d/a$a.class */
-    public static final class C0342a {
+    public static final class C0172a {
 
         /* renamed from: a */
-        private static final a f21928a = new a((byte) 0);
+        private static final a f8321a = new a((byte) 0);
     }
 
     private a() {
@@ -35,10 +35,10 @@ public final class a {
         HandlerThread handlerThread = new HandlerThread("Gtc HandlerThread");
         handlerThread.start();
         this.b = new Handler(handlerThread.getLooper());
-        cVar = c.a.f22025a;
-        this.f21923a = cVar;
+        cVar = c.a.f8418a;
+        this.f8316a = cVar;
         com.getui.gtc.c.b.a();
-        unused = b.a.f22037a;
+        unused = b.a.f8430a;
         com.getui.gtc.a.a.a();
         this.b.post(new Runnable() { // from class: com.getui.gtc.d.a.3
             {
@@ -48,7 +48,7 @@ public final class a {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    SdkInfo.Builder psUrl = new SdkInfo.Builder().moduleName("GTC").version(BuildConfig.VERSION_NAME).appid(com.getui.gtc.c.b.f21920a).cid(com.getui.gtc.c.b.d).psUrl(String.format("%s/api.php?format=json&t=1", ServerManager.getServer("gtc.cs")));
+                    SdkInfo.Builder psUrl = new SdkInfo.Builder().moduleName("GTC").version(BuildConfig.VERSION_NAME).appid(com.getui.gtc.c.b.f8313a).cid(com.getui.gtc.c.b.d).psUrl(String.format("%s/api.php?format=json&t=1", ServerManager.getServer("gtc.cs")));
                     try {
                         Class.forName("com.igexin.push.extension.distribution.gbd.stub.PushExtension");
                         psUrl.addStub("com.igexin.push.extension.distribution.gbd.stub.PushExtension", false);
@@ -56,7 +56,7 @@ public final class a {
                         psUrl.addStub("com.igexin.push.extension.distribution.gws.stub.PushExtension", false);
                     } catch (ClassNotFoundException e) {
                     }
-                    a.this.f21923a.a(psUrl.build());
+                    a.this.f8316a.a(psUrl.build());
                 } catch (Throwable th) {
                     com.getui.gtc.i.c.a.a(th);
                 }
@@ -95,7 +95,7 @@ public final class a {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    a.this.f21923a.a(sdkInfo);
+                    a.this.f8316a.a(sdkInfo);
                 } catch (Throwable th) {
                     com.getui.gtc.i.c.a.a(th);
                 }
@@ -112,7 +112,7 @@ public final class a {
             @Override // java.lang.Runnable
             public final void run() {
                 com.getui.gtc.entity.a a2;
-                a.C0351a b;
+                a.C0181a b;
                 try {
                     if (iArr == null) {
                         return;
@@ -140,8 +140,8 @@ public final class a {
                             Map<String, String> value = next.getValue();
                             if (value != null && (a2 = com.getui.gtc.entity.a.a(value)) != null && (b = a2.b(i3)) != null) {
                                 com.getui.gtc.i.c.a.a("found gtcFile id: " + i3 + ", remove it");
-                                a.this.f21923a.a(b.f22003c);
-                                a2.f22001a.remove(i3);
+                                a.this.f8316a.a(b.f8396c);
+                                a2.f8394a.remove(i3);
                                 value.put("ext_infos", a2.a());
                                 com.getui.gtc.dyc.b.a.a(GtcProvider.context(), next.getKey(), value);
                                 break;

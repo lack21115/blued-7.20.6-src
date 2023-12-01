@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/services/h.class */
-public final class h {
+final class h {
     private ThreadPoolExecutor aJh;
     private int aJj;
     private SparseArray<DownloadLaunchRunnable> aJg = new SparseArray<>();

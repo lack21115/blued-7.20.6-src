@@ -98,12 +98,12 @@ public final class EnumHashBiMap<K extends Enum<K>, V> extends AbstractBiMap<K, 
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.common.collect.AbstractBiMap, com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.AbstractBiMap, com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     public /* bridge */ /* synthetic */ Object put(Object obj, @NullableDecl Object obj2) {
         return put((EnumHashBiMap<K, V>) ((Enum) obj), (Enum) obj2);
     }
 
-    @Override // com.google.common.collect.AbstractBiMap, com.google.common.collect.ForwardingMap, java.util.Map
+    @Override // com.google.common.collect.AbstractBiMap, com.google.common.collect.ForwardingMap, java.util.Map, com.google.common.collect.BiMap
     public /* bridge */ /* synthetic */ void putAll(Map map) {
         super.putAll(map);
     }

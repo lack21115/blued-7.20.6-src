@@ -13,12 +13,12 @@ import java.util.Comparator;
 public final class AnimateLayoutChangeDetector {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ViewGroup.MarginLayoutParams f9446a;
+    private static final ViewGroup.MarginLayoutParams f6606a;
     private LinearLayoutManager b;
 
     static {
         ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-1, -1);
-        f9446a = marginLayoutParams;
+        f6606a = marginLayoutParams;
         marginLayoutParams.setMargins(0, 0, 0, 0);
     }
 
@@ -70,7 +70,7 @@ public final class AnimateLayoutChangeDetector {
                     throw new IllegalStateException("null view contained in the view hierarchy");
                 }
                 ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-                ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : f9446a;
+                ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : f6606a;
                 int[] iArr2 = iArr[i4];
                 if (z) {
                     top = childAt.getLeft();

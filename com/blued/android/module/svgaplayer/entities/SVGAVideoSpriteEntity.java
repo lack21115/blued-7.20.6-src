@@ -1,6 +1,5 @@
 package com.blued.android.module.svgaplayer.entities;
 
-import com.anythink.expressad.foundation.d.d;
 import com.blued.android.module.svgaplayer.proto.FrameEntity;
 import com.blued.android.module.svgaplayer.proto.SpriteEntity;
 import java.util.ArrayList;
@@ -15,18 +14,14 @@ import org.json.JSONObject;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/svgaplayer/entities/SVGAVideoSpriteEntity.class */
 public final class SVGAVideoSpriteEntity {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f16015a;
+    private final String a;
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final List<SVGAVideoSpriteFrameEntity> f16016c;
+    private final List<SVGAVideoSpriteFrameEntity> c;
 
     public SVGAVideoSpriteEntity(SpriteEntity obj) {
         ArrayList b;
         Intrinsics.e(obj, "obj");
-        this.f16015a = obj.imageKey;
+        this.a = obj.imageKey;
         this.b = obj.matteKey;
         List<FrameEntity> list = obj.frames;
         if (list != null) {
@@ -52,15 +47,15 @@ public final class SVGAVideoSpriteEntity {
         } else {
             b = CollectionsKt.b();
         }
-        this.f16016c = b;
+        this.c = b;
     }
 
     public SVGAVideoSpriteEntity(JSONObject obj) {
         Intrinsics.e(obj, "obj");
-        this.f16015a = obj.optString("imageKey");
+        this.a = obj.optString("imageKey");
         this.b = obj.optString("matteKey");
         ArrayList arrayList = new ArrayList();
-        JSONArray optJSONArray = obj.optJSONArray(d.j);
+        JSONArray optJSONArray = obj.optJSONArray("frames");
         if (optJSONArray != null) {
             int length = optJSONArray.length();
             for (int i = 0; i < length; i++) {
@@ -75,11 +70,11 @@ public final class SVGAVideoSpriteEntity {
                 }
             }
         }
-        this.f16016c = CollectionsKt.f((Iterable) arrayList);
+        this.c = CollectionsKt.f((Iterable) arrayList);
     }
 
     public final String a() {
-        return this.f16015a;
+        return this.a;
     }
 
     public final String b() {
@@ -87,6 +82,6 @@ public final class SVGAVideoSpriteEntity {
     }
 
     public final List<SVGAVideoSpriteFrameEntity> c() {
-        return this.f16016c;
+        return this.c;
     }
 }

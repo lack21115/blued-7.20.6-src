@@ -10,7 +10,7 @@ public class f {
     private static volatile HandlerThread b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile HandlerThread f40567c;
+    private static volatile HandlerThread f26876c;
     private static volatile HandlerThread d;
     private static Handler e;
     private static Handler f;
@@ -18,7 +18,7 @@ public class f {
     private static Handler h;
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f40566a = !f.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f26875a = !f.class.desiredAssertionStatus();
     private static final HashMap<Object, Object[]> i = new HashMap<>();
 
     public static Handler a(int i2) {
@@ -28,7 +28,7 @@ public class f {
             }
             return e;
         } else if (i2 == 1) {
-            if (f40567c == null) {
+            if (f26876c == null) {
                 b();
             }
             return f;
@@ -64,10 +64,10 @@ public class f {
 
     public static void a(int i2, Object[] objArr) {
         if (i2 != 10) {
-            if (!f40566a) {
+            if (!f26875a) {
                 throw new AssertionError();
             }
-        } else if (!f40566a && objArr == null) {
+        } else if (!f26875a && objArr == null) {
             throw new AssertionError();
         } else {
             Runnable runnable = (Runnable) objArr[0];
@@ -129,11 +129,11 @@ public class f {
     private static void b() {
         synchronized (f.class) {
             try {
-                if (f40567c == null) {
+                if (f26876c == null) {
                     HandlerThread handlerThread = new HandlerThread("CrashSDKNormalHandler", 0);
-                    f40567c = handlerThread;
+                    f26876c = handlerThread;
                     handlerThread.start();
-                    f = new Handler(f40567c.getLooper());
+                    f = new Handler(f26876c.getLooper());
                 }
             } catch (Throwable th) {
                 throw th;

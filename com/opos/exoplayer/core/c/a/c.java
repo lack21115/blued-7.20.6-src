@@ -14,7 +14,7 @@ final class c extends b {
     private static final int[] b = {5512, 11025, 22050, 44100};
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f25084c;
+    private boolean f11396c;
     private boolean d;
     private int e;
 
@@ -25,7 +25,7 @@ final class c extends b {
     @Override // com.opos.exoplayer.core.c.a.b
     protected boolean a(m mVar) {
         Format a2;
-        if (this.f25084c) {
+        if (this.f11396c) {
             mVar.d(1);
             return true;
         }
@@ -38,14 +38,14 @@ final class c extends b {
             if (i != 10) {
                 throw new b.a("Audio format not supported: " + this.e);
             }
-            this.f25084c = true;
+            this.f11396c = true;
             return true;
         } else {
             a2 = Format.a((String) null, this.e == 7 ? "audio/g711-alaw" : "audio/g711-mlaw", (String) null, -1, -1, 1, 8000, (g & 1) == 1 ? 2 : 3, (List<byte[]>) null, (DrmInitData) null, 0, (String) null);
         }
-        this.f25083a.a(a2);
+        this.f11395a.a(a2);
         this.d = true;
-        this.f25084c = true;
+        this.f11396c = true;
         return true;
     }
 
@@ -53,16 +53,16 @@ final class c extends b {
     protected void b(m mVar, long j) {
         if (this.e == 2) {
             int b2 = mVar.b();
-            this.f25083a.a(mVar, b2);
-            this.f25083a.a(j, 1, b2, 0, null);
+            this.f11395a.a(mVar, b2);
+            this.f11395a.a(j, 1, b2, 0, null);
             return;
         }
         int g = mVar.g();
         if (g != 0 || this.d) {
             if (this.e != 10 || g == 1) {
                 int b3 = mVar.b();
-                this.f25083a.a(mVar, b3);
-                this.f25083a.a(j, 1, b3, 0, null);
+                this.f11395a.a(mVar, b3);
+                this.f11395a.a(j, 1, b3, 0, null);
                 return;
             }
             return;
@@ -71,7 +71,7 @@ final class c extends b {
         byte[] bArr = new byte[b4];
         mVar.a(bArr, 0, b4);
         Pair<Integer, Integer> a2 = com.opos.exoplayer.core.i.c.a(bArr);
-        this.f25083a.a(Format.a(null, "audio/mp4a-latm", null, -1, -1, a2.second.intValue(), a2.first.intValue(), Collections.singletonList(bArr), null, 0, null));
+        this.f11395a.a(Format.a(null, "audio/mp4a-latm", null, -1, -1, a2.second.intValue(), a2.first.intValue(), Collections.singletonList(bArr), null, 0, null));
         this.d = true;
     }
 }

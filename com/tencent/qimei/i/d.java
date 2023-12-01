@@ -4,12 +4,12 @@ package com.tencent.qimei.i;
 public class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Runnable f38335a;
+    public final /* synthetic */ Runnable f24644a;
     public final /* synthetic */ e b;
 
     public d(e eVar, Runnable runnable) {
         this.b = eVar;
-        this.f38335a = runnable;
+        this.f24644a = runnable;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x003e, code lost:
@@ -42,7 +42,7 @@ public class d implements Runnable {
             r0 = r5
             r4 = r0
             r0 = r2
-            java.lang.Runnable r0 = r0.f38335a     // Catch: java.lang.Exception -> L2e java.lang.Throwable -> L32
+            java.lang.Runnable r0 = r0.f24644a     // Catch: java.lang.Exception -> L2e java.lang.Throwable -> L32
             r0.run()     // Catch: java.lang.Exception -> L2e java.lang.Throwable -> L32
             r0 = r5
             if (r0 == 0) goto L45

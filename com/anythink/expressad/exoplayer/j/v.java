@@ -9,11 +9,11 @@ import java.io.Closeable;
 public final class v<T> implements t.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final k f7612a;
+    public final k f4773a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final h f7613c;
+    private final h f4774c;
     private final a<? extends T> d;
     private volatile T e;
     private volatile long f;
@@ -28,8 +28,8 @@ public final class v<T> implements t.c {
     }
 
     private v(h hVar, k kVar, a<? extends T> aVar) {
-        this.f7613c = hVar;
-        this.f7612a = kVar;
+        this.f4774c = hVar;
+        this.f4773a = kVar;
         this.b = 0;
         this.d = aVar;
     }
@@ -54,11 +54,11 @@ public final class v<T> implements t.c {
 
     @Override // com.anythink.expressad.exoplayer.j.t.c
     public final void b() {
-        j jVar = new j(this.f7613c, this.f7612a);
+        j jVar = new j(this.f4774c, this.f4773a);
         try {
             jVar.b();
             a<? extends T> aVar = this.d;
-            this.f7613c.a();
+            this.f4774c.a();
             this.e = aVar.a();
         } finally {
             this.f = jVar.a();

@@ -104,9 +104,7 @@ public class YYImMsgManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYImMsgManager$IMMsgManager.class */
     public static class IMMsgManager {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static YYImMsgManager f17557a = new YYImMsgManager();
+        private static YYImMsgManager a = new YYImMsgManager();
 
         private IMMsgManager() {
         }
@@ -116,7 +114,7 @@ public class YYImMsgManager {
     }
 
     public static YYImMsgManager a() {
-        return IMMsgManager.f17557a;
+        return IMMsgManager.a;
     }
 
     private void a(YYRoomModel yYRoomModel) {
@@ -180,7 +178,7 @@ public class YYImMsgManager {
     }
 
     private void aF(YYImModel yYImModel) {
-        YYCPStepModel yYCPStepModel = (YYCPStepModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYCPStepModel.class);
+        YYCPStepModel yYCPStepModel = (YYCPStepModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYCPStepModel.class);
         if (yYCPStepModel == null) {
             return;
         }
@@ -212,7 +210,7 @@ public class YYImMsgManager {
 
     public void B(YYImModel yYImModel) {
         YYSeatMemberModel seatMember;
-        YYMsgBlindPublishExtra yYMsgBlindPublishExtra = (YYMsgBlindPublishExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgBlindPublishExtra.class);
+        YYMsgBlindPublishExtra yYMsgBlindPublishExtra = (YYMsgBlindPublishExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgBlindPublishExtra.class);
         if (yYMsgBlindPublishExtra == null) {
             return;
         }
@@ -234,7 +232,7 @@ public class YYImMsgManager {
 
     public void C(YYImModel yYImModel) {
         YYSeatMemberModel seatMember;
-        YYMsgBlindResultExtra yYMsgBlindResultExtra = (YYMsgBlindResultExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgBlindResultExtra.class);
+        YYMsgBlindResultExtra yYMsgBlindResultExtra = (YYMsgBlindResultExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgBlindResultExtra.class);
         if (yYMsgBlindResultExtra == null) {
             return;
         }
@@ -260,7 +258,7 @@ public class YYImMsgManager {
 
     public void D(YYImModel yYImModel) {
         YYSeatMemberModel seatMember;
-        BlindMatchUserModel blindMatchUserModel = (BlindMatchUserModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) BlindMatchUserModel.class);
+        BlindMatchUserModel blindMatchUserModel = (BlindMatchUserModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), BlindMatchUserModel.class);
         if (blindMatchUserModel == null) {
             return;
         }
@@ -276,12 +274,12 @@ public class YYImMsgManager {
     }
 
     public void E(YYImModel yYImModel) {
-        LiveEventBus.get("EVENT_MARQUEE_MATCH").post((YYMsgVipMatchExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgVipMatchExtra.class));
+        LiveEventBus.get("EVENT_MARQUEE_MATCH").post((YYMsgVipMatchExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgVipMatchExtra.class));
     }
 
     public void F(YYImModel yYImModel) {
         YYMsgVoteStartExtra yYMsgVoteStartExtra;
-        if (yYImModel == null || (yYMsgVoteStartExtra = (YYMsgVoteStartExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgVoteStartExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgVoteStartExtra = (YYMsgVoteStartExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgVoteStartExtra.class)) == null) {
             return;
         }
         YYRoomModel b = YYRoomInfoManager.e().b();
@@ -303,7 +301,7 @@ public class YYImMsgManager {
 
     public void H(YYImModel yYImModel) {
         YYMsgWishListModel yYMsgWishListModel;
-        if (yYImModel == null || (yYMsgWishListModel = (YYMsgWishListModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgWishListModel.class)) == null) {
+        if (yYImModel == null || (yYMsgWishListModel = (YYMsgWishListModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgWishListModel.class)) == null) {
             return;
         }
         LiveEventBus.get("update_wish_gift").post(yYMsgWishListModel);
@@ -314,7 +312,7 @@ public class YYImMsgManager {
             return;
         }
         if (YYRoomInfoManager.e().b() != null) {
-            YYMsgGameExtra yYMsgGameExtra = (YYMsgGameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgGameExtra.class);
+            YYMsgGameExtra yYMsgGameExtra = (YYMsgGameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgGameExtra.class);
             if (yYMsgGameExtra == null) {
                 return;
             }
@@ -325,7 +323,7 @@ public class YYImMsgManager {
 
     public void J(YYImModel yYImModel) {
         YYMsgGameExtra yYMsgGameExtra;
-        if (yYImModel == null || (yYMsgGameExtra = (YYMsgGameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgGameExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgGameExtra = (YYMsgGameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgGameExtra.class)) == null) {
             return;
         }
         LiveEventBus.get("show_game_team_active_value").post(yYMsgGameExtra);
@@ -333,7 +331,7 @@ public class YYImMsgManager {
 
     public void K(YYImModel yYImModel) {
         YYMsgUpdateMemberExtra yYMsgUpdateMemberExtra;
-        if (yYImModel == null || (yYMsgUpdateMemberExtra = (YYMsgUpdateMemberExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgUpdateMemberExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgUpdateMemberExtra = (YYMsgUpdateMemberExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgUpdateMemberExtra.class)) == null) {
             return;
         }
         LiveEventBus.get("event_game_member_status").post(yYMsgUpdateMemberExtra);
@@ -341,7 +339,7 @@ public class YYImMsgManager {
 
     public void L(YYImModel yYImModel) {
         YYMsgSaleFlowExtra yYMsgSaleFlowExtra;
-        if (yYImModel == null || (yYMsgSaleFlowExtra = (YYMsgSaleFlowExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgSaleFlowExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgSaleFlowExtra = (YYMsgSaleFlowExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgSaleFlowExtra.class)) == null) {
             return;
         }
         LiveEventBus.get("event_im_change_flow").post(yYMsgSaleFlowExtra);
@@ -349,7 +347,7 @@ public class YYImMsgManager {
 
     public void M(YYImModel yYImModel) {
         YYMsgIntimacyExtra yYMsgIntimacyExtra;
-        if (yYImModel == null || (yYMsgIntimacyExtra = (YYMsgIntimacyExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgIntimacyExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgIntimacyExtra = (YYMsgIntimacyExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgIntimacyExtra.class)) == null) {
             return;
         }
         LiveEventBus.get("event_im_relation_progress").post(yYMsgIntimacyExtra);
@@ -357,7 +355,7 @@ public class YYImMsgManager {
 
     public void N(YYImModel yYImModel) {
         YYMsgAuctionLevelExtra yYMsgAuctionLevelExtra;
-        if (yYImModel == null || (yYMsgAuctionLevelExtra = (YYMsgAuctionLevelExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgAuctionLevelExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgAuctionLevelExtra = (YYMsgAuctionLevelExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgAuctionLevelExtra.class)) == null) {
             return;
         }
         LiveEventBus.get("event_auction_level").post(yYMsgAuctionLevelExtra);
@@ -373,7 +371,7 @@ public class YYImMsgManager {
 
     public void P(YYImModel yYImModel) {
         YYMsgAnimationExtra yYMsgAnimationExtra;
-        if (yYImModel == null || (yYMsgAnimationExtra = (YYMsgAnimationExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgAnimationExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgAnimationExtra = (YYMsgAnimationExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgAnimationExtra.class)) == null) {
             return;
         }
         LiveEventBus.get("event_intimate_animation").post(yYMsgAnimationExtra.mp4Url);
@@ -385,7 +383,7 @@ public class YYImMsgManager {
             if (b.background == null) {
                 b.background = new ChatVoicePatternModel();
             }
-            ChatVoicePatternModel chatVoicePatternModel = (ChatVoicePatternModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) ChatVoicePatternModel.class);
+            ChatVoicePatternModel chatVoicePatternModel = (ChatVoicePatternModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), ChatVoicePatternModel.class);
             if (chatVoicePatternModel != null) {
                 b.background.setPic(chatVoicePatternModel.getPic());
                 b.background.setDefault_pic(chatVoicePatternModel.getDefault_pic());
@@ -396,10 +394,10 @@ public class YYImMsgManager {
 
     public void R(YYImModel yYImModel) {
         IMTopicSetInfoMode iMTopicSetInfoMode;
-        if (yYImModel == null || (iMTopicSetInfoMode = (IMTopicSetInfoMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMTopicSetInfoMode.class)) == null || iMTopicSetInfoMode.getTopic() == null) {
+        if (yYImModel == null || (iMTopicSetInfoMode = (IMTopicSetInfoMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMTopicSetInfoMode.class)) == null || iMTopicSetInfoMode.getTopic() == null) {
             return;
         }
-        IMTopicSetInfoContentMode iMTopicSetInfoContentMode = (IMTopicSetInfoContentMode) AppInfo.f().fromJson(iMTopicSetInfoMode.getContent(), (Class<Object>) IMTopicSetInfoContentMode.class);
+        IMTopicSetInfoContentMode iMTopicSetInfoContentMode = (IMTopicSetInfoContentMode) AppInfo.f().fromJson(iMTopicSetInfoMode.getContent(), IMTopicSetInfoContentMode.class);
         if (YYRoomInfoManager.e().b() != null) {
             YYRoomInfoManager.e().b().topic_set_info = new TopicSetInfoMode(iMTopicSetInfoMode.getRoom_id(), iMTopicSetInfoMode.getType_id(), iMTopicSetInfoMode.getTopic(), iMTopicSetInfoContentMode.getTopic_id());
         }
@@ -429,21 +427,21 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        LiveEventBus.get("event_rank_list").post((YYMsgUpdateUserList) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgUpdateUserList.class));
+        LiveEventBus.get("event_rank_list").post((YYMsgUpdateUserList) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgUpdateUserList.class));
     }
 
     public void V(YYImModel yYImModel) {
         if (yYImModel == null) {
             return;
         }
-        YYMsgUpdateUserList yYMsgUpdateUserList = (YYMsgUpdateUserList) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgUpdateUserList.class);
+        YYMsgUpdateUserList yYMsgUpdateUserList = (YYMsgUpdateUserList) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgUpdateUserList.class);
         YYObserverManager.a().a(yYMsgUpdateUserList.seats);
         YYObserverManager.a().a(StringUtils.a(yYMsgUpdateUserList.user_count, 0));
     }
 
     public void W(YYImModel yYImModel) {
         YYGlobalMsgModel yYGlobalMsgModel;
-        if (yYImModel == null || (yYGlobalMsgModel = (YYGlobalMsgModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYGlobalMsgModel.class)) == null) {
+        if (yYImModel == null || (yYGlobalMsgModel = (YYGlobalMsgModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYGlobalMsgModel.class)) == null) {
             return;
         }
         LiveEventBus.get("EVENT_PRIZE_MESSAGE").post(yYGlobalMsgModel);
@@ -459,7 +457,7 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        YYMsgKtvSinger yYMsgKtvSinger = (YYMsgKtvSinger) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgKtvSinger.class);
+        YYMsgKtvSinger yYMsgKtvSinger = (YYMsgKtvSinger) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgKtvSinger.class);
         YYMsgKtvMusic yYMsgKtvMusic2 = YYRoomInfoManager.e().b().music;
         if (yYMsgKtvMusic2 == null) {
             yYMsgKtvMusic = new YYMsgKtvMusic();
@@ -482,7 +480,7 @@ public class YYImMsgManager {
 
     public void Z(YYImModel yYImModel) {
         YYMsgKtvMusic yYMsgKtvMusic;
-        if (yYImModel == null || (yYMsgKtvMusic = (YYMsgKtvMusic) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgKtvMusic.class)) == null || YYRoomInfoManager.e().b() == null) {
+        if (yYImModel == null || (yYMsgKtvMusic = (YYMsgKtvMusic) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgKtvMusic.class)) == null || YYRoomInfoManager.e().b() == null) {
             return;
         }
         YYMsgKtvMusic yYMsgKtvMusic2 = YYRoomInfoManager.e().b().music;
@@ -578,7 +576,7 @@ public class YYImMsgManager {
 
     public void a(YYImModel yYImModel, int i) {
         YYMsgGiftExtra yYMsgGiftExtra;
-        if (yYImModel == null || i == 1 || (yYMsgGiftExtra = (YYMsgGiftExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgGiftExtra.class)) == null) {
+        if (yYImModel == null || i == 1 || (yYMsgGiftExtra = (YYMsgGiftExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgGiftExtra.class)) == null) {
             return;
         }
         yYMsgGiftExtra.extra = (LuckGiftModel) yYImModel.msgMapExtra.get("extra");
@@ -621,7 +619,7 @@ public class YYImMsgManager {
     public void a(YYImModel yYImModel, String str) {
         YYAudienceModel yYAudienceModel;
         YYUserInfo yYUserInfo;
-        if (yYImModel == null || (yYAudienceModel = yYImModel.target_profile) == null || (yYUserInfo = YYRoomInfoManager.e().f17578a) == null) {
+        if (yYImModel == null || (yYAudienceModel = yYImModel.target_profile) == null || (yYUserInfo = YYRoomInfoManager.e().a) == null) {
             return;
         }
         if (TextUtils.equals(yYAudienceModel.getUid(), yYUserInfo.getUid()) || TextUtils.equals("2", yYUserInfo.chat_anchor) || TextUtils.equals("1", yYUserInfo.chat_anchor)) {
@@ -719,7 +717,7 @@ public class YYImMsgManager {
 
     public void aA(YYImModel yYImModel) {
         YYPackGiftIMMode yYPackGiftIMMode;
-        if (yYImModel == null || (yYPackGiftIMMode = (YYPackGiftIMMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYPackGiftIMMode.class)) == null) {
+        if (yYImModel == null || (yYPackGiftIMMode = (YYPackGiftIMMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYPackGiftIMMode.class)) == null) {
             return;
         }
         LiveEventBus.get("EVENT_PACK_GIFT").post(yYPackGiftIMMode);
@@ -742,7 +740,7 @@ public class YYImMsgManager {
 
     public void aC(YYImModel yYImModel) {
         YYGiftsAndUsersMode yYGiftsAndUsersMode;
-        if (yYImModel == null || (yYGiftsAndUsersMode = (YYGiftsAndUsersMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYGiftsAndUsersMode.class)) == null) {
+        if (yYImModel == null || (yYGiftsAndUsersMode = (YYGiftsAndUsersMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYGiftsAndUsersMode.class)) == null) {
             return;
         }
         if (yYGiftsAndUsersMode.getGoods_list() != null) {
@@ -766,7 +764,7 @@ public class YYImMsgManager {
                             if (z) {
                                 yYPayGoodsModel.json_contents_im = str;
                             } else {
-                                YYMsgJsonGiftExtra yYMsgJsonGiftExtra = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(str, (Class<Object>) YYMsgJsonGiftExtra.class);
+                                YYMsgJsonGiftExtra yYMsgJsonGiftExtra = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(str, YYMsgJsonGiftExtra.class);
                                 yYMsgJsonGiftExtra.setRain_level_ani_url("");
                                 yYPayGoodsModel.json_contents_im = AppInfo.f().toJson(yYMsgJsonGiftExtra);
                             }
@@ -783,7 +781,7 @@ public class YYImMsgManager {
 
     public void aD(YYImModel yYImModel) {
         ConfessedIMMode confessedIMMode;
-        if (yYImModel == null || (confessedIMMode = (ConfessedIMMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) ConfessedIMMode.class)) == null) {
+        if (yYImModel == null || (confessedIMMode = (ConfessedIMMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), ConfessedIMMode.class)) == null) {
             return;
         }
         if (StringUtils.a(confessedIMMode.getConfession_type(), "1")) {
@@ -800,7 +798,7 @@ public class YYImMsgManager {
 
     public void aE(YYImModel yYImModel) {
         DoublePeopleNoticeImNode doublePeopleNoticeImNode;
-        if (yYImModel == null || (doublePeopleNoticeImNode = (DoublePeopleNoticeImNode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) DoublePeopleNoticeImNode.class)) == null || doublePeopleNoticeImNode.getFull_server_notification() == null) {
+        if (yYImModel == null || (doublePeopleNoticeImNode = (DoublePeopleNoticeImNode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), DoublePeopleNoticeImNode.class)) == null || doublePeopleNoticeImNode.getFull_server_notification() == null) {
             return;
         }
         if (doublePeopleNoticeImNode.getFull_server_notification().getStay_seconds() > 0) {
@@ -814,7 +812,7 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        YYMsgKtvPrize yYMsgKtvPrize = (YYMsgKtvPrize) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgKtvPrize.class);
+        YYMsgKtvPrize yYMsgKtvPrize = (YYMsgKtvPrize) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgKtvPrize.class);
         yYImModel.extra = yYMsgKtvPrize;
         a(yYImModel);
         a(YYRoomInfoManager.e().b());
@@ -824,7 +822,7 @@ public class YYImMsgManager {
     public void ab(YYImModel yYImModel) {
         YYFansStatusExtra yYFansStatusExtra;
         YYRoomModel b = YYRoomInfoManager.e().b();
-        if (b == null || (yYFansStatusExtra = (YYFansStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYFansStatusExtra.class)) == null) {
+        if (b == null || (yYFansStatusExtra = (YYFansStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYFansStatusExtra.class)) == null) {
             return;
         }
         if (b.fans_group == null) {
@@ -854,21 +852,21 @@ public class YYImMsgManager {
 
     public void ac(YYImModel yYImModel) {
         YYRoomModel b = YYRoomInfoManager.e().b();
-        if (b == null || ((YYFansStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYFansStatusExtra.class)) == null) {
+        if (b == null || ((YYFansStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYFansStatusExtra.class)) == null) {
             return;
         }
         if (b.fans_group == null) {
             b.fans_group = new YYFansGroupModel();
         }
         b.fans_group.has_fans_group = 1;
-        Observable<Object> observable = LiveEventBus.get("has_fans_group");
+        Observable observable = LiveEventBus.get("has_fans_group");
         observable.post(b.fans_group.has_fans_group + "");
     }
 
     public void ad(YYImModel yYImModel) {
         YYFansStatusExtra yYFansStatusExtra;
         YYRoomModel b = YYRoomInfoManager.e().b();
-        if (b == null || (yYFansStatusExtra = (YYFansStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYFansStatusExtra.class)) == null || !TextUtils.equals(YYRoomInfoManager.e().k(), yYFansStatusExtra.uid)) {
+        if (b == null || (yYFansStatusExtra = (YYFansStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYFansStatusExtra.class)) == null || !TextUtils.equals(YYRoomInfoManager.e().k(), yYFansStatusExtra.uid)) {
             return;
         }
         if (b.fans_group == null) {
@@ -887,7 +885,7 @@ public class YYImMsgManager {
 
     public void ae(YYImModel yYImModel) {
         YYPreciousPackageModel yYPreciousPackageModel;
-        if (yYImModel == null || (yYPreciousPackageModel = (YYPreciousPackageModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYPreciousPackageModel.class)) == null) {
+        if (yYImModel == null || (yYPreciousPackageModel = (YYPreciousPackageModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYPreciousPackageModel.class)) == null) {
             return;
         }
         LiveEventBus.get("update_coin_num").post(yYPreciousPackageModel);
@@ -895,7 +893,7 @@ public class YYImMsgManager {
 
     public void af(YYImModel yYImModel) {
         YYPreciousPackageModel yYPreciousPackageModel;
-        if (yYImModel == null || (yYPreciousPackageModel = (YYPreciousPackageModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYPreciousPackageModel.class)) == null) {
+        if (yYImModel == null || (yYPreciousPackageModel = (YYPreciousPackageModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYPreciousPackageModel.class)) == null) {
             return;
         }
         LiveEventBus.get("fall_down_prize").post(yYPreciousPackageModel);
@@ -903,7 +901,7 @@ public class YYImMsgManager {
 
     public void ag(YYImModel yYImModel) {
         YYHostUpMode yYHostUpMode;
-        if (yYImModel == null || (yYHostUpMode = (YYHostUpMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYHostUpMode.class)) == null) {
+        if (yYImModel == null || (yYHostUpMode = (YYHostUpMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYHostUpMode.class)) == null) {
             return;
         }
         LiveEventBus.get("EVENT_HOST_UP").post(yYHostUpMode);
@@ -919,7 +917,7 @@ public class YYImMsgManager {
 
     public void ai(YYImModel yYImModel) {
         ChatroomMIcBeansModel chatroomMIcBeansModel;
-        if (yYImModel == null || (chatroomMIcBeansModel = (ChatroomMIcBeansModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) ChatroomMIcBeansModel.class)) == null) {
+        if (yYImModel == null || (chatroomMIcBeansModel = (ChatroomMIcBeansModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), ChatroomMIcBeansModel.class)) == null) {
             return;
         }
         LiveEventBus.get("show_on_beans_change").post(chatroomMIcBeansModel);
@@ -927,7 +925,7 @@ public class YYImMsgManager {
 
     public void aj(YYImModel yYImModel) {
         YYKtvStageModel yYKtvStageModel;
-        if (yYImModel == null || (yYKtvStageModel = (YYKtvStageModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYKtvStageModel.class)) == null) {
+        if (yYImModel == null || (yYKtvStageModel = (YYKtvStageModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYKtvStageModel.class)) == null) {
             return;
         }
         YYRoomModel b = YYRoomInfoManager.e().b();
@@ -945,13 +943,13 @@ public class YYImMsgManager {
 
     public void ak(YYImModel yYImModel) {
         YYGiftBeansModel yYGiftBeansModel;
-        if (yYImModel == null || (yYGiftBeansModel = (YYGiftBeansModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYGiftBeansModel.class)) == null) {
+        if (yYImModel == null || (yYGiftBeansModel = (YYGiftBeansModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYGiftBeansModel.class)) == null) {
             return;
         }
         if (YYRoomInfoManager.e().b() != null && YYRoomInfoManager.e().b().stage_info != null) {
-            int a2 = StringUtils.a(YYRoomInfoManager.e().b().stage_info.beans, 0);
+            int a = StringUtils.a(YYRoomInfoManager.e().b().stage_info.beans, 0);
             YYKtvStageModel yYKtvStageModel = YYRoomInfoManager.e().b().stage_info;
-            yYKtvStageModel.beans = (StringUtils.a(yYGiftBeansModel.beans, 0) + a2) + "";
+            yYKtvStageModel.beans = (StringUtils.a(yYGiftBeansModel.beans, 0) + a) + "";
         }
         YYObserverManager.a().a(yYGiftBeansModel);
     }
@@ -959,11 +957,11 @@ public class YYImMsgManager {
     public void al(YYImModel yYImModel) {
         YYGlobalMsgModel yYGlobalMsgModel;
         YYRoomModel b;
-        if (yYImModel == null || (yYGlobalMsgModel = (YYGlobalMsgModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYGlobalMsgModel.class)) == null || (b = YYRoomInfoManager.e().b()) == null) {
+        if (yYImModel == null || (yYGlobalMsgModel = (YYGlobalMsgModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYGlobalMsgModel.class)) == null || (b = YYRoomInfoManager.e().b()) == null) {
             return;
         }
         if (yYGlobalMsgModel.type == 8) {
-            YYRoomPkConnectionExtra yYRoomPkConnectionExtra = (YYRoomPkConnectionExtra) AppInfo.f().fromJson(yYGlobalMsgModel.body, (Class<Object>) YYRoomPkConnectionExtra.class);
+            YYRoomPkConnectionExtra yYRoomPkConnectionExtra = (YYRoomPkConnectionExtra) AppInfo.f().fromJson(yYGlobalMsgModel.body, YYRoomPkConnectionExtra.class);
             YYRoomInfoManager.e().f(yYRoomPkConnectionExtra.other_uid);
             YYRoomInfoManager.e().e(yYRoomPkConnectionExtra.other_room_id);
             if (yYRoomPkConnectionExtra.status != 1) {
@@ -984,7 +982,7 @@ public class YYImMsgManager {
 
     public void am(YYImModel yYImModel) {
         YYMsgNoAnchorModel yYMsgNoAnchorModel;
-        if (yYImModel == null || (yYMsgNoAnchorModel = (YYMsgNoAnchorModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgNoAnchorModel.class)) == null) {
+        if (yYImModel == null || (yYMsgNoAnchorModel = (YYMsgNoAnchorModel) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgNoAnchorModel.class)) == null) {
             return;
         }
         LiveEventBus.get("show_no_anchor_alert").post(yYMsgNoAnchorModel);
@@ -992,7 +990,7 @@ public class YYImMsgManager {
 
     public void an(YYImModel yYImModel) {
         IMJsonContents96Model iMJsonContents96Model;
-        if (yYImModel == null || (iMJsonContents96Model = (IMJsonContents96Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents96Model.class)) == null) {
+        if (yYImModel == null || (iMJsonContents96Model = (IMJsonContents96Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents96Model.class)) == null) {
             return;
         }
         LiveEventBus.get("room_activity_entrance").post(iMJsonContents96Model);
@@ -1000,7 +998,7 @@ public class YYImMsgManager {
 
     public void ao(YYImModel yYImModel) {
         IMJsonContents97Model iMJsonContents97Model;
-        if (yYImModel == null || (iMJsonContents97Model = (IMJsonContents97Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents97Model.class)) == null) {
+        if (yYImModel == null || (iMJsonContents97Model = (IMJsonContents97Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents97Model.class)) == null) {
             return;
         }
         LiveEventBus.get("play_activity_animation").post(iMJsonContents97Model);
@@ -1008,7 +1006,7 @@ public class YYImMsgManager {
 
     public void ap(YYImModel yYImModel) {
         IMJsonContents98Model iMJsonContents98Model;
-        if (yYImModel == null || (iMJsonContents98Model = (IMJsonContents98Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents98Model.class)) == null) {
+        if (yYImModel == null || (iMJsonContents98Model = (IMJsonContents98Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents98Model.class)) == null) {
             return;
         }
         LiveEventBus.get("exploratory_period").post(iMJsonContents98Model);
@@ -1017,7 +1015,7 @@ public class YYImMsgManager {
     public void aq(YYImModel yYImModel) {
         YYRoomModel b;
         if (yYImModel != null) {
-            YYRoomIm99Mode yYRoomIm99Mode = (YYRoomIm99Mode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYRoomIm99Mode.class);
+            YYRoomIm99Mode yYRoomIm99Mode = (YYRoomIm99Mode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYRoomIm99Mode.class);
             if (StringUtils.a("speech_ripple", yYRoomIm99Mode.getType()) && (b = YYRoomInfoManager.e().b()) != null) {
                 Iterator<YYSeatMemberModel> it = b.mics.iterator();
                 while (true) {
@@ -1043,7 +1041,7 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        LiveEventBus.get("show_red_package").post((IMJsonContents100Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents100Model.class));
+        LiveEventBus.get("show_red_package").post((IMJsonContents100Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents100Model.class));
     }
 
     public void as(YYImModel yYImModel) {
@@ -1052,7 +1050,7 @@ public class YYImMsgManager {
             return;
         }
         try {
-            YYBorImJsonMode yYBorImJsonMode = (YYBorImJsonMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYBorImJsonMode.class);
+            YYBorImJsonMode yYBorImJsonMode = (YYBorImJsonMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYBorImJsonMode.class);
             if (yYBorImJsonMode != null) {
                 if (yYBorImJsonMode.getType() == 1 && yYBorImJsonMode.getBody() != null && yYBorImJsonMode.getBody().getStatus() == 1) {
                     b.robMus = yYBorImJsonMode.getBody().getMusicInfo();
@@ -1089,7 +1087,7 @@ public class YYImMsgManager {
 
     public void at(YYImModel yYImModel) {
         YYFirstMeetImMessMode yYFirstMeetImMessMode;
-        if (yYImModel == null || (yYFirstMeetImMessMode = (YYFirstMeetImMessMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYFirstMeetImMessMode.class)) == null || StringUtils.a(yYFirstMeetImMessMode.getSource_uid(), YYRoomInfoManager.e().k())) {
+        if (yYImModel == null || (yYFirstMeetImMessMode = (YYFirstMeetImMessMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYFirstMeetImMessMode.class)) == null || StringUtils.a(yYFirstMeetImMessMode.getSource_uid(), YYRoomInfoManager.e().k())) {
             return;
         }
         LiveEventBus.get("show_frist_meetim").post(yYFirstMeetImMessMode);
@@ -1099,7 +1097,7 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        IMJsonContents104Model iMJsonContents104Model = (IMJsonContents104Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents104Model.class);
+        IMJsonContents104Model iMJsonContents104Model = (IMJsonContents104Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents104Model.class);
         YYRoomInfoManager.e().b().setUnMaskedUserList(iMJsonContents104Model.getUids(), iMJsonContents104Model.getUid(), iMJsonContents104Model.getCountdown(), iMJsonContents104Model.getType());
     }
 
@@ -1107,21 +1105,21 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        LiveEventBus.get("relation_invited").post((YYRelationShipRoomImMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYRelationShipRoomImMode.class));
+        LiveEventBus.get("relation_invited").post((YYRelationShipRoomImMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYRelationShipRoomImMode.class));
     }
 
     public void aw(YYImModel yYImModel) {
         if (yYImModel == null) {
             return;
         }
-        yYImModel.extra = (YYRelationShipSuccessImMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYRelationShipSuccessImMode.class);
+        yYImModel.extra = (YYRelationShipSuccessImMode) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYRelationShipSuccessImMode.class);
         yYImModel.type = -8;
         a(yYImModel);
     }
 
     public void ax(YYImModel yYImModel) {
         IMJsonContents108Model iMJsonContents108Model;
-        if (yYImModel == null || (iMJsonContents108Model = (IMJsonContents108Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents108Model.class)) == null) {
+        if (yYImModel == null || (iMJsonContents108Model = (IMJsonContents108Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents108Model.class)) == null) {
             return;
         }
         if (iMJsonContents108Model.getType() == 1 || iMJsonContents108Model.getType() == 2) {
@@ -1132,7 +1130,7 @@ public class YYImMsgManager {
 
     public void ay(YYImModel yYImModel) {
         IMJsonContents109Model iMJsonContents109Model;
-        if (yYImModel == null || (iMJsonContents109Model = (IMJsonContents109Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents109Model.class)) == null) {
+        if (yYImModel == null || (iMJsonContents109Model = (IMJsonContents109Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents109Model.class)) == null) {
             return;
         }
         LiveEventBus.get("theme_activity_gifts").post(iMJsonContents109Model);
@@ -1140,7 +1138,7 @@ public class YYImMsgManager {
 
     public void az(YYImModel yYImModel) {
         IMJsonContents110Model iMJsonContents110Model;
-        if (yYImModel == null || (iMJsonContents110Model = (IMJsonContents110Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) IMJsonContents110Model.class)) == null) {
+        if (yYImModel == null || (iMJsonContents110Model = (IMJsonContents110Model) AppInfo.f().fromJson(yYImModel.getMsgExtra(), IMJsonContents110Model.class)) == null) {
             return;
         }
         YYImModel yYImModel2 = new YYImModel();
@@ -1172,7 +1170,7 @@ public class YYImMsgManager {
                 a(yYImModel2);
             }
             LiveEventBus.get("add_new_user").post(yYImModel);
-            YYMsgAudienceCountExtra yYMsgAudienceCountExtra = (YYMsgAudienceCountExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgAudienceCountExtra.class);
+            YYMsgAudienceCountExtra yYMsgAudienceCountExtra = (YYMsgAudienceCountExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgAudienceCountExtra.class);
             if (yYMsgAudienceCountExtra == null) {
                 return;
             }
@@ -1199,7 +1197,7 @@ public class YYImMsgManager {
         yYAudienceModel.setUid(YYRoomInfoManager.e().k());
         yYAudienceModel.setName(YYRoomInfoManager.e().l());
         yYAudienceModel.setAvatar(YYRoomInfoManager.e().m());
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo != null) {
             yYAudienceModel.chat_anchor = yYUserInfo.chat_anchor;
         }
@@ -1227,12 +1225,12 @@ public class YYImMsgManager {
     public void c(YYImModel yYImModel) {
         YYAudienceModel yYAudienceModel;
         YYRoomModel b;
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo == null || (yYAudienceModel = yYImModel.target_profile) == null || (b = YYRoomInfoManager.e().b()) == null) {
             return;
         }
         b.removeAudienceForList(yYAudienceModel.getUid());
-        YYMsgUpSeatExtra yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgUpSeatExtra.class);
+        YYMsgUpSeatExtra yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgUpSeatExtra.class);
         if (yYMsgUpSeatExtra == null || yYMsgUpSeatExtra.seats == null) {
             return;
         }
@@ -1306,7 +1304,7 @@ public class YYImMsgManager {
 
     public void c(String str) {
         YYMusicMode yYMusicMode;
-        if (StringUtils.b(str) || (yYMusicMode = (YYMusicMode) AppInfo.f().fromJson(str, (Class<Object>) YYMusicMode.class)) == null) {
+        if (StringUtils.b(str) || (yYMusicMode = (YYMusicMode) AppInfo.f().fromJson(str, YYMusicMode.class)) == null) {
             return;
         }
         if (YYRoomInfoManager.e().b() != null) {
@@ -1348,14 +1346,14 @@ public class YYImMsgManager {
             a(yYImModel);
             return;
         }
-        YYImMsgManager a2 = a();
-        a2.a("", YYRoomInfoManager.e().l() + "隐身进入聊天室");
+        YYImMsgManager a = a();
+        a.a("", YYRoomInfoManager.e().l() + "隐身进入聊天室");
     }
 
     public void d(YYImModel yYImModel) {
         YYAudienceModel yYAudienceModel;
         YYMsgUpSeatExtra yYMsgUpSeatExtra;
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo == null || (yYAudienceModel = yYImModel.target_profile) == null) {
             return;
         }
@@ -1368,7 +1366,7 @@ public class YYImMsgManager {
             LiveEventBus.get("show_music_close").post("");
         }
         YYRoomModel b = YYRoomInfoManager.e().b();
-        if (b == null || (yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgUpSeatExtra.class)) == null || yYMsgUpSeatExtra.seats == null) {
+        if (b == null || (yYMsgUpSeatExtra = (YYMsgUpSeatExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgUpSeatExtra.class)) == null || yYMsgUpSeatExtra.seats == null) {
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -1429,7 +1427,7 @@ public class YYImMsgManager {
 
     public void e(YYImModel yYImModel) {
         YYAudienceModel yYAudienceModel;
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo == null || (yYAudienceModel = yYImModel.target_profile) == null || !TextUtils.equals(yYAudienceModel.getUid(), yYUserInfo.getUid())) {
             return;
         }
@@ -1464,7 +1462,7 @@ public class YYImMsgManager {
     public void g(YYImModel yYImModel) {
         YYRoomModel b;
         YYMsgMuteStatusExtra yYMsgMuteStatusExtra;
-        if (yYImModel == null || (b = YYRoomInfoManager.e().b()) == null || (yYMsgMuteStatusExtra = (YYMsgMuteStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgMuteStatusExtra.class)) == null) {
+        if (yYImModel == null || (b = YYRoomInfoManager.e().b()) == null || (yYMsgMuteStatusExtra = (YYMsgMuteStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgMuteStatusExtra.class)) == null) {
             return;
         }
         b.updateMicStatus(yYMsgMuteStatusExtra.uid, yYMsgMuteStatusExtra.mute == 0 ? 1 : 0);
@@ -1473,7 +1471,7 @@ public class YYImMsgManager {
         if (!TextUtils.equals(yYAudienceModel.getUid(), yYAudienceModel2.getUid()) && !TextUtils.equals(b.uid, yYAudienceModel2.getUid()) && (!"10".equals(b.chat_type) || YYRoomInfoManager.e().L() == null || !YYRoomInfoManager.e().L().b())) {
             a(yYImModel);
         }
-        YYUserInfo yYUserInfo = YYRoomInfoManager.e().f17578a;
+        YYUserInfo yYUserInfo = YYRoomInfoManager.e().a;
         if (yYUserInfo != null && TextUtils.equals(yYUserInfo.getUid(), yYMsgMuteStatusExtra.uid)) {
             int i = yYMsgMuteStatusExtra.mute == 0 ? 1 : 0;
             if (i == 0) {
@@ -1493,7 +1491,7 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        YYMsgMicStatusExtra yYMsgMicStatusExtra = (YYMsgMicStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgMicStatusExtra.class);
+        YYMsgMicStatusExtra yYMsgMicStatusExtra = (YYMsgMicStatusExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgMicStatusExtra.class);
         YYObserverManager.a().a(yYMsgMicStatusExtra.seat_num, yYMsgMicStatusExtra.seat_close);
         a(yYImModel);
     }
@@ -1511,7 +1509,7 @@ public class YYImMsgManager {
         }
         b.removeSeatMember(yYAudienceModel.getUid());
         b.removeAudienceForList(yYAudienceModel.getUid());
-        YYMsgAudienceCountExtra yYMsgAudienceCountExtra = (YYMsgAudienceCountExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgAudienceCountExtra.class);
+        YYMsgAudienceCountExtra yYMsgAudienceCountExtra = (YYMsgAudienceCountExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgAudienceCountExtra.class);
         if (yYMsgAudienceCountExtra == null) {
             return;
         }
@@ -1526,7 +1524,7 @@ public class YYImMsgManager {
         YYRoomModel b;
         YYUserInfo yYUserInfo;
         YYAudienceModel yYAudienceModel;
-        if (yYImModel == null || (b = YYRoomInfoManager.e().b()) == null || (yYUserInfo = YYRoomInfoManager.e().f17578a) == null || (yYAudienceModel = yYImModel.target_profile) == null) {
+        if (yYImModel == null || (b = YYRoomInfoManager.e().b()) == null || (yYUserInfo = YYRoomInfoManager.e().a) == null || (yYAudienceModel = yYImModel.target_profile) == null) {
             return;
         }
         if (TextUtils.equals(yYAudienceModel.getUid(), yYUserInfo.getUid())) {
@@ -1539,7 +1537,7 @@ public class YYImMsgManager {
         a(yYImModel);
         b.removeSeatMember(yYAudienceModel.getUid());
         b.removeAudienceForList(yYAudienceModel.getUid());
-        YYMsgAudienceCountExtra yYMsgAudienceCountExtra = (YYMsgAudienceCountExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgAudienceCountExtra.class);
+        YYMsgAudienceCountExtra yYMsgAudienceCountExtra = (YYMsgAudienceCountExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgAudienceCountExtra.class);
         if (yYMsgAudienceCountExtra == null) {
             return;
         }
@@ -1550,13 +1548,13 @@ public class YYImMsgManager {
         if (yYImModel == null) {
             return;
         }
-        LiveEventBus.get("close_living_room").post((YYMsgKickInfoExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgKickInfoExtra.class));
+        LiveEventBus.get("close_living_room").post((YYMsgKickInfoExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgKickInfoExtra.class));
         AudioChannelManager.j().c();
     }
 
     public void l(YYImModel yYImModel) {
         YYMsgWaittingExtra yYMsgWaittingExtra;
-        if (yYImModel == null || (yYMsgWaittingExtra = (YYMsgWaittingExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgWaittingExtra.class)) == null) {
+        if (yYImModel == null || (yYMsgWaittingExtra = (YYMsgWaittingExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgWaittingExtra.class)) == null) {
             return;
         }
         YYRoomModel b = YYRoomInfoManager.e().b();
@@ -1574,7 +1572,7 @@ public class YYImMsgManager {
         if (yYImModel == null || (b = YYRoomInfoManager.e().b()) == null) {
             return;
         }
-        YYMsgRoomNameExtra yYMsgRoomNameExtra = (YYMsgRoomNameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgRoomNameExtra.class);
+        YYMsgRoomNameExtra yYMsgRoomNameExtra = (YYMsgRoomNameExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgRoomNameExtra.class);
         b.room_name = yYMsgRoomNameExtra.room_name;
         LiveEventBus.get("notify_room_rename").post(yYMsgRoomNameExtra.room_name);
     }
@@ -1639,7 +1637,7 @@ public class YYImMsgManager {
     }
 
     public void v(YYImModel yYImModel) {
-        YYMsgEmojiExtra yYMsgEmojiExtra = (YYMsgEmojiExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgEmojiExtra.class);
+        YYMsgEmojiExtra yYMsgEmojiExtra = (YYMsgEmojiExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgEmojiExtra.class);
         if (yYMsgEmojiExtra == null || TextUtils.isEmpty(yYMsgEmojiExtra.result)) {
             return;
         }
@@ -1651,7 +1649,7 @@ public class YYImMsgManager {
     }
 
     public void x(YYImModel yYImModel) {
-        YYMsgVoteStartExtra yYMsgVoteStartExtra = (YYMsgVoteStartExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), (Class<Object>) YYMsgVoteStartExtra.class);
+        YYMsgVoteStartExtra yYMsgVoteStartExtra = (YYMsgVoteStartExtra) AppInfo.f().fromJson(yYImModel.getMsgExtra(), YYMsgVoteStartExtra.class);
         if (yYMsgVoteStartExtra == null) {
             return;
         }

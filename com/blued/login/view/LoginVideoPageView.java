@@ -3,6 +3,7 @@ package com.blued.login.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.blued.android.module.player.media.view.AbsPlayerView;
 import com.blued.login.R;
@@ -26,9 +27,9 @@ public final class LoginVideoPageView extends AbsPlayerView {
     }
 
     private final void c() {
-        this.b = LayoutInflater.from(this.f15662a);
-        this.f15663c = this.b.inflate(R.layout.login_video_root, this);
-        this.i = (FrameLayout) this.f15663c.findViewById(R.id.video_root);
+        this.b = LayoutInflater.from(this.a);
+        this.c = this.b.inflate(R.layout.login_video_root, (ViewGroup) this);
+        this.i = (FrameLayout) this.c.findViewById(R.id.video_root);
     }
 
     private final String getPlayUrl() {

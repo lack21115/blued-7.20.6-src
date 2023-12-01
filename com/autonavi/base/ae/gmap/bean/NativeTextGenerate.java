@@ -9,13 +9,12 @@ import android.graphics.Typeface;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import com.amap.api.col.p0003sl.aa;
-import com.amap.api.col.p0003sl.dw;
+import com.amap.api.col.3sl.aa;
+import com.amap.api.col.3sl.dw;
 import com.amap.api.maps.model.BitmapDescriptor;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.autonavi.amap.mapcore.AMapEngineUtils;
 import com.autonavi.base.amap.mapcore.FileUtil;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.nio.ByteBuffer;
 
 /* loaded from: source-8756600-dex2jar.jar:com/autonavi/base/ae/gmap/bean/NativeTextGenerate.class */
@@ -160,8 +159,8 @@ public class NativeTextGenerate {
             return null;
         }
         try {
-            Context context = aa.f4728a;
-            byte[] uncompress = FileUtil.uncompress(FileUtil.readFileContentsFromAssetsByPreName(context, AMapEngineUtils.MAP_MAP_ASSETS_NAME, str + BridgeUtil.UNDERLINE_STR));
+            Context context = aa.a;
+            byte[] uncompress = FileUtil.uncompress(FileUtil.readFileContentsFromAssetsByPreName(context, AMapEngineUtils.MAP_MAP_ASSETS_NAME, str + "_"));
             if (uncompress != null) {
                 return BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeByteArray(uncompress, 0, uncompress.length));
             }
@@ -174,7 +173,7 @@ public class NativeTextGenerate {
 
     byte[] getMapStyleJsonData() {
         try {
-            return FileUtil.uncompress(FileUtil.readFileContentsFromAssets(aa.f4728a, "map_custom/terrain/terrainStyle.data"));
+            return FileUtil.uncompress(FileUtil.readFileContentsFromAssets(aa.a, "map_custom/terrain/terrainStyle.data"));
         } catch (Throwable th) {
             dw.a(th);
             return null;

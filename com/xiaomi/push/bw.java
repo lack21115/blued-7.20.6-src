@@ -8,16 +8,16 @@ import com.xiaomi.push.ai;
 public class bw extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ bv f41293a;
+    final /* synthetic */ bv f27602a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public bw(bv bvVar) {
-        this.f41293a = bvVar;
+        this.f27602a = bvVar;
     }
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public String mo11550a() {
+    public String mo8500a() {
         return "10052";
     }
 
@@ -27,12 +27,12 @@ public class bw extends ai.a {
         cl clVar2;
         Context context;
         com.xiaomi.channel.commonutils.logger.b.c("exec== mUploadJob");
-        clVar = this.f41293a.f230a;
+        clVar = this.f27602a.f183a;
         if (clVar != null) {
-            clVar2 = this.f41293a.f230a;
-            context = this.f41293a.f227a;
+            clVar2 = this.f27602a.f183a;
+            context = this.f27602a.f180a;
             clVar2.a(context);
-            this.f41293a.b("upload_time");
+            this.f27602a.b("upload_time");
         }
     }
 }

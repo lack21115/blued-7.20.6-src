@@ -17,7 +17,6 @@ import android.os.Environment;
 import android.os.RemoteException;
 import android.os.UserHandle;
 import android.util.AndroidException;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.List;
 
@@ -329,7 +328,7 @@ public abstract class PackageManager {
     }
 
     public static String getDataDirForUser(int i, String str) {
-        return Environment.getDataDirectory().toString() + "/user/" + i + BridgeUtil.SPLIT_MARK + str;
+        return Environment.getDataDirectory().toString() + "/user/" + i + "/" + str;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -340,7 +339,7 @@ public abstract class PackageManager {
                 return 3;
             case INSTALL_FAILED_NO_MATCHING_ABIS /* -113 */:
                 return 7;
-            case -112:
+            case INSTALL_FAILED_DUPLICATE_PERMISSION /* -112 */:
             case -13:
             case -10:
             case -8:
@@ -424,7 +423,7 @@ public abstract class PackageManager {
                 return "INSTALL_FAILED_ABORTED";
             case INSTALL_FAILED_NO_MATCHING_ABIS /* -113 */:
                 return "INSTALL_FAILED_NO_MATCHING_ABIS";
-            case -112:
+            case INSTALL_FAILED_DUPLICATE_PERMISSION /* -112 */:
                 return "INSTALL_FAILED_DUPLICATE_PERMISSION";
             case INSTALL_FAILED_USER_RESTRICTED /* -111 */:
                 return "INSTALL_FAILED_USER_RESTRICTED";

@@ -20,37 +20,36 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ServiceNumberListViewModel extends BaseListViewModel<SessionModel> {
 
     /* renamed from: a  reason: collision with root package name */
-    public MsgSessionListener f32619a;
+    public MsgSessionListener f18928a;
     private long b = 100;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<SessionModel> f32620c = new ArrayList();
+    private List<SessionModel> f18929c = new ArrayList();
 
     @Metadata
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/viewModel/ServiceNumberListViewModel$MsgSessionListener.class */
     public static final class MsgSessionListener extends StableSessionListListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ServiceNumberListViewModel f32621a;
+        private final ServiceNumberListViewModel f18930a;
 
-        public MsgSessionListener(ServiceNumberListViewModel vm) {
-            Intrinsics.e(vm, "vm");
-            this.f32621a = vm;
+        public MsgSessionListener(ServiceNumberListViewModel serviceNumberListViewModel) {
+            Intrinsics.e(serviceNumberListViewModel, "vm");
+            this.f18930a = serviceNumberListViewModel;
         }
 
-        @Override // com.blued.android.chat.StableSessionListListener
-        public void onUISessionDataChanged(List<SessionModel> copyList) {
-            Intrinsics.e(copyList, "copyList");
-            this.f32621a.d().clear();
+        public void onUISessionDataChanged(List<SessionModel> list) {
+            Intrinsics.e(list, "copyList");
+            this.f18930a.d().clear();
             boolean z = true;
-            if (copyList.size() > 0) {
-                List<SessionModel> d = this.f32621a.d();
-                List<SessionModel> d2 = ChatHelperV4.d(SubscribeNumberManager.f32449a.a(copyList, true));
+            if (list.size() > 0) {
+                List<SessionModel> d = this.f18930a.d();
+                List<SessionModel> d2 = ChatHelperV4.d(SubscribeNumberManager.f18759a.a(list, true));
                 Intrinsics.c(d2, "sortSessionModelList(\n  …                        )");
                 d.addAll(d2);
             }
-            List<? extends SessionModel> j = CollectionsKt.j((Iterable) this.f32621a.d());
-            ServiceNumberListViewModel serviceNumberListViewModel = this.f32621a;
+            List<? extends SessionModel> j = CollectionsKt.j(this.f18930a.d());
+            ServiceNumberListViewModel serviceNumberListViewModel = this.f18930a;
             if (j.size() != 20) {
                 z = false;
             }
@@ -59,7 +58,7 @@ public final class ServiceNumberListViewModel extends BaseListViewModel<SessionM
     }
 
     public final MsgSessionListener a() {
-        MsgSessionListener msgSessionListener = this.f32619a;
+        MsgSessionListener msgSessionListener = this.f18928a;
         if (msgSessionListener != null) {
             return msgSessionListener;
         }
@@ -69,12 +68,12 @@ public final class ServiceNumberListViewModel extends BaseListViewModel<SessionM
 
     public final void a(MsgSessionListener msgSessionListener) {
         Intrinsics.e(msgSessionListener, "<set-?>");
-        this.f32619a = msgSessionListener;
+        this.f18928a = msgSessionListener;
     }
 
-    public final void a(List<? extends SessionModel> data, boolean z) {
-        Intrinsics.e(data, "data");
-        loadListSucceed(data, z);
+    public final void a(List<? extends SessionModel> list, boolean z) {
+        Intrinsics.e(list, "data");
+        loadListSucceed(list, z);
     }
 
     public final void b() {
@@ -86,28 +85,25 @@ public final class ServiceNumberListViewModel extends BaseListViewModel<SessionM
     }
 
     public final List<SessionModel> d() {
-        return this.f32620c;
+        return this.f18929c;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel, com.blued.android.module.common.base.mvi.MVIBaseViewModel
-    public void dispatchAction(UiAction action) {
-        Intrinsics.e(action, "action");
-        super.dispatchAction(action);
-        if (action instanceof ServiceNumberListAction.RefreshNewMsg) {
-            List<SessionModel> sortSessionModelList = ChatHelperV4.d(this.f32620c);
-            Intrinsics.c(sortSessionModelList, "sortSessionModelList");
-            loadListSucceed(CollectionsKt.j((Iterable) sortSessionModelList), false);
+    public void dispatchAction(UiAction uiAction) {
+        Intrinsics.e(uiAction, "action");
+        super.dispatchAction(uiAction);
+        if (uiAction instanceof ServiceNumberListAction.RefreshNewMsg) {
+            List<SessionModel> d = ChatHelperV4.d(this.f18929c);
+            Intrinsics.c(d, "sortSessionModelList");
+            loadListSucceed(CollectionsKt.j(d), false);
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseViewModel
     public void init(Bundle bundle) {
         super.init(bundle);
-        this.f32620c = new ArrayList();
+        this.f18929c = new ArrayList();
         a(new MsgSessionListener(this));
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
     }
 }

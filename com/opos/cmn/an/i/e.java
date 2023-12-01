@@ -7,12 +7,12 @@ import java.util.concurrent.ExecutorService;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final byte[] f24572a = new byte[0];
+    private static final byte[] f10885a = new byte[0];
     private static d b;
 
     private static void a() {
         if (b == null) {
-            synchronized (f24572a) {
+            synchronized (f10885a) {
                 if (b == null) {
                     b = new d.a().a(a.a()).b(a.b()).c(a.d()).d(a.c()).e(a.e()).a(a.f()).a();
                     com.opos.cmn.an.f.a.b("ThreadPoolTool", "initIfNeed ThreadPoolParams=" + b.toString());

@@ -1,5 +1,6 @@
 package com.tencent.tinker.loader.hotplug.handler;
 
+import android.R;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -22,7 +23,7 @@ import java.lang.reflect.Method;
 public class AMSInterceptHandler implements ServiceBinderInterceptor.BinderInvocationHandler {
     private static final int INTENT_SENDER_ACTIVITY;
     private static final String TAG = "Tinker.AMSIntrcptHndlr";
-    private static final int[] TRANSLUCENT_ATTR_ID = {16842840};
+    private static final int[] TRANSLUCENT_ATTR_ID = {R.attr.windowIsTranslucent};
     private final Context mContext;
 
     static {

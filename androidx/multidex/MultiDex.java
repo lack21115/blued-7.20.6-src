@@ -30,7 +30,7 @@ import java.util.zip.ZipFile;
 public final class MultiDex {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Set<File> f3175a = new HashSet();
+    private static final Set<File> f3127a = new HashSet();
     private static final boolean b = a(System.getProperty("java.vm.version"));
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,7 +38,7 @@ public final class MultiDex {
     public static final class V14 {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final int f3176a = 4;
+        private static final int f3128a = 4;
         private final ElementConstructor b;
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -51,17 +51,17 @@ public final class MultiDex {
         static class ICSElementConstructor implements ElementConstructor {
 
             /* renamed from: a  reason: collision with root package name */
-            private final Constructor<?> f3177a;
+            private final Constructor<?> f3129a;
 
             ICSElementConstructor(Class<?> cls) throws SecurityException, NoSuchMethodException {
                 Constructor<?> constructor = cls.getConstructor(File.class, ZipFile.class, DexFile.class);
-                this.f3177a = constructor;
+                this.f3129a = constructor;
                 constructor.setAccessible(true);
             }
 
             @Override // androidx.multidex.MultiDex.V14.ElementConstructor
             public Object newInstance(File file, DexFile dexFile) throws IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException, IOException {
-                return this.f3177a.newInstance(file, new ZipFile(file), dexFile);
+                return this.f3129a.newInstance(file, new ZipFile(file), dexFile);
             }
         }
 
@@ -69,17 +69,17 @@ public final class MultiDex {
         static class JBMR11ElementConstructor implements ElementConstructor {
 
             /* renamed from: a  reason: collision with root package name */
-            private final Constructor<?> f3178a;
+            private final Constructor<?> f3130a;
 
             JBMR11ElementConstructor(Class<?> cls) throws SecurityException, NoSuchMethodException {
                 Constructor<?> constructor = cls.getConstructor(File.class, File.class, DexFile.class);
-                this.f3178a = constructor;
+                this.f3130a = constructor;
                 constructor.setAccessible(true);
             }
 
             @Override // androidx.multidex.MultiDex.V14.ElementConstructor
             public Object newInstance(File file, DexFile dexFile) throws IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException {
-                return this.f3178a.newInstance(file, file, dexFile);
+                return this.f3130a.newInstance(file, file, dexFile);
             }
         }
 
@@ -87,17 +87,17 @@ public final class MultiDex {
         static class JBMR2ElementConstructor implements ElementConstructor {
 
             /* renamed from: a  reason: collision with root package name */
-            private final Constructor<?> f3179a;
+            private final Constructor<?> f3131a;
 
             JBMR2ElementConstructor(Class<?> cls) throws SecurityException, NoSuchMethodException {
                 Constructor<?> constructor = cls.getConstructor(File.class, Boolean.TYPE, File.class, DexFile.class);
-                this.f3179a = constructor;
+                this.f3131a = constructor;
                 constructor.setAccessible(true);
             }
 
             @Override // androidx.multidex.MultiDex.V14.ElementConstructor
             public Object newInstance(File file, DexFile dexFile) throws IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException {
-                return this.f3179a.newInstance(file, Boolean.FALSE, file, dexFile);
+                return this.f3131a.newInstance(file, Boolean.FALSE, file, dexFile);
             }
         }
 
@@ -119,7 +119,7 @@ public final class MultiDex {
         private static String a(File file) {
             File parentFile = file.getParentFile();
             String name = file.getName();
-            return new File(parentFile, name.substring(0, name.length() - f3176a) + ShareConstants.DEX_SUFFIX).getPath();
+            return new File(parentFile, name.substring(0, name.length() - f3128a) + ShareConstants.DEX_SUFFIX).getPath();
         }
 
         static void a(ClassLoader classLoader, List<? extends File> list) throws IOException, SecurityException, IllegalArgumentException, ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchFieldException {
@@ -261,11 +261,11 @@ public final class MultiDex {
     }
 
     private static void a(Context context, File file, File file2, String str, String str2, boolean z) throws IOException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, InvocationTargetException, NoSuchMethodException, SecurityException, ClassNotFoundException, InstantiationException {
-        synchronized (f3175a) {
-            if (f3175a.contains(file)) {
+        synchronized (f3127a) {
+            if (f3127a.contains(file)) {
                 return;
             }
-            f3175a.add(file);
+            f3127a.add(file);
             if (Build.VERSION.SDK_INT > 20) {
                 Log.w("MultiDex", "MultiDex is not guaranteed to work in SDK version " + Build.VERSION.SDK_INT + ": SDK version higher than 20 should be backed by runtime with built-in multidex capabilty but it's not the case here: java.vm.version=\"" + System.getProperty("java.vm.version") + "\"");
             }

@@ -16,27 +16,27 @@ import com.xiaomi.push.service.bb;
 public class ae extends ai.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f41199a;
+    private Context f27508a;
 
     public ae(Context context) {
-        this.f41199a = context;
+        this.f27508a = context;
     }
 
     @Override // com.xiaomi.push.ai.a
     /* renamed from: a */
-    public String mo11550a() {
+    public String mo8500a() {
         return "2";
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        ba a2 = ba.a(this.f41199a);
+        ba a2 = ba.a(this.f27508a);
         hy hyVar = new hy();
         hyVar.a(bb.a(a2, hm.MISC_CONFIG));
         hyVar.b(bb.a(a2, hm.PLUGIN_CONFIG));
         Cif cif = new Cif("-1", false);
-        cif.c(hq.DailyCheckClientConfig.f583a);
+        cif.c(hq.DailyCheckClientConfig.f536a);
         cif.a(iq.a(hyVar));
-        ao.a(this.f41199a).a((ao) cif, hg.Notification, (ht) null);
+        ao.a(this.f27508a).a((ao) cif, hg.Notification, (ht) null);
     }
 }

@@ -16,11 +16,11 @@ import com.tencent.thumbplayer.utils.TPLogUtil;
 public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlayerListener.IOnAudioProcessFrameOutputListener, ITPPlayerListener.IOnCompletionListener, ITPPlayerListener.IOnDemuxerListener, ITPPlayerListener.IOnDetailInfoListener, ITPPlayerListener.IOnErrorListener, ITPPlayerListener.IOnInfoListener, ITPPlayerListener.IOnPreparedListener, ITPPlayerListener.IOnSeekCompleteListener, ITPPlayerListener.IOnStateChangeListener, ITPPlayerListener.IOnStopAsyncCompleteListener, ITPPlayerListener.IOnSubtitleDataListener, ITPPlayerListener.IOnSubtitleFrameOutListener, ITPPlayerListener.IOnVideoFrameOutListener, ITPPlayerListener.IOnVideoProcessFrameOutputListener, ITPPlayerListener.IOnVideoSizeChangedListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private ITPPlayerListener.IOnPreparedListener f39404a;
+    private ITPPlayerListener.IOnPreparedListener f25713a;
     private ITPPlayerListener.IOnCompletionListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ITPPlayerListener.IOnInfoListener f39405c;
+    private ITPPlayerListener.IOnInfoListener f25714c;
     private ITPPlayerListener.IOnErrorListener d;
     private ITPPlayerListener.IOnSeekCompleteListener e;
     private ITPPlayerListener.IOnVideoSizeChangedListener f;
@@ -42,93 +42,93 @@ public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlay
     public static class a implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlayerListener.IOnAudioProcessFrameOutputListener, ITPPlayerListener.IOnCompletionListener, ITPPlayerListener.IOnDemuxerListener, ITPPlayerListener.IOnDetailInfoListener, ITPPlayerListener.IOnErrorListener, ITPPlayerListener.IOnInfoListener, ITPPlayerListener.IOnPreparedListener, ITPPlayerListener.IOnSeekCompleteListener, ITPPlayerListener.IOnStateChangeListener, ITPPlayerListener.IOnStopAsyncCompleteListener, ITPPlayerListener.IOnSubtitleDataListener, ITPPlayerListener.IOnSubtitleFrameOutListener, ITPPlayerListener.IOnVideoFrameOutListener, ITPPlayerListener.IOnVideoProcessFrameOutputListener, ITPPlayerListener.IOnVideoSizeChangedListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f39406a;
+        private String f25715a;
 
         public a(String str) {
-            this.f39406a = str;
+            this.f25715a = str;
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnAudioFrameOutputListener
         public void onAudioFrameOut(ITPPlayer iTPPlayer, TPAudioFrameBuffer tPAudioFrameBuffer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onAudioFrameOut");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onAudioFrameOut");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnAudioProcessFrameOutputListener
         public TPPostProcessFrameBuffer onAudioProcessFrameOut(ITPPlayer iTPPlayer, TPPostProcessFrameBuffer tPPostProcessFrameBuffer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onPostProcessFrameOut");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onPostProcessFrameOut");
             return null;
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnCompletionListener
         public void onCompletion(ITPPlayer iTPPlayer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onCompletion");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onCompletion");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnDetailInfoListener
         public void onDetailInfo(ITPPlayer iTPPlayer, TPPlayerDetailInfo tPPlayerDetailInfo) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onDetailInfo");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onDetailInfo");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnErrorListener
         public void onError(ITPPlayer iTPPlayer, int i, int i2, long j, long j2) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onError");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onError");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnInfoListener
         public void onInfo(ITPPlayer iTPPlayer, int i, long j, long j2, Object obj) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onInfo");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onInfo");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnPreparedListener
         public void onPrepared(ITPPlayer iTPPlayer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onPrepared");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onPrepared");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnDemuxerListener
         public TPRemoteSdpInfo onSdpExchange(ITPPlayer iTPPlayer, String str, int i) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onSdpExchange");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onSdpExchange");
             return null;
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnSeekCompleteListener
         public void onSeekComplete(ITPPlayer iTPPlayer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onSeekComplete");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onSeekComplete");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnStateChangeListener
         public void onStateChange(int i, int i2) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onStateChange");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onStateChange");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnStopAsyncCompleteListener
         public void onStopAsyncComplete(ITPPlayer iTPPlayer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onStopAsyncComplete");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onStopAsyncComplete");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnSubtitleDataListener
         public void onSubtitleData(ITPPlayer iTPPlayer, TPSubtitleData tPSubtitleData) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onSubtitleData");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onSubtitleData");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnSubtitleFrameOutListener
         public void onSubtitleFrameOut(ITPPlayer iTPPlayer, TPSubtitleFrameBuffer tPSubtitleFrameBuffer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onSubtitleFrameOut");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onSubtitleFrameOut");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnVideoFrameOutListener
         public void onVideoFrameOut(ITPPlayer iTPPlayer, TPVideoFrameBuffer tPVideoFrameBuffer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onVideoFrameOut");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onVideoFrameOut");
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnVideoProcessFrameOutputListener
         public TPPostProcessFrameBuffer onVideoProcessFrameOut(ITPPlayer iTPPlayer, TPPostProcessFrameBuffer tPPostProcessFrameBuffer) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onPostProcessFrameOut");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onPostProcessFrameOut");
             return null;
         }
 
         @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnVideoSizeChangedListener
         public void onVideoSizeChanged(ITPPlayer iTPPlayer, long j, long j2) {
-            TPLogUtil.i(this.f39406a, " empty player listener , notify , onVideoSizeChanged");
+            TPLogUtil.i(this.f25715a, " empty player listener , notify , onVideoSizeChanged");
         }
     }
 
@@ -137,9 +137,9 @@ public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlay
         a(str);
         a aVar = new a(this.r);
         this.q = aVar;
-        this.f39404a = aVar;
+        this.f25713a = aVar;
         this.b = aVar;
-        this.f39405c = aVar;
+        this.f25714c = aVar;
         this.d = aVar;
         this.e = aVar;
         this.f = aVar;
@@ -157,9 +157,9 @@ public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlay
 
     public void a() {
         a aVar = this.q;
-        this.f39404a = aVar;
+        this.f25713a = aVar;
         this.b = aVar;
-        this.f39405c = aVar;
+        this.f25714c = aVar;
         this.d = aVar;
         this.e = aVar;
         this.f = aVar;
@@ -225,7 +225,7 @@ public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlay
         if (iOnInfoListener == null) {
             aVar = this.q;
         }
-        this.f39405c = aVar;
+        this.f25714c = aVar;
     }
 
     public void a(ITPPlayerListener.IOnPreparedListener iOnPreparedListener) {
@@ -233,7 +233,7 @@ public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlay
         if (iOnPreparedListener == null) {
             aVar = this.q;
         }
-        this.f39404a = aVar;
+        this.f25713a = aVar;
     }
 
     public void a(ITPPlayerListener.IOnSeekCompleteListener iOnSeekCompleteListener) {
@@ -308,7 +308,7 @@ public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlay
         }
         a aVar = this.q;
         if (aVar != null) {
-            aVar.f39406a = str;
+            aVar.f25715a = str;
         }
     }
 
@@ -339,12 +339,12 @@ public class c implements ITPPlayerListener.IOnAudioFrameOutputListener, ITPPlay
 
     @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnInfoListener
     public void onInfo(ITPPlayer iTPPlayer, int i, long j, long j2, Object obj) {
-        this.f39405c.onInfo(iTPPlayer, i, j, j2, obj);
+        this.f25714c.onInfo(iTPPlayer, i, j, j2, obj);
     }
 
     @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnPreparedListener
     public void onPrepared(ITPPlayer iTPPlayer) {
-        this.f39404a.onPrepared(iTPPlayer);
+        this.f25713a.onPrepared(iTPPlayer);
     }
 
     @Override // com.tencent.thumbplayer.api.ITPPlayerListener.IOnDemuxerListener

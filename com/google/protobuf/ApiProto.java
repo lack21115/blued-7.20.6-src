@@ -1,6 +1,5 @@
 package com.google.protobuf;
 
-import com.alipay.sdk.packet.e;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.GeneratedMessageV3;
 
@@ -17,7 +16,7 @@ public final class ApiProto {
     static {
         Descriptors.Descriptor descriptor2 = getDescriptor().getMessageTypes().get(0);
         internal_static_google_protobuf_Api_descriptor = descriptor2;
-        internal_static_google_protobuf_Api_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor2, new String[]{"Name", "Methods", "Options", e.e, "SourceContext", "Mixins", "Syntax"});
+        internal_static_google_protobuf_Api_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor2, new String[]{"Name", "Methods", "Options", "Version", "SourceContext", "Mixins", "Syntax"});
         Descriptors.Descriptor descriptor3 = getDescriptor().getMessageTypes().get(1);
         internal_static_google_protobuf_Method_descriptor = descriptor3;
         internal_static_google_protobuf_Method_fieldAccessorTable = new GeneratedMessageV3.FieldAccessorTable(descriptor3, new String[]{"Name", "RequestTypeUrl", "RequestStreaming", "ResponseTypeUrl", "ResponseStreaming", "Options", "Syntax"});

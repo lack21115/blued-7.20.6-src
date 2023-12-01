@@ -8,9 +8,7 @@ import java.util.Set;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/model/UTDimensionValueSet.class */
 public class UTDimensionValueSet extends DimensionValueSet {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final Set<LogField> f4475a = new HashSet<LogField>() { // from class: com.alibaba.mtl.appmonitor.model.UTDimensionValueSet.1
+    private static final Set<LogField> a = new HashSet<LogField>() { // from class: com.alibaba.mtl.appmonitor.model.UTDimensionValueSet.1
         {
             add(LogField.PAGE);
             add(LogField.ARG1);

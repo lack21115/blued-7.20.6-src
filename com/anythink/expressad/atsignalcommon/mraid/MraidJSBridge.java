@@ -8,44 +8,45 @@ import com.anythink.expressad.atsignalcommon.windvane.a;
 import com.anythink.expressad.atsignalcommon.windvane.l;
 import com.anythink.expressad.foundation.d.c;
 import com.anythink.expressad.foundation.h.o;
+import com.huawei.hms.ads.fw;
 import org.json.JSONObject;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/atsignalcommon/mraid/MraidJSBridge.class */
 public class MraidJSBridge extends l {
 
     /* renamed from: a  reason: collision with root package name */
-    protected static final String f7088a = "MraidJSBridge";
+    protected static final String f4250a = "MraidJSBridge";
     private IMraidJSBridge b;
 
     public void close(Object obj, String str) {
         if (obj instanceof a) {
-            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f7101a, "close");
+            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f4263a, "close");
         }
         try {
-            o.d(f7088a, "MRAID close");
+            o.d(f4250a, "MRAID close");
             if (this.b != null) {
                 this.b.close();
             }
         } catch (Throwable th) {
-            o.b(f7088a, "MRAID close", th);
+            o.b(f4250a, "MRAID close", th);
         }
     }
 
     public void expand(Object obj, String str) {
         if (obj instanceof a) {
-            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f7101a, "expand");
+            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f4263a, "expand");
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("url");
             String optString2 = jSONObject.optString("shouldUseCustomClose");
-            o.d(f7088a, "MRAID expand " + optString + " " + optString2);
+            o.d(f4250a, "MRAID expand " + optString + " " + optString2);
             if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2) || this.b == null) {
                 return;
             }
-            this.b.expand(optString, optString2.toLowerCase().equals("true"));
+            this.b.expand(optString, optString2.toLowerCase().equals(fw.Code));
         } catch (Throwable th) {
-            o.b(f7088a, "MRAID expand", th);
+            o.b(f4250a, "MRAID expand", th);
         }
     }
 
@@ -65,7 +66,7 @@ public class MraidJSBridge extends l {
             }
             this.b = (IMraidJSBridge) windVaneWebView.getMraidObject();
         } catch (Exception e) {
-            if (com.anythink.expressad.a.f6941a) {
+            if (com.anythink.expressad.a.f4103a) {
                 e.printStackTrace();
             }
         }
@@ -74,44 +75,44 @@ public class MraidJSBridge extends l {
     public void open(Object obj, String str) {
         WindVaneWebView windVaneWebView;
         if (obj instanceof a) {
-            windVaneWebView = ((a) obj).f7101a;
+            windVaneWebView = ((a) obj).f4263a;
             CallMraidJS.getInstance().fireNativeMethodCompleteEvent(windVaneWebView, "open");
         } else {
             windVaneWebView = null;
         }
         try {
             String optString = new JSONObject(str).optString("url");
-            o.d(f7088a, "MRAID Open ".concat(String.valueOf(optString)));
+            o.d(f4250a, "MRAID Open ".concat(String.valueOf(optString)));
             if (this.b == null || TextUtils.isEmpty(optString)) {
                 return;
             }
-            if (windVaneWebView != null && System.currentTimeMillis() - windVaneWebView.lastTouchTime > com.anythink.expressad.a.b.a.f6956c) {
+            if (windVaneWebView != null && System.currentTimeMillis() - windVaneWebView.lastTouchTime > com.anythink.expressad.a.b.a.f4118c) {
                 c mraidCampaign = this.b.getMraidCampaign();
                 windVaneWebView.getUrl();
-                int i = com.anythink.expressad.a.b.a.f6955a;
+                int i = com.anythink.expressad.a.b.a.f4117a;
                 if (com.anythink.expressad.a.b.a.a(mraidCampaign)) {
                     return;
                 }
             }
             this.b.open(optString);
         } catch (Throwable th) {
-            o.b(f7088a, "MRAID Open", th);
+            o.b(f4250a, "MRAID Open", th);
         }
     }
 
     public void setOrientationProperties(Object obj, String str) {
         if (obj instanceof a) {
-            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f7101a, "setOrientationProperties");
+            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f4263a, "setOrientationProperties");
         }
         try {
             JSONObject jSONObject = new JSONObject(str);
             String optString = jSONObject.optString("allowOrientationChange");
             String optString2 = jSONObject.optString("forceOrientation");
-            o.d(f7088a, "MRAID setOrientationProperties");
+            o.d(f4250a, "MRAID setOrientationProperties");
             if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2) || this.b == null) {
                 return;
             }
-            optString.toLowerCase().equals("true");
+            optString.toLowerCase().equals(fw.Code);
             String lowerCase = optString2.toLowerCase();
             int hashCode = lowerCase.hashCode();
             if (hashCode == 729267099) {
@@ -122,37 +123,37 @@ public class MraidJSBridge extends l {
                 lowerCase.equals(Camera.Parameters.SCENE_MODE_LANDSCAPE);
             }
         } catch (Throwable th) {
-            o.b(f7088a, "MRAID setOrientationProperties", th);
+            o.b(f4250a, "MRAID setOrientationProperties", th);
         }
     }
 
     public void unload(Object obj, String str) {
         if (obj instanceof a) {
-            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f7101a, "unload");
+            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f4263a, "unload");
         }
         try {
-            o.d(f7088a, "MRAID unload");
+            o.d(f4250a, "MRAID unload");
             if (this.b != null) {
                 this.b.unload();
             }
         } catch (Throwable th) {
-            o.b(f7088a, "MRAID unload", th);
+            o.b(f4250a, "MRAID unload", th);
         }
     }
 
     public void useCustomClose(Object obj, String str) {
         if (obj instanceof a) {
-            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f7101a, "useCustomClose");
+            CallMraidJS.getInstance().fireNativeMethodCompleteEvent(((a) obj).f4263a, "useCustomClose");
         }
         try {
             String optString = new JSONObject(str).optString("shouldUseCustomClose");
-            o.d(f7088a, "MRAID useCustomClose ".concat(String.valueOf(optString)));
+            o.d(f4250a, "MRAID useCustomClose ".concat(String.valueOf(optString)));
             if (TextUtils.isEmpty(optString) || this.b == null) {
                 return;
             }
-            this.b.useCustomClose(optString.toLowerCase().equals("true"));
+            this.b.useCustomClose(optString.toLowerCase().equals(fw.Code));
         } catch (Throwable th) {
-            o.b(f7088a, "MRAID useCustomClose", th);
+            o.b(f4250a, "MRAID useCustomClose", th);
         }
     }
 }

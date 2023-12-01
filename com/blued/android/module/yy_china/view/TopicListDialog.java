@@ -37,12 +37,8 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/TopicListDialog.class */
 public final class TopicListDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogSelectTopicBinding f18012a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TopicTypeListMode f18013c;
+    private DialogSelectTopicBinding a;
+    private TopicTypeListMode c;
     private int e;
     private final Ad b = new Ad(this);
     private String d = "";
@@ -50,16 +46,14 @@ public final class TopicListDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/TopicListDialog$Ad.class */
     public final class Ad extends BaseQuickAdapter<TopicTypeMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ TopicListDialog f18014a;
+        final /* synthetic */ TopicListDialog a;
         private String b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Ad(TopicListDialog this$0) {
             super(R.layout.item_topic_type);
             Intrinsics.e(this$0, "this$0");
-            this.f18014a = this$0;
+            this.a = this$0;
             this.b = "";
         }
 
@@ -72,21 +66,20 @@ public final class TopicListDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, final TopicTypeMode item) {
             Intrinsics.e(helper, "helper");
             Intrinsics.e(item, "item");
-            ItemTopicTypeBinding a2 = ItemTopicTypeBinding.a(helper.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.f16668a.setText(item.getTheme_name());
+            ItemTopicTypeBinding a = ItemTopicTypeBinding.a(helper.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.a.setText(item.getTheme_name());
             if (Intrinsics.a((Object) this.b, (Object) item.getTheme_id())) {
-                a2.b.setVisibility(0);
-                this.f18014a.a(item);
+                a.b.setVisibility(0);
+                this.a.a(item);
             } else {
-                a2.b.setVisibility(8);
+                a.b.setVisibility(8);
             }
-            a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$TopicListDialog$Ad$Tu6GH4yEyPox8Zl-uSoFGFcgSjY
+            a.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$TopicListDialog$Ad$Tu6GH4yEyPox8Zl-uSoFGFcgSjY
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     TopicListDialog.Ad.a(TopicListDialog.Ad.this, item, view);
@@ -134,7 +127,7 @@ public final class TopicListDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogSelectTopicBinding h() {
-        DialogSelectTopicBinding dialogSelectTopicBinding = this.f18012a;
+        DialogSelectTopicBinding dialogSelectTopicBinding = this.a;
         Intrinsics.a(dialogSelectTopicBinding);
         return dialogSelectTopicBinding;
     }
@@ -146,7 +139,7 @@ public final class TopicListDialog extends BaseFullScreenDialog {
                 TopicListDialog.a(TopicListDialog.this, view);
             }
         });
-        h().f16408c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$TopicListDialog$bwTOUyCw4azBOdqS4ABpcrj63-Y
+        h().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$TopicListDialog$bwTOUyCw4azBOdqS4ABpcrj63-Y
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 TopicListDialog.b(TopicListDialog.this, view);
@@ -185,8 +178,8 @@ public final class TopicListDialog extends BaseFullScreenDialog {
                 TopicListDialog.k();
             }
         });
-        h().f16407a.setFilters(new InputFilter[]{englishCharFilter});
-        h().f16407a.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.yy_china.view.TopicListDialog$initView$8
+        h().a.setFilters(new InputFilter[]{englishCharFilter});
+        h().a.addTextChangedListener(new TextWatcher() { // from class: com.blued.android.module.yy_china.view.TopicListDialog$initView$8
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable s) {
                 DialogSelectTopicBinding h;
@@ -224,7 +217,7 @@ public final class TopicListDialog extends BaseFullScreenDialog {
                 DialogSelectTopicBinding h;
                 if (" ".equals(String.valueOf(charSequence))) {
                     h = TopicListDialog.this.h();
-                    h.f16407a.setText("");
+                    h.a.setText("");
                 }
             }
         });
@@ -234,19 +227,19 @@ public final class TopicListDialog extends BaseFullScreenDialog {
                 DialogSelectTopicBinding h;
                 DialogSelectTopicBinding h2;
                 Intrinsics.e(topic, "topic");
-                TopicListDialog.this.f18013c = topic;
+                TopicListDialog.this.c = topic;
                 h = TopicListDialog.this.h();
-                h.f16407a.setText(topic.getTopic());
+                h.a.setText(topic.getTopic());
                 h2 = TopicListDialog.this.h();
-                h2.f16407a.clearFocus();
+                h2.a.clearFocus();
             }
         });
         YYRoomModel b = YYRoomInfoManager.e().b();
         if (b != null) {
             EventTrackYY.c(ChatRoomProtos.Event.YY_TOPIC_CLICK, b.room_id, b.uid, b.topic_set_info != null ? b.topic_set_info.getTopic_id() : "");
         }
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.q(new BluedUIHttpResponse<BluedEntityA<TopicTypeMode>>(a2) { // from class: com.blued.android.module.yy_china.view.TopicListDialog$initView$11
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.q(new BluedUIHttpResponse<BluedEntityA<TopicTypeMode>>(a) { // from class: com.blued.android.module.yy_china.view.TopicListDialog$initView$11
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -281,15 +274,15 @@ public final class TopicListDialog extends BaseFullScreenDialog {
         if (b == null) {
             return;
         }
-        final String obj = h().f16407a.getText().toString();
+        final String obj = h().a.getText().toString();
         final Ref.ObjectRef objectRef = new Ref.ObjectRef();
-        objectRef.f42545a = "0";
-        TopicTypeListMode topicTypeListMode = this.f18013c;
+        objectRef.a = "0";
+        TopicTypeListMode topicTypeListMode = this.c;
         if (topicTypeListMode != null && Intrinsics.a((Object) topicTypeListMode.getTopic(), (Object) obj)) {
-            objectRef.f42545a = topicTypeListMode.getId();
+            objectRef.a = topicTypeListMode.getId();
         }
-        final ActivityFragmentActive a2 = a();
-        YYRoomHttpUtils.c(b.room_id, this.d, obj, (String) objectRef.f42545a, new BluedUIHttpResponse<BluedEntityA<Object>>(a2) { // from class: com.blued.android.module.yy_china.view.TopicListDialog$clickItem$2
+        final ActivityFragmentActive a = a();
+        YYRoomHttpUtils.c(b.room_id, this.d, obj, (String) objectRef.a, new BluedUIHttpResponse<BluedEntityA<Object>>(a) { // from class: com.blued.android.module.yy_china.view.TopicListDialog$clickItem$2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
@@ -302,7 +295,7 @@ public final class TopicListDialog extends BaseFullScreenDialog {
                     Ref.ObjectRef<String> objectRef2 = objectRef;
                     topicSetInfoMode.setTopic(str);
                     topicSetInfoMode.setTheme_id(topicListDialog.f());
-                    topicSetInfoMode.setTopic_id(objectRef2.f42545a);
+                    topicSetInfoMode.setTopic_id(objectRef2.a);
                 }
                 TopicListDialog.this.dismissAllowingStateLoss();
             }
@@ -319,7 +312,7 @@ public final class TopicListDialog extends BaseFullScreenDialog {
         if (b2 == null) {
             return;
         }
-        EventTrackYY.c(ChatRoomProtos.Event.YY_TOPIC_SETTINGS_DONE_CLICK, b2.room_id, b2.uid, (String) objectRef.f42545a);
+        EventTrackYY.c(ChatRoomProtos.Event.YY_TOPIC_SETTINGS_DONE_CLICK, b2.room_id, b2.uid, (String) objectRef.a);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -331,26 +324,26 @@ public final class TopicListDialog extends BaseFullScreenDialog {
         TopicSetInfoMode topicSetInfoMode;
         Intrinsics.e(item, "item");
         this.d = item.getTheme_id();
-        h().f16407a.setText("");
+        h().a.setText("");
         ArrayList<TopicTypeListMode> topic_lists = item.getTopic_lists();
         if (topic_lists != null) {
             for (TopicTypeListMode topicTypeListMode : topic_lists) {
                 YYRoomModel b = YYRoomInfoManager.e().b();
                 if (b != null && (topicSetInfoMode = b.topic_set_info) != null && "1".equals(topicTypeListMode.is_default())) {
                     if (g() != 0) {
-                        h().f16407a.setText(topicTypeListMode.getTopic());
+                        h().a.setText(topicTypeListMode.getTopic());
                     } else if (topicTypeListMode.getTopic().equals(topicSetInfoMode.getTopic())) {
-                        h().f16407a.setText(topicTypeListMode.getTopic());
+                        h().a.setText(topicTypeListMode.getTopic());
                     } else {
-                        h().f16407a.setText(topicSetInfoMode.getTopic());
+                        h().a.setText(topicSetInfoMode.getTopic());
                     }
                 }
             }
             h().g.a(item.getTopic_lists());
-            h().g.a(h().f16407a.getText().toString());
+            h().g.a(h().a.getText().toString());
         }
         this.e++;
-        this.f18013c = null;
+        this.c = null;
     }
 
     @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
@@ -366,10 +359,10 @@ public final class TopicListDialog extends BaseFullScreenDialog {
         return this.e;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18012a = DialogSelectTopicBinding.a(inflater.inflate(R.layout.dialog_select_topic, viewGroup, true));
+        this.a = DialogSelectTopicBinding.a(inflater.inflate(R.layout.dialog_select_topic, viewGroup, true));
         i();
         return h().getRoot();
     }

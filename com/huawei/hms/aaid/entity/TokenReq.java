@@ -1,6 +1,5 @@
 package com.huawei.hms.aaid.entity;
 
-import com.alipay.sdk.util.i;
 import com.huawei.hms.core.aidl.IMessageEntity;
 import com.huawei.hms.core.aidl.annotation.Packed;
 
@@ -113,7 +112,7 @@ public class TokenReq implements IMessageEntity {
         stringBuffer.append(this.projectId);
         stringBuffer.append(",subjectId:");
         stringBuffer.append(this.subjectId);
-        stringBuffer.append(i.d);
+        stringBuffer.append("}");
         return stringBuffer.toString();
     }
 }

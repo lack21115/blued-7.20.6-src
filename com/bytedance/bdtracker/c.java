@@ -70,11 +70,11 @@ public final class c implements IAppLogInstance {
     public IEventHandler z;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ConcurrentHashMap<String, JSONObject> f21200a = new ConcurrentHashMap<>();
+    public final ConcurrentHashMap<String, JSONObject> f7594a = new ConcurrentHashMap<>();
     public final f0 b = new f0();
 
     /* renamed from: c  reason: collision with root package name */
-    public final e0 f21201c = new e0();
+    public final e0 f7595c = new e0();
     public final p0 d = new p0();
     public final h0 e = new h0();
     public final Set<Integer> f = new HashSet();
@@ -141,7 +141,7 @@ public final class c implements IAppLogInstance {
                     jSONObject = jSONObject2;
                     if (uri != null) {
                         String scheme = uri.getScheme();
-                        if (Intrinsics.a((Object) scheme, (Object) "http") || Intrinsics.a((Object) scheme, (Object) "https")) {
+                        if (Intrinsics.a(scheme, "http") || Intrinsics.a(scheme, "https")) {
                             jSONObject2.put("tr_token", uri.getLastPathSegment());
                         }
                         Iterator<String> it = uri.getQueryParameterNames().iterator();
@@ -157,7 +157,7 @@ public final class c implements IAppLogInstance {
                 } catch (Throwable th) {
                     jSONObject = null;
                 }
-                h hVar = (h) l.f21245a.a(jSONObject, h.class);
+                h hVar = (h) l.f7639a.a(jSONObject, h.class);
                 String str = null;
                 if (hVar != null) {
                     str = hVar.d();
@@ -182,7 +182,7 @@ public final class c implements IAppLogInstance {
 
     @Override // com.bytedance.applog.IAppLogInstance
     public void addEventObserver(IEventObserver iEventObserver) {
-        this.f21201c.a(iEventObserver);
+        this.f7595c.a(iEventObserver);
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
@@ -211,7 +211,7 @@ public final class c implements IAppLogInstance {
     public <T> T getAbConfig(String str, T t) {
         if (this.o != null) {
             n0 n0Var = this.o;
-            JSONObject optJSONObject = n0Var.f21265c.a().optJSONObject(str);
+            JSONObject optJSONObject = n0Var.f7659c.a().optJSONObject(str);
             T t2 = t;
             if (optJSONObject != null) {
                 String optString = optJSONObject.optString(OapsKey.KEY_VERID);
@@ -241,10 +241,10 @@ public final class c implements IAppLogInstance {
     public String getAbSdkVersion() {
         if (this.o != null) {
             n0 n0Var = this.o;
-            if (n0Var.f21264a) {
+            if (n0Var.f7658a) {
                 return n0Var.d.optString("ab_sdk_version", "");
             }
-            m0 m0Var = n0Var.f21265c;
+            m0 m0Var = n0Var.f7659c;
             return m0Var != null ? m0Var.b() : "";
         }
         return null;
@@ -433,7 +433,7 @@ public final class c implements IAppLogInstance {
     @Override // com.bytedance.applog.IAppLogInstance
     public String getUserID() {
         if (this.p != null) {
-            return String.valueOf(this.p.m.f21339a);
+            return String.valueOf(this.p.m.f7733a);
         }
         return null;
     }
@@ -446,7 +446,7 @@ public final class c implements IAppLogInstance {
     @Override // com.bytedance.applog.IAppLogInstance
     public JSONObject getViewProperties(View view) {
         if (view != null) {
-            return this.f21200a.get(j1.a(view));
+            return this.f7594a.get(j1.a(view));
         }
         return null;
     }
@@ -504,7 +504,7 @@ public final class c implements IAppLogInstance {
             if (r0 != 0) goto L1e
             goto Lcb
         L1e:
-            java.util.List<java.lang.Class<?>> r0 = com.bytedance.bdtracker.t2.f21311c
+            java.util.List<java.lang.Class<?>> r0 = com.bytedance.bdtracker.t2.f7705c
             java.util.Iterator r0 = r0.iterator()
             r9 = r0
         L28:
@@ -1034,7 +1034,7 @@ public final class c implements IAppLogInstance {
     public void removeAllDataObserver() {
         d0 d0Var = this.w;
         if (d0Var != null) {
-            d0Var.f21206a.clear();
+            d0Var.f7600a.clear();
         }
     }
 
@@ -1048,7 +1048,7 @@ public final class c implements IAppLogInstance {
 
     @Override // com.bytedance.applog.IAppLogInstance
     public void removeEventObserver(IEventObserver iEventObserver) {
-        this.f21201c.b(iEventObserver);
+        this.f7595c.b(iEventObserver);
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
@@ -1083,11 +1083,11 @@ public final class c implements IAppLogInstance {
     public void setAccount(Account account) {
         if (this.o != null) {
             p0 a2 = this.o.h.a();
-            if (!(a2.f21283a instanceof n2)) {
+            if (!(a2.f7677a instanceof n2)) {
                 a2.b = account;
                 return;
             }
-            s1 s1Var = ((n2) a2.f21283a).f21271c;
+            s1 s1Var = ((n2) a2.f7677a).f7665c;
             if (s1Var != null) {
                 s1Var.a(account);
             }
@@ -1111,14 +1111,14 @@ public final class c implements IAppLogInstance {
             n0 n0Var = vVar.h;
             boolean z2 = true;
             if (n0Var.a("app_language", (Object) str)) {
-                a.a(n0Var.f21265c.e, "app_language", str);
+                a.a(n0Var.f7659c.e, "app_language", str);
                 z = true;
             } else {
                 z = false;
             }
             n0 n0Var2 = vVar.h;
             if (n0Var2.a("app_region", (Object) str2)) {
-                a.a(n0Var2.f21265c.e, "app_region", str2);
+                a.a(n0Var2.f7659c.e, "app_region", str2);
             } else {
                 z2 = false;
             }
@@ -1136,14 +1136,14 @@ public final class c implements IAppLogInstance {
         }
         n0 n0Var = this.o;
         if (n0Var.a("app_track", jSONObject)) {
-            m0 m0Var = n0Var.f21265c;
-            a.a(m0Var.f21257c, "app_track", jSONObject.toString());
+            m0 m0Var = n0Var.f7659c;
+            a.a(m0Var.f7651c, "app_track", jSONObject.toString());
         }
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
     public void setClipboardEnabled(boolean z) {
-        this.p.A.f21214a = z;
+        this.p.A.f7608a = z;
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
@@ -1186,7 +1186,7 @@ public final class c implements IAppLogInstance {
 
     @Override // com.bytedance.applog.IAppLogInstance
     public void setExtraParams(IExtraParams iExtraParams) {
-        this.i.f21295a = iExtraParams;
+        this.i.f7689a = iExtraParams;
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
@@ -1207,7 +1207,7 @@ public final class c implements IAppLogInstance {
         if (this.o != null) {
             n0 n0Var = this.o;
             if (n0Var.a("google_aid", (Object) str)) {
-                a.a(n0Var.f21265c.e, "google_aid", str);
+                a.a(n0Var.f7659c.e, "google_aid", str);
             }
         }
     }
@@ -1293,15 +1293,15 @@ public final class c implements IAppLogInstance {
     public void setUserAgent(String str) {
         if (this.o != null) {
             n0 n0Var = this.o;
-            if (n0Var.a(com.alipay.sdk.cons.b.b, (Object) str)) {
-                a.a(n0Var.f21265c.e, com.alipay.sdk.cons.b.b, str);
+            if (n0Var.a("user_agent", (Object) str)) {
+                a.a(n0Var.f7659c.e, "user_agent", str);
             }
         }
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
     public void setUserID(long j) {
-        this.p.m.f21339a = j;
+        this.p.m.f7733a = j;
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
@@ -1358,7 +1358,7 @@ public final class c implements IAppLogInstance {
         if (view == null || jSONObject == null) {
             return;
         }
-        this.f21200a.put(j1.a(view), jSONObject);
+        this.f7594a.put(j1.a(view), jSONObject);
     }
 
     @Override // com.bytedance.applog.IAppLogInstance
@@ -1387,7 +1387,7 @@ public final class c implements IAppLogInstance {
             if (b != null) {
                 try {
                     Constructor<?> constructor = b.getConstructor(v.class, String.class);
-                    new HandlerThread("bd_tracker_d_" + vVar.f21325c.l).start();
+                    new HandlerThread("bd_tracker_d_" + vVar.f7719c.l).start();
                     vVar.r = (t) constructor.newInstance(vVar, str);
                     vVar.i.sendMessage(vVar.i.obtainMessage(9, vVar.r));
                 } catch (Exception e) {

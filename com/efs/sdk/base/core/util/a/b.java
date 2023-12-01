@@ -11,11 +11,11 @@ import java.util.Map;
 public final class b implements com.efs.sdk.base.core.util.concurrent.c<HttpResponse> {
 
     /* renamed from: a  reason: collision with root package name */
-    String f21788a;
+    String f8182a;
     Map<String, String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public byte[] f21789c;
+    public byte[] f8183c;
     public File d;
     public String e;
     public Map<String, String> f;
@@ -39,12 +39,12 @@ public final class b implements com.efs.sdk.base.core.util.concurrent.c<HttpResp
         }
         if (z) {
             if (z) {
-                byte[] bArr = this.f21789c;
-                return (bArr == null || bArr.length <= 0) ? HttpEnv.getInstance().getHttpUtil().post(this.f21788a, this.b, this.d) : this.g ? HttpEnv.getInstance().getHttpUtil().postAsFile(this.f21788a, this.b, this.f21789c) : HttpEnv.getInstance().getHttpUtil().post(this.f21788a, this.b, this.f21789c);
+                byte[] bArr = this.f8183c;
+                return (bArr == null || bArr.length <= 0) ? HttpEnv.getInstance().getHttpUtil().post(this.f8182a, this.b, this.d) : this.g ? HttpEnv.getInstance().getHttpUtil().postAsFile(this.f8182a, this.b, this.f8183c) : HttpEnv.getInstance().getHttpUtil().post(this.f8182a, this.b, this.f8183c);
             }
             Log.e("efs.util.http", "request not support method '" + this.e + "'");
             return null;
         }
-        return HttpEnv.getInstance().getHttpUtil().get(this.f21788a, this.b);
+        return HttpEnv.getInstance().getHttpUtil().get(this.f8182a, this.b);
     }
 }

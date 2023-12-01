@@ -38,7 +38,7 @@ class CalendarViewMaterialDelegate extends CalendarView.AbstractCalendarViewDele
             throw new IllegalArgumentException("max date cannot be before min date");
         }
         long constrain = MathUtils.constrain(System.currentTimeMillis(), parseDateToMillis, parseDateToMillis2);
-        int resourceId = obtainStyledAttributes.getResourceId(12, 16974259);
+        int resourceId = obtainStyledAttributes.getResourceId(12, R.style.TextAppearance_DeviceDefault_Small);
         obtainStyledAttributes.recycle();
         this.mDayPickerView = new DayPickerView(context);
         this.mDayPickerView.setFirstDayOfWeek(i3);

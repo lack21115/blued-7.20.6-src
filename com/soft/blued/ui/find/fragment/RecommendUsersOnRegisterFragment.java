@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import com.blued.android.core.AppMethods;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.activity.keyboardpage.KeyBoardFragment;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -31,7 +32,7 @@ import com.soft.blued.ui.home.HomeArgumentHelper;
 public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implements View.OnClickListener, SwipeFlingAdapterView.onFlingListener {
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f30540c;
+    private Context f16850c;
     private View j;
     private RenrenPullToRefreshListView k;
     private SwipeFlingAdapterView l;
@@ -44,14 +45,13 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
     private int p = 30;
     private boolean q = true;
     public BluedUIHttpResponse b = new BluedUIHttpResponse<BluedEntityA<BluedRecommendUsers>>() { // from class: com.soft.blued.ui.find.fragment.RecommendUsersOnRegisterFragment.1
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedRecommendUsers> bluedEntityA) {
             RecommendUsersOnRegisterFragment.this.s.a(false);
             if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
                 RecommendUsersOnRegisterFragment.this.q = false;
                 RecommendUsersOnRegisterFragment.this.k.p();
-                AppMethods.a((CharSequence) RecommendUsersOnRegisterFragment.this.f30540c.getResources().getString(2131887275));
+                AppMethods.a(RecommendUsersOnRegisterFragment.this.f16850c.getResources().getString(2131887275));
                 RecommendUsersOnRegisterFragment.g(RecommendUsersOnRegisterFragment.this);
                 return;
             }
@@ -61,7 +61,7 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
             } else {
                 RecommendUsersOnRegisterFragment.this.k.p();
                 if (RecommendUsersOnRegisterFragment.this.o != 1) {
-                    AppMethods.a((CharSequence) RecommendUsersOnRegisterFragment.this.f30540c.getResources().getString(2131887275));
+                    AppMethods.a(RecommendUsersOnRegisterFragment.this.f16850c.getResources().getString(2131887275));
                 }
                 RecommendUsersOnRegisterFragment.this.q = false;
             }
@@ -74,20 +74,17 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
             RecommendUsersOnRegisterFragment.this.s.b(bluedEntityA.data);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse, com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
         public void onFailure(Throwable th, int i, String str) {
             RecommendUsersOnRegisterFragment.this.s.a(false);
             super.onFailure(th, i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             RecommendUsersOnRegisterFragment.this.k.j();
             RecommendUsersOnRegisterFragment.this.k.q();
             RecommendUsersOnRegisterFragment.this.s.a(false);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
         }
     };
@@ -107,13 +104,13 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
         }
         if (!this.q && (i = this.o) != 1) {
             this.o = i - 1;
-            AppMethods.a((CharSequence) this.f30540c.getResources().getString(2131887275));
+            AppMethods.a(this.f16850c.getResources().getString(2131887275));
             this.k.j();
             this.k.q();
             return;
         }
         this.s.a(true);
-        LoginRegisterHttpUtils.a(0, this.f30540c, this.b, UserInfo.getInstance().getLoginUserInfo().getUid(), this.o + "", this.p + "", getFragmentActive());
+        LoginRegisterHttpUtils.a(0, this.f16850c, this.b, UserInfo.getInstance().getLoginUserInfo().getUid(), this.o + "", this.p + "", (IRequestHost) getFragmentActive());
     }
 
     static /* synthetic */ int g(RecommendUsersOnRegisterFragment recommendUsersOnRegisterFragment) {
@@ -129,14 +126,14 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
     }
 
     private void h() {
-        this.n = LayoutInflater.from(this.f30540c);
+        this.n = LayoutInflater.from(this.f16850c);
         this.t = DialogUtils.a(getActivity());
         this.j.findViewById(R.id.go_home).setOnClickListener(this);
-        Context context = this.f30540c;
+        Context context = this.f16850c;
         this.r = new RecommendGridAdapter(context, PeopleGridQuickAdapter.a(context), this, getFragmentActive(), this.t);
-        RenrenPullToRefreshListView renrenPullToRefreshListView = (RenrenPullToRefreshListView) this.j.findViewById(2131366898);
-        this.k = renrenPullToRefreshListView;
-        renrenPullToRefreshListView.setRefreshEnabled(true);
+        RenrenPullToRefreshListView findViewById = this.j.findViewById(R.id.list_view);
+        this.k = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.k.p();
         ListView listView = (ListView) this.k.getRefreshableView();
         this.m = listView;
@@ -146,13 +143,11 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
         this.m.setDividerHeight(0);
         this.m.setAdapter((ListAdapter) this.r);
         this.k.setOnPullDownListener(new RenrenPullToRefreshListView.OnPullDownListener() { // from class: com.soft.blued.ui.find.fragment.RecommendUsersOnRegisterFragment.2
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void a() {
                 RecommendUsersOnRegisterFragment.this.o = 1;
                 RecommendUsersOnRegisterFragment.this.a(false);
             }
 
-            @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshListView.OnPullDownListener
             public void b() {
                 RecommendUsersOnRegisterFragment.h(RecommendUsersOnRegisterFragment.this);
                 RecommendUsersOnRegisterFragment.this.a(false);
@@ -167,13 +162,13 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
         SwipeFlingAdapterView swipeFlingAdapterView = (SwipeFlingAdapterView) this.j.findViewById(R.id.swipe_view);
         this.l = swipeFlingAdapterView;
         swipeFlingAdapterView.setFlingListener(this);
-        SwipeCardAdapter swipeCardAdapter = new SwipeCardAdapter(this.f30540c, this.l, this, getFragmentActive(), this.t);
+        SwipeCardAdapter swipeCardAdapter = new SwipeCardAdapter(this.f16850c, this.l, this, getFragmentActive(), this.t);
         this.s = swipeCardAdapter;
         this.l.setAdapter(swipeCardAdapter);
         this.l.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.find.fragment.RecommendUsersOnRegisterFragment.4
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if ((motionEvent.getRawY() < RecommendUsersOnRegisterFragment.this.l.b || motionEvent.getRawY() > RecommendUsersOnRegisterFragment.this.l.e) && RecommendUsersOnRegisterFragment.this.l.f28663a != null && RecommendUsersOnRegisterFragment.this.l.f28663a.getX() == RecommendUsersOnRegisterFragment.this.l.f28664c) {
+                if ((motionEvent.getRawY() < RecommendUsersOnRegisterFragment.this.l.b || motionEvent.getRawY() > RecommendUsersOnRegisterFragment.this.l.e) && RecommendUsersOnRegisterFragment.this.l.f14973a != null && RecommendUsersOnRegisterFragment.this.l.f14973a.getX() == RecommendUsersOnRegisterFragment.this.l.f14974c) {
                     RecommendUsersOnRegisterFragment.this.r.notifyDataSetChanged();
                     RecommendUsersOnRegisterFragment.this.l.setVisibility(8);
                     return true;
@@ -213,7 +208,6 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
         this.s.b();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         getActivity().setResult(-1);
         Bundle bundle = new Bundle();
@@ -238,7 +232,7 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
                 case R.id.header_view3 /* 2131364235 */:
                 case R.id.header_view4 /* 2131364236 */:
                     this.s.b(((Integer) view.getTag()).intValue());
-                    this.l.f28663a = null;
+                    this.l.f14973a = null;
                     this.s.c(((Integer) view.getTag()).intValue());
                     this.l.setVisibility(0);
                     return;
@@ -248,9 +242,8 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f30540c = getActivity();
+        this.f16850c = getActivity();
         View view = this.j;
         if (view == null) {
             this.j = layoutInflater.inflate(R.layout.fragment_recommend_user_on_register, viewGroup, false);
@@ -261,12 +254,10 @@ public class RecommendUsersOnRegisterFragment extends KeyBoardFragment implement
         return this.j;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // com.blued.android.framework.activity.HomeTabFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

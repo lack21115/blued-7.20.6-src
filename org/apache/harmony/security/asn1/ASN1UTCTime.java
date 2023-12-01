@@ -1,6 +1,5 @@
 package org.apache.harmony.security.asn1;
 
-import android.text.format.Time;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
@@ -41,7 +40,7 @@ public final class ASN1UTCTime extends ASN1Time {
     @Override // org.apache.harmony.security.asn1.ASN1StringType, org.apache.harmony.security.asn1.ASN1Type
     public void setEncodingContent(BerOutputStream berOutputStream) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(UTC_PATTERN, Locale.US);
-        simpleDateFormat.setTimeZone(TimeZone.getTimeZone(Time.TIMEZONE_UTC));
+        simpleDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         berOutputStream.content = simpleDateFormat.format(berOutputStream.content).getBytes(StandardCharsets.UTF_8);
         berOutputStream.length = ((byte[]) berOutputStream.content).length;
     }

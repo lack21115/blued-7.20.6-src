@@ -7,22 +7,22 @@ import androidx.emoji2.text.SpannableBuilder;
 final class EmojiEditableFactory extends Editable.Factory {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Object f2881a = new Object();
+    private static final Object f2833a = new Object();
     private static volatile Editable.Factory b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Class<?> f2882c;
+    private static Class<?> f2834c;
 
     private EmojiEditableFactory() {
         try {
-            f2882c = Class.forName("android.text.DynamicLayout$ChangeWatcher", false, getClass().getClassLoader());
+            f2834c = Class.forName("android.text.DynamicLayout$ChangeWatcher", false, getClass().getClassLoader());
         } catch (Throwable th) {
         }
     }
 
     public static Editable.Factory getInstance() {
         if (b == null) {
-            synchronized (f2881a) {
+            synchronized (f2833a) {
                 if (b == null) {
                     b = new EmojiEditableFactory();
                 }
@@ -33,7 +33,7 @@ final class EmojiEditableFactory extends Editable.Factory {
 
     @Override // android.text.Editable.Factory
     public Editable newEditable(CharSequence charSequence) {
-        Class<?> cls = f2882c;
+        Class<?> cls = f2834c;
         return cls != null ? SpannableBuilder.create(cls, charSequence) : super.newEditable(charSequence);
     }
 }

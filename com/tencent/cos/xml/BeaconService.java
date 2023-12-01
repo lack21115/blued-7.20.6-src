@@ -3,7 +3,8 @@ package com.tencent.cos.xml;
 import android.content.Context;
 import android.media.TtmlUtils;
 import android.text.TextUtils;
-import com.alipay.sdk.util.i;
+import com.cdo.oaps.ad.OapsKey;
+import com.huawei.openalliance.ad.constant.at;
 import com.igexin.push.core.b;
 import com.tencent.beacon.core.info.BeaconPubParams;
 import com.tencent.beacon.event.open.BeaconReport;
@@ -183,7 +184,7 @@ public class BeaconService {
             sb.append(it.next().getHostAddress());
             int i3 = i2 + 1;
             if (i3 == list.size()) {
-                sb.append(i.d);
+                sb.append("}");
                 i = i3;
             } else {
                 sb.append(",");
@@ -393,7 +394,7 @@ public class BeaconService {
         hashMap.put("http_write_header", String.valueOf(httpTaskMetrics.writeRequestHeaderTookTime()));
         hashMap.put("http_write_body", String.valueOf(httpTaskMetrics.writeRequestBodyTookTime()));
         hashMap.put("http_full", String.valueOf(httpTaskMetrics.fullTaskTookTime()));
-        hashMap.put("size", String.valueOf(httpTaskMetrics.requestBodyByteCount() + httpTaskMetrics.responseBodyByteCount()));
+        hashMap.put(OapsKey.KEY_SIZE, String.valueOf(httpTaskMetrics.requestBodyByteCount() + httpTaskMetrics.responseBodyByteCount()));
         return hashMap;
     }
 
@@ -401,7 +402,7 @@ public class BeaconService {
         HashMap hashMap = new HashMap();
         hashMap.put("error_message", cosXmlServiceException.getErrorMessage());
         hashMap.put("error_code", cosXmlServiceException.getErrorCode());
-        hashMap.put("request_id", cosXmlServiceException.getRequestId());
+        hashMap.put(at.g, cosXmlServiceException.getRequestId());
         hashMap.put(PushMessageHelper.ERROR_TYPE, "Server");
         return hashMap;
     }
@@ -425,7 +426,7 @@ public class BeaconService {
             return hashMap;
         }
         hashMap.put("took_time", String.valueOf(httpTaskMetrics.httpTaskFullTime()));
-        hashMap.put("size", String.valueOf(httpTaskMetrics.requestBodyByteCount() + httpTaskMetrics.responseBodyByteCount()));
+        hashMap.put(OapsKey.KEY_SIZE, String.valueOf(httpTaskMetrics.requestBodyByteCount() + httpTaskMetrics.responseBodyByteCount()));
         return hashMap;
     }
 

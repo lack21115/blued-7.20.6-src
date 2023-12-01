@@ -8,7 +8,7 @@ import java.io.FileReader;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23636a = "BasicCheck";
+    private static final String f10028a = "BasicCheck";
 
     private static String a(int i) {
         String str;

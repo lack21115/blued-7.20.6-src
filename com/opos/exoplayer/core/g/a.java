@@ -22,14 +22,14 @@ public class a extends b {
 
     /* renamed from: com.opos.exoplayer.core.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/g/a$a.class */
-    public static final class C0665a implements f.a {
+    public static final class C0495a implements f.a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final com.opos.exoplayer.core.h.d f25417a;
+        private final com.opos.exoplayer.core.h.d f11729a;
         private final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f25418c;
+        private final int f11730c;
         private final int d;
         private final int e;
         private final float f;
@@ -37,14 +37,14 @@ public class a extends b {
         private final long h;
         private final com.opos.exoplayer.core.i.b i;
 
-        public C0665a(com.opos.exoplayer.core.h.d dVar) {
-            this(dVar, StCameraView.MEDIA_QUALITY_POOR, 10000, 25000, 25000, 0.75f, 0.75f, 2000L, com.opos.exoplayer.core.i.b.f25479a);
+        public C0495a(com.opos.exoplayer.core.h.d dVar) {
+            this(dVar, StCameraView.MEDIA_QUALITY_POOR, 10000, 25000, 25000, 0.75f, 0.75f, 2000L, com.opos.exoplayer.core.i.b.f11791a);
         }
 
-        public C0665a(com.opos.exoplayer.core.h.d dVar, int i, int i2, int i3, int i4, float f, float f2, long j, com.opos.exoplayer.core.i.b bVar) {
-            this.f25417a = dVar;
+        public C0495a(com.opos.exoplayer.core.h.d dVar, int i, int i2, int i3, int i4, float f, float f2, long j, com.opos.exoplayer.core.i.b bVar) {
+            this.f11729a = dVar;
             this.b = i;
-            this.f25418c = i2;
+            this.f11730c = i2;
             this.d = i3;
             this.e = i4;
             this.f = f;
@@ -56,7 +56,7 @@ public class a extends b {
         @Override // com.opos.exoplayer.core.g.f.a
         /* renamed from: a */
         public a b(l lVar, int... iArr) {
-            return new a(lVar, iArr, this.f25417a, this.b, this.f25418c, this.d, this.e, this.f, this.g, this.h, this.i);
+            return new a(lVar, iArr, this.f11729a, this.b, this.f11730c, this.d, this.e, this.f, this.g, this.h, this.i);
         }
     }
 

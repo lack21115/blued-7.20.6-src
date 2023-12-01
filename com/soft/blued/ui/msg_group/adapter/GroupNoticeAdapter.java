@@ -14,11 +14,9 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.view.shape.ShapeHelper;
-import com.blued.android.module.common.group.GroupInfoModel;
 import com.blued.android.module.common.user.UserInfoHelper;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.TimeAndDateUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.BluedAlertDialog;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.das.client.socialnet.SocialNetWorkProtos;
@@ -39,15 +37,15 @@ import com.soft.blued.ui.web.WebViewShowInfoFragment;
 public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private IRequestHost f32640a;
+    private IRequestHost f18949a;
     private Dialog b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Dialog f32641c;
+    private Dialog f18950c;
 
     public GroupNoticeAdapter(IRequestHost iRequestHost) {
         super(null);
-        this.f32640a = iRequestHost;
+        this.f18949a = iRequestHost;
         addItemType(1, R.layout.item_group_notice_member_operate);
         addItemType(3, R.layout.item_group_notice_member_operate);
         addItemType(2, R.layout.item_group_notice_apply);
@@ -72,8 +70,7 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(final int i, final BaseViewHolder baseViewHolder, final GroupNoticeModel groupNoticeModel) {
-        MsgGroupHttpUtils.c(this.f32640a, groupNoticeModel.id, i, new BluedUIHttpResponse(this.f32640a) { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.7
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+        MsgGroupHttpUtils.c(this.f18949a, groupNoticeModel.id, i, new BluedUIHttpResponse(this.f18949a) { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.7
             public boolean onUIFailure(int i2, String str) {
                 if (i2 == 40319014) {
                     groupNoticeModel.result = 3;
@@ -85,7 +82,6 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
                 return super.onUIFailure(i2, str);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 DialogUtils.b(GroupNoticeAdapter.this.b);
@@ -95,7 +91,6 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 if (GroupNoticeAdapter.this.b == null) {
@@ -105,7 +100,6 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
                 DialogUtils.a(GroupNoticeAdapter.this.b);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIUpdate(BluedEntity bluedEntity) {
             }
         });
@@ -116,7 +110,7 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
             textView.setText(groupNoticeModel.ops_name);
         }
         if (imageView != null) {
-            ImageLoader.a(this.f32640a, groupNoticeModel.ops_avatar).b(2131237310).c().a(imageView);
+            ImageLoader.a(this.f18949a, groupNoticeModel.ops_avatar).b(2131237310).c().a(imageView);
             imageView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -171,18 +165,17 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
     /* JADX INFO: Access modifiers changed from: private */
     public void a(boolean z) {
         if (z) {
-            IRequestHost iRequestHost = this.f32640a;
+            IRequestHost iRequestHost = this.f18949a;
             MsgGroupHttpUtils.a(iRequestHost, new BluedUIHttpResponse<BluedEntityA<GroupPrivilegeModel>>(iRequestHost) { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.8
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<GroupPrivilegeModel> bluedEntityA) {
                     Context context;
                     int i;
                     if (bluedEntityA.hasData()) {
-                        GroupPrivilegeModel singleData = bluedEntityA.getSingleData();
-                        String format = String.format(GroupNoticeAdapter.this.mContext.getString(R.string.group_add_member_limit_owner), singleData.getSuper_max_population() + "");
-                        if (singleData.getPrivilege() == 1) {
+                        GroupPrivilegeModel groupPrivilegeModel = (GroupPrivilegeModel) bluedEntityA.getSingleData();
+                        String format = String.format(GroupNoticeAdapter.this.mContext.getString(R.string.group_add_member_limit_owner), groupPrivilegeModel.getSuper_max_population() + "");
+                        if (groupPrivilegeModel.getPrivilege() == 1) {
                             context = GroupNoticeAdapter.this.mContext;
                             i = 2131888452;
                         } else {
@@ -195,7 +188,7 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
                                 Tracker.onClick(dialogInterface, i2);
                                 dialogInterface.dismiss();
                                 Context context2 = GroupNoticeAdapter.this.mContext;
-                                WebViewShowInfoFragment.show(context2, GroupConstant.f32663a + "group_apply");
+                                WebViewShowInfoFragment.show(context2, GroupConstant.f18972a + "group_apply");
                             }
                         }, GroupNoticeAdapter.this.mContext.getString(2131886885), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.8.2
                             @Override // android.content.DialogInterface.OnClickListener
@@ -226,14 +219,14 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
     }
 
     private void b(BaseViewHolder baseViewHolder, final GroupNoticeModel groupNoticeModel) {
-        GroupUtil.b(this.f32640a, groupNoticeModel.group_cover, (ImageView) baseViewHolder.getView(2131365477));
-        baseViewHolder.setText(2131371717, groupNoticeModel.text);
+        GroupUtil.b(this.f18949a, groupNoticeModel.group_cover, (ImageView) baseViewHolder.getView(R.id.iv_header));
+        baseViewHolder.setText(R.id.tv_info, groupNoticeModel.text);
         baseViewHolder.getView(R.id.ll_bottom_btn_single).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 Context context = GroupNoticeAdapter.this.mContext;
-                GroupInfoFragment.a(context, groupNoticeModel.group_id + "", (GroupInfoModel) null, SocialNetWorkProtos.SourceType.UNKNOWN_SOURCE_TYPE);
+                GroupInfoFragment.a(context, groupNoticeModel.group_id + "", null, SocialNetWorkProtos.SourceType.UNKNOWN_SOURCE_TYPE);
             }
         });
     }
@@ -260,7 +253,7 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
         if (groupNoticeModel.result == 0) {
             if (groupNoticeModel.type == 7) {
                 baseViewHolder.setText(R.id.tv_refuse, this.mContext.getString(R.string.group_notify_decline));
-                baseViewHolder.setText(2131370859, this.mContext.getString(R.string.group_notice_accept));
+                baseViewHolder.setText(R.id.tv_agree, this.mContext.getString(R.string.group_notice_accept));
             }
             baseViewHolder.getView(R.id.tv_refuse).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.3
                 @Override // android.view.View.OnClickListener
@@ -269,7 +262,7 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
                     GroupNoticeAdapter.this.a(2, baseViewHolder, groupNoticeModel);
                 }
             });
-            baseViewHolder.getView(2131370859).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.4
+            baseViewHolder.getView(R.id.tv_agree).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.4
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -292,25 +285,25 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
     private void d(BaseViewHolder baseViewHolder, GroupNoticeModel groupNoticeModel) {
         baseViewHolder.setText(2131371186, groupNoticeModel.text);
         GroupUtil.a((TextView) baseViewHolder.getView(R.id.tv_identity), groupNoticeModel.ops_group_ago_role);
-        ShapeHelper.b((ShapeHelper.ShapeView) baseViewHolder.getView(2131364793), groupNoticeModel.ops_group_ago_role == 2 ? 2131101114 : 2131102360);
+        ShapeHelper.b(baseViewHolder.getView(R.id.item_bg), groupNoticeModel.ops_group_ago_role == 2 ? 2131101114 : 2131102360);
     }
 
     private void e(final BaseViewHolder baseViewHolder, final GroupNoticeModel groupNoticeModel) {
         baseViewHolder.setText(R.id.tv_add_group_name, groupNoticeModel.group_title);
         baseViewHolder.setText(R.id.tv_add_group_reason, groupNoticeModel.reason);
         if (groupNoticeModel.ops_vbadge == 3 || groupNoticeModel.ops_vbadge == 5) {
-            baseViewHolder.setGone(2131371717, false);
+            baseViewHolder.setGone(R.id.tv_info, false);
         } else {
-            baseViewHolder.setGone(2131371717, true);
+            baseViewHolder.setGone(R.id.tv_info, true);
             StringBuilder sb = new StringBuilder();
             sb.append(groupNoticeModel.ops_age);
-            sb.append(BridgeUtil.SPLIT_MARK);
+            sb.append("/");
             sb.append(groupNoticeModel.ops_height);
-            sb.append(BridgeUtil.SPLIT_MARK);
+            sb.append("/");
             sb.append(groupNoticeModel.ops_weight);
-            sb.append(BridgeUtil.SPLIT_MARK);
+            sb.append("/");
             sb.append(UserInfoHelper.a(this.mContext, groupNoticeModel.ops_role + ""));
-            baseViewHolder.setText(2131371717, sb.toString());
+            baseViewHolder.setText(R.id.tv_info, sb.toString());
         }
         int i = 2131888268;
         if (groupNoticeModel.type == 21) {
@@ -343,7 +336,7 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
                     }
                 }
             });
-            baseViewHolder.getView(2131370859).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.6
+            baseViewHolder.getView(R.id.tv_agree).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.6
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
                     Tracker.onClick(view);
@@ -370,16 +363,16 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f(final BaseViewHolder baseViewHolder, final GroupNoticeModel groupNoticeModel) {
-        Dialog dialog = this.f32641c;
+        Dialog dialog = this.f18950c;
         if (dialog == null || !dialog.isShowing()) {
-            BluedAlertDialog a2 = new BluedAlertDialog.Builder(this.mContext).d(R.string.group_add_apply_declined_alert).e(R.string.group_add_apply_declined_message).b(2131887258, (DialogInterface.OnClickListener) null).f(2131102251).a(R.string.group_add_apply_decline_forever, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.10
+            BluedAlertDialog a2 = new BluedAlertDialog.Builder(this.mContext).d((int) R.string.group_add_apply_declined_alert).e((int) R.string.group_add_apply_declined_message).b((int) R.string.common_cancel, (DialogInterface.OnClickListener) null).f(2131102251).a((int) R.string.group_add_apply_decline_forever, new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.msg_group.adapter.GroupNoticeAdapter.10
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
                     GroupNoticeAdapter.this.a(2, baseViewHolder, groupNoticeModel);
                 }
             }).a();
-            this.f32641c = a2;
+            this.f18950c = a2;
             a2.show();
         }
     }
@@ -389,7 +382,7 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, GroupNoticeModel groupNoticeModel) {
         baseViewHolder.setBackgroundColor(R.id.content_bg, BluedSkinUtils.a(this.mContext, groupNoticeModel.is_read == 1 ? 2131101796 : 2131101780));
-        b((TextView) baseViewHolder.getView(2131371242), groupNoticeModel.timestamp);
+        b((TextView) baseViewHolder.getView(R.id.tv_date), groupNoticeModel.timestamp);
         a((TextView) baseViewHolder.getView(2131372754), groupNoticeModel.type);
         int i = groupNoticeModel.type;
         if (i != 1) {
@@ -400,16 +393,16 @@ public class GroupNoticeAdapter extends BaseMultiItemQuickAdapter<GroupNoticeMod
                         return;
                     } else if (i != 20 && i != 21) {
                         c(baseViewHolder, groupNoticeModel);
-                        a((ImageView) baseViewHolder.getView(2131365477), (TextView) baseViewHolder.getView(2131372046), groupNoticeModel);
+                        a((ImageView) baseViewHolder.getView(R.id.iv_header), (TextView) baseViewHolder.getView(2131372046), groupNoticeModel);
                         return;
                     }
                 }
             }
             e(baseViewHolder, groupNoticeModel);
-            a((ImageView) baseViewHolder.getView(2131365477), (TextView) baseViewHolder.getView(2131372046), groupNoticeModel);
+            a((ImageView) baseViewHolder.getView(R.id.iv_header), (TextView) baseViewHolder.getView(2131372046), groupNoticeModel);
             return;
         }
         d(baseViewHolder, groupNoticeModel);
-        a((ImageView) baseViewHolder.getView(2131365477), (TextView) baseViewHolder.getView(2131372046), groupNoticeModel);
+        a((ImageView) baseViewHolder.getView(R.id.iv_header), (TextView) baseViewHolder.getView(2131372046), groupNoticeModel);
     }
 }

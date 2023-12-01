@@ -12,11 +12,11 @@ public final class av implements Thread.UncaughtExceptionHandler {
     private static final Object i = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    protected final Context f35273a;
+    protected final Context f21582a;
     protected final as b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected final ac f35274c;
+    protected final ac f21583c;
     protected final aa d;
     protected Thread.UncaughtExceptionHandler e;
     protected Thread.UncaughtExceptionHandler f;
@@ -24,9 +24,9 @@ public final class av implements Thread.UncaughtExceptionHandler {
     private int j;
 
     public av(Context context, as asVar, ac acVar, aa aaVar) {
-        this.f35273a = context;
+        this.f21582a = context;
         this.b = asVar;
-        this.f35274c = acVar;
+        this.f21583c = acVar;
         this.d = aaVar;
     }
 
@@ -260,10 +260,10 @@ public final class av implements Thread.UncaughtExceptionHandler {
                 }
                 return;
             }
-            if (!this.f35274c.b()) {
+            if (!this.f21583c.b()) {
                 al.d("no remote but still store!", new Object[0]);
             }
-            if (!this.f35274c.c().f && this.f35274c.b()) {
+            if (!this.f21583c.c().f && this.f21583c.b()) {
                 al.e("crash report was closed by remote , will not upload to Bugly , print local for helpful!", new Object[0]);
                 as.a(z ? "JAVA_CRASH" : "JAVA_CATCH", ap.a(), this.d.d, thread.getName(), ap.a(th), null);
                 if (z) {

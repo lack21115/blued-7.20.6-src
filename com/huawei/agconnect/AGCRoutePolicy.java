@@ -1,5 +1,6 @@
 package com.huawei.agconnect;
 
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.util.Arrays;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/agconnect/AGCRoutePolicy.class */
@@ -28,7 +29,7 @@ public final class AGCRoutePolicy {
 
     public String getRouteName() {
         int i = this.route;
-        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? "UNKNOWN" : "SG" : "RU" : "DE" : "CN";
+        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? GrsBaseInfo.CountryCodeSource.UNKNOWN : "SG" : "RU" : "DE" : "CN";
     }
 
     public int hashCode() {

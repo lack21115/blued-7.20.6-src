@@ -10,16 +10,16 @@ import com.xiaomi.channel.commonutils.logger.b;
 public class a extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f41564a = 1;
+    private static int f27873a = 1;
 
     /* renamed from: a  reason: collision with other field name */
-    public static final Object f903a = new Object();
+    public static final Object f856a = new Object();
 
     /* renamed from: a  reason: collision with other field name */
-    private static final String[] f904a = {"package_name", "TEXT", "message_ts", " LONG DEFAULT 0 ", "bytes", " LONG DEFAULT 0 ", "network_type", " INT DEFAULT -1 ", "rcv", " INT DEFAULT -1 ", "imsi", "TEXT"};
+    private static final String[] f857a = {"package_name", "TEXT", "message_ts", " LONG DEFAULT 0 ", "bytes", " LONG DEFAULT 0 ", "network_type", " INT DEFAULT -1 ", "rcv", " INT DEFAULT -1 ", "imsi", "TEXT"};
 
     public a(Context context) {
-        super(context, "traffic.db", null, f41564a);
+        super(context, "traffic.db", null, f27873a);
     }
 
     private void a(SQLiteDatabase sQLiteDatabase) {
@@ -27,7 +27,7 @@ public class a extends SQLiteOpenHelper {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= f904a.length - 1) {
+            if (i2 >= f857a.length - 1) {
                 sb.append(");");
                 sQLiteDatabase.execSQL(sb.toString());
                 return;
@@ -35,16 +35,16 @@ public class a extends SQLiteOpenHelper {
             if (i2 != 0) {
                 sb.append(",");
             }
-            sb.append(f904a[i2]);
+            sb.append(f857a[i2]);
             sb.append(" ");
-            sb.append(f904a[i2 + 1]);
+            sb.append(f857a[i2 + 1]);
             i = i2 + 2;
         }
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
     public void onCreate(SQLiteDatabase sQLiteDatabase) {
-        synchronized (f903a) {
+        synchronized (f856a) {
             try {
                 a(sQLiteDatabase);
             } catch (SQLException e) {

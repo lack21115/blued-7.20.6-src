@@ -9,7 +9,7 @@ import com.umeng.commonsdk.statistics.common.DeviceConfig;
 public class g extends a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40923a = "mac";
+    private static final String f27232a = "mac";
     private Context b;
 
     public g(Context context) {

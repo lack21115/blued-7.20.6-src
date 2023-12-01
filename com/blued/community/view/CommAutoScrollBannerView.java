@@ -75,7 +75,6 @@ public class CommAutoScrollBannerView extends CardView {
             CommAutoScrollBannerView.this.lambda$showPromotionPopup$0$CommAutoScrollBannerView();
         }
 
-        @Override // com.blued.android.module.svgaplayer.SVGACallback
         public void onFinished() {
             CommAutoScrollBannerView.this.svgaPlayState = 12;
             int elapsedRealtime = (int) ((((float) (SystemClock.elapsedRealtime() - CommAutoScrollBannerView.this.svgaPlayStartTime)) / 1000.0f) + 0.5f);
@@ -92,16 +91,13 @@ public class CommAutoScrollBannerView extends CardView {
             }, (CommAutoScrollBannerView.this.svgaPlayDuration - elapsedRealtime) * 1000);
         }
 
-        @Override // com.blued.android.module.svgaplayer.SVGACallback
         public void onPause() {
             LogUtils.c("svgView callback onPause");
         }
 
-        @Override // com.blued.android.module.svgaplayer.SVGACallback
         public void onRepeat() {
         }
 
-        @Override // com.blued.android.module.svgaplayer.SVGACallback
         public void onStep(int i, double d) {
         }
     }
@@ -250,7 +246,7 @@ public class CommAutoScrollBannerView extends CardView {
 
     private SVGAParser getSvgaParser() {
         if (this.svgaParser == null) {
-            this.svgaParser = SVGAParser.f15958a.b();
+            this.svgaParser = SVGAParser.a.b();
         }
         return this.svgaParser;
     }
@@ -263,15 +259,15 @@ public class CommAutoScrollBannerView extends CardView {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) findViewById.getLayoutParams();
         marginLayoutParams.height = (int) (((AppInfo.l - FeedMethods.c(24)) * 180) / 750.0f);
         this.layoutVpParent.setLayoutParams(marginLayoutParams);
-        this.viewPager = (AutoScrollViewPager) this.rootView.findViewById(R.id.comm_auto_scroll_banner_vp);
-        this.indicator = (LinePageIndicator) this.rootView.findViewById(R.id.comm_auto_scroll_banner_indicator);
+        this.viewPager = this.rootView.findViewById(R.id.comm_auto_scroll_banner_vp);
+        this.indicator = this.rootView.findViewById(R.id.comm_auto_scroll_banner_indicator);
         BannerAdapter bannerAdapter = new BannerAdapter(context);
         this.adapter = bannerAdapter;
         this.viewPager.setAdapter(bannerAdapter);
-        this.viewPager.setInterval(m.ag);
+        this.viewPager.setInterval((long) m.ag);
         this.indicator.a(this.viewPager, 0);
         this.cvSvga = (CardView) this.rootView.findViewById(R.id.comm_auto_scroll_banner_svga_layout);
-        this.svgaView = (SVGAImageView) this.rootView.findViewById(R.id.comm_auto_scroll_banner_svga);
+        this.svgaView = this.rootView.findViewById(R.id.comm_auto_scroll_banner_svga);
         this.ivImage = (ImageView) this.rootView.findViewById(R.id.comm_auto_scroll_banner_static);
         this.cvSvga.setVisibility(8);
         removeAllViews();
@@ -287,7 +283,6 @@ public class CommAutoScrollBannerView extends CardView {
         }
         this.svgaView.setCallback(this.svgaCallback);
         getSvgaParser().a(new URL(operatePromotionPopup.getMaterial()), new SVGAParser.ParseCompletion() { // from class: com.blued.community.view.CommAutoScrollBannerView.3
-            @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onComplete(SVGAVideoEntity sVGAVideoEntity) {
                 LogUtils.c("svgView load onFinished, start svga Anim");
                 LogUtils.c("svgaVideoEntity: " + sVGAVideoEntity.a().d() + ", " + sVGAVideoEntity.a().e());
@@ -304,7 +299,6 @@ public class CommAutoScrollBannerView extends CardView {
                 CommAutoScrollBannerView.this.svgaPlayState = 1;
             }
 
-            @Override // com.blued.android.module.svgaplayer.SVGAParser.ParseCompletion
             public void onError() {
                 CommAutoScrollBannerView.this.svgaPlayState = 0;
             }
@@ -380,7 +374,7 @@ public class CommAutoScrollBannerView extends CardView {
     private void startSvgaColorAnim(OperatePromotionPopup operatePromotionPopup) {
         String str;
         String str2;
-        if (CommunityManager.f19086a.a().s()) {
+        if (CommunityManager.a.a().s()) {
             str = "#222222";
             str2 = "#1A1A1A";
         } else {

@@ -15,11 +15,11 @@ import java.util.Set;
 public class g implements com.tencent.tmsbeacon.a.a.d, Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f39573a;
+    private final String f25882a;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final a f39574c;
+    private final a f25883c;
     private final Set<Long> d = new HashSet();
     private final Set<Long> e = new HashSet();
     private final String f;
@@ -30,10 +30,10 @@ public class g implements com.tencent.tmsbeacon.a.a.d, Runnable {
 
     public g(int i, a aVar, boolean z) {
         this.b = i;
-        this.f39574c = aVar;
+        this.f25883c = aVar;
         this.g = z;
         String str = z ? "t_r_e" : "t_n_e";
-        this.f39573a = str;
+        this.f25882a = str;
         this.h = 48;
         this.f = "[EventReport (" + str + ")]";
     }
@@ -65,7 +65,7 @@ public class g implements com.tencent.tmsbeacon.a.a.d, Runnable {
     private void a(List<EventBean> list, Set<Long> set) {
         JceRequestEntity a2 = com.tencent.tmsbeacon.event.c.d.a(list, this.g);
         c.a(this.f, 2, "event request entity: %s", a2.toString());
-        com.tencent.tmsbeacon.base.net.c.c().b(a2).a(new lj(this, this.f39573a, this.f39574c, set, this.j));
+        com.tencent.tmsbeacon.base.net.c.c().b(a2).a(new lj(this, this.f25882a, this.f25883c, set, this.j));
     }
 
     private List<EventBean> b() {
@@ -74,7 +74,7 @@ public class g implements com.tencent.tmsbeacon.a.a.d, Runnable {
             sb.append(l);
             sb.append(",");
         }
-        return this.f39574c.a(this.f39573a, sb.length() > 0 ? sb.substring(0, sb.lastIndexOf(",")) : "", this.h);
+        return this.f25883c.a(this.f25882a, sb.length() > 0 ? sb.substring(0, sb.lastIndexOf(",")) : "", this.h);
     }
 
     private void c() {
@@ -95,7 +95,7 @@ public class g implements com.tencent.tmsbeacon.a.a.d, Runnable {
     @Override // com.tencent.tmsbeacon.a.a.d
     public void onEvent(com.tencent.tmsbeacon.a.a.c cVar) {
         Map map;
-        if (cVar.f39460a != 2 || (map = (Map) cVar.b.get("d_m")) == null) {
+        if (cVar.f25769a != 2 || (map = (Map) cVar.b.get("d_m")) == null) {
             return;
         }
         if (this.g) {

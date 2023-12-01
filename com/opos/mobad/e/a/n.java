@@ -7,20 +7,20 @@ import android.text.TextUtils;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f26002a;
+    private static volatile boolean f12314a;
 
     public static f a() {
         return new com.opos.mobad.e.a.a.b();
     }
 
     public static void a(Context context, String str, String str2, m mVar) {
-        if (f26002a) {
+        if (f12314a) {
             com.opos.cmn.an.f.a.b("MatManager", "already init!");
             return;
         }
         com.opos.cmn.an.f.a.b("MatManager", "init!");
-        f26002a = true;
-        com.opos.mobad.e.a.a.b.a.a().f25993a = mVar;
+        f12314a = true;
+        com.opos.mobad.e.a.a.b.a.a().f12305a = mVar;
         com.opos.mobad.e.a.a.b.a.a().a(context, str, str2, "com.opos.dy.mat");
     }
 
@@ -31,7 +31,7 @@ public class n {
                 @Override // java.lang.Runnable
                 public final void run() {
                     long currentTimeMillis = System.currentTimeMillis();
-                    boolean a2 = com.opos.mobad.e.a.a.d.a(String.this, str2);
+                    boolean a2 = com.opos.mobad.e.a.a.d.a(str, str2);
                     h hVar2 = hVar;
                     if (hVar2 != null) {
                         hVar2.a(a2, str2);

@@ -14,11 +14,11 @@ import com.soft.blued.R;
 public final class FragmentVipInvisibleToUserBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final NoDataAndLoadFailView f29023a;
+    public final NoDataAndLoadFailView f15333a;
     public final RecyclerView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final SmartRefreshLayout f29024c;
+    public final SmartRefreshLayout f15334c;
     public final CommonTopTitleNoTrans d;
     public final TextView e;
     public final TextView f;
@@ -26,9 +26,9 @@ public final class FragmentVipInvisibleToUserBinding implements ViewBinding {
 
     private FragmentVipInvisibleToUserBinding(LinearLayout linearLayout, NoDataAndLoadFailView noDataAndLoadFailView, RecyclerView recyclerView, SmartRefreshLayout smartRefreshLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, TextView textView, TextView textView2) {
         this.g = linearLayout;
-        this.f29023a = noDataAndLoadFailView;
+        this.f15333a = noDataAndLoadFailView;
         this.b = recyclerView;
-        this.f29024c = smartRefreshLayout;
+        this.f15334c = smartRefreshLayout;
         this.d = commonTopTitleNoTrans;
         this.e = textView;
         this.f = textView2;
@@ -36,19 +36,19 @@ public final class FragmentVipInvisibleToUserBinding implements ViewBinding {
 
     public static FragmentVipInvisibleToUserBinding a(View view) {
         String str;
-        NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(2131368721);
-        if (noDataAndLoadFailView != null) {
+        NoDataAndLoadFailView findViewById = view.findViewById(2131368721);
+        if (findViewById != null) {
             RecyclerView recyclerView = (RecyclerView) view.findViewById(2131369105);
             if (recyclerView != null) {
-                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(2131369119);
+                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refresh_layout);
                 if (smartRefreshLayout != null) {
-                    CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(2131370749);
-                    if (commonTopTitleNoTrans != null) {
-                        TextView textView = (TextView) view.findViewById(2131372745);
+                    CommonTopTitleNoTrans findViewById2 = view.findViewById(R.id.top_title);
+                    if (findViewById2 != null) {
+                        TextView textView = (TextView) view.findViewById(R.id.tv_tips);
                         if (textView != null) {
                             TextView textView2 = (TextView) view.findViewById(R.id.tv_user_nums);
                             if (textView2 != null) {
-                                return new FragmentVipInvisibleToUserBinding((LinearLayout) view, noDataAndLoadFailView, recyclerView, smartRefreshLayout, commonTopTitleNoTrans, textView, textView2);
+                                return new FragmentVipInvisibleToUserBinding((LinearLayout) view, findViewById, recyclerView, smartRefreshLayout, findViewById2, textView, textView2);
                             }
                             str = "tvUserNums";
                         } else {

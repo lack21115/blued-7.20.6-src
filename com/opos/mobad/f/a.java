@@ -19,10 +19,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private c.a f26007a = new c.a(true, "");
+    private c.a f12319a = new c.a(true, "");
 
     /* renamed from: c  reason: collision with root package name */
-    private AtomicBoolean f26008c = new AtomicBoolean(false);
+    private AtomicBoolean f12320c = new AtomicBoolean(false);
     private boolean d = false;
     private b b = new b();
     private com.opos.mobad.ad.privacy.a e = new com.opos.mobad.cmn.b.d(new g());
@@ -30,26 +30,26 @@ public abstract class a {
     private com.opos.mobad.ad.b a(com.opos.mobad.f.b.a aVar, e.a aVar2, com.opos.mobad.ad.c cVar) {
         if (aVar instanceof com.opos.mobad.f.b.b) {
             com.opos.mobad.f.b.b bVar = (com.opos.mobad.f.b.b) aVar;
-            return cVar.a((Activity) bVar.d, bVar.f26130a, aVar2.b, bVar.f26131c, (com.opos.mobad.ad.a.b) bVar.e);
+            return cVar.a((Activity) bVar.d, bVar.f12442a, aVar2.b, bVar.f12443c, (com.opos.mobad.ad.a.b) bVar.e);
         } else if (aVar instanceof com.opos.mobad.f.b.d) {
             com.opos.mobad.f.b.d dVar = (com.opos.mobad.f.b.d) aVar;
-            return cVar.a((Activity) dVar.d, dVar.f26130a, aVar2.b, com.opos.mobad.service.f.b().a(dVar.f26130a) == com.opos.mobad.service.a.e.b, (com.opos.mobad.ad.b.d) dVar.e);
+            return cVar.a((Activity) dVar.d, dVar.f12442a, aVar2.b, com.opos.mobad.service.f.b().a(dVar.f12442a) == com.opos.mobad.service.a.e.b, (com.opos.mobad.ad.b.d) dVar.e);
         } else if (aVar instanceof com.opos.mobad.f.b.c) {
             com.opos.mobad.f.b.c cVar2 = (com.opos.mobad.f.b.c) aVar;
-            return cVar.a((Activity) cVar2.d, cVar2.f26130a, aVar2.b, (com.opos.mobad.ad.b.b) cVar2.e);
+            return cVar.a((Activity) cVar2.d, cVar2.f12442a, aVar2.b, (com.opos.mobad.ad.b.b) cVar2.e);
         } else if (aVar instanceof com.opos.mobad.f.b.e) {
             com.opos.mobad.f.b.e eVar = (com.opos.mobad.f.b.e) aVar;
-            return cVar.a(eVar.f26132c, eVar.f26130a, aVar2.b, aVar2.e, aVar2.d, (j) eVar.d, this.e);
+            return cVar.a(eVar.f12444c, eVar.f12442a, aVar2.b, aVar2.e, aVar2.d, (j) eVar.d, this.e);
         } else if (aVar instanceof com.opos.mobad.f.b.g) {
             com.opos.mobad.f.b.g gVar = (com.opos.mobad.f.b.g) aVar;
-            return cVar.a(gVar.f26132c, gVar.e, gVar.f26130a, aVar2.b, (o) gVar.d);
+            return cVar.a(gVar.f12444c, gVar.e, gVar.f12442a, aVar2.b, (o) gVar.d);
         } else if (aVar instanceof i) {
             i iVar = (i) aVar;
-            return cVar.a(iVar.d, iVar.f26130a, aVar2.b, com.opos.mobad.service.f.b().a(iVar.f26130a) == com.opos.mobad.service.a.e.b, (com.opos.mobad.ad.d.b) iVar.e);
+            return cVar.a(iVar.d, iVar.f12442a, aVar2.b, com.opos.mobad.service.f.b().a(iVar.f12442a) == com.opos.mobad.service.a.e.b, (com.opos.mobad.ad.d.b) iVar.e);
         } else if (aVar instanceof com.opos.mobad.f.b.j) {
             com.opos.mobad.f.b.j jVar = (com.opos.mobad.f.b.j) aVar;
             f fVar = new f();
-            com.opos.mobad.ad.e.b a2 = cVar.a((Activity) jVar.d, jVar.f26130a, aVar2.b, jVar.f26133c, (com.opos.mobad.ad.e.c) jVar.e);
+            com.opos.mobad.ad.e.b a2 = cVar.a((Activity) jVar.d, jVar.f12442a, aVar2.b, jVar.f12445c, (com.opos.mobad.ad.e.c) jVar.e);
             fVar.a(a2);
             return a2;
         } else {
@@ -59,14 +59,14 @@ public abstract class a {
     }
 
     private com.opos.mobad.ad.b a(com.opos.mobad.f.b.a aVar, List<e.a> list, e.a aVar2, long j, int i) {
-        com.opos.cmn.an.f.a.a("AdBaseFactory", "create ssp posId:" + aVar.f26130a + "," + list + ",reserve =" + aVar2 + "," + i);
-        return a(aVar, a(aVar.f26130a, list.get(0)), new d(new com.opos.mobad.f.a.d.c(i, aVar.b), list, aVar2, j, this.b));
+        com.opos.cmn.an.f.a.a("AdBaseFactory", "create ssp posId:" + aVar.f12442a + "," + list + ",reserve =" + aVar2 + "," + i);
+        return a(aVar, a(aVar.f12442a, list.get(0)), new d(new com.opos.mobad.f.a.d.c(i, aVar.b), list, aVar2, j, this.b));
     }
 
     private com.opos.mobad.ad.b a(com.opos.mobad.f.b.a aVar, List<e.a> list, e.a aVar2, long j, long j2) {
-        e.a a2 = a(aVar.f26130a, list, aVar2, j);
-        com.opos.cmn.an.f.a.a("AdBaseFactory", "create delegator posId:" + aVar.f26130a + "," + list + "," + a2);
-        return a(aVar, b(aVar.f26130a, list.get(0)), new d(new com.opos.mobad.f.a.d.b(aVar.b), list, a2, j2, this.b));
+        e.a a2 = a(aVar.f12442a, list, aVar2, j);
+        com.opos.cmn.an.f.a.a("AdBaseFactory", "create delegator posId:" + aVar.f12442a + "," + list + "," + a2);
+        return a(aVar, b(aVar.f12442a, list.get(0)), new d(new com.opos.mobad.f.a.d.b(aVar.b), list, a2, j2, this.b));
     }
 
     private e.a a(String str) {
@@ -99,7 +99,7 @@ public abstract class a {
         int i2 = 0;
         int i3 = 0;
         for (e.a aVar2 : arrayList) {
-            if (1 == aVar2.f27301a) {
+            if (1 == aVar2.f13613a) {
                 aVar = aVar2;
             }
             i2 = aVar2.d;
@@ -115,9 +115,9 @@ public abstract class a {
     }
 
     private com.opos.mobad.ad.b b(com.opos.mobad.f.b.a aVar) {
-        com.opos.cmn.an.f.a.a("AdBaseFactory", "create default posId:" + aVar.f26130a);
+        com.opos.cmn.an.f.a.a("AdBaseFactory", "create default posId:" + aVar.f12442a);
         ArrayList arrayList = new ArrayList();
-        e.a a2 = a(aVar.f26130a);
+        e.a a2 = a(aVar.f12442a);
         return a(aVar, a2, new d(new com.opos.mobad.f.a.d.b(aVar.b), arrayList, a2, 0L, this.b));
     }
 
@@ -126,10 +126,10 @@ public abstract class a {
     }
 
     private boolean d() {
-        if (this.f26007a.f25670a || !com.opos.cmn.a.a.a()) {
+        if (this.f12319a.f11982a || !com.opos.cmn.a.a.a()) {
             return com.opos.mobad.service.f.b().b();
         }
-        com.opos.cmn.an.f.a.b("AdBaseFactory", "check result fail:" + this.f26007a.b);
+        com.opos.cmn.an.f.a.b("AdBaseFactory", "check result fail:" + this.f12319a.b);
         return false;
     }
 
@@ -147,21 +147,21 @@ public abstract class a {
 
     protected com.opos.mobad.ad.b a(com.opos.mobad.f.b.a aVar) {
         com.opos.mobad.f.b.b bVar;
-        e.b a2 = d() ? com.opos.mobad.service.f.b().a(aVar.f26130a, true) : null;
-        if (a2 == null || a2.f27303a == null || a2.f27303a.size() <= 0) {
+        e.b a2 = d() ? com.opos.mobad.service.f.b().a(aVar.f12442a, true) : null;
+        if (a2 == null || a2.f13615a == null || a2.f13615a.size() <= 0) {
             return b(aVar);
         }
         if (aVar instanceof com.opos.mobad.f.b.b) {
             com.opos.mobad.f.b.b bVar2 = (com.opos.mobad.f.b.b) aVar;
-            bVar = new com.opos.mobad.f.b.b((Activity) bVar2.d, aVar.f26130a, aVar.b, false, (com.opos.mobad.ad.a.b) bVar2.e);
+            bVar = new com.opos.mobad.f.b.b((Activity) bVar2.d, aVar.f12442a, aVar.b, false, (com.opos.mobad.ad.a.b) bVar2.e);
         } else {
             bVar = aVar;
         }
-        return a2.e != 1 ? a(bVar, a2.f27303a, a(a2.f27303a, aVar.f26130a, a2.f27304c), a2.d, a2.e) : a(bVar, a2.f27303a, a2.b, a2.f27304c, a2.d);
+        return a2.e != 1 ? a(bVar, a2.f13615a, a(a2.f13615a, aVar.f12442a, a2.f13616c), a2.d, a2.e) : a(bVar, a2.f13615a, a2.b, a2.f13616c, a2.d);
     }
 
     public c.a a() {
-        return this.f26007a;
+        return this.f12319a;
     }
 
     public com.opos.mobad.ad.c.c a(Context context, String str, int i, m mVar) {
@@ -218,10 +218,10 @@ public abstract class a {
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(Context context, Integer num, com.opos.mobad.ad.c cVar) {
         c.a a2 = this.b.a(context, num, cVar);
-        if (a2.f25670a) {
+        if (a2.f11982a) {
             return;
         }
-        this.f26007a = a2;
+        this.f12319a = a2;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

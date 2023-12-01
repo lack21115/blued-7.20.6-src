@@ -9,9 +9,9 @@ import android.preference.PreferenceManager;
 import android.util.Base64;
 import android.util.Log;
 import com.baidu.mobads.sdk.internal.bw;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cloud.huiyansdkface.normal.tools.WLogger;
 import com.tencent.cloud.huiyansdkface.record.h264.CodecManager;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -23,11 +23,11 @@ public class EncoderDebugger {
     public static final String TAG = "EncoderDebugger";
 
     /* renamed from: a  reason: collision with root package name */
-    private int f36061a;
+    private int f22370a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f36062c;
+    private String f22371c;
     private MediaCodec d;
     private int e;
     private int f;
@@ -58,13 +58,13 @@ public class EncoderDebugger {
         this.l = new NV21Convert();
         this.n = new byte[50];
         this.o = new byte[34];
-        this.f36062c = "";
+        this.f22371c = "";
         this.i = null;
         this.h = null;
     }
 
     private void a(boolean z) {
-        String str = this.e + "x" + this.f + "-";
+        String str = this.e + "x" + this.f + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         SharedPreferences.Editor edit = this.m.edit();
         edit.putBoolean("libstreaming-" + str + bw.o, z);
         if (z) {
@@ -76,7 +76,7 @@ public class EncoderDebugger {
             edit.putBoolean("libstreaming-" + str + "planar", this.l.getPlanar());
             edit.putBoolean("libstreaming-" + str + "reversed", this.l.getUVPanesReversed());
             edit.putString("libstreaming-" + str + "encoderName", this.b);
-            edit.putInt("libstreaming-" + str + "colorFormat", this.f36061a);
+            edit.putInt("libstreaming-" + str + "colorFormat", this.f22370a);
             edit.putString("libstreaming-" + str + "encoderName", this.b);
             edit.putString("libstreaming-" + str + "pps", this.p);
             edit.putString("libstreaming-" + str + "sps", this.q);
@@ -94,7 +94,7 @@ public class EncoderDebugger {
 
     private void b() {
         if (!c()) {
-            String str = this.e + "x" + this.f + "-";
+            String str = this.e + "x" + this.f + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
             if (!this.m.getBoolean("libstreaming-" + str + bw.o, false)) {
                 throw new RuntimeException("Phone not supported with this resolution (" + this.e + "x" + this.f + ")");
             }
@@ -105,7 +105,7 @@ public class EncoderDebugger {
             this.l.setPlanar(this.m.getBoolean("libstreaming-" + str + "planar", false));
             this.l.setColorPanesReversed(this.m.getBoolean("libstreaming-" + str + "reversed", false));
             this.b = this.m.getString("libstreaming-" + str + "encoderName", "");
-            this.f36061a = this.m.getInt("libstreaming-" + str + "colorFormat", 0);
+            this.f22370a = this.m.getInt("libstreaming-" + str + "colorFormat", 0);
             this.p = this.m.getString("libstreaming-" + str + "pps", "");
             this.q = this.m.getString("libstreaming-" + str + "sps", "");
             return;
@@ -121,14 +121,14 @@ public class EncoderDebugger {
             int i5 = 0;
             while (i5 < findEncodersForMimeType[i4].b.length) {
                 a();
-                this.b = findEncodersForMimeType[i4].f36060a;
-                this.f36061a = findEncodersForMimeType[i4].b[i5].intValue();
-                WLogger.v(TAG, ">> Test " + i3 + BridgeUtil.SPLIT_MARK + i + ": " + this.b + " with color format " + this.f36061a + " at " + this.e + "x" + this.f);
+                this.b = findEncodersForMimeType[i4].f22369a;
+                this.f22370a = findEncodersForMimeType[i4].b[i5].intValue();
+                WLogger.v(TAG, ">> Test " + i3 + "/" + i + ": " + this.b + " with color format " + this.f22370a + " at " + this.e + "x" + this.f);
                 this.l.setSize(this.e, this.f);
                 this.l.setSliceHeight(this.f);
                 this.l.setStride(this.e);
                 this.l.setYPadding(0);
-                this.l.setEncoderColorFormat(this.f36061a);
+                this.l.setEncoderColorFormat(this.f22370a);
                 d();
                 this.j = this.l.convert(this.k);
                 try {
@@ -142,9 +142,9 @@ public class EncoderDebugger {
                         StringWriter stringWriter = new StringWriter();
                         e.printStackTrace(new PrintWriter(stringWriter));
                         String stringWriter2 = stringWriter.toString();
-                        String str2 = "Encoder " + this.b + " cannot be used with color format " + this.f36061a;
+                        String str2 = "Encoder " + this.b + " cannot be used with color format " + this.f22370a;
                         WLogger.e(TAG, str2 + "," + e.toString());
-                        this.f36062c += str2 + "\n" + stringWriter2;
+                        this.f22371c += str2 + "\n" + stringWriter2;
                         e.printStackTrace();
                         f();
                         i5++;
@@ -161,7 +161,7 @@ public class EncoderDebugger {
     }
 
     private boolean c() {
-        String str = this.e + "x" + this.f + "-";
+        String str = this.e + "x" + this.f + Constants.ACCEPT_TIME_SEPARATOR_SERVER;
         SharedPreferences sharedPreferences = this.m;
         if (sharedPreferences == null) {
             return true;
@@ -232,7 +232,7 @@ public class EncoderDebugger {
         MediaFormat createVideoFormat = MediaFormat.createVideoFormat("video/avc", this.e, this.f);
         createVideoFormat.setInteger(MediaFormat.KEY_BIT_RATE, 1000000);
         createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, 20);
-        createVideoFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, this.f36061a);
+        createVideoFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, this.f22370a);
         createVideoFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 5);
         this.d.configure(createVideoFormat, null, null, 1);
         this.d.start();
@@ -344,12 +344,12 @@ public class EncoderDebugger {
                                                     int i8 = i7 - i5;
                                                     byte[] bArr5 = new byte[i8];
                                                     this.h = bArr5;
-                                                    System.arraycopy((Object) bArr, i5, (Object) bArr5, 0, i8);
+                                                    System.arraycopy(bArr, i5, bArr5, 0, i8);
                                                 } else {
                                                     int i9 = i7 - i5;
                                                     byte[] bArr6 = new byte[i9];
                                                     this.i = bArr6;
-                                                    System.arraycopy((Object) bArr, i5, (Object) bArr6, 0, i9);
+                                                    System.arraycopy(bArr, i5, bArr6, 0, i9);
                                                 }
                                                 i5 = i7 + 4;
                                                 i3 = i5;
@@ -388,7 +388,7 @@ public class EncoderDebugger {
     }
 
     public int getEncoderColorFormat() {
-        return this.f36061a;
+        return this.f22370a;
     }
 
     public String getEncoderName() {
@@ -396,7 +396,7 @@ public class EncoderDebugger {
     }
 
     public String getErrorLog() {
-        return this.f36062c;
+        return this.f22371c;
     }
 
     public NV21Convert getNV21Convertor() {
@@ -404,6 +404,6 @@ public class EncoderDebugger {
     }
 
     public String toString() {
-        return "EncoderDebugger [mEncoderColorFormat=" + this.f36061a + ", mEncoderName=" + this.b + ", mErrorLog=" + this.f36062c + ", mEncoder=" + this.d + ", mWidth=" + this.e + ", mHeight=" + this.f + ", mSize=" + this.g + ", mSPS=" + Arrays.toString(this.h) + ", mPPS=" + Arrays.toString(this.i) + ", mData=" + Arrays.toString(this.j) + ", mInitialImage=" + Arrays.toString(this.k) + ", mNV21=" + this.l + ", mPreferences=" + this.m + ", mVideo=" + Arrays.toString(this.n) + ", mDecodedVideo=" + Arrays.toString(this.o) + ", mB64PPS=" + this.p + ", mB64SPS=" + this.q + "]";
+        return "EncoderDebugger [mEncoderColorFormat=" + this.f22370a + ", mEncoderName=" + this.b + ", mErrorLog=" + this.f22371c + ", mEncoder=" + this.d + ", mWidth=" + this.e + ", mHeight=" + this.f + ", mSize=" + this.g + ", mSPS=" + Arrays.toString(this.h) + ", mPPS=" + Arrays.toString(this.i) + ", mData=" + Arrays.toString(this.j) + ", mInitialImage=" + Arrays.toString(this.k) + ", mNV21=" + this.l + ", mPreferences=" + this.m + ", mVideo=" + Arrays.toString(this.n) + ", mDecodedVideo=" + Arrays.toString(this.o) + ", mB64PPS=" + this.p + ", mB64SPS=" + this.q + "]";
     }
 }

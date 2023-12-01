@@ -11,7 +11,6 @@ public class HackyViewPager extends ViewPager {
         super(context, attributeSet);
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         try {
             return super.onInterceptTouchEvent(motionEvent);

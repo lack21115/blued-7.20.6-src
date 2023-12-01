@@ -23,19 +23,19 @@ public final class ChapterTocFrame extends Id3Frame {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f25529a;
+    public final String f11841a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f25530c;
+    public final boolean f11842c;
     public final String[] d;
     private final Id3Frame[] e;
 
     ChapterTocFrame(Parcel parcel) {
-        super(d.f7348a);
-        this.f25529a = parcel.readString();
+        super(d.f4509a);
+        this.f11841a = parcel.readString();
         this.b = parcel.readByte() != 0;
-        this.f25530c = parcel.readByte() != 0;
+        this.f11842c = parcel.readByte() != 0;
         this.d = parcel.createStringArray();
         int readInt = parcel.readInt();
         this.e = new Id3Frame[readInt];
@@ -45,10 +45,10 @@ public final class ChapterTocFrame extends Id3Frame {
     }
 
     public ChapterTocFrame(String str, boolean z, boolean z2, String[] strArr, Id3Frame[] id3FrameArr) {
-        super(d.f7348a);
-        this.f25529a = str;
+        super(d.f4509a);
+        this.f11841a = str;
         this.b = z;
-        this.f25530c = z2;
+        this.f11842c = z2;
         this.d = strArr;
         this.e = id3FrameArr;
     }
@@ -65,9 +65,9 @@ public final class ChapterTocFrame extends Id3Frame {
                 z = false;
                 if (this.b == chapterTocFrame.b) {
                     z = false;
-                    if (this.f25530c == chapterTocFrame.f25530c) {
+                    if (this.f11842c == chapterTocFrame.f11842c) {
                         z = false;
-                        if (u.a(this.f25529a, chapterTocFrame.f25529a)) {
+                        if (u.a(this.f11841a, chapterTocFrame.f11841a)) {
                             z = false;
                             if (Arrays.equals(this.d, chapterTocFrame.d)) {
                                 if (!Arrays.equals(this.e, chapterTocFrame.e)) {
@@ -91,9 +91,9 @@ public final class ChapterTocFrame extends Id3Frame {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f25529a);
+        parcel.writeString(this.f11841a);
         parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
-        parcel.writeByte(this.f25530c ? (byte) 1 : (byte) 0);
+        parcel.writeByte(this.f11842c ? (byte) 1 : (byte) 0);
         parcel.writeStringArray(this.d);
         parcel.writeInt(this.e.length);
         Id3Frame[] id3FrameArr = this.e;

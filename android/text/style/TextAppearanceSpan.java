@@ -49,7 +49,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
         }
         obtainStyledAttributes.recycle();
         if (i2 >= 0) {
-            TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(16973829, R.styleable.Theme);
+            TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(android.R.style.Theme, R.styleable.Theme);
             colorStateList = obtainStyledAttributes2.getColorStateList(i2);
             obtainStyledAttributes2.recycle();
         }

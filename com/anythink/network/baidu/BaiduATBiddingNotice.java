@@ -16,23 +16,20 @@ import java.util.Map;
 public class BaiduATBiddingNotice implements ATBiddingNotice {
 
     /* renamed from: a  reason: collision with root package name */
-    Object f8863a;
+    Object f6023a;
 
     /* JADX INFO: Access modifiers changed from: protected */
     public BaiduATBiddingNotice(Object obj) {
-        this.f8863a = obj;
+        this.f6023a = obj;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public ATAdConst.CURRENCY getNoticePriceCurrency() {
         return ATAdConst.CURRENCY.RMB_CENT;
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidDisplay(boolean z, double d) {
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidLoss(String str, double d, Map<String, Object> map) {
         synchronized (this) {
             boolean z = true;
@@ -41,13 +38,13 @@ public class BaiduATBiddingNotice implements ATBiddingNotice {
                 if (hashCode != 53) {
                     switch (hashCode) {
                         case 48627:
-                            if (str.equals(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB)) {
+                            if (str.equals("102")) {
                                 z = true;
                                 break;
                             }
                             break;
                         case 48628:
-                            if (str.equals(ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_NORMAL)) {
+                            if (str.equals("103")) {
                                 z = true;
                                 break;
                             }
@@ -62,7 +59,7 @@ public class BaiduATBiddingNotice implements ATBiddingNotice {
             int i = z ? (z || z) ? 203 : 900 : 100;
             if (ATSDK.isNetworkLogDebug()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(this.f8863a != null ? this.f8863a.toString() : "");
+                sb.append(this.f6023a != null ? this.f6023a.toString() : "");
                 sb.append(": notifyBidLoss lossCode:");
                 sb.append(str);
                 sb.append(",lossReaseon:");
@@ -70,104 +67,103 @@ public class BaiduATBiddingNotice implements ATBiddingNotice {
                 Log.i("BaiduATBiddingNotice", sb.toString());
             }
             try {
-                if (this.f8863a instanceof RewardVideoAd) {
-                    ((RewardVideoAd) this.f8863a).biddingFail(String.valueOf(i));
+                if (this.f6023a instanceof RewardVideoAd) {
+                    ((RewardVideoAd) this.f6023a).biddingFail(String.valueOf(i));
                     return;
                 }
             } catch (Throwable th) {
             }
             try {
-                if (this.f8863a instanceof SplashAd) {
-                    ((SplashAd) this.f8863a).biddingFail(String.valueOf(i));
+                if (this.f6023a instanceof SplashAd) {
+                    ((SplashAd) this.f6023a).biddingFail(String.valueOf(i));
                     return;
                 }
             } catch (Throwable th2) {
             }
             try {
-                if (this.f8863a instanceof NativeResponse) {
-                    ((NativeResponse) this.f8863a).biddingFail(String.valueOf(i));
+                if (this.f6023a instanceof NativeResponse) {
+                    ((NativeResponse) this.f6023a).biddingFail(String.valueOf(i));
                     return;
                 }
             } catch (Throwable th3) {
             }
             try {
-                if (this.f8863a instanceof ExpressResponse) {
-                    ((ExpressResponse) this.f8863a).biddingFail(String.valueOf(i));
+                if (this.f6023a instanceof ExpressResponse) {
+                    ((ExpressResponse) this.f6023a).biddingFail(String.valueOf(i));
                     return;
                 }
             } catch (Throwable th4) {
             }
             try {
-                if (this.f8863a instanceof ExpressInterstitialAd) {
-                    ((ExpressInterstitialAd) this.f8863a).biddingFail(String.valueOf(i));
+                if (this.f6023a instanceof ExpressInterstitialAd) {
+                    ((ExpressInterstitialAd) this.f6023a).biddingFail(String.valueOf(i));
                     return;
                 }
             } catch (Throwable th5) {
             }
             try {
-                if (this.f8863a instanceof FullScreenVideoAd) {
-                    ((FullScreenVideoAd) this.f8863a).biddingFail(String.valueOf(i));
+                if (this.f6023a instanceof FullScreenVideoAd) {
+                    ((FullScreenVideoAd) this.f6023a).biddingFail(String.valueOf(i));
                     return;
                 }
             } catch (Throwable th6) {
             }
-            this.f8863a = null;
+            this.f6023a = null;
         }
     }
 
-    @Override // com.anythink.core.api.ATBiddingNotice
     public void notifyBidWin(double d) {
         synchronized (this) {
             if (ATSDK.isNetworkLogDebug()) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(this.f8863a != null ? this.f8863a.toString() : "");
+                sb.append(this.f6023a != null ? this.f6023a.toString() : "");
                 sb.append(": notifyBidWin : second price:");
                 sb.append(d);
                 Log.i("BaiduATBiddingNotice", sb.toString());
             }
             try {
-                if (this.f8863a instanceof RewardVideoAd) {
-                    ((RewardVideoAd) this.f8863a).biddingSuccess(String.valueOf(d));
+                if (this.f6023a instanceof RewardVideoAd) {
+                    ((RewardVideoAd) this.f6023a).biddingSuccess(String.valueOf(d));
                     return;
                 }
             } catch (Throwable th) {
             }
             try {
-                if (this.f8863a instanceof SplashAd) {
-                    ((SplashAd) this.f8863a).biddingSuccess(String.valueOf(d));
+                if (this.f6023a instanceof SplashAd) {
+                    ((SplashAd) this.f6023a).biddingSuccess(String.valueOf(d));
                     return;
                 }
             } catch (Throwable th2) {
             }
             try {
-                if (this.f8863a instanceof NativeResponse) {
-                    ((NativeResponse) this.f8863a).biddingSuccess(String.valueOf(d));
+                if (this.f6023a instanceof NativeResponse) {
+                    ((NativeResponse) this.f6023a).biddingSuccess(String.valueOf(d));
                     return;
                 }
             } catch (Throwable th3) {
             }
             try {
-                if (this.f8863a instanceof ExpressResponse) {
-                    ((ExpressResponse) this.f8863a).biddingSuccess(String.valueOf(d));
+                if (this.f6023a instanceof ExpressResponse) {
+                    ((ExpressResponse) this.f6023a).biddingSuccess(String.valueOf(d));
                     return;
                 }
             } catch (Throwable th4) {
             }
             try {
-                if (this.f8863a instanceof ExpressInterstitialAd) {
-                    ((ExpressInterstitialAd) this.f8863a).biddingSuccess(String.valueOf(d));
+                if (this.f6023a instanceof ExpressInterstitialAd) {
+                    ((ExpressInterstitialAd) this.f6023a).biddingSuccess(String.valueOf(d));
                     return;
                 }
             } catch (Throwable th5) {
             }
             try {
-                if (this.f8863a instanceof FullScreenVideoAd) {
-                    ((FullScreenVideoAd) this.f8863a).biddingSuccess(String.valueOf(d));
+                if (this.f6023a instanceof FullScreenVideoAd) {
+                    ((FullScreenVideoAd) this.f6023a).biddingSuccess(String.valueOf(d));
                     return;
                 }
             } catch (Throwable th6) {
             }
-            this.f8863a = null;
+            this.f6023a = null;
         }
     }
 }

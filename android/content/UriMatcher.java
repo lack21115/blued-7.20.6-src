@@ -1,8 +1,6 @@
 package android.content;
 
 import android.net.Uri;
-import com.android.internal.telephony.PhoneConstants;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -12,7 +10,7 @@ public class UriMatcher {
     private static final int EXACT = 0;
     public static final int NO_MATCH = -1;
     private static final int NUMBER = 1;
-    static final Pattern PATH_SPLIT_PATTERN = Pattern.compile(BridgeUtil.SPLIT_MARK);
+    static final Pattern PATH_SPLIT_PATTERN = Pattern.compile("/");
     private static final int TEXT = 2;
     private ArrayList<UriMatcher> mChildren;
     private int mCode;
@@ -80,7 +78,7 @@ public class UriMatcher {
                 uriMatcher2 = new UriMatcher();
                 if (str4.equals("#")) {
                     uriMatcher2.mWhich = 1;
-                } else if (str4.equals(PhoneConstants.APN_TYPE_ALL)) {
+                } else if (str4.equals("*")) {
                     uriMatcher2.mWhich = 2;
                 } else {
                     uriMatcher2.mWhich = 0;

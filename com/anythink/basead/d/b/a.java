@@ -16,41 +16,34 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b/a.class */
 public class a {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile a f5943c;
-
-    /* renamed from: a  reason: collision with root package name */
-    ConcurrentHashMap<String, Boolean> f5944a = new ConcurrentHashMap<>(3);
+    private static volatile a c;
+    ConcurrentHashMap<String, Boolean> a = new ConcurrentHashMap<>(3);
     private Context b;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.basead.d.b.a$1  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b/a$1.class */
-    public final class AnonymousClass1 implements i {
+    final class AnonymousClass1 implements i {
+        final /* synthetic */ j a;
+        final /* synthetic */ InterfaceC0035a b;
 
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ j f5947a;
-        final /* synthetic */ InterfaceC0075a b;
-
-        AnonymousClass1(j jVar, InterfaceC0075a interfaceC0075a) {
-            this.f5947a = jVar;
-            this.b = interfaceC0075a;
+        AnonymousClass1(j jVar, InterfaceC0035a interfaceC0035a) {
+            this.a = jVar;
+            this.b = interfaceC0035a;
         }
 
         @Override // com.anythink.core.common.g.i
         public final void onLoadCanceled(int i) {
-            InterfaceC0075a interfaceC0075a = this.b;
-            if (interfaceC0075a != null) {
-                interfaceC0075a.a(null, f.a(f.i, "Cancel Request."));
+            InterfaceC0035a interfaceC0035a = this.b;
+            if (interfaceC0035a != null) {
+                interfaceC0035a.a(null, f.a(f.i, "Cancel Request."));
             }
         }
 
         @Override // com.anythink.core.common.g.i
         public final void onLoadError(int i, String str, AdError adError) {
-            InterfaceC0075a interfaceC0075a = this.b;
-            if (interfaceC0075a != null) {
-                interfaceC0075a.a(null, f.a(f.i, str));
+            InterfaceC0035a interfaceC0035a = this.b;
+            if (interfaceC0035a != null) {
+                interfaceC0035a.a(null, f.a(f.i, str));
             }
         }
 
@@ -76,7 +69,7 @@ public class a {
 
     /* renamed from: com.anythink.basead.d.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/b/a$a.class */
-    public interface InterfaceC0075a {
+    public interface InterfaceC0035a {
         void a();
 
         void a(z zVar);
@@ -89,49 +82,49 @@ public class a {
     }
 
     public static a a(Context context) {
-        if (f5943c == null) {
+        if (c == null) {
             synchronized (a.class) {
                 try {
-                    if (f5943c == null) {
-                        f5943c = new a(context);
+                    if (c == null) {
+                        c = new a(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f5943c;
+        return c;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void a(final z zVar, final j jVar, final InterfaceC0075a interfaceC0075a) {
+    public void a(final z zVar, final j jVar, final InterfaceC0035a interfaceC0035a) {
         com.anythink.basead.a.f.a();
-        com.anythink.basead.a.f.a(jVar.b, zVar, jVar, new b.InterfaceC0067b() { // from class: com.anythink.basead.d.b.a.2
-            @Override // com.anythink.basead.a.b.b.InterfaceC0067b
+        com.anythink.basead.a.f.a(jVar.b, zVar, jVar, new b.InterfaceC0027b() { // from class: com.anythink.basead.d.b.a.2
+            @Override // com.anythink.basead.a.b.b.InterfaceC0027b
             public final void a() {
-                ConcurrentHashMap<String, Boolean> concurrentHashMap = a.this.f5944a;
+                ConcurrentHashMap<String, Boolean> concurrentHashMap = a.this.a;
                 com.anythink.core.basead.b.a();
                 concurrentHashMap.put(com.anythink.core.basead.b.a(jVar), Boolean.FALSE);
-                InterfaceC0075a interfaceC0075a2 = interfaceC0075a;
-                if (interfaceC0075a2 != null) {
-                    interfaceC0075a2.a(zVar);
+                InterfaceC0035a interfaceC0035a2 = interfaceC0035a;
+                if (interfaceC0035a2 != null) {
+                    interfaceC0035a2.a(zVar);
                 }
             }
 
-            @Override // com.anythink.basead.a.b.b.InterfaceC0067b
+            @Override // com.anythink.basead.a.b.b.InterfaceC0027b
             public final void a(e eVar) {
-                ConcurrentHashMap<String, Boolean> concurrentHashMap = a.this.f5944a;
+                ConcurrentHashMap<String, Boolean> concurrentHashMap = a.this.a;
                 com.anythink.core.basead.b.a();
                 concurrentHashMap.put(com.anythink.core.basead.b.a(jVar), Boolean.FALSE);
-                InterfaceC0075a interfaceC0075a2 = interfaceC0075a;
-                if (interfaceC0075a2 != null) {
-                    interfaceC0075a2.a(zVar, eVar);
+                InterfaceC0035a interfaceC0035a2 = interfaceC0035a;
+                if (interfaceC0035a2 != null) {
+                    interfaceC0035a2.a(zVar, eVar);
                 }
             }
         });
     }
 
-    private void b(j jVar, String str, InterfaceC0075a interfaceC0075a) {
+    private void b(j jVar, String str, InterfaceC0035a interfaceC0035a) {
         z zVar;
         int i;
         int parseInt;
@@ -142,10 +135,10 @@ public class a {
             zVar = null;
         }
         if (zVar != null && !zVar.N()) {
-            if (interfaceC0075a != null) {
-                interfaceC0075a.a();
+            if (interfaceC0035a != null) {
+                interfaceC0035a.a();
             }
-            a(zVar, jVar, interfaceC0075a);
+            a(zVar, jVar, interfaceC0035a);
             return;
         }
         if (!TextUtils.isEmpty(jVar.m.r())) {
@@ -160,25 +153,25 @@ public class a {
             } catch (Throwable th3) {
                 i = 0;
             }
-            new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.f6664c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0075a));
+            new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0035a));
         }
         i = 0;
         parseInt2 = 0;
         parseInt = i;
-        new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.f6664c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0075a));
+        new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0035a));
     }
 
     public final z a(j jVar) {
         com.anythink.core.basead.b.a();
-        String a2 = com.anythink.core.basead.b.a(jVar);
+        String a = com.anythink.core.basead.b.a(jVar);
         com.anythink.core.basead.b.a();
-        String a3 = com.anythink.core.basead.b.a(this.b, a2);
+        String a2 = com.anythink.core.basead.b.a(this.b, a);
         z zVar = null;
-        if (TextUtils.isEmpty(a3)) {
+        if (TextUtils.isEmpty(a2)) {
             return null;
         }
         try {
-            zVar = b.a(jVar, new JSONObject(a3));
+            zVar = b.a(jVar, new JSONObject(a2));
         } catch (Throwable th) {
         }
         if (zVar != null) {
@@ -188,25 +181,25 @@ public class a {
         return zVar;
     }
 
-    public final void a(j jVar, String str, InterfaceC0075a interfaceC0075a) {
+    public final void a(j jVar, String str, InterfaceC0035a interfaceC0035a) {
         int i;
         int parseInt;
         int parseInt2;
         com.anythink.core.basead.b.a();
-        String a2 = com.anythink.core.basead.b.a(jVar);
+        String a = com.anythink.core.basead.b.a(jVar);
         z zVar = null;
-        if (this.f5944a.contains(a2) && this.f5944a.get(a2).booleanValue()) {
-            interfaceC0075a.a(null, f.a(f.g, f.q));
+        if (this.a.contains(a) && this.a.get(a).booleanValue()) {
+            interfaceC0035a.a(null, f.a(f.g, f.q));
             return;
         }
-        this.f5944a.put(a2, Boolean.TRUE);
+        this.a.put(a, Boolean.TRUE);
         try {
             zVar = a(jVar);
         } catch (Throwable th) {
         }
         if (zVar != null && !zVar.N()) {
-            interfaceC0075a.a();
-            a(zVar, jVar, interfaceC0075a);
+            interfaceC0035a.a();
+            a(zVar, jVar, interfaceC0035a);
             return;
         }
         if (!TextUtils.isEmpty(jVar.m.r())) {
@@ -221,11 +214,11 @@ public class a {
             } catch (Throwable th3) {
                 i = 0;
             }
-            new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.f6664c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0075a));
+            new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0035a));
         }
         i = 0;
         parseInt2 = 0;
         parseInt = i;
-        new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.f6664c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0075a));
+        new d(jVar, parseInt, parseInt2, c.a().a(this.b, c.a(jVar.b, jVar.c)), str).a(0, (i) new AnonymousClass1(jVar, interfaceC0035a));
     }
 }

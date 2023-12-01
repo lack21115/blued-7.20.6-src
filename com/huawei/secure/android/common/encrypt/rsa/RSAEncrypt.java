@@ -23,11 +23,11 @@ import javax.crypto.Cipher;
 public abstract class RSAEncrypt {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23081a = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
+    private static final String f9473a = "RSA/ECB/OAEPWithSHA-256AndMGF1Padding";
     private static final String b = "RSAEncrypt";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23082c = "UTF-8";
+    private static final String f9474c = "UTF-8";
     private static final String d = "";
     private static final int e = 2048;
     private static final String f = "RSA";

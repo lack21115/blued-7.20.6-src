@@ -14,16 +14,16 @@ import java.nio.FloatBuffer;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f1238a = 2;
+    public static int f1190a = 2;
     public static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final float[] f1239c;
+    public static final float[] f1191c;
     public static Object d;
 
     static {
         float[] fArr = new float[16];
-        f1239c = fArr;
+        f1191c = fArr;
         Matrix.setIdentityM(fArr, 0);
         d = new Object();
     }
@@ -63,9 +63,9 @@ public class f {
         GLES20.glGetShaderiv(glCreateShader, GLES20.GL_COMPILE_STATUS, iArr, 0);
         int i2 = glCreateShader;
         if (iArr[0] == 0) {
-            a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f1361c;
+            a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f1313c;
             eVar.e("GlUtil", "Could not compile shader " + i + ":");
-            a.a.a.a.a.e.e eVar2 = a.a.a.a.a.e.e.f1361c;
+            a.a.a.a.a.e.e eVar2 = a.a.a.a.a.e.e.f1313c;
             eVar2.e("GlUtil", " " + GLES20.glGetShaderInfoLog(glCreateShader));
             GLES20.glDeleteShader(glCreateShader);
             i2 = 0;
@@ -82,7 +82,7 @@ public class f {
         int glCreateProgram = GLES20.glCreateProgram();
         b("glCreateProgram");
         if (glCreateProgram == 0) {
-            a.a.a.a.a.e.e.f1361c.e("GlUtil", "Could not create program");
+            a.a.a.a.a.e.e.f1313c.e("GlUtil", "Could not create program");
         }
         GLES20.glAttachShader(glCreateProgram, a3);
         b("glAttachShader");
@@ -92,8 +92,8 @@ public class f {
         int[] iArr = new int[1];
         GLES20.glGetProgramiv(glCreateProgram, GLES20.GL_LINK_STATUS, iArr, 0);
         if (iArr[0] != 1) {
-            a.a.a.a.a.e.e.f1361c.e("GlUtil", "Could not link program: ");
-            a.a.a.a.a.e.e.f1361c.e("GlUtil", GLES20.glGetProgramInfoLog(glCreateProgram));
+            a.a.a.a.a.e.e.f1313c.e("GlUtil", "Could not link program: ");
+            a.a.a.a.a.e.e.f1313c.e("GlUtil", GLES20.glGetProgramInfoLog(glCreateProgram));
             GLES20.glDeleteProgram(glCreateProgram);
             return 0;
         }
@@ -129,16 +129,16 @@ public class f {
         ConfigurationInfo deviceConfigurationInfo = ((ActivityManager) context.getSystemService("activity")).getDeviceConfigurationInfo();
         if (deviceConfigurationInfo != null && deviceConfigurationInfo.reqGlEsVersion >= 196608) {
             try {
-                f1238a = 7938;
-                a.a.a.a.a.e.e.f1361c.a("GlUtil", "In case of java code optimization");
-                f1238a = 3;
+                f1190a = 7938;
+                a.a.a.a.a.e.e.f1313c.a("GlUtil", "In case of java code optimization");
+                f1190a = 3;
                 b = true;
             } catch (NoClassDefFoundError e) {
-                a.a.a.a.a.e.e.f1361c.d("GlUtil", "System said it is 3.0, but it is not !!!");
+                a.a.a.a.a.e.e.f1313c.d("GlUtil", "System said it is 3.0, but it is not !!!");
             }
         }
-        a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f1361c;
-        eVar.c("GlUtil", "GL info, version:" + f1238a + ", supports rg ext:" + b);
+        a.a.a.a.a.e.e eVar = a.a.a.a.a.e.e.f1313c;
+        eVar.c("GlUtil", "GL info, version:" + f1190a + ", supports rg ext:" + b);
     }
 
     public static void a(String str) {
@@ -167,13 +167,13 @@ public class f {
     }
 
     public static boolean b() {
-        return f1238a > 2;
+        return f1190a > 2;
     }
 
     public static boolean b(String str) {
         int glGetError = GLES20.glGetError();
         if (glGetError != 0) {
-            a.a.a.a.a.e.e.f1361c.e("GlUtil", str + ": glError 0x" + Integer.toHexString(glGetError));
+            a.a.a.a.a.e.e.f1313c.e("GlUtil", str + ": glError 0x" + Integer.toHexString(glGetError));
             return false;
         }
         return true;

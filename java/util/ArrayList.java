@@ -15,8 +15,9 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
     transient Object[] array;
     int size;
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/ArrayList$ArrayListIterator.class */
-    private class ArrayListIterator implements Iterator<E> {
+    public class ArrayListIterator implements Iterator<E> {
         private int expectedModCount;
         private int remaining;
         private int removalIndex;
@@ -159,7 +160,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         this.modCount++;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         Object[] objArr = this.array;
         int i = this.size;
@@ -204,7 +205,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         Object[] array = collection.toArray();
         int length = array.length;
@@ -227,7 +228,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         return true;
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         if (this.size != 0) {
             Arrays.fill(this.array, 0, this.size, (Object) null);
@@ -246,7 +247,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         Object[] objArr = this.array;
         int i = this.size;
@@ -287,7 +288,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
     }
 
-    @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.Collection
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -349,7 +350,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         return (E) this.array[i];
     }
 
-    @Override // java.util.AbstractList, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractList, java.util.Collection
     public int hashCode() {
         Object[] objArr = this.array;
         int i = 1;
@@ -392,7 +393,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return this.size == 0;
     }
@@ -448,7 +449,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         return e;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         Object[] objArr = this.array;
         int i = this.size;
@@ -523,12 +524,12 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
         return e2;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.size;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         int i = this.size;
         Object[] objArr = new Object[i];
@@ -538,7 +539,7 @@ public class ArrayList<E> extends AbstractList<E> implements Cloneable, Serializ
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v16, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         int i = this.size;
         T[] tArr2 = tArr;

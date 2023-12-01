@@ -1,7 +1,6 @@
 package com.kwad.components.core.response.model;
 
 import android.text.TextUtils;
-import com.blued.android.module.common.web.LoaderConstants;
 import com.kwad.sdk.core.b;
 import com.kwad.sdk.core.kwai.d;
 import com.kwad.sdk.core.network.BaseResultData;
@@ -67,7 +66,7 @@ public class AdResultData extends BaseResultData implements b {
     }
 
     /* renamed from: clone */
-    public AdResultData m7685clone() {
+    public AdResultData m4678clone() {
         AdResultData adResultData = new AdResultData();
         try {
             adResultData.parseJson(new JSONObject(toJson().toString()));
@@ -148,7 +147,7 @@ public class AdResultData extends BaseResultData implements b {
         }
         JSONObject json = super.toJson();
         t.putValue(json, "pcursor", this.pcursor);
-        t.a(json, LoaderConstants.PAGE_INFO, this.pageInfo);
+        t.a(json, "pageInfo", this.pageInfo);
         t.putValue(json, "impAdInfo", d.bV(t.C(getAdTemplateList()).toString()));
         return json.toString();
     }
@@ -192,7 +191,7 @@ public class AdResultData extends BaseResultData implements b {
         try {
             this.pcursor = jSONObject.optString("pcursor");
             try {
-                String optString = jSONObject.optString(LoaderConstants.PAGE_INFO);
+                String optString = jSONObject.optString("pageInfo");
                 if (!bb.isNullString(optString)) {
                     this.pageInfo.parseJson(new JSONObject(d.getResponseData(optString)));
                 }
@@ -257,7 +256,7 @@ public class AdResultData extends BaseResultData implements b {
     public JSONObject toJson() {
         JSONObject json = super.toJson();
         t.putValue(json, "pcursor", this.pcursor);
-        t.a(json, LoaderConstants.PAGE_INFO, this.pageInfo);
+        t.a(json, "pageInfo", this.pageInfo);
         t.putValue(json, "impAdInfo", getAdTemplateList());
         return json;
     }

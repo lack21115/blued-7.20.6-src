@@ -24,13 +24,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveBunchLightView.class */
 public final class LiveBunchLightView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f14388a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14389c;
+    private int c;
     private final ArrayList<LiveBunchLightViewModel> d;
     private final ArrayList<LiveBunchLightViewModel> e;
     private final ArrayList<LiveBunchLightViewModel> f;
@@ -56,17 +52,17 @@ public final class LiveBunchLightView extends FrameLayout {
     public LiveBunchLightView(Context context) {
         super(context);
         Intrinsics.e(context, "context");
-        this.f14389c = DisplayUtil.a(AppInfo.d(), 6.0f);
+        this.c = DisplayUtil.a(AppInfo.d(), 6.0f);
         this.d = new ArrayList<>();
         this.e = new ArrayList<>();
         this.f = new ArrayList<>();
         this.g = new ArrayList<>();
         this.h = DisplayUtil.a(AppInfo.d(), 32.0f);
-        int a2 = DisplayUtil.a(AppInfo.d(), 10.0f);
-        this.i = a2;
-        this.j = a2;
-        this.k = a2;
-        this.l = a2;
+        int a = DisplayUtil.a(AppInfo.d(), 10.0f);
+        this.i = a;
+        this.j = a;
+        this.k = a;
+        this.l = a;
         this.o = 500L;
         long j = (long) (500 * 0.25d);
         this.p = j;
@@ -79,17 +75,17 @@ public final class LiveBunchLightView extends FrameLayout {
     }
 
     private final void a() {
-        int i = this.f14388a;
+        int i = this.a;
         if (i < this.b) {
-            int i2 = this.f14389c;
+            int i2 = this.c;
             int i3 = this.j;
             int i4 = ((i - (i2 * 2)) - i3) / (this.h + i3);
             this.m = i4;
             if (i4 % 2 == 0) {
                 this.m = i4 - 1;
             }
-            int i5 = this.f14388a;
-            int i6 = this.f14389c;
+            int i5 = this.a;
+            int i6 = this.c;
             int i7 = this.h;
             int i8 = this.m;
             int i9 = ((i5 - (i6 * 2)) - (i7 * i8)) / (i8 - 1);
@@ -100,15 +96,15 @@ public final class LiveBunchLightView extends FrameLayout {
             this.l = (((i10 - (i6 * 2)) - (i7 * 2)) - (i7 * i11)) / (i11 + 1);
             return;
         }
-        int i12 = this.f14389c;
+        int i12 = this.c;
         int i13 = this.j;
         int i14 = ((i - (i12 * 2)) - i13) / (this.h + i13);
         this.m = i14;
         if (i14 % 2 == 0) {
             this.m = i14 - 1;
         }
-        int i15 = this.f14388a;
-        int i16 = this.f14389c;
+        int i15 = this.a;
+        int i16 = this.c;
         int i17 = this.h;
         int i18 = this.m;
         int i19 = ((i15 - (i16 * 2)) - (i17 * i18)) / (i18 - 1);
@@ -215,7 +211,7 @@ public final class LiveBunchLightView extends FrameLayout {
             LiveBunchLightViewModel liveBunchLightViewModel = new LiveBunchLightViewModel();
             int i4 = this.h;
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(i4, i4);
-            int i5 = this.f14389c;
+            int i5 = this.c;
             layoutParams.setMargins((i3 * (this.h + this.k)) + i5, i5, 0, 0);
             liveBunchLightViewModel.setView(new ImageView(getContext()));
             ImageView view = liveBunchLightViewModel.getView();
@@ -237,7 +233,7 @@ public final class LiveBunchLightView extends FrameLayout {
             int i9 = this.h;
             FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(i9, i9);
             layoutParams2.gravity = 80;
-            int i10 = this.f14389c;
+            int i10 = this.c;
             layoutParams2.setMargins((i8 * (this.h + this.k)) + i10, 0, 0, i10);
             liveBunchLightViewModel2.setView(new ImageView(getContext()));
             ImageView view2 = liveBunchLightViewModel2.getView();
@@ -255,7 +251,7 @@ public final class LiveBunchLightView extends FrameLayout {
             LiveBunchLightViewModel liveBunchLightViewModel3 = new LiveBunchLightViewModel();
             int i13 = this.h;
             FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(i13, i13);
-            int i14 = this.f14389c;
+            int i14 = this.c;
             layoutParams3.setMargins(i14, ((this.h + this.l) * i12) + i14, 0, 0);
             liveBunchLightViewModel3.setView(new ImageView(getContext()));
             ImageView view3 = liveBunchLightViewModel3.getView();
@@ -273,7 +269,7 @@ public final class LiveBunchLightView extends FrameLayout {
             int i17 = this.h;
             FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(i17, i17);
             layoutParams4.gravity = 5;
-            int i18 = this.f14389c;
+            int i18 = this.c;
             layoutParams4.setMargins(0, ((this.h + this.l) * i16) + i18, i18, 0);
             liveBunchLightViewModel4.setView(new ImageView(getContext()));
             ImageView view4 = liveBunchLightViewModel4.getView();
@@ -408,6 +404,7 @@ public final class LiveBunchLightView extends FrameLayout {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v2, types: [com.blued.android.module.live_china.view.LiveBunchLightView$startPlay$1] */
     public final void a(ArrayList<String> list, int i) {
         Intrinsics.e(list, "list");
         CountDownTimer countDownTimer = this.r;
@@ -449,8 +446,8 @@ public final class LiveBunchLightView extends FrameLayout {
     public void onMeasure(int i, int i2) {
         int size = View.MeasureSpec.getSize(i);
         int size2 = View.MeasureSpec.getSize(i2);
-        if (size != 0 && size2 != 0 && (this.f14388a != size || this.b != size2)) {
-            this.f14388a = size;
+        if (size != 0 && size2 != 0 && (this.a != size || this.b != size2)) {
+            this.a = size;
             this.b = size2;
             this.h = (int) (Math.min(size, size2) / 14.5d);
             a();

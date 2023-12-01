@@ -5,7 +5,7 @@ import com.anythink.core.api.ATAdConst;
 import com.anythink.core.api.ATBiddingNotice;
 import com.anythink.core.api.ErrorCode;
 import com.anythink.core.common.c.k;
-import com.cdo.oaps.ad.OapsKey;
+import com.blued.android.module.yy_china.model.YYGiftPackageModel;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
@@ -19,13 +19,9 @@ public final class m extends l implements Comparable<m> {
     private String E;
     private String F;
     private String G;
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f6667a;
+    public int a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f6668c;
+    public String c;
     public int d;
     public long e;
     public long f;
@@ -65,11 +61,11 @@ public final class m extends l implements Comparable<m> {
             return -1;
         }
         double d = 0.0d;
-        double a2 = this.sortPrice == 0.0d ? com.anythink.core.b.f.a().a(this.g, this.k) : this.sortPrice;
+        double a = this.sortPrice == 0.0d ? com.anythink.core.b.f.a().a(this.g, this.k) : this.sortPrice;
         if (mVar != null) {
             d = mVar.sortPrice == 0.0d ? com.anythink.core.b.f.a().a(mVar.g, mVar.k) : mVar.sortPrice;
         }
-        return a2 > d ? -1 : 1;
+        return a > d ? -1 : 1;
     }
 
     private int a(boolean z, int i) {
@@ -80,18 +76,18 @@ public final class m extends l implements Comparable<m> {
     public static m a(String str) {
         try {
             JSONObject jSONObject = new JSONObject(str);
-            m mVar = new m(jSONObject.optInt("is_success") == 1, jSONObject.has(OapsKey.KEY_PRICE) ? jSONObject.optDouble(OapsKey.KEY_PRICE) : 0.0d, jSONObject.optString(k.a.b), jSONObject.optString("nurl"), jSONObject.optString("lurl"), jSONObject.optString("burl"), jSONObject.optString("err_msg"));
+            m mVar = new m(jSONObject.optInt("is_success") == 1, jSONObject.has("price") ? jSONObject.optDouble("price") : 0.0d, jSONObject.optString(k.a.b), jSONObject.optString("nurl"), jSONObject.optString("lurl"), jSONObject.optString("burl"), jSONObject.optString("err_msg"));
             mVar.b = jSONObject.optString("cur");
-            mVar.f6668c = jSONObject.optString("unit_id");
+            mVar.c = jSONObject.optString("unit_id");
             mVar.d = jSONObject.optInt("nw_firm_id");
-            mVar.f6667a = jSONObject.optInt("err_code");
+            mVar.a = jSONObject.optInt("err_code");
             mVar.e = jSONObject.optLong("expire");
             mVar.f = jSONObject.optLong("out_data_time");
             mVar.u = jSONObject.optBoolean("is_send_winurl");
             mVar.i = jSONObject.optString(k.a.e);
             mVar.g = jSONObject.optString("tp_bid_id");
             mVar.j = jSONObject.optString("burl_win");
-            mVar.k = jSONObject.optString("ad_source_id");
+            mVar.k = jSONObject.optString(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.AD_SOURCE_ID);
             mVar.l = jSONObject.optDouble("cur_rate");
             if (jSONObject.has("bid_response")) {
                 mVar.m = jSONObject.optString("bid_response");
@@ -167,9 +163,9 @@ public final class m extends l implements Comparable<m> {
                     replace = this.winNoticeUrl.replace("${AUCTION_PRICE}", a(sortPrice));
                 }
                 if (aiVar != null) {
-                    com.anythink.core.common.g.f a2 = com.anythink.core.common.g.f.a(replace, aiVar.c(), aiVar.t());
-                    a2.a(c(aiVar));
-                    a2.a(0, (com.anythink.core.common.g.i) null);
+                    com.anythink.core.common.g.f a = com.anythink.core.common.g.f.a(replace, aiVar.c(), aiVar.t());
+                    a.a(c(aiVar));
+                    a.a(0, (com.anythink.core.common.g.i) null);
                 }
             }
             if (this.biddingNotice != null) {
@@ -191,14 +187,14 @@ public final class m extends l implements Comparable<m> {
         if (aiVar == null) {
             return;
         }
-        com.anythink.core.common.g.f a2 = com.anythink.core.common.g.f.a(str, aiVar.c(), aiVar.t());
-        a2.a(c(aiVar));
-        a2.a(0, (com.anythink.core.common.g.i) null);
+        com.anythink.core.common.g.f a = com.anythink.core.common.g.f.a(str, aiVar.c(), aiVar.t());
+        a.a(c(aiVar));
+        a.a(0, (com.anythink.core.common.g.i) null);
     }
 
     private String b(boolean z, int i) {
         if (i == 3) {
-            return "-1";
+            return YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID;
         }
         int i2 = this.d;
         return i2 == 8 ? i == 1 ? "5" : "1" : i2 == 29 ? i == 1 ? "2002" : "2" : i2 == 34 ? a(i) : (i2 == 59 || z) ? ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_HB : ATAdConst.BIDDING_TYPE.BIDDING_LOSS_WITH_LOW_PRICE_IN_NORMAL;
@@ -265,19 +261,19 @@ public final class m extends l implements Comparable<m> {
     public final void a(r rVar, boolean z) {
         String replace;
         synchronized (this) {
-            int i = rVar.f6674a;
+            int i = rVar.a;
             ai aiVar = rVar.d;
-            ai aiVar2 = rVar.f6675c;
+            ai aiVar2 = rVar.c;
             double d = rVar.b;
             e eVar = rVar.e;
             if (aiVar2 == null || aiVar == null) {
                 return;
             }
             boolean j = aiVar2.j();
-            int c2 = aiVar2.c();
-            m a2 = com.anythink.core.b.f.a().a(aiVar);
+            int c = aiVar2.c();
+            m a = com.anythink.core.b.f.a().a(aiVar);
             if (z) {
-                if (a2 != null && TextUtils.equals(a2.token, this.token)) {
+                if (a != null && TextUtils.equals(a.token, this.token)) {
                     com.anythink.core.b.f.a().a(this.k);
                     com.anythink.core.b.f.a();
                     com.anythink.core.b.f.b(this.k);
@@ -301,11 +297,11 @@ public final class m extends l implements Comparable<m> {
             if (this.l > 0.0d) {
                 d3 = d2 * this.l;
             }
-            if (!b.equals("-1")) {
+            if (!b.equals(YYGiftPackageModel.YY_GIFT_BAG_TYPE_ID)) {
                 if (this.biddingNotice != null) {
                     HashMap hashMap = new HashMap(3);
                     if (this.d == 8) {
-                        hashMap.put(ATBiddingNotice.ADN_ID, Integer.valueOf(a(j, c2)));
+                        hashMap.put(ATBiddingNotice.ADN_ID, Integer.valueOf(a(j, c)));
                     }
                     this.biddingNotice.notifyBidLoss(b, d3, hashMap);
                     this.biddingNotice = null;
@@ -313,9 +309,9 @@ public final class m extends l implements Comparable<m> {
                 if (!TextUtils.isEmpty(str)) {
                     String replace2 = str.replace("${AUCTION_PRICE}", a(d3)).replace("${AUCTION_LOSS}", b);
                     if (this.d == 8) {
-                        replace = replace2.replace("${AUCTION_SEAT_ID}", String.valueOf(a(j, c2)));
+                        replace = replace2.replace("${AUCTION_SEAT_ID}", String.valueOf(a(j, c)));
                     } else if (this.d == 29) {
-                        replace = replace2.replace("${AUCTION_SEAT_ID}", this.d == c2 ? "1" : "10001");
+                        replace = replace2.replace("${AUCTION_SEAT_ID}", this.d == c ? "1" : "10001");
                     } else {
                         replace = replace2.replace("${AUCTION_SEAT_ID}", "");
                     }
@@ -387,13 +383,13 @@ public final class m extends l implements Comparable<m> {
             jSONObject.put(k.a.b, this.token);
             jSONObject.put("cur", this.b);
             jSONObject.put("origin_price", this.originPrice);
-            jSONObject.put(OapsKey.KEY_PRICE, this.price);
+            jSONObject.put("price", this.price);
             jSONObject.put("nurl", this.winNoticeUrl);
             jSONObject.put("lurl", this.loseNoticeUrl);
-            jSONObject.put("unit_id", this.f6668c);
+            jSONObject.put("unit_id", this.c);
             jSONObject.put("nw_firm_id", this.d);
             jSONObject.put("is_success", this.isSuccess ? 1 : 0);
-            jSONObject.put("err_code", this.f6667a);
+            jSONObject.put("err_code", this.a);
             jSONObject.put("err_msg", this.errorMsg);
             jSONObject.put("expire", this.e);
             jSONObject.put("out_data_time", this.f);
@@ -401,7 +397,7 @@ public final class m extends l implements Comparable<m> {
             jSONObject.put(k.a.e, this.i);
             jSONObject.put("tp_bid_id", this.g);
             jSONObject.put("burl", this.displayNoticeUrl);
-            jSONObject.put("ad_source_id", this.k);
+            jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.AD_SOURCE_ID, this.k);
             jSONObject.put("cur_rate", this.l);
             JSONObject jSONObject2 = new JSONObject();
             jSONObject2.put(com.anythink.core.common.l.ae, this.n);
@@ -427,11 +423,11 @@ public final class m extends l implements Comparable<m> {
             return -1;
         }
         double d = 0.0d;
-        double a2 = this.sortPrice == 0.0d ? com.anythink.core.b.f.a().a(this.g, this.k) : this.sortPrice;
+        double a = this.sortPrice == 0.0d ? com.anythink.core.b.f.a().a(this.g, this.k) : this.sortPrice;
         if (mVar2 != null) {
             d = mVar2.sortPrice == 0.0d ? com.anythink.core.b.f.a().a(mVar2.g, mVar2.k) : mVar2.sortPrice;
         }
-        return a2 > d ? -1 : 1;
+        return a > d ? -1 : 1;
     }
 
     public final boolean d() {

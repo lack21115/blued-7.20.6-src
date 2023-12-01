@@ -6,11 +6,11 @@ import java.io.Serializable;
 public final class b implements Serializable {
 
     /* renamed from: a  reason: collision with root package name */
-    String f21842a;
+    String f8235a;
     long b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f21843c;
+    public String f8236c;
     public String d;
     public String e;
     public long f;
@@ -19,6 +19,6 @@ public final class b implements Serializable {
     public long i;
 
     public final String toString() {
-        return "OkHttpInterceptorModle{mRequestId='" + this.f21842a + "', mUrl='" + this.d + "', mMethod='" + this.e + "', mStatus=" + this.g + ", mContentType='" + this.h + "', mCreateTime=" + this.b + ", mCURL='" + this.f21843c + "'}";
+        return "OkHttpInterceptorModle{mRequestId='" + this.f8235a + "', mUrl='" + this.d + "', mMethod='" + this.e + "', mStatus=" + this.g + ", mContentType='" + this.h + "', mCreateTime=" + this.b + ", mCURL='" + this.f8236c + "'}";
     }
 }

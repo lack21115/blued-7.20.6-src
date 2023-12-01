@@ -11,11 +11,11 @@ import java.util.List;
 public class e extends d implements ITPMediaComposition {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f39222a = 0;
+    private int f25531a = 0;
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f39223c = 0;
+    private int f25532c = 0;
     private List<ITPMediaTrack> d = new ArrayList(1);
     private List<ITPMediaTrack> e = new ArrayList(1);
     private List<ITPMediaTrack> f = new ArrayList(1);
@@ -23,8 +23,8 @@ public class e extends d implements ITPMediaComposition {
     private int d() {
         int i;
         synchronized (this) {
-            i = this.f39222a + 1;
-            this.f39222a = i;
+            i = this.f25531a + 1;
+            this.f25531a = i;
         }
         return i;
     }
@@ -41,8 +41,8 @@ public class e extends d implements ITPMediaComposition {
     private int f() {
         int i;
         synchronized (this) {
-            i = this.f39223c + 1;
-            this.f39223c = i;
+            i = this.f25532c + 1;
+            this.f25532c = i;
         }
         return i;
     }
@@ -200,7 +200,7 @@ public class e extends d implements ITPMediaComposition {
             r0 = r9
             r13 = r0
         L30:
-            java.lang.String r0 = com.tencent.thumbplayer.b.f.f39224a
+            java.lang.String r0 = com.tencent.thumbplayer.b.f.f25533a
             r17 = r0
             r0 = -1
             r6 = r0

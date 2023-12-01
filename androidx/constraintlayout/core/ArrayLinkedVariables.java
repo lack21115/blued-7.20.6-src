@@ -10,10 +10,10 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
     protected final Cache b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayRow f1985c;
+    private final ArrayRow f1937c;
 
     /* renamed from: a  reason: collision with root package name */
-    int f1984a = 0;
+    int f1936a = 0;
     private int d = 8;
     private SolverVariable e = null;
     private int[] f = new int[8];
@@ -25,7 +25,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ArrayLinkedVariables(ArrayRow arrayRow, Cache cache) {
-        this.f1985c = arrayRow;
+        this.f1937c = arrayRow;
         this.b = cache;
     }
 
@@ -40,8 +40,8 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
                 this.f[0] = solverVariable.id;
                 this.g[this.i] = -1;
                 solverVariable.usageInRowCount++;
-                solverVariable.addToRow(this.f1985c);
-                this.f1984a++;
+                solverVariable.addToRow(this.f1937c);
+                this.f1936a++;
                 if (this.k) {
                     return;
                 }
@@ -56,7 +56,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
                 return;
             }
             int i3 = -1;
-            for (int i4 = 0; i != -1 && i4 < this.f1984a; i4++) {
+            for (int i4 = 0; i != -1 && i4 < this.f1936a; i4++) {
                 if (this.f[i] == solverVariable.id) {
                     float f3 = this.h[i] + f;
                     float f4 = l;
@@ -76,13 +76,13 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
                             iArr2[i3] = iArr2[i];
                         }
                         if (z) {
-                            solverVariable.removeFromRow(this.f1985c);
+                            solverVariable.removeFromRow(this.f1937c);
                         }
                         if (this.k) {
                             this.j = i;
                         }
                         solverVariable.usageInRowCount--;
-                        this.f1984a--;
+                        this.f1936a--;
                         return;
                     }
                     return;
@@ -105,7 +105,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
             int i6 = i5;
             if (i5 >= iArr4.length) {
                 i6 = i5;
-                if (this.f1984a < iArr4.length) {
+                if (this.f1936a < iArr4.length) {
                     int i7 = 0;
                     while (true) {
                         int i8 = i7;
@@ -145,8 +145,8 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
                 this.i = i9;
             }
             solverVariable.usageInRowCount++;
-            solverVariable.addToRow(this.f1985c);
-            this.f1984a++;
+            solverVariable.addToRow(this.f1937c);
+            this.f1936a++;
             if (!this.k) {
                 this.j++;
             }
@@ -165,12 +165,12 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i == -1 || i3 >= this.f1984a) {
+            if (i == -1 || i3 >= this.f1936a) {
                 break;
             }
             SolverVariable solverVariable = this.b.d[this.f[i]];
             if (solverVariable != null) {
-                solverVariable.removeFromRow(this.f1985c);
+                solverVariable.removeFromRow(this.f1937c);
             }
             i = this.g[i];
             i2 = i3 + 1;
@@ -178,7 +178,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         this.i = -1;
         this.j = -1;
         this.k = false;
-        this.f1984a = 0;
+        this.f1936a = 0;
     }
 
     @Override // androidx.constraintlayout.core.ArrayRow.ArrayRowVariables
@@ -190,7 +190,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i == -1 || i3 >= this.f1984a) {
+            if (i == -1 || i3 >= this.f1936a) {
                 return false;
             }
             if (this.f[i] == solverVariable.id) {
@@ -203,7 +203,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
 
     @Override // androidx.constraintlayout.core.ArrayRow.ArrayRowVariables
     public void display() {
-        int i = this.f1984a;
+        int i = this.f1936a;
         System.out.print("{ ");
         int i2 = 0;
         while (true) {
@@ -227,7 +227,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i == -1 || i3 >= this.f1984a) {
+            if (i == -1 || i3 >= this.f1936a) {
                 return;
             }
             float[] fArr = this.h;
@@ -243,7 +243,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i == -1 || i3 >= this.f1984a) {
+            if (i == -1 || i3 >= this.f1936a) {
                 return 0.0f;
             }
             if (this.f[i] == solverVariable.id) {
@@ -256,7 +256,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
 
     @Override // androidx.constraintlayout.core.ArrayRow.ArrayRowVariables
     public int getCurrentSize() {
-        return this.f1984a;
+        return this.f1936a;
     }
 
     public int getHead() {
@@ -281,7 +281,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            if (i2 == -1 || i4 >= this.f1984a) {
+            if (i2 == -1 || i4 >= this.f1936a) {
                 return null;
             }
             if (i4 == i) {
@@ -298,7 +298,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i3 = 0;
         while (true) {
             int i4 = i3;
-            if (i2 == -1 || i4 >= this.f1984a) {
+            if (i2 == -1 || i4 >= this.f1936a) {
                 return 0.0f;
             }
             if (i4 == i) {
@@ -318,7 +318,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i == -1 || i3 >= this.f1984a) {
+            if (i == -1 || i3 >= this.f1936a) {
                 return -1;
             }
             if (this.f[i] == solverVariable.id) {
@@ -335,7 +335,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i == -1 || i3 >= this.f1984a) {
+            if (i == -1 || i3 >= this.f1936a) {
                 return;
             }
             float[] fArr = this.h;
@@ -358,8 +358,8 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
             this.f[0] = solverVariable.id;
             this.g[this.i] = -1;
             solverVariable.usageInRowCount++;
-            solverVariable.addToRow(this.f1985c);
-            this.f1984a++;
+            solverVariable.addToRow(this.f1937c);
+            this.f1936a++;
             if (this.k) {
                 return;
             }
@@ -374,7 +374,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
             return;
         }
         int i3 = -1;
-        for (int i4 = 0; i != -1 && i4 < this.f1984a; i4++) {
+        for (int i4 = 0; i != -1 && i4 < this.f1936a; i4++) {
             if (this.f[i] == solverVariable.id) {
                 this.h[i] = f;
                 return;
@@ -397,7 +397,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i6 = i5;
         if (i5 >= iArr3.length) {
             i6 = i5;
-            if (this.f1984a < iArr3.length) {
+            if (this.f1936a < iArr3.length) {
                 int i7 = 0;
                 while (true) {
                     int i8 = i7;
@@ -437,12 +437,12 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
             this.i = i9;
         }
         solverVariable.usageInRowCount++;
-        solverVariable.addToRow(this.f1985c);
-        this.f1984a++;
+        solverVariable.addToRow(this.f1937c);
+        this.f1936a++;
         if (!this.k) {
             this.j++;
         }
-        if (this.f1984a >= this.f.length) {
+        if (this.f1936a >= this.f.length) {
             this.k = true;
         }
         int i11 = this.j;
@@ -464,7 +464,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         }
         int i2 = 0;
         int i3 = -1;
-        while (i != -1 && i2 < this.f1984a) {
+        while (i != -1 && i2 < this.f1936a) {
             if (this.f[i] == solverVariable.id) {
                 if (i == this.i) {
                     this.i = this.g[i];
@@ -473,10 +473,10 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
                     iArr[i3] = iArr[i];
                 }
                 if (z) {
-                    solverVariable.removeFromRow(this.f1985c);
+                    solverVariable.removeFromRow(this.f1937c);
                 }
                 solverVariable.usageInRowCount--;
-                this.f1984a--;
+                this.f1936a--;
                 this.f[i] = -1;
                 if (this.k) {
                     this.j = i;
@@ -501,7 +501,7 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i == -1 || i3 >= this.f1984a) {
+            if (i == -1 || i3 >= this.f1936a) {
                 break;
             }
             str = ((str + " -> ") + this.h[i] + " : ") + this.b.d[this.f[i]];
@@ -513,8 +513,8 @@ public class ArrayLinkedVariables implements ArrayRow.ArrayRowVariables {
 
     @Override // androidx.constraintlayout.core.ArrayRow.ArrayRowVariables
     public float use(ArrayRow arrayRow, boolean z) {
-        float f = get(arrayRow.f1986a);
-        remove(arrayRow.f1986a, z);
+        float f = get(arrayRow.f1938a);
+        remove(arrayRow.f1938a, z);
         ArrayRow.ArrayRowVariables arrayRowVariables = arrayRow.variables;
         int currentSize = arrayRowVariables.getCurrentSize();
         int i = 0;

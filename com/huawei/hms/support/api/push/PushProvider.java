@@ -12,7 +12,6 @@ import com.huawei.hms.support.log.HMSLog;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Objects;
-import javax.xml.XMLConstants;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/support/api/push/PushProvider.class */
 public class PushProvider extends ContentProvider {
@@ -26,7 +25,7 @@ public class PushProvider extends ContentProvider {
         if (uri == null || !uri.toString().endsWith(".xml")) {
             return null;
         }
-        return XMLConstants.XML_NS_PREFIX;
+        return "xml";
     }
 
     @Override // android.content.ContentProvider
@@ -43,7 +42,7 @@ public class PushProvider extends ContentProvider {
     public ParcelFileDescriptor openFile(Uri uri, String str) throws FileNotFoundException {
         String str2;
         HMSLog.i("PushProvider", "use sdk PushProvider openFile");
-        if (!XMLConstants.XML_NS_PREFIX.equals(getType(uri))) {
+        if (!"xml".equals(getType(uri))) {
             HMSLog.w("PushProvider", "Incorrect file uri");
             throw new FileNotFoundException(uri.getPath());
         }

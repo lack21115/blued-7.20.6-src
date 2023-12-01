@@ -1,5 +1,6 @@
 package com.sdk.tencent.a;
 
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.sdk.tencent.a.d;
 import java.io.File;
 import java.io.Serializable;
@@ -16,13 +17,13 @@ public class e<T> implements Serializable {
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public TreeMap<String, Object> f28013c;
+    public TreeMap<String, Object> f14325c;
     public ArrayList<File> d;
     public HashMap<String, Object> e;
     public com.sdk.tencent.e.b<T> g;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f28012a = d.b.GET.toString();
+    public String f14324a = d.b.GET.toString();
     public int f = 0;
 
     public com.sdk.tencent.e.b<T> a() {
@@ -39,11 +40,11 @@ public class e<T> implements Serializable {
                     Object value = entry.getValue();
                     if (value != null && com.sdk.tencent.n.b.b(key).booleanValue()) {
                         String encode = URLEncoder.encode(value.toString(), "UTF-8");
-                        String str = com.sdk.tencent.f.c.f28049a;
+                        String str = com.sdk.tencent.f.c.f14361a;
                         sb2.append(key);
                         sb2.append("=");
                         sb2.append(encode);
-                        sb2.append("&");
+                        sb2.append(ContainerUtils.FIELD_DELIMITER);
                     }
                 }
                 sb2.deleteCharAt(sb2.length() - 1);
@@ -62,7 +63,7 @@ public class e<T> implements Serializable {
     }
 
     public String b() {
-        return this.f28012a;
+        return this.f14324a;
     }
 
     public int c() {

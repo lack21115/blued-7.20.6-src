@@ -10,9 +10,7 @@ import mtopsdk.mtop.global.SDKUtils;
 
 /* loaded from: source-3503164-dex2jar.jar:mtopsdk/mtop/intf/Mtop.class */
 public class Mtop {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile Mtop f43768a;
+    private static volatile Mtop a;
     private static volatile boolean b = false;
 
     private Mtop() {
@@ -23,11 +21,11 @@ public class Mtop {
     }
 
     public static Mtop a(Context context, String str) {
-        if (f43768a == null) {
+        if (a == null) {
             synchronized (Mtop.class) {
                 try {
-                    if (f43768a == null) {
-                        f43768a = new Mtop();
+                    if (a == null) {
+                        a = new Mtop();
                     }
                 } catch (Throwable th) {
                     throw th;
@@ -40,7 +38,7 @@ public class Mtop {
         if (StringUtils.a(str)) {
             SDKConfig.a().d(str);
         }
-        return f43768a;
+        return a;
     }
 
     private static void b(Context context, String str) {

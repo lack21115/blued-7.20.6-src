@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentStartLoginVerifyBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28981a;
+    private final LinearLayout f15291a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28981a;
+        return this.f15291a;
     }
 }

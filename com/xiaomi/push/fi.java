@@ -10,8 +10,8 @@ class fi {
     public static void a(bg.b bVar, String str, fu fuVar) {
         String a2;
         dv.c cVar = new dv.c();
-        if (!TextUtils.isEmpty(bVar.f41632c)) {
-            cVar.a(bVar.f41632c);
+        if (!TextUtils.isEmpty(bVar.f27941c)) {
+            cVar.a(bVar.f27941c);
         }
         if (!TextUtils.isEmpty(bVar.e)) {
             cVar.d(bVar.e);
@@ -19,27 +19,27 @@ class fi {
         if (!TextUtils.isEmpty(bVar.f)) {
             cVar.e(bVar.f);
         }
-        cVar.b(bVar.f1012a ? "1" : "0");
+        cVar.b(bVar.f965a ? "1" : "0");
         if (TextUtils.isEmpty(bVar.d)) {
             cVar.c("XIAOMI-SASL");
         } else {
             cVar.c(bVar.d);
         }
         fj fjVar = new fj();
-        fjVar.c(bVar.f1013b);
+        fjVar.c(bVar.f966b);
         fjVar.a(Integer.parseInt(bVar.g));
-        fjVar.b(bVar.f1010a);
+        fjVar.b(bVar.f963a);
         fjVar.a("BIND", (String) null);
         fjVar.a(fjVar.e());
-        com.xiaomi.channel.commonutils.logger.b.m11394a("[Slim]: bind id=" + fjVar.e());
+        com.xiaomi.channel.commonutils.logger.b.m8344a("[Slim]: bind id=" + fjVar.e());
         HashMap hashMap = new HashMap();
         hashMap.put("challenge", str);
-        hashMap.put("token", bVar.f41632c);
+        hashMap.put("token", bVar.f27941c);
         hashMap.put("chid", bVar.g);
-        hashMap.put("from", bVar.f1013b);
+        hashMap.put("from", bVar.f966b);
         hashMap.put("id", fjVar.e());
         hashMap.put("to", "xiaomi.com");
-        if (bVar.f1012a) {
+        if (bVar.f965a) {
             hashMap.put("kick", "1");
         } else {
             hashMap.put("kick", "0");

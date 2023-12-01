@@ -55,12 +55,10 @@ public class LiveMakeLoverOkDialogFragment extends LiveBaseDialogFragment {
     @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment
     public FragmentPagerAdapter h() {
         return new FragmentPagerAdapter(getChildFragmentManager()) { // from class: com.blued.android.module.live_china.fragment.LiveMakeLoverOkDialogFragment.1
-            @Override // androidx.viewpager.widget.PagerAdapter
             public int getCount() {
                 return 1;
             }
 
-            @Override // androidx.fragment.app.FragmentPagerAdapter
             public Fragment getItem(int i) {
                 if (LiveMakeLoverOkDialogFragment.this.j) {
                     LiveMakeLoverOkFragment liveMakeLoverOkFragment = new LiveMakeLoverOkFragment();
@@ -91,12 +89,12 @@ public class LiveMakeLoverOkDialogFragment extends LiveBaseDialogFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.live_china.fragment.LiveBaseDialogFragment, com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         j();

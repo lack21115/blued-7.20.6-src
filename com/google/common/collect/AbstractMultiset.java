@@ -25,7 +25,7 @@ public abstract class AbstractMultiset<E> extends AbstractCollection<E> implemen
         ElementSet() {
         }
 
-        @Override // com.google.common.collect.Multisets.ElementSet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // com.google.common.collect.Multisets.ElementSet, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<E> iterator() {
             return AbstractMultiset.this.elementIterator();
         }
@@ -43,7 +43,7 @@ public abstract class AbstractMultiset<E> extends AbstractCollection<E> implemen
         public EntrySet() {
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+        @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
         public Iterator<Multiset.Entry<E>> iterator() {
             return AbstractMultiset.this.entryIterator();
         }
@@ -53,7 +53,7 @@ public abstract class AbstractMultiset<E> extends AbstractCollection<E> implemen
             return AbstractMultiset.this;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
         public int size() {
             return AbstractMultiset.this.distinctElements();
         }
@@ -63,21 +63,21 @@ public abstract class AbstractMultiset<E> extends AbstractCollection<E> implemen
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public final boolean add(@NullableDecl E e) {
         add(e, 1);
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final boolean addAll(Collection<? extends E> collection) {
         return Multisets.addAllImpl(this, collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public abstract void clear();
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public boolean contains(@NullableDecl Object obj) {
         return count(obj) > 0;
     }
@@ -119,17 +119,17 @@ public abstract class AbstractMultiset<E> extends AbstractCollection<E> implemen
         return set2;
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, com.google.common.collect.Multiset
     public final boolean equals(@NullableDecl Object obj) {
         return Multisets.equalsImpl(this, obj);
     }
 
-    @Override // java.util.Collection, java.util.Set
+    @Override // java.util.Collection, com.google.common.collect.Multiset
     public final int hashCode() {
         return entrySet().hashCode();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return entrySet().isEmpty();
     }
@@ -138,17 +138,17 @@ public abstract class AbstractMultiset<E> extends AbstractCollection<E> implemen
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public final boolean remove(@NullableDecl Object obj) {
         return remove(obj, 1) > 0;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public final boolean removeAll(Collection<?> collection) {
         return Multisets.removeAllImpl(this, collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public final boolean retainAll(Collection<?> collection) {
         return Multisets.retainAllImpl(this, collection);
     }
@@ -161,7 +161,7 @@ public abstract class AbstractMultiset<E> extends AbstractCollection<E> implemen
         return Multisets.setCountImpl(this, e, i, i2);
     }
 
-    @Override // java.util.AbstractCollection
+    @Override // java.util.AbstractCollection, com.google.common.collect.Multiset
     public final String toString() {
         return entrySet().toString();
     }

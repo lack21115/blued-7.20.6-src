@@ -27,19 +27,14 @@ import com.blued.android.module.live_china.model.LiveAnnounceContentModel;
 import com.bytedance.applog.tracker.Tracker;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.soft.blued.ui.find.model.UserFindResult;
 import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveAnnoContentDialogFragment.class */
 public class LiveAnnoContentDialogFragment extends BaseDialogFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    IEventCallback f12694a;
+    IEventCallback a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f12695c;
+    private View c;
     private View d;
     private RecyclerView e;
     private LiveAnnounceAdapter f;
@@ -66,7 +61,6 @@ public class LiveAnnoContentDialogFragment extends BaseDialogFragment implements
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, final LiveAnnounceContentModel liveAnnounceContentModel) {
             if (liveAnnounceContentModel == null) {
@@ -106,7 +100,7 @@ public class LiveAnnoContentDialogFragment extends BaseDialogFragment implements
     private void e() {
         if (getArguments() != null) {
             ArrayList<String> stringArrayList = getArguments().getStringArrayList("announce");
-            this.j = getArguments().getString(UserFindResult.USER_SORT_BY.SELECTED);
+            this.j = getArguments().getString("selected");
             if (stringArrayList != null) {
                 for (String str : stringArrayList) {
                     LiveAnnounceContentModel liveAnnounceContentModel = new LiveAnnounceContentModel();
@@ -118,21 +112,21 @@ public class LiveAnnoContentDialogFragment extends BaseDialogFragment implements
     }
 
     private void f() {
-        this.f12695c = this.b.findViewById(R.id.tv_cancel);
+        this.c = this.b.findViewById(R.id.tv_cancel);
         this.d = this.b.findViewById(R.id.tv_save);
-        RecyclerView recyclerView = (RecyclerView) this.b.findViewById(R.id.recy_view);
-        this.e = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerView findViewById = this.b.findViewById(R.id.recy_view);
+        this.e = findViewById;
+        findViewById.setLayoutManager(new LinearLayoutManager(getContext()));
         LiveAnnounceAdapter liveAnnounceAdapter = new LiveAnnounceAdapter(getContext());
         this.f = liveAnnounceAdapter;
         this.e.setAdapter(liveAnnounceAdapter);
-        this.f12695c.setOnClickListener(this);
+        this.c.setOnClickListener(this);
         this.d.setOnClickListener(this);
         this.f.setNewData(this.i);
     }
 
     public void a(IEventCallback iEventCallback) {
-        this.f12694a = iEventCallback;
+        this.a = iEventCallback;
     }
 
     public boolean d() {
@@ -146,36 +140,35 @@ public class LiveAnnoContentDialogFragment extends BaseDialogFragment implements
             dismissAllowingStateLoss();
         } else if (view.getId() == R.id.tv_save) {
             dismissAllowingStateLoss();
-            IEventCallback iEventCallback = this.f12694a;
+            IEventCallback iEventCallback = this.a;
             if (iEventCallback != null) {
                 iEventCallback.a(this.j);
             }
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         this.g = getContext();
         this.h = true;
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_announce_content, (ViewGroup) null);
-        int a2 = DensityUtils.a(this.g, 364.0f);
+        int a = DensityUtils.a(this.g, 364.0f);
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
         dialog.requestWindowFeature(1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a2));
+        dialog.setContentView(inflate, new ViewGroup.LayoutParams(-1, a));
         Window window = dialog.getWindow();
         window.setWindowAnimations(R.style.main_menu_animstyle);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
-        attributes.height = a2;
+        attributes.height = a;
         attributes.x = 0;
-        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a2;
+        attributes.y = getActivity().getWindowManager().getDefaultDisplay().getHeight() - a;
         dialog.onWindowAttributesChanged(attributes);
         e();
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.b;
         if (view == null) {
@@ -187,7 +180,7 @@ public class LiveAnnoContentDialogFragment extends BaseDialogFragment implements
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         AppInfo.n().postDelayed(new Runnable() { // from class: com.blued.android.module.live_china.fragment.LiveAnnoContentDialogFragment.1
@@ -198,7 +191,7 @@ public class LiveAnnoContentDialogFragment extends BaseDialogFragment implements
         }, 300L);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

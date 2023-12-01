@@ -4,11 +4,11 @@ package com.bytedance.pangle.util;
 public final class e<T, U> {
 
     /* renamed from: a  reason: collision with root package name */
-    public T f21501a;
+    public T f7895a;
     public U b;
 
     public e(T t, U u) {
-        this.f21501a = t;
+        this.f7895a = t;
         this.b = u;
     }
 }

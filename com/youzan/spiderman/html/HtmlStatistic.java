@@ -6,14 +6,14 @@ import java.util.Map;
 public class HtmlStatistic {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41822a;
+    private String f28131a;
     private boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f41823c = false;
+    private boolean f28132c = false;
 
     public HtmlStatistic(String str) {
-        this.f41822a = str;
+        this.f28131a = str;
     }
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -22,11 +22,11 @@ public class HtmlStatistic {
     }
 
     public boolean isNeedRecord() {
-        return this.f41823c;
+        return this.f28132c;
     }
 
     public void setNeedRecord(boolean z) {
-        this.f41823c = z;
+        this.f28132c = z;
     }
 
     public void setPrefetch(boolean z) {

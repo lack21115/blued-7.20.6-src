@@ -8,21 +8,15 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/glide/GroupedLinkedMap.class */
 class GroupedLinkedMap<K extends Poolable, V> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final LinkedEntry<K, V> f9643a = new LinkedEntry<>();
+    private final LinkedEntry<K, V> a = new LinkedEntry<>();
     private final Map<K, LinkedEntry<K, V>> b = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/glide/GroupedLinkedMap$LinkedEntry.class */
     public static class LinkedEntry<K, V> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final K f9644a;
+        final K a;
         LinkedEntry<K, V> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        LinkedEntry<K, V> f9645c;
+        LinkedEntry<K, V> c;
         private List<V> d;
 
         public LinkedEntry() {
@@ -30,9 +24,9 @@ class GroupedLinkedMap<K extends Poolable, V> {
         }
 
         public LinkedEntry(K k) {
-            this.f9645c = this;
+            this.c = this;
             this.b = this;
-            this.f9644a = k;
+            this.a = k;
         }
 
         public V a() {
@@ -61,33 +55,33 @@ class GroupedLinkedMap<K extends Poolable, V> {
 
     private void a(LinkedEntry<K, V> linkedEntry) {
         d(linkedEntry);
-        linkedEntry.f9645c = this.f9643a;
-        linkedEntry.b = this.f9643a.b;
+        linkedEntry.c = this.a;
+        linkedEntry.b = this.a.b;
         c(linkedEntry);
     }
 
     private void b(LinkedEntry<K, V> linkedEntry) {
         d(linkedEntry);
-        linkedEntry.f9645c = this.f9643a.f9645c;
-        linkedEntry.b = this.f9643a;
+        linkedEntry.c = this.a.c;
+        linkedEntry.b = this.a;
         c(linkedEntry);
     }
 
     private static <K, V> void c(LinkedEntry<K, V> linkedEntry) {
-        linkedEntry.b.f9645c = linkedEntry;
-        linkedEntry.f9645c.b = linkedEntry;
+        linkedEntry.b.c = linkedEntry;
+        linkedEntry.c.b = linkedEntry;
     }
 
     private static <K, V> void d(LinkedEntry<K, V> linkedEntry) {
-        linkedEntry.f9645c.b = linkedEntry.b;
-        linkedEntry.b.f9645c = linkedEntry.f9645c;
+        linkedEntry.c.b = linkedEntry.b;
+        linkedEntry.b.c = linkedEntry.c;
     }
 
     public V a() {
-        LinkedEntry linkedEntry = this.f9643a.f9645c;
+        LinkedEntry linkedEntry = this.a.c;
         while (true) {
             LinkedEntry linkedEntry2 = linkedEntry;
-            if (linkedEntry2.equals(this.f9643a)) {
+            if (linkedEntry2.equals(this.a)) {
                 return null;
             }
             V v = (V) linkedEntry2.a();
@@ -95,9 +89,9 @@ class GroupedLinkedMap<K extends Poolable, V> {
                 return v;
             }
             d(linkedEntry2);
-            this.b.remove(linkedEntry2.f9644a);
-            ((Poolable) linkedEntry2.f9644a).a();
-            linkedEntry = linkedEntry2.f9645c;
+            this.b.remove(linkedEntry2.a);
+            ((Poolable) linkedEntry2.a).a();
+            linkedEntry = linkedEntry2.c;
         }
     }
 
@@ -134,10 +128,10 @@ class GroupedLinkedMap<K extends Poolable, V> {
     public String toString() {
         StringBuilder sb = new StringBuilder("GroupedLinkedMap( ");
         boolean z = false;
-        for (LinkedEntry<K, V> linkedEntry = this.f9643a.b; !linkedEntry.equals(this.f9643a); linkedEntry = linkedEntry.b) {
+        for (LinkedEntry<K, V> linkedEntry = this.a.b; !linkedEntry.equals(this.a); linkedEntry = linkedEntry.b) {
             z = true;
             sb.append('{');
-            sb.append(linkedEntry.f9644a);
+            sb.append(linkedEntry.a);
             sb.append(':');
             sb.append(linkedEntry.b());
             sb.append("}, ");

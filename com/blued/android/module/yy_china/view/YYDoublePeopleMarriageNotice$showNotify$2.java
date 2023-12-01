@@ -20,19 +20,15 @@ import kotlin.text.StringsKt;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYDoublePeopleMarriageNotice$showNotify$2.class */
 public final class YYDoublePeopleMarriageNotice$showNotify$2 implements Animator.AnimatorListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ YYDoublePeopleMarriageNotice f18133a;
+    final /* synthetic */ YYDoublePeopleMarriageNotice a;
     final /* synthetic */ ActivityFragmentActive b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ ViewGroup f18134c;
+    final /* synthetic */ ViewGroup c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public YYDoublePeopleMarriageNotice$showNotify$2(YYDoublePeopleMarriageNotice yYDoublePeopleMarriageNotice, ActivityFragmentActive activityFragmentActive, ViewGroup viewGroup) {
-        this.f18133a = yYDoublePeopleMarriageNotice;
+        this.a = yYDoublePeopleMarriageNotice;
         this.b = activityFragmentActive;
-        this.f18134c = viewGroup;
+        this.c = viewGroup;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -54,15 +50,15 @@ public final class YYDoublePeopleMarriageNotice$showNotify$2 implements Animator
         DoublePeopleNoticeImNode doublePeopleNoticeImNode;
         DoublePeopleNoticeInfoNode full_server_notification;
         LogUtils.d("notice", "fly in animation ending ... ");
-        doublePeopleNoticeImNode = this.f18133a.f18131c;
+        doublePeopleNoticeImNode = this.a.c;
         if (doublePeopleNoticeImNode == null || (full_server_notification = doublePeopleNoticeImNode.getFull_server_notification()) == null) {
             return;
         }
         final ActivityFragmentActive activityFragmentActive = this.b;
-        final YYDoublePeopleMarriageNotice yYDoublePeopleMarriageNotice = this.f18133a;
-        final ViewGroup viewGroup = this.f18134c;
+        final YYDoublePeopleMarriageNotice yYDoublePeopleMarriageNotice = this.a;
+        final ViewGroup viewGroup = this.c;
         if (TextUtils.isEmpty(full_server_notification.getAfter_image())) {
-            ImageLoader.c(activityFragmentActive, "couple_heartbeat.png").f().a(yYDoublePeopleMarriageNotice.getBinding().f16852a);
+            ImageLoader.c(activityFragmentActive, "couple_heartbeat.png").f().a(yYDoublePeopleMarriageNotice.getBinding().a);
         } else {
             String after_image = full_server_notification.getAfter_image();
             Locale locale = Locale.getDefault();
@@ -70,10 +66,10 @@ public final class YYDoublePeopleMarriageNotice$showNotify$2 implements Animator
             String lowerCase = after_image.toLowerCase(locale);
             Intrinsics.c(lowerCase, "this as java.lang.String).toLowerCase(locale)");
             if (StringsKt.b(lowerCase, "png", false, 2, (Object) null)) {
-                ImageLoader.a((IRequestHost) null, full_server_notification.getAfter_image()).g(-1).f().a(yYDoublePeopleMarriageNotice.getBinding().f16852a);
+                ImageLoader.a((IRequestHost) null, full_server_notification.getAfter_image()).g(-1).f().a(yYDoublePeopleMarriageNotice.getBinding().a);
             } else {
                 SVGAPlayer.Builder builder = new SVGAPlayer.Builder(full_server_notification.getAfter_image());
-                SVGAImageView sVGAImageView = yYDoublePeopleMarriageNotice.getBinding().f16852a;
+                SVGAImageView sVGAImageView = yYDoublePeopleMarriageNotice.getBinding().a;
                 Intrinsics.c(sVGAImageView, "binding.imgAnimationView");
                 builder.a(sVGAImageView);
             }

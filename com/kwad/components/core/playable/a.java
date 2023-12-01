@@ -46,10 +46,10 @@ public final class a implements i {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.core.playable.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/playable/a$a.class */
-    public static final class C0533a implements av.b {
+    public static final class C0363a implements av.b {
         private final WeakReference<a> NS;
 
-        public C0533a(a aVar) {
+        public C0363a(a aVar) {
             this.NS = new WeakReference<>(aVar);
         }
 
@@ -87,7 +87,7 @@ public final class a implements i {
     }
 
     private void a(b bVar, com.kwad.components.core.webview.a aVar, c cVar) {
-        aVar.a(new av(bVar, cVar, new C0533a(this)));
+        aVar.a(new av(bVar, cVar, new C0363a(this)));
         aVar.a(new ai(new ai.b() { // from class: com.kwad.components.core.playable.a.3
             @Override // com.kwad.components.core.webview.jshandler.ai.b
             public final void a(ai.a aVar2) {
@@ -119,7 +119,7 @@ public final class a implements i {
             y.b bVar = new y.b();
             bVar.jU = i;
             bVar.jW = this.mRootContainer.getTouchCoords();
-            com.kwad.components.core.d.b.a.a(new a.C0519a(this.mContext).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(false).a(bVar).aq(true));
+            com.kwad.components.core.d.b.a.a(new a.C0349a(this.mContext).I(this.mAdTemplate).b(this.mApkDownloadHelper).ao(false).a(bVar).aq(true));
         }
     }
 

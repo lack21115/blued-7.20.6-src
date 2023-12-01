@@ -10,11 +10,11 @@ import java.util.List;
 public class ClientSettings {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22651a;
+    private String f9043a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<Scope> f22652c;
+    private List<Scope> f9044c;
     private String d;
     private List<String> e;
     private String f;
@@ -25,9 +25,9 @@ public class ClientSettings {
     private boolean k;
 
     public ClientSettings(String str, String str2, List<Scope> list, String str3, List<String> list2) {
-        this.f22651a = str;
+        this.f9043a = str;
         this.b = str2;
-        this.f22652c = list;
+        this.f9044c = list;
         this.d = str3;
         this.e = list2;
     }
@@ -50,7 +50,7 @@ public class ClientSettings {
     }
 
     public String getClientPackageName() {
-        return this.f22651a;
+        return this.f9043a;
     }
 
     public Activity getCpActivity() {
@@ -70,7 +70,7 @@ public class ClientSettings {
     }
 
     public List<Scope> getScopes() {
-        return this.f22652c;
+        return this.f9044c;
     }
 
     public SubAppInfo getSubAppID() {
@@ -98,7 +98,7 @@ public class ClientSettings {
     }
 
     public void setClientPackageName(String str) {
-        this.f22651a = str;
+        this.f9043a = str;
     }
 
     public void setCpActivity(Activity activity) {
@@ -115,7 +115,7 @@ public class ClientSettings {
     }
 
     public void setScopes(List<Scope> list) {
-        this.f22652c = list;
+        this.f9044c = list;
     }
 
     public void setSubAppId(SubAppInfo subAppInfo) {

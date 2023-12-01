@@ -16,13 +16,9 @@ import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/swipeback/SwipeBackLayout.class */
 public class SwipeBackLayout extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final int[] f9744a = {1, 2, 8, 11};
+    private static final int[] a = {1, 2, 8, 11};
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f9745c;
+    private float c;
     private boolean d;
     private View e;
     private ViewDragHelper f;
@@ -61,7 +57,6 @@ public class SwipeBackLayout extends FrameLayout {
         private ViewDragCallback() {
         }
 
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         public int clampViewPositionHorizontal(View view, int i, int i2) {
             int i3 = 0;
             if ((SwipeBackLayout.this.q & 1) != 0) {
@@ -73,7 +68,6 @@ public class SwipeBackLayout extends FrameLayout {
             return i3;
         }
 
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         public int clampViewPositionVertical(View view, int i, int i2) {
             int i3 = 0;
             if ((SwipeBackLayout.this.q & 8) != 0) {
@@ -82,17 +76,14 @@ public class SwipeBackLayout extends FrameLayout {
             return i3;
         }
 
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         public int getViewHorizontalDragRange(View view) {
             return SwipeBackLayout.this.b & 3;
         }
 
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         public int getViewVerticalDragRange(View view) {
             return SwipeBackLayout.this.b & 8;
         }
 
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         public void onViewDragStateChanged(int i) {
             super.onViewDragStateChanged(i);
             if (SwipeBackLayout.this.j == null || SwipeBackLayout.this.j.isEmpty()) {
@@ -103,7 +94,6 @@ public class SwipeBackLayout extends FrameLayout {
             }
         }
 
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         public void onViewPositionChanged(View view, int i, int i2, int i3, int i4) {
             super.onViewPositionChanged(view, i, i2, i3, i4);
             if ((SwipeBackLayout.this.q & 1) != 0) {
@@ -119,7 +109,7 @@ public class SwipeBackLayout extends FrameLayout {
             SwipeBackLayout.this.h = i;
             SwipeBackLayout.this.i = i2;
             SwipeBackLayout.this.invalidate();
-            if (SwipeBackLayout.this.g < SwipeBackLayout.this.f9745c && !this.b) {
+            if (SwipeBackLayout.this.g < SwipeBackLayout.this.c && !this.b) {
                 this.b = true;
             }
             if (SwipeBackLayout.this.j != null && !SwipeBackLayout.this.j.isEmpty()) {
@@ -127,7 +117,7 @@ public class SwipeBackLayout extends FrameLayout {
                     swipeListener.a(SwipeBackLayout.this.f.getViewDragState(), SwipeBackLayout.this.g);
                 }
             }
-            if (SwipeBackLayout.this.j != null && !SwipeBackLayout.this.j.isEmpty() && SwipeBackLayout.this.f.getViewDragState() == 1 && SwipeBackLayout.this.g >= SwipeBackLayout.this.f9745c && this.b) {
+            if (SwipeBackLayout.this.j != null && !SwipeBackLayout.this.j.isEmpty() && SwipeBackLayout.this.f.getViewDragState() == 1 && SwipeBackLayout.this.g >= SwipeBackLayout.this.c && this.b) {
                 this.b = false;
                 for (SwipeListener swipeListener2 : SwipeBackLayout.this.j) {
                     swipeListener2.a();
@@ -144,9 +134,8 @@ public class SwipeBackLayout extends FrameLayout {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:33:0x00de, code lost:
-            if (r7.f9746a.g > r7.f9746a.f9745c) goto L43;
+            if (r7.a.g > r7.a.c) goto L43;
          */
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -159,7 +148,6 @@ public class SwipeBackLayout extends FrameLayout {
             throw new UnsupportedOperationException("Method not decompiled: com.blued.android.core.utils.swipeback.SwipeBackLayout.ViewDragCallback.onViewReleased(android.view.View, float, float):void");
         }
 
-        @Override // androidx.customview.widget.ViewDragHelper.Callback
         public boolean tryCaptureView(View view, int i) {
             boolean checkTouchSlop;
             boolean z;
@@ -202,7 +190,7 @@ public class SwipeBackLayout extends FrameLayout {
 
     public SwipeBackLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet);
-        this.f9745c = 0.3f;
+        this.c = 0.3f;
         this.d = true;
         this.p = new Rect();
         this.f = ViewDragHelper.create(this, 2.0f, new ViewDragCallback());
@@ -334,7 +322,7 @@ public class SwipeBackLayout extends FrameLayout {
         if (f >= 1.0f || f <= 0.0f) {
             throw new IllegalArgumentException("Threshold value should be between 0 and 1.0");
         }
-        this.f9745c = f;
+        this.c = f;
     }
 
     @Deprecated

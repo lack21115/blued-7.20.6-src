@@ -14,21 +14,18 @@ public class BaseIWindow extends IWindow.Stub {
     public int mSeq;
     private IWindowSession mSession;
 
-    @Override // android.view.IWindow
     public void closeSystemDialogs(String str) {
     }
 
     public void dispatchAppVisibility(boolean z) {
     }
 
-    @Override // android.view.IWindow
     public void dispatchDragEvent(DragEvent dragEvent) {
     }
 
     public void dispatchGetNewSurface() {
     }
 
-    @Override // android.view.IWindow
     public void dispatchSystemUiVisibilityChanged(int i, int i2, int i3, int i4) {
         this.mSeq = i;
     }
@@ -36,7 +33,7 @@ public class BaseIWindow extends IWindow.Stub {
     public void dispatchWallpaperCommand(String str, int i, int i2, int i3, Bundle bundle, boolean z) {
         if (z) {
             try {
-                this.mSession.wallpaperCommandComplete(asBinder(), null);
+                this.mSession.wallpaperCommandComplete(asBinder(), (Bundle) null);
             } catch (RemoteException e) {
             }
         }
@@ -51,11 +48,9 @@ public class BaseIWindow extends IWindow.Stub {
         }
     }
 
-    @Override // android.view.IWindow
     public void dispatchWindowShown() {
     }
 
-    @Override // android.view.IWindow
     public void doneAnimating() {
     }
 

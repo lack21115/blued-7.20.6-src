@@ -9,11 +9,11 @@ import java.util.HashMap;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final HashMap<String, Method> f23971a = new HashMap<>();
+    private static final HashMap<String, Method> f10360a = new HashMap<>();
     private final com.meizu.cloud.pushsdk.b.b.a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f23972c;
+    private final String f10361c;
     private Class<?>[] d;
 
     /* loaded from: source-7994992-dex2jar.jar:com/meizu/cloud/pushsdk/b/b/c$a.class */
@@ -23,7 +23,7 @@ public class c {
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(com.meizu.cloud.pushsdk.b.b.a aVar, String str, Class<?>... clsArr) {
         this.b = aVar;
-        this.f23972c = str;
+        this.f10361c = str;
         this.d = clsArr;
     }
 
@@ -74,7 +74,7 @@ public class c {
             int i2 = i;
             if (i2 < length) {
                 Method method = methods[i2];
-                if (a(method, this.f23972c, this.d)) {
+                if (a(method, this.f10361c, this.d)) {
                     return method;
                 }
                 i = i2 + 1;
@@ -85,10 +85,10 @@ public class c {
                 while (true) {
                     int i4 = i3;
                     if (i4 >= length2) {
-                        throw new NoSuchMethodException("No similar method " + this.f23972c + " with params " + Arrays.toString(this.d) + " could be found on type " + a2);
+                        throw new NoSuchMethodException("No similar method " + this.f10361c + " with params " + Arrays.toString(this.d) + " could be found on type " + a2);
                     }
                     Method method2 = declaredMethods[i4];
-                    if (a(method2, this.f23972c, this.d)) {
+                    if (a(method2, this.f10361c, this.d)) {
                         return method2;
                     }
                     i3 = i4 + 1;
@@ -120,7 +120,7 @@ public class c {
 
     private String b() throws ClassNotFoundException {
         StringBuilder sb = new StringBuilder(this.b.a().getName());
-        sb.append(this.f23972c);
+        sb.append(this.f10361c);
         Class<?>[] clsArr = this.d;
         int length = clsArr.length;
         int i = 0;
@@ -138,11 +138,11 @@ public class c {
         d<T> dVar = new d<>();
         try {
             String b = b();
-            Method method = f23971a.get(b);
+            Method method = f10360a.get(b);
             Method method2 = method;
             if (method == null) {
                 if (this.d.length == objArr.length) {
-                    method2 = this.b.a().getMethod(this.f23972c, this.d);
+                    method2 = this.b.a().getMethod(this.f10361c, this.d);
                 } else {
                     if (objArr.length > 0) {
                         this.d = new Class[objArr.length];
@@ -158,11 +158,11 @@ public class c {
                     }
                     method2 = a();
                 }
-                f23971a.put(b, method2);
+                f10360a.put(b, method2);
             }
             method2.setAccessible(true);
             dVar.b = (T) method2.invoke(obj, objArr);
-            dVar.f23973a = true;
+            dVar.f10362a = true;
             return dVar;
         } catch (Exception e) {
             DebugLogger.d("ReflectMethod", "invoke exception, " + e.getMessage());

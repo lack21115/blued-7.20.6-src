@@ -17,10 +17,10 @@ public class b {
     private static final Map<String, b> b = new ConcurrentHashMap(16);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Object f22692c = new Object();
+    private static final Object f9084c = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    private a f22693a;
+    private a f9085a;
 
     public b(Context context, GrsBaseInfo grsBaseInfo, boolean z) {
         a(context, z);
@@ -37,39 +37,39 @@ public class b {
         b a2 = a(context.getPackageName(), grsBaseInfo);
         if (a2 != null) {
             Logger.i("LocalManagerProxy", "appGrs is not null and clear services.");
-            synchronized (f22692c) {
-                a2.f22693a.a();
+            synchronized (f9084c) {
+                a2.f9085a.a();
             }
         }
     }
 
     public com.huawei.hms.framework.network.grs.local.model.a a() {
-        return this.f22693a.b();
+        return this.f9085a.b();
     }
 
     public String a(Context context, com.huawei.hms.framework.network.grs.e.a aVar, GrsBaseInfo grsBaseInfo, String str, String str2, boolean z) {
-        synchronized (f22692c) {
-            String a2 = this.f22693a.a(context, aVar, grsBaseInfo, str, str2, z);
-            if (TextUtils.isEmpty(a2) && this.f22693a.d()) {
+        synchronized (f9084c) {
+            String a2 = this.f9085a.a(context, aVar, grsBaseInfo, str, str2, z);
+            if (TextUtils.isEmpty(a2) && this.f9085a.d()) {
                 a(context, true);
                 a(grsBaseInfo);
                 Map<String, b> map = b;
                 map.put(context.getPackageName() + grsBaseInfo.uniqueCode(), this);
-                return this.f22693a.a(context, aVar, grsBaseInfo, str, str2, z);
+                return this.f9085a.a(context, aVar, grsBaseInfo, str, str2, z);
             }
             return a2;
         }
     }
 
     public Map<String, String> a(Context context, com.huawei.hms.framework.network.grs.e.a aVar, GrsBaseInfo grsBaseInfo, String str, boolean z) {
-        synchronized (f22692c) {
-            Map<String, String> a2 = this.f22693a.a(context, aVar, grsBaseInfo, str, z);
-            if ((a2 == null || a2.isEmpty()) && this.f22693a.d()) {
+        synchronized (f9084c) {
+            Map<String, String> a2 = this.f9085a.a(context, aVar, grsBaseInfo, str, z);
+            if ((a2 == null || a2.isEmpty()) && this.f9085a.d()) {
                 a(context, true);
                 a(grsBaseInfo);
                 Map<String, b> map = b;
                 map.put(context.getPackageName() + grsBaseInfo.uniqueCode(), this);
-                return this.f22693a.a(context, aVar, grsBaseInfo, str, z);
+                return this.f9085a.a(context, aVar, grsBaseInfo, str, z);
             }
             return a2;
         }
@@ -80,21 +80,21 @@ public class b {
         ArrayList arrayList = list == null ? new ArrayList() : Arrays.asList(list);
         String appConfigName = GrsApp.getInstance().getAppConfigName();
         Logger.i("LocalManagerProxy", "appConfigName is: " + appConfigName);
-        this.f22693a = new d(false, z);
+        this.f9085a = new d(false, z);
         if (arrayList.contains("grs_app_global_route_config.json") || !TextUtils.isEmpty(appConfigName)) {
-            this.f22693a = new d(context, appConfigName, z);
+            this.f9085a = new d(context, appConfigName, z);
         }
-        if (!this.f22693a.e() && arrayList.contains("grs_sdk_global_route_config.json")) {
-            this.f22693a = new c(context, z);
+        if (!this.f9085a.e() && arrayList.contains("grs_sdk_global_route_config.json")) {
+            this.f9085a = new c(context, z);
         }
-        this.f22693a.a(context, arrayList);
+        this.f9085a.a(context, arrayList);
     }
 
     public void a(GrsBaseInfo grsBaseInfo) {
-        this.f22693a.a(grsBaseInfo);
+        this.f9085a.a(grsBaseInfo);
     }
 
     public Set<String> b() {
-        return this.f22693a.c();
+        return this.f9085a.c();
     }
 }

@@ -11,7 +11,7 @@ public final class WebParameter {
     public static final String PATH_DATABASE = "database";
 
     /* renamed from: ˊ  reason: contains not printable characters */
-    private static final String[] f1147 = {"tenpay.com", "alipay.com", "qq.com"};
+    private static final String[] f1100 = {"tenpay.com", "alipay.com", "qq.com"};
 
     public static void blockDangerJsInterface(WebViewCompat webViewCompat) {
         webViewCompat.removeJavascriptInterface("searchBoxJavaBridge_");
@@ -38,7 +38,7 @@ public final class WebParameter {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        String[] strArr = f1147;
+        String[] strArr = f1100;
         int i = 0;
         while (true) {
             int i2 = i;

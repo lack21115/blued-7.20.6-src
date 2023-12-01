@@ -93,7 +93,7 @@ public abstract class FileObserver {
     }
 
     public FileObserver(String str) {
-        this(str, 4095);
+        this(str, ALL_EVENTS);
     }
 
     public FileObserver(String str, int i) {

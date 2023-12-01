@@ -15,9 +15,8 @@ import com.soft.blued.ui.welcome.model.SplashEntity;
 public class ReachAdManager extends PicSplashManager {
     @Override // com.soft.blued.ui.welcome.manager.SplashAdManagerAdapter, com.soft.blued.ui.welcome.manager.SplashAdManager
     public void a(Context context, String str, ViewGroup viewGroup, IRequestHost iRequestHost, final SplashAdListener splashAdListener) {
-        LoginRegisterHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<ReachMaxResponse>(iRequestHost) { // from class: com.soft.blued.ui.welcome.manager.ReachAdManager.1
+        LoginRegisterHttpUtils.a(new BluedUIHttpResponse<ReachMaxResponse>(iRequestHost) { // from class: com.soft.blued.ui.welcome.manager.ReachAdManager.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(ReachMaxResponse reachMaxResponse) {
                 if (reachMaxResponse.seatbid == null || reachMaxResponse.seatbid.size() <= 0) {

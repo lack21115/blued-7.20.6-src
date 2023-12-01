@@ -10,9 +10,7 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/same/loadingIndicator/LineScaleIndicator.class */
 public class LineScaleIndicator extends BaseIndicatorController {
-
-    /* renamed from: a  reason: collision with root package name */
-    float[] f14116a = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+    float[] a = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
 
     @Override // com.blued.android.module.live_china.same.loadingIndicator.BaseIndicatorController
     public List<Animator> a() {
@@ -30,7 +28,7 @@ public class LineScaleIndicator extends BaseIndicatorController {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.blued.android.module.live_china.same.loadingIndicator.LineScaleIndicator.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LineScaleIndicator.this.f14116a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    LineScaleIndicator.this.a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     LineScaleIndicator.this.e();
                 }
             });
@@ -42,7 +40,7 @@ public class LineScaleIndicator extends BaseIndicatorController {
 
     @Override // com.blued.android.module.live_china.same.loadingIndicator.BaseIndicatorController
     public void a(Canvas canvas, Paint paint) {
-        float c2 = c() / 11;
+        float c = c() / 11;
         float d = d() / 2;
         int i = 0;
         while (true) {
@@ -51,10 +49,10 @@ public class LineScaleIndicator extends BaseIndicatorController {
                 return;
             }
             canvas.save();
-            float f = c2 / 2.0f;
-            canvas.translate((((i2 * 2) + 2) * c2) - f, d);
-            canvas.scale(1.0f, this.f14116a[i2]);
-            canvas.drawRoundRect(new RectF((-c2) / 2.0f, (-d()) / 2.5f, f, d() / 2.5f), 5.0f, 5.0f, paint);
+            float f = c / 2.0f;
+            canvas.translate((((i2 * 2) + 2) * c) - f, d);
+            canvas.scale(1.0f, this.a[i2]);
+            canvas.drawRoundRect(new RectF((-c) / 2.0f, (-d()) / 2.5f, f, d() / 2.5f), 5.0f, 5.0f, paint);
             canvas.restore();
             i = i2 + 1;
         }

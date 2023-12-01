@@ -16,7 +16,7 @@ public class g {
             @Override // android.content.DialogInterface.OnClickListener
             public void onClick(DialogInterface dialogInterface, int i) {
                 Tracker.onClick(dialogInterface, i);
-                g.b(Context.this);
+                g.b(context);
             }
         }).setNegativeButton("取消", (DialogInterface.OnClickListener) null).show();
     }

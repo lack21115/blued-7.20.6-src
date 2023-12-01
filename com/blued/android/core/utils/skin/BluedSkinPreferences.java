@@ -6,9 +6,7 @@ import com.blued.android.core.AppInfo;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/utils/skin/BluedSkinPreferences.class */
 public class BluedSkinPreferences {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static SharedPreferences f9740a;
+    private static SharedPreferences a;
 
     public static void a(boolean z) {
         c().edit().putBoolean("skin_auto_system", z).commit();
@@ -27,9 +25,9 @@ public class BluedSkinPreferences {
     }
 
     private static SharedPreferences c() {
-        if (f9740a == null) {
-            f9740a = PreferenceManager.getDefaultSharedPreferences(AppInfo.d());
+        if (a == null) {
+            a = PreferenceManager.getDefaultSharedPreferences(AppInfo.d());
         }
-        return f9740a;
+        return a;
     }
 }

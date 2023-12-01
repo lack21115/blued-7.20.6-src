@@ -2,6 +2,7 @@ package com.tencent.liteav.txcvodplayer.b;
 
 import android.provider.MediaStore;
 import android.text.TextUtils;
+import com.cdo.oaps.ad.OapsKey;
 import com.tencent.liteav.base.util.LiteavLog;
 import com.tencent.liteav.txcvodplayer.b.c;
 import java.util.ArrayList;
@@ -14,11 +15,11 @@ import org.json.JSONObject;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f36517a;
+    public String f22826a;
     public String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f36518c;
+    public String f22827c;
     int d;
     public int e;
     public List<c.d> f;
@@ -26,7 +27,7 @@ public final class b {
     String h;
     public String i;
     public c.b j;
-    public List<c.C0934c> k;
+    public List<c.C0764c> k;
     private JSONObject l;
     private String m;
     private List<a> n;
@@ -35,7 +36,7 @@ public final class b {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f36519a;
+        public String f22828a;
         public String b;
     }
 
@@ -60,8 +61,8 @@ public final class b {
             int optInt = jSONObject.optInt("width");
             int optInt2 = jSONObject.optInt("height");
             dVar.b = optInt;
-            dVar.f36532c = optInt2;
-            dVar.f36531a = jSONObject.optString("resolutionName");
+            dVar.f22841c = optInt2;
+            dVar.f22840a = jSONObject.optString("resolutionName");
             dVar.d = jSONObject.optString("type");
             this.f.add(dVar);
             i = i2 + 1;
@@ -90,17 +91,17 @@ public final class b {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            c.C0934c c0934c = new c.C0934c();
-            c0934c.b = (float) jSONObject2.optLong("timeOffset");
-            c0934c.f36530a = jSONObject2.optString("content");
-            this.k.add(c0934c);
+            c.C0764c c0764c = new c.C0764c();
+            c0764c.b = (float) jSONObject2.optLong("timeOffset");
+            c0764c.f22839a = jSONObject2.optString("content");
+            this.k.add(c0764c);
             i = i2 + 1;
         }
     }
 
     private String b(String str) {
         for (a aVar : this.n) {
-            if (aVar.f36519a != null && aVar.f36519a.equalsIgnoreCase(str)) {
+            if (aVar.f22828a != null && aVar.f22828a.equalsIgnoreCase(str)) {
                 return aVar.b;
             }
         }
@@ -114,15 +115,15 @@ public final class b {
             if (jSONObject != null) {
                 JSONObject optJSONObject2 = jSONObject.optJSONObject("basicInfo");
                 if (optJSONObject2 != null) {
-                    this.f36517a = optJSONObject2.optString("name");
+                    this.f22826a = optJSONObject2.optString("name");
                     String optString = optJSONObject2.optString("description");
                     this.b = optString;
                     if (TextUtils.isEmpty(optString)) {
-                        this.b = this.f36517a;
+                        this.b = this.f22826a;
                     }
-                    this.f36518c = optJSONObject2.optString("coverUrl");
+                    this.f22827c = optJSONObject2.optString("coverUrl");
                     this.d = optJSONObject2.optInt("duration");
-                    this.e = optJSONObject2.optInt("size");
+                    this.e = optJSONObject2.optInt(OapsKey.KEY_SIZE);
                 }
                 String optString2 = jSONObject.optString("audioVideoType");
                 if (TextUtils.equals(optString2, "AdaptiveDynamicStream")) {
@@ -146,7 +147,7 @@ public final class b {
                                 String optString3 = optJSONObject4.optString("type");
                                 String optString4 = optJSONObject4.optString("url");
                                 a aVar = new a();
-                                aVar.f36519a = optString3;
+                                aVar.f22828a = optString3;
                                 aVar.b = optString4;
                                 this.h = optString3;
                                 this.n.add(aVar);
@@ -182,7 +183,7 @@ public final class b {
                             arrayList.add(optJSONArray2.getString(i4));
                             i3 = i4 + 1;
                         }
-                        this.j.f36529a = arrayList;
+                        this.j.f22838a = arrayList;
                     }
                 }
                 a(jSONObject);

@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.viewbinding.ViewBinding;
 import com.blued.android.module.common.base.mvvm.EmptyViewModel;
 import com.blued.android.module.common.base.mvvm.MVVMBaseFragment;
 import com.blued.android.module.common.extensions.DialogFragmentViewBindingProperty;
@@ -38,25 +40,25 @@ import kotlin.reflect.KProperty;
 public final class QuestionDetailFragment extends MVVMBaseFragment<EmptyViewModel> {
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f33576a = {Reflection.a(new PropertyReference1Impl(QuestionDetailFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmQuestionDetailBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f19885a = {(KProperty) Reflection.a(new PropertyReference1Impl(QuestionDetailFragment.class, "vb", "getVb()Lcom/soft/blued/databinding/FmQuestionDetailBinding;", 0))};
     private final ViewBindingProperty b;
 
     /* renamed from: c  reason: collision with root package name */
-    private StDocModel f33577c;
+    private StDocModel f19886c;
 
     public QuestionDetailFragment() {
-        super(R.layout.fm_question_detail);
-        this.b = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<QuestionDetailFragment, FmQuestionDetailBinding>() { // from class: com.soft.blued.ui.setting.fragment.QuestionDetailFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.fm_question_detail);
+        this.b = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<QuestionDetailFragment, FmQuestionDetailBinding>() { // from class: com.soft.blued.ui.setting.fragment.QuestionDetailFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/QuestionDetailFragment;)Lcom/soft/blued/databinding/FmQuestionDetailBinding; */
             /* renamed from: a */
-            public final FmQuestionDetailBinding invoke(QuestionDetailFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmQuestionDetailBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<QuestionDetailFragment, FmQuestionDetailBinding>() { // from class: com.soft.blued.ui.setting.fragment.QuestionDetailFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/setting/fragment/QuestionDetailFragment;)Lcom/soft/blued/databinding/FmQuestionDetailBinding; */
             /* renamed from: a */
-            public final FmQuestionDetailBinding invoke(QuestionDetailFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return FmQuestionDetailBinding.a(fragment.requireView());
             }
@@ -64,10 +66,10 @@ public final class QuestionDetailFragment extends MVVMBaseFragment<EmptyViewMode
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(QuestionDetailFragment this$0, View view) {
+    public static final void a(QuestionDetailFragment questionDetailFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        FragmentActivity activity = this$0.getActivity();
+        Intrinsics.e(questionDetailFragment, "this$0");
+        FragmentActivity activity = questionDetailFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -76,14 +78,14 @@ public final class QuestionDetailFragment extends MVVMBaseFragment<EmptyViewMode
 
     /* JADX INFO: Access modifiers changed from: private */
     public final FmQuestionDetailBinding p() {
-        return (FmQuestionDetailBinding) this.b.b(this, f33576a[0]);
+        return (FmQuestionDetailBinding) this.b.b(this, f19885a[0]);
     }
 
     private final void q() {
         ZhiChiApi zhiChiApi = SobotMsgManager.getInstance(getActivity()).getZhiChiApi();
         FragmentActivity activity = getActivity();
         String string = getString(R.string.sobot_app_key);
-        StDocModel stDocModel = this.f33577c;
+        StDocModel stDocModel = this.f19886c;
         StDocModel stDocModel2 = stDocModel;
         if (stDocModel == null) {
             Intrinsics.c("docModel");
@@ -92,36 +94,35 @@ public final class QuestionDetailFragment extends MVVMBaseFragment<EmptyViewMode
         zhiChiApi.getHelpDocByDocId(activity, string, stDocModel2.getDocId(), new StringResultCallBack<StHelpDocModel>() { // from class: com.soft.blued.ui.setting.fragment.QuestionDetailFragment$getQuestionDetail$1
             @Override // com.sobot.network.http.callback.StringResultCallBack
             /* renamed from: a */
-            public void onSuccess(StHelpDocModel data) {
+            public void onSuccess(StHelpDocModel stHelpDocModel) {
                 FmQuestionDetailBinding p;
                 FmQuestionDetailBinding p2;
-                Intrinsics.e(data, "data");
-                if (TextUtils.isEmpty(data.getAnswerDesc())) {
+                Intrinsics.e(stHelpDocModel, "data");
+                if (TextUtils.isEmpty(stHelpDocModel.getAnswerDesc())) {
                     return;
                 }
                 p = QuestionDetailFragment.this.p();
                 TextView textView = p == null ? null : p.d;
                 if (textView != null) {
-                    textView.setText(Intrinsics.a("· ", (Object) data.getQuestionTitle()));
+                    textView.setText(Intrinsics.a("· ", stHelpDocModel.getQuestionTitle()));
                 }
                 p2 = QuestionDetailFragment.this.p();
-                TextView textView2 = p2 == null ? null : p2.f28760c;
+                TextView textView2 = p2 == null ? null : p2.f15070c;
                 if (textView2 == null) {
                     return;
                 }
-                textView2.setText(TypefaceUtils.a((Context) QuestionDetailFragment.this.getActivity(), data.getAnswerDesc(), false, (TypefaceUtils.ClickLinkListener) null));
+                textView2.setText(TypefaceUtils.a((Context) QuestionDetailFragment.this.getActivity(), stHelpDocModel.getAnswerDesc(), false, (TypefaceUtils.ClickLinkListener) null));
             }
 
             @Override // com.sobot.network.http.callback.StringResultCallBack
-            public void onFailure(Exception e, String des) {
-                Intrinsics.e(e, "e");
-                Intrinsics.e(des, "des");
-                ToastUtil.showToast(QuestionDetailFragment.this.getActivity(), des);
+            public void onFailure(Exception exc, String str) {
+                Intrinsics.e(exc, "e");
+                Intrinsics.e(str, "des");
+                ToastUtil.showToast(QuestionDetailFragment.this.getActivity(), str);
             }
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void f() {
         CommonTopTitleNoTrans commonTopTitleNoTrans;
         CommonTopTitleNoTrans commonTopTitleNoTrans2;
@@ -143,7 +144,7 @@ public final class QuestionDetailFragment extends MVVMBaseFragment<EmptyViewMode
         if (serializable == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.sobot.chat.api.model.StDocModel");
         }
-        this.f33577c = (StDocModel) serializable;
+        this.f19886c = (StDocModel) serializable;
         FmQuestionDetailBinding p2 = p();
         if (p2 != null && (commonTopTitleNoTrans = p2.b) != null) {
             commonTopTitleNoTrans.setCenterText(arguments.getString("title"));
@@ -151,14 +152,12 @@ public final class QuestionDetailFragment extends MVVMBaseFragment<EmptyViewMode
         q();
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment
     public void l() {
     }
 
-    @Override // com.blued.android.module.common.base.mvvm.MVVMBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
-        ServiceHelper serviceHelper = ServiceHelper.f33645a;
+        ServiceHelper serviceHelper = ServiceHelper.f19954a;
         View requireView = requireView();
         Intrinsics.c(requireView, "requireView()");
         serviceHelper.a(requireView);

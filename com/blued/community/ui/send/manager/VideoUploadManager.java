@@ -14,26 +14,18 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/manager/VideoUploadManager.class */
 public class VideoUploadManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static String f20073a = "FeedSend";
+    private static String a = "FeedSend";
     private static VideoUploadManager b = new VideoUploadManager();
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f20074c = CommunityHttpUtils.a() + "/blued/qiniu?filter=token&action=ticktocks";
+    private String c = CommunityHttpUtils.a() + "/blued/qiniu?filter=token&action=ticktocks";
     private String d = CommunityHttpUtils.a() + "/blued/qiniu?filter=token&action=videos&ops=ticktocks";
     private HashMap<String, UploadData> e = new HashMap<>();
     private VideoUploadListener f;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/send/manager/VideoUploadManager$UploadData.class */
     public static class UploadData implements Serializable {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f20076a;
+        int a;
         ArrayList<Pair<String, UploadModel>> b = new ArrayList<>();
-
-        /* renamed from: c  reason: collision with root package name */
-        List<Pair<String, String>> f20077c;
+        List<Pair<String, String>> c;
         boolean d;
     }
 
@@ -54,20 +46,20 @@ public class VideoUploadManager {
     }
 
     public void a(Pair<String, String> pair, Pair<String, String> pair2, VideoUploadListener videoUploadListener) {
-        Log.d(f20073a, "uploadVideo");
+        Log.d(a, "uploadVideo");
         if (videoUploadListener != null) {
             this.f = videoUploadListener;
         }
-        MediaSender.a(this.f20074c, this.d, pair, pair2, new SenderListener() { // from class: com.blued.community.ui.send.manager.VideoUploadManager.1
+        MediaSender.a(this.c, this.d, pair, pair2, new SenderListener() { // from class: com.blued.community.ui.send.manager.VideoUploadManager.1
             @Override // com.blued.android.framework.utils.upload.qiniu.SenderListener
             public void a(String str, int i) {
                 UploadData b2 = VideoUploadManager.this.b(str);
-                b2.f20076a = i;
+                b2.a = i;
                 VideoUploadManager.this.e.put(str, b2);
                 if (VideoUploadManager.this.f != null) {
                     VideoUploadManager.this.f.a(str, i);
                 }
-                String str2 = VideoUploadManager.f20073a;
+                String str2 = VideoUploadManager.a;
                 Log.d(str2, "sendVideo onProcess taskId" + str);
             }
 
@@ -76,11 +68,11 @@ public class VideoUploadManager {
                 UploadData b2 = VideoUploadManager.this.b(str);
                 b2.b.add(pair3);
                 VideoUploadManager.this.e.put(str, b2);
-                String str2 = VideoUploadManager.f20073a;
+                String str2 = VideoUploadManager.a;
                 Log.d(str2, "sendVideo onPartFinish taskId" + str);
-                if (pair3.second.type == 0) {
-                    String str3 = VideoUploadManager.f20073a;
-                    Log.d(str3, "sendVideo onPartFinish pair first" + pair3.first);
+                if (((UploadModel) pair3.second).type == 0) {
+                    String str3 = VideoUploadManager.a;
+                    Log.d(str3, "sendVideo onPartFinish pair first" + ((String) pair3.first));
                 }
             }
 
@@ -89,12 +81,12 @@ public class VideoUploadManager {
                 UploadData b2 = VideoUploadManager.this.b(str);
                 ArrayList<Pair<String, UploadModel>> arrayList = b2 != null ? b2.b : null;
                 b2.d = z;
-                b2.f20077c = list;
+                b2.c = list;
                 VideoUploadManager.this.e.put(str, b2);
                 if (VideoUploadManager.this.f != null) {
                     VideoUploadManager.this.f.a(str, z, arrayList, list);
                 }
-                String str2 = VideoUploadManager.f20073a;
+                String str2 = VideoUploadManager.a;
                 Log.d(str2, "sendVideo onFinish taskId" + str);
             }
         });
@@ -103,7 +95,7 @@ public class VideoUploadManager {
     public void a(String str) {
         MediaSender.a(str);
         this.e.remove(str);
-        String str2 = f20073a;
+        String str2 = a;
         Log.d(str2, "cancleUploadVideo taskId" + str);
     }
 
@@ -114,10 +106,10 @@ public class VideoUploadManager {
         } else {
             this.f = videoUploadListener;
             UploadData uploadData = this.e.get(str);
-            if (uploadData == null || uploadData.f20076a != 100) {
+            if (uploadData == null || uploadData.a != 100) {
                 return;
             }
-            this.f.a(str, uploadData.d, uploadData.b, uploadData.f20077c);
+            this.f.a(str, uploadData.d, uploadData.b, uploadData.c);
         }
     }
 }

@@ -20,24 +20,24 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SurfaceRenderView extends SurfaceView implements com.tencent.liteav.txcvodplayer.renderer.a {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.tencent.liteav.txcvodplayer.renderer.b f36553a;
+    private com.tencent.liteav.txcvodplayer.renderer.b f22862a;
     private b b;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/txcvodplayer/renderer/SurfaceRenderView$a.class */
     static final class a implements a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private SurfaceRenderView f36554a;
+        private SurfaceRenderView f22863a;
         private SurfaceHolder b;
 
         public a(SurfaceRenderView surfaceRenderView, SurfaceHolder surfaceHolder) {
-            this.f36554a = surfaceRenderView;
+            this.f22863a = surfaceRenderView;
             this.b = surfaceHolder;
         }
 
         @Override // com.tencent.liteav.txcvodplayer.renderer.a.b
         public final com.tencent.liteav.txcvodplayer.renderer.a a() {
-            return this.f36554a;
+            return this.f22863a;
         }
 
         @Override // com.tencent.liteav.txcvodplayer.renderer.a.b
@@ -70,14 +70,14 @@ public class SurfaceRenderView extends SurfaceView implements com.tencent.liteav
     public static final class b implements SurfaceHolder.Callback {
 
         /* renamed from: a  reason: collision with root package name */
-        SurfaceHolder f36555a;
+        SurfaceHolder f22864a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f36556c;
+        int f22865c;
         int d;
         WeakReference<SurfaceRenderView> e;
-        Map<a.InterfaceC0935a, Object> f = new ConcurrentHashMap();
+        Map<a.InterfaceC0765a, Object> f = new ConcurrentHashMap();
         private int g;
 
         public b(SurfaceRenderView surfaceRenderView) {
@@ -86,40 +86,40 @@ public class SurfaceRenderView extends SurfaceView implements com.tencent.liteav
 
         @Override // android.view.SurfaceHolder.Callback
         public final void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
-            this.f36555a = surfaceHolder;
+            this.f22864a = surfaceHolder;
             this.b = true;
             this.g = i;
-            this.f36556c = i2;
+            this.f22865c = i2;
             this.d = i3;
-            a aVar = new a(this.e.get(), this.f36555a);
-            for (a.InterfaceC0935a interfaceC0935a : this.f.keySet()) {
-                interfaceC0935a.a(aVar, i2, i3);
+            a aVar = new a(this.e.get(), this.f22864a);
+            for (a.InterfaceC0765a interfaceC0765a : this.f.keySet()) {
+                interfaceC0765a.a(aVar, i2, i3);
             }
         }
 
         @Override // android.view.SurfaceHolder.Callback
         public final void surfaceCreated(SurfaceHolder surfaceHolder) {
-            this.f36555a = surfaceHolder;
+            this.f22864a = surfaceHolder;
             this.b = false;
             this.g = 0;
-            this.f36556c = 0;
+            this.f22865c = 0;
             this.d = 0;
-            a aVar = new a(this.e.get(), this.f36555a);
-            for (a.InterfaceC0935a interfaceC0935a : this.f.keySet()) {
-                interfaceC0935a.a(aVar);
+            a aVar = new a(this.e.get(), this.f22864a);
+            for (a.InterfaceC0765a interfaceC0765a : this.f.keySet()) {
+                interfaceC0765a.a(aVar);
             }
         }
 
         @Override // android.view.SurfaceHolder.Callback
         public final void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-            this.f36555a = null;
+            this.f22864a = null;
             this.b = false;
             this.g = 0;
-            this.f36556c = 0;
+            this.f22865c = 0;
             this.d = 0;
-            a aVar = new a(this.e.get(), this.f36555a);
-            for (a.InterfaceC0935a interfaceC0935a : this.f.keySet()) {
-                interfaceC0935a.b(aVar);
+            a aVar = new a(this.e.get(), this.f22864a);
+            for (a.InterfaceC0765a interfaceC0765a : this.f.keySet()) {
+                interfaceC0765a.b(aVar);
             }
         }
     }
@@ -140,7 +140,7 @@ public class SurfaceRenderView extends SurfaceView implements com.tencent.liteav
     }
 
     private void b() {
-        this.f36553a = new com.tencent.liteav.txcvodplayer.renderer.b(this);
+        this.f22862a = new com.tencent.liteav.txcvodplayer.renderer.b(this);
         this.b = new b(this);
         getHolder().addCallback(this.b);
         getHolder().setType(0);
@@ -151,28 +151,28 @@ public class SurfaceRenderView extends SurfaceView implements com.tencent.liteav
         if (i <= 0 || i2 <= 0) {
             return;
         }
-        this.f36553a.a(i, i2);
+        this.f22862a.a(i, i2);
         getHolder().setFixedSize(i, i2);
         requestLayout();
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
-    public final void a(a.InterfaceC0935a interfaceC0935a) {
+    public final void a(a.InterfaceC0765a interfaceC0765a) {
         a aVar;
         b bVar = this.b;
-        bVar.f.put(interfaceC0935a, interfaceC0935a);
-        if (bVar.f36555a != null) {
-            aVar = new a(bVar.e.get(), bVar.f36555a);
-            interfaceC0935a.a(aVar);
+        bVar.f.put(interfaceC0765a, interfaceC0765a);
+        if (bVar.f22864a != null) {
+            aVar = new a(bVar.e.get(), bVar.f22864a);
+            interfaceC0765a.a(aVar);
         } else {
             aVar = null;
         }
         if (bVar.b) {
             a aVar2 = aVar;
             if (aVar == null) {
-                aVar2 = new a(bVar.e.get(), bVar.f36555a);
+                aVar2 = new a(bVar.e.get(), bVar.f22864a);
             }
-            interfaceC0935a.a(aVar2, bVar.f36556c, bVar.d);
+            interfaceC0765a.a(aVar2, bVar.f22865c, bVar.d);
         }
     }
 
@@ -186,13 +186,13 @@ public class SurfaceRenderView extends SurfaceView implements com.tencent.liteav
         if (i <= 0 || i2 <= 0) {
             return;
         }
-        this.f36553a.b(i, i2);
+        this.f22862a.b(i, i2);
         requestLayout();
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
-    public final void b(a.InterfaceC0935a interfaceC0935a) {
-        this.b.f.remove(interfaceC0935a);
+    public final void b(a.InterfaceC0765a interfaceC0765a) {
+        this.b.f.remove(interfaceC0765a);
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
@@ -214,16 +214,15 @@ public class SurfaceRenderView extends SurfaceView implements com.tencent.liteav
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.SurfaceView, android.view.View
-    public void onMeasure(int i, int i2) {
-        this.f36553a.c(i, i2);
-        setMeasuredDimension(this.f36553a.b, this.f36553a.f36563c);
+    protected void onMeasure(int i, int i2) {
+        this.f22862a.c(i, i2);
+        setMeasuredDimension(this.f22862a.b, this.f22862a.f22872c);
     }
 
     @Override // com.tencent.liteav.txcvodplayer.renderer.a
     public void setAspectRatio(int i) {
-        this.f36553a.d = i;
+        this.f22862a.d = i;
         requestLayout();
     }
 

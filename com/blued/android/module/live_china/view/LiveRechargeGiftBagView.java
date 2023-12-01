@@ -40,13 +40,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveRechargeGiftBagView.class */
 public final class LiveRechargeGiftBagView extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f14899a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final Lazy f14900c;
+    private final Lazy c;
     private Runnable d;
     private BaseFragment e;
     private LiveRoomOperationModel f;
@@ -68,16 +64,14 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
             }
             LiveRoomHttpUtils.q(new BluedUIHttpResponse<BluedEntityA<ReChargeGift>>(baseFragment, z) { // from class: com.blued.android.module.live_china.view.LiveRechargeGiftBagView$Companion$getGiftBagDetail$1$1
                 final /* synthetic */ BaseFragment b;
-
-                /* renamed from: c  reason: collision with root package name */
-                final /* synthetic */ boolean f14902c;
+                final /* synthetic */ boolean c;
 
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
                     super(ActivityFragmentActive.this);
                     this.b = baseFragment;
-                    this.f14902c = z;
+                    this.c = z;
                 }
 
                 /* JADX INFO: Access modifiers changed from: protected */
@@ -89,9 +83,9 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
                         return;
                     }
                     BaseFragment baseFragment2 = this.b;
-                    boolean z2 = this.f14902c;
+                    boolean z2 = this.c;
                     LiveRoomManager.a().a(singleData, true);
-                    LiveRechargeGiftBagView.f14899a.a(baseFragment2, z2);
+                    LiveRechargeGiftBagView.a.a(baseFragment2, z2);
                 }
             }, fragmentActive);
         }
@@ -99,27 +93,27 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
         @JvmStatic
         public final void a(BaseFragment baseFragment, int i, boolean z, int i2) {
             LiveRoomManager.a().p().rechargeGiftBagIconShowType = 1;
-            if (PushGuideObserver.f13957a.a().a() || baseFragment == null || baseFragment.getFragmentActive() == null || !baseFragment.getFragmentActive().isActive() || !baseFragment.isVisible() || baseFragment.getFragmentManager() == null) {
+            if (PushGuideObserver.a.a().a() || baseFragment == null || baseFragment.getFragmentActive() == null || !baseFragment.getFragmentActive().isActive() || !baseFragment.isVisible() || baseFragment.getFragmentManager() == null) {
                 return;
             }
-            LiveFirstChargeDialogFragment.f12881a.a(baseFragment, i, z);
+            LiveFirstChargeDialogFragment.a.a(baseFragment, i, z);
             EventTrackLive.a(LiveProtos.Event.LIVE_FIRST_PAY_SHOW, i);
-            LiveRechargeGiftBagView.f14899a.b();
+            LiveRechargeGiftBagView.a.b();
         }
 
         @JvmStatic
         public final void a(BaseFragment baseFragment, boolean z) {
             FragmentManager fragmentManager;
             LiveRoomManager.a().p().rechargeGiftBagIconShowType = 2;
-            if (PushGuideObserver.f13957a.a().a() || !LiveFloatManager.a().y() || LiveFloatManager.a().x() || baseFragment == null || baseFragment.getContext() == null || baseFragment.getFragmentActive() == null || !baseFragment.getFragmentActive().isActive() || (fragmentManager = baseFragment.getFragmentManager()) == null) {
+            if (PushGuideObserver.a.a().a() || !LiveFloatManager.a().y() || LiveFloatManager.a().x() || baseFragment == null || baseFragment.getContext() == null || baseFragment.getFragmentActive() == null || !baseFragment.getFragmentActive().isActive() || (fragmentManager = baseFragment.getFragmentManager()) == null) {
                 return;
             }
             if (LiveRoomManager.a().E() == null) {
-                LiveRechargeGiftBagView.f14899a.b(baseFragment, z);
+                LiveRechargeGiftBagView.a.b(baseFragment, z);
             } else {
                 new LiveRechargeDlgFragment(z).a(fragmentManager);
             }
-            LiveRechargeGiftBagView.f14899a.b();
+            LiveRechargeGiftBagView.a.b();
         }
 
         @JvmStatic
@@ -152,7 +146,7 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
         this.b = mContext;
-        this.f14900c = LazyKt.a(new Function0<LiveRechargeGiftBagViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveRechargeGiftBagView$vb$2
+        this.c = LazyKt.a(new Function0<LiveRechargeGiftBagViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveRechargeGiftBagView$vb$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -170,12 +164,12 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
 
     @JvmStatic
     public static final void a(BaseFragment baseFragment, int i, boolean z, int i2) {
-        f14899a.a(baseFragment, i, z, i2);
+        a.a(baseFragment, i, z, i2);
     }
 
     @JvmStatic
     public static final void a(BaseFragment baseFragment, boolean z) {
-        f14899a.a(baseFragment, z);
+        a.a(baseFragment, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -183,11 +177,11 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
         Intrinsics.e(this$0, "this$0");
         int tools_type = liveRoomOperationModel.getTools_type();
         if (tools_type == EnumOperation.VIEW_TYPE_FIRST_RECHARGE_GIFT_BAG.getValue()) {
-            f14899a.a(baseFragment, 0, false, 10020);
+            a.a(baseFragment, 0, false, 10020);
         } else if (tools_type == EnumOperation.VIEW_TYPE_RECHARGE_GIFT_BAG.getValue()) {
-            f14899a.a(baseFragment, false);
+            a.a(baseFragment, false);
         }
-        f14899a.d();
+        a.d();
         this$0.d();
     }
 
@@ -195,25 +189,25 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
     public static final void a(LiveRoomOperationModel it, LiveRechargeGiftBagView this$0) {
         Intrinsics.e(it, "$it");
         Intrinsics.e(this$0, "this$0");
-        if (LiveRouteUtil.b() || f14899a.a()) {
+        if (LiveRouteUtil.b() || a.a()) {
             return;
         }
         int tools_type = it.getTools_type();
         if (tools_type == EnumOperation.VIEW_TYPE_FIRST_RECHARGE_GIFT_BAG.getValue()) {
-            f14899a.a(this$0.e, 1, false, 10020);
+            a.a(this$0.e, 1, false, 10020);
         } else if (tools_type == EnumOperation.VIEW_TYPE_RECHARGE_GIFT_BAG.getValue()) {
-            f14899a.a(this$0.e, true);
+            a.a(this$0.e, true);
         }
     }
 
     @JvmStatic
     public static final boolean b() {
-        return f14899a.c();
+        return a.c();
     }
 
     @JvmStatic
     public static final void c() {
-        f14899a.d();
+        a.d();
     }
 
     private final void d() {
@@ -221,11 +215,11 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
         if (liveRoomOperationModel == null) {
             return;
         }
-        String icon = f14899a.c() ? liveRoomOperationModel.getIcon() : liveRoomOperationModel.getDynamic_icon();
+        String icon = a.c() ? liveRoomOperationModel.getIcon() : liveRoomOperationModel.getDynamic_icon();
         if (icon != null) {
             BaseFragment baseFragment = this.e;
             Intrinsics.a(baseFragment);
-            ImageLoader.a(baseFragment.getFragmentActive(), icon).g().g(-1).a(getVb().f12405a);
+            ImageLoader.a(baseFragment.getFragmentActive(), icon).g().g(-1).a(getVb().a);
         }
         int i = liveRoomOperationModel.getTools_type() == EnumOperation.VIEW_TYPE_FIRST_RECHARGE_GIFT_BAG.getValue() ? 1 : liveRoomOperationModel.getTools_type() == EnumOperation.VIEW_TYPE_RECHARGE_GIFT_BAG.getValue() ? 2 : 0;
         LiveRoomManager.a().p().rechargeGiftBagIconShowType = i;
@@ -234,7 +228,7 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
 
     private final void e() {
         final LiveRoomOperationModel liveRoomOperationModel;
-        if (LiveRouteUtil.b() || f14899a.a() || (liveRoomOperationModel = this.f) == null) {
+        if (LiveRouteUtil.b() || a.a() || (liveRoomOperationModel = this.f) == null) {
             return;
         }
         a();
@@ -251,7 +245,7 @@ public final class LiveRechargeGiftBagView extends RelativeLayout {
     }
 
     private final LiveRechargeGiftBagViewBinding getVb() {
-        return (LiveRechargeGiftBagViewBinding) this.f14900c.getValue();
+        return (LiveRechargeGiftBagViewBinding) this.c.getValue();
     }
 
     public final LiveRechargeGiftBagView a(final BaseFragment baseFragment, final LiveRoomOperationModel liveRoomOperationModel) {

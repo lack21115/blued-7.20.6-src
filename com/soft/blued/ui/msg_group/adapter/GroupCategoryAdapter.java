@@ -20,18 +20,18 @@ public final class GroupCategoryAdapter extends BaseQuickAdapter<GroupCategoryMo
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
-    public void convert(BaseViewHolder helper, GroupCategoryModel item) {
-        Intrinsics.e(helper, "helper");
-        Intrinsics.e(item, "item");
-        ShapeTextView shapeTextView = (ShapeTextView) helper.getView(2131370786);
-        shapeTextView.setText(item.getName());
-        if (item.isSelected()) {
-            ShapeHelper.b(shapeTextView, 2131101766);
-            shapeTextView.setTextColor(ContextCompat.getColor(this.mContext, 2131102170));
+    public void convert(BaseViewHolder baseViewHolder, GroupCategoryModel groupCategoryModel) {
+        Intrinsics.e(baseViewHolder, "helper");
+        Intrinsics.e(groupCategoryModel, "item");
+        ShapeHelper.ShapeView shapeView = (ShapeTextView) baseViewHolder.getView(2131370786);
+        shapeView.setText(groupCategoryModel.getName());
+        if (groupCategoryModel.isSelected()) {
+            ShapeHelper.b(shapeView, 2131101766);
+            shapeView.setTextColor(ContextCompat.getColor(this.mContext, 2131102170));
         } else {
-            shapeTextView.setTextColor(ContextCompat.getColor(this.mContext, 2131102254));
-            ShapeHelper.b(shapeTextView, 2131101796);
+            shapeView.setTextColor(ContextCompat.getColor(this.mContext, 2131102254));
+            ShapeHelper.b(shapeView, 2131101796);
         }
-        helper.addOnClickListener(2131370786);
+        baseViewHolder.addOnClickListener(2131370786);
     }
 }

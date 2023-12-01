@@ -8,7 +8,7 @@ import android.os.Message;
 class ResourceRecycler {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f20795a;
+    private boolean f7189a;
     private final Handler b = new Handler(Looper.getMainLooper(), new ResourceRecyclerCallback());
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/engine/ResourceRecycler$ResourceRecyclerCallback.class */
@@ -29,12 +29,12 @@ class ResourceRecycler {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(Resource<?> resource, boolean z) {
         synchronized (this) {
-            if (this.f20795a || z) {
+            if (this.f7189a || z) {
                 this.b.obtainMessage(1, resource).sendToTarget();
             } else {
-                this.f20795a = true;
+                this.f7189a = true;
                 resource.c();
-                this.f20795a = false;
+                this.f7189a = false;
             }
         }
     }

@@ -12,44 +12,44 @@ import java.nio.channels.FileLock;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile a f41590a;
+    private static volatile a f27899a;
 
     /* renamed from: a  reason: collision with other field name */
-    private Context f949a;
+    private Context f902a;
     private volatile String e;
     private volatile String f;
 
     /* renamed from: a  reason: collision with other field name */
-    private final Object f950a = new Object();
+    private final Object f903a = new Object();
     private final Object b = new Object();
 
     /* renamed from: a  reason: collision with other field name */
-    private final String f951a = "mipush_region";
+    private final String f904a = "mipush_region";
 
     /* renamed from: b  reason: collision with other field name */
-    private final String f952b = "mipush_country_code";
+    private final String f905b = "mipush_country_code";
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f41591c = "mipush_region.lock";
+    private final String f27900c = "mipush_region.lock";
     private final String d = "mipush_country_code.lock";
 
     public a(Context context) {
-        this.f949a = context;
+        this.f902a = context;
     }
 
     public static a a(Context context) {
-        if (f41590a == null) {
+        if (f27899a == null) {
             synchronized (a.class) {
                 try {
-                    if (f41590a == null) {
-                        f41590a = new a(context);
+                    if (f27899a == null) {
+                        f27899a = new a(context);
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f41590a;
+        return f27899a;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -64,14 +64,14 @@ public class a {
         FileLock lock;
         File file = new File(context.getFilesDir(), str);
         if (!file.exists()) {
-            com.xiaomi.channel.commonutils.logger.b.m11394a("No ready file to get data from ".concat(String.valueOf(str)));
+            com.xiaomi.channel.commonutils.logger.b.m8344a("No ready file to get data from ".concat(String.valueOf(str)));
             return null;
         }
         synchronized (obj) {
             try {
                 try {
                     File file2 = new File(context.getFilesDir(), str2);
-                    com.xiaomi.push.x.m12222a(file2);
+                    com.xiaomi.push.x.m9172a(file2);
                     randomAccessFile3 = new RandomAccessFile(file2, "rw");
                     try {
                         lock = randomAccessFile3.getChannel().lock();
@@ -146,7 +146,7 @@ public class a {
             FileLock fileLock2 = null;
             try {
                 File file = new File(context.getFilesDir(), str3);
-                com.xiaomi.push.x.m12222a(file);
+                com.xiaomi.push.x.m9172a(file);
                 randomAccessFile4 = new RandomAccessFile(file, "rw");
                 fileLock2 = null;
                 fileLock = null;
@@ -221,7 +221,7 @@ public class a {
 
     public String a() {
         if (TextUtils.isEmpty(this.e)) {
-            this.e = a(this.f949a, "mipush_region", "mipush_region.lock", this.f950a);
+            this.e = a(this.f902a, "mipush_region", "mipush_region.lock", this.f903a);
         }
         return this.e;
     }
@@ -231,13 +231,13 @@ public class a {
             this.e = str;
         }
         if (z) {
-            a(this.f949a, str, "mipush_region", "mipush_region.lock", this.f950a);
+            a(this.f902a, str, "mipush_region", "mipush_region.lock", this.f903a);
         }
     }
 
     public String b() {
         if (TextUtils.isEmpty(this.f)) {
-            this.f = a(this.f949a, "mipush_country_code", "mipush_country_code.lock", this.b);
+            this.f = a(this.f902a, "mipush_country_code", "mipush_country_code.lock", this.b);
         }
         return this.f;
     }
@@ -247,7 +247,7 @@ public class a {
             this.f = str;
         }
         if (z) {
-            a(this.f949a, str, "mipush_country_code", "mipush_region.lock", this.f950a);
+            a(this.f902a, str, "mipush_country_code", "mipush_region.lock", this.f903a);
         }
     }
 }

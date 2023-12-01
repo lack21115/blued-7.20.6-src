@@ -6,12 +6,12 @@ import java.io.IOException;
 public final class h extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f25440a;
+    public final int f11752a;
     public final int b;
 
     private h(int i, String str, Throwable th, int i2) {
         super(str, th);
-        this.f25440a = i;
+        this.f11752a = i;
         this.b = i2;
     }
 

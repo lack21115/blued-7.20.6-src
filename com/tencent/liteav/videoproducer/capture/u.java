@@ -4,11 +4,11 @@ package com.tencent.liteav.videoproducer.capture;
 final /* synthetic */ class u implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f36946a;
+    private final int f23255a;
     private final int b;
 
     private u(int i, int i2) {
-        this.f36946a = i;
+        this.f23255a = i;
         this.b = i2;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class u implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        CameraCaptureSingleton.getInstance().startAutoFocusAtPosition(this.f36946a, this.b);
+        CameraCaptureSingleton.getInstance().startAutoFocusAtPosition(this.f23255a, this.b);
     }
 }

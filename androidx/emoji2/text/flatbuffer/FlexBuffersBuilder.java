@@ -19,11 +19,11 @@ public class FlexBuffersBuilder {
     public static final int BUILDER_FLAG_SHARE_STRINGS = 2;
 
     /* renamed from: a  reason: collision with root package name */
-    static final /* synthetic */ boolean f2865a = !FlexBuffersBuilder.class.desiredAssertionStatus();
+    static final /* synthetic */ boolean f2817a = !FlexBuffersBuilder.class.desiredAssertionStatus();
     private final ReadWriteBuf b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<Value> f2866c;
+    private final ArrayList<Value> f2818c;
     private final HashMap<String, Integer> d;
     private final HashMap<String, Integer> e;
     private final int f;
@@ -36,28 +36,28 @@ public class FlexBuffersBuilder {
         static final /* synthetic */ boolean f = !FlexBuffersBuilder.class.desiredAssertionStatus();
 
         /* renamed from: a  reason: collision with root package name */
-        final int f2868a;
+        final int f2820a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        final double f2869c;
+        final double f2821c;
         long d;
         int e;
 
         Value(int i, int i2, int i3, double d) {
             this.e = i;
-            this.f2868a = i2;
+            this.f2820a = i2;
             this.b = i3;
-            this.f2869c = d;
+            this.f2821c = d;
             this.d = Long.MIN_VALUE;
         }
 
         Value(int i, int i2, int i3, long j) {
             this.e = i;
-            this.f2868a = i2;
+            this.f2820a = i2;
             this.b = i3;
             this.d = j;
-            this.f2869c = Double.MIN_VALUE;
+            this.f2821c = Double.MIN_VALUE;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -67,7 +67,7 @@ public class FlexBuffersBuilder {
 
         /* JADX INFO: Access modifiers changed from: private */
         public byte a(int i) {
-            return h(b(i), this.f2868a);
+            return h(b(i), this.f2820a);
         }
 
         static Value a(int i, double d) {
@@ -95,7 +95,7 @@ public class FlexBuffersBuilder {
         }
 
         private int b(int i) {
-            return FlexBuffers.b(this.f2868a) ? Math.max(this.b, i) : this.b;
+            return FlexBuffers.b(this.f2820a) ? Math.max(this.b, i) : this.b;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -150,7 +150,7 @@ public class FlexBuffersBuilder {
 
         /* JADX INFO: Access modifiers changed from: private */
         public int i(int i, int i2) {
-            return b(this.f2868a, this.b, this.d, i, i2);
+            return b(this.f2820a, this.b, this.d, i, i2);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -168,7 +168,7 @@ public class FlexBuffersBuilder {
     }
 
     public FlexBuffersBuilder(ReadWriteBuf readWriteBuf, int i) {
-        this.f2866c = new ArrayList<>();
+        this.f2818c = new ArrayList<>();
         this.d = new HashMap<>();
         this.e = new HashMap<>();
         this.g = false;
@@ -254,19 +254,19 @@ public class FlexBuffersBuilder {
         long j = i2;
         int max = Math.max(0, a(j));
         int i3 = i;
-        while (i3 < this.f2866c.size()) {
+        while (i3 < this.f2818c.size()) {
             i3++;
-            max = Math.max(max, Value.b(4, 0, this.f2866c.get(i3).e, this.b.writePosition(), i3));
+            max = Math.max(max, Value.b(4, 0, this.f2818c.get(i3).e, this.b.writePosition(), i3));
         }
         int a2 = a(max);
         a(j, a2);
         int writePosition = this.b.writePosition();
-        while (i < this.f2866c.size()) {
-            int i4 = this.f2866c.get(i).e;
-            if (!f2865a && i4 == -1) {
+        while (i < this.f2818c.size()) {
+            int i4 = this.f2818c.get(i).e;
+            if (!f2817a && i4 == -1) {
                 throw new AssertionError();
             }
-            b(this.f2866c.get(i).e, a2);
+            b(this.f2818c.get(i).e, a2);
             i++;
         }
         return new Value(-1, FlexBuffers.a(4, 0), max, writePosition);
@@ -275,7 +275,7 @@ public class FlexBuffersBuilder {
     private Value a(int i, int i2, int i3, boolean z, boolean z2, Value value) {
         int i4;
         int i5;
-        if (f2865a || !z2 || z) {
+        if (f2817a || !z2 || z) {
             int i6 = i3;
             long j = i6;
             int max = Math.max(0, a(j));
@@ -287,20 +287,20 @@ public class FlexBuffersBuilder {
             }
             int i7 = 4;
             int i8 = i2;
-            while (i8 < this.f2866c.size()) {
-                int max2 = Math.max(max, this.f2866c.get(i8).i(this.b.writePosition(), i8 + i4));
+            while (i8 < this.f2818c.size()) {
+                int max2 = Math.max(max, this.f2818c.get(i8).i(this.b.writePosition(), i8 + i4));
                 int i9 = i7;
                 if (z) {
                     if (i8 == i2) {
-                        i9 = this.f2866c.get(i8).f2868a;
+                        i9 = this.f2818c.get(i8).f2820a;
                         if (!FlexBuffers.d(i9)) {
                             throw new FlexBuffers.FlexBufferException("TypedVector does not support this element type");
                         }
                     } else {
                         i9 = i7;
-                        if (f2865a) {
+                        if (f2817a) {
                             continue;
-                        } else if (i7 != this.f2866c.get(i8).f2868a) {
+                        } else if (i7 != this.f2818c.get(i8).f2820a) {
                             throw new AssertionError();
                         } else {
                             i9 = i7;
@@ -311,7 +311,7 @@ public class FlexBuffersBuilder {
                 i7 = i9;
                 max = max2;
             }
-            if (f2865a || !z2 || FlexBuffers.d(i7)) {
+            if (f2817a || !z2 || FlexBuffers.d(i7)) {
                 int a2 = a(max);
                 if (value != null) {
                     b(value.d, a2);
@@ -324,15 +324,15 @@ public class FlexBuffersBuilder {
                 int i10 = i2;
                 while (true) {
                     int i11 = i10;
-                    if (i11 >= this.f2866c.size()) {
+                    if (i11 >= this.f2818c.size()) {
                         break;
                     }
-                    a(this.f2866c.get(i11), a2);
+                    a(this.f2818c.get(i11), a2);
                     i10 = i11 + 1;
                 }
                 if (!z) {
-                    while (i2 < this.f2866c.size()) {
-                        this.b.put(this.f2866c.get(i2).a(max));
+                    while (i2 < this.f2818c.size()) {
+                        this.b.put(this.f2818c.get(i2).a(max));
                         i2++;
                     }
                 }
@@ -390,10 +390,10 @@ public class FlexBuffersBuilder {
     }
 
     private void a(Value value, int i) {
-        int i2 = value.f2868a;
+        int i2 = value.f2820a;
         if (i2 != 0 && i2 != 1 && i2 != 2) {
             if (i2 == 3) {
-                a(value.f2869c, i);
+                a(value.f2821c, i);
                 return;
             } else if (i2 != 26) {
                 b(value.d, i);
@@ -404,12 +404,12 @@ public class FlexBuffersBuilder {
     }
 
     private void a(String str, long j) {
-        this.f2866c.add(Value.b(a(str), j));
+        this.f2818c.add(Value.b(a(str), j));
     }
 
     private void b(long j, int i) {
         int writePosition = (int) (this.b.writePosition() - j);
-        if (!f2865a && i != 8 && writePosition >= (1 << (i * 8))) {
+        if (!f2817a && i != 8 && writePosition >= (1 << (i * 8))) {
             throw new AssertionError();
         }
         a(writePosition, i);
@@ -418,37 +418,37 @@ public class FlexBuffersBuilder {
     private void b(String str, long j) {
         int a2 = a(str);
         int a3 = a(j);
-        this.f2866c.add(a3 == 0 ? Value.d(a2, (int) j) : a3 == 1 ? Value.e(a2, (int) j) : a3 == 2 ? Value.f(a2, (int) j) : Value.b(a2, j));
+        this.f2818c.add(a3 == 0 ? Value.d(a2, (int) j) : a3 == 1 ? Value.e(a2, (int) j) : a3 == 2 ? Value.f(a2, (int) j) : Value.b(a2, j));
     }
 
     public int endMap(String str, int i) {
         int a2 = a(str);
-        ArrayList<Value> arrayList = this.f2866c;
+        ArrayList<Value> arrayList = this.f2818c;
         Collections.sort(arrayList.subList(i, arrayList.size()), this.h);
-        Value a3 = a(a2, i, this.f2866c.size() - i, false, false, a(i, this.f2866c.size() - i));
-        while (this.f2866c.size() > i) {
-            ArrayList<Value> arrayList2 = this.f2866c;
+        Value a3 = a(a2, i, this.f2818c.size() - i, false, false, a(i, this.f2818c.size() - i));
+        while (this.f2818c.size() > i) {
+            ArrayList<Value> arrayList2 = this.f2818c;
             arrayList2.remove(arrayList2.size() - 1);
         }
-        this.f2866c.add(a3);
+        this.f2818c.add(a3);
         return (int) a3.d;
     }
 
     public int endVector(String str, int i, boolean z, boolean z2) {
-        Value a2 = a(a(str), i, this.f2866c.size() - i, z, z2, null);
-        while (this.f2866c.size() > i) {
-            ArrayList<Value> arrayList = this.f2866c;
+        Value a2 = a(a(str), i, this.f2818c.size() - i, z, z2, null);
+        while (this.f2818c.size() > i) {
+            ArrayList<Value> arrayList = this.f2818c;
             arrayList.remove(arrayList.size() - 1);
         }
-        this.f2866c.add(a2);
+        this.f2818c.add(a2);
         return (int) a2.d;
     }
 
     public ByteBuffer finish() {
-        if (f2865a || this.f2866c.size() == 1) {
-            int a2 = a(this.f2866c.get(0).i(this.b.writePosition(), 0));
-            a(this.f2866c.get(0), a2);
-            this.b.put(this.f2866c.get(0).a());
+        if (f2817a || this.f2818c.size() == 1) {
+            int a2 = a(this.f2818c.get(0).i(this.b.writePosition(), 0));
+            a(this.f2818c.get(0), a2);
+            this.b.put(this.f2818c.get(0).a());
             this.b.put((byte) a2);
             this.g = true;
             return ByteBuffer.wrap(this.b.data(), 0, this.b.writePosition());
@@ -457,7 +457,7 @@ public class FlexBuffersBuilder {
     }
 
     public ReadWriteBuf getBuffer() {
-        if (f2865a || this.g) {
+        if (f2817a || this.g) {
             return this.b;
         }
         throw new AssertionError();
@@ -465,7 +465,7 @@ public class FlexBuffersBuilder {
 
     public int putBlob(String str, byte[] bArr) {
         Value a2 = a(a(str), bArr, 25, false);
-        this.f2866c.add(a2);
+        this.f2818c.add(a2);
         return (int) a2.d;
     }
 
@@ -474,7 +474,7 @@ public class FlexBuffersBuilder {
     }
 
     public void putBoolean(String str, boolean z) {
-        this.f2866c.add(Value.a(a(str), z));
+        this.f2818c.add(Value.a(a(str), z));
     }
 
     public void putBoolean(boolean z) {
@@ -490,11 +490,11 @@ public class FlexBuffersBuilder {
     }
 
     public void putFloat(String str, double d) {
-        this.f2866c.add(Value.a(a(str), d));
+        this.f2818c.add(Value.a(a(str), d));
     }
 
     public void putFloat(String str, float f) {
-        this.f2866c.add(Value.a(a(str), f));
+        this.f2818c.add(Value.a(a(str), f));
     }
 
     public void putInt(int i) {
@@ -512,13 +512,13 @@ public class FlexBuffersBuilder {
     public void putInt(String str, long j) {
         int a2 = a(str);
         if (-128 <= j && j <= 127) {
-            this.f2866c.add(Value.a(a2, (int) j));
+            this.f2818c.add(Value.a(a2, (int) j));
         } else if (-32768 <= j && j <= 32767) {
-            this.f2866c.add(Value.b(a2, (int) j));
+            this.f2818c.add(Value.b(a2, (int) j));
         } else if (-2147483648L > j || j > 2147483647L) {
-            this.f2866c.add(Value.a(a2, j));
+            this.f2818c.add(Value.a(a2, j));
         } else {
-            this.f2866c.add(Value.c(a2, (int) j));
+            this.f2818c.add(Value.c(a2, (int) j));
         }
     }
 
@@ -532,16 +532,16 @@ public class FlexBuffersBuilder {
         if ((this.f & 2) != 0) {
             Integer num = this.e.get(str2);
             if (num != null) {
-                this.f2866c.add(Value.a(a2, num.intValue(), 5, a(str2.length())));
+                this.f2818c.add(Value.a(a2, num.intValue(), 5, a(str2.length())));
                 return num.intValue();
             }
             Value a3 = a(a2, str2);
             this.e.put(str2, Integer.valueOf((int) a3.d));
-            this.f2866c.add(a3);
+            this.f2818c.add(a3);
             j = a3.d;
         } else {
             Value a4 = a(a2, str2);
-            this.f2866c.add(a4);
+            this.f2818c.add(a4);
             j = a4.d;
         }
         return (int) j;
@@ -560,10 +560,10 @@ public class FlexBuffersBuilder {
     }
 
     public int startMap() {
-        return this.f2866c.size();
+        return this.f2818c.size();
     }
 
     public int startVector() {
-        return this.f2866c.size();
+        return this.f2818c.size();
     }
 }

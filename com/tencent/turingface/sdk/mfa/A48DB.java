@@ -6,7 +6,7 @@ import com.tencent.turingface.sdk.mfa.BfUKf;
 public final class A48DB {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final A48DB f39857a = new A48DB();
+    public static final A48DB f26166a = new A48DB();
     public CvowV b;
 
     public final tmnyR a(byte[] bArr) {

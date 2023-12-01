@@ -6,21 +6,21 @@ import android.animation.ValueAnimator;
 public class ChartAnimator {
 
     /* renamed from: a  reason: collision with root package name */
-    protected float f22056a = 1.0f;
+    protected float f8449a = 1.0f;
     protected float b = 1.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private ValueAnimator.AnimatorUpdateListener f22057c;
+    private ValueAnimator.AnimatorUpdateListener f8450c;
 
     public ChartAnimator() {
     }
 
     public ChartAnimator(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.f22057c = animatorUpdateListener;
+        this.f8450c = animatorUpdateListener;
     }
 
     public float a() {
-        return this.f22056a;
+        return this.f8449a;
     }
 
     public float b() {

@@ -181,7 +181,7 @@ public class MtopBusiness extends MtopBuilder {
         } catch (Throwable th) {
             TBSdkLog.b(TAG, this.seqNo, "listener onError callback error", th);
         }
-        if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+        if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
             String str = this.seqNo;
             StringBuilder sb = new StringBuilder("listener onError callback, ");
             sb.append(z ? "sys error" : "biz error");
@@ -197,12 +197,11 @@ public class MtopBusiness extends MtopBuilder {
         super.addListener(c.a(this, mtopListener));
     }
 
-    @Override // mtopsdk.mtop.intf.MtopBuilder
-    public MtopBusiness addListener(MtopListener mtopListener) {
+    /* renamed from: addListener */
+    public MtopBusiness m6854addListener(MtopListener mtopListener) {
         return registeListener(mtopListener);
     }
 
-    @Override // mtopsdk.mtop.intf.MtopBuilder
     public ApiID asyncRequest() {
         startRequest();
         return this.apiID;
@@ -218,7 +217,7 @@ public class MtopBusiness extends MtopBuilder {
             this.mtopResponse = mtopResponse;
             countDownLatch.countDown();
         }
-        if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+        if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
             StringBuilder sb = new StringBuilder();
             sb.append("doFinish api=[");
             sb.append(this.request.a());
@@ -251,7 +250,7 @@ public class MtopBusiness extends MtopBuilder {
                     TBSdkLog.a(TAG, this.seqNo, "listenr onCached callback,doNothing in doFinish()");
                     return;
                 } else if (mtopResponse.m()) {
-                    if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+                    if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
                         TBSdkLog.b(TAG, this.seqNo, c.a("尝试登录后仍session失效，或用户取消登录。", this, false, null));
                         TBSdkLog.b(TAG, this.seqNo, "response.isSessionInvalid().");
                     }
@@ -300,7 +299,7 @@ public class MtopBusiness extends MtopBuilder {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void retryRequest() {
-        if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+        if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
             TBSdkLog.b(TAG, this.seqNo, c.a("retryRequest.", this, false, null));
         }
         if (this.retryTime >= 3) {
@@ -313,8 +312,8 @@ public class MtopBusiness extends MtopBuilder {
         this.retryTime++;
     }
 
-    @Override // mtopsdk.mtop.intf.MtopBuilder
-    public MtopBusiness setBizId(int i) {
+    /* renamed from: setBizId */
+    public MtopBusiness m6855setBizId(int i) {
         return (MtopBusiness) super.setBizId(i);
     }
 
@@ -324,7 +323,7 @@ public class MtopBusiness extends MtopBuilder {
     }
 
     public MtopBusiness setNeedAuth(String str, boolean z) {
-        if (TBSdkLog.a(TBSdkLog.LogEnable.DebugEnable)) {
+        if (TBSdkLog.a(TBSdkLog.LogEnable.b)) {
             TBSdkLog.a(TAG, "setNeedAuth. authParam" + str);
         }
         this.authParam = str;
@@ -346,7 +345,7 @@ public class MtopBusiness extends MtopBuilder {
             TBSdkLog.d(TAG, this.seqNo, "request is null!!!");
             return;
         }
-        if (TBSdkLog.a(TBSdkLog.LogEnable.InfoEnable)) {
+        if (TBSdkLog.a(TBSdkLog.LogEnable.c)) {
             String str = this.seqNo;
             TBSdkLog.b(TAG, str, "start request api=[" + this.request.a() + "]");
         }
@@ -364,7 +363,6 @@ public class MtopBusiness extends MtopBuilder {
         startRequest(0, cls);
     }
 
-    @Override // mtopsdk.mtop.intf.MtopBuilder
     public MtopResponse syncRequest() {
         TBSdkLog.b(TAG, this.seqNo, "syncRequest");
         this.syncRequestLatch = new CountDownLatch(1);
@@ -393,7 +391,7 @@ public class MtopBusiness extends MtopBuilder {
                 cancelRequest();
             }
         } catch (InterruptedException e) {
-            if (TBSdkLog.a(TBSdkLog.LogEnable.ErrorEnable)) {
+            if (TBSdkLog.a(TBSdkLog.LogEnable.e)) {
                 String str2 = this.seqNo;
                 StringBuilder sb2 = new StringBuilder("SyncRequest InterruptedException. apiKey=");
                 sb2.append(this.request);

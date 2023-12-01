@@ -19,9 +19,8 @@ public interface IMediaBrowserService extends IInterface {
         static final int TRANSACTION_disconnect = 2;
         static final int TRANSACTION_removeSubscription = 4;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/service/media/IMediaBrowserService$Stub$Proxy.class */
-        public static class Proxy implements IMediaBrowserService {
+        private static class Proxy implements IMediaBrowserService {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

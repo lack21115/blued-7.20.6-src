@@ -11,7 +11,7 @@ import java.nio.FloatBuffer;
 public class c extends d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FloatBuffer f36611a;
+    private final FloatBuffer f22920a;
     private int b;
 
     public c(String str) {
@@ -20,7 +20,7 @@ public class c extends d {
 
     public c(String str, String str2) {
         super(str, str2);
-        this.f36611a = OpenGlUtils.createTextureCoordsBuffer(Rotation.NORMAL, false, false);
+        this.f22920a = OpenGlUtils.createTextureCoordsBuffer(Rotation.NORMAL, false, false);
     }
 
     @Override // com.tencent.liteav.videobase.c.d, com.tencent.liteav.videobase.a.j, com.tencent.liteav.videobase.a.b
@@ -37,7 +37,7 @@ public class c extends d {
         super.beforeDrawArrays(i);
         int i2 = this.b;
         if (i2 != -1) {
-            GLES20.glVertexAttribPointer(i2, 2, 5126, false, 0, (Buffer) this.f36611a);
+            GLES20.glVertexAttribPointer(i2, 2, 5126, false, 0, (Buffer) this.f22920a);
             GLES20.glEnableVertexAttribArray(this.b);
         }
     }

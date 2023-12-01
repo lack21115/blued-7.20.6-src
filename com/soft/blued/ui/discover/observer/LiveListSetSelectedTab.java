@@ -7,7 +7,7 @@ import java.util.List;
 public class LiveListSetSelectedTab {
 
     /* renamed from: a  reason: collision with root package name */
-    private static LiveListSetSelectedTab f29845a = new LiveListSetSelectedTab();
+    private static LiveListSetSelectedTab f16155a = new LiveListSetSelectedTab();
     private List<iLiveListSetSelectedTab> b = new ArrayList();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/ui/discover/observer/LiveListSetSelectedTab$iLiveListSetSelectedTab.class */
@@ -16,7 +16,7 @@ public class LiveListSetSelectedTab {
     }
 
     public static LiveListSetSelectedTab a() {
-        return f29845a;
+        return f16155a;
     }
 
     public void a(int i) {

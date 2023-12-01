@@ -4,6 +4,6 @@ package mtopsdk.mtop.common;
 public class MtopCacheEvent extends MtopFinishEvent {
     @Override // mtopsdk.mtop.common.MtopFinishEvent
     public String toString() {
-        return "MtopCacheEvent [mtopResponse=" + this.f43707a + "]";
+        return "MtopCacheEvent [mtopResponse=" + this.a + "]";
     }
 }

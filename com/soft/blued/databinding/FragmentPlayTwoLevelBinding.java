@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentPlayTwoLevelBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28932a;
+    private final FrameLayout f15242a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28932a;
+        return this.f15242a;
     }
 }

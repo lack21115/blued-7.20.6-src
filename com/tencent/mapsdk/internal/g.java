@@ -7,11 +7,11 @@ import java.util.Properties;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f37451a;
+    private static String f23760a;
     private static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f37452c;
+    private static String f23761c;
 
     static {
         try {
@@ -19,19 +19,19 @@ public class g {
             Properties properties = new Properties();
             properties.load(resourceAsStream);
             resourceAsStream.close();
-            f37451a = properties.getProperty("client.info");
+            f23760a = properties.getProperty("client.info");
             b = properties.getProperty("client.built");
-            f37452c = properties.getProperty("client.number");
+            f23761c = properties.getProperty("client.number");
         } catch (Throwable th) {
         }
-        if (f37451a == null) {
-            f37451a = "Tencent Taf";
+        if (f23760a == null) {
+            f23760a = "Tencent Taf";
         }
         if (b == null) {
             b = "unknown";
         }
-        if (f37452c == null) {
-            f37452c = "unknown";
+        if (f23761c == null) {
+            f23761c = "unknown";
         }
     }
 
@@ -40,11 +40,11 @@ public class g {
     }
 
     public static String b() {
-        return f37451a;
+        return f23760a;
     }
 
     public static String c() {
-        return f37452c;
+        return f23761c;
     }
 
     public static String d() {

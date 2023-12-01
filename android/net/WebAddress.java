@@ -1,6 +1,6 @@
 package android.net;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.blued.das.live.LiveProtos;
 import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,7 +26,7 @@ public class WebAddress {
         this.mScheme = "";
         this.mHost = "";
         this.mPort = -1;
-        this.mPath = BridgeUtil.SPLIT_MARK;
+        this.mPath = "/";
         this.mAuthInfo = "";
         Matcher matcher = sAddressPattern.matcher(str);
         if (!matcher.matches()) {
@@ -57,14 +57,14 @@ public class WebAddress {
             if (group5.charAt(0) == '/') {
                 this.mPath = group5;
             } else {
-                this.mPath = BridgeUtil.SPLIT_MARK + group5;
+                this.mPath = "/" + group5;
             }
         }
         if (this.mPort == 443 && this.mScheme.equals("")) {
             this.mScheme = "https";
         } else if (this.mPort == -1) {
             if (this.mScheme.equals("https")) {
-                this.mPort = 443;
+                this.mPort = LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE;
             } else {
                 this.mPort = 80;
             }

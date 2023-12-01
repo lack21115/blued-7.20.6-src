@@ -56,11 +56,11 @@ public class NativeTemplateView extends PPSNativeView {
     private OnEventListener S;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22526a;
+    private String f8918a;
     private BannerAdSize b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AdListener f22527c;
+    private AdListener f8919c;
     private NativeAdConfiguration d;
     private VideoOperator e;
     private VideoOperator.VideoLifecycleListener f;
@@ -354,8 +354,8 @@ public class NativeTemplateView extends PPSNativeView {
         ba.Code(new Runnable() { // from class: com.huawei.hms.ads.template.view.NativeTemplateView.6
             @Override // java.lang.Runnable
             public void run() {
-                if (NativeTemplateView.this.f22527c != null) {
-                    NativeTemplateView.this.f22527c.onAdFailed(dq.Code(i));
+                if (NativeTemplateView.this.f8919c != null) {
+                    NativeTemplateView.this.f8919c.onAdFailed(dq.Code(i));
                 }
             }
         });
@@ -387,8 +387,8 @@ public class NativeTemplateView extends PPSNativeView {
         ba.Code(new Runnable() { // from class: com.huawei.hms.ads.template.view.NativeTemplateView.5
             @Override // java.lang.Runnable
             public void run() {
-                if (NativeTemplateView.this.f22527c != null) {
-                    NativeTemplateView.this.f22527c.onAdLoaded();
+                if (NativeTemplateView.this.f8919c != null) {
+                    NativeTemplateView.this.f8919c.onAdLoaded();
                 }
             }
         });
@@ -544,37 +544,37 @@ public class NativeTemplateView extends PPSNativeView {
         setOnNativeAdClickListener(new PPSNativeView.b() { // from class: com.huawei.hms.ads.template.view.NativeTemplateView.10
             @Override // com.huawei.openalliance.ad.views.PPSNativeView.b
             public void Code(View view) {
-                if (NativeTemplateView.this.f22527c != null) {
-                    NativeTemplateView.this.f22527c.onAdClicked();
+                if (NativeTemplateView.this.f8919c != null) {
+                    NativeTemplateView.this.f8919c.onAdClicked();
                 }
             }
         });
         setOnNativeAdStatusTrackingListener(new PPSNativeView.e() { // from class: com.huawei.hms.ads.template.view.NativeTemplateView.2
             @Override // com.huawei.openalliance.ad.views.PPSNativeView.e
             public void B() {
-                if (NativeTemplateView.this.f22527c != null) {
-                    NativeTemplateView.this.f22527c.onAdImpression();
+                if (NativeTemplateView.this.f8919c != null) {
+                    NativeTemplateView.this.f8919c.onAdImpression();
                 }
             }
 
             @Override // com.huawei.openalliance.ad.views.PPSNativeView.e
             public void I() {
-                if (NativeTemplateView.this.f22527c != null) {
-                    NativeTemplateView.this.f22527c.onAdLeave();
+                if (NativeTemplateView.this.f8919c != null) {
+                    NativeTemplateView.this.f8919c.onAdLeave();
                 }
             }
 
             @Override // com.huawei.openalliance.ad.views.PPSNativeView.e
             public void V() {
-                if (NativeTemplateView.this.f22527c != null) {
-                    NativeTemplateView.this.f22527c.onAdOpened();
+                if (NativeTemplateView.this.f8919c != null) {
+                    NativeTemplateView.this.f8919c.onAdOpened();
                 }
             }
 
             @Override // com.huawei.openalliance.ad.views.PPSNativeView.e
             public void Z() {
-                if (NativeTemplateView.this.f22527c != null) {
-                    NativeTemplateView.this.f22527c.onAdClosed();
+                if (NativeTemplateView.this.f8919c != null) {
+                    NativeTemplateView.this.f8919c.onAdClosed();
                 }
             }
         });
@@ -605,11 +605,11 @@ public class NativeTemplateView extends PPSNativeView {
     }
 
     public String getAdId() {
-        return this.f22526a;
+        return this.f8918a;
     }
 
     public AdListener getAdListener() {
-        return this.f22527c;
+        return this.f8919c;
     }
 
     public BannerAdSize getAdSize() {
@@ -638,7 +638,7 @@ public class NativeTemplateView extends PPSNativeView {
     }
 
     public void loadAd(AdParam adParam) {
-        m mVar = new m(getContext(), new String[]{this.f22526a});
+        m mVar = new m(getContext(), new String[]{this.f8918a});
         mVar.V(1);
         mVar.Code(true);
         setIsCustomDislikeThisAdEnabled(false);
@@ -717,11 +717,11 @@ public class NativeTemplateView extends PPSNativeView {
     }
 
     public void setAdId(String str) {
-        this.f22526a = str;
+        this.f8918a = str;
     }
 
     public void setAdListener(AdListener adListener) {
-        this.f22527c = adListener;
+        this.f8919c = adListener;
         if (adListener != null) {
             h();
         }

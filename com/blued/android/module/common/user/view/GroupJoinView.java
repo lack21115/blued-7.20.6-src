@@ -17,37 +17,33 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/user/view/GroupJoinView.class */
 public class GroupJoinView extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f10859a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f10860c;
+    private boolean c;
     private ImageView d;
     private TextView e;
     private ShapeLinearLayout f;
 
     public GroupJoinView(Context context) {
         super(context);
-        this.f10859a = context;
+        this.a = context;
         b();
     }
 
     public GroupJoinView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f10859a = context;
+        this.a = context;
         b();
     }
 
     public GroupJoinView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f10859a = context;
+        this.a = context;
         b();
     }
 
     private void b() {
-        View inflate = LayoutInflater.from(this.f10859a).inflate(R.layout.view_group_join, (ViewGroup) null);
+        View inflate = LayoutInflater.from(this.a).inflate(R.layout.view_group_join, (ViewGroup) null);
         this.b = inflate;
         this.d = (ImageView) inflate.findViewById(R.id.img_icon);
         this.e = (TextView) this.b.findViewById(R.id.tv_text);
@@ -60,9 +56,9 @@ public class GroupJoinView extends LinearLayout {
     }
 
     public void a() {
-        this.f10860c = false;
+        this.c = false;
         ShapeHelper.b(this.f, R.color.syc_dark_b);
-        this.e.setTextColor(BluedSkinUtils.a(this.f10859a, R.color.syc_a));
+        this.e.setTextColor(BluedSkinUtils.a(this.a, R.color.syc_a));
         this.d.setImageResource(R.drawable.icon_circle_group);
     }
 

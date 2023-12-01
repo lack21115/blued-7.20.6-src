@@ -4,11 +4,11 @@ package com.tencent.bugly.crashreport.crash.h5;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f35176a = null;
+    public String f21485a = null;
     public String b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35177c = null;
+    public String f21486c = null;
     public String d = null;
     public String e = null;
     public String f = null;

@@ -2,6 +2,7 @@ package com.blued.community.ui.circle.presenter;
 
 import android.os.Bundle;
 import androidx.fragment.app.FragmentActivity;
+import com.anythink.core.common.l;
 import com.blued.android.framework.ui.mvp.IFetchDataListener;
 import com.blued.android.framework.ui.mvp.MvpPresenter;
 import java.util.List;
@@ -13,7 +14,7 @@ public class CircleTextVoteEditPresenter extends MvpPresenter {
         super.a(fragmentActivity, bundle, bundle2);
         if (bundle != null) {
             a("title", bundle.getString("circle_vote_title"));
-            a("content", (String) ((List) bundle.getSerializable("circle_vote_content")));
+            a(l.y, (String) ((List) bundle.getSerializable("circle_vote_content")));
         }
     }
 

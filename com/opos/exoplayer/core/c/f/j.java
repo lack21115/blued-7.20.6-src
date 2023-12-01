@@ -12,11 +12,11 @@ import java.util.Arrays;
 public final class j implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final w f25200a;
+    private final w f11512a;
     private final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final boolean f25201c;
+    private final boolean f11513c;
     private long g;
     private String i;
     private com.opos.exoplayer.core.c.n j;
@@ -34,11 +34,11 @@ public final class j implements h {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final com.opos.exoplayer.core.c.n f25202a;
+        private final com.opos.exoplayer.core.c.n f11514a;
         private final boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final boolean f25203c;
+        private final boolean f11515c;
         private final com.opos.exoplayer.core.i.n f;
         private byte[] g;
         private int h;
@@ -52,20 +52,20 @@ public final class j implements h {
         private boolean r;
         private final SparseArray<k.b> d = new SparseArray<>();
         private final SparseArray<k.a> e = new SparseArray<>();
-        private C0654a m = new C0654a();
-        private C0654a n = new C0654a();
+        private C0484a m = new C0484a();
+        private C0484a n = new C0484a();
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.opos.exoplayer.core.c.f.j$a$a  reason: collision with other inner class name */
         /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/c/f/j$a$a.class */
-        public static final class C0654a {
+        public static final class C0484a {
 
             /* renamed from: a  reason: collision with root package name */
-            private boolean f25204a;
+            private boolean f11516a;
             private boolean b;
 
             /* renamed from: c  reason: collision with root package name */
-            private k.b f25205c;
+            private k.b f11517c;
             private int d;
             private int e;
             private int f;
@@ -80,7 +80,7 @@ public final class j implements h {
             private int o;
             private int p;
 
-            private C0654a() {
+            private C0484a() {
             }
 
             /* JADX INFO: Access modifiers changed from: private */
@@ -100,17 +100,17 @@ public final class j implements h {
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public boolean a(com.opos.exoplayer.core.c.f.j.a.C0654a r4) {
+            public boolean a(com.opos.exoplayer.core.c.f.j.a.C0484a r4) {
                 /*
                     Method dump skipped, instructions count: 284
                     To view this dump change 'Code comments level' option to 'DEBUG'
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.opos.exoplayer.core.c.f.j.a.C0654a.a(com.opos.exoplayer.core.c.f.j$a$a):boolean");
+                throw new UnsupportedOperationException("Method not decompiled: com.opos.exoplayer.core.c.f.j.a.C0484a.a(com.opos.exoplayer.core.c.f.j$a$a):boolean");
             }
 
             public void a() {
                 this.b = false;
-                this.f25204a = false;
+                this.f11516a = false;
             }
 
             public void a(int i) {
@@ -119,7 +119,7 @@ public final class j implements h {
             }
 
             public void a(k.b bVar, int i, int i2, int i3, int i4, boolean z, boolean z2, boolean z3, boolean z4, int i5, int i6, int i7, int i8, int i9) {
-                this.f25205c = bVar;
+                this.f11517c = bVar;
                 this.d = i;
                 this.e = i2;
                 this.f = i3;
@@ -133,7 +133,7 @@ public final class j implements h {
                 this.n = i7;
                 this.o = i8;
                 this.p = i9;
-                this.f25204a = true;
+                this.f11516a = true;
                 this.b = true;
             }
 
@@ -147,9 +147,9 @@ public final class j implements h {
         }
 
         public a(com.opos.exoplayer.core.c.n nVar, boolean z, boolean z2) {
-            this.f25202a = nVar;
+            this.f11514a = nVar;
             this.b = z;
-            this.f25203c = z2;
+            this.f11515c = z2;
             byte[] bArr = new byte[128];
             this.g = bArr;
             this.f = new com.opos.exoplayer.core.i.n(bArr, 0, 0);
@@ -180,13 +180,13 @@ public final class j implements h {
                 r1 = 9
                 if (r0 == r1) goto L25
                 r0 = r6
-                boolean r0 = r0.f25203c
+                boolean r0 = r0.f11515c
                 if (r0 == 0) goto L53
                 r0 = r6
                 com.opos.exoplayer.core.c.f.j$a$a r0 = r0.n
                 r1 = r6
                 com.opos.exoplayer.core.c.f.j$a$a r1 = r1.m
-                boolean r0 = com.opos.exoplayer.core.c.f.j.a.C0654a.a(r0, r1)
+                boolean r0 = com.opos.exoplayer.core.c.f.j.a.C0484a.a(r0, r1)
                 if (r0 == 0) goto L53
             L25:
                 r0 = r6
@@ -261,7 +261,7 @@ public final class j implements h {
             this.l = j2;
             this.j = j;
             if (!this.b || i != 1) {
-                if (!this.f25203c) {
+                if (!this.f11515c) {
                     return;
                 }
                 int i2 = this.i;
@@ -269,20 +269,20 @@ public final class j implements h {
                     return;
                 }
             }
-            C0654a c0654a = this.m;
+            C0484a c0484a = this.m;
             this.m = this.n;
-            this.n = c0654a;
-            c0654a.a();
+            this.n = c0484a;
+            c0484a.a();
             this.h = 0;
             this.k = true;
         }
 
         public void a(k.a aVar) {
-            this.e.append(aVar.f25490a, aVar);
+            this.e.append(aVar.f11802a, aVar);
         }
 
         public void a(k.b bVar) {
-            this.d.append(bVar.f25492a, bVar);
+            this.d.append(bVar.f11804a, bVar);
         }
 
         /* JADX WARN: Removed duplicated region for block: B:45:0x0185  */
@@ -304,7 +304,7 @@ public final class j implements h {
         }
 
         public boolean a() {
-            return this.f25203c;
+            return this.f11515c;
         }
 
         public void b() {
@@ -315,9 +315,9 @@ public final class j implements h {
     }
 
     public j(w wVar, boolean z, boolean z2) {
-        this.f25200a = wVar;
+        this.f11512a = wVar;
         this.b = z;
-        this.f25201c = z2;
+        this.f11513c = z2;
     }
 
     private void a(long j, int i, int i2, long j2) {
@@ -327,19 +327,19 @@ public final class j implements h {
             this.e.b(i2);
             if (this.l) {
                 if (this.d.b()) {
-                    this.k.a(com.opos.exoplayer.core.i.k.a(this.d.f25237a, 3, this.d.b));
+                    this.k.a(com.opos.exoplayer.core.i.k.a(this.d.f11549a, 3, this.d.b));
                     vVar = this.d;
                 } else if (this.e.b()) {
-                    this.k.a(com.opos.exoplayer.core.i.k.b(this.e.f25237a, 3, this.e.b));
+                    this.k.a(com.opos.exoplayer.core.i.k.b(this.e.f11549a, 3, this.e.b));
                     vVar = this.e;
                 }
             } else if (this.d.b() && this.e.b()) {
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(Arrays.copyOf(this.d.f25237a, this.d.b));
-                arrayList.add(Arrays.copyOf(this.e.f25237a, this.e.b));
-                k.b a2 = com.opos.exoplayer.core.i.k.a(this.d.f25237a, 3, this.d.b);
-                k.a b = com.opos.exoplayer.core.i.k.b(this.e.f25237a, 3, this.e.b);
-                this.j.a(Format.a(this.i, "video/avc", (String) null, -1, -1, a2.b, a2.f25493c, -1.0f, arrayList, -1, a2.d, (DrmInitData) null));
+                arrayList.add(Arrays.copyOf(this.d.f11549a, this.d.b));
+                arrayList.add(Arrays.copyOf(this.e.f11549a, this.e.b));
+                k.b a2 = com.opos.exoplayer.core.i.k.a(this.d.f11549a, 3, this.d.b);
+                k.a b = com.opos.exoplayer.core.i.k.b(this.e.f11549a, 3, this.e.b);
+                this.j.a(Format.a(this.i, "video/avc", (String) null, -1, -1, a2.b, a2.f11805c, -1.0f, arrayList, -1, a2.d, (DrmInitData) null));
                 this.l = true;
                 this.k.a(a2);
                 this.k.a(b);
@@ -349,9 +349,9 @@ public final class j implements h {
             vVar.a();
         }
         if (this.f.b(i2)) {
-            this.n.a(this.f.f25237a, com.opos.exoplayer.core.i.k.a(this.f.f25237a, this.f.b));
+            this.n.a(this.f.f11549a, com.opos.exoplayer.core.i.k.a(this.f.f11549a, this.f.b));
             this.n.c(4);
-            this.f25200a.a(j2, this.n);
+            this.f11512a.a(j2, this.n);
         }
         this.k.a(j, i);
     }
@@ -395,15 +395,15 @@ public final class j implements h {
         this.i = dVar.c();
         com.opos.exoplayer.core.c.n a2 = gVar.a(dVar.b(), 2);
         this.j = a2;
-        this.k = new a(a2, this.b, this.f25201c);
-        this.f25200a.a(gVar, dVar);
+        this.k = new a(a2, this.b, this.f11513c);
+        this.f11512a.a(gVar, dVar);
     }
 
     @Override // com.opos.exoplayer.core.c.f.h
     public void a(com.opos.exoplayer.core.i.m mVar) {
         int d = mVar.d();
         int c2 = mVar.c();
-        byte[] bArr = mVar.f25496a;
+        byte[] bArr = mVar.f11808a;
         this.g += mVar.b();
         this.j.a(mVar, mVar.b());
         while (true) {

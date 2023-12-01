@@ -41,7 +41,7 @@ import javax.net.ssl.X509TrustManager;
 public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    static final List<Protocol> f35870a = Util.immutableList(Protocol.HTTP_2, Protocol.HTTP_1_1);
+    static final List<Protocol> f22179a = Util.immutableList(Protocol.HTTP_2, Protocol.HTTP_1_1);
     static final List<ConnectionSpec> b = Util.immutableList(ConnectionSpec.b, ConnectionSpec.d);
     final int A;
     final int B;
@@ -49,7 +49,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
     final int D;
 
     /* renamed from: c  reason: collision with root package name */
-    final Dispatcher f35871c;
+    final Dispatcher f22180c;
     final Proxy d;
     final List<Protocol> e;
     final List<ConnectionSpec> f;
@@ -80,11 +80,11 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
         int B;
 
         /* renamed from: a  reason: collision with root package name */
-        Dispatcher f35872a;
+        Dispatcher f22181a;
         Proxy b;
 
         /* renamed from: c  reason: collision with root package name */
-        List<Protocol> f35873c;
+        List<Protocol> f22182c;
         List<ConnectionSpec> d;
         final List<Interceptor> e;
         final List<Interceptor> f;
@@ -112,23 +112,23 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
         public Builder() {
             this.e = new ArrayList();
             this.f = new ArrayList();
-            this.f35872a = new Dispatcher();
-            this.f35873c = OkHttpClient.f35870a;
+            this.f22181a = new Dispatcher();
+            this.f22182c = OkHttpClient.f22179a;
             this.d = OkHttpClient.b;
-            this.g = EventListener.a(EventListener.f35849a);
+            this.g = EventListener.a(EventListener.f22158a);
             ProxySelector proxySelector = ProxySelector.getDefault();
             this.h = proxySelector;
             if (proxySelector == null) {
                 this.h = new NullProxySelector();
             }
-            this.i = CookieJar.f35845a;
+            this.i = CookieJar.f22154a;
             this.l = SocketFactory.getDefault();
-            this.o = OkHostnameVerifier.f36034a;
-            this.p = CertificatePinner.f35825a;
-            this.q = Authenticator.f35806a;
-            this.r = Authenticator.f35806a;
+            this.o = OkHostnameVerifier.f22343a;
+            this.p = CertificatePinner.f22134a;
+            this.q = Authenticator.f22115a;
+            this.r = Authenticator.f22115a;
             this.s = new ConnectionPool();
-            this.t = Dns.f35848a;
+            this.t = Dns.f22157a;
             this.u = true;
             this.v = true;
             this.w = true;
@@ -142,9 +142,9 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
         Builder(OkHttpClient okHttpClient) {
             this.e = new ArrayList();
             this.f = new ArrayList();
-            this.f35872a = okHttpClient.f35871c;
+            this.f22181a = okHttpClient.f22180c;
             this.b = okHttpClient.d;
-            this.f35873c = okHttpClient.e;
+            this.f22182c = okHttpClient.e;
             this.d = okHttpClient.f;
             this.e.addAll(okHttpClient.g);
             this.f.addAll(okHttpClient.h);
@@ -262,7 +262,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
 
         public Builder dispatcher(Dispatcher dispatcher) {
             if (dispatcher != null) {
-                this.f35872a = dispatcher;
+                this.f22181a = dispatcher;
                 return this;
             }
             throw new IllegalArgumentException("dispatcher == null");
@@ -340,7 +340,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
                 throw new IllegalArgumentException("protocols must not contain null");
             } else {
                 arrayList.remove(Protocol.SPDY_3);
-                this.f35873c = Collections.unmodifiableList(arrayList);
+                this.f22182c = Collections.unmodifiableList(arrayList);
                 return this;
             }
         }
@@ -422,7 +422,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
     }
 
     static {
-        Internal.f35902a = new Internal() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.OkHttpClient.1
+        Internal.f22211a = new Internal() { // from class: com.tencent.cloud.huiyansdkface.okhttp3.OkHttpClient.1
             @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal
             public void addLenient(Headers.Builder builder, String str) {
                 builder.a(str);
@@ -440,7 +440,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
 
             @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal
             public int code(Response.Builder builder) {
-                return builder.f35892c;
+                return builder.f22201c;
             }
 
             @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal
@@ -480,7 +480,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
 
             @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal
             public RouteDatabase routeDatabase(ConnectionPool connectionPool) {
-                return connectionPool.f35835a;
+                return connectionPool.f22144a;
             }
 
             @Override // com.tencent.cloud.huiyansdkface.okhttp3.internal.Internal
@@ -508,9 +508,9 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
         boolean z;
         boolean z2;
         CertificateChainCleaner certificateChainCleaner;
-        this.f35871c = builder.f35872a;
+        this.f22180c = builder.f22181a;
         this.d = builder.b;
-        this.e = builder.f35873c;
+        this.e = builder.f22182c;
         this.f = builder.d;
         this.g = Util.immutableList(builder.e);
         this.h = Util.immutableList(builder.f);
@@ -576,7 +576,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
     /* JADX INFO: Access modifiers changed from: package-private */
     public InternalCache a() {
         Cache cache = this.l;
-        return cache != null ? cache.f35807a : this.m;
+        return cache != null ? cache.f22116a : this.m;
     }
 
     public Authenticator authenticator() {
@@ -612,7 +612,7 @@ public class OkHttpClient implements Call.Factory, WebSocket.Factory, Cloneable 
     }
 
     public Dispatcher dispatcher() {
-        return this.f35871c;
+        return this.f22180c;
     }
 
     public Dns dns() {

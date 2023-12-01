@@ -3,6 +3,7 @@ package com.alipay.android.phone.mrpc.core;
 import android.content.Context;
 import android.text.TextUtils;
 import android.webkit.CookieManager;
+import com.efs.sdk.base.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,13 +30,9 @@ import org.apache.http.protocol.HttpContext;
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/q.class */
 public final class q implements Callable<u> {
     private static final HttpRequestRetryHandler e = new ad();
-
-    /* renamed from: a  reason: collision with root package name */
-    protected l f4535a;
+    protected l a;
     protected Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected o f4536c;
+    protected o c;
     String d;
     private HttpUriRequest f;
     private CookieManager i;
@@ -51,9 +48,9 @@ public final class q implements Callable<u> {
     private String p = null;
 
     public q(l lVar, o oVar) {
-        this.f4535a = lVar;
-        this.b = lVar.f4529a;
-        this.f4536c = oVar;
+        this.a = lVar;
+        this.b = lVar.a;
+        this.c = oVar;
     }
 
     private static long a(String[] strArr) {
@@ -115,16 +112,16 @@ public final class q implements Callable<u> {
                 a(entity, byteArrayOutputStream2);
                 byte[] byteArray = byteArrayOutputStream2.toByteArray();
                 this.o = false;
-                this.f4535a.c(System.currentTimeMillis() - currentTimeMillis);
-                this.f4535a.a(byteArray.length);
+                this.a.c(System.currentTimeMillis() - currentTimeMillis);
+                this.a.a(byteArray.length);
                 new StringBuilder("res:").append(byteArray.length);
                 p pVar = new p(a(httpResponse), i, str, byteArray);
                 long b = b(httpResponse);
                 Header contentType = httpResponse.getEntity().getContentType();
                 if (contentType != null) {
-                    HashMap<String, String> a2 = a(contentType.getValue());
-                    str2 = a2.get("charset");
-                    str3 = a2.get("Content-Type");
+                    HashMap<String, String> a = a(contentType.getValue());
+                    str2 = a.get("charset");
+                    str3 = a.get("Content-Type");
                 } else {
                     str2 = null;
                     str3 = null;
@@ -159,7 +156,7 @@ public final class q implements Callable<u> {
 
     private static HashMap<String, String> a(String str) {
         HashMap<String, String> hashMap = new HashMap<>();
-        String[] split = str.split(";");
+        String[] split = str.split(com.alipay.sdk.util.i.b);
         int length = split.length;
         int i = 0;
         while (true) {
@@ -175,28 +172,28 @@ public final class q implements Callable<u> {
     }
 
     private void a(HttpEntity httpEntity, OutputStream outputStream) {
-        InputStream a2 = b.a(httpEntity);
+        InputStream a = b.a(httpEntity);
         httpEntity.getContentLength();
         try {
             try {
                 byte[] bArr = new byte[2048];
                 while (true) {
-                    int read = a2.read(bArr);
-                    if (read == -1 || this.f4536c.h()) {
+                    int read = a.read(bArr);
+                    if (read == -1 || this.c.h()) {
                         break;
                     }
                     outputStream.write(bArr, 0, read);
-                    if (this.f4536c.f() != null) {
+                    if (this.c.f() != null) {
                     }
                 }
                 outputStream.flush();
-                r.a(a2);
+                r.a(a);
             } catch (Exception e2) {
                 e2.getCause();
                 throw new IOException("HttpWorker Request Error!" + e2.getLocalizedMessage());
             }
         } catch (Throwable th) {
-            r.a(a2);
+            r.a(a);
             throw th;
         }
     }
@@ -220,13 +217,13 @@ public final class q implements Callable<u> {
     }
 
     private URI b() {
-        String a2 = this.f4536c.a();
+        String a = this.c.a();
         String str = this.d;
         if (str != null) {
-            a2 = str;
+            a = str;
         }
-        if (a2 != null) {
-            return new URI(a2);
+        if (a != null) {
+            return new URI(a);
         }
         throw new RuntimeException("url should not be null");
     }
@@ -237,15 +234,15 @@ public final class q implements Callable<u> {
             return httpUriRequest;
         }
         if (this.j == null) {
-            byte[] b = this.f4536c.b();
-            String b2 = this.f4536c.b("gzip");
+            byte[] b = this.c.b();
+            String b2 = this.c.b(Constants.CP_GZIP);
             if (b != null) {
                 if (TextUtils.equals(b2, "true")) {
                     this.j = b.a(b);
                 } else {
                     this.j = new ByteArrayEntity(b);
                 }
-                this.j.setContentType(this.f4536c.c());
+                this.j.setContentType(this.c.c());
             }
         }
         AbstractHttpEntity abstractHttpEntity = this.j;
@@ -291,7 +288,7 @@ public final class q implements Callable<u> {
 
     private String f() {
         if (TextUtils.isEmpty(this.q)) {
-            String b = this.f4536c.b("operationType");
+            String b = this.c.b("operationType");
             this.q = b;
             return b;
         }
@@ -308,7 +305,7 @@ public final class q implements Callable<u> {
         if (url != null) {
             return url;
         }
-        URL url2 = new URL(this.f4536c.a());
+        URL url2 = new URL(this.c.a());
         this.l = url2;
         return url2;
     }
@@ -324,6 +321,6 @@ public final class q implements Callable<u> {
     }
 
     public final o a() {
-        return this.f4536c;
+        return this.c;
     }
 }

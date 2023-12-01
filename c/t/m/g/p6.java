@@ -7,7 +7,7 @@ import java.io.File;
 public class p6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public r6 f3935a;
+    public r6 f3887a;
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/p6$a.class */
     public class a implements x1 {
@@ -25,10 +25,10 @@ public class p6 {
     }
 
     public void a() {
-        r6 r6Var = this.f3935a;
+        r6 r6Var = this.f3887a;
         if (r6Var != null) {
             r6Var.c();
-            this.f3935a = null;
+            this.f3887a = null;
         }
     }
 
@@ -44,10 +44,10 @@ public class p6 {
 
     public final void b() {
         r6 h = r6.h();
-        this.f3935a = h;
+        this.f3887a = h;
         if (h != null) {
             h.a(true);
-            this.f3935a.e();
+            this.f3887a.e();
         }
         r6.h().a(5000L);
     }

@@ -7,17 +7,17 @@ public class ServerSideVerificationOptions {
     public static final String TRANS_ID = "transId";
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27895a;
+    private String f14207a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final JSONObject f27896c;
+    private final JSONObject f14208c;
 
     /* loaded from: source-8303388-dex2jar.jar:com/qq/e/ads/rewardvideo/ServerSideVerificationOptions$Builder.class */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f27897a;
+        private String f14209a;
         private String b;
 
         public ServerSideVerificationOptions build() {
@@ -25,7 +25,7 @@ public class ServerSideVerificationOptions {
         }
 
         public Builder setCustomData(String str) {
-            this.f27897a = str;
+            this.f14209a = str;
             return this;
         }
 
@@ -36,17 +36,17 @@ public class ServerSideVerificationOptions {
     }
 
     private ServerSideVerificationOptions(Builder builder) {
-        this.f27896c = new JSONObject();
-        this.f27895a = builder.f27897a;
+        this.f14208c = new JSONObject();
+        this.f14207a = builder.f14209a;
         this.b = builder.b;
     }
 
     public String getCustomData() {
-        return this.f27895a;
+        return this.f14207a;
     }
 
     public JSONObject getOptions() {
-        return this.f27896c;
+        return this.f14208c;
     }
 
     public String getUserId() {

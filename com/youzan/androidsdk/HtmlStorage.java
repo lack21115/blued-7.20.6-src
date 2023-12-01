@@ -24,18 +24,18 @@ public final class HtmlStorage {
         }
 
         public static void clearCookie(Context context) {
-            m12226(context, "koudaitong.com");
-            m12226(context, "youzan.com");
+            m9176(context, "koudaitong.com");
+            m9176(context, "youzan.com");
         }
 
         public static void clearCookie(Context context, List<String> list) {
             if (list != null && list.size() > 0) {
                 for (String str : list) {
-                    m12226(context, str);
+                    m9176(context, str);
                 }
             }
-            m12226(context, "koudaitong.com");
-            m12226(context, "youzan.com");
+            m9176(context, "koudaitong.com");
+            m9176(context, "youzan.com");
         }
 
         public static void clearLocalStorage() {
@@ -47,7 +47,7 @@ public final class HtmlStorage {
         }
 
         /* renamed from: ˊ  reason: contains not printable characters */
-        static /* synthetic */ List m12224(String str, String str2) {
+        static /* synthetic */ List m9174(String str, String str2) {
             ArrayList arrayList = new ArrayList();
             if (YouzanSDK.getSDKAdapter() != null && YouzanSDK.getSDKAdapter().getHostList() != null) {
                 List<String> hostList = YouzanSDK.getSDKAdapter().getHostList();
@@ -63,7 +63,7 @@ public final class HtmlStorage {
         }
 
         /* renamed from: ˊ  reason: contains not printable characters */
-        static /* synthetic */ List m12225(List list, String str, String str2) {
+        static /* synthetic */ List m9175(List list, String str, String str2) {
             ArrayList arrayList = new ArrayList((list != null ? list.size() : 0) + 2);
             arrayList.add(new HttpCookie.Builder().domain("koudaitong.com").name(str).value(str2).build());
             arrayList.add(new HttpCookie.Builder().domain("youzan.com").name(str).value(str2).build());
@@ -77,7 +77,7 @@ public final class HtmlStorage {
         }
 
         /* renamed from: ˊ  reason: contains not printable characters */
-        private static void m12226(Context context, String str) {
+        private static void m9176(Context context, String str) {
             YouzanSDK.getSDKAdapter().clearCookieByHost(context, str);
         }
     }
@@ -85,37 +85,37 @@ public final class HtmlStorage {
     /* loaded from: source-8829756-dex2jar.jar:com/youzan/androidsdk/HtmlStorage$Synchronize.class */
     public static class Synchronize {
         public static void aliPay(Context context) {
-            Manager.save(context, Manager.m12224("alipay_installed", "1"));
+            Manager.save(context, Manager.m9174("alipay_installed", "1"));
         }
 
         public static void hideBar(Context context, boolean z) {
-            Manager.save(context, Manager.m12224("hide_app_topbar", z ? "1" : "0"));
+            Manager.save(context, Manager.m9174("hide_app_topbar", z ? "1" : "0"));
         }
 
         public static void sdkVersion(Context context, String str) {
-            Manager.save(context, Manager.m12224("yz_app_sdk_version", str));
+            Manager.save(context, Manager.m9174("yz_app_sdk_version", str));
         }
 
         public static void sessionId(Context context, String str) {
-            Manager.save(context, Manager.m12224("KDTSESSIONID", str));
+            Manager.save(context, Manager.m9174("KDTSESSIONID", str));
         }
 
         public static void set(Context context, String str, String str2) {
             if ((TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) && !b.l.equalsIgnoreCase(str)) {
                 return;
             }
-            Manager.save(context, Manager.m12224(str, str2));
+            Manager.save(context, Manager.m9174(str, str2));
         }
 
         public static void set(Context context, List<String> list, String str, String str2) {
             if ((TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) && !b.l.equalsIgnoreCase(str)) {
                 return;
             }
-            Manager.save(context, Manager.m12225(list, str, str2));
+            Manager.save(context, Manager.m9175(list, str, str2));
         }
 
         public static void userId(Context context, String str) {
-            Manager.save(context, Manager.m12224("youzan_user_id", str));
+            Manager.save(context, Manager.m9174("youzan_user_id", str));
         }
     }
 }

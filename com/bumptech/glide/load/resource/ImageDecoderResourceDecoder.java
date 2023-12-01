@@ -19,20 +19,20 @@ import java.io.IOException;
 public abstract class ImageDecoderResourceDecoder<T> implements ResourceDecoder<ImageDecoder.Source, T> {
 
     /* renamed from: a  reason: collision with root package name */
-    final HardwareConfigState f20930a = HardwareConfigState.a();
+    final HardwareConfigState f7324a = HardwareConfigState.a();
 
     protected abstract Resource<T> a(ImageDecoder.Source source, int i, int i2, ImageDecoder.OnHeaderDecodedListener onHeaderDecodedListener) throws IOException;
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public final Resource<T> a(ImageDecoder.Source source, final int i, final int i2, Options options) throws IOException {
-        final DecodeFormat decodeFormat = (DecodeFormat) options.a(Downsampler.f20951a);
+        final DecodeFormat decodeFormat = (DecodeFormat) options.a(Downsampler.f7345a);
         final DownsampleStrategy downsampleStrategy = (DownsampleStrategy) options.a(DownsampleStrategy.h);
         final boolean z = options.a(Downsampler.e) != null && ((Boolean) options.a(Downsampler.e)).booleanValue();
         final PreferredColorSpace preferredColorSpace = (PreferredColorSpace) options.a(Downsampler.b);
         return a(source, i, i2, new ImageDecoder.OnHeaderDecodedListener() { // from class: com.bumptech.glide.load.resource.ImageDecoderResourceDecoder.1
             @Override // android.graphics.ImageDecoder.OnHeaderDecodedListener
             public void onHeaderDecoded(ImageDecoder imageDecoder, ImageDecoder.ImageInfo imageInfo, ImageDecoder.Source source2) {
-                if (ImageDecoderResourceDecoder.this.f20930a.a(i, i2, z, false)) {
+                if (ImageDecoderResourceDecoder.this.f7324a.a(i, i2, z, false)) {
                     imageDecoder.setAllocator(3);
                 } else {
                     imageDecoder.setAllocator(1);

@@ -4,28 +4,28 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 public final class af {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f40044a = 0;
+    private int f26353a = 0;
     private int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f40045c = new Object();
+    private final Object f26354c = new Object();
 
     public final void a() {
-        synchronized (this.f40045c) {
+        synchronized (this.f26354c) {
             while (this.b > 0) {
                 new StringBuilder("write wait because mWriteReq: ").append(this.b);
                 try {
-                    this.f40045c.wait();
+                    this.f26354c.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             new StringBuilder("add wirteReq: ").append(this.b);
             this.b++;
-            while (this.f40044a > 0) {
-                new StringBuilder("write wait because readReq: ").append(this.f40044a);
+            while (this.f26353a > 0) {
+                new StringBuilder("write wait because readReq: ").append(this.f26353a);
                 try {
-                    this.f40045c.wait();
+                    this.f26354c.wait();
                 } catch (InterruptedException e2) {
                     e2.printStackTrace();
                 }
@@ -34,11 +34,11 @@ public final class af {
     }
 
     public final void b() {
-        synchronized (this.f40045c) {
+        synchronized (this.f26354c) {
             int i = this.b - 1;
             this.b = i;
             if (i == 0) {
-                this.f40045c.notifyAll();
+                this.f26354c.notifyAll();
             }
         }
     }

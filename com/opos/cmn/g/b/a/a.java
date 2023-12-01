@@ -9,11 +9,11 @@ import com.opos.cmn.an.transactivity.api.b;
 public class a extends b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f24966a;
+    private String f11278a;
 
     public a(String str) {
-        this.f24966a = "";
-        this.f24966a = str;
+        this.f11278a = "";
+        this.f11278a = str;
     }
 
     @Override // com.opos.cmn.an.transactivity.api.b, com.opos.cmn.an.transactivity.a.a
@@ -21,8 +21,8 @@ public class a extends b {
         try {
             if (activity != null) {
                 try {
-                    com.opos.cmn.an.f.a.b("MkdlTransLifeCallback", "marketUrl:" + this.f24966a);
-                    com.opos.cmn.g.b.b.a.a((Context) activity, this.f24966a);
+                    com.opos.cmn.an.f.a.b("MkdlTransLifeCallback", "marketUrl:" + this.f11278a);
+                    com.opos.cmn.g.b.b.a.a((Context) activity, this.f11278a);
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.b("MkdlTransLifeCallback", "onCreate", e);
                 }

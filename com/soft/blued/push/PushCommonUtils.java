@@ -8,6 +8,7 @@ import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.module.live_china.liveForMsg.model.LiveMsgShareEntity;
 import com.blued.das.authority.SystemAuthorityProtos;
 import com.blued.das.message.MessageProtos;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.soft.blued.log.InstantLog;
 import com.soft.blued.log.track.EventTrackMessage;
 import com.soft.blued.log.track.EventTrackSystemAuthority;
@@ -23,7 +24,7 @@ import java.net.URLDecoder;
 public class PushCommonUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f29737a = PushCommonUtils.class.getSimpleName();
+    public static final String f16047a = PushCommonUtils.class.getSimpleName();
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/push/PushCommonUtils$RedirectType.class */
     public interface RedirectType {
@@ -40,7 +41,7 @@ public class PushCommonUtils {
             WebViewShowInfoFragment.show(context, liveMsgShareEntity.link, -1);
         } else if (liveMsgShareEntity.redirect == 1 || liveMsgShareEntity.redirect == 4) {
             HomeArgumentHelper.a(context, "msg", ChatHelperV4.a().a(liveMsgShareEntity));
-            String str = f29737a;
+            String str = f16047a;
             Log.e(str, "doRedirectPush" + pushMsgModel);
         } else if (liveMsgShareEntity.redirect == 2) {
             HomeArgumentHelper.a(context, "mine", ChatHelperV4.a().a(liveMsgShareEntity));
@@ -80,7 +81,7 @@ public class PushCommonUtils {
             return;
         }
         if (StringUtils.d(pushMsgModel.extra.link)) {
-            str = ((int) pushMsgModel.session_type) + "&" + pushMsgModel.session_id + "&" + pushMsgModel.extra.push_type;
+            str = ((int) pushMsgModel.session_type) + ContainerUtils.FIELD_DELIMITER + pushMsgModel.session_id + ContainerUtils.FIELD_DELIMITER + pushMsgModel.extra.push_type;
         } else {
             String str2 = pushMsgModel.extra.link;
             try {

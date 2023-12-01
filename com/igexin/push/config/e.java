@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f23377a = "FileConfig";
+    private static String f9769a = "FileConfig";
 
     /* JADX WARN: Removed duplicated region for block: B:33:0x0093 A[Catch: all -> 0x0147, Exception -> 0x0194, TryCatch #16 {Exception -> 0x0194, all -> 0x0147, blocks: (B:31:0x0083, B:33:0x0093, B:36:0x00cf, B:37:0x00d8, B:38:0x00d9, B:38:0x00d9, B:39:0x00dc, B:40:0x00e4), top: B:118:0x0083 }] */
     /* JADX WARN: Removed duplicated region for block: B:45:0x00ff A[Catch: all -> 0x012a, Exception -> 0x01a3, TRY_ENTER, TryCatch #15 {Exception -> 0x01a3, all -> 0x012a, blocks: (B:43:0x00f7, B:45:0x00ff, B:47:0x0108), top: B:119:0x00f7 }] */
@@ -243,19 +243,19 @@ public final class e {
                                         d.v = Long.parseLong(trim2) * 1000;
                                         break;
                                     case true:
-                                        com.igexin.push.f.g.f23648a = trim2;
+                                        com.igexin.push.f.g.f10040a = trim2;
                                         break;
                                     case true:
                                         com.igexin.push.f.g.b = trim2;
                                         break;
                                 }
-                                com.igexin.c.a.c.a.a(f23377a, "loadConfigFromFile, config line:".concat(String.valueOf(readLine)));
+                                com.igexin.c.a.c.a.a(f9769a, "loadConfigFromFile, config line:".concat(String.valueOf(readLine)));
                             }
                         }
                     } catch (Exception e2) {
                         StringBuilder sb = new StringBuilder();
                         BufferedReader bufferedReader3 = bufferedReader;
-                        sb.append(f23377a);
+                        sb.append(f9769a);
                         BufferedReader bufferedReader4 = bufferedReader;
                         sb.append("｜no config file found.");
                         BufferedReader bufferedReader5 = bufferedReader;
@@ -308,7 +308,7 @@ public final class e {
 
     public static void a(boolean z, boolean z2) {
         try {
-            com.igexin.push.core.d.c.a().a(com.igexin.push.core.d.c.f23478a, Boolean.valueOf(z));
+            com.igexin.push.core.d.c.a().a(com.igexin.push.core.d.c.f9870a, Boolean.valueOf(z));
             com.igexin.push.core.d.c.a().a(com.igexin.push.core.d.c.b, Boolean.valueOf(z2));
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
@@ -317,9 +317,9 @@ public final class e {
 
     public static int b() {
         try {
-            Boolean a2 = com.igexin.push.core.d.c.a().a(com.igexin.push.core.d.c.f23478a);
+            Boolean a2 = com.igexin.push.core.d.c.a().a(com.igexin.push.core.d.c.f9870a);
             int i = a2 == null ? -1 : a2.booleanValue() ? 1 : 0;
-            com.igexin.c.a.c.a.a(f23377a + "|getGuardMeFromFile gm= " + i, new Object[0]);
+            com.igexin.c.a.c.a.a(f9769a + "|getGuardMeFromFile gm= " + i, new Object[0]);
             return i;
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);
@@ -427,7 +427,7 @@ public final class e {
         try {
             Boolean a2 = com.igexin.push.core.d.c.a().a(com.igexin.push.core.d.c.b);
             int i = a2 == null ? -1 : a2.booleanValue() ? 1 : 0;
-            com.igexin.c.a.c.a.a(f23377a + "|getGuardOthersFromFile gm= " + i, new Object[0]);
+            com.igexin.c.a.c.a.a(f9769a + "|getGuardOthersFromFile gm= " + i, new Object[0]);
             return i;
         } catch (Throwable th) {
             com.igexin.c.a.c.a.a(th);

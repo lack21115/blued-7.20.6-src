@@ -6,15 +6,15 @@ import org.json.JSONObject;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f23843a;
+    public String f10235a;
     private JSONObject b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f23844c;
+    private String f10236c;
     private String d;
 
     public m(String str, JSONObject jSONObject) {
-        this.f23843a = str;
+        this.f10235a = str;
         this.b = jSONObject;
     }
 
@@ -23,11 +23,11 @@ public class m {
     }
 
     public void a(String str) {
-        this.f23844c = str;
+        this.f10236c = str;
     }
 
     public String b() {
-        return this.f23844c;
+        return this.f10236c;
     }
 
     public void b(String str) {

@@ -16,7 +16,7 @@ import java.util.zip.GZIPInputStream;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    Map<String, Long> f21833a = new HashMap();
+    Map<String, Long> f8226a = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static long a(f.a aVar) {

@@ -42,7 +42,7 @@ public class JsonUtil {
     }
 
     private static boolean durationIsValid(long j, int i) {
-        if (j < -315576000000L || j > 315576000000L) {
+        if (j < DURATION_SECONDS_MIN || j > DURATION_SECONDS_MAX) {
             return false;
         }
         long j2 = i;

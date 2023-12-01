@@ -1,7 +1,6 @@
 package com.blued.android.module.live_china.fragment;
 
 import android.content.Context;
-import android.os.BatteryManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -64,15 +63,11 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
     private short X;
     private LiveFansInfoModel Y;
     private LiveGiftModel Z;
-
-    /* renamed from: a  reason: collision with root package name */
-    View f12851a;
+    View a;
     private Context aa;
     private MyAdapter ac;
     View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    View f12852c;
+    View c;
     View d;
     TextView e;
     TextView f;
@@ -98,26 +93,21 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveFansGuestFragment$MyAdapter.class */
     public class MyAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        FragmentManager f12854a;
+        FragmentManager a;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f12854a = fragmentManager;
+            this.a = fragmentManager;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
             super.destroyItem(viewGroup, i, obj);
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return LiveFansGuestFragment.this.ab.size();
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             if (i < LiveFansGuestFragment.this.ab.size()) {
                 return (Fragment) LiveFansGuestFragment.this.ab.get(i);
@@ -184,7 +174,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
 
     private void b(LiveFansInfoModel liveFansInfoModel) {
         EventTrackLive.a(LiveProtos.Event.FANS_CLUB_PAGE_NO_JOIN_PAGE_SHOW, String.valueOf(this.T), LiveRoomInfo.a().f());
-        this.f12851a.setVisibility(0);
+        this.a.setVisibility(0);
         this.e.setText(liveFansInfoModel.anchor_name);
         this.f.setText(String.format(getString(R.string.live_fans_not_add_tip_1), Integer.valueOf(liveFansInfoModel.member_total)));
         this.m.setVisibility(8);
@@ -209,7 +199,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
     }
 
     private void c(LiveFansInfoModel liveFansInfoModel) {
-        this.f12851a.setVisibility(0);
+        this.a.setVisibility(0);
         this.e.setText(liveFansInfoModel.anchor_name);
         this.f.setText(String.format(getString(R.string.live_fans_not_add_tip_1), Integer.valueOf(liveFansInfoModel.member_total)));
         TextView textView = this.C;
@@ -227,7 +217,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
         if (getArguments() != null) {
             this.U = getArguments().getString("uid");
             this.T = getArguments().getLong("lid");
-            this.V = getArguments().getInt(BatteryManager.EXTRA_LEVEL);
+            this.V = getArguments().getInt("level");
             this.W = getArguments().getBoolean("DefaultTagFansGroup", false);
             this.X = getArguments().getShort(ReqAckPackage.REQ_RESPONSE_KEY.SESSION_TYPE);
         }
@@ -235,7 +225,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
 
     private void d(LiveFansInfoModel liveFansInfoModel) {
         EventTrackLive.a(LiveProtos.Event.FANS_CLUB_PAGE_JOIN_PAGE_SHOW, String.valueOf(this.T), LiveRoomInfo.a().f());
-        this.f12851a.setVisibility(8);
+        this.a.setVisibility(8);
         a(liveFansInfoModel.anchor_name, liveFansInfoModel.member_total);
         this.m.setVisibility(8);
         this.o.setVisibility(8);
@@ -254,15 +244,12 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
         this.ac = myAdapter;
         this.H.setAdapter(myAdapter);
         this.H.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveFansGuestFragment.1
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i2, float f, int i3) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i2) {
                 LiveFansGuestFragment.this.a(!LiveRoomManager.a().U() ? i2 + 1 : i2);
                 LiveFansGuestFragment.this.b(i2);
@@ -277,9 +264,9 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
     }
 
     private void e() {
-        this.f12851a = this.i.findViewById(R.id.ll_fans_title);
+        this.a = this.i.findViewById(R.id.ll_fans_title);
         this.b = this.i.findViewById(R.id.empty_view);
-        this.f12852c = this.i.findViewById(R.id.iv_fans_member);
+        this.c = this.i.findViewById(R.id.iv_fans_member);
         this.d = this.i.findViewById(R.id.iv_fans_member_back);
         this.e = (TextView) this.i.findViewById(R.id.tv_fans_title);
         this.f = (TextView) this.i.findViewById(R.id.tv_fans_num);
@@ -290,7 +277,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
         this.n = this.i.findViewById(R.id.tv_fans_open);
         this.o = this.i.findViewById(R.id.ll_not_add);
         this.p = (ImageView) this.i.findViewById(R.id.iv_ticket);
-        this.q = (RecyclerView) this.i.findViewById(R.id.rv_privilege);
+        this.q = this.i.findViewById(R.id.rv_privilege);
         this.r = this.i.findViewById(R.id.tv_fans_add);
         this.s = (TextView) this.i.findViewById(R.id.tv_ticket_num);
         this.t = this.i.findViewById(R.id.ll_re_open);
@@ -307,7 +294,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
         this.E = (TextView) this.i.findViewById(R.id.tv_bar_day_tip);
         this.F = (LiveFansProgressView) this.i.findViewById(R.id.bar_fans);
         this.G = (TextView) this.i.findViewById(R.id.tv_bar_tip);
-        this.H = (ViewPager) this.i.findViewById(R.id.view_pager);
+        this.H = this.i.findViewById(R.id.view_pager);
         this.I = this.i.findViewById(R.id.ll_tab_rank);
         this.J = this.i.findViewById(R.id.ll_tab_task);
         this.K = this.i.findViewById(R.id.ll_tab_group);
@@ -324,8 +311,8 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
         this.N = this.i.findViewById(R.id.line_group);
         this.R = (ImageView) this.i.findViewById(R.id.iv_group_qa);
         this.S = (ProgressBar) this.i.findViewById(R.id.loading_view);
-        this.f12852c.setVisibility(0);
-        this.f12852c.setOnClickListener(this);
+        this.c.setVisibility(0);
+        this.c.setOnClickListener(this);
         this.d.setVisibility(8);
         this.m.setVisibility(8);
         this.o.setVisibility(8);
@@ -350,8 +337,8 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
     }
 
     private void v() {
-        this.f12851a.setVisibility(0);
-        this.f12852c.setVisibility(8);
+        this.a.setVisibility(0);
+        this.c.setVisibility(8);
         this.d.setVisibility(8);
         this.e.setVisibility(8);
         this.g.setVisibility(8);
@@ -364,8 +351,8 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
     }
 
     private void w() {
-        this.f12851a.setVisibility(0);
-        this.f12852c.setVisibility(8);
+        this.a.setVisibility(0);
+        this.c.setVisibility(8);
         this.d.setVisibility(8);
         this.e.setVisibility(8);
         this.g.setVisibility(8);
@@ -449,7 +436,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
 
     public LiveFansGuestDialogFragment b() {
         if (getParentFragment() instanceof LiveFansGuestDialogFragment) {
-            return (LiveFansGuestDialogFragment) getParentFragment();
+            return getParentFragment();
         }
         return null;
     }
@@ -488,14 +475,14 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
 
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
-        LiveFansGuestDialogFragment liveFansGuestDialogFragment;
+        LiveFansGuestDialogFragment parentFragment;
         Tracker.onClick(view);
         int id = view.getId();
         if (id == R.id.iv_fans_member) {
-            if (!(getParentFragment() instanceof LiveFansGuestDialogFragment) || (liveFansGuestDialogFragment = (LiveFansGuestDialogFragment) getParentFragment()) == null) {
+            if (!(getParentFragment() instanceof LiveFansGuestDialogFragment) || (parentFragment = getParentFragment()) == null) {
                 return;
             }
-            liveFansGuestDialogFragment.a(1);
+            parentFragment.a(1);
         } else if (id == R.id.tv_fans_open) {
             EventTrackLive.a(LiveProtos.Event.FANS_CLUB_PAGE_NO_FIVE_PAGE_GLOW_STICK_CLICK, String.valueOf(this.T), LiveRoomInfo.a().f());
             if (b() != null) {
@@ -547,7 +534,7 @@ public class LiveFansGuestFragment extends MvpFragment<LiveFansGuestPresent> imp
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.aa = getContext();

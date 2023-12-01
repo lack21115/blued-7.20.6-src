@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import androidx.fragment.app.Fragment;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
@@ -46,7 +47,7 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
     private String G;
 
     /* renamed from: c  reason: collision with root package name */
-    public BluedGroupCheck.GroupFailureReason f33713c;
+    public BluedGroupCheck.GroupFailureReason f20022c;
     boolean f;
     private RenrenPullToRefreshPinnedSectionListView j;
     private ListView k;
@@ -63,7 +64,7 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
     private static final String i = TagGroupFragment.class.getSimpleName();
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f33712a = 0;
+    public static int f20021a = 0;
     public static String d = "ISNEARBY";
     public static String g = "TAG";
     private int n = 1;
@@ -75,7 +76,6 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
     int e = 1;
     public BluedUIHttpResponse h = new BluedUIHttpResponse<BluedEntityA<BluedGroupLists>>() { // from class: com.soft.blued.ui.tag_show.TagGroupFragment.3
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedGroupLists> bluedEntityA) {
             if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0) {
@@ -104,7 +104,6 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
             TagGroupFragment.this.q.notifyDataSetChanged();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             TagGroupFragment.this.j.j();
             TagGroupFragment.this.j.q();
@@ -124,7 +123,7 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
             if (bluedGroupLists == null || bluedGroupLists.is_title == 1) {
                 return;
             }
-            GroupInfoFragment.a(TagGroupFragment.this, bluedGroupLists.groups_gid, 100);
+            GroupInfoFragment.a((Fragment) TagGroupFragment.this, bluedGroupLists.groups_gid, 100);
         }
     }
 
@@ -134,7 +133,6 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
         private MyPullDownListener() {
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.OnPullDownListener
         public void a() {
             TagGroupFragment.this.n = 1;
             TagGroupFragment.this.f = false;
@@ -142,7 +140,6 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
             TagGroupFragment.this.a(false);
         }
 
-        @Override // com.blued.android.framework.view.pulltorefresh.RenrenPullToRefreshPinnedSectionListView.OnPullDownListener
         public void b() {
             TagGroupFragment.i(TagGroupFragment.this);
             TagGroupFragment.this.a(false);
@@ -160,10 +157,10 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
         }
         if (!this.p && (i2 = this.n) != 1) {
             this.n = i2 - 1;
-            AppMethods.a((CharSequence) this.s.getResources().getString(2131887275));
+            AppMethods.a(this.s.getResources().getString(2131887275));
             this.j.j();
         } else if (StringUtils.d(this.G)) {
-            AppMethods.a((CharSequence) getResources().getString(R.string.group_search_prompt));
+            AppMethods.a(getResources().getString(R.string.group_search_prompt));
         } else {
             GroupHttpUtils.a(getActivity(), this.h, this.G, UserFindResult.USER_SORT_BY.NEARBY, this.n + "", this.o + "", getFragmentActive());
         }
@@ -178,18 +175,18 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
         }
         LayoutInflater layoutInflater = (LayoutInflater) this.s.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.t = layoutInflater;
-        f33712a = 0;
+        f20021a = 0;
         View inflate = layoutInflater.inflate(R.layout.fragment_group_lists_header, (ViewGroup) null);
         this.u = inflate;
         this.v = (TextView) inflate.findViewById(R.id.tv_same_city);
         this.w = (TextView) this.u.findViewById(R.id.tv_recommended_category);
-        SearchView searchView = (SearchView) this.u.findViewById(R.id.group_search);
-        this.B = searchView;
-        searchView.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.tag_show.TagGroupFragment.1
+        SearchView findViewById = this.u.findViewById(R.id.group_search);
+        this.B = findViewById;
+        findViewById.setMaskLayerOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.tag_show.TagGroupFragment.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                TerminalActivity.d(TagGroupFragment.this.s, GroupSearchFragment.class, null);
+                TerminalActivity.d(TagGroupFragment.this.s, GroupSearchFragment.class, (Bundle) null);
             }
         });
         this.v.setOnClickListener(this);
@@ -202,13 +199,13 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
     private void c() {
         this.D = LayoutInflater.from(this.s);
         this.C = new ArrayList();
-        this.f33713c = new BluedGroupCheck.GroupFailureReason();
+        this.f20022c = new BluedGroupCheck.GroupFailureReason();
         this.z = new ArrayList();
         this.l = new ArrayList();
         this.m = new ArrayList();
-        RenrenPullToRefreshPinnedSectionListView renrenPullToRefreshPinnedSectionListView = (RenrenPullToRefreshPinnedSectionListView) this.r.findViewById(R.id.my_grouplist_pullrefresh);
-        this.j = renrenPullToRefreshPinnedSectionListView;
-        renrenPullToRefreshPinnedSectionListView.setRefreshEnabled(true);
+        RenrenPullToRefreshPinnedSectionListView findViewById = this.r.findViewById(R.id.my_grouplist_pullrefresh);
+        this.j = findViewById;
+        findViewById.setRefreshEnabled(true);
         this.j.postDelayed(new Runnable() { // from class: com.soft.blued.ui.tag_show.TagGroupFragment.2
             @Override // java.lang.Runnable
             public void run() {
@@ -238,12 +235,10 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
         return i2;
     }
 
-    @Override // com.blued.android.module.common.observer.CommonTitleDoubleClickObserver.ITitleClickObserver
     public void a() {
         this.k.smoothScrollToPosition(0);
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i2, int i3, Intent intent) {
         super.onActivityResult(i2, i3, intent);
         if (i2 != 100) {
@@ -261,12 +256,10 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
         getActivity().finish();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.s = getActivity();
         View view = this.r;
@@ -281,7 +274,6 @@ public class TagGroupFragment extends BaseFragment implements View.OnClickListen
         return this.r;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         CommonTitleDoubleClickObserver.a().b(this);
         super.onDestroy();

@@ -19,13 +19,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMedalInfoDialog.class */
 public final class YYMedalInfoDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogMedalInfoBinding f18304a;
+    private DialogMedalInfoBinding a;
     private YYUserInfo b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f18305c;
+    private String c;
     private BaseYYStudioFragment d;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -81,8 +77,8 @@ public final class YYMedalInfoDialog extends BaseFullScreenDialog {
                 }
             }
         }
-        DialogMedalInfoBinding dialogMedalInfoBinding = this.f18304a;
-        if (dialogMedalInfoBinding == null || (frameLayout = dialogMedalInfoBinding.f16364a) == null) {
+        DialogMedalInfoBinding dialogMedalInfoBinding = this.a;
+        if (dialogMedalInfoBinding == null || (frameLayout = dialogMedalInfoBinding.a) == null) {
             return;
         }
         frameLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYMedalInfoDialog$gP30AZTl1xJiecLf3GV1-Xs9cFQ
@@ -99,12 +95,12 @@ public final class YYMedalInfoDialog extends BaseFullScreenDialog {
         Intrinsics.e(fra, "fra");
         this.b = info;
         this.d = fra;
-        this.f18305c = bid;
+        this.c = bid;
         return this;
     }
 
     public final DialogMedalInfoBinding f() {
-        return this.f18304a;
+        return this.a;
     }
 
     public final YYUserInfo g() {
@@ -112,19 +108,19 @@ public final class YYMedalInfoDialog extends BaseFullScreenDialog {
     }
 
     public final String h() {
-        return this.f18305c;
+        return this.c;
     }
 
     public final BaseYYStudioFragment i() {
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
-        this.f18304a = DialogMedalInfoBinding.a(inflater.inflate(R.layout.dialog_medal_info, viewGroup, true));
+        this.a = DialogMedalInfoBinding.a(inflater.inflate(R.layout.dialog_medal_info, viewGroup, true));
         j();
-        DialogMedalInfoBinding dialogMedalInfoBinding = this.f18304a;
+        DialogMedalInfoBinding dialogMedalInfoBinding = this.a;
         return dialogMedalInfoBinding == null ? null : dialogMedalInfoBinding.getRoot();
     }
 }

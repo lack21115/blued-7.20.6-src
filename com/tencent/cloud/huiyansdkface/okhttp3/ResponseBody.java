@@ -15,44 +15,44 @@ import java.nio.charset.Charset;
 public abstract class ResponseBody implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    private Reader f35893a;
+    private Reader f22202a;
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/ResponseBody$BomAwareReader.class */
     static final class BomAwareReader extends Reader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final BufferedSource f35896a;
+        private final BufferedSource f22205a;
         private final Charset b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f35897c;
+        private boolean f22206c;
         private Reader d;
 
         BomAwareReader(BufferedSource bufferedSource, Charset charset) {
-            this.f35896a = bufferedSource;
+            this.f22205a = bufferedSource;
             this.b = charset;
         }
 
         @Override // java.io.Reader, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
-            this.f35897c = true;
+            this.f22206c = true;
             Reader reader = this.d;
             if (reader != null) {
                 reader.close();
             } else {
-                this.f35896a.close();
+                this.f22205a.close();
             }
         }
 
         @Override // java.io.Reader
         public int read(char[] cArr, int i, int i2) throws IOException {
-            if (this.f35897c) {
+            if (this.f22206c) {
                 throw new IOException("Stream closed");
             }
             Reader reader = this.d;
             InputStreamReader inputStreamReader = reader;
             if (reader == null) {
-                inputStreamReader = new InputStreamReader(this.f35896a.inputStream(), Util.bomAwareCharset(this.f35896a, this.b));
+                inputStreamReader = new InputStreamReader(this.f22205a.inputStream(), Util.bomAwareCharset(this.f22205a, this.b));
                 this.d = inputStreamReader;
             }
             return inputStreamReader.read(cArr, i, i2);
@@ -134,12 +134,12 @@ public abstract class ResponseBody implements Closeable {
     }
 
     public final Reader charStream() {
-        Reader reader = this.f35893a;
+        Reader reader = this.f22202a;
         if (reader != null) {
             return reader;
         }
         BomAwareReader bomAwareReader = new BomAwareReader(source(), a());
-        this.f35893a = bomAwareReader;
+        this.f22202a = bomAwareReader;
         return bomAwareReader;
     }
 

@@ -40,8 +40,8 @@ public class b extends SQLiteOpenHelper {
             ContentValues contentValues = new ContentValues();
             contentValues.put("posId", str);
             contentValues.put("data", adEntity.b);
-            contentValues.put("validTime", Long.valueOf(adEntity.f27111c));
-            contentValues.put("posData", adEntity.f27110a);
+            contentValues.put("validTime", Long.valueOf(adEntity.f13423c));
+            contentValues.put("posData", adEntity.f13422a);
             getWritableDatabase().replace("mobad_ad", null, contentValues);
         }
     }

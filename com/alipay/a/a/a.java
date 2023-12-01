@@ -33,12 +33,12 @@ public final class a implements i, j {
             throw new IllegalArgumentException("Does not support generic array!");
         }
         Class<?> componentType = ((Class) type).getComponentType();
-        int a2 = aVar.a();
-        Object newInstance = Array.newInstance(componentType, a2);
+        int a = aVar.a();
+        Object newInstance = Array.newInstance(componentType, a);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= a2) {
+            if (i2 >= a) {
                 return newInstance;
             }
             Array.set(newInstance, i2, e.a(aVar.a(i2), componentType));

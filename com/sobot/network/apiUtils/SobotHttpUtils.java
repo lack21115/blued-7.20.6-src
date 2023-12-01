@@ -60,7 +60,7 @@ public class SobotHttpUtils {
         SobotOkHttpUtils.getInstance().setHostNameVerifier(new HostnameVerifier() { // from class: com.sobot.network.apiUtils.SobotHttpUtils.1
             @Override // javax.net.ssl.HostnameVerifier
             public boolean verify(String str2, SSLSession sSLSession) {
-                if (TextUtils.isEmpty(String.this) || !String.this.contains(str2)) {
+                if (TextUtils.isEmpty(str) || !str.contains(str2)) {
                     return HttpsURLConnection.getDefaultHostnameVerifier().verify(str2, sSLSession);
                 }
                 return true;

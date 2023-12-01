@@ -10,13 +10,9 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @DebugMetadata(b = "Deprecated.kt", c = {113, 116}, d = "lastOrNull", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$lastOrNull$1.class */
 public final class ChannelsKt__DeprecatedKt$lastOrNull$1<E> extends ContinuationImpl {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42956a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    Object f42957c;
+    Object c;
     /* synthetic */ Object d;
     int e;
 

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ViewExpProgressBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29616a;
+    private final FrameLayout f15926a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29616a;
+        return this.f15926a;
     }
 }

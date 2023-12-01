@@ -14,10 +14,10 @@ public final class UnitBitmapDecoder implements ResourceDecoder<Bitmap, Bitmap> 
     public static final class NonOwnedBitmapResource implements Resource<Bitmap> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Bitmap f20977a;
+        private final Bitmap f7371a;
 
         NonOwnedBitmapResource(Bitmap bitmap) {
-            this.f20977a = bitmap;
+            this.f7371a = bitmap;
         }
 
         @Override // com.bumptech.glide.load.engine.Resource
@@ -27,7 +27,7 @@ public final class UnitBitmapDecoder implements ResourceDecoder<Bitmap, Bitmap> 
 
         @Override // com.bumptech.glide.load.engine.Resource
         public int b() {
-            return Util.a(this.f20977a);
+            return Util.a(this.f7371a);
         }
 
         @Override // com.bumptech.glide.load.engine.Resource
@@ -37,7 +37,7 @@ public final class UnitBitmapDecoder implements ResourceDecoder<Bitmap, Bitmap> 
         @Override // com.bumptech.glide.load.engine.Resource
         /* renamed from: d */
         public Bitmap f() {
-            return this.f20977a;
+            return this.f7371a;
         }
     }
 

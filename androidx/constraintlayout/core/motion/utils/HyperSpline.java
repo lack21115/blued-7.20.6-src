@@ -6,11 +6,11 @@ import java.lang.reflect.Array;
 public class HyperSpline {
 
     /* renamed from: a  reason: collision with root package name */
-    int f2030a;
+    int f1982a;
     Cubic[][] b;
 
     /* renamed from: c  reason: collision with root package name */
-    int f2031c;
+    int f1983c;
     double[] d;
     double e;
     double[][] f;
@@ -19,26 +19,26 @@ public class HyperSpline {
     public static class Cubic {
 
         /* renamed from: a  reason: collision with root package name */
-        double f2032a;
+        double f1984a;
         double b;
 
         /* renamed from: c  reason: collision with root package name */
-        double f2033c;
+        double f1985c;
         double d;
 
         public Cubic(double d, double d2, double d3, double d4) {
-            this.f2032a = d;
+            this.f1984a = d;
             this.b = d2;
-            this.f2033c = d3;
+            this.f1985c = d3;
             this.d = d4;
         }
 
         public double eval(double d) {
-            return (((((this.d * d) + this.f2033c) * d) + this.b) * d) + this.f2032a;
+            return (((((this.d * d) + this.f1985c) * d) + this.b) * d) + this.f1984a;
         }
 
         public double vel(double d) {
-            return (((this.d * 3.0d * d) + (this.f2033c * 2.0d)) * d) + this.b;
+            return (((this.d * 3.0d * d) + (this.f1985c * 2.0d)) * d) + this.b;
         }
     }
 
@@ -240,21 +240,21 @@ public class HyperSpline {
     public void setup(double[][] dArr) {
         int i;
         int length = dArr[0].length;
-        this.f2031c = length;
+        this.f1983c = length;
         int length2 = dArr.length;
-        this.f2030a = length2;
+        this.f1982a = length2;
         this.f = (double[][]) Array.newInstance(Double.TYPE, length, length2);
-        this.b = new Cubic[this.f2031c];
+        this.b = new Cubic[this.f1983c];
         int i2 = 0;
         while (true) {
             int i3 = i2;
-            if (i3 >= this.f2031c) {
+            if (i3 >= this.f1983c) {
                 break;
             }
             int i4 = 0;
             while (true) {
                 int i5 = i4;
-                if (i5 < this.f2030a) {
+                if (i5 < this.f1982a) {
                     this.f[i3][i5] = dArr[i5][i3];
                     i4 = i5 + 1;
                 }
@@ -264,7 +264,7 @@ public class HyperSpline {
         int i6 = 0;
         while (true) {
             int i7 = i6;
-            i = this.f2031c;
+            i = this.f1983c;
             if (i7 >= i) {
                 break;
             }
@@ -273,7 +273,7 @@ public class HyperSpline {
             cubicArr[i7] = a(dArr2[i7].length, dArr2[i7]);
             i6 = i7 + 1;
         }
-        this.d = new double[this.f2030a - 1];
+        this.d = new double[this.f1982a - 1];
         this.e = 0.0d;
         Cubic[] cubicArr2 = new Cubic[i];
         int i8 = 0;
@@ -285,7 +285,7 @@ public class HyperSpline {
             int i10 = 0;
             while (true) {
                 int i11 = i10;
-                if (i11 < this.f2031c) {
+                if (i11 < this.f1983c) {
                     cubicArr2[i11] = this.b[i11][i9];
                     i10 = i11 + 1;
                 }

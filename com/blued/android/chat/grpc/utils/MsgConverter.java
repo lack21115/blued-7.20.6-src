@@ -1,6 +1,7 @@
 package com.blued.android.chat.grpc.utils;
 
 import android.text.TextUtils;
+import com.anythink.core.common.l;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.data.MsgType;
 import com.blued.android.chat.model.ChattingModel;
@@ -256,7 +257,7 @@ public class MsgConverter {
             String str = "";
             if (!jsonElement2.isJsonNull()) {
                 int asInt = jsonElement2.getAsInt();
-                JsonElement jsonElement3 = asJsonObject2.get("content");
+                JsonElement jsonElement3 = asJsonObject2.get(l.y);
                 i = asInt;
                 str = "";
                 if (!jsonElement3.isJsonNull()) {

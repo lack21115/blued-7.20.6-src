@@ -9,11 +9,11 @@ import javax.net.ssl.SSLSocketFactory;
 public class w1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final q f42220a;
+    public final q f28529a;
     public final List<g0> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final SSLSocketFactory f42221c;
+    public final SSLSocketFactory f28530c;
     public final HostnameVerifier d;
     public final boolean e;
     public final int f;
@@ -23,22 +23,22 @@ public class w1 {
     public static final class a {
 
         /* renamed from: c  reason: collision with root package name */
-        public SSLSocketFactory f42223c;
+        public SSLSocketFactory f28532c;
         public final List<g0> b = new ArrayList();
 
         /* renamed from: a  reason: collision with root package name */
-        public q f42222a = new q();
+        public q f28531a = new q();
         public boolean e = true;
         public int f = 7000;
         public int g = 7000;
-        public HostnameVerifier d = v1.f42218a;
+        public HostnameVerifier d = v1.f28527a;
     }
 
     public w1(a aVar) {
-        this.f42220a = aVar.f42222a;
+        this.f28529a = aVar.f28531a;
         List<g0> a2 = l1.a(aVar.b);
         this.b = a2;
-        this.f42221c = aVar.f42223c;
+        this.f28530c = aVar.f28532c;
         this.d = aVar.d;
         this.e = aVar.e;
         this.f = aVar.f;

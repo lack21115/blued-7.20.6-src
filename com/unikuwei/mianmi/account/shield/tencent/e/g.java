@@ -6,16 +6,16 @@ import android.util.Log;
 public class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private static boolean f41007a = true;
+    private static boolean f27316a = true;
 
     public static void a(String str) {
-        if (f41007a) {
+        if (f27316a) {
             Log.i("uniaccount", "5.2.0AK002B1125 " + str);
         }
     }
 
     public static void a(boolean z) {
-        f41007a = z;
+        f27316a = z;
     }
 
     public static void b(String str) {

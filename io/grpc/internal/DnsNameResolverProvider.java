@@ -12,17 +12,14 @@ import java.net.URI;
 public final class DnsNameResolverProvider extends NameResolverProvider {
     private static final String SCHEME = "dns";
 
-    @Override // io.grpc.NameResolver.Factory
     public String getDefaultScheme() {
         return SCHEME;
     }
 
-    @Override // io.grpc.NameResolverProvider
     public boolean isAvailable() {
         return true;
     }
 
-    @Override // io.grpc.NameResolver.Factory
     public DnsNameResolver newNameResolver(URI uri, NameResolver.Args args) {
         if (SCHEME.equals(uri.getScheme())) {
             String str = (String) Preconditions.checkNotNull(uri.getPath(), "targetPath");
@@ -32,7 +29,6 @@ public final class DnsNameResolverProvider extends NameResolverProvider {
         return null;
     }
 
-    @Override // io.grpc.NameResolverProvider
     public int priority() {
         return 5;
     }

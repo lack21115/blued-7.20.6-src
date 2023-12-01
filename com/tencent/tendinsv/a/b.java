@@ -13,11 +13,11 @@ interface b {
         public static final String F = "sid";
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f38989a = "id";
+        public static final String f25298a = "id";
         public static final String b = "DID";
 
         /* renamed from: c  reason: collision with root package name */
-        public static final String f38990c = "IMEI";
+        public static final String f25299c = "IMEI";
         public static final String d = "IMSI";
         public static final String e = "ICCID";
         public static final String f = "MAC";

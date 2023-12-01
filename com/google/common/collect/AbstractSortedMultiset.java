@@ -41,7 +41,7 @@ abstract class AbstractSortedMultiset<E> extends AbstractMultiset<E> implements 
                 return AbstractSortedMultiset.this;
             }
 
-            @Override // com.google.common.collect.DescendingMultiset, com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable
+            @Override // com.google.common.collect.DescendingMultiset, com.google.common.collect.ForwardingCollection, java.util.Collection, java.lang.Iterable, java.util.Set
             public Iterator<E> iterator() {
                 return AbstractSortedMultiset.this.descendingIterator();
             }

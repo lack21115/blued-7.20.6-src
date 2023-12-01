@@ -21,6 +21,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.ui.ActivityFragmentActive;
@@ -44,9 +45,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetLotteryResultDialog.class */
 public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13119a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<LivePlanetLotteryResultDialogBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePlanetLotteryResultDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -59,9 +58,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
             return LivePlanetLotteryResultDialogBinding.a(LayoutInflater.from(LivePlanetLotteryResultDialog.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private PlanetDataExtraModel f13120c;
+    private PlanetDataExtraModel c;
     private boolean d;
     private boolean e;
     private CountDownTimer f;
@@ -154,7 +151,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         Intrinsics.c(relativeLayout2, "vb.rlWinningRoot");
         BluedViewExKt.a(relativeLayout2);
         ActivityFragmentActive a2 = a();
-        PlanetDataExtraModel planetDataExtraModel = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel = this.c;
         PlanetDataExtraModel planetDataExtraModel2 = planetDataExtraModel;
         if (planetDataExtraModel == null) {
             Intrinsics.c("data");
@@ -162,7 +159,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         }
         ImageLoader.a(a2, planetDataExtraModel2.getPlanet_image()).a(f().f);
         ActivityFragmentActive a3 = a();
-        PlanetDataExtraModel planetDataExtraModel3 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel3 = this.c;
         PlanetDataExtraModel planetDataExtraModel4 = planetDataExtraModel3;
         if (planetDataExtraModel3 == null) {
             Intrinsics.c("data");
@@ -172,7 +169,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         TextView textView = f().t;
         Context d = AppInfo.d();
         int i = R.string.live_planet_multiplying_power;
-        PlanetDataExtraModel planetDataExtraModel5 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel5 = this.c;
         PlanetDataExtraModel planetDataExtraModel6 = planetDataExtraModel5;
         if (planetDataExtraModel5 == null) {
             Intrinsics.c("data");
@@ -180,9 +177,9 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         }
         int i2 = 0;
         textView.setText(d.getString(i, Integer.valueOf(planetDataExtraModel6.getRate())));
-        ImageLoader.c(a(), "live_planet_item_power_flow.png").g().g(-1).a(f().f12367c);
+        ImageLoader.c(a(), "live_planet_item_power_flow.png").g().g(-1).a(f().c);
         TextView textView2 = f().s;
-        PlanetDataExtraModel planetDataExtraModel7 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel7 = this.c;
         if (planetDataExtraModel7 == null) {
             Intrinsics.c("data");
             planetDataExtraModel7 = null;
@@ -217,7 +214,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         Intrinsics.c(relativeLayout2, "vb.rlWinningRoot");
         BluedViewExKt.b(relativeLayout2);
         ActivityFragmentActive a2 = a();
-        PlanetDataExtraModel planetDataExtraModel = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel = this.c;
         PlanetDataExtraModel planetDataExtraModel2 = planetDataExtraModel;
         if (planetDataExtraModel == null) {
             Intrinsics.c("data");
@@ -225,7 +222,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         }
         ImageLoader.a(a2, planetDataExtraModel2.getPlanet_image()).a(f().g);
         ActivityFragmentActive a3 = a();
-        PlanetDataExtraModel planetDataExtraModel3 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel3 = this.c;
         PlanetDataExtraModel planetDataExtraModel4 = planetDataExtraModel3;
         if (planetDataExtraModel3 == null) {
             Intrinsics.c("data");
@@ -235,7 +232,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         TextView textView = f().u;
         Context d = AppInfo.d();
         int i = R.string.live_planet_multiplying_power;
-        PlanetDataExtraModel planetDataExtraModel5 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel5 = this.c;
         PlanetDataExtraModel planetDataExtraModel6 = planetDataExtraModel5;
         if (planetDataExtraModel5 == null) {
             Intrinsics.c("data");
@@ -246,14 +243,14 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         TextView textView2 = f().w;
         Context d2 = AppInfo.d();
         int i2 = R.string.live_planet_lottery_prize;
-        PlanetDataExtraModel planetDataExtraModel7 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel7 = this.c;
         PlanetDataExtraModel planetDataExtraModel8 = planetDataExtraModel7;
         if (planetDataExtraModel7 == null) {
             Intrinsics.c("data");
             planetDataExtraModel8 = null;
         }
         int ship_count = planetDataExtraModel8.getShip_count();
-        PlanetDataExtraModel planetDataExtraModel9 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel9 = this.c;
         PlanetDataExtraModel planetDataExtraModel10 = planetDataExtraModel9;
         if (planetDataExtraModel9 == null) {
             Intrinsics.c("data");
@@ -264,7 +261,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         TextView textView3 = f().x;
         Context d3 = AppInfo.d();
         int i3 = R.string.live_planet_prize;
-        PlanetDataExtraModel planetDataExtraModel11 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel11 = this.c;
         PlanetDataExtraModel planetDataExtraModel12 = planetDataExtraModel11;
         if (planetDataExtraModel11 == null) {
             Intrinsics.c("data");
@@ -272,7 +269,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         }
         textView3.setText(d3.getString(i3, Integer.valueOf(planetDataExtraModel12.getBeans())));
         f().x.setText(LiveUtils.a(f().x.getText(), "#FFD452", false));
-        PlanetDataExtraModel planetDataExtraModel13 = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel13 = this.c;
         if (planetDataExtraModel13 == null) {
             Intrinsics.c("data");
             planetDataExtraModel13 = null;
@@ -283,7 +280,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
             for (PlanetGiftModel planetGiftModel : goods_info) {
                 arrayList.add(new FitemPlanetGiftAward(planetGiftModel));
             }
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+            RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
             linearLayoutManager.setOrientation(0);
             f().q.setLayoutManager(linearLayoutManager);
             f().q.setAdapter(new FreedomAdapter(getContext(), a(), arrayList));
@@ -308,14 +305,15 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         f().l.animate().alpha(1.0f).setDuration(240L).setStartDelay(450L).start();
     }
 
+    /* JADX WARN: Type inference failed for: r1v7, types: [com.blued.android.module.live_china.fragment.LivePlanetLotteryResultDialog$setData$1] */
     public final void a(PlanetDataExtraModel extraData) {
         Intrinsics.e(extraData, "extraData");
-        this.f13120c = extraData;
+        this.c = extraData;
         if (this.d) {
             TextView textView = f().v;
             Context d = AppInfo.d();
             int i = R.string.live_planet_find_energy;
-            PlanetDataExtraModel planetDataExtraModel = this.f13120c;
+            PlanetDataExtraModel planetDataExtraModel = this.c;
             PlanetDataExtraModel planetDataExtraModel2 = planetDataExtraModel;
             if (planetDataExtraModel == null) {
                 Intrinsics.c("data");
@@ -356,7 +354,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
                     textView2.setText(sb.toString());
                 }
             }.start();
-            PlanetDataExtraModel planetDataExtraModel3 = this.f13120c;
+            PlanetDataExtraModel planetDataExtraModel3 = this.c;
             if (planetDataExtraModel3 == null) {
                 Intrinsics.c("data");
                 planetDataExtraModel3 = null;
@@ -370,17 +368,17 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
     }
 
     public final void d() {
-        if (this.f13120c == null) {
+        if (this.c == null) {
             Intrinsics.c("data");
         }
-        PlanetDataExtraModel planetDataExtraModel = this.f13120c;
+        PlanetDataExtraModel planetDataExtraModel = this.c;
         PlanetDataExtraModel planetDataExtraModel2 = planetDataExtraModel;
         if (planetDataExtraModel == null) {
             Intrinsics.c("data");
             planetDataExtraModel2 = null;
         }
         a(planetDataExtraModel2);
-        f().f12366a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetLotteryResultDialog$HtBorm_4c1m7oyPDGaI5P4a65LY
+        f().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetLotteryResultDialog$HtBorm_4c1m7oyPDGaI5P4a65LY
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetLotteryResultDialog.a(LivePlanetLotteryResultDialog.this, view);
@@ -388,7 +386,6 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         });
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void dismissAllowingStateLoss() {
         e();
         super.dismissAllowingStateLoss();
@@ -402,7 +399,6 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         this.f = null;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         WindowManager windowManager;
         Display defaultDisplay;
@@ -429,7 +425,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
@@ -438,7 +434,7 @@ public final class LivePlanetLotteryResultDialog extends BaseDialogFragment {
             }
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
             this.e = true;
         } catch (Exception e) {

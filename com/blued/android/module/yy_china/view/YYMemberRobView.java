@@ -21,9 +21,7 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMemberRobView.class */
 public class YYMemberRobView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyMemberRobBinding f18319a;
+    private ViewYyMemberRobBinding a;
     private YYRoomModel b;
 
     public YYMemberRobView(Context context) {
@@ -40,36 +38,37 @@ public class YYMemberRobView extends ConstraintLayout {
         a();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a() {
-        this.f18319a = ViewYyMemberRobBinding.a(LayoutInflater.from(getContext()), this, true);
+        this.a = ViewYyMemberRobBinding.a(LayoutInflater.from(getContext()), this, true);
     }
 
     public void a(IRequestHost iRequestHost, String str, String str2, YYImModel yYImModel) {
-        this.f18319a.f16934a.a(iRequestHost, str, str2, yYImModel);
+        this.a.a.a(iRequestHost, str, str2, yYImModel);
     }
 
     public void a(YYSeatMemberModel yYSeatMemberModel, ActivityFragmentActive activityFragmentActive) {
         YYRoomModel yYRoomModel = this.b;
         if (yYRoomModel == null || yYRoomModel.music == null || !TextUtils.equals(this.b.music.uid, yYSeatMemberModel.getUid())) {
-            TextView textView = this.f18319a.f16935c;
+            TextView textView = this.a.c;
             textView.setText(yYSeatMemberModel.mic_position + "");
-            this.f18319a.f16935c.setTextColor(getResources().getColor(R.color.syc_ffffff));
+            this.a.c.setTextColor(getResources().getColor(R.color.syc_ffffff));
         } else {
-            this.f18319a.f16935c.setText("演唱中");
-            this.f18319a.f16935c.setTextColor(getResources().getColor(R.color.syc_00E0AB));
+            this.a.c.setText("演唱中");
+            this.a.c.setTextColor(getResources().getColor(R.color.syc_00E0AB));
         }
-        this.f18319a.f16934a.a(yYSeatMemberModel, activityFragmentActive);
+        this.a.a.a(yYSeatMemberModel, activityFragmentActive);
     }
 
     public void a(YYBaseUserHeadView.GetViewX_Y_W_H getViewX_Y_W_H) {
-        this.f18319a.f16934a.a(getViewX_Y_W_H);
+        this.a.a.a(getViewX_Y_W_H);
     }
 
     public void a(String str) {
-        new SVGAPlayer.Builder(str).a((Integer) 1).a(SVGAImageView.FillMode.Clear).a(this.f18319a.b);
+        new SVGAPlayer.Builder(str).a((Integer) 1).a(SVGAImageView.FillMode.Clear).a(this.a.b);
     }
 
     public void a(Set<String> set, YYSeatMemberModel yYSeatMemberModel) {
-        this.f18319a.f16934a.a(set, yYSeatMemberModel);
+        this.a.a.a(set, yYSeatMemberModel);
     }
 }

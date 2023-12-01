@@ -1,7 +1,5 @@
 package com.android.org.conscrypt;
 
-import com.huawei.openalliance.ad.constant.at;
-import com.tencent.qcloud.core.auth.AuthConstants;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.Key;
@@ -31,7 +29,7 @@ public abstract class OpenSSLMac extends MacSpi {
 
     /* loaded from: source-273268-dex2jar.jar:com/android/org/conscrypt/OpenSSLMac$HmacSHA1.class */
     public static class HmacSHA1 extends OpenSSLMac {
-        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname(AuthConstants.SHA1);
+        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname("sha1");
         private static final int SIZE = NativeCrypto.EVP_MD_size(EVP_MD);
 
         public HmacSHA1() {
@@ -51,7 +49,7 @@ public abstract class OpenSSLMac extends MacSpi {
 
     /* loaded from: source-273268-dex2jar.jar:com/android/org/conscrypt/OpenSSLMac$HmacSHA256.class */
     public static class HmacSHA256 extends OpenSSLMac {
-        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname(at.aq);
+        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname("sha256");
         private static final int SIZE = NativeCrypto.EVP_MD_size(EVP_MD);
 
         public HmacSHA256() throws NoSuchAlgorithmException {

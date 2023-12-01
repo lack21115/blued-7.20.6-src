@@ -36,12 +36,12 @@ class TtmlRenderingWidget extends LinearLayout implements SubtitleTrack.Renderin
         this.mTextView.setGravity(81);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View, android.media.SubtitleTrack.RenderingWidget
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View, android.media.SubtitleTrack.RenderingWidget
     public void onDetachedFromWindow() {
         super.onDetachedFromWindow();
     }

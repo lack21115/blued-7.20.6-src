@@ -12,7 +12,7 @@ import java.util.List;
 public class LineScaleIndicator extends BaseIndicatorController {
 
     /* renamed from: a  reason: collision with root package name */
-    float[] f28615a = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+    float[] f14925a = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
 
     @Override // com.soft.blued.customview.loadingIndicator.BaseIndicatorController
     public List<Animator> a() {
@@ -30,7 +30,7 @@ public class LineScaleIndicator extends BaseIndicatorController {
             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.customview.loadingIndicator.LineScaleIndicator.1
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                    LineScaleIndicator.this.f28615a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    LineScaleIndicator.this.f14925a[i2] = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                     LineScaleIndicator.this.e();
                 }
             });
@@ -53,7 +53,7 @@ public class LineScaleIndicator extends BaseIndicatorController {
             canvas.save();
             float f = c2 / 2.0f;
             canvas.translate((((i2 * 2) + 2) * c2) - f, d);
-            canvas.scale(1.0f, this.f28615a[i2]);
+            canvas.scale(1.0f, this.f14925a[i2]);
             canvas.drawRoundRect(new RectF((-c2) / 2.0f, (-d()) / 2.5f, f, d() / 2.5f), 5.0f, 5.0f, paint);
             canvas.restore();
             i = i2 + 1;

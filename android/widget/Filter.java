@@ -5,7 +5,6 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-import com.anythink.expressad.video.module.a.a.m;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/Filter.class */
 public abstract class Filter {
@@ -75,7 +74,7 @@ public abstract class Filter {
                         requestArguments = Filter.this.mLock;
                         synchronized (requestArguments) {
                             if (Filter.this.mThreadHandler != null) {
-                                Filter.this.mThreadHandler.sendMessageDelayed(Filter.this.mThreadHandler.obtainMessage(Filter.FINISH_TOKEN), m.ag);
+                                Filter.this.mThreadHandler.sendMessageDelayed(Filter.this.mThreadHandler.obtainMessage(Filter.FINISH_TOKEN), 3000L);
                             }
                         }
                         return;

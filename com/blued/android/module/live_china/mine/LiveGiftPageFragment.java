@@ -11,10 +11,10 @@ import com.blued.android.module.live_china.R;
 public class LiveGiftPageFragment extends BaseGiftPageFragment {
     private int h = 0;
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment
     public void a() {
-        this.f10803a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.mine.LiveGiftPageFragment.1
-            @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
+        this.a.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.live_china.mine.LiveGiftPageFragment.1
             public void getItemOffsets(Rect rect, View view, RecyclerView recyclerView, RecyclerView.State state) {
                 rect.left = LiveGiftPageFragment.this.h;
                 rect.right = LiveGiftPageFragment.this.h;
@@ -23,13 +23,13 @@ public class LiveGiftPageFragment extends BaseGiftPageFragment {
         this.b = new LiveGiftAdapter(getActivity(), this, this.g);
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment
     public void onInitView() {
         super.onInitView();
         this.h = DensityUtils.a(getContext(), 2.0f);
     }
 
-    @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment, com.blued.android.framework.ui.SimpleFragment
+    @Override // com.blued.android.module.common.fragment.BaseGiftPageFragment
     public int onSetRootViewId() {
         return R.layout.fragment_live_gift_page;
     }

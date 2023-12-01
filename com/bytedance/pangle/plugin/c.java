@@ -26,6 +26,7 @@ import com.bytedance.pangle.util.FieldUtils;
 import com.bytedance.pangle.util.MethodUtils;
 import com.bytedance.pangle.util.i;
 import com.bytedance.pangle.wrapper.PluginApplicationWrapper;
+import com.huawei.openalliance.ad.constant.t;
 import dalvik.system.BaseDexClassLoader;
 import java.io.File;
 import java.util.HashMap;
@@ -39,7 +40,7 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final h f21450a = h.a();
+    private static final h f7844a = h.a();
 
     /* JADX INFO: Access modifiers changed from: private */
     public PackageInfo a(String str, final Plugin plugin, StringBuilder sb, String str2, File file) {
@@ -69,7 +70,7 @@ public final class c {
         });
         sb.append("makeResources cost:");
         sb.append(System.currentTimeMillis() - currentTimeMillis);
-        sb.append(";");
+        sb.append(t.aE);
         return packageArchiveInfo;
     }
 
@@ -170,12 +171,12 @@ public final class c {
         } catch (Throwable th) {
             sb.append("actStubV1 cost:");
             sb.append(System.currentTimeMillis() - currentTimeMillis2);
-            sb.append(";");
+            sb.append(t.aE);
             throw th;
         }
         sb.append("actStubV1 cost:");
         sb.append(System.currentTimeMillis() - currentTimeMillis2);
-        sb.append(";");
+        sb.append(t.aE);
     }
 
     private static void a(Plugin plugin, StringBuilder sb, PackageInfo packageInfo) {
@@ -261,7 +262,7 @@ public final class c {
         }
         sb.append("installProvider cost:");
         sb.append(System.currentTimeMillis() - currentTimeMillis);
-        sb.append(";");
+        sb.append(t.aE);
         long currentTimeMillis2 = System.currentTimeMillis();
         if (!TextUtils.isEmpty(packageInfo.applicationInfo.className)) {
             plugin.mApplication = (ZeusApplication) plugin.mClassLoader.loadClass(packageInfo.applicationInfo.className).newInstance();
@@ -269,7 +270,7 @@ public final class c {
         }
         sb.append("makeApplication cost:");
         sb.append(System.currentTimeMillis() - currentTimeMillis2);
-        sb.append(";");
+        sb.append(t.aE);
     }
 
     private static void a(Object obj, String str) {
@@ -330,13 +331,13 @@ public final class c {
                 final PackageInfo[] packageInfoArr = new PackageInfo[1];
                 if (i.j()) {
                     final File file4 = file3;
-                    com.bytedance.pangle.a.a.a(new a.InterfaceC0314a() { // from class: com.bytedance.pangle.plugin.c.1
-                        @Override // com.bytedance.pangle.a.a.InterfaceC0314a
+                    com.bytedance.pangle.a.a.a(new a.InterfaceC0144a() { // from class: com.bytedance.pangle.plugin.c.1
+                        @Override // com.bytedance.pangle.a.a.InterfaceC0144a
                         public final void a() {
                             c.this.a(plugin, b, file, file4, sb);
                         }
-                    }, new a.InterfaceC0314a() { // from class: com.bytedance.pangle.plugin.c.2
-                        @Override // com.bytedance.pangle.a.a.InterfaceC0314a
+                    }, new a.InterfaceC0144a() { // from class: com.bytedance.pangle.plugin.c.2
+                        @Override // com.bytedance.pangle.a.a.InterfaceC0144a
                         public final void a() {
                             packageInfoArr[0] = c.this.a(str, plugin, sb, b, file);
                         }
@@ -351,7 +352,7 @@ public final class c {
         } catch (Throwable th) {
             sb.append("loadPluginInternal ");
             sb.append(th.getMessage());
-            sb.append(";");
+            sb.append(t.aE);
             ZeusLogger.w(ZeusLogger.TAG_LOAD, "PluginLoader loadPluginInternal, plugin[" + str + "] ", th);
             return false;
         }
@@ -371,7 +372,7 @@ public final class c {
             } else if (plugin.isLoaded()) {
                 return true;
             } else {
-                f21450a.a(2000, 0, plugin.mPkgName, plugin.getVersion(), null);
+                f7844a.a(2000, 0, plugin.mPkgName, plugin.getVersion(), null);
                 com.bytedance.pangle.log.a a2 = com.bytedance.pangle.log.a.a(ZeusLogger.TAG_LOAD, "PluginLoader", "loadPlugin:".concat(String.valueOf(str)));
                 a(com.bytedance.pangle.c.b.g, b.a.z, plugin.mPkgName, plugin.getVersion(), -1L, (String) null);
                 ZeusPluginStateListener.postStateChange(str, 8, new Object[0]);
@@ -382,7 +383,7 @@ public final class c {
                     plugin.setLifeCycle(3);
                     a(com.bytedance.pangle.c.b.h, b.a.A, plugin.mPkgName, plugin.getVersion(), a2.a(), sb.toString());
                     ZeusPluginStateListener.postStateChange(str, 9, new Object[0]);
-                    f21450a.a(2100, 0, plugin.mPkgName, plugin.getVersion(), null);
+                    f7844a.a(2100, 0, plugin.mPkgName, plugin.getVersion(), null);
                 } else {
                     sb.append("plugin:");
                     sb.append(plugin.mPkgName);
@@ -391,7 +392,7 @@ public final class c {
                     sb.append("load failed;");
                     a(com.bytedance.pangle.c.b.h, b.a.B, plugin.mPkgName, plugin.getVersion(), -1L, sb.toString());
                     ZeusPluginStateListener.postStateChange(str, 10, new Object[0]);
-                    f21450a.a(2100, -1, plugin.mPkgName, plugin.getVersion(), null);
+                    f7844a.a(2100, -1, plugin.mPkgName, plugin.getVersion(), null);
                 }
                 ZeusLogger.i(ZeusLogger.TAG_LOAD, "PluginLoader loadFinished, ".concat(String.valueOf(plugin)));
                 if (plugin.isLoaded()) {

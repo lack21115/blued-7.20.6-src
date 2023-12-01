@@ -1,7 +1,5 @@
 package com.blued.community.track;
 
-import com.anythink.expressad.a;
-import com.anythink.expressad.foundation.d.l;
 import com.blued.community.model.BluedIngSelfFeed;
 import com.blued.das.client.feed.FeedProtos;
 import com.blued.track.bytedance.ByteDanceLogUtils;
@@ -13,9 +11,7 @@ import org.json.JSONObject;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/track/ByteDanceEvent.class */
 public final class ByteDanceEvent {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final ByteDanceEvent f19111a = new ByteDanceEvent();
+    public static final ByteDanceEvent a = new ByteDanceEvent();
 
     private ByteDanceEvent() {
     }
@@ -25,8 +21,8 @@ public final class ByteDanceEvent {
         Intrinsics.e(name, "name");
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put(l.d, i);
-            jSONObject.put(a.g, i2);
+            jSONObject.put("num", i);
+            jSONObject.put("ad_num", i2);
             a(name, jSONObject);
         } catch (Exception e) {
         }

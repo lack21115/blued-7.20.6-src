@@ -9,7 +9,7 @@ public class b {
     public static String b = "request_finish";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f21362c = "download_start";
+    public static String f7756c = "download_start";
     public static String d = "download_finish";
     public static String e = "install_start";
     public static String f = "install_finish";
@@ -18,7 +18,7 @@ public class b {
     private static volatile b i;
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<com.bytedance.pangle.c.a> f21363a = new ArrayList();
+    public final List<com.bytedance.pangle.c.a> f7757a = new ArrayList();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/pangle/c/b$a.class */
     public static final class a {
@@ -26,11 +26,11 @@ public class b {
         public static int B = 42000;
 
         /* renamed from: a  reason: collision with root package name */
-        public static int f21364a = 12000;
+        public static int f7758a = 12000;
         public static int b = 12001;
 
         /* renamed from: c  reason: collision with root package name */
-        public static int f21365c = 12002;
+        public static int f7759c = 12002;
         public static int d = 12003;
         public static int e = 12004;
         public static int f = 20000;
@@ -73,8 +73,8 @@ public class b {
     }
 
     public final void a(String str, JSONObject jSONObject, JSONObject jSONObject2, JSONObject jSONObject3) {
-        synchronized (this.f21363a) {
-            for (com.bytedance.pangle.c.a aVar : this.f21363a) {
+        synchronized (this.f7757a) {
+            for (com.bytedance.pangle.c.a aVar : this.f7757a) {
                 aVar.a(str, jSONObject, jSONObject2, jSONObject3);
             }
         }

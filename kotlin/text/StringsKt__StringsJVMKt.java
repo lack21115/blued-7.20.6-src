@@ -58,10 +58,10 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
         return str;
     }
 
-    public static final String a(String str, char c2, char c3, boolean z) {
+    public static final String a(String str, char c, char c2, boolean z) {
         Intrinsics.e(str, "<this>");
         if (!z) {
-            String replace = str.replace(c2, c3);
+            String replace = str.replace(c, c2);
             Intrinsics.c(replace, "this as java.lang.String…replace(oldChar, newChar)");
             return replace;
         }
@@ -76,50 +76,50 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
                 return sb2;
             }
             char charAt = str2.charAt(i2);
-            char c4 = charAt;
-            if (CharsKt.a(charAt, c2, z)) {
-                c4 = c3;
+            char c3 = charAt;
+            if (CharsKt.a(charAt, c, z)) {
+                c3 = c2;
             }
-            sb.append(c4);
+            sb.append(c3);
             i = i2 + 1;
         }
     }
 
-    public static /* synthetic */ String a(String str, char c2, char c3, boolean z, int i, Object obj) {
+    public static /* synthetic */ String a(String str, char c, char c2, boolean z, int i, Object obj) {
         if ((i & 4) != 0) {
             z = false;
         }
-        return StringsKt.a(str, c2, c3, z);
+        return StringsKt.a(str, c, c2, z);
     }
 
     public static final String a(String str, String oldValue, String newValue, boolean z) {
         int i;
-        int a2;
+        int a;
         Intrinsics.e(str, "<this>");
         Intrinsics.e(oldValue, "oldValue");
         Intrinsics.e(newValue, "newValue");
         String str2 = str;
         int i2 = 0;
-        int a3 = StringsKt.a(str2, oldValue, 0, z);
-        if (a3 < 0) {
+        int a2 = StringsKt.a(str2, oldValue, 0, z);
+        if (a2 < 0) {
             return str;
         }
         int length = oldValue.length();
-        int c2 = RangesKt.c(length, 1);
+        int c = RangesKt.c(length, 1);
         int length2 = (str.length() - length) + newValue.length();
         if (length2 >= 0) {
             StringBuilder sb = new StringBuilder(length2);
             do {
-                sb.append((CharSequence) str2, i2, a3);
+                sb.append((CharSequence) str2, i2, a2);
                 sb.append(newValue);
-                i = a3 + length;
-                if (a3 >= str.length()) {
+                i = a2 + length;
+                if (a2 >= str.length()) {
                     break;
                 }
-                a2 = StringsKt.a(str2, oldValue, a3 + c2, z);
+                a = StringsKt.a(str2, oldValue, a2 + c, z);
                 i2 = i;
-                a3 = a2;
-            } while (a2 > 0);
+                a2 = a;
+            } while (a > 0);
             sb.append((CharSequence) str2, i, str.length());
             String sb2 = sb.toString();
             Intrinsics.c(sb2, "stringBuilder.append(this, i, length).toString()");
@@ -267,8 +267,8 @@ public class StringsKt__StringsJVMKt extends StringsKt__StringNumberConversionsK
         Intrinsics.e(oldValue, "oldValue");
         Intrinsics.e(newValue, "newValue");
         String str2 = str;
-        int a2 = StringsKt.a(str2, oldValue, 0, z, 2, (Object) null);
-        return a2 < 0 ? str : StringsKt.a(str2, a2, oldValue.length() + a2, newValue).toString();
+        int a = StringsKt.a(str2, oldValue, 0, z, 2, (Object) null);
+        return a < 0 ? str : StringsKt.a(str2, a, oldValue.length() + a, newValue).toString();
     }
 
     public static /* synthetic */ String b(String str, String str2, String str3, boolean z, int i, Object obj) {

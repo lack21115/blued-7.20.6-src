@@ -82,10 +82,10 @@ public class ReflectionUtils {
     }
 
     public static void a(Object obj, String str, Object obj2) {
-        Field a2 = a(obj, str);
-        a2.setAccessible(true);
+        Field a = a(obj, str);
+        a.setAccessible(true);
         try {
-            a2.set(obj, obj2);
+            a.set(obj, obj2);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (IllegalArgumentException e2) {
@@ -94,10 +94,10 @@ public class ReflectionUtils {
     }
 
     public static Object b(Object obj, String str) {
-        Field a2 = a(obj, str);
-        a2.setAccessible(true);
+        Field a = a(obj, str);
+        a.setAccessible(true);
         try {
-            return a2.get(obj);
+            return a.get(obj);
         } catch (Exception e) {
             e.printStackTrace();
             return null;

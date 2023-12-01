@@ -17,7 +17,6 @@ import android.view.ViewGroup;
 import android.view.ViewRootImpl;
 import android.view.WindowManager;
 import com.android.internal.R;
-import com.google.android.material.badge.BadgeDrawable;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/ZoomButtonsController.class */
 public class ZoomButtonsController implements View.OnTouchListener {
@@ -45,7 +44,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
     private final int[] mTouchTargetWindowLocation = new int[2];
     private final Rect mTempRect = new Rect();
     private final int[] mTempIntArray = new int[2];
-    private final IntentFilter mConfigurationChangedFilter = new IntentFilter(Intent.ACTION_CONFIGURATION_CHANGED);
+    private final IntentFilter mConfigurationChangedFilter = new IntentFilter("android.intent.action.CONFIGURATION_CHANGED");
     private final BroadcastReceiver mConfigurationChangedReceiver = new BroadcastReceiver() { // from class: android.widget.ZoomButtonsController.1
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
@@ -104,7 +103,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
 
     public ZoomButtonsController(View view) {
         this.mContext = view.getContext();
-        this.mWindowManager = (WindowManager) this.mContext.getSystemService(Context.WINDOW_SERVICE);
+        this.mWindowManager = (WindowManager) this.mContext.getSystemService("window");
         this.mOwnerView = view;
         this.mTouchPaddingScaledSq = (int) (20.0f * this.mContext.getResources().getDisplayMetrics().density);
         this.mTouchPaddingScaledSq *= this.mTouchPaddingScaledSq;
@@ -113,7 +112,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
 
     private FrameLayout createContainer() {
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-2, -2);
-        layoutParams.gravity = BadgeDrawable.TOP_START;
+        layoutParams.gravity = 8388659;
         layoutParams.flags = 131608;
         layoutParams.height = -2;
         layoutParams.width = -1;
@@ -124,7 +123,7 @@ public class ZoomButtonsController implements View.OnTouchListener {
         Container container = new Container(this.mContext);
         container.setLayoutParams(layoutParams);
         container.setMeasureAllChildren(true);
-        ((LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.zoom_container, container);
+        ((LayoutInflater) this.mContext.getSystemService("layout_inflater")).inflate(R.layout.zoom_container, container);
         this.mControls = (ZoomControls) container.findViewById(R.id.zoomControls);
         this.mControls.setOnZoomInClickListener(new View.OnClickListener() { // from class: android.widget.ZoomButtonsController.3
             @Override // android.view.View.OnClickListener

@@ -90,7 +90,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     private TransitionListener W;
 
     /* renamed from: a  reason: collision with root package name */
-    MotionScene f2184a;
+    MotionScene f2136a;
     private boolean aA;
     private RectF aB;
     private View aC;
@@ -114,7 +114,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     private KeyCache aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private boolean f2185ar;
+    private boolean f2137ar;
     private StateCache as;
     private Runnable at;
     private int[] au;
@@ -126,7 +126,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     Interpolator b;
 
     /* renamed from: c  reason: collision with root package name */
-    Interpolator f2186c;
+    Interpolator f2138c;
     float d;
     int e;
     HashMap<View, MotionController> f;
@@ -157,76 +157,75 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     public static /* synthetic */ class AnonymousClass5 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2191a;
+        static final /* synthetic */ int[] f2143a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x0036 -> B:21:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:13:0x003a -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:15:0x003e -> B:25:0x002a). Please submit an issue!!! */
         static {
             int[] iArr = new int[TransitionState.values().length];
-            f2191a = iArr;
+            f2143a = iArr;
             try {
                 iArr[TransitionState.UNDEFINED.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2191a[TransitionState.SETUP.ordinal()] = 2;
+                f2143a[TransitionState.SETUP.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2191a[TransitionState.MOVING.ordinal()] = 3;
+                f2143a[TransitionState.MOVING.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f2191a[TransitionState.FINISHED.ordinal()] = 4;
+                f2143a[TransitionState.FINISHED.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/motion/widget/MotionLayout$DecelerateInterpolator.class */
-    public class DecelerateInterpolator extends MotionInterpolator {
+    class DecelerateInterpolator extends MotionInterpolator {
 
         /* renamed from: a  reason: collision with root package name */
-        float f2192a = 0.0f;
+        float f2144a = 0.0f;
         float b = 0.0f;
 
         /* renamed from: c  reason: collision with root package name */
-        float f2193c;
+        float f2145c;
 
         DecelerateInterpolator() {
         }
 
         public void config(float f, float f2, float f3) {
-            this.f2192a = f;
+            this.f2144a = f;
             this.b = f2;
-            this.f2193c = f3;
+            this.f2145c = f3;
         }
 
         @Override // androidx.constraintlayout.motion.widget.MotionInterpolator, android.animation.TimeInterpolator
         public float getInterpolation(float f) {
             float f2;
             float f3;
-            float f4 = this.f2192a;
+            float f4 = this.f2144a;
             if (f4 > 0.0f) {
-                float f5 = this.f2193c;
+                float f5 = this.f2145c;
                 float f6 = f;
                 if (f4 / f5 < f) {
                     f6 = f4 / f5;
                 }
-                MotionLayout.this.d = this.f2192a - (this.f2193c * f6);
-                f2 = (this.f2192a * f6) - (((this.f2193c * f6) * f6) / 2.0f);
+                MotionLayout.this.d = this.f2144a - (this.f2145c * f6);
+                f2 = (this.f2144a * f6) - (((this.f2145c * f6) * f6) / 2.0f);
                 f3 = this.b;
             } else {
                 float f7 = -f4;
-                float f8 = this.f2193c;
+                float f8 = this.f2145c;
                 float f9 = f;
                 if (f7 / f8 < f) {
                     f9 = (-f4) / f8;
                 }
-                MotionLayout.this.d = this.f2192a + (this.f2193c * f9);
-                f2 = (this.f2192a * f9) + (((this.f2193c * f9) * f9) / 2.0f);
+                MotionLayout.this.d = this.f2144a + (this.f2145c * f9);
+                f2 = (this.f2144a * f9) + (((this.f2145c * f9) * f9) / 2.0f);
                 f3 = this.b;
             }
             return f2 + f3;
@@ -242,11 +241,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     class DevModeDraw {
 
         /* renamed from: a  reason: collision with root package name */
-        float[] f2194a;
+        float[] f2146a;
         int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        float[] f2195c;
+        float[] f2147c;
         Path d;
         Paint e;
         Paint f;
@@ -297,7 +296,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             DashPathEffect dashPathEffect = new DashPathEffect(new float[]{4.0f, 8.0f}, 0.0f);
             this.o = dashPathEffect;
             this.g.setPathEffect(dashPathEffect);
-            this.f2195c = new float[100];
+            this.f2147c = new float[100];
             this.b = new int[50];
             if (this.r) {
                 this.e.setStrokeWidth(8.0f);
@@ -308,11 +307,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
 
         private void a(Canvas canvas) {
-            canvas.drawLines(this.f2194a, this.e);
+            canvas.drawLines(this.f2146a, this.e);
         }
 
         private void a(Canvas canvas, float f, float f2) {
-            float[] fArr = this.f2194a;
+            float[] fArr = this.f2146a;
             float f3 = fArr[0];
             float f4 = fArr[1];
             float f5 = fArr[fArr.length - 2];
@@ -366,7 +365,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     break;
                 }
                 if (i != 4 || this.b[i6 - 1] != 0) {
-                    float[] fArr = this.f2195c;
+                    float[] fArr = this.f2147c;
                     int i7 = i6 * 2;
                     float f = fArr[i7];
                     float f2 = fArr[i7 + 1];
@@ -402,10 +401,10 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 }
                 i5 = i6 + 1;
             }
-            float[] fArr2 = this.f2194a;
+            float[] fArr2 = this.f2146a;
             if (fArr2.length > 1) {
                 canvas.drawCircle(fArr2[0], fArr2[1], 8.0f, this.f);
-                float[] fArr3 = this.f2194a;
+                float[] fArr3 = this.f2146a;
                 canvas.drawCircle(fArr3[fArr3.length - 2], fArr3[fArr3.length - 1], 8.0f, this.f);
             }
         }
@@ -443,12 +442,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
 
         private void b(Canvas canvas) {
-            float[] fArr = this.f2194a;
+            float[] fArr = this.f2146a;
             canvas.drawLine(fArr[0], fArr[1], fArr[fArr.length - 2], fArr[fArr.length - 1], this.g);
         }
 
         private void b(Canvas canvas, float f, float f2) {
-            float[] fArr = this.f2194a;
+            float[] fArr = this.f2146a;
             float f3 = fArr[0];
             float f4 = fArr[1];
             float f5 = fArr[fArr.length - 2];
@@ -487,7 +486,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
 
         private void d(Canvas canvas) {
-            float[] fArr = this.f2194a;
+            float[] fArr = this.f2146a;
             float f = fArr[0];
             float f2 = fArr[1];
             float f3 = fArr[fArr.length - 2];
@@ -520,12 +519,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     }
                 }
                 if (i3 != 0) {
-                    this.p = motionController.a(this.f2195c, this.b);
+                    this.p = motionController.a(this.f2147c, this.b);
                     if (i3 >= 1) {
                         int i4 = i / 16;
-                        float[] fArr = this.f2194a;
+                        float[] fArr = this.f2146a;
                         if (fArr == null || fArr.length != i4 * 2) {
-                            this.f2194a = new float[i4 * 2];
+                            this.f2146a = new float[i4 * 2];
                             this.d = new Path();
                         }
                         int i5 = this.s;
@@ -534,7 +533,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                         this.i.setColor(1996488704);
                         this.f.setColor(1996488704);
                         this.g.setColor(1996488704);
-                        motionController.a(this.f2194a, i4);
+                        motionController.a(this.f2146a, i4);
                         drawAll(canvas, i3, this.p, motionController);
                         this.e.setColor(-21965);
                         this.f.setColor(-2067046);
@@ -572,11 +571,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     public class Model {
 
         /* renamed from: a  reason: collision with root package name */
-        ConstraintWidgetContainer f2196a = new ConstraintWidgetContainer();
+        ConstraintWidgetContainer f2148a = new ConstraintWidgetContainer();
         ConstraintWidgetContainer b = new ConstraintWidgetContainer();
 
         /* renamed from: c  reason: collision with root package name */
-        ConstraintSet f2197c = null;
+        ConstraintSet f2149c = null;
         ConstraintSet d = null;
         int e;
         int f;
@@ -587,9 +586,9 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         private void a(int i, int i2) {
             int optimizationLevel = MotionLayout.this.getOptimizationLevel();
             if (MotionLayout.this.e != MotionLayout.this.getStartState()) {
-                ConstraintSet constraintSet = this.f2197c;
+                ConstraintSet constraintSet = this.f2149c;
                 if (constraintSet != null) {
-                    MotionLayout.this.resolveSystem(this.f2196a, optimizationLevel, constraintSet.mRotate == 0 ? i : i2, this.f2197c.mRotate == 0 ? i2 : i);
+                    MotionLayout.this.resolveSystem(this.f2148a, optimizationLevel, constraintSet.mRotate == 0 ? i : i2, this.f2149c.mRotate == 0 ? i2 : i);
                 }
                 MotionLayout motionLayout = MotionLayout.this;
                 ConstraintWidgetContainer constraintWidgetContainer = this.b;
@@ -608,12 +607,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             int i4 = (constraintSet4 == null || constraintSet4.mRotate == 0) ? i : i2;
             ConstraintSet constraintSet5 = this.d;
             motionLayout2.resolveSystem(constraintWidgetContainer2, optimizationLevel, i4, (constraintSet5 == null || constraintSet5.mRotate == 0) ? i2 : i);
-            ConstraintSet constraintSet6 = this.f2197c;
+            ConstraintSet constraintSet6 = this.f2149c;
             if (constraintSet6 != null) {
                 MotionLayout motionLayout3 = MotionLayout.this;
-                ConstraintWidgetContainer constraintWidgetContainer3 = this.f2196a;
+                ConstraintWidgetContainer constraintWidgetContainer3 = this.f2148a;
                 int i5 = constraintSet6.mRotate == 0 ? i : i2;
-                if (this.f2197c.mRotate == 0) {
+                if (this.f2149c.mRotate == 0) {
                     i = i2;
                 }
                 motionLayout3.resolveSystem(constraintWidgetContainer3, optimizationLevel, i5, i);
@@ -713,39 +712,39 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
 
         void a(ConstraintWidgetContainer constraintWidgetContainer, ConstraintSet constraintSet, ConstraintSet constraintSet2) {
-            this.f2197c = constraintSet;
+            this.f2149c = constraintSet;
             this.d = constraintSet2;
-            this.f2196a = new ConstraintWidgetContainer();
+            this.f2148a = new ConstraintWidgetContainer();
             this.b = new ConstraintWidgetContainer();
-            this.f2196a.setMeasurer(MotionLayout.this.mLayoutWidget.getMeasurer());
+            this.f2148a.setMeasurer(MotionLayout.this.mLayoutWidget.getMeasurer());
             this.b.setMeasurer(MotionLayout.this.mLayoutWidget.getMeasurer());
-            this.f2196a.removeAllChildren();
+            this.f2148a.removeAllChildren();
             this.b.removeAllChildren();
-            a(MotionLayout.this.mLayoutWidget, this.f2196a);
+            a(MotionLayout.this.mLayoutWidget, this.f2148a);
             a(MotionLayout.this.mLayoutWidget, this.b);
             if (MotionLayout.this.h > 0.5d) {
                 if (constraintSet != null) {
-                    a(this.f2196a, constraintSet);
+                    a(this.f2148a, constraintSet);
                 }
                 a(this.b, constraintSet2);
             } else {
                 a(this.b, constraintSet2);
                 if (constraintSet != null) {
-                    a(this.f2196a, constraintSet);
+                    a(this.f2148a, constraintSet);
                 }
             }
-            this.f2196a.setRtl(MotionLayout.this.isRtl());
-            this.f2196a.updateHierarchy();
+            this.f2148a.setRtl(MotionLayout.this.isRtl());
+            this.f2148a.updateHierarchy();
             this.b.setRtl(MotionLayout.this.isRtl());
             this.b.updateHierarchy();
             ViewGroup.LayoutParams layoutParams = MotionLayout.this.getLayoutParams();
             if (layoutParams != null) {
                 if (layoutParams.width == -2) {
-                    this.f2196a.setHorizontalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.WRAP_CONTENT);
+                    this.f2148a.setHorizontalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.WRAP_CONTENT);
                     this.b.setHorizontalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.WRAP_CONTENT);
                 }
                 if (layoutParams.height == -2) {
-                    this.f2196a.setVerticalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.WRAP_CONTENT);
+                    this.f2148a.setVerticalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.WRAP_CONTENT);
                     this.b.setVerticalDimensionBehaviour(ConstraintWidget.DimensionBehaviour.WRAP_CONTENT);
                 }
             }
@@ -779,10 +778,10 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 View childAt2 = MotionLayout.this.getChildAt(i4);
                 MotionController motionController2 = MotionLayout.this.f.get(childAt2);
                 if (motionController2 != null) {
-                    if (this.f2197c != null) {
-                        ConstraintWidget a2 = a(this.f2196a, childAt2);
+                    if (this.f2149c != null) {
+                        ConstraintWidget a2 = a(this.f2148a, childAt2);
                         if (a2 != null) {
-                            motionController2.a(MotionLayout.this.a(a2), this.f2197c, MotionLayout.this.getWidth(), MotionLayout.this.getHeight());
+                            motionController2.a(MotionLayout.this.a(a2), this.f2149c, MotionLayout.this.getWidth(), MotionLayout.this.getHeight());
                         } else if (MotionLayout.this.l != 0) {
                             Log.e("MotionLayout", Debug.getLocation() + "no widget for  " + Debug.getName(childAt2) + " (" + childAt2.getClass().getName() + ")");
                         }
@@ -828,8 +827,8 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             a(i, i2);
             if (((MotionLayout.this.getParent() instanceof MotionLayout) && mode == 1073741824 && mode2 == 1073741824) ? false : true) {
                 a(i, i2);
-                MotionLayout.this.z = this.f2196a.getWidth();
-                MotionLayout.this.A = this.f2196a.getHeight();
+                MotionLayout.this.z = this.f2148a.getWidth();
+                MotionLayout.this.A = this.f2148a.getHeight();
                 MotionLayout.this.B = this.b.getWidth();
                 MotionLayout.this.C = this.b.getHeight();
                 MotionLayout motionLayout = MotionLayout.this;
@@ -843,7 +842,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             if (MotionLayout.this.E == Integer.MIN_VALUE || MotionLayout.this.E == 0) {
                 i4 = (int) (MotionLayout.this.A + (MotionLayout.this.F * (MotionLayout.this.C - MotionLayout.this.A)));
             }
-            MotionLayout.this.resolveMeasuredDimension(i, i2, i3, i4, this.f2196a.isWidthMeasuredTooSmall() || this.b.isWidthMeasuredTooSmall(), this.f2196a.isHeightMeasuredTooSmall() || this.b.isHeightMeasuredTooSmall());
+            MotionLayout.this.resolveMeasuredDimension(i, i2, i3, i4, this.f2148a.isWidthMeasuredTooSmall() || this.b.isWidthMeasuredTooSmall(), this.f2148a.isHeightMeasuredTooSmall() || this.b.isHeightMeasuredTooSmall());
         }
 
         public void reEvaluateState() {
@@ -878,25 +877,24 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         void recycle();
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:androidx/constraintlayout/motion/widget/MotionLayout$MyTracker.class */
-    public static class MyTracker implements MotionTracker {
+    static class MyTracker implements MotionTracker {
         private static MyTracker b = new MyTracker();
 
         /* renamed from: a  reason: collision with root package name */
-        VelocityTracker f2198a;
+        VelocityTracker f2150a;
 
         private MyTracker() {
         }
 
         public static MyTracker obtain() {
-            b.f2198a = VelocityTracker.obtain();
+            b.f2150a = VelocityTracker.obtain();
             return b;
         }
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public void addMovement(MotionEvent motionEvent) {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 velocityTracker.addMovement(motionEvent);
             }
@@ -904,7 +902,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public void clear() {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 velocityTracker.clear();
             }
@@ -912,7 +910,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public void computeCurrentVelocity(int i) {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 velocityTracker.computeCurrentVelocity(i);
             }
@@ -920,7 +918,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public void computeCurrentVelocity(int i, float f) {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 velocityTracker.computeCurrentVelocity(i, f);
             }
@@ -928,7 +926,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public float getXVelocity() {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 return velocityTracker.getXVelocity();
             }
@@ -937,7 +935,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public float getXVelocity(int i) {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 return velocityTracker.getXVelocity(i);
             }
@@ -946,7 +944,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public float getYVelocity() {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 return velocityTracker.getYVelocity();
             }
@@ -955,7 +953,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public float getYVelocity(int i) {
-            if (this.f2198a != null) {
+            if (this.f2150a != null) {
                 return getYVelocity(i);
             }
             return 0.0f;
@@ -963,10 +961,10 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
         @Override // androidx.constraintlayout.motion.widget.MotionLayout.MotionTracker
         public void recycle() {
-            VelocityTracker velocityTracker = this.f2198a;
+            VelocityTracker velocityTracker = this.f2150a;
             if (velocityTracker != null) {
                 velocityTracker.recycle();
-                this.f2198a = null;
+                this.f2150a = null;
             }
         }
     }
@@ -976,11 +974,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     public class StateCache {
 
         /* renamed from: a  reason: collision with root package name */
-        float f2199a = Float.NaN;
+        float f2151a = Float.NaN;
         float b = Float.NaN;
 
         /* renamed from: c  reason: collision with root package name */
-        int f2200c = -1;
+        int f2152c = -1;
         int d = -1;
         final String e = "motion.progress";
         final String f = "motion.velocity";
@@ -991,8 +989,8 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
 
         void a() {
-            if (this.f2200c != -1 || this.d != -1) {
-                int i = this.f2200c;
+            if (this.f2152c != -1 || this.d != -1) {
+                int i = this.f2152c;
                 if (i == -1) {
                     MotionLayout.this.transitionToState(this.d);
                 } else {
@@ -1006,33 +1004,33 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 MotionLayout.this.setState(TransitionState.SETUP);
             }
             if (Float.isNaN(this.b)) {
-                if (Float.isNaN(this.f2199a)) {
+                if (Float.isNaN(this.f2151a)) {
                     return;
                 }
-                MotionLayout.this.setProgress(this.f2199a);
+                MotionLayout.this.setProgress(this.f2151a);
                 return;
             }
-            MotionLayout.this.setProgress(this.f2199a, this.b);
-            this.f2199a = Float.NaN;
+            MotionLayout.this.setProgress(this.f2151a, this.b);
+            this.f2151a = Float.NaN;
             this.b = Float.NaN;
-            this.f2200c = -1;
+            this.f2152c = -1;
             this.d = -1;
         }
 
         public Bundle getTransitionState() {
             Bundle bundle = new Bundle();
-            bundle.putFloat("motion.progress", this.f2199a);
+            bundle.putFloat("motion.progress", this.f2151a);
             bundle.putFloat("motion.velocity", this.b);
-            bundle.putInt("motion.StartState", this.f2200c);
+            bundle.putInt("motion.StartState", this.f2152c);
             bundle.putInt("motion.EndState", this.d);
             return bundle;
         }
 
         public void recordState() {
             this.d = MotionLayout.this.O;
-            this.f2200c = MotionLayout.this.N;
+            this.f2152c = MotionLayout.this.N;
             this.b = MotionLayout.this.getVelocity();
-            this.f2199a = MotionLayout.this.getProgress();
+            this.f2151a = MotionLayout.this.getProgress();
         }
 
         public void setEndState(int i) {
@@ -1040,17 +1038,17 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
 
         public void setProgress(float f) {
-            this.f2199a = f;
+            this.f2151a = f;
         }
 
         public void setStartState(int i) {
-            this.f2200c = i;
+            this.f2152c = i;
         }
 
         public void setTransitionState(Bundle bundle) {
-            this.f2199a = bundle.getFloat("motion.progress");
+            this.f2151a = bundle.getFloat("motion.progress");
             this.b = bundle.getFloat("motion.velocity");
-            this.f2200c = bundle.getInt("motion.StartState");
+            this.f2152c = bundle.getInt("motion.StartState");
             this.d = bundle.getInt("motion.EndState");
         }
 
@@ -1081,7 +1079,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     public MotionLayout(Context context) {
         super(context);
-        this.f2186c = null;
+        this.f2138c = null;
         this.d = 0.0f;
         this.N = -1;
         this.e = -1;
@@ -1116,7 +1114,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         this.x = false;
         this.y = false;
         this.aq = new KeyCache();
-        this.f2185ar = false;
+        this.f2137ar = false;
         this.at = null;
         this.au = null;
         this.G = 0;
@@ -1137,7 +1135,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     public MotionLayout(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f2186c = null;
+        this.f2138c = null;
         this.d = 0.0f;
         this.N = -1;
         this.e = -1;
@@ -1172,7 +1170,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         this.x = false;
         this.y = false;
         this.aq = new KeyCache();
-        this.f2185ar = false;
+        this.f2137ar = false;
         this.at = null;
         this.au = null;
         this.G = 0;
@@ -1193,7 +1191,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     public MotionLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f2186c = null;
+        this.f2138c = null;
         this.d = 0.0f;
         this.N = -1;
         this.e = -1;
@@ -1228,7 +1226,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         this.x = false;
         this.y = false;
         this.aq = new KeyCache();
-        this.f2185ar = false;
+        this.f2137ar = false;
         this.at = null;
         this.au = null;
         this.G = 0;
@@ -1314,7 +1312,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 }
                 int index = obtainStyledAttributes.getIndex(i);
                 if (index == R.styleable.MotionLayout_layoutDescription) {
-                    this.f2184a = new MotionScene(getContext(), this, obtainStyledAttributes.getResourceId(index, -1));
+                    this.f2136a = new MotionScene(getContext(), this, obtainStyledAttributes.getResourceId(index, -1));
                     z2 = z;
                 } else if (index == R.styleable.MotionLayout_currentState) {
                     this.e = obtainStyledAttributes.getResourceId(index, -1);
@@ -1342,22 +1340,22 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 z3 = z2;
             }
             obtainStyledAttributes.recycle();
-            if (this.f2184a == null) {
+            if (this.f2136a == null) {
                 Log.e("MotionLayout", "WARNING NO app:layoutDescription tag");
             }
             if (!z) {
-                this.f2184a = null;
+                this.f2136a = null;
             }
         }
         if (this.l != 0) {
             g();
         }
-        if (this.e != -1 || (motionScene = this.f2184a) == null) {
+        if (this.e != -1 || (motionScene = this.f2136a) == null) {
             return;
         }
         this.e = motionScene.b();
-        this.N = this.f2184a.b();
-        this.O = this.f2184a.c();
+        this.N = this.f2136a.b();
+        this.O = this.f2136a.c();
     }
 
     private void a(MotionScene.Transition transition) {
@@ -1444,7 +1442,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
         int width = getWidth();
         int height = getHeight();
-        int gatPathMotionArc = this.f2184a.gatPathMotionArc();
+        int gatPathMotionArc = this.f2136a.gatPathMotionArc();
         if (gatPathMotionArc != -1) {
             int i5 = 0;
             while (true) {
@@ -1487,7 +1485,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 }
                 MotionController motionController3 = this.f.get(findViewById(iArr[i11]));
                 if (motionController3 != null) {
-                    this.f2184a.getKeyFrames(motionController3);
+                    this.f2136a.getKeyFrames(motionController3);
                     motionController3.setup(width, height, this.T, getNanoTime());
                 }
                 i10 = i11 + 1;
@@ -1501,7 +1499,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 }
                 MotionController motionController4 = this.f.get(findViewById(iArr[i13]));
                 if (motionController4 != null) {
-                    this.f2184a.getKeyFrames(motionController4);
+                    this.f2136a.getKeyFrames(motionController4);
                 }
                 i12 = i13 + 1;
             }
@@ -1531,12 +1529,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             View childAt2 = getChildAt(i17);
             MotionController motionController6 = this.f.get(childAt2);
             if (!sparseBooleanArray.get(childAt2.getId()) && motionController6 != null) {
-                this.f2184a.getKeyFrames(motionController6);
+                this.f2136a.getKeyFrames(motionController6);
                 motionController6.setup(width, height, this.T, getNanoTime());
             }
             i16 = i17 + 1;
         }
-        float staggered = this.f2184a.getStaggered();
+        float staggered = this.f2136a.getStaggered();
         if (staggered != 0.0f) {
             boolean z2 = ((double) staggered) < 0.0d;
             float abs = Math.abs(staggered);
@@ -1642,20 +1640,20 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     private void g() {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             Log.e("MotionLayout", "CHECK: motion scene not set! set \"app:layoutDescription=\"@xml/file\"");
             return;
         }
         int b = motionScene.b();
-        MotionScene motionScene2 = this.f2184a;
+        MotionScene motionScene2 = this.f2136a;
         a(b, motionScene2.a(motionScene2.b()));
         SparseIntArray sparseIntArray = new SparseIntArray();
         SparseIntArray sparseIntArray2 = new SparseIntArray();
-        Iterator<MotionScene.Transition> it = this.f2184a.getDefinedTransitions().iterator();
+        Iterator<MotionScene.Transition> it = this.f2136a.getDefinedTransitions().iterator();
         while (it.hasNext()) {
             MotionScene.Transition next = it.next();
-            if (next == this.f2184a.b) {
+            if (next == this.f2136a.b) {
                 Log.v("MotionLayout", "CHECK: CURRENT");
             }
             a(next);
@@ -1671,10 +1669,10 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             }
             sparseIntArray.put(startConstraintSetId, endConstraintSetId);
             sparseIntArray2.put(endConstraintSetId, startConstraintSetId);
-            if (this.f2184a.a(startConstraintSetId) == null) {
+            if (this.f2136a.a(startConstraintSetId) == null) {
                 Log.e("MotionLayout", " no such constraintSetStart " + name);
             }
-            if (this.f2184a.a(endConstraintSetId) == null) {
+            if (this.f2136a.a(endConstraintSetId) == null) {
                 Log.e("MotionLayout", " no such constraintSetEnd " + name);
             }
         }
@@ -1742,7 +1740,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int a(String str) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return 0;
         }
@@ -1760,7 +1758,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     void a(float f) {
-        if (this.f2184a == null) {
+        if (this.f2136a == null) {
             return;
         }
         float f2 = this.h;
@@ -1774,10 +1772,10 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
         this.ac = false;
         this.i = f;
-        this.T = this.f2184a.getDuration() / 1000.0f;
+        this.T = this.f2136a.getDuration() / 1000.0f;
         setProgress(this.i);
         this.b = null;
-        this.f2186c = this.f2184a.getInterpolator();
+        this.f2138c = this.f2136a.getInterpolator();
         this.V = false;
         this.S = getNanoTime();
         this.j = true;
@@ -1833,7 +1831,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public boolean applyViewTransition(int i, MotionController motionController) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             return motionScene.applyViewTransition(i, motionController);
         }
@@ -1842,7 +1840,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public String b(int i) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return null;
         }
@@ -1851,7 +1849,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void b() {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return;
         }
@@ -1861,10 +1859,10 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
         int i = this.e;
         if (i != -1) {
-            this.f2184a.addOnClickListeners(this, i);
+            this.f2136a.addOnClickListeners(this, i);
         }
-        if (this.f2184a.a()) {
-            this.f2184a.l();
+        if (this.f2136a.a()) {
+            this.f2136a.l();
         }
     }
 
@@ -1938,13 +1936,13 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
         transitionToState(iArr[0]);
         int[] iArr2 = this.au;
-        System.arraycopy((Object) iArr2, 1, (Object) iArr2, 0, iArr2.length - 1);
+        System.arraycopy(iArr2, 1, iArr2, 0, iArr2.length - 1);
         this.G--;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c(boolean z) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return;
         }
@@ -1952,7 +1950,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public ConstraintSet cloneConstraintSet(int i) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return null;
         }
@@ -1973,12 +1971,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             }
         }
         b(false);
-        MotionScene motionScene = this.f2184a;
-        if (motionScene != null && motionScene.f2205c != null) {
-            this.f2184a.f2205c.a();
+        MotionScene motionScene = this.f2136a;
+        if (motionScene != null && motionScene.f2157c != null) {
+            this.f2136a.f2157c.a();
         }
         super.dispatchDraw(canvas);
-        if (this.f2184a == null) {
+        if (this.f2136a == null) {
             return;
         }
         if ((this.l & 1) == 1 && !isInEditMode()) {
@@ -2014,7 +2012,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             if (this.m == null) {
                 this.m = new DevModeDraw();
             }
-            this.m.draw(canvas, this.f, this.f2184a.getDuration(), this.l);
+            this.m.draw(canvas, this.f, this.f2136a.getDuration(), this.l);
         }
         ArrayList<MotionHelper> arrayList2 = this.aj;
         if (arrayList2 != null) {
@@ -2031,15 +2029,15 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             transition.setEnabled(true);
             return;
         }
-        if (transition == this.f2184a.b) {
-            Iterator<MotionScene.Transition> it = this.f2184a.getTransitionsWithState(this.e).iterator();
+        if (transition == this.f2136a.b) {
+            Iterator<MotionScene.Transition> it = this.f2136a.getTransitionsWithState(this.e).iterator();
             while (true) {
                 if (!it.hasNext()) {
                     break;
                 }
                 MotionScene.Transition next = it.next();
                 if (next.isEnabled()) {
-                    this.f2184a.b = next;
+                    this.f2136a.b = next;
                     break;
                 }
             }
@@ -2048,7 +2046,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void enableViewTransition(int i, boolean z) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             motionScene.enableViewTransition(i, z);
         }
@@ -2069,7 +2067,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public ConstraintSet getConstraintSet(int i) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return null;
         }
@@ -2077,7 +2075,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public int[] getConstraintSetIds() {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return null;
         }
@@ -2094,7 +2092,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public ArrayList<MotionScene.Transition> getDefinedTransitions() {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             return null;
         }
@@ -2121,7 +2119,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public MotionScene getScene() {
-        return this.f2184a;
+        return this.f2136a;
     }
 
     public int getStartState() {
@@ -2133,7 +2131,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public MotionScene.Transition getTransition(int i) {
-        return this.f2184a.getTransitionById(i);
+        return this.f2136a.getTransitionById(i);
     }
 
     public Bundle getTransitionState() {
@@ -2145,7 +2143,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public long getTransitionTimeMs() {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             this.T = motionScene.getDuration() / 1000.0f;
         }
@@ -2199,7 +2197,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public boolean isViewTransitionEnabled(int i) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             return motionScene.isViewTransitionEnabled(i);
         }
@@ -2222,19 +2220,19 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     @Override // androidx.constraintlayout.widget.ConstraintLayout
     public void loadLayoutDescription(int i) {
         if (i == 0) {
-            this.f2184a = null;
+            this.f2136a = null;
             return;
         }
         try {
             MotionScene motionScene = new MotionScene(getContext(), this, i);
-            this.f2184a = motionScene;
+            this.f2136a = motionScene;
             if (this.e == -1 && motionScene != null) {
                 this.e = motionScene.b();
-                this.N = this.f2184a.b();
-                this.O = this.f2184a.c();
+                this.N = this.f2136a.b();
+                this.O = this.f2136a.c();
             }
             if (Build.VERSION.SDK_INT >= 19 && !isAttachedToWindow()) {
-                this.f2184a = null;
+                this.f2136a = null;
                 return;
             }
             try {
@@ -2242,9 +2240,9 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     Display display = getDisplay();
                     this.ay = display == null ? 0 : display.getRotation();
                 }
-                if (this.f2184a != null) {
-                    ConstraintSet a2 = this.f2184a.a(this.e);
-                    this.f2184a.a(this);
+                if (this.f2136a != null) {
+                    ConstraintSet a2 = this.f2136a.a(this.e);
+                    this.f2136a.a(this);
                     if (this.aj != null) {
                         Iterator<MotionHelper> it = this.aj.iterator();
                         while (it.hasNext()) {
@@ -2268,7 +2266,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     } else {
                         this.as.a();
                     }
-                } else if (this.f2184a == null || this.f2184a.b == null || this.f2184a.b.getAutoTransition() != 4) {
+                } else if (this.f2136a == null || this.f2136a.b == null || this.f2136a.b.getAutoTransition() != 4) {
                 } else {
                     transitionToEnd();
                     setState(TransitionState.SETUP);
@@ -2282,19 +2280,18 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
+    protected void onAttachedToWindow() {
         int i;
         Display display;
         super.onAttachedToWindow();
         if (Build.VERSION.SDK_INT >= 17 && (display = getDisplay()) != null) {
             this.ay = display.getRotation();
         }
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null && (i = this.e) != -1) {
             ConstraintSet a2 = motionScene.a(i);
-            this.f2184a.a(this);
+            this.f2136a.a(this);
             ArrayList<MotionHelper> arrayList = this.aj;
             if (arrayList != null) {
                 Iterator<MotionHelper> it = arrayList.iterator();
@@ -2323,8 +2320,8 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 return;
             }
         }
-        MotionScene motionScene2 = this.f2184a;
-        if (motionScene2 == null || motionScene2.b == null || this.f2184a.b.getAutoTransition() != 4) {
+        MotionScene motionScene2 = this.f2136a;
+        if (motionScene2 == null || motionScene2.b == null || this.f2136a.b.getAutoTransition() != 4) {
             return;
         }
         transitionToEnd();
@@ -2337,14 +2334,14 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         TouchResponse touchResponse;
         int d;
         RectF a2;
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null || !this.R) {
             return false;
         }
-        if (motionScene.f2205c != null) {
-            this.f2184a.f2205c.a(motionEvent);
+        if (motionScene.f2157c != null) {
+            this.f2136a.f2157c.a(motionEvent);
         }
-        MotionScene.Transition transition = this.f2184a.b;
+        MotionScene.Transition transition = this.f2136a.b;
         if (transition == null || !transition.isEnabled() || (touchResponse = transition.getTouchResponse()) == null) {
             return false;
         }
@@ -2368,9 +2365,9 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        this.f2185ar = true;
+        this.f2137ar = true;
         try {
-            if (this.f2184a == null) {
+            if (this.f2136a == null) {
                 super.onLayout(z, i, i2, i3, i4);
                 return;
             }
@@ -2385,7 +2382,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             this.o = i5;
             this.p = i6;
         } finally {
-            this.f2185ar = false;
+            this.f2137ar = false;
         }
     }
 
@@ -2394,7 +2391,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         boolean z;
         int i3;
         int i4;
-        if (this.f2184a == null) {
+        if (this.f2136a == null) {
             super.onMeasure(i, i2);
             return;
         }
@@ -2410,11 +2407,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
         this.P = i;
         this.Q = i2;
-        int b = this.f2184a.b();
-        int c2 = this.f2184a.c();
+        int b = this.f2136a.b();
+        int c2 = this.f2136a.c();
         if ((z2 || this.L.isNotConfiguredWith(b, c2)) && this.N != -1) {
             super.onMeasure(i, i2);
-            this.L.a(this.mLayoutWidget, this.f2184a.a(b), this.f2184a.a(c2));
+            this.L.a(this.mLayoutWidget, this.f2136a.a(b), this.f2136a.a(c2));
             this.L.reEvaluateState();
             this.L.setMeasuredId(b, c2);
             z = false;
@@ -2444,12 +2441,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         f();
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedFling(View view, float f, float f2, boolean z) {
         return false;
     }
 
-    @Override // android.view.ViewGroup, android.view.ViewParent
+    @Override // android.view.ViewGroup, android.view.ViewParent, androidx.core.view.NestedScrollingParent
     public boolean onNestedPreFling(View view, float f, float f2) {
         return false;
     }
@@ -2459,7 +2456,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         MotionScene.Transition transition;
         TouchResponse touchResponse;
         int d;
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null || (transition = motionScene.b) == null || !transition.isEnabled()) {
             return;
         }
@@ -2538,7 +2535,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     @Override // android.view.View
     public void onRtlPropertiesChanged(int i) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             motionScene.setRtl(isRtl());
         }
@@ -2546,13 +2543,13 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     @Override // androidx.core.view.NestedScrollingParent2
     public boolean onStartNestedScroll(View view, View view2, int i, int i2) {
-        MotionScene motionScene = this.f2184a;
-        return (motionScene == null || motionScene.b == null || this.f2184a.b.getTouchResponse() == null || (this.f2184a.b.getTouchResponse().getFlags() & 2) != 0) ? false : true;
+        MotionScene motionScene = this.f2136a;
+        return (motionScene == null || motionScene.b == null || this.f2136a.b.getTouchResponse() == null || (this.f2136a.b.getTouchResponse().getFlags() & 2) != 0) ? false : true;
     }
 
     @Override // androidx.core.view.NestedScrollingParent2
     public void onStopNestedScroll(View view, int i) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             float f = this.w;
             if (f == 0.0f) {
@@ -2564,13 +2561,13 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null && this.R && motionScene.a()) {
-            MotionScene.Transition transition = this.f2184a.b;
+            MotionScene.Transition transition = this.f2136a.b;
             if (transition == null || transition.isEnabled()) {
-                this.f2184a.a(motionEvent, getCurrentState(), this);
-                if (this.f2184a.b.isTransitionFlag(4)) {
-                    return this.f2184a.b.getTouchResponse().e();
+                this.f2136a.a(motionEvent, getCurrentState(), this);
+                if (this.f2136a.b.isTransitionFlag(4)) {
+                    return this.f2136a.b.getTouchResponse().e();
                 }
                 return true;
             }
@@ -2649,8 +2646,8 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     @Override // androidx.constraintlayout.widget.ConstraintLayout, android.view.View, android.view.ViewParent
     public void requestLayout() {
         MotionScene motionScene;
-        if (!this.y && this.e == -1 && (motionScene = this.f2184a) != null && motionScene.b != null) {
-            int layoutDuringTransition = this.f2184a.b.getLayoutDuringTransition();
+        if (!this.y && this.e == -1 && (motionScene = this.f2136a) != null && motionScene.b != null) {
+            int layoutDuringTransition = this.f2136a.b.getLayoutDuringTransition();
             if (layoutDuringTransition == 0) {
                 return;
             }
@@ -2700,8 +2697,8 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         }
         this.N = -1;
         this.O = i;
-        this.f2184a.a(-1, i);
-        this.L.a(this.mLayoutWidget, null, this.f2184a.a(this.O));
+        this.f2136a.a(-1, i);
+        this.L.a(this.mLayoutWidget, null, this.f2136a.a(this.O));
         this.g = 0.0f;
         this.h = 0.0f;
         invalidate();
@@ -2747,9 +2744,9 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void setInterpolatedProgress(float f) {
-        if (this.f2184a != null) {
+        if (this.f2136a != null) {
             setState(TransitionState.MOVING);
-            Interpolator interpolator = this.f2184a.getInterpolator();
+            Interpolator interpolator = this.f2136a.getInterpolator();
             if (interpolator != null) {
                 setProgress(interpolator.getInterpolation(f));
                 return;
@@ -2824,7 +2821,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             this.e = -1;
             setState(TransitionState.MOVING);
         }
-        if (this.f2184a == null) {
+        if (this.f2136a == null) {
             return;
         }
         this.V = true;
@@ -2866,7 +2863,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void setScene(MotionScene motionScene) {
-        this.f2184a = motionScene;
+        this.f2136a = motionScene;
         motionScene.setRtl(isRtl());
         rebuildScene();
     }
@@ -2893,7 +2890,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             this.mConstraintLayoutSpec.updateConstraints(i, i2, i3);
             return;
         }
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             motionScene.a(i).applyTo(this);
         }
@@ -2909,7 +2906,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         if (transitionState2 == TransitionState.MOVING && transitionState == TransitionState.MOVING) {
             h();
         }
-        int i = AnonymousClass5.f2191a[transitionState2.ordinal()];
+        int i = AnonymousClass5.f2143a[transitionState2.ordinal()];
         if (i != 1 && i != 2) {
             if (i == 3 && transitionState == TransitionState.FINISHED) {
                 c();
@@ -2926,7 +2923,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void setTransition(int i) {
-        if (this.f2184a != null) {
+        if (this.f2136a != null) {
             MotionScene.Transition transition = getTransition(i);
             this.N = transition.getStartConstraintSetId();
             this.O = transition.getEndConstraintSetId();
@@ -2946,16 +2943,16 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             } else if (i2 == this.O) {
                 f = 1.0f;
             }
-            this.f2184a.setTransition(transition);
-            this.L.a(this.mLayoutWidget, this.f2184a.a(this.N), this.f2184a.a(this.O));
+            this.f2136a.setTransition(transition);
+            this.L.a(this.mLayoutWidget, this.f2136a.a(this.N), this.f2136a.a(this.O));
             rebuildScene();
             if (this.h != f) {
                 if (f == 0.0f) {
                     a(true);
-                    this.f2184a.a(this.N).applyTo(this);
+                    this.f2136a.a(this.N).applyTo(this);
                 } else if (f == 1.0f) {
                     a(false);
-                    this.f2184a.a(this.O).applyTo(this);
+                    this.f2136a.a(this.O).applyTo(this);
                 }
             }
             if (!Float.isNaN(f)) {
@@ -2980,12 +2977,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             this.as.setEndState(i2);
             return;
         }
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             this.N = i;
             this.O = i2;
             motionScene.a(i, i2);
-            this.L.a(this.mLayoutWidget, this.f2184a.a(i), this.f2184a.a(i2));
+            this.L.a(this.mLayoutWidget, this.f2136a.a(i), this.f2136a.a(i2));
             rebuildScene();
             this.h = 0.0f;
             transitionToStart();
@@ -2994,9 +2991,9 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void setTransition(MotionScene.Transition transition) {
-        this.f2184a.setTransition(transition);
+        this.f2136a.setTransition(transition);
         setState(TransitionState.SETUP);
-        if (this.e == this.f2184a.c()) {
+        if (this.e == this.f2136a.c()) {
             this.h = 1.0f;
             this.g = 1.0f;
             this.i = 1.0f;
@@ -3006,22 +3003,22 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             this.i = 0.0f;
         }
         this.U = transition.isTransitionFlag(1) ? -1L : getNanoTime();
-        int b = this.f2184a.b();
-        int c2 = this.f2184a.c();
+        int b = this.f2136a.b();
+        int c2 = this.f2136a.c();
         if (b == this.N && c2 == this.O) {
             return;
         }
         this.N = b;
         this.O = c2;
-        this.f2184a.a(b, c2);
-        this.L.a(this.mLayoutWidget, this.f2184a.a(this.N), this.f2184a.a(this.O));
+        this.f2136a.a(b, c2);
+        this.L.a(this.mLayoutWidget, this.f2136a.a(this.N), this.f2136a.a(this.O));
         this.L.setMeasuredId(this.N, this.O);
         this.L.reEvaluateState();
         rebuildScene();
     }
 
     public void setTransitionDuration(int i) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene == null) {
             Log.e("MotionLayout", "MotionScene not defined");
         } else {
@@ -3065,15 +3062,15 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void touchSpringTo(float f, float f2) {
-        if (this.f2184a == null || this.h == f) {
+        if (this.f2136a == null || this.h == f) {
             return;
         }
         this.ac = true;
         this.S = getNanoTime();
-        this.T = this.f2184a.getDuration() / 1000.0f;
+        this.T = this.f2136a.getDuration() / 1000.0f;
         this.i = f;
         this.j = true;
-        this.ad.springConfig(this.h, f, f2, this.f2184a.g(), this.f2184a.f(), this.f2184a.h(), this.f2184a.i(), this.f2184a.j());
+        this.ad.springConfig(this.h, f, f2, this.f2136a.g(), this.f2136a.f(), this.f2136a.h(), this.f2136a.i(), this.f2136a.j());
         int i = this.e;
         this.i = f;
         this.e = i;
@@ -3125,12 +3122,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
 
     public void transitionToState(int i, int i2, int i3, int i4) {
         int i5;
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         int i6 = i;
         if (motionScene != null) {
             i6 = i;
-            if (motionScene.f2204a != null) {
-                int convertToConstraintSet = this.f2184a.f2204a.convertToConstraintSet(this.e, i, i2, i3);
+            if (motionScene.f2156a != null) {
+                int convertToConstraintSet = this.f2136a.f2156a.convertToConstraintSet(this.e, i, i2, i3);
                 i6 = i;
                 if (convertToConstraintSet != -1) {
                     i6 = convertToConstraintSet;
@@ -3173,13 +3170,13 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
             this.V = false;
             this.b = null;
             if (i4 == -1) {
-                this.T = this.f2184a.getDuration() / 1000.0f;
+                this.T = this.f2136a.getDuration() / 1000.0f;
             }
             this.N = -1;
-            this.f2184a.a(-1, this.O);
+            this.f2136a.a(-1, this.O);
             SparseArray sparseArray = new SparseArray();
             if (i4 == 0) {
-                this.T = this.f2184a.getDuration() / 1000.0f;
+                this.T = this.f2136a.getDuration() / 1000.0f;
             } else if (i4 > 0) {
                 this.T = i4 / 1000.0f;
             }
@@ -3197,7 +3194,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                 i8 = i9 + 1;
             }
             this.j = true;
-            this.L.a(this.mLayoutWidget, null, this.f2184a.a(i6));
+            this.L.a(this.mLayoutWidget, null, this.f2136a.a(i6));
             rebuildScene();
             this.L.build();
             e();
@@ -3212,7 +3209,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     }
                     MotionController motionController = this.f.get(getChildAt(i11));
                     if (motionController != null) {
-                        this.f2184a.getKeyFrames(motionController);
+                        this.f2136a.getKeyFrames(motionController);
                         motionController.setup(width, height, this.T, getNanoTime());
                     }
                     i10 = i11 + 1;
@@ -3226,7 +3223,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     }
                     MotionController motionController2 = this.f.get(getChildAt(i13));
                     if (motionController2 != null) {
-                        this.f2184a.getKeyFrames(motionController2);
+                        this.f2136a.getKeyFrames(motionController2);
                     }
                     i12 = i13 + 1;
                 }
@@ -3247,7 +3244,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
                     i14 = i15 + 1;
                 }
             }
-            float staggered = this.f2184a.getStaggered();
+            float staggered = this.f2136a.getStaggered();
             if (staggered != 0.0f) {
                 float f = Float.MAX_VALUE;
                 float f2 = -3.4028235E38f;
@@ -3279,12 +3276,12 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void updateState() {
-        this.L.a(this.mLayoutWidget, this.f2184a.a(this.N), this.f2184a.a(this.O));
+        this.L.a(this.mLayoutWidget, this.f2136a.a(this.N), this.f2136a.a(this.O));
         rebuildScene();
     }
 
     public void updateState(int i, ConstraintSet constraintSet) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             motionScene.setConstraintSet(i, constraintSet);
         }
@@ -3295,11 +3292,11 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void updateStateAnimate(int i, ConstraintSet constraintSet, int i2) {
-        if (this.f2184a != null && this.e == i) {
+        if (this.f2136a != null && this.e == i) {
             updateState(R.id.view_transition, getConstraintSet(i));
             setState(R.id.view_transition, -1, -1);
             updateState(i, constraintSet);
-            MotionScene.Transition transition = new MotionScene.Transition(-1, this.f2184a, R.id.view_transition, i);
+            MotionScene.Transition transition = new MotionScene.Transition(-1, this.f2136a, R.id.view_transition, i);
             transition.setDuration(i2);
             setTransition(transition);
             transitionToEnd();
@@ -3307,7 +3304,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     }
 
     public void viewTransition(int i, View... viewArr) {
-        MotionScene motionScene = this.f2184a;
+        MotionScene motionScene = this.f2136a;
         if (motionScene != null) {
             motionScene.viewTransition(i, viewArr);
         } else {

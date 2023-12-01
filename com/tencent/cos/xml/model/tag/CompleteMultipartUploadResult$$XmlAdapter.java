@@ -48,6 +48,7 @@ public class CompleteMultipartUploadResult$$XmlAdapter implements IXmlAdapter<Co
             }
         });
         this.childElementBinders.put("ProcessResults", new ChildElementBinder<CompleteMultipartUploadResult>() { // from class: com.tencent.cos.xml.model.tag.CompleteMultipartUploadResult$$XmlAdapter.5
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, CompleteMultipartUploadResult completeMultipartUploadResult, String str) throws IOException, XmlPullParserException {
                 if (completeMultipartUploadResult.processResults == null) {

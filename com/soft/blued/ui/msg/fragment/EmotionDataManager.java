@@ -13,29 +13,29 @@ import java.util.List;
 public class EmotionDataManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile EmotionDataManager f32342a;
+    private static volatile EmotionDataManager f18652a;
     private List<String> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<EmotionListItemModel> f32343c;
+    private List<EmotionListItemModel> f18653c;
 
     private EmotionDataManager() {
     }
 
     public static EmotionDataManager a() {
-        if (f32342a == null) {
+        if (f18652a == null) {
             synchronized (EmotionDataManager.class) {
                 try {
-                    if (f32342a == null) {
-                        f32342a = new EmotionDataManager();
-                        f32342a.b();
+                    if (f18652a == null) {
+                        f18652a = new EmotionDataManager();
+                        f18652a.b();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f32342a;
+        return f18652a;
     }
 
     public void a(List<EmotionListItemModel> list) {
@@ -78,10 +78,10 @@ public class EmotionDataManager {
     }
 
     public List<EmotionListItemModel> c() {
-        if (this.f32343c == null) {
-            this.f32343c = new ArrayList();
+        if (this.f18653c == null) {
+            this.f18653c = new ArrayList();
         }
-        return this.f32343c;
+        return this.f18653c;
     }
 
     public void c(String str) {

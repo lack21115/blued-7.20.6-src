@@ -63,7 +63,7 @@ public class DimensionValueSet implements Parcelable, b {
     public static DimensionValueSet fromStringMap(Map<String, String> map) {
         DimensionValueSet dimensionValueSet = (DimensionValueSet) a.a().a(DimensionValueSet.class, new Object[0]);
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            dimensionValueSet.map.put(entry.getKey(), entry.getValue() != null ? entry.getValue() : com.igexin.push.core.b.l);
+            dimensionValueSet.map.put(entry.getKey(), entry.getValue() != null ? entry.getValue() : "null");
         }
         return dimensionValueSet;
     }
@@ -72,7 +72,7 @@ public class DimensionValueSet implements Parcelable, b {
         Map<String, String> map;
         if (dimensionValueSet != null && (map = dimensionValueSet.getMap()) != null) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                this.map.put(entry.getKey(), entry.getValue() != null ? entry.getValue() : com.igexin.push.core.b.l);
+                this.map.put(entry.getKey(), entry.getValue() != null ? entry.getValue() : "null");
             }
         }
         return this;
@@ -126,14 +126,14 @@ public class DimensionValueSet implements Parcelable, b {
 
     public void setMap(Map<String, String> map) {
         for (Map.Entry<String, String> entry : map.entrySet()) {
-            this.map.put(entry.getKey(), entry.getValue() != null ? entry.getValue() : com.igexin.push.core.b.l);
+            this.map.put(entry.getKey(), entry.getValue() != null ? entry.getValue() : "null");
         }
     }
 
     public DimensionValueSet setValue(String str, String str2) {
         Map<String, String> map = this.map;
         if (str2 == null) {
-            str2 = com.igexin.push.core.b.l;
+            str2 = "null";
         }
         map.put(str, str2);
         return this;

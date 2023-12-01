@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class PopUnreadMsgGuideBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29559a;
+    private final ConstraintLayout f15869a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29559a;
+        return this.f15869a;
     }
 }

@@ -21,13 +21,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/ScanningImageView.class */
 public class ScanningImageView extends ImageView {
-
-    /* renamed from: a  reason: collision with root package name */
-    boolean f11038a;
+    boolean a;
     private long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11039c;
+    private int c;
     private Bitmap d;
     private Bitmap e;
     private Paint f;
@@ -48,8 +44,8 @@ public class ScanningImageView extends ImageView {
     public ScanningImageView(Context context) {
         super(context);
         this.b = 1000L;
-        this.f11039c = -1;
-        this.f11038a = false;
+        this.c = -1;
+        this.a = false;
         c();
     }
 
@@ -60,11 +56,11 @@ public class ScanningImageView extends ImageView {
     public ScanningImageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 1000L;
-        this.f11039c = -1;
-        this.f11038a = false;
+        this.c = -1;
+        this.a = false;
         c();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.ScanningImageView);
-        this.f11039c = obtainStyledAttributes.getColor(R.styleable.ScanningImageView_lightColor, -1);
+        this.c = obtainStyledAttributes.getColor(R.styleable.ScanningImageView_lightColor, -1);
         obtainStyledAttributes.recycle();
     }
 
@@ -120,7 +116,7 @@ public class ScanningImageView extends ImageView {
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationStart(Animator animator) {
-                ScanningImageView.this.f11038a = true;
+                ScanningImageView.this.a = true;
                 ScanningImageView.this.setVisibility(0);
                 if (ScanningImageView.this.m != null) {
                     ScanningImageView.this.m.onAnimationStart(animator);
@@ -159,9 +155,9 @@ public class ScanningImageView extends ImageView {
         if (getWidth() == 0 || getHeight() == 0) {
             return;
         }
-        if (this.f11038a && (onEventCallBack = this.m) != null) {
+        if (this.a && (onEventCallBack = this.m) != null) {
             onEventCallBack.a();
-            this.f11038a = false;
+            this.a = false;
         }
         try {
             int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), this.f, 31);

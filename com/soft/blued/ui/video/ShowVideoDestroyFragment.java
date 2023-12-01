@@ -31,7 +31,7 @@ import com.soft.blued.utils.VideoLoadController;
 public class ShowVideoDestroyFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    final Handler f34426a = new Handler();
+    final Handler f20735a = new Handler();
     Runnable b = new Runnable() { // from class: com.soft.blued.ui.video.ShowVideoDestroyFragment.5
         @Override // java.lang.Runnable
         public void run() {
@@ -43,14 +43,14 @@ public class ShowVideoDestroyFragment extends BaseFragment {
                     return;
                 }
                 ShowVideoDestroyFragment.this.o.setProgress(mediaPlayer.getCurrentPosition());
-                ShowVideoDestroyFragment.this.f34426a.postDelayed(this, 100L);
+                ShowVideoDestroyFragment.this.f20735a.postDelayed(this, 100L);
             } catch (IllegalStateException e) {
             }
         }
     };
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f34427c;
+    private Context f20736c;
     private View d;
     private LayoutInflater e;
     private SurfaceVideoView f;
@@ -95,17 +95,17 @@ public class ShowVideoDestroyFragment extends BaseFragment {
     }
 
     private void c() {
-        this.e = LayoutInflater.from(this.f34427c);
+        this.e = LayoutInflater.from(this.f20736c);
         View findViewById = this.d.findViewById(2131370507);
         this.f = (SurfaceVideoView) findViewById.findViewById(R.id.textureview);
         this.g = (ImageView) findViewById.findViewById(2131373089);
-        this.h = (CircleProgressView) findViewById.findViewById(R.id.progressbar);
+        this.h = findViewById.findViewById(R.id.progressbar);
         this.k = (LinearLayout) this.d.findViewById(2131369468);
         this.l = (TextView) this.d.findViewById(R.id.first_text);
         this.m = (TextView) this.d.findViewById(R.id.second_text);
         this.n = (LinearLayout) this.d.findViewById(R.id.video_layout);
         this.o = (ProgressBar) this.d.findViewById(R.id.video_progress);
-        this.p = (ProgressBar) this.d.findViewById(2131368385);
+        this.p = (ProgressBar) this.d.findViewById(R.id.loading_view);
         this.h.setVisibility(8);
         postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.video.ShowVideoDestroyFragment.1
             @Override // java.lang.Runnable
@@ -135,7 +135,7 @@ public class ShowVideoDestroyFragment extends BaseFragment {
                 ShowVideoDestroyFragment.this.g.setVisibility(0);
                 ShowVideoDestroyFragment.this.h.setVisibility(8);
                 ShowVideoDestroyFragment.this.p.setVisibility(8);
-                AppMethods.a((CharSequence) AppInfo.d().getResources().getString(2131891037));
+                AppMethods.a(AppInfo.d().getResources().getString(2131891037));
                 ShowVideoDestroyFragment.this.postDelaySafeRunOnUiThread(new Runnable() { // from class: com.soft.blued.ui.video.ShowVideoDestroyFragment.3.2
                     @Override // java.lang.Runnable
                     public void run() {
@@ -202,7 +202,7 @@ public class ShowVideoDestroyFragment extends BaseFragment {
                 ShowVideoDestroyFragment.this.h.setVisibility(8);
                 ShowVideoDestroyFragment.this.g.setVisibility(8);
                 ShowVideoDestroyFragment.this.o.setMax(ShowVideoDestroyFragment.this.f.getMediaPlayer().getDuration());
-                ShowVideoDestroyFragment.this.f34426a.post(ShowVideoDestroyFragment.this.b);
+                ShowVideoDestroyFragment.this.f20735a.post(ShowVideoDestroyFragment.this.b);
             }
 
             @Override // com.soft.blued.ui.video.SurfaceVideoView.OnStateChangeListener
@@ -246,16 +246,14 @@ public class ShowVideoDestroyFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         LiveFloatManager.a().k();
         a(this.r);
         return super.onBackPressed();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        this.f34427c = getActivity();
+        this.f20736c = getActivity();
         getActivity().getWindow().addFlags(8192);
         View view = this.d;
         if (view == null) {

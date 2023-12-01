@@ -429,7 +429,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
         return this.mSize <= 0;
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set
     public Iterator<E> iterator() {
         return getCollection().getKeySet().iterator();
     }
@@ -523,7 +523,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
         }
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection, java.util.Set
     public int size() {
         return this.mSize;
     }

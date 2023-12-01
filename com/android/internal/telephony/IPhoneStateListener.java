@@ -328,7 +328,7 @@ public interface IPhoneStateListener extends IInterface {
             switch (i) {
                 case 1:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onServiceStateChanged(parcel.readInt() != 0 ? ServiceState.CREATOR.createFromParcel(parcel) : null);
+                    onServiceStateChanged(parcel.readInt() != 0 ? (ServiceState) ServiceState.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -351,7 +351,7 @@ public interface IPhoneStateListener extends IInterface {
                     return true;
                 case 5:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onCellLocationChanged(parcel.readInt() != 0 ? Bundle.CREATOR.createFromParcel(parcel) : null);
+                    onCellLocationChanged(parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 6:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -367,7 +367,7 @@ public interface IPhoneStateListener extends IInterface {
                     return true;
                 case 9:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onSignalStrengthsChanged(parcel.readInt() != 0 ? SignalStrength.CREATOR.createFromParcel(parcel) : null);
+                    onSignalStrengthsChanged(parcel.readInt() != 0 ? (SignalStrength) SignalStrength.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 10:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -379,19 +379,19 @@ public interface IPhoneStateListener extends IInterface {
                     return true;
                 case 12:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onPreciseCallStateChanged(parcel.readInt() != 0 ? PreciseCallState.CREATOR.createFromParcel(parcel) : null);
+                    onPreciseCallStateChanged(parcel.readInt() != 0 ? (PreciseCallState) PreciseCallState.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 13:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onPreciseDataConnectionStateChanged(parcel.readInt() != 0 ? PreciseDataConnectionState.CREATOR.createFromParcel(parcel) : null);
+                    onPreciseDataConnectionStateChanged(parcel.readInt() != 0 ? (PreciseDataConnectionState) PreciseDataConnectionState.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 14:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onDataConnectionRealTimeInfoChanged(parcel.readInt() != 0 ? DataConnectionRealTimeInfo.CREATOR.createFromParcel(parcel) : null);
+                    onDataConnectionRealTimeInfoChanged(parcel.readInt() != 0 ? (DataConnectionRealTimeInfo) DataConnectionRealTimeInfo.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 15:
                     parcel.enforceInterface(DESCRIPTOR);
-                    onVoLteServiceStateChanged(parcel.readInt() != 0 ? VoLteServiceState.CREATOR.createFromParcel(parcel) : null);
+                    onVoLteServiceStateChanged(parcel.readInt() != 0 ? (VoLteServiceState) VoLteServiceState.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 16:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -401,7 +401,7 @@ public interface IPhoneStateListener extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     onUnregistered();
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

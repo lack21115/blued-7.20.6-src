@@ -4,9 +4,11 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import com.amap.api.col.p0003sl.aa;
+import com.android.internal.R;
 import com.autonavi.amap.mapcore.interfaces.IAMap;
 import com.autonavi.amap.mapcore.interfaces.IMapFragmentDelegate;
 
@@ -26,7 +28,7 @@ public class MapView extends FrameLayout implements BaseMapView {
         super(context, attributeSet);
         this.visibility = 0;
         try {
-            this.visibility = attributeSet.getAttributeIntValue(16842972, 0);
+            this.visibility = attributeSet.getAttributeIntValue(R.attr.visibility, 0);
         } catch (Throwable th) {
         }
         getMapFragmentDelegate().setContext(context);
@@ -37,7 +39,7 @@ public class MapView extends FrameLayout implements BaseMapView {
         super(context, attributeSet, i);
         this.visibility = 0;
         try {
-            this.visibility = attributeSet.getAttributeIntValue(16842972, 0);
+            this.visibility = attributeSet.getAttributeIntValue(R.attr.visibility, 0);
         } catch (Throwable th) {
         }
         getMapFragmentDelegate().setContext(context);
@@ -85,7 +87,7 @@ public class MapView extends FrameLayout implements BaseMapView {
 
     public final void onCreate(Bundle bundle) {
         try {
-            addView(getMapFragmentDelegate().onCreateView(null, null, bundle), new ViewGroup.LayoutParams(-1, -1));
+            addView(getMapFragmentDelegate().onCreateView((LayoutInflater) null, (ViewGroup) null, bundle), new ViewGroup.LayoutParams(-1, -1));
         } catch (Throwable th) {
             th.printStackTrace();
         }

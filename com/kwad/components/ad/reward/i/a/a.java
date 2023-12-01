@@ -12,14 +12,14 @@ import org.json.JSONObject;
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/i/a/a.class */
 public final class a extends com.kwad.components.ad.reward.i.a {
     private c xs = new c();
-    private C0492a xt = new C0492a();
+    private C0322a xt = new C0322a();
     private final b xu = new b(com.kwad.components.ad.reward.kwai.b.gy());
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.kwad.components.ad.reward.i.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/i/a/a$a.class */
-    public static final class C0492a extends com.kwad.components.ad.reward.i.b {
-        public C0492a() {
+    public static final class C0322a extends com.kwad.components.ad.reward.i.b {
+        public C0322a() {
             this.xo = "安装应用";
         }
     }

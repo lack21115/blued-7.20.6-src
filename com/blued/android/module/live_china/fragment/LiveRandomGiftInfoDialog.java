@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.blued.android.core.image.ImageFileLoader;
@@ -33,9 +34,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRandomGiftInfoDialog.class */
 public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13177a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogLiveRandomGiftInfoBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveRandomGiftInfoDialog$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -48,9 +47,7 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
             return DialogLiveRandomGiftInfoBinding.a(LayoutInflater.from(LiveRandomGiftInfoDialog.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f13178c = "";
+    private String c = "";
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveRandomGiftInfoDialog$Companion.class */
@@ -93,7 +90,7 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
             layoutParams.height = i2;
             this$0.d().b.setLayoutParams(layoutParams);
         }
-        ImageLoader.a(this$0.a(), this$0.f13178c).a(this$0.d().b);
+        ImageLoader.a(this$0.a(), this$0.c).a(this$0.d().b);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -101,7 +98,7 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
         Intrinsics.e(this$0, "this$0");
         final int width = this$0.d().b.getWidth();
         final ImageSize imageSize = new ImageSize();
-        ImageFileLoader.a(this$0.a()).a(this$0.f13178c).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftInfoDialog$A37Tcdc7Txqvhd8MwK7sUgSW_YU
+        ImageFileLoader.a(this$0.a()).a(this$0.c).a(imageSize).a(new ImageFileLoader.OnLoadFileListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftInfoDialog$A37Tcdc7Txqvhd8MwK7sUgSW_YU
             @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
             public final void onUIFinish(File file, Exception exc) {
                 LiveRandomGiftInfoDialog.a(ImageSize.this, width, this$0, file, exc);
@@ -119,7 +116,6 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
         return (DialogLiveRandomGiftInfoBinding) this.b.getValue();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 571.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -142,7 +138,6 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -156,9 +151,9 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
         if (arguments != null) {
             String string = arguments.getString("img_url", "");
             Intrinsics.c(string, "it.getString(\"img_url\", \"\")");
-            this.f13178c = string;
+            this.c = string;
         }
-        if (this.f13178c.length() == 0) {
+        if (this.c.length() == 0) {
             z = true;
         }
         if (z) {
@@ -170,7 +165,7 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
                 LiveRandomGiftInfoDialog.a(LiveRandomGiftInfoDialog.this);
             }
         });
-        d().f11811a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftInfoDialog$mSt0pNcc7bj5oCkMcFQHGuWntBE
+        d().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveRandomGiftInfoDialog$mSt0pNcc7bj5oCkMcFQHGuWntBE
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LiveRandomGiftInfoDialog.a(LiveRandomGiftInfoDialog.this, view);
@@ -178,13 +173,13 @@ public final class LiveRandomGiftInfoDialog extends BaseDialogFragment {
         });
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

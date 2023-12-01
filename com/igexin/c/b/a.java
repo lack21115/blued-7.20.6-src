@@ -10,7 +10,7 @@ import java.util.Random;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final char[] f23278a = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    private static final char[] f9670a = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 
     public static String a() {
         Random random = new Random();
@@ -21,7 +21,7 @@ public final class a {
             if (i2 >= 32) {
                 return new String(cArr);
             }
-            char[] cArr2 = f23278a;
+            char[] cArr2 = f9670a;
             cArr[i2] = cArr2[random.nextInt(cArr2.length)];
             i = i2 + 1;
         }
@@ -134,9 +134,9 @@ public final class a {
             bArr2 = new byte[length + 16];
             byte[] bytes = b.substring(0, 8).getBytes();
             byte[] bytes2 = b.substring(24, 32).getBytes();
-            System.arraycopy((Object) bytes, 0, (Object) bArr2, 0, 8);
-            System.arraycopy((Object) a2, 0, (Object) bArr2, 8, length);
-            System.arraycopy((Object) bytes2, 0, (Object) bArr2, length + 8, 8);
+            System.arraycopy(bytes, 0, bArr2, 0, 8);
+            System.arraycopy(a2, 0, bArr2, 8, length);
+            System.arraycopy(bytes2, 0, bArr2, length + 8, 8);
         }
         return bArr2;
     }
@@ -146,7 +146,7 @@ public final class a {
             return null;
         }
         byte[] bArr2 = new byte[bArr.length - 16];
-        System.arraycopy((Object) bArr, 8, (Object) bArr2, 0, bArr.length - 16);
+        System.arraycopy(bArr, 8, bArr2, 0, bArr.length - 16);
         return g.b(bArr2);
     }
 }

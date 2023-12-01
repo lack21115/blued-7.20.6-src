@@ -15,7 +15,7 @@ import com.bytedance.bdtracker.s3;
 public class j3 extends g3<c4> {
 
     /* renamed from: c  reason: collision with root package name */
-    public final Context f21239c;
+    public final Context f7633c;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/j3$a.class */
     public class a implements a4.b<c4, String> {
@@ -33,13 +33,13 @@ public class j3 extends g3<c4> {
             if (c4Var2 == null) {
                 return null;
             }
-            return ((c4.a.C0307a) c4Var2).a(j3.this.f21239c.getPackageName());
+            return ((c4.a.C0137a) c4Var2).a(j3.this.f7633c.getPackageName());
         }
     }
 
     public j3(Context context) {
         super("com.coolpad.deviceidsupport");
-        this.f21239c = context;
+        this.f7633c = context;
     }
 
     @Override // com.bytedance.bdtracker.g3
@@ -54,7 +54,7 @@ public class j3 extends g3<c4> {
                 String string = Settings.Global.getString(context.getContentResolver(), "coolos.oaid");
                 if (!TextUtils.isEmpty(string)) {
                     s3.a aVar = new s3.a();
-                    aVar.f21305a = string;
+                    aVar.f7699a = string;
                     return aVar;
                 }
             }

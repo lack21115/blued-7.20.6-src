@@ -1,7 +1,5 @@
 package android.media;
 
-import com.alipay.sdk.util.i;
-
 /* loaded from: source-9557208-dex2jar.jar:android/media/AudioPort.class */
 public class AudioPort {
     public static final int ROLE_NONE = 0;
@@ -94,6 +92,6 @@ public class AudioPort {
                 num = "SINK";
                 break;
         }
-        return "{mHandle: " + this.mHandle + ", mRole: " + num + i.d;
+        return "{mHandle: " + this.mHandle + ", mRole: " + num + "}";
     }
 }

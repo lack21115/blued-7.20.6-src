@@ -20,11 +20,11 @@ public interface f extends IInterface {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: com.huawei.openalliance.ad.ipc.f$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/ipc/f$a$a.class */
-        public static class C0438a implements f {
+        public static class C0268a implements f {
             public static f Code;
             private IBinder V;
 
-            C0438a(IBinder iBinder) {
+            C0268a(IBinder iBinder) {
                 this.V = iBinder;
             }
 
@@ -85,7 +85,7 @@ public interface f extends IInterface {
             }
             try {
                 IInterface queryLocalInterface = iBinder.queryLocalInterface(Z);
-                return (queryLocalInterface == null || !(queryLocalInterface instanceof f)) ? new C0438a(iBinder) : (f) queryLocalInterface;
+                return (queryLocalInterface == null || !(queryLocalInterface instanceof f)) ? new C0268a(iBinder) : (f) queryLocalInterface;
             } catch (Throwable th) {
                 ge.I(I, "IPPSServiceApi err: " + th.getClass().getSimpleName());
                 return null;
@@ -93,15 +93,15 @@ public interface f extends IInterface {
         }
 
         public static boolean Code(f fVar) {
-            if (C0438a.Code != null || fVar == null) {
+            if (C0268a.Code != null || fVar == null) {
                 return false;
             }
-            C0438a.Code = fVar;
+            C0268a.Code = fVar;
             return true;
         }
 
         public static f V() {
-            return C0438a.Code;
+            return C0268a.Code;
         }
 
         @Override // android.os.IInterface

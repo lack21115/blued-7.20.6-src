@@ -6,10 +6,10 @@ import java.util.HashMap;
 public final class a {
 
     /* renamed from: c  reason: collision with root package name */
-    private static a f21830c;
+    private static a f8223c;
 
     /* renamed from: a  reason: collision with root package name */
-    private HashMap<String, b> f21831a;
+    private HashMap<String, b> f8224a;
     private HashMap<String, c> b;
 
     private a() {
@@ -17,40 +17,40 @@ public final class a {
     }
 
     public static a a() {
-        if (f21830c == null) {
-            f21830c = new a();
+        if (f8223c == null) {
+            f8223c = new a();
         }
-        return f21830c;
+        return f8223c;
     }
 
     private void b() {
-        if (this.f21831a == null) {
-            this.f21831a = new HashMap<>();
+        if (this.f8224a == null) {
+            this.f8224a = new HashMap<>();
         }
-        this.f21831a.clear();
+        this.f8224a.clear();
     }
 
     public final b a(String str) {
-        if (this.f21831a == null) {
+        if (this.f8224a == null) {
             b();
         }
-        b bVar = this.f21831a.get(str);
+        b bVar = this.f8224a.get(str);
         b bVar2 = bVar;
         if (bVar == null) {
             bVar2 = new b();
-            bVar2.f21842a = str;
+            bVar2.f8235a = str;
             bVar2.b = System.currentTimeMillis();
-            this.f21831a.put(str, bVar2);
+            this.f8224a.put(str, bVar2);
         }
         return bVar2;
     }
 
     public final void b(String str) {
-        HashMap<String, b> hashMap = this.f21831a;
+        HashMap<String, b> hashMap = this.f8224a;
         if (hashMap == null || !hashMap.containsKey(str)) {
             return;
         }
-        this.f21831a.remove(str);
+        this.f8224a.remove(str);
     }
 
     public final c c(String str) {

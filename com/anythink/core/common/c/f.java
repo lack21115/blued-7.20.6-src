@@ -9,19 +9,13 @@ import java.util.List;
 public class f extends com.anythink.core.common.c.a<com.anythink.core.common.a.f> {
     private static volatile f d;
     private final String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final long f6578c;
+    private final long c;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/c/f$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f6579a = "dsp_offer_show_record";
+        public static final String a = "dsp_offer_show_record";
         public static final String b = "dsp_id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f6580c = "dsp_offer_id";
+        public static final String c = "dsp_offer_id";
         public static final String d = "show_limit";
         public static final String e = "show_count";
         public static final String f = "create_time";
@@ -32,7 +26,7 @@ public class f extends com.anythink.core.common.c.a<com.anythink.core.common.a.f
     private f(b bVar) {
         super(bVar);
         this.b = f.class.getName();
-        this.f6578c = 86400000L;
+        this.c = 86400000L;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0047, code lost:
@@ -238,13 +232,13 @@ public class f extends com.anythink.core.common.c.a<com.anythink.core.common.a.f
             contentValues.put("dsp_offer_id", fVar.b());
             contentValues.put(a.d, Integer.valueOf(fVar.c()));
             contentValues.put("show_count", (Integer) 0);
-            contentValues.put("create_time", Long.valueOf(System.currentTimeMillis()));
+            contentValues.put(a.f, Long.valueOf(System.currentTimeMillis()));
             contentValues.put("last_update_time", Long.valueOf(System.currentTimeMillis()));
             StringBuilder sb2 = new StringBuilder("insertDspOfferShowRecord--insert dspid:");
             sb2.append(fVar.a());
             sb2.append(",dspOfferId:");
             sb2.append(fVar.b());
-            return b().insert(a.f6579a, null, contentValues);
+            return b().insert(a.a, null, contentValues);
         }
     }
 
@@ -288,7 +282,7 @@ public class f extends com.anythink.core.common.c.a<com.anythink.core.common.a.f
                     sb.append(a2.d() + 1);
                     sb.append(",limit show cap:");
                     sb.append(fVar.c());
-                    return b().update(a.f6579a, contentValues, "dsp_id = ? and dsp_offer_id = ? ", new String[]{fVar.a(), fVar.b()});
+                    return b().update(a.a, contentValues, "dsp_id = ? and dsp_offer_id = ? ", new String[]{fVar.a(), fVar.b()});
                 } catch (Exception e) {
                 }
             }
@@ -302,7 +296,7 @@ public class f extends com.anythink.core.common.c.a<com.anythink.core.common.a.f
             if (b() == null) {
                 return;
             }
-            b().delete(a.f6579a, str, null);
+            b().delete(a.a, str, null);
         } catch (Exception e) {
         }
     }

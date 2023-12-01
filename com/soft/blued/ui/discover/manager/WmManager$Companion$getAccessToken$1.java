@@ -19,22 +19,21 @@ public final class WmManager$Companion$getAccessToken$1 extends StringHttpRespon
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(String str) {
-        String token = ((WmModel) new Gson().fromJson(str, (Class<Object>) WmModel.class)).access_token;
-        BluedPreferences.aq(token);
-        WmManager.Companion companion = WmManager.f29843a;
-        Intrinsics.c(token, "token");
-        companion.a(token);
-        WmManager.f29843a.b(token);
+        String str2 = ((WmModel) new Gson().fromJson(str, (Class<Object>) WmModel.class)).access_token;
+        BluedPreferences.aq(str2);
+        WmManager.Companion companion = WmManager.f16153a;
+        Intrinsics.c(str2, "token");
+        companion.a(str2);
+        WmManager.f16153a.b(str2);
     }
 
-    @Override // com.blued.android.core.net.HttpResponseHandler, com.blued.android.core.net.http.AbstractHttpResponseHandler
     /* renamed from: a */
     public void onSuccess(final String str) {
-        Log.v("drb", String.valueOf(Intrinsics.a("getAccessToken:", (Object) str)));
+        Log.v("drb", String.valueOf(Intrinsics.a("getAccessToken:", str)));
         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.soft.blued.ui.discover.manager.-$$Lambda$WmManager$Companion$getAccessToken$1$-gW966dkHuD1gGH9Aew5oCDLfEg
             @Override // java.lang.Runnable
             public final void run() {
-                WmManager$Companion$getAccessToken$1.b(String.this);
+                WmManager$Companion$getAccessToken$1.b(str);
             }
         });
     }

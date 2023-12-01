@@ -13,13 +13,9 @@ import kotlin.jvm.functions.Function3;
 @DebugMetadata(b = "Deprecated.kt", c = {187, 188, 188}, d = "invokeSuspend", e = "kotlinx.coroutines.channels.ChannelsKt__DeprecatedKt$filterIndexed$1")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/channels/ChannelsKt__DeprecatedKt$filterIndexed$1.class */
 final class ChannelsKt__DeprecatedKt$filterIndexed$1<E> extends SuspendLambda implements Function2<ProducerScope<? super E>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f42935a;
+    Object a;
     Object b;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f42936c;
+    int c;
     int d;
     final /* synthetic */ ReceiveChannel<E> e;
     final /* synthetic */ Function3<Integer, E, Continuation<? super Boolean>, Object> f;
@@ -36,7 +32,7 @@ final class ChannelsKt__DeprecatedKt$filterIndexed$1<E> extends SuspendLambda im
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<? super E> producerScope, Continuation<? super Unit> continuation) {
-        return ((ChannelsKt__DeprecatedKt$filterIndexed$1) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((ChannelsKt__DeprecatedKt$filterIndexed$1) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

@@ -17,13 +17,13 @@ public class EditorInfo implements InputType, Parcelable {
             editorInfo.inputType = parcel.readInt();
             editorInfo.imeOptions = parcel.readInt();
             editorInfo.privateImeOptions = parcel.readString();
-            editorInfo.actionLabel = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            editorInfo.actionLabel = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             editorInfo.actionId = parcel.readInt();
             editorInfo.initialSelStart = parcel.readInt();
             editorInfo.initialSelEnd = parcel.readInt();
             editorInfo.initialCapsMode = parcel.readInt();
-            editorInfo.hintText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-            editorInfo.label = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            editorInfo.hintText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+            editorInfo.label = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
             editorInfo.packageName = parcel.readString();
             editorInfo.fieldId = parcel.readInt();
             editorInfo.fieldName = parcel.readString();
@@ -88,13 +88,13 @@ public class EditorInfo implements InputType, Parcelable {
             switch (this.inputType & 4095) {
                 case 2:
                 case 18:
-                    this.inputType = (this.inputType & InputType.TYPE_MASK_FLAGS) | 2;
+                    this.inputType = (this.inputType & 16773120) | 2;
                     return;
                 case 209:
-                    this.inputType = (this.inputType & InputType.TYPE_MASK_FLAGS) | 33;
+                    this.inputType = (this.inputType & 16773120) | 33;
                     return;
                 case 225:
-                    this.inputType = (this.inputType & InputType.TYPE_MASK_FLAGS) | 129;
+                    this.inputType = (this.inputType & 16773120) | 129;
                     return;
                 default:
                     return;

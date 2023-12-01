@@ -5,11 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/cache/Util.class */
-final class Util {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Charset f10408a = Charset.forName("US-ASCII");
+public final class Util {
+    static final Charset a = Charset.forName("US-ASCII");
     static final Charset b = Charset.forName("UTF-8");
 
     private Util() {

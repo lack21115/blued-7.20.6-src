@@ -2,6 +2,8 @@ package java.io;
 
 import android.system.ErrnoException;
 import android.system.OsConstants;
+import com.anythink.core.common.b.g;
+import com.blued.android.module.common.web.LoaderConstants;
 import dalvik.system.CloseGuard;
 import java.nio.ByteOrder;
 import java.nio.NioUtils;
@@ -27,7 +29,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
         this.syncMetadata = false;
         this.guard = CloseGuard.get();
         this.scratch = new byte[8];
-        if (str.equals("r")) {
+        if (str.equals(g.o.o)) {
             i = OsConstants.O_RDONLY;
         } else if (!str.equals("rw") && !str.equals("rws") && !str.equals("rwd")) {
             throw new IllegalArgumentException("Invalid mode: " + str);
@@ -51,7 +53,7 @@ public class RandomAccessFile implements DataInput, DataOutput, Closeable {
             } catch (IOException e) {
             }
         }
-        this.guard.open("close");
+        this.guard.open(LoaderConstants.CLOSE);
     }
 
     public RandomAccessFile(String str, String str2) throws FileNotFoundException {

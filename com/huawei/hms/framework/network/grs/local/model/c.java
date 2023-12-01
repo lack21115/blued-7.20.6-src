@@ -11,11 +11,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22729a;
+    private String f9121a;
     private final Map<String, d> b = new ConcurrentHashMap(16);
 
     /* renamed from: c  reason: collision with root package name */
-    private List<b> f22730c = new ArrayList(16);
+    private List<b> f9122c = new ArrayList(16);
 
     public d a(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -26,7 +26,7 @@ public class c {
     }
 
     public List<b> a() {
-        return this.f22730c;
+        return this.f9122c;
     }
 
     public void a(String str, d dVar) {
@@ -37,17 +37,17 @@ public class c {
     }
 
     public void a(List<b> list) {
-        this.f22730c = list;
+        this.f9122c = list;
     }
 
     public String b() {
-        return this.f22729a;
+        return this.f9121a;
     }
 
     public void b(String str) {
     }
 
     public void c(String str) {
-        this.f22729a = str;
+        this.f9121a = str;
     }
 }

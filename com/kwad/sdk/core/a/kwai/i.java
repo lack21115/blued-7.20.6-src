@@ -1,5 +1,6 @@
 package com.kwad.sdk.core.a.kwai;
 
+import com.baidu.mobads.sdk.api.SplashAd;
 import com.huawei.hms.push.AttributionReporter;
 import com.kwad.sdk.core.response.model.ABParams;
 import com.kwad.sdk.core.response.model.AdInfo;
@@ -116,7 +117,7 @@ public final class i implements com.kwad.sdk.core.d<AdInfo.AdBaseInfo> {
         adBaseInfo.adCacheStrategy = jSONObject.optInt("adCacheStrategy", new Integer("1").intValue());
         adBaseInfo.adCacheSize = jSONObject.optInt("adCacheSize", new Integer("1").intValue());
         adBaseInfo.skipSecond = jSONObject.optInt("skipSecond");
-        adBaseInfo.ecpm = jSONObject.optInt("ecpm");
+        adBaseInfo.ecpm = jSONObject.optInt(SplashAd.KEY_BIDFAIL_ECPM);
         adBaseInfo.videoPlayedNS = jSONObject.optString("videoPlayedNS");
         if (adBaseInfo.videoPlayedNS == JSONObject.NULL) {
             adBaseInfo.videoPlayedNS = "";
@@ -250,7 +251,7 @@ public final class i implements com.kwad.sdk.core.d<AdInfo.AdBaseInfo> {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "skipSecond", adBaseInfo.skipSecond);
         }
         if (adBaseInfo.ecpm != 0) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, "ecpm", adBaseInfo.ecpm);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, SplashAd.KEY_BIDFAIL_ECPM, adBaseInfo.ecpm);
         }
         if (adBaseInfo.videoPlayedNS != null && !adBaseInfo.videoPlayedNS.equals("")) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "videoPlayedNS", adBaseInfo.videoPlayedNS);

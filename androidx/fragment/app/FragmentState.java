@@ -22,11 +22,11 @@ public final class FragmentState implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    final String f2997a;
+    final String f2949a;
     final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    final boolean f2998c;
+    final boolean f2950c;
     final int d;
     final int e;
     final String f;
@@ -39,9 +39,9 @@ public final class FragmentState implements Parcelable {
     Bundle m;
 
     FragmentState(Parcel parcel) {
-        this.f2997a = parcel.readString();
+        this.f2949a = parcel.readString();
         this.b = parcel.readString();
-        this.f2998c = parcel.readInt() != 0;
+        this.f2950c = parcel.readInt() != 0;
         this.d = parcel.readInt();
         this.e = parcel.readInt();
         this.f = parcel.readString();
@@ -56,9 +56,9 @@ public final class FragmentState implements Parcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentState(Fragment fragment) {
-        this.f2997a = fragment.getClass().getName();
+        this.f2949a = fragment.getClass().getName();
         this.b = fragment.mWho;
-        this.f2998c = fragment.mFromLayout;
+        this.f2950c = fragment.mFromLayout;
         this.d = fragment.mFragmentId;
         this.e = fragment.mContainerId;
         this.f = fragment.mTag;
@@ -78,11 +78,11 @@ public final class FragmentState implements Parcelable {
     public String toString() {
         StringBuilder sb = new StringBuilder(128);
         sb.append("FragmentState{");
-        sb.append(this.f2997a);
+        sb.append(this.f2949a);
         sb.append(" (");
         sb.append(this.b);
         sb.append(")}:");
-        if (this.f2998c) {
+        if (this.f2950c) {
             sb.append(" fromLayout");
         }
         if (this.e != 0) {

@@ -2,6 +2,7 @@ package com.blued.android.module.live_china.utils.dslspannable;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.view.View;
 import androidx.core.content.ContextCompat;
 import com.blued.android.core.AppInfo;
 import kotlin.Metadata;
@@ -12,12 +13,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/utils/dslspannable/DslSpanBuilderImpl.class */
 public final class DslSpanBuilderImpl implements DslSpanBuilder {
-
-    /* renamed from: a  reason: collision with root package name */
-    private boolean f14202a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f14203c;
+    private boolean a;
+    private boolean c;
     private boolean d;
     private Function0<Unit> e;
     private boolean f;
@@ -26,7 +23,7 @@ public final class DslSpanBuilderImpl implements DslSpanBuilder {
     private boolean j;
     private boolean k;
     private int l;
-    private int b = -16777216;
+    private int b = View.MEASURED_STATE_MASK;
     private float g = 1.0f;
 
     public DslSpanBuilderImpl() {
@@ -37,7 +34,7 @@ public final class DslSpanBuilderImpl implements DslSpanBuilder {
 
     @Override // com.blued.android.module.live_china.utils.dslspannable.DslSpanBuilder
     public void a(int i) {
-        this.f14202a = true;
+        this.a = true;
         this.b = i;
     }
 
@@ -48,7 +45,7 @@ public final class DslSpanBuilderImpl implements DslSpanBuilder {
     }
 
     public final boolean a() {
-        return this.f14202a;
+        return this.a;
     }
 
     public final int b() {
@@ -56,7 +53,7 @@ public final class DslSpanBuilderImpl implements DslSpanBuilder {
     }
 
     public final boolean c() {
-        return this.f14203c;
+        return this.c;
     }
 
     public final boolean d() {

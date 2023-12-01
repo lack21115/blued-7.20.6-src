@@ -32,11 +32,11 @@ public class bs extends NativeAd implements IUnityNativeAdPresenter, PPSNativeVi
     private NativeAdMonitor Z;
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f22442a;
+    private boolean f8834a;
     private AdListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f22443c;
+    private boolean f8835c;
     private String d;
     private Context e;
     private AdFeedbackListener f;
@@ -152,7 +152,7 @@ public class bs extends NativeAd implements IUnityNativeAdPresenter, PPSNativeVi
     }
 
     public void Code(boolean z) {
-        this.f22442a = z;
+        this.f8834a = z;
     }
 
     @Override // com.huawei.openalliance.ad.views.PPSNativeView.e
@@ -515,12 +515,12 @@ public class bs extends NativeAd implements IUnityNativeAdPresenter, PPSNativeVi
     @Override // com.huawei.hms.ads.nativead.NativeAd
     public boolean isCustomClickAllowed() {
         com.huawei.openalliance.ad.inter.data.n nVar = this.V;
-        return nVar != null && nVar.x() && this.f22443c;
+        return nVar != null && nVar.x() && this.f8835c;
     }
 
     @Override // com.huawei.hms.ads.nativead.NativeAd
     public boolean isCustomDislikeThisAdEnabled() {
-        return this.f22442a;
+        return this.f8834a;
     }
 
     @Override // com.huawei.hms.ads.nativead.NativeAd
@@ -644,7 +644,7 @@ public class bs extends NativeAd implements IUnityNativeAdPresenter, PPSNativeVi
 
     @Override // com.huawei.hms.ads.nativead.NativeAd
     public void setAllowCustomClick() {
-        this.f22443c = true;
+        this.f8835c = true;
     }
 
     @Override // com.huawei.hms.ads.nativead.NativeAd

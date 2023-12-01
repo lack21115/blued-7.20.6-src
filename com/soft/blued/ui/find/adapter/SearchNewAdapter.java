@@ -35,34 +35,34 @@ public class SearchNewAdapter extends PeopleListQuickAdapter {
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final UserFindResult userFindResult) {
         super.convert(baseViewHolder, userFindResult);
-        TextView textView = (TextView) baseViewHolder.getView(2131368652);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.name_view);
         textView.setTypeface(Typeface.defaultFromStyle(0));
         String str = userFindResult.name;
         if (!TextUtils.isEmpty(userFindResult.note)) {
             str = userFindResult.note;
         }
-        UserRelationshipUtils.a(this.f30084a, textView, userFindResult);
-        UserRelationshipUtils.a(this.f30084a, str, this.x, textView);
+        UserRelationshipUtils.a(this.f16394a, textView, userFindResult);
+        UserRelationshipUtils.a(this.f16394a, str, this.x, textView);
         baseViewHolder.getView(R.id.layout_friend).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.adapter.SearchNewAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                if (SearchNewAdapter.this.f30084a instanceof Activity) {
-                    KeyboardUtils.a((Activity) SearchNewAdapter.this.f30084a);
+                if (SearchNewAdapter.this.f16394a instanceof Activity) {
+                    KeyboardUtils.a((Activity) SearchNewAdapter.this.f16394a);
                 }
-                FilterDialogFragment.f30190c = true;
-                UserInfoFragmentNew.a(SearchNewAdapter.this.f30084a, userFindResult, "", baseViewHolder.getView(2131364232));
+                FilterDialogFragment.f16500c = true;
+                UserInfoFragmentNew.a(SearchNewAdapter.this.f16394a, userFindResult, "", baseViewHolder.getView(2131364232));
             }
         });
         baseViewHolder.setGone(R.id.online_time_view, false);
-        TextView textView2 = (TextView) baseViewHolder.getView(2131363246);
+        TextView textView2 = (TextView) baseViewHolder.getView(R.id.distance_view);
         if (TextUtils.isEmpty(userFindResult.distance)) {
             textView2.setText("");
         } else {
             textView2.setText(DistanceUtils.a(userFindResult.distance, BlueAppLocal.c(), false));
         }
-        DistanceUtils.a(this.f30084a, textView2, userFindResult, 1);
-        ImageView imageView = (ImageView) baseViewHolder.getView(2131364625);
+        DistanceUtils.a(this.f16394a, textView2, userFindResult, 1);
+        ImageView imageView = (ImageView) baseViewHolder.getView(R.id.img_online);
         if (userFindResult.online_state == 1) {
             imageView.setImageResource(2131233953);
         } else {

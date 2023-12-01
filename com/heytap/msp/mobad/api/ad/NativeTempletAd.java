@@ -34,48 +34,48 @@ public class NativeTempletAd {
 
         /* renamed from: com.heytap.msp.mobad.api.ad.NativeTempletAd$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/heytap/msp/mobad/api/ad/NativeTempletAd$a$a.class */
-        static class C0383a implements INativeTempletAdView {
+        static class C0213a implements INativeTempletAdView {
 
             /* renamed from: a  reason: collision with root package name */
-            private final p f22247a;
+            private final p f8639a;
 
-            public C0383a(p pVar) {
-                this.f22247a = pVar;
+            public C0213a(p pVar) {
+                this.f8639a = pVar;
             }
 
             @Override // com.heytap.msp.mobad.api.params.INativeTempletAdView
             public void destroy() {
-                this.f22247a.c();
+                this.f8639a.c();
             }
 
             @Override // com.heytap.msp.mobad.api.params.INativeTempletAdView
             public View getAdView() {
-                return this.f22247a.a();
+                return this.f8639a.a();
             }
 
             @Override // com.heytap.msp.mobad.api.ad.IBidding
             public int getECPM() {
-                return this.f22247a.g();
+                return this.f8639a.g();
             }
 
             @Override // com.heytap.msp.mobad.api.ad.IBidding
             public void notifyRankLoss(int i, String str, int i2) {
-                this.f22247a.a(i, str, i2);
+                this.f8639a.a(i, str, i2);
             }
 
             @Override // com.heytap.msp.mobad.api.ad.IBidding
             public void notifyRankWin(int i) {
-                this.f22247a.b(i);
+                this.f8639a.b(i);
             }
 
             @Override // com.heytap.msp.mobad.api.params.INativeTempletAdView
             public void render() {
-                this.f22247a.b();
+                this.f8639a.b();
             }
 
             @Override // com.heytap.msp.mobad.api.ad.IBidding
             public void setBidECPM(int i) {
-                this.f22247a.c(i);
+                this.f8639a.c(i);
             }
         }
 
@@ -112,7 +112,7 @@ public class NativeTempletAd {
             NativeAdError nativeAdError = null;
             INativeTempletAdView iNativeTempletAdView = pVar != null ? (INativeTempletAdView) pVar.d() : null;
             if (qVar != null) {
-                nativeAdError = new NativeAdError(qVar.f25673a, qVar.b);
+                nativeAdError = new NativeAdError(qVar.f11985a, qVar.b);
             }
             this.b.onRenderFailed(nativeAdError, iNativeTempletAdView);
         }
@@ -133,9 +133,9 @@ public class NativeTempletAd {
                     }
                     p next = it.next();
                     if (next != null) {
-                        C0383a c0383a = new C0383a(next);
-                        next.a(c0383a);
-                        arrayList2.add(c0383a);
+                        C0213a c0213a = new C0213a(next);
+                        next.a(c0213a);
+                        arrayList2.add(c0213a);
                     }
                 }
             }

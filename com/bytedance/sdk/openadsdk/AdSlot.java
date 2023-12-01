@@ -16,7 +16,7 @@ public class AdSlot implements TTAdSlot {
     private float hj;
 
     /* renamed from: io  reason: collision with root package name */
-    private int[] f21509io;
+    private int[] f7903io;
     private int jb;
     private int je;
     private TTAdLoadType jq;
@@ -42,7 +42,7 @@ public class AdSlot implements TTAdSlot {
         private String gm;
 
         /* renamed from: io  reason: collision with root package name */
-        private int[] f21510io;
+        private int[] f7904io;
         private String jb;
         private int je;
         private String ko;
@@ -85,7 +85,7 @@ public class AdSlot implements TTAdSlot {
             adSlot.jb = this.lz;
             adSlot.nk = this.x;
             adSlot.lc = this.lc;
-            adSlot.f21509io = this.f21510io;
+            adSlot.f7903io = this.f7904io;
             adSlot.l = this.e;
             adSlot.m = this.l;
             adSlot.e = this.jb;
@@ -156,7 +156,7 @@ public class AdSlot implements TTAdSlot {
         }
 
         public Builder setExternalABVid(int... iArr) {
-            this.f21510io = iArr;
+            this.f7904io = iArr;
             return this;
         }
 
@@ -306,7 +306,7 @@ public class AdSlot implements TTAdSlot {
 
     @Override // com.bytedance.sdk.openadsdk.TTAdSlot
     public int[] getExternalABVid() {
-        return this.f21509io;
+        return this.f7903io;
     }
 
     @Override // com.bytedance.sdk.openadsdk.TTAdSlot
@@ -389,7 +389,7 @@ public class AdSlot implements TTAdSlot {
     }
 
     public void setExternalABVid(int... iArr) {
-        this.f21509io = iArr;
+        this.f7903io = iArr;
     }
 
     public void setGroupLoadMore(int i) {

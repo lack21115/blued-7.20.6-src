@@ -6,23 +6,23 @@ import java.util.ArrayList;
 public final class a extends c {
 
     /* renamed from: a  reason: collision with root package name */
-    private ArrayList<String> f41034a;
+    private ArrayList<String> f27343a;
 
     public a(boolean z, String str, ArrayList<String> arrayList) {
         super(z ? 2002 : 2003, str);
-        this.f41034a = arrayList;
+        this.f27343a = arrayList;
     }
 
     @Override // com.vivo.push.b.c, com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
         super.c(aVar);
-        aVar.a("tags", this.f41034a);
+        aVar.a("tags", this.f27343a);
     }
 
     @Override // com.vivo.push.b.c, com.vivo.push.o
     public final void d(com.vivo.push.a aVar) {
         super.d(aVar);
-        this.f41034a = aVar.c("tags");
+        this.f27343a = aVar.c("tags");
     }
 
     @Override // com.vivo.push.b.c, com.vivo.push.o

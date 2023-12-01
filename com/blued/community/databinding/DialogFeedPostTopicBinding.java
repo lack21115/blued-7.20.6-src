@@ -14,13 +14,9 @@ import com.blued.community.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogFeedPostTopicBinding.class */
 public final class DialogFeedPostTopicBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final TextView f18803a;
+    public final TextView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeLinearLayout f18804c;
+    public final ShapeLinearLayout c;
     public final RecyclerView d;
     public final FrameLayout e;
     public final SearchView f;
@@ -28,9 +24,9 @@ public final class DialogFeedPostTopicBinding implements ViewBinding {
 
     private DialogFeedPostTopicBinding(FrameLayout frameLayout, TextView textView, ImageView imageView, ShapeLinearLayout shapeLinearLayout, RecyclerView recyclerView, FrameLayout frameLayout2, SearchView searchView) {
         this.g = frameLayout;
-        this.f18803a = textView;
+        this.a = textView;
         this.b = imageView;
-        this.f18804c = shapeLinearLayout;
+        this.c = shapeLinearLayout;
         this.d = recyclerView;
         this.e = frameLayout2;
         this.f = searchView;
@@ -56,13 +52,13 @@ public final class DialogFeedPostTopicBinding implements ViewBinding {
             if (imageView != null) {
                 ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.layoutTopic);
                 if (shapeLinearLayout != null) {
-                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-                    if (recyclerView != null) {
+                    RecyclerView findViewById = view.findViewById(R.id.recyclerView);
+                    if (findViewById != null) {
                         FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.rootLayout);
                         if (frameLayout != null) {
                             SearchView searchView = (SearchView) view.findViewById(R.id.searchBar);
                             if (searchView != null) {
-                                return new DialogFeedPostTopicBinding((FrameLayout) view, textView, imageView, shapeLinearLayout, recyclerView, frameLayout, searchView);
+                                return new DialogFeedPostTopicBinding((FrameLayout) view, textView, imageView, shapeLinearLayout, findViewById, frameLayout, searchView);
                             }
                             str = "searchBar";
                         } else {
@@ -83,7 +79,6 @@ public final class DialogFeedPostTopicBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.g;

@@ -3,20 +3,17 @@ package com.blued.android.module.live_china.zegoVideoCapture.ve_gl;
 import android.view.Surface;
 import com.blued.android.module.live_china.zegoVideoCapture.ve_gl.EglBase10;
 import com.blued.android.module.live_china.zegoVideoCapture.ve_gl.EglBase14;
+import javax.microedition.khronos.egl.EGL10;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/zegoVideoCapture/ve_gl/EglBase.class */
 public abstract class EglBase {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static final String f15496a = EglBase.class.getSimpleName();
-
-    /* renamed from: c  reason: collision with root package name */
-    public static final Object f15497c = new Object();
-    public static final int[] d = {12324, 8, 12323, 8, 12322, 8, 12352, 4, 12344};
-    public static final int[] e = {12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 4, 12344};
-    public static final int[] f = {12324, 8, 12323, 8, 12322, 8, 12352, 4, 12339, 1, 12344};
-    public static final int[] g = {12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 4, 12339, 1, 12344};
-    public static final int[] h = {12324, 8, 12323, 8, 12322, 8, 12352, 4, 12610, 1, 12344};
+    protected static final String a = EglBase.class.getSimpleName();
+    public static final Object c = new Object();
+    public static final int[] d = {EGL10.EGL_RED_SIZE, 8, EGL10.EGL_GREEN_SIZE, 8, EGL10.EGL_BLUE_SIZE, 8, EGL10.EGL_RENDERABLE_TYPE, 4, EGL10.EGL_NONE};
+    public static final int[] e = {EGL10.EGL_RED_SIZE, 8, EGL10.EGL_GREEN_SIZE, 8, EGL10.EGL_BLUE_SIZE, 8, EGL10.EGL_ALPHA_SIZE, 8, EGL10.EGL_RENDERABLE_TYPE, 4, EGL10.EGL_NONE};
+    public static final int[] f = {EGL10.EGL_RED_SIZE, 8, EGL10.EGL_GREEN_SIZE, 8, EGL10.EGL_BLUE_SIZE, 8, EGL10.EGL_RENDERABLE_TYPE, 4, EGL10.EGL_SURFACE_TYPE, 1, EGL10.EGL_NONE};
+    public static final int[] g = {EGL10.EGL_RED_SIZE, 8, EGL10.EGL_GREEN_SIZE, 8, EGL10.EGL_BLUE_SIZE, 8, EGL10.EGL_ALPHA_SIZE, 8, EGL10.EGL_RENDERABLE_TYPE, 4, EGL10.EGL_SURFACE_TYPE, 1, EGL10.EGL_NONE};
+    public static final int[] h = {EGL10.EGL_RED_SIZE, 8, EGL10.EGL_GREEN_SIZE, 8, EGL10.EGL_BLUE_SIZE, 8, EGL10.EGL_RENDERABLE_TYPE, 4, 12610, 1, EGL10.EGL_NONE};
     protected boolean b = false;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/zegoVideoCapture/ve_gl/EglBase$Context.class */

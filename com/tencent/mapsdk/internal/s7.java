@@ -17,7 +17,7 @@ public class s7 extends r7 {
     public void a(GL10 gl10, long j) {
         float f = this.k;
         float f2 = this.j;
-        float f3 = f2 + (((f - f2) * ((float) j)) / ((float) this.f37735a));
+        float f3 = f2 + (((f - f2) * ((float) j)) / ((float) this.f24044a));
         gl10.glColor4f(f3, f3, f3, f3);
     }
 }

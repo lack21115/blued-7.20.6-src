@@ -7,16 +7,16 @@ import android.os.Build;
 public class p3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile SharedPreferences f3921a;
+    public static volatile SharedPreferences f3873a;
 
     public static SharedPreferences a() {
         SharedPreferences sharedPreferences;
         synchronized (p3.class) {
             try {
-                if (f3921a == null) {
-                    f3921a = q2.a().getSharedPreferences("LocationSDK", 0);
+                if (f3873a == null) {
+                    f3873a = q2.a().getSharedPreferences("LocationSDK", 0);
                 }
-                sharedPreferences = f3921a;
+                sharedPreferences = f3873a;
             } catch (Throwable th) {
                 throw th;
             }

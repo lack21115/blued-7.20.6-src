@@ -36,7 +36,7 @@ import kotlinx.coroutines.CoroutineScope;
 public final class VIPCenterTabPageViewModel$getData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f34357a;
+    int f20666a;
     final /* synthetic */ VIPCenterTabPageViewModel b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -46,26 +46,23 @@ public final class VIPCenterTabPageViewModel$getData$1 extends SuspendLambda imp
         this.b = vIPCenterTabPageViewModel;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((VIPCenterTabPageViewModel$getData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new VIPCenterTabPageViewModel$getData$1(this.b, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        ApiState error;
+        ApiState apiState;
         Object a2 = IntrinsicsKt.a();
-        int i = this.f34357a;
+        int i = this.f20666a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f34357a = 1;
-            Object b = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).b(this.b.a(), this);
+            this.f20666a = 1;
+            Object b = ((UserApiService) BluedApiProxy.b().a(UserApiService.class)).b(this.b.a(), (Continuation) this);
             obj = b;
             if (b == a2) {
                 return a2;
@@ -79,8 +76,8 @@ public final class VIPCenterTabPageViewModel$getData$1 extends SuspendLambda imp
         VIPCenterTabPageViewModel vIPCenterTabPageViewModel = this.b;
         if (bluedEntityA.code == 200) {
             if (bluedEntityA.hasData()) {
-                final List<T> data = bluedEntityA.data;
-                Intrinsics.c(data, "data");
+                final List list = bluedEntityA.data;
+                Intrinsics.c(list, "data");
                 boolean hasMore = bluedEntityA.hasMore();
                 VIPCenterTabPageViewModel vIPCenterTabPageViewModel2 = vIPCenterTabPageViewModel;
                 BluedStructureExtKt.a(vIPCenterTabPageViewModel2, new Function1<VIPCenterState, VIPCenterState>() { // from class: com.soft.blued.ui.user.viewmodel.VIPCenterTabPageViewModel$getData$1$1$1
@@ -91,11 +88,10 @@ public final class VIPCenterTabPageViewModel$getData$1 extends SuspendLambda imp
                         super(1);
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
                     /* renamed from: a */
-                    public final VIPCenterState invoke(VIPCenterState setState) {
-                        Intrinsics.e(setState, "$this$setState");
-                        return setState.a(data.get(0));
+                    public final VIPCenterState invoke(VIPCenterState vIPCenterState) {
+                        Intrinsics.e(vIPCenterState, "$this$setState");
+                        return vIPCenterState.a(list.get(0));
                     }
                 });
                 BluedStructureExtKt.a(vIPCenterTabPageViewModel2, new MviEvent.LoadFinished(true, hasMore));
@@ -110,45 +106,43 @@ public final class VIPCenterTabPageViewModel$getData$1 extends SuspendLambda imp
                         super(1);
                     }
 
-                    @Override // kotlin.jvm.functions.Function1
                     /* renamed from: a */
-                    public final VIPCenterState invoke(VIPCenterState setState) {
-                        Intrinsics.e(setState, "$this$setState");
-                        return setState.a(b2.get(0));
+                    public final VIPCenterState invoke(VIPCenterState vIPCenterState) {
+                        Intrinsics.e(vIPCenterState, "$this$setState");
+                        return vIPCenterState.a(b2.get(0));
                     }
                 });
                 BluedStructureExtKt.a(vIPCenterTabPageViewModel3, new MviEvent.LoadFinished(true, false));
             }
-            error = Succeed.f10631a;
+            apiState = (ApiState) Succeed.a;
         } else {
             int i2 = bluedEntityA.code;
-            String message = bluedEntityA.message;
-            Intrinsics.c(message, "message");
-            error = new Error(i2, message);
+            String str = bluedEntityA.message;
+            Intrinsics.c(str, "message");
+            apiState = (ApiState) new Error(i2, str);
         }
         VIPCenterTabPageViewModel vIPCenterTabPageViewModel4 = this.b;
-        if (error instanceof Error) {
-            Error error2 = (Error) error;
-            error2.a();
-            error2.b();
+        if (apiState instanceof Error) {
+            Error error = apiState;
+            error.a();
+            error.b();
             BluedStructureExtKt.a(vIPCenterTabPageViewModel4, new MviEvent.LoadFinished(false, false));
         }
         final VIPCenterTabPageViewModel vIPCenterTabPageViewModel5 = this.b;
         ProfileHttpUtils.a((Context) null, new BluedUIHttpResponse<BluedEntityA<BluedBlackList.privacySettingEntity>>() { // from class: com.soft.blued.ui.user.viewmodel.VIPCenterTabPageViewModel$getData$1.3
             {
-                super(null);
+                super((IRequestHost) null);
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<BluedBlackList.privacySettingEntity> bluedEntityA2) {
                 if (bluedEntityA2 == null || bluedEntityA2.data.size() <= 0) {
                     return;
                 }
-                VIPCenterTabPageViewModel.this.a(bluedEntityA2.data.get(0));
+                VIPCenterTabPageViewModel.this.a((BluedBlackList.privacySettingEntity) bluedEntityA2.data.get(0));
             }
         }, UserInfo.getInstance().getLoginUserInfo().getUid(), (IRequestHost) null);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

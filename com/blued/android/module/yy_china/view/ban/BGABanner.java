@@ -19,11 +19,11 @@ import android.widget.TextView;
 import androidx.core.view.ViewCompat;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import com.amap.api.maps.utils.SpatialRelationUtil;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.yy_china.R;
 import com.blued.android.module.yy_china.view.ban.BGAViewPager;
 import com.blued.android.module.yy_china.view.ban.transformer.BGAPageTransformer;
-import com.tencent.ugc.UGCTransitionRules;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -53,13 +53,9 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     private BGAOnNoDoubleClickListener T;
     private int U;
     private int V;
-
-    /* renamed from: a  reason: collision with root package name */
-    private BGAViewPager f18607a;
+    private BGAViewPager a;
     private List<View> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private List<View> f18608c;
+    private List<View> c;
     private List<String> d;
     private LinearLayout e;
     private TextView f;
@@ -92,17 +88,15 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/ban/BGABanner$AutoPlayTask.class */
     public static class AutoPlayTask implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final WeakReference<BGABanner> f18610a;
+        private final WeakReference<BGABanner> a;
 
         private AutoPlayTask(BGABanner bGABanner) {
-            this.f18610a = new WeakReference<>(bGABanner);
+            this.a = new WeakReference<>(bGABanner);
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            BGABanner bGABanner = this.f18610a.get();
+            BGABanner bGABanner = this.a.get();
             if (bGABanner != null) {
                 bGABanner.c();
                 bGABanner.h();
@@ -126,38 +120,34 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
         private PageAdapter() {
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup viewGroup, int i, Object obj) {
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            if (BGABanner.this.f18608c == null) {
+            if (BGABanner.this.c == null) {
                 return 0;
             }
             if (BGABanner.this.g) {
                 return Integer.MAX_VALUE;
             }
-            return BGABanner.this.f18608c.size();
+            return BGABanner.this.c.size();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object obj) {
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public Object instantiateItem(ViewGroup viewGroup, int i) {
-            if (BGABannerUtil.a(BGABanner.this.f18608c, new Collection[0])) {
+            if (BGABannerUtil.a(BGABanner.this.c, new Collection[0])) {
                 return null;
             }
-            int size = i % BGABanner.this.f18608c.size();
-            View view = BGABanner.this.b == null ? (View) BGABanner.this.f18608c.get(size) : (View) BGABanner.this.b.get(i % BGABanner.this.b.size());
+            int size = i % BGABanner.this.c.size();
+            View view = BGABanner.this.b == null ? (View) BGABanner.this.c.get(size) : (View) BGABanner.this.b.get(i % BGABanner.this.b.size());
             if (BGABanner.this.z != null) {
                 view.setOnClickListener(new BGAOnNoDoubleClickListener() { // from class: com.blued.android.module.yy_china.view.ban.BGABanner.PageAdapter.1
                     @Override // com.blued.android.module.yy_china.view.ban.BGAOnNoDoubleClickListener
                     public void a(View view2) {
-                        int currentItem = BGABanner.this.f18607a.getCurrentItem() % BGABanner.this.f18608c.size();
+                        int currentItem = BGABanner.this.a.getCurrentItem() % BGABanner.this.c.size();
                         if (BGABannerUtil.a(currentItem, BGABanner.this.y)) {
                             BGABanner.this.z.b(BGABanner.this, view2, BGABanner.this.y.get(currentItem), currentItem);
                         } else if (BGABannerUtil.a(BGABanner.this.y, new Collection[0])) {
@@ -183,7 +173,6 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
             return view;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public boolean isViewFromObject(View view, Object obj) {
             return view == obj;
         }
@@ -426,8 +415,8 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
             }
         }
         if (this.e != null) {
-            List<View> list2 = this.f18608c;
-            if (list2 != null && list2.size() > 0 && i < this.f18608c.size() && ((z2 = this.J) || (!z2 && this.f18608c.size() > 1))) {
+            List<View> list2 = this.c;
+            if (list2 != null && list2.size() > 0 && i < this.c.size() && ((z2 = this.J) || (!z2 && this.c.size() > 1))) {
                 this.e.setVisibility(0);
                 int i4 = 0;
                 while (true) {
@@ -456,14 +445,14 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
             this.e.setVisibility(8);
         }
         if (this.F != null) {
-            List<View> list3 = this.f18608c;
-            if (list3 == null || list3.size() <= 0 || i >= this.f18608c.size() || (!(z = this.J) && (z || this.f18608c.size() <= 1))) {
+            List<View> list3 = this.c;
+            if (list3 == null || list3.size() <= 0 || i >= this.c.size() || (!(z = this.J) && (z || this.c.size() <= 1))) {
                 this.F.setVisibility(8);
                 return;
             }
             this.F.setVisibility(0);
             TextView textView = this.F;
-            textView.setText((i + 1) + BridgeUtil.SPLIT_MARK + this.f18608c.size());
+            textView.setText((i + 1) + BridgeUtil.SPLIT_MARK + this.c.size());
         }
     }
 
@@ -538,14 +527,14 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
         if (linearLayout != null) {
             linearLayout.removeAllViews();
             boolean z = this.J;
-            if (z || (!z && this.f18608c.size() > 1)) {
+            if (z || (!z && this.c.size() > 1)) {
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2);
                 int i = this.k;
                 layoutParams.setMargins(i, 0, i, 0);
                 int i2 = 0;
                 while (true) {
                     int i3 = i2;
-                    if (i3 >= this.f18608c.size()) {
+                    if (i3 >= this.c.size()) {
                         break;
                     }
                     ImageView imageView = new ImageView(getContext());
@@ -558,7 +547,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
         }
         if (this.F != null) {
             boolean z2 = this.J;
-            if (z2 || (!z2 && this.f18608c.size() > 1)) {
+            if (z2 || (!z2 && this.c.size() > 1)) {
                 this.F.setVisibility(0);
             } else {
                 this.F.setVisibility(4);
@@ -567,38 +556,38 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     }
 
     private void f() {
-        BGAViewPager bGAViewPager = this.f18607a;
+        BGAViewPager bGAViewPager = this.a;
         if (bGAViewPager != null && equals(bGAViewPager.getParent())) {
-            removeView(this.f18607a);
-            this.f18607a = null;
+            removeView(this.a);
+            this.a = null;
         }
         BGAViewPager bGAViewPager2 = new BGAViewPager(getContext());
-        this.f18607a = bGAViewPager2;
+        this.a = bGAViewPager2;
         bGAViewPager2.setOffscreenPageLimit(1);
-        this.f18607a.setAdapter(new PageAdapter());
-        this.f18607a.addOnPageChangeListener(this);
-        this.f18607a.setOverScrollMode(this.B);
-        this.f18607a.setAllowUserScrollable(this.N);
-        this.f18607a.setPageTransformer(true, BGAPageTransformer.a(this.u));
+        this.a.setAdapter(new PageAdapter());
+        this.a.addOnPageChangeListener(this);
+        this.a.setOverScrollMode(this.B);
+        this.a.setAllowUserScrollable(this.N);
+        this.a.setPageTransformer(true, BGAPageTransformer.a(this.u));
         setPageChangeDuration(this.i);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
         layoutParams.setMargins(0, 0, 0, this.L);
-        addView(this.f18607a, 0, layoutParams);
-        if (!this.g || BGABannerUtil.a(this.f18608c, new Collection[0])) {
+        addView((View) this.a, 0, (ViewGroup.LayoutParams) layoutParams);
+        if (!this.g || BGABannerUtil.a(this.c, new Collection[0])) {
             b(0);
             return;
         }
-        this.f18607a.setAutoPlayDelegate(this);
-        this.f18607a.setCurrentItem(1073741823 - (1073741823 % this.f18608c.size()));
+        this.a.setAutoPlayDelegate(this);
+        this.a.setCurrentItem(1073741823 - (1073741823 % this.c.size()));
         c();
     }
 
     private void g() {
         d();
-        if (!this.R && this.g && this.f18607a != null && getItemCount() > 0 && this.t != 0.0f) {
-            BGAViewPager bGAViewPager = this.f18607a;
+        if (!this.R && this.g && this.a != null && getItemCount() > 0 && this.t != 0.0f) {
+            BGAViewPager bGAViewPager = this.a;
             bGAViewPager.setCurrentItem(bGAViewPager.getCurrentItem() - 1);
-            BGAViewPager bGAViewPager2 = this.f18607a;
+            BGAViewPager bGAViewPager2 = this.a;
             bGAViewPager2.setCurrentItem(bGAViewPager2.getCurrentItem() + 1);
         }
         this.R = false;
@@ -606,7 +595,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
 
     /* JADX INFO: Access modifiers changed from: private */
     public void h() {
-        BGAViewPager bGAViewPager = this.f18607a;
+        BGAViewPager bGAViewPager = this.a;
         if (bGAViewPager != null) {
             bGAViewPager.setCurrentItem(bGAViewPager.getCurrentItem() + 1);
         }
@@ -616,7 +605,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
         if (this.v != null || this.x == -1) {
             return;
         }
-        this.v = BGABannerUtil.a(getContext(), this.x, new BGALocalImageSize(UGCTransitionRules.DEFAULT_IMAGE_WIDTH, 360, 640.0f, 320.0f), this.w);
+        this.v = BGABannerUtil.a(getContext(), this.x, new BGALocalImageSize(720, SpatialRelationUtil.A_CIRCLE_DEGREE, 640.0f, 320.0f), this.w);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -1);
         layoutParams.setMargins(0, 0, 0, this.L);
         addView(this.v, layoutParams);
@@ -624,30 +613,30 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
 
     @Override // com.blued.android.module.yy_china.view.ban.BGAViewPager.AutoPlayDelegate
     public void a(float f) {
-        BGAViewPager bGAViewPager = this.f18607a;
+        BGAViewPager bGAViewPager = this.a;
         if (bGAViewPager != null) {
             if (this.s < bGAViewPager.getCurrentItem()) {
                 if (f > 400.0f || (this.t < 0.7f && f > -400.0f)) {
-                    this.f18607a.a(this.s, true);
+                    this.a.a(this.s, true);
                 } else {
-                    this.f18607a.a(this.s + 1, true);
+                    this.a.a(this.s + 1, true);
                 }
-            } else if (this.s != this.f18607a.getCurrentItem()) {
-                this.f18607a.a(this.s, true);
+            } else if (this.s != this.a.getCurrentItem()) {
+                this.a.a(this.s, true);
             } else if (f < -400.0f || (this.t > 0.3f && f < 400.0f)) {
-                this.f18607a.a(this.s + 1, true);
+                this.a.a(this.s + 1, true);
             } else {
-                this.f18607a.a(this.s, true);
+                this.a.a(this.s, true);
             }
         }
     }
 
     public void a(int i, List<? extends Object> list, List<String> list2) {
-        List<View> list3 = this.f18608c;
+        List<View> list3 = this.c;
         if (list3 != null) {
             list3.clear();
         }
-        this.f18608c = new ArrayList();
+        this.c = new ArrayList();
         ArrayList arrayList = list;
         if (list == null) {
             arrayList = new ArrayList();
@@ -659,22 +648,22 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
             if (i3 >= arrayList.size()) {
                 break;
             }
-            this.f18608c.add(a(i));
+            this.c.add(a(i));
             i2 = i3 + 1;
         }
-        if (this.g && this.f18608c.size() < 3) {
+        if (this.g && this.c.size() < 3) {
             List<View> list4 = this.b;
             if (list4 != null) {
                 list4.clear();
             }
-            ArrayList arrayList2 = new ArrayList(this.f18608c);
+            ArrayList arrayList2 = new ArrayList(this.c);
             this.b = arrayList2;
             arrayList2.add(a(i));
             if (this.b.size() == 2) {
                 this.b.add(a(i));
             }
         }
-        a(this.f18608c, arrayList, list2);
+        a(this.c, arrayList, list2);
     }
 
     public void a(List<View> list, List<? extends Object> list2, List<String> list3) {
@@ -689,7 +678,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
             this.g = false;
         }
         this.y = list2;
-        this.f18608c = arrayList;
+        this.c = arrayList;
         this.d = list3;
         e();
         f();
@@ -734,14 +723,14 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     }
 
     public int getCurrentItem() {
-        if (this.f18607a == null || BGABannerUtil.a(this.f18608c, new Collection[0])) {
+        if (this.a == null || BGABannerUtil.a(this.c, new Collection[0])) {
             return -1;
         }
-        return this.f18607a.getCurrentItem() % this.f18608c.size();
+        return this.a.getCurrentItem() % this.c.size();
     }
 
     public int getItemCount() {
-        List<View> list = this.f18608c;
+        List<View> list = this.c;
         if (list == null) {
             return 0;
         }
@@ -753,11 +742,11 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     }
 
     public BGAViewPager getViewPager() {
-        return this.f18607a;
+        return this.a;
     }
 
     public List<? extends View> getViews() {
-        return this.f18608c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -783,7 +772,6 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
         super.onMeasure(i, i2);
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageScrollStateChanged(int i) {
         ViewPager.OnPageChangeListener onPageChangeListener = this.C;
         if (onPageChangeListener != null) {
@@ -791,12 +779,11 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageScrolled(int i, float f, int i2) {
-        if (BGABannerUtil.a(this.f18608c, new Collection[0])) {
+        if (BGABannerUtil.a(this.c, new Collection[0])) {
             return;
         }
-        a(i % this.f18608c.size(), f);
+        a(i % this.c.size(), f);
         this.s = i;
         this.t = f;
         if (this.f != null) {
@@ -819,16 +806,15 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
         }
         ViewPager.OnPageChangeListener onPageChangeListener = this.C;
         if (onPageChangeListener != null) {
-            onPageChangeListener.onPageScrolled(i % this.f18608c.size(), f, i2);
+            onPageChangeListener.onPageScrolled(i % this.c.size(), f, i2);
         }
     }
 
-    @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
     public void onPageSelected(int i) {
-        if (BGABannerUtil.a(this.f18608c, new Collection[0])) {
+        if (BGABannerUtil.a(this.c, new Collection[0])) {
             return;
         }
-        int size = i % this.f18608c.size();
+        int size = i % this.c.size();
         b(size);
         ViewPager.OnPageChangeListener onPageChangeListener = this.C;
         if (onPageChangeListener != null) {
@@ -853,7 +839,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
 
     public void setAllowUserScrollable(boolean z) {
         this.N = z;
-        BGAViewPager bGAViewPager = this.f18607a;
+        BGAViewPager bGAViewPager = this.a;
         if (bGAViewPager != null) {
             bGAViewPager.setAllowUserScrollable(z);
         }
@@ -867,11 +853,11 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     public void setAutoPlayAble(boolean z) {
         this.g = z;
         d();
-        BGAViewPager bGAViewPager = this.f18607a;
+        BGAViewPager bGAViewPager = this.a;
         if (bGAViewPager == null || bGAViewPager.getAdapter() == null) {
             return;
         }
-        this.f18607a.getAdapter().notifyDataSetChanged();
+        this.a.getAdapter().notifyDataSetChanged();
     }
 
     public void setAutoPlayInterval(int i) {
@@ -879,15 +865,15 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     }
 
     public void setCurrentItem(int i) {
-        if (this.f18607a == null || this.f18608c == null || i > getItemCount() - 1) {
+        if (this.a == null || this.c == null || i > getItemCount() - 1) {
             return;
         }
         if (!this.g) {
-            this.f18607a.setCurrentItem(i, false);
+            this.a.setCurrentItem(i, false);
             return;
         }
-        int currentItem = this.f18607a.getCurrentItem();
-        int size = i - (currentItem % this.f18608c.size());
+        int currentItem = this.a.getCurrentItem();
+        int size = i - (currentItem % this.c.size());
         if (size < 0) {
             int i2 = -1;
             while (true) {
@@ -895,7 +881,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
                 if (i3 < size) {
                     break;
                 }
-                this.f18607a.setCurrentItem(currentItem + i3, false);
+                this.a.setCurrentItem(currentItem + i3, false);
                 i2 = i3 - 1;
             }
         } else if (size > 0) {
@@ -905,7 +891,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
                 if (i5 > size) {
                     break;
                 }
-                this.f18607a.setCurrentItem(currentItem + i5, false);
+                this.a.setCurrentItem(currentItem + i5, false);
                 i4 = i5 + 1;
             }
         }
@@ -950,7 +936,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
     @Override // android.view.View
     public void setOverScrollMode(int i) {
         this.B = i;
-        BGAViewPager bGAViewPager = this.f18607a;
+        BGAViewPager bGAViewPager = this.a;
         if (bGAViewPager != null) {
             bGAViewPager.setOverScrollMode(i);
         }
@@ -961,7 +947,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
             return;
         }
         this.i = i;
-        BGAViewPager bGAViewPager = this.f18607a;
+        BGAViewPager bGAViewPager = this.a;
         if (bGAViewPager != null) {
             bGAViewPager.setPageChangeDuration(i);
         }
@@ -969,7 +955,7 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
 
     public void setPageTransformer(ViewPager.PageTransformer pageTransformer) {
         BGAViewPager bGAViewPager;
-        if (pageTransformer == null || (bGAViewPager = this.f18607a) == null) {
+        if (pageTransformer == null || (bGAViewPager = this.a) == null) {
             return;
         }
         bGAViewPager.setPageTransformer(true, pageTransformer);
@@ -977,11 +963,11 @@ public class BGABanner extends RelativeLayout implements ViewPager.OnPageChangeL
 
     public void setTransitionEffect(int i) {
         this.u = i;
-        if (this.f18607a != null) {
+        if (this.a != null) {
             f();
             List<View> list = this.b;
             if (list == null) {
-                BGABannerUtil.a(this.f18608c);
+                BGABannerUtil.a(this.c);
             } else {
                 BGABannerUtil.a(list);
             }

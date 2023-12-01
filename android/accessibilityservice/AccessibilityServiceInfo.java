@@ -14,6 +14,7 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.accessibility.AccessibilityEvent;
 import com.android.internal.R;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -69,10 +70,10 @@ public class AccessibilityServiceInfo implements Parcelable {
     }
 
     static {
-        sAvailableCapabilityInfos.put(1, new CapabilityInfo(1, R.string.capability_title_canRetrieveWindowContent, R.string.capability_desc_canRetrieveWindowContent));
-        sAvailableCapabilityInfos.put(2, new CapabilityInfo(2, R.string.capability_title_canRequestTouchExploration, R.string.capability_desc_canRequestTouchExploration));
-        sAvailableCapabilityInfos.put(4, new CapabilityInfo(4, R.string.capability_title_canRequestEnhancedWebAccessibility, R.string.capability_desc_canRequestEnhancedWebAccessibility));
-        sAvailableCapabilityInfos.put(8, new CapabilityInfo(8, R.string.capability_title_canRequestFilterKeyEvents, R.string.capability_desc_canRequestFilterKeyEvents));
+        sAvailableCapabilityInfos.put(1, new CapabilityInfo(1, 17039910, 17039911));
+        sAvailableCapabilityInfos.put(2, new CapabilityInfo(2, 17039912, 17039913));
+        sAvailableCapabilityInfos.put(4, new CapabilityInfo(4, 17039914, 17039915));
+        sAvailableCapabilityInfos.put(8, new CapabilityInfo(8, 17039916, 17039917));
         CREATOR = new Parcelable.Creator<AccessibilityServiceInfo>() { // from class: android.accessibilityservice.AccessibilityServiceInfo.1
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // android.os.Parcelable.Creator
@@ -255,7 +256,7 @@ public class AccessibilityServiceInfo implements Parcelable {
             case 6:
             case 7:
             default:
-                return "UNKNOWN";
+                return GrsBaseInfo.CountryCodeSource.UNKNOWN;
             case 4:
                 return "CAPABILITY_CAN_REQUEST_ENHANCED_WEB_ACCESSIBILITY";
             case 8:

@@ -12,7 +12,7 @@ import java.nio.FloatBuffer;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private final float[] f39346a;
+    private final float[] f25655a;
     private FloatBuffer b;
     private int e;
     private int g;
@@ -21,16 +21,16 @@ public class b {
     private int j;
 
     /* renamed from: c  reason: collision with root package name */
-    private float[] f39347c = new float[16];
+    private float[] f25656c = new float[16];
     private float[] d = new float[16];
     private int f = -12345;
 
     public b() {
         float[] fArr = {-1.0f, -1.0f, 0.0f, 0.0f, 0.0f, 1.0f, -1.0f, 0.0f, 1.0f, 0.0f, -1.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f};
-        this.f39346a = fArr;
+        this.f25655a = fArr;
         FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(fArr.length * 4).order(ByteOrder.nativeOrder()).asFloatBuffer();
         this.b = asFloatBuffer;
-        asFloatBuffer.put(this.f39346a).position(0);
+        asFloatBuffer.put(this.f25655a).position(0);
         Matrix.setIdentityM(this.d, 0);
     }
 

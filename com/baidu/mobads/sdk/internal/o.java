@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public class o implements NativeResponse.CustomizeMediaPlayer {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9437a = "vstart";
+    private static final String f6597a = "vstart";
     private static final String b = "vrepeatedplay";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f9438c = "vclose";
+    private static final String f6598c = "vclose";
     private static final String d = "vreadyplay";
     private static final String e = "vplayfail";
     private static final String f = "vmute";
@@ -92,7 +92,7 @@ public class o implements NativeResponse.CustomizeMediaPlayer {
 
     @Override // com.baidu.mobads.sdk.api.NativeResponse.CustomizeMediaPlayer
     public void reportVideoPause(int i2, NativeResponse.VideoReason videoReason) {
-        a(f9438c, a(this.p, i2, this.o, videoReason.getCode()));
+        a(f6598c, a(this.p, i2, this.o, videoReason.getCode()));
     }
 
     @Override // com.baidu.mobads.sdk.api.NativeResponse.CustomizeMediaPlayer
@@ -104,7 +104,7 @@ public class o implements NativeResponse.CustomizeMediaPlayer {
     @Override // com.baidu.mobads.sdk.api.NativeResponse.CustomizeMediaPlayer
     public void reportVideoResume(int i2) {
         this.p = i2;
-        a(f9437a, a(i2, i2, this.o, 0));
+        a(f6597a, a(i2, i2, this.o, 0));
     }
 
     @Override // com.baidu.mobads.sdk.api.NativeResponse.CustomizeMediaPlayer
@@ -116,11 +116,11 @@ public class o implements NativeResponse.CustomizeMediaPlayer {
     public void reportVideoStart(boolean z) {
         this.p = 0;
         this.o = z;
-        a(f9437a, a(0, 0, z, 0));
+        a(f6597a, a(0, 0, z, 0));
     }
 
     @Override // com.baidu.mobads.sdk.api.NativeResponse.CustomizeMediaPlayer
     public void reportVideoStop(int i2, NativeResponse.VideoReason videoReason) {
-        a(f9438c, a(this.p, i2, this.o, videoReason.getCode()));
+        a(f6598c, a(this.p, i2, this.o, videoReason.getCode()));
     }
 }

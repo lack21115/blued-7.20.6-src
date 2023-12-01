@@ -8,9 +8,7 @@ import com.blued.android.framework.utils.SearchTaskTool;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/SearchEditText.class */
 public class SearchEditText extends AppCompatEditText {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SearchTaskTool f10186a;
+    private SearchTaskTool a;
 
     public SearchEditText(Context context) {
         this(context, null);
@@ -20,35 +18,36 @@ public class SearchEditText extends AppCompatEditText {
         this(context, attributeSet, R.attr.editTextStyle);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SearchEditText(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         setInputType(1);
-        this.f10186a = new SearchTaskTool(this);
+        this.a = new SearchTaskTool(this);
     }
 
     public void a() {
-        SearchTaskTool searchTaskTool = this.f10186a;
+        SearchTaskTool searchTaskTool = this.a;
         if (searchTaskTool != null) {
             searchTaskTool.a();
         }
     }
 
     public void a(SearchTaskTool.TaskListener taskListener) {
-        SearchTaskTool searchTaskTool = this.f10186a;
+        SearchTaskTool searchTaskTool = this.a;
         if (searchTaskTool != null) {
             searchTaskTool.a(taskListener);
         }
     }
 
     public void setDelaymillis(long j) {
-        SearchTaskTool searchTaskTool = this.f10186a;
+        SearchTaskTool searchTaskTool = this.a;
         if (searchTaskTool != null) {
             searchTaskTool.a(j);
         }
     }
 
     public void setEditorActionListener(boolean z) {
-        SearchTaskTool searchTaskTool = this.f10186a;
+        SearchTaskTool searchTaskTool = this.a;
         if (searchTaskTool != null) {
             searchTaskTool.a(z);
         }

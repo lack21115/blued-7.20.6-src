@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.smtt.sdk.QbSdk;
 import com.tencent.smtt.sdk.TbsDownloadConfig;
 import com.tencent.smtt.sdk.TbsDownloadUpload;
@@ -32,11 +34,11 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static byte[] f38883a;
+    public static byte[] f25192a;
 
     static {
         try {
-            f38883a = "65dRa93L".getBytes("utf-8");
+            f25192a = "65dRa93L".getBytes("utf-8");
         } catch (UnsupportedEncodingException e) {
         }
     }
@@ -79,6 +81,7 @@ public class b {
         }
     }
 
+    /* JADX WARN: Type inference failed for: r0v0, types: [com.tencent.smtt.sdk.stat.b$1] */
     public static void a(final ThirdAppInfoNew thirdAppInfoNew, final Context context) {
         new Thread("HttpUtils") { // from class: com.tencent.smtt.sdk.stat.b.1
             @Override // java.lang.Thread, java.lang.Runnable
@@ -92,15 +95,15 @@ public class b {
                 if (Build.VERSION.SDK_INT < 8) {
                     return;
                 }
-                if (b.f38883a == null) {
+                if (b.f25192a == null) {
                     try {
-                        b.f38883a = "65dRa93L".getBytes("utf-8");
+                        b.f25192a = "65dRa93L".getBytes("utf-8");
                     } catch (UnsupportedEncodingException e) {
-                        b.f38883a = null;
+                        b.f25192a = null;
                         TbsLog.e("sdkreport", "Post failed -- get POST_DATA_KEY failed!");
                     }
                 }
-                if (b.f38883a == null) {
+                if (b.f25192a == null) {
                     TbsLog.e("sdkreport", "Post failed -- POST_DATA_KEY is null!");
                     return;
                 }
@@ -109,8 +112,8 @@ public class b {
                     str = "";
                     str2 = str;
                 } else {
-                    str2 = string.substring(0, string.indexOf("&"));
-                    str = string.substring(string.indexOf("&") + 1, string.length());
+                    str2 = string.substring(0, string.indexOf(ContainerUtils.FIELD_DELIMITER));
+                    str = string.substring(string.indexOf(ContainerUtils.FIELD_DELIMITER) + 1, string.length());
                 }
                 boolean z = TextUtils.isEmpty(str2) || str2.length() != 96 || TextUtils.isEmpty(str) || str.length() != 24;
                 try {
@@ -181,7 +184,7 @@ public class b {
     }
 
     private static void a(Context context, String str, String str2) {
-        if ("reset".equals(str) && "true".equals(str2)) {
+        if ("reset".equals(str) && fw.Code.equals(str2)) {
             QbSdk.reset(context);
         } else if (!str.startsWith("rmfile")) {
             TbsPVConfig.getInstance(context).putData(str, str2);

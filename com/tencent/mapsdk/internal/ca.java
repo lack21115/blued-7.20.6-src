@@ -24,23 +24,23 @@ import java.util.concurrent.Future;
 public class ca {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Handler f37353a;
+    private static final Handler f23662a;
     private static e b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/ca$a.class */
     public static final class a extends i<Void> {
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ Runnable f37354c;
+        public final /* synthetic */ Runnable f23663c;
 
         public a(Runnable runnable) {
-            this.f37354c = runnable;
+            this.f23663c = runnable;
         }
 
         @Override // java.util.concurrent.Callable
         /* renamed from: a */
         public Void call() throws Exception {
-            this.f37354c.run();
+            this.f23663c.run();
             return null;
         }
     }
@@ -71,7 +71,7 @@ public class ca {
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f37355c;
+        private boolean f23664c;
         private volatile boolean d;
         private Handler e;
         private final ConcurrentLinkedQueue<b> f;
@@ -107,11 +107,11 @@ public class ca {
             public static final int n = 4;
 
             /* renamed from: a  reason: collision with root package name */
-            private boolean f37357a;
+            private boolean f23666a;
             private f<T> b;
 
             /* renamed from: c  reason: collision with root package name */
-            private final i<T> f37358c;
+            private final i<T> f23667c;
             private c<T> d;
             private Future<T> e;
             private T f;
@@ -131,9 +131,9 @@ public class ca {
 
             private b(i<T> iVar) {
                 this.h = 0;
-                this.f37358c = iVar;
+                this.f23667c = iVar;
                 if (iVar == null || d.this.d) {
-                    this.f37357a = true;
+                    this.f23666a = true;
                 }
             }
 
@@ -153,7 +153,7 @@ public class ca {
 
             public void a() {
                 ra.g(ma.s).a(new Object[0]);
-                this.f37357a = true;
+                this.f23666a = true;
                 Future<T> future = this.e;
                 if (future != null) {
                     future.cancel(false);
@@ -177,7 +177,7 @@ public class ca {
             public void b() throws ExecutionException, InterruptedException {
                 ra.g(ma.s).a(new Object[0]);
                 Future<T> future = this.e;
-                if (future == null || this.f37357a) {
+                if (future == null || this.f23666a) {
                     return;
                 }
                 if (future.isDone()) {
@@ -190,7 +190,7 @@ public class ca {
 
             public void b(f<T> fVar) {
                 this.b = fVar;
-                i<T> iVar = this.f37358c;
+                i<T> iVar = this.f23667c;
                 if (iVar != null) {
                     ((i) iVar).b = new a();
                 }
@@ -222,7 +222,7 @@ public class ca {
                 this.g++;
                 ra.g(ma.s).a("try time:" + this.g);
                 if (this.g < 2) {
-                    this.f37357a = false;
+                    this.f23666a = false;
                     e();
                     return true;
                 }
@@ -231,7 +231,7 @@ public class ca {
 
             public void e() {
                 ra.g(ma.s).a(new Object[0]);
-                if (this.f37357a || d.this.d) {
+                if (this.f23666a || d.this.d) {
                     ra.g(ma.s).a("cancelled...");
                     return;
                 }
@@ -245,7 +245,7 @@ public class ca {
                 i<T> iVar;
                 ra.g(ma.s).a(new Object[0]);
                 f<T> fVar = this.b;
-                if (fVar != null && (iVar = this.f37358c) != null) {
+                if (fVar != null && (iVar = this.f23667c) != null) {
                     this.e = fVar.a(iVar);
                 }
                 ra.g(ma.s).a(new Object[0]);
@@ -298,9 +298,9 @@ public class ca {
             synchronized (this) {
                 ra.b g = ra.g(ma.s);
                 g.a("prepared:" + this.b);
-                if (!this.b && !this.f37355c && !this.d) {
+                if (!this.b && !this.f23664c && !this.d) {
                     start();
-                    this.f37355c = true;
+                    this.f23664c = true;
                 }
                 bVar = new b<>(this, iVar, null);
             }
@@ -369,7 +369,7 @@ public class ca {
     public static class e {
 
         /* renamed from: a  reason: collision with root package name */
-        private final Map<String, HandlerThread> f37359a = new HashMap();
+        private final Map<String, HandlerThread> f23668a = new HashMap();
         private final d b = new d();
 
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/ca$e$a.class */
@@ -405,7 +405,7 @@ public class ca {
             /* renamed from: a */
             public void callback(String str) {
                 if (str != null) {
-                    e.this.f37359a.remove(str);
+                    e.this.f23668a.remove(str);
                 }
             }
         }
@@ -434,7 +434,7 @@ public class ca {
                 java.lang.String r0 = r0.toString()
                 r7 = r0
                 r0 = r4
-                java.util.Map<java.lang.String, android.os.HandlerThread> r0 = r0.f37359a
+                java.util.Map<java.lang.String, android.os.HandlerThread> r0 = r0.f23668a
                 r1 = r7
                 java.lang.Object r0 = r0.get(r1)
                 android.os.HandlerThread r0 = (android.os.HandlerThread) r0
@@ -475,7 +475,7 @@ public class ca {
             if (handlerThread == null || str == null || str.isEmpty()) {
                 return;
             }
-            this.f37359a.put(str, handlerThread);
+            this.f23668a.put(str, handlerThread);
         }
 
         public void b() {
@@ -483,11 +483,11 @@ public class ca {
         }
 
         public void c() {
-            if (this.f37359a.isEmpty()) {
+            if (this.f23668a.isEmpty()) {
                 return;
             }
             ArrayList arrayList = new ArrayList();
-            Util.foreach(this.f37359a.entrySet(), new a(arrayList));
+            Util.foreach(this.f23668a.entrySet(), new a(arrayList));
             Util.foreach(arrayList, new b());
         }
     }
@@ -501,15 +501,15 @@ public class ca {
     public static class g<T> implements f<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public T f37361a;
+        public T f23670a;
 
         public g(T t) {
-            this.f37361a = t;
+            this.f23670a = t;
         }
 
         @Override // com.tencent.mapsdk.internal.ca.f
         public Future<T> a(i<T> iVar) {
-            return h7.d().submit(iVar, this.f37361a);
+            return h7.d().submit(iVar, this.f23670a);
         }
     }
 
@@ -517,15 +517,15 @@ public class ca {
     public static class h<T> implements f<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public T f37362a;
+        public T f23671a;
 
         public h(T t) {
-            this.f37362a = t;
+            this.f23671a = t;
         }
 
         @Override // com.tencent.mapsdk.internal.ca.f
         public Future<T> a(i<T> iVar) {
-            return h7.e().submit(iVar, this.f37362a);
+            return h7.e().submit(iVar, this.f23671a);
         }
     }
 
@@ -549,7 +549,7 @@ public class ca {
 
     static {
         ra.f(ma.s);
-        f37353a = new Handler(Looper.getMainLooper());
+        f23662a = new Handler(Looper.getMainLooper());
     }
 
     public static Looper a() {
@@ -577,7 +577,7 @@ public class ca {
         if (eVar != null) {
             eVar.c();
         }
-        f37353a.removeCallbacksAndMessages(null);
+        f23662a.removeCallbacksAndMessages(null);
     }
 
     public static void a(Runnable runnable) {
@@ -591,7 +591,7 @@ public class ca {
         if (runnable == null) {
             return;
         }
-        f37353a.postDelayed(runnable, j);
+        f23662a.postDelayed(runnable, j);
     }
 
     public static e b() {
@@ -615,7 +615,7 @@ public class ca {
             return;
         }
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            f37353a.post(runnable);
+            f23662a.post(runnable);
         } else {
             runnable.run();
         }

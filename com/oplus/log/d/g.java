@@ -10,11 +10,11 @@ public final class g {
     private static Map<String, String> q = new ConcurrentHashMap(16);
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24360a = a("T1BQTw==");
-    public static final String b = a(com.cdo.oaps.ad.a.f21514c);
+    public static final String f10673a = a("T1BQTw==");
+    public static final String b = a(com.cdo.oaps.ad.a.f7908c);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f24361c = a("T3Bwbw==");
+    public static final String f10674c = a("T3Bwbw==");
     public static final String d = a("UmVhbG1l");
     public static final String e = a("cmVhbG1l");
     public static final String f = a("T25lUGx1cw==");

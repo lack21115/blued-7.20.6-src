@@ -12,17 +12,17 @@ public class PathKeyframe extends Keyframe<PointF> {
     private final Keyframe<PointF> i;
 
     public PathKeyframe(LottieComposition lottieComposition, Keyframe<PointF> keyframe) {
-        super(lottieComposition, keyframe.f4418a, keyframe.b, keyframe.f4419c, keyframe.d, keyframe.e);
+        super(lottieComposition, keyframe.a, keyframe.b, keyframe.c, keyframe.d, keyframe.e);
         this.i = keyframe;
         a();
     }
 
     public void a() {
-        boolean z = (this.b == 0 || this.f4418a == 0 || !((PointF) this.f4418a).equals(((PointF) this.b).x, ((PointF) this.b).y)) ? false : true;
+        boolean z = (this.b == 0 || this.a == 0 || !((PointF) this.a).equals(((PointF) this.b).x, ((PointF) this.b).y)) ? false : true;
         if (this.b == 0 || z) {
             return;
         }
-        this.h = Utils.a((PointF) this.f4418a, (PointF) this.b, this.i.f, this.i.g);
+        this.h = Utils.a((PointF) this.a, (PointF) this.b, this.i.f, this.i.g);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

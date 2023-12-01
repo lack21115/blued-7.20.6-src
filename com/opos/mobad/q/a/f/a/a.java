@@ -15,10 +15,10 @@ import com.opos.mobad.q.a.f.a;
 public abstract class a implements com.opos.mobad.n.a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f27178a;
+    protected Context f13490a;
 
     /* renamed from: c  reason: collision with root package name */
-    protected TextView f27179c;
+    protected TextView f13491c;
     protected TextView d;
     protected com.opos.cmn.e.a.a.c e;
     protected TextView f;
@@ -26,7 +26,7 @@ public abstract class a implements com.opos.mobad.n.a {
     protected RelativeLayout h;
     protected RelativeLayout i;
     protected Bitmap j;
-    protected a.InterfaceC0708a k;
+    protected a.InterfaceC0538a k;
     protected com.opos.mobad.q.a.f.a l;
     protected f m;
     protected int n;
@@ -36,8 +36,8 @@ public abstract class a implements com.opos.mobad.n.a {
     protected com.opos.mobad.n.d.f r;
     private int t;
     protected int[] b = new int[4];
-    protected a.InterfaceC0726a s = new a.InterfaceC0726a() { // from class: com.opos.mobad.q.a.f.a.a.3
-        @Override // com.opos.mobad.q.a.f.a.InterfaceC0726a
+    protected a.InterfaceC0556a s = new a.InterfaceC0556a() { // from class: com.opos.mobad.q.a.f.a.a.3
+        @Override // com.opos.mobad.q.a.f.a.InterfaceC0556a
         public void a() {
             com.opos.cmn.an.f.a.b("BaseFloatLayerView", "end to scale");
             if (a.this.m != null) {
@@ -48,11 +48,11 @@ public abstract class a implements com.opos.mobad.n.a {
             }
         }
 
-        @Override // com.opos.mobad.q.a.f.a.InterfaceC0726a
+        @Override // com.opos.mobad.q.a.f.a.InterfaceC0556a
         public void a(boolean z) {
         }
 
-        @Override // com.opos.mobad.q.a.f.a.InterfaceC0726a
+        @Override // com.opos.mobad.q.a.f.a.InterfaceC0556a
         public void b() {
             com.opos.cmn.an.f.a.b("BaseFloatLayerView", "start to scale");
             if (a.this.m != null) {
@@ -61,9 +61,9 @@ public abstract class a implements com.opos.mobad.n.a {
         }
     };
 
-    public a(Context context, int i, a.InterfaceC0708a interfaceC0708a) {
-        this.f27178a = context.getApplicationContext();
-        this.k = interfaceC0708a;
+    public a(Context context, int i, a.InterfaceC0538a interfaceC0538a) {
+        this.f13490a = context.getApplicationContext();
+        this.k = interfaceC0538a;
         this.t = i;
         f();
         g();
@@ -71,7 +71,7 @@ public abstract class a implements com.opos.mobad.n.a {
     }
 
     private void k() {
-        com.opos.mobad.q.a.f.a aVar = new com.opos.mobad.q.a.f.a(this.f27178a);
+        com.opos.mobad.q.a.f.a aVar = new com.opos.mobad.q.a.f.a(this.f13490a);
         this.l = aVar;
         aVar.a(this.s);
         this.i.addView(this.l);
@@ -125,13 +125,13 @@ public abstract class a implements com.opos.mobad.n.a {
     }
 
     @Override // com.opos.mobad.n.a
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.k = interfaceC0708a;
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.k = interfaceC0538a;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(String str) {
-        a(this.f27179c, str);
+        a(this.f13491c, str);
     }
 
     @Override // com.opos.mobad.n.a
@@ -144,12 +144,12 @@ public abstract class a implements com.opos.mobad.n.a {
     }
 
     protected void f() {
-        RelativeLayout relativeLayout = new RelativeLayout(this.f27178a);
+        RelativeLayout relativeLayout = new RelativeLayout(this.f13490a);
         this.i = relativeLayout;
         relativeLayout.setBackgroundColor(Color.parseColor("#c0000000"));
         this.i.setClickable(true);
         this.i.setLayoutParams(new RelativeLayout.LayoutParams(-1, -1));
-        this.h = new RelativeLayout(this.f27178a);
+        this.h = new RelativeLayout(this.f13490a);
         this.n = g.a();
         this.o = g.a();
         this.p = g.a();
@@ -163,10 +163,10 @@ public abstract class a implements com.opos.mobad.n.a {
         if (this.r != null) {
             return;
         }
-        TextView textView = new TextView(this.f27178a);
+        TextView textView = new TextView(this.f13490a);
         this.d = textView;
         textView.setGravity(17);
-        g.a(this.d, com.opos.cmn.an.d.a.a.c(this.f27178a, "opos_module_biz_ui_reward_video_float_layer_close_bn.png"));
+        g.a(this.d, com.opos.cmn.an.d.a.a.c(this.f13490a, "opos_module_biz_ui_reward_video_float_layer_close_bn.png"));
         this.i.addView(this.d, i());
     }
 

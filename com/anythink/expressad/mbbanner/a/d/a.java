@@ -12,12 +12,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8021a = a.class.getSimpleName();
+    private static final String f5181a = a.class.getSimpleName();
     private static volatile a h;
     private Context b = n.a().g();
 
     /* renamed from: c  reason: collision with root package name */
-    private com.anythink.expressad.mbbanner.a.e.a f8022c = new com.anythink.expressad.mbbanner.a.e.a();
+    private com.anythink.expressad.mbbanner.a.e.a f5182c = new com.anythink.expressad.mbbanner.a.e.a();
     private Map<String, e> d = new ConcurrentHashMap();
     private Map<String, Boolean> e = new ConcurrentHashMap();
     private Map<String, Handler> f = new ConcurrentHashMap();
@@ -43,17 +43,17 @@ public class a {
 
     private void a(String str, d dVar, com.anythink.expressad.mbbanner.a.c.b bVar) {
         if (this.b == null) {
-            this.f8022c.a(bVar, "Banner Context == null!", str);
+            this.f5182c.a(bVar, "Banner Context == null!", str);
         } else if (dVar == null || bVar == null) {
-            this.f8022c.a(bVar, "Banner request parameters or callback empty!", str);
+            this.f5182c.a(bVar, "Banner request parameters or callback empty!", str);
         } else {
             Map<String, Boolean> map = this.e;
             if (map != null && map.containsKey(str) && this.e.get(str).booleanValue()) {
-                this.f8022c.a(bVar, "Current unit is loading!", str);
+                this.f5182c.a(bVar, "Current unit is loading!", str);
                 return;
             }
             this.e.put(str, Boolean.TRUE);
-            new b(this.b, b(str), bVar, this.f8022c);
+            new b(this.b, b(str), bVar, this.f5182c);
         }
     }
 
@@ -114,11 +114,11 @@ public class a {
     public final void a(String str, com.anythink.expressad.foundation.d.d dVar, com.anythink.expressad.mbbanner.a.c.b bVar) {
         synchronized (a()) {
             if (this.e != null && this.e.containsKey(str) && this.e.get(str).booleanValue()) {
-                this.f8022c.a(bVar, "Current unit is loading!", str);
+                this.f5182c.a(bVar, "Current unit is loading!", str);
                 return;
             }
             this.e.put(str, Boolean.TRUE);
-            new b(this.b, b(str), bVar, this.f8022c).a(str, dVar, new com.anythink.expressad.mbbanner.a.c.d() { // from class: com.anythink.expressad.mbbanner.a.d.a.1
+            new b(this.b, b(str), bVar, this.f5182c).a(str, dVar, new com.anythink.expressad.mbbanner.a.c.d() { // from class: com.anythink.expressad.mbbanner.a.d.a.1
                 @Override // com.anythink.expressad.mbbanner.a.c.d
                 public final void a(String str2) {
                     synchronized (a.a()) {

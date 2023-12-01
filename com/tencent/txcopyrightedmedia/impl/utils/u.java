@@ -2,6 +2,7 @@ package com.tencent.txcopyrightedmedia.impl.utils;
 
 import android.net.http.Headers;
 import com.baidu.mobads.sdk.internal.bw;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
 import com.tencent.qcloud.core.http.HttpConstants;
 import com.tencent.qcloud.core.util.IOUtils;
@@ -58,7 +59,7 @@ public abstract class u {
     private static final Logger g = Logger.getLogger(u.class.getName());
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f40158a;
+    protected String f26467a;
     public int b;
     private volatile ServerSocket h;
     private Thread j;
@@ -66,7 +67,7 @@ public abstract class u {
     private t k = new j(this, (byte) 0);
 
     /* renamed from: c  reason: collision with root package name */
-    protected a f40159c = new f();
+    protected a f26468c = new f();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/u$a.class */
     public interface a {
@@ -81,11 +82,11 @@ public abstract class u {
     public final class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final InputStream f40160a;
+        final InputStream f26469a;
         final Socket b;
 
         public b(InputStream inputStream, Socket socket) {
-            this.f40160a = inputStream;
+            this.f26469a = inputStream;
             this.b = socket;
         }
 
@@ -113,16 +114,16 @@ public abstract class u {
         private static final Pattern g = Pattern.compile("[ |\t]*(boundary)[ |\t]*=[ |\t]*['|\"]?([^\"^'^;^,]*)['|\"]?", 2);
 
         /* renamed from: a  reason: collision with root package name */
-        final String f40162a;
+        final String f26471a;
         final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final String f40163c;
+        final String f26472c;
         final String d;
 
         public c(String str) {
             String str2;
-            this.f40162a = str;
+            this.f26471a = str;
             if (str != null) {
                 this.b = a(str, e, "", 1);
                 str2 = a(str, f, null, 2);
@@ -130,7 +131,7 @@ public abstract class u {
                 this.b = "";
                 str2 = "UTF-8";
             }
-            this.f40163c = str2;
+            this.f26472c = str2;
             if (HttpConstants.ContentType.MULTIPART_FORM_DATA.equalsIgnoreCase(this.b)) {
                 this.d = a(str, g, null, 2);
             } else {
@@ -144,10 +145,10 @@ public abstract class u {
         }
 
         public final String a() {
-            String str = this.f40163c;
+            String str = this.f26472c;
             String str2 = str;
             if (str == null) {
-                str2 = "US-ASCII";
+                str2 = com.anythink.expressad.exoplayer.b.i;
             }
             return str2;
         }
@@ -157,11 +158,11 @@ public abstract class u {
     public static final class d {
 
         /* renamed from: a  reason: collision with root package name */
-        final String f40164a;
+        final String f26473a;
         final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final String f40165c;
+        final String f26474c;
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/impl/utils/u$e.class */
@@ -169,14 +170,14 @@ public abstract class u {
         private final HashMap<String, String> b = new HashMap<>();
 
         /* renamed from: c  reason: collision with root package name */
-        private final ArrayList<d> f40167c = new ArrayList<>();
+        private final ArrayList<d> f26476c = new ArrayList<>();
 
         public e(Map<String, String> map) {
             String str = map.get("cookie");
             if (str == null) {
                 return;
             }
-            String[] split = str.split(";");
+            String[] split = str.split(com.huawei.openalliance.ad.constant.t.aE);
             int length = split.length;
             int i = 0;
             while (true) {
@@ -193,10 +194,10 @@ public abstract class u {
         }
 
         public final void a(n nVar) {
-            Iterator<d> it = this.f40167c.iterator();
+            Iterator<d> it = this.f26476c.iterator();
             while (it.hasNext()) {
                 d next = it.next();
-                nVar.a("Set-Cookie", String.format("%s=%s; expires=%s", next.f40164a, next.b, next.f40165c));
+                nVar.a("Set-Cookie", String.format("%s=%s; expires=%s", next.f26473a, next.b, next.f26474c));
             }
         }
 
@@ -210,7 +211,7 @@ public abstract class u {
     public static final class f implements a {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f40168a;
+        private long f26477a;
         private final List<b> b = Collections.synchronizedList(new ArrayList());
 
         @Override // com.tencent.txcopyrightedmedia.impl.utils.u.a
@@ -218,7 +219,7 @@ public abstract class u {
             Iterator it = new ArrayList(this.b).iterator();
             while (it.hasNext()) {
                 b bVar = (b) it.next();
-                u.b(bVar.f40160a);
+                u.b(bVar.f26469a);
                 u.b(bVar.b);
             }
         }
@@ -230,10 +231,10 @@ public abstract class u {
 
         @Override // com.tencent.txcopyrightedmedia.impl.utils.u.a
         public final void b(b bVar) {
-            this.f40168a++;
+            this.f26477a++;
             Thread thread = new Thread(bVar);
             thread.setDaemon(true);
-            thread.setName("NanoHttpd Request Processor (#" + this.f40168a + ")");
+            thread.setName("NanoHttpd Request Processor (#" + this.f26477a + ")");
             this.b.add(bVar);
             thread.start();
         }
@@ -251,26 +252,26 @@ public abstract class u {
     public static final class h implements r {
 
         /* renamed from: a  reason: collision with root package name */
-        private final File f40169a;
+        private final File f26478a;
         private final OutputStream b;
 
         public h(File file) {
-            this.f40169a = File.createTempFile("NanoHTTPD-", "", file);
-            this.b = new FileOutputStream(this.f40169a);
+            this.f26478a = File.createTempFile("NanoHTTPD-", "", file);
+            this.b = new FileOutputStream(this.f26478a);
         }
 
         @Override // com.tencent.txcopyrightedmedia.impl.utils.u.r
         public final void a() {
             u.b(this.b);
-            if (this.f40169a.delete()) {
+            if (this.f26478a.delete()) {
                 return;
             }
-            throw new Exception("could not delete temporary file: " + this.f40169a.getAbsolutePath());
+            throw new Exception("could not delete temporary file: " + this.f26478a.getAbsolutePath());
         }
 
         @Override // com.tencent.txcopyrightedmedia.impl.utils.u.r
         public final String b() {
-            return this.f40169a.getAbsolutePath();
+            return this.f26478a.getAbsolutePath();
         }
     }
 
@@ -278,14 +279,14 @@ public abstract class u {
     public static final class i implements s {
 
         /* renamed from: a  reason: collision with root package name */
-        private final File f40170a;
+        private final File f26479a;
         private final List<r> b;
 
         public i() {
             File file = new File(System.getProperty("java.io.tmpdir"));
-            this.f40170a = file;
+            this.f26479a = file;
             if (!file.exists()) {
-                this.f40170a.mkdirs();
+                this.f26479a.mkdirs();
             }
             this.b = new ArrayList();
         }
@@ -304,7 +305,7 @@ public abstract class u {
 
         @Override // com.tencent.txcopyrightedmedia.impl.utils.u.s
         public final r b() {
-            h hVar = new h(this.f40170a);
+            h hVar = new h(this.f26479a);
             this.b.add(hVar);
             return hVar;
         }
@@ -330,7 +331,7 @@ public abstract class u {
         private final s b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final OutputStream f40173c;
+        private final OutputStream f26482c;
         private final BufferedInputStream d;
         private int e;
         private int f;
@@ -345,7 +346,7 @@ public abstract class u {
         public k(s sVar, InputStream inputStream, OutputStream outputStream) {
             this.b = sVar;
             this.d = new BufferedInputStream(inputStream, 8192);
-            this.f40173c = outputStream;
+            this.f26482c = outputStream;
         }
 
         private static int a(byte[] bArr, int i) {
@@ -421,7 +422,7 @@ public abstract class u {
                                 int[] iArr3 = iArr2;
                                 if (i6 == bytes.length - 1) {
                                     iArr3 = new int[iArr2.length + 1];
-                                    System.arraycopy((Object) iArr2, 0, (Object) iArr3, 0, iArr2.length);
+                                    System.arraycopy(iArr2, 0, iArr3, 0, iArr2.length);
                                     iArr3[iArr2.length] = i3 + i5;
                                 }
                                 i6++;
@@ -430,7 +431,7 @@ public abstract class u {
                             i4 = i5 + 1;
                         }
                         i3 += length2;
-                        System.arraycopy((Object) bArr, length - bytes.length, (Object) bArr, 0, bytes.length);
+                        System.arraycopy(bArr, length - bytes.length, bArr, 0, bytes.length);
                         int length3 = length - bytes.length;
                         length2 = length3;
                         if (byteBuffer.remaining() < length3) {
@@ -624,7 +625,7 @@ public abstract class u {
                 return;
             }
             this.l = str;
-            StringTokenizer stringTokenizer = new StringTokenizer(str, "&");
+            StringTokenizer stringTokenizer = new StringTokenizer(str, ContainerUtils.FIELD_DELIMITER);
             while (stringTokenizer.hasMoreTokens()) {
                 String nextToken = stringTokenizer.nextToken();
                 int indexOf = nextToken.indexOf(61);
@@ -732,7 +733,7 @@ public abstract class u {
                 RandomAccessFile randomAccessFile5 = randomAccessFile;
                 if (m.POST.equals(this.h)) {
                     RandomAccessFile randomAccessFile6 = randomAccessFile;
-                    c cVar = new c(this.j.get("content-type"));
+                    c cVar = new c(this.j.get(Headers.CONTENT_TYPE));
                     RandomAccessFile randomAccessFile7 = randomAccessFile;
                     if (HttpConstants.ContentType.MULTIPART_FORM_DATA.equalsIgnoreCase(cVar.b)) {
                         RandomAccessFile randomAccessFile8 = randomAccessFile;
@@ -851,11 +852,11 @@ public abstract class u {
     public static final class n implements Closeable {
 
         /* renamed from: a  reason: collision with root package name */
-        public b f40176a;
+        public b f26485a;
         String b;
 
         /* renamed from: c  reason: collision with root package name */
-        m f40177c;
+        m f26486c;
         boolean d;
         boolean e;
         private InputStream f;
@@ -888,7 +889,7 @@ public abstract class u {
                 write(new byte[]{(byte) i}, 0, 1);
             }
 
-            @Override // java.io.OutputStream
+            @Override // java.io.FilterOutputStream, java.io.OutputStream
             public final void write(byte[] bArr) {
                 write(bArr, 0, bArr.length);
             }
@@ -959,7 +960,7 @@ public abstract class u {
         }
 
         protected n(b bVar, String str, InputStream inputStream, long j) {
-            this.f40176a = bVar;
+            this.f26485a = bVar;
             this.b = str;
             boolean z = false;
             if (inputStream == null) {
@@ -1033,11 +1034,11 @@ public abstract class u {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E, d MMM yyyy HH:mm:ss 'GMT'", Locale.US);
             simpleDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
             try {
-                if (this.f40176a == null) {
+                if (this.f26485a == null) {
                     throw new Error("sendResponse(): Status can't be null.");
                 }
                 PrintWriter printWriter = new PrintWriter((Writer) new BufferedWriter(new OutputStreamWriter(outputStream, new c(this.b).a())), false);
-                printWriter.append("HTTP/1.1 ").append(this.f40176a.a()).append(" \r\n");
+                printWriter.append("HTTP/1.1 ").append(this.f26485a.a()).append(" \r\n");
                 if (this.b != null) {
                     a(printWriter, "Content-Type", this.b);
                 }
@@ -1058,7 +1059,7 @@ public abstract class u {
                     this.j = true;
                 }
                 long j2 = this.f != null ? this.g : 0L;
-                if (this.f40177c == m.HEAD || !this.j) {
+                if (this.f26486c == m.HEAD || !this.j) {
                     j = j2;
                     if (!this.d) {
                         j = a(printWriter, j2);
@@ -1069,7 +1070,7 @@ public abstract class u {
                 }
                 printWriter.append(IOUtils.LINE_SEPARATOR_WINDOWS);
                 printWriter.flush();
-                if (this.f40177c == m.HEAD || !this.j) {
+                if (this.f26486c == m.HEAD || !this.j) {
                     a(outputStream, j);
                 } else {
                     a aVar = new a(outputStream);
@@ -1116,7 +1117,7 @@ public abstract class u {
     public final class p implements Runnable {
 
         /* renamed from: c  reason: collision with root package name */
-        private IOException f40181c;
+        private IOException f26490c;
         private boolean d = false;
         private final int b = 5000;
 
@@ -1126,7 +1127,7 @@ public abstract class u {
         @Override // java.lang.Runnable
         public final void run() {
             try {
-                u.this.h.bind(u.this.f40158a != null ? new InetSocketAddress(u.this.f40158a, u.this.b) : new InetSocketAddress(u.this.b));
+                u.this.h.bind(u.this.f26467a != null ? new InetSocketAddress(u.this.f26467a, u.this.b) : new InetSocketAddress(u.this.b));
                 this.d = true;
                 do {
                     try {
@@ -1134,13 +1135,13 @@ public abstract class u {
                         if (this.b > 0) {
                             accept.setSoTimeout(this.b);
                         }
-                        u.this.f40159c.b(new b(accept.getInputStream(), accept));
+                        u.this.f26468c.b(new b(accept.getInputStream(), accept));
                     } catch (IOException e) {
                         u.g.log(Level.FINE, "Communication with the client broken", (Throwable) e);
                     }
                 } while (!u.this.h.isClosed());
             } catch (IOException e2) {
-                this.f40181c = e2;
+                this.f26490c = e2;
             }
         }
     }
@@ -1184,9 +1185,9 @@ public abstract class u {
         try {
             if (!Charset.forName(cVar.a()).newEncoder().canEncode(str2)) {
                 cVar2 = cVar;
-                if (cVar.f40163c == null) {
+                if (cVar.f26472c == null) {
                     StringBuilder sb = new StringBuilder();
-                    sb.append(cVar.f40162a);
+                    sb.append(cVar.f26471a);
                     sb.append("; charset=UTF-8");
                     cVar2 = new c(sb.toString());
                 }
@@ -1198,7 +1199,7 @@ public abstract class u {
             bArr = new byte[0];
             cVar2 = cVar3;
         }
-        return a(bVar, cVar2.f40162a, new ByteArrayInputStream(bArr), bArr.length);
+        return a(bVar, cVar2.f26471a, new ByteArrayInputStream(bArr), bArr.length);
     }
 
     protected static String a(String str) {
@@ -1266,21 +1267,21 @@ public abstract class u {
         thread.setDaemon(true);
         this.j.setName("NanoHttpd Main Listener");
         this.j.start();
-        while (!pVar.d && pVar.f40181c == null) {
+        while (!pVar.d && pVar.f26490c == null) {
             try {
                 Thread.sleep(10L);
             } catch (Throwable th) {
             }
         }
-        if (pVar.f40181c != null) {
-            throw pVar.f40181c;
+        if (pVar.f26490c != null) {
+            throw pVar.f26490c;
         }
     }
 
     public final void c() {
         try {
             b(this.h);
-            this.f40159c.a();
+            this.f26468c.a();
             if (this.j != null) {
                 this.j.join();
             }

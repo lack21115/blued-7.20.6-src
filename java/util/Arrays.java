@@ -1,31 +1,27 @@
 package java.util;
 
-import com.igexin.push.core.b;
 import java.io.Serializable;
 import java.lang.reflect.Array;
 
 /* loaded from: source-2895416-dex2jar.jar:java/util/Arrays.class */
 public class Arrays {
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-2895416-dex2jar.jar:java/util/Arrays$ArrayList.class */
-    public static class ArrayList<E> extends AbstractList<E> implements List<E>, Serializable, RandomAccess {
+    private static class ArrayList<E> extends AbstractList<E> implements List<E>, Serializable, RandomAccess {
         private static final long serialVersionUID = -2764017481108945198L;
-
-        /* renamed from: a  reason: collision with root package name */
-        private final E[] f42262a;
+        private final E[] a;
 
         ArrayList(E[] eArr) {
             if (eArr == null) {
                 throw new NullPointerException("storage == null");
             }
-            this.f42262a = eArr;
+            this.a = eArr;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public boolean contains(Object obj) {
             if (obj != null) {
-                E[] eArr = this.f42262a;
+                E[] eArr = this.a;
                 int length = eArr.length;
                 int i = 0;
                 while (true) {
@@ -39,7 +35,7 @@ public class Arrays {
                     i = i2 + 1;
                 }
             } else {
-                E[] eArr2 = this.f42262a;
+                E[] eArr2 = this.a;
                 int length2 = eArr2.length;
                 int i3 = 0;
                 while (true) {
@@ -58,9 +54,9 @@ public class Arrays {
         @Override // java.util.AbstractList, java.util.List
         public E get(int i) {
             try {
-                return this.f42262a[i];
+                return this.a[i];
             } catch (ArrayIndexOutOfBoundsException e) {
-                throw java.util.ArrayList.throwIndexOutOfBoundsException(i, this.f42262a.length);
+                throw java.util.ArrayList.throwIndexOutOfBoundsException(i, this.a.length);
             }
         }
 
@@ -70,10 +66,10 @@ public class Arrays {
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= this.f42262a.length) {
+                    if (i2 >= this.a.length) {
                         return -1;
                     }
-                    if (obj.equals(this.f42262a[i2])) {
+                    if (obj.equals(this.a[i2])) {
                         return i2;
                     }
                     i = i2 + 1;
@@ -82,10 +78,10 @@ public class Arrays {
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
-                    if (i4 >= this.f42262a.length) {
+                    if (i4 >= this.a.length) {
                         return -1;
                     }
-                    if (this.f42262a[i4] == null) {
+                    if (this.a[i4] == null) {
                         return i4;
                     }
                     i3 = i4 + 1;
@@ -96,25 +92,25 @@ public class Arrays {
         @Override // java.util.AbstractList, java.util.List
         public int lastIndexOf(Object obj) {
             if (obj != null) {
-                int length = this.f42262a.length;
+                int length = this.a.length;
                 while (true) {
                     int i = length - 1;
                     if (i < 0) {
                         return -1;
                     }
-                    if (obj.equals(this.f42262a[i])) {
+                    if (obj.equals(this.a[i])) {
                         return i;
                     }
                     length = i;
                 }
             } else {
-                int length2 = this.f42262a.length;
+                int length2 = this.a.length;
                 while (true) {
                     int i2 = length2 - 1;
                     if (i2 < 0) {
                         return -1;
                     }
-                    if (this.f42262a[i2] == null) {
+                    if (this.a[i2] == null) {
                         return i2;
                     }
                     length2 = i2;
@@ -124,31 +120,31 @@ public class Arrays {
 
         @Override // java.util.AbstractList, java.util.List
         public E set(int i, E e) {
-            E e2 = this.f42262a[i];
-            this.f42262a[i] = e;
+            E e2 = this.a[i];
+            this.a[i] = e;
             return e2;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+        @Override // java.util.AbstractCollection, java.util.Collection
         public int size() {
-            return this.f42262a.length;
+            return this.a.length;
         }
 
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public Object[] toArray() {
-            return (Object[]) this.f42262a.clone();
+            return (Object[]) this.a.clone();
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r0v14, types: [java.lang.Object[]] */
-        @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+        @Override // java.util.AbstractCollection, java.util.Collection
         public <T> T[] toArray(T[] tArr) {
             int size = size();
             T[] tArr2 = tArr;
             if (size > tArr.length) {
                 tArr2 = (Object[]) Array.newInstance(tArr.getClass().getComponentType(), size);
             }
-            System.arraycopy(this.f42262a, 0, tArr2, 0, size);
+            System.arraycopy(this.a, 0, tArr2, 0, size);
             if (size < tArr2.length) {
                 tArr2[size] = null;
             }
@@ -192,11 +188,11 @@ public class Arrays {
         return i3;
     }
 
-    public static int binarySearch(char[] cArr, char c2) {
-        return binarySearch(cArr, 0, cArr.length, c2);
+    public static int binarySearch(char[] cArr, char c) {
+        return binarySearch(cArr, 0, cArr.length, c);
     }
 
-    public static int binarySearch(char[] cArr, int i, int i2, char c2) {
+    public static int binarySearch(char[] cArr, int i, int i2, char c) {
         int i3;
         checkBinarySearchBounds(i, i2, cArr.length);
         int i4 = i2 - 1;
@@ -206,10 +202,10 @@ public class Arrays {
                 break;
             }
             int i5 = (i + i4) >>> 1;
-            char c3 = cArr[i5];
-            if (c3 >= c2) {
+            char c2 = cArr[i5];
+            if (c2 >= c) {
                 i3 = i5;
-                if (c3 <= c2) {
+                if (c2 <= c) {
                     break;
                 }
                 i4 = i5 - 1;
@@ -737,7 +733,7 @@ public class Arrays {
 
     public static String deepToString(Object[] objArr) {
         if (objArr == null) {
-            return b.l;
+            return "null";
         }
         StringBuilder sb = new StringBuilder(objArr.length * 9);
         deepToStringImpl(objArr, new Object[]{objArr}, sb);
@@ -746,7 +742,7 @@ public class Arrays {
 
     private static void deepToStringImpl(Object[] objArr, Object[] objArr2, StringBuilder sb) {
         if (objArr == null) {
-            sb.append(b.l);
+            sb.append("null");
             return;
         }
         sb.append('[');
@@ -762,7 +758,7 @@ public class Arrays {
             }
             Object obj = objArr[i2];
             if (obj == null) {
-                sb.append(b.l);
+                sb.append("null");
             } else {
                 Class<?> cls = obj.getClass();
                 if (cls.isArray()) {
@@ -1028,22 +1024,22 @@ public class Arrays {
         }
     }
 
-    public static void fill(char[] cArr, char c2) {
+    public static void fill(char[] cArr, char c) {
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= cArr.length) {
                 return;
             }
-            cArr[i2] = c2;
+            cArr[i2] = c;
             i = i2 + 1;
         }
     }
 
-    public static void fill(char[] cArr, int i, int i2, char c2) {
+    public static void fill(char[] cArr, int i, int i2, char c) {
         checkStartAndEnd(cArr.length, i, i2);
         while (i < i2) {
-            cArr[i] = c2;
+            cArr[i] = c;
             i++;
         }
     }
@@ -1454,7 +1450,7 @@ public class Arrays {
 
     public static String toString(byte[] bArr) {
         if (bArr == null) {
-            return b.l;
+            return "null";
         }
         if (bArr.length == 0) {
             return "[]";
@@ -1477,7 +1473,7 @@ public class Arrays {
 
     public static String toString(char[] cArr) {
         if (cArr == null) {
-            return b.l;
+            return "null";
         }
         if (cArr.length == 0) {
             return "[]";
@@ -1500,7 +1496,7 @@ public class Arrays {
 
     public static String toString(double[] dArr) {
         if (dArr == null) {
-            return b.l;
+            return "null";
         }
         if (dArr.length == 0) {
             return "[]";
@@ -1523,7 +1519,7 @@ public class Arrays {
 
     public static String toString(float[] fArr) {
         if (fArr == null) {
-            return b.l;
+            return "null";
         }
         if (fArr.length == 0) {
             return "[]";
@@ -1546,7 +1542,7 @@ public class Arrays {
 
     public static String toString(int[] iArr) {
         if (iArr == null) {
-            return b.l;
+            return "null";
         }
         if (iArr.length == 0) {
             return "[]";
@@ -1569,7 +1565,7 @@ public class Arrays {
 
     public static String toString(long[] jArr) {
         if (jArr == null) {
-            return b.l;
+            return "null";
         }
         if (jArr.length == 0) {
             return "[]";
@@ -1592,7 +1588,7 @@ public class Arrays {
 
     public static String toString(Object[] objArr) {
         if (objArr == null) {
-            return b.l;
+            return "null";
         }
         if (objArr.length == 0) {
             return "[]";
@@ -1615,7 +1611,7 @@ public class Arrays {
 
     public static String toString(short[] sArr) {
         if (sArr == null) {
-            return b.l;
+            return "null";
         }
         if (sArr.length == 0) {
             return "[]";
@@ -1638,7 +1634,7 @@ public class Arrays {
 
     public static String toString(boolean[] zArr) {
         if (zArr == null) {
-            return b.l;
+            return "null";
         }
         if (zArr.length == 0) {
             return "[]";

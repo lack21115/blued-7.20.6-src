@@ -13,11 +13,11 @@ import java.util.Map;
 public class v {
 
     /* renamed from: a  reason: collision with root package name */
-    static String[] f21536a = {"/home"};
+    static String[] f7930a = {"/home"};
     static String[] b = {Launcher.Path.MALL, "/home"};
 
     /* renamed from: c  reason: collision with root package name */
-    static String[] f21537c = {"/home", Launcher.Path.MALL, Launcher.Path.VIP, "/dt", Launcher.Path.DETAIL_DOWN, Launcher.Path.ORDER_DETAIL, Launcher.Path.TOPIC, Launcher.Path.CARD_STYLE, "/web", Launcher.Path.ONLINE_SERVICE, Launcher.Path.GIFTS};
+    static String[] f7931c = {"/home", Launcher.Path.MALL, Launcher.Path.VIP, "/dt", Launcher.Path.DETAIL_DOWN, Launcher.Path.ORDER_DETAIL, Launcher.Path.TOPIC, Launcher.Path.CARD_STYLE, "/web", Launcher.Path.ONLINE_SERVICE, Launcher.Path.GIFTS};
     static String[] d = {"/home", Launcher.Path.MALL, Launcher.Path.VIP, "/dt", Launcher.Path.DETAIL_DOWN, Launcher.Path.ORDER_DETAIL, Launcher.Path.TOPIC, Launcher.Path.CARD_STYLE, "/web", Launcher.Path.FORUM_POSTS_DT, Launcher.Path.GIFTS, Launcher.Path.COIN_TICKET, Launcher.Path.GAME_GIFTS, Launcher.Path.ACTIVITIES, Launcher.Path.GAME_ACTIVITIES, Launcher.Path.FORUM_BOARD_DT};
 
     public static boolean a(Context context, String str) {
@@ -40,7 +40,7 @@ public class v {
             }
             z = true;
         } else if (a2 >= 2.0f) {
-            String[] strArr2 = f21537c;
+            String[] strArr2 = f7931c;
             int length2 = strArr2.length;
             int i3 = 0;
             while (true) {
@@ -74,7 +74,7 @@ public class v {
         } else {
             z = false;
             if (a2 > 0.0f) {
-                String[] strArr4 = f21536a;
+                String[] strArr4 = f7930a;
                 int length4 = strArr4.length;
                 int i7 = 0;
                 while (true) {

@@ -165,7 +165,7 @@ public class af extends ze<n0> implements n0, r4 {
             return null;
         }
         LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setTag(r4.f37733c);
+        linearLayout.setTag(r4.f24042c);
         linearLayout.setLayoutParams(new FrameLayout.LayoutParams(-2, -2));
         linearLayout.setOrientation(1);
         linearLayout.setGravity(17);

@@ -1,6 +1,7 @@
 package com.unikuwei.mianmi.account.shield.tencent.e;
 
 import android.os.Build;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import com.huawei.openalliance.ad.constant.bc;
 import com.umeng.analytics.pro.bh;
@@ -12,11 +13,11 @@ import org.json.JSONObject;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private ExecutorService f41005a;
+    private ExecutorService f27314a;
 
     public f() {
-        this.f41005a = null;
-        this.f41005a = Executors.newFixedThreadPool(1);
+        this.f27314a = null;
+        this.f27314a = Executors.newFixedThreadPool(1);
     }
 
     public void a(String str, String str2) {
@@ -30,7 +31,7 @@ public class f {
             jSONObject.put(bc.e.l, str);
             jSONObject.put("message", str2);
             jSONObject.put("sdkVersion", "5.2.0AK002B1125");
-            jSONObject.put("apn", h.d());
+            jSONObject.put(TelephonyManager.EXTRA_DATA_APN, h.d());
             jSONObject.put("appName", h.h());
             jSONObject.put("pip", h.e());
             jSONObject.put("netType", "" + h.g());
@@ -40,10 +41,10 @@ public class f {
             if (TextUtils.isEmpty(jSONObject2)) {
                 return;
             }
-            if (this.f41005a == null) {
-                this.f41005a = Executors.newFixedThreadPool(1);
+            if (this.f27314a == null) {
+                this.f27314a = Executors.newFixedThreadPool(1);
             }
-            this.f41005a.submit(new Runnable() { // from class: com.unikuwei.mianmi.account.shield.tencent.e.f.1
+            this.f27314a.submit(new Runnable() { // from class: com.unikuwei.mianmi.account.shield.tencent.e.f.1
                 @Override // java.lang.Runnable
                 public void run() {
                     try {
@@ -59,10 +60,10 @@ public class f {
     }
 
     public void finalize() {
-        ExecutorService executorService = this.f41005a;
+        ExecutorService executorService = this.f27314a;
         if (executorService != null) {
             executorService.shutdownNow();
-            this.f41005a = null;
+            this.f27314a = null;
         }
     }
 }

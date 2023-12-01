@@ -17,7 +17,6 @@ import android.os.Build;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.view.WindowManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.qiniu.android.dns.DnsManager;
 import com.qiniu.android.dns.IResolver;
 import com.qiniu.android.dns.NetworkInfo;
@@ -43,11 +42,11 @@ import org.json.JSONObject;
 public class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f1363a = (Runtime.getRuntime().maxMemory() * 60) / 100;
+    public static final long f1315a = (Runtime.getRuntime().maxMemory() * 60) / 100;
     public static final long b = (Runtime.getRuntime().maxMemory() * 90) / 100;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final long f1364c = (Runtime.getRuntime().maxMemory() * 60) / 100;
+    public static final long f1316c = (Runtime.getRuntime().maxMemory() * 60) / 100;
     public static Random d = new Random();
     public static boolean e = g();
 
@@ -121,7 +120,7 @@ public class h {
     public static int a(BitmapFactory.Options options, int i, int i2) {
         int i3 = options.outHeight;
         int i4 = options.outWidth;
-        e eVar = e.f1361c;
+        e eVar = e.f1313c;
         eVar.c("CameraStreamingUtil", "options.width:" + i4 + ",options.height:" + i3 + ",reqWidth:" + i + ",reqHeight:" + i2);
         int i5 = 1;
         int i6 = 1;
@@ -140,7 +139,7 @@ public class h {
                 i6 *= 2;
             }
         }
-        e eVar2 = e.f1361c;
+        e eVar2 = e.f1313c;
         eVar2.c("CameraStreamingUtil", "inSampleSize:" + i5);
         return i5;
     }
@@ -488,7 +487,7 @@ public class h {
 
     public static String b(StreamingProfile.Stream stream, String str) {
         String str2;
-        String str3 = BridgeUtil.SPLIT_MARK + stream.getHubName() + BridgeUtil.SPLIT_MARK + stream.getTitle() + "?nonce=" + (System.currentTimeMillis() / 1000);
+        String str3 = "/" + stream.getHubName() + "/" + stream.getTitle() + "?nonce=" + (System.currentTimeMillis() / 1000);
         try {
             str2 = a.b(stream.getPublishKey(), str3);
         } catch (SignatureException e2) {
@@ -516,7 +515,7 @@ public class h {
     }
 
     public static boolean b() {
-        return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() >= f1363a;
+        return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() >= f1315a;
     }
 
     public static boolean b(int i) {
@@ -624,7 +623,7 @@ public class h {
     }
 
     public static boolean d() {
-        return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() >= f1364c;
+        return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory() >= f1316c;
     }
 
     public static boolean d(PLBufferInfo pLBufferInfo) {
@@ -673,7 +672,7 @@ public class h {
                 EGL14.eglGetCurrentContext();
                 return true;
             } catch (NoClassDefFoundError e2) {
-                e.f1361c.c("CameraStreamingUtil", "EGL14 isn't supported on this platform, change to use EGL10.");
+                e.f1313c.c("CameraStreamingUtil", "EGL14 isn't supported on this platform, change to use EGL10.");
                 return false;
             }
         }
@@ -723,7 +722,7 @@ public class h {
         }
         sb.append(str2);
         sb.append(trim);
-        return b(sb.toString()).replace(" ", BridgeUtil.UNDERLINE_STR);
+        return b(sb.toString()).replace(" ", "_");
     }
 
     public static String i(Context context) {

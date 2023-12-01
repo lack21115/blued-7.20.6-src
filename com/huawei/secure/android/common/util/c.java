@@ -7,12 +7,12 @@ import android.os.Looper;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Handler f23160a = new Handler(Looper.getMainLooper());
+    private static Handler f9552a = new Handler(Looper.getMainLooper());
 
     public static void a(Runnable runnable) {
         if (runnable == null) {
             return;
         }
-        f23160a.post(runnable);
+        f9552a.post(runnable);
     }
 }

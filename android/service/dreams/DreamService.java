@@ -23,7 +23,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.WindowManagerGlobal;
 import android.view.accessibility.AccessibilityEvent;
-import com.android.internal.R;
 import com.android.internal.policy.PolicyManager;
 import com.android.internal.util.DumpUtils;
 import java.io.FileDescriptor;
@@ -132,12 +131,12 @@ public class DreamService extends Service implements Window.Callback {
                 this.mWindow.setBackgroundDrawable(new ColorDrawable(-16777216));
                 this.mWindow.setFormat(-1);
                 if (this.mDebug) {
-                    Slog.v(this.TAG, String.format("Attaching window token: %s to window of type %s", iBinder, Integer.valueOf((int) WindowManager.LayoutParams.TYPE_DREAM)));
+                    Slog.v(this.TAG, String.format("Attaching window token: %s to window of type %s", iBinder, 2023));
                 }
                 WindowManager.LayoutParams attributes = this.mWindow.getAttributes();
-                attributes.type = WindowManager.LayoutParams.TYPE_DREAM;
+                attributes.type = 2023;
                 attributes.token = iBinder;
-                attributes.windowAnimations = R.style.Animation_Dream;
+                attributes.windowAnimations = 16974570;
                 attributes.flags = (this.mScreenBright ? 128 : 0) | 4784385 | (this.mFullscreen ? 1024 : 0) | attributes.flags;
                 this.mWindow.setAttributes(attributes);
                 this.mWindow.clearFlags(Integer.MIN_VALUE);
@@ -322,7 +321,6 @@ public class DreamService extends Service implements Window.Callback {
     @Override // android.app.Service
     public void dump(final FileDescriptor fileDescriptor, PrintWriter printWriter, final String[] strArr) {
         DumpUtils.dumpAsync(this.mHandler, new DumpUtils.Dump() { // from class: android.service.dreams.DreamService.2
-            @Override // com.android.internal.util.DumpUtils.Dump
             public void dump(PrintWriter printWriter2) {
                 DreamService.this.dumpOnHandler(fileDescriptor, printWriter2, strArr);
             }

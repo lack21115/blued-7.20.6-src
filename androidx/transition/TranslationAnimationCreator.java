@@ -15,11 +15,11 @@ class TranslationAnimationCreator {
     static class TransitionPositionListener extends AnimatorListenerAdapter implements Transition.TransitionListener {
 
         /* renamed from: a  reason: collision with root package name */
-        private final View f3490a;
+        private final View f3442a;
         private final View b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final int f3491c;
+        private final int f3443c;
         private final int d;
         private int[] e;
         private float f;
@@ -29,15 +29,15 @@ class TranslationAnimationCreator {
 
         TransitionPositionListener(View view, View view2, int i, int i2, float f, float f2) {
             this.b = view;
-            this.f3490a = view2;
-            this.f3491c = i - Math.round(view.getTranslationX());
+            this.f3442a = view2;
+            this.f3443c = i - Math.round(view.getTranslationX());
             this.d = i2 - Math.round(this.b.getTranslationY());
             this.h = f;
             this.i = f2;
-            int[] iArr = (int[]) this.f3490a.getTag(R.id.transition_position);
+            int[] iArr = (int[]) this.f3442a.getTag(R.id.transition_position);
             this.e = iArr;
             if (iArr != null) {
-                this.f3490a.setTag(R.id.transition_position, null);
+                this.f3442a.setTag(R.id.transition_position, null);
             }
         }
 
@@ -46,9 +46,9 @@ class TranslationAnimationCreator {
             if (this.e == null) {
                 this.e = new int[2];
             }
-            this.e[0] = Math.round(this.f3491c + this.b.getTranslationX());
+            this.e[0] = Math.round(this.f3443c + this.b.getTranslationX());
             this.e[1] = Math.round(this.d + this.b.getTranslationY());
-            this.f3490a.setTag(R.id.transition_position, this.e);
+            this.f3442a.setTag(R.id.transition_position, this.e);
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorPauseListener

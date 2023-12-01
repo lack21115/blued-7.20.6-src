@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.statusbar;
 
+import android.R;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
@@ -42,22 +43,14 @@ public class StatusBarCompat {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void internalSetFitsSystemWindows(Window window, boolean z) {
-        View childAt = ((ViewGroup) window.findViewById(16908290)).getChildAt(0);
+        View childAt = ((ViewGroup) window.findViewById(R.id.content)).getChildAt(0);
         if (childAt != null) {
             childAt.setFitsSystemWindows(z);
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r5v0 */
-    /* JADX WARN: Type inference failed for: r5v1, types: [java.io.IOException] */
-    /* JADX WARN: Type inference failed for: r5v10 */
-    /* JADX WARN: Type inference failed for: r5v11 */
-    /* JADX WARN: Type inference failed for: r5v2 */
-    /* JADX WARN: Type inference failed for: r5v3 */
-    /* JADX WARN: Type inference failed for: r5v5 */
-    /* JADX WARN: Type inference failed for: r5v7 */
-    /* JADX WARN: Type inference failed for: r5v8 */
+    /* JADX WARN: Type inference failed for: r0v10, types: [java.io.FileInputStream] */
     private static boolean isEMUI() {
         FileInputStream fileInputStream;
         Exception e;
@@ -66,7 +59,7 @@ public class StatusBarCompat {
             return false;
         }
         Properties properties = new Properties();
-        FileInputStream e2 = 0;
+        FileInputStream e2 = null;
         try {
         } catch (IOException e3) {
             e2 = e3;
@@ -78,20 +71,18 @@ public class StatusBarCompat {
                 try {
                     properties.load(fileInputStream);
                     fileInputStream.close();
-                    e2 = e2;
                 } catch (Exception e4) {
                     e = e4;
                     e2 = fileInputStream;
                     e.printStackTrace();
                     if (fileInputStream != null) {
                         fileInputStream.close();
-                        e2 = e2;
                     }
                     return properties.containsKey("ro.build.hw_emui_api_level");
                 } catch (Throwable th) {
                     e2 = fileInputStream;
                     th = th;
-                    if (e2 != false) {
+                    if (e2 != null) {
                         try {
                             e2.close();
                         } catch (IOException e5) {
@@ -115,7 +106,7 @@ public class StatusBarCompat {
     }
 
     public static void resetActionBarContainerTopMargin(Window window) {
-        ViewGroup viewGroup = (ViewGroup) window.findViewById(16908290).getParent();
+        ViewGroup viewGroup = (ViewGroup) window.findViewById(R.id.content).getParent();
         if (viewGroup.getChildCount() > 1) {
             internalResetActionBarContainer(viewGroup.getChildAt(1));
         }

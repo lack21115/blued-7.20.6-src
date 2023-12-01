@@ -24,11 +24,11 @@ public class t5 {
     public boolean D;
 
     /* renamed from: a  reason: collision with root package name */
-    public ArrayList<GeoPoint> f38015a;
+    public ArrayList<GeoPoint> f24324a;
     public ArrayList<GeoPoint> b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int[] f38016c;
+    public int[] f24325c;
     public int[] d;
     public String[] e;
     public int[] f;
@@ -60,11 +60,11 @@ public class t5 {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f38017a = 0;
+        public static final int f24326a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f38018c = 2;
+        public static final int f24327c = 2;
         public static final int d = 3;
         public static final int e = 4;
         public static final int f = 5;
@@ -81,12 +81,12 @@ public class t5 {
     public class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public int f38019a;
+        public int f24328a;
         public int b;
 
         public b(int i, int i2) {
             this.b = i;
-            this.f38019a = i2;
+            this.f24328a = i2;
         }
 
         public boolean equals(Object obj) {
@@ -98,7 +98,7 @@ public class t5 {
             }
             b bVar = (b) obj;
             boolean z = false;
-            if (bVar.f38019a == this.f38019a) {
+            if (bVar.f24328a == this.f24328a) {
                 z = false;
                 if (bVar.b == this.b) {
                     z = true;
@@ -203,7 +203,7 @@ public class t5 {
                     return this;
                 }
                 this.h[i7] = ((b) arrayList.get(i7)).b;
-                this.i[i7] = ((b) arrayList.get(i7)).f38019a;
+                this.i[i7] = ((b) arrayList.get(i7)).f24328a;
                 i6 = i7 + 1;
             }
         }
@@ -259,7 +259,7 @@ public class t5 {
             return this;
         }
         ArrayList<GeoPoint> arrayList2 = new ArrayList<>(list.size());
-        this.f38015a = arrayList2;
+        this.f24324a = arrayList2;
         arrayList2.addAll(this.b);
         return this;
     }
@@ -274,7 +274,7 @@ public class t5 {
             na.h("参数startNums不能为空!");
             return this;
         }
-        this.f38016c = iArr;
+        this.f24325c = iArr;
         return this;
     }
 
@@ -398,7 +398,7 @@ public class t5 {
             return false;
         }
         t5 t5Var = (t5) obj;
-        return Float.compare(t5Var.j, this.j) == 0 && this.k == t5Var.k && this.l == t5Var.l && Float.compare(t5Var.m, this.m) == 0 && this.o == t5Var.o && Float.compare(t5Var.p, this.p) == 0 && this.q == t5Var.q && this.r == t5Var.r && this.s == t5Var.s && this.t == t5Var.t && this.v == t5Var.v && Float.compare(t5Var.x, this.x) == 0 && this.y == t5Var.y && this.z == t5Var.z && this.B == t5Var.B && this.C == t5Var.C && this.D == t5Var.D && Util.equals(this.f38015a, t5Var.f38015a) && Util.equals(this.b, t5Var.b) && Arrays.equals(this.f38016c, t5Var.f38016c) && Arrays.equals(this.d, t5Var.d) && Arrays.equals(this.e, t5Var.e) && Arrays.equals(this.f, t5Var.f) && Arrays.equals(this.g, t5Var.g) && Arrays.equals(this.h, t5Var.h) && Arrays.equals(this.i, t5Var.i) && Util.equals(this.n, t5Var.n) && Util.equals(this.u, t5Var.u) && Util.equals(this.w, t5Var.w) && Util.equals(this.A, t5Var.A);
+        return Float.compare(t5Var.j, this.j) == 0 && this.k == t5Var.k && this.l == t5Var.l && Float.compare(t5Var.m, this.m) == 0 && this.o == t5Var.o && Float.compare(t5Var.p, this.p) == 0 && this.q == t5Var.q && this.r == t5Var.r && this.s == t5Var.s && this.t == t5Var.t && this.v == t5Var.v && Float.compare(t5Var.x, this.x) == 0 && this.y == t5Var.y && this.z == t5Var.z && this.B == t5Var.B && this.C == t5Var.C && this.D == t5Var.D && Util.equals(this.f24324a, t5Var.f24324a) && Util.equals(this.b, t5Var.b) && Arrays.equals(this.f24325c, t5Var.f24325c) && Arrays.equals(this.d, t5Var.d) && Arrays.equals(this.e, t5Var.e) && Arrays.equals(this.f, t5Var.f) && Arrays.equals(this.g, t5Var.g) && Arrays.equals(this.h, t5Var.h) && Arrays.equals(this.i, t5Var.i) && Util.equals(this.n, t5Var.n) && Util.equals(this.u, t5Var.u) && Util.equals(this.w, t5Var.w) && Util.equals(this.A, t5Var.A);
     }
 
     public t5 f(boolean z) {
@@ -407,6 +407,6 @@ public class t5 {
     }
 
     public int hashCode() {
-        return (((((((((((((Util.hash(this.f38015a, this.b, Float.valueOf(this.j), Boolean.valueOf(this.k), Boolean.valueOf(this.l), Float.valueOf(this.m), this.n, Boolean.valueOf(this.o), Float.valueOf(this.p), Boolean.valueOf(this.q), Integer.valueOf(this.r), Boolean.valueOf(this.s), Boolean.valueOf(this.t), this.u, Integer.valueOf(this.v), this.w, Float.valueOf(this.x), Integer.valueOf(this.y), Integer.valueOf(this.z), this.A, Integer.valueOf(this.B), Integer.valueOf(this.C), Boolean.valueOf(this.D)) * 31) + Arrays.hashCode(this.f38016c)) * 31) + Arrays.hashCode(this.d)) * 31) + Arrays.hashCode(this.e)) * 31) + Arrays.hashCode(this.f)) * 31) + Arrays.hashCode(this.g)) * 31) + Arrays.hashCode(this.h)) * 31) + Arrays.hashCode(this.i);
+        return (((((((((((((Util.hash(this.f24324a, this.b, Float.valueOf(this.j), Boolean.valueOf(this.k), Boolean.valueOf(this.l), Float.valueOf(this.m), this.n, Boolean.valueOf(this.o), Float.valueOf(this.p), Boolean.valueOf(this.q), Integer.valueOf(this.r), Boolean.valueOf(this.s), Boolean.valueOf(this.t), this.u, Integer.valueOf(this.v), this.w, Float.valueOf(this.x), Integer.valueOf(this.y), Integer.valueOf(this.z), this.A, Integer.valueOf(this.B), Integer.valueOf(this.C), Boolean.valueOf(this.D)) * 31) + Arrays.hashCode(this.f24325c)) * 31) + Arrays.hashCode(this.d)) * 31) + Arrays.hashCode(this.e)) * 31) + Arrays.hashCode(this.f)) * 31) + Arrays.hashCode(this.g)) * 31) + Arrays.hashCode(this.h)) * 31) + Arrays.hashCode(this.i);
     }
 }

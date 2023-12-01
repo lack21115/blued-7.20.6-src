@@ -2,6 +2,7 @@ package com.wrapper.proxyapplication;
 
 import android.content.Context;
 import android.os.Process;
+import com.android.dex.DexFormat;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -45,7 +46,7 @@ public class Util {
     public static String securename11 = ".flag00O000ll111l.vdex";
     public static String securename14 = "00O000ll111l.vdex";
     public static String securename15 = "00O000ll111l.odex";
-    public static String dexname = "classes.dex";
+    public static String dexname = DexFormat.DEX_IN_JAR_NAME;
     public static boolean ifoverwrite = true;
 
     static {

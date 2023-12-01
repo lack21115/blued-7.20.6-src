@@ -17,7 +17,7 @@ public class GroupNoticeFragment_ViewBinding implements Unbinder {
         this.b = groupNoticeFragment;
         groupNoticeFragment.title = (CommonTopTitleNoTrans) Utils.a(view, 2131370694, "field 'title'", CommonTopTitleNoTrans.class);
         groupNoticeFragment.notice_list = (RecyclerView) Utils.a(view, R.id.notice_list, "field 'notice_list'", RecyclerView.class);
-        groupNoticeFragment.refresh_layout = (SmartRefreshLayout) Utils.a(view, 2131369119, "field 'refresh_layout'", SmartRefreshLayout.class);
+        groupNoticeFragment.refresh_layout = (SmartRefreshLayout) Utils.a(view, R.id.refresh_layout, "field 'refresh_layout'", SmartRefreshLayout.class);
         groupNoticeFragment.noDataView = (NoDataAndLoadFailView) Utils.a(view, 2131368721, "field 'noDataView'", NoDataAndLoadFailView.class);
     }
 

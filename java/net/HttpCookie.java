@@ -1,8 +1,8 @@
 package java.net;
 
-import android.security.KeyChain;
+import com.alipay.sdk.cons.b;
+import com.alipay.sdk.util.i;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
-import com.cdo.oaps.ad.OapsWrapper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import javax.xml.transform.OutputKeys;
 import libcore.net.http.HttpDate;
 import libcore.util.Objects;
 
@@ -123,9 +124,9 @@ public final class HttpCookie implements Cloneable {
                 } catch (NumberFormatException e) {
                     throw new IllegalArgumentException("Invalid max-age: " + str2);
                 }
-            } else if (str.equals(OapsWrapper.KEY_PATH) && httpCookie.path == null) {
+            } else if (str.equals("path") && httpCookie.path == null) {
                 httpCookie.path = str2;
-            } else if (str.equals(KeyChain.EXTRA_PORT) && httpCookie.portList == null) {
+            } else if (str.equals("port") && httpCookie.portList == null) {
                 if (str2 == null) {
                     str2 = "";
                 }
@@ -134,7 +135,7 @@ public final class HttpCookie implements Cloneable {
                 httpCookie.secure = true;
             } else if (str.equals("httponly")) {
                 httpCookie.httpOnly = true;
-            } else if (!str.equals("version") || this.hasVersion) {
+            } else if (!str.equals(OutputKeys.VERSION) || this.hasVersion) {
             } else {
                 httpCookie.version = Integer.parseInt(str2);
             }
@@ -170,7 +171,7 @@ public final class HttpCookie implements Cloneable {
                 } else if (!readEqualsSign()) {
                     throw new IllegalArgumentException("Expected '=' after " + readAttributeName + " in " + this.input);
                 } else {
-                    HttpCookie httpCookie = new HttpCookie(readAttributeName, readAttributeValue(z ? ";" : ",;"));
+                    HttpCookie httpCookie = new HttpCookie(readAttributeName, readAttributeValue(z ? i.b : ",;"));
                     httpCookie.version = z ? 0 : 1;
                     arrayList.add(httpCookie);
                     while (true) {
@@ -186,7 +187,7 @@ public final class HttpCookie implements Cloneable {
                             }
                             String readAttributeName2 = readAttributeName(true);
                             if (readAttributeName2 != null) {
-                                String str = (z || "expires".equals(readAttributeName2) || KeyChain.EXTRA_PORT.equals(readAttributeName2)) ? ";" : ";,";
+                                String str = (z || "expires".equals(readAttributeName2) || "port".equals(readAttributeName2)) ? i.b : ";,";
                                 String str2 = null;
                                 if (readEqualsSign()) {
                                     str2 = readAttributeValue(str);
@@ -213,10 +214,10 @@ public final class HttpCookie implements Cloneable {
         RESERVED_NAMES.add("expires");
         RESERVED_NAMES.add("httponly");
         RESERVED_NAMES.add("max-age");
-        RESERVED_NAMES.add(OapsWrapper.KEY_PATH);
-        RESERVED_NAMES.add(KeyChain.EXTRA_PORT);
+        RESERVED_NAMES.add("path");
+        RESERVED_NAMES.add("port");
         RESERVED_NAMES.add("secure");
-        RESERVED_NAMES.add("version");
+        RESERVED_NAMES.add(OutputKeys.VERSION);
     }
 
     public HttpCookie(String str, String str2) {
@@ -413,7 +414,7 @@ public final class HttpCookie implements Cloneable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static boolean secureMatches(HttpCookie httpCookie, URI uri) {
-        return !httpCookie.getSecure() || "https".equalsIgnoreCase(uri.getScheme());
+        return !httpCookie.getSecure() || b.a.equalsIgnoreCase(uri.getScheme());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

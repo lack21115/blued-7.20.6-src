@@ -13,7 +13,7 @@ public class ProgressDrawable extends PaintDrawable implements ValueAnimator.Ani
     protected int b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    protected int f27996c = 0;
+    protected int f14308c = 0;
     protected int d = 0;
     protected Path f = new Path();
 
@@ -33,7 +33,7 @@ public class ProgressDrawable extends PaintDrawable implements ValueAnimator.Ani
         int width = bounds.width();
         int height = bounds.height();
         int max = Math.max(1, width / 20);
-        if (this.b != width || this.f27996c != height) {
+        if (this.b != width || this.f14308c != height) {
             this.f.reset();
             float f = width - max;
             float f2 = height / 2;
@@ -43,7 +43,7 @@ public class ProgressDrawable extends PaintDrawable implements ValueAnimator.Ani
             this.f.addRect(f4, i - max, f, i + max, Path.Direction.CW);
             this.f.addCircle(f4, f2, f3, Path.Direction.CW);
             this.b = width;
-            this.f27996c = height;
+            this.f14308c = height;
         }
         canvas.save();
         float f5 = width / 2;
@@ -56,9 +56,9 @@ public class ProgressDrawable extends PaintDrawable implements ValueAnimator.Ani
                 canvas.restore();
                 return;
             }
-            this.f27995a.setAlpha((i3 + 5) * 17);
+            this.f14307a.setAlpha((i3 + 5) * 17);
             canvas.rotate(30.0f, f5, f6);
-            canvas.drawPath(this.f, this.f27995a);
+            canvas.drawPath(this.f, this.f14307a);
             i2 = i3 + 1;
         }
     }

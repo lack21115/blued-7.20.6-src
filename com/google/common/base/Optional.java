@@ -32,7 +32,7 @@ public abstract class Optional<T> implements Serializable {
                     private final Iterator<? extends Optional<? extends T>> iterator;
 
                     {
-                        this.iterator = (Iterator) Preconditions.checkNotNull(Iterable.this.iterator());
+                        this.iterator = (Iterator) Preconditions.checkNotNull(iterable.iterator());
                     }
 
                     @Override // com.google.common.base.AbstractIterator

@@ -23,8 +23,8 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
     public static final int ACTION_USERS_FIELD_NUMBER = 1;
     private static final MultiPkExit DEFAULT_INSTANCE = new MultiPkExit();
     private static final Parser<MultiPkExit> PARSER = new AbstractParser<MultiPkExit>() { // from class: cn.irisgw.live.MultiPkExit.1
-        @Override // com.google.protobuf.Parser
-        public MultiPkExit parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public MultiPkExit m5941parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new MultiPkExit(codedInputStream, extensionRegistryLite);
         }
     };
@@ -62,22 +62,22 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             boolean unused = MultiPkExit.alwaysUseFieldBuilders;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m5943addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public MultiPkExit build() {
-            MultiPkExit buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public MultiPkExit m5945build() {
+            MultiPkExit m5947buildPartial = m5947buildPartial();
+            if (m5947buildPartial.isInitialized()) {
+                return m5947buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m5947buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public MultiPkExit buildPartial() {
+        /* renamed from: buildPartial */
+        public MultiPkExit m5947buildPartial() {
             MultiPkExit multiPkExit = new MultiPkExit(this);
             SingleFieldBuilderV3<LinkMultiUser, LinkMultiUser.Builder, LinkMultiUserOrBuilder> singleFieldBuilderV3 = this.actionUsersBuilder_;
             if (singleFieldBuilderV3 == null) {
@@ -89,8 +89,8 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return multiPkExit;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m5951clear() {
             super.clear();
             if (this.actionUsersBuilder_ == null) {
                 this.actionUsers_ = null;
@@ -112,20 +112,19 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m5953clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m5956clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m5962clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.MultiPkExitOrBuilder
@@ -151,7 +150,7 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         public LinkMultiUserOrBuilder getActionUsersOrBuilder() {
             SingleFieldBuilderV3<LinkMultiUser, LinkMultiUser.Builder, LinkMultiUserOrBuilder> singleFieldBuilderV3 = this.actionUsersBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (LinkMultiUserOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             LinkMultiUser linkMultiUser = this.actionUsers_;
             LinkMultiUser linkMultiUser2 = linkMultiUser;
@@ -161,12 +160,11 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return linkMultiUser2;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public MultiPkExit getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public MultiPkExit m5964getDefaultInstanceForType() {
             return MultiPkExit.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_MultiPkExit_descriptor;
         }
@@ -176,12 +174,10 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return (this.actionUsersBuilder_ == null && this.actionUsers_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_MultiPkExit_fieldAccessorTable.ensureFieldAccessorsInitialized(MultiPkExit.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -194,7 +190,7 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             }
             LinkMultiUser linkMultiUser2 = this.actionUsers_;
             if (linkMultiUser2 != null) {
-                this.actionUsers_ = LinkMultiUser.newBuilder(linkMultiUser2).mergeFrom(linkMultiUser).buildPartial();
+                this.actionUsers_ = LinkMultiUser.newBuilder(linkMultiUser2).mergeFrom(linkMultiUser).m5994buildPartial();
             } else {
                 this.actionUsers_ = linkMultiUser;
             }
@@ -209,18 +205,18 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             if (multiPkExit.hasActionUsers()) {
                 mergeActionUsers(multiPkExit.getActionUsers());
             }
-            mergeUnknownFields(multiPkExit.unknownFields);
+            m5973mergeUnknownFields(multiPkExit.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.MultiPkExit.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.MultiPkExit.Builder m5970mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -265,11 +261,11 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkExit.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkExit$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkExit.Builder.m5970mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkExit$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m5969mergeFrom(Message message) {
             if (message instanceof MultiPkExit) {
                 return mergeFrom((MultiPkExit) message);
             }
@@ -277,18 +273,18 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m5973mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
         public Builder setActionUsers(LinkMultiUser.Builder builder) {
             SingleFieldBuilderV3<LinkMultiUser, LinkMultiUser.Builder, LinkMultiUserOrBuilder> singleFieldBuilderV3 = this.actionUsersBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m5992build());
                 return this;
             }
-            this.actionUsers_ = builder.build();
+            this.actionUsers_ = builder.m5992build();
             onChanged();
             return this;
         }
@@ -307,18 +303,18 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             }
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m5975setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m5977setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m5979setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -337,8 +333,8 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         private long uid_;
         private static final LinkMultiUser DEFAULT_INSTANCE = new LinkMultiUser();
         private static final Parser<LinkMultiUser> PARSER = new AbstractParser<LinkMultiUser>() { // from class: cn.irisgw.live.MultiPkExit.LinkMultiUser.1
-            @Override // com.google.protobuf.Parser
-            public LinkMultiUser parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public LinkMultiUser m5988parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new LinkMultiUser(codedInputStream, extensionRegistryLite);
             }
         };
@@ -369,22 +365,22 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 boolean unused = LinkMultiUser.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m5990addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public LinkMultiUser build() {
-                LinkMultiUser buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public LinkMultiUser m5992build() {
+                LinkMultiUser m5994buildPartial = m5994buildPartial();
+                if (m5994buildPartial.isInitialized()) {
+                    return m5994buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m5994buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public LinkMultiUser buildPartial() {
+            /* renamed from: buildPartial */
+            public LinkMultiUser m5994buildPartial() {
                 LinkMultiUser linkMultiUser = new LinkMultiUser(this);
                 linkMultiUser.uid_ = this.uid_;
                 linkMultiUser.msg_ = this.msg_;
@@ -394,18 +390,18 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 return linkMultiUser;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m5998clear() {
                 super.clear();
-                this.uid_ = 0L;
+                this.uid_ = LinkMultiUser.serialVersionUID;
                 this.msg_ = "";
                 this.isMultiPkEnd_ = 0;
                 this.groupId_ = 0;
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m6000clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -427,29 +423,27 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m6003clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
             public Builder clearUid() {
-                this.uid_ = 0L;
+                this.uid_ = LinkMultiUser.serialVersionUID;
                 onChanged();
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m6009clone() {
+                return (Builder) super.clone();
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public LinkMultiUser getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public LinkMultiUser m6011getDefaultInstanceForType() {
                 return LinkMultiUser.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_MultiPkExit_LinkMultiUser_descriptor;
             }
@@ -491,12 +485,10 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 return this.uid_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_MultiPkExit_LinkMultiUser_fieldAccessorTable.ensureFieldAccessorsInitialized(LinkMultiUser.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -505,7 +497,7 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 if (linkMultiUser == LinkMultiUser.getDefaultInstance()) {
                     return this;
                 }
-                if (linkMultiUser.getUid() != 0) {
+                if (linkMultiUser.getUid() != LinkMultiUser.serialVersionUID) {
                     setUid(linkMultiUser.getUid());
                 }
                 if (!linkMultiUser.getMsg().isEmpty()) {
@@ -518,18 +510,18 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 if (linkMultiUser.getGroupId() != 0) {
                     setGroupId(linkMultiUser.getGroupId());
                 }
-                mergeUnknownFields(linkMultiUser.unknownFields);
+                m6020mergeUnknownFields(linkMultiUser.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.MultiPkExit.LinkMultiUser.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.MultiPkExit.LinkMultiUser.Builder m6017mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -574,11 +566,11 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkExit.LinkMultiUser.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkExit$LinkMultiUser$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.MultiPkExit.LinkMultiUser.Builder.m6017mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.MultiPkExit$LinkMultiUser$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m6016mergeFrom(Message message) {
                 if (message instanceof LinkMultiUser) {
                     return mergeFrom((LinkMultiUser) message);
                 }
@@ -586,13 +578,13 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m6020mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m6022setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -627,8 +619,8 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m6024setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -638,8 +630,8 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m6026setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -699,66 +691,65 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m5987toBuilder();
         }
 
         public static Builder newBuilder(LinkMultiUser linkMultiUser) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(linkMultiUser);
+            return DEFAULT_INSTANCE.m5987toBuilder().mergeFrom(linkMultiUser);
         }
 
         public static LinkMultiUser parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (LinkMultiUser) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static LinkMultiUser parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (LinkMultiUser) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static LinkMultiUser parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (LinkMultiUser) PARSER.parseFrom(byteString);
         }
 
         public static LinkMultiUser parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (LinkMultiUser) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static LinkMultiUser parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (LinkMultiUser) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static LinkMultiUser parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (LinkMultiUser) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static LinkMultiUser parseFrom(InputStream inputStream) throws IOException {
-            return (LinkMultiUser) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static LinkMultiUser parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (LinkMultiUser) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static LinkMultiUser parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (LinkMultiUser) PARSER.parseFrom(byteBuffer);
         }
 
         public static LinkMultiUser parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (LinkMultiUser) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static LinkMultiUser parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (LinkMultiUser) PARSER.parseFrom(bArr);
         }
 
         public static LinkMultiUser parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (LinkMultiUser) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<LinkMultiUser> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -770,8 +761,8 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return super.equals(obj);
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LinkMultiUser getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LinkMultiUser m5982getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -807,12 +798,10 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<LinkMultiUser> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -820,7 +809,7 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             }
             int i2 = 0;
             long j = this.uid_;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 i2 = 0 + CodedOutputStream.computeUInt64Size(1, j);
             }
             int i3 = i2;
@@ -847,12 +836,10 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -862,12 +849,10 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_MultiPkExit_LinkMultiUser_fieldAccessorTable.ensureFieldAccessorsInitialized(LinkMultiUser.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -880,31 +865,29 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m5985newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m5984newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new LinkMultiUser();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m5987toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             long j = this.uid_;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 codedOutputStream.writeUInt64(1, j);
             }
             if (!getMsgBytes().isEmpty()) {
@@ -953,12 +936,12 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
                         int readTag = codedInputStream.readTag();
                         if (readTag != 0) {
                             if (readTag == 10) {
-                                LinkMultiUser.Builder builder = this.actionUsers_ != null ? this.actionUsers_.toBuilder() : null;
-                                LinkMultiUser linkMultiUser = (LinkMultiUser) codedInputStream.readMessage(LinkMultiUser.parser(), extensionRegistryLite);
-                                this.actionUsers_ = linkMultiUser;
-                                if (builder != null) {
-                                    builder.mergeFrom(linkMultiUser);
-                                    this.actionUsers_ = builder.buildPartial();
+                                LinkMultiUser.Builder m5987toBuilder = this.actionUsers_ != null ? this.actionUsers_.m5987toBuilder() : null;
+                                LinkMultiUser readMessage = codedInputStream.readMessage(LinkMultiUser.parser(), extensionRegistryLite);
+                                this.actionUsers_ = readMessage;
+                                if (m5987toBuilder != null) {
+                                    m5987toBuilder.mergeFrom(readMessage);
+                                    this.actionUsers_ = m5987toBuilder.m5994buildPartial();
                                 }
                             } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                             }
@@ -991,66 +974,65 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m5940toBuilder();
     }
 
     public static Builder newBuilder(MultiPkExit multiPkExit) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(multiPkExit);
+        return DEFAULT_INSTANCE.m5940toBuilder().mergeFrom(multiPkExit);
     }
 
     public static MultiPkExit parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (MultiPkExit) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static MultiPkExit parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MultiPkExit) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static MultiPkExit parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (MultiPkExit) PARSER.parseFrom(byteString);
     }
 
     public static MultiPkExit parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (MultiPkExit) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static MultiPkExit parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (MultiPkExit) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static MultiPkExit parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MultiPkExit) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static MultiPkExit parseFrom(InputStream inputStream) throws IOException {
-        return (MultiPkExit) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static MultiPkExit parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (MultiPkExit) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static MultiPkExit parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (MultiPkExit) PARSER.parseFrom(byteBuffer);
     }
 
     public static MultiPkExit parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (MultiPkExit) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static MultiPkExit parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (MultiPkExit) PARSER.parseFrom(bArr);
     }
 
     public static MultiPkExit parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (MultiPkExit) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<MultiPkExit> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1080,17 +1062,15 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         return getActionUsers();
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public MultiPkExit getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public MultiPkExit m5935getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<MultiPkExit> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1105,7 +1085,6 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1115,7 +1094,6 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         return this.actionUsers_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1130,12 +1108,10 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_MultiPkExit_fieldAccessorTable.ensureFieldAccessorsInitialized(MultiPkExit.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1148,28 +1124,26 @@ public final class MultiPkExit extends GeneratedMessageV3 implements MultiPkExit
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m5938newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m5937newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new MultiPkExit();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m5940toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         if (this.actionUsers_ != null) {
             codedOutputStream.writeMessage(1, getActionUsers());

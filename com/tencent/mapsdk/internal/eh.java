@@ -8,14 +8,14 @@ import java.util.List;
 public class eh {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f37418a = System.currentTimeMillis();
+    public long f23727a = System.currentTimeMillis();
     public LatLngBounds b;
 
     /* renamed from: c  reason: collision with root package name */
-    public List<Detail> f37419c;
+    public List<Detail> f23728c;
 
     public eh(LatLngBounds latLngBounds, List<Detail> list) {
         this.b = latLngBounds;
-        this.f37419c = list;
+        this.f23728c = list;
     }
 }

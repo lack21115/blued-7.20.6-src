@@ -26,13 +26,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveMakeFriendAdapter.class */
 public class LiveMakeFriendAdapter extends BaseAdapter {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f11637a;
+    public Context a;
     public List<LiveFriendModel> b = new ArrayList();
-
-    /* renamed from: c  reason: collision with root package name */
-    public LoadOptions f11638c;
+    public LoadOptions c;
     public LayoutInflater d;
     public LiveJoinListener e;
     public int f;
@@ -50,9 +46,7 @@ public class LiveMakeFriendAdapter extends BaseAdapter {
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveMakeFriendAdapter$ViewHolder.class */
     class ViewHolder {
         private ImageView b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private ImageView f11649c;
+        private ImageView c;
         private TextView d;
         private ImageView e;
         private TextView f;
@@ -64,15 +58,15 @@ public class LiveMakeFriendAdapter extends BaseAdapter {
     }
 
     public LiveMakeFriendAdapter(Context context, LiveJoinListener liveJoinListener, int i, ListView listView) {
-        this.f11637a = context;
+        this.a = context;
         this.e = liveJoinListener;
         this.d = LayoutInflater.from(context);
         this.f = i;
         this.g = listView;
         LoadOptions loadOptions = new LoadOptions();
-        this.f11638c = loadOptions;
+        this.c = loadOptions;
         loadOptions.d = R.drawable.user_bg_round;
-        this.f11638c.b = R.drawable.user_bg_round;
+        this.c.b = R.drawable.user_bg_round;
     }
 
     public void a(LiveFriendModel liveFriendModel) {
@@ -113,7 +107,7 @@ public class LiveMakeFriendAdapter extends BaseAdapter {
             AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.live_china.adapter.LiveMakeFriendAdapter.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    LiveMakeFriendAdapter.this.g.smoothScrollToPositionFromTop(i4, DensityUtils.a(LiveMakeFriendAdapter.this.f11637a, 120.0f));
+                    LiveMakeFriendAdapter.this.g.smoothScrollToPositionFromTop(i4, DensityUtils.a(LiveMakeFriendAdapter.this.a, 120.0f));
                 }
             });
         }
@@ -142,7 +136,7 @@ public class LiveMakeFriendAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             view2 = this.d.inflate(R.layout.item_live_make_friend_list, viewGroup, false);
             viewHolder.b = (ImageView) view2.findViewById(R.id.img_header);
-            viewHolder.f11649c = (ImageView) view2.findViewById(R.id.img_verify);
+            viewHolder.c = (ImageView) view2.findViewById(R.id.img_verify);
             viewHolder.d = (TextView) view2.findViewById(R.id.tv_name);
             viewHolder.e = (ImageView) view2.findViewById(R.id.img_vip_icon);
             viewHolder.f = (TextView) view2.findViewById(R.id.tv_join);
@@ -154,7 +148,7 @@ public class LiveMakeFriendAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         final LiveFriendModel liveFriendModel = this.b.get(i);
-        LiveRoomInfo.a().a(viewHolder.f11649c, liveFriendModel.vbadge);
+        LiveRoomInfo.a().a(viewHolder.c, liveFriendModel.vbadge);
         ImageLoader.a((IRequestHost) null, AvatarUtils.a(0, liveFriendModel.avatar)).b(R.drawable.user_bg_round).c().a(viewHolder.b);
         LiveRoomUserModel liveRoomUserModel = new LiveRoomUserModel();
         liveRoomUserModel.vip_grade = liveFriendModel.vip_grade;
@@ -168,7 +162,7 @@ public class LiveMakeFriendAdapter extends BaseAdapter {
         } else {
             viewHolder.d.setText(liveFriendModel.name);
         }
-        LiveRoomInfo.a().a(this.f11637a, viewHolder.d, liveRoomUserModel, R.color.syc_dark_h);
+        LiveRoomInfo.a().a(this.a, viewHolder.d, liveRoomUserModel, R.color.syc_dark_h);
         viewHolder.b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.LiveMakeFriendAdapter.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view3) {

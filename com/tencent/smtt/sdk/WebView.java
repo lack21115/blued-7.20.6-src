@@ -1,5 +1,6 @@
 package com.tencent.smtt.sdk;
 
+import android.R;
 import android.app.Dialog;
 import android.content.ClipDescription;
 import android.content.ComponentCallbacks;
@@ -65,7 +66,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
     public static final String SCHEME_TEL = "tel:";
 
     /* renamed from: a  reason: collision with root package name */
-    int f38805a;
+    int f25114a;
     private final String b;
     private boolean e;
     private IX5WebViewBase f;
@@ -85,7 +86,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
     private View.OnLongClickListener y;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Lock f38804c = new ReentrantLock();
+    private static final Lock f25113c = new ReentrantLock();
     private static OutputStream d = null;
     private static Context j = null;
     public static boolean mWebViewCreated = false;
@@ -113,29 +114,29 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         public static final int UNKNOWN_TYPE = 0;
 
         /* renamed from: a  reason: collision with root package name */
-        private IX5WebViewBase.HitTestResult f38813a;
+        private IX5WebViewBase.HitTestResult f25122a;
         private WebView.HitTestResult b;
 
         public HitTestResult() {
             this.b = null;
-            this.f38813a = null;
+            this.f25122a = null;
             this.b = null;
         }
 
         public HitTestResult(WebView.HitTestResult hitTestResult) {
             this.b = null;
-            this.f38813a = null;
+            this.f25122a = null;
             this.b = hitTestResult;
         }
 
         public HitTestResult(IX5WebViewBase.HitTestResult hitTestResult) {
             this.b = null;
-            this.f38813a = hitTestResult;
+            this.f25122a = hitTestResult;
             this.b = null;
         }
 
         public String getExtra() {
-            IX5WebViewBase.HitTestResult hitTestResult = this.f38813a;
+            IX5WebViewBase.HitTestResult hitTestResult = this.f25122a;
             if (hitTestResult != null) {
                 return hitTestResult.getExtra();
             }
@@ -144,7 +145,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         }
 
         public int getType() {
-            IX5WebViewBase.HitTestResult hitTestResult = this.f38813a;
+            IX5WebViewBase.HitTestResult hitTestResult = this.f25122a;
             if (hitTestResult != null) {
                 return hitTestResult.getType();
             }
@@ -249,9 +250,8 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-        public void dispatchDraw(Canvas canvas) {
+        protected void dispatchDraw(Canvas canvas) {
             try {
                 super.dispatchDraw(canvas);
                 if (WebView.w || WebView.v == null) {
@@ -302,9 +302,8 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
             }
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // android.webkit.WebView, android.view.View
-        public void onScrollChanged(int i, int i2, int i3, int i4) {
+        protected void onScrollChanged(int i, int i2, int i3, int i4) {
             if (WebView.this.mWebViewCallbackClient != null) {
                 WebView.this.mWebViewCallbackClient.onScrollChanged(i, i2, i3, i4, this);
                 return;
@@ -368,7 +367,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         this.e = false;
         this.h = null;
         this.i = null;
-        this.f38805a = 0;
+        this.f25114a = 0;
         this.k = false;
         this.n = null;
         this.o = null;
@@ -415,7 +414,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         if (l == null) {
             l = com.tencent.smtt.utils.n.a(context);
         }
-        if (l.f38969a) {
+        if (l.f25278a) {
             TbsLog.e("WebView", "sys WebView: debug.conf force syswebview", true);
             QbSdk.a(context, "debug.conf force syswebview!");
         }
@@ -424,7 +423,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         if (context != null) {
             j = context.getApplicationContext();
         }
-        if (!this.e || QbSdk.f38714a) {
+        if (!this.e || QbSdk.f25023a) {
             this.f = null;
             if (TbsShareManager.isThirdPartyApp(this.i)) {
                 this.g = new a(context, attributeSet);
@@ -525,7 +524,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         this.e = false;
         this.h = null;
         this.i = null;
-        this.f38805a = 0;
+        this.f25114a = 0;
         this.k = false;
         this.n = null;
         this.o = null;
@@ -552,7 +551,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                     return;
                 }
                 if (attributeSet.getAttributeName(i2).equalsIgnoreCase("scrollbars")) {
-                    int[] intArray = getResources().getIntArray(16842974);
+                    int[] intArray = getResources().getIntArray(R.attr.scrollbars);
                     int attributeIntValue = attributeSet.getAttributeIntValue(i2, -1);
                     if (attributeIntValue == intArray[1]) {
                         this.f.getView().setVerticalScrollBarEnabled(false);
@@ -671,11 +670,11 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         if (b == null || (a2 = FileUtil.a(context, b)) == null) {
             return -1;
         }
-        if (!f38804c.tryLock()) {
+        if (!f25113c.tryLock()) {
             FileUtil.a(a2, b);
             return -1;
         }
-        FileInputStream fileInputStream2 = null;
+        String str = null;
         try {
             try {
                 File tbsFolderDir = QbSdk.getTbsFolderDir(context);
@@ -684,7 +683,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 sb2.append(File.separator);
                 sb2.append("core_private");
                 File file = new File(sb2.toString(), "pv.db");
-                fileInputStream2 = null;
+                str = null;
                 if (file.exists()) {
                     Properties properties = new Properties();
                     fileInputStream = new FileInputStream(file);
@@ -699,62 +698,62 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                             } catch (IOException e) {
                                 TbsLog.e("getTbsCorePV", "TbsInstaller--getTbsCorePV IOException=" + e.toString());
                             }
-                            f38804c.unlock();
+                            f25113c.unlock();
                             FileUtil.a(a2, b);
                             return parseInt;
                         }
                         try {
                             fileInputStream.close();
-                            fileInputStream2 = property;
+                            str = property;
                         } catch (IOException e2) {
                             e = e2;
                             sb = new StringBuilder();
                             sb.append("TbsInstaller--getTbsCorePV IOException=");
                             sb.append(e.toString());
                             TbsLog.e("getTbsCorePV", sb.toString());
-                            f38804c.unlock();
+                            f25113c.unlock();
                             FileUtil.a(a2, b);
                             return -1;
                         }
                     } catch (Exception e3) {
                         e = e3;
                         StringBuilder sb3 = new StringBuilder();
-                        FileInputStream fileInputStream3 = fileInputStream;
+                        FileInputStream fileInputStream2 = fileInputStream;
                         sb3.append("TbsInstaller--getTbsCorePV Exception=");
-                        FileInputStream fileInputStream4 = fileInputStream;
+                        FileInputStream fileInputStream3 = fileInputStream;
                         sb3.append(e.toString());
-                        FileInputStream fileInputStream5 = fileInputStream;
+                        FileInputStream fileInputStream4 = fileInputStream;
                         TbsLog.e("getTbsCorePV", sb3.toString());
-                        fileInputStream2 = fileInputStream5;
+                        str = fileInputStream4;
                         if (fileInputStream != null) {
                             try {
                                 fileInputStream.close();
-                                fileInputStream2 = fileInputStream5;
+                                str = fileInputStream4;
                             } catch (IOException e4) {
                                 e = e4;
                                 sb = new StringBuilder();
                                 sb.append("TbsInstaller--getTbsCorePV IOException=");
                                 sb.append(e.toString());
                                 TbsLog.e("getTbsCorePV", sb.toString());
-                                f38804c.unlock();
+                                f25113c.unlock();
                                 FileUtil.a(a2, b);
                                 return -1;
                             }
                         }
-                        f38804c.unlock();
+                        f25113c.unlock();
                         FileUtil.a(a2, b);
                         return -1;
                     } catch (Throwable th) {
-                        fileInputStream2 = fileInputStream;
+                        str = fileInputStream;
                         th = th;
-                        if (fileInputStream2 != null) {
+                        if (str != null) {
                             try {
-                                fileInputStream2.close();
+                                str.close();
                             } catch (IOException e5) {
                                 TbsLog.e("getTbsCorePV", "TbsInstaller--getTbsCorePV IOException=" + e5.toString());
                             }
                         }
-                        f38804c.unlock();
+                        f25113c.unlock();
                         FileUtil.a(a2, b);
                         throw th;
                     }
@@ -763,7 +762,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 e = e6;
                 fileInputStream = null;
             }
-            f38804c.unlock();
+            f25113c.unlock();
             FileUtil.a(a2, b);
             return -1;
         } catch (Throwable th2) {
@@ -803,7 +802,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         if (context == null) {
             return "";
         }
-        String str = "tbs_core_version:" + QbSdk.getTbsVersionForCrash(context) + ";tbs_sdk_version:43967;";
+        String str = "tbs_core_version:" + QbSdk.getTbsVersionForCrash(context) + com.huawei.openalliance.ad.constant.t.aE + "tbs_sdk_version:43967" + com.huawei.openalliance.ad.constant.t.aE;
         boolean z = false;
         if ("com.tencent.mm".equals(context.getApplicationInfo().packageName)) {
             try {
@@ -825,7 +824,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         sb.append(str);
         if (!TbsShareManager.isThirdPartyApp(context) && QbSdk.n != null && QbSdk.n.containsKey(TbsCoreSettings.TBS_SETTINGS_WEAPP_ID_KEY) && QbSdk.n.containsKey(TbsCoreSettings.TBS_SETTINGS_WEAPP_NAME_KEY)) {
             sb.append("\n");
-            sb.append("weapp_id:" + QbSdk.n.get(TbsCoreSettings.TBS_SETTINGS_WEAPP_ID_KEY) + ";" + TbsCoreSettings.TBS_SETTINGS_WEAPP_NAME_KEY + ":" + QbSdk.n.get(TbsCoreSettings.TBS_SETTINGS_WEAPP_NAME_KEY) + ";");
+            sb.append("weapp_id:" + QbSdk.n.get(TbsCoreSettings.TBS_SETTINGS_WEAPP_ID_KEY) + com.huawei.openalliance.ad.constant.t.aE + TbsCoreSettings.TBS_SETTINGS_WEAPP_NAME_KEY + ":" + QbSdk.n.get(TbsCoreSettings.TBS_SETTINGS_WEAPP_NAME_KEY) + com.huawei.openalliance.ad.constant.t.aE);
         }
         return sb.length() > 8192 ? sb.substring(sb.length() - 8192) : sb.toString();
     }
@@ -953,7 +952,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         String str3;
         boolean z;
         Bundle sdkQBStatisticsInfo;
-        if (!this.k && this.f38805a != 0) {
+        if (!this.k && this.f25114a != 0) {
             this.k = true;
             if (!this.e || (sdkQBStatisticsInfo = this.f.getX5WebViewExtension().getSdkQBStatisticsInfo()) == null) {
                 str = "";
@@ -968,9 +967,9 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 int e = e(this.i);
                 int i = e;
                 if (e == -1) {
-                    i = this.f38805a;
+                    i = this.f25114a;
                 }
-                this.f38805a = i;
+                this.f25114a = i;
                 f(this.i);
             }
             try {
@@ -979,8 +978,8 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 TbsLog.w("tbsOnDetachedFromWindow", "exception: " + th);
                 z = false;
             }
-            com.tencent.smtt.sdk.stat.b.a(this.i, str3, str2, str, this.f38805a, this.e, h(), z);
-            this.f38805a = 0;
+            com.tencent.smtt.sdk.stat.b.a(this.i, str3, str2, str, this.f25114a, this.e, h(), z);
+            this.f25114a = 0;
             this.k = false;
         }
         super.onDetachedFromWindow();
@@ -1297,6 +1296,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         getX5WebViewExtension().invokeMiscMethod("customDiskCachePathEnabled", bundle);
     }
 
+    /* JADX WARN: Type inference failed for: r0v4, types: [com.tencent.smtt.sdk.WebView$2] */
     public void destroy() {
         try {
             if (!"com.xunmeng.pinduoduo".equals(this.i.getApplicationInfo().packageName)) {
@@ -1704,9 +1704,9 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
+    /* JADX WARN: Type inference failed for: r0v4, types: [com.tencent.smtt.sdk.WebView$7] */
     @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         try {
             if ("com.xunmeng.pinduoduo".equals(this.i.getApplicationInfo().packageName)) {
                 new Thread("onDetachedFromWindow") { // from class: com.tencent.smtt.sdk.WebView.7
@@ -1752,9 +1752,8 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    @Override // android.view.View
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         if (Build.VERSION.SDK_INT < 21 || !b(this.i) || !isHardwareAccelerated() || i <= 0 || i2 <= 0) {
             return;
@@ -1762,9 +1761,8 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         getLayerType();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onVisibilityChanged(View view, int i) {
+    protected void onVisibilityChanged(View view, int i) {
         String str;
         String str2;
         String str3;
@@ -1783,7 +1781,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
             super.onVisibilityChanged(view, i);
             return;
         }
-        if (i != 0 && !this.k && this.f38805a != 0) {
+        if (i != 0 && !this.k && this.f25114a != 0) {
             this.k = true;
             if (!this.e || (sdkQBStatisticsInfo = this.f.getX5WebViewExtension().getSdkQBStatisticsInfo()) == null) {
                 str = "";
@@ -1798,9 +1796,9 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 int e = e(this.i);
                 int i2 = e;
                 if (e == -1) {
-                    i2 = this.f38805a;
+                    i2 = this.f25114a;
                 }
-                this.f38805a = i2;
+                this.f25114a = i2;
                 f(this.i);
             }
             try {
@@ -1809,8 +1807,8 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 TbsLog.w("onVisibilityChanged", "exception: " + th);
                 z = false;
             }
-            com.tencent.smtt.sdk.stat.b.a(this.i, str3, str2, str, this.f38805a, this.e, h(), z);
-            this.f38805a = 0;
+            com.tencent.smtt.sdk.stat.b.a(this.i, str3, str2, str, this.f25114a, this.e, h(), z);
+            this.f25114a = 0;
             this.k = false;
         }
         super.onVisibilityChanged(view, i);
@@ -2223,7 +2221,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // android.view.View
     public void setVisibility(int i) {
         super.setVisibility(i);
         if (getView() == null) {
@@ -2435,7 +2433,7 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
         String str3;
         boolean z2;
         Bundle sdkQBStatisticsInfo;
-        if (!this.k && this.f38805a != 0) {
+        if (!this.k && this.f25114a != 0) {
             this.k = true;
             if (!this.e || (sdkQBStatisticsInfo = this.f.getX5WebViewExtension().getSdkQBStatisticsInfo()) == null) {
                 str = "";
@@ -2450,9 +2448,9 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 int e = e(this.i);
                 int i = e;
                 if (e == -1) {
-                    i = this.f38805a;
+                    i = this.f25114a;
                 }
-                this.f38805a = i;
+                this.f25114a = i;
                 f(this.i);
             }
             try {
@@ -2461,8 +2459,8 @@ public class WebView extends FrameLayout implements View.OnLongClickListener {
                 TbsLog.w("tbsWebviewDestroy", "exception: " + th);
                 z2 = false;
             }
-            com.tencent.smtt.sdk.stat.b.a(this.i, str, str2, str3, this.f38805a, this.e, h(), z2);
-            this.f38805a = 0;
+            com.tencent.smtt.sdk.stat.b.a(this.i, str, str2, str3, this.f25114a, this.e, h(), z2);
+            this.f25114a = 0;
             this.k = false;
         }
         if (!this.e) {

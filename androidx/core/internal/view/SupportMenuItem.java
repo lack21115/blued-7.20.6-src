@@ -58,7 +58,7 @@ public interface SupportMenuItem extends MenuItem {
     MenuItem setAlphabeticShortcut(char c2, int i);
 
     /* renamed from: setContentDescription */
-    SupportMenuItem mo1228setContentDescription(CharSequence charSequence);
+    SupportMenuItem mo1090setContentDescription(CharSequence charSequence);
 
     MenuItem setIconTintList(ColorStateList colorStateList);
 
@@ -77,5 +77,5 @@ public interface SupportMenuItem extends MenuItem {
     SupportMenuItem setSupportActionProvider(ActionProvider actionProvider);
 
     /* renamed from: setTooltipText */
-    SupportMenuItem mo1229setTooltipText(CharSequence charSequence);
+    SupportMenuItem mo1091setTooltipText(CharSequence charSequence);
 }

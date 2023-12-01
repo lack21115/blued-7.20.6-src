@@ -12,12 +12,12 @@ public class c {
     public BroadcastReceiver f;
 
     /* renamed from: a  reason: collision with root package name */
-    public b f38634a = new b("udid");
+    public b f24943a = new b("udid");
     public b b = new b("oaid");
     public b d = new b("vaid");
 
     /* renamed from: c  reason: collision with root package name */
-    public b f38635c = new b("aaid");
+    public b f24944c = new b("aaid");
 
     public static final c a() {
         if (g == null) {
@@ -43,13 +43,13 @@ public class c {
             cursor.moveToFirst();
             int columnIndex = cursor.getColumnIndex("value");
             if (columnIndex >= 0) {
-                eVar.f38637c = cursor.getString(columnIndex);
+                eVar.f24946c = cursor.getString(columnIndex);
             } else {
                 b("parseValue fail, index < 0.");
             }
             int columnIndex2 = cursor.getColumnIndex("code");
             if (columnIndex2 >= 0) {
-                eVar.f38636a = cursor.getInt(columnIndex2);
+                eVar.f24945a = cursor.getInt(columnIndex2);
             } else {
                 b("parseCode fail, index < 0.");
             }
@@ -76,10 +76,10 @@ public class c {
             return this.d;
         }
         if ("aaid".equals(str)) {
-            return this.f38635c;
+            return this.f24944c;
         }
         if ("udid".equals(str)) {
-            return this.f38634a;
+            return this.f24943a;
         }
         return null;
     }

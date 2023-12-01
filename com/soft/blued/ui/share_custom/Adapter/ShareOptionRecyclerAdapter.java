@@ -22,11 +22,11 @@ import java.util.List;
 public class ShareOptionRecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private LayoutInflater f33696a;
+    private LayoutInflater f20005a;
     private List<ShareOption> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f33697c;
+    private Context f20006c;
     private ShareOptionsItemClickListener d;
     private boolean e;
 
@@ -39,34 +39,34 @@ public class ShareOptionRecyclerAdapter extends RecyclerView.Adapter<ViewHolder>
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public ImageView f33701a;
+        public ImageView f20010a;
         public TextView b;
 
         /* renamed from: c  reason: collision with root package name */
-        public LinearLayout f33702c;
+        public LinearLayout f20011c;
         public FrameLayout d;
 
         public ViewHolder(View view) {
             super(view);
-            this.f33701a = (ImageView) view.findViewById(R.id.img_icon);
+            this.f20010a = (ImageView) view.findViewById(R.id.img_icon);
             this.b = (TextView) view.findViewById(R.id.tv_text);
-            this.f33702c = (LinearLayout) view.findViewById(R.id.ll_main);
+            this.f20011c = (LinearLayout) view.findViewById(R.id.ll_main);
             this.d = (FrameLayout) view.findViewById(R.id.ll_anim);
         }
     }
 
     public ShareOptionRecyclerAdapter(Context context, List<ShareOption> list, boolean z) {
         this.e = false;
-        this.f33697c = context;
+        this.f20006c = context;
         this.e = z;
         this.b = list;
-        this.f33696a = LayoutInflater.from(context);
+        this.f20005a = LayoutInflater.from(context);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     /* renamed from: a */
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View inflate = this.f33696a.inflate(R.layout.item_share_option, viewGroup, false);
+        View inflate = this.f20005a.inflate(R.layout.item_share_option, viewGroup, false);
         ((LinearLayout) inflate.findViewById(R.id.ll_main)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.share_custom.Adapter.ShareOptionRecyclerAdapter.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -100,7 +100,7 @@ public class ShareOptionRecyclerAdapter extends RecyclerView.Adapter<ViewHolder>
         AppInfo.n().postDelayed(new Runnable() { // from class: com.soft.blued.ui.share_custom.Adapter.ShareOptionRecyclerAdapter.2
             @Override // java.lang.Runnable
             public void run() {
-                ValueAnimator ofInt = ValueAnimator.ofInt(0, DensityUtils.a(ShareOptionRecyclerAdapter.this.f33697c, 15.0f));
+                ValueAnimator ofInt = ValueAnimator.ofInt(0, DensityUtils.a(ShareOptionRecyclerAdapter.this.f20006c, 15.0f));
                 ofInt.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.share_custom.Adapter.ShareOptionRecyclerAdapter.2.1
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public void onAnimationUpdate(ValueAnimator valueAnimator) {
@@ -126,12 +126,12 @@ public class ShareOptionRecyclerAdapter extends RecyclerView.Adapter<ViewHolder>
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         if (viewHolder != null) {
             ShareOption shareOption = this.b.get(i);
-            viewHolder.f33701a.setImageResource(shareOption.iconResourceId);
+            viewHolder.f20010a.setImageResource(shareOption.iconResourceId);
             if (viewHolder.b != null) {
                 viewHolder.b.setText(shareOption.textResourceID);
-                viewHolder.f33702c.setTag(Integer.valueOf(shareOption.textResourceID));
+                viewHolder.f20011c.setTag(Integer.valueOf(shareOption.textResourceID));
                 if (this.e) {
-                    viewHolder.b.setTextColor(this.f33697c.getResources().getColor(R.color.syc_j));
+                    viewHolder.b.setTextColor(this.f20006c.getResources().getColor(R.color.syc_j));
                 }
             }
             a((View) viewHolder.d, i);

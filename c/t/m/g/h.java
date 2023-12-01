@@ -25,10 +25,10 @@ public class h extends c2 implements s1, Runnable {
     public class a implements t1 {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ File f3824a;
+        public final /* synthetic */ File f3776a;
 
         public a(h hVar, File file) {
-            this.f3824a = file;
+            this.f3776a = file;
         }
 
         @Override // c.t.m.g.t1
@@ -38,7 +38,7 @@ public class h extends c2 implements s1, Runnable {
 
         @Override // c.t.m.g.t1
         public void b(String str) {
-            this.f3824a.delete();
+            this.f3776a.delete();
             g3.a();
         }
     }

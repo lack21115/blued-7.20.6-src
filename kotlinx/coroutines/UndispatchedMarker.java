@@ -7,9 +7,7 @@ import kotlin.jvm.functions.Function2;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/UndispatchedMarker.class */
 final class UndispatchedMarker implements CoroutineContext.Element, CoroutineContext.Key<UndispatchedMarker> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final UndispatchedMarker f42861a = new UndispatchedMarker();
+    public static final UndispatchedMarker a = new UndispatchedMarker();
 
     private UndispatchedMarker() {
     }

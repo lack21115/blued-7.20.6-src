@@ -25,13 +25,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateExhibitionFragment.class */
 public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f17220a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f17221c;
+    private int c;
     private FragmentPageExhibitionBinding d;
     private ReceiveCarAdapter e;
     private boolean f;
@@ -40,29 +36,26 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYDecorateExhibitionFragment$ReceiveCarAdapter.class */
     public final class ReceiveCarAdapter extends BaseQuickAdapter<YYCarExhibitionModel, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYDecorateExhibitionFragment f17222a;
+        final /* synthetic */ YYDecorateExhibitionFragment a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ReceiveCarAdapter(YYDecorateExhibitionFragment this$0) {
             super(R.layout.item_receive_car_layout);
             Intrinsics.e(this$0, "this$0");
-            this.f17222a = this$0;
+            this.a = this$0;
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder baseViewHolder, YYCarExhibitionModel yYCarExhibitionModel) {
-            ShapeableImageView shapeableImageView = baseViewHolder == null ? null : (ShapeableImageView) baseViewHolder.getView(R.id.img_sender_portrait);
+            ShapeableImageView view = baseViewHolder == null ? null : baseViewHolder.getView(R.id.img_sender_portrait);
             ImageView imageView = baseViewHolder == null ? null : (ImageView) baseViewHolder.getView(R.id.img_car_model);
             TextView textView = baseViewHolder == null ? null : (TextView) baseViewHolder.getView(R.id.tv_receive_count);
             if (yYCarExhibitionModel == null) {
                 return;
             }
-            YYDecorateExhibitionFragment yYDecorateExhibitionFragment = this.f17222a;
-            ImageLoader.a(yYDecorateExhibitionFragment.getFragmentActive(), yYCarExhibitionModel.getSource_avatar()).b(R.drawable.user_bg_round).a(shapeableImageView);
+            YYDecorateExhibitionFragment yYDecorateExhibitionFragment = this.a;
+            ImageLoader.a(yYDecorateExhibitionFragment.getFragmentActive(), yYCarExhibitionModel.getSource_avatar()).b(R.drawable.user_bg_round).a((ImageView) view);
             ImageLoader.a(yYDecorateExhibitionFragment.getFragmentActive(), yYCarExhibitionModel.getImage()).a(imageView);
             if (textView == null) {
                 return;
@@ -74,9 +67,9 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
     public YYDecorateExhibitionFragment(String userId, String userName) {
         Intrinsics.e(userId, "userId");
         Intrinsics.e(userName, "userName");
-        this.f17220a = userId;
+        this.a = userId;
         this.b = userName;
-        this.f17221c = 1;
+        this.c = 1;
         this.f = true;
     }
 
@@ -98,16 +91,14 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
             fragmentPageExhibitionBinding3 = null;
         }
         fragmentPageExhibitionBinding3.e.a(new OnRefreshLoadMoreListener() { // from class: com.blued.android.module.yy_china.fragment.YYDecorateExhibitionFragment$initRefreshLayout$1
-            @Override // com.scwang.smartrefresh.layout.listener.OnLoadMoreListener
             public void onLoadMore(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
                 YYDecorateExhibitionFragment.this.c();
             }
 
-            @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
             public void onRefresh(RefreshLayout refreshLayout) {
                 Intrinsics.e(refreshLayout, "refreshLayout");
-                YYDecorateExhibitionFragment.this.f17221c = 1;
+                YYDecorateExhibitionFragment.this.c = 1;
                 YYDecorateExhibitionFragment.this.c();
             }
         });
@@ -115,7 +106,7 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void c() {
-        YYRoomHttpUtils.m(this.f17220a, this.f17221c, new YYDecorateExhibitionFragment$loadCarList$1(this, getFragmentActive()), getFragmentActive());
+        YYRoomHttpUtils.m(this.a, this.c, new YYDecorateExhibitionFragment$loadCarList$1(this, getFragmentActive()), getFragmentActive());
     }
 
     private final void d() {
@@ -133,7 +124,7 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
         }
         fragmentPageExhibitionBinding2.g.setText(Intrinsics.a(str, (Object) "的定制展馆"));
         this.e = new ReceiveCarAdapter(this);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
+        RecyclerView.LayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
         FragmentPageExhibitionBinding fragmentPageExhibitionBinding3 = this.d;
         FragmentPageExhibitionBinding fragmentPageExhibitionBinding4 = fragmentPageExhibitionBinding3;
         if (fragmentPageExhibitionBinding3 == null) {
@@ -164,7 +155,7 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
             Intrinsics.c("mBinding");
             fragmentPageExhibitionBinding2 = null;
         }
-        fragmentPageExhibitionBinding2.e.j();
+        fragmentPageExhibitionBinding2.e.g();
         FragmentPageExhibitionBinding fragmentPageExhibitionBinding3 = this.d;
         FragmentPageExhibitionBinding fragmentPageExhibitionBinding4 = fragmentPageExhibitionBinding3;
         if (fragmentPageExhibitionBinding3 == null) {
@@ -221,20 +212,20 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
         fragmentPageExhibitionBinding2.e.i();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         LogUtils.d("YYDecorateExhibitionFragment onCreateView ...");
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.fragment_page_exhibition, (ViewGroup) null);
-        FragmentPageExhibitionBinding a2 = FragmentPageExhibitionBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.d = a2;
+        FragmentPageExhibitionBinding a = FragmentPageExhibitionBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.d = a;
         b();
         d();
         return inflate;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);
@@ -245,7 +236,7 @@ public final class YYDecorateExhibitionFragment extends BaseLazyFragment {
             Intrinsics.c("mBinding");
             fragmentPageExhibitionBinding2 = null;
         }
-        fragmentPageExhibitionBinding2.f16481a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateExhibitionFragment$sfw8lmGOWEYldycwvNBohX5RSd0
+        fragmentPageExhibitionBinding2.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYDecorateExhibitionFragment$sfw8lmGOWEYldycwvNBohX5RSd0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 YYDecorateExhibitionFragment.a(view2);

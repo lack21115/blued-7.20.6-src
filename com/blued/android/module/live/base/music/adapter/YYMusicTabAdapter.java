@@ -17,13 +17,9 @@ import java.util.Set;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/base/music/adapter/YYMusicTabAdapter.class */
 public class YYMusicTabAdapter extends BaseQuickAdapter<YYKtvMusicTypeModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected Context f11442a;
+    protected Context a;
     private RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11443c;
+    private int c;
     private Set<BaseViewHolder> d;
     private EventCallBack e;
 
@@ -34,9 +30,9 @@ public class YYMusicTabAdapter extends BaseQuickAdapter<YYKtvMusicTypeModel, Bas
 
     public YYMusicTabAdapter(Context context, RecyclerView recyclerView) {
         super(R.layout.live_music_tab_view, new ArrayList());
-        this.f11443c = 0;
+        this.c = 0;
         this.d = new HashSet();
-        this.f11442a = context;
+        this.a = context;
         this.b = recyclerView;
     }
 
@@ -44,36 +40,36 @@ public class YYMusicTabAdapter extends BaseQuickAdapter<YYKtvMusicTypeModel, Bas
         for (BaseViewHolder baseViewHolder : this.d) {
             int layoutPosition = baseViewHolder.getLayoutPosition();
             if (getData() != null && layoutPosition < getData().size() && layoutPosition >= 0) {
-                a(getData().get(layoutPosition), layoutPosition, baseViewHolder);
+                a((YYKtvMusicTypeModel) getData().get(layoutPosition), layoutPosition, baseViewHolder);
             }
         }
     }
 
     private void a(YYKtvMusicTypeModel yYKtvMusicTypeModel, int i, BaseViewHolder baseViewHolder) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_tab);
-        if (i != this.f11443c) {
-            textView.setTextColor(this.f11442a.getResources().getColor(R.color.syc_dark_j));
+        if (i != this.c) {
+            textView.setTextColor(this.a.getResources().getColor(R.color.syc_dark_j));
             return;
         }
-        textView.setTextColor(this.f11442a.getResources().getColor(R.color.syc_dark_b));
+        textView.setTextColor(this.a.getResources().getColor(R.color.syc_dark_b));
         RecyclerView recyclerView = this.b;
         if (recyclerView != null) {
-            LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-            int findFirstVisibleItemPosition = linearLayoutManager.findFirstVisibleItemPosition();
-            int findLastVisibleItemPosition = linearLayoutManager.findLastVisibleItemPosition();
-            int i2 = this.f11443c;
+            LinearLayoutManager layoutManager = recyclerView.getLayoutManager();
+            int findFirstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition();
+            int findLastVisibleItemPosition = layoutManager.findLastVisibleItemPosition();
+            int i2 = this.c;
             int i3 = i2;
             if (findFirstVisibleItemPosition >= 0) {
                 i3 = i2;
                 if (findLastVisibleItemPosition >= 0) {
-                    if (Math.abs(findLastVisibleItemPosition - i2) > Math.abs(findFirstVisibleItemPosition - this.f11443c)) {
+                    if (Math.abs(findLastVisibleItemPosition - i2) > Math.abs(findFirstVisibleItemPosition - this.c)) {
                         i3 = findFirstVisibleItemPosition;
                         if (findFirstVisibleItemPosition >= 1) {
                             i3 = findFirstVisibleItemPosition - 1;
                         }
                     } else {
                         i3 = i2;
-                        if (Math.abs(findLastVisibleItemPosition - this.f11443c) < Math.abs(findFirstVisibleItemPosition - this.f11443c)) {
+                        if (Math.abs(findLastVisibleItemPosition - this.c) < Math.abs(findFirstVisibleItemPosition - this.c)) {
                             i3 = findLastVisibleItemPosition;
                             if (findLastVisibleItemPosition < getData().size() - 1) {
                                 i3 = findLastVisibleItemPosition + 1;
@@ -87,10 +83,10 @@ public class YYMusicTabAdapter extends BaseQuickAdapter<YYKtvMusicTypeModel, Bas
     }
 
     public void a(int i) {
-        if (this.f11443c == i) {
+        if (this.c == i) {
             return;
         }
-        this.f11443c = i;
+        this.c = i;
         this.b.smoothScrollToPosition(i);
         a();
     }
@@ -100,7 +96,6 @@ public class YYMusicTabAdapter extends BaseQuickAdapter<YYKtvMusicTypeModel, Bas
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, YYKtvMusicTypeModel yYKtvMusicTypeModel) {
         this.d.add(baseViewHolder);
@@ -123,7 +118,7 @@ public class YYMusicTabAdapter extends BaseQuickAdapter<YYKtvMusicTypeModel, Bas
     }
 
     public void a(List<YYKtvMusicTypeModel> list, int i) {
-        this.f11443c = i;
+        this.c = i;
         this.d.clear();
         setNewData(list);
         this.b.scrollToPosition(i);

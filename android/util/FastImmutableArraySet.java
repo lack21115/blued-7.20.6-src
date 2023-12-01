@@ -40,7 +40,7 @@ public final class FastImmutableArraySet<T> extends AbstractSet<T> {
         this.mContents = tArr;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public Iterator<T> iterator() {
         FastIterator<T> fastIterator = this.mIterator;
         if (fastIterator != null) {
@@ -52,7 +52,7 @@ public final class FastImmutableArraySet<T> extends AbstractSet<T> {
         return fastIterator2;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public int size() {
         return this.mContents.length;
     }

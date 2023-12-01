@@ -17,13 +17,9 @@ import skin.support.widget.SkinCompatSupportable;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/design/widget/SkinMaterialTextInputLayout.class */
 public class SkinMaterialTextInputLayout extends TextInputLayout implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f44245a;
+    private SkinCompatBackgroundHelper a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f44246c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -32,15 +28,16 @@ public class SkinMaterialTextInputLayout extends TextInputLayout implements Skin
         this(context, attributeSet, 0);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     public SkinMaterialTextInputLayout(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = 0;
-        this.f44246c = 0;
+        this.c = 0;
         this.d = 0;
         this.e = 0;
         this.f = 0;
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f44245a = skinCompatBackgroundHelper;
+        this.a = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.TextInputLayout, i, R.style.Widget_Design_TextInputLayout);
         if (obtainStyledAttributes.hasValue(R.styleable.TextInputLayout_android_textColorHint)) {
@@ -57,12 +54,12 @@ public class SkinMaterialTextInputLayout extends TextInputLayout implements Skin
 
     private void a() {
         TextView counterView;
-        int b = SkinCompatHelper.b(this.f44246c);
-        this.f44246c = b;
+        int b = SkinCompatHelper.b(this.c);
+        this.c = b;
         if (b == 0 || (counterView = getCounterView()) == null) {
             return;
         }
-        counterView.setTextColor(SkinCompatResources.c(getContext(), this.f44246c));
+        counterView.setTextColor(SkinCompatResources.c(getContext(), this.c));
         c();
     }
 
@@ -70,7 +67,7 @@ public class SkinMaterialTextInputLayout extends TextInputLayout implements Skin
         if (i != 0) {
             TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(i, skin.support.R.styleable.SkinTextAppearance);
             if (obtainStyledAttributes.hasValue(skin.support.R.styleable.SkinTextAppearance_android_textColor)) {
-                this.f44246c = obtainStyledAttributes.getResourceId(skin.support.R.styleable.SkinTextAppearance_android_textColor, 0);
+                this.c = obtainStyledAttributes.getResourceId(skin.support.R.styleable.SkinTextAppearance_android_textColor, 0);
             }
             obtainStyledAttributes.recycle();
         }
@@ -187,13 +184,12 @@ public class SkinMaterialTextInputLayout extends TextInputLayout implements Skin
         b();
         a();
         d();
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44245a;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.a;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }
     }
 
-    @Override // com.google.android.material.textfield.TextInputLayout
     public void setCounterEnabled(boolean z) {
         super.setCounterEnabled(z);
         if (z) {
@@ -201,7 +197,6 @@ public class SkinMaterialTextInputLayout extends TextInputLayout implements Skin
         }
     }
 
-    @Override // com.google.android.material.textfield.TextInputLayout
     public void setErrorEnabled(boolean z) {
         super.setErrorEnabled(z);
         if (z) {
@@ -209,7 +204,6 @@ public class SkinMaterialTextInputLayout extends TextInputLayout implements Skin
         }
     }
 
-    @Override // com.google.android.material.textfield.TextInputLayout
     public void setErrorTextAppearance(int i) {
         super.setErrorTextAppearance(i);
         b(i);

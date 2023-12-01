@@ -14,18 +14,18 @@ import java.io.InputStream;
 public class HttpGlideUrlLoader implements ModelLoader<GlideUrl, InputStream> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Option<Integer> f20917a = Option.a("com.bumptech.glide.load.model.stream.HttpGlideUrlLoader.Timeout", 2500);
+    public static final Option<Integer> f7311a = Option.a("com.bumptech.glide.load.model.stream.HttpGlideUrlLoader.Timeout", 2500);
     private final ModelCache<GlideUrl, GlideUrl> b;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/stream/HttpGlideUrlLoader$Factory.class */
     public static class Factory implements ModelLoaderFactory<GlideUrl, InputStream> {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ModelCache<GlideUrl, GlideUrl> f20918a = new ModelCache<>(500);
+        private final ModelCache<GlideUrl, GlideUrl> f7312a = new ModelCache<>(500);
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
         public ModelLoader<GlideUrl, InputStream> a(MultiModelLoaderFactory multiModelLoaderFactory) {
-            return new HttpGlideUrlLoader(this.f20918a);
+            return new HttpGlideUrlLoader(this.f7312a);
         }
 
         @Override // com.bumptech.glide.load.model.ModelLoaderFactory
@@ -52,7 +52,7 @@ public class HttpGlideUrlLoader implements ModelLoader<GlideUrl, InputStream> {
                 glideUrl2 = glideUrl;
             }
         }
-        return new ModelLoader.LoadData<>(glideUrl2, new HttpUrlFetcher(glideUrl2, ((Integer) options.a(f20917a)).intValue()));
+        return new ModelLoader.LoadData<>(glideUrl2, new HttpUrlFetcher(glideUrl2, ((Integer) options.a(f7311a)).intValue()));
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

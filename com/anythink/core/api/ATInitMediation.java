@@ -83,8 +83,7 @@ public abstract class ATInitMediation {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void checkToSaveInitData(String str, Map<String, Object> map, String... strArr) {
+    protected final void checkToSaveInitData(String str, Map<String, Object> map, String... strArr) {
         n.a().a(str, map, strArr);
     }
 

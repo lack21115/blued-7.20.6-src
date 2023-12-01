@@ -1,6 +1,5 @@
 package com.android.org.conscrypt;
 
-import com.blued.das.live.LiveProtos;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidParameterException;
 import java.security.KeyPair;
@@ -24,7 +23,7 @@ public final class OpenSSLECKeyPairGenerator extends KeyPairGenerator {
         SIZE_TO_CURVE_NAME.put(224, "secp224r1");
         SIZE_TO_CURVE_NAME.put(256, "prime256v1");
         SIZE_TO_CURVE_NAME.put(384, "secp384r1");
-        SIZE_TO_CURVE_NAME.put(Integer.valueOf((int) LiveProtos.Event.LIVE_HOUR_LIST_TOP_TAB_SHOW_VALUE), "secp521r1");
+        SIZE_TO_CURVE_NAME.put(521, "secp521r1");
     }
 
     public OpenSSLECKeyPairGenerator() {

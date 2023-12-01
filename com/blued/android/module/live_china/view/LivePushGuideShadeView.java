@@ -17,13 +17,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePushGuideShadeView.class */
 public final class LivePushGuideShadeView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f14880a;
+    private final Context a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f14881c;
+    private int c;
     private int d;
     private int e;
     private int f;
@@ -42,7 +38,7 @@ public final class LivePushGuideShadeView extends View {
     public LivePushGuideShadeView(Context mContext) {
         super(mContext);
         Intrinsics.e(mContext, "mContext");
-        this.f14880a = mContext;
+        this.a = mContext;
         this.l = DensityUtils.a(getContext(), 6.0f);
         this.o = new Paint();
         this.p = new Paint();
@@ -59,12 +55,12 @@ public final class LivePushGuideShadeView extends View {
 
     private final void a(int i, int i2) {
         this.b = i;
-        this.f14881c = i2;
+        this.c = i2;
         invalidate();
     }
 
     private final void a(Canvas canvas) {
-        RectF rectF = new RectF(0.0f, 0.0f, this.b, this.f14881c);
+        RectF rectF = new RectF(0.0f, 0.0f, this.b, this.c);
         if (canvas == null) {
             return;
         }
@@ -109,9 +105,7 @@ public final class LivePushGuideShadeView extends View {
         Intrinsics.c(anim, "anim");
         anim.addListener(new Animator.AnimatorListener(i, i2, i3, i4, this) { // from class: com.blued.android.module.live_china.view.LivePushGuideShadeView$gotoTarget$$inlined$addListener$default$1
             final /* synthetic */ int b;
-
-            /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ int f14883c;
+            final /* synthetic */ int c;
             final /* synthetic */ int d;
             final /* synthetic */ int e;
 
@@ -124,7 +118,7 @@ public final class LivePushGuideShadeView extends View {
             public void onAnimationEnd(Animator animator) {
                 Intrinsics.e(animator, "animator");
                 LivePushGuideShadeView.this.d = this.b;
-                LivePushGuideShadeView.this.e = this.f14883c;
+                LivePushGuideShadeView.this.e = this.c;
                 LivePushGuideShadeView.this.f = this.d;
                 LivePushGuideShadeView.this.g = this.e;
                 LivePushGuideShadeView.this.setAnimIng(false);
@@ -153,7 +147,7 @@ public final class LivePushGuideShadeView extends View {
     }
 
     public final Context getMContext() {
-        return this.f14880a;
+        return this.a;
     }
 
     public final float getProgress() {

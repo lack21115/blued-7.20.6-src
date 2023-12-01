@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f8763a;
+    private String f5923a;
     private int b;
 
     public c(String str, int i) {
-        this.f8763a = str;
+        this.f5923a = str;
         this.b = i;
     }
 
@@ -132,7 +132,7 @@ public class c {
     }
 
     public final String a() {
-        return this.f8763a;
+        return this.f5923a;
     }
 
     public final void a(int i) {
@@ -140,7 +140,7 @@ public class c {
     }
 
     public final void a(String str) {
-        this.f8763a = str;
+        this.f5923a = str;
     }
 
     public final int b() {
@@ -148,6 +148,6 @@ public class c {
     }
 
     public String toString() {
-        return "Reward{name='" + this.f8763a + "', amount=" + this.b + '}';
+        return "Reward{name='" + this.f5923a + "', amount=" + this.b + '}';
     }
 }

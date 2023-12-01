@@ -22,11 +22,11 @@ import java.util.Properties;
 public class TbsShareManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f38789a;
+    private static Context f25098a;
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static String f38790c;
+    private static String f25099c;
     private static String d;
     private static int e = 0;
     private static String f;
@@ -69,7 +69,7 @@ public class TbsShareManager {
         File backupDecoupleCoreFile;
         StringBuilder sb;
         String str2;
-        if (TbsPVConfig.getInstance(f38789a).isDisableHostBackupCore() || !o.a().t(context)) {
+        if (TbsPVConfig.getInstance(f25098a).isDisableHostBackupCore() || !o.a().t(context)) {
             return;
         }
         String packageName = context.getPackageName();
@@ -270,7 +270,7 @@ public class TbsShareManager {
                 context2 = null;
             }
         }
-        return f38790c != null ? f38789a : context2;
+        return f25099c != null ? f25098a : context2;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -337,11 +337,11 @@ public class TbsShareManager {
                 str = "core_info error checkCoreInfo is false and checkCoreInOthers is false ";
                 TbsLog.i("TbsShareManager", str);
             }
-        } else if (e != o.a().a(f38790c)) {
+        } else if (e != o.a().a(f25099c)) {
             e = 0;
             d = null;
             f = null;
-            str = "check AppDefined core is error src is " + e + " dest is " + o.a().a(f38790c);
+            str = "check AppDefined core is error src is " + e + " dest is " + o.a().a(f25099c);
             TbsLog.i("TbsShareManager", str);
         }
         if (e > 0) {
@@ -382,8 +382,8 @@ public class TbsShareManager {
             if (z && new File(r, "core_info").exists()) {
                 return;
             }
-            if (f38790c != null && (a2 = o.a().a(f38790c)) > 0) {
-                d = f38790c;
+            if (f25099c != null && (a2 = o.a().a(f25099c)) > 0) {
+                d = f25099c;
                 f = "AppDefined";
                 e = a2;
                 TbsLog.i("TbsShareManager", "forceToLoadX5ForThirdApp #1 -- mAvailableCoreVersion: " + e + " " + Log.getStackTraceString(new Throwable("#")));
@@ -441,7 +441,7 @@ public class TbsShareManager {
                                 f = null;
                             }
                             i5 = i6 + 1;
-                        } else if (TbsPVConfig.getInstance(f38789a).isDisableHostBackupCore()) {
+                        } else if (TbsPVConfig.getInstance(f25098a).isDisableHostBackupCore()) {
                             return;
                         } else {
                             if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
@@ -563,7 +563,7 @@ public class TbsShareManager {
     }
 
     public static String getHostCorePathAppDefined() {
-        return f38790c;
+        return f25099c;
     }
 
     public static long getHostCoreVersions(Context context) {
@@ -715,11 +715,11 @@ public class TbsShareManager {
                 TbsLog.addLog(TbsLog.TBSLOG_CODE_SDK_NO_SHARE_X5CORE, null, new Object[0]);
                 return false;
             }
-            if (f38790c == null) {
+            if (f25099c == null) {
                 if (e != 0 && getSharedTbsCoreVersion(context, f) == e) {
                     return true;
                 }
-            } else if (e != 0 && o.a().a(f38790c) == e) {
+            } else if (e != 0 && o.a().a(f25099c) == e) {
                 return true;
             }
             if (l(context)) {
@@ -741,11 +741,11 @@ public class TbsShareManager {
 
     public static boolean isThirdPartyApp(Context context) {
         try {
-            if (f38789a != null && f38789a.equals(context.getApplicationContext())) {
+            if (f25098a != null && f25098a.equals(context.getApplicationContext())) {
                 return b;
             }
             Context applicationContext = context.getApplicationContext();
-            f38789a = applicationContext;
+            f25098a = applicationContext;
             String packageName = applicationContext.getPackageName();
             String[] coreProviderAppList = getCoreProviderAppList();
             int length = coreProviderAppList.length;
@@ -873,8 +873,8 @@ public class TbsShareManager {
                     if (!"".equals(property2)) {
                         f = property2;
                     }
-                    if (f != null && f38789a != null) {
-                        if (f.equals(f38789a.getPackageName())) {
+                    if (f != null && f25098a != null) {
+                        if (f.equals(f25098a.getPackageName())) {
                             k = true;
                         } else {
                             k = false;
@@ -914,14 +914,14 @@ public class TbsShareManager {
     }
 
     public static void setHostCorePathAppDefined(String str) {
-        f38790c = str;
+        f25099c = str;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:100:0x031c, code lost:
         if (r0 == null) goto L106;
      */
     /* JADX WARN: Code restructure failed: missing block: B:101:0x031f, code lost:
-        r0 = new com.tencent.smtt.sdk.TbsLinuxToolsJni(com.tencent.smtt.sdk.TbsShareManager.f38789a);
+        r0 = new com.tencent.smtt.sdk.TbsLinuxToolsJni(com.tencent.smtt.sdk.TbsShareManager.f25098a);
         r0.a(r0.getAbsolutePath(), "644");
         r0.a(com.tencent.smtt.sdk.o.a().r(r6).getAbsolutePath(), "755");
         com.tencent.smtt.sdk.TbsShareManager.i = true;
@@ -950,7 +950,7 @@ public class TbsShareManager {
      */
     /* JADX WARN: Code restructure failed: missing block: B:93:0x02cb, code lost:
         com.tencent.smtt.utils.TbsLog.i("TbsShareManager", "thirdAPP pre--> delete old core_share Directory:" + r7);
-        com.tencent.smtt.sdk.m.a(com.tencent.smtt.sdk.TbsShareManager.f38789a).a("remove_old_core", 1);
+        com.tencent.smtt.sdk.m.a(com.tencent.smtt.sdk.TbsShareManager.f25098a).a("remove_old_core", 1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:95:0x02fc, code lost:
         writeProperties(r6, java.lang.Integer.toString(r7), r0, r0, java.lang.Integer.toString(r0));
@@ -987,7 +987,7 @@ public class TbsShareManager {
             try {
                 File tbsShareFile = getTbsShareFile(context, "core_info");
                 if (tbsShareFile == null) {
-                    TbsDownloadConfig.getInstance(f38789a).setDownloadInterruptCode(-405);
+                    TbsDownloadConfig.getInstance(f25098a).setDownloadInterruptCode(-405);
                     return;
                 }
                 bufferedInputStream = new BufferedInputStream(new FileInputStream(tbsShareFile));
@@ -1012,7 +1012,7 @@ public class TbsShareManager {
                     try {
                         properties.store(bufferedOutputStream, (String) null);
                         l = false;
-                        TbsDownloadConfig.getInstance(f38789a).setDownloadInterruptCode(ResponseInfo.Crc32NotMatch);
+                        TbsDownloadConfig.getInstance(f25098a).setDownloadInterruptCode(ResponseInfo.Crc32NotMatch);
                         try {
                             bufferedInputStream.close();
                         } catch (Exception e3) {

@@ -1,6 +1,7 @@
 package com.anythink.core.common.e;
 
 import android.text.TextUtils;
+import com.anythink.core.common.c.m;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -123,8 +124,8 @@ public final class ab extends k {
                     abVar.h(2);
                 }
                 abVar.L(jSONObject.optInt("shm_t", -1));
-                if (jSONObject.has("ready_rate")) {
-                    abVar.M(jSONObject.optInt("ready_rate"));
+                if (jSONObject.has(m.a.d)) {
+                    abVar.M(jSONObject.optInt(m.a.d));
                 } else {
                     abVar.M(100);
                 }

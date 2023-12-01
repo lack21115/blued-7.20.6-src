@@ -1,6 +1,5 @@
 package com.huawei.secure.android.common.xml;
 
-import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -8,10 +7,10 @@ import org.xmlpull.v1.XmlPullParserFactory;
 public class XmlPullParserFactorySecurity {
     public static XmlPullParserFactory getInstance() throws XmlPullParserException {
         XmlPullParserFactory newInstance = XmlPullParserFactory.newInstance();
-        newInstance.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, true);
-        newInstance.setFeature(XmlPullParser.FEATURE_REPORT_NAMESPACE_ATTRIBUTES, false);
-        newInstance.setFeature(XmlPullParser.FEATURE_PROCESS_DOCDECL, true);
-        newInstance.setFeature(XmlPullParser.FEATURE_VALIDATION, false);
+        newInstance.setFeature("http://xmlpull.org/v1/doc/features.html#process-namespaces", true);
+        newInstance.setFeature("http://xmlpull.org/v1/doc/features.html#report-namespace-prefixes", false);
+        newInstance.setFeature("http://xmlpull.org/v1/doc/features.html#process-docdecl", true);
+        newInstance.setFeature("http://xmlpull.org/v1/doc/features.html#validation", false);
         return newInstance;
     }
 }

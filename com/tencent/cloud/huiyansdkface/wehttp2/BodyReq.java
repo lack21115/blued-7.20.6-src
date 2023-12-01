@@ -2,6 +2,7 @@ package com.tencent.cloud.huiyansdkface.wehttp2;
 
 import android.text.TextUtils;
 import android.util.Log;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import com.tencent.cloud.huiyansdkface.okhttp3.MediaType;
 import com.tencent.cloud.huiyansdkface.okhttp3.MultipartBody;
@@ -31,23 +32,23 @@ public class BodyReq extends BaseReq<BodyReq> {
     public static class MultiPart {
 
         /* renamed from: a  reason: collision with root package name */
-        public String f36077a;
+        public String f22386a;
         public String b;
 
         /* renamed from: c  reason: collision with root package name */
-        public File f36078c;
+        public File f22387c;
         public byte[] d;
         public String e;
         public MediaType f;
 
         public MultiPart(String str, String str2, MediaType mediaType) {
-            this.f36077a = str;
+            this.f22386a = str;
             this.e = str2;
             this.f = mediaType;
         }
 
         public MultiPart(String str, String str2, File file, MediaType mediaType) {
-            this.f36077a = str;
+            this.f22386a = str;
             String str3 = str2;
             if (str2 != null) {
                 try {
@@ -57,12 +58,12 @@ public class BodyReq extends BaseReq<BodyReq> {
                 }
             }
             this.b = str3;
-            this.f36078c = file;
+            this.f22387c = file;
             this.f = mediaType;
         }
 
         public MultiPart(String str, byte[] bArr, MediaType mediaType) {
-            this.f36077a = str;
+            this.f22386a = str;
             this.d = bArr;
             this.f = mediaType;
         }
@@ -99,7 +100,7 @@ public class BodyReq extends BaseReq<BodyReq> {
     private MediaType a(File file) {
         if (file != null) {
             String name = file.getName();
-            return name.endsWith(".png") ? MediaType.f35863a : (name.endsWith(".jpg") || name.endsWith(".jpeg")) ? MediaType.b : name.endsWith(".gif") ? MediaType.f35864c : MediaType.j;
+            return name.endsWith(".png") ? MediaType.f22172a : (name.endsWith(".jpg") || name.endsWith(".jpeg")) ? MediaType.b : name.endsWith(".gif") ? MediaType.f22173c : MediaType.j;
         }
         throw new IllegalArgumentException("file 不能为null");
     }
@@ -121,7 +122,7 @@ public class BodyReq extends BaseReq<BodyReq> {
         }
         String sb2 = sb.toString();
         String str = sb2;
-        if (sb2.endsWith("&")) {
+        if (sb2.endsWith(ContainerUtils.FIELD_DELIMITER)) {
             str = sb2.substring(0, sb2.length() - 1);
         }
         return str;
@@ -395,7 +396,7 @@ public class BodyReq extends BaseReq<BodyReq> {
     }
 
     public BodyReq multiPart() {
-        this.j = MultipartBody.f35865a;
+        this.j = MultipartBody.f22174a;
         return this;
     }
 

@@ -6,28 +6,28 @@ import java.nio.charset.Charset;
 public final class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f25496a;
+    public byte[] f11808a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25497c;
+    private int f11809c;
 
     public m() {
     }
 
     public m(int i) {
-        this.f25496a = new byte[i];
-        this.f25497c = i;
+        this.f11808a = new byte[i];
+        this.f11809c = i;
     }
 
     public m(byte[] bArr) {
-        this.f25496a = bArr;
-        this.f25497c = bArr.length;
+        this.f11808a = bArr;
+        this.f11809c = bArr.length;
     }
 
     public m(byte[] bArr, int i) {
-        this.f25496a = bArr;
-        this.f25497c = i;
+        this.f11808a = bArr;
+        this.f11809c = i;
     }
 
     public long A() {
@@ -35,7 +35,7 @@ public final class m {
         int i2;
         byte b;
         int i3;
-        long j = this.f25496a[this.b];
+        long j = this.f11808a[this.b];
         int i4 = 7;
         while (true) {
             int i5 = i4;
@@ -56,7 +56,7 @@ public final class m {
             throw new NumberFormatException("Invalid UTF-8 sequence first byte: " + j);
         }
         for (i = 1; i < i2; i++) {
-            if ((this.f25496a[this.b + i] & 192) != 128) {
+            if ((this.f11808a[this.b + i] & 192) != 128) {
                 throw new NumberFormatException("Invalid UTF-8 sequence continuation byte: " + j);
             }
             j = (j << 6) | (b & 63);
@@ -66,51 +66,51 @@ public final class m {
     }
 
     public String a(int i, Charset charset) {
-        String str = new String(this.f25496a, this.b, i, charset);
+        String str = new String(this.f11808a, this.b, i, charset);
         this.b += i;
         return str;
     }
 
     public void a() {
         this.b = 0;
-        this.f25497c = 0;
+        this.f11809c = 0;
     }
 
     public void a(int i) {
-        a(e() < i ? new byte[i] : this.f25496a, i);
+        a(e() < i ? new byte[i] : this.f11808a, i);
     }
 
     public void a(l lVar, int i) {
-        a(lVar.f25494a, 0, i);
+        a(lVar.f11806a, 0, i);
         lVar.a(0);
     }
 
     public void a(byte[] bArr, int i) {
-        this.f25496a = bArr;
-        this.f25497c = i;
+        this.f11808a = bArr;
+        this.f11809c = i;
         this.b = 0;
     }
 
     public void a(byte[] bArr, int i, int i2) {
-        System.arraycopy((Object) this.f25496a, this.b, (Object) bArr, i, i2);
+        System.arraycopy(this.f11808a, this.b, bArr, i, i2);
         this.b += i2;
     }
 
     public int b() {
-        return this.f25497c - this.b;
+        return this.f11809c - this.b;
     }
 
     public void b(int i) {
-        a.a(i >= 0 && i <= this.f25496a.length);
-        this.f25497c = i;
+        a.a(i >= 0 && i <= this.f11808a.length);
+        this.f11809c = i;
     }
 
     public int c() {
-        return this.f25497c;
+        return this.f11809c;
     }
 
     public void c(int i) {
-        a.a(i >= 0 && i <= this.f25497c);
+        a.a(i >= 0 && i <= this.f11809c);
         this.b = i;
     }
 
@@ -123,7 +123,7 @@ public final class m {
     }
 
     public int e() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         if (bArr == null) {
             return 0;
         }
@@ -135,7 +135,7 @@ public final class m {
     }
 
     public char f() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         return (char) ((bArr[i + 1] & 255) | ((bArr[i] & 255) << 8));
     }
@@ -145,20 +145,20 @@ public final class m {
             return "";
         }
         int i2 = (this.b + i) - 1;
-        String str = new String(this.f25496a, this.b, (i2 >= this.f25497c || this.f25496a[i2] != 0) ? i : i - 1);
+        String str = new String(this.f11808a, this.b, (i2 >= this.f11809c || this.f11808a[i2] != 0) ? i : i - 1);
         this.b += i;
         return str;
     }
 
     public int g() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         this.b = i + 1;
         return bArr[i] & 255;
     }
 
     public int h() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -168,7 +168,7 @@ public final class m {
     }
 
     public int i() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -178,7 +178,7 @@ public final class m {
     }
 
     public short j() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -188,7 +188,7 @@ public final class m {
     }
 
     public int k() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -201,7 +201,7 @@ public final class m {
     }
 
     public int l() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -214,7 +214,7 @@ public final class m {
     }
 
     public long m() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -230,7 +230,7 @@ public final class m {
     }
 
     public long n() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -246,7 +246,7 @@ public final class m {
     }
 
     public int o() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -262,7 +262,7 @@ public final class m {
     }
 
     public int p() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -278,7 +278,7 @@ public final class m {
     }
 
     public long q() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -306,7 +306,7 @@ public final class m {
     }
 
     public long r() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -334,7 +334,7 @@ public final class m {
     }
 
     public int s() {
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i = this.b;
         int i2 = i + 1;
         this.b = i2;
@@ -386,16 +386,16 @@ public final class m {
         int i2 = this.b;
         while (true) {
             i = i2;
-            if (i >= this.f25497c || this.f25496a[i] == 0) {
+            if (i >= this.f11809c || this.f11808a[i] == 0) {
                 break;
             }
             i2 = i + 1;
         }
-        byte[] bArr = this.f25496a;
+        byte[] bArr = this.f11808a;
         int i3 = this.b;
         String str = new String(bArr, i3, i - i3);
         this.b = i;
-        if (i < this.f25497c) {
+        if (i < this.f11809c) {
             this.b = i + 1;
         }
         return str;

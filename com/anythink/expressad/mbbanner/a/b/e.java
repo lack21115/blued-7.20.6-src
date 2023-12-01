@@ -4,21 +4,21 @@ package com.anythink.expressad.mbbanner.a.b;
 public final class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f8013a;
+    private String f5173a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f8014c;
+    private int f5174c;
     private int d;
 
     public e(String str, String str2, int i) {
-        this.f8013a = "";
+        this.f5173a = "";
         this.b = "";
-        this.f8014c = 0;
+        this.f5174c = 0;
         this.d = 1;
-        this.f8013a = str;
+        this.f5173a = str;
         this.b = str2;
-        this.f8014c = 0;
+        this.f5174c = 0;
         this.d = i;
     }
 
@@ -27,11 +27,11 @@ public final class e {
     }
 
     private void b(String str) {
-        this.f8013a = str;
+        this.f5173a = str;
     }
 
     private String d() {
-        return this.f8013a;
+        return this.f5173a;
     }
 
     public final String a() {
@@ -39,7 +39,7 @@ public final class e {
     }
 
     public final void a(int i) {
-        this.f8014c = i;
+        this.f5174c = i;
     }
 
     public final void a(String str) {
@@ -47,7 +47,7 @@ public final class e {
     }
 
     public final int b() {
-        return this.f8014c;
+        return this.f5174c;
     }
 
     public final int c() {

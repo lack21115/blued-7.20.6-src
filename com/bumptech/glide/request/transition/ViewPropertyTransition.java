@@ -7,7 +7,7 @@ import com.bumptech.glide.request.transition.Transition;
 public class ViewPropertyTransition<R> implements Transition<R> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Animator f21088a;
+    private final Animator f7482a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/request/transition/ViewPropertyTransition$Animator.class */
     public interface Animator {
@@ -15,13 +15,13 @@ public class ViewPropertyTransition<R> implements Transition<R> {
     }
 
     public ViewPropertyTransition(Animator animator) {
-        this.f21088a = animator;
+        this.f7482a = animator;
     }
 
     @Override // com.bumptech.glide.request.transition.Transition
     public boolean a(R r, Transition.ViewAdapter viewAdapter) {
         if (viewAdapter.d() != null) {
-            this.f21088a.a(viewAdapter.d());
+            this.f7482a.a(viewAdapter.d());
             return false;
         }
         return false;

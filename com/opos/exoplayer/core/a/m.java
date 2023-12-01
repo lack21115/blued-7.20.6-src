@@ -8,10 +8,10 @@ final class m implements d {
     private int b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25042c = -1;
+    private int f11354c = -1;
     private int d = 0;
-    private ByteBuffer e = f25014a;
-    private ByteBuffer f = f25014a;
+    private ByteBuffer e = f11326a;
+    private ByteBuffer f = f11326a;
     private boolean g;
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x0052  */
@@ -41,14 +41,14 @@ final class m implements d {
     @Override // com.opos.exoplayer.core.a.d
     public boolean a(int i, int i2, int i3) {
         if (i3 == 3 || i3 == 2 || i3 == Integer.MIN_VALUE || i3 == 1073741824) {
-            if (this.b == i && this.f25042c == i2 && this.d == i3) {
+            if (this.b == i && this.f11354c == i2 && this.d == i3) {
                 return false;
             }
             this.b = i;
-            this.f25042c = i2;
+            this.f11354c = i2;
             this.d = i3;
             if (i3 == 2) {
-                this.e = f25014a;
+                this.e = f11326a;
                 return true;
             }
             return true;
@@ -58,7 +58,7 @@ final class m implements d {
 
     @Override // com.opos.exoplayer.core.a.d
     public int b() {
-        return this.f25042c;
+        return this.f11354c;
     }
 
     @Override // com.opos.exoplayer.core.a.d
@@ -79,27 +79,27 @@ final class m implements d {
     @Override // com.opos.exoplayer.core.a.d
     public ByteBuffer f() {
         ByteBuffer byteBuffer = this.f;
-        this.f = f25014a;
+        this.f = f11326a;
         return byteBuffer;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public boolean g() {
-        return this.g && this.f == f25014a;
+        return this.g && this.f == f11326a;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public void h() {
-        this.f = f25014a;
+        this.f = f11326a;
         this.g = false;
     }
 
     @Override // com.opos.exoplayer.core.a.d
     public void i() {
         h();
-        this.e = f25014a;
+        this.e = f11326a;
         this.b = -1;
-        this.f25042c = -1;
+        this.f11354c = -1;
         this.d = 0;
     }
 }

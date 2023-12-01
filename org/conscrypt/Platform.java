@@ -2,8 +2,6 @@ package org.conscrypt;
 
 import android.os.Build;
 import android.util.Log;
-import com.ss.android.socialbase.downloader.constants.MonitorConstants;
-import com.umeng.analytics.pro.bh;
 import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
 import java.io.FileDescriptor;
@@ -468,7 +466,7 @@ public final class Platform {
         } catch (Exception e2) {
             try {
                 Class<?> cls = Class.forName("sun.security.x509.AlgorithmId");
-                Method declaredMethod2 = cls.getDeclaredMethod(MonitorConstants.CONNECT_TYPE_GET, String.class);
+                Method declaredMethod2 = cls.getDeclaredMethod("get", String.class);
                 declaredMethod2.setAccessible(true);
                 Method declaredMethod3 = cls.getDeclaredMethod("getName", new Class[0]);
                 declaredMethod3.setAccessible(true);
@@ -591,7 +589,7 @@ public final class Platform {
                 Log.w(TAG, "Libcore == null; not setting socket write timeout");
                 return;
             }
-            Field field = cls2.getField(bh.x);
+            Field field = cls2.getField("os");
             if (field == null) {
                 Log.w(TAG, "os == null; not setting socket write timeout");
                 return;

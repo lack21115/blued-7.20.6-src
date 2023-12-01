@@ -18,11 +18,11 @@ public class a {
                     return null;
                 }
                 try {
-                    String a2 = e.a(context, str, str2, "");
-                    if (com.alipay.security.mobile.module.a.a.a(a2)) {
+                    String a = e.a(context, str, str2, "");
+                    if (com.alipay.security.mobile.module.a.a.a(a)) {
                         return null;
                     }
-                    str3 = com.alipay.security.mobile.module.a.a.c.b(com.alipay.security.mobile.module.a.a.c.a(), a2);
+                    str3 = com.alipay.security.mobile.module.a.a.c.b(com.alipay.security.mobile.module.a.a.c.a(), a);
                 } catch (Throwable th) {
                     return null;
                 }
@@ -37,11 +37,11 @@ public class a {
                 if (com.alipay.security.mobile.module.a.a.a(str) || com.alipay.security.mobile.module.a.a.a(str2)) {
                     return null;
                 }
-                String a2 = com.alipay.security.mobile.module.c.b.a(str);
-                if (com.alipay.security.mobile.module.a.a.a(a2)) {
+                String a = com.alipay.security.mobile.module.c.b.a(str);
+                if (com.alipay.security.mobile.module.a.a.a(a)) {
                     return null;
                 }
-                String string = new JSONObject(a2).getString(str2);
+                String string = new JSONObject(a).getString(str2);
                 if (com.alipay.security.mobile.module.a.a.a(string)) {
                     return null;
                 }
@@ -56,9 +56,9 @@ public class a {
             return;
         }
         try {
-            String a2 = com.alipay.security.mobile.module.a.a.c.a(com.alipay.security.mobile.module.a.a.c.a(), str3);
+            String a = com.alipay.security.mobile.module.a.a.c.a(com.alipay.security.mobile.module.a.a.c.a(), str3);
             HashMap hashMap = new HashMap();
-            hashMap.put(str2, a2);
+            hashMap.put(str2, a);
             e.a(context, str, hashMap);
         } catch (Throwable th) {
         }
@@ -72,11 +72,11 @@ public class a {
                     return;
                 }
                 try {
-                    String a2 = com.alipay.security.mobile.module.c.b.a(str);
+                    String a = com.alipay.security.mobile.module.c.b.a(str);
                     JSONObject jSONObject = new JSONObject();
-                    if (com.alipay.security.mobile.module.a.a.b(a2)) {
+                    if (com.alipay.security.mobile.module.a.a.b(a)) {
                         try {
-                            jSONObject = new JSONObject(a2);
+                            jSONObject = new JSONObject(a);
                         } catch (Exception e) {
                             jSONObject = new JSONObject();
                         }

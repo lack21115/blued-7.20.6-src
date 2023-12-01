@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewKtvNoticeTypeMessBinding.class */
 public final class ViewKtvNoticeTypeMessBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16865a;
+    public final ImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16866c;
+    public final ShapeTextView c;
     public final TextView d;
     private final FrameLayout e;
 
     private ViewKtvNoticeTypeMessBinding(FrameLayout frameLayout, ImageView imageView, TextView textView, ShapeTextView shapeTextView, TextView textView2) {
         this.e = frameLayout;
-        this.f16865a = imageView;
+        this.a = imageView;
         this.b = textView;
-        this.f16866c = shapeTextView;
+        this.c = shapeTextView;
         this.d = textView2;
     }
 
@@ -53,7 +49,6 @@ public final class ViewKtvNoticeTypeMessBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.e;

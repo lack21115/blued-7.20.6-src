@@ -10,9 +10,7 @@ import com.mokee.volley.VolleyError;
 
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/cloud/location/LocationUtils.class */
 public class LocationUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final String[] f24211a = null;
+    private static final String[] a = null;
     private static final String[] b = null;
 
     static {

@@ -7,46 +7,42 @@ import com.baidu.mobads.sdk.internal.bw;
 public abstract class t {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f21306a;
+    public int f7700a;
     public volatile boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public long f21307c;
+    public long f7701c;
     public boolean d;
     public final v e;
     public final c f;
 
     public t(v vVar) {
         this.e = vVar;
-        this.f = vVar.f21325c;
+        this.f = vVar.f7719c;
     }
 
     public final long a() {
-        String str = com.alipay.sdk.util.e.f4661a;
         long b = b();
         if (b <= System.currentTimeMillis()) {
             try {
                 boolean c2 = c();
-                this.f21307c = System.currentTimeMillis();
-                this.f21306a = c2 ? 0 : this.f21306a + 1;
+                this.f7701c = System.currentTimeMillis();
+                this.f7700a = c2 ? 0 : this.f7700a + 1;
                 StringBuilder a2 = a.a("The worker:");
                 a2.append(d());
                 a2.append(" worked ");
-                if (c2) {
-                    str = bw.o;
-                }
-                a2.append(str);
+                a2.append(c2 ? bw.o : "failed");
                 z2.a(a2.toString());
             } catch (Throwable th) {
                 try {
                     z2.c("U SHALL NOT PASS!", th);
                 } finally {
-                    this.f21307c = System.currentTimeMillis();
-                    this.f21306a++;
+                    this.f7701c = System.currentTimeMillis();
+                    this.f7700a++;
                     StringBuilder a3 = a.a("The worker:");
                     a3.append(d());
                     a3.append(" worked ");
-                    a3.append(com.alipay.sdk.util.e.f4661a);
+                    a3.append("failed");
                     z2.a(a3.toString());
                 }
             }
@@ -67,10 +63,10 @@ public abstract class t {
         }
         long j = 0;
         if (this.b) {
-            this.f21307c = 0L;
+            this.f7701c = 0L;
             this.b = false;
         } else {
-            int i = this.f21306a;
+            int i = this.f7700a;
             if (i > 0) {
                 long[] e = e();
                 j = e[(i - 1) % e.length];
@@ -78,7 +74,7 @@ public abstract class t {
                 j = h();
             }
         }
-        return this.f21307c + j;
+        return this.f7701c + j;
     }
 
     public abstract boolean c();

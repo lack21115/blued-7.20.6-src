@@ -1,6 +1,5 @@
 package com.tencent.tencentmap.mapsdk.maps.model;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,6 +65,6 @@ public final class IndoorBuilding implements Cloneable {
         if (this.mBuidlingId == null || (list = this.mLevels) == null || list.size() <= this.mActiveLevelIndex) {
             return "";
         }
-        return this.mBuidlingId + BridgeUtil.UNDERLINE_STR + this.mLevels.get(this.mActiveLevelIndex).getName();
+        return this.mBuidlingId + "_" + this.mLevels.get(this.mActiveLevelIndex).getName();
     }
 }

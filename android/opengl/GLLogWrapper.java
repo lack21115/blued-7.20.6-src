@@ -3,8 +3,6 @@ package android.opengl;
 import android.media.MediaFormat;
 import android.os.BatteryManager;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.alipay.sdk.util.i;
-import com.anythink.basead.b.a;
 import com.cdo.oaps.ad.OapsKey;
 import com.huawei.hms.ads.jsb.constant.Constant;
 import com.huawei.hms.push.constant.RemoteMessageConst;
@@ -155,7 +153,7 @@ public class GLLogWrapper extends GLWrapperBase {
     }
 
     private void argPointer(int i, int i2, int i3, Buffer buffer) {
-        arg("size", i);
+        arg(OapsKey.KEY_SIZE, i);
         arg("type", getPointerTypeName(i2));
         arg(MediaFormat.KEY_STRIDE, i3);
         arg("pointer", buffer.toString());
@@ -209,7 +207,7 @@ public class GLLogWrapper extends GLWrapperBase {
             while (true) {
                 int i6 = i5;
                 if (i6 >= i2) {
-                    sb.append(i.d);
+                    sb.append("}");
                     return;
                 }
                 if (i6 > 0) {
@@ -307,23 +305,23 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getCap(int i) {
         switch (i) {
-            case 2832:
+            case GLES10.GL_POINT_SMOOTH /* 2832 */:
                 return "GL_POINT_SMOOTH";
-            case 2848:
+            case GLES10.GL_LINE_SMOOTH /* 2848 */:
                 return "GL_LINE_SMOOTH";
             case 2884:
                 return "GL_CULL_FACE";
-            case 2896:
+            case GLES10.GL_LIGHTING /* 2896 */:
                 return "GL_LIGHTING";
-            case 2903:
+            case GLES10.GL_COLOR_MATERIAL /* 2903 */:
                 return "GL_COLOR_MATERIAL";
-            case 2912:
+            case GLES10.GL_FOG /* 2912 */:
                 return "GL_FOG";
             case 2929:
                 return "GL_DEPTH_TEST";
             case 2960:
                 return "GL_STENCIL_TEST";
-            case 2977:
+            case GLES10.GL_NORMALIZE /* 2977 */:
                 return "GL_NORMALIZE";
             case 3008:
                 return "GL_ALPHA_TEST";
@@ -331,7 +329,7 @@ public class GLLogWrapper extends GLWrapperBase {
                 return "GL_DITHER";
             case 3042:
                 return "GL_BLEND";
-            case 3058:
+            case GLES10.GL_COLOR_LOGIC_OP /* 3058 */:
                 return "GL_COLOR_LOGIC_OP";
             case 3089:
                 return "GL_SCISSOR_TEST";
@@ -353,21 +351,21 @@ public class GLLogWrapper extends GLWrapperBase {
                 return "GL_LIGHT6";
             case 16391:
                 return "GL_LIGHT7";
-            case 32826:
+            case GLES10.GL_RESCALE_NORMAL /* 32826 */:
                 return "GL_RESCALE_NORMAL";
             case 32884:
                 return "GL_VERTEX_ARRAY";
-            case 32885:
+            case GLES10.GL_NORMAL_ARRAY /* 32885 */:
                 return "GL_NORMAL_ARRAY";
-            case 32886:
+            case GLES10.GL_COLOR_ARRAY /* 32886 */:
                 return "GL_COLOR_ARRAY";
-            case 32888:
+            case GLES10.GL_TEXTURE_COORD_ARRAY /* 32888 */:
                 return "GL_TEXTURE_COORD_ARRAY";
-            case 32925:
+            case GLES10.GL_MULTISAMPLE /* 32925 */:
                 return "GL_MULTISAMPLE";
             case 32926:
                 return "GL_SAMPLE_ALPHA_TO_COVERAGE";
-            case 32927:
+            case GLES10.GL_SAMPLE_ALPHA_TO_ONE /* 32927 */:
                 return "GL_SAMPLE_ALPHA_TO_ONE";
             case 32928:
                 return "GL_SAMPLE_COVERAGE";
@@ -412,14 +410,14 @@ public class GLLogWrapper extends GLWrapperBase {
         switch (i) {
             case 32884:
                 return "GL_VERTEX_ARRAY";
-            case 32885:
+            case GLES10.GL_NORMAL_ARRAY /* 32885 */:
                 return "GL_NORMAL_ARRAY";
-            case 32886:
+            case GLES10.GL_COLOR_ARRAY /* 32886 */:
                 return "GL_COLOR_ARRAY";
             case 32887:
             default:
                 return getHex(i);
-            case 32888:
+            case GLES10.GL_TEXTURE_COORD_ARRAY /* 32888 */:
                 return "GL_TEXTURE_COORD_ARRAY";
         }
     }
@@ -485,15 +483,15 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getFogPName(int i) {
         switch (i) {
-            case 2914:
+            case GLES10.GL_FOG_DENSITY /* 2914 */:
                 return "GL_FOG_DENSITY";
-            case 2915:
+            case GLES10.GL_FOG_START /* 2915 */:
                 return "GL_FOG_START";
-            case 2916:
+            case GLES10.GL_FOG_END /* 2916 */:
                 return "GL_FOG_END";
-            case 2917:
+            case GLES10.GL_FOG_MODE /* 2917 */:
                 return "GL_FOG_MODE";
-            case 2918:
+            case GLES10.GL_FOG_COLOR /* 2918 */:
                 return "GL_FOG_COLOR";
             default:
                 return getHex(i);
@@ -503,12 +501,12 @@ public class GLLogWrapper extends GLWrapperBase {
     private int getFogParamCount(int i) {
         int i2 = 1;
         switch (i) {
-            case 2914:
-            case 2915:
-            case 2916:
-            case 2917:
+            case GLES10.GL_FOG_DENSITY /* 2914 */:
+            case GLES10.GL_FOG_START /* 2915 */:
+            case GLES10.GL_FOG_END /* 2916 */:
+            case GLES10.GL_FOG_MODE /* 2917 */:
                 break;
-            case 2918:
+            case GLES10.GL_FOG_COLOR /* 2918 */:
                 return 4;
             default:
                 i2 = 0;
@@ -536,15 +534,15 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getHintTarget(int i) {
         switch (i) {
-            case 3152:
+            case GLES10.GL_PERSPECTIVE_CORRECTION_HINT /* 3152 */:
                 return "GL_PERSPECTIVE_CORRECTION_HINT";
-            case 3153:
+            case GLES10.GL_POINT_SMOOTH_HINT /* 3153 */:
                 return "GL_POINT_SMOOTH_HINT";
-            case 3154:
+            case GLES10.GL_LINE_SMOOTH_HINT /* 3154 */:
                 return "GL_LINE_SMOOTH_HINT";
-            case 3155:
+            case GLES10.GL_POLYGON_SMOOTH_HINT /* 3155 */:
                 return "GL_POLYGON_SMOOTH_HINT";
-            case 3156:
+            case GLES10.GL_FOG_HINT /* 3156 */:
                 return "GL_FOG_HINT";
             case 33170:
                 return "GL_GENERATE_MIPMAP_HINT";
@@ -578,19 +576,19 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getIntegerStateName(int i) {
         switch (i) {
-            case 2834:
+            case GLES10.GL_SMOOTH_POINT_SIZE_RANGE /* 2834 */:
                 return "GL_SMOOTH_POINT_SIZE_RANGE";
-            case 2850:
+            case GLES10.GL_SMOOTH_LINE_WIDTH_RANGE /* 2850 */:
                 return "GL_SMOOTH_LINE_WIDTH_RANGE";
-            case 3377:
+            case GLES10.GL_MAX_LIGHTS /* 3377 */:
                 return "GL_MAX_LIGHTS";
             case 3379:
                 return "GL_MAX_TEXTURE_SIZE";
-            case 3382:
+            case GLES10.GL_MAX_MODELVIEW_STACK_DEPTH /* 3382 */:
                 return "GL_MAX_MODELVIEW_STACK_DEPTH";
-            case 3384:
+            case GLES10.GL_MAX_PROJECTION_STACK_DEPTH /* 3384 */:
                 return "GL_MAX_PROJECTION_STACK_DEPTH";
-            case 3385:
+            case GLES10.GL_MAX_TEXTURE_STACK_DEPTH /* 3385 */:
                 return "GL_MAX_TEXTURE_STACK_DEPTH";
             case 3386:
                 return "GL_MAX_VIEWPORT_DIMS";
@@ -616,7 +614,7 @@ public class GLLogWrapper extends GLWrapperBase {
                 return "GL_ALIASED_POINT_SIZE_RANGE";
             case 33902:
                 return "GL_ALIASED_LINE_WIDTH_RANGE";
-            case 34018:
+            case GLES10.GL_MAX_TEXTURE_UNITS /* 34018 */:
                 return "GL_MAX_TEXTURE_UNITS";
             case 34466:
                 return "GL_NUM_COMPRESSED_TEXTURE_FORMATS";
@@ -637,15 +635,15 @@ public class GLLogWrapper extends GLWrapperBase {
     private int getIntegerStateSize(int i) {
         int i2 = 1;
         switch (i) {
-            case 2834:
+            case GLES10.GL_SMOOTH_POINT_SIZE_RANGE /* 2834 */:
                 return 2;
-            case 2850:
+            case GLES10.GL_SMOOTH_LINE_WIDTH_RANGE /* 2850 */:
                 return 2;
-            case 3377:
+            case GLES10.GL_MAX_LIGHTS /* 3377 */:
             case 3379:
-            case 3382:
-            case 3384:
-            case 3385:
+            case GLES10.GL_MAX_MODELVIEW_STACK_DEPTH /* 3382 */:
+            case GLES10.GL_MAX_PROJECTION_STACK_DEPTH /* 3384 */:
+            case GLES10.GL_MAX_TEXTURE_STACK_DEPTH /* 3385 */:
             case 3408:
             case 3410:
             case 3411:
@@ -655,7 +653,7 @@ public class GLLogWrapper extends GLWrapperBase {
             case 3415:
             case 33000:
             case 33001:
-            case 34018:
+            case GLES10.GL_MAX_TEXTURE_UNITS /* 34018 */:
             case 34466:
                 break;
             case 3386:
@@ -681,9 +679,9 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getLightModelPName(int i) {
         switch (i) {
-            case 2898:
+            case GLES10.GL_LIGHT_MODEL_TWO_SIDE /* 2898 */:
                 return "GL_LIGHT_MODEL_TWO_SIDE";
-            case 2899:
+            case GLES10.GL_LIGHT_MODEL_AMBIENT /* 2899 */:
                 return "GL_LIGHT_MODEL_AMBIENT";
             default:
                 return getHex(i);
@@ -692,9 +690,9 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private int getLightModelParamCount(int i) {
         switch (i) {
-            case 2898:
+            case GLES10.GL_LIGHT_MODEL_TWO_SIDE /* 2898 */:
                 return 1;
-            case 2899:
+            case GLES10.GL_LIGHT_MODEL_AMBIENT /* 2899 */:
                 return 4;
             default:
                 return 0;
@@ -707,25 +705,25 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getLightPName(int i) {
         switch (i) {
-            case 4608:
+            case GLES10.GL_AMBIENT /* 4608 */:
                 return "GL_AMBIENT";
-            case 4609:
+            case GLES10.GL_DIFFUSE /* 4609 */:
                 return "GL_DIFFUSE";
-            case 4610:
+            case GLES10.GL_SPECULAR /* 4610 */:
                 return "GL_SPECULAR";
-            case 4611:
+            case GLES10.GL_POSITION /* 4611 */:
                 return "GL_POSITION";
-            case 4612:
+            case GLES10.GL_SPOT_DIRECTION /* 4612 */:
                 return "GL_SPOT_DIRECTION";
-            case 4613:
+            case GLES10.GL_SPOT_EXPONENT /* 4613 */:
                 return "GL_SPOT_EXPONENT";
-            case 4614:
+            case GLES10.GL_SPOT_CUTOFF /* 4614 */:
                 return "GL_SPOT_CUTOFF";
-            case 4615:
+            case GLES10.GL_CONSTANT_ATTENUATION /* 4615 */:
                 return "GL_CONSTANT_ATTENUATION";
-            case 4616:
+            case GLES10.GL_LINEAR_ATTENUATION /* 4616 */:
                 return "GL_LINEAR_ATTENUATION";
-            case 4617:
+            case GLES10.GL_QUADRATIC_ATTENUATION /* 4617 */:
                 return "GL_QUADRATIC_ATTENUATION";
             default:
                 return getHex(i);
@@ -736,22 +734,22 @@ public class GLLogWrapper extends GLWrapperBase {
     private int getLightParamCount(int i) {
         int i2 = 4;
         switch (i) {
-            case 4608:
-            case 4609:
-            case 4610:
-            case 4611:
+            case GLES10.GL_AMBIENT /* 4608 */:
+            case GLES10.GL_DIFFUSE /* 4609 */:
+            case GLES10.GL_SPECULAR /* 4610 */:
+            case GLES10.GL_POSITION /* 4611 */:
                 break;
-            case 4612:
+            case GLES10.GL_SPOT_DIRECTION /* 4612 */:
                 return 3;
-            case 4613:
+            case GLES10.GL_SPOT_EXPONENT /* 4613 */:
                 return 1;
-            case 4614:
+            case GLES10.GL_SPOT_CUTOFF /* 4614 */:
                 return 1;
-            case 4615:
+            case GLES10.GL_CONSTANT_ATTENUATION /* 4615 */:
                 return 1;
-            case 4616:
+            case GLES10.GL_LINEAR_ATTENUATION /* 4616 */:
                 return 1;
-            case 4617:
+            case GLES10.GL_QUADRATIC_ATTENUATION /* 4617 */:
                 return 1;
             default:
                 i2 = 0;
@@ -762,17 +760,17 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getMaterialPName(int i) {
         switch (i) {
-            case 4608:
+            case GLES10.GL_AMBIENT /* 4608 */:
                 return "GL_AMBIENT";
-            case 4609:
+            case GLES10.GL_DIFFUSE /* 4609 */:
                 return "GL_DIFFUSE";
-            case 4610:
+            case GLES10.GL_SPECULAR /* 4610 */:
                 return "GL_SPECULAR";
-            case 5632:
+            case GLES10.GL_EMISSION /* 5632 */:
                 return "GL_EMISSION";
-            case 5633:
+            case GLES10.GL_SHININESS /* 5633 */:
                 return "GL_SHININESS";
-            case 5634:
+            case GLES10.GL_AMBIENT_AND_DIFFUSE /* 5634 */:
                 return "GL_AMBIENT_AND_DIFFUSE";
             default:
                 return getHex(i);
@@ -782,13 +780,13 @@ public class GLLogWrapper extends GLWrapperBase {
     private int getMaterialParamCount(int i) {
         int i2 = 4;
         switch (i) {
-            case 4608:
-            case 4609:
-            case 4610:
-            case 5632:
-            case 5634:
+            case GLES10.GL_AMBIENT /* 4608 */:
+            case GLES10.GL_DIFFUSE /* 4609 */:
+            case GLES10.GL_SPECULAR /* 4610 */:
+            case GLES10.GL_EMISSION /* 5632 */:
+            case GLES10.GL_AMBIENT_AND_DIFFUSE /* 5634 */:
                 break;
-            case 5633:
+            case GLES10.GL_SHININESS /* 5633 */:
                 return 1;
             default:
                 i2 = 0;
@@ -799,9 +797,9 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getMatrixMode(int i) {
         switch (i) {
-            case 5888:
+            case GLES10.GL_MODELVIEW /* 5888 */:
                 return "GL_MODELVIEW";
-            case 5889:
+            case GLES10.GL_PROJECTION /* 5889 */:
                 return "GL_PROJECTION";
             case 5890:
                 return "GL_TEXTURE";
@@ -829,9 +827,9 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getShadeModel(int i) {
         switch (i) {
-            case 7424:
+            case GLES10.GL_FLAT /* 7424 */:
                 return "GL_FLAT";
-            case 7425:
+            case GLES10.GL_SMOOTH /* 7425 */:
                 return "GL_SMOOTH";
             default:
                 return getHex(i);
@@ -840,9 +838,9 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getTextureEnvPName(int i) {
         switch (i) {
-            case 8704:
+            case GLES10.GL_TEXTURE_ENV_MODE /* 8704 */:
                 return "GL_TEXTURE_ENV_MODE";
-            case 8705:
+            case GLES10.GL_TEXTURE_ENV_COLOR /* 8705 */:
                 return "GL_TEXTURE_ENV_COLOR";
             default:
                 return getHex(i);
@@ -851,9 +849,9 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private int getTextureEnvParamCount(int i) {
         switch (i) {
-            case 8704:
+            case GLES10.GL_TEXTURE_ENV_MODE /* 8704 */:
                 return 1;
-            case 8705:
+            case GLES10.GL_TEXTURE_ENV_COLOR /* 8705 */:
                 return 4;
             default:
                 return 0;
@@ -872,9 +870,9 @@ public class GLLogWrapper extends GLWrapperBase {
                     return "GL_REPLACE";
                 case 8448:
                     return "GL_MODULATE";
-                case 8449:
+                case GLES10.GL_DECAL /* 8449 */:
                     return "GL_DECAL";
-                case 34160:
+                case GLES11.GL_COMBINE /* 34160 */:
                     return "GL_COMBINE";
                 default:
                     return getHex(i);
@@ -885,7 +883,7 @@ public class GLLogWrapper extends GLWrapperBase {
 
     private String getTextureEnvTarget(int i) {
         switch (i) {
-            case 8960:
+            case GLES10.GL_TEXTURE_ENV /* 8960 */:
                 return "GL_TEXTURE_ENV";
             default:
                 return getHex(i);
@@ -902,9 +900,9 @@ public class GLLogWrapper extends GLWrapperBase {
                 return "GL_TEXTURE_WRAP_S";
             case 10243:
                 return "GL_TEXTURE_WRAP_T";
-            case 33169:
+            case GLES11.GL_GENERATE_MIPMAP /* 33169 */:
                 return "GL_GENERATE_MIPMAP";
-            case 35741:
+            case GLES11Ext.GL_TEXTURE_CROP_RECT_OES /* 35741 */:
                 return "GL_TEXTURE_CROP_RECT_OES";
             default:
                 return getHex(i);
@@ -1146,7 +1144,7 @@ public class GLLogWrapper extends GLWrapperBase {
         while (true) {
             int i4 = i3;
             if (i4 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             sb.append(" [" + i4 + "] = ");
@@ -1164,7 +1162,7 @@ public class GLLogWrapper extends GLWrapperBase {
         while (true) {
             int i5 = i4;
             if (i5 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             int i6 = i3 + i5;
@@ -1186,7 +1184,7 @@ public class GLLogWrapper extends GLWrapperBase {
         while (true) {
             int i3 = i2;
             if (i3 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             sb.append(" [" + i3 + "] = " + floatBuffer.get(i3) + '\n');
@@ -1201,7 +1199,7 @@ public class GLLogWrapper extends GLWrapperBase {
         while (true) {
             int i3 = i2;
             if (i3 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             sb.append(" [" + i3 + "] = " + ((int) shortBuffer.get(i3)) + '\n');
@@ -1217,7 +1215,7 @@ public class GLLogWrapper extends GLWrapperBase {
         while (true) {
             int i4 = i3;
             if (i4 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             int i5 = i2 + i4;
@@ -1240,7 +1238,7 @@ public class GLLogWrapper extends GLWrapperBase {
         while (true) {
             int i4 = i3;
             if (i4 >= i) {
-                sb.append(i.d);
+                sb.append("}");
                 return sb.toString();
             }
             int i5 = i2 + i4;
@@ -1384,7 +1382,7 @@ public class GLLogWrapper extends GLWrapperBase {
     public void glBufferData(int i, int i2, Buffer buffer, int i3) {
         begin("glBufferData");
         arg(TypedValues.AttributesType.S_TARGET, i);
-        arg("size", i2);
+        arg(OapsKey.KEY_SIZE, i2);
         arg("data", buffer.toString());
         arg("usage", i3);
         end();
@@ -1397,7 +1395,7 @@ public class GLLogWrapper extends GLWrapperBase {
         begin("glBufferSubData");
         arg(TypedValues.AttributesType.S_TARGET, i);
         arg("offset", i2);
-        arg("size", i3);
+        arg(OapsKey.KEY_SIZE, i3);
         arg("data", buffer.toString());
         end();
         this.mgl11.glBufferSubData(i, i2, i3, buffer);
@@ -1576,7 +1574,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public void glColorPointer(int i, int i2, int i3, int i4) {
         begin("glColorPointer");
-        arg("size", i);
+        arg(OapsKey.KEY_SIZE, i);
         arg("type", i2);
         arg(MediaFormat.KEY_STRIDE, i3);
         arg("offset", i4);
@@ -1803,7 +1801,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL10
     public void glDisable(int i) {
         begin("glDisable");
-        arg(a.C0070a.B, getCap(i));
+        arg("cap", getCap(i));
         end();
         this.mgl.glDisable(i);
         checkError();
@@ -1818,13 +1816,13 @@ public class GLLogWrapper extends GLWrapperBase {
             case 32884:
                 this.mVertexArrayEnabled = false;
                 break;
-            case 32885:
+            case GLES10.GL_NORMAL_ARRAY /* 32885 */:
                 this.mNormalArrayEnabled = false;
                 break;
-            case 32886:
+            case GLES10.GL_COLOR_ARRAY /* 32886 */:
                 this.mColorArrayEnabled = false;
                 break;
-            case 32888:
+            case GLES10.GL_TEXTURE_COORD_ARRAY /* 32888 */:
                 this.mTextureCoordArrayEnabled = false;
                 break;
         }
@@ -2021,7 +2019,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL10, javax.microedition.khronos.opengles.GL11Ext, javax.microedition.khronos.opengles.GL11ExtensionPack
     public void glEnable(int i) {
         begin("glEnable");
-        arg(a.C0070a.B, getCap(i));
+        arg("cap", getCap(i));
         end();
         this.mgl.glEnable(i);
         checkError();
@@ -2036,13 +2034,13 @@ public class GLLogWrapper extends GLWrapperBase {
             case 32884:
                 this.mVertexArrayEnabled = true;
                 break;
-            case 32885:
+            case GLES10.GL_NORMAL_ARRAY /* 32885 */:
                 this.mNormalArrayEnabled = true;
                 break;
-            case 32886:
+            case GLES10.GL_COLOR_ARRAY /* 32886 */:
                 this.mColorArrayEnabled = true;
                 break;
-            case 32888:
+            case GLES10.GL_TEXTURE_COORD_ARRAY /* 32888 */:
                 this.mTextureCoordArrayEnabled = true;
                 break;
         }
@@ -2600,7 +2598,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public void glGetTexEnviv(int i, int i2, IntBuffer intBuffer) {
         begin("glGetTexEnviv");
-        arg(at.f40633a, i);
+        arg(at.f26942a, i);
         arg("pname", i2);
         arg("params", intBuffer.toString());
         end();
@@ -2611,7 +2609,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public void glGetTexEnviv(int i, int i2, int[] iArr, int i3) {
         begin("glGetTexEnviv");
-        arg(at.f40633a, i);
+        arg(at.f26942a, i);
         arg("pname", i2);
         arg("params", iArr.toString());
         arg("offset", i3);
@@ -2623,7 +2621,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public void glGetTexEnvxv(int i, int i2, IntBuffer intBuffer) {
         begin("glGetTexEnviv");
-        arg(at.f40633a, i);
+        arg(at.f26942a, i);
         arg("pname", i2);
         arg("params", intBuffer.toString());
         end();
@@ -2634,7 +2632,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public void glGetTexEnvxv(int i, int i2, int[] iArr, int i3) {
         begin("glGetTexEnviv");
-        arg(at.f40633a, i);
+        arg(at.f26942a, i);
         arg("pname", i2);
         arg("params", iArr.toString());
         arg("offset", i3);
@@ -2804,7 +2802,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public boolean glIsEnabled(int i) {
         begin("glIsEnabled");
-        arg(a.C0070a.B, i);
+        arg("cap", i);
         end();
         boolean glIsEnabled = this.mgl11.glIsEnabled(i);
         checkError();
@@ -3123,7 +3121,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11Ext
     public void glMatrixIndexPointerOES(int i, int i2, int i3, int i4) {
         begin("glMatrixIndexPointerOES");
-        arg("size", i);
+        arg(OapsKey.KEY_SIZE, i);
         arg("type", i2);
         arg(MediaFormat.KEY_STRIDE, i3);
         arg("offset", i4);
@@ -3361,7 +3359,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL10
     public void glPointSize(float f) {
         begin("glPointSize");
-        arg("size", f);
+        arg(OapsKey.KEY_SIZE, f);
         end();
         this.mgl.glPointSize(f);
         checkError();
@@ -3381,7 +3379,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL10
     public void glPointSizex(int i) {
         begin("glPointSizex");
-        arg("size", i);
+        arg(OapsKey.KEY_SIZE, i);
         end();
         this.mgl.glPointSizex(i);
         checkError();
@@ -3597,7 +3595,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public void glTexCoordPointer(int i, int i2, int i3, int i4) {
         begin("glTexCoordPointer");
-        arg("size", i);
+        arg(OapsKey.KEY_SIZE, i);
         arg("type", i2);
         arg(MediaFormat.KEY_STRIDE, i3);
         arg("offset", i4);
@@ -3979,7 +3977,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11
     public void glVertexPointer(int i, int i2, int i3, int i4) {
         begin("glVertexPointer");
-        arg("size", i);
+        arg(OapsKey.KEY_SIZE, i);
         arg("type", i2);
         arg(MediaFormat.KEY_STRIDE, i3);
         arg("offset", i4);
@@ -4012,7 +4010,7 @@ public class GLLogWrapper extends GLWrapperBase {
     @Override // javax.microedition.khronos.opengles.GL11Ext
     public void glWeightPointerOES(int i, int i2, int i3, int i4) {
         begin("glWeightPointerOES");
-        arg("size", i);
+        arg(OapsKey.KEY_SIZE, i);
         arg("type", i2);
         arg(MediaFormat.KEY_STRIDE, i3);
         arg("offset", i4);

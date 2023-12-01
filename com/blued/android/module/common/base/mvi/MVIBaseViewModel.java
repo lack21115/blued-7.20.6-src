@@ -8,7 +8,7 @@ import com.blued.android.module.common.base.mvi.UiAction;
 import com.blued.android.module.common.base.mvi.UiState;
 import com.blued.android.module.common.base.mvvm.SingleLiveEvent;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
-import com.google.gson.internal.C$Gson$Types;
+import com.google.gson.internal.$Gson;
 import com.soft.blued.http.api.ApiUtils;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -25,7 +25,7 @@ public abstract class MVIBaseViewModel<State extends UiState, Action extends UiA
     public BluedLiveData<State> uiState;
 
     public MVIBaseViewModel() {
-        SingleLiveEvent<UiEvent> singleLiveEvent = new SingleLiveEvent<>();
+        LiveData<UiEvent> singleLiveEvent = new SingleLiveEvent<>();
         this._uiEvent = singleLiveEvent;
         this.uiEvent = singleLiveEvent;
         Type genericSuperclass = getClass().getGenericSuperclass();
@@ -34,13 +34,13 @@ public abstract class MVIBaseViewModel<State extends UiState, Action extends UiA
         }
         ParameterizedType tClass = ((ParameterizedType) genericSuperclass).getActualTypeArguments()[0];
         if (this instanceof BaseListViewModel) {
-            ParameterizedType newParameterizedTypeWithOwner = C$Gson$Types.newParameterizedTypeWithOwner(null, BaseListState.class, tClass);
+            ParameterizedType newParameterizedTypeWithOwner = $Gson.Types.newParameterizedTypeWithOwner((Type) null, BaseListState.class, new Type[]{tClass});
             Intrinsics.c(newParameterizedTypeWithOwner, "newParameterizedTypeWith… tClass\n                )");
             tClass = newParameterizedTypeWithOwner;
         } else {
             Intrinsics.c(tClass, "tClass");
         }
-        Class<?> b = ApiUtils.f29672a.b(tClass);
+        Class b = ApiUtils.a.b(tClass);
         Object newInstance = b == null ? null : b.newInstance();
         if (newInstance == null) {
             throw new NullPointerException("null cannot be cast to non-null type State of com.blued.android.module.common.base.mvi.MVIBaseViewModel");

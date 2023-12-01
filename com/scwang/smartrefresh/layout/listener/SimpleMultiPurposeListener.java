@@ -31,6 +31,7 @@ public class SimpleMultiPurposeListener implements OnMultiPurposeListener {
     public void a(RefreshHeader refreshHeader, boolean z, float f, int i, int i2, int i3) {
     }
 
+    @Override // com.scwang.smartrefresh.layout.listener.OnStateChangedListener
     public void a(RefreshLayout refreshLayout, RefreshState refreshState, RefreshState refreshState2) {
     }
 
@@ -46,6 +47,7 @@ public class SimpleMultiPurposeListener implements OnMultiPurposeListener {
     public void onLoadMore(RefreshLayout refreshLayout) {
     }
 
+    @Override // com.scwang.smartrefresh.layout.listener.OnRefreshListener
     public void onRefresh(RefreshLayout refreshLayout) {
     }
 }

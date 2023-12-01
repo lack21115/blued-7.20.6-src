@@ -44,9 +44,9 @@ public class ConscryptPlatform extends Platform {
     public X509TrustManager a(SSLSocketFactory sSLSocketFactory) {
         if (Conscrypt.isConscrypt(sSLSocketFactory)) {
             try {
-                Object a2 = a(sSLSocketFactory, Object.class, "sslParameters");
-                if (a2 != null) {
-                    return (X509TrustManager) a(a2, X509TrustManager.class, "x509TrustManager");
+                Object a = a(sSLSocketFactory, Object.class, "sslParameters");
+                if (a != null) {
+                    return (X509TrustManager) a(a, X509TrustManager.class, "x509TrustManager");
                 }
                 return null;
             } catch (Exception e) {

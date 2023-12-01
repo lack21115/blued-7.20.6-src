@@ -20,7 +20,7 @@ import kotlin.jvm.internal.Intrinsics;
 public class TagIndicator extends ShapeLinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f20600a;
+    private int f6994a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public TagIndicator(Context context) {
@@ -59,7 +59,7 @@ public class TagIndicator extends ShapeLinearLayout {
                 throw new NullPointerException("null cannot be cast to non-null type android.widget.TextView");
             }
             TextView textView = (TextView) childAt;
-            if (i2 == this.f20600a) {
+            if (i2 == this.f6994a) {
                 textView.setVisibility(0);
             } else {
                 textView.setVisibility(4);
@@ -68,8 +68,8 @@ public class TagIndicator extends ShapeLinearLayout {
         }
     }
 
-    public final void a(int i, final TagViewPager vp) {
-        Intrinsics.e(vp, "vp");
+    public final void a(int i, final TagViewPager tagViewPager) {
+        Intrinsics.e(tagViewPager, "vp");
         removeAllViews();
         if (i >= 0) {
             int i2 = 0;
@@ -84,14 +84,14 @@ public class TagIndicator extends ShapeLinearLayout {
                 layoutParams.width = BluedViewExtKt.a(50);
                 layoutParams.height = BluedViewExtKt.a(6);
                 layoutParams.gravity = 16;
-                addView(shapeTextView, layoutParams);
+                addView((View) shapeTextView, layoutParams);
                 if (i3 == i) {
                     break;
                 }
                 i2 = i3 + 1;
             }
         }
-        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.login.view.TagIndicator$setTabList$1
+        tagViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.login.view.TagIndicator$setTabList$1
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i4) {
             }
@@ -104,12 +104,12 @@ public class TagIndicator extends ShapeLinearLayout {
             public void onPageSelected(int i4) {
                 int i5;
                 int i6;
-                TagIndicator.this.f20600a = i4;
-                i5 = TagIndicator.this.f20600a;
-                if (i5 > vp.getLastIndex()) {
-                    TagViewPager tagViewPager = vp;
-                    i6 = TagIndicator.this.f20600a;
-                    tagViewPager.setLastIndex(i6);
+                TagIndicator.this.f6994a = i4;
+                i5 = TagIndicator.this.f6994a;
+                if (i5 > tagViewPager.getLastIndex()) {
+                    TagViewPager tagViewPager2 = tagViewPager;
+                    i6 = TagIndicator.this.f6994a;
+                    tagViewPager2.setLastIndex(i6);
                 }
                 TagIndicator.this.a();
             }

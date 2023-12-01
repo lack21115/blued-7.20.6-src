@@ -6,7 +6,7 @@ import com.oplus.log.core.e;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    static boolean f24329a = false;
+    static boolean f10642a = false;
     public d b;
 
     public final void a(c cVar) {

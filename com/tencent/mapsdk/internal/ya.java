@@ -10,11 +10,11 @@ public class ya {
     public static final int f = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rect f38127a = new Rect();
+    public final Rect f24436a = new Rect();
     public int[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    public int[] f38128c;
+    public int[] f24437c;
     public int[] d;
 
     public static ya a(byte[] bArr) {
@@ -24,19 +24,19 @@ public class ya {
         }
         ya yaVar = new ya();
         yaVar.b = new int[order.get()];
-        yaVar.f38128c = new int[order.get()];
+        yaVar.f24437c = new int[order.get()];
         yaVar.d = new int[order.get()];
         a(yaVar.b.length);
-        a(yaVar.f38128c.length);
+        a(yaVar.f24437c.length);
         order.getInt();
         order.getInt();
-        yaVar.f38127a.left = order.getInt();
-        yaVar.f38127a.right = order.getInt();
-        yaVar.f38127a.top = order.getInt();
-        yaVar.f38127a.bottom = order.getInt();
+        yaVar.f24436a.left = order.getInt();
+        yaVar.f24436a.right = order.getInt();
+        yaVar.f24436a.top = order.getInt();
+        yaVar.f24436a.bottom = order.getInt();
         order.getInt();
         a(yaVar.b, order);
-        a(yaVar.f38128c, order);
+        a(yaVar.f24437c, order);
         a(yaVar.d, order);
         return yaVar;
     }

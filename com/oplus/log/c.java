@@ -6,11 +6,11 @@ public class c {
     private com.oplus.log.g.a k;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f24325a = "";
+    private String f10638a = "";
     private String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    private String f24326c = "";
+    private String f10639c = "";
     private String d = "";
     private String g = "";
     private int h = 1;
@@ -80,7 +80,7 @@ public class c {
     }
 
     public void b(String str) {
-        this.f24325a = str;
+        this.f10638a = str;
     }
 
     public String c() {
@@ -100,11 +100,11 @@ public class c {
     }
 
     public void d(String str) {
-        this.f24326c = str;
+        this.f10639c = str;
     }
 
     public String e() {
-        return this.f24325a;
+        return this.f10638a;
     }
 
     public void e(String str) {
@@ -112,7 +112,7 @@ public class c {
     }
 
     public String f() {
-        return this.f24326c;
+        return this.f10639c;
     }
 
     public String g() {

@@ -10,11 +10,11 @@ import java.util.Map;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f39514a;
+    private final String f25823a;
     private final HttpMethod b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Map<String, String> f39515c;
+    private final Map<String, String> f25824c;
     private final Map<String, String> d;
     private final String e;
     private BodyType f;
@@ -25,11 +25,11 @@ public class e {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private HttpMethod f39516a;
+        private HttpMethod f25825a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f39517c;
+        private String f25826c;
         private Map<String, String> d = new HashMap(3);
         private Map<String, String> e = new HashMap(3);
         private String f;
@@ -46,12 +46,12 @@ public class e {
         }
 
         public a a(HttpMethod httpMethod) {
-            this.f39516a = httpMethod;
+            this.f25825a = httpMethod;
             return this;
         }
 
         public a a(String str) {
-            this.f39517c = str;
+            this.f25826c = str;
             return this;
         }
 
@@ -62,13 +62,13 @@ public class e {
         }
 
         public e a() {
-            if (this.f39516a != null) {
+            if (this.f25825a != null) {
                 if (TextUtils.isEmpty(this.b)) {
                     throw new NullPointerException("request url == null!");
                 }
                 BodyType bodyType = this.g;
                 if (bodyType != null) {
-                    int i = b.f39518a[bodyType.ordinal()];
+                    int i = b.f25827a[bodyType.ordinal()];
                     if (i != 1) {
                         if (i != 2) {
                             if (i == 3 && this.h == null) {
@@ -80,7 +80,7 @@ public class e {
                     } else if (TextUtils.isEmpty(this.f)) {
                         throw new NullPointerException("json request body == null");
                     }
-                    return new e(this.f39516a, this.b, this.e, this.g, this.f, this.d, this.h, this.f39517c, null);
+                    return new e(this.f25825a, this.b, this.e, this.g, this.f, this.d, this.h, this.f25826c, null);
                 }
                 throw new NullPointerException("bodyType == null");
             }
@@ -97,25 +97,25 @@ public class e {
     public static /* synthetic */ class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f39518a;
+        public static final /* synthetic */ int[] f25827a;
 
         static {
             BodyType.values();
             int[] iArr = new int[3];
-            f39518a = iArr;
+            f25827a = iArr;
             try {
                 BodyType bodyType = BodyType.JSON;
                 iArr[0] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                int[] iArr2 = f39518a;
+                int[] iArr2 = f25827a;
                 BodyType bodyType2 = BodyType.FORM;
                 iArr2[1] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                int[] iArr3 = f39518a;
+                int[] iArr3 = f25827a;
                 BodyType bodyType3 = BodyType.DATA;
                 iArr3[2] = 3;
             } catch (NoSuchFieldError e3) {
@@ -125,8 +125,8 @@ public class e {
 
     private e(HttpMethod httpMethod, String str, Map<String, String> map, BodyType bodyType, String str2, Map<String, String> map2, byte[] bArr, String str3) {
         this.b = httpMethod;
-        this.f39514a = str;
-        this.f39515c = map;
+        this.f25823a = str;
+        this.f25824c = map;
         this.f = bodyType;
         this.g = str2;
         this.d = map2;
@@ -155,7 +155,7 @@ public class e {
     }
 
     public Map<String, String> e() {
-        return this.f39515c;
+        return this.f25824c;
     }
 
     public String f() {
@@ -171,10 +171,10 @@ public class e {
     }
 
     public String i() {
-        return this.f39514a;
+        return this.f25823a;
     }
 
     public String toString() {
-        return "HttpRequestEntity{url='" + this.f39514a + "', method=" + this.b + ", headers=" + this.f39515c + ", formParams=" + this.d + ", bodyType=" + this.f + ", json='" + this.g + "', tag='" + this.e + "'}";
+        return "HttpRequestEntity{url='" + this.f25823a + "', method=" + this.b + ", headers=" + this.f25824c + ", formParams=" + this.d + ", bodyType=" + this.f + ", json='" + this.g + "', tag='" + this.e + "'}";
     }
 }

@@ -7,10 +7,10 @@ import com.tencent.liteav.videobase.common.EncodedVideoFrame;
 public final /* synthetic */ class av implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoDecodeController f36767a;
+    private final VideoDecodeController f23076a;
 
     private av(VideoDecodeController videoDecodeController) {
-        this.f36767a = videoDecodeController;
+        this.f23076a = videoDecodeController;
     }
 
     public static Runnable a(VideoDecodeController videoDecodeController) {
@@ -19,8 +19,8 @@ public final /* synthetic */ class av implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        VideoDecodeController videoDecodeController = this.f36767a;
-        LiteavLog.i(videoDecodeController.f36734a, "signalEndOfStream");
+        VideoDecodeController videoDecodeController = this.f23076a;
+        LiteavLog.i(videoDecodeController.f23043a, "signalEndOfStream");
         if (videoDecodeController.k == null) {
             videoDecodeController.onDecodeCompleted();
             return;

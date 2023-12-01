@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.core.ui.TerminalActivity;
@@ -26,9 +27,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYHotTopicListFragment.class */
 public final class YYHotTopicListFragment extends MvpFragment<MvpPresenter> {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f17297a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private FragmentYyHotTopicBinding b;
 
     @Metadata
@@ -91,17 +90,14 @@ public final class YYHotTopicListFragment extends MvpFragment<MvpPresenter> {
             noDataAndLoadFailView.setNoDataStr(R.string.yy_hot_topic_no_data);
         }
         FragmentYyHotTopicBinding fragmentYyHotTopicBinding5 = this.b;
-        if (fragmentYyHotTopicBinding5 != null && (viewPager = fragmentYyHotTopicBinding5.f16512c) != null) {
+        if (fragmentYyHotTopicBinding5 != null && (viewPager = fragmentYyHotTopicBinding5.c) != null) {
             viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.yy_china.fragment.YYHotTopicListFragment$initView$2
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrollStateChanged(int i) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageScrolled(int i, float f, int i2) {
                 }
 
-                @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
                 public void onPageSelected(int i) {
                     FragmentYyHotTopicBinding fragmentYyHotTopicBinding6;
                     YYHotTopicTabView yYHotTopicTabView;
@@ -144,7 +140,7 @@ public final class YYHotTopicListFragment extends MvpFragment<MvpPresenter> {
                 fragmentYyHotTopicBinding2 = YYHotTopicListFragment.this.b;
                 if (fragmentYyHotTopicBinding2 != null && (yYHotTopicTabView2 = fragmentYyHotTopicBinding2.d) != null) {
                     fragmentYyHotTopicBinding5 = YYHotTopicListFragment.this.b;
-                    ViewPager viewPager = fragmentYyHotTopicBinding5 == null ? null : fragmentYyHotTopicBinding5.f16512c;
+                    ViewPager viewPager = fragmentYyHotTopicBinding5 == null ? null : fragmentYyHotTopicBinding5.c;
                     Intrinsics.a(viewPager);
                     Intrinsics.c(viewPager, "vb?.roomViewPager!!");
                     yYHotTopicTabView2.a(viewPager);
@@ -153,9 +149,9 @@ public final class YYHotTopicListFragment extends MvpFragment<MvpPresenter> {
                 if (fragmentYyHotTopicBinding3 != null && (yYHotTopicTabView = fragmentYyHotTopicBinding3.d) != null) {
                     yYHotTopicTabView.setData(p0.data);
                 }
-                YYHotTopicPageAdapter yYHotTopicPageAdapter = new YYHotTopicPageAdapter(YYHotTopicListFragment.this.getChildFragmentManager());
+                PagerAdapter yYHotTopicPageAdapter = new YYHotTopicPageAdapter(YYHotTopicListFragment.this.getChildFragmentManager());
                 fragmentYyHotTopicBinding4 = YYHotTopicListFragment.this.b;
-                ViewPager viewPager2 = fragmentYyHotTopicBinding4 == null ? null : fragmentYyHotTopicBinding4.f16512c;
+                ViewPager viewPager2 = fragmentYyHotTopicBinding4 == null ? null : fragmentYyHotTopicBinding4.c;
                 if (viewPager2 != null) {
                     viewPager2.setAdapter(yYHotTopicPageAdapter);
                 }

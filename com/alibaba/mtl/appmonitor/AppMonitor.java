@@ -32,9 +32,7 @@ import org.json.JSONArray;
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/AppMonitor.class */
 public final class AppMonitor {
     public static final String TAG = "AppMonitor";
-
-    /* renamed from: a  reason: collision with root package name */
-    private static Application f4429a;
+    private static Application a;
 
     /* renamed from: a  reason: collision with other field name */
     private static ServiceConnection f0a;
@@ -54,9 +52,7 @@ public final class AppMonitor {
     /* renamed from: a  reason: collision with other field name */
     private static volatile boolean f8a;
     private static String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static String f4430c;
+    private static String c;
 
     /* renamed from: c  reason: collision with other field name */
     private static boolean f10c;
@@ -91,7 +87,7 @@ public final class AppMonitor {
         }
 
         public static void commitFail(final String str, final String str2, final String str3, final String str4) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Alarm.5
                     @Override // java.lang.Runnable
                     public void run() {
@@ -106,7 +102,7 @@ public final class AppMonitor {
         }
 
         public static void commitFail(final String str, final String str2, final String str3, final String str4, final String str5) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Alarm.6
                     @Override // java.lang.Runnable
                     public void run() {
@@ -121,7 +117,7 @@ public final class AppMonitor {
         }
 
         public static void commitSuccess(final String str, final String str2) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Alarm.3
                     @Override // java.lang.Runnable
                     public void run() {
@@ -136,7 +132,7 @@ public final class AppMonitor {
         }
 
         public static void commitSuccess(final String str, final String str2, final String str3) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Alarm.4
                     @Override // java.lang.Runnable
                     public void run() {
@@ -151,7 +147,7 @@ public final class AppMonitor {
         }
 
         public static void setSampling(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Alarm.2
                     @Override // java.lang.Runnable
                     public void run() {
@@ -166,7 +162,7 @@ public final class AppMonitor {
         }
 
         public static void setStatisticsInterval(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Alarm.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -197,7 +193,7 @@ public final class AppMonitor {
         }
 
         public static void commit(final String str, final String str2, final double d) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Counter.3
                     @Override // java.lang.Runnable
                     public void run() {
@@ -212,7 +208,7 @@ public final class AppMonitor {
         }
 
         public static void commit(final String str, final String str2, final String str3, final double d) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Counter.4
                     @Override // java.lang.Runnable
                     public void run() {
@@ -227,7 +223,7 @@ public final class AppMonitor {
         }
 
         public static void setSampling(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Counter.2
                     @Override // java.lang.Runnable
                     public void run() {
@@ -242,7 +238,7 @@ public final class AppMonitor {
         }
 
         public static void setStatisticsInterval(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Counter.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -273,7 +269,7 @@ public final class AppMonitor {
         }
 
         public static void commit(final String str, final String str2, final double d) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.OffLineCounter.3
                     @Override // java.lang.Runnable
                     public void run() {
@@ -288,7 +284,7 @@ public final class AppMonitor {
         }
 
         public static void setSampling(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.OffLineCounter.2
                     @Override // java.lang.Runnable
                     public void run() {
@@ -303,7 +299,7 @@ public final class AppMonitor {
         }
 
         public static void setStatisticsInterval(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.OffLineCounter.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -321,7 +317,7 @@ public final class AppMonitor {
     /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/appmonitor/AppMonitor$Stat.class */
     public static class Stat {
         public static void begin(final String str, final String str2, final String str3) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Stat.3
                     @Override // java.lang.Runnable
                     public void run() {
@@ -352,7 +348,7 @@ public final class AppMonitor {
         }
 
         public static void commit(final String str, final String str2, final DimensionValueSet dimensionValueSet, final double d) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Stat.5
                     @Override // java.lang.Runnable
                     public void run() {
@@ -367,7 +363,7 @@ public final class AppMonitor {
         }
 
         public static void commit(final String str, final String str2, final DimensionValueSet dimensionValueSet, final MeasureValueSet measureValueSet) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Stat.6
                     @Override // java.lang.Runnable
                     public void run() {
@@ -433,11 +429,11 @@ public final class AppMonitor {
         }
 
         public static Transaction createTransaction(String str, String str2, DimensionValueSet dimensionValueSet) {
-            return new Transaction(Integer.valueOf(f.STAT.m2139a()), str, str2, dimensionValueSet);
+            return new Transaction(Integer.valueOf(f.STAT.m8582a()), str, str2, dimensionValueSet);
         }
 
         public static void end(final String str, final String str2, final String str3) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Stat.4
                     @Override // java.lang.Runnable
                     public void run() {
@@ -452,7 +448,7 @@ public final class AppMonitor {
         }
 
         public static void setSampling(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Stat.2
                     @Override // java.lang.Runnable
                     public void run() {
@@ -467,7 +463,7 @@ public final class AppMonitor {
         }
 
         public static void setStatisticsInterval(final int i) {
-            if (AppMonitor.m2126c()) {
+            if (AppMonitor.m8569c()) {
                 AppMonitor.f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.Stat.1
                     @Override // java.lang.Runnable
                     public void run() {
@@ -569,7 +565,7 @@ public final class AppMonitor {
                         AppMonitor.f3a.postAtFrontOfQueue(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.5.1
                             @Override // java.lang.Runnable
                             public void run() {
-                                AppMonitor.m2122a();
+                                AppMonitor.m8565a();
                             }
                         });
                     }
@@ -591,11 +587,11 @@ public final class AppMonitor {
     }
 
     private static int a(f fVar) {
-        return fVar.m2139a();
+        return fVar.m8582a();
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static Runnable m2121a() {
+    private static Runnable m8564a() {
         return new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.6
             @Override // java.lang.Runnable
             public void run() {
@@ -652,7 +648,7 @@ public final class AppMonitor {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: a  reason: collision with other method in class */
-    public static void m2122a() {
+    public static void m8565a() {
         synchronized (AppMonitor.class) {
             try {
                 i.a(TAG, "[restart]");
@@ -660,8 +656,8 @@ public final class AppMonitor {
                     if (f9b) {
                         f9b = false;
                         b();
-                        m2121a().run();
-                        a(f10c, b, f4430c, d).run();
+                        m8564a().run();
+                        a(f10c, b, c, d).run();
                         a(f6a).run();
                         synchronized (f7a) {
                             for (int i = 0; i < f7a.size(); i++) {
@@ -686,12 +682,12 @@ public final class AppMonitor {
     public static void a(Exception exc) {
         i.a(TAG, "", exc);
         if (exc instanceof DeadObjectException) {
-            m2122a();
+            m8565a();
         }
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static void m2123a(String str, String str2, MeasureSet measureSet, DimensionSet dimensionSet, boolean z) {
+    private static void m8566a(String str, String str2, MeasureSet measureSet, DimensionSet dimensionSet, boolean z) {
         try {
             a aVar = new a();
             aVar.o = str;
@@ -705,12 +701,12 @@ public final class AppMonitor {
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    private static boolean m2124a() {
-        Application application = f4429a;
+    private static boolean m8567a() {
+        Application application = a;
         if (application == null) {
             return false;
         }
-        boolean bindService = application.getApplicationContext().bindService(new Intent(f4429a.getApplicationContext(), AppMonitorService.class), f0a, 1);
+        boolean bindService = application.getApplicationContext().bindService(new Intent(a.getApplicationContext(), AppMonitorService.class), f0a, 1);
         if (!bindService) {
             b();
         }
@@ -720,13 +716,13 @@ public final class AppMonitor {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void b() {
-        f4a = new Monitor(f4429a);
+        f4a = new Monitor(a);
         f2a = b.Local;
         i.a(TAG, "Start AppMonitor Service failed,AppMonitor run in local Mode...");
     }
 
     /* renamed from: b  reason: collision with other method in class */
-    private static boolean m2125b() {
+    private static boolean m8568b() {
         if (!f8a) {
             i.a(TAG, "Please call init() before call other method");
         }
@@ -734,15 +730,15 @@ public final class AppMonitor {
     }
 
     /* renamed from: c  reason: collision with other method in class */
-    static /* synthetic */ boolean m2126c() {
-        return m2125b();
+    static /* synthetic */ boolean m8569c() {
+        return m8568b();
     }
 
     @Deprecated
     public static void destroy() {
         synchronized (AppMonitor.class) {
             try {
-                if (m2125b()) {
+                if (m8568b()) {
                     f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.1
                         @Override // java.lang.Runnable
                         public void run() {
@@ -760,7 +756,7 @@ public final class AppMonitor {
     }
 
     public static void enableLog(final boolean z) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.13
                 @Override // java.lang.Runnable
                 public void run() {
@@ -780,7 +776,7 @@ public final class AppMonitor {
                 i.a(TAG, "[init]");
                 try {
                     if (!f8a) {
-                        f4429a = application;
+                        a = application;
                         if (application != null) {
                             mContext = application.getApplicationContext();
                         }
@@ -790,10 +786,10 @@ public final class AppMonitor {
                         f3a = new c(f1a.getLooper());
                         if (f2a == b.Local) {
                             b();
-                        } else if (m2124a()) {
+                        } else if (m8567a()) {
                             f3a.a(true);
                         }
-                        m2121a().run();
+                        m8564a().run();
                         f8a = true;
                     }
                 } catch (Throwable th) {
@@ -805,7 +801,7 @@ public final class AppMonitor {
     }
 
     public static void register(final String str, final String str2, final MeasureSet measureSet) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.14
                 @Override // java.lang.Runnable
                 public void run() {
@@ -816,12 +812,12 @@ public final class AppMonitor {
                     }
                 }
             });
-            m2123a(str, str2, measureSet, (DimensionSet) null, false);
+            m8566a(str, str2, measureSet, (DimensionSet) null, false);
         }
     }
 
     public static void register(final String str, final String str2, final MeasureSet measureSet, final DimensionSet dimensionSet) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.16
                 @Override // java.lang.Runnable
                 public void run() {
@@ -833,18 +829,18 @@ public final class AppMonitor {
                     }
                 }
             });
-            m2123a(str, str2, measureSet, dimensionSet, false);
+            m8566a(str, str2, measureSet, dimensionSet, false);
         }
     }
 
     public static void register(String str, String str2, MeasureSet measureSet, DimensionSet dimensionSet, boolean z) {
-        if (m2125b()) {
+        if (m8568b()) {
             registerInternal(str, str2, measureSet, dimensionSet, z, false);
         }
     }
 
     public static void register(final String str, final String str2, final MeasureSet measureSet, final boolean z) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.15
                 @Override // java.lang.Runnable
                 public void run() {
@@ -855,17 +851,12 @@ public final class AppMonitor {
                     }
                 }
             });
-            m2123a(str, str2, measureSet, (DimensionSet) null, z);
+            m8566a(str, str2, measureSet, (DimensionSet) null, z);
         }
     }
 
     public static void register(String str, String str2, String[] strArr, String[] strArr2, boolean z) {
-        String str3 = com.igexin.push.core.b.l;
-        String jSONArray = strArr == null ? com.igexin.push.core.b.l : new JSONArray((Collection) Arrays.asList(strArr)).toString();
-        if (strArr2 != null) {
-            str3 = new JSONArray((Collection) Arrays.asList(strArr2)).toString();
-        }
-        i.a(TAG, "[register]", "module:", str, "measures:", jSONArray, "dimensions:", str3, "isCommitDetail:", Boolean.valueOf(z));
+        i.a(TAG, "[register]", "module:", str, "measures:", strArr == null ? "null" : new JSONArray((Collection) Arrays.asList(strArr)).toString(), "dimensions:", strArr2 != null ? new JSONArray((Collection) Arrays.asList(strArr2)).toString() : "null", "isCommitDetail:", Boolean.valueOf(z));
         if (strArr == null) {
             i.a(TAG, "register failed:no mearsure");
             return;
@@ -898,34 +889,34 @@ public final class AppMonitor {
     }
 
     public static void registerInternal(String str, String str2, MeasureSet measureSet, DimensionSet dimensionSet, boolean z, boolean z2) {
-        if (m2125b()) {
+        if (m8568b()) {
             i.a(TAG, "[registerInternal] : module:", str, "monitorPoint:", str2, "measures:", measureSet, "dimensions:", dimensionSet, "isCommitDetail:", Boolean.valueOf(z), "isInternal:", Boolean.valueOf(z2));
             if (!z2) {
-                m2123a(str, str2, measureSet, dimensionSet, z);
+                m8566a(str, str2, measureSet, dimensionSet, z);
             }
             f3a.a(a(str, str2, measureSet, dimensionSet, z));
         }
     }
 
     public static void setChannel(String str) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(a(str));
             f6a = str;
         }
     }
 
     public static void setRequestAuthInfo(boolean z, String str, String str2, String str3) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(a(z, str, str2, str3));
             f10c = z;
             b = str;
-            f4430c = str2;
+            c = str2;
             d = str3;
         }
     }
 
     public static void setSampling(final int i) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.12
                 @Override // java.lang.Runnable
                 public void run() {
@@ -940,7 +931,7 @@ public final class AppMonitor {
     }
 
     public static void setStatisticsInterval(final int i) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.11
                 @Override // java.lang.Runnable
                 public void run() {
@@ -955,7 +946,7 @@ public final class AppMonitor {
     }
 
     public static void setStatisticsInterval(f fVar, final int i) {
-        if (m2125b()) {
+        if (m8568b()) {
             final int a2 = a(fVar);
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.2
                 @Override // java.lang.Runnable
@@ -992,7 +983,7 @@ public final class AppMonitor {
     }
 
     public static void turnOffRealTimeDebug() {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.4
                 @Override // java.lang.Runnable
                 public void run() {
@@ -1007,7 +998,7 @@ public final class AppMonitor {
     }
 
     public static void turnOnRealTimeDebug(final Map<String, String> map) {
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.a(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.3
                 @Override // java.lang.Runnable
                 public void run() {
@@ -1023,7 +1014,7 @@ public final class AppMonitor {
 
     public static void updateMeasure(final String str, final String str2, final String str3, final double d2, final double d3, final double d4) {
         i.a(TAG, "[updateMeasure]");
-        if (m2125b()) {
+        if (m8568b()) {
             f3a.post(new Runnable() { // from class: com.alibaba.mtl.appmonitor.AppMonitor.17
                 @Override // java.lang.Runnable
                 public void run() {

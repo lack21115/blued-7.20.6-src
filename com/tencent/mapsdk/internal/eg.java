@@ -117,24 +117,24 @@ public class eg extends n4 implements AbsListView.OnScrollListener, AdapterView.
     public class d extends BaseAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f37414a;
+        private Context f23723a;
         private List<IndoorLevel> b;
 
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/eg$d$a.class */
         public class a {
 
             /* renamed from: a  reason: collision with root package name */
-            public TextView f37416a;
+            public TextView f23725a;
             public View b;
 
             public a(TextView textView, View view) {
-                this.f37416a = textView;
+                this.f23725a = textView;
                 this.b = view;
             }
         }
 
         public d(Context context, List<IndoorLevel> list) {
-            this.f37414a = context;
+            this.f23723a = context;
             this.b = list;
         }
 
@@ -177,12 +177,12 @@ public class eg extends n4 implements AbsListView.OnScrollListener, AdapterView.
             }
             if (view != null) {
                 a aVar = (a) view.getTag();
-                textView = aVar.f37416a;
+                textView = aVar.f23725a;
                 view2 = aVar.b;
                 view3 = view;
             } else {
-                FrameLayout frameLayout = new FrameLayout(this.f37414a);
-                view2 = new View(this.f37414a);
+                FrameLayout frameLayout = new FrameLayout(this.f23723a);
+                view2 = new View(this.f23723a);
                 FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams((int) (eg.this.g * 26.5d), (int) (eg.this.g * 26.5d));
                 if (eg.this.f == null) {
                     eg.this.f = new bg();
@@ -195,7 +195,7 @@ public class eg extends n4 implements AbsListView.OnScrollListener, AdapterView.
                 }
                 layoutParams.gravity = 17;
                 frameLayout.addView(view2, layoutParams);
-                textView = new TextView(this.f37414a);
+                textView = new TextView(this.f23723a);
                 textView.setIncludeFontPadding(false);
                 textView.setSingleLine();
                 textView.setGravity(17);
@@ -357,7 +357,7 @@ public class eg extends n4 implements AbsListView.OnScrollListener, AdapterView.
         }
         int i = (this.u * 2) + ((int) (this.g * 16.700000762939453d));
         int i2 = i;
-        if (mi.f37650c.equals(ConstantsAPI.Token.WX_TOKEN_PLATFORMID_VALUE)) {
+        if (mi.f23959c.equals(ConstantsAPI.Token.WX_TOKEN_PLATFORMID_VALUE)) {
             i2 = i;
             if (this.k.getMeasuredHeight() > this.v) {
                 int measuredHeight = this.k.getMeasuredHeight();
@@ -451,7 +451,7 @@ public class eg extends n4 implements AbsListView.OnScrollListener, AdapterView.
         if (yiVar == null || yiVar.getMap() == null || this.t.getMap().M() == null || this.t.getMap().M().b() == null) {
             return;
         }
-        this.v = (((int) this.t.getMap().M().b().f37683c) - i) * 2;
+        this.v = (((int) this.t.getMap().M().b().f23992c) - i) * 2;
         l();
     }
 
@@ -563,11 +563,11 @@ public class eg extends n4 implements AbsListView.OnScrollListener, AdapterView.
         }
         d.a aVar = this.z;
         if (aVar != null) {
-            aVar.f37416a.setTextColor(-16777216);
+            aVar.f23725a.setTextColor(-16777216);
             this.z.b.setVisibility(4);
         }
         d.a aVar2 = (d.a) view.getTag();
-        aVar2.f37416a.setTextColor(-1);
+        aVar2.f23725a.setTextColor(-1);
         aVar2.b.setVisibility(0);
         this.z = aVar2;
         this.l = i;

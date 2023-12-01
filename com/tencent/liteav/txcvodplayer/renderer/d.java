@@ -4,10 +4,10 @@ package com.tencent.liteav.txcvodplayer.renderer;
 public final /* synthetic */ class d implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final c f36567a;
+    private final c f22876a;
 
     private d(c cVar) {
-        this.f36567a = cVar;
+        this.f22876a = cVar;
     }
 
     public static Runnable a(c cVar) {
@@ -16,6 +16,6 @@ public final /* synthetic */ class d implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        c.b(this.f36567a);
+        c.b(this.f22876a);
     }
 }

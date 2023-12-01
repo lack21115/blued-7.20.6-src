@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -36,11 +37,11 @@ import com.soft.blued.ui.web.NoTitleWebViewShowFragment;
 public class LiveChatReportWebViewFragment extends BaseFragment implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31589a;
+    private Context f17899a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f31590c;
+    private View f17900c;
     private ImageView d;
     private ImageView e;
     private TabPageIndicatorWithDot f;
@@ -94,15 +95,15 @@ public class LiveChatReportWebViewFragment extends BaseFragment implements View.
     public class MyAdapter extends FragmentPagerAdapter {
 
         /* renamed from: a  reason: collision with root package name */
-        FragmentManager f31594a;
+        FragmentManager f17904a;
 
         /* renamed from: c  reason: collision with root package name */
-        private String[] f31595c;
+        private String[] f17905c;
 
         public MyAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
-            this.f31595c = LiveChatReportWebViewFragment.this.f31589a.getResources().getStringArray(R.array.live_report_title);
-            this.f31594a = fragmentManager;
+            this.f17905c = LiveChatReportWebViewFragment.this.f17899a.getResources().getStringArray(R.array.live_report_title);
+            this.f17904a = fragmentManager;
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
@@ -124,17 +125,17 @@ public class LiveChatReportWebViewFragment extends BaseFragment implements View.
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f31595c.length;
+            return this.f17905c.length;
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return this.f31595c[i];
+            return this.f17905c[i];
         }
     }
 
     public static void a(Context context) {
-        TerminalActivity.d(context, LiveChatReportWebViewFragment.class, null);
+        TerminalActivity.d(context, LiveChatReportWebViewFragment.class, (Bundle) null);
     }
 
     private void c() {
@@ -153,19 +154,18 @@ public class LiveChatReportWebViewFragment extends BaseFragment implements View.
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
-        UserHttpUtils.a(UserInfo.getInstance().getLoginUserInfo().getUid(), new BluedUIHttpResponse<BluedEntityA<LiveChatSwitchModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.mine.fragment.LiveChatReportWebViewFragment.2
+        UserHttpUtils.a(UserInfo.getInstance().getLoginUserInfo().getUid(), (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<LiveChatSwitchModel>>(getFragmentActive()) { // from class: com.soft.blued.ui.mine.fragment.LiveChatReportWebViewFragment.2
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<LiveChatSwitchModel> bluedEntityA) {
-                if (bluedEntityA.getSingleData() == null || StringUtils.a(bluedEntityA.getSingleData().switch_status, 0) != 1) {
+                if (bluedEntityA.getSingleData() == null || StringUtils.a(((LiveChatSwitchModel) bluedEntityA.getSingleData()).switch_status, 0) != 1) {
                     LiveChatReportWebViewFragment.this.e.setVisibility(8);
                     return;
                 }
                 LiveChatReportWebViewFragment.this.e.setVisibility(0);
                 LiveChatReportWebViewFragment.this.e.setOnClickListener(LiveChatReportWebViewFragment.this);
             }
-        }, getFragmentActive());
+        }, (IRequestHost) getFragmentActive());
     }
 
     private void e() {
@@ -173,7 +173,7 @@ public class LiveChatReportWebViewFragment extends BaseFragment implements View.
             g();
             return;
         }
-        this.f31590c.setVisibility(0);
+        this.f17900c.setVisibility(0);
         f();
     }
 
@@ -187,7 +187,7 @@ public class LiveChatReportWebViewFragment extends BaseFragment implements View.
 
     /* JADX INFO: Access modifiers changed from: private */
     public void g() {
-        this.f31590c.setVisibility(8);
+        this.f17900c.setVisibility(8);
         ObjectAnimator ofObject = ObjectAnimator.ofObject(this.g, "layoutParams", new HeightEvaluator(this.g), new ViewGroup.LayoutParams(-1, DensityUtils.a(getContext(), 54.0f)), new ViewGroup.LayoutParams(-1, 0));
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.play(ofObject);
@@ -201,7 +201,7 @@ public class LiveChatReportWebViewFragment extends BaseFragment implements View.
         this.i = myAdapter;
         this.h.setAdapter(myAdapter);
         this.h.setOffscreenPageLimit(2);
-        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.b.findViewById(2131373299);
+        TabPageIndicatorWithDot tabPageIndicatorWithDot = (TabPageIndicatorWithDot) this.b.findViewById(R.id.vp_indicator);
         this.f = tabPageIndicatorWithDot;
         tabPageIndicatorWithDot.setViewPager(this.h);
         this.f.setOnPageChangeListener(this.k);
@@ -235,25 +235,24 @@ public class LiveChatReportWebViewFragment extends BaseFragment implements View.
             case R.id.ll_live_chat /* 2131367970 */:
                 EventTrackYY.a(ChatRoomProtos.Event.ANCHOR_REPORT_FORM_PAGE_MORE_YY_CLICK);
                 g();
-                YYChatRoomsListFragment.f17120a.a(getContext(), "anchor_report_yy_hall");
+                YYChatRoomsListFragment.a.a(getContext(), "anchor_report_yy_hall");
                 return;
             default:
                 return;
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(18);
-        this.f31589a = getActivity();
+        this.f17899a = getActivity();
         View view = this.b;
         if (view == null) {
             View inflate = layoutInflater.inflate(R.layout.fragment_live_chat_report_web_view, (ViewGroup) null);
             this.b = inflate;
             this.g = (LinearLayout) inflate.findViewById(R.id.ll_live_chat);
-            this.f31590c = this.b.findViewById(2131363095);
+            this.f17900c = this.b.findViewById(2131363095);
             this.g.setOnClickListener(this);
-            this.f31590c.setOnClickListener(this);
+            this.f17900c.setOnClickListener(this);
             c();
             a();
         } else if (view.getParent() != null) {

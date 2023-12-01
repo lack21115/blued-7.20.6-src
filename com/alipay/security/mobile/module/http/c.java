@@ -6,15 +6,13 @@ import com.alipay.tscenter.biz.rpc.report.general.model.DataReportResult;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/security/mobile/module/http/c.class */
 class c implements Runnable {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ DataReportRequest f4716a;
+    final /* synthetic */ DataReportRequest a;
     final /* synthetic */ b b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(b bVar, DataReportRequest dataReportRequest) {
         this.b = bVar;
-        this.f4716a = dataReportRequest;
+        this.a = dataReportRequest;
     }
 
     @Override // java.lang.Runnable
@@ -23,8 +21,8 @@ class c implements Runnable {
         DataReportResult dataReportResult2;
         DataReportService dataReportService;
         try {
-            dataReportService = this.b.f4715c;
-            DataReportResult unused = b.e = dataReportService.reportData(this.f4716a);
+            dataReportService = this.b.c;
+            DataReportResult unused = b.e = dataReportService.reportData(this.a);
         } catch (Throwable th) {
             DataReportResult unused2 = b.e = new DataReportResult();
             dataReportResult = b.e;

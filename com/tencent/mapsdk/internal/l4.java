@@ -6,13 +6,13 @@ import android.graphics.Rect;
 public class l4 {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f37607c = 72800000;
+    private static final int f23916c = 72800000;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f37606a = 3300000;
+    private static final int f23915a = 3300000;
     private static final int d = 136400000;
     private static final int b = 54800000;
-    public static final Rect e = new Rect(f37607c, f37606a, d, b);
+    public static final Rect e = new Rect(f23916c, f23915a, d, b);
 
     private l4() {
     }

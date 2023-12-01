@@ -57,7 +57,7 @@ public class a implements Runnable {
     private d A;
 
     /* renamed from: a  reason: collision with root package name */
-    private PLVideoSaveListener f27803a;
+    private PLVideoSaveListener f14115a;
     private b b;
     private com.qiniu.pili.droid.shortvideo.encode.e e;
     private c f;
@@ -82,12 +82,12 @@ public class a implements Runnable {
     private int z;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f27804c = 0;
+    private int f14116c = 0;
     private int d = 0;
     private volatile int v = -1;
     private PLDisplayMode B = PLDisplayMode.FIT;
-    private a.InterfaceC0745a C = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.transcoder.a.1
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a C = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.transcoder.a.1
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             e eVar = e.t;
             eVar.c("MultiImageComposer", "got video format:" + mediaFormat);
@@ -95,13 +95,13 @@ public class a implements Runnable {
             a.this.d();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             a.this.j = surface;
             new Thread(a.this).start();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (a.this.b == null) {
                 e eVar = e.t;
@@ -111,10 +111,10 @@ public class a implements Runnable {
             e eVar2 = e.t;
             eVar2.b("MultiImageComposer", "write video " + bufferInfo.presentationTimeUs);
             a.this.b.a(byteBuffer, bufferInfo);
-            a.this.f27803a.onProgressUpdate((((float) bufferInfo.presentationTimeUs) * 1.0f) / ((float) a.this.q));
+            a.this.f14115a.onProgressUpdate((((float) bufferInfo.presentationTimeUs) * 1.0f) / ((float) a.this.q));
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             e eVar = e.t;
             eVar.c("MultiImageComposer", "video encode started result: " + z);
@@ -124,15 +124,15 @@ public class a implements Runnable {
             a.this.a(6);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             e.t.c("MultiImageComposer", "video encode stopped");
             a.this.h = null;
             a.this.c();
         }
     };
-    private a.InterfaceC0745a D = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.transcoder.a.2
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a D = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.transcoder.a.2
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             e eVar = e.t;
             eVar.c("MultiImageComposer", "got audio format:" + mediaFormat);
@@ -140,11 +140,11 @@ public class a implements Runnable {
             a.this.d();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (a.this.b == null) {
                 e eVar = e.t;
@@ -156,7 +156,7 @@ public class a implements Runnable {
             a.this.b.b(byteBuffer, bufferInfo);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             e eVar = e.t;
             eVar.c("MultiImageComposer", "audio encode started: " + z);
@@ -166,12 +166,12 @@ public class a implements Runnable {
             }
             com.qiniu.pili.droid.shortvideo.f.f fVar = new com.qiniu.pili.droid.shortvideo.f.f(a.this.r, false, true);
             a.this.i = new com.qiniu.pili.droid.shortvideo.d.b(fVar.d(), fVar.f());
-            a.this.i.a(new C0752a());
+            a.this.i.a(new C0582a());
             a.this.i.a(a.this.s);
             a.this.i.a();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             e.t.c("MultiImageComposer", "audio encode stopped.");
             a.this.g = null;
@@ -181,8 +181,8 @@ public class a implements Runnable {
 
     /* renamed from: com.qiniu.pili.droid.shortvideo.transcoder.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/qiniu/pili/droid/shortvideo/transcoder/a$a.class */
-    class C0752a implements b.c {
-        private C0752a() {
+    class C0582a implements b.c {
+        private C0582a() {
         }
 
         @Override // com.qiniu.pili.droid.shortvideo.d.b.c
@@ -330,7 +330,7 @@ public class a implements Runnable {
             this.y = null;
             this.x = null;
             this.A = null;
-            this.f27804c = 0;
+            this.f14116c = 0;
             this.d = 0;
             this.q = 0L;
             this.p = 0L;
@@ -342,16 +342,16 @@ public class a implements Runnable {
                 if (b()) {
                     int i2 = this.v;
                     this.v = -1;
-                    this.f27803a.onSaveVideoFailed(i2);
+                    this.f14115a.onSaveVideoFailed(i2);
                 } else {
-                    this.f27803a.onSaveVideoCanceled();
+                    this.f14115a.onSaveVideoCanceled();
                 }
             } else if (z) {
-                this.f27803a.onProgressUpdate(1.0f);
-                this.f27803a.onSaveVideoSuccess(this.l);
+                this.f14115a.onProgressUpdate(1.0f);
+                this.f14115a.onSaveVideoSuccess(this.l);
             } else {
                 new File(this.l).delete();
-                this.f27803a.onSaveVideoFailed(3);
+                this.f14115a.onSaveVideoFailed(3);
             }
             e.t.c("MultiImageComposer", "stopMuxer -");
         }
@@ -365,8 +365,8 @@ public class a implements Runnable {
                 e.t.c("MultiImageComposer", "composer is already canceled");
                 return;
             }
-            int i = this.f27804c + 1;
-            this.f27804c = i;
+            int i = this.f14116c + 1;
+            this.f14116c = i;
             if (this.f != null && i < 2) {
                 e.t.c("MultiImageComposer", "not ready to start muxer.");
                 try {
@@ -412,7 +412,7 @@ public class a implements Runnable {
                 }
                 this.k = new LinkedList<>(list);
                 this.l = str2;
-                this.f27803a = pLVideoSaveListener == null ? E : pLVideoSaveListener;
+                this.f14115a = pLVideoSaveListener == null ? E : pLVideoSaveListener;
                 this.m = pLVideoEncodeSetting.getVideoEncodingWidth();
                 this.n = pLVideoEncodeSetting.getVideoEncodingHeight();
                 this.o = 1000000 / pLVideoEncodeSetting.getVideoEncodingFps();

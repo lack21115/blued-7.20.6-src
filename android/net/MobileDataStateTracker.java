@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.NetworkInfo;
 import android.net.SamplingDataTracker;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,13 +19,9 @@ import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Slog;
-import com.android.internal.R;
-import com.android.internal.telephony.DctConstants;
 import com.android.internal.telephony.ITelephony;
 import com.android.internal.telephony.PhoneConstants;
-import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.util.AsyncChannel;
-import com.android.internal.util.cm.QSConstants;
 import java.io.CharArrayWriter;
 import java.io.PrintWriter;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -106,7 +103,7 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
                         return;
                     }
                     return;
-                case AsyncChannel.CMD_CHANNEL_DISCONNECTED /* 69636 */:
+                case 69636:
                     this.mMdst.mDataConnectionTrackerAc = null;
                     return;
                 default:
@@ -123,20 +120,20 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
         @Override // android.content.BroadcastReceiver
         public void onReceive(Context context, Intent intent) {
             boolean z = true;
-            if (intent.getAction().equals(TelephonyIntents.ACTION_DATA_CONNECTION_CONNECTED_TO_PROVISIONING_APN)) {
-                String stringExtra = intent.getStringExtra("apn");
-                if (TextUtils.equals(MobileDataStateTracker.this.mApnType, intent.getStringExtra("apnType"))) {
+            if (intent.getAction().equals("android.intent.action.DATA_CONNECTION_CONNECTED_TO_PROVISIONING_APN")) {
+                String stringExtra = intent.getStringExtra(TelephonyManager.EXTRA_DATA_APN);
+                if (TextUtils.equals(MobileDataStateTracker.this.mApnType, intent.getStringExtra(TelephonyManager.EXTRA_DATA_APN_TYPE))) {
                     MobileDataStateTracker.this.mMobileDataState = PhoneConstants.DataState.CONNECTING;
                     MobileDataStateTracker.this.updateLinkProperitesAndCapatilities(intent);
                     MobileDataStateTracker.this.mNetworkInfo.setIsConnectedToProvisioningNetwork(true);
                     MobileDataStateTracker.this.setDetailedState(NetworkInfo.DetailedState.SUSPENDED, "", stringExtra);
                 }
-            } else if (!intent.getAction().equals(TelephonyIntents.ACTION_ANY_DATA_CONNECTION_STATE_CHANGED)) {
-                if (intent.getAction().equals(TelephonyIntents.ACTION_DATA_CONNECTION_FAILED) && TextUtils.equals(intent.getStringExtra("apnType"), MobileDataStateTracker.this.mApnType)) {
+            } else if (!intent.getAction().equals("android.intent.action.ANY_DATA_STATE")) {
+                if (intent.getAction().equals("android.intent.action.DATA_CONNECTION_FAILED") && TextUtils.equals(intent.getStringExtra(TelephonyManager.EXTRA_DATA_APN_TYPE), MobileDataStateTracker.this.mApnType)) {
                     MobileDataStateTracker.this.mNetworkInfo.setIsConnectedToProvisioningNetwork(false);
-                    MobileDataStateTracker.this.setDetailedState(NetworkInfo.DetailedState.FAILED, intent.getStringExtra("reason"), intent.getStringExtra("apn"));
+                    MobileDataStateTracker.this.setDetailedState(NetworkInfo.DetailedState.FAILED, intent.getStringExtra("reason"), intent.getStringExtra(TelephonyManager.EXTRA_DATA_APN));
                 }
-            } else if (TextUtils.equals(intent.getStringExtra("apnType"), MobileDataStateTracker.this.mApnType)) {
+            } else if (TextUtils.equals(intent.getStringExtra(TelephonyManager.EXTRA_DATA_APN_TYPE), MobileDataStateTracker.this.mApnType)) {
                 MobileDataStateTracker.this.mNetworkInfo.setIsConnectedToProvisioningNetwork(false);
                 int subtype = MobileDataStateTracker.this.mNetworkInfo.getSubtype();
                 int networkType = TelephonyManager.getDefault().getNetworkType();
@@ -144,17 +141,17 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
                 if (networkType != subtype && MobileDataStateTracker.this.mNetworkInfo.isConnected()) {
                     MobileDataStateTracker.this.mTarget.obtainMessage(NetworkStateTracker.EVENT_NETWORK_SUBTYPE_CHANGED, subtype, 0, MobileDataStateTracker.this.mNetworkInfo).sendToTarget();
                 }
-                PhoneConstants.DataState dataState = (PhoneConstants.DataState) Enum.valueOf(PhoneConstants.DataState.class, intent.getStringExtra("state"));
+                PhoneConstants.DataState valueOf = Enum.valueOf(PhoneConstants.DataState.class, intent.getStringExtra("state"));
                 String stringExtra2 = intent.getStringExtra("reason");
-                String stringExtra3 = intent.getStringExtra("apn");
-                MobileDataStateTracker.this.mNetworkInfo.setRoaming(intent.getBooleanExtra(PhoneConstants.DATA_NETWORK_ROAMING_KEY, false));
+                String stringExtra3 = intent.getStringExtra(TelephonyManager.EXTRA_DATA_APN);
+                MobileDataStateTracker.this.mNetworkInfo.setRoaming(intent.getBooleanExtra("networkRoaming", false));
                 NetworkInfo networkInfo = MobileDataStateTracker.this.mNetworkInfo;
-                if (intent.getBooleanExtra(PhoneConstants.NETWORK_UNAVAILABLE_KEY, false)) {
+                if (intent.getBooleanExtra("networkUnvailable", false)) {
                     z = false;
                 }
                 networkInfo.setIsAvailable(z);
-                if (MobileDataStateTracker.this.mMobileDataState == dataState) {
-                    if (TextUtils.equals(stringExtra2, PhoneConstants.REASON_LINK_PROPERTIES_CHANGED)) {
+                if (MobileDataStateTracker.this.mMobileDataState == valueOf) {
+                    if (TextUtils.equals(stringExtra2, "linkPropertiesChanged")) {
                         MobileDataStateTracker.this.mLinkProperties = (LinkProperties) intent.getParcelableExtra("linkProperties");
                         if (MobileDataStateTracker.this.mLinkProperties == null) {
                             MobileDataStateTracker.this.loge("No link property in LINK_PROPERTIES change event.");
@@ -166,8 +163,8 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
                     }
                     return;
                 }
-                MobileDataStateTracker.this.mMobileDataState = dataState;
-                switch (AnonymousClass2.$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState[dataState.ordinal()]) {
+                MobileDataStateTracker.this.mMobileDataState = valueOf;
+                switch (AnonymousClass2.$SwitchMap$com$android$internal$telephony$PhoneConstants$DataState[valueOf.ordinal()]) {
                     case 1:
                         if (MobileDataStateTracker.this.isTeardownRequested()) {
                             MobileDataStateTracker.this.setTeardownRequested(false);
@@ -290,23 +287,23 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
                 sloge("Error mapping networkType " + i + " to apnType.");
                 return null;
             case 2:
-                return PhoneConstants.APN_TYPE_MMS;
+                return "mms";
             case 3:
-                return PhoneConstants.APN_TYPE_SUPL;
+                return "supl";
             case 4:
-                return PhoneConstants.APN_TYPE_DUN;
+                return "dun";
             case 5:
-                return PhoneConstants.APN_TYPE_HIPRI;
+                return "hipri";
             case 10:
-                return PhoneConstants.APN_TYPE_FOTA;
+                return "fota";
             case 11:
-                return PhoneConstants.APN_TYPE_IMS;
+                return "ims";
             case 12:
-                return PhoneConstants.APN_TYPE_CBS;
+                return "cbs";
             case 14:
-                return PhoneConstants.APN_TYPE_IA;
+                return "ia";
             case 15:
-                return PhoneConstants.APN_TYPE_EMERGENCY;
+                return "emergency";
         }
     }
 
@@ -362,8 +359,8 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
             loge("CONNECTED event did not supply link properties.");
             this.mLinkProperties = new LinkProperties();
         }
-        this.mLinkProperties.setMtu(this.mContext.getResources().getInteger(R.integer.config_mobile_mtu));
-        this.mNetworkCapabilities = (NetworkCapabilities) intent.getParcelableExtra("networkCapabilities");
+        this.mLinkProperties.setMtu(this.mContext.getResources().getInteger(17694850));
+        this.mNetworkCapabilities = (NetworkCapabilities) intent.getParcelableExtra(WifiManager.EXTRA_NETWORK_CAPABILITIES);
         if (this.mNetworkCapabilities == null) {
             loge("CONNECTED event did not supply network capabilities.");
             this.mNetworkCapabilities = new NetworkCapabilities();
@@ -386,8 +383,8 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
         AsyncChannel asyncChannel = this.mDataConnectionTrackerAc;
         if (asyncChannel != null) {
             Message obtain = Message.obtain();
-            obtain.what = DctConstants.CMD_ENABLE_MOBILE_PROVISIONING;
-            obtain.setData(Bundle.forPair(DctConstants.PROVISIONING_URL_KEY, str));
+            obtain.what = 270373;
+            obtain.setData(Bundle.forPair("provisioningUrl", str));
             asyncChannel.sendMessage(obtain);
         }
     }
@@ -487,7 +484,7 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
                 break;
             case 13:
             case 18:
-                str = QSConstants.TILE_LTE;
+                str = "lte";
                 break;
             case 14:
                 str = "ehrpd";
@@ -522,8 +519,8 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
     public boolean isProvisioningNetwork() {
         try {
             Message obtain = Message.obtain();
-            obtain.what = DctConstants.CMD_IS_PROVISIONING_APN;
-            obtain.setData(Bundle.forPair("apnType", this.mApnType));
+            obtain.what = 270374;
+            obtain.setData(Bundle.forPair(TelephonyManager.EXTRA_DATA_APN_TYPE, this.mApnType));
             return this.mDataConnectionTrackerAc.sendMessageSynchronously(obtain).arg1 == 1;
         } catch (NullPointerException e) {
             loge("isProvisioningNetwork: X " + e);
@@ -568,10 +565,10 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
 
     @Override // android.net.BaseNetworkStateTracker, android.net.NetworkStateTracker
     public void setDependencyMet(boolean z) {
-        Bundle forPair = Bundle.forPair("apnType", this.mApnType);
+        Bundle forPair = Bundle.forPair(TelephonyManager.EXTRA_DATA_APN_TYPE, this.mApnType);
         try {
             Message obtain = Message.obtain();
-            obtain.what = DctConstants.CMD_SET_DEPENDENCY_MET;
+            obtain.what = 270367;
             obtain.arg1 = z ? 1 : 0;
             obtain.setData(forPair);
             this.mDataConnectionTrackerAc.sendMessage(obtain);
@@ -583,14 +580,14 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
     public void setEnableFailFastMobileData(int i) {
         AsyncChannel asyncChannel = this.mDataConnectionTrackerAc;
         if (asyncChannel != null) {
-            asyncChannel.sendMessage(DctConstants.CMD_SET_ENABLE_FAIL_FAST_MOBILE_DATA, i);
+            asyncChannel.sendMessage(270372, i);
         }
     }
 
     public void setInternalDataEnable(boolean z) {
         AsyncChannel asyncChannel = this.mDataConnectionTrackerAc;
         if (asyncChannel != null) {
-            asyncChannel.sendMessage(DctConstants.EVENT_SET_INTERNAL_DATA_ENABLE, z ? 1 : 0);
+            asyncChannel.sendMessage(270363, z ? 1 : 0);
         }
     }
 
@@ -598,7 +595,7 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
     public void setPolicyDataEnable(boolean z) {
         AsyncChannel asyncChannel = this.mDataConnectionTrackerAc;
         if (asyncChannel != null) {
-            asyncChannel.sendMessage(DctConstants.CMD_SET_POLICY_DATA_ENABLE, z ? 1 : 0);
+            asyncChannel.sendMessage(270368, z ? 1 : 0);
             this.mPolicyDataEnabled = z;
         }
     }
@@ -638,7 +635,7 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
     public void setUserDataEnable(boolean z) {
         AsyncChannel asyncChannel = this.mDataConnectionTrackerAc;
         if (asyncChannel != null) {
-            asyncChannel.sendMessage(DctConstants.CMD_SET_USER_DATA_ENABLE, z ? 1 : 0);
+            asyncChannel.sendMessage(270366, z ? 1 : 0);
             this.mUserDataEnabled = z;
         }
     }
@@ -649,9 +646,9 @@ public class MobileDataStateTracker extends BaseNetworkStateTracker {
         this.mContext = context;
         this.mHandler = new MdstHandler(handler.getLooper(), this);
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(TelephonyIntents.ACTION_ANY_DATA_CONNECTION_STATE_CHANGED);
-        intentFilter.addAction(TelephonyIntents.ACTION_DATA_CONNECTION_CONNECTED_TO_PROVISIONING_APN);
-        intentFilter.addAction(TelephonyIntents.ACTION_DATA_CONNECTION_FAILED);
+        intentFilter.addAction("android.intent.action.ANY_DATA_STATE");
+        intentFilter.addAction("android.intent.action.DATA_CONNECTION_CONNECTED_TO_PROVISIONING_APN");
+        intentFilter.addAction("android.intent.action.DATA_CONNECTION_FAILED");
         this.mContext.registerReceiver(new MobileDataStateReceiver(), intentFilter);
         this.mMobileDataState = PhoneConstants.DataState.DISCONNECTED;
         ((TelephonyManager) this.mContext.getSystemService("phone")).listen(this.mPhoneStateListener, 256);

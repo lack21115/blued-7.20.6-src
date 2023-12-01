@@ -30,14 +30,14 @@ public abstract class ImageViewTarget<Z> extends ViewTarget<ImageView, Z> implem
 
     @Override // com.bumptech.glide.request.transition.Transition.ViewAdapter
     public Drawable a() {
-        return ((ImageView) this.f21072a).getDrawable();
+        return ((ImageView) this.f7466a).getDrawable();
     }
 
     protected abstract void a(Z z);
 
     @Override // com.bumptech.glide.request.transition.Transition.ViewAdapter
     public void b(Drawable drawable) {
-        ((ImageView) this.f21072a).setImageDrawable(drawable);
+        ((ImageView) this.f7466a).setImageDrawable(drawable);
     }
 
     @Override // com.bumptech.glide.request.target.ViewTarget, com.bumptech.glide.request.target.BaseTarget, com.bumptech.glide.request.target.Target

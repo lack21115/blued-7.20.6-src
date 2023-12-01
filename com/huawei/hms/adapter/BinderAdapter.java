@@ -18,11 +18,11 @@ import com.huawei.hms.utils.Util;
 public class BinderAdapter implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22419a;
+    private Context f8811a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f22420c;
+    private final String f8812c;
     private BinderCallBack d;
     private IBinder e;
     private final Object f = new Object();
@@ -46,19 +46,19 @@ public class BinderAdapter implements ServiceConnection {
     }
 
     public BinderAdapter(Context context, String str, String str2) {
-        this.f22419a = context;
+        this.f8811a = context;
         this.b = str;
-        this.f22420c = str2;
+        this.f8812c = str2;
     }
 
     private void c() {
-        if (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f22420c)) {
+        if (TextUtils.isEmpty(this.b) || TextUtils.isEmpty(this.f8812c)) {
             g();
         }
         Intent intent = new Intent(this.b);
-        intent.setPackage(this.f22420c);
+        intent.setPackage(this.f8812c);
         synchronized (this.f) {
-            if (this.f22419a.bindService(intent, this, 1)) {
+            if (this.f8811a.bindService(intent, this, 1)) {
                 i();
                 return;
             }
@@ -107,7 +107,7 @@ public class BinderAdapter implements ServiceConnection {
 
     private void g() {
         HMSLog.e("BinderAdapter", "In connect, bind core service fail");
-        ComponentName componentName = new ComponentName(this.f22419a.getApplicationInfo().packageName, "com.huawei.hms.activity.BridgeActivity");
+        ComponentName componentName = new ComponentName(this.f8811a.getApplicationInfo().packageName, "com.huawei.hms.activity.BridgeActivity");
         Intent intent = new Intent();
         intent.setComponent(componentName);
         intent.putExtra(BridgeActivity.EXTRA_DELEGATE_CLASS_NAME, BindingFailedResolution.class.getName());
@@ -215,7 +215,7 @@ public class BinderAdapter implements ServiceConnection {
     }
 
     public void unBind() {
-        Util.unBindServiceCatchException(this.f22419a, this);
+        Util.unBindServiceCatchException(this.f8811a, this);
     }
 
     public void updateDelayTask() {

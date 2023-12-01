@@ -38,14 +38,14 @@ public abstract class j {
     }
 
     public static j a(g gVar, String str) {
-        Charset charset = m.f24050c;
+        Charset charset = m.f10439c;
         g gVar2 = gVar;
         if (gVar != null) {
             Charset b = gVar.b();
             charset = b;
             gVar2 = gVar;
             if (b == null) {
-                charset = m.f24050c;
+                charset = m.f10439c;
                 gVar2 = g.a(gVar + "; charset=utf-8");
             }
         }

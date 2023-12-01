@@ -18,6 +18,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 import com.alipay.sdk.util.i;
+import com.android.internal.R;
 import com.blued.android.framework.view.stickygridheaders.StickyGridHeadersBaseAdapterWrapper;
 import com.bytedance.applog.tracker.Tracker;
 import java.lang.reflect.Field;
@@ -38,9 +39,7 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
     private int I;
     private int J;
     public CheckForHeaderLongPress b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public CheckForHeaderTap f10304c;
+    public CheckForHeaderTap c;
     protected StickyGridHeadersBaseAdapterWrapper d;
     protected boolean e;
     protected int f;
@@ -64,9 +63,7 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
     private OnHeaderClickListener y;
     private OnHeaderLongClickListener z;
     private static final String i = "Error supporting platform " + Build.VERSION.SDK_INT + ".";
-
-    /* renamed from: a  reason: collision with root package name */
-    static final String f10303a = StickyGridHeadersGridView.class.getSimpleName();
+    static final String a = StickyGridHeadersGridView.class.getSimpleName();
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersGridView$CheckForHeaderLongPress.class */
     class CheckForHeaderLongPress extends WindowRunnable implements Runnable {
@@ -77,16 +74,16 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
         @Override // java.lang.Runnable
         public void run() {
             StickyGridHeadersGridView stickyGridHeadersGridView = StickyGridHeadersGridView.this;
-            View a2 = stickyGridHeadersGridView.a(stickyGridHeadersGridView.f);
-            if (a2 != null) {
+            View a = stickyGridHeadersGridView.a(stickyGridHeadersGridView.f);
+            if (a != null) {
                 StickyGridHeadersGridView stickyGridHeadersGridView2 = StickyGridHeadersGridView.this;
-                if (!((!b() || StickyGridHeadersGridView.this.e) ? false : StickyGridHeadersGridView.this.b(a2, stickyGridHeadersGridView2.b(stickyGridHeadersGridView2.f)))) {
+                if (!((!b() || StickyGridHeadersGridView.this.e) ? false : StickyGridHeadersGridView.this.b(a, stickyGridHeadersGridView2.b(stickyGridHeadersGridView2.f)))) {
                     StickyGridHeadersGridView.this.g = 2;
                     return;
                 }
                 StickyGridHeadersGridView.this.g = -2;
                 StickyGridHeadersGridView.this.setPressed(false);
-                a2.setPressed(false);
+                a.setPressed(false);
             }
         }
     }
@@ -101,15 +98,15 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
             if (StickyGridHeadersGridView.this.g == 0) {
                 StickyGridHeadersGridView.this.g = 1;
                 StickyGridHeadersGridView stickyGridHeadersGridView = StickyGridHeadersGridView.this;
-                View a2 = stickyGridHeadersGridView.a(stickyGridHeadersGridView.f);
-                if (a2 == null || StickyGridHeadersGridView.this.h) {
+                View a = stickyGridHeadersGridView.a(stickyGridHeadersGridView.f);
+                if (a == null || StickyGridHeadersGridView.this.h) {
                     return;
                 }
                 if (StickyGridHeadersGridView.this.e) {
                     StickyGridHeadersGridView.this.g = 2;
                     return;
                 }
-                a2.setPressed(true);
+                a.setPressed(true);
                 StickyGridHeadersGridView.this.setPressed(true);
                 StickyGridHeadersGridView.this.refreshDrawableState();
                 int longPressTimeout = ViewConfiguration.getLongPressTimeout();
@@ -140,9 +137,7 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersGridView$PerformHeaderClick.class */
     class PerformHeaderClick extends WindowRunnable implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f10311a;
+        int a;
 
         private PerformHeaderClick() {
             super();
@@ -151,12 +146,12 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
         @Override // java.lang.Runnable
         public void run() {
             int i;
-            View a2;
-            if (StickyGridHeadersGridView.this.e || StickyGridHeadersGridView.this.d == null || StickyGridHeadersGridView.this.d.getCount() <= 0 || (i = this.f10311a) == -1 || i >= StickyGridHeadersGridView.this.d.getCount() || !b() || (a2 = StickyGridHeadersGridView.this.a(this.f10311a)) == null) {
+            View a;
+            if (StickyGridHeadersGridView.this.e || StickyGridHeadersGridView.this.d == null || StickyGridHeadersGridView.this.d.getCount() <= 0 || (i = this.a) == -1 || i >= StickyGridHeadersGridView.this.d.getCount() || !b() || (a = StickyGridHeadersGridView.this.a(this.a)) == null) {
                 return;
             }
             StickyGridHeadersGridView stickyGridHeadersGridView = StickyGridHeadersGridView.this;
-            stickyGridHeadersGridView.a(a2, stickyGridHeadersGridView.b(this.f10311a));
+            stickyGridHeadersGridView.a(a, stickyGridHeadersGridView.b(this.a));
         }
     }
 
@@ -186,13 +181,11 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
                 return new SavedState[i];
             }
         };
-
-        /* renamed from: a  reason: collision with root package name */
-        boolean f10313a;
+        boolean a;
 
         private SavedState(Parcel parcel) {
             super(parcel);
-            this.f10313a = parcel.readByte() != 0;
+            this.a = parcel.readByte() != 0;
         }
 
         public SavedState(Parcelable parcelable) {
@@ -200,32 +193,30 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
         }
 
         public String toString() {
-            return "StickyGridHeadersGridView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " areHeadersSticky=" + this.f10313a + i.d;
+            return "StickyGridHeadersGridView.SavedState{" + Integer.toHexString(System.identityHashCode(this)) + " areHeadersSticky=" + this.a + i.d;
         }
 
         @Override // android.view.AbsSavedState, android.os.Parcelable
         public void writeToParcel(Parcel parcel, int i) {
             super.writeToParcel(parcel, i);
-            parcel.writeByte(this.f10313a ? (byte) 1 : (byte) 0);
+            parcel.writeByte(this.a ? (byte) 1 : (byte) 0);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/stickygridheaders/StickyGridHeadersGridView$WindowRunnable.class */
     public class WindowRunnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f10314a;
+        private int a;
 
         private WindowRunnable() {
         }
 
         public void a() {
-            this.f10314a = StickyGridHeadersGridView.this.getWindowAttachCount();
+            this.a = StickyGridHeadersGridView.this.getWindowAttachCount();
         }
 
         public boolean b() {
-            return StickyGridHeadersGridView.this.hasWindowFocus() && StickyGridHeadersGridView.this.getWindowAttachCount() == this.f10314a;
+            return StickyGridHeadersGridView.this.hasWindowFocus() && StickyGridHeadersGridView.this.getWindowAttachCount() == this.a;
         }
     }
 
@@ -234,7 +225,7 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
     }
 
     public StickyGridHeadersGridView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842865);
+        this(context, attributeSet, R.attr.gridViewStyle);
     }
 
     public StickyGridHeadersGridView(Context context, AttributeSet attributeSet, int i2) {
@@ -676,14 +667,14 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
     public void onRestoreInstanceState(Parcelable parcelable) {
         SavedState savedState = (SavedState) parcelable;
         super.onRestoreInstanceState(savedState.getSuperState());
-        this.j = savedState.f10313a;
+        this.j = savedState.a;
         requestLayout();
     }
 
     @Override // android.widget.AbsListView, android.view.View
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
-        savedState.f10313a = this.j;
+        savedState.a = this.j;
         return savedState;
     }
 
@@ -734,10 +725,10 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
         }
         int i4 = action & 255;
         if (i4 == 0) {
-            if (this.f10304c == null) {
-                this.f10304c = new CheckForHeaderTap();
+            if (this.c == null) {
+                this.c = new CheckForHeaderTap();
             }
-            postDelayed(this.f10304c, ViewConfiguration.getTapTimeout());
+            postDelayed(this.c, ViewConfiguration.getTapTimeout());
             float y = (int) motionEvent.getY();
             this.u = y;
             int a3 = a(y);
@@ -775,13 +766,13 @@ public class StickyGridHeadersGridView extends GridView implements AbsListView.O
                         this.D = new PerformHeaderClick();
                     }
                     final PerformHeaderClick performHeaderClick = this.D;
-                    performHeaderClick.f10311a = this.f;
+                    performHeaderClick.a = this.f;
                     performHeaderClick.a();
                     int i7 = this.g;
                     if (i7 == 0 || i7 == 1) {
                         Handler handler = getHandler();
                         if (handler != null) {
-                            handler.removeCallbacks(this.g == 0 ? this.f10304c : this.b);
+                            handler.removeCallbacks(this.g == 0 ? this.c : this.b);
                         }
                         if (this.e) {
                             this.g = -1;

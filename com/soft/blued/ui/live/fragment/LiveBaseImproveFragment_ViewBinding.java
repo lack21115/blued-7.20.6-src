@@ -18,7 +18,7 @@ public class LiveBaseImproveFragment_ViewBinding implements Unbinder {
         liveBaseImproveFragment.fl_error_page = Utils.a(view, R.id.fl_error_page, "field 'fl_error_page'");
         liveBaseImproveFragment.tv_reload = Utils.a(view, 2131372414, "field 'tv_reload'");
         liveBaseImproveFragment.tv_start_verify = (TextView) Utils.a(view, R.id.tv_start_verify, "field 'tv_start_verify'", TextView.class);
-        liveBaseImproveFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, 2131370749, "field 'top_title'", CommonTopTitleNoTrans.class);
+        liveBaseImproveFragment.top_title = (CommonTopTitleNoTrans) Utils.a(view, R.id.top_title, "field 'top_title'", CommonTopTitleNoTrans.class);
         liveBaseImproveFragment.live_id_card_error = Utils.a(view, R.id.live_id_card_error, "field 'live_id_card_error'");
         liveBaseImproveFragment.live_add_card_layout1 = Utils.a(view, R.id.live_add_card_layout1, "field 'live_add_card_layout1'");
         liveBaseImproveFragment.live_add_card_layout2 = Utils.a(view, R.id.live_add_card_layout2, "field 'live_add_card_layout2'");
@@ -29,7 +29,7 @@ public class LiveBaseImproveFragment_ViewBinding implements Unbinder {
         liveBaseImproveFragment.tv_binding_credit_card = (TextView) Utils.a(view, R.id.tv_binding_credit_card, "field 'tv_binding_credit_card'", TextView.class);
         liveBaseImproveFragment.tv_binding_credit_card_status = (TextView) Utils.a(view, R.id.tv_binding_credit_card_status, "field 'tv_binding_credit_card_status'", TextView.class);
         liveBaseImproveFragment.iv_card_binded = (ImageView) Utils.a(view, R.id.iv_card_binded, "field 'iv_card_binded'", ImageView.class);
-        liveBaseImproveFragment.ll_bottom_button = Utils.a(view, 2131367669, "field 'll_bottom_button'");
+        liveBaseImproveFragment.ll_bottom_button = Utils.a(view, R.id.ll_bottom_button, "field 'll_bottom_button'");
     }
 
     @Override // butterknife.Unbinder

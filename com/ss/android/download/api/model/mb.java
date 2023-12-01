@@ -10,24 +10,24 @@ public class mb {
 
     /* renamed from: com.ss.android.download.api.model.mb$mb  reason: collision with other inner class name */
     /* loaded from: source-8457232-dex2jar.jar:com/ss/android/download/api/model/mb$mb.class */
-    public static class C0870mb {
+    public static class C0700mb {
         private String b;
         private String h;
         private String hj;
         private String mb;
         private String ox;
 
-        public C0870mb b(String str) {
+        public C0700mb b(String str) {
             this.hj = str;
             return this;
         }
 
-        public C0870mb hj(String str) {
+        public C0700mb hj(String str) {
             this.h = str;
             return this;
         }
 
-        public C0870mb mb(String str) {
+        public C0700mb mb(String str) {
             this.mb = str;
             return this;
         }
@@ -36,18 +36,18 @@ public class mb {
             return new mb(this);
         }
 
-        public C0870mb ox(String str) {
+        public C0700mb ox(String str) {
             this.ox = str;
             return this;
         }
     }
 
-    public mb(C0870mb c0870mb) {
+    public mb(C0700mb c0700mb) {
         this.ox = "";
-        this.mb = c0870mb.mb;
-        this.ox = c0870mb.ox;
-        this.b = c0870mb.b;
-        this.hj = c0870mb.hj;
-        this.h = c0870mb.h;
+        this.mb = c0700mb.mb;
+        this.ox = c0700mb.ox;
+        this.b = c0700mb.b;
+        this.hj = c0700mb.hj;
+        this.h = c0700mb.h;
     }
 }

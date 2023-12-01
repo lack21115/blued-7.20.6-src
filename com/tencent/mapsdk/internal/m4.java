@@ -8,11 +8,11 @@ public class m4 {
     public static final String D = "AIBuildingList";
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f37627a = "mapConfigVersion";
+    public static final String f23936a = "mapConfigVersion";
     public static final String b = "mapConfigLastCheckTime";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f37628c = "poiIconVersion";
+    public static final String f23937c = "poiIconVersion";
     public static final String d = "mapIconVersion";
     public static final String e = "sdkVersion";
     public static final String f = "mapConfigStyle";

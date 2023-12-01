@@ -250,8 +250,8 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
     }
 
     public static AccessibilityEvent obtain() {
-        AccessibilityEvent acquire = sPool.acquire();
-        return acquire != null ? acquire : new AccessibilityEvent();
+        AccessibilityEvent accessibilityEvent = (AccessibilityEvent) sPool.acquire();
+        return accessibilityEvent != null ? accessibilityEvent : new AccessibilityEvent();
     }
 
     public static AccessibilityEvent obtain(int i) {
@@ -291,9 +291,9 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
         accessibilityRecord.mMaxScrollY = parcel.readInt();
         accessibilityRecord.mAddedCount = parcel.readInt();
         accessibilityRecord.mRemovedCount = parcel.readInt();
-        accessibilityRecord.mClassName = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        accessibilityRecord.mContentDescription = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        accessibilityRecord.mBeforeText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        accessibilityRecord.mClassName = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        accessibilityRecord.mContentDescription = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        accessibilityRecord.mBeforeText = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         accessibilityRecord.mParcelableData = parcel.readParcelable(null);
         parcel.readList(accessibilityRecord.mText, null);
         accessibilityRecord.mSourceWindowId = parcel.readInt();
@@ -410,7 +410,7 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
         this.mMovementGranularity = parcel.readInt();
         this.mAction = parcel.readInt();
         this.mContentChangeTypes = parcel.readInt();
-        this.mPackageName = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
+        this.mPackageName = (CharSequence) TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         this.mEventTime = parcel.readLong();
         this.mConnectionId = parcel.readInt();
         readAccessibilityRecordFromParcel(this, parcel);

@@ -33,10 +33,10 @@ public class PluginResources extends Resources {
     public static AssetManager appendHostRes(Resources resources) {
         File parentFile;
         Application appApplication = Zeus.getAppApplication();
-        if (g.f21504a == null && (parentFile = appApplication.getCacheDir().getParentFile()) != null) {
-            g.f21504a = parentFile.getAbsolutePath();
+        if (g.f7898a == null && (parentFile = appApplication.getCacheDir().getParentFile()) != null) {
+            g.f7898a = parentFile.getAbsolutePath();
         }
-        String str = g.f21504a;
+        String str = g.f7898a;
         String a2 = g.a(Zeus.getAppApplication());
         List<String> b = j.b();
         a aVar = new a();

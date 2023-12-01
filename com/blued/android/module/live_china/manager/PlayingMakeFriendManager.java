@@ -22,13 +22,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/manager/PlayingMakeFriendManager.class */
 public class PlayingMakeFriendManager {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static int f13678a = 0;
+    public static int a = 0;
     public static int b = 0;
-
-    /* renamed from: c  reason: collision with root package name */
-    public static int f13679c = 0;
+    public static int c = 0;
     public static double d = 0.9d;
     public int h;
     private Context i;
@@ -44,27 +40,27 @@ public class PlayingMakeFriendManager {
         this.i = playingOnliveFragment.getContext();
         int i = AppInfo.l / 2;
         this.k = i;
-        f13678a = (int) (i * d);
+        a = (int) (i * d);
         b = DensityUtils.a(this.i, 148.0f);
-        f13679c = StatusBarHelper.a() ? b - StatusBarHelper.a((Context) playingOnliveFragment.getActivity()) : b;
+        c = StatusBarHelper.a() ? b - StatusBarHelper.a((Context) playingOnliveFragment.getActivity()) : b;
     }
 
     public void a() {
         this.j.d_(5);
         this.j.O.setVisibility(0);
         this.j.bd.f();
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, f13678a * 2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, a * 2);
         layoutParams.setMargins(0, b, 0, 0);
         this.j.aN.setLayoutParams(layoutParams);
         this.j.cc.setLayoutParams(layoutParams);
-        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(this.k, f13678a);
-        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(this.k, f13678a);
+        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(this.k, a);
+        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(this.k, a);
         layoutParams3.leftMargin = this.k;
-        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(this.k, f13678a);
-        layoutParams4.topMargin = f13678a;
-        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(this.k, f13678a);
+        FrameLayout.LayoutParams layoutParams4 = new FrameLayout.LayoutParams(this.k, a);
+        layoutParams4.topMargin = a;
+        FrameLayout.LayoutParams layoutParams5 = new FrameLayout.LayoutParams(this.k, a);
         layoutParams5.leftMargin = this.k;
-        layoutParams5.topMargin = f13678a;
+        layoutParams5.topMargin = a;
         this.j.bz.setLayoutParams(layoutParams5);
         this.j.bA.setLayoutParams(layoutParams2);
         this.j.bB.setLayoutParams(layoutParams3);
@@ -87,33 +83,33 @@ public class PlayingMakeFriendManager {
         this.j.bP.setVisibility(8);
         this.j.bN.setVisibility(8);
         LinearLayout.LayoutParams layoutParams6 = new LinearLayout.LayoutParams(-2, -2);
-        layoutParams6.setMargins(0, b + (f13678a * 2), 0, 0);
+        layoutParams6.setMargins(0, b + (a * 2), 0, 0);
         this.j.k.setLayoutParams(layoutParams6);
         d();
     }
 
     public void a(int i) {
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(this.k, f13678a);
-        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(this.k, f13678a);
-        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(this.k, f13678a);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(this.k, a);
+        FrameLayout.LayoutParams layoutParams2 = new FrameLayout.LayoutParams(this.k, a);
+        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(this.k, a);
         if (i == 1) {
             layoutParams3.leftMargin = this.k;
             layoutParams3.topMargin = b;
-            layoutParams.topMargin = f13678a;
-            layoutParams2.topMargin = f13678a;
+            layoutParams.topMargin = a;
+            layoutParams2.topMargin = a;
             layoutParams2.leftMargin = this.k;
             this.j.bL.setVisibility(8);
         } else if (i == 2) {
-            layoutParams3.topMargin = f13678a + b;
+            layoutParams3.topMargin = a + b;
             layoutParams.leftMargin = this.k;
-            layoutParams2.topMargin = f13678a;
+            layoutParams2.topMargin = a;
             layoutParams2.leftMargin = this.k;
             this.j.bM.setVisibility(8);
         } else if (i == 3) {
-            layoutParams3.topMargin = f13678a + b;
+            layoutParams3.topMargin = a + b;
             layoutParams3.leftMargin = this.k;
             layoutParams.leftMargin = this.k;
-            layoutParams2.topMargin = f13678a;
+            layoutParams2.topMargin = a;
             this.j.bK.setVisibility(8);
         }
         this.j.ag.setLayoutParams(layoutParams3);
@@ -131,7 +127,7 @@ public class PlayingMakeFriendManager {
         LiveFloatManager.a().h();
         this.j.aQ = true;
         this.j.aU.setRTCModel(this.j.aQ);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, f13678a * 2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, a * 2);
         layoutParams.setMargins(0, b, 0, 0);
         this.j.aN.setLayoutParams(layoutParams);
         a(liveFriendModel.index);

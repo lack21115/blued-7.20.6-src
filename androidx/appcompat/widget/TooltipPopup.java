@@ -18,11 +18,11 @@ import androidx.appcompat.R;
 class TooltipPopup {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f1918a;
+    private final Context f1870a;
     private final View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final TextView f1919c;
+    private final TextView f1871c;
     private final WindowManager.LayoutParams d = new WindowManager.LayoutParams();
     private final Rect e = new Rect();
     private final int[] f = new int[2];
@@ -30,12 +30,12 @@ class TooltipPopup {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public TooltipPopup(Context context) {
-        this.f1918a = context;
+        this.f1870a = context;
         View inflate = LayoutInflater.from(context).inflate(R.layout.abc_tooltip, (ViewGroup) null);
         this.b = inflate;
-        this.f1919c = (TextView) inflate.findViewById(R.id.message);
+        this.f1871c = (TextView) inflate.findViewById(R.id.message);
         this.d.setTitle(getClass().getSimpleName());
-        this.d.packageName = this.f1918a.getPackageName();
+        this.d.packageName = this.f1870a.getPackageName();
         this.d.type = 1002;
         this.d.width = -2;
         this.d.height = -2;
@@ -67,12 +67,12 @@ class TooltipPopup {
         int height;
         int i3;
         layoutParams.token = view.getApplicationWindowToken();
-        int dimensionPixelOffset = this.f1918a.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
+        int dimensionPixelOffset = this.f1870a.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_threshold);
         if (view.getWidth() < dimensionPixelOffset) {
             i = view.getWidth() / 2;
         }
         if (view.getHeight() >= dimensionPixelOffset) {
-            int dimensionPixelOffset2 = this.f1918a.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
+            int dimensionPixelOffset2 = this.f1870a.getResources().getDimensionPixelOffset(R.dimen.tooltip_precise_anchor_extra_offset);
             int i4 = i2 + dimensionPixelOffset2;
             int i5 = i2 - dimensionPixelOffset2;
             height = i4;
@@ -82,7 +82,7 @@ class TooltipPopup {
             i3 = 0;
         }
         layoutParams.gravity = 49;
-        int dimensionPixelOffset3 = this.f1918a.getResources().getDimensionPixelOffset(z ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
+        int dimensionPixelOffset3 = this.f1870a.getResources().getDimensionPixelOffset(z ? R.dimen.tooltip_y_offset_touch : R.dimen.tooltip_y_offset_non_touch);
         View a2 = a(view);
         if (a2 == null) {
             Log.e("TooltipPopup", "Cannot find app view");
@@ -90,7 +90,7 @@ class TooltipPopup {
         }
         a2.getWindowVisibleDisplayFrame(this.e);
         if (this.e.left < 0 && this.e.top < 0) {
-            Resources resources = this.f1918a.getResources();
+            Resources resources = this.f1870a.getResources();
             int identifier = resources.getIdentifier("status_bar_height", "dimen", "android");
             int dimensionPixelSize = identifier != 0 ? resources.getDimensionPixelSize(identifier) : 0;
             DisplayMetrics displayMetrics = resources.getDisplayMetrics();
@@ -126,7 +126,7 @@ class TooltipPopup {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a() {
         if (b()) {
-            ((WindowManager) this.f1918a.getSystemService(Context.WINDOW_SERVICE)).removeView(this.b);
+            ((WindowManager) this.f1870a.getSystemService(Context.WINDOW_SERVICE)).removeView(this.b);
         }
     }
 
@@ -135,9 +135,9 @@ class TooltipPopup {
         if (b()) {
             a();
         }
-        this.f1919c.setText(charSequence);
+        this.f1871c.setText(charSequence);
         a(view, i, i2, z, this.d);
-        ((WindowManager) this.f1918a.getSystemService(Context.WINDOW_SERVICE)).addView(this.b, this.d);
+        ((WindowManager) this.f1870a.getSystemService(Context.WINDOW_SERVICE)).addView(this.b, this.d);
     }
 
     boolean b() {

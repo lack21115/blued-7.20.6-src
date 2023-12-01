@@ -4,11 +4,11 @@ package com.tencent.bugly.crashreport.crash;
 public final class a implements Comparable<a> {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f35143a = -1;
+    public long f21452a = -1;
     public long b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f35144c = null;
+    public String f21453c = null;
     public boolean d = false;
     public boolean e = false;
     public int f = 0;

@@ -1,5 +1,6 @@
 package com.bytedance.pangle.activity;
 
+import android.R;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
@@ -155,7 +156,7 @@ public final class c {
             iPluginActivity.setPluginProxyActivity(bVar, plugin);
             int i2 = activityInfo.theme;
             bVar.zeusSuperSetTheme(i2);
-            TypedArray obtainStyledAttributes = ((Activity) bVar).getTheme().obtainStyledAttributes(new int[]{16842840});
+            TypedArray obtainStyledAttributes = ((Activity) bVar).getTheme().obtainStyledAttributes(new int[]{R.attr.windowIsTranslucent});
             if (obtainStyledAttributes.getBoolean(obtainStyledAttributes.getIndex(0), false)) {
                 a((Activity) bVar);
             }

@@ -7,11 +7,11 @@ import android.text.Layout;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CharSequence f25344a;
+    public final CharSequence f11656a;
     public final Layout.Alignment b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Bitmap f25345c;
+    public final Bitmap f11657c;
     public final float d;
     public final int e;
     public final int f;
@@ -39,9 +39,9 @@ public class b {
     }
 
     private b(CharSequence charSequence, Layout.Alignment alignment, Bitmap bitmap, float f, int i, int i2, float f2, int i3, float f3, float f4, boolean z, int i4) {
-        this.f25344a = charSequence;
+        this.f11656a = charSequence;
         this.b = alignment;
-        this.f25345c = bitmap;
+        this.f11657c = bitmap;
         this.d = f;
         this.e = i;
         this.f = i2;

@@ -2,7 +2,6 @@ package android.telephony;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/telephony/CellIdentityLte.class */
 public final class CellIdentityLte implements Parcelable {
@@ -126,7 +125,7 @@ public final class CellIdentityLte implements Parcelable {
     }
 
     public String toString() {
-        return "CellIdentityLte:{ mMcc=" + this.mMcc + " mMnc=" + this.mMnc + " mCi=" + this.mCi + " mPci=" + this.mPci + " mTac=" + this.mTac + i.d;
+        return "CellIdentityLte:{ mMcc=" + this.mMcc + " mMnc=" + this.mMnc + " mCi=" + this.mCi + " mPci=" + this.mPci + " mTac=" + this.mTac + "}";
     }
 
     @Override // android.os.Parcelable

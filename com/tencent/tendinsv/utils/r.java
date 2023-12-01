@@ -7,11 +7,11 @@ import android.text.TextUtils;
 public class r {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f39112a = "MIUI";
+    public static final String f25421a = "MIUI";
     public static final String b = "EMUI";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f39113c = "FLYME";
+    public static final String f25422c = "FLYME";
     public static final String d = "OPPO";
     public static final String e = "SMARTISAN";
     public static final String f = "VIVO";
@@ -52,8 +52,8 @@ public class r {
                         if (TextUtils.isEmpty(b6)) {
                             String str3 = Build.DISPLAY;
                             o = str3;
-                            if (str3.toUpperCase().contains(f39113c)) {
-                                n = f39113c;
+                            if (str3.toUpperCase().contains(f25422c)) {
+                                n = f25422c;
                                 return n.equals(str);
                             }
                             o = "unknown";
@@ -71,7 +71,7 @@ public class r {
                 upperCase = b;
             }
         } else {
-            upperCase = f39112a;
+            upperCase = f25421a;
         }
         n = upperCase;
         return n.equals(str);
@@ -94,7 +94,7 @@ public class r {
     }
 
     public static boolean b() {
-        return a(f39112a);
+        return a(f25421a);
     }
 
     public static boolean c() {
@@ -106,7 +106,7 @@ public class r {
     }
 
     public static boolean e() {
-        return a(f39113c);
+        return a(f25422c);
     }
 
     public static boolean f() {

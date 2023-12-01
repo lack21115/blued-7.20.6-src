@@ -18,24 +18,16 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/HoleRelativeLayout.class */
 public class HoleRelativeLayout extends RelativeLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<RoundRect> f14303a;
+    private List<RoundRect> a;
     private Paint b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Xfermode f14304c;
+    private Xfermode c;
     private int d;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/HoleRelativeLayout$RoundRect.class */
     public static class RoundRect {
-
-        /* renamed from: a  reason: collision with root package name */
-        public float f14305a;
+        public float a;
         public float b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public float f14306c;
+        public float c;
         public float d;
         public float e;
         public float f;
@@ -44,7 +36,7 @@ public class HoleRelativeLayout extends RelativeLayout {
         public boolean i;
 
         public float a() {
-            return this.f14306c;
+            return this.c;
         }
 
         public float b() {
@@ -52,7 +44,7 @@ public class HoleRelativeLayout extends RelativeLayout {
         }
 
         public String toString() {
-            return "RoundRect{x=" + this.f14305a + ", y=" + this.b + ", width=" + this.f14306c + ", height=" + this.d + ", leftTopRadius=" + this.e + ", rightTopRadius=" + this.f + ", leftBottomRadius=" + this.g + ", rightBottomRadius=" + this.h + '}';
+            return "RoundRect{x=" + this.a + ", y=" + this.b + ", width=" + this.c + ", height=" + this.d + ", leftTopRadius=" + this.e + ", rightTopRadius=" + this.f + ", leftBottomRadius=" + this.g + ", rightBottomRadius=" + this.h + '}';
         }
     }
 
@@ -71,39 +63,39 @@ public class HoleRelativeLayout extends RelativeLayout {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.HoleRelativeLayout);
         this.d = obtainStyledAttributes.getColor(R.styleable.HoleRelativeLayout_bgColor, this.d);
         obtainStyledAttributes.recycle();
-        this.f14303a = new ArrayList();
+        this.a = new ArrayList();
         Paint paint = new Paint();
         this.b = paint;
         paint.setAntiAlias(true);
-        this.f14304c = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
+        this.c = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
     }
 
     private void a(Canvas canvas, RoundRect roundRect) {
         Path path = new Path();
-        path.moveTo(roundRect.f14305a + roundRect.e, roundRect.b);
-        path.lineTo((roundRect.f14305a + roundRect.f14306c) - roundRect.f, roundRect.b);
-        path.addCircle(roundRect.f14305a + (roundRect.a() / 2.0f), roundRect.b + (roundRect.b() / 2.0f), roundRect.a() / 2.0f, Path.Direction.CW);
+        path.moveTo(roundRect.a + roundRect.e, roundRect.b);
+        path.lineTo((roundRect.a + roundRect.c) - roundRect.f, roundRect.b);
+        path.addCircle(roundRect.a + (roundRect.a() / 2.0f), roundRect.b + (roundRect.b() / 2.0f), roundRect.a() / 2.0f, Path.Direction.CW);
         path.close();
         canvas.drawPath(path, this.b);
     }
 
     private void b(Canvas canvas, RoundRect roundRect) {
         Path path = new Path();
-        path.moveTo(roundRect.f14305a + roundRect.e, roundRect.b);
-        path.lineTo((roundRect.f14305a + roundRect.f14306c) - roundRect.f, roundRect.b);
-        path.arcTo(new RectF((roundRect.f14305a + roundRect.f14306c) - (roundRect.f * 2.0f), roundRect.b, roundRect.f14305a + roundRect.f14306c, roundRect.b + (roundRect.f * 2.0f)), 270.0f, 90.0f);
-        path.lineTo(roundRect.f14305a + roundRect.f14306c, (roundRect.b + roundRect.d) - roundRect.h);
-        path.arcTo(new RectF((roundRect.f14305a + roundRect.f14306c) - (roundRect.h * 2.0f), (roundRect.b + roundRect.d) - (roundRect.h * 2.0f), roundRect.f14305a + roundRect.f14306c, roundRect.b + roundRect.d), 0.0f, 90.0f);
-        path.lineTo(roundRect.f14305a + roundRect.g, roundRect.b + roundRect.d);
-        path.arcTo(new RectF(roundRect.f14305a, (roundRect.b + roundRect.d) - (roundRect.g * 2.0f), roundRect.f14305a + (roundRect.g * 2.0f), roundRect.b + roundRect.d), 90.0f, 90.0f);
-        path.lineTo(roundRect.f14305a, roundRect.b + roundRect.e);
-        path.arcTo(new RectF(roundRect.f14305a, roundRect.b, roundRect.f14305a + (roundRect.e * 2.0f), roundRect.b + (roundRect.e * 2.0f)), 180.0f, 90.0f);
+        path.moveTo(roundRect.a + roundRect.e, roundRect.b);
+        path.lineTo((roundRect.a + roundRect.c) - roundRect.f, roundRect.b);
+        path.arcTo(new RectF((roundRect.a + roundRect.c) - (roundRect.f * 2.0f), roundRect.b, roundRect.a + roundRect.c, roundRect.b + (roundRect.f * 2.0f)), 270.0f, 90.0f);
+        path.lineTo(roundRect.a + roundRect.c, (roundRect.b + roundRect.d) - roundRect.h);
+        path.arcTo(new RectF((roundRect.a + roundRect.c) - (roundRect.h * 2.0f), (roundRect.b + roundRect.d) - (roundRect.h * 2.0f), roundRect.a + roundRect.c, roundRect.b + roundRect.d), 0.0f, 90.0f);
+        path.lineTo(roundRect.a + roundRect.g, roundRect.b + roundRect.d);
+        path.arcTo(new RectF(roundRect.a, (roundRect.b + roundRect.d) - (roundRect.g * 2.0f), roundRect.a + (roundRect.g * 2.0f), roundRect.b + roundRect.d), 90.0f, 90.0f);
+        path.lineTo(roundRect.a, roundRect.b + roundRect.e);
+        path.arcTo(new RectF(roundRect.a, roundRect.b, roundRect.a + (roundRect.e * 2.0f), roundRect.b + (roundRect.e * 2.0f)), 180.0f, 90.0f);
         path.close();
         canvas.drawPath(path, this.b);
     }
 
     public void a(RoundRect roundRect) {
-        this.f14303a.add(roundRect);
+        this.a.add(roundRect);
         invalidate();
     }
 
@@ -113,16 +105,16 @@ public class HoleRelativeLayout extends RelativeLayout {
         super.onDraw(canvas);
         int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null, 31);
         canvas.drawColor(this.d);
-        this.b.setXfermode(this.f14304c);
+        this.b.setXfermode(this.c);
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f14303a.size()) {
+            if (i2 >= this.a.size()) {
                 this.b.setXfermode(null);
                 canvas.restoreToCount(saveLayer);
                 return;
             }
-            RoundRect roundRect = this.f14303a.get(i2);
+            RoundRect roundRect = this.a.get(i2);
             if (roundRect.i) {
                 a(canvas, roundRect);
             } else {
@@ -137,11 +129,11 @@ public class HoleRelativeLayout extends RelativeLayout {
         int i = 0;
         while (true) {
             int i2 = i;
-            if (i2 >= this.f14303a.size()) {
+            if (i2 >= this.a.size()) {
                 return true;
             }
-            RoundRect roundRect = this.f14303a.get(i2);
-            if (motionEvent.getX() >= roundRect.f14305a && motionEvent.getX() <= roundRect.f14305a + roundRect.f14306c && motionEvent.getY() >= roundRect.b && motionEvent.getY() <= roundRect.b + roundRect.d) {
+            RoundRect roundRect = this.a.get(i2);
+            if (motionEvent.getX() >= roundRect.a && motionEvent.getX() <= roundRect.a + roundRect.c && motionEvent.getY() >= roundRect.b && motionEvent.getY() <= roundRect.b + roundRect.d) {
                 return super.onTouchEvent(motionEvent);
             }
             i = i2 + 1;

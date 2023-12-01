@@ -20,15 +20,15 @@ public final class j implements d {
     private float g = 1.0f;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f25039c = -1;
+    private int f11351c = -1;
     private int d = -1;
     private int h = -1;
 
     public j() {
-        ByteBuffer byteBuffer = f25014a;
+        ByteBuffer byteBuffer = f11326a;
         this.i = byteBuffer;
         this.j = byteBuffer.asShortBuffer();
-        this.k = f25014a;
+        this.k = f11326a;
         this.b = -1;
     }
 
@@ -58,7 +58,7 @@ public final class j implements d {
             this.e.a(asShortBuffer);
             byteBuffer.position(byteBuffer.position() + remaining);
         }
-        int b = this.e.b() * this.f25039c * 2;
+        int b = this.e.b() * this.f11351c * 2;
         if (b > 0) {
             if (this.i.capacity() < b) {
                 ByteBuffer order = ByteBuffer.allocateDirect(b).order(ByteOrder.nativeOrder());
@@ -88,11 +88,11 @@ public final class j implements d {
             if (i4 == -1) {
                 i5 = i;
             }
-            if (this.d == i && this.f25039c == i2 && this.h == i5) {
+            if (this.d == i && this.f11351c == i2 && this.h == i5) {
                 return false;
             }
             this.d = i;
-            this.f25039c = i2;
+            this.f11351c = i2;
             this.h = i5;
             return true;
         }
@@ -106,7 +106,7 @@ public final class j implements d {
 
     @Override // com.opos.exoplayer.core.a.d
     public int b() {
-        return this.f25039c;
+        return this.f11351c;
     }
 
     @Override // com.opos.exoplayer.core.a.d
@@ -128,7 +128,7 @@ public final class j implements d {
     @Override // com.opos.exoplayer.core.a.d
     public ByteBuffer f() {
         ByteBuffer byteBuffer = this.k;
-        this.k = f25014a;
+        this.k = f11326a;
         return byteBuffer;
     }
 
@@ -143,8 +143,8 @@ public final class j implements d {
 
     @Override // com.opos.exoplayer.core.a.d
     public void h() {
-        this.e = new n(this.d, this.f25039c, this.f, this.g, this.h);
-        this.k = f25014a;
+        this.e = new n(this.d, this.f11351c, this.f, this.g, this.h);
+        this.k = f11326a;
         this.l = 0L;
         this.m = 0L;
         this.n = false;
@@ -153,11 +153,11 @@ public final class j implements d {
     @Override // com.opos.exoplayer.core.a.d
     public void i() {
         this.e = null;
-        ByteBuffer byteBuffer = f25014a;
+        ByteBuffer byteBuffer = f11326a;
         this.i = byteBuffer;
         this.j = byteBuffer.asShortBuffer();
-        this.k = f25014a;
-        this.f25039c = -1;
+        this.k = f11326a;
+        this.f11351c = -1;
         this.d = -1;
         this.h = -1;
         this.l = 0L;

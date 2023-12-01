@@ -2,7 +2,6 @@ package com.kwad.sdk.core.webview.a.b;
 
 import android.provider.Downloads;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.kwad.components.offline.api.core.api.ILoggerReporter;
 import com.kwad.sdk.commercial.model.HybridLoadMsg;
 import com.kwad.sdk.core.report.KSLoggerReporter;
@@ -227,20 +226,20 @@ public final class b {
 
     public static void b(String str, String str2, String str3) {
         String str4 = str3;
-        if (str3.contains(BridgeUtil.SPLIT_MARK)) {
-            str4 = str3.substring(str3.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1);
+        if (str3.contains("/")) {
+            str4 = str3.substring(str3.lastIndexOf("/") + 1);
         }
         JSONObject dl = dl(str);
-        t.putValue(dl, "c_responseStart_" + str2 + BridgeUtil.UNDERLINE_STR + str4, System.currentTimeMillis());
+        t.putValue(dl, "c_responseStart_" + str2 + "_" + str4, System.currentTimeMillis());
     }
 
     public static void c(String str, String str2, String str3) {
         String str4 = str3;
-        if (str3.contains(BridgeUtil.SPLIT_MARK)) {
-            str4 = str3.substring(str3.lastIndexOf(BridgeUtil.SPLIT_MARK) + 1);
+        if (str3.contains("/")) {
+            str4 = str3.substring(str3.lastIndexOf("/") + 1);
         }
         JSONObject dl = dl(str);
-        t.putValue(dl, "c_responseEnd_" + str2 + BridgeUtil.UNDERLINE_STR + str4, System.currentTimeMillis());
+        t.putValue(dl, "c_responseEnd_" + str2 + "_" + str4, System.currentTimeMillis());
     }
 
     private static JSONObject dl(String str) {

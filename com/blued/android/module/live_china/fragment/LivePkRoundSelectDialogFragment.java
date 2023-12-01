@@ -24,13 +24,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePkRoundSelectDialogFragment.class */
 public class LivePkRoundSelectDialogFragment extends BaseDialogFragment implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public Context f13096a;
+    public Context a;
     public View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f13097c;
+    public String c;
     public String d;
     public String e;
     private LivePKRoundSelectView f;
@@ -43,7 +39,7 @@ public class LivePkRoundSelectDialogFragment extends BaseDialogFragment implemen
     private void d() {
         if (getArguments() != null) {
             this.g = getArguments().getLong("delay", 8L);
-            this.f13097c = getArguments().getString("lid");
+            this.c = getArguments().getString("lid");
             this.d = getArguments().getString("uid");
             this.e = getArguments().getString("type");
         }
@@ -70,9 +66,8 @@ public class LivePkRoundSelectDialogFragment extends BaseDialogFragment implemen
         Tracker.onClick(view);
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
-        this.f13096a = getActivity();
+        this.a = getActivity();
         View inflate = getActivity().getLayoutInflater().inflate(R.layout.dialog_live_pk_round_select, (ViewGroup) null);
         int height = getActivity().getWindowManager().getDefaultDisplay().getHeight();
         Dialog dialog = new Dialog(getActivity(), R.style.transparentFrameWindowStyleLive);
@@ -89,9 +84,9 @@ public class LivePkRoundSelectDialogFragment extends BaseDialogFragment implemen
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        EventTrackLive.b(LiveProtos.Event.LIVE_PK_CHOOSE_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.f13097c, this.d, this.e, 0);
+        EventTrackLive.b(LiveProtos.Event.LIVE_PK_CHOOSE_POP_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g(), this.c, this.d, this.e, 0);
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(0));
         View inflate = layoutInflater.inflate(R.layout.dialog_live_pk_round_select, viewGroup);
         this.b = inflate;
@@ -105,7 +100,7 @@ public class LivePkRoundSelectDialogFragment extends BaseDialogFragment implemen
 
             @Override // com.blued.android.module.live_china.view.LivePKRoundSelectView.OnEventCallbck
             public void a(int i) {
-                EventTrackLive.b(i == 0 ? LiveProtos.Event.LIVE_PK_CHOOSE_POP_ONE_CLICK : LiveProtos.Event.LIVE_PK_CHOOSE_POP_THREE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), LivePkRoundSelectDialogFragment.this.f13097c, LivePkRoundSelectDialogFragment.this.d, LivePkRoundSelectDialogFragment.this.e, 0);
+                EventTrackLive.b(i == 0 ? LiveProtos.Event.LIVE_PK_CHOOSE_POP_ONE_CLICK : LiveProtos.Event.LIVE_PK_CHOOSE_POP_THREE_CLICK, LiveRoomManager.a().e(), LiveRoomManager.a().g(), LivePkRoundSelectDialogFragment.this.c, LivePkRoundSelectDialogFragment.this.d, LivePkRoundSelectDialogFragment.this.e, 0);
                 LivePkRoundSelectDialogFragment.this.a(i);
                 LivePkRoundSelectDialogFragment.this.dismissAllowingStateLoss();
             }
@@ -114,18 +109,18 @@ public class LivePkRoundSelectDialogFragment extends BaseDialogFragment implemen
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
         this.f.a();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onPause() {
         super.onPause();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager fragmentManager, String str) {
         try {
             ReflectionUtils.a(this, "mDismissed", false);

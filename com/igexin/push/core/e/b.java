@@ -10,7 +10,7 @@ public final class b implements a {
     private static b b;
 
     /* renamed from: a  reason: collision with root package name */
-    private Map<String, byte[]> f23498a = new HashMap();
+    private Map<String, byte[]> f9890a = new HashMap();
 
     private b() {
     }
@@ -26,17 +26,17 @@ public final class b implements a {
         String a2;
         do {
             a2 = p.a();
-        } while (this.f23498a.containsKey(a2));
-        this.f23498a.put(a2, bArr);
+        } while (this.f9890a.containsKey(a2));
+        this.f9890a.put(a2, bArr);
         return a2;
     }
 
     private byte[] a(String str) {
         byte[] bArr;
         synchronized (this) {
-            bArr = this.f23498a.get(str);
+            bArr = this.f9890a.get(str);
             if (bArr != null) {
-                this.f23498a.remove(str);
+                this.f9890a.remove(str);
             }
         }
         return bArr;

@@ -30,7 +30,7 @@ public final class c extends CommonBannerJSBridgeImp {
     private static final String b = "BannerJSBridgeImpl";
 
     /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Context> f8004c;
+    private WeakReference<Context> f5164c;
     private List<com.anythink.expressad.foundation.d.c> d;
     private String e;
     private String f;
@@ -42,7 +42,7 @@ public final class c extends CommonBannerJSBridgeImp {
     public c(Context context, String str, String str2) {
         this.e = str;
         this.f = str2;
-        this.f8004c = new WeakReference<>(context);
+        this.f5164c = new WeakReference<>(context);
     }
 
     private static void a(Object obj, JSONObject jSONObject) {
@@ -263,7 +263,7 @@ public final class c extends CommonBannerJSBridgeImp {
             }
             bundle.putString("url", str3);
             bundle.putBoolean("shouldUseCustomClose", z);
-            if (this.f8004c != null && (context = this.f8004c.get()) != null) {
+            if (this.f5164c != null && (context = this.f5164c.get()) != null) {
                 if (this.i != null && this.i.isShowing()) {
                     return;
                 }

@@ -74,9 +74,8 @@ public class CameraView extends FrameLayout {
         return this.cameraControl;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         this.displayView.layout(i, 0, i3, i4 - i2);
     }
 

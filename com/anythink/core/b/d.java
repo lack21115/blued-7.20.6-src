@@ -4,10 +4,10 @@ import android.text.TextUtils;
 import com.anythink.core.api.ATAdConst;
 import com.anythink.core.common.c.k;
 import com.anythink.core.common.e.ai;
-import com.anythink.core.common.e.l;
 import com.anythink.core.common.e.m;
 import com.anythink.core.common.e.r;
 import com.anythink.core.common.k.s;
+import com.anythink.core.common.l;
 import com.anythink.core.common.w;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,9 +20,7 @@ import org.json.JSONObject;
 public abstract class d {
     protected com.anythink.core.common.e.a d;
     protected boolean e;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6364a = getClass().getSimpleName() + ":";
+    private final String a = getClass().getSimpleName() + ":";
     protected AtomicBoolean f = new AtomicBoolean(false);
 
     public d(com.anythink.core.common.e.a aVar) {
@@ -36,8 +34,8 @@ public abstract class d {
             for (ai aiVar : list) {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put(k.a.d, aiVar.c());
-                jSONObject.put("ad_source_id", aiVar.t());
-                jSONObject.put("content", aiVar.g());
+                jSONObject.put(ATAdConst.NETWORK_REQUEST_PARAMS_KEY.AD_SOURCE_ID, aiVar.t());
+                jSONObject.put(l.y, aiVar.g());
                 if (!TextUtils.isEmpty(aiVar.z())) {
                     jSONObject.put("error", aiVar.z());
                 }
@@ -119,7 +117,7 @@ public abstract class d {
     public abstract void a();
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final void a(int i, l lVar, double d) {
+    public final void a(int i, com.anythink.core.common.e.l lVar, double d) {
         double d2;
         if (i != 28) {
             return;
@@ -138,7 +136,7 @@ public abstract class d {
         }
         double d4 = lVar.originPrice * d3;
         ArrayList arrayList = new ArrayList(5);
-        List<ai> b = w.a().b(this.d.d, this.d.f6612c);
+        List<ai> b = w.a().b(this.d.d, this.d.c);
         if (b != null) {
             arrayList.addAll(b);
         }
@@ -148,9 +146,9 @@ public abstract class d {
             if (!it.hasNext()) {
                 break;
             }
-            double a2 = com.anythink.core.common.k.g.a((ai) it.next());
-            if (a2 < lVar.originPrice) {
-                d2 = Math.max(d4, a2);
+            double a = com.anythink.core.common.k.g.a((ai) it.next());
+            if (a < lVar.originPrice) {
+                d2 = Math.max(d4, a);
                 break;
             }
         }
@@ -163,7 +161,7 @@ public abstract class d {
     /* JADX INFO: Access modifiers changed from: protected */
     public abstract void a(com.anythink.core.b.b.a aVar);
 
-    protected abstract void a(ai aiVar, l lVar, long j);
+    protected abstract void a(ai aiVar, com.anythink.core.common.e.l lVar, long j);
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:41:0x016d  */
@@ -192,21 +190,21 @@ public abstract class d {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean a(ai aiVar, String str, int i, int i2) {
-        m a2 = f.a().a(aiVar);
-        if (a2 != null && !a2.a()) {
-            aiVar.a(a2, 0, i, i2);
+        m a = f.a().a(aiVar);
+        if (a != null && !a.a()) {
+            aiVar.a(a, 0, i, i2);
             aiVar.h(str);
             return true;
-        } else if (a2 != null) {
+        } else if (a != null) {
             try {
-                com.anythink.core.common.e.e a3 = s.a(this.d.f6612c, this.d.d, "", this.d.n, "", 1, 0, 0, this.d.b != null ? this.d.b.g : null);
+                com.anythink.core.common.e.e a2 = s.a(this.d.c, this.d.d, "", this.d.n, "", 1, 0, 0, this.d.b != null ? this.d.b.g : null);
                 r rVar = new r();
-                rVar.f6674a = 1;
-                rVar.b = a2.getSortPrice();
-                rVar.e = a3;
-                rVar.f6675c = aiVar;
+                rVar.a = 1;
+                rVar.b = a.getSortPrice();
+                rVar.e = a2;
+                rVar.c = aiVar;
                 rVar.d = aiVar;
-                a2.a(rVar, true);
+                a.a(rVar, true);
                 return false;
             } catch (Throwable th) {
                 th.printStackTrace();

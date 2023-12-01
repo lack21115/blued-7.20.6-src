@@ -6,7 +6,7 @@ import android.content.Context;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f21118a;
+    private static Context f7512a;
 
     public static native Context a();
 

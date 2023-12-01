@@ -22,11 +22,11 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
     public class AngularVelocitySample {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f22163a;
+        public long f8556a;
         public float b;
 
         public AngularVelocitySample(long j, float f) {
-            this.f22163a = j;
+            this.f8556a = j;
             this.b = f;
         }
     }
@@ -50,7 +50,7 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
         int size = this.h.size();
         while (true) {
             int i = size;
-            if (i - 2 <= 0 || currentAnimationTimeMillis - this.h.get(0).f22163a <= 1000) {
+            if (i - 2 <= 0 || currentAnimationTimeMillis - this.h.get(0).f8556a <= 1000) {
                 return;
             }
             this.h.remove(0);
@@ -72,7 +72,7 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
                 break;
             }
         }
-        float f = ((float) (angularVelocitySample2.f22163a - angularVelocitySample.f22163a)) / 1000.0f;
+        float f = ((float) (angularVelocitySample2.f8556a - angularVelocitySample.f8556a)) / 1000.0f;
         float f2 = f;
         if (f == 0.0f) {
             f2 = 0.1f;
@@ -124,7 +124,7 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public void onLongPress(MotionEvent motionEvent) {
-        this.f22159a = ChartTouchListener.ChartGesture.LONG_PRESS;
+        this.f8552a = ChartTouchListener.ChartGesture.LONG_PRESS;
         OnChartGestureListener onChartGestureListener = ((PieRadarChartBase) this.e).getOnChartGestureListener();
         if (onChartGestureListener != null) {
             onChartGestureListener.a(motionEvent);
@@ -138,7 +138,7 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
 
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
     public boolean onSingleTapUp(MotionEvent motionEvent) {
-        this.f22159a = ChartTouchListener.ChartGesture.SINGLE_TAP;
+        this.f8552a = ChartTouchListener.ChartGesture.SINGLE_TAP;
         OnChartGestureListener onChartGestureListener = ((PieRadarChartBase) this.e).getOnChartGestureListener();
         if (onChartGestureListener != null) {
             onChartGestureListener.c(motionEvent);
@@ -164,7 +164,7 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
                     c(x, y);
                 }
                 a(x, y);
-                this.f.f22204a = x;
+                this.f.f8597a = x;
                 this.f.b = y;
                 return true;
             } else if (action == 1) {
@@ -188,8 +188,8 @@ public class PieRadarChartTouchListener extends ChartTouchListener<PieRadarChart
                 if (((PieRadarChartBase) this.e).y()) {
                     c(x, y);
                 }
-                if (this.b == 0 && a(x, this.f.f22204a, y, this.f.b) > Utils.a(8.0f)) {
-                    this.f22159a = ChartTouchListener.ChartGesture.ROTATE;
+                if (this.b == 0 && a(x, this.f.f8597a, y, this.f.b) > Utils.a(8.0f)) {
+                    this.f8552a = ChartTouchListener.ChartGesture.ROTATE;
                     this.b = 6;
                     ((PieRadarChartBase) this.e).A();
                 } else if (this.b == 6) {

@@ -10,16 +10,16 @@ import java.nio.channels.FileLock;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f38833a = "EmergencyManager";
+    private static String f25142a = "EmergencyManager";
     private final File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final FileOutputStream f38834c;
+    private final FileOutputStream f25143c;
     private final FileLock d;
 
     private f(File file, FileOutputStream fileOutputStream, FileLock fileLock) {
         this.b = file;
-        this.f38834c = fileOutputStream;
+        this.f25143c = fileOutputStream;
         this.d = fileLock;
     }
 
@@ -42,7 +42,7 @@ public class f {
                     return null;
                 } catch (IOException e) {
                     e = e;
-                    str = f38833a;
+                    str = f25142a;
                     sb = new StringBuilder();
                     sb.append("Failed to close: ");
                     sb.append(e.getMessage());
@@ -50,26 +50,26 @@ public class f {
                     return null;
                 }
             }
-            TbsLog.i(f38833a, "Created lock file: " + file.getAbsolutePath());
+            TbsLog.i(f25142a, "Created lock file: " + file.getAbsolutePath());
             f fVar = new f(file, fileOutputStream, tryLock);
             try {
                 fileOutputStream.close();
                 return fVar;
             } catch (IOException e2) {
-                TbsLog.e(f38833a, "Failed to close: " + e2.getMessage());
+                TbsLog.e(f25142a, "Failed to close: " + e2.getMessage());
                 return fVar;
             }
         } catch (Throwable th2) {
             th = th2;
             try {
-                TbsLog.e(f38833a, "Failed to try to acquire lock: " + file.getAbsolutePath() + " error: " + th.getMessage());
+                TbsLog.e(f25142a, "Failed to try to acquire lock: " + file.getAbsolutePath() + " error: " + th.getMessage());
                 if (fileOutputStream != null) {
                     try {
                         fileOutputStream.close();
                         return null;
                     } catch (IOException e3) {
                         e = e3;
-                        str = f38833a;
+                        str = f25142a;
                         sb = new StringBuilder();
                         sb.append("Failed to close: ");
                         sb.append(e.getMessage());
@@ -83,7 +83,7 @@ public class f {
                     try {
                         fileOutputStream.close();
                     } catch (IOException e4) {
-                        TbsLog.e(f38833a, "Failed to close: " + e4.getMessage());
+                        TbsLog.e(f25142a, "Failed to close: " + e4.getMessage());
                     }
                 }
                 throw th3;
@@ -92,10 +92,10 @@ public class f {
     }
 
     public void a() throws IOException {
-        String str = f38833a;
+        String str = f25142a;
         TbsLog.i(str, "Deleting lock file: " + this.b.getAbsolutePath());
         this.d.release();
-        this.f38834c.close();
+        this.f25143c.close();
         if (this.b.delete()) {
             return;
         }
@@ -106,7 +106,7 @@ public class f {
         try {
             a();
         } catch (IOException e) {
-            String str = f38833a;
+            String str = f25142a;
             TbsLog.e(str, "Failed to release process lock file: " + this.b.getAbsolutePath() + " error: " + e);
         }
     }

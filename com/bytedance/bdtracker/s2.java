@@ -12,11 +12,11 @@ import com.efs.sdk.base.core.util.NetworkUtil;
 public class s2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static long f21301a;
+    public static long f7695a;
     public static a b = a.UNKNOWN;
 
     /* renamed from: c  reason: collision with root package name */
-    public static boolean f21302c = false;
+    public static boolean f7696c = false;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/s2$a.class */
     public enum a {
@@ -35,10 +35,10 @@ public class s2 {
         
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f21304a;
+        public final int f7698a;
 
         a(int i) {
-            this.f21304a = i;
+            this.f7698a = i;
         }
 
         public boolean a() {
@@ -47,20 +47,20 @@ public class s2 {
     }
 
     public static void a(Context context) {
-        if (System.currentTimeMillis() - f21301a > 2000) {
+        if (System.currentTimeMillis() - f7695a > 2000) {
             b = d(context);
-            f21301a = System.currentTimeMillis();
+            f7695a = System.currentTimeMillis();
         }
     }
 
     public static void b(Context context) {
-        if (!f21302c && context != null) {
+        if (!f7696c && context != null) {
             IntentFilter intentFilter = new IntentFilter();
             intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
             intentFilter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION);
             intentFilter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION);
             context.getApplicationContext().registerReceiver(new d1(), intentFilter);
-            f21302c = true;
+            f7696c = true;
         }
         if (b == a.UNKNOWN) {
             b = d(context);

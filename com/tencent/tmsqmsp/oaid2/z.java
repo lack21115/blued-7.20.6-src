@@ -4,18 +4,18 @@ package com.tencent.tmsqmsp.oaid2;
 public class z {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f39670a;
+    public int f25979a;
     public long b = System.currentTimeMillis() + 86400000;
 
     /* renamed from: c  reason: collision with root package name */
-    public String f39671c;
+    public String f25980c;
 
     public z(String str, int i) {
-        this.f39671c = str;
-        this.f39670a = i;
+        this.f25980c = str;
+        this.f25979a = i;
     }
 
     public String toString() {
-        return "ValueData{value='" + this.f39671c + "', code=" + this.f39670a + ", expired=" + this.b + '}';
+        return "ValueData{value='" + this.f25980c + "', code=" + this.f25979a + ", expired=" + this.b + '}';
     }
 }

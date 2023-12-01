@@ -4,9 +4,9 @@ package com.opos.mobad.service.j;
 public class j {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f27396a;
+    public final String f13708a;
 
     public j(String str) {
-        this.f27396a = str;
+        this.f13708a = str;
     }
 }

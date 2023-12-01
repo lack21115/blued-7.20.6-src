@@ -134,10 +134,10 @@ public class BootReceiver extends BroadcastReceiver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void logBootEvents(Context context) throws IOException {
-        final DropBoxManager dropBoxManager = (DropBoxManager) context.getSystemService(Context.DROPBOX_SERVICE);
+        final DropBoxManager dropBoxManager = (DropBoxManager) context.getSystemService("dropbox");
         final SharedPreferences sharedPreferences = context.getSharedPreferences("log_files", 0);
         final String sb = new StringBuilder(512).append("Build: ").append(Build.FINGERPRINT).append("\n").append("Hardware: ").append(Build.BOARD).append("\n").append("Revision: ").append(SystemProperties.get("ro.revision", "")).append("\n").append("Bootloader: ").append(Build.BOOTLOADER).append("\n").append("Radio: ").append(Build.RADIO).append("\n").append("Kernel: ").append(FileUtils.readTextFile(new File("/proc/version"), 1024, "...\n")).append("\n").toString();
-        String str = SystemProperties.get("ro.boot.bootreason", null);
+        String str = SystemProperties.get("ro.boot.bootreason", (String) null);
         String handleAftermath = RecoverySystem.handleAftermath();
         if (handleAftermath != null && dropBoxManager != null) {
             dropBoxManager.addText("SYSTEM_RECOVERY_LOG", sb + handleAftermath);

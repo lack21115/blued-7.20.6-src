@@ -7,42 +7,37 @@ import android.view.animation.TranslateAnimation;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
-import com.anythink.expressad.video.module.a.a.m;
 import java.util.ArrayList;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/TextSwitcherView.class */
 public class TextSwitcherView extends TextSwitcher implements ViewSwitcher.ViewFactory {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ArrayList<String> f15270a;
+    private ArrayList<String> a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f15271c;
+    private Context c;
     private boolean d;
 
     public TextSwitcherView(Context context) {
         super(context);
-        this.f15270a = new ArrayList<>();
+        this.a = new ArrayList<>();
         this.b = 0;
         this.d = false;
-        this.f15271c = context;
+        this.c = context;
         b();
     }
 
     public TextSwitcherView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f15270a = new ArrayList<>();
+        this.a = new ArrayList<>();
         this.b = 0;
         this.d = false;
-        this.f15271c = context;
+        this.c = context;
         b();
     }
 
     private void b() {
         setFactory(this);
-        this.f15270a.add("给主播打赏弯豆，帮他提升热度值");
-        this.f15270a.add("叫上朋友看直播，帮他提升热度值");
+        this.a.add("给主播打赏弯豆，帮他提升热度值");
+        this.a.add("叫上朋友看直播，帮他提升热度值");
         TranslateAnimation translateAnimation = new TranslateAnimation(2, 0.0f, 2, 0.0f, 2, 1.0f, 2, 0.0f);
         translateAnimation.setDuration(1000L);
         setInAnimation(translateAnimation);
@@ -55,14 +50,14 @@ public class TextSwitcherView extends TextSwitcher implements ViewSwitcher.ViewF
 
     /* JADX INFO: Access modifiers changed from: private */
     public void c() {
-        ArrayList<String> arrayList = this.f15270a;
+        ArrayList<String> arrayList = this.a;
         if (arrayList == null || arrayList.size() <= 0) {
             return;
         }
-        setText(this.f15270a.get(this.b));
+        setText(this.a.get(this.b));
         int i = this.b + 1;
         this.b = i;
-        if (i >= this.f15270a.size()) {
+        if (i >= this.a.size()) {
             this.b = 0;
         }
     }
@@ -77,7 +72,7 @@ public class TextSwitcherView extends TextSwitcher implements ViewSwitcher.ViewF
                 TextSwitcherView.this.c();
                 TextSwitcherView.this.a();
             }
-        }, m.ag);
+        }, 3000L);
     }
 
     @Override // android.widget.ViewSwitcher.ViewFactory

@@ -11,17 +11,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewYySayHelloLayoutBinding.class */
 public final class ViewYySayHelloLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16956a;
+    public final ImageView a;
     public final ShapeTextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final ConstraintLayout f16957c;
+    private final ConstraintLayout c;
 
     private ViewYySayHelloLayoutBinding(ConstraintLayout constraintLayout, ImageView imageView, ShapeTextView shapeTextView) {
-        this.f16957c = constraintLayout;
-        this.f16956a = imageView;
+        this.c = constraintLayout;
+        this.a = imageView;
         this.b = shapeTextView;
     }
 
@@ -48,9 +44,8 @@ public final class ViewYySayHelloLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f16957c;
+        return this.c;
     }
 }

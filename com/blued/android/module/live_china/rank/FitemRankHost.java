@@ -27,9 +27,7 @@ public class FitemRankHost extends FreedomItem {
     private static String e = "https://web.bldimg.com/image-manager/1689832311_97803.webp";
     private static String f = "https://web.bldimg.com/image-manager/1690374197_40405.png";
     public RankAllDataModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public String f14054c;
+    public String c;
     private Boolean d;
 
     public FitemRankHost(RankAllDataModel rankAllDataModel, String str, int i) {
@@ -38,7 +36,7 @@ public class FitemRankHost extends FreedomItem {
             Collections.reverse(rankAllDataModel.getTop());
         }
         this.b = rankAllDataModel;
-        this.f14054c = str;
+        this.c = str;
         boolean z = false;
         if ("union".equals(str)) {
             z = false;
@@ -68,18 +66,18 @@ public class FitemRankHost extends FreedomItem {
     private void a(BaseViewHolder baseViewHolder, int i) {
         baseViewHolder.a(R.id.iv_list_bg).setVisibility(0);
         if (i == 2) {
-            if ("anchor".equals(this.f14054c)) {
+            if ("anchor".equals(this.c)) {
                 baseViewHolder.a(R.id.iv_list_bg, "https://web.bldimg.com/image-manager/1689746509_61515.webp");
-            } else if ("fans".equals(this.f14054c)) {
+            } else if ("fans".equals(this.c)) {
                 baseViewHolder.a(R.id.iv_list_bg, "https://web.bldimg.com/image-manager/1689748217_31565.webp");
             } else {
                 baseViewHolder.a(R.id.iv_list_bg, "https://web.bldimg.com/image-manager/1689748478_31652.webp");
             }
         } else if (i != 3) {
             baseViewHolder.a(R.id.iv_list_bg).setVisibility(4);
-        } else if ("anchor".equals(this.f14054c)) {
+        } else if ("anchor".equals(this.c)) {
             baseViewHolder.a(R.id.iv_list_bg, "https://web.bldimg.com/image-manager/1689746509_29829.webp");
-        } else if ("fans".equals(this.f14054c)) {
+        } else if ("fans".equals(this.c)) {
             baseViewHolder.a(R.id.iv_list_bg, "https://web.bldimg.com/image-manager/1689748217_58064.webp");
         } else {
             baseViewHolder.a(R.id.iv_list_bg, "https://web.bldimg.com/image-manager/1689748478_62227.webp");
@@ -241,7 +239,7 @@ public class FitemRankHost extends FreedomItem {
         } else {
             str = "距前一名" + DistanceUtils.a(Long.valueOf(this.b.getDiff_score())) + "火力值";
         }
-        String name = z ? "fans".equals(this.f14054c) ? "用户暂时神隐" : "主播想静静" : this.b.getName();
+        String name = z ? "fans".equals(this.c) ? "用户暂时神隐" : "主播想静静" : this.b.getName();
         String avatar = z ? e : this.b.getAvatar();
         if (!TextUtils.isEmpty(this.b.getAvatar_frame())) {
             this.b.getAvatar_frame();

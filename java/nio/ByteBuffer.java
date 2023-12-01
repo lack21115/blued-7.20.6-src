@@ -253,9 +253,9 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         }
     }
 
-    public abstract ByteBuffer putChar(char c2);
+    public abstract ByteBuffer putChar(char c);
 
-    public abstract ByteBuffer putChar(int i, char c2);
+    public abstract ByteBuffer putChar(int i, char c);
 
     public abstract ByteBuffer putDouble(double d);
 

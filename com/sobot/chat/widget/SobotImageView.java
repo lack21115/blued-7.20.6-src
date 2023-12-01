@@ -109,9 +109,8 @@ public class SobotImageView extends ImageView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         try {
             super.onDraw(canvas);
             canvas.save();
@@ -131,7 +130,6 @@ public class SobotImageView extends ImageView {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Code restructure failed: missing block: B:5:0x0010, code lost:
         if (r5.mIsSquare != false) goto L8;
      */
@@ -140,7 +138,7 @@ public class SobotImageView extends ImageView {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onMeasure(int r6, int r7) {
+    protected void onMeasure(int r6, int r7) {
         /*
             r5 = this;
             r0 = r5

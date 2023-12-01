@@ -19,7 +19,6 @@ public class HealthDialogFragment extends CommonDialogFragment {
         new HealthDialogFragment().show(((FragmentActivity) context).getSupportFragmentManager(), "");
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public void a(View view) {
         View findViewById = view.findViewById(R.id.dismiss_view);
         View findViewById2 = view.findViewById(R.id.order_view);
@@ -47,29 +46,24 @@ public class HealthDialogFragment extends CommonDialogFragment {
         });
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int d() {
         return R.layout.pop_user_health;
     }
 
-    @Override // com.blued.android.module.common.base.dialog.CommonDialogFragment
     public int f() {
         return -1;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         b = true;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         b = false;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
     }

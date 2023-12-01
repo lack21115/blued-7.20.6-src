@@ -19,7 +19,7 @@ import com.scwang.smartrefresh.layout.util.DensityUtil;
 public class FalsifyFooter extends InternalAbstract implements RefreshFooter {
 
     /* renamed from: a  reason: collision with root package name */
-    private RefreshKernel f27979a;
+    private RefreshKernel f14291a;
 
     public FalsifyFooter(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
@@ -31,7 +31,7 @@ public class FalsifyFooter extends InternalAbstract implements RefreshFooter {
 
     @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public void a(RefreshKernel refreshKernel, int i, int i2) {
-        this.f27979a = refreshKernel;
+        this.f14291a = refreshKernel;
         refreshKernel.a().k(false);
     }
 
@@ -42,16 +42,15 @@ public class FalsifyFooter extends InternalAbstract implements RefreshFooter {
 
     @Override // com.scwang.smartrefresh.layout.internal.InternalAbstract, com.scwang.smartrefresh.layout.api.RefreshInternal
     public void b(RefreshLayout refreshLayout, int i, int i2) {
-        RefreshKernel refreshKernel = this.f27979a;
+        RefreshKernel refreshKernel = this.f14291a;
         if (refreshKernel != null) {
             refreshKernel.a(RefreshState.None);
-            this.f27979a.a(RefreshState.LoadFinish);
+            this.f14291a.a(RefreshState.LoadFinish);
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (isInEditMode()) {
             int a2 = DensityUtil.a(5.0f);

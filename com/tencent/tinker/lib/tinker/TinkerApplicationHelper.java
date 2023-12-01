@@ -1,9 +1,9 @@
 package com.tencent.tinker.lib.tinker;
 
 import android.content.Intent;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.tinker.entry.ApplicationLike;
 import com.tencent.tinker.loader.TinkerRuntimeException;
+import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.tencent.tinker.loader.shareutil.ShareIntentUtil;
 import com.tencent.tinker.loader.shareutil.SharePatchFileUtil;
 import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
@@ -147,23 +147,23 @@ public class TinkerApplicationHelper {
         HashMap<String, String> loadLibraryAndMd5;
         String currentVersion;
         File patchDirectory;
-        if (!str2.startsWith("lib")) {
-            str2 = "lib" + str2;
+        if (!str2.startsWith(ShareConstants.SO_PATH)) {
+            str2 = ShareConstants.SO_PATH + str2;
         }
         if (!str2.endsWith(".so")) {
             str2 = str2 + ".so";
         }
-        String str3 = str + BridgeUtil.SPLIT_MARK + str2;
+        String str3 = str + "/" + str2;
         if (isTinkerEnableForNativeLib(applicationLike) && isTinkerEnableForNativeLib(applicationLike) && (loadLibraryAndMd5 = getLoadLibraryAndMd5(applicationLike)) != null) {
             if (ShareTinkerInternals.isNullOrNil(getCurrentVersion(applicationLike)) || (patchDirectory = SharePatchFileUtil.getPatchDirectory(applicationLike.getApplication())) == null) {
                 return false;
             }
-            File file = new File(patchDirectory.getAbsolutePath() + BridgeUtil.SPLIT_MARK + SharePatchFileUtil.getPatchVersionDirectory(currentVersion));
-            String str4 = file.getAbsolutePath() + BridgeUtil.SPLIT_MARK + "lib";
+            File file = new File(patchDirectory.getAbsolutePath() + "/" + SharePatchFileUtil.getPatchVersionDirectory(currentVersion));
+            String str4 = file.getAbsolutePath() + "/" + ShareConstants.SO_PATH;
             for (Map.Entry<String, String> entry : loadLibraryAndMd5.entrySet()) {
                 String key = entry.getKey();
                 if (key.equals(str3)) {
-                    String str5 = str4 + BridgeUtil.SPLIT_MARK + key;
+                    String str5 = str4 + "/" + key;
                     File file2 = new File(str5);
                     if (!file2.exists()) {
                         continue;

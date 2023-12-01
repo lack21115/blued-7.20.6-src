@@ -20,7 +20,7 @@ import java.util.Map;
 public class UnifiedBannerView extends FrameLayout implements ApkDownloadComplianceInterface, IBidding, IReward, NFBI {
 
     /* renamed from: a  reason: collision with root package name */
-    final UnifiedBannerAD f27860a;
+    final UnifiedBannerAD f14172a;
 
     public UnifiedBannerView(Activity activity, String str, UnifiedBannerADListener unifiedBannerADListener) {
         this(activity, str, unifiedBannerADListener, null);
@@ -28,7 +28,7 @@ public class UnifiedBannerView extends FrameLayout implements ApkDownloadComplia
 
     public UnifiedBannerView(Activity activity, String str, UnifiedBannerADListener unifiedBannerADListener, Map map) {
         super(activity);
-        this.f27860a = new UnifiedBannerAD(activity, this, str, unifiedBannerADListener);
+        this.f14172a = new UnifiedBannerAD(activity, this, str, unifiedBannerADListener);
         a();
     }
 
@@ -37,7 +37,7 @@ public class UnifiedBannerView extends FrameLayout implements ApkDownloadComplia
         if (TextUtils.isEmpty(str2)) {
             GDTLogger.e(UnifiedBannerView.class.getSimpleName() + "构造函数中 token 参数不可为空");
         }
-        this.f27860a = new UnifiedBannerAD(activity, this, str, str2, unifiedBannerADListener);
+        this.f14172a = new UnifiedBannerAD(activity, this, str, str2, unifiedBannerADListener);
         a();
     }
 
@@ -46,98 +46,98 @@ public class UnifiedBannerView extends FrameLayout implements ApkDownloadComplia
     }
 
     public void destroy() {
-        this.f27860a.d();
+        this.f14172a.d();
     }
 
     public String getAdNetWorkName() {
-        return this.f27860a.getAdNetWorkName();
+        return this.f14172a.getAdNetWorkName();
     }
 
     @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public String getApkInfoUrl() {
-        return this.f27860a.getApkInfoUrl();
+        return this.f14172a.getApkInfoUrl();
     }
 
     public int getECPM() {
-        return this.f27860a.getECPM();
+        return this.f14172a.getECPM();
     }
 
     public String getECPMLevel() {
-        return this.f27860a.getECPMLevel();
+        return this.f14172a.getECPMLevel();
     }
 
     public Map<String, Object> getExtraInfo() {
-        return this.f27860a.getExtraInfo();
+        return this.f14172a.getExtraInfo();
     }
 
     public boolean isValid() {
-        return this.f27860a.isValid();
+        return this.f14172a.isValid();
     }
 
     public void loadAD() {
-        this.f27860a.c();
+        this.f14172a.c();
     }
 
     @Override // android.view.View
     public void onWindowFocusChanged(boolean z) {
         super.onWindowFocusChanged(z);
-        this.f27860a.a(z);
+        this.f14172a.a(z);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(int i, int i2, String str) {
-        this.f27860a.sendLossNotification(i, i2, str);
+        this.f14172a.sendLossNotification(i, i2, str);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendLossNotification(Map<String, Object> map) {
-        this.f27860a.sendLossNotification(map);
+        this.f14172a.sendLossNotification(map);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(int i) {
-        this.f27860a.sendWinNotification(i);
+        this.f14172a.sendWinNotification(i);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void sendWinNotification(Map<String, Object> map) {
-        this.f27860a.sendWinNotification(map);
+        this.f14172a.sendWinNotification(map);
     }
 
     @Override // com.qq.e.comm.pi.IBidding
     public void setBidECPM(int i) {
-        this.f27860a.setBidECPM(i);
+        this.f14172a.setBidECPM(i);
     }
 
     public void setDownConfirmPolicy(DownAPPConfirmPolicy downAPPConfirmPolicy) {
-        this.f27860a.a(downAPPConfirmPolicy);
+        this.f14172a.a(downAPPConfirmPolicy);
     }
 
     @Override // com.qq.e.comm.compliance.ApkDownloadComplianceInterface
     public void setDownloadConfirmListener(DownloadConfirmListener downloadConfirmListener) {
-        this.f27860a.setDownloadConfirmListener(downloadConfirmListener);
+        this.f14172a.setDownloadConfirmListener(downloadConfirmListener);
     }
 
     public void setLoadAdParams(LoadAdParams loadAdParams) {
-        this.f27860a.a(loadAdParams);
+        this.f14172a.a(loadAdParams);
     }
 
     @Override // com.qq.e.comm.pi.NFBI
     public void setNegativeFeedbackListener(NegativeFeedbackListener negativeFeedbackListener) {
-        this.f27860a.setNegativeFeedbackListener(negativeFeedbackListener);
+        this.f14172a.setNegativeFeedbackListener(negativeFeedbackListener);
     }
 
     public void setRefresh(int i) {
-        this.f27860a.c(i);
+        this.f14172a.c(i);
     }
 
     @Override // com.qq.e.comm.pi.IReward
     public void setRewardListener(ADRewardListener aDRewardListener) {
-        this.f27860a.setRewardListener(aDRewardListener);
+        this.f14172a.setRewardListener(aDRewardListener);
     }
 
     @Override // com.qq.e.comm.pi.IReward
     public void setServerSideVerificationOptions(ServerSideVerificationOptions serverSideVerificationOptions) {
-        this.f27860a.setServerSideVerificationOptions(serverSideVerificationOptions);
+        this.f14172a.setServerSideVerificationOptions(serverSideVerificationOptions);
     }
 }

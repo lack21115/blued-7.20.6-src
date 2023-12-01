@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
@@ -28,13 +29,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYDoublePeopleMarriageNotice.class */
 public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewDoublePeopleMarriageNoticeBinding f18130a;
+    private ViewDoublePeopleMarriageNoticeBinding a;
     private AnimatorEndListener b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private DoublePeopleNoticeImNode f18131c;
+    private DoublePeopleNoticeImNode c;
 
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYDoublePeopleMarriageNotice$AnimatorEndListener.class */
@@ -58,11 +55,11 @@ public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
     public YYDoublePeopleMarriageNotice(final Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        ViewDoublePeopleMarriageNoticeBinding a2 = ViewDoublePeopleMarriageNoticeBinding.a(LayoutInflater.from(getContext()), this, true);
-        Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-        this.f18130a = a2;
+        ViewDoublePeopleMarriageNoticeBinding a = ViewDoublePeopleMarriageNoticeBinding.a(LayoutInflater.from(getContext()), (ViewGroup) this, true);
+        Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+        this.a = a;
         setVisibility(8);
-        this.f18130a.g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYDoublePeopleMarriageNotice$rfjTUr90KER7LpPPAhRlDtg9WiA
+        this.a.g.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYDoublePeopleMarriageNotice$rfjTUr90KER7LpPPAhRlDtg9WiA
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYDoublePeopleMarriageNotice.a(YYDoublePeopleMarriageNotice.this, context, view);
@@ -76,7 +73,7 @@ public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
             return;
         }
         LogUtils.d("notice", "hideNotify ... ");
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f18130a.f, "translationX", 0.0f, -getWidth());
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.a.f, "translationX", 0.0f, -getWidth());
         ofFloat.setDuration(500L);
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.yy_china.view.YYDoublePeopleMarriageNotice$hideNotify$1
@@ -88,7 +85,7 @@ public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
             public void onAnimationEnd(Animator animator) {
                 YYDoublePeopleMarriageNotice.AnimatorEndListener animatorEndListener;
                 LogUtils.d("notice", "hide animation ending ... ");
-                ViewGroup.this.removeView(this.getBinding().f);
+                ViewGroup.this.removeView((View) this.getBinding().f);
                 animatorEndListener = this.b;
                 if (animatorEndListener == null) {
                     return;
@@ -112,7 +109,7 @@ public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
         DoublePeopleNoticeInfoNode full_server_notification;
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(context, "$context");
-        DoublePeopleNoticeImNode doublePeopleNoticeImNode = this$0.f18131c;
+        DoublePeopleNoticeImNode doublePeopleNoticeImNode = this$0.c;
         if (doublePeopleNoticeImNode == null || (full_server_notification = doublePeopleNoticeImNode.getFull_server_notification()) == null) {
             return;
         }
@@ -137,21 +134,21 @@ public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
         Intrinsics.e(attachView, "attachView");
         Intrinsics.e(active, "active");
         setVisibility(0);
-        DoublePeopleNoticeImNode doublePeopleNoticeImNode = this.f18131c;
+        DoublePeopleNoticeImNode doublePeopleNoticeImNode = this.c;
         if (doublePeopleNoticeImNode != null) {
             getBinding().g.setText(doublePeopleNoticeImNode.getFull_server_notification().getContent());
             ActivityFragmentActive activityFragmentActive = active;
             ImageLoader.a(activityFragmentActive, doublePeopleNoticeImNode.getFull_server_notification().getBackground()).f().g(-1).b(R.drawable.icon_vip_marriage_background).a(getBinding().b);
             if (!StringUtils.b(doublePeopleNoticeImNode.getUid_avatar())) {
-                ImageLoader.a(activityFragmentActive, doublePeopleNoticeImNode.getUid_avatar()).c().a(getBinding().d);
+                ImageLoader.a(activityFragmentActive, doublePeopleNoticeImNode.getUid_avatar()).c().a((ImageView) getBinding().d);
                 getBinding().d.setVisibility(0);
             }
             if (!StringUtils.b(doublePeopleNoticeImNode.getTarget_avatar())) {
-                ImageLoader.a(activityFragmentActive, doublePeopleNoticeImNode.getTarget_avatar()).c().a(getBinding().e);
+                ImageLoader.a(activityFragmentActive, doublePeopleNoticeImNode.getTarget_avatar()).c().a((ImageView) getBinding().e);
                 getBinding().e.setVisibility(0);
             }
         }
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.f18130a.f, "translationX", getWidth() + AppInfo.l, 0.0f);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this.a.f, "translationX", getWidth() + AppInfo.l, 0.0f);
         ofFloat.setDuration(500L);
         ofFloat.setInterpolator(new LinearInterpolator());
         ofFloat.addListener(new YYDoublePeopleMarriageNotice$showNotify$2(this, active, attachView));
@@ -160,11 +157,11 @@ public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
 
     public final void a(DoublePeopleNoticeImNode notify) {
         Intrinsics.e(notify, "notify");
-        this.f18131c = notify;
+        this.c = notify;
     }
 
     public final ViewDoublePeopleMarriageNoticeBinding getBinding() {
-        return this.f18130a;
+        return this.a;
     }
 
     public final void setAnimatorEndListener(AnimatorEndListener callback) {
@@ -174,6 +171,6 @@ public final class YYDoublePeopleMarriageNotice extends ConstraintLayout {
 
     public final void setBinding(ViewDoublePeopleMarriageNoticeBinding viewDoublePeopleMarriageNoticeBinding) {
         Intrinsics.e(viewDoublePeopleMarriageNoticeBinding, "<set-?>");
-        this.f18130a = viewDoublePeopleMarriageNoticeBinding;
+        this.a = viewDoublePeopleMarriageNoticeBinding;
     }
 }

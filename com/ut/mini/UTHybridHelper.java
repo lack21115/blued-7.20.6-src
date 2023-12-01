@@ -3,8 +3,6 @@ package com.ut.mini;
 import android.net.Uri;
 import android.text.TextUtils;
 import com.alibaba.mtl.log.e.i;
-import com.android.ims.ImsCallProfile;
-import com.anythink.core.api.ErrorCode;
 import com.ut.mini.base.UTMIVariables;
 import com.ut.mini.internal.UTOriginalCustomHitBuilder;
 import java.util.Date;
@@ -15,7 +13,7 @@ import java.util.Map;
 public class UTHybridHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    private static UTHybridHelper f41016a = new UTHybridHelper();
+    private static UTHybridHelper f27325a = new UTHybridHelper();
 
     private void a(Date date, Map<String, String> map) {
         if (map == null || map.size() == 0) {
@@ -23,12 +21,12 @@ public class UTHybridHelper {
         }
         String b = b(map.get("urlpagename"), map.get("url"));
         if (b == null || TextUtils.isEmpty(b)) {
-            i.a("h5Ctrl", "pageName is null,return");
+            i.a("h5Ctrl", new String[]{"pageName is null,return"});
             return;
         }
         String str = map.get("logkey");
         if (str == null || TextUtils.isEmpty(str)) {
-            i.a("h5Ctrl", "logkey is null,return");
+            i.a("h5Ctrl", new String[]{"logkey is null,return"});
             return;
         }
         Map<String, String> map2 = null;
@@ -62,7 +60,7 @@ public class UTHybridHelper {
         map.remove("utjstype");
         Map<String, String> c2 = (str == null || str.equals("0")) ? c(map) : str.equals("1") ? d(map) : null;
         int i = 2006;
-        if (UTPageHitHelper.getInstance().m11330a(obj)) {
+        if (UTPageHitHelper.getInstance().m8287a(obj)) {
             i = 2001;
         }
         UTOriginalCustomHitBuilder uTOriginalCustomHitBuilder = new UTOriginalCustomHitBuilder(b, i, refPage, null, null, c2);
@@ -79,7 +77,7 @@ public class UTHybridHelper {
         } else {
             i.a("h5Page event error", "Fatal Error,must call setRequestAuthentication method first.");
         }
-        UTPageHitHelper.getInstance().m11329a(obj);
+        UTPageHitHelper.getInstance().m8286a(obj);
     }
 
     private String b(String str, String str2) {
@@ -139,7 +137,7 @@ public class UTHybridHelper {
             str9 = "";
         }
         hashMap.put("_h5ea", str9);
-        String str10 = map.get(ImsCallProfile.EXTRA_CNA);
+        String str10 = map.get("cna");
         if (str10 == null) {
             str10 = "";
         }
@@ -179,7 +177,7 @@ public class UTHybridHelper {
             str2 = "";
         }
         hashMap.put("_lka", str2);
-        String str3 = map.get(ImsCallProfile.EXTRA_CNA);
+        String str3 = map.get("cna");
         String str4 = str3;
         if (str3 == null) {
             str4 = "";
@@ -210,7 +208,7 @@ public class UTHybridHelper {
     }
 
     public static UTHybridHelper getInstance() {
-        return f41016a;
+        return f27325a;
     }
 
     public void h5UT(Map<String, String> map, Object obj) {
@@ -230,7 +228,7 @@ public class UTHybridHelper {
         }
         map.remove("functype");
         Date date = new Date();
-        if (str.equals(ErrorCode.timeOutError)) {
+        if (str.equals("2001")) {
             a(date, map, obj);
         } else if (str.equals("2101")) {
             a(date, map);

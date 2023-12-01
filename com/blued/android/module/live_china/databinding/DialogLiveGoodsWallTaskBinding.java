@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/DialogLiveGoodsWallTaskBinding.class */
 public final class DialogLiveGoodsWallTaskBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f11775a;
+    public final ImageView a;
     public final SlopeLoadingView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f11776c;
+    public final RecyclerView c;
     public final TextView d;
     public final View e;
     public final View f;
@@ -27,9 +23,9 @@ public final class DialogLiveGoodsWallTaskBinding implements ViewBinding {
 
     private DialogLiveGoodsWallTaskBinding(ConstraintLayout constraintLayout, ImageView imageView, SlopeLoadingView slopeLoadingView, RecyclerView recyclerView, TextView textView, View view, View view2) {
         this.g = constraintLayout;
-        this.f11775a = imageView;
+        this.a = imageView;
         this.b = slopeLoadingView;
-        this.f11776c = recyclerView;
+        this.c = recyclerView;
         this.d = textView;
         this.e = view;
         this.f = view2;
@@ -53,15 +49,15 @@ public final class DialogLiveGoodsWallTaskBinding implements ViewBinding {
         if (imageView != null) {
             SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
             if (slopeLoadingView != null) {
-                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list);
-                if (recyclerView != null) {
+                RecyclerView findViewById = view.findViewById(R.id.rv_list);
+                if (findViewById != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_title);
                     if (textView != null) {
-                        View findViewById = view.findViewById(R.id.view_line);
-                        if (findViewById != null) {
-                            View findViewById2 = view.findViewById(R.id.view_top_bg);
-                            if (findViewById2 != null) {
-                                return new DialogLiveGoodsWallTaskBinding((ConstraintLayout) view, imageView, slopeLoadingView, recyclerView, textView, findViewById, findViewById2);
+                        View findViewById2 = view.findViewById(R.id.view_line);
+                        if (findViewById2 != null) {
+                            View findViewById3 = view.findViewById(R.id.view_top_bg);
+                            if (findViewById3 != null) {
+                                return new DialogLiveGoodsWallTaskBinding((ConstraintLayout) view, imageView, slopeLoadingView, findViewById, textView, findViewById2, findViewById3);
                             }
                             str = "viewTopBg";
                         } else {
@@ -82,7 +78,6 @@ public final class DialogLiveGoodsWallTaskBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

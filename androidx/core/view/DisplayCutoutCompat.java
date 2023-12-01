@@ -6,7 +6,6 @@ import android.view.DisplayCutout;
 import androidx.core.graphics.Insets;
 import androidx.core.os.BuildCompat;
 import androidx.core.util.ObjectsCompat;
-import com.alipay.sdk.util.i;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.List;
 public final class DisplayCutoutCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Object f2628a;
+    private final Object f2580a;
 
     public DisplayCutoutCompat(Rect rect, List<Rect> list) {
         this(Build.VERSION.SDK_INT >= 28 ? new DisplayCutout(rect, list) : null);
@@ -26,7 +25,7 @@ public final class DisplayCutoutCompat {
     }
 
     private DisplayCutoutCompat(Object obj) {
-        this.f2628a = obj;
+        this.f2580a = obj;
     }
 
     private static DisplayCutout a(Insets insets, Rect rect, Rect rect2, Rect rect3, Rect rect4, Insets insets2) {
@@ -66,7 +65,7 @@ public final class DisplayCutoutCompat {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DisplayCutout a() {
-        return (DisplayCutout) this.f2628a;
+        return (DisplayCutout) this.f2580a;
     }
 
     public boolean equals(Object obj) {
@@ -76,47 +75,47 @@ public final class DisplayCutoutCompat {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        return ObjectsCompat.equals(this.f2628a, ((DisplayCutoutCompat) obj).f2628a);
+        return ObjectsCompat.equals(this.f2580a, ((DisplayCutoutCompat) obj).f2580a);
     }
 
     public List<Rect> getBoundingRects() {
-        return Build.VERSION.SDK_INT >= 28 ? ((DisplayCutout) this.f2628a).getBoundingRects() : Collections.emptyList();
+        return Build.VERSION.SDK_INT >= 28 ? ((DisplayCutout) this.f2580a).getBoundingRects() : Collections.emptyList();
     }
 
     public int getSafeInsetBottom() {
         if (Build.VERSION.SDK_INT >= 28) {
-            return ((DisplayCutout) this.f2628a).getSafeInsetBottom();
+            return ((DisplayCutout) this.f2580a).getSafeInsetBottom();
         }
         return 0;
     }
 
     public int getSafeInsetLeft() {
         if (Build.VERSION.SDK_INT >= 28) {
-            return ((DisplayCutout) this.f2628a).getSafeInsetLeft();
+            return ((DisplayCutout) this.f2580a).getSafeInsetLeft();
         }
         return 0;
     }
 
     public int getSafeInsetRight() {
         if (Build.VERSION.SDK_INT >= 28) {
-            return ((DisplayCutout) this.f2628a).getSafeInsetRight();
+            return ((DisplayCutout) this.f2580a).getSafeInsetRight();
         }
         return 0;
     }
 
     public int getSafeInsetTop() {
         if (Build.VERSION.SDK_INT >= 28) {
-            return ((DisplayCutout) this.f2628a).getSafeInsetTop();
+            return ((DisplayCutout) this.f2580a).getSafeInsetTop();
         }
         return 0;
     }
 
     public Insets getWaterfallInsets() {
-        return BuildCompat.isAtLeastR() ? Insets.toCompatInsets(((DisplayCutout) this.f2628a).getWaterfallInsets()) : Insets.NONE;
+        return BuildCompat.isAtLeastR() ? Insets.toCompatInsets(((DisplayCutout) this.f2580a).getWaterfallInsets()) : Insets.NONE;
     }
 
     public int hashCode() {
-        Object obj = this.f2628a;
+        Object obj = this.f2580a;
         if (obj == null) {
             return 0;
         }
@@ -124,6 +123,6 @@ public final class DisplayCutoutCompat {
     }
 
     public String toString() {
-        return "DisplayCutoutCompat{" + this.f2628a + i.d;
+        return "DisplayCutoutCompat{" + this.f2580a + "}";
     }
 }

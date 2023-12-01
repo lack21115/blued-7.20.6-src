@@ -4,11 +4,11 @@ package com.cmic.gen.sdk.tencent.a;
 public class a implements Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21577a;
+    private String f7971a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f21578c;
+    private String f7972c;
     private String d;
     private boolean e;
     private boolean f;
@@ -21,92 +21,92 @@ public class a implements Cloneable {
 
     /* renamed from: com.cmic.gen.sdk.tencent.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-7206380-dex2jar.jar:com/cmic/gen/sdk/tencent/a/a$a.class */
-    public static class C0328a {
+    public static class C0158a {
 
         /* renamed from: a  reason: collision with root package name */
-        private final a f21579a = new a();
+        private final a f7973a = new a();
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a a(int i) {
-            this.f21579a.k = i;
+        public C0158a a(int i) {
+            this.f7973a.k = i;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a a(String str) {
-            this.f21579a.f21577a = str;
+        public C0158a a(String str) {
+            this.f7973a.f7971a = str;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a a(boolean z) {
-            this.f21579a.e = z;
+        public C0158a a(boolean z) {
+            this.f7973a.e = z;
             return this;
         }
 
         public a a() {
-            return this.f21579a;
+            return this.f7973a;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a b(int i) {
-            this.f21579a.l = i;
+        public C0158a b(int i) {
+            this.f7973a.l = i;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a b(String str) {
-            this.f21579a.b = str;
+        public C0158a b(String str) {
+            this.f7973a.b = str;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a b(boolean z) {
-            this.f21579a.f = z;
+        public C0158a b(boolean z) {
+            this.f7973a.f = z;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a c(String str) {
-            this.f21579a.f21578c = str;
+        public C0158a c(String str) {
+            this.f7973a.f7972c = str;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a c(boolean z) {
-            this.f21579a.g = z;
+        public C0158a c(boolean z) {
+            this.f7973a.g = z;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a d(String str) {
-            this.f21579a.d = str;
+        public C0158a d(String str) {
+            this.f7973a.d = str;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a d(boolean z) {
-            this.f21579a.h = z;
+        public C0158a d(boolean z) {
+            this.f7973a.h = z;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a e(boolean z) {
-            this.f21579a.i = z;
+        public C0158a e(boolean z) {
+            this.f7973a.i = z;
             return this;
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0328a f(boolean z) {
-            this.f21579a.j = z;
+        public C0158a f(boolean z) {
+            this.f7973a.j = z;
             return this;
         }
     }
 
     private a() {
-        this.f21577a = "rcs.cmpassport.com";
+        this.f7971a = "rcs.cmpassport.com";
         this.b = "rcs.cmpassport.com";
-        this.f21578c = "config2.cmpassport.com";
+        this.f7972c = "config2.cmpassport.com";
         this.d = "log2.cmpassport.com:9443";
         this.e = false;
         this.f = false;
@@ -119,7 +119,7 @@ public class a implements Cloneable {
     }
 
     public String a() {
-        return this.f21577a;
+        return this.f7971a;
     }
 
     public String b() {
@@ -127,7 +127,7 @@ public class a implements Cloneable {
     }
 
     public String c() {
-        return this.f21578c;
+        return this.f7972c;
     }
 
     public String d() {

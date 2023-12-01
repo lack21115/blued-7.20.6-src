@@ -28,12 +28,12 @@ public final class InflateResult {
         public Builder() {
         }
 
-        public Builder(InflateResult result) {
-            Intrinsics.d(result, "result");
-            this.view = result.view();
-            this.name = result.name();
-            this.context = result.context();
-            this.attrs = result.attrs();
+        public Builder(InflateResult inflateResult) {
+            Intrinsics.d(inflateResult, "result");
+            this.view = inflateResult.view();
+            this.name = inflateResult.name();
+            this.context = inflateResult.context();
+            this.attrs = inflateResult.attrs();
         }
 
         public final Builder attrs(AttributeSet attributeSet) {
@@ -48,7 +48,7 @@ public final class InflateResult {
                 View view = this.view;
                 if (view == null) {
                     view = null;
-                } else if (!Intrinsics.a((Object) str, (Object) view.getClass().getName())) {
+                } else if (!Intrinsics.a(str, view.getClass().getName())) {
                     throw new IllegalStateException(("name (" + str + ") must be the view's fully qualified name (" + view.getClass().getName() + ')').toString());
                 }
                 Context context = this.context;
@@ -67,10 +67,10 @@ public final class InflateResult {
             return builder;
         }
 
-        public final Builder name(String name) {
-            Intrinsics.d(name, "name");
+        public final Builder name(String str) {
+            Intrinsics.d(str, "name");
             Builder builder = this;
-            builder.name = name;
+            builder.name = str;
             return builder;
         }
 
@@ -97,11 +97,11 @@ public final class InflateResult {
         }
     }
 
-    public InflateResult(View view, String name, Context context, AttributeSet attributeSet) {
-        Intrinsics.d(name, "name");
+    public InflateResult(View view, String str, Context context, AttributeSet attributeSet) {
+        Intrinsics.d(str, "name");
         Intrinsics.d(context, "context");
         this.view = view;
-        this.name = name;
+        this.name = str;
         this.context = context;
         this.attrs = attributeSet;
     }
@@ -155,17 +155,17 @@ public final class InflateResult {
         return this.context;
     }
 
-    public final InflateResult copy(View view, String name, Context context, AttributeSet attributeSet) {
-        Intrinsics.d(name, "name");
+    public final InflateResult copy(View view, String str, Context context, AttributeSet attributeSet) {
+        Intrinsics.d(str, "name");
         Intrinsics.d(context, "context");
-        return new InflateResult(view, name, context, attributeSet);
+        return new InflateResult(view, str, context, attributeSet);
     }
 
     public boolean equals(Object obj) {
         if (this != obj) {
             if (obj instanceof InflateResult) {
                 InflateResult inflateResult = (InflateResult) obj;
-                return Intrinsics.a(this.view, inflateResult.view) && Intrinsics.a((Object) this.name, (Object) inflateResult.name) && Intrinsics.a(this.context, inflateResult.context) && Intrinsics.a(this.attrs, inflateResult.attrs);
+                return Intrinsics.a(this.view, inflateResult.view) && Intrinsics.a(this.name, inflateResult.name) && Intrinsics.a(this.context, inflateResult.context) && Intrinsics.a(this.attrs, inflateResult.attrs);
             }
             return false;
         }

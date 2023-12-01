@@ -12,7 +12,7 @@ import androidx.core.content.res.ResourcesCompat;
 public final class DrawableDecoderCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile boolean f20985a = true;
+    private static volatile boolean f7379a = true;
 
     private DrawableDecoderCompat() {
     }
@@ -27,7 +27,7 @@ public final class DrawableDecoderCompat {
 
     private static Drawable a(Context context, Context context2, int i, Resources.Theme theme) {
         try {
-            if (f20985a) {
+            if (f7379a) {
                 return b(context2, i, theme);
             }
         } catch (Resources.NotFoundException e) {
@@ -37,7 +37,7 @@ public final class DrawableDecoderCompat {
             }
             return ContextCompat.getDrawable(context2, i);
         } catch (NoClassDefFoundError e3) {
-            f20985a = false;
+            f7379a = false;
         }
         if (theme == null) {
             theme = context2.getTheme();

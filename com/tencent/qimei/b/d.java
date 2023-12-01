@@ -7,14 +7,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class d implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AtomicInteger f38314a = new AtomicInteger(1);
+    public final AtomicInteger f24623a = new AtomicInteger(1);
 
     @Override // java.util.concurrent.ThreadFactory
     public Thread newThread(Runnable runnable) {
         try {
             StringBuilder sb = new StringBuilder();
             sb.append("qm-thread-");
-            sb.append(this.f38314a.getAndIncrement());
+            sb.append(this.f24623a.getAndIncrement());
             return new Thread(runnable, sb.toString());
         } catch (Exception e) {
             com.tencent.qimei.k.a.a(e);

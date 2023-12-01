@@ -60,7 +60,7 @@ public final class DescendingImmutableSortedMultiset<E> extends ImmutableSortedM
         return this.forward.firstEntry();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection, com.google.common.collect.Multiset
     public int size() {
         return this.forward.size();
     }

@@ -11,7 +11,7 @@ import com.blued.android.framework.ui.mvp.MvpPresenter;
 public abstract class ViewBindingFragment<T extends MvpPresenter> extends MvpFragment<T> {
     public abstract View a(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle);
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.framework.ui.mvp.MvpFragment, com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         if (this.i != null) {
             if (this.i.getParent() != null) {

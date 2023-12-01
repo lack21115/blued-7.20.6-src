@@ -1,5 +1,7 @@
 package com.soft.blued.ui.user.vm;
 
+import android.net.UrlQuerySanitizer;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelKt;
 import com.blued.android.module.common.base.mvi.MVIBaseViewModel;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
@@ -13,19 +15,21 @@ import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
 import kotlin.comparisons.ComparisonsKt;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineStart;
 
 @Metadata
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/user/vm/VirtualImageVM.class */
 public final class VirtualImageVM extends MVIBaseViewModel<VirtualImageState, VirtualImageAction> {
 
     /* renamed from: a  reason: collision with root package name */
-    private VirtualImageUtils f34411a;
+    private VirtualImageUtils f20720a;
 
     private final void a(String str) {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new VirtualImageVM$getGuestImage$1(str, this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new VirtualImageVM$getGuestImage$1(str, this, null), 3, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -35,11 +39,11 @@ public final class VirtualImageVM extends MVIBaseViewModel<VirtualImageState, Vi
     }
 
     private final void b() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new VirtualImageVM$getUserBeanCount$1(this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new VirtualImageVM$getUserBeanCount$1(this, null), 3, (Object) null);
     }
 
     private final void b(String str) {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new VirtualImageVM$save$1(str, this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new VirtualImageVM$save$1(str, this, null), 3, (Object) null);
     }
 
     private final void b(List<VirtualImageModel.CategoryModel> list) {
@@ -56,13 +60,13 @@ public final class VirtualImageVM extends MVIBaseViewModel<VirtualImageState, Vi
                 }
             }
             if (true ^ arrayList2.isEmpty()) {
-                VirtualImageModel.CategoryModel copy$default = VirtualImageModel.CategoryModel.copy$default(categoryModel, 0, null, 0, null, 0.0f, 0L, 0L, null, 0, 0, null, 2047, null);
-                copy$default.setGoods_list(CollectionsKt.f((Iterable) arrayList2));
+                VirtualImageModel.CategoryModel copy$default = VirtualImageModel.CategoryModel.copy$default(categoryModel, 0, null, 0, null, 0.0f, 0L, 0L, null, 0, 0, null, UrlQuerySanitizer.IllegalCharacterValueSanitizer.ALL_OK, null);
+                copy$default.setGoods_list(CollectionsKt.f(arrayList2));
                 arrayList.add(copy$default);
             }
         }
         if (arrayList.size() > 1) {
-            CollectionsKt.a((List) arrayList, new Comparator() { // from class: com.soft.blued.ui.user.vm.VirtualImageVM$handlePackageImageData$$inlined$sortBy$1
+            CollectionsKt.a(arrayList, new Comparator() { // from class: com.soft.blued.ui.user.vm.VirtualImageVM$handlePackageImageData$$inlined$sortBy$1
                 @Override // java.util.Comparator
                 public final int compare(T t, T t2) {
                     return ComparisonsKt.a(Integer.valueOf(((VirtualImageModel.CategoryModel) t).getPack_sort()), Integer.valueOf(((VirtualImageModel.CategoryModel) t2).getPack_sort()));
@@ -76,45 +80,43 @@ public final class VirtualImageVM extends MVIBaseViewModel<VirtualImageState, Vi
                 super(1);
             }
 
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final VirtualImageState invoke(VirtualImageState setState) {
-                Intrinsics.e(setState, "$this$setState");
-                return VirtualImageState.copy$default(setState, null, arrayList, null, 0, 13, null);
+            public final VirtualImageState invoke(VirtualImageState virtualImageState) {
+                Intrinsics.e(virtualImageState, "$this$setState");
+                return VirtualImageState.copy$default(virtualImageState, null, arrayList, null, 0, 13, null);
             }
         });
     }
 
     private final void c() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new VirtualImageVM$getMarketingPicture$1(this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new VirtualImageVM$getMarketingPicture$1(this, null), 3, (Object) null);
     }
 
     private final void d() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), null, null, new VirtualImageVM$getImageCategory$1(this, null), 3, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), (CoroutineContext) null, (CoroutineStart) null, new VirtualImageVM$getImageCategory$1(this, null), 3, (Object) null);
     }
 
     public final VirtualImageUtils a() {
-        return this.f34411a;
+        return this.f20720a;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseViewModel
     /* renamed from: a */
-    public void dispatchAction(VirtualImageAction action) {
-        Intrinsics.e(action, "action");
-        if (action instanceof VirtualImageAction.GetImageCategory) {
+    public void dispatchAction(VirtualImageAction virtualImageAction) {
+        Intrinsics.e(virtualImageAction, "action");
+        if (virtualImageAction instanceof VirtualImageAction.GetImageCategory) {
             d();
-        } else if (action instanceof VirtualImageAction.GetBeanCount) {
+        } else if (virtualImageAction instanceof VirtualImageAction.GetBeanCount) {
             b();
-        } else if (action instanceof VirtualImageAction.GetMarketingPicture) {
+        } else if (virtualImageAction instanceof VirtualImageAction.GetMarketingPicture) {
             c();
-        } else if (action instanceof VirtualImageAction.Save) {
-            b(((VirtualImageAction.Save) action).a());
-        } else if (action instanceof VirtualImageAction.GetGuestImage) {
-            a(((VirtualImageAction.GetGuestImage) action).a());
+        } else if (virtualImageAction instanceof VirtualImageAction.Save) {
+            b(((VirtualImageAction.Save) virtualImageAction).a());
+        } else if (virtualImageAction instanceof VirtualImageAction.GetGuestImage) {
+            a(((VirtualImageAction.GetGuestImage) virtualImageAction).a());
         }
     }
 
     public final void a(VirtualImageUtils virtualImageUtils) {
-        this.f34411a = virtualImageUtils;
+        this.f20720a = virtualImageUtils;
     }
 }

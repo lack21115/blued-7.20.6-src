@@ -18,6 +18,7 @@ import android.webkit.WebViewFactory;
 import com.android.internal.R;
 import com.android.internal.os.ZygoteConnection;
 import com.android.internal.telephony.PhoneConstants;
+import com.blued.android.chat.grpc.backup.MsgBackupManager;
 import dalvik.system.DexFile;
 import dalvik.system.PathClassLoader;
 import dalvik.system.VMRuntime;
@@ -189,7 +190,7 @@ public class ZygoteInit {
         try {
             SamplingProfilerIntegration.start();
             boolean z = false;
-            String str = Process.ZYGOTE_SOCKET;
+            String str = "zygote";
             String str2 = null;
             int i = 1;
             while (true) {
@@ -355,7 +356,7 @@ public class ZygoteInit {
                     if (!trim.startsWith("#") && !trim.equals("")) {
                         try {
                             Class.forName(trim);
-                            if (Debug.getGlobalAllocSize() > 50000) {
+                            if (Debug.getGlobalAllocSize() > PRELOAD_GC_THRESHOLD) {
                                 System.gc();
                                 runtime.runFinalizationSync();
                                 Debug.resetGlobalAllocSize();
@@ -402,7 +403,7 @@ public class ZygoteInit {
                 System.gc();
                 return length;
             }
-            if (Debug.getGlobalAllocSize() > 50000) {
+            if (Debug.getGlobalAllocSize() > PRELOAD_GC_THRESHOLD) {
                 vMRuntime.runFinalizationSync();
                 Debug.resetGlobalAllocSize();
             }
@@ -423,7 +424,7 @@ public class ZygoteInit {
                 System.gc();
                 return length;
             }
-            if (Debug.getGlobalAllocSize() > 50000) {
+            if (Debug.getGlobalAllocSize() > PRELOAD_GC_THRESHOLD) {
                 vMRuntime.runFinalizationSync();
                 Debug.resetGlobalAllocSize();
             }
@@ -471,7 +472,7 @@ public class ZygoteInit {
 
     private static void preloadSharedLibraries() {
         Log.i(TAG, "Preloading shared libraries...");
-        System.loadLibrary("android");
+        System.loadLibrary(MsgBackupManager.PLATFORM_ANDROID);
         System.loadLibrary("compiler_rt");
         System.loadLibrary("jnigraphics");
     }
@@ -589,7 +590,7 @@ public class ZygoteInit {
     }
 
     private static void waitForSecondaryZygote(String str) {
-        String str2 = Process.ZYGOTE_SOCKET.equals(str) ? Process.SECONDARY_ZYGOTE_SOCKET : Process.ZYGOTE_SOCKET;
+        String str2 = "zygote".equals(str) ? "zygote_secondary" : "zygote";
         while (true) {
             try {
                 Process.ZygoteState.connect(str2).close();

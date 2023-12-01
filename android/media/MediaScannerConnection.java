@@ -28,9 +28,8 @@ public class MediaScannerConnection implements ServiceConnection {
     };
     private IMediaScannerService mService;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/media/MediaScannerConnection$ClientProxy.class */
-    public static class ClientProxy implements MediaScannerConnectionClient {
+    static class ClientProxy implements MediaScannerConnectionClient {
         final OnScanCompletedListener mClient;
         MediaScannerConnection mConnection;
         final String[] mMimeTypes;

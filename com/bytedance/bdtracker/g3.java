@@ -11,7 +11,7 @@ import com.bytedance.bdtracker.s3;
 public abstract class g3<SERVICE> implements s3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f21222a;
+    public final String f7616a;
     public f3<Boolean> b = new a();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/g3$a.class */
@@ -23,7 +23,7 @@ public abstract class g3<SERVICE> implements s3 {
         public Boolean a(Object[] objArr) {
             boolean z = false;
             try {
-                if (((Context) objArr[0]).getPackageManager().getPackageInfo(g3.this.f21222a, 128) != null) {
+                if (((Context) objArr[0]).getPackageManager().getPackageInfo(g3.this.f7616a, 128) != null) {
                     z = true;
                 }
             } catch (PackageManager.NameNotFoundException e) {
@@ -33,7 +33,7 @@ public abstract class g3<SERVICE> implements s3 {
     }
 
     public g3(String str) {
-        this.f21222a = str;
+        this.f7616a = str;
     }
 
     public abstract a4.b<SERVICE, String> a();
@@ -45,7 +45,7 @@ public abstract class g3<SERVICE> implements s3 {
             return null;
         }
         s3.a aVar = new s3.a();
-        aVar.f21305a = str;
+        aVar.f7699a = str;
         return aVar;
     }
 

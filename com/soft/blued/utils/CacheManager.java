@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.imagecache.RecyclingImageLoader;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.utils.FileUtil;
 import com.soft.blued.R;
 import java.io.File;
@@ -16,18 +15,18 @@ public class CacheManager {
     private static String[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    private File f34724a;
+    private File f21033a;
     private File b;
 
     /* renamed from: c  reason: collision with root package name */
-    private File f34725c;
+    private File f21034c;
     private File d;
 
     public CacheManager() {
         e = AppInfo.d().getResources().getStringArray(R.array.cache_whitelist);
         this.b = AppInfo.d().getExternalCacheDir();
-        this.f34724a = AppInfo.d().getCacheDir();
-        this.f34725c = AppInfo.d().getFilesDir();
+        this.f21033a = AppInfo.d().getCacheDir();
+        this.f21034c = AppInfo.d().getFilesDir();
         this.d = AppInfo.d().getExternalFilesDir(null);
     }
 
@@ -107,10 +106,10 @@ public class CacheManager {
     }
 
     private static boolean b(String str) {
-        if (StringUtils.d(str) || !str.contains(BridgeUtil.SPLIT_MARK)) {
+        if (StringUtils.d(str) || !str.contains("/")) {
             return false;
         }
-        String str2 = str.split(BridgeUtil.SPLIT_MARK)[str.split(BridgeUtil.SPLIT_MARK).length - 1];
+        String str2 = str.split("/")[str.split("/").length - 1];
         if (e == null || StringUtils.d(str2)) {
             return false;
         }
@@ -152,20 +151,20 @@ public class CacheManager {
     public String a() {
         long j;
         long j2;
-        if (c() && this.f34724a != null && this.b != null) {
-            j = a(this.f34724a.getAbsolutePath() + BridgeUtil.SPLIT_MARK) + a(this.b.getAbsolutePath() + BridgeUtil.SPLIT_MARK);
-        } else if (this.f34724a != null) {
-            j = a(this.f34724a.getAbsolutePath() + BridgeUtil.SPLIT_MARK);
+        if (c() && this.f21033a != null && this.b != null) {
+            j = a(this.f21033a.getAbsolutePath() + "/") + a(this.b.getAbsolutePath() + "/");
+        } else if (this.f21033a != null) {
+            j = a(this.f21033a.getAbsolutePath() + "/");
         } else {
             j = 0;
         }
-        if (!c() || this.f34725c == null || this.d == null) {
+        if (!c() || this.f21034c == null || this.d == null) {
             j2 = j;
-            if (this.f34725c != null) {
-                j2 = j + a(this.f34725c.getAbsolutePath() + BridgeUtil.SPLIT_MARK);
+            if (this.f21034c != null) {
+                j2 = j + a(this.f21034c.getAbsolutePath() + "/");
             }
         } else {
-            j2 = j + a(this.f34725c.getAbsolutePath() + BridgeUtil.SPLIT_MARK) + a(this.d.getAbsolutePath() + BridgeUtil.SPLIT_MARK);
+            j2 = j + a(this.f21034c.getAbsolutePath() + "/") + a(this.d.getAbsolutePath() + "/");
         }
         return a(j2);
     }
@@ -202,9 +201,9 @@ public class CacheManager {
     }
 
     public void b() {
-        a(this.f34724a);
+        a(this.f21033a);
         a(this.b);
-        a(this.f34725c);
+        a(this.f21034c);
         a(this.d);
         if (AppInfo.n() != null) {
             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.utils.CacheManager.1

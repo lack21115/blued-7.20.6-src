@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public abstract class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f40492a;
+    private a f26801a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tramini/plugin/a/b/b$a.class */
     final class a extends SQLiteOpenHelper {
@@ -32,11 +32,11 @@ public abstract class b {
     }
 
     public b(Context context) {
-        this.f40492a = new a(context, c());
+        this.f26801a = new a(context, c());
     }
 
     public final SQLiteDatabase a() {
-        return this.f40492a.getReadableDatabase();
+        return this.f26801a.getReadableDatabase();
     }
 
     protected abstract void a(SQLiteDatabase sQLiteDatabase);
@@ -45,7 +45,7 @@ public abstract class b {
         SQLiteDatabase sQLiteDatabase;
         synchronized (this) {
             try {
-                sQLiteDatabase = this.f40492a.getWritableDatabase();
+                sQLiteDatabase = this.f26801a.getWritableDatabase();
             } catch (Exception e) {
                 sQLiteDatabase = null;
             }

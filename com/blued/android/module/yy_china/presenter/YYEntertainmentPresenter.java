@@ -19,10 +19,10 @@ public class YYEntertainmentPresenter extends AbstractBasePresenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void f() {
-        if (this.f17634a == null) {
+        if (this.a == null) {
             return;
         }
-        this.f17634a.a(new YYEntertainmentBroadcastView(this.f17634a.getContext()), -2);
+        this.a.a(new YYEntertainmentBroadcastView(this.a.getContext()), -2);
     }
 
     @Override // com.blued.android.module.yy_china.presenter.AbstractBasePresenter
@@ -33,32 +33,29 @@ public class YYEntertainmentPresenter extends AbstractBasePresenter {
     @Override // com.blued.android.module.yy_china.presenter.AbstractBasePresenter
     public void b(LifecycleOwner lifecycleOwner) {
         LiveEventBus.get("show_on_beans_change", ChatroomMIcBeansModel.class).observe(lifecycleOwner, new Observer<ChatroomMIcBeansModel>() { // from class: com.blued.android.module.yy_china.presenter.YYEntertainmentPresenter.1
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(ChatroomMIcBeansModel chatroomMIcBeansModel) {
-                if (YYEntertainmentPresenter.this.f17634a == null) {
+                if (YYEntertainmentPresenter.this.a == null) {
                     return;
                 }
                 if (YYRoomInfoManager.e().b() != null) {
                     YYRoomInfoManager.e().b().micBeansModel = chatroomMIcBeansModel;
                 }
-                if (YYEntertainmentPresenter.this.f17634a.E instanceof YYSeatEntertainmentAdapter) {
-                    ((YYSeatEntertainmentAdapter) YYEntertainmentPresenter.this.f17634a.E).a();
+                if (YYEntertainmentPresenter.this.a.E instanceof YYSeatEntertainmentAdapter) {
+                    ((YYSeatEntertainmentAdapter) YYEntertainmentPresenter.this.a.E).a();
                 }
             }
         });
         LiveEventBus.get("show_no_anchor_alert", YYMsgNoAnchorModel.class).observe(lifecycleOwner, new Observer<YYMsgNoAnchorModel>() { // from class: com.blued.android.module.yy_china.presenter.YYEntertainmentPresenter.2
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(YYMsgNoAnchorModel yYMsgNoAnchorModel) {
-                if (YYEntertainmentPresenter.this.f17634a == null) {
+                if (YYEntertainmentPresenter.this.a == null) {
                     return;
                 }
-                new YYNoAnchorAlertDialog(yYMsgNoAnchorModel, YYEntertainmentPresenter.this.f17634a).show(YYEntertainmentPresenter.this.f17634a.getParentFragmentManager(), "show_no_anchor_dialog");
+                new YYNoAnchorAlertDialog(yYMsgNoAnchorModel, YYEntertainmentPresenter.this.a).show(YYEntertainmentPresenter.this.a.getParentFragmentManager(), "show_no_anchor_dialog");
             }
         });
         LiveEventBus.get("show_blind_guide", String.class).observe(lifecycleOwner, new Observer<String>() { // from class: com.blued.android.module.yy_china.presenter.YYEntertainmentPresenter.3
-            @Override // androidx.lifecycle.Observer
             /* renamed from: a */
             public void onChanged(String str) {
                 YYEntertainmentPresenter.this.f();

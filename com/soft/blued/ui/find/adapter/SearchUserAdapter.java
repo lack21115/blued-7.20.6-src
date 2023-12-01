@@ -26,50 +26,50 @@ import com.soft.blued.utils.UserRelationshipUtils;
 public class SearchUserAdapter extends BaseQuickAdapter<UserBasicModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f30140a;
+    private String f16450a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f30141c;
+    private IRequestHost f16451c;
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, final UserBasicModel userBasicModel) {
         int indexOf;
-        UserInfoHelper.a((ImageView) baseViewHolder.getView(2131364720), userBasicModel.vbadge, 3);
+        UserInfoHelper.a((ImageView) baseViewHolder.getView(R.id.img_verify), userBasicModel.vbadge, 3);
         final ImageView imageView = (ImageView) baseViewHolder.getView(2131364232);
         int i = 0;
-        ImageLoader.a(this.f30141c, AvatarUtils.a(0, userBasicModel.avatar)).c().b(2131237310).a(imageView);
-        UserInfoHelper.a(this.b, (TextView) baseViewHolder.getView(2131369448), userBasicModel.role);
-        TextView textView = (TextView) baseViewHolder.getView(2131363246);
+        ImageLoader.a(this.f16451c, AvatarUtils.a(0, userBasicModel.avatar)).c().b(2131237310).a(imageView);
+        UserInfoHelper.a(this.b, (TextView) baseViewHolder.getView(R.id.role_view), userBasicModel.role);
+        TextView textView = (TextView) baseViewHolder.getView(R.id.distance_view);
         if (TextUtils.isEmpty(userBasicModel.distance)) {
             textView.setText("");
         } else {
             textView.setText(DistanceUtils.a(userBasicModel.distance, BlueAppLocal.c(), false));
         }
         DistanceUtils.a(this.b, textView, userBasicModel, 1);
-        TextView textView2 = (TextView) baseViewHolder.getView(2131368652);
+        TextView textView2 = (TextView) baseViewHolder.getView(R.id.name_view);
         if (TextUtils.isEmpty(userBasicModel.name)) {
             textView2.setText("");
         } else {
             textView2.setText(userBasicModel.name);
         }
         UserRelationshipUtils.a(this.b, textView2, userBasicModel);
-        UserRelationshipUtils.a((ImageView) baseViewHolder.getView(2131364459), userBasicModel);
-        TextView textView3 = (TextView) baseViewHolder.getView(2131362003);
+        UserRelationshipUtils.a((ImageView) baseViewHolder.getView(R.id.img_blued_medal), userBasicModel);
+        TextView textView3 = (TextView) baseViewHolder.getView(R.id.age_view);
         if (TextUtils.isEmpty(userBasicModel.age)) {
             textView3.setText("");
         } else {
             textView3.setText(userBasicModel.age + this.b.getResources().getString(2131886374));
         }
-        TextView textView4 = (TextView) baseViewHolder.getView(2131364242);
+        TextView textView4 = (TextView) baseViewHolder.getView(R.id.height_view);
         if (TextUtils.isEmpty(userBasicModel.height)) {
             textView4.setText("");
         } else {
             textView4.setText(userBasicModel.height);
         }
-        TextView textView5 = (TextView) baseViewHolder.getView(2131373390);
+        TextView textView5 = (TextView) baseViewHolder.getView(R.id.weight_view);
         if (TextUtils.isEmpty(userBasicModel.weight)) {
             textView5.setText("");
         } else {
@@ -85,12 +85,12 @@ public class SearchUserAdapter extends BaseQuickAdapter<UserBasicModel, BaseView
         String str = userBasicModel.name;
         if (TextUtils.isEmpty(str)) {
             textView2.setText("");
-        } else if (str.toLowerCase().contains(this.f30140a.toLowerCase())) {
+        } else if (str.toLowerCase().contains(this.f16450a.toLowerCase())) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             String lowerCase = str.toLowerCase();
-            this.f30140a = this.f30140a.toLowerCase();
-            while (i < lowerCase.length() && (indexOf = lowerCase.indexOf(this.f30140a, i)) >= 0) {
-                spannableStringBuilder.setSpan(new StyleSpan(1), indexOf, this.f30140a.length() + indexOf, 33);
+            this.f16450a = this.f16450a.toLowerCase();
+            while (i < lowerCase.length() && (indexOf = lowerCase.indexOf(this.f16450a, i)) >= 0) {
+                spannableStringBuilder.setSpan(new StyleSpan(1), indexOf, this.f16450a.length() + indexOf, 33);
                 i = Math.max(i + 1, indexOf);
             }
             textView2.setText(spannableStringBuilder);
@@ -101,7 +101,7 @@ public class SearchUserAdapter extends BaseQuickAdapter<UserBasicModel, BaseView
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
-                FilterDialogFragment.f30190c = true;
+                FilterDialogFragment.f16500c = true;
                 UserInfoFragmentNew.a(SearchUserAdapter.this.b, userBasicModel, "", imageView);
             }
         });

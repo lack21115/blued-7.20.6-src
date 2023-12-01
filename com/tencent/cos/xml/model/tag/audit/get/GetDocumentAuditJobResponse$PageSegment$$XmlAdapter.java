@@ -19,6 +19,7 @@ public class GetDocumentAuditJobResponse$PageSegment$$XmlAdapter implements IXml
         HashMap<String, ChildElementBinder<GetDocumentAuditJobResponse.PageSegment>> hashMap = new HashMap<>();
         this.childElementBinders = hashMap;
         hashMap.put("Results", new ChildElementBinder<GetDocumentAuditJobResponse.PageSegment>() { // from class: com.tencent.cos.xml.model.tag.audit.get.GetDocumentAuditJobResponse$PageSegment$$XmlAdapter.1
+            /* JADX WARN: Multi-variable type inference failed */
             @Override // com.tencent.qcloud.qcloudxml.core.ChildElementBinder
             public void fromXml(XmlPullParser xmlPullParser, GetDocumentAuditJobResponse.PageSegment pageSegment, String str) throws IOException, XmlPullParserException {
                 if (pageSegment.results == null) {

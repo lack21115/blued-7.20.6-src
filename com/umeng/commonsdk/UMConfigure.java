@@ -6,8 +6,6 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-import com.amap.api.col.p0003sl.iu;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.ss.android.downloadlib.OrderDownloader;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.analytics.pro.at;
@@ -128,7 +126,7 @@ public class UMConfigure {
                     Log.e("UMLog", UMLogCommon.SC_10022);
                     return;
                 }
-                TagHelper.deleteModuleTag(str2 + BridgeUtil.UNDERLINE_STR + str);
+                TagHelper.deleteModuleTag(str2 + "_" + str);
             } catch (Throwable th) {
             }
         }
@@ -271,6 +269,9 @@ public class UMConfigure {
         init(context, null, null, i, str);
     }
 
+    /* JADX WARN: Type inference failed for: r0v286, types: [com.umeng.commonsdk.UMConfigure$3] */
+    /* JADX WARN: Type inference failed for: r0v295, types: [com.umeng.commonsdk.UMConfigure$2] */
+    /* JADX WARN: Type inference failed for: r0v300, types: [com.umeng.commonsdk.UMConfigure$1] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:252:0x07d7 -> B:45:0x0115). Please submit an issue!!! */
     public static void init(Context context, String str, String str2, int i, String str3) {
         Method declaredMethod;
@@ -431,7 +432,7 @@ public class UMConfigure {
                         declaredMethod9.invoke(cls5, applicationContext);
                     }
                 }
-                if (com.umeng.commonsdk.statistics.b.f40900a.indexOf(iu.h) >= 0 && (cls2 = Class.forName("com.umeng.analytics.MobclickAgent")) != null && (declaredMethod8 = cls2.getDeclaredMethod("disableExceptionCatch", new Class[0])) != null) {
+                if (com.umeng.commonsdk.statistics.b.f27209a.indexOf("e") >= 0 && (cls2 = Class.forName("com.umeng.analytics.MobclickAgent")) != null && (declaredMethod8 = cls2.getDeclaredMethod("disableExceptionCatch", new Class[0])) != null) {
                     declaredMethod8.setAccessible(true);
                     declaredMethod8.invoke(cls2, new Object[0]);
                 }
@@ -749,7 +750,7 @@ public class UMConfigure {
     }
 
     private static void setLatencyWindow(long j) {
-        com.umeng.commonsdk.statistics.a.f40899c = ((int) j) * 1000;
+        com.umeng.commonsdk.statistics.a.f27208c = ((int) j) * 1000;
     }
 
     public static void setLogEnabled(boolean z) {
@@ -791,7 +792,7 @@ public class UMConfigure {
                         Log.e("UMLog", UMLogCommon.SC_10019);
                         return;
                     }
-                    TagHelper.setModuleTag(str3 + BridgeUtil.UNDERLINE_STR + str, str2);
+                    TagHelper.setModuleTag(str3 + "_" + str, str2);
                     return;
                 }
             }
@@ -807,32 +808,32 @@ public class UMConfigure {
     private static void setWraperType(String str, String str2) {
         if (!TextUtils.isEmpty(str)) {
             if (str.equals("native")) {
-                com.umeng.commonsdk.stateless.a.f40889a = "native";
-                com.umeng.commonsdk.statistics.a.f40898a = "native";
+                com.umeng.commonsdk.stateless.a.f27198a = "native";
+                com.umeng.commonsdk.statistics.a.f27207a = "native";
             } else if (str.equals(WRAPER_TYPE_COCOS2DX_X)) {
-                com.umeng.commonsdk.stateless.a.f40889a = WRAPER_TYPE_COCOS2DX_X;
-                com.umeng.commonsdk.statistics.a.f40898a = WRAPER_TYPE_COCOS2DX_X;
+                com.umeng.commonsdk.stateless.a.f27198a = WRAPER_TYPE_COCOS2DX_X;
+                com.umeng.commonsdk.statistics.a.f27207a = WRAPER_TYPE_COCOS2DX_X;
             } else if (str.equals(WRAPER_TYPE_COCOS2DX_XLUA)) {
-                com.umeng.commonsdk.stateless.a.f40889a = WRAPER_TYPE_COCOS2DX_XLUA;
-                com.umeng.commonsdk.statistics.a.f40898a = WRAPER_TYPE_COCOS2DX_XLUA;
+                com.umeng.commonsdk.stateless.a.f27198a = WRAPER_TYPE_COCOS2DX_XLUA;
+                com.umeng.commonsdk.statistics.a.f27207a = WRAPER_TYPE_COCOS2DX_XLUA;
             } else if (str.equals(WRAPER_TYPE_UNITY)) {
-                com.umeng.commonsdk.stateless.a.f40889a = WRAPER_TYPE_UNITY;
-                com.umeng.commonsdk.statistics.a.f40898a = WRAPER_TYPE_UNITY;
+                com.umeng.commonsdk.stateless.a.f27198a = WRAPER_TYPE_UNITY;
+                com.umeng.commonsdk.statistics.a.f27207a = WRAPER_TYPE_UNITY;
             } else if (str.equals(WRAPER_TYPE_REACTNATIVE)) {
-                com.umeng.commonsdk.stateless.a.f40889a = WRAPER_TYPE_REACTNATIVE;
-                com.umeng.commonsdk.statistics.a.f40898a = WRAPER_TYPE_REACTNATIVE;
+                com.umeng.commonsdk.stateless.a.f27198a = WRAPER_TYPE_REACTNATIVE;
+                com.umeng.commonsdk.statistics.a.f27207a = WRAPER_TYPE_REACTNATIVE;
             } else if (str.equals(WRAPER_TYPE_PHONEGAP)) {
-                com.umeng.commonsdk.stateless.a.f40889a = WRAPER_TYPE_PHONEGAP;
-                com.umeng.commonsdk.statistics.a.f40898a = WRAPER_TYPE_PHONEGAP;
+                com.umeng.commonsdk.stateless.a.f27198a = WRAPER_TYPE_PHONEGAP;
+                com.umeng.commonsdk.statistics.a.f27207a = WRAPER_TYPE_PHONEGAP;
             } else if (str.equals(WRAPER_TYPE_WEEX)) {
-                com.umeng.commonsdk.stateless.a.f40889a = WRAPER_TYPE_WEEX;
-                com.umeng.commonsdk.statistics.a.f40898a = WRAPER_TYPE_WEEX;
+                com.umeng.commonsdk.stateless.a.f27198a = WRAPER_TYPE_WEEX;
+                com.umeng.commonsdk.statistics.a.f27207a = WRAPER_TYPE_WEEX;
             } else if (str.equals("hybrid")) {
-                com.umeng.commonsdk.stateless.a.f40889a = "hybrid";
-                com.umeng.commonsdk.statistics.a.f40898a = "hybrid";
+                com.umeng.commonsdk.stateless.a.f27198a = "hybrid";
+                com.umeng.commonsdk.statistics.a.f27207a = "hybrid";
             } else if (str.equals(WRAPER_TYPE_FLUTTER)) {
-                com.umeng.commonsdk.stateless.a.f40889a = WRAPER_TYPE_FLUTTER;
-                com.umeng.commonsdk.statistics.a.f40898a = WRAPER_TYPE_FLUTTER;
+                com.umeng.commonsdk.stateless.a.f27198a = WRAPER_TYPE_FLUTTER;
+                com.umeng.commonsdk.statistics.a.f27207a = WRAPER_TYPE_FLUTTER;
             }
         }
         if (TextUtils.isEmpty(str2)) {

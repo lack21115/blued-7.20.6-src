@@ -24,18 +24,16 @@ public class RailwaySpace implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5718a;
+    private String a;
     private float b;
 
     protected RailwaySpace(Parcel parcel) {
-        this.f5718a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readFloat();
     }
 
     public RailwaySpace(String str, float f) {
-        this.f5718a = str;
+        this.a = str;
         this.b = f;
     }
 
@@ -45,7 +43,7 @@ public class RailwaySpace implements Parcelable {
     }
 
     public String getCode() {
-        return this.f5718a;
+        return this.a;
     }
 
     public float getCost() {
@@ -54,7 +52,7 @@ public class RailwaySpace implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5718a);
+        parcel.writeString(this.a);
         parcel.writeFloat(this.b);
     }
 }

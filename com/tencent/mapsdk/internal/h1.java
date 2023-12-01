@@ -76,7 +76,7 @@ public final class h1 implements i5, j0, k0, m0 {
         public void a(a9 a9Var) {
             yi yiVar;
             VectorMap map;
-            if (a9Var.f37291a == 10000 && (a9Var instanceof oi) && (yiVar = h1.this.e) != null && (map = yiVar.getMap()) != null) {
+            if (a9Var.f23600a == 10000 && (a9Var instanceof oi) && (yiVar = h1.this.e) != null && (map = yiVar.getMap()) != null) {
                 oi oiVar = (oi) a9Var;
                 if (oiVar.p()) {
                     map.d((yiVar.Z0 / 2) - oiVar.f(), (yiVar.a1 / 2) - oiVar.g());
@@ -190,22 +190,22 @@ public final class h1 implements i5, j0, k0, m0 {
     public class c implements t4.a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ boolean f37499a;
+        public final /* synthetic */ boolean f23808a;
         public final /* synthetic */ TencentMap.CancelableCallback b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final /* synthetic */ long f37500c;
+        public final /* synthetic */ long f23809c;
 
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/h1$c$a.class */
         public class a implements Runnable {
             public final /* synthetic */ float b;
 
             /* renamed from: c  reason: collision with root package name */
-            public final /* synthetic */ GeoPoint f37501c;
+            public final /* synthetic */ GeoPoint f23810c;
 
             public a(float f, GeoPoint geoPoint) {
                 this.b = f;
-                this.f37501c = geoPoint;
+                this.f23810c = geoPoint;
             }
 
             @Override // java.lang.Runnable
@@ -214,8 +214,8 @@ public final class h1 implements i5, j0, k0, m0 {
                     return;
                 }
                 c cVar = c.this;
-                if (!cVar.f37499a) {
-                    h1.this.e.getMap().h(this.f37501c);
+                if (!cVar.f23808a) {
+                    h1.this.e.getMap().h(this.f23810c);
                     h1.this.e.getMap().b(this.b);
                     return;
                 }
@@ -225,19 +225,19 @@ public final class h1 implements i5, j0, k0, m0 {
                     d = 0.0d;
                 }
                 oi oiVar = new oi(10000);
-                oiVar.a(this.f37501c.getLatitudeE6(), this.f37501c.getLongitudeE6());
+                oiVar.a(this.f23810c.getLatitudeE6(), this.f23810c.getLongitudeE6());
                 oiVar.f((float) d);
                 oiVar.a(h1.this.B);
                 oiVar.a(c.this.b);
-                oiVar.a(c.this.f37500c);
+                oiVar.a(c.this.f23809c);
                 h1.this.e.getMap().a(oiVar);
             }
         }
 
         public c(boolean z, TencentMap.CancelableCallback cancelableCallback, long j) {
-            this.f37499a = z;
+            this.f23808a = z;
             this.b = cancelableCallback;
-            this.f37500c = j;
+            this.f23809c = j;
         }
 
         @Override // com.tencent.mapsdk.internal.t4.a
@@ -274,10 +274,10 @@ public final class h1 implements i5, j0, k0, m0 {
     public class e implements t4.a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ TencentMap.AsyncOperateCallback f37503a;
+        public final /* synthetic */ TencentMap.AsyncOperateCallback f23812a;
 
         public e(TencentMap.AsyncOperateCallback asyncOperateCallback) {
-            this.f37503a = asyncOperateCallback;
+            this.f23812a = asyncOperateCallback;
         }
 
         @Override // com.tencent.mapsdk.internal.t4.a
@@ -290,7 +290,7 @@ public final class h1 implements i5, j0, k0, m0 {
             }
             h1 h1Var = h1.this;
             h1Var.s = new CameraPosition(d2, (float) d3, h1Var.e.getMap().Z(), h1.this.e.getMap().T());
-            TencentMap.AsyncOperateCallback asyncOperateCallback = this.f37503a;
+            TencentMap.AsyncOperateCallback asyncOperateCallback = this.f23812a;
             if (asyncOperateCallback != null) {
                 asyncOperateCallback.onOperateFinished(h1.this.s);
             }
@@ -332,11 +332,11 @@ public final class h1 implements i5, j0, k0, m0 {
     public class h implements g {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f37504a;
+        private boolean f23813a;
 
         public h(boolean z) {
-            this.f37504a = false;
-            this.f37504a = z;
+            this.f23813a = false;
+            this.f23813a = z;
         }
 
         @Override // com.tencent.mapsdk.internal.h1.g
@@ -351,7 +351,7 @@ public final class h1 implements i5, j0, k0, m0 {
             LatLng latLng = new LatLng(0.0d, 0.0d);
             float a2 = (h1.this.e.V0 == 0 && h1.this.e.W0 == 0 && h1.this.e.X0 == 0 && h1.this.e.Y0 == 0) ? h1.this.x.a(h1.this.e.S0, h1.this.e.T0, 0, 0, 0, 0, latLng) : h1.this.x.a(h1.this.e.S0, h1.this.e.T0, h1.this.e.V0, h1.this.e.W0, h1.this.e.X0, h1.this.e.Y0, latLng);
             TencentMap.CancelableCallback cancelableCallback = h1.this.e.h0;
-            if (this.f37504a) {
+            if (this.f23813a) {
                 oi oiVar = new oi(10000);
                 oiVar.c(0.0f);
                 oiVar.d(0.0f);
@@ -804,7 +804,7 @@ public final class h1 implements i5, j0, k0, m0 {
         if (d2 < 0.0d) {
             d3 = Math.abs(d2);
         }
-        double d4 = a3.f37683c - a2.f37683c;
+        double d4 = a3.f23992c - a2.f23992c;
         double d5 = d4;
         if (d4 < 0.0d) {
             d5 = Math.abs(d4);
@@ -1505,7 +1505,7 @@ public final class h1 implements i5, j0, k0, m0 {
             jSONObject.put("cfgVer", (!f7.b(this.g) ? kc.a(this.f, this.g) : lc.a(this.f)).a());
             int j = g7.j(this.f);
             int i = g7.i(this.f);
-            jSONObject.put("resolution", "{" + j + "," + i + com.alipay.sdk.util.i.d);
+            jSONObject.put("resolution", "{" + j + "," + i + "}");
             jSONObject.put("density", (double) this.w);
             jSONObject.put("renderStatus", this.e.getMap().I());
             jSONObject.put("renderError", this.e.getMap().H());
@@ -1855,7 +1855,7 @@ public final class h1 implements i5, j0, k0, m0 {
                 w6 w = this.e.A().w();
                 i2 = i3;
                 if (w != null) {
-                    w.e().a(a2.f38114c);
+                    w.e().a(a2.f24423c);
                     i2 = i3;
                 }
             } else if (i >= 1000) {
@@ -2075,7 +2075,7 @@ public final class h1 implements i5, j0, k0, m0 {
                 }
                 point = new Point();
                 point.x = (int) Math.round(a2.b);
-                point.y = (int) Math.round(a2.f37683c);
+                point.y = (int) Math.round(a2.f23992c);
             }
         }
         return point;

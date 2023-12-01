@@ -15,24 +15,22 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/c/g.class */
 public final class g extends y {
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5900a;
+    String a;
     String b;
 
     public g(com.anythink.core.common.e.i iVar, String str, String str2) {
-        this.f5900a = str;
+        this.a = str;
         this.b = str2;
-        this.f6684c = iVar;
+        this.c = iVar;
     }
 
     @Override // com.anythink.core.common.e.y
     public final void a(Activity activity) {
         try {
-            String aa = this.f6684c instanceof aa ? ((aa) this.f6684c).aa() : "";
+            String aa = this.c instanceof aa ? ((aa) this.c).aa() : "";
             String str = aa;
             if (TextUtils.isEmpty(aa)) {
-                str = this.f6684c.r();
+                str = this.c.r();
             }
             final Context g = n.a().g();
             View inflate = LayoutInflater.from(activity).inflate(com.anythink.core.common.k.h.a(g, "myoffer_confirm_dialog", "layout"), (ViewGroup) null, false);
@@ -49,7 +47,7 @@ public final class g extends y {
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     Tracker.onClick(view);
-                    com.anythink.core.common.j.c.a(g.this.b, g.this.f6684c.p(), g.this.f5900a, 7, (String) null, 0L, 0L);
+                    com.anythink.core.common.j.c.a(g.this.b, g.this.c.p(), g.this.a, 7, (String) null, 0L, 0L);
                     try {
                         dialog.dismiss();
                     } catch (Throwable th) {
@@ -61,9 +59,9 @@ public final class g extends y {
                 public final void onClick(View view) {
                     Tracker.onClick(view);
                     try {
-                        com.anythink.core.common.j.c.a(g.this.b, g.this.f6684c.p(), g.this.f5900a, 8, (String) null, 0L, 0L);
-                        if (com.anythink.basead.a.b.a(g, g.this.f6684c)) {
-                            com.anythink.core.common.j.c.a(g.this.b, g.this.f6684c.p(), g.this.f5900a, 9, (String) null, 0L, 0L);
+                        com.anythink.core.common.j.c.a(g.this.b, g.this.c.p(), g.this.a, 8, (String) null, 0L, 0L);
+                        if (com.anythink.basead.a.b.a(g, g.this.c)) {
+                            com.anythink.core.common.j.c.a(g.this.b, g.this.c.p(), g.this.a, 9, (String) null, 0L, 0L);
                         }
                         dialog.dismiss();
                     } catch (Throwable th) {

@@ -8,16 +8,16 @@ public class f extends b implements e {
     public f(Context context, com.opos.cmn.e.a.c.a aVar) {
         super(context, aVar);
         if (com.opos.cmn.e.a.d.a.a()) {
-            this.f24787c = new com.opos.cmn.e.a.c.d.d(this.f24786a, this);
+            this.f11099c = new com.opos.cmn.e.a.c.d.d(this.f11098a, this);
         }
     }
 
     @Override // com.opos.cmn.e.a.c.c.e
     public void a() {
-        if (!com.opos.cmn.e.a.d.a.a() || this.f24787c == null) {
+        if (!com.opos.cmn.e.a.d.a.a() || this.f11099c == null) {
             return;
         }
-        this.f24787c.a();
+        this.f11099c.a();
     }
 
     @Override // com.opos.cmn.e.a.c.c.e
@@ -36,18 +36,18 @@ public class f extends b implements e {
 
     @Override // com.opos.cmn.e.a.c.c.e
     public void a(String str, boolean z, Object... objArr) {
-        if (!com.opos.cmn.e.a.d.a.a() || this.f24787c == null) {
+        if (!com.opos.cmn.e.a.d.a.a() || this.f11099c == null) {
             return;
         }
-        this.f24787c.a(str, z, objArr);
+        this.f11099c.a(str, z, objArr);
     }
 
     @Override // com.opos.cmn.e.a.c.c.e
     public void b() {
-        if (!com.opos.cmn.e.a.d.a.a() || this.f24787c == null) {
+        if (!com.opos.cmn.e.a.d.a.a() || this.f11099c == null) {
             return;
         }
-        this.f24787c.b();
+        this.f11099c.b();
     }
 
     @Override // com.opos.cmn.e.a.c.c.e

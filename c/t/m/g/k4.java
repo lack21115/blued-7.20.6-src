@@ -14,11 +14,11 @@ import android.telephony.gsm.GsmCellLocation;
 public final class k4 extends PhoneStateListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile boolean f3861a;
+    public volatile boolean f3813a;
     public final t3 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public byte[] f3862c = new byte[0];
+    public byte[] f3814c = new byte[0];
     public CellLocation d = null;
     public SignalStrength e = null;
     public ServiceState f = null;
@@ -30,24 +30,24 @@ public final class k4 extends PhoneStateListener {
     public final class b extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile boolean f3863a;
+        public volatile boolean f3815a;
 
         public b(Looper looper) {
             super(looper);
-            this.f3863a = false;
-            this.f3863a = false;
+            this.f3815a = false;
+            this.f3815a = false;
         }
 
         public void a() {
-            this.f3863a = true;
+            this.f3815a = true;
         }
 
         @Override // android.os.Handler
         public void handleMessage(Message message) {
             super.handleMessage(message);
-            if (k4.this.f3861a) {
-                synchronized (k4.this.f3862c) {
-                    if (k4.this.i != null && !this.f3863a) {
+            if (k4.this.f3813a) {
+                synchronized (k4.this.f3814c) {
+                    if (k4.this.i != null && !this.f3815a) {
                         sendEmptyMessageDelayed(0, 30000L);
                     }
                 }
@@ -60,11 +60,11 @@ public final class k4 extends PhoneStateListener {
     public static class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public t3 f3864a;
+        public t3 f3816a;
         public a5 b;
 
         public c(t3 t3Var) {
-            this.f3864a = t3Var;
+            this.f3816a = t3Var;
         }
 
         public void a(a5 a5Var) {
@@ -73,7 +73,7 @@ public final class k4 extends PhoneStateListener {
 
         @Override // java.lang.Runnable
         public void run() {
-            t3 t3Var = this.f3864a;
+            t3 t3Var = this.f3816a;
             a5 a5Var = this.b;
             if (a5Var != null) {
                 t3Var.a(a5Var);
@@ -100,10 +100,10 @@ public final class k4 extends PhoneStateListener {
 
     public void a(Handler handler) {
         a5 a2;
-        if (this.f3861a) {
+        if (this.f3813a) {
             return;
         }
-        this.f3861a = true;
+        this.f3813a = true;
         b();
         CellLocation b2 = v5.b(this.b);
         if (a(b2) && (a2 = a5.a(this.b, b2, null)) != null) {
@@ -130,7 +130,7 @@ public final class k4 extends PhoneStateListener {
     }
 
     public final void b() {
-        synchronized (this.f3862c) {
+        synchronized (this.f3814c) {
             HandlerThread handlerThread = new HandlerThread("CellProvider");
             this.h = handlerThread;
             handlerThread.start();
@@ -149,7 +149,7 @@ public final class k4 extends PhoneStateListener {
     }
 
     public final void c() {
-        if (this.f3861a && this.d != null) {
+        if (this.f3813a && this.d != null) {
             long currentTimeMillis = System.currentTimeMillis();
             if (currentTimeMillis - this.g > 2000) {
                 this.g = currentTimeMillis;
@@ -164,7 +164,7 @@ public final class k4 extends PhoneStateListener {
 
     public final void d() {
         a5 a2 = a5.a(this.b, this.d, this.e);
-        synchronized (this.f3862c) {
+        synchronized (this.f3814c) {
             if (this.i != null && a2 != null) {
                 c cVar = new c(this.b);
                 cVar.a(a2);
@@ -182,7 +182,7 @@ public final class k4 extends PhoneStateListener {
         /*
             r3 = this;
             r0 = r3
-            boolean r0 = r0.f3861a
+            boolean r0 = r0.f3813a
             if (r0 != 0) goto L8
             return
         L8:
@@ -222,7 +222,7 @@ public final class k4 extends PhoneStateListener {
             r9 = r0
             r0 = r3
             c.t.m.g.t3 r0 = r0.b
-            android.content.Context r0 = r0.f3992a
+            android.content.Context r0 = r0.f3944a
             boolean r0 = c.t.m.g.v5.a(r0)
             r8 = r0
             r0 = r9
@@ -272,10 +272,10 @@ public final class k4 extends PhoneStateListener {
     }
 
     public void f() {
-        if (this.f3861a) {
-            this.f3861a = false;
+        if (this.f3813a) {
+            this.f3813a = false;
             a(0);
-            synchronized (this.f3862c) {
+            synchronized (this.f3814c) {
                 if (this.i != null) {
                     this.i.a();
                     this.i.removeCallbacksAndMessages(null);

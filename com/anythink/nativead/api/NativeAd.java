@@ -24,7 +24,6 @@ import com.anythink.core.common.v;
 import com.anythink.core.common.w;
 import com.anythink.nativead.unitgroup.a;
 import com.anythink.nativead.unitgroup.api.CustomNativeAd;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-8756600-dex2jar.jar:com/anythink/nativead/api/NativeAd.class */
@@ -73,49 +72,41 @@ public class NativeAd {
         a aVar = (a) bVar.f();
         this.mBaseNativeAd = aVar;
         aVar.setNativeEventListener(new l() { // from class: com.anythink.nativead.api.NativeAd.1
-            @Override // com.anythink.core.common.b.l
             public final void onAdClicked(View view) {
                 NativeAd nativeAd = NativeAd.this;
                 nativeAd.handleClick(nativeAd.mNativeView, view);
             }
 
-            @Override // com.anythink.core.common.b.l
             public final void onAdDislikeButtonClick() {
                 NativeAd nativeAd = NativeAd.this;
                 nativeAd.handleAdDislikeButtonClick(nativeAd.mNativeView);
             }
 
-            @Override // com.anythink.core.common.b.l
             public final void onAdImpressed() {
                 NativeAd nativeAd = NativeAd.this;
                 nativeAd.handleImpression(nativeAd.mNativeView);
             }
 
-            @Override // com.anythink.core.common.b.l
             public final void onAdVideoEnd() {
                 NativeAd nativeAd = NativeAd.this;
                 nativeAd.handleVideoEnd(nativeAd.mNativeView);
             }
 
-            @Override // com.anythink.core.common.b.l
             public final void onAdVideoProgress(int i) {
                 NativeAd nativeAd = NativeAd.this;
                 nativeAd.handleVideoProgress(nativeAd.mNativeView, i);
             }
 
-            @Override // com.anythink.core.common.b.l
             public final void onAdVideoStart() {
                 NativeAd nativeAd = NativeAd.this;
                 nativeAd.handleVideoStart(nativeAd.mNativeView);
             }
 
-            @Override // com.anythink.core.common.b.l
             public final void onDeeplinkCallback(boolean z) {
                 NativeAd nativeAd = NativeAd.this;
                 nativeAd.handleDeeplinkCallback(nativeAd.mNativeView, z);
             }
 
-            @Override // com.anythink.core.common.b.l
             public final void onDownloadConfirmCallback(Context context2, View view, ATNetworkConfirmInfo aTNetworkConfirmInfo) {
                 NativeAd.this.handleDownloadConfirm(context2, view, aTNetworkConfirmInfo);
             }
@@ -372,7 +363,7 @@ public class NativeAd {
                         try {
                             if (NativeAd.this.mBaseNativeAd != null) {
                                 e detail = NativeAd.this.mBaseNativeAd.getDetail();
-                                com.anythink.core.common.k.g.a(detail, g.i.f6512c, g.i.f, "");
+                                com.anythink.core.common.k.g.a(detail, g.i.c, g.i.f, "");
                                 NativeAd.this.fillShowTrackingInfo(detail);
                                 com.anythink.core.common.j.a.a(NativeAd.this.mContext.getApplicationContext()).a(4, detail, NativeAd.this.mAdCacheInfo.e().getUnitGroupInfo());
                                 com.anythink.core.common.b.n.a().a(new Runnable() { // from class: com.anythink.nativead.api.NativeAd.6.1
@@ -575,7 +566,7 @@ public class NativeAd {
                         NativeAd.this.fillShowTrackingInfo(detail);
                         long currentTimeMillis = System.currentTimeMillis();
                         try {
-                            String[] split = detail.l().split(BridgeUtil.UNDERLINE_STR);
+                            String[] split = detail.l().split("_");
                             currentTimeMillis = Long.parseLong(split[split.length - 1]);
                         } catch (Throwable th) {
                             th.printStackTrace();
@@ -603,19 +594,19 @@ public class NativeAd {
             if (!isNativeExpress()) {
                 view2 = view;
                 if (view == null) {
-                    Log.e("anythink", "renderAdContainer: selfRenderView cannot be null for self-rendering ads!");
+                    Log.e(com.anythink.expressad.d.b.f4297c, "renderAdContainer: selfRenderView cannot be null for self-rendering ads!");
                     return;
                 }
             } else if (this.mBaseNativeAd == null) {
                 view2 = null;
             } else if (aTNativeAdView == null) {
-                Log.e("anythink", "renderAdContainer: ATNativeAdView cannot be null for template-rendering ads!");
+                Log.e(com.anythink.expressad.d.b.f4297c, "renderAdContainer: ATNativeAdView cannot be null for template-rendering ads!");
                 return;
             } else {
                 View adMediaView = this.mBaseNativeAd.getAdMediaView(aTNativeAdView, Integer.valueOf(aTNativeAdView.getWidth()));
                 view2 = adMediaView;
                 if (adMediaView == null) {
-                    Log.e("anythink", "renderAdContainer: getAdMediaView() cannot be null for template-rendering ads!");
+                    Log.e(com.anythink.expressad.d.b.f4297c, "renderAdContainer: getAdMediaView() cannot be null for template-rendering ads!");
                     return;
                 }
             }

@@ -17,14 +17,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemConstellationUser.class */
 public final class FitemConstellationUser extends FreedomItem {
     private final ConstellationItemDataModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final String f12530c;
+    private final String c;
 
     public FitemConstellationUser(ConstellationItemDataModel model) {
         Intrinsics.e(model, "model");
         this.b = model;
-        this.f12530c = "https://web.bldimg.com/image-manager/1688543781_46784.webp";
+        this.c = "https://web.bldimg.com/image-manager/1688543781_46784.webp";
     }
 
     @Override // com.blued.android.module.common.utils.freedom.FreedomItem
@@ -39,7 +37,7 @@ public final class FitemConstellationUser extends FreedomItem {
         Intrinsics.e(vh, "vh");
         String anchor_avatar = this.b.getAnchor_avatar();
         if (anchor_avatar == null || anchor_avatar.length() == 0) {
-            this.b.setAnchor_avatar(this.f12530c);
+            this.b.setAnchor_avatar(this.c);
         }
         String anchor_name = this.b.getAnchor_name();
         if (anchor_name == null || anchor_name.length() == 0) {
@@ -50,7 +48,7 @@ public final class FitemConstellationUser extends FreedomItem {
         }
         String avatar = this.b.getAvatar();
         if (avatar == null || avatar.length() == 0) {
-            this.b.setAvatar(this.f12530c);
+            this.b.setAvatar(this.c);
         }
         String name = this.b.getName();
         if (name == null || name.length() == 0) {

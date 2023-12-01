@@ -9,11 +9,11 @@ import android.webkit.WebViewClient;
 public class b extends WebViewClient {
 
     /* renamed from: a  reason: collision with root package name */
-    private a f7070a;
+    private a f4232a;
     private com.anythink.expressad.atsignalcommon.windvane.e b;
 
     public final void a(a aVar) {
-        this.f7070a = aVar;
+        this.f4232a = aVar;
     }
 
     public final void a(com.anythink.expressad.atsignalcommon.windvane.e eVar) {
@@ -21,7 +21,7 @@ public class b extends WebViewClient {
     }
 
     public final a b() {
-        return this.f7070a;
+        return this.f4232a;
     }
 
     @Override // android.webkit.WebViewClient
@@ -53,7 +53,7 @@ public class b extends WebViewClient {
 
     @Override // android.webkit.WebViewClient
     public boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        a aVar = this.f7070a;
+        a aVar = this.f4232a;
         if (aVar == null || !aVar.a(str)) {
             com.anythink.expressad.atsignalcommon.windvane.e eVar = this.b;
             if (eVar != null) {

@@ -29,11 +29,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class EventModule implements d, e.a, c, BeaconModule {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Map<String, Map<String, String>> f35078a = new ConcurrentHashMap(3);
+    private static final Map<String, Map<String, String>> f21387a = new ConcurrentHashMap(3);
     private static final Map<String, String> b = new ConcurrentHashMap(3);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Map<String, String> f35079c = new ConcurrentHashMap(3);
+    private static final Map<String, String> f21388c = new ConcurrentHashMap(3);
     private final List<com.tencent.beacon.event.b.c> d = new ArrayList(3);
     private AtomicInteger e = new AtomicInteger(0);
     private AtomicBoolean f = new AtomicBoolean(false);
@@ -160,7 +160,7 @@ public class EventModule implements d, e.a, c, BeaconModule {
     }
 
     public Map<String, String> a(String str) {
-        return f35078a.get(d(str));
+        return f21387a.get(d(str));
     }
 
     @Override // com.tencent.beacon.base.net.b.e.a
@@ -171,7 +171,7 @@ public class EventModule implements d, e.a, c, BeaconModule {
     @Override // com.tencent.beacon.module.BeaconModule
     public void a(Context context) {
         j();
-        this.g = (StrategyModule) BeaconModule.f35077a.get(ModuleName.STRATEGY);
+        this.g = (StrategyModule) BeaconModule.f21386a.get(ModuleName.STRATEGY);
         g();
         h();
         i();
@@ -182,7 +182,7 @@ public class EventModule implements d, e.a, c, BeaconModule {
 
     @Override // com.tencent.beacon.a.a.d
     public void a(com.tencent.beacon.a.a.c cVar) {
-        int i = cVar.f34920a;
+        int i = cVar.f21229a;
         if (i == 1) {
             com.tencent.beacon.a.a.b.a().a(12, this);
         } else if (i == 12) {
@@ -213,7 +213,7 @@ public class EventModule implements d, e.a, c, BeaconModule {
     }
 
     public void a(String str, String str2) {
-        f35079c.put(d(str), com.tencent.beacon.event.c.d.c(str2));
+        f21388c.put(d(str), com.tencent.beacon.event.c.d.c(str2));
     }
 
     public void a(String str, Map<String, String> map) {
@@ -222,16 +222,16 @@ public class EventModule implements d, e.a, c, BeaconModule {
             return;
         }
         String d = d(str);
-        Map<String, String> map2 = f35078a.get(d);
+        Map<String, String> map2 = f21387a.get(d);
         if (map2 == null) {
-            f35078a.put(d, new HashMap(map));
+            f21387a.put(d, new HashMap(map));
         } else if (map2.size() + map.size() >= 50) {
             com.tencent.beacon.base.util.c.a("setAdditionalParams error , params.size: can not more than 50", new Object[0]);
         } else {
             HashMap hashMap = new HashMap();
             hashMap.putAll(map2);
             hashMap.putAll(map);
-            f35078a.put(d, hashMap);
+            f21387a.put(d, hashMap);
         }
     }
 
@@ -245,7 +245,7 @@ public class EventModule implements d, e.a, c, BeaconModule {
     public String b(String str) {
         String str2;
         String d = d(str);
-        return (TextUtils.isEmpty(d) || (str2 = f35079c.get(d)) == null) ? "" : str2;
+        return (TextUtils.isEmpty(d) || (str2 = f21388c.get(d)) == null) ? "" : str2;
     }
 
     @Override // com.tencent.beacon.base.net.b.e.a

@@ -14,17 +14,17 @@ public final class InstantJsonFormatter implements JsonFormatter<Instant> {
     }
 
     @Override // com.squareup.wire.internal.JsonFormatter
-    public Instant fromString(String value) {
-        Intrinsics.e(value, "value");
-        Instant from = Instant.from(DateTimeFormatter.ISO_OFFSET_DATE_TIME.parse(value));
+    public Instant fromString(String str) {
+        Intrinsics.e(str, "value");
+        Instant from = Instant.from(DateTimeFormatter.ISO_OFFSET_DATE_TIME.parse(str));
         Intrinsics.c(from, "from(parsed)");
         return from;
     }
 
     @Override // com.squareup.wire.internal.JsonFormatter
-    public Object toStringOrNumber(Instant value) {
-        Intrinsics.e(value, "value");
-        String format = DateTimeFormatter.ISO_INSTANT.format(value);
+    public Object toStringOrNumber(Instant instant) {
+        Intrinsics.e(instant, "value");
+        String format = DateTimeFormatter.ISO_INSTANT.format(instant);
         Intrinsics.c(format, "ISO_INSTANT.format(value)");
         return format;
     }

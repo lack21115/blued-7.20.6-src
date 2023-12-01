@@ -6,7 +6,7 @@ import android.util.Log;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static a f35439a = new a() { // from class: com.tencent.cloud.huiyansdkface.a.b.b.1
+    public static a f21748a = new a() { // from class: com.tencent.cloud.huiyansdkface.a.b.b.1
         @Override // com.tencent.cloud.huiyansdkface.a.b.a
         public void a(c cVar) {
             Log.e("CameraErrorCallback", String.format("camera exception: type=%s,msg=%s", cVar.c(), cVar.getMessage()));

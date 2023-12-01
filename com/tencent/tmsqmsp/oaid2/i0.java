@@ -14,13 +14,13 @@ public interface i0 extends IInterface {
 
         /* renamed from: com.tencent.tmsqmsp.oaid2.i0$a$a  reason: collision with other inner class name */
         /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/i0$a$a.class */
-        public static class C1038a implements i0 {
+        public static class C0868a implements i0 {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f39637a;
+            public IBinder f25946a;
 
-            public C1038a(IBinder iBinder) {
-                this.f39637a = iBinder;
+            public C0868a(IBinder iBinder) {
+                this.f25946a = iBinder;
             }
 
             @Override // com.tencent.tmsqmsp.oaid2.i0
@@ -30,7 +30,7 @@ public interface i0 extends IInterface {
                 try {
                     try {
                         obtain.writeInterfaceToken("com.samsung.android.deviceidservice.IDeviceIdService");
-                        this.f39637a.transact(1, obtain, obtain2, 0);
+                        this.f25946a.transact(1, obtain, obtain2, 0);
                         obtain2.readException();
                         return obtain2.readString();
                     } catch (RemoteException e) {
@@ -53,7 +53,7 @@ public interface i0 extends IInterface {
                     try {
                         obtain.writeInterfaceToken("com.samsung.android.deviceidservice.IDeviceIdService");
                         obtain.writeString(str);
-                        this.f39637a.transact(3, obtain, obtain2, 0);
+                        this.f25946a.transact(3, obtain, obtain2, 0);
                         obtain2.readException();
                         return obtain2.readString();
                     } catch (RemoteException e) {
@@ -70,7 +70,7 @@ public interface i0 extends IInterface {
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f39637a;
+                return this.f25946a;
             }
         }
 
@@ -79,7 +79,7 @@ public interface i0 extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.samsung.android.deviceidservice.IDeviceIdService");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof i0)) ? new C1038a(iBinder) : (i0) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof i0)) ? new C0868a(iBinder) : (i0) queryLocalInterface;
         }
     }
 

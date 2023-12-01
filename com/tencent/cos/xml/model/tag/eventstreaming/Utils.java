@@ -1,6 +1,5 @@
 package com.tencent.cos.xml.model.tag.eventstreaming;
 
-import android.widget.ExpandableListView;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -54,7 +53,7 @@ final class Utils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String readString(ByteBuffer byteBuffer) throws UnsupportedEncodingException {
         int i = byteBuffer.getShort() & 65535;
-        checkStringBounds(i, Short.MAX_VALUE);
+        checkStringBounds(i, 32767);
         byte[] bArr = new byte[i];
         byteBuffer.get(bArr);
         return new String(bArr, "UTF-8");
@@ -71,7 +70,7 @@ final class Utils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static long toUnsignedLong(int i) {
-        return i & ExpandableListView.PACKED_POSITION_VALUE_NULL;
+        return i & 4294967295L;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -92,7 +91,7 @@ final class Utils {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static void writeString(DataOutputStream dataOutputStream, String str) throws IOException {
         byte[] bytes = str.getBytes("UTF-8");
-        checkStringBounds(bytes.length, Short.MAX_VALUE);
+        checkStringBounds(bytes.length, 32767);
         writeBytes(dataOutputStream, bytes);
     }
 }

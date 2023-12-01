@@ -4,11 +4,11 @@ package com.tencent.liteav.videoproducer.preprocessor;
 final /* synthetic */ class e implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BeautyProcessor f37061a;
+    private final BeautyProcessor f23370a;
     private final float b;
 
     private e(BeautyProcessor beautyProcessor, float f) {
-        this.f37061a = beautyProcessor;
+        this.f23370a = beautyProcessor;
         this.b = f;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class e implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        BeautyProcessor.lambda$setRuddyLevel$4(this.f37061a, this.b);
+        BeautyProcessor.lambda$setRuddyLevel$4(this.f23370a, this.b);
     }
 }

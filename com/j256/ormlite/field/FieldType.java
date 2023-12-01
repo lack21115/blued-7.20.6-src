@@ -1,6 +1,5 @@
 package com.j256.ormlite.field;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.j256.ormlite.dao.BaseDaoImpl;
 import com.j256.ormlite.dao.BaseForeignCollection;
 import com.j256.ormlite.dao.DaoManager;
@@ -141,7 +140,7 @@ public class FieldType {
             if (foreignColumnName == null) {
                 str2 = name + "_id";
             } else {
-                str2 = name + BridgeUtil.UNDERLINE_STR + foreignColumnName;
+                str2 = name + "_" + foreignColumnName;
             }
             if (ForeignCollection.class.isAssignableFrom(type)) {
                 throw new SQLException("Field '" + field.getName() + "' in class " + type + "' should use the @" + ForeignCollectionField.class.getSimpleName() + " annotation not foreign=true");

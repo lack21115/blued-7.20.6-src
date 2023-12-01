@@ -6,15 +6,15 @@ import com.xiaomi.push.al;
 final class gy extends al.b {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Runnable f41460a;
+    final /* synthetic */ Runnable f27769a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public gy(Runnable runnable) {
-        this.f41460a = runnable;
+        this.f27769a = runnable;
     }
 
     @Override // com.xiaomi.push.al.b
     public final void b() {
-        this.f41460a.run();
+        this.f27769a.run();
     }
 }

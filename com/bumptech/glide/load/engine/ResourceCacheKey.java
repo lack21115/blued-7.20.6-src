@@ -15,7 +15,7 @@ public final class ResourceCacheKey implements Key {
     private static final LruCache<Class<?>, byte[]> b = new LruCache<>(50);
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayPool f20794c;
+    private final ArrayPool f7188c;
     private final Key d;
     private final Key e;
     private final int f;
@@ -26,7 +26,7 @@ public final class ResourceCacheKey implements Key {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ResourceCacheKey(ArrayPool arrayPool, Key key, Key key2, int i, int i2, Transformation<?> transformation, Class<?> cls, Options options) {
-        this.f20794c = arrayPool;
+        this.f7188c = arrayPool;
         this.d = key;
         this.e = key2;
         this.f = i;
@@ -40,7 +40,7 @@ public final class ResourceCacheKey implements Key {
         byte[] b2 = b.b(this.h);
         byte[] bArr = b2;
         if (b2 == null) {
-            bArr = this.h.getName().getBytes(f20706a);
+            bArr = this.h.getName().getBytes(f7100a);
             b.b(this.h, bArr);
         }
         return bArr;
@@ -48,7 +48,7 @@ public final class ResourceCacheKey implements Key {
 
     @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
-        byte[] bArr = (byte[]) this.f20794c.b(8, byte[].class);
+        byte[] bArr = (byte[]) this.f7188c.b(8, byte[].class);
         ByteBuffer.wrap(bArr).putInt(this.f).putInt(this.g).array();
         this.e.a(messageDigest);
         this.d.a(messageDigest);
@@ -59,7 +59,7 @@ public final class ResourceCacheKey implements Key {
         }
         this.i.a(messageDigest);
         messageDigest.update(a());
-        this.f20794c.a((ArrayPool) bArr);
+        this.f7188c.a((ArrayPool) bArr);
     }
 
     @Override // com.bumptech.glide.load.Key

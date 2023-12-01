@@ -11,41 +11,41 @@ import java.util.WeakHashMap;
 public final class TargetTracker implements LifecycleListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Set<Target<?>> f21026a = Collections.newSetFromMap(new WeakHashMap());
+    private final Set<Target<?>> f7420a = Collections.newSetFromMap(new WeakHashMap());
 
     public List<Target<?>> a() {
-        return Util.a(this.f21026a);
+        return Util.a(this.f7420a);
     }
 
     public void a(Target<?> target) {
-        this.f21026a.add(target);
+        this.f7420a.add(target);
     }
 
     public void b() {
-        this.f21026a.clear();
+        this.f7420a.clear();
     }
 
     public void b(Target<?> target) {
-        this.f21026a.remove(target);
+        this.f7420a.remove(target);
     }
 
     @Override // com.bumptech.glide.manager.LifecycleListener
     public void onDestroy() {
-        for (Target target : Util.a(this.f21026a)) {
+        for (Target target : Util.a(this.f7420a)) {
             target.onDestroy();
         }
     }
 
     @Override // com.bumptech.glide.manager.LifecycleListener
     public void onStart() {
-        for (Target target : Util.a(this.f21026a)) {
+        for (Target target : Util.a(this.f7420a)) {
             target.onStart();
         }
     }
 
     @Override // com.bumptech.glide.manager.LifecycleListener
     public void onStop() {
-        for (Target target : Util.a(this.f21026a)) {
+        for (Target target : Util.a(this.f7420a)) {
             target.onStop();
         }
     }

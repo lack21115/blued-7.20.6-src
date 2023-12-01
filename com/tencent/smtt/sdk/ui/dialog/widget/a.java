@@ -12,11 +12,11 @@ import android.view.View;
 public class a extends View {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f38906a;
+    private int f25215a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Paint f38907c;
+    private Paint f25216c;
     private Paint d;
     private Path e;
     private Path f;
@@ -51,24 +51,23 @@ public class a extends View {
         this.j = f3;
         int parseColor = Color.parseColor("#989DB4");
         float a2 = a(context, 6.0f);
-        this.f38907c = new Paint();
+        this.f25216c = new Paint();
         Paint paint = new Paint();
         this.d = paint;
         paint.setColor(-1);
         this.d.setStyle(Paint.Style.FILL);
         this.d.setAntiAlias(true);
-        this.f38907c.setColor(parseColor);
-        this.f38907c.setStyle(Paint.Style.STROKE);
-        this.f38907c.setAntiAlias(true);
-        this.f38907c.setStrokeWidth(a2);
-        this.f38907c.setStrokeJoin(Paint.Join.ROUND);
+        this.f25216c.setColor(parseColor);
+        this.f25216c.setStyle(Paint.Style.STROKE);
+        this.f25216c.setAntiAlias(true);
+        this.f25216c.setStrokeWidth(a2);
+        this.f25216c.setStrokeJoin(Paint.Join.ROUND);
         this.g = new RectF();
         this.h = new float[]{f, f, f, f, 0.0f, 0.0f, 0.0f, 0.0f};
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.translate(0.0f, 0.0f);
         canvas.rotate(0.0f);
@@ -79,7 +78,7 @@ public class a extends View {
         this.f.addRoundRect(this.g, this.h, Path.Direction.CCW);
         this.f.close();
         canvas.drawPath(this.f, this.d);
-        canvas.translate(this.f38906a / 2.0f, (this.b / 2.0f) + (this.j / 2.0f));
+        canvas.translate(this.f25215a / 2.0f, (this.b / 2.0f) + (this.j / 2.0f));
         if (this.e == null) {
             this.e = new Path();
         }
@@ -87,30 +86,28 @@ public class a extends View {
         this.e.moveTo(0.0f, 0.0f);
         this.e.lineTo((-this.i) / 2.0f, (-this.j) / 2.0f);
         this.e.close();
-        canvas.drawPath(this.e, this.f38907c);
+        canvas.drawPath(this.e, this.f25216c);
         this.e.reset();
         this.e.moveTo(0.0f, 0.0f);
         this.e.lineTo(this.i / 2.0f, (-this.j) / 2.0f);
         this.e.close();
-        canvas.drawPath(this.e, this.f38907c);
+        canvas.drawPath(this.e, this.f25216c);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         setMeasuredDimension(a(i), a(i2));
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
-        this.f38906a = i;
+        this.f25215a = i;
         this.b = i2;
         this.g.left = 0.0f;
         this.g.top = 0.0f;
-        this.g.right = this.f38906a;
+        this.g.right = this.f25215a;
         this.g.bottom = this.b;
     }
 }

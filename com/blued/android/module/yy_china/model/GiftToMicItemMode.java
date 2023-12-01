@@ -12,13 +12,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/model/GiftToMicItemMode.class */
 public final class GiftToMicItemMode {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final int f17611a;
+    private final int a;
     private final int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f17612c;
+    private final int c;
     private final int d;
     private Bitmap e;
     private int m;
@@ -35,9 +31,9 @@ public final class GiftToMicItemMode {
     private int q = -1;
 
     public GiftToMicItemMode(int i, int i2, int i3, int i4, Bitmap bitmap) {
-        this.f17611a = i;
+        this.a = i;
         this.b = i2;
-        this.f17612c = i3;
+        this.c = i3;
         this.d = i4;
         this.e = bitmap;
     }
@@ -63,7 +59,7 @@ public final class GiftToMicItemMode {
             int i9 = this.g;
             if (i6 < i7 + i9) {
                 float f2 = this.k;
-                int i10 = this.f17612c;
+                int i10 = this.c;
                 float f3 = (i3 - i10) / i9;
                 float f4 = i6 - i7;
                 int i11 = (int) (f2 - (f3 * f4));
@@ -75,7 +71,7 @@ public final class GiftToMicItemMode {
                 this.q = i14;
                 float f6 = i10 / 2.0f;
                 float f7 = i / 2.0f;
-                this.n = (int) ((((((this.f17611a + f6) - f7) / i9) * f4) + f7) - (i11 / 2.0f));
+                this.n = (int) ((((((this.a + f6) - f7) / i9) * f4) + f7) - (i11 / 2.0f));
                 float f8 = this.b;
                 float f9 = i13 / 2.0f;
                 int i15 = this.j;
@@ -83,9 +79,9 @@ public final class GiftToMicItemMode {
             } else {
                 int i16 = this.h;
                 if (i6 < i7 + i9 + i16) {
-                    this.p = this.f17612c;
+                    this.p = this.c;
                     this.q = this.d;
-                    this.n = this.f17611a;
+                    this.n = this.a;
                     this.o = this.b;
                 } else {
                     int i17 = this.i;
@@ -94,9 +90,9 @@ public final class GiftToMicItemMode {
                         return true;
                     }
                     pa.setAlpha((int) ((1 - ((((i6 - i7) - i9) - i16) / i17)) * 255));
-                    this.p = this.f17612c;
+                    this.p = this.c;
                     this.q = this.d;
-                    this.n = this.f17611a;
+                    this.n = this.a;
                     this.o = this.b;
                 }
             }

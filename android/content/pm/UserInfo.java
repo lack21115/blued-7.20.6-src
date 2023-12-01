@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.SystemProperties;
 import android.os.UserHandle;
-import com.alipay.sdk.util.i;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/pm/UserInfo.class */
 public class UserInfo implements Parcelable {
@@ -124,7 +123,7 @@ public class UserInfo implements Parcelable {
     }
 
     public String toString() {
-        return "UserInfo{" + this.id + ":" + this.name + ":" + Integer.toHexString(this.flags) + i.d;
+        return "UserInfo{" + this.id + ":" + this.name + ":" + Integer.toHexString(this.flags) + "}";
     }
 
     @Override // android.os.Parcelable

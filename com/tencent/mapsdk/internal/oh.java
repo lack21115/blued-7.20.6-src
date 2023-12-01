@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class oh {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final TreeMap<String, Class<? extends CommandFunctionModelClass.BaseCommandFunction>> f37679a = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+    private static final TreeMap<String, Class<? extends CommandFunctionModelClass.BaseCommandFunction>> f23988a = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
     private static final AtomicInteger b = new AtomicInteger(0);
 
     private oh() {
@@ -22,7 +22,7 @@ public final class oh {
 
     public static CommandFunctionModelClass.BaseCommandFunction a(String str, String str2) {
         String trim = str2.trim();
-        TreeMap<String, Class<? extends CommandFunctionModelClass.BaseCommandFunction>> treeMap = f37679a;
+        TreeMap<String, Class<? extends CommandFunctionModelClass.BaseCommandFunction>> treeMap = f23988a;
         return treeMap.containsKey(trim) ? (CommandFunctionModelClass.BaseCommandFunction) JsonUtils.parseToModel(str, treeMap.get(trim), new Object[0]) : new CommandFunctionModelClass.ErrorCommandFunction();
     }
 
@@ -43,7 +43,7 @@ public final class oh {
     }
 
     public static void c() {
-        TreeMap<String, Class<? extends CommandFunctionModelClass.BaseCommandFunction>> treeMap = f37679a;
+        TreeMap<String, Class<? extends CommandFunctionModelClass.BaseCommandFunction>> treeMap = f23988a;
         treeMap.put("setPosition", CommandFunctionModelClass.SetPositionCommand.class);
         treeMap.put("getPosition", CommandFunctionModelClass.GetPositionCommand.class);
         treeMap.put("enableClick", CommandFunctionModelClass.EnableClickCommand.class);
@@ -66,6 +66,6 @@ public final class oh {
     }
 
     public static void d() {
-        f37679a.clear();
+        f23988a.clear();
     }
 }

@@ -7,16 +7,16 @@ public final class c {
     @SerializedName("certificate")
 
     /* renamed from: a  reason: collision with root package name */
-    private a f41747a;
+    private a f28056a;
     @SerializedName(com.igexin.push.core.b.U)
     private b b;
 
     public final a a() {
-        return this.f41747a;
+        return this.f28056a;
     }
 
     public final void a(a aVar) {
-        this.f41747a = aVar;
+        this.f28056a = aVar;
     }
 
     public final void a(b bVar) {

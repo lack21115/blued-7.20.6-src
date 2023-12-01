@@ -2,7 +2,8 @@ package com.blued.login.utils;
 
 import com.blued.login.model.LoginSplashModel;
 import kotlin.Metadata;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
 import kotlinx.coroutines.Job;
@@ -12,11 +13,11 @@ import kotlinx.coroutines.Job;
 public final class LoginPreLoad {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final LoginPreLoad f20592a = new LoginPreLoad();
+    public static final LoginPreLoad f6986a = new LoginPreLoad();
     private static LoginSplashModel b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Job f20593c;
+    private static Job f6987c;
 
     private LoginPreLoad() {
     }
@@ -30,8 +31,6 @@ public final class LoginPreLoad {
     }
 
     public final void b() {
-        Job a2;
-        a2 = BuildersKt__Builders_commonKt.a(GlobalScope.f42827a, Dispatchers.b(), null, new LoginPreLoad$requestLoginSplash$1(null), 2, null);
-        f20593c = a2;
+        f6987c = BuildersKt.a(GlobalScope.a, Dispatchers.b(), (CoroutineStart) null, new LoginPreLoad$requestLoginSplash$1(null), 2, (Object) null);
     }
 }

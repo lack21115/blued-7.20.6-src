@@ -1,7 +1,7 @@
 package com.anythink.expressad.atsignalcommon.b;
 
 import com.anythink.expressad.atsignalcommon.b.c;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.openalliance.ad.constant.t;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.List;
 public final class a extends Exception {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f7058a = 1;
+    private static final long f4220a = 1;
     private List<c.b.a> b;
 
     private a(String str) {
@@ -26,7 +26,7 @@ public final class a extends Exception {
         if (aVar2 == null) {
             return aVar;
         }
-        a aVar3 = new a(aVar.getMessage() + ";" + aVar2.getMessage());
+        a aVar3 = new a(aVar.getMessage() + t.aE + aVar2.getMessage());
         aVar3.a(aVar.b);
         aVar3.a(aVar2.b);
         return aVar3;
@@ -49,31 +49,31 @@ public final class a extends Exception {
         StringBuilder sb = new StringBuilder();
         for (c.b.a aVar : this.b) {
             sb.append(aVar.toString());
-            sb.append(";");
+            sb.append(t.aE);
             try {
                 if (aVar.getCause() instanceof NoSuchFieldException) {
                     Field[] declaredFields = aVar.a().getDeclaredFields();
                     sb.append(aVar.a().getName());
                     sb.append(".");
                     sb.append(aVar.c());
-                    sb.append(";");
+                    sb.append(t.aE);
                     for (Field field : declaredFields) {
                         sb.append(field.getName());
-                        sb.append(BridgeUtil.SPLIT_MARK);
+                        sb.append("/");
                     }
                 } else if (aVar.getCause() instanceof NoSuchMethodException) {
                     Method[] declaredMethods = aVar.a().getDeclaredMethods();
                     sb.append(aVar.a().getName());
                     sb.append("->");
                     sb.append(aVar.b());
-                    sb.append(";");
+                    sb.append(t.aE);
                     int i = 0;
                     while (true) {
                         int i2 = i;
                         if (i2 < declaredMethods.length) {
                             if (aVar.b().equals(declaredMethods[i2].getName())) {
                                 sb.append(declaredMethods[i2].toGenericString());
-                                sb.append(BridgeUtil.SPLIT_MARK);
+                                sb.append("/");
                             }
                             i = i2 + 1;
                         }

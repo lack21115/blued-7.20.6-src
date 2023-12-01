@@ -6,11 +6,11 @@ import android.graphics.Bitmap;
 final /* synthetic */ class af implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final VideoPreprocessor f37057a;
+    private final VideoPreprocessor f23366a;
     private final Bitmap b;
 
     private af(VideoPreprocessor videoPreprocessor, Bitmap bitmap) {
-        this.f37057a = videoPreprocessor;
+        this.f23366a = videoPreprocessor;
         this.b = bitmap;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class af implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        r0.mPreprocessor.a(1.0f, this.b, this.f37057a.mLookupMixLevel, null, 0.0f);
+        r0.mPreprocessor.a(1.0f, this.b, this.f23366a.mLookupMixLevel, null, 0.0f);
     }
 }

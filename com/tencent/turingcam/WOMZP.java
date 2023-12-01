@@ -84,9 +84,9 @@ public final class WOMZP {
                 if (bytes.length != 16) {
                     byte[] bArr2 = new byte[16];
                     if (bytes.length < 16) {
-                        System.arraycopy((Object) bytes, 0, (Object) bArr2, 0, bytes.length);
+                        System.arraycopy(bytes, 0, bArr2, 0, bytes.length);
                     } else {
-                        System.arraycopy((Object) bytes, 0, (Object) bArr2, 0, 16);
+                        System.arraycopy(bytes, 0, bArr2, 0, 16);
                     }
                     bytes = bArr2;
                 }

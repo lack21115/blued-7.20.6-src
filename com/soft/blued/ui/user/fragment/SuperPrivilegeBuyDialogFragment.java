@@ -1,6 +1,5 @@
 package com.soft.blued.ui.user.fragment;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -17,9 +16,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
+import androidx.viewbinding.ViewBinding;
+import com.anythink.expressad.a;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.net.IRequestHost;
@@ -90,7 +92,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
     private boolean n;
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f33974c = {Reflection.a(new PropertyReference1Impl(SuperPrivilegeBuyDialogFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/DialogSuperPrivilegePayBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f20283c = {(KProperty) Reflection.a(new PropertyReference1Impl(SuperPrivilegeBuyDialogFragment.class, "viewBinding", "getViewBinding()Lcom/soft/blued/databinding/DialogSuperPrivilegePayBinding;", 0))};
     public static final Companion b = new Companion(null);
 
     @Metadata
@@ -111,30 +113,30 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
             TransparentActivity.b(context, SuperPrivilegeBuyDialogFragment.class, bundle);
         }
 
-        public final void a(Context context, int i, String detail) {
+        public final void a(Context context, int i, String str) {
             Intrinsics.e(context, "context");
-            Intrinsics.e(detail, "detail");
+            Intrinsics.e(str, "detail");
             Bundle bundle = new Bundle();
             bundle.putInt("FROM_PAGE", i);
-            bundle.putString("detail", detail);
+            bundle.putString("detail", str);
             TransparentActivity.a(bundle);
             TransparentActivity.b(context, SuperPrivilegeBuyDialogFragment.class, bundle);
         }
     }
 
     public SuperPrivilegeBuyDialogFragment() {
-        super(R.layout.dialog_super_privilege_pay);
-        this.d = this instanceof DialogFragment ? new DialogFragmentViewBindingProperty(new Function1<SuperPrivilegeBuyDialogFragment, DialogSuperPrivilegePayBinding>() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
+        super((int) R.layout.dialog_super_privilege_pay);
+        this.d = ((Fragment) this) instanceof DialogFragment ? (ViewBindingProperty) new DialogFragmentViewBindingProperty(new Function1<SuperPrivilegeBuyDialogFragment, DialogSuperPrivilegePayBinding>() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$special$$inlined$viewBindingFragment$default$1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/SuperPrivilegeBuyDialogFragment;)Lcom/soft/blued/databinding/DialogSuperPrivilegePayBinding; */
             /* renamed from: a */
-            public final DialogSuperPrivilegePayBinding invoke(SuperPrivilegeBuyDialogFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return DialogSuperPrivilegePayBinding.a(fragment.requireView());
             }
         }) : new FragmentViewBindingProperty(new Function1<SuperPrivilegeBuyDialogFragment, DialogSuperPrivilegePayBinding>() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$special$$inlined$viewBindingFragment$default$2
-            @Override // kotlin.jvm.functions.Function1
+            /* JADX WARN: Incorrect types in method signature: (Lcom/soft/blued/ui/user/fragment/SuperPrivilegeBuyDialogFragment;)Lcom/soft/blued/databinding/DialogSuperPrivilegePayBinding; */
             /* renamed from: a */
-            public final DialogSuperPrivilegePayBinding invoke(SuperPrivilegeBuyDialogFragment fragment) {
+            public final ViewBinding invoke(Fragment fragment) {
                 Intrinsics.e(fragment, "fragment");
                 return DialogSuperPrivilegePayBinding.a(fragment.requireView());
             }
@@ -149,19 +151,19 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(SuperPrivilegeBuyDialogFragment this$0, int i, boolean z) {
-        Intrinsics.e(this$0, "this$0");
-        if (z && HomeActivity.f30985c != null) {
-            if (this$0.k) {
-                CallHelloManager.a().a(this$0.getContext(), (IRequestHost) null, false, i);
+    public static final void a(SuperPrivilegeBuyDialogFragment superPrivilegeBuyDialogFragment, int i, boolean z) {
+        Intrinsics.e(superPrivilegeBuyDialogFragment, "this$0");
+        if (z && HomeActivity.f17295c != null) {
+            if (superPrivilegeBuyDialogFragment.k) {
+                CallHelloManager.a().a(superPrivilegeBuyDialogFragment.getContext(), (IRequestHost) null, false, i);
             } else {
-                CallHelloManager.a().a(this$0.getFragmentActive());
+                CallHelloManager.a().a((IRequestHost) superPrivilegeBuyDialogFragment.getFragmentActive());
             }
         }
-        if (!this$0.k) {
-            CallHelloManager.a().a(this$0.getFragmentActive());
+        if (!superPrivilegeBuyDialogFragment.k) {
+            CallHelloManager.a().a((IRequestHost) superPrivilegeBuyDialogFragment.getFragmentActive());
         }
-        FragmentActivity activity = this$0.getActivity();
+        FragmentActivity activity = superPrivilegeBuyDialogFragment.getActivity();
         if (activity == null) {
             return;
         }
@@ -169,10 +171,10 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(final SuperPrivilegeBuyDialogFragment this$0, Boolean bool) {
+    public static final void a(final SuperPrivilegeBuyDialogFragment superPrivilegeBuyDialogFragment, Boolean bool) {
         int i;
-        Intrinsics.e(this$0, "this$0");
-        Bundle arguments = this$0.getArguments();
+        Intrinsics.e(superPrivilegeBuyDialogFragment, "this$0");
+        Bundle arguments = superPrivilegeBuyDialogFragment.getArguments();
         if (arguments != null) {
             i = arguments.getInt("FROM_PAGE");
             String string = arguments.getString("detail");
@@ -194,7 +196,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
             i = 0;
         }
         final int i2 = i;
-        CallHelloManager.a().a(this$0.getContext(), this$0.getFragmentActive(), i, true, false, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperPrivilegeBuyDialogFragment$8l1jatKY15Oq85cZKgkQjP_23Gs
+        CallHelloManager.a().a(superPrivilegeBuyDialogFragment.getContext(), (IRequestHost) superPrivilegeBuyDialogFragment.getFragmentActive(), i, true, false, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperPrivilegeBuyDialogFragment$8l1jatKY15Oq85cZKgkQjP_23Gs
             @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
             public final void done(boolean z) {
                 SuperPrivilegeBuyDialogFragment.a(SuperPrivilegeBuyDialogFragment.this, i2, z);
@@ -305,7 +307,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 Context context8 = getContext();
                 imageView5.setImageDrawable(context8 == null ? null : context8.getDrawable(R.drawable.super_privilege_tab_select));
                 layoutParams3.height = DensityUtils.a(getContext(), 248.0f);
-                ImageLoader.a(getFragmentActive(), ImgURLMap.f10885a.a("super_privilege_dialog_top_bg")).a(a2.j);
+                ImageLoader.a(getFragmentActive(), ImgURLMap.a.a("super_privilege_dialog_top_bg")).a(a2.j);
                 TextView textView4 = a2.x;
                 Context context9 = getContext();
                 textView4.setBackground(context9 == null ? null : context9.getDrawable(R.drawable.icon_buy_super_privilege_new_btn));
@@ -359,76 +361,76 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
         }
         String str2 = str;
         SpannableString spannableString = new SpannableString(str2);
-        a2.f28725c.setMovementMethod(LinkMovementMethod.getInstance());
+        a2.f15035c.setMovementMethod(LinkMovementMethod.getInstance());
         spannableString.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$setAgreement$1$1$1
             @Override // android.text.style.ClickableSpan
-            public void onClick(View widget) {
-                Intrinsics.e(widget, "widget");
+            public void onClick(View view) {
+                Intrinsics.e(view, "widget");
                 WebViewShowInfoFragment.show(SuperPrivilegeBuyDialogFragment.this.getActivity(), H5Url.a(35), 7);
             }
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-            public void updateDrawState(TextPaint ds) {
-                Intrinsics.e(ds, "ds");
-                ds.setColor(ContextCompat.getColor(context, 2131101766));
-                ds.setUnderlineText(false);
+            public void updateDrawState(TextPaint textPaint) {
+                Intrinsics.e(textPaint, "ds");
+                textPaint.setColor(ContextCompat.getColor(context, 2131101766));
+                textPaint.setUnderlineText(false);
             }
-        }, StringsKt.a((CharSequence) str2, string2, 0, false, 6, (Object) null), Intrinsics.a(string, (Object) string2).length(), 33);
+        }, StringsKt.a(str2, string2, 0, false, 6, (Object) null), Intrinsics.a(string, string2).length(), 33);
         spannableString.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$setAgreement$1$1$2
             @Override // android.text.style.ClickableSpan
-            public void onClick(View widget) {
-                Intrinsics.e(widget, "widget");
+            public void onClick(View view) {
+                Intrinsics.e(view, "widget");
                 WebViewShowInfoFragment.show(SuperPrivilegeBuyDialogFragment.this.getActivity(), H5Url.a(48), 7);
             }
 
             @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-            public void updateDrawState(TextPaint ds) {
-                Intrinsics.e(ds, "ds");
-                ds.setColor(ContextCompat.getColor(context, 2131101766));
-                ds.setUnderlineText(false);
+            public void updateDrawState(TextPaint textPaint) {
+                Intrinsics.e(textPaint, "ds");
+                textPaint.setColor(ContextCompat.getColor(context, 2131101766));
+                textPaint.setUnderlineText(false);
             }
-        }, StringsKt.a((CharSequence) str2, string4, 0, false, 6, (Object) null), str.length(), 33);
+        }, StringsKt.a(str2, string4, 0, false, 6, (Object) null), str.length(), 33);
         if (i == 3) {
             spannableString.setSpan(new ClickableSpan() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$setAgreement$1$1$3
                 @Override // android.text.style.ClickableSpan
-                public void onClick(View widget) {
-                    Intrinsics.e(widget, "widget");
+                public void onClick(View view) {
+                    Intrinsics.e(view, "widget");
                     WebViewShowInfoFragment.show(SuperPrivilegeBuyDialogFragment.this.getActivity(), H5Url.a(34), 7);
                 }
 
                 @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-                public void updateDrawState(TextPaint ds) {
-                    Intrinsics.e(ds, "ds");
-                    ds.setColor(ContextCompat.getColor(context, 2131101766));
-                    ds.setUnderlineText(false);
+                public void updateDrawState(TextPaint textPaint) {
+                    Intrinsics.e(textPaint, "ds");
+                    textPaint.setColor(ContextCompat.getColor(context, 2131101766));
+                    textPaint.setUnderlineText(false);
                 }
-            }, StringsKt.a((CharSequence) str2, string5, 0, false, 6, (Object) null), (string + string2 + string3 + string5).length(), 33);
+            }, StringsKt.a(str2, string5, 0, false, 6, (Object) null), (string + string2 + string3 + string5).length(), 33);
         }
-        a2.f28725c.setText(spannableString);
+        a2.f15035c.setText(spannableString);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(SuperPrivilegeBuyDialogFragment this$0, int i, boolean z) {
+    public static final void b(SuperPrivilegeBuyDialogFragment superPrivilegeBuyDialogFragment, int i, boolean z) {
         FragmentActivity activity;
-        Intrinsics.e(this$0, "this$0");
-        if (z && HomeActivity.f30985c != null) {
-            if (this$0.k) {
-                CallHelloManager.a().a(this$0.getContext(), (IRequestHost) null, false, i);
+        Intrinsics.e(superPrivilegeBuyDialogFragment, "this$0");
+        if (z && HomeActivity.f17295c != null) {
+            if (superPrivilegeBuyDialogFragment.k) {
+                CallHelloManager.a().a(superPrivilegeBuyDialogFragment.getContext(), (IRequestHost) null, false, i);
             } else {
-                CallHelloManager.a().a(this$0.getFragmentActive());
+                CallHelloManager.a().a((IRequestHost) superPrivilegeBuyDialogFragment.getFragmentActive());
             }
         }
-        if (!this$0.k) {
-            CallHelloManager.a().a(this$0.getFragmentActive());
+        if (!superPrivilegeBuyDialogFragment.k) {
+            CallHelloManager.a().a((IRequestHost) superPrivilegeBuyDialogFragment.getFragmentActive());
         }
-        if (this$0.getActivity() == null || (activity = this$0.getActivity()) == null) {
+        if (superPrivilegeBuyDialogFragment.getActivity() == null || (activity = superPrivilegeBuyDialogFragment.getActivity()) == null) {
             return;
         }
         activity.finish();
     }
 
     private final void g() {
-        LiveEventBus.get(EventBusConstant.KEY_EVENT_CALL_BUY_OPEN, Boolean.TYPE).observe(this, new Observer() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperPrivilegeBuyDialogFragment$uQZaA_iE3YEYsZ3ev82mFBZCUvo
+        LiveEventBus.get(EventBusConstant.KEY_EVENT_CALL_BUY_OPEN, Boolean.TYPE).observe((LifecycleOwner) this, new Observer() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperPrivilegeBuyDialogFragment$uQZaA_iE3YEYsZ3ev82mFBZCUvo
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 SuperPrivilegeBuyDialogFragment.a(SuperPrivilegeBuyDialogFragment.this, (Boolean) obj);
@@ -473,7 +475,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
             Context context6 = getContext();
             if (context6 != null) {
                 TextView textView6 = a2.x;
-                StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                 String string = context6.getResources().getString(R.string.pay_beans);
                 Intrinsics.c(string, "context.getResources().g…tring(R.string.pay_beans)");
                 String format = String.format(string, Arrays.copyOf(new Object[]{e().total_beans + ""}, 1));
@@ -517,26 +519,26 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
         if (e().is_signed == 1) {
             if (this.n) {
                 DialogSuperPrivilegePayBinding a2 = a();
-                if (a2 == null || (imageView3 = a2.f28724a) == null) {
+                if (a2 == null || (imageView3 = a2.f15034a) == null) {
                     return;
                 }
                 imageView3.setImageResource(R.drawable.icon_selected);
                 return;
             }
             DialogSuperPrivilegePayBinding a3 = a();
-            if (a3 == null || (imageView4 = a3.f28724a) == null) {
+            if (a3 == null || (imageView4 = a3.f15034a) == null) {
                 return;
             }
             imageView4.setImageResource(R.drawable.icon_unselect);
         } else if (this.h) {
             DialogSuperPrivilegePayBinding a4 = a();
-            if (a4 == null || (imageView = a4.f28724a) == null) {
+            if (a4 == null || (imageView = a4.f15034a) == null) {
                 return;
             }
             imageView.setImageResource(R.drawable.icon_selected);
         } else {
             DialogSuperPrivilegePayBinding a5 = a();
-            if (a5 == null || (imageView2 = a5.f28724a) == null) {
+            if (a5 == null || (imageView2 = a5.f15034a) == null) {
                 return;
             }
             imageView2.setImageResource(R.drawable.icon_unselect);
@@ -661,7 +663,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
     }
 
     public final DialogSuperPrivilegePayBinding a() {
-        return (DialogSuperPrivilegePayBinding) this.d.b(this, f33974c[0]);
+        return (DialogSuperPrivilegePayBinding) this.d.b(this, f20283c[0]);
     }
 
     public final void a(int i) {
@@ -683,7 +685,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 DialogSuperPrivilegePayBinding a2 = a();
                 TextView textView = a2 == null ? null : a2.x;
                 if (textView != null) {
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                     String string = context.getResources().getString(R.string.pay_beans);
                     Intrinsics.c(string, "context.resources.getString(R.string.pay_beans)");
                     String format = String.format(string, Arrays.copyOf(new Object[]{this.e.get(i).total_beans + ""}, 1));
@@ -743,7 +745,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 i2 = 0;
             }
             final int i3 = i2;
-            CallHelloManager.a().a(getContext(), getFragmentActive(), i2, true, false, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperPrivilegeBuyDialogFragment$AKN7VVPmiZXVllLnzfdxTZzYppI
+            CallHelloManager.a().a(getContext(), (IRequestHost) getFragmentActive(), i2, true, false, new CallHelloManager.ToOpenListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$SuperPrivilegeBuyDialogFragment$AKN7VVPmiZXVllLnzfdxTZzYppI
                 @Override // com.soft.blued.ui.find.manager.CallHelloManager.ToOpenListener
                 public final void done(boolean z2) {
                     SuperPrivilegeBuyDialogFragment.b(SuperPrivilegeBuyDialogFragment.this, i3, z2);
@@ -757,16 +759,16 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
         this.m = vocativeType;
     }
 
-    public final void a(PrivilegeBuyOptionForJsonParse parseData) {
+    public final void a(PrivilegeBuyOptionForJsonParse privilegeBuyOptionForJsonParse) {
         boolean z;
-        Intrinsics.e(parseData, "parseData");
-        if (parseData.product != null) {
+        Intrinsics.e(privilegeBuyOptionForJsonParse, "parseData");
+        if (privilegeBuyOptionForJsonParse.product != null) {
             this.e = new ArrayList();
-            List<PrivilegeBuyOptionForJsonParse.ProductBean> list = parseData.product;
+            List<PrivilegeBuyOptionForJsonParse.ProductBean> list = privilegeBuyOptionForJsonParse.product;
             Intrinsics.c(list, "parseData.product");
             this.e = list;
-            if (parseData.super_call != null && parseData.super_call.size() > 0) {
-                this.g = parseData.super_call.get(0);
+            if (privilegeBuyOptionForJsonParse.super_call != null && privilegeBuyOptionForJsonParse.super_call.size() > 0) {
+                this.g = privilegeBuyOptionForJsonParse.super_call.get(0);
             }
             c();
             h();
@@ -786,7 +788,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
             if (!z) {
                 a(1);
             }
-            PayPlatformDiscountModel._channel _channelVar = parseData.channel;
+            PayPlatformDiscountModel._channel _channelVar = privilegeBuyOptionForJsonParse.channel;
             if (_channelVar != null) {
                 if (_channelVar.alipay != null && _channelVar.alipay.is_choose == 1) {
                     this.i = 1;
@@ -797,9 +799,9 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 }
                 h();
             }
-            this.k = parseData.select_super_call == 0;
+            this.k = privilegeBuyOptionForJsonParse.select_super_call == 0;
             boolean z2 = false;
-            if (parseData.select_super_call == 1) {
+            if (privilegeBuyOptionForJsonParse.select_super_call == 1) {
                 z2 = true;
             }
             this.l = z2;
@@ -875,10 +877,10 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
         String string = context.getString(R.string.hello_user_time);
         Intrinsics.c(string, "mContext.getString(R.string.hello_user_time)");
         if (e().is_signed == 1) {
-            StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+            StringCompanionObject stringCompanionObject = StringCompanionObject.a;
             String string2 = context.getString(R.string.hello_user_mouth_card_time);
             Intrinsics.c(string2, "mContext.getString(R.str…llo_user_mouth_card_time)");
-            string = String.format(string2, Arrays.copyOf(new Object[]{Intrinsics.a("", (Object) Double.valueOf(e().total_price))}, 1));
+            string = String.format(string2, Arrays.copyOf(new Object[]{Intrinsics.a("", Double.valueOf(e().total_price))}, 1));
             Intrinsics.c(string, "format(format, *args)");
         }
         String str = string;
@@ -894,7 +896,6 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
         a2.y.setText(str);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         this.e = new ArrayList();
         this.f = new ArrayList();
@@ -920,26 +921,24 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
             list3.add(privilegeDialogBuyNewOptionView3);
             a2.x.setOnClickListener(superPrivilegeBuyDialogFragment);
             a2.m.setOnClickListener(superPrivilegeBuyDialogFragment);
-            a2.f28724a.setOnClickListener(superPrivilegeBuyDialogFragment);
+            a2.f15034a.setOnClickListener(superPrivilegeBuyDialogFragment);
             a2.t.setOnClickListener(superPrivilegeBuyDialogFragment);
             a2.s.setOnClickListener(superPrivilegeBuyDialogFragment);
             a2.w.setOnClickListener(superPrivilegeBuyDialogFragment);
         }
         g();
         h();
-        StatusBarHelper.a((Activity) getActivity(), false);
+        StatusBarHelper.a(getActivity(), false);
         VIPBuyResultObserver.a().a(this, getLifecycle());
         b(0);
         BluedStructureExtKt.a(this, new PrivilegeBuyAction.getGoodsList("call", 0));
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         SuperPrivilegeBuyDialogFragment superPrivilegeBuyDialogFragment = this;
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner, "viewLifecycleOwner");
         BluedStructureExtKt.a(superPrivilegeBuyDialogFragment, viewLifecycleOwner, new PropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$liveDataObserver$1
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((PrivilegeBuyState) obj).getGoodsListData();
             }
@@ -949,21 +948,19 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 super(1);
             }
 
-            public final void a(PrivilegeBuyOptionForJsonParse it) {
-                Intrinsics.e(it, "it");
-                SuperPrivilegeBuyDialogFragment.this.a(it);
+            public final void a(PrivilegeBuyOptionForJsonParse privilegeBuyOptionForJsonParse) {
+                Intrinsics.e(privilegeBuyOptionForJsonParse, "it");
+                SuperPrivilegeBuyDialogFragment.this.a(privilegeBuyOptionForJsonParse);
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(PrivilegeBuyOptionForJsonParse privilegeBuyOptionForJsonParse) {
-                a(privilegeBuyOptionForJsonParse);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((PrivilegeBuyOptionForJsonParse) obj);
+                return Unit.a;
             }
         });
         LifecycleOwner viewLifecycleOwner2 = getViewLifecycleOwner();
         Intrinsics.c(viewLifecycleOwner2, "viewLifecycleOwner");
         BluedStructureExtKt.a(superPrivilegeBuyDialogFragment, viewLifecycleOwner2, new PropertyReference1Impl() { // from class: com.soft.blued.ui.user.fragment.SuperPrivilegeBuyDialogFragment$liveDataObserver$3
-            @Override // kotlin.jvm.internal.PropertyReference1Impl, kotlin.reflect.KProperty1
             public Object a(Object obj) {
                 return ((PrivilegeBuyState) obj).getUserPrivilegePermission();
             }
@@ -973,24 +970,24 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 super(1);
             }
 
-            public final void a(CheckUserPrivilegePermission it) {
-                Intrinsics.e(it, "it");
-                if (it.open_status <= 0) {
-                    if (it.allow_call) {
+            public final void a(CheckUserPrivilegePermission checkUserPrivilegePermission) {
+                Intrinsics.e(checkUserPrivilegePermission, "it");
+                if (checkUserPrivilegePermission.open_status <= 0) {
+                    if (checkUserPrivilegePermission.allow_call) {
                         SuperPrivilegeBuyDialogFragment.this.n();
                         return;
                     }
                     return;
                 }
-                int i = it.open_status;
+                int i = checkUserPrivilegePermission.open_status;
                 if (i == 1) {
                     AppMethods.d((int) R.string.super_hello_status_opening);
                 } else if (i == 4) {
                     SuperPrivilegeBuyDialogFragment superPrivilegeBuyDialogFragment2 = SuperPrivilegeBuyDialogFragment.this;
-                    StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+                    StringCompanionObject stringCompanionObject = StringCompanionObject.a;
                     String string = SuperPrivilegeBuyDialogFragment.this.getString(R.string.super_hello_status_mb);
                     Intrinsics.c(string, "getString(R.string.super_hello_status_mb)");
-                    String format = String.format(string, Arrays.copyOf(new Object[]{TimeAndDateUtils.c(TimeAndDateUtils.j(it.expire_time), false)}, 1));
+                    String format = String.format(string, Arrays.copyOf(new Object[]{TimeAndDateUtils.c(TimeAndDateUtils.j(checkUserPrivilegePermission.expire_time), false)}, 1));
                     Intrinsics.c(format, "format(format, *args)");
                     superPrivilegeBuyDialogFragment2.a(format);
                     EventTrackGuy.b(GuyProtos.Event.CALL_BUY_MB_POP_SHOW);
@@ -1004,9 +1001,9 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 } else {
                     EventTrackGuy.b(GuyProtos.Event.CALL_BUY_MUTE_POP_SHOW);
                     long j = 60;
-                    String str = ((int) ((it.expire_time / j) / j)) + "小时" + ((int) Math.ceil((it.expire_time % 3600) / j)) + "分钟";
+                    String str = ((int) ((checkUserPrivilegePermission.expire_time / j) / j)) + "小时" + ((int) Math.ceil((checkUserPrivilegePermission.expire_time % 3600) / j)) + "分钟";
                     SuperPrivilegeBuyDialogFragment superPrivilegeBuyDialogFragment3 = SuperPrivilegeBuyDialogFragment.this;
-                    StringCompanionObject stringCompanionObject2 = StringCompanionObject.f42549a;
+                    StringCompanionObject stringCompanionObject2 = StringCompanionObject.a;
                     String string2 = SuperPrivilegeBuyDialogFragment.this.getString(R.string.super_hello_status_mute);
                     Intrinsics.c(string2, "getString(R.string.super_hello_status_mute)");
                     String format2 = String.format(string2, Arrays.copyOf(new Object[]{str}, 1));
@@ -1015,10 +1012,9 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 }
             }
 
-            @Override // kotlin.jvm.functions.Function1
-            public /* synthetic */ Unit invoke(CheckUserPrivilegePermission checkUserPrivilegePermission) {
-                a(checkUserPrivilegePermission);
-                return Unit.f42314a;
+            public /* synthetic */ Object invoke(Object obj) {
+                a((CheckUserPrivilegePermission) obj);
+                return Unit.a;
             }
         });
     }
@@ -1026,7 +1022,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         switch (view.getId()) {
             case R.id.agreement_btn /* 2131362004 */:
                 if (e().is_signed == 1) {
@@ -1036,7 +1032,7 @@ public final class SuperPrivilegeBuyDialogFragment extends MVIBaseFragment<Privi
                 }
                 i();
                 return;
-            case 2131364488:
+            case R.id.img_close /* 2131364488 */:
                 FragmentActivity activity = getActivity();
                 if (activity == null) {
                     return;

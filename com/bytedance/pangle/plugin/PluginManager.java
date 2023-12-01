@@ -3,7 +3,6 @@ package com.bytedance.pangle.plugin;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.bytedance.pangle.GlobalParam;
 import com.bytedance.pangle.Zeus;
 import com.bytedance.pangle.ZeusPluginStateListener;
@@ -167,8 +166,8 @@ public class PluginManager {
         ZeusLogger.d(ZeusLogger.TAG_PPM, "PluginManager setAllowDownloadPlugin, " + str + " " + i + " " + z);
         if (getPlugin(str) != null) {
             boolean z2 = !z;
-            SharedPreferences.Editor edit = l.a().f21506a.edit();
-            String str2 = "DISABLE_DOWNLOAD_" + str + BridgeUtil.UNDERLINE_STR + i;
+            SharedPreferences.Editor edit = l.a().f7900a.edit();
+            String str2 = "DISABLE_DOWNLOAD_" + str + "_" + i;
             if (z2) {
                 edit.putInt(str2, 0);
             } else {
@@ -192,7 +191,7 @@ public class PluginManager {
         ZeusLogger.d(ZeusLogger.TAG_PPM, "PluginManager offlineInternalPlugin, pkgName:" + str + " pluginVer:" + i + " apiVer:" + plugin.getApiVersionCode());
         l a2 = l.a();
         int apiVersionCode = plugin.getApiVersionCode();
-        SharedPreferences.Editor edit = a2.f21506a.edit();
+        SharedPreferences.Editor edit = a2.f7900a.edit();
         edit.putInt("OFFLINE_INTERNAL_".concat(String.valueOf(str)), apiVersionCode);
         edit.apply();
     }
@@ -200,7 +199,7 @@ public class PluginManager {
     public void unInstallPackage(String str) {
         ZeusLogger.d(ZeusLogger.TAG_PPM, "PluginManager unInstallPackage, ".concat(String.valueOf(str)));
         if (getPlugin(str) != null) {
-            SharedPreferences.Editor edit = l.a().f21506a.edit();
+            SharedPreferences.Editor edit = l.a().f7900a.edit();
             edit.putBoolean("UNINSTALL__".concat(String.valueOf(str)), true);
             edit.apply();
             ZeusLogger.i(ZeusLogger.TAG_INIT, "ZeusSpUtils markUnInstallFlag packageName=".concat(String.valueOf(str)));

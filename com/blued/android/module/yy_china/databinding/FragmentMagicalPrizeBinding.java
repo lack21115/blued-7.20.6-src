@@ -9,13 +9,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentMagicalPrizeBinding.class */
 public final class FragmentMagicalPrizeBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16477a;
+    public final ImageView a;
     public final View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16478c;
+    public final ImageView c;
     public final ImageView d;
     public final TextView e;
     public final TextView f;
@@ -23,9 +19,9 @@ public final class FragmentMagicalPrizeBinding implements ViewBinding {
 
     private FragmentMagicalPrizeBinding(ConstraintLayout constraintLayout, ImageView imageView, View view, ImageView imageView2, ImageView imageView3, TextView textView, TextView textView2) {
         this.g = constraintLayout;
-        this.f16477a = imageView;
+        this.a = imageView;
         this.b = view;
-        this.f16478c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = textView;
         this.f = textView2;
@@ -66,7 +62,6 @@ public final class FragmentMagicalPrizeBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.g;

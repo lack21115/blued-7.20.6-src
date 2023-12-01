@@ -144,9 +144,8 @@ public class EditBlogView extends EditText {
         return super.onKeyDown(i, keyEvent);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView
-    public void onSelectionChanged(int i, int i2) {
+    protected void onSelectionChanged(int i, int i2) {
         List<OnSelectionListener> list;
         super.onSelectionChanged(i, i2);
         if (!this.canSelectionChanged || (list = this.listeners) == null || list.isEmpty()) {

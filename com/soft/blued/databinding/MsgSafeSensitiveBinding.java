@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class MsgSafeSensitiveBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f29478a;
+    private final FrameLayout f15788a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f29478a;
+        return this.f15788a;
     }
 }

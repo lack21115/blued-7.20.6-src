@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public final class k3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static f3<r3> f21244a = new a();
+    public static f3<r3> f7638a = new a();
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/k3$a.class */
     public static final class a extends f3<r3> {
@@ -31,7 +31,7 @@ public final class k3 {
 
     public static String a(SharedPreferences sharedPreferences) {
         final long elapsedRealtime = SystemClock.elapsedRealtime();
-        String b = h3.f21226a.b(sharedPreferences);
+        String b = h3.f7620a.b(sharedPreferences);
         z2.a(new z2.a() { // from class: com.bytedance.bdtracker.-$$Lambda$NHBYLfu7Wh_rQ0FnNO63xQ_yB_I
             @Override // com.bytedance.bdtracker.z2.a
             public final String a() {
@@ -51,7 +51,7 @@ public final class k3 {
 
     public static Map a(Context context) {
         final long elapsedRealtime = SystemClock.elapsedRealtime();
-        Map<String, String> a2 = f21244a.b(context).a(100L);
+        Map<String, String> a2 = f7638a.b(context).a(100L);
         z2.a(new z2.a() { // from class: com.bytedance.bdtracker.-$$Lambda$6Vm_crAzKeFrWNxGkfjy3JQTtfk
             @Override // com.bytedance.bdtracker.z2.a
             public final String a() {

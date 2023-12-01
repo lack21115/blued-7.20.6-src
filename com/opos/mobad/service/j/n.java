@@ -10,11 +10,11 @@ import com.opos.mobad.service.j.m;
 public class n {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile n f27401a;
+    private static volatile n f13713a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private m f27402c;
+    private m f13714c;
     private m d;
     private LruCache<String, m> e;
     private LruCache<String, m> f;
@@ -30,18 +30,18 @@ public class n {
     }
 
     public static final n a() {
-        if (f27401a == null) {
+        if (f13713a == null) {
             synchronized (n.class) {
                 try {
-                    if (f27401a == null) {
-                        f27401a = new n();
+                    if (f13713a == null) {
+                        f13713a = new n();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f27401a;
+        return f13713a;
     }
 
     public void a(Context context) {
@@ -53,7 +53,7 @@ public class n {
                 n.this.m.b(mVar.c(), mVar.d());
             }
         });
-        this.f27402c = new m(180000, 10, new m.a() { // from class: com.opos.mobad.service.j.n.2
+        this.f13714c = new m(180000, 10, new m.a() { // from class: com.opos.mobad.service.j.n.2
             @Override // com.opos.mobad.service.j.m.a
             public void a(m mVar) {
                 n.this.m.a(mVar.c(), mVar.d());
@@ -63,38 +63,38 @@ public class n {
         this.f = new LruCache<>(10);
         this.g = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.j.n.3
             @Override // com.opos.cmn.i.a.b
-            public void a(a.InterfaceC0645a interfaceC0645a) {
+            public void a(a.InterfaceC0475a interfaceC0475a) {
                 String str = n.this.j;
                 if (TextUtils.isEmpty(str)) {
-                    interfaceC0645a.b();
+                    interfaceC0475a.b();
                     return;
                 }
                 n.this.m.a(str);
-                interfaceC0645a.a();
+                interfaceC0475a.a();
             }
         }, 0, 180000);
         this.h = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.j.n.4
             @Override // com.opos.cmn.i.a.b
-            public void a(a.InterfaceC0645a interfaceC0645a) {
+            public void a(a.InterfaceC0475a interfaceC0475a) {
                 String str = n.this.k;
                 if (TextUtils.isEmpty(str)) {
-                    interfaceC0645a.b();
+                    interfaceC0475a.b();
                     return;
                 }
                 n.this.m.b(str);
-                interfaceC0645a.a();
+                interfaceC0475a.a();
             }
         }, 0, 180000);
         this.i = new com.opos.cmn.i.a(new a.b() { // from class: com.opos.mobad.service.j.n.5
             @Override // com.opos.cmn.i.a.b
-            public void a(a.InterfaceC0645a interfaceC0645a) {
+            public void a(a.InterfaceC0475a interfaceC0475a) {
                 String str = n.this.l;
                 if (TextUtils.isEmpty(str)) {
-                    interfaceC0645a.b();
+                    interfaceC0475a.b();
                     return;
                 }
                 n.this.m.c(str);
-                interfaceC0645a.a();
+                interfaceC0475a.a();
             }
         }, 0, 180000);
     }
@@ -114,9 +114,9 @@ public class n {
             return;
         }
         if (z) {
-            this.f27402c.a();
+            this.f13714c.a();
         }
-        this.f27402c.b();
+        this.f13714c.b();
     }
 
     public void b(String str) {

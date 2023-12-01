@@ -7,7 +7,7 @@ import com.blued.android.core.AppInfo;
 public class PreferenceUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private SharedPreferences f30603a = AppInfo.d().getSharedPreferences("INSTANT_TALK", 0);
+    private SharedPreferences f16913a = AppInfo.d().getSharedPreferences("INSTANT_TALK", 0);
 
     private PreferenceUtil() {
     }

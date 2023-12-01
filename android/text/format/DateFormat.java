@@ -7,8 +7,8 @@ import android.provider.Settings;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.SpannedString;
-import com.android.internal.R;
 import com.google.android.material.timepicker.TimeModel;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -266,7 +266,7 @@ public class DateFormat {
         int i3 = i / 1000;
         StringBuilder sb = new StringBuilder();
         if (i3 < 0) {
-            sb.insert(0, "-");
+            sb.insert(0, Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             i3 = -i3;
         } else {
             sb.insert(0, "+");
@@ -302,7 +302,7 @@ public class DateFormat {
             int indexOf2 = str.indexOf(100);
             int indexOf3 = str.indexOf(121);
             if (indexOf >= 0 && indexOf2 >= 0 && indexOf3 >= 0) {
-                String string = context.getString(R.string.numeric_date_template);
+                String string = context.getString(17039657);
                 return (indexOf3 >= indexOf || indexOf3 >= indexOf2) ? indexOf < indexOf2 ? indexOf2 < indexOf3 ? String.format(string, "MM", "dd", "yyyy") : String.format(string, "MM", "yyyy", "dd") : indexOf < indexOf3 ? String.format(string, "dd", "MM", "yyyy") : String.format(string, "dd", "yyyy", "MM") : indexOf < indexOf2 ? String.format(string, "yyyy", "MM", "dd") : String.format(string, "yyyy", "dd", "MM");
             }
         }

@@ -56,11 +56,11 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
     private Object z;
 
     /* renamed from: a  reason: collision with root package name */
-    private final DecodeHelper<R> f20747a = new DecodeHelper<>();
+    private final DecodeHelper<R> f7141a = new DecodeHelper<>();
     private final List<Throwable> b = new ArrayList();
 
     /* renamed from: c  reason: collision with root package name */
-    private final StateVerifier f20748c = StateVerifier.a();
+    private final StateVerifier f7142c = StateVerifier.a();
     private final DeferredEncodeManager<?> f = new DeferredEncodeManager<>();
     private final ReleaseManager g = new ReleaseManager();
 
@@ -70,11 +70,11 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
     public static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f20749a;
+        static final /* synthetic */ int[] f7143a;
         static final /* synthetic */ int[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        static final /* synthetic */ int[] f20750c;
+        static final /* synthetic */ int[] f7144c;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x008a -> B:49:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x008e -> B:6:0x001f). Please submit an issue!!! */
@@ -87,13 +87,13 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x00aa -> B:45:0x007e). Please submit an issue!!! */
         static {
             int[] iArr = new int[EncodeStrategy.values().length];
-            f20750c = iArr;
+            f7144c = iArr;
             try {
                 iArr[EncodeStrategy.SOURCE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f20750c[EncodeStrategy.TRANSFORMED.ordinal()] = 2;
+                f7144c[EncodeStrategy.TRANSFORMED.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             int[] iArr2 = new int[Stage.values().length];
@@ -119,17 +119,17 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
             } catch (NoSuchFieldError e7) {
             }
             int[] iArr3 = new int[RunReason.values().length];
-            f20749a = iArr3;
+            f7143a = iArr3;
             try {
                 iArr3[RunReason.INITIALIZE.ordinal()] = 1;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f20749a[RunReason.SWITCH_TO_SOURCE_SERVICE.ordinal()] = 2;
+                f7143a[RunReason.SWITCH_TO_SOURCE_SERVICE.ordinal()] = 2;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f20749a[RunReason.DECODE_DATA.ordinal()] = 3;
+                f7143a[RunReason.DECODE_DATA.ordinal()] = 3;
             } catch (NoSuchFieldError e10) {
             }
         }
@@ -165,40 +165,40 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
     public static class DeferredEncodeManager<Z> {
 
         /* renamed from: a  reason: collision with root package name */
-        private Key f20752a;
+        private Key f7146a;
         private ResourceEncoder<Z> b;
 
         /* renamed from: c  reason: collision with root package name */
-        private LockedResource<Z> f20753c;
+        private LockedResource<Z> f7147c;
 
         DeferredEncodeManager() {
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         <X> void a(Key key, ResourceEncoder<X> resourceEncoder, LockedResource<X> lockedResource) {
-            this.f20752a = key;
+            this.f7146a = key;
             this.b = resourceEncoder;
-            this.f20753c = lockedResource;
+            this.f7147c = lockedResource;
         }
 
         void a(DiskCacheProvider diskCacheProvider, Options options) {
             GlideTrace.a("DecodeJob.encode");
             try {
-                diskCacheProvider.a().a(this.f20752a, new DataCacheWriter(this.b, this.f20753c, options));
+                diskCacheProvider.a().a(this.f7146a, new DataCacheWriter(this.b, this.f7147c, options));
             } finally {
-                this.f20753c.e();
+                this.f7147c.e();
                 GlideTrace.a();
             }
         }
 
         boolean a() {
-            return this.f20753c != null;
+            return this.f7147c != null;
         }
 
         void b() {
-            this.f20752a = null;
+            this.f7146a = null;
             this.b = null;
-            this.f20753c = null;
+            this.f7147c = null;
         }
     }
 
@@ -213,17 +213,17 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
     public static class ReleaseManager {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f20754a;
+        private boolean f7148a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private boolean f20755c;
+        private boolean f7149c;
 
         ReleaseManager() {
         }
 
         private boolean b(boolean z) {
-            return (this.f20755c || z || this.b) && this.f20754a;
+            return (this.f7149c || z || this.b) && this.f7148a;
         }
 
         boolean a() {
@@ -238,7 +238,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
         boolean a(boolean z) {
             boolean b;
             synchronized (this) {
-                this.f20754a = true;
+                this.f7148a = true;
                 b = b(z);
             }
             return b;
@@ -247,7 +247,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
         boolean b() {
             boolean b;
             synchronized (this) {
-                this.f20755c = true;
+                this.f7149c = true;
                 b = b(false);
             }
             return b;
@@ -256,8 +256,8 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
         void c() {
             synchronized (this) {
                 this.b = false;
-                this.f20754a = false;
-                this.f20755c = false;
+                this.f7148a = false;
+                this.f7149c = false;
             }
         }
     }
@@ -292,7 +292,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
         if (Build.VERSION.SDK_INT < 26) {
             return options;
         }
-        boolean z = dataSource == DataSource.RESOURCE_DISK_CACHE || this.f20747a.m();
+        boolean z = dataSource == DataSource.RESOURCE_DISK_CACHE || this.f7141a.m();
         Boolean bool = (Boolean) options.a(Downsampler.e);
         if (bool == null || (bool.booleanValue() && !z)) {
             Options options2 = new Options();
@@ -337,7 +337,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
     }
 
     private <Data> Resource<R> a(Data data, DataSource dataSource) throws GlideException {
-        return a((DecodeJob<R>) data, dataSource, (LoadPath<DecodeJob<R>, ResourceType, R>) ((LoadPath<Data, ?, R>) this.f20747a.b(data.getClass())));
+        return a((DecodeJob<R>) data, dataSource, (LoadPath<DecodeJob<R>, ResourceType, R>) ((LoadPath<Data, ?, R>) this.f7141a.b(data.getClass())));
     }
 
     private <Data, ResourceType> Resource<R> a(Data data, DataSource dataSource, LoadPath<Data, ResourceType, R> loadPath) throws GlideException {
@@ -417,7 +417,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
     private void g() {
         this.g.c();
         this.f.b();
-        this.f20747a.a();
+        this.f7141a.a();
         this.D = false;
         this.h = null;
         this.i = null;
@@ -444,7 +444,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
     }
 
     private void i() {
-        int i = AnonymousClass1.f20749a[this.s.ordinal()];
+        int i = AnonymousClass1.f7143a[this.s.ordinal()];
         if (i == 1) {
             this.r = a(Stage.INITIALIZE);
             this.C = j();
@@ -468,11 +468,11 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
                     }
                     throw new IllegalStateException("Unrecognized stage: " + this.r);
                 }
-                return new SourceGenerator(this.f20747a, this);
+                return new SourceGenerator(this.f7141a, this);
             }
-            return new DataCacheGenerator(this.f20747a, this);
+            return new DataCacheGenerator(this.f7141a, this);
         }
-        return new ResourceCacheGenerator(this.f20747a, this);
+        return new ResourceCacheGenerator(this.f7141a, this);
     }
 
     private void k() {
@@ -509,7 +509,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
 
     private void m() {
         Throwable th;
-        this.f20748c.b();
+        this.f7142c.b();
         if (!this.D) {
             this.D = true;
             return;
@@ -554,7 +554,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DecodeJob<R> a(GlideContext glideContext, Object obj, EngineKey engineKey, Key key, int i, int i2, Class<?> cls, Class<R> cls2, Priority priority, DiskCacheStrategy diskCacheStrategy, Map<Class<?>, Transformation<?>> map, boolean z, boolean z2, boolean z3, Options options, Callback<R> callback, int i3) {
-        this.f20747a.a(glideContext, obj, key, i, i2, diskCacheStrategy, cls, cls2, priority, options, map, z, z2, this.d);
+        this.f7141a.a(glideContext, obj, key, i, i2, diskCacheStrategy, cls, cls2, priority, options, map, z, z2, this.d);
         this.h = glideContext;
         this.i = key;
         this.j = priority;
@@ -579,7 +579,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
         Key dataCacheKey;
         Class<?> cls = resource.f().getClass();
         if (dataSource != DataSource.RESOURCE_DISK_CACHE) {
-            transformation = this.f20747a.c(cls);
+            transformation = this.f7141a.c(cls);
             resource2 = transformation.a(this.h, resource, this.l, this.m);
         } else {
             resource2 = resource;
@@ -588,22 +588,22 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
         if (!resource.equals(resource2)) {
             resource.c();
         }
-        if (this.f20747a.a((Resource<?>) resource2)) {
-            resourceEncoder = this.f20747a.b(resource2);
+        if (this.f7141a.a((Resource<?>) resource2)) {
+            resourceEncoder = this.f7141a.b(resource2);
             encodeStrategy = resourceEncoder.a(this.o);
         } else {
             encodeStrategy = EncodeStrategy.NONE;
             resourceEncoder = null;
         }
-        if (this.n.a(!this.f20747a.a(this.x), dataSource, encodeStrategy)) {
+        if (this.n.a(!this.f7141a.a(this.x), dataSource, encodeStrategy)) {
             if (resourceEncoder != null) {
-                int i = AnonymousClass1.f20750c[encodeStrategy.ordinal()];
+                int i = AnonymousClass1.f7144c[encodeStrategy.ordinal()];
                 if (i == 1) {
                     dataCacheKey = new DataCacheKey(this.x, this.i);
                 } else if (i != 2) {
                     throw new IllegalArgumentException("Unknown strategy: " + encodeStrategy);
                 } else {
-                    dataCacheKey = new ResourceCacheKey(this.f20747a.i(), this.x, this.i, this.l, this.m, transformation, cls, this.o);
+                    dataCacheKey = new ResourceCacheKey(this.f7141a.i(), this.x, this.i, this.l, this.m, transformation, cls, this.o);
                 }
                 LockedResource a2 = LockedResource.a(resource2);
                 this.f.a(dataCacheKey, resourceEncoder, a2);
@@ -677,7 +677,7 @@ class DecodeJob<R> implements DataFetcherGenerator.FetcherReadyCallback, Factory
 
     @Override // com.bumptech.glide.util.pool.FactoryPools.Poolable
     public StateVerifier d() {
-        return this.f20748c;
+        return this.f7142c;
     }
 
     @Override // java.lang.Runnable

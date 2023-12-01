@@ -35,19 +35,19 @@ public abstract class Key {
     public static final String WAVE_VARIES_BY = "waveVariesBy";
 
     /* renamed from: a  reason: collision with root package name */
-    int f2169a;
+    int f2121a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f2170c;
+    String f2122c;
     protected int d;
     HashMap<String, ConstraintAttribute> e;
 
     public Key() {
         int i = UNSET;
-        this.f2169a = i;
+        this.f2121a = i;
         this.b = i;
-        this.f2170c = null;
+        this.f2122c = null;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -57,7 +57,7 @@ public abstract class Key {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public boolean a(String str) {
-        String str2 = this.f2170c;
+        String str2 = this.f2122c;
         if (str2 == null || str == null) {
             return false;
         }
@@ -78,12 +78,12 @@ public abstract class Key {
 
     @Override // 
     /* renamed from: clone */
-    public abstract Key mo1365clone();
+    public abstract Key mo1228clone();
 
     public Key copy(Key key) {
-        this.f2169a = key.f2169a;
+        this.f2121a = key.f2121a;
         this.b = key.b;
-        this.f2170c = key.f2170c;
+        this.f2122c = key.f2122c;
         this.d = key.d;
         this.e = key.e;
         return this;
@@ -93,14 +93,14 @@ public abstract class Key {
     public abstract void getAttributeNames(HashSet<String> hashSet);
 
     public int getFramePosition() {
-        return this.f2169a;
+        return this.f2121a;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public abstract void load(Context context, AttributeSet attributeSet);
 
     public void setFramePosition(int i) {
-        this.f2169a = i;
+        this.f2121a = i;
     }
 
     public void setInterpolation(HashMap<String, Integer> hashMap) {

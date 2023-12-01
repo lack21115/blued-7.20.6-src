@@ -4,18 +4,18 @@ package com.tencent.bugly.idasc.proguard;
 public final class ba {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f35284a = "";
+    public String f21593a = "";
     public long b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f35285c;
+    String f21594c;
     public long d;
     public boolean e;
 
     public ba(String str, long j) {
-        this.f35285c = "";
+        this.f21594c = "";
         this.e = false;
-        this.f35285c = str == null ? "" : str;
+        this.f21594c = str == null ? "" : str;
         this.b = j;
         this.e = false;
     }

@@ -111,7 +111,6 @@ public final class YYRomanticCityModel implements MultiItemEntity {
         return this.image;
     }
 
-    @Override // com.chad.library.adapter.base.entity.MultiItemEntity
     public int getItemType() {
         return this.type == 0 ? 0 : 1;
     }

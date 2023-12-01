@@ -16,30 +16,30 @@ public abstract class VirtualImageEvent implements UiEvent {
     public static final class BeanCount extends VirtualImageEvent {
 
         /* renamed from: a  reason: collision with root package name */
-        private long f34320a;
+        private long f20629a;
 
         public BeanCount(long j) {
             super(null);
-            this.f34320a = j;
+            this.f20629a = j;
         }
 
         public final long a() {
-            return this.f34320a;
+            return this.f20629a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof BeanCount) && this.f34320a == ((BeanCount) obj).f34320a;
+            return (obj instanceof BeanCount) && this.f20629a == ((BeanCount) obj).f20629a;
         }
 
         public int hashCode() {
-            return C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.f34320a);
+            return C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.f20629a);
         }
 
         public String toString() {
-            return "BeanCount(beanCount=" + this.f34320a + ')';
+            return "BeanCount(beanCount=" + this.f20629a + ')';
         }
     }
 
@@ -48,7 +48,7 @@ public abstract class VirtualImageEvent implements UiEvent {
     public static final class ErrorEvent extends VirtualImageEvent {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final ErrorEvent f34321a = new ErrorEvent();
+        public static final ErrorEvent f20630a = new ErrorEvent();
 
         private ErrorEvent() {
             super(null);
@@ -60,32 +60,32 @@ public abstract class VirtualImageEvent implements UiEvent {
     public static final class GoodsEvent extends VirtualImageEvent {
 
         /* renamed from: a  reason: collision with root package name */
-        private List<VirtualImageModel.ImageGoodsModel> f34322a;
+        private List<VirtualImageModel.ImageGoodsModel> f20631a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public GoodsEvent(List<VirtualImageModel.ImageGoodsModel> goodsList) {
+        public GoodsEvent(List<VirtualImageModel.ImageGoodsModel> list) {
             super(null);
-            Intrinsics.e(goodsList, "goodsList");
-            this.f34322a = goodsList;
+            Intrinsics.e(list, "goodsList");
+            this.f20631a = list;
         }
 
         public final List<VirtualImageModel.ImageGoodsModel> a() {
-            return this.f34322a;
+            return this.f20631a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof GoodsEvent) && Intrinsics.a(this.f34322a, ((GoodsEvent) obj).f34322a);
+            return (obj instanceof GoodsEvent) && Intrinsics.a(this.f20631a, ((GoodsEvent) obj).f20631a);
         }
 
         public int hashCode() {
-            return this.f34322a.hashCode();
+            return this.f20631a.hashCode();
         }
 
         public String toString() {
-            return "GoodsEvent(goodsList=" + this.f34322a + ')';
+            return "GoodsEvent(goodsList=" + this.f20631a + ')';
         }
     }
 
@@ -94,32 +94,32 @@ public abstract class VirtualImageEvent implements UiEvent {
     public static final class MarketingPictureEvent extends VirtualImageEvent {
 
         /* renamed from: a  reason: collision with root package name */
-        private VirtualImageModel.MarketingPicture f34323a;
+        private VirtualImageModel.MarketingPicture f20632a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public MarketingPictureEvent(VirtualImageModel.MarketingPicture picture) {
+        public MarketingPictureEvent(VirtualImageModel.MarketingPicture marketingPicture) {
             super(null);
-            Intrinsics.e(picture, "picture");
-            this.f34323a = picture;
+            Intrinsics.e(marketingPicture, "picture");
+            this.f20632a = marketingPicture;
         }
 
         public final VirtualImageModel.MarketingPicture a() {
-            return this.f34323a;
+            return this.f20632a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof MarketingPictureEvent) && Intrinsics.a(this.f34323a, ((MarketingPictureEvent) obj).f34323a);
+            return (obj instanceof MarketingPictureEvent) && Intrinsics.a(this.f20632a, ((MarketingPictureEvent) obj).f20632a);
         }
 
         public int hashCode() {
-            return this.f34323a.hashCode();
+            return this.f20632a.hashCode();
         }
 
         public String toString() {
-            return "MarketingPictureEvent(picture=" + this.f34323a + ')';
+            return "MarketingPictureEvent(picture=" + this.f20632a + ')';
         }
     }
 
@@ -128,22 +128,22 @@ public abstract class VirtualImageEvent implements UiEvent {
     public static final class SaveEvent extends VirtualImageEvent {
 
         /* renamed from: a  reason: collision with root package name */
-        private boolean f34324a;
+        private boolean f20633a;
 
         public SaveEvent(boolean z) {
             super(null);
-            this.f34324a = z;
+            this.f20633a = z;
         }
 
         public final boolean a() {
-            return this.f34324a;
+            return this.f20633a;
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            return (obj instanceof SaveEvent) && this.f34324a == ((SaveEvent) obj).f34324a;
+            return (obj instanceof SaveEvent) && this.f20633a == ((SaveEvent) obj).f20633a;
         }
 
         /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Throwable, java.lang.Runtime] */
@@ -152,7 +152,7 @@ public abstract class VirtualImageEvent implements UiEvent {
         }
 
         public String toString() {
-            return "SaveEvent(succeed=" + this.f34324a + ')';
+            return "SaveEvent(succeed=" + this.f20633a + ')';
         }
     }
 

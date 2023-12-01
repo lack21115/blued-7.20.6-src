@@ -13,13 +13,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/battlepass/BattlePassLevelProgressItemView.class */
 public final class BattlePassLevelProgressItemView extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f15319a;
+    private int a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private float f15320c;
+    private float c;
     private float d;
     private int e;
     private float f;
@@ -46,7 +42,7 @@ public final class BattlePassLevelProgressItemView extends View {
         float f2 = 2;
         float f3 = f / f2;
         float f4 = f / f2;
-        float f5 = this.f15320c - (f / f2);
+        float f5 = this.c - (f / f2);
         paint.setStrokeCap(Paint.Cap.SQUARE);
         paint.setColor(this.j);
         paint.setStrokeWidth(this.d);
@@ -60,8 +56,8 @@ public final class BattlePassLevelProgressItemView extends View {
         int i;
         float f = this.d;
         if (f > 0.0f) {
-            float f2 = this.f15320c;
-            if (f2 <= 0.0f || (i = this.f15319a) <= 0) {
+            float f2 = this.c;
+            if (f2 <= 0.0f || (i = this.a) <= 0) {
                 return;
             }
             float f3 = i / this.b;
@@ -96,7 +92,7 @@ public final class BattlePassLevelProgressItemView extends View {
     }
 
     public final int getProgress() {
-        return this.f15319a;
+        return this.a;
     }
 
     public final int getProgressMax() {
@@ -117,7 +113,7 @@ public final class BattlePassLevelProgressItemView extends View {
     @Override // android.view.View
     public void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f15320c = getMeasuredWidth();
+        this.c = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         this.d = measuredHeight;
         this.f = (measuredHeight / 10) * 2;
@@ -138,8 +134,8 @@ public final class BattlePassLevelProgressItemView extends View {
                 i2 = i3;
             }
         }
-        if (i2 != this.f15319a) {
-            this.f15319a = i2;
+        if (i2 != this.a) {
+            this.a = i2;
             invalidate();
         }
     }

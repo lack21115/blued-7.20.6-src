@@ -14,12 +14,11 @@ public class BluedMutableLiveData<T> extends BluedLiveData<T> {
         super(t);
     }
 
-    @Override // androidx.lifecycle.LiveData
     public void postValue(T t) {
         super.postValue(t);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BluedLiveData, androidx.lifecycle.LiveData
+    @Override // com.blued.android.module.common.base.mvi.BluedLiveData
     public void setValue(T t) {
         super.setValue(t);
     }

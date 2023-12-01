@@ -228,8 +228,8 @@ public class FeedVideoView extends b<AdTemplate> implements NestedScrollingChild
                 com.kwad.components.core.m.a.pb().a(FeedVideoView.this.mAdTemplate, System.currentTimeMillis(), 1);
             }
         });
-        this.Ng.setAdClickListener(new a.InterfaceC0534a() { // from class: com.kwad.components.core.widget.FeedVideoView.8
-            @Override // com.kwad.components.core.video.a.InterfaceC0534a
+        this.Ng.setAdClickListener(new a.InterfaceC0364a() { // from class: com.kwad.components.core.widget.FeedVideoView.8
+            @Override // com.kwad.components.core.video.a.InterfaceC0364a
             public final void a(int i, ac.a aVar3) {
                 int i2;
                 int i3 = 2;
@@ -248,7 +248,7 @@ public class FeedVideoView extends b<AdTemplate> implements NestedScrollingChild
                 y.b bVar = new y.b();
                 bVar.jW = aVar3;
                 bVar.jU = i2;
-                com.kwad.components.core.d.b.a.a(new a.C0519a(FeedVideoView.this.getContext()).I(FeedVideoView.this.mAdTemplate).at(true).b(FeedVideoView.this.mApkDownloadHelper).ap(i3).ao(z).aq(true).a(bVar).a(new a.b() { // from class: com.kwad.components.core.widget.FeedVideoView.8.1
+                com.kwad.components.core.d.b.a.a(new a.C0349a(FeedVideoView.this.getContext()).I(FeedVideoView.this.mAdTemplate).at(true).b(FeedVideoView.this.mApkDownloadHelper).ap(i3).ao(z).aq(true).a(bVar).a(new a.b() { // from class: com.kwad.components.core.widget.FeedVideoView.8.1
                     @Override // com.kwad.components.core.d.b.a.b
                     public final void onAdClicked() {
                         FeedVideoView.this.eh();

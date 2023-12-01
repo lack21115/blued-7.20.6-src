@@ -2,20 +2,14 @@ package com.anythink.core.common.e;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/af.class */
 public final class af {
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f6626a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f6627c;
+    private String c;
     private String d;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/e/af$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static String f6628a = "5";
+        public static String a = "5";
     }
 
     public final String a() {
@@ -27,11 +21,11 @@ public final class af {
     }
 
     public final String b() {
-        return this.f6626a;
+        return this.a;
     }
 
     public final void b(String str) {
-        this.f6626a = str;
+        this.a = str;
     }
 
     public final String c() {
@@ -43,10 +37,10 @@ public final class af {
     }
 
     public final String d() {
-        return this.f6627c;
+        return this.c;
     }
 
     public final void d(String str) {
-        this.f6627c = str;
+        this.c = str;
     }
 }

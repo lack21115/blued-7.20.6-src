@@ -10,7 +10,6 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import com.android.vending.billing.IInAppBillingService;
 import com.blued.android.framework.pool.ThreadExecutor;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.soft.blued.utils.Logger;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,11 +20,11 @@ import org.json.JSONException;
 public class IabHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    boolean f32999a;
+    boolean f19308a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    boolean f33000c;
+    boolean f19309c;
     boolean d;
     boolean e;
     boolean f;
@@ -44,7 +43,7 @@ public class IabHelper {
     class AnonymousClass1 implements ServiceConnection {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ OnIabSetupFinishedListener f33001a;
+        final /* synthetic */ OnIabSetupFinishedListener f19310a;
         final /* synthetic */ IabHelper b;
 
         @Override // android.content.ServiceConnection
@@ -59,8 +58,8 @@ public class IabHelper {
                 this.b.b("Checking for in-app billing 3 support.");
                 int a2 = this.b.k.a(3, packageName, "inapp");
                 if (a2 != 0) {
-                    if (this.f33001a != null) {
-                        this.f33001a.a(new IabResult(a2, "Error checking for billing v3 support."));
+                    if (this.f19310a != null) {
+                        this.f19310a.a(new IabResult(a2, "Error checking for billing v3 support."));
                     }
                     this.b.f = false;
                     this.b.g = false;
@@ -89,13 +88,13 @@ public class IabHelper {
                         this.b.g = false;
                     }
                 }
-                this.b.f33000c = true;
-                OnIabSetupFinishedListener onIabSetupFinishedListener = this.f33001a;
+                this.b.f19309c = true;
+                OnIabSetupFinishedListener onIabSetupFinishedListener = this.f19310a;
                 if (onIabSetupFinishedListener != null) {
                     onIabSetupFinishedListener.a(new IabResult(0, "Setup successful."));
                 }
             } catch (RemoteException e) {
-                OnIabSetupFinishedListener onIabSetupFinishedListener2 = this.f33001a;
+                OnIabSetupFinishedListener onIabSetupFinishedListener2 = this.f19310a;
                 if (onIabSetupFinishedListener2 != null) {
                     onIabSetupFinishedListener2.a(new IabResult(-1001, "RemoteException while setting up in-app billing."));
                 }
@@ -115,21 +114,20 @@ public class IabHelper {
     class AnonymousClass2 extends ThreadExecutor {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f33002a;
+        final /* synthetic */ boolean f19311a;
         final /* synthetic */ List b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ List f33003c;
+        final /* synthetic */ List f19312c;
         final /* synthetic */ QueryInventoryFinishedListener d;
         final /* synthetic */ Handler e;
         final /* synthetic */ IabHelper f;
 
-        @Override // com.blued.android.framework.pool.ThreadExecutor
         public void execute() {
             Inventory inventory;
             IabResult iabResult = new IabResult(0, "Inventory refresh successful.");
             try {
-                inventory = this.f.a(this.f33002a, this.b, this.f33003c);
+                inventory = this.f.a(this.f19311a, this.b, this.f19312c);
             } catch (IabException e) {
                 iabResult = e.a();
                 inventory = null;
@@ -154,18 +152,17 @@ public class IabHelper {
     class AnonymousClass3 extends ThreadExecutor {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ List f33006a;
+        final /* synthetic */ List f19315a;
         final /* synthetic */ OnConsumeFinishedListener b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ Handler f33007c;
+        final /* synthetic */ Handler f19316c;
         final /* synthetic */ OnConsumeMultiFinishedListener d;
         final /* synthetic */ IabHelper e;
 
-        @Override // com.blued.android.framework.pool.ThreadExecutor
         public void execute() {
             final ArrayList arrayList = new ArrayList();
-            for (Purchase purchase : this.f33006a) {
+            for (Purchase purchase : this.f19315a) {
                 try {
                     this.e.a(purchase);
                     arrayList.add(new IabResult(0, "Successful consume of sku " + purchase.b()));
@@ -175,20 +172,20 @@ public class IabHelper {
             }
             this.e.b();
             if (!this.e.d && this.b != null) {
-                this.f33007c.post(new Runnable() { // from class: com.soft.blued.ui.pay.googlepay.util.IabHelper.3.1
+                this.f19316c.post(new Runnable() { // from class: com.soft.blued.ui.pay.googlepay.util.IabHelper.3.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        AnonymousClass3.this.b.a((Purchase) AnonymousClass3.this.f33006a.get(0), (IabResult) arrayList.get(0));
+                        AnonymousClass3.this.b.a((Purchase) AnonymousClass3.this.f19315a.get(0), (IabResult) arrayList.get(0));
                     }
                 });
             }
             if (this.e.d || this.d == null) {
                 return;
             }
-            this.f33007c.post(new Runnable() { // from class: com.soft.blued.ui.pay.googlepay.util.IabHelper.3.2
+            this.f19316c.post(new Runnable() { // from class: com.soft.blued.ui.pay.googlepay.util.IabHelper.3.2
                 @Override // java.lang.Runnable
                 public void run() {
-                    AnonymousClass3.this.d.a(AnonymousClass3.this.f33006a, arrayList);
+                    AnonymousClass3.this.d.a(AnonymousClass3.this.f19315a, arrayList);
                 }
             });
         }
@@ -226,8 +223,8 @@ public class IabHelper {
     }
 
     public static String a(int i) {
-        String[] split = "0:OK/1:User Canceled/2:Unknown/3:Billing Unavailable/4:Item unavailable/5:Developer Error/6:Error/7:Item Already Owned/8:Item not owned".split(BridgeUtil.SPLIT_MARK);
-        String[] split2 = "0:OK/-1001:Remote exception during initialization/-1002:Bad response received/-1003:Purchase signature verification failed/-1004:Send intent failed/-1005:User cancelled/-1006:Unknown purchase response/-1007:Missing token/-1008:Unknown error/-1009:Subscriptions not available/-1010:Invalid consumption attempt".split(BridgeUtil.SPLIT_MARK);
+        String[] split = "0:OK/1:User Canceled/2:Unknown/3:Billing Unavailable/4:Item unavailable/5:Developer Error/6:Error/7:Item Already Owned/8:Item not owned".split("/");
+        String[] split2 = "0:OK/-1001:Remote exception during initialization/-1002:Bad response received/-1003:Purchase signature verification failed/-1004:Send intent failed/-1005:User cancelled/-1006:Unknown purchase response/-1007:Missing token/-1008:Unknown error/-1009:Subscriptions not available/-1010:Invalid consumption attempt".split("/");
         if (i > -1000) {
             if (i < 0 || i >= split.length) {
                 return i + ":Unknown";
@@ -429,7 +426,7 @@ public class IabHelper {
             }
         }
         b("Disposing.");
-        this.f33000c = false;
+        this.f19309c = false;
         if (this.l != null) {
             b("Unbinding from service.");
             Context context = this.j;
@@ -447,8 +444,8 @@ public class IabHelper {
     void a(Purchase purchase) throws IabException {
         c();
         a("consume");
-        if (!purchase.f33012a.equals("inapp")) {
-            throw new IabException(-1010, "Items of type '" + purchase.f33012a + "' can't be consumed.");
+        if (!purchase.f19321a.equals("inapp")) {
+            throw new IabException(-1010, "Items of type '" + purchase.f19321a + "' can't be consumed.");
         }
         try {
             String c2 = purchase.c();
@@ -471,7 +468,7 @@ public class IabHelper {
     }
 
     void a(String str) {
-        if (this.f33000c) {
+        if (this.f19309c) {
             return;
         }
         c("Illegal state for operation (" + str + "): IAB helper is not set up.");
@@ -493,7 +490,7 @@ public class IabHelper {
     }
 
     void b(String str) {
-        if (this.f32999a) {
+        if (this.f19308a) {
             Logger.c(this.b, str);
         }
     }

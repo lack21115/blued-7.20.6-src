@@ -7,11 +7,11 @@ import com.blued.android.framework.activity.keyboardpage.KeyboardListenLinearLay
 public final class FragmentChooseFollowedListBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final KeyboardListenLinearLayout f28795a;
+    private final KeyboardListenLinearLayout f15105a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public KeyboardListenLinearLayout getRoot() {
-        return this.f28795a;
+        return this.f15105a;
     }
 }

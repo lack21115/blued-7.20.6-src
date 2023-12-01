@@ -16,30 +16,30 @@ import java.util.Set;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static volatile c f26409a;
+    private static volatile c f12721a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.mobad.provider.ad.a f26410c;
+    private com.opos.mobad.provider.ad.a f12722c;
 
     private c(Context context) {
         this.b = context;
-        this.f26410c = new com.opos.mobad.provider.ad.a(context);
+        this.f12722c = new com.opos.mobad.provider.ad.a(context);
     }
 
     public static final c a(Context context) {
         c cVar;
-        c cVar2 = f26409a;
+        c cVar2 = f12721a;
         if (cVar2 != null) {
             return cVar2;
         }
         synchronized (c.class) {
             try {
-                c cVar3 = f26409a;
+                c cVar3 = f12721a;
                 cVar = cVar3;
                 if (cVar3 == null) {
                     cVar = new c(context.getApplicationContext());
-                    f26409a = cVar;
+                    f12721a = cVar;
                 }
             } catch (Throwable th) {
                 throw th;
@@ -55,7 +55,7 @@ public class c {
             int readInt = dataInputStream.readInt();
             byte[] bArr2 = new byte[readInt];
             dataInputStream.read(bArr2, 0, readInt);
-            arrayList.add(com.opos.mobad.b.a.b.f25708c.a(bArr2));
+            arrayList.add(com.opos.mobad.b.a.b.f12020c.a(bArr2));
         }
         return arrayList;
     }
@@ -82,7 +82,7 @@ public class c {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         DataOutputStream dataOutputStream = new DataOutputStream(byteArrayOutputStream);
         for (com.opos.mobad.b.a.b bVar : list) {
-            byte[] b = com.opos.mobad.b.a.b.f25708c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.b>) bVar);
+            byte[] b = com.opos.mobad.b.a.b.f12020c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.b>) bVar);
             dataOutputStream.writeInt(b.length);
             dataOutputStream.write(b);
         }
@@ -91,11 +91,11 @@ public class c {
     }
 
     public com.opos.mobad.model.b.d a(String str) throws Exception {
-        AdEntity a2 = this.f26410c.a(str);
+        AdEntity a2 = this.f12722c.a(str);
         if (a2 == null) {
             return null;
         }
-        return new com.opos.mobad.model.b.d(com.opos.mobad.b.a.d.f25722c.a(a2.f27110a), a(a2.b), a2.f27111c);
+        return new com.opos.mobad.model.b.d(com.opos.mobad.b.a.d.f12034c.a(a2.f13422a), a(a2.b), a2.f13423c);
     }
 
     public void a(final String str, final com.opos.mobad.model.b.d dVar, final List<com.opos.mobad.b.a.b> list) {
@@ -111,7 +111,7 @@ public class c {
             public void run() {
                 try {
                     byte[] a2 = c.this.a(list);
-                    c.this.f26410c.a(str, new AdEntity(com.opos.mobad.b.a.d.f25722c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.d>) dVar.c()), a2, dVar.i()));
+                    c.this.f12722c.a(str, new AdEntity(com.opos.mobad.b.a.d.f12034c.b((com.heytap.nearx.a.a.e<com.opos.mobad.b.a.d>) dVar.c()), a2, dVar.i()));
                     c.this.a((com.opos.mobad.b.a.b) list.get(0));
                 } catch (Exception e) {
                     com.opos.cmn.an.f.a.a("acManager", "cache fail", (Throwable) e);

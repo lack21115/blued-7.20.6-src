@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/reward/presenter/f/g.class */
-public final class g extends a implements com.kwad.components.ad.reward.d.h, a.InterfaceC0523a {
+public final class g extends a implements com.kwad.components.ad.reward.d.h, a.InterfaceC0353a {
     private com.kwad.components.core.webview.a.f lH;
     private List<com.kwad.components.core.g.c> tb;
     private FrameLayout vJ;
@@ -95,7 +95,7 @@ public final class g extends a implements com.kwad.components.ad.reward.d.h, a.I
             aa(true);
         }
         this.qt.pg = true ^ this.vK;
-        this.qt.a((a.InterfaceC0523a) this);
+        this.qt.a((a.InterfaceC0353a) this);
         com.kwad.components.ad.reward.b.ff().a(this);
     }
 
@@ -147,11 +147,11 @@ public final class g extends a implements com.kwad.components.ad.reward.d.h, a.I
         this.wp = (FrameLayout) findViewById(R.id.ksad_js_bottom);
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onError(int i, String str) {
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onInnerAdLoad(List<com.kwad.components.core.g.c> list) {
         if (list == null || list.size() == 0 || this.vM == null) {
             return;
@@ -207,7 +207,7 @@ public final class g extends a implements com.kwad.components.ad.reward.d.h, a.I
         }));
     }
 
-    @Override // com.kwad.components.core.g.a.InterfaceC0523a
+    @Override // com.kwad.components.core.g.a.InterfaceC0353a
     public final void onRequestResult(int i) {
     }
 
@@ -242,7 +242,7 @@ public final class g extends a implements com.kwad.components.ad.reward.d.h, a.I
     @Override // com.kwad.components.ad.reward.presenter.f.c, com.kwad.sdk.mvp.Presenter
     public final void onUnbind() {
         super.onUnbind();
-        this.qt.b((a.InterfaceC0523a) this);
+        this.qt.b((a.InterfaceC0353a) this);
         com.kwad.components.ad.reward.b.ff().b(this);
     }
 

@@ -14,11 +14,11 @@ import com.anythink.expressad.exoplayer.k.af;
 public final class f {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final long f7703a = 500;
+    private static final long f4864a = 500;
     private static final long b = 20000000;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final long f7704c = 80;
+    private static final long f4865c = 80;
     private static final int d = 6;
     private final WindowManager e;
     private final b f;
@@ -33,9 +33,8 @@ public final class f {
     private long o;
     private long p;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/l/f$a.class */
-    public final class a implements DisplayManager.DisplayListener {
+    final class a implements DisplayManager.DisplayListener {
         private final DisplayManager b;
 
         public a(DisplayManager displayManager) {
@@ -66,18 +65,17 @@ public final class f {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/l/f$b.class */
-    public static final class b implements Handler.Callback, Choreographer.FrameCallback {
+    static final class b implements Handler.Callback, Choreographer.FrameCallback {
         private static final int b = 0;
 
         /* renamed from: c  reason: collision with root package name */
-        private static final int f7706c = 1;
+        private static final int f4867c = 1;
         private static final int d = 2;
         private static final b e = new b();
 
         /* renamed from: a  reason: collision with root package name */
-        public volatile long f7707a = com.anythink.expressad.exoplayer.b.b;
+        public volatile long f4868a = com.anythink.expressad.exoplayer.b.b;
         private final Handler f;
         private final HandlerThread g;
         private Choreographer h;
@@ -113,7 +111,7 @@ public final class f {
             this.i = i;
             if (i == 0) {
                 this.h.removeFrameCallback(this);
-                this.f7707a = com.anythink.expressad.exoplayer.b.b;
+                this.f4868a = com.anythink.expressad.exoplayer.b.b;
             }
         }
 
@@ -127,7 +125,7 @@ public final class f {
 
         @Override // android.view.Choreographer.FrameCallback
         public final void doFrame(long j) {
-            this.f7707a = j;
+            this.f4868a = j;
             this.h.postFrameCallbackDelayed(this, 500L);
         }
 
@@ -152,7 +150,7 @@ public final class f {
                 this.i = i3;
                 if (i3 == 0) {
                     this.h.removeFrameCallback(this);
-                    this.f7707a = com.anythink.expressad.exoplayer.b.b;
+                    this.f4868a = com.anythink.expressad.exoplayer.b.b;
                     return true;
                 }
                 return true;
@@ -175,7 +173,7 @@ public final class f {
         }
         if (this.e != null) {
             a aVar = null;
-            if (af.f7632a >= 17) {
+            if (af.f4793a >= 17) {
                 DisplayManager displayManager = (DisplayManager) context2.getSystemService("display");
                 aVar = null;
                 if (displayManager != null) {
@@ -224,7 +222,7 @@ public final class f {
             if (defaultDisplay != null) {
                 long refreshRate = (long) (1.0E9d / defaultDisplay.getRefreshRate());
                 this.h = refreshRate;
-                this.i = (refreshRate * f7704c) / 100;
+                this.i = (refreshRate * f4865c) / 100;
             }
         } catch (Throwable th) {
         }

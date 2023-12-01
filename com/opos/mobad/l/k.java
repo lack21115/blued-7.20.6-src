@@ -8,11 +8,11 @@ import java.util.concurrent.Callable;
 public abstract class k extends j implements com.opos.mobad.ad.i {
 
     /* renamed from: a  reason: collision with root package name */
-    private i.a f26318a;
+    private i.a f12630a;
 
     public k(i.a aVar) {
         super(aVar);
-        this.f26318a = aVar;
+        this.f12630a = aVar;
     }
 
     @Override // com.opos.mobad.ad.i
@@ -39,7 +39,7 @@ public abstract class k extends j implements com.opos.mobad.ad.i {
             case 0:
             case 1:
             case 6:
-                aVar = this.f26318a;
+                aVar = this.f12630a;
                 if (aVar != null) {
                     i = 10006;
                     str = "ad data is null";
@@ -51,7 +51,7 @@ public abstract class k extends j implements com.opos.mobad.ad.i {
             case 3:
                 return;
             case 4:
-                aVar = this.f26318a;
+                aVar = this.f12630a;
                 if (aVar != null) {
                     i = 10008;
                     str = "ad had showd, please reload";
@@ -60,7 +60,7 @@ public abstract class k extends j implements com.opos.mobad.ad.i {
                     return;
                 }
             case 5:
-                aVar = this.f26318a;
+                aVar = this.f12630a;
                 if (aVar != null) {
                     i = 11001;
                     str = "ad has destroyed.";
@@ -69,7 +69,7 @@ public abstract class k extends j implements com.opos.mobad.ad.i {
                     return;
                 }
             default:
-                i.a aVar2 = this.f26318a;
+                i.a aVar2 = this.f12630a;
                 if (aVar2 != null) {
                     aVar2.a(-1, "show with illegal state:" + a2);
                     return;
@@ -82,7 +82,7 @@ public abstract class k extends j implements com.opos.mobad.ad.i {
     @Override // com.opos.mobad.l.j
     public void i_() {
         i.a aVar;
-        if (4 != this.f.a(4) || (aVar = this.f26318a) == null) {
+        if (4 != this.f.a(4) || (aVar = this.f12630a) == null) {
             return;
         }
         aVar.b();
@@ -95,7 +95,7 @@ public abstract class k extends j implements com.opos.mobad.ad.i {
 
     public final void p() {
         i.a aVar;
-        if (5 == d() || (aVar = this.f26318a) == null) {
+        if (5 == d() || (aVar = this.f12630a) == null) {
             return;
         }
         aVar.a(0L);
@@ -103,7 +103,7 @@ public abstract class k extends j implements com.opos.mobad.ad.i {
 
     public final void q() {
         i.a aVar;
-        if (5 == d() || (aVar = this.f26318a) == null) {
+        if (5 == d() || (aVar = this.f12630a) == null) {
             return;
         }
         aVar.a("");

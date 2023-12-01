@@ -6,10 +6,10 @@ import android.util.Log;
 public class m {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f42147a = true;
+    public static boolean f28456a = true;
 
     public static void a(String str) {
-        if (f42147a) {
+        if (f28456a) {
             StringBuilder a2 = m2.a("--- ");
             a2.append(str == null ? com.igexin.push.core.b.l : str);
             a2.append(" ---");
@@ -23,7 +23,7 @@ public class m {
     }
 
     public static void b(String str) {
-        if (f42147a) {
+        if (f28456a) {
             StringBuilder a2 = m2.a("--- ");
             String str2 = str;
             if (str == null) {

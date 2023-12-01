@@ -7,7 +7,7 @@ import java.io.OutputStream;
 public final class a extends FilterOutputStream {
 
     /* renamed from: a  reason: collision with root package name */
-    private long f21832a;
+    private long f8225a;
 
     public a(OutputStream outputStream) {
         super(outputStream);
@@ -16,10 +16,10 @@ public final class a extends FilterOutputStream {
     @Override // java.io.FilterOutputStream, java.io.OutputStream
     public final void write(int i) {
         this.out.write(i);
-        this.f21832a++;
+        this.f8225a++;
     }
 
-    @Override // java.io.OutputStream
+    @Override // java.io.FilterOutputStream, java.io.OutputStream
     public final void write(byte[] bArr) {
         write(bArr, 0, bArr.length);
     }
@@ -27,6 +27,6 @@ public final class a extends FilterOutputStream {
     @Override // java.io.FilterOutputStream, java.io.OutputStream
     public final void write(byte[] bArr, int i, int i2) {
         this.out.write(bArr, i, i2);
-        this.f21832a += i2;
+        this.f8225a += i2;
     }
 }

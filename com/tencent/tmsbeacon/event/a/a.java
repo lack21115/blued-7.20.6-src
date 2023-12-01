@@ -14,11 +14,11 @@ import java.util.List;
 public class a implements d<EventBean> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SQLiteStatement f39556a;
+    private final SQLiteStatement f25865a;
     private final SQLiteStatement b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Object f39557c = new Object();
+    private final Object f25866c = new Object();
     private final Object d = new Object();
     private com.tencent.tmsbeacon.event.c.b e = com.tencent.tmsbeacon.event.c.b.a();
     private SQLiteDatabase f;
@@ -31,7 +31,7 @@ public class a implements d<EventBean> {
         this.f = cVar.getWritableDatabase();
         SQLiteDatabase readableDatabase = cVar.getReadableDatabase();
         this.g = readableDatabase;
-        this.f39556a = readableDatabase.compileStatement("INSERT INTO t_r_e (_appKey,_time,_length,_data )VALUES(?,?,?,?)");
+        this.f25865a = readableDatabase.compileStatement("INSERT INTO t_r_e (_appKey,_time,_length,_data )VALUES(?,?,?,?)");
         this.b = this.g.compileStatement("INSERT INTO t_n_e (_appKey,_time,_length,_data )VALUES(?,?,?,?)");
         this.h = a("t_r_e");
         long a2 = a("t_n_e");
@@ -51,10 +51,10 @@ public class a implements d<EventBean> {
         ArrayList arrayList = new ArrayList();
         while (cursor.moveToNext()) {
             b bVar = new b();
-            bVar.f39558a = cursor.getLong(0);
+            bVar.f25867a = cursor.getLong(0);
             bVar.d = cursor.getString(1);
             bVar.b = cursor.getInt(2);
-            bVar.f39559c = cursor.getLong(3);
+            bVar.f25868c = cursor.getLong(3);
             bVar.e = cursor.getBlob(4);
             arrayList.add(this.e.c().a(bVar));
         }
@@ -66,7 +66,7 @@ public class a implements d<EventBean> {
 
     private void a(boolean z, boolean z2, long j) {
         if (z) {
-            synchronized (this.f39557c) {
+            synchronized (this.f25866c) {
                 if (z2) {
                     this.h += j;
                 } else {
@@ -164,7 +164,7 @@ public class a implements d<EventBean> {
         boolean z;
         boolean z2 = false;
         if (i == 1) {
-            synchronized (this.f39557c) {
+            synchronized (this.f25866c) {
                 if (this.h >= com.tencent.tmsbeacon.d.b.a().b()) {
                     z2 = true;
                 }

@@ -14,9 +14,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/heytap/baselib/utils/idIOUtil.class */
-public class idIOUtil {
+class idIOUtil {
     private static String EXTRAS_KEY_GEN = "G0";
 
     idIOUtil() {

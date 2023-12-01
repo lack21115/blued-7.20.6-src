@@ -1,7 +1,6 @@
 package com.qiniu.pili.droid.shortvideo.f;
 
 import android.content.Context;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.qiniu.pili.droid.shortvideo.PLAudioEncodeSetting;
 import com.qiniu.pili.droid.shortvideo.PLCameraSetting;
 import com.qiniu.pili.droid.shortvideo.PLFaceBeautySetting;
@@ -25,35 +24,35 @@ import org.json.JSONObject;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static c f27668a;
+    private static c f13980a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private List<b> f27669c;
+    private List<b> f13981c;
 
     private c(Context context) {
         this.b = context.getApplicationContext();
         if (!b()) {
-            this.f27669c = new ArrayList();
+            this.f13981c = new ArrayList();
             return;
         }
         List<b> d = d();
         if (d != null) {
-            this.f27669c = d;
+            this.f13981c = d;
             return;
         }
         e.d.d("Error on construct DraftBox, parse file failed, creating empty DraftBox");
-        this.f27669c = new ArrayList();
+        this.f13981c = new ArrayList();
     }
 
     public static c a(Context context) {
         c cVar;
         synchronized (c.class) {
             try {
-                if (f27668a == null) {
-                    f27668a = new c(context);
+                if (f13980a == null) {
+                    f13980a = new c(context);
                 }
-                cVar = f27668a;
+                cVar = f13980a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -62,16 +61,16 @@ public class c {
     }
 
     private boolean b() {
-        return new File(this.b.getFilesDir().getPath() + BridgeUtil.SPLIT_MARK + "drafts.json").exists();
+        return new File(this.b.getFilesDir().getPath() + "/drafts.json").exists();
     }
 
     private boolean c() {
         if (b()) {
-            new File(this.b.getFilesDir().getPath() + BridgeUtil.SPLIT_MARK + "drafts.json").delete();
+            new File(this.b.getFilesDir().getPath() + "/drafts.json").delete();
         }
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(this.b.openFileOutput("drafts.json", 0));
-            for (b bVar : this.f27669c) {
+            for (b bVar : this.f13981c) {
                 JSONObject i = bVar.i();
                 if (i == null) {
                     return false;
@@ -88,7 +87,7 @@ public class c {
     }
 
     private List<b> d() {
-        File file = new File(this.b.getFilesDir().getPath() + BridgeUtil.SPLIT_MARK + "drafts.json");
+        File file = new File(this.b.getFilesDir().getPath() + "/drafts.json");
         ArrayList arrayList = new ArrayList();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
@@ -150,7 +149,7 @@ public class c {
     public b a(String str) {
         b next;
         synchronized (this) {
-            Iterator<b> it = this.f27669c.iterator();
+            Iterator<b> it = this.f13981c.iterator();
             do {
                 if (!it.hasNext()) {
                     return null;
@@ -164,7 +163,7 @@ public class c {
     public List<b> a() {
         List<b> list;
         synchronized (this) {
-            list = this.f27669c;
+            list = this.f13981c;
         }
         return list;
     }
@@ -173,20 +172,20 @@ public class c {
         com.qiniu.pili.droid.shortvideo.core.h next;
         synchronized (this) {
             b bVar = null;
-            for (b bVar2 : this.f27669c) {
+            for (b bVar2 : this.f13981c) {
                 if (bVar2.a().equals(str)) {
                     bVar = bVar2;
                 }
             }
             if (bVar != null) {
-                this.f27669c.remove(bVar);
+                this.f13981c.remove(bVar);
                 if (z) {
                     Iterator<com.qiniu.pili.droid.shortvideo.core.h> it = bVar.b().iterator();
                     while (it.hasNext()) {
-                        if (it.next().f27552a.delete()) {
-                            e.d.c("DraftBox", "deleted section:" + next.f27552a);
+                        if (it.next().f13864a.delete()) {
+                            e.d.c("DraftBox", "deleted section:" + next.f13864a);
                         } else {
-                            e.d.e("DraftBox", "deleted section failed:" + next.f27552a);
+                            e.d.e("DraftBox", "deleted section failed:" + next.f13864a);
                         }
                     }
                 }
@@ -198,23 +197,23 @@ public class c {
     public void a(boolean z) {
         synchronized (this) {
             if (z) {
-                for (b bVar : this.f27669c) {
+                for (b bVar : this.f13981c) {
                     Iterator<com.qiniu.pili.droid.shortvideo.core.h> it = bVar.b().iterator();
                     while (it.hasNext()) {
                         com.qiniu.pili.droid.shortvideo.core.h next = it.next();
-                        if (next.f27552a.delete()) {
+                        if (next.f13864a.delete()) {
                             e eVar = e.d;
-                            eVar.c("DraftBox", "deleted section:" + next.f27552a);
+                            eVar.c("DraftBox", "deleted section:" + next.f13864a);
                         } else {
                             e eVar2 = e.d;
-                            eVar2.e("DraftBox", "deleted section failed:" + next.f27552a);
+                            eVar2.e("DraftBox", "deleted section failed:" + next.f13864a);
                         }
                     }
                 }
             }
-            this.f27669c.clear();
+            this.f13981c.clear();
             if (b()) {
-                new File(this.b.getFilesDir().getPath() + BridgeUtil.SPLIT_MARK + "drafts.json").delete();
+                new File(this.b.getFilesDir().getPath() + "/drafts.json").delete();
             }
         }
     }
@@ -223,16 +222,16 @@ public class c {
         boolean c2;
         synchronized (this) {
             b bVar2 = null;
-            for (b bVar3 : this.f27669c) {
+            for (b bVar3 : this.f13981c) {
                 if (bVar3.a().equals(bVar.a())) {
                     e.d.c("Delete old draft: " + bVar3.a());
                     bVar2 = bVar3;
                 }
             }
             if (bVar2 != null) {
-                this.f27669c.remove(bVar2);
+                this.f13981c.remove(bVar2);
             }
-            this.f27669c.add(bVar);
+            this.f13981c.add(bVar);
             c2 = c();
         }
         return c2;

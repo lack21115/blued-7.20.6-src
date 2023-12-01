@@ -11,17 +11,17 @@ public class CommonNotification {
     private static CommonNotification b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Notification f34867c;
+    private Notification f21176c;
     private String d;
     private static AtomicLong e = new AtomicLong(0);
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f34866a = "notification_from_tab";
+    public static String f21175a = "notification_from_tab";
 
     public CommonNotification() {
         this.d = "Blued";
         this.d = AppInfo.d().getResources().getString(2131886479) + AppInfo.d().getResources().getString(R.string.biao_notify_new_msg);
-        this.f34867c = new Notification(R.drawable.blued_icon_0, this.d, System.currentTimeMillis());
+        this.f21176c = new Notification(R.drawable.blued_icon_0, this.d, System.currentTimeMillis());
     }
 
     public static void a() {

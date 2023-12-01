@@ -12,11 +12,11 @@ public final class PrivilegeList {
     private final List<VIPCenterForJsonParse._privilege_list> next;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public PrivilegeList(List<? extends VIPCenterForJsonParse._privilege_list> current, List<? extends VIPCenterForJsonParse._privilege_list> next) {
-        Intrinsics.e(current, "current");
-        Intrinsics.e(next, "next");
-        this.current = current;
-        this.next = next;
+    public PrivilegeList(List<? extends VIPCenterForJsonParse._privilege_list> list, List<? extends VIPCenterForJsonParse._privilege_list> list2) {
+        Intrinsics.e(list, "current");
+        Intrinsics.e(list2, "next");
+        this.current = list;
+        this.next = list2;
     }
 
     public static /* synthetic */ PrivilegeList copy$default(PrivilegeList privilegeList, List list, List list2, int i, Object obj) {
@@ -37,10 +37,10 @@ public final class PrivilegeList {
         return this.next;
     }
 
-    public final PrivilegeList copy(List<? extends VIPCenterForJsonParse._privilege_list> current, List<? extends VIPCenterForJsonParse._privilege_list> next) {
-        Intrinsics.e(current, "current");
-        Intrinsics.e(next, "next");
-        return new PrivilegeList(current, next);
+    public final PrivilegeList copy(List<? extends VIPCenterForJsonParse._privilege_list> list, List<? extends VIPCenterForJsonParse._privilege_list> list2) {
+        Intrinsics.e(list, "current");
+        Intrinsics.e(list2, "next");
+        return new PrivilegeList(list, list2);
     }
 
     public boolean equals(Object obj) {

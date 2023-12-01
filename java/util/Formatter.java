@@ -2,8 +2,7 @@ package java.util;
 
 import android.widget.ExpandableListView;
 import com.amap.api.col.p0003sl.iu;
-import com.igexin.push.core.b;
-import com.j256.ormlite.stmt.query.SimpleComparison;
+import com.anythink.core.common.g.c;
 import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.File;
@@ -273,12 +272,12 @@ public final class Formatter implements Closeable, Flushable {
             this.argIndex = i;
         }
 
-        void setConversionType(char c2) {
-            this.conversionType = c2;
+        void setConversionType(char c) {
+            this.conversionType = c;
         }
 
-        void setDateSuffix(char c2) {
-            this.dateSuffix = c2;
+        void setDateSuffix(char c) {
+            this.dateSuffix = c;
         }
 
         boolean setFlag(int i) {
@@ -439,8 +438,8 @@ public final class Formatter implements Closeable, Flushable {
 
     private void appendLocalized(StringBuilder sb, long j, int i) {
         int length = sb.length();
-        char c2 = this.localeData.zeroDigit;
-        if (c2 == '0') {
+        char c = this.localeData.zeroDigit;
+        if (c == '0') {
             sb.append(j);
         } else {
             sb.append(localizeDigits(Long.toString(j)));
@@ -449,7 +448,7 @@ public final class Formatter implements Closeable, Flushable {
         if (length2 <= 0) {
             return;
         }
-        if (c2 == '0') {
+        if (c == '0') {
             sb.insert(length, ZEROS, 0, length2);
             return;
         }
@@ -459,13 +458,13 @@ public final class Formatter implements Closeable, Flushable {
             if (i3 >= length2) {
                 return;
             }
-            sb.insert(length, c2);
+            sb.insert(length, c);
             i2 = i3 + 1;
         }
     }
 
-    private boolean appendT(StringBuilder sb, char c2, Calendar calendar) {
-        switch (c2) {
+    private boolean appendT(StringBuilder sb, char c, Calendar calendar) {
+        switch (c) {
             case 'A':
                 sb.append(this.localeData.longWeekdayNames[calendar.get(7)]);
                 return true;
@@ -616,13 +615,13 @@ public final class Formatter implements Closeable, Flushable {
                 return true;
             case 'z':
                 long j = calendar.get(15) + calendar.get(16);
-                char c3 = '+';
+                char c2 = '+';
                 long j2 = j;
                 if (j < 0) {
-                    c3 = '-';
+                    c2 = '-';
                     j2 = -j;
                 }
-                sb.append(c3);
+                sb.append(c2);
                 appendLocalized(sb, j2 / 3600000, 2);
                 appendLocalized(sb, (j2 % 3600000) / 60000, 2);
                 return true;
@@ -692,7 +691,7 @@ public final class Formatter implements Closeable, Flushable {
             }
             return obj;
         }
-        throw new MissingFormatArgumentException(SimpleComparison.LESS_THAN_OPERATION);
+        throw new MissingFormatArgumentException("<");
     }
 
     private NativeDecimalFormat getDecimalFormat(String str) {
@@ -731,7 +730,7 @@ public final class Formatter implements Closeable, Flushable {
 
     private CharSequence localizeDigits(CharSequence charSequence) {
         int length = charSequence.length();
-        char c2 = this.localeData.zeroDigit;
+        char c = this.localeData.zeroDigit;
         StringBuilder sb = new StringBuilder(length);
         int i = 0;
         while (true) {
@@ -740,14 +739,14 @@ public final class Formatter implements Closeable, Flushable {
                 return sb;
             }
             char charAt = charSequence.charAt(i2);
-            char c3 = charAt;
+            char c2 = charAt;
             if (charAt >= '0') {
-                c3 = charAt;
+                c2 = charAt;
                 if (charAt <= '9') {
-                    c3 = (char) (charAt + (c2 - '0'));
+                    c2 = (char) (charAt + (c - '0'));
                 }
             }
-            sb.append(c3);
+            sb.append(c2);
             i = i2 + 1;
         }
     }
@@ -783,14 +782,14 @@ public final class Formatter implements Closeable, Flushable {
         if (i3 >= i4) {
             return charSequence2;
         }
-        char c2 = ' ';
+        char c = ' ';
         if (this.formatToken.flagZero) {
-            c2 = this.formatToken.getConversionType() == 'd' ? this.localeData.zeroDigit : '0';
+            c = this.formatToken.getConversionType() == 'd' ? this.localeData.zeroDigit : '0';
         } else {
             i2 = 0;
         }
         char[] cArr = new char[i4 - i3];
-        Arrays.fill(cArr, c2);
+        Arrays.fill(cArr, c);
         boolean z = this.formatToken.flagMinus;
         StringBuilder stringBuilder = toStringBuilder(charSequence2);
         if (z) {
@@ -859,7 +858,7 @@ public final class Formatter implements Closeable, Flushable {
                     break;
                 case 's':
                     if (this.arg == null) {
-                        str = b.l;
+                        str = "null";
                         return str;
                     } else if (!(this.arg instanceof Formattable)) {
                         return this.arg.toString();
@@ -943,7 +942,7 @@ public final class Formatter implements Closeable, Flushable {
                 i = 1;
             }
             int indexOf = sb.indexOf(".") + 1;
-            int indexOf2 = sb.indexOf("p");
+            int indexOf2 = sb.indexOf(c.W);
             int i2 = indexOf2 - indexOf;
             if (i2 != i) {
                 if (i2 >= i) {
@@ -1045,7 +1044,7 @@ public final class Formatter implements Closeable, Flushable {
 
     private CharSequence transformFromCharacter() {
         if (this.arg == null) {
-            return padding(b.l, 0);
+            return padding("null", 0);
         }
         if (this.arg instanceof Character) {
             return padding(String.valueOf(this.arg), 0);
@@ -1106,7 +1105,7 @@ public final class Formatter implements Closeable, Flushable {
     }
 
     private CharSequence transformFromHashCode() {
-        return padding(this.arg == null ? b.l : Integer.toHexString(this.arg.hashCode()), 0);
+        return padding(this.arg == null ? "null" : Integer.toHexString(this.arg.hashCode()), 0);
     }
 
     private CharSequence transformFromInteger() {
@@ -1189,7 +1188,7 @@ public final class Formatter implements Closeable, Flushable {
 
     private CharSequence transformFromNull() {
         this.formatToken.flagZero = false;
-        return padding(b.l, 0);
+        return padding("null", 0);
     }
 
     private CharSequence transformFromPercent() {
@@ -1214,7 +1213,7 @@ public final class Formatter implements Closeable, Flushable {
 
     private CharSequence transformFromString() {
         if (!(this.arg instanceof Formattable)) {
-            return padding(this.arg != null ? this.arg.toString() : b.l, 0);
+            return padding(this.arg != null ? this.arg.toString() : "null", 0);
         }
         int i = 0;
         if (this.formatToken.flagMinus) {

@@ -19,7 +19,7 @@ import com.opos.mobad.cmn.b.f;
 public abstract class AdBaseActivity extends Activity {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f25622a;
+    private b f11934a;
     private f b;
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -40,24 +40,24 @@ public abstract class AdBaseActivity extends Activity {
                 a();
                 return;
             }
-            if (this.f25622a != null) {
-                this.f25622a.d();
+            if (this.f11934a != null) {
+                this.f11934a.d();
             }
             e.a aVar = null;
             if (webDataHepler.f() != null) {
                 aVar = new e.a(webDataHepler.f());
             }
             b bVar = new b(this, webDataHepler);
-            this.f25622a = bVar;
+            this.f11934a = bVar;
             bVar.a();
-            this.f25622a.a(aVar);
-            this.f25622a.a(new b.a() { // from class: com.opos.mobad.activity.AdBaseActivity.1
+            this.f11934a.a(aVar);
+            this.f11934a.a(new b.a() { // from class: com.opos.mobad.activity.AdBaseActivity.1
                 @Override // com.opos.mobad.activity.webview.b.a
                 public void a() {
                     AdBaseActivity.this.a();
                 }
             });
-            setContentView(this.f25622a.c());
+            setContentView(this.f11934a.c());
         } catch (Exception e) {
             com.opos.cmn.an.f.a.a("AdActivity", "initWebView", (Throwable) e);
         }
@@ -95,7 +95,7 @@ public abstract class AdBaseActivity extends Activity {
 
     public void a(Intent intent) {
         com.opos.cmn.an.f.a.b("AdActivity", "reInitWebView");
-        b bVar = this.f25622a;
+        b bVar = this.f11934a;
         if (bVar != null) {
             bVar.d();
         }
@@ -112,7 +112,7 @@ public abstract class AdBaseActivity extends Activity {
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
         com.opos.cmn.an.f.a.b("AdActivity", "onConfigurationChanged newConfig=" + configuration.toString());
-        b bVar = this.f25622a;
+        b bVar = this.f11934a;
         if (bVar != null) {
             bVar.b();
         }
@@ -132,7 +132,7 @@ public abstract class AdBaseActivity extends Activity {
     @Override // android.app.Activity
     public void onDestroy() {
         com.opos.cmn.an.f.a.b("AdActivity", "onDestroy");
-        b bVar = this.f25622a;
+        b bVar = this.f11934a;
         if (bVar != null) {
             bVar.d();
         }
@@ -146,7 +146,7 @@ public abstract class AdBaseActivity extends Activity {
     @Override // android.app.Activity, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         com.opos.cmn.an.f.a.b("AdActivity", "onKeyDown");
-        b bVar = this.f25622a;
+        b bVar = this.f11934a;
         if (bVar == null || !bVar.a(i, keyEvent)) {
             f fVar = this.b;
             if (fVar == null || !fVar.a(i, keyEvent)) {

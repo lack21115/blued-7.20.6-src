@@ -25,13 +25,13 @@ import org.json.JSONObject;
 public class s {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40778a = "fs_lc_tl_uapp";
+    private static final String f27087a = "fs_lc_tl_uapp";
     private static final String f = "-1";
     private static Context g;
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f40779c;
+    private final int f27088c;
     private final int d;
     private final int e;
     private JSONObject h;
@@ -41,7 +41,7 @@ public class s {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final s f40780a = new s();
+        private static final s f27089a = new s();
 
         private a() {
         }
@@ -49,7 +49,7 @@ public class s {
 
     private s() {
         this.b = 128;
-        this.f40779c = 256;
+        this.f27088c = 256;
         this.d = 1024;
         this.e = 10;
         this.h = null;
@@ -65,7 +65,7 @@ public class s {
         if (g == null && context != null) {
             g = context.getApplicationContext();
         }
-        return a.f40780a;
+        return a.f27089a;
     }
 
     private JSONObject a(Map<String, Object> map) {
@@ -255,7 +255,7 @@ public class s {
 
     private void b(Context context) {
         try {
-            String string = PreferenceWrapper.getDefault(context).getString(f40778a, null);
+            String string = PreferenceWrapper.getDefault(context).getString(f27087a, null);
             if (!TextUtils.isEmpty(string)) {
                 this.h = new JSONObject(string);
             }
@@ -319,7 +319,7 @@ public class s {
     private void c(Context context) {
         try {
             if (this.h != null) {
-                PreferenceWrapper.getDefault(g).edit().putString(f40778a, this.h.toString()).commit();
+                PreferenceWrapper.getDefault(g).edit().putString(f27087a, this.h.toString()).commit();
             }
         } catch (Throwable th) {
         }

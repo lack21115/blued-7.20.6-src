@@ -25,8 +25,8 @@ import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import com.alipay.sdk.util.i;
 import com.cdo.oaps.ad.wrapper.BaseWrapper;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import com.sobot.chat.SobotApi;
 import com.sobot.chat.ZCSobotApi;
@@ -269,7 +269,7 @@ public abstract class SobotChatBaseFragment extends SobotBaseFragment implements
                             this.receiveMsgQueue.offer(msgId);
                             Util.notifyMsg(context, string);
                         }
-                        jSONArray4.put(new JSONObject("{msgId:" + msgId + i.d));
+                        jSONArray4.put(new JSONObject("{msgId:" + msgId + "}"));
                     }
                     i = i2 + 1;
                 } catch (JSONException e) {
@@ -1049,7 +1049,7 @@ public abstract class SobotChatBaseFragment extends SobotBaseFragment implements
         if (TextUtils.isEmpty(str2)) {
             zhiChiReplyAnswer.setMsg(str2);
         } else {
-            zhiChiReplyAnswer.setMsg(str2.replace("&", "&amp;").replace(SimpleComparison.LESS_THAN_OPERATION, "&lt;").replace(SimpleComparison.GREATER_THAN_OPERATION, "&gt;").replace("\n", "<br/>").replace("&lt;br/&gt;", "<br/>"));
+            zhiChiReplyAnswer.setMsg(str2.replace(ContainerUtils.FIELD_DELIMITER, "&amp;").replace(SimpleComparison.LESS_THAN_OPERATION, "&lt;").replace(SimpleComparison.GREATER_THAN_OPERATION, "&gt;").replace("\n", "<br/>").replace("&lt;br/&gt;", "<br/>"));
         }
         zhiChiReplyAnswer.setMsgType("0");
         zhiChiMessageBase.setAnswer(zhiChiReplyAnswer);
@@ -1271,7 +1271,7 @@ public abstract class SobotChatBaseFragment extends SobotBaseFragment implements
         getPollingHandler().removeCallbacks(this.pollingRun);
         getPollingHandler().postDelayed(this.pollingRun, 5000L);
         SharedPreferencesUtil.getStringData(getSobotActivity(), ZhiChiConstant.SOBOT_PLATFORM_UNIONCODE, "");
-        LogUtils.i2Local("开启轮询", "SobotChatBaseFragment 轮询开始：参数{uid:" + this.uid + ",puid:" + this.puid + i.d);
+        LogUtils.i2Local("开启轮询", "SobotChatBaseFragment 轮询开始：参数{uid:" + this.uid + ",puid:" + this.puid + "}");
     }
 
     public void startUserInfoTimeTask(Handler handler) {

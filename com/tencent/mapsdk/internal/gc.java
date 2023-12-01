@@ -62,7 +62,7 @@ public class gc implements hc {
     public static byte[] b(String str) {
         if (str != null) {
             try {
-                return str.getBytes("UTF-16LE");
+                return str.getBytes(h);
             } catch (Exception e) {
             }
         }
@@ -97,7 +97,7 @@ public class gc implements hc {
 
     public static String g(byte[] bArr) {
         try {
-            return new String(bArr, "UTF-16LE").trim();
+            return new String(bArr, h).trim();
         } catch (Exception e) {
             return null;
         }

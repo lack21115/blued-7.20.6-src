@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class AnchorBadgeSwipeBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f28676a;
+    private final FrameLayout f14986a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f28676a;
+        return this.f14986a;
     }
 }

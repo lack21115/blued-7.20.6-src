@@ -15,13 +15,11 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveFansMemberAdapter.class */
 public class LiveFansMemberAdapter extends BaseQuickAdapter<LiveFansMemberModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11623a;
+    private Context a;
 
     public LiveFansMemberAdapter(Context context) {
-        super(R.layout.live_fans_member_item_view, null);
-        this.f11623a = context;
+        super(R.layout.live_fans_member_item_view, (List) null);
+        this.a = context;
     }
 
     public int a() {
@@ -33,13 +31,12 @@ public class LiveFansMemberAdapter extends BaseQuickAdapter<LiveFansMemberModel,
 
     public LiveFansMemberModel a(int i) {
         if (getData() != null && i < getData().size() && i >= 0) {
-            return getData().get(i);
+            return (LiveFansMemberModel) getData().get(i);
         }
         return null;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, LiveFansMemberModel liveFansMemberModel) {
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_level);
@@ -72,7 +69,7 @@ public class LiveFansMemberAdapter extends BaseQuickAdapter<LiveFansMemberModel,
         }
         ImageLoader.a((IRequestHost) null, liveFansMemberModel.avatar).b(R.drawable.user_bg_round).c().a((ImageView) baseViewHolder.getView(R.id.avatar));
         ((TextView) baseViewHolder.getView(R.id.tv_name)).setText(liveFansMemberModel.fans_name);
-        ((TextView) baseViewHolder.getView(R.id.tv_num)).setText(String.format(this.f11623a.getString(R.string.live_fans_relation), Integer.valueOf(liveFansMemberModel.relation)));
+        ((TextView) baseViewHolder.getView(R.id.tv_num)).setText(String.format(this.a.getString(R.string.live_fans_relation), Integer.valueOf(liveFansMemberModel.relation)));
         TextView textView2 = (TextView) baseViewHolder.getView(R.id.tv_fans_name);
         textView2.setText(liveFansMemberModel.name);
         TextView textView3 = (TextView) baseViewHolder.getView(R.id.tv_level_num);

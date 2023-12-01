@@ -9,11 +9,11 @@ import java.lang.reflect.Method;
 public final class d implements b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f21885a;
+    private String f8278a;
     private boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f21886c = 43200000;
+    private long f8279c = 43200000;
 
     private static String a() {
         StringBuilder sb = new StringBuilder();

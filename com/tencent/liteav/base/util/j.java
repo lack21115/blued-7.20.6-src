@@ -12,44 +12,44 @@ import java.util.concurrent.TimeUnit;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    final ThreadPoolExecutor f36333a = new ThreadPoolExecutor(0, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue());
+    final ThreadPoolExecutor f22642a = new ThreadPoolExecutor(0, 1, 60, TimeUnit.SECONDS, new LinkedBlockingQueue());
     final b b = new b(Looper.getMainLooper());
 
     /* renamed from: c  reason: collision with root package name */
-    final Map<Runnable, a> f36334c = new HashMap();
+    final Map<Runnable, a> f22643c = new HashMap();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/liteav/base/util/j$a.class */
     public final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        final Runnable f36335a;
+        final Runnable f22644a;
         final Runnable b = m.a(this);
 
         /* renamed from: c  reason: collision with root package name */
-        final long f36336c;
+        final long f22645c;
 
         public a(Runnable runnable, long j) {
-            this.f36335a = l.a(this, runnable);
-            this.f36336c = j;
+            this.f22644a = l.a(this, runnable);
+            this.f22645c = j;
         }
     }
 
     public final void a(Runnable runnable) {
-        this.f36333a.execute(runnable);
+        this.f22642a.execute(runnable);
     }
 
     public final void a(Runnable runnable, long j) {
         a aVar = new a(runnable, j);
         synchronized (this) {
-            this.f36334c.put(runnable, aVar);
+            this.f22643c.put(runnable, aVar);
         }
-        j.this.b.postDelayed(aVar.b, aVar.f36336c);
+        j.this.b.postDelayed(aVar.b, aVar.f22645c);
     }
 
     public final void b(Runnable runnable) {
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        this.f36333a.execute(k.a(runnable, countDownLatch));
+        this.f22642a.execute(k.a(runnable, countDownLatch));
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
@@ -62,13 +62,13 @@ public final class j {
         if (runnable == null) {
             return;
         }
-        this.f36333a.remove(runnable);
+        this.f22642a.remove(runnable);
         synchronized (this) {
-            remove = this.f36334c.remove(runnable);
+            remove = this.f22643c.remove(runnable);
         }
         if (remove != null) {
             j.this.b.removeCallbacks(remove.b);
-            j.this.f36333a.remove(remove.f36335a);
+            j.this.f22642a.remove(remove.f22644a);
         }
     }
 }

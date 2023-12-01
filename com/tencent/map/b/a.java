@@ -4,7 +4,7 @@ package com.tencent.map.b;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static a f37200a;
+    private static a f23509a;
 
     /* renamed from: com.tencent.map.b.a$1  reason: invalid class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/map/b/a$1.class */
@@ -18,33 +18,33 @@ public final class a {
 
         public boolean a(String str, String str2) {
             int a2 = a.a(a.this, str);
-            if (str2.charAt(4) != i.f37238a.charAt(((((a2 * 9) + 10) / 3) + 36) & 31)) {
+            if (str2.charAt(4) != i.f23547a.charAt(((((a2 * 9) + 10) / 3) + 36) & 31)) {
                 return false;
             }
-            if (str2.charAt(7) != i.f37238a.charAt((((a2 * 5) + 11) / 5) & 31)) {
+            if (str2.charAt(7) != i.f23547a.charAt((((a2 * 5) + 11) / 5) & 31)) {
                 return false;
             }
-            if (str2.charAt(12) != i.f37238a.charAt((((a2 + 10) / 3) << 3) & 31)) {
+            if (str2.charAt(12) != i.f23547a.charAt((((a2 + 10) / 3) << 3) & 31)) {
                 return false;
             }
             int i = a2 * 3;
-            if (str2.charAt(14) != i.f37238a.charAt(((i + 19) / 9) & 31)) {
+            if (str2.charAt(14) != i.f23547a.charAt(((i + 19) / 9) & 31)) {
                 return false;
             }
-            if (str2.charAt(19) != i.f37238a.charAt(((i + 39) / 8) & 31)) {
+            if (str2.charAt(19) != i.f23547a.charAt(((i + 39) / 8) & 31)) {
                 return false;
             }
-            if (str2.charAt(21) != i.f37238a.charAt((((a2 / 23) + 67) / 7) & 31)) {
+            if (str2.charAt(21) != i.f23547a.charAt((((a2 / 23) + 67) / 7) & 31)) {
                 return false;
             }
-            if (str2.charAt(26) != i.f37238a.charAt(((((a2 + 23) / 6) + 3) * 7) & 31)) {
+            if (str2.charAt(26) != i.f23547a.charAt(((((a2 + 23) / 6) + 3) * 7) & 31)) {
                 return false;
             }
             int i2 = 0;
             for (int i3 = 0; i3 < str.length(); i3++) {
                 i2 = i.b[(i2 ^ i.a(str.charAt(i3))) & 255] ^ ((i2 >> 8) & 255);
             }
-            return str2.charAt(0) == i.f37238a.charAt(i2 & 31) && str2.charAt(1) == i.f37238a.charAt((i2 >> 5) & 31);
+            return str2.charAt(0) == i.f23547a.charAt(i2 & 31) && str2.charAt(1) == i.f23547a.charAt((i2 >> 5) & 31);
         }
     }
 
@@ -64,10 +64,10 @@ public final class a {
         a aVar;
         synchronized (a.class) {
             try {
-                if (f37200a == null) {
-                    f37200a = new a();
+                if (f23509a == null) {
+                    f23509a = new a();
                 }
-                aVar = f37200a;
+                aVar = f23509a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -81,7 +81,7 @@ public final class a {
             for (int i2 = 0; i2 < 27; i2++) {
                 i = i.b[(i ^ i.a(str2.charAt(i2))) & 255] ^ ((i >> 8) & 255);
             }
-            return str2.charAt(27) == i.f37238a.charAt(i & 31) && str2.charAt(28) == i.f37238a.charAt((i >> 5) & 31);
+            return str2.charAt(27) == i.f23547a.charAt(i & 31) && str2.charAt(28) == i.f23547a.charAt((i >> 5) & 31);
         }
         return false;
     }

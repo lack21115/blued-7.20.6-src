@@ -77,8 +77,8 @@ public class SkiaImageRegionDecoder implements ImageRegionDecoder {
             Resources resources = context.getPackageName().equals(authority) ? context.getResources() : context.getPackageManager().getResourcesForApplication(authority);
             List<String> pathSegments = uri.getPathSegments();
             int size = pathSegments.size();
-            if (size == 2 && pathSegments.get(0).equals(i.f7952c)) {
-                i = resources.getIdentifier(pathSegments.get(1), i.f7952c, authority);
+            if (size == 2 && pathSegments.get(0).equals(i.f5112c)) {
+                i = resources.getIdentifier(pathSegments.get(1), i.f5112c, authority);
             } else {
                 if (size == 1 && TextUtils.isDigitsOnly(pathSegments.get(0))) {
                     try {
@@ -94,7 +94,7 @@ public class SkiaImageRegionDecoder implements ImageRegionDecoder {
         } else if (uri2.startsWith(FILE_PREFIX)) {
             this.decoder = BitmapRegionDecoder.newInstance(uri2.substring(7), false);
         } else {
-            AutoCloseable autoCloseable = null;
+            InputStream inputStream = null;
             try {
                 InputStream openInputStream = context.getContentResolver().openInputStream(uri);
                 if (openInputStream == null) {
@@ -110,7 +110,7 @@ public class SkiaImageRegionDecoder implements ImageRegionDecoder {
             } catch (Throwable th) {
                 if (0 != 0) {
                     try {
-                        autoCloseable.close();
+                        inputStream.close();
                     } catch (Exception e3) {
                     }
                 }

@@ -1,6 +1,5 @@
 package libcore.reflect;
 
-import com.j256.ormlite.stmt.query.SimpleComparison;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Arrays;
@@ -79,7 +78,7 @@ public final class ParameterizedTypeImpl implements ParameterizedType {
         StringBuilder sb = new StringBuilder();
         sb.append(this.rawTypeName);
         if (this.args.length() > 0) {
-            sb.append(SimpleComparison.LESS_THAN_OPERATION).append(this.args).append(SimpleComparison.GREATER_THAN_OPERATION);
+            sb.append("<").append(this.args).append(">");
         }
         return sb.toString();
     }

@@ -3,9 +3,8 @@ package android.util;
 import com.android.internal.util.XmlUtils;
 import org.xmlpull.v1.XmlPullParser;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/util/XmlPullAttributes.class */
-public class XmlPullAttributes implements AttributeSet {
+class XmlPullAttributes implements AttributeSet {
     XmlPullParser mParser;
 
     public XmlPullAttributes(XmlPullParser xmlPullParser) {

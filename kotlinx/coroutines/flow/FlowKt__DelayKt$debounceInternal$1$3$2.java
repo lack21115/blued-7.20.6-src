@@ -17,13 +17,9 @@ import kotlinx.coroutines.internal.Symbol;
 @DebugMetadata(b = "Delay.kt", c = {245}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__DelayKt$debounceInternal$1$3$2")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__DelayKt$debounceInternal$1$3$2.class */
 final class FlowKt__DelayKt$debounceInternal$1$3$2 extends SuspendLambda implements Function2<ChannelResult<? extends Object>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f43126a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    /* synthetic */ Object f43127c;
+    /* synthetic */ Object c;
     final /* synthetic */ Ref.ObjectRef<Object> d;
     final /* synthetic */ FlowCollector<T> e;
 
@@ -37,13 +33,13 @@ final class FlowKt__DelayKt$debounceInternal$1$3$2 extends SuspendLambda impleme
     }
 
     public final Object a(Object obj, Continuation<? super Unit> continuation) {
-        return ((FlowKt__DelayKt$debounceInternal$1$3$2) create(ChannelResult.h(obj), continuation)).invokeSuspend(Unit.f42314a);
+        return ((FlowKt__DelayKt$debounceInternal$1$3$2) create(ChannelResult.h(obj), continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         FlowKt__DelayKt$debounceInternal$1$3$2 flowKt__DelayKt$debounceInternal$1$3$2 = new FlowKt__DelayKt$debounceInternal$1$3$2(this.d, this.e, continuation);
-        flowKt__DelayKt$debounceInternal$1$3$2.f43127c = obj;
+        flowKt__DelayKt$debounceInternal$1$3$2.c = obj;
         return flowKt__DelayKt$debounceInternal$1$3$2;
     }
 
@@ -58,49 +54,49 @@ final class FlowKt__DelayKt$debounceInternal$1$3$2 extends SuspendLambda impleme
     public final Object invokeSuspend(Object obj) {
         Ref.ObjectRef<Object> objectRef;
         Ref.ObjectRef<Object> objectRef2;
-        Object a2 = IntrinsicsKt.a();
+        Object a = IntrinsicsKt.a();
         int i = this.b;
         if (i == 0) {
             ResultKt.a(obj);
-            ?? a3 = ((ChannelResult) this.f43127c).a();
+            ?? a2 = ((ChannelResult) this.c).a();
             Ref.ObjectRef<Object> objectRef3 = this.d;
-            boolean z = a3 instanceof ChannelResult.Failed;
+            boolean z = a2 instanceof ChannelResult.Failed;
             if (!z) {
-                objectRef3.f42545a = a3;
+                objectRef3.a = a2;
             }
             objectRef = this.d;
             FlowCollector<T> flowCollector = this.e;
             if (z) {
-                Throwable d = ChannelResult.d(a3);
+                Throwable d = ChannelResult.d(a2);
                 if (d != null) {
                     throw d;
                 }
                 objectRef2 = objectRef;
-                if (objectRef.f42545a != null) {
-                    Symbol symbol = NullSurrogateKt.f43498a;
-                    Object obj2 = objectRef.f42545a;
+                if (objectRef.a != null) {
+                    Symbol symbol = NullSurrogateKt.a;
+                    Object obj2 = objectRef.a;
                     Object obj3 = obj2;
                     if (obj2 == symbol) {
                         obj3 = null;
                     }
-                    this.f43127c = a3;
-                    this.f43126a = objectRef;
+                    this.c = a2;
+                    this.a = objectRef;
                     this.b = 1;
-                    if (flowCollector.emit(obj3, this) == a2) {
-                        return a2;
+                    if (flowCollector.emit(obj3, this) == a) {
+                        return a;
                     }
                 }
-                objectRef2.f42545a = NullSurrogateKt.f43499c;
+                objectRef2.a = NullSurrogateKt.c;
             }
-            return Unit.f42314a;
+            return Unit.a;
         } else if (i != 1) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
-            objectRef = (Ref.ObjectRef) this.f43126a;
+            objectRef = (Ref.ObjectRef) this.a;
         }
         objectRef2 = objectRef;
-        objectRef2.f42545a = NullSurrogateKt.f43499c;
-        return Unit.f42314a;
+        objectRef2.a = NullSurrogateKt.c;
+        return Unit.a;
     }
 }

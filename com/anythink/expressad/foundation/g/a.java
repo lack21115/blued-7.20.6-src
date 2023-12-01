@@ -32,7 +32,7 @@ public final class a {
     public static final String Z = "sv";
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f7820a = "anythink";
+    public static String f4980a = "anythink";
     public static final String aA = "native_rollbc";
     public static final String aB = "click_jump_error";
     public static final String aC = "click_jump_success";
@@ -78,7 +78,7 @@ public final class a {
     public static final int aq = 2;
 
     /* renamed from: ar  reason: collision with root package name */
-    public static final int f7821ar = 1;
+    public static final int f4981ar = 1;
     public static final int as = 0;
     public static final int at = 1;
     public static final String au = "adstats";
@@ -142,7 +142,7 @@ public final class a {
     public static final int bz = 2;
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f7822c = "";
+    public static String f4982c = "";
     public static int cA = 0;
     public static int cB = 1;
     public static int cC = 2;
@@ -174,7 +174,7 @@ public final class a {
     public static final String cm = "H+tU+Fz8";
 
     /* renamed from: cn  reason: collision with root package name */
-    public static final String f7823cn = "c";
+    public static final String f4983cn = "c";
     public static String co = "";
     public static String cp = "";
     public static int cq = 60000;
@@ -213,13 +213,13 @@ public final class a {
 
     /* renamed from: com.anythink.expressad.foundation.g.a$a  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/g/a$a.class */
-    public static final class C0145a {
+    public static final class C0074a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final String f7824a = Environment.getExternalStorageDirectory().toString();
-        public static final String b = f7824a + "/.anythink700/";
+        public static final String f4984a = Environment.getExternalStorageDirectory().toString();
+        public static final String b = f4984a + "/.anythink700/";
 
         /* renamed from: c  reason: collision with root package name */
-        public static final String f7825c = b + "download/";
+        public static final String f4985c = b + "download/";
     }
 }

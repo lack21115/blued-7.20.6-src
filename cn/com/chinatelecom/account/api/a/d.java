@@ -6,11 +6,11 @@ import java.nio.charset.Charset;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f4091a = d.class.getSimpleName();
+    private static final String f4043a = d.class.getSimpleName();
     private static final Charset b = Charset.forName("UTF-8");
 
     /* renamed from: c  reason: collision with root package name */
-    private static byte[] f4092c = {68, 64, 94, 49, 50, 83};
+    private static byte[] f4044c = {68, 64, 94, 49, 50, 83};
 
     public static String a(byte[] bArr) {
         try {
@@ -23,7 +23,7 @@ public class d {
                     return new String(bArr2);
                 }
                 bArr2[i2] = bArr[i2];
-                byte[] bArr3 = f4092c;
+                byte[] bArr3 = f4044c;
                 int length2 = bArr3.length;
                 int i3 = 0;
                 while (true) {

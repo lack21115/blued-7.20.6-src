@@ -41,17 +41,17 @@ public class MtopTransformImpl implements MtopTransform {
             return new ApiID(null, mtopProxy);
         }
         b b = b(mtopProxy, map);
-        NetworkListenerAdapter a2 = MtopProxyUtils.a(mtopProxy);
-        if (a2 != null) {
-            a2.f43716c = mtopProxy.h;
+        NetworkListenerAdapter a = MtopProxyUtils.a(mtopProxy);
+        if (a != null) {
+            a.c = mtopProxy.h;
         }
         a aVar = null;
         try {
             mtopProxy.h.e();
-            a a3 = a(b);
-            aVar = a3;
-            a3.a(a2);
-            aVar = a3;
+            a a2 = a(b);
+            aVar = a2;
+            a2.a(a);
+            aVar = a2;
         } catch (Exception e) {
             TBSdkLog.b("mtopsdk.MtopTransformImpl", g, "[asyncTransform] invoke call.enqueue error :apiKey=" + d.f(), e);
         }
@@ -91,18 +91,18 @@ public class MtopTransformImpl implements MtopTransform {
                 TBSdkLog.b("mtopsdk.MtopTransformImpl", g, "[syncTransform] invoke call.execute error :apiKey=" + d.f(), th);
                 gVar2 = gVar;
                 mtopProxy.h.c();
-                MtopResponse a2 = MtopNetworkResultParser.a(gVar2, null, mtopProxy);
+                MtopResponse a = MtopNetworkResultParser.a(gVar2, null, mtopProxy);
                 mtopProxy.h.d();
-                return a2;
+                return a;
             }
         } catch (Throwable th2) {
             th = th2;
             gVar = null;
         }
         mtopProxy.h.c();
-        MtopResponse a22 = MtopNetworkResultParser.a(gVar2, null, mtopProxy);
+        MtopResponse a2 = MtopNetworkResultParser.a(gVar2, null, mtopProxy);
         mtopProxy.h.d();
-        return a22;
+        return a2;
     }
 
     public b b(MtopProxy mtopProxy, Map map) {

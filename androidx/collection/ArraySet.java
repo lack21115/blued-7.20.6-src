@@ -434,7 +434,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
             allocArrays(i3);
             int[] iArr2 = this.mHashes;
             if (iArr2.length > 0) {
-                System.arraycopy((Object) iArr, 0, (Object) iArr2, 0, iArr.length);
+                System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
                 System.arraycopy(objArr, 0, this.mArray, 0, objArr.length);
             }
             freeArrays(iArr, objArr, this.mSize);
@@ -443,7 +443,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
         if (i < i4) {
             int[] iArr3 = this.mHashes;
             int i5 = i + 1;
-            System.arraycopy((Object) iArr3, i, (Object) iArr3, i5, i4 - i);
+            System.arraycopy(iArr3, i, iArr3, i5, i4 - i);
             Object[] objArr2 = this.mArray;
             System.arraycopy(objArr2, i, objArr2, i5, this.mSize - i);
         }
@@ -461,7 +461,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
                 add(arraySet.valueAt(i2));
             }
         } else if (i > 0) {
-            System.arraycopy((Object) arraySet.mHashes, 0, (Object) this.mHashes, 0, i);
+            System.arraycopy(arraySet.mHashes, 0, this.mHashes, 0, i);
             System.arraycopy(arraySet.mArray, 0, this.mArray, 0, i);
             this.mSize = i;
         }
@@ -515,7 +515,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
             allocArrays(i);
             int i2 = this.mSize;
             if (i2 > 0) {
-                System.arraycopy((Object) iArr, 0, (Object) this.mHashes, 0, i2);
+                System.arraycopy(iArr, 0, this.mHashes, 0, i2);
                 System.arraycopy(objArr, 0, this.mArray, 0, this.mSize);
             }
             freeArrays(iArr, objArr, this.mSize);
@@ -571,7 +571,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
         return this.mSize <= 0;
     }
 
-    @Override // java.util.Collection, java.lang.Iterable
+    @Override // java.util.Collection, java.lang.Iterable, java.util.Set
     public Iterator<E> iterator() {
         return getCollection().getKeySet().iterator();
     }
@@ -637,7 +637,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
             if (i < i4) {
                 int[] iArr2 = this.mHashes;
                 int i5 = i + 1;
-                System.arraycopy((Object) iArr2, i5, (Object) iArr2, i, i4 - i);
+                System.arraycopy(iArr2, i5, iArr2, i, i4 - i);
                 Object[] objArr2 = this.mArray;
                 System.arraycopy(objArr2, i5, objArr2, i, this.mSize - i);
             }
@@ -651,13 +651,13 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
             allocArrays(i3);
             this.mSize--;
             if (i > 0) {
-                System.arraycopy((Object) iArr3, 0, (Object) this.mHashes, 0, i);
+                System.arraycopy(iArr3, 0, this.mHashes, 0, i);
                 System.arraycopy(objArr3, 0, this.mArray, 0, i);
             }
             int i6 = this.mSize;
             if (i < i6) {
                 int i7 = i + 1;
-                System.arraycopy((Object) iArr3, i7, (Object) this.mHashes, i, i6 - i);
+                System.arraycopy(iArr3, i7, this.mHashes, i, i6 - i);
                 System.arraycopy(objArr3, i7, this.mArray, i, this.mSize - i);
                 return e;
             }
@@ -677,7 +677,7 @@ public final class ArraySet<E> implements Collection<E>, Set<E> {
         return z;
     }
 
-    @Override // java.util.Collection, java.util.List
+    @Override // java.util.Collection, java.util.Set
     public int size() {
         return this.mSize;
     }

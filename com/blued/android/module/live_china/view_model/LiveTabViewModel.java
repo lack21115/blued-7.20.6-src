@@ -30,13 +30,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view_model/LiveTabViewModel.class */
 public final class LiveTabViewModel extends BaseViewModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private MutableLiveData<List<LiveTwoFloorModel>> f15481a = new MutableLiveData<>();
+    private MutableLiveData<List<LiveTwoFloorModel>> a = new MutableLiveData<>();
     private MutableLiveData<AnchorLiveStateModel> b = new MutableLiveData<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private MutableLiveData<List<BluedLiveListData>> f15482c = new MutableLiveData<>();
+    private MutableLiveData<List<BluedLiveListData>> c = new MutableLiveData<>();
     private LiveListCommonModel d = new LiveListCommonModel();
     private List<BluedLiveListData> e = new ArrayList();
     private List<BannerModel> f = new ArrayList();
@@ -206,9 +202,9 @@ public final class LiveTabViewModel extends BaseViewModel {
             LiveRoomUtils.a(tabId, liveListCommonModel);
         }
         this.d = liveListCommonModel;
-        List<BluedLiveListData> a2 = LiveRoomUtils.a(tabId);
-        ArrayList arrayList = a2;
-        if (a2 == null) {
+        List<BluedLiveListData> a = LiveRoomUtils.a(tabId);
+        ArrayList arrayList = a;
+        if (a == null) {
             arrayList = new ArrayList();
             LiveRoomUtils.a(tabId, arrayList);
         }
@@ -271,7 +267,7 @@ public final class LiveTabViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<List<LiveTwoFloorModel>> d() {
-        return this.f15481a;
+        return this.a;
     }
 
     public final MutableLiveData<AnchorLiveStateModel> e() {
@@ -279,7 +275,7 @@ public final class LiveTabViewModel extends BaseViewModel {
     }
 
     public final MutableLiveData<List<BluedLiveListData>> f() {
-        return this.f15482c;
+        return this.c;
     }
 
     public final LiveListCommonModel g() {
@@ -303,7 +299,7 @@ public final class LiveTabViewModel extends BaseViewModel {
         LiveRoomUtils.b(this.d.tabId, this.f);
         l();
         m();
-        this.f15482c.setValue(this.h);
+        this.c.setValue(this.h);
         b(this.d.getHasData());
     }
 

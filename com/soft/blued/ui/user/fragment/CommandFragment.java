@@ -24,11 +24,11 @@ import com.soft.blued.ui.web.WebViewShowInfoFragment;
 public class CommandFragment extends BaseFragment {
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f33843a;
+    private Activity f20152a;
     private View b;
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33844c;
+    private View f20153c;
     private ImageView d;
     private WatchWordModel e;
 
@@ -72,7 +72,7 @@ public class CommandFragment extends BaseFragment {
             d();
             return;
         }
-        this.f33844c = this.b.findViewById(2131364488);
+        this.f20153c = this.b.findViewById(R.id.img_close);
         this.d = (ImageView) this.b.findViewById(R.id.img_command);
         ImageLoader.a(getFragmentActive(), this.e.image).a(this.d);
         this.d.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.CommandFragment.1
@@ -80,11 +80,11 @@ public class CommandFragment extends BaseFragment {
             public void onClick(View view) {
                 Tracker.onClick(view);
                 CommandFragment.a();
-                WebViewShowInfoFragment.show(CommandFragment.this.f33843a, CommandFragment.this.e.url, -1);
+                WebViewShowInfoFragment.show(CommandFragment.this.f20152a, CommandFragment.this.e.url, -1);
                 CommandFragment.this.d();
             }
         });
-        this.f33844c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$CommandFragment$NQjSiLZIm_fWSHoASOe2dzWeAZ8
+        this.f20153c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.-$$Lambda$CommandFragment$NQjSiLZIm_fWSHoASOe2dzWeAZ8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 CommandFragment.this.a(view);
@@ -110,29 +110,25 @@ public class CommandFragment extends BaseFragment {
         scaleAnimation.setDuration(300L);
         this.d.startAnimation(scaleAnimation);
         this.d.setVisibility(0);
-        this.f33844c.setVisibility(0);
+        this.f20153c.setVisibility(0);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment
     public boolean isActivitySwipeBackEnable() {
         return false;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
-        this.f33844c.performClick();
+        this.f20153c.performClick();
         return true;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
-        this.f33843a = getActivity();
+        this.f20152a = getActivity();
         ActivityChangeAnimationUtils.h(getActivity());
         b();
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View view = this.b;
         if (view == null) {

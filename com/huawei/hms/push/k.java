@@ -6,5 +6,5 @@ import java.nio.charset.Charset;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Charset f22848a = Charset.forName("UTF-8");
+    public static final Charset f9240a = Charset.forName("UTF-8");
 }

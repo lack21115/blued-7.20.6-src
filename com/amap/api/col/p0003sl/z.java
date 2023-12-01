@@ -45,9 +45,7 @@ import java.util.Map;
 /* renamed from: com.amap.api.col.3sl.z  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/z.class */
 public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.NativeFunCallListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    IAMapDelegate f5462a;
+    IAMapDelegate a;
     private Context d;
     private cl j;
     private int e = 0;
@@ -61,15 +59,13 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
     private BitmapDescriptor q = null;
     private BitmapDescriptor r = null;
     boolean b = false;
-
-    /* renamed from: c  reason: collision with root package name */
-    List<String> f5463c = new ArrayList();
+    List<String> c = new ArrayList();
     private final Map<String, BaseOverlay> h = new HashMap();
     private ArrayList<Pair<BaseOverlay, BaseOptions>> i = new ArrayList<>();
     private AMapNativeGlOverlayLayer g = new AMapNativeGlOverlayLayer();
 
     public z(IAMapDelegate iAMapDelegate, Context context) {
-        this.f5462a = iAMapDelegate;
+        this.a = iAMapDelegate;
         this.d = context;
         this.j = new cl(iAMapDelegate);
     }
@@ -230,7 +226,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
     public final void clearTileCache() {
         AMapNativeGlOverlayLayer aMapNativeGlOverlayLayer = this.g;
         if (aMapNativeGlOverlayLayer != null) {
-            aMapNativeGlOverlayLayer.getNativeProperties("", "clearTileCache", null);
+            aMapNativeGlOverlayLayer.getNativeProperties("", "clearTileCache", (Object[]) null);
         }
     }
 
@@ -257,7 +253,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
                 synchronized (this.i) {
                     this.i.clear();
                 }
-                this.g.clear("");
+                this.g.clear(new String[]{""});
                 this.g.destroy();
                 this.g = null;
             } catch (Throwable th) {
@@ -279,7 +275,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
                 iw.c(th, "GlOverlayLayer", "draw");
                 z2 = false;
             }
-            if (this.f5462a.getMapConfig() == null) {
+            if (this.a.getMapConfig() == null) {
                 return false;
             }
             if (this.g != null) {
@@ -290,7 +286,6 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
         }
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final BitmapDescriptor getBuildInImageData(int i) {
         try {
             switch (i) {
@@ -351,7 +346,6 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
         return 0;
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final BitmapDescriptor getCustomImageData(ImageOptions imageOptions) {
         if (imageOptions == null || imageOptions.radius == 0.0d || imageOptions.type != ImageOptions.ShapeType.CIRCLE.value()) {
             return null;
@@ -373,9 +367,9 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
 
     @Override // com.amap.api.maps.interfaces.IGlOverlayLayer
     public final BaseOverlay getHitBaseOverlay(MotionEvent motionEvent, int i) {
-        if (this.f5462a != null) {
+        if (this.a != null) {
             DPoint obtain = DPoint.obtain();
-            this.f5462a.getPixel2LatLng((int) motionEvent.getX(), (int) motionEvent.getY(), obtain);
+            this.a.getPixel2LatLng((int) motionEvent.getX(), (int) motionEvent.getY(), obtain);
             LatLng latLng = new LatLng(obtain.y, obtain.x);
             obtain.recycle();
             return getHitBaseOverlay(latLng, i);
@@ -424,10 +418,9 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
         }
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final BitmapDescriptor getInfoContents(String str) {
         au infoWindowDelegate;
-        IAMapDelegate iAMapDelegate = this.f5462a;
+        IAMapDelegate iAMapDelegate = this.a;
         if (iAMapDelegate == null || (infoWindowDelegate = iAMapDelegate.getInfoWindowDelegate()) == null) {
             return null;
         }
@@ -438,10 +431,9 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
         return null;
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final BitmapDescriptor getInfoWindow(String str) {
         au infoWindowDelegate;
-        IAMapDelegate iAMapDelegate = this.f5462a;
+        IAMapDelegate iAMapDelegate = this.a;
         if (iAMapDelegate == null || (infoWindowDelegate = iAMapDelegate.getInfoWindowDelegate()) == null) {
             return null;
         }
@@ -452,15 +444,13 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
         return null;
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final BitmapDescriptor getInfoWindowClick(String str) {
         return null;
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final long getInfoWindowUpdateOffsetTime(String str) {
         au infoWindowDelegate;
-        IAMapDelegate iAMapDelegate = this.f5462a;
+        IAMapDelegate iAMapDelegate = this.a;
         if (iAMapDelegate == null || (infoWindowDelegate = iAMapDelegate.getInfoWindowDelegate()) == null) {
             return 0L;
         }
@@ -473,17 +463,17 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
 
     @Override // com.amap.api.maps.interfaces.IGlOverlayLayer
     public final IAMapDelegate getMap() {
-        return this.f5462a;
+        return this.a;
     }
 
     @Override // com.amap.api.maps.interfaces.IGlOverlayLayer
     public final List<Marker> getMapScreenMarkers() {
         if (this.g != null) {
-            this.f5463c.clear();
-            this.g.getNativeProperties("", "getMapScreenOverlays", new Object[]{this.f5463c});
-            if (this.f5463c.size() > 0) {
+            this.c.clear();
+            this.g.getNativeProperties("", "getMapScreenOverlays", new Object[]{this.c});
+            if (this.c.size() > 0) {
                 ArrayList arrayList = new ArrayList();
-                for (String str : this.f5463c) {
+                for (String str : this.c) {
                     if (str != null && str.contains("MARKER")) {
                         arrayList.add((Marker) this.h.get(str));
                     }
@@ -499,7 +489,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
     public final void getMarkerInfoWindowOffset(String str, FPoint fPoint) {
         AMapNativeGlOverlayLayer aMapNativeGlOverlayLayer = this.g;
         if (aMapNativeGlOverlayLayer != null) {
-            Object nativeProperties = aMapNativeGlOverlayLayer.getNativeProperties(str, "getMarkerInfoWindowOffset", null);
+            Object nativeProperties = aMapNativeGlOverlayLayer.getNativeProperties(str, "getMarkerInfoWindowOffset", (Object[]) null);
             if (nativeProperties instanceof Point) {
                 Point point = (Point) nativeProperties;
                 fPoint.x = point.x;
@@ -579,7 +569,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
     @Override // com.amap.api.maps.interfaces.IGlOverlayLayer
     public final void getOverlayScreenPos(String str, FPoint fPoint) {
         if (this.h.get(str) instanceof BasePointOverlay) {
-            Object nativeProperties = this.g.getNativeProperties(str, "getMarkerScreenPos", null);
+            Object nativeProperties = this.g.getNativeProperties(str, "getMarkerScreenPos", (Object[]) null);
             if (nativeProperties instanceof Point) {
                 Point point = (Point) nativeProperties;
                 fPoint.x = point.x;
@@ -588,12 +578,10 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
         }
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final BitmapDescriptor getOverturnInfoWindow(String str) {
         return null;
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final BitmapDescriptor getOverturnInfoWindowClick(String str) {
         return null;
     }
@@ -601,7 +589,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
     @Override // com.amap.api.maps.interfaces.IGlOverlayLayer
     public final void hideInfoWindow(String str) {
         if (this.g != null) {
-            this.f5462a.hideInfoWindow();
+            this.a.hideInfoWindow();
             this.g.getNativeProperties(str, "setInfoWindowShown", new Object[]{Boolean.FALSE});
         }
         setRunLowFrame(false);
@@ -612,19 +600,17 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
         if (this.g == null) {
             this.g = new AMapNativeGlOverlayLayer();
         }
-        this.g.createNative(this.f5462a.getGLMapEngine().getNativeInstance());
+        this.g.createNative(this.a.getGLMapEngine().getNativeInstance());
         this.g.setNativeFunCallListener(this);
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final void onRedrawInfowindow() {
-        IAMapDelegate iAMapDelegate = this.f5462a;
+        IAMapDelegate iAMapDelegate = this.a;
         if (iAMapDelegate != null) {
             iAMapDelegate.redrawInfoWindow();
         }
     }
 
-    @Override // com.autonavi.base.amap.mapcore.AMapNativeGlOverlayLayer.NativeFunCallListener
     public final void onSetRunLowFrame(boolean z) {
         setRunLowFrame(z);
     }
@@ -654,7 +640,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
     public final void set2Top(String str) {
         AMapNativeGlOverlayLayer aMapNativeGlOverlayLayer = this.g;
         if (aMapNativeGlOverlayLayer != null) {
-            aMapNativeGlOverlayLayer.getNativeProperties(str, "set2Top", null);
+            aMapNativeGlOverlayLayer.getNativeProperties(str, "set2Top", (Object[]) null);
         }
     }
 
@@ -668,7 +654,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
 
     @Override // com.amap.api.maps.interfaces.IGlOverlayLayer
     public final void setRunLowFrame(boolean z) {
-        IAMapDelegate iAMapDelegate = this.f5462a;
+        IAMapDelegate iAMapDelegate = this.a;
         if (iAMapDelegate != null) {
             iAMapDelegate.setRunLowFrame(z);
         }
@@ -681,7 +667,7 @@ public final class z implements IGlOverlayLayer, AMapNativeGlOverlayLayer.Native
             return;
         }
         try {
-            this.f5462a.showInfoWindow(map.get(str));
+            this.a.showInfoWindow(map.get(str));
             setRunLowFrame(false);
         } catch (RemoteException e) {
             e.printStackTrace();

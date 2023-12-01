@@ -11,7 +11,7 @@ public class b implements DownloadEventConfig {
     private String hj;
 
     /* renamed from: io  reason: collision with root package name */
-    private String f34881io;
+    private String f21190io;
     private String jb;
     private Object je;
     private String ko;
@@ -33,7 +33,7 @@ public class b implements DownloadEventConfig {
         private String hj;
 
         /* renamed from: io  reason: collision with root package name */
-        private String f34882io;
+        private String f21191io;
         private String jb;
         private Object je;
         private String ko;
@@ -71,7 +71,7 @@ public class b implements DownloadEventConfig {
         this.nk = mbVar.nk;
         this.o = mbVar.o;
         this.lc = mbVar.lc;
-        this.f34881io = mbVar.f34882io;
+        this.f21190io = mbVar.f21191io;
         this.e = mbVar.e;
     }
 

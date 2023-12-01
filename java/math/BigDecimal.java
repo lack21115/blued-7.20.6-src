@@ -1,7 +1,5 @@
 package java.math;
 
-import com.sensetime.stmobile.STMobileHumanActionNative;
-import com.ss.android.socialbase.downloader.constants.DownloadErrorCode;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -135,8 +133,8 @@ public class BigDecimal extends Number implements Comparable<BigDecimal>, Serial
             throw new NumberFormatException("Infinity or NaN: " + d);
         }
         long doubleToLongBits = Double.doubleToLongBits(d);
-        this.scale = DownloadErrorCode.ERROR_TTNET_DOWNLOAD_API_NULL - ((int) ((doubleToLongBits >> 52) & 2047));
-        long j = this.scale == 1075 ? (4503599627370495L & doubleToLongBits) << 1 : (4503599627370495L & doubleToLongBits) | STMobileHumanActionNative.ST_MOBILE_HAND_THREE;
+        this.scale = 1075 - ((int) ((doubleToLongBits >> 52) & 2047));
+        long j = this.scale == 1075 ? (4503599627370495L & doubleToLongBits) << 1 : (4503599627370495L & doubleToLongBits) | 4503599627370496L;
         if (j == 0) {
             this.scale = 0;
             this.precision = 1;

@@ -22,8 +22,8 @@ public class ca extends cw<com.huawei.openalliance.ad.views.AppDownloadButton> {
         }
         int Code = com.huawei.hms.ads.template.util.a.Code(str2, ((com.huawei.openalliance.ad.views.AppDownloadButton) this.Code).getContext());
         com.huawei.openalliance.ad.views.a style = ((com.huawei.openalliance.ad.views.AppDownloadButton) this.Code).getStyle();
-        a.C0442a Code2 = style.Code();
-        a.C0442a V = style.V();
+        a.C0272a Code2 = style.Code();
+        a.C0272a V = style.V();
         Code2.V(Code);
         V.V(Code);
         ((com.huawei.openalliance.ad.views.AppDownloadButton) this.Code).setTextSize(Code);

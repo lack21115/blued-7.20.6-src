@@ -17,7 +17,7 @@ import java.util.List;
 public class MockInterceptor implements Interceptor {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<Mock> f36094a = new ArrayList();
+    private List<Mock> f22403a = new ArrayList();
 
     /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/wehttp2/MockInterceptor$JsonMock.class */
     public static abstract class JsonMock<T> implements Mock {
@@ -90,27 +90,27 @@ public class MockInterceptor implements Interceptor {
     }
 
     public MockInterceptor addMock(Mock mock) {
-        if (mock != null && !this.f36094a.contains(mock)) {
-            this.f36094a.add(mock);
+        if (mock != null && !this.f22403a.contains(mock)) {
+            this.f22403a.add(mock);
         }
         return this;
     }
 
     public MockInterceptor clear() {
-        this.f36094a.clear();
+        this.f22403a.clear();
         return this;
     }
 
     @Override // com.tencent.cloud.huiyansdkface.okhttp3.Interceptor
     public Response intercept(Interceptor.Chain chain) throws IOException {
-        if (this.f36094a.size() != 0) {
-            int size = this.f36094a.size();
+        if (this.f22403a.size() != 0) {
+            int size = this.f22403a.size();
             while (true) {
                 int i = size - 1;
                 if (i < 0) {
                     break;
                 }
-                Response mock = this.f36094a.get(i).mock(chain);
+                Response mock = this.f22403a.get(i).mock(chain);
                 if (mock != null) {
                     return mock;
                 }
@@ -121,8 +121,8 @@ public class MockInterceptor implements Interceptor {
     }
 
     public MockInterceptor removeMock(Mock mock) {
-        if (mock != null && this.f36094a.contains(mock)) {
-            this.f36094a.remove(mock);
+        if (mock != null && this.f22403a.contains(mock)) {
+            this.f22403a.remove(mock);
         }
         return this;
     }

@@ -12,9 +12,7 @@ import java.util.List;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/consecutivescroller/ConsecutiveViewPager.class */
 public class ConsecutiveViewPager extends ViewPager implements IConsecutiveScroller {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f11095a;
+    private int a;
 
     public ConsecutiveViewPager(Context context) {
         super(context);
@@ -31,6 +29,7 @@ public class ConsecutiveViewPager extends ViewPager implements IConsecutiveScrol
         ViewCompat.setNestedScrollingEnabled(view, false);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private boolean a() {
         ViewParent parent = getParent();
         boolean z = false;
@@ -44,7 +43,7 @@ public class ConsecutiveViewPager extends ViewPager implements IConsecutiveScrol
         return z;
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.ViewGroup
+    /* JADX WARN: Multi-variable type inference failed */
     public void addView(View view, int i, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i, layoutParams);
         if (ScrollUtils.g(this)) {
@@ -56,9 +55,10 @@ public class ConsecutiveViewPager extends ViewPager implements IConsecutiveScrol
     }
 
     public int getAdjustHeight() {
-        return this.f11095a;
+        return this.a;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // com.blued.android.module.common.widget.consecutivescroller.IConsecutiveScroller
     public View getCurrentScrollerView() {
         int childCount = getChildCount();
@@ -94,18 +94,17 @@ public class ConsecutiveViewPager extends ViewPager implements IConsecutiveScrol
         return arrayList;
     }
 
-    @Override // androidx.viewpager.widget.ViewPager, android.view.View
     public void onMeasure(int i, int i2) {
-        if (!a() || this.f11095a <= 0) {
+        if (!a() || this.a <= 0) {
             super.onMeasure(i, i2);
         } else {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(getDefaultSize(0, i2) - this.f11095a, View.MeasureSpec.getMode(i2)));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(getDefaultSize(0, i2) - this.a, View.MeasureSpec.getMode(i2)));
         }
     }
 
     public void setAdjustHeight(int i) {
-        if (this.f11095a != i) {
-            this.f11095a = i;
+        if (this.a != i) {
+            this.a = i;
             requestLayout();
         }
     }

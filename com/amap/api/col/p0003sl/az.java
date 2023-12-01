@@ -5,6 +5,7 @@ import com.amap.api.col.p0003sl.hp;
 import com.amap.api.maps.AMapException;
 import java.util.Hashtable;
 import java.util.Map;
+import javax.xml.transform.OutputKeys;
 import org.json.JSONObject;
 
 /* renamed from: com.amap.api.col.3sl.az  reason: invalid package */
@@ -23,7 +24,7 @@ public final class az extends bv<String, ay> {
             } else if (optString.equals("1")) {
                 ayVar.a(true);
             }
-            ayVar.a(jSONObject.optString("version", ""));
+            ayVar.a(jSONObject.optString(OutputKeys.VERSION, ""));
             return ayVar;
         } catch (Throwable th) {
             iw.c(th, "OfflineInitHandlerAbstract", "loadData parseJson");
@@ -52,7 +53,7 @@ public final class az extends bv<String, ay> {
     @Override // com.amap.api.col.p0003sl.bv
     protected final Map<String, String> b() {
         Hashtable hashtable = new Hashtable(16);
-        hashtable.put("mapver", this.f4797a);
+        hashtable.put("mapver", this.a);
         return hashtable;
     }
 }

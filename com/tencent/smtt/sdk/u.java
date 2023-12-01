@@ -3,6 +3,7 @@ package com.tencent.smtt.sdk;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
+import com.huawei.hms.ads.fw;
 import com.tencent.smtt.export.external.DexLoader;
 import com.tencent.smtt.export.external.TbsCoreSettings;
 import com.tencent.smtt.export.external.libwebp;
@@ -14,11 +15,11 @@ import java.util.Map;
 public class u {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38887a;
+    private Context f25196a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f38888c;
+    private String f25197c;
     private String[] d;
     private DexLoader e;
     private String f;
@@ -27,9 +28,9 @@ public class u {
     public u(Context context, Context context2, String str, String str2, String[] strArr, String str3) throws Exception {
         boolean z;
         boolean z2;
-        this.f38887a = null;
+        this.f25196a = null;
         this.b = null;
-        this.f38888c = null;
+        this.f25197c = null;
         this.d = null;
         this.e = null;
         this.f = "TbsDexOpt";
@@ -37,13 +38,13 @@ public class u {
         if (context == null || ((context2 == null && TbsShareManager.getHostCorePathAppDefined() == null) || TextUtils.isEmpty(str) || strArr == null || strArr.length == 0)) {
             throw new Exception("TbsWizard paramter error:-1callerContext:" + context + "hostcontext" + context2 + "isEmpty" + TextUtils.isEmpty(str) + "dexfileList" + strArr);
         }
-        this.f38887a = context.getApplicationContext();
+        this.f25196a = context.getApplicationContext();
         if (context2.getApplicationContext() != null) {
             this.b = context2.getApplicationContext();
         } else {
             this.b = context2;
         }
-        this.f38888c = str;
+        this.f25197c = str;
         this.d = strArr;
         this.f = str2;
         int i = 0;
@@ -55,22 +56,22 @@ public class u {
             TbsLog.i("TbsWizard", "#2 mDexFileList[" + i2 + "]: " + this.d[i2]);
             i = i2 + 1;
         }
-        TbsLog.i("TbsWizard", "new DexLoader #2 libraryPath is " + str3 + " mCallerAppContext is " + this.f38887a + " dexOutPutDir is " + str2);
-        this.e = new DexLoader(str3, this.f38887a, this.d, str2, QbSdk.n);
+        TbsLog.i("TbsWizard", "new DexLoader #2 libraryPath is " + str3 + " mCallerAppContext is " + this.f25196a + " dexOutPutDir is " + str2);
+        this.e = new DexLoader(str3, this.f25196a, this.d, str2, QbSdk.n);
         System.currentTimeMillis();
         a(context);
-        libwebp.loadWepLibraryIfNeed(context2, this.f38888c);
-        if ("com.nd.android.pandahome2".equals(this.f38887a.getApplicationInfo().packageName)) {
-            this.e.invokeStaticMethod("com.tencent.tbs.common.beacon.X5CoreBeaconUploader", "getInstance", new Class[]{Context.class}, this.f38887a);
+        libwebp.loadWepLibraryIfNeed(context2, this.f25197c);
+        if ("com.nd.android.pandahome2".equals(this.f25196a.getApplicationInfo().packageName)) {
+            this.e.invokeStaticMethod("com.tencent.tbs.common.beacon.X5CoreBeaconUploader", "getInstance", new Class[]{Context.class}, this.f25196a);
         }
         if (QbSdk.n != null) {
             try {
-                z = TbsPVConfig.getInstance(this.f38887a).getTbsCoreSandboxModeEnable();
+                z = TbsPVConfig.getInstance(this.f25196a).getTbsCoreSandboxModeEnable();
             } catch (Throwable th) {
                 z = false;
             }
             try {
-                z2 = "true".equals(String.valueOf(QbSdk.n.get(TbsCoreSettings.TBS_SETTINGS_USE_SANDBOX)));
+                z2 = fw.Code.equals(String.valueOf(QbSdk.n.get(TbsCoreSettings.TBS_SETTINGS_USE_SANDBOX)));
             } catch (Throwable th2) {
                 th2.printStackTrace();
                 z2 = false;
@@ -92,24 +93,24 @@ public class u {
         String str;
         Throwable th;
         if (this.b != null || TbsShareManager.getHostCorePathAppDefined() == null) {
-            TbsLog.i("TbsWizard", "initTesRuntimeEnvironment callerContext is " + context + " mHostContext is " + this.b + " mDexLoader is " + this.e + " mtbsInstallLocation is " + this.f38888c + " mDexOptPath is " + this.f);
-            invokeStaticMethod = this.e.invokeStaticMethod("com.tencent.tbs.tbsshell.TBSShell", "initTesRuntimeEnvironment", new Class[]{Context.class, Context.class, DexLoader.class, String.class, String.class, String.class, Integer.TYPE, String.class}, context, this.b, this.e, this.f38888c, this.f, TbsConfig.TBS_SDK_VERSIONNAME, 43967, QbSdk.a());
+            TbsLog.i("TbsWizard", "initTesRuntimeEnvironment callerContext is " + context + " mHostContext is " + this.b + " mDexLoader is " + this.e + " mtbsInstallLocation is " + this.f25197c + " mDexOptPath is " + this.f);
+            invokeStaticMethod = this.e.invokeStaticMethod("com.tencent.tbs.tbsshell.TBSShell", "initTesRuntimeEnvironment", new Class[]{Context.class, Context.class, DexLoader.class, String.class, String.class, String.class, Integer.TYPE, String.class}, context, this.b, this.e, this.f25197c, this.f, TbsConfig.TBS_SDK_VERSIONNAME, 43967, QbSdk.a());
         } else {
-            invokeStaticMethod = this.e.invokeStaticMethod("com.tencent.tbs.tbsshell.TBSShell", "initTesRuntimeEnvironment", new Class[]{Context.class, Context.class, DexLoader.class, String.class, String.class, String.class, Integer.TYPE, String.class, String.class}, context, this.b, this.e, this.f38888c, this.f, TbsConfig.TBS_SDK_VERSIONNAME, 43967, QbSdk.a(), TbsShareManager.getHostCorePathAppDefined());
+            invokeStaticMethod = this.e.invokeStaticMethod("com.tencent.tbs.tbsshell.TBSShell", "initTesRuntimeEnvironment", new Class[]{Context.class, Context.class, DexLoader.class, String.class, String.class, String.class, Integer.TYPE, String.class, String.class}, context, this.b, this.e, this.f25197c, this.f, TbsConfig.TBS_SDK_VERSIONNAME, 43967, QbSdk.a(), TbsShareManager.getHostCorePathAppDefined());
         }
         Object obj = invokeStaticMethod;
         if (invokeStaticMethod == null) {
             c();
             d();
             DexLoader dexLoader = this.e;
-            obj = dexLoader.invokeStaticMethod("com.tencent.tbs.tbsshell.TBSShell", "initTesRuntimeEnvironment", new Class[]{Context.class, Context.class, DexLoader.class, String.class, String.class}, context, this.b, dexLoader, this.f38888c, this.f);
+            obj = dexLoader.invokeStaticMethod("com.tencent.tbs.tbsshell.TBSShell", "initTesRuntimeEnvironment", new Class[]{Context.class, Context.class, DexLoader.class, String.class, String.class}, context, this.b, dexLoader, this.f25197c, this.f);
         }
         if (obj == null) {
             i = -3;
         } else if (obj instanceof Integer) {
             i = ((Integer) obj).intValue();
         } else if (obj instanceof Throwable) {
-            TbsCoreLoadStat.getInstance().a(this.f38887a, 328, (Throwable) obj);
+            TbsCoreLoadStat.getInstance().a(this.f25196a, 328, (Throwable) obj);
             i = -5;
         } else {
             i = -4;
@@ -194,11 +195,11 @@ public class u {
     }
 
     public void a(Context context, Context context2, String str, String str2, String[] strArr, String str3) throws Exception {
-        this.f38887a = context.getApplicationContext();
+        this.f25196a = context.getApplicationContext();
         if (this.b.getApplicationContext() != null) {
             this.b = this.b.getApplicationContext();
         }
-        this.f38888c = str;
+        this.f25197c = str;
         this.d = strArr;
         this.f = str2;
         libwebp.loadWepLibraryIfNeed(context2, str);

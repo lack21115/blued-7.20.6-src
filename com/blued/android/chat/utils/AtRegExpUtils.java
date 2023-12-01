@@ -1,6 +1,7 @@
 package com.blued.android.chat.utils;
 
 import android.text.TextUtils;
+import com.alipay.sdk.util.i;
 import com.blued.android.chat.ChatManager;
 import com.blued.android.chat.data.MsgType;
 import java.util.regex.Matcher;
@@ -35,7 +36,7 @@ public class AtRegExpUtils {
                 stringBuffer3 = new StringBuffer();
             }
             stringBuffer3.append(matcher.group(2));
-            stringBuffer3.append(";");
+            stringBuffer3.append(i.b);
             stringBuffer2 = stringBuffer3;
         }
         if (stringBuffer == null || stringBuffer.length() <= 1) {

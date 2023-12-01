@@ -10,13 +10,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentMagicalBoxBinding.class */
 public final class FragmentMagicalBoxBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16475a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final View f16476c;
+    public final View c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -32,9 +28,9 @@ public final class FragmentMagicalBoxBinding implements ViewBinding {
 
     private FragmentMagicalBoxBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, View view, ImageView imageView3, ImageView imageView4, ImageView imageView5, ConstraintLayout constraintLayout2, ProgressBar progressBar, ImageView imageView6, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5) {
         this.o = constraintLayout;
-        this.f16475a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16476c = view;
+        this.c = view;
         this.d = imageView3;
         this.e = imageView4;
         this.f = imageView5;
@@ -62,8 +58,8 @@ public final class FragmentMagicalBoxBinding implements ViewBinding {
                         if (imageView4 != null) {
                             ImageView imageView5 = (ImageView) view.findViewById(R.id.img_prize_package);
                             if (imageView5 != null) {
-                                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_flash_message);
-                                if (constraintLayout != null) {
+                                ConstraintLayout findViewById2 = view.findViewById(R.id.ll_flash_message);
+                                if (findViewById2 != null) {
                                     ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
                                     if (progressBar != null) {
                                         ImageView imageView6 = (ImageView) view.findViewById(R.id.root_view);
@@ -78,7 +74,7 @@ public final class FragmentMagicalBoxBinding implements ViewBinding {
                                                         if (textView4 != null) {
                                                             TextView textView5 = (TextView) view.findViewById(R.id.tv_take_prize);
                                                             if (textView5 != null) {
-                                                                return new FragmentMagicalBoxBinding((ConstraintLayout) view, imageView, imageView2, findViewById, imageView3, imageView4, imageView5, constraintLayout, progressBar, imageView6, textView, textView2, textView3, textView4, textView5);
+                                                                return new FragmentMagicalBoxBinding((ConstraintLayout) view, imageView, imageView2, findViewById, imageView3, imageView4, imageView5, findViewById2, progressBar, imageView6, textView, textView2, textView3, textView4, textView5);
                                                             }
                                                             str = "tvTakePrize";
                                                         } else {
@@ -123,7 +119,6 @@ public final class FragmentMagicalBoxBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.o;

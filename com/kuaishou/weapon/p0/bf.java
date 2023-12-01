@@ -2,6 +2,7 @@ package com.kuaishou.weapon.p0;
 
 import android.app.KeyguardManager;
 import android.content.Context;
+import android.content.res.ThemeConfig;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
@@ -10,14 +11,13 @@ import android.os.Environment;
 import android.provider.Settings;
 import android.text.TextUtils;
 import java.util.List;
-import java.util.logging.Logger;
 import org.json.JSONObject;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kuaishou/weapon/p0/bf.class */
 public class bf {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f23746a = -1;
+    private int f10138a = -1;
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0085, code lost:
         if (r7 != null) goto L33;
@@ -154,7 +154,7 @@ public class bf {
                 return jSONObject;
             }
             try {
-                String str = new String[]{"system", Logger.GLOBAL_LOGGER_NAME, "secure"}[i2];
+                String str = new String[]{ThemeConfig.SYSTEM_DEFAULT, "global", "secure"}[i2];
                 JSONObject a2 = a(context, str);
                 if (a2 != null && a2.length() > 0) {
                     jSONObject.put(str, a2);
@@ -200,7 +200,7 @@ public class bf {
             String jSONObject2 = jSONObject.toString();
             String str = jSONObject2;
             if (TextUtils.isEmpty(jSONObject2)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {
@@ -213,7 +213,7 @@ public class bf {
     }
 
     public int b() {
-        return this.f23746a;
+        return this.f10138a;
     }
 
     public boolean b(Context context) {

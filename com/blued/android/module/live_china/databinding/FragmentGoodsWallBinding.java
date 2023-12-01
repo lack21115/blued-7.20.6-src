@@ -16,13 +16,9 @@ import com.blued.android.module.live_china.view.LineProgressView;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FragmentGoodsWallBinding.class */
 public final class FragmentGoodsWallBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeConstraintLayout f11913a;
+    public final ShapeConstraintLayout a;
     public final ShapeConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final Group f11914c;
+    public final Group c;
     public final Group d;
     public final Group e;
     public final ImageView f;
@@ -49,9 +45,9 @@ public final class FragmentGoodsWallBinding implements ViewBinding {
 
     private FragmentGoodsWallBinding(RelativeLayout relativeLayout, ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, Group group, Group group2, Group group3, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, SlopeLoadingView slopeLoadingView, RecyclerView recyclerView, RecyclerView recyclerView2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, TextView textView10, TextView textView11, TextView textView12, LineProgressView lineProgressView) {
         this.z = relativeLayout;
-        this.f11913a = shapeConstraintLayout;
+        this.a = shapeConstraintLayout;
         this.b = shapeConstraintLayout2;
-        this.f11914c = group;
+        this.c = group;
         this.d = group2;
         this.e = group3;
         this.f = imageView;
@@ -90,12 +86,12 @@ public final class FragmentGoodsWallBinding implements ViewBinding {
         if (shapeConstraintLayout != null) {
             ShapeConstraintLayout shapeConstraintLayout2 = (ShapeConstraintLayout) view.findViewById(R.id.cl_task);
             if (shapeConstraintLayout2 != null) {
-                Group group = (Group) view.findViewById(R.id.group_aglow);
-                if (group != null) {
-                    Group group2 = (Group) view.findViewById(R.id.group_not_aglow);
-                    if (group2 != null) {
-                        Group group3 = (Group) view.findViewById(R.id.group_progress);
-                        if (group3 != null) {
+                Group findViewById = view.findViewById(R.id.group_aglow);
+                if (findViewById != null) {
+                    Group findViewById2 = view.findViewById(R.id.group_not_aglow);
+                    if (findViewById2 != null) {
+                        Group findViewById3 = view.findViewById(R.id.group_progress);
+                        if (findViewById3 != null) {
                             ImageView imageView = (ImageView) view.findViewById(R.id.iv_avatar);
                             if (imageView != null) {
                                 ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_avatar_frame);
@@ -106,10 +102,10 @@ public final class FragmentGoodsWallBinding implements ViewBinding {
                                         if (imageView4 != null) {
                                             SlopeLoadingView slopeLoadingView = (SlopeLoadingView) view.findViewById(R.id.loading);
                                             if (slopeLoadingView != null) {
-                                                RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_aglow);
-                                                if (recyclerView != null) {
-                                                    RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_not_aglow);
-                                                    if (recyclerView2 != null) {
+                                                RecyclerView findViewById4 = view.findViewById(R.id.rv_aglow);
+                                                if (findViewById4 != null) {
+                                                    RecyclerView findViewById5 = view.findViewById(R.id.rv_not_aglow);
+                                                    if (findViewById5 != null) {
                                                         TextView textView = (TextView) view.findViewById(R.id.tv_aglow_count);
                                                         if (textView != null) {
                                                             TextView textView2 = (TextView) view.findViewById(R.id.tv_aglow_title);
@@ -136,7 +132,7 @@ public final class FragmentGoodsWallBinding implements ViewBinding {
                                                                                                     if (textView12 != null) {
                                                                                                         LineProgressView lineProgressView = (LineProgressView) view.findViewById(R.id.view_progress);
                                                                                                         if (lineProgressView != null) {
-                                                                                                            return new FragmentGoodsWallBinding((RelativeLayout) view, shapeConstraintLayout, shapeConstraintLayout2, group, group2, group3, imageView, imageView2, imageView3, imageView4, slopeLoadingView, recyclerView, recyclerView2, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, lineProgressView);
+                                                                                                            return new FragmentGoodsWallBinding((RelativeLayout) view, shapeConstraintLayout, shapeConstraintLayout2, findViewById, findViewById2, findViewById3, imageView, imageView2, imageView3, imageView4, slopeLoadingView, findViewById4, findViewById5, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10, textView11, textView12, lineProgressView);
                                                                                                         }
                                                                                                         str = "viewProgress";
                                                                                                     } else {
@@ -214,7 +210,6 @@ public final class FragmentGoodsWallBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
         return this.z;

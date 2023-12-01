@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.viewpager.widget.ViewPager;
 import com.blued.android.core.ui.BaseDialogFragment;
@@ -37,9 +38,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGoodsWallDialogFragment.class */
 public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f12934a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<DialogLiveGoodsWallBinding>() { // from class: com.blued.android.module.live_china.fragment.LiveGoodsWallDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -52,9 +51,7 @@ public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
             return DialogLiveGoodsWallBinding.a(LayoutInflater.from(LiveGoodsWallDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12935c;
+    private boolean c;
     private LiveGoodsWallAdapter d;
 
     @Metadata
@@ -78,13 +75,9 @@ public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LiveGoodsWallDialogFragment$LiveGoodsWallAdapter.class */
     public static final class LiveGoodsWallAdapter extends FragmentPagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private boolean f12936a;
+        private boolean a;
         private Fragment b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final int f12937c;
+        private final int c;
         private ArrayList<String> d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -92,29 +85,25 @@ public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
             super(fm);
             Intrinsics.e(fm, "fm");
             Intrinsics.e(fragment, "fragment");
-            this.f12936a = z;
+            this.a = z;
             this.b = fragment;
-            this.f12937c = 2;
+            this.c = 2;
             this.d = CollectionsKt.d("礼物墙", "定制印记");
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
         public void destroyItem(ViewGroup container, int i, Object object) {
             Intrinsics.e(container, "container");
             Intrinsics.e(object, "object");
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return this.f12937c;
+            return this.c;
         }
 
-        @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
             return i != 0 ? i != 1 ? new Fragment() : new LiveGoodsWallBrandFragment() : new LiveGoodsWallFragment();
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             return this.d.get(i);
         }
@@ -136,33 +125,30 @@ public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
     }
 
     private final void f() {
-        d().f11771a.setIndicatorHeight(DensityUtils.a(getContext(), 4.0f));
-        d().f11771a.w = DensityUtils.d(getContext(), 15.0f);
-        d().f11771a.x = DensityUtils.d(getContext(), 15.0f);
-        d().f11771a.setTextColor(R.color.white);
-        d().f11771a.setTabTextColorUnfocused(R.color.white_alpha70);
-        d().f11771a.setHorizontalShade(true);
+        d().a.setIndicatorHeight(DensityUtils.a(getContext(), 4.0f));
+        d().a.w = DensityUtils.d(getContext(), 15.0f);
+        d().a.x = DensityUtils.d(getContext(), 15.0f);
+        d().a.setTextColor(R.color.white);
+        d().a.setTabTextColorUnfocused(R.color.white_alpha70);
+        d().a.setHorizontalShade(true);
         Context context = getContext();
         if (context != null) {
-            d().f11771a.a(ContextCompat.getColor(context, R.color.syc_dark_FF3AAA), ContextCompat.getColor(context, R.color.syc_dark_922cee));
+            d().a.a(ContextCompat.getColor(context, R.color.syc_dark_FF3AAA), ContextCompat.getColor(context, R.color.syc_dark_922cee));
         }
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        this.d = new LiveGoodsWallAdapter(childFragmentManager, this.f12935c, this);
+        this.d = new LiveGoodsWallAdapter(childFragmentManager, this.c, (Fragment) this);
         d().d.setAdapter(this.d);
-        d().f11771a.setViewPager(d().d);
+        d().a.setViewPager(d().d);
         d().d.setCurrentItem(0);
         d().d.setOffscreenPageLimit(1);
         d().d.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LiveGoodsWallDialogFragment$initViewPager$2
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 DialogLiveGoodsWallBinding d;
                 DialogLiveGoodsWallBinding d2;
@@ -174,22 +160,22 @@ public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
                 DialogLiveGoodsWallBinding d8;
                 if (i == 1) {
                     d5 = LiveGoodsWallDialogFragment.this.d();
-                    d5.f11771a.setTextColor(R.color.syc_dark_FFE1A6);
+                    d5.a.setTextColor(R.color.syc_dark_FFE1A6);
                     d6 = LiveGoodsWallDialogFragment.this.d();
-                    d6.f11771a.setTabTextColorUnfocused(R.color.syc_dark_C4BFBB);
+                    d6.a.setTabTextColorUnfocused(R.color.syc_dark_C4BFBB);
                     d7 = LiveGoodsWallDialogFragment.this.d();
-                    d7.f11771a.a(1);
+                    d7.a.a(1);
                     d8 = LiveGoodsWallDialogFragment.this.d();
                     d8.b.animate().alpha(1.0f).setDuration(200L).start();
                     EventTrackLive.a(LiveProtos.Event.LIVE_CUSTOM_MADE_SEAL_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
                     return;
                 }
                 d = LiveGoodsWallDialogFragment.this.d();
-                d.f11771a.setTextColor(R.color.white);
+                d.a.setTextColor(R.color.white);
                 d2 = LiveGoodsWallDialogFragment.this.d();
-                d2.f11771a.setTabTextColorUnfocused(R.color.syc_dark_BCBCC8);
+                d2.a.setTabTextColorUnfocused(R.color.syc_dark_BCBCC8);
                 d3 = LiveGoodsWallDialogFragment.this.d();
-                d3.f11771a.a(0);
+                d3.a.a(0);
                 d4 = LiveGoodsWallDialogFragment.this.d();
                 d4.b.animate().alpha(0.0f).setDuration(200L).start();
                 EventTrackLive.a(LiveProtos.Event.LIVE_GIFT_WALL_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
@@ -198,7 +184,6 @@ public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
         EventTrackLive.a(LiveProtos.Event.LIVE_GIFT_WALL_PAGE_SHOW, LiveRoomManager.a().e(), LiveRoomManager.a().g());
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 511.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -216,18 +201,16 @@ public final class LiveGoodsWallDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
-        this.f12935c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
-        LiveEventBus.get(LiveEventBusUtil.S, Integer.TYPE).observe(this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGoodsWallDialogFragment$3LHNOPl8PPyNVfCQNwCw5JdGwS4
-            @Override // androidx.lifecycle.Observer
+        this.c = TextUtils.equals(LiveRoomInfo.a().f(), LiveRoomManager.a().g());
+        LiveEventBus.get(LiveEventBusUtil.S, Integer.TYPE).observe((LifecycleOwner) this, new Observer() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LiveGoodsWallDialogFragment$3LHNOPl8PPyNVfCQNwCw5JdGwS4
             public final void onChanged(Object obj) {
                 LiveGoodsWallDialogFragment.a(LiveGoodsWallDialogFragment.this, (Integer) obj);
             }

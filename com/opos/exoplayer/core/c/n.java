@@ -10,17 +10,17 @@ public interface n {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25254a;
+        public final int f11566a;
         public final byte[] b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f25255c;
+        public final int f11567c;
         public final int d;
 
         public a(int i, byte[] bArr, int i2, int i3) {
-            this.f25254a = i;
+            this.f11566a = i;
             this.b = bArr;
-            this.f25255c = i2;
+            this.f11567c = i2;
             this.d = i3;
         }
 
@@ -34,9 +34,9 @@ public interface n {
                     }
                     a aVar = (a) obj;
                     z = false;
-                    if (this.f25254a == aVar.f25254a) {
+                    if (this.f11566a == aVar.f11566a) {
                         z = false;
-                        if (this.f25255c == aVar.f25255c) {
+                        if (this.f11567c == aVar.f11567c) {
                             z = false;
                             if (this.d == aVar.d) {
                                 if (!Arrays.equals(this.b, aVar.b)) {
@@ -53,7 +53,7 @@ public interface n {
         }
 
         public int hashCode() {
-            return (((((this.f25254a * 31) + Arrays.hashCode(this.b)) * 31) + this.f25255c) * 31) + this.d;
+            return (((((this.f11566a * 31) + Arrays.hashCode(this.b)) * 31) + this.f11567c) * 31) + this.d;
         }
     }
 

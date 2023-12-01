@@ -1,5 +1,6 @@
 package com.squareup.okhttp.internal.http;
 
+import com.huawei.openalliance.ad.constant.t;
 import com.squareup.okhttp.Headers;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -58,7 +59,6 @@ public final class Http1xStream implements HttpStream {
             }
         }
 
-        @Override // okio.Source
         public Timeout timeout() {
             return this.timeout;
         }
@@ -85,7 +85,6 @@ public final class Http1xStream implements HttpStream {
             this.timeout = new ForwardingTimeout(Http1xStream.this.sink.timeout());
         }
 
-        @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             synchronized (this) {
                 if (this.closed) {
@@ -98,7 +97,6 @@ public final class Http1xStream implements HttpStream {
             }
         }
 
-        @Override // okio.Sink, java.io.Flushable
         public void flush() throws IOException {
             synchronized (this) {
                 if (this.closed) {
@@ -108,12 +106,10 @@ public final class Http1xStream implements HttpStream {
             }
         }
 
-        @Override // okio.Sink
         public Timeout timeout() {
             return this.timeout;
         }
 
-        @Override // okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             if (this.closed) {
                 throw new IllegalStateException("closed");
@@ -150,7 +146,7 @@ public final class Http1xStream implements HttpStream {
             try {
                 this.bytesRemainingInChunk = Http1xStream.this.source.readHexadecimalUnsignedLong();
                 String trim = Http1xStream.this.source.readUtf8LineStrict().trim();
-                if (this.bytesRemainingInChunk < 0 || !(trim.isEmpty() || trim.startsWith(";"))) {
+                if (this.bytesRemainingInChunk < 0 || !(trim.isEmpty() || trim.startsWith(t.aE))) {
                     throw new ProtocolException("expected chunk size and optional extensions but was \"" + this.bytesRemainingInChunk + trim + "\"");
                 } else if (this.bytesRemainingInChunk == 0) {
                     this.hasMoreChunks = false;
@@ -162,7 +158,6 @@ public final class Http1xStream implements HttpStream {
             }
         }
 
-        @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             if (this.closed) {
                 return;
@@ -173,7 +168,6 @@ public final class Http1xStream implements HttpStream {
             this.closed = true;
         }
 
-        @Override // okio.Source
         public long read(Buffer buffer, long j) throws IOException {
             if (j < 0) {
                 throw new IllegalArgumentException("byteCount < 0: " + j);
@@ -213,7 +207,6 @@ public final class Http1xStream implements HttpStream {
             this.bytesRemaining = j;
         }
 
-        @Override // okio.Sink, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             if (this.closed) {
                 return;
@@ -226,7 +219,6 @@ public final class Http1xStream implements HttpStream {
             Http1xStream.this.state = 3;
         }
 
-        @Override // okio.Sink, java.io.Flushable
         public void flush() throws IOException {
             if (this.closed) {
                 return;
@@ -234,12 +226,10 @@ public final class Http1xStream implements HttpStream {
             Http1xStream.this.sink.flush();
         }
 
-        @Override // okio.Sink
         public Timeout timeout() {
             return this.timeout;
         }
 
-        @Override // okio.Sink
         public void write(Buffer buffer, long j) throws IOException {
             if (this.closed) {
                 throw new IllegalStateException("closed");
@@ -267,7 +257,6 @@ public final class Http1xStream implements HttpStream {
             }
         }
 
-        @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             if (this.closed) {
                 return;
@@ -278,7 +267,6 @@ public final class Http1xStream implements HttpStream {
             this.closed = true;
         }
 
-        @Override // okio.Source
         public long read(Buffer buffer, long j) throws IOException {
             if (j < 0) {
                 throw new IllegalArgumentException("byteCount < 0: " + j);
@@ -312,7 +300,6 @@ public final class Http1xStream implements HttpStream {
             super();
         }
 
-        @Override // okio.Source, java.io.Closeable, java.lang.AutoCloseable
         public void close() throws IOException {
             if (this.closed) {
                 return;
@@ -323,7 +310,6 @@ public final class Http1xStream implements HttpStream {
             this.closed = true;
         }
 
-        @Override // okio.Source
         public long read(Buffer buffer, long j) throws IOException {
             if (j < 0) {
                 throw new IllegalArgumentException("byteCount < 0: " + j);

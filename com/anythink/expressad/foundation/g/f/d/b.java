@@ -11,21 +11,21 @@ import java.util.LinkedList;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private j f7880a;
+    private j f5040a;
 
     /* renamed from: c  reason: collision with root package name */
-    private LinkedList<a> f7881c = new LinkedList<>();
+    private LinkedList<a> f5041c = new LinkedList<>();
     private int b = 3;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/foundation/g/f/d/b$a.class */
     public final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f7882a = 0;
+        public static final int f5042a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f7883c = 2;
+        public static final int f5043c = 2;
         public static final int d = 3;
         public static final int e = 4;
         private String g;
@@ -40,14 +40,14 @@ public final class b {
         public final class AnonymousClass1 extends com.anythink.expressad.foundation.g.f.f<Void> {
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f7884a;
+            boolean f5044a;
 
             AnonymousClass1() {
             }
 
             @Override // com.anythink.expressad.foundation.g.f.f, com.anythink.expressad.foundation.g.f.e
             public final void a() {
-                if (this.f7884a) {
+                if (this.f5044a) {
                     return;
                 }
                 a.c(a.this);
@@ -62,7 +62,7 @@ public final class b {
 
             @Override // com.anythink.expressad.foundation.g.f.f, com.anythink.expressad.foundation.g.f.e
             public final void a(com.anythink.expressad.foundation.g.f.a.a aVar) {
-                if (this.f7884a) {
+                if (this.f5044a) {
                     return;
                 }
                 a.this.i.a(aVar);
@@ -70,7 +70,7 @@ public final class b {
 
             @Override // com.anythink.expressad.foundation.g.f.f, com.anythink.expressad.foundation.g.f.e
             public final void a(k kVar) {
-                if (this.f7884a) {
+                if (this.f5044a) {
                     return;
                 }
                 a.this.i.a(kVar);
@@ -84,7 +84,7 @@ public final class b {
             @Override // com.anythink.expressad.foundation.g.f.f, com.anythink.expressad.foundation.g.f.e
             public final void c() {
                 a.this.i.c();
-                this.f7884a = true;
+                this.f5044a = true;
             }
         }
 
@@ -110,7 +110,7 @@ public final class b {
             aVar.j = aVar2;
             aVar2.a((com.anythink.expressad.foundation.g.f.e) new AnonymousClass1());
             aVar.k = 1;
-            b.this.f7880a.a((i) aVar.j);
+            b.this.f5040a.a((i) aVar.j);
             return true;
         }
 
@@ -127,7 +127,7 @@ public final class b {
             this.j = aVar;
             aVar.a((com.anythink.expressad.foundation.g.f.e) new AnonymousClass1());
             this.k = 1;
-            b.this.f7880a.a((i) this.j);
+            b.this.f5040a.a((i) this.j);
             return true;
         }
 
@@ -179,7 +179,7 @@ public final class b {
     }
 
     public b(j jVar) {
-        this.f7880a = jVar;
+        this.f5040a = jVar;
     }
 
     private static com.anythink.expressad.foundation.g.f.d.a a(File file, String str) {
@@ -192,14 +192,14 @@ public final class b {
 
     private void a(a aVar) {
         synchronized (this) {
-            this.f7881c.remove(aVar);
+            this.f5041c.remove(aVar);
         }
         b();
     }
 
     static /* synthetic */ void a(b bVar, a aVar) {
         synchronized (bVar) {
-            bVar.f7881c.remove(aVar);
+            bVar.f5041c.remove(aVar);
         }
         bVar.b();
     }
@@ -208,7 +208,7 @@ public final class b {
     public void b() {
         synchronized (this) {
             int i = 0;
-            Iterator<a> it = this.f7881c.iterator();
+            Iterator<a> it = this.f5041c.iterator();
             while (it.hasNext()) {
                 if (it.next().a()) {
                     i++;
@@ -217,7 +217,7 @@ public final class b {
             if (i >= this.b) {
                 return;
             }
-            Iterator<a> it2 = this.f7881c.iterator();
+            Iterator<a> it2 = this.f5041c.iterator();
             while (it2.hasNext()) {
                 if (a.a(it2.next())) {
                     int i2 = i + 1;
@@ -233,7 +233,7 @@ public final class b {
     public final a a(File file, String str, com.anythink.expressad.foundation.g.f.e<Void> eVar) {
         a aVar = new a(this, file, str, eVar, (byte) 0);
         synchronized (this) {
-            this.f7881c.add(aVar);
+            this.f5041c.add(aVar);
         }
         b();
         return aVar;
@@ -241,8 +241,8 @@ public final class b {
 
     public final void a() {
         synchronized (this) {
-            while (!this.f7881c.isEmpty()) {
-                this.f7881c.get(0).b();
+            while (!this.f5041c.isEmpty()) {
+                this.f5041c.get(0).b();
             }
         }
     }

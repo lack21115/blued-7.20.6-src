@@ -9,7 +9,7 @@ import com.sdk.tencent.q.d;
 /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/base/api/ToolUtils.class */
 public class ToolUtils {
     public static String AES_Decrypt(String str, String str2) {
-        return a.a(str, str2, a.f28072c);
+        return a.a(str, str2, a.f14384c);
     }
 
     public static String Base64_Decrypt(String str) {
@@ -21,7 +21,7 @@ public class ToolUtils {
     }
 
     public static void clearCache(Context context) {
-        com.sdk.tencent.n.b.b(com.sdk.tencent.b.a.f28016a, "cache clear", com.sdk.tencent.b.a.b);
+        com.sdk.tencent.n.b.b(com.sdk.tencent.b.a.f14328a, "cache clear", com.sdk.tencent.b.a.b);
         com.sdk.tencent.j.a.a(context, "accessCode");
     }
 

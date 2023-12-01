@@ -13,18 +13,18 @@ import com.umeng.commonsdk.internal.crash.UMCrashManager;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f40873a = "BatteryUtils";
+    private static final String f27182a = "BatteryUtils";
     private static boolean b = false;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Context f40874c;
+    private static Context f27183c;
     private BroadcastReceiver d;
 
     /* loaded from: source-8829756-dex2jar.jar:com/umeng/commonsdk/internal/utils/c$a.class */
     static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final c f40876a = new c();
+        private static final c f27185a = new c();
 
         private a() {
         }
@@ -53,27 +53,27 @@ public class c {
                             i = 2;
                         }
                         b bVar = new b();
-                        bVar.f40871a = intExtra;
+                        bVar.f27180a = intExtra;
                         bVar.b = intExtra2;
                         bVar.d = i2;
-                        bVar.f40872c = intExtra3;
+                        bVar.f27181c = intExtra3;
                         bVar.e = i;
                         bVar.f = System.currentTimeMillis();
-                        UMWorkDispatch.sendEvent(context, 32771, com.umeng.commonsdk.internal.b.a(c.f40874c).a(), bVar);
+                        UMWorkDispatch.sendEvent(context, 32771, com.umeng.commonsdk.internal.b.a(c.f27183c).a(), bVar);
                         c.this.c();
                     }
                 } catch (Throwable th) {
-                    UMCrashManager.reportCrash(c.f40874c, th);
+                    UMCrashManager.reportCrash(c.f27183c, th);
                 }
             }
         };
     }
 
     public static c a(Context context) {
-        if (f40874c == null && context != null) {
-            f40874c = context.getApplicationContext();
+        if (f27183c == null && context != null) {
+            f27183c = context.getApplicationContext();
         }
-        return a.f40876a;
+        return a.f27185a;
     }
 
     public boolean a() {
@@ -89,10 +89,10 @@ public class c {
             try {
                 IntentFilter intentFilter = new IntentFilter();
                 intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
-                f40874c.registerReceiver(this.d, intentFilter);
+                f27183c.registerReceiver(this.d, intentFilter);
                 b = true;
             } catch (Throwable th) {
-                UMCrashManager.reportCrash(f40874c, th);
+                UMCrashManager.reportCrash(f27183c, th);
             }
         }
     }
@@ -100,10 +100,10 @@ public class c {
     public void c() {
         synchronized (this) {
             try {
-                f40874c.unregisterReceiver(this.d);
+                f27183c.unregisterReceiver(this.d);
                 b = false;
             } catch (Throwable th) {
-                UMCrashManager.reportCrash(f40874c, th);
+                UMCrashManager.reportCrash(f27183c, th);
             }
         }
     }

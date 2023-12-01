@@ -26,7 +26,7 @@ public class ThreadOperate {
             @Override // java.util.concurrent.Callable
             public T call() {
                 try {
-                    return (T) Callable.this.call();
+                    return (T) callable.call();
                 } catch (Exception e) {
                     e.printStackTrace();
                     return null;
@@ -39,7 +39,7 @@ public class ThreadOperate {
         mExecutorService.submit(new Runnable() { // from class: com.tencent.cloud.huiyansdkface.normal.thread.ThreadOperate.1
             @Override // java.lang.Runnable
             public void run() {
-                Runnable.this.run();
+                runnable.run();
             }
         });
     }
@@ -50,7 +50,7 @@ public class ThreadOperate {
             public void run() {
                 Object obj;
                 try {
-                    obj = Callable.this.call();
+                    obj = callable.call();
                 } catch (Exception e) {
                     e.printStackTrace();
                     obj = null;

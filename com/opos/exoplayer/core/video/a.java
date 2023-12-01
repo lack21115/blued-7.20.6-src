@@ -10,18 +10,18 @@ import java.util.List;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List<byte[]> f25565a;
+    public final List<byte[]> f11877a;
     public final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final int f25566c;
+    public final int f11878c;
     public final int d;
     public final float e;
 
     private a(List<byte[]> list, int i, int i2, int i3, float f) {
-        this.f25565a = list;
+        this.f11877a = list;
         this.b = i;
-        this.f25566c = i2;
+        this.f11878c = i2;
         this.d = i3;
         this.e = f;
     }
@@ -58,7 +58,7 @@ public final class a {
                 if (g2 > 0) {
                     k.b a2 = k.a((byte[]) arrayList.get(0), g, ((byte[]) arrayList.get(0)).length);
                     i = a2.b;
-                    i2 = a2.f25493c;
+                    i2 = a2.f11805c;
                     f = a2.d;
                 } else {
                     i = -1;
@@ -77,6 +77,6 @@ public final class a {
         int h = mVar.h();
         int d = mVar.d();
         mVar.d(h);
-        return com.opos.exoplayer.core.i.c.a(mVar.f25496a, d, h);
+        return com.opos.exoplayer.core.i.c.a(mVar.f11808a, d, h);
     }
 }

@@ -70,13 +70,13 @@ public class a1 extends e {
         }
         b1.a aVar = new b1.a();
         HashMap<String, String> b = a0.b(e.a());
-        aVar.f42107c.clear();
-        aVar.f42107c.putAll(b);
+        aVar.f28416c.clear();
+        aVar.f28416c.putAll(b);
         b1.a a2 = aVar.a("https://zxid-m.mobileservice.cn/sdk/channel/report");
         a2.b = "POST";
         a2.d = d1.a(n0.b("application/json; charset=utf-8"), d());
         a2.e = "request zxid api";
-        w1 w1Var = a0.f42098a;
+        w1 w1Var = a0.f28407a;
         b1 b1Var = new b1(aVar);
         w1Var.getClass();
         e1 a3 = new u0(w1Var, b1Var).a();
@@ -85,35 +85,35 @@ public class a1 extends e {
             String a5 = a3.a("Udid-Error-Message");
             throw new RuntimeException("response errCode: " + a4 + ", errMsg: " + a5);
         }
-        u1 u1Var = u1.a.f42208a;
-        b3 b3Var = u1Var.f42207a;
+        u1 u1Var = u1.a.f28517a;
+        b3 b3Var = u1Var.f28516a;
         long currentTimeMillis = System.currentTimeMillis();
         b3Var.getClass();
         if (currentTimeMillis != t2.r) {
             t2.r = currentTimeMillis;
-            b3 b3Var2 = u1Var.f42207a;
+            b3 b3Var2 = u1Var.f28516a;
             b3Var2.a(8, t2.r + "", false);
             z1.a("lastRequestTime had changed refresh:" + t2.r);
         }
-        r rVar = r.b.f42190a;
+        r rVar = r.b.f28499a;
         rVar.getClass();
         s sVar = new s(rVar);
         try {
-            AtomicInteger atomicInteger = c3.f42112c;
-            c3.c.f42114a.b.execute(sVar);
+            AtomicInteger atomicInteger = c3.f28421c;
+            c3.c.f28423a.b.execute(sVar);
         } catch (Throwable th) {
             z1.a(th);
         }
         JSONObject jSONObject = new JSONObject(a3.e.b());
         int i = jSONObject.getInt("syncId");
-        u1 u1Var2 = u1.a.f42208a;
-        u1Var2.f42207a.d(i);
-        JSONObject jSONObject2 = new JSONObject(k.a(Base64.decode(jSONObject.getString("data"), 2), e.f42118a, "UDID_ENC_AUTHTAG"));
+        u1 u1Var2 = u1.a.f28517a;
+        u1Var2.f28516a.d(i);
+        JSONObject jSONObject2 = new JSONObject(k.a(Base64.decode(jSONObject.getString("data"), 2), e.f28427a, "UDID_ENC_AUTHTAG"));
         String string = jSONObject2.getString(bh.al);
-        u1Var2.f42207a.getClass();
+        u1Var2.f28516a.getClass();
         if (!TextUtils.equals(string, t2.i)) {
             t2.i = string;
-            u1Var2.f42207a.a(1, string, true);
+            u1Var2.f28516a.a(1, string, true);
             z1.a("zid had changed refresh:" + string);
         }
         JSONObject optJSONObject = jSONObject2.optJSONObject("aids");
@@ -129,22 +129,22 @@ public class a1 extends e {
         jSONObject4.put("tags", jSONObject2.optJSONArray("tags"));
         jSONObject4.put("aids", jSONObject3);
         if (jSONObject2.has("openid")) {
-            jSONObject4.put("openid", d3.f42117c.get("ed6e6f5009a2"));
+            jSONObject4.put("openid", d3.f28426c.get("ed6e6f5009a2"));
         }
-        u1Var2.f42207a.getClass();
+        u1Var2.f28516a.getClass();
         String jSONObject5 = jSONObject4.toString();
         if (!TextUtils.isEmpty(jSONObject5)) {
             t2.j = jSONObject5;
-            u1Var2.f42207a.a(16, jSONObject5, true);
+            u1Var2.f28516a.a(16, jSONObject5, true);
             z1.a("ext had changed refresh:" + jSONObject4);
         }
         JSONArray optJSONArray = jSONObject.optJSONArray("cmds");
-        b3 b3Var3 = u1Var2.f42207a;
+        b3 b3Var3 = u1Var2.f28516a;
         String str = t2.B;
         b3Var3.getClass();
         if (!TextUtils.isEmpty(str) && !TextUtils.equals(str, t2.A)) {
             t2.A = str;
-            u1Var2.f42207a.a(13, str, true);
+            u1Var2.f28516a.a(13, str, true);
         }
         JSONArray optJSONArray2 = jSONObject2.optJSONArray("iaps");
         try {
@@ -156,13 +156,13 @@ public class a1 extends e {
                     if (i3 >= optJSONArray2.length()) {
                         break;
                     }
-                    jSONArray.put(k.a(Base64.decode(optJSONArray2.getString(i3), 2), e.f42118a, "UDID_ENC_AUTHTAG"));
+                    jSONArray.put(k.a(Base64.decode(optJSONArray2.getString(i3), 2), e.f28427a, "UDID_ENC_AUTHTAG"));
                     i2 = i3 + 1;
                 }
             }
-            u1 u1Var3 = u1.a.f42208a;
-            u1Var3.f42207a.getClass();
-            u1Var3.f42207a.a(25, jSONArray.toString(), true);
+            u1 u1Var3 = u1.a.f28517a;
+            u1Var3.f28516a.getClass();
+            u1Var3.f28516a.a(25, jSONArray.toString(), true);
         } catch (Throwable th2) {
         }
         if (optJSONArray == null) {
@@ -181,19 +181,19 @@ public class a1 extends e {
                 int i6 = optJSONArray.getInt(i5);
                 if (i6 == 1) {
                     z1.a("cmd 1 REQUEST_CONFIG ");
-                    AtomicInteger atomicInteger2 = c3.f42112c;
-                    c3.c.f42114a.f42113a.execute(new w0());
+                    AtomicInteger atomicInteger2 = c3.f28421c;
+                    c3.c.f28423a.f28422a.execute(new w0());
                 } else if (i6 == 2) {
-                    u1.a.f42208a.f42207a.d(0);
+                    u1.a.f28517a.f28516a.d(0);
                 } else if (i6 == 3) {
-                    AtomicInteger atomicInteger3 = c3.f42112c;
-                    c3.c.f42114a.f42113a.execute(new x0());
+                    AtomicInteger atomicInteger3 = c3.f28421c;
+                    c3.c.f28423a.f28422a.execute(new x0());
                 } else if (i6 == 4) {
-                    AtomicInteger atomicInteger4 = c3.f42112c;
-                    c3.c.f42114a.f42113a.execute(new y0());
+                    AtomicInteger atomicInteger4 = c3.f28421c;
+                    c3.c.f28423a.f28422a.execute(new y0());
                 } else if (i6 == 5) {
-                    AtomicInteger atomicInteger5 = c3.f42112c;
-                    c3.c.f42114a.f42113a.execute(new z0());
+                    AtomicInteger atomicInteger5 = c3.f28421c;
+                    c3.c.f28423a.f28422a.execute(new z0());
                 }
                 i4 = i5 + 1;
             }

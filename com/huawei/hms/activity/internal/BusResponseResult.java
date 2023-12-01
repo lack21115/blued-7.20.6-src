@@ -6,7 +6,7 @@ import android.content.Intent;
 public class BusResponseResult {
 
     /* renamed from: a  reason: collision with root package name */
-    private Intent f22405a;
+    private Intent f8797a;
     private int b;
 
     public int getCode() {
@@ -14,7 +14,7 @@ public class BusResponseResult {
     }
 
     public Intent getIntent() {
-        return this.f22405a;
+        return this.f8797a;
     }
 
     public void setCode(int i) {
@@ -22,6 +22,6 @@ public class BusResponseResult {
     }
 
     public void setIntent(Intent intent) {
-        this.f22405a = intent;
+        this.f8797a = intent;
     }
 }

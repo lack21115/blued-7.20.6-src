@@ -229,7 +229,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         addLast(e);
         return true;
@@ -262,7 +262,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         int i;
         int i2 = this.head;
@@ -289,7 +289,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
@@ -337,7 +337,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         return e;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         return this.head == this.tail;
     }
@@ -423,7 +423,7 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         return removeFirst();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return removeFirstOccurrence(obj);
     }
@@ -488,19 +488,19 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return (this.tail - this.head) & (this.elements.length - 1);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         return copyElements(new Object[size()]);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v16, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         int size = size();
         T[] tArr2 = tArr;

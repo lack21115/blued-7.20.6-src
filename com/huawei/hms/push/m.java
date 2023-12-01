@@ -14,7 +14,7 @@ public class m {
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f22851c;
+    private String f9243c;
     private String d;
     private String l;
     private String m;
@@ -26,7 +26,7 @@ public class m {
     private String z;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f22850a = "";
+    private String f9242a = "";
     private String e = "";
     private String f = "";
     private String g = "";
@@ -47,7 +47,7 @@ public class m {
     private String F = "";
 
     public m(byte[] bArr, byte[] bArr2) {
-        Charset charset = k.f22848a;
+        Charset charset = k.f9240a;
         this.r = new String(bArr, charset);
         this.s = new String(bArr2, charset);
     }
@@ -55,7 +55,7 @@ public class m {
     private JSONObject a(JSONObject jSONObject) throws JSONException {
         JSONObject jSONObject2 = new JSONObject();
         jSONObject2.put(RemoteMessageConst.MessageBody.MSG_CONTENT, jSONObject);
-        jSONObject2.put("group", this.f22850a);
+        jSONObject2.put("group", this.f9242a);
         jSONObject2.put("tag", this.A);
         jSONObject2.put(RemoteMessageConst.Notification.AUTO_CANCEL, this.x);
         jSONObject2.put("visibility", this.y);
@@ -112,7 +112,7 @@ public class m {
             this.m = jSONObject.getString("acn");
         }
         if (jSONObject.has(RemoteMessageConst.Notification.INTENT_URI)) {
-            this.f22851c = jSONObject.getString(RemoteMessageConst.Notification.INTENT_URI);
+            this.f9243c = jSONObject.getString(RemoteMessageConst.Notification.INTENT_URI);
         }
         if (jSONObject.has("appPackageName")) {
             this.l = jSONObject.getString("appPackageName");
@@ -157,8 +157,8 @@ public class m {
     }
 
     private void g(JSONObject jSONObject) {
-        this.f22850a = jSONObject.optString("group");
-        HMSLog.d("PushSelfShowLog", "NOTIFY_GROUP:" + this.f22850a);
+        this.f9242a = jSONObject.optString("group");
+        HMSLog.d("PushSelfShowLog", "NOTIFY_GROUP:" + this.f9242a);
         this.x = jSONObject.optInt(RemoteMessageConst.Notification.AUTO_CANCEL, 1);
         HMSLog.d("PushSelfShowLog", "autoCancel: " + this.x);
         this.y = jSONObject.optInt("visibility", 0);
@@ -272,7 +272,7 @@ public class m {
         jSONObject.put("rpct", this.q);
         jSONObject.put("appPackageName", this.l);
         jSONObject.put("acn", this.m);
-        jSONObject.put(RemoteMessageConst.Notification.INTENT_URI, this.f22851c);
+        jSONObject.put(RemoteMessageConst.Notification.INTENT_URI, this.f9243c);
         return jSONObject;
     }
 
@@ -325,7 +325,7 @@ public class m {
     }
 
     public String l() {
-        return this.f22850a;
+        return this.f9242a;
     }
 
     public String m() {
@@ -333,12 +333,12 @@ public class m {
     }
 
     public String n() {
-        return this.f22851c;
+        return this.f9243c;
     }
 
     public byte[] o() {
         try {
-            return a(a(b(v()), r())).toString().getBytes(k.f22848a);
+            return a(a(b(v()), r())).toString().getBytes(k.f9240a);
         } catch (JSONException e) {
             HMSLog.e("PushSelfShowLog", "getMsgData failed JSONException:", e);
             return new byte[0];
@@ -375,7 +375,7 @@ public class m {
     }
 
     public byte[] y() {
-        return this.s.getBytes(k.f22848a);
+        return this.s.getBytes(k.f9240a);
     }
 
     public boolean z() {

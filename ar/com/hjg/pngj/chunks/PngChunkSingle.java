@@ -20,12 +20,12 @@ public abstract class PngChunkSingle extends PngChunk {
         }
         if (obj != null && getClass() == obj.getClass()) {
             PngChunkSingle pngChunkSingle = (PngChunkSingle) obj;
-            return this.f3667a == null ? pngChunkSingle.f3667a == null : this.f3667a.equals(pngChunkSingle.f3667a);
+            return this.f3619a == null ? pngChunkSingle.f3619a == null : this.f3619a.equals(pngChunkSingle.f3619a);
         }
         return false;
     }
 
     public int hashCode() {
-        return 31 + (this.f3667a == null ? 0 : this.f3667a.hashCode());
+        return 31 + (this.f3619a == null ? 0 : this.f3619a.hashCode());
     }
 }

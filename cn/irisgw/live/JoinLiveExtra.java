@@ -21,7 +21,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/JoinLiveExtra.class */
 public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveExtraOrBuilder {
@@ -77,8 +76,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
     private int rechargeBadge_;
     private static final JoinLiveExtra DEFAULT_INSTANCE = new JoinLiveExtra();
     private static final Parser<JoinLiveExtra> PARSER = new AbstractParser<JoinLiveExtra>() { // from class: cn.irisgw.live.JoinLiveExtra.1
-        @Override // com.google.protobuf.Parser
-        public JoinLiveExtra parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public JoinLiveExtra m3615parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new JoinLiveExtra(codedInputStream, extensionRegistryLite);
         }
     };
@@ -177,14 +176,14 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
 
         public Builder addAllChatFrameBorderColor(Iterable<String> iterable) {
             ensureChatFrameBorderColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameBorderColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameBorderColor_);
             onChanged();
             return this;
         }
 
         public Builder addAllChatFrameFrameColor(Iterable<String> iterable) {
             ensureChatFrameFrameColorIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.chatFrameFrameColor_);
+            AbstractMessageLite.Builder.addAll(iterable, this.chatFrameFrameColor_);
             onChanged();
             return this;
         }
@@ -192,7 +191,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         public Builder addChatFrameBorderColor(String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.add((LazyStringList) str);
+                this.chatFrameBorderColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -213,7 +212,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         public Builder addChatFrameFrameColor(String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.add((LazyStringList) str);
+                this.chatFrameFrameColor_.add(str);
                 onChanged();
                 return this;
             }
@@ -231,22 +230,22 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m3617addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public JoinLiveExtra build() {
-            JoinLiveExtra buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public JoinLiveExtra m3619build() {
+            JoinLiveExtra m3621buildPartial = m3621buildPartial();
+            if (m3621buildPartial.isInitialized()) {
+                return m3621buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m3621buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public JoinLiveExtra buildPartial() {
+        /* renamed from: buildPartial */
+        public JoinLiveExtra m3621buildPartial() {
             JoinLiveExtra joinLiveExtra = new JoinLiveExtra(this);
             joinLiveExtra.count_ = this.count_;
             joinLiveExtra.realtimeCount_ = this.realtimeCount_;
@@ -289,8 +288,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return joinLiveExtra;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m3625clear() {
             super.clear();
             this.count_ = 0;
             this.realtimeCount_ = 0;
@@ -441,8 +440,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m3627clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -470,8 +469,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m3630clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -487,10 +486,9 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m3636clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
@@ -592,7 +590,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
 
         @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
         public String getChatFrameBorderColor(int i) {
-            return this.chatFrameBorderColor_.get(i);
+            return (String) this.chatFrameBorderColor_.get(i);
         }
 
         @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
@@ -606,7 +604,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         }
 
         @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
-        public ProtocolStringList getChatFrameBorderColorList() {
+        /* renamed from: getChatFrameBorderColorList */
+        public ProtocolStringList mo3606getChatFrameBorderColorList() {
             return this.chatFrameBorderColor_.getUnmodifiableView();
         }
 
@@ -628,7 +627,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
 
         @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
         public String getChatFrameFrameColor(int i) {
-            return this.chatFrameFrameColor_.get(i);
+            return (String) this.chatFrameFrameColor_.get(i);
         }
 
         @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
@@ -642,7 +641,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         }
 
         @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
-        public ProtocolStringList getChatFrameFrameColorList() {
+        /* renamed from: getChatFrameFrameColorList */
+        public ProtocolStringList mo3607getChatFrameFrameColorList() {
             return this.chatFrameFrameColor_.getUnmodifiableView();
         }
 
@@ -678,12 +678,11 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return this.count_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public JoinLiveExtra getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public JoinLiveExtra m3638getDefaultInstanceForType() {
             return JoinLiveExtra.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_JoinLiveExtra_descriptor;
         }
@@ -711,7 +710,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         public JoinEffectsOrBuilder getEffectsOrBuilder() {
             SingleFieldBuilderV3<JoinEffects, JoinEffects.Builder, JoinEffectsOrBuilder> singleFieldBuilderV3 = this.effectsBuilder_;
             if (singleFieldBuilderV3 != null) {
-                return singleFieldBuilderV3.getMessageOrBuilder();
+                return (JoinEffectsOrBuilder) singleFieldBuilderV3.getMessageOrBuilder();
             }
             JoinEffects joinEffects = this.effects_;
             JoinEffects joinEffects2 = joinEffects;
@@ -842,12 +841,10 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return (this.effectsBuilder_ == null && this.effects_ == null) ? false : true;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_JoinLiveExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(JoinLiveExtra.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -860,7 +857,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             }
             JoinEffects joinEffects2 = this.effects_;
             if (joinEffects2 != null) {
-                this.effects_ = JoinEffects.newBuilder(joinEffects2).mergeFrom(joinEffects).buildPartial();
+                this.effects_ = JoinEffects.newBuilder(joinEffects2).mergeFrom(joinEffects).m3668buildPartial();
             } else {
                 this.effects_ = joinEffects;
             }
@@ -966,18 +963,18 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 this.nobleJoinText_ = joinLiveExtra.nobleJoinText_;
                 onChanged();
             }
-            mergeUnknownFields(joinLiveExtra.unknownFields);
+            m3647mergeUnknownFields(joinLiveExtra.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.JoinLiveExtra.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.JoinLiveExtra.Builder m3644mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -1022,11 +1019,11 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.JoinLiveExtra.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.JoinLiveExtra$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.JoinLiveExtra.Builder.m3644mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.JoinLiveExtra$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m3643mergeFrom(Message message) {
             if (message instanceof JoinLiveExtra) {
                 return mergeFrom((JoinLiveExtra) message);
             }
@@ -1034,8 +1031,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m3647mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -1132,7 +1129,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         public Builder setChatFrameBorderColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameBorderColorIsMutable();
-                this.chatFrameBorderColor_.set(i, (int) str);
+                this.chatFrameBorderColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1158,7 +1155,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         public Builder setChatFrameFrameColor(int i, String str) {
             if (str != null) {
                 ensureChatFrameFrameColorIsMutable();
-                this.chatFrameFrameColor_.set(i, (int) str);
+                this.chatFrameFrameColor_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -1199,10 +1196,10 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         public Builder setEffects(JoinEffects.Builder builder) {
             SingleFieldBuilderV3<JoinEffects, JoinEffects.Builder, JoinEffectsOrBuilder> singleFieldBuilderV3 = this.effectsBuilder_;
             if (singleFieldBuilderV3 != null) {
-                singleFieldBuilderV3.setMessage(builder.build());
+                singleFieldBuilderV3.setMessage(builder.m3666build());
                 return this;
             }
-            this.effects_ = builder.build();
+            this.effects_ = builder.m3666build();
             onChanged();
             return this;
         }
@@ -1261,8 +1258,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m3649setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -1337,13 +1334,13 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m3651setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m3653setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1370,8 +1367,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         private volatile Object url_;
         private static final JoinEffects DEFAULT_INSTANCE = new JoinEffects();
         private static final Parser<JoinEffects> PARSER = new AbstractParser<JoinEffects>() { // from class: cn.irisgw.live.JoinLiveExtra.JoinEffects.1
-            @Override // com.google.protobuf.Parser
-            public JoinEffects parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public JoinEffects m3662parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new JoinEffects(codedInputStream, extensionRegistryLite);
             }
         };
@@ -1420,22 +1417,22 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 boolean unused = JoinEffects.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m3664addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public JoinEffects build() {
-                JoinEffects buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public JoinEffects m3666build() {
+                JoinEffects m3668buildPartial = m3668buildPartial();
+                if (m3668buildPartial.isInitialized()) {
+                    return m3668buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m3668buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public JoinEffects buildPartial() {
+            /* renamed from: buildPartial */
+            public JoinEffects m3668buildPartial() {
                 JoinEffects joinEffects = new JoinEffects(this);
                 joinEffects.contents_ = this.contents_;
                 joinEffects.url_ = this.url_;
@@ -1449,8 +1446,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 return joinEffects;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m3672clear() {
                 super.clear();
                 this.contents_ = "";
                 this.url_ = "";
@@ -1493,8 +1490,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m3674clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -1510,8 +1507,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m3677clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
@@ -1521,10 +1518,9 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m3683clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.JoinLiveExtra.JoinEffectsOrBuilder
@@ -1571,12 +1567,11 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public JoinEffects getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public JoinEffects m3685getDefaultInstanceForType() {
                 return JoinEffects.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_JoinLiveExtra_JoinEffects_descriptor;
             }
@@ -1713,12 +1708,10 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_JoinLiveExtra_JoinEffects_fieldAccessorTable.ensureFieldAccessorsInitialized(JoinEffects.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -1759,18 +1752,18 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                     this.mediumImage_ = joinEffects.mediumImage_;
                     onChanged();
                 }
-                mergeUnknownFields(joinEffects.unknownFields);
+                m3694mergeUnknownFields(joinEffects.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.JoinLiveExtra.JoinEffects.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.JoinLiveExtra.JoinEffects.Builder m3691mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -1815,11 +1808,11 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.JoinLiveExtra.JoinEffects.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.JoinLiveExtra$JoinEffects$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.JoinLiveExtra.JoinEffects.Builder.m3691mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.JoinLiveExtra$JoinEffects$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m3690mergeFrom(Message message) {
                 if (message instanceof JoinEffects) {
                     return mergeFrom((JoinEffects) message);
                 }
@@ -1827,8 +1820,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m3694mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -1927,8 +1920,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m3696setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -1970,13 +1963,13 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m3698setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m3700setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
 
@@ -2070,66 +2063,65 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m3661toBuilder();
         }
 
         public static Builder newBuilder(JoinEffects joinEffects) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(joinEffects);
+            return DEFAULT_INSTANCE.m3661toBuilder().mergeFrom(joinEffects);
         }
 
         public static JoinEffects parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (JoinEffects) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static JoinEffects parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (JoinEffects) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static JoinEffects parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (JoinEffects) PARSER.parseFrom(byteString);
         }
 
         public static JoinEffects parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (JoinEffects) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static JoinEffects parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (JoinEffects) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static JoinEffects parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (JoinEffects) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static JoinEffects parseFrom(InputStream inputStream) throws IOException {
-            return (JoinEffects) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static JoinEffects parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (JoinEffects) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static JoinEffects parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (JoinEffects) PARSER.parseFrom(byteBuffer);
         }
 
         public static JoinEffects parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (JoinEffects) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static JoinEffects parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (JoinEffects) PARSER.parseFrom(bArr);
         }
 
         public static JoinEffects parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (JoinEffects) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<JoinEffects> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -2185,8 +2177,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public JoinEffects getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public JoinEffects m3656getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -2300,12 +2292,10 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<JoinEffects> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -2348,7 +2338,6 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return serializedSize;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
@@ -2375,7 +2364,6 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -2385,12 +2373,10 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_JoinLiveExtra_JoinEffects_fieldAccessorTable.ensureFieldAccessorsInitialized(JoinEffects.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -2403,28 +2389,26 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m3659newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m3658newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new JoinEffects();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m3661toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             if (!getContentsBytes().isEmpty()) {
                 GeneratedMessageV3.writeString(codedOutputStream, 1, this.contents_);
@@ -2532,17 +2516,17 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                             case 26:
                                 if (this.effects_ != null) {
                                     boolean z4 = z2;
-                                    builder = this.effects_.toBuilder();
+                                    builder = this.effects_.m3661toBuilder();
                                 } else {
                                     builder = null;
                                 }
-                                JoinEffects joinEffects = (JoinEffects) codedInputStream.readMessage(JoinEffects.parser(), extensionRegistryLite);
+                                JoinEffects readMessage = codedInputStream.readMessage(JoinEffects.parser(), extensionRegistryLite);
                                 boolean z5 = z2;
-                                this.effects_ = joinEffects;
+                                this.effects_ = readMessage;
                                 if (builder != null) {
-                                    builder.mergeFrom(joinEffects);
+                                    builder.mergeFrom(readMessage);
                                     boolean z6 = z2;
-                                    this.effects_ = builder.buildPartial();
+                                    this.effects_ = builder.m3668buildPartial();
                                 } else {
                                     continue;
                                 }
@@ -2592,7 +2576,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                                     this.chatFrameFrameColor_ = new LazyStringArrayList();
                                     z7 = z2 | true;
                                 }
-                                this.chatFrameFrameColor_.add((LazyStringList) readStringRequireUtf8);
+                                this.chatFrameFrameColor_.add(readStringRequireUtf8);
                                 z2 = z7;
                                 continue;
                             case 146:
@@ -2602,7 +2586,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
                                     this.chatFrameBorderColor_ = new LazyStringArrayList();
                                     z8 = z2 | true;
                                 }
-                                this.chatFrameBorderColor_.add((LazyStringList) readStringRequireUtf82);
+                                this.chatFrameBorderColor_.add(readStringRequireUtf82);
                                 z2 = z8;
                                 continue;
                             case 154:
@@ -2673,66 +2657,65 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m3614toBuilder();
     }
 
     public static Builder newBuilder(JoinLiveExtra joinLiveExtra) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(joinLiveExtra);
+        return DEFAULT_INSTANCE.m3614toBuilder().mergeFrom(joinLiveExtra);
     }
 
     public static JoinLiveExtra parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (JoinLiveExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static JoinLiveExtra parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (JoinLiveExtra) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static JoinLiveExtra parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (JoinLiveExtra) PARSER.parseFrom(byteString);
     }
 
     public static JoinLiveExtra parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (JoinLiveExtra) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static JoinLiveExtra parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (JoinLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static JoinLiveExtra parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (JoinLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static JoinLiveExtra parseFrom(InputStream inputStream) throws IOException {
-        return (JoinLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static JoinLiveExtra parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (JoinLiveExtra) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static JoinLiveExtra parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (JoinLiveExtra) PARSER.parseFrom(byteBuffer);
     }
 
     public static JoinLiveExtra parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (JoinLiveExtra) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static JoinLiveExtra parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (JoinLiveExtra) PARSER.parseFrom(bArr);
     }
 
     public static JoinLiveExtra parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (JoinLiveExtra) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<JoinLiveExtra> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -2740,7 +2723,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         if (obj instanceof JoinLiveExtra) {
             JoinLiveExtra joinLiveExtra = (JoinLiveExtra) obj;
             if (getCount() == joinLiveExtra.getCount() && getRealtimeCount() == joinLiveExtra.getRealtimeCount() && hasEffects() == joinLiveExtra.hasEffects()) {
-                return (!hasEffects() || getEffects().equals(joinLiveExtra.getEffects())) && getFanClubName().equals(joinLiveExtra.getFanClubName()) && getFanClubLevel() == joinLiveExtra.getFanClubLevel() && getInFanClub() == joinLiveExtra.getInFanClub() && this.fansStatus_ == joinLiveExtra.fansStatus_ && this.liangType_ == joinLiveExtra.liangType_ && getLiangId().equals(joinLiveExtra.getLiangId()) && getRechargeBadge() == joinLiveExtra.getRechargeBadge() && getAvatarFrame().equals(joinLiveExtra.getAvatarFrame()) && getAvatarFrameType() == joinLiveExtra.getAvatarFrameType() && getChatFrame().equals(joinLiveExtra.getChatFrame()) && getChatFrameIcon().equals(joinLiveExtra.getChatFrameIcon()) && getChatFrameColorType() == joinLiveExtra.getChatFrameColorType() && getChatFrameGradientType() == joinLiveExtra.getChatFrameGradientType() && getChatFrameFrameColorList().equals(joinLiveExtra.getChatFrameFrameColorList()) && getChatFrameBorderColorList().equals(joinLiveExtra.getChatFrameBorderColorList()) && getChatBadgeUrl().equals(joinLiveExtra.getChatBadgeUrl()) && getChatBadgeLength() == joinLiveExtra.getChatBadgeLength() && getChatBadgeHeight() == joinLiveExtra.getChatBadgeHeight() && getAnchorPocketTrafficCard() == joinLiveExtra.getAnchorPocketTrafficCard() && getAnchorPocketTrafficCardName().equals(joinLiveExtra.getAnchorPocketTrafficCardName()) && getNobleJoinText().equals(joinLiveExtra.getNobleJoinText()) && this.unknownFields.equals(joinLiveExtra.unknownFields);
+                return (!hasEffects() || getEffects().equals(joinLiveExtra.getEffects())) && getFanClubName().equals(joinLiveExtra.getFanClubName()) && getFanClubLevel() == joinLiveExtra.getFanClubLevel() && getInFanClub() == joinLiveExtra.getInFanClub() && this.fansStatus_ == joinLiveExtra.fansStatus_ && this.liangType_ == joinLiveExtra.liangType_ && getLiangId().equals(joinLiveExtra.getLiangId()) && getRechargeBadge() == joinLiveExtra.getRechargeBadge() && getAvatarFrame().equals(joinLiveExtra.getAvatarFrame()) && getAvatarFrameType() == joinLiveExtra.getAvatarFrameType() && getChatFrame().equals(joinLiveExtra.getChatFrame()) && getChatFrameIcon().equals(joinLiveExtra.getChatFrameIcon()) && getChatFrameColorType() == joinLiveExtra.getChatFrameColorType() && getChatFrameGradientType() == joinLiveExtra.getChatFrameGradientType() && mo3607getChatFrameFrameColorList().equals(joinLiveExtra.mo3607getChatFrameFrameColorList()) && mo3606getChatFrameBorderColorList().equals(joinLiveExtra.mo3606getChatFrameBorderColorList()) && getChatBadgeUrl().equals(joinLiveExtra.getChatBadgeUrl()) && getChatBadgeLength() == joinLiveExtra.getChatBadgeLength() && getChatBadgeHeight() == joinLiveExtra.getChatBadgeHeight() && getAnchorPocketTrafficCard() == joinLiveExtra.getAnchorPocketTrafficCard() && getAnchorPocketTrafficCardName().equals(joinLiveExtra.getAnchorPocketTrafficCardName()) && getNobleJoinText().equals(joinLiveExtra.getNobleJoinText()) && this.unknownFields.equals(joinLiveExtra.unknownFields);
             }
             return false;
         }
@@ -2846,7 +2829,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
 
     @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
     public String getChatFrameBorderColor(int i) {
-        return this.chatFrameBorderColor_.get(i);
+        return (String) this.chatFrameBorderColor_.get(i);
     }
 
     @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
@@ -2860,7 +2843,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
     }
 
     @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
-    public ProtocolStringList getChatFrameBorderColorList() {
+    /* renamed from: getChatFrameBorderColorList */
+    public ProtocolStringList mo3606getChatFrameBorderColorList() {
         return this.chatFrameBorderColor_;
     }
 
@@ -2882,7 +2866,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
 
     @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
     public String getChatFrameFrameColor(int i) {
-        return this.chatFrameFrameColor_.get(i);
+        return (String) this.chatFrameFrameColor_.get(i);
     }
 
     @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
@@ -2896,7 +2880,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
     }
 
     @Override // cn.irisgw.live.JoinLiveExtraOrBuilder
-    public ProtocolStringList getChatFrameFrameColorList() {
+    /* renamed from: getChatFrameFrameColorList */
+    public ProtocolStringList mo3607getChatFrameFrameColorList() {
         return this.chatFrameFrameColor_;
     }
 
@@ -2932,8 +2917,8 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         return this.count_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public JoinLiveExtra getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public JoinLiveExtra m3609getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -3058,7 +3043,6 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<JoinLiveExtra> getParserForType() {
         return PARSER;
     }
@@ -3073,7 +3057,6 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         return this.rechargeBadge_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -3152,7 +3135,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         for (int i25 = 0; i25 < this.chatFrameFrameColor_.size(); i25++) {
             i24 += computeStringSizeNoTag(this.chatFrameFrameColor_.getRaw(i25));
         }
-        int size = getChatFrameFrameColorList().size();
+        int size = mo3607getChatFrameFrameColorList().size();
         int i26 = 0;
         int i27 = 0;
         while (true) {
@@ -3163,7 +3146,7 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
             i26 += computeStringSizeNoTag(this.chatFrameBorderColor_.getRaw(i28));
             i27 = i28 + 1;
         }
-        int size2 = i23 + i24 + (size * 2) + i26 + (getChatFrameBorderColorList().size() * 2);
+        int size2 = i23 + i24 + (size * 2) + i26 + (mo3606getChatFrameBorderColorList().size() * 2);
         int i29 = size2;
         if (!getChatBadgeUrlBytes().isEmpty()) {
             i29 = size2 + GeneratedMessageV3.computeStringSize(19, this.chatBadgeUrl_);
@@ -3196,7 +3179,6 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         return serializedSize;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -3206,7 +3188,6 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         return this.effects_ != null;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -3219,23 +3200,21 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         int hashCode2 = (((((((((((((((((((((((((((((((((((((((((((((((((((i * 37) + 4) * 53) + getFanClubName().hashCode()) * 37) + 5) * 53) + getFanClubLevel()) * 37) + 6) * 53) + Internal.hashBoolean(getInFanClub())) * 37) + 7) * 53) + this.fansStatus_) * 37) + 8) * 53) + this.liangType_) * 37) + 9) * 53) + getLiangId().hashCode()) * 37) + 10) * 53) + getRechargeBadge()) * 37) + 11) * 53) + getAvatarFrame().hashCode()) * 37) + 12) * 53) + getAvatarFrameType()) * 37) + 13) * 53) + getChatFrame().hashCode()) * 37) + 14) * 53) + getChatFrameIcon().hashCode()) * 37) + 15) * 53) + getChatFrameColorType()) * 37) + 16) * 53) + getChatFrameGradientType();
         int i2 = hashCode2;
         if (getChatFrameFrameColorCount() > 0) {
-            i2 = (((hashCode2 * 37) + 17) * 53) + getChatFrameFrameColorList().hashCode();
+            i2 = (((hashCode2 * 37) + 17) * 53) + mo3607getChatFrameFrameColorList().hashCode();
         }
         int i3 = i2;
         if (getChatFrameBorderColorCount() > 0) {
-            i3 = (((i2 * 37) + 18) * 53) + getChatFrameBorderColorList().hashCode();
+            i3 = (((i2 * 37) + 18) * 53) + mo3606getChatFrameBorderColorList().hashCode();
         }
         int hashCode3 = (((((((((((((((((((((((((i3 * 37) + 19) * 53) + getChatBadgeUrl().hashCode()) * 37) + 20) * 53) + getChatBadgeLength()) * 37) + 21) * 53) + getChatBadgeHeight()) * 37) + 22) * 53) + getAnchorPocketTrafficCard()) * 37) + 23) * 53) + getAnchorPocketTrafficCardName().hashCode()) * 37) + 24) * 53) + getNobleJoinText().hashCode()) * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode3;
         return hashCode3;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_JoinLiveExtra_fieldAccessorTable.ensureFieldAccessorsInitialized(JoinLiveExtra.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -3248,28 +3227,26 @@ public final class JoinLiveExtra extends GeneratedMessageV3 implements JoinLiveE
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m3612newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m3611newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new JoinLiveExtra();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m3614toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i;
         int i2 = this.count_;

@@ -1,8 +1,5 @@
 package org.json;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
-import com.baidu.mobads.sdk.api.IAdInterListener;
-import com.igexin.push.core.b;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -20,7 +17,7 @@ public class JSONObject {
         }
 
         public String toString() {
-            return b.l;
+            return "null";
         }
     };
     private final LinkedHashMap<String, Object> nameValuePairs;
@@ -211,7 +208,7 @@ public class JSONObject {
         Object obj = get(str);
         Boolean bool = JSON.toBoolean(obj);
         if (bool == null) {
-            throw JSON.typeMismatch(str, obj, TypedValues.Custom.S_BOOLEAN);
+            throw JSON.typeMismatch(str, obj, "boolean");
         }
         return bool.booleanValue();
     }
@@ -229,7 +226,7 @@ public class JSONObject {
         Object obj = get(str);
         Integer integer = JSON.toInteger(obj);
         if (integer == null) {
-            throw JSON.typeMismatch(str, obj, IAdInterListener.AdProdType.PRODUCT_INTERSTITIAL);
+            throw JSON.typeMismatch(str, obj, "int");
         }
         return integer.intValue();
     }

@@ -7,7 +7,7 @@ import com.opos.mobad.ad.i;
 public interface b extends h, i.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final b f25678a = new b() { // from class: com.opos.mobad.ad.d.b.1
+    public static final b f11990a = new b() { // from class: com.opos.mobad.ad.d.b.1
         @Override // com.opos.mobad.ad.b.a
         public void a() {
             com.opos.cmn.an.f.a.b("IRewardVideoAdListener", "onAdReady");

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FitemLivePersonalCollectionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28742a;
+    private final RelativeLayout f15052a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28742a;
+        return this.f15052a;
     }
 }

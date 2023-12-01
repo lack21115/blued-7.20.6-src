@@ -4,9 +4,9 @@ package com.huawei.hms.support.api.entity.opendevice;
 public final class HuaweiOpendeviceStatusCodes {
 
     /* renamed from: a  reason: collision with root package name */
-    int f22884a = 0;
+    int f9276a = 0;
     int b = 8500;
 
     /* renamed from: c  reason: collision with root package name */
-    int f22885c = 8501;
+    int f9277c = 8501;
 }

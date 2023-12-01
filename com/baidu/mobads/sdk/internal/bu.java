@@ -9,11 +9,11 @@ import org.json.JSONObject;
 public class bu implements Parcelable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9360a = "MD5";
+    public static final String f6520a = "MD5";
     public static final Parcelable.Creator<bu> b = new bv();
 
     /* renamed from: c  reason: collision with root package name */
-    private JSONObject f9361c;
+    private JSONObject f6521c;
     private double d;
     private String e;
     private String f;
@@ -44,10 +44,10 @@ public class bu implements Parcelable {
         int i = 1;
         try {
             JSONObject jSONObject = new JSONObject(str);
-            this.f9361c = jSONObject;
+            this.f6521c = jSONObject;
             this.d = jSONObject.getDouble("version");
-            this.e = this.f9361c.getString("url");
-            this.f = this.f9361c.getString("sign");
+            this.e = this.f6521c.getString("url");
+            this.f = this.f6521c.getString(com.anythink.expressad.d.a.b.d);
             this.i = 1;
             this.g = "";
             this.h = 0;
@@ -95,7 +95,7 @@ public class bu implements Parcelable {
     }
 
     public String toString() {
-        return this.f9361c.toString();
+        return this.f6521c.toString();
     }
 
     @Override // android.os.Parcelable

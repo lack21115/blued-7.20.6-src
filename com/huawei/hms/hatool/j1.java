@@ -10,24 +10,24 @@ import org.json.JSONObject;
 public final class j1 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static j1 f22756c;
+    public static j1 f9148c;
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f22757a;
+    public Context f9149a;
     public final Object b = new Object();
 
     public static j1 a() {
-        if (f22756c == null) {
+        if (f9148c == null) {
             b();
         }
-        return f22756c;
+        return f9148c;
     }
 
     public static void b() {
         synchronized (j1.class) {
             try {
-                if (f22756c == null) {
-                    f22756c = new j1();
+                if (f9148c == null) {
+                    f9148c = new j1();
                 }
             } catch (Throwable th) {
                 throw th;
@@ -51,10 +51,10 @@ public final class j1 {
 
     public void a(Context context) {
         synchronized (this.b) {
-            if (this.f22757a != null) {
+            if (this.f9149a != null) {
                 return;
             }
-            this.f22757a = context;
+            this.f9149a = context;
             i0.a().a(context);
         }
     }

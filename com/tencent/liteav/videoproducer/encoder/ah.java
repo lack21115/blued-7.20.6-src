@@ -4,10 +4,10 @@ package com.tencent.liteav.videoproducer.encoder;
 final /* synthetic */ class ah implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final x f36977a;
+    private final x f23286a;
 
     private ah(x xVar) {
-        this.f36977a = xVar;
+        this.f23286a = xVar;
     }
 
     public static Runnable a(x xVar) {
@@ -16,9 +16,9 @@ final /* synthetic */ class ah implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        x xVar = this.f36977a;
+        x xVar = this.f23286a;
         xVar.a();
-        xVar.f37044c.removeCallbacks(xVar.n);
+        xVar.f23353c.removeCallbacks(xVar.n);
         xVar.a(xVar.d);
         xVar.d = null;
     }

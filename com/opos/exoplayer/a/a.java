@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 public final class a extends FrameLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f24987a;
+    private float f11299a;
     private int b;
 
     public a(Context context) {
@@ -22,8 +22,8 @@ public final class a extends FrameLayout {
     }
 
     public void a(float f) {
-        if (this.f24987a != f) {
-            this.f24987a = f;
+        if (this.f11299a != f) {
+            this.f11299a = f;
             requestLayout();
         }
     }
@@ -35,18 +35,17 @@ public final class a extends FrameLayout {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        if (this.b == 3 || this.f24987a <= 0.0f) {
+        if (this.b == 3 || this.f11299a <= 0.0f) {
             return;
         }
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
         float f = measuredWidth;
         float f2 = measuredHeight;
-        float f3 = (this.f24987a / (f / f2)) - 1.0f;
+        float f3 = (this.f11299a / (f / f2)) - 1.0f;
         if (Math.abs(f3) > 0.01f) {
             int i3 = this.b;
             if (i3 != 1) {
@@ -56,10 +55,10 @@ public final class a extends FrameLayout {
                     }
                     super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
                 }
-                measuredWidth = (int) (f2 * this.f24987a);
+                measuredWidth = (int) (f2 * this.f11299a);
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
             }
-            measuredHeight = (int) (f / this.f24987a);
+            measuredHeight = (int) (f / this.f11299a);
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(measuredHeight, 1073741824));
         }
     }

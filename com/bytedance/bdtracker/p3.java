@@ -10,7 +10,7 @@ import com.bytedance.bdtracker.s3;
 public final class p3 implements s3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public f3<Boolean> f21289a = new a(this);
+    public f3<Boolean> f7683a = new a(this);
 
     /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/p3$a.class */
     public class a extends f3<Boolean> {
@@ -47,13 +47,13 @@ public final class p3 implements s3 {
                     int columnIndex = query.getColumnIndex("value");
                     if (columnIndex >= 0) {
                         string = query.getString(columnIndex);
-                        aVar.f21305a = string;
+                        aVar.f7699a = string;
                         j1.a(query);
                         return aVar;
                     }
                 }
                 string = null;
-                aVar.f21305a = string;
+                aVar.f7699a = string;
                 j1.a(query);
                 return aVar;
             } catch (Throwable th) {
@@ -79,6 +79,6 @@ public final class p3 implements s3 {
         if (context == null) {
             return false;
         }
-        return this.f21289a.b(context).booleanValue();
+        return this.f7683a.b(context).booleanValue();
     }
 }

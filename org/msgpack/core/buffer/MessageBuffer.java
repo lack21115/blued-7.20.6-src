@@ -36,7 +36,7 @@ public class MessageBuffer {
             Method dump skipped, instructions count: 904
             To view this dump change 'Code comments level' option to 'DEBUG'
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.msgpack.core.buffer.MessageBuffer.m13498clinit():void");
+        throw new UnsupportedOperationException("Method not decompiled: org.msgpack.core.buffer.MessageBuffer.m12407clinit():void");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

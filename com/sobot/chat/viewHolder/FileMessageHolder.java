@@ -83,8 +83,8 @@ public class FileMessageHolder extends MessageHolderBase implements View.OnClick
         this.sobot_file_size = (TextView) view.findViewById(ResourceUtils.getIdByName(context, "id", "sobot_file_size"));
         this.sobot_msgStatus = (ImageView) view.findViewById(ResourceUtils.getIdByName(context, "id", "sobot_msgStatus"));
         this.sobot_ll_file_container = (RelativeLayout) view.findViewById(ResourceUtils.getIdByName(context, "id", "sobot_ll_file_container"));
-        this.mResNetError = ResourceUtils.getIdByName(context, i.f7952c, "sobot_re_send_selector");
-        this.mResRemove = ResourceUtils.getIdByName(context, i.f7952c, "sobot_icon_remove");
+        this.mResNetError = ResourceUtils.getIdByName(context, i.f5112c, "sobot_re_send_selector");
+        this.mResRemove = ResourceUtils.getIdByName(context, i.f5112c, "sobot_icon_remove");
         ImageView imageView = this.sobot_msgStatus;
         if (imageView != null) {
             imageView.setOnClickListener(this);

@@ -13,25 +13,25 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class AssistPushManager {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23188a = "Assist_OtherPushManager";
+    private static final String f9580a = "Assist_OtherPushManager";
     private AbstractPushManager b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AtomicBoolean f23189c;
+    private AtomicBoolean f9581c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/igexin/assist/sdk/AssistPushManager$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final AssistPushManager f23190a = new AssistPushManager((byte) 0);
+        private static final AssistPushManager f9582a = new AssistPushManager((byte) 0);
 
         private a() {
         }
     }
 
     private AssistPushManager() {
-        this.f23189c = new AtomicBoolean(false);
+        this.f9581c = new AtomicBoolean(false);
     }
 
     /* synthetic */ AssistPushManager(byte b) {
@@ -43,7 +43,7 @@ public class AssistPushManager {
     }
 
     public static AssistPushManager getInstance() {
-        return a.f23190a;
+        return a.f9582a;
     }
 
     public static String getToken() {

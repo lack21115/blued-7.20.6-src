@@ -28,11 +28,11 @@ import java.util.jar.JarFile;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static String f38932a = "";
+    public static String f25241a = "";
     public static String b = "";
 
     /* renamed from: c  reason: collision with root package name */
-    public static String f38933c = "";
+    public static String f25242c = "";
     public static String d = "";
     public static String e = "";
 
@@ -229,7 +229,7 @@ public class b {
         InputStreamReader inputStreamReader;
         String str;
         String str2;
-        if (TextUtils.isEmpty(f38933c)) {
+        if (TextUtils.isEmpty(f25242c)) {
             try {
                 inputStreamReader = new InputStreamReader(Runtime.getRuntime().exec("getprop ro.product.cpu.abi").getInputStream());
                 try {
@@ -288,7 +288,7 @@ public class b {
                 return str;
             }
         }
-        return f38933c;
+        return f25242c;
     }
 
     public static void b(Context context, String str) {
@@ -381,7 +381,7 @@ public class b {
     }
 
     public static String f(Context context) {
-        if (TextUtils.isEmpty(f38932a)) {
+        if (TextUtils.isEmpty(f25241a)) {
             try {
                 return ((TelephonyManager) context.getSystemService("phone")).getDeviceId();
             } catch (Exception e2) {
@@ -389,7 +389,7 @@ public class b {
                 return "";
             }
         }
-        return f38932a;
+        return f25241a;
     }
 
     public static String g(Context context) {

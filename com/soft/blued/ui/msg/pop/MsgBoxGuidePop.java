@@ -11,16 +11,15 @@ import com.soft.blued.R;
 public class MsgBoxGuidePop extends CenterPopupView {
 
     /* renamed from: c  reason: collision with root package name */
-    public TextView f32494c;
+    public TextView f18803c;
 
     public MsgBoxGuidePop(Context context) {
         super(context);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
-        this.f32494c = (TextView) findViewById(R.id.tv_go);
+        this.f18803c = (TextView) findViewById(R.id.tv_go);
         findViewById(2131371051).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.pop.MsgBoxGuidePop.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
@@ -30,7 +29,6 @@ public class MsgBoxGuidePop extends CenterPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.dialog_msg_box_guide;
     }

@@ -19,7 +19,7 @@ public class PngChunkPLTE extends PngChunkSingle {
 
     @Override // ar.com.hjg.pngj.chunks.PngChunk
     public void a(ChunkRaw chunkRaw) {
-        b(chunkRaw.f3659a / 3);
+        b(chunkRaw.f3611a / 3);
         int i = 0;
         int i2 = 0;
         while (true) {

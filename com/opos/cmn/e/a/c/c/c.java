@@ -8,40 +8,40 @@ import android.view.WindowManager;
 public class c extends a {
 
     /* renamed from: c  reason: collision with root package name */
-    private com.opos.cmn.e.a.c.d.b f24788c;
+    private com.opos.cmn.e.a.c.d.b f11100c;
 
     public c(Context context, com.opos.cmn.e.a.c.b.a aVar) {
         super(context, aVar);
-        this.f24788c = new com.opos.cmn.e.a.c.d.b(this.f24785a, aVar);
+        this.f11100c = new com.opos.cmn.e.a.c.d.b(this.f11097a, aVar);
     }
 
     @Override // com.opos.cmn.e.a.c.c.d
     public WindowManager.LayoutParams a() {
-        return this.f24788c.a();
+        return this.f11100c.a();
     }
 
     @Override // com.opos.cmn.e.a.c.c.d
     public void a(int i) {
-        this.f24788c.a(i);
+        this.f11100c.a(i);
     }
 
     @Override // com.opos.cmn.e.a.c.c.d
     public void a(int i, int i2, int i3) {
-        this.f24788c.a(i, i2, i3);
+        this.f11100c.a(i, i2, i3);
     }
 
     @Override // com.opos.cmn.e.a.c.c.d
     public void a(View view) {
-        this.f24788c.a(view);
+        this.f11100c.a(view);
     }
 
     @Override // com.opos.cmn.e.a.c.c.d
     public void b() {
-        this.f24788c.b();
+        this.f11100c.b();
     }
 
     @Override // com.opos.cmn.e.a.c.c.d
     public void c() {
-        this.f24788c.c();
+        this.f11100c.c();
     }
 }

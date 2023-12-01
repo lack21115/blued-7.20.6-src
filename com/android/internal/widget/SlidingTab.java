@@ -226,7 +226,7 @@ public class SlidingTab extends ViewGroup {
             this.text.setPressed(i == 1);
             this.tab.setPressed(i == 1);
             if (i == 2) {
-                int[] iArr = {16842914};
+                int[] iArr = {R.attr.state_active};
                 if (this.text.getBackground().isStateful()) {
                     this.text.getBackground().setState(iArr);
                 }
@@ -325,7 +325,7 @@ public class SlidingTab extends ViewGroup {
     }
 
     private void dispatchTriggerEvent(int i) {
-        vibrate(40L);
+        vibrate(VIBRATE_LONG);
         if (this.mOnTriggerListener != null) {
             this.mOnTriggerListener.onTrigger(this, i);
         }
@@ -378,12 +378,12 @@ public class SlidingTab extends ViewGroup {
     private void vibrate(long j) {
         boolean z = true;
         synchronized (this) {
-            if (Settings.System.getIntForUser(this.mContext.getContentResolver(), Settings.System.HAPTIC_FEEDBACK_ENABLED, 1, -2) == 0) {
+            if (Settings.System.getIntForUser(this.mContext.getContentResolver(), "haptic_feedback_enabled", 1, -2) == 0) {
                 z = false;
             }
             if (z) {
                 if (this.mVibrator == null) {
-                    this.mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+                    this.mVibrator = (Vibrator) getContext().getSystemService("vibrator");
                 }
                 this.mVibrator.vibrate(j, VIBRATION_ATTRIBUTES);
             }

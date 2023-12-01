@@ -3,9 +3,8 @@ package com.kwad.sdk.api.loader;
 import android.content.Context;
 import android.text.TextUtils;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/api/loader/g.class */
-public final class g {
+final class g {
     static String ZA = "autoRevert";
 
     public static String ao(Context context) {

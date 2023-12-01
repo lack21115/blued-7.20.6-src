@@ -1,5 +1,6 @@
 package com.soft.blued.ui.setting.activity;
 
+import android.R;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,21 +16,21 @@ import skin.support.SkinCompatManager;
 public class SwitchAccountActivity extends BaseFragmentActivity {
 
     /* renamed from: c  reason: collision with root package name */
-    private View f33271c;
+    private View f19580c;
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    /* JADX WARN: Multi-variable type inference failed */
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         FrameLayout frameLayout = new FrameLayout(this);
-        this.f33271c = frameLayout;
+        this.f19580c = frameLayout;
         frameLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
-        this.f33271c.setId(2131369470);
-        setContentView(this.f33271c);
+        this.f19580c.setId(2131369470);
+        setContentView(this.f19580c);
         if (StatusBarHelper.a(this, AppInfo.i())) {
-            this.f33271c.setFitsSystemWindows(true);
+            this.f19580c.setFitsSystemWindows(true);
             getWindow().setBackgroundDrawable(StatusBarHelper.a(this, AppInfo.k(), AppInfo.l(), AppInfo.j(), true));
             if (SkinCompatManager.a() != null) {
-                findViewById(16908290).setBackgroundColor(BluedSkinUtils.a(this, AppInfo.k()));
+                findViewById(R.id.content).setBackgroundColor(BluedSkinUtils.a(this, AppInfo.k()));
             }
         }
         try {

@@ -31,12 +31,12 @@ import com.soft.blued.utils.Logger;
 public class MineNineEntryAdapter extends BaseQuickAdapter<MineEntryInfo.ColumnsItem, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f31587a;
+    private Context f17897a;
     private IRequestHost b;
 
     public MineNineEntryAdapter(Context context, IRequestHost iRequestHost) {
         super((int) R.layout.item_mine_nine_entry);
-        this.f31587a = context;
+        this.f17897a = context;
         this.b = iRequestHost;
     }
 
@@ -46,11 +46,11 @@ public class MineNineEntryAdapter extends BaseQuickAdapter<MineEntryInfo.Columns
     public void convert(BaseViewHolder baseViewHolder, final MineEntryInfo.ColumnsItem columnsItem) {
         ImageView imageView = (ImageView) baseViewHolder.getView(2131364552);
         TextView textView = (TextView) baseViewHolder.getView(2131371186);
-        QBadgeContainer qBadgeContainer = (QBadgeContainer) baseViewHolder.getView(R.id.badge_container);
+        QBadgeContainer view = baseViewHolder.getView(R.id.badge_container);
         if ("help".equals(columnsItem.key)) {
-            ServiceHelper.f33645a.a(qBadgeContainer, baseViewHolder.getView(R.id.bindView));
+            ServiceHelper.f19954a.a(view, baseViewHolder.getView(R.id.bindView));
         } else {
-            qBadgeContainer.setVisibility(8);
+            view.setVisibility(8);
         }
         baseViewHolder.setGone(R.id.tv_anchor_level, false);
         imageView.setVisibility(0);
@@ -104,33 +104,33 @@ public class MineNineEntryAdapter extends BaseQuickAdapter<MineEntryInfo.Columns
                 baseViewHolder.setGone(2131371196, true);
                 long j = columnsItem.extra.beans;
                 UserInfo.getInstance().setUserPrice(j);
-                baseViewHolder.setText(2131371196, DistanceUtils.a(this.f31587a, Long.valueOf(j)));
-                baseViewHolder.setText(2131371186, this.f31587a.getString(2131886105));
+                baseViewHolder.setText(2131371196, DistanceUtils.a(this.f17897a, Long.valueOf(j)));
+                baseViewHolder.setText(2131371186, this.f17897a.getString(R.string.Live_SendPresent_wandou));
             } else if (z) {
                 baseViewHolder.setText(2131371186, "Lv." + LiveUtils.a(columnsItem.extra.rich_level));
             } else if (z) {
                 int i = columnsItem.extra.times;
                 if (i > 0) {
-                    baseViewHolder.setText(2131371186, String.format(this.f31587a.getString(R.string.blued_call_times), Integer.valueOf(i)));
+                    baseViewHolder.setText(2131371186, String.format(this.f17897a.getString(R.string.blued_call_times), Integer.valueOf(i)));
                 } else {
-                    baseViewHolder.setText(2131371186, this.f31587a.getString(R.string.blued_call_buy));
+                    baseViewHolder.setText(2131371186, this.f17897a.getString(R.string.blued_call_buy));
                 }
             }
         }
         if (columnsItem.is_highlight == 1) {
             textView.setTextColor(Color.parseColor("#00CCCC"));
         } else {
-            textView.setTextColor(BluedSkinUtils.a(this.f31587a, 2131102263));
+            textView.setTextColor(BluedSkinUtils.a(this.f17897a, 2131102263));
         }
-        if (BluedPreferences.P(columnsItem.item_key) || (columnsItem.title != null && columnsItem.title.equals(this.f31587a.getResources().getString(2131891641)) && BluedPreferences.dI())) {
-            baseViewHolder.setGone(2131365270, true);
+        if (BluedPreferences.P(columnsItem.item_key) || (columnsItem.title != null && columnsItem.title.equals(this.f17897a.getResources().getString(R.string.setting)) && BluedPreferences.dI())) {
+            baseViewHolder.setGone(R.id.iv_dot, true);
         } else {
-            baseViewHolder.setGone(2131365270, false);
+            baseViewHolder.setGone(R.id.iv_dot, false);
         }
         baseViewHolder.getView(2131366742).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.mine.adapter.MineNineEntryAdapter.1
             @Override // android.view.View.OnClickListener
-            public void onClick(View view) {
-                Tracker.onClick(view);
+            public void onClick(View view2) {
+                Tracker.onClick(view2);
                 SettingsProtos.Event event = SettingsProtos.Event.MINE_BTN_CLICK;
                 String str2 = columnsItem.url;
                 String str3 = columnsItem.id;
@@ -142,7 +142,7 @@ public class MineNineEntryAdapter extends BaseQuickAdapter<MineEntryInfo.Columns
                 Logger.e("MineNineEntryAdapter===" + columnsItem.title, new Object[0]);
                 Logger.e("MineNineEntryAdapter===" + columnsItem.url, new Object[0]);
                 InstantLog.f("mine", columnsItem.url);
-                WebViewShowInfoFragment.show(MineNineEntryAdapter.this.f31587a, columnsItem.url, 9);
+                WebViewShowInfoFragment.show(MineNineEntryAdapter.this.f17897a, columnsItem.url, 9);
                 BluedPreferences.Q(columnsItem.item_key);
             }
         });

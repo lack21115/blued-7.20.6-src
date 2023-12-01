@@ -16,13 +16,13 @@ import com.opos.mobad.n.c.m;
 public class i extends RelativeLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.opos.mobad.n.a.k f26731a;
+    private com.opos.mobad.n.a.k f13043a;
     private TextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    private TextView f26732c;
+    private TextView f13044c;
     private int d;
-    private a.InterfaceC0708a e;
+    private a.InterfaceC0538a e;
 
     public i(Context context) {
         super(context);
@@ -32,11 +32,11 @@ public class i extends RelativeLayout {
 
     private void a() {
         setAlpha(0.7f);
-        this.f26731a = com.opos.mobad.n.a.k.a(getContext());
+        this.f13043a = com.opos.mobad.n.a.k.a(getContext());
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, com.opos.cmn.an.h.f.a.a(getContext(), 28.0f));
         layoutParams.addRule(9);
         layoutParams.leftMargin = com.opos.cmn.an.h.f.a.a(getContext(), 22.0f);
-        addView(this.f26731a, layoutParams);
+        addView(this.f13043a, layoutParams);
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setColor(Color.parseColor("#26000000"));
         gradientDrawable.setCornerRadius(com.opos.cmn.an.h.f.a.a(getContext(), 14.0f));
@@ -56,28 +56,28 @@ public class i extends RelativeLayout {
         layoutParams2.addRule(11);
         layoutParams2.rightMargin = com.opos.cmn.an.h.f.a.a(getContext(), 22.0f);
         addView(this.b, layoutParams2);
-        this.f26732c = new TextView(getContext());
+        this.f13044c = new TextView(getContext());
         com.opos.mobad.n.c.g gVar = new com.opos.mobad.n.c.g() { // from class: com.opos.mobad.n.f.i.1
             @Override // com.opos.mobad.n.c.g
             public void a(View view, int[] iArr) {
                 if (i.this.e != null) {
-                    a.InterfaceC0708a interfaceC0708a = i.this.e;
+                    a.InterfaceC0538a interfaceC0538a = i.this.e;
                     boolean z = true;
                     if (i.this.d != 1) {
                         z = false;
                     }
-                    interfaceC0708a.a(view, iArr, z);
+                    interfaceC0538a.a(view, iArr, z);
                 }
             }
         };
-        this.f26732c.setOnClickListener(gVar);
-        this.f26732c.setOnTouchListener(gVar);
-        this.f26732c.setBackground(getContext().getResources().getDrawable(R.drawable.opos_mobad_drawable_sound_off));
+        this.f13044c.setOnClickListener(gVar);
+        this.f13044c.setOnTouchListener(gVar);
+        this.f13044c.setBackground(getContext().getResources().getDrawable(R.drawable.opos_mobad_drawable_sound_off));
         RelativeLayout.LayoutParams layoutParams3 = new RelativeLayout.LayoutParams(com.opos.cmn.an.h.f.a.a(getContext(), 15.7f), com.opos.cmn.an.h.f.a.a(getContext(), 13.68f));
         layoutParams3.addRule(15);
         layoutParams3.addRule(0, this.b.getId());
         layoutParams3.rightMargin = com.opos.cmn.an.h.f.a.a(getContext(), 12.0f);
-        addView(this.f26732c, layoutParams3);
+        addView(this.f13044c, layoutParams3);
     }
 
     private void a(int i) {
@@ -87,14 +87,14 @@ public class i extends RelativeLayout {
         if (this.d != i) {
             this.d = i;
             if (i == 0) {
-                textView = this.f26732c;
+                textView = this.f13044c;
                 resources = getContext().getResources();
                 i2 = R.drawable.opos_mobad_drawable_sound_off;
             } else if (i == 2) {
-                this.f26732c.setVisibility(8);
+                this.f13044c.setVisibility(8);
                 return;
             } else {
-                textView = this.f26732c;
+                textView = this.f13044c;
                 resources = getContext().getResources();
                 i2 = R.drawable.opos_mobad_drawable_sound_on;
             }
@@ -102,13 +102,13 @@ public class i extends RelativeLayout {
         }
     }
 
-    public void a(a.InterfaceC0708a interfaceC0708a) {
-        this.e = interfaceC0708a;
-        this.f26731a.a(interfaceC0708a);
+    public void a(a.InterfaceC0538a interfaceC0538a) {
+        this.e = interfaceC0538a;
+        this.f13043a.a(interfaceC0538a);
     }
 
     public void a(boolean z, int i, String str, boolean z2, com.opos.mobad.n.d.g gVar, String str2) {
-        this.f26731a.a(z, str, z2, gVar, str2);
+        this.f13043a.a(z, str, z2, gVar, str2);
         this.b.setText(m.a(getContext()));
         a(i);
     }

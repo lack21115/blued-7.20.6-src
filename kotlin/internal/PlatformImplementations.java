@@ -13,13 +13,9 @@ public class PlatformImplementations {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/internal/PlatformImplementations$ReflectThrowable.class */
     static final class ReflectThrowable {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final ReflectThrowable f42476a = new ReflectThrowable();
+        public static final ReflectThrowable a = new ReflectThrowable();
         public static final Method b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final Method f42477c;
+        public static final Method c;
 
         /* JADX WARN: Removed duplicated region for block: B:14:0x0067 A[LOOP:0: B:3:0x0020->B:14:0x0067, LOOP_END] */
         /* JADX WARN: Removed duplicated region for block: B:25:0x0071 A[EDGE_INSN: B:25:0x0071->B:16:0x0071 ?: BREAK  , SYNTHETIC] */
@@ -28,7 +24,7 @@ public class PlatformImplementations {
                 kotlin.internal.PlatformImplementations$ReflectThrowable r0 = new kotlin.internal.PlatformImplementations$ReflectThrowable
                 r1 = r0
                 r1.<init>()
-                kotlin.internal.PlatformImplementations.ReflectThrowable.f42476a = r0
+                kotlin.internal.PlatformImplementations.ReflectThrowable.a = r0
                 java.lang.Class<java.lang.Throwable> r0 = java.lang.Throwable.class
                 java.lang.reflect.Method[] r0 = r0.getMethods()
                 r9 = r0
@@ -120,10 +116,10 @@ public class PlatformImplementations {
                 goto L7c
             La2:
                 r0 = r7
-                kotlin.internal.PlatformImplementations.ReflectThrowable.f42477c = r0
+                kotlin.internal.PlatformImplementations.ReflectThrowable.c = r0
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: kotlin.internal.PlatformImplementations.ReflectThrowable.m12916clinit():void");
+            throw new UnsupportedOperationException("Method not decompiled: kotlin.internal.PlatformImplementations.ReflectThrowable.m11825clinit():void");
         }
 
         private ReflectThrowable() {

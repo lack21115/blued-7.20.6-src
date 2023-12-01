@@ -1,6 +1,5 @@
 package com.tencent.cloud.huiyansdkface.okhttp3.internal.http;
 
-import com.android.internal.telephony.PhoneConstants;
 import com.ss.android.socialbase.downloader.utils.DownloadUtils;
 import com.tencent.cloud.huiyansdkface.okhttp3.Challenge;
 import com.tencent.cloud.huiyansdkface.okhttp3.Cookie;
@@ -24,7 +23,7 @@ import java.util.TreeSet;
 public final class HttpHeaders {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ByteString f35951a = ByteString.encodeUtf8("\"\\");
+    private static final ByteString f22260a = ByteString.encodeUtf8("\"\\");
     private static final ByteString b = ByteString.encodeUtf8("\t ,=");
 
     private HttpHeaders() {
@@ -101,7 +100,7 @@ public final class HttpHeaders {
         }
         Buffer buffer2 = new Buffer();
         while (true) {
-            long indexOfElement = buffer.indexOfElement(f35951a);
+            long indexOfElement = buffer.indexOfElement(f22260a);
             if (indexOfElement == -1) {
                 return null;
             }
@@ -152,7 +151,7 @@ public final class HttpHeaders {
     }
 
     public static boolean hasVaryAll(Headers headers) {
-        return varyFields(headers).contains(PhoneConstants.APN_TYPE_ALL);
+        return varyFields(headers).contains("*");
     }
 
     public static boolean hasVaryAll(Response response) {
@@ -190,7 +189,7 @@ public final class HttpHeaders {
     }
 
     public static void receiveHeaders(CookieJar cookieJar, HttpUrl httpUrl, Headers headers) {
-        if (cookieJar == CookieJar.f35845a) {
+        if (cookieJar == CookieJar.f22154a) {
             return;
         }
         List<Cookie> parseAll = Cookie.parseAll(httpUrl, headers);

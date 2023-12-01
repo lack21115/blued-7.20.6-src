@@ -4,9 +4,9 @@ package com.opos.acs.st.utils;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f24458a = com.opos.cmn.biz.a.a.f24601c;
-    public static final String b = com.opos.cmn.biz.a.a.f24600a;
+    public static final String f10771a = com.opos.cmn.biz.a.a.f10914c;
+    public static final String b = com.opos.cmn.biz.a.a.f10913a;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f24459c = com.opos.cmn.biz.a.a.b;
+    public static final String f10772c = com.opos.cmn.biz.a.a.b;
 }

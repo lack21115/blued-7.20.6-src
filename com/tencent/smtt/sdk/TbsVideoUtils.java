@@ -7,12 +7,12 @@ import com.tencent.smtt.export.external.DexLoader;
 public class TbsVideoUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static s f38793a;
+    private static s f25102a;
 
     private static void a(Context context) {
         synchronized (TbsVideoUtils.class) {
             try {
-                if (f38793a == null) {
+                if (f25102a == null) {
                     f.a(true).a(context, false, false);
                     u a2 = f.a(true).a();
                     DexLoader dexLoader = null;
@@ -20,7 +20,7 @@ public class TbsVideoUtils {
                         dexLoader = a2.b();
                     }
                     if (dexLoader != null) {
-                        f38793a = new s(dexLoader);
+                        f25102a = new s(dexLoader);
                     }
                 }
             } finally {
@@ -30,7 +30,7 @@ public class TbsVideoUtils {
 
     public static void deleteVideoCache(Context context, String str) {
         a(context);
-        s sVar = f38793a;
+        s sVar = f25102a;
         if (sVar != null) {
             sVar.a(context, str);
         }
@@ -38,7 +38,7 @@ public class TbsVideoUtils {
 
     public static String getCurWDPDecodeType(Context context) {
         a(context);
-        s sVar = f38793a;
+        s sVar = f25102a;
         return sVar != null ? sVar.a(context) : "";
     }
 }

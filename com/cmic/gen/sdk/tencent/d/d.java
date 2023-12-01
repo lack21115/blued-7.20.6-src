@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private com.cmic.gen.sdk.tencent.a f21656a;
+    private com.cmic.gen.sdk.tencent.a f8050a;
 
     private static void a(b bVar, com.cmic.gen.sdk.tencent.a aVar) {
         if (bVar == null || aVar == null) {
@@ -45,11 +45,11 @@ public class d {
     }
 
     private void a(JSONObject jSONObject) {
-        com.cmic.gen.sdk.tencent.c.c.a.a().a(jSONObject, this.f21656a, new com.cmic.gen.sdk.tencent.c.c.d() { // from class: com.cmic.gen.sdk.tencent.d.d.1
+        com.cmic.gen.sdk.tencent.c.c.a.a().a(jSONObject, this.f8050a, new com.cmic.gen.sdk.tencent.c.c.d() { // from class: com.cmic.gen.sdk.tencent.d.d.1
             @Override // com.cmic.gen.sdk.tencent.c.c.d
             public void a(String str, String str2, JSONObject jSONObject2) {
                 long j;
-                com.cmic.gen.sdk.tencent.a.a b = d.this.f21656a.b();
+                com.cmic.gen.sdk.tencent.a.a b = d.this.f8050a.b();
                 HashMap hashMap = new HashMap();
                 if (!str.equals("103000")) {
                     if (b.l() != 0 && b.k() != 0) {
@@ -83,9 +83,9 @@ public class d {
             a2.c(aVar.b("hsaReadPhoneStatePermission", false) ? "1" : "0");
             a(a2, aVar);
             JSONArray jSONArray = null;
-            if (a2.f21653a.size() > 0) {
+            if (a2.f8047a.size() > 0) {
                 jSONArray = new JSONArray();
-                Iterator<Throwable> it = a2.f21653a.iterator();
+                Iterator<Throwable> it = a2.f8047a.iterator();
                 while (it.hasNext()) {
                     Throwable next = it.next();
                     StringBuffer stringBuffer = new StringBuffer();
@@ -106,7 +106,7 @@ public class d {
                     jSONObject.put("stack", stringBuffer.toString());
                     jSONArray.put(jSONObject);
                 }
-                a2.f21653a.clear();
+                a2.f8047a.clear();
             }
             if (jSONArray != null && jSONArray.length() > 0) {
                 a2.a(jSONArray);
@@ -120,7 +120,7 @@ public class d {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(JSONObject jSONObject, com.cmic.gen.sdk.tencent.a aVar) {
-        this.f21656a = aVar;
+        this.f8050a = aVar;
         a(jSONObject);
     }
 }

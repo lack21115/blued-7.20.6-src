@@ -9,11 +9,11 @@ import java.util.Map;
 public final class kwCJn extends SkEpO {
 
     /* renamed from: a  reason: collision with root package name */
-    static ArrayList<Bi3eT> f39828a;
+    static ArrayList<Bi3eT> f26137a;
     static byte[] b;
 
     /* renamed from: c  reason: collision with root package name */
-    static Map<String, String> f39829c;
+    static Map<String, String> f26138c;
     public String d = "";
     public ArrayList<Bi3eT> e = null;
     public byte[] f = null;
@@ -23,12 +23,12 @@ public final class kwCJn extends SkEpO {
 
     static {
         ArrayList<Bi3eT> arrayList = new ArrayList<>();
-        f39828a = arrayList;
+        f26137a = arrayList;
         arrayList.add(new Bi3eT());
         b = r0;
         byte[] bArr = {0};
         HashMap hashMap = new HashMap();
-        f39829c = hashMap;
+        f26138c = hashMap;
         hashMap.put("", "");
     }
 

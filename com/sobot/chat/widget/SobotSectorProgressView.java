@@ -50,9 +50,8 @@ public class SobotSectorProgressView extends ImageView {
         return this.startAngle;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.ImageView, android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int saveLayer = canvas.saveLayer(this.dstRect, this.mPaint, 31);
         this.mPaint.setXfermode(this.mXfermode);
@@ -61,9 +60,8 @@ public class SobotSectorProgressView extends ImageView {
         canvas.restoreToCount(saveLayer);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         float paddingLeft = getPaddingLeft() + getPaddingRight();
         float paddingBottom = getPaddingBottom() + getPaddingTop();

@@ -4,9 +4,9 @@ package com.baidu.mobads.sdk.internal;
 public class az {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9326a = "permission_module";
+    public static final String f6486a = "permission_module";
     public static final String b = "limitpersonalads_module";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9327c = "clear_memory_cache";
+    public static final String f6487c = "clear_memory_cache";
 }

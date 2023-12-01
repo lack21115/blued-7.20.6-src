@@ -14,21 +14,21 @@ import javax.crypto.SecretKey;
 public class e implements g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final d f22335a;
+    private final d f8727a;
     private SecretKey b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public e(d dVar) {
-        this.f22335a = dVar;
+        this.f8727a = dVar;
         a();
     }
 
     private SecretKey a() {
         try {
-            String a2 = this.f22335a.a("/code/code1", null);
-            String a3 = this.f22335a.a("/code/code2", null);
-            String a4 = this.f22335a.a("/code/code3", null);
-            String a5 = this.f22335a.a("/code/code4", null);
+            String a2 = this.f8727a.a("/code/code1", null);
+            String a3 = this.f8727a.a("/code/code2", null);
+            String a4 = this.f8727a.a("/code/code3", null);
+            String a5 = this.f8727a.a("/code/code4", null);
             if (a2 != null && a3 != null && a4 != null && a5 != null) {
                 this.b = i.a(Hex.decodeHexString(a2), Hex.decodeHexString(a3), Hex.decodeHexString(a4), Hex.decodeHexString(a5), 10000);
             }

@@ -10,7 +10,7 @@ public final class jh implements com.kwad.sdk.core.d<com.kwad.components.core.we
             return;
         }
         zVar.nZ = jSONObject.optInt("currentTime");
-        zVar.Vq = jSONObject.optBoolean(com.alipay.sdk.util.e.f4661a);
+        zVar.Vq = jSONObject.optBoolean("failed");
         zVar.Vm = jSONObject.optBoolean("finished");
     }
 
@@ -24,7 +24,7 @@ public final class jh implements com.kwad.sdk.core.d<com.kwad.components.core.we
             com.kwad.sdk.utils.t.putValue(jSONObject2, "currentTime", zVar.nZ);
         }
         if (zVar.Vq) {
-            com.kwad.sdk.utils.t.putValue(jSONObject2, com.alipay.sdk.util.e.f4661a, zVar.Vq);
+            com.kwad.sdk.utils.t.putValue(jSONObject2, "failed", zVar.Vq);
         }
         if (zVar.Vm) {
             com.kwad.sdk.utils.t.putValue(jSONObject2, "finished", zVar.Vm);

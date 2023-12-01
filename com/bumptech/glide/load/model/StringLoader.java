@@ -13,7 +13,7 @@ import java.io.InputStream;
 public class StringLoader<Data> implements ModelLoader<String, Data> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ModelLoader<Uri, Data> f20908a;
+    private final ModelLoader<Uri, Data> f7302a;
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/model/StringLoader$AssetFileDescriptorFactory.class */
     public static final class AssetFileDescriptorFactory implements ModelLoaderFactory<String, AssetFileDescriptor> {
@@ -52,7 +52,7 @@ public class StringLoader<Data> implements ModelLoader<String, Data> {
     }
 
     public StringLoader(ModelLoader<Uri, Data> modelLoader) {
-        this.f20908a = modelLoader;
+        this.f7302a = modelLoader;
     }
 
     private static Uri b(String str) {
@@ -73,10 +73,10 @@ public class StringLoader<Data> implements ModelLoader<String, Data> {
     @Override // com.bumptech.glide.load.model.ModelLoader
     public ModelLoader.LoadData<Data> a(String str, int i, int i2, Options options) {
         Uri b = b(str);
-        if (b == null || !this.f20908a.a(b)) {
+        if (b == null || !this.f7302a.a(b)) {
             return null;
         }
-        return this.f20908a.a(b, i, i2, options);
+        return this.f7302a.a(b, i, i2, options);
     }
 
     @Override // com.bumptech.glide.load.model.ModelLoader

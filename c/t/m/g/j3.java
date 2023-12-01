@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import com.huawei.hms.framework.network.grs.GrsBaseInfo;
 
 /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/j3.class */
 public class j3 {
@@ -27,9 +28,9 @@ public class j3 {
             if (activeNetworkInfo != null) {
                 return activeNetworkInfo.getTypeName().toUpperCase() + "[" + activeNetworkInfo.getSubtypeName() + "]";
             }
-            return "UNKNOWN";
+            return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         } catch (Throwable th) {
-            return "UNKNOWN";
+            return GrsBaseInfo.CountryCodeSource.UNKNOWN;
         }
     }
 

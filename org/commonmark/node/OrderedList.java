@@ -2,17 +2,15 @@ package org.commonmark.node;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/node/OrderedList.class */
 public class OrderedList extends ListBlock {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f44066a;
+    private int a;
     private char b;
 
-    public void a(char c2) {
-        this.b = c2;
+    public void a(char c) {
+        this.b = c;
     }
 
     public void a(int i) {
-        this.f44066a = i;
+        this.a = i;
     }
 
     @Override // org.commonmark.node.Node
@@ -21,7 +19,7 @@ public class OrderedList extends ListBlock {
     }
 
     public int c() {
-        return this.f44066a;
+        return this.a;
     }
 
     public char f() {

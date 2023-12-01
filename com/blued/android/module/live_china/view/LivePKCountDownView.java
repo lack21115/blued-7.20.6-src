@@ -34,13 +34,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LivePKCountDownView.class */
 public class LivePKCountDownView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f14708a;
+    public int a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f14709c;
+    private Context c;
     private LayoutInflater d;
     private View e;
     private View f;
@@ -71,12 +67,12 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
         super(context, attributeSet, i);
         this.b = 5;
         this.n = 0;
-        this.f14709c = context;
+        this.c = context;
         g();
     }
 
     private void g() {
-        LayoutInflater from = LayoutInflater.from(this.f14709c);
+        LayoutInflater from = LayoutInflater.from(this.c);
         this.d = from;
         View inflate = from.inflate(R.layout.live_pk_count_down_layout, this);
         this.e = inflate;
@@ -109,6 +105,7 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
         }, i);
     }
 
+    /* JADX WARN: Type inference failed for: r1v5, types: [com.blued.android.module.live_china.view.LivePKCountDownView$7] */
     public void a(long j) {
         this.g.setVisibility(0);
         this.g.setText(LiveRoomManager.a().X());
@@ -131,6 +128,7 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v8, types: [com.blued.android.module.live_china.view.LivePKCountDownView$5] */
     public void a(long j, final boolean z) {
         Log.i("==xpm", "startPKCountDownTimer:" + j);
         c();
@@ -162,8 +160,8 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
 
     public void a(final boolean z) {
         if (a()) {
-            Context context = this.f14709c;
-            CommonAlertDialog.a(context, "", context.getString(R.string.live_pk_exit_punish), this.f14709c.getString(R.string.live_window_permisson_cancel), (DialogInterface.OnClickListener) null, this.f14709c.getString(R.string.biao_v4_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.LivePKCountDownView.3
+            Context context = this.c;
+            CommonAlertDialog.a(context, "", context.getString(R.string.live_pk_exit_punish), this.c.getString(R.string.live_window_permisson_cancel), (DialogInterface.OnClickListener) null, this.c.getString(R.string.biao_v4_ok), new DialogInterface.OnClickListener() { // from class: com.blued.android.module.live_china.view.LivePKCountDownView.3
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
@@ -174,8 +172,8 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
             }, (DialogInterface.OnDismissListener) null);
             return;
         }
-        View inflate = LayoutInflater.from(this.f14709c).inflate(R.layout.live_exit_pk_tips, (ViewGroup) null);
-        final CustomDialog customDialog = new CustomDialog(this.f14709c);
+        View inflate = LayoutInflater.from(this.c).inflate(R.layout.live_exit_pk_tips, (ViewGroup) null);
+        final CustomDialog customDialog = new CustomDialog(this.c);
         customDialog.getWindow().setBackgroundDrawableResource(R.color.transparent);
         customDialog.a(inflate, null);
         TextView textView = (TextView) inflate.findViewById(R.id.tips_message);
@@ -203,7 +201,7 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
     }
 
     public boolean a() {
-        return this.f14708a == 2;
+        return this.a == 2;
     }
 
     public void b() {
@@ -220,6 +218,7 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
         }
     }
 
+    /* JADX WARN: Type inference failed for: r1v0, types: [com.blued.android.module.live_china.view.LivePKCountDownView$6] */
     public void d() {
         c();
         this.m = new CountDownTimer(this.b * 1000, 500L) { // from class: com.blued.android.module.live_china.view.LivePKCountDownView.6
@@ -258,7 +257,7 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
     }
 
     public int getCurrentModel() {
-        return this.f14708a;
+        return this.a;
     }
 
     public int getLastTime() {
@@ -275,7 +274,7 @@ public class LivePKCountDownView extends FrameLayout implements View.OnClickList
     }
 
     public void setCurrentModel(int i) {
-        this.f14708a = i;
+        this.a = i;
     }
 
     public void setData(BaseFragment baseFragment) {

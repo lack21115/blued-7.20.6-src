@@ -32,6 +32,7 @@ import com.blued.android.module.yy_china.observer.GiftObserver;
 import com.blued.android.module.yy_china.view.GiftBaseHitView;
 import com.blued.android.module.yy_china.view.YYBaseUserHeadView;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -42,13 +43,9 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/manager/YYGiftAnimManager.class */
 public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private List<YYImModel> f17525a = Collections.synchronizedList(new LinkedList());
+    private List<YYImModel> a = Collections.synchronizedList(new LinkedList());
     private List<YYMsgGiftExtra> b = Collections.synchronizedList(new LinkedList());
-
-    /* renamed from: c  reason: collision with root package name */
-    private GiftBaseHitView f17526c;
+    private GiftBaseHitView c;
     private GiftBaseHitView d;
     private LiveAnimationView e;
     private YYMsgGiftExtra f;
@@ -59,7 +56,7 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
 
     public YYGiftAnimManager(BaseYYStudioFragment baseYYStudioFragment, GiftBaseHitView giftBaseHitView, GiftBaseHitView giftBaseHitView2, LiveAnimationView liveAnimationView, SVGAImageView sVGAImageView) {
         this.g = baseYYStudioFragment;
-        this.f17526c = giftBaseHitView;
+        this.c = giftBaseHitView;
         this.d = giftBaseHitView2;
         this.e = liveAnimationView;
         this.h = sVGAImageView;
@@ -92,8 +89,7 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
             baseYYStudioFragment.E.a(new YYBaseUserHeadView.GetViewX_Y_W_H() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.2
                 @Override // com.blued.android.module.yy_china.view.YYBaseUserHeadView.GetViewX_Y_W_H
                 public void a(final int i, final int i2, final int i3, final int i4) {
-                    ImageLoader.a(YYGiftAnimManager.this.g.getFragmentActive(), yYMsgGiftExtra.gift_icon).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.2.1
-                        @Override // com.bumptech.glide.request.target.Target
+                    ImageLoader.a(YYGiftAnimManager.this.g.getFragmentActive(), yYMsgGiftExtra.gift_icon).a((Target<Drawable>) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.2.1
                         /* renamed from: a */
                         public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
                             if (drawable != null) {
@@ -109,29 +105,29 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
     /* JADX INFO: Access modifiers changed from: private */
     public void b() {
         synchronized (this) {
-            if (this.f17526c != null && this.d != null && this.f17525a.size() != 0) {
-                Iterator<YYImModel> it = this.f17525a.iterator();
+            if (this.c != null && this.d != null && this.a.size() != 0) {
+                Iterator<YYImModel> it = this.a.iterator();
                 while (it.hasNext()) {
                     YYImModel next = it.next();
                     if (!next.is_play_only_mp4) {
                         boolean z = true;
-                        boolean z2 = this.f17526c.getVisibility() == 0;
+                        boolean z2 = this.c.getVisibility() == 0;
                         if (this.d.getVisibility() != 0) {
                             z = false;
                         }
-                        if (z2 && this.f17526c.a(next)) {
+                        if (z2 && this.c.a(next)) {
                             it.remove();
                         } else if (!z || !this.d.a(next)) {
                             if (z2 && z) {
                                 break;
                             } else if (!z2 && !z) {
-                                this.f17526c.setHitModel(next);
+                                this.c.setHitModel(next);
                                 it.remove();
                             } else if (z2 && !z) {
                                 this.d.setHitModel(next);
                                 it.remove();
                             } else if (!z2) {
-                                this.f17526c.setHitModel(next);
+                                this.c.setHitModel(next);
                                 it.remove();
                             }
                         } else {
@@ -238,8 +234,7 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
             };
         }
         this.h.setCallback(this.j);
-        ImageLoader.a((IRequestHost) null, this.f.gift_icon).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.6
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a((IRequestHost) null, this.f.gift_icon).a((Target<Drawable>) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.6
             /* renamed from: a */
             public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
                 new SVGAPlayer.Builder(YYGiftAnimManager.this.f.gift_mp4).a((Integer) 1).a(SVGAImageView.FillMode.Clear).a(YYGiftAnimManager.this.h, new SVGADynamicEntity().a(((BitmapDrawable) drawable).getBitmap(), "QIU"));
@@ -278,8 +273,7 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
                 final SVGADynamicEntity sVGADynamicEntity = new SVGADynamicEntity();
                 if (YYGiftAnimManager.this.f != null) {
                     YYGiftAnimManager.this.a(sVGADynamicEntity);
-                    ImageLoader.a(YYGiftAnimManager.this.g.getFragmentActive(), YYGiftAnimManager.this.f.gift_avatar).a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.8.1
-                        @Override // com.bumptech.glide.request.target.Target
+                    ImageLoader.a(YYGiftAnimManager.this.g.getFragmentActive(), YYGiftAnimManager.this.f.gift_avatar).a((Target<Drawable>) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.8.1
                         /* renamed from: a */
                         public void onResourceReady(Drawable drawable, Transition<? super Drawable> transition) {
                             try {
@@ -302,7 +296,7 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
 
     private SVGAParser i() {
         if (this.i == null) {
-            this.i = SVGAParser.f15958a.b();
+            this.i = SVGAParser.a.b();
         }
         return this.i;
     }
@@ -324,10 +318,10 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
 
     public void a() {
         this.g = null;
-        GiftBaseHitView giftBaseHitView = this.f17526c;
+        GiftBaseHitView giftBaseHitView = this.c;
         if (giftBaseHitView != null) {
             giftBaseHitView.a();
-            this.f17526c = null;
+            this.c = null;
         }
         GiftBaseHitView giftBaseHitView2 = this.d;
         if (giftBaseHitView2 != null) {
@@ -335,7 +329,7 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
             this.d = null;
         }
         this.e = null;
-        this.f17525a.clear();
+        this.a.clear();
     }
 
     @Override // com.blued.android.module.yy_china.observer.GiftObserver
@@ -347,42 +341,42 @@ public class YYGiftAnimManager implements GiftHitListener, GiftObserver {
             this.g.postSafeRunOnUiThread(new Runnable() { // from class: com.blued.android.module.yy_china.manager.YYGiftAnimManager.1
                 @Override // java.lang.Runnable
                 public void run() {
-                    YYMsgGiftExtra a2 = YYGiftAnimManager.this.f17526c.a(yYImModel.getMsgExtra());
-                    if (!StringUtils.b(a2.json_contents)) {
-                        a2.json_contents_modes = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(a2.json_contents, (Class<Object>) YYMsgJsonGiftExtra.class);
+                    YYMsgGiftExtra a = YYGiftAnimManager.this.c.a(yYImModel.getMsgExtra());
+                    if (!StringUtils.b(a.json_contents)) {
+                        a.json_contents_modes = (YYMsgJsonGiftExtra) AppInfo.f().fromJson(a.json_contents, YYMsgJsonGiftExtra.class);
                     }
-                    int i = a2.is_luck_gift;
+                    int i = a.is_luck_gift;
                     if (i != 1) {
                         if (i == 2) {
-                            a2.gift_mp4 = a2.gift_svga;
-                            LogUtils.d("==yy==", "定制跑车礼物 svga：" + a2.gift_svga);
+                            a.gift_mp4 = a.gift_svga;
+                            LogUtils.d("==yy==", "定制跑车礼物 svga：" + a.gift_svga);
                         }
-                    } else if (a2.extra != null && !TextUtils.isEmpty(a2.extra.getImages_mp4())) {
-                        a2.gift_mp4 = a2.extra.getImages_mp4();
-                        LogUtils.d("==yy==", "幸运礼物 gift_mp4：" + a2.gift_mp4);
+                    } else if (a.extra != null && !TextUtils.isEmpty(a.extra.getImages_mp4())) {
+                        a.gift_mp4 = a.extra.getImages_mp4();
+                        LogUtils.d("==yy==", "幸运礼物 gift_mp4：" + a.gift_mp4);
                     }
-                    if (a2.json_contents_modes != null && StringUtils.a(a2.json_contents_modes.is_show_rain(), "1") && !StringUtils.b(a2.json_contents_modes.getRain_level_ani_url())) {
-                        a2.gift_mp4 = a2.json_contents_modes.getRain_level_ani_url();
+                    if (a.json_contents_modes != null && StringUtils.a(a.json_contents_modes.is_show_rain(), "1") && !StringUtils.b(a.json_contents_modes.getRain_level_ani_url())) {
+                        a.gift_mp4 = a.json_contents_modes.getRain_level_ani_url();
                     }
                     if (yYImModel.type == 110) {
-                        YYGiftAnimManager.this.b.add(a2);
+                        YYGiftAnimManager.this.b.add(a);
                         YYGiftAnimManager.this.c();
                         return;
                     }
                     if (z) {
-                        YYGiftAnimManager.this.f17525a.add(yYImModel);
+                        YYGiftAnimManager.this.a.add(yYImModel);
                     } else {
-                        YYGiftAnimManager.this.f17525a.add(0, yYImModel);
+                        YYGiftAnimManager.this.a.add(0, yYImModel);
                     }
-                    if (!TextUtils.isEmpty(a2.gift_mp4)) {
+                    if (!TextUtils.isEmpty(a.gift_mp4)) {
                         if (z) {
-                            YYGiftAnimManager.this.b.add(a2);
+                            YYGiftAnimManager.this.b.add(a);
                         } else {
-                            YYGiftAnimManager.this.b.add(0, a2);
+                            YYGiftAnimManager.this.b.add(0, a);
                         }
                         YYGiftAnimManager.this.c();
-                    } else if (a2.json_contents_modes == null || StringUtils.b(a2.json_contents_modes.getRain_level_ani_url()) || !StringUtils.a(a2.json_contents_modes.is_show_rain(), "0")) {
-                        YYGiftAnimManager.this.a(a2, yYImModel.target_profile.getUid(), yYImModel.source_profile.getUid());
+                    } else if (a.json_contents_modes == null || StringUtils.b(a.json_contents_modes.getRain_level_ani_url()) || !StringUtils.a(a.json_contents_modes.is_show_rain(), "0")) {
+                        YYGiftAnimManager.this.a(a, yYImModel.target_profile.getUid(), yYImModel.source_profile.getUid());
                     }
                     YYGiftAnimManager.this.b();
                 }

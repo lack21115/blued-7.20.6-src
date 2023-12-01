@@ -18,7 +18,6 @@ import com.google.protobuf.UnknownFieldSet;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
 
 /* loaded from: source-6737240-dex2jar.jar:cn/irisgw/live/UserProp.class */
 public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuilder {
@@ -44,8 +43,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
     private int uid_;
     private static final UserProp DEFAULT_INSTANCE = new UserProp();
     private static final Parser<UserProp> PARSER = new AbstractParser<UserProp>() { // from class: cn.irisgw.live.UserProp.1
-        @Override // com.google.protobuf.Parser
-        public UserProp parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public UserProp m8070parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new UserProp(codedInputStream, extensionRegistryLite);
         }
     };
@@ -99,7 +98,7 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
 
         public Builder addAllPropDesc(Iterable<String> iterable) {
             ensurePropDescIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.propDesc_);
+            AbstractMessageLite.Builder.addAll(iterable, this.propDesc_);
             onChanged();
             return this;
         }
@@ -107,7 +106,7 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         public Builder addPropDesc(String str) {
             if (str != null) {
                 ensurePropDescIsMutable();
-                this.propDesc_.add((LazyStringList) str);
+                this.propDesc_.add(str);
                 onChanged();
                 return this;
             }
@@ -125,22 +124,22 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m8072addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UserProp build() {
-            UserProp buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public UserProp m8074build() {
+            UserProp m8076buildPartial = m8076buildPartial();
+            if (m8076buildPartial.isInitialized()) {
+                return m8076buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m8076buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public UserProp buildPartial() {
+        /* renamed from: buildPartial */
+        public UserProp m8076buildPartial() {
             UserProp userProp = new UserProp(this);
             userProp.uid_ = this.uid_;
             userProp.prop_ = this.prop_;
@@ -159,8 +158,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return userProp;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m8080clear() {
             super.clear();
             this.uid_ = 0;
             this.prop_ = 0;
@@ -187,8 +186,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m8082clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -198,8 +197,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m8085clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -240,10 +239,9 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m8091clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.UserPropOrBuilder
@@ -251,12 +249,11 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this.countdown_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public UserProp getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public UserProp m8093getDefaultInstanceForType() {
             return UserProp.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_UserProp_descriptor;
         }
@@ -305,7 +302,7 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
 
         @Override // cn.irisgw.live.UserPropOrBuilder
         public String getPropDesc(int i) {
-            return this.propDesc_.get(i);
+            return (String) this.propDesc_.get(i);
         }
 
         @Override // cn.irisgw.live.UserPropOrBuilder
@@ -319,7 +316,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         }
 
         @Override // cn.irisgw.live.UserPropOrBuilder
-        public ProtocolStringList getPropDescList() {
+        /* renamed from: getPropDescList */
+        public ProtocolStringList mo8064getPropDescList() {
             return this.propDesc_.getUnmodifiableView();
         }
 
@@ -377,12 +375,10 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_UserProp_fieldAccessorTable.ensureFieldAccessorsInitialized(UserProp.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -428,18 +424,18 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
                 }
                 onChanged();
             }
-            mergeUnknownFields(userProp.unknownFields);
+            m8102mergeUnknownFields(userProp.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.UserProp.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.UserProp.Builder m8099mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -484,11 +480,11 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProp.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProp$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.UserProp.Builder.m8099mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.UserProp$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m8098mergeFrom(Message message) {
             if (message instanceof UserProp) {
                 return mergeFrom((UserProp) message);
             }
@@ -496,8 +492,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m8102mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -526,8 +522,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m8104setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -555,7 +551,7 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         public Builder setPropDesc(int i, String str) {
             if (str != null) {
                 ensurePropDescIsMutable();
-                this.propDesc_.set(i, (int) str);
+                this.propDesc_.set(i, str);
                 onChanged();
                 return this;
             }
@@ -606,8 +602,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m8106setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -617,8 +613,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m8108setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -669,7 +665,7 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
                                 this.propDesc_ = new LazyStringArrayList();
                                 z4 = z2 | true;
                             }
-                            this.propDesc_.add((LazyStringList) readStringRequireUtf8);
+                            this.propDesc_.add(readStringRequireUtf8);
                             z2 = z4;
                         } else if (!parseUnknownField(codedInputStream, newBuilder, extensionRegistryLite, readTag)) {
                         }
@@ -710,73 +706,72 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m8069toBuilder();
     }
 
     public static Builder newBuilder(UserProp userProp) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(userProp);
+        return DEFAULT_INSTANCE.m8069toBuilder().mergeFrom(userProp);
     }
 
     public static UserProp parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (UserProp) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static UserProp parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserProp) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UserProp parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (UserProp) PARSER.parseFrom(byteString);
     }
 
     public static UserProp parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (UserProp) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static UserProp parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (UserProp) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static UserProp parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserProp) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static UserProp parseFrom(InputStream inputStream) throws IOException {
-        return (UserProp) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static UserProp parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (UserProp) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static UserProp parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (UserProp) PARSER.parseFrom(byteBuffer);
     }
 
     public static UserProp parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (UserProp) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static UserProp parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (UserProp) PARSER.parseFrom(bArr);
     }
 
     public static UserProp parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (UserProp) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<UserProp> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
         }
         if (obj instanceof UserProp) {
             UserProp userProp = (UserProp) obj;
-            return getUid() == userProp.getUid() && this.prop_ == userProp.prop_ && getCountdown() == userProp.getCountdown() && getMaxCountdown() == userProp.getMaxCountdown() && getExtraDesc().equals(userProp.getExtraDesc()) && getPropIcon().equals(userProp.getPropIcon()) && getPropName().equals(userProp.getPropName()) && getPropCountdown() == userProp.getPropCountdown() && getPropDescList().equals(userProp.getPropDescList()) && this.unknownFields.equals(userProp.unknownFields);
+            return getUid() == userProp.getUid() && this.prop_ == userProp.prop_ && getCountdown() == userProp.getCountdown() && getMaxCountdown() == userProp.getMaxCountdown() && getExtraDesc().equals(userProp.getExtraDesc()) && getPropIcon().equals(userProp.getPropIcon()) && getPropName().equals(userProp.getPropName()) && getPropCountdown() == userProp.getPropCountdown() && mo8064getPropDescList().equals(userProp.mo8064getPropDescList()) && this.unknownFields.equals(userProp.unknownFields);
         }
         return super.equals(obj);
     }
@@ -786,8 +781,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         return this.countdown_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public UserProp getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public UserProp m8063getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -818,7 +813,6 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         return this.maxCountdown_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<UserProp> getParserForType() {
         return PARSER;
     }
@@ -840,7 +834,7 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
 
     @Override // cn.irisgw.live.UserPropOrBuilder
     public String getPropDesc(int i) {
-        return this.propDesc_.get(i);
+        return (String) this.propDesc_.get(i);
     }
 
     @Override // cn.irisgw.live.UserPropOrBuilder
@@ -854,7 +848,8 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
     }
 
     @Override // cn.irisgw.live.UserPropOrBuilder
-    public ProtocolStringList getPropDescList() {
+    /* renamed from: getPropDescList */
+    public ProtocolStringList mo8064getPropDescList() {
         return this.propDesc_;
     }
 
@@ -907,7 +902,6 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         return this.prop_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -951,7 +945,7 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         while (true) {
             int i15 = i14;
             if (i15 >= this.propDesc_.size()) {
-                int size = i12 + i13 + (getPropDescList().size() * 1) + this.unknownFields.getSerializedSize();
+                int size = i12 + i13 + (mo8064getPropDescList().size() * 1) + this.unknownFields.getSerializedSize();
                 this.memoizedSize = size;
                 return size;
             }
@@ -965,12 +959,10 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -978,19 +970,17 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         int hashCode = ((((((((((((((((((((((((((((((((779 + getDescriptor().hashCode()) * 37) + 1) * 53) + getUid()) * 37) + 2) * 53) + this.prop_) * 37) + 3) * 53) + getCountdown()) * 37) + 4) * 53) + getMaxCountdown()) * 37) + 5) * 53) + getExtraDesc().hashCode()) * 37) + 6) * 53) + getPropIcon().hashCode()) * 37) + 7) * 53) + getPropName().hashCode()) * 37) + 8) * 53) + getPropCountdown();
         int i = hashCode;
         if (getPropDescCount() > 0) {
-            i = (((hashCode * 37) + 9) * 53) + getPropDescList().hashCode();
+            i = (((hashCode * 37) + 9) * 53) + mo8064getPropDescList().hashCode();
         }
         int hashCode2 = (i * 29) + this.unknownFields.hashCode();
         this.memoizedHashCode = hashCode2;
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_UserProp_fieldAccessorTable.ensureFieldAccessorsInitialized(UserProp.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1003,28 +993,26 @@ public final class UserProp extends GeneratedMessageV3 implements UserPropOrBuil
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m8067newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m8066newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new UserProp();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m8069toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = this.uid_;
         if (i != 0) {

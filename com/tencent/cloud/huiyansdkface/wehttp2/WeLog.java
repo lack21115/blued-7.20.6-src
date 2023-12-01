@@ -9,6 +9,7 @@ import com.tencent.cloud.huiyansdkface.okhttp3.MultipartBody;
 import com.tencent.cloud.huiyansdkface.okhttp3.RequestBody;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.platform.Platform;
 import com.tencent.cloud.huiyansdkface.okio.Buffer;
+import com.tencent.thumbplayer.api.TPErrorCode;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.util.Collections;
@@ -20,7 +21,7 @@ public final class WeLog implements Interceptor {
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    InnerLogger f36131c;
+    InnerLogger f22440c;
     volatile Level d;
     private boolean f;
     private Logger g;
@@ -30,7 +31,7 @@ public final class WeLog implements Interceptor {
     private static final Charset e = Charset.forName("UTF-8");
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Logger f36130a = new Logger() { // from class: com.tencent.cloud.huiyansdkface.wehttp2.WeLog.1
+    public static final Logger f22439a = new Logger() { // from class: com.tencent.cloud.huiyansdkface.wehttp2.WeLog.1
         @Override // com.tencent.cloud.huiyansdkface.wehttp2.WeLog.Logger
         public void log(String str) {
             Platform.get().log(4, str, null);
@@ -41,11 +42,11 @@ public final class WeLog implements Interceptor {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f36133a = false;
+        boolean f22442a = false;
         boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        boolean f36134c = false;
+        boolean f22443c = false;
         int d = 3072;
         Level e = Level.NONE;
         ILogTag f = null;
@@ -53,9 +54,9 @@ public final class WeLog implements Interceptor {
 
         public WeLog build() {
             WeLog weLog = new WeLog();
-            weLog.prettyLog(this.f36133a);
+            weLog.prettyLog(this.f22442a);
             weLog.logTag(this.b);
-            weLog.cutLongStr(this.f36134c);
+            weLog.cutLongStr(this.f22443c);
             weLog.longStrLength(this.d);
             weLog.setLevel(this.e);
             weLog.setLogger(this.g);
@@ -63,7 +64,7 @@ public final class WeLog implements Interceptor {
         }
 
         public Builder setCutLongStr(boolean z) {
-            this.f36134c = z;
+            this.f22443c = z;
             return this;
         }
 
@@ -93,7 +94,7 @@ public final class WeLog implements Interceptor {
         }
 
         public Builder setPrettyLog(boolean z) {
-            this.f36133a = z;
+            this.f22442a = z;
             return this;
         }
     }
@@ -121,7 +122,7 @@ public final class WeLog implements Interceptor {
                     indexOf = length;
                 }
                 while (true) {
-                    min = Math.min(indexOf, i2 + 4000);
+                    min = Math.min(indexOf, i2 + TPErrorCode.TP_ERROR_TYPE_DOWNLOAD_PROXY);
                     log(str.substring(i2, min));
                     if (min >= indexOf) {
                         break;
@@ -147,13 +148,13 @@ public final class WeLog implements Interceptor {
     }
 
     public WeLog() {
-        this(f36130a);
+        this(f22439a);
     }
 
     public WeLog(Logger logger) {
         this.f = false;
         this.b = false;
-        this.f36131c = new InnerLogger() { // from class: com.tencent.cloud.huiyansdkface.wehttp2.WeLog.2
+        this.f22440c = new InnerLogger() { // from class: com.tencent.cloud.huiyansdkface.wehttp2.WeLog.2
             @Override // com.tencent.cloud.huiyansdkface.wehttp2.WeLog.InnerLogger
             public void log(String str) {
                 if (WeLog.this.g != null) {
@@ -186,7 +187,7 @@ public final class WeLog implements Interceptor {
 
     private void a(String str, Headers headers, int i) {
         String value = this.h.contains(headers.name(i)) ? "██" : headers.value(i);
-        InnerLogger innerLogger = this.f36131c;
+        InnerLogger innerLogger = this.f22440c;
         innerLogger.print(str + headers.name(i) + ": " + value);
     }
 
@@ -194,14 +195,14 @@ public final class WeLog implements Interceptor {
         StringBuilder sb;
         InnerLogger innerLogger;
         if (!this.i || str2 == null) {
-            InnerLogger innerLogger2 = this.f36131c;
+            InnerLogger innerLogger2 = this.f22440c;
             StringBuilder sb2 = new StringBuilder();
             sb2.append(str);
             sb2.append(str2);
             sb = sb2;
             innerLogger = innerLogger2;
         } else {
-            InnerLogger innerLogger3 = this.f36131c;
+            InnerLogger innerLogger3 = this.f22440c;
             StringBuilder sb3 = new StringBuilder();
             sb3.append(str);
             sb3.append(WeLogUtils.getShortString(str2, this.j));

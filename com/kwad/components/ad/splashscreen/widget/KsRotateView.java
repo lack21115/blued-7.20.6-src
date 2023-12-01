@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import androidx.constraintlayout.motion.widget.Key;
 import com.kwad.sdk.R;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/ad/splashscreen/widget/KsRotateView.class */
@@ -76,20 +77,20 @@ public class KsRotateView extends b {
         AnimatorSet animatorSet = new AnimatorSet();
         interactionView.setPivotX(interactionView.getWidth() / 2.0f);
         interactionView.setPivotY(interactionView.getHeight() / 2.0f);
-        ObjectAnimator duration = ObjectAnimator.ofFloat(interactionView, "rotation", 0.0f, EO).setDuration(500L);
+        ObjectAnimator duration = ObjectAnimator.ofFloat(interactionView, Key.ROTATION, 0.0f, EO).setDuration(500L);
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(interactionView, "alpha", 1.0f, 1.0f);
         ofFloat.setDuration(340L);
-        ObjectAnimator duration2 = ObjectAnimator.ofFloat(interactionView, "rotation", EO, 0.0f).setDuration(EM);
-        ObjectAnimator duration3 = ObjectAnimator.ofFloat(interactionView, "rotation", 0.0f, EP).setDuration(EM);
-        ObjectAnimator duration4 = ObjectAnimator.ofFloat(interactionView, "rotation", EP, 0.0f).setDuration(EM);
-        ObjectAnimator duration5 = ObjectAnimator.ofFloat(interactionView, "rotation", 0.0f, EN).setDuration(EM);
-        ObjectAnimator duration6 = ObjectAnimator.ofFloat(interactionView, "rotation", EN, 0.0f).setDuration(EM);
+        ObjectAnimator duration2 = ObjectAnimator.ofFloat(interactionView, Key.ROTATION, EO, 0.0f).setDuration(EM);
+        ObjectAnimator duration3 = ObjectAnimator.ofFloat(interactionView, Key.ROTATION, 0.0f, EP).setDuration(EM);
+        ObjectAnimator duration4 = ObjectAnimator.ofFloat(interactionView, Key.ROTATION, EP, 0.0f).setDuration(EM);
+        ObjectAnimator duration5 = ObjectAnimator.ofFloat(interactionView, Key.ROTATION, 0.0f, EN).setDuration(EM);
+        ObjectAnimator duration6 = ObjectAnimator.ofFloat(interactionView, Key.ROTATION, EN, 0.0f).setDuration(EM);
         ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(interactionView, "alpha", 1.0f, 1.0f);
         ofFloat2.setDuration(500L);
-        ObjectAnimator duration7 = ObjectAnimator.ofFloat(interactionView, "rotation", 0.0f, EQ).setDuration(500L);
+        ObjectAnimator duration7 = ObjectAnimator.ofFloat(interactionView, Key.ROTATION, 0.0f, EQ).setDuration(500L);
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(interactionView, "alpha", 1.0f, 1.0f);
         ofFloat.setDuration(340L);
-        animatorSet.playSequentially(duration, ofFloat, duration2, duration3, duration4, duration5, duration6, ofFloat2, duration7, ofFloat3, ObjectAnimator.ofFloat(interactionView, "rotation", EQ, 0.0f).setDuration(EM), ObjectAnimator.ofFloat(interactionView, "rotation", 0.0f, EN).setDuration(EM), ObjectAnimator.ofFloat(interactionView, "rotation", EN, 0.0f).setDuration(EM), ObjectAnimator.ofFloat(interactionView, "rotation", 0.0f, EP).setDuration(EM), ObjectAnimator.ofFloat(interactionView, "rotation", EP, 0.0f).setDuration(EM));
+        animatorSet.playSequentially(duration, ofFloat, duration2, duration3, duration4, duration5, duration6, ofFloat2, duration7, ofFloat3, ObjectAnimator.ofFloat(interactionView, Key.ROTATION, EQ, 0.0f).setDuration(EM), ObjectAnimator.ofFloat(interactionView, Key.ROTATION, 0.0f, EN).setDuration(EM), ObjectAnimator.ofFloat(interactionView, Key.ROTATION, EN, 0.0f).setDuration(EM), ObjectAnimator.ofFloat(interactionView, Key.ROTATION, 0.0f, EP).setDuration(EM), ObjectAnimator.ofFloat(interactionView, Key.ROTATION, EP, 0.0f).setDuration(EM));
         return animatorSet;
     }
 

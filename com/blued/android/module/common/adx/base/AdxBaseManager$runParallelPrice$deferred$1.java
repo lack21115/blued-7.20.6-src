@@ -24,9 +24,7 @@ import kotlinx.coroutines.flow.FlowKt;
 @DebugMetadata(b = "AdxBaseManager.kt", c = {175, 1407}, d = "invokeSuspend", e = "com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$deferred$1")
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/adx/base/AdxBaseManager$runParallelPrice$deferred$1.class */
 public final class AdxBaseManager$runParallelPrice$deferred$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f10517a;
+    int a;
     final /* synthetic */ AdxBaseManager b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -39,7 +37,7 @@ public final class AdxBaseManager$runParallelPrice$deferred$1 extends SuspendLam
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((AdxBaseManager$runParallelPrice$deferred$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((AdxBaseManager$runParallelPrice$deferred$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -50,31 +48,31 @@ public final class AdxBaseManager$runParallelPrice$deferred$1 extends SuspendLam
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         ArrayList arrayList;
-        Object a2 = IntrinsicsKt.a();
-        int i = this.f10517a;
+        Object a = IntrinsicsKt.a();
+        int i = this.a;
         if (i == 0) {
             ResultKt.a(obj);
             AdxBaseManager adxBaseManager = this.b;
-            arrayList = adxBaseManager.f10449c;
-            this.f10517a = 1;
-            Object a3 = adxBaseManager.a(arrayList, this);
-            obj = a3;
-            if (a3 == a2) {
-                return a2;
+            arrayList = adxBaseManager.c;
+            this.a = 1;
+            Object a2 = adxBaseManager.a(arrayList, this);
+            obj = a2;
+            if (a2 == a) {
+                return a;
             }
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.a(obj);
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
             ResultKt.a(obj);
         }
-        Flow a4 = FlowKt.a(FlowKt.a(FlowKt.a((Function2) new AdxBaseManager$runParallelPrice$deferred$1$invokeSuspend$$inlined$transform$1((Flow) obj, null)), Dispatchers.b()));
+        Flow a3 = FlowKt.a(FlowKt.a(FlowKt.a((Function2) new AdxBaseManager$runParallelPrice$deferred$1$invokeSuspend$$inlined$transform$1((Flow) obj, null)), Dispatchers.b()));
         final AdxBaseManager adxBaseManager2 = this.b;
-        this.f10517a = 2;
-        if (a4.a(new FlowCollector<ADEvent>() { // from class: com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$deferred$1$invokeSuspend$$inlined$collect$1
+        this.a = 2;
+        if (a3.a(new FlowCollector<ADEvent>() { // from class: com.blued.android.module.common.adx.base.AdxBaseManager$runParallelPrice$deferred$1$invokeSuspend$$inlined$collect$1
             @Override // kotlinx.coroutines.flow.FlowCollector
             public Object emit(ADEvent aDEvent, Continuation<? super Unit> continuation) {
                 ArrayList arrayList2;
@@ -96,13 +94,13 @@ public final class AdxBaseManager$runParallelPrice$deferred$1 extends SuspendLam
                         arrayList2 = AdxBaseManager.this.b;
                         adxBaseManager4.a(bluedADExtra, model, arrayList2);
                     }
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
                 throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.login.model.BluedADExtra");
             }
-        }, this) == a2) {
-            return a2;
+        }, this) == a) {
+            return a;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

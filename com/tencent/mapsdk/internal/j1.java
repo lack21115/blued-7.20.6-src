@@ -27,7 +27,7 @@ import javax.microedition.khronos.opengles.GL10;
 public class j1 implements c1, mf.a, qh.j {
 
     /* renamed from: a  reason: collision with root package name */
-    private final e1 f37560a;
+    private final e1 f23869a;
     private Marker d;
     private Marker e;
     private Marker f;
@@ -41,7 +41,7 @@ public class j1 implements c1, mf.a, qh.j {
     private Marker b = null;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f37561c = false;
+    private boolean f23870c = false;
     private final Map<Class<? extends vc>, uc> n = new HashMap();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/mapsdk/internal/j1$a.class */
@@ -53,22 +53,22 @@ public class j1 implements c1, mf.a, qh.j {
         public boolean onMarkerClick(Marker marker) {
             if (j1.this.g == null) {
                 j1 j1Var = j1.this;
-                j1Var.g = da.a(j1Var.f37560a.getContext());
+                j1Var.g = da.a(j1Var.f23869a.getContext());
             }
-            na.a(j1.this.f37560a.getContext(), j1.this.g);
+            na.a(j1.this.f23869a.getContext(), j1.this.g);
             return false;
         }
     }
 
     public j1(i1 i1Var, e1 e1Var) {
-        this.f37560a = e1Var;
+        this.f23869a = e1Var;
         this.i = i1Var;
     }
 
     private boolean b(float f, float f2) {
         List<x4> list;
         y4 y4Var;
-        TappedElement a2 = this.f37560a.f().a(f, f2);
+        TappedElement a2 = this.f23869a.f().a(f, f2);
         if (a2 == null) {
             return false;
         }
@@ -101,7 +101,7 @@ public class j1 implements c1, mf.a, qh.j {
     /* JADX WARN: Multi-variable type inference failed */
     public <O extends vc, L extends tc<O>> L a(O o) {
         qd ddVar;
-        e1 e1Var = this.f37560a;
+        e1 e1Var = this.f23869a;
         if (o == null || e1Var == null) {
             return null;
         }
@@ -147,7 +147,7 @@ public class j1 implements c1, mf.a, qh.j {
 
     @Override // com.tencent.mapsdk.internal.c1
     public void a() {
-        this.f37561c = false;
+        this.f23870c = false;
         this.b = null;
     }
 
@@ -168,13 +168,13 @@ public class j1 implements c1, mf.a, qh.j {
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.anchor(0.5f, 0.5f);
             markerOptions.tag(mf.j);
-            markerOptions.icon(BitmapDescriptorFactory.fromBitmap(this.f37560a, bitmap));
+            markerOptions.icon(BitmapDescriptorFactory.fromBitmap(this.f23869a, bitmap));
             Marker a2 = this.i.a(markerOptions);
             this.f = a2;
             a2.setFixingPoint(i / 2, i2 / 2);
             this.f.setClickable(false);
         } else {
-            marker.setIcon(BitmapDescriptorFactory.fromBitmap(this.f37560a, bitmap));
+            marker.setIcon(BitmapDescriptorFactory.fromBitmap(this.f23869a, bitmap));
             this.f.setFixingPoint(i / 2, i2 / 2);
         }
         ha.a(bitmap);
@@ -182,13 +182,13 @@ public class j1 implements c1, mf.a, qh.j {
 
     @Override // com.tencent.mapsdk.internal.c1
     public void a(MotionEvent motionEvent) {
-        if (this.f37560a == null || !this.f37561c || this.b == null) {
+        if (this.f23869a == null || !this.f23870c || this.b == null) {
             return;
         }
         int action = motionEvent.getAction();
         if (action != 1) {
             if (action == 2) {
-                this.b.setPosition(fa.d(this.f37560a.getProjection().a(new p5((int) motionEvent.getX(), (int) motionEvent.getY()))));
+                this.b.setPosition(fa.d(this.f23869a.getProjection().a(new p5((int) motionEvent.getX(), (int) motionEvent.getY()))));
                 TencentMap.OnMarkerDragListener onMarkerDragListener = this.h;
                 if (onMarkerDragListener != null) {
                     onMarkerDragListener.onMarkerDrag(this.b);
@@ -199,7 +199,7 @@ public class j1 implements c1, mf.a, qh.j {
                 return;
             }
         }
-        this.f37561c = false;
+        this.f23870c = false;
         TencentMap.OnMarkerDragListener onMarkerDragListener2 = this.h;
         if (onMarkerDragListener2 != null) {
             onMarkerDragListener2.onMarkerDragEnd(this.b);
@@ -222,7 +222,7 @@ public class j1 implements c1, mf.a, qh.j {
             a3.setClickable(false);
         }
         this.e.setFixingPoint(rect.left, rect.top);
-        this.e.setIcon(BitmapDescriptorFactory.fromBitmap(this.f37560a, a2));
+        this.e.setIcon(BitmapDescriptorFactory.fromBitmap(this.f23869a, a2));
         this.e.setVisible(z);
         ha.a(a2);
     }
@@ -277,22 +277,22 @@ public class j1 implements c1, mf.a, qh.j {
     public void a(String str) {
         if (str.trim().length() == 0) {
             this.b = null;
-            this.f37561c = false;
+            this.f23870c = false;
             return;
         }
         Marker marker = (Marker) this.i.a(str, w0.class);
         this.b = marker;
         if (marker != null) {
-            e1 e1Var = this.f37560a;
+            e1 e1Var = this.f23869a;
             if ((e1Var instanceof q1) && a((q1) e1Var, marker)) {
                 return;
             }
             if (!this.b.isDraggable()) {
                 this.b = null;
-                this.f37561c = false;
+                this.f23870c = false;
                 return;
             }
-            this.f37561c = true;
+            this.f23870c = true;
             TencentMap.OnMarkerDragListener onMarkerDragListener = this.h;
             if (onMarkerDragListener != null) {
                 onMarkerDragListener.onMarkerDragStart(this.b);
@@ -358,7 +358,7 @@ public class j1 implements c1, mf.a, qh.j {
             }
         }
         this.d.setFixingPoint(rect.left, rect.top);
-        this.d.setIcon(BitmapDescriptorFactory.fromBitmap(this.f37560a, a2));
+        this.d.setIcon(BitmapDescriptorFactory.fromBitmap(this.f23869a, a2));
         this.d.setVisible(z);
         ha.a(a2);
     }
@@ -400,7 +400,7 @@ public class j1 implements c1, mf.a, qh.j {
     }
 
     public boolean c(float f, float f2) {
-        TappedElement a2 = this.f37560a.f().a(f, f2);
+        TappedElement a2 = this.f23869a.f().a(f, f2);
         if (a2 != null && a2.type == 3) {
             v4 v4Var = this.m;
             if (v4Var != null) {
@@ -425,7 +425,7 @@ public class j1 implements c1, mf.a, qh.j {
     }
 
     public boolean d(float f, float f2) {
-        TappedElement a2 = this.f37560a.f().a(f, f2);
+        TappedElement a2 = this.f23869a.f().a(f, f2);
         return a2 != null && a2.type == 6;
     }
 

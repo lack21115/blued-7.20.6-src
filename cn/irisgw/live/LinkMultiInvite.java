@@ -40,8 +40,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
     private List<LinkMultiInviteUser> users_;
     private static final LinkMultiInvite DEFAULT_INSTANCE = new LinkMultiInvite();
     private static final Parser<LinkMultiInvite> PARSER = new AbstractParser<LinkMultiInvite>() { // from class: cn.irisgw.live.LinkMultiInvite.1
-        @Override // com.google.protobuf.Parser
-        public LinkMultiInvite parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public LinkMultiInvite m4136parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new LinkMultiInvite(codedInputStream, extensionRegistryLite);
         }
     };
@@ -109,24 +109,24 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return this;
             }
             ensureUsersIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.users_);
+            AbstractMessageLite.Builder.addAll(iterable, this.users_);
             onChanged();
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m4138addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
         public Builder addUsers(int i, LinkMultiInviteUser.Builder builder) {
             RepeatedFieldBuilderV3<LinkMultiInviteUser, LinkMultiInviteUser.Builder, LinkMultiInviteUserOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m4187build());
                 return this;
             }
             ensureUsersIsMutable();
-            this.users_.add(i, builder.build());
+            this.users_.add(i, builder.m4187build());
             onChanged();
             return this;
         }
@@ -149,11 +149,11 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         public Builder addUsers(LinkMultiInviteUser.Builder builder) {
             RepeatedFieldBuilderV3<LinkMultiInviteUser, LinkMultiInviteUser.Builder, LinkMultiInviteUserOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m4187build());
                 return this;
             }
             ensureUsersIsMutable();
-            this.users_.add(builder.build());
+            this.users_.add(builder.m4187build());
             onChanged();
             return this;
         }
@@ -181,17 +181,17 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return getUsersFieldBuilder().addBuilder(i, LinkMultiInviteUser.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LinkMultiInvite build() {
-            LinkMultiInvite buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public LinkMultiInvite m4140build() {
+            LinkMultiInvite m4142buildPartial = m4142buildPartial();
+            if (m4142buildPartial.isInitialized()) {
+                return m4142buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m4142buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public LinkMultiInvite buildPartial() {
+        /* renamed from: buildPartial */
+        public LinkMultiInvite m4142buildPartial() {
             LinkMultiInvite linkMultiInvite = new LinkMultiInvite(this);
             linkMultiInvite.uid_ = this.uid_;
             linkMultiInvite.name_ = this.name_;
@@ -212,10 +212,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return linkMultiInvite;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m4146clear() {
             super.clear();
-            this.uid_ = 0L;
+            this.uid_ = LinkMultiInvite.serialVersionUID;
             this.name_ = "";
             this.type_ = 0;
             RepeatedFieldBuilderV3<LinkMultiInviteUser, LinkMultiInviteUser.Builder, LinkMultiInviteUserOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
@@ -236,8 +236,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m4148clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -247,8 +247,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m4151clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -265,7 +265,7 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         }
 
         public Builder clearUid() {
-            this.uid_ = 0L;
+            this.uid_ = LinkMultiInvite.serialVersionUID;
             onChanged();
             return this;
         }
@@ -282,10 +282,9 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m4157clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.LinkMultiInviteOrBuilder
@@ -310,12 +309,11 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LinkMultiInvite getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LinkMultiInvite m4159getDefaultInstanceForType() {
             return LinkMultiInvite.getDefaultInstance();
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_LinkMultiInvite_descriptor;
         }
@@ -386,7 +384,7 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         @Override // cn.irisgw.live.LinkMultiInviteOrBuilder
         public LinkMultiInviteUserOrBuilder getUsersOrBuilder(int i) {
             RepeatedFieldBuilderV3<LinkMultiInviteUser, LinkMultiInviteUser.Builder, LinkMultiInviteUserOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.users_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.users_.get(i) : (LinkMultiInviteUserOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.LinkMultiInviteOrBuilder
@@ -395,12 +393,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return repeatedFieldBuilderV3 != null ? repeatedFieldBuilderV3.getMessageOrBuilderList() : Collections.unmodifiableList(this.users_);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LinkMultiInvite_fieldAccessorTable.ensureFieldAccessorsInitialized(LinkMultiInvite.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -409,7 +405,7 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             if (linkMultiInvite == LinkMultiInvite.getDefaultInstance()) {
                 return this;
             }
-            if (linkMultiInvite.getUid() != 0) {
+            if (linkMultiInvite.getUid() != LinkMultiInvite.serialVersionUID) {
                 setUid(linkMultiInvite.getUid());
             }
             if (!linkMultiInvite.getName().isEmpty()) {
@@ -452,18 +448,18 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             if (linkMultiInvite.getTimeout() != 0) {
                 setTimeout(linkMultiInvite.getTimeout());
             }
-            mergeUnknownFields(linkMultiInvite.unknownFields);
+            m4168mergeUnknownFields(linkMultiInvite.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.LinkMultiInvite.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.LinkMultiInvite.Builder m4165mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -508,11 +504,11 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LinkMultiInvite.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LinkMultiInvite$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LinkMultiInvite.Builder.m4165mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LinkMultiInvite$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m4164mergeFrom(Message message) {
             if (message instanceof LinkMultiInvite) {
                 return mergeFrom((LinkMultiInvite) message);
             }
@@ -520,8 +516,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m4168mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -556,8 +552,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m4170setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -580,8 +576,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             throw null;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m4172setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -603,19 +599,19 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m4174setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
 
         public Builder setUsers(int i, LinkMultiInviteUser.Builder builder) {
             RepeatedFieldBuilderV3<LinkMultiInviteUser, LinkMultiInviteUser.Builder, LinkMultiInviteUserOrBuilder> repeatedFieldBuilderV3 = this.usersBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m4187build());
                 return this;
             }
             ensureUsersIsMutable();
-            this.users_.set(i, builder.build());
+            this.users_.set(i, builder.m4187build());
             onChanged();
             return this;
         }
@@ -648,8 +644,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         private long uid_;
         private static final LinkMultiInviteUser DEFAULT_INSTANCE = new LinkMultiInviteUser();
         private static final Parser<LinkMultiInviteUser> PARSER = new AbstractParser<LinkMultiInviteUser>() { // from class: cn.irisgw.live.LinkMultiInvite.LinkMultiInviteUser.1
-            @Override // com.google.protobuf.Parser
-            public LinkMultiInviteUser parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+            /* renamed from: parsePartialFrom */
+            public LinkMultiInviteUser m4183parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
                 return new LinkMultiInviteUser(codedInputStream, extensionRegistryLite);
             }
         };
@@ -681,22 +677,22 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 boolean unused = LinkMultiInviteUser.alwaysUseFieldBuilders;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: addRepeatedField */
+            public Builder m4185addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.addRepeatedField(fieldDescriptor, obj);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public LinkMultiInviteUser build() {
-                LinkMultiInviteUser buildPartial = buildPartial();
-                if (buildPartial.isInitialized()) {
-                    return buildPartial;
+            /* renamed from: build */
+            public LinkMultiInviteUser m4187build() {
+                LinkMultiInviteUser m4189buildPartial = m4189buildPartial();
+                if (m4189buildPartial.isInitialized()) {
+                    return m4189buildPartial;
                 }
-                throw newUninitializedMessageException((Message) buildPartial);
+                throw newUninitializedMessageException(m4189buildPartial);
             }
 
-            @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public LinkMultiInviteUser buildPartial() {
+            /* renamed from: buildPartial */
+            public LinkMultiInviteUser m4189buildPartial() {
                 LinkMultiInviteUser linkMultiInviteUser = new LinkMultiInviteUser(this);
                 linkMultiInviteUser.uid_ = this.uid_;
                 linkMultiInviteUser.name_ = this.name_;
@@ -705,10 +701,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return linkMultiInviteUser;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-            public Builder clear() {
+            /* renamed from: clear */
+            public Builder m4193clear() {
                 super.clear();
-                this.uid_ = 0L;
+                this.uid_ = LinkMultiInviteUser.serialVersionUID;
                 this.name_ = "";
                 this.avatar_ = "";
                 return this;
@@ -720,8 +716,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+            /* renamed from: clearField */
+            public Builder m4195clearField(Descriptors.FieldDescriptor fieldDescriptor) {
                 return (Builder) super.clearField(fieldDescriptor);
             }
 
@@ -731,21 +727,20 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+            /* renamed from: clearOneof */
+            public Builder m4198clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
                 return (Builder) super.clearOneof(oneofDescriptor);
             }
 
             public Builder clearUid() {
-                this.uid_ = 0L;
+                this.uid_ = LinkMultiInviteUser.serialVersionUID;
                 onChanged();
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
             /* renamed from: clone */
-            public Builder mo1800clone() {
-                return (Builder) super.mo1800clone();
+            public Builder m4204clone() {
+                return (Builder) super.clone();
             }
 
             @Override // cn.irisgw.live.LinkMultiInvite.LinkMultiInviteUserOrBuilder
@@ -770,12 +765,11 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return (ByteString) obj;
             }
 
-            @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-            public LinkMultiInviteUser getDefaultInstanceForType() {
+            /* renamed from: getDefaultInstanceForType */
+            public LinkMultiInviteUser m4206getDefaultInstanceForType() {
                 return LinkMultiInviteUser.getDefaultInstance();
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
             public Descriptors.Descriptor getDescriptorForType() {
                 return LiveConstants.internal_static_cn_irisgw_live_LinkMultiInvite_LinkMultiInviteUser_descriptor;
             }
@@ -807,12 +801,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return this.uid_;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder
             public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
                 return LiveConstants.internal_static_cn_irisgw_live_LinkMultiInvite_LinkMultiInviteUser_fieldAccessorTable.ensureFieldAccessorsInitialized(LinkMultiInviteUser.class, Builder.class);
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
             public final boolean isInitialized() {
                 return true;
             }
@@ -821,7 +813,7 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 if (linkMultiInviteUser == LinkMultiInviteUser.getDefaultInstance()) {
                     return this;
                 }
-                if (linkMultiInviteUser.getUid() != 0) {
+                if (linkMultiInviteUser.getUid() != LinkMultiInviteUser.serialVersionUID) {
                     setUid(linkMultiInviteUser.getUid());
                 }
                 if (!linkMultiInviteUser.getName().isEmpty()) {
@@ -832,18 +824,18 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                     this.avatar_ = linkMultiInviteUser.avatar_;
                     onChanged();
                 }
-                mergeUnknownFields(linkMultiInviteUser.unknownFields);
+                m4215mergeUnknownFields(linkMultiInviteUser.unknownFields);
                 onChanged();
                 return this;
             }
 
             /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+            /* renamed from: mergeFrom */
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct code enable 'Show inconsistent code' option in preferences
             */
-            public cn.irisgw.live.LinkMultiInvite.LinkMultiInviteUser.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+            public cn.irisgw.live.LinkMultiInvite.LinkMultiInviteUser.Builder m4212mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
                 /*
                     r4 = this;
                     r0 = 0
@@ -888,11 +880,11 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                     r0 = r6
                     throw r0
                 */
-                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LinkMultiInvite.LinkMultiInviteUser.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LinkMultiInvite$LinkMultiInviteUser$Builder");
+                throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.LinkMultiInvite.LinkMultiInviteUser.Builder.m4212mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.LinkMultiInvite$LinkMultiInviteUser$Builder");
             }
 
-            @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public Builder mergeFrom(Message message) {
+            /* renamed from: mergeFrom */
+            public Builder m4211mergeFrom(Message message) {
                 if (message instanceof LinkMultiInviteUser) {
                     return mergeFrom((LinkMultiInviteUser) message);
                 }
@@ -900,8 +892,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-            public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: mergeUnknownFields */
+            public final Builder m4215mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.mergeUnknownFields(unknownFieldSet);
             }
 
@@ -924,8 +916,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+            /* renamed from: setField */
+            public Builder m4217setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
                 return (Builder) super.setField(fieldDescriptor, obj);
             }
 
@@ -948,8 +940,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 throw null;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+            /* renamed from: setRepeatedField */
+            public Builder m4219setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
                 return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
             }
 
@@ -959,8 +951,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
                 return this;
             }
 
-            @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-            public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+            /* renamed from: setUnknownFields */
+            public final Builder m4221setUnknownFields(UnknownFieldSet unknownFieldSet) {
                 return (Builder) super.setUnknownFields(unknownFieldSet);
             }
         }
@@ -1021,66 +1013,65 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         }
 
         public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
+            return DEFAULT_INSTANCE.m4182toBuilder();
         }
 
         public static Builder newBuilder(LinkMultiInviteUser linkMultiInviteUser) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(linkMultiInviteUser);
+            return DEFAULT_INSTANCE.m4182toBuilder().mergeFrom(linkMultiInviteUser);
         }
 
         public static LinkMultiInviteUser parseDelimitedFrom(InputStream inputStream) throws IOException {
-            return (LinkMultiInviteUser) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
         }
 
         public static LinkMultiInviteUser parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (LinkMultiInviteUser) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static LinkMultiInviteUser parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString);
+            return (LinkMultiInviteUser) PARSER.parseFrom(byteString);
         }
 
         public static LinkMultiInviteUser parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteString, extensionRegistryLite);
+            return (LinkMultiInviteUser) PARSER.parseFrom(byteString, extensionRegistryLite);
         }
 
         public static LinkMultiInviteUser parseFrom(CodedInputStream codedInputStream) throws IOException {
-            return (LinkMultiInviteUser) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
         }
 
         public static LinkMultiInviteUser parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (LinkMultiInviteUser) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
         }
 
         public static LinkMultiInviteUser parseFrom(InputStream inputStream) throws IOException {
-            return (LinkMultiInviteUser) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
         }
 
         public static LinkMultiInviteUser parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-            return (LinkMultiInviteUser) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+            return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
         }
 
         public static LinkMultiInviteUser parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer);
+            return (LinkMultiInviteUser) PARSER.parseFrom(byteBuffer);
         }
 
         public static LinkMultiInviteUser parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+            return (LinkMultiInviteUser) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
         }
 
         public static LinkMultiInviteUser parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr);
+            return (LinkMultiInviteUser) PARSER.parseFrom(bArr);
         }
 
         public static LinkMultiInviteUser parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-            return PARSER.parseFrom(bArr, extensionRegistryLite);
+            return (LinkMultiInviteUser) PARSER.parseFrom(bArr, extensionRegistryLite);
         }
 
         public static Parser<LinkMultiInviteUser> parser() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public boolean equals(Object obj) {
             if (obj == this) {
                 return true;
@@ -1114,8 +1105,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public LinkMultiInviteUser getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public LinkMultiInviteUser m4177getDefaultInstanceForType() {
             return DEFAULT_INSTANCE;
         }
 
@@ -1141,12 +1132,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
         public Parser<LinkMultiInviteUser> getParserForType() {
             return PARSER;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public int getSerializedSize() {
             int i = this.memoizedSize;
             if (i != -1) {
@@ -1154,7 +1143,7 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             }
             int i2 = 0;
             long j = this.uid_;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 i2 = 0 + CodedOutputStream.computeUInt64Size(1, j);
             }
             int i3 = i2;
@@ -1175,12 +1164,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return this.uid_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
         public final UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
         public int hashCode() {
             if (this.memoizedHashCode != 0) {
                 return this.memoizedHashCode;
@@ -1190,12 +1177,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return hashCode;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_LinkMultiInvite_LinkMultiInviteUser_fieldAccessorTable.ensureFieldAccessorsInitialized(LinkMultiInviteUser.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             byte b = this.memoizedIsInitialized;
             if (b == 1) {
@@ -1208,31 +1193,29 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
             return true;
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder newBuilderForType() {
+        /* renamed from: newBuilderForType */
+        public Builder m4180newBuilderForType() {
             return newBuilder();
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.google.protobuf.GeneratedMessageV3
-        public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+        /* renamed from: newBuilderForType */
+        public Builder m4179newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
             return new Builder(builderParent);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3
         public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
             return new LinkMultiInviteUser();
         }
 
-        @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-        public Builder toBuilder() {
+        /* renamed from: toBuilder */
+        public Builder m4182toBuilder() {
             return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
         public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
             long j = this.uid_;
-            if (j != 0) {
+            if (j != serialVersionUID) {
                 codedOutputStream.writeUInt64(1, j);
             }
             if (!getNameBytes().isEmpty()) {
@@ -1338,66 +1321,65 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m4135toBuilder();
     }
 
     public static Builder newBuilder(LinkMultiInvite linkMultiInvite) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(linkMultiInvite);
+        return DEFAULT_INSTANCE.m4135toBuilder().mergeFrom(linkMultiInvite);
     }
 
     public static LinkMultiInvite parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (LinkMultiInvite) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static LinkMultiInvite parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LinkMultiInvite) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LinkMultiInvite parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (LinkMultiInvite) PARSER.parseFrom(byteString);
     }
 
     public static LinkMultiInvite parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (LinkMultiInvite) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static LinkMultiInvite parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (LinkMultiInvite) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static LinkMultiInvite parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LinkMultiInvite) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static LinkMultiInvite parseFrom(InputStream inputStream) throws IOException {
-        return (LinkMultiInvite) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static LinkMultiInvite parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (LinkMultiInvite) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static LinkMultiInvite parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (LinkMultiInvite) PARSER.parseFrom(byteBuffer);
     }
 
     public static LinkMultiInvite parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (LinkMultiInvite) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static LinkMultiInvite parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (LinkMultiInvite) PARSER.parseFrom(bArr);
     }
 
     public static LinkMultiInvite parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (LinkMultiInvite) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<LinkMultiInvite> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1431,8 +1413,8 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public LinkMultiInvite getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public LinkMultiInvite m4130getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1458,19 +1440,17 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         return (ByteString) obj;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<LinkMultiInvite> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
             return i;
         }
         long j = this.uid_;
-        int computeUInt64Size = j != 0 ? CodedOutputStream.computeUInt64Size(1, j) + 0 : 0;
+        int computeUInt64Size = j != serialVersionUID ? CodedOutputStream.computeUInt64Size(1, j) + 0 : 0;
         int i2 = computeUInt64Size;
         if (!getNameBytes().isEmpty()) {
             i2 = computeUInt64Size + GeneratedMessageV3.computeStringSize(2, this.name_);
@@ -1515,7 +1495,6 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         return this.uid_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
@@ -1545,7 +1524,6 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         return this.users_;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1560,12 +1538,10 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         return hashCode2;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_LinkMultiInvite_fieldAccessorTable.ensureFieldAccessorsInitialized(LinkMultiInvite.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1578,31 +1554,29 @@ public final class LinkMultiInvite extends GeneratedMessageV3 implements LinkMul
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m4133newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m4132newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new LinkMultiInvite();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m4135toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         long j = this.uid_;
-        if (j != 0) {
+        if (j != serialVersionUID) {
             codedOutputStream.writeUInt64(1, j);
         }
         if (!getNameBytes().isEmpty()) {

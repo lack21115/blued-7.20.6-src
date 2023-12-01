@@ -2,6 +2,7 @@ package com.kuaishou.weapon.p0;
 
 import android.Manifest;
 import android.accessibilityservice.AccessibilityServiceInfo;
+import android.accounts.AccountManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
@@ -14,9 +15,9 @@ import android.text.TextUtils;
 import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.android.material.timepicker.TimeModel;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
+import com.xiaomi.mipush.sdk.Constants;
 import java.lang.reflect.Method;
 import java.net.URLEncoder;
 import java.util.Iterator;
@@ -58,7 +59,7 @@ public class bg {
                 String next = keys.next();
                 String string = C.getString(next);
                 sb.append(str);
-                str = ";";
+                str = com.huawei.openalliance.ad.constant.t.aE;
                 sb.append(next);
                 sb.append("=");
                 sb.append(string);
@@ -117,7 +118,7 @@ public class bg {
 
     private static String a(AccessibilityServiceInfo accessibilityServiceInfo) {
         String id = accessibilityServiceInfo.getId();
-        int lastIndexOf = id.lastIndexOf(BridgeUtil.SPLIT_MARK);
+        int lastIndexOf = id.lastIndexOf("/");
         String str = id;
         if (lastIndexOf > 0) {
             str = id.substring(0, lastIndexOf);
@@ -280,8 +281,8 @@ public class bg {
                 return "";
             }
             JSONObject jSONObject = new JSONObject(str);
-            int i = jSONObject.getInt("errorCode");
-            return i == 0 ? jSONObject.getString("value") : i == 3 ? bh.f23749c : i == 1 ? bh.f23748a : bh.d;
+            int i = jSONObject.getInt(AccountManager.KEY_ERROR_CODE);
+            return i == 0 ? jSONObject.getString("value") : i == 3 ? bh.f10141c : i == 1 ? bh.f10140a : bh.d;
         } catch (Throwable th) {
             return "";
         }
@@ -345,7 +346,7 @@ public class bg {
         try {
             return c(com.kwad.sdk.d.b.Ax().getIp());
         } catch (Throwable th) {
-            return bh.f23749c;
+            return bh.f10141c;
         }
     }
 
@@ -361,7 +362,7 @@ public class bg {
         try {
             return c(com.kwad.sdk.d.b.Ax().An());
         } catch (Throwable th) {
-            return bh.f23749c;
+            return bh.f10141c;
         }
     }
 
@@ -380,7 +381,7 @@ public class bg {
     public static String h() {
         try {
             Locale locale = Locale.getDefault();
-            return locale.getLanguage() + "-" + locale.getCountry();
+            return locale.getLanguage() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + locale.getCountry();
         } catch (Throwable th) {
             return "";
         }
@@ -396,7 +397,7 @@ public class bg {
 
     public static String i() {
         Locale locale = Build.VERSION.SDK_INT >= 24 ? LocaleList.getDefault().get(0) : Locale.getDefault();
-        return locale.getLanguage() + "-" + locale.getCountry();
+        return locale.getLanguage() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + locale.getCountry();
     }
 
     public static String i(Context context) {
@@ -405,14 +406,14 @@ public class bg {
             StringBuilder sb = new StringBuilder();
             for (InputMethodInfo inputMethodInfo : inputMethodList) {
                 sb.append(inputMethodInfo.getId());
-                sb.append(";");
+                sb.append(com.huawei.openalliance.ad.constant.t.aE);
             }
             if (TextUtils.isEmpty(sb)) {
-                return bh.f23749c;
+                return bh.f10141c;
             }
             String sb2 = sb.toString();
             String str = sb2;
-            if (sb2.endsWith(";")) {
+            if (sb2.endsWith(com.huawei.openalliance.ad.constant.t.aE)) {
                 str = sb2.substring(0, sb2.length() - 1);
             }
             return str;
@@ -436,7 +437,7 @@ public class bg {
                 if (string == null) {
                     str2 = com.igexin.push.core.b.l;
                 }
-                String str3 = "1=" + str2 + ";";
+                String str3 = "1=" + str2 + com.huawei.openalliance.ad.constant.t.aE;
                 InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
                 str = str3;
                 if (inputMethodManager != null) {
@@ -479,7 +480,7 @@ public class bg {
                                     i2 = i;
                                 }
                             }
-                            str4 = str4 + str5 + "-" + str6 + "-" + String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(i2)) + ";";
+                            str4 = str4 + str5 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + str6 + Constants.ACCEPT_TIME_SEPARATOR_SERVER + String.format(TimeModel.NUMBER_FORMAT, Integer.valueOf(i2)) + com.huawei.openalliance.ad.constant.t.aE;
                             i = i2;
                         }
                     }
@@ -503,7 +504,7 @@ public class bg {
             String string = Settings.Secure.getString(context.getContentResolver(), Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES);
             String str = string;
             if (TextUtils.isEmpty(string)) {
-                str = bh.f23749c;
+                str = bh.f10141c;
             }
             return str;
         } catch (Throwable th) {
@@ -664,11 +665,11 @@ public class bg {
     }
 
     public static String o(Context context) {
-        return bh.f23749c;
+        return bh.f10141c;
     }
 
     public static String p(Context context) {
-        return bh.f23748a;
+        return bh.f10140a;
     }
 
     public static String q(Context context) {
@@ -739,7 +740,7 @@ public class bg {
     }
 
     public static String x(Context context) {
-        return bh.f23749c;
+        return bh.f10141c;
     }
 
     public static String y(Context context) {

@@ -8,9 +8,7 @@ import kotlin.sequences.Sequence;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/io/LinesSequence.class */
 final class LinesSequence implements Sequence<String> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final BufferedReader f42505a;
+    private final BufferedReader a;
 
     @Override // kotlin.sequences.Sequence
     public Iterator<String> iterator() {

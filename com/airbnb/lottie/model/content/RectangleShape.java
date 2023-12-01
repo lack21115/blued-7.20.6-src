@@ -11,20 +11,16 @@ import com.airbnb.lottie.model.layer.BaseLayer;
 
 /* loaded from: source-6737240-dex2jar.jar:com/airbnb/lottie/model/content/RectangleShape.class */
 public class RectangleShape implements ContentModel {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f4356a;
+    private final String a;
     private final AnimatableValue<PointF, PointF> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final AnimatablePointValue f4357c;
+    private final AnimatablePointValue c;
     private final AnimatableFloatValue d;
     private final boolean e;
 
     public RectangleShape(String str, AnimatableValue<PointF, PointF> animatableValue, AnimatablePointValue animatablePointValue, AnimatableFloatValue animatableFloatValue, boolean z) {
-        this.f4356a = str;
+        this.a = str;
         this.b = animatableValue;
-        this.f4357c = animatablePointValue;
+        this.c = animatablePointValue;
         this.d = animatableFloatValue;
         this.e = z;
     }
@@ -35,7 +31,7 @@ public class RectangleShape implements ContentModel {
     }
 
     public String a() {
-        return this.f4356a;
+        return this.a;
     }
 
     public AnimatableFloatValue b() {
@@ -43,7 +39,7 @@ public class RectangleShape implements ContentModel {
     }
 
     public AnimatablePointValue c() {
-        return this.f4357c;
+        return this.c;
     }
 
     public AnimatableValue<PointF, PointF> d() {
@@ -55,6 +51,6 @@ public class RectangleShape implements ContentModel {
     }
 
     public String toString() {
-        return "RectangleShape{position=" + this.b + ", size=" + this.f4357c + '}';
+        return "RectangleShape{position=" + this.b + ", size=" + this.c + '}';
     }
 }

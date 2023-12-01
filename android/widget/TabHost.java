@@ -126,9 +126,9 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         @Override // android.widget.TabHost.IndicatorStrategy
         public View createIndicatorView() {
             Context context = TabHost.this.getContext();
-            View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(TabHost.this.mTabLayoutId, (ViewGroup) TabHost.this.mTabWidget, false);
-            TextView textView = (TextView) inflate.findViewById(16908310);
-            ImageView imageView = (ImageView) inflate.findViewById(16908294);
+            View inflate = ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(TabHost.this.mTabLayoutId, (ViewGroup) TabHost.this.mTabWidget, false);
+            TextView textView = (TextView) inflate.findViewById(R.id.title);
+            ImageView imageView = (ImageView) inflate.findViewById(R.id.icon);
             boolean z = true;
             if (imageView.getVisibility() == 8) {
                 z = TextUtils.isEmpty(this.mLabel);
@@ -157,8 +157,8 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         @Override // android.widget.TabHost.IndicatorStrategy
         public View createIndicatorView() {
             Context context = TabHost.this.getContext();
-            View inflate = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(TabHost.this.mTabLayoutId, (ViewGroup) TabHost.this.mTabWidget, false);
-            TextView textView = (TextView) inflate.findViewById(16908310);
+            View inflate = ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(TabHost.this.mTabLayoutId, (ViewGroup) TabHost.this.mTabWidget, false);
+            TextView textView = (TextView) inflate.findViewById(R.id.title);
             textView.setText(this.mLabel);
             if (context.getApplicationInfo().targetSdkVersion <= 4) {
                 inflate.setBackgroundResource(R.drawable.tab_indicator_v4);
@@ -271,7 +271,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     public TabHost(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842883);
+        this(context, attributeSet, R.attr.tabWidgetStyle);
     }
 
     public TabHost(Context context, AttributeSet attributeSet, int i) {
@@ -520,7 +520,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     }
 
     public void setup() {
-        this.mTabWidget = (TabWidget) findViewById(16908307);
+        this.mTabWidget = (TabWidget) findViewById(R.id.tabs);
         if (this.mTabWidget == null) {
             throw new RuntimeException("Your TabHost must have a TabWidget whose id attribute is 'android.R.id.tabs'");
         }
@@ -550,7 +550,7 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
                 }
             }
         });
-        this.mTabContent = (FrameLayout) findViewById(16908305);
+        this.mTabContent = (FrameLayout) findViewById(R.id.tabcontent);
         if (this.mTabContent == null) {
             throw new RuntimeException("Your TabHost must have a FrameLayout whose id attribute is 'android.R.id.tabcontent'");
         }

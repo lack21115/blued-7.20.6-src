@@ -15,13 +15,11 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/fragment/YYMagicalPrizeFragment.class */
 public final class YYMagicalPrizeFragment extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private YYMagicalPrizeModel f17335a;
+    private YYMagicalPrizeModel a;
     private FragmentMagicalPrizeBinding b;
 
     public YYMagicalPrizeFragment(YYMagicalPrizeModel yYMagicalPrizeModel) {
-        this.f17335a = yYMagicalPrizeModel;
+        this.a = yYMagicalPrizeModel;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -61,13 +59,13 @@ public final class YYMagicalPrizeFragment extends BaseFullScreenDialog {
             Intrinsics.c("mBinding");
             fragmentMagicalPrizeBinding4 = null;
         }
-        fragmentMagicalPrizeBinding4.f16477a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalPrizeFragment$NEmapZ5YT7w6pIQXGjRWBKLMgRQ
+        fragmentMagicalPrizeBinding4.a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalPrizeFragment$NEmapZ5YT7w6pIQXGjRWBKLMgRQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 YYMagicalPrizeFragment.b(YYMagicalPrizeFragment.this, view);
             }
         });
-        YYMagicalPrizeModel yYMagicalPrizeModel = this.f17335a;
+        YYMagicalPrizeModel yYMagicalPrizeModel = this.a;
         if (yYMagicalPrizeModel == null) {
             return;
         }
@@ -78,16 +76,16 @@ public final class YYMagicalPrizeFragment extends BaseFullScreenDialog {
             fragmentMagicalPrizeBinding6 = null;
         }
         fragmentMagicalPrizeBinding6.f.setText("恭喜抢到" + ((Object) yYMagicalPrizeModel.name) + '*' + ((Object) yYMagicalPrizeModel.days) + (char) 22825);
-        ImageWrapper a2 = ImageLoader.a(a(), yYMagicalPrizeModel.icon);
+        ImageWrapper a = ImageLoader.a(a(), yYMagicalPrizeModel.icon);
         FragmentMagicalPrizeBinding fragmentMagicalPrizeBinding7 = this.b;
         if (fragmentMagicalPrizeBinding7 == null) {
             Intrinsics.c("mBinding");
             fragmentMagicalPrizeBinding7 = null;
         }
-        a2.a(fragmentMagicalPrizeBinding7.f16478c);
+        a.a(fragmentMagicalPrizeBinding7.c);
     }
 
-    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.yy_china.fragment.BaseFullScreenDialog
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         a(new Runnable() { // from class: com.blued.android.module.yy_china.fragment.-$$Lambda$YYMagicalPrizeFragment$Y6VWgR9El1Cx10IXUUc3UwVFFw4
@@ -98,14 +96,14 @@ public final class YYMagicalPrizeFragment extends BaseFullScreenDialog {
         }, 5000L);
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.fragment_magical_prize, viewGroup, true);
         Intrinsics.c(inflate, "inflater.inflate(R.layou…l_prize, container, true)");
-        FragmentMagicalPrizeBinding a2 = FragmentMagicalPrizeBinding.a(inflate);
-        Intrinsics.c(a2, "bind(view)");
-        this.b = a2;
+        FragmentMagicalPrizeBinding a = FragmentMagicalPrizeBinding.a(inflate);
+        Intrinsics.c(a, "bind(view)");
+        this.b = a;
         f();
         return inflate;
     }

@@ -1,5 +1,6 @@
 package com.google.android.material.button;
 
+import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
@@ -22,7 +23,6 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.view.ViewCompat;
 import androidx.core.widget.TextViewCompat;
 import androidx.customview.view.AbsSavedState;
-import com.google.android.material.R;
 import com.google.android.material.internal.ThemeEnforcement;
 import com.google.android.material.internal.ViewUtils;
 import com.google.android.material.resources.MaterialResources;
@@ -37,9 +37,9 @@ import java.util.LinkedHashSet;
 
 /* loaded from: source-8110460-dex2jar.jar:com/google/android/material/button/MaterialButton.class */
 public class MaterialButton extends AppCompatButton implements Checkable, Shapeable {
-    private static final int[] CHECKABLE_STATE_SET = {16842911};
-    private static final int[] CHECKED_STATE_SET = {16842912};
-    private static final int DEF_STYLE_RES = R.style.Widget_MaterialComponents_Button;
+    private static final int[] CHECKABLE_STATE_SET = {R.attr.state_checkable};
+    private static final int[] CHECKED_STATE_SET = {R.attr.state_checked};
+    private static final int DEF_STYLE_RES = com.google.android.material.R.style.Widget_MaterialComponents_Button;
     public static final int ICON_GRAVITY_END = 3;
     public static final int ICON_GRAVITY_START = 1;
     public static final int ICON_GRAVITY_TEXT_END = 4;
@@ -130,7 +130,7 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
     }
 
     public MaterialButton(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, R.attr.materialButtonStyle);
+        this(context, attributeSet, com.google.android.material.R.attr.materialButtonStyle);
     }
 
     public MaterialButton(Context context, AttributeSet attributeSet, int i) {
@@ -140,13 +140,13 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         this.checked = false;
         this.broadcasting = false;
         Context context2 = getContext();
-        TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, R.styleable.MaterialButton, i, DEF_STYLE_RES, new int[0]);
-        this.iconPadding = obtainStyledAttributes.getDimensionPixelSize(R.styleable.MaterialButton_iconPadding, 0);
-        this.iconTintMode = ViewUtils.parseTintMode(obtainStyledAttributes.getInt(R.styleable.MaterialButton_iconTintMode, -1), PorterDuff.Mode.SRC_IN);
-        this.iconTint = MaterialResources.getColorStateList(getContext(), obtainStyledAttributes, R.styleable.MaterialButton_iconTint);
-        this.icon = MaterialResources.getDrawable(getContext(), obtainStyledAttributes, R.styleable.MaterialButton_icon);
-        this.iconGravity = obtainStyledAttributes.getInteger(R.styleable.MaterialButton_iconGravity, 1);
-        this.iconSize = obtainStyledAttributes.getDimensionPixelSize(R.styleable.MaterialButton_iconSize, 0);
+        TypedArray obtainStyledAttributes = ThemeEnforcement.obtainStyledAttributes(context2, attributeSet, com.google.android.material.R.styleable.MaterialButton, i, DEF_STYLE_RES, new int[0]);
+        this.iconPadding = obtainStyledAttributes.getDimensionPixelSize(com.google.android.material.R.styleable.MaterialButton_iconPadding, 0);
+        this.iconTintMode = ViewUtils.parseTintMode(obtainStyledAttributes.getInt(com.google.android.material.R.styleable.MaterialButton_iconTintMode, -1), PorterDuff.Mode.SRC_IN);
+        this.iconTint = MaterialResources.getColorStateList(getContext(), obtainStyledAttributes, com.google.android.material.R.styleable.MaterialButton_iconTint);
+        this.icon = MaterialResources.getDrawable(getContext(), obtainStyledAttributes, com.google.android.material.R.styleable.MaterialButton_icon);
+        this.iconGravity = obtainStyledAttributes.getInteger(com.google.android.material.R.styleable.MaterialButton_iconGravity, 1);
+        this.iconSize = obtainStyledAttributes.getDimensionPixelSize(com.google.android.material.R.styleable.MaterialButton_iconSize, 0);
         MaterialButtonHelper materialButtonHelper = new MaterialButtonHelper(this, ShapeAppearanceModel.builder(context2, attributeSet, i, DEF_STYLE_RES).build());
         this.materialButtonHelper = materialButtonHelper;
         materialButtonHelper.loadFromAttributes(obtainStyledAttributes);
@@ -409,9 +409,8 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.TextView, android.view.View
-    public int[] onCreateDrawableState(int i) {
+    protected int[] onCreateDrawableState(int i) {
         int[] onCreateDrawableState = super.onCreateDrawableState(i + 2);
         if (isCheckable()) {
             mergeDrawableStates(onCreateDrawableState, CHECKABLE_STATE_SET);
@@ -422,14 +421,14 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         return onCreateDrawableState;
     }
 
-    @Override // androidx.appcompat.widget.AppCompatButton, android.widget.Button, android.widget.TextView, android.view.View
+    @Override // androidx.appcompat.widget.AppCompatButton, android.view.View
     public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
         super.onInitializeAccessibilityEvent(accessibilityEvent);
         accessibilityEvent.setClassName(getA11yClassName());
         accessibilityEvent.setChecked(isChecked());
     }
 
-    @Override // androidx.appcompat.widget.AppCompatButton, android.widget.Button, android.widget.TextView, android.view.View
+    @Override // androidx.appcompat.widget.AppCompatButton, android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName(getA11yClassName());
@@ -466,9 +465,8 @@ public class MaterialButton extends AppCompatButton implements Checkable, Shapea
         return savedState;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onSizeChanged(int i, int i2, int i3, int i4) {
+    protected void onSizeChanged(int i, int i2, int i3, int i4) {
         super.onSizeChanged(i, i2, i3, i4);
         updateIconPosition(i, i2);
     }

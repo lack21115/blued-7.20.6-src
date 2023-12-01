@@ -1,6 +1,5 @@
 package com.android.org.conscrypt;
 
-import com.youzan.androidsdk.tool.AppSigning;
 import java.security.InvalidKeyException;
 import java.security.InvalidParameterException;
 import java.security.NoSuchAlgorithmException;
@@ -70,7 +69,7 @@ public class OpenSSLSignature extends SignatureSpi {
 
     /* loaded from: source-273268-dex2jar.jar:com/android/org/conscrypt/OpenSSLSignature$SHA1ECDSA.class */
     public static final class SHA1ECDSA extends OpenSSLSignature {
-        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname(AppSigning.SHA1);
+        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname("SHA1");
 
         public SHA1ECDSA() throws NoSuchAlgorithmException {
             super(EVP_MD, EngineType.EC, null);
@@ -106,7 +105,7 @@ public class OpenSSLSignature extends SignatureSpi {
 
     /* loaded from: source-273268-dex2jar.jar:com/android/org/conscrypt/OpenSSLSignature$SHA256ECDSA.class */
     public static final class SHA256ECDSA extends OpenSSLSignature {
-        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname(AppSigning.SHA256);
+        private static final long EVP_MD = NativeCrypto.EVP_get_digestbyname("SHA256");
 
         public SHA256ECDSA() throws NoSuchAlgorithmException {
             super(EVP_MD, EngineType.EC, null);

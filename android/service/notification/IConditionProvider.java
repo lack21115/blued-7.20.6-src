@@ -18,9 +18,8 @@ public interface IConditionProvider extends IInterface {
         static final int TRANSACTION_onSubscribe = 3;
         static final int TRANSACTION_onUnsubscribe = 4;
 
-        /* JADX INFO: Access modifiers changed from: private */
         /* loaded from: source-9557208-dex2jar.jar:android/service/notification/IConditionProvider$Stub$Proxy.class */
-        public static class Proxy implements IConditionProvider {
+        private static class Proxy implements IConditionProvider {
             private IBinder mRemote;
 
             Proxy(IBinder iBinder) {

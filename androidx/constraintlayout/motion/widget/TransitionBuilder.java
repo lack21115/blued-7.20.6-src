@@ -19,10 +19,10 @@ public class TransitionBuilder {
     }
 
     public static void validate(MotionLayout motionLayout) {
-        if (motionLayout.f2184a == null) {
+        if (motionLayout.f2136a == null) {
             throw new RuntimeException("Invalid motion layout. Layout missing Motion Scene.");
         }
-        MotionScene motionScene = motionLayout.f2184a;
+        MotionScene motionScene = motionLayout.f2136a;
         if (!motionScene.validateLayout(motionLayout)) {
             throw new RuntimeException("MotionLayout doesn't have the right motion scene.");
         }

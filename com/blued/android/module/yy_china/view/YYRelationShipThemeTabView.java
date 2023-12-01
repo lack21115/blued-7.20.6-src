@@ -26,13 +26,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipThemeTabView.class */
 public final class YYRelationShipThemeTabView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final List<YYRelationShipRoomMode> f18408a;
+    private final List<YYRelationShipRoomMode> a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f18409c;
+    private int c;
     private int d;
     private RecyclerView e;
     private HomeTabAdapter f;
@@ -44,9 +40,7 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYRelationShipThemeTabView$HomeTabAdapter.class */
     public final class HomeTabAdapter extends CommonRecycleAdapter<YYRelationShipRoomMode> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYRelationShipThemeTabView f18411a;
+        final /* synthetic */ YYRelationShipThemeTabView a;
         private final YYRelationShipThemeTabView b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -54,7 +48,7 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
             super(this$0.getContext());
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(tabView, "tabView");
-            this.f18411a = this$0;
+            this.a = this$0;
             this.b = tabView;
         }
 
@@ -75,21 +69,21 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
         public void onBindViewHolderData(YYRelationShipRoomMode model, final int i, CommonRecycleAdapter.CommonAdapterHolder viewHolder) {
             Intrinsics.e(model, "model");
             Intrinsics.e(viewHolder, "viewHolder");
-            ItemYyRelationTabViewBinding a2 = ItemYyRelationTabViewBinding.a(viewHolder.a());
-            Intrinsics.c(a2, "bind(viewHolder.convertView)");
-            a2.b.setText(model.getRelation_name());
+            ItemYyRelationTabViewBinding a = ItemYyRelationTabViewBinding.a(viewHolder.a());
+            Intrinsics.c(a, "bind(viewHolder.convertView)");
+            a.b.setText(model.getRelation_name());
             YYRelationShipRoomUiInfo resource_options = model.getResource_options();
             if (resource_options != null) {
-                YYRelationShipThemeTabView yYRelationShipThemeTabView = this.f18411a;
-                ImageLoader.a((IRequestHost) null, resource_options.getIcon_tab()).a(a2.f16795a);
-                a2.b.setTextColor(Color.parseColor(yYRelationShipThemeTabView.getColorSelect()));
+                YYRelationShipThemeTabView yYRelationShipThemeTabView = this.a;
+                ImageLoader.a((IRequestHost) null, resource_options.getIcon_tab()).a(a.a);
+                a.b.setTextColor(Color.parseColor(yYRelationShipThemeTabView.getColorSelect()));
             }
-            if (this.f18411a.b == i) {
-                a2.f16795a.setVisibility(0);
-                a2.b.setVisibility(8);
+            if (this.a.b == i) {
+                a.a.setVisibility(0);
+                a.b.setVisibility(8);
             } else {
-                a2.f16795a.setVisibility(8);
-                a2.b.setVisibility(0);
+                a.a.setVisibility(8);
+                a.b.setVisibility(0);
             }
             viewHolder.a().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYRelationShipThemeTabView$HomeTabAdapter$KdALo0f-OexIFaCymEJ5oEih04g
                 @Override // android.view.View.OnClickListener
@@ -121,10 +115,10 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
     public YYRelationShipThemeTabView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f18408a = new ArrayList();
+        this.a = new ArrayList();
         this.h = R.color.syc_h;
         this.i = R.color.syc_999999;
-        this.e = (RecyclerView) LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
+        this.e = LayoutInflater.from(getContext()).inflate(R.layout.common_tab_view, this).findViewById(R.id.common_tab_view_id);
         this.f = a();
         RecyclerView recyclerView = this.e;
         if (recyclerView != null) {
@@ -133,13 +127,12 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
         RecyclerView recyclerView2 = this.e;
         if (recyclerView2 != null) {
             recyclerView2.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.blued.android.module.yy_china.view.YYRelationShipThemeTabView.1
-                @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
                 public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
                     Intrinsics.e(outRect, "outRect");
                     Intrinsics.e(view, "view");
                     Intrinsics.e(parent, "parent");
                     Intrinsics.e(state, "state");
-                    outRect.left = YYRelationShipThemeTabView.this.f18409c;
+                    outRect.left = YYRelationShipThemeTabView.this.c;
                     outRect.right = YYRelationShipThemeTabView.this.d;
                 }
             });
@@ -176,16 +169,16 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
         this.b = 0;
         this.h = i;
         this.i = i2;
-        this.f18408a.clear();
-        this.f18408a.addAll(list);
-        if (this.f18408a.size() > 0) {
-            this.j = this.f18408a.get(this.b).getResource_options().getTheme_color_6();
+        this.a.clear();
+        this.a.addAll(list);
+        if (this.a.size() > 0) {
+            this.j = this.a.get(this.b).getResource_options().getTheme_color_6();
         }
         HomeTabAdapter homeTabAdapter = this.f;
         if (homeTabAdapter == null) {
             return;
         }
-        homeTabAdapter.setDataAndNotify(this.f18408a);
+        homeTabAdapter.setDataAndNotify(this.a);
     }
 
     public final String getColorSelect() {
@@ -193,12 +186,12 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
     }
 
     public final String getSelectId() {
-        List<YYRelationShipRoomMode> list = this.f18408a;
+        List<YYRelationShipRoomMode> list = this.a;
         if (list != null) {
             int size = list.size();
             int i = this.b;
             if (size > i) {
-                return this.f18408a.get(i).getId();
+                return this.a.get(i).getId();
             }
             return null;
         }
@@ -211,12 +204,12 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
     }
 
     public final void setToolBtnSelect(int i) {
-        if (i < this.f18408a.size()) {
+        if (i < this.a.size()) {
             this.b = i;
-        } else if (this.b >= this.f18408a.size()) {
+        } else if (this.b >= this.a.size()) {
             this.b = 0;
         }
-        if (i == this.f18408a.size() - 2) {
+        if (i == this.a.size() - 2) {
             RecyclerView recyclerView = this.e;
             if (recyclerView != null) {
                 recyclerView.smoothScrollToPosition(i + 2);
@@ -227,7 +220,7 @@ public final class YYRelationShipThemeTabView extends FrameLayout {
                 recyclerView2.smoothScrollToPosition(i);
             }
         }
-        this.j = this.f18408a.get(i).getResource_options().getTheme_color_6();
+        this.j = this.a.get(i).getResource_options().getTheme_color_6();
         HomeTabAdapter homeTabAdapter = this.f;
         if (homeTabAdapter == null) {
             return;

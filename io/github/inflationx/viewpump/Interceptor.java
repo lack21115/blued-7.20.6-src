@@ -26,9 +26,9 @@ public interface Interceptor {
         }
 
         /* renamed from: -deprecated_Interceptor  reason: not valid java name */
-        public final Interceptor m12444deprecated_Interceptor(Function1<? super Chain, InflateResult> block) {
-            Intrinsics.d(block, "block");
-            return new Interceptor$Companion$invoke$1(block);
+        public final Interceptor m9360deprecated_Interceptor(Function1<? super Chain, InflateResult> function1) {
+            Intrinsics.d(function1, "block");
+            return new Interceptor$Companion$invoke$1(function1);
         }
     }
 

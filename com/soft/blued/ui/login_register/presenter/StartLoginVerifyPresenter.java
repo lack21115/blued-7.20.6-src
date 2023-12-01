@@ -13,32 +13,31 @@ import com.soft.blued.ui.login_register.View.VerifyCodeFragment;
 public class StartLoginVerifyPresenter implements StartLoginVerifyContract.IPresenter {
 
     /* renamed from: a  reason: collision with root package name */
-    private StartLoginVerifyContract.IView f31572a;
+    private StartLoginVerifyContract.IView f17882a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f31573c;
+    private IRequestHost f17883c;
 
     /* renamed from: com.soft.blued.ui.login_register.presenter.StartLoginVerifyPresenter$2  reason: invalid class name */
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/login_register/presenter/StartLoginVerifyPresenter$2.class */
     class AnonymousClass2 extends BluedUIHttpResponse<BluedEntityA<Object>> {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Bundle f31575a;
+        final /* synthetic */ Bundle f17885a;
         final /* synthetic */ StartLoginVerifyPresenter b;
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
-            VerifyCodeFragment.a(this.b.b, this.f31575a);
+            VerifyCodeFragment.a(this.b.b, this.f17885a);
         }
     }
 
     public StartLoginVerifyPresenter(Context context, StartLoginVerifyContract.IView iView, IRequestHost iRequestHost) {
-        this.f31572a = iView;
+        this.f17882a = iView;
         this.b = context;
-        this.f31573c = iRequestHost;
+        this.f17883c = iRequestHost;
     }
 
     @Override // com.soft.blued.ui.login_register.Contract.StartLoginVerifyContract.IPresenter
@@ -52,17 +51,15 @@ public class StartLoginVerifyPresenter implements StartLoginVerifyContract.IPres
             str = "";
             str2 = str;
         }
-        LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f31573c) { // from class: com.soft.blued.ui.login_register.presenter.StartLoginVerifyPresenter.1
+        LoginRegisterHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<Object>>(this.f17883c) { // from class: com.soft.blued.ui.login_register.presenter.StartLoginVerifyPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 VerifyCodeFragment.a(StartLoginVerifyPresenter.this.b, bundle);
             }
-        }, str, "send", "", str2, this.f31573c);
+        }, str, "send", "", str2, this.f17883c);
     }
 
-    @Override // com.blued.android.framework.mvp_similarity.BasePresenter
     public void ar_() {
     }
 }

@@ -24,8 +24,8 @@ public final class a {
                 if (a.hasInit) {
                     return;
                 }
-                b.d("perfMonitor.MonitorManager", "configStr:" + String.this);
-                c dE = a.dE(String.this);
+                b.d("perfMonitor.MonitorManager", "configStr:" + str);
+                c dE = a.dE(str);
                 b.d("perfMonitor.MonitorManager", dE.toJson().toString());
                 d.d(dE.ast);
                 a.access$002(true);

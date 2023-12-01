@@ -10,11 +10,11 @@ import java.util.Map;
 public final class au {
 
     /* renamed from: a  reason: collision with root package name */
-    private static au f35268a;
+    private static au f21577a;
     private ac b;
 
     /* renamed from: c  reason: collision with root package name */
-    private aa f35269c;
+    private aa f21578c;
     private as d;
     private Context e;
 
@@ -24,7 +24,7 @@ public final class au {
             return;
         }
         this.b = ac.a();
-        this.f35269c = aa.a(context);
+        this.f21578c = aa.a(context);
         this.d = a2.s;
         this.e = context;
         ak.a().a(new Runnable() { // from class: com.tencent.bugly.idasc.proguard.au.1
@@ -36,17 +36,17 @@ public final class au {
     }
 
     public static au a(Context context) {
-        if (f35268a == null) {
-            f35268a = new au(context);
+        if (f21577a == null) {
+            f21577a = new au(context);
         }
-        return f35268a;
+        return f21577a;
     }
 
     static /* synthetic */ void a(au auVar) {
         al.c("[ExtraCrashManager] Trying to notify Bugly agents.", new Object[0]);
         try {
             Class<?> cls = Class.forName("com.tencent.bugly.idasc.agent.GameAgent");
-            auVar.f35269c.getClass();
+            auVar.f21578c.getClass();
             ap.a(cls, "sdkPackageName", "com.tencent.bugly.idasc");
             al.c("[ExtraCrashManager] Bugly game agent has been notified.", new Object[0]);
         } catch (Throwable th) {
@@ -77,7 +77,7 @@ public final class au {
             StrategyBean c2 = auVar.b.c();
             if (!c2.f && auVar.b.b()) {
                 al.e("[ExtraCrashManager] Crash report was closed by remote. Will not upload to Bugly , print local for helpful!", new Object[0]);
-                as.a(str4, ap.a(), auVar.f35269c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, null);
+                as.a(str4, ap.a(), auVar.f21578c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, null);
                 al.e("[ExtraCrashManager] Successfully handled.", new Object[0]);
                 return;
             }
@@ -99,17 +99,17 @@ public final class au {
             crashDetailBean.C = ab.j();
             crashDetailBean.D = ab.f();
             crashDetailBean.E = ab.l();
-            crashDetailBean.F = auVar.f35269c.k();
-            crashDetailBean.G = auVar.f35269c.j();
-            crashDetailBean.H = auVar.f35269c.l();
+            crashDetailBean.F = auVar.f21578c.k();
+            crashDetailBean.G = auVar.f21578c.j();
+            crashDetailBean.H = auVar.f21578c.l();
             crashDetailBean.I = ab.b(auVar.e);
             crashDetailBean.J = ab.g();
             crashDetailBean.K = ab.h();
             crashDetailBean.b = i;
-            crashDetailBean.e = auVar.f35269c.g();
-            crashDetailBean.f = auVar.f35269c.o;
-            crashDetailBean.g = auVar.f35269c.q();
-            crashDetailBean.m = auVar.f35269c.f();
+            crashDetailBean.e = auVar.f21578c.g();
+            crashDetailBean.f = auVar.f21578c.o;
+            crashDetailBean.g = auVar.f21578c.q();
+            crashDetailBean.m = auVar.f21578c.f();
             crashDetailBean.n = String.valueOf(str);
             crashDetailBean.o = String.valueOf(str2);
             str5 = "";
@@ -124,17 +124,17 @@ public final class au {
             crashDetailBean.q = str6;
             crashDetailBean.r = System.currentTimeMillis();
             crashDetailBean.u = ap.c(crashDetailBean.q.getBytes());
-            crashDetailBean.z = ap.a(auVar.f35269c.Q, at.h);
-            crashDetailBean.A = auVar.f35269c.d;
+            crashDetailBean.z = ap.a(auVar.f21578c.Q, at.h);
+            crashDetailBean.A = auVar.f21578c.d;
             crashDetailBean.B = currentThread.getName() + "(" + currentThread.getId() + ")";
-            crashDetailBean.L = auVar.f35269c.s();
-            crashDetailBean.h = auVar.f35269c.p();
-            crashDetailBean.Q = auVar.f35269c.f35211a;
-            crashDetailBean.R = auVar.f35269c.a();
-            crashDetailBean.U = auVar.f35269c.z();
-            crashDetailBean.V = auVar.f35269c.x;
-            crashDetailBean.W = auVar.f35269c.t();
-            crashDetailBean.X = auVar.f35269c.y();
+            crashDetailBean.L = auVar.f21578c.s();
+            crashDetailBean.h = auVar.f21578c.p();
+            crashDetailBean.Q = auVar.f21578c.f21520a;
+            crashDetailBean.R = auVar.f21578c.a();
+            crashDetailBean.U = auVar.f21578c.z();
+            crashDetailBean.V = auVar.f21578c.x;
+            crashDetailBean.W = auVar.f21578c.t();
+            crashDetailBean.X = auVar.f21578c.y();
             crashDetailBean.y = ao.a();
             if (crashDetailBean.S == null) {
                 crashDetailBean.S = new LinkedHashMap();
@@ -143,7 +143,7 @@ public final class au {
                 crashDetailBean.S.putAll(map);
             }
             String a2 = ap.a();
-            as.a(str4, a2, auVar.f35269c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, crashDetailBean);
+            as.a(str4, a2, auVar.f21578c.d, currentThread.getName(), str + "\n" + str2 + "\n" + str3, crashDetailBean);
             if (!auVar.d.a(crashDetailBean, !at.a().C)) {
                 auVar.d.b(crashDetailBean, false);
             }
@@ -166,10 +166,10 @@ public final class au {
             @Override // java.lang.Runnable
             public final void run() {
                 try {
-                    if (au.f35268a == null) {
+                    if (au.f21577a == null) {
                         al.e("[ExtraCrashManager] Extra crash manager has not been initialized.", new Object[0]);
                     } else {
-                        au.a(au.f35268a, Thread.this, i, str, str2, str3, map);
+                        au.a(au.f21577a, thread, i, str, str2, str3, map);
                     }
                 } catch (Throwable th) {
                     if (!al.b(th)) {

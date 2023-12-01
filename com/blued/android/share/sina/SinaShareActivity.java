@@ -2,7 +2,6 @@ package com.blued.android.share.sina;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,7 +23,6 @@ import com.blued.android.share.Constants;
 import com.blued.android.share.ShareProvider;
 import com.blued.android.share.Util;
 import com.bytedance.applog.tracker.Tracker;
-import com.huawei.openalliance.ad.constant.s;
 import com.sina.weibo.sdk.api.ImageObject;
 import com.sina.weibo.sdk.api.TextObject;
 import com.sina.weibo.sdk.api.WebpageObject;
@@ -99,7 +97,7 @@ public class SinaShareActivity extends Activity implements IWeiboHandler.Respons
     }
 
     private String getAppKey() {
-        return TextUtils.equals("a0300a", AppInfo.f9487c) ? "183873903" : "2677078813";
+        return TextUtils.equals("a0300a", AppInfo.c) ? "183873903" : "2677078813";
     }
 
     private ImageObject getImageObj() {
@@ -122,7 +120,7 @@ public class SinaShareActivity extends Activity implements IWeiboHandler.Respons
         webpageObject.description = this.des;
         webpageObject.setThumbImage(this.mBitmap);
         webpageObject.actionUrl = this.linkUrl;
-        webpageObject.defaultText = s.B;
+        webpageObject.defaultText = "web";
         return webpageObject;
     }
 
@@ -200,12 +198,11 @@ public class SinaShareActivity extends Activity implements IWeiboHandler.Respons
         super.onBackPressed();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onCreate(Bundle bundle) {
-        if (Build.VERSION.SDK_INT == 26 && UIUtils.a((Context) this)) {
-            boolean a2 = UIUtils.a((Object) this);
-            Log.c("WXEntryActivity", "onCreate fixOrientation when Oreo, result = " + a2);
+    protected void onCreate(Bundle bundle) {
+        if (Build.VERSION.SDK_INT == 26 && UIUtils.a(this)) {
+            boolean a = UIUtils.a(this);
+            Log.c("WXEntryActivity", "onCreate fixOrientation when Oreo, result = " + a);
         }
         super.onCreate(bundle);
         setContentView(R.layout.activity_empty_share);
@@ -236,14 +233,12 @@ public class SinaShareActivity extends Activity implements IWeiboHandler.Respons
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onNewIntent(Intent intent) {
+    protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         this.mWeiboShareAPI.handleWeiboResponse(intent, this);
     }
 
-    @Override // com.sina.weibo.sdk.api.share.IWeiboHandler.Response
     public void onResponse(BaseResponse baseResponse) {
         if (baseResponse != null) {
             int i = baseResponse.errCode;
@@ -260,9 +255,8 @@ public class SinaShareActivity extends Activity implements IWeiboHandler.Respons
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onResume() {
+    protected void onResume() {
         if (this.mIsCompleteTask) {
             ShareProvider.getInstance().onResume(Constants.SinaWeiboNAME);
             doFinish();

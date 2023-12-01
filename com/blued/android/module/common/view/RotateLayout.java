@@ -17,13 +17,9 @@ import com.blued.android.module.common.R;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/RotateLayout.class */
 public class RotateLayout extends LinearLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Bitmap f11034a;
+    private Bitmap a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private ImageView f11035c;
+    private ImageView c;
     private float d;
     private boolean e;
     private boolean f;
@@ -61,22 +57,22 @@ public class RotateLayout extends LinearLayout {
 
     void a() {
         this.b = LayoutInflater.from(getContext()).inflate(R.layout.rotatelayout, this);
-        this.f11034a = BitmapFactory.decodeResource(getResources(), R.drawable.icon_userinfo_refreshing);
+        this.a = BitmapFactory.decodeResource(getResources(), R.drawable.icon_userinfo_refreshing);
         ImageView imageView = (ImageView) this.b.findViewById(R.id.iv_loading);
-        this.f11035c = imageView;
-        imageView.setImageBitmap(this.f11034a);
+        this.c = imageView;
+        imageView.setImageBitmap(this.a);
     }
 
     public void a(float f) {
-        int width = this.f11034a.getWidth();
-        int height = this.f11034a.getHeight();
+        int width = this.a.getWidth();
+        int height = this.a.getHeight();
         Matrix matrix = new Matrix();
         float f2 = this.d + f;
         this.d = f2;
         matrix.setRotate(f2, width / 2, height / 2);
-        Bitmap createBitmap = Bitmap.createBitmap(this.f11034a, 0, 0, width, height, matrix, true);
-        this.f11035c.setScaleType(ImageView.ScaleType.CENTER);
-        this.f11035c.setImageBitmap(createBitmap);
+        Bitmap createBitmap = Bitmap.createBitmap(this.a, 0, 0, width, height, matrix, true);
+        this.c.setScaleType(ImageView.ScaleType.CENTER);
+        this.c.setImageBitmap(createBitmap);
     }
 
     public void b() {
@@ -85,11 +81,11 @@ public class RotateLayout extends LinearLayout {
         rotateAnimation.setDuration(500L);
         rotateAnimation.setRepeatCount(-1);
         rotateAnimation.setFillAfter(true);
-        this.f11035c.startAnimation(rotateAnimation);
+        this.c.startAnimation(rotateAnimation);
     }
 
     public void c() {
-        this.f11035c.clearAnimation();
+        this.c.clearAnimation();
     }
 
     public void d() {
@@ -100,8 +96,8 @@ public class RotateLayout extends LinearLayout {
         Animation loadAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.push_in);
         loadAnimation.setDuration(500L);
         loadAnimation.setFillAfter(true);
-        this.f11035c.setVisibility(0);
-        this.f11035c.startAnimation(loadAnimation);
+        this.c.setVisibility(0);
+        this.c.startAnimation(loadAnimation);
         loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.common.view.RotateLayout.1
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
@@ -125,7 +121,7 @@ public class RotateLayout extends LinearLayout {
         Animation loadAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.push_out);
         loadAnimation.setDuration(500L);
         loadAnimation.setFillAfter(true);
-        this.f11035c.startAnimation(loadAnimation);
+        this.c.startAnimation(loadAnimation);
         loadAnimation.setAnimationListener(new Animation.AnimationListener() { // from class: com.blued.android.module.common.view.RotateLayout.2
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationEnd(Animation animation) {
@@ -143,6 +139,6 @@ public class RotateLayout extends LinearLayout {
     }
 
     public void setRefreshingBM(int i) {
-        this.f11034a = BitmapFactory.decodeResource(getResources(), i);
+        this.a = BitmapFactory.decodeResource(getResources(), i);
     }
 }

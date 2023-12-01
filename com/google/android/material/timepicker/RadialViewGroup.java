@@ -80,9 +80,8 @@ public class RadialViewGroup extends ConstraintLayout {
         return this.radius;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onFinishInflate() {
+    protected void onFinishInflate() {
         super.onFinishInflate();
         updateLayoutParams();
     }

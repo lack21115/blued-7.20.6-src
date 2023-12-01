@@ -1,6 +1,5 @@
 package com.tencent.liteav.videoproducer.encoder;
 
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.liteav.base.util.r;
 import com.tencent.liteav.videobase.videobase.IVideoReporter;
 import com.tencent.liteav.videoproducer.producer.VideoProducerDef;
@@ -11,18 +10,18 @@ import java.util.Map;
 public final class be implements r.a {
 
     /* renamed from: a  reason: collision with root package name */
-    final String f37008a;
+    final String f23317a;
     IVideoReporter b;
 
     /* renamed from: c  reason: collision with root package name */
-    Map<Long, Long> f37009c = new HashMap();
+    Map<Long, Long> f23318c = new HashMap();
     long d = 0;
     long e = 0;
     com.tencent.liteav.base.util.r f;
 
     public be(IVideoReporter iVideoReporter, VideoProducerDef.StreamType streamType) {
         this.b = iVideoReporter;
-        this.f37008a = "VECStatistics_" + streamType + BridgeUtil.UNDERLINE_STR + hashCode();
+        this.f23317a = "VECStatistics_" + streamType + "_" + hashCode();
     }
 
     @Override // com.tencent.liteav.base.util.r.a

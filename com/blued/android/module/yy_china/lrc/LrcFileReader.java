@@ -22,13 +22,9 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/lrc/LrcFileReader.class */
 public class LrcFileReader {
-
-    /* renamed from: a  reason: collision with root package name */
-    private OnProgressChangedListener f17516a;
+    private OnProgressChangedListener a;
     private int b = Color.parseColor("#07FA81");
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f17517c = Color.parseColor("#FFFFFF");
+    private int c = Color.parseColor("#FFFFFF");
     private LyricInfo d = null;
     private boolean f = false;
     private int g = 0;
@@ -39,40 +35,34 @@ public class LrcFileReader {
     /* renamed from: com.blued.android.module.yy_china.lrc.LrcFileReader$1  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/lrc/LrcFileReader$1.class */
     class AnonymousClass1 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ InputStream f17518a;
+        final /* synthetic */ InputStream a;
         final /* synthetic */ LrcFileReader b;
 
         @Override // java.lang.Runnable
         public void run() {
-            this.b.a(this.f17518a);
+            this.b.a(this.a);
         }
     }
 
     /* renamed from: com.blued.android.module.yy_china.lrc.LrcFileReader$3  reason: invalid class name */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/lrc/LrcFileReader$3.class */
     class AnonymousClass3 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ List f17520a;
+        final /* synthetic */ List a;
         final /* synthetic */ long b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ DataHolder f17521c;
+        final /* synthetic */ DataHolder c;
         final /* synthetic */ LrcFileReader d;
 
         @Override // java.lang.Runnable
         public void run() {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            int size = this.f17520a.size();
+            int size = this.a.size();
             int i = 0;
-            for (int i2 = 0; i2 < size && ((LineInfo) this.f17520a.get(i2)).getStart() < this.b; i2++) {
+            for (int i2 = 0; i2 < size && ((LineInfo) this.a.get(i2)).getStart() < this.b; i2++) {
                 i = i2;
             }
             if (i != this.d.g || this.d.f) {
                 this.d.g = i;
-                int size2 = this.f17520a.size();
+                int size2 = this.a.size();
                 int i3 = 0;
                 while (true) {
                     int i4 = i3;
@@ -80,20 +70,20 @@ public class LrcFileReader {
                         break;
                     }
                     LrcFileReader lrcFileReader = this.d;
-                    ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(i4 == i ? lrcFileReader.b : lrcFileReader.f17517c);
-                    SpannableString spannableString = new SpannableString(((LineInfo) this.f17520a.get(i4)).getContent() + "\n");
+                    ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(i4 == i ? lrcFileReader.b : lrcFileReader.c);
+                    SpannableString spannableString = new SpannableString(((LineInfo) this.a.get(i4)).getContent() + "\n");
                     spannableString.setSpan(foregroundColorSpan, 0, spannableString.length(), 17);
                     spannableStringBuilder.append((CharSequence) spannableString);
                     i3 = i4 + 1;
                 }
-                this.f17521c.f17523a = spannableStringBuilder;
-                this.f17521c.d = i;
-                this.f17521c.f17524c = this.d.f;
-                this.f17521c.b = this.f17520a;
+                this.c.a = spannableStringBuilder;
+                this.c.d = i;
+                this.c.c = this.d.f;
+                this.c.b = this.a;
                 if (this.d.f) {
                     this.d.f = false;
                 }
-                this.d.a(this.f17521c);
+                this.d.a(this.c);
             }
         }
     }
@@ -101,13 +91,9 @@ public class LrcFileReader {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/lrc/LrcFileReader$DataHolder.class */
     public class DataHolder {
-
-        /* renamed from: a  reason: collision with root package name */
-        public SpannableStringBuilder f17523a;
+        public SpannableStringBuilder a;
         public List<LineInfo> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public boolean f17524c;
+        public boolean c;
         public int d;
     }
 
@@ -125,12 +111,12 @@ public class LrcFileReader {
         AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.yy_china.lrc.LrcFileReader.4
             @Override // java.lang.Runnable
             public void run() {
-                if (dataHolder == null || LrcFileReader.this.f17516a == null) {
+                if (dataHolder == null || LrcFileReader.this.a == null) {
                     return;
                 }
-                LrcFileReader.this.f17516a.a(dataHolder.f17523a, dataHolder.d, dataHolder.f17524c);
+                LrcFileReader.this.a.a(dataHolder.a, dataHolder.d, dataHolder.c);
                 if (dataHolder.b != null) {
-                    LrcFileReader.this.f17516a.a(dataHolder.b.get(dataHolder.d).getContent(), dataHolder.f17524c);
+                    LrcFileReader.this.a.a(dataHolder.b.get(dataHolder.d).getContent(), dataHolder.c);
                 }
             }
         });
@@ -157,8 +143,8 @@ public class LrcFileReader {
         AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.yy_china.lrc.LrcFileReader.2
             @Override // java.lang.Runnable
             public void run() {
-                if (LrcFileReader.this.f17516a != null) {
-                    LrcFileReader.this.f17516a.a(LrcFileReader.this.d.getLines());
+                if (LrcFileReader.this.a != null) {
+                    LrcFileReader.this.a.a(LrcFileReader.this.d.getLines());
                 }
             }
         });

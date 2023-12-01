@@ -9,30 +9,26 @@ import org.json.JSONObject;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/q.class */
 public class q {
-
-    /* renamed from: c  reason: collision with root package name */
-    private static volatile q f6873c;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6874a = "1";
+    private static volatile q c;
+    private final String a = "1";
     private final String b = "2";
 
     private q() {
     }
 
     public static q a() {
-        if (f6873c == null) {
+        if (c == null) {
             synchronized (q.class) {
                 try {
-                    if (f6873c == null) {
-                        f6873c = new q();
+                    if (c == null) {
+                        c = new q();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f6873c;
+        return c;
     }
 
     public static void a(com.anythink.core.common.e.e eVar) {
@@ -40,9 +36,9 @@ public class q {
             return;
         }
         try {
-            com.anythink.core.c.d a2 = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(eVar.W());
-            if (a2 != null) {
-                String B = a2.B();
+            com.anythink.core.c.d a = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(eVar.W());
+            if (a != null) {
+                String B = a.B();
                 if (TextUtils.isEmpty(B)) {
                     return;
                 }

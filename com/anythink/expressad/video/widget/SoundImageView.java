@@ -9,33 +9,33 @@ import com.anythink.expressad.foundation.h.i;
 public class SoundImageView extends ImageView {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f8718a;
+    private boolean f5878a;
 
     public SoundImageView(Context context) {
         super(context);
-        this.f8718a = true;
+        this.f5878a = true;
     }
 
     public SoundImageView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f8718a = true;
+        this.f5878a = true;
     }
 
     public SoundImageView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f8718a = true;
+        this.f5878a = true;
     }
 
     public boolean getStatus() {
-        return this.f8718a;
+        return this.f5878a;
     }
 
     public void setSoundStatus(boolean z) {
-        this.f8718a = z;
+        this.f5878a = z;
         if (z) {
-            setImageResource(i.a(getContext(), "anythink_reward_sound_open", i.f7952c));
+            setImageResource(i.a(getContext(), "anythink_reward_sound_open", i.f5112c));
         } else {
-            setImageResource(i.a(getContext(), "anythink_reward_sound_close", i.f7952c));
+            setImageResource(i.a(getContext(), "anythink_reward_sound_close", i.f5112c));
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.soft.blued.ui.discover.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,7 @@ import com.soft.blued.ui.discover.presenter.DiscoveryPagePresenter;
 public class DiscoveryPageFragment extends MvpFragment<DiscoveryPagePresenter> {
 
     /* renamed from: a  reason: collision with root package name */
-    private MyAdapter f29807a;
+    private MyAdapter f16117a;
     @BindView
     BluedADConstraintLayout bluedAdLayout;
     @BindView
@@ -67,23 +66,23 @@ public class DiscoveryPageFragment extends MvpFragment<DiscoveryPagePresenter> {
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
-            return DiscoveryPageFragment.this.j().m().size();
+            return ((DiscoveryPagePresenter) DiscoveryPageFragment.this.j()).m().size();
         }
 
         @Override // androidx.fragment.app.FragmentPagerAdapter
         public Fragment getItem(int i) {
-            return DiscoveryPageFragment.this.j().m().get(i).getFragment();
+            return ((DiscoveryPagePresenter) DiscoveryPageFragment.this.j()).m().get(i).getFragment();
         }
 
         @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
-            return DiscoveryPageFragment.this.j().m().get(i).title;
+            return ((DiscoveryPagePresenter) DiscoveryPageFragment.this.j()).m().get(i).title;
         }
     }
 
     private void b() {
         if (StatusBarHelper.a()) {
-            this.findBadgeContainer.setPadding(0, StatusBarHelper.a((Context) getActivity()), 0, 0);
+            this.findBadgeContainer.setPadding(0, StatusBarHelper.a(getActivity()), 0, 0);
         }
         this.cttLeft.setVisibility(4);
         this.title.setVisibility(0);
@@ -91,10 +90,10 @@ public class DiscoveryPageFragment extends MvpFragment<DiscoveryPagePresenter> {
     }
 
     private void c() {
-        if (this.f29807a == null) {
-            this.f29807a = new MyAdapter(getChildFragmentManager());
+        if (this.f16117a == null) {
+            this.f16117a = new MyAdapter(getChildFragmentManager());
         }
-        this.viewPager.setAdapter(this.f29807a);
+        this.viewPager.setAdapter(this.f16117a);
         this.vpIndicator.setViewPager(this.viewPager);
         ViewGroup.LayoutParams layoutParams = this.vpIndicator.getLayoutParams();
         int a2 = DensityUtils.a(getContext(), 50.0f);
@@ -115,7 +114,7 @@ public class DiscoveryPageFragment extends MvpFragment<DiscoveryPagePresenter> {
             @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 DiscoveryPageFragment.this.vpIndicator.c(i);
-                if (DiscoveryPageFragment.this.j().m().size() <= i || DiscoveryPageFragment.this.j().m().get(i).tabid != 4) {
+                if (((DiscoveryPagePresenter) DiscoveryPageFragment.this.j()).m().size() <= i || ((DiscoveryPagePresenter) DiscoveryPageFragment.this.j()).m().get(i).tabid != 4) {
                     return;
                 }
                 EventTrackFeed.a(FeedProtos.Event.FIND_TOP_CIRCLE_CLICK);
@@ -125,14 +124,13 @@ public class DiscoveryPageFragment extends MvpFragment<DiscoveryPagePresenter> {
     }
 
     public void a(int i) {
-        int a2 = j().a(i);
+        int a2 = ((DiscoveryPagePresenter) j()).a(i);
         if (a2 < 0 || a2 >= this.viewPager.getAdapter().getCount()) {
             return;
         }
         this.viewPager.setCurrentItem(a2);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public void a(Bundle bundle) {
         super.a(bundle);
         b();
@@ -157,18 +155,16 @@ public class DiscoveryPageFragment extends MvpFragment<DiscoveryPagePresenter> {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void c(Integer num) {
-        if (num.intValue() < 0 || this.f29807a.getCount() <= num.intValue()) {
+        if (num.intValue() < 0 || this.f16117a.getCount() <= num.intValue()) {
             return;
         }
         this.viewPager.setCurrentItem(num.intValue(), true);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public int g() {
         return R.layout.fragment_discovery;
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpFragment
     public boolean q() {
         return true;
     }

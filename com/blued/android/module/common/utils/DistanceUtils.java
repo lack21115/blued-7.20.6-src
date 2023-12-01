@@ -4,14 +4,12 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.widget.TextView;
-import com.baidu.mobads.sdk.api.IAdInterListener;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.framework.utils.StringUtils;
 import com.blued.android.module.common.R;
 import com.blued.android.module.common.login.model.UserBasicModel;
-import com.huawei.hms.framework.common.ExceptionCode;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -43,7 +41,7 @@ public class DistanceUtils {
                     return d(l + "");
                 }
                 return d(Math.round(((float) l.longValue()) / 1.0E7f) + "") + context.getResources().getString(R.string.count_second_lvl_unit);
-            } else if (Math.round(((float) l.longValue()) / 1.0E7f) * ExceptionCode.CRASH_EXCEPTION >= 100000000) {
+            } else if (Math.round(((float) l.longValue()) / 1.0E7f) * 10000000 >= 100000000) {
                 return d(Math.round(((float) l.longValue()) / 1.0E7f) + "") + context.getResources().getString(R.string.count_second_lvl_unit);
             } else {
                 return d(Math.round(((float) l.longValue()) / 10000.0f) + "") + context.getResources().getString(R.string.count_first_lvl_unit);
@@ -77,7 +75,7 @@ public class DistanceUtils {
         if (divide.scale() > 0) {
             bigDecimal = divide.setScale(2, RoundingMode.HALF_UP);
         }
-        return bigDecimal.stripTrailingZeros().toPlainString() + IAdInterListener.AdReqParam.WIDTH;
+        return bigDecimal.stripTrailingZeros().toPlainString() + "w";
     }
 
     public static String a(String str) {
@@ -101,25 +99,25 @@ public class DistanceUtils {
         if (TextUtils.isEmpty(str)) {
             return "";
         }
-        int c2 = CommonPreferences.c();
-        if (c2 == 1) {
+        int c = CommonPreferences.c();
+        if (c == 1) {
             StringBuilder sb = new StringBuilder();
             sb.append(a(str));
             sb.append(z ? " km" : "km");
             return sb.toString();
-        } else if (c2 != 2) {
+        } else if (c != 2) {
             return "";
         } else {
-            double a2 = StringUtils.a(str, 0.0d) * 0.62d;
-            if (a2 >= 1000.0d) {
+            double a = StringUtils.a(str, 0.0d) * 0.62d;
+            if (a >= 1000.0d) {
                 StringBuilder sb2 = new StringBuilder();
-                sb2.append((int) Math.round(a2));
+                sb2.append((int) Math.round(a));
                 sb2.append(z ? " mi" : "mi");
                 return sb2.toString();
             }
             DecimalFormat decimalFormat = new DecimalFormat("#0.00");
             StringBuilder sb3 = new StringBuilder();
-            sb3.append(decimalFormat.format(a2));
+            sb3.append(decimalFormat.format(a));
             sb3.append(z ? " mi" : "mi");
             return sb3.toString();
         }
@@ -225,25 +223,25 @@ public class DistanceUtils {
         if (StringUtils.b(str)) {
             return "";
         }
-        int c2 = CommonPreferences.c();
-        if (c2 == 1) {
+        int c = CommonPreferences.c();
+        if (c == 1) {
             StringBuilder sb = new StringBuilder();
             sb.append(b(str));
             sb.append(z ? " km" : "km");
             return sb.toString();
-        } else if (c2 != 2) {
+        } else if (c != 2) {
             return "";
         } else {
-            double a2 = StringUtils.a(str, 0.0d) * 0.62d;
-            if (a2 >= 1000.0d) {
+            double a = StringUtils.a(str, 0.0d) * 0.62d;
+            if (a >= 1000.0d) {
                 StringBuilder sb2 = new StringBuilder();
-                sb2.append((int) Math.round(a2));
+                sb2.append((int) Math.round(a));
                 sb2.append(z ? " mi" : "mi");
                 return sb2.toString();
             }
             DecimalFormat decimalFormat = new DecimalFormat("#0.00");
             StringBuilder sb3 = new StringBuilder();
-            sb3.append(decimalFormat.format(a2));
+            sb3.append(decimalFormat.format(a));
             sb3.append(z ? " mi" : "mi");
             return sb3.toString();
         }

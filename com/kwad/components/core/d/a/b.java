@@ -15,7 +15,7 @@ import org.json.JSONObject;
 public final class b extends com.kwad.components.core.l.e {
     private static b Iv;
     private boolean IA;
-    private final C0518b Iw;
+    private final C0348b Iw;
     private com.kwad.components.core.d.a.a Iz;
 
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/d/a/b$a.class */
@@ -45,46 +45,46 @@ public final class b extends com.kwad.components.core.l.e {
             return this;
         }
 
-        public final C0518b mI() {
+        public final C0348b mI() {
             if (com.kwad.components.core.a.bI.booleanValue() && (this.adTemplate == null || TextUtils.isEmpty(this.url))) {
                 throw new IllegalArgumentException("param is error, please check it");
             }
-            return new C0518b(this, (byte) 0);
+            return new C0348b(this, (byte) 0);
         }
     }
 
     /* renamed from: com.kwad.components.core.d.a.b$b  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/components/core/d/a/b$b.class */
-    public static final class C0518b {
+    public static final class C0348b {
         protected DialogInterface.OnShowListener IC;
         protected DialogInterface.OnDismissListener ID;
         protected final AdTemplate adTemplate;
         protected String url;
 
-        private C0518b(a aVar) {
+        private C0348b(a aVar) {
             this.adTemplate = aVar.adTemplate;
             this.url = aVar.url;
             this.IC = aVar.IC;
             this.ID = aVar.ID;
         }
 
-        /* synthetic */ C0518b(a aVar, byte b) {
+        /* synthetic */ C0348b(a aVar, byte b) {
             this(aVar);
         }
     }
 
-    private b(Activity activity, C0518b c0518b) {
+    private b(Activity activity, C0348b c0348b) {
         super(activity);
         this.IA = false;
-        this.Iw = c0518b;
+        this.Iw = c0348b;
         if (com.kwad.sdk.c.kwai.a.a(activity)) {
             getWindow().addFlags(1024);
         }
-        setOnShowListener(c0518b.IC);
-        setOnDismissListener(c0518b.ID);
+        setOnShowListener(c0348b.IC);
+        setOnDismissListener(c0348b.ID);
     }
 
-    public static boolean a(Context context, C0518b c0518b) {
+    public static boolean a(Context context, C0348b c0348b) {
         Activity dj;
         b bVar = Iv;
         if ((bVar != null && bVar.isShowing()) || context == null || (dj = k.dj(context)) == null || dj.isFinishing()) {
@@ -92,10 +92,10 @@ public final class b extends com.kwad.components.core.l.e {
         }
         com.kwad.sdk.kwai.kwai.c.sZ().dismiss();
         try {
-            b bVar2 = new b(dj, c0518b);
+            b bVar2 = new b(dj, c0348b);
             Iv = bVar2;
             bVar2.show();
-            com.kwad.sdk.core.report.a.b(c0518b.adTemplate, 86, (JSONObject) null);
+            com.kwad.sdk.core.report.a.b(c0348b.adTemplate, 86, (JSONObject) null);
             return true;
         } catch (Throwable th) {
             com.kwad.sdk.core.d.b.printStackTrace(th);
@@ -131,8 +131,8 @@ public final class b extends com.kwad.components.core.l.e {
 
     @Override // com.kwad.components.core.l.e
     public final void g(View view) {
-        this.Iz.setChangeListener(new a.InterfaceC0517a() { // from class: com.kwad.components.core.d.a.b.1
-            @Override // com.kwad.components.core.d.a.a.InterfaceC0517a
+        this.Iz.setChangeListener(new a.InterfaceC0347a() { // from class: com.kwad.components.core.d.a.b.1
+            @Override // com.kwad.components.core.d.a.a.InterfaceC0347a
             public final void mE() {
                 b.this.dismiss();
             }

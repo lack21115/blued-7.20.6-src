@@ -8,24 +8,24 @@ import java.io.File;
 public final class d extends h<String, Long> {
 
     /* renamed from: c  reason: collision with root package name */
-    private static d f41720c;
+    private static d f28029c;
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41721a;
+    private String f28030a;
     private String b;
 
     private d(long j) {
         super(j);
-        this.f41721a = com.youzan.spiderman.cache.g.i();
+        this.f28030a = com.youzan.spiderman.cache.g.i();
         this.b = com.youzan.spiderman.cache.g.h();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static d a() {
-        if (f41720c == null) {
-            f41720c = new d(c.d());
+        if (f28029c == null) {
+            f28029c = new d(c.d());
         }
-        return f41720c;
+        return f28029c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -34,7 +34,7 @@ public final class d extends h<String, Long> {
         String str2 = str;
         super.a(z, str2, l, l2);
         File file = new File(this.b, str2);
-        File file2 = new File(this.f41721a, str2);
+        File file2 = new File(this.f28030a, str2);
         if (file.exists() && !file.delete()) {
             Logger.e("HtmlDataLruCache", "delete return false, file: " + file, new Object[0]);
         }

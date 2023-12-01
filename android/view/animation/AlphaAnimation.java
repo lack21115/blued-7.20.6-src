@@ -23,8 +23,9 @@ public class AlphaAnimation extends Animation {
         obtainStyledAttributes.recycle();
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.animation.Animation
-    protected void applyTransformation(float f, Transformation transformation) {
+    public void applyTransformation(float f, Transformation transformation) {
         float f2 = this.mFromAlpha;
         transformation.setAlpha(((this.mToAlpha - f2) * f) + f2);
     }

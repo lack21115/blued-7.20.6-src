@@ -14,13 +14,9 @@ import com.blued.community.R;
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/DialogFeedPostReadAuthBinding.class */
 public final class DialogFeedPostReadAuthBinding implements ViewBinding {
     private final FrameLayout A;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final LinearLayout f18801a;
+    public final LinearLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f18802c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final ImageView f;
@@ -47,9 +43,9 @@ public final class DialogFeedPostReadAuthBinding implements ViewBinding {
 
     private DialogFeedPostReadAuthBinding(FrameLayout frameLayout, LinearLayout linearLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, ImageView imageView4, ImageView imageView5, ImageView imageView6, ImageView imageView7, ImageView imageView8, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, LinearLayout linearLayout5, ShapeLinearLayout shapeLinearLayout, LinearLayout linearLayout6, LinearLayout linearLayout7, LinearLayout linearLayout8, FrameLayout frameLayout2, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8) {
         this.A = frameLayout;
-        this.f18801a = linearLayout;
+        this.a = linearLayout;
         this.b = imageView;
-        this.f18802c = imageView2;
+        this.c = imageView2;
         this.d = imageView3;
         this.e = imageView4;
         this.f = imageView5;
@@ -222,7 +218,6 @@ public final class DialogFeedPostReadAuthBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.A;

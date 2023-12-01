@@ -5,7 +5,7 @@ public interface d {
     public static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    public static final int f8713c = 3;
+    public static final int f5873c = 3;
 
     void click(int i, String str);
 

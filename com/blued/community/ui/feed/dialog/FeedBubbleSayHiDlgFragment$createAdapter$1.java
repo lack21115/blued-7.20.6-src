@@ -14,15 +14,13 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/dialog/FeedBubbleSayHiDlgFragment$createAdapter$1.class */
 public final class FeedBubbleSayHiDlgFragment$createAdapter$1 extends CommonRecycleAdapter<BubbleExhibitionModel> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FeedBubbleSayHiDlgFragment f19720a;
+    final /* synthetic */ FeedBubbleSayHiDlgFragment a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FeedBubbleSayHiDlgFragment$createAdapter$1(FeedBubbleSayHiDlgFragment feedBubbleSayHiDlgFragment, Context context) {
         super(context);
-        this.f19720a = feedBubbleSayHiDlgFragment;
+        this.a = feedBubbleSayHiDlgFragment;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -30,9 +28,9 @@ public final class FeedBubbleSayHiDlgFragment$createAdapter$1 extends CommonRecy
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(viewHolder, "$viewHolder");
         Intrinsics.e(item, "$item");
-        View a2 = viewHolder.a();
-        Intrinsics.c(a2, "viewHolder.convertView");
-        this$0.a(a2, item, i);
+        View a = viewHolder.a();
+        Intrinsics.c(a, "viewHolder.convertView");
+        this$0.a(a, item, i);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -49,10 +47,10 @@ public final class FeedBubbleSayHiDlgFragment$createAdapter$1 extends CommonRecy
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         marginLayoutParams.width = item.getRealWidth();
         imageView.setLayoutParams(marginLayoutParams);
-        ImageLoader.a(this.f19720a.j(), item.getImage()).a(imageView);
-        View a2 = viewHolder.a();
-        final FeedBubbleSayHiDlgFragment feedBubbleSayHiDlgFragment = this.f19720a;
-        a2.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedBubbleSayHiDlgFragment$createAdapter$1$oduHh109GOaQfu7Vbftpvld8h3Q
+        ImageLoader.a(this.a.j(), item.getImage()).a(imageView);
+        View a = viewHolder.a();
+        final FeedBubbleSayHiDlgFragment feedBubbleSayHiDlgFragment = this.a;
+        a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedBubbleSayHiDlgFragment$createAdapter$1$oduHh109GOaQfu7Vbftpvld8h3Q
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeedBubbleSayHiDlgFragment$createAdapter$1.a(FeedBubbleSayHiDlgFragment.this, viewHolder, item, i, view);

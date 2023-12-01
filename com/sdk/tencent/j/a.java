@@ -9,7 +9,7 @@ import com.sdk.tencent.n.b;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f28058a = "com.sdk.tencent.j.a";
+    public static final String f14370a = "com.sdk.tencent.j.a";
     public static final Boolean b = Boolean.valueOf(c.b);
 
     public static void a(Context context, String str) {
@@ -29,7 +29,7 @@ public class a {
             edit.putLong(str, l.longValue());
             edit.commit();
         } catch (Exception e) {
-            b.a(f28058a, e.getMessage(), b);
+            b.a(f14370a, e.getMessage(), b);
         }
     }
 
@@ -39,7 +39,7 @@ public class a {
             edit.putString(str, str2);
             return edit.commit();
         } catch (Exception e) {
-            b.a(f28058a, e.getMessage(), b);
+            b.a(f14370a, e.getMessage(), b);
             return false;
         }
     }
@@ -49,7 +49,7 @@ public class a {
         try {
             j = context.getSharedPreferences("ZzxCache", 0).getLong(str, 0L);
         } catch (Exception e) {
-            b.a(f28058a, e.getMessage(), b);
+            b.a(f14370a, e.getMessage(), b);
         }
         return Long.valueOf(j);
     }
@@ -58,7 +58,7 @@ public class a {
         try {
             return context.getSharedPreferences("ZzxCache", 0).getString(str, "");
         } catch (Exception e) {
-            b.a(f28058a, e.getMessage(), b);
+            b.a(f14370a, e.getMessage(), b);
             return "";
         }
     }

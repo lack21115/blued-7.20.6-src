@@ -110,7 +110,7 @@ public abstract class AbstractCache<K, V> implements Cache<K, V> {
                 newLinkedHashMap.put(obj, ifPresent);
             }
         }
-        return ImmutableMap.copyOf(newLinkedHashMap);
+        return ImmutableMap.copyOf((Map) newLinkedHashMap);
     }
 
     @Override // com.google.common.cache.Cache

@@ -34,18 +34,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveUserCardModuleAdapter.class */
 public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCardMouleModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f11702a;
+    private Context a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private IRequestHost f11703c;
+    private IRequestHost c;
 
     public LiveUserCardModuleAdapter(Context context, List<LiveUserCardMouleModel> list, String str) {
         super(R.layout.live_user_card_module, list);
         this.b = "";
-        this.f11702a = context;
+        this.a = context;
         this.b = str;
         notifyDataSetChanged();
     }
@@ -89,7 +85,7 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
     }
 
     public final IRequestHost a() {
-        return this.f11703c;
+        return this.c;
     }
 
     public final void a(final View viewTop, final View viewBtm, final LiveUserCardMouleModel item) {
@@ -108,8 +104,8 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
         AlphaAnimation alphaAnimation2 = new AlphaAnimation(!item.getShow_btm() ? 0.0f : 1.0f, !item.getShow_btm() ? 1.0f : 0.0f);
         alphaAnimation.setDuration(160L);
         alphaAnimation2.setDuration(160L);
-        Rotate3dAnimation rotate3dAnimation = new Rotate3dAnimation(item.getShow_btm() ? -270.0f : 0.0f, item.getShow_btm() ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.f11720a, true);
-        Rotate3dAnimation rotate3dAnimation2 = new Rotate3dAnimation(!item.getShow_btm() ? -270.0f : 0.0f, !item.getShow_btm() ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.f11720a, true);
+        Rotate3dAnimation rotate3dAnimation = new Rotate3dAnimation(item.getShow_btm() ? -270.0f : 0.0f, item.getShow_btm() ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.a, true);
+        Rotate3dAnimation rotate3dAnimation2 = new Rotate3dAnimation(!item.getShow_btm() ? -270.0f : 0.0f, !item.getShow_btm() ? -360.0f : -90.0f, width, height, 0.0f, Rotate3dAnimation.a, true);
         rotate3dAnimation.setDuration(160L);
         rotate3dAnimation2.setDuration(160L);
         animationSet.addAnimation(alphaAnimation);
@@ -182,7 +178,6 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder baseViewHolder, final LiveUserCardMouleModel liveUserCardMouleModel) {
         Context context;
@@ -199,13 +194,13 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
         }
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) layoutParams;
         if (layoutPosition == 0) {
-            marginLayoutParams.leftMargin = DensityUtils.a(this.f11702a, 15.0f);
+            marginLayoutParams.leftMargin = DensityUtils.a(this.a, 15.0f);
             marginLayoutParams.rightMargin = 0;
         } else if (layoutPosition == this.mData.size() - 1) {
-            marginLayoutParams.leftMargin = DensityUtils.a(this.f11702a, 7.5f);
-            marginLayoutParams.rightMargin = DensityUtils.a(this.f11702a, 15.0f);
+            marginLayoutParams.leftMargin = DensityUtils.a(this.a, 7.5f);
+            marginLayoutParams.rightMargin = DensityUtils.a(this.a, 15.0f);
         } else {
-            marginLayoutParams.leftMargin = DensityUtils.a(this.f11702a, 7.5f);
+            marginLayoutParams.leftMargin = DensityUtils.a(this.a, 7.5f);
             marginLayoutParams.rightMargin = 0;
         }
         view.setLayoutParams(marginLayoutParams);
@@ -256,11 +251,11 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
                 shapeFrameLayout2.setAlpha(0.6f);
             }
         } else {
-            IRequestHost iRequestHost = this.f11703c;
+            IRequestHost iRequestHost = this.c;
             String color_image = liveUserCardMouleModel.getColor_image();
             Intrinsics.a((Object) color_image);
             ImageLoader.a(iRequestHost, color_image).a(imageView);
-            IRequestHost iRequestHost2 = this.f11703c;
+            IRequestHost iRequestHost2 = this.c;
             String color_image2 = liveUserCardMouleModel.getColor_image();
             Intrinsics.a((Object) color_image2);
             ImageLoader.a(iRequestHost2, color_image2).a(imageView2);
@@ -303,22 +298,22 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
                 if (current_progress <= 1.0f) {
                     f2 = current_progress;
                 }
-                float a2 = DensityUtils.a(this.f11702a, 125.0f);
-                int a3 = DensityUtils.a(this.f11702a, 3.0f);
-                int max = Math.max((int) (f2 * a2), a3);
-                if (max > a3) {
-                    context = this.f11702a;
+                float a = DensityUtils.a(this.a, 125.0f);
+                int a2 = DensityUtils.a(this.a, 3.0f);
+                int max = Math.max((int) (f2 * a), a2);
+                if (max > a2) {
+                    context = this.a;
                     f = 1.5f;
                 } else {
-                    context = this.f11702a;
+                    context = this.a;
                     f = 3.0f;
                 }
-                int a4 = DensityUtils.a(context, f);
+                int a3 = DensityUtils.a(context, f);
                 ViewGroup.LayoutParams layoutParams2 = shapeFrameLayout3 == null ? null : shapeFrameLayout3.getLayoutParams();
                 if (layoutParams2 == null) {
                     throw new NullPointerException("null cannot be cast to non-null type android.view.ViewGroup.MarginLayoutParams");
                 }
-                ((ViewGroup.MarginLayoutParams) layoutParams2).setMargins(a4, a4, a4, a4);
+                ((ViewGroup.MarginLayoutParams) layoutParams2).setMargins(a3, a3, a3, a3);
                 ViewGroup.LayoutParams layoutParams3 = shapeFrameLayout3 == null ? null : shapeFrameLayout3.getLayoutParams();
                 if (layoutParams3 != null) {
                     layoutParams3.width = max;
@@ -330,10 +325,10 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
                 shapeFrameLayout3.setVisibility(8);
             }
             if (liveUserCardMouleModel.is_max_progress()) {
-                int a5 = DensityUtils.a(this.f11702a, 125.0f);
+                int a4 = DensityUtils.a(this.a, 125.0f);
                 ViewGroup.LayoutParams layoutParams4 = shapeFrameLayout3 == null ? null : shapeFrameLayout3.getLayoutParams();
                 if (layoutParams4 != null) {
-                    layoutParams4.width = a5;
+                    layoutParams4.width = a4;
                 }
                 baseViewHolder.setGone(R.id.tv1_btm, false);
                 baseViewHolder.setText(R.id.tv2_btm, liveUserCardMouleModel.getFlip_name());
@@ -359,6 +354,6 @@ public final class LiveUserCardModuleAdapter extends BaseQuickAdapter<LiveUserCa
     }
 
     public final Context getContext() {
-        return this.f11702a;
+        return this.a;
     }
 }

@@ -1,5 +1,6 @@
 package com.zx.a.I8b7;
 
+import android.app.backup.FullBackup;
 import android.content.Context;
 import com.igexin.sdk.PushConsts;
 import com.youzan.androidsdk.tool.AppSigning;
@@ -21,7 +22,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class s1 implements ZXModule {
 
     /* renamed from: a  reason: collision with root package name */
-    public v2 f42195a;
+    public v2 f28504a;
     public final q1 b = new q1();
 
     @Override // com.zx.module.base.ZXModule
@@ -43,7 +44,7 @@ public class s1 implements ZXModule {
             if (!((HashSet) q1.b).contains(substring)) {
                 return q1Var.a(str + " not in invokableMethods", 3);
             }
-            Method declaredMethod = q1.class.getDeclaredMethod("f" + substring, String.class);
+            Method declaredMethod = q1.class.getDeclaredMethod(FullBackup.DATA_TREE_TOKEN + substring, String.class);
             declaredMethod.setAccessible(true);
             return (String) declaredMethod.invoke(q1Var, str2);
         } catch (Exception e) {
@@ -65,7 +66,7 @@ public class s1 implements ZXModule {
             }
             z1.a("开始执行invokeAsync: method:" + str + "; " + str2 + ":cb");
             StringBuilder sb = new StringBuilder();
-            sb.append("f");
+            sb.append(FullBackup.DATA_TREE_TOKEN);
             sb.append(substring);
             Method declaredMethod = q1.class.getDeclaredMethod(sb.toString(), String.class, Callback.class);
             declaredMethod.setAccessible(true);
@@ -81,18 +82,18 @@ public class s1 implements ZXModule {
     @Override // com.zx.module.base.ZXModule
     public void onCreate(ContextHolder contextHolder) throws ZXModuleOnCreateException {
         a3 a3Var = new a3();
-        this.f42195a = a3Var;
+        this.f28504a = a3Var;
         Context context = (Context) contextHolder.getContext();
         try {
             if (!a3Var.b.getAndSet(true)) {
-                AtomicInteger atomicInteger = c3.f42112c;
-                c3.c.f42114a.b.execute(new z2(a3Var, context));
+                AtomicInteger atomicInteger = c3.f28421c;
+                c3.c.f28423a.b.execute(new z2(a3Var, context));
             }
         } catch (Throwable th) {
             n2.a(th, m2.a("ZXCore init failed: "));
             a3Var.b.set(false);
         }
-        this.b.f42177a = this.f42195a;
+        this.b.f28486a = this.f28504a;
     }
 
     @Override // com.zx.module.base.ZXModule
@@ -101,21 +102,21 @@ public class s1 implements ZXModule {
 
     @Override // com.zx.module.base.ZXModule
     public void setMessageListener(Listener listener) {
-        a3 a3Var = (a3) this.f42195a;
+        a3 a3Var = (a3) this.f28504a;
         a3Var.getClass();
-        a3Var.f42101c = new w2(a3Var, listener);
+        a3Var.f28410c = new w2(a3Var, listener);
     }
 
     @Override // com.zx.module.base.ZXModule
     public void start() throws ZXModuleStartException {
-        a3 a3Var = (a3) this.f42195a;
-        if (a3Var.f42100a.compareAndSet(false, true)) {
+        a3 a3Var = (a3) this.f28504a;
+        if (a3Var.f28409a.compareAndSet(false, true)) {
             try {
                 ZXTask zXTask = new ZXTask(new x2(a3Var), new y2(a3Var));
-                AtomicInteger atomicInteger = c3.f42112c;
-                c3.c.f42114a.b.execute(zXTask);
+                AtomicInteger atomicInteger = c3.f28421c;
+                c3.c.f28423a.b.execute(zXTask);
             } catch (Throwable th) {
-                a3Var.f42101c.onMessage("MESSAGE_ON_ZXID_RECEIVED", n1.a(PushConsts.GET_SDKONLINESTATE, th.getMessage()));
+                a3Var.f28410c.onMessage("MESSAGE_ON_ZXID_RECEIVED", n1.a(PushConsts.GET_SDKONLINESTATE, th.getMessage()));
                 StringBuilder sb = new StringBuilder();
                 sb.append("ZXCore start failed: ");
                 n2.a(th, sb);

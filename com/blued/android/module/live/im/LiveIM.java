@@ -9,16 +9,13 @@ import com.blued.android.module.im.grpc.OnConnectStateListener;
 import com.blued.android.module.live.im.biz.LiveChat;
 import com.blued.android.module.live.im.biz.LiveConnector;
 import com.qiniu.android.dns.DnsManager;
+import io.grpc.internal.GrpcUtil;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/im/LiveIM.class */
 public class LiveIM {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile ChannelManager f11582a;
+    private static volatile ChannelManager a;
     private static volatile LiveConnector b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final IMThreadManager f11583c = new IMThreadManager(3, 10);
+    private static final IMThreadManager c = new IMThreadManager(3, 10);
     private static LiveChat d;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/live/im/LiveIM$OnSendLikeFinishListener.class */
@@ -40,17 +37,17 @@ public class LiveIM {
                 if (TextUtils.isEmpty(str)) {
                     return;
                 }
-                if (b == null || f11582a == null || !f11582a.a().equals(str)) {
+                if (b == null || a == null || !a.a().equals(str)) {
                     if (b != null) {
                         b.f();
                         b = null;
                     }
-                    if (f11582a != null) {
-                        f11582a.c();
-                        f11582a = null;
+                    if (a != null) {
+                        a.c();
+                        a = null;
                     }
-                    f11582a = new ChannelManager(context, str, 443, dnsManager);
-                    b = new LiveConnector(f11582a);
+                    a = new ChannelManager(context, str, GrpcUtil.DEFAULT_PORT_SSL, dnsManager);
+                    b = new LiveConnector(a);
                     b.a("blued-grpc-live-im");
                     b.a(false);
                     b.b(false);
@@ -85,8 +82,8 @@ public class LiveIM {
 
     public static void a(String str) {
         String str2;
-        if (f11582a != null) {
-            ChannelManager channelManager = f11582a;
+        if (a != null) {
+            ChannelManager channelManager = a;
             if (TextUtils.isEmpty(str)) {
                 str2 = "";
             } else {
@@ -107,7 +104,7 @@ public class LiveIM {
     }
 
     public static boolean a() {
-        return f11582a != null;
+        return a != null;
     }
 
     public static void b() {
@@ -129,9 +126,9 @@ public class LiveIM {
     }
 
     private static void d() {
-        if (f11582a == null || d != null) {
+        if (a == null || d != null) {
             return;
         }
-        d = new LiveChat(f11582a, f11583c);
+        d = new LiveChat(a, c);
     }
 }

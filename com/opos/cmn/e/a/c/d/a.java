@@ -7,11 +7,11 @@ import com.opos.cmn.e.a.c.c.e;
 public abstract class a {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f24789a;
+    protected Context f11101a;
     protected e b;
 
     public a(Context context, e eVar) {
-        this.f24789a = context;
+        this.f11101a = context;
         this.b = eVar;
     }
 }

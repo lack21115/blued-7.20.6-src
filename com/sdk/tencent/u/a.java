@@ -15,12 +15,12 @@ public class a<T> extends b<T> {
     public final void a() {
         if (!c.d) {
             this.g = c.b.b.a();
-            c.b.f28051a.a();
+            c.b.f14363a.a();
             return;
         }
         String testHost = SDKManager.getTestHost();
         if (!com.sdk.tencent.n.b.b(SDKManager.getStatisticalTestHost()).booleanValue()) {
-            c.b.f28051a.a();
+            c.b.f14363a.a();
         }
         if (!com.sdk.tencent.n.b.b(testHost).booleanValue()) {
             testHost = c.b.b.a();

@@ -9,7 +9,7 @@ import android.view.Surface;
 
 /* loaded from: source-7994992-dex2jar.jar:com/huawei/hms/ads/fe.class */
 public final class fe {
-    private final int[] B = {12324, 8, 12323, 8, 12322, 8, 12321, 8, 12352, 4, 12344, 0, 12344};
+    private final int[] B = {EGL14.EGL_RED_SIZE, 8, EGL14.EGL_GREEN_SIZE, 8, EGL14.EGL_BLUE_SIZE, 8, EGL14.EGL_ALPHA_SIZE, 8, EGL14.EGL_RENDERABLE_TYPE, 4, EGL14.EGL_NONE, 0, EGL14.EGL_NONE};
     private EGLContext I;
     private EGLDisplay V;
     private EGLConfig Z;
@@ -42,7 +42,7 @@ public final class fe {
         if (B == null) {
             throw new IllegalStateException("fail to get config");
         }
-        this.I = EGL14.eglCreateContext(this.V, B, EGL14.EGL_NO_CONTEXT, new int[]{12440, 2, 12344}, 0);
+        this.I = EGL14.eglCreateContext(this.V, B, EGL14.EGL_NO_CONTEXT, new int[]{12440, 2, EGL14.EGL_NONE}, 0);
         Code("create context fail");
         this.Z = B;
     }
@@ -70,7 +70,7 @@ public final class fe {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EGLSurface Code(Surface surface) {
-        EGLSurface eglCreateWindowSurface = EGL14.eglCreateWindowSurface(this.V, this.Z, surface, new int[]{12344}, 0);
+        EGLSurface eglCreateWindowSurface = EGL14.eglCreateWindowSurface(this.V, this.Z, surface, new int[]{EGL14.EGL_NONE}, 0);
         Code("create window surface fail");
         if (eglCreateWindowSurface != null) {
             return eglCreateWindowSurface;

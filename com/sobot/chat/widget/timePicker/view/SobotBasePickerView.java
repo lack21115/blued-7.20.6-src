@@ -1,5 +1,6 @@
 package com.sobot.chat.widget.timePicker.view;
 
+import android.R;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -187,7 +188,7 @@ public class SobotBasePickerView {
             });
         } else {
             if (this.decorView == null) {
-                this.decorView = (ViewGroup) ((Activity) this.context).getWindow().getDecorView().findViewById(16908290);
+                this.decorView = (ViewGroup) ((Activity) this.context).getWindow().getDecorView().findViewById(R.id.content);
             }
             ViewGroup viewGroup2 = (ViewGroup) from.inflate(ResourceUtils.getIdByName(this.context, "layout", "sobot_layout_basepickerview"), this.decorView, false);
             this.rootView = viewGroup2;

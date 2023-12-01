@@ -18,28 +18,28 @@ import com.opos.mobad.q.a.m;
 public class e extends g.a implements p {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f26181a;
-    private a.C0707a b;
+    private Context f12493a;
+    private a.C0537a b;
 
     /* renamed from: c  reason: collision with root package name */
-    private f f26182c;
+    private f f12494c;
     private com.opos.mobad.n.a d;
     private o e;
     private a.b f;
     private com.opos.mobad.ad.privacy.b g;
     private Object h;
-    private b.InterfaceC0687b i = new b.InterfaceC0687b() { // from class: com.opos.mobad.h.b.e.1
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+    private b.InterfaceC0517b i = new b.InterfaceC0517b() { // from class: com.opos.mobad.h.b.e.1
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void a(AdItemData adItemData, String str) {
             com.opos.cmn.an.f.a.b(INativeTempletAdView.TAG, "notifyInstallCompletedEvent:" + str);
             e.this.a(str);
         }
 
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void b(AdItemData adItemData, String str) {
         }
 
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void c(AdItemData adItemData, String str) {
         }
     };
@@ -91,7 +91,7 @@ public class e extends g.a implements p {
             }
         }
 
-        @Override // com.opos.mobad.q.a.a.InterfaceC0724a
+        @Override // com.opos.mobad.q.a.a.InterfaceC0554a
         public void j_() {
             if (e.this.e != null) {
                 e.this.e.d(e.this);
@@ -99,13 +99,13 @@ public class e extends g.a implements p {
         }
     };
 
-    public e(Context context, a.C0707a c0707a, String str, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.n.a aVar2, o oVar, com.opos.mobad.cmn.b.c cVar) {
-        this.f26181a = context;
-        this.b = c0707a;
+    public e(Context context, a.C0537a c0537a, String str, com.opos.mobad.cmn.a.a aVar, com.opos.mobad.n.a aVar2, o oVar, com.opos.mobad.cmn.b.c cVar) {
+        this.f12493a = context;
+        this.b = c0537a;
         this.d = aVar2;
         this.e = oVar;
         this.g = new com.opos.mobad.cmn.b.e(cVar);
-        this.f26182c = new f(context, c0707a, str, aVar, new com.opos.mobad.o.a.a(this.f26181a, null), aVar2, this.i, this.j, this.g);
+        this.f12494c = new f(context, c0537a, str, aVar, new com.opos.mobad.o.a.a(this.f12493a, null), aVar2, this.i, this.j, this.g);
         a.b a2 = com.opos.mobad.cmn.a.b.f.a(context, aVar2.c());
         this.f = a2;
         aVar.a(a2);
@@ -128,21 +128,21 @@ public class e extends g.a implements p {
 
     public void a(String str) {
         com.opos.cmn.an.f.a.b(INativeTempletAdView.TAG, "notifyInstallCompletedEvent pkgname =" + str);
-        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(this.b.f26483c.k()) || !this.b.f26483c.k().equals(str)) {
+        if (TextUtils.isEmpty(str) || TextUtils.isEmpty(this.b.f12795c.k()) || !this.b.f12795c.k().equals(str)) {
             return;
         }
-        this.f26182c.a(str);
+        this.f12494c.a(str);
     }
 
     @Override // com.opos.mobad.ad.c.p
     public void b() {
-        this.f26182c.a();
+        this.f12494c.a();
     }
 
     @Override // com.opos.mobad.ad.c.p
     public void c() {
         this.d.d();
-        this.f26182c.c();
+        this.f12494c.c();
         a.b bVar = this.f;
         if (bVar != null) {
             bVar.a();
@@ -152,7 +152,7 @@ public class e extends g.a implements p {
 
     @Override // com.opos.mobad.ad.g.a, com.opos.mobad.ad.g
     public void c(int i) {
-        this.f26182c.d(i);
+        this.f12494c.d(i);
     }
 
     @Override // com.opos.mobad.ad.c.p

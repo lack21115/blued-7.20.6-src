@@ -7,7 +7,7 @@ import android.location.Location;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private d f38260a;
+    private d f24569a;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/open/c$a.class */
     public interface a {
@@ -15,8 +15,8 @@ public class c {
     }
 
     public void a(Context context, a aVar) {
-        this.f38260a = new d(aVar);
-        com.tencent.map.a.a.a.a().a(context, this.f38260a);
+        this.f24569a = new d(aVar);
+        com.tencent.map.a.a.a.a().a(context, this.f24569a);
     }
 
     public boolean a() {
@@ -25,6 +25,6 @@ public class c {
 
     public void b() {
         com.tencent.map.a.a.a.a().b();
-        this.f38260a = null;
+        this.f24569a = null;
     }
 }

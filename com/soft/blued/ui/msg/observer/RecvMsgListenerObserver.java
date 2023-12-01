@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class RecvMsgListenerObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static RecvMsgListenerObserver f32458a;
+    private static RecvMsgListenerObserver f18767a;
     private ArrayList<IRecvMsgListener> b = new ArrayList<>();
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/msg/observer/RecvMsgListenerObserver$IRecvMsgListener.class */
@@ -21,18 +21,18 @@ public class RecvMsgListenerObserver {
     }
 
     public static RecvMsgListenerObserver a() {
-        if (f32458a == null) {
+        if (f18767a == null) {
             synchronized (RecvMsgListenerObserver.class) {
                 try {
-                    if (f32458a == null) {
-                        f32458a = new RecvMsgListenerObserver();
+                    if (f18767a == null) {
+                        f18767a = new RecvMsgListenerObserver();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f32458a;
+        return f18767a;
     }
 
     public void a(SessionModel sessionModel, ChattingModel chattingModel) {

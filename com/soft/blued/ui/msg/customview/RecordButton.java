@@ -28,11 +28,11 @@ import skin.support.widget.SkinCompatTextView;
 public class RecordButton extends SkinCompatTextView {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f32319a;
+    public int f18629a;
     private final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f32320c;
+    private final int f18630c;
     private Long d;
     private boolean e;
     private Dialog f;
@@ -62,9 +62,9 @@ public class RecordButton extends SkinCompatTextView {
 
     public RecordButton(Context context) {
         super(context);
-        this.f32319a = -1;
+        this.f18629a = -1;
         this.b = "RecordButton";
-        this.f32320c = 1000;
+        this.f18630c = 1000;
         this.d = 0L;
         this.e = true;
         this.k = 0;
@@ -73,9 +73,9 @@ public class RecordButton extends SkinCompatTextView {
 
     public RecordButton(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f32319a = -1;
+        this.f18629a = -1;
         this.b = "RecordButton";
-        this.f32320c = 1000;
+        this.f18630c = 1000;
         this.d = 0L;
         this.e = true;
         this.k = 0;
@@ -92,7 +92,7 @@ public class RecordButton extends SkinCompatTextView {
     }
 
     private void a(Context context) {
-        this.q = ((PowerManager) context.getSystemService("power")).newWakeLock(26, "RecordButton");
+        this.q = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(26, "RecordButton");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -138,7 +138,7 @@ public class RecordButton extends SkinCompatTextView {
                             int height = ((120 - i2) * RecordButton.this.p.getHeight()) / 120;
                             RecordButton.this.i.setImageBitmap(Bitmap.createBitmap(RecordButton.this.p, 0, height, RecordButton.this.p.getWidth(), RecordButton.this.p.getHeight() - height));
                         }
-                        if (RecordButton.this.f32319a == -1 || RecordButton.this.f32319a - i > 10) {
+                        if (RecordButton.this.f18629a == -1 || RecordButton.this.f18629a - i > 10) {
                             RecordButton.this.j.setTextColor(Color.GRAY);
                         } else {
                             RecordButton.this.j.setTextColor(-65536);
@@ -146,7 +146,7 @@ public class RecordButton extends SkinCompatTextView {
                         if (!RecordButton.this.l.c()) {
                             RecordButton.this.h();
                         }
-                        if (RecordButton.this.f32319a == -1 || i < RecordButton.this.f32319a) {
+                        if (RecordButton.this.f18629a == -1 || i < RecordButton.this.f18629a) {
                             return;
                         }
                         RecordButton.this.f();
@@ -157,7 +157,6 @@ public class RecordButton extends SkinCompatTextView {
                         RecordButton.this.a((int) R.string.record_too_ofen);
                         RecordButton.this.f.dismiss();
                         ThreadManager.a().a(new ThreadExecutor("RecordStartRecord") { // from class: com.soft.blued.ui.msg.customview.RecordButton.1.1
-                            @Override // com.blued.android.framework.pool.ThreadExecutor
                             public void execute() {
                                 try {
                                     Thread.sleep(500L);
@@ -268,11 +267,10 @@ public class RecordButton extends SkinCompatTextView {
         return this.k;
     }
 
-    @Override // android.widget.TextView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         try {
             if (AudioChannelManager.j().n()) {
-                a(2131893031);
+                a(R.string.yy_in_use);
             } else {
                 if (motionEvent.getY() < 0.0f) {
                     Logger.b("RecordButton", "onTouchEvent-->向上移动");

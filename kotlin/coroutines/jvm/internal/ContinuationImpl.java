@@ -47,7 +47,7 @@ public abstract class ContinuationImpl extends BaseContinuationImpl {
             if (r0 != 0) goto L3d
             r0 = r3
             kotlin.coroutines.CoroutineContext r0 = r0.getContext()
-            kotlin.coroutines.ContinuationInterceptor$Key r1 = kotlin.coroutines.ContinuationInterceptor.f42453a
+            kotlin.coroutines.ContinuationInterceptor$Key r1 = kotlin.coroutines.ContinuationInterceptor.a
             kotlin.coroutines.CoroutineContext$Key r1 = (kotlin.coroutines.CoroutineContext.Key) r1
             kotlin.coroutines.CoroutineContext$Element r0 = r0.get(r1)
             kotlin.coroutines.ContinuationInterceptor r0 = (kotlin.coroutines.ContinuationInterceptor) r0
@@ -82,10 +82,10 @@ public abstract class ContinuationImpl extends BaseContinuationImpl {
     public void releaseIntercepted() {
         Continuation<?> continuation = this.intercepted;
         if (continuation != null && continuation != this) {
-            CoroutineContext.Element element = getContext().get(ContinuationInterceptor.f42453a);
+            CoroutineContext.Element element = getContext().get(ContinuationInterceptor.a);
             Intrinsics.a(element);
             ((ContinuationInterceptor) element).releaseInterceptedContinuation(continuation);
         }
-        this.intercepted = CompletedContinuation.f42470a;
+        this.intercepted = CompletedContinuation.a;
     }
 }

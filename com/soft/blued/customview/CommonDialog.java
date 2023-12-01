@@ -11,7 +11,7 @@ import com.soft.blued.R;
 public class CommonDialog implements View.OnClickListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private Dialog f28397a;
+    private Dialog f14707a;
     private OnListener b;
 
     /* renamed from: com.soft.blued.customview.CommonDialog$1  reason: invalid class name */
@@ -33,7 +33,7 @@ public class CommonDialog implements View.OnClickListener {
     }
 
     public void a() {
-        Dialog dialog = this.f28397a;
+        Dialog dialog = this.f14707a;
         if (dialog != null) {
             dialog.cancel();
         }

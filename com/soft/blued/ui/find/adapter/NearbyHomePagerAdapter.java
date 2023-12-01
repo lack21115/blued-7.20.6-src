@@ -13,12 +13,12 @@ import java.util.List;
 public class NearbyHomePagerAdapter extends FragmentPagerAdapter {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<HomeTopTabModel> f30076a;
+    private List<HomeTopTabModel> f16386a;
     private NearbyPeopleFragment b;
 
     public NearbyHomePagerAdapter(FragmentManager fragmentManager, List<HomeTopTabModel> list) {
         super(fragmentManager);
-        this.f30076a = list;
+        this.f16386a = list;
     }
 
     @Override // androidx.fragment.app.FragmentPagerAdapter, androidx.viewpager.widget.PagerAdapter
@@ -28,22 +28,23 @@ public class NearbyHomePagerAdapter extends FragmentPagerAdapter {
 
     @Override // androidx.viewpager.widget.PagerAdapter
     public int getCount() {
-        return this.f30076a.size();
+        return this.f16386a.size();
     }
 
+    /* JADX WARN: Type inference failed for: r0v6, types: [com.soft.blued.ui.find.fragment.NearbyPeopleFragment, androidx.fragment.app.Fragment] */
     @Override // androidx.fragment.app.FragmentPagerAdapter
     public Fragment getItem(int i) {
-        int i2 = this.f30076a.get(i).tab_id;
+        int i2 = this.f16386a.get(i).tab_id;
         if (i2 != 1) {
             return i2 != 2 ? new NearbyPeopleFragment() : new NearbyFeedHomeFragment();
         }
-        NearbyPeopleFragment nearbyPeopleFragment = new NearbyPeopleFragment();
+        ?? nearbyPeopleFragment = new NearbyPeopleFragment();
         this.b = nearbyPeopleFragment;
         return nearbyPeopleFragment;
     }
 
     @Override // androidx.viewpager.widget.PagerAdapter
     public CharSequence getPageTitle(int i) {
-        return this.f30076a.get(i).tab_title;
+        return this.f16386a.get(i).tab_title;
     }
 }

@@ -11,11 +11,11 @@ import java.security.MessageDigest;
 public class c implements com.tencent.tmsqmsp.sdk.base.b {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f39767a;
+    private Context f26076a;
     private IVendorCallback b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f39768c = null;
+    private String f26077c = null;
     private boolean d = false;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/sdk/g/b/c$a.class */
@@ -26,28 +26,28 @@ public class c implements com.tencent.tmsqmsp.sdk.base.b {
         @Override // java.lang.Runnable
         public void run() {
             try {
-                a.C1050a a2 = com.tencent.tmsqmsp.sdk.g.b.a.a(c.this.f39767a);
-                c.this.f39768c = a2.a();
+                a.C0880a a2 = com.tencent.tmsqmsp.sdk.g.b.a.a(c.this.f26076a);
+                c.this.f26077c = a2.a();
                 a2.b();
-                if (!TextUtils.isEmpty(c.this.f39768c)) {
+                if (!TextUtils.isEmpty(c.this.f26077c)) {
                     c.this.d = true;
                 }
                 if (c.this.b != null) {
                     IVendorCallback iVendorCallback = c.this.b;
                     boolean z = c.this.d;
                     c cVar = c.this;
-                    iVendorCallback.onResult(z, cVar.a(f.a(cVar.f39767a)), c.this.f39768c);
+                    iVendorCallback.onResult(z, cVar.a(f.a(cVar.f26076a)), c.this.f26077c);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                if (TextUtils.isEmpty(c.this.f39768c)) {
+                if (TextUtils.isEmpty(c.this.f26077c)) {
                     c.this.d = false;
                 }
                 if (c.this.b != null) {
                     IVendorCallback iVendorCallback2 = c.this.b;
                     boolean z2 = c.this.d;
                     c cVar2 = c.this;
-                    iVendorCallback2.onResult(z2, cVar2.a(f.a(cVar2.f39767a)), c.this.f39768c);
+                    iVendorCallback2.onResult(z2, cVar2.a(f.a(cVar2.f26076a)), c.this.f26077c);
                 }
             }
         }
@@ -95,18 +95,18 @@ public class c implements com.tencent.tmsqmsp.sdk.base.b {
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String a() {
-        return this.f39768c;
+        return this.f26077c;
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public void a(Context context, IVendorCallback iVendorCallback) {
-        this.f39767a = context;
+        this.f26076a = context;
         this.b = iVendorCallback;
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String b() {
-        return a(f.a(this.f39767a));
+        return a(f.a(this.f26076a));
     }
 
     @Override // com.tencent.tmsqmsp.sdk.base.b

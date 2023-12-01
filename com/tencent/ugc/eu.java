@@ -4,10 +4,10 @@ package com.tencent.ugc;
 final /* synthetic */ class eu implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final UGCSingleFilePixelFrameProvider f40366a;
+    private final UGCSingleFilePixelFrameProvider f26675a;
 
     private eu(UGCSingleFilePixelFrameProvider uGCSingleFilePixelFrameProvider) {
-        this.f40366a = uGCSingleFilePixelFrameProvider;
+        this.f26675a = uGCSingleFilePixelFrameProvider;
     }
 
     public static Runnable a(UGCSingleFilePixelFrameProvider uGCSingleFilePixelFrameProvider) {
@@ -16,6 +16,6 @@ final /* synthetic */ class eu implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        UGCSingleFilePixelFrameProvider.lambda$onAbandonDecodingFramesCompleted$4(this.f40366a);
+        UGCSingleFilePixelFrameProvider.lambda$onAbandonDecodingFramesCompleted$4(this.f26675a);
     }
 }

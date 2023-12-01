@@ -26,17 +26,13 @@ import java.util.regex.Pattern;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/cache/DiskLruCache.class */
 public final class DiskLruCache implements Closeable {
-
-    /* renamed from: a  reason: collision with root package name */
-    static final Pattern f10395a = Pattern.compile("[a-z0-9_-]{1,120}");
+    static final Pattern a = Pattern.compile("[a-z0-9_-]{1,120}");
     private static final OutputStream p = new OutputStream() { // from class: com.blued.android.framework.web.cache.DiskLruCache.2
         @Override // java.io.OutputStream
         public void write(int i) throws IOException {
         }
     };
-
-    /* renamed from: c  reason: collision with root package name */
-    private final File f10396c;
+    private final File c;
     private final File d;
     private final File e;
     private final File f;
@@ -69,9 +65,7 @@ public final class DiskLruCache implements Closeable {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/cache/DiskLruCache$Editor.class */
     public final class Editor {
         private final Entry b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final boolean[] f10399c;
+        private final boolean[] c;
         private boolean d;
         private boolean e;
 
@@ -120,7 +114,7 @@ public final class DiskLruCache implements Closeable {
 
         private Editor(Entry entry) {
             this.b = entry;
-            this.f10399c = entry.d ? null : new boolean[DiskLruCache.this.i];
+            this.c = entry.d ? null : new boolean[DiskLruCache.this.i];
         }
 
         public OutputStream a(int i) throws IOException {
@@ -134,13 +128,13 @@ public final class DiskLruCache implements Closeable {
                     throw new IllegalStateException();
                 }
                 if (!this.b.d) {
-                    this.f10399c[i] = true;
+                    this.c[i] = true;
                 }
                 File b = this.b.b(i);
                 try {
                     fileOutputStream = new FileOutputStream(b);
                 } catch (FileNotFoundException e) {
-                    DiskLruCache.this.f10396c.mkdirs();
+                    DiskLruCache.this.c.mkdirs();
                     try {
                         fileOutputStream = new FileOutputStream(b);
                     } catch (FileNotFoundException e2) {
@@ -171,16 +165,14 @@ public final class DiskLruCache implements Closeable {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/cache/DiskLruCache$Entry.class */
     public final class Entry {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long[] f10402c;
+        private final long[] c;
         private boolean d;
         private Editor e;
         private long f;
 
         private Entry(String str) {
             this.b = str;
-            this.f10402c = new long[DiskLruCache.this.i];
+            this.c = new long[DiskLruCache.this.i];
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -195,7 +187,7 @@ public final class DiskLruCache implements Closeable {
                     if (i2 >= strArr.length) {
                         return;
                     }
-                    this.f10402c[i2] = Long.parseLong(strArr[i2]);
+                    this.c[i2] = Long.parseLong(strArr[i2]);
                     i = i2 + 1;
                 } catch (NumberFormatException e) {
                     throw b(strArr);
@@ -208,13 +200,13 @@ public final class DiskLruCache implements Closeable {
         }
 
         public File a(int i) {
-            File file = DiskLruCache.this.f10396c;
+            File file = DiskLruCache.this.c;
             return new File(file, this.b + "." + i);
         }
 
         public String a() throws IOException {
             StringBuilder sb = new StringBuilder();
-            long[] jArr = this.f10402c;
+            long[] jArr = this.c;
             int length = jArr.length;
             int i = 0;
             while (true) {
@@ -230,7 +222,7 @@ public final class DiskLruCache implements Closeable {
         }
 
         public File b(int i) {
-            File file = DiskLruCache.this.f10396c;
+            File file = DiskLruCache.this.c;
             return new File(file, this.b + "." + i + ".tmp");
         }
     }
@@ -238,15 +230,13 @@ public final class DiskLruCache implements Closeable {
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/web/cache/DiskLruCache$Snapshot.class */
     public final class Snapshot implements Closeable {
         private final String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private final long f10404c;
+        private final long c;
         private final InputStream[] d;
         private final long[] e;
 
         private Snapshot(String str, long j, InputStream[] inputStreamArr, long[] jArr) {
             this.b = str;
-            this.f10404c = j;
+            this.c = j;
             this.d = inputStreamArr;
             this.e = jArr;
         }
@@ -272,7 +262,7 @@ public final class DiskLruCache implements Closeable {
     }
 
     private DiskLruCache(File file, int i, int i2, long j) {
-        this.f10396c = file;
+        this.c = file;
         this.g = i;
         this.d = new File(file, "journal");
         this.e = new File(file, "journal.tmp");
@@ -355,7 +345,7 @@ public final class DiskLruCache implements Closeable {
                         i = 0;
                         if (i3 >= this.i) {
                             break;
-                        } else if (!editor.f10399c[i3]) {
+                        } else if (!editor.c[i3]) {
                             editor.b();
                             throw new IllegalStateException("Newly created entry didn't create value for index " + i3);
                         } else if (!entry.b(i3).exists()) {
@@ -374,9 +364,9 @@ public final class DiskLruCache implements Closeable {
                 } else if (b.exists()) {
                     File a2 = entry.a(i);
                     b.renameTo(a2);
-                    long j = entry.f10402c[i];
+                    long j = entry.c[i];
                     long length = a2.length();
-                    entry.f10402c[i] = length;
+                    entry.c[i] = length;
                     this.j = (this.j - j) + length;
                 }
                 i++;
@@ -419,7 +409,7 @@ public final class DiskLruCache implements Closeable {
 
     private void c() throws IOException {
         int i;
-        StrictLineReader strictLineReader = new StrictLineReader(new FileInputStream(this.d), Util.f10408a);
+        StrictLineReader strictLineReader = new StrictLineReader(new FileInputStream(this.d), Util.a);
         try {
             String a2 = strictLineReader.a();
             String a3 = strictLineReader.a();
@@ -440,7 +430,7 @@ public final class DiskLruCache implements Closeable {
                     if (strictLineReader.b()) {
                         e();
                     } else {
-                        this.k = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.d, true), Util.f10408a));
+                        this.k = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.d, true), Util.a));
                     }
                     Util.a(strictLineReader);
                     return;
@@ -459,7 +449,7 @@ public final class DiskLruCache implements Closeable {
             Entry next = it.next();
             if (next.e == null) {
                 for (int i = 0; i < this.i; i++) {
-                    this.j += next.f10402c[i];
+                    this.j += next.c[i];
                 }
             } else {
                 next.e = null;
@@ -524,7 +514,7 @@ public final class DiskLruCache implements Closeable {
             if (this.k != null) {
                 this.k.close();
             }
-            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.e), Util.f10408a));
+            BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.e), Util.a));
             bufferedWriter.write("libcore.io.DiskLruCache");
             bufferedWriter.write("\n");
             bufferedWriter.write("1");
@@ -547,12 +537,12 @@ public final class DiskLruCache implements Closeable {
             }
             a(this.e, this.d, false);
             this.f.delete();
-            this.k = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.d, true), Util.f10408a));
+            this.k = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.d, true), Util.a));
         }
     }
 
     private void e(String str) {
-        if (f10395a.matcher(str).matches()) {
+        if (a.matcher(str).matches()) {
             return;
         }
         throw new IllegalArgumentException("keys must match regex [a-z0-9_-]{1,120}: \"" + str + "\"");
@@ -614,7 +604,7 @@ public final class DiskLruCache implements Closeable {
                 if (f()) {
                     this.b.submit(this.o);
                 }
-                return new Snapshot(str, entry.f, inputStreamArr, entry.f10402c);
+                return new Snapshot(str, entry.f, inputStreamArr, entry.c);
             }
             return null;
         }
@@ -643,8 +633,8 @@ public final class DiskLruCache implements Closeable {
                     if (a2.exists() && !a2.delete()) {
                         throw new IOException("failed to delete " + a2);
                     }
-                    this.j -= entry.f10402c[i];
-                    entry.f10402c[i] = 0;
+                    this.j -= entry.c[i];
+                    entry.c[i] = 0;
                 }
                 this.m++;
                 this.k.append((CharSequence) ("REMOVE " + str + '\n'));
@@ -679,6 +669,6 @@ public final class DiskLruCache implements Closeable {
 
     public void delete() throws IOException {
         close();
-        Util.a(this.f10396c);
+        Util.a(this.c);
     }
 }

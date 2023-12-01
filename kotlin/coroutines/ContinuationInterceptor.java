@@ -7,9 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/ContinuationInterceptor.class */
 public interface ContinuationInterceptor extends CoroutineContext.Element {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Key f42453a = Key.f42454a;
+    public static final Key a = Key.a;
 
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/ContinuationInterceptor$DefaultImpls.class */
@@ -18,7 +16,7 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
             Intrinsics.e(key, "key");
             if (!(key instanceof AbstractCoroutineContextKey)) {
                 ContinuationInterceptor continuationInterceptor2 = null;
-                if (ContinuationInterceptor.f42453a == key) {
+                if (ContinuationInterceptor.a == key) {
                     continuationInterceptor2 = continuationInterceptor;
                 }
                 return continuationInterceptor2;
@@ -26,10 +24,10 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
             AbstractCoroutineContextKey abstractCoroutineContextKey = (AbstractCoroutineContextKey) key;
             E e = null;
             if (abstractCoroutineContextKey.a(continuationInterceptor.getKey())) {
-                CoroutineContext.Element a2 = abstractCoroutineContextKey.a(continuationInterceptor);
+                CoroutineContext.Element a = abstractCoroutineContextKey.a(continuationInterceptor);
                 e = null;
-                if (a2 instanceof CoroutineContext.Element) {
-                    e = a2;
+                if (a instanceof CoroutineContext.Element) {
+                    e = a;
                 }
             }
             return e;
@@ -41,8 +39,8 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
         public static CoroutineContext b(ContinuationInterceptor continuationInterceptor, CoroutineContext.Key<?> key) {
             Intrinsics.e(key, "key");
             if (!(key instanceof AbstractCoroutineContextKey)) {
-                if (ContinuationInterceptor.f42453a == key) {
-                    continuationInterceptor = EmptyCoroutineContext.f42457a;
+                if (ContinuationInterceptor.a == key) {
+                    continuationInterceptor = EmptyCoroutineContext.a;
                 }
                 return continuationInterceptor;
             }
@@ -51,7 +49,7 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
             if (abstractCoroutineContextKey.a(continuationInterceptor.getKey())) {
                 continuationInterceptor2 = continuationInterceptor;
                 if (abstractCoroutineContextKey.a(continuationInterceptor) != null) {
-                    continuationInterceptor2 = EmptyCoroutineContext.f42457a;
+                    continuationInterceptor2 = EmptyCoroutineContext.a;
                 }
             }
             return continuationInterceptor2;
@@ -61,9 +59,7 @@ public interface ContinuationInterceptor extends CoroutineContext.Element {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/coroutines/ContinuationInterceptor$Key.class */
     public static final class Key implements CoroutineContext.Key<ContinuationInterceptor> {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ Key f42454a = new Key();
+        static final /* synthetic */ Key a = new Key();
 
         private Key() {
         }

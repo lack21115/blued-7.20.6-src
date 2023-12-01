@@ -1,6 +1,5 @@
 package com.tencent.cloud.huiyansdkface.okhttp3.internal.tls;
 
-import com.android.internal.telephony.PhoneConstants;
 import com.tencent.cloud.huiyansdkface.okhttp3.internal.Util;
 import java.security.cert.CertificateParsingException;
 import java.security.cert.X509Certificate;
@@ -17,7 +16,7 @@ import javax.net.ssl.SSLSession;
 public final class OkHostnameVerifier implements HostnameVerifier {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final OkHostnameVerifier f36034a = new OkHostnameVerifier();
+    public static final OkHostnameVerifier f22343a = new OkHostnameVerifier();
 
     private OkHostnameVerifier() {
     }
@@ -103,7 +102,7 @@ public final class OkHostnameVerifier implements HostnameVerifier {
             str4 = str2 + '.';
         }
         String lowerCase = str4.toLowerCase(Locale.US);
-        if (lowerCase.contains(PhoneConstants.APN_TYPE_ALL)) {
+        if (lowerCase.contains("*")) {
             if (!lowerCase.startsWith("*.") || lowerCase.indexOf(42, 1) != -1 || str3.length() < lowerCase.length() || "*.".equals(lowerCase)) {
                 return false;
             }

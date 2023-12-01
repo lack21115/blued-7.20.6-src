@@ -56,7 +56,6 @@ public final class MsgFragment_MVP implements MvpDispatcher {
     /* JADX WARN: Code restructure failed: missing block: B:15:0x0088, code lost:
         if (r6.equals("addHelloListData") != false) goto L12;
      */
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences

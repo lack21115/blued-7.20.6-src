@@ -26,7 +26,7 @@ public final class c implements g {
     private ATSplashPopView D;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f8229c;
+    private String f5389c;
     private String d;
     private long f;
     private int g;
@@ -52,7 +52,7 @@ public final class c implements g {
     private Object z = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f8228a = false;
+    public boolean f5388a = false;
     private boolean E = false;
     private boolean F = false;
 
@@ -62,13 +62,13 @@ public final class c implements g {
         this.w = context.getResources().getDisplayMetrics().widthPixels;
         this.x = context.getResources().getDisplayMetrics().heightPixels;
         this.d = str;
-        this.f8229c = str2;
+        this.f5389c = str2;
         this.A = context;
         if (this.j == null) {
             if (context != null) {
                 this.j = new com.anythink.expressad.splash.c.d(context, str, str2);
             } else {
-                this.j = new com.anythink.expressad.splash.c.d(n.a().g(), this.d, this.f8229c);
+                this.j = new com.anythink.expressad.splash.c.d(n.a().g(), this.d, this.f5389c);
             }
         }
         if (this.o == null) {
@@ -82,7 +82,7 @@ public final class c implements g {
             }
             ATSplashWebview aTSplashWebview = this.o;
             if (aTSplashWebview != null) {
-                aTSplashWebview.setWebViewClient(new com.anythink.expressad.splash.view.b(this.f8229c, this.j.a()));
+                aTSplashWebview.setWebViewClient(new com.anythink.expressad.splash.view.b(this.f5389c, this.j.a()));
             }
         }
         if (this.n == null) {
@@ -96,7 +96,7 @@ public final class c implements g {
     }
 
     private ViewGroup a(t tVar) {
-        ATSplashPopView aTSplashPopView = new ATSplashPopView(n.a().g(), new ATSplashPopView.a(this.d, this.f8229c, tVar.a(), this.C), this.m);
+        ATSplashPopView aTSplashPopView = new ATSplashPopView(n.a().g(), new ATSplashPopView.a(this.d, this.f5389c, tVar.a(), this.C), this.m);
         this.D = aTSplashPopView;
         return aTSplashPopView;
     }
@@ -131,9 +131,9 @@ public final class c implements g {
     private void a(Context context) {
         if (this.j == null) {
             if (context != null) {
-                this.j = new com.anythink.expressad.splash.c.d(context, this.d, this.f8229c);
+                this.j = new com.anythink.expressad.splash.c.d(context, this.d, this.f5389c);
             } else {
-                this.j = new com.anythink.expressad.splash.c.d(n.a().g(), this.d, this.f8229c);
+                this.j = new com.anythink.expressad.splash.c.d(n.a().g(), this.d, this.f5389c);
             }
         }
         if (this.o == null) {
@@ -147,7 +147,7 @@ public final class c implements g {
             }
             ATSplashWebview aTSplashWebview = this.o;
             if (aTSplashWebview != null) {
-                aTSplashWebview.setWebViewClient(new com.anythink.expressad.splash.view.b(this.f8229c, this.j.a()));
+                aTSplashWebview.setWebViewClient(new com.anythink.expressad.splash.view.b(this.f5389c, this.j.a()));
             }
         }
         if (this.n == null) {
@@ -175,7 +175,7 @@ public final class c implements g {
     public void a(final com.anythink.expressad.foundation.d.c cVar, final int i, final boolean z) {
         if (!com.anythink.expressad.splash.c.b.a(this.n, cVar)) {
             if (i > 0) {
-                this.j.f8210a.postDelayed(new Runnable() { // from class: com.anythink.expressad.splash.d.c.1
+                this.j.f5370a.postDelayed(new Runnable() { // from class: com.anythink.expressad.splash.d.c.1
                     @Override // java.lang.Runnable
                     public final void run() {
                         c.this.a(cVar, i - 1, z);
@@ -229,7 +229,7 @@ public final class c implements g {
     }
 
     private String h() {
-        if (this.f8228a) {
+        if (this.f5388a) {
             com.anythink.expressad.splash.c.d dVar = this.j;
             return dVar != null ? dVar.b() : "";
         }
@@ -271,11 +271,11 @@ public final class c implements g {
             aTSplashWebview.setOnTouchListener(new View.OnTouchListener() { // from class: com.anythink.expressad.splash.d.c.2
 
                 /* renamed from: a  reason: collision with root package name */
-                final /* synthetic */ boolean f8232a = true;
+                final /* synthetic */ boolean f5392a = true;
 
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    return !this.f8232a;
+                    return !this.f5392a;
                 }
             });
         }
@@ -284,11 +284,11 @@ public final class c implements g {
             aTSplashView.setOnTouchListener(new View.OnTouchListener() { // from class: com.anythink.expressad.splash.d.c.3
 
                 /* renamed from: a  reason: collision with root package name */
-                final /* synthetic */ boolean f8233a = true;
+                final /* synthetic */ boolean f5393a = true;
 
                 @Override // android.view.View.OnTouchListener
                 public final boolean onTouch(View view, MotionEvent motionEvent) {
-                    return !this.f8233a;
+                    return !this.f5393a;
                 }
             });
         }
@@ -328,7 +328,7 @@ public final class c implements g {
         }
         if (this.r == null) {
             com.anythink.expressad.d.b.a();
-            this.r = com.anythink.expressad.d.b.a(com.anythink.expressad.foundation.b.a.b().e(), this.f8229c);
+            this.r = com.anythink.expressad.d.b.a(com.anythink.expressad.foundation.b.a.b().e(), this.f5389c);
         }
         this.m = new d(this, this.l, this.r.a(), c2);
         o.a(b, "show start");
@@ -344,7 +344,7 @@ public final class c implements g {
         if (cVar != null && z) {
             if (this.r == null) {
                 com.anythink.expressad.d.b.a();
-                this.r = com.anythink.expressad.d.b.a(com.anythink.expressad.foundation.b.a.b().e(), this.f8229c);
+                this.r = com.anythink.expressad.d.b.a(com.anythink.expressad.foundation.b.a.b().e(), this.f5389c);
             }
             this.m = new d(this, this.l, this.r.a(), cVar);
         }
@@ -352,7 +352,7 @@ public final class c implements g {
         ViewGroup viewGroup = this.p;
         if (viewGroup != null) {
             if (this.j == null) {
-                this.j = new com.anythink.expressad.splash.c.d(viewGroup.getContext(), this.d, this.f8229c);
+                this.j = new com.anythink.expressad.splash.c.d(viewGroup.getContext(), this.d, this.f5389c);
             }
             a(cVar, 0, z);
             return;
@@ -376,7 +376,7 @@ public final class c implements g {
             this.n.clearResState();
             this.r = new com.anythink.expressad.d.c();
             if (this.i == null) {
-                this.i = new com.anythink.expressad.splash.c.c(this.d, this.f8229c, this.f * 1000);
+                this.i = new com.anythink.expressad.splash.c.c(this.d, this.f5389c, this.f * 1000);
             }
             b bVar = this.k;
             if (bVar != null) {
@@ -462,7 +462,6 @@ public final class c implements g {
         }
     }
 
-    @Override // com.anythink.core.common.a.g
     public final boolean isReady() {
         return this.i.c() != null && com.anythink.expressad.splash.c.b.a(this.n, this.i.c());
     }

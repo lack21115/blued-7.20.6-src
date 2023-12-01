@@ -4,11 +4,11 @@ package com.tencent.ugc;
 final /* synthetic */ class cf implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoJoiner f40288a;
+    private final TXVideoJoiner f26597a;
     private final int b;
 
     private cf(TXVideoJoiner tXVideoJoiner, int i) {
-        this.f40288a = tXVideoJoiner;
+        this.f26597a = tXVideoJoiner;
         this.b = i;
     }
 
@@ -18,6 +18,6 @@ final /* synthetic */ class cf implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.f40288a.mTXVideoEditer.setProfile(this.b);
+        this.f26597a.mTXVideoEditer.setProfile(this.b);
     }
 }

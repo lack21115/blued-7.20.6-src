@@ -14,11 +14,11 @@ public class EmojiMetadata {
     public static final int HAS_GLYPH_UNKNOWN = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ThreadLocal<MetadataItem> f2825a = new ThreadLocal<>();
+    private static final ThreadLocal<MetadataItem> f2777a = new ThreadLocal<>();
     private final int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final MetadataRepo f2826c;
+    private final MetadataRepo f2778c;
     private volatile int d = 0;
 
     @Retention(RetentionPolicy.SOURCE)
@@ -28,26 +28,26 @@ public class EmojiMetadata {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public EmojiMetadata(MetadataRepo metadataRepo, int i) {
-        this.f2826c = metadataRepo;
+        this.f2778c = metadataRepo;
         this.b = i;
     }
 
     private MetadataItem a() {
-        MetadataItem metadataItem = f2825a.get();
+        MetadataItem metadataItem = f2777a.get();
         MetadataItem metadataItem2 = metadataItem;
         if (metadataItem == null) {
             metadataItem2 = new MetadataItem();
-            f2825a.set(metadataItem2);
+            f2777a.set(metadataItem2);
         }
-        this.f2826c.getMetadataList().list(metadataItem2, this.b);
+        this.f2778c.getMetadataList().list(metadataItem2, this.b);
         return metadataItem2;
     }
 
     public void draw(Canvas canvas, float f, float f2, Paint paint) {
-        Typeface a2 = this.f2826c.a();
+        Typeface a2 = this.f2778c.a();
         Typeface typeface = paint.getTypeface();
         paint.setTypeface(a2);
-        canvas.drawText(this.f2826c.getEmojiCharArray(), this.b * 2, 2, f, f2, paint);
+        canvas.drawText(this.f2778c.getEmojiCharArray(), this.b * 2, 2, f, f2, paint);
         paint.setTypeface(typeface);
     }
 
@@ -80,7 +80,7 @@ public class EmojiMetadata {
     }
 
     public Typeface getTypeface() {
-        return this.f2826c.a();
+        return this.f2778c.a();
     }
 
     public short getWidth() {

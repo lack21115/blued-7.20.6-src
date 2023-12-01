@@ -8,11 +8,11 @@ import java.util.Locale;
 public class EncodeUtil {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23137a = "EncodeUtil";
+    private static final String f9529a = "EncodeUtil";
     private static final char[] b = {',', '.', '-'};
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String[] f23138c = new String[256];
+    private static final String[] f9530c = new String[256];
 
     static {
         char c2 = 0;
@@ -22,9 +22,9 @@ public class EncodeUtil {
                 return;
             }
             if ((c3 < '0' || c3 > '9') && ((c3 < 'A' || c3 > 'Z') && (c3 < 'a' || c3 > 'z'))) {
-                f23138c[c3] = b(c3).intern();
+                f9530c[c3] = b(c3).intern();
             } else {
-                f23138c[c3] = null;
+                f9530c[c3] = null;
             }
             c2 = (char) (c3 + 1);
         }
@@ -146,7 +146,7 @@ public class EncodeUtil {
     }
 
     private static String a(char c2) {
-        return c2 < 255 ? f23138c[c2] : b(c2);
+        return c2 < 255 ? f9530c[c2] : b(c2);
     }
 
     private static String a(char[] cArr, Character ch) {
@@ -212,7 +212,7 @@ public class EncodeUtil {
             }
             return sb.toString();
         } catch (Exception e) {
-            String str2 = f23137a;
+            String str2 = f9529a;
             Log.e(str2, "decode js: " + e.getMessage());
             return "";
         }
@@ -229,7 +229,7 @@ public class EncodeUtil {
         try {
             return a(cArr, str);
         } catch (Exception e) {
-            String str2 = f23137a;
+            String str2 = f9529a;
             Log.e(str2, "encode js: " + e.getMessage());
             return "";
         }

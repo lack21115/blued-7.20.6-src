@@ -10,21 +10,17 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ItemYyFirstMeetAllItemBinding.class */
 public final class ItemYyFirstMeetAllItemBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final SquareImageView f16711a;
+    public final SquareImageView a;
     public final TextView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ShapeTextView f16712c;
+    public final ShapeTextView c;
     public final ShapeTextView d;
     private final LinearLayout e;
 
     private ItemYyFirstMeetAllItemBinding(LinearLayout linearLayout, SquareImageView squareImageView, TextView textView, ShapeTextView shapeTextView, ShapeTextView shapeTextView2) {
         this.e = linearLayout;
-        this.f16711a = squareImageView;
+        this.a = squareImageView;
         this.b = textView;
-        this.f16712c = shapeTextView;
+        this.c = shapeTextView;
         this.d = shapeTextView2;
     }
 
@@ -53,7 +49,6 @@ public final class ItemYyFirstMeetAllItemBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.e;

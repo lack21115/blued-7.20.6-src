@@ -15,11 +15,11 @@ public class CircularAnim {
     public static class FullActivityBuilder {
 
         /* renamed from: a  reason: collision with root package name */
-        private Activity f28378a;
+        private Activity f14688a;
         private View b;
 
         /* renamed from: c  reason: collision with root package name */
-        private float f28379c;
+        private float f14689c;
         private OnAnimationEndListener d;
         private int e;
         private int f;
@@ -29,11 +29,11 @@ public class CircularAnim {
         class AnonymousClass1 extends AnimatorListenerAdapter {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ ImageView f28380a;
+            final /* synthetic */ ImageView f14690a;
             final /* synthetic */ int b;
 
             /* renamed from: c  reason: collision with root package name */
-            final /* synthetic */ int f28381c;
+            final /* synthetic */ int f14691c;
             final /* synthetic */ int d;
             final /* synthetic */ long e;
             final /* synthetic */ ViewGroup f;
@@ -43,22 +43,22 @@ public class CircularAnim {
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
                 this.g.a();
-                this.g.f28378a.overridePendingTransition(this.g.e, this.g.f);
+                this.g.f14688a.overridePendingTransition(this.g.e, this.g.f);
                 this.g.b.postDelayed(new Runnable() { // from class: com.soft.blued.customview.CircularAnim.FullActivityBuilder.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (AnonymousClass1.this.g.f28378a.isFinishing()) {
+                        if (AnonymousClass1.this.g.f14688a.isFinishing()) {
                             return;
                         }
                         try {
-                            Animator createCircularReveal = ViewAnimationUtils.createCircularReveal(AnonymousClass1.this.f28380a, AnonymousClass1.this.b, AnonymousClass1.this.f28381c, AnonymousClass1.this.d, AnonymousClass1.this.g.f28379c);
+                            Animator createCircularReveal = ViewAnimationUtils.createCircularReveal(AnonymousClass1.this.f14690a, AnonymousClass1.this.b, AnonymousClass1.this.f14691c, AnonymousClass1.this.d, AnonymousClass1.this.g.f14689c);
                             createCircularReveal.setDuration(AnonymousClass1.this.e);
                             createCircularReveal.addListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.customview.CircularAnim.FullActivityBuilder.1.1.1
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator2) {
                                     super.onAnimationEnd(animator2);
                                     try {
-                                        AnonymousClass1.this.f.removeView(AnonymousClass1.this.f28380a);
+                                        AnonymousClass1.this.f.removeView(AnonymousClass1.this.f14690a);
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }
@@ -68,7 +68,7 @@ public class CircularAnim {
                         } catch (Exception e) {
                             e.printStackTrace();
                             try {
-                                AnonymousClass1.this.f.removeView(AnonymousClass1.this.f28380a);
+                                AnonymousClass1.this.f.removeView(AnonymousClass1.this.f14690a);
                             } catch (Exception e2) {
                                 e2.printStackTrace();
                             }
@@ -93,23 +93,23 @@ public class CircularAnim {
     public static class VisibleBuilder {
 
         /* renamed from: a  reason: collision with root package name */
-        private View f28384a;
+        private View f14694a;
         private boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        private OnAnimationEndListener f28385c;
+        private OnAnimationEndListener f14695c;
 
         /* renamed from: com.soft.blued.customview.CircularAnim$VisibleBuilder$1  reason: invalid class name */
         /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/customview/CircularAnim$VisibleBuilder$1.class */
         class AnonymousClass1 extends AnimatorListenerAdapter {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ VisibleBuilder f28386a;
+            final /* synthetic */ VisibleBuilder f14696a;
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
-                this.f28386a.a();
+                this.f14696a.a();
             }
         }
 
@@ -118,23 +118,23 @@ public class CircularAnim {
         class AnonymousClass2 extends AnimatorListenerAdapter {
 
             /* renamed from: a  reason: collision with root package name */
-            final /* synthetic */ VisibleBuilder f28387a;
+            final /* synthetic */ VisibleBuilder f14697a;
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
                 super.onAnimationEnd(animator);
-                this.f28387a.a();
+                this.f14697a.a();
             }
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public void a() {
             if (this.b) {
-                this.f28384a.setVisibility(0);
+                this.f14694a.setVisibility(0);
             } else {
-                this.f28384a.setVisibility(4);
+                this.f14694a.setVisibility(4);
             }
-            OnAnimationEndListener onAnimationEndListener = this.f28385c;
+            OnAnimationEndListener onAnimationEndListener = this.f14695c;
             if (onAnimationEndListener != null) {
                 onAnimationEndListener.a();
             }

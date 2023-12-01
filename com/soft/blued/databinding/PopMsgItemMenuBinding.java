@@ -12,29 +12,29 @@ import com.soft.blued.R;
 public final class PopMsgItemMenuBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeFrameLayout f29543a;
+    public final ShapeFrameLayout f15853a;
     public final ImageView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final RecyclerView f29544c;
+    public final RecyclerView f15854c;
     private final LinearLayout d;
 
     private PopMsgItemMenuBinding(LinearLayout linearLayout, ShapeFrameLayout shapeFrameLayout, ImageView imageView, RecyclerView recyclerView) {
         this.d = linearLayout;
-        this.f29543a = shapeFrameLayout;
+        this.f15853a = shapeFrameLayout;
         this.b = imageView;
-        this.f29544c = recyclerView;
+        this.f15854c = recyclerView;
     }
 
     public static PopMsgItemMenuBinding a(View view) {
         String str;
-        ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.cv_root);
-        if (shapeFrameLayout != null) {
-            ImageView imageView = (ImageView) view.findViewById(2131365072);
+        ShapeFrameLayout findViewById = view.findViewById(R.id.cv_root);
+        if (findViewById != null) {
+            ImageView imageView = (ImageView) view.findViewById(R.id.iv_arrow);
             if (imageView != null) {
                 RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.menu_list);
                 if (recyclerView != null) {
-                    return new PopMsgItemMenuBinding((LinearLayout) view, shapeFrameLayout, imageView, recyclerView);
+                    return new PopMsgItemMenuBinding((LinearLayout) view, findViewById, imageView, recyclerView);
                 }
                 str = "menuList";
             } else {

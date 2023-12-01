@@ -15,13 +15,9 @@ import com.blued.android.framework.ui.xpop.widget.PartShadowContainer;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/ui/xpop/core/AttachPopupView.class */
 public abstract class AttachPopupView extends BasePopupView {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f9958a;
+    protected int a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected PartShadowContainer f9959c;
+    protected PartShadowContainer c;
     public boolean d;
     boolean e;
     protected int f;
@@ -33,7 +29,7 @@ public abstract class AttachPopupView extends BasePopupView {
 
     public AttachPopupView(Context context) {
         super(context);
-        this.f9958a = 0;
+        this.a = 0;
         this.b = 0;
         this.f = 6;
         this.g = 0.0f;
@@ -41,11 +37,11 @@ public abstract class AttachPopupView extends BasePopupView {
         this.i = XPopupUtils.b(getContext());
         this.j = 10;
         this.k = 0.0f;
-        this.f9959c = (PartShadowContainer) findViewById(R.id.attachPopupContainer);
+        this.c = (PartShadowContainer) findViewById(R.id.attachPopupContainer);
     }
 
     protected void a() {
-        this.f9959c.addView(LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.f9959c, false));
+        this.c.addView(LayoutInflater.from(getContext()).inflate(getImplLayoutId(), (ViewGroup) this.c, false));
     }
 
     @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
@@ -55,16 +51,16 @@ public abstract class AttachPopupView extends BasePopupView {
             p();
             return;
         }
-        if (this.f9959c.getChildCount() == 0) {
+        if (this.c.getChildCount() == 0) {
             a();
         }
         if (this.l.a() == null && this.l.k == null) {
             throw new IllegalArgumentException("atView() or touchPoint must not be null for AttachPopupView ！");
         }
-        this.f9958a = this.l.y == 0 ? XPopupUtils.a(getContext(), 4.0f) : this.l.y;
+        this.a = this.l.y == 0 ? XPopupUtils.a(getContext(), 4.0f) : this.l.y;
         this.b = this.l.x;
-        this.f9959c.setTranslationX(this.l.x);
-        this.f9959c.setTranslationY(this.l.y);
+        this.c.setTranslationX(this.l.x);
+        this.c.setTranslationY(this.l.y);
         c();
         XPopupUtils.a((ViewGroup) getPopupContentView(), getMaxWidth(), getMaxHeight(), new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.AttachPopupView.1
             @Override // java.lang.Runnable
@@ -84,23 +80,23 @@ public abstract class AttachPopupView extends BasePopupView {
             if (getPopupImplView().getBackground() != null) {
                 Drawable.ConstantState constantState = getPopupImplView().getBackground().getConstantState();
                 if (constantState != null) {
-                    this.f9959c.setBackground(constantState.newDrawable());
+                    this.c.setBackground(constantState.newDrawable());
                     getPopupImplView().setBackground(null);
                 }
             } else {
-                this.f9959c.setBackground(XPopupUtils.a(getResources().getColor(this.l.E ? R.color._xpopup_dark_color : R.color._xpopup_light_color), this.l.n));
+                this.c.setBackground(XPopupUtils.a(getResources().getColor(this.l.E ? R.color._xpopup_dark_color : R.color._xpopup_light_color), this.l.n));
             }
-            this.f9959c.setElevation(XPopupUtils.a(getContext(), 20.0f));
+            this.c.setElevation(XPopupUtils.a(getContext(), 20.0f));
         } else if (getPopupImplView().getBackground() == null) {
             int i = this.b;
             int i2 = this.f;
             this.b = i - i2;
-            this.f9958a -= i2;
-            this.f9959c.setBackground(XPopupUtils.a(getResources().getColor(this.l.E ? R.color._xpopup_dark_color : R.color._xpopup_light_color), this.l.n));
+            this.a -= i2;
+            this.c.setBackground(XPopupUtils.a(getResources().getColor(this.l.E ? R.color._xpopup_dark_color : R.color._xpopup_light_color), this.l.n));
         } else {
             Drawable.ConstantState constantState2 = getPopupImplView().getBackground().getConstantState();
             if (constantState2 != null) {
-                this.f9959c.setBackground(constantState2.newDrawable());
+                this.c.setBackground(constantState2.newDrawable());
                 getPopupImplView().setBackground(null);
             }
         }
@@ -115,7 +111,7 @@ public abstract class AttachPopupView extends BasePopupView {
             return;
         }
         this.j = XPopupUtils.a(getContext(), this.j);
-        final boolean c2 = XPopupUtils.c(getContext());
+        final boolean c = XPopupUtils.c(getContext());
         if (this.l.k != null) {
             this.k = this.l.k.y;
             if (this.l.k.y + ((float) getPopupContentView().getMeasuredHeight()) > this.i) {
@@ -133,12 +129,12 @@ public abstract class AttachPopupView extends BasePopupView {
                 i2 = this.j;
             }
             int i3 = (int) (b2 - i2);
-            int a2 = (int) ((this.e ? XPopupUtils.a(getContext()) - this.l.k.x : this.l.k.x) - this.j);
+            int a = (int) ((this.e ? XPopupUtils.a(getContext()) - this.l.k.x : this.l.k.x) - this.j);
             if (getPopupContentView().getMeasuredHeight() > i3) {
                 layoutParams.height = i3;
             }
-            if (getPopupContentView().getMeasuredWidth() > a2) {
-                layoutParams.width = a2;
+            if (getPopupContentView().getMeasuredWidth() > a) {
+                layoutParams.width = a;
             }
             getPopupContentView().setLayoutParams(layoutParams);
             getPopupContentView().post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.AttachPopupView.2
@@ -147,7 +143,7 @@ public abstract class AttachPopupView extends BasePopupView {
                     if (AttachPopupView.this.l == null) {
                         return;
                     }
-                    if (c2) {
+                    if (c) {
                         AttachPopupView attachPopupView = AttachPopupView.this;
                         attachPopupView.g = -(attachPopupView.e ? ((XPopupUtils.a(AttachPopupView.this.getContext()) - AttachPopupView.this.l.k.x) - AttachPopupView.this.getPopupContentView().getMeasuredWidth()) - AttachPopupView.this.b : (XPopupUtils.a(AttachPopupView.this.getContext()) - AttachPopupView.this.l.k.x) + AttachPopupView.this.b);
                     } else {
@@ -156,12 +152,12 @@ public abstract class AttachPopupView extends BasePopupView {
                     }
                     if (AttachPopupView.this.l.A) {
                         if (AttachPopupView.this.e) {
-                            if (c2) {
+                            if (c) {
                                 AttachPopupView.this.g += AttachPopupView.this.getPopupContentView().getMeasuredWidth() / 2.0f;
                             } else {
                                 AttachPopupView.this.g -= AttachPopupView.this.getPopupContentView().getMeasuredWidth() / 2.0f;
                             }
-                        } else if (c2) {
+                        } else if (c) {
                             AttachPopupView.this.g -= AttachPopupView.this.getPopupContentView().getMeasuredWidth() / 2.0f;
                         } else {
                             AttachPopupView.this.g += AttachPopupView.this.getPopupContentView().getMeasuredWidth() / 2.0f;
@@ -169,10 +165,10 @@ public abstract class AttachPopupView extends BasePopupView {
                     }
                     if (AttachPopupView.this.e()) {
                         AttachPopupView attachPopupView3 = AttachPopupView.this;
-                        attachPopupView3.h = (attachPopupView3.l.k.y - AttachPopupView.this.getPopupContentView().getMeasuredHeight()) - AttachPopupView.this.f9958a;
+                        attachPopupView3.h = (attachPopupView3.l.k.y - AttachPopupView.this.getPopupContentView().getMeasuredHeight()) - AttachPopupView.this.a;
                     } else {
                         AttachPopupView attachPopupView4 = AttachPopupView.this;
-                        attachPopupView4.h = attachPopupView4.l.k.y + AttachPopupView.this.f9958a;
+                        attachPopupView4.h = attachPopupView4.l.k.y + AttachPopupView.this.a;
                     }
                     AttachPopupView.this.getPopupContentView().setTranslationX(AttachPopupView.this.g);
                     AttachPopupView.this.getPopupContentView().setTranslationY(AttachPopupView.this.h);
@@ -203,19 +199,19 @@ public abstract class AttachPopupView extends BasePopupView {
                 i = this.j;
             }
             int i5 = b - i;
-            int a3 = (this.e ? XPopupUtils.a(getContext()) - rect.left : rect.right) - this.j;
+            int a2 = (this.e ? XPopupUtils.a(getContext()) - rect.left : rect.right) - this.j;
             if (getPopupContentView().getMeasuredHeight() > i5) {
                 layoutParams2.height = i5;
             }
-            if (getPopupContentView().getMeasuredWidth() > a3) {
-                layoutParams2.width = a3;
+            if (getPopupContentView().getMeasuredWidth() > a2) {
+                layoutParams2.width = a2;
             }
             getPopupContentView().setLayoutParams(layoutParams2);
         }
         getPopupContentView().post(new Runnable() { // from class: com.blued.android.framework.ui.xpop.core.AttachPopupView.3
             @Override // java.lang.Runnable
             public void run() {
-                if (c2) {
+                if (c) {
                     AttachPopupView attachPopupView = AttachPopupView.this;
                     attachPopupView.g = -(attachPopupView.e ? ((XPopupUtils.a(AttachPopupView.this.getContext()) - rect.left) - AttachPopupView.this.getPopupContentView().getMeasuredWidth()) - AttachPopupView.this.b : (XPopupUtils.a(AttachPopupView.this.getContext()) - rect.right) + AttachPopupView.this.b);
                 } else {
@@ -224,21 +220,21 @@ public abstract class AttachPopupView extends BasePopupView {
                 }
                 if (AttachPopupView.this.l != null && AttachPopupView.this.l.A) {
                     if (AttachPopupView.this.e) {
-                        if (c2) {
+                        if (c) {
                             AttachPopupView.this.g -= (rect.width() - AttachPopupView.this.getPopupContentView().getMeasuredWidth()) / 2.0f;
                         } else {
                             AttachPopupView.this.g += (rect.width() - AttachPopupView.this.getPopupContentView().getMeasuredWidth()) / 2.0f;
                         }
-                    } else if (c2) {
+                    } else if (c) {
                         AttachPopupView.this.g += (rect.width() - AttachPopupView.this.getPopupContentView().getMeasuredWidth()) / 2.0f;
                     } else {
                         AttachPopupView.this.g -= (rect.width() - AttachPopupView.this.getPopupContentView().getMeasuredWidth()) / 2.0f;
                     }
                 }
                 if (AttachPopupView.this.e()) {
-                    AttachPopupView.this.h = (rect.top - AttachPopupView.this.getPopupContentView().getMeasuredHeight()) - AttachPopupView.this.f9958a;
+                    AttachPopupView.this.h = (rect.top - AttachPopupView.this.getPopupContentView().getMeasuredHeight()) - AttachPopupView.this.a;
                 } else {
-                    AttachPopupView.this.h = rect.bottom + AttachPopupView.this.f9958a;
+                    AttachPopupView.this.h = rect.bottom + AttachPopupView.this.a;
                 }
                 AttachPopupView.this.getPopupContentView().setTranslationX(AttachPopupView.this.g);
                 AttachPopupView.this.getPopupContentView().setTranslationY(AttachPopupView.this.h);
@@ -247,7 +243,7 @@ public abstract class AttachPopupView extends BasePopupView {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:16:0x0042, code lost:
-        if (r4.l.s == com.blued.android.framework.ui.xpop.enums.PopupPosition.f9998c) goto L18;
+        if (r4.l.s == com.blued.android.framework.ui.xpop.enums.PopupPosition.c) goto L18;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

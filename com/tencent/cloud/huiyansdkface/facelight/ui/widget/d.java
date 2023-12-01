@@ -8,17 +8,17 @@ import android.view.View;
 public class d extends ClickableSpan {
 
     /* renamed from: a  reason: collision with root package name */
-    View.OnClickListener f35790a;
+    View.OnClickListener f22099a;
     int b;
 
     public d(View.OnClickListener onClickListener, int i) {
-        this.f35790a = onClickListener;
+        this.f22099a = onClickListener;
         this.b = i;
     }
 
     @Override // android.text.style.ClickableSpan
     public void onClick(View view) {
-        this.f35790a.onClick(view);
+        this.f22099a.onClick(view);
     }
 
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle

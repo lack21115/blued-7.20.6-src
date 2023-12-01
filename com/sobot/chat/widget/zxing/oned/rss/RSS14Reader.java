@@ -8,6 +8,7 @@ import com.sobot.chat.widget.zxing.ResultPoint;
 import com.sobot.chat.widget.zxing.ResultPointCallback;
 import com.sobot.chat.widget.zxing.common.BitArray;
 import com.sobot.chat.widget.zxing.common.detector.MathUtils;
+import com.ss.android.socialbase.downloader.constants.DownloadErrorCode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -22,7 +23,7 @@ public final class RSS14Reader extends AbstractRSSReader {
     private static final int[] OUTSIDE_EVEN_TOTAL_SUBSET = {1, 10, 34, 70, 126};
     private static final int[] INSIDE_ODD_TOTAL_SUBSET = {4, 20, 48, 81};
     private static final int[] OUTSIDE_GSUM = {0, 161, 961, 2015, 2715};
-    private static final int[] INSIDE_GSUM = {0, 336, 1036, 1516};
+    private static final int[] INSIDE_GSUM = {0, 336, DownloadErrorCode.ERROR_TEMP_FILE_CREATE_FAILED, 1516};
     private static final int[] OUTSIDE_ODD_WIDEST = {8, 6, 4, 3, 1};
     private static final int[] INSIDE_ODD_WIDEST = {2, 4, 6, 8};
     private static final int[][] FINDER_PATTERNS = {new int[]{3, 8, 2, 1}, new int[]{3, 5, 5, 1}, new int[]{3, 3, 7, 1}, new int[]{3, 1, 9, 1}, new int[]{2, 7, 4, 1}, new int[]{2, 5, 6, 1}, new int[]{2, 3, 8, 1}, new int[]{1, 5, 7, 1}, new int[]{1, 3, 9, 1}};
@@ -407,7 +408,7 @@ public final class RSS14Reader extends AbstractRSSReader {
         int i5 = i2 + 1;
         int i6 = iArr[0];
         int[] decodeFinderCounters = getDecodeFinderCounters();
-        System.arraycopy((Object) decodeFinderCounters, 0, (Object) decodeFinderCounters, 1, decodeFinderCounters.length - 1);
+        System.arraycopy(decodeFinderCounters, 0, decodeFinderCounters, 1, decodeFinderCounters.length - 1);
         decodeFinderCounters[0] = i6 - i5;
         int parseFinderValue = parseFinderValue(decodeFinderCounters, FINDER_PATTERNS);
         int i7 = iArr[1];

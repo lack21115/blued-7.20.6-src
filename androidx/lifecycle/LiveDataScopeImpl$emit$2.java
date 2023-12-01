@@ -26,24 +26,21 @@ final class LiveDataScopeImpl$emit$2 extends SuspendLambda implements Function2<
         this.$value = t;
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
         return new LiveDataScopeImpl$emit$2(this.this$0, this.$value, continuation);
     }
 
-    @Override // kotlin.jvm.functions.Function2
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((LiveDataScopeImpl$emit$2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2 = IntrinsicsKt.a();
         int i = this.label;
         if (i == 0) {
             ResultKt.a(obj);
             this.label = 1;
-            if (this.this$0.getTarget$lifecycle_livedata_ktx_release().clearSource$lifecycle_livedata_ktx_release(this) == a2) {
+            if (this.this$0.getTarget$lifecycle_livedata_ktx_release().clearSource$lifecycle_livedata_ktx_release((Continuation) this) == a2) {
                 return a2;
             }
         } else if (i != 1) {
@@ -52,6 +49,6 @@ final class LiveDataScopeImpl$emit$2 extends SuspendLambda implements Function2<
             ResultKt.a(obj);
         }
         this.this$0.getTarget$lifecycle_livedata_ktx_release().setValue(this.$value);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

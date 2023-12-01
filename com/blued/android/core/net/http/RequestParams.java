@@ -1,6 +1,7 @@
 package com.blued.android.core.net.http;
 
 import android.text.TextUtils;
+import com.alipay.sdk.sys.a;
 import com.blued.android.core.net.HttpManager;
 import com.blued.android.core.utils.Log;
 import java.io.UnsupportedEncodingException;
@@ -11,13 +12,9 @@ import java.util.concurrent.ConcurrentHashMap;
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/net/http/RequestParams.class */
 public class RequestParams {
     private static String h = "UTF-8";
-
-    /* renamed from: a  reason: collision with root package name */
-    protected ConcurrentHashMap<String, String> f9695a;
+    protected ConcurrentHashMap<String, String> a;
     protected String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected String f9696c;
+    protected String c;
     protected String d;
     protected String e;
     protected Map<String, String> f;
@@ -35,7 +32,7 @@ public class RequestParams {
             if (str.indexOf("?") == -1) {
                 str2 = str + "?" + b;
             } else {
-                str2 = str + "&" + b;
+                str2 = str + a.b + b;
             }
             str3 = str2;
             if (HttpManager.c()) {
@@ -47,7 +44,7 @@ public class RequestParams {
     }
 
     private void c() {
-        this.f9695a = new ConcurrentHashMap<>();
+        this.a = new ConcurrentHashMap<>();
     }
 
     public String a() {
@@ -66,18 +63,18 @@ public class RequestParams {
         if (str == null || str2 == null) {
             return;
         }
-        this.f9695a.put(str, str2);
+        this.a.put(str, str2);
     }
 
     public String b() {
         StringBuffer stringBuffer = new StringBuffer();
         int i = 0;
         try {
-            for (Map.Entry<String, String> entry : this.f9695a.entrySet()) {
+            for (Map.Entry<String, String> entry : this.a.entrySet()) {
                 String key = entry.getKey();
                 if (!TextUtils.isEmpty(key)) {
                     if (i > 0) {
-                        stringBuffer.append("&");
+                        stringBuffer.append(a.b);
                     }
                     stringBuffer.append(URLEncoder.encode(key, h));
                     String value = entry.getValue();
@@ -94,29 +91,29 @@ public class RequestParams {
     }
 
     public void b(String str, String str2) {
-        this.f9696c = str;
+        this.c = str;
         this.b = str2;
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (Map.Entry<String, String> entry : this.f9695a.entrySet()) {
+        for (Map.Entry<String, String> entry : this.a.entrySet()) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(a.b);
             }
             sb.append(entry.getKey());
             sb.append("=");
             sb.append(entry.getValue());
         }
-        if (!TextUtils.isEmpty(this.f9696c)) {
+        if (!TextUtils.isEmpty(this.c)) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(a.b);
             }
-            sb.append("uploadFile=" + this.f9696c);
+            sb.append("uploadFile=" + this.c);
         }
         if (!TextUtils.isEmpty(this.d)) {
             if (sb.length() > 0) {
-                sb.append("&");
+                sb.append(a.b);
             }
             sb.append("downloadFile=" + this.d);
         }

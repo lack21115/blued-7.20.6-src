@@ -40,10 +40,10 @@ public class Tools {
         if (fragment == null || !fragment.isAdded()) {
             return false;
         }
-        return a(fragment.getActivity());
+        return a((Activity) fragment.getActivity());
     }
 
     public static boolean b() {
-        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+        return Environment.getExternalStorageState().equals("mounted");
     }
 }

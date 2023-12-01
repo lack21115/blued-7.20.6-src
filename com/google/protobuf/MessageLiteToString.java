@@ -1,7 +1,5 @@
 package com.google.protobuf;
 
-import com.alipay.sdk.util.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.google.protobuf.GeneratedMessageLite;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
 import java.lang.reflect.Modifier;
@@ -32,7 +30,7 @@ public final class MessageLiteToString {
             }
             char charAt = str.charAt(i2);
             if (Character.isUpperCase(charAt)) {
-                sb.append(BridgeUtil.UNDERLINE_STR);
+                sb.append("_");
             }
             sb.append(Character.toLowerCase(charAt));
             i = i2 + 1;
@@ -81,7 +79,7 @@ public final class MessageLiteToString {
                 while (true) {
                     int i5 = i4;
                     if (i5 >= i) {
-                        sb.append(i.d);
+                        sb.append("}");
                         return;
                     } else {
                         sb.append(' ');
@@ -102,7 +100,7 @@ public final class MessageLiteToString {
                 while (true) {
                     int i8 = i7;
                     if (i8 >= i) {
-                        sb.append(i.d);
+                        sb.append("}");
                         return;
                     } else {
                         sb.append(' ');

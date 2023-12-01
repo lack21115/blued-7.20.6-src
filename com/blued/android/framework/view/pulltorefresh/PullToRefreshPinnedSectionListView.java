@@ -15,17 +15,13 @@ import com.blued.android.framework.view.pulltorefresh.PullToRefreshBase;
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PullToRefreshPinnedSectionListView.class */
 public class PullToRefreshPinnedSectionListView extends PullToRefreshAdapterViewBase<ListView> {
     private LoadingLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LoadingLayout f10271c;
+    private LoadingLayout c;
     private FrameLayout d;
     private boolean e;
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/view/pulltorefresh/PullToRefreshPinnedSectionListView$InternalListView.class */
     public class InternalListView extends ListView implements EmptyViewMethodAccessor {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ PullToRefreshPinnedSectionListView f10272a;
+        final /* synthetic */ PullToRefreshPinnedSectionListView a;
         private boolean b;
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -50,8 +46,8 @@ public class PullToRefreshPinnedSectionListView extends PullToRefreshAdapterView
 
         @Override // android.widget.ListView, android.widget.AbsListView, android.widget.AdapterView
         public void setAdapter(ListAdapter listAdapter) {
-            if (this.f10272a.d != null && !this.b) {
-                addFooterView(this.f10272a.d, null, false);
+            if (this.a.d != null && !this.b) {
+                addFooterView(this.a.d, null, false);
                 this.b = true;
             }
             super.setAdapter(listAdapter);
@@ -59,7 +55,7 @@ public class PullToRefreshPinnedSectionListView extends PullToRefreshAdapterView
 
         @Override // android.widget.AdapterView
         public void setEmptyView(View view) {
-            this.f10272a.setEmptyView(view);
+            this.a.setEmptyView(view);
         }
 
         @Override // com.blued.android.framework.view.pulltorefresh.EmptyViewMethodAccessor
@@ -106,16 +102,16 @@ public class PullToRefreshPinnedSectionListView extends PullToRefreshAdapterView
         if (z) {
             FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2, 1);
             FrameLayout frameLayout = new FrameLayout(getContext());
-            LoadingLayout a2 = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_START, typedArray);
-            this.b = a2;
-            a2.setVisibility(8);
+            LoadingLayout a = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_START, typedArray);
+            this.b = a;
+            a.setVisibility(8);
             frameLayout.addView(this.b, layoutParams);
-            ((ListView) this.f10248a).addHeaderView(frameLayout, null, false);
+            ((ListView) this.a).addHeaderView(frameLayout, null, false);
             this.d = new FrameLayout(getContext());
-            LoadingLayout a3 = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_END, typedArray);
-            this.f10271c = a3;
-            a3.setVisibility(8);
-            this.d.addView(this.f10271c, layoutParams);
+            LoadingLayout a2 = a(getContext(), PullToRefreshBase.Mode.PULL_FROM_END, typedArray);
+            this.c = a2;
+            a2.setVisibility(8);
+            this.d.addView(this.c, layoutParams);
             if (typedArray.hasValue(R.styleable.PullToRefresh_ptrScrollingWhileRefreshingEnabled)) {
                 return;
             }
@@ -132,7 +128,7 @@ public class PullToRefreshPinnedSectionListView extends PullToRefreshAdapterView
     /* renamed from: c */
     public ListView a(Context context, AttributeSet attributeSet) {
         ListView b = b(context, attributeSet);
-        b.setId(16908298);
+        b.setId(com.android.internal.R.id.list);
         return b;
     }
 

@@ -18,7 +18,7 @@ public abstract class Format implements Serializable, Cloneable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static boolean upTo(String str, ParsePosition parsePosition, StringBuffer stringBuffer, char c2) {
+    public static boolean upTo(String str, ParsePosition parsePosition, StringBuffer stringBuffer, char c) {
         int index = parsePosition.getIndex();
         int length = str.length();
         boolean z = false;
@@ -32,7 +32,7 @@ public abstract class Format implements Serializable, Cloneable {
                 }
                 z2 = !z2;
                 z = true;
-            } else if (charAt == c2 && !z2) {
+            } else if (charAt == c && !z2) {
                 parsePosition.setIndex(i);
                 return true;
             } else {
@@ -46,7 +46,7 @@ public abstract class Format implements Serializable, Cloneable {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static boolean upToWithQuotes(String str, ParsePosition parsePosition, StringBuffer stringBuffer, char c2, char c3) {
+    public static boolean upToWithQuotes(String str, ParsePosition parsePosition, StringBuffer stringBuffer, char c, char c2) {
         int index = parsePosition.getIndex();
         int length = str.length();
         int i = 1;
@@ -65,7 +65,7 @@ public abstract class Format implements Serializable, Cloneable {
             int i3 = i;
             if (!z3) {
                 int i4 = i;
-                if (charAt == c2) {
+                if (charAt == c) {
                     i4 = i - 1;
                 }
                 if (i4 == 0) {
@@ -73,7 +73,7 @@ public abstract class Format implements Serializable, Cloneable {
                     return true;
                 }
                 i3 = i4;
-                if (charAt == c3) {
+                if (charAt == c2) {
                     i3 = i4 + 1;
                 }
             }

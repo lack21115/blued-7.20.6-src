@@ -1,7 +1,6 @@
 package com.anythink.core.common;
 
 import android.content.Context;
-import android.provider.Downloads;
 import android.text.TextUtils;
 import android.util.Log;
 import com.anythink.core.api.ATAdInfo;
@@ -34,9 +33,7 @@ import org.json.JSONObject;
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/f.class */
 public abstract class f<T extends j> {
     public Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected String f6687c;
+    protected String c;
     protected boolean f;
     protected g k;
     private long n;
@@ -44,9 +41,7 @@ public abstract class f<T extends j> {
     private boolean p;
     private long q;
     private List<com.anythink.core.common.b.a> s;
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f6686a = getClass().getSimpleName();
+    private final String a = getClass().getSimpleName();
     protected int e = 0;
     public String g = "";
     private boolean r = false;
@@ -61,11 +56,11 @@ public abstract class f<T extends j> {
                 while (it.hasNext()) {
                     com.anythink.core.common.b.a aVar = (com.anythink.core.common.b.a) it.next();
                     if (aVar != null) {
-                        String str = f.this.f6687c;
-                        String a2 = f.this.a();
+                        String str = f.this.c;
+                        String a = f.this.a();
                         String str2 = g.i.x;
                         String str3 = g.i.g;
-                        com.anythink.core.common.k.n.a(str, a2, str2, str3, "[listener:" + aVar.toString() + "]");
+                        com.anythink.core.common.k.n.a(str, a, str2, str3, "[listener:" + aVar.toString() + "]");
                         aVar.onAdLoadFail(adError);
                         it.remove();
                     }
@@ -82,11 +77,11 @@ public abstract class f<T extends j> {
                     while (it.hasNext()) {
                         com.anythink.core.common.b.a aVar = (com.anythink.core.common.b.a) it.next();
                         if (aVar != null) {
-                            String str = f.this.f6687c;
-                            String a2 = f.this.a();
+                            String str = f.this.c;
+                            String a = f.this.a();
                             String str2 = g.i.x;
                             String str3 = g.i.f;
-                            com.anythink.core.common.k.n.a(str, a2, str2, str3, "[listener:" + aVar.toString() + "]");
+                            com.anythink.core.common.k.n.a(str, a, str2, str3, "[listener:" + aVar.toString() + "]");
                             aVar.onAdLoaded();
                             it.remove();
                         }
@@ -101,26 +96,21 @@ public abstract class f<T extends j> {
     String m = "";
     protected ConcurrentHashMap<String, h> d = new ConcurrentHashMap<>(5);
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.f$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/f$2.class */
-    public final class AnonymousClass2 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ j f6689a;
+    final class AnonymousClass2 implements Runnable {
+        final /* synthetic */ j a;
         final /* synthetic */ String b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ com.anythink.core.common.b.a f6690c;
+        final /* synthetic */ com.anythink.core.common.b.a c;
         final /* synthetic */ Context d;
         final /* synthetic */ int[] e;
         final /* synthetic */ String f;
         final /* synthetic */ Map g;
 
         AnonymousClass2(j jVar, String str, com.anythink.core.common.b.a aVar, Context context, int[] iArr, String str2, Map map) {
-            this.f6689a = jVar;
+            this.a = jVar;
             this.b = str;
-            this.f6690c = aVar;
+            this.c = aVar;
             this.d = context;
             this.e = iArr;
             this.f = str2;
@@ -131,15 +121,15 @@ public abstract class f<T extends j> {
         @Override // java.lang.Runnable
         public final void run() {
             synchronized (f.this) {
-                if (!f.this.e() || this.f6689a.d == 0) {
-                    if (f.this.i() || this.f6689a.d != 5) {
-                        if (f.this.j() && this.f6689a.d == 0) {
-                            Log.e("anythink", "PlacementId(" + this.b + ") the load api calls are not allowed in Auto-load mode");
+                if (!f.this.e() || this.a.d == 0) {
+                    if (f.this.i() || this.a.d != 5) {
+                        if (f.this.j() && this.a.d == 0) {
+                            Log.e(com.anythink.core.common.b.g.n, "PlacementId(" + this.b + ") the load api calls are not allowed in Auto-load mode");
                             return;
                         }
-                        f.this.a(this.f6690c);
-                        this.f6689a.f = f.this.i;
-                        if (this.f6689a.d != 4) {
+                        f.this.a(this.c);
+                        this.a.f = f.this.i;
+                        if (this.a.d != 4) {
                             f.this.h = 1;
                         } else {
                             f.this.h++;
@@ -148,50 +138,50 @@ public abstract class f<T extends j> {
                         StringBuilder sb = new StringBuilder("PlacementId(");
                         sb.append(this.b);
                         sb.append(") start load type:");
-                        sb.append(this.f6689a.d);
+                        sb.append(this.a.d);
                         com.anythink.core.common.b.n.a().a(this.d, com.anythink.core.common.b.n.a().p(), com.anythink.core.common.b.n.a().q());
-                        final String a2 = com.anythink.core.common.k.g.a(this.d);
-                        this.f6689a.f6762a = a2;
-                        f.this.a(this.f6689a.f6762a, this.f6690c);
+                        final String a = com.anythink.core.common.k.g.a(this.d);
+                        this.a.a = a;
+                        f.this.a(this.a.a, this.c);
                         if (com.anythink.core.common.b.n.a().g() != null && !TextUtils.isEmpty(com.anythink.core.common.b.n.a().p()) && !TextUtils.isEmpty(com.anythink.core.common.b.n.a().q()) && !com.anythink.core.common.k.h.a(this.b)) {
                             if (f.this.g()) {
-                                Log.i("anythink", "Placement(" + this.b + ") is loading.");
+                                Log.i(com.anythink.core.common.b.g.n, "Placement(" + this.b + ") is loading.");
                                 return;
                             }
                             final Context applicationContext = this.d.getApplicationContext();
                             String p = com.anythink.core.common.b.n.a().p();
                             String q = com.anythink.core.common.b.n.a().q();
                             boolean v = com.anythink.core.common.b.n.a().v();
-                            com.anythink.core.c.d a3 = v ? null : com.anythink.core.c.e.a(applicationContext).a(this.b);
-                            String U = a3 != null ? a3.U() : "";
-                            final com.anythink.core.common.e.e a4 = com.anythink.core.common.k.s.a(a2, this.b, "", a3, "", a3 != null ? a3.l() : -1, this.f6689a.d, this.e[0], this.f6689a.g);
-                            a4.z(this.f);
+                            com.anythink.core.c.d a2 = v ? null : com.anythink.core.c.e.a(applicationContext).a(this.b);
+                            String U = a2 != null ? a2.U() : "";
+                            final com.anythink.core.common.e.e a3 = com.anythink.core.common.k.s.a(a, this.b, "", a2, "", a2 != null ? a2.l() : -1, this.a.d, this.e[0], this.a.g);
+                            a3.z(this.f);
                             if (this.g != null) {
-                                a4.a(this.g);
+                                a3.a(this.g);
                             }
-                            if (a3 == null && !v && (!TextUtils.isEmpty(this.f6689a.f6763c) || this.f6689a.b != null)) {
-                                Log.i("anythink", "request default adsource for splash.");
-                                if (f.this.a(this.b, a2, (String) this.f6689a, this.f6690c)) {
-                                    com.anythink.core.c.e.a(this.d).a(null, p, q, this.b, this.f6689a.g, null);
+                            if (a2 == null && !v && (!TextUtils.isEmpty(this.a.c) || this.a.b != null)) {
+                                Log.i(com.anythink.core.common.b.g.n, "request default adsource for splash.");
+                                if (f.this.a(this.b, a, (String) this.a, this.c)) {
+                                    com.anythink.core.c.e.a(this.d).a(null, p, q, this.b, this.a.g, null);
                                     return;
                                 }
                             }
                             if (f.this.e == 1 && !f.this.d() && a.a().a(this.d, this.b) != null) {
-                                w.a().a(this.b, a2);
+                                w.a().a(this.b, a);
                                 f.this.h();
-                                a4.a(false);
-                                a4.z(4);
-                                com.anythink.core.common.j.a.a(applicationContext).a(10, a4);
-                                com.anythink.core.common.j.a.a(applicationContext).a(12, a4);
+                                a3.a(false);
+                                a3.z(4);
+                                com.anythink.core.common.j.a.a(applicationContext).a(10, a3);
+                                com.anythink.core.common.j.a.a(applicationContext).a(12, a3);
                                 f.this.f = false;
                                 return;
                             }
-                            if (a3 != null && f.this.p) {
+                            if (a2 != null && f.this.p) {
                                 long currentTimeMillis = System.currentTimeMillis() - f.this.q;
-                                if (currentTimeMillis > 0 && currentTimeMillis < a3.aj()) {
+                                if (currentTimeMillis > 0 && currentTimeMillis < a2.aj()) {
                                     AdError errorCode = ErrorCode.getErrorCode(ErrorCode.loadFailInPacingError, "", "");
-                                    a4.z(7);
-                                    f.this.a(f.this.r ? false : true, a4, new e(errorCode, errorCode.printStackTrace()));
+                                    a3.z(7);
+                                    f.this.a(f.this.r ? false : true, a3, new e(errorCode, errorCode.printStackTrace()));
                                     f.this.r = true;
                                     return;
                                 }
@@ -199,13 +189,13 @@ public abstract class f<T extends j> {
                             f.f(f.this);
                             f.g(f.this);
                             f.this.r = false;
-                            if (a3 != null && com.anythink.core.a.b.a().a(applicationContext, this.b, a3)) {
+                            if (a2 != null && com.anythink.core.a.b.a().a(applicationContext, this.b, a2)) {
                                 AdError errorCode2 = ErrorCode.getErrorCode(ErrorCode.loadCappingError, "", "");
-                                a4.z(8);
-                                f.this.a(true, a4, (Throwable) new e(errorCode2, errorCode2.printStackTrace()));
+                                a3.z(8);
+                                f.this.a(true, a3, (Throwable) new e(errorCode2, errorCode2.printStackTrace()));
                                 return;
                             } else if (f.this.e()) {
-                                Log.i("anythink", "Placement(" + this.b + ") is loading.");
+                                Log.i(com.anythink.core.common.b.g.n, "Placement(" + this.b + ") is loading.");
                                 return;
                             } else {
                                 f.this.f = true;
@@ -213,7 +203,7 @@ public abstract class f<T extends j> {
                                     hVar.f();
                                 }
                                 final String str = U;
-                                com.anythink.core.c.e.a(this.d).a(a3, p, q, this.b, this.f6689a.g, new e.a() { // from class: com.anythink.core.common.f.2.1
+                                com.anythink.core.c.e.a(this.d).a(a2, p, q, this.b, this.a.g, new e.a() { // from class: com.anythink.core.common.f.2.1
                                     @Override // com.anythink.core.c.e.a
                                     public final void a(AdError adError) {
                                         String str2 = g.i.g;
@@ -224,17 +214,17 @@ public abstract class f<T extends j> {
                                             try {
                                                 JSONObject jSONObject = new JSONObject();
                                                 jSONObject.put("action", g.i.w);
-                                                jSONObject.put("result", str2);
-                                                jSONObject.put(com.anythink.expressad.videocommon.e.b.v, str3);
+                                                jSONObject.put(com.alipay.sdk.util.l.c, str2);
+                                                jSONObject.put("placementId", str3);
                                                 jSONObject.put("adtype", d);
-                                                jSONObject.put(Downloads.Impl.COLUMN_ERROR_MSG, printStackTrace);
+                                                jSONObject.put("errorMsg", printStackTrace);
                                                 com.anythink.core.common.k.n.a("anythink_network", jSONObject.toString(), TextUtils.equals(g.i.g, str2));
                                             } catch (Throwable th) {
                                             }
                                         }
                                         AdError errorCode3 = ErrorCode.getErrorCode(ErrorCode.placeStrategyError, adError.getPlatformCode(), adError.getPlatformMSG());
-                                        a4.z(5);
-                                        f.this.a(true, a4, errorCode3);
+                                        a3.z(5);
+                                        f.this.a(true, a3, errorCode3);
                                     }
 
                                     @Override // com.anythink.core.c.e.a
@@ -244,15 +234,15 @@ public abstract class f<T extends j> {
                                             public final void run() {
                                                 synchronized (f.this) {
                                                     f.this.o = dVar.S();
-                                                    com.anythink.core.common.k.s.a(a4, dVar);
+                                                    com.anythink.core.common.k.s.a(a3, dVar);
                                                     if (TextUtils.equals(String.valueOf(dVar.X()), AnonymousClass2.this.f)) {
-                                                        f.a(f.this, applicationContext, AnonymousClass2.this.b, a2, dVar, a4, AnonymousClass2.this.f6689a);
+                                                        f.a(f.this, applicationContext, AnonymousClass2.this.b, a, dVar, a3, AnonymousClass2.this.a);
                                                         return;
                                                     }
                                                     AdError errorCode3 = ErrorCode.getErrorCode(ErrorCode.formatError, "", "Format corresponding to API: " + com.anythink.core.common.k.g.d(AnonymousClass2.this.f) + ", Format corresponding to placement strategy: " + com.anythink.core.common.k.g.d(String.valueOf(dVar.X())));
                                                     f.this.a(errorCode3);
-                                                    a4.a(false);
-                                                    com.anythink.core.common.j.c.a(a4, errorCode3);
+                                                    a3.a(false);
+                                                    com.anythink.core.common.j.c.a(a3, errorCode3);
                                                     f.this.f = false;
                                                 }
                                             }
@@ -269,7 +259,7 @@ public abstract class f<T extends j> {
                                             public final void run() {
                                                 synchronized (f.this) {
                                                     try {
-                                                        f.a(f.this, dVar, a2, AnonymousClass2.this.b);
+                                                        f.a(f.this, dVar, a, AnonymousClass2.this.b);
                                                     }
                                                 }
                                             }
@@ -281,7 +271,7 @@ public abstract class f<T extends j> {
                         }
                         f.this.a(ErrorCode.getErrorCode(ErrorCode.appIdOrPlaceIdEmpty, "", ""));
                         if (com.anythink.core.common.b.n.a().A()) {
-                            Log.e("anythink", "Please check these params in your code (AppId: " + com.anythink.core.common.b.n.a().p() + ", AppKey: " + com.anythink.core.common.b.n.a().q() + ", PlacementId: " + this.b + ")");
+                            Log.e(com.anythink.core.common.b.g.n, "Please check these params in your code (AppId: " + com.anythink.core.common.b.n.a().p() + ", AppKey: " + com.anythink.core.common.b.n.a().q() + ", PlacementId: " + this.b + ")");
                         }
                         f.this.f = false;
                     }
@@ -294,13 +284,9 @@ public abstract class f<T extends j> {
     /* renamed from: com.anythink.core.common.f$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/f$3.class */
     public final class AnonymousClass3 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ Context f6695a;
+        final /* synthetic */ Context a;
         final /* synthetic */ j b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f6696c;
+        final /* synthetic */ String c;
         final /* synthetic */ String d;
         final /* synthetic */ com.anythink.core.c.d e;
         final /* synthetic */ boolean f;
@@ -311,9 +297,9 @@ public abstract class f<T extends j> {
         final /* synthetic */ List k;
 
         AnonymousClass3(Context context, j jVar, String str, String str2, com.anythink.core.c.d dVar, boolean z, List list, com.anythink.core.common.e.e eVar, al alVar, List list2, List list3) {
-            this.f6695a = context;
+            this.a = context;
             this.b = jVar;
-            this.f6696c = str;
+            this.c = str;
             this.d = str2;
             this.e = dVar;
             this.f = z;
@@ -329,9 +315,9 @@ public abstract class f<T extends j> {
             try {
                 System.currentTimeMillis();
                 com.anythink.core.common.e.a aVar = new com.anythink.core.common.e.a();
-                aVar.f6611a = this.f6695a;
+                aVar.a = this.a;
                 aVar.b = this.b;
-                aVar.f6612c = this.f6696c;
+                aVar.c = this.c;
                 aVar.d = this.d;
                 aVar.e = this.e.X();
                 aVar.f = this.e.H();
@@ -347,7 +333,7 @@ public abstract class f<T extends j> {
                 aVar.n = this.e;
                 aVar.s = this.h;
                 aVar.w = this.i;
-                aVar.q = v.a().c(f.this.f6687c);
+                aVar.q = v.a().c(f.this.c);
                 if (this.j.size() > 0) {
                     aVar.t = (ai) this.j.get(0);
                 }
@@ -373,7 +359,7 @@ public abstract class f<T extends j> {
 
                     @Override // com.anythink.core.common.k.a
                     public final void a(String str, List<ai> list, List<ai> list2) {
-                        boolean z = com.anythink.core.c.e.a(f.this.b).a(f.this.f6687c).j() == 1;
+                        boolean z = com.anythink.core.c.e.a(f.this.b).a(f.this.c).j() == 1;
                         ArrayList arrayList2 = null;
                         for (ai aiVar : list2) {
                             ArrayList arrayList3 = arrayList2;
@@ -396,7 +382,7 @@ public abstract class f<T extends j> {
                             if (!z) {
                                 arrayList2 = arrayList3;
                                 if (aiVar.k() != 0) {
-                                    c.a().f6566c.put(aiVar.t(), Long.valueOf(System.currentTimeMillis()));
+                                    c.a().c.put(aiVar.t(), Long.valueOf(System.currentTimeMillis()));
                                     arrayList2 = arrayList3;
                                 }
                             }
@@ -420,7 +406,7 @@ public abstract class f<T extends j> {
                     }
                 });
             } catch (Throwable th) {
-                h hVar = f.this.d.get(this.f6696c);
+                h hVar = f.this.d.get(this.c);
                 if (hVar != null) {
                     hVar.e();
                 }
@@ -428,35 +414,30 @@ public abstract class f<T extends j> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.core.common.f$4  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/f$4.class */
-    public final class AnonymousClass4 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ATBaseAdAdapter f6698a;
+    final class AnonymousClass4 implements Runnable {
+        final /* synthetic */ ATBaseAdAdapter a;
         final /* synthetic */ double b;
-
-        /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f6699c;
+        final /* synthetic */ String c;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public AnonymousClass4(ATBaseAdAdapter aTBaseAdAdapter, double d, String str) {
-            this.f6698a = aTBaseAdAdapter;
+            this.a = aTBaseAdAdapter;
             this.b = d;
-            this.f6699c = str;
+            this.c = str;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            com.anythink.core.common.e.e trackingInfo = this.f6698a.getTrackingInfo();
-            ai unitGroupInfo = this.f6698a.getUnitGroupInfo();
+            com.anythink.core.common.e.e trackingInfo = this.a.getTrackingInfo();
+            ai unitGroupInfo = this.a.getUnitGroupInfo();
             if (trackingInfo == null || unitGroupInfo == null || unitGroupInfo.j() || TextUtils.equals(trackingInfo.Y(), "2") || TextUtils.equals(trackingInfo.Y(), "4")) {
                 return;
             }
-            if ((f.this.l <= this.b || !f.this.m.equals(this.f6699c)) && trackingInfo.H() != 35) {
+            if ((f.this.l <= this.b || !f.this.m.equals(this.c)) && trackingInfo.H() != 35) {
                 f.this.l = this.b;
-                f.this.m = this.f6699c;
+                f.this.m = this.c;
                 if (f.this.k != null) {
                     f.this.k.cancel();
                     f.this.k = null;
@@ -468,20 +449,20 @@ public abstract class f<T extends j> {
 
     public f(Context context, String str) {
         this.b = context.getApplicationContext();
-        this.f6687c = str;
+        this.c = str;
         if (com.anythink.core.common.b.n.a().g() == null) {
             com.anythink.core.common.b.n.a().a(this.b);
         }
     }
 
     public static String a(com.anythink.core.common.e.j jVar) {
-        return jVar.b + jVar.f6664c + jVar.f + System.currentTimeMillis();
+        return jVar.b + jVar.c + jVar.f + System.currentTimeMillis();
     }
 
     private List<ai> a(com.anythink.core.c.d dVar, String str, int i, List<ai> list) {
         JSONArray jSONArray = new JSONArray();
         com.anythink.core.common.e.e eVar = new com.anythink.core.common.e.e();
-        eVar.x(this.f6687c);
+        eVar.x(this.c);
         eVar.y(str);
         StringBuilder sb = new StringBuilder();
         sb.append(dVar.X());
@@ -494,20 +475,20 @@ public abstract class f<T extends j> {
         LinkedHashMap linkedHashMap = new LinkedHashMap();
         HashMap hashMap = new HashMap(3);
         for (ai aiVar : list) {
-            double a2 = com.anythink.core.common.k.g.a(aiVar);
-            List list2 = (List) linkedHashMap.get(String.valueOf(a2));
+            double a = com.anythink.core.common.k.g.a(aiVar);
+            List list2 = (List) linkedHashMap.get(String.valueOf(a));
             ArrayList arrayList2 = list2;
             if (list2 == null) {
                 ArrayList arrayList3 = new ArrayList();
-                linkedHashMap.put(String.valueOf(a2), arrayList3);
+                linkedHashMap.put(String.valueOf(a), arrayList3);
                 arrayList2 = arrayList3;
             }
-            Integer num = (Integer) hashMap.get(String.valueOf(a2));
+            Integer num = (Integer) hashMap.get(String.valueOf(a));
             Integer num2 = num;
             if (num == null) {
                 num2 = 0;
             }
-            hashMap.put(String.valueOf(a2), Integer.valueOf(num2.intValue() + aiVar.T()));
+            hashMap.put(String.valueOf(a), Integer.valueOf(num2.intValue() + aiVar.T()));
             arrayList2.add(aiVar);
         }
         Iterator it = linkedHashMap.entrySet().iterator();
@@ -656,7 +637,7 @@ public abstract class f<T extends j> {
         int i = 0;
         int i2 = aeVar != null ? aeVar.d : 0;
         if (aeVar != null) {
-            i = aeVar.f6623c;
+            i = aeVar.c;
         }
         if ((ab == -1 || i < ab) && (ac == -1 || i2 < ac)) {
             return;
@@ -674,36 +655,36 @@ public abstract class f<T extends j> {
     }
 
     private void a(com.anythink.core.c.d dVar, String str, String str2) {
-        List<ai> a2 = com.anythink.core.c.d.a(dVar.af(), dVar.ag());
-        List<ai> a3 = com.anythink.core.c.d.a(dVar.ah(), dVar.C(), dVar.ai(), dVar.A(), dVar.s(), dVar.ao(), dVar.ap());
-        a3.addAll(com.anythink.core.c.d.d(dVar.g()));
-        List<ai> c2 = com.anythink.core.c.d.c(dVar.n());
-        if (c2 != null) {
-            int size = c2.size();
+        List<ai> a = com.anythink.core.c.d.a(dVar.af(), dVar.ag());
+        List<ai> a2 = com.anythink.core.c.d.a(dVar.ah(), dVar.C(), dVar.ai(), dVar.A(), dVar.s(), dVar.ao(), dVar.ap());
+        a2.addAll(com.anythink.core.c.d.d(dVar.g()));
+        List<ai> c = com.anythink.core.c.d.c(dVar.n());
+        if (c != null) {
+            int size = c.size();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= size) {
                     break;
                 }
-                com.anythink.core.common.k.g.a(a2, c2.get(i2), true);
+                com.anythink.core.common.k.g.a(a, c.get(i2), true);
                 i = i2 + 1;
             }
         }
-        if ((a3 != null ? a3.size() : 0) > 0) {
-            for (ai aiVar : a3) {
-                com.anythink.core.common.e.b a4 = a.a().a(str2, aiVar);
-                if (a4 != null) {
+        if ((a2 != null ? a2.size() : 0) > 0) {
+            for (ai aiVar : a2) {
+                com.anythink.core.common.e.b a3 = a.a().a(str2, aiVar);
+                if (a3 != null) {
                     try {
-                        aiVar.a(a4.e().getUnitGroupInfo(), 0, 3, 1);
-                        com.anythink.core.common.k.g.a(a2, aiVar, true);
+                        aiVar.a(a3.e().getUnitGroupInfo(), 0, 3, 1);
+                        com.anythink.core.common.k.g.a(a, aiVar, true);
                     } catch (Exception e) {
                     }
                 }
-                com.anythink.core.common.e.m a5 = com.anythink.core.b.f.a().a(aiVar);
-                if (a5 != null) {
-                    aiVar.a(a5, 0, 2, 1);
-                    com.anythink.core.common.k.g.a(a2, aiVar, true);
+                com.anythink.core.common.e.m a4 = com.anythink.core.b.f.a().a(aiVar);
+                if (a4 != null) {
+                    aiVar.a(a4, 0, 2, 1);
+                    com.anythink.core.common.k.g.a(a, aiVar, true);
                 } else if (!TextUtils.isEmpty(str)) {
                     h hVar = this.d.get(str);
                     ai aiVar2 = null;
@@ -716,12 +697,12 @@ public abstract class f<T extends j> {
                     }
                     if (aiVar2 != null) {
                         aiVar.a(aiVar2, 0, 3, 1);
-                        com.anythink.core.common.k.g.a(a2, aiVar, true);
+                        com.anythink.core.common.k.g.a(a, aiVar, true);
                     }
                 }
             }
         }
-        w.a().a(str2, str, dVar, a2);
+        w.a().a(str2, str, dVar, a);
     }
 
     private static void a(com.anythink.core.c.d dVar, List list, List list2, List list3, com.anythink.core.common.e.e eVar) {
@@ -759,36 +740,36 @@ public abstract class f<T extends j> {
     }
 
     static /* synthetic */ void a(f fVar, com.anythink.core.c.d dVar, String str, String str2) {
-        List<ai> a2 = com.anythink.core.c.d.a(dVar.af(), dVar.ag());
-        List<ai> a3 = com.anythink.core.c.d.a(dVar.ah(), dVar.C(), dVar.ai(), dVar.A(), dVar.s(), dVar.ao(), dVar.ap());
-        a3.addAll(com.anythink.core.c.d.d(dVar.g()));
-        List<ai> c2 = com.anythink.core.c.d.c(dVar.n());
-        if (c2 != null) {
-            int size = c2.size();
+        List<ai> a = com.anythink.core.c.d.a(dVar.af(), dVar.ag());
+        List<ai> a2 = com.anythink.core.c.d.a(dVar.ah(), dVar.C(), dVar.ai(), dVar.A(), dVar.s(), dVar.ao(), dVar.ap());
+        a2.addAll(com.anythink.core.c.d.d(dVar.g()));
+        List<ai> c = com.anythink.core.c.d.c(dVar.n());
+        if (c != null) {
+            int size = c.size();
             int i = 0;
             while (true) {
                 int i2 = i;
                 if (i2 >= size) {
                     break;
                 }
-                com.anythink.core.common.k.g.a(a2, c2.get(i2), true);
+                com.anythink.core.common.k.g.a(a, c.get(i2), true);
                 i = i2 + 1;
             }
         }
-        if ((a3 != null ? a3.size() : 0) > 0) {
-            for (ai aiVar : a3) {
-                com.anythink.core.common.e.b a4 = a.a().a(str2, aiVar);
-                if (a4 != null) {
+        if ((a2 != null ? a2.size() : 0) > 0) {
+            for (ai aiVar : a2) {
+                com.anythink.core.common.e.b a3 = a.a().a(str2, aiVar);
+                if (a3 != null) {
                     try {
-                        aiVar.a(a4.e().getUnitGroupInfo(), 0, 3, 1);
-                        com.anythink.core.common.k.g.a(a2, aiVar, true);
+                        aiVar.a(a3.e().getUnitGroupInfo(), 0, 3, 1);
+                        com.anythink.core.common.k.g.a(a, aiVar, true);
                     } catch (Exception e) {
                     }
                 }
-                com.anythink.core.common.e.m a5 = com.anythink.core.b.f.a().a(aiVar);
-                if (a5 != null) {
-                    aiVar.a(a5, 0, 2, 1);
-                    com.anythink.core.common.k.g.a(a2, aiVar, true);
+                com.anythink.core.common.e.m a4 = com.anythink.core.b.f.a().a(aiVar);
+                if (a4 != null) {
+                    aiVar.a(a4, 0, 2, 1);
+                    com.anythink.core.common.k.g.a(a, aiVar, true);
                 } else if (!TextUtils.isEmpty(str)) {
                     h hVar = fVar.d.get(str);
                     ai aiVar2 = null;
@@ -801,12 +782,12 @@ public abstract class f<T extends j> {
                     }
                     if (aiVar2 != null) {
                         aiVar.a(aiVar2, 0, 3, 1);
-                        com.anythink.core.common.k.g.a(a2, aiVar, true);
+                        com.anythink.core.common.k.g.a(a, aiVar, true);
                     }
                 }
             }
         }
-        w.a().a(str2, str, dVar, a2);
+        w.a().a(str2, str, dVar, a);
     }
 
     static /* synthetic */ void a(f fVar, ai aiVar, com.anythink.core.common.e.e eVar) {
@@ -830,30 +811,30 @@ public abstract class f<T extends j> {
             }
             boolean z3 = z;
             if (aiVar.m() != 2) {
-                com.anythink.core.common.e.b a2 = a.a().a(this.f6687c, aiVar);
+                com.anythink.core.common.e.b a = a.a().a(this.c, aiVar);
                 ai aiVar2 = null;
-                if (a2 != null) {
-                    aiVar.a(a2.e().getUnitGroupInfo(), 0, 3, 1);
+                if (a != null) {
+                    aiVar.a(a.e().getUnitGroupInfo(), 0, 3, 1);
                     aiVar2 = aiVar;
                 }
                 ai aiVar3 = aiVar2;
                 if (aiVar2 == null) {
                     try {
-                        com.anythink.core.common.e.m a3 = com.anythink.core.b.f.a().a(aiVar);
-                        if (a3 == null || a3.a()) {
+                        com.anythink.core.common.e.m a2 = com.anythink.core.b.f.a().a(aiVar);
+                        if (a2 == null || a2.a()) {
                             aiVar3 = aiVar2;
-                            if (a3 != null) {
+                            if (a2 != null) {
                                 com.anythink.core.common.e.r rVar = new com.anythink.core.common.e.r();
-                                rVar.f6674a = 1;
-                                rVar.b = a3.getSortPrice();
+                                rVar.a = 1;
+                                rVar.b = a2.getSortPrice();
                                 rVar.e = eVar;
-                                rVar.f6675c = aiVar;
+                                rVar.c = aiVar;
                                 rVar.d = aiVar;
-                                a3.a(rVar, true);
+                                a2.a(rVar, true);
                                 aiVar3 = aiVar2;
                             }
                         } else {
-                            aiVar.a(a3, 0, 2, 1);
+                            aiVar.a(a2, 0, 2, 1);
                             aiVar3 = aiVar;
                         }
                     } catch (Throwable th) {
@@ -907,16 +888,16 @@ public abstract class f<T extends j> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a(boolean z, com.anythink.core.common.e.e eVar, Throwable th) {
-        a(z, eVar, th instanceof e ? ((e) th).f6610a : ErrorCode.getErrorCode(ErrorCode.exception, "", th.getMessage()));
+        a(z, eVar, th instanceof e ? ((e) th).a : ErrorCode.getErrorCode(ErrorCode.exception, "", th.getMessage()));
     }
 
     private boolean a(int i, com.anythink.core.c.d dVar, String str, com.anythink.core.common.e.e eVar, ae aeVar, ai aiVar, AtomicInteger atomicInteger) {
         com.anythink.core.common.e.d d;
         com.anythink.core.common.e.e N = eVar.N();
         com.anythink.core.common.k.s.a(N, aiVar, 0, false);
-        ae.a a2 = aeVar != null ? aeVar.a(aiVar.t()) : null;
-        int i2 = a2 != null ? a2.e : 0;
-        int i3 = a2 != null ? a2.d : 0;
+        ae.a a = aeVar != null ? aeVar.a(aiVar.t()) : null;
+        int i2 = a != null ? a.e : 0;
+        int i3 = a != null ? a.d : 0;
         if (aiVar.e() != -1 && i3 >= aiVar.e()) {
             aiVar.g(-5);
             aiVar.h("Out of Cap");
@@ -942,7 +923,7 @@ public abstract class f<T extends j> {
             com.anythink.core.common.j.c.a(N, 4, ErrorCode.getErrorCode(ErrorCode.inRequestFailPacing, "", "Request fail in pacing"));
             return true;
         } else {
-            List<String> l = com.anythink.core.common.b.n.a().l(this.f6687c);
+            List<String> l = com.anythink.core.common.b.n.a().l(this.c);
             if (l != null && l.contains(aiVar.t())) {
                 aiVar.g(-8);
                 aiVar.h("Request fail in filter list");
@@ -950,7 +931,7 @@ public abstract class f<T extends j> {
                 com.anythink.core.common.j.c.a(N, 5, ErrorCode.getErrorCode(ErrorCode.filterSourceError, "", "Request fail in filter list"));
                 return true;
             }
-            List<String> m = com.anythink.core.common.b.n.a().m(this.f6687c);
+            List<String> m = com.anythink.core.common.b.n.a().m(this.c);
             if (m != null && m.contains(String.valueOf(aiVar.c()))) {
                 aiVar.g(-8);
                 aiVar.h("Filter by network firm id.");
@@ -965,7 +946,7 @@ public abstract class f<T extends j> {
                     com.anythink.core.common.k.n.a(str, eVar, "Bid fail in pacing", aiVar, i2, i3);
                     com.anythink.core.common.j.c.a(N, 4, ErrorCode.getErrorCode(ErrorCode.inRequestFailPacing, "", "Bid fail in pacing"));
                     return true;
-                } else if (aiVar.X() != 1 && aiVar.l() == 2 && (d = v.a().d(this.f6687c)) != null && d.a(aiVar)) {
+                } else if (aiVar.X() != 1 && aiVar.l() == 2 && (d = v.a().d(this.c)) != null && d.a(aiVar)) {
                     aiVar.g(-7);
                     aiVar.h("Can't Load On Showing");
                     com.anythink.core.common.k.n.a(str, eVar, "Can't Load On Showing", aiVar, i2, i3);
@@ -986,43 +967,43 @@ public abstract class f<T extends j> {
     }
 
     private boolean a(boolean z, boolean z2, Map<String, Object> map) {
-        com.anythink.core.c.d a2 = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(this.f6687c);
+        com.anythink.core.c.d a = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(this.c);
         String str = TextUtils.isEmpty(this.g) ? "" : this.g;
-        com.anythink.core.c.d dVar = a2;
-        if (a2 == null) {
-            dVar = com.anythink.core.c.e.a(this.b).a(this.f6687c);
+        com.anythink.core.c.d dVar = a;
+        if (a == null) {
+            dVar = com.anythink.core.c.e.a(this.b).a(this.c);
         }
         if (dVar == null) {
-            com.anythink.core.common.e.e a3 = com.anythink.core.common.k.s.a("", this.f6687c, "", null, "", -1, 0, 0, map);
+            com.anythink.core.common.e.e a2 = com.anythink.core.common.k.s.a("", this.c, "", null, "", -1, 0, 0, map);
             if (z) {
-                com.anythink.core.common.j.c.a(a3, 4, "", str);
+                com.anythink.core.common.j.c.a(a2, 4, "", str);
                 return true;
             } else if (z2) {
-                com.anythink.core.common.j.c.a(a3, false, 4, -1, "", -1, "", "", str, false, "");
+                com.anythink.core.common.j.c.a(a2, false, 4, -1, "", -1, "", "", str, false, "");
                 return true;
             } else {
                 return true;
             }
         }
         com.anythink.core.a.c.a();
-        if (com.anythink.core.a.c.a(this.f6687c, dVar)) {
-            com.anythink.core.common.e.e a4 = com.anythink.core.common.k.s.a("", this.f6687c, "", dVar, "", dVar.l(), 0, 0, map);
+        if (com.anythink.core.a.c.a(this.c, dVar)) {
+            com.anythink.core.common.e.e a3 = com.anythink.core.common.k.s.a("", this.c, "", dVar, "", dVar.l(), 0, 0, map);
             if (z) {
-                com.anythink.core.common.j.c.a(a4, 3, "", str);
+                com.anythink.core.common.j.c.a(a3, 3, "", str);
                 return true;
             } else if (z2) {
-                com.anythink.core.common.j.c.a(a4, false, 3, -1, "", -1, "", "", str, false, "");
+                com.anythink.core.common.j.c.a(a3, false, 3, -1, "", -1, "", "", str, false, "");
                 return true;
             } else {
                 return true;
             }
-        } else if (com.anythink.core.a.a.a(this.b).a(dVar, this.f6687c)) {
-            com.anythink.core.common.e.e a5 = com.anythink.core.common.k.s.a("", this.f6687c, "", dVar, "", dVar.l(), 0, 0, map);
+        } else if (com.anythink.core.a.a.a(this.b).a(dVar, this.c)) {
+            com.anythink.core.common.e.e a4 = com.anythink.core.common.k.s.a("", this.c, "", dVar, "", dVar.l(), 0, 0, map);
             if (z) {
-                com.anythink.core.common.j.c.a(a5, 2, "", str);
+                com.anythink.core.common.j.c.a(a4, 2, "", str);
                 return true;
             } else if (z2) {
-                com.anythink.core.common.j.c.a(a5, false, 2, -1, "", -1, "", "", str, false, "");
+                com.anythink.core.common.j.c.a(a4, false, 2, -1, "", -1, "", "", str, false, "");
                 return true;
             } else {
                 return true;
@@ -1116,7 +1097,7 @@ public abstract class f<T extends j> {
         if (a(z2, z, map)) {
             return null;
         }
-        return a.a().a(context, this.f6687c, z, z2, map);
+        return a.a().a(context, this.c, z, z2, map);
     }
 
     public abstract h a(T t);
@@ -1124,12 +1105,12 @@ public abstract class f<T extends j> {
     protected abstract String a();
 
     public final List<ATAdInfo> a(Context context) {
-        List<com.anythink.core.common.e.b> a2;
-        if (a(false, false, (Map<String, Object>) null) || (a2 = a.a().a(context, this.f6687c, false, false, true, null)) == null || a2.size() <= 0) {
+        List<com.anythink.core.common.e.b> a;
+        if (a(false, false, (Map<String, Object>) null) || (a = a.a().a(context, this.c, false, false, true, null)) == null || a.size() <= 0) {
             return null;
         }
         ArrayList arrayList = new ArrayList(3);
-        Iterator<com.anythink.core.common.e.b> it = a2.iterator();
+        Iterator<com.anythink.core.common.e.b> it = a.iterator();
         while (it.hasNext()) {
             com.anythink.core.common.e.b next = it.next();
             BaseAd f = next != null ? next.f() : null;
@@ -1144,18 +1125,18 @@ public abstract class f<T extends j> {
     }
 
     public final void a(Context context, String str, String str2, T t, com.anythink.core.common.b.a aVar) {
-        Map<String, Object> c2 = v.a().c(str2);
+        Map<String, Object> c = v.a().c(str2);
         int[] iArr = {0};
-        if (c2.containsKey(ah.O)) {
+        if (c.containsKey(ah.O)) {
             try {
-                iArr[0] = ((Integer) c2.get(ah.O)).intValue();
+                iArr[0] = ((Integer) c.get(ah.O)).intValue();
             } catch (Throwable th) {
             }
         }
         if (t.d == 0 || t.d == 3) {
             v.a().a(str2, new Throwable().getStackTrace());
         }
-        com.anythink.core.common.k.b.a.a().a(new AnonymousClass2(t, str2, aVar, context, iArr, str, c2));
+        com.anythink.core.common.k.b.a.a().a(new AnonymousClass2(t, str2, aVar, context, iArr, str, c));
     }
 
     public final void a(AdError adError) {
@@ -1192,7 +1173,7 @@ public abstract class f<T extends j> {
     }
 
     public final void a(String str) {
-        if (!TextUtils.equals(str, com.anythink.core.c.e.a(this.b).a(this.f6687c).U())) {
+        if (!TextUtils.equals(str, com.anythink.core.c.e.a(this.b).a(this.c).U())) {
             this.e = 0;
             return;
         }
@@ -1214,12 +1195,12 @@ public abstract class f<T extends j> {
     }
 
     public final boolean a(ATAdStatusInfo aTAdStatusInfo) {
-        com.anythink.core.c.d a2 = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(this.f6687c);
+        com.anythink.core.c.d a = com.anythink.core.c.e.a(com.anythink.core.common.b.n.a().g()).a(this.c);
         if (this.e != 1 || d() || aTAdStatusInfo == null || !aTAdStatusInfo.isReady()) {
             if (j()) {
                 return true;
             }
-            return a2 != null && a2.V() == 1;
+            return a != null && a.V() == 1;
         }
         return false;
     }
@@ -1229,7 +1210,7 @@ public abstract class f<T extends j> {
     }
 
     public final void b() {
-        com.anythink.core.c.d b = com.anythink.core.c.e.a(this.b).b(this.f6687c);
+        com.anythink.core.c.d b = com.anythink.core.c.e.a(this.b).b(this.c);
         if (this.p || b == null) {
             return;
         }
@@ -1251,8 +1232,7 @@ public abstract class f<T extends j> {
         return this.d.get(str);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final boolean c() {
+    protected final boolean c() {
         return System.currentTimeMillis() - this.q <= 2000;
     }
 

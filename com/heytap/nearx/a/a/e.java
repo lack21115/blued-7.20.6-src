@@ -14,7 +14,7 @@ import okio.Okio;
 public abstract class e<E> {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final e<Boolean> f22261c = new e<Boolean>(com.heytap.nearx.a.a.a.VARINT, Boolean.class) { // from class: com.heytap.nearx.a.a.e.1
+    public static final e<Boolean> f8653c = new e<Boolean>(com.heytap.nearx.a.a.a.VARINT, Boolean.class) { // from class: com.heytap.nearx.a.a.e.1
         @Override // com.heytap.nearx.a.a.e
         public int a(Boolean bool) {
             return 1;
@@ -103,7 +103,7 @@ public abstract class e<E> {
     public static final e<ByteString> q;
 
     /* renamed from: a  reason: collision with root package name */
-    final Class<?> f22262a;
+    final Class<?> f8654a;
     e<List<E>> b;
     private final com.heytap.nearx.a.a.a r;
 
@@ -111,12 +111,12 @@ public abstract class e<E> {
     public static final class a extends IllegalArgumentException {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f22263a;
+        public final int f8655a;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public a(int i, Class<?> cls) {
             super("Unknown enum tag " + i + " for " + cls.getCanonicalName());
-            this.f22263a = i;
+            this.f8655a = i;
         }
     }
 
@@ -282,7 +282,7 @@ public abstract class e<E> {
 
     public e(com.heytap.nearx.a.a.a aVar, Class<?> cls) {
         this.r = aVar;
-        this.f22262a = cls;
+        this.f8654a = cls;
     }
 
     public static <E extends i> h<E> a(Class<E> cls) {

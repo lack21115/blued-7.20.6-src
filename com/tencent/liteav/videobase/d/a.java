@@ -6,11 +6,11 @@ import android.opengl.GLES20;
 public final class a extends i {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final float[] f36620a = {-0.0627451f, -0.5019608f, -0.5019608f};
+    private static final float[] f22929a = {-0.0627451f, -0.5019608f, -0.5019608f};
     private static final float[] b = {1.1644f, 1.1644f, 1.1644f, 0.0f, -0.3918f, 2.0172f, 1.596f, -0.813f, 0.0f};
 
     /* renamed from: c  reason: collision with root package name */
-    private int f36621c;
+    private int f22930c;
     private int d;
 
     public a() {
@@ -19,8 +19,8 @@ public final class a extends i {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void a(a aVar) {
-        GLES20.glUniform3fv(aVar.d, 1, f36620a, 0);
-        GLES20.glUniformMatrix3fv(aVar.f36621c, 1, false, b, 0);
+        GLES20.glUniform3fv(aVar.d, 1, f22929a, 0);
+        GLES20.glUniformMatrix3fv(aVar.f22930c, 1, false, b, 0);
     }
 
     @Override // com.tencent.liteav.videobase.d.i
@@ -31,7 +31,7 @@ public final class a extends i {
     @Override // com.tencent.liteav.videobase.d.i, com.tencent.liteav.videobase.a.b
     public final void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
-        this.f36621c = GLES20.glGetUniformLocation(getProgramId(), "convertMatrix");
+        this.f22930c = GLES20.glGetUniformLocation(getProgramId(), "convertMatrix");
         this.d = GLES20.glGetUniformLocation(getProgramId(), "offset");
         runOnDraw(b.a(this));
     }

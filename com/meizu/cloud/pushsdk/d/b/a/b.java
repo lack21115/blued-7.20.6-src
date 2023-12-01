@@ -9,20 +9,20 @@ import java.util.concurrent.Future;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static ExecutorService f24090a;
+    private static ExecutorService f10475a;
     private static int b = 2;
 
     public static ExecutorService a() {
         synchronized (b.class) {
             try {
-                if (f24090a == null) {
-                    f24090a = Executors.newScheduledThreadPool(b);
+                if (f10475a == null) {
+                    f10475a = Executors.newScheduledThreadPool(b);
                 }
             } catch (Throwable th) {
                 throw th;
             }
         }
-        return f24090a;
+        return f10475a;
     }
 
     public static Future a(Callable callable) {

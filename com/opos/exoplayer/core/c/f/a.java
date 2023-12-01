@@ -7,7 +7,7 @@ import com.opos.exoplayer.core.c.l;
 public final class a implements com.opos.exoplayer.core.c.e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final com.opos.exoplayer.core.c.h f25183a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.f.a.1
+    public static final com.opos.exoplayer.core.c.h f11495a = new com.opos.exoplayer.core.c.h() { // from class: com.opos.exoplayer.core.c.f.a.1
         @Override // com.opos.exoplayer.core.c.h
         public com.opos.exoplayer.core.c.e[] a() {
             return new com.opos.exoplayer.core.c.e[]{new a()};
@@ -16,7 +16,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
     private static final int b = com.opos.exoplayer.core.i.u.f("ID3");
 
     /* renamed from: c  reason: collision with root package name */
-    private final long f25184c;
+    private final long f11496c;
     private final b d;
     private final com.opos.exoplayer.core.i.m e;
     private boolean f;
@@ -26,21 +26,21 @@ public final class a implements com.opos.exoplayer.core.c.e {
     }
 
     public a(long j) {
-        this.f25184c = j;
+        this.f11496c = j;
         this.d = new b();
         this.e = new com.opos.exoplayer.core.i.m(2786);
     }
 
     @Override // com.opos.exoplayer.core.c.e
     public int a(com.opos.exoplayer.core.c.f fVar, com.opos.exoplayer.core.c.k kVar) {
-        int a2 = fVar.a(this.e.f25496a, 0, 2786);
+        int a2 = fVar.a(this.e.f11808a, 0, 2786);
         if (a2 == -1) {
             return -1;
         }
         this.e.c(0);
         this.e.b(a2);
         if (!this.f) {
-            this.d.a(this.f25184c, true);
+            this.d.a(this.f11496c, true);
             this.f = true;
         }
         this.d.a(this.e);
@@ -88,7 +88,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
         Ld:
             r0 = r6
             r1 = r11
-            byte[] r1 = r1.f25496a
+            byte[] r1 = r1.f11808a
             r2 = 0
             r3 = 10
             r0.c(r1, r2, r3)
@@ -112,7 +112,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
         L3e:
             r0 = r6
             r1 = r11
-            byte[] r1 = r1.f25496a
+            byte[] r1 = r1.f11808a
             r2 = 0
             r3 = 5
             r0.c(r1, r2, r3)
@@ -153,7 +153,7 @@ public final class a implements com.opos.exoplayer.core.c.e {
             return r0
         L89:
             r0 = r11
-            byte[] r0 = r0.f25496a
+            byte[] r0 = r0.f11808a
             int r0 = com.opos.exoplayer.core.a.a.a(r0)
             r10 = r0
             r0 = r10

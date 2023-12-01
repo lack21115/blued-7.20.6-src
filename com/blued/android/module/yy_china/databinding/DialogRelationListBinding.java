@@ -11,17 +11,13 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogRelationListBinding.class */
 public final class DialogRelationListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16386a;
+    public final ImageView a;
     public final RecyclerView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final LinearLayout f16387c;
+    private final LinearLayout c;
 
     private DialogRelationListBinding(LinearLayout linearLayout, ImageView imageView, RecyclerView recyclerView) {
-        this.f16387c = linearLayout;
-        this.f16386a = imageView;
+        this.c = linearLayout;
+        this.a = imageView;
         this.b = recyclerView;
     }
 
@@ -37,9 +33,9 @@ public final class DialogRelationListBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.iv_back);
         if (imageView != null) {
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rcv_aution);
-            if (recyclerView != null) {
-                return new DialogRelationListBinding((LinearLayout) view, imageView, recyclerView);
+            RecyclerView findViewById = view.findViewById(R.id.rcv_aution);
+            if (findViewById != null) {
+                return new DialogRelationListBinding((LinearLayout) view, imageView, findViewById);
             }
             str = "rcvAution";
         } else {
@@ -48,9 +44,8 @@ public final class DialogRelationListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f16387c;
+        return this.c;
     }
 }

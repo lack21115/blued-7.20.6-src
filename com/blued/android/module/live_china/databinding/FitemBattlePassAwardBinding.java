@@ -5,13 +5,10 @@ import androidx.viewbinding.ViewBinding;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/FitemBattlePassAwardBinding.class */
 public final class FitemBattlePassAwardBinding implements ViewBinding {
+    private final FrameLayout a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private final FrameLayout f11837a;
-
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
-        return this.f11837a;
+        return this.a;
     }
 }

@@ -10,16 +10,15 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8457232-dex2jar.jar:com/tencent/cloud/huiyansdkface/okhttp3/internal/http2/Http2Writer.class */
-public final class Http2Writer implements Closeable {
+final class Http2Writer implements Closeable {
     private static final Logger b = Logger.getLogger(Http2.class.getName());
 
     /* renamed from: a  reason: collision with root package name */
-    final Hpack.Writer f36009a;
+    final Hpack.Writer f22318a;
 
     /* renamed from: c  reason: collision with root package name */
-    private final BufferedSink f36010c;
+    private final BufferedSink f22319c;
     private final boolean d;
     private final Buffer e;
     private int f;
@@ -27,11 +26,11 @@ public final class Http2Writer implements Closeable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Http2Writer(BufferedSink bufferedSink, boolean z) {
-        this.f36010c = bufferedSink;
+        this.f22319c = bufferedSink;
         this.d = z;
         Buffer buffer = new Buffer();
         this.e = buffer;
-        this.f36009a = new Hpack.Writer(buffer);
+        this.f22318a = new Hpack.Writer(buffer);
         this.f = 16384;
     }
 
@@ -41,7 +40,7 @@ public final class Http2Writer implements Closeable {
             long j2 = min;
             j -= j2;
             frameHeader(i, min, (byte) 9, j == 0 ? (byte) 4 : (byte) 0);
-            this.f36010c.write(this.e, j2);
+            this.f22319c.write(this.e, j2);
         }
     }
 
@@ -54,7 +53,7 @@ public final class Http2Writer implements Closeable {
     void a(int i, byte b2, Buffer buffer, int i2) throws IOException {
         frameHeader(i, i2, (byte) 0, b2);
         if (i2 > 0) {
-            this.f36010c.write(buffer, i2);
+            this.f22319c.write(buffer, i2);
         }
     }
 
@@ -62,7 +61,7 @@ public final class Http2Writer implements Closeable {
         if (this.g) {
             throw new IOException("closed");
         }
-        this.f36009a.a(list);
+        this.f22318a.a(list);
         long size = this.e.size();
         int min = (int) Math.min(this.f, size);
         long j = min;
@@ -73,7 +72,7 @@ public final class Http2Writer implements Closeable {
             b3 = (byte) (b2 | 1);
         }
         frameHeader(i, min, (byte) 1, b3);
-        this.f36010c.write(this.e, j);
+        this.f22319c.write(this.e, j);
         if (i2 > 0) {
             a(i, size - j);
         }
@@ -86,10 +85,10 @@ public final class Http2Writer implements Closeable {
             }
             this.f = settings.d(this.f);
             if (settings.c() != -1) {
-                this.f36009a.a(settings.c());
+                this.f22318a.a(settings.c());
             }
             frameHeader(0, 0, (byte) 4, (byte) 1);
-            this.f36010c.flush();
+            this.f22319c.flush();
         }
     }
 
@@ -97,7 +96,7 @@ public final class Http2Writer implements Closeable {
     public void close() throws IOException {
         synchronized (this) {
             this.g = true;
-            this.f36010c.close();
+            this.f22319c.close();
         }
     }
 
@@ -108,10 +107,10 @@ public final class Http2Writer implements Closeable {
             }
             if (this.d) {
                 if (b.isLoggable(Level.FINE)) {
-                    b.fine(Util.format(">> CONNECTION %s", Http2.f35977a.hex()));
+                    b.fine(Util.format(">> CONNECTION %s", Http2.f22286a.hex()));
                 }
-                this.f36010c.write(Http2.f35977a.toByteArray());
-                this.f36010c.flush();
+                this.f22319c.write(Http2.f22286a.toByteArray());
+                this.f22319c.flush();
             }
         }
     }
@@ -134,7 +133,7 @@ public final class Http2Writer implements Closeable {
             if (this.g) {
                 throw new IOException("closed");
             }
-            this.f36010c.flush();
+            this.f22319c.flush();
         }
     }
 
@@ -149,10 +148,10 @@ public final class Http2Writer implements Closeable {
         if ((Integer.MIN_VALUE & i) != 0) {
             throw Http2.a("reserved bit set: %s", Integer.valueOf(i));
         }
-        a(this.f36010c, i2);
-        this.f36010c.writeByte(b2 & 255);
-        this.f36010c.writeByte(b3 & 255);
-        this.f36010c.writeInt(i & Integer.MAX_VALUE);
+        a(this.f22319c, i2);
+        this.f22319c.writeByte(b2 & 255);
+        this.f22319c.writeByte(b3 & 255);
+        this.f22319c.writeInt(i & Integer.MAX_VALUE);
     }
 
     public void goAway(int i, ErrorCode errorCode, byte[] bArr) throws IOException {
@@ -164,12 +163,12 @@ public final class Http2Writer implements Closeable {
                 throw Http2.a("errorCode.httpCode == -1", new Object[0]);
             }
             frameHeader(0, bArr.length + 8, (byte) 7, (byte) 0);
-            this.f36010c.writeInt(i);
-            this.f36010c.writeInt(errorCode.l);
+            this.f22319c.writeInt(i);
+            this.f22319c.writeInt(errorCode.l);
             if (bArr.length > 0) {
-                this.f36010c.write(bArr);
+                this.f22319c.write(bArr);
             }
-            this.f36010c.flush();
+            this.f22319c.flush();
         }
     }
 
@@ -192,9 +191,9 @@ public final class Http2Writer implements Closeable {
                 throw new IOException("closed");
             }
             frameHeader(0, 8, (byte) 6, z ? (byte) 1 : (byte) 0);
-            this.f36010c.writeInt(i);
-            this.f36010c.writeInt(i2);
-            this.f36010c.flush();
+            this.f22319c.writeInt(i);
+            this.f22319c.writeInt(i2);
+            this.f22319c.flush();
         }
     }
 
@@ -203,14 +202,14 @@ public final class Http2Writer implements Closeable {
             if (this.g) {
                 throw new IOException("closed");
             }
-            this.f36009a.a(list);
+            this.f22318a.a(list);
             long size = this.e.size();
             int min = (int) Math.min(this.f - 4, size);
             long j = min;
             int i3 = (size > j ? 1 : (size == j ? 0 : -1));
             frameHeader(i, min + 4, (byte) 5, i3 == 0 ? (byte) 4 : (byte) 0);
-            this.f36010c.writeInt(i2 & Integer.MAX_VALUE);
-            this.f36010c.write(this.e, j);
+            this.f22319c.writeInt(i2 & Integer.MAX_VALUE);
+            this.f22319c.write(this.e, j);
             if (i3 > 0) {
                 a(i, size - j);
             }
@@ -226,8 +225,8 @@ public final class Http2Writer implements Closeable {
                 throw new IllegalArgumentException();
             }
             frameHeader(i, 4, (byte) 3, (byte) 0);
-            this.f36010c.writeInt(errorCode.l);
-            this.f36010c.flush();
+            this.f22319c.writeInt(errorCode.l);
+            this.f22319c.flush();
         }
     }
 
@@ -240,12 +239,12 @@ public final class Http2Writer implements Closeable {
             frameHeader(0, settings.b() * 6, (byte) 4, (byte) 0);
             while (i < 10) {
                 if (settings.a(i)) {
-                    this.f36010c.writeShort(i == 4 ? 3 : i == 7 ? 4 : i);
-                    this.f36010c.writeInt(settings.b(i));
+                    this.f22319c.writeShort(i == 4 ? 3 : i == 7 ? 4 : i);
+                    this.f22319c.writeInt(settings.b(i));
                 }
                 i++;
             }
-            this.f36010c.flush();
+            this.f22319c.flush();
         }
     }
 
@@ -276,8 +275,8 @@ public final class Http2Writer implements Closeable {
                 throw Http2.a("windowSizeIncrement == 0 || windowSizeIncrement > 0x7fffffffL: %s", Long.valueOf(j));
             }
             frameHeader(i, 4, (byte) 8, (byte) 0);
-            this.f36010c.writeInt((int) j);
-            this.f36010c.flush();
+            this.f22319c.writeInt((int) j);
+            this.f22319c.flush();
         }
     }
 }

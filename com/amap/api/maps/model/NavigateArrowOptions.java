@@ -3,6 +3,7 @@ package com.amap.api.maps.model;
 import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
+import com.android.ims.ImsReasonInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,9 +11,7 @@ import java.util.List;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/maps/model/NavigateArrowOptions.class */
 public final class NavigateArrowOptions extends BaseOptions implements Parcelable, Cloneable {
     public static final NavigateArrowOptionsCreator CREATOR = new NavigateArrowOptionsCreator();
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5535a;
+    String a;
     private float width = 10.0f;
     private int topColor = Color.argb(221, 87, 235, 204);
     private int sideColor = Color.argb(170, 0, 172, 146);
@@ -21,7 +20,7 @@ public final class NavigateArrowOptions extends BaseOptions implements Parcelabl
     private boolean is3DModel = false;
     private int arrowLineInnerResId = 111;
     private int arrowLineOuterResId = 222;
-    private int arrowLineShadowResId = 333;
+    private int arrowLineShadowResId = ImsReasonInfo.CODE_SIP_NOT_FOUND;
     private final List<LatLng> points = new ArrayList();
 
     public NavigateArrowOptions() {
@@ -46,7 +45,7 @@ public final class NavigateArrowOptions extends BaseOptions implements Parcelabl
     }
 
     /* renamed from: clone */
-    public final NavigateArrowOptions m2416clone() {
+    public final NavigateArrowOptions m8859clone() {
         try {
             super.clone();
         } catch (CloneNotSupportedException e) {
@@ -60,7 +59,7 @@ public final class NavigateArrowOptions extends BaseOptions implements Parcelabl
         navigateArrowOptions.zIndex = this.zIndex;
         navigateArrowOptions.isVisible = this.isVisible;
         navigateArrowOptions.is3DModel = this.is3DModel;
-        navigateArrowOptions.f5535a = this.f5535a;
+        navigateArrowOptions.a = this.a;
         navigateArrowOptions.arrowLineInnerResId = this.arrowLineInnerResId;
         navigateArrowOptions.arrowLineOuterResId = this.arrowLineOuterResId;
         navigateArrowOptions.arrowLineShadowResId = this.arrowLineShadowResId;
@@ -146,7 +145,7 @@ public final class NavigateArrowOptions extends BaseOptions implements Parcelabl
         parcel.writeInt(this.sideColor);
         parcel.writeFloat(this.zIndex);
         parcel.writeByte(this.isVisible ? (byte) 1 : (byte) 0);
-        parcel.writeString(this.f5535a);
+        parcel.writeString(this.a);
         parcel.writeByte(this.is3DModel ? (byte) 1 : (byte) 0);
     }
 

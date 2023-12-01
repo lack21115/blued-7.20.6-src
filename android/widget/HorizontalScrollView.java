@@ -1,6 +1,5 @@
 package android.widget;
 
-import android.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -24,6 +23,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 import com.alipay.sdk.util.i;
+import com.android.internal.R;
 import java.util.ArrayList;
 
 /* loaded from: source-4181928-dex2jar.jar:android/widget/HorizontalScrollView.class */
@@ -99,7 +99,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     public HorizontalScrollView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16843603);
+        this(context, attributeSet, R.attr.horizontalScrollViewStyle);
     }
 
     public HorizontalScrollView(Context context, AttributeSet attributeSet, int i) {
@@ -115,7 +115,7 @@ public class HorizontalScrollView extends FrameLayout {
         this.mSmoothScrollingEnabled = true;
         this.mActivePointerId = -1;
         initScrollView();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.HorizontalScrollView, i, i2);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, android.R.styleable.HorizontalScrollView, i, i2);
         setFillViewport(obtainStyledAttributes.getBoolean(0, false));
         obtainStyledAttributes.recycle();
     }
@@ -663,7 +663,7 @@ public class HorizontalScrollView extends FrameLayout {
     }
 
     public int getMaxScrollAmount() {
-        return (int) (0.5f * (this.mRight - this.mLeft));
+        return (int) (MAX_SCROLL_FACTOR * (this.mRight - this.mLeft));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -899,9 +899,8 @@ public class HorizontalScrollView extends FrameLayout {
         awakenScrollBars();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i, Rect rect) {
+    protected boolean onRequestFocusInDescendants(int i, Rect rect) {
         int i2;
         if (i == 2) {
             i2 = 66;

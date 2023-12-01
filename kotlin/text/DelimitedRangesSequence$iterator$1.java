@@ -10,13 +10,9 @@ import kotlin.ranges.RangesKt;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/text/DelimitedRangesSequence$iterator$1.class */
 public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRange>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ DelimitedRangesSequence f42722a;
+    final /* synthetic */ DelimitedRangesSequence a;
     private int b = -1;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f42723c;
+    private int c;
     private int d;
     private IntRange e;
     private int f;
@@ -25,12 +21,12 @@ public final class DelimitedRangesSequence$iterator$1 implements Iterator<IntRan
     public DelimitedRangesSequence$iterator$1(DelimitedRangesSequence delimitedRangesSequence) {
         int i;
         CharSequence charSequence;
-        this.f42722a = delimitedRangesSequence;
+        this.a = delimitedRangesSequence;
         i = delimitedRangesSequence.b;
-        charSequence = delimitedRangesSequence.f42720a;
-        int a2 = RangesKt.a(i, 0, charSequence.length());
-        this.f42723c = a2;
-        this.d = a2;
+        charSequence = delimitedRangesSequence.a;
+        int a = RangesKt.a(i, 0, charSequence.length());
+        this.c = a;
+        this.d = a;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0034, code lost:

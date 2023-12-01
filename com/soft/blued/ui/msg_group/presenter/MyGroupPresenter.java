@@ -16,17 +16,15 @@ public class MyGroupPresenter extends MvpPresenter {
     private void c(final IFetchDataListener iFetchDataListener) {
         MsgGroupHttpUtils.a(g(), this.h, this.i, new BluedUIHttpResponse<BluedEntityA<MyGroupModel>>(g()) { // from class: com.soft.blued.ui.msg_group.presenter.MyGroupPresenter.1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MyGroupModel> bluedEntityA) {
                 if (bluedEntityA.hasData()) {
-                    MyGroupPresenter.this.j = bluedEntityA.data.get(0).max_join;
-                    iFetchDataListener.a("data_group", bluedEntityA.data.get(0).groups);
+                    MyGroupPresenter.this.j = ((MyGroupModel) bluedEntityA.data.get(0)).max_join;
+                    iFetchDataListener.a("data_group", ((MyGroupModel) bluedEntityA.data.get(0)).groups);
                     iFetchDataListener.b(bluedEntityA.hasMore());
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish(boolean z) {
                 super.onUIFinish(z);
                 if (!z) {
@@ -35,7 +33,6 @@ public class MyGroupPresenter extends MvpPresenter {
                 iFetchDataListener.a(z);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 iFetchDataListener.a();
@@ -43,13 +40,11 @@ public class MyGroupPresenter extends MvpPresenter {
         });
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(IFetchDataListener iFetchDataListener) {
         this.h = 1;
         c(iFetchDataListener);
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
         this.h++;
         c(iFetchDataListener);

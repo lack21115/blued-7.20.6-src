@@ -14,7 +14,6 @@ public final class GroupMemberFragment_MVP implements MvpDispatcher {
         groupMemberFragment.b();
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpDispatcher
     public void a(MvpFragment mvpFragment, String str, List list) {
         GroupMemberFragment groupMemberFragment = (GroupMemberFragment) mvpFragment;
         if (list != null && list.size() > 0) {

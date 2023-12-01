@@ -165,7 +165,7 @@ public class i {
         if (context instanceof com.kwad.sdk.j.a) {
             context2 = ((com.kwad.sdk.j.a) context).getDelegatedContext();
         }
-        if (k.m7853do(context2)) {
+        if (k.m4846do(context2)) {
             return context2;
         }
         RuntimeException runtimeException = null;
@@ -189,7 +189,7 @@ public class i {
             if (context4 instanceof com.kwad.sdk.j.a) {
                 context3 = ((com.kwad.sdk.j.a) context4).getDelegatedContext();
             }
-            if (k.m7853do(context3)) {
+            if (k.m4846do(context3)) {
                 return context3;
             }
             i++;

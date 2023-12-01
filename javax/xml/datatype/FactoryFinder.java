@@ -1,5 +1,6 @@
 package javax.xml.datatype;
 
+import com.android.internal.content.NativeLibraryHelper;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -62,7 +63,7 @@ final class FactoryFinder {
         String property = System.getProperty(str);
         if (property == null || property.length() <= 0) {
             try {
-                String str3 = System.getProperty("java.home") + File.separator + "lib" + File.separator + "jaxp.properties";
+                String str3 = System.getProperty("java.home") + File.separator + NativeLibraryHelper.LIB_DIR_NAME + File.separator + "jaxp.properties";
                 if (firstTime) {
                     synchronized (cacheProps) {
                         if (firstTime) {

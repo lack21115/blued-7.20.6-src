@@ -10,11 +10,11 @@ import android.os.Message;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Context f21153a;
+    private static Context f7547a;
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static b f21154c;
+    private static b f7548c;
     private static com.bun.miitmdid.c.j.b.a d;
     private static c e;
     private static c f;

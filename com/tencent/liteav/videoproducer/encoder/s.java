@@ -6,11 +6,11 @@ import android.media.MediaFormat;
 final /* synthetic */ class s implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final p f37034a;
+    private final p f23343a;
     private final MediaFormat b;
 
     private s(p pVar, MediaFormat mediaFormat) {
-        this.f37034a = pVar;
+        this.f23343a = pVar;
         this.b = mediaFormat;
     }
 
@@ -20,6 +20,6 @@ final /* synthetic */ class s implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        p.a(this.f37034a, this.b);
+        p.a(this.f23343a, this.b);
     }
 }

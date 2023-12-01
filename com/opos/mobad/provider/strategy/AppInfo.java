@@ -23,11 +23,11 @@ public class AppInfo implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f27133a;
+    public final long f13445a;
     public final byte[] b;
 
     public AppInfo(long j, byte[] bArr) {
-        this.f27133a = j;
+        this.f13445a = j;
         this.b = bArr;
     }
 
@@ -38,7 +38,7 @@ public class AppInfo implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f27133a);
+        parcel.writeLong(this.f13445a);
         parcel.writeInt(this.b.length);
         parcel.writeByteArray(this.b);
     }

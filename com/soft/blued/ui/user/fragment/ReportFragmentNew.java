@@ -24,6 +24,7 @@ import androidx.core.util.Pair;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.imagecache.RecyclingUtils;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedHttpUtils;
@@ -41,7 +42,6 @@ import com.blued.android.module.common.user.model.UserInfo;
 import com.blued.android.module.common.utils.DialogUtils;
 import com.blued.android.module.common.utils.PermissionUtils;
 import com.blued.android.module.common.view.CommonTopTitleNoTrans;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.common.widget.dialog.CommonAlertDialog;
 import com.blued.android.module.shortvideo.model.EditDataModel;
 import com.blued.community.ui.send.fragment.AlbumSelectFragment;
@@ -83,11 +83,11 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
     private int N;
 
     /* renamed from: a  reason: collision with root package name */
-    private View f33929a;
+    private View f20238a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private CommonTopTitleNoTrans f33930c;
+    private CommonTopTitleNoTrans f20239c;
     public int e;
     public String f;
     public String g;
@@ -135,7 +135,6 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                     AlbumSelectFragment.a(ReportFragmentNew.this, 8, 1, 6 - SelectPhotoManager.a().c().size(), 100);
                 } else {
                     PermissionUtils.f(new PermissionCallbacks() { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.3.1
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void U_() {
                             AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.3.1.1
                                 @Override // java.lang.Runnable
@@ -145,7 +144,6 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                             });
                         }
 
-                        @Override // com.blued.android.framework.permission.PermissionCallbacks
                         public void a(String[] strArr) {
                         }
                     });
@@ -183,32 +181,27 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
     class AnonymousClass6 implements ISaveInterface {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ReportFragmentNew f33942a;
+        final /* synthetic */ ReportFragmentNew f20251a;
 
-        @Override // com.blued.android.module.base.shortvideo.ISaveInterface
         public void a() {
-            Logger.b("FeedSend", "saveVideoNoUI onSaveVideoCanceled");
+            Logger.b("FeedSend", new Object[]{"saveVideoNoUI onSaveVideoCanceled"});
         }
 
-        @Override // com.blued.android.module.base.shortvideo.ISaveInterface
         public void a(float f) {
-            Logger.b("FeedSend", "saveVideoNoUI onProgress v" + f);
+            Logger.b("FeedSend", new Object[]{"saveVideoNoUI onProgress v" + f});
         }
 
-        @Override // com.blued.android.module.base.shortvideo.ISaveInterface
         public void a(int i) {
-            Logger.b("FeedSend", "saveVideoNoUI onSaveFailed");
+            Logger.b("FeedSend", new Object[]{"saveVideoNoUI onSaveFailed"});
         }
 
-        @Override // com.blued.android.module.base.shortvideo.ISaveInterface
         public void a(StvResultModel stvResultModel) {
-            this.f33942a.j = stvResultModel;
-            this.f33942a.i = null;
-            Logger.b("FeedSend", "saveVideoNoUI onSaveSucess videoFeed" + this.f33942a.j.f());
-            this.f33942a.e();
+            this.f20251a.j = stvResultModel;
+            this.f20251a.i = null;
+            Logger.b("FeedSend", new Object[]{"saveVideoNoUI onSaveSucess videoFeed" + this.f20251a.j.f()});
+            this.f20251a.e();
         }
 
-        @Override // com.blued.android.module.base.shortvideo.ISaveInterface
         public void b() {
         }
     }
@@ -217,7 +210,7 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
     public void a(final int i) {
         List<String> list = d;
         if (list != null && list.size() > 0 && !this.O) {
-            AppMethods.a((CharSequence) getResources().getString(R.string.video_uploading));
+            AppMethods.a(getResources().getString(R.string.video_uploading));
             DialogUtils.b(this.h);
             return;
         }
@@ -241,10 +234,9 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
         MineHttpUtils.a(this.b, new BluedUIHttpResponse<BluedEntityA<ReportPic>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.8
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f33944a = false;
+            boolean f20253a = false;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<ReportPic> bluedEntityA) {
                 if (bluedEntityA.data != null) {
@@ -256,7 +248,7 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                     if (ReportFragmentNew.C == null) {
                         String[] unused = ReportFragmentNew.C = new String[ReportFragmentNew.this.A.size()];
                     }
-                    ReportFragmentNew.C[i] = bluedEntityA.data.get(0).url;
+                    ReportFragmentNew.C[i] = ((ReportPic) bluedEntityA.data.get(0)).url;
                     if (i != ReportFragmentNew.this.A.size() - 1) {
                         ReportFragmentNew.this.a(i + 1);
                         return;
@@ -266,22 +258,19 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str2) {
-                this.f33944a = true;
+                this.f20253a = true;
                 return super.onUIFailure(i2, str2);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f33944a) {
+                if (this.f20253a) {
                     DialogUtils.b(ReportFragmentNew.this.h);
                 }
-                this.f33944a = false;
+                this.f20253a = false;
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ReportFragmentNew.this.h);
@@ -336,25 +325,25 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
     }
 
     private void a(Intent intent) {
-        StvResultModel stvResultModel;
-        if (intent == null || (stvResultModel = (StvResultModel) intent.getSerializableExtra("result_model")) == null) {
+        StvResultModel serializableExtra;
+        if (intent == null || (serializableExtra = intent.getSerializableExtra("result_model")) == null) {
             return;
         }
-        if (stvResultModel.a()) {
+        if (serializableExtra.a()) {
             Log.d("chenjiemei", "SHINE_OR_TAKE_PHOTO");
             if (intent.getSerializableExtra("serializeble_data") != null) {
-                this.i = (EditDataModel.SerializableData) intent.getSerializableExtra("serializeble_data");
+                this.i = intent.getSerializableExtra("serializeble_data");
             }
             ChildImageInfo childImageInfo = new ChildImageInfo();
             childImageInfo.isVideo = true;
-            childImageInfo.mImagePath = stvResultModel.c();
+            childImageInfo.mImagePath = serializableExtra.c();
             SelectPhotoManager.a().a(childImageInfo);
-            this.j = stvResultModel;
+            this.j = serializableExtra;
             Log.d("chenjiemei", "SHINE_OR_TAKE_PHOTO stvResultModel firstimage" + this.j.c());
             e();
         } else {
             ChildImageInfo childImageInfo2 = new ChildImageInfo();
-            childImageInfo2.mImagePath = stvResultModel.b();
+            childImageInfo2.mImagePath = serializableExtra.b();
             SelectPhotoManager.a().a(childImageInfo2);
         }
         g();
@@ -382,7 +371,7 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
     public void b(String str, int i, String str2, String[] strArr) {
         List<String> list = d;
         if (list != null && list.size() > 0 && !this.O) {
-            AppMethods.a((CharSequence) getResources().getString(R.string.video_uploading));
+            AppMethods.a(getResources().getString(R.string.video_uploading));
             DialogUtils.b(this.h);
             return;
         }
@@ -416,43 +405,43 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
     private void c() {
         String format;
         this.h = DialogUtils.a(this.b);
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.f33929a.findViewById(2131370749);
-        this.f33930c = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
-        this.f33930c.setCenterText(this.b.getResources().getString(2131891497));
-        this.f33930c.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.1
+        CommonTopTitleNoTrans findViewById = this.f20238a.findViewById(R.id.top_title);
+        this.f20239c = findViewById;
+        findViewById.a();
+        this.f20239c.setCenterText(this.b.getResources().getString(2131891497));
+        this.f20239c.setLeftClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.1
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
                 ReportFragmentNew.this.onBackPressed();
             }
         });
-        this.o = (TextView) this.f33929a.findViewById(R.id.tv_report_reason);
-        this.p = (TextView) this.f33929a.findViewById(R.id.tv_report_target);
-        this.q = (TextView) this.f33929a.findViewById(R.id.tv_text_count);
-        this.r = (TextView) this.f33929a.findViewById(R.id.tv_identification);
-        this.J = (TextView) this.f33929a.findViewById(2131372745);
+        this.o = (TextView) this.f20238a.findViewById(R.id.tv_report_reason);
+        this.p = (TextView) this.f20238a.findViewById(R.id.tv_report_target);
+        this.q = (TextView) this.f20238a.findViewById(R.id.tv_text_count);
+        this.r = (TextView) this.f20238a.findViewById(R.id.tv_identification);
+        this.J = (TextView) this.f20238a.findViewById(R.id.tv_tips);
         this.q.setText("0/200");
-        this.s = (EditText) this.f33929a.findViewById(R.id.et_report_description);
+        this.s = (EditText) this.f20238a.findViewById(R.id.et_report_description);
         TextWatcher textWatcher = new TextWatcher() { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.2
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f33936c;
+            private int f20245c;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
                 try {
                     ReportFragmentNew.this.s.removeTextChangedListener(ReportFragmentNew.this.w);
                     this.b = ReportFragmentNew.this.s.getSelectionStart();
-                    this.f33936c = ReportFragmentNew.this.s.getSelectionEnd();
+                    this.f20245c = ReportFragmentNew.this.s.getSelectionEnd();
                     while (editable.length() > 200) {
-                        editable.delete(this.b - 1, this.f33936c);
+                        editable.delete(this.b - 1, this.f20245c);
                         this.b--;
-                        this.f33936c--;
+                        this.f20245c--;
                     }
                     int length = editable.length();
-                    ReportFragmentNew.this.q.setText(length + BridgeUtil.SPLIT_MARK + 200);
+                    ReportFragmentNew.this.q.setText(length + "/200");
                     ReportFragmentNew.this.f();
                     ReportFragmentNew.this.s.addTextChangedListener(ReportFragmentNew.this.w);
                 } catch (Exception e) {
@@ -474,10 +463,10 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
         if (this.I == 1) {
             this.r.setText(getResources().getString(R.string.report_evidence));
         }
-        TextView textView = (TextView) this.f33929a.findViewById(R.id.tv_pics_count);
+        TextView textView = (TextView) this.f20238a.findViewById(R.id.tv_pics_count);
         this.t = textView;
         textView.setText("0/6");
-        this.u = (PhotoGridView) this.f33929a.findViewById(2131364131);
+        this.u = (PhotoGridView) this.f20238a.findViewById(R.id.grid_view);
         NewsFeedGirdAdapter newsFeedGirdAdapter = new NewsFeedGirdAdapter(this.b, getFragmentActive(), this.B);
         this.z = newsFeedGirdAdapter;
         this.u.setAdapter((ListAdapter) newsFeedGirdAdapter);
@@ -515,8 +504,8 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                 ReportFragmentNew.this.m = -1;
             }
         });
-        this.x = (LinearLayout) this.f33929a.findViewById(R.id.ll_block);
-        this.y = (ToggleButton) this.f33929a.findViewById(R.id.tb_block);
+        this.x = (LinearLayout) this.f20238a.findViewById(R.id.ll_block);
+        this.y = (ToggleButton) this.f20238a.findViewById(R.id.tb_block);
         if (this.H) {
             this.x.setVisibility(0);
             this.y.setChecked(false);
@@ -524,7 +513,7 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
             this.x.setVisibility(8);
             this.y.setChecked(false);
         }
-        TextView textView2 = (TextView) this.f33929a.findViewById(R.id.tv_submit);
+        TextView textView2 = (TextView) this.f20238a.findViewById(R.id.tv_submit);
         this.v = textView2;
         textView2.setOnClickListener(this);
         switch (this.e) {
@@ -561,8 +550,8 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                 format = String.format(this.b.getResources().getString(R.string.report_event_signature), this.g);
                 break;
         }
-        this.K = this.f33929a.findViewById(R.id.bg_view_top);
-        this.L = (ShapeTextView) this.f33929a.findViewById(R.id.tv_submit_event);
+        this.K = this.f20238a.findViewById(R.id.bg_view_top);
+        this.L = this.f20238a.findViewById(R.id.tv_submit_event);
         if (this.e == 12) {
             this.K.setVisibility(0);
             this.L.setVisibility(0);
@@ -581,7 +570,7 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
 
     /* JADX INFO: Access modifiers changed from: private */
     public void d() {
-        ReportPhotoMenuDialogFragment a2 = ReportPhotoMenuDialogFragment.f33951a.a(getFragmentManager());
+        ReportPhotoMenuDialogFragment a2 = ReportPhotoMenuDialogFragment.f20260a.a(getFragmentManager());
         a2.a(new ReportPhotoMenuDialogFragment.ClickAlbumListener() { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.5
             @Override // com.soft.blued.ui.user.fragment.ReportPhotoMenuDialogFragment.ClickAlbumListener
             public void a() {
@@ -609,16 +598,14 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
         if (stvResultModel == null || TextUtils.isEmpty(stvResultModel.f())) {
             return;
         }
-        Pair<String, String> pair = new Pair<>(this.j.c(), "");
-        Pair<String, String> pair2 = new Pair<>(this.j.f(), "");
+        Pair pair = new Pair(this.j.c(), "");
+        Pair pair2 = new Pair(this.j.f(), "");
         this.O = false;
         VideoUploadManager.a().a(pair, pair2, new VideoUploadManager.VideoUploadListener() { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.7
-            @Override // com.blued.community.ui.send.manager.VideoUploadManager.VideoUploadListener
             public void a(String str, int i) {
                 ReportFragmentNew.this.k = str;
             }
 
-            @Override // com.blued.community.ui.send.manager.VideoUploadManager.VideoUploadListener
             public void a(String str, boolean z, ArrayList<Pair<String, UploadModel>> arrayList, List<Pair<String, String>> list) {
                 ReportFragmentNew.this.k = str;
                 ReportFragmentNew.this.O = true;
@@ -675,9 +662,8 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
         if (TextUtils.isEmpty(this.f)) {
             return;
         }
-        UserHttpUtils.b(this.b, new BluedUIHttpResponse<BluedEntityA<Object>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.10
+        UserHttpUtils.b(this.b, (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.10
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 UserInfo.getInstance().getLoginUserInfo().addBlackCount();
@@ -687,7 +673,7 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                 userInfoEntity.relationship = "4";
                 LiveEventBus.get("feed_relation_ship").post(userInfoEntity);
             }
-        }, UserInfo.getInstance().getLoginUserInfo().getUid(), this.f, getFragmentActive());
+        }, UserInfo.getInstance().getLoginUserInfo().getUid(), this.f, (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -715,7 +701,6 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
     protected void a(String str, int i, String str2, String[] strArr) {
         ChatHttpUtils.a(this.b, new BluedUIHttpResponse<BluedEntityA<Object>>(getFragmentActive()) { // from class: com.soft.blued.ui.user.fragment.ReportFragmentNew.9
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                 if (ReportFragmentNew.d != null) {
@@ -737,9 +722,8 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                 }, false);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i2, String str3, String str4) {
-                if (BluedHttpUtils.a(null, i2, str4).first.intValue() == 0) {
+                if (((Integer) BluedHttpUtils.a((Throwable) null, i2, str4).first).intValue() == 0) {
                     return super.onUIFailure(i2, str3, str4);
                 }
                 switch (i2) {
@@ -764,13 +748,11 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
                 }
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
                 DialogUtils.b(ReportFragmentNew.this.h);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIStart() {
                 super.onUIStart();
                 DialogUtils.a(ReportFragmentNew.this.h);
@@ -778,7 +760,6 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
         }, str, strArr, i, str2, this.G, 0L, this.E, this.F, this.f, this.M, this.N, getFragmentActive());
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i != 1) {
@@ -791,7 +772,7 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
             this.E = intent.getIntExtra("KEY_REPORT_ITEM_ID", -1);
             String stringExtra = intent.getStringExtra("KEY_REPORT_ITEM_TEXT");
             this.F = stringExtra;
-            if (TextUtils.equals(stringExtra, this.b.getResources().getString(2131887348))) {
+            if (TextUtils.equals(stringExtra, this.b.getResources().getString(R.string.content_unauth_report))) {
                 if (UserInfo.getInstance().getLoginUserInfo().vbadge == 4 || UserInfo.getInstance().getLoginUserInfo().vbadge == 7) {
                     this.r.setText(R.string.identification_optional);
                 } else {
@@ -808,7 +789,6 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, com.blued.android.core.ui.BaseFragmentActivity.IOnBackPressedListener
     public boolean onBackPressed() {
         if (StringUtils.d(((Object) this.s.getText()) + "") && this.A.size() == 0) {
             getActivity().finish();
@@ -854,11 +834,10 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
-        if (this.f33929a == null) {
-            this.f33929a = layoutInflater.inflate(R.layout.fragment_report_new, viewGroup, false);
+        if (this.f20238a == null) {
+            this.f20238a = layoutInflater.inflate(R.layout.fragment_report_new, viewGroup, false);
             if (getArguments() != null) {
                 this.e = getArguments().getInt("KEY_REPORT_TARGET");
                 this.f = getArguments().getString("KEY_REPORT_TARGET_ID");
@@ -873,16 +852,14 @@ public class ReportFragmentNew extends BaseFragment implements View.OnClickListe
             c();
             g();
         }
-        return this.f33929a;
+        return this.f20238a;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         super.onDestroy();
         SelectPhotoManager.a().d();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         g();

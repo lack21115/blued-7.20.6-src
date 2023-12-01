@@ -11,7 +11,6 @@ import javax.annotation.Nullable;
 /* loaded from: source-3503164-dex2jar.jar:io/grpc/util/GracefulSwitchLoadBalancer.class */
 public final class GracefulSwitchLoadBalancer extends ForwardingLoadBalancer {
     static final LoadBalancer.SubchannelPicker BUFFER_PICKER = new LoadBalancer.SubchannelPicker() { // from class: io.grpc.util.GracefulSwitchLoadBalancer.2
-        @Override // io.grpc.LoadBalancer.SubchannelPicker
         public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
             return LoadBalancer.PickResult.withNoResult();
         }
@@ -45,7 +44,7 @@ public final class GracefulSwitchLoadBalancer extends ForwardingLoadBalancer {
             return GracefulSwitchLoadBalancer.this.helper;
         }
 
-        @Override // io.grpc.util.ForwardingLoadBalancerHelper, io.grpc.LoadBalancer.Helper
+        @Override // io.grpc.util.ForwardingLoadBalancerHelper
         public void updateBalancingState(ConnectivityState connectivityState, LoadBalancer.SubchannelPicker subchannelPicker) {
             if (this.lb == GracefulSwitchLoadBalancer.this.pendingLb) {
                 Preconditions.checkState(GracefulSwitchLoadBalancer.this.currentLbIsReady, "there's pending lb while current lb has been out of READY");
@@ -67,26 +66,22 @@ public final class GracefulSwitchLoadBalancer extends ForwardingLoadBalancer {
 
     public GracefulSwitchLoadBalancer(LoadBalancer.Helper helper) {
         LoadBalancer loadBalancer = new LoadBalancer() { // from class: io.grpc.util.GracefulSwitchLoadBalancer.1
-            @Override // io.grpc.LoadBalancer
             public void handleNameResolutionError(final Status status) {
                 GracefulSwitchLoadBalancer.this.helper.updateBalancingState(ConnectivityState.TRANSIENT_FAILURE, new LoadBalancer.SubchannelPicker() { // from class: io.grpc.util.GracefulSwitchLoadBalancer.1.1ErrorPicker
-                    @Override // io.grpc.LoadBalancer.SubchannelPicker
                     public LoadBalancer.PickResult pickSubchannel(LoadBalancer.PickSubchannelArgs pickSubchannelArgs) {
                         return LoadBalancer.PickResult.withError(status);
                     }
 
                     public String toString() {
-                        return MoreObjects.toStringHelper((Class<?>) C1ErrorPicker.class).add("error", status).toString();
+                        return MoreObjects.toStringHelper(C1ErrorPicker.class).add("error", status).toString();
                     }
                 });
             }
 
-            @Override // io.grpc.LoadBalancer
             public void handleResolvedAddresses(LoadBalancer.ResolvedAddresses resolvedAddresses) {
                 throw new IllegalStateException("GracefulSwitchLoadBalancer must switch to a load balancing policy before handling ResolvedAddresses");
             }
 
-            @Override // io.grpc.LoadBalancer
             public void shutdown() {
             }
         };
@@ -116,13 +111,13 @@ public final class GracefulSwitchLoadBalancer extends ForwardingLoadBalancer {
         return loadBalancer2;
     }
 
-    @Override // io.grpc.util.ForwardingLoadBalancer, io.grpc.LoadBalancer
+    @Override // io.grpc.util.ForwardingLoadBalancer
     @Deprecated
     public void handleSubchannelState(LoadBalancer.Subchannel subchannel, ConnectivityStateInfo connectivityStateInfo) {
         throw new UnsupportedOperationException("handleSubchannelState() is not supported by " + getClass().getName());
     }
 
-    @Override // io.grpc.util.ForwardingLoadBalancer, io.grpc.LoadBalancer
+    @Override // io.grpc.util.ForwardingLoadBalancer
     public void shutdown() {
         this.pendingLb.shutdown();
         this.currentLb.shutdown();

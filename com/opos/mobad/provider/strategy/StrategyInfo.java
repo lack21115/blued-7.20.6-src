@@ -21,11 +21,11 @@ public class StrategyInfo implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f27135a;
+    public final long f13447a;
     public final Bundle b;
 
     public StrategyInfo(long j, Bundle bundle) {
-        this.f27135a = j;
+        this.f13447a = j;
         this.b = bundle;
     }
 
@@ -36,7 +36,7 @@ public class StrategyInfo implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f27135a);
+        parcel.writeLong(this.f13447a);
         parcel.writeBundle(this.b);
     }
 }

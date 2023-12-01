@@ -85,8 +85,9 @@ public class GLThreadManager {
         }
     };
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/legacy/GLThreadManager$ConfigureHolder.class */
-    private static class ConfigureHolder {
+    public static class ConfigureHolder {
         public final CaptureCollector collector;
         public final ConditionVariable condition;
         public final Collection<Pair<Surface, Size>> surfaces;

@@ -7,7 +7,7 @@ import java.util.Set;
 public class f {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Set<String> f38362a = new HashSet();
+    public final Set<String> f24671a = new HashSet();
 
     public final boolean a(String str) {
         return str.equals("j1");

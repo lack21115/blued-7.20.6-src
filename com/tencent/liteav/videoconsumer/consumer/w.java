@@ -7,10 +7,10 @@ import com.tencent.liteav.videoconsumer.consumer.j;
 final /* synthetic */ class w implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final j f36729a;
+    private final j f23038a;
 
     private w(j jVar) {
-        this.f36729a = jVar;
+        this.f23038a = jVar;
     }
 
     public static Runnable a(j jVar) {
@@ -19,10 +19,10 @@ final /* synthetic */ class w implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        j jVar = this.f36729a;
-        LiteavLog.i(jVar.f36705a, "Start");
+        j jVar = this.f23038a;
+        LiteavLog.i(jVar.f23014a, "Start");
         if (jVar.p != j.a.STOPPED) {
-            LiteavLog.w(jVar.f36705a, "video consumer is started.");
+            LiteavLog.w(jVar.f23014a, "video consumer is started.");
             return;
         }
         jVar.a(jVar.d);

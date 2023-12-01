@@ -1,5 +1,6 @@
 package com.blued.android.module.yy_china.model;
 
+import $r8;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 
@@ -73,7 +74,7 @@ public final class ClientSendMessageInfoDataModel {
     }
 
     public int hashCode() {
-        return (((this.roomId.hashCode() * 31) + this.roomType.hashCode()) * 31) + C$r8$backportedMethods$utility$Long$1$hashCode.hashCode(this.time);
+        return (((this.roomId.hashCode() * 31) + this.roomType.hashCode()) * 31) + $r8.backportedMethods.utility.Long.1.hashCode.hashCode(this.time);
     }
 
     public String toString() {

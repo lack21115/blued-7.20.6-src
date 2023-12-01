@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f27666a;
+    private String f13978a;
     private List<com.qiniu.pili.droid.shortvideo.core.h> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private PLCameraSetting f27667c;
+    private PLCameraSetting f13979c;
     private PLMicrophoneSetting d;
     private PLVideoEncodeSetting e;
     private PLAudioEncodeSetting f;
@@ -33,12 +33,12 @@ public class b {
     }
 
     public b(String str) {
-        this.f27666a = str;
+        this.f13978a = str;
         this.b = new ArrayList();
     }
 
     public String a() {
-        return this.f27666a;
+        return this.f13978a;
     }
 
     public void a(PLAudioEncodeSetting pLAudioEncodeSetting) {
@@ -46,7 +46,7 @@ public class b {
     }
 
     public void a(PLCameraSetting pLCameraSetting) {
-        this.f27667c = pLCameraSetting;
+        this.f13979c = pLCameraSetting;
     }
 
     public void a(PLFaceBeautySetting pLFaceBeautySetting) {
@@ -66,7 +66,7 @@ public class b {
     }
 
     public void a(String str) {
-        this.f27666a = str;
+        this.f13978a = str;
     }
 
     public void a(Stack<com.qiniu.pili.droid.shortvideo.core.h> stack) {
@@ -83,7 +83,7 @@ public class b {
     }
 
     public PLCameraSetting c() {
-        return this.f27667c;
+        return this.f13979c;
     }
 
     public PLMicrophoneSetting d() {
@@ -113,9 +113,9 @@ public class b {
         }
         try {
             JSONObject jSONObject = new JSONObject();
-            jSONObject.put("tag", this.f27666a);
-            if (this.f27667c != null) {
-                jSONObject.put(PLCameraSetting.TAG, this.f27667c.toJSON());
+            jSONObject.put("tag", this.f13978a);
+            if (this.f13979c != null) {
+                jSONObject.put(PLCameraSetting.TAG, this.f13979c.toJSON());
             }
             if (this.d != null) {
                 jSONObject.put(PLMicrophoneSetting.TAG, this.d.toJSON());

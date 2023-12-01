@@ -8,22 +8,18 @@ import java.util.List;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/WebBlackListPreference.class */
 public class WebBlackListPreference {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f18778a;
+    public static BluedSharedPreferences a;
 
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/web/WebBlackListPreference$PreferenceBlackList.class */
     public static class PreferenceBlackList {
-
-        /* renamed from: a  reason: collision with root package name */
-        public List<String> f18779a;
+        public List<String> a;
     }
 
     public static BluedSharedPreferences a() {
-        if (f18778a == null) {
-            f18778a = BluedSharedPreferences.a("web_black_list", 0);
+        if (a == null) {
+            a = BluedSharedPreferences.a("web_black_list", 0);
         }
-        return f18778a;
+        return a;
     }
 
     public static void a(String str) {
@@ -42,7 +38,7 @@ public class WebBlackListPreference {
 
     private static void a(List<String> list) {
         PreferenceBlackList preferenceBlackList = new PreferenceBlackList();
-        preferenceBlackList.f18779a = list;
+        preferenceBlackList.a = list;
         a().c().a("WEB_BLACK_LIST_JSON", AppInfo.f().toJson(preferenceBlackList)).a();
     }
 
@@ -50,9 +46,9 @@ public class WebBlackListPreference {
     public static List<String> b() {
         String a2 = a().a("WEB_BLACK_LIST_JSON", "");
         List arrayList = new ArrayList();
-        PreferenceBlackList preferenceBlackList = (PreferenceBlackList) AppInfo.f().fromJson(a2, (Class<Object>) PreferenceBlackList.class);
+        PreferenceBlackList preferenceBlackList = (PreferenceBlackList) AppInfo.f().fromJson(a2, PreferenceBlackList.class);
         if (preferenceBlackList != null) {
-            arrayList = preferenceBlackList.f18779a;
+            arrayList = preferenceBlackList.a;
         }
         return arrayList;
     }

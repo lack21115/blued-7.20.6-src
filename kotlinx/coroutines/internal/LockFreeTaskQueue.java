@@ -6,9 +6,7 @@ import kotlin.Metadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/internal/LockFreeTaskQueue.class */
 public class LockFreeTaskQueue<E> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static final /* synthetic */ AtomicReferenceFieldUpdater f43547a = AtomicReferenceFieldUpdater.newUpdater(LockFreeTaskQueue.class, Object.class, "_cur");
+    private static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(LockFreeTaskQueue.class, Object.class, "_cur");
     private volatile /* synthetic */ Object _cur;
 
     public LockFreeTaskQueue(boolean z) {
@@ -27,7 +25,7 @@ public class LockFreeTaskQueue<E> {
                 return true;
             }
             if (a2 == 1) {
-                f43547a.compareAndSet(this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.e());
+                a.compareAndSet(this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.e());
             } else if (a2 == 2) {
                 return false;
             }
@@ -40,7 +38,7 @@ public class LockFreeTaskQueue<E> {
             if (lockFreeTaskQueueCore.c()) {
                 return;
             }
-            f43547a.compareAndSet(this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.e());
+            a.compareAndSet(this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.e());
         }
     }
 
@@ -51,7 +49,7 @@ public class LockFreeTaskQueue<E> {
             if (e != LockFreeTaskQueueCore.b) {
                 return e;
             }
-            f43547a.compareAndSet(this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.e());
+            a.compareAndSet(this, lockFreeTaskQueueCore, lockFreeTaskQueueCore.e());
         }
     }
 }

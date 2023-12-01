@@ -7,7 +7,7 @@ import java.util.List;
 class ApkSigningBlock {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<ApkSigningPayload> f23941a = new ArrayList();
+    private final List<ApkSigningPayload> f10330a = new ArrayList();
 
     ApkSigningBlock() {
     }

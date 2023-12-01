@@ -15,11 +15,11 @@ import androidx.appcompat.widget.AppCompatTextView;
 public class ExpandLongTextView extends AppCompatTextView {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f28411a;
+    private Context f14721a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f28412c;
+    private int f14722c;
     private boolean d;
     private SpannableString e;
 
@@ -27,21 +27,21 @@ public class ExpandLongTextView extends AppCompatTextView {
     public class ButtonSpan extends ClickableSpan {
 
         /* renamed from: a  reason: collision with root package name */
-        View.OnClickListener f28413a;
+        View.OnClickListener f14723a;
 
         /* renamed from: c  reason: collision with root package name */
-        private Context f28414c;
+        private Context f14724c;
         private int d;
 
         public ButtonSpan(Context context, View.OnClickListener onClickListener, int i) {
-            this.f28413a = onClickListener;
-            this.f28414c = context;
+            this.f14723a = onClickListener;
+            this.f14724c = context;
             this.d = i;
         }
 
         @Override // android.text.style.ClickableSpan
         public void onClick(View view) {
-            View.OnClickListener onClickListener = this.f28413a;
+            View.OnClickListener onClickListener = this.f14723a;
             if (onClickListener != null) {
                 onClickListener.onClick(view);
             }
@@ -49,14 +49,14 @@ public class ExpandLongTextView extends AppCompatTextView {
 
         @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
         public void updateDrawState(TextPaint textPaint) {
-            textPaint.setColor(this.f28414c.getResources().getColor(this.d));
+            textPaint.setColor(this.f14724c.getResources().getColor(this.d));
             textPaint.setUnderlineText(false);
         }
     }
 
     public ExpandLongTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f28412c = 6;
+        this.f14722c = 6;
         this.d = false;
         this.e = null;
         a(context);
@@ -64,7 +64,7 @@ public class ExpandLongTextView extends AppCompatTextView {
 
     public ExpandLongTextView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f28412c = 6;
+        this.f14722c = 6;
         this.d = false;
         this.e = null;
         a(context);
@@ -75,7 +75,7 @@ public class ExpandLongTextView extends AppCompatTextView {
     }
 
     private void a(Context context) {
-        this.f28411a = context;
+        this.f14721a = context;
         String string = context.getResources().getString(2131891413);
         this.e = new SpannableString(string);
         this.e.setSpan(new ButtonSpan(getContext(), null, 2131100442), 0, string.length(), 17);
@@ -101,7 +101,7 @@ public class ExpandLongTextView extends AppCompatTextView {
 
     @Override // android.widget.TextView
     public void setMaxLines(int i) {
-        this.f28412c = i;
+        this.f14722c = i;
         super.setMaxLines(i);
     }
 }

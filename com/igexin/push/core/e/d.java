@@ -11,11 +11,11 @@ import org.json.JSONObject;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23503a = "MsgSPManager";
+    private static final String f9895a = "MsgSPManager";
     private static final String b = "gx_msg_sp";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f23504c = "taskIdList";
+    private static final String f9896c = "taskIdList";
     private static final String d = "gx_vendor_token";
     private static final String e = "tokeninfo";
     private static final String f = "usfdl";
@@ -140,7 +140,7 @@ public class d {
 
     private JSONObject d() {
         try {
-            String str = (String) b(f23504c, "");
+            String str = (String) b(f9896c, "");
             if (TextUtils.isEmpty(str)) {
                 return null;
             }
@@ -263,7 +263,7 @@ public class d {
                     b(jSONObject);
                 }
                 jSONObject.put(str, System.currentTimeMillis());
-                a(f23504c, jSONObject.toString());
+                a(f9896c, jSONObject.toString());
             }
         }
     }

@@ -20,16 +20,14 @@ public final class TypesJVMKt {
     @Metadata
     /* loaded from: source-3503164-dex2jar.jar:kotlin/reflect/TypesJVMKt$WhenMappings.class */
     public final /* synthetic */ class WhenMappings {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f42610a;
+        public static final /* synthetic */ int[] a;
 
         static {
             int[] iArr = new int[KVariance.values().length];
             iArr[KVariance.IN.ordinal()] = 1;
             iArr[KVariance.INVARIANT.ordinal()] = 2;
             iArr[KVariance.OUT.ordinal()] = 3;
-            f42610a = iArr;
+            a = iArr;
         }
     }
 
@@ -52,13 +50,13 @@ public final class TypesJVMKt {
             return new ParameterizedTypeImpl(cls, cls2, arrayList2);
         } else {
             int length = cls.getTypeParameters().length;
-            Type a2 = a(declaringClass, list.subList(length, list.size()));
+            Type a = a(declaringClass, list.subList(length, list.size()));
             List<KTypeProjection> subList = list.subList(0, length);
             ArrayList arrayList3 = new ArrayList(CollectionsKt.a((Iterable) subList, 10));
             for (KTypeProjection kTypeProjection3 : subList) {
                 arrayList3.add(a(kTypeProjection3));
             }
-            return new ParameterizedTypeImpl(cls, a2, arrayList3);
+            return new ParameterizedTypeImpl(cls, a, arrayList3);
         }
     }
 
@@ -70,13 +68,13 @@ public final class TypesJVMKt {
     }
 
     private static final Type a(KTypeProjection kTypeProjection) {
-        KVariance a2 = kTypeProjection.a();
-        if (a2 == null) {
-            return WildcardTypeImpl.f42612a.a();
+        KVariance a = kTypeProjection.a();
+        if (a == null) {
+            return WildcardTypeImpl.a.a();
         }
         KType type = kTypeProjection.getType();
         Intrinsics.a(type);
-        int i = WhenMappings.f42610a[a2.ordinal()];
+        int i = WhenMappings.a[a.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
@@ -95,8 +93,8 @@ public final class TypesJVMKt {
         if (type instanceof Class) {
             Class cls = (Class) type;
             if (cls.isArray()) {
-                Sequence a2 = SequencesKt.a(type, TypesJVMKt$typeToString$unwrap$1.f42611a);
-                name = ((Class) SequencesKt.b(a2)).getName() + StringsKt.a((CharSequence) "[]", SequencesKt.f(a2));
+                Sequence a = SequencesKt.a(type, TypesJVMKt$typeToString$unwrap$1.a);
+                name = ((Class) SequencesKt.b(a)).getName() + StringsKt.a((CharSequence) "[]", SequencesKt.f(a));
             } else {
                 name = cls.getName();
             }
@@ -110,14 +108,14 @@ public final class TypesJVMKt {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v57, types: [kotlin.reflect.GenericArrayTypeImpl] */
     public static final Type b(KType kType, boolean z) {
-        KClassifier a2 = kType.a();
-        if (a2 instanceof KTypeParameter) {
-            return new TypeVariableImpl((KTypeParameter) a2);
+        KClassifier a = kType.a();
+        if (a instanceof KTypeParameter) {
+            return new TypeVariableImpl((KTypeParameter) a);
         }
-        if (!(a2 instanceof KClass)) {
+        if (!(a instanceof KClass)) {
             throw new UnsupportedOperationException("Unsupported type classifier: " + kType);
         }
-        KClass kClass = (KClass) a2;
+        KClass kClass = (KClass) a;
         Class b = z ? JvmClassMappingKt.b(kClass) : JvmClassMappingKt.a(kClass);
         List<KTypeProjection> b2 = kType.b();
         if (b2.isEmpty()) {
@@ -132,16 +130,16 @@ public final class TypesJVMKt {
                 throw new IllegalArgumentException("kotlin.Array must have exactly one type argument: " + kType);
             }
             KVariance b3 = kTypeProjection.b();
-            KType c2 = kTypeProjection.c();
-            int i = b3 == null ? -1 : WhenMappings.f42610a[b3.ordinal()];
+            KType c = kTypeProjection.c();
+            int i = b3 == null ? -1 : WhenMappings.a[b3.ordinal()];
             if (i == -1 || i == 1) {
                 return b;
             }
             if (i == 2 || i == 3) {
-                Intrinsics.a(c2);
-                Type a3 = a(c2, false, 1, null);
-                if (!(a3 instanceof Class)) {
-                    b = new GenericArrayTypeImpl(a3);
+                Intrinsics.a(c);
+                Type a2 = a(c, false, 1, null);
+                if (!(a2 instanceof Class)) {
+                    b = new GenericArrayTypeImpl(a2);
                 }
                 return b;
             }

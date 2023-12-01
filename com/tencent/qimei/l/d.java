@@ -10,11 +10,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class d implements com.tencent.qimei.g.c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map<String, d> f38351a = new ConcurrentHashMap();
+    public static final Map<String, d> f24660a = new ConcurrentHashMap();
     public final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final Object f38352c = new Object();
+    public final Object f24661c = new Object();
     public boolean d = false;
 
     public d(String str) {
@@ -25,11 +25,11 @@ public class d implements com.tencent.qimei.g.c {
         d dVar;
         synchronized (d.class) {
             try {
-                d dVar2 = f38351a.get(str);
+                d dVar2 = f24660a.get(str);
                 dVar = dVar2;
                 if (dVar2 == null) {
                     dVar = new d(str);
-                    f38351a.put(str, dVar);
+                    f24660a.put(str, dVar);
                 }
             } catch (Throwable th) {
                 throw th;
@@ -46,7 +46,7 @@ public class d implements com.tencent.qimei.g.c {
         if (j.b == null) {
             cVar.a(3);
         } else if (j.h == null) {
-            j.f38319c = SystemClock.elapsedRealtime();
+            j.f24628c = SystemClock.elapsedRealtime();
             new VendorManager().getVendorInfo(j.b, new com.tencent.qimei.c.b(j, cVar));
         }
         com.tencent.qimei.k.a.b("SDK_INIT ｜ DeviceInfo", " 初始化完成 ", new Object[0]);

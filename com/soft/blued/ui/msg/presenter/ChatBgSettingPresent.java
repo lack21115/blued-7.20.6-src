@@ -29,7 +29,7 @@ public class ChatBgSettingPresent extends MVPBasePresent<IChatBgSettingIView> {
     private long b = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private short f32524c;
+    private short f18833c;
     private int d;
     private SessionSettingModel e;
     private String f;
@@ -40,7 +40,7 @@ public class ChatBgSettingPresent extends MVPBasePresent<IChatBgSettingIView> {
         if (sessionSettingModel == null) {
             sessionSettingModel2 = new SessionSettingModel();
             sessionSettingModel2.setSessionId(this.b);
-            sessionSettingModel2.setSessionType(this.f32524c);
+            sessionSettingModel2.setSessionType(this.f18833c);
             sessionSettingModel2.setLoadName(Long.valueOf(UserInfo.getInstance().getLoginUserInfo().getUid()).longValue());
         }
         String str2 = str;
@@ -49,12 +49,12 @@ public class ChatBgSettingPresent extends MVPBasePresent<IChatBgSettingIView> {
             if (!ChatBgManager.b(str)) {
                 str2 = str;
                 if (!str.toLowerCase().contains("file://")) {
-                    str2 = RecyclingUtils.Scheme.FILE.b(str);
+                    str2 = RecyclingUtils.Scheme.c.b(str);
                 }
             }
         }
         sessionSettingModel2.setChatBgUri(str2);
-        ChatManager.getInstance().setSessionSetting(this.f32524c, Long.valueOf(this.b).longValue(), sessionSettingModel2);
+        ChatManager.getInstance().setSessionSetting(this.f18833c, Long.valueOf(this.b).longValue(), sessionSettingModel2);
         InstantLog.a("chat_bg_done");
     }
 
@@ -81,7 +81,7 @@ public class ChatBgSettingPresent extends MVPBasePresent<IChatBgSettingIView> {
                         BluedPreferences.a(UserInfo.getInstance().getLoginUserInfo().getUid(), "");
                     } else {
                         if (!this.f.toLowerCase().contains("file://")) {
-                            this.f = RecyclingUtils.Scheme.FILE.b(this.f);
+                            this.f = RecyclingUtils.Scheme.c.b(this.f);
                         }
                         BluedPreferences.a(UserInfo.getInstance().getLoginUserInfo().getUid(), this.f);
                     }
@@ -93,14 +93,13 @@ public class ChatBgSettingPresent extends MVPBasePresent<IChatBgSettingIView> {
                     }
                     return;
                 }
-                SessionModel snapSessionModel = ChatManager.getInstance().getSnapSessionModel(this.f32524c, Long.valueOf(this.b).longValue());
+                SessionModel snapSessionModel = ChatManager.getInstance().getSnapSessionModel(this.f18833c, Long.valueOf(this.b).longValue());
                 if (snapSessionModel != null) {
-                    this.e = (SessionSettingModel) snapSessionModel.sessionSettingModel;
+                    this.e = snapSessionModel.sessionSettingModel;
                 }
                 SessionSettingModel sessionSettingModel = this.e;
                 if (sessionSettingModel == null) {
-                    ChatManager.getInstance().getSessionSettingModel(this.f32524c, Long.valueOf(this.b).longValue(), new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.msg.presenter.ChatBgSettingPresent.1
-                        @Override // com.blued.android.chat.listener.FetchDataListener
+                    ChatManager.getInstance().getSessionSettingModel(this.f18833c, Long.valueOf(this.b).longValue(), new FetchDataListener<SessionSettingBaseModel>() { // from class: com.soft.blued.ui.msg.presenter.ChatBgSettingPresent.1
                         /* renamed from: a */
                         public void onFetchData(SessionSettingBaseModel sessionSettingBaseModel) {
                             if (sessionSettingBaseModel != null) {
@@ -134,7 +133,7 @@ public class ChatBgSettingPresent extends MVPBasePresent<IChatBgSettingIView> {
                 return;
             }
             this.b = arguments.getLong("passby_session_id", -1L);
-            this.f32524c = arguments.getShort("passby_session_type");
+            this.f18833c = arguments.getShort("passby_session_type");
             this.d = arguments.getInt("from");
         }
     }
@@ -150,7 +149,7 @@ public class ChatBgSettingPresent extends MVPBasePresent<IChatBgSettingIView> {
     public void d() {
         IChatBgSettingIView ao_ = ao_();
         if (ao_ != null) {
-            ChatBgSelectFragment.a(ao_.i(), this.d, this.b, this.f32524c, 1001);
+            ChatBgSelectFragment.a(ao_.i(), this.d, this.b, this.f18833c, 1001);
         }
     }
 

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemPayOptionsBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final CardView f29275a;
+    private final CardView f15585a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public CardView getRoot() {
-        return this.f29275a;
+        return this.f15585a;
     }
 }

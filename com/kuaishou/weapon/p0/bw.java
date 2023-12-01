@@ -9,7 +9,7 @@ import android.text.TextUtils;
 public class bw {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f23764a = c.b("Y29tLmt3YWkud2VhcG9uLmNvbmp1cmU=\n", 2);
+    private static String f10156a = c.b("Y29tLmt3YWkud2VhcG9uLmNvbmp1cmU=\n", 2);
     private static String b = c.b(b, 2);
     private static String b = c.b(b, 2);
 
@@ -27,7 +27,7 @@ public class bw {
     public static void a(Context context, String str) {
         try {
             if (Build.VERSION.SDK_INT < 23 || Settings.System.canWrite(context.getApplicationContext())) {
-                Settings.System.putString(context.getContentResolver(), f23764a, str);
+                Settings.System.putString(context.getContentResolver(), f10156a, str);
             }
         } catch (Exception e) {
         }
@@ -56,7 +56,7 @@ public class bw {
 
     public static String c(Context context) {
         try {
-            return Settings.System.getString(context.getContentResolver(), f23764a);
+            return Settings.System.getString(context.getContentResolver(), f10156a);
         } catch (Exception e) {
             return "";
         }

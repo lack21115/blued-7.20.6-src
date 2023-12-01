@@ -2,7 +2,6 @@ package com.baidu.mobads.sdk.api;
 
 import android.provider.SearchIndexablesContract;
 import android.text.TextUtils;
-import com.amap.api.services.district.DistrictSearchQuery;
 import java.util.HashMap;
 
 /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/api/CPUAdRequest.class */
@@ -37,7 +36,7 @@ public class CPUAdRequest {
 
         public Builder setCityIfLocalChannel(String str) {
             this.mExtras.put("listScene", 6);
-            this.mExtras.put(DistrictSearchQuery.KEYWORDS_CITY, str);
+            this.mExtras.put("city", str);
             return this;
         }
 

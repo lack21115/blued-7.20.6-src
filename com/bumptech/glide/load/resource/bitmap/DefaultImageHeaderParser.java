@@ -14,42 +14,42 @@ import java.nio.charset.Charset;
 public final class DefaultImageHeaderParser implements ImageHeaderParser {
 
     /* renamed from: a  reason: collision with root package name */
-    static final byte[] f20943a = "Exif����".getBytes(Charset.forName("UTF-8"));
+    static final byte[] f7337a = "Exif����".getBytes(Charset.forName("UTF-8"));
     private static final int[] b = {0, 1, 1, 2, 4, 8, 1, 1, 2, 4, 8, 4, 8};
 
     /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/resource/bitmap/DefaultImageHeaderParser$ByteBufferReader.class */
     static final class ByteBufferReader implements Reader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ByteBuffer f20944a;
+        private final ByteBuffer f7338a;
 
         ByteBufferReader(ByteBuffer byteBuffer) {
-            this.f20944a = byteBuffer;
+            this.f7338a = byteBuffer;
             byteBuffer.order(ByteOrder.BIG_ENDIAN);
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
         public int a(byte[] bArr, int i) {
-            int min = Math.min(i, this.f20944a.remaining());
+            int min = Math.min(i, this.f7338a.remaining());
             if (min == 0) {
                 return -1;
             }
-            this.f20944a.get(bArr, 0, min);
+            this.f7338a.get(bArr, 0, min);
             return min;
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
         public long a(long j) {
-            int min = (int) Math.min(this.f20944a.remaining(), j);
-            ByteBuffer byteBuffer = this.f20944a;
+            int min = (int) Math.min(this.f7338a.remaining(), j);
+            ByteBuffer byteBuffer = this.f7338a;
             byteBuffer.position(byteBuffer.position() + min);
             return min;
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
         public short a() throws Reader.EndOfFileException {
-            if (this.f20944a.remaining() >= 1) {
-                return (short) (this.f20944a.get() & 255);
+            if (this.f7338a.remaining() >= 1) {
+                return (short) (this.f7338a.get() & 255);
             }
             throw new Reader.EndOfFileException();
         }
@@ -65,34 +65,34 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     public static final class RandomAccessReader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final ByteBuffer f20945a;
+        private final ByteBuffer f7339a;
 
         RandomAccessReader(byte[] bArr, int i) {
-            this.f20945a = (ByteBuffer) ByteBuffer.wrap(bArr).order(ByteOrder.BIG_ENDIAN).limit(i);
+            this.f7339a = (ByteBuffer) ByteBuffer.wrap(bArr).order(ByteOrder.BIG_ENDIAN).limit(i);
         }
 
         private boolean a(int i, int i2) {
-            return this.f20945a.remaining() - i >= i2;
+            return this.f7339a.remaining() - i >= i2;
         }
 
         int a() {
-            return this.f20945a.remaining();
+            return this.f7339a.remaining();
         }
 
         int a(int i) {
             if (a(i, 4)) {
-                return this.f20945a.getInt(i);
+                return this.f7339a.getInt(i);
             }
             return -1;
         }
 
         void a(ByteOrder byteOrder) {
-            this.f20945a.order(byteOrder);
+            this.f7339a.order(byteOrder);
         }
 
         short b(int i) {
             if (a(i, 2)) {
-                return this.f20945a.getShort(i);
+                return this.f7339a.getShort(i);
             }
             return (short) -1;
         }
@@ -124,10 +124,10 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     static final class StreamReader implements Reader {
 
         /* renamed from: a  reason: collision with root package name */
-        private final InputStream f20946a;
+        private final InputStream f7340a;
 
         StreamReader(InputStream inputStream) {
-            this.f20946a = inputStream;
+            this.f7340a = inputStream;
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
@@ -140,7 +140,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
                 if (i3 >= i) {
                     break;
                 }
-                i4 = this.f20946a.read(bArr, i3, i - i3);
+                i4 = this.f7340a.read(bArr, i3, i - i3);
                 i2 = i4;
                 if (i4 == -1) {
                     break;
@@ -165,9 +165,9 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
                 if (j2 <= 0) {
                     break;
                 }
-                long skip = this.f20946a.skip(j2);
+                long skip = this.f7340a.skip(j2);
                 if (skip <= 0) {
-                    if (this.f20946a.read() == -1) {
+                    if (this.f7340a.read() == -1) {
                         break;
                     }
                     skip = 1;
@@ -179,7 +179,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
         public short a() throws IOException {
-            int read = this.f20946a.read();
+            int read = this.f7340a.read();
             if (read != -1) {
                 return (short) read;
             }
@@ -346,12 +346,12 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     }
 
     private boolean a(byte[] bArr, int i) {
-        boolean z = bArr != null && i > f20943a.length;
+        boolean z = bArr != null && i > f7337a.length;
         if (z) {
             int i2 = 0;
             while (true) {
                 int i3 = i2;
-                byte[] bArr2 = f20943a;
+                byte[] bArr2 = f7337a;
                 if (i3 >= bArr2.length) {
                     break;
                 } else if (bArr[i3] != bArr2[i3]) {

@@ -12,7 +12,7 @@ import java.util.List;
 public final class e implements u.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f25191a;
+    private final int f11503a;
     private final List<Format> b;
 
     public e() {
@@ -24,7 +24,7 @@ public final class e implements u.c {
     }
 
     public e(int i, List<Format> list) {
-        this.f25191a = i;
+        this.f11503a = i;
         List<Format> list2 = list;
         if (!a(32)) {
             list2 = list;
@@ -76,7 +76,7 @@ public final class e implements u.c {
     }
 
     private boolean a(int i) {
-        return (i & this.f25191a) != 0;
+        return (i & this.f11503a) != 0;
     }
 
     @Override // com.opos.exoplayer.core.c.f.u.c
@@ -125,7 +125,7 @@ public final class e implements u.c {
                         }
                         return new o(new f(bVar.b));
                     }
-                    return new o(new g(bVar.f25234c));
+                    return new o(new g(bVar.f11546c));
                 } else {
                     return new o(new k(a(bVar)));
                 }

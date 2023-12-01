@@ -10,7 +10,7 @@ import androidx.constraintlayout.core.widgets.analyzer.WidgetRun;
 public class VerticalWidgetRun extends WidgetRun {
 
     /* renamed from: a  reason: collision with root package name */
-    DimensionDependency f2144a;
+    DimensionDependency f2096a;
     public DependencyNode baseline;
 
     /* renamed from: androidx.constraintlayout.core.widgets.analyzer.VerticalWidgetRun$1  reason: invalid class name */
@@ -18,23 +18,23 @@ public class VerticalWidgetRun extends WidgetRun {
     static /* synthetic */ class AnonymousClass1 {
 
         /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f2145a;
+        static final /* synthetic */ int[] f2097a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[WidgetRun.RunType.values().length];
-            f2145a = iArr;
+            f2097a = iArr;
             try {
                 iArr[WidgetRun.RunType.START.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f2145a[WidgetRun.RunType.END.ordinal()] = 2;
+                f2097a[WidgetRun.RunType.END.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f2145a[WidgetRun.RunType.CENTER.ordinal()] = 3;
+                f2097a[WidgetRun.RunType.CENTER.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -43,7 +43,7 @@ public class VerticalWidgetRun extends WidgetRun {
     public VerticalWidgetRun(ConstraintWidget constraintWidget) {
         super(constraintWidget);
         this.baseline = new DependencyNode(this);
-        this.f2144a = null;
+        this.f2096a = null;
         this.start.b = DependencyNode.Type.TOP;
         this.end.b = DependencyNode.Type.BOTTOM;
         this.baseline.b = DependencyNode.Type.BASELINE;
@@ -65,7 +65,7 @@ public class VerticalWidgetRun extends WidgetRun {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // androidx.constraintlayout.core.widgets.analyzer.WidgetRun
     public void b() {
-        this.f2150c = null;
+        this.f2102c = null;
         this.start.clear();
         this.end.clear();
         this.baseline.clear();
@@ -96,7 +96,7 @@ public class VerticalWidgetRun extends WidgetRun {
         if (!this.e.resolved) {
             this.d = this.b.getVerticalDimensionBehaviour();
             if (this.b.hasBaseline()) {
-                this.f2144a = new BaselineDimensionDependency(this);
+                this.f2096a = new BaselineDimensionDependency(this);
             }
             if (this.d != ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
                 if (this.d == ConstraintWidget.DimensionBehaviour.MATCH_PARENT && (parent2 = this.b.getParent()) != null && parent2.getVerticalDimensionBehaviour() == ConstraintWidget.DimensionBehaviour.FIXED) {
@@ -119,8 +119,8 @@ public class VerticalWidgetRun extends WidgetRun {
         if (this.e.resolved && this.b.measured) {
             if (this.b.mListAnchors[2].mTarget != null && this.b.mListAnchors[3].mTarget != null) {
                 if (this.b.isInVerticalChain()) {
-                    this.start.f2136c = this.b.mListAnchors[2].getMargin();
-                    this.end.f2136c = -this.b.mListAnchors[3].getMargin();
+                    this.start.f2088c = this.b.mListAnchors[2].getMargin();
+                    this.end.f2088c = -this.b.mListAnchors[3].getMargin();
                 } else {
                     DependencyNode a2 = a(this.b.mListAnchors[2]);
                     if (a2 != null) {
@@ -207,8 +207,8 @@ public class VerticalWidgetRun extends WidgetRun {
         }
         if (this.b.mListAnchors[2].mTarget != null && this.b.mListAnchors[3].mTarget != null) {
             if (this.b.isInVerticalChain()) {
-                this.start.f2136c = this.b.mListAnchors[2].getMargin();
-                this.end.f2136c = -this.b.mListAnchors[3].getMargin();
+                this.start.f2088c = this.b.mListAnchors[2].getMargin();
+                this.end.f2088c = -this.b.mListAnchors[3].getMargin();
             } else {
                 DependencyNode a7 = a(this.b.mListAnchors[2]);
                 DependencyNode a8 = a(this.b.mListAnchors[3]);
@@ -221,7 +221,7 @@ public class VerticalWidgetRun extends WidgetRun {
                 this.g = WidgetRun.RunType.CENTER;
             }
             if (this.b.hasBaseline()) {
-                a(this.baseline, this.start, 1, this.f2144a);
+                a(this.baseline, this.start, 1, this.f2096a);
             }
         } else if (this.b.mListAnchors[2].mTarget != null) {
             DependencyNode a9 = a(this.b.mListAnchors[2]);
@@ -229,7 +229,7 @@ public class VerticalWidgetRun extends WidgetRun {
                 a(this.start, a9, this.b.mListAnchors[2].getMargin());
                 a(this.end, this.start, 1, this.e);
                 if (this.b.hasBaseline()) {
-                    a(this.baseline, this.start, 1, this.f2144a);
+                    a(this.baseline, this.start, 1, this.f2096a);
                 }
                 if (this.d == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && this.b.getDimensionRatio() > 0.0f && this.b.horizontalRun.d == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
                     this.b.horizontalRun.e.f.add(this.e);
@@ -243,21 +243,21 @@ public class VerticalWidgetRun extends WidgetRun {
                 a(this.end, a10, -this.b.mListAnchors[3].getMargin());
                 a(this.start, this.end, -1, this.e);
                 if (this.b.hasBaseline()) {
-                    a(this.baseline, this.start, 1, this.f2144a);
+                    a(this.baseline, this.start, 1, this.f2096a);
                 }
             }
         } else if (this.b.mListAnchors[4].mTarget != null) {
             DependencyNode a11 = a(this.b.mListAnchors[4]);
             if (a11 != null) {
                 a(this.baseline, a11, 0);
-                a(this.start, this.baseline, -1, this.f2144a);
+                a(this.start, this.baseline, -1, this.f2096a);
                 a(this.end, this.start, 1, this.e);
             }
         } else if (!(this.b instanceof Helper) && this.b.getParent() != null) {
             a(this.start, this.b.getParent().verticalRun.start, this.b.getY());
             a(this.end, this.start, 1, this.e);
             if (this.b.hasBaseline()) {
-                a(this.baseline, this.start, 1, this.f2144a);
+                a(this.baseline, this.start, 1, this.f2096a);
             }
             if (this.d == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && this.b.getDimensionRatio() > 0.0f && this.b.horizontalRun.d == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT) {
                 this.b.horizontalRun.e.f.add(this.e);
@@ -280,7 +280,7 @@ public class VerticalWidgetRun extends WidgetRun {
         float dimensionRatio;
         float f2;
         int i;
-        int i2 = AnonymousClass1.f2145a[this.g.ordinal()];
+        int i2 = AnonymousClass1.f2097a[this.g.ordinal()];
         if (i2 == 1) {
             a(dependency);
         } else if (i2 == 2) {
@@ -324,15 +324,15 @@ public class VerticalWidgetRun extends WidgetRun {
             if (!this.e.resolved && this.d == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && this.b.mMatchConstraintDefaultWidth == 0 && !this.b.isInVerticalChain()) {
                 DependencyNode dependencyNode = this.start.g.get(0);
                 DependencyNode dependencyNode2 = this.end.g.get(0);
-                int i4 = dependencyNode.value + this.start.f2136c;
-                int i5 = dependencyNode2.value + this.end.f2136c;
+                int i4 = dependencyNode.value + this.start.f2088c;
+                int i5 = dependencyNode2.value + this.end.f2088c;
                 this.start.resolve(i4);
                 this.end.resolve(i5);
                 this.e.resolve(i5 - i4);
                 return;
             }
             if (!this.e.resolved && this.d == ConstraintWidget.DimensionBehaviour.MATCH_CONSTRAINT && this.matchConstraintsType == 1 && this.start.g.size() > 0 && this.end.g.size() > 0) {
-                int i6 = (this.end.g.get(0).value + this.end.f2136c) - (this.start.g.get(0).value + this.start.f2136c);
+                int i6 = (this.end.g.get(0).value + this.end.f2088c) - (this.start.g.get(0).value + this.start.f2088c);
                 if (i6 < this.e.wrapValue) {
                     this.e.resolve(i6);
                 } else {
@@ -342,8 +342,8 @@ public class VerticalWidgetRun extends WidgetRun {
             if (this.e.resolved && this.start.g.size() > 0 && this.end.g.size() > 0) {
                 DependencyNode dependencyNode3 = this.start.g.get(0);
                 DependencyNode dependencyNode4 = this.end.g.get(0);
-                int i7 = dependencyNode3.value + this.start.f2136c;
-                int i8 = dependencyNode4.value + this.end.f2136c;
+                int i7 = dependencyNode3.value + this.start.f2088c;
+                int i8 = dependencyNode4.value + this.end.f2088c;
                 float verticalBiasPercent = this.b.getVerticalBiasPercent();
                 if (dependencyNode3 == dependencyNode4) {
                     i7 = dependencyNode3.value;

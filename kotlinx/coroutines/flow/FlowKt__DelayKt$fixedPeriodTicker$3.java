@@ -13,13 +13,9 @@ import kotlinx.coroutines.channels.ProducerScope;
 @DebugMetadata(b = "Delay.kt", c = {316, 318, 319}, d = "invokeSuspend", e = "kotlinx.coroutines.flow.FlowKt__DelayKt$fixedPeriodTicker$3")
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__DelayKt$fixedPeriodTicker$3.class */
 public final class FlowKt__DelayKt$fixedPeriodTicker$3 extends SuspendLambda implements Function2<ProducerScope<? super Unit>, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    int f43130a;
+    int a;
     final /* synthetic */ long b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ long f43131c;
+    final /* synthetic */ long c;
     private /* synthetic */ Object d;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -27,18 +23,18 @@ public final class FlowKt__DelayKt$fixedPeriodTicker$3 extends SuspendLambda imp
     public FlowKt__DelayKt$fixedPeriodTicker$3(long j, long j2, Continuation<? super FlowKt__DelayKt$fixedPeriodTicker$3> continuation) {
         super(2, continuation);
         this.b = j;
-        this.f43131c = j2;
+        this.c = j2;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(ProducerScope<? super Unit> producerScope, Continuation<? super Unit> continuation) {
-        return ((FlowKt__DelayKt$fixedPeriodTicker$3) create(producerScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((FlowKt__DelayKt$fixedPeriodTicker$3) create(producerScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        FlowKt__DelayKt$fixedPeriodTicker$3 flowKt__DelayKt$fixedPeriodTicker$3 = new FlowKt__DelayKt$fixedPeriodTicker$3(this.b, this.f43131c, continuation);
+        FlowKt__DelayKt$fixedPeriodTicker$3 flowKt__DelayKt$fixedPeriodTicker$3 = new FlowKt__DelayKt$fixedPeriodTicker$3(this.b, this.c, continuation);
         flowKt__DelayKt$fixedPeriodTicker$3.d = obj;
         return flowKt__DelayKt$fixedPeriodTicker$3;
     }

@@ -2,12 +2,10 @@ package org.commonmark.node;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/node/BulletList.class */
 public class BulletList extends ListBlock {
+    private char a;
 
-    /* renamed from: a  reason: collision with root package name */
-    private char f44050a;
-
-    public void a(char c2) {
-        this.f44050a = c2;
+    public void a(char c) {
+        this.a = c;
     }
 
     @Override // org.commonmark.node.Node
@@ -16,6 +14,6 @@ public class BulletList extends ListBlock {
     }
 
     public char c() {
-        return this.f44050a;
+        return this.a;
     }
 }

@@ -11,11 +11,11 @@ import c.t.m.g.v0;
 public class x0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public Context f4047a;
+    public Context f3999a;
     public i1 b;
 
     /* renamed from: c  reason: collision with root package name */
-    public ServiceConnection f4048c = new a();
+    public ServiceConnection f4000c = new a();
 
     /* loaded from: source-8756600-dex2jar.jar:c/t/m/g/x0$a.class */
     public class a implements ServiceConnection {
@@ -33,14 +33,14 @@ public class x0 {
     }
 
     public x0(Context context) {
-        this.f4047a = context;
+        this.f3999a = context;
     }
 
     public void a(v0.b bVar) {
         i1 i1Var;
         Intent intent = new Intent();
         intent.setClassName("com.zui.deviceidservice", "com.zui.deviceidservice.DeviceidService");
-        if (!this.f4047a.bindService(intent, this.f4048c, 1) || (i1Var = this.b) == null) {
+        if (!this.f3999a.bindService(intent, this.f4000c, 1) || (i1Var = this.b) == null) {
             return;
         }
         String b = i1Var.b();

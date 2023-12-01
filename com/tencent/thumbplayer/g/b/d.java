@@ -11,12 +11,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class d implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static AtomicInteger f39325a = new AtomicInteger(0);
+    private static AtomicInteger f25634a = new AtomicInteger(0);
     private final MediaCodec b;
 
     public d(MediaCodec mediaCodec) {
         this.b = mediaCodec;
-        com.tencent.thumbplayer.g.h.b.c("DirectCodecWrapper", "DirectCodecWrapper sCodecNum:" + f39325a.incrementAndGet());
+        com.tencent.thumbplayer.g.h.b.c("DirectCodecWrapper", "DirectCodecWrapper sCodecNum:" + f25634a.incrementAndGet());
     }
 
     @Override // com.tencent.thumbplayer.g.b.c
@@ -101,6 +101,6 @@ public final class d implements c {
     public final void g() {
         com.tencent.thumbplayer.g.h.b.c("DirectCodecWrapper", "DirectCodecWrapper release start ...");
         this.b.release();
-        com.tencent.thumbplayer.g.h.b.c("DirectCodecWrapper", "DirectCodecWrapper release end ... sCodecNum:" + f39325a.decrementAndGet());
+        com.tencent.thumbplayer.g.h.b.c("DirectCodecWrapper", "DirectCodecWrapper release end ... sCodecNum:" + f25634a.decrementAndGet());
     }
 }

@@ -1,7 +1,6 @@
 package io.grpc.internal;
 
-import android.provider.ContactsContract;
-import androidx.exifinterface.media.ExifInterface;
+import com.alipay.sdk.packet.e;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Splitter;
@@ -46,7 +45,6 @@ import javax.annotation.Nullable;
 
 /* loaded from: source-3503164-dex2jar.jar:io/grpc/internal/GrpcUtil.class */
 public final class GrpcUtil {
-    public static final String CONTENT_ENCODING = "content-encoding";
     public static final String CONTENT_TYPE_GRPC = "application/grpc";
     public static final String DEFAULT_LB_POLICY = "pick_first";
     public static final int DEFAULT_MAX_HEADER_LIST_SIZE = 8192;
@@ -66,10 +64,11 @@ public final class GrpcUtil {
     public static final Metadata.Key<String> MESSAGE_ENCODING_KEY = Metadata.Key.of(MESSAGE_ENCODING, Metadata.ASCII_STRING_MARSHALLER);
     public static final String MESSAGE_ACCEPT_ENCODING = "grpc-accept-encoding";
     public static final Metadata.Key<byte[]> MESSAGE_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf(MESSAGE_ACCEPT_ENCODING, new AcceptEncodingMarshaller());
-    public static final Metadata.Key<String> CONTENT_ENCODING_KEY = Metadata.Key.of("content-encoding", Metadata.ASCII_STRING_MARSHALLER);
+    public static final String CONTENT_ENCODING = "content-encoding";
+    public static final Metadata.Key<String> CONTENT_ENCODING_KEY = Metadata.Key.of(CONTENT_ENCODING, Metadata.ASCII_STRING_MARSHALLER);
     public static final String CONTENT_ACCEPT_ENCODING = "accept-encoding";
     public static final Metadata.Key<byte[]> CONTENT_ACCEPT_ENCODING_KEY = InternalMetadata.keyOf(CONTENT_ACCEPT_ENCODING, new AcceptEncodingMarshaller());
-    public static final Metadata.Key<String> CONTENT_TYPE_KEY = Metadata.Key.of("content-type", Metadata.ASCII_STRING_MARSHALLER);
+    public static final Metadata.Key<String> CONTENT_TYPE_KEY = Metadata.Key.of(e.d, Metadata.ASCII_STRING_MARSHALLER);
     public static final Metadata.Key<String> TE_HEADER = Metadata.Key.of("te", Metadata.ASCII_STRING_MARSHALLER);
     public static final Metadata.Key<String> USER_AGENT_KEY = Metadata.Key.of("user-agent", Metadata.ASCII_STRING_MARSHALLER);
     public static final Splitter ACCEPT_ENCODING_SPLITTER = Splitter.on(',').trimResults();
@@ -78,7 +77,6 @@ public final class GrpcUtil {
     public static final long DEFAULT_SERVER_KEEPALIVE_TIMEOUT_NANOS = TimeUnit.SECONDS.toNanos(20);
     public static final ProxyDetector DEFAULT_PROXY_DETECTOR = new ProxyDetectorImpl();
     public static final ProxyDetector NOOP_PROXY_DETECTOR = new ProxyDetector() { // from class: io.grpc.internal.GrpcUtil.1
-        @Override // io.grpc.ProxyDetector
         @Nullable
         public ProxiedSocketAddress proxyFor(SocketAddress socketAddress) {
             return null;
@@ -123,9 +121,8 @@ public final class GrpcUtil {
         }
     };
     public static final Supplier<Stopwatch> STOPWATCH_SUPPLIER = new Supplier<Stopwatch>() { // from class: io.grpc.internal.GrpcUtil.4
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // com.google.common.base.Supplier
-        public Stopwatch get() {
+        /* renamed from: get */
+        public Stopwatch m11408get() {
             return Stopwatch.createUnstarted();
         }
     };
@@ -135,12 +132,10 @@ public final class GrpcUtil {
         private AcceptEncodingMarshaller() {
         }
 
-        @Override // io.grpc.Metadata.TrustedAsciiMarshaller
         public byte[] parseAsciiString(byte[] bArr) {
             return bArr;
         }
 
-        @Override // io.grpc.Metadata.TrustedAsciiMarshaller
         public byte[] toAsciiString(byte[] bArr) {
             return bArr;
         }
@@ -242,9 +237,8 @@ public final class GrpcUtil {
         TimeoutMarshaller() {
         }
 
-        /* JADX WARN: Can't rename method to resolve collision */
-        @Override // io.grpc.Metadata.AsciiMarshaller
-        public Long parseAsciiString(String str) {
+        /* renamed from: parseAsciiString */
+        public Long m11411parseAsciiString(String str) {
             Preconditions.checkArgument(str.length() > 0, "empty timeout");
             Preconditions.checkArgument(str.length() <= 9, "bad timeout format");
             long parseLong = Long.parseLong(str.substring(0, str.length() - 1));
@@ -270,7 +264,6 @@ public final class GrpcUtil {
             return Long.valueOf(TimeUnit.HOURS.toNanos(parseLong));
         }
 
-        @Override // io.grpc.Metadata.AsciiMarshaller
         public String toAsciiString(Long l) {
             TimeUnit timeUnit = TimeUnit.NANOSECONDS;
             if (l.longValue() >= 0) {
@@ -281,7 +274,7 @@ public final class GrpcUtil {
                 } else if (l.longValue() < 100000000000000L) {
                     return timeUnit.toMillis(l.longValue()) + "m";
                 } else if (l.longValue() < 100000000000000000L) {
-                    return timeUnit.toSeconds(l.longValue()) + ExifInterface.LATITUDE_SOUTH;
+                    return timeUnit.toSeconds(l.longValue()) + "S";
                 } else if (l.longValue() < 6000000000000000000L) {
                     return timeUnit.toMinutes(l.longValue()) + "M";
                 } else {
@@ -304,7 +297,7 @@ public final class GrpcUtil {
     }
 
     public static URI authorityToUri(String str) {
-        Preconditions.checkNotNull(str, ContactsContract.Directory.DIRECTORY_AUTHORITY);
+        Preconditions.checkNotNull(str, "authority");
         try {
             return new URI(null, str, null, null, null);
         } catch (URISyntaxException e) {
@@ -382,12 +375,10 @@ public final class GrpcUtil {
             }
             final ClientTransport clientTransport = obtainActiveTransport;
             return new ClientTransport() { // from class: io.grpc.internal.GrpcUtil.5
-                @Override // io.grpc.InternalWithLogId
                 public InternalLogId getLogId() {
                     return ClientTransport.this.getLogId();
                 }
 
-                @Override // io.grpc.InternalInstrumented
                 public ListenableFuture<InternalChannelz.SocketStats> getStats() {
                     return ClientTransport.this.getStats();
                 }

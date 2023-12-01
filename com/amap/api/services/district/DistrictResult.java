@@ -8,13 +8,9 @@ import java.util.ArrayList;
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/services/district/DistrictResult.class */
 public final class DistrictResult implements Parcelable {
     public Parcelable.Creator<DistrictResult> CREATOR;
-
-    /* renamed from: a  reason: collision with root package name */
-    private DistrictSearchQuery f5620a;
+    private DistrictSearchQuery a;
     private ArrayList<DistrictItem> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f5621c;
+    private int c;
     private AMapException d;
 
     public DistrictResult() {
@@ -61,7 +57,7 @@ public final class DistrictResult implements Parcelable {
                 return a(i);
             }
         };
-        this.f5620a = (DistrictSearchQuery) parcel.readParcelable(DistrictSearchQuery.class.getClassLoader());
+        this.a = (DistrictSearchQuery) parcel.readParcelable(DistrictSearchQuery.class.getClassLoader());
         this.b = parcel.createTypedArrayList(DistrictItem.CREATOR);
     }
 
@@ -86,7 +82,7 @@ public final class DistrictResult implements Parcelable {
                 return a(i);
             }
         };
-        this.f5620a = districtSearchQuery;
+        this.a = districtSearchQuery;
         this.b = arrayList;
     }
 
@@ -101,12 +97,12 @@ public final class DistrictResult implements Parcelable {
         }
         if (obj != null && getClass() == obj.getClass()) {
             DistrictResult districtResult = (DistrictResult) obj;
-            DistrictSearchQuery districtSearchQuery = this.f5620a;
+            DistrictSearchQuery districtSearchQuery = this.a;
             if (districtSearchQuery == null) {
-                if (districtResult.f5620a != null) {
+                if (districtResult.a != null) {
                     return false;
                 }
-            } else if (!districtSearchQuery.equals(districtResult.f5620a)) {
+            } else if (!districtSearchQuery.equals(districtResult.a)) {
                 return false;
             }
             ArrayList<DistrictItem> arrayList = this.b;
@@ -124,15 +120,15 @@ public final class DistrictResult implements Parcelable {
     }
 
     public final int getPageCount() {
-        return this.f5621c;
+        return this.c;
     }
 
     public final DistrictSearchQuery getQuery() {
-        return this.f5620a;
+        return this.a;
     }
 
     public final int hashCode() {
-        DistrictSearchQuery districtSearchQuery = this.f5620a;
+        DistrictSearchQuery districtSearchQuery = this.a;
         int i = 0;
         int hashCode = districtSearchQuery == null ? 0 : districtSearchQuery.hashCode();
         ArrayList<DistrictItem> arrayList = this.b;
@@ -151,20 +147,20 @@ public final class DistrictResult implements Parcelable {
     }
 
     public final void setPageCount(int i) {
-        this.f5621c = i;
+        this.c = i;
     }
 
     public final void setQuery(DistrictSearchQuery districtSearchQuery) {
-        this.f5620a = districtSearchQuery;
+        this.a = districtSearchQuery;
     }
 
     public final String toString() {
-        return "DistrictResult [mDisQuery=" + this.f5620a + ", mDistricts=" + this.b + "]";
+        return "DistrictResult [mDisQuery=" + this.a + ", mDistricts=" + this.b + "]";
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f5620a, i);
+        parcel.writeParcelable(this.a, i);
         parcel.writeTypedList(this.b);
     }
 }

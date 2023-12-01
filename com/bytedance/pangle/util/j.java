@@ -12,7 +12,7 @@ import java.util.List;
 public final class j {
 
     /* renamed from: a  reason: collision with root package name */
-    static volatile ArrayList<String> f21505a;
+    static volatile ArrayList<String> f7899a;
     private static String b;
 
     public static List<String> a() {

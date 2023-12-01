@@ -19,9 +19,7 @@ import java.util.Set;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYMemberKtvView.class */
 public class YYMemberKtvView extends ConstraintLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private ViewYyMemberKtvBinding f18318a;
+    private ViewYyMemberKtvBinding a;
     private YYRoomModel b;
 
     public YYMemberKtvView(Context context) {
@@ -38,32 +36,33 @@ public class YYMemberKtvView extends ConstraintLayout {
         a();
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private void a() {
-        this.f18318a = ViewYyMemberKtvBinding.a(LayoutInflater.from(getContext()), this, true);
+        this.a = ViewYyMemberKtvBinding.a(LayoutInflater.from(getContext()), this, true);
     }
 
     public void a(IRequestHost iRequestHost, String str, String str2, YYImModel yYImModel) {
-        this.f18318a.f16932a.a(iRequestHost, str, str2, yYImModel);
+        this.a.a.a(iRequestHost, str, str2, yYImModel);
     }
 
     public void a(YYSeatMemberModel yYSeatMemberModel, ActivityFragmentActive activityFragmentActive) {
         YYRoomModel yYRoomModel = this.b;
         if (yYRoomModel == null || yYRoomModel.music == null || !TextUtils.equals(this.b.music.uid, yYSeatMemberModel.getUid())) {
-            TextView textView = this.f18318a.b;
+            TextView textView = this.a.b;
             textView.setText(yYSeatMemberModel.mic_position + "");
-            this.f18318a.b.setTextColor(getResources().getColor(R.color.syc_ffffff));
+            this.a.b.setTextColor(getResources().getColor(R.color.syc_ffffff));
         } else {
-            this.f18318a.b.setText("演唱中");
-            this.f18318a.b.setTextColor(getResources().getColor(R.color.syc_00E0AB));
+            this.a.b.setText("演唱中");
+            this.a.b.setTextColor(getResources().getColor(R.color.syc_00E0AB));
         }
-        this.f18318a.f16932a.a(yYSeatMemberModel, activityFragmentActive);
+        this.a.a.a(yYSeatMemberModel, activityFragmentActive);
     }
 
     public void a(YYBaseUserHeadView.GetViewX_Y_W_H getViewX_Y_W_H) {
-        this.f18318a.f16932a.a(getViewX_Y_W_H);
+        this.a.a.a(getViewX_Y_W_H);
     }
 
     public void a(Set<String> set, YYSeatMemberModel yYSeatMemberModel) {
-        this.f18318a.f16932a.a(set, yYSeatMemberModel);
+        this.a.a.a(set, yYSeatMemberModel);
     }
 }

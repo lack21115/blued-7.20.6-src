@@ -37,11 +37,11 @@ public class AgProtocolActivity extends Activity {
     private static final List<String> h;
 
     /* renamed from: a  reason: collision with root package name */
-    String f22930a;
+    String f9322a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f22931c;
+    String f9323c;
     private final IActivityResult i = new a(this);
 
     /* loaded from: source-7994992-dex2jar.jar:com/huawei/openalliance/ad/activity/AgProtocolActivity$a.class */
@@ -70,12 +70,12 @@ public class AgProtocolActivity extends Activity {
     static {
         ArrayList arrayList = new ArrayList();
         h = arrayList;
-        arrayList.add(t.f22960cn);
+        arrayList.add(t.f9352cn);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void V() {
-        eh.Code(getApplicationContext(), this.b, this.f22930a, this.f22931c, com.huawei.openalliance.ad.download.app.a.V);
+        eh.Code(getApplicationContext(), this.b, this.f9322a, this.f9323c, com.huawei.openalliance.ad.download.app.a.V);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -89,7 +89,7 @@ public class AgProtocolActivity extends Activity {
     public void onActivityResult(int i, int i2, Intent intent) {
         int i3;
         super.onActivityResult(i, i2, intent);
-        ge.V("resolution", "requestCode=" + i + "resultCode=" + i2 + " appPackageName=" + this.f22930a);
+        ge.V("resolution", "requestCode=" + i + "resultCode=" + i2 + " appPackageName=" + this.f9322a);
         if (100 == i) {
             i3 = 1001;
             if (1001 == i2) {
@@ -113,7 +113,7 @@ public class AgProtocolActivity extends Activity {
             ge.V("resolution", "syncAgResolutionStatus:101");
             i3 = 1003;
         }
-        c.Code(this, i3, this.f22930a, this.f22931c, (Class) null);
+        c.Code(this, i3, this.f9322a, this.f9323c, (Class) null);
         finish();
     }
 
@@ -129,8 +129,8 @@ public class AgProtocolActivity extends Activity {
                     try {
                         PendingIntent pendingIntent = (PendingIntent) intent.getParcelableExtra(d.d);
                         AgProtocolActivity.this.b = intent.getIntExtra(d.e, 6);
-                        AgProtocolActivity.this.f22930a = intent.getStringExtra(d.f);
-                        AgProtocolActivity.this.f22931c = intent.getStringExtra("ag_action_name");
+                        AgProtocolActivity.this.f9322a = intent.getStringExtra(d.f);
+                        AgProtocolActivity.this.f9323c = intent.getStringExtra("ag_action_name");
                         AgProtocolActivity.this.V();
                         int i = AgProtocolActivity.this.b == 6 ? 101 : AgProtocolActivity.this.b == 8888 ? 102 : 100;
                         Intent intent2 = new Intent();

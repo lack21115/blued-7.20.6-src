@@ -33,12 +33,10 @@ public class EndCardView extends BaseEndCardView {
     /* renamed from: com.anythink.basead.ui.EndCardView$2  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/EndCardView$2.class */
     public final class AnonymousClass2 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ i f6109a;
+        final /* synthetic */ i a;
 
         AnonymousClass2(i iVar) {
-            this.f6109a = iVar;
+            this.a = iVar;
         }
 
         @Override // com.anythink.core.common.res.b.a
@@ -50,16 +48,16 @@ public class EndCardView extends BaseEndCardView {
 
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, final Bitmap bitmap) {
-            if (TextUtils.equals(str, this.f6109a.u())) {
+            if (TextUtils.equals(str, this.a.u())) {
                 EndCardView.this.h.setImageBitmap(bitmap);
                 EndCardView.this.post(new Runnable() { // from class: com.anythink.basead.ui.EndCardView.2.1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int[] a2 = u.a(EndCardView.this.getWidth(), EndCardView.this.getHeight(), bitmap.getWidth() / bitmap.getHeight());
+                        int[] a = u.a(EndCardView.this.getWidth(), EndCardView.this.getHeight(), bitmap.getWidth() / bitmap.getHeight());
                         ViewGroup.LayoutParams layoutParams = EndCardView.this.h.getLayoutParams();
                         if (layoutParams != null) {
-                            layoutParams.width = a2[0];
-                            layoutParams.height = a2[1];
+                            layoutParams.width = a[0];
+                            layoutParams.height = a[1];
                             EndCardView.this.h.setLayoutParams(layoutParams);
                         }
                         if (EndCardView.this.e != null) {
@@ -76,13 +74,11 @@ public class EndCardView extends BaseEndCardView {
     /* renamed from: com.anythink.basead.ui.EndCardView$3  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/ui/EndCardView$3.class */
     public final class AnonymousClass3 implements b.a {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ String f6111a;
+        final /* synthetic */ String a;
         final /* synthetic */ int b;
 
         AnonymousClass3(String str, int i) {
-            this.f6111a = str;
+            this.a = str;
             this.b = i;
         }
 
@@ -92,7 +88,7 @@ public class EndCardView extends BaseEndCardView {
 
         @Override // com.anythink.core.common.res.b.a
         public final void onSuccess(String str, Bitmap bitmap) {
-            if (TextUtils.equals(str, this.f6111a)) {
+            if (TextUtils.equals(str, this.a)) {
                 float width = (bitmap.getWidth() * 1.0f) / bitmap.getHeight();
                 int i = this.b;
                 int i2 = (int) (i * width);
@@ -150,7 +146,7 @@ public class EndCardView extends BaseEndCardView {
         this.k.setTextColor(Color.parseColor("#ffffffff"));
         this.k.setTextSize(14.0f);
         this.k.setGravity(17);
-        this.k.setBackgroundResource(h.a(getContext(), "myoffer_splash_bg_rectangle_btn_cta_asseblem", com.anythink.expressad.foundation.h.i.f7952c));
+        this.k.setBackgroundResource(h.a(getContext(), "myoffer_splash_bg_rectangle_btn_cta_asseblem", "drawable"));
         this.k.setOnClickListener(this.l);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, h.a(getContext(), 48.0f));
         layoutParams.addRule(12);
@@ -217,7 +213,7 @@ public class EndCardView extends BaseEndCardView {
             this.k.setTextColor(Color.parseColor("#ffffffff"));
             this.k.setTextSize(14.0f);
             this.k.setGravity(17);
-            this.k.setBackgroundResource(h.a(getContext(), "myoffer_splash_bg_rectangle_btn_cta_asseblem", com.anythink.expressad.foundation.h.i.f7952c));
+            this.k.setBackgroundResource(h.a(getContext(), "myoffer_splash_bg_rectangle_btn_cta_asseblem", "drawable"));
             this.k.setOnClickListener(this.l);
             RelativeLayout.LayoutParams layoutParams5 = new RelativeLayout.LayoutParams(-1, h.a(getContext(), 48.0f));
             layoutParams5.addRule(12);

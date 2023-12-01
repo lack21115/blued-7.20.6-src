@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemFloatSpreadImgBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f29178a;
+    private final RelativeLayout f15488a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f29178a;
+        return this.f15488a;
     }
 }

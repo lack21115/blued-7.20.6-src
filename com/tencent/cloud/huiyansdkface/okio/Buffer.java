@@ -1,6 +1,5 @@
 package com.tencent.cloud.huiyansdkface.okio;
 
-import android.widget.ExpandableListView;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
@@ -329,7 +328,7 @@ public final class Buffer implements BufferedSink, BufferedSource, Cloneable, By
     }
 
     /* renamed from: clone */
-    public Buffer m10133clone() {
+    public Buffer m7090clone() {
         Buffer buffer = new Buffer();
         if (this.size == 0) {
             return buffer;
@@ -774,7 +773,7 @@ public final class Buffer implements BufferedSink, BufferedSource, Cloneable, By
             return -1;
         }
         int min = Math.min(i2, segment.limit - segment.pos);
-        System.arraycopy((Object) segment.data, segment.pos, (Object) bArr, i, min);
+        System.arraycopy(segment.data, segment.pos, bArr, i, min);
         segment.pos += min;
         this.size -= min;
         if (segment.pos == segment.limit) {
@@ -1055,7 +1054,7 @@ public final class Buffer implements BufferedSink, BufferedSource, Cloneable, By
         int i = segment.pos;
         int i2 = segment.limit;
         if (i2 - i < 8) {
-            return ((readInt() & ExpandableListView.PACKED_POSITION_VALUE_NULL) << 32) | (ExpandableListView.PACKED_POSITION_VALUE_NULL & readInt());
+            return ((readInt() & 4294967295L) << 32) | (4294967295L & readInt());
         }
         byte[] bArr = segment.data;
         int i3 = i + 1;
@@ -1203,7 +1202,7 @@ public final class Buffer implements BufferedSink, BufferedSource, Cloneable, By
                 i3 = 2048;
             } else if ((b & 248) != 240) {
                 skip(1L);
-                return 65533;
+                return REPLACEMENT_CHARACTER;
             } else {
                 i = b & 7;
                 i2 = 4;
@@ -1218,18 +1217,12 @@ public final class Buffer implements BufferedSink, BufferedSource, Cloneable, By
                 byte b2 = getByte(j2);
                 if ((b2 & 192) != 128) {
                     skip(j2);
-                    return 65533;
+                    return REPLACEMENT_CHARACTER;
                 }
                 i = (i << 6) | (b2 & 63);
             }
             skip(j);
-            if (i > 1114111) {
-                return 65533;
-            }
-            if ((i < 55296 || i > 57343) && i >= i3) {
-                return i;
-            }
-            return 65533;
+            return i > 1114111 ? REPLACEMENT_CHARACTER : ((i < 55296 || i > 57343) && i >= i3) ? i : REPLACEMENT_CHARACTER;
         }
         throw new EOFException();
     }
@@ -1618,7 +1611,7 @@ public final class Buffer implements BufferedSink, BufferedSource, Cloneable, By
             while (i < i3) {
                 Segment writableSegment = writableSegment(1);
                 int min = Math.min(i3 - i, 8192 - writableSegment.limit);
-                System.arraycopy((Object) bArr, i, (Object) writableSegment.data, writableSegment.limit, min);
+                System.arraycopy(bArr, i, writableSegment.data, writableSegment.limit, min);
                 i += min;
                 writableSegment.limit += min;
             }

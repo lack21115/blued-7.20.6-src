@@ -13,20 +13,20 @@ import java.io.IOException;
 public abstract class LocalUriFetcher<T> implements DataFetcher<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Uri f20723a;
+    private final Uri f7117a;
     private final ContentResolver b;
 
     /* renamed from: c  reason: collision with root package name */
-    private T f20724c;
+    private T f7118c;
 
     public LocalUriFetcher(ContentResolver contentResolver, Uri uri) {
         this.b = contentResolver;
-        this.f20723a = uri;
+        this.f7117a = uri;
     }
 
     @Override // com.bumptech.glide.load.data.DataFetcher
     public void a() {
-        T t = this.f20724c;
+        T t = this.f7118c;
         if (t != null) {
             try {
                 a(t);
@@ -38,8 +38,8 @@ public abstract class LocalUriFetcher<T> implements DataFetcher<T> {
     @Override // com.bumptech.glide.load.data.DataFetcher
     public final void a(Priority priority, DataFetcher.DataCallback<? super T> dataCallback) {
         try {
-            T b = b(this.f20723a, this.b);
-            this.f20724c = b;
+            T b = b(this.f7117a, this.b);
+            this.f7118c = b;
             dataCallback.a((DataFetcher.DataCallback<? super T>) b);
         } catch (FileNotFoundException e) {
             if (Log.isLoggable("LocalUriFetcher", 3)) {

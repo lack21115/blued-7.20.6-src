@@ -9,23 +9,23 @@ import org.json.JSONObject;
 public class f0 implements ISessionObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArraySet<ISessionObserver> f21216a = new CopyOnWriteArraySet<>();
+    public final CopyOnWriteArraySet<ISessionObserver> f7610a = new CopyOnWriteArraySet<>();
 
     public void a(ISessionObserver iSessionObserver) {
         if (iSessionObserver != null) {
-            this.f21216a.add(iSessionObserver);
+            this.f7610a.add(iSessionObserver);
         }
     }
 
     public void b(ISessionObserver iSessionObserver) {
         if (iSessionObserver != null) {
-            this.f21216a.remove(iSessionObserver);
+            this.f7610a.remove(iSessionObserver);
         }
     }
 
     @Override // com.bytedance.applog.ISessionObserver
     public void onSessionBatchEvent(long j, String str, JSONObject jSONObject) {
-        Iterator<ISessionObserver> it = this.f21216a.iterator();
+        Iterator<ISessionObserver> it = this.f7610a.iterator();
         while (it.hasNext()) {
             it.next().onSessionBatchEvent(j, str, jSONObject);
         }
@@ -33,7 +33,7 @@ public class f0 implements ISessionObserver {
 
     @Override // com.bytedance.applog.ISessionObserver
     public void onSessionStart(long j, String str) {
-        Iterator<ISessionObserver> it = this.f21216a.iterator();
+        Iterator<ISessionObserver> it = this.f7610a.iterator();
         while (it.hasNext()) {
             it.next().onSessionStart(j, str);
         }
@@ -41,7 +41,7 @@ public class f0 implements ISessionObserver {
 
     @Override // com.bytedance.applog.ISessionObserver
     public void onSessionTerminate(long j, String str, JSONObject jSONObject) {
-        Iterator<ISessionObserver> it = this.f21216a.iterator();
+        Iterator<ISessionObserver> it = this.f7610a.iterator();
         while (it.hasNext()) {
             it.next().onSessionTerminate(j, str, jSONObject);
         }

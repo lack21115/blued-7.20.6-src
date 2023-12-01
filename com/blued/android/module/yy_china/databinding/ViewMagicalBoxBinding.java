@@ -12,13 +12,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/ViewMagicalBoxBinding.class */
 public final class ViewMagicalBoxBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16869a;
+    public final ImageView a;
     public final ConstraintLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ProgressBar f16870c;
+    public final ProgressBar c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -27,9 +23,9 @@ public final class ViewMagicalBoxBinding implements ViewBinding {
 
     private ViewMagicalBoxBinding(ConstraintLayout constraintLayout, ImageView imageView, ConstraintLayout constraintLayout2, ProgressBar progressBar, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.h = constraintLayout;
-        this.f16869a = imageView;
+        this.a = imageView;
         this.b = constraintLayout2;
-        this.f16870c = progressBar;
+        this.c = progressBar;
         this.d = textView;
         this.e = textView2;
         this.f = textView3;
@@ -48,8 +44,8 @@ public final class ViewMagicalBoxBinding implements ViewBinding {
         String str;
         ImageView imageView = (ImageView) view.findViewById(R.id.iv_magical_box);
         if (imageView != null) {
-            ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.ll_box_info);
-            if (constraintLayout != null) {
+            ConstraintLayout findViewById = view.findViewById(R.id.ll_box_info);
+            if (findViewById != null) {
                 ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
                 if (progressBar != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_box_name);
@@ -60,7 +56,7 @@ public final class ViewMagicalBoxBinding implements ViewBinding {
                             if (textView3 != null) {
                                 TextView textView4 = (TextView) view.findViewById(R.id.tv_total_beans);
                                 if (textView4 != null) {
-                                    return new ViewMagicalBoxBinding((ConstraintLayout) view, imageView, constraintLayout, progressBar, textView, textView2, textView3, textView4);
+                                    return new ViewMagicalBoxBinding((ConstraintLayout) view, imageView, findViewById, progressBar, textView, textView2, textView3, textView4);
                                 }
                                 str = "tvTotalBeans";
                             } else {
@@ -84,7 +80,6 @@ public final class ViewMagicalBoxBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.h;

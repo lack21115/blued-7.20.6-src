@@ -14,9 +14,8 @@ public final class CancellationSignal {
         void onCancel();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/os/CancellationSignal$Transport.class */
-    public static final class Transport extends ICancellationSignal.Stub {
+    private static final class Transport extends ICancellationSignal.Stub {
         final CancellationSignal mCancellationSignal;
 
         private Transport() {

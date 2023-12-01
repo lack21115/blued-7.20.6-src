@@ -8,7 +8,7 @@ import com.tencent.tencentmap.mapsdk.maps.model.MarkerOptions;
 public interface r4 extends u4 {
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f37733c = "tencent_map_infowindow_view";
+    public static final String f24042c = "tencent_map_infowindow_view";
     public static final String d = "tencent_map_infowindow_content_title";
     public static final String e = "tencent_map_infowindow_content_snippet";
 

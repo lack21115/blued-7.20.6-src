@@ -9,17 +9,17 @@ import com.tencent.tmsqmsp.sdk.base.f;
 public class e implements com.tencent.tmsqmsp.sdk.base.b, c {
 
     /* renamed from: a  reason: collision with root package name */
-    private b f39780a;
+    private b f26089a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private IVendorCallback f39781c;
+    private IVendorCallback f26090c;
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public String a() {
         String str = "";
         if (e()) {
-            str = this.f39780a.b();
+            str = this.f26089a.b();
             if (str == null) {
                 return "";
             }
@@ -34,15 +34,15 @@ public class e implements com.tencent.tmsqmsp.sdk.base.b, c {
             if (!TextUtils.isEmpty(a2)) {
                 b.a(context, a2);
             }
-            this.f39780a = new b(context, this);
-            this.f39781c = iVendorCallback;
+            this.f26089a = new b(context, this);
+            this.f26090c = iVendorCallback;
             this.b = context;
         }
     }
 
     @Override // com.tencent.tmsqmsp.sdk.g.d.c
     public void a(boolean z) {
-        IVendorCallback iVendorCallback = this.f39781c;
+        IVendorCallback iVendorCallback = this.f26090c;
         if (iVendorCallback != null) {
             iVendorCallback.onResult(e(), b(), a());
         }
@@ -52,7 +52,7 @@ public class e implements com.tencent.tmsqmsp.sdk.base.b, c {
     public String b() {
         String str = "";
         if (e()) {
-            str = this.f39780a.a();
+            str = this.f26089a.a();
             if (str == null) {
                 return "";
             }
@@ -62,7 +62,7 @@ public class e implements com.tencent.tmsqmsp.sdk.base.b, c {
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public void c() {
-        b bVar = this.f39780a;
+        b bVar = this.f26089a;
         if (bVar != null) {
             bVar.a(f.a(this.b));
         } else {
@@ -77,7 +77,7 @@ public class e implements com.tencent.tmsqmsp.sdk.base.b, c {
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public boolean e() {
-        b bVar = this.f39780a;
+        b bVar = this.f26089a;
         if (bVar != null) {
             return bVar.c();
         }
@@ -86,7 +86,7 @@ public class e implements com.tencent.tmsqmsp.sdk.base.b, c {
 
     @Override // com.tencent.tmsqmsp.sdk.base.b
     public void f() {
-        b bVar = this.f39780a;
+        b bVar = this.f26089a;
         if (bVar != null) {
             bVar.d();
         }
@@ -94,7 +94,7 @@ public class e implements com.tencent.tmsqmsp.sdk.base.b, c {
 
     @Override // com.tencent.tmsqmsp.sdk.g.d.c
     public void g() {
-        IVendorCallback iVendorCallback = this.f39781c;
+        IVendorCallback iVendorCallback = this.f26090c;
         if (iVendorCallback != null) {
             iVendorCallback.onResult(false, "", "");
         }

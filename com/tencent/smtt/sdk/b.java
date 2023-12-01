@@ -10,11 +10,11 @@ import com.tencent.smtt.sdk.stat.MttLoader;
 public class b implements com.tencent.smtt.export.external.interfaces.DownloadListener {
 
     /* renamed from: a  reason: collision with root package name */
-    private DownloadListener f38836a;
+    private DownloadListener f25145a;
     private WebView b;
 
     public b(WebView webView, DownloadListener downloadListener, boolean z) {
-        this.f38836a = downloadListener;
+        this.f25145a = downloadListener;
         this.b = webView;
     }
 
@@ -25,7 +25,7 @@ public class b implements com.tencent.smtt.export.external.interfaces.DownloadLi
 
     @Override // com.tencent.smtt.export.external.interfaces.DownloadListener
     public void onDownloadStart(String str, String str2, byte[] bArr, String str3, String str4, String str5, long j, String str6, String str7) {
-        DownloadListener downloadListener = this.f38836a;
+        DownloadListener downloadListener = this.f25145a;
         if (downloadListener != null) {
             downloadListener.onDownloadStart(str, str3, str4, str5, j);
         } else if (!QbSdk.canOpenMimeFileType(this.b.getContext(), str5)) {

@@ -17,19 +17,19 @@ import org.json.JSONObject;
 public class df extends bf {
 
     /* renamed from: a  reason: collision with root package name */
-    private WebView f9416a;
+    private WebView f6576a;
     private BaiduHybridAdViewListener q;
     private IXHybridAdRenderer r;
 
     public df(WebView webView) {
         super(webView.getContext());
-        this.f9416a = webView;
+        this.f6576a = webView;
         webView.removeJavascriptInterface("searchBoxJavaBridge_");
-        this.f9416a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
-        this.f9416a.removeJavascriptInterface("accessibilityTraversal");
-        this.f9416a.getSettings().setAllowContentAccess(false);
-        this.f9416a.getSettings().setSavePassword(false);
-        this.f9416a.getSettings().setAllowFileAccess(false);
+        this.f6576a.removeJavascriptInterface(Context.ACCESSIBILITY_SERVICE);
+        this.f6576a.removeJavascriptInterface("accessibilityTraversal");
+        this.f6576a.getSettings().setAllowContentAccess(false);
+        this.f6576a.getSettings().setSavePassword(false);
+        this.f6576a.getSettings().setAllowFileAccess(false);
     }
 
     @Override // com.baidu.mobads.sdk.internal.bf
@@ -92,7 +92,7 @@ public class df extends bf {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.baidu.mobads.sdk.internal.bf
     public void a(IOAdEvent iOAdEvent) {
-        this.r.setCustomerWebView(this.f9416a);
+        this.r.setCustomerWebView(this.f6576a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -10,7 +10,7 @@ import java.util.List;
 public abstract class p1 implements TencentMapComponent.Component {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<q1> f37680a = new ArrayList();
+    private final List<q1> f23989a = new ArrayList();
     private volatile int b;
 
     public void a(Context context) {
@@ -19,29 +19,29 @@ public abstract class p1 implements TencentMapComponent.Component {
     public void a(q1 q1Var) {
         synchronized (this) {
             if (q1Var != null) {
-                this.f37680a.add(q1Var);
+                this.f23989a.add(q1Var);
             }
         }
     }
 
     public void a(q1 q1Var, Bundle bundle) {
         synchronized (this) {
-            if (this.f37680a.size() == 0) {
+            if (this.f23989a.size() == 0) {
                 return;
             }
-            this.b = this.f37680a.indexOf(q1Var);
+            this.b = this.f23989a.indexOf(q1Var);
         }
     }
 
     public void b(q1 q1Var) {
         synchronized (this) {
             if (q1Var != null) {
-                this.f37680a.remove(q1Var);
+                this.f23989a.remove(q1Var);
             }
-            if (this.f37680a.size() == 0) {
+            if (this.f23989a.size() == 0) {
                 f();
             } else {
-                this.b = this.f37680a.size() - 1;
+                this.b = this.f23989a.size() - 1;
             }
         }
     }
@@ -56,17 +56,17 @@ public abstract class p1 implements TencentMapComponent.Component {
 
     public void f() {
         synchronized (this) {
-            this.f37680a.clear();
+            this.f23989a.clear();
             this.b = 0;
         }
     }
 
     public q1 getMapContext() {
         synchronized (this) {
-            if (this.b < 0 || this.b >= this.f37680a.size()) {
+            if (this.b < 0 || this.b >= this.f23989a.size()) {
                 return null;
             }
-            return this.f37680a.get(this.b);
+            return this.f23989a.get(this.b);
         }
     }
 }

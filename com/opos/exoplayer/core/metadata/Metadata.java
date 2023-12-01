@@ -22,18 +22,18 @@ public final class Metadata implements Parcelable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private final Entry[] f25518a;
+    private final Entry[] f11830a;
 
     /* loaded from: source-8303388-dex2jar.jar:com/opos/exoplayer/core/metadata/Metadata$Entry.class */
     public interface Entry extends Parcelable {
     }
 
     Metadata(Parcel parcel) {
-        this.f25518a = new Entry[parcel.readInt()];
+        this.f11830a = new Entry[parcel.readInt()];
         int i = 0;
         while (true) {
             int i2 = i;
-            Entry[] entryArr = this.f25518a;
+            Entry[] entryArr = this.f11830a;
             if (i2 >= entryArr.length) {
                 return;
             }
@@ -44,24 +44,24 @@ public final class Metadata implements Parcelable {
 
     public Metadata(List<? extends Entry> list) {
         if (list == null) {
-            this.f25518a = new Entry[0];
+            this.f11830a = new Entry[0];
             return;
         }
         Entry[] entryArr = new Entry[list.size()];
-        this.f25518a = entryArr;
+        this.f11830a = entryArr;
         list.toArray(entryArr);
     }
 
     public Metadata(Entry... entryArr) {
-        this.f25518a = entryArr == null ? new Entry[0] : entryArr;
+        this.f11830a = entryArr == null ? new Entry[0] : entryArr;
     }
 
     public int a() {
-        return this.f25518a.length;
+        return this.f11830a.length;
     }
 
     public Entry a(int i) {
-        return this.f25518a[i];
+        return this.f11830a[i];
     }
 
     @Override // android.os.Parcelable
@@ -76,17 +76,17 @@ public final class Metadata implements Parcelable {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        return Arrays.equals(this.f25518a, ((Metadata) obj).f25518a);
+        return Arrays.equals(this.f11830a, ((Metadata) obj).f11830a);
     }
 
     public int hashCode() {
-        return Arrays.hashCode(this.f25518a);
+        return Arrays.hashCode(this.f11830a);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f25518a.length);
-        Entry[] entryArr = this.f25518a;
+        parcel.writeInt(this.f11830a.length);
+        Entry[] entryArr = this.f11830a;
         int length = entryArr.length;
         int i2 = 0;
         while (true) {

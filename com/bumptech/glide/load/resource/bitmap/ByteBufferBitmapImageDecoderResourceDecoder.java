@@ -12,11 +12,11 @@ import java.nio.ByteBuffer;
 public final class ByteBufferBitmapImageDecoderResourceDecoder implements ResourceDecoder<ByteBuffer, Bitmap> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BitmapImageDecoderResourceDecoder f20942a = new BitmapImageDecoderResourceDecoder();
+    private final BitmapImageDecoderResourceDecoder f7336a = new BitmapImageDecoderResourceDecoder();
 
     @Override // com.bumptech.glide.load.ResourceDecoder
     public Resource<Bitmap> a(ByteBuffer byteBuffer, int i, int i2, Options options) throws IOException {
-        return this.f20942a.a(ImageDecoder.createSource(byteBuffer), i, i2, options);
+        return this.f7336a.a(ImageDecoder.createSource(byteBuffer), i, i2, options);
     }
 
     @Override // com.bumptech.glide.load.ResourceDecoder

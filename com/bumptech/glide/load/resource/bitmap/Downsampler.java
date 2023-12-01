@@ -36,12 +36,12 @@ import java.util.Set;
 public final class Downsampler {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Option<DecodeFormat> f20951a = Option.a("com.bumptech.glide.load.resource.bitmap.Downsampler.DecodeFormat", DecodeFormat.f20696c);
+    public static final Option<DecodeFormat> f7345a = Option.a("com.bumptech.glide.load.resource.bitmap.Downsampler.DecodeFormat", DecodeFormat.f7090c);
     public static final Option<PreferredColorSpace> b = Option.a("com.bumptech.glide.load.resource.bitmap.Downsampler.PreferredColorSpace", PreferredColorSpace.SRGB);
     @Deprecated
 
     /* renamed from: c  reason: collision with root package name */
-    public static final Option<DownsampleStrategy> f20952c = DownsampleStrategy.h;
+    public static final Option<DownsampleStrategy> f7346c = DownsampleStrategy.h;
     public static final Option<Boolean> d = Option.a("com.bumptech.glide.load.resource.bitmap.Downsampler.FixBitmapSize", false);
     public static final Option<Boolean> e = Option.a("com.bumptech.glide.load.resource.bitmap.Downsampler.AllowHardwareDecode", false);
     private static final Set<String> f = Collections.unmodifiableSet(new HashSet(Arrays.asList("image/vnd.wap.wbmp", "image/x-ico")));
@@ -182,7 +182,7 @@ public final class Downsampler {
         byte[] bArr = (byte[]) this.l.a(65536, byte[].class);
         BitmapFactory.Options a2 = a();
         a2.inTempStorage = bArr;
-        DecodeFormat decodeFormat = (DecodeFormat) options.a(f20951a);
+        DecodeFormat decodeFormat = (DecodeFormat) options.a(f7345a);
         PreferredColorSpace preferredColorSpace = (PreferredColorSpace) options.a(b);
         try {
             return BitmapResource.a(a(imageReader, a2, (DownsampleStrategy) options.a(DownsampleStrategy.h), decodeFormat, preferredColorSpace, options.a(e) != null && ((Boolean) options.a(e)).booleanValue(), i2, i3, ((Boolean) options.a(d)).booleanValue(), decodeCallbacks), this.j);

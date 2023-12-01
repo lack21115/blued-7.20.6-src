@@ -4,7 +4,7 @@ package com.anythink.expressad.exoplayer.f;
 public interface c {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final c f7333a = new c() { // from class: com.anythink.expressad.exoplayer.f.c.1
+    public static final c f4494a = new c() { // from class: com.anythink.expressad.exoplayer.f.c.1
         @Override // com.anythink.expressad.exoplayer.f.c
         public final a a() {
             return d.a();

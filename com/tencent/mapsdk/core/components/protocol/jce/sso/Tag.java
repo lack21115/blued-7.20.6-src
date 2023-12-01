@@ -10,7 +10,7 @@ import com.tencent.mapsdk.internal.q;
 public final class Tag extends MapJceStruct implements Cloneable {
 
     /* renamed from: c  reason: collision with root package name */
-    public static byte[] f37272c;
+    public static byte[] f23581c;
     public static final /* synthetic */ boolean d = !Tag.class.desiredAssertionStatus();
     public String strId;
     public byte[] value;
@@ -88,11 +88,11 @@ public final class Tag extends MapJceStruct implements Cloneable {
     @Override // com.tencent.mapsdk.internal.p
     public void readFrom(m mVar) {
         this.strId = mVar.b(0, true);
-        if (f37272c == null) {
-            f37272c = r0;
+        if (f23581c == null) {
+            f23581c = r0;
             byte[] bArr = {0};
         }
-        this.value = mVar.a(f37272c, 1, true);
+        this.value = mVar.a(f23581c, 1, true);
     }
 
     @Override // com.tencent.mapsdk.internal.p

@@ -7,10 +7,10 @@ import android.os.MessageQueue;
 public final /* synthetic */ class e implements MessageQueue.IdleHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    private final b f36329a;
+    private final b f22638a;
 
     private e(b bVar) {
-        this.f36329a = bVar;
+        this.f22638a = bVar;
     }
 
     public static MessageQueue.IdleHandler a(b bVar) {
@@ -19,6 +19,6 @@ public final /* synthetic */ class e implements MessageQueue.IdleHandler {
 
     @Override // android.os.MessageQueue.IdleHandler
     public final boolean queueIdle() {
-        return b.a(this.f36329a);
+        return b.a(this.f22638a);
     }
 }

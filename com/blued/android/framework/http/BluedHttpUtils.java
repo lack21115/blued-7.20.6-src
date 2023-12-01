@@ -11,9 +11,7 @@ import javax.net.ssl.SSLException;
 
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/framework/http/BluedHttpUtils.class */
 public class BluedHttpUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static boolean f9797a = false;
+    public static boolean a = false;
     public static IErrorHandler b = new IErrorHandler() { // from class: com.blued.android.framework.http.BluedHttpUtils.1
         @Override // com.blued.android.framework.http.BluedHttpUtils.IErrorHandler
         public boolean a(int i, String str) {
@@ -24,7 +22,7 @@ public class BluedHttpUtils {
             } else if (i == 4031101 || i == 4031102 || i == 4031201 || i == 403009032) {
                 ProviderHolder.a().b().d();
             }
-            if ((BluedHttpUtils.f9797a || i >= 0) && !TextUtils.isEmpty(str)) {
+            if ((BluedHttpUtils.a || i >= 0) && !TextUtils.isEmpty(str)) {
                 AppMethods.a((CharSequence) str);
                 return true;
             }
@@ -37,6 +35,7 @@ public class BluedHttpUtils {
         boolean a(int i, String str);
     }
 
+    /* JADX WARN: Type inference failed for: r2v2, types: [com.blued.android.framework.http.BluedHttpUtils$2] */
     public static Pair<Integer, String> a(Throwable th, int i, String str) {
         int i2 = 0;
         if (th == null || !(th instanceof SSLException)) {
@@ -68,7 +67,7 @@ public class BluedHttpUtils {
     }
 
     public static void a(boolean z) {
-        f9797a = AppInfo.m() || z;
+        a = AppInfo.m() || z;
     }
 
     @Deprecated
@@ -82,8 +81,8 @@ public class BluedHttpUtils {
             return true;
         }
         Pair<Integer, String> a2 = a(th, i, str);
-        int intValue = a2.first.intValue();
-        String str2 = a2.second;
+        int intValue = ((Integer) a2.first).intValue();
+        String str2 = (String) a2.second;
         if (iErrorHandler != null ? iErrorHandler.a(intValue, str2) : false) {
             return false;
         }

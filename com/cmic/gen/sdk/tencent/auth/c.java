@@ -25,11 +25,11 @@ public class c {
     private static c f;
 
     /* renamed from: a  reason: collision with root package name */
-    protected final com.cmic.gen.sdk.tencent.auth.a f21597a;
+    protected final com.cmic.gen.sdk.tencent.auth.a f7991a;
     protected final Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    protected long f21598c;
+    protected long f7992c;
     protected final Handler d;
     protected String e;
     private final Object g;
@@ -52,11 +52,11 @@ public class c {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public c(Context context) {
-        this.f21598c = 8000L;
+        this.f7992c = 8000L;
         this.g = new Object();
         this.b = context.getApplicationContext();
         this.d = new Handler(this.b.getMainLooper());
-        this.f21597a = com.cmic.gen.sdk.tencent.auth.a.a(this.b);
+        this.f7991a = com.cmic.gen.sdk.tencent.auth.a.a(this.b);
         r.a(this.b);
         k.a(this.b);
         j.a(this.b);
@@ -147,8 +147,8 @@ public class c {
     /* JADX INFO: Access modifiers changed from: protected */
     public void a(com.cmic.gen.sdk.tencent.a aVar) {
         final a aVar2 = new a(aVar);
-        this.d.postDelayed(aVar2, this.f21598c);
-        this.f21597a.a(aVar, new b() { // from class: com.cmic.gen.sdk.tencent.auth.c.5
+        this.d.postDelayed(aVar2, this.f7992c);
+        this.f7991a.a(aVar, new b() { // from class: com.cmic.gen.sdk.tencent.auth.c.5
             @Override // com.cmic.gen.sdk.tencent.auth.b
             public void a(String str, String str2, com.cmic.gen.sdk.tencent.a aVar3, JSONObject jSONObject) {
                 c.this.d.removeCallbacks(aVar2);
@@ -170,7 +170,7 @@ public class c {
         aVar.a("loginMethod", str3);
         aVar.a("appkey", str2);
         aVar.a("appid", str);
-        aVar.a("timeOut", String.valueOf(this.f21598c));
+        aVar.a("timeOut", String.valueOf(this.f7992c));
         boolean a3 = g.a(this.b, "android.permission.READ_PHONE_STATE");
         com.cmic.gen.sdk.tencent.e.c.a("AuthnHelperCore", "有READ_PHONE_STATE权限？" + a3);
         aVar.a("hsaReadPhoneStatePermission", a3);
@@ -367,6 +367,6 @@ public class c {
     }
 
     public void setOverTime(long j) {
-        this.f21598c = j;
+        this.f7992c = j;
     }
 }

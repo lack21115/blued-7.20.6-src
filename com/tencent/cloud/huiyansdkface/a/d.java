@@ -10,7 +10,7 @@ import java.util.List;
 public class d {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f35472a;
+    private Context f21781a;
     private com.tencent.cloud.huiyansdkface.a.g.b f;
     private g<com.tencent.cloud.huiyansdkface.a.a.a.b> m;
     private b o;
@@ -18,7 +18,7 @@ public class d {
     private com.tencent.cloud.huiyansdkface.a.c.b b = com.tencent.cloud.huiyansdkface.a.c.c.a();
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f35473c = false;
+    private boolean f21782c = false;
     private com.tencent.cloud.huiyansdkface.a.a.a.c d = com.tencent.cloud.huiyansdkface.a.a.a.c.CROP_CENTER;
     private com.tencent.cloud.huiyansdkface.a.a.a.a e = com.tencent.cloud.huiyansdkface.a.a.a.a.BACK;
     private com.tencent.cloud.huiyansdkface.a.e.d g = null;
@@ -31,7 +31,7 @@ public class d {
     private List<com.tencent.cloud.huiyansdkface.a.a.e> p = new ArrayList();
 
     public d(Context context) {
-        this.f35472a = context;
+        this.f21781a = context;
     }
 
     public c a() {
@@ -41,7 +41,7 @@ public class d {
         if (f >= 0.0f && f <= 1.0f) {
             a2.a(f);
         }
-        return new c(this.f35472a, this.b, this.f, this.e, a2, this.d, this.o, this.g, this.f35473c);
+        return new c(this.f21781a, this.b, this.f, this.e, a2, this.d, this.o, this.g, this.f21782c);
     }
 
     public d a(com.tencent.cloud.huiyansdkface.a.a.a.a aVar) {
@@ -108,7 +108,7 @@ public class d {
     }
 
     public d a(boolean z) {
-        this.f35473c = z;
+        this.f21782c = z;
         return this;
     }
 

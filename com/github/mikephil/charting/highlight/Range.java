@@ -4,10 +4,10 @@ package com.github.mikephil.charting.highlight;
 public final class Range {
 
     /* renamed from: a  reason: collision with root package name */
-    public float f22153a;
+    public float f8546a;
     public float b;
 
     public boolean a(float f) {
-        return f > this.f22153a && f <= this.b;
+        return f > this.f8546a && f <= this.b;
     }
 }

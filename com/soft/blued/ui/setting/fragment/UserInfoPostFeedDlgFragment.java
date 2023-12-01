@@ -20,8 +20,10 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.anythink.expressad.a;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.imagecache.RecyclingUtils;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityFragmentActive;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntity;
@@ -46,6 +48,7 @@ import com.blued.community.ui.topic.model.BluedTopic;
 import com.blued.community.utils.UserInfoUtils;
 import com.blued.das.client.feed.FeedProtos;
 import com.bytedance.applog.tracker.Tracker;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.soft.blued.R;
 import com.soft.blued.databinding.FragmentUserInfoPostFeedBinding;
 import com.soft.blued.ui.setting.model.UserInfoPostFeedItemLayoutInfo;
@@ -63,7 +66,7 @@ import kotlin.text.StringsKt;
 public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
 
     /* renamed from: a  reason: collision with root package name */
-    private FragmentUserInfoPostFeedBinding f33624a;
+    private FragmentUserInfoPostFeedBinding f19933a;
     private Bitmap b;
     private int f;
     private int g;
@@ -72,7 +75,7 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
     private float o;
 
     /* renamed from: c  reason: collision with root package name */
-    private Paint f33625c = new Paint();
+    private Paint f19934c = new Paint();
     private TextPaint d = new TextPaint();
     private float e = FeedMethods.a(11.0f);
     private final int h = FeedMethods.c(247);
@@ -85,9 +88,9 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
     public UserInfoPostFeedDlgFragment() {
         this.f = FeedMethods.c(335);
         this.g = FeedMethods.c(321);
-        this.f33625c.setDither(true);
-        this.f33625c.setAntiAlias(true);
-        this.f33625c.setStyle(Paint.Style.FILL_AND_STROKE);
+        this.f19934c.setDither(true);
+        this.f19934c.setAntiAlias(true);
+        this.f19934c.setStyle(Paint.Style.FILL_AND_STROKE);
         this.d.setAntiAlias(true);
         this.d.setColor(-1);
         int c2 = AppInfo.l - FeedMethods.c(40);
@@ -126,7 +129,7 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         path2.op(path, Path.Op.DIFFERENCE);
         canvas.save();
         canvas.translate(userInfoPostFeedItemLayoutInfo.getStartX(), userInfoPostFeedItemLayoutInfo.getStartY());
-        canvas.drawPath(path2, this.f33625c);
+        canvas.drawPath(path2, this.f19934c);
         canvas.drawText(userInfoPostFeedItemLayoutInfo.getContent(), userInfoPostFeedTextInfo.getLeftRightMargin(), (height - userInfoPostFeedTextInfo.getTopBottomMargin()) - ((FeedMethods.a(1.2f) * userInfoPostFeedTextInfo.getFactor()) * this.p), this.d);
         canvas.restore();
     }
@@ -137,10 +140,10 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(UserInfoPostFeedDlgFragment this$0, View view) {
+    public static final void a(UserInfoPostFeedDlgFragment userInfoPostFeedDlgFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.i();
+        Intrinsics.e(userInfoPostFeedDlgFragment, "this$0");
+        userInfoPostFeedDlgFragment.i();
         EventTrackFeed.c(FeedProtos.Event.FEED_GUIDE_EDIT_PROFILE_POP_NO_CLICK);
     }
 
@@ -255,19 +258,19 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(UserInfoPostFeedDlgFragment this$0) {
+    public static final void b(UserInfoPostFeedDlgFragment userInfoPostFeedDlgFragment) {
         final ShapeFrameLayout shapeFrameLayout;
         ShapeFrameLayout shapeFrameLayout2;
-        Intrinsics.e(this$0, "this$0");
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this$0.f33624a;
-        if (fragmentUserInfoPostFeedBinding != null && (shapeFrameLayout2 = fragmentUserInfoPostFeedBinding.f28995a) != null) {
+        Intrinsics.e(userInfoPostFeedDlgFragment, "this$0");
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = userInfoPostFeedDlgFragment.f19933a;
+        if (fragmentUserInfoPostFeedBinding != null && (shapeFrameLayout2 = fragmentUserInfoPostFeedBinding.f15305a) != null) {
             shapeFrameLayout2.setVisibility(0);
             ScaleAnimation scaleAnimation = new ScaleAnimation(0.0f, 1.0f, 0.0f, 1.0f, 1, 0.5f, 1, 0.5f);
             scaleAnimation.setDuration(200L);
             shapeFrameLayout2.startAnimation(scaleAnimation);
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = this$0.f33624a;
-        if (fragmentUserInfoPostFeedBinding2 == null || (shapeFrameLayout = fragmentUserInfoPostFeedBinding2.f28995a) == null) {
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = userInfoPostFeedDlgFragment.f19933a;
+        if (fragmentUserInfoPostFeedBinding2 == null || (shapeFrameLayout = fragmentUserInfoPostFeedBinding2.f15305a) == null) {
             return;
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(shapeFrameLayout, "alpha", 0.1f, 1.0f);
@@ -276,7 +279,7 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         objectAnimator.addListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.ui.setting.fragment.UserInfoPostFeedDlgFragment$showAnim$1$2$1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                ShapeFrameLayout.this.setAlpha(1.0f);
+                shapeFrameLayout.setAlpha(1.0f);
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -288,10 +291,10 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void b(UserInfoPostFeedDlgFragment this$0, View view) {
+    public static final void b(UserInfoPostFeedDlgFragment userInfoPostFeedDlgFragment, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.q();
+        Intrinsics.e(userInfoPostFeedDlgFragment, "this$0");
+        userInfoPostFeedDlgFragment.q();
     }
 
     private final void m() {
@@ -300,9 +303,9 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         ShapeTextView shapeTextView2;
         ShapeLinearLayout shapeLinearLayout;
         ShapeFrameLayout shapeFrameLayout;
-        boolean s = CommunityManager.f19086a.a().s();
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f33624a;
-        if (fragmentUserInfoPostFeedBinding != null && (shapeFrameLayout = fragmentUserInfoPostFeedBinding.f28995a) != null) {
+        boolean s = CommunityManager.a.a().s();
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f19933a;
+        if (fragmentUserInfoPostFeedBinding != null && (shapeFrameLayout = fragmentUserInfoPostFeedBinding.f15305a) != null) {
             ShapeModel shapeModel = shapeFrameLayout.getShapeModel();
             ShapeModel shapeModel2 = shapeModel;
             if (shapeModel == null) {
@@ -312,7 +315,7 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
             shapeModel2.v = Color.parseColor(s ? "#151515" : "#FFFFFF");
             shapeFrameLayout.setShapeModel(shapeModel2);
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = this.f33624a;
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = this.f19933a;
         if (fragmentUserInfoPostFeedBinding2 != null && (shapeLinearLayout = fragmentUserInfoPostFeedBinding2.f) != null) {
             ShapeModel shapeModel3 = shapeLinearLayout.getShapeModel();
             ShapeModel shapeModel4 = shapeModel3;
@@ -332,7 +335,7 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
                 }
             });
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding3 = this.f33624a;
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding3 = this.f19933a;
         if (fragmentUserInfoPostFeedBinding3 != null && (shapeTextView2 = fragmentUserInfoPostFeedBinding3.b) != null) {
             shapeTextView2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$UserInfoPostFeedDlgFragment$EPQeZ5Kx9LnJOVcT2cWWZIBs0jA
                 @Override // android.view.View.OnClickListener
@@ -341,7 +344,7 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
                 }
             });
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding4 = this.f33624a;
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding4 = this.f19933a;
         if (fragmentUserInfoPostFeedBinding4 != null && (shapeTextView = fragmentUserInfoPostFeedBinding4.g) != null) {
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$UserInfoPostFeedDlgFragment$RwTkZSPM2ekfaxP3t8ka_5tQlV0
                 @Override // android.view.View.OnClickListener
@@ -350,8 +353,8 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
                 }
             });
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding5 = this.f33624a;
-        if (fragmentUserInfoPostFeedBinding5 == null || (imageView = fragmentUserInfoPostFeedBinding5.f28996c) == null) {
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding5 = this.f19933a;
+        if (fragmentUserInfoPostFeedBinding5 == null || (imageView = fragmentUserInfoPostFeedBinding5.f15306c) == null) {
             return;
         }
         ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
@@ -371,23 +374,23 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         if (bluedTopic == null) {
             return;
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f33624a;
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f19933a;
         ShapeLinearLayout shapeLinearLayout = fragmentUserInfoPostFeedBinding == null ? null : fragmentUserInfoPostFeedBinding.f;
         if (shapeLinearLayout != null) {
             shapeLinearLayout.setVisibility(0);
         }
         if (bluedTopic.is_anonym == 1) {
-            FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = this.f33624a;
+            FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = this.f19933a;
             if (fragmentUserInfoPostFeedBinding2 != null && (imageView2 = fragmentUserInfoPostFeedBinding2.d) != null) {
-                imageView2.setImageResource(2131233033);
+                imageView2.setImageResource(R.drawable.icon_annoy_blue);
             }
         } else {
-            FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding3 = this.f33624a;
+            FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding3 = this.f19933a;
             if (fragmentUserInfoPostFeedBinding3 != null && (imageView = fragmentUserInfoPostFeedBinding3.d) != null) {
-                imageView.setImageResource(2131232711);
+                imageView.setImageResource(R.drawable.feed_post_subject_icon_blue);
             }
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding4 = this.f33624a;
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding4 = this.f19933a;
         TextView textView = fragmentUserInfoPostFeedBinding4 == null ? null : fragmentUserInfoPostFeedBinding4.h;
         if (textView == null) {
             return;
@@ -397,8 +400,8 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
 
     private final void o() {
         ShapeFrameLayout shapeFrameLayout;
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f33624a;
-        if (fragmentUserInfoPostFeedBinding == null || (shapeFrameLayout = fragmentUserInfoPostFeedBinding.f28995a) == null) {
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f19933a;
+        if (fragmentUserInfoPostFeedBinding == null || (shapeFrameLayout = fragmentUserInfoPostFeedBinding.f15305a) == null) {
             return;
         }
         shapeFrameLayout.postDelayed(new Runnable() { // from class: com.soft.blued.ui.setting.fragment.-$$Lambda$UserInfoPostFeedDlgFragment$VVLb4IY1LjEVbjAFKl4Cr6FU-Mg
@@ -427,7 +430,7 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
     private final void q() {
         NewFeedModel newFeedModel = new NewFeedModel();
         newFeedModel.setLoadName(CommonStringUtils.c(UserInfoUtils.c()));
-        String a2 = Intrinsics.a(RecyclingUtils.e("photo"), (Object) "/userInfoPostFeed.png");
+        String a2 = Intrinsics.a(RecyclingUtils.e("photo"), "/userInfoPostFeed.png");
         if (ImageUtils.a(this.b, a2, Bitmap.CompressFormat.PNG)) {
             newFeedModel.localPath = a2;
             newFeedModel.setPics(a2);
@@ -451,11 +454,11 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
                     }
                     str2 = str3;
                     if (bluedTopic.is_anonym == 1) {
-                        str2 = Intrinsics.a(str3, (Object) "&");
+                        str2 = Intrinsics.a(str3, ContainerUtils.FIELD_DELIMITER);
                     }
                 }
-                newFeedModel.super_did = Intrinsics.a(str2, (Object) ",");
-                newFeedModel.super_topics_name = Intrinsics.a(bluedTopic.name, (Object) ",");
+                newFeedModel.super_did = Intrinsics.a(str2, ",");
+                newFeedModel.super_topics_name = Intrinsics.a(bluedTopic.name, ",");
             }
             CommunityServiceManager.e().a(false);
             FeedSendManager.a().a(newFeedModel);
@@ -468,7 +471,11 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
     private final void r() {
         final ActivityFragmentActive a2 = a();
         FeedHttpUtils.d(new BluedUIHttpResponse<BluedEntity<FeedIntroduceModel, FeedIntroduceExtra>>(a2) { // from class: com.soft.blued.ui.setting.fragment.UserInfoPostFeedDlgFragment$onLoadData$1
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
+            /* JADX INFO: Access modifiers changed from: package-private */
+            {
+                super((IRequestHost) a2);
+            }
+
             public void onUIUpdate(BluedEntity<FeedIntroduceModel, FeedIntroduceExtra> bluedEntity) {
                 BluedTopic label_topics;
                 UserInfoPostFeedDlgFragment userInfoPostFeedDlgFragment = UserInfoPostFeedDlgFragment.this;
@@ -496,12 +503,10 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         this.p = f;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog
     public int e() {
         return R.layout.fragment_user_info_post_feed;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog
     public void f() {
         super.f();
         ArrayList arrayList = new ArrayList();
@@ -516,11 +521,11 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         Bundle arguments2 = getArguments();
         String str2 = (String) (arguments2 == null ? null : arguments2.getSerializable("user_character"));
         if (str2 != null) {
-            LogUtils.c(Intrinsics.a("strCharacter: ", (Object) str2));
-            List b = StringsKt.b((CharSequence) str2, new String[]{","}, false, 6, 2, (Object) null);
+            LogUtils.c(Intrinsics.a("strCharacter: ", str2));
+            List b = StringsKt.b(str2, new String[]{","}, false, 6, 2, (Object) null);
             ArrayList arrayList5 = new ArrayList();
             for (Object obj : b) {
-                if (!TextUtils.isEmpty(StringsKt.b((CharSequence) ((String) obj)).toString())) {
+                if (!TextUtils.isEmpty(StringsKt.b((String) obj).toString())) {
                     arrayList5.add(obj);
                 }
             }
@@ -529,20 +534,20 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         Bundle arguments3 = getArguments();
         String str3 = (String) (arguments3 == null ? null : arguments3.getSerializable("user_purpose"));
         if (str3 != null) {
-            LogUtils.c(Intrinsics.a("strPurpose: ", (Object) str3));
-            for (String str4 : StringsKt.b((CharSequence) str3, new String[]{","}, false, 6, 2, (Object) null)) {
-                if (!TextUtils.isEmpty(StringsKt.b((CharSequence) str4).toString())) {
-                    arrayList3.add(StringsKt.b((CharSequence) str4).toString());
+            LogUtils.c(Intrinsics.a("strPurpose: ", str3));
+            for (String str4 : StringsKt.b(str3, new String[]{","}, false, 6, 2, (Object) null)) {
+                if (!TextUtils.isEmpty(StringsKt.b(str4).toString())) {
+                    arrayList3.add(StringsKt.b(str4).toString());
                 }
             }
         }
         Bundle arguments4 = getArguments();
         String str5 = (String) (arguments4 == null ? null : arguments4.getSerializable("user_hobby"));
         if (str5 != null) {
-            LogUtils.c(Intrinsics.a("strHobby: ", (Object) str5));
-            for (String str6 : StringsKt.b((CharSequence) str5, new String[]{","}, false, 6, 2, (Object) null)) {
-                if (!TextUtils.isEmpty(StringsKt.b((CharSequence) str6).toString())) {
-                    arrayList4.add(StringsKt.b((CharSequence) str6).toString());
+            LogUtils.c(Intrinsics.a("strHobby: ", str5));
+            for (String str6 : StringsKt.b(str5, new String[]{","}, false, 6, 2, (Object) null)) {
+                if (!TextUtils.isEmpty(StringsKt.b(str6).toString())) {
+                    arrayList4.add(StringsKt.b(str6).toString());
                 }
             }
         }
@@ -597,19 +602,18 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         EventTrackFeed.c(FeedProtos.Event.FEED_GUIDE_EDIT_PROFILE_POP_SHOW);
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog
     public void i() {
         ShapeFrameLayout shapeFrameLayout;
         ShapeFrameLayout shapeFrameLayout2;
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f33624a;
-        if (fragmentUserInfoPostFeedBinding != null && (shapeFrameLayout2 = fragmentUserInfoPostFeedBinding.f28995a) != null) {
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding = this.f19933a;
+        if (fragmentUserInfoPostFeedBinding != null && (shapeFrameLayout2 = fragmentUserInfoPostFeedBinding.f15305a) != null) {
             shapeFrameLayout2.setVisibility(0);
             TranslateAnimation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 0.0f, 1, 0.0f, 1, 1.0f);
             translateAnimation.setDuration(200L);
             shapeFrameLayout2.startAnimation(translateAnimation);
         }
-        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = this.f33624a;
-        if (fragmentUserInfoPostFeedBinding2 == null || (shapeFrameLayout = fragmentUserInfoPostFeedBinding2.f28995a) == null) {
+        FragmentUserInfoPostFeedBinding fragmentUserInfoPostFeedBinding2 = this.f19933a;
+        if (fragmentUserInfoPostFeedBinding2 == null || (shapeFrameLayout = fragmentUserInfoPostFeedBinding2.f15305a) == null) {
             return;
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(shapeFrameLayout, "alpha", 1.0f, 0.0f);
@@ -641,17 +645,15 @@ public final class UserInfoPostFeedDlgFragment extends CommFullScreenDialog {
         return this.p;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
-    public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
-        Intrinsics.e(inflater, "inflater");
-        View onCreateView = super.onCreateView(inflater, viewGroup, bundle);
-        this.f33624a = FragmentUserInfoPostFeedBinding.a(onCreateView);
+    public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
+        Intrinsics.e(layoutInflater, "inflater");
+        View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
+        this.f19933a = FragmentUserInfoPostFeedBinding.a(onCreateView);
         return onCreateView;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
-        Intrinsics.e(view, "view");
+        Intrinsics.e(view, a.B);
         super.onViewCreated(view, bundle);
         m();
         o();

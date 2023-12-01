@@ -18,12 +18,12 @@ public abstract class SkinSDCardLoader implements SkinCompatManager.SkinLoaderSt
         }
         String b = b(context, str);
         if (SkinFileUtils.a(b)) {
-            String a2 = SkinCompatManager.a().a(b);
+            String a = SkinCompatManager.a().a(b);
             Resources b2 = SkinCompatManager.a().b(b);
-            if (b2 == null || TextUtils.isEmpty(a2)) {
+            if (b2 == null || TextUtils.isEmpty(a)) {
                 return null;
             }
-            SkinCompatResources.a().a(b2, a2, str, this);
+            SkinCompatResources.a().a(b2, a, str, this);
             return str;
         }
         return null;

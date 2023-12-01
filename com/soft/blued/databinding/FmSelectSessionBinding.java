@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FmSelectSessionBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28766a;
+    private final RelativeLayout f15076a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28766a;
+        return this.f15076a;
     }
 }

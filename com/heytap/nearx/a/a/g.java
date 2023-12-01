@@ -10,10 +10,10 @@ import okio.ByteString;
 public final class g {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BufferedSink f22266a;
+    private final BufferedSink f8658a;
 
     public g(BufferedSink bufferedSink) {
-        this.f22266a = bufferedSink;
+        this.f8658a = bufferedSink;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -126,16 +126,16 @@ public final class g {
     }
 
     public void a(ByteString byteString) throws IOException {
-        this.f22266a.write(byteString);
+        this.f8658a.write(byteString);
     }
 
     public void b(String str) throws IOException {
-        this.f22266a.writeUtf8(str);
+        this.f8658a.writeUtf8(str);
     }
 
     public void d(long j) throws IOException {
         while (true) {
-            BufferedSink bufferedSink = this.f22266a;
+            BufferedSink bufferedSink = this.f8658a;
             if (((-128) & j) == 0) {
                 bufferedSink.writeByte((int) j);
                 return;
@@ -147,7 +147,7 @@ public final class g {
     }
 
     public void e(long j) throws IOException {
-        this.f22266a.writeLongLe(j);
+        this.f8658a.writeLongLe(j);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -161,13 +161,13 @@ public final class g {
 
     public void g(int i) throws IOException {
         while ((i & (-128)) != 0) {
-            this.f22266a.writeByte((i & 127) | 128);
+            this.f8658a.writeByte((i & 127) | 128);
             i >>>= 7;
         }
-        this.f22266a.writeByte(i);
+        this.f8658a.writeByte(i);
     }
 
     public void h(int i) throws IOException {
-        this.f22266a.writeIntLe(i);
+        this.f8658a.writeIntLe(i);
     }
 }

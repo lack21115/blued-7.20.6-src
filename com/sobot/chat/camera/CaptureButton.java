@@ -244,9 +244,8 @@ public class CaptureButton extends View {
         return this.state == 1;
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDetachedFromWindow() {
+    protected void onDetachedFromWindow() {
         RecordCountDownTimer recordCountDownTimer = this.timer;
         if (recordCountDownTimer != null) {
             recordCountDownTimer.cancel();
@@ -254,9 +253,8 @@ public class CaptureButton extends View {
         super.onDetachedFromWindow();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         this.mPaint.setStyle(Paint.Style.FILL);
         this.mPaint.setColor(this.outside_color);
@@ -271,9 +269,8 @@ public class CaptureButton extends View {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
-    public void onMeasure(int i, int i2) {
+    protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int i3 = this.button_size;
         int i4 = this.outside_add_size;

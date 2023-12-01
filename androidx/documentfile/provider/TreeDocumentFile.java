@@ -12,13 +12,13 @@ import java.util.ArrayList;
 class TreeDocumentFile extends DocumentFile {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f2780a;
+    private Context f2732a;
     private Uri b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public TreeDocumentFile(DocumentFile documentFile, Context context, Uri uri) {
         super(documentFile);
-        this.f2780a = context;
+        this.f2732a = context;
         this.b = uri;
     }
 
@@ -43,28 +43,28 @@ class TreeDocumentFile extends DocumentFile {
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean canRead() {
-        return DocumentsContractApi19.canRead(this.f2780a, this.b);
+        return DocumentsContractApi19.canRead(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean canWrite() {
-        return DocumentsContractApi19.canWrite(this.f2780a, this.b);
+        return DocumentsContractApi19.canWrite(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public DocumentFile createDirectory(String str) {
-        Uri a2 = a(this.f2780a, this.b, DocumentsContract.Document.MIME_TYPE_DIR, str);
+        Uri a2 = a(this.f2732a, this.b, DocumentsContract.Document.MIME_TYPE_DIR, str);
         if (a2 != null) {
-            return new TreeDocumentFile(this, this.f2780a, a2);
+            return new TreeDocumentFile(this, this.f2732a, a2);
         }
         return null;
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public DocumentFile createFile(String str, String str2) {
-        Uri a2 = a(this.f2780a, this.b, str, str2);
+        Uri a2 = a(this.f2732a, this.b, str, str2);
         if (a2 != null) {
-            return new TreeDocumentFile(this, this.f2780a, a2);
+            return new TreeDocumentFile(this, this.f2732a, a2);
         }
         return null;
     }
@@ -72,7 +72,7 @@ class TreeDocumentFile extends DocumentFile {
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean delete() {
         try {
-            return DocumentsContract.deleteDocument(this.f2780a.getContentResolver(), this.b);
+            return DocumentsContract.deleteDocument(this.f2732a.getContentResolver(), this.b);
         } catch (Exception e) {
             return false;
         }
@@ -80,17 +80,17 @@ class TreeDocumentFile extends DocumentFile {
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean exists() {
-        return DocumentsContractApi19.exists(this.f2780a, this.b);
+        return DocumentsContractApi19.exists(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public String getName() {
-        return DocumentsContractApi19.getName(this.f2780a, this.b);
+        return DocumentsContractApi19.getName(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public String getType() {
-        return DocumentsContractApi19.getType(this.f2780a, this.b);
+        return DocumentsContractApi19.getType(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
@@ -100,33 +100,33 @@ class TreeDocumentFile extends DocumentFile {
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean isDirectory() {
-        return DocumentsContractApi19.isDirectory(this.f2780a, this.b);
+        return DocumentsContractApi19.isDirectory(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean isFile() {
-        return DocumentsContractApi19.isFile(this.f2780a, this.b);
+        return DocumentsContractApi19.isFile(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean isVirtual() {
-        return DocumentsContractApi19.isVirtual(this.f2780a, this.b);
+        return DocumentsContractApi19.isVirtual(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public long lastModified() {
-        return DocumentsContractApi19.lastModified(this.f2780a, this.b);
+        return DocumentsContractApi19.lastModified(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public long length() {
-        return DocumentsContractApi19.length(this.f2780a, this.b);
+        return DocumentsContractApi19.length(this.f2732a, this.b);
     }
 
     @Override // androidx.documentfile.provider.DocumentFile
     public DocumentFile[] listFiles() {
         Cursor cursor;
-        ContentResolver contentResolver = this.f2780a.getContentResolver();
+        ContentResolver contentResolver = this.f2732a.getContentResolver();
         Uri uri = this.b;
         Uri buildChildDocumentsUriUsingTree = DocumentsContract.buildChildDocumentsUriUsingTree(uri, DocumentsContract.getDocumentId(uri));
         ArrayList arrayList = new ArrayList();
@@ -157,7 +157,7 @@ class TreeDocumentFile extends DocumentFile {
             Uri[] uriArr = (Uri[]) arrayList.toArray(new Uri[arrayList.size()]);
             DocumentFile[] documentFileArr = new DocumentFile[uriArr.length];
             for (int i = 0; i < uriArr.length; i++) {
-                documentFileArr[i] = new TreeDocumentFile(this, this.f2780a, uriArr[i]);
+                documentFileArr[i] = new TreeDocumentFile(this, this.f2732a, uriArr[i]);
             }
             return documentFileArr;
         } finally {
@@ -168,7 +168,7 @@ class TreeDocumentFile extends DocumentFile {
     @Override // androidx.documentfile.provider.DocumentFile
     public boolean renameTo(String str) {
         try {
-            Uri renameDocument = DocumentsContract.renameDocument(this.f2780a.getContentResolver(), this.b, str);
+            Uri renameDocument = DocumentsContract.renameDocument(this.f2732a.getContentResolver(), this.b, str);
             if (renameDocument != null) {
                 this.b = renameDocument;
                 return true;

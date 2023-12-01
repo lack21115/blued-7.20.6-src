@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import com.blued.android.core.AppInfo;
+import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.core.CenterPopupView;
 import com.blued.android.module.common.extensions.CustomViewBindingProperty;
 import com.blued.android.module.common.extensions.ViewBindingProperty;
@@ -36,32 +37,32 @@ import kotlin.reflect.KProperty;
 public final class PopGroupRecover extends CenterPopupView {
 
     /* renamed from: c  reason: collision with root package name */
-    static final /* synthetic */ KProperty<Object>[] f32801c = {Reflection.a(new PropertyReference1Impl(PopGroupRecover.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupRecoverSuperBinding;", 0))};
+    static final /* synthetic */ KProperty<Object>[] f19110c = {(KProperty) Reflection.a(new PropertyReference1Impl(PopGroupRecover.class, "vb", "getVb()Lcom/soft/blued/databinding/PopGroupRecoverSuperBinding;", 0))};
     private final MyGroupViewModel d;
     private final GroupPrivilegeModel e;
     private final ViewBindingProperty f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public PopGroupRecover(Context context, MyGroupViewModel vm, GroupPrivilegeModel privilege) {
+    public PopGroupRecover(Context context, MyGroupViewModel myGroupViewModel, GroupPrivilegeModel groupPrivilegeModel) {
         super(context);
         Intrinsics.e(context, "context");
-        Intrinsics.e(vm, "vm");
-        Intrinsics.e(privilege, "privilege");
-        this.d = vm;
-        this.e = privilege;
+        Intrinsics.e(myGroupViewModel, "vm");
+        Intrinsics.e(groupPrivilegeModel, "privilege");
+        this.d = myGroupViewModel;
+        this.e = groupPrivilegeModel;
+        BasePopupView basePopupView = (BasePopupView) this;
         this.f = new CustomViewBindingProperty(new Function1<PopGroupRecover, PopGroupRecoverSuperBinding>() { // from class: com.soft.blued.ui.msg_group.pop.PopGroupRecover$special$$inlined$viewBindingFragment$default$1
-            @Override // kotlin.jvm.functions.Function1
             /* renamed from: a */
-            public final PopGroupRecoverSuperBinding invoke(PopGroupRecover popView) {
-                Intrinsics.e(popView, "popView");
-                return PopGroupRecoverSuperBinding.a(popView.getPopupImplView());
+            public final PopGroupRecoverSuperBinding invoke(PopGroupRecover popGroupRecover) {
+                Intrinsics.e(popGroupRecover, "popView");
+                return PopGroupRecoverSuperBinding.a(popGroupRecover.getPopupImplView());
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(int i, PopGroupRecover this$0, BaseQuickAdapter baseQuickAdapter, View view, int i2) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(int i, PopGroupRecover popGroupRecover, BaseQuickAdapter baseQuickAdapter, View view, int i2) {
+        Intrinsics.e(popGroupRecover, "this$0");
         List data = baseQuickAdapter.getData();
         Intrinsics.c(data, "adapter.data");
         int i3 = 0;
@@ -83,8 +84,8 @@ public final class PopGroupRecover extends CenterPopupView {
             baseQuickAdapter.notifyItemChanged(i2);
             return;
         }
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
-        String string = this$0.getContext().getString(R.string.group_upper_limit_toast);
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
+        String string = popGroupRecover.getContext().getString(R.string.group_upper_limit_toast);
         Intrinsics.c(string, "context.getString(R.stri….group_upper_limit_toast)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(i)}, 1));
         Intrinsics.c(format, "format(format, *args)");
@@ -92,20 +93,20 @@ public final class PopGroupRecover extends CenterPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(GroupRecoverAdapter adapter, PopGroupRecover this$0, View view) {
+    public static final void a(GroupRecoverAdapter groupRecoverAdapter, PopGroupRecover popGroupRecover, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(adapter, "$adapter");
-        Intrinsics.e(this$0, "this$0");
+        Intrinsics.e(groupRecoverAdapter, "$adapter");
+        Intrinsics.e(popGroupRecover, "this$0");
         StringBuilder sb = new StringBuilder();
-        int size = adapter.getData().size();
+        int size = groupRecoverAdapter.getData().size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
                 break;
             }
-            if (adapter.getData().get(i2).isSelected) {
-                sb.append(adapter.getData().get(i2).group_id);
+            if (groupRecoverAdapter.getData().get(i2).isSelected) {
+                sb.append(groupRecoverAdapter.getData().get(i2).group_id);
                 sb.append(",");
             }
             i = i2 + 1;
@@ -114,7 +115,7 @@ public final class PopGroupRecover extends CenterPopupView {
         if (sb2 == null || sb2.length() == 0) {
             return;
         }
-        MyGroupViewModel myGroupViewModel = this$0.d;
+        MyGroupViewModel myGroupViewModel = popGroupRecover.d;
         String sb3 = sb.toString();
         Intrinsics.c(sb3, "sb.toString()");
         String substring = sb3.substring(0, sb.toString().length() - 1);
@@ -123,26 +124,25 @@ public final class PopGroupRecover extends CenterPopupView {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopGroupRecover this$0, View view) {
+    public static final void a(PopGroupRecover popGroupRecover, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.p();
+        Intrinsics.e(popGroupRecover, "this$0");
+        popGroupRecover.p();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(PopGroupRecover this$0, Integer num) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(PopGroupRecover popGroupRecover, Integer num) {
+        Intrinsics.e(popGroupRecover, "this$0");
         if (num != null && num.intValue() == 1) {
             ToastUtils.a(AppInfo.d().getString(R.string.group_upgrade_succeed_toast));
-            this$0.p();
+            popGroupRecover.p();
         }
     }
 
     private final PopGroupRecoverSuperBinding getVb() {
-        return (PopGroupRecoverSuperBinding) this.f.b(this, f32801c[0]);
+        return (PopGroupRecoverSuperBinding) this.f.b(this, f19110c[0]);
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public void b() {
         super.b();
         final int super_max_group = this.e.getSuper_max_group() - this.e.getSuper_group();
@@ -163,14 +163,14 @@ public final class PopGroupRecover extends CenterPopupView {
             return;
         }
         TextView textView = vb.d;
-        StringCompanionObject stringCompanionObject = StringCompanionObject.f42549a;
+        StringCompanionObject stringCompanionObject = StringCompanionObject.a;
         String string = getContext().getString(R.string.group_recover_privilege_dialog_title);
         Intrinsics.c(string, "context.getString(R.stri…r_privilege_dialog_title)");
         String format = String.format(string, Arrays.copyOf(new Object[]{Integer.valueOf(getPrivilege().getSuper_max_population())}, 1));
         Intrinsics.c(format, "format(format, *args)");
         textView.setText(format);
-        RecyclerViewUtil.a(vb.f29531a);
-        vb.f29531a.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerViewUtil.a(vb.f15841a);
+        vb.f15841a.setLayoutManager(new LinearLayoutManager(getContext()));
         final GroupRecoverAdapter groupRecoverAdapter = new GroupRecoverAdapter();
         groupRecoverAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupRecover$ry2B1ClrLu2Fas7unjQTtHL5V80
             @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
@@ -185,14 +185,14 @@ public final class PopGroupRecover extends CenterPopupView {
             }
         }
         groupRecoverAdapter.setNewData(getPrivilege().getGroupList());
-        vb.f29531a.setAdapter(groupRecoverAdapter);
+        vb.f15841a.setAdapter(groupRecoverAdapter);
         vb.b.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupRecover$lk_0u_PrueiewrfOxMBTw7gRLNw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PopGroupRecover.a(PopGroupRecover.this, view);
             }
         });
-        vb.f29532c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupRecover$0VagxNIpIdGYQyhnpp8Qe-LZnCg
+        vb.f15842c.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg_group.pop.-$$Lambda$PopGroupRecover$0VagxNIpIdGYQyhnpp8Qe-LZnCg
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 PopGroupRecover.a(GroupRecoverAdapter.this, this, view);
@@ -200,7 +200,6 @@ public final class PopGroupRecover extends CenterPopupView {
         });
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.CenterPopupView, com.blued.android.framework.ui.xpop.core.BasePopupView
     public int getImplLayoutId() {
         return R.layout.pop_group_recover_super;
     }
@@ -213,7 +212,6 @@ public final class PopGroupRecover extends CenterPopupView {
         return this.d;
     }
 
-    @Override // com.blued.android.framework.ui.xpop.core.BasePopupView
     public void w() {
         super.w();
         BluedPreferences.y(System.currentTimeMillis());

@@ -646,13 +646,13 @@ public class LinkedTransferQueue<E> extends AbstractQueue<E> implements Transfer
         return e2;
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         xfer(e, true, 1, 0L);
         return true;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null) {
             return false;
@@ -731,7 +731,7 @@ public class LinkedTransferQueue<E> extends AbstractQueue<E> implements Transfer
         return z;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
         Node node = this.head;
         while (true) {
@@ -792,12 +792,12 @@ public class LinkedTransferQueue<E> extends AbstractQueue<E> implements Transfer
         return Integer.MAX_VALUE;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         return findAndRemove(obj);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return countOfMode(true);
     }

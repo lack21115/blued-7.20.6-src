@@ -6,10 +6,10 @@ import android.content.Context;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f38653a;
+    private Context f24962a;
 
     public a(Context context) {
-        this.f38653a = context;
+        this.f24962a = context;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x0064  */
@@ -69,7 +69,7 @@ public class a {
             r9 = r0
         L50:
             r0 = r7
-            android.content.Context r0 = r0.f38653a
+            android.content.Context r0 = r0.f24962a
             android.content.ContentResolver r0 = r0.getContentResolver()
             r1 = r9
             r2 = 0

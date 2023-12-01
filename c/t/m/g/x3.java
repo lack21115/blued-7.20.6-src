@@ -10,19 +10,19 @@ import java.util.Locale;
 public class x3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final TencentGeofence f4053a;
+    public final TencentGeofence f4005a;
     public final Location b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final long f4054c;
+    public final long f4006c;
     public final PendingIntent d;
     public int e = 0;
     public double f = Double.MAX_VALUE;
     public Object g;
 
     public x3(TencentGeofence tencentGeofence, long j, String str, PendingIntent pendingIntent) {
-        this.f4053a = tencentGeofence;
-        this.f4054c = j;
+        this.f4005a = tencentGeofence;
+        this.f4006c = j;
         this.d = pendingIntent;
         Location location = new Location("");
         this.b = location;
@@ -36,7 +36,7 @@ public class x3 {
         if (Double.compare(this.f, Double.MAX_VALUE) == 0) {
             return Double.MAX_VALUE;
         }
-        return Math.abs(this.f4053a.getRadius() - this.f);
+        return Math.abs(this.f4005a.getRadius() - this.f);
     }
 
     public final double a(double d, double d2, long j, long j2) {
@@ -68,7 +68,7 @@ public class x3 {
         this.b.setSpeed(a3);
         this.f = a2;
         int i = this.e;
-        if (a2 <= ((double) this.f4053a.getRadius())) {
+        if (a2 <= ((double) this.f4005a.getRadius())) {
             this.e = 1;
             return i != 1 ? 1 : 0;
         }
@@ -96,6 +96,6 @@ public class x3 {
 
     public String toString() {
         int i = this.e;
-        return String.format(Locale.US, "%s dist=%5gm speed=%.2fm/s state=%s", this.f4053a.toString(), Double.valueOf(this.f), Float.valueOf(b()), i != 1 ? i != 2 ? "?" : "OUT" : STManager.REGION_OF_IN);
+        return String.format(Locale.US, "%s dist=%5gm speed=%.2fm/s state=%s", this.f4005a.toString(), Double.valueOf(this.f), Float.valueOf(b()), i != 1 ? i != 2 ? "?" : "OUT" : STManager.REGION_OF_IN);
     }
 }

@@ -275,7 +275,7 @@ public abstract class TypeToken<T> extends TypeCapture<T> implements Serializabl
                 /* JADX WARN: Multi-variable type inference failed */
                 @Override // com.google.common.collect.Ordering, java.util.Comparator
                 public int compare(K k, K k2) {
-                    return Comparator.this.compare(map.get(k), map.get(k2));
+                    return comparator.compare(map.get(k), map.get(k2));
                 }
             }.immutableSortedCopy(map.keySet());
         }

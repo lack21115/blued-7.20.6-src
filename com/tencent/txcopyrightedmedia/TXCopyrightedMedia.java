@@ -43,29 +43,29 @@ public class TXCopyrightedMedia {
     public static final int TYPE_ORIGIN = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private final ArrayList<as> f40017a;
+    private final ArrayList<as> f26326a;
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f40018c;
+    private boolean f26327c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/TXCopyrightedMedia$a.class */
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static TXCopyrightedMedia f40021a = new TXCopyrightedMedia((byte) 0);
+        private static TXCopyrightedMedia f26330a = new TXCopyrightedMedia((byte) 0);
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/txcopyrightedmedia/TXCopyrightedMedia$b.class */
     static final class b implements ab.a {
 
         /* renamed from: a  reason: collision with root package name */
-        final ay f40022a;
+        final ay f26331a;
         final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        final String f40023c;
+        final String f26332c;
         final bd e;
         ArrayList<as> h;
         final ArrayList<ITXMusicPreloadCallback> d = new ArrayList<>();
@@ -73,10 +73,10 @@ public class TXCopyrightedMedia {
         ErrorCode g = null;
 
         public b(ay ayVar, ITXMusicPreloadCallback iTXMusicPreloadCallback, ArrayList<as> arrayList) {
-            this.f40022a = ayVar;
-            this.b = ayVar.f40080a;
+            this.f26331a = ayVar;
+            this.b = ayVar.f26389a;
             String b = new j(ayVar.d).b();
-            this.f40023c = b;
+            this.f26332c = b;
             this.e = new bd(this.b, b);
             this.d.add(iTXMusicPreloadCallback);
             this.h = arrayList;
@@ -84,7 +84,7 @@ public class TXCopyrightedMedia {
 
         @Override // com.tencent.txcopyrightedmedia.impl.utils.ab.a
         public final String a() {
-            return this.b + this.f40023c;
+            return this.b + this.f26332c;
         }
 
         @Override // com.tencent.txcopyrightedmedia.impl.utils.ab.a
@@ -92,7 +92,7 @@ public class TXCopyrightedMedia {
             synchronized (this.f) {
                 Iterator<ITXMusicPreloadCallback> it = this.d.iterator();
                 while (it.hasNext()) {
-                    it.next().onPreloadStart(this.b, this.f40023c);
+                    it.next().onPreloadStart(this.b, this.f26332c);
                 }
             }
         }
@@ -101,11 +101,11 @@ public class TXCopyrightedMedia {
         public final void c() {
             Thread currentThread = Thread.currentThread();
             currentThread.setName("ame-prepare-" + Thread.currentThread().getId());
-            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f40109a);
+            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f26418a);
             if (bVar == null) {
                 return;
             }
-            ba baVar = new ba(bVar, this.f40022a);
+            ba baVar = new ba(bVar, this.f26331a);
             baVar.d = true;
             baVar.f = false;
             as asVar = new as(baVar);
@@ -123,11 +123,11 @@ public class TXCopyrightedMedia {
             i iVar = a2;
             if (a2.code == 0) {
                 this.e.a(102);
-                this.e.a(a2.f40101a);
+                this.e.a(a2.f26410a);
                 ah.a().a(this.e);
                 g gVar = bVar.d;
-                String str = this.f40022a.f40081c;
-                SharedPreferences.Editor edit = gVar.f40099a.edit();
+                String str = this.f26331a.f26390c;
+                SharedPreferences.Editor edit = gVar.f26408a.edit();
                 edit.putString("USER_ID_TOKEN", str);
                 edit.apply();
                 this.e.d();
@@ -153,11 +153,11 @@ public class TXCopyrightedMedia {
             synchronized (this.f) {
                 Iterator<ITXMusicPreloadCallback> it = this.d.iterator();
                 while (it.hasNext()) {
-                    it.next().onPreloadComplete(this.b, this.f40023c, iVar.code, iVar.msg);
+                    it.next().onPreloadComplete(this.b, this.f26332c, iVar.code, iVar.msg);
                 }
                 this.g = iVar;
             }
-            this.e.a(iVar.f40101a);
+            this.e.a(iVar.f26410a);
             ah.a().a(this.e);
             synchronized (TXCopyrightedMedia.class) {
                 try {
@@ -169,7 +169,7 @@ public class TXCopyrightedMedia {
     }
 
     private TXCopyrightedMedia() {
-        this.f40017a = new ArrayList<>();
+        this.f26326a = new ArrayList<>();
     }
 
     /* synthetic */ TXCopyrightedMedia(byte b2) {
@@ -181,21 +181,21 @@ public class TXCopyrightedMedia {
             try {
                 j jVar = new j(str2);
                 String a2 = jVar.a();
-                com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f40109a);
+                com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f26418a);
                 if (bVar == null) {
                     return null;
                 }
                 ay ayVar = new ay();
-                ayVar.f40080a = str;
+                ayVar.f26389a = str;
                 ayVar.d = a2;
                 ba baVar = new ba(bVar, ayVar);
-                if (!TextUtils.isEmpty(baVar.f40087c.f40079c) && baVar.f40087c.e == 100) {
+                if (!TextUtils.isEmpty(baVar.f26396c.f26388c) && baVar.f26396c.e == 100) {
                     as asVar = new as(baVar);
-                    asVar.f40068a = baVar.f40087c.f40079c;
+                    asVar.f26377a = baVar.f26396c.f26388c;
                     if (asVar.e().code != 0) {
                         return null;
                     }
-                    at a3 = i == 0 ? asVar.a(jVar.f40104a, 1, jVar.b) : i == 1 ? asVar.a(jVar.f40104a, 2, jVar.b) : asVar.a("Subtitles", 3, jVar.b);
+                    at a3 = i == 0 ? asVar.a(jVar.f26413a, 1, jVar.b) : i == 1 ? asVar.a(jVar.f26413a, 2, jVar.b) : asVar.a("Subtitles", 3, jVar.b);
                     if (a3 == null) {
                         return null;
                     }
@@ -219,9 +219,10 @@ public class TXCopyrightedMedia {
     }
 
     public static TXCopyrightedMedia instance() {
-        return a.f40021a;
+        return a.f26330a;
     }
 
+    /* JADX WARN: Type inference failed for: r0v3, types: [com.tencent.txcopyrightedmedia.TXCopyrightedMedia$1] */
     public void cancelPreloadMusic(final String str, String str2) {
         synchronized (this) {
             final String b2 = new j(str2).b();
@@ -232,7 +233,7 @@ public class TXCopyrightedMedia {
                     currentThread.setName("ame-cancel-" + Thread.currentThread().getId());
                     synchronized (TXCopyrightedMedia.class) {
                         try {
-                            Iterator it = TXCopyrightedMedia.this.f40017a.iterator();
+                            Iterator it = TXCopyrightedMedia.this.f26326a.iterator();
                             while (it.hasNext()) {
                                 as asVar = (as) it.next();
                                 if ((TextUtils.equals(asVar.i(), str) && TextUtils.equals(asVar.j(), b2)) || str == null) {
@@ -272,32 +273,32 @@ public class TXCopyrightedMedia {
 
     public void clearMusicCache() {
         synchronized (this) {
-            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f40109a);
+            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f26418a);
             if (bVar == null) {
                 return;
             }
             bVar.b.b();
-            bVar.f40084a.a();
+            bVar.f26393a.a();
             d.a();
         }
     }
 
     public void clearMusicCache(String str, String str2) {
         synchronized (this) {
-            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f40109a);
+            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f26418a);
             if (bVar == null) {
                 return;
             }
             String b2 = new j(str2).b();
             bVar.b.b(str, b2);
-            bVar.f40084a.b(str, b2);
+            bVar.f26393a.b(str, b2);
             d.a(str);
         }
     }
 
     public ITXCMMusicTrack createMusicTrack(TXCMMusicInfo tXCMMusicInfo) {
         synchronized (this) {
-            if (this.b == null || !this.f40018c || tXCMMusicInfo == null) {
+            if (this.b == null || !this.f26327c || tXCMMusicInfo == null) {
                 return null;
             }
             com.tencent.txcopyrightedmedia.b.a(tXCMMusicInfo, new TXCMMusicExtParams(com.tencent.txcopyrightedmedia.b.b(tXCMMusicInfo)).toString());
@@ -307,7 +308,7 @@ public class TXCopyrightedMedia {
 
     public ITXSongScore createSongScore(TXSongScoreConfig tXSongScoreConfig) {
         synchronized (this) {
-            if (this.b != null && this.f40018c) {
+            if (this.b != null && this.f26327c) {
                 return new y(tXSongScoreConfig);
             }
             return null;
@@ -316,7 +317,7 @@ public class TXCopyrightedMedia {
 
     public void destroy() {
         synchronized (this) {
-            this.f40018c = false;
+            this.f26327c = false;
             m a2 = m.a();
             synchronized (m.class) {
                 if (a2.e != null) {
@@ -325,15 +326,15 @@ public class TXCopyrightedMedia {
                 if (a2.i != null) {
                     o oVar = a2.i;
                     synchronized (o.class) {
-                        if (oVar.f40129a != null) {
-                            oVar.f40129a.shutdown();
-                            oVar.f40129a = null;
+                        if (oVar.f26438a != null) {
+                            oVar.f26438a.shutdown();
+                            oVar.f26438a = null;
                         }
                         if (oVar.b != null) {
                             oVar.b.shutdown();
                             oVar.b = null;
                         }
-                        oVar.f40130c = false;
+                        oVar.f26439c = false;
                     }
                     a2.i = null;
                 }
@@ -341,16 +342,16 @@ public class TXCopyrightedMedia {
                     a2.h.a().b.sendEmptyMessage(101);
                     a2.h = null;
                 }
-                a2.g.f40100a.clear();
+                a2.g.f26409a.clear();
                 if (a2.j != null) {
                     ai aiVar = a2.j;
                     aiVar.b.removeCallbacksAndMessages(null);
-                    aiVar.f40054a.quit();
+                    aiVar.f26363a.quit();
                 }
             }
             cancelPreloadMusic(null, null);
             k.b();
-            ah.a().f40048a = true;
+            ah.a().f26357a = true;
             ab.a();
         }
     }
@@ -377,26 +378,26 @@ public class TXCopyrightedMedia {
 
     public void init() {
         synchronized (this) {
-            if (!this.f40018c && this.b != null) {
+            if (!this.f26327c && this.b != null) {
                 k.a();
                 m a2 = m.a();
                 synchronized (m.class) {
                     a2.h = new com.tencent.txcopyrightedmedia.impl.utils.b(instance().getApplicationContext());
                     if (a2.f != null) {
-                        a2.f.f40108a = a2.h;
+                        a2.f.f26417a = a2.h;
                     }
                     a2.e.h();
                     a2.i = new o();
                     a2.j = new ai();
                 }
-                this.f40018c = true;
+                this.f26327c = true;
             }
         }
     }
 
     public boolean isMusicPreloaded(String str, String str2) {
         synchronized (this) {
-            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f40109a);
+            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f26418a);
             if (bVar == null) {
                 return false;
             }
@@ -415,7 +416,7 @@ public class TXCopyrightedMedia {
             p pVar = new p(iTXMusicPreloadCallback);
             if (this.b == null) {
                 pVar.onPreloadComplete(str, b2, -1, "License not set.");
-            } else if (!this.f40018c) {
+            } else if (!this.f26327c) {
                 pVar.onPreloadComplete(str, b2, -1, "SDK not init.");
             } else {
                 bd bdVar = new bd(str, b2);
@@ -430,7 +431,7 @@ public class TXCopyrightedMedia {
                     return;
                 }
                 i iVar = new i(0, null);
-                ayVar.f40081c = str3;
+                ayVar.f26390c = str3;
                 if (iVar.code != 0) {
                     pVar.onPreloadComplete(str, b2, iVar.code, iVar.msg);
                     ah a4 = ah.a();
@@ -438,7 +439,7 @@ public class TXCopyrightedMedia {
                     a4.a(bdVar.a(iVar.msg));
                     return;
                 }
-                ayVar.f40080a = str;
+                ayVar.f26389a = str;
                 ayVar.d = jVar.a();
                 if (isMusicPreloaded(str, b2)) {
                     i iVar2 = new i(0, null);
@@ -446,16 +447,16 @@ public class TXCopyrightedMedia {
                     pVar.onPreloadComplete(str, b2, iVar2.code, iVar2.msg);
                     return;
                 }
-                ab.a a5 = ab.a(new b(ayVar, pVar, this.f40017a));
+                ab.a a5 = ab.a(new b(ayVar, pVar, this.f26326a));
                 if (a5 instanceof b) {
                     b bVar = (b) a5;
                     synchronized (bVar.f) {
                         if (bVar.d.contains(pVar)) {
                             return;
                         }
-                        pVar.onPreloadStart(bVar.b, bVar.f40023c);
+                        pVar.onPreloadStart(bVar.b, bVar.f26332c);
                         if (bVar.g != null) {
-                            pVar.onPreloadComplete(bVar.b, bVar.f40023c, bVar.g.code, bVar.g.msg);
+                            pVar.onPreloadComplete(bVar.b, bVar.f26332c, bVar.g.code, bVar.g.msg);
                         } else {
                             bVar.d.add(pVar);
                         }
@@ -491,13 +492,13 @@ public class TXCopyrightedMedia {
             ap a2 = ap.a();
             Context context3 = this.b;
             if (context3 != null) {
-                a2.f40059a = context3.getApplicationContext();
+                a2.f26368a = context3.getApplicationContext();
             }
             a2.e.d = str2;
             a2.e.e = str;
-            if (a2.f40059a != null) {
-                a2.e.f40065c = a2.b();
-                if (!ak.a(a2.e.f40065c + File.separator + a2.e.f40064a)) {
+            if (a2.f26368a != null) {
+                a2.e.f26374c = a2.b();
+                if (!ak.a(a2.e.f26374c + File.separator + a2.e.f26373a)) {
                     a2.a(a2.e, "");
                 }
                 a2.a(a2.e);
@@ -507,11 +508,11 @@ public class TXCopyrightedMedia {
 
     public void setMusicCacheMaxCount(int i) {
         synchronized (this) {
-            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f40109a);
+            com.tencent.txcopyrightedmedia.impl.utils.b bVar = (com.tencent.txcopyrightedmedia.impl.utils.b) m.a().b(m.f26418a);
             if (bVar == null) {
                 return;
             }
-            SharedPreferences.Editor edit = bVar.d.f40099a.edit();
+            SharedPreferences.Editor edit = bVar.d.f26408a.edit();
             edit.putInt("MAX_CACHE_ITEM_COUNT", i);
             edit.apply();
         }

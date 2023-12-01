@@ -10,20 +10,16 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveMultiPkResultBinding.class */
 public final class LiveMultiPkResultBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f12300a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12301c;
+    public final ImageView c;
     private final FrameLayout d;
 
     private LiveMultiPkResultBinding(FrameLayout frameLayout, ImageView imageView, ImageView imageView2, ImageView imageView3) {
         this.d = frameLayout;
-        this.f12300a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f12301c = imageView3;
+        this.c = imageView3;
     }
 
     public static LiveMultiPkResultBinding a(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
@@ -54,7 +50,6 @@ public final class LiveMultiPkResultBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.d;

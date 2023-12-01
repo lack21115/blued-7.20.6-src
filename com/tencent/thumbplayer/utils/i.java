@@ -9,6 +9,7 @@ import android.net.Proxy;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
+import com.kwad.components.offline.api.tk.model.report.TKDownloadReason;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -16,11 +17,11 @@ import java.util.Locale;
 public class i extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f39435a = 0;
+    private static int f25744a = 0;
     private static String b = "unknown";
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f39436c;
+    private static int f25745c;
     private static int d;
     private static String e;
     private ArrayList<b> f;
@@ -31,7 +32,7 @@ public class i extends BroadcastReceiver {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static i f39437a = new i();
+        private static i f25746a = new i();
     }
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/thumbplayer/utils/i$b.class */
@@ -47,7 +48,7 @@ public class i extends BroadcastReceiver {
     }
 
     public static i a() {
-        return a.f39437a;
+        return a.f25746a;
     }
 
     private void a(Context context, Handler handler) {
@@ -66,7 +67,7 @@ public class i extends BroadcastReceiver {
     }
 
     public static int b() {
-        return f39436c;
+        return f25745c;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -119,7 +120,7 @@ public class i extends BroadcastReceiver {
     }
 
     public static int c() {
-        return f39435a;
+        return f25744a;
     }
 
     private String c(NetworkInfo networkInfo) {
@@ -150,8 +151,8 @@ public class i extends BroadcastReceiver {
                 if (str.startsWith("wap")) {
                     return "wap";
                 }
-                if (str.startsWith("net")) {
-                    return "net";
+                if (str.startsWith(TKDownloadReason.KSAD_TK_NET)) {
+                    return TKDownloadReason.KSAD_TK_NET;
                 }
                 if (str.startsWith("ctwap")) {
                     return "ctwap";
@@ -190,7 +191,7 @@ public class i extends BroadcastReceiver {
             r6 = this;
             r0 = r6
             monitor-enter(r0)
-            int r0 = com.tencent.thumbplayer.utils.i.f39435a     // Catch: java.lang.Throwable -> Lbb
+            int r0 = com.tencent.thumbplayer.utils.i.f25744a     // Catch: java.lang.Throwable -> Lbb
             int r1 = com.tencent.thumbplayer.utils.i.d     // Catch: java.lang.Throwable -> Lbb
             if (r0 != r1) goto Lc5
             java.lang.String r0 = com.tencent.thumbplayer.utils.i.b     // Catch: java.lang.Throwable -> Lbb
@@ -230,13 +231,13 @@ public class i extends BroadcastReceiver {
             java.lang.String r1 = ", netStatus: "
             java.lang.StringBuilder r0 = r0.append(r1)     // Catch: java.lang.Throwable -> Lbb
             r0 = r8
-            int r1 = com.tencent.thumbplayer.utils.i.f39435a     // Catch: java.lang.Throwable -> Lbb
+            int r1 = com.tencent.thumbplayer.utils.i.f25744a     // Catch: java.lang.Throwable -> Lbb
             java.lang.StringBuilder r0 = r0.append(r1)     // Catch: java.lang.Throwable -> Lbb
             r0 = r8
             java.lang.String r1 = ", mobileNetSubType"
             java.lang.StringBuilder r0 = r0.append(r1)     // Catch: java.lang.Throwable -> Lbb
             r0 = r8
-            int r1 = com.tencent.thumbplayer.utils.i.f39436c     // Catch: java.lang.Throwable -> Lbb
+            int r1 = com.tencent.thumbplayer.utils.i.f25745c     // Catch: java.lang.Throwable -> Lbb
             java.lang.StringBuilder r0 = r0.append(r1)     // Catch: java.lang.Throwable -> Lbb
             java.lang.String r0 = "TPNetworkChangeMonitor"
             r1 = r8
@@ -256,13 +257,13 @@ public class i extends BroadcastReceiver {
             java.lang.Object r0 = r0.next()     // Catch: java.lang.Throwable -> Lbb
             com.tencent.thumbplayer.utils.i$b r0 = (com.tencent.thumbplayer.utils.i.b) r0     // Catch: java.lang.Throwable -> Lbb
             int r1 = com.tencent.thumbplayer.utils.i.d     // Catch: java.lang.Throwable -> Lbb
-            int r2 = com.tencent.thumbplayer.utils.i.f39435a     // Catch: java.lang.Throwable -> Lbb
+            int r2 = com.tencent.thumbplayer.utils.i.f25744a     // Catch: java.lang.Throwable -> Lbb
             r3 = 0
-            int r4 = com.tencent.thumbplayer.utils.i.f39436c     // Catch: java.lang.Throwable -> Lbb
+            int r4 = com.tencent.thumbplayer.utils.i.f25745c     // Catch: java.lang.Throwable -> Lbb
             r0.a(r1, r2, r3, r4)     // Catch: java.lang.Throwable -> Lbb
             goto L88
         Lac:
-            int r0 = com.tencent.thumbplayer.utils.i.f39435a     // Catch: java.lang.Throwable -> Lbb
+            int r0 = com.tencent.thumbplayer.utils.i.f25744a     // Catch: java.lang.Throwable -> Lbb
             com.tencent.thumbplayer.utils.i.d = r0     // Catch: java.lang.Throwable -> Lbb
             java.lang.String r0 = com.tencent.thumbplayer.utils.i.b     // Catch: java.lang.Throwable -> Lbb
             com.tencent.thumbplayer.utils.i.e = r0     // Catch: java.lang.Throwable -> Lbb
@@ -289,7 +290,7 @@ public class i extends BroadcastReceiver {
     }
 
     private void f() {
-        TPLogUtil.d("TPNetworkChangeMonitor", "-->updateNetStatus(), mNetStatus=" + f39435a + "[wifi: 2, mobile: 3], lastNetStatus=" + d + ", mDetailNetworkType=" + b + ", mobileNetSubType=" + f39436c + "[2G:2 3G:3 4G:4], currentDetailNetType=" + b + ", lastDetailNetType=" + e);
+        TPLogUtil.d("TPNetworkChangeMonitor", "-->updateNetStatus(), mNetStatus=" + f25744a + "[wifi: 2, mobile: 3], lastNetStatus=" + d + ", mDetailNetworkType=" + b + ", mobileNetSubType=" + f25745c + "[2G:2 3G:3 4G:4], currentDetailNetType=" + b + ", lastDetailNetType=" + e);
     }
 
     public void a(Context context) {

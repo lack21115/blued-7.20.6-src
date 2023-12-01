@@ -1,6 +1,7 @@
 package com.soft.blued.ui.live.fragment;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import com.blued.android.core.ui.TerminalActivity;
@@ -13,7 +14,7 @@ import java.util.List;
 /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/ui/live/fragment/LiveApplyImproveFragment.class */
 public class LiveApplyImproveFragment extends LiveBaseImproveFragment<LiveApplyImprovePresenter> implements View.OnClickListener {
     public static void a(Context context) {
-        TerminalActivity.d(context, LiveApplyImproveFragment.class, null);
+        TerminalActivity.d(context, LiveApplyImproveFragment.class, (Bundle) null);
     }
 
     @Override // com.soft.blued.ui.live.fragment.LiveBaseImproveFragment
@@ -55,7 +56,6 @@ public class LiveApplyImproveFragment extends LiveBaseImproveFragment<LiveApplyI
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         if (this.e) {

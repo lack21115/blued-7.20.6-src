@@ -1,6 +1,5 @@
 package com.efs.sdk.base.protocol.record;
 
-import com.efs.sdk.base.Constants;
 import com.efs.sdk.base.core.config.a;
 import com.efs.sdk.base.core.controller.ControllerCenter;
 import com.efs.sdk.base.core.util.Log;
@@ -13,7 +12,6 @@ public class EfsJSONLog extends AbsRecordLog {
         put("type", str);
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public byte[] generate() {
         String generateString = generateString();
         if (ControllerCenter.getGlobalEnvStruct().isPrintLogDetail()) {
@@ -22,28 +20,24 @@ public class EfsJSONLog extends AbsRecordLog {
         return generateString.getBytes();
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public String generateString() {
         return new JSONObject(this.dataMap).toString();
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public String getLinkId() {
-        if (this.dataMap.containsKey(Constants.LOG_KEY_LINK_ID)) {
-            return String.valueOf(this.dataMap.get(Constants.LOG_KEY_LINK_ID));
+        if (this.dataMap.containsKey("w_frmid")) {
+            return String.valueOf(this.dataMap.get("w_frmid"));
         }
         return null;
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public String getLinkKey() {
-        if (this.dataMap.containsKey(Constants.LOG_KEY_LINK_KEY)) {
-            return String.valueOf(this.dataMap.get(Constants.LOG_KEY_LINK_KEY));
+        if (this.dataMap.containsKey("w_linkKey")) {
+            return String.valueOf(this.dataMap.get("w_linkKey"));
         }
         return null;
     }
 
-    @Override // com.efs.sdk.base.protocol.ILogProtocol
     public void insertGlobal(a aVar) {
         this.dataMap.putAll(aVar.a());
         this.dataMap.putAll(ControllerCenter.getGlobalEnvStruct().getPublicParamMap());

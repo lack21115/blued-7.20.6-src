@@ -8,17 +8,17 @@ public class d {
     private static volatile d d;
 
     /* renamed from: a  reason: collision with root package name */
-    private b f41062a;
+    private b f27371a;
     private c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Context f41063c;
+    private Context f27372c;
 
     private d(Context context) {
-        if (this.f41062a == null) {
+        if (this.f27371a == null) {
             Context context2 = ContextDelegate.getContext(context.getApplicationContext());
-            this.f41063c = context2;
-            this.f41062a = new e(context2);
+            this.f27372c = context2;
+            this.f27371a = new e(context2);
         }
         if (this.b == null) {
             this.b = new a();
@@ -41,6 +41,6 @@ public class d {
     }
 
     public final b a() {
-        return this.f41062a;
+        return this.f27371a;
     }
 }

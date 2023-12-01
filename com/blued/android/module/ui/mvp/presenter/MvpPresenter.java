@@ -27,13 +27,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/ui/mvp/presenter/MvpPresenter.class */
 public abstract class MvpPresenter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final String f16054a = Intrinsics.a("_MVP_", (Object) getClass().getSimpleName());
+    private final String a = Intrinsics.a("_MVP_", (Object) getClass().getSimpleName());
     private final int b = 300000;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f16055c;
+    private String c;
     private long d;
     private FragmentActivity e;
     private Set<IntMvpView> f;
@@ -46,7 +42,7 @@ public abstract class MvpPresenter {
     public MvpPresenter() {
         Class<? super Object> superclass = getClass().getSuperclass();
         String simpleName = superclass == null ? null : superclass.getSimpleName();
-        this.f16055c = simpleName == null ? this.f16054a : simpleName;
+        this.c = simpleName == null ? this.a : simpleName;
         this.f = new HashSet();
         this.g = new HashSet();
         this.h = new MemoryDataCache<>();
@@ -121,8 +117,8 @@ public abstract class MvpPresenter {
     }
 
     private final boolean b(String str) {
-        List<Object> a2 = this.h.a(str);
-        return a2 != null && a2.size() > 0;
+        List<Object> a = this.h.a(str);
+        return a != null && a.size() > 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -146,8 +142,8 @@ public abstract class MvpPresenter {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void d(String str) {
-        String str2 = this.f16054a;
-        Log.v(str2, this.f16055c + "--" + str);
+        String str2 = this.a;
+        Log.v(str2, this.c + "--" + str);
     }
 
     private final IntMvpView u() {
@@ -170,9 +166,9 @@ public abstract class MvpPresenter {
     }
 
     public List<?> a(String str, List<?> list) {
-        List<?> a2 = this.h.a(str, list);
-        Intrinsics.c(a2, "_memoryDataCache.saveData(type, data)");
-        return a2;
+        List<?> a = this.h.a(str, list);
+        Intrinsics.c(a, "_memoryDataCache.saveData(type, data)");
+        return a;
     }
 
     public void a(Bundle outState) {
@@ -275,7 +271,7 @@ public abstract class MvpPresenter {
 
     public void a(String id) {
         Intrinsics.e(id, "id");
-        this.f16055c = id;
+        this.c = id;
     }
 
     public void a(String taskName, final Runnable task) {
@@ -303,7 +299,7 @@ public abstract class MvpPresenter {
     public void b(final String taskName, final Runnable task) {
         Intrinsics.e(taskName, "taskName");
         Intrinsics.e(task, "task");
-        Log.v(this.f16054a, Intrinsics.a("runUIViewTask, taskName:", (Object) taskName));
+        Log.v(this.a, Intrinsics.a("runUIViewTask, taskName:", (Object) taskName));
         if (!MvpUtils.a()) {
             AppInfo.n().post(new Runnable() { // from class: com.blued.android.module.ui.mvp.presenter.-$$Lambda$MvpPresenter$VeCcqDsA9xLOjaA6mudcyE2JdQY
                 @Override // java.lang.Runnable
@@ -319,7 +315,7 @@ public abstract class MvpPresenter {
     }
 
     public final String c() {
-        return this.f16055c;
+        return this.c;
     }
 
     public final FragmentActivity d() {
@@ -339,7 +335,7 @@ public abstract class MvpPresenter {
     }
 
     public final String h() {
-        return this.f16055c;
+        return this.c;
     }
 
     public List<Pair<String, List<?>>> i() {
@@ -426,7 +422,7 @@ public abstract class MvpPresenter {
             Iterator<IntMvpView> it = e().iterator();
             do {
                 if (!it.hasNext()) {
-                    Unit unit = Unit.f42314a;
+                    Unit unit = Unit.a;
                     return false;
                 }
             } while (!it.next().c());

@@ -6,7 +6,6 @@ import android.text.TextUtils;
 import bolts.CancellationTokenSource;
 import bolts.Task;
 import bolts.TaskCompletionSource;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.tencent.cos.xml.CosXmlSimpleService;
 import com.tencent.cos.xml.common.ClientErrorCode;
 import com.tencent.cos.xml.crypto.COSDirect;
@@ -312,7 +311,7 @@ public class COSUploadTask extends COSTransferTask {
         }
 
         private List<String> listObjectUploadIds() throws CosXmlClientException, CosXmlServiceException {
-            String substring = this.key.startsWith(BridgeUtil.SPLIT_MARK) ? this.key.substring(1) : this.key;
+            String substring = this.key.startsWith("/") ? this.key.substring(1) : this.key;
             HttpTaskMetrics httpTaskMetrics = new HttpTaskMetrics();
             this.listMultiUploadsRequest = new ListMultiUploadsRequest(this.bucket);
             this.listMultiUploadsRequest.setPrefix(substring);
@@ -568,8 +567,9 @@ public class COSUploadTask extends COSTransferTask {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.tencent.cos.xml.transfer.COSTransferTask
-    protected void checking() throws CosXmlClientException {
+    public void checking() throws CosXmlClientException {
         super.checking();
         this.mPutObjectRequest.setProgressListener(new CosXmlProgressListener() { // from class: com.tencent.cos.xml.transfer.COSUploadTask.1
             @Override // com.tencent.qcloud.core.common.QCloudProgressListener

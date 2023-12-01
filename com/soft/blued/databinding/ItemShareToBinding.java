@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class ItemShareToBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConstraintLayout f29318a;
+    private final ConstraintLayout f15628a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
-        return this.f29318a;
+        return this.f15628a;
     }
 }

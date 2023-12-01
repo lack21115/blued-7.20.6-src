@@ -21,11 +21,11 @@ import java.util.List;
 public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.PreviewCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f27511a;
+    private Context f13823a;
     private PLCameraPreviewListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private PLCameraParamSelectListener f27512c;
+    private PLCameraParamSelectListener f13824c;
     private PLCameraSetting d;
     private int e = -1;
     private int f;
@@ -45,7 +45,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
 
     public b(Context context, PLCameraSetting pLCameraSetting) {
         this.f = 1;
-        this.f27511a = context;
+        this.f13823a = context;
         this.d = pLCameraSetting;
         this.f = pLCameraSetting.getCameraId().ordinal();
         com.qiniu.pili.droid.shortvideo.f.e.f.c("CameraManager", "CameraManager created !");
@@ -112,7 +112,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
     private boolean i() {
         PLCameraParamSelectListener pLCameraParamSelectListener;
         com.qiniu.pili.droid.shortvideo.f.e.f.c("CameraManager", "setupCamera +");
-        if (!j.a(this.f27511a)) {
+        if (!j.a(this.f13823a)) {
             com.qiniu.pili.droid.shortvideo.f.e.f.e("CameraManager", "failed, No camera hardware !");
             return false;
         } else if (com.qiniu.pili.droid.shortvideo.a.a.a.a().a(this.f)) {
@@ -137,7 +137,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
                 }
             }
             List<int[]> l = com.qiniu.pili.droid.shortvideo.a.a.a.a().l();
-            int[] onPreviewFpsSelected = (l == null || (pLCameraParamSelectListener = this.f27512c) == null) ? null : pLCameraParamSelectListener.onPreviewFpsSelected(l);
+            int[] onPreviewFpsSelected = (l == null || (pLCameraParamSelectListener = this.f13824c) == null) ? null : pLCameraParamSelectListener.onPreviewFpsSelected(l);
             if (onPreviewFpsSelected != null && onPreviewFpsSelected.length == 2) {
                 k.setPreviewFpsRange(onPreviewFpsSelected[0], onPreviewFpsSelected[1]);
                 com.qiniu.pili.droid.shortvideo.f.e.f.c("CameraManager", "set camera preview fps: " + onPreviewFpsSelected[0] + Constants.WAVE_SEPARATOR + onPreviewFpsSelected[1]);
@@ -152,7 +152,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
                 com.qiniu.pili.droid.shortvideo.f.e.f.e("CameraManager", "No camera device preview sizes available, setup camera failed!");
                 return false;
             }
-            PLCameraParamSelectListener pLCameraParamSelectListener2 = this.f27512c;
+            PLCameraParamSelectListener pLCameraParamSelectListener2 = this.f13824c;
             Camera.Size onPreviewSizeSelected = pLCameraParamSelectListener2 != null ? pLCameraParamSelectListener2.onPreviewSizeSelected(a2) : null;
             Camera.Size size = onPreviewSizeSelected;
             if (onPreviewSizeSelected == null) {
@@ -164,7 +164,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
             this.h = size.height;
             List<String> supportedFocusModes = k.getSupportedFocusModes();
             if (supportedFocusModes != null && !supportedFocusModes.isEmpty()) {
-                PLCameraParamSelectListener pLCameraParamSelectListener3 = this.f27512c;
+                PLCameraParamSelectListener pLCameraParamSelectListener3 = this.f13824c;
                 String str = null;
                 if (pLCameraParamSelectListener3 != null) {
                     str = pLCameraParamSelectListener3.onFocusModeSelected(supportedFocusModes);
@@ -180,7 +180,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
                 k.setFocusMode(str2);
                 com.qiniu.pili.droid.shortvideo.f.e.f.c("CameraManager", "set focus mode: " + str2);
             }
-            int c2 = j.c(this.f27511a);
+            int c2 = j.c(this.f13823a);
             Camera.CameraInfo c3 = com.qiniu.pili.droid.shortvideo.a.a.a.a().c();
             int i = this.f == 1 ? (360 - ((c3.orientation + c2) % 360)) % 360 : ((c3.orientation - c2) + 360) % 360;
             com.qiniu.pili.droid.shortvideo.a.a.a.a().b(i);
@@ -239,7 +239,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
     public void a(int i, int i2) {
         Camera.Parameters k = com.qiniu.pili.droid.shortvideo.a.a.a.a().k();
         if (k != null) {
-            e eVar = new e(this.f27511a, k.getFocusMode(), i, i2);
+            e eVar = new e(this.f13823a, k.getFocusMode(), i, i2);
             this.k = eVar;
             eVar.a(this.m);
         }
@@ -253,7 +253,7 @@ public final class b implements SurfaceTexture.OnFrameAvailableListener, Camera.
     }
 
     public final void a(PLCameraParamSelectListener pLCameraParamSelectListener) {
-        this.f27512c = pLCameraParamSelectListener;
+        this.f13824c = pLCameraParamSelectListener;
     }
 
     public final void a(PLCameraPreviewListener pLCameraPreviewListener) {

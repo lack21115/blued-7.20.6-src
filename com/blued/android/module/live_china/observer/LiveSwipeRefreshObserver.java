@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveSwipeRefreshObserver.class */
 public class LiveSwipeRefreshObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static LiveSwipeRefreshObserver f13952a = new LiveSwipeRefreshObserver();
+    private static LiveSwipeRefreshObserver a = new LiveSwipeRefreshObserver();
     private ArrayList<IEnableRefeshObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/LiveSwipeRefreshObserver$IEnableRefeshObserver.class */
@@ -18,7 +16,7 @@ public class LiveSwipeRefreshObserver {
     }
 
     public static LiveSwipeRefreshObserver a() {
-        return f13952a;
+        return a;
     }
 
     public void a(IEnableRefeshObserver iEnableRefeshObserver) {

@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class DialogPushCheckBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final RelativeLayout f28718a;
+    private final RelativeLayout f15028a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public RelativeLayout getRoot() {
-        return this.f28718a;
+        return this.f15028a;
     }
 }

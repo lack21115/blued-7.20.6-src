@@ -11,39 +11,35 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/databinding/FragmentCircleTypeListBinding.class */
 public final class FragmentCircleTypeListBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final RecyclerView f18841a;
+    public final RecyclerView a;
     public final NoDataAndLoadFailView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final SmartRefreshLayout f18842c;
+    public final SmartRefreshLayout c;
     public final CommonTopTitleNoTrans d;
     public final RecyclerView e;
     private final ConstraintLayout f;
 
     private FragmentCircleTypeListBinding(ConstraintLayout constraintLayout, RecyclerView recyclerView, NoDataAndLoadFailView noDataAndLoadFailView, SmartRefreshLayout smartRefreshLayout, CommonTopTitleNoTrans commonTopTitleNoTrans, RecyclerView recyclerView2) {
         this.f = constraintLayout;
-        this.f18841a = recyclerView;
+        this.a = recyclerView;
         this.b = noDataAndLoadFailView;
-        this.f18842c = smartRefreshLayout;
+        this.c = smartRefreshLayout;
         this.d = commonTopTitleNoTrans;
         this.e = recyclerView2;
     }
 
     public static FragmentCircleTypeListBinding a(View view) {
         String str;
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.circleListRecycler);
-        if (recyclerView != null) {
+        RecyclerView findViewById = view.findViewById(R.id.circleListRecycler);
+        if (findViewById != null) {
             NoDataAndLoadFailView noDataAndLoadFailView = (NoDataAndLoadFailView) view.findViewById(R.id.classNoDataView);
             if (noDataAndLoadFailView != null) {
-                SmartRefreshLayout smartRefreshLayout = (SmartRefreshLayout) view.findViewById(R.id.refreshLayout);
-                if (smartRefreshLayout != null) {
+                SmartRefreshLayout findViewById2 = view.findViewById(R.id.refreshLayout);
+                if (findViewById2 != null) {
                     CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) view.findViewById(R.id.title);
                     if (commonTopTitleNoTrans != null) {
-                        RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.typeListRecycler);
-                        if (recyclerView2 != null) {
-                            return new FragmentCircleTypeListBinding((ConstraintLayout) view, recyclerView, noDataAndLoadFailView, smartRefreshLayout, commonTopTitleNoTrans, recyclerView2);
+                        RecyclerView findViewById3 = view.findViewById(R.id.typeListRecycler);
+                        if (findViewById3 != null) {
+                            return new FragmentCircleTypeListBinding((ConstraintLayout) view, findViewById, noDataAndLoadFailView, findViewById2, commonTopTitleNoTrans, findViewById3);
                         }
                         str = "typeListRecycler";
                     } else {
@@ -61,7 +57,6 @@ public final class FragmentCircleTypeListBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.f;

@@ -2,6 +2,7 @@ package com.soft.blued.ui.setting.Presenter;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.ActivityStack;
@@ -52,24 +53,22 @@ public class SwitchAccountPresenter extends MvpPresenter {
     public class AnonymousClass4 extends BluedUIHttpResponse<BluedEntity<BluedLoginResult, AVConfigExtra>> {
 
         /* renamed from: a  reason: collision with root package name */
-        String f33254a;
+        String f19563a;
         final /* synthetic */ UserAccountsModel b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ int f33255c;
+        final /* synthetic */ int f19564c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass4(IRequestHost iRequestHost, UserAccountsModel userAccountsModel, int i) {
             super(iRequestHost);
             this.b = userAccountsModel;
-            this.f33255c = i;
-            this.f33254a = "";
+            this.f19564c = i;
+            this.f19563a = "";
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(final int i, String str, String str2) {
             ThreadManager.a().a(new ThreadExecutor("") { // from class: com.soft.blued.ui.setting.Presenter.SwitchAccountPresenter.4.1
-                @Override // com.blued.android.framework.pool.ThreadExecutor
                 public void execute() {
                     if (AnonymousClass4.this.b != null) {
                         SwitchAccountPresenter.this.c(AnonymousClass4.this.b);
@@ -88,26 +87,24 @@ public class SwitchAccountPresenter extends MvpPresenter {
             return super.onUIFailure(i, str, str2);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity<BluedLoginResult, AVConfigExtra> bluedEntity) {
             if (bluedEntity == null || bluedEntity.data == null || bluedEntity.data.size() <= 0) {
                 return;
             }
             if (bluedEntity.extra != null) {
-                AVConfig.a().a(bluedEntity.extra.f20538a, false);
+                AVConfig.a().a(((AVConfigExtra) bluedEntity.extra).f6932a, false);
             }
             try {
-                BluedLoginResult bluedLoginResult = (BluedLoginResult) AppInfo.f().fromJson(AesCrypto2.a(bluedEntity.data.get(0).getEncrypted()), (Class<Object>) BluedLoginResult.class);
+                BluedLoginResult bluedLoginResult = (BluedLoginResult) AppInfo.f().fromJson(AesCrypto2.a(((BluedLoginResult) bluedEntity.data.get(0)).getEncrypted()), (Class<Object>) BluedLoginResult.class);
                 YouMengUtils.a(bluedLoginResult.uid);
                 CrashReport.setUserId(bluedLoginResult.uid);
-                SwitchAccountPresenter.this.a(this.b.getUsername(), this.f33255c, this.f33254a, bluedLoginResult);
+                SwitchAccountPresenter.this.a(this.b.getUsername(), this.f19564c, this.f19563a, bluedLoginResult);
             } catch (Exception e) {
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public BluedEntity<BluedLoginResult, AVConfigExtra> parseData(String str) {
-            this.f33254a = str;
+            this.f19563a = str;
             return super.parseData(str);
         }
     }
@@ -129,7 +126,7 @@ public class SwitchAccountPresenter extends MvpPresenter {
 
     private void b(UserAccountsModel userAccountsModel) {
         int loginType = userAccountsModel.getLoginType();
-        LoginRegisterHttpUtils.a(new AnonymousClass4(g(), userAccountsModel, loginType), loginType != 0 ? loginType != 1 ? loginType != 2 ? null : UserAccountsModel.ACCOUNT_THREE_WEIXIN : "mobile" : "email", LoginRegisterTools.f(userAccountsModel.getAccessToken()), userAccountsModel.getUid());
+        LoginRegisterHttpUtils.a(new AnonymousClass4(g(), userAccountsModel, loginType), loginType != 0 ? loginType != 1 ? loginType != 2 ? null : "weixin" : "mobile" : "email", LoginRegisterTools.f(userAccountsModel.getAccessToken()), userAccountsModel.getUid());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -138,7 +135,7 @@ public class SwitchAccountPresenter extends MvpPresenter {
             userAccountsModel.setAccessToken("");
             userAccountsModel.setLastHandleTime(System.currentTimeMillis());
             try {
-                UserAccountsVDao.a().b().update((Dao<UserAccountsModel, Integer>) userAccountsModel);
+                UserAccountsVDao.a().b().update((Dao) userAccountsModel);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -148,21 +145,19 @@ public class SwitchAccountPresenter extends MvpPresenter {
     /* JADX INFO: Access modifiers changed from: private */
     public void d(UserAccountsModel userAccountsModel) {
         if (g().isActive()) {
-            CommonAlertDialog.a(h(), 0, "", h().getResources().getString(R.string.switch_login_failed), null, AppUtils.a(2131886752), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.Presenter.SwitchAccountPresenter.5
+            CommonAlertDialog.a(h(), 0, "", h().getResources().getString(R.string.switch_login_failed), (View) null, AppUtils.a(2131886752), new DialogInterface.OnClickListener() { // from class: com.soft.blued.ui.setting.Presenter.SwitchAccountPresenter.5
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     Tracker.onClick(dialogInterface, i);
                     dialogInterface.dismiss();
                     FirstActivity.a(AppInfo.d());
                 }
-            }, null, null, null, false, 1, 0, false, false);
+            }, (String) null, (DialogInterface.OnClickListener) null, (DialogInterface.OnDismissListener) null, false, 1, 0, false, false);
         }
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void a(final IFetchDataListener iFetchDataListener) {
         ThreadManager.a().a(new ThreadExecutor("FetchAccount") { // from class: com.soft.blued.ui.setting.Presenter.SwitchAccountPresenter.1
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 SwitchAccountPresenter.this.i = UserAccountsVDao.a().h();
                 iFetchDataListener.a("data_account", SwitchAccountPresenter.this.i);
@@ -201,7 +196,6 @@ public class SwitchAccountPresenter extends MvpPresenter {
         }, "switch_Acc");
     }
 
-    @Override // com.blued.android.framework.ui.mvp.MvpPresenter
     public void b(IFetchDataListener iFetchDataListener) {
     }
 
@@ -230,7 +224,7 @@ public class SwitchAccountPresenter extends MvpPresenter {
             return;
         }
         this.i.remove(1);
-        a("data_account", (String) this.i);
+        a("data_account", this.i);
     }
 
     public void p() {
@@ -238,14 +232,13 @@ public class SwitchAccountPresenter extends MvpPresenter {
             return;
         }
         ThreadManager.a().a(new ThreadExecutor("deleteAliasUserId") { // from class: com.soft.blued.ui.setting.Presenter.SwitchAccountPresenter.3
-            @Override // com.blued.android.framework.pool.ThreadExecutor
             public void execute() {
                 Iterator it = SwitchAccountPresenter.this.i.iterator();
                 while (it.hasNext()) {
                     UserAccountsModel userAccountsModel = (UserAccountsModel) it.next();
                     userAccountsModel.setAliasUserId("");
                     try {
-                        UserAccountsVDao.a().b().update((Dao<UserAccountsModel, Integer>) userAccountsModel);
+                        UserAccountsVDao.a().b().update((Dao) userAccountsModel);
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }

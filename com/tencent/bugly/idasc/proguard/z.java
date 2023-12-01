@@ -20,7 +20,7 @@ import java.util.Map;
 public final class z {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String[] f35355a = "@buglyAllChannel@".split(",");
+    public static final String[] f21664a = "@buglyAllChannel@".split(",");
     public static final String[] b = "@buglyAllChannelPriority@".split(",");
 
     public static String a(int i) {

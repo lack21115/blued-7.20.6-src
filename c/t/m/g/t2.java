@@ -9,7 +9,7 @@ import java.util.Locale;
 public class t2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static HashMap<String, ThreadLocal<SimpleDateFormat>> f3991a = new HashMap<>();
+    public static HashMap<String, ThreadLocal<SimpleDateFormat>> f3943a = new HashMap<>();
 
     public static String a(String str) {
         return a(str, System.currentTimeMillis());
@@ -23,11 +23,11 @@ public class t2 {
         SimpleDateFormat simpleDateFormat;
         synchronized (t2.class) {
             try {
-                ThreadLocal<SimpleDateFormat> threadLocal = f3991a.get(str);
+                ThreadLocal<SimpleDateFormat> threadLocal = f3943a.get(str);
                 ThreadLocal<SimpleDateFormat> threadLocal2 = threadLocal;
                 if (threadLocal == null) {
                     threadLocal2 = new ThreadLocal<>();
-                    f3991a.put(str, threadLocal2);
+                    f3943a.put(str, threadLocal2);
                 }
                 SimpleDateFormat simpleDateFormat2 = threadLocal2.get();
                 simpleDateFormat = simpleDateFormat2;

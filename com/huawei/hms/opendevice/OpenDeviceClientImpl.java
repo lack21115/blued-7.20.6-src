@@ -14,15 +14,15 @@ import com.huawei.hms.utils.JsonUtil;
 public class OpenDeviceClientImpl extends HuaweiApi<OpenDeviceOptions> implements OpenDeviceClient {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final OpenDeviceHmsClientBuilder f22808a = new OpenDeviceHmsClientBuilder();
+    private static final OpenDeviceHmsClientBuilder f9200a = new OpenDeviceHmsClientBuilder();
     private static final Api<OpenDeviceOptions> b = new Api<>(HuaweiApiAvailability.HMS_API_NAME_OD);
 
     /* renamed from: c  reason: collision with root package name */
-    private static OpenDeviceOptions f22809c = new OpenDeviceOptions();
+    private static OpenDeviceOptions f9201c = new OpenDeviceOptions();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public OpenDeviceClientImpl(Context context) {
-        super(context, b, f22809c, f22808a);
+        super(context, b, f9201c, f9200a);
         super.setKitSdkVersion(60700300);
     }
 

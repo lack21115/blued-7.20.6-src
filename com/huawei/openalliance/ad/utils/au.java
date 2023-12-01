@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.huawei.hms.ads.base.R;
 import com.huawei.hms.ads.ge;
 import com.huawei.openalliance.ad.constant.bm;
@@ -411,7 +410,7 @@ public abstract class au {
     }
 
     private static String a(String str) {
-        int lastIndexOf = str.lastIndexOf(BridgeUtil.SPLIT_MARK);
+        int lastIndexOf = str.lastIndexOf("/");
         String str2 = str;
         if (lastIndexOf >= 0) {
             int i = lastIndexOf + 1;

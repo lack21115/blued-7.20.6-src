@@ -10,7 +10,7 @@ public class GDTATNativePatchAd extends GDTATNativeAd {
         super(context, nativeUnifiedADData, i, i2, i3);
     }
 
-    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd, com.anythink.core.api.IATThirdPartyMaterial
+    @Override // com.anythink.nativead.unitgroup.api.CustomNativeAd
     public int getNativeType() {
         return 2;
     }

@@ -6,12 +6,12 @@ public class ADSize {
     public static final int FULL_WIDTH = -1;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f27879a;
+    private int f14191a;
     private int b;
 
     public ADSize(int i, int i2) {
         this.b = i2;
-        this.f27879a = i;
+        this.f14191a = i;
     }
 
     public int getHeight() {
@@ -19,6 +19,6 @@ public class ADSize {
     }
 
     public int getWidth() {
-        return this.f27879a;
+        return this.f14191a;
     }
 }

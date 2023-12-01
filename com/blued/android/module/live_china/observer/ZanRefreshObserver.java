@@ -5,9 +5,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/ZanRefreshObserver.class */
 public class ZanRefreshObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static ZanRefreshObserver f13959a = new ZanRefreshObserver();
+    private static ZanRefreshObserver a = new ZanRefreshObserver();
     private ArrayList<IZanRefreshObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/observer/ZanRefreshObserver$IZanRefreshObserver.class */
@@ -19,7 +17,7 @@ public class ZanRefreshObserver {
     }
 
     public static ZanRefreshObserver a() {
-        return f13959a;
+        return a;
     }
 
     public void a(IZanRefreshObserver iZanRefreshObserver) {

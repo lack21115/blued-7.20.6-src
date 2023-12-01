@@ -27,11 +27,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public final class TransformationUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final Paint f20972a = new Paint(6);
+    private static final Paint f7366a = new Paint(6);
     private static final Paint b = new Paint(7);
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Paint f20973c;
+    private static final Paint f7367c;
     private static final Set<String> d;
     private static final Lock e;
 
@@ -79,7 +79,7 @@ public final class TransformationUtils {
         d = hashSet;
         e = hashSet.contains(Build.MODEL) ? new ReentrantLock() : new NoLock();
         Paint paint = new Paint(7);
-        f20973c = paint;
+        f7367c = paint;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
@@ -255,7 +255,7 @@ public final class TransformationUtils {
         e.lock();
         try {
             Canvas canvas = new Canvas(bitmap2);
-            canvas.drawBitmap(bitmap, matrix, f20972a);
+            canvas.drawBitmap(bitmap, matrix, f7366a);
             a(canvas);
             e.unlock();
         } catch (Throwable th) {
@@ -364,7 +364,7 @@ public final class TransformationUtils {
         try {
             Canvas canvas = new Canvas(a3);
             canvas.drawCircle(f2, f2, f2, b);
-            canvas.drawBitmap(a2, (Rect) null, rectF, f20973c);
+            canvas.drawBitmap(a2, (Rect) null, rectF, f7367c);
             a(canvas);
             e.unlock();
             if (!a2.equals(bitmap)) {

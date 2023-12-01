@@ -1,5 +1,6 @@
 package com.tencent.open.utils;
 
+import com.tencent.tinker.ziputils.ziputil.ZipConstants;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -15,7 +16,7 @@ public final class ApkExternalInfoTool {
     public static final String CHANNELID = "channelNo";
 
     /* renamed from: a  reason: collision with root package name */
-    private static final ZipLong f38268a = new ZipLong(101010256);
+    private static final ZipLong f24577a = new ZipLong((long) ZipConstants.ENDSIG);
     private static final ZipShort b = new ZipShort(38651);
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -23,11 +24,11 @@ public final class ApkExternalInfoTool {
     public static class ApkExternalInfo {
 
         /* renamed from: a  reason: collision with root package name */
-        Properties f38269a;
+        Properties f24578a;
         byte[] b;
 
         private ApkExternalInfo() {
-            this.f38269a = new Properties();
+            this.f24578a = new Properties();
         }
 
         void a(byte[] bArr) throws IOException {
@@ -50,7 +51,7 @@ public final class ApkExternalInfoTool {
                 }
                 byte[] bArr4 = new byte[value];
                 wrap.get(bArr4);
-                this.f38269a.load(new ByteArrayInputStream(bArr4));
+                this.f24578a.load(new ByteArrayInputStream(bArr4));
                 int length2 = ((bArr.length - length) - value) - 2;
                 if (length2 > 0) {
                     byte[] bArr5 = new byte[length2];
@@ -61,7 +62,7 @@ public final class ApkExternalInfoTool {
         }
 
         public String toString() {
-            return "ApkExternalInfo [p=" + this.f38269a + ", otherData=" + Arrays.toString(this.b) + "]";
+            return "ApkExternalInfo [p=" + this.f24578a + ", otherData=" + Arrays.toString(this.b) + "]";
         }
     }
 
@@ -69,7 +70,7 @@ public final class ApkExternalInfoTool {
         boolean z;
         long length = randomAccessFile.length() - 22;
         randomAccessFile.seek(length);
-        byte[] bytes = f38268a.getBytes();
+        byte[] bytes = f24577a.getBytes();
         int read = randomAccessFile.read();
         while (true) {
             int i = read;
@@ -116,7 +117,7 @@ public final class ApkExternalInfoTool {
             }
             ApkExternalInfo apkExternalInfo = new ApkExternalInfo();
             apkExternalInfo.a(a2);
-            String property = apkExternalInfo.f38269a.getProperty(str);
+            String property = apkExternalInfo.f24578a.getProperty(str);
             randomAccessFile.close();
             return property;
         } catch (Throwable th2) {

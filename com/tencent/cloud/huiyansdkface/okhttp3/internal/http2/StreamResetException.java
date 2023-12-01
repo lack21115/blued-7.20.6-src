@@ -6,10 +6,10 @@ import java.io.IOException;
 public final class StreamResetException extends IOException {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ErrorCode f36017a;
+    public final ErrorCode f22326a;
 
     public StreamResetException(ErrorCode errorCode) {
         super("stream was reset: " + errorCode);
-        this.f36017a = errorCode;
+        this.f22326a = errorCode;
     }
 }

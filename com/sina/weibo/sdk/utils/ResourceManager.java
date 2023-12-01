@@ -1,5 +1,6 @@
 package com.sina.weibo.sdk.utils;
 
+import android.R;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
@@ -31,16 +32,16 @@ public class ResourceManager {
 
     /* JADX WARN: Type inference failed for: r2v1, types: [int[], int[][]] */
     public static ColorStateList createColorStateList(int i, int i2) {
-        return new ColorStateList(new int[]{new int[]{16842919}, new int[]{16842913}, new int[]{16842908}, StateSet.WILD_CARD}, new int[]{i2, i2, i2, i});
+        return new ColorStateList(new int[]{new int[]{R.attr.state_pressed}, new int[]{R.attr.state_selected}, new int[]{R.attr.state_focused}, StateSet.WILD_CARD}, new int[]{i2, i2, i2, i});
     }
 
     public static StateListDrawable createStateListDrawable(Context context, String str, String str2) {
         Drawable ninePatchDrawable = str.indexOf(".9") > -1 ? getNinePatchDrawable(context, str) : getDrawable(context, str);
         Drawable ninePatchDrawable2 = str2.indexOf(".9") > -1 ? getNinePatchDrawable(context, str2) : getDrawable(context, str2);
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{16842919}, ninePatchDrawable2);
-        stateListDrawable.addState(new int[]{16842913}, ninePatchDrawable2);
-        stateListDrawable.addState(new int[]{16842908}, ninePatchDrawable2);
+        stateListDrawable.addState(new int[]{R.attr.state_pressed}, ninePatchDrawable2);
+        stateListDrawable.addState(new int[]{R.attr.state_selected}, ninePatchDrawable2);
+        stateListDrawable.addState(new int[]{R.attr.state_focused}, ninePatchDrawable2);
         stateListDrawable.addState(StateSet.WILD_CARD, ninePatchDrawable);
         return stateListDrawable;
     }
@@ -50,10 +51,10 @@ public class ResourceManager {
         Drawable ninePatchDrawable2 = str3.indexOf(".9") > -1 ? getNinePatchDrawable(context, str3) : getDrawable(context, str3);
         Drawable ninePatchDrawable3 = str2.indexOf(".9") > -1 ? getNinePatchDrawable(context, str2) : getDrawable(context, str2);
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{16842919}, ninePatchDrawable3);
-        stateListDrawable.addState(new int[]{16842913}, ninePatchDrawable3);
-        stateListDrawable.addState(new int[]{16842908}, ninePatchDrawable3);
-        stateListDrawable.addState(new int[]{16842766}, ninePatchDrawable2);
+        stateListDrawable.addState(new int[]{R.attr.state_pressed}, ninePatchDrawable3);
+        stateListDrawable.addState(new int[]{R.attr.state_selected}, ninePatchDrawable3);
+        stateListDrawable.addState(new int[]{R.attr.state_focused}, ninePatchDrawable3);
+        stateListDrawable.addState(new int[]{R.attr.enabled}, ninePatchDrawable2);
         stateListDrawable.addState(StateSet.WILD_CARD, ninePatchDrawable);
         return stateListDrawable;
     }

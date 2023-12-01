@@ -13,13 +13,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/PopWindowRankingHourCardBinding.class */
 public final class PopWindowRankingHourCardBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final CardView f12494a;
+    public final CardView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final CustomViewPager f12495c;
+    public final CustomViewPager c;
     public final RelativeLayout d;
     public final TextView e;
     public final TextView f;
@@ -30,9 +26,9 @@ public final class PopWindowRankingHourCardBinding implements ViewBinding {
 
     private PopWindowRankingHourCardBinding(FrameLayout frameLayout, CardView cardView, ImageView imageView, CustomViewPager customViewPager, RelativeLayout relativeLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4, ShapeTextView shapeTextView) {
         this.j = frameLayout;
-        this.f12494a = cardView;
+        this.a = cardView;
         this.b = imageView;
-        this.f12495c = customViewPager;
+        this.c = customViewPager;
         this.d = relativeLayout;
         this.e = textView;
         this.f = textView2;
@@ -43,8 +39,8 @@ public final class PopWindowRankingHourCardBinding implements ViewBinding {
 
     public static PopWindowRankingHourCardBinding a(View view) {
         String str;
-        CardView cardView = (CardView) view.findViewById(R.id.cv_tabbar_root);
-        if (cardView != null) {
+        CardView findViewById = view.findViewById(R.id.cv_tabbar_root);
+        if (findViewById != null) {
             ImageView imageView = (ImageView) view.findViewById(R.id.iv_back);
             if (imageView != null) {
                 CustomViewPager customViewPager = (CustomViewPager) view.findViewById(R.id.live_hour_viewpager);
@@ -61,7 +57,7 @@ public final class PopWindowRankingHourCardBinding implements ViewBinding {
                                     if (textView4 != null) {
                                         ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.view_cursor);
                                         if (shapeTextView != null) {
-                                            return new PopWindowRankingHourCardBinding((FrameLayout) view, cardView, imageView, customViewPager, relativeLayout, textView, textView2, textView3, textView4, shapeTextView);
+                                            return new PopWindowRankingHourCardBinding((FrameLayout) view, findViewById, imageView, customViewPager, relativeLayout, textView, textView2, textView3, textView4, shapeTextView);
                                         }
                                         str = "viewCursor";
                                     } else {
@@ -91,7 +87,6 @@ public final class PopWindowRankingHourCardBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.j;

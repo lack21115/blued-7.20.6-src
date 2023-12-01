@@ -36,11 +36,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class FilterCommonScrollSelectorView extends LinearLayout {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Companion f30681a = new Companion(null);
+    public static final Companion f16991a = new Companion(null);
     private Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    private LayoutFilterCommonSelectorBinding f30682c;
+    private LayoutFilterCommonSelectorBinding f16992c;
     private FilterSelectorOpenTwoLevelListener d;
     private final int e;
     private String f;
@@ -106,18 +106,18 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(FilterCommonScrollSelectorView this$0, View view) {
+    public static final void a(FilterCommonScrollSelectorView filterCommonScrollSelectorView, View view) {
         Tracker.onClick(view);
-        Intrinsics.e(this$0, "this$0");
-        this$0.d();
+        Intrinsics.e(filterCommonScrollSelectorView, "this$0");
+        filterCommonScrollSelectorView.d();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void b() {
         String str = this.k;
         boolean z = true;
-        if (!Intrinsics.a((Object) str, (Object) "ONLINE_TIME")) {
-            if (Intrinsics.a((Object) str, (Object) "DISTANCE")) {
+        if (!Intrinsics.a(str, "ONLINE_TIME")) {
+            if (Intrinsics.a(str, "DISTANCE")) {
                 EventTrackGuy.a(GuyProtos.Event.SCREEN_DISTANCE_BTN_CLICK, UserInfo.getInstance().getLoginUserInfo().vip_grade != 0);
                 return;
             }
@@ -137,10 +137,10 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
     private final void d() {
         FilterSelectorOpenTwoLevelListener openTwoLevelListener;
         if (this.j && !c()) {
-            PayUtils.a(this.b, 24, Intrinsics.a((Object) this.k, (Object) "ONLINE_TIME") ? "nearby_filter_time" : "nearby_filter_distance", Intrinsics.a((Object) this.k, (Object) "ONLINE_TIME") ? VipProtos.FromType.ONLINE_FILTER : VipProtos.FromType.DISTANCE_FILTER);
+            PayUtils.a(this.b, 24, Intrinsics.a(this.k, "ONLINE_TIME") ? "nearby_filter_time" : "nearby_filter_distance", Intrinsics.a(this.k, "ONLINE_TIME") ? VipProtos.FromType.ONLINE_FILTER : VipProtos.FromType.DISTANCE_FILTER);
             return;
         }
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
         if (layoutFilterCommonSelectorBinding == null) {
             return;
         }
@@ -153,7 +153,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
     }
 
     private final boolean e() {
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
         if (layoutFilterCommonSelectorBinding == null) {
             return false;
         }
@@ -169,12 +169,12 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
         for (Map.Entry<String, Integer> entry2 : this.i.entrySet()) {
             arrayList2.add(entry2.getKey());
         }
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
-        StringScrollPicker stringScrollPicker = layoutFilterCommonSelectorBinding == null ? null : layoutFilterCommonSelectorBinding.f29392c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
+        StringScrollPicker stringScrollPicker = layoutFilterCommonSelectorBinding == null ? null : layoutFilterCommonSelectorBinding.f15702c;
         if (stringScrollPicker != null) {
             stringScrollPicker.setData(arrayList);
         }
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding2 = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding2 = this.f16992c;
         StringScrollPicker stringScrollPicker2 = layoutFilterCommonSelectorBinding2 == null ? null : layoutFilterCommonSelectorBinding2.d;
         if (stringScrollPicker2 == null) {
             return;
@@ -185,7 +185,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
     private final void setTagArrow(boolean z) {
         LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding;
         Context context = this.b;
-        if (context == null || (layoutFilterCommonSelectorBinding = this.f30682c) == null) {
+        if (context == null || (layoutFilterCommonSelectorBinding = this.f16992c) == null) {
             return;
         }
         if (z) {
@@ -198,7 +198,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
     public final void a() {
         LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding;
         ExpandLinearLayout expandLinearLayout;
-        if (!e() || (layoutFilterCommonSelectorBinding = this.f30682c) == null || (expandLinearLayout = layoutFilterCommonSelectorBinding.e) == null) {
+        if (!e() || (layoutFilterCommonSelectorBinding = this.f16992c) == null || (expandLinearLayout = layoutFilterCommonSelectorBinding.e) == null) {
             return;
         }
         expandLinearLayout.b();
@@ -210,7 +210,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
             return;
         }
         final LayoutFilterCommonSelectorBinding a2 = LayoutFilterCommonSelectorBinding.a(LayoutInflater.from(context).inflate(R.layout.layout_filter_common_selector, this));
-        this.f30682c = a2;
+        this.f16992c = a2;
         if (a2 == null) {
             return;
         }
@@ -220,22 +220,21 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
             a2.g.setText(obtainStyledAttributes.getString(0));
             a2.f.setText(obtainStyledAttributes.getString(1));
         }
-        a2.f29392c.a(BluedSkinUtils.a(context, 2131102254), BluedSkinUtils.a(context, 2131102263), BluedSkinUtils.a(context, 2131102260));
+        a2.f15702c.a(BluedSkinUtils.a(context, 2131102254), BluedSkinUtils.a(context, 2131102263), BluedSkinUtils.a(context, 2131102260));
         a2.d.a(BluedSkinUtils.a(context, 2131102254), BluedSkinUtils.a(context, 2131102263), BluedSkinUtils.a(context, 2131102260));
-        a2.f29391a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.-$$Lambda$FilterCommonScrollSelectorView$IyqLugrwoMqzmREKftX30MLs_O8
+        a2.f15701a.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.find.view.-$$Lambda$FilterCommonScrollSelectorView$IyqLugrwoMqzmREKftX30MLs_O8
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FilterCommonScrollSelectorView.a(FilterCommonScrollSelectorView.this, view);
             }
         });
-        a2.f29392c.setOnSelectedListener(new ScrollPickerView.OnSelectedListener() { // from class: com.soft.blued.ui.find.view.FilterCommonScrollSelectorView$initView$1$1$3
-            @Override // com.blued.android.module.common.view.scrollpicker.ScrollPickerView.OnSelectedListener
+        a2.f15702c.setOnSelectedListener(new ScrollPickerView.OnSelectedListener() { // from class: com.soft.blued.ui.find.view.FilterCommonScrollSelectorView$initView$1$1$3
             public void a(ScrollPickerView<?> scrollPickerView, int i) {
                 Map map;
                 String str;
                 Map map2;
-                if (LayoutFilterCommonSelectorBinding.this.f29392c.getData() != null && LayoutFilterCommonSelectorBinding.this.f29392c.getData().size() > i) {
-                    this.f = LayoutFilterCommonSelectorBinding.this.f29392c.getSelectedItem().toString();
+                if (LayoutFilterCommonSelectorBinding.this.f15702c.getData() != null && LayoutFilterCommonSelectorBinding.this.f15702c.getData().size() > i) {
+                    this.f = LayoutFilterCommonSelectorBinding.this.f15702c.getSelectedItem().toString();
                 }
                 map = this.h;
                 str = this.f;
@@ -248,12 +247,12 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
                     int intValue = num.intValue();
                     if (num2 != null) {
                         int intValue2 = num2.intValue();
-                        if (FilterNewHelper.f30593a.a(layoutFilterCommonSelectorBinding.f29392c.getData().get(0).toString())) {
+                        if (FilterNewHelper.f16903a.a(layoutFilterCommonSelectorBinding.f15702c.getData().get(0).toString())) {
                             if (intValue >= intValue2) {
                                 layoutFilterCommonSelectorBinding.d.a(intValue - 1, true);
                             }
                         } else if (intValue >= intValue2) {
-                            if (Intrinsics.a((Object) filterCommonScrollSelectorView.getVIEW_TAG(), (Object) "ONLINE_TIME") || Intrinsics.a((Object) filterCommonScrollSelectorView.getVIEW_TAG(), (Object) "DISTANCE")) {
+                            if (Intrinsics.a(filterCommonScrollSelectorView.getVIEW_TAG(), "ONLINE_TIME") || Intrinsics.a(filterCommonScrollSelectorView.getVIEW_TAG(), "DISTANCE")) {
                                 layoutFilterCommonSelectorBinding.d.a(intValue + 1, true);
                             } else {
                                 layoutFilterCommonSelectorBinding.d.a(intValue, true);
@@ -265,12 +264,10 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
                 this.b();
             }
 
-            @Override // com.blued.android.module.common.view.scrollpicker.ScrollPickerView.OnSelectedListener
             public void a(boolean z) {
             }
         });
         a2.d.setOnSelectedListener(new ScrollPickerView.OnSelectedListener() { // from class: com.soft.blued.ui.find.view.FilterCommonScrollSelectorView$initView$1$1$4
-            @Override // com.blued.android.module.common.view.scrollpicker.ScrollPickerView.OnSelectedListener
             public void a(ScrollPickerView<?> scrollPickerView, int i) {
                 Map map;
                 Map map2;
@@ -280,7 +277,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
                     this.g = LayoutFilterCommonSelectorBinding.this.d.getSelectedItem().toString();
                 }
                 map = this.h;
-                Integer num = (Integer) map.get(LayoutFilterCommonSelectorBinding.this.f29392c.getSelectedItem().toString());
+                Integer num = (Integer) map.get(LayoutFilterCommonSelectorBinding.this.f15702c.getSelectedItem().toString());
                 map2 = this.i;
                 str = this.g;
                 Integer num2 = (Integer) map2.get(str);
@@ -289,12 +286,12 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
                     LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = LayoutFilterCommonSelectorBinding.this;
                     int intValue2 = num.intValue();
                     if (num2 != null && intValue2 >= (intValue = num2.intValue())) {
-                        if (!Intrinsics.a((Object) filterCommonScrollSelectorView.getVIEW_TAG(), (Object) "DISTANCE") && !Intrinsics.a((Object) filterCommonScrollSelectorView.getVIEW_TAG(), (Object) "ONLINE_TIME")) {
-                            layoutFilterCommonSelectorBinding.f29392c.a(intValue, true);
+                        if (!Intrinsics.a(filterCommonScrollSelectorView.getVIEW_TAG(), "DISTANCE") && !Intrinsics.a(filterCommonScrollSelectorView.getVIEW_TAG(), "ONLINE_TIME")) {
+                            layoutFilterCommonSelectorBinding.f15702c.a(intValue, true);
                         } else if (intValue != 0) {
-                            layoutFilterCommonSelectorBinding.f29392c.a(intValue - 1, true);
+                            layoutFilterCommonSelectorBinding.f15702c.a(intValue - 1, true);
                         } else {
-                            layoutFilterCommonSelectorBinding.f29392c.a(0, true);
+                            layoutFilterCommonSelectorBinding.f15702c.a(0, true);
                             layoutFilterCommonSelectorBinding.d.a(1, true);
                         }
                     }
@@ -303,7 +300,6 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
                 this.b();
             }
 
-            @Override // com.blued.android.module.common.view.scrollpicker.ScrollPickerView.OnSelectedListener
             public void a(boolean z) {
             }
         });
@@ -323,22 +319,22 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
         if (intValue < 0 || intValue2 < 0) {
             return;
         }
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
-        if (layoutFilterCommonSelectorBinding != null && (stringScrollPicker2 = layoutFilterCommonSelectorBinding.f29392c) != null) {
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
+        if (layoutFilterCommonSelectorBinding != null && (stringScrollPicker2 = layoutFilterCommonSelectorBinding.f15702c) != null) {
             stringScrollPicker2.a(intValue, false);
         }
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding2 = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding2 = this.f16992c;
         if (layoutFilterCommonSelectorBinding2 == null || (stringScrollPicker = layoutFilterCommonSelectorBinding2.d) == null) {
             return;
         }
         stringScrollPicker.a(intValue2, false);
     }
 
-    public final void a(Map<String, Integer> left, Map<String, Integer> right) {
-        Intrinsics.e(left, "left");
-        Intrinsics.e(right, "right");
-        this.h = left;
-        this.i = right;
+    public final void a(Map<String, Integer> map, Map<String, Integer> map2) {
+        Intrinsics.e(map, "left");
+        Intrinsics.e(map2, "right");
+        this.h = map;
+        this.i = map2;
         f();
     }
 
@@ -348,7 +344,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
 
     public final CharSequence getRightText() {
         TextView textView;
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
         if (layoutFilterCommonSelectorBinding == null || (textView = layoutFilterCommonSelectorBinding.f) == null) {
             return null;
         }
@@ -356,7 +352,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
     }
 
     public final View getTwoLevelView() {
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
         return layoutFilterCommonSelectorBinding == null ? null : layoutFilterCommonSelectorBinding.e;
     }
 
@@ -364,14 +360,14 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
         return this.k;
     }
 
-    public final void setLeftText(String text) {
-        Intrinsics.e(text, "text");
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
+    public final void setLeftText(String str) {
+        Intrinsics.e(str, "text");
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
         TextView textView = layoutFilterCommonSelectorBinding == null ? null : layoutFilterCommonSelectorBinding.g;
         if (textView == null) {
             return;
         }
-        textView.setText(text);
+        textView.setText(str);
     }
 
     public final void setNeedVipPrivilege(boolean z) {
@@ -389,10 +385,10 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
         String str;
         Resources resources;
         Resources resources2;
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
-        this.f = String.valueOf((layoutFilterCommonSelectorBinding == null || (stringScrollPicker = layoutFilterCommonSelectorBinding.f29392c) == null) ? null : stringScrollPicker.getSelectedItem());
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding2 = this.f30682c;
-        this.g = String.valueOf((layoutFilterCommonSelectorBinding2 == null || (stringScrollPicker2 = layoutFilterCommonSelectorBinding2.d) == null) ? null : stringScrollPicker2.getSelectedItem());
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
+        this.f = String.valueOf((layoutFilterCommonSelectorBinding == null || (stringScrollPicker = layoutFilterCommonSelectorBinding.f15702c) == null) ? null : (CharSequence) stringScrollPicker.getSelectedItem());
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding2 = this.f16992c;
+        this.g = String.valueOf((layoutFilterCommonSelectorBinding2 == null || (stringScrollPicker2 = layoutFilterCommonSelectorBinding2.d) == null) ? null : (CharSequence) stringScrollPicker2.getSelectedItem());
         if (TextUtils.isEmpty(this.f) || TextUtils.isEmpty(this.g) || TextUtils.isEmpty(this.k)) {
             return;
         }
@@ -400,35 +396,35 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
         switch (str2.hashCode()) {
             case -1738262920:
                 if (str2.equals("WEIGHT")) {
-                    str = FilterNewHelper.f30593a.c(this.h.get(this.f), this.i.get(this.g), this.b);
+                    str = FilterNewHelper.f16903a.c(this.h.get(this.f), this.i.get(this.g), this.b);
                     break;
                 }
                 str = "";
                 break;
             case -1648306887:
                 if (str2.equals("ONLINE_TIME")) {
-                    str = FilterNewHelper.f30593a.d(this.h.get(this.f), this.i.get(this.g), this.b);
+                    str = FilterNewHelper.f16903a.d(this.h.get(this.f), this.i.get(this.g), this.b);
                     break;
                 }
                 str = "";
                 break;
             case 64735:
                 if (str2.equals("AGE")) {
-                    str = FilterNewHelper.f30593a.a(this.h.get(this.f), this.i.get(this.g), this.b);
+                    str = FilterNewHelper.f16903a.a(this.h.get(this.f), this.i.get(this.g), this.b);
                     break;
                 }
                 str = "";
                 break;
             case 1071086581:
                 if (str2.equals("DISTANCE")) {
-                    str = FilterNewHelper.f30593a.e(this.h.get(this.f), this.i.get(this.g), this.b);
+                    str = FilterNewHelper.f16903a.e(this.h.get(this.f), this.i.get(this.g), this.b);
                     break;
                 }
                 str = "";
                 break;
             case 2127267111:
                 if (str2.equals("HEIGHT")) {
-                    str = FilterNewHelper.f30593a.b(this.h.get(this.f), this.i.get(this.g), this.b);
+                    str = FilterNewHelper.f16903a.b(this.h.get(this.f), this.i.get(this.g), this.b);
                     break;
                 }
                 str = "";
@@ -446,7 +442,7 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
                 setRightTextColor((context2 == null || (resources = context2.getResources()) == null) ? null : Integer.valueOf(resources.getColor(2131101766)));
             }
         }
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding3 = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding3 = this.f16992c;
         TextView textView = layoutFilterCommonSelectorBinding3 == null ? null : layoutFilterCommonSelectorBinding3.f;
         if (textView == null) {
             return;
@@ -460,16 +456,16 @@ public final class FilterCommonScrollSelectorView extends LinearLayout {
             return;
         }
         int intValue = num.intValue();
-        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f30682c;
+        LayoutFilterCommonSelectorBinding layoutFilterCommonSelectorBinding = this.f16992c;
         if (layoutFilterCommonSelectorBinding == null || (textView = layoutFilterCommonSelectorBinding.f) == null) {
             return;
         }
         textView.setTextColor(intValue);
     }
 
-    public final void setTag(String tag) {
-        Intrinsics.e(tag, "tag");
-        this.k = tag;
+    public final void setTag(String str) {
+        Intrinsics.e(str, "tag");
+        this.k = str;
     }
 
     public final void setVIEW_TAG(String str) {

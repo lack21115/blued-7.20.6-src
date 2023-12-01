@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f7026a = "ResManager";
+    private static String f4188a = "ResManager";
     private static int b = 1;
 
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/advanced/c/c$a.class */
@@ -129,7 +129,7 @@ public final class c {
             aTNativeAdvancedView.setH5Ready(false);
             return;
         }
-        o.a(f7026a, "======开始渲染：".concat(String.valueOf(str)));
+        o.a(f4188a, "======开始渲染：".concat(String.valueOf(str)));
         new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.anythink.expressad.advanced.c.c.2
             @Override // java.lang.Runnable
             public final void run() {
@@ -141,20 +141,20 @@ public final class c {
     public static boolean a(ATNativeAdvancedView aTNativeAdvancedView, com.anythink.expressad.foundation.d.c cVar) {
         boolean z;
         if (aTNativeAdvancedView == null) {
-            o.d(f7026a, "mbAdvancedNativeView  is null");
+            o.d(f4188a, "mbAdvancedNativeView  is null");
             return false;
         }
         boolean z2 = true;
         if (!TextUtils.isEmpty(cVar.S())) {
             z2 = aTNativeAdvancedView.isVideoReady();
-            o.d(f7026a, "======isReady isVideoReady:".concat(String.valueOf(z2)));
+            o.d(f4188a, "======isReady isVideoReady:".concat(String.valueOf(z2)));
         }
         boolean z3 = z2;
         if (z2) {
             z3 = z2;
             if (!TextUtils.isEmpty(cVar.c())) {
                 z3 = com.anythink.expressad.advanced.a.a.b(cVar.Z());
-                o.d(f7026a, "======isReady getAdZip:" + z3 + "---requestId:" + cVar.Z());
+                o.d(f4188a, "======isReady getAdZip:" + z3 + "---requestId:" + cVar.Z());
             }
         }
         boolean z4 = z3;
@@ -164,12 +164,12 @@ public final class c {
                 z4 = z3;
                 if (!TextUtils.isEmpty(cVar.d())) {
                     z4 = com.anythink.expressad.advanced.a.a.b(cVar.Z());
-                    o.d(f7026a, "======isReady getAdHtml:".concat(String.valueOf(z4)));
+                    o.d(f4188a, "======isReady getAdHtml:".concat(String.valueOf(z4)));
                 }
             }
         }
         if (TextUtils.isEmpty(cVar.c()) && TextUtils.isEmpty(cVar.d())) {
-            o.d(f7026a, "======isReady getAdHtml  getAdZip all are empty");
+            o.d(f4188a, "======isReady getAdHtml  getAdZip all are empty");
             z = false;
         } else {
             z = z4;
@@ -179,7 +179,7 @@ public final class c {
             z5 = z;
             if (!TextUtils.isEmpty(cVar.I())) {
                 z5 = aTNativeAdvancedView.isEndCardReady();
-                o.d(f7026a, "======isReady isEndCardReady:".concat(String.valueOf(z5)));
+                o.d(f4188a, "======isReady isEndCardReady:".concat(String.valueOf(z5)));
             }
         }
         return z5;

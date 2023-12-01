@@ -11,19 +11,17 @@ import kotlin.jvm.functions.Function3;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__CollectKt$collectIndexed$2.class */
 public final class FlowKt__CollectKt$collectIndexed$2<T> implements FlowCollector<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Function3<Integer, T, Continuation<? super Unit>, Object> f43100a;
+    final /* synthetic */ Function3<Integer, T, Continuation<? super Unit>, Object> a;
     private int b;
 
     @Override // kotlinx.coroutines.flow.FlowCollector
     public Object emit(T t, Continuation<? super Unit> continuation) {
-        Function3<Integer, T, Continuation<? super Unit>, Object> function3 = this.f43100a;
+        Function3<Integer, T, Continuation<? super Unit>, Object> function3 = this.a;
         int i = this.b;
         this.b = i + 1;
         if (i >= 0) {
-            Object a2 = function3.a(Boxing.a(i), t, continuation);
-            return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+            Object a = function3.a(Boxing.a(i), t, continuation);
+            return a == IntrinsicsKt.a() ? a : Unit.a;
         }
         throw new ArithmeticException("Index overflow has happened");
     }

@@ -12,18 +12,18 @@ public interface x3 extends IInterface {
 
         /* renamed from: com.bytedance.bdtracker.x3$a$a  reason: collision with other inner class name */
         /* loaded from: source-7206380-dex2jar.jar:com/bytedance/bdtracker/x3$a$a.class */
-        public static class C0313a implements x3 {
+        public static class C0143a implements x3 {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f21337a;
+            public IBinder f7731a;
 
-            public C0313a(IBinder iBinder) {
-                this.f21337a = iBinder;
+            public C0143a(IBinder iBinder) {
+                this.f7731a = iBinder;
             }
 
             @Override // android.os.IInterface
             public IBinder asBinder() {
-                return this.f21337a;
+                return this.f7731a;
             }
         }
 
@@ -32,7 +32,7 @@ public interface x3 extends IInterface {
                 return null;
             }
             IInterface queryLocalInterface = iBinder.queryLocalInterface("com.uodis.opendevice.aidl.OpenDeviceIdentifierService");
-            return (queryLocalInterface == null || !(queryLocalInterface instanceof x3)) ? new C0313a(iBinder) : (x3) queryLocalInterface;
+            return (queryLocalInterface == null || !(queryLocalInterface instanceof x3)) ? new C0143a(iBinder) : (x3) queryLocalInterface;
         }
     }
 }

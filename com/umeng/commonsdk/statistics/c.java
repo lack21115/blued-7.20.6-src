@@ -28,14 +28,14 @@ public class c {
     private static final int b = 1;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f40902c = 2;
+    private static final int f27211c = 2;
     private static final int d = 3;
     private static final String o = "thtstart";
     private static final String p = "gkvc";
     private static final String q = "ekvc";
 
     /* renamed from: a  reason: collision with root package name */
-    String f40903a;
+    String f27212a;
     private com.umeng.commonsdk.statistics.internal.c f;
     private ImprintHandler g;
     private e h;
@@ -55,7 +55,7 @@ public class c {
         this.l = 0L;
         this.m = 0;
         this.n = 0;
-        this.f40903a = null;
+        this.f27212a = null;
         this.r = context;
         this.i = ImprintHandler.getImprintService(context).c();
         this.k = Defcon.getService(this.r);
@@ -63,7 +63,7 @@ public class c {
         this.l = sharedPreferences.getLong(o, 0L);
         this.m = sharedPreferences.getInt(p, 0);
         this.n = sharedPreferences.getInt(q, 0);
-        this.f40903a = UMEnvelopeBuild.imprintProperty(this.r, "track_list", null);
+        this.f27212a = UMEnvelopeBuild.imprintProperty(this.r, "track_list", null);
         ImprintHandler imprintService = ImprintHandler.getImprintService(this.r);
         this.g = imprintService;
         imprintService.a(new d() { // from class: com.umeng.commonsdk.statistics.c.1
@@ -71,7 +71,7 @@ public class c {
             public void onImprintChanged(ImprintHandler.a aVar) {
                 c.this.k.onImprintChanged(aVar);
                 c cVar = c.this;
-                cVar.f40903a = UMEnvelopeBuild.imprintProperty(cVar.r, "track_list", null);
+                cVar.f27212a = UMEnvelopeBuild.imprintProperty(cVar.r, "track_list", null);
             }
         });
         if (!UMConfigure.needSendZcfgEnv(this.r)) {

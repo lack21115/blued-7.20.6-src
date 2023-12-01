@@ -4,16 +4,16 @@ package com.qiniu.pili.droid.shortvideo.transcoder.audio;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f27814a;
+    private float f14126a;
     private float b;
 
     public c(float f, float f2) {
-        this.f27814a = f;
+        this.f14126a = f;
         this.b = f2;
     }
 
     public float a() {
-        return this.f27814a;
+        return this.f14126a;
     }
 
     public float b() {

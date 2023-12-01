@@ -5,35 +5,29 @@ import android.graphics.Bitmap;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/glide/AttributeStrategy.class */
 public class AttributeStrategy implements LruPoolStrategy {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final KeyPool f9639a = new KeyPool();
+    private final KeyPool a = new KeyPool();
     private final GroupedLinkedMap<Key, Bitmap> b = new GroupedLinkedMap<>();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-6737240-dex2jar.jar:com/blued/android/core/imagecache/glide/AttributeStrategy$Key.class */
     public static class Key implements Poolable {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final KeyPool f9640a;
+        private final KeyPool a;
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f9641c;
+        private int c;
         private Bitmap.Config d;
 
         public Key(KeyPool keyPool) {
-            this.f9640a = keyPool;
+            this.a = keyPool;
         }
 
         @Override // com.blued.android.core.imagecache.glide.Poolable
         public void a() {
-            this.f9640a.a(this);
+            this.a.a(this);
         }
 
         public void a(int i, int i2, Bitmap.Config config) {
             this.b = i;
-            this.f9641c = i2;
+            this.c = i2;
             this.d = config;
         }
 
@@ -44,7 +38,7 @@ public class AttributeStrategy implements LruPoolStrategy {
                 z = false;
                 if (this.b == key.b) {
                     z = false;
-                    if (this.f9641c == key.f9641c) {
+                    if (this.c == key.c) {
                         z = false;
                         if (this.d == key.d) {
                             z = true;
@@ -57,13 +51,13 @@ public class AttributeStrategy implements LruPoolStrategy {
 
         public int hashCode() {
             int i = this.b;
-            int i2 = this.f9641c;
+            int i2 = this.c;
             Bitmap.Config config = this.d;
             return (((i * 31) + i2) * 31) + (config != null ? config.hashCode() : 0);
         }
 
         public String toString() {
-            return AttributeStrategy.c(this.b, this.f9641c, this.d);
+            return AttributeStrategy.c(this.b, this.c, this.d);
         }
     }
 
@@ -80,9 +74,9 @@ public class AttributeStrategy implements LruPoolStrategy {
         }
 
         public Key a(int i, int i2, Bitmap.Config config) {
-            Key c2 = c();
-            c2.a(i, i2, config);
-            return c2;
+            Key c = c();
+            c.a(i, i2, config);
+            return c;
         }
     }
 
@@ -101,12 +95,12 @@ public class AttributeStrategy implements LruPoolStrategy {
 
     @Override // com.blued.android.core.imagecache.glide.LruPoolStrategy
     public Bitmap a(int i, int i2, Bitmap.Config config) {
-        return this.b.a((GroupedLinkedMap<Key, Bitmap>) this.f9639a.a(i, i2, config));
+        return this.b.a((GroupedLinkedMap<Key, Bitmap>) this.a.a(i, i2, config));
     }
 
     @Override // com.blued.android.core.imagecache.glide.LruPoolStrategy
     public void a(Bitmap bitmap) {
-        this.b.a(this.f9639a.a(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig()), bitmap);
+        this.b.a(this.a.a(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig()), bitmap);
     }
 
     @Override // com.blued.android.core.imagecache.glide.LruPoolStrategy

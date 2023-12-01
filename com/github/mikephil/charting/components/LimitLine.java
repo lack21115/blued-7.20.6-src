@@ -7,11 +7,11 @@ import android.graphics.Paint;
 public class LimitLine extends ComponentBase {
 
     /* renamed from: a  reason: collision with root package name */
-    private float f22104a;
+    private float f8497a;
     private float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f22105c;
+    private int f8498c;
     private Paint.Style d;
     private String e;
     private DashPathEffect f;
@@ -26,7 +26,7 @@ public class LimitLine extends ComponentBase {
     }
 
     public float a() {
-        return this.f22104a;
+        return this.f8497a;
     }
 
     public float b() {
@@ -34,7 +34,7 @@ public class LimitLine extends ComponentBase {
     }
 
     public int c() {
-        return this.f22105c;
+        return this.f8498c;
     }
 
     public DashPathEffect d() {

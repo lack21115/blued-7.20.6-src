@@ -1,7 +1,6 @@
 package com.blued.community.ui.feed.fragment;
 
 import com.blued.community.model.FeedBubbleSignModel;
-import com.blued.das.live.LiveProtos;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -17,16 +16,12 @@ import kotlinx.coroutines.Dispatchers;
 
 /* JADX INFO: Access modifiers changed from: package-private */
 @Metadata
-@DebugMetadata(b = "SignFeedListFragment.kt", c = {LiveProtos.Event.LIVE_SHOW_PAGE_GUILD_PAGE_SHOW_VALUE, 719}, d = "invokeSuspend", e = "com.blued.community.ui.feed.fragment.SignFeedListFragment$onLoadData$1")
+@DebugMetadata(b = "SignFeedListFragment.kt", c = {714, 719}, d = "invokeSuspend", e = "com.blued.community.ui.feed.fragment.SignFeedListFragment$onLoadData$1")
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/fragment/SignFeedListFragment$onLoadData$1.class */
 public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-    /* renamed from: a  reason: collision with root package name */
-    Object f19809a;
+    Object a;
     int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ SignFeedListFragment f19810c;
+    final /* synthetic */ SignFeedListFragment c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
@@ -34,9 +29,7 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
     /* renamed from: com.blued.community.ui.feed.fragment.SignFeedListFragment$onLoadData$1$2  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/fragment/SignFeedListFragment$onLoadData$1$2.class */
     public static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super FeedBubbleSignModel>, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f19811a;
+        int a;
         final /* synthetic */ SignFeedListFragment b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -48,7 +41,7 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
         @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super FeedBubbleSignModel> continuation) {
-            return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return ((AnonymousClass2) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -58,9 +51,9 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
-            Object a2;
-            Object a3 = IntrinsicsKt.a();
-            int i = this.f19811a;
+            Object a;
+            Object a2 = IntrinsicsKt.a();
+            int i = this.a;
             if (i != 0) {
                 if (i == 1) {
                     ResultKt.a(obj);
@@ -69,9 +62,9 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             ResultKt.a(obj);
-            this.f19811a = 1;
-            a2 = this.b.a(this);
-            return a2 == a3 ? a3 : a2;
+            this.a = 1;
+            a = this.b.a(this);
+            return a == a2 ? a2 : a;
         }
     }
 
@@ -81,9 +74,7 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
     /* renamed from: com.blued.community.ui.feed.fragment.SignFeedListFragment$onLoadData$1$3  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/fragment/SignFeedListFragment$onLoadData$1$3.class */
     public static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
-
-        /* renamed from: a  reason: collision with root package name */
-        int f19812a;
+        int a;
         final /* synthetic */ SignFeedListFragment b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -95,7 +86,7 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
         @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass3) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return ((AnonymousClass3) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -106,10 +97,10 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             IntrinsicsKt.a();
-            if (this.f19812a == 0) {
+            if (this.a == 0) {
                 ResultKt.a(obj);
                 this.b.G();
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -119,51 +110,51 @@ public final class SignFeedListFragment$onLoadData$1 extends SuspendLambda imple
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public SignFeedListFragment$onLoadData$1(SignFeedListFragment signFeedListFragment, Continuation<? super SignFeedListFragment$onLoadData$1> continuation) {
         super(2, continuation);
-        this.f19810c = signFeedListFragment;
+        this.c = signFeedListFragment;
     }
 
     @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((SignFeedListFragment$onLoadData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return ((SignFeedListFragment$onLoadData$1) create(coroutineScope, continuation)).invokeSuspend(Unit.a);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new SignFeedListFragment$onLoadData$1(this.f19810c, continuation);
+        return new SignFeedListFragment$onLoadData$1(this.c, continuation);
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         SignFeedListFragment signFeedListFragment;
-        Object a2 = IntrinsicsKt.a();
+        Object a = IntrinsicsKt.a();
         int i = this.b;
         if (i == 0) {
             ResultKt.a(obj);
-            signFeedListFragment = this.f19810c;
-            this.f19809a = signFeedListFragment;
+            signFeedListFragment = this.c;
+            this.a = signFeedListFragment;
             this.b = 1;
-            Object a3 = BuildersKt.a(Dispatchers.c().plus(new SignFeedListFragment$onLoadData$1$invokeSuspend$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.b)), new AnonymousClass2(this.f19810c, null), this);
-            obj = a3;
-            if (a3 == a2) {
-                return a2;
+            Object a2 = BuildersKt.a(Dispatchers.c().plus(new SignFeedListFragment$onLoadData$1$invokeSuspend$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.b)), new AnonymousClass2(this.c, null), this);
+            obj = a2;
+            if (a2 == a) {
+                return a;
             }
         } else if (i != 1) {
             if (i == 2) {
                 ResultKt.a(obj);
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            signFeedListFragment = (SignFeedListFragment) this.f19809a;
+            signFeedListFragment = (SignFeedListFragment) this.a;
             ResultKt.a(obj);
         }
         signFeedListFragment.D = (FeedBubbleSignModel) obj;
-        this.f19809a = null;
+        this.a = null;
         this.b = 2;
-        if (BuildersKt.a(Dispatchers.b(), new AnonymousClass3(this.f19810c, null), this) == a2) {
-            return a2;
+        if (BuildersKt.a(Dispatchers.b(), new AnonymousClass3(this.c, null), this) == a) {
+            return a;
         }
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

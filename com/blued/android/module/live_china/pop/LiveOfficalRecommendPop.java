@@ -12,9 +12,7 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/pop/LiveOfficalRecommendPop.class */
 public class LiveOfficalRecommendPop extends CenterPopupView {
-
-    /* renamed from: c  reason: collision with root package name */
-    public Context f13982c;
+    public Context c;
     public final String d;
     public int e;
     private ImageView f;
@@ -25,7 +23,7 @@ public class LiveOfficalRecommendPop extends CenterPopupView {
     public LiveOfficalRecommendPop(Context context) {
         super(context);
         this.d = "LiveRecommendPop";
-        this.f13982c = context;
+        this.c = context;
     }
 
     public static LiveOfficalRecommendPop a(Context context, int i) {

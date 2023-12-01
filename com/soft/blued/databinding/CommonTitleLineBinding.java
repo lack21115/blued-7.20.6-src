@@ -7,10 +7,10 @@ import androidx.viewbinding.ViewBinding;
 public final class CommonTitleLineBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final View f28687a;
+    private final View f14997a;
 
     @Override // androidx.viewbinding.ViewBinding
     public View getRoot() {
-        return this.f28687a;
+        return this.f14997a;
     }
 }

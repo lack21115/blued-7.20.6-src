@@ -123,7 +123,7 @@ public interface IAppWidgetHost extends IInterface {
                     return true;
                 case 2:
                     parcel.enforceInterface(DESCRIPTOR);
-                    providerChanged(parcel.readInt(), parcel.readInt() != 0 ? AppWidgetProviderInfo.CREATOR.createFromParcel(parcel) : null);
+                    providerChanged(parcel.readInt(), parcel.readInt() != 0 ? (AppWidgetProviderInfo) AppWidgetProviderInfo.CREATOR.createFromParcel(parcel) : null);
                     return true;
                 case 3:
                     parcel.enforceInterface(DESCRIPTOR);
@@ -133,7 +133,7 @@ public interface IAppWidgetHost extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     viewDataChanged(parcel.readInt(), parcel.readInt());
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

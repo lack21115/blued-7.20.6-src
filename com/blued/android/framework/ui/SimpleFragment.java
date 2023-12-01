@@ -43,17 +43,15 @@ public abstract class SimpleFragment extends BaseFragment {
         return getFragmentActive().isActive();
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
-        Logger.b(TAG, " onActivityCreated()");
+        Logger.b(TAG, new Object[]{" onActivityCreated()"});
         onLoadData();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        Logger.b(TAG, " onCreate()");
+        Logger.b(TAG, new Object[]{" onCreate()"});
         onPreConfigured();
         Bundle arguments = getArguments();
         this.args = arguments;
@@ -61,17 +59,16 @@ public abstract class SimpleFragment extends BaseFragment {
             this.args = new Bundle();
         }
         onParseArguments();
-        Logger.b(TAG, " getArguments: ", this.args.toString());
+        Logger.b(TAG, new Object[]{" getArguments: ", this.args.toString()});
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        Logger.b(TAG, " onCreateView()");
+        Logger.b(TAG, new Object[]{" onCreateView()"});
         this.mLayoutInflater = layoutInflater;
         View view = this.rootView;
         if (view != null && view.getParent() != null) {
             ((ViewGroup) this.rootView.getParent()).removeView(this.rootView);
-            Logger.b(TAG, "rootView.getParent()).removeView(rootView)");
+            Logger.b(TAG, new Object[]{"rootView.getParent()).removeView(rootView)"});
             return this.rootView;
         }
         this.rootView = this.mLayoutInflater.inflate(onSetRootViewId(), viewGroup, false);
@@ -83,7 +80,6 @@ public abstract class SimpleFragment extends BaseFragment {
         return this.rootView;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onDestroy() {
         Dialog dialog = this.mLoadingDialog;
         if (dialog != null && dialog.isShowing()) {
@@ -112,10 +108,9 @@ public abstract class SimpleFragment extends BaseFragment {
 
     public abstract int onSetRootViewId();
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        Logger.b(TAG, " onViewCreated()");
+        Logger.b(TAG, new Object[]{" onViewCreated()"});
         onInitView();
         onInitViewFinished();
         onInitListener();

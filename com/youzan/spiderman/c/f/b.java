@@ -11,17 +11,17 @@ import java.util.List;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static b f41775a;
+    private static b f28084a;
     private List<a> b = new LinkedList();
 
     private b() {
     }
 
     public static b a() {
-        if (f41775a == null) {
-            f41775a = new b();
+        if (f28084a == null) {
+            f28084a = new b();
         }
-        return f41775a;
+        return f28084a;
     }
 
     public static boolean a(int i) {

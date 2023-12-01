@@ -2,6 +2,7 @@ package com.alibaba.mtl.log.e;
 
 import android.text.TextUtils;
 import com.alibaba.mtl.log.model.LogField;
+import com.android.internal.content.NativeLibraryHelper;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -90,14 +91,14 @@ public class h {
         if (!TextUtils.isEmpty(sb2)) {
             str4 = sb2;
             if (sb2.endsWith("||")) {
-                str4 = sb2 + "-";
+                str4 = sb2 + NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
             }
         }
         return str4;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public static Map<String, String> m2183a(Map<String, String> map) {
+    public static Map<String, String> m8626a(Map<String, String> map) {
         HashMap hashMap = map;
         if (map == null) {
             hashMap = new HashMap();
@@ -126,10 +127,10 @@ public class h {
             if (!hashMap.containsKey(LogField.START_SESSION_TIMESTAMP.toString())) {
                 hashMap.put(LogField.START_SESSION_TIMESTAMP.toString(), String.valueOf(com.alibaba.mtl.log.a.B));
             }
-            Map<String, String> a2 = d.a(com.alibaba.mtl.log.a.getContext());
-            if (a2 != null) {
-                for (String str : a2.keySet()) {
-                    String str2 = a2.get(str);
+            Map<String, String> a = d.a(com.alibaba.mtl.log.a.getContext());
+            if (a != null) {
+                for (String str : a.keySet()) {
+                    String str2 = a.get(str);
                     if (!TextUtils.isEmpty(str2) && !hashMap.containsKey(str)) {
                         hashMap.put(str, str2);
                     }
@@ -149,14 +150,14 @@ public class h {
         if (map == null || map.size() <= 0) {
             return null;
         }
-        m2183a(map);
+        m8626a(map);
         return a(map);
     }
 
     private static String d(String str) {
         String str2 = str;
         if (TextUtils.isEmpty(str)) {
-            str2 = "-";
+            str2 = NativeLibraryHelper.CLEAR_ABI_OVERRIDE;
         }
         return str2;
     }

@@ -12,13 +12,9 @@ import com.blued.android.module.live_china.R;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/databinding/LiveBattleAdvanceOnlyBinding.class */
 public final class LiveBattleAdvanceOnlyBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final FrameLayout f12130a;
+    public final FrameLayout a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f12131c;
+    public final ImageView c;
     public final FrameLayout d;
     public final RecyclerView e;
     public final TextView f;
@@ -28,9 +24,9 @@ public final class LiveBattleAdvanceOnlyBinding implements ViewBinding {
 
     private LiveBattleAdvanceOnlyBinding(FrameLayout frameLayout, FrameLayout frameLayout2, ImageView imageView, ImageView imageView2, FrameLayout frameLayout3, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3) {
         this.i = frameLayout;
-        this.f12130a = frameLayout2;
+        this.a = frameLayout2;
         this.b = imageView;
-        this.f12131c = imageView2;
+        this.c = imageView2;
         this.d = frameLayout3;
         this.e = recyclerView;
         this.f = textView;
@@ -56,15 +52,15 @@ public final class LiveBattleAdvanceOnlyBinding implements ViewBinding {
                 if (imageView2 != null) {
                     FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.root);
                     if (frameLayout2 != null) {
-                        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_list_advance);
-                        if (recyclerView != null) {
+                        RecyclerView findViewById = view.findViewById(R.id.rv_list_advance);
+                        if (findViewById != null) {
                             TextView textView = (TextView) view.findViewById(R.id.tv_buy);
                             if (textView != null) {
                                 TextView textView2 = (TextView) view.findViewById(R.id.tv_desc);
                                 if (textView2 != null) {
                                     TextView textView3 = (TextView) view.findViewById(R.id.tv_title);
                                     if (textView3 != null) {
-                                        return new LiveBattleAdvanceOnlyBinding((FrameLayout) view, frameLayout, imageView, imageView2, frameLayout2, recyclerView, textView, textView2, textView3);
+                                        return new LiveBattleAdvanceOnlyBinding((FrameLayout) view, frameLayout, imageView, imageView2, frameLayout2, findViewById, textView, textView2, textView3);
                                     }
                                     str = "tvTitle";
                                 } else {
@@ -91,7 +87,6 @@ public final class LiveBattleAdvanceOnlyBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public FrameLayout getRoot() {
         return this.i;

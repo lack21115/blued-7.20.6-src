@@ -71,13 +71,13 @@ public class RichTextView extends TextView {
         this.mMultiDraweeHolder.onDetach();
     }
 
-    @Override // android.widget.TextView, android.view.View
+    @Override // android.view.View
     public void onFinishTemporaryDetach() {
         super.onFinishTemporaryDetach();
         this.mMultiDraweeHolder.onAttach();
     }
 
-    @Override // android.widget.TextView, android.view.View
+    @Override // android.view.View
     public void onStartTemporaryDetach() {
         super.onStartTemporaryDetach();
         this.mMultiDraweeHolder.onDetach();

@@ -7,9 +7,7 @@ import java.lang.reflect.Constructor;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/k/i.class */
 public final class i {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected static i f6814a = new i();
+    protected static i a = new i();
 
     public static ATBaseAdAdapter a(ai aiVar) {
         try {
@@ -22,7 +20,7 @@ public final class i {
 
     private static ATBaseAdAdapter a(Class<? extends com.anythink.core.common.b.d> cls) {
         if (cls == null) {
-            Log.w("anythink", "can not find adapter");
+            Log.w(com.anythink.core.common.b.g.n, "can not find adapter");
         }
         Constructor<? extends com.anythink.core.common.b.d> declaredConstructor = cls.getDeclaredConstructor(null);
         declaredConstructor.setAccessible(true);
@@ -33,7 +31,7 @@ public final class i {
         if (str != null) {
             Class<? extends U> asSubclass = Class.forName(str).asSubclass(ATBaseAdAdapter.class);
             if (asSubclass == 0) {
-                Log.w("anythink", "can not find adapter");
+                Log.w(com.anythink.core.common.b.g.n, "can not find adapter");
             }
             Constructor declaredConstructor = asSubclass.getDeclaredConstructor(null);
             declaredConstructor.setAccessible(true);

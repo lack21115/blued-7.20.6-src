@@ -37,17 +37,17 @@ public final class EventJoinedListFragment extends BaseListFragment<EventJoinedL
     /* JADX INFO: Access modifiers changed from: private */
     public static final void b(EventJoinedListFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        ((EventJoinedListViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.f10668a);
+        ((EventJoinedListViewModel) this$0.y()).dispatchAction(BaseListAction.RefreshData.a);
     }
 
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void a(boolean z, boolean z2) {
-        NoDataAndLoadFailView c2;
+        NoDataAndLoadFailView c;
         super.a(z, z2);
-        if (z || (c2 = c()) == null) {
+        if (z || (c = c()) == null) {
             return;
         }
-        c2.setBtnStr(R.string.reload);
+        c.setBtnStr(R.string.reload);
     }
 
     @Override // com.blued.android.module.common.base.mvi.BaseListFragment
@@ -68,21 +68,21 @@ public final class EventJoinedListFragment extends BaseListFragment<EventJoinedL
         if (b != null) {
             b.setVisibility(8);
         }
+        NoDataAndLoadFailView c = c();
+        if (c != null) {
+            c.setNoDataStr(R.string.event_my_join_no_data_content);
+        }
         NoDataAndLoadFailView c2 = c();
         if (c2 != null) {
-            c2.setNoDataStr(R.string.event_my_join_no_data_content);
+            c2.setFailBtnVisibility(8);
         }
         NoDataAndLoadFailView c3 = c();
         if (c3 != null) {
-            c3.setFailBtnVisibility(8);
+            c3.setBtnStr(R.string.event_join_btn_content);
         }
         NoDataAndLoadFailView c4 = c();
         if (c4 != null) {
-            c4.setBtnStr(R.string.event_join_btn_content);
-        }
-        NoDataAndLoadFailView c5 = c();
-        if (c5 != null) {
-            c5.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventJoinedListFragment$sr6HHgmlkw_6GTZ0IxbpWpYy9fc
+            c4.setNoDataBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventJoinedListFragment$sr6HHgmlkw_6GTZ0IxbpWpYy9fc
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     EventJoinedListFragment.a(EventJoinedListFragment.this, view);
@@ -91,25 +91,25 @@ public final class EventJoinedListFragment extends BaseListFragment<EventJoinedL
         }
         Context context = getContext();
         if (context != null) {
-            NoDataAndLoadFailView c6 = c();
+            NoDataAndLoadFailView c5 = c();
             ShapeTextView shapeTextView = null;
-            ShapeModel shapeModel = (c6 == null || (btn = c6.getBtn()) == null) ? null : btn.getShapeModel();
+            ShapeModel shapeModel = (c5 == null || (btn = c5.getBtn()) == null) ? null : btn.getShapeModel();
             if (shapeModel != null) {
                 shapeModel.b = ContextCompat.getColor(context, R.color.syc_dark_b);
             }
-            NoDataAndLoadFailView c7 = c();
-            if (c7 != null) {
-                shapeTextView = c7.getBtn();
+            NoDataAndLoadFailView c6 = c();
+            if (c6 != null) {
+                shapeTextView = c6.getBtn();
             }
             if (shapeTextView != null) {
                 shapeTextView.setShapeModel(shapeModel);
             }
         }
-        NoDataAndLoadFailView c8 = c();
-        if (c8 == null) {
+        NoDataAndLoadFailView c7 = c();
+        if (c7 == null) {
             return;
         }
-        c8.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventJoinedListFragment$STZLETxUs3bXZl4xoK-ObwZQYfw
+        c7.setFailBtnListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.fragment.-$$Lambda$EventJoinedListFragment$STZLETxUs3bXZl4xoK-ObwZQYfw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 EventJoinedListFragment.b(EventJoinedListFragment.this, view);

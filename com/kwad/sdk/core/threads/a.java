@@ -10,15 +10,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/threads/a.class */
 public final class a {
-    private static Map<String, WeakReference<C0566a>> amk = new ConcurrentHashMap();
+    private static Map<String, WeakReference<C0396a>> amk = new ConcurrentHashMap();
 
     /* renamed from: com.kwad.sdk.core.threads.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/kwad/sdk/core/threads/a$a.class */
-    public static final class C0566a {
+    public static final class C0396a {
         private HandlerThread aml;
         private Handler mHandler;
 
-        public C0566a(String str) {
+        public C0396a(String str) {
             String str2;
             if (TextUtils.isEmpty(str)) {
                 str2 = "ksad-HT";
@@ -52,12 +52,12 @@ public final class a {
         return b;
     }
 
-    private static C0566a cJ(String str) {
-        WeakReference<C0566a> weakReference = amk.get(str);
+    private static C0396a cJ(String str) {
+        WeakReference<C0396a> weakReference = amk.get(str);
         if (weakReference == null || weakReference.get() == null) {
-            C0566a c0566a = new C0566a(str);
-            amk.put(str, new WeakReference<>(c0566a));
-            return c0566a;
+            C0396a c0396a = new C0396a(str);
+            amk.put(str, new WeakReference<>(c0396a));
+            return c0396a;
         }
         return weakReference.get();
     }

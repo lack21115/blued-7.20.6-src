@@ -9,7 +9,7 @@ public final class a extends k implements com.tencent.liteav.beauty.b.b {
     private d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private d f36354c;
+    private d f22663c;
     private b d;
     private c e;
     private d f;
@@ -20,21 +20,21 @@ public final class a extends k implements com.tencent.liteav.beauty.b.b {
 
     public a() {
         this.b = null;
-        this.f36354c = null;
+        this.f22663c = null;
         this.d = null;
         this.e = null;
         this.f = null;
         this.g = null;
         this.b = new d(true);
-        this.f36354c = new d(false);
+        this.f22663c = new d(false);
         this.d = new b();
         this.e = new c();
         this.f = new d(true);
         this.g = new d(false);
-        k.a aVar = this.f36583a;
+        k.a aVar = this.f22892a;
         k.a a2 = a(this.b);
         a2.a(aVar);
-        k.a a3 = a(this.f36354c);
+        k.a a3 = a(this.f22663c);
         a3.a(a2);
         k.a a4 = a(this.d);
         a4.a(aVar);
@@ -79,7 +79,7 @@ public final class a extends k implements com.tencent.liteav.beauty.b.b {
     @Override // com.tencent.liteav.beauty.b.b
     public final void d(float f) {
         c cVar = this.e;
-        cVar.setFloatOnDraw(cVar.f36357a, f / 1.0f);
+        cVar.setFloatOnDraw(cVar.f22666a, f / 1.0f);
     }
 
     @Override // com.tencent.liteav.videobase.a.k, com.tencent.liteav.videobase.a.b

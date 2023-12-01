@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.webkit.URLUtil;
+import com.blued.das.live.LiveProtos;
 import com.google.common.net.HttpHeaders;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.exception.WeiboException;
@@ -12,6 +13,7 @@ import com.sina.weibo.sdk.utils.LogUtil;
 import com.sina.weibo.sdk.utils.NetworkHelper;
 import com.sina.weibo.sdk.utils.Utility;
 import com.tencent.qcloud.core.util.IOUtils;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
@@ -135,7 +137,7 @@ public class HttpManager {
                             j = 0;
                         }
                         HttpGet httpGet = new HttpGet(str);
-                        httpGet.setHeader("RANGE", "bytes=" + j + "-");
+                        httpGet.setHeader("RANGE", "bytes=" + j + Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                         HttpResponse execute = newHttpClient.execute(httpGet);
                         int statusCode = execute.getStatusLine().getStatusCode();
                         if (statusCode == 206) {
@@ -253,7 +255,7 @@ public class HttpManager {
             HttpProtocolParams.setContentCharset(basicHttpParams, "UTF-8");
             SchemeRegistry schemeRegistry = new SchemeRegistry();
             schemeRegistry.register(new Scheme("http", PlainSocketFactory.getSocketFactory(), 80));
-            schemeRegistry.register(new Scheme("https", getSSLSocketFactory(), 443));
+            schemeRegistry.register(new Scheme("https", getSSLSocketFactory(), (int) LiveProtos.Event.LIVE_CHALLENGE_PK_EXPLAIN_CLICK_VALUE));
             ThreadSafeClientConnManager threadSafeClientConnManager = new ThreadSafeClientConnManager(basicHttpParams, schemeRegistry);
             HttpConnectionParams.setConnectionTimeout(basicHttpParams, 25000);
             HttpConnectionParams.setSoTimeout(basicHttpParams, 20000);

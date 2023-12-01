@@ -19,13 +19,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/view/CommonTopTitleNoTrans.class */
 public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    private View f10975a;
+    private View a;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LinearLayout f10976c;
+    private LinearLayout c;
     private ShapeTextView d;
     private ShapeTextView e;
     private ShapeTextView f;
@@ -99,29 +95,29 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
 
     public void a(AttributeSet attributeSet) {
         View inflate = LayoutInflater.from(this.b).inflate(R.layout.view_top_title_notrans, this);
-        this.f10975a = inflate;
-        this.f10976c = (LinearLayout) inflate.findViewById(R.id.ll_background);
-        ShapeTextView shapeTextView = (ShapeTextView) this.f10975a.findViewById(R.id.ctt_left);
+        this.a = inflate;
+        this.c = (LinearLayout) inflate.findViewById(R.id.ll_background);
+        ShapeTextView shapeTextView = (ShapeTextView) this.a.findViewById(R.id.ctt_left);
         this.d = shapeTextView;
         shapeTextView.setOnClickListener(this);
-        ShapeTextView shapeTextView2 = (ShapeTextView) this.f10975a.findViewById(R.id.ctt_center);
+        ShapeTextView shapeTextView2 = (ShapeTextView) this.a.findViewById(R.id.ctt_center);
         this.e = shapeTextView2;
         shapeTextView2.setOnClickListener(this);
-        this.p = (TextView) this.f10975a.findViewById(R.id.ctt_center_below);
-        ShapeTextView shapeTextView3 = (ShapeTextView) this.f10975a.findViewById(R.id.ctt_right);
+        this.p = (TextView) this.a.findViewById(R.id.ctt_center_below);
+        ShapeTextView shapeTextView3 = (ShapeTextView) this.a.findViewById(R.id.ctt_right);
         this.f = shapeTextView3;
         shapeTextView3.setOnClickListener(this);
-        ImageView imageView = (ImageView) this.f10975a.findViewById(R.id.ctt_left_img);
+        ImageView imageView = (ImageView) this.a.findViewById(R.id.ctt_left_img);
         this.g = imageView;
         imageView.setOnClickListener(this);
-        ImageView imageView2 = (ImageView) this.f10975a.findViewById(R.id.ctt_right_img);
+        ImageView imageView2 = (ImageView) this.a.findViewById(R.id.ctt_right_img);
         this.h = imageView2;
         imageView2.setOnClickListener(this);
-        this.i = (ImageView) this.f10975a.findViewById(R.id.ctt_right_img_doubule);
-        this.j = (ImageView) this.f10975a.findViewById(R.id.iv_ctt_right_img_dou_red);
-        this.n = (TextView) this.f10975a.findViewById(R.id.tv_title_divider);
-        this.o = (TextView) this.f10975a.findViewById(R.id.tv_others_dot);
-        this.q = (RelativeLayout) this.f10975a.findViewById(R.id.rl_content);
+        this.i = (ImageView) this.a.findViewById(R.id.ctt_right_img_doubule);
+        this.j = (ImageView) this.a.findViewById(R.id.iv_ctt_right_img_dou_red);
+        this.n = (TextView) this.a.findViewById(R.id.tv_title_divider);
+        this.o = (TextView) this.a.findViewById(R.id.tv_others_dot);
+        this.q = (RelativeLayout) this.a.findViewById(R.id.rl_content);
         if (attributeSet != null) {
             TypedArray obtainAttributes = getResources().obtainAttributes(attributeSet, R.styleable.CommonTopTitleNoTrans);
             int resourceId = obtainAttributes.getResourceId(R.styleable.CommonTopTitleNoTrans_left_text, -1);
@@ -190,7 +186,7 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
                 this.n.setVisibility(0);
             }
             if (z5) {
-                this.f10976c.setBackgroundColor(getResources().getColor(R.color.transparent));
+                this.c.setBackgroundColor(getResources().getColor(R.color.transparent));
             }
         }
         this.e.setTextColor(BluedSkinUtils.a(this.b, R.color.syc_h));
@@ -222,7 +218,7 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
 
     @Override // android.view.View
     public Drawable getBackground() {
-        return this.f10976c.getBackground();
+        return this.c.getBackground();
     }
 
     public TextView getCenterBelowTextView() {
@@ -258,7 +254,7 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public LinearLayout getTitleBackground() {
-        return this.f10976c;
+        return this.c;
     }
 
     @Override // android.view.View.OnClickListener
@@ -294,7 +290,7 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public void setCenterText(int i) {
-        a(this.e, (ImageView) null, this.b.getString(i));
+        a((TextView) this.e, (ImageView) null, this.b.getString(i));
     }
 
     public void setCenterText(CharSequence charSequence) {
@@ -302,7 +298,7 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public void setCenterText(String str) {
-        a(this.e, (ImageView) null, str);
+        a((TextView) this.e, (ImageView) null, str);
     }
 
     public void setCenterTextColor(int i) {
@@ -314,7 +310,7 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public void setLeftImg(int i) {
-        a(this.g, this.d, i);
+        a(this.g, (TextView) this.d, i);
     }
 
     public void setLeftImgDrawable(Drawable drawable) {
@@ -322,11 +318,11 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public void setLeftText(int i) {
-        a(this.d, this.g, this.b.getString(i));
+        a((TextView) this.d, this.g, this.b.getString(i));
     }
 
     public void setLeftText(String str) {
-        a(this.d, this.g, str);
+        a((TextView) this.d, this.g, str);
     }
 
     public void setLeftTextColor(int i) {
@@ -350,7 +346,7 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public void setRightImg(int i) {
-        a(this.h, this.f, i);
+        a(this.h, (TextView) this.f, i);
     }
 
     public void setRightImgDrawable(Drawable drawable) {
@@ -358,11 +354,11 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public void setRightText(int i) {
-        a(this.f, this.h, this.b.getString(i));
+        a((TextView) this.f, this.h, this.b.getString(i));
     }
 
     public void setRightText(String str) {
-        a(this.f, this.h, str);
+        a((TextView) this.f, this.h, str);
     }
 
     public void setRightTextColor(int i) {
@@ -374,6 +370,6 @@ public class CommonTopTitleNoTrans extends LinearLayout implements View.OnClickL
     }
 
     public void setTitleBackgroundDrawable(int i) {
-        this.f10976c.setBackgroundColor(BluedSkinUtils.a(getContext(), i));
+        this.c.setBackgroundColor(BluedSkinUtils.a(getContext(), i));
     }
 }

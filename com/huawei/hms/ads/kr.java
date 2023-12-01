@@ -124,7 +124,7 @@ public class kr {
 
     public void V(AdContentData adContentData, Bundle bundle) {
         ge.V(Code, "onClose");
-        ko.Code(this.Z, adContentData, bundle.getInt(bc.e.d), bundle.getInt(bc.e.e), com.huawei.openalliance.ad.constant.ac.f22938a);
+        ko.Code(this.Z, adContentData, bundle.getInt(bc.e.d), bundle.getInt(bc.e.e), com.huawei.openalliance.ad.constant.ac.f9330a);
         V(adContentData);
     }
 }

@@ -12,11 +12,11 @@ import org.json.JSONObject;
 public class k {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f38378a = com.tencent.qimei.a.b.a(2);
+    public static final String f24687a = com.tencent.qimei.a.b.a(2);
     public static final String b = com.tencent.qimei.a.b.a(3);
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f38379c = com.tencent.qimei.a.b.a(4);
+    public static final String f24688c = com.tencent.qimei.a.b.a(4);
 
     public static com.tencent.qimei.i.e a(Context context) {
         com.tencent.qimei.i.e eVar;
@@ -54,14 +54,14 @@ public class k {
                         }
                     }
                     com.tencent.qimei.i.b b2 = com.tencent.qimei.i.b.b();
-                    String a4 = b2.a(f38378a, f38379c, "");
+                    String a4 = b2.a(f24687a, f24688c, "");
                     String str2 = a4;
                     if (TextUtils.isEmpty(a4)) {
                         str2 = b2.a(b, "");
                     }
                     str = str2;
                     if (TextUtils.isEmpty(str2)) {
-                        a2 = b2.a(f38378a, "");
+                        a2 = b2.a(f24687a, "");
                     }
                     a2 = str;
                 }

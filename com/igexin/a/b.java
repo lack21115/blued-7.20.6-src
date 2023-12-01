@@ -9,10 +9,10 @@ import android.os.RemoteException;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23172a = "com.igexin.push.extension.distribution.gws.action.guard.WakeCallback";
+    private static final String f9564a = "com.igexin.push.extension.distribution.gws.action.guard.WakeCallback";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final int f23173c = 1;
+    private static final int f9565c = 1;
     private IBinder b;
 
     public b(IBinder iBinder) {
@@ -30,7 +30,7 @@ public final class b {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
-            obtain.writeInterfaceToken(f23172a);
+            obtain.writeInterfaceToken(f9564a);
             obtain.writeInt(1);
             bundle.writeToParcel(obtain, 0);
             this.b.transact(1, obtain, obtain2, 0);

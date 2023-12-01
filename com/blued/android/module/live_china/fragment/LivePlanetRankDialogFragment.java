@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.provider.BrowserContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +28,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRankDialogFragment.class */
 public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13123a = new Companion(null);
+    public static final Companion a = new Companion(null);
     private final Lazy b = LazyKt.a(new Function0<FragmentLivePlanetRankBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRankDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -44,9 +41,7 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
             return FragmentLivePlanetRankBinding.a(LayoutInflater.from(LivePlanetRankDialogFragment.this.getContext()));
         }
     });
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f13124c = "";
+    private String c = "";
 
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRankDialogFragment$Companion.class */
@@ -76,31 +71,27 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePlanetRankDialogFragment$MyAdapter.class */
     public static final class MyAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        private final Context f13125a;
+        private final Context a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public MyAdapter(Context context, FragmentManager fm) {
             super(fm, 1);
             Intrinsics.e(fm, "fm");
-            this.f13125a = context;
+            this.a = context;
         }
 
         public final Context getContext() {
-            return this.f13125a;
+            return this.a;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return 2;
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             LivePlanetRankItemFragment livePlanetRankItemFragment = new LivePlanetRankItemFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt(BrowserContract.Bookmarks.POSITION, i);
+            bundle.putInt("position", i);
             livePlanetRankItemFragment.setArguments(bundle);
             return livePlanetRankItemFragment;
         }
@@ -134,7 +125,7 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         e().d.setAdapter(new MyAdapter(context, childFragmentManager));
-        e().f11961c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRankDialogFragment$Cn-yTo3pEKSUe1JJ0KZx7VsDFEQ
+        e().c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRankDialogFragment$Cn-yTo3pEKSUe1JJ0KZx7VsDFEQ
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetRankDialogFragment.a(LivePlanetRankDialogFragment.this, view);
@@ -147,15 +138,12 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
             }
         });
         e().d.addOnPageChangeListener(new ViewPager.OnPageChangeListener() { // from class: com.blued.android.module.live_china.fragment.LivePlanetRankDialogFragment$getData$3
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrollStateChanged(int i) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageScrolled(int i, float f, int i2) {
             }
 
-            @Override // androidx.viewpager.widget.ViewPager.OnPageChangeListener
             public void onPageSelected(int i) {
                 FragmentLivePlanetRankBinding e;
                 FragmentLivePlanetRankBinding e2;
@@ -163,18 +151,18 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
                 FragmentLivePlanetRankBinding e4;
                 if (i == 0) {
                     e3 = LivePlanetRankDialogFragment.this.e();
-                    e3.f11961c.setBackgroundResource(R.drawable.live_planet_rank_title_bg_select);
+                    e3.c.setBackgroundResource(R.drawable.live_planet_rank_title_bg_select);
                     e4 = LivePlanetRankDialogFragment.this.e();
                     e4.b.setBackgroundResource(R.drawable.live_planet_rank_title_bg);
                     return;
                 }
                 e = LivePlanetRankDialogFragment.this.e();
-                e.f11961c.setBackgroundResource(R.drawable.live_planet_rank_title_bg);
+                e.c.setBackgroundResource(R.drawable.live_planet_rank_title_bg);
                 e2 = LivePlanetRankDialogFragment.this.e();
                 e2.b.setBackgroundResource(R.drawable.live_planet_rank_title_bg_select);
             }
         });
-        e().f11960a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRankDialogFragment$28BY910G5o_EY-4UAW3-zNPWOlw
+        e().a.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePlanetRankDialogFragment$28BY910G5o_EY-4UAW3-zNPWOlw
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 LivePlanetRankDialogFragment.c(LivePlanetRankDialogFragment.this, view);
@@ -184,7 +172,7 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
 
     public final void a(String str) {
         Intrinsics.e(str, "<set-?>");
-        this.f13124c = str;
+        this.c = str;
     }
 
     public final void d() {
@@ -197,7 +185,6 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
         }
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 520.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -215,7 +202,6 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);
@@ -233,13 +219,13 @@ public final class LivePlanetRankDialogFragment extends BaseDialogFragment {
         f();
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.DialogFragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void show(FragmentManager manager, String str) {
         Intrinsics.e(manager, "manager");
         try {
             FragmentTransaction beginTransaction = manager.beginTransaction();
             Intrinsics.c(beginTransaction, "manager.beginTransaction()");
-            beginTransaction.add(this, str);
+            beginTransaction.add((Fragment) this, str);
             beginTransaction.commitAllowingStateLoss();
         } catch (Exception e) {
             super.show(manager, str);

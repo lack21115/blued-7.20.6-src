@@ -9,11 +9,11 @@ import java.lang.reflect.Method;
 public final class Trace {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f3403a;
+    private static long f3355a;
     private static Method b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Method f3404c;
+    private static Method f3356c;
     private static Method d;
     private static Method e;
 
@@ -23,10 +23,10 @@ public final class Trace {
     private static void a(String str, int i) {
         if (Build.VERSION.SDK_INT >= 18) {
             try {
-                if (f3404c == null) {
-                    f3404c = android.os.Trace.class.getMethod("asyncTraceBegin", Long.TYPE, String.class, Integer.TYPE);
+                if (f3356c == null) {
+                    f3356c = android.os.Trace.class.getMethod("asyncTraceBegin", Long.TYPE, String.class, Integer.TYPE);
                 }
-                f3404c.invoke(null, Long.valueOf(f3403a), str, Integer.valueOf(i));
+                f3356c.invoke(null, Long.valueOf(f3355a), str, Integer.valueOf(i));
             } catch (Exception e2) {
                 a("asyncTraceBegin", e2);
             }
@@ -48,10 +48,10 @@ public final class Trace {
         if (Build.VERSION.SDK_INT >= 18) {
             try {
                 if (b == null) {
-                    f3403a = android.os.Trace.class.getField("TRACE_TAG_APP").getLong(null);
+                    f3355a = android.os.Trace.class.getField("TRACE_TAG_APP").getLong(null);
                     b = android.os.Trace.class.getMethod("isTagEnabled", Long.TYPE);
                 }
-                return ((Boolean) b.invoke(null, Long.valueOf(f3403a))).booleanValue();
+                return ((Boolean) b.invoke(null, Long.valueOf(f3355a))).booleanValue();
             } catch (Exception e2) {
                 a("isTagEnabled", e2);
                 return false;
@@ -66,7 +66,7 @@ public final class Trace {
                 if (d == null) {
                     d = android.os.Trace.class.getMethod("asyncTraceEnd", Long.TYPE, String.class, Integer.TYPE);
                 }
-                d.invoke(null, Long.valueOf(f3403a), str, Integer.valueOf(i));
+                d.invoke(null, Long.valueOf(f3355a), str, Integer.valueOf(i));
             } catch (Exception e2) {
                 a("asyncTraceEnd", e2);
             }
@@ -75,7 +75,7 @@ public final class Trace {
 
     public static void beginAsyncSection(String str, int i) {
         try {
-            if (f3404c == null) {
+            if (f3356c == null) {
                 TraceApi29Impl.beginAsyncSection(str, i);
                 return;
             }
@@ -96,7 +96,7 @@ public final class Trace {
                 if (e == null) {
                     e = android.os.Trace.class.getMethod("traceCounter", Long.TYPE, String.class, Integer.TYPE);
                 }
-                e.invoke(null, Long.valueOf(f3403a), str, Integer.valueOf(i));
+                e.invoke(null, Long.valueOf(f3355a), str, Integer.valueOf(i));
             } catch (Exception e2) {
                 a("traceCounter", e2);
             }

@@ -2,8 +2,9 @@ package android.speech.tts;
 
 import android.os.SystemClock;
 
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-9557208-dex2jar.jar:android/speech/tts/AbstractEventLogger.class */
-abstract class AbstractEventLogger {
+public abstract class AbstractEventLogger {
     protected final int mCallerPid;
     protected final int mCallerUid;
     protected final String mServiceApp;

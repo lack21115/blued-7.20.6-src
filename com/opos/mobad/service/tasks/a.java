@@ -17,7 +17,7 @@ import java.util.Map;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static CookieData f27421a;
+    private static CookieData f13733a;
     private static final FileFilter b = new FileFilter() { // from class: com.opos.mobad.service.tasks.a.1
         @Override // java.io.FileFilter
         public boolean accept(File file) {

@@ -10,7 +10,6 @@ import android.os.Parcelable;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.WindowManager;
-import com.alipay.sdk.util.i;
 import com.blued.das.live.LiveProtos;
 
 /* loaded from: source-9557208-dex2jar.jar:android/content/res/CompatibilityInfo.class */
@@ -384,7 +383,7 @@ public class CompatibilityInfo implements Parcelable {
         if (alwaysSupportsScreen()) {
             sb.append(" always-compat");
         }
-        sb.append(i.d);
+        sb.append("}");
         return sb.toString();
     }
 

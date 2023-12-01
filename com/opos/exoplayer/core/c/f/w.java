@@ -9,11 +9,11 @@ import java.util.List;
 final class w {
 
     /* renamed from: a  reason: collision with root package name */
-    private final List<Format> f25239a;
+    private final List<Format> f11551a;
     private final com.opos.exoplayer.core.c.n[] b;
 
     public w(List<Format> list) {
-        this.f25239a = list;
+        this.f11551a = list;
         this.b = new com.opos.exoplayer.core.c.n[list.size()];
     }
 
@@ -30,11 +30,11 @@ final class w {
             }
             dVar.a();
             com.opos.exoplayer.core.c.n a2 = gVar.a(dVar.b(), 3);
-            Format format = this.f25239a.get(i2);
+            Format format = this.f11551a.get(i2);
             String str = format.f;
             boolean z = com.anythink.expressad.exoplayer.k.o.W.equals(str) || com.anythink.expressad.exoplayer.k.o.X.equals(str);
             com.opos.exoplayer.core.i.a.a(z, "Invalid closed caption mime type provided: " + str);
-            a2.a(Format.a(format.f25000a != null ? format.f25000a : dVar.c(), str, (String) null, -1, format.x, format.y, format.z, (DrmInitData) null));
+            a2.a(Format.a(format.f11312a != null ? format.f11312a : dVar.c(), str, (String) null, -1, format.x, format.y, format.z, (DrmInitData) null));
             this.b[i2] = a2;
             i = i2 + 1;
         }

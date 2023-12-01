@@ -13,11 +13,11 @@ import java.lang.reflect.Method;
 public class ViewUtilsBase {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Method f3508a;
+    private static Method f3460a;
     private static boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static Field f3509c;
+    private static Field f3461c;
     private static boolean d;
     private float[] e;
 
@@ -27,7 +27,7 @@ public class ViewUtilsBase {
         }
         try {
             Method declaredMethod = View.class.getDeclaredMethod("setFrame", Integer.TYPE, Integer.TYPE, Integer.TYPE, Integer.TYPE);
-            f3508a = declaredMethod;
+            f3460a = declaredMethod;
             declaredMethod.setAccessible(true);
         } catch (NoSuchMethodException e) {
             Log.i("ViewUtilsBase", "Failed to retrieve setFrame method", e);
@@ -88,7 +88,7 @@ public class ViewUtilsBase {
 
     public void setLeftTopRightBottom(View view, int i, int i2, int i3, int i4) {
         a();
-        Method method = f3508a;
+        Method method = f3460a;
         if (method != null) {
             try {
                 method.invoke(view, Integer.valueOf(i), Integer.valueOf(i2), Integer.valueOf(i3), Integer.valueOf(i4));
@@ -112,17 +112,17 @@ public class ViewUtilsBase {
         if (!d) {
             try {
                 Field declaredField = View.class.getDeclaredField("mViewFlags");
-                f3509c = declaredField;
+                f3461c = declaredField;
                 declaredField.setAccessible(true);
             } catch (NoSuchFieldException e) {
                 Log.i("ViewUtilsBase", "fetchViewFlagsField: ");
             }
             d = true;
         }
-        Field field = f3509c;
+        Field field = f3461c;
         if (field != null) {
             try {
-                f3509c.setInt(view, i | (field.getInt(view) & (-13)));
+                f3461c.setInt(view, i | (field.getInt(view) & (-13)));
             } catch (IllegalAccessException e2) {
             }
         }

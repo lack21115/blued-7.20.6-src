@@ -34,16 +34,14 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/community/ui/event/adapter/EventSubscribeAdapter.class */
 public final class EventSubscribeAdapter extends BaseQuickAdapter<PersonalEventModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final IRequestHost f19522a;
+    private final IRequestHost a;
     private final int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EventSubscribeAdapter(IRequestHost fragmentActive) {
         super(R.layout.item_event_subscribe);
         Intrinsics.e(fragmentActive, "fragmentActive");
-        this.f19522a = fragmentActive;
+        this.a = fragmentActive;
         this.b = ((AppInfo.l - BluedViewExtKt.a(65)) / 3) - BluedViewExtKt.a(12);
     }
 
@@ -95,7 +93,7 @@ public final class EventSubscribeAdapter extends BaseQuickAdapter<PersonalEventM
         eventLogData.setEventId(eventDetailsModel.id);
         eventLogData.setEventManagerUid(eventDetailsModel.uid);
         eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_SUBSCRIBE);
-        EventDetailsFragment.Companion companion = EventDetailsFragment.f19534a;
+        EventDetailsFragment.Companion companion = EventDetailsFragment.a;
         Context mContext = this$0.mContext;
         Intrinsics.c(mContext, "mContext");
         companion.a(mContext, eventDetailsModel.id, eventLogData);
@@ -111,7 +109,7 @@ public final class EventSubscribeAdapter extends BaseQuickAdapter<PersonalEventM
     }
 
     private final void b(final PersonalEventModel personalEventModel, final int i) {
-        final IRequestHost iRequestHost = this.f19522a;
+        final IRequestHost iRequestHost = this.a;
         BluedUIHttpResponse<BluedEntityA<Object>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<Object>>(iRequestHost) { // from class: com.blued.community.ui.event.adapter.EventSubscribeAdapter$cancelSub$1
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // com.blued.android.framework.http.BluedUIHttpResponse
@@ -128,21 +126,20 @@ public final class EventSubscribeAdapter extends BaseQuickAdapter<PersonalEventM
         };
         String str = personalEventModel.uid;
         Intrinsics.c(str, "item.uid");
-        EventHttpUtils.d(bluedUIHttpResponse, str, this.f19522a);
+        EventHttpUtils.d(bluedUIHttpResponse, str, this.a);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(final BaseViewHolder helper, final PersonalEventModel item) {
         Intrinsics.e(helper, "helper");
         Intrinsics.e(item, "item");
-        ImageWrapper c2 = ImageLoader.a(this.f19522a, item.avatar).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c();
+        ImageWrapper c = ImageLoader.a(this.a, item.avatar).b(R.drawable.user_bg_round).d(R.drawable.user_bg_round).c();
         View view = helper.getView(R.id.iv_avatar);
         if (view == null) {
             throw new NullPointerException("null cannot be cast to non-null type android.widget.ImageView");
         }
-        c2.a((ImageView) view);
+        c.a((ImageView) view);
         helper.setText(R.id.tv_name, item.name);
         View.OnClickListener onClickListener = new View.OnClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventSubscribeAdapter$gNNEbOH7I6D6iLBJpkrf4Dwxpt8
             @Override // android.view.View.OnClickListener
@@ -152,31 +149,30 @@ public final class EventSubscribeAdapter extends BaseQuickAdapter<PersonalEventM
         };
         helper.setOnClickListener(R.id.iv_avatar, onClickListener);
         helper.setOnClickListener(R.id.tv_name, onClickListener);
-        String a2 = a(item);
-        helper.setGone(R.id.tv_desc, !TextUtils.isEmpty(a2)).setText(R.id.tv_desc, a2);
+        String a = a(item);
+        helper.setGone(R.id.tv_desc, !TextUtils.isEmpty(a)).setText(R.id.tv_desc, a);
         helper.getView(R.id.tv_cancel_sub).setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventSubscribeAdapter$YqN-LYrSeN9MgbzRzggb4O-7Owc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
                 EventSubscribeAdapter.a(EventSubscribeAdapter.this, item, helper, view2);
             }
         });
-        RecyclerView recyclerView = (RecyclerView) helper.getView(R.id.rv_event);
+        RecyclerView view2 = helper.getView(R.id.rv_event);
         if (item.activity != null || item.activity.size() > 0) {
-            recyclerView.setVisibility(0);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.mContext);
+            view2.setVisibility(0);
+            RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this.mContext);
             linearLayoutManager.setOrientation(0);
-            recyclerView.setLayoutManager(linearLayoutManager);
-            EventSubscribeRecentEventAdapter eventSubscribeRecentEventAdapter = new EventSubscribeRecentEventAdapter(this.f19522a, this.b);
+            view2.setLayoutManager(linearLayoutManager);
+            RecyclerView.Adapter eventSubscribeRecentEventAdapter = new EventSubscribeRecentEventAdapter(this.a, this.b);
             eventSubscribeRecentEventAdapter.setNewData(item.activity);
             eventSubscribeRecentEventAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.event.adapter.-$$Lambda$EventSubscribeAdapter$vUeh0MSb_sxULkPb2vNMFm5e-wk
-                @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
-                public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view2, int i) {
-                    EventSubscribeAdapter.a(EventSubscribeAdapter.this, baseQuickAdapter, view2, i);
+                public final void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view3, int i) {
+                    EventSubscribeAdapter.a(EventSubscribeAdapter.this, baseQuickAdapter, view3, i);
                 }
             });
-            recyclerView.setAdapter(eventSubscribeRecentEventAdapter);
+            view2.setAdapter(eventSubscribeRecentEventAdapter);
         } else {
-            recyclerView.setVisibility(8);
+            view2.setVisibility(8);
         }
         EventTrackFeed.k(FeedProtos.Event.ACTIVITY_MINE_SUBSCRIBE_USER_SHOW, item.uid);
     }

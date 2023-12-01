@@ -14,13 +14,9 @@ import com.bytedance.applog.tracker.Tracker;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveMakeLoverManagerRecordView.class */
 public class LiveMakeLoverManagerRecordView extends FrameLayout implements View.OnClickListener {
-
-    /* renamed from: a  reason: collision with root package name */
-    public int f14564a;
+    public int a;
     public boolean b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Context f14565c;
+    private Context c;
     private LayoutInflater d;
     private View e;
     private LinearLayout f;
@@ -46,12 +42,12 @@ public class LiveMakeLoverManagerRecordView extends FrameLayout implements View.
     public LiveMakeLoverManagerRecordView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.b = false;
-        this.f14565c = context;
+        this.c = context;
         a();
     }
 
     private void a() {
-        LayoutInflater from = LayoutInflater.from(this.f14565c);
+        LayoutInflater from = LayoutInflater.from(this.c);
         this.d = from;
         View inflate = from.inflate(R.layout.live_make_lover_manage_record, this);
         this.e = inflate;
@@ -65,7 +61,7 @@ public class LiveMakeLoverManagerRecordView extends FrameLayout implements View.
 
     public void a(int i) {
         TextView textView = this.g;
-        String string = this.f14565c.getString(R.string.live_make_friend_wait);
+        String string = this.c.getString(R.string.live_make_friend_wait);
         textView.setText(String.format(string, i + ""));
     }
 
@@ -77,9 +73,9 @@ public class LiveMakeLoverManagerRecordView extends FrameLayout implements View.
         this.j = liveMakeLoverOnClickListener;
         this.k = playingOnliveFragment;
         if (z) {
-            this.f14564a = 0;
+            this.a = 0;
         } else {
-            this.f14564a = 1;
+            this.a = 1;
         }
     }
 

@@ -12,7 +12,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.core.os.BuildCompat;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -20,11 +19,11 @@ import java.util.List;
 class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccessor {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f2371a;
+    private final Context f2323a;
     private final Notification.Builder b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final NotificationCompat.Builder f2372c;
+    private final NotificationCompat.Builder f2324c;
     private RemoteViews d;
     private RemoteViews e;
     private final List<Bundle> f = new ArrayList();
@@ -33,17 +32,18 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
     private RemoteViews i;
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    /* JADX WARN: Multi-variable type inference failed */
     public NotificationCompatBuilder(NotificationCompat.Builder builder) {
         List<String> a2;
-        this.f2372c = builder;
-        this.f2371a = builder.mContext;
+        this.f2324c = builder;
+        this.f2323a = builder.mContext;
         if (Build.VERSION.SDK_INT >= 26) {
             this.b = new Notification.Builder(builder.mContext, builder.I);
         } else {
             this.b = new Notification.Builder(builder.mContext);
         }
         Notification notification = builder.R;
-        this.b.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, builder.f).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(builder.b).setContentText(builder.f2358c).setContentInfo(builder.h).setContentIntent(builder.d).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(builder.e, (notification.flags & 128) != 0).setLargeIcon(builder.g).setNumber(builder.i).setProgress(builder.r, builder.s, builder.t);
+        this.b.setWhen(notification.when).setSmallIcon(notification.icon, notification.iconLevel).setContent(notification.contentView).setTicker(notification.tickerText, builder.f).setVibrate(notification.vibrate).setLights(notification.ledARGB, notification.ledOnMS, notification.ledOffMS).setOngoing((notification.flags & 2) != 0).setOnlyAlertOnce((notification.flags & 8) != 0).setAutoCancel((notification.flags & 16) != 0).setDefaults(notification.defaults).setContentTitle(builder.b).setContentText(builder.f2310c).setContentInfo(builder.h).setContentIntent(builder.d).setDeleteIntent(notification.deleteIntent).setFullScreenIntent(builder.e, (notification.flags & 128) != 0).setLargeIcon(builder.g).setNumber(builder.i).setProgress(builder.r, builder.s, builder.t);
         if (Build.VERSION.SDK_INT < 21) {
             this.b.setSound(notification.sound, notification.audioStreamType);
         }
@@ -87,14 +87,14 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         }
         if (Build.VERSION.SDK_INT >= 21) {
             this.b.setCategory(builder.A).setColor(builder.C).setVisibility(builder.D).setPublicVersion(builder.E).setSound(notification.sound, notification.audioAttributes);
-            Collection<String> a3 = Build.VERSION.SDK_INT < 28 ? a(a(builder.mPersonList), builder.mPeople) : builder.mPeople;
+            List<String> a3 = Build.VERSION.SDK_INT < 28 ? a(a(builder.mPersonList), builder.mPeople) : builder.mPeople;
             if (a3 != null && !a3.isEmpty()) {
                 for (String str : a3) {
                     this.b.addPerson(str);
                 }
             }
             this.i = builder.H;
-            if (builder.f2357a.size() > 0) {
+            if (builder.f2309a.size() > 0) {
                 Bundle bundle = builder.getExtras().getBundle("android.car.EXTENSIONS");
                 Bundle bundle2 = bundle == null ? new Bundle() : bundle;
                 Bundle bundle3 = new Bundle(bundle2);
@@ -102,10 +102,10 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
                 int i = 0;
                 while (true) {
                     int i2 = i;
-                    if (i2 >= builder.f2357a.size()) {
+                    if (i2 >= builder.f2309a.size()) {
                         break;
                     }
-                    bundle4.putBundle(Integer.toString(i2), NotificationCompatJellybean.a(builder.f2357a.get(i2)));
+                    bundle4.putBundle(Integer.toString(i2), NotificationCompatJellybean.a(builder.f2309a.get(i2)));
                     i = i2 + 1;
                 }
                 bundle2.putBundle("invisible_actions", bundle4);
@@ -155,7 +155,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             this.b.setForegroundServiceBehavior(builder.O);
         }
         if (builder.S) {
-            if (this.f2372c.v) {
+            if (this.f2324c.v) {
                 this.h = 2;
             } else {
                 this.h = 1;
@@ -166,7 +166,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
             notification.defaults &= -3;
             this.b.setDefaults(notification.defaults);
             if (Build.VERSION.SDK_INT >= 26) {
-                if (TextUtils.isEmpty(this.f2372c.u)) {
+                if (TextUtils.isEmpty(this.f2324c.u)) {
                     this.b.setGroup("silent");
                 }
                 this.b.setGroupAlertBehavior(this.h);
@@ -357,7 +357,7 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         Bundle extras;
         RemoteViews makeHeadsUpContentView;
         RemoteViews makeBigContentView;
-        NotificationCompat.Style style = this.f2372c.n;
+        NotificationCompat.Style style = this.f2324c.n;
         if (style != null) {
             style.apply(this);
         }
@@ -365,13 +365,13 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
         Notification a2 = a();
         if (makeContentView != null) {
             a2.contentView = makeContentView;
-        } else if (this.f2372c.F != null) {
-            a2.contentView = this.f2372c.F;
+        } else if (this.f2324c.F != null) {
+            a2.contentView = this.f2324c.F;
         }
         if (Build.VERSION.SDK_INT >= 16 && style != null && (makeBigContentView = style.makeBigContentView(this)) != null) {
             a2.bigContentView = makeBigContentView;
         }
-        if (Build.VERSION.SDK_INT >= 21 && style != null && (makeHeadsUpContentView = this.f2372c.n.makeHeadsUpContentView(this)) != null) {
+        if (Build.VERSION.SDK_INT >= 21 && style != null && (makeHeadsUpContentView = this.f2324c.n.makeHeadsUpContentView(this)) != null) {
             a2.headsUpContentView = makeHeadsUpContentView;
         }
         if (Build.VERSION.SDK_INT >= 16 && style != null && (extras = NotificationCompat.getExtras(a2)) != null) {
@@ -387,6 +387,6 @@ class NotificationCompatBuilder implements NotificationBuilderWithBuilderAccesso
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public Context getContext() {
-        return this.f2371a;
+        return this.f2323a;
     }
 }

@@ -56,9 +56,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
     private TextView E;
     private TextView F;
     private FocusIndicator b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private RelativeLayout f15734c;
+    private RelativeLayout c;
     private ControllerView n;
     private ConfigView o;
     private FilterView p;
@@ -76,9 +74,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
     /* renamed from: com.blued.android.module.shortvideo.fragment.ShineFragment$6  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/fragment/ShineFragment$6.class */
     static /* synthetic */ class AnonymousClass6 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f15742a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:25:0x0089 -> B:51:0x0014). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:27:0x008d -> B:67:0x001f). Please submit an issue!!! */
@@ -92,49 +88,49 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x00ad -> B:63:0x007c). Please submit an issue!!! */
         static {
             int[] iArr = new int[EventType.VALUE.values().length];
-            f15742a = iArr;
+            a = iArr;
             try {
                 iArr[EventType.VALUE.START_TIMEDOWN.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f15742a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 2;
+                a[EventType.VALUE.CONFIG_FILTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f15742a[EventType.VALUE.CONCAT_SECOTION.ordinal()] = 3;
+                a[EventType.VALUE.CONCAT_SECOTION.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
             try {
-                f15742a[EventType.VALUE.SHINE_ENDRECORD.ordinal()] = 4;
+                a[EventType.VALUE.SHINE_ENDRECORD.ordinal()] = 4;
             } catch (NoSuchFieldError e4) {
             }
             try {
-                f15742a[EventType.VALUE.CONCAT_SECTION_FINISH.ordinal()] = 5;
+                a[EventType.VALUE.CONCAT_SECTION_FINISH.ordinal()] = 5;
             } catch (NoSuchFieldError e5) {
             }
             try {
-                f15742a[EventType.VALUE.RECOVER_SHINE_V.ordinal()] = 6;
+                a[EventType.VALUE.RECOVER_SHINE_V.ordinal()] = 6;
             } catch (NoSuchFieldError e6) {
             }
             try {
-                f15742a[EventType.VALUE.SAVE_FILTER.ordinal()] = 7;
+                a[EventType.VALUE.SAVE_FILTER.ordinal()] = 7;
             } catch (NoSuchFieldError e7) {
             }
             try {
-                f15742a[EventType.VALUE.SHINE_TABS_LOCATION_FILE.ordinal()] = 8;
+                a[EventType.VALUE.SHINE_TABS_LOCATION_FILE.ordinal()] = 8;
             } catch (NoSuchFieldError e8) {
             }
             try {
-                f15742a[EventType.VALUE.SHINE_TABS_CAMERA.ordinal()] = 9;
+                a[EventType.VALUE.SHINE_TABS_CAMERA.ordinal()] = 9;
             } catch (NoSuchFieldError e9) {
             }
             try {
-                f15742a[EventType.VALUE.SHINE_TABS_SHINE.ordinal()] = 10;
+                a[EventType.VALUE.SHINE_TABS_SHINE.ordinal()] = 10;
             } catch (NoSuchFieldError e10) {
             }
             try {
-                f15742a[EventType.VALUE.SHINE_RECORD.ordinal()] = 11;
+                a[EventType.VALUE.SHINE_RECORD.ordinal()] = 11;
             } catch (NoSuchFieldError e11) {
             }
         }
@@ -253,15 +249,15 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
     }
 
     private void n() {
-        if (this.f15734c.getVisibility() == 0) {
-            StvViewUtils.f(getContext(), this.f15734c);
+        if (this.c.getVisibility() == 0) {
+            StvViewUtils.f(getContext(), this.c);
         }
     }
 
     private void o() {
-        if (this.f15734c.getVisibility() == 8) {
-            this.f15734c.setVisibility(0);
-            StvViewUtils.e(getContext(), this.f15734c);
+        if (this.c.getVisibility() == 8) {
+            this.c.setVisibility(0);
+            StvViewUtils.e(getContext(), this.c);
         }
     }
 
@@ -336,7 +332,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     @Override // com.blued.android.module.shortvideo.observer.EventObserver
     public void a(EventType.VALUE value) {
-        switch (AnonymousClass6.f15742a[value.ordinal()]) {
+        switch (AnonymousClass6.a[value.ordinal()]) {
             case 1:
             case 2:
                 n();
@@ -389,7 +385,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
     @Override // com.blued.android.module.shortvideo.observer.ReturnObserver
     public void a(EventType.VALUE value, boolean z) {
         if (z) {
-            int i = AnonymousClass6.f15742a[value.ordinal()];
+            int i = AnonymousClass6.a[value.ordinal()];
             if (i == 4) {
                 o();
             } else if (i != 11) {
@@ -409,8 +405,8 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
         j();
         this.t = (SectionProgressBar) this.m.findViewById(R.id.record_progressbar);
         this.s = (GLSurfaceView) this.m.findViewById(R.id.preview);
-        this.f15734c = (RelativeLayout) this.m.findViewById(R.id.layoutTop);
-        StatusBarHelper.a(getActivity(), this.f15734c);
+        this.c = (RelativeLayout) this.m.findViewById(R.id.layoutTop);
+        StatusBarHelper.a((Activity) getActivity(), (View) this.c);
         this.y = (ImageView) this.m.findViewById(R.id.btnBack);
         this.z = (ImageView) this.m.findViewById(R.id.switch_flash);
         this.A = (ImageView) this.m.findViewById(R.id.switch_camera);
@@ -552,7 +548,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         getActivity().getWindow().setSoftInputMode(19);
         getActivity().getWindow().setFlags(1024, 1024);
@@ -562,7 +558,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
         return this.m;
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onDestroy() {
         super.onDestroy();
         ChatHelperV4Proxy.a().b();
@@ -574,7 +570,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
         i();
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onPause() {
         super.onPause();
         o();
@@ -586,7 +582,7 @@ public class ShineFragment extends ShortVideoBaseFragment<IShineView, ShinePrese
         i();
     }
 
-    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.module.shortvideo.fragment.ShortVideoBaseFragment, com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         ObserverMgr.a().a((EventObserver) this);

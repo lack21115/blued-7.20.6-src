@@ -30,7 +30,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             this.closeCalled = false;
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public void close(final Status status, final Metadata metadata) {
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.4
                 @Override // java.lang.Runnable
@@ -44,7 +43,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             });
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public Attributes getAttributes() {
             final SettableFuture create = SettableFuture.create();
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.9
@@ -62,7 +60,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             }
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         @Nullable
         public String getAuthority() {
             final SettableFuture create = SettableFuture.create();
@@ -81,7 +78,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             }
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public boolean isCancelled() {
             final SettableFuture create = SettableFuture.create();
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.6
@@ -99,7 +95,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             }
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public boolean isReady() {
             final SettableFuture create = SettableFuture.create();
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.5
@@ -117,7 +112,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             }
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public void request(final int i) {
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.2
                 @Override // java.lang.Runnable
@@ -127,7 +121,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             });
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public void sendHeaders(final Metadata metadata) {
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.3
                 @Override // java.lang.Runnable
@@ -137,7 +130,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             });
         }
 
-        @Override // io.grpc.ForwardingServerCall, io.grpc.ServerCall
         public void sendMessage(final RespT respt) {
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.1
                 @Override // java.lang.Runnable
@@ -147,7 +139,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             });
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public void setCompression(final String str) {
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.8
                 @Override // java.lang.Runnable
@@ -157,7 +148,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
             });
         }
 
-        @Override // io.grpc.ForwardingServerCall.SimpleForwardingServerCall, io.grpc.ForwardingServerCall, io.grpc.PartialForwardingServerCall, io.grpc.ServerCall
         public void setMessageCompression(final boolean z) {
             this.serializingExecutor.execute(new Runnable() { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.SerializingServerCall.7
                 @Override // java.lang.Runnable
@@ -175,7 +165,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
         return new TransmitStatusRuntimeExceptionInterceptor();
     }
 
-    @Override // io.grpc.ServerInterceptor
     public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(ServerCall<ReqT, RespT> serverCall, Metadata metadata, ServerCallHandler<ReqT, RespT> serverCallHandler) {
         final SerializingServerCall serializingServerCall = new SerializingServerCall(serverCall);
         return new ForwardingServerCallListener.SimpleForwardingServerCallListener<ReqT>(serverCallHandler.startCall(serializingServerCall, metadata)) { // from class: io.grpc.util.TransmitStatusRuntimeExceptionInterceptor.1
@@ -188,7 +177,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
                 serializingServerCall.close(statusRuntimeException.getStatus(), metadata2);
             }
 
-            @Override // io.grpc.ForwardingServerCallListener.SimpleForwardingServerCallListener, io.grpc.ForwardingServerCallListener, io.grpc.PartialForwardingServerCallListener, io.grpc.ServerCall.Listener
             public void onCancel() {
                 try {
                     super.onCancel();
@@ -197,7 +185,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
                 }
             }
 
-            @Override // io.grpc.ForwardingServerCallListener.SimpleForwardingServerCallListener, io.grpc.ForwardingServerCallListener, io.grpc.PartialForwardingServerCallListener, io.grpc.ServerCall.Listener
             public void onComplete() {
                 try {
                     super.onComplete();
@@ -206,7 +193,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
                 }
             }
 
-            @Override // io.grpc.ForwardingServerCallListener.SimpleForwardingServerCallListener, io.grpc.ForwardingServerCallListener, io.grpc.PartialForwardingServerCallListener, io.grpc.ServerCall.Listener
             public void onHalfClose() {
                 try {
                     super.onHalfClose();
@@ -215,7 +201,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
                 }
             }
 
-            @Override // io.grpc.ForwardingServerCallListener, io.grpc.ServerCall.Listener
             public void onMessage(ReqT reqt) {
                 try {
                     super.onMessage(reqt);
@@ -224,7 +209,6 @@ public final class TransmitStatusRuntimeExceptionInterceptor implements ServerIn
                 }
             }
 
-            @Override // io.grpc.ForwardingServerCallListener.SimpleForwardingServerCallListener, io.grpc.ForwardingServerCallListener, io.grpc.PartialForwardingServerCallListener, io.grpc.ServerCall.Listener
             public void onReady() {
                 try {
                     super.onReady();

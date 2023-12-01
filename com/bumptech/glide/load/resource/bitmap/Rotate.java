@@ -8,20 +8,20 @@ import java.security.MessageDigest;
 
 /* loaded from: source-7206380-dex2jar.jar:com/bumptech/glide/load/resource/bitmap/Rotate.class */
 public class Rotate extends BitmapTransformation {
-    private static final byte[] b = "com.bumptech.glide.load.resource.bitmap.Rotate".getBytes(f20706a);
+    private static final byte[] b = "com.bumptech.glide.load.resource.bitmap.Rotate".getBytes(f7100a);
 
     /* renamed from: c  reason: collision with root package name */
-    private final int f20968c;
+    private final int f7362c;
 
     @Override // com.bumptech.glide.load.resource.bitmap.BitmapTransformation
     protected Bitmap a(BitmapPool bitmapPool, Bitmap bitmap, int i, int i2) {
-        return TransformationUtils.a(bitmap, this.f20968c);
+        return TransformationUtils.a(bitmap, this.f7362c);
     }
 
     @Override // com.bumptech.glide.load.Key
     public void a(MessageDigest messageDigest) {
         messageDigest.update(b);
-        messageDigest.update(ByteBuffer.allocate(4).putInt(this.f20968c).array());
+        messageDigest.update(ByteBuffer.allocate(4).putInt(this.f7362c).array());
     }
 
     @Override // com.bumptech.glide.load.Key
@@ -29,7 +29,7 @@ public class Rotate extends BitmapTransformation {
         boolean z = false;
         if (obj instanceof Rotate) {
             z = false;
-            if (this.f20968c == ((Rotate) obj).f20968c) {
+            if (this.f7362c == ((Rotate) obj).f7362c) {
                 z = true;
             }
         }
@@ -38,6 +38,6 @@ public class Rotate extends BitmapTransformation {
 
     @Override // com.bumptech.glide.load.Key
     public int hashCode() {
-        return Util.b(-950519196, Util.b(this.f20968c));
+        return Util.b(-950519196, Util.b(this.f7362c));
     }
 }

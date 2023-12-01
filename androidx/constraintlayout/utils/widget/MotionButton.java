@@ -17,31 +17,31 @@ import androidx.constraintlayout.widget.R;
 public class MotionButton extends AppCompatButton {
 
     /* renamed from: a  reason: collision with root package name */
-    ViewOutlineProvider f2238a;
+    ViewOutlineProvider f2190a;
     RectF b;
 
     /* renamed from: c  reason: collision with root package name */
-    private float f2239c;
+    private float f2191c;
     private float d;
     private Path e;
 
     public MotionButton(Context context) {
         super(context);
-        this.f2239c = 0.0f;
+        this.f2191c = 0.0f;
         this.d = Float.NaN;
         a(context, null);
     }
 
     public MotionButton(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f2239c = 0.0f;
+        this.f2191c = 0.0f;
         this.d = Float.NaN;
         a(context, attributeSet);
     }
 
     public MotionButton(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f2239c = 0.0f;
+        this.f2191c = 0.0f;
         this.d = Float.NaN;
         a(context, attributeSet);
     }
@@ -86,14 +86,14 @@ public class MotionButton extends AppCompatButton {
     }
 
     public float getRoundPercent() {
-        return this.f2239c;
+        return this.f2191c;
     }
 
     public void setRound(float f) {
         if (Float.isNaN(f)) {
             this.d = f;
-            float f2 = this.f2239c;
-            this.f2239c = -1.0f;
+            float f2 = this.f2191c;
+            this.f2191c = -1.0f;
             setRoundPercent(f2);
             return;
         }
@@ -107,14 +107,14 @@ public class MotionButton extends AppCompatButton {
                 this.b = new RectF();
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                if (this.f2238a == null) {
+                if (this.f2190a == null) {
                     ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() { // from class: androidx.constraintlayout.utils.widget.MotionButton.2
                         @Override // android.view.ViewOutlineProvider
                         public void getOutline(View view, Outline outline) {
                             outline.setRoundRect(0, 0, MotionButton.this.getWidth(), MotionButton.this.getHeight(), MotionButton.this.d);
                         }
                     };
-                    this.f2238a = viewOutlineProvider;
+                    this.f2190a = viewOutlineProvider;
                     setOutlineProvider(viewOutlineProvider);
                 }
                 setClipToOutline(true);
@@ -135,8 +135,8 @@ public class MotionButton extends AppCompatButton {
     }
 
     public void setRoundPercent(float f) {
-        boolean z = this.f2239c != f;
-        this.f2239c = f;
+        boolean z = this.f2191c != f;
+        this.f2191c = f;
         if (f != 0.0f) {
             if (this.e == null) {
                 this.e = new Path();
@@ -145,23 +145,23 @@ public class MotionButton extends AppCompatButton {
                 this.b = new RectF();
             }
             if (Build.VERSION.SDK_INT >= 21) {
-                if (this.f2238a == null) {
+                if (this.f2190a == null) {
                     ViewOutlineProvider viewOutlineProvider = new ViewOutlineProvider() { // from class: androidx.constraintlayout.utils.widget.MotionButton.1
                         @Override // android.view.ViewOutlineProvider
                         public void getOutline(View view, Outline outline) {
                             int width = MotionButton.this.getWidth();
                             int height = MotionButton.this.getHeight();
-                            outline.setRoundRect(0, 0, width, height, (Math.min(width, height) * MotionButton.this.f2239c) / 2.0f);
+                            outline.setRoundRect(0, 0, width, height, (Math.min(width, height) * MotionButton.this.f2191c) / 2.0f);
                         }
                     };
-                    this.f2238a = viewOutlineProvider;
+                    this.f2190a = viewOutlineProvider;
                     setOutlineProvider(viewOutlineProvider);
                 }
                 setClipToOutline(true);
             }
             int width = getWidth();
             int height = getHeight();
-            float min = (Math.min(width, height) * this.f2239c) / 2.0f;
+            float min = (Math.min(width, height) * this.f2191c) / 2.0f;
             this.b.set(0.0f, 0.0f, width, height);
             this.e.reset();
             this.e.addRoundRect(this.b, min, min, Path.Direction.CW);

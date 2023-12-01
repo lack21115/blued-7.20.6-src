@@ -59,16 +59,15 @@ import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
 import com.blued.android.core.imagecache.LoadOptions;
 import com.blued.android.core.imagecache.RecyclingUtils;
+import com.blued.android.core.net.FileHttpResponseHandler;
 import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.net.http.FileDownloader;
 import com.blued.android.core.ui.ActivityFragmentActive;
-import com.blued.android.core.ui.BaseFragmentActivity;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.core.utils.skin.BluedSkinUtils;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.ui.xpop.XPopup;
-import com.blued.android.framework.ui.xpop.core.BasePopupView;
 import com.blued.android.framework.ui.xpop.enums.PopupAnimation;
 import com.blued.android.framework.ui.xpop.enums.PopupPosition;
 import com.blued.android.framework.utils.DensityUtils;
@@ -80,7 +79,6 @@ import com.blued.android.framework.view.shape.ShapeHelper;
 import com.blued.android.framework.view.shape.ShapeLinearLayout;
 import com.blued.android.framework.view.shape.ShapeTextView;
 import com.blued.android.module.common.db.model.MsgExtra;
-import com.blued.android.module.common.group.GroupInfoModel;
 import com.blued.android.module.common.log.oldtrack.LogData;
 import com.blued.android.module.common.login.model.UserBasicModel;
 import com.blued.android.module.common.share.model.ShareEventToMsgEntity;
@@ -215,6 +213,7 @@ import com.soft.blued.utils.TypefaceUtils;
 import com.soft.blued.utils.UserRelationshipUtils;
 import java.io.File;
 import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -298,7 +297,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     private final int aq;
 
     /* renamed from: ar  reason: collision with root package name */
-    private final int f31983ar;
+    private final int f18293ar;
     private final int as;
     private final int at;
     private final int au;
@@ -354,19 +353,19 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     class AnonymousClass84 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ RecyclerView f32154a;
+        final /* synthetic */ RecyclerView f18464a;
         final /* synthetic */ RelativeLayout b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (this.f32154a.getVisibility() == 0) {
-                this.f32154a.setVisibility(8);
+            if (this.f18464a.getVisibility() == 0) {
+                this.f18464a.setVisibility(8);
                 this.b.setVisibility(0);
                 view.setSelected(false);
                 return;
             }
-            this.f32154a.setVisibility(0);
+            this.f18464a.setVisibility(0);
             this.b.setVisibility(4);
             view.setSelected(true);
         }
@@ -377,15 +376,15 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     class AnonymousClass85 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ChattingModel f32155a;
+        final /* synthetic */ ChattingModel f18465a;
         final /* synthetic */ MessageChatAdapter b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
             Context context = this.b.b;
-            List<E> list = this.b.f31961a;
-            ChattingModel chattingModel = this.f32155a;
+            List<E> list = this.b.f18271a;
+            ChattingModel chattingModel = this.f18465a;
             MsgCommonUtils.a(context, list, chattingModel, this.b.aT.e() + "", 6, 0, this.b.aU.getFragmentActive());
         }
     }
@@ -413,15 +412,15 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     class AnonymousClass90 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ ChattingModel f32160a;
+        final /* synthetic */ ChattingModel f18470a;
         final /* synthetic */ MessageChatAdapter b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
             Context context = this.b.b;
-            List<E> list = this.b.f31961a;
-            ChattingModel chattingModel = this.f32160a;
+            List<E> list = this.b.f18271a;
+            ChattingModel chattingModel = this.f18470a;
             MsgCommonUtils.a(context, list, chattingModel, this.b.aT.f() + "", 6, 0, this.b.aU.getFragmentActive());
         }
     }
@@ -431,16 +430,16 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     class AnonymousClass91 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MsgExtraForTextTypeEntity.SecureNotify f32161a;
+        final /* synthetic */ MsgExtraForTextTypeEntity.SecureNotify f18471a;
         final /* synthetic */ MessageChatAdapter b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (TextUtils.isEmpty(this.f32161a.link)) {
+            if (TextUtils.isEmpty(this.f18471a.link)) {
                 return;
             }
-            WebViewShowInfoFragment.show(this.b.b, this.f32161a.link, -1);
+            WebViewShowInfoFragment.show(this.b.b, this.f18471a.link, -1);
         }
     }
 
@@ -449,16 +448,16 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     class AnonymousClass94 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MsgExtraForTextTypeEntity.SecureNotify f32164a;
+        final /* synthetic */ MsgExtraForTextTypeEntity.SecureNotify f18474a;
         final /* synthetic */ MessageChatAdapter b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (TextUtils.isEmpty(this.f32164a.link)) {
+            if (TextUtils.isEmpty(this.f18474a.link)) {
                 return;
             }
-            WebViewShowInfoFragment.show(this.b.b, this.f32164a.link, -1);
+            WebViewShowInfoFragment.show(this.b.b, this.f18474a.link, -1);
         }
     }
 
@@ -467,16 +466,16 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     class AnonymousClass95 implements View.OnClickListener {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ MsgExtraForTextTypeEntity.SecureNotify f32165a;
+        final /* synthetic */ MsgExtraForTextTypeEntity.SecureNotify f18475a;
         final /* synthetic */ MessageChatAdapter b;
 
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             Tracker.onClick(view);
-            if (TextUtils.isEmpty(this.f32165a.link)) {
+            if (TextUtils.isEmpty(this.f18475a.link)) {
                 return;
             }
-            WebViewShowInfoFragment.show(this.b.b, this.f32165a.link, -1);
+            WebViewShowInfoFragment.show(this.b.b, this.f18475a.link, -1);
         }
     }
 
@@ -540,7 +539,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         this.ao = 53;
         this.ap = 54;
         this.aq = 55;
-        this.f31983ar = 56;
+        this.f18293ar = 56;
         this.as = 57;
         this.at = 58;
         this.au = 59;
@@ -674,15 +673,15 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
-                if (DateTodayManager.f32404a.f(MessageChatAdapter.this.a(chattingModel.sessionId))) {
+                if (DateTodayManager.f18714a.f(MessageChatAdapter.this.a(chattingModel.sessionId))) {
                     AppMethods.d((int) R.string.date_today_evaluation_toast);
                     return;
                 }
-                DateTodayConfigModel b = DateTodayManager.f32404a.b();
+                DateTodayConfigModel b = DateTodayManager.f18714a.b();
                 if (b == null || b.getFriends_evaluation() == null) {
                     return;
                 }
-                new XPopup.Builder(MessageChatAdapter.this.b).a((BasePopupView) new DateTodayUserEvaluationPop(MessageChatAdapter.this.b, MessageChatAdapter.this.a(chattingModel.sessionId), b.getFriends_evaluation(), MessageChatAdapter.this.c())).h();
+                new XPopup.Builder(MessageChatAdapter.this.b).a(new DateTodayUserEvaluationPop(MessageChatAdapter.this.b, MessageChatAdapter.this.a(chattingModel.sessionId), b.getFriends_evaluation(), MessageChatAdapter.this.c())).h();
             }
         });
     }
@@ -704,10 +703,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     private View a(ChattingModel chattingModel, int i, ViewGroup viewGroup) {
         short s = chattingModel.msgType;
         if (MsgType.getClassify(s) == 1 || s == 26) {
-            return this.f31962c.inflate(R.layout.item_chat_two_notify_notice, viewGroup, false);
+            return this.f18272c.inflate(R.layout.item_chat_two_notify_notice, viewGroup, false);
         }
         if (MsgType.getGroupOperationNotifyType(s) == 2 || s == 0) {
-            return this.f31962c.inflate(R.layout.item_chat_group_dismissed_notice, viewGroup, false);
+            return this.f18272c.inflate(R.layout.item_chat_group_dismissed_notice, viewGroup, false);
         }
         if (s != -9) {
             if (s != -8) {
@@ -717,128 +716,128 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                             if (s != 1) {
                                 if (s != 2) {
                                     if (s == 3) {
-                                        return getItemViewType(i) == 7 ? this.f31962c.inflate(R.layout.item_chat_received_voice, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_voice, viewGroup, false);
+                                        return getItemViewType(i) == 7 ? this.f18272c.inflate(R.layout.item_chat_received_voice, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_voice, viewGroup, false);
                                     } else if (s == 4) {
-                                        return getItemViewType(i) == 5 ? this.f31962c.inflate(R.layout.item_chat_received_location, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_location, viewGroup, false);
+                                        return getItemViewType(i) == 5 ? this.f18272c.inflate(R.layout.item_chat_received_location, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_location, viewGroup, false);
                                     } else if (s == 5) {
-                                        return getItemViewType(i) == 17 ? this.f31962c.inflate(R.layout.item_chat_received_video, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_video, viewGroup, false);
+                                        return getItemViewType(i) == 17 ? this.f18272c.inflate(R.layout.item_chat_received_video, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_video, viewGroup, false);
                                     } else {
                                         if (s != 6) {
                                             if (s == 9) {
-                                                return getItemViewType(i) == 9 ? this.f31962c.inflate(R.layout.item_chat_received_group_invite_share, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_group_invite_share, viewGroup, false);
+                                                return getItemViewType(i) == 9 ? this.f18272c.inflate(R.layout.item_chat_received_group_invite_share, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_group_invite_share, viewGroup, false);
                                             } else if (s == 10) {
-                                                return getItemViewType(i) == 11 ? this.f31962c.inflate(R.layout.item_chat_received_group_share, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_group_share, viewGroup, false);
+                                                return getItemViewType(i) == 11 ? this.f18272c.inflate(R.layout.item_chat_received_group_share, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_group_share, viewGroup, false);
                                             } else if (s == 24) {
-                                                return getItemViewType(i) == 19 ? this.f31962c.inflate(R.layout.item_chat_received_image_burn, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_image_burn, viewGroup, false);
+                                                return getItemViewType(i) == 19 ? this.f18272c.inflate(R.layout.item_chat_received_image_burn, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_image_burn, viewGroup, false);
                                             } else if (s == 25) {
-                                                return getItemViewType(i) == 21 ? this.f31962c.inflate(R.layout.item_chat_received_video_burn, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_video_burn, viewGroup, false);
+                                                return getItemViewType(i) == 21 ? this.f18272c.inflate(R.layout.item_chat_received_video_burn, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_video_burn, viewGroup, false);
                                             } else if (s == 52 || s == 53) {
-                                                return getItemViewType(i) == 27 ? this.f31962c.inflate(R.layout.item_chat_received_video_call, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_video_call, viewGroup, false);
+                                                return getItemViewType(i) == 27 ? this.f18272c.inflate(R.layout.item_chat_received_video_call, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_video_call, viewGroup, false);
                                             } else if (s == 73) {
-                                                return getItemViewType(i) == 41 ? this.f31962c.inflate(R.layout.item_chat_received_apply_private_photo, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_apply_private_photo, viewGroup, false);
+                                                return getItemViewType(i) == 41 ? this.f18272c.inflate(R.layout.item_chat_received_apply_private_photo, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_apply_private_photo, viewGroup, false);
                                             } else if (s == 74) {
-                                                return getItemViewType(i) == 43 ? this.f31962c.inflate(R.layout.item_chat_received_unlock_private_photo, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_unlock_private_photo, viewGroup, false);
+                                                return getItemViewType(i) == 43 ? this.f18272c.inflate(R.layout.item_chat_received_unlock_private_photo, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_unlock_private_photo, viewGroup, false);
                                             } else if (s == 98 || s == 99) {
-                                                return getItemViewType(i) == 39 ? this.f31962c.inflate(R.layout.item_chat_received_vip, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_vip, viewGroup, false);
+                                                return getItemViewType(i) == 39 ? this.f18272c.inflate(R.layout.item_chat_received_vip, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_vip, viewGroup, false);
                                             } else {
                                                 switch (s) {
                                                     case 6:
                                                         break;
                                                     case 32:
-                                                        return getItemViewType(i) == 23 ? this.f31962c.inflate(R.layout.item_chat_received_live_share, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_live_share, viewGroup, false);
+                                                        return getItemViewType(i) == 23 ? this.f18272c.inflate(R.layout.item_chat_received_live_share, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_live_share, viewGroup, false);
                                                     case 55:
-                                                        return this.f31962c.inflate(R.layout.item_chat_two_notify_notice, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_two_notify_notice, viewGroup, false);
                                                     case 68:
-                                                        return this.f31962c.inflate(R.layout.item_chat_image_and_text, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_image_and_text, viewGroup, false);
                                                     case 164:
-                                                        return getItemViewType(i) == 45 ? this.f31962c.inflate(R.layout.item_chat_received_pager_gift, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_pager_gift, viewGroup, false);
+                                                        return getItemViewType(i) == 45 ? this.f18272c.inflate(R.layout.item_chat_received_pager_gift, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_pager_gift, viewGroup, false);
                                                     case 169:
-                                                        return this.f31962c.inflate(R.layout.item_chat_common_system_notice, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_common_system_notice, viewGroup, false);
                                                     case 205:
-                                                        return getItemViewType(i) == 51 ? this.f31962c.inflate(R.layout.item_chat_received_hello_expression, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_hello_expression, viewGroup, false);
+                                                        return getItemViewType(i) == 51 ? this.f18272c.inflate(R.layout.item_chat_received_hello_expression, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_hello_expression, viewGroup, false);
                                                     case 210:
-                                                        return getItemViewType(i) == 53 ? this.f31962c.inflate(R.layout.item_chat_received_yy_share, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_yy_share, viewGroup, false);
+                                                        return getItemViewType(i) == 53 ? this.f18272c.inflate(R.layout.item_chat_received_yy_share, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_yy_share, viewGroup, false);
                                                     case 216:
-                                                        return this.f31962c.inflate(R.layout.item_chat_system_notice, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_system_notice, viewGroup, false);
                                                     case 220:
-                                                        return this.f31962c.inflate(R.layout.item_chat_group_announcement, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_group_announcement, viewGroup, false);
                                                     case 250:
                                                         break;
                                                     case 251:
                                                         break;
                                                     case 256:
-                                                        return this.f31962c.inflate(R.layout.item_chat_received_vi_hi, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_received_vi_hi, viewGroup, false);
                                                     case 257:
-                                                        return this.f31962c.inflate(R.layout.item_chat_received_live_share_v2, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_received_live_share_v2, viewGroup, false);
                                                     case 267:
-                                                        return this.f31962c.inflate(R.layout.item_chat_received_privilege_source_tips, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_received_privilege_source_tips, viewGroup, false);
                                                     case 271:
-                                                        return this.f31962c.inflate(R.layout.item_chat_received_special_user_post_feed, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_received_special_user_post_feed, viewGroup, false);
                                                     case 279:
-                                                        return this.f31962c.inflate(R.layout.item_chat_received_super_exposure_post_feed, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_received_super_exposure_post_feed, viewGroup, false);
                                                     case 281:
-                                                        return this.f31962c.inflate(R.layout.item_chat_date_today, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_date_today, viewGroup, false);
                                                     case 282:
-                                                        return getItemViewType(i) == 68 ? this.f31962c.inflate(R.layout.item_chat_received_date_today_say_hello, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_date_today_say_hello, viewGroup, false);
+                                                        return getItemViewType(i) == 68 ? this.f18272c.inflate(R.layout.item_chat_received_date_today_say_hello, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_date_today_say_hello, viewGroup, false);
                                                     case 283:
-                                                        return getItemViewType(i) == 70 ? this.f31962c.inflate(R.layout.item_chat_received_date_today_interest, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_date_today_interest, viewGroup, false);
+                                                        return getItemViewType(i) == 70 ? this.f18272c.inflate(R.layout.item_chat_received_date_today_interest, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_date_today_interest, viewGroup, false);
                                                     case 288:
-                                                        return this.f31962c.inflate(R.layout.item_chat_date_today_matched, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_date_today_matched, viewGroup, false);
                                                     case 290:
-                                                        return this.f31962c.inflate(R.layout.item_chat_yy_system_message, viewGroup, false);
+                                                        return this.f18272c.inflate(R.layout.item_chat_yy_system_message, viewGroup, false);
                                                     default:
                                                         switch (s) {
                                                             case 87:
-                                                                return getItemViewType(i) == 31 ? this.f31962c.inflate(R.layout.item_chat_received_share_viewpoint, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_share_viewpoint, viewGroup, false);
+                                                                return getItemViewType(i) == 31 ? this.f18272c.inflate(R.layout.item_chat_received_share_viewpoint, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_share_viewpoint, viewGroup, false);
                                                             case 88:
-                                                                return getItemViewType(i) == 33 ? this.f31962c.inflate(R.layout.item_chat_received_share_link, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_share_link, viewGroup, false);
+                                                                return getItemViewType(i) == 33 ? this.f18272c.inflate(R.layout.item_chat_received_share_link, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_share_link, viewGroup, false);
                                                             case 89:
                                                                 break;
                                                             case 90:
-                                                                return getItemViewType(i) == 37 ? this.f31962c.inflate(R.layout.item_chat_received_share_user, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_share_user, viewGroup, false);
+                                                                return getItemViewType(i) == 37 ? this.f18272c.inflate(R.layout.item_chat_received_share_user, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_share_user, viewGroup, false);
                                                             default:
                                                                 switch (s) {
                                                                     case 240:
-                                                                        return this.f31962c.inflate(R.layout.item_chat_group_evaluation, viewGroup, false);
+                                                                        return this.f18272c.inflate(R.layout.item_chat_group_evaluation, viewGroup, false);
                                                                     case 241:
-                                                                        return this.f31962c.inflate(R.layout.item_chat_anonymous_notice, viewGroup, false);
+                                                                        return this.f18272c.inflate(R.layout.item_chat_anonymous_notice, viewGroup, false);
                                                                     case 242:
                                                                         break;
                                                                     case 243:
                                                                         break;
                                                                     case 244:
-                                                                        return this.f31962c.inflate(R.layout.item_chat_share_event, viewGroup, false);
+                                                                        return this.f18272c.inflate(R.layout.item_chat_share_event, viewGroup, false);
                                                                     default:
-                                                                        return getItemViewType(i) == 1 ? this.f31962c.inflate(R.layout.item_chat_received_message, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_message, viewGroup, false);
+                                                                        return getItemViewType(i) == 1 ? this.f18272c.inflate(R.layout.item_chat_received_message, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_message, viewGroup, false);
                                                                 }
                                                         }
-                                                        return getItemViewType(i) == 35 ? this.f31962c.inflate(R.layout.item_chat_received_share_feed, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_share_feed, viewGroup, false);
+                                                        return getItemViewType(i) == 35 ? this.f18272c.inflate(R.layout.item_chat_received_share_feed, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_share_feed, viewGroup, false);
                                                 }
                                             }
                                         }
-                                        return getItemViewType(i) == 15 ? this.f31962c.inflate(R.layout.item_chat_received_emotion, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_emotion, viewGroup, false);
+                                        return getItemViewType(i) == 15 ? this.f18272c.inflate(R.layout.item_chat_received_emotion, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_emotion, viewGroup, false);
                                     }
                                 }
-                                return getItemViewType(i) == 3 ? this.f31962c.inflate(R.layout.item_chat_received_image, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_sent_image, viewGroup, false);
+                                return getItemViewType(i) == 3 ? this.f18272c.inflate(R.layout.item_chat_received_image, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_sent_image, viewGroup, false);
                             }
                             if (getItemViewType(i) == 1) {
-                                SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f32449a;
+                                SubscribeNumberManager subscribeNumberManager = SubscribeNumberManager.f18759a;
                                 StringBuilder sb = new StringBuilder();
                                 sb.append(chattingModel.sessionId);
                                 sb.append("");
-                                return subscribeNumberManager.a(sb.toString(), Short.valueOf(chattingModel.sessionType)) ? this.f31962c.inflate(R.layout.item_chat_service_message, viewGroup, false) : this.f31962c.inflate(R.layout.item_chat_received_message, viewGroup, false);
+                                return subscribeNumberManager.a(sb.toString(), Short.valueOf(chattingModel.sessionType)) ? this.f18272c.inflate(R.layout.item_chat_service_message, viewGroup, false) : this.f18272c.inflate(R.layout.item_chat_received_message, viewGroup, false);
                             }
-                            return this.f31962c.inflate(R.layout.item_chat_sent_message, viewGroup, false);
+                            return this.f18272c.inflate(R.layout.item_chat_sent_message, viewGroup, false);
                         }
-                        return this.f31962c.inflate(R.layout.item_chat_complete_profile, viewGroup, false);
+                        return this.f18272c.inflate(R.layout.item_chat_complete_profile, viewGroup, false);
                     }
-                    return this.f31962c.inflate(R.layout.item_chat_first, viewGroup, false);
+                    return this.f18272c.inflate(R.layout.item_chat_first, viewGroup, false);
                 }
-                return this.f31962c.inflate(R.layout.item_chat_disturb_notice, viewGroup, false);
+                return this.f18272c.inflate(R.layout.item_chat_disturb_notice, viewGroup, false);
             }
-            return this.f31962c.inflate(R.layout.item_chat_poke, viewGroup, false);
+            return this.f18272c.inflate(R.layout.item_chat_poke, viewGroup, false);
         }
-        return this.f31962c.inflate(R.layout.item_chat_date_today_evaluate, viewGroup, false);
+        return this.f18272c.inflate(R.layout.item_chat_date_today_evaluate, viewGroup, false);
     }
 
     private String a(MsgExtraForTextTypeEntity msgExtraForTextTypeEntity) {
@@ -869,42 +868,42 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void a(long j, TextView textView) {
         if (!TimeAndDateUtils.g(j)) {
-            this.aK = TimeAndDateUtils.e.get().format(new Date(j));
+            this.aK = ((SimpleDateFormat) TimeAndDateUtils.e.get()).format(new Date(j));
         } else if (TimeAndDateUtils.f(j)) {
-            this.aK = TimeAndDateUtils.f.get().format(new Date(j));
+            this.aK = ((SimpleDateFormat) TimeAndDateUtils.f.get()).format(new Date(j));
         } else if (TimeAndDateUtils.h(j)) {
-            this.aK = this.b.getResources().getString(R.string.biao_msg_yesterday) + " " + TimeAndDateUtils.f.get().format(new Date(j));
+            this.aK = this.b.getResources().getString(R.string.biao_msg_yesterday) + " " + ((SimpleDateFormat) TimeAndDateUtils.f.get()).format(new Date(j));
         } else {
-            this.aK = TimeAndDateUtils.h.get().format(new Date(j));
+            this.aK = ((SimpleDateFormat) TimeAndDateUtils.h.get()).format(new Date(j));
         }
         textView.setText(this.aK);
         textView.setVisibility(0);
     }
 
     private void a(View view, View view2, boolean z, final View.OnClickListener onClickListener) {
-        final ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.sll_img_cover);
-        if (shapeLinearLayout != null) {
+        final ShapeLinearLayout findViewById = view.findViewById(R.id.sll_img_cover);
+        if (findViewById != null) {
             if (!z) {
-                shapeLinearLayout.setVisibility(8);
+                findViewById.setVisibility(8);
                 return;
             }
-            ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.stv_remove_img_cover);
-            ViewGroup.LayoutParams layoutParams = shapeLinearLayout.getLayoutParams();
+            ShapeTextView findViewById2 = view.findViewById(R.id.stv_remove_img_cover);
+            ViewGroup.LayoutParams layoutParams = findViewById.getLayoutParams();
             layoutParams.width = view2.getLayoutParams().width;
             layoutParams.height = view2.getLayoutParams().height;
-            shapeLinearLayout.setLayoutParams(layoutParams);
-            shapeLinearLayout.setVisibility(0);
-            shapeLinearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.55
+            findViewById.setLayoutParams(layoutParams);
+            findViewById.setVisibility(0);
+            findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.55
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
                 }
             });
-            shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.56
+            findViewById2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.56
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    shapeLinearLayout.setVisibility(8);
+                    findViewById.setVisibility(8);
                     View.OnClickListener onClickListener2 = onClickListener;
                     if (onClickListener2 != null) {
                         onClickListener2.onClick(view3);
@@ -922,7 +921,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             }
             JSONObject parseObject = JSONObject.parseObject(msgExtra);
             if (parseObject.containsKey("illegal") && parseObject.getBoolean("illegal").booleanValue()) {
-                TextView textView = (TextView) view.findViewById(2131372638);
+                TextView textView = (TextView) view.findViewById(R.id.tv_state);
                 ImageView imageView = (ImageView) view.findViewById(R.id.chat_state_error);
                 if (textView == null || imageView == null) {
                     return;
@@ -955,7 +954,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 }
                 MsgItemMenuPop msgItemMenuPop = new MsgItemMenuPop(MessageChatAdapter.this.b, arrayList, chattingModel, MessageChatAdapter.this);
                 if (MessageChatAdapter.this.c().isActive()) {
-                    new XPopup.Builder(MessageChatAdapter.this.b).a(view).d((Boolean) false).a(PopupAnimation.ScaleAlphaFromCenter).a(PopupPosition.Top).b(true).a((BasePopupView) msgItemMenuPop).h();
+                    new XPopup.Builder(MessageChatAdapter.this.b).a(view).d(false).a(PopupAnimation.a).a(PopupPosition.c).b(true).a(msgItemMenuPop).h();
                 }
             }
         }, i);
@@ -966,7 +965,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         if (TextUtils.isEmpty(str)) {
             return;
         }
-        Logger.b(l, "loadLocalPic===", RecyclingUtils.Scheme.FILE.b(str));
+        Logger.b(l, "loadLocalPic===", RecyclingUtils.Scheme.c.b(str));
         (str.startsWith("assets://") ? ImageLoader.c(c(), str.substring(9)) : str.startsWith("file://") ? ImageLoader.d(c(), str.substring(7)) : ImageLoader.a(c(), str)).g(-1).a(imageView);
     }
 
@@ -989,7 +988,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             return;
         }
         try {
-            TextView textView = (TextView) ViewHolder.a(view, 2131371945);
+            TextView textView = (TextView) ViewHolder.a(view, R.id.tv_message);
             TextView textView2 = (TextView) ViewHolder.a(view, R.id.tv_detail);
             textView.setText(chattingModel.msgContent);
             LogUtils.d("message", "yy system message: " + chattingModel.getMsgExtra());
@@ -1079,9 +1078,9 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     private void a(final ChattingModel chattingModel, View view, View view2) {
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.msg_item_root);
         FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.fl_feed_img);
-        ImageView imageView = (ImageView) view.findViewById(2131365317);
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_feed_img);
         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_video_preview);
-        TextView textView = (TextView) view.findViewById(2131371421);
+        TextView textView = (TextView) view.findViewById(R.id.tv_feed_content);
         TextView textView2 = (TextView) view.findViewById(R.id.tv_feed_right_bottom_tips);
         String msgExtra = chattingModel.getMsgExtra();
         if (TextUtils.isEmpty(msgExtra)) {
@@ -1185,14 +1184,14 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             final String longitude = f.getLongitude();
             final String latitude = f.getLatitude();
             final String location = f.getLocation();
-            String replace = IMV4Constant.f32241c.replace(DateUtils.ABBREV_WEEKDAY_FORMAT, longitude).replace(DateUtils.ABBREV_MONTH_FORMAT, latitude).replace("%c", longitude).replace(TimeModel.NUMBER_FORMAT, latitude);
+            String replace = IMV4Constant.f18551c.replace(DateUtils.ABBREV_WEEKDAY_FORMAT, longitude).replace(DateUtils.ABBREV_MONTH_FORMAT, latitude).replace("%c", longitude).replace(TimeModel.NUMBER_FORMAT, latitude);
             LoadOptions loadOptions = new LoadOptions();
             loadOptions.b = R.drawable.chat_maping_bg;
             loadOptions.d = R.drawable.chat_maping_bg;
-            ImageLoader.a(c(), replace).b(R.drawable.chat_maping_bg).a(imageView);
+            ImageLoader.a(c(), replace).b((int) R.drawable.chat_maping_bg).a(imageView);
             TextView textView2 = textView;
             if (textView == null) {
-                textView2 = (TextView) ViewHolder.a(view, 2131370848);
+                textView2 = (TextView) ViewHolder.a(view, R.id.tv_address);
             }
             if (textView2 != null) {
                 textView2.setText(TextUtils.isEmpty(location) ? "" : location);
@@ -1245,7 +1244,6 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             r(chattingModel, view);
             if (e == null) {
                 EmotionManager.a(this.b, chattingModel.msgContent, new EmotionLoadListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.61
-                    @Override // com.blued.android.module.common.widget.emoticon.manager.EmotionLoadListener
                     public void a(final EmoticonModel emoticonModel) {
                         if (emoticonModel == null) {
                             return;
@@ -1262,11 +1260,9 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                         });
                     }
 
-                    @Override // com.blued.android.module.common.widget.emoticon.manager.EmotionLoadListener
                     public void b(EmoticonModel emoticonModel) {
                     }
 
-                    @Override // com.blued.android.module.common.widget.emoticon.manager.EmotionLoadListener
                     public void c(EmoticonModel emoticonModel) {
                     }
                 });
@@ -1304,7 +1300,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         final MsgExtra msgExtra2 = (MsgExtra) AppInfo.f().fromJson(msgExtra, new TypeToken<MsgExtra>() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.32
         }.getType());
         textView.setText(this.b.getResources().getString(R.string.biao_im_msg_share_toone));
-        ImageLoader.a(c(), msgExtra2.getGroups_avatar()).c().b(R.drawable.group_default_head).a(imageView);
+        ImageLoader.a(c(), msgExtra2.getGroups_avatar()).c().b((int) R.drawable.group_default_head).a(imageView);
         if (!TextUtils.isEmpty(msgExtra2.getGroups_name())) {
             textView2.setText(msgExtra2.getGroups_name());
         }
@@ -1323,7 +1319,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
-                if (BluedConstant.f28239a && chattingModel.sessionType == 2 && (chattingModel.msgType == 9 || chattingModel.msgType == 10)) {
+                if (BluedConstant.f14549a && chattingModel.sessionType == 2 && (chattingModel.msgType == 9 || chattingModel.msgType == 10)) {
                     MessageChatAdapter.this.d();
                     return;
                 }
@@ -1342,14 +1338,13 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                     GroupHttpUtils.a(MessageChatAdapter.this.b, new BluedUIHttpResponse<BluedEntityA<BluedCreatedGroupInfo>>() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.33.1
 
                         /* renamed from: a  reason: collision with root package name */
-                        boolean f32057a;
+                        boolean f18367a;
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         /* renamed from: a */
                         public void onUIUpdate(BluedEntityA<BluedCreatedGroupInfo> bluedEntityA) {
                             try {
-                                int i = bluedEntityA.data.get(0).groups_is_locked;
-                                String str = bluedEntityA.data.get(0).groups_in_members;
+                                int i = ((BluedCreatedGroupInfo) bluedEntityA.data.get(0)).groups_is_locked;
+                                String str = ((BluedCreatedGroupInfo) bluedEntityA.data.get(0)).groups_in_members;
                                 if (i == 1) {
                                     bundle.putString("gid", valueOf);
                                     bundle.putString("iid", groups_iid);
@@ -1361,7 +1356,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                                     bundle.putString("from_page", MsgChattingFragment.class.getSimpleName());
                                     TerminalActivity.d(MessageChatAdapter.this.b, GroupInfoFragment.class, bundle);
                                 } else {
-                                    BluedCreatedGroupInfo bluedCreatedGroupInfo = bluedEntityA.data.get(0);
+                                    BluedCreatedGroupInfo bluedCreatedGroupInfo = (BluedCreatedGroupInfo) bluedEntityA.data.get(0);
                                     if (bluedCreatedGroupInfo == null) {
                                         return;
                                     }
@@ -1374,17 +1369,15 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                             }
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public boolean onUIFailure(int i, String str) {
-                            this.f32057a = true;
+                            this.f18367a = true;
                             return super.onUIFailure(i, str);
                         }
 
-                        @Override // com.blued.android.framework.http.BluedUIHttpResponse
                         public void onUIFinish() {
                             super.onUIFinish();
-                            if (this.f32057a) {
-                                this.f32057a = false;
+                            if (this.f18367a) {
+                                this.f18367a = false;
                                 bundle.putString("gid", valueOf);
                                 bundle.putString("iid", groups_iid);
                                 bundle.putString("from_page", MsgChattingFragment.class.getSimpleName());
@@ -1407,7 +1400,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             view.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.34
                 @Override // android.view.View.OnLongClickListener
                 public boolean onLongClick(View view2) {
-                    if (BluedConstant.f28239a && chattingModel.sessionType == 2 && chattingModel.msgType == 10) {
+                    if (BluedConstant.f14549a && chattingModel.sessionType == 2 && chattingModel.msgType == 10) {
                         MessageChatAdapter.this.d();
                         return false;
                     }
@@ -1449,7 +1442,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             } else {
                 try {
                     if (Arrays.asList(h.split(",")).contains(valueOf)) {
-                        GroupUtil.a(shapeTextView, 2);
+                        GroupUtil.a((TextView) shapeTextView, 2);
                     } else {
                         shapeTextView.setVisibility(8);
                     }
@@ -1459,7 +1452,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 }
             }
         } else {
-            GroupUtil.a(shapeTextView, 1);
+            GroupUtil.a((TextView) shapeTextView, 1);
         }
         view2.setVisibility(8);
     }
@@ -1509,7 +1502,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             }
         });
         if (chattingModel.isFromSelf()) {
-            TextView textView3 = (TextView) view.findViewById(2131372638);
+            TextView textView3 = (TextView) view.findViewById(R.id.tv_state);
             TextView textView4 = (TextView) view.findViewById(R.id.tv_read);
             if (chattingModel.msgStateCode != 3) {
                 textView4.setVisibility(8);
@@ -1526,7 +1519,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     }
 
     private void a(final ChattingModel chattingModel, ImageView imageView, ImageView imageView2) {
-        this.aO.f9593c = AvatarUtils.a(0, GroupUtil.a(chattingModel, this.aT.c(), this.aT.d()));
+        this.aO.c = AvatarUtils.a(0, GroupUtil.a(chattingModel, this.aT.c(), this.aT.d()));
         if (imageView == null) {
             return;
         }
@@ -1534,7 +1527,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         if (chattingModel.isMatchMsg != 1 || chattingModel.isFromSelf()) {
             c2.b(2131237310);
         } else {
-            c2.a(100).b(R.drawable.user_bg_round_blur);
+            c2.a(100).b((int) R.drawable.user_bg_round_blur);
         }
         c2.a(imageView);
         imageView.setOnClickListener(new SingleClickProxy(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.108
@@ -1550,10 +1543,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                         return;
                     }
                     EventLogData eventLogData = new EventLogData();
-                    eventLogData.setEventId(MessageChatAdapter.this.aV.h.f32533a.activity_id);
+                    eventLogData.setEventId(MessageChatAdapter.this.aV.h.f18842a.activity_id);
                     eventLogData.setUid(String.valueOf(chattingModel.fromId));
                     eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_GROUP);
-                    EventUserInfoDlgFragment.f19559a.a(MessageChatAdapter.this.aV.getParentFragmentManager(), String.valueOf(chattingModel.fromId), MessageChatAdapter.this.aV.h.f32533a.activity_id, eventLogData);
+                    EventUserInfoDlgFragment.a.a(MessageChatAdapter.this.aV.getParentFragmentManager(), String.valueOf(chattingModel.fromId), MessageChatAdapter.this.aV.h.f18842a.activity_id, eventLogData);
                 }
             }
         }));
@@ -1625,7 +1618,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             }
 
             void c() {
-                MessageChatMethod.a(MessageChatAdapter.this.b, chattingModel, MessageChatAdapter.this.f31961a, MessageChatAdapter.this.aT, MessageChatAdapter.this.aU);
+                MessageChatMethod.a(MessageChatAdapter.this.b, chattingModel, MessageChatAdapter.this.f18271a, MessageChatAdapter.this.aT, MessageChatAdapter.this.aU);
             }
 
             void d() {
@@ -1753,7 +1746,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         view.setVisibility(0);
         TextView textView = (TextView) view.findViewById(R.id.sensitive_word_safe_title);
         ImageView imageView = (ImageView) view.findViewById(R.id.sensitive_word_img_safe);
-        TextView textView2 = (TextView) view.findViewById(2131372428);
+        TextView textView2 = (TextView) view.findViewById(R.id.tv_report);
         TextView textView3 = (TextView) view.findViewById(R.id.tv_link);
         View findViewById = view.findViewById(2131366859);
         TextView textView4 = (TextView) view.findViewById(2131371186);
@@ -1798,7 +1791,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
                     Context context = MessageChatAdapter.this.b;
-                    List<E> list = MessageChatAdapter.this.f31961a;
+                    List<E> list = MessageChatAdapter.this.f18271a;
                     ChattingModel chattingModel2 = chattingModel;
                     MsgCommonUtils.a(context, list, chattingModel2, MessageChatAdapter.this.aT.f() + "", 6, 0, MessageChatAdapter.this.aU.getFragmentActive());
                 }
@@ -2016,7 +2009,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
             @Override // com.soft.blued.customview.selectabletextview.SelectableItemOnClickListener
             public void d() {
-                MessageChatMethod.a(MessageChatAdapter.this.b, chattingModel, MessageChatAdapter.this.f31961a, MessageChatAdapter.this.aT, MessageChatAdapter.this.aU);
+                MessageChatMethod.a(MessageChatAdapter.this.b, chattingModel, MessageChatAdapter.this.f18271a, MessageChatAdapter.this.aT, MessageChatAdapter.this.aU);
             }
 
             @Override // com.soft.blued.customview.selectabletextview.SelectableItemOnClickListener
@@ -2149,14 +2142,13 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     public void a(final String str, final String str2, final String str3, final int i) {
         ChatHttpUtils.b(str, new BluedUIHttpResponse<BluedEntityA<RelationshipStatus>>() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.3
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<RelationshipStatus> bluedEntityA) {
                 if (bluedEntityA == null || !bluedEntityA.hasData()) {
                     return;
                 }
-                RelationshipStatus singleData = bluedEntityA.getSingleData();
-                if (singleData.getStatus() == 1 || singleData.getStatus() == 4 || singleData.getStatus() == 3) {
+                RelationshipStatus relationshipStatus = (RelationshipStatus) bluedEntityA.getSingleData();
+                if (relationshipStatus.getStatus() == 1 || relationshipStatus.getStatus() == 4 || relationshipStatus.getStatus() == 3) {
                     ToastUtils.a("您已经做过处理，无需重复处理");
                 } else if (System.currentTimeMillis() / 1000 >= i) {
                     ToastUtils.a("抱歉，处理时效已过");
@@ -2175,10 +2167,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         linearLayout.setVisibility(0);
         flowLayout.removeAllViews();
         for (String str : list) {
-            ShapeTextView shapeTextView = (ShapeTextView) View.inflate(this.b, R.layout.item_chat_date_today_ceil, null);
-            ShapeHelper.b(shapeTextView, R.color.syc_bh);
-            shapeTextView.setText(str);
-            flowLayout.addView(shapeTextView);
+            ShapeTextView inflate = View.inflate(this.b, R.layout.item_chat_date_today_ceil, null);
+            ShapeHelper.b(inflate, (int) R.color.syc_bh);
+            inflate.setText(str);
+            flowLayout.addView(inflate);
         }
     }
 
@@ -2370,7 +2362,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             }
         }
         if (z) {
-            String format = TimeAndDateUtils.f10913a.get().format(new Date(chattingModel.msgTimestamp));
+            String format = ((SimpleDateFormat) TimeAndDateUtils.a.get()).format(new Date(chattingModel.msgTimestamp));
             long c2 = BluedPreferences.c(format, chattingModel.sessionId);
             if (c2 < 0 || c2 == chattingModel.msgId) {
                 if (a(chattingModel, MessageProtos.Event.MSG_PASS_BY_TIPS_SHOW.name())) {
@@ -2399,7 +2391,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             return;
         }
         ViewHolder.a(view, R.id.chat_content_in);
-        final TextView textView = (TextView) ViewHolder.a(view, 2131371945);
+        final TextView textView = (TextView) ViewHolder.a(view, R.id.tv_message);
         TextView textView2 = (TextView) ViewHolder.a(view, R.id.tv_divider);
         LinearLayout linearLayout = (LinearLayout) ViewHolder.a(view, R.id.ll_see_details);
         TextView textView3 = (TextView) ViewHolder.a(view, R.id.translate_line);
@@ -2467,8 +2459,8 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         }
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.msg_item_root);
         FrameLayout frameLayout = (FrameLayout) view.findViewById(2131363811);
-        ImageView imageView = (ImageView) view.findViewById(2131365477);
-        LinearLayout linearLayout2 = (LinearLayout) view.findViewById(2131367963);
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_header);
+        LinearLayout linearLayout2 = (LinearLayout) view.findViewById(R.id.ll_like);
         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_date_today_like);
         int i3 = i2;
         while (true) {
@@ -2510,7 +2502,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 if (z2) {
                     return;
                 }
-                DateTodayManager.f32404a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_LIKE_CLICK);
+                DateTodayManager.f18714a.a(MessageProtos.Event.MSG_MATCH_CHAT_PAGE_LIKE_CLICK);
                 MessageChatAdapter.this.aV.h.k(true);
             }
         });
@@ -2542,7 +2534,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     }
 
     private void b(final ChattingModel chattingModel, View view, short s, int i) {
-        ((TextView) view.findViewById(2131371945)).setText(this.b.getResources().getString(R.string.msg_unlock_private_photo));
+        ((TextView) view.findViewById(R.id.tv_message)).setText(this.b.getResources().getString(R.string.msg_unlock_private_photo));
         if (i == 1) {
             ((TextView) view.findViewById(R.id.tv_view)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.28
                 @Override // android.view.View.OnClickListener
@@ -2627,7 +2619,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
             @Override // com.soft.blued.customview.selectabletextview.SelectableItemOnClickListener
             public void d() {
-                MessageChatMethod.a(MessageChatAdapter.this.b, chattingModel, MessageChatAdapter.this.f31961a, MessageChatAdapter.this.aT, MessageChatAdapter.this.aU);
+                MessageChatMethod.a(MessageChatAdapter.this.b, chattingModel, MessageChatAdapter.this.f18271a, MessageChatAdapter.this.aT, MessageChatAdapter.this.aU);
             }
 
             @Override // com.soft.blued.customview.selectabletextview.SelectableItemOnClickListener
@@ -2659,7 +2651,6 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     public void b(String str, String str2, String str3) {
         ChatHttpUtils.a(str, str2, str3, new BluedUIHttpResponse<BluedEntityA<Object>>() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.6
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
             }
@@ -2755,12 +2746,12 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     }
 
     private void c(final ChattingModel chattingModel, View view, short s, int i) {
-        ((TextView) view.findViewById(2131371945)).setText(this.b.getResources().getString(R.string.msg_like_see_private_photo));
+        ((TextView) view.findViewById(R.id.tv_message)).setText(this.b.getResources().getString(R.string.msg_like_see_private_photo));
         if (i == 1) {
-            final TextView textView = (TextView) view.findViewById(2131370859);
-            final TextView textView2 = (TextView) view.findViewById(2131371711);
+            final TextView textView = (TextView) view.findViewById(R.id.tv_agree);
+            final TextView textView2 = (TextView) view.findViewById(R.id.tv_ignore);
             final LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_status);
-            final TextView textView3 = (TextView) view.findViewById(2131372639);
+            final TextView textView3 = (TextView) view.findViewById(R.id.tv_status);
             final ImageView imageView = (ImageView) view.findViewById(R.id.tv_message_translate_status_icon);
             String msgExtra = chattingModel.getMsgExtra();
             MsgPrivateImgApplyExtra msgPrivateImgApplyExtra = !TextUtils.isEmpty(msgExtra) ? (MsgPrivateImgApplyExtra) AppInfo.f().fromJson(msgExtra, (Class<Object>) MsgPrivateImgApplyExtra.class) : new MsgPrivateImgApplyExtra();
@@ -2775,9 +2766,8 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                         Tracker.onClick(view2);
                         PersonalProfileProtos.Event event = PersonalProfileProtos.Event.APPLY_PHOTO_AGREE_CLICK;
                         EventTrackPersonalProfile.d(event, chattingModel.fromId + "");
-                        MineHttpUtils.a(String.valueOf(chattingModel.fromId), "open", new BluedUIHttpResponse<BluedEntityA<Object>>(MessageChatAdapter.this.aV.getFragmentActive()) { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.29.1
+                        MineHttpUtils.a(String.valueOf(chattingModel.fromId), "open", (BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<Object>>(MessageChatAdapter.this.aV.getFragmentActive()) { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.29.1
                             /* JADX INFO: Access modifiers changed from: protected */
-                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             /* renamed from: a */
                             public void onUIUpdate(BluedEntityA<Object> bluedEntityA) {
                                 if (MessageChatAdapter.this.aV == null || MessageChatAdapter.this.aV.h == null) {
@@ -2795,18 +2785,16 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                                 imageView.setImageResource(R.drawable.icon_translate_done);
                             }
 
-                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             public void onUIFinish() {
                                 super.onUIFinish();
                                 DialogUtils.b(MessageChatAdapter.this.aV.b);
                             }
 
-                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             public void onUIStart() {
                                 super.onUIStart();
                                 DialogUtils.a(MessageChatAdapter.this.aV.b);
                             }
-                        }, MessageChatAdapter.this.aV.getFragmentActive());
+                        }, (IRequestHost) MessageChatAdapter.this.aV.getFragmentActive());
                     }
                 });
                 final MsgPrivateImgApplyExtra msgPrivateImgApplyExtra3 = msgPrivateImgApplyExtra;
@@ -2854,17 +2842,16 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             str2 = "";
         }
         c(chattingModel);
-        ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA<MsgContentTranslatedEntity>>() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.107
+        ChatHttpUtils.a((BluedUIHttpResponse) new BluedUIHttpResponse<BluedEntityA<MsgContentTranslatedEntity>>() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.107
 
             /* renamed from: a  reason: collision with root package name */
-            boolean f32001a;
+            boolean f18311a;
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             /* renamed from: a */
             public void onUIUpdate(BluedEntityA<MsgContentTranslatedEntity> bluedEntityA) {
                 MsgContentTranslatedEntity msgContentTranslatedEntity;
-                if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (msgContentTranslatedEntity = bluedEntityA.data.get(0)) == null || msgContentTranslatedEntity.trans_result == null || msgContentTranslatedEntity.trans_result.size() <= 0) {
+                if (bluedEntityA.data == null || bluedEntityA.data.size() <= 0 || (msgContentTranslatedEntity = (MsgContentTranslatedEntity) bluedEntityA.data.get(0)) == null || msgContentTranslatedEntity.trans_result == null || msgContentTranslatedEntity.trans_result.size() <= 0) {
                     return;
                 }
                 String str3 = msgContentTranslatedEntity.trans_result.get(0).dst;
@@ -2874,21 +2861,19 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 MessageChatAdapter.this.b(chattingModel, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public boolean onUIFailure(int i, String str3) {
-                this.f32001a = true;
+                this.f18311a = true;
                 return super.onUIFailure(i, str3);
             }
 
-            @Override // com.blued.android.framework.http.BluedUIHttpResponse
             public void onUIFinish() {
                 super.onUIFinish();
-                if (this.f32001a) {
-                    this.f32001a = false;
+                if (this.f18311a) {
+                    this.f18311a = false;
                     MessageChatAdapter.this.d(chattingModel);
                 }
             }
-        }, str2, this.aU.getFragmentActive());
+        }, str2, (IRequestHost) this.aU.getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2943,15 +2928,15 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 str = "" + liveMsgShareEntity.session_id;
             }
             EventTrackMessage.c(event, str, liveMsgShareEntity.room_id, liveMsgShareEntity.uid);
-            ShapeTextView shapeTextView = (ShapeTextView) ViewHolder.a(view, R.id.stv_room_tag);
+            ShapeTextView a2 = ViewHolder.a(view, R.id.stv_room_tag);
             ImageView imageView = (ImageView) ViewHolder.a(view, R.id.iv_room_pic);
             Space space = (Space) ViewHolder.a(view, R.id.space_room_name);
-            TextView textView = (TextView) ViewHolder.a(view, 2131372482);
+            TextView textView = (TextView) ViewHolder.a(view, R.id.tv_room_name);
             ImageView imageView2 = (ImageView) ViewHolder.a(view, R.id.iv_room_level_pic);
             TextView textView2 = (TextView) ViewHolder.a(view, R.id.tv_room_desc);
             if (!TextUtils.isEmpty(liveMsgShareEntity.room_tag)) {
-                YyChatRoomTagShapeUtils.f10915a.a(shapeTextView, liveMsgShareEntity.room_type_id);
-                shapeTextView.setText(liveMsgShareEntity.room_tag);
+                YyChatRoomTagShapeUtils.a.a(a2, liveMsgShareEntity.room_type_id);
+                a2.setText(liveMsgShareEntity.room_tag);
             }
             ImageLoader.a(c(), liveMsgShareEntity.pic_url).b(2131237310).c().a(imageView);
             if (!TextUtils.isEmpty(liveMsgShareEntity.room_name)) {
@@ -2980,7 +2965,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
                     if (LiveFloatManager.a().x()) {
-                        AppMethods.a((CharSequence) MessageChatAdapter.this.b.getString(2131893071));
+                        AppMethods.a(MessageChatAdapter.this.b.getString(R.string.yy_living_toast));
                         return;
                     }
                     MessageProtos.Event event2 = MessageProtos.Event.MSG_YY_OPEN_CLICK;
@@ -2989,7 +2974,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                         str2 = "" + liveMsgShareEntity.session_id;
                     }
                     EventTrackMessage.c(event2, str2, liveMsgShareEntity.room_id, liveMsgShareEntity.uid);
-                    YYRoomInfoManager.e().a((BaseFragmentActivity) MessageChatAdapter.this.b, liveMsgShareEntity.room_id, "yy_open_msg");
+                    YYRoomInfoManager.e().a(MessageChatAdapter.this.b, liveMsgShareEntity.room_id, "yy_open_msg");
                 }
             });
         } catch (Exception e) {
@@ -3024,7 +3009,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         if (TextUtils.isEmpty(chattingModel.msgContent)) {
             return;
         }
-        final TextView textView = (TextView) ViewHolder.a(view, 2131371672);
+        final TextView textView = (TextView) ViewHolder.a(view, R.id.tv_hi);
         textView.setText(ChatUtils.a(chattingModel.isFromSelf(), chattingModel.msgContent));
         textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.12
             @Override // android.view.View.OnLongClickListener
@@ -3037,9 +3022,9 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void e(final ChattingModel chattingModel, View view, final View view2) {
         final MsgExtra msgExtra;
-        ImageView imageView = (ImageView) view2.findViewById(2131365477);
+        ImageView imageView = (ImageView) view2.findViewById(R.id.iv_header);
         TextView textView = (TextView) view2.findViewById(2131372754);
-        TextView textView2 = (TextView) view2.findViewById(2131371262);
+        TextView textView2 = (TextView) view2.findViewById(R.id.tv_desc);
         r(chattingModel, view);
         try {
             if (TextUtils.isEmpty(chattingModel.getMsgExtra()) || (msgExtra = (MsgExtra) AppInfo.f().fromJson(chattingModel.getMsgExtra(), (Class<Object>) MsgExtra.class)) == null) {
@@ -3052,17 +3037,17 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    if (BluedConstant.f28239a) {
+                    if (BluedConstant.f14549a) {
                         MessageChatAdapter.this.d();
                     } else {
-                        com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.a(MessageChatAdapter.this.b, msgExtra.getGroups_gid(), (GroupInfoModel) null, SocialNetWorkProtos.SourceType.MESSAGE);
+                        com.soft.blued.ui.msg_group.fragment.GroupInfoFragment.a(MessageChatAdapter.this.b, msgExtra.getGroups_gid(), null, SocialNetWorkProtos.SourceType.MESSAGE);
                     }
                 }
             });
             view2.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.16
                 @Override // android.view.View.OnLongClickListener
                 public boolean onLongClick(View view3) {
-                    if (BluedConstant.f28239a) {
+                    if (BluedConstant.f14549a) {
                         MessageChatAdapter.this.d();
                         return false;
                     }
@@ -3088,8 +3073,8 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             TextView textView = (TextView) view.findViewById(2131371186);
             TextView textView2 = (TextView) view.findViewById(R.id.item_chat_anonymous_from_tv);
             if (fromFeedModel.is_bubble_ticktock == 1) {
-                textView2.setText(2131892202);
-                if (TextUtils.isEmpty(this.aV.h.f32533a.bubble_exhibition_img)) {
+                textView2.setText(R.string.super_topic_from_sign);
+                if (TextUtils.isEmpty(this.aV.h.f18842a.bubble_exhibition_img)) {
                     imageView.setVisibility(8);
                     textView.setVisibility(0);
                     textView.setText(fromFeedModel.text);
@@ -3100,7 +3085,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 }
             } else {
                 textView.setText(fromFeedModel.text);
-                textView2.setText(2131892201);
+                textView2.setText(R.string.super_topic_from_anonymous);
                 ImageLoader.a(c(), fromFeedModel.pic).a(imageView);
             }
             findViewById.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.-$$Lambda$MessageChatAdapter$LIDUY_xizBJ6WlRhfJ7IWXG7Kuk
@@ -3175,7 +3160,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                     if (marginLayoutParams2 != null) {
                         marginLayoutParams2.topMargin = (int) this.b.getResources().getDimension(R.dimen.msg_item_header_vip_bubble_margin_top);
                     }
-                    ImageLoader.a(c(), c2.voice_right_default).d(R.drawable.voice_right_play).f().a(imageView3);
+                    ImageLoader.a(c(), c2.voice_right_default).d((int) R.drawable.voice_right_play).f().a(imageView3);
                     try {
                         textView.setTextColor(Color.parseColor(c2.text_color));
                         textView2.setTextColor(Color.parseColor(c2.text_color));
@@ -3207,7 +3192,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                         textView2.setTextColor(Color.parseColor(this.k.text_color));
                     } catch (Throwable th2) {
                     }
-                    ImageLoader.a(c(), this.k.voice_left_default).d(R.drawable.voice_left_play).a(imageView3);
+                    ImageLoader.a(c(), this.k.voice_left_default).d((int) R.drawable.voice_left_play).a(imageView3);
                     VipBubbleManager.a().a(this.k, 0, view2);
                     VipBubbleManager.a().b(this.k, 0, selectFrameLayout2);
                 }
@@ -3219,28 +3204,28 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 imageView3.setTag(true);
                 if (chattingModel.isFromSelf()) {
                     if (c2 != null) {
-                        ImageLoader.a(c(), c2.voice_right_gift).d(R.drawable.voice_right_play).g().g(-1).a(imageView3);
+                        ImageLoader.a(c(), c2.voice_right_gift).d((int) R.drawable.voice_right_play).g().g(-1).a(imageView3);
                     } else {
-                        ImageLoader.c(c(), "voice_right_play_anim.png").d(R.drawable.voice_right_play).g().g(-1).a(imageView3);
+                        ImageLoader.c(c(), "voice_right_play_anim.png").d((int) R.drawable.voice_right_play).g().g(-1).a(imageView3);
                     }
                     imageView3.setTag(true);
                 } else if (!chattingModel.isFromSelf()) {
                     if (this.k != null) {
-                        ImageLoader.a(c(), this.k.voice_left_gift).d(R.drawable.voice_left_play).g().g(-1).a(imageView3);
+                        ImageLoader.a(c(), this.k.voice_left_gift).d((int) R.drawable.voice_left_play).g().g(-1).a(imageView3);
                     } else {
-                        ImageLoader.c(c(), BluedSkinUtils.c() ? "voice_left_play_anim.png" : "voice_left_play_anim_dark.png").d(R.drawable.voice_left_play).g().g(-1).a(imageView3);
+                        ImageLoader.c(c(), BluedSkinUtils.c() ? "voice_left_play_anim.png" : "voice_left_play_anim_dark.png").d((int) R.drawable.voice_left_play).g().g(-1).a(imageView3);
                     }
                 }
             } else if (imageView3.getTag() != null && ((Boolean) imageView3.getTag()).booleanValue()) {
                 imageView3.setTag(false);
                 if (IMV4Method.a(chattingModel.fromId) == 1) {
                     if (this.k != null) {
-                        ImageLoader.a(c(), this.k.voice_left_default).d(R.drawable.voice_left_play).a(imageView3);
+                        ImageLoader.a(c(), this.k.voice_left_default).d((int) R.drawable.voice_left_play).a(imageView3);
                     } else {
                         imageView3.setImageResource(R.drawable.voice_left_play);
                     }
                 } else if (c2 != null) {
-                    ImageLoader.a(c(), c2.voice_right_default).d(R.drawable.voice_right_play).a(imageView3);
+                    ImageLoader.a(c(), c2.voice_right_default).d((int) R.drawable.voice_right_play).a(imageView3);
                 } else {
                     imageView3.setImageResource(R.drawable.voice_right_play);
                 }
@@ -3251,7 +3236,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
                     if (AudioChannelManager.j().n()) {
-                        AppMethods.a(MessageChatAdapter.this.b.getResources().getText(2131893031));
+                        AppMethods.a(MessageChatAdapter.this.b.getResources().getText(R.string.yy_in_use));
                         return;
                     }
                     ChattingModel chattingModel2 = (ChattingModel) view3.getTag();
@@ -3291,7 +3276,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             if (BluedPreferences.ef()) {
                 BluedPreferences.eg();
                 View inflate = View.inflate(this.b, R.layout.pop_guide, null);
-                TextView textView3 = (TextView) inflate.findViewById(2131371646);
+                TextView textView3 = (TextView) inflate.findViewById(R.id.tv_guide);
                 textView3.setBackgroundResource(2131232902);
                 textView3.setText(R.string.turn_text_pop);
                 final BluedPopupWindow a4 = BluedPopupWindow.Builder.a((Activity) this.b, inflate).a(true).a();
@@ -3381,7 +3366,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             z = false;
         }
         r(chattingModel, view);
-        final ImageView imageView = (ImageView) view2.findViewById(2131364628);
+        final ImageView imageView = (ImageView) view2.findViewById(R.id.img_pic);
         if (imageView != null) {
             if (i != 0 && i2 != 0) {
                 Size b = ImageUtils.b(i, i2);
@@ -3412,7 +3397,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view3) {
                     Tracker.onClick(view3);
-                    ArrayList<String> a2 = IMV4Method.a((List<ChattingModel>) MessageChatAdapter.this.f31961a);
+                    ArrayList<String> a2 = IMV4Method.a((List<ChattingModel>) MessageChatAdapter.this.f18271a);
                     BasePhotoFragment.a(MessageChatAdapter.this.b, (String[]) a2.toArray(new String[a2.size()]), IMV4Method.a(a2, str), 5, (LoadOptions) null, "", imageView, str);
                 }
             });
@@ -3450,8 +3435,8 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         final View findViewById = view.findViewById(R.id.chat_include_invite_share);
         ImageView imageView = (ImageView) view.findViewById(2131365504);
         TextView textView = (TextView) view.findViewById(2131372754);
-        TextView textView2 = (TextView) view.findViewById(2131371262);
-        ImageLoader.a(this.aU.getFragmentActive(), a2.image).a(5.0f).b(R.drawable.icon_msg_share_feed_text).a(imageView);
+        TextView textView2 = (TextView) view.findViewById(R.id.tv_desc);
+        ImageLoader.a(this.aU.getFragmentActive(), a2.image).a(5.0f).b((int) R.drawable.icon_msg_share_feed_text).a(imageView);
         textView.setText(a2.title);
         if (TextUtils.isEmpty(a2.title)) {
             textView.setText(a2.name);
@@ -3509,9 +3494,9 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void i(final ChattingModel chattingModel, View view) {
         int i;
-        ImageLoader.a(c(), chattingModel.fromAvatar).b(2131237310).c().a((ImageView) view.findViewById(2131365477));
+        ImageLoader.a(c(), chattingModel.fromAvatar).b(2131237310).c().a((ImageView) view.findViewById(R.id.iv_header));
         ((TextView) view.findViewById(R.id.tv_nick)).setText(chattingModel.fromNickName);
-        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.tv_identity);
+        ShapeTextView findViewById = view.findViewById(R.id.tv_identity);
         if ((chattingModel.fromId + "").equals(this.aT.g())) {
             i = 1;
         } else {
@@ -3522,7 +3507,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             }
             i = 3;
         }
-        GroupUtil.a(shapeTextView, i);
+        GroupUtil.a((TextView) findViewById, i);
         view.findViewById(2131367715).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.19
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
@@ -3537,7 +3522,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             return;
         }
         final int a2 = IMV4Method.a(chattingModel.fromId);
-        TextView textView = (TextView) ViewHolder.a(view2, 2131371945);
+        TextView textView = (TextView) ViewHolder.a(view2, R.id.tv_message);
         ImageView imageView = (ImageView) ViewHolder.a(view2, R.id.icon_chat_video);
         if (imageView == null) {
             return;
@@ -3706,7 +3691,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     }
 
     private void j(final ChattingModel chattingModel, View view) {
-        ImageView imageView = (ImageView) view.findViewById(2131365477);
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_header);
         if (imageView == null) {
             return;
         }
@@ -3735,12 +3720,12 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                     eventLogData.setEventId(MessageChatAdapter.this.aV.h.m().event.id + "");
                     eventLogData.setUid(String.valueOf(chattingModel.fromId));
                     eventLogData.setSourcePage(FeedProtos.SourcePage.ACTIVITY_GROUP);
-                    EventUserInfoDlgFragment.f19559a.a(MessageChatAdapter.this.aV.getParentFragmentManager(), String.valueOf(chattingModel.fromId), MessageChatAdapter.this.aV.h.f32533a.activity_id, eventLogData);
+                    EventUserInfoDlgFragment.a.a(MessageChatAdapter.this.aV.getParentFragmentManager(), String.valueOf(chattingModel.fromId), MessageChatAdapter.this.aV.h.f18842a.activity_id, eventLogData);
                 }
             });
             ImageLoader.a(c(), chattingModel.fromAvatar).b(2131237310).c().a(imageView);
         }
-        ((TextView) view.findViewById(2131371262)).setText(chattingModel.msgContent);
+        ((TextView) view.findViewById(R.id.tv_desc)).setText(chattingModel.msgContent);
     }
 
     private void k(ChattingModel chattingModel, View view) {
@@ -3749,18 +3734,18 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void l(ChattingModel chattingModel, View view) {
         TextView textView = (TextView) view.findViewById(2131371675);
-        ShapeFrameLayout shapeFrameLayout = (ShapeFrameLayout) view.findViewById(R.id.fm_bg);
-        ShapeHelper.b(shapeFrameLayout, 2131100464);
+        ShapeFrameLayout findViewById = view.findViewById(R.id.fm_bg);
+        ShapeHelper.b(findViewById, 2131100464);
         Logger.e("CommonNotice", "getMsgExtra===" + chattingModel.getMsgExtra());
         CommonNoticeExtra commonNoticeExtra = !TextUtils.isEmpty(chattingModel.getMsgExtra()) ? (CommonNoticeExtra) AppInfo.f().fromJson(chattingModel.getMsgExtra(), (Class<Object>) CommonNoticeExtra.class) : null;
         if (commonNoticeExtra != null && IMV4Method.a(chattingModel.fromId) == 0 && !TextUtils.isEmpty(commonNoticeExtra.sender_tips)) {
-            shapeFrameLayout.setVisibility(0);
+            findViewById.setVisibility(0);
             textView.setText(Html.fromHtml(commonNoticeExtra.sender_tips));
             Logger.e("CommonNotice", "sender===" + commonNoticeExtra.sender_tips);
         } else if (commonNoticeExtra == null || IMV4Method.a(chattingModel.fromId) != 1 || TextUtils.isEmpty(commonNoticeExtra.receiver_tips)) {
-            shapeFrameLayout.setVisibility(8);
+            findViewById.setVisibility(8);
         } else {
-            shapeFrameLayout.setVisibility(0);
+            findViewById.setVisibility(0);
             textView.setText(Html.fromHtml(commonNoticeExtra.receiver_tips));
             Logger.e("CommonNotice", "receive===" + commonNoticeExtra.receiver_tips);
         }
@@ -3771,10 +3756,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         ImageView imageView = (ImageView) ViewHolder.a(view, R.id.iv_img_me);
         ImageView imageView2 = (ImageView) ViewHolder.a(view, R.id.iv_img_other);
         ImageLoader.a(c(), UserInfo.getInstance().getLoginUserInfo().avatar).a(2.0f, SkinHelper.b(this.b)).b(2131237310).a(imageView);
-        ImageLoader.a(c(), this.aV.h.f32534c).a(2.0f, SkinHelper.b(this.b)).b(2131237310).a(imageView2);
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) ViewHolder.a(view, R.id.sll_like);
-        TextView textView = (TextView) ViewHolder.a(view, 2131370818);
-        ShapeHelper.b(shapeLinearLayout, 2131102360);
+        ImageLoader.a(c(), this.aV.h.f18843c).a(2.0f, SkinHelper.b(this.b)).b(2131237310).a(imageView2);
+        ShapeLinearLayout a2 = ViewHolder.a(view, R.id.sll_like);
+        TextView textView = (TextView) ViewHolder.a(view, R.id.tv_action);
+        ShapeHelper.b(a2, 2131102360);
         String msgExtra = chattingModel.getMsgExtra();
         if (TextUtils.isEmpty(msgExtra) || (msgExtraLike = (MsgExtraLike) AppInfo.f().fromJson(msgExtra, (Class<Object>) MsgExtraLike.class)) == null) {
             return;
@@ -3824,7 +3809,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 Tracker.onClick(view2);
                 ArrayList arrayList = new ArrayList();
                 BottomMenuPop.MenuItemInfo menuItemInfo = new BottomMenuPop.MenuItemInfo();
-                menuItemInfo.f11214a = MessageChatAdapter.this.b.getString(R.string.msg_remind_later);
+                menuItemInfo.a = MessageChatAdapter.this.b.getString(R.string.msg_remind_later);
                 menuItemInfo.b = 2131101766;
                 menuItemInfo.d = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.24.1
                     @Override // android.view.View.OnClickListener
@@ -3838,8 +3823,8 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                     }
                 };
                 BottomMenuPop.MenuItemInfo menuItemInfo2 = new BottomMenuPop.MenuItemInfo();
-                menuItemInfo2.f11214a = MessageChatAdapter.this.b.getString(R.string.msg_not_remind);
-                menuItemInfo2.b = 2131101256;
+                menuItemInfo2.a = MessageChatAdapter.this.b.getString(R.string.msg_not_remind);
+                menuItemInfo2.b = R.color.popitems_font_red;
                 menuItemInfo2.d = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.24.2
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view3) {
@@ -3856,14 +3841,14 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 arrayList.add(menuItemInfo2);
                 MessageChatAdapter.this.aZ = new BottomMenuPop(MessageChatAdapter.this.b);
                 MessageChatAdapter.this.aZ.b = arrayList;
-                MessageChatAdapter.this.aZ.f11212c = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.24.3
+                MessageChatAdapter.this.aZ.c = new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.24.3
                     @Override // android.view.View.OnClickListener
                     public void onClick(View view3) {
                         Tracker.onClick(view3);
                         EventTrackGuy.b(GuyProtos.Event.COMPLETE_PROFILE_OLD_MSG_CANCEL_CLICK);
                     }
                 };
-                new XPopup.Builder(MessageChatAdapter.this.b).a((BasePopupView) MessageChatAdapter.this.aZ).h();
+                new XPopup.Builder(MessageChatAdapter.this.b).a(MessageChatAdapter.this.aZ).h();
             }
         });
     }
@@ -3875,10 +3860,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 return;
             }
             View findViewById = view.findViewById(R.id.chat_include_yy_share);
-            ImageView imageView = (ImageView) findViewById.findViewById(2131365477);
+            ImageView imageView = (ImageView) findViewById.findViewById(R.id.iv_header);
             TextView textView = (TextView) findViewById.findViewById(2131372754);
-            TextView textView2 = (TextView) findViewById.findViewById(2131371262);
-            ShapeTextView shapeTextView = (ShapeTextView) findViewById.findViewById(2131372839);
+            TextView textView2 = (TextView) findViewById.findViewById(R.id.tv_desc);
+            ShapeTextView findViewById2 = findViewById.findViewById(R.id.tv_type);
             ImageLoader.a(c(), liveMsgShareEntity.pic_url).b(2131237310).c().a(imageView);
             if (!TextUtils.isEmpty(liveMsgShareEntity.name)) {
                 textView2.setText(liveMsgShareEntity.name);
@@ -3886,9 +3871,9 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             if (!TextUtils.isEmpty(liveMsgShareEntity.copywriting)) {
                 textView.setText(liveMsgShareEntity.copywriting);
             }
-            shapeTextView.setText(liveMsgShareEntity.room_type_name);
-            YyChatRoomTagShapeUtils yyChatRoomTagShapeUtils = YyChatRoomTagShapeUtils.f10915a;
-            yyChatRoomTagShapeUtils.a(shapeTextView, liveMsgShareEntity.room_type + "");
+            findViewById2.setText(liveMsgShareEntity.room_type_name);
+            YyChatRoomTagShapeUtils yyChatRoomTagShapeUtils = YyChatRoomTagShapeUtils.a;
+            yyChatRoomTagShapeUtils.a(findViewById2, liveMsgShareEntity.room_type + "");
             EventTrackMessage.a(MessageProtos.Event.MSG_SHARE_MSG_SHOW, chattingModel, "yy_chat", liveMsgShareEntity.room_id);
             view.findViewById(R.id.chat_content_in).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.31
                 @Override // android.view.View.OnClickListener
@@ -3900,10 +3885,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                     String str2 = liveMsgShareEntity.uid;
                     EventTrackMessage.b(event, str, str2, chattingModel.fromId + "");
                     if (LiveFloatManager.a().x()) {
-                        AppMethods.a((CharSequence) MessageChatAdapter.this.b.getString(2131893071));
+                        AppMethods.a(MessageChatAdapter.this.b.getString(R.string.yy_living_toast));
                         return;
                     }
-                    YYRoomInfoManager.e().a((BaseFragmentActivity) MessageChatAdapter.this.b, liveMsgShareEntity.room_id, "msg_share");
+                    YYRoomInfoManager.e().a(MessageChatAdapter.this.b, liveMsgShareEntity.room_id, "msg_share");
                     EventTrackMessage.c(MessageProtos.Event.CHAT_ROOM_INVITE_MSG_JOIN_CLICK, liveMsgShareEntity.room_id, liveMsgShareEntity.uid);
                 }
             });
@@ -3928,19 +3913,19 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             TextView textView = (TextView) findViewById.findViewById(R.id.msg_live_nickname);
             TextView textView2 = (TextView) findViewById.findViewById(R.id.msg_live_description);
             TextView textView3 = (TextView) findViewById.findViewById(R.id.msg_live_show_info);
-            ImageLoader.a(c(), liveMsgShareEntity.pic_url).b(R.drawable.msg_live_default).a(14.0f).a(imageView);
+            ImageLoader.a(c(), liveMsgShareEntity.pic_url).b((int) R.drawable.msg_live_default).a(14.0f).a(imageView);
             if (!TextUtils.isEmpty(liveMsgShareEntity.description)) {
                 textView2.setText(liveMsgShareEntity.description);
             }
             if (!TextUtils.isEmpty(liveMsgShareEntity.name)) {
-                textView.setText(this.b.getResources().getString(2131889183) + ": " + liveMsgShareEntity.name);
+                textView.setText(this.b.getResources().getString(R.string.liveVideo_message_label_host) + ": " + liveMsgShareEntity.name);
             }
             if (!TextUtils.isEmpty(liveMsgShareEntity.copywriting)) {
                 textView3.setText(liveMsgShareEntity.copywriting);
             } else if (liveMsgShareEntity.watch_count > 0) {
-                textView3.setText(String.format(this.b.getResources().getString(2131889198), liveMsgShareEntity.watch_count + ""));
+                textView3.setText(String.format(this.b.getResources().getString(R.string.liveVideo_videoList_label_watchedUserCountNotice), liveMsgShareEntity.watch_count + ""));
             } else {
-                textView3.setText(this.b.getResources().getString(2131889185));
+                textView3.setText(this.b.getResources().getString(R.string.liveVideo_message_label_zeroPersonDesc));
             }
             final String str = "http://native.blued.cn/?action=liveplay&lid=" + liveMsgShareEntity.lid + "&uid=" + EncryptTool.b(liveMsgShareEntity.uid) + "&from=msg&note_type=" + liveMsgShareEntity.note_type;
             if (!chattingModel.isFromSelf()) {
@@ -3986,7 +3971,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void q(final ChattingModel chattingModel, View view) {
         int a2 = IMV4Method.a(chattingModel.fromId);
-        final ImageView imageView = (ImageView) view.findViewById(2131364628);
+        final ImageView imageView = (ImageView) view.findViewById(R.id.img_pic);
         MsgChattingImageModel d = ChatHelperV4.a().d(chattingModel);
         if (d != null && d.getPicHeight() != 0 && d.getPicWidth() != 0) {
             ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
@@ -4050,7 +4035,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                         return;
                     }
                     Context context = this.b;
-                    a(context, this.aT.e() + "", this.aU.getFragmentActive(), (List<ChattingModel>) this.f31961a, chattingModel, a4, a2);
+                    a(context, this.aT.e() + "", this.aU.getFragmentActive(), (List<ChattingModel>) this.f18271a, chattingModel, a4, a2);
                 }
             }
             if (IMV4Method.a(chattingModel.fromId) == 1 && chattingModel.msgId == 1 && msgExtraForTextTypeEntity.msgSource != null) {
@@ -4070,10 +4055,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         String str4;
         String str5;
         MsgImageAndTextModel msgImageAndTextModel;
-        CardView cardView = (CardView) ViewHolder.a(view, 2131363153);
+        CardView cardView = (CardView) ViewHolder.a(view, R.id.cv_content);
         TextView textView = (TextView) ViewHolder.a(view, R.id.tv_detail);
         TextView textView2 = (TextView) ViewHolder.a(view, R.id.tv_msg_desc);
-        TextView textView3 = (TextView) ViewHolder.a(view, 2131372002);
+        TextView textView3 = (TextView) ViewHolder.a(view, R.id.tv_msg_title);
         ImageView imageView = (ImageView) ViewHolder.a(view, R.id.aariv_msg_img);
         ConstraintLayout constraintLayout = (ConstraintLayout) ViewHolder.a(view, R.id.cl_msg_content);
         LinearLayout linearLayout = (LinearLayout) ViewHolder.a(view, R.id.ll_see_details);
@@ -4102,7 +4087,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 textView3.setText(str2);
                 textView3.setVisibility(0);
             }
-            ImageLoader.a(c(), str).b(R.drawable.icon_msg_image_and_text_bg).d(R.drawable.icon_msg_image_and_text_bg).a(imageView);
+            ImageLoader.a(c(), str).b((int) R.drawable.icon_msg_image_and_text_bg).d((int) R.drawable.icon_msg_image_and_text_bg).a(imageView);
             if (TextUtils.isEmpty(str3)) {
                 textView2.setVisibility(8);
             } else {
@@ -4167,15 +4152,15 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void t(final ChattingModel chattingModel, View view) {
         final View a2 = ViewHolder.a(view, R.id.chat_include_invite_share);
-        ImageView imageView = (ImageView) ViewHolder.a(view, 2131365477);
-        ImageView imageView2 = (ImageView) ViewHolder.a(view, 2131364720);
+        ImageView imageView = (ImageView) ViewHolder.a(view, R.id.iv_header);
+        ImageView imageView2 = (ImageView) ViewHolder.a(view, R.id.img_verify);
         TextView textView = (TextView) ViewHolder.a(view, 2131372754);
         TextView textView2 = (TextView) ViewHolder.a(view, 2131371186);
         TextView textView3 = (TextView) ViewHolder.a(view, R.id.tv_repost_content);
         MultiPicLayout multiPicLayout = (MultiPicLayout) ViewHolder.a(view, R.id.multiPic);
         FrameLayout frameLayout = (FrameLayout) ViewHolder.a(view, R.id.fmPic);
         RelativeLayout relativeLayout = (RelativeLayout) ViewHolder.a(view, R.id.rl_vote);
-        ImageView imageView3 = (ImageView) ViewHolder.a(view, 2131366055);
+        ImageView imageView3 = (ImageView) ViewHolder.a(view, R.id.iv_vote);
         RelativeLayout relativeLayout2 = (RelativeLayout) ViewHolder.a(view, R.id.rl_video);
         ImageView imageView4 = (ImageView) ViewHolder.a(view, R.id.iv_video);
         View a3 = ViewHolder.a(view, 2131366859);
@@ -4262,7 +4247,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             }
             if (a4.share_from == 15) {
                 c2.d();
-                Drawable drawable = this.b.getResources().getDrawable(2131231046);
+                Drawable drawable = this.b.getResources().getDrawable(R.drawable.anonymous_icon);
                 drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
                 textView.setCompoundDrawables(null, null, drawable, null);
             } else {
@@ -4305,17 +4290,17 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.msg_item_root);
         linearLayout.setLayoutDirection(i ^ 1);
         final ShareEventToMsgEntity b = ChatHelperV4.a().b(chattingModel, this.aX);
-        ImageLoader.a((IRequestHost) null, b.image).b(2131232442).a(6.0f).a((ImageView) linearLayout.findViewById(R.id.share_event_iv));
+        ImageLoader.a((IRequestHost) null, b.image).b((int) R.drawable.event_avatar_square).a(6.0f).a((ImageView) linearLayout.findViewById(R.id.share_event_iv));
         ((TextView) linearLayout.findViewById(R.id.share_event_name)).setText(b.activityName);
         ((TextView) linearLayout.findViewById(R.id.share_event_time)).setText(b.activityTime);
         ((TextView) linearLayout.findViewById(R.id.share_event_location)).setText(b.activityLocation);
         ImageView imageView = (ImageView) linearLayout.findViewById(R.id.share_event_name_arrow);
         CardView cardView = (CardView) linearLayout.findViewById(R.id.chat_share_event_cv);
-        if (CommunityManager.f19086a.a().s()) {
-            imageView.setImageResource(2131236166);
+        if (CommunityManager.a.a().s()) {
+            imageView.setImageResource(R.drawable.right_arrow_black_dark);
             cardView.setCardBackgroundColor(this.b.getResources().getColor(2131101490));
         } else {
-            imageView.setImageResource(2131236165);
+            imageView.setImageResource(R.drawable.right_arrow_black);
             cardView.setCardBackgroundColor(this.b.getResources().getColor(2131102478));
         }
         if (i != 0) {
@@ -4333,11 +4318,11 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void v(final ChattingModel chattingModel, View view) {
         final View a2 = ViewHolder.a(view, R.id.chat_include_invite_share);
-        TextView textView = (TextView) ViewHolder.a(view, 2131372002);
+        TextView textView = (TextView) ViewHolder.a(view, R.id.tv_msg_title);
         XRoundedImageView xRoundedImageView = (XRoundedImageView) ViewHolder.a(view, R.id.xriv_viewpoint_cover);
         final ShareToMsgEntity a3 = ChatHelperV4.a().a(chattingModel, this.aX);
         textView.setText(chattingModel.msgContent);
-        ImageLoader.a(c(), a3.image).b(2131101212).d(R.drawable.icon_failed_share_viewpoint).a(xRoundedImageView);
+        ImageLoader.a(c(), a3.image).b(2131101212).d((int) R.drawable.icon_failed_share_viewpoint).a(xRoundedImageView);
         a2.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.100
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
@@ -4364,11 +4349,11 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     private void w(final ChattingModel chattingModel, View view) {
         String str;
         final View a2 = ViewHolder.a(view, R.id.chat_include_invite_share);
-        ImageView imageView = (ImageView) ViewHolder.a(view, 2131366040);
+        ImageView imageView = (ImageView) ViewHolder.a(view, R.id.iv_vip);
         TextView textView = (TextView) ViewHolder.a(view, 2131372046);
-        TextView textView2 = (TextView) ViewHolder.a(view, 2131371717);
-        ImageView imageView2 = (ImageView) ViewHolder.a(view, 2131364720);
-        ImageView imageView3 = (ImageView) ViewHolder.a(view, 2131365477);
+        TextView textView2 = (TextView) ViewHolder.a(view, R.id.tv_info);
+        ImageView imageView2 = (ImageView) ViewHolder.a(view, R.id.img_verify);
+        ImageView imageView3 = (ImageView) ViewHolder.a(view, R.id.iv_header);
         r(chattingModel, view);
         final ShareToMsgEntity a3 = ChatHelperV4.a().a(chattingModel, this.aX);
         textView.setText(a3.name);
@@ -4445,7 +4430,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
 
     private void x(ChattingModel chattingModel, View view) {
         boolean z;
-        TextView textView = (TextView) ViewHolder.a(view, 2131371242);
+        TextView textView = (TextView) ViewHolder.a(view, R.id.tv_date);
         if (textView != null) {
             if (chattingModel.msgType != 0) {
                 try {
@@ -4498,7 +4483,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
                     Tracker.onClick(view2);
-                    new BluedAlertDialog.Builder(MessageChatAdapter.this.b).d(R.string.no_disturb_hint_dialog_title).e(R.string.no_disturb_hint_dialog_message).a(2131887278, (DialogInterface.OnClickListener) null).f(2131101766).a().show();
+                    new BluedAlertDialog.Builder(MessageChatAdapter.this.b).d((int) R.string.no_disturb_hint_dialog_title).e((int) R.string.no_disturb_hint_dialog_message).a(2131887278, (DialogInterface.OnClickListener) null).f(2131101766).a().show();
                 }
             });
         }
@@ -4512,10 +4497,10 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         FrameLayout frameLayout2 = (FrameLayout) view.findViewById(R.id.fl_header_him);
         ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_header_him);
         TextView textView = (TextView) view.findViewById(R.id.tv_match_text);
-        TextView textView2 = (TextView) view.findViewById(2131371262);
+        TextView textView2 = (TextView) view.findViewById(R.id.tv_desc);
         LinearLayout linearLayout2 = (LinearLayout) view.findViewById(2131367622);
         TextView textView3 = (TextView) view.findViewById(R.id.tv_your_common_title);
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.sll_your_common);
+        ShapeLinearLayout findViewById = view.findViewById(R.id.sll_your_common);
         TextView textView4 = (TextView) view.findViewById(R.id.tv_your_common);
         FlowLayout flowLayout = (FlowLayout) view.findViewById(R.id.fl_your_common);
         LinearLayout linearLayout3 = (LinearLayout) view.findViewById(R.id.ll_your_type);
@@ -4544,7 +4529,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 return;
             }
             DateTodayMatchUserModel dateTodayMatchUserModel = target_info;
-            if (String.valueOf(DateTodayManager.f32404a.d(target_info.getUid())).equals(UserInfo.getInstance().getLoginUserInfo().getUid())) {
+            if (String.valueOf(DateTodayManager.f18714a.d(target_info.getUid())).equals(UserInfo.getInstance().getLoginUserInfo().getUid())) {
                 dateTodayMatchUserModel = self_info;
             }
             ImageWrapper c2 = ImageLoader.a(c(), dateTodayMatchUserModel.getAvatar()).b(chattingModel.isMatchMsg == 1 ? 2131237311 : 2131237310).c();
@@ -4571,11 +4556,11 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             if ((dateTodayMatchModel.getSame_point_friends_purpose() != null && dateTodayMatchModel.getSame_point_friends_purpose().size() > 0) || ((dateTodayMatchModel.getSame_point_like() != null && dateTodayMatchModel.getSame_point_like().size() > 0) || ((dateTodayMatchUserModel.getYour_like_type() != null && dateTodayMatchUserModel.getYour_like_type().size() > 0) || (dateTodayMatchUserModel.getOthers_evaluation() != null && dateTodayMatchUserModel.getOthers_evaluation().size() > 0)))) {
                 linearLayout2.setVisibility(0);
                 linearLayout5.setVisibility(8);
-                shapeLinearLayout.setVisibility(a(dateTodayMatchModel.getSame_point_friends_purpose(), textView4) ? 0 : 8);
+                findViewById.setVisibility(a(dateTodayMatchModel.getSame_point_friends_purpose(), textView4) ? 0 : 8);
                 a(dateTodayMatchModel.getSame_point_like(), flowLayout);
                 a(dateTodayMatchUserModel.getYour_like_type(), linearLayout3, flowLayout2);
                 a(dateTodayMatchUserModel.getOthers_evaluation(), linearLayout4, flowLayout3);
-                if (flowLayout.getVisibility() != 0 && shapeLinearLayout.getVisibility() != 0) {
+                if (flowLayout.getVisibility() != 0 && findViewById.getVisibility() != 0) {
                     textView3.setVisibility(8);
                 }
                 textView3.setVisibility(0);
@@ -4587,7 +4572,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 linearLayout5.setVisibility(0);
                 a(dateTodayMatchUserModel.getAttestation_info(), flowLayout4);
             }
-            textView2.setText(String.format(this.b.getString(R.string.date_today_desc3), DateTodayManager.f32404a.a(dateTodayMatchUserModel)));
+            textView2.setText(String.format(this.b.getString(R.string.date_today_desc3), DateTodayManager.f18714a.a(dateTodayMatchUserModel)));
         } catch (Exception e) {
         }
     }
@@ -4595,14 +4580,14 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     private void z(ChattingModel chattingModel, View view) {
         r(chattingModel, view);
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.msg_item_root);
-        ImageView imageView = (ImageView) view.findViewById(2131365477);
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_header);
         ImageWrapper c2 = ImageLoader.a(c(), AvatarUtils.a(0, chattingModel.fromAvatar)).b(2131237310).c();
         if (chattingModel.isMatchMsg == 1) {
             c2.a(100);
         }
         c2.a(imageView);
         try {
-            ImageView imageView2 = (ImageView) view.findViewById(2131364628);
+            ImageView imageView2 = (ImageView) view.findViewById(R.id.img_pic);
             String msgExtra = chattingModel.getMsgExtra();
             if (TextUtils.isEmpty(msgExtra)) {
                 return;
@@ -4656,9 +4641,9 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         if (msgChattingFragment == null || (I = msgChattingFragment.I()) == null || !UserInfoHelper.b(I.vbadge)) {
             return;
         }
-        ShapeTextView shapeTextView = (ShapeTextView) ViewHolder.a(view, R.id.stv_merchant_hint);
-        shapeTextView.setText(String.format(this.b.getString(R.string.msg_merchant_hint), I.name));
-        shapeTextView.setVisibility(0);
+        ShapeTextView a2 = ViewHolder.a(view, R.id.stv_merchant_hint);
+        a2.setText(String.format(this.b.getString(R.string.msg_merchant_hint), I.name));
+        a2.setVisibility(0);
     }
 
     @Override // com.soft.blued.ui.msg.pop.MsgItemMenuPop.ItemClickListener
@@ -4667,7 +4652,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             if ((chattingModel.msgType == 24 || chattingModel.msgType == 25) && System.currentTimeMillis() - chattingModel.msgTimestamp > 604800000) {
                 ToastUtils.a(this.b.getString(R.string.msg_expire));
             } else {
-                MessageChatMethod.a(this.b, chattingModel, this.f31961a, this.aT, this.aU);
+                MessageChatMethod.a(this.b, chattingModel, this.f18271a, this.aT, this.aU);
             }
         } else if (str.equals(this.b.getString(R.string.retraction))) {
             MessageChatMethod.a(this.b, chattingModel, this.aT);
@@ -4685,7 +4670,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         EventLogData eventLogData = new EventLogData();
         eventLogData.setEventId(str);
         eventLogData.setSourcePage(sourcePage);
-        EventDetailsFragment.f19534a.a(this.b, str, eventLogData);
+        EventDetailsFragment.a.a(this.b, str, eventLogData);
     }
 
     public boolean a(final Context context, final String str, final ActivityFragmentActive activityFragmentActive, final List<ChattingModel> list, final ChattingModel chattingModel, final MsgExtraForTextTypeEntity.SecureNotify secureNotify, View view) {
@@ -4694,7 +4679,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
         }
         view.setVisibility(0);
         ViewPager viewPager = (ViewPager) ViewHolder.a(view, 2131373100);
-        SafeTabLayout safeTabLayout = (SafeTabLayout) ViewHolder.a(view, 2131370550);
+        SafeTabLayout safeTabLayout = (SafeTabLayout) ViewHolder.a(view, R.id.tab_layout);
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         for (final MsgExtraForTextTypeEntity.SecureNotify.SecureContent secureContent : secureNotify.multi_contents) {
@@ -4750,17 +4735,17 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
                 }
             }
         });
-        ((TextView) ViewHolder.a(view, 2131372428)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.83
+        ((TextView) ViewHolder.a(view, R.id.tv_report)).setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.adapter.MessageChatAdapter.83
             @Override // android.view.View.OnClickListener
             public void onClick(View view2) {
                 Tracker.onClick(view2);
                 MsgCommonUtils.a(context, list, chattingModel, str, 6, 0, activityFragmentActive);
             }
         });
-        LinePageIndicator linePageIndicator = (LinePageIndicator) ViewHolder.a(view, 2131368404);
-        linePageIndicator.setSelectedColor(context.getResources().getColor(R.color.chat_safe_page_indicator));
-        linePageIndicator.setUnselectedColor(SkinHelper.e(context));
-        linePageIndicator.setViewPager(viewPager);
+        LinePageIndicator a2 = ViewHolder.a(view, 2131368404);
+        a2.setSelectedColor(context.getResources().getColor(R.color.chat_safe_page_indicator));
+        a2.setUnselectedColor(SkinHelper.e(context));
+        a2.setViewPager(viewPager);
         a(view);
         return true;
     }
@@ -4775,7 +4760,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
             if (new File(a3).exists()) {
                 return true;
             }
-            FileDownloader.a(a2, a3, null, null);
+            FileDownloader.a(a2, a3, (FileHttpResponseHandler) null, (IRequestHost) null);
             return false;
         }
         return new File(a2).exists();
@@ -4801,7 +4786,7 @@ public class MessageChatAdapter extends BaseListAdapter<ChattingModel> implement
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     @Override // android.widget.BaseAdapter, android.widget.Adapter
     public int getItemViewType(int i) {
-        ChattingModel chattingModel = (ChattingModel) this.f31961a.get(i);
+        ChattingModel chattingModel = (ChattingModel) this.f18271a.get(i);
         int a2 = IMV4Method.a(chattingModel.fromId);
         short s = chattingModel.msgType;
         int i2 = 1;

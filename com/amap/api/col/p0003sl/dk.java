@@ -10,14 +10,10 @@ import java.util.Hashtable;
 /* renamed from: com.amap.api.col.3sl.dk  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/dk.class */
 public class dk {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static boolean f4856a = false;
+    private static boolean a = false;
     private static volatile dk d;
     private Hashtable<String, String> b = new Hashtable<>();
-
-    /* renamed from: c  reason: collision with root package name */
-    private WeakReference<Context> f4857c = null;
+    private WeakReference<Context> c = null;
 
     private dk() {
     }
@@ -54,7 +50,7 @@ public class dk {
     }
 
     public static void a(boolean z) {
-        f4856a = z;
+        a = z;
     }
 
     public static void b() {
@@ -62,8 +58,8 @@ public class dk {
             if (d.b != null && d.b.size() > 0) {
                 synchronized (d.b) {
                     d.d();
-                    if (d.f4857c != null) {
-                        d.f4857c.clear();
+                    if (d.c != null) {
+                        d.c.clear();
                     }
                 }
             }
@@ -73,12 +69,12 @@ public class dk {
     }
 
     public static boolean c() {
-        return f4856a;
+        return a;
     }
 
     private void d() {
         WeakReference<Context> weakReference;
-        if (!f4856a) {
+        if (!a) {
             this.b.clear();
         } else if (this.b != null) {
             StringBuffer stringBuffer = new StringBuffer();
@@ -97,8 +93,8 @@ public class dk {
                 }
                 stringBuffer.append("]");
                 String stringBuffer2 = stringBuffer.toString();
-                if (!TextUtils.isEmpty(stringBuffer2) && (weakReference = this.f4857c) != null && weakReference.get() != null) {
-                    kg.a(stringBuffer2, this.f4857c.get());
+                if (!TextUtils.isEmpty(stringBuffer2) && (weakReference = this.c) != null && weakReference.get() != null) {
+                    kg.a(stringBuffer2, this.c.get());
                 }
             }
             this.b.clear();
@@ -112,12 +108,12 @@ public class dk {
 
     public final void a(Context context) {
         if (context != null) {
-            this.f4857c = new WeakReference<>(context);
+            this.c = new WeakReference<>(context);
         }
     }
 
     public final void a(LatLng latLng, String str, String str2) {
-        if (!f4856a) {
+        if (!a) {
             this.b.clear();
         } else if (latLng == null || TextUtils.isEmpty(str)) {
         } else {

@@ -6,11 +6,11 @@ import android.view.View;
 public abstract class BDImpressionController implements BDImpressionInterface {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int f8902a = 0;
+    private static final int f6062a = 0;
     private static final int b = 50;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f8903c;
+    private boolean f6063c;
     private int d = 0;
     private int e = 50;
     private Integer f = null;
@@ -32,7 +32,7 @@ public abstract class BDImpressionController implements BDImpressionInterface {
 
     @Override // com.anythink.network.baidu.impression.BDImpressionInterface
     public final boolean isImpressionRecorded() {
-        return this.f8903c;
+        return this.f6063c;
     }
 
     @Override // com.anythink.network.baidu.impression.BDImpressionInterface
@@ -40,6 +40,6 @@ public abstract class BDImpressionController implements BDImpressionInterface {
 
     @Override // com.anythink.network.baidu.impression.BDImpressionInterface
     public final void setImpressionRecorded() {
-        this.f8903c = true;
+        this.f6063c = true;
     }
 }

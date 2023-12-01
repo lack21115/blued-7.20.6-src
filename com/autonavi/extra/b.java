@@ -1,6 +1,7 @@
 package com.autonavi.extra;
 
 import android.text.TextUtils;
+import com.huawei.openalliance.ad.constant.t;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,13 +10,13 @@ import java.util.List;
 public class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private List<a> f9289a = new ArrayList();
+    private List<a> f6449a = new ArrayList();
 
     public final void a() {
         synchronized (b.class) {
             try {
-                if (this.f9289a != null) {
-                    this.f9289a.add(null);
+                if (this.f6449a != null) {
+                    this.f6449a.add(null);
                 }
             } finally {
             }
@@ -25,7 +26,7 @@ public class b {
     public final void b() {
         synchronized (b.class) {
             try {
-                Iterator<a> it = this.f9289a.iterator();
+                Iterator<a> it = this.f6449a.iterator();
                 while (it.hasNext()) {
                     it.next();
                 }
@@ -37,7 +38,7 @@ public class b {
     public final void c() {
         synchronized (b.class) {
             try {
-                Iterator<a> it = this.f9289a.iterator();
+                Iterator<a> it = this.f6449a.iterator();
                 while (it.hasNext()) {
                     it.next();
                 }
@@ -49,7 +50,7 @@ public class b {
     public final void d() {
         synchronized (b.class) {
             try {
-                Iterator<a> it = this.f9289a.iterator();
+                Iterator<a> it = this.f6449a.iterator();
                 while (it.hasNext()) {
                     it.next();
                 }
@@ -61,7 +62,7 @@ public class b {
     public final void e() {
         synchronized (b.class) {
             try {
-                Iterator<a> it = this.f9289a.iterator();
+                Iterator<a> it = this.f6449a.iterator();
                 while (it.hasNext()) {
                     it.next();
                 }
@@ -73,11 +74,11 @@ public class b {
     public final void f() {
         synchronized (b.class) {
             try {
-                Iterator<a> it = this.f9289a.iterator();
+                Iterator<a> it = this.f6449a.iterator();
                 while (it.hasNext()) {
                     it.next();
                 }
-                this.f9289a.clear();
+                this.f6449a.clear();
             } catch (Throwable th) {
                 throw th;
             }
@@ -89,13 +90,13 @@ public class b {
         synchronized (b.class) {
             try {
                 StringBuffer stringBuffer2 = new StringBuffer();
-                for (a aVar : this.f9289a) {
+                for (a aVar : this.f6449a) {
                     if (aVar != null) {
                         String a2 = aVar.a();
                         if (!TextUtils.isEmpty(a2)) {
                             stringBuffer2.append(a2);
-                            if (!a2.endsWith(";")) {
-                                stringBuffer2.append(";");
+                            if (!a2.endsWith(t.aE)) {
+                                stringBuffer2.append(t.aE);
                             }
                         }
                     }
@@ -111,7 +112,7 @@ public class b {
     public final void h() {
         synchronized (b.class) {
             try {
-                Iterator<a> it = this.f9289a.iterator();
+                Iterator<a> it = this.f6449a.iterator();
                 while (it.hasNext()) {
                     it.next();
                 }
@@ -123,7 +124,7 @@ public class b {
     public final void i() {
         synchronized (b.class) {
             try {
-                Iterator<a> it = this.f9289a.iterator();
+                Iterator<a> it = this.f6449a.iterator();
                 while (it.hasNext()) {
                     it.next();
                 }
@@ -136,7 +137,7 @@ public class b {
         Object b;
         synchronized (b.class) {
             try {
-                for (a aVar : this.f9289a) {
+                for (a aVar : this.f6449a) {
                     if (aVar != null && (b = aVar.b()) != null) {
                         return b;
                     }

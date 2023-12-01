@@ -24,7 +24,6 @@ import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
 import com.blued.android.framework.utils.DensityUtils;
 import com.blued.android.module.common.user.model.UserInfo;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import com.blued.android.module.live_china.manager.LiveFloatManager;
 import com.blued.android.module.live_china.observer.LiveRefreshUIObserver;
 import com.bytedance.applog.tracker.Tracker;
@@ -44,11 +43,11 @@ import java.util.TimerTask;
 public class GlobalTaskFloatManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile GlobalTaskFloatManager f32280a;
+    public static volatile GlobalTaskFloatManager f18590a;
     private static final String b = GlobalTaskFloatManager.class.getSimpleName();
 
     /* renamed from: c  reason: collision with root package name */
-    private ViewHolder f32281c;
+    private ViewHolder f18591c;
     private WindowManager.LayoutParams d;
     private WindowManager e;
     private TaskInfo f;
@@ -90,11 +89,11 @@ public class GlobalTaskFloatManager {
     public static class ViewHolder {
 
         /* renamed from: a  reason: collision with root package name */
-        public TextView f32297a;
+        public TextView f18607a;
         public View b;
 
         /* renamed from: c  reason: collision with root package name */
-        public ImageView f32298c;
+        public ImageView f18608c;
         public ProgressBar d;
         public TextView e;
         public TextView f;
@@ -120,18 +119,18 @@ public class GlobalTaskFloatManager {
     }
 
     public static GlobalTaskFloatManager a() {
-        if (f32280a == null) {
+        if (f18590a == null) {
             synchronized (GlobalTaskFloatManager.class) {
                 try {
-                    if (f32280a == null) {
-                        f32280a = new GlobalTaskFloatManager();
+                    if (f18590a == null) {
+                        f18590a = new GlobalTaskFloatManager();
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f32280a;
+        return f18590a;
     }
 
     private void a(Context context) {
@@ -166,7 +165,7 @@ public class GlobalTaskFloatManager {
     /* JADX INFO: Access modifiers changed from: private */
     public void b(final int i) {
         TaskInfo taskInfo;
-        if (this.f32281c == null || (taskInfo = this.f) == null || i != taskInfo.task_id) {
+        if (this.f18591c == null || (taskInfo = this.f) == null || i != taskInfo.task_id) {
             return;
         }
         if (this.v == null) {
@@ -178,17 +177,17 @@ public class GlobalTaskFloatManager {
                 AppInfo.n().post(new Runnable() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.2.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        if (GlobalTaskFloatManager.this.x || GlobalTaskFloatManager.this.f32281c == null || GlobalTaskFloatManager.this.v == null) {
+                        if (GlobalTaskFloatManager.this.x || GlobalTaskFloatManager.this.f18591c == null || GlobalTaskFloatManager.this.v == null) {
                             return;
                         }
                         GlobalTaskFloatManager.b(GlobalTaskFloatManager.this, 100);
                         String str = GlobalTaskFloatManager.b;
                         Logger.c(str, "second====" + GlobalTaskFloatManager.this.w);
-                        GlobalTaskFloatManager.this.f32281c.d.setProgress((int) ((1.0f - (((float) ((GlobalTaskFloatManager.this.f.progress * 1000) + GlobalTaskFloatManager.this.w)) / ((float) (GlobalTaskFloatManager.this.f.max * 1000)))) * 1000.0f));
+                        GlobalTaskFloatManager.this.f18591c.d.setProgress((int) ((1.0f - (((float) ((GlobalTaskFloatManager.this.f.progress * 1000) + GlobalTaskFloatManager.this.w)) / ((float) (GlobalTaskFloatManager.this.f.max * 1000)))) * 1000.0f));
                         String str2 = GlobalTaskFloatManager.b;
-                        Logger.c(str2, "progress====" + GlobalTaskFloatManager.this.f32281c.d.getProgress());
+                        Logger.c(str2, "progress====" + GlobalTaskFloatManager.this.f18591c.d.getProgress());
                         if (GlobalTaskFloatManager.this.w == 0) {
-                            TextView textView = GlobalTaskFloatManager.this.f32281c.f32297a;
+                            TextView textView = GlobalTaskFloatManager.this.f18591c.f18607a;
                             StringBuilder sb = new StringBuilder();
                             TaskInfo taskInfo2 = GlobalTaskFloatManager.this.f;
                             int i2 = taskInfo2.progress;
@@ -202,14 +201,13 @@ public class GlobalTaskFloatManager {
                             return;
                         }
                         GlobalTaskFloatManager.this.a(i);
-                        if (GlobalTaskFloatManager.this.f32281c != null) {
-                            GlobalTaskFloatManager.this.f32281c.f32297a.setVisibility(8);
-                            GlobalTaskFloatManager.this.f32281c.e.setText(AppInfo.d().getString(R.string.task_completed));
-                            GlobalTaskFloatManager.this.f32281c.f.setVisibility(0);
+                        if (GlobalTaskFloatManager.this.f18591c != null) {
+                            GlobalTaskFloatManager.this.f18591c.f18607a.setVisibility(8);
+                            GlobalTaskFloatManager.this.f18591c.e.setText(AppInfo.d().getString(R.string.task_completed));
+                            GlobalTaskFloatManager.this.f18591c.f.setVisibility(0);
                         }
                         ChatHttpUtils.a(new BluedUIHttpResponse<BluedEntityA>(null) { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.2.1.1
                             /* JADX INFO: Access modifiers changed from: protected */
-                            @Override // com.blued.android.framework.http.BluedUIHttpResponse
                             /* renamed from: a */
                             public void onUIUpdate(BluedEntityA bluedEntityA) {
                             }
@@ -244,13 +242,13 @@ public class GlobalTaskFloatManager {
     }
 
     private void h() {
-        if (this.f32281c != null) {
+        if (this.f18591c != null) {
             if (!TextUtils.isEmpty(this.f.task_name)) {
-                this.f32281c.e.setText(this.f.task_name);
+                this.f18591c.e.setText(this.f.task_name);
             }
             if (this.f.task_id == 26) {
-                this.f32281c.d.setProgress((int) ((1.0f - (((this.f.progress * 1000) + this.w) / (this.f.max * 1000))) * 1000.0f));
-                TextView textView = this.f32281c.f32297a;
+                this.f18591c.d.setProgress((int) ((1.0f - (((this.f.progress * 1000) + this.w) / (this.f.max * 1000))) * 1000.0f));
+                TextView textView = this.f18591c.f18607a;
                 textView.setText(this.f.progress + "s");
                 if (LiveFloatManager.a().x()) {
                     b(26);
@@ -258,22 +256,22 @@ public class GlobalTaskFloatManager {
                 }
                 return;
             }
-            this.f32281c.f32297a.setVisibility(this.f.progress == this.f.max ? 8 : 0);
-            TextView textView2 = this.f32281c.f32297a;
-            textView2.setText("(" + this.f.progress + BridgeUtil.SPLIT_MARK + this.f.max + ")");
+            this.f18591c.f18607a.setVisibility(this.f.progress == this.f.max ? 8 : 0);
+            TextView textView2 = this.f18591c.f18607a;
+            textView2.setText("(" + this.f.progress + "/" + this.f.max + ")");
             int floatValue = (int) ((((float) this.f.progress) / Float.valueOf((float) this.f.max).floatValue()) * 1000.0f);
             ValueAnimator valueAnimator = this.t;
             if (valueAnimator != null && valueAnimator.isRunning()) {
                 this.t.cancel();
             }
-            ValueAnimator ofInt = ValueAnimator.ofInt(this.f32281c.d.getProgress(), floatValue);
+            ValueAnimator ofInt = ValueAnimator.ofInt(this.f18591c.d.getProgress(), floatValue);
             this.t = ofInt;
             ofInt.setDuration(1000L);
             this.t.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.3
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    if (GlobalTaskFloatManager.this.f32281c != null) {
-                        GlobalTaskFloatManager.this.f32281c.d.setProgress(((Integer) valueAnimator2.getAnimatedValue()).intValue());
+                    if (GlobalTaskFloatManager.this.f18591c != null) {
+                        GlobalTaskFloatManager.this.f18591c.d.setProgress(((Integer) valueAnimator2.getAnimatedValue()).intValue());
                     }
                 }
             });
@@ -281,9 +279,9 @@ public class GlobalTaskFloatManager {
                 this.t.addListener(new AnimatorListenerAdapter() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.4
                     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                     public void onAnimationEnd(Animator animator) {
-                        if (GlobalTaskFloatManager.this.f32281c != null) {
-                            GlobalTaskFloatManager.this.f32281c.e.setText(AppInfo.d().getString(R.string.task_completed));
-                            GlobalTaskFloatManager.this.f32281c.f.setVisibility(0);
+                        if (GlobalTaskFloatManager.this.f18591c != null) {
+                            GlobalTaskFloatManager.this.f18591c.e.setText(AppInfo.d().getString(R.string.task_completed));
+                            GlobalTaskFloatManager.this.f18591c.f.setVisibility(0);
                         }
                     }
                 });
@@ -304,23 +302,23 @@ public class GlobalTaskFloatManager {
 
     private void j() {
         ViewHolder viewHolder = new ViewHolder();
-        this.f32281c = viewHolder;
+        this.f18591c = viewHolder;
         viewHolder.b = View.inflate(AppInfo.d(), R.layout.global_pop_task_progress, null);
-        ViewHolder viewHolder2 = this.f32281c;
+        ViewHolder viewHolder2 = this.f18591c;
         viewHolder2.d = (ProgressBar) viewHolder2.b.findViewById(2131368973);
-        ViewHolder viewHolder3 = this.f32281c;
-        viewHolder3.f32298c = (ImageView) viewHolder3.b.findViewById(2131365051);
-        ViewHolder viewHolder4 = this.f32281c;
+        ViewHolder viewHolder3 = this.f18591c;
+        viewHolder3.f18608c = (ImageView) viewHolder3.b.findViewById(R.id.iv_anim);
+        ViewHolder viewHolder4 = this.f18591c;
         viewHolder4.e = (TextView) viewHolder4.b.findViewById(2131371675);
-        ViewHolder viewHolder5 = this.f32281c;
+        ViewHolder viewHolder5 = this.f18591c;
         viewHolder5.f = (TextView) viewHolder5.b.findViewById(R.id.tv_back);
-        ViewHolder viewHolder6 = this.f32281c;
-        viewHolder6.f32297a = (TextView) viewHolder6.b.findViewById(2131372318);
-        ViewHolder viewHolder7 = this.f32281c;
+        ViewHolder viewHolder6 = this.f18591c;
+        viewHolder6.f18607a = (TextView) viewHolder6.b.findViewById(R.id.tv_progress);
+        ViewHolder viewHolder7 = this.f18591c;
         viewHolder7.g = (ImageView) viewHolder7.b.findViewById(2131365207);
-        this.f32281c.f.setVisibility(8);
-        this.f32281c.d.setMax(1000);
-        this.f32281c.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.5
+        this.f18591c.f.setVisibility(8);
+        this.f18591c.d.setMax(1000);
+        this.f18591c.f.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.5
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -332,7 +330,7 @@ public class GlobalTaskFloatManager {
                 }
             }
         });
-        this.f32281c.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.6
+        this.f18591c.g.setOnClickListener(new View.OnClickListener() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.6
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -340,7 +338,7 @@ public class GlobalTaskFloatManager {
                 GlobalTaskFloatManager.this.a(false);
             }
         });
-        this.f32281c.b.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.7
+        this.f18591c.b.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.msg.customview.GlobalTaskFloatManager.7
             /* JADX WARN: Removed duplicated region for block: B:109:0x055c A[Catch: Exception -> 0x05ae, TRY_ENTER, TRY_LEAVE, TryCatch #1 {Exception -> 0x05ae, blocks: (B:2:0x0000, B:11:0x001c, B:16:0x007a, B:26:0x00d9, B:31:0x00f4, B:41:0x015a, B:43:0x0182, B:45:0x01a9, B:47:0x01bb, B:49:0x01cc, B:51:0x01f4, B:53:0x021b, B:55:0x0235, B:57:0x024e, B:59:0x0284, B:32:0x0101, B:34:0x0117, B:36:0x013b, B:39:0x014f, B:17:0x0087, B:19:0x0095, B:21:0x00b9, B:24:0x00cd, B:61:0x029a, B:63:0x02af, B:65:0x02c4, B:67:0x02ce, B:71:0x02da, B:73:0x0322, B:84:0x041e, B:95:0x04f0, B:97:0x051a, B:99:0x052f, B:74:0x034c, B:76:0x0360, B:78:0x037c, B:80:0x038e, B:81:0x03b0, B:82:0x03e8, B:101:0x053d, B:103:0x0543, B:109:0x055c, B:86:0x0433, B:88:0x0445, B:90:0x0491, B:92:0x04a3), top: B:120:0x0000, inners: #0 }] */
             /* JADX WARN: Removed duplicated region for block: B:127:? A[RETURN, SYNTHETIC] */
             @Override // android.view.View.OnTouchListener
@@ -360,7 +358,7 @@ public class GlobalTaskFloatManager {
 
     public void a(int i) {
         TaskInfo taskInfo;
-        if (this.f32281c == null || (taskInfo = this.f) == null || i != taskInfo.task_id) {
+        if (this.f18591c == null || (taskInfo = this.f) == null || i != taskInfo.task_id) {
             return;
         }
         Timer timer = this.v;
@@ -380,15 +378,15 @@ public class GlobalTaskFloatManager {
     }
 
     public void a(boolean z) {
-        ViewHolder viewHolder = this.f32281c;
+        ViewHolder viewHolder = this.f18591c;
         if (viewHolder != null && viewHolder.b.getWindowToken() != null) {
-            this.e.removeViewImmediate(this.f32281c.b);
-            this.f32281c.f32298c.setImageBitmap(null);
+            this.e.removeViewImmediate(this.f18591c.b);
+            this.f18591c.f18608c.setImageBitmap(null);
         }
         if (z && !TextUtils.isEmpty(this.u) && UserInfo.getInstance().isLogin()) {
             WebViewShowInfoFragment.show(AppInfo.d(), this.u, -1);
         }
-        this.f32281c = null;
+        this.f18591c = null;
         this.f = null;
     }
 
@@ -419,7 +417,7 @@ public class GlobalTaskFloatManager {
         } else {
             BluedApplicationLike.ifFeedFloatAuthShowed = true;
             if (!AppUtils.a(new Intent("android.settings.action.MANAGE_OVERLAY_PERMISSION", Uri.parse("package:" + AppInfo.d().getPackageManager())))) {
-                AppMethods.d(2131889566);
+                AppMethods.d((int) R.string.live_float_toast);
                 return;
             }
             Intent intent = new Intent(AppInfo.d(), SendFeedDialogActivity.class);
@@ -435,37 +433,37 @@ public class GlobalTaskFloatManager {
             return;
         }
         this.g = true;
-        if (this.f32281c == null) {
+        if (this.f18591c == null) {
             j();
         }
         h();
-        if (this.f32281c.b.getWindowToken() != null) {
-            this.e.removeViewImmediate(this.f32281c.b);
+        if (this.f18591c.b.getWindowToken() != null) {
+            this.e.removeViewImmediate(this.f18591c.b);
         }
         this.d.x = DensityUtils.a(AppInfo.d(), 8.0f);
         this.d.y = DensityUtils.a(AppInfo.d(), 52.0f);
         try {
-            this.e.addView(this.f32281c.b, this.d);
-            ImageLoader.a((IRequestHost) null, (int) R.drawable.task_top_anim).b(R.drawable.icon_task_float_first).f().g(-1).a(this.f32281c.f32298c);
+            this.e.addView(this.f18591c.b, this.d);
+            ImageLoader.a((IRequestHost) null, (int) R.drawable.task_top_anim).b((int) R.drawable.icon_task_float_first).f().g(-1).a(this.f18591c.f18608c);
         } catch (Throwable th) {
         }
     }
 
     public void d() {
-        ViewHolder viewHolder = this.f32281c;
+        ViewHolder viewHolder = this.f18591c;
         if (viewHolder == null || viewHolder.b == null) {
             return;
         }
-        this.f32281c.b.setVisibility(4);
+        this.f18591c.b.setVisibility(4);
         this.x = true;
     }
 
     public void e() {
-        ViewHolder viewHolder = this.f32281c;
+        ViewHolder viewHolder = this.f18591c;
         if (viewHolder == null || viewHolder.b == null) {
             return;
         }
-        this.f32281c.b.setVisibility(0);
+        this.f18591c.b.setVisibility(0);
         this.x = false;
     }
 }

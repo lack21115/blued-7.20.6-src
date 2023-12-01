@@ -5,7 +5,6 @@ import com.qiniu.android.dns.IResolver;
 import com.qiniu.android.dns.NetworkInfo;
 import com.qiniu.android.dns.Record;
 import com.ss.android.socialbase.downloader.constants.MonitorConstants;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -37,9 +36,9 @@ public final class AndroidDnsServer {
 
     /* JADX WARN: Not initialized variable reg: 9, insn: 0x0191: MOVE  (r0 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r9 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]), block:B:90:0x0191 */
     public static InetAddress[] getByCommand() {
-        BufferedReader bufferedReader;
-        InputStream inputStream;
         LineNumberReader lineNumberReader;
+        InputStream inputStream;
+        LineNumberReader lineNumberReader2;
         InputStream inputStream2;
         ArrayList arrayList;
         String hostAddress;
@@ -48,16 +47,16 @@ public final class AndroidDnsServer {
                 try {
                     inputStream = Runtime.getRuntime().exec("getprop").getInputStream();
                     try {
-                        lineNumberReader = new LineNumberReader(new InputStreamReader(inputStream));
+                        lineNumberReader2 = new LineNumberReader(new InputStreamReader(inputStream));
                     } catch (IOException e) {
                         e = e;
-                        lineNumberReader = null;
+                        lineNumberReader2 = null;
                     } catch (Throwable th) {
                         th = th;
-                        bufferedReader = null;
-                        if (bufferedReader != null) {
+                        lineNumberReader = null;
+                        if (lineNumberReader != null) {
                             try {
-                                bufferedReader.close();
+                                lineNumberReader.close();
                             } catch (Exception e2) {
                                 throw th;
                             }
@@ -70,16 +69,16 @@ public final class AndroidDnsServer {
                 } catch (IOException e3) {
                     e = e3;
                     inputStream = null;
-                    lineNumberReader = null;
+                    lineNumberReader2 = null;
                 } catch (Throwable th2) {
                     th = th2;
-                    bufferedReader = null;
+                    lineNumberReader = null;
                     inputStream = null;
                 }
                 try {
                     arrayList = new ArrayList(5);
                     while (true) {
-                        String readLine = lineNumberReader.readLine();
+                        String readLine = lineNumberReader2.readLine();
                         if (readLine == null) {
                             break;
                         }
@@ -98,8 +97,8 @@ public final class AndroidDnsServer {
                 } catch (IOException e4) {
                     e = e4;
                     Logger.getLogger("AndroidDnsServer").log(Level.WARNING, "Exception in findDNSByExec", (Throwable) e);
-                    if (lineNumberReader != null) {
-                        lineNumberReader.close();
+                    if (lineNumberReader2 != null) {
+                        lineNumberReader2.close();
                     }
                     if (inputStream == null) {
                         return null;
@@ -108,7 +107,7 @@ public final class AndroidDnsServer {
                     return null;
                 }
                 if (arrayList.size() <= 0) {
-                    lineNumberReader.close();
+                    lineNumberReader2.close();
                     if (inputStream == null) {
                         return null;
                     }
@@ -117,7 +116,7 @@ public final class AndroidDnsServer {
                 }
                 InetAddress[] inetAddressArr = (InetAddress[]) arrayList.toArray(new InetAddress[arrayList.size()]);
                 try {
-                    lineNumberReader.close();
+                    lineNumberReader2.close();
                     if (inputStream != null) {
                         inputStream.close();
                     }

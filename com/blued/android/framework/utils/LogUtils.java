@@ -4,26 +4,21 @@ import android.content.Intent;
 import android.text.TextUtils;
 import com.amap.api.col.p0003sl.iu;
 import com.blued.android.core.utils.Log;
-import com.igexin.push.core.b;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/framework/utils/LogUtils.class */
 public class LogUtils {
-
-    /* renamed from: a  reason: collision with root package name */
-    static StringBuffer f10102a = new StringBuffer();
+    static StringBuffer a = new StringBuffer();
     public static String b = "LogUtils";
-
-    /* renamed from: c  reason: collision with root package name */
-    private static boolean f10103c = true;
+    private static boolean c = true;
 
     public static int a(String str) {
         return a("", str);
     }
 
     public static int a(String str, String str2) {
-        if (f10103c) {
+        if (c) {
             return Log.d("BluedLog", e("v") + str2);
         }
         return 0;
@@ -53,7 +48,7 @@ public class LogUtils {
     }
 
     public static int b(String str, String str2) {
-        if (f10103c) {
+        if (c) {
             return Log.d("BluedLog", e("d") + str + " " + str2);
         }
         return 0;
@@ -68,7 +63,7 @@ public class LogUtils {
     }
 
     public static int c(String str, String str2) {
-        if (f10103c) {
+        if (c) {
             return Log.d("BluedLog", e("i") + str + " " + str2);
         }
         return 0;
@@ -79,19 +74,19 @@ public class LogUtils {
             Log.b("tag", "d --> null");
             return -1;
         }
-        f10102a.setLength(0);
+        a.setLength(0);
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= objArr.length) {
                 break;
             }
-            f10102a.append(objArr[i2] + "\n");
+            a.append(objArr[i2] + "\n");
             i = i2 + 1;
         }
         int i3 = 0;
-        if (f10103c) {
-            i3 = Log.d("BluedLog", e("d") + " " + f10102a.toString());
+        if (c) {
+            i3 = Log.d("BluedLog", e("d") + " " + a.toString());
         }
         return i3;
     }
@@ -101,7 +96,7 @@ public class LogUtils {
     }
 
     public static int d(String str, String str2) {
-        if (f10103c) {
+        if (c) {
             return Log.e("BluedLog", e(iu.h) + str + " " + str2);
         }
         return 0;
@@ -118,7 +113,7 @@ public class LogUtils {
             }
             Object obj = objArr[i2];
             if (obj == null) {
-                sb.append(b.l);
+                sb.append("null");
             } else if (obj instanceof Intent) {
                 sb.append(((Intent) obj).getExtras());
                 sb.append("\n");

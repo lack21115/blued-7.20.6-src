@@ -2,13 +2,9 @@ package com.anythink.basead.d;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    protected int f5952a;
+    protected int a;
     protected int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    protected int f5953c;
+    protected int c;
     protected String d;
     protected int e;
     protected int f;
@@ -19,13 +15,9 @@ public final class c {
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/d/c$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        protected int f5954a;
+        protected int a;
         protected int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        protected int f5955c;
+        protected int c;
         protected String d;
         protected int e;
         protected int f;
@@ -40,7 +32,7 @@ public final class c {
         }
 
         public final a a(int i) {
-            this.f5954a = i;
+            this.a = i;
             return this;
         }
 
@@ -51,9 +43,9 @@ public final class c {
 
         public final c a() {
             c cVar = new c();
-            cVar.f5952a = this.f5954a;
+            cVar.a = this.a;
             cVar.b = this.b;
-            cVar.f5953c = this.f5955c;
+            cVar.c = this.c;
             cVar.d = this.d;
             cVar.e = this.e;
             cVar.f = this.f;
@@ -75,7 +67,7 @@ public final class c {
         }
 
         public final a c(int i) {
-            this.f5955c = i;
+            this.c = i;
             return this;
         }
 
@@ -101,7 +93,7 @@ public final class c {
     }
 
     public final int a() {
-        return this.f5952a;
+        return this.a;
     }
 
     public final int b() {
@@ -109,7 +101,7 @@ public final class c {
     }
 
     public final int c() {
-        return this.f5953c;
+        return this.c;
     }
 
     public final String d() {

@@ -10,6 +10,7 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+import com.huawei.hms.framework.common.ContainerUtils;
 import com.tencent.open.utils.Global;
 import java.util.Locale;
 
@@ -17,11 +18,11 @@ import java.util.Locale;
 public class c {
 
     /* renamed from: a  reason: collision with root package name */
-    static String f38245a;
+    static String f24554a;
     static String b;
 
     /* renamed from: c  reason: collision with root package name */
-    static String f38246c;
+    static String f24555c;
     private static String d;
     private static String e;
 
@@ -59,20 +60,20 @@ public class c {
     }
 
     public static String b(Context context) {
-        String str = f38245a;
+        String str = f24554a;
         if (str == null || str.length() <= 0) {
             if (context == null) {
                 return "";
             }
             try {
                 String deviceId = ((TelephonyManager) context.getSystemService("phone")).getDeviceId();
-                f38245a = deviceId;
+                f24554a = deviceId;
                 return deviceId;
             } catch (Exception e2) {
                 return "";
             }
         }
-        return f38245a;
+        return f24554a;
     }
 
     public static String c(Context context) {
@@ -93,20 +94,20 @@ public class c {
     }
 
     public static String d(Context context) {
-        String str = f38246c;
+        String str = f24555c;
         if (str == null || str.length() <= 0) {
             if (context == null) {
                 return "";
             }
             try {
                 String string = Settings.Secure.getString(context.getContentResolver(), "android_id");
-                f38246c = string;
+                f24555c = string;
                 return string;
             } catch (Exception e2) {
                 return "";
             }
         }
-        return f38246c;
+        return f24555c;
     }
 
     public static String e(Context context) {
@@ -146,7 +147,7 @@ public class c {
                 sb.append('&');
                 sb.append("manu=");
                 sb.append(Build.MANUFACTURER);
-                sb.append("&");
+                sb.append(ContainerUtils.FIELD_DELIMITER);
                 sb.append("wifi=");
                 sb.append(a.e(context));
                 e = sb.toString();

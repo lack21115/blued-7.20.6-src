@@ -1,5 +1,6 @@
 package com.soft.blued.ui.setting.vm;
 
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelKt;
 import com.blued.android.core.AppInfo;
 import com.blued.android.module.common.base.mvi.MviEvent;
@@ -28,9 +29,11 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
 
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -40,11 +43,11 @@ import kotlinx.coroutines.Dispatchers;
 public final class MsgBackupVM$uploadDB$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    int f33670a;
+    int f19979a;
     final /* synthetic */ MsgBackupVM b;
 
     /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ String f33671c;
+    final /* synthetic */ String f19980c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @Metadata
@@ -54,61 +57,58 @@ public final class MsgBackupVM$uploadDB$1 extends SuspendLambda implements Funct
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
 
         /* renamed from: a  reason: collision with root package name */
-        int f33672a;
+        int f19981a;
         final /* synthetic */ MsgBackupVM b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ String f33673c;
+        final /* synthetic */ String f19982c;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         AnonymousClass1(MsgBackupVM msgBackupVM, String str, Continuation<? super AnonymousClass1> continuation) {
             super(2, continuation);
             this.b = msgBackupVM;
-            this.f33673c = str;
+            this.f19982c = str;
         }
 
-        @Override // kotlin.jvm.functions.Function2
         /* renamed from: a */
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((AnonymousClass1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+            return create(coroutineScope, continuation).invokeSuspend(Unit.a);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new AnonymousClass1(this.b, this.f33673c, continuation);
+            return new AnonymousClass1(this.b, this.f19982c, continuation);
         }
 
-        @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Object invokeSuspend(Object obj) {
             MsgBackupVM msgBackupVM;
             MviEvent.LoadFinished loadFinished;
             String str;
             String tag;
             IntrinsicsKt.a();
-            if (this.f33672a == 0) {
+            if (this.f19981a == 0) {
                 ResultKt.a(obj);
                 try {
-                    CosXmlService b = TxCloud.f10836a.b();
+                    CosXmlService b = TxCloud.a.b();
                     final MsgBackInfo msgBackInfo = new MsgBackInfo();
-                    String backupInfo = AppInfo.f().toJson(msgBackInfo);
-                    CredentialsInfo a2 = TxCloud.f10836a.a();
+                    String json = AppInfo.f().toJson(msgBackInfo);
+                    CredentialsInfo a2 = TxCloud.a.a();
                     String path = a2 == null ? null : a2.getPath();
                     str = this.b.b;
-                    String a3 = Intrinsics.a(path, (Object) str);
-                    CredentialsInfo a4 = TxCloud.f10836a.a();
+                    String a3 = Intrinsics.a(path, str);
+                    CredentialsInfo a4 = TxCloud.a.a();
                     String bucket = a4 == null ? null : a4.getBucket();
-                    Intrinsics.c(backupInfo, "backupInfo");
+                    Intrinsics.c(json, "backupInfo");
                     Charset forName = Charset.forName("UTF-8");
                     Intrinsics.c(forName, "forName(\"UTF-8\")");
-                    byte[] bytes = backupInfo.getBytes(forName);
+                    byte[] bytes = json.getBytes(forName);
                     Intrinsics.c(bytes, "this as java.lang.String).getBytes(charset)");
                     PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, a3, bytes);
-                    CredentialsInfo a5 = TxCloud.f10836a.a();
-                    String a6 = Intrinsics.a(a5 == null ? null : a5.getPath(), (Object) new File(this.f33673c).getName());
+                    CredentialsInfo a5 = TxCloud.a.a();
+                    String a6 = Intrinsics.a(a5 == null ? null : a5.getPath(), new File(this.f19982c).getName());
                     tag = this.b.getTAG();
-                    Logger.c(tag, Intrinsics.a("dbCosPath: ", (Object) a6));
-                    CredentialsInfo a7 = TxCloud.f10836a.a();
-                    PutObjectRequest putObjectRequest2 = new PutObjectRequest(a7 == null ? null : a7.getBucket(), a6, this.f33673c);
+                    Logger.c(tag, Intrinsics.a("dbCosPath: ", a6));
+                    CredentialsInfo a7 = TxCloud.a.a();
+                    PutObjectRequest putObjectRequest2 = new PutObjectRequest(a7 == null ? null : a7.getBucket(), a6, this.f19982c);
                     if (b != null) {
                         b.putObject(putObjectRequest);
                     }
@@ -128,30 +128,29 @@ public final class MsgBackupVM$uploadDB$1 extends SuspendLambda implements Funct
                             super(1);
                         }
 
-                        @Override // kotlin.jvm.functions.Function1
                         /* renamed from: a */
-                        public final MsgBackupState invoke(MsgBackupState setState) {
+                        public final MsgBackupState invoke(MsgBackupState msgBackupState) {
                             SimpleDateFormat simpleDateFormat;
-                            Intrinsics.e(setState, "$this$setState");
-                            simpleDateFormat = MsgBackupVM.this.f33654a;
-                            return setState.a(simpleDateFormat.format(new Date(msgBackInfo.getDate())));
+                            Intrinsics.e(msgBackupState, "$this$setState");
+                            simpleDateFormat = MsgBackupVM.this.f19963a;
+                            return msgBackupState.a(simpleDateFormat.format(new Date(msgBackInfo.getDate())));
                         }
                     });
                     msgBackupVM = this.b;
-                    loadFinished = new MviEvent.LoadFinished(false, false, 3, null);
+                    loadFinished = new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null);
                 } catch (Throwable th) {
                     try {
                         EventTrackSettings.a(SettingsProtos.Event.MINE_BACKUP_RECORD_FAIL);
                         ToastUtils.a(AppInfo.d().getString(R.string.msg_backup_failed));
                         msgBackupVM = this.b;
-                        loadFinished = new MviEvent.LoadFinished(false, false, 3, null);
+                        loadFinished = new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null);
                     } catch (Throwable th2) {
-                        BluedStructureExtKt.a(this.b, new MviEvent.LoadFinished(false, false, 3, null));
+                        BluedStructureExtKt.a(this.b, new MviEvent.LoadFinished(false, false, 3, (DefaultConstructorMarker) null));
                         throw th2;
                     }
                 }
                 BluedStructureExtKt.a(msgBackupVM, loadFinished);
-                return Unit.f42314a;
+                return Unit.a;
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -162,29 +161,26 @@ public final class MsgBackupVM$uploadDB$1 extends SuspendLambda implements Funct
     public MsgBackupVM$uploadDB$1(MsgBackupVM msgBackupVM, String str, Continuation<? super MsgBackupVM$uploadDB$1> continuation) {
         super(2, continuation);
         this.b = msgBackupVM;
-        this.f33671c = str;
+        this.f19980c = str;
     }
 
-    @Override // kotlin.jvm.functions.Function2
     /* renamed from: a */
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-        return ((MsgBackupVM$uploadDB$1) create(coroutineScope, continuation)).invokeSuspend(Unit.f42314a);
+        return create(coroutineScope, continuation).invokeSuspend(Unit.a);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new MsgBackupVM$uploadDB$1(this.b, this.f33671c, continuation);
+        return new MsgBackupVM$uploadDB$1(this.b, this.f19980c, continuation);
     }
 
-    @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object a2;
         Object a3 = IntrinsicsKt.a();
-        int i = this.f33670a;
+        int i = this.f19979a;
         if (i == 0) {
             ResultKt.a(obj);
-            this.f33670a = 1;
-            a2 = this.b.a(this);
+            this.f19979a = 1;
+            a2 = this.b.a((Continuation) this);
             if (a2 == a3) {
                 return a3;
             }
@@ -193,7 +189,7 @@ public final class MsgBackupVM$uploadDB$1 extends SuspendLambda implements Funct
         } else {
             ResultKt.a(obj);
         }
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this.b), Dispatchers.c(), null, new AnonymousClass1(this.b, this.f33671c, null), 2, null);
-        return Unit.f42314a;
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this.b), Dispatchers.c(), (CoroutineStart) null, new AnonymousClass1(this.b, this.f19980c, null), 2, (Object) null);
+        return Unit.a;
     }
 }

@@ -31,11 +31,11 @@ import java.util.List;
 public class Registry {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ModelLoaderRegistry f20662a;
+    private final ModelLoaderRegistry f7056a;
     private final EncoderRegistry b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final ResourceDecoderRegistry f20663c;
+    private final ResourceDecoderRegistry f7057c;
     private final ResourceEncoderRegistry d;
     private final DataRewinderRegistry e;
     private final TranscoderRegistry f;
@@ -90,9 +90,9 @@ public class Registry {
     public Registry() {
         Pools.Pool<List<Throwable>> a2 = FactoryPools.a();
         this.j = a2;
-        this.f20662a = new ModelLoaderRegistry(a2);
+        this.f7056a = new ModelLoaderRegistry(a2);
         this.b = new EncoderRegistry();
-        this.f20663c = new ResourceDecoderRegistry();
+        this.f7057c = new ResourceDecoderRegistry();
         this.d = new ResourceEncoderRegistry();
         this.e = new DataRewinderRegistry();
         this.f = new TranscoderRegistry();
@@ -102,9 +102,9 @@ public class Registry {
 
     private <Data, TResource, Transcode> List<DecodePath<Data, TResource, Transcode>> c(Class<Data> cls, Class<TResource> cls2, Class<Transcode> cls3) {
         ArrayList arrayList = new ArrayList();
-        for (Class cls4 : this.f20663c.b(cls, cls2)) {
+        for (Class cls4 : this.f7057c.b(cls, cls2)) {
             for (Class cls5 : this.f.b(cls4, cls3)) {
-                arrayList.add(new DecodePath(cls, cls4, cls5, this.f20663c.a(cls, cls4), this.f.a(cls4, cls5), this.j));
+                arrayList.add(new DecodePath(cls, cls4, cls5, this.f7057c.a(cls, cls4), this.f.a(cls4, cls5), this.j));
             }
         }
         return arrayList;
@@ -136,7 +136,7 @@ public class Registry {
     }
 
     public <Model, Data> Registry a(Class<Model> cls, Class<Data> cls2, ModelLoaderFactory<Model, Data> modelLoaderFactory) {
-        this.f20662a.a(cls, cls2, modelLoaderFactory);
+        this.f7056a.a(cls, cls2, modelLoaderFactory);
         return this;
     }
 
@@ -146,7 +146,7 @@ public class Registry {
     }
 
     public <Data, TResource> Registry a(String str, Class<Data> cls, Class<TResource> cls2, ResourceDecoder<Data, TResource> resourceDecoder) {
-        this.f20663c.a(str, resourceDecoder, cls, cls2);
+        this.f7057c.a(str, resourceDecoder, cls, cls2);
         return this;
     }
 
@@ -155,7 +155,7 @@ public class Registry {
         arrayList.addAll(list);
         arrayList.add(0, "legacy_prepend_all");
         arrayList.add("legacy_append");
-        this.f20663c.a(arrayList);
+        this.f7057c.a(arrayList);
         return this;
     }
 
@@ -199,12 +199,12 @@ public class Registry {
     }
 
     public <Model, Data> Registry b(Class<Model> cls, Class<Data> cls2, ModelLoaderFactory<? extends Model, ? extends Data> modelLoaderFactory) {
-        this.f20662a.b(cls, cls2, modelLoaderFactory);
+        this.f7056a.b(cls, cls2, modelLoaderFactory);
         return this;
     }
 
     public <Data, TResource> Registry b(String str, Class<Data> cls, Class<TResource> cls2, ResourceDecoder<Data, TResource> resourceDecoder) {
-        this.f20663c.b(str, resourceDecoder, cls, cls2);
+        this.f7057c.b(str, resourceDecoder, cls, cls2);
         return this;
     }
 
@@ -225,8 +225,8 @@ public class Registry {
         ArrayList arrayList = a2;
         if (a2 == null) {
             arrayList = new ArrayList();
-            for (Class<?> cls4 : this.f20662a.a((Class<?>) cls)) {
-                for (Class<?> cls5 : this.f20663c.b(cls4, cls2)) {
+            for (Class<?> cls4 : this.f7056a.a((Class<?>) cls)) {
+                for (Class<?> cls5 : this.f7057c.b(cls4, cls2)) {
                     if (!this.f.b(cls5, cls3).isEmpty() && !arrayList.contains(cls5)) {
                         arrayList.add(cls5);
                     }
@@ -238,6 +238,6 @@ public class Registry {
     }
 
     public <Model> List<ModelLoader<Model, ?>> c(Model model) {
-        return this.f20662a.a((ModelLoaderRegistry) model);
+        return this.f7056a.a((ModelLoaderRegistry) model);
     }
 }

@@ -25,13 +25,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveDesireListAdapter.class */
 public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireLiseModel, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private LiveDesireDialogFragment.FormType f11615a;
+    private LiveDesireDialogFragment.FormType a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private LiveDesireListEventCallBack f11616c;
+    private LiveDesireListEventCallBack c;
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/adapter/LiveDesireListAdapter$LiveDesireListEventCallBack.class */
     public interface LiveDesireListEventCallBack {
@@ -52,7 +48,7 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
     public LiveDesireListAdapter(Context context, LiveDesireDialogFragment.FormType formType) {
         super(new ArrayList());
         this.mContext = context;
-        this.f11615a = formType;
+        this.a = formType;
         addItemType(0, formType == LiveDesireDialogFragment.FormType.TYPE_RECORDING_CONFIG ? R.layout.item_live_desire_brief : R.layout.item_live_desire_full);
         addItemType(1, R.layout.item_live_desire_increase);
         addItemType(2, R.layout.item_live_desire_tips);
@@ -82,7 +78,7 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void a(LiveDesireLiseModel liveDesireLiseModel, View view) {
-        LiveDesireListEventCallBack liveDesireListEventCallBack = this.f11616c;
+        LiveDesireListEventCallBack liveDesireListEventCallBack = this.c;
         if (liveDesireListEventCallBack != null) {
             liveDesireListEventCallBack.delete(liveDesireLiseModel.id);
         }
@@ -95,7 +91,7 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void b(View view) {
-        LiveDesireListEventCallBack liveDesireListEventCallBack = this.f11616c;
+        LiveDesireListEventCallBack liveDesireListEventCallBack = this.c;
         if (liveDesireListEventCallBack != null) {
             liveDesireListEventCallBack.a();
         }
@@ -108,7 +104,7 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
 
     private void d(BaseViewHolder baseViewHolder, LiveDesireLiseModel liveDesireLiseModel) {
         g(baseViewHolder, liveDesireLiseModel);
-        if (this.f11615a == LiveDesireDialogFragment.FormType.TYPE_RECORDING_CONFIG) {
+        if (this.a == LiveDesireDialogFragment.FormType.TYPE_RECORDING_CONFIG) {
             h(baseViewHolder, liveDesireLiseModel);
         } else {
             i(baseViewHolder, liveDesireLiseModel);
@@ -174,47 +170,48 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
         baseViewHolder.getView(R.id.tv_offer_help).setVisibility(8);
     }
 
+    /* JADX WARN: Type inference failed for: r0v6, types: [com.blued.android.framework.view.shape.ShapeTextView, android.view.View] */
     private void i(final BaseViewHolder baseViewHolder, final LiveDesireLiseModel liveDesireLiseModel) {
         baseViewHolder.getView(R.id.iv_close).setVisibility(8);
         baseViewHolder.getView(R.id.live_already_create).setVisibility(8);
-        ShapeTextView shapeTextView = (ShapeTextView) baseViewHolder.getView(R.id.tv_offer_help);
+        ?? r0 = (ShapeTextView) baseViewHolder.getView(R.id.tv_offer_help);
         TextView textView = (TextView) baseViewHolder.getView(R.id.tv_down_shelves);
         RelativeLayout relativeLayout = (RelativeLayout) baseViewHolder.getView(R.id.rl_root);
         if (liveDesireLiseModel.status != 3 || liveDesireLiseModel.progress >= liveDesireLiseModel.count) {
             relativeLayout.setAlpha(1.0f);
             textView.setVisibility(8);
-            if (this.f11615a == LiveDesireDialogFragment.FormType.TYPE_RECORDING_LOOK_UP) {
-                shapeTextView.setVisibility(8);
+            if (this.a == LiveDesireDialogFragment.FormType.TYPE_RECORDING_LOOK_UP) {
+                r0.setVisibility(8);
             } else if (liveDesireLiseModel.progress >= liveDesireLiseModel.count) {
-                shapeTextView.setVisibility(8);
+                r0.setVisibility(8);
             } else {
-                shapeTextView.setVisibility(0);
-                shapeTextView.getPaint().setFakeBoldText(true);
-                shapeTextView.setClickable(true);
-                shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$XbYQ5KSdEQzdLl0Hpvu_ClKZ9fo
+                r0.setVisibility(0);
+                r0.getPaint().setFakeBoldText(true);
+                r0.setClickable(true);
+                r0.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$XbYQ5KSdEQzdLl0Hpvu_ClKZ9fo
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         LiveDesireListAdapter.this.b(baseViewHolder, liveDesireLiseModel, view);
                     }
                 });
-                shapeTextView.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$fSgrDpfhBrI8fEOy2HGqc7acqdc
+                r0.setOnLongClickListener(new View.OnLongClickListener() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$fSgrDpfhBrI8fEOy2HGqc7acqdc
                     @Override // android.view.View.OnLongClickListener
                     public final boolean onLongClick(View view) {
-                        boolean a2;
-                        a2 = LiveDesireListAdapter.this.a(baseViewHolder, liveDesireLiseModel, view);
-                        return a2;
+                        boolean a;
+                        a = LiveDesireListAdapter.this.a(baseViewHolder, liveDesireLiseModel, view);
+                        return a;
                     }
                 });
                 if (this.b == null) {
-                    this.b = shapeTextView;
+                    this.b = r0;
                 }
             }
         } else {
             relativeLayout.setAlpha(0.6f);
-            shapeTextView.setVisibility(8);
+            r0.setVisibility(8);
             textView.setVisibility(0);
             textView.getPaint().setFakeBoldText(true);
-            if (this.f11615a == LiveDesireDialogFragment.FormType.TYPE_RECORDING_LOOK_UP) {
+            if (this.a == LiveDesireDialogFragment.FormType.TYPE_RECORDING_LOOK_UP) {
                 textView.setBackgroundColor(ContextCompat.getColor(this.mContext, R.color.transparent));
             } else {
                 textView.setBackgroundResource(R.drawable.shape_live_down_shelves_bg);
@@ -262,7 +259,7 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
     }
 
     private void j(final BaseViewHolder baseViewHolder, final LiveDesireLiseModel liveDesireLiseModel) {
-        this.f11616c.a(String.valueOf(liveDesireLiseModel.id), liveDesireLiseModel.gift_info, new RankSccessCallBack() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$V-OawT2KixzMwrwM5sIsl_MyZ40
+        this.c.a(String.valueOf(liveDesireLiseModel.id), liveDesireLiseModel.gift_info, new RankSccessCallBack() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$V-OawT2KixzMwrwM5sIsl_MyZ40
             @Override // com.blued.android.module.live_china.adapter.LiveDesireListAdapter.RankSccessCallBack
             public final void rankSccess() {
                 LiveDesireListAdapter.this.n(baseViewHolder, liveDesireLiseModel);
@@ -271,7 +268,7 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
     }
 
     private boolean k(final BaseViewHolder baseViewHolder, final LiveDesireLiseModel liveDesireLiseModel) {
-        this.f11616c.b(String.valueOf(liveDesireLiseModel.id), liveDesireLiseModel.gift_info, new RankSccessCallBack() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$ZVdQ-it4GoMQcq2WOr-d0dXUWOg
+        this.c.b(String.valueOf(liveDesireLiseModel.id), liveDesireLiseModel.gift_info, new RankSccessCallBack() { // from class: com.blued.android.module.live_china.adapter.-$$Lambda$LiveDesireListAdapter$ZVdQ-it4GoMQcq2WOr-d0dXUWOg
             @Override // com.blued.android.module.live_china.adapter.LiveDesireListAdapter.RankSccessCallBack
             public final void rankSccess() {
                 LiveDesireListAdapter.this.m(baseViewHolder, liveDesireLiseModel);
@@ -326,11 +323,10 @@ public class LiveDesireListAdapter extends BaseMultiItemQuickAdapter<LiveDesireL
     }
 
     public void a(LiveDesireListEventCallBack liveDesireListEventCallBack) {
-        this.f11616c = liveDesireListEventCallBack;
+        this.c = liveDesireListEventCallBack;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, LiveDesireLiseModel liveDesireLiseModel) {
         int i = liveDesireLiseModel.type;

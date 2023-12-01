@@ -14,11 +14,11 @@ import java.util.concurrent.Callable;
 public class g implements Callable<Integer> {
 
     /* renamed from: a  reason: collision with root package name */
-    private File f27481a;
+    private File f13793a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public g(File file) {
-        this.f27481a = file;
+        this.f13793a = file;
     }
 
     @Override // java.util.concurrent.Callable
@@ -30,7 +30,7 @@ public class g implements Callable<Integer> {
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setRequestProperty("x-log-apiversion", "0.6.0");
             httpURLConnection.setRequestProperty("x-log-bodyrawsize", "1234");
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(this.f27481a));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(this.f13793a));
             StringBuilder sb = new StringBuilder();
             while (true) {
                 String readLine = bufferedReader.readLine();

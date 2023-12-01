@@ -15,11 +15,9 @@ import java.util.Map;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/a/a.class */
 public class a extends com.anythink.core.common.res.image.b {
-
-    /* renamed from: a  reason: collision with root package name */
-    final String f6883a;
+    final String a;
     public com.anythink.core.common.res.a.b b;
-    public List<AbstractC0108a> j;
+    public List<AbstractC0068a> j;
     public b k;
     int l;
     private final int m;
@@ -32,7 +30,7 @@ public class a extends com.anythink.core.common.res.image.b {
 
     /* renamed from: com.anythink.core.common.res.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/common/res/a/a$a.class */
-    public static abstract class AbstractC0108a {
+    public static abstract class AbstractC0068a {
         public abstract void a(String str, String str2);
 
         public abstract boolean a(int i, long j, long j2);
@@ -47,7 +45,7 @@ public class a extends com.anythink.core.common.res.image.b {
 
     public a(String str) {
         super(str);
-        this.f6883a = a.class.getSimpleName();
+        this.a = a.class.getSimpleName();
         this.m = 0;
         this.n = 1;
         this.l = -1;
@@ -67,12 +65,12 @@ public class a extends com.anythink.core.common.res.image.b {
         synchronized (this) {
             if (this.l != i) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(this.f6913c);
+                sb.append(this.c);
                 sb.append(" notifyDownloadProcess:");
                 sb.append(i);
                 this.l = i;
             }
-            Iterator<AbstractC0108a> it = this.j.iterator();
+            Iterator<AbstractC0068a> it = this.j.iterator();
             boolean z = false;
             while (it.hasNext()) {
                 if (it.next().a(i, j, this.i)) {
@@ -80,7 +78,7 @@ public class a extends com.anythink.core.common.res.image.b {
                     it.remove();
                 }
             }
-            j.a().a(this.f6913c, this.r, this.i, j, i, z);
+            j.a().a(this.c, this.r, this.i, j, i, z);
         }
     }
 
@@ -90,11 +88,11 @@ public class a extends com.anythink.core.common.res.image.b {
 
     private void b(int i, long j) {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f6913c);
+        sb.append(this.c);
         sb.append(" notifyDownloadFinish: downloadRate:");
         sb.append(i);
         if (i == 100) {
-            j.a().a(this.f6913c, this.r, this.i, j, i, true);
+            j.a().a(this.c, this.r, this.i, j, i, true);
             b bVar = this.k;
             if (bVar != null) {
                 bVar.a(this.i, this.e, this.g, this.f, this.h);
@@ -105,14 +103,14 @@ public class a extends com.anythink.core.common.res.image.b {
     private void b(String str, String str2) {
         synchronized (this) {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.f6913c);
+            sb.append(this.c);
             sb.append(" notifyLoadFailed: errorCode:");
             sb.append(str);
             sb.append(",errorMsg:");
             sb.append(str2);
             this.o = 0;
-            for (AbstractC0108a abstractC0108a : this.j) {
-                abstractC0108a.a(str, str2);
+            for (AbstractC0068a abstractC0068a : this.j) {
+                abstractC0068a.a(str, str2);
             }
             j();
             if (this.k != null) {
@@ -126,8 +124,8 @@ public class a extends com.anythink.core.common.res.image.b {
             if (this.s) {
                 return true;
             }
-            if (this.b.f6888c == 2) {
-                if (i >= this.b.f6887a) {
+            if (this.b.c == 2) {
+                if (i >= this.b.a) {
                     return false;
                 }
             }
@@ -140,16 +138,16 @@ public class a extends com.anythink.core.common.res.image.b {
     }
 
     private void h() {
-        String a2 = d.a(n.a().g()).a(4);
-        if (TextUtils.isEmpty(a2)) {
+        String a = d.a(n.a().g()).a(4);
+        if (TextUtils.isEmpty(a)) {
             b("", "without saveDirectory");
             return;
         }
-        File file = new File(a2);
+        File file = new File(a);
         if (!file.exists()) {
             file.mkdirs();
         }
-        this.r = d.a(n.a().g()).b(4, f.a(this.f6913c));
+        this.r = d.a(n.a().g()).b(4, f.a(this.c));
         File file2 = new File(this.r);
         if (file2.exists()) {
             this.q = file2.length();
@@ -182,10 +180,10 @@ public class a extends com.anythink.core.common.res.image.b {
         com.anythink.core.common.k.b.a.a().a(bVar, 5);
     }
 
-    public final void a(AbstractC0108a abstractC0108a) {
+    public final void a(AbstractC0068a abstractC0068a) {
         synchronized (this) {
-            if (!this.j.contains(abstractC0108a)) {
-                this.j.add(abstractC0108a);
+            if (!this.j.contains(abstractC0068a)) {
+                this.j.add(abstractC0068a);
             }
         }
     }
@@ -193,16 +191,16 @@ public class a extends com.anythink.core.common.res.image.b {
     public final void a(com.anythink.core.common.res.a.b bVar) {
         synchronized (this) {
             StringBuilder sb = new StringBuilder();
-            sb.append(this.f6913c);
+            sb.append(this.c);
             sb.append(" setVideoUrlLoaderConfig: mReadyRate:");
-            sb.append(bVar.f6887a);
+            sb.append(bVar.a);
             sb.append(",mVideoCtnType:");
-            sb.append(bVar.f6888c);
-            if (this.b.f6887a < bVar.f6887a) {
-                this.b.f6887a = bVar.f6887a;
+            sb.append(bVar.c);
+            if (this.b.a < bVar.a) {
+                this.b.a = bVar.a;
             }
-            if (this.b.f6888c != 1) {
-                this.b.f6888c = bVar.f6888c;
+            if (this.b.c != 1) {
+                this.b.c = bVar.c;
             }
         }
     }
@@ -298,7 +296,7 @@ public class a extends com.anythink.core.common.res.image.b {
 
     public final void e() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f6913c);
+        sb.append(this.c);
         sb.append(" startRequest: canStartLoader():");
         sb.append(i());
         if (i()) {
@@ -310,7 +308,7 @@ public class a extends com.anythink.core.common.res.image.b {
 
     public final void f() {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.f6913c);
+        sb.append(this.c);
         sb.append(" startRequest: resumeRequest():");
         sb.append(i());
         this.s = true;

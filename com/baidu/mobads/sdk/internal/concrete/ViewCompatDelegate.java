@@ -10,7 +10,7 @@ import java.util.Map;
 public class ViewCompatDelegate implements a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f9394a = "generateViewId";
+    private static final String f6554a = "generateViewId";
     private final b b;
 
     public ViewCompatDelegate(IAdInterListener iAdInterListener) {
@@ -49,7 +49,7 @@ public class ViewCompatDelegate implements a {
 
     @Override // com.baidu.mobads.sdk.internal.a.a
     public Object handleEvent(String str, String str2, Object[] objArr) {
-        if (f9394a.equals(str2)) {
+        if (f6554a.equals(str2)) {
             return Integer.valueOf(ViewCompat.generateViewId());
         }
         return null;

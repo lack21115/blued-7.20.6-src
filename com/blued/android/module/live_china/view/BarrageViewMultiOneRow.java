@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.android.internal.util.cm.SpamFilter;
 import com.blued.android.chat.utils.MsgPackHelper;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageFileLoader;
@@ -40,13 +41,9 @@ import java.util.List;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageViewMultiOneRow.class */
 public class BarrageViewMultiOneRow extends View {
-
-    /* renamed from: a  reason: collision with root package name */
-    public BaseFragment f14229a;
+    public BaseFragment a;
     public int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BubblesRow f14230c;
+    private BubblesRow c;
     private BubblesRow d;
     private BubblesRow e;
     private Context f;
@@ -73,14 +70,12 @@ public class BarrageViewMultiOneRow extends View {
     /* renamed from: com.blued.android.module.live_china.view.BarrageViewMultiOneRow$2  reason: invalid class name */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageViewMultiOneRow$2.class */
     class AnonymousClass2 implements ImageFileLoader.OnLoadFileListener {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LiveChattingModel f14232a;
+        final /* synthetic */ LiveChattingModel a;
         final /* synthetic */ BarrageViewMultiOneRow b;
 
         @Override // com.blued.android.core.image.ImageFileLoader.OnLoadFileListener
         public void onUIFinish(File file, Exception exc) {
-            this.b.a(this.f14232a, 0);
+            this.b.a(this.a, 0);
         }
     }
 
@@ -91,13 +86,9 @@ public class BarrageViewMultiOneRow extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageViewMultiOneRow$Bubble.class */
     public class Bubble {
-
-        /* renamed from: a  reason: collision with root package name */
-        public LiveChattingModel f14235a;
+        public LiveChattingModel a;
         public int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public String f14236c;
+        public String c;
         public String d;
         public String e;
         public String f;
@@ -112,7 +103,7 @@ public class BarrageViewMultiOneRow extends View {
         private float p;
 
         private Bubble() {
-            this.f14236c = "";
+            this.c = "";
             this.d = "";
             this.e = "";
             this.f = "";
@@ -191,9 +182,9 @@ public class BarrageViewMultiOneRow extends View {
             TextView textView = (TextView) this.k.findViewById(R.id.tv_name);
             TextView textView2 = (TextView) this.k.findViewById(R.id.tv_count);
             ImageView imageView = (ImageView) this.k.findViewById(R.id.img_gift);
-            textView.setText(MsgPackHelper.getStringValue(this.f14235a.msgMapExtra, "name"));
-            textView2.setText(MsgPackHelper.getIntValue(this.f14235a.msgMapExtra, "count") + "");
-            ImageLoader.a((IRequestHost) null, MsgPackHelper.getStringValue(this.f14235a.msgMapExtra, "image")).b(R.drawable.gift_default_icon).a(imageView);
+            textView.setText(MsgPackHelper.getStringValue(this.a.msgMapExtra, "name"));
+            textView2.setText(MsgPackHelper.getIntValue(this.a.msgMapExtra, SpamFilter.SpamContract.NotificationTable.COUNT) + "");
+            ImageLoader.a((IRequestHost) null, MsgPackHelper.getStringValue(this.a.msgMapExtra, "image")).b(R.drawable.gift_default_icon).a(imageView);
         }
 
         private void h() {
@@ -219,13 +210,13 @@ public class BarrageViewMultiOneRow extends View {
             ImageView imageView2 = (ImageView) this.k.findViewById(R.id.img_gift);
             textView.setText(this.e + " " + BarrageViewMultiOneRow.this.f.getResources().getString(R.string.Live_SendPresent_send) + " ");
             textView2.setText(this.e + " " + BarrageViewMultiOneRow.this.f.getResources().getString(R.string.Live_SendPresent_send) + " ");
-            if (this.f14235a.msgMapExtra != null) {
-                liveGiftModel = (LiveGiftModel) this.f14235a.msgMapExtra.get("gift_model");
+            if (this.a.msgMapExtra != null) {
+                liveGiftModel = (LiveGiftModel) this.a.msgMapExtra.get("gift_model");
             } else if (TextUtils.isEmpty(this.g)) {
                 return;
             } else {
                 try {
-                    liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(this.g, (Class<Object>) LiveGiftModel.class);
+                    liveGiftModel = (LiveGiftModel) AppInfo.f().fromJson(this.g, LiveGiftModel.class);
                 } catch (Exception e) {
                     e.printStackTrace();
                     return;
@@ -260,9 +251,9 @@ public class BarrageViewMultiOneRow extends View {
         private void k() {
             TextView textView = (TextView) this.k.findViewById(R.id.live_msg_content_nickname);
             TextView textView2 = (TextView) this.k.findViewById(R.id.live_msg_content_text);
-            textView.setText(this.f14235a.fromNickName);
+            textView.setText(this.a.fromNickName);
             String string = BarrageViewMultiOneRow.this.f.getResources().getString(R.string.live_chat_upgrade);
-            textView2.setText(String.format(string, this.f14235a.fromRichLevel + ""));
+            textView2.setText(String.format(string, this.a.fromRichLevel + ""));
         }
 
         public Bitmap a() {
@@ -331,19 +322,15 @@ public class BarrageViewMultiOneRow extends View {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/BarrageViewMultiOneRow$BubblesRow.class */
     public class BubblesRow {
-
-        /* renamed from: a  reason: collision with root package name */
-        public List<Bubble> f14237a;
+        public List<Bubble> a;
         public List<Bubble> b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public boolean f14238c;
+        public boolean c;
         public int d;
 
         private BubblesRow() {
-            this.f14237a = new ArrayList();
+            this.a = new ArrayList();
             this.b = new ArrayList();
-            this.f14238c = true;
+            this.c = true;
         }
 
         public int a() {
@@ -359,14 +346,14 @@ public class BarrageViewMultiOneRow extends View {
             int i5 = 0;
             while (true) {
                 int i6 = i5;
-                if (i6 >= this.f14237a.size()) {
+                if (i6 >= this.a.size()) {
                     return null;
                 }
-                int i7 = (int) this.f14237a.get(i6).p;
-                int i8 = (int) this.f14237a.get(i6).p;
-                int width = this.f14237a.get(i6).l.getWidth();
+                int i7 = (int) this.a.get(i6).p;
+                int i8 = (int) this.a.get(i6).p;
+                int width = this.a.get(i6).l.getWidth();
                 if (i > i7 && i < i8 + width) {
-                    return this.f14237a.get(i6);
+                    return this.a.get(i6);
                 }
                 i5 = i6 + 1;
             }
@@ -375,7 +362,7 @@ public class BarrageViewMultiOneRow extends View {
 
     public BarrageViewMultiOneRow(Context context) {
         super(context);
-        this.f14230c = new BubblesRow();
+        this.c = new BubblesRow();
         this.d = new BubblesRow();
         this.e = new BubblesRow();
         this.g = new Paint();
@@ -392,7 +379,7 @@ public class BarrageViewMultiOneRow extends View {
 
     public BarrageViewMultiOneRow(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f14230c = new BubblesRow();
+        this.c = new BubblesRow();
         this.d = new BubblesRow();
         this.e = new BubblesRow();
         this.g = new Paint();
@@ -409,7 +396,7 @@ public class BarrageViewMultiOneRow extends View {
 
     public BarrageViewMultiOneRow(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        this.f14230c = new BubblesRow();
+        this.c = new BubblesRow();
         this.d = new BubblesRow();
         this.e = new BubblesRow();
         this.g = new Paint();
@@ -432,9 +419,9 @@ public class BarrageViewMultiOneRow extends View {
 
     /* JADX INFO: Access modifiers changed from: private */
     public Bubble a(int i, int i2) {
-        Bubble a2 = this.f14230c.a(i, i2);
-        Bubble bubble = a2;
-        if (a2 == null) {
+        Bubble a = this.c.a(i, i2);
+        Bubble bubble = a;
+        if (a == null) {
             bubble = this.d.a(i, i2);
         }
         Bubble bubble2 = bubble;
@@ -471,27 +458,27 @@ public class BarrageViewMultiOneRow extends View {
         setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.android.module.live_china.view.BarrageViewMultiOneRow.1
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view2, MotionEvent motionEvent) {
-                Bubble a2;
-                if (BarrageViewMultiOneRow.this.f14229a == null || (a2 = BarrageViewMultiOneRow.this.a((int) motionEvent.getX(), (int) motionEvent.getY())) == null || a2.m) {
+                Bubble a;
+                if (BarrageViewMultiOneRow.this.a == null || (a = BarrageViewMultiOneRow.this.a((int) motionEvent.getX(), (int) motionEvent.getY())) == null || a.m) {
                     return false;
                 }
-                if (a2.b == 6) {
+                if (a.b == 6) {
                     LiveSetDataObserver.a().l();
                     return false;
-                } else if (a2.b == 5) {
+                } else if (a.b == 5) {
                     LiveSetDataObserver.a().j();
                     return false;
-                } else if (TextUtils.isEmpty(a2.f14236c)) {
+                } else if (TextUtils.isEmpty(a.c)) {
                     return false;
                 } else {
-                    UserCardDialogFragment userCardDialogFragment = new UserCardDialogFragment(BarrageViewMultiOneRow.this.f14229a);
-                    userCardDialogFragment.e(a2.f14236c);
-                    userCardDialogFragment.show(BarrageViewMultiOneRow.this.f14229a.getFragmentManager(), "userCardDialog");
+                    UserCardDialogFragment userCardDialogFragment = new UserCardDialogFragment(BarrageViewMultiOneRow.this.a);
+                    userCardDialogFragment.e(a.c);
+                    userCardDialogFragment.show(BarrageViewMultiOneRow.this.a.getFragmentManager(), "userCardDialog");
                     return false;
                 }
             }
         });
-        this.f14230c.d = DensityUtils.a(this.f, this.i[0].floatValue());
+        this.c.d = DensityUtils.a(this.f, this.i[0].floatValue());
         this.d.d = DensityUtils.a(this.f, this.i[1].floatValue());
         this.e.d = DensityUtils.a(this.f, this.i[2].floatValue());
     }
@@ -543,8 +530,8 @@ public class BarrageViewMultiOneRow extends View {
         }
         bubble.b = i;
         bubble.a(this.w);
-        bubble.f14235a = liveChattingModel;
-        bubble.f14236c = liveChattingModel.fromId + "";
+        bubble.a = liveChattingModel;
+        bubble.c = liveChattingModel.fromId + "";
         bubble.d = liveChattingModel.fromAvatar;
         bubble.m = liveChattingModel.fromPrivilege == 1;
         bubble.e = LiveCloakingUtil.a(liveChattingModel.fromNickName, bubble.m);
@@ -552,7 +539,7 @@ public class BarrageViewMultiOneRow extends View {
         if (LiveFloatManager.a().w()) {
             bubble.i = 1;
         }
-        if (bubble.f14236c.equals(LiveRoomInfo.a().f())) {
+        if (bubble.c.equals(LiveRoomInfo.a().f())) {
             bubble.h = LiveRoomInfo.a().r();
         } else {
             bubble.h = liveChattingModel.fromRichLevel;
@@ -577,17 +564,17 @@ public class BarrageViewMultiOneRow extends View {
                 if (bubble.j) {
                     int i2 = BarrageViewMultiOneRow.this.x;
                     if (i2 == 0) {
-                        BarrageViewMultiOneRow.this.f14230c.b.add(0, bubble);
+                        BarrageViewMultiOneRow.this.c.b.add(0, bubble);
                     } else if (i2 == 1) {
                         BarrageViewMultiOneRow.this.d.b.add(0, bubble);
                     } else if (i2 != 2) {
                     } else {
                         BarrageViewMultiOneRow.this.e.b.add(0, bubble);
                     }
-                } else if (BarrageViewMultiOneRow.this.f14230c.a() + BarrageViewMultiOneRow.this.d.a() + BarrageViewMultiOneRow.this.e.a() < 130) {
+                } else if (BarrageViewMultiOneRow.this.c.a() + BarrageViewMultiOneRow.this.d.a() + BarrageViewMultiOneRow.this.e.a() < 130) {
                     int i3 = BarrageViewMultiOneRow.this.x;
                     if (i3 == 0) {
-                        BarrageViewMultiOneRow.this.f14230c.b.add(bubble);
+                        BarrageViewMultiOneRow.this.c.b.add(bubble);
                     } else if (i3 == 1) {
                         BarrageViewMultiOneRow.this.d.b.add(bubble);
                     } else if (i3 != 2) {
@@ -603,21 +590,21 @@ public class BarrageViewMultiOneRow extends View {
         int emptyRow = getEmptyRow();
         if (emptyRow >= 0) {
             if (emptyRow == 0) {
-                this.f14230c.f14237a.add(bubble);
+                this.c.a.add(bubble);
                 return;
             } else if (emptyRow == 1) {
-                this.d.f14237a.add(bubble);
+                this.d.a.add(bubble);
                 return;
             } else if (emptyRow != 2) {
                 return;
             } else {
-                this.e.f14237a.add(bubble);
+                this.e.a.add(bubble);
                 return;
             }
         }
         int slotRow = getSlotRow();
         if (slotRow == 0) {
-            this.f14230c.b.add(bubble);
+            this.c.b.add(bubble);
         } else if (slotRow == 1) {
             this.d.b.add(bubble);
         } else if (slotRow != 2) {
@@ -627,32 +614,32 @@ public class BarrageViewMultiOneRow extends View {
     }
 
     protected void a(BubblesRow bubblesRow, Canvas canvas) {
-        if (bubblesRow.f14237a.size() > 0) {
-            Iterator<Bubble> it = bubblesRow.f14237a.iterator();
+        if (bubblesRow.a.size() > 0) {
+            Iterator<Bubble> it = bubblesRow.a.iterator();
             while (it.hasNext()) {
                 Bubble next = it.next();
                 if (next != null) {
-                    Bitmap a2 = next.a();
+                    Bitmap a = next.a();
                     if (next.b() + next.l.getWidth() <= this.v) {
                         it.remove();
                     } else if (((next.b() + next.c()) + next.l.getWidth()) - this.w >= 0.0f || (next.b() + next.l.getWidth()) - this.w <= 0.0f) {
-                        if (next.b() + a2.getWidth() > this.w) {
-                            bubblesRow.f14238c = false;
+                        if (next.b() + a.getWidth() > this.w) {
+                            bubblesRow.c = false;
                         } else {
-                            bubblesRow.f14238c = true;
+                            bubblesRow.c = true;
                         }
                         next.a(next.b() + next.c());
                     } else {
-                        bubblesRow.f14238c = true;
+                        bubblesRow.c = true;
                         next.a(next.b() + next.c());
                     }
                     canvas.drawBitmap(next.a(), next.b(), bubblesRow.d, this.g);
                 }
             }
-            if (bubblesRow.b.size() <= 0 || !bubblesRow.f14238c) {
+            if (bubblesRow.b.size() <= 0 || !bubblesRow.c) {
                 return;
             }
-            bubblesRow.f14237a.add(bubblesRow.b.get(0));
+            bubblesRow.a.add(bubblesRow.b.get(0));
             bubblesRow.b.remove(0);
         }
     }
@@ -698,23 +685,23 @@ public class BarrageViewMultiOneRow extends View {
     }
 
     protected int getEmptyRow() {
-        if (this.e.f14237a.size() == 0) {
+        if (this.e.a.size() == 0) {
             return 2;
         }
-        if (this.d.f14237a.size() == 0) {
+        if (this.d.a.size() == 0) {
             return 1;
         }
-        return this.f14230c.f14237a.size() == 0 ? 0 : -1;
+        return this.c.a.size() == 0 ? 0 : -1;
     }
 
     protected int getSlotRow() {
-        if (this.e.f14238c) {
+        if (this.e.c) {
             return 2;
         }
-        if (this.d.f14238c) {
+        if (this.d.c) {
             return 1;
         }
-        return this.f14230c.f14238c ? 0 : -1;
+        return this.c.c ? 0 : -1;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -723,11 +710,11 @@ public class BarrageViewMultiOneRow extends View {
         super.onDraw(canvas);
         a(this.e, canvas);
         a(this.d, canvas);
-        a(this.f14230c, canvas);
+        a(this.c, canvas);
         invalidate();
     }
 
     public void setBaseFragment(BaseFragment baseFragment) {
-        this.f14229a = baseFragment;
+        this.a = baseFragment;
     }
 }

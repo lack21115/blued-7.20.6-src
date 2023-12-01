@@ -1,5 +1,6 @@
 package com.opos.mobad.q.a.d;
 
+import android.R;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -34,29 +35,29 @@ import java.util.concurrent.TimeUnit;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private Activity f27167a;
+    private Activity f13479a;
     private Context b;
     private AdItemData d;
     private MaterialData e;
     private a.b f;
-    private a.C0725a g;
+    private a.C0555a g;
     private c h;
     private com.opos.mobad.q.a.c i;
 
     /* renamed from: c  reason: collision with root package name */
-    private EventDescription f27168c = null;
+    private EventDescription f13480c = null;
     private b j = new b() { // from class: com.opos.mobad.q.a.d.a.4
         @Override // com.opos.mobad.cmn.b.b
         public void b() {
-            Activity activity = a.this.f27167a;
+            Activity activity = a.this.f13479a;
             if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
                 return;
             }
             activity.finish();
         }
     };
-    private b.InterfaceC0687b k = new b.InterfaceC0687b() { // from class: com.opos.mobad.q.a.d.a.5
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+    private b.InterfaceC0517b k = new b.InterfaceC0517b() { // from class: com.opos.mobad.q.a.d.a.5
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void a(AdItemData adItemData, String str) {
             com.opos.cmn.an.f.a.b("VideoCommonPresenter", "install pkgName=" + str);
             if (a.this.i != null) {
@@ -64,14 +65,14 @@ public class a {
             }
         }
 
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void b(AdItemData adItemData, String str) {
             if (a.this.i != null) {
                 a.this.i.a(adItemData, str);
             }
         }
 
-        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0687b
+        @Override // com.opos.mobad.cmn.service.pkginstall.b.InterfaceC0517b
         public void c(AdItemData adItemData, String str) {
             if (a.this.i != null) {
                 a.this.i.a(adItemData, str);
@@ -80,7 +81,7 @@ public class a {
     };
 
     public a(Activity activity) {
-        this.f27167a = activity;
+        this.f13479a = activity;
         this.b = activity.getApplicationContext();
     }
 
@@ -89,7 +90,7 @@ public class a {
         com.opos.mobad.service.c.c(new Runnable() { // from class: com.opos.mobad.q.a.d.a.3
             @Override // java.lang.Runnable
             public void run() {
-                Activity activity = a.this.f27167a;
+                Activity activity = a.this.f13479a;
                 if (activity == null || activity.isFinishing() || activity.isDestroyed()) {
                     com.opos.cmn.an.f.a.b("VideoCommonPresenter", "vip result but destroy");
                 } else if (a.this.i != null) {
@@ -100,9 +101,9 @@ public class a {
     }
 
     private void a(Activity activity, com.opos.mobad.n.a aVar, com.opos.mobad.cmn.a.a aVar2, String str, AdItemData adItemData, MaterialData materialData, int i, com.opos.mobad.q.a.e.a aVar3, g gVar) {
-        com.opos.mobad.n.a a2 = com.opos.mobad.q.a.f.b.a.a().a(this.b, adItemData, (a.InterfaceC0708a) null);
+        com.opos.mobad.n.a a2 = com.opos.mobad.q.a.f.b.a.a().a(this.b, adItemData, (a.InterfaceC0538a) null);
         this.i = new k(activity, str, aVar2, aVar, new d(activity), new com.opos.mobad.o.a.a(this.b, null), aVar3, a2);
-        a.b b = f.b(this.f27167a);
+        a.b b = f.b(this.f13479a);
         this.f = b;
         aVar2.a(b);
         ((k) this.i).b(adItemData, materialData, i, gVar);
@@ -129,7 +130,7 @@ public class a {
         }
         if (z) {
             com.opos.cmn.an.f.a.b("VideoCommonPresenter", "isFullScreen");
-            activity.getTheme().applyStyle(16973841, true);
+            activity.getTheme().applyStyle(R.style.Theme_Translucent_NoTitleBar_Fullscreen, true);
             window.setFlags(1024, 1024);
             window.getDecorView().setSystemUiVisibility(1024 | window.getDecorView().getSystemUiVisibility() | 256 | 4 | 4096);
         }
@@ -137,16 +138,16 @@ public class a {
 
     private void a(Intent intent, AdItemData adItemData, MaterialData materialData, int i, com.opos.mobad.cmn.a.d dVar, com.opos.mobad.q.a.e.a aVar, g gVar) {
         String str;
-        Activity activity = this.f27167a;
+        Activity activity = this.f13479a;
         if (activity == null) {
             str = "activity is null";
         } else {
             com.opos.mobad.q.a.b.d dVar2 = (com.opos.mobad.q.a.b.d) intent.getParcelableExtra(VideoActivity.EXTRA_KEY_TEMPLATE_CREATOR);
             if (dVar2 != null) {
-                this.h = com.opos.mobad.cmn.b.a.a(a.C0684a.a(this.f27168c), this.j);
+                this.h = com.opos.mobad.cmn.b.a.a(a.C0514a.a(this.f13480c), this.j);
                 a(activity, intent.getBooleanExtra(VideoActivity.EXTRA_KEY_SCREEN_MODE, false));
                 String g = adItemData.g();
-                com.opos.mobad.n.a a2 = dVar2.a(activity, this.d, a(this.f27167a, adItemData, materialData, g));
+                com.opos.mobad.n.a a2 = dVar2.a(activity, this.d, a(this.f13479a, adItemData, materialData, g));
                 if (a2 != null) {
                     com.opos.mobad.q.a.c cVar = new com.opos.mobad.q.a.c(activity, g, new com.opos.mobad.cmn.a.a(this.b, adItemData.g(), dVar), a2, new d(activity), new com.opos.mobad.o.a.a(activity, null), aVar);
                     this.i = cVar;
@@ -192,19 +193,19 @@ public class a {
             int F = adItemData.F();
             int i = 1;
             if (F == 1) {
-                activity = this.f27167a;
+                activity = this.f13479a;
                 i = 0;
             } else if (F != 2) {
                 return;
             } else {
-                activity = this.f27167a;
+                activity = this.f13479a;
             }
             activity.setRequestedOrientation(i);
         }
     }
 
     private void a(AdItemData adItemData, MaterialData materialData, int i, com.opos.mobad.cmn.a.d dVar, com.opos.mobad.q.a.e.a aVar, g gVar) {
-        Activity activity = this.f27167a;
+        Activity activity = this.f13479a;
         if (activity != null) {
             com.opos.cmn.an.f.a.b("VideoCommonPresenter", "show templateId:" + materialData.b());
             a(activity.getWindow());
@@ -260,10 +261,10 @@ public class a {
                 }
                 int intExtra2 = intent.getIntExtra(VideoActivity.EXTRA_KEY_BID_PRICE, 0);
                 EventDescription eventDescription = (EventDescription) intent.getParcelableExtra(VideoActivity.EXTRA_KEY_EVENT_DESCRIPTION);
-                this.f27168c = eventDescription;
-                a.C0725a c0725a = new a.C0725a(eventDescription);
-                this.g = c0725a;
-                c0725a.a(this.k);
+                this.f13480c = eventDescription;
+                a.C0555a c0555a = new a.C0555a(eventDescription);
+                this.g = c0555a;
+                c0555a.a(this.k);
                 if (intExtra == 1) {
                     a(this.d, this.e, intExtra2, dVar, this.g, gVar);
                 } else if (intExtra != 2) {
@@ -323,19 +324,19 @@ public class a {
         if (bVar != null) {
             bVar.a();
         }
-        Activity activity = this.f27167a;
+        Activity activity = this.f13479a;
         if (activity != null && !activity.isDestroyed() && !activity.isFinishing()) {
             activity.finish();
         }
-        this.f27167a = null;
+        this.f13479a = null;
         com.opos.mobad.q.a.c cVar = this.i;
         if (cVar != null) {
             cVar.c();
         }
-        a.C0725a c0725a = this.g;
-        if (c0725a != null) {
-            c0725a.g();
-            c0725a.a((b.InterfaceC0687b) null);
+        a.C0555a c0555a = this.g;
+        if (c0555a != null) {
+            c0555a.g();
+            c0555a.a((b.InterfaceC0517b) null);
         }
         com.opos.mobad.service.event.b.a().b(this.h);
         this.g = null;

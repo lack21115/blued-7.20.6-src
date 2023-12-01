@@ -11,13 +11,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/FragmentYyApplyLayoutBinding.class */
 public final class FragmentYyApplyLayoutBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16489a;
+    public final ShapeTextView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final TextView f16490c;
+    public final TextView c;
     public final LinearLayout d;
     public final LinearLayout e;
     public final LinearLayout f;
@@ -31,9 +27,9 @@ public final class FragmentYyApplyLayoutBinding implements ViewBinding {
 
     private FragmentYyApplyLayoutBinding(LinearLayout linearLayout, ShapeTextView shapeTextView, ImageView imageView, TextView textView, LinearLayout linearLayout2, LinearLayout linearLayout3, LinearLayout linearLayout4, TextView textView2, EditText editText, EditText editText2, TextView textView3, TextView textView4, ViewYyTitleBarLayoutBinding viewYyTitleBarLayoutBinding) {
         this.m = linearLayout;
-        this.f16489a = shapeTextView;
+        this.a = shapeTextView;
         this.b = imageView;
-        this.f16490c = textView;
+        this.c = textView;
         this.d = linearLayout2;
         this.e = linearLayout3;
         this.f = linearLayout4;
@@ -110,7 +106,6 @@ public final class FragmentYyApplyLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
         return this.m;

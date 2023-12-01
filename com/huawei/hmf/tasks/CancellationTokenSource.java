@@ -8,12 +8,12 @@ public class CancellationTokenSource {
 
     public void cancel() {
         c cVar = this.impl;
-        if (cVar.f22361c) {
+        if (cVar.f8753c) {
             return;
         }
         synchronized (cVar.b) {
-            cVar.f22361c = true;
-            for (Runnable runnable : cVar.f22360a) {
+            cVar.f8753c = true;
+            for (Runnable runnable : cVar.f8752a) {
                 runnable.run();
             }
         }

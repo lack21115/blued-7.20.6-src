@@ -33,6 +33,6 @@ public class VideoPageModel {
         String str = strArr[1];
         this.videoUrl = str;
         this.bluedIngSelfFeed = bluedIngSelfFeed;
-        Logger.b("xpf", "videoUrl:", str);
+        Logger.b("xpf", new Object[]{"videoUrl:", str});
     }
 }

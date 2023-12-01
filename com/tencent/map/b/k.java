@@ -13,11 +13,11 @@ import java.util.Iterator;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static int f37239a = 12000;
+    private static int f23548a = 12000;
     private static int b = 20000;
 
     /* renamed from: c  reason: collision with root package name */
-    private static int f37240c = 8000;
+    private static int f23549c = 8000;
     private static int d = 20000;
     private static int e = 25000;
     private static int f = 15000;
@@ -41,11 +41,11 @@ public final class k {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public long f37241a;
+        public long f23550a;
         public long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public long f37242c;
+        public long f23551c;
         public long d;
         public int e;
         public long f;
@@ -64,16 +64,16 @@ public final class k {
         if (!activeNetworkInfo.isConnected() || type != 0 || (subscriberId = ((TelephonyManager) l.b().getSystemService("phone")).getSubscriberId()) == null || subscriberId.length() <= 3 || subscriberId.startsWith("46000") || subscriberId.startsWith("46002")) {
             return;
         }
-        f37239a = 15000;
+        f23548a = 15000;
         b = 25000;
-        f37240c = 10000;
+        f23549c = 10000;
         d = 25000;
         e = GLES31.GL_READ_ONLY;
         f = 15000;
     }
 
     public static int a() {
-        int i2 = f37239a;
+        int i2 = f23548a;
         long j2 = j;
         int i3 = i2;
         if (j2 > 0) {
@@ -92,7 +92,7 @@ public final class k {
                     long j3 = k;
                     i4 = i3;
                     if (j3 > 0) {
-                        int i5 = f37240c;
+                        int i5 = f23549c;
                         i4 = i3;
                         if (j3 < i5) {
                             i4 = i5;
@@ -104,7 +104,7 @@ public final class k {
             }
         }
         int i6 = u;
-        int i7 = f37240c;
+        int i7 = f23549c;
         int i8 = i4 + (i6 * i7);
         if (i8 > i7) {
             i7 = i8;
@@ -112,7 +112,7 @@ public final class k {
         long j4 = i7;
         long j5 = k;
         if (j4 <= j5) {
-            i7 = (int) (j5 + f37240c);
+            i7 = (int) (j5 + f23549c);
         }
         int i9 = b;
         int i10 = i7;
@@ -125,8 +125,8 @@ public final class k {
             aVar = a(Thread.currentThread().getId());
         }
         int i11 = i10;
-        if (i10 < aVar.g + f37240c) {
-            i11 = f37240c + aVar.g;
+        if (i10 < aVar.g + f23549c) {
+            i11 = f23549c + aVar.g;
         }
         aVar.g = i11;
         return i11;
@@ -154,8 +154,8 @@ public final class k {
                     h = 0L;
                     g.get(0);
                     i = 0L;
-                    k = g.get(0).f37242c;
-                    l = g.get(0).f37242c;
+                    k = g.get(0).f23551c;
+                    l = g.get(0).f23551c;
                     o = g.get(0).d;
                     p = g.get(0).d;
                     if (g.get(0).f > 0) {
@@ -171,11 +171,11 @@ public final class k {
                         if (0 < i) {
                             i = 0L;
                         }
-                        if (next.f37242c > k) {
-                            k = next.f37242c;
+                        if (next.f23551c > k) {
+                            k = next.f23551c;
                         }
-                        if (next.f37242c < l) {
-                            l = next.f37242c;
+                        if (next.f23551c < l) {
+                            l = next.f23551c;
                         }
                         if (next.d > o) {
                             o = next.d;
@@ -196,7 +196,7 @@ public final class k {
                 }
             }
             aVar = new a();
-            aVar.f37241a = j2;
+            aVar.f23550a = j2;
             g.add(aVar);
         }
         return aVar;
@@ -234,10 +234,10 @@ public final class k {
                 }
             }
         }
-        if (u > 0 && b2.f37242c < f37240c && b2.d < f) {
+        if (u > 0 && b2.f23551c < f23549c && b2.d < f) {
             u--;
         }
-        b2.g = (int) b2.f37242c;
+        b2.g = (int) b2.f23551c;
     }
 
     public static void a(HttpURLConnection httpURLConnection) {
@@ -293,7 +293,7 @@ public final class k {
                 }
             }
         }
-        int i6 = i4 + (u * f37240c);
+        int i6 = i4 + (u * f23549c);
         int i7 = f;
         int i8 = i6;
         if (i6 <= i7) {
@@ -340,7 +340,7 @@ public final class k {
                     return null;
                 }
                 next = it.next();
-            } while (next.f37241a != j2);
+            } while (next.f23550a != j2);
             return next;
         }
     }
@@ -357,7 +357,7 @@ public final class k {
                 if (i2 < 0) {
                     return null;
                 }
-                if (g.get(i2).f37241a == j2) {
+                if (g.get(i2).f23550a == j2) {
                     return g.remove(i2);
                 }
                 size = i2;
@@ -371,24 +371,24 @@ public final class k {
         if (b2 == null) {
             return;
         }
-        b2.f37242c = System.currentTimeMillis() - b2.b;
+        b2.f23551c = System.currentTimeMillis() - b2.b;
         b2.b = System.currentTimeMillis();
-        m = b2.f37242c;
-        long j3 = b2.f37242c;
+        m = b2.f23551c;
+        long j3 = b2.f23551c;
         long j4 = k;
         long j5 = j4;
         if (j3 > j4) {
-            j5 = b2.f37242c;
+            j5 = b2.f23551c;
         }
         k = j5;
-        long j6 = b2.f37242c;
+        long j6 = b2.f23551c;
         long j7 = l;
         if (j6 < j7) {
-            j2 = b2.f37242c;
+            j2 = b2.f23551c;
         } else {
             j2 = j7;
             if (j7 == 0) {
-                j2 = b2.f37242c;
+                j2 = b2.f23551c;
             }
         }
         l = j2;
@@ -399,8 +399,8 @@ public final class k {
                 Iterator<a> it = g.iterator();
                 while (it.hasNext()) {
                     a next = it.next();
-                    if (next.f37242c > 0) {
-                        j += next.f37242c;
+                    if (next.f23551c > 0) {
+                        j += next.f23551c;
                         i2++;
                     }
                 }

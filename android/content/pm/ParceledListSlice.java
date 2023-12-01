@@ -34,6 +34,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
         }
     };
 
+    /* JADX WARN: Multi-variable type inference failed */
     private ParceledListSlice(Parcel parcel, ClassLoader classLoader) {
         int i;
         int readInt = parcel.readInt();
@@ -58,7 +59,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
             } else {
                 verifySameType(cls, readCreator.getClass());
             }
-            ((List<T>) this.mList).add(readCreator);
+            this.mList.add(readCreator);
             if (DEBUG) {
                 Log.d(TAG, "Read inline #" + i + ": " + this.mList.get(this.mList.size() - 1));
             }
@@ -78,7 +79,7 @@ public class ParceledListSlice<T extends Parcelable> implements Parcelable {
                     while (i < readInt && obtain2.readInt() != 0) {
                         Parcelable readCreator2 = obtain2.readCreator(readParcelableCreator, classLoader);
                         verifySameType(cls, readCreator2.getClass());
-                        ((List<T>) this.mList).add(readCreator2);
+                        this.mList.add(readCreator2);
                         if (DEBUG) {
                             Log.d(TAG, "Read extra #" + i + ": " + this.mList.get(this.mList.size() - 1));
                         }

@@ -43,9 +43,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgAboutUser.class */
 public abstract class FitemMsgAboutUser extends FitemMsgBase {
     private final LiveChattingModel b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private boolean f12545c;
+    private boolean c;
     private boolean d;
     private boolean e;
     private boolean f;
@@ -65,7 +63,7 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
         super(msg);
         Intrinsics.e(msg, "msg");
         this.b = msg;
-        this.f12545c = true;
+        this.c = true;
         this.d = true;
         this.e = true;
         this.g = DisplayUtil.a(AppInfo.d(), 3.0f);
@@ -148,13 +146,13 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
 
     private final void a(LiveBubbleBgModel liveBubbleBgModel, ImageView imageView) {
-        TextView textView = (TextView) this.f10935a.a(R.id.live_msg_content_text);
+        TextView textView = (TextView) this.a.a(R.id.live_msg_content_text);
         if (textView == null) {
             return;
         }
@@ -184,12 +182,12 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
         LiveBubbleBgModel u = u();
         if (u == null) {
             liveMsgBgFrameLayout.setValidColors(false);
-            this.f10935a.c(R.id.live_msg_content_star);
+            this.a.c(R.id.live_msg_content_star);
             a((View) liveMsgBgFrameLayout);
             return;
         }
         liveMsgBgFrameLayout.a(u, e().fromRichLevel);
-        ImageView imageView = (ImageView) this.f10935a.a(R.id.live_msg_content_star);
+        ImageView imageView = (ImageView) this.a.a(R.id.live_msg_content_star);
         if (imageView == null) {
             return;
         }
@@ -242,20 +240,20 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
                 i = this.g;
                 i2 = this.j;
                 i3 = this.j;
-                buildSpannableString.a(BitmapDrawable.this, 0, i, (int) ((i2 * BitmapDrawable.this.getIntrinsicWidth()) / BitmapDrawable.this.getIntrinsicHeight()), i3);
+                buildSpannableString.a(bitmapDrawable, 0, i, (int) ((i2 * bitmapDrawable.getIntrinsicWidth()) / bitmapDrawable.getIntrinsicHeight()), i3);
             }
 
             @Override // kotlin.jvm.functions.Function1
             public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                 a(dslSpannableStringBuilder);
-                return Unit.f42314a;
+                return Unit.a;
             }
         });
     }
 
     private final void d(Context context, TextView textView) {
-        final Drawable a2;
-        if (e().fromRichLevel > 0 && (a2 = LiveBitmapUtils.a(context, e().fromRichLevel)) != null) {
+        final Drawable a;
+        if (e().fromRichLevel > 0 && (a = LiveBitmapUtils.a(context, e().fromRichLevel)) != null) {
             LiveTextSpanExKt.a(textView, new Function1<DslSpannableStringBuilder, Unit>() { // from class: com.blued.android.module.live_china.fitem.msgcontent.FitemMsgAboutUser$addIconToRichLevel$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -270,7 +268,7 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
                     int i4;
                     int i5;
                     Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
-                    Drawable drawable = Drawable.this;
+                    Drawable drawable = a;
                     i = this.g;
                     if (this.e().fromRichLevel >= 30) {
                         i5 = this.p;
@@ -286,7 +284,7 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
                 @Override // kotlin.jvm.functions.Function1
                 public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
                     a(dslSpannableStringBuilder);
-                    return Unit.f42314a;
+                    return Unit.a;
                 }
             });
         }
@@ -306,38 +304,38 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
     }
 
     private final void q() {
-        View a2 = this.f10935a.a(R.id.live_msg_content_root);
-        if (a2 == null) {
+        View a = this.a.a(R.id.live_msg_content_root);
+        if (a == null) {
             return;
         }
-        a2.setBackgroundResource(R.color.transparent);
-        if (!(a2 instanceof LiveMsgBgFrameLayout)) {
-            this.f10935a.c(R.id.live_msg_content_star);
-            a(a2);
+        a.setBackgroundResource(R.color.transparent);
+        if (!(a instanceof LiveMsgBgFrameLayout)) {
+            this.a.c(R.id.live_msg_content_star);
+            a(a);
             return;
         }
-        LiveMsgBgFrameLayout liveMsgBgFrameLayout = (LiveMsgBgFrameLayout) a2;
+        LiveMsgBgFrameLayout liveMsgBgFrameLayout = (LiveMsgBgFrameLayout) a;
         liveMsgBgFrameLayout.setValidColors(true);
         a(liveMsgBgFrameLayout);
     }
 
     private final void r() {
-        View a2 = this.f10935a.a(R.id.live_msg_content_root);
-        if (a2 != null) {
-            if (a2 instanceof LiveMsgBgFrameLayout) {
-                ((LiveMsgBgFrameLayout) a2).setValidColors(false);
+        View a = this.a.a(R.id.live_msg_content_root);
+        if (a != null) {
+            if (a instanceof LiveMsgBgFrameLayout) {
+                ((LiveMsgBgFrameLayout) a).setValidColors(false);
             }
-            a2.setBackgroundResource(R.drawable.transparent);
+            a.setBackgroundResource(R.drawable.transparent);
         }
-        View a3 = this.f10935a.a(R.id.live_msg_content_star);
-        if (a3 == null) {
+        View a2 = this.a.a(R.id.live_msg_content_star);
+        if (a2 == null) {
             return;
         }
-        a3.setVisibility(8);
+        a2.setVisibility(8);
     }
 
     private final void s() {
-        View lightView = this.f10935a.a(R.id.live_msg_light);
+        View lightView = this.a.a(R.id.live_msg_light);
         if (lightView != null) {
             lightView.setVisibility(8);
         }
@@ -362,11 +360,11 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
     }
 
     private final void t() {
-        View a2 = this.f10935a.a(R.id.live_msg_light);
-        if (a2 == null) {
+        View a = this.a.a(R.id.live_msg_light);
+        if (a == null) {
             return;
         }
-        a2.setVisibility(8);
+        a.setVisibility(8);
     }
 
     private final LiveBubbleBgModel u() {
@@ -444,7 +442,7 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(boolean z) {
-        this.f12545c = z;
+        this.c = z;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -463,7 +461,7 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
     }
 
     protected final boolean f() {
-        return this.f12545c;
+        return this.c;
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -473,22 +471,22 @@ public abstract class FitemMsgAboutUser extends FitemMsgBase {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void h() {
-        TextView textView = (TextView) this.f10935a.a(R.id.live_msg_content_text);
+        TextView textView = (TextView) this.a.a(R.id.live_msg_content_text);
         if (textView != null && f()) {
             a(textView);
-            Context context = this.f10935a.f10931a.b;
+            Context context = this.a.a.b;
             Intrinsics.c(context, "viewHolder.adapter.mContext");
             a(context, textView);
-            Context context2 = this.f10935a.f10931a.b;
+            Context context2 = this.a.a.b;
             Intrinsics.c(context2, "viewHolder.adapter.mContext");
             b(context2, textView);
-            Context context3 = this.f10935a.f10931a.b;
+            Context context3 = this.a.a.b;
             Intrinsics.c(context3, "viewHolder.adapter.mContext");
             d(context3, textView);
-            Context context4 = this.f10935a.f10931a.b;
+            Context context4 = this.a.a.b;
             Intrinsics.c(context4, "viewHolder.adapter.mContext");
             c(context4, textView);
-            Context context5 = this.f10935a.f10931a.b;
+            Context context5 = this.a.a.b;
             Intrinsics.c(context5, "viewHolder.adapter.mContext");
             e(context5, textView);
         }

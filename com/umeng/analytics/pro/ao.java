@@ -7,16 +7,16 @@ import org.json.JSONObject;
 public class ao implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40626a = "https://ucc.umeng.com/v2/inn/fetch";
+    public static final String f26935a = "https://ucc.umeng.com/v2/inn/fetch";
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f40627c;
+    private String f26936c;
     private String d;
 
     public ao(String str, JSONObject jSONObject, String str2) {
         this.b = str;
-        this.f40627c = jSONObject.toString();
+        this.f26936c = jSONObject.toString();
         this.d = str2;
     }
 
@@ -25,7 +25,7 @@ public class ao implements Runnable {
     public void run() {
         JSONObject jSONObject;
         try {
-            byte[] a2 = am.a(this.b, this.f40627c);
+            byte[] a2 = am.a(this.b, this.f26936c);
             jSONObject = null;
             if (a2 != null) {
                 JSONObject jSONObject2 = new JSONObject(new String(a2));

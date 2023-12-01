@@ -7,7 +7,7 @@ import com.tencent.map.b.f;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    private static f f37193a = f.a();
+    private static f f23502a = f.a();
     private static a b;
 
     public static a a() {
@@ -26,14 +26,14 @@ public class a {
     }
 
     public boolean a(Context context, b bVar) {
-        return f37193a.a(context, bVar);
+        return f23502a.a(context, bVar);
     }
 
     public boolean a(String str, String str2) {
-        return f37193a.a(str, str2);
+        return f23502a.a(str, str2);
     }
 
     public void b() {
-        f37193a.b();
+        f23502a.b();
     }
 }

@@ -14,9 +14,8 @@ public class r {
     private w aGi;
     private volatile v aGk;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7994992-dex2jar.jar:com/kwai/filedownloader/r$a.class */
-    public static final class a {
+    static final class a {
         private static final r aGl = new r();
     }
 
@@ -44,13 +43,13 @@ public class r {
     }
 
     private int cE(int i) {
-        List<a.InterfaceC0583a> cz = h.GW().cz(i);
+        List<a.InterfaceC0413a> cz = h.GW().cz(i);
         if (cz.isEmpty()) {
             com.kwai.filedownloader.e.d.h(this, "request pause but not exist %d", Integer.valueOf(i));
             return 0;
         }
-        for (a.InterfaceC0583a interfaceC0583a : cz) {
-            interfaceC0583a.Gy().pause();
+        for (a.InterfaceC0413a interfaceC0413a : cz) {
+            interfaceC0413a.Gy().pause();
         }
         return cz.size();
     }

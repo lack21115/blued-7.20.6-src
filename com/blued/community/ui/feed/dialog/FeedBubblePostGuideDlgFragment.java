@@ -31,20 +31,16 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-4169892-dex2jar.jar:com/blued/community/ui/feed/dialog/FeedBubblePostGuideDlgFragment.class */
 public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Context f19709a;
+    private final Context a;
     private final FeedBubbleListGuideExtra b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private FragmentFeedBubblePostGuideBinding f19710c;
+    private FragmentFeedBubblePostGuideBinding c;
     private FeedPostSignStateItem d;
     private CommonMultiItemAdapter<FeedPostSignStateItem> e;
 
     public FeedBubblePostGuideDlgFragment(Context mContext, FeedBubbleListGuideExtra extraModel) {
         Intrinsics.e(mContext, "mContext");
         Intrinsics.e(extraModel, "extraModel");
-        this.f19709a = mContext;
+        this.a = mContext;
         this.b = extraModel;
         this.e = new FeedBubblePostGuideDlgFragment$adapter$1(this);
     }
@@ -70,8 +66,8 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
     public static final void b(FeedBubblePostGuideDlgFragment this$0) {
         final ShapeLinearLayout shapeLinearLayout;
         Intrinsics.e(this$0, "this$0");
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding = this$0.f19710c;
-        if (fragmentFeedBubblePostGuideBinding == null || (shapeLinearLayout = fragmentFeedBubblePostGuideBinding.f18862a) == null) {
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding = this$0.c;
+        if (fragmentFeedBubblePostGuideBinding == null || (shapeLinearLayout = fragmentFeedBubblePostGuideBinding.a) == null) {
             return;
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(shapeLinearLayout, "alpha", 0.1f, 1.0f);
@@ -103,7 +99,7 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
         ShapeTextView shapeTextView;
         FrameLayout frameLayout;
         RecyclerView recyclerView;
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding = this.f19710c;
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding = this.c;
         TextView textView2 = fragmentFeedBubblePostGuideBinding == null ? null : fragmentFeedBubblePostGuideBinding.f;
         if (textView2 != null) {
             String title = this.b.getTitle();
@@ -113,7 +109,7 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
             }
             textView2.setText(str);
         }
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding2 = this.f19710c;
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding2 = this.c;
         ShapeTextView shapeTextView2 = fragmentFeedBubblePostGuideBinding2 == null ? null : fragmentFeedBubblePostGuideBinding2.b;
         if (shapeTextView2 != null) {
             String remove = this.b.getRemove();
@@ -123,7 +119,7 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
             }
             shapeTextView2.setText(str2);
         }
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding3 = this.f19710c;
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding3 = this.c;
         TextView textView3 = fragmentFeedBubblePostGuideBinding3 == null ? null : fragmentFeedBubblePostGuideBinding3.e;
         if (textView3 != null) {
             String button = this.b.getButton();
@@ -133,22 +129,22 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
             }
             textView3.setText(str3);
         }
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), 0, false);
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding4 = this.f19710c;
-        RecyclerView recyclerView2 = fragmentFeedBubblePostGuideBinding4 == null ? null : fragmentFeedBubblePostGuideBinding4.f18863c;
+        RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), 0, false);
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding4 = this.c;
+        RecyclerView recyclerView2 = fragmentFeedBubblePostGuideBinding4 == null ? null : fragmentFeedBubblePostGuideBinding4.c;
         if (recyclerView2 != null) {
             recyclerView2.setLayoutManager(linearLayoutManager);
         }
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding5 = this.f19710c;
-        if (fragmentFeedBubblePostGuideBinding5 != null && (recyclerView = fragmentFeedBubblePostGuideBinding5.f18863c) != null) {
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding5 = this.c;
+        if (fragmentFeedBubblePostGuideBinding5 != null && (recyclerView = fragmentFeedBubblePostGuideBinding5.c) != null) {
             recyclerView.setHasFixedSize(true);
         }
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding6 = this.f19710c;
-        RecyclerView recyclerView3 = fragmentFeedBubblePostGuideBinding6 == null ? null : fragmentFeedBubblePostGuideBinding6.f18863c;
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding6 = this.c;
+        RecyclerView recyclerView3 = fragmentFeedBubblePostGuideBinding6 == null ? null : fragmentFeedBubblePostGuideBinding6.c;
         if (recyclerView3 != null) {
             recyclerView3.setAdapter(this.e);
         }
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding7 = this.f19710c;
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding7 = this.c;
         if (fragmentFeedBubblePostGuideBinding7 != null && (frameLayout = fragmentFeedBubblePostGuideBinding7.d) != null) {
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedBubblePostGuideDlgFragment$5hQ4i0WZwnMkZnfoPiWTHvgCkjs
                 @Override // android.view.View.OnClickListener
@@ -157,7 +153,7 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
                 }
             });
         }
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding8 = this.f19710c;
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding8 = this.c;
         if (fragmentFeedBubblePostGuideBinding8 != null && (shapeTextView = fragmentFeedBubblePostGuideBinding8.b) != null) {
             shapeTextView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedBubblePostGuideDlgFragment$fr4cPo3aAJQGyqh6Or9VJ9bpu0k
                 @Override // android.view.View.OnClickListener
@@ -166,7 +162,7 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
                 }
             });
         }
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding9 = this.f19710c;
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding9 = this.c;
         if (fragmentFeedBubblePostGuideBinding9 != null && (textView = fragmentFeedBubblePostGuideBinding9.e) != null) {
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedBubblePostGuideDlgFragment$6HqQu6pmr3Z2--s7qfkM4OJ7RYU
                 @Override // android.view.View.OnClickListener
@@ -188,7 +184,7 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
     }
 
     private final void k() {
-        FragmentActivity activity = getActivity();
+        Context activity = getActivity();
         if (activity != null) {
             Bundle bundle = new Bundle();
             bundle.putSerializable("selected_model", this.d);
@@ -203,8 +199,8 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
 
     private final void l() {
         ShapeLinearLayout shapeLinearLayout;
-        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding = this.f19710c;
-        if (fragmentFeedBubblePostGuideBinding == null || (shapeLinearLayout = fragmentFeedBubblePostGuideBinding.f18862a) == null) {
+        FragmentFeedBubblePostGuideBinding fragmentFeedBubblePostGuideBinding = this.c;
+        if (fragmentFeedBubblePostGuideBinding == null || (shapeLinearLayout = fragmentFeedBubblePostGuideBinding.a) == null) {
             return;
         }
         shapeLinearLayout.postDelayed(new Runnable() { // from class: com.blued.community.ui.feed.dialog.-$$Lambda$FeedBubblePostGuideDlgFragment$RByl5qCmiTVGdN6sa6S7UTD-6zM
@@ -230,15 +226,15 @@ public final class FeedBubblePostGuideDlgFragment extends CommFullScreenDialog {
         activity.finish();
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View onCreateView = super.onCreateView(inflater, viewGroup, bundle);
-        this.f19710c = FragmentFeedBubblePostGuideBinding.a(onCreateView);
+        this.c = FragmentFeedBubblePostGuideBinding.a(onCreateView);
         return onCreateView;
     }
 
-    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.community.ui.common.CommFullScreenDialog, com.blued.android.core.ui.BaseDialogFragment
     public void onViewCreated(View view, Bundle bundle) {
         Intrinsics.e(view, "view");
         super.onViewCreated(view, bundle);

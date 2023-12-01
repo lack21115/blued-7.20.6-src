@@ -64,7 +64,7 @@ public class IntArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public IntArray m1014clone() throws CloneNotSupportedException {
+    public IntArray m1010clone() throws CloneNotSupportedException {
         IntArray intArray = (IntArray) super.clone();
         intArray.mValues = (int[]) this.mValues.clone();
         return intArray;

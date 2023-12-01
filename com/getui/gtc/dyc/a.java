@@ -16,29 +16,29 @@ import java.util.Map;
 public class a implements Subscriber {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f21966a;
+    private static String f8359a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.getui.gtc.dyc.a$a  reason: collision with other inner class name */
     /* loaded from: source-8110460-dex2jar.jar:com/getui/gtc/dyc/a$a.class */
-    public static class C0348a {
+    public static class C0178a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static a f21971a = new a();
+        private static a f8364a = new a();
     }
 
     private a() {
     }
 
     public static a a() {
-        f21966a = Thread.currentThread().getStackTrace()[2].getMethodName();
-        return C0348a.f21971a;
+        f8359a = Thread.currentThread().getStackTrace()[2].getMethodName();
+        return C0178a.f8364a;
     }
 
     private Bundle d() {
         Bundle bundle = new Bundle();
         bundle.putString(ProcessSwitchContract.CLASS_NAME, getClass().getName());
-        bundle.putString(ProcessSwitchContract.GET_INSTANCE, f21966a);
+        bundle.putString(ProcessSwitchContract.GET_INSTANCE, f8359a);
         return bundle;
     }
 

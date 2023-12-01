@@ -6,11 +6,11 @@ import java.util.ArrayList;
 final class h extends ArrayList<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ String f41682a;
+    final /* synthetic */ String f27991a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public h(String str) {
-        this.f41682a = str;
-        add(this.f41682a);
+        this.f27991a = str;
+        add(this.f27991a);
     }
 }

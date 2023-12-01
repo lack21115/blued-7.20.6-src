@@ -14,20 +14,20 @@ import com.soft.blued.R;
 public final class DialogReportPhotoMenuBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeLinearLayout f28720a;
+    public final ShapeLinearLayout f15030a;
     public final LinearLayout b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final FrameLayout f28721c;
+    public final FrameLayout f15031c;
     public final TextView d;
     public final TextView e;
     private final FrameLayout f;
 
     private DialogReportPhotoMenuBinding(FrameLayout frameLayout, ShapeLinearLayout shapeLinearLayout, LinearLayout linearLayout, FrameLayout frameLayout2, TextView textView, TextView textView2) {
         this.f = frameLayout;
-        this.f28720a = shapeLinearLayout;
+        this.f15030a = shapeLinearLayout;
         this.b = linearLayout;
-        this.f28721c = frameLayout2;
+        this.f15031c = frameLayout2;
         this.d = textView;
         this.e = textView2;
     }
@@ -46,17 +46,17 @@ public final class DialogReportPhotoMenuBinding implements ViewBinding {
 
     public static DialogReportPhotoMenuBinding a(View view) {
         String str;
-        ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(2131366778);
-        if (shapeLinearLayout != null) {
+        ShapeLinearLayout findViewById = view.findViewById(R.id.layout_event_type);
+        if (findViewById != null) {
             LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_camera);
             if (linearLayout != null) {
-                FrameLayout frameLayout = (FrameLayout) view.findViewById(2131369460);
+                FrameLayout frameLayout = (FrameLayout) view.findViewById(R.id.rootLayout);
                 if (frameLayout != null) {
                     TextView textView = (TextView) view.findViewById(R.id.tv_album);
                     if (textView != null) {
                         TextView textView2 = (TextView) view.findViewById(2131371051);
                         if (textView2 != null) {
-                            return new DialogReportPhotoMenuBinding((FrameLayout) view, shapeLinearLayout, linearLayout, frameLayout, textView, textView2);
+                            return new DialogReportPhotoMenuBinding((FrameLayout) view, findViewById, linearLayout, frameLayout, textView, textView2);
                         }
                         str = "tvCancel";
                     } else {

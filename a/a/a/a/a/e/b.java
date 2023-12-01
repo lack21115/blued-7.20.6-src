@@ -6,13 +6,13 @@ import java.io.UnsupportedEncodingException;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ boolean f1351a = !b.class.desiredAssertionStatus();
+    public static final /* synthetic */ boolean f1303a = !b.class.desiredAssertionStatus();
 
     /* loaded from: source-8756600-dex2jar.jar:a/a/a/a/a/e/b$a.class */
     public static abstract class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public byte[] f1352a;
+        public byte[] f1304a;
         public int b;
     }
 
@@ -29,15 +29,15 @@ public final class b {
         public static final /* synthetic */ boolean e = !b.class.desiredAssertionStatus();
 
         /* renamed from: c  reason: collision with root package name */
-        public static final byte[] f1353c = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
+        public static final byte[] f1305c = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 43, 47};
         public static final byte[] d = {65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 45, 95};
 
         public C0008b(int i, byte[] bArr) {
-            this.f1352a = bArr;
+            this.f1304a = bArr;
             this.f = (i & 1) == 0;
             this.g = (i & 2) == 0;
             this.h = (i & 4) != 0;
-            this.j = (i & 8) == 0 ? f1353c : d;
+            this.j = (i & 8) == 0 ? f1305c : d;
             this.i = new byte[2];
             this.k = 0;
             this.l = this.g ? 19 : -1;
@@ -69,7 +69,7 @@ public final class b {
 
     public static String a(byte[] bArr, int i) {
         try {
-            return new String(b(bArr, i), "US-ASCII");
+            return new String(b(bArr, i), com.anythink.expressad.exoplayer.b.i);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }
@@ -95,10 +95,10 @@ public final class b {
                 i7 = i4 + ((((i2 - 1) / 57) + 1) * (c0008b.h ? 2 : 1));
             }
         }
-        c0008b.f1352a = new byte[i7];
+        c0008b.f1304a = new byte[i7];
         c0008b.a(bArr, i, i2, true);
-        if (f1351a || c0008b.b == i7) {
-            return c0008b.f1352a;
+        if (f1303a || c0008b.b == i7) {
+            return c0008b.f1304a;
         }
         throw new AssertionError();
     }

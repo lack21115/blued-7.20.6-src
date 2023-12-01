@@ -13,41 +13,41 @@ import java.util.Set;
 public class gi implements gm {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f41436a;
+    private String f27745a;
 
     /* renamed from: a  reason: collision with other field name */
-    private List<gi> f510a;
+    private List<gi> f463a;
 
     /* renamed from: a  reason: collision with other field name */
-    private String[] f511a;
+    private String[] f464a;
     private String b;
 
     /* renamed from: b  reason: collision with other field name */
-    private String[] f512b;
+    private String[] f465b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f41437c;
+    private String f27746c;
 
     public gi(String str, String str2, String[] strArr, String[] strArr2) {
-        this.f511a = null;
-        this.f512b = null;
-        this.f510a = null;
-        this.f41436a = str;
+        this.f464a = null;
+        this.f465b = null;
+        this.f463a = null;
+        this.f27745a = str;
         this.b = str2;
-        this.f511a = strArr;
-        this.f512b = strArr2;
+        this.f464a = strArr;
+        this.f465b = strArr2;
     }
 
     public gi(String str, String str2, String[] strArr, String[] strArr2, String str3, List<gi> list) {
-        this.f511a = null;
-        this.f512b = null;
-        this.f510a = null;
-        this.f41436a = str;
+        this.f464a = null;
+        this.f465b = null;
+        this.f463a = null;
+        this.f27745a = str;
         this.b = str2;
-        this.f511a = strArr;
-        this.f512b = strArr2;
-        this.f41437c = str3;
-        this.f510a = list;
+        this.f464a = strArr;
+        this.f465b = strArr2;
+        this.f27746c = str3;
+        this.f463a = list;
     }
 
     public static gi a(Bundle bundle) {
@@ -105,85 +105,85 @@ public class gi implements gm {
             if (i2 >= giVarArr.length) {
                 return parcelableArr;
             }
-            parcelableArr[i2] = giVarArr[i2].m11810a();
+            parcelableArr[i2] = giVarArr[i2].m8760a();
             i = i2 + 1;
         }
     }
 
     public Bundle a() {
         Bundle bundle = new Bundle();
-        bundle.putString("ext_ele_name", this.f41436a);
+        bundle.putString("ext_ele_name", this.f27745a);
         bundle.putString("ext_ns", this.b);
-        bundle.putString("ext_text", this.f41437c);
+        bundle.putString("ext_text", this.f27746c);
         Bundle bundle2 = new Bundle();
-        String[] strArr = this.f511a;
+        String[] strArr = this.f464a;
         if (strArr != null && strArr.length > 0) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                String[] strArr2 = this.f511a;
+                String[] strArr2 = this.f464a;
                 if (i2 >= strArr2.length) {
                     break;
                 }
-                bundle2.putString(strArr2[i2], this.f512b[i2]);
+                bundle2.putString(strArr2[i2], this.f465b[i2]);
                 i = i2 + 1;
             }
         }
         bundle.putBundle("attributes", bundle2);
-        List<gi> list = this.f510a;
+        List<gi> list = this.f463a;
         if (list != null && list.size() > 0) {
-            bundle.putParcelableArray("children", a(this.f510a));
+            bundle.putParcelableArray("children", a(this.f463a));
         }
         return bundle;
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public Parcelable m11810a() {
+    public Parcelable m8760a() {
         return a();
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public String m11811a() {
-        return this.f41436a;
+    public String m8761a() {
+        return this.f27745a;
     }
 
     public String a(String str) {
         if (str == null) {
             throw new IllegalArgumentException();
         }
-        if (this.f511a == null) {
+        if (this.f464a == null) {
             return null;
         }
         int i = 0;
         while (true) {
             int i2 = i;
-            String[] strArr = this.f511a;
+            String[] strArr = this.f464a;
             if (i2 >= strArr.length) {
                 return null;
             }
             if (str.equals(strArr[i2])) {
-                return this.f512b[i2];
+                return this.f465b[i2];
             }
             i = i2 + 1;
         }
     }
 
     public void a(gi giVar) {
-        if (this.f510a == null) {
-            this.f510a = new ArrayList();
+        if (this.f463a == null) {
+            this.f463a = new ArrayList();
         }
-        if (this.f510a.contains(giVar)) {
+        if (this.f463a.contains(giVar)) {
             return;
         }
-        this.f510a.add(giVar);
+        this.f463a.add(giVar);
     }
 
     /* renamed from: a  reason: collision with other method in class */
-    public void m11812a(String str) {
+    public void m8762a(String str) {
         if (TextUtils.isEmpty(str)) {
-            this.f41437c = str;
+            this.f27746c = str;
         } else {
-            this.f41437c = gw.a(str);
+            this.f27746c = gw.a(str);
         }
     }
 
@@ -192,53 +192,53 @@ public class gi implements gm {
     }
 
     public String c() {
-        return !TextUtils.isEmpty(this.f41437c) ? gw.b(this.f41437c) : this.f41437c;
+        return !TextUtils.isEmpty(this.f27746c) ? gw.b(this.f27746c) : this.f27746c;
     }
 
     @Override // com.xiaomi.push.gm
     public String d() {
         StringBuilder sb = new StringBuilder();
         sb.append(SimpleComparison.LESS_THAN_OPERATION);
-        sb.append(this.f41436a);
+        sb.append(this.f27745a);
         if (!TextUtils.isEmpty(this.b)) {
             sb.append(" xmlns=\"");
             sb.append(this.b);
             sb.append("\"");
         }
-        String[] strArr = this.f511a;
+        String[] strArr = this.f464a;
         if (strArr != null && strArr.length > 0) {
             int i = 0;
             while (true) {
                 int i2 = i;
-                if (i2 >= this.f511a.length) {
+                if (i2 >= this.f464a.length) {
                     break;
                 }
-                if (!TextUtils.isEmpty(this.f512b[i2])) {
+                if (!TextUtils.isEmpty(this.f465b[i2])) {
                     sb.append(" ");
-                    sb.append(this.f511a[i2]);
+                    sb.append(this.f464a[i2]);
                     sb.append("=\"");
-                    sb.append(gw.a(this.f512b[i2]));
+                    sb.append(gw.a(this.f465b[i2]));
                     sb.append("\"");
                 }
                 i = i2 + 1;
             }
         }
-        if (TextUtils.isEmpty(this.f41437c)) {
-            List<gi> list = this.f510a;
+        if (TextUtils.isEmpty(this.f27746c)) {
+            List<gi> list = this.f463a;
             if (list == null || list.size() <= 0) {
                 sb.append("/>");
                 return sb.toString();
             }
             sb.append(SimpleComparison.GREATER_THAN_OPERATION);
-            for (gi giVar : this.f510a) {
+            for (gi giVar : this.f463a) {
                 sb.append(giVar.d());
             }
         } else {
             sb.append(SimpleComparison.GREATER_THAN_OPERATION);
-            sb.append(this.f41437c);
+            sb.append(this.f27746c);
         }
         sb.append("</");
-        sb.append(this.f41436a);
+        sb.append(this.f27745a);
         sb.append(SimpleComparison.GREATER_THAN_OPERATION);
         return sb.toString();
     }

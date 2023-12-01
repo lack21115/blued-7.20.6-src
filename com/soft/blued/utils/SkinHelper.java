@@ -12,7 +12,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SkinHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SkinHelper f34771a = new SkinHelper();
+    public static final SkinHelper f21080a = new SkinHelper();
 
     private SkinHelper() {
     }

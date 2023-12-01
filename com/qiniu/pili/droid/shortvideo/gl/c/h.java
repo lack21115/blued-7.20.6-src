@@ -9,7 +9,7 @@ public class h extends k {
     private long f = -1;
 
     /* renamed from: c  reason: collision with root package name */
-    private e f27719c = new e();
+    private e f14031c = new e();
     private e d = new e();
 
     public h(long j) {
@@ -44,16 +44,16 @@ public class h extends k {
 
     public int a(int i, int i2, long j) {
         if (i2 <= 0) {
-            a(this.f27719c, i, 1.0f, true);
+            a(this.f14031c, i, 1.0f, true);
             return this.b;
         } else if (com.qiniu.pili.droid.shortvideo.f.j.a(this.e) < j) {
-            a(this.f27719c, i, 1.0f, true);
+            a(this.f14031c, i, 1.0f, true);
             return this.b;
         } else {
             if (this.f == -1) {
                 this.f = 0L;
             }
-            a(this.f27719c, i, a(j), true);
+            a(this.f14031c, i, a(j), true);
             a(this.d, i2, c(j), false);
             return this.b;
         }
@@ -72,7 +72,7 @@ public class h extends k {
             return this.b;
         } else {
             if (i > 0) {
-                a(this.f27719c, i, c(j), true);
+                a(this.f14031c, i, c(j), true);
                 a(this.d, i2, a(j), false);
             } else {
                 a(this.d, i2, a(j), true);
@@ -83,21 +83,21 @@ public class h extends k {
 
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.k, com.qiniu.pili.droid.shortvideo.gl.c.g
     public boolean a(int i, int i2) {
-        return this.f27719c.a(i, i2) && this.d.a(i, i2) && super.a(i, i2);
+        return this.f14031c.a(i, i2) && this.d.a(i, i2) && super.a(i, i2);
     }
 
     public boolean a(int i, int i2, int i3, int i4, PLDisplayMode pLDisplayMode) {
-        return (pLDisplayMode == PLDisplayMode.FIT ? this.f27719c.a(i, i2, PLDisplayMode.FIT) : this.f27719c.b()) && (pLDisplayMode == PLDisplayMode.FIT ? this.d.a(i3, i4, PLDisplayMode.FIT) : this.d.b()) && super.b();
+        return (pLDisplayMode == PLDisplayMode.FIT ? this.f14031c.a(i, i2, PLDisplayMode.FIT) : this.f14031c.b()) && (pLDisplayMode == PLDisplayMode.FIT ? this.d.a(i3, i4, PLDisplayMode.FIT) : this.d.b()) && super.b();
     }
 
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.k, com.qiniu.pili.droid.shortvideo.gl.c.g
     public boolean b() {
-        return this.f27719c.b() && this.d.b() && super.b();
+        return this.f14031c.b() && this.d.b() && super.b();
     }
 
     @Override // com.qiniu.pili.droid.shortvideo.gl.c.k, com.qiniu.pili.droid.shortvideo.gl.c.g
     public void f() {
-        this.f27719c.f();
+        this.f14031c.f();
         this.d.f();
         super.f();
     }

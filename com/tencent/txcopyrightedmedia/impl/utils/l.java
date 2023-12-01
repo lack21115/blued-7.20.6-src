@@ -6,7 +6,7 @@ import com.tencent.txcopyrightedmedia.impl.utils.v;
 public final class l implements v.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public b f40108a = null;
+    public b f26417a = null;
 
     /* JADX WARN: Can't wrap try/catch for region: R(18:44|45|(2:47|(16:49|50|51|(2:52|(4:54|55|(4:57|58|59|(2:61|62)(1:64))(1:65)|63)(1:66))|67|68|(2:70|71)|73|74|75|76|(1:78)|79|(1:81)(1:84)|82|83))|88|51|(3:52|(0)(0)|63)|67|68|(0)|73|74|75|76|(0)|79|(0)(0)|82|83) */
     /* JADX WARN: Removed duplicated region for block: B:116:0x0375 A[EDGE_INSN: B:116:0x0375->B:62:0x0375 ?: BREAK  , SYNTHETIC] */

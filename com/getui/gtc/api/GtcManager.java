@@ -62,7 +62,7 @@ public class GtcManager implements Subscriber {
     @Deprecated
     public void init(Context context, GtcIdCallback.Stub stub) {
         if (CommonUtil.isGtcProcess()) {
-            a.C0342a.a().a(stub);
+            a.C0172a.a().a(stub);
             return;
         }
         GtcProvider.setContext(context);
@@ -74,7 +74,7 @@ public class GtcManager implements Subscriber {
 
     public String initialize(Context context, GtcIdCallback.Stub stub) {
         if (CommonUtil.isGtcProcess()) {
-            return a.C0342a.a().a(stub);
+            return a.C0172a.a().a(stub);
         }
         GtcProvider.setContext(context);
         Bundle createBundle = createBundle();
@@ -93,7 +93,7 @@ public class GtcManager implements Subscriber {
     public void loadSdk(SdkInfo sdkInfo) {
         checkSdkInfo(sdkInfo);
         if (CommonUtil.isGtcProcess()) {
-            a.C0342a.a().a(sdkInfo);
+            a.C0172a.a().a(sdkInfo);
             return;
         }
         Bundle createBundle = createBundle();
@@ -131,12 +131,12 @@ public class GtcManager implements Subscriber {
                 z = false;
             }
             if (!z) {
-                bundle2.putString(ProcessSwitchContract.METHOD_RETURN, a.C0342a.a().a(GtcIdCallback.Stub.asInterface(BundleCompat.getBinder(bundle, "gtc-1-2"))));
+                bundle2.putString(ProcessSwitchContract.METHOD_RETURN, a.C0172a.a().a(GtcIdCallback.Stub.asInterface(BundleCompat.getBinder(bundle, "gtc-1-2"))));
             } else if (z) {
-                a.C0342a.a().a((SdkInfo) bundle.getParcelable("gtc-2-2"));
+                a.C0172a.a().a((SdkInfo) bundle.getParcelable("gtc-2-2"));
             } else if (z) {
                 bundle.getString("gtc-3-2");
-                a.C0342a.a().a(bundle.getIntArray("gtc-3-3"));
+                a.C0172a.a().a(bundle.getIntArray("gtc-3-3"));
             }
         } catch (Throwable th2) {
             try {
@@ -154,7 +154,7 @@ public class GtcManager implements Subscriber {
 
     public void removeExt(String str, int[] iArr) {
         if (CommonUtil.isGtcProcess()) {
-            a.C0342a.a().a(iArr);
+            a.C0172a.a().a(iArr);
             return;
         }
         Bundle createBundle = createBundle();

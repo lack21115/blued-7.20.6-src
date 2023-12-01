@@ -29,11 +29,11 @@ public final class b<T extends i> implements f<T> {
     private Object C;
 
     /* renamed from: a  reason: collision with root package name */
-    final n f7238a;
+    final n f4399a;
     final UUID b;
 
     /* renamed from: c  reason: collision with root package name */
-    final b<T>.HandlerC0122b f7239c;
+    final b<T>.HandlerC0051b f4400c;
     private final j<T> m;
     private final c<T> n;
     private final e.a o;
@@ -84,14 +84,14 @@ public final class b<T extends i> implements f<T> {
             try {
                 int i2 = message.what;
                 if (i2 == 0) {
-                    e = b.this.f7238a.a();
+                    e = b.this.f4399a.a();
                 } else if (i2 != 1) {
                     throw new RuntimeException();
                 } else {
                     Pair pair = (Pair) obj;
                     F f = pair.first;
                     S s = pair.second;
-                    e = b.this.f7238a.b();
+                    e = b.this.f4399a.b();
                 }
             } catch (Exception e) {
                 e = e;
@@ -107,15 +107,14 @@ public final class b<T extends i> implements f<T> {
                     return;
                 }
             }
-            b.this.f7239c.obtainMessage(message.what, Pair.create(obj, e)).sendToTarget();
+            b.this.f4400c.obtainMessage(message.what, Pair.create(obj, e)).sendToTarget();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.anythink.expressad.exoplayer.d.b$b  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/exoplayer/d/b$b.class */
-    public final class HandlerC0122b extends Handler {
-        public HandlerC0122b(Looper looper) {
+    final class HandlerC0051b extends Handler {
+        public HandlerC0051b(Looper looper) {
             super(looper);
         }
 
@@ -151,11 +150,11 @@ public final class b<T extends i> implements f<T> {
         this.A = bArr;
         this.o = bArr != null ? null : aVar;
         this.q = hashMap;
-        this.f7238a = nVar;
+        this.f4399a = nVar;
         this.s = i3;
         this.r = aVar2;
         this.t = 2;
-        this.f7239c = new HandlerC0122b(looper);
+        this.f4400c = new HandlerC0051b(looper);
         HandlerThread handlerThread = new HandlerThread("DrmRequestHandler");
         this.v = handlerThread;
         handlerThread.start();
@@ -169,9 +168,9 @@ public final class b<T extends i> implements f<T> {
         byte[] bArr2 = i2 == 3 ? this.A : this.z;
         e.a aVar = this.o;
         if (aVar != null) {
-            byte[] bArr3 = aVar.f7256c;
+            byte[] bArr3 = aVar.f4417c;
             String str3 = this.o.b;
-            str2 = this.o.f7255a;
+            str2 = this.o.f4416a;
             bArr = bArr3;
             str = str3;
         } else {
@@ -395,7 +394,7 @@ public final class b<T extends i> implements f<T> {
 
     public final boolean a(byte[] bArr) {
         e.a aVar = this.o;
-        return Arrays.equals(aVar != null ? aVar.f7256c : null, bArr);
+        return Arrays.equals(aVar != null ? aVar.f4417c : null, bArr);
     }
 
     public final boolean b() {
@@ -403,7 +402,7 @@ public final class b<T extends i> implements f<T> {
         this.u = i2;
         if (i2 == 0) {
             this.t = 0;
-            this.f7239c.removeCallbacksAndMessages(null);
+            this.f4400c.removeCallbacksAndMessages(null);
             this.w.removeCallbacksAndMessages(null);
             this.w = null;
             this.v.quit();

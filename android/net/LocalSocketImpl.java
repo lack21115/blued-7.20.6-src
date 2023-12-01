@@ -76,9 +76,8 @@ public class LocalSocketImpl {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-9557208-dex2jar.jar:android/net/LocalSocketImpl$SocketOutputStream.class */
-    public class SocketOutputStream extends OutputStream {
+    class SocketOutputStream extends OutputStream {
         SocketOutputStream() {
         }
 

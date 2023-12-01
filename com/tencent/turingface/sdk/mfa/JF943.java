@@ -9,22 +9,22 @@ import java.util.HashMap;
 public final class JF943 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static HashMap<Class<?>, HashMap<String, Field>> f39887a;
+    public static HashMap<Class<?>, HashMap<String, Field>> f26196a;
     public static HashMap<Class<?>, HashMap<String, Method>> b;
 
     static {
         new HashMap();
-        f39887a = new HashMap<>();
+        f26196a = new HashMap<>();
         b = new HashMap<>();
     }
 
     public static Object a(Class<?> cls, String str, Object obj) {
         try {
-            HashMap<String, Field> hashMap = f39887a.get(cls);
+            HashMap<String, Field> hashMap = f26196a.get(cls);
             HashMap<String, Field> hashMap2 = hashMap;
             if (hashMap == null) {
                 hashMap2 = new HashMap<>();
-                f39887a.put(cls, hashMap2);
+                f26196a.put(cls, hashMap2);
             }
             Field field = hashMap2.get(str);
             Field field2 = field;

@@ -29,16 +29,13 @@ import com.blued.im.private_chat.ReceiptOuterClass;
 import com.blued.im.sync.SyncOuterClass;
 import com.google.protobuf.Any;
 import com.qiniu.android.dns.DnsManager;
+import io.grpc.internal.GrpcUtil;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/im/IM.class */
 public final class IM {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static volatile ChannelManager f11329a;
+    private static volatile ChannelManager a;
     private static volatile IMConnector b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final IMThreadManager f11330c = new IMThreadManager(4, 10);
+    private static final IMThreadManager c = new IMThreadManager(4, 10);
 
     private IM() {
     }
@@ -50,8 +47,8 @@ public final class IM {
     }
 
     public static void a(int i, int i2, int i3, int i4, Any any, OnPrivateChatResponseListener onPrivateChatResponseListener) {
-        if (f11329a != null) {
-            new PrivateChat(f11329a, f11330c).a(i, i2, i3, i4, any, onPrivateChatResponseListener);
+        if (a != null) {
+            new PrivateChat(a, c).a(i, i2, i3, i4, any, onPrivateChatResponseListener);
         }
     }
 
@@ -61,17 +58,17 @@ public final class IM {
                 if (TextUtils.isEmpty(str)) {
                     return;
                 }
-                if (b == null || f11329a == null || !f11329a.a().equals(str)) {
+                if (b == null || a == null || !a.a().equals(str)) {
                     if (b != null) {
                         b.f();
                         b = null;
                     }
-                    if (f11329a != null) {
-                        f11329a.c();
-                        f11329a = null;
+                    if (a != null) {
+                        a.c();
+                        a = null;
                     }
-                    f11329a = new ChannelManager(context, str, 443, dnsManager);
-                    b = new IMConnector(f11329a);
+                    a = new ChannelManager(context, str, GrpcUtil.DEFAULT_PORT_SSL, dnsManager);
+                    b = new IMConnector(a);
                     b.a("blued-grpc-im");
                     b.b(true);
                     b.a(true);
@@ -89,33 +86,33 @@ public final class IM {
     }
 
     public static void a(AudioChatroomOuterClass.Request.Builder builder, AudioChatroom.OnAudioChatroomResponseListener onAudioChatroomResponseListener) {
-        if (f11329a != null) {
-            new AudioChatroom(f11329a, f11330c).a(builder, onAudioChatroomResponseListener);
+        if (a != null) {
+            new AudioChatroom(a, c).a(builder, onAudioChatroomResponseListener);
         }
     }
 
     public static void a(Chat1V1.Chat1v1Request chat1v1Request, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new Chat1v1(f11329a, f11330c).a(chat1v1Request, onFinishListener);
+        if (a != null) {
+            new Chat1v1(a, c).a(chat1v1Request, onFinishListener);
         }
     }
 
     public static void a(ReceiptOuterClass.ReceiptRequest receiptRequest, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new DeleteAllSession(f11329a, f11330c).a(receiptRequest, onFinishListener);
+        if (a != null) {
+            new DeleteAllSession(a, c).a(receiptRequest, onFinishListener);
         }
     }
 
     public static void a(SyncOuterClass.SyncRequest syncRequest, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new Sync(f11329a, f11330c).a(syncRequest, onFinishListener);
+        if (a != null) {
+            new Sync(a, c).a(syncRequest, onFinishListener);
         }
     }
 
     public static void a(String str) {
         String str2;
-        if (f11329a != null) {
-            ChannelManager channelManager = f11329a;
+        if (a != null) {
+            ChannelManager channelManager = a;
             if (TextUtils.isEmpty(str)) {
                 str2 = "";
             } else {
@@ -126,14 +123,14 @@ public final class IM {
     }
 
     public static void a(short s, int i, int i2, long j, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new DeleteBurnMessage(f11329a, f11330c).a(s, i, i2, j, onFinishListener);
+        if (a != null) {
+            new DeleteBurnMessage(a, c).a(s, i, i2, j, onFinishListener);
         }
     }
 
     public static void a(short s, int i, int i2, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new GetSessionInfo(f11329a, f11330c).a(s, i, i2, onFinishListener);
+        if (a != null) {
+            new GetSessionInfo(a, c).a(s, i, i2, onFinishListener);
         }
     }
 
@@ -142,8 +139,8 @@ public final class IM {
     }
 
     public static void a(boolean z, ReceiptOuterClass.ReceiptRequest receiptRequest, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new ReceiptGot(f11329a, f11330c, z).a(receiptRequest, onFinishListener);
+        if (a != null) {
+            new ReceiptGot(a, c, z).a(receiptRequest, onFinishListener);
         }
     }
 
@@ -154,8 +151,8 @@ public final class IM {
     }
 
     public static void b(int i, int i2, int i3, int i4, Any any, OnPrivateChatResponseListener onPrivateChatResponseListener) {
-        if (f11329a != null) {
-            new GroupChat(f11329a, f11330c).a(i, i2, i3, i4, any, onPrivateChatResponseListener);
+        if (a != null) {
+            new GroupChat(a, c).a(i, i2, i3, i4, any, onPrivateChatResponseListener);
         }
     }
 
@@ -166,8 +163,8 @@ public final class IM {
     }
 
     public static void b(boolean z, ReceiptOuterClass.ReceiptRequest receiptRequest, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new ReceiptRead(f11329a, f11330c, z).a(receiptRequest, onFinishListener);
+        if (a != null) {
+            new ReceiptRead(a, c, z).a(receiptRequest, onFinishListener);
         }
     }
 
@@ -176,20 +173,20 @@ public final class IM {
     }
 
     public static void c(boolean z, ReceiptOuterClass.ReceiptRequest receiptRequest, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new ReceiptRetract(f11329a, f11330c, z).a(receiptRequest, onFinishListener);
+        if (a != null) {
+            new ReceiptRetract(a, c, z).a(receiptRequest, onFinishListener);
         }
     }
 
     public static void d(boolean z, ReceiptOuterClass.ReceiptRequest receiptRequest, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new DeleteMessage(f11329a, f11330c, z).a(receiptRequest, onFinishListener);
+        if (a != null) {
+            new DeleteMessage(a, c, z).a(receiptRequest, onFinishListener);
         }
     }
 
     public static void e(boolean z, ReceiptOuterClass.ReceiptRequest receiptRequest, GrpcUnaryCall.OnFinishListener onFinishListener) {
-        if (f11329a != null) {
-            new DeleteSession(f11329a, f11330c, z).a(receiptRequest, onFinishListener);
+        if (a != null) {
+            new DeleteSession(a, c, z).a(receiptRequest, onFinishListener);
         }
     }
 }

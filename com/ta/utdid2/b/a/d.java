@@ -15,42 +15,41 @@ public class d {
     private static final Object b = new Object();
 
     /* renamed from: a  reason: collision with root package name */
-    private File f34902a;
+    private File f21211a;
 
     /* renamed from: a  reason: collision with other field name */
-    private final Object f67a = new Object();
+    private final Object f20a = new Object();
 
     /* renamed from: a  reason: collision with other field name */
-    private HashMap<File, a> f68a = new HashMap<>();
+    private HashMap<File, a> f21a = new HashMap<>();
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-8457232-dex2jar.jar:com/ta/utdid2/b/a/d$a.class */
-    public static final class a implements b {
+    static final class a implements b {
 
         /* renamed from: c  reason: collision with root package name */
-        private static final Object f34903c = new Object();
+        private static final Object f21212c = new Object();
 
         /* renamed from: a  reason: collision with root package name */
-        private Map f34904a;
+        private Map f21213a;
 
         /* renamed from: a  reason: collision with other field name */
-        private WeakHashMap<b.InterfaceC0892b, Object> f69a;
+        private WeakHashMap<b.InterfaceC0722b, Object> f22a;
         private final File b;
 
         /* renamed from: c  reason: collision with other field name */
-        private final int f70c;
+        private final int f23c;
 
         /* renamed from: c  reason: collision with other field name */
-        private final File f71c;
+        private final File f24c;
         private boolean j = false;
 
         /* renamed from: com.ta.utdid2.b.a.d$a$a  reason: collision with other inner class name */
         /* loaded from: source-8457232-dex2jar.jar:com/ta/utdid2/b/a/d$a$a.class */
-        public final class C0893a implements b.a {
+        public final class C0723a implements b.a {
             private final Map<String, Object> b = new HashMap();
             private boolean k = false;
 
-            public C0893a() {
+            public C0723a() {
             }
 
             @Override // com.ta.utdid2.b.a.b.a
@@ -113,29 +112,29 @@ public class d {
             public boolean commit() {
                 boolean z;
                 ArrayList arrayList;
-                HashSet<b.InterfaceC0892b> hashSet;
+                HashSet<b.InterfaceC0722b> hashSet;
                 boolean e;
                 synchronized (d.b) {
-                    z = a.this.f69a.size() > 0;
+                    z = a.this.f22a.size() > 0;
                     arrayList = null;
                     if (z) {
                         arrayList = new ArrayList();
-                        hashSet = new HashSet(a.this.f69a.keySet());
+                        hashSet = new HashSet(a.this.f22a.keySet());
                     } else {
                         hashSet = null;
                     }
                     synchronized (this) {
                         if (this.k) {
-                            a.this.f34904a.clear();
+                            a.this.f21213a.clear();
                             this.k = false;
                         }
                         for (Map.Entry<String, Object> entry : this.b.entrySet()) {
                             String key = entry.getKey();
                             Object value = entry.getValue();
                             if (value == this) {
-                                a.this.f34904a.remove(key);
+                                a.this.f21213a.remove(key);
                             } else {
-                                a.this.f34904a.put(key, value);
+                                a.this.f21213a.put(key, value);
                             }
                             if (z) {
                                 arrayList.add(key);
@@ -156,9 +155,9 @@ public class d {
                             break;
                         }
                         String str = (String) arrayList.get(i);
-                        for (b.InterfaceC0892b interfaceC0892b : hashSet) {
-                            if (interfaceC0892b != null) {
-                                interfaceC0892b.a(a.this, str);
+                        for (b.InterfaceC0722b interfaceC0722b : hashSet) {
+                            if (interfaceC0722b != null) {
+                                interfaceC0722b.a(a.this, str);
                             }
                         }
                         size = i;
@@ -170,10 +169,10 @@ public class d {
 
         a(File file, int i, Map map) {
             this.b = file;
-            this.f71c = d.a(file);
-            this.f70c = i;
-            this.f34904a = map == null ? new HashMap() : map;
-            this.f69a = new WeakHashMap<>();
+            this.f24c = d.a(file);
+            this.f23c = i;
+            this.f21213a = map == null ? new HashMap() : map;
+            this.f22a = new WeakHashMap<>();
         }
 
         private FileOutputStream a(File file) {
@@ -196,9 +195,9 @@ public class d {
         /* JADX INFO: Access modifiers changed from: private */
         public boolean e() {
             if (this.b.exists()) {
-                if (this.f71c.exists()) {
+                if (this.f24c.exists()) {
                     this.b.delete();
-                } else if (!this.b.renameTo(this.f71c)) {
+                } else if (!this.b.renameTo(this.f24c)) {
                     return false;
                 }
             }
@@ -207,9 +206,9 @@ public class d {
                 if (a2 == null) {
                     return false;
                 }
-                e.a(this.f34904a, a2);
+                e.a(this.f21213a, a2);
                 a2.close();
-                this.f71c.delete();
+                this.f24c.delete();
                 return true;
             } catch (Exception e) {
                 if (this.b.exists()) {
@@ -222,13 +221,13 @@ public class d {
 
         @Override // com.ta.utdid2.b.a.b
         public b.a a() {
-            return new C0893a();
+            return new C0723a();
         }
 
         public void a(Map map) {
             if (map != null) {
                 synchronized (this) {
-                    this.f34904a = map;
+                    this.f21213a = map;
                 }
             }
         }
@@ -256,7 +255,7 @@ public class d {
         public Map<String, ?> getAll() {
             HashMap hashMap;
             synchronized (this) {
-                hashMap = new HashMap(this.f34904a);
+                hashMap = new HashMap(this.f21213a);
             }
             return hashMap;
         }
@@ -264,7 +263,7 @@ public class d {
         @Override // com.ta.utdid2.b.a.b
         public long getLong(String str, long j) {
             synchronized (this) {
-                Long l = (Long) this.f34904a.get(str);
+                Long l = (Long) this.f21213a.get(str);
                 if (l != null) {
                     j = l.longValue();
                 }
@@ -275,7 +274,7 @@ public class d {
         @Override // com.ta.utdid2.b.a.b
         public String getString(String str, String str2) {
             synchronized (this) {
-                String str3 = (String) this.f34904a.get(str);
+                String str3 = (String) this.f21213a.get(str);
                 if (str3 != null) {
                     str2 = str3;
                 }
@@ -288,13 +287,13 @@ public class d {
         if (str == null || str.length() <= 0) {
             throw new RuntimeException("Directory can not be empty");
         }
-        this.f34902a = new File(str);
+        this.f21211a = new File(str);
     }
 
     private File a() {
         File file;
-        synchronized (this.f67a) {
-            file = this.f34902a;
+        synchronized (this.f20a) {
+            file = this.f21211a;
         }
         return file;
     }

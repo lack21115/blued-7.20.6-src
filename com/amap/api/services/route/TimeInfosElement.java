@@ -22,13 +22,9 @@ public class TimeInfosElement implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    int f5771a;
+    int a;
     float b;
-
-    /* renamed from: c  reason: collision with root package name */
-    float f5772c;
+    float c;
     int d;
     private List<TMC> e;
 
@@ -38,9 +34,9 @@ public class TimeInfosElement implements Parcelable {
 
     public TimeInfosElement(Parcel parcel) {
         this.e = new ArrayList();
-        this.f5771a = parcel.readInt();
+        this.a = parcel.readInt();
         this.b = parcel.readFloat();
-        this.f5772c = parcel.readFloat();
+        this.c = parcel.readFloat();
         this.d = parcel.readInt();
         this.e = parcel.createTypedArrayList(TMC.CREATOR);
     }
@@ -55,7 +51,7 @@ public class TimeInfosElement implements Parcelable {
     }
 
     public int getPathindex() {
-        return this.f5771a;
+        return this.a;
     }
 
     public int getRestriction() {
@@ -67,7 +63,7 @@ public class TimeInfosElement implements Parcelable {
     }
 
     public float getTolls() {
-        return this.f5772c;
+        return this.c;
     }
 
     public void setDuration(float f) {
@@ -75,7 +71,7 @@ public class TimeInfosElement implements Parcelable {
     }
 
     public void setPathindex(int i) {
-        this.f5771a = i;
+        this.a = i;
     }
 
     public void setRestriction(int i) {
@@ -87,14 +83,14 @@ public class TimeInfosElement implements Parcelable {
     }
 
     public void setTolls(float f) {
-        this.f5772c = f;
+        this.c = f;
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(this.f5771a);
+        parcel.writeInt(this.a);
         parcel.writeFloat(this.b);
-        parcel.writeFloat(this.f5772c);
+        parcel.writeFloat(this.c);
         parcel.writeInt(this.d);
         parcel.writeTypedList(this.e);
     }

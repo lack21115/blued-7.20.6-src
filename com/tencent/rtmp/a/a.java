@@ -29,25 +29,25 @@ import java.util.Map;
 public final class a extends TXImageSprite {
 
     /* renamed from: a  reason: collision with root package name */
-    private final BitmapFactory.Options f38661a;
+    private final BitmapFactory.Options f24970a;
     private HandlerThread b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Handler f38662c;
+    private Handler f24971c;
     private List<c> d;
     private Map<String, BitmapRegionDecoder> e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.tencent.rtmp.a.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/rtmp/a/a$a.class */
-    public static final class RunnableC1003a implements Runnable {
+    public static final class RunnableC0833a implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<a> f38664a;
+        private WeakReference<a> f24973a;
         private String b;
 
-        public RunnableC1003a(a aVar, String str) {
-            this.f38664a = new WeakReference<>(aVar);
+        public RunnableC0833a(a aVar, String str) {
+            this.f24973a = new WeakReference<>(aVar);
             this.b = str;
         }
 
@@ -85,7 +85,7 @@ public final class a extends TXImageSprite {
             BufferedReader bufferedReader;
             IOException e;
             String readLine;
-            a aVar = this.f38664a.get();
+            a aVar = this.f24973a.get();
             BufferedReader bufferedReader2 = null;
             try {
                 try {
@@ -104,9 +104,9 @@ public final class a extends TXImageSprite {
                                     if (split.length == 2) {
                                         String readLine3 = bufferedReader.readLine();
                                         c cVar = new c((byte) 0);
-                                        cVar.f38667a = a(split[0]);
+                                        cVar.f24976a = a(split[0]);
                                         cVar.b = a(split[1]);
-                                        cVar.f38668c = readLine3;
+                                        cVar.f24977c = readLine3;
                                         int indexOf = readLine3.indexOf("#");
                                         if (indexOf != -1) {
                                             cVar.d = readLine3.substring(0, indexOf);
@@ -180,30 +180,30 @@ public final class a extends TXImageSprite {
     public static final class b implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        private WeakReference<a> f38665a;
+        private WeakReference<a> f24974a;
         private String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private String f38666c;
+        private String f24975c;
 
         public b(a aVar, String str, String str2) {
-            this.f38665a = new WeakReference<>(aVar);
+            this.f24974a = new WeakReference<>(aVar);
             this.b = str;
-            this.f38666c = str2;
+            this.f24975c = str2;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
-            a aVar = this.f38665a.get();
-            if (this.f38665a == null || aVar == null) {
+            a aVar = this.f24974a.get();
+            if (this.f24974a == null || aVar == null) {
                 return;
             }
             InputStream inputStream = null;
             InputStream inputStream2 = null;
             try {
                 try {
-                    InputStream a2 = a.a(this.f38666c);
-                    String lastPathSegment = Uri.parse(this.f38666c).getLastPathSegment();
+                    InputStream a2 = a.a(this.f24975c);
+                    String lastPathSegment = Uri.parse(this.f24975c).getLastPathSegment();
                     if (aVar.e != null) {
                         inputStream2 = a2;
                         inputStream = a2;
@@ -242,11 +242,11 @@ public final class a extends TXImageSprite {
     public static final class c {
 
         /* renamed from: a  reason: collision with root package name */
-        public float f38667a;
+        public float f24976a;
         public float b;
 
         /* renamed from: c  reason: collision with root package name */
-        public String f38668c;
+        public String f24977c;
         public String d;
         public int e;
         public int f;
@@ -263,7 +263,7 @@ public final class a extends TXImageSprite {
 
     public a(Context context) {
         super(context);
-        this.f38661a = new BitmapFactory.Options();
+        this.f24970a = new BitmapFactory.Options();
         ArrayList arrayList = new ArrayList();
         this.d = arrayList;
         this.d = Collections.synchronizedList(arrayList);
@@ -283,10 +283,10 @@ public final class a extends TXImageSprite {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void a() {
-        if (this.f38662c != null) {
+        if (this.f24971c != null) {
             LiteavLog.i("TXImageSprite", " remove all tasks!");
-            this.f38662c.removeCallbacksAndMessages(null);
-            this.f38662c.post(new Runnable() { // from class: com.tencent.rtmp.a.a.1
+            this.f24971c.removeCallbacksAndMessages(null);
+            this.f24971c.post(new Runnable() { // from class: com.tencent.rtmp.a.a.1
                 @Override // java.lang.Runnable
                 public final void run() {
                     if (a.this.d != null) {
@@ -315,12 +315,12 @@ public final class a extends TXImageSprite {
         int size = this.d.size() - 1;
         while (true) {
             int i2 = ((size - i) / 2) + i;
-            if (this.d.get(i2).f38667a <= f && this.d.get(i2).b > f) {
+            if (this.d.get(i2).f24976a <= f && this.d.get(i2).b > f) {
                 cVar = this.d.get(i2);
                 break;
             } else if (i < size) {
                 if (f < this.d.get(i2).b) {
-                    if (f >= this.d.get(i2).f38667a) {
+                    if (f >= this.d.get(i2).f24976a) {
                         cVar = null;
                         break;
                     }
@@ -345,13 +345,13 @@ public final class a extends TXImageSprite {
         rect.top = cVar.f;
         rect.right = cVar.e + cVar.g;
         rect.bottom = cVar.f + cVar.h;
-        return bitmapRegionDecoder.decodeRegion(rect, this.f38661a);
+        return bitmapRegionDecoder.decodeRegion(rect, this.f24970a);
     }
 
     @Override // com.tencent.rtmp.TXImageSprite
     public final void release() {
         a();
-        if (this.b == null || this.f38662c == null) {
+        if (this.b == null || this.f24971c == null) {
             return;
         }
         if (LiteavSystemInfo.getSystemOSVersionInt() >= 18) {
@@ -359,7 +359,7 @@ public final class a extends TXImageSprite {
         } else {
             this.b.quit();
         }
-        this.f38662c = null;
+        this.f24971c = null;
         this.b = null;
     }
 
@@ -374,14 +374,14 @@ public final class a extends TXImageSprite {
             HandlerThread handlerThread = new HandlerThread("SuperVodThumbnailsWorkThread");
             this.b = handlerThread;
             handlerThread.start();
-            this.f38662c = new Handler(this.b.getLooper());
+            this.f24971c = new Handler(this.b.getLooper());
         }
-        this.f38662c.post(new RunnableC1003a(this, str));
+        this.f24971c.post(new RunnableC0833a(this, str));
         if (list == null || list.size() == 0) {
             return;
         }
         for (String str2 : list) {
-            this.f38662c.post(new b(this, str, str2));
+            this.f24971c.post(new b(this, str, str2));
         }
     }
 }

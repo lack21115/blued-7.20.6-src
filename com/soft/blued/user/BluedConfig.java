@@ -37,14 +37,14 @@ import java.util.List;
 public class BluedConfig {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile BluedConfig f34698c;
+    private static volatile BluedConfig f21007c;
     private static long f = 5000;
     private AppConfigModel d;
     private Gson g;
     private long e = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f34699a = false;
+    public boolean f21008a = false;
     public boolean b = false;
 
     /* loaded from: source-8457232-dex2jar.jar:com/soft/blued/user/BluedConfig$UpdateBluedConfigListner.class */
@@ -72,10 +72,10 @@ public class BluedConfig {
         BluedConfig bluedConfig;
         synchronized (BluedConfig.class) {
             try {
-                if (f34698c == null) {
-                    f34698c = new BluedConfig();
+                if (f21007c == null) {
+                    f21007c = new BluedConfig();
                 }
-                bluedConfig = f34698c;
+                bluedConfig = f21007c;
             } catch (Throwable th) {
                 throw th;
             }
@@ -208,16 +208,15 @@ public class BluedConfig {
             AppHttpUtils.b(new BluedUIHttpResponse<BluedEntityA<AppConfigModel>>(null) { // from class: com.soft.blued.user.BluedConfig.1
 
                 /* renamed from: a  reason: collision with root package name */
-                boolean f34700a = false;
+                boolean f21009a = false;
 
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<AppConfigModel> bluedEntityA) {
                     if (bluedEntityA == null || bluedEntityA.getSingleData() == null) {
                         return;
                     }
-                    BluedConfig.this.d = bluedEntityA.getSingleData();
+                    BluedConfig.this.d = (AppConfigModel) bluedEntityA.getSingleData();
                     LogUtils.c("noticeGetBubbleData.updateConfigData.is_send_feed_msg:" + BluedConfig.this.d.is_send_feed_msg);
                     boolean z = true;
                     if (BluedConfig.this.d.show_net_error_toast != 1) {
@@ -240,7 +239,7 @@ public class BluedConfig {
                         ImageFileLoader.a((IRequestHost) null).a(BluedConfig.this.d.ticktocks_bubble.bubble_pic).a();
                     }
                     if (updateBluedConfigListner == null && BluedConfig.this.d.official_account != null && !TextUtils.isEmpty(BluedConfig.this.d.official_unique_account)) {
-                        SubscribeNumberManager.f32449a.d();
+                        SubscribeNumberManager.f18759a.d();
                     }
                     HashMap hashMap = new HashMap();
                     hashMap.put("user_type", BluedConfig.this.d.user_type);
@@ -258,27 +257,24 @@ public class BluedConfig {
                     }
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str) {
-                    this.f34700a = true;
+                    this.f21009a = true;
                     return super.onUIFailure(i, str);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIFinish() {
                     UpdateBluedConfigListner updateBluedConfigListner2 = updateBluedConfigListner;
                     if (updateBluedConfigListner2 != null) {
-                        if (this.f34700a) {
+                        if (this.f21009a) {
                             updateBluedConfigListner2.b();
                         } else {
                             updateBluedConfigListner2.a();
                         }
                     }
-                    this.f34700a = false;
+                    this.f21009a = false;
                     super.onUIFinish();
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public void onUIStart() {
                     super.onUIStart();
                 }
@@ -351,7 +347,7 @@ public class BluedConfig {
         }
         if (arrayList.size() == 0) {
             arrayList.add(new HomeTopTabModel(1, context.getResources().getString(R.string.find_person)));
-            arrayList.add(new HomeTopTabModel(2, context.getResources().getString(2131887159)));
+            arrayList.add(new HomeTopTabModel(2, context.getResources().getString(R.string.city_feed)));
         }
         return arrayList;
     }

@@ -3,7 +3,6 @@ package com.kuaishou.weapon.p0;
 import android.content.Context;
 import android.os.Build;
 import android.text.TextUtils;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,10 +13,10 @@ public class ai {
     private static final String[] b = {"/data/local/", "/data/local/bin/", "/data/local/xbin/", "/sbin/", "/su/bin/", "/system/bin/", "/system/bin/.ext/", "/system/bin/failsafe/", "/system/sd/xbin/", "/system/usr/we-need-root/", "/system/xbin/", "/cache/", "/data/", "/dev/"};
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f23720a;
+    private Context f10112a;
 
     public ai(Context context) {
-        this.f23720a = context;
+        this.f10112a = context;
     }
 
     private String[] a(String[] strArr) {
@@ -38,7 +37,7 @@ public class ai {
                 }
                 String str2 = split[i2];
                 String str3 = str2;
-                if (!str2.endsWith(BridgeUtil.SPLIT_MARK)) {
+                if (!str2.endsWith("/")) {
                     str3 = str2 + '/';
                 }
                 if (!arrayList.contains(str3)) {

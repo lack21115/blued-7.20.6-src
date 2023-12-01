@@ -1,8 +1,6 @@
 package java.net;
 
-import android.content.ContentResolver;
-import com.cdo.oaps.ad.OapsKey;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
+import com.alipay.sdk.cons.b;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -358,9 +356,9 @@ public final class URL implements Serializable {
                 i = i2 + 1;
             }
         }
-        if (this.protocol.equals(ContentResolver.SCHEME_FILE)) {
+        if (this.protocol.equals("file")) {
             this.streamHandler = new FileHandler();
-        } else if (this.protocol.equals(OapsKey.KEY_FILE_TYPE)) {
+        } else if (this.protocol.equals("ftp")) {
             this.streamHandler = new FtpHandler();
         } else if (this.protocol.equals("http")) {
             try {
@@ -368,13 +366,13 @@ public final class URL implements Serializable {
             } catch (Exception e2) {
                 throw new AssertionError(e2);
             }
-        } else if (this.protocol.equals("https")) {
+        } else if (this.protocol.equals(b.a)) {
             try {
                 this.streamHandler = (URLStreamHandler) Class.forName("com.android.okhttp.HttpsHandler").newInstance();
             } catch (Exception e3) {
                 throw new AssertionError(e3);
             }
-        } else if (this.protocol.equals(ShareConstants.DEXMODE_JAR)) {
+        } else if (this.protocol.equals("jar")) {
             this.streamHandler = new JarHandler();
         }
         if (this.streamHandler != null) {

@@ -15,50 +15,49 @@ import kotlin.reflect.KClass;
 @Metadata
 /* loaded from: source-8756600-dex2jar.jar:androidx/fragment/app/FragmentViewModelLazyKt.class */
 public final class FragmentViewModelLazyKt {
-    public static final /* synthetic */ <VM extends ViewModel> Lazy<VM> activityViewModels(Fragment activityViewModels, Function0<? extends ViewModelProvider.Factory> function0) {
-        Intrinsics.e(activityViewModels, "$this$activityViewModels");
+    public static final /* synthetic */ <VM extends ViewModel> Lazy<VM> activityViewModels(Fragment fragment, Function0<? extends ViewModelProvider.Factory> function0) {
+        Intrinsics.e(fragment, "$this$activityViewModels");
         Intrinsics.a(4, "VM");
         KClass b = Reflection.b(ViewModel.class);
-        FragmentViewModelLazyKt$activityViewModels$1 fragmentViewModelLazyKt$activityViewModels$1 = new FragmentViewModelLazyKt$activityViewModels$1(activityViewModels);
+        FragmentViewModelLazyKt$activityViewModels$1 fragmentViewModelLazyKt$activityViewModels$1 = new FragmentViewModelLazyKt$activityViewModels$1(fragment);
         if (function0 == null) {
-            function0 = new FragmentViewModelLazyKt$activityViewModels$2(activityViewModels);
+            function0 = new FragmentViewModelLazyKt$activityViewModels$2(fragment);
         }
-        return createViewModelLazy(activityViewModels, b, fragmentViewModelLazyKt$activityViewModels$1, function0);
+        return createViewModelLazy(fragment, b, fragmentViewModelLazyKt$activityViewModels$1, function0);
     }
 
-    public static /* synthetic */ Lazy activityViewModels$default(Fragment activityViewModels, Function0 function0, int i, Object obj) {
+    public static /* synthetic */ Lazy activityViewModels$default(Fragment fragment, Function0 function0, int i, Object obj) {
         if ((i & 1) != 0) {
             function0 = null;
         }
-        Intrinsics.e(activityViewModels, "$this$activityViewModels");
+        Intrinsics.e(fragment, "$this$activityViewModels");
         Intrinsics.a(4, "VM");
         KClass b = Reflection.b(ViewModel.class);
-        FragmentViewModelLazyKt$activityViewModels$1 fragmentViewModelLazyKt$activityViewModels$1 = new FragmentViewModelLazyKt$activityViewModels$1(activityViewModels);
+        FragmentViewModelLazyKt$activityViewModels$1 fragmentViewModelLazyKt$activityViewModels$1 = new FragmentViewModelLazyKt$activityViewModels$1(fragment);
         if (function0 == null) {
-            function0 = new FragmentViewModelLazyKt$activityViewModels$2(activityViewModels);
+            function0 = new FragmentViewModelLazyKt$activityViewModels$2(fragment);
         }
-        return createViewModelLazy(activityViewModels, b, fragmentViewModelLazyKt$activityViewModels$1, function0);
+        return createViewModelLazy(fragment, b, fragmentViewModelLazyKt$activityViewModels$1, function0);
     }
 
-    public static final <VM extends ViewModel> Lazy<VM> createViewModelLazy(final Fragment createViewModelLazy, KClass<VM> viewModelClass, Function0<? extends ViewModelStore> storeProducer, Function0<? extends ViewModelProvider.Factory> function0) {
-        Intrinsics.e(createViewModelLazy, "$this$createViewModelLazy");
-        Intrinsics.e(viewModelClass, "viewModelClass");
-        Intrinsics.e(storeProducer, "storeProducer");
-        if (function0 == null) {
-            function0 = new Function0<ViewModelProvider.Factory>() { // from class: androidx.fragment.app.FragmentViewModelLazyKt$createViewModelLazy$factoryPromise$1
+    public static final <VM extends ViewModel> Lazy<VM> createViewModelLazy(final Fragment fragment, KClass<VM> kClass, Function0<? extends ViewModelStore> function0, Function0<? extends ViewModelProvider.Factory> function02) {
+        Intrinsics.e(fragment, "$this$createViewModelLazy");
+        Intrinsics.e(kClass, "viewModelClass");
+        Intrinsics.e(function0, "storeProducer");
+        if (function02 == null) {
+            function02 = new Function0<ViewModelProvider.Factory>() { // from class: androidx.fragment.app.FragmentViewModelLazyKt$createViewModelLazy$factoryPromise$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // kotlin.jvm.functions.Function0
-                public final ViewModelProvider.Factory invoke() {
+                /* renamed from: invoke */
+                public final ViewModelProvider.Factory m1403invoke() {
                     return Fragment.this.getDefaultViewModelProviderFactory();
                 }
             };
         }
-        return new ViewModelLazy(viewModelClass, storeProducer, function0);
+        return new ViewModelLazy(kClass, function0, function02);
     }
 
     public static /* synthetic */ Lazy createViewModelLazy$default(Fragment fragment, KClass kClass, Function0 function0, Function0 function02, int i, Object obj) {
@@ -68,23 +67,22 @@ public final class FragmentViewModelLazyKt {
         return createViewModelLazy(fragment, kClass, function0, function02);
     }
 
-    public static final /* synthetic */ <VM extends ViewModel> Lazy<VM> viewModels(Fragment viewModels, Function0<? extends ViewModelStoreOwner> ownerProducer, Function0<? extends ViewModelProvider.Factory> function0) {
-        Intrinsics.e(viewModels, "$this$viewModels");
-        Intrinsics.e(ownerProducer, "ownerProducer");
+    public static final /* synthetic */ <VM extends ViewModel> Lazy<VM> viewModels(Fragment fragment, Function0<? extends ViewModelStoreOwner> function0, Function0<? extends ViewModelProvider.Factory> function02) {
+        Intrinsics.e(fragment, "$this$viewModels");
+        Intrinsics.e(function0, "ownerProducer");
         Intrinsics.a(4, "VM");
-        return createViewModelLazy(viewModels, Reflection.b(ViewModel.class), new FragmentViewModelLazyKt$viewModels$2(ownerProducer), function0);
+        return createViewModelLazy(fragment, Reflection.b(ViewModel.class), new FragmentViewModelLazyKt$viewModels$2(function0), function02);
     }
 
-    public static /* synthetic */ Lazy viewModels$default(final Fragment viewModels, Function0 function0, Function0 function02, int i, Object obj) {
+    public static /* synthetic */ Lazy viewModels$default(final Fragment fragment, Function0 function0, Function0 function02, int i, Object obj) {
         if ((i & 1) != 0) {
             function0 = new Function0<Fragment>() { // from class: androidx.fragment.app.FragmentViewModelLazyKt$viewModels$1
                 {
                     super(0);
                 }
 
-                /* JADX WARN: Can't rename method to resolve collision */
-                @Override // kotlin.jvm.functions.Function0
-                public final Fragment invoke() {
+                /* renamed from: invoke */
+                public final Fragment m1404invoke() {
                     return Fragment.this;
                 }
             };
@@ -92,10 +90,9 @@ public final class FragmentViewModelLazyKt {
         if ((i & 2) != 0) {
             function02 = null;
         }
-        Intrinsics.e(viewModels, "$this$viewModels");
-        Function0 ownerProducer = function0;
-        Intrinsics.e(ownerProducer, "ownerProducer");
+        Intrinsics.e(fragment, "$this$viewModels");
+        Intrinsics.e(function0, "ownerProducer");
         Intrinsics.a(4, "VM");
-        return createViewModelLazy(viewModels, Reflection.b(ViewModel.class), new FragmentViewModelLazyKt$viewModels$2(function0), function02);
+        return createViewModelLazy(fragment, Reflection.b(ViewModel.class), new FragmentViewModelLazyKt$viewModels$2(function0), function02);
     }
 }

@@ -7,13 +7,9 @@ import com.blued.android.module.live_china.view.shimmer.ShimmerViewHelper;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/shimmer/Shimmer.class */
 public class Shimmer {
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f15452a = -1;
+    private int a = -1;
     private long b = 1000;
-
-    /* renamed from: c  reason: collision with root package name */
-    private long f15453c = 0;
+    private long c = 0;
     private int d = 0;
     private Animator.AnimatorListener e;
     private ObjectAnimator f;
@@ -40,9 +36,9 @@ public class Shimmer {
                     width = 0.0f;
                 }
                 Shimmer.this.f = ObjectAnimator.ofFloat(v, "gradientX", f, width);
-                Shimmer.this.f.setRepeatCount(Shimmer.this.f15452a);
+                Shimmer.this.f.setRepeatCount(Shimmer.this.a);
                 Shimmer.this.f.setDuration(Shimmer.this.b);
-                Shimmer.this.f.setStartDelay(Shimmer.this.f15453c);
+                Shimmer.this.f.setStartDelay(Shimmer.this.c);
                 Shimmer.this.f.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.view.shimmer.Shimmer.1.1
                     @Override // android.animation.Animator.AnimatorListener
                     public void onAnimationCancel(Animator animator) {

@@ -6,34 +6,33 @@ import android.os.Build;
 import androidx.core.util.Preconditions;
 import java.util.Iterator;
 
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-8756600-dex2jar.jar:androidx/core/location/GpsStatusWrapper.class */
-public class GpsStatusWrapper extends GnssStatusCompat {
+class GpsStatusWrapper extends GnssStatusCompat {
 
     /* renamed from: a  reason: collision with root package name */
-    private final GpsStatus f2484a;
+    private final GpsStatus f2436a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Iterator<GpsSatellite> f2485c;
+    private Iterator<GpsSatellite> f2437c;
     private int d;
     private GpsSatellite e;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public GpsStatusWrapper(GpsStatus gpsStatus) {
         GpsStatus gpsStatus2 = (GpsStatus) Preconditions.checkNotNull(gpsStatus);
-        this.f2484a = gpsStatus2;
+        this.f2436a = gpsStatus2;
         this.b = -1;
-        this.f2485c = gpsStatus2.getSatellites().iterator();
+        this.f2437c = gpsStatus2.getSatellites().iterator();
         this.d = -1;
         this.e = null;
     }
 
     private GpsSatellite a(int i) {
         GpsSatellite gpsSatellite;
-        synchronized (this.f2484a) {
+        synchronized (this.f2436a) {
             if (i < this.d) {
-                this.f2485c = this.f2484a.getSatellites().iterator();
+                this.f2437c = this.f2436a.getSatellites().iterator();
                 this.d = -1;
             }
             while (true) {
@@ -41,11 +40,11 @@ public class GpsStatusWrapper extends GnssStatusCompat {
                     break;
                 }
                 this.d++;
-                if (!this.f2485c.hasNext()) {
+                if (!this.f2437c.hasNext()) {
                     this.e = null;
                     break;
                 }
-                this.e = this.f2485c.next();
+                this.e = this.f2437c.next();
             }
             gpsSatellite = this.e;
         }
@@ -78,7 +77,7 @@ public class GpsStatusWrapper extends GnssStatusCompat {
             return true;
         }
         if (obj instanceof GpsStatusWrapper) {
-            return this.f2484a.equals(((GpsStatusWrapper) obj).f2484a);
+            return this.f2436a.equals(((GpsStatusWrapper) obj).f2436a);
         }
         return false;
     }
@@ -119,9 +118,9 @@ public class GpsStatusWrapper extends GnssStatusCompat {
     @Override // androidx.core.location.GnssStatusCompat
     public int getSatelliteCount() {
         int i;
-        synchronized (this.f2484a) {
+        synchronized (this.f2436a) {
             if (this.b == -1) {
-                for (GpsSatellite gpsSatellite : this.f2484a.getSatellites()) {
+                for (GpsSatellite gpsSatellite : this.f2436a.getSatellites()) {
                     this.b++;
                 }
                 this.b++;
@@ -157,7 +156,7 @@ public class GpsStatusWrapper extends GnssStatusCompat {
     }
 
     public int hashCode() {
-        return this.f2484a.hashCode();
+        return this.f2436a.hashCode();
     }
 
     @Override // androidx.core.location.GnssStatusCompat

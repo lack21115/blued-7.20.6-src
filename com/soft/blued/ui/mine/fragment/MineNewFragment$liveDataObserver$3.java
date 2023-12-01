@@ -1,5 +1,6 @@
 package com.soft.blued.ui.mine.fragment;
 
+import com.kuaishou.weapon.p0.bp;
 import com.soft.blued.ui.msg.model.GroupGuideModel;
 import kotlin.Metadata;
 import kotlin.Unit;
@@ -15,14 +16,13 @@ final /* synthetic */ class MineNewFragment$liveDataObserver$3 extends FunctionR
         super(1, obj, MineNewFragment.class, "showGroupGuide", "showGroupGuide(Lcom/soft/blued/ui/msg/model/GroupGuideModel;)V", 0);
     }
 
-    public final void a(GroupGuideModel p0) {
-        Intrinsics.e(p0, "p0");
-        ((MineNewFragment) this.receiver).a(p0);
+    public final void a(GroupGuideModel groupGuideModel) {
+        Intrinsics.e(groupGuideModel, bp.g);
+        ((MineNewFragment) this.receiver).a(groupGuideModel);
     }
 
-    @Override // kotlin.jvm.functions.Function1
-    public /* synthetic */ Unit invoke(GroupGuideModel groupGuideModel) {
-        a(groupGuideModel);
-        return Unit.f42314a;
+    public /* synthetic */ Object invoke(Object obj) {
+        a((GroupGuideModel) obj);
+        return Unit.a;
     }
 }

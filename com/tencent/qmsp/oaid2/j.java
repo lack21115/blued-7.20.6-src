@@ -15,16 +15,16 @@ public class j {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final String f38479a;
+        public final String f24788a;
         public final boolean b;
 
         public a(String str, boolean z) {
-            this.f38479a = str;
+            this.f24788a = str;
             this.b = z;
         }
 
         public final String a() {
-            return this.f38479a;
+            return this.f24788a;
         }
 
         public final boolean b() {
@@ -51,10 +51,10 @@ public class j {
             Log.i(a(), "bind ok");
             try {
                 try {
-                    if (kVar.f38484a) {
+                    if (kVar.f24793a) {
                         throw new IllegalStateException();
                     }
-                    kVar.f38484a = true;
+                    kVar.f24793a = true;
                     m a3 = m.a.a(kVar.b.take());
                     return new a(a3.m(), a3.h());
                 } catch (RemoteException e) {

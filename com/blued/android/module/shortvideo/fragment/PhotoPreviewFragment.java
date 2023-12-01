@@ -22,13 +22,9 @@ import java.io.File;
 
 /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/shortvideo/fragment/PhotoPreviewFragment.class */
 public class PhotoPreviewFragment extends BaseFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    private Context f15720a;
+    private Context a;
     private View b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private TextView f15721c;
+    private TextView c;
     private View d;
     private TextView e;
     private ImageView f;
@@ -59,10 +55,10 @@ public class PhotoPreviewFragment extends BaseFragment {
         this.f = (ImageView) findViewById.findViewById(R.id.top_ctt_left);
         this.e = (TextView) this.d.findViewById(R.id.top_ctt_center);
         this.g = (ImageView) this.d.findViewById(R.id.top_ctt_right);
-        this.f15721c = (TextView) this.b.findViewById(R.id.top_done_view);
+        this.c = (TextView) this.b.findViewById(R.id.top_done_view);
         this.g.setVisibility(8);
-        this.f15721c.setVisibility(0);
-        this.f15721c.setText(this.f15720a.getResources().getString(R.string.photo_end));
+        this.c.setVisibility(0);
+        this.c.setText(this.a.getResources().getString(R.string.photo_end));
         this.i = (ImageView) this.b.findViewById(R.id.photo_pre_view_img);
         this.k = (ProgressBar) this.b.findViewById(R.id.photo_pre_loading_view);
         this.j = new PhotoViewAttacher(this.i);
@@ -77,7 +73,7 @@ public class PhotoPreviewFragment extends BaseFragment {
                 PhotoPreviewFragment.this.getActivity().finish();
             }
         });
-        this.f15721c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.shortvideo.fragment.PhotoPreviewFragment.3
+        this.c.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.shortvideo.fragment.PhotoPreviewFragment.3
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
                 Tracker.onClick(view);
@@ -110,17 +106,17 @@ public class PhotoPreviewFragment extends BaseFragment {
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         if (bundle != null) {
             this.h = bundle.getString("frame_path");
         }
-        this.f15720a = getActivity();
+        this.a = getActivity();
         View view = this.b;
         if (view == null) {
             this.b = layoutInflater.inflate(R.layout.fragment_photo_preview, viewGroup, false);
@@ -133,7 +129,7 @@ public class PhotoPreviewFragment extends BaseFragment {
         return this.b;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onSaveInstanceState(Bundle bundle) {
         bundle.putString("frame_path", this.h);
         super.onSaveInstanceState(bundle);

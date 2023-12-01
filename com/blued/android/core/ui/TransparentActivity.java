@@ -31,23 +31,23 @@ public class TransparentActivity extends TerminalActivity {
     }
 
     public static void b(Fragment fragment, Class<? extends Fragment> cls, Bundle bundle, int i) {
-        a(fragment.getActivity(), cls, bundle).a(i, fragment);
+        a((Context) fragment.getActivity(), cls, bundle).a(i, fragment);
     }
 
-    @Override // com.blued.android.core.ui.TerminalActivity, com.blued.android.core.ui.BaseFragmentActivity, androidx.fragment.app.FragmentActivity, androidx.activity.ComponentActivity, androidx.core.app.ComponentActivity, android.app.Activity
+    @Override // com.blued.android.core.ui.TerminalActivity, com.blued.android.core.ui.BaseFragmentActivity
     public void onCreate(Bundle bundle) {
         Log.c("PendingActivity", "onCreate");
         super.onCreate(bundle);
         getWindow().setBackgroundDrawable(new ColorDrawable(0));
     }
 
-    @Override // com.blued.android.core.ui.BaseFragmentActivity, androidx.appcompat.app.AppCompatActivity, androidx.fragment.app.FragmentActivity, android.app.Activity
+    @Override // com.blued.android.core.ui.BaseFragmentActivity
     public void onDestroy() {
         Log.c("PendingActivity", "onDestory");
         super.onDestroy();
     }
 
-    @Override // com.blued.android.core.ui.TerminalActivity, android.app.Activity, android.view.Window.Callback
+    @Override // com.blued.android.core.ui.TerminalActivity
     public void onWindowFocusChanged(boolean z) {
         super.onWindowFocusChanged(z);
         ILoadFinishedListener iLoadFinishedListener = this.e;

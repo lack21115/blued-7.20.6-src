@@ -27,12 +27,12 @@ public final class e3 extends g3<f4> {
             if (f4Var2 == null) {
                 return null;
             }
-            f4.a.C0310a c0310a = (f4.a.C0310a) f4Var2;
+            f4.a.C0140a c0140a = (f4.a.C0140a) f4Var2;
             Parcel obtain = Parcel.obtain();
             Parcel obtain2 = Parcel.obtain();
             try {
                 obtain.writeInterfaceToken("com.asus.msa.SupplementaryDID.IDidAidlInterface");
-                c0310a.f21219a.transact(3, obtain, obtain2, 0);
+                c0140a.f7613a.transact(3, obtain, obtain2, 0);
                 obtain2.readException();
                 return obtain2.readString();
             } finally {

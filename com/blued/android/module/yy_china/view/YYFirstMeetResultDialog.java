@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
@@ -40,6 +41,7 @@ import com.blued.android.module.yy_china.utils.log.EventTrackYY;
 import com.blued.android.module.yy_china.view.YYFirstMeetResultDialog;
 import com.blued.das.client.chatroom.ChatRoomProtos;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -51,13 +53,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYFirstMeetResultDialog.class */
 public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
-
-    /* renamed from: a  reason: collision with root package name */
-    private DialogYyFirstMeetSuccesBinding f18152a;
+    private DialogYyFirstMeetSuccesBinding a;
     private List<YYFirstMeetGiftsListItemMode> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private YYFirstUserInfoMode f18153c;
+    private YYFirstUserInfoMode c;
     private YYFirstMeetImMessMode d;
     private BaseYYStudioFragment e;
 
@@ -65,13 +63,9 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
     @Metadata
     /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/view/YYFirstMeetResultDialog$Ad.class */
     public final class Ad extends BaseMultiItemQuickAdapter<YYFirstMeetGiftsListItemMode, BaseViewHolder> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ YYFirstMeetResultDialog f18154a;
+        final /* synthetic */ YYFirstMeetResultDialog a;
         private final BaseFullScreenDialog b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private BaseYYStudioFragment f18155c;
+        private BaseYYStudioFragment c;
         private YYFirstUserInfoMode d;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -79,7 +73,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
             super(new ArrayList());
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(fra, "fra");
-            this.f18154a = this$0;
+            this.a = this$0;
             this.b = fra;
             addItemType(0, R.layout.item_yy_first_meet_succes_item);
             addItemType(2, R.layout.item_yy_first_meet_item);
@@ -117,8 +111,8 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
             String str;
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(item, "$item");
-            final ActivityFragmentActive a2 = this$0.b.a();
-            BluedUIHttpResponse<BluedEntityA<YYUserInfo>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<YYUserInfo>>(a2) { // from class: com.blued.android.module.yy_china.view.YYFirstMeetResultDialog$Ad$bindAll$2$1
+            final ActivityFragmentActive a = this$0.b.a();
+            BluedUIHttpResponse<BluedEntityA<YYUserInfo>> bluedUIHttpResponse = new BluedUIHttpResponse<BluedEntityA<YYUserInfo>>(a) { // from class: com.blued.android.module.yy_china.view.YYFirstMeetResultDialog$Ad$bindAll$2$1
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
@@ -156,7 +150,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(item, "$item");
             Intrinsics.e(this$1, "this$1");
-            BaseYYStudioFragment baseYYStudioFragment = this$0.f18155c;
+            BaseYYStudioFragment baseYYStudioFragment = this$0.c;
             if (baseYYStudioFragment != null) {
                 baseYYStudioFragment.a(true, "", item.getGift_id(), "");
             }
@@ -172,7 +166,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
         public static final void b(Ad this$0, YYFirstMeetGiftsListItemMode item, View view) {
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(item, "$item");
-            IYYRoomInfoCallback c2 = YYRoomInfoManager.e().c();
+            IYYRoomInfoCallback c = YYRoomInfoManager.e().c();
             Context context = this$0.b.getContext();
             StringBuilder sb = new StringBuilder();
             sb.append(YYRoomInfoManager.e().c(6));
@@ -184,7 +178,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
             if (sb2 == null) {
                 str = "";
             }
-            c2.a(context, str, 0, true);
+            c.a(context, str, 0, true);
             YYRoomModel b2 = YYRoomInfoManager.e().b();
             if (b2 == null) {
                 return;
@@ -194,17 +188,17 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
 
         private final void b(BaseViewHolder baseViewHolder, YYFirstMeetGiftsListItemMode yYFirstMeetGiftsListItemMode) {
             String avatar;
-            ItemYyFirstMeetItemBinding a2 = ItemYyFirstMeetItemBinding.a(baseViewHolder.itemView);
-            Intrinsics.c(a2, "bind(helper.itemView)");
-            a2.b.setText("感谢你送我礼物，完成和我的“第一次”遇见");
+            ItemYyFirstMeetItemBinding a = ItemYyFirstMeetItemBinding.a(baseViewHolder.itemView);
+            Intrinsics.c(a, "bind(helper.itemView)");
+            a.b.setText("感谢你送我礼物，完成和我的“第一次”遇见");
             BaseFullScreenDialog baseFullScreenDialog = this.b;
-            ActivityFragmentActive a3 = baseFullScreenDialog == null ? null : baseFullScreenDialog.a();
+            ActivityFragmentActive a2 = baseFullScreenDialog == null ? null : baseFullScreenDialog.a();
             YYFirstUserInfoMode yYFirstUserInfoMode = this.d;
             String str = "";
             if (yYFirstUserInfoMode != null && (avatar = yYFirstUserInfoMode.getAvatar()) != null) {
                 str = avatar;
             }
-            ImageLoader.a(a3, str).c().a(a2.f16714a);
+            ImageLoader.a(a2, str).c().a(a.a);
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:17:0x00aa, code lost:
@@ -230,7 +224,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
         }
 
         public final void a(BaseYYStudioFragment baseYYStudioFragment) {
-            this.f18155c = baseYYStudioFragment;
+            this.c = baseYYStudioFragment;
         }
 
         public final void a(YYFirstUserInfoMode yYFirstUserInfoMode) {
@@ -238,7 +232,6 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.chad.library.adapter.base.BaseQuickAdapter
         /* renamed from: a */
         public void convert(BaseViewHolder helper, YYFirstMeetGiftsListItemMode item) {
             Intrinsics.e(helper, "helper");
@@ -252,7 +245,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
         }
 
         public final BaseYYStudioFragment b() {
-            return this.f18155c;
+            return this.c;
         }
     }
 
@@ -264,15 +257,15 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogYyFirstMeetSuccesBinding g() {
-        DialogYyFirstMeetSuccesBinding dialogYyFirstMeetSuccesBinding = this.f18152a;
+        DialogYyFirstMeetSuccesBinding dialogYyFirstMeetSuccesBinding = this.a;
         Intrinsics.a(dialogYyFirstMeetSuccesBinding);
         return dialogYyFirstMeetSuccesBinding;
     }
 
     private final void h() {
         g().d.setLayoutManager(new LinearLayoutManager(getContext()));
-        Ad ad = new Ad(this, this);
-        ad.a(this.f18153c);
+        RecyclerView.Adapter ad = new Ad(this, this);
+        ad.a(this.c);
         ad.a(this.e);
         g().d.setAdapter(ad);
         g().e.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.view.-$$Lambda$YYFirstMeetResultDialog$IgFklUcr-FfdrSGLR5-mXlDqyIE
@@ -300,29 +293,27 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
 
     private final void i() {
         String source_avatar;
-        ActivityFragmentActive a2 = a();
+        ActivityFragmentActive a = a();
         YYFirstMeetImMessMode yYFirstMeetImMessMode = this.d;
         String str = "";
         if (yYFirstMeetImMessMode != null && (source_avatar = yYFirstMeetImMessMode.getSource_avatar()) != null) {
             str = source_avatar;
         }
-        ImageLoader.a(a2, str).c().a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYFirstMeetResultDialog$showAni$1
-            @Override // com.bumptech.glide.request.target.Target
+        ImageLoader.a(a, str).c().a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYFirstMeetResultDialog$showAni$1
             /* renamed from: a */
             public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
                 String target_avatar;
                 Intrinsics.e(resource, "resource");
                 final Bitmap bitmap = ((BitmapDrawable) resource).getBitmap();
-                ActivityFragmentActive a3 = YYFirstMeetResultDialog.this.a();
+                ActivityFragmentActive a2 = YYFirstMeetResultDialog.this.a();
                 YYFirstMeetImMessMode f = YYFirstMeetResultDialog.this.f();
                 String str2 = "";
                 if (f != null && (target_avatar = f.getTarget_avatar()) != null) {
                     str2 = target_avatar;
                 }
-                ImageWrapper c2 = ImageLoader.a(a3, str2).c();
+                ImageWrapper c = ImageLoader.a(a2, str2).c();
                 final YYFirstMeetResultDialog yYFirstMeetResultDialog = YYFirstMeetResultDialog.this;
-                c2.a(new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYFirstMeetResultDialog$showAni$1$onResourceReady$1
-                    @Override // com.bumptech.glide.request.target.Target
+                c.a((Target) new SimpleTarget<Drawable>() { // from class: com.blued.android.module.yy_china.view.YYFirstMeetResultDialog$showAni$1$onResourceReady$1
                     /* renamed from: a */
                     public void onResourceReady(Drawable resource2, Transition<? super Drawable> transition2) {
                         DialogYyFirstMeetSuccesBinding g;
@@ -330,7 +321,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
                         Intrinsics.e(resource2, "resource");
                         Bitmap traBit = ((BitmapDrawable) resource2).getBitmap();
                         SVGADynamicEntity sVGADynamicEntity = new SVGADynamicEntity();
-                        Bitmap sourceBit = Bitmap.this;
+                        Bitmap sourceBit = bitmap;
                         Intrinsics.c(sourceBit, "sourceBit");
                         sVGADynamicEntity.a(sourceBit, "headleft");
                         Intrinsics.c(traBit, "traBit");
@@ -352,11 +343,11 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
                         textPaint2.setColor(ContextCompat.getColor(AppInfo.d(), R.color.white));
                         textPaint2.setTextSize(18.0f);
                         sVGADynamicEntity.a("免费获得1弯豆礼物券等丰厚大礼~", textPaint2, Layout.Alignment.ALIGN_CENTER, "secondword");
-                        SVGAPlayer.Builder a4 = new SVGAPlayer.Builder("https://web.bldimg.com/cblued/static/headrightt2.1guuig3laoq12d.svga").a(SVGAImageView.FillMode.Clear).a((Integer) 1);
+                        SVGAPlayer.Builder a3 = new SVGAPlayer.Builder("https://web.bldimg.com/cblued/static/headrightt2.1guuig3laoq12d.svga").a(SVGAImageView.FillMode.Clear).a((Integer) 1);
                         g = yYFirstMeetResultDialog.g();
                         SVGAImageView sVGAImageView = g.e;
                         Intrinsics.c(sVGAImageView, "bind.svga");
-                        a4.a(sVGAImageView, sVGADynamicEntity);
+                        a3.a(sVGAImageView, sVGADynamicEntity);
                     }
                 });
             }
@@ -372,7 +363,7 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
     }
 
     public final void a(YYFirstUserInfoMode yYFirstUserInfoMode) {
-        this.f18153c = yYFirstUserInfoMode;
+        this.c = yYFirstUserInfoMode;
     }
 
     public final void a(List<YYFirstMeetGiftsListItemMode> list) {
@@ -383,11 +374,11 @@ public final class YYFirstMeetResultDialog extends BaseFullScreenDialog {
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup viewGroup, Bundle bundle) {
         Intrinsics.e(inflater, "inflater");
         View inflate = inflater.inflate(R.layout.dialog_yy_first_meet_succes, viewGroup, true);
-        this.f18152a = DialogYyFirstMeetSuccesBinding.a(inflate);
+        this.a = DialogYyFirstMeetSuccesBinding.a(inflate);
         h();
         return inflate;
     }

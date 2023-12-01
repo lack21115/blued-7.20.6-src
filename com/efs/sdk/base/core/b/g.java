@@ -19,33 +19,33 @@ import java.util.concurrent.ConcurrentHashMap;
 public final class g extends Handler implements e {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ConcurrentHashMap<String, a> f21731a;
+    private final ConcurrentHashMap<String, a> f8125a;
     private com.efs.sdk.base.core.e.a.d b;
 
     /* renamed from: c  reason: collision with root package name */
-    private com.efs.sdk.base.core.e.a.c f21732c;
+    private com.efs.sdk.base.core.e.a.c f8126c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-7206380-dex2jar.jar:com/efs/sdk/base/core/b/g$a.class */
     public static final class a extends FileOutputStream {
 
         /* renamed from: a  reason: collision with root package name */
-        long f21733a;
+        long f8127a;
         File b;
 
         a(File file) {
             super(file);
             this.b = file;
-            this.f21733a = System.currentTimeMillis();
+            this.f8127a = System.currentTimeMillis();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public g() {
-        super(com.efs.sdk.base.core.util.concurrent.a.f21795a.getLooper());
-        this.f21731a = new ConcurrentHashMap<>();
+        super(com.efs.sdk.base.core.util.concurrent.a.f8189a.getLooper());
+        this.f8125a = new ConcurrentHashMap<>();
         this.b = new com.efs.sdk.base.core.e.a.d();
-        this.f21732c = new com.efs.sdk.base.core.e.a.c();
+        this.f8126c = new com.efs.sdk.base.core.e.a.c();
     }
 
     private boolean a(com.efs.sdk.base.core.d.b bVar, File file) {
@@ -66,7 +66,7 @@ public final class g extends Handler implements e {
                     }
                     bVar.a(sb.toString().getBytes());
                     bVar.c();
-                    this.f21732c.a(bVar);
+                    this.f8126c.a(bVar);
                     bVar.d = file;
                     com.efs.sdk.base.core.util.b.a(bufferedReader2);
                     com.efs.sdk.base.core.util.b.a(fileReader2);
@@ -123,17 +123,17 @@ public final class g extends Handler implements e {
         /*
             r5 = this;
             r0 = r5
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.efs.sdk.base.core.b.g$a> r0 = r0.f21731a
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.efs.sdk.base.core.b.g$a> r0 = r0.f8125a
             r1 = r6
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a
-            java.lang.String r1 = r1.f21762a
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a
+            java.lang.String r1 = r1.f8156a
             boolean r0 = r0.containsKey(r1)
             if (r0 == 0) goto L23
             r0 = r5
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.efs.sdk.base.core.b.g$a> r0 = r0.f21731a
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.efs.sdk.base.core.b.g$a> r0 = r0.f8125a
             r1 = r6
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a
-            java.lang.String r1 = r1.f21762a
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a
+            java.lang.String r1 = r1.f8156a
             java.lang.Object r0 = r0.get(r1)
             com.efs.sdk.base.core.b.g$a r0 = (com.efs.sdk.base.core.b.g.a) r0
             return r0
@@ -157,10 +157,10 @@ public final class g extends Handler implements e {
             r1.<init>(r2)     // Catch: java.lang.Throwable -> L98
             r7 = r0
             r0 = r5
-            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.efs.sdk.base.core.b.g$a> r0 = r0.f21731a     // Catch: java.lang.Throwable -> L94
+            java.util.concurrent.ConcurrentHashMap<java.lang.String, com.efs.sdk.base.core.b.g$a> r0 = r0.f8125a     // Catch: java.lang.Throwable -> L94
             r1 = r6
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a     // Catch: java.lang.Throwable -> L94
-            java.lang.String r1 = r1.f21762a     // Catch: java.lang.Throwable -> L94
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a     // Catch: java.lang.Throwable -> L94
+            java.lang.String r1 = r1.f8156a     // Catch: java.lang.Throwable -> L94
             r2 = r7
             java.lang.Object r0 = r0.putIfAbsent(r1, r2)     // Catch: java.lang.Throwable -> L94
             com.efs.sdk.base.core.b.g$a r0 = (com.efs.sdk.base.core.b.g.a) r0     // Catch: java.lang.Throwable -> L94
@@ -178,8 +178,8 @@ public final class g extends Handler implements e {
             r8 = r0
             r0 = r8
             r1 = r6
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a     // Catch: java.lang.Throwable -> L94
-            java.lang.String r1 = r1.f21762a     // Catch: java.lang.Throwable -> L94
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a     // Catch: java.lang.Throwable -> L94
+            java.lang.String r1 = r1.f8156a     // Catch: java.lang.Throwable -> L94
             r0.obj = r1     // Catch: java.lang.Throwable -> L94
             r0 = r8
             r1 = 1
@@ -187,8 +187,8 @@ public final class g extends Handler implements e {
             r0 = r5
             r1 = r8
             r2 = r6
-            com.efs.sdk.base.core.d.a r2 = r2.f21764a     // Catch: java.lang.Throwable -> L94
-            java.lang.String r2 = r2.f21762a     // Catch: java.lang.Throwable -> L94
+            com.efs.sdk.base.core.d.a r2 = r2.f8158a     // Catch: java.lang.Throwable -> L94
+            java.lang.String r2 = r2.f8156a     // Catch: java.lang.Throwable -> L94
             long r2 = b(r2)     // Catch: java.lang.Throwable -> L94
             boolean r0 = r0.sendMessageDelayed(r1, r2)     // Catch: java.lang.Throwable -> L94
             goto L9f
@@ -205,12 +205,12 @@ public final class g extends Handler implements e {
         L9f:
             java.lang.String r0 = "wa"
             r1 = r6
-            com.efs.sdk.base.core.d.a r1 = r1.f21764a
-            java.lang.String r1 = r1.f21762a
+            com.efs.sdk.base.core.d.a r1 = r1.f8158a
+            java.lang.String r1 = r1.f8156a
             boolean r0 = r0.equalsIgnoreCase(r1)
             if (r0 != 0) goto Lb7
             com.efs.sdk.base.core.f.f r0 = com.efs.sdk.base.core.f.f.a.a()
-            com.efs.sdk.base.core.f.d r0 = r0.f21780c
+            com.efs.sdk.base.core.f.d r0 = r0.f8174c
             r0.b()
         Lb7:
             r0 = r7
@@ -223,7 +223,7 @@ public final class g extends Handler implements e {
         a aVar;
         com.efs.sdk.base.core.f.f fVar;
         com.efs.sdk.base.core.f.f fVar2;
-        if (this.f21731a.containsKey(str) && (aVar = this.f21731a.get(str)) != null) {
+        if (this.f8125a.containsKey(str) && (aVar = this.f8125a.get(str)) != null) {
             try {
                 aVar.flush();
                 com.efs.sdk.base.core.util.b.a(aVar);
@@ -231,17 +231,17 @@ public final class g extends Handler implements e {
             } catch (Throwable th) {
                 try {
                     th.printStackTrace();
-                    this.f21731a.remove(str);
+                    this.f8125a.remove(str);
                     if ("wa".equalsIgnoreCase(str)) {
                         return;
                     }
-                    fVar2 = f.a.f21781a;
-                    fVar2.f21780c.c();
+                    fVar2 = f.a.f8175a;
+                    fVar2.f8174c.c();
                 } finally {
-                    this.f21731a.remove(str);
+                    this.f8125a.remove(str);
                     if (!"wa".equalsIgnoreCase(str)) {
-                        fVar = f.a.f21781a;
-                        fVar.f21780c.c();
+                        fVar = f.a.f8175a;
+                        fVar.f8174c.c();
                     }
                 }
             }
@@ -262,13 +262,13 @@ public final class g extends Handler implements e {
         com.efs.sdk.base.core.b.a unused2;
         com.efs.sdk.base.core.d.b b = com.efs.sdk.base.core.util.b.b(file.getName());
         if (b == null) {
-            unused = a.b.f21727a;
+            unused = a.b.f8121a;
             com.efs.sdk.base.core.b.a.b(file);
-        } else if (!a(b, file) || b.f21765c == null || b.f21765c.length <= 0) {
-            unused2 = a.b.f21727a;
+        } else if (!a(b, file) || b.f8159c == null || b.f8159c.length <= 0) {
+            unused2 = a.b.f8121a;
             com.efs.sdk.base.core.b.a.b(file);
         } else {
-            com.efs.sdk.base.core.util.b.a(new File(com.efs.sdk.base.core.util.a.f(ControllerCenter.getGlobalEnvStruct().mAppContext, ControllerCenter.getGlobalEnvStruct().getAppid()), com.efs.sdk.base.core.util.b.a(b)), b.f21765c);
+            com.efs.sdk.base.core.util.b.a(new File(com.efs.sdk.base.core.util.a.f(ControllerCenter.getGlobalEnvStruct().mAppContext, ControllerCenter.getGlobalEnvStruct().getAppid()), com.efs.sdk.base.core.util.b.a(b)), b.f8159c);
             com.efs.sdk.base.core.util.b.b(file);
         }
     }
@@ -319,20 +319,20 @@ public final class g extends Handler implements e {
             try {
                 a b = b(bVar);
                 if (b == null) {
-                    Log.w("efs.cache", "writer is null for type " + bVar.f21764a.f21762a);
+                    Log.w("efs.cache", "writer is null for type " + bVar.f8158a.f8156a);
                     return;
                 }
                 a aVar = b;
-                if (b.getChannel().position() + bVar.f21765c.length > 819200) {
-                    c(bVar.f21764a.f21762a);
+                if (b.getChannel().position() + bVar.f8159c.length > 819200) {
+                    c(bVar.f8158a.f8156a);
                     a b2 = b(bVar);
                     aVar = b2;
                     if (b2 == null) {
-                        Log.w("efs.cache", "writer is null for type " + bVar.f21764a.f21762a);
+                        Log.w("efs.cache", "writer is null for type " + bVar.f8158a.f8156a);
                         return;
                     }
                 }
-                aVar.write(Base64.encode(bVar.f21765c, 11));
+                aVar.write(Base64.encode(bVar.f8159c, 11));
                 aVar.write("\n".getBytes());
                 return;
             } catch (Throwable th) {

@@ -2,20 +2,17 @@ package com.alibaba.mtl.log.d;
 
 import com.alibaba.mtl.log.e.i;
 import com.alibaba.mtl.log.e.r;
-import com.anythink.expressad.video.module.a.a.m;
 import java.util.Random;
 
 /* loaded from: source-6737240-dex2jar.jar:com/alibaba/mtl/log/d/a.class */
 public class a {
-
-    /* renamed from: a  reason: collision with root package name */
-    static a f4488a = new a();
+    static a a = new a();
     private int A;
     protected long z = com.alibaba.mtl.log.a.a.a();
     private boolean E = false;
 
     public static a a() {
-        return f4488a;
+        return a;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -35,7 +32,7 @@ public class a {
         }
         this.z = a2 + i;
         if (com.alibaba.mtl.log.a.a.g()) {
-            this.z = m.ag;
+            this.z = 3000L;
         }
         return this.z;
     }

@@ -6,11 +6,11 @@ import com.tencent.ugc.TXVideoJoiner;
 final /* synthetic */ class cg implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoJoiner.AnonymousClass3 f40289a;
+    private final TXVideoJoiner.AnonymousClass3 f26598a;
     private final float b;
 
     private cg(TXVideoJoiner.AnonymousClass3 anonymousClass3, float f) {
-        this.f40289a = anonymousClass3;
+        this.f26598a = anonymousClass3;
         this.b = f;
     }
 

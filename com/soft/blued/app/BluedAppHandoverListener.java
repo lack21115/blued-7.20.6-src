@@ -3,6 +3,7 @@ package com.soft.blued.app;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
 import androidx.fragment.app.Fragment;
 import com.anythink.expressad.video.module.a.a.m;
@@ -54,14 +55,13 @@ public class BluedAppHandoverListener implements AppHandoverListener {
     private Runnable g;
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f28243c = false;
+    private boolean f14553c = false;
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f28242a = new BluedUIHttpResponse<BluedEntity<SplashEntity, SplashExtraEntity>>(null) { // from class: com.soft.blued.app.BluedAppHandoverListener.3
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
+    public BluedUIHttpResponse f14552a = new BluedUIHttpResponse<BluedEntity<SplashEntity, SplashExtraEntity>>(null) { // from class: com.soft.blued.app.BluedAppHandoverListener.3
         public void onUIUpdate(BluedEntity<SplashEntity, SplashExtraEntity> bluedEntity) {
             SplashExtraEntity splashExtraEntity;
-            if (bluedEntity == null || bluedEntity.extra == null || (splashExtraEntity = bluedEntity.extra) == null || splashExtraEntity.splash_config == null) {
+            if (bluedEntity == null || bluedEntity.extra == null || (splashExtraEntity = (SplashExtraEntity) bluedEntity.extra) == null || splashExtraEntity.splash_config == null) {
                 return;
             }
             BluedPreferences.a(splashExtraEntity.splash_config.interval);
@@ -87,7 +87,7 @@ public class BluedAppHandoverListener implements AppHandoverListener {
     }
 
     public boolean a() {
-        return this.f28243c;
+        return this.f14553c;
     }
 
     public Activity b() {
@@ -106,17 +106,16 @@ public class BluedAppHandoverListener implements AppHandoverListener {
         return this.e;
     }
 
-    @Override // com.blued.android.core.AppHandoverListener
     public void onAppBack() {
         this.d = null;
-        Logger.c("tempTest", "onAppBack, last_isAppOnForeground:", Boolean.valueOf(this.f28243c));
+        Logger.c("tempTest", "onAppBack, last_isAppOnForeground:", Boolean.valueOf(this.f14553c));
         Activity b = SendNotificationManager.a().b();
         if (b != null) {
-            CommunityManager.f19086a.a().a(b.getClass().getSimpleName());
+            CommunityManager.a.a().a(b.getClass().getSimpleName());
         }
         LiveEventBus.get("APP_CHANGE_TO_BACKGROUND").postDelay(true, 100L);
-        if (this.f28243c) {
-            this.f28243c = false;
+        if (this.f14553c) {
+            this.f14553c = false;
             BluedStatistics.e().d();
             long currentTimeMillis = System.currentTimeMillis();
             if (!CommonConstants.b.booleanValue()) {
@@ -135,15 +134,14 @@ public class BluedAppHandoverListener implements AppHandoverListener {
         BluedPreferences.ag(false);
     }
 
-    @Override // com.blued.android.core.AppHandoverListener
     public void onAppFore(Activity activity) {
         boolean z;
         this.d = new WeakReference<>(activity);
         String str = "";
-        CommunityManager.f19086a.a().b("");
+        CommunityManager.a.a().b("");
         if (activity != null) {
-            BuglyCrashRecorder.f34723a = activity.getClass().getName();
-            CommunityManager.f19086a.a().a(activity.getClass().getSimpleName());
+            BuglyCrashRecorder.f21032a = activity.getClass().getName();
+            CommunityManager.a.a().a(activity.getClass().getSimpleName());
             if (activity instanceof BaseFragmentActivity) {
                 List<Fragment> fragments = ((BaseFragmentActivity) activity).getSupportFragmentManager().getFragments();
                 if (fragments.size() > 0) {
@@ -153,13 +151,13 @@ public class BluedAppHandoverListener implements AppHandoverListener {
                         if (fragments.get(i) instanceof BaseFragment) {
                             str2 = str;
                             if (fragments.get(i) != null) {
-                                str2 = str + ((BaseFragment) fragments.get(i)).getSimpleName() + ", ";
+                                str2 = str + fragments.get(i).getSimpleName() + ", ";
                             }
                         }
                         i++;
                         str = str2;
                     }
-                    CommunityManager.f19086a.a().b(str);
+                    CommunityManager.a.a().b(str);
                 }
             }
         }
@@ -172,11 +170,11 @@ public class BluedAppHandoverListener implements AppHandoverListener {
         }
         Logger.e("tempTest", "skin auto system : ", Boolean.valueOf(BluedPreferences.dr()));
         Logger.e("tempTest", "skin current type : ", Boolean.valueOf(BluedPreferences.cK()));
-        Logger.c("tempTest", "onAppFore, last_isAppOnForeground:", Boolean.valueOf(this.f28243c));
-        if (this.f28243c) {
+        Logger.c("tempTest", "onAppFore, last_isAppOnForeground:", Boolean.valueOf(this.f14553c));
+        if (this.f14553c) {
             return;
         }
-        this.f28243c = true;
+        this.f14553c = true;
         BluedStatistics.e().c();
         try {
             BluedChat.getInstance().startIMService(AppInfo.d());
@@ -186,9 +184,9 @@ public class BluedAppHandoverListener implements AppHandoverListener {
         PushManager.a().c(AppInfo.d());
         AppInfo.n().removeCallbacks(this.f);
         AppInfo.n().post(this.g);
-        WebLinkManager.f34474a.a();
+        WebLinkManager.f20783a.a();
         long currentTimeMillis = System.currentTimeMillis();
-        List<Activity> b = BDActivityManager.f34819a.b();
+        List<Activity> b = BDActivityManager.f21128a.b();
         if (b != null) {
             for (Activity activity2 : b) {
                 if (activity2 instanceof HomeActivity) {
@@ -239,7 +237,7 @@ public class BluedAppHandoverListener implements AppHandoverListener {
         } else {
             CommonConstants.b = true;
             if (b() != null) {
-                TerminalActivity.d(b(), LockPatternStartupFragment.class, null);
+                TerminalActivity.d(b(), LockPatternStartupFragment.class, (Bundle) null);
             }
         }
     }

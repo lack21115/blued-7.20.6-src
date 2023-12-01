@@ -4,17 +4,17 @@ package com.anythink.expressad.foundation.d;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f7791a;
+    private String f4951a;
     private int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f7792c;
+    private int f4952c;
     private int d;
     private int e;
     private long f;
 
     private String a() {
-        return this.f7791a;
+        return this.f4951a;
     }
 
     private void a(int i) {
@@ -26,7 +26,7 @@ public final class k {
     }
 
     private void a(String str) {
-        this.f7791a = str;
+        this.f4951a = str;
     }
 
     private int b() {
@@ -34,11 +34,11 @@ public final class k {
     }
 
     private void b(int i) {
-        this.f7792c = i;
+        this.f4952c = i;
     }
 
     private int c() {
-        return this.f7792c;
+        return this.f4952c;
     }
 
     private void c(int i) {

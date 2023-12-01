@@ -16,13 +16,9 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/adapter/CreateRoomBgAdapter.class */
 public final class CreateRoomBgAdapter extends BaseQuickAdapter<BgCollectionMode, BaseViewHolder> {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final ClickRoomBgListener f16115a;
+    private final ClickRoomBgListener a;
     private int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BgCollectionMode f16116c;
+    private BgCollectionMode c;
     private final BaseFragment d;
     private View e;
 
@@ -31,7 +27,7 @@ public final class CreateRoomBgAdapter extends BaseQuickAdapter<BgCollectionMode
         super(R.layout.item_yy_create_room_bg);
         Intrinsics.e(clickRoomBgListener, "clickRoomBgListener");
         Intrinsics.e(fragment, "fragment");
-        this.f16115a = clickRoomBgListener;
+        this.a = clickRoomBgListener;
         this.b = i;
         this.d = fragment;
     }
@@ -40,13 +36,13 @@ public final class CreateRoomBgAdapter extends BaseQuickAdapter<BgCollectionMode
     public static final void a(CreateRoomBgAdapter this$0, BgCollectionMode bgCollectionMode, ItemYyCreateRoomBgBinding bind, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(bind, "$bind");
-        this$0.f16116c = bgCollectionMode;
+        this$0.c = bgCollectionMode;
         View view2 = this$0.e;
         if (view2 != null) {
             view2.setVisibility(8);
         }
-        bind.f16701c.setVisibility(0);
-        this$0.e = bind.f16701c;
+        bind.c.setVisibility(0);
+        this$0.e = (View) bind.c;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -58,7 +54,7 @@ public final class CreateRoomBgAdapter extends BaseQuickAdapter<BgCollectionMode
         Intrinsics.a(valueOf);
         if (i >= valueOf.intValue()) {
             if (bgCollectionMode != null) {
-                this$0.f16115a.a(bgCollectionMode, new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$CreateRoomBgAdapter$XJX6CKKb6FJv5BpY7E2QeZPvQdE
+                this$0.a.a(bgCollectionMode, new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$CreateRoomBgAdapter$XJX6CKKb6FJv5BpY7E2QeZPvQdE
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         CreateRoomBgAdapter.a(CreateRoomBgAdapter.this, bgCollectionMode, bind, view2);
@@ -76,7 +72,7 @@ public final class CreateRoomBgAdapter extends BaseQuickAdapter<BgCollectionMode
     }
 
     public final BgCollectionMode a() {
-        return this.f16116c;
+        return this.c;
     }
 
     public final void a(View view) {
@@ -84,41 +80,40 @@ public final class CreateRoomBgAdapter extends BaseQuickAdapter<BgCollectionMode
     }
 
     public final void a(BgCollectionMode bgCollectionMode) {
-        this.f16116c = bgCollectionMode;
+        this.c = bgCollectionMode;
         notifyDataSetChanged();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.chad.library.adapter.base.BaseQuickAdapter
     /* renamed from: a */
     public void convert(BaseViewHolder helper, final BgCollectionMode bgCollectionMode) {
         Intrinsics.e(helper, "helper");
-        final ItemYyCreateRoomBgBinding a2 = ItemYyCreateRoomBgBinding.a(helper.itemView);
-        Intrinsics.c(a2, "bind(helper.itemView)");
+        final ItemYyCreateRoomBgBinding a = ItemYyCreateRoomBgBinding.a(helper.itemView);
+        Intrinsics.c(a, "bind(helper.itemView)");
         if (bgCollectionMode != null) {
-            ImageLoader.a(b().getFragmentActive(), bgCollectionMode.getDefault_pic()).a(8.0f).a(a2.f16700a);
+            ImageLoader.a(b().getFragmentActive(), bgCollectionMode.getDefault_pic()).a(8.0f).a(a.a);
             if (StringUtils.b(bgCollectionMode.getPic())) {
-                a2.b.setImageResource(R.color.transparent);
+                a.b.setImageResource(R.color.transparent);
             } else {
-                ImageLoader.a(b().getFragmentActive(), bgCollectionMode.getPic()).g().g(-1).a(a2.b);
+                ImageLoader.a(b().getFragmentActive(), bgCollectionMode.getPic()).g().g(-1).a(a.b);
             }
             if (bgCollectionMode.getAllow_level() >= 1) {
-                a2.d.setVisibility(0);
-                a2.d.setText(bgCollectionMode.getLevel_notice());
+                a.d.setVisibility(0);
+                a.d.setText(bgCollectionMode.getLevel_notice());
             } else {
-                a2.d.setVisibility(8);
+                a.d.setVisibility(8);
             }
             if (a() == bgCollectionMode) {
-                a2.f16701c.setVisibility(0);
-                a(a2.f16701c);
+                a.c.setVisibility(0);
+                a((View) a.c);
             } else {
-                a2.f16701c.setVisibility(8);
+                a.c.setVisibility(8);
             }
         }
-        a2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$CreateRoomBgAdapter$B9G7b8uNVDI7Q4xWXxLNuOPo1qc
+        a.getRoot().setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.yy_china.adapter.-$$Lambda$CreateRoomBgAdapter$B9G7b8uNVDI7Q4xWXxLNuOPo1qc
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                CreateRoomBgAdapter.b(CreateRoomBgAdapter.this, bgCollectionMode, a2, view);
+                CreateRoomBgAdapter.b(CreateRoomBgAdapter.this, bgCollectionMode, a, view);
             }
         });
     }

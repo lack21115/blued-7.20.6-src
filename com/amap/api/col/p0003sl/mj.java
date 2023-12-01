@@ -5,13 +5,9 @@ import java.io.Serializable;
 /* renamed from: com.amap.api.col.3sl.mj  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/mj.class */
 public abstract class mj implements Serializable {
-
-    /* renamed from: a  reason: collision with root package name */
-    public String f5383a;
+    public String a;
     public String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public int f5384c;
+    public int c;
     public int d;
     public long e;
     public long f;
@@ -20,9 +16,9 @@ public abstract class mj implements Serializable {
     public boolean i;
 
     public mj() {
-        this.f5383a = "";
+        this.a = "";
         this.b = "";
-        this.f5384c = 99;
+        this.c = 99;
         this.d = Integer.MAX_VALUE;
         this.e = 0L;
         this.f = 0L;
@@ -31,9 +27,9 @@ public abstract class mj implements Serializable {
     }
 
     public mj(boolean z, boolean z2) {
-        this.f5383a = "";
+        this.a = "";
         this.b = "";
-        this.f5384c = 99;
+        this.c = 99;
         this.d = Integer.MAX_VALUE;
         this.e = 0L;
         this.f = 0L;
@@ -57,9 +53,9 @@ public abstract class mj implements Serializable {
     public abstract mj clone();
 
     public final void a(mj mjVar) {
-        this.f5383a = mjVar.f5383a;
+        this.a = mjVar.a;
         this.b = mjVar.b;
-        this.f5384c = mjVar.f5384c;
+        this.c = mjVar.c;
         this.d = mjVar.d;
         this.e = mjVar.e;
         this.f = mjVar.f;
@@ -69,7 +65,7 @@ public abstract class mj implements Serializable {
     }
 
     public final int b() {
-        return a(this.f5383a);
+        return a(this.a);
     }
 
     public final int c() {
@@ -77,6 +73,6 @@ public abstract class mj implements Serializable {
     }
 
     public String toString() {
-        return "AmapCell{mcc=" + this.f5383a + ", mnc=" + this.b + ", signalStrength=" + this.f5384c + ", asulevel=" + this.d + ", lastUpdateSystemMills=" + this.e + ", lastUpdateUtcMills=" + this.f + ", age=" + this.g + ", main=" + this.h + ", newapi=" + this.i + '}';
+        return "AmapCell{mcc=" + this.a + ", mnc=" + this.b + ", signalStrength=" + this.c + ", asulevel=" + this.d + ", lastUpdateSystemMills=" + this.e + ", lastUpdateUtcMills=" + this.f + ", age=" + this.g + ", main=" + this.h + ", newapi=" + this.i + '}';
     }
 }

@@ -7,19 +7,19 @@ import android.graphics.Bitmap;
 public final /* synthetic */ class bk implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final TXVideoEditer f40259a;
+    private final TXVideoEditer f26568a;
     private final float b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final float f40260c;
+    private final float f26569c;
     private final float d;
     private final Bitmap e;
     private final Bitmap f;
 
     private bk(TXVideoEditer tXVideoEditer, float f, float f2, float f3, Bitmap bitmap, Bitmap bitmap2) {
-        this.f40259a = tXVideoEditer;
+        this.f26568a = tXVideoEditer;
         this.b = f;
-        this.f40260c = f2;
+        this.f26569c = f2;
         this.d = f3;
         this.e = bitmap;
         this.f = bitmap2;
@@ -31,6 +31,6 @@ public final /* synthetic */ class bk implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        TXVideoEditer.lambda$setFilter$7(this.f40259a, this.b, this.f40260c, this.d, this.e, this.f);
+        TXVideoEditer.lambda$setFilter$7(this.f26568a, this.b, this.f26569c, this.d, this.e, this.f);
     }
 }

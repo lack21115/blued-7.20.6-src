@@ -63,9 +63,7 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     private boolean F;
     private boolean G;
     private Context b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private View f19442c;
+    private View c;
     private KeyboardListenLinearLayout j;
     private AtChooseUserHelper k;
     private ImageView l;
@@ -85,9 +83,7 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     private int y = -1;
     private TextWatcher H = new TextWatcher() { // from class: com.blued.community.ui.comment.fragment.CircleCommentFragment.8
         private int b;
-
-        /* renamed from: c  reason: collision with root package name */
-        private int f19451c;
+        private int c;
         private String d;
         private String e;
 
@@ -95,9 +91,9 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
         public void afterTextChanged(Editable editable) {
             try {
                 this.b = CircleCommentFragment.this.n.getSelectionStart();
-                this.f19451c = CircleCommentFragment.this.n.getSelectionEnd();
+                this.c = CircleCommentFragment.this.n.getSelectionEnd();
                 CircleCommentFragment.this.n.removeTextChangedListener(CircleCommentFragment.this.H);
-                if (!CircleCommentFragment.this.k.a(CircleCommentFragment.this, this.d, this.e, editable, this.f19451c)) {
+                if (!CircleCommentFragment.this.k.a(CircleCommentFragment.this, this.d, this.e, editable, this.c)) {
                     CircleCommentFragment.this.n.setSelection(Math.max(CircleCommentFragment.this.n.getSelectionStart(), 0));
                 }
                 CircleCommentFragment.this.n.addTextChangedListener(CircleCommentFragment.this.H);
@@ -136,7 +132,7 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     }
 
     private void a(String str) {
-        this.n.setText(StringUtils.a(StringUtils.a(str, (int) this.n.getTextSize(), 3), true, true, true, null, true, "", ""));
+        this.n.setText(StringUtils.a(StringUtils.a(str, (int) this.n.getTextSize(), 3), true, true, true, (StringUtils.ClickAtLinkListener) null, true, "", ""));
         EditText editText = this.n;
         editText.setSelection(editText.length());
     }
@@ -155,7 +151,7 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
             this.E = arguments.getBoolean("is_can_anonymous");
             this.y = arguments.getInt("anonymous_header_number");
             this.x = arguments.getString("anonymous_header_url");
-            this.A = (FeedProtos.NoteSource) arguments.getSerializable("circle_from_page");
+            this.A = arguments.getSerializable("circle_from_page");
         }
     }
 
@@ -169,16 +165,16 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     }
 
     private void m() {
-        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) this.f19442c.findViewById(R.id.keyboardLinearLayout);
+        KeyboardListenLinearLayout keyboardListenLinearLayout = (KeyboardListenLinearLayout) this.c.findViewById(R.id.keyboardLinearLayout);
         this.j = keyboardListenLinearLayout;
         super.a(this.r, keyboardListenLinearLayout, this.n);
     }
 
     private void n() {
-        this.p = (ImageView) this.f19442c.findViewById(R.id.iv_close);
-        this.q = (ShapeTextView) this.f19442c.findViewById(R.id.tv_post);
-        this.l = (ImageView) this.f19442c.findViewById(R.id.iv_image);
-        this.m = (ImageView) this.f19442c.findViewById(R.id.iv_emoji);
+        this.p = (ImageView) this.c.findViewById(R.id.iv_close);
+        this.q = (ShapeTextView) this.c.findViewById(R.id.tv_post);
+        this.l = (ImageView) this.c.findViewById(R.id.iv_image);
+        this.m = (ImageView) this.c.findViewById(R.id.iv_emoji);
         this.p.setOnClickListener(this);
         this.q.setOnClickListener(this);
         this.l.setOnClickListener(this);
@@ -186,9 +182,9 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     }
 
     private void o() {
-        this.u = (FrameLayout) this.f19442c.findViewById(R.id.fl_anonymous_post);
-        this.v = (CheckBox) this.f19442c.findViewById(R.id.cb_anonymous_post);
-        this.w = (ImageView) this.f19442c.findViewById(R.id.iv_anonymous);
+        this.u = (FrameLayout) this.c.findViewById(R.id.fl_anonymous_post);
+        this.v = (CheckBox) this.c.findViewById(R.id.cb_anonymous_post);
+        this.w = (ImageView) this.c.findViewById(R.id.iv_anonymous);
         ImageLoader.a(getFragmentActive(), this.x).b(CircleMethods.a(this.b, this.y)).d(CircleMethods.a(this.b, this.y)).a(this.w);
         this.v.setEnabled(this.C);
         this.v.setClickable(this.C);
@@ -217,10 +213,10 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     }
 
     private void p() {
-        this.n = (EditText) this.f19442c.findViewById(R.id.edt_news_feed);
-        EditInputNumView editInputNumView = (EditInputNumView) this.f19442c.findViewById(R.id.inv_word_count);
-        this.o = editInputNumView;
-        editInputNumView.init(this.n, 512);
+        this.n = (EditText) this.c.findViewById(R.id.edt_news_feed);
+        EditInputNumView findViewById = this.c.findViewById(R.id.inv_word_count);
+        this.o = findViewById;
+        findViewById.init(this.n, 512);
         this.n.addTextChangedListener(this.H);
         this.n.setOnTouchListener(new View.OnTouchListener() { // from class: com.blued.community.ui.comment.fragment.CircleCommentFragment.3
             @Override // android.view.View.OnTouchListener
@@ -240,7 +236,7 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     }
 
     private void q() {
-        EmojiKeyboardLayout emojiKeyboardLayout = (EmojiKeyboardLayout) this.f19442c.findViewById(R.id.emoticon_layout);
+        EmojiKeyboardLayout emojiKeyboardLayout = (EmojiKeyboardLayout) this.c.findViewById(R.id.emoticon_layout);
         this.r = emojiKeyboardLayout;
         emojiKeyboardLayout.setKeyboardColor(2);
         this.r.setFragmentManager(getChildFragmentManager());
@@ -261,19 +257,16 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
     }
 
     private void r() {
-        this.s = (RecyclerView) this.f19442c.findViewById(R.id.rv_photo);
+        this.s = this.c.findViewById(R.id.rv_photo);
         this.s.setLayoutManager(new GridLayoutManager(this.b, 3));
         OnItemDragListener onItemDragListener = new OnItemDragListener() { // from class: com.blued.community.ui.comment.fragment.CircleCommentFragment.5
-            @Override // com.chad.library.adapter.base.listener.OnItemDragListener
             public void a(RecyclerView.ViewHolder viewHolder, int i) {
                 ((BaseViewHolder) viewHolder).setGone(R.id.drag, true);
             }
 
-            @Override // com.chad.library.adapter.base.listener.OnItemDragListener
             public void a(RecyclerView.ViewHolder viewHolder, int i, RecyclerView.ViewHolder viewHolder2, int i2) {
             }
 
-            @Override // com.chad.library.adapter.base.listener.OnItemDragListener
             public void b(RecyclerView.ViewHolder viewHolder, int i) {
                 ((BaseViewHolder) viewHolder).setGone(R.id.drag, false);
                 CircleCommentFragment.this.t.b();
@@ -289,13 +282,11 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
         this.t.a(itemTouchHelper);
         this.t.a(onItemDragListener);
         this.t.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() { // from class: com.blued.community.ui.comment.fragment.CircleCommentFragment.6
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemClickListener
             public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                CommunityServiceManager.b().a(CircleCommentFragment.this.getActivity(), i, 0, (LoadOptions) null);
+                CommunityServiceManager.b().a((Context) CircleCommentFragment.this.getActivity(), i, 0, (LoadOptions) null);
             }
         });
         this.t.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() { // from class: com.blued.community.ui.comment.fragment.CircleCommentFragment.7
-            @Override // com.chad.library.adapter.base.BaseQuickAdapter.OnItemChildClickListener
             public void onItemChildClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
                 CircleCommentFragment.this.s();
             }
@@ -406,7 +397,6 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         Log.v("drb", "onActivityResult resultCode:" + i2 + " -- requestCode:" + i);
         if (i2 == -1) {
@@ -448,7 +438,7 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
                 KeyboardUtils.c(getActivity());
             } else if (this.F) {
                 this.G = true;
-                KeyboardUtils.a(getActivity());
+                KeyboardUtils.a((Activity) getActivity());
             } else {
                 l();
                 this.r.setVisibility(0);
@@ -456,14 +446,14 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.b = getActivity();
         getActivity().getWindow().setSoftInputMode(18);
         this.k = new AtChooseUserHelper(this.b);
-        View view = this.f19442c;
+        View view = this.c;
         if (view == null) {
-            this.f19442c = layoutInflater.inflate(R.layout.fragment_circle_comment_post, viewGroup, false);
+            this.c = layoutInflater.inflate(R.layout.fragment_circle_comment_post, viewGroup, false);
             k();
             n();
             p();
@@ -473,12 +463,12 @@ public class CircleCommentFragment extends KeyBoardFragment implements View.OnCl
             o();
             s();
         } else if (view.getParent() != null) {
-            ((ViewGroup) this.f19442c.getParent()).removeView(this.f19442c);
+            ((ViewGroup) this.c.getParent()).removeView(this.c);
         }
-        return this.f19442c;
+        return this.c;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseFragment
     public void onResume() {
         super.onResume();
         j();

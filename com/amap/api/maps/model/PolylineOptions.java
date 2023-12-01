@@ -1,8 +1,8 @@
 package com.amap.api.maps.model;
 
-import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.View;
 import com.amap.api.maps.model.BaseOptions;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,9 +13,7 @@ public final class PolylineOptions extends BaseOptions implements Parcelable {
     public static final PolylineOptionsCreator CREATOR = new PolylineOptionsCreator();
     public static final int DOTTEDLINE_TYPE_CIRCLE = 1;
     public static final int DOTTEDLINE_TYPE_SQUARE = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    String f5537a;
+    String a;
     private List<Integer> colorValues;
     private List<Integer> customIndexs;
     private BitmapDescriptor customTexture;
@@ -25,7 +23,7 @@ public final class PolylineOptions extends BaseOptions implements Parcelable {
     private int[] jniColorValues;
     private int[] jniCustomIndexes;
     private float width = 10.0f;
-    private int color = -16777216;
+    private int color = View.MEASURED_STATE_MASK;
     private float zIndex = 0.0f;
     private boolean isVisible = true;
     private boolean isUseTexture = true;
@@ -44,7 +42,7 @@ public final class PolylineOptions extends BaseOptions implements Parcelable {
     private float shownRangeEnd = -1.0f;
     private float footPrintGap = 100.0f;
     private boolean eraseVisible = false;
-    private int eraseColor = Color.GRAY;
+    private int eraseColor = -7829368;
     private float shownPolylineRangeBegin = 0.0f;
     private float shownPolylineRangeEnd = 0.0f;
     private boolean showPolylineRangeEnable = false;
@@ -486,7 +484,7 @@ public final class PolylineOptions extends BaseOptions implements Parcelable {
         parcel.writeInt(this.dottedLineType);
         parcel.writeFloat(this.zIndex);
         parcel.writeFloat(this.transparency);
-        parcel.writeString(this.f5537a);
+        parcel.writeString(this.a);
         parcel.writeInt(this.lineCapType.getTypeValue());
         parcel.writeInt(this.lineJoinType.getTypeValue());
         parcel.writeBooleanArray(new boolean[]{this.isVisible, this.isDottedLine, this.isGeodesic, this.isGradient, this.isAboveMaskLayer});

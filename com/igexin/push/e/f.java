@@ -4,12 +4,12 @@ package com.igexin.push.e;
 public final class f implements com.igexin.push.e.b.c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23620a = "SilentTimeTimerTask";
+    private static final String f10012a = "SilentTimeTimerTask";
     private static f d;
     private long b = 0;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f23621c = 0;
+    private long f10013c = 0;
     private boolean e = false;
 
     private f() {
@@ -34,7 +34,7 @@ public final class f implements com.igexin.push.e.b.c {
 
     @Override // com.igexin.push.e.b.c
     public final boolean b() {
-        return System.currentTimeMillis() - this.b > this.f23621c;
+        return System.currentTimeMillis() - this.b > this.f10013c;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0077, code lost:
@@ -47,7 +47,7 @@ public final class f implements com.igexin.push.e.b.c {
         r0.add(5, 1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:22:0x00bd, code lost:
-        r7.f23621c = r0.getTimeInMillis() - r0;
+        r7.f10013c = r0.getTimeInMillis() - r0;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.

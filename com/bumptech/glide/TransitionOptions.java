@@ -9,7 +9,7 @@ import com.bumptech.glide.util.Preconditions;
 public abstract class TransitionOptions<CHILD extends TransitionOptions<CHILD, TranscodeType>, TranscodeType> implements Cloneable {
 
     /* renamed from: a  reason: collision with root package name */
-    private TransitionFactory<? super TranscodeType> f20671a = NoTransition.a();
+    private TransitionFactory<? super TranscodeType> f7065a = NoTransition.a();
 
     private CHILD c() {
         return this;
@@ -25,12 +25,12 @@ public abstract class TransitionOptions<CHILD extends TransitionOptions<CHILD, T
     }
 
     public final CHILD a(TransitionFactory<? super TranscodeType> transitionFactory) {
-        this.f20671a = (TransitionFactory) Preconditions.a(transitionFactory);
+        this.f7065a = (TransitionFactory) Preconditions.a(transitionFactory);
         return c();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final TransitionFactory<? super TranscodeType> b() {
-        return this.f20671a;
+        return this.f7065a;
     }
 }

@@ -5,6 +5,8 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.text.TextUtils;
+import com.android.internal.util.cm.QSConstants;
+import com.anythink.china.api.ChinaDeviceDataInfo;
 import com.anythink.core.common.b.n;
 import java.net.NetworkInterface;
 import java.util.Collections;
@@ -54,7 +56,7 @@ public final class d {
             return "";
         }
         try {
-            wifiInfo = ((WifiManager) context.getApplicationContext().getSystemService("wifi")).getConnectionInfo();
+            wifiInfo = ((WifiManager) context.getApplicationContext().getSystemService(QSConstants.TILE_WIFI)).getConnectionInfo();
         } catch (Throwable th) {
             th.printStackTrace();
             wifiInfo = null;
@@ -71,6 +73,6 @@ public final class d {
     }
 
     private static String b(Context context) {
-        return n.a().c("mac") ? "" : Build.VERSION.SDK_INT < 23 ? a(context) : a();
+        return n.a().c(ChinaDeviceDataInfo.MAC) ? "" : Build.VERSION.SDK_INT < 23 ? a(context) : a();
     }
 }

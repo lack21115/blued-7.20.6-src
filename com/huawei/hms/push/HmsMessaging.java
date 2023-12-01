@@ -41,15 +41,15 @@ public class HmsMessaging {
     public static final String DEFAULT_TOKEN_SCOPE = "HCM";
 
     /* renamed from: c  reason: collision with root package name */
-    private static final Pattern f22833c = Pattern.compile("[\\u4e00-\\u9fa5\\w-_.~%]{1,900}");
+    private static final Pattern f9225c = Pattern.compile("[\\u4e00-\\u9fa5\\w-_.~%]{1,900}");
 
     /* renamed from: a  reason: collision with root package name */
-    private Context f22834a;
+    private Context f9226a;
     private HuaweiApi<Api.ApiOptions.NoOptions> b;
 
     private HmsMessaging(Context context) {
         Preconditions.checkNotNull(context);
-        this.f22834a = context;
+        this.f9226a = context;
         Api api = new Api(HuaweiApiAvailability.HMS_API_NAME_PUSH);
         if (context instanceof Activity) {
             this.b = new HuaweiApi<>((Activity) context, (Api<Api.ApiOptions>) api, (Api.ApiOptions) null, (AbstractClientBuilder) new PushClientBuilder());
@@ -60,98 +60,98 @@ public class HmsMessaging {
     }
 
     private Task<Void> a(String str, String str2) {
-        String reportEntry = PushBiUtil.reportEntry(this.f22834a, PushNaming.SUBSCRIBE);
-        if (str == null || !f22833c.matcher(str).matches()) {
-            PushBiUtil.reportExit(this.f22834a, PushNaming.SUBSCRIBE, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
+        String reportEntry = PushBiUtil.reportEntry(this.f9226a, PushNaming.SUBSCRIBE);
+        if (str == null || !f9225c.matcher(str).matches()) {
+            PushBiUtil.reportExit(this.f9226a, PushNaming.SUBSCRIBE, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
             HMSLog.e("HmsMessaging", "Invalid topic: topic should match the format:[\\u4e00-\\u9fa5\\w-_.~%]{1,900}");
             throw new IllegalArgumentException("Invalid topic: topic should match the format:[\\u4e00-\\u9fa5\\w-_.~%]{1,900}");
         }
         try {
             if (ProxyCenter.getProxy() != null) {
                 HMSLog.i("HmsMessaging", "use proxy subscribe.");
-                return TextUtils.equals(str2, "Sub") ? ProxyCenter.getProxy().subscribe(this.f22834a, str, reportEntry) : ProxyCenter.getProxy().unsubscribe(this.f22834a, str, reportEntry);
+                return TextUtils.equals(str2, "Sub") ? ProxyCenter.getProxy().subscribe(this.f9226a, str, reportEntry) : ProxyCenter.getProxy().unsubscribe(this.f9226a, str, reportEntry);
             }
             try {
-                ErrorEnum a2 = t.a(this.f22834a);
+                ErrorEnum a2 = t.a(this.f9226a);
                 if (a2 == ErrorEnum.SUCCESS) {
-                    if (NetWorkUtil.getNetworkType(this.f22834a) == 0) {
+                    if (NetWorkUtil.getNetworkType(this.f9226a) == 0) {
                         HMSLog.e("HmsMessaging", "no network");
                         throw ErrorEnum.ERROR_NO_NETWORK.toApiException();
                     }
-                    SubscribeReq subscribeReq = new SubscribeReq(this.f22834a, str2, str);
-                    subscribeReq.setToken(BaseUtils.getLocalToken(this.f22834a, null));
+                    SubscribeReq subscribeReq = new SubscribeReq(this.f9226a, str2, str);
+                    subscribeReq.setToken(BaseUtils.getLocalToken(this.f9226a, null));
                     return c.b() ? this.b.doWrite(new BaseVoidTask(PushNaming.SUBSCRIBE, JsonUtil.createJsonString(subscribeReq), reportEntry)) : this.b.doWrite(new SubscribeTask(PushNaming.SUBSCRIBE, JsonUtil.createJsonString(subscribeReq), reportEntry));
                 }
                 throw a2.toApiException();
             } catch (Exception e) {
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
                 taskCompletionSource.setException(ErrorEnum.ERROR_INTERNAL_ERROR.toApiException());
-                PushBiUtil.reportExit(this.f22834a, PushNaming.SUBSCRIBE, reportEntry, ErrorEnum.ERROR_INTERNAL_ERROR);
+                PushBiUtil.reportExit(this.f9226a, PushNaming.SUBSCRIBE, reportEntry, ErrorEnum.ERROR_INTERNAL_ERROR);
                 return taskCompletionSource.getTask();
             }
         } catch (ApiException e2) {
             TaskCompletionSource taskCompletionSource2 = new TaskCompletionSource();
             taskCompletionSource2.setException(e2);
-            PushBiUtil.reportExit(this.f22834a, PushNaming.SUBSCRIBE, reportEntry, e2.getStatusCode());
+            PushBiUtil.reportExit(this.f9226a, PushNaming.SUBSCRIBE, reportEntry, e2.getStatusCode());
             return taskCompletionSource2.getTask();
         }
     }
 
     private Task<Void> a(boolean z) {
-        String reportEntry = PushBiUtil.reportEntry(this.f22834a, PushNaming.SET_NOTIFY_FLAG);
-        if (!c.d(this.f22834a) || c.b()) {
+        String reportEntry = PushBiUtil.reportEntry(this.f9226a, PushNaming.SET_NOTIFY_FLAG);
+        if (!c.d(this.f9226a) || c.b()) {
             HMSLog.i("HmsMessaging", "turn on/off with AIDL");
             EnableNotifyReq enableNotifyReq = new EnableNotifyReq();
-            enableNotifyReq.setPackageName(this.f22834a.getPackageName());
+            enableNotifyReq.setPackageName(this.f9226a.getPackageName());
             enableNotifyReq.setEnable(z);
             return this.b.doWrite(new BaseVoidTask(PushNaming.SET_NOTIFY_FLAG, JsonUtil.createJsonString(enableNotifyReq), reportEntry));
         } else if (HwBuildEx.VERSION.EMUI_SDK_INT < 12) {
             HMSLog.e("HmsMessaging", "operation not available on Huawei device with EMUI lower than 5.1");
             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
             taskCompletionSource.setException(ErrorEnum.ERROR_OPERATION_NOT_SUPPORTED.toApiException());
-            PushBiUtil.reportExit(this.f22834a, PushNaming.SET_NOTIFY_FLAG, reportEntry, ErrorEnum.ERROR_OPERATION_NOT_SUPPORTED);
+            PushBiUtil.reportExit(this.f9226a, PushNaming.SET_NOTIFY_FLAG, reportEntry, ErrorEnum.ERROR_OPERATION_NOT_SUPPORTED);
             return taskCompletionSource.getTask();
-        } else if (c.b(this.f22834a) < 90101310) {
+        } else if (c.b(this.f9226a) < 90101310) {
             HMSLog.i("HmsMessaging", "turn on/off with broadcast v1");
-            Context context = this.f22834a;
-            Intent putExtra = new Intent("com.huawei.intent.action.SELF_SHOW_FLAG").putExtra("enalbeFlag", PushEncrypter.encrypterOld(context, this.f22834a.getPackageName() + "#" + z));
+            Context context = this.f9226a;
+            Intent putExtra = new Intent("com.huawei.intent.action.SELF_SHOW_FLAG").putExtra("enalbeFlag", PushEncrypter.encrypterOld(context, this.f9226a.getPackageName() + "#" + z));
             putExtra.setPackage("android");
-            return Tasks.callInBackground(new IntentCallable(this.f22834a, putExtra, reportEntry));
+            return Tasks.callInBackground(new IntentCallable(this.f9226a, putExtra, reportEntry));
         } else {
             HMSLog.i("HmsMessaging", "turn on/off with broadcast v2");
-            new PushPreferences(this.f22834a, "push_notify_flag").saveBoolean("notify_msg_enable", !z);
-            Uri parse = Uri.parse("content://" + this.f22834a.getPackageName() + ".huawei.push.provider/push_notify_flag.xml");
+            new PushPreferences(this.f9226a, "push_notify_flag").saveBoolean("notify_msg_enable", !z);
+            Uri parse = Uri.parse("content://" + this.f9226a.getPackageName() + ".huawei.push.provider/push_notify_flag.xml");
             Intent intent = new Intent("com.huawei.android.push.intent.SDK_COMMAND");
             intent.putExtra("type", "enalbeFlag");
-            intent.putExtra("pkgName", this.f22834a.getPackageName());
+            intent.putExtra("pkgName", this.f9226a.getPackageName());
             intent.putExtra("url", parse);
             intent.setPackage("android");
-            return Tasks.callInBackground(new IntentCallable(this.f22834a, intent, reportEntry));
+            return Tasks.callInBackground(new IntentCallable(this.f9226a, intent, reportEntry));
         }
     }
 
     private void a(RemoteMessage remoteMessage) {
-        String reportEntry = PushBiUtil.reportEntry(this.f22834a, PushNaming.UPSEND_MSG);
-        ErrorEnum a2 = t.a(this.f22834a);
+        String reportEntry = PushBiUtil.reportEntry(this.f9226a, PushNaming.UPSEND_MSG);
+        ErrorEnum a2 = t.a(this.f9226a);
         if (a2 != ErrorEnum.SUCCESS) {
             HMSLog.e("HmsMessaging", "Message sent failed:" + a2.getExternalCode() + ':' + a2.getMessage());
-            PushBiUtil.reportExit(this.f22834a, PushNaming.UPSEND_MSG, reportEntry, a2);
+            PushBiUtil.reportExit(this.f9226a, PushNaming.UPSEND_MSG, reportEntry, a2);
             throw new UnsupportedOperationException(a2.getMessage());
         } else if (TextUtils.isEmpty(remoteMessage.getTo())) {
             HMSLog.e("HmsMessaging", "Mandatory parameter 'to' missing");
-            PushBiUtil.reportExit(this.f22834a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
+            PushBiUtil.reportExit(this.f9226a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
             throw new IllegalArgumentException("Mandatory parameter 'to' missing");
         } else if (TextUtils.isEmpty(remoteMessage.getMessageId())) {
             HMSLog.e("HmsMessaging", "Mandatory parameter 'message_id' missing");
-            PushBiUtil.reportExit(this.f22834a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
+            PushBiUtil.reportExit(this.f9226a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
             throw new IllegalArgumentException("Mandatory parameter 'message_id' missing");
         } else if (TextUtils.isEmpty(remoteMessage.getData())) {
             HMSLog.e("HmsMessaging", "Mandatory parameter 'data' missing");
-            PushBiUtil.reportExit(this.f22834a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
+            PushBiUtil.reportExit(this.f9226a, PushNaming.UPSEND_MSG, reportEntry, ErrorEnum.ERROR_ARGUMENTS_INVALID);
             throw new IllegalArgumentException("Mandatory parameter 'data' missing");
         } else {
             UpSendMsgReq upSendMsgReq = new UpSendMsgReq();
-            upSendMsgReq.setPackageName(this.f22834a.getPackageName());
+            upSendMsgReq.setPackageName(this.f9226a.getPackageName());
             upSendMsgReq.setMessageId(remoteMessage.getMessageId());
             upSendMsgReq.setTo(remoteMessage.getTo());
             upSendMsgReq.setData(remoteMessage.getData());
@@ -169,15 +169,15 @@ public class HmsMessaging {
     }
 
     private void a(UpSendMsgReq upSendMsgReq, String str) {
-        upSendMsgReq.setToken(BaseUtils.getLocalToken(this.f22834a, null));
+        upSendMsgReq.setToken(BaseUtils.getLocalToken(this.f9226a, null));
         try {
             this.b.doWrite(new SendUpStreamTask(PushNaming.UPSEND_MSG, JsonUtil.createJsonString(upSendMsgReq), str, upSendMsgReq.getPackageName(), upSendMsgReq.getMessageId()));
         } catch (Exception e) {
             if (!(e.getCause() instanceof ApiException)) {
-                PushBiUtil.reportExit(this.f22834a, PushNaming.UPSEND_MSG, str, ErrorEnum.ERROR_INTERNAL_ERROR);
+                PushBiUtil.reportExit(this.f9226a, PushNaming.UPSEND_MSG, str, ErrorEnum.ERROR_INTERNAL_ERROR);
                 return;
             }
-            PushBiUtil.reportExit(this.f22834a, PushNaming.UPSEND_MSG, str, ((ApiException) e.getCause()).getStatusCode());
+            PushBiUtil.reportExit(this.f9226a, PushNaming.UPSEND_MSG, str, ((ApiException) e.getCause()).getStatusCode());
         }
     }
 
@@ -194,7 +194,7 @@ public class HmsMessaging {
     }
 
     public boolean isAutoInitEnabled() {
-        return AutoInitHelper.isAutoInitEnabled(this.f22834a);
+        return AutoInitHelper.isAutoInitEnabled(this.f9226a);
     }
 
     public void send(RemoteMessage remoteMessage) {
@@ -207,7 +207,7 @@ public class HmsMessaging {
     }
 
     public void setAutoInitEnabled(boolean z) {
-        AutoInitHelper.setAutoInitEnabled(this.f22834a, z);
+        AutoInitHelper.setAutoInitEnabled(this.f9226a, z);
     }
 
     public Task<Void> subscribe(String str) {
@@ -218,7 +218,7 @@ public class HmsMessaging {
     public Task<Void> turnOffPush() {
         if (ProxyCenter.getProxy() != null) {
             HMSLog.i("HmsMessaging", "turn off for proxy");
-            return ProxyCenter.getProxy().turnOff(this.f22834a, null);
+            return ProxyCenter.getProxy().turnOff(this.f9226a, null);
         }
         HMSLog.i("HmsMessaging", "invoke turnOffPush");
         return a(false);
@@ -227,7 +227,7 @@ public class HmsMessaging {
     public Task<Void> turnOnPush() {
         if (ProxyCenter.getProxy() != null) {
             HMSLog.i("HmsMessaging", "turn on for proxy");
-            return ProxyCenter.getProxy().turnOn(this.f22834a, null);
+            return ProxyCenter.getProxy().turnOn(this.f9226a, null);
         }
         HMSLog.i("HmsMessaging", "invoke turnOnPush");
         return a(true);

@@ -34,7 +34,7 @@ public class ActionBarPolicy {
     }
 
     public int getTabContainerHeight() {
-        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.ActionBar, 16843470, 0);
+        TypedArray obtainStyledAttributes = this.mContext.obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
         int layoutDimension = obtainStyledAttributes.getLayoutDimension(4, 0);
         Resources resources = this.mContext.getResources();
         int i = layoutDimension;

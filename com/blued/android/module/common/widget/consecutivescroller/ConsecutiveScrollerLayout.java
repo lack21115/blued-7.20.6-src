@@ -51,12 +51,8 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
     private OnPermanentStickyChangeListener N;
     private int O;
     private SkinCompatBackgroundHelper P;
-
-    /* renamed from: a  reason: collision with root package name */
-    protected OnScrollChangeListener f11087a;
-
-    /* renamed from: c  reason: collision with root package name */
-    private int f11088c;
+    protected OnScrollChangeListener a;
+    private int c;
     private int d;
     private OverScroller e;
     private VelocityTracker f;
@@ -85,25 +81,23 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
     /* renamed from: com.blued.android.module.common.widget.consecutivescroller.ConsecutiveScrollerLayout$3  reason: invalid class name */
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/consecutivescroller/ConsecutiveScrollerLayout$3.class */
     public static /* synthetic */ class AnonymousClass3 {
-
-        /* renamed from: a  reason: collision with root package name */
-        static final /* synthetic */ int[] f11090a;
+        static final /* synthetic */ int[] a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[LayoutParams.Align.values().length];
-            f11090a = iArr;
+            a = iArr;
             try {
                 iArr[LayoutParams.Align.RIGHT.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f11090a[LayoutParams.Align.CENTER.ordinal()] = 2;
+                a[LayoutParams.Align.CENTER.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f11090a[LayoutParams.Align.LEFT.ordinal()] = 3;
+                a[LayoutParams.Align.LEFT.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -111,13 +105,9 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
 
     /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/consecutivescroller/ConsecutiveScrollerLayout$LayoutParams.class */
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
-
-        /* renamed from: a  reason: collision with root package name */
-        public boolean f11091a;
+        public boolean a;
         public boolean b;
-
-        /* renamed from: c  reason: collision with root package name */
-        public boolean f11092c;
+        public boolean c;
         public Align d;
 
         /* loaded from: source-4169892-dex2jar.jar:com/blued/android/module/common/widget/consecutivescroller/ConsecutiveScrollerLayout$LayoutParams$Align.class */
@@ -139,26 +129,26 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
 
         public LayoutParams(int i, int i2) {
             super(i, i2);
-            this.f11091a = true;
+            this.a = true;
             this.b = true;
-            this.f11092c = false;
+            this.c = false;
             this.d = Align.LEFT;
         }
 
         public LayoutParams(Context context, AttributeSet attributeSet) {
             super(context, attributeSet);
             TypedArray typedArray;
-            this.f11091a = true;
+            this.a = true;
             this.b = true;
-            this.f11092c = false;
+            this.c = false;
             this.d = Align.LEFT;
             TypedArray typedArray2 = null;
             TypedArray typedArray3 = null;
             try {
                 try {
                     typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ConsecutiveScrollerLayout_Layout);
-                    this.f11091a = typedArray.getBoolean(R.styleable.ConsecutiveScrollerLayout_Layout_layout_isConsecutive, true);
-                    this.f11092c = typedArray.getBoolean(R.styleable.ConsecutiveScrollerLayout_Layout_layout_isSticky, false);
+                    this.a = typedArray.getBoolean(R.styleable.ConsecutiveScrollerLayout_Layout_layout_isConsecutive, true);
+                    this.c = typedArray.getBoolean(R.styleable.ConsecutiveScrollerLayout_Layout_layout_isSticky, false);
                     this.b = typedArray.getBoolean(R.styleable.ConsecutiveScrollerLayout_Layout_layout_isNestedScroll, true);
                     typedArray3 = typedArray;
                     typedArray2 = typedArray;
@@ -185,9 +175,9 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
 
         public LayoutParams(ViewGroup.LayoutParams layoutParams) {
             super(layoutParams);
-            this.f11091a = true;
+            this.a = true;
             this.b = true;
-            this.f11092c = false;
+            this.c = false;
             this.d = Align.LEFT;
         }
     }
@@ -279,7 +269,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
 
     private int a(View view, int i, int i2, int i3) {
         LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
-        int i4 = AnonymousClass3.f11090a[layoutParams.d.ordinal()];
+        int i4 = AnonymousClass3.a[layoutParams.d.ordinal()];
         return i4 != 1 ? i4 != 2 ? i2 + layoutParams.leftMargin : layoutParams.leftMargin + i2 + ((((((i - view.getMeasuredWidth()) - i2) - layoutParams.leftMargin) - i3) - layoutParams.rightMargin) / 2) : ((i - view.getMeasuredWidth()) - i3) - layoutParams.rightMargin;
     }
 
@@ -298,10 +288,10 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
                 return;
             }
             dispatchNestedFling(0.0f, f, (i < 0 && !d()) || (i > 0 && !e()));
-            this.e.fling(0, this.f11088c, 1, i, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE);
+            this.e.fling(0, this.c, 1, i, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MAX_VALUE);
             startNestedScroll(2, 1);
             setScrollState(2);
-            this.D = this.f11088c;
+            this.D = this.c;
             invalidate();
         }
     }
@@ -364,14 +354,14 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
     }
 
     private void b(int i, int i2) {
-        OnScrollChangeListener onScrollChangeListener = this.f11087a;
+        OnScrollChangeListener onScrollChangeListener = this.a;
         if (onScrollChangeListener != null) {
             onScrollChangeListener.a(this, i, i2, this.O);
         }
     }
 
     private void b(View view, int i) {
-        View h = ScrollUtils.h(view);
+        RecyclerView h = ScrollUtils.h(view);
         if (h instanceof AbsListView) {
             AbsListView absListView = (AbsListView) h;
             if (Build.VERSION.SDK_INT >= 19) {
@@ -380,10 +370,10 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
             }
             return;
         }
-        boolean a2 = h instanceof RecyclerView ? ScrollUtils.a((RecyclerView) h) : false;
+        boolean a = h instanceof RecyclerView ? ScrollUtils.a(h) : false;
         h.scrollBy(0, i);
-        if (a2) {
-            final RecyclerView recyclerView = (RecyclerView) h;
+        if (a) {
+            final RecyclerView recyclerView = h;
             recyclerView.postDelayed(new Runnable() { // from class: com.blued.android.module.common.widget.consecutivescroller.ConsecutiveScrollerLayout.2
                 @Override // java.lang.Runnable
                 public void run() {
@@ -402,9 +392,9 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
                 break;
             }
             View view = list.get(i2);
-            int a2 = a(list, i2);
-            if (getScrollY() > 0 && view.getTop() <= getStickyY() + a2) {
-                view.setY(getStickyY() + a2);
+            int a = a(list, i2);
+            if (getScrollY() > 0 && view.getTop() <= getStickyY() + a) {
+                view.setY(getStickyY() + a);
                 view.setClickable(true);
                 this.I.add(view);
             }
@@ -423,7 +413,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         int i;
         int i2;
         if (z2 || (!this.p && this.e.isFinished() && this.y == -1)) {
-            int i3 = this.f11088c;
+            int i3 = this.c;
             View b2 = b();
             if (b2 == null) {
                 return;
@@ -501,7 +491,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
                 }
             }
             k();
-            if (z && i3 != (i2 = this.f11088c)) {
+            if (z && i3 != (i2 = this.c)) {
                 b(i2, i3);
             }
             s();
@@ -521,7 +511,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         int i2;
         int i3;
         int i4;
-        int i5 = this.f11088c;
+        int i5 = this.c;
         int i6 = i;
         do {
             int i7 = this.y;
@@ -567,7 +557,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
                         }
                         e(getScrollY() + i9);
                     }
-                    this.f11088c += i9;
+                    this.c += i9;
                     i4 = i6 - i9;
                 }
             }
@@ -576,7 +566,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
             }
             i6 = i4;
         } while (i4 > 0);
-        int i10 = this.f11088c;
+        int i10 = this.c;
         if (i5 != i10) {
             b(i10, i5);
         }
@@ -588,9 +578,9 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
             i = 0;
             int d = ScrollUtils.d(view);
             if (d < 0) {
-                int a2 = ScrollUtils.a(view);
+                int a = ScrollUtils.a(view);
                 b(view, d);
-                i = a2 - ScrollUtils.a(view);
+                i = a - ScrollUtils.a(view);
             }
         } while (i != 0);
     }
@@ -604,7 +594,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         int i2;
         int i3;
         int i4;
-        int i5 = this.f11088c;
+        int i5 = this.c;
         int i6 = i;
         do {
             int i7 = this.y;
@@ -625,29 +615,29 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
             int i8 = 0;
             i4 = i6;
             if (!d()) {
-                View c2 = c();
+                View c = c();
                 i8 = 0;
                 i4 = i6;
-                if (c2 != null) {
+                if (c != null) {
                     awakenScrollBars();
-                    int d = ScrollUtils.d(c2);
+                    int d = ScrollUtils.d(c);
                     if (d < 0) {
                         int max = Math.max(i6, d);
                         i8 = max;
                         if (this.y != -1) {
                             i8 = Math.max(max, i2 - ((getScrollY() + getPaddingTop()) + i3));
                         }
-                        b(c2, i8);
+                        b(c, i8);
                     } else {
                         int scrollY = getScrollY();
-                        int max2 = Math.max(Math.max(i6, ((c2.getTop() + getPaddingBottom()) - scrollY) - getHeight()), -scrollY);
+                        int max2 = Math.max(Math.max(i6, ((c.getTop() + getPaddingBottom()) - scrollY) - getHeight()), -scrollY);
                         i8 = max2;
                         if (this.y != -1) {
                             i8 = Math.max(max2, i2 - ((getScrollY() + getPaddingTop()) + i3));
                         }
                         e(scrollY + i8);
                     }
-                    this.f11088c += i8;
+                    this.c += i8;
                     i4 = i6 - i8;
                 }
             }
@@ -656,7 +646,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
             }
             i6 = i4;
         } while (i4 < 0);
-        int i9 = this.f11088c;
+        int i9 = this.c;
         if (i5 != i9) {
             b(i9, i5);
         }
@@ -668,17 +658,17 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
             i = 0;
             int e = ScrollUtils.e(view);
             if (e > 0) {
-                int a2 = ScrollUtils.a(view);
+                int a = ScrollUtils.a(view);
                 b(view, e);
-                i = a2 - ScrollUtils.a(view);
+                i = a - ScrollUtils.a(view);
             }
         } while (i != 0);
     }
 
     private boolean d(int i, int i2) {
-        View c2 = c(i, i2);
-        if (c2 != null) {
-            return ScrollUtils.g(c2);
+        View c = c(i, i2);
+        if (c != null) {
+            return ScrollUtils.g(c);
         }
         return false;
     }
@@ -698,16 +688,16 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
     }
 
     private void e(int i, int i2) {
-        int i3 = this.f11088c;
+        int i3 = this.c;
         b(i);
-        int i4 = this.f11088c - i3;
-        this.t.dispatchNestedScroll(0, i4, 0, i - i4, null, i2);
+        int i4 = this.c - i3;
+        this.t.dispatchNestedScroll(0, i4, 0, i - i4, (int[]) null, i2);
     }
 
     private boolean e(View view) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         if (layoutParams instanceof LayoutParams) {
-            return ((LayoutParams) layoutParams).f11092c;
+            return ((LayoutParams) layoutParams).c;
         }
         return false;
     }
@@ -863,7 +853,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
     }
 
     private void k() {
-        this.f11088c = computeVerticalScrollOffset();
+        this.c = computeVerticalScrollOffset();
     }
 
     private void l() {
@@ -1341,6 +1331,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         return i2;
     }
 
+    /* JADX WARN: Type inference failed for: r0v28, types: [com.blued.android.module.common.widget.consecutivescroller.ConsecutiveViewPager, android.view.View] */
     public boolean d() {
         List<View> effectiveChildren = getEffectiveChildren();
         int size = effectiveChildren.size();
@@ -1362,8 +1353,8 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
                     }
                     View view2 = effectiveChildren.get(i2);
                     if (view2 instanceof ConsecutiveViewPager) {
-                        ConsecutiveViewPager consecutiveViewPager = (ConsecutiveViewPager) view2;
-                        if (consecutiveViewPager.getAdjustHeight() > 0 && ScrollUtils.g(consecutiveViewPager) && ScrollUtils.a(consecutiveViewPager, -1)) {
+                        ?? r0 = (ConsecutiveViewPager) view2;
+                        if (r0.getAdjustHeight() > 0 && ScrollUtils.g(r0) && ScrollUtils.a(r0, -1)) {
                             return false;
                         }
                     }
@@ -1374,32 +1365,30 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         return z;
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public boolean dispatchNestedFling(float f, float f2, boolean z) {
         return this.t.dispatchNestedFling(f, f2, z);
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public boolean dispatchNestedPreFling(float f, float f2) {
         return this.t.dispatchNestedPreFling(f, f2);
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public boolean dispatchNestedPreScroll(int i, int i2, int[] iArr, int[] iArr2) {
         return dispatchNestedPreScroll(i, i2, iArr, iArr2, 0);
     }
 
-    @Override // androidx.core.view.NestedScrollingChild2
     public boolean dispatchNestedPreScroll(int i, int i2, int[] iArr, int[] iArr2, int i3) {
         return this.t.dispatchNestedPreScroll(i, i2, iArr, iArr2, i3);
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public boolean dispatchNestedScroll(int i, int i2, int i3, int i4, int[] iArr) {
         return this.t.dispatchNestedScroll(i, i2, i3, i4, iArr);
     }
 
-    @Override // androidx.core.view.NestedScrollingChild2
     public boolean dispatchNestedScroll(int i, int i2, int i3, int i4, int[] iArr, int i5) {
         return this.t.dispatchNestedScroll(i, i2, i3, i4, iArr, i5);
     }
@@ -1463,7 +1452,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         return this.H;
     }
 
-    @Override // android.view.ViewGroup, androidx.core.view.NestedScrollingParent
+    @Override // android.view.ViewGroup
     public int getNestedScrollAxes() {
         return this.s.getNestedScrollAxes();
     }
@@ -1477,11 +1466,11 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
     }
 
     public OnScrollChangeListener getOnVerticalScrollChangeListener() {
-        return this.f11087a;
+        return this.a;
     }
 
     public int getOwnScrollY() {
-        return this.f11088c;
+        return this.c;
     }
 
     public int getScrollState() {
@@ -1492,12 +1481,11 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         return this.F;
     }
 
-    @Override // androidx.core.view.NestedScrollingChild2
     public boolean hasNestedScrollingParent(int i) {
         return this.t.hasNestedScrollingParent(i);
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public boolean isNestedScrollingEnabled() {
         return this.t.isNestedScrollingEnabled();
     }
@@ -1594,8 +1582,8 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         while (i5 < size) {
             View view = nonGoneChildren.get(i5);
             int measuredHeight = view.getMeasuredHeight() + paddingTop;
-            int a2 = a(view, measuredWidth, paddingLeft, paddingRight);
-            view.layout(a2, paddingTop, view.getMeasuredWidth() + a2, measuredHeight);
+            int a = a(view, measuredWidth, paddingLeft, paddingRight);
+            view.layout(a, paddingTop, view.getMeasuredWidth() + a, measuredHeight);
             this.d += view.getHeight();
             i5++;
             paddingTop = measuredHeight;
@@ -1646,7 +1634,6 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         onNestedPreScroll(view, i, i2, iArr, 0);
     }
 
-    @Override // androidx.core.view.NestedScrollingParent2
     public void onNestedPreScroll(View view, int i, int i2, int[] iArr, int i3) {
         dispatchNestedPreScroll(i, i2, iArr, null, i3);
     }
@@ -1656,7 +1643,6 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         e(i4, 0);
     }
 
-    @Override // androidx.core.view.NestedScrollingParent2
     public void onNestedScroll(View view, int i, int i2, int i3, int i4, int i5) {
         e(i4, i5);
     }
@@ -1666,7 +1652,6 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         onNestedScrollAccepted(view, view2, i, 0);
     }
 
-    @Override // androidx.core.view.NestedScrollingParent2
     public void onNestedScrollAccepted(View view, View view2, int i, int i2) {
         this.s.onNestedScrollAccepted(view, view2, i, i2);
         b(false, false);
@@ -1678,7 +1663,6 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         return onStartNestedScroll(view, view2, i, 0);
     }
 
-    @Override // androidx.core.view.NestedScrollingParent2
     public boolean onStartNestedScroll(View view, View view2, int i, int i2) {
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
         boolean z = false;
@@ -1696,7 +1680,6 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         onStopNestedScroll(view, 0);
     }
 
-    @Override // androidx.core.view.NestedScrollingParent2
     public void onStopNestedScroll(View view, int i) {
         this.s.onStopNestedScroll(view, i);
         stopNestedScroll(i);
@@ -1725,12 +1708,12 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
 
     @Override // android.view.View
     public void scrollBy(int i, int i2) {
-        scrollTo(0, this.f11088c + i2);
+        scrollTo(0, this.c + i2);
     }
 
     @Override // android.view.View
     public void scrollTo(int i, int i2) {
-        b(i2 - this.f11088c);
+        b(i2 - this.c);
     }
 
     @Override // android.view.View
@@ -1742,7 +1725,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         }
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public void setNestedScrollingEnabled(boolean z) {
         this.t.setNestedScrollingEnabled(z);
     }
@@ -1761,7 +1744,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
     }
 
     public void setOnVerticalScrollChangeListener(OnScrollChangeListener onScrollChangeListener) {
-        this.f11087a = onScrollChangeListener;
+        this.a = onScrollChangeListener;
     }
 
     public void setPermanent(boolean z) {
@@ -1776,7 +1759,7 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
             return;
         }
         this.O = i;
-        int i2 = this.f11088c;
+        int i2 = this.c;
         b(i2, i2);
     }
 
@@ -1787,17 +1770,15 @@ public class ConsecutiveScrollerLayout extends ViewGroup implements NestedScroll
         }
     }
 
-    @Override // androidx.core.view.NestedScrollingChild2
     public boolean startNestedScroll(int i, int i2) {
         return this.t.startNestedScroll(i, i2);
     }
 
-    @Override // android.view.View, androidx.core.view.NestedScrollingChild
+    @Override // android.view.View
     public void stopNestedScroll() {
         stopNestedScroll(0);
     }
 
-    @Override // androidx.core.view.NestedScrollingChild2
     public void stopNestedScroll(int i) {
         this.t.stopNestedScroll();
     }

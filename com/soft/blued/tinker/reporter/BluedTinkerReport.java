@@ -10,7 +10,7 @@ import com.tencent.tinker.loader.shareutil.ShareTinkerInternals;
 public class BluedTinkerReport {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Reporter f29781a;
+    private static Reporter f16091a;
 
     /* loaded from: source-8303388-dex2jar.jar:com/soft/blued/tinker/reporter/BluedTinkerReport$Reporter.class */
     public interface Reporter {
@@ -20,7 +20,7 @@ public class BluedTinkerReport {
     }
 
     public static void a() {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -28,7 +28,7 @@ public class BluedTinkerReport {
     }
 
     public static void a(int i) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -75,7 +75,7 @@ public class BluedTinkerReport {
     }
 
     public static void a(int i, Throwable th) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -83,18 +83,18 @@ public class BluedTinkerReport {
             reporter.a(452);
         } else if (i == 1) {
             reporter.a(450);
-            Reporter reporter2 = f29781a;
+            Reporter reporter2 = f16091a;
             reporter2.a("Tinker Exception:interpret occur exception " + Utils.b(th));
         } else if (i != 2) {
         } else {
             reporter.a(451);
-            Reporter reporter3 = f29781a;
+            Reporter reporter3 = f16091a;
             reporter3.a("Tinker Exception:interpret occur exception " + Utils.b(th));
         }
     }
 
     public static void a(long j) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -102,20 +102,20 @@ public class BluedTinkerReport {
         if (j < 0) {
             TinkerLog.e("Tinker.BluedTinkerReport", "hp_report report load cost failed, invalid cost", new Object[0]);
         } else if (j <= 500) {
-            f29781a.a(400);
+            f16091a.a(400);
         } else if (j <= 1000) {
-            f29781a.a(401);
+            f16091a.a(401);
         } else if (j <= m.ag) {
-            f29781a.a(402);
+            f16091a.a(402);
         } else if (j <= 5000) {
-            f29781a.a(403);
+            f16091a.a(403);
         } else {
-            f29781a.a(404);
+            f16091a.a(404);
         }
     }
 
     public static void a(long j, boolean z) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -123,55 +123,55 @@ public class BluedTinkerReport {
             reporter.a(5);
         }
         if (z) {
-            f29781a.a(100);
+            f16091a.a(100);
         } else {
-            f29781a.a(101);
+            f16091a.a(101);
         }
         TinkerLog.i("Tinker.BluedTinkerReport", "hp_report report apply cost = %d", Long.valueOf(j));
         if (j < 0) {
             TinkerLog.e("Tinker.BluedTinkerReport", "hp_report report apply cost failed, invalid cost", new Object[0]);
         } else if (j <= 5000) {
             if (z) {
-                f29781a.a(200);
+                f16091a.a(200);
             } else {
-                f29781a.a(205);
+                f16091a.a(205);
             }
         } else if (j <= 10000) {
             if (z) {
-                f29781a.a(201);
+                f16091a.a(201);
             } else {
-                f29781a.a(206);
+                f16091a.a(206);
             }
         } else if (j <= 30000) {
             if (z) {
-                f29781a.a(202);
+                f16091a.a(202);
             } else {
-                f29781a.a(207);
+                f16091a.a(207);
             }
         } else if (j <= 60000) {
             if (z) {
-                f29781a.a(203);
+                f16091a.a(203);
             } else {
-                f29781a.a(208);
+                f16091a.a(208);
             }
         } else if (z) {
-            f29781a.a(204);
+            f16091a.a(204);
         } else {
-            f29781a.a(209);
+            f16091a.a(209);
         }
     }
 
     public static void a(Throwable th) {
-        if (f29781a == null) {
+        if (f16091a == null) {
             return;
         }
         if (th.getMessage().contains(ShareConstants.CHECK_DEX_OAT_EXIST_FAIL)) {
-            f29781a.a(122);
+            f16091a.a(122);
         } else if (th.getMessage().contains(ShareConstants.CHECK_DEX_OAT_FORMAT_FAIL)) {
-            f29781a.a(123);
+            f16091a.a(123);
         } else {
-            f29781a.a(121);
-            Reporter reporter = f29781a;
+            f16091a.a(121);
+            Reporter reporter = f16091a;
             reporter.a("Tinker Exception:apply tinker occur exception " + Utils.b(th));
         }
     }
@@ -191,19 +191,19 @@ public class BluedTinkerReport {
     }
 
     public static void a(boolean z) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
         reporter.a(2);
-        f29781a.a(70);
+        f16091a.a(70);
         if (z) {
-            f29781a.a(3);
+            f16091a.a(3);
         }
     }
 
     public static void b() {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -211,7 +211,7 @@ public class BluedTinkerReport {
     }
 
     public static void b(int i) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -249,17 +249,17 @@ public class BluedTinkerReport {
     }
 
     public static void b(Throwable th) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
         reporter.a(120);
-        Reporter reporter2 = f29781a;
+        Reporter reporter2 = f16091a;
         reporter2.a("Tinker Exception:apply tinker occur exception " + Utils.b(th));
     }
 
     public static void c() {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -267,7 +267,7 @@ public class BluedTinkerReport {
     }
 
     public static void c(int i) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -296,7 +296,7 @@ public class BluedTinkerReport {
     }
 
     public static void d() {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -304,7 +304,7 @@ public class BluedTinkerReport {
     }
 
     public static void d(int i) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -319,7 +319,7 @@ public class BluedTinkerReport {
     }
 
     public static void e() {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -327,7 +327,7 @@ public class BluedTinkerReport {
     }
 
     public static void e(int i) {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -344,48 +344,48 @@ public class BluedTinkerReport {
     }
 
     public static void f() {
-        if (f29781a == null) {
+        if (f16091a == null) {
             return;
         }
         if (ShareTinkerInternals.isVmArt()) {
-            f29781a.a(9);
+            f16091a.a(9);
         } else {
-            f29781a.a(8);
+            f16091a.a(8);
         }
     }
 
     public static void f(int i) {
-        if (f29781a == null) {
+        if (f16091a == null) {
             return;
         }
         TinkerLog.i("Tinker.BluedTinkerReport", "hp_report package check failed, error = %d", Integer.valueOf(i));
         switch (i) {
             case -9:
-                f29781a.a(158);
+                f16091a.a(158);
                 return;
             case -8:
-                f29781a.a(157);
+                f16091a.a(157);
                 return;
             case -7:
-                f29781a.a(156);
+                f16091a.a(156);
                 return;
             case -6:
-                f29781a.a(154);
+                f16091a.a(154);
                 return;
             case -5:
-                f29781a.a(153);
+                f16091a.a(153);
                 return;
             case -4:
-                f29781a.a(152);
+                f16091a.a(152);
                 return;
             case -3:
-                f29781a.a(151);
+                f16091a.a(151);
                 return;
             case -2:
-                f29781a.a(155);
+                f16091a.a(155);
                 return;
             case -1:
-                f29781a.a(150);
+                f16091a.a(150);
                 return;
             default:
                 return;
@@ -393,7 +393,7 @@ public class BluedTinkerReport {
     }
 
     public static void g() {
-        Reporter reporter = f29781a;
+        Reporter reporter = f16091a;
         if (reporter == null) {
             return;
         }
@@ -401,6 +401,6 @@ public class BluedTinkerReport {
     }
 
     public void a(Reporter reporter) {
-        f29781a = reporter;
+        f16091a = reporter;
     }
 }

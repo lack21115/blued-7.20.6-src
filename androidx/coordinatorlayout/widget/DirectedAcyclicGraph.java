@@ -10,15 +10,15 @@ import java.util.List;
 public final class DirectedAcyclicGraph<T> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Pools.Pool<ArrayList<T>> f2298a = new Pools.SimplePool(10);
+    private final Pools.Pool<ArrayList<T>> f2250a = new Pools.SimplePool(10);
     private final SimpleArrayMap<T, ArrayList<T>> b = new SimpleArrayMap<>();
 
     /* renamed from: c  reason: collision with root package name */
-    private final ArrayList<T> f2299c = new ArrayList<>();
+    private final ArrayList<T> f2251c = new ArrayList<>();
     private final HashSet<T> d = new HashSet<>();
 
     private ArrayList<T> a() {
-        ArrayList<T> acquire = this.f2298a.acquire();
+        ArrayList<T> acquire = this.f2250a.acquire();
         ArrayList<T> arrayList = acquire;
         if (acquire == null) {
             arrayList = new ArrayList<>();
@@ -47,7 +47,7 @@ public final class DirectedAcyclicGraph<T> {
 
     private void a(ArrayList<T> arrayList) {
         arrayList.clear();
-        this.f2298a.release(arrayList);
+        this.f2250a.release(arrayList);
     }
 
     public void addEdge(T t, T t2) {
@@ -119,16 +119,16 @@ public final class DirectedAcyclicGraph<T> {
     }
 
     public ArrayList<T> getSortedList() {
-        this.f2299c.clear();
+        this.f2251c.clear();
         this.d.clear();
         int size = this.b.size();
         int i = 0;
         while (true) {
             int i2 = i;
             if (i2 >= size) {
-                return this.f2299c;
+                return this.f2251c;
             }
-            a(this.b.keyAt(i2), this.f2299c, this.d);
+            a(this.b.keyAt(i2), this.f2251c, this.d);
             i = i2 + 1;
         }
     }

@@ -19,13 +19,9 @@ import kotlin.jvm.internal.Ref;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/msgcontent/FitemMsgNobleUpgrade$addIconToNoble$1.class */
 final class FitemMsgNobleUpgrade$addIconToNoble$1 extends Lambda implements Function1<DslSpannableStringBuilder, Unit> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ int f12577a;
+    final /* synthetic */ int a;
     final /* synthetic */ int b;
-
-    /* renamed from: c  reason: collision with root package name */
-    final /* synthetic */ FitemMsgNobleUpgrade f12578c;
+    final /* synthetic */ FitemMsgNobleUpgrade c;
     final /* synthetic */ Context d;
     final /* synthetic */ TextView e;
     final /* synthetic */ Ref.ObjectRef<String> f;
@@ -34,9 +30,9 @@ final class FitemMsgNobleUpgrade$addIconToNoble$1 extends Lambda implements Func
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public FitemMsgNobleUpgrade$addIconToNoble$1(int i, int i2, FitemMsgNobleUpgrade fitemMsgNobleUpgrade, Context context, TextView textView, Ref.ObjectRef<String> objectRef) {
         super(1);
-        this.f12577a = i;
+        this.a = i;
         this.b = i2;
-        this.f12578c = fitemMsgNobleUpgrade;
+        this.c = fitemMsgNobleUpgrade;
         this.d = context;
         this.e = textView;
         this.f = objectRef;
@@ -48,7 +44,7 @@ final class FitemMsgNobleUpgrade$addIconToNoble$1 extends Lambda implements Func
         Intrinsics.e(context, "$context");
         Intrinsics.e(tv, "$tv");
         Intrinsics.e(nameplate_img, "$nameplate_img");
-        FrameLayout frameLayout = (FrameLayout) this$0.f10935a.a(R.id.fl_icon_root);
+        FrameLayout frameLayout = (FrameLayout) this$0.a.a(R.id.fl_icon_root);
         if (frameLayout == null) {
             return;
         }
@@ -58,20 +54,20 @@ final class FitemMsgNobleUpgrade$addIconToNoble$1 extends Lambda implements Func
         layoutParams.topMargin = tv.getPaddingTop() + i4;
         imageView.setLayoutParams(layoutParams);
         frameLayout.addView(imageView);
-        ImageLoader.a(this$0.f10935a.b, (String) nameplate_img.f42545a).g().g(-1).a(imageView);
+        ImageLoader.a(this$0.a.b, (String) nameplate_img.a).g().g(-1).a(imageView);
     }
 
     public final void a(DslSpannableStringBuilder buildSpannableString) {
         Intrinsics.e(buildSpannableString, "$this$buildSpannableString");
         ColorDrawable colorDrawable = new ColorDrawable();
-        int a2 = FitemMsgGift.b.a();
-        final int i = this.f12577a;
+        int a = FitemMsgGift.b.a();
+        final int i = this.a;
         final int i2 = this.b;
-        final FitemMsgNobleUpgrade fitemMsgNobleUpgrade = this.f12578c;
+        final FitemMsgNobleUpgrade fitemMsgNobleUpgrade = this.c;
         final Context context = this.d;
         final TextView textView = this.e;
         final Ref.ObjectRef<String> objectRef = this.f;
-        buildSpannableString.a(colorDrawable, 0, a2, i, i2, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgNobleUpgrade$addIconToNoble$1$VmXHRD8i9d1iELlgucXfaepKnF8
+        buildSpannableString.a(colorDrawable, 0, a, i, i2, new VerticalCenterImageSpan.SpanDrawCallback() { // from class: com.blued.android.module.live_china.fitem.msgcontent.-$$Lambda$FitemMsgNobleUpgrade$addIconToNoble$1$VmXHRD8i9d1iELlgucXfaepKnF8
             @Override // com.blued.android.module.live_china.liveForMsg.ui.VerticalCenterImageSpan.SpanDrawCallback
             public final void drawFinish(int i3, int i4) {
                 FitemMsgNobleUpgrade$addIconToNoble$1.a(FitemMsgNobleUpgrade.this, context, i, i2, textView, objectRef, i3, i4);
@@ -82,6 +78,6 @@ final class FitemMsgNobleUpgrade$addIconToNoble$1 extends Lambda implements Func
     @Override // kotlin.jvm.functions.Function1
     public /* synthetic */ Unit invoke(DslSpannableStringBuilder dslSpannableStringBuilder) {
         a(dslSpannableStringBuilder);
-        return Unit.f42314a;
+        return Unit.a;
     }
 }

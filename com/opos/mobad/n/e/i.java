@@ -12,11 +12,11 @@ import java.util.Map;
 public class i implements c {
 
     /* renamed from: a  reason: collision with root package name */
-    String f26649a;
+    String f12961a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f26650c;
+    String f12962c;
     Object d;
     Object e;
     Object f;
@@ -38,14 +38,14 @@ public class i implements c {
         if (this.n == null) {
             this.n = new HashMap<>();
         }
-        if (!TextUtils.isEmpty(this.f26649a)) {
-            this.n.put(ZkViewSDK.KEY.KEY_AD_TITLE, this.f26649a);
+        if (!TextUtils.isEmpty(this.f12961a)) {
+            this.n.put(ZkViewSDK.KEY.KEY_AD_TITLE, this.f12961a);
         }
         if (!TextUtils.isEmpty(this.b)) {
             this.n.put(ZkViewSDK.KEY.KEY_AD_DESC, this.b);
         }
-        if (!TextUtils.isEmpty(this.f26650c)) {
-            this.n.put(ZkViewSDK.KEY.KEY_AD_ACTION, this.f26650c);
+        if (!TextUtils.isEmpty(this.f12962c)) {
+            this.n.put(ZkViewSDK.KEY.KEY_AD_ACTION, this.f12962c);
         }
         if (this.d != null) {
             this.n.put(ZkViewSDK.KEY.KEY_AD_IMAGE, this.d);
@@ -96,7 +96,7 @@ public class i implements c {
 
     @Override // com.opos.mobad.n.e.c
     public c a(String str) {
-        this.f26649a = str;
+        this.f12961a = str;
         return this;
     }
 
@@ -160,7 +160,7 @@ public class i implements c {
 
     @Override // com.opos.mobad.n.e.c
     public c c(String str) {
-        this.f26650c = str;
+        this.f12962c = str;
         return this;
     }
 
@@ -177,6 +177,6 @@ public class i implements c {
     }
 
     public String toString() {
-        return "MatLoader{matTitle='" + this.f26649a + "', matDesc='" + this.b + "', matAction='" + this.f26650c + "', appDeveloper='" + this.j + "', appVersion=" + this.k + ", mMatLogo=" + this.g + ", skipTime=" + this.i + ", mTansMap=" + this.l + ", mReportMap=" + this.m + ", mMatMap=" + this.n + ", mClickListener=" + this.o + ", mExposeListener=" + this.p + ", mRenderListener=" + this.q + ", mVideoListener=" + this.r + '}';
+        return "MatLoader{matTitle='" + this.f12961a + "', matDesc='" + this.b + "', matAction='" + this.f12962c + "', appDeveloper='" + this.j + "', appVersion=" + this.k + ", mMatLogo=" + this.g + ", skipTime=" + this.i + ", mTansMap=" + this.l + ", mReportMap=" + this.m + ", mMatMap=" + this.n + ", mClickListener=" + this.o + ", mExposeListener=" + this.p + ", mRenderListener=" + this.q + ", mVideoListener=" + this.r + '}';
     }
 }

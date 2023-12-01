@@ -381,7 +381,7 @@ public final class RSSExpandedReader extends AbstractRSSReader {
             i4 = nextUnset - this.startEnd[1];
         }
         int[] decodeFinderCounters = getDecodeFinderCounters();
-        System.arraycopy((Object) decodeFinderCounters, 0, (Object) decodeFinderCounters, 1, decodeFinderCounters.length - 1);
+        System.arraycopy(decodeFinderCounters, 0, decodeFinderCounters, 1, decodeFinderCounters.length - 1);
         decodeFinderCounters[0] = i4;
         try {
             return new FinderPattern(parseFinderValue(decodeFinderCounters, FINDER_PATTERNS), new int[]{i2, i3}, i2, i3, i);

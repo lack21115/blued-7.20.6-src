@@ -17,6 +17,7 @@ import android.text.style.TypefaceSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 import com.android.internal.util.ArrayUtils;
+import com.huawei.openalliance.ad.constant.t;
 import com.j256.ormlite.stmt.query.SimpleComparison;
 import org.ccil.cowan.tagsoup.HTMLSchema;
 import org.ccil.cowan.tagsoup.Parser;
@@ -334,13 +335,13 @@ public class Html {
                             i3 = i;
                             if (charAt2 <= 57343) {
                                 i3 = i + 1;
-                                sb.append("&#").append(65536 | ((charAt - 55296) << 10) | (charAt2 - 56320)).append(";");
+                                sb.append("&#").append(65536 | ((charAt - 55296) << 10) | (charAt2 - 56320)).append(t.aE);
                             }
                         }
                     }
                 }
             } else if (charAt > '~' || charAt < ' ') {
-                sb.append("&#").append((int) charAt).append(";");
+                sb.append("&#").append((int) charAt).append(t.aE);
                 i3 = i;
             } else if (charAt == ' ') {
                 while (i + 1 < i2 && charSequence.charAt(i + 1) == ' ') {

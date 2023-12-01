@@ -6,7 +6,7 @@ import java.util.Locale;
 public final class b {
 
     /* renamed from: a  reason: collision with root package name */
-    private static Locale f24487a;
+    private static Locale f10800a;
 
     public static String a() {
         String language = c().getLanguage();
@@ -27,9 +27,9 @@ public final class b {
     }
 
     private static Locale c() {
-        if (f24487a == null) {
-            f24487a = Locale.getDefault();
+        if (f10800a == null) {
+            f10800a = Locale.getDefault();
         }
-        return f24487a;
+        return f10800a;
     }
 }

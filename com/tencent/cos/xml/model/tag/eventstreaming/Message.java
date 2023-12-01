@@ -1,5 +1,6 @@
 package com.tencent.cos.xml.model.tag.eventstreaming;
 
+import android.net.http.Headers;
 import com.tencent.cos.xml.exception.CosXmlServiceException;
 import com.tencent.cos.xml.s3.Base64;
 import java.io.ByteArrayOutputStream;
@@ -150,7 +151,7 @@ public class Message {
             sb.append('\n');
         }
         sb.append('\n');
-        HeaderValue headerValue = this.headers.get("content-type");
+        HeaderValue headerValue = this.headers.get(Headers.CONTENT_TYPE);
         HeaderValue headerValue2 = headerValue;
         if (headerValue == null) {
             headerValue2 = HeaderValue.fromString("application/octet-stream");

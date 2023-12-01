@@ -1,6 +1,8 @@
 package okhttp3;
 
+import com.alipay.sdk.cons.b;
 import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import io.grpc.internal.GrpcUtil;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -68,9 +70,9 @@ public final class HttpUrl {
             int i;
             int i2 = 0;
             do {
-                int a2 = Util.a(str, i2, str.length(), "/\\");
-                push(str, i2, a2, a2 < str.length(), z);
-                i = a2 + 1;
+                int a = Util.a(str, i2, str.length(), "/\\");
+                push(str, i2, a, a < str.length(), z);
+                i = a + 1;
                 i2 = i;
             } while (i <= str.length());
             return this;
@@ -615,8 +617,8 @@ public final class HttpUrl {
                 if (str.equalsIgnoreCase("http")) {
                     this.scheme = "http";
                     return this;
-                } else if (str.equalsIgnoreCase("https")) {
-                    this.scheme = "https";
+                } else if (str.equalsIgnoreCase(b.a)) {
+                    this.scheme = b.a;
                     return this;
                 } else {
                     throw new IllegalArgumentException("unexpected scheme: " + str);
@@ -818,7 +820,10 @@ public final class HttpUrl {
         if (str.equals("http")) {
             return 80;
         }
-        return str.equals("https") ? 443 : -1;
+        if (str.equals(b.a)) {
+            return GrpcUtil.DEFAULT_PORT_SSL;
+        }
+        return -1;
     }
 
     public static HttpUrl get(String str) {
@@ -978,10 +983,10 @@ public final class HttpUrl {
                 }
                 buffer.writeUtf8CodePoint(codePointAt);
             } else {
-                int a2 = Util.a(str.charAt(i + 1));
-                int a3 = Util.a(str.charAt(i3));
-                if (a2 != -1 && a3 != -1) {
-                    buffer.writeByte((a2 << 4) + a3);
+                int a = Util.a(str.charAt(i + 1));
+                int a2 = Util.a(str.charAt(i3));
+                if (a != -1 && a2 != -1) {
+                    buffer.writeByte((a << 4) + a2);
                     i = i3;
                 }
                 buffer.writeUtf8CodePoint(codePointAt);
@@ -1045,11 +1050,11 @@ public final class HttpUrl {
     public List<String> encodedPathSegments() {
         int indexOf = this.url.indexOf(47, this.scheme.length() + 3);
         String str = this.url;
-        int a2 = Util.a(str, indexOf, str.length(), "?#");
+        int a = Util.a(str, indexOf, str.length(), "?#");
         ArrayList arrayList = new ArrayList();
-        while (indexOf < a2) {
+        while (indexOf < a) {
             int i = indexOf + 1;
-            indexOf = Util.a(this.url, i, a2, '/');
+            indexOf = Util.a(this.url, i, a, '/');
             arrayList.add(this.url.substring(i, indexOf));
         }
         return arrayList;
@@ -1092,7 +1097,7 @@ public final class HttpUrl {
     }
 
     public boolean isHttps() {
-        return this.scheme.equals("https");
+        return this.scheme.equals(b.a);
     }
 
     public Builder newBuilder() {

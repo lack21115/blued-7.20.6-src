@@ -2,6 +2,8 @@ package com.soft.blued.ui.web;
 
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.net.HttpManager;
+import com.blued.android.core.net.HttpResponseHandler;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.framework.http.BluedHttpTools;
 import com.blued.android.framework.http.BluedUIHttpResponse;
 import com.blued.android.framework.http.parser.BluedEntityA;
@@ -19,11 +21,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class WebLinkManager {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final WebLinkManager f34474a;
+    public static final WebLinkManager f20783a;
     private static final String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static long f34475c;
+    private static long f20784c;
     private static List<String> d;
     private static List<String> e;
 
@@ -37,7 +39,7 @@ public final class WebLinkManager {
 
     static {
         WebLinkManager webLinkManager = new WebLinkManager();
-        f34474a = webLinkManager;
+        f20783a = webLinkManager;
         b = "web_links_rule";
         d = webLinkManager.c();
         e = CollectionsKt.b();
@@ -47,7 +49,7 @@ public final class WebLinkManager {
     }
 
     private final void a(BluedUIHttpResponse<?> bluedUIHttpResponse) {
-        HttpManager.a(Intrinsics.a(BluedHttpUrl.q(), (Object) "/blued/url/list"), bluedUIHttpResponse, null).b(BluedHttpTools.a(true)).h();
+        HttpManager.a(Intrinsics.a(BluedHttpUrl.q(), "/blued/url/list"), (HttpResponseHandler) bluedUIHttpResponse, (IRequestHost) null).b(BluedHttpTools.a(true)).h();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -112,7 +114,7 @@ public final class WebLinkManager {
             List<String> white_list = webLinkModel.getWhite_list();
             List<String> list = white_list;
             if (white_list.isEmpty()) {
-                list = f34474a.c();
+                list = f20783a.c();
             }
             d = list;
         } catch (Exception e2) {
@@ -241,35 +243,33 @@ public final class WebLinkManager {
     }
 
     public final void a() {
-        if (UserInfo.getInstance().isLogin() && f34475c + 60000 <= System.currentTimeMillis()) {
-            f34475c = System.currentTimeMillis();
-            a(new BluedUIHttpResponse<BluedEntityA<WebLinkModel>>() { // from class: com.soft.blued.ui.web.WebLinkManager$updateWebLinks$1
+        if (UserInfo.getInstance().isLogin() && f20784c + 60000 <= System.currentTimeMillis()) {
+            f20784c = System.currentTimeMillis();
+            a((BluedUIHttpResponse<?>) new BluedUIHttpResponse<BluedEntityA<WebLinkModel>>() { // from class: com.soft.blued.ui.web.WebLinkManager$updateWebLinks$1
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 /* renamed from: a */
                 public void onUIUpdate(BluedEntityA<WebLinkModel> bluedEntityA) {
-                    WebLinkModel singleData;
+                    WebLinkModel webLinkModel;
                     List<String> c2;
-                    if (bluedEntityA == null || (singleData = bluedEntityA.getSingleData()) == null) {
-                        WebLinkManager.f34474a.b();
+                    if (bluedEntityA == null || (webLinkModel = (WebLinkModel) bluedEntityA.getSingleData()) == null) {
+                        WebLinkManager.f20783a.b();
                         return;
                     }
-                    WebLinkManager webLinkManager = WebLinkManager.f34474a;
-                    WebLinkManager.e = singleData.getBlack_list();
-                    WebLinkManager webLinkManager2 = WebLinkManager.f34474a;
-                    List<String> white_list = singleData.getWhite_list();
+                    WebLinkManager webLinkManager = WebLinkManager.f20783a;
+                    WebLinkManager.e = webLinkModel.getBlack_list();
+                    WebLinkManager webLinkManager2 = WebLinkManager.f20783a;
+                    List<String> white_list = webLinkModel.getWhite_list();
                     List<String> list = white_list;
                     if (white_list.isEmpty()) {
-                        c2 = WebLinkManager.f34474a.c();
+                        c2 = WebLinkManager.f20783a.c();
                         list = c2;
                     }
                     WebLinkManager.d = list;
-                    WebLinkManager.f34474a.a(singleData);
+                    WebLinkManager.f20783a.a(webLinkModel);
                 }
 
-                @Override // com.blued.android.framework.http.BluedUIHttpResponse
                 public boolean onUIFailure(int i, String str) {
-                    WebLinkManager.f34474a.b();
+                    WebLinkManager.f20783a.b();
                     return true;
                 }
             });

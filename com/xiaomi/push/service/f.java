@@ -8,9 +8,9 @@ final class f extends SparseArray<ay.a<String, String, String>> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public f(int i) {
         super(i);
-        put(1, ay.f41620a);
+        put(1, ay.f27929a);
         put(2, ay.b);
-        put(4, ay.f41621c);
+        put(4, ay.f27930c);
         put(8, ay.e);
         put(16, ay.d);
     }

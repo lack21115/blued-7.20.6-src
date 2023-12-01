@@ -558,12 +558,12 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
         this.notEmpty.signal();
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public boolean add(E e) {
         return super.add(e);
     }
 
-    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractQueue, java.util.AbstractCollection, java.util.Collection
     public void clear() {
         int inc;
         Object[] objArr = this.items;
@@ -599,7 +599,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         int inc;
         if (obj == null) {
@@ -835,7 +835,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         int inc;
         if (obj == null) {
@@ -900,7 +900,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
         this.notFull.signal();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         ReentrantLock reentrantLock = this.lock;
         reentrantLock.lock();
@@ -925,7 +925,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
         return dequeue();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public Object[] toArray() {
         Object[] objArr = this.items;
         ReentrantLock reentrantLock = this.lock;
@@ -948,7 +948,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E> implements BlockingQ
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v29, types: [java.lang.Object[]] */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public <T> T[] toArray(T[] tArr) {
         Object[] objArr = this.items;
         ReentrantLock reentrantLock = this.lock;

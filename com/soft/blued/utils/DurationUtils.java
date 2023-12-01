@@ -6,15 +6,15 @@ import com.blued.android.core.AppInfo;
 public class DurationUtils {
 
     /* renamed from: a  reason: collision with root package name */
-    private static long f34738a;
+    private static long f21047a;
 
     public static void a() {
-        f34738a = System.currentTimeMillis();
+        f21047a = System.currentTimeMillis();
     }
 
     public static void a(String str) {
         if (AppInfo.m()) {
-            Logger.c("Timer", str + "任务耗时：" + (System.currentTimeMillis() - f34738a));
+            Logger.c("Timer", str + "任务耗时：" + (System.currentTimeMillis() - f21047a));
         }
     }
 }

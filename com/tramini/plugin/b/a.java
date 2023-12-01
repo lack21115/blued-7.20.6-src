@@ -17,11 +17,11 @@ import org.json.JSONObject;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f40550a = a.class.getSimpleName();
+    public static final String f26859a = a.class.getSimpleName();
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private long f40551c;
+    private long f26860c;
     private List d;
     private ConcurrentHashMap<String, c> e;
     private String f;
@@ -42,14 +42,14 @@ public class a {
 
     /* renamed from: com.tramini.plugin.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8829756-dex2jar.jar:com/tramini/plugin/b/a$a.class */
-    static final class C1073a {
+    static final class C0903a {
 
         /* renamed from: a  reason: collision with root package name */
-        private static String f40552a = "si";
+        private static String f26861a = "si";
         private static String b = "scto";
 
         /* renamed from: c  reason: collision with root package name */
-        private static String f40553c = "tf";
+        private static String f26862c = "tf";
         private static String d = "nl";
         private static String e = "t_sw";
         private static String f = "pil";
@@ -59,7 +59,7 @@ public class a {
         private static String j = "cn_plst_addr";
         private static String k = "cn_pltk_addr";
 
-        C1073a() {
+        C0903a() {
         }
     }
 
@@ -72,37 +72,37 @@ public class a {
         a aVar = new a();
         try {
             JSONObject jSONObject = new JSONObject(str);
-            if (jSONObject.isNull(C1073a.f40552a)) {
+            if (jSONObject.isNull(C0903a.f26861a)) {
                 aVar.b = "";
             } else {
-                aVar.b = jSONObject.optString(C1073a.f40552a);
+                aVar.b = jSONObject.optString(C0903a.f26861a);
             }
-            if (jSONObject.isNull(C1073a.b)) {
-                aVar.f40551c = 3600000L;
+            if (jSONObject.isNull(C0903a.b)) {
+                aVar.f26860c = 3600000L;
             } else {
-                aVar.f40551c = jSONObject.optInt(C1073a.b);
+                aVar.f26860c = jSONObject.optInt(C0903a.b);
             }
-            if (jSONObject.isNull(C1073a.g)) {
+            if (jSONObject.isNull(C0903a.g)) {
                 aVar.p = 0;
             } else {
-                aVar.p = jSONObject.optInt(C1073a.g);
+                aVar.p = jSONObject.optInt(C0903a.g);
             }
-            if (!jSONObject.isNull(C1073a.h)) {
-                aVar.q = jSONObject.optString(C1073a.h);
+            if (!jSONObject.isNull(C0903a.h)) {
+                aVar.q = jSONObject.optString(C0903a.h);
             }
-            if (!jSONObject.isNull(C1073a.i)) {
-                aVar.r = jSONObject.optString(C1073a.i);
+            if (!jSONObject.isNull(C0903a.i)) {
+                aVar.r = jSONObject.optString(C0903a.i);
             }
-            if (!jSONObject.isNull(C1073a.j)) {
-                aVar.s = jSONObject.optString(C1073a.j);
+            if (!jSONObject.isNull(C0903a.j)) {
+                aVar.s = jSONObject.optString(C0903a.j);
             }
-            if (!jSONObject.isNull(C1073a.k)) {
-                aVar.t = jSONObject.optString(C1073a.k);
+            if (!jSONObject.isNull(C0903a.k)) {
+                aVar.t = jSONObject.optString(C0903a.k);
             }
-            if (!jSONObject.isNull(C1073a.f40553c)) {
+            if (!jSONObject.isNull(C0903a.f26862c)) {
                 ConcurrentHashMap<String, c> concurrentHashMap = new ConcurrentHashMap<>();
                 try {
-                    JSONObject jSONObject2 = new JSONObject(jSONObject.optString(C1073a.f40553c));
+                    JSONObject jSONObject2 = new JSONObject(jSONObject.optString(C0903a.f26862c));
                     Iterator<String> keys = jSONObject2.keys();
                     while (keys.hasNext()) {
                         try {
@@ -110,9 +110,9 @@ public class a {
                             c cVar = new c();
                             JSONObject optJSONObject = jSONObject2.optJSONObject(next);
                             cVar.d = optJSONObject.optString("pml");
-                            cVar.f40502a = optJSONObject.optString("uu");
+                            cVar.f26811a = optJSONObject.optString("uu");
                             cVar.b = optJSONObject.optInt("dmin");
-                            cVar.f40503c = optJSONObject.optInt("dmax");
+                            cVar.f26812c = optJSONObject.optInt("dmax");
                             if (optJSONObject.has("p_s") && !TextUtils.isEmpty(optJSONObject.optString("p_s"))) {
                                 cVar.e = new JSONArray(optJSONObject.optString("p_s"));
                             }
@@ -124,10 +124,10 @@ public class a {
                 }
                 aVar.e = concurrentHashMap;
             }
-            if (!jSONObject.isNull(C1073a.d)) {
-                JSONObject jSONObject3 = new JSONObject(jSONObject.optString(C1073a.d));
+            if (!jSONObject.isNull(C0903a.d)) {
+                JSONObject jSONObject3 = new JSONObject(jSONObject.optString(C0903a.d));
                 aVar.f = jSONObject3.optString("p1");
-                aVar.g = jSONObject3.optString(com.anythink.core.common.g.c.X);
+                aVar.g = jSONObject3.optString("p2");
                 aVar.h = jSONObject3.optString("p3");
                 aVar.i = jSONObject3.optString("p4");
                 aVar.j = jSONObject3.optString("p5");
@@ -148,19 +148,19 @@ public class a {
                     aVar.d = arrayList;
                 }
             }
-            if (jSONObject.isNull(C1073a.e)) {
+            if (jSONObject.isNull(C0903a.e)) {
                 aVar.n = 0;
             } else {
-                aVar.n = jSONObject.optInt(C1073a.e);
+                aVar.n = jSONObject.optInt(C0903a.e);
             }
-            if (!jSONObject.isNull(C1073a.f)) {
-                JSONObject jSONObject4 = new JSONObject(jSONObject.optString(C1073a.f));
+            if (!jSONObject.isNull(C0903a.f)) {
+                JSONObject jSONObject4 = new JSONObject(jSONObject.optString(C0903a.f));
                 Iterator<String> keys2 = jSONObject4.keys();
                 HashSet hashSet = new HashSet();
                 while (keys2.hasNext()) {
                     d dVar = new d();
-                    dVar.f40504a = keys2.next();
-                    dVar.b = jSONObject4.optString(dVar.f40504a);
+                    dVar.f26813a = keys2.next();
+                    dVar.b = jSONObject4.optString(dVar.f26813a);
                     hashSet.add(dVar);
                 }
                 aVar.o = hashSet;
@@ -180,7 +180,7 @@ public class a {
     }
 
     public final long c() {
-        return this.f40551c;
+        return this.f26860c;
     }
 
     public final List<String> d() {

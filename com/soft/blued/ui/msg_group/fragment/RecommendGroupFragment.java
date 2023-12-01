@@ -5,14 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.blued.android.core.ui.ActivityFragmentActive;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.module.common.base.config.ListConfig;
 import com.blued.android.module.common.base.mvi.BaseListAction;
 import com.blued.android.module.common.base.mvi.BaseListFragment;
+import com.blued.android.module.common.base.mvi.MVIBaseFragment;
 import com.blued.android.module.common.extensions.BluedStructureExtKt;
 import com.blued.android.module.common.extensions.BluedViewExtKt;
 import com.blued.android.module.common.group.GroupInfoModel;
@@ -20,7 +22,6 @@ import com.blued.android.module.common.view.CommonTopTitleNoTrans;
 import com.blued.android.module.common.view.NoDataAndLoadFailView;
 import com.blued.das.client.socialnet.SocialNetWorkProtos;
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.jeremyliao.liveeventbus.LiveEventBus;
 import com.soft.blued.R;
 import com.soft.blued.log.track.EventTrackGroup;
@@ -39,7 +40,7 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
     public static final Companion b = new Companion(null);
 
     /* renamed from: c  reason: collision with root package name */
-    private boolean f32772c;
+    private boolean f19081c;
     private RecommendType d;
     private NoDataAndLoadFailView e;
     private boolean f;
@@ -56,7 +57,7 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
 
         public final void a(Context context) {
             Intrinsics.e(context, "context");
-            TerminalActivity.d(context, RecommendGroupFragment.class, null);
+            TerminalActivity.d(context, RecommendGroupFragment.class, (Bundle) null);
         }
     }
 
@@ -68,22 +69,22 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
     }
 
     public RecommendGroupFragment() {
-        this.f32772c = true;
+        this.f19081c = true;
         this.d = RecommendType.NEARBY;
         this.f = true;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public RecommendGroupFragment(RecommendType type) {
+    public RecommendGroupFragment(RecommendType recommendType) {
         this();
-        Intrinsics.e(type, "type");
-        this.f32772c = false;
-        this.d = type;
+        Intrinsics.e(recommendType, "type");
+        this.f19081c = false;
+        this.d = recommendType;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendGroupFragment this$0, BaseQuickAdapter baseQuickAdapter, View view, int i) {
-        Intrinsics.e(this$0, "this$0");
+    public static final void a(RecommendGroupFragment recommendGroupFragment, BaseQuickAdapter baseQuickAdapter, View view, int i) {
+        Intrinsics.e(recommendGroupFragment, "this$0");
         Object obj = baseQuickAdapter.getData().get(i);
         if (obj == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.common.group.GroupInfoModel");
@@ -93,22 +94,22 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
         if (groupInfoModel.allow_join != 1 || view.getId() != 2131370829) {
             z = false;
         }
-        EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_CLICK, groupInfoModel.label, this$0.d == RecommendType.RECOMMEND ? SocialNetWorkProtos.SourceType.RECOMMEND : SocialNetWorkProtos.SourceType.NEARBY, String.valueOf(groupInfoModel.group_id));
-        GroupInfoFragment.a(this$0.getContext(), groupInfoModel.group_id + "", groupInfoModel, SocialNetWorkProtos.SourceType.MYGROUP, z);
+        EventTrackGroup.a(SocialNetWorkProtos.Event.GROUP_CLICK, groupInfoModel.label, recommendGroupFragment.d == RecommendType.RECOMMEND ? SocialNetWorkProtos.SourceType.RECOMMEND : SocialNetWorkProtos.SourceType.NEARBY, String.valueOf(groupInfoModel.group_id));
+        GroupInfoFragment.a(recommendGroupFragment.getContext(), groupInfoModel.group_id + "", groupInfoModel, SocialNetWorkProtos.SourceType.MYGROUP, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendGroupFragment this$0, RecommendRefreshEvent recommendRefreshEvent) {
-        Intrinsics.e(this$0, "this$0");
-        if (recommendRefreshEvent.getType() == ((GroupRecommendViewModel) this$0.y()).getType()) {
-            BluedStructureExtKt.a(this$0, BaseListAction.RefreshData.f10668a);
+    public static final void a(RecommendGroupFragment recommendGroupFragment, RecommendRefreshEvent recommendRefreshEvent) {
+        Intrinsics.e(recommendGroupFragment, "this$0");
+        if (recommendRefreshEvent.getType() == recommendGroupFragment.y().getType()) {
+            BluedStructureExtKt.a((MVIBaseFragment) recommendGroupFragment, BaseListAction.RefreshData.a);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void a(RecommendGroupFragment this$0, ScrollEvent scrollEvent) {
-        Intrinsics.e(this$0, "this$0");
-        this$0.a(scrollEvent.a());
+    public static final void a(RecommendGroupFragment recommendGroupFragment, ScrollEvent scrollEvent) {
+        Intrinsics.e(recommendGroupFragment, "this$0");
+        recommendGroupFragment.a(scrollEvent.a());
     }
 
     private final void a(boolean z) {
@@ -116,7 +117,6 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: C */
     public GridLayoutManager g() {
         final Context context = getContext();
@@ -130,15 +130,13 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
         };
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     /* renamed from: D */
     public RecommendGroupAdapter i() {
-        ActivityFragmentActive fragmentActive = getFragmentActive();
+        IRequestHost fragmentActive = getFragmentActive();
         Intrinsics.c(fragmentActive, "fragmentActive");
         return new RecommendGroupAdapter(fragmentActive);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void a(boolean z, boolean z2) {
         super.a(z, z2);
         NoDataAndLoadFailView noDataAndLoadFailView = this.e;
@@ -157,12 +155,10 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public ListConfig h() {
-        return new ListConfig.Builder().b(false).d(this.f32772c).a();
+        return new ListConfig.Builder().b(false).d(this.f19081c).a();
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment
     public void j() {
         NoDataAndLoadFailView noDataAndLoadFailView = new NoDataAndLoadFailView(getContext());
         this.e = noDataAndLoadFailView;
@@ -179,16 +175,15 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
             noDataAndLoadFailView4 = null;
         }
         noDataAndLoadFailView4.d();
-        BaseQuickAdapter<GroupInfoModel, BaseViewHolder> f = f();
-        NoDataAndLoadFailView noDataAndLoadFailView5 = this.e;
-        if (noDataAndLoadFailView5 == null) {
+        BaseQuickAdapter f = f();
+        View view = this.e;
+        if (view == null) {
             Intrinsics.c("noDataView");
-            noDataAndLoadFailView5 = null;
+            view = null;
         }
-        f.setEmptyView(noDataAndLoadFailView5);
+        f.setEmptyView(view);
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void m() {
         super.m();
         FrameLayout d = d();
@@ -224,17 +219,16 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
         }
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListFragment, com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void o() {
         super.o();
-        RecommendGroupFragment recommendGroupFragment = this;
-        LiveEventBus.get("group_refresh_recommend_List", RecommendRefreshEvent.class).observe(recommendGroupFragment, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$RecommendGroupFragment$64KkJjuwFHly71LYcHL3xVMLiUI
+        LifecycleOwner lifecycleOwner = (LifecycleOwner) this;
+        LiveEventBus.get("group_refresh_recommend_List", RecommendRefreshEvent.class).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$RecommendGroupFragment$64KkJjuwFHly71LYcHL3xVMLiUI
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 RecommendGroupFragment.a(RecommendGroupFragment.this, (RecommendRefreshEvent) obj);
             }
         });
-        LiveEventBus.get("group_recommend_List_scroll", ScrollEvent.class).observe(recommendGroupFragment, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$RecommendGroupFragment$HpS11UPMR1w5fGCCwDVAHwUYST8
+        LiveEventBus.get("group_recommend_List_scroll", ScrollEvent.class).observe(lifecycleOwner, new Observer() { // from class: com.soft.blued.ui.msg_group.fragment.-$$Lambda$RecommendGroupFragment$HpS11UPMR1w5fGCCwDVAHwUYST8
             @Override // androidx.lifecycle.Observer
             public final void onChanged(Object obj) {
                 RecommendGroupFragment.a(RecommendGroupFragment.this, (ScrollEvent) obj);
@@ -242,29 +236,26 @@ public final class RecommendGroupFragment extends BaseListFragment<GroupRecommen
         });
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment, com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (bundle != null && bundle.containsKey("type")) {
-            GroupRecommendViewModel groupRecommendViewModel = (GroupRecommendViewModel) y();
+            GroupRecommendViewModel y = y();
             Serializable serializable = bundle.getSerializable("type");
             if (serializable == null) {
                 throw new NullPointerException("null cannot be cast to non-null type com.soft.blued.ui.msg_group.fragment.RecommendGroupFragment.RecommendType");
             }
-            groupRecommendViewModel.a((RecommendType) serializable);
+            y.a((RecommendType) serializable);
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
-    public void onSaveInstanceState(Bundle outState) {
-        Intrinsics.e(outState, "outState");
-        super.onSaveInstanceState(outState);
-        outState.putSerializable("type", ((GroupRecommendViewModel) y()).getType());
+    public void onSaveInstanceState(Bundle bundle) {
+        Intrinsics.e(bundle, "outState");
+        super.onSaveInstanceState(bundle);
+        bundle.putSerializable("type", y().getType());
     }
 
-    @Override // com.blued.android.module.common.base.mvi.MVIBaseFragment
     public void v() {
         super.v();
-        ((GroupRecommendViewModel) y()).a(this.d);
+        y().a(this.d);
     }
 }

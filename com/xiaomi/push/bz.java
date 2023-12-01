@@ -4,11 +4,11 @@ package com.xiaomi.push;
 public class bz {
 
     /* renamed from: a  reason: collision with root package name */
-    public static int f41296a = 200;
+    public static int f27605a = 200;
 
     /* renamed from: a  reason: collision with other field name */
-    public static long f234a = 52428800;
+    public static long f187a = 52428800;
 
     /* renamed from: a  reason: collision with other field name */
-    public static String f235a = "MessageInfo.db";
+    public static String f188a = "MessageInfo.db";
 }

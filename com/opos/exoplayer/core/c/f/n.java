@@ -7,11 +7,11 @@ import com.opos.exoplayer.core.c.f.u;
 public final class n implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final com.opos.exoplayer.core.i.m f25214a;
+    private final com.opos.exoplayer.core.i.m f11526a;
     private final com.opos.exoplayer.core.c.j b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final String f25215c;
+    private final String f11527c;
     private String d;
     private com.opos.exoplayer.core.c.n e;
     private int f;
@@ -29,14 +29,14 @@ public final class n implements h {
     public n(String str) {
         this.f = 0;
         com.opos.exoplayer.core.i.m mVar = new com.opos.exoplayer.core.i.m(4);
-        this.f25214a = mVar;
-        mVar.f25496a[0] = (byte) (-1);
+        this.f11526a = mVar;
+        mVar.f11808a[0] = (byte) (-1);
         this.b = new com.opos.exoplayer.core.c.j();
-        this.f25215c = str;
+        this.f11527c = str;
     }
 
     private void b(com.opos.exoplayer.core.i.m mVar) {
-        byte[] bArr = mVar.f25496a;
+        byte[] bArr = mVar.f11808a;
         int c2 = mVar.c();
         for (int d = mVar.d(); d < c2; d++) {
             boolean z = (bArr[d] & 255) == 255;
@@ -45,7 +45,7 @@ public final class n implements h {
             if (z2) {
                 mVar.c(d + 1);
                 this.i = false;
-                this.f25214a.f25496a[1] = bArr[d];
+                this.f11526a.f11808a[1] = bArr[d];
                 this.g = 2;
                 this.f = 1;
                 return;
@@ -56,26 +56,26 @@ public final class n implements h {
 
     private void c(com.opos.exoplayer.core.i.m mVar) {
         int min = Math.min(mVar.b(), 4 - this.g);
-        mVar.a(this.f25214a.f25496a, this.g, min);
+        mVar.a(this.f11526a.f11808a, this.g, min);
         int i = min + this.g;
         this.g = i;
         if (i < 4) {
             return;
         }
-        this.f25214a.c(0);
-        if (!com.opos.exoplayer.core.c.j.a(this.f25214a.o(), this.b)) {
+        this.f11526a.c(0);
+        if (!com.opos.exoplayer.core.c.j.a(this.f11526a.o(), this.b)) {
             this.g = 0;
             this.f = 1;
             return;
         }
-        this.k = this.b.f25248c;
+        this.k = this.b.f11560c;
         if (!this.h) {
             this.j = (this.b.g * 1000000) / this.b.d;
-            this.e.a(Format.a(this.d, this.b.b, null, -1, 4096, this.b.e, this.b.d, null, null, 0, this.f25215c));
+            this.e.a(Format.a(this.d, this.b.b, null, -1, 4096, this.b.e, this.b.d, null, null, 0, this.f11527c));
             this.h = true;
         }
-        this.f25214a.c(0);
-        this.e.a(this.f25214a, 4);
+        this.f11526a.c(0);
+        this.e.a(this.f11526a, 4);
         this.f = 2;
     }
 

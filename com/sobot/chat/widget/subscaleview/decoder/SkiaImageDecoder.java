@@ -46,8 +46,8 @@ public class SkiaImageDecoder implements ImageDecoder {
             Resources resources = context.getPackageName().equals(authority) ? context.getResources() : context.getPackageManager().getResourcesForApplication(authority);
             List<String> pathSegments = uri.getPathSegments();
             int size = pathSegments.size();
-            if (size == 2 && pathSegments.get(0).equals(i.f7952c)) {
-                i = resources.getIdentifier(pathSegments.get(1), i.f7952c, authority);
+            if (size == 2 && pathSegments.get(0).equals(i.f5112c)) {
+                i = resources.getIdentifier(pathSegments.get(1), i.f5112c, authority);
             } else {
                 i = 0;
                 if (size == 1) {

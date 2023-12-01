@@ -10,17 +10,17 @@ import java.util.Map;
 public class aq {
 
     /* renamed from: c  reason: collision with root package name */
-    private static volatile Map<String, aq> f9315c = new HashMap();
+    private static volatile Map<String, aq> f6475c = new HashMap();
 
     /* renamed from: a  reason: collision with root package name */
-    private Class<?> f9316a;
+    private Class<?> f6476a;
     private Method[] b;
 
     private aq(Context context, String str) {
         this.b = null;
         try {
             Class<?> cls = Class.forName(str, true, bp.a(context));
-            this.f9316a = cls;
+            this.f6476a = cls;
             this.b = cls.getMethods();
         } catch (Throwable th) {
             bq.a().a(th);
@@ -28,18 +28,18 @@ public class aq {
     }
 
     public static aq a(Context context, String str) {
-        if (!f9315c.containsKey(str) || f9315c.get(str).f9316a == null) {
+        if (!f6475c.containsKey(str) || f6475c.get(str).f6476a == null) {
             synchronized (aq.class) {
                 try {
-                    if (!f9315c.containsKey(str) || f9315c.get(str).f9316a == null) {
-                        f9315c.put(str, new aq(context, str));
+                    if (!f6475c.containsKey(str) || f6475c.get(str).f6476a == null) {
+                        f6475c.put(str, new aq(context, str));
                     }
                 } catch (Throwable th) {
                     throw th;
                 }
             }
         }
-        return f9315c.get(str);
+        return f6475c.get(str);
     }
 
     private Method a(String str) {
@@ -68,7 +68,7 @@ public class aq {
         if (objArr != null) {
             try {
                 if (objArr.length != 0) {
-                    constructor = this.f9316a.getConstructor(clsArr);
+                    constructor = this.f6476a.getConstructor(clsArr);
                     return constructor.newInstance(objArr);
                 }
             } catch (Throwable th) {
@@ -76,7 +76,7 @@ public class aq {
                 return null;
             }
         }
-        constructor = this.f9316a.getConstructor(new Class[0]);
+        constructor = this.f6476a.getConstructor(new Class[0]);
         return constructor.newInstance(objArr);
     }
 

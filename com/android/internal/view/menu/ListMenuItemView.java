@@ -95,7 +95,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     public void onFinishInflate() {
         super.onFinishInflate();
         setBackgroundDrawable(this.mBackground);
-        this.mTitleView = (TextView) findViewById(16908310);
+        this.mTitleView = (TextView) findViewById(R.id.title);
         if (this.mTextAppearance != -1) {
             this.mTitleView.setTextAppearance(this.mTextAppearanceContext, this.mTextAppearance);
         }
@@ -218,7 +218,7 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
     }
 
     @Override // com.android.internal.view.menu.MenuView.ItemView
-    public void setShortcut(boolean z, char c2) {
+    public void setShortcut(boolean z, char c) {
         int i = (z && this.mItemData.shouldShowShortcut()) ? 0 : 8;
         if (i == 0) {
             this.mShortcutView.setText(this.mItemData.getShortcutLabel());

@@ -56,6 +56,6 @@ public class RecyclingApngDrawable extends ApngDrawable implements IRecyclingDra
 
     @Override // com.blued.android.core.imagecache.drawable.IRecyclingDrawable
     public int e() {
-        return this.f9627c * this.d * 4 * 4;
+        return this.c * this.d * 4 * 4;
     }
 }

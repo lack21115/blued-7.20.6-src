@@ -14,9 +14,7 @@ public abstract class aa extends i<ab> {
     String U;
     String V;
     int W;
-
-    /* renamed from: a  reason: collision with root package name */
-    private int f6616a;
+    private int a;
     String ad;
     String ae;
     ac af;
@@ -31,9 +29,7 @@ public abstract class aa extends i<ab> {
     private String ao;
     private String ap;
     private String aq;
-
-    /* renamed from: ar  reason: collision with root package name */
-    private int f6617ar;
+    private int ar;
     private int as;
     private int b;
 
@@ -72,7 +68,7 @@ public abstract class aa extends i<ab> {
     }
 
     private int ad() {
-        return this.f6616a;
+        return this.a;
     }
 
     private int ae() {
@@ -168,7 +164,7 @@ public abstract class aa extends i<ab> {
     }
 
     public final int V() {
-        return this.f6617ar;
+        return this.ar;
     }
 
     public final int W() {
@@ -196,7 +192,7 @@ public abstract class aa extends i<ab> {
     }
 
     public final boolean a(boolean z, boolean z2) {
-        return z ? z2 ? this.f6616a == 1 : this.b == 1 : z2 ? this.R == 1 : this.S == 1;
+        return z ? z2 ? this.a == 1 : this.b == 1 : z2 ? this.R == 1 : this.S == 1;
     }
 
     public final String aa() {
@@ -235,7 +231,7 @@ public abstract class aa extends i<ab> {
     }
 
     public final void h(int i) {
-        this.f6617ar = i;
+        this.ar = i;
     }
 
     public final void i(int i) {
@@ -247,7 +243,7 @@ public abstract class aa extends i<ab> {
     }
 
     public final void k(int i) {
-        this.f6616a = i;
+        this.a = i;
     }
 
     public final void l(int i) {

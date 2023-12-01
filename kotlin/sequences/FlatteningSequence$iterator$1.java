@@ -11,39 +11,35 @@ import kotlin.jvm.internal.markers.KMappedMarker;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlin/sequences/FlatteningSequence$iterator$1.class */
 public final class FlatteningSequence$iterator$1<E> implements Iterator<E>, KMappedMarker {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ FlatteningSequence<T, R, E> f42630a;
+    final /* synthetic */ FlatteningSequence<T, R, E> a;
     private final Iterator<T> b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private Iterator<? extends E> f42631c;
+    private Iterator<? extends E> c;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FlatteningSequence$iterator$1(FlatteningSequence<T, R, E> flatteningSequence) {
         Sequence sequence;
-        this.f42630a = flatteningSequence;
-        sequence = ((FlatteningSequence) flatteningSequence).f42628a;
+        this.a = flatteningSequence;
+        sequence = ((FlatteningSequence) flatteningSequence).a;
         this.b = sequence.iterator();
     }
 
     private final boolean a() {
         Function1 function1;
         Function1 function12;
-        Iterator<? extends E> it = this.f42631c;
+        Iterator<? extends E> it = this.c;
         if ((it == null || it.hasNext()) ? false : true) {
-            this.f42631c = null;
+            this.c = null;
         }
-        while (this.f42631c == null) {
+        while (this.c == null) {
             if (!this.b.hasNext()) {
                 return false;
             }
             Object next = this.b.next();
-            function1 = ((FlatteningSequence) this.f42630a).f42629c;
-            function12 = ((FlatteningSequence) this.f42630a).b;
+            function1 = ((FlatteningSequence) this.a).c;
+            function12 = ((FlatteningSequence) this.a).b;
             Iterator<? extends E> it2 = (Iterator) function1.invoke(function12.invoke(next));
             if (it2.hasNext()) {
-                this.f42631c = it2;
+                this.c = it2;
                 return true;
             }
         }
@@ -58,7 +54,7 @@ public final class FlatteningSequence$iterator$1<E> implements Iterator<E>, KMap
     @Override // java.util.Iterator
     public E next() {
         if (a()) {
-            Iterator<? extends E> it = this.f42631c;
+            Iterator<? extends E> it = this.c;
             Intrinsics.a(it);
             return it.next();
         }

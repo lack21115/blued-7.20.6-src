@@ -20,23 +20,23 @@ public class e extends a.a.a.a.a.a.a implements a.a.a.a.a.a.g.a {
     public static /* synthetic */ class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final /* synthetic */ int[] f1270a;
+        public static final /* synthetic */ int[] f1222a;
 
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x002f -> B:19:0x001f). Please submit an issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x002b -> B:15:0x0014). Please submit an issue!!! */
         static {
             int[] iArr = new int[StreamingProfile.H264Profile.values().length];
-            f1270a = iArr;
+            f1222a = iArr;
             try {
                 iArr[StreamingProfile.H264Profile.BASELINE.ordinal()] = 1;
             } catch (NoSuchFieldError e) {
             }
             try {
-                f1270a[StreamingProfile.H264Profile.MAIN.ordinal()] = 2;
+                f1222a[StreamingProfile.H264Profile.MAIN.ordinal()] = 2;
             } catch (NoSuchFieldError e2) {
             }
             try {
-                f1270a[StreamingProfile.H264Profile.HIGH.ordinal()] = 3;
+                f1222a[StreamingProfile.H264Profile.HIGH.ordinal()] = 3;
             } catch (NoSuchFieldError e3) {
             }
         }
@@ -53,12 +53,12 @@ public class e extends a.a.a.a.a.a.a implements a.a.a.a.a.a.g.a {
         this.b = cVar2;
         this.d = cVar2.e();
         this.b.d();
-        this.f1213c = 1;
+        this.f1165c = 1;
     }
 
     public e(f.a aVar) {
-        super(aVar.f1271a);
-        aVar.f1271a.a(this);
+        super(aVar.f1223a);
+        aVar.f1223a.a(this);
         MediaCodecInfo a2 = a("video/avc");
         if (a2 == null) {
             a.a.a.a.a.e.e.i.e("VideoEncoderCore", "Unable to find an appropriate codec for video/avc");
@@ -74,7 +74,7 @@ public class e extends a.a.a.a.a.a.a implements a.a.a.a.a.a.g.a {
         a.a.a.a.a.e.e eVar2 = a.a.a.a.a.e.e.i;
         eVar2.c("VideoEncoderCore", "found colorFormat:[" + a3[0] + "," + a3[1] + "]");
         aVar.k = a3[1];
-        a.a.a.a.a.a.b d = aVar.f1271a.d();
+        a.a.a.a.a.a.b d = aVar.f1223a.d();
         a.a.a.a.a.e.e eVar3 = a.a.a.a.a.e.e.i;
         eVar3.c("VideoEncoderCore", "encoding rotation:" + aVar.e);
         MediaFormat a4 = a(a3[0], d, d.f().getVideoProfile());
@@ -83,7 +83,7 @@ public class e extends a.a.a.a.a.a.a implements a.a.a.a.a.a.g.a {
         a.a.a.a.a.a.g.e eVar5 = new a.a.a.a.a.a.g.e(a4, "video/avc", true, aVar);
         this.b = eVar5;
         eVar5.d();
-        this.f1213c = 1;
+        this.f1165c = 1;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:21:0x0045, code lost:
@@ -195,7 +195,7 @@ public class e extends a.a.a.a.a.a.a implements a.a.a.a.a.a.g.a {
         createVideoFormat.setInteger(MediaFormat.KEY_FRAME_RATE, bVar.r());
         createVideoFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, round);
         createVideoFormat.setInteger(BatteryManager.EXTRA_LEVEL, 128);
-        int i3 = a.f1270a[videoProfile.getH264Profile().ordinal()];
+        int i3 = a.f1222a[videoProfile.getH264Profile().ordinal()];
         int i4 = 2;
         if (i3 != 1) {
             if (i3 != 2) {
@@ -213,7 +213,7 @@ public class e extends a.a.a.a.a.a.a implements a.a.a.a.a.a.g.a {
 
     @Override // a.a.a.a.a.a.g.a
     public void a(PLAVFrame pLAVFrame, PLBufferInfo pLBufferInfo) {
-        this.b.a(this.f1212a, pLAVFrame, pLBufferInfo, false);
+        this.b.a(this.f1164a, pLAVFrame, pLBufferInfo, false);
     }
 
     public Surface e() {

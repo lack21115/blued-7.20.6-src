@@ -6,7 +6,7 @@ import android.util.Log;
 public class SafeString {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f23148a = "SafeString";
+    private static final String f9540a = "SafeString";
     private static final String b = "";
 
     public static String replace(String str, CharSequence charSequence, CharSequence charSequence2) {
@@ -17,7 +17,7 @@ public class SafeString {
             try {
                 return str.replace(charSequence, charSequence2);
             } catch (Exception e) {
-                String str2 = f23148a;
+                String str2 = f9540a;
                 Log.e(str2, "replace: " + e.getMessage());
             }
         }
@@ -31,7 +31,7 @@ public class SafeString {
         try {
             return str.substring(i);
         } catch (Exception e) {
-            String str2 = f23148a;
+            String str2 = f9540a;
             Log.e(str2, "substring exception: " + e.getMessage());
             return "";
         }
@@ -44,7 +44,7 @@ public class SafeString {
         try {
             return str.substring(i, i2);
         } catch (Exception e) {
-            String str2 = f23148a;
+            String str2 = f9540a;
             Log.e(str2, "substring: " + e.getMessage());
             return "";
         }

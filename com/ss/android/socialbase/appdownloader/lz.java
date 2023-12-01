@@ -53,7 +53,7 @@ public class lz {
 
     public static int mb(String str, String str2) {
         try {
-            return DownloadComponentManager.getAppContext().getResources().getIdentifier(str, i.f7952c, str2);
+            return DownloadComponentManager.getAppContext().getResources().getIdentifier(str, i.f5112c, str2);
         } catch (Exception e) {
             e.printStackTrace();
             return 0;

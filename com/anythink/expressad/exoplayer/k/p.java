@@ -12,10 +12,10 @@ public final class p {
     private static final int g = 39;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final byte[] f7664a = {0, 0, 0, 1};
+    public static final byte[] f4825a = {0, 0, 0, 1};
 
     /* renamed from: c  reason: collision with root package name */
-    public static final float[] f7665c = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 2.1818182f, 1.8181819f, 2.909091f, 2.4242425f, 1.6363636f, 1.3636364f, 1.939394f, 1.6161616f, 1.3333334f, 1.5f, 2.0f};
+    public static final float[] f4826c = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 2.1818182f, 1.8181819f, 2.909091f, 2.4242425f, 1.6363636f, 1.3636364f, 1.939394f, 1.6161616f, 1.3333334f, 1.5f, 2.0f};
     private static final Object h = new Object();
     private static int[] i = new int[10];
 
@@ -23,16 +23,16 @@ public final class p {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7666a;
+        public final int f4827a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final boolean f7667c;
+        public final boolean f4828c;
 
         public a(int i, int i2, boolean z) {
-            this.f7666a = i;
+            this.f4827a = i;
             this.b = i2;
-            this.f7667c = z;
+            this.f4828c = z;
         }
     }
 
@@ -40,11 +40,11 @@ public final class p {
     public static final class b {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f7668a;
+        public final int f4829a;
         public final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final int f7669c;
+        public final int f4830c;
         public final float d;
         public final boolean e;
         public final boolean f;
@@ -54,9 +54,9 @@ public final class p {
         public final boolean j;
 
         public b(int i, int i2, int i3, float f, boolean z, boolean z2, int i4, int i5, int i6, boolean z3) {
-            this.f7668a = i;
+            this.f4829a = i;
             this.b = i2;
-            this.f7669c = i3;
+            this.f4830c = i3;
             this.d = f;
             this.e = z;
             this.f = z2;
@@ -104,7 +104,7 @@ public final class p {
             int i8 = 0;
             for (int i9 = 0; i9 < i6; i9++) {
                 int i10 = i[i9] - i8;
-                System.arraycopy((Object) bArr, i8, (Object) bArr, i7, i10);
+                System.arraycopy(bArr, i8, bArr, i7, i10);
                 int i11 = i7 + i10;
                 int i12 = i11 + 1;
                 bArr[i11] = 0;
@@ -112,7 +112,7 @@ public final class p {
                 bArr[i12] = 0;
                 i8 += i10 + 3;
             }
-            System.arraycopy((Object) bArr, i8, (Object) bArr, i7, i3 - i7);
+            System.arraycopy(bArr, i8, bArr, i7, i3 - i7);
         }
         return i3;
     }

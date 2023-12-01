@@ -19,11 +19,11 @@ import java.util.Map;
 public class b implements com.baidu.mobads.sdk.internal.a.a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f9293a = "ViewPager2";
+    public static final String f6453a = "ViewPager2";
     public static final String b = "RVAdapter";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f9294c = "RVViewHolder";
+    public static final String f6454c = "RVViewHolder";
     public static final String d = "ViewCompat";
     public static final String e = "p_e";
     private static final String f = "p_init";
@@ -38,13 +38,13 @@ public class b implements com.baidu.mobads.sdk.internal.a.a {
     /* loaded from: source-8756600-dex2jar.jar:com/baidu/mobads/sdk/internal/a/b$a.class */
     public static class a implements IOAdEventListener {
         private com.baidu.mobads.sdk.internal.a.a a(String str, IAdInterListener iAdInterListener, Object[] objArr) {
-            if (b.f9293a.equals(str) && b.a(objArr, Context.class)) {
+            if (b.f6453a.equals(str) && b.a(objArr, Context.class)) {
                 return new ViewPager2Delegate(iAdInterListener, (Context) objArr[0]);
             }
             if (b.b.equals(str)) {
                 return new RVAdapterDelegate(iAdInterListener);
             }
-            if (b.f9294c.equals(str) && b.a(objArr, View.class)) {
+            if (b.f6454c.equals(str) && b.a(objArr, View.class)) {
                 return new RVViewHolderDelegate(iAdInterListener, (View) objArr[0]);
             }
             if (b.d.equals(str)) {
@@ -78,9 +78,9 @@ public class b implements com.baidu.mobads.sdk.internal.a.a {
                             data.put(b.k, a2);
                         } else if (b.g.equals((String) obj2) && (obj3 instanceof Map)) {
                             Map map = (Map) obj3;
-                            map.put(b.f9293a, ViewPager2.class);
+                            map.put(b.f6453a, ViewPager2.class);
                             map.put(b.b, RecyclerView.Adapter.class);
-                            map.put(b.f9294c, RecyclerView.ViewHolder.class);
+                            map.put(b.f6454c, RecyclerView.ViewHolder.class);
                         }
                     }
                 } catch (Throwable th) {

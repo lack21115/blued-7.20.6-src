@@ -50,9 +50,9 @@ public final class MinePageAdModel extends BluedADExtra implements Serializable 
         }
     }
 
-    public MinePageAdModel(String jump_url) {
-        Intrinsics.e(jump_url, "jump_url");
-        this.jump_url = jump_url;
+    public MinePageAdModel(String str) {
+        Intrinsics.e(str, "jump_url");
+        this.jump_url = str;
         this.material = "";
     }
 
@@ -90,7 +90,6 @@ public final class MinePageAdModel extends BluedADExtra implements Serializable 
         this.isShow = z;
     }
 
-    @Override // com.blued.android.module.common.login.model.BluedADExtra
     public String toString() {
         return "MinePageAdModel(material='" + this.material + "',jump_url='" + this.jump_url + "', popup=" + this.popup + ')';
     }

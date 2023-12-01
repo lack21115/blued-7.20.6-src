@@ -13,11 +13,11 @@ public class t {
     private static t E;
 
     /* renamed from: a  reason: collision with root package name */
-    public static final String f23863a = "k";
+    public static final String f10255a = "k";
     public static final String b = "p";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23864c = "v";
+    public static final String f10256c = "v";
     public static final String d = "l";
     public static final String e = "i";
     public static final String f = "a";
@@ -133,9 +133,9 @@ public class t {
                     if (query.moveToFirst()) {
                         sVar = new s();
                         try {
-                            sVar.f23861a = i2;
+                            sVar.f10253a = i2;
                             sVar.b = query.getInt(query.getColumnIndex("n"));
-                            sVar.f23862c = query.getString(query.getColumnIndex("p"));
+                            sVar.f10254c = query.getString(query.getColumnIndex("p"));
                             sVar.e = query.getString(query.getColumnIndex("a"));
                             sVar.h = query.getString(query.getColumnIndex("l"));
                             sVar.d = query.getString(query.getColumnIndex("v"));
@@ -228,9 +228,9 @@ public class t {
                     if (query.moveToFirst()) {
                         sVar = new s();
                         try {
-                            sVar.f23861a = query.getInt(query.getColumnIndex("k"));
+                            sVar.f10253a = query.getInt(query.getColumnIndex("k"));
                             sVar.b = query.getInt(query.getColumnIndex("n"));
-                            sVar.f23862c = query.getString(query.getColumnIndex("p"));
+                            sVar.f10254c = query.getString(query.getColumnIndex("p"));
                             sVar.e = query.getString(query.getColumnIndex("a"));
                             sVar.h = query.getString(query.getColumnIndex("l"));
                             sVar.d = query.getString(query.getColumnIndex("v"));
@@ -288,12 +288,12 @@ public class t {
                     a2.a(sVar2.e);
                 }
                 SQLiteDatabase sQLiteDatabase = this.C;
-                sQLiteDatabase.delete(bh.q, "k=" + sVar2.f23861a, null);
-                if (r.b != null && !r.b.contains(Integer.valueOf(sVar2.f23861a))) {
-                    dm.c(this.D.getFilesDir().getCanonicalPath() + bh.j + sVar2.f23861a);
+                sQLiteDatabase.delete(bh.q, "k=" + sVar2.f10253a, null);
+                if (r.b != null && !r.b.contains(Integer.valueOf(sVar2.f10253a))) {
+                    dm.c(this.D.getFilesDir().getCanonicalPath() + bh.j + sVar2.f10253a);
                 }
-                if (a2.b() != null && a2.b().get(sVar2.f23862c) != null) {
-                    dm.c(this.D.getFileStreamPath(sVar2.f23862c).getAbsolutePath());
+                if (a2.b() != null && a2.b().get(sVar2.f10254c) != null) {
+                    dm.c(this.D.getFileStreamPath(sVar2.f10254c).getAbsolutePath());
                 }
             }
         } catch (Throwable th) {

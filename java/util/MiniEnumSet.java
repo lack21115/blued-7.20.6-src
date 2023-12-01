@@ -66,12 +66,12 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public /* bridge */ /* synthetic */ boolean add(Object obj) {
         return add((MiniEnumSet<E>) ((Enum) obj));
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean addAll(Collection<? extends E> collection) {
         if (collection.isEmpty()) {
             return false;
@@ -89,7 +89,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return super.addAll(collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public void clear() {
         this.bits = 0L;
         this.size = 0;
@@ -104,7 +104,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         }
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean contains(Object obj) {
         if (obj == null || !isValidType(obj.getClass())) {
             return false;
@@ -112,7 +112,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return (this.bits & (1 << ((Enum) obj).ordinal())) != 0;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean containsAll(Collection<?> collection) {
         if (collection.isEmpty()) {
             return true;
@@ -125,7 +125,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return isValidType(miniEnumSet.elementClass) && (this.bits & j) == j;
     }
 
-    @Override // java.util.AbstractSet, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.Collection
     public boolean equals(Object obj) {
         boolean z = true;
         if (obj instanceof EnumSet) {
@@ -148,7 +148,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return new MiniEnumSetIterator();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean remove(Object obj) {
         if (obj == null || !isValidType(obj.getClass())) {
             return false;
@@ -164,7 +164,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return false;
     }
 
-    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection
     public boolean removeAll(Collection<?> collection) {
         if (collection.isEmpty()) {
             return false;
@@ -187,7 +187,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         return super.removeAll(collection);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public boolean retainAll(Collection<?> collection) {
         if (collection instanceof EnumSet) {
             EnumSet enumSet = (EnumSet) collection;
@@ -217,7 +217,7 @@ public final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         this.size = Long.bitCount(this.bits);
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // java.util.AbstractCollection, java.util.Collection
     public int size() {
         return this.size;
     }

@@ -6,9 +6,7 @@ import android.view.View;
 
 /* loaded from: source-3503164-dex2jar.jar:skin/support/widget/SkinCompatView.class */
 public class SkinCompatView extends View implements SkinCompatSupportable {
-
-    /* renamed from: a  reason: collision with root package name */
-    private SkinCompatBackgroundHelper f44292a;
+    private SkinCompatBackgroundHelper a;
 
     public SkinCompatView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, 0);
@@ -17,13 +15,13 @@ public class SkinCompatView extends View implements SkinCompatSupportable {
     public SkinCompatView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         SkinCompatBackgroundHelper skinCompatBackgroundHelper = new SkinCompatBackgroundHelper(this);
-        this.f44292a = skinCompatBackgroundHelper;
+        this.a = skinCompatBackgroundHelper;
         skinCompatBackgroundHelper.a(attributeSet, i);
     }
 
     @Override // skin.support.widget.SkinCompatSupportable
     public void applySkin() {
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44292a;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.a;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a();
         }
@@ -32,7 +30,7 @@ public class SkinCompatView extends View implements SkinCompatSupportable {
     @Override // android.view.View
     public void setBackgroundResource(int i) {
         super.setBackgroundResource(i);
-        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.f44292a;
+        SkinCompatBackgroundHelper skinCompatBackgroundHelper = this.a;
         if (skinCompatBackgroundHelper != null) {
             skinCompatBackgroundHelper.a(i);
         }

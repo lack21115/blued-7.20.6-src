@@ -142,7 +142,7 @@ public class JsDialogHelper {
             EditText editText = (EditText) inflate.findViewById(R.id.value);
             editText.setText(this.mDefaultValue);
             builder.setPositiveButton(i, new PositiveListener(editText));
-            ((TextView) inflate.findViewById(16908299)).setText(this.mMessage);
+            ((TextView) inflate.findViewById(R.id.message)).setText(this.mMessage);
             builder.setView(inflate);
         }
         if (this.mType != 1) {

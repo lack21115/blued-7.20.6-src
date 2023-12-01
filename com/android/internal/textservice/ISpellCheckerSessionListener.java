@@ -87,7 +87,7 @@ public interface ISpellCheckerSessionListener extends IInterface {
                     parcel.enforceInterface(DESCRIPTOR);
                     onGetSentenceSuggestions((SentenceSuggestionsInfo[]) parcel.createTypedArray(SentenceSuggestionsInfo.CREATOR));
                     return true;
-                case IBinder.INTERFACE_TRANSACTION /* 1598968902 */:
+                case 1598968902:
                     parcel2.writeString(DESCRIPTOR);
                     return true;
                 default:

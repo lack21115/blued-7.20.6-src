@@ -38,12 +38,8 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePocketDialogFragment.class */
 public final class LivePocketDialogFragment extends BaseDialogFragment {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final Companion f13147a = new Companion(null);
-
-    /* renamed from: c  reason: collision with root package name */
-    private LivePocketAdapter f13148c;
+    public static final Companion a = new Companion(null);
+    private LivePocketAdapter c;
     private final Lazy b = LazyKt.a(new Function0<DialogLivePocketBinding>() { // from class: com.blued.android.module.live_china.fragment.LivePocketDialogFragment$vb$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
@@ -81,9 +77,7 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
     @Metadata
     /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fragment/LivePocketDialogFragment$LivePocketAdapter.class */
     public final class LivePocketAdapter extends FragmentStatePagerAdapter {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ LivePocketDialogFragment f13149a;
+        final /* synthetic */ LivePocketDialogFragment a;
         private ArrayList<String> b;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -91,40 +85,36 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
             super(fm, 1);
             Intrinsics.e(this$0, "this$0");
             Intrinsics.e(fm, "fm");
-            this.f13149a = this$0;
+            this.a = this$0;
             this.b = CollectionsKt.d(AppInfo.d().getString(R.string.live_pocket_props), AppInfo.d().getString(R.string.live_pocket_exping));
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getCount() {
             return this.b.size();
         }
 
-        @Override // androidx.fragment.app.FragmentStatePagerAdapter
         public Fragment getItem(int i) {
             if (i != 0) {
                 LivePocketExpFragment livePocketExpFragment = new LivePocketExpFragment();
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("model", this.f13149a.e());
+                bundle.putSerializable("model", this.a.e());
                 livePocketExpFragment.setArguments(bundle);
                 return livePocketExpFragment;
             }
             LivePocketPropFragment livePocketPropFragment = new LivePocketPropFragment();
             Bundle bundle2 = new Bundle();
             LivePocketExtraModel livePocketExtraModel = new LivePocketExtraModel();
-            livePocketExtraModel.setIn_use(this.f13149a.d());
+            livePocketExtraModel.setIn_use(this.a.d());
             bundle2.putSerializable("model", livePocketExtraModel);
             livePocketPropFragment.setArguments(bundle2);
             return livePocketPropFragment;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public int getItemPosition(Object object) {
             Intrinsics.e(object, "object");
             return -2;
         }
 
-        @Override // androidx.viewpager.widget.PagerAdapter
         public CharSequence getPageTitle(int i) {
             return this.b.get(i);
         }
@@ -133,13 +123,13 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LivePocketDialogFragment this$0) {
         Intrinsics.e(this$0, "this$0");
-        this$0.h().f11799a.animate().alpha(1.0f).setDuration(300L).start();
+        this$0.h().a.animate().alpha(1.0f).setDuration(300L).start();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(LivePocketDialogFragment this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LivePocketRecordDialogFragment.Companion companion = LivePocketRecordDialogFragment.f13160a;
+        LivePocketRecordDialogFragment.Companion companion = LivePocketRecordDialogFragment.a;
         FragmentManager childFragmentManager = this$0.getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
         companion.a(childFragmentManager);
@@ -150,15 +140,15 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
     }
 
     private final void i() {
-        h().f11800c.setIndicatorHeight(DensityUtils.a(getContext(), 4.0f));
-        h().f11800c.w = DensityUtils.d(getContext(), 15.0f);
-        h().f11800c.x = DensityUtils.d(getContext(), 15.0f);
-        h().f11800c.setTextColor(R.color.white);
-        h().f11800c.setTabTextColorUnfocused(R.color.white_alpha70);
-        h().f11800c.setHorizontalShade(true);
+        h().c.setIndicatorHeight(DensityUtils.a(getContext(), 4.0f));
+        h().c.w = DensityUtils.d(getContext(), 15.0f);
+        h().c.x = DensityUtils.d(getContext(), 15.0f);
+        h().c.setTextColor(R.color.white);
+        h().c.setTabTextColorUnfocused(R.color.white_alpha70);
+        h().c.setHorizontalShade(true);
         Context context = getContext();
         if (context != null) {
-            h().f11800c.a(ContextCompat.getColor(context, R.color.syc_dark_FF3AAA), ContextCompat.getColor(context, R.color.syc_dark_922cee));
+            h().c.a(ContextCompat.getColor(context, R.color.syc_dark_FF3AAA), ContextCompat.getColor(context, R.color.syc_dark_922cee));
         }
         h().b.setOnClickListener(new View.OnClickListener() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketDialogFragment$yiqMQYX-Z01HJixTJdipTtm7d1I
             @Override // android.view.View.OnClickListener
@@ -166,7 +156,7 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
                 LivePocketDialogFragment.a(LivePocketDialogFragment.this, view);
             }
         });
-        h().f11799a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketDialogFragment$DQo4lG_8dlv_ZisqXGgbhdVA9hQ
+        h().a.post(new Runnable() { // from class: com.blued.android.module.live_china.fragment.-$$Lambda$LivePocketDialogFragment$DQo4lG_8dlv_ZisqXGgbhdVA9hQ
             @Override // java.lang.Runnable
             public final void run() {
                 LivePocketDialogFragment.a(LivePocketDialogFragment.this);
@@ -192,12 +182,12 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
     public final void f() {
         FragmentManager childFragmentManager = getChildFragmentManager();
         Intrinsics.c(childFragmentManager, "childFragmentManager");
-        this.f13148c = new LivePocketAdapter(this, childFragmentManager);
-        h().f.setAdapter(this.f13148c);
-        h().f11800c.setViewPager(h().f);
+        this.c = new LivePocketAdapter(this, childFragmentManager);
+        h().f.setAdapter(this.c);
+        h().c.setViewPager(h().f);
         h().f.setCurrentItem(0);
         h().f.setOffscreenPageLimit(1);
-        h().f11800c.setViewPager(h().f);
+        h().c.setViewPager(h().f);
     }
 
     public final void g() {
@@ -230,7 +220,6 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
         }, a());
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public Dialog onCreateDialog(Bundle bundle) {
         int a2 = DensityUtils.a(getContext(), 398.0f);
         Dialog dialog = new Dialog(requireActivity(), R.style.transparentFrameWindowStyleLive);
@@ -252,12 +241,11 @@ public final class LivePocketDialogFragment extends BaseDialogFragment {
         return dialog;
     }
 
-    @Override // com.blued.android.core.ui.BaseDialogFragment, androidx.fragment.app.Fragment
+    @Override // com.blued.android.core.ui.BaseDialogFragment
     public void onDestroy() {
         super.onDestroy();
     }
 
-    @Override // androidx.fragment.app.DialogFragment
     public void setupDialog(Dialog dialog, int i) {
         Intrinsics.e(dialog, "dialog");
         super.setupDialog(dialog, i);

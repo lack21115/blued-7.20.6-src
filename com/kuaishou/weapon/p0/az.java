@@ -14,23 +14,23 @@ import org.json.JSONObject;
 public class az {
 
     /* renamed from: a  reason: collision with root package name */
-    private JSONObject f23738a;
+    private JSONObject f10130a;
 
     public az(Context context, int i) {
         if (Engine.loadSuccess) {
             try {
-                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f23783c).intValue(), 2, i < 10 ? 10 : i, "");
+                String pqr = Engine.getInstance(context).pqr(Integer.valueOf(cj.f10175c).intValue(), 2, i < 10 ? 10 : i, "");
                 if (TextUtils.isEmpty(pqr)) {
                     return;
                 }
-                this.f23738a = new JSONObject(pqr);
+                this.f10130a = new JSONObject(pqr);
             } catch (Throwable th) {
             }
         }
     }
 
     public String a(String str) {
-        JSONObject jSONObject = this.f23738a;
+        JSONObject jSONObject = this.f10130a;
         if (jSONObject != null) {
             try {
                 return jSONObject.getString(str);
@@ -64,7 +64,7 @@ public class az {
     }
 
     public JSONObject a(String str, boolean z) {
-        if (this.f23738a != null) {
+        if (this.f10130a != null) {
             try {
                 String a2 = a(str);
                 if (TextUtils.isEmpty(a2) || a2.length() <= 3) {
@@ -130,7 +130,7 @@ public class az {
     }
 
     public JSONObject b(String str) {
-        if (this.f23738a != null) {
+        if (this.f10130a != null) {
             try {
                 String a2 = a(str);
                 if (TextUtils.isEmpty(a2) || a2.length() <= 3) {
@@ -145,7 +145,7 @@ public class az {
     }
 
     public JSONArray c(String str) {
-        JSONObject jSONObject = this.f23738a;
+        JSONObject jSONObject = this.f10130a;
         if (jSONObject != null) {
             try {
                 String string = jSONObject.getString(str);
@@ -176,7 +176,7 @@ public class az {
     }
 
     public JSONObject d(String str) {
-        if (this.f23738a != null) {
+        if (this.f10130a != null) {
             try {
                 String a2 = a(str);
                 if (TextUtils.isEmpty(a2) || a2.length() <= 3) {

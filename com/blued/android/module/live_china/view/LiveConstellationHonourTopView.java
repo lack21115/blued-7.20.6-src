@@ -21,9 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 @Metadata
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/view/LiveConstellationHonourTopView.class */
 public final class LiveConstellationHonourTopView extends FrameLayout {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Lazy f14434a;
+    private final Lazy a;
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public LiveConstellationHonourTopView(Context context) {
@@ -41,7 +39,7 @@ public final class LiveConstellationHonourTopView extends FrameLayout {
     public LiveConstellationHonourTopView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.e(context, "context");
-        this.f14434a = LazyKt.a(new Function0<LiveConstellationHonourTopViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveConstellationHonourTopView$binding$2
+        this.a = LazyKt.a(new Function0<LiveConstellationHonourTopViewBinding>() { // from class: com.blued.android.module.live_china.view.LiveConstellationHonourTopView$binding$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -50,9 +48,9 @@ public final class LiveConstellationHonourTopView extends FrameLayout {
             @Override // kotlin.jvm.functions.Function0
             /* renamed from: a */
             public final LiveConstellationHonourTopViewBinding invoke() {
-                LiveConstellationHonourTopViewBinding a2 = LiveConstellationHonourTopViewBinding.a(LayoutInflater.from(LiveConstellationHonourTopView.this.getContext()), LiveConstellationHonourTopView.this, true);
-                Intrinsics.c(a2, "inflate(LayoutInflater.from(context), this, true)");
-                return a2;
+                LiveConstellationHonourTopViewBinding a = LiveConstellationHonourTopViewBinding.a(LayoutInflater.from(LiveConstellationHonourTopView.this.getContext()), LiveConstellationHonourTopView.this, true);
+                Intrinsics.c(a, "inflate(LayoutInflater.from(context), this, true)");
+                return a;
             }
         });
         a();
@@ -75,14 +73,14 @@ public final class LiveConstellationHonourTopView extends FrameLayout {
     }
 
     public final LiveConstellationHonourTopViewBinding getBinding() {
-        return (LiveConstellationHonourTopViewBinding) this.f14434a.getValue();
+        return (LiveConstellationHonourTopViewBinding) this.a.getValue();
     }
 
     public final void setData(GiftConstellationHonourTopModel topModel) {
         Intrinsics.e(topModel, "topModel");
         getBinding().k.setText(topModel.getHall_name());
         getBinding().h.setText(topModel.getAnchor_name());
-        ImageLoader.a((IRequestHost) null, topModel.getAnchor_avatar()).b(R.drawable.user_bg_round).c().a(getBinding().f12173a);
+        ImageLoader.a((IRequestHost) null, topModel.getAnchor_avatar()).b(R.drawable.user_bg_round).c().a(getBinding().a);
         TextView textView = getBinding().l;
         String name = topModel.getName();
         boolean z = true;
@@ -90,7 +88,7 @@ public final class LiveConstellationHonourTopView extends FrameLayout {
             z = false;
         }
         textView.setText(LiveCloakingUtil.a(name, z));
-        ImageLoader.a((IRequestHost) null, topModel.getAvatar()).b(R.drawable.user_bg_round).c().a(getBinding().f12174c);
+        ImageLoader.a((IRequestHost) null, topModel.getAvatar()).b(R.drawable.user_bg_round).c().a(getBinding().c);
         getBinding().f.setVisibility(8);
         if (topModel.getCount() > 0) {
             getBinding().f.setVisibility(0);

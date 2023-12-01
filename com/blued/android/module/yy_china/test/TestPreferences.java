@@ -5,15 +5,13 @@ import com.blued.android.module.common.utils.BluedSharedPreferences;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/test/TestPreferences.class */
 public class TestPreferences {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static BluedSharedPreferences f17807a;
+    public static BluedSharedPreferences a;
 
     public static BluedSharedPreferences a() {
-        if (f17807a == null) {
-            f17807a = BluedSharedPreferences.a();
+        if (a == null) {
+            a = BluedSharedPreferences.a();
         }
-        return f17807a;
+        return a;
     }
 
     public static void a(int i) {

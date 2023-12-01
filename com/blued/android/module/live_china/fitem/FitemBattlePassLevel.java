@@ -6,6 +6,7 @@ import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
+import com.android.internal.util.cm.QSConstants;
 import com.blued.android.core.image.ImageLoader;
 import com.blued.android.core.image.ImageWrapper;
 import com.blued.android.module.common.utils.freedom.BaseViewHolder;
@@ -17,7 +18,6 @@ import com.blued.android.module.live_china.fragment.LiveBattleShopDialog;
 import com.blued.android.module.live_china.model.BattlePassLevelAwardDataModel;
 import com.blued.android.module.live_china.model.BattlePassLevelDataModel;
 import com.blued.android.module.live_china.pop.LiveBattlePassAwardTipPop;
-import com.blued.das.live.LiveProtos;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
@@ -26,15 +26,13 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: source-5961304-dex2jar.jar:com/blued/android/module/live_china/fitem/FitemBattlePassLevel.class */
 public final class FitemBattlePassLevel extends FreedomItem {
     private Fragment b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private BattlePassLevelDataModel f12525c;
+    private BattlePassLevelDataModel c;
 
     public FitemBattlePassLevel(Fragment fragment, BattlePassLevelDataModel model) {
         Intrinsics.e(fragment, "fragment");
         Intrinsics.e(model, "model");
         this.b = fragment;
-        this.f12525c = model;
+        this.c = model;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -78,24 +76,24 @@ public final class FitemBattlePassLevel extends FreedomItem {
             ((ObjectAnimator) tag).pause();
             view.setRotation(0.0f);
         }
-        Object tag2 = this.f10935a.itemView.getTag();
+        Object tag2 = this.a.itemView.getTag();
         if (tag2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.model.BattlePassLevelDataModel");
         }
         BattlePassLevelDataModel battlePassLevelDataModel = (BattlePassLevelDataModel) tag2;
-        if (LiveBattlePassDialogFragment.f12728a.a()) {
+        if (LiveBattlePassDialogFragment.a.a()) {
             BattlePassLevelAwardDataModel top = battlePassLevelDataModel.getTop();
             boolean z2 = false;
             if (top != null && top.getState() == 2) {
                 z2 = true;
             }
             if (z2) {
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "rotation", 0.0f, -5.0f, 5.0f, -5.0f, 0.0f);
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, QSConstants.TILE_ROTATION, 0.0f, -5.0f, 5.0f, -5.0f, 0.0f);
                 if (ofFloat != null) {
                     ofFloat.setDuration(720L);
                 }
                 if (ofFloat != null) {
-                    ofFloat.setStartDelay(z ? 0L : ofFloat.getDuration() + ((long) LiveProtos.Event.LIVE_PK_CALL_END_VALUE));
+                    ofFloat.setStartDelay(z ? 0L : ofFloat.getDuration() + 630);
                 }
                 if (ofFloat != null) {
                     ofFloat.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.fitem.FitemBattlePassLevel$startAnimToTop$$inlined$addListener$default$1
@@ -133,7 +131,7 @@ public final class FitemBattlePassLevel extends FreedomItem {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void a(FitemBattlePassLevel this$0, View view) {
         Intrinsics.e(this$0, "this$0");
-        LiveBattleRandomAwardDialog.f12735a.a(this$0.b, this$0.f12525c.getLevel());
+        LiveBattleRandomAwardDialog.a.a(this$0.b, this$0.c.getLevel());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -193,7 +191,7 @@ public final class FitemBattlePassLevel extends FreedomItem {
             ((ObjectAnimator) tag).pause();
             view.setRotation(0.0f);
         }
-        Object tag2 = this.f10935a.itemView.getTag();
+        Object tag2 = this.a.itemView.getTag();
         if (tag2 == null) {
             throw new NullPointerException("null cannot be cast to non-null type com.blued.android.module.live_china.model.BattlePassLevelDataModel");
         }
@@ -203,12 +201,12 @@ public final class FitemBattlePassLevel extends FreedomItem {
             z2 = true;
         }
         if (z2) {
-            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, "rotation", 0.0f, 5.0f, -5.0f, 5.0f, 0.0f);
+            ObjectAnimator ofFloat = ObjectAnimator.ofFloat(view, QSConstants.TILE_ROTATION, 0.0f, 5.0f, -5.0f, 5.0f, 0.0f);
             if (ofFloat != null) {
                 ofFloat.setDuration(720L);
             }
             if (ofFloat != null) {
-                ofFloat.setStartDelay(z ? 0L : ofFloat.getDuration() + ((long) LiveProtos.Event.LIVE_PK_CALL_END_VALUE));
+                ofFloat.setStartDelay(z ? 0L : ofFloat.getDuration() + 630);
             }
             if (ofFloat != null) {
                 ofFloat.addListener(new Animator.AnimatorListener() { // from class: com.blued.android.module.live_china.fitem.FitemBattlePassLevel$startAnimToBottom$$inlined$addListener$default$1
@@ -243,7 +241,7 @@ public final class FitemBattlePassLevel extends FreedomItem {
     }
 
     private final void b(final BaseViewHolder baseViewHolder) {
-        baseViewHolder.a(R.id.tv_exp, (CharSequence) String.valueOf(this.f12525c.getExp()));
+        baseViewHolder.a(R.id.tv_exp, (CharSequence) String.valueOf(this.c.getExp()));
         baseViewHolder.a(R.id.iv_random_tag, new View.OnClickListener() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$KOwxZ85gJwAFdIz7wpWzc0GpD3I
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -256,20 +254,20 @@ public final class FitemBattlePassLevel extends FreedomItem {
                 FitemBattlePassLevel.a(FitemBattlePassLevel.this, baseViewHolder, view);
             }
         });
-        final View a2 = baseViewHolder.a(R.id.rl_top_award_root);
-        if (a2 != null) {
-            a2.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$SUxgtRZ45_SIbEa-jI9NUpItYPI
+        final View a = baseViewHolder.a(R.id.rl_top_award_root);
+        if (a != null) {
+            a.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$SUxgtRZ45_SIbEa-jI9NUpItYPI
                 @Override // java.lang.Runnable
                 public final void run() {
                     FitemBattlePassLevel.a(View.this, this, baseViewHolder);
                 }
             });
         }
-        final View a3 = baseViewHolder.a(R.id.rl_bottom_award_root);
-        if (a3 == null) {
+        final View a2 = baseViewHolder.a(R.id.rl_bottom_award_root);
+        if (a2 == null) {
             return;
         }
-        a3.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$qXOBBY7Hr8kU4yk_x4QeX6G9y1w
+        a2.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$qXOBBY7Hr8kU4yk_x4QeX6G9y1w
             @Override // java.lang.Runnable
             public final void run() {
                 FitemBattlePassLevel.b(View.this, this, baseViewHolder);
@@ -294,7 +292,7 @@ public final class FitemBattlePassLevel extends FreedomItem {
     }
 
     private final void c(BaseViewHolder baseViewHolder) {
-        BattlePassLevelAwardDataModel top = this.f12525c.getTop();
+        BattlePassLevelAwardDataModel top = this.c.getTop();
         if (top == null) {
             return;
         }
@@ -306,33 +304,33 @@ public final class FitemBattlePassLevel extends FreedomItem {
             z = true;
         }
         b.b(i, !z).a(R.id.tv_top_num, (CharSequence) top.getLabel());
-        final View a2 = baseViewHolder.a(R.id.rl_top_award_root);
-        View a3 = baseViewHolder.a(R.id.rl_top_award_item_root);
+        final View a = baseViewHolder.a(R.id.rl_top_award_root);
+        View a2 = baseViewHolder.a(R.id.rl_top_award_item_root);
         int state = top.getState();
         if (state == 1) {
-            baseViewHolder.a(a2, 1.0f).c(R.id.iv_top_lighting).b(R.id.iv_top_lock, !LiveBattlePassDialogFragment.f12728a.a()).c(R.id.iv_top_lock, R.drawable.live_battle_award_item_lock);
-            a3.setBackgroundResource(R.drawable.live_battle_award_item_top_back);
+            baseViewHolder.a(a, 1.0f).c(R.id.iv_top_lighting).b(R.id.iv_top_lock, !LiveBattlePassDialogFragment.a.a()).c(R.id.iv_top_lock, R.drawable.live_battle_award_item_lock);
+            a2.setBackgroundResource(R.drawable.live_battle_award_item_top_back);
         } else if (state != 2) {
             if (state != 3) {
                 return;
             }
-            baseViewHolder.a(a2, 0.4f).c(R.id.iv_top_lighting).d(R.id.iv_top_lock).c(R.id.iv_top_lock, R.drawable.live_battle_award_item_lock_un);
-            a3.setBackgroundResource(R.drawable.live_battle_award_item_top_back);
+            baseViewHolder.a(a, 0.4f).c(R.id.iv_top_lighting).d(R.id.iv_top_lock).c(R.id.iv_top_lock, R.drawable.live_battle_award_item_lock_un);
+            a2.setBackgroundResource(R.drawable.live_battle_award_item_top_back);
         } else {
-            baseViewHolder.a(a2, 1.0f);
-            a3.setBackgroundResource(R.drawable.live_battle_award_item_top_back_light);
-            if (!LiveBattlePassDialogFragment.f12728a.a()) {
+            baseViewHolder.a(a, 1.0f);
+            a2.setBackgroundResource(R.drawable.live_battle_award_item_top_back_light);
+            if (!LiveBattlePassDialogFragment.a.a()) {
                 baseViewHolder.c(R.id.iv_top_lighting).d(R.id.iv_top_lock).c(R.id.iv_top_lock, R.drawable.live_battle_award_item_lock);
                 return;
             }
             baseViewHolder.d(R.id.iv_top_lighting).c(R.id.iv_top_lock);
             ImageWrapper g = ImageLoader.c(baseViewHolder.b, "live_battle_award_item_lighting.png").g().g(-1);
-            View a4 = baseViewHolder.a(R.id.iv_top_lighting);
-            if (a4 == null) {
+            View a3 = baseViewHolder.a(R.id.iv_top_lighting);
+            if (a3 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.widget.ImageView");
             }
-            g.a((ImageView) a4);
-            a2.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$7fdAVzj0n4WBqouKz9479DW6a5U
+            g.a((ImageView) a3);
+            a.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$7fdAVzj0n4WBqouKz9479DW6a5U
                 @Override // java.lang.Runnable
                 public final void run() {
                     FitemBattlePassLevel.a(View.this, this);
@@ -345,12 +343,12 @@ public final class FitemBattlePassLevel extends FreedomItem {
     public static final void c(FitemBattlePassLevel this$0, BaseViewHolder vh, View view) {
         Intrinsics.e(this$0, "this$0");
         Intrinsics.e(vh, "$vh");
-        BattlePassLevelAwardDataModel basic = this$0.f12525c.getBasic();
+        BattlePassLevelAwardDataModel basic = this$0.c.getBasic();
         if (basic == null) {
             return;
         }
         if (basic.getState() == 2) {
-            LiveBattleShopDialog.f12741a.a(this$0.e(), 1, this$0.f().getLevel());
+            LiveBattleShopDialog.a.a(this$0.e(), 1, this$0.f().getLevel());
             return;
         }
         String bubble_url = basic.getBubble_url();
@@ -369,41 +367,41 @@ public final class FitemBattlePassLevel extends FreedomItem {
         if (z) {
             return;
         }
-        Context context = vh.f10931a.b;
+        Context context = vh.a.b;
         Intrinsics.c(context, "vh.adapter.mContext");
         new LiveBattlePassAwardTipPop(context, basic).a(view, "home_basic");
     }
 
     private final void d(BaseViewHolder baseViewHolder) {
-        BattlePassLevelAwardDataModel basic = this.f12525c.getBasic();
+        BattlePassLevelAwardDataModel basic = this.c.getBasic();
         if (basic == null) {
             return;
         }
-        BaseViewHolder a2 = baseViewHolder.a(R.id.iv_bottom_award, basic.getIcon());
+        BaseViewHolder a = baseViewHolder.a(R.id.iv_bottom_award, basic.getIcon());
         int i = R.id.tv_bottom_num;
         String label = basic.getLabel();
-        a2.b(i, !(label == null || label.length() == 0)).a(R.id.tv_bottom_num, (CharSequence) basic.getLabel());
-        final View a3 = baseViewHolder.a(R.id.rl_bottom_award_root);
+        a.b(i, !(label == null || label.length() == 0)).a(R.id.tv_bottom_num, (CharSequence) basic.getLabel());
+        final View a2 = baseViewHolder.a(R.id.rl_bottom_award_root);
         int state = basic.getState();
         if (state == 1) {
-            baseViewHolder.a(a3, 1.0f).c(R.id.iv_bottom_lighting).c(R.id.iv_bottom_lock);
-            a3.setBackgroundResource(R.drawable.live_battle_award_item_bottom_back);
+            baseViewHolder.a(a2, 1.0f).c(R.id.iv_bottom_lighting).c(R.id.iv_bottom_lock);
+            a2.setBackgroundResource(R.drawable.live_battle_award_item_bottom_back);
         } else if (state != 2) {
             if (state != 3) {
                 return;
             }
-            baseViewHolder.a(a3, 0.4f).c(R.id.iv_bottom_lighting).d(R.id.iv_bottom_lock).c(R.id.iv_bottom_lock, R.drawable.live_battle_award_item_lock_un);
-            a3.setBackgroundResource(R.drawable.live_battle_award_item_bottom_back);
+            baseViewHolder.a(a2, 0.4f).c(R.id.iv_bottom_lighting).d(R.id.iv_bottom_lock).c(R.id.iv_bottom_lock, R.drawable.live_battle_award_item_lock_un);
+            a2.setBackgroundResource(R.drawable.live_battle_award_item_bottom_back);
         } else {
-            baseViewHolder.a(a3, 1.0f).d(R.id.iv_bottom_lighting).c(R.id.iv_bottom_lock);
+            baseViewHolder.a(a2, 1.0f).d(R.id.iv_bottom_lighting).c(R.id.iv_bottom_lock);
             ImageWrapper g = ImageLoader.c(baseViewHolder.b, "live_battle_award_item_lighting.png").g().g(-1);
-            View a4 = baseViewHolder.a(R.id.iv_bottom_lighting);
-            if (a4 == null) {
+            View a3 = baseViewHolder.a(R.id.iv_bottom_lighting);
+            if (a3 == null) {
                 throw new NullPointerException("null cannot be cast to non-null type android.widget.ImageView");
             }
-            g.a((ImageView) a4);
-            a3.setBackgroundResource(R.drawable.live_battle_award_item_bottom_back_light);
-            a3.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$I6Q5aaDdIQADbyeF99grIEsFrH4
+            g.a((ImageView) a3);
+            a2.setBackgroundResource(R.drawable.live_battle_award_item_bottom_back_light);
+            a2.post(new Runnable() { // from class: com.blued.android.module.live_china.fitem.-$$Lambda$FitemBattlePassLevel$I6Q5aaDdIQADbyeF99grIEsFrH4
                 @Override // java.lang.Runnable
                 public final void run() {
                     FitemBattlePassLevel.b(View.this, this);
@@ -424,47 +422,47 @@ public final class FitemBattlePassLevel extends FreedomItem {
         BattlePassLevelAwardDataModel top;
         View view2;
         Object tag2;
-        if (LiveBattlePassDialogFragment.f12728a.a() && ((i2 == 0 || i2 == 2) && (top = this.f12525c.getTop()) != null && top.getState() == 2)) {
+        if (LiveBattlePassDialogFragment.a.a() && ((i2 == 0 || i2 == 2) && (top = this.c.getTop()) != null && top.getState() == 2)) {
             top.setState(3);
-            BaseViewHolder baseViewHolder = this.f10935a;
+            BaseViewHolder baseViewHolder = this.a;
             if (baseViewHolder != null) {
-                View a2 = baseViewHolder.a(R.id.rl_top_award_root);
-                if (a2.getTag() != null && (a2.getTag() instanceof ObjectAnimator)) {
-                    Object tag3 = a2.getTag();
+                View a = baseViewHolder.a(R.id.rl_top_award_root);
+                if (a.getTag() != null && (a.getTag() instanceof ObjectAnimator)) {
+                    Object tag3 = a.getTag();
                     if (tag3 == null) {
                         throw new NullPointerException("null cannot be cast to non-null type android.animation.ObjectAnimator");
                     }
                     ((ObjectAnimator) tag3).pause();
                 }
-                a2.setRotation(0.0f);
-                BaseViewHolder baseViewHolder2 = this.f10935a;
+                a.setRotation(0.0f);
+                BaseViewHolder baseViewHolder2 = this.a;
                 if (baseViewHolder2 != null && (view2 = baseViewHolder2.itemView) != null && (tag2 = view2.getTag()) != null && ((BattlePassLevelDataModel) tag2).getLevel() == i) {
-                    BaseViewHolder viewHolder = this.f10935a;
+                    BaseViewHolder viewHolder = this.a;
                     Intrinsics.c(viewHolder, "viewHolder");
                     c(viewHolder);
                 }
             }
         }
-        if ((i2 == 0 || i2 == 1) && (basic = this.f12525c.getBasic()) != null && basic.getState() == 2) {
+        if ((i2 == 0 || i2 == 1) && (basic = this.c.getBasic()) != null && basic.getState() == 2) {
             basic.setState(3);
-            BaseViewHolder baseViewHolder3 = this.f10935a;
+            BaseViewHolder baseViewHolder3 = this.a;
             if (baseViewHolder3 == null) {
                 return;
             }
-            View a3 = baseViewHolder3.a(R.id.rl_bottom_award_root);
-            if (a3.getTag() != null && (a3.getTag() instanceof ObjectAnimator)) {
-                Object tag4 = a3.getTag();
+            View a2 = baseViewHolder3.a(R.id.rl_bottom_award_root);
+            if (a2.getTag() != null && (a2.getTag() instanceof ObjectAnimator)) {
+                Object tag4 = a2.getTag();
                 if (tag4 == null) {
                     throw new NullPointerException("null cannot be cast to non-null type android.animation.ObjectAnimator");
                 }
                 ((ObjectAnimator) tag4).pause();
             }
-            a3.setRotation(0.0f);
-            BaseViewHolder baseViewHolder4 = this.f10935a;
+            a2.setRotation(0.0f);
+            BaseViewHolder baseViewHolder4 = this.a;
             if (baseViewHolder4 == null || (view = baseViewHolder4.itemView) == null || (tag = view.getTag()) == null || ((BattlePassLevelDataModel) tag).getLevel() != i) {
                 return;
             }
-            BaseViewHolder viewHolder2 = this.f10935a;
+            BaseViewHolder viewHolder2 = this.a;
             Intrinsics.c(viewHolder2, "viewHolder");
             b(viewHolder2);
         }
@@ -474,7 +472,7 @@ public final class FitemBattlePassLevel extends FreedomItem {
     public void a(Context context, BaseViewHolder vh, List<FreedomItem> list, int i) {
         Intrinsics.e(context, "context");
         Intrinsics.e(vh, "vh");
-        vh.itemView.setTag(this.f12525c);
+        vh.itemView.setTag(this.c);
         b(vh);
     }
 
@@ -483,10 +481,10 @@ public final class FitemBattlePassLevel extends FreedomItem {
         BaseViewHolder baseViewHolder;
         View view;
         Object tag;
-        if (!LiveBattlePassDialogFragment.f12728a.a() || (top = this.f12525c.getTop()) == null || top.getState() != 2 || (baseViewHolder = this.f10935a) == null || (view = baseViewHolder.itemView) == null || (tag = view.getTag()) == null || ((BattlePassLevelDataModel) tag).getLevel() > i) {
+        if (!LiveBattlePassDialogFragment.a.a() || (top = this.c.getTop()) == null || top.getState() != 2 || (baseViewHolder = this.a) == null || (view = baseViewHolder.itemView) == null || (tag = view.getTag()) == null || ((BattlePassLevelDataModel) tag).getLevel() > i) {
             return;
         }
-        BaseViewHolder viewHolder = this.f10935a;
+        BaseViewHolder viewHolder = this.a;
         Intrinsics.c(viewHolder, "viewHolder");
         c(viewHolder);
     }
@@ -494,20 +492,20 @@ public final class FitemBattlePassLevel extends FreedomItem {
     public final void b(int i, int i2) {
         View view;
         Object tag;
-        this.f12525c.setCurrentExp(i2);
-        BattlePassLevelAwardDataModel basic = this.f12525c.getBasic();
+        this.c.setCurrentExp(i2);
+        BattlePassLevelAwardDataModel basic = this.c.getBasic();
         if (basic != null && basic.getState() == 1) {
             basic.setState(2);
         }
-        BattlePassLevelAwardDataModel top = this.f12525c.getTop();
+        BattlePassLevelAwardDataModel top = this.c.getTop();
         if (top != null && top.getState() == 1) {
             top.setState(2);
         }
-        BaseViewHolder baseViewHolder = this.f10935a;
+        BaseViewHolder baseViewHolder = this.a;
         if (baseViewHolder == null || (view = baseViewHolder.itemView) == null || (tag = view.getTag()) == null || ((BattlePassLevelDataModel) tag).getLevel() != i) {
             return;
         }
-        BaseViewHolder viewHolder = this.f10935a;
+        BaseViewHolder viewHolder = this.a;
         Intrinsics.c(viewHolder, "viewHolder");
         b(viewHolder);
     }
@@ -516,15 +514,15 @@ public final class FitemBattlePassLevel extends FreedomItem {
         BaseViewHolder baseViewHolder;
         View view;
         Object tag;
-        BattlePassLevelAwardDataModel top = this.f12525c.getTop();
+        BattlePassLevelAwardDataModel top = this.c.getTop();
         boolean z = false;
         if (top != null && top.getState() == 1) {
             z = true;
         }
-        if (!z || (baseViewHolder = this.f10935a) == null || (view = baseViewHolder.itemView) == null || (tag = view.getTag()) == null || ((BattlePassLevelDataModel) tag).getLevel() != i) {
+        if (!z || (baseViewHolder = this.a) == null || (view = baseViewHolder.itemView) == null || (tag = view.getTag()) == null || ((BattlePassLevelDataModel) tag).getLevel() != i) {
             return;
         }
-        this.f10935a.c(R.id.iv_top_lock);
+        this.a.c(R.id.iv_top_lock);
     }
 
     public final void d(int i) {
@@ -536,40 +534,40 @@ public final class FitemBattlePassLevel extends FreedomItem {
     }
 
     public final BattlePassLevelDataModel f() {
-        return this.f12525c;
+        return this.c;
     }
 
     public final boolean g() {
-        BattlePassLevelAwardDataModel top = this.f12525c.getTop();
-        return top != null && LiveBattlePassDialogFragment.f12728a.a() && top.getState() == 2;
+        BattlePassLevelAwardDataModel top = this.c.getTop();
+        return top != null && LiveBattlePassDialogFragment.a.a() && top.getState() == 2;
     }
 
     public final boolean h() {
-        BattlePassLevelAwardDataModel top = this.f12525c.getTop();
-        if (top == null || !LiveBattlePassDialogFragment.f12728a.a() || top.getState() == 3) {
-            BattlePassLevelAwardDataModel basic = this.f12525c.getBasic();
+        BattlePassLevelAwardDataModel top = this.c.getTop();
+        if (top == null || !LiveBattlePassDialogFragment.a.a() || top.getState() == 3) {
+            BattlePassLevelAwardDataModel basic = this.c.getBasic();
             return (basic == null || basic.getState() == 3) ? false : true;
         }
         return true;
     }
 
     public final boolean i() {
-        BattlePassLevelAwardDataModel top = this.f12525c.getTop();
-        return top != null && LiveBattlePassDialogFragment.f12728a.a() && top.getState() == 1;
+        BattlePassLevelAwardDataModel top = this.c.getTop();
+        return top != null && LiveBattlePassDialogFragment.a.a() && top.getState() == 1;
     }
 
     public final boolean j() {
-        BattlePassLevelAwardDataModel top = this.f12525c.getTop();
-        if (top != null && LiveBattlePassDialogFragment.f12728a.a() && top.getState() == 2) {
+        BattlePassLevelAwardDataModel top = this.c.getTop();
+        if (top != null && LiveBattlePassDialogFragment.a.a() && top.getState() == 2) {
             return true;
         }
-        BattlePassLevelAwardDataModel basic = this.f12525c.getBasic();
+        BattlePassLevelAwardDataModel basic = this.c.getBasic();
         return basic != null && basic.getState() == 2;
     }
 
     public final View k() {
         View view;
-        BaseViewHolder baseViewHolder = this.f10935a;
+        BaseViewHolder baseViewHolder = this.a;
         if (baseViewHolder == null || (view = baseViewHolder.itemView) == null) {
             return null;
         }

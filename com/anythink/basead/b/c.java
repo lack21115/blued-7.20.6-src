@@ -6,20 +6,14 @@ import android.database.Cursor;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/b/c.class */
 public final class c {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static c f5879a;
+    private static c a;
     private Context b;
 
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/basead/b/c$a.class */
     public static final class a {
-
-        /* renamed from: a  reason: collision with root package name */
-        public static final String f5880a = "my_offer_cap_pacing";
+        public static final String a = "my_offer_cap_pacing";
         public static final String b = "offer_id";
-
-        /* renamed from: c  reason: collision with root package name */
-        public static final String f5881c = "offer_cap";
+        public static final String c = "offer_cap";
         public static final String d = "offer_pacing";
         public static final String e = "show_num";
         public static final String f = "show_time";
@@ -32,26 +26,26 @@ public final class c {
     }
 
     public static c a(Context context) {
-        if (f5879a == null) {
-            f5879a = new c(context);
+        if (a == null) {
+            a = new c(context);
         }
-        return f5879a;
+        return a;
     }
 
     private static com.anythink.basead.c.c a(Cursor cursor) {
         com.anythink.basead.c.c cVar = new com.anythink.basead.c.c();
-        cVar.f5893a = cursor.getString(cursor.getColumnIndex("offer_id"));
+        cVar.a = cursor.getString(cursor.getColumnIndex("offer_id"));
         cVar.d = cursor.getInt(cursor.getColumnIndex(a.e));
         cVar.e = cursor.getLong(cursor.getColumnIndex("show_time"));
         cVar.f = cursor.getString(cursor.getColumnIndex(a.g));
-        cVar.b = cursor.getInt(cursor.getColumnIndex(a.f5881c));
-        cVar.f5894c = cursor.getLong(cursor.getColumnIndex(a.d));
+        cVar.b = cursor.getInt(cursor.getColumnIndex(a.c));
+        cVar.c = cursor.getLong(cursor.getColumnIndex(a.d));
         return cVar;
     }
 
     private boolean d(String str) {
         synchronized (this) {
-            Cursor query = b.a(this.b).getReadableDatabase().query(a.f5880a, new String[]{"offer_id"}, "offer_id=?", new String[]{str}, null, null, null);
+            Cursor query = b.a(this.b).getReadableDatabase().query(a.a, new String[]{"offer_id"}, "offer_id=?", new String[]{str}, null, null, null);
             if (query != null && query.getCount() > 0) {
                 query.close();
                 return true;
@@ -74,16 +68,16 @@ public final class c {
                         return -1L;
                     }
                     ContentValues contentValues = new ContentValues();
-                    contentValues.put("offer_id", cVar.f5893a);
+                    contentValues.put("offer_id", cVar.a);
                     contentValues.put(a.e, Integer.valueOf(cVar.d));
                     contentValues.put("show_time", Long.valueOf(cVar.e));
                     contentValues.put(a.g, cVar.f);
-                    contentValues.put(a.f5881c, Integer.valueOf(cVar.b));
-                    contentValues.put(a.d, Long.valueOf(cVar.f5894c));
-                    if (!d(cVar.f5893a)) {
-                        return b.a(this.b).getWritableDatabase().insert(a.f5880a, null, contentValues);
+                    contentValues.put(a.c, Integer.valueOf(cVar.b));
+                    contentValues.put(a.d, Long.valueOf(cVar.c));
+                    if (!d(cVar.a)) {
+                        return b.a(this.b).getWritableDatabase().insert(a.a, null, contentValues);
                     }
-                    return b.a(this.b).getWritableDatabase().update(a.f5880a, contentValues, "offer_id = '" + cVar.f5893a + "'", null);
+                    return b.a(this.b).getWritableDatabase().update(a.a, contentValues, "offer_id = '" + cVar.a + "'", null);
                 } catch (Exception e) {
                     e.printStackTrace();
                     return -1L;
@@ -275,7 +269,7 @@ public final class c {
                 if (b.a(this.b).getWritableDatabase() == null) {
                     return;
                 }
-                b.a(this.b).getWritableDatabase().delete(a.f5880a, str2, null);
+                b.a(this.b).getWritableDatabase().delete(a.a, str2, null);
             }
         }
     }

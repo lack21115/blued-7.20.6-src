@@ -14,11 +14,11 @@ import java.nio.channels.FileChannel;
 public final class e implements h {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ContentResolver f7576a;
+    private final ContentResolver f4737a;
     private final aa<? super e> b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Uri f7577c;
+    private Uri f4738c;
     private AssetFileDescriptor d;
     private FileInputStream e;
     private long f;
@@ -36,7 +36,7 @@ public final class e implements h {
     }
 
     public e(Context context, aa<? super e> aaVar) {
-        this.f7576a = context.getContentResolver();
+        this.f4737a = context.getContentResolver();
         this.b = aaVar;
     }
 
@@ -77,12 +77,12 @@ public final class e implements h {
     @Override // com.anythink.expressad.exoplayer.j.h
     public final long a(k kVar) {
         try {
-            Uri uri = kVar.f7584c;
-            this.f7577c = uri;
-            AssetFileDescriptor openAssetFileDescriptor = this.f7576a.openAssetFileDescriptor(uri, "r");
+            Uri uri = kVar.f4745c;
+            this.f4738c = uri;
+            AssetFileDescriptor openAssetFileDescriptor = this.f4737a.openAssetFileDescriptor(uri, "r");
             this.d = openAssetFileDescriptor;
             if (openAssetFileDescriptor == null) {
-                throw new FileNotFoundException("Could not open file descriptor for: " + this.f7577c);
+                throw new FileNotFoundException("Could not open file descriptor for: " + this.f4738c);
             }
             this.e = new FileInputStream(this.d.getFileDescriptor());
             long startOffset = this.d.getStartOffset();
@@ -119,12 +119,12 @@ public final class e implements h {
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final Uri a() {
-        return this.f7577c;
+        return this.f4738c;
     }
 
     @Override // com.anythink.expressad.exoplayer.j.h
     public final void b() {
-        this.f7577c = null;
+        this.f4738c = null;
         try {
             try {
                 if (this.e != null) {

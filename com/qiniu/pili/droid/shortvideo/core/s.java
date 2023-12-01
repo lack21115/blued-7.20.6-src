@@ -58,11 +58,11 @@ public class s implements Runnable {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    private ViewGroup f27619a;
+    private ViewGroup f13931a;
     private PLVideoEncodeSetting b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f27620c;
+    private String f13932c;
     private PLVideoSaveListener d;
     private com.qiniu.pili.droid.shortvideo.gl.a.f e;
     private com.qiniu.pili.droid.shortvideo.gl.a.d f;
@@ -82,22 +82,22 @@ public class s implements Runnable {
     private Hashtable<View, a> t = new Hashtable<>();
     private Hashtable<View, AnimatorSet> u = new Hashtable<>();
     private Handler v = new Handler();
-    private a.InterfaceC0745a w = new a.InterfaceC0745a() { // from class: com.qiniu.pili.droid.shortvideo.core.s.2
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+    private a.InterfaceC0575a w = new a.InterfaceC0575a() { // from class: com.qiniu.pili.droid.shortvideo.core.s.2
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(MediaFormat mediaFormat) {
             com.qiniu.pili.droid.shortvideo.f.e.v.c("TransitionMakerCore", "video onEncodedFormatChanged ");
             s.this.l = mediaFormat;
             s.this.h();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(Surface surface) {
             com.qiniu.pili.droid.shortvideo.f.e.v.c("TransitionMakerCore", "video onSurfaceCreated ");
             s.this.i = surface;
             new Thread(s.this).start();
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
             if (!s.this.n) {
                 com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.v;
@@ -110,7 +110,7 @@ public class s implements Runnable {
             s.this.d.onProgressUpdate((((float) bufferInfo.presentationTimeUs) * 1.0f) / ((float) s.this.r));
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void a(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e eVar = com.qiniu.pili.droid.shortvideo.f.e.v;
             eVar.c("TransitionMakerCore", "encode started result: " + z);
@@ -120,7 +120,7 @@ public class s implements Runnable {
             s.this.d.onSaveVideoFailed(6);
         }
 
-        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0745a
+        @Override // com.qiniu.pili.droid.shortvideo.encode.a.InterfaceC0575a
         public void b(boolean z) {
             com.qiniu.pili.droid.shortvideo.f.e.v.c("TransitionMakerCore", "encode stopped");
             s.this.l = null;
@@ -133,20 +133,20 @@ public class s implements Runnable {
     public class a {
 
         /* renamed from: a  reason: collision with root package name */
-        LinkedList<PLTransition> f27623a;
+        LinkedList<PLTransition> f13935a;
         Bitmap b;
 
         /* renamed from: c  reason: collision with root package name */
-        float f27624c;
+        float f13936c;
         float d;
 
         public a(LinkedList<PLTransition> linkedList) {
-            this.f27623a = linkedList;
+            this.f13935a = linkedList;
         }
     }
 
     public s(ViewGroup viewGroup, PLVideoEncodeSetting pLVideoEncodeSetting) {
-        this.f27619a = viewGroup;
+        this.f13931a = viewGroup;
         this.b = pLVideoEncodeSetting;
         l.a(viewGroup.getContext().getApplicationContext());
     }
@@ -163,8 +163,8 @@ public class s implements Runnable {
         mVar.a(false);
         mVar.a(view.getAlpha());
         mVar.b((int) view.getRotation());
-        mVar.b(aVar.f27624c / this.f27619a.getWidth(), aVar.d / this.f27619a.getHeight());
-        Iterator<PLTransition> it = aVar.f27623a.iterator();
+        mVar.b(aVar.f13936c / this.f13931a.getWidth(), aVar.d / this.f13931a.getHeight());
+        Iterator<PLTransition> it = aVar.f13935a.iterator();
         while (it.hasNext()) {
             mVar.a(it.next());
         }
@@ -211,7 +211,7 @@ public class s implements Runnable {
             }
             com.qiniu.pili.droid.shortvideo.muxer.b bVar = new com.qiniu.pili.droid.shortvideo.muxer.b();
             this.j = bVar;
-            if (bVar.a(this.f27620c, this.l, null, 0)) {
+            if (bVar.a(this.f13932c, this.l, null, 0)) {
                 this.n = true;
                 com.qiniu.pili.droid.shortvideo.f.e.v.c("TransitionMakerCore", "start output muxer success!");
             } else {
@@ -226,12 +226,12 @@ public class s implements Runnable {
             if (this.l == null && this.n) {
                 boolean a2 = this.j.a();
                 if (this.m) {
-                    new File(this.f27620c).delete();
+                    new File(this.f13932c).delete();
                     this.d.onSaveVideoCanceled();
                 } else {
                     this.d.onProgressUpdate(1.0f);
                     if (a2) {
-                        this.d.onSaveVideoSuccess(this.f27620c);
+                        this.d.onSaveVideoSuccess(this.f13932c);
                     } else {
                         this.d.onSaveVideoFailed(3);
                         QosManager.a().a(3);
@@ -253,7 +253,7 @@ public class s implements Runnable {
             value.cancel();
         }
         this.u.clear();
-        this.f27619a.removeAllViews();
+        this.f13931a.removeAllViews();
     }
 
     public void a(int i) {
@@ -262,7 +262,7 @@ public class s implements Runnable {
 
     public void a(View view, PLTransition pLTransition) {
         if (this.t.containsKey(view)) {
-            this.t.get(view).f27623a.add(pLTransition);
+            this.t.get(view).f13935a.add(pLTransition);
             return;
         }
         LinkedList linkedList = new LinkedList();
@@ -271,11 +271,11 @@ public class s implements Runnable {
     }
 
     public void a(PLImageView pLImageView) {
-        this.f27619a.addView(pLImageView);
+        this.f13931a.addView(pLImageView);
     }
 
     public void a(PLTextView pLTextView) {
-        this.f27619a.addView(pLTextView);
+        this.f13931a.addView(pLTextView);
     }
 
     public void a(String str, PLVideoSaveListener pLVideoSaveListener) {
@@ -287,21 +287,21 @@ public class s implements Runnable {
                 com.qiniu.pili.droid.shortvideo.f.e.v.e("TransitionMakerCore", "transition make: dstVideoPath is wrong!");
             } else {
                 this.o = true;
-                this.f27620c = str;
+                this.f13932c = str;
                 this.q = 0L;
                 this.m = false;
                 for (Map.Entry<View, a> entry : this.t.entrySet()) {
                     View key = entry.getKey();
-                    float videoEncodingWidth = this.b.getVideoEncodingWidth() / this.f27619a.getWidth();
+                    float videoEncodingWidth = this.b.getVideoEncodingWidth() / this.f13931a.getWidth();
                     Bitmap a2 = com.qiniu.pili.droid.shortvideo.f.j.a(key);
                     Matrix matrix = new Matrix();
                     matrix.postScale(videoEncodingWidth, videoEncodingWidth);
                     entry.getValue().b = Bitmap.createBitmap(a2, 0, 0, a2.getWidth(), a2.getHeight(), matrix, true);
-                    Iterator<PLTransition> it = entry.getValue().f27623a.iterator();
+                    Iterator<PLTransition> it = entry.getValue().f13935a.iterator();
                     while (it.hasNext()) {
                         PLTransition next = it.next();
                         if (next instanceof PLPositionTransition) {
-                            ((PLPositionTransition) next).a(this.f27619a.getWidth(), this.f27619a.getHeight());
+                            ((PLPositionTransition) next).a(this.f13931a.getWidth(), this.f13931a.getHeight());
                         }
                     }
                 }
@@ -330,7 +330,7 @@ public class s implements Runnable {
     }
 
     public void b(int i) {
-        this.f27619a.setBackgroundColor(i);
+        this.f13931a.setBackgroundColor(i);
         this.s = i;
     }
 
@@ -351,9 +351,9 @@ public class s implements Runnable {
             for (Map.Entry<View, a> entry : this.t.entrySet()) {
                 View key = entry.getKey();
                 a value = entry.getValue();
-                value.f27624c = key.getX();
+                value.f13936c = key.getX();
                 value.d = key.getY();
-                LinkedList<PLTransition> linkedList = value.f27623a;
+                LinkedList<PLTransition> linkedList = value.f13935a;
                 ArrayList arrayList = new ArrayList();
                 AnimatorSet animatorSet = new AnimatorSet();
                 Iterator<PLTransition> it = linkedList.iterator();

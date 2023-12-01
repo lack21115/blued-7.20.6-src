@@ -13,6 +13,7 @@ import com.kwad.sdk.crash.model.message.AnrReason;
 import com.kwad.sdk.crash.utils.g;
 import com.kwad.sdk.utils.SystemUtil;
 import com.kwad.sdk.utils.q;
+import com.xiaomi.mipush.sdk.Constants;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -74,7 +75,7 @@ public final class AnrHandler extends b {
                     boolean z3 = z;
                     sb2.append(FILE_NAME_BASE);
                     boolean z4 = z;
-                    sb2.append("-");
+                    sb2.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     boolean z5 = z;
                     sb2.append(i);
                     boolean z6 = z;
@@ -90,11 +91,11 @@ public final class AnrHandler extends b {
                     boolean z11 = z;
                     sb3.append(FILE_NAME_BASE);
                     boolean z12 = z;
-                    sb3.append("-");
+                    sb3.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     boolean z13 = z;
                     sb3.append(i);
                     boolean z14 = z;
-                    sb3.append(com.anythink.china.common.a.a.f);
+                    sb3.append(".log");
                     boolean z15 = z;
                     g.z(new File(file, sb3.toString()));
                 }
@@ -123,7 +124,7 @@ public final class AnrHandler extends b {
             Looper.getMainLooper().dump(new Printer() { // from class: com.kwad.sdk.crash.handler.AnrHandler.2
                 @Override // android.util.Printer
                 public final void println(String str2) {
-                    StringBuilder sb2 = StringBuilder.this;
+                    StringBuilder sb2 = sb;
                     sb2.append(str2);
                     sb2.append("\n");
                 }
@@ -133,7 +134,7 @@ public final class AnrHandler extends b {
             StringBuilder sb2 = new StringBuilder();
             getInstance();
             sb2.append(FILE_NAME_BASE);
-            sb2.append("-");
+            sb2.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             sb2.append(i);
             sb2.append(".dump");
             File file2 = new File(file, sb2.toString());
@@ -141,14 +142,14 @@ public final class AnrHandler extends b {
                 StringBuilder sb3 = new StringBuilder();
                 getInstance();
                 sb3.append(FILE_NAME_BASE);
-                sb3.append("-");
+                sb3.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb3.append(i);
                 sb3.append(".msg");
                 File file3 = new File(file, sb3.toString());
                 StringBuilder sb4 = new StringBuilder();
                 getInstance();
                 sb4.append(FILE_NAME_BASE);
-                sb4.append("-");
+                sb4.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                 sb4.append(i);
                 sb4.append(".minfo");
                 File file4 = new File(file, sb4.toString());
@@ -169,7 +170,7 @@ public final class AnrHandler extends b {
             StringBuilder sb5 = new StringBuilder();
             getInstance();
             sb5.append(FILE_NAME_BASE);
-            sb5.append("-");
+            sb5.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
             sb5.append(i);
             sb5.append(".anr");
             getAnrReason(str, new File(file, sb5.toString()));
@@ -187,7 +188,7 @@ public final class AnrHandler extends b {
             com.kwad.sdk.utils.g.schedule(new Runnable() { // from class: com.kwad.sdk.crash.handler.AnrHandler.3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnrHandler.getAnrReasonInner(null, File.this);
+                    AnrHandler.getAnrReasonInner(null, file);
                 }
             }, 0L, TimeUnit.MILLISECONDS);
         } else {

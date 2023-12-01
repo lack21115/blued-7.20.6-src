@@ -20,7 +20,6 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.Surface;
-import android.widget.ExpandableListView;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,9 +37,8 @@ public class CameraDeviceUserShim implements ICameraDeviceUser {
     private final SparseArray<Surface> mSurfaces = new SparseArray<>();
     private int mSurfaceIdCounter = 0;
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/legacy/CameraDeviceUserShim$CameraCallbackThread.class */
-    public static class CameraCallbackThread implements ICameraDeviceCallbacks {
+    private static class CameraCallbackThread implements ICameraDeviceCallbacks {
         private static final int CAMERA_ERROR = 0;
         private static final int CAMERA_IDLE = 1;
         private static final int CAPTURE_STARTED = 2;
@@ -67,7 +65,7 @@ public class CameraDeviceUserShim implements ICameraDeviceUser {
                             CameraCallbackThread.this.mCallbacks.onDeviceIdle();
                             return;
                         case 2:
-                            CameraCallbackThread.this.mCallbacks.onCaptureStarted((CaptureResultExtras) message.obj, ((message.arg2 & ExpandableListView.PACKED_POSITION_VALUE_NULL) << 32) | (message.arg1 & ExpandableListView.PACKED_POSITION_VALUE_NULL));
+                            CameraCallbackThread.this.mCallbacks.onCaptureStarted((CaptureResultExtras) message.obj, ((message.arg2 & 4294967295L) << 32) | (message.arg1 & 4294967295L));
                             return;
                         case 3:
                             Object[] objArr = (Object[]) message.obj;
@@ -105,7 +103,7 @@ public class CameraDeviceUserShim implements ICameraDeviceUser {
 
         @Override // android.hardware.camera2.ICameraDeviceCallbacks
         public void onCaptureStarted(CaptureResultExtras captureResultExtras, long j) {
-            getHandler().sendMessage(getHandler().obtainMessage(2, (int) (j & ExpandableListView.PACKED_POSITION_VALUE_NULL), (int) ((j >> 32) & ExpandableListView.PACKED_POSITION_VALUE_NULL), captureResultExtras));
+            getHandler().sendMessage(getHandler().obtainMessage(2, (int) (j & 4294967295L), (int) ((j >> 32) & 4294967295L), captureResultExtras));
         }
 
         @Override // android.hardware.camera2.ICameraDeviceCallbacks
@@ -124,9 +122,8 @@ public class CameraDeviceUserShim implements ICameraDeviceUser {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-9557208-dex2jar.jar:android/hardware/camera2/legacy/CameraDeviceUserShim$CameraLooper.class */
-    public static class CameraLooper implements Runnable, AutoCloseable {
+    private static class CameraLooper implements Runnable, AutoCloseable {
         private final int mCameraId;
         private volatile int mInitErrors;
         private Looper mLooper;

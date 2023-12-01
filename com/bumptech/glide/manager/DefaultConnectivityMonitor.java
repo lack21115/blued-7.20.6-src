@@ -14,11 +14,11 @@ import com.bumptech.glide.util.Preconditions;
 final class DefaultConnectivityMonitor implements ConnectivityMonitor {
 
     /* renamed from: a  reason: collision with root package name */
-    final ConnectivityMonitor.ConnectivityListener f21013a;
+    final ConnectivityMonitor.ConnectivityListener f7407a;
     boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final Context f21014c;
+    private final Context f7408c;
     private boolean d;
     private final BroadcastReceiver e = new BroadcastReceiver() { // from class: com.bumptech.glide.manager.DefaultConnectivityMonitor.1
         @Override // android.content.BroadcastReceiver
@@ -30,24 +30,24 @@ final class DefaultConnectivityMonitor implements ConnectivityMonitor {
                 if (Log.isLoggable("ConnectivityMonitor", 3)) {
                     Log.d("ConnectivityMonitor", "connectivity changed, isConnected: " + DefaultConnectivityMonitor.this.b);
                 }
-                DefaultConnectivityMonitor.this.f21013a.a(DefaultConnectivityMonitor.this.b);
+                DefaultConnectivityMonitor.this.f7407a.a(DefaultConnectivityMonitor.this.b);
             }
         }
     };
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public DefaultConnectivityMonitor(Context context, ConnectivityMonitor.ConnectivityListener connectivityListener) {
-        this.f21014c = context.getApplicationContext();
-        this.f21013a = connectivityListener;
+        this.f7408c = context.getApplicationContext();
+        this.f7407a = connectivityListener;
     }
 
     private void a() {
         if (this.d) {
             return;
         }
-        this.b = a(this.f21014c);
+        this.b = a(this.f7408c);
         try {
-            this.f21014c.registerReceiver(this.e, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
+            this.f7408c.registerReceiver(this.e, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
             this.d = true;
         } catch (SecurityException e) {
             if (Log.isLoggable("ConnectivityMonitor", 5)) {
@@ -58,7 +58,7 @@ final class DefaultConnectivityMonitor implements ConnectivityMonitor {
 
     private void b() {
         if (this.d) {
-            this.f21014c.unregisterReceiver(this.e);
+            this.f7408c.unregisterReceiver(this.e);
             this.d = false;
         }
     }

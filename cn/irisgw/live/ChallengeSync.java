@@ -64,8 +64,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
     private int targetEggScore_;
     private static final ChallengeSync DEFAULT_INSTANCE = new ChallengeSync();
     private static final Parser<ChallengeSync> PARSER = new AbstractParser<ChallengeSync>() { // from class: cn.irisgw.live.ChallengeSync.1
-        @Override // com.google.protobuf.Parser
-        public ChallengeSync parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
+        /* renamed from: parsePartialFrom */
+        public ChallengeSync m1197parsePartialFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
             return new ChallengeSync(codedInputStream, extensionRegistryLite);
         }
     };
@@ -145,7 +145,7 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
                 return this;
             }
             ensureChallengeInfoIsMutable();
-            AbstractMessageLite.Builder.addAll((Iterable) iterable, (List) this.challengeInfo_);
+            AbstractMessageLite.Builder.addAll(iterable, this.challengeInfo_);
             onChanged();
             return this;
         }
@@ -153,11 +153,11 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         public Builder addChallengeInfo(int i, ChallengeSyncInfo.Builder builder) {
             RepeatedFieldBuilderV3<ChallengeSyncInfo, ChallengeSyncInfo.Builder, ChallengeSyncInfoOrBuilder> repeatedFieldBuilderV3 = this.challengeInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(i, builder.build());
+                repeatedFieldBuilderV3.addMessage(i, builder.m1248build());
                 return this;
             }
             ensureChallengeInfoIsMutable();
-            this.challengeInfo_.add(i, builder.build());
+            this.challengeInfo_.add(i, builder.m1248build());
             onChanged();
             return this;
         }
@@ -180,11 +180,11 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         public Builder addChallengeInfo(ChallengeSyncInfo.Builder builder) {
             RepeatedFieldBuilderV3<ChallengeSyncInfo, ChallengeSyncInfo.Builder, ChallengeSyncInfoOrBuilder> repeatedFieldBuilderV3 = this.challengeInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.addMessage(builder.build());
+                repeatedFieldBuilderV3.addMessage(builder.m1248build());
                 return this;
             }
             ensureChallengeInfoIsMutable();
-            this.challengeInfo_.add(builder.build());
+            this.challengeInfo_.add(builder.m1248build());
             onChanged();
             return this;
         }
@@ -212,22 +212,22 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return getChallengeInfoFieldBuilder().addBuilder(i, ChallengeSyncInfo.getDefaultInstance());
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: addRepeatedField */
+        public Builder m1199addRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.addRepeatedField(fieldDescriptor, obj);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ChallengeSync build() {
-            ChallengeSync buildPartial = buildPartial();
-            if (buildPartial.isInitialized()) {
-                return buildPartial;
+        /* renamed from: build */
+        public ChallengeSync m1201build() {
+            ChallengeSync m1203buildPartial = m1203buildPartial();
+            if (m1203buildPartial.isInitialized()) {
+                return m1203buildPartial;
             }
-            throw newUninitializedMessageException((Message) buildPartial);
+            throw newUninitializedMessageException(m1203buildPartial);
         }
 
-        @Override // com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public ChallengeSync buildPartial() {
+        /* renamed from: buildPartial */
+        public ChallengeSync m1203buildPartial() {
             ChallengeSync challengeSync = new ChallengeSync(this);
             int i = this.bitField0_;
             RepeatedFieldBuilderV3<ChallengeSyncInfo, ChallengeSyncInfo.Builder, ChallengeSyncInfoOrBuilder> repeatedFieldBuilderV3 = this.challengeInfoBuilder_;
@@ -261,8 +261,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return challengeSync;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
-        public Builder clear() {
+        /* renamed from: clear */
+        public Builder m1207clear() {
             super.clear();
             RepeatedFieldBuilderV3<ChallengeSyncInfo, ChallengeSyncInfo.Builder, ChallengeSyncInfoOrBuilder> repeatedFieldBuilderV3 = this.challengeInfoBuilder_;
             if (repeatedFieldBuilderV3 == null) {
@@ -345,8 +345,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder clearField(Descriptors.FieldDescriptor fieldDescriptor) {
+        /* renamed from: clearField */
+        public Builder m1209clearField(Descriptors.FieldDescriptor fieldDescriptor) {
             return (Builder) super.clearField(fieldDescriptor);
         }
 
@@ -398,8 +398,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
+        /* renamed from: clearOneof */
+        public Builder m1212clearOneof(Descriptors.OneofDescriptor oneofDescriptor) {
             return (Builder) super.clearOneof(oneofDescriptor);
         }
 
@@ -415,10 +415,9 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo1800clone() {
-            return (Builder) super.mo1800clone();
+        public Builder m1218clone() {
+            return (Builder) super.clone();
         }
 
         @Override // cn.irisgw.live.ChallengeSyncOrBuilder
@@ -450,7 +449,7 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         @Override // cn.irisgw.live.ChallengeSyncOrBuilder
         public ChallengeSyncInfoOrBuilder getChallengeInfoOrBuilder(int i) {
             RepeatedFieldBuilderV3<ChallengeSyncInfo, ChallengeSyncInfo.Builder, ChallengeSyncInfoOrBuilder> repeatedFieldBuilderV3 = this.challengeInfoBuilder_;
-            return repeatedFieldBuilderV3 == null ? this.challengeInfo_.get(i) : repeatedFieldBuilderV3.getMessageOrBuilder(i);
+            return repeatedFieldBuilderV3 == null ? this.challengeInfo_.get(i) : (ChallengeSyncInfoOrBuilder) repeatedFieldBuilderV3.getMessageOrBuilder(i);
         }
 
         @Override // cn.irisgw.live.ChallengeSyncOrBuilder
@@ -464,8 +463,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this.countdown_;
         }
 
-        @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-        public ChallengeSync getDefaultInstanceForType() {
+        /* renamed from: getDefaultInstanceForType */
+        public ChallengeSync m1220getDefaultInstanceForType() {
             return ChallengeSync.getDefaultInstance();
         }
 
@@ -513,7 +512,6 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return (ByteString) obj;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder, com.google.protobuf.MessageOrBuilder
         public Descriptors.Descriptor getDescriptorForType() {
             return LiveConstants.internal_static_cn_irisgw_live_ChallengeSync_descriptor;
         }
@@ -588,12 +586,10 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this.targetEggScore_;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder
         public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
             return LiveConstants.internal_static_cn_irisgw_live_ChallengeSync_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeSync.class, Builder.class);
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.MessageLiteOrBuilder
         public final boolean isInitialized() {
             return true;
         }
@@ -681,18 +677,18 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
                 this.descLink_ = challengeSync.descLink_;
                 onChanged();
             }
-            mergeUnknownFields(challengeSync.unknownFields);
+            m1229mergeUnknownFields(challengeSync.unknownFields);
             onChanged();
             return this;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:18:0x0035  */
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder, com.google.protobuf.MessageLite.Builder, com.google.protobuf.Message.Builder
+        /* renamed from: mergeFrom */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct code enable 'Show inconsistent code' option in preferences
         */
-        public cn.irisgw.live.ChallengeSync.Builder mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
+        public cn.irisgw.live.ChallengeSync.Builder m1226mergeFrom(com.google.protobuf.CodedInputStream r5, com.google.protobuf.ExtensionRegistryLite r6) throws java.io.IOException {
             /*
                 r4 = this;
                 r0 = 0
@@ -737,11 +733,11 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
                 r0 = r6
                 throw r0
             */
-            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeSync.Builder.mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeSync$Builder");
+            throw new UnsupportedOperationException("Method not decompiled: cn.irisgw.live.ChallengeSync.Builder.m1226mergeFrom(com.google.protobuf.CodedInputStream, com.google.protobuf.ExtensionRegistryLite):cn.irisgw.live.ChallengeSync$Builder");
         }
 
-        @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public Builder mergeFrom(Message message) {
+        /* renamed from: mergeFrom */
+        public Builder m1225mergeFrom(Message message) {
             if (message instanceof ChallengeSync) {
                 return mergeFrom((ChallengeSync) message);
             }
@@ -749,8 +745,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.Message.Builder
-        public final Builder mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: mergeUnknownFields */
+        public final Builder m1229mergeUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.mergeUnknownFields(unknownFieldSet);
         }
 
@@ -769,11 +765,11 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         public Builder setChallengeInfo(int i, ChallengeSyncInfo.Builder builder) {
             RepeatedFieldBuilderV3<ChallengeSyncInfo, ChallengeSyncInfo.Builder, ChallengeSyncInfoOrBuilder> repeatedFieldBuilderV3 = this.challengeInfoBuilder_;
             if (repeatedFieldBuilderV3 != null) {
-                repeatedFieldBuilderV3.setMessage(i, builder.build());
+                repeatedFieldBuilderV3.setMessage(i, builder.m1248build());
                 return this;
             }
             ensureChallengeInfoIsMutable();
-            this.challengeInfo_.set(i, builder.build());
+            this.challengeInfo_.set(i, builder.m1248build());
             onChanged();
             return this;
         }
@@ -861,8 +857,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
+        /* renamed from: setField */
+        public Builder m1231setField(Descriptors.FieldDescriptor fieldDescriptor, Object obj) {
             return (Builder) super.setField(fieldDescriptor, obj);
         }
 
@@ -914,8 +910,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public Builder setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
+        /* renamed from: setRepeatedField */
+        public Builder m1233setRepeatedField(Descriptors.FieldDescriptor fieldDescriptor, int i, Object obj) {
             return (Builder) super.setRepeatedField(fieldDescriptor, i, obj);
         }
 
@@ -931,8 +927,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
             return this;
         }
 
-        @Override // com.google.protobuf.GeneratedMessageV3.Builder, com.google.protobuf.Message.Builder
-        public final Builder setUnknownFields(UnknownFieldSet unknownFieldSet) {
+        /* renamed from: setUnknownFields */
+        public final Builder m1235setUnknownFields(UnknownFieldSet unknownFieldSet) {
             return (Builder) super.setUnknownFields(unknownFieldSet);
         }
     }
@@ -1063,66 +1059,65 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
     }
 
     public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
+        return DEFAULT_INSTANCE.m1196toBuilder();
     }
 
     public static Builder newBuilder(ChallengeSync challengeSync) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(challengeSync);
+        return DEFAULT_INSTANCE.m1196toBuilder().mergeFrom(challengeSync);
     }
 
     public static ChallengeSync parseDelimitedFrom(InputStream inputStream) throws IOException {
-        return (ChallengeSync) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream);
     }
 
     public static ChallengeSync parseDelimitedFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeSync) GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseDelimitedWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ChallengeSync parseFrom(ByteString byteString) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString);
+        return (ChallengeSync) PARSER.parseFrom(byteString);
     }
 
     public static ChallengeSync parseFrom(ByteString byteString, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteString, extensionRegistryLite);
+        return (ChallengeSync) PARSER.parseFrom(byteString, extensionRegistryLite);
     }
 
     public static ChallengeSync parseFrom(CodedInputStream codedInputStream) throws IOException {
-        return (ChallengeSync) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream);
     }
 
     public static ChallengeSync parseFrom(CodedInputStream codedInputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeSync) GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, codedInputStream, extensionRegistryLite);
     }
 
     public static ChallengeSync parseFrom(InputStream inputStream) throws IOException {
-        return (ChallengeSync) GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream);
     }
 
     public static ChallengeSync parseFrom(InputStream inputStream, ExtensionRegistryLite extensionRegistryLite) throws IOException {
-        return (ChallengeSync) GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
+        return GeneratedMessageV3.parseWithIOException(PARSER, inputStream, extensionRegistryLite);
     }
 
     public static ChallengeSync parseFrom(ByteBuffer byteBuffer) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer);
+        return (ChallengeSync) PARSER.parseFrom(byteBuffer);
     }
 
     public static ChallengeSync parseFrom(ByteBuffer byteBuffer, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(byteBuffer, extensionRegistryLite);
+        return (ChallengeSync) PARSER.parseFrom(byteBuffer, extensionRegistryLite);
     }
 
     public static ChallengeSync parseFrom(byte[] bArr) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr);
+        return (ChallengeSync) PARSER.parseFrom(bArr);
     }
 
     public static ChallengeSync parseFrom(byte[] bArr, ExtensionRegistryLite extensionRegistryLite) throws InvalidProtocolBufferException {
-        return PARSER.parseFrom(bArr, extensionRegistryLite);
+        return (ChallengeSync) PARSER.parseFrom(bArr, extensionRegistryLite);
     }
 
     public static Parser<ChallengeSync> parser() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public boolean equals(Object obj) {
         if (obj == this) {
             return true;
@@ -1164,8 +1159,8 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         return this.countdown_;
     }
 
-    @Override // com.google.protobuf.MessageLiteOrBuilder, com.google.protobuf.MessageOrBuilder
-    public ChallengeSync getDefaultInstanceForType() {
+    /* renamed from: getDefaultInstanceForType */
+    public ChallengeSync m1191getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
     }
 
@@ -1273,12 +1268,10 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         return this.maxEggCountdown_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageLite, com.google.protobuf.Message
     public Parser<ChallengeSync> getParserForType() {
         return PARSER;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public int getSerializedSize() {
         int i = this.memoizedSize;
         if (i != -1) {
@@ -1386,12 +1379,10 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         return this.targetEggScore_;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.MessageOrBuilder
     public final UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
     }
 
-    @Override // com.google.protobuf.AbstractMessage, com.google.protobuf.Message
     public int hashCode() {
         if (this.memoizedHashCode != 0) {
             return this.memoizedHashCode;
@@ -1406,12 +1397,10 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         return stage;
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
         return LiveConstants.internal_static_cn_irisgw_live_ChallengeSync_fieldAccessorTable.ensureFieldAccessorsInitialized(ChallengeSync.class, Builder.class);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLiteOrBuilder
     public final boolean isInitialized() {
         byte b = this.memoizedIsInitialized;
         if (b == 1) {
@@ -1424,28 +1413,26 @@ public final class ChallengeSync extends GeneratedMessageV3 implements Challenge
         return true;
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder newBuilderForType() {
+    /* renamed from: newBuilderForType */
+    public Builder m1194newBuilderForType() {
         return newBuilder();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    @Override // com.google.protobuf.GeneratedMessageV3
-    public Builder newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
+    /* renamed from: newBuilderForType */
+    public Builder m1193newBuilderForType(GeneratedMessageV3.BuilderParent builderParent) {
         return new Builder(builderParent);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3
     public Object newInstance(GeneratedMessageV3.UnusedPrivateParameter unusedPrivateParameter) {
         return new ChallengeSync();
     }
 
-    @Override // com.google.protobuf.MessageLite, com.google.protobuf.Message
-    public Builder toBuilder() {
+    /* renamed from: toBuilder */
+    public Builder m1196toBuilder() {
         return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override // com.google.protobuf.GeneratedMessageV3, com.google.protobuf.AbstractMessage, com.google.protobuf.MessageLite
     public void writeTo(CodedOutputStream codedOutputStream) throws IOException {
         int i = 0;
         while (true) {

@@ -34,7 +34,6 @@ import com.anythink.core.common.j.c;
 import com.anythink.core.common.k.h;
 import com.anythink.core.common.k.l;
 import com.bytedance.applog.tracker.Tracker;
-import com.youzan.androidsdk.tool.WebParameter;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.Iterator;
@@ -56,14 +55,10 @@ public class WebLandPageActivity extends Activity {
     private String o;
     private IOfferClickHandler p;
     private b q;
-
-    /* renamed from: a  reason: collision with root package name */
-    int f6397a = 8;
+    int a = 8;
     private ValueCallback<Uri[]> r = null;
     private final int s = 512;
-
-    /* renamed from: c  reason: collision with root package name */
-    int f6398c = 0;
+    int c = 0;
     int d = 0;
 
     /* renamed from: com.anythink.core.basead.ui.web.WebLandPageActivity$1  reason: invalid class name */
@@ -75,15 +70,15 @@ public class WebLandPageActivity extends Activity {
         @Override // android.webkit.DownloadListener
         public final void onDownloadStart(String str, String str2, String str3, String str4, long j) {
             if (WebLandPageActivity.this.m == null || WebLandPageActivity.this.n == null || TextUtils.isEmpty(WebLandPageActivity.this.m.B())) {
-                WebLandPageActivity.this.f6397a = 11;
+                WebLandPageActivity.this.a = 11;
                 l.a(WebLandPageActivity.this, str);
             } else if (WebLandPageActivity.this.p != null && (WebLandPageActivity.this.p instanceof IOfferClickHandler) && WebLandPageActivity.this.p.startDownloadApp(WebLandPageActivity.this.getApplicationContext(), WebLandPageActivity.this.m, WebLandPageActivity.this.n, str)) {
-                WebLandPageActivity.this.f6397a = 6;
+                WebLandPageActivity.this.a = 6;
                 WebLandPageActivity.this.d = 1;
             } else {
                 WebLandPageActivity.this.d = 2;
                 l.a(WebLandPageActivity.this, str);
-                WebLandPageActivity.this.f6397a = 7;
+                WebLandPageActivity.this.a = 7;
             }
             WebLandPageActivity.this.finish();
         }
@@ -159,11 +154,11 @@ public class WebLandPageActivity extends Activity {
     public static void a(Context context, com.anythink.core.basead.b.a aVar) {
         Intent intent = new Intent();
         intent.setClass(context, WebLandPageActivity.class);
-        intent.putExtra(a.C0092a.f6391c, aVar.f6395c);
-        intent.putExtra(a.C0092a.e, aVar.h);
-        intent.putExtra(a.C0092a.j, aVar.f);
+        intent.putExtra(a.C0052a.c, aVar.c);
+        intent.putExtra(a.C0052a.e, aVar.h);
+        intent.putExtra(a.C0052a.j, aVar.f);
         if (aVar.g != null) {
-            intent.putExtra(a.C0092a.l, aVar.g);
+            intent.putExtra(a.C0052a.l, aVar.g);
         }
         intent.addFlags(268435456);
         context.startActivity(intent);
@@ -214,26 +209,26 @@ public class WebLandPageActivity extends Activity {
             }
         }
         settings.setDatabaseEnabled(true);
-        String path = getDir(WebParameter.PATH_DATABASE, 0).getPath();
+        String path = getDir("database", 0).getPath();
         settings.setDatabasePath(path);
         settings.setGeolocationEnabled(true);
         settings.setGeolocationDatabasePath(path);
         this.g.setWebViewClient(new a(this));
         this.g.setDownloadListener(new AnonymousClass1());
-        am a2 = com.anythink.core.basead.a.a.a(str);
-        this.f6397a = a2.l;
-        Tracker.loadUrl(this.g, a2.o);
+        am a = com.anythink.core.basead.a.a.a(str);
+        this.a = a.l;
+        Tracker.loadUrl(this.g, a.o);
     }
 
     private void a(boolean z) {
-        this.i.setImageResource(z ? h.a(this, "browser_right_icon", com.anythink.expressad.foundation.h.i.f7952c) : h.a(this, "browser_unright_icon", com.anythink.expressad.foundation.h.i.f7952c));
+        this.i.setImageResource(z ? h.a(this, "browser_right_icon", "drawable") : h.a(this, "browser_unright_icon", "drawable"));
     }
 
     private void b() {
         Intent intent = getIntent();
         if (intent != null) {
             try {
-                Serializable serializableExtra = intent.getSerializableExtra(a.C0092a.f6391c);
+                Serializable serializableExtra = intent.getSerializableExtra(a.C0052a.c);
                 if (serializableExtra != null && (serializableExtra instanceof i)) {
                     i iVar = (i) serializableExtra;
                     this.m = iVar;
@@ -243,7 +238,7 @@ public class WebLandPageActivity extends Activity {
                 th.printStackTrace();
             }
             try {
-                Serializable serializableExtra2 = intent.getSerializableExtra(a.C0092a.e);
+                Serializable serializableExtra2 = intent.getSerializableExtra(a.C0052a.e);
                 if (serializableExtra2 != null && (serializableExtra2 instanceof j)) {
                     this.n = (j) serializableExtra2;
                 }
@@ -251,7 +246,7 @@ public class WebLandPageActivity extends Activity {
                 th2.printStackTrace();
             }
             try {
-                Serializable serializableExtra3 = intent.getSerializableExtra(a.C0092a.l);
+                Serializable serializableExtra3 = intent.getSerializableExtra(a.C0052a.l);
                 if (serializableExtra3 != null && (serializableExtra3 instanceof IOfferClickHandler)) {
                     this.p = (IOfferClickHandler) serializableExtra3;
                 }
@@ -259,7 +254,7 @@ public class WebLandPageActivity extends Activity {
                 th3.printStackTrace();
             }
             try {
-                this.o = intent.getStringExtra(a.C0092a.j);
+                this.o = intent.getStringExtra(a.C0052a.j);
             } catch (Throwable th4) {
                 th4.printStackTrace();
             }
@@ -274,7 +269,7 @@ public class WebLandPageActivity extends Activity {
     }
 
     private void b(boolean z) {
-        this.h.setImageResource(z ? h.a(this, "browser_left_icon", com.anythink.expressad.foundation.h.i.f7952c) : h.a(this, "browser_unleft_icon", com.anythink.expressad.foundation.h.i.f7952c));
+        this.h.setImageResource(z ? h.a(this, "browser_left_icon", "drawable") : h.a(this, "browser_unleft_icon", "drawable"));
     }
 
     private void c() {
@@ -295,7 +290,7 @@ public class WebLandPageActivity extends Activity {
 
     private View e() {
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        relativeLayout.setBackgroundColor(-16777216);
+        relativeLayout.setBackgroundColor(View.MEASURED_STATE_MASK);
         relativeLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setId(e);
@@ -303,13 +298,13 @@ public class WebLandPageActivity extends Activity {
         layoutParams.addRule(12);
         linearLayout.setLayoutParams(layoutParams);
         linearLayout.setBackgroundDrawable(new ColorDrawable(-592138));
-        int a2 = h.a(this, 20.0f);
-        linearLayout.setPadding(a2, 0, a2, 0);
+        int a = h.a(this, 20.0f);
+        linearLayout.setPadding(a, 0, a, 0);
         relativeLayout.addView(linearLayout);
-        this.h = a(getResources().getDrawable(h.a(this, "browser_unleft_icon", com.anythink.expressad.foundation.h.i.f7952c)));
-        this.i = a(getResources().getDrawable(h.a(this, "browser_unright_icon", com.anythink.expressad.foundation.h.i.f7952c)));
-        this.j = a(getResources().getDrawable(h.a(this, "browser_refresh_icon", com.anythink.expressad.foundation.h.i.f7952c)));
-        this.k = a(getResources().getDrawable(h.a(this, "browser_close_icon", com.anythink.expressad.foundation.h.i.f7952c)));
+        this.h = a(getResources().getDrawable(h.a(this, "browser_unleft_icon", "drawable")));
+        this.i = a(getResources().getDrawable(h.a(this, "browser_unright_icon", "drawable")));
+        this.j = a(getResources().getDrawable(h.a(this, "browser_refresh_icon", "drawable")));
+        this.k = a(getResources().getDrawable(h.a(this, "browser_close_icon", "drawable")));
         linearLayout.addView(this.h);
         linearLayout.addView(this.i);
         linearLayout.addView(this.j);
@@ -337,8 +332,8 @@ public class WebLandPageActivity extends Activity {
     }
 
     public final void a(WebView webView, String str) {
-        this.h.setImageResource(webView.canGoBack() ? h.a(this, "browser_left_icon", com.anythink.expressad.foundation.h.i.f7952c) : h.a(this, "browser_unleft_icon", com.anythink.expressad.foundation.h.i.f7952c));
-        this.i.setImageResource(webView.canGoForward() ? h.a(this, "browser_right_icon", com.anythink.expressad.foundation.h.i.f7952c) : h.a(this, "browser_unright_icon", com.anythink.expressad.foundation.h.i.f7952c));
+        this.h.setImageResource(webView.canGoBack() ? h.a(this, "browser_left_icon", "drawable") : h.a(this, "browser_unleft_icon", "drawable"));
+        this.i.setImageResource(webView.canGoForward() ? h.a(this, "browser_right_icon", "drawable") : h.a(this, "browser_unright_icon", "drawable"));
         b bVar = this.q;
         if (bVar == null || bVar.b == null) {
             return;
@@ -347,8 +342,8 @@ public class WebLandPageActivity extends Activity {
             Iterator<String> keys = bVar.b.keys();
             while (keys.hasNext()) {
                 String next = keys.next();
-                if (next != null && str != null && str.contains(next) && bVar.f6410c.get(next) == null) {
-                    bVar.f6410c.put(next, Boolean.TRUE);
+                if (next != null && str != null && str.contains(next) && bVar.c.get(next) == null) {
+                    bVar.c.put(next, Boolean.TRUE);
                     Tracker.loadUrl(webView, bVar.b.optString(next));
                 }
             }
@@ -358,13 +353,13 @@ public class WebLandPageActivity extends Activity {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void a(am amVar) {
-        this.f6397a = amVar.l;
+        this.a = amVar.l;
         if (amVar.n) {
             if (!amVar.m) {
-                this.f6398c = 2;
+                this.c = 2;
                 return;
             }
-            this.f6398c = 1;
+            this.c = 1;
             finish();
         }
     }
@@ -381,14 +376,13 @@ public class WebLandPageActivity extends Activity {
         super.finish();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Removed duplicated region for block: B:26:0x006b A[Catch: all -> 0x0095, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0095, blocks: (B:4:0x0007, B:11:0x0018, B:26:0x006b, B:27:0x007d), top: B:38:0x0007 }] */
     @Override // android.app.Activity
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
     */
-    public void onActivityResult(int r6, int r7, android.content.Intent r8) {
+    protected void onActivityResult(int r6, int r7, android.content.Intent r8) {
         /*
             r5 = this;
             r0 = r6
@@ -501,7 +495,7 @@ public class WebLandPageActivity extends Activity {
         Intent intent = getIntent();
         if (intent != null) {
             try {
-                Serializable serializableExtra = intent.getSerializableExtra(a.C0092a.f6391c);
+                Serializable serializableExtra = intent.getSerializableExtra(a.C0052a.c);
                 if (serializableExtra != null && (serializableExtra instanceof i)) {
                     i iVar = (i) serializableExtra;
                     this.m = iVar;
@@ -511,7 +505,7 @@ public class WebLandPageActivity extends Activity {
                 th.printStackTrace();
             }
             try {
-                Serializable serializableExtra2 = intent.getSerializableExtra(a.C0092a.e);
+                Serializable serializableExtra2 = intent.getSerializableExtra(a.C0052a.e);
                 if (serializableExtra2 != null && (serializableExtra2 instanceof j)) {
                     this.n = (j) serializableExtra2;
                 }
@@ -519,7 +513,7 @@ public class WebLandPageActivity extends Activity {
                 th2.printStackTrace();
             }
             try {
-                Serializable serializableExtra3 = intent.getSerializableExtra(a.C0092a.l);
+                Serializable serializableExtra3 = intent.getSerializableExtra(a.C0052a.l);
                 if (serializableExtra3 != null && (serializableExtra3 instanceof IOfferClickHandler)) {
                     this.p = (IOfferClickHandler) serializableExtra3;
                 }
@@ -527,7 +521,7 @@ public class WebLandPageActivity extends Activity {
                 th3.printStackTrace();
             }
             try {
-                this.o = intent.getStringExtra(a.C0092a.j);
+                this.o = intent.getStringExtra(a.C0052a.j);
             } catch (Throwable th4) {
                 th4.printStackTrace();
             }
@@ -544,14 +538,14 @@ public class WebLandPageActivity extends Activity {
             finish();
             return;
         }
-        am a2 = com.anythink.core.basead.a.a.a(applicationContext, str2);
-        if (a2.m) {
-            a(a2);
+        am a = com.anythink.core.basead.a.a.a(applicationContext, str2);
+        if (a.m) {
+            a(a);
             return;
         }
-        a(a2);
+        a(a);
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        relativeLayout.setBackgroundColor(-16777216);
+        relativeLayout.setBackgroundColor(View.MEASURED_STATE_MASK);
         relativeLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setId(e);
@@ -559,13 +553,13 @@ public class WebLandPageActivity extends Activity {
         layoutParams.addRule(12);
         linearLayout.setLayoutParams(layoutParams);
         linearLayout.setBackgroundDrawable(new ColorDrawable(-592138));
-        int a3 = h.a(this, 20.0f);
-        linearLayout.setPadding(a3, 0, a3, 0);
+        int a2 = h.a(this, 20.0f);
+        linearLayout.setPadding(a2, 0, a2, 0);
         relativeLayout.addView(linearLayout);
-        this.h = a(getResources().getDrawable(h.a(this, "browser_unleft_icon", com.anythink.expressad.foundation.h.i.f7952c)));
-        this.i = a(getResources().getDrawable(h.a(this, "browser_unright_icon", com.anythink.expressad.foundation.h.i.f7952c)));
-        this.j = a(getResources().getDrawable(h.a(this, "browser_refresh_icon", com.anythink.expressad.foundation.h.i.f7952c)));
-        this.k = a(getResources().getDrawable(h.a(this, "browser_close_icon", com.anythink.expressad.foundation.h.i.f7952c)));
+        this.h = a(getResources().getDrawable(h.a(this, "browser_unleft_icon", "drawable")));
+        this.i = a(getResources().getDrawable(h.a(this, "browser_unright_icon", "drawable")));
+        this.j = a(getResources().getDrawable(h.a(this, "browser_refresh_icon", "drawable")));
+        this.k = a(getResources().getDrawable(h.a(this, "browser_close_icon", "drawable")));
         linearLayout.addView(this.h);
         linearLayout.addView(this.i);
         linearLayout.addView(this.j);
@@ -634,20 +628,19 @@ public class WebLandPageActivity extends Activity {
             }
         }
         settings.setDatabaseEnabled(true);
-        String path = getDir(WebParameter.PATH_DATABASE, 0).getPath();
+        String path = getDir("database", 0).getPath();
         settings.setDatabasePath(path);
         settings.setGeolocationEnabled(true);
         settings.setGeolocationDatabasePath(path);
         this.g.setWebViewClient(new a(this));
         this.g.setDownloadListener(new AnonymousClass1());
-        am a4 = com.anythink.core.basead.a.a.a(str2);
-        this.f6397a = a4.l;
-        Tracker.loadUrl(this.g, a4.o);
+        am a3 = com.anythink.core.basead.a.a.a(str2);
+        this.a = a3.l;
+        Tracker.loadUrl(this.g, a3.o);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onDestroy() {
+    protected void onDestroy() {
         j jVar;
         super.onDestroy();
         WebView webView = this.g;
@@ -658,12 +651,11 @@ public class WebLandPageActivity extends Activity {
         if (this.m == null || (jVar = this.n) == null) {
             return;
         }
-        c.a(jVar.b, this.n.d, this.m.d(), this.m.p(), this.b, this.f6398c, this.d, this.f6397a, this.o, this.n.j);
+        c.a(jVar.b, this.n.d, this.m.d(), this.m.p(), this.b, this.c, this.d, this.a, this.o, this.n.j);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onPause() {
+    protected void onPause() {
         super.onPause();
         CookieSyncManager.getInstance().stopSync();
         this.g.setWebChromeClient(null);
@@ -675,9 +667,8 @@ public class WebLandPageActivity extends Activity {
         webView.onPause();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         CookieSyncManager.getInstance().startSync();
         this.g.setWebChromeClient(new WebChromeClient() { // from class: com.anythink.core.basead.ui.web.WebLandPageActivity.6
@@ -710,11 +701,11 @@ public class WebLandPageActivity extends Activity {
             public final boolean onShowFileChooser(WebView webView, ValueCallback<Uri[]> valueCallback, WebChromeClient.FileChooserParams fileChooserParams) {
                 try {
                     WebLandPageActivity.this.r = valueCallback;
-                    Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                    Intent intent = new Intent("android.intent.action.GET_CONTENT");
+                    intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
                     intent.setType("*/*");
-                    intent.addCategory(Intent.CATEGORY_OPENABLE);
-                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                    intent.addCategory("android.intent.category.OPENABLE");
+                    intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
                     WebLandPageActivity.this.startActivityForResult(Intent.createChooser(intent, "File Chooser"), 512);
                     return true;
                 } catch (Throwable th) {
@@ -725,9 +716,8 @@ public class WebLandPageActivity extends Activity {
         this.g.onResume();
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.app.Activity
-    public void onStart() {
+    protected void onStart() {
         super.onStart();
     }
 }

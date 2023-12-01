@@ -6,16 +6,16 @@ import android.content.Context;
 public class q2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static volatile Context f3944a;
+    public static volatile Context f3896a;
 
     public static final Context a() {
         Context context;
         synchronized (q2.class) {
             try {
-                if (f3944a == null) {
+                if (f3896a == null) {
                     throw new NullPointerException("u should init first.");
                 }
-                context = f3944a;
+                context = f3896a;
             } catch (Throwable th) {
                 throw th;
             }
@@ -26,11 +26,11 @@ public class q2 {
     public static final void a(Context context) {
         synchronized (q2.class) {
             try {
-                if (f3944a == null || f3944a.getApplicationContext() == null) {
+                if (f3896a == null || f3896a.getApplicationContext() == null) {
                     if (context == null || context.getApplicationContext() == null) {
                         throw new NullPointerException("context cannot be null.");
                     }
-                    f3944a = context.getApplicationContext();
+                    f3896a = context.getApplicationContext();
                     r0.b();
                 }
             } finally {

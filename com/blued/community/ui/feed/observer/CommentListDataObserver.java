@@ -6,9 +6,7 @@ import java.util.Iterator;
 
 /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/feed/observer/CommentListDataObserver.class */
 public class CommentListDataObserver {
-
-    /* renamed from: a  reason: collision with root package name */
-    private static CommentListDataObserver f19865a = new CommentListDataObserver();
+    private static CommentListDataObserver a = new CommentListDataObserver();
     private ArrayList<ICommentDataObserver> b = new ArrayList<>();
 
     /* loaded from: source-5961304-dex2jar.jar:com/blued/community/ui/feed/observer/CommentListDataObserver$ICommentDataObserver.class */
@@ -21,7 +19,7 @@ public class CommentListDataObserver {
     }
 
     public static CommentListDataObserver a() {
-        return f19865a;
+        return a;
     }
 
     public void a(FeedComment feedComment, String str) {

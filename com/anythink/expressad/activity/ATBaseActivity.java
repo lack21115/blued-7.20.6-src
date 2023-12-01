@@ -18,11 +18,11 @@ import com.bytedance.applog.tracker.Tracker;
 public abstract class ATBaseActivity extends Activity {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f6982a = "ATBaseActivity";
+    private static final String f4144a = "ATBaseActivity";
     private OrientationEventListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private Display f6983c;
+    private Display f4145c;
     private int d = -1;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -43,20 +43,20 @@ public abstract class ATBaseActivity extends Activity {
             if (i2 == 1 && ATBaseActivity.this.d != 1) {
                 ATBaseActivity.this.d = 1;
                 ATBaseActivity.this.a();
-                o.d(ATBaseActivity.f6982a, "Orientation Left");
+                o.d(ATBaseActivity.f4144a, "Orientation Left");
             } else if (i2 == 3 && ATBaseActivity.this.d != 2) {
                 ATBaseActivity.this.d = 2;
                 ATBaseActivity.this.a();
-                o.d(ATBaseActivity.f6982a, "Orientation Right");
+                o.d(ATBaseActivity.f4144a, "Orientation Right");
             } else if (i2 == 0 && ATBaseActivity.this.d != 3) {
                 ATBaseActivity.this.d = 3;
                 ATBaseActivity.this.a();
-                o.d(ATBaseActivity.f6982a, "Orientation Top");
+                o.d(ATBaseActivity.f4144a, "Orientation Top");
             } else if (i2 != 2 || ATBaseActivity.this.d == 4) {
             } else {
                 ATBaseActivity.this.d = 4;
                 ATBaseActivity.this.a();
-                o.d(ATBaseActivity.f6982a, "Orientation Bottom");
+                o.d(ATBaseActivity.f4144a, "Orientation Bottom");
             }
         }
     }
@@ -74,14 +74,14 @@ public abstract class ATBaseActivity extends Activity {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int c() {
-        if (this.f6983c == null) {
+        if (this.f4145c == null) {
             if (Build.VERSION.SDK_INT >= 30) {
-                this.f6983c = getDisplay();
+                this.f4145c = getDisplay();
             } else {
-                this.f6983c = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+                this.f4145c = ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
             }
         }
-        Display display = this.f6983c;
+        Display display = this.f4145c;
         if (display != null) {
             try {
                 return display.getRotation();
@@ -101,7 +101,7 @@ public abstract class ATBaseActivity extends Activity {
             getWindow().addFlags(67108864);
             getWindow().getDecorView().setSystemUiVisibility(4098);
         } catch (Throwable th) {
-            o.d(f6982a, th.getMessage());
+            o.d(f4144a, th.getMessage());
         }
     }
 
@@ -140,13 +140,13 @@ public abstract class ATBaseActivity extends Activity {
                             i3 = displayCutout.getSafeInsetRight();
                             i4 = displayCutout.getSafeInsetTop();
                             int safeInsetBottom = displayCutout.getSafeInsetBottom();
-                            o.d(ATBaseActivity.f6982a, "NOTCH Left:" + i2 + " Right:" + i3 + " Top:" + i4 + " Bottom:" + safeInsetBottom);
+                            o.d(ATBaseActivity.f4144a, "NOTCH Left:" + i2 + " Right:" + i3 + " Top:" + i4 + " Bottom:" + safeInsetBottom);
                             int c2 = ATBaseActivity.this.c();
                             if (ATBaseActivity.this.d == -1) {
                                 ATBaseActivity.this.d = c2 == 0 ? 3 : c2 == 1 ? 1 : c2 == 2 ? 4 : c2 == 3 ? 2 : -1;
                                 StringBuilder sb = new StringBuilder();
                                 sb.append(ATBaseActivity.this.d);
-                                o.d(ATBaseActivity.f6982a, sb.toString());
+                                o.d(ATBaseActivity.f4144a, sb.toString());
                             }
                             if (c2 == 0) {
                                 i5 = safeInsetBottom;
@@ -171,7 +171,7 @@ public abstract class ATBaseActivity extends Activity {
                         }
                     }
                 } catch (Throwable th) {
-                    o.d(ATBaseActivity.f6982a, th.getMessage());
+                    o.d(ATBaseActivity.f4144a, th.getMessage());
                 }
             }
         }, 500L);
@@ -200,7 +200,7 @@ public abstract class ATBaseActivity extends Activity {
                 getWindow().setAttributes(attributes);
             }
         } catch (Exception e) {
-            o.d(f6982a, e.getMessage());
+            o.d(f4144a, e.getMessage());
         }
     }
 
@@ -217,7 +217,7 @@ public abstract class ATBaseActivity extends Activity {
     @Override // android.app.Activity
     public void onResume() {
         super.onResume();
-        if (b.f7818c) {
+        if (b.f4978c) {
             return;
         }
         a();

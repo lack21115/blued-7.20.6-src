@@ -39,8 +39,9 @@ public abstract class GeneratedMessageV3 extends AbstractMessage implements Seri
         private Builder<BuilderType>.BuilderParentImpl meAsParent;
         private UnknownFieldSet unknownFields;
 
+        /* JADX INFO: Access modifiers changed from: package-private */
         /* loaded from: source-8110460-dex2jar.jar:com/google/protobuf/GeneratedMessageV3$Builder$BuilderParentImpl.class */
-        class BuilderParentImpl implements BuilderParent {
+        public class BuilderParentImpl implements BuilderParent {
             private BuilderParentImpl() {
             }
 
@@ -134,7 +135,7 @@ public abstract class GeneratedMessageV3 extends AbstractMessage implements Seri
 
         @Override // com.google.protobuf.AbstractMessage.Builder, com.google.protobuf.AbstractMessageLite.Builder
         /* renamed from: clone */
-        public BuilderType mo1800clone() {
+        public BuilderType mo2030clone() {
             BuilderType buildertype = (BuilderType) getDefaultInstanceForType().newBuilderForType();
             buildertype.mergeFrom(buildPartial());
             return buildertype;

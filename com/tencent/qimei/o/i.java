@@ -4,14 +4,14 @@ package com.tencent.qimei.o;
 public class i implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ j f38375a;
+    public final /* synthetic */ j f24684a;
 
     public i(j jVar) {
-        this.f38375a = jVar;
+        this.f24684a = jVar;
     }
 
     @Override // java.lang.Runnable
     public void run() {
-        this.f38375a.b();
+        this.f24684a.b();
     }
 }

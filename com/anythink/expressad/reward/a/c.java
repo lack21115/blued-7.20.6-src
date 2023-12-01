@@ -22,7 +22,7 @@ import com.anythink.expressad.video.bt.module.AnythinkBTLayout;
 import com.anythink.expressad.video.bt.module.AnythinkBTRootLayout;
 import com.anythink.expressad.videocommon.a;
 import com.anythink.expressad.videocommon.b.i;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
+import com.huawei.openalliance.ad.constant.at;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -36,7 +36,7 @@ import org.json.JSONObject;
 public final class c {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final String f8083a = "RewardCampaignsResourceManager";
+    private static final String f5243a = "RewardCampaignsResourceManager";
     private static Map<String, a> d;
     private static final int f = 100;
     private static final int g = 200;
@@ -55,7 +55,7 @@ public final class c {
     private final h b;
 
     /* renamed from: c  reason: collision with root package name */
-    private ConcurrentHashMap<String, List<com.anythink.expressad.foundation.d.c>> f8084c;
+    private ConcurrentHashMap<String, List<com.anythink.expressad.foundation.d.c>> f5244c;
     private boolean e;
     private volatile List<WindVaneWebView> t;
 
@@ -64,20 +64,20 @@ public final class c {
     final class AnonymousClass3 implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ boolean f8089a;
+        final /* synthetic */ boolean f5249a;
         final /* synthetic */ WindVaneWebView b;
 
         /* renamed from: c  reason: collision with root package name */
-        final /* synthetic */ com.anythink.expressad.foundation.d.c f8090c;
+        final /* synthetic */ com.anythink.expressad.foundation.d.c f5250c;
         final /* synthetic */ List d;
         final /* synthetic */ String e;
         final /* synthetic */ com.anythink.expressad.videocommon.e.d f;
         final /* synthetic */ String g;
 
         AnonymousClass3(boolean z, WindVaneWebView windVaneWebView, com.anythink.expressad.foundation.d.c cVar, List list, String str, com.anythink.expressad.videocommon.e.d dVar, String str2) {
-            this.f8089a = z;
+            this.f5249a = z;
             this.b = windVaneWebView;
-            this.f8090c = cVar;
+            this.f5250c = cVar;
             this.d = list;
             this.e = str;
             this.f = dVar;
@@ -87,7 +87,7 @@ public final class c {
         @Override // java.lang.Runnable
         public final void run() {
             o.a("RewardCampaignsResourceManager_test", "开始预加载播放模板 55");
-            c.a(this.f8089a, this.b, this.f8090c.M().e(), this.f8090c, this.d, com.anythink.expressad.videocommon.b.i.a().c(this.f8090c.M().e()), this.e, this.f, this.g, c.this.e);
+            c.a(this.f5249a, this.b, this.f5250c.M().e(), this.f5250c, this.d, com.anythink.expressad.videocommon.b.i.a().c(this.f5250c.M().e()), this.e, this.f, this.g, c.this.e);
         }
     }
 
@@ -95,11 +95,11 @@ public final class c {
     static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f8091a;
+        boolean f5251a;
         boolean b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f8092c;
+        int f5252c;
         int d;
         String e;
         String f;
@@ -108,9 +108,9 @@ public final class c {
         CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> i;
 
         public a(boolean z, boolean z2, int i, int i2, String str, String str2, int i3, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList) {
-            this.f8091a = z;
+            this.f5251a = z;
             this.b = z2;
-            this.f8092c = i;
+            this.f5252c = i;
             this.d = i2;
             this.e = str;
             this.f = str2;
@@ -125,7 +125,7 @@ public final class c {
         private final Handler b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Runnable f8093c;
+        private final Runnable f5253c;
         private final boolean d;
         private final boolean e;
         private int f;
@@ -133,7 +133,7 @@ public final class c {
         private String h;
         private String i;
         private String j;
-        private a.C0164a k;
+        private a.C0093a k;
         private com.anythink.expressad.foundation.d.c l;
         private CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> m;
         private com.anythink.expressad.videocommon.e.d n;
@@ -145,9 +145,9 @@ public final class c {
         private int s = 0;
         private boolean p = false;
 
-        public b(boolean z, Handler handler, Runnable runnable, boolean z2, boolean z3, int i, String str, String str2, String str3, String str4, a.C0164a c0164a, com.anythink.expressad.foundation.d.c cVar, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList, com.anythink.expressad.videocommon.e.d dVar, j jVar, long j) {
+        public b(boolean z, Handler handler, Runnable runnable, boolean z2, boolean z3, int i, String str, String str2, String str3, String str4, a.C0093a c0093a, com.anythink.expressad.foundation.d.c cVar, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList, com.anythink.expressad.videocommon.e.d dVar, j jVar, long j) {
             this.b = handler;
-            this.f8093c = runnable;
+            this.f5253c = runnable;
             this.d = z2;
             this.e = z3;
             this.f = i;
@@ -155,7 +155,7 @@ public final class c {
             this.i = str2;
             this.h = str3;
             this.j = str4;
-            this.k = c0164a;
+            this.k = c0093a;
             this.l = cVar;
             this.m = copyOnWriteArrayList;
             this.n = dVar;
@@ -175,10 +175,10 @@ public final class c {
             r13 = move-exception;
          */
         /* JADX WARN: Code restructure failed: missing block: B:43:0x01d1, code lost:
-            if (com.anythink.expressad.a.f6941a != false) goto L56;
+            if (com.anythink.expressad.a.f4103a != false) goto L56;
          */
         /* JADX WARN: Code restructure failed: missing block: B:44:0x01d4, code lost:
-            com.anythink.expressad.foundation.h.o.d(com.anythink.expressad.reward.a.c.f8083a, r13.getLocalizedMessage());
+            com.anythink.expressad.foundation.h.o.d(com.anythink.expressad.reward.a.c.f5243a, r13.getLocalizedMessage());
          */
         @Override // com.anythink.expressad.atsignalcommon.a.a, com.anythink.expressad.atsignalcommon.windvane.c
         /*
@@ -208,22 +208,22 @@ public final class c {
             }
             StringBuilder sb = new StringBuilder();
             sb.append(this.h);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             sb.append(this.g);
             if (!str.contains("wfr=1")) {
                 o.a("RVWindVaneWebView", "CampaignTPLWindVaneWebviewClient templete preload wfr=1 不包含 ");
                 com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-                a2.c(this.h + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.g, true);
+                a2.c(this.h + "_" + this.j + "_" + this.g, true);
                 Handler handler = this.b;
-                if (handler != null && (runnable = this.f8093c) != null) {
+                if (handler != null && (runnable = this.f5253c) != null) {
                     handler.removeCallbacks(runnable);
                 }
-                a.C0164a c0164a = this.k;
-                if (c0164a != null) {
-                    c0164a.a(true);
+                a.C0093a c0093a = this.k;
+                if (c0093a != null) {
+                    c0093a.a(true);
                 }
                 if (this.o != null) {
-                    o.a(c.f8083a, "CampaignTPLWindVaneWebviewClient rewardTemplatePreLoadListener.onPreLoadSuccess ");
+                    o.a(c.f5243a, "CampaignTPLWindVaneWebviewClient rewardTemplatePreLoadListener.onPreLoadSuccess ");
                     this.o.a(this.j);
                 }
             }
@@ -237,15 +237,15 @@ public final class c {
             super.onReceivedError(webView, i, str, str2);
             o.a("RewardCampaignsResourceManager_test", "onReceivedError： " + i + "  " + str);
             com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-            a2.c(this.h + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.g, false);
+            a2.c(this.h + "_" + this.j + "_" + this.g, false);
             if (this.o != null) {
                 StringBuilder sb = new StringBuilder();
                 sb.append(this.h);
-                sb.append(BridgeUtil.UNDERLINE_STR);
+                sb.append("_");
                 sb.append(this.g);
-                a.C0164a c0164a = this.k;
-                if (c0164a != null) {
-                    c0164a.a(false);
+                a.C0093a c0093a = this.k;
+                if (c0093a != null) {
+                    c0093a.a(false);
                 }
                 this.o.a(this.j, str);
             }
@@ -260,27 +260,27 @@ public final class c {
             }
             StringBuilder sb = new StringBuilder();
             sb.append(this.h);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             sb.append(this.g);
             o.a("test_pre_load_tpl", "CampaignTPLWindVaneWebviewClient 开始预加载大模板资源 readyState： " + i + " isCache: " + this.p);
             if (i == 1) {
                 o.a("RVWindVaneWebView", "CampaignTPLWindVaneWebviewClient templete preload readyState state = ".concat(String.valueOf(i)));
                 if (this.p) {
-                    com.anythink.expressad.videocommon.a.e(this.h + BridgeUtil.UNDERLINE_STR + this.j);
+                    com.anythink.expressad.videocommon.a.e(this.h + "_" + this.j);
                 } else {
-                    com.anythink.expressad.videocommon.a.d(this.h + BridgeUtil.UNDERLINE_STR + this.j);
+                    com.anythink.expressad.videocommon.a.d(this.h + "_" + this.j);
                 }
-                o.a("test_pre_load_tpl", "添加大模板： " + this.h + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.g);
-                com.anythink.expressad.videocommon.a.a(this.h + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.g, this.k, true, this.p);
+                o.a("test_pre_load_tpl", "添加大模板： " + this.h + "_" + this.j + "_" + this.g);
+                com.anythink.expressad.videocommon.a.a(this.h + "_" + this.j + "_" + this.g, this.k, true, this.p);
                 Handler handler = this.b;
-                if (handler != null && (runnable = this.f8093c) != null) {
+                if (handler != null && (runnable = this.f5253c) != null) {
                     handler.removeCallbacks(runnable);
                 }
                 com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-                a2.c(this.h + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.g, true);
-                a.C0164a c0164a = this.k;
-                if (c0164a != null) {
-                    c0164a.a(true);
+                a2.c(this.h + "_" + this.j + "_" + this.g, true);
+                a.C0093a c0093a = this.k;
+                if (c0093a != null) {
+                    c0093a.a(true);
                 }
                 if (this.o != null) {
                     o.a("RVWindVaneWebView", "CampaignTPLWindVaneWebviewClient rewardTemplatePreLoadListener.onPreLoadSuccess ");
@@ -288,10 +288,10 @@ public final class c {
                 }
             } else {
                 com.anythink.expressad.videocommon.b.l a3 = com.anythink.expressad.videocommon.b.l.a();
-                a3.c(this.h + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.g, false);
-                a.C0164a c0164a2 = this.k;
-                if (c0164a2 != null) {
-                    c0164a2.a(false);
+                a3.c(this.h + "_" + this.j + "_" + this.g, false);
+                a.C0093a c0093a2 = this.k;
+                if (c0093a2 != null) {
+                    c0093a2.a(false);
                 }
                 j jVar = this.o;
                 if (jVar != null) {
@@ -304,7 +304,7 @@ public final class c {
 
     /* renamed from: com.anythink.expressad.reward.a.c$c  reason: collision with other inner class name */
     /* loaded from: source-8756600-dex2jar.jar:com/anythink/expressad/reward/a/c$c.class */
-    public interface InterfaceC0150c {
+    public interface InterfaceC0079c {
         void a(String str, String str2, String str3, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList);
 
         void a(String str, String str2, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList);
@@ -315,11 +315,11 @@ public final class c {
     public static final class d implements i.b {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f8094a = 497;
+        public static final int f5254a = 497;
         public static final int b = 313;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f8095c = 859;
+        public static final int f5255c = 859;
         private int e;
         private final String f;
         private final String g;
@@ -352,7 +352,7 @@ public final class c {
                 Bundle bundle = new Bundle();
                 bundle.putString("unit_id", this.g);
                 bundle.putString(com.anythink.expressad.a.y, this.f);
-                bundle.putString("request_id", this.h);
+                bundle.putString(at.g, this.h);
                 bundle.putString("url", str);
                 obtain.setData(bundle);
                 this.k.sendMessage(obtain);
@@ -362,7 +362,7 @@ public final class c {
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("unit_id", this.g);
                 bundle2.putString(com.anythink.expressad.a.y, this.f);
-                bundle2.putString("request_id", this.h);
+                bundle2.putString(at.g, this.h);
                 bundle2.putString("url", str);
                 obtain2.setData(bundle2);
                 this.k.sendMessage(obtain2);
@@ -376,7 +376,7 @@ public final class c {
                 Bundle bundle3 = new Bundle();
                 bundle3.putString("unit_id", this.g);
                 bundle3.putString(com.anythink.expressad.a.y, this.f);
-                bundle3.putString("request_id", this.h);
+                bundle3.putString(at.g, this.h);
                 obtain3.setData(bundle3);
                 this.k.sendMessage(obtain3);
                 i iVar = this.j;
@@ -396,7 +396,7 @@ public final class c {
                 Bundle bundle = new Bundle();
                 bundle.putString("unit_id", this.g);
                 bundle.putString(com.anythink.expressad.a.y, this.f);
-                bundle.putString("request_id", this.h);
+                bundle.putString(at.g, this.h);
                 bundle.putString("url", str);
                 bundle.putString("message", str2);
                 obtain.setData(bundle);
@@ -407,7 +407,7 @@ public final class c {
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("unit_id", this.g);
                 bundle2.putString(com.anythink.expressad.a.y, this.f);
-                bundle2.putString("request_id", this.h);
+                bundle2.putString(at.g, this.h);
                 bundle2.putString("url", str);
                 bundle2.putString("message", str2);
                 obtain2.setData(bundle2);
@@ -422,7 +422,7 @@ public final class c {
                 Bundle bundle3 = new Bundle();
                 bundle3.putString("unit_id", this.g);
                 bundle3.putString(com.anythink.expressad.a.y, this.f);
-                bundle3.putString("request_id", this.h);
+                bundle3.putString(at.g, this.h);
                 bundle3.putString("message", str2);
                 obtain3.setData(bundle3);
                 this.k.sendMessage(obtain3);
@@ -442,11 +442,11 @@ public final class c {
     static final class e implements com.anythink.expressad.foundation.g.d.c {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f8096a = 0;
+        public static final int f5256a = 0;
         public static final int b = 1;
 
         /* renamed from: c  reason: collision with root package name */
-        private Handler f8097c;
+        private Handler f5257c;
         private int d;
         private String e;
         private String f;
@@ -454,7 +454,7 @@ public final class c {
         private com.anythink.expressad.foundation.d.c h;
 
         public e(Handler handler, int i, String str, String str2, String str3, com.anythink.expressad.foundation.d.c cVar) {
-            this.f8097c = handler;
+            this.f5257c = handler;
             this.d = i;
             this.f = str;
             this.e = str2;
@@ -471,9 +471,9 @@ public final class c {
             Bundle bundle = new Bundle();
             bundle.putString("unit_id", this.e);
             bundle.putString(com.anythink.expressad.a.y, this.f);
-            bundle.putString("request_id", this.g);
+            bundle.putString(at.g, this.g);
             obtain.setData(bundle);
-            this.f8097c.sendMessage(obtain);
+            this.f5257c.sendMessage(obtain);
         }
 
         @Override // com.anythink.expressad.foundation.g.d.c
@@ -483,9 +483,9 @@ public final class c {
             Bundle bundle = new Bundle();
             bundle.putString("unit_id", this.e);
             bundle.putString(com.anythink.expressad.a.y, this.f);
-            bundle.putString("request_id", this.g);
+            bundle.putString(at.g, this.g);
             obtain.setData(bundle);
-            this.f8097c.sendMessage(obtain);
+            this.f5257c.sendMessage(obtain);
         }
     }
 
@@ -493,49 +493,49 @@ public final class c {
     static final class f implements com.anythink.expressad.videocommon.d.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private Handler f8098a;
+        private Handler f5258a;
         private final String b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final String f8099c;
+        private final String f5259c;
         private final String d;
 
         public f(Handler handler, String str, String str2, String str3) {
-            this.f8098a = handler;
-            this.f8099c = str;
+            this.f5258a = handler;
+            this.f5259c = str;
             this.b = str2;
             this.d = str3;
         }
 
         @Override // com.anythink.expressad.videocommon.d.b
         public final void a(String str) {
-            o.d(c.f8083a, "Video 下载成功: " + this.d);
+            o.d(c.f5243a, "Video 下载成功: " + this.d);
             com.anythink.expressad.videocommon.b.l.a().a(str, true);
             Message obtain = Message.obtain();
             obtain.what = 100;
             Bundle bundle = new Bundle();
             bundle.putString("unit_id", this.b);
-            bundle.putString(com.anythink.expressad.a.y, this.f8099c);
-            bundle.putString("request_id", this.d);
+            bundle.putString(com.anythink.expressad.a.y, this.f5259c);
+            bundle.putString(at.g, this.d);
             bundle.putString("url", str);
             obtain.setData(bundle);
-            this.f8098a.sendMessage(obtain);
+            this.f5258a.sendMessage(obtain);
         }
 
         @Override // com.anythink.expressad.videocommon.d.b
         public final void a(String str, String str2) {
-            o.d(c.f8083a, "Video 下载失败： " + str + " " + this.d);
+            o.d(c.f5243a, "Video 下载失败： " + str + " " + this.d);
             com.anythink.expressad.videocommon.b.l.a().a(str2, false);
             Message obtain = Message.obtain();
             obtain.what = 200;
             Bundle bundle = new Bundle();
             bundle.putString("unit_id", this.b);
-            bundle.putString(com.anythink.expressad.a.y, this.f8099c);
-            bundle.putString("request_id", this.d);
+            bundle.putString(com.anythink.expressad.a.y, this.f5259c);
+            bundle.putString(at.g, this.d);
             bundle.putString("url", str2);
             bundle.putString("message", str);
             obtain.setData(bundle);
-            this.f8098a.sendMessage(obtain);
+            this.f5258a.sendMessage(obtain);
         }
     }
 
@@ -544,11 +544,11 @@ public final class c {
     public static final class g implements i.d {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final int f8100a = 497;
+        public static final int f5260a = 497;
         public static final int b = 859;
 
         /* renamed from: c  reason: collision with root package name */
-        public static final int f8101c = 313;
+        public static final int f5261c = 313;
         public static final int d = 502;
         private Context f;
         private String g;
@@ -580,24 +580,24 @@ public final class c {
             System.currentTimeMillis();
             int i = this.k;
             if (i == 313) {
-                o.a(c.f8083a, "zip pause download success");
+                o.a(c.f5243a, "zip pause download success");
                 Message obtain = Message.obtain();
                 obtain.what = 101;
                 Bundle bundle = new Bundle();
                 bundle.putString("unit_id", this.g);
                 bundle.putString(com.anythink.expressad.a.y, this.h);
-                bundle.putString("request_id", this.i);
+                bundle.putString(at.g, this.i);
                 bundle.putString("url", str);
                 obtain.setData(bundle);
                 this.l.sendMessage(obtain);
             } else if (i == 497) {
-                o.a(c.f8083a, "zip endcard download success");
+                o.a(c.f5243a, "zip endcard download success");
                 Message obtain2 = Message.obtain();
                 obtain2.what = 101;
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("unit_id", this.g);
                 bundle2.putString(com.anythink.expressad.a.y, this.h);
-                bundle2.putString("request_id", this.i);
+                bundle2.putString(at.g, this.i);
                 bundle2.putString("url", str);
                 obtain2.setData(bundle2);
                 this.l.sendMessage(obtain2);
@@ -605,13 +605,13 @@ public final class c {
                 }
             } else if (i != 859) {
             } else {
-                o.a(c.f8083a, "zip template download success");
+                o.a(c.f5243a, "zip template download success");
                 Message obtain3 = Message.obtain();
                 obtain3.what = 103;
                 Bundle bundle3 = new Bundle();
                 bundle3.putString("unit_id", this.g);
                 bundle3.putString(com.anythink.expressad.a.y, this.h);
-                bundle3.putString("request_id", this.i);
+                bundle3.putString(at.g, this.i);
                 obtain3.setData(bundle3);
                 this.l.sendMessage(obtain3);
                 i iVar = this.m;
@@ -627,25 +627,25 @@ public final class c {
             System.currentTimeMillis();
             int i = this.k;
             if (i == 313) {
-                o.a(c.f8083a, "zip pause download failed");
+                o.a(c.f5243a, "zip pause download failed");
                 Message obtain = Message.obtain();
                 obtain.what = 101;
                 Bundle bundle = new Bundle();
                 bundle.putString("unit_id", this.g);
                 bundle.putString(com.anythink.expressad.a.y, this.h);
-                bundle.putString("request_id", this.i);
+                bundle.putString(at.g, this.i);
                 bundle.putString("url", str2);
                 bundle.putString("message", str);
                 obtain.setData(bundle);
                 this.l.sendMessage(obtain);
             } else if (i == 497) {
-                o.a(c.f8083a, "zip endcard download failed:  ".concat(String.valueOf(str)));
+                o.a(c.f5243a, "zip endcard download failed:  ".concat(String.valueOf(str)));
                 Message obtain2 = Message.obtain();
                 obtain2.what = 201;
                 Bundle bundle2 = new Bundle();
                 bundle2.putString("unit_id", this.g);
                 bundle2.putString(com.anythink.expressad.a.y, this.h);
-                bundle2.putString("request_id", this.i);
+                bundle2.putString(at.g, this.i);
                 bundle2.putString("url", str2);
                 bundle2.putString("message", str);
                 obtain2.setData(bundle2);
@@ -654,13 +654,13 @@ public final class c {
                 }
             } else if (i != 859) {
             } else {
-                o.a(c.f8083a, "zip template download failed");
+                o.a(c.f5243a, "zip template download failed");
                 Message obtain3 = Message.obtain();
                 obtain3.what = 203;
                 Bundle bundle3 = new Bundle();
                 bundle3.putString("unit_id", this.g);
                 bundle3.putString(com.anythink.expressad.a.y, this.h);
-                bundle3.putString("request_id", this.i);
+                bundle3.putString(at.g, this.i);
                 bundle3.putString("url", str2);
                 bundle3.putString("message", str);
                 obtain3.setData(bundle3);
@@ -682,26 +682,26 @@ public final class c {
     public static final class h extends Handler {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f8102a;
-        private InterfaceC0150c b;
+        private Context f5262a;
+        private InterfaceC0079c b;
 
         /* renamed from: c  reason: collision with root package name */
-        private ConcurrentHashMap<String, InterfaceC0150c> f8103c;
+        private ConcurrentHashMap<String, InterfaceC0079c> f5263c;
         private ConcurrentHashMap<String, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c>> d;
 
         public h(Looper looper) {
             super(looper);
-            this.f8103c = new ConcurrentHashMap<>();
+            this.f5263c = new ConcurrentHashMap<>();
             this.d = new ConcurrentHashMap<>();
         }
 
         public final void a(Context context) {
-            this.f8102a = context;
+            this.f5262a = context;
         }
 
-        public final void a(String str, String str2, InterfaceC0150c interfaceC0150c) {
-            ConcurrentHashMap<String, InterfaceC0150c> concurrentHashMap = this.f8103c;
-            concurrentHashMap.put(str + BridgeUtil.UNDERLINE_STR + str2, interfaceC0150c);
+        public final void a(String str, String str2, InterfaceC0079c interfaceC0079c) {
+            ConcurrentHashMap<String, InterfaceC0079c> concurrentHashMap = this.f5263c;
+            concurrentHashMap.put(str + "_" + str2, interfaceC0079c);
         }
 
         public final void a(String str, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList) {
@@ -715,12 +715,12 @@ public final class c {
             Bundle data = message.getData();
             String string = data.getString(com.anythink.expressad.a.y);
             String string2 = data.getString("unit_id");
-            String string3 = data.getString("request_id");
-            String str2 = string2 + BridgeUtil.UNDERLINE_STR + string3;
+            String string3 = data.getString(at.g);
+            String str2 = string2 + "_" + string3;
             a aVar = (a) c.d.get(str2);
-            InterfaceC0150c interfaceC0150c = this.f8103c.get(str2);
+            InterfaceC0079c interfaceC0079c = this.f5263c.get(str2);
             CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList = this.d.get(str2);
-            o.a(c.f8083a, "收到 Message，开始判断");
+            o.a(c.f5243a, "收到 Message，开始判断");
             int i = message.what;
             switch (i) {
                 case 100:
@@ -736,7 +736,7 @@ public final class c {
                         case 201:
                         case 203:
                         case 205:
-                            if (aVar == null || interfaceC0150c == null) {
+                            if (aVar == null || interfaceC0079c == null) {
                                 return;
                             }
                             String string4 = data.getString("message");
@@ -757,12 +757,12 @@ public final class c {
                             }
                             try {
                                 try {
-                                    if (!aVar.f8091a || aVar.i == null) {
+                                    if (!aVar.f5251a || aVar.i == null) {
                                         try {
-                                            boolean a2 = com.anythink.expressad.videocommon.b.e.a().a(aVar.e, aVar.b, aVar.d, aVar.f8091a, aVar.f8092c, copyOnWriteArrayList);
-                                            o.a(c.f8083a, " failed Campaign是否下载成功： （回调）".concat(String.valueOf(a2)));
+                                            boolean a2 = com.anythink.expressad.videocommon.b.e.a().a(aVar.e, aVar.b, aVar.d, aVar.f5251a, aVar.f5252c, copyOnWriteArrayList);
+                                            o.a(c.f5243a, " failed Campaign是否下载成功： （回调）".concat(String.valueOf(a2)));
                                             if (a2) {
-                                                interfaceC0150c.a(string, string2, string3, aVar.h);
+                                                interfaceC0079c.a(string, string2, string3, aVar.h);
                                             } else {
                                                 if (cVar != null && cVar.aB() != null && cVar.aB().size() > 0) {
                                                     int i2 = message.what;
@@ -782,9 +782,9 @@ public final class c {
                                                         return;
                                                     }
                                                 }
-                                                interfaceC0150c.a(string2, string3, aVar.h);
+                                                interfaceC0079c.a(string2, string3, aVar.h);
                                             }
-                                            this.f8103c.remove(str2);
+                                            this.f5263c.remove(str2);
                                             c.d.remove(str2);
                                             this.d.remove(str2);
                                             return;
@@ -793,10 +793,10 @@ public final class c {
                                             str = "resource download failed ";
                                             CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList2 = aVar.h;
                                             new StringBuilder(str).append(e.getMessage());
-                                            interfaceC0150c.a(string2, string3, copyOnWriteArrayList2);
+                                            interfaceC0079c.a(string2, string3, copyOnWriteArrayList2);
                                             return;
                                         }
-                                    } else if (aVar.f8092c == 1) {
+                                    } else if (aVar.f5252c == 1) {
                                         if (cVar != null && cVar.aB() != null && cVar.aB().size() > 0) {
                                             int i3 = message.what;
                                             if (i3 != 200) {
@@ -823,8 +823,8 @@ public final class c {
                                                 return;
                                             }
                                         }
-                                        interfaceC0150c.a(string2, string3, aVar.h);
-                                        this.f8103c.remove(str2);
+                                        interfaceC0079c.a(string2, string3, aVar.h);
+                                        this.f5263c.remove(str2);
                                         c.d.remove(str2);
                                         this.d.remove(str2);
                                         return;
@@ -836,7 +836,7 @@ public final class c {
                                                 if (i4 != 203) {
                                                     if (i4 == 205) {
                                                         if (cVar != null && cVar.aB() != null && cVar.aB().size() > 0 && cVar.aB().contains(3)) {
-                                                            o.b(c.f8083a, "Is TPL but download BTL Template fail but hit ignoreCheckRule");
+                                                            o.b(c.f5243a, "Is TPL but download BTL Template fail but hit ignoreCheckRule");
                                                             return;
                                                         }
                                                         aVar.i.clear();
@@ -844,7 +844,7 @@ public final class c {
                                                         c.d.put(str2, aVar);
                                                     }
                                                 } else if (cVar != null && cVar.aB() != null && cVar.aB().size() > 0 && cVar.aB().contains(1)) {
-                                                    o.b(c.f8083a, "Is TPL but download template fail but hit ignoreCheckRule");
+                                                    o.b(c.f5243a, "Is TPL but download template fail but hit ignoreCheckRule");
                                                     return;
                                                 } else {
                                                     int i5 = 0;
@@ -863,7 +863,7 @@ public final class c {
                                                     }
                                                 }
                                             } else if (cVar != null && cVar.aB() != null && cVar.aB().size() > 0 && cVar.aB().contains(2)) {
-                                                o.b(c.f8083a, "Is TPL but download endcard fail but hit ignoreCheckRule");
+                                                o.b(c.f5243a, "Is TPL but download endcard fail but hit ignoreCheckRule");
                                                 return;
                                             } else {
                                                 int i7 = 0;
@@ -885,7 +885,7 @@ public final class c {
                                                 }
                                             }
                                         } else if (cVar != null && cVar.aB() != null && cVar.aB().size() > 0 && cVar.aB().contains(0)) {
-                                            o.b(c.f8083a, "Is TPL but  video download fail but hit ignoreCheckRule");
+                                            o.b(c.f5243a, "Is TPL but  video download fail but hit ignoreCheckRule");
                                             return;
                                         } else {
                                             int i9 = 0;
@@ -902,17 +902,17 @@ public final class c {
                                                 }
                                             }
                                         }
-                                        boolean a3 = com.anythink.expressad.videocommon.b.e.a().a(aVar.e, aVar.b, aVar.d, aVar.f8091a, aVar.f8092c, copyOnWriteArrayList);
-                                        o.a(c.f8083a, " failed Campaign是否下载成功：(回调) ".concat(String.valueOf(a3)));
+                                        boolean a3 = com.anythink.expressad.videocommon.b.e.a().a(aVar.e, aVar.b, aVar.d, aVar.f5251a, aVar.f5252c, copyOnWriteArrayList);
+                                        o.a(c.f5243a, " failed Campaign是否下载成功：(回调) ".concat(String.valueOf(a3)));
                                         if (a3) {
-                                            interfaceC0150c.a(string, string2, string3, aVar.h);
-                                            this.f8103c.remove(str2);
+                                            interfaceC0079c.a(string, string2, string3, aVar.h);
+                                            this.f5263c.remove(str2);
                                             c.d.remove(str2);
                                             this.d.remove(str2);
                                             return;
                                         } else if (aVar.i.size() == 0) {
-                                            interfaceC0150c.a(string2, string3, aVar.h);
-                                            this.f8103c.remove(str2);
+                                            interfaceC0079c.a(string2, string3, aVar.h);
+                                            this.f5263c.remove(str2);
                                             c.d.remove(str2);
                                             this.d.remove(str2);
                                             return;
@@ -936,21 +936,21 @@ public final class c {
                             return;
                     }
             }
-            if (aVar == null || interfaceC0150c == null) {
+            if (aVar == null || interfaceC0079c == null) {
                 return;
             }
             try {
-                z = com.anythink.expressad.videocommon.b.e.a().a(aVar.e, aVar.b, aVar.d, aVar.f8091a, aVar.f8092c, copyOnWriteArrayList);
+                z = com.anythink.expressad.videocommon.b.e.a().a(aVar.e, aVar.b, aVar.d, aVar.f5251a, aVar.f5252c, copyOnWriteArrayList);
             } catch (Exception e4) {
-                if (com.anythink.expressad.a.f6941a) {
-                    o.d(c.f8083a, e4.getLocalizedMessage());
+                if (com.anythink.expressad.a.f4103a) {
+                    o.d(c.f5243a, e4.getLocalizedMessage());
                 }
                 z = false;
             }
-            o.a(c.f8083a, " success Campaign是否下载成功：(回调) ".concat(String.valueOf(z)));
+            o.a(c.f5243a, " success Campaign是否下载成功：(回调) ".concat(String.valueOf(z)));
             if (z) {
-                interfaceC0150c.a(string, string2, string3, aVar.h);
-                this.f8103c.remove(str2);
+                interfaceC0079c.a(string, string2, string3, aVar.h);
+                this.f5263c.remove(str2);
                 c.d.remove(str2);
                 this.d.remove(str2);
             }
@@ -975,11 +975,11 @@ public final class c {
     static final class k extends com.anythink.expressad.atsignalcommon.a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private Handler f8104a;
+        private Handler f5264a;
         private Runnable b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final boolean f8105c;
+        private final boolean f5265c;
         private final boolean e;
         private String f;
         private final j g;
@@ -987,7 +987,7 @@ public final class c {
         private final String i;
         private final String j;
         private final String k;
-        private final a.C0164a l;
+        private final a.C0093a l;
         private final com.anythink.expressad.foundation.d.c m;
         private CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> n;
         private long o;
@@ -996,10 +996,10 @@ public final class c {
         private final Runnable r;
         private final Runnable s;
 
-        public k(Handler handler, Runnable runnable, boolean z, boolean z2, final String str, final j jVar, WindVaneWebView windVaneWebView, final String str2, final String str3, final String str4, final a.C0164a c0164a, com.anythink.expressad.foundation.d.c cVar, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList, long j) {
-            this.f8104a = handler;
+        public k(Handler handler, Runnable runnable, boolean z, boolean z2, final String str, final j jVar, WindVaneWebView windVaneWebView, final String str2, final String str3, final String str4, final a.C0093a c0093a, com.anythink.expressad.foundation.d.c cVar, CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList, long j) {
+            this.f5264a = handler;
             this.b = runnable;
-            this.f8105c = z;
+            this.f5265c = z;
             this.e = z2;
             this.f = str;
             this.g = jVar;
@@ -1007,7 +1007,7 @@ public final class c {
             this.i = str2;
             this.j = str4;
             this.k = str3;
-            this.l = c0164a;
+            this.l = c0093a;
             this.m = cVar;
             this.n = copyOnWriteArrayList;
             this.o = j;
@@ -1015,21 +1015,21 @@ public final class c {
                 @Override // java.lang.Runnable
                 public final void run() {
                     WindVaneWebView a2;
-                    a.C0164a c0164a2;
+                    a.C0093a c0093a2;
                     o.a("WindVaneWebView", "WebView onPageFinish timeout exception after 5s");
-                    if (jVar != null && (c0164a2 = c0164a) != null) {
-                        c0164a2.a(true);
+                    if (jVar != null && (c0093a2 = c0093a) != null) {
+                        c0093a2.a(true);
                         com.anythink.expressad.videocommon.b.l a3 = com.anythink.expressad.videocommon.b.l.a();
-                        a3.c(str4 + BridgeUtil.UNDERLINE_STR + str + BridgeUtil.UNDERLINE_STR + str2, true);
+                        a3.c(str4 + "_" + str + "_" + str2, true);
                         j jVar2 = jVar;
                         StringBuilder sb = new StringBuilder();
                         sb.append(str4);
-                        sb.append(BridgeUtil.UNDERLINE_STR);
+                        sb.append("_");
                         sb.append(str2);
                         jVar2.a(str);
                     }
-                    a.C0164a c0164a3 = c0164a;
-                    if (c0164a3 == null || (a2 = c0164a3.a()) == null) {
+                    a.C0093a c0093a3 = c0093a;
+                    if (c0093a3 == null || (a2 = c0093a3.a()) == null) {
                         return;
                     }
                     try {
@@ -1042,21 +1042,21 @@ public final class c {
                 @Override // java.lang.Runnable
                 public final void run() {
                     WindVaneWebView a2;
-                    a.C0164a c0164a2;
+                    a.C0093a c0093a2;
                     o.a("WindVaneWebView", "WebView readyState timeout exception after 5s");
-                    if (jVar != null && (c0164a2 = c0164a) != null) {
-                        c0164a2.a(true);
+                    if (jVar != null && (c0093a2 = c0093a) != null) {
+                        c0093a2.a(true);
                         com.anythink.expressad.videocommon.b.l a3 = com.anythink.expressad.videocommon.b.l.a();
-                        a3.c(str4 + BridgeUtil.UNDERLINE_STR + str + BridgeUtil.UNDERLINE_STR + str2, true);
+                        a3.c(str4 + "_" + str + "_" + str2, true);
                         j jVar2 = jVar;
                         StringBuilder sb = new StringBuilder();
                         sb.append(str4);
-                        sb.append(BridgeUtil.UNDERLINE_STR);
+                        sb.append("_");
                         sb.append(str2);
                         jVar2.a(str);
                     }
-                    a.C0164a c0164a3 = c0164a;
-                    if (c0164a3 == null || (a2 = c0164a3.a()) == null) {
+                    a.C0093a c0093a3 = c0093a;
+                    if (c0093a3 == null || (a2 = c0093a3.a()) == null) {
                         return;
                     }
                     try {
@@ -1077,7 +1077,7 @@ public final class c {
             Runnable runnable2;
             super.onPageFinished(webView, str);
             o.a("WindVaneWebView", "TempalteWindVaneWebviewClient preLoadTemplate onPageFinished: ");
-            Handler handler2 = this.f8104a;
+            Handler handler2 = this.f5264a;
             if (handler2 != null && (runnable2 = this.s) != null) {
                 handler2.removeCallbacks(runnable2);
             }
@@ -1085,26 +1085,26 @@ public final class c {
                 return;
             }
             if (str.contains("wfr=1")) {
-                Handler handler3 = this.f8104a;
+                Handler handler3 = this.f5264a;
                 if (handler3 != null && (runnable = this.r) != null) {
                     handler3.postDelayed(runnable, 5000L);
                 }
             } else {
                 StringBuilder sb = new StringBuilder();
                 sb.append(this.j);
-                sb.append(BridgeUtil.UNDERLINE_STR);
+                sb.append("_");
                 sb.append(this.i);
                 com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-                a2.c(this.j + BridgeUtil.UNDERLINE_STR + this.f + BridgeUtil.UNDERLINE_STR + this.i, true);
+                a2.c(this.j + "_" + this.f + "_" + this.i, true);
                 Runnable runnable3 = this.b;
-                if (runnable3 != null && (handler = this.f8104a) != null) {
+                if (runnable3 != null && (handler = this.f5264a) != null) {
                     handler.removeCallbacks(runnable3);
                 }
-                a.C0164a c0164a = this.l;
-                if (c0164a != null) {
-                    c0164a.a(true);
+                a.C0093a c0093a = this.l;
+                if (c0093a != null) {
+                    c0093a.a(true);
                 }
-                if (this.f8105c) {
+                if (this.f5265c) {
                     if (this.m.A()) {
                         o.a("WindVaneWebView", "TempalteWindVaneWebviewClient Tempalte put templeteCache in bidIVCache ");
                         com.anythink.expressad.videocommon.a.a(287, this.m.aa(), this.l);
@@ -1134,21 +1134,21 @@ public final class c {
             super.onReceivedError(webView, i, str, str2);
             o.a("WindVaneWebView", "TempalteWindVaneWebviewClient preLoadTemplate onReceivedError: ".concat(String.valueOf(str)));
             com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-            a2.c(this.j + BridgeUtil.UNDERLINE_STR + this.f + BridgeUtil.UNDERLINE_STR + this.i, false);
-            Handler handler = this.f8104a;
+            a2.c(this.j + "_" + this.f + "_" + this.i, false);
+            Handler handler = this.f5264a;
             if (handler != null) {
                 if (this.r != null) {
                     handler.removeCallbacks(this.s);
                 }
                 Runnable runnable = this.r;
                 if (runnable != null) {
-                    this.f8104a.removeCallbacks(runnable);
+                    this.f5264a.removeCallbacks(runnable);
                 }
             }
             try {
                 StringBuilder sb = new StringBuilder();
                 sb.append(this.j);
-                sb.append(BridgeUtil.UNDERLINE_STR);
+                sb.append("_");
                 sb.append(this.i);
                 if (this.l != null) {
                     this.l.a(false);
@@ -1157,7 +1157,7 @@ public final class c {
                     this.g.a(this.f, str);
                 }
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     o.d("WindVaneWebView", e.getLocalizedMessage());
                 }
             }
@@ -1170,21 +1170,21 @@ public final class c {
             sb.append(sslError == null ? "" : Integer.valueOf(sslError.getPrimaryError()));
             o.a("WindVaneWebView", sb.toString());
             com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-            a2.c(this.j + BridgeUtil.UNDERLINE_STR + this.f + BridgeUtil.UNDERLINE_STR + this.i, false);
-            Handler handler = this.f8104a;
+            a2.c(this.j + "_" + this.f + "_" + this.i, false);
+            Handler handler = this.f5264a;
             if (handler != null) {
                 if (this.r != null) {
                     handler.removeCallbacks(this.s);
                 }
                 Runnable runnable = this.r;
                 if (runnable != null) {
-                    this.f8104a.removeCallbacks(runnable);
+                    this.f5264a.removeCallbacks(runnable);
                 }
             }
             try {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(this.j);
-                sb2.append(BridgeUtil.UNDERLINE_STR);
+                sb2.append("_");
                 sb2.append(this.i);
                 if (this.l != null) {
                     this.l.a(false);
@@ -1193,7 +1193,7 @@ public final class c {
                     this.g.a(this.f, sslError == null ? "" : Integer.toString(sslError.getPrimaryError()));
                 }
             } catch (Exception e) {
-                if (com.anythink.expressad.a.f6941a) {
+                if (com.anythink.expressad.a.f4103a) {
                     o.d("WindVaneWebView", e.getLocalizedMessage());
                 }
             }
@@ -1205,11 +1205,11 @@ public final class c {
             Runnable runnable;
             Runnable runnable2;
             super.readyState(webView, i);
-            Handler handler2 = this.f8104a;
+            Handler handler2 = this.f5264a;
             if (handler2 != null && (runnable2 = this.r) != null) {
                 handler2.removeCallbacks(runnable2);
             }
-            Handler handler3 = this.f8104a;
+            Handler handler3 = this.f5264a;
             if (handler3 != null && (runnable = this.s) != null) {
                 handler3.removeCallbacks(runnable);
             }
@@ -1218,21 +1218,21 @@ public final class c {
             }
             StringBuilder sb = new StringBuilder();
             sb.append(this.j);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             sb.append(this.i);
             if (i == 1) {
                 o.a("WindVaneWebView", "TempalteWindVaneWebviewClient template 预加载成功 state ：".concat(String.valueOf(i)));
                 Runnable runnable3 = this.b;
-                if (runnable3 != null && (handler = this.f8104a) != null) {
+                if (runnable3 != null && (handler = this.f5264a) != null) {
                     handler.removeCallbacks(runnable3);
                 }
                 com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-                a2.c(this.j + BridgeUtil.UNDERLINE_STR + this.f + BridgeUtil.UNDERLINE_STR + this.i, true);
-                a.C0164a c0164a = this.l;
-                if (c0164a != null) {
-                    c0164a.a(true);
+                a2.c(this.j + "_" + this.f + "_" + this.i, true);
+                a.C0093a c0093a = this.l;
+                if (c0093a != null) {
+                    c0093a.a(true);
                 }
-                if (this.f8105c) {
+                if (this.f5265c) {
                     if (this.e) {
                         o.a("WindVaneWebView", "put templeteCache in bidIVCache ");
                         com.anythink.expressad.videocommon.a.a(287, this.m.aa(), this.l);
@@ -1266,27 +1266,27 @@ public final class c {
     public static final class l extends com.anythink.expressad.atsignalcommon.a.b {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f8110a;
+        private String f5270a;
         private final boolean b = false;
 
         /* renamed from: c  reason: collision with root package name */
-        private final WindVaneWebView f8111c;
+        private final WindVaneWebView f5271c;
         private final String e;
         private final String f;
-        private final a.C0164a g;
+        private final a.C0093a g;
         private final com.anythink.expressad.foundation.d.c h;
         private boolean i;
         private String j;
         private boolean k;
         private boolean l;
 
-        public l(String str, WindVaneWebView windVaneWebView, String str2, String str3, a.C0164a c0164a, com.anythink.expressad.foundation.d.c cVar, boolean z, String str4) {
-            this.f8111c = windVaneWebView;
+        public l(String str, WindVaneWebView windVaneWebView, String str2, String str3, a.C0093a c0093a, com.anythink.expressad.foundation.d.c cVar, boolean z, String str4) {
+            this.f5271c = windVaneWebView;
             this.e = str2;
             this.f = str3;
-            this.g = c0164a;
+            this.g = c0093a;
             this.h = cVar;
-            this.f8110a = str;
+            this.f5270a = str;
             this.i = z;
             this.j = str4;
             o.a("WindVaneWebView", "TempalteWindVaneWebviewClientForTPL init");
@@ -1299,28 +1299,28 @@ public final class c {
                 return;
             }
             if (!str.contains("wfr=1")) {
-                if (this.f8111c != null) {
+                if (this.f5271c != null) {
                     JSONObject jSONObject = new JSONObject();
                     try {
-                        jSONObject.put("id", this.f8110a);
+                        jSONObject.put("id", this.f5270a);
                         JSONObject jSONObject2 = new JSONObject();
                         jSONObject2.put("result", 1);
                         jSONObject2.put("error", "");
                         jSONObject.put("data", jSONObject2);
                         com.anythink.expressad.atsignalcommon.windvane.j.a();
-                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) this.f8111c, "componentReact", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
+                        com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) this.f5271c, "componentReact", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
                     } catch (Exception e) {
-                        if (com.anythink.expressad.a.f6941a) {
+                        if (com.anythink.expressad.a.f4103a) {
                             o.d("WindVaneWebView", e.getLocalizedMessage());
                         }
                     }
                 }
-                com.anythink.expressad.videocommon.b.l.a().c(this.f + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.e, true);
-                a.C0164a c0164a = this.g;
-                if (c0164a != null) {
-                    c0164a.a(true);
+                com.anythink.expressad.videocommon.b.l.a().c(this.f + "_" + this.j + "_" + this.e, true);
+                a.C0093a c0093a = this.g;
+                if (c0093a != null) {
+                    c0093a.a(true);
                 }
-                String str2 = this.f + BridgeUtil.UNDERLINE_STR + this.h.aZ() + BridgeUtil.UNDERLINE_STR + this.h.Z() + BridgeUtil.UNDERLINE_STR + this.e;
+                String str2 = this.f + "_" + this.h.aZ() + "_" + this.h.Z() + "_" + this.e;
                 if (this.b) {
                     if (this.h.A()) {
                         o.a("WindVaneWebView", "Tempalte put templeteCache in bidIVCache ");
@@ -1346,23 +1346,23 @@ public final class c {
         public final void onReceivedError(WebView webView, int i, String str, String str2) {
             o.a("WindVaneWebView", "TempalteWindVaneWebviewClientForTPL preLoadTemplate onReceivedError: ".concat(String.valueOf(str)));
             com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-            a2.c(this.f + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.e, false);
-            a.C0164a c0164a = this.g;
-            if (c0164a != null) {
-                c0164a.a(false);
+            a2.c(this.f + "_" + this.j + "_" + this.e, false);
+            a.C0093a c0093a = this.g;
+            if (c0093a != null) {
+                c0093a.a(false);
             }
-            if (this.f8111c != null) {
+            if (this.f5271c != null) {
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("id", this.f8110a);
+                    jSONObject.put("id", this.f5270a);
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("result", 2);
                     jSONObject2.put("error", str);
                     jSONObject.put("data", jSONObject2);
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
-                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) this.f8111c, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
+                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) this.f5271c, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         o.d("WindVaneWebView", e.getLocalizedMessage());
                     }
                 }
@@ -1375,28 +1375,28 @@ public final class c {
             if (this.l) {
                 return;
             }
-            if (this.f8111c != null) {
+            if (this.f5271c != null) {
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("id", this.f8110a);
+                    jSONObject.put("id", this.f5270a);
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("result", i);
                     jSONObject2.put("error", "");
                     jSONObject.put("data", jSONObject2);
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
-                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) this.f8111c, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
+                    com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) this.f5271c, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
                 } catch (Exception e) {
-                    if (com.anythink.expressad.a.f6941a) {
+                    if (com.anythink.expressad.a.f4103a) {
                         o.d("WindVaneWebView", e.getLocalizedMessage());
                     }
                 }
             }
-            String str = this.f + BridgeUtil.UNDERLINE_STR + this.h.aZ() + BridgeUtil.UNDERLINE_STR + this.h.Z() + BridgeUtil.UNDERLINE_STR + this.e;
+            String str = this.f + "_" + this.h.aZ() + "_" + this.h.Z() + "_" + this.e;
             if (i == 1) {
-                com.anythink.expressad.videocommon.b.l.a().c(this.f + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.e, true);
-                a.C0164a c0164a = this.g;
-                if (c0164a != null) {
-                    c0164a.a(true);
+                com.anythink.expressad.videocommon.b.l.a().c(this.f + "_" + this.j + "_" + this.e, true);
+                a.C0093a c0093a = this.g;
+                if (c0093a != null) {
+                    c0093a.a(true);
                 }
                 if (this.b) {
                     if (this.h.A()) {
@@ -1414,10 +1414,10 @@ public final class c {
                     com.anythink.expressad.videocommon.a.a(str, this.g, false, this.i);
                 }
             } else {
-                com.anythink.expressad.videocommon.b.l.a().c(this.f + BridgeUtil.UNDERLINE_STR + this.j + BridgeUtil.UNDERLINE_STR + this.e, false);
-                a.C0164a c0164a2 = this.g;
-                if (c0164a2 != null) {
-                    c0164a2.a(false);
+                com.anythink.expressad.videocommon.b.l.a().c(this.f + "_" + this.j + "_" + this.e, false);
+                a.C0093a c0093a2 = this.g;
+                if (c0093a2 != null) {
+                    c0093a2.a(false);
                 }
             }
             this.l = true;
@@ -1429,7 +1429,7 @@ public final class c {
     public static final class m {
 
         /* renamed from: a  reason: collision with root package name */
-        private static final c f8112a = new c((byte) 0);
+        private static final c f5272a = new c((byte) 0);
 
         private m() {
         }
@@ -1441,7 +1441,7 @@ public final class c {
         d = new HashMap();
         handlerThread.start();
         this.b = new h(handlerThread.getLooper());
-        this.f8084c = new ConcurrentHashMap<>();
+        this.f5244c = new ConcurrentHashMap<>();
     }
 
     /* synthetic */ c(byte b2) {
@@ -1449,7 +1449,7 @@ public final class c {
     }
 
     public static c a() {
-        return m.f8112a;
+        return m.f5272a;
     }
 
     private void a(Context context, String str, String str2, String str3, com.anythink.expressad.foundation.d.c cVar, String str4, i iVar, List<com.anythink.expressad.foundation.d.c> list) {
@@ -1464,8 +1464,8 @@ public final class c {
                 com.anythink.expressad.videocommon.b.i.a().b(str4, (i.a) gVar);
                 return;
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
-                    o.d(f8083a, e2.getLocalizedMessage());
+                if (com.anythink.expressad.a.f4103a) {
+                    o.d(f5243a, e2.getLocalizedMessage());
                     return;
                 }
                 return;
@@ -1477,8 +1477,8 @@ public final class c {
             dVar.a(isEmpty2);
             com.anythink.expressad.videocommon.b.i.a().b(str4, dVar);
         } catch (Exception e3) {
-            if (com.anythink.expressad.a.f6941a) {
-                o.d(f8083a, e3.getLocalizedMessage());
+            if (com.anythink.expressad.a.f4103a) {
+                o.d(f5243a, e3.getLocalizedMessage());
             }
         }
     }
@@ -1495,8 +1495,8 @@ public final class c {
                 com.anythink.expressad.videocommon.b.i.a().b(str4, (i.a) gVar);
                 return;
             } catch (Exception e2) {
-                if (com.anythink.expressad.a.f6941a) {
-                    o.d(f8083a, e2.getLocalizedMessage());
+                if (com.anythink.expressad.a.f4103a) {
+                    o.d(f5243a, e2.getLocalizedMessage());
                     return;
                 }
                 return;
@@ -1508,8 +1508,8 @@ public final class c {
             dVar.a(isEmpty2);
             com.anythink.expressad.videocommon.b.i.a().b(str4, dVar);
         } catch (Exception e3) {
-            if (com.anythink.expressad.a.f6941a) {
-                o.d(f8083a, e3.getLocalizedMessage());
+            if (com.anythink.expressad.a.f4103a) {
+                o.d(f5243a, e3.getLocalizedMessage());
             }
         }
     }
@@ -1527,15 +1527,15 @@ public final class c {
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
                     com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) windVaneWebView, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
                 } catch (Exception e2) {
-                    if (com.anythink.expressad.a.f6941a) {
-                        o.d(f8083a, e2.getLocalizedMessage());
+                    if (com.anythink.expressad.a.f4103a) {
+                        o.d(f5243a, e2.getLocalizedMessage());
                     }
                 }
             } else if (!TextUtils.isEmpty(cVar2.M().e())) {
                 if (TextUtils.isEmpty(cVar2.M().e()) || !cVar2.M().e().contains(com.anythink.expressad.foundation.d.c.d)) {
                     new Handler(Looper.getMainLooper()).postDelayed(new AnonymousClass3(z, windVaneWebView, cVar2, list, str, dVar, str2), i2 * 1000);
                 } else {
-                    o.a(f8083a, "getTeamplateUrl contains cmpt=1");
+                    o.a(f5243a, "getTeamplateUrl contains cmpt=1");
                 }
             } else {
                 JSONObject jSONObject3 = new JSONObject();
@@ -1548,8 +1548,8 @@ public final class c {
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
                     com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) windVaneWebView, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject3.toString().getBytes(), 2));
                 } catch (Exception e3) {
-                    if (com.anythink.expressad.a.f6941a) {
-                        o.d(f8083a, e3.getLocalizedMessage());
+                    if (com.anythink.expressad.a.f4103a) {
+                        o.d(f5243a, e3.getLocalizedMessage());
                     }
                 }
             }
@@ -1569,15 +1569,15 @@ public final class c {
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
                     com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) windVaneWebView, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject.toString().getBytes(), 2));
                 } catch (Exception e2) {
-                    if (com.anythink.expressad.a.f6941a) {
-                        o.d(f8083a, e2.getLocalizedMessage());
+                    if (com.anythink.expressad.a.f4103a) {
+                        o.d(f5243a, e2.getLocalizedMessage());
                     }
                 }
             } else if (!TextUtils.isEmpty(cVar.M().e())) {
                 if (TextUtils.isEmpty(cVar.M().e()) || !cVar.M().e().contains(com.anythink.expressad.foundation.d.c.d)) {
                     new Handler(Looper.getMainLooper()).postDelayed(new AnonymousClass3(z, windVaneWebView, cVar, list, str, dVar, str2), i2 * 1000);
                 } else {
-                    o.a(f8083a, "getTeamplateUrl contains cmpt=1");
+                    o.a(f5243a, "getTeamplateUrl contains cmpt=1");
                 }
             } else {
                 JSONObject jSONObject3 = new JSONObject();
@@ -1590,8 +1590,8 @@ public final class c {
                     com.anythink.expressad.atsignalcommon.windvane.j.a();
                     com.anythink.expressad.atsignalcommon.windvane.j.a((WebView) windVaneWebView, "onSubPlayTemplateViewLoad", Base64.encodeToString(jSONObject3.toString().getBytes(), 2));
                 } catch (Exception e3) {
-                    if (com.anythink.expressad.a.f6941a) {
-                        o.d(f8083a, e3.getLocalizedMessage());
+                    if (com.anythink.expressad.a.f4103a) {
+                        o.d(f5243a, e3.getLocalizedMessage());
                     }
                 }
             }
@@ -1602,13 +1602,13 @@ public final class c {
         com.anythink.expressad.video.signal.a.j jVar;
         String Z;
         try {
-            a.C0164a c0164a = new a.C0164a();
-            WindVaneWebView d2 = m.f8112a.d();
+            a.C0093a c0093a = new a.C0093a();
+            WindVaneWebView d2 = m.f5272a.d();
             WindVaneWebView windVaneWebView2 = d2;
             if (d2 == null) {
                 windVaneWebView2 = new WindVaneWebView(n.a().g());
             }
-            c0164a.a(windVaneWebView2);
+            c0093a.a(windVaneWebView2);
             if (list == null || list.size() <= 0) {
                 jVar = new com.anythink.expressad.video.signal.a.j(null, cVar);
                 Z = cVar.Z();
@@ -1639,13 +1639,13 @@ public final class c {
             jVar.c(str4);
             jVar.a(dVar);
             jVar.b(z);
-            windVaneWebView2.setWebViewListener(new l(str4, windVaneWebView, str, str3, c0164a, cVar, z2, Z));
+            windVaneWebView2.setWebViewListener(new l(str4, windVaneWebView, str, str3, c0093a, cVar, z2, Z));
             windVaneWebView2.setObject(jVar);
             windVaneWebView2.loadUrl(str2);
             windVaneWebView2.setRid(Z);
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
-                o.d(f8083a, e2.getLocalizedMessage());
+            if (com.anythink.expressad.a.f4103a) {
+                o.d(f5243a, e2.getLocalizedMessage());
             }
         }
     }
@@ -1654,13 +1654,13 @@ public final class c {
         com.anythink.expressad.video.signal.a.j jVar;
         String Z;
         try {
-            a.C0164a c0164a = new a.C0164a();
-            WindVaneWebView d2 = m.f8112a.d();
+            a.C0093a c0093a = new a.C0093a();
+            WindVaneWebView d2 = m.f5272a.d();
             WindVaneWebView windVaneWebView2 = d2;
             if (d2 == null) {
                 windVaneWebView2 = new WindVaneWebView(n.a().g());
             }
-            c0164a.a(windVaneWebView2);
+            c0093a.a(windVaneWebView2);
             if (list == null || list.size() <= 0) {
                 jVar = new com.anythink.expressad.video.signal.a.j(null, cVar);
                 Z = cVar.Z();
@@ -1691,13 +1691,13 @@ public final class c {
             jVar.c(str4);
             jVar.a(dVar);
             jVar.b(z);
-            windVaneWebView2.setWebViewListener(new l(str4, windVaneWebView, str, str3, c0164a, cVar, z2, Z));
+            windVaneWebView2.setWebViewListener(new l(str4, windVaneWebView, str, str3, c0093a, cVar, z2, Z));
             windVaneWebView2.setObject(jVar);
             windVaneWebView2.loadUrl(str2);
             windVaneWebView2.setRid(Z);
         } catch (Exception e2) {
-            if (com.anythink.expressad.a.f6941a) {
-                o.d(f8083a, e2.getLocalizedMessage());
+            if (com.anythink.expressad.a.f4103a) {
+                o.d(f5243a, e2.getLocalizedMessage());
             }
         }
     }
@@ -1716,7 +1716,7 @@ public final class c {
             String jSONObject2 = jSONObject.toString();
             return !TextUtils.isEmpty(jSONObject2) ? Base64.encodeToString(jSONObject2.getBytes(), 2) : "";
         } catch (Throwable th) {
-            o.d(f8083a, "code to string is error");
+            o.d(f5243a, "code to string is error");
             return "";
         }
     }
@@ -1744,7 +1744,7 @@ public final class c {
                     Bundle bundle = new Bundle();
                     bundle.putString("unit_id", str2);
                     bundle.putString(com.anythink.expressad.a.y, str);
-                    bundle.putString("request_id", str3);
+                    bundle.putString(at.g, str3);
                     bundle.putString("url", ar2);
                     obtain.setData(bundle);
                     this.b.sendMessage(obtain);
@@ -1758,14 +1758,14 @@ public final class c {
                         @Override // com.anythink.expressad.videocommon.b.i.a
                         public final void a(String str4) {
                             try {
-                                o.a(c.f8083a, "zip btl template download success");
+                                o.a(c.f5243a, "zip btl template download success");
                                 com.anythink.expressad.videocommon.b.l.a().b(str4, true);
                                 Message obtain2 = Message.obtain();
                                 obtain2.what = 105;
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putString("unit_id", str2);
                                 bundle2.putString(com.anythink.expressad.a.y, str);
-                                bundle2.putString("request_id", str3);
+                                bundle2.putString(at.g, str3);
                                 bundle2.putString("url", str4);
                                 obtain2.setData(bundle2);
                                 c.this.b.sendMessage(obtain2);
@@ -1779,7 +1779,7 @@ public final class c {
                                 Bundle bundle3 = new Bundle();
                                 bundle3.putString("unit_id", str2);
                                 bundle3.putString(com.anythink.expressad.a.y, str);
-                                bundle3.putString("request_id", str3);
+                                bundle3.putString(at.g, str3);
                                 bundle3.putString("url", str4);
                                 obtain3.setData(bundle3);
                                 c.this.b.sendMessage(obtain3);
@@ -1795,7 +1795,7 @@ public final class c {
 
                         @Override // com.anythink.expressad.videocommon.b.i.a
                         public final void a(String str4, String str5) {
-                            o.a(c.f8083a, "zip btl template download failed");
+                            o.a(c.f5243a, "zip btl template download failed");
                             try {
                                 com.anythink.expressad.videocommon.b.l.a().b(str5, false);
                                 Message obtain2 = Message.obtain();
@@ -1803,7 +1803,7 @@ public final class c {
                                 Bundle bundle2 = new Bundle();
                                 bundle2.putString("unit_id", str2);
                                 bundle2.putString(com.anythink.expressad.a.y, str);
-                                bundle2.putString("request_id", str3);
+                                bundle2.putString(at.g, str3);
                                 bundle2.putString("url", str5);
                                 bundle2.putString("message", str4);
                                 obtain2.setData(bundle2);
@@ -1818,7 +1818,7 @@ public final class c {
                                 Bundle bundle3 = new Bundle();
                                 bundle3.putString("unit_id", str2);
                                 bundle3.putString(com.anythink.expressad.a.y, str);
-                                bundle3.putString("request_id", str3);
+                                bundle3.putString(at.g, str3);
                                 bundle3.putString("url", str5);
                                 bundle3.putString("message", e2.getMessage());
                                 obtain3.setData(bundle3);
@@ -1827,26 +1827,26 @@ public final class c {
                                 if (iVar2 != null) {
                                     iVar2.a(str2, str3);
                                 }
-                                if (com.anythink.expressad.a.f6941a) {
-                                    o.d(c.f8083a, e2.getLocalizedMessage());
+                                if (com.anythink.expressad.a.f4103a) {
+                                    o.d(c.f5243a, e2.getLocalizedMessage());
                                 }
                             }
                         }
                     });
                 } catch (Exception e2) {
-                    if (com.anythink.expressad.a.f6941a) {
-                        o.d(f8083a, e2.getLocalizedMessage());
+                    if (com.anythink.expressad.a.f4103a) {
+                        o.d(f5243a, e2.getLocalizedMessage());
                     }
                 }
             }
         }
     }
 
-    public final void a(final Context context, boolean z, int i2, boolean z2, final int i3, final String str, final String str2, final String str3, final CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList, InterfaceC0150c interfaceC0150c, final i iVar) {
+    public final void a(final Context context, boolean z, int i2, boolean z2, final int i3, final String str, final String str2, final String str3, final CopyOnWriteArrayList<com.anythink.expressad.foundation.d.c> copyOnWriteArrayList, InterfaceC0079c interfaceC0079c, final i iVar) {
         synchronized (this) {
-            String str4 = str2 + BridgeUtil.UNDERLINE_STR + str3;
+            String str4 = str2 + "_" + str3;
             d.put(str4, new a(z, z2, i2, copyOnWriteArrayList.size(), str2, str3, i3, copyOnWriteArrayList));
-            this.b.a(str2, str3, interfaceC0150c);
+            this.b.a(str2, str3, interfaceC0079c);
             this.b.a(context);
             this.b.a(str4, copyOnWriteArrayList);
             this.b.post(new Runnable() { // from class: com.anythink.expressad.reward.a.c.1
@@ -1878,7 +1878,7 @@ public final class c {
         synchronized (this) {
             StringBuilder sb = new StringBuilder();
             sb.append(str4);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             sb.append(str);
             long currentTimeMillis = System.currentTimeMillis();
             try {
@@ -1886,41 +1886,41 @@ public final class c {
                     jVar.a(str5);
                     return;
                 }
-                a.C0164a c0164a = new a.C0164a();
-                WindVaneWebView d2 = m.f8112a.d();
+                a.C0093a c0093a = new a.C0093a();
+                WindVaneWebView d2 = m.f5272a.d();
                 if (d2 == null) {
                     try {
                         d2 = new WindVaneWebView(n.a().g());
                     } catch (Exception e2) {
-                        c0164a.a(true);
+                        c0093a.a(true);
                         com.anythink.expressad.videocommon.b.l a2 = com.anythink.expressad.videocommon.b.l.a();
-                        a2.c(str4 + BridgeUtil.UNDERLINE_STR + str5 + BridgeUtil.UNDERLINE_STR + str, true);
+                        a2.c(str4 + "_" + str5 + "_" + str, true);
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(str4);
-                        sb2.append(BridgeUtil.UNDERLINE_STR);
+                        sb2.append("_");
                         sb2.append(str);
                         jVar.a(str5);
                         return;
                     } catch (Throwable th) {
-                        c0164a.a(true);
+                        c0093a.a(true);
                         com.anythink.expressad.videocommon.b.l a3 = com.anythink.expressad.videocommon.b.l.a();
-                        a3.c(str4 + BridgeUtil.UNDERLINE_STR + str5 + BridgeUtil.UNDERLINE_STR + str, true);
+                        a3.c(str4 + "_" + str5 + "_" + str, true);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(str4);
-                        sb3.append(BridgeUtil.UNDERLINE_STR);
+                        sb3.append("_");
                         sb3.append(str);
                         jVar.a(str5);
                         return;
                     }
                 }
-                c0164a.a(d2);
+                c0093a.a(d2);
                 com.anythink.expressad.video.signal.a.j jVar2 = (copyOnWriteArrayList == null || copyOnWriteArrayList.size() <= 0) ? new com.anythink.expressad.video.signal.a.j(null, cVar) : new com.anythink.expressad.video.signal.a.j(null, cVar, copyOnWriteArrayList);
                 jVar2.a(i2);
                 jVar2.a(str4);
                 jVar2.a(dVar);
                 jVar2.b(z);
                 try {
-                    d2.setWebViewListener(new k(handler, null, z2, z3, str5, jVar, windVaneWebView, str, str3, str4, c0164a, cVar, copyOnWriteArrayList, currentTimeMillis));
+                    d2.setWebViewListener(new k(handler, null, z2, z3, str5, jVar, windVaneWebView, str, str3, str4, c0093a, cVar, copyOnWriteArrayList, currentTimeMillis));
                     d2.setObject(jVar2);
                     d2.loadUrl(str2);
                 } catch (Exception e3) {
@@ -1930,8 +1930,8 @@ public final class c {
                     d2.setRid(str5);
                 } catch (Exception e4) {
                     e = e4;
-                    if (com.anythink.expressad.a.f6941a) {
-                        o.d(f8083a, e.getLocalizedMessage());
+                    if (com.anythink.expressad.a.f4103a) {
+                        o.d(f5243a, e.getLocalizedMessage());
                     }
                     jVar.a(str5, e.getLocalizedMessage());
                 }
@@ -1948,7 +1948,7 @@ public final class c {
             long currentTimeMillis = System.currentTimeMillis();
             StringBuilder sb = new StringBuilder();
             sb.append(str3);
-            sb.append(BridgeUtil.UNDERLINE_STR);
+            sb.append("_");
             sb.append(str4);
             this.e = false;
             if (t.e(str4)) {
@@ -1956,20 +1956,20 @@ public final class c {
                 return;
             }
             try {
-                o.a(f8083a, "开始预加载大模板资源");
-                a.C0164a c0164a = new a.C0164a();
-                WindVaneWebView d2 = m.f8112a.d();
+                o.a(f5243a, "开始预加载大模板资源");
+                a.C0093a c0093a = new a.C0093a();
+                WindVaneWebView d2 = m.f5272a.d();
                 WindVaneWebView windVaneWebView = d2;
                 if (d2 == null) {
                     windVaneWebView = new WindVaneWebView(n.a().g());
                 }
-                c0164a.a(windVaneWebView);
+                c0093a.a(windVaneWebView);
                 com.anythink.expressad.video.bt.a.c.a();
                 String b2 = com.anythink.expressad.video.bt.a.c.b();
                 com.anythink.expressad.video.bt.a.c.a();
                 String b3 = com.anythink.expressad.video.bt.a.c.b();
-                c0164a.a(b3);
-                o.a(f8083a, "preload BT wraper.setTag ".concat(String.valueOf(b3)));
+                c0093a.a(b3);
+                o.a(f5243a, "preload BT wraper.setTag ".concat(String.valueOf(b3)));
                 if (copyOnWriteArrayList == null || copyOnWriteArrayList.size() <= 0) {
                     jVar2 = new com.anythink.expressad.video.signal.a.j(null, cVar);
                 } else {
@@ -1979,7 +1979,7 @@ public final class c {
                             com.anythink.expressad.foundation.d.c cVar2 = copyOnWriteArrayList.get(i3);
                             for (com.anythink.expressad.foundation.d.c cVar3 : a2) {
                                 if (cVar3.aZ().equals(cVar2.aZ()) && cVar3.Z().equals(cVar2.Z())) {
-                                    o.a(f8083a, "设置 Campaign 的 isReady： true");
+                                    o.a(f5243a, "设置 Campaign 的 isReady： true");
                                     cVar2.au();
                                     copyOnWriteArrayList.set(i3, cVar2);
                                 }
@@ -1996,7 +1996,7 @@ public final class c {
                 jVar2.a(dVar);
                 jVar2.b(z);
                 try {
-                    windVaneWebView.setWebViewListener(new b(z, handler, null, z2, z3, i2, str4, str2, str3, str, c0164a, cVar, copyOnWriteArrayList, dVar, jVar, currentTimeMillis));
+                    windVaneWebView.setWebViewListener(new b(z, handler, null, z2, z3, i2, str4, str2, str3, str, c0093a, cVar, copyOnWriteArrayList, dVar, jVar, currentTimeMillis));
                     windVaneWebView.setObject(jVar2);
                     windVaneWebView.loadUrl(str5);
                     try {
@@ -2017,8 +2017,8 @@ public final class c {
                     } catch (Exception e2) {
                         e = e2;
                         jVar.a(str, e.getMessage());
-                        if (com.anythink.expressad.a.f6941a) {
-                            o.d(f8083a, e.getLocalizedMessage());
+                        if (com.anythink.expressad.a.f4103a) {
+                            o.d(f5243a, e.getLocalizedMessage());
                         }
                     }
                 } catch (Exception e3) {

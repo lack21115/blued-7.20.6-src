@@ -10,7 +10,7 @@ public class o2 extends JsonComposer {
     @Json(name = "privacy_protection")
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f37673a;
+    public boolean f23982a;
     @Json(name = "http_proxy")
     public List<HttpProxyRule> b;
 }

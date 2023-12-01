@@ -1,6 +1,5 @@
 package com.mokee.volley.toolbox;
 
-import android.content.IntentFilter;
 import com.mokee.volley.Cache;
 import com.mokee.volley.VolleyError;
 import com.mokee.volley.VolleyLog;
@@ -21,25 +20,19 @@ import java.util.Map;
 /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/DiskBasedCache.class */
 public class DiskBasedCache implements Cache {
     private static final String[] e = null;
-
-    /* renamed from: a  reason: collision with root package name */
-    private long f24252a;
+    private long a;
     private final File b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private final int f24253c;
+    private final int c;
     private final Map<String, b> d;
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/DiskBasedCache$a.class */
     public static class a extends FilterInputStream {
-
-        /* renamed from: a  reason: collision with root package name */
-        private int f24254a;
+        private int a;
 
         private a(InputStream inputStream) {
             super(inputStream);
-            this.f24254a = 0;
+            this.a = 0;
         }
 
         /* synthetic */ a(InputStream inputStream, a aVar) {
@@ -51,7 +44,7 @@ public class DiskBasedCache implements Cache {
             int read = super.read();
             if (read != -1) {
                 try {
-                    this.f24254a++;
+                    this.a++;
                 } catch (IOException e) {
                     throw e;
                 }
@@ -64,7 +57,7 @@ public class DiskBasedCache implements Cache {
             int read = super.read(bArr, i, i2);
             if (read != -1) {
                 try {
-                    this.f24254a += read;
+                    this.a += read;
                 } catch (IOException e) {
                     throw e;
                 }
@@ -76,9 +69,7 @@ public class DiskBasedCache implements Cache {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: source-4181928-dex2jar.jar:com/mokee/volley/toolbox/DiskBasedCache$b.class */
     public static class b {
-
-        /* renamed from: a  reason: collision with root package name */
-        private static final String f24255a;
+        private static final String a;
         public String etag;
         public String key;
         public Map<String, String> responseHeaders;
@@ -103,7 +94,7 @@ public class DiskBasedCache implements Cache {
             if (r7 > r8) goto L3;
          */
         /* JADX WARN: Code restructure failed: missing block: B:14:0x0074, code lost:
-            com.mokee.volley.toolbox.DiskBasedCache.b.f24255a = new java.lang.String(r11).intern();
+            com.mokee.volley.toolbox.DiskBasedCache.b.a = new java.lang.String(r11).intern();
          */
         /* JADX WARN: Code restructure failed: missing block: B:15:0x0083, code lost:
             return;
@@ -233,7 +224,7 @@ public class DiskBasedCache implements Cache {
                 r2 = r11
                 r1.<init>(r2)
                 java.lang.String r0 = r0.intern()
-                com.mokee.volley.toolbox.DiskBasedCache.b.f24255a = r0
+                com.mokee.volley.toolbox.DiskBasedCache.b.a = r0
                 return
             L84:
                 r0 = 114(0x72, float:1.6E-43)
@@ -252,7 +243,7 @@ public class DiskBasedCache implements Cache {
                 r5 = r0
                 goto L4b
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.toolbox.DiskBasedCache.b.m8067clinit():void");
+            throw new UnsupportedOperationException("Method not decompiled: com.mokee.volley.toolbox.DiskBasedCache.b.m11290clinit():void");
         }
 
         private b() {
@@ -320,7 +311,7 @@ public class DiskBasedCache implements Cache {
                     throw e;
                 }
             } catch (IOException e2) {
-                VolleyLog.d(f24255a, e2.toString());
+                VolleyLog.d(a, e2.toString());
                 return false;
             }
         }
@@ -332,14 +323,14 @@ public class DiskBasedCache implements Cache {
     }
 
     public DiskBasedCache(File file) {
-        this(file, IntentFilter.MATCH_CATEGORY_PATH);
+        this(file, 5242880);
     }
 
     public DiskBasedCache(File file, int i) {
         this.d = new LinkedHashMap(16, 0.75f, true);
-        this.f24252a = 0L;
+        this.a = 0L;
         this.b = file;
-        this.f24253c = i;
+        this.c = i;
     }
 
     static String a(InputStream inputStream) throws IOException {
@@ -358,7 +349,7 @@ public class DiskBasedCache implements Cache {
         if (getFileForKey(r0.key).delete() == false) goto L24;
      */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x0070, code lost:
-        r9.f24252a -= r0.size;
+        r9.a -= r0.size;
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0080, code lost:
         if (r0 == false) goto L14;
@@ -372,7 +363,7 @@ public class DiskBasedCache implements Cache {
         r11 = r0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:16:0x00c2, code lost:
-        if (((float) (r9.f24252a + r10)) >= (r9.f24253c * 0.9f)) goto L25;
+        if (((float) (r9.a + r10)) >= (r9.c * 0.9f)) goto L25;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x00c5, code lost:
         r11 = r0;
@@ -393,7 +384,7 @@ public class DiskBasedCache implements Cache {
         if (com.mokee.volley.VolleyLog.DEBUG == false) goto L23;
      */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x00e0, code lost:
-        com.mokee.volley.VolleyLog.v(com.mokee.volley.toolbox.DiskBasedCache.e[5], java.lang.Integer.valueOf(r11), java.lang.Long.valueOf(r9.f24252a - r0), java.lang.Long.valueOf(android.os.SystemClock.elapsedRealtime() - r0));
+        com.mokee.volley.VolleyLog.v(com.mokee.volley.toolbox.DiskBasedCache.e[5], java.lang.Integer.valueOf(r11), java.lang.Long.valueOf(r9.a - r0), java.lang.Long.valueOf(android.os.SystemClock.elapsedRealtime() - r0));
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x010c, code lost:
         return;
@@ -458,11 +449,11 @@ public class DiskBasedCache implements Cache {
             if (r0 != 0) goto L20
             r0 = r6
             r1 = r6
-            long r1 = r1.f24252a
+            long r1 = r1.a
             r2 = r8
             long r2 = r2.size
             long r1 = r1 + r2
-            r0.f24252a = r1
+            r0.a = r1
             boolean r0 = com.mokee.volley.toolbox.ImageLoader.h
             if (r0 == 0) goto L44
         L20:
@@ -473,7 +464,7 @@ public class DiskBasedCache implements Cache {
             com.mokee.volley.toolbox.DiskBasedCache$b r0 = (com.mokee.volley.toolbox.DiskBasedCache.b) r0
             r11 = r0
             r0 = r6
-            long r0 = r0.f24252a
+            long r0 = r0.a
             r9 = r0
             r0 = r6
             r1 = r8
@@ -483,7 +474,7 @@ public class DiskBasedCache implements Cache {
             long r1 = r1 - r2
             r2 = r9
             long r1 = r1 + r2
-            r0.f24252a = r1
+            r0.a = r1
         L44:
             r0 = r6
             java.util.Map<java.lang.String, com.mokee.volley.toolbox.DiskBasedCache$b> r0 = r0.d
@@ -545,7 +536,7 @@ public class DiskBasedCache implements Cache {
     private void b(String str) {
         b bVar = this.d.get(str);
         if (bVar != null) {
-            this.f24252a -= bVar.size;
+            this.a -= bVar.size;
             this.d.remove(str);
         }
     }
@@ -681,7 +672,7 @@ public class DiskBasedCache implements Cache {
             r0.clear()     // Catch: java.lang.Throwable -> L4f
             r0 = r4
             r1 = 0
-            r0.f24252a = r1     // Catch: java.lang.Throwable -> L4f
+            r0.a = r1     // Catch: java.lang.Throwable -> L4f
             java.lang.String[] r0 = com.mokee.volley.toolbox.DiskBasedCache.e     // Catch: java.lang.Throwable -> L4f
             r1 = 13
             r0 = r0[r1]     // Catch: java.lang.Throwable -> L4f
@@ -739,7 +730,7 @@ public class DiskBasedCache implements Cache {
                     }
                     try {
                         b.readHeader(aVar2);
-                        aVar = bVar.toCacheEntry(a(aVar2, (int) (fileForKey.length() - aVar2.f24254a)));
+                        aVar = bVar.toCacheEntry(a(aVar2, (int) (fileForKey.length() - aVar2.a)));
                         entry = aVar;
                         if (aVar2 != 0) {
                             try {

@@ -14,15 +14,13 @@ import org.apache.http.protocol.HttpContext;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: source-6737240-dex2jar.jar:com/alipay/android/phone/mrpc/core/d.class */
 public final class d extends DefaultHttpClient {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ b f4521a;
+    final /* synthetic */ b a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public d(b bVar, ClientConnectionManager clientConnectionManager, HttpParams httpParams) {
         super(clientConnectionManager, httpParams);
-        this.f4521a = bVar;
+        this.a = bVar;
     }
 
     protected final ConnectionKeepAliveStrategy createConnectionKeepAliveStrategy() {
@@ -40,9 +38,9 @@ public final class d extends DefaultHttpClient {
     protected final BasicHttpProcessor createHttpProcessor() {
         HttpRequestInterceptor httpRequestInterceptor;
         BasicHttpProcessor createHttpProcessor = super.createHttpProcessor();
-        httpRequestInterceptor = b.f4518c;
+        httpRequestInterceptor = b.c;
         createHttpProcessor.addRequestInterceptor(httpRequestInterceptor);
-        createHttpProcessor.addRequestInterceptor(new b.a(this.f4521a, (byte) 0));
+        createHttpProcessor.addRequestInterceptor(new b.a(this.a, (byte) 0));
         return createHttpProcessor;
     }
 

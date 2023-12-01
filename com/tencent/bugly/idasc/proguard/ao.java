@@ -2,7 +2,6 @@ package com.tencent.bugly.idasc.proguard;
 
 import android.content.Context;
 import android.os.Process;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,11 +14,11 @@ import java.util.concurrent.Executors;
 public final class ao {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f35242a = true;
+    public static boolean f21551a = true;
     public static boolean b = true;
 
     /* renamed from: c  reason: collision with root package name */
-    private static SimpleDateFormat f35243c;
+    private static SimpleDateFormat f21552c;
     private static int d = 30720;
     private static StringBuilder e;
     private static StringBuilder f;
@@ -39,11 +38,11 @@ public final class ao {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        boolean f35248a;
+        boolean f21557a;
         File b;
 
         /* renamed from: c  reason: collision with root package name */
-        long f35249c = 30720;
+        long f21558c = 30720;
         private String d;
         private long e;
 
@@ -52,7 +51,7 @@ public final class ao {
                 return;
             }
             this.d = str;
-            this.f35248a = a();
+            this.f21557a = a();
         }
 
         final boolean a() {
@@ -60,17 +59,17 @@ public final class ao {
                 File file = new File(this.d);
                 this.b = file;
                 if (file.exists() && !this.b.delete()) {
-                    this.f35248a = false;
+                    this.f21557a = false;
                     return false;
                 } else if (this.b.createNewFile()) {
                     return true;
                 } else {
-                    this.f35248a = false;
+                    this.f21557a = false;
                     return false;
                 }
             } catch (Throwable th) {
                 al.a(th);
-                this.f35248a = false;
+                this.f21557a = false;
                 return false;
             }
         }
@@ -79,7 +78,7 @@ public final class ao {
             FileOutputStream fileOutputStream;
             FileOutputStream fileOutputStream2;
             byte[] bytes;
-            if (this.f35248a) {
+            if (this.f21557a) {
                 try {
                     fileOutputStream2 = new FileOutputStream(this.b, true);
                 } catch (Throwable th) {
@@ -91,7 +90,7 @@ public final class ao {
                     fileOutputStream2.flush();
                     fileOutputStream2.close();
                     this.e += bytes.length;
-                    this.f35248a = true;
+                    this.f21557a = true;
                     try {
                         fileOutputStream2.close();
                         return true;
@@ -103,7 +102,7 @@ public final class ao {
                     th = th2;
                     try {
                         al.a(th);
-                        this.f35248a = false;
+                        this.f21557a = false;
                         if (fileOutputStream != null) {
                             try {
                                 fileOutputStream.close();
@@ -130,7 +129,7 @@ public final class ao {
 
     static {
         try {
-            f35243c = new SimpleDateFormat("MM-dd HH:mm:ss");
+            f21552c = new SimpleDateFormat("MM-dd HH:mm:ss");
         } catch (Throwable th) {
             al.b(th.getCause());
         }
@@ -143,7 +142,7 @@ public final class ao {
             str4 = str3.substring(str3.length() - 30720, str3.length() - 1);
         }
         Date date = new Date();
-        SimpleDateFormat simpleDateFormat = f35243c;
+        SimpleDateFormat simpleDateFormat = f21552c;
         String format = simpleDateFormat != null ? simpleDateFormat.format(date) : date.toString();
         StringBuilder sb = e;
         sb.append(format);
@@ -187,7 +186,7 @@ public final class ao {
                     i = a2.d;
                     a2.getClass();
                     j = "";
-                    l = k.getFilesDir().getPath() + "/buglylog_" + i + BridgeUtil.UNDERLINE_STR + j + ".txt";
+                    l = k.getFilesDir().getPath() + "/buglylog_" + i + "_" + j + ".txt";
                     p = Process.myPid();
                 } catch (Throwable th) {
                 }
@@ -206,14 +205,14 @@ public final class ao {
                         o.execute(new Runnable() { // from class: com.tencent.bugly.idasc.proguard.ao.1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                ao.d(String.this, str2, str3);
+                                ao.d(str, str2, str3);
                             }
                         });
                     } else {
                         o.execute(new Runnable() { // from class: com.tencent.bugly.idasc.proguard.ao.2
                             @Override // java.lang.Runnable
                             public final void run() {
-                                ao.e(String.this, str2, str3);
+                                ao.e(str, str2, str3);
                             }
                         });
                     }
@@ -238,7 +237,7 @@ public final class ao {
     }
 
     public static byte[] a() {
-        if (f35242a) {
+        if (f21551a) {
             if (b) {
                 return ap.a(f.toString(), "BuglyLog.txt");
             }
@@ -275,7 +274,7 @@ public final class ao {
             }
             StringBuilder sb = new StringBuilder();
             synchronized (q) {
-                if (h != null && h.f35248a && h.b != null && h.b.length() > 0) {
+                if (h != null && h.f21557a && h.b != null && h.b.length() > 0) {
                     sb.append(ap.a(h.b, 30720, true));
                 }
                 if (f != null && f.length() > 0) {
@@ -308,7 +307,7 @@ public final class ao {
     public static void e(String str, String str2, String str3) {
         synchronized (ao.class) {
             try {
-                if (f35242a) {
+                if (f21551a) {
                     f(str, str2, str3);
                 } else {
                     g(str, str2, str3);
@@ -353,7 +352,7 @@ public final class ao {
                     g = true;
                     if (h == null) {
                         h = new a(l);
-                    } else if (h.b == null || h.b.length() + f.length() > h.f35249c) {
+                    } else if (h.b == null || h.b.length() + f.length() > h.f21558c) {
                         h.a();
                     }
                     if (h.a(f.toString())) {

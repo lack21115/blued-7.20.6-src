@@ -8,27 +8,27 @@ import com.tencent.thumbplayer.api.TPOptionalParam;
 public class a {
 
     /* renamed from: a  reason: collision with root package name */
-    int f39211a;
+    int f25520a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    int[] f39212c;
+    int[] f25521c;
     boolean d;
 
     public a(c cVar) {
         this.d = false;
-        this.f39211a = 2;
+        this.f25520a = 2;
         this.b = 2;
         if (TPStrategyUtils.isTVPlatform()) {
             this.b = 4;
-            this.f39211a = 2;
+            this.f25520a = 2;
         }
         if (cVar == null) {
             return;
         }
         TPOptionalParam b = cVar.b(210);
         if (b != null && b.getParamType() == 4) {
-            this.f39212c = b.getParamQueueInt().queueValue;
+            this.f25521c = b.getParamQueueInt().queueValue;
             this.d = true;
             return;
         }
@@ -38,9 +38,9 @@ public class a {
         }
         TPOptionalParam b3 = cVar.b(203);
         if (b3 != null && b3.getParamType() == 2 && b(b3.getParamLong().value)) {
-            this.f39211a = (int) b3.getParamLong().value;
+            this.f25520a = (int) b3.getParamLong().value;
         }
-        a(this.b, this.f39211a);
+        a(this.b, this.f25520a);
     }
 
     private void a(int i, int i2) {
@@ -62,11 +62,11 @@ public class a {
     }
 
     public int b() {
-        return this.f39211a;
+        return this.f25520a;
     }
 
     public int[] c() {
-        return this.f39212c;
+        return this.f25521c;
     }
 
     public boolean d() {

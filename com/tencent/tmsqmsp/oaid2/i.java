@@ -12,11 +12,11 @@ public class i {
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public f f39635c;
+    public f f25944c;
     public g d;
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f39634a = false;
+    public boolean f25943a = false;
     public ServiceConnection e = new a();
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/tmsqmsp/oaid2/i$a.class */
@@ -27,7 +27,7 @@ public class i {
         @Override // android.content.ServiceConnection
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
             c.a("HSDID did service binded");
-            i.this.f39635c = f.a.a(iBinder);
+            i.this.f25944c = f.a.a(iBinder);
             i.this.a(true);
         }
 
@@ -43,11 +43,11 @@ public class i {
 
     public void a() {
         try {
-            if (!this.f39634a || this.e == null || this.b == null) {
+            if (!this.f25943a || this.e == null || this.b == null) {
                 return;
             }
             c.a("HSDID start to unbind did service");
-            this.f39634a = false;
+            this.f25943a = false;
             this.b.unbindService(this.e);
         } catch (Exception e) {
             c.b("HSDID error:" + e.getMessage());
@@ -63,7 +63,7 @@ public class i {
             intent2.setComponent(componentName);
             c.a("HSDID start to bind did service");
             boolean bindService = this.b.bindService(intent2, this.e, 1);
-            this.f39634a = bindService;
+            this.f25943a = bindService;
             if (bindService) {
                 return;
             }
@@ -79,7 +79,7 @@ public class i {
             return;
         }
         try {
-            this.d.a(this.f39635c);
+            this.d.a(this.f25944c);
         } catch (Exception e) {
             c.b("HSDID notify did bind status error :" + e.getMessage());
         }

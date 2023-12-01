@@ -26,11 +26,11 @@ public final class SpliceInsertCommand extends SpliceCommand {
     };
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f25543a;
+    public final long f11855a;
     public final boolean b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final boolean f25544c;
+    public final boolean f11856c;
     public final boolean d;
     public final boolean e;
     public final long f;
@@ -46,16 +46,16 @@ public final class SpliceInsertCommand extends SpliceCommand {
     public static final class a {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f25545a;
+        public final int f11857a;
         public final long b;
 
         /* renamed from: c  reason: collision with root package name */
-        public final long f25546c;
+        public final long f11858c;
 
         private a(int i, long j, long j2) {
-            this.f25545a = i;
+            this.f11857a = i;
             this.b = j;
-            this.f25546c = j2;
+            this.f11858c = j2;
         }
 
         public static a b(Parcel parcel) {
@@ -63,16 +63,16 @@ public final class SpliceInsertCommand extends SpliceCommand {
         }
 
         public void a(Parcel parcel) {
-            parcel.writeInt(this.f25545a);
+            parcel.writeInt(this.f11857a);
             parcel.writeLong(this.b);
-            parcel.writeLong(this.f25546c);
+            parcel.writeLong(this.f11858c);
         }
     }
 
     private SpliceInsertCommand(long j, boolean z, boolean z2, boolean z3, boolean z4, long j2, long j3, List<a> list, boolean z5, long j4, int i, int i2, int i3) {
-        this.f25543a = j;
+        this.f11855a = j;
         this.b = z;
-        this.f25544c = z2;
+        this.f11856c = z2;
         this.d = z3;
         this.e = z4;
         this.f = j2;
@@ -86,9 +86,9 @@ public final class SpliceInsertCommand extends SpliceCommand {
     }
 
     private SpliceInsertCommand(Parcel parcel) {
-        this.f25543a = parcel.readLong();
+        this.f11855a = parcel.readLong();
         this.b = parcel.readByte() == 1;
-        this.f25544c = parcel.readByte() == 1;
+        this.f11856c = parcel.readByte() == 1;
         this.d = parcel.readByte() == 1;
         this.e = parcel.readByte() == 1;
         this.f = parcel.readLong();
@@ -175,9 +175,9 @@ public final class SpliceInsertCommand extends SpliceCommand {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(this.f25543a);
+        parcel.writeLong(this.f11855a);
         parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
-        parcel.writeByte(this.f25544c ? (byte) 1 : (byte) 0);
+        parcel.writeByte(this.f11856c ? (byte) 1 : (byte) 0);
         parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
         parcel.writeByte(this.e ? (byte) 1 : (byte) 0);
         parcel.writeLong(this.f);

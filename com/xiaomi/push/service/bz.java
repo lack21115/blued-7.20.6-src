@@ -15,34 +15,34 @@ import java.util.concurrent.atomic.AtomicLong;
 public class bz {
 
     /* renamed from: a  reason: collision with root package name */
-    private static String f41658a;
+    private static String f27967a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static SimpleDateFormat f1038a;
+    private static SimpleDateFormat f991a;
 
     /* renamed from: a  reason: collision with other field name */
-    private static AtomicLong f1039a = new AtomicLong(0);
+    private static AtomicLong f992a = new AtomicLong(0);
 
     static {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        f1038a = simpleDateFormat;
-        f41658a = simpleDateFormat.format(Long.valueOf(System.currentTimeMillis()));
+        f991a = simpleDateFormat;
+        f27967a = simpleDateFormat.format(Long.valueOf(System.currentTimeMillis()));
     }
 
     private static Cif a(String str, String str2, hj hjVar) {
-        return new Cif("-1", false).d(str).b(str2).a(com.xiaomi.push.x.a(iq.a(hjVar))).c(hq.UploadTinyData.f583a);
+        return new Cif("-1", false).d(str).b(str2).a(com.xiaomi.push.x.a(iq.a(hjVar))).c(hq.UploadTinyData.f536a);
     }
 
     public static String a() {
         String str;
         synchronized (bz.class) {
             try {
-                String format = f1038a.format(Long.valueOf(System.currentTimeMillis()));
-                if (!TextUtils.equals(f41658a, format)) {
-                    f1039a.set(0L);
-                    f41658a = format;
+                String format = f991a.format(Long.valueOf(System.currentTimeMillis()));
+                if (!TextUtils.equals(f27967a, format)) {
+                    f992a.set(0L);
+                    f27967a = format;
                 }
-                str = format + "-" + f1039a.incrementAndGet();
+                str = format + Constants.ACCEPT_TIME_SEPARATOR_SERVER + f992a.incrementAndGet();
             } catch (Throwable th) {
                 throw th;
             }
@@ -83,26 +83,26 @@ public class bz {
         String str;
         if (hkVar == null) {
             str = "item is null, verfiy ClientUploadDataItem failed.";
-        } else if (!z && TextUtils.isEmpty(hkVar.f555a)) {
+        } else if (!z && TextUtils.isEmpty(hkVar.f508a)) {
             str = "item.channel is null or empty, verfiy ClientUploadDataItem failed.";
-        } else if (TextUtils.isEmpty(hkVar.f562d)) {
+        } else if (TextUtils.isEmpty(hkVar.f515d)) {
             str = "item.category is null or empty, verfiy ClientUploadDataItem failed.";
-        } else if (TextUtils.isEmpty(hkVar.f561c)) {
+        } else if (TextUtils.isEmpty(hkVar.f514c)) {
             str = "item.name is null or empty, verfiy ClientUploadDataItem failed.";
-        } else if (!com.xiaomi.push.bn.m11548a(hkVar.f562d)) {
+        } else if (!com.xiaomi.push.bn.m8498a(hkVar.f515d)) {
             str = "item.category can only contain ascii char, verfiy ClientUploadDataItem failed.";
-        } else if (!com.xiaomi.push.bn.m11548a(hkVar.f561c)) {
+        } else if (!com.xiaomi.push.bn.m8498a(hkVar.f514c)) {
             str = "item.name can only contain ascii char, verfiy ClientUploadDataItem failed.";
-        } else if (hkVar.f560b == null || hkVar.f560b.length() <= 10240) {
+        } else if (hkVar.f513b == null || hkVar.f513b.length() <= 10240) {
             return false;
         } else {
-            str = "item.data is too large(" + hkVar.f560b.length() + "), max size for data is 10240 , verfiy ClientUploadDataItem failed.";
+            str = "item.data is too large(" + hkVar.f513b.length() + "), max size for data is 10240 , verfiy ClientUploadDataItem failed.";
         }
-        com.xiaomi.channel.commonutils.logger.b.m11394a(str);
+        com.xiaomi.channel.commonutils.logger.b.m8344a(str);
         return true;
     }
 
     public static boolean a(String str) {
-        return !com.xiaomi.push.r.m12070b() || Constants.HYBRID_PACKAGE_NAME.equals(str);
+        return !com.xiaomi.push.r.m9020b() || Constants.HYBRID_PACKAGE_NAME.equals(str);
     }
 }

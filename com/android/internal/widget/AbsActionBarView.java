@@ -31,9 +31,8 @@ public abstract class AbsActionBarView extends ViewGroup {
     protected final VisibilityAnimListener mVisAnimListener;
     protected Animator mVisibilityAnim;
 
-    /* JADX INFO: Access modifiers changed from: protected */
     /* loaded from: source-4181928-dex2jar.jar:com/android/internal/widget/AbsActionBarView$VisibilityAnimListener.class */
-    public class VisibilityAnimListener implements Animator.AnimatorListener {
+    protected class VisibilityAnimListener implements Animator.AnimatorListener {
         private boolean mCanceled = false;
         int mFinalVisibility;
 
@@ -91,7 +90,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         super(context, attributeSet, i, i2);
         this.mVisAnimListener = new VisibilityAnimListener();
         TypedValue typedValue = new TypedValue();
-        if (!context.getTheme().resolveAttribute(16843917, typedValue, true) || typedValue.resourceId == 0) {
+        if (!context.getTheme().resolveAttribute(R.attr.actionBarPopupTheme, typedValue, true) || typedValue.resourceId == 0) {
             this.mPopupContext = context;
         } else {
             this.mPopupContext = new ContextThemeWrapper(context, typedValue.resourceId);
@@ -199,7 +198,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     @Override // android.view.View
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(null, R.styleable.ActionBar, 16843470, 0);
+        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(null, R.styleable.ActionBar, R.attr.actionBarStyle, 0);
         setContentHeight(obtainStyledAttributes.getLayoutDimension(4, 0));
         obtainStyledAttributes.recycle();
         if (this.mSplitWhenNarrow) {

@@ -41,9 +41,9 @@ public class RefinedSoundex implements StringEncoder {
         return soundex(str);
     }
 
-    char getMappingCode(char c2) {
-        if (Character.isLetter(c2)) {
-            return this.soundexMapping[Character.toUpperCase(c2) - 'A'];
+    char getMappingCode(char c) {
+        if (Character.isLetter(c)) {
+            return this.soundexMapping[Character.toUpperCase(c) - 'A'];
         }
         return (char) 0;
     }
@@ -58,14 +58,14 @@ public class RefinedSoundex implements StringEncoder {
         }
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(clean.charAt(0));
-        char c2 = '*';
+        char c = '*';
         for (int i = 0; i < clean.length(); i++) {
             char mappingCode = getMappingCode(clean.charAt(i));
-            if (mappingCode != c2) {
+            if (mappingCode != c) {
                 if (mappingCode != 0) {
                     stringBuffer.append(mappingCode);
                 }
-                c2 = mappingCode;
+                c = mappingCode;
             }
         }
         return stringBuffer.toString();

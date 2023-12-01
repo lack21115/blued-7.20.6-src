@@ -10,14 +10,10 @@ import kotlinx.coroutines.DebugKt;
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/scheduling/WorkQueue.class */
 public final class WorkQueue {
     private static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(WorkQueue.class, Object.class, "lastScheduledTask");
-
-    /* renamed from: c  reason: collision with root package name */
-    private static final /* synthetic */ AtomicIntegerFieldUpdater f43588c = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "producerIndex");
+    private static final /* synthetic */ AtomicIntegerFieldUpdater c = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "producerIndex");
     private static final /* synthetic */ AtomicIntegerFieldUpdater d = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "consumerIndex");
     private static final /* synthetic */ AtomicIntegerFieldUpdater e = AtomicIntegerFieldUpdater.newUpdater(WorkQueue.class, "blockingTasksInBuffer");
-
-    /* renamed from: a  reason: collision with root package name */
-    private final AtomicReferenceArray<Task> f43589a = new AtomicReferenceArray<>(128);
+    private final AtomicReferenceArray<Task> a = new AtomicReferenceArray<>(128);
     private volatile /* synthetic */ Object lastScheduledTask = null;
     private volatile /* synthetic */ int producerIndex = 0;
     private volatile /* synthetic */ int consumerIndex = 0;
@@ -39,9 +35,9 @@ public final class WorkQueue {
                     return -2L;
                 }
             }
-            long a2 = TasksKt.f.a() - task.f;
-            if (a2 < TasksKt.f43586a) {
-                return TasksKt.f43586a - a2;
+            long a = TasksKt.f.a() - task.f;
+            if (a < TasksKt.a) {
+                return TasksKt.a - a;
             }
         } while (!b.compareAndSet(workQueue, task, null));
         a(this, task, false, 2, null);
@@ -60,11 +56,11 @@ public final class WorkQueue {
             return task;
         }
         int i = this.producerIndex & 127;
-        while (this.f43589a.get(i) != null) {
+        while (this.a.get(i) != null) {
             Thread.yield();
         }
-        this.f43589a.lazySet(i, task);
-        f43588c.incrementAndGet(this);
+        this.a.lazySet(i, task);
+        c.incrementAndGet(this);
         return null;
     }
 
@@ -108,7 +104,7 @@ public final class WorkQueue {
             if (i - this.producerIndex == 0) {
                 return null;
             }
-            if (d.compareAndSet(this, i, i + 1) && (andSet = this.f43589a.getAndSet(i & 127, null)) != null) {
+            if (d.compareAndSet(this, i, i + 1) && (andSet = this.a.getAndSet(i & 127, null)) != null) {
                 b(andSet);
                 return andSet;
             }
@@ -127,9 +123,9 @@ public final class WorkQueue {
         }
         Task d2 = workQueue.d();
         if (d2 != null) {
-            Task a2 = a(this, d2, false, 2, null);
+            Task a = a(this, d2, false, 2, null);
             if (DebugKt.a()) {
-                if (a2 == null) {
+                if (a == null) {
                     return -1L;
                 }
                 throw new AssertionError();
@@ -170,7 +166,7 @@ public final class WorkQueue {
             }
         }
         int i = workQueue.producerIndex;
-        AtomicReferenceArray<Task> atomicReferenceArray = workQueue.f43589a;
+        AtomicReferenceArray<Task> atomicReferenceArray = workQueue.a;
         for (int i2 = workQueue.consumerIndex; i2 != i; i2++) {
             int i3 = i2 & 127;
             if (workQueue.blockingTasksInBuffer == 0) {

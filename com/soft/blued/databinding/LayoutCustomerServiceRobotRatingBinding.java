@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class LayoutCustomerServiceRobotRatingBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f29388a;
+    private final LinearLayout f15698a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f29388a;
+        return this.f15698a;
     }
 }

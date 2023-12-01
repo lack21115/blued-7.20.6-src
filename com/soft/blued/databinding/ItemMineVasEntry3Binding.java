@@ -13,11 +13,11 @@ import com.soft.blued.R;
 public final class ItemMineVasEntry3Binding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f29238a;
+    public final ShapeTextView f15548a;
     public final ShapeTextView b;
 
     /* renamed from: c  reason: collision with root package name */
-    public final ImageView f29239c;
+    public final ImageView f15549c;
     public final ImageView d;
     public final ShapeConstraintLayout e;
     public final ShapeConstraintLayout f;
@@ -32,9 +32,9 @@ public final class ItemMineVasEntry3Binding implements ViewBinding {
 
     private ItemMineVasEntry3Binding(LinearLayout linearLayout, ShapeTextView shapeTextView, ShapeTextView shapeTextView2, ImageView imageView, ImageView imageView2, ShapeConstraintLayout shapeConstraintLayout, ShapeConstraintLayout shapeConstraintLayout2, LinearLayout linearLayout2, TextView textView, TextView textView2, ShapeTextView shapeTextView3, ShapeTextView shapeTextView4, TextView textView3, TextView textView4) {
         this.n = linearLayout;
-        this.f29238a = shapeTextView;
+        this.f15548a = shapeTextView;
         this.b = shapeTextView2;
-        this.f29239c = imageView;
+        this.f15549c = imageView;
         this.d = imageView2;
         this.e = shapeConstraintLayout;
         this.f = shapeConstraintLayout2;
@@ -49,33 +49,33 @@ public final class ItemMineVasEntry3Binding implements ViewBinding {
 
     public static ItemMineVasEntry3Binding a(View view) {
         String str;
-        ShapeTextView shapeTextView = (ShapeTextView) view.findViewById(R.id.iv_dot_1);
-        if (shapeTextView != null) {
-            ShapeTextView shapeTextView2 = (ShapeTextView) view.findViewById(R.id.iv_dot_2);
-            if (shapeTextView2 != null) {
+        ShapeTextView findViewById = view.findViewById(R.id.iv_dot_1);
+        if (findViewById != null) {
+            ShapeTextView findViewById2 = view.findViewById(R.id.iv_dot_2);
+            if (findViewById2 != null) {
                 ImageView imageView = (ImageView) view.findViewById(R.id.iv_icon_1);
                 if (imageView != null) {
                     ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_icon_2);
                     if (imageView2 != null) {
-                        ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.ll_all_1);
-                        if (shapeConstraintLayout != null) {
-                            ShapeConstraintLayout shapeConstraintLayout2 = (ShapeConstraintLayout) view.findViewById(R.id.ll_all_2);
-                            if (shapeConstraintLayout2 != null) {
+                        ShapeConstraintLayout findViewById3 = view.findViewById(R.id.ll_all_1);
+                        if (findViewById3 != null) {
+                            ShapeConstraintLayout findViewById4 = view.findViewById(R.id.ll_all_2);
+                            if (findViewById4 != null) {
                                 LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.ll_vas);
                                 if (linearLayout != null) {
                                     TextView textView = (TextView) view.findViewById(R.id.tv_des_1);
                                     if (textView != null) {
                                         TextView textView2 = (TextView) view.findViewById(R.id.tv_des_2);
                                         if (textView2 != null) {
-                                            ShapeTextView shapeTextView3 = (ShapeTextView) view.findViewById(R.id.tv_time1);
-                                            if (shapeTextView3 != null) {
-                                                ShapeTextView shapeTextView4 = (ShapeTextView) view.findViewById(R.id.tv_time2);
-                                                if (shapeTextView4 != null) {
+                                            ShapeTextView findViewById5 = view.findViewById(R.id.tv_time1);
+                                            if (findViewById5 != null) {
+                                                ShapeTextView findViewById6 = view.findViewById(R.id.tv_time2);
+                                                if (findViewById6 != null) {
                                                     TextView textView3 = (TextView) view.findViewById(R.id.tv_title_1);
                                                     if (textView3 != null) {
-                                                        TextView textView4 = (TextView) view.findViewById(2131372756);
+                                                        TextView textView4 = (TextView) view.findViewById(R.id.tv_title_2);
                                                         if (textView4 != null) {
-                                                            return new ItemMineVasEntry3Binding((LinearLayout) view, shapeTextView, shapeTextView2, imageView, imageView2, shapeConstraintLayout, shapeConstraintLayout2, linearLayout, textView, textView2, shapeTextView3, shapeTextView4, textView3, textView4);
+                                                            return new ItemMineVasEntry3Binding((LinearLayout) view, findViewById, findViewById2, imageView, imageView2, findViewById3, findViewById4, linearLayout, textView, textView2, findViewById5, findViewById6, textView3, textView4);
                                                         }
                                                         str = "tvTitle2";
                                                     } else {

@@ -1,5 +1,6 @@
 package androidx.appcompat.view.menu;
 
+import android.R;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -13,20 +14,20 @@ import com.bytedance.applog.tracker.Tracker;
 public final class ExpandedMenuView extends ListView implements AdapterView.OnItemClickListener, MenuBuilder.ItemInvoker, MenuView {
 
     /* renamed from: a  reason: collision with root package name */
-    private static final int[] f1668a = {16842964, 16843049};
+    private static final int[] f1620a = {R.attr.background, R.attr.divider};
     private MenuBuilder b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f1669c;
+    private int f1621c;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, 16842868);
+        this(context, attributeSet, R.attr.listViewStyle);
     }
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet);
         setOnItemClickListener(this);
-        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, f1668a, i, 0);
+        TintTypedArray obtainStyledAttributes = TintTypedArray.obtainStyledAttributes(context, attributeSet, f1620a, i, 0);
         if (obtainStyledAttributes.hasValue(0)) {
             setBackgroundDrawable(obtainStyledAttributes.getDrawable(0));
         }
@@ -38,7 +39,7 @@ public final class ExpandedMenuView extends ListView implements AdapterView.OnIt
 
     @Override // androidx.appcompat.view.menu.MenuView
     public int getWindowAnimations() {
-        return this.f1669c;
+        return this.f1621c;
     }
 
     @Override // androidx.appcompat.view.menu.MenuView
@@ -51,9 +52,8 @@ public final class ExpandedMenuView extends ListView implements AdapterView.OnIt
         return this.b.performItemAction(menuItemImpl, 0);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    @Override // android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
+    @Override // android.widget.ListView, android.widget.AbsListView, android.widget.AdapterView, android.view.ViewGroup, android.view.View
+    protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         setChildrenDrawingCacheEnabled(false);
     }

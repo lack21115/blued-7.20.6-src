@@ -6,6 +6,7 @@ import android.os.Looper;
 import com.sdk.tencent.a.d;
 import com.sdk.tencent.base.api.CallBack;
 import com.sdk.tencent.base.framework.bean.DataInfo;
+import com.xiaomi.mipush.sdk.Constants;
 import org.json.JSONObject;
 
 /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/w/a.class */
@@ -14,23 +15,23 @@ public class a<T> {
     public static Boolean g = Boolean.valueOf(com.sdk.tencent.f.c.b);
 
     /* renamed from: a  reason: collision with root package name */
-    public a<T>.c f28087a;
+    public a<T>.c f14399a;
     public Context b;
 
     /* renamed from: c  reason: collision with root package name */
-    public com.sdk.tencent.a.c f28088c;
+    public com.sdk.tencent.a.c f14400c;
     public int d;
     public CallBack<T> e;
 
     /* renamed from: com.sdk.tencent.w.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/sdk/tencent/w/a$a.class */
-    public class C0764a implements com.sdk.tencent.e.a<T> {
+    public class C0594a implements com.sdk.tencent.e.a<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ int f28089a;
+        public final /* synthetic */ int f14401a;
 
-        public C0764a(int i) {
-            this.f28089a = i;
+        public C0594a(int i) {
+            this.f14401a = i;
         }
 
         @Override // com.sdk.tencent.e.a
@@ -46,11 +47,11 @@ public class a<T> {
             if (i == 0) {
                 try {
                     Context context = a.this.b;
-                    int i3 = this.f28089a;
-                    String str4 = com.sdk.tencent.b.a.f28016a;
+                    int i3 = this.f14401a;
+                    String str4 = com.sdk.tencent.b.a.f14328a;
                     StringBuilder sb = new StringBuilder();
                     sb.append(t);
-                    sb.append("-");
+                    sb.append(Constants.ACCEPT_TIME_SEPARATOR_SERVER);
                     sb.append(str2);
                     com.sdk.tencent.b.a.a(context, i3, sb.toString(), "CTC");
                     Context context2 = a.this.b;
@@ -61,7 +62,7 @@ public class a<T> {
                     }
                     JSONObject jSONObject = new JSONObject(a2);
                     str3 = a2;
-                    if (this.f28089a == 1) {
+                    if (this.f14401a == 1) {
                         jSONObject.remove("fakeMobile");
                         str3 = jSONObject.toString();
                     }
@@ -78,10 +79,10 @@ public class a<T> {
     public class b implements com.sdk.tencent.e.a<T> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f28090a;
+        public final /* synthetic */ String f14402a;
 
         public b(String str) {
-            this.f28090a = str;
+            this.f14402a = str;
         }
 
         @Override // com.sdk.tencent.e.a
@@ -93,7 +94,7 @@ public class a<T> {
         /* JADX WARN: Type inference failed for: r0v12, types: [java.lang.String] */
         @Override // com.sdk.tencent.e.a
         public void onSuccess(int i, String str, int i2, T t, String str2) {
-            if (i == 0 && com.sdk.tencent.n.b.a(this.f28090a).booleanValue()) {
+            if (i == 0 && com.sdk.tencent.n.b.a(this.f14402a).booleanValue()) {
                 Context context = a.this.b;
                 t = com.sdk.tencent.s.a.a(String.valueOf(t));
                 if (t == null) {
@@ -109,7 +110,7 @@ public class a<T> {
     public class c implements Runnable {
 
         /* renamed from: a  reason: collision with root package name */
-        public Handler f28091a = new Handler(Looper.getMainLooper());
+        public Handler f14403a = new Handler(Looper.getMainLooper());
         public long b;
 
         public c(long j) {
@@ -117,16 +118,16 @@ public class a<T> {
         }
 
         public void a() {
-            this.f28091a.postDelayed(this, this.b);
+            this.f14403a.postDelayed(this, this.b);
         }
 
         @Override // java.lang.Runnable
         public void run() {
-            if (a.this.f28088c != null) {
+            if (a.this.f14400c != null) {
                 com.sdk.tencent.n.b.c(a.f, "超时，已取消请求", a.g);
-                a.this.f28088c.a();
+                a.this.f14400c.a();
             }
-            a.this.a(1, "超时", 101005, null, com.sdk.tencent.n.c.a().f28045c);
+            a.this.a(1, "超时", 101005, null, com.sdk.tencent.n.c.a().f14357c);
         }
     }
 
@@ -136,7 +137,7 @@ public class a<T> {
         int i2 = i <= 0 ? 30 : i;
         this.d = i2;
         a<T>.c cVar = new c(i2 * 1000);
-        this.f28087a = cVar;
+        this.f14399a = cVar;
         cVar.a();
         com.sdk.tencent.n.c.b();
     }
@@ -148,29 +149,29 @@ public class a<T> {
         } else if (!com.sdk.tencent.q.b.a(this.b)) {
             a(1, 201001, "操作频繁请,稍后再试");
         } else {
-            com.sdk.tencent.x.a aVar = new com.sdk.tencent.x.a(this.b, new C0764a(i));
+            com.sdk.tencent.x.a aVar = new com.sdk.tencent.x.a(this.b, new C0594a(i));
             DataInfo dataInfo = new DataInfo();
             dataInfo.putData("serviceType", Integer.valueOf(i));
-            this.f28088c = aVar.a(aVar.g, "/dro/ctc/v1.0/gctcbs", dataInfo, new com.sdk.tencent.g.a(aVar), 0, d.b.POST);
+            this.f14400c = aVar.a(aVar.g, "/dro/ctc/v1.0/gctcbs", dataInfo, new com.sdk.tencent.g.a(aVar), 0, d.b.POST);
         }
     }
 
     public final void a(int i, int i2, String str) {
-        String str2 = com.sdk.tencent.n.c.a().f28045c;
+        String str2 = com.sdk.tencent.n.c.a().f14357c;
         String str3 = str2;
         if (com.sdk.tencent.n.b.a(str2).booleanValue()) {
             str3 = com.sdk.tencent.q.a.a(20);
         }
-        a<T>.c cVar = this.f28087a;
+        a<T>.c cVar = this.f14399a;
         if (cVar != null) {
-            cVar.f28091a.removeCallbacks(cVar);
+            cVar.f14403a.removeCallbacks(cVar);
         }
         CallBack<T> callBack = this.e;
         if (callBack != null) {
             callBack.onFailed(i, i2, str, str3);
             this.e = null;
         }
-        String str4 = com.sdk.tencent.s.a.f28077a;
+        String str4 = com.sdk.tencent.s.a.f14389a;
     }
 
     public final void a(int i, String str, int i2, T t, String str2) {
@@ -178,16 +179,16 @@ public class a<T> {
         if (com.sdk.tencent.n.b.a(str2).booleanValue()) {
             str3 = com.sdk.tencent.q.a.a(20);
         }
-        a<T>.c cVar = this.f28087a;
+        a<T>.c cVar = this.f14399a;
         if (cVar != null) {
-            cVar.f28091a.removeCallbacks(cVar);
+            cVar.f14403a.removeCallbacks(cVar);
         }
         CallBack<T> callBack = this.e;
         if (callBack != null) {
             callBack.onSuccess(i, str, i2, t, str3);
             this.e = null;
         }
-        String str4 = com.sdk.tencent.s.a.f28077a;
+        String str4 = com.sdk.tencent.s.a.f14389a;
     }
 
     public void a(String str, String str2) {
@@ -197,7 +198,7 @@ public class a<T> {
         d.b bVar;
         String str4;
         Context context = this.b;
-        com.sdk.tencent.n.b.b(com.sdk.tencent.b.a.f28016a, "oauth cache clear", com.sdk.tencent.b.a.b);
+        com.sdk.tencent.n.b.b(com.sdk.tencent.b.a.f14328a, "oauth cache clear", com.sdk.tencent.b.a.b);
         com.sdk.tencent.j.a.a(context, "accessCode1");
         com.sdk.tencent.x.a aVar2 = new com.sdk.tencent.x.a(this.b, new b(str2));
         if (com.sdk.tencent.n.b.a(str2).booleanValue()) {
@@ -216,6 +217,6 @@ public class a<T> {
             bVar = d.b.POST;
             str4 = "/api/ctc/v1.0/gvctc";
         }
-        this.f28088c = aVar2.a(str3, str4, dataInfo, aVar, 0, bVar);
+        this.f14400c = aVar2.a(str3, str4, dataInfo, aVar, 0, bVar);
     }
 }

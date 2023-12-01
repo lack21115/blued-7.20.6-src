@@ -32,14 +32,14 @@ public class ModifiedUtf8 {
         int i4 = 0;
         while (i4 < i2) {
             int i5 = i4 + 1;
-            char c2 = (char) bArr[i + i4];
-            cArr[i3] = c2;
-            if (c2 < 128) {
+            char c = (char) bArr[i + i4];
+            cArr[i3] = c;
+            if (c < 128) {
                 i3++;
                 i4 = i5;
             } else {
-                char c3 = cArr[i3];
-                if ((c3 & 224) == 192) {
+                char c2 = cArr[i3];
+                if ((c2 & 224) == 192) {
                     if (i5 >= i2) {
                         throw new UTFDataFormatException("bad second byte at " + i5);
                     }
@@ -48,9 +48,9 @@ public class ModifiedUtf8 {
                     if ((b & 192) != 128) {
                         throw new UTFDataFormatException("bad second byte at " + (i4 - 1));
                     }
-                    cArr[i3] = (char) (((c3 & 31) << 6) | (b & 63));
+                    cArr[i3] = (char) (((c2 & 31) << 6) | (b & 63));
                     i3++;
-                } else if ((c3 & 240) != 224) {
+                } else if ((c2 & 240) != 224) {
                     throw new UTFDataFormatException("bad byte at " + (i5 - 1));
                 } else {
                     if (i5 + 1 >= i2) {
@@ -63,7 +63,7 @@ public class ModifiedUtf8 {
                     if ((b2 & 192) != 128 || (b3 & 192) != 128) {
                         throw new UTFDataFormatException("bad second or third byte at " + (i4 - 2));
                     }
-                    cArr[i3] = (char) (((c3 & 15) << 12) | ((b2 & 63) << 6) | (b3 & 63));
+                    cArr[i3] = (char) (((c2 & 15) << 12) | ((b2 & 63) << 6) | (b3 & 63));
                     i3++;
                 }
             }

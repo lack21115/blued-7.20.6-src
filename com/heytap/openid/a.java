@@ -9,17 +9,17 @@ public interface a extends IInterface {
 
     /* renamed from: com.heytap.openid.a$a  reason: collision with other inner class name */
     /* loaded from: source-7994992-dex2jar.jar:com/heytap/openid/a$a.class */
-    public static abstract class AbstractBinderC0384a extends Binder implements a {
+    public static abstract class AbstractBinderC0214a extends Binder implements a {
 
         /* renamed from: com.heytap.openid.a$a$a  reason: collision with other inner class name */
         /* loaded from: source-7994992-dex2jar.jar:com/heytap/openid/a$a$a.class */
-        public static class C0385a implements a {
+        public static class C0215a implements a {
 
             /* renamed from: a  reason: collision with root package name */
-            public IBinder f22267a;
+            public IBinder f8659a;
 
-            public C0385a(IBinder iBinder) {
-                this.f22267a = iBinder;
+            public C0215a(IBinder iBinder) {
+                this.f8659a = iBinder;
             }
 
             public native String a(String str, String str2, String str3);

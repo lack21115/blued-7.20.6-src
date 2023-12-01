@@ -4,11 +4,11 @@ package com.igexin.push;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final boolean f23284a = false;
+    public static final boolean f9676a = false;
     public static final String b = "com.igexin.push";
 
     /* renamed from: c  reason: collision with root package name */
-    public static final String f23285c = "release";
+    public static final String f9677c = "release";
     public static final int d = 32140;
     public static final String e = "3.2.14.0";
     public static final boolean f = false;

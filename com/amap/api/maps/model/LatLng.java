@@ -36,7 +36,7 @@ public final class LatLng implements Parcelable, Cloneable {
     }
 
     /* renamed from: clone */
-    public final LatLng m2408clone() {
+    public final LatLng m8851clone() {
         return new LatLng(this.latitude, this.longitude);
     }
 

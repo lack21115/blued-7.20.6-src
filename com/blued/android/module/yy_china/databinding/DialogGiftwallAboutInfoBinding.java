@@ -10,13 +10,9 @@ import com.blued.android.module.yy_china.R;
 
 /* loaded from: source-5382004-dex2jar.jar:com/blued/android/module/yy_china/databinding/DialogGiftwallAboutInfoBinding.class */
 public final class DialogGiftwallAboutInfoBinding implements ViewBinding {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ImageView f16346a;
+    public final ImageView a;
     public final ImageView b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ConstraintLayout f16347c;
+    public final ConstraintLayout c;
     public final ShapeConstraintLayout d;
     public final TextView e;
     public final TextView f;
@@ -26,9 +22,9 @@ public final class DialogGiftwallAboutInfoBinding implements ViewBinding {
 
     private DialogGiftwallAboutInfoBinding(ConstraintLayout constraintLayout, ImageView imageView, ImageView imageView2, ConstraintLayout constraintLayout2, ShapeConstraintLayout shapeConstraintLayout, TextView textView, TextView textView2, TextView textView3, TextView textView4) {
         this.i = constraintLayout;
-        this.f16346a = imageView;
+        this.a = imageView;
         this.b = imageView2;
-        this.f16347c = constraintLayout2;
+        this.c = constraintLayout2;
         this.d = shapeConstraintLayout;
         this.e = textView;
         this.f = textView2;
@@ -42,8 +38,8 @@ public final class DialogGiftwallAboutInfoBinding implements ViewBinding {
         if (imageView != null) {
             ImageView imageView2 = (ImageView) view.findViewById(R.id.iv_close);
             if (imageView2 != null) {
-                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.sha_);
-                if (constraintLayout != null) {
+                ConstraintLayout findViewById = view.findViewById(R.id.sha_);
+                if (findViewById != null) {
                     ShapeConstraintLayout shapeConstraintLayout = (ShapeConstraintLayout) view.findViewById(R.id.shap_con);
                     if (shapeConstraintLayout != null) {
                         TextView textView = (TextView) view.findViewById(R.id.tv_botto);
@@ -54,7 +50,7 @@ public final class DialogGiftwallAboutInfoBinding implements ViewBinding {
                                 if (textView3 != null) {
                                     TextView textView4 = (TextView) view.findViewById(R.id.tv_type_time);
                                     if (textView4 != null) {
-                                        return new DialogGiftwallAboutInfoBinding((ConstraintLayout) view, imageView, imageView2, constraintLayout, shapeConstraintLayout, textView, textView2, textView3, textView4);
+                                        return new DialogGiftwallAboutInfoBinding((ConstraintLayout) view, imageView, imageView2, findViewById, shapeConstraintLayout, textView, textView2, textView3, textView4);
                                     }
                                     str = "tvTypeTime";
                                 } else {
@@ -81,7 +77,6 @@ public final class DialogGiftwallAboutInfoBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.i;

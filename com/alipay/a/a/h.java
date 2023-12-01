@@ -68,18 +68,18 @@ public final class h implements i, j {
     public final Object a(Object obj, Type type) {
         if (obj.getClass().equals(org.json.alipay.b.class)) {
             org.json.alipay.b bVar = (org.json.alipay.b) obj;
-            Map<Object, Object> a2 = a(type);
+            Map<Object, Object> a = a(type);
             if (type instanceof ParameterizedType) {
                 ParameterizedType parameterizedType = (ParameterizedType) type;
                 Type type2 = parameterizedType.getActualTypeArguments()[0];
                 Type type3 = parameterizedType.getActualTypeArguments()[1];
                 if (String.class == type2) {
-                    Iterator a3 = bVar.a();
-                    while (a3.hasNext()) {
-                        String str = (String) a3.next();
-                        a2.put(str, com.alipay.a.b.a.a((Class<?>) ((Class) type3)) ? bVar.a(str) : e.a(bVar.a(str), type3));
+                    Iterator a2 = bVar.a();
+                    while (a2.hasNext()) {
+                        String str = (String) a2.next();
+                        a.put(str, com.alipay.a.b.a.a((Class<?>) ((Class) type3)) ? bVar.a(str) : e.a(bVar.a(str), type3));
                     }
-                    return a2;
+                    return a;
                 }
                 throw new IllegalArgumentException("Deserialize Map Key must be String.class");
             }

@@ -15,11 +15,11 @@ public final class CompletionStateKt {
     public static final <T> Object a(Object obj, Continuation<? super T> continuation) {
         Throwable b;
         if (!(obj instanceof CompletedExceptionally)) {
-            Result.Companion companion = Result.f42293a;
+            Result.Companion companion = Result.a;
             return Result.f(obj);
         }
-        Result.Companion companion2 = Result.f42293a;
-        Throwable th = ((CompletedExceptionally) obj).f42791a;
+        Result.Companion companion2 = Result.a;
+        Throwable th = ((CompletedExceptionally) obj).a;
         Throwable th2 = th;
         if (DebugKt.c()) {
             if (continuation instanceof CoroutineStackFrame) {
@@ -34,14 +34,14 @@ public final class CompletionStateKt {
 
     public static final <T> Object a(Object obj, Function1<? super Throwable, Unit> function1) {
         CompletedExceptionally completedExceptionally;
-        Throwable c2 = Result.c(obj);
-        if (c2 == null) {
+        Throwable c = Result.c(obj);
+        if (c == null) {
             completedExceptionally = obj;
             if (function1 != null) {
                 return new CompletedWithCancellation(obj, function1);
             }
         } else {
-            completedExceptionally = new CompletedExceptionally(c2, false, 2, null);
+            completedExceptionally = new CompletedExceptionally(c, false, 2, null);
         }
         return completedExceptionally;
     }
@@ -55,18 +55,18 @@ public final class CompletionStateKt {
 
     public static final <T> Object a(Object obj, CancellableContinuation<?> cancellableContinuation) {
         Throwable b;
-        Throwable c2 = Result.c(obj);
-        if (c2 == null) {
+        Throwable c = Result.c(obj);
+        if (c == null) {
             return obj;
         }
-        Throwable th = c2;
+        Throwable th = c;
         if (DebugKt.c()) {
             CancellableContinuation<?> cancellableContinuation2 = cancellableContinuation;
             if (cancellableContinuation2 instanceof CoroutineStackFrame) {
-                b = StackTraceRecoveryKt.b(c2, (CoroutineStackFrame) cancellableContinuation2);
+                b = StackTraceRecoveryKt.b(c, (CoroutineStackFrame) cancellableContinuation2);
                 th = b;
             } else {
-                th = c2;
+                th = c;
             }
         }
         return new CompletedExceptionally(th, false, 2, null);

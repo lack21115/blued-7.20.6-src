@@ -20,13 +20,9 @@ public final class Crossroad extends Road implements Parcelable {
             return null;
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private float f5672a;
+    private float a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5673c;
+    private String c;
     private String d;
     private String e;
     private String f;
@@ -36,9 +32,9 @@ public final class Crossroad extends Road implements Parcelable {
 
     private Crossroad(Parcel parcel) {
         super(parcel);
-        this.f5672a = parcel.readFloat();
+        this.a = parcel.readFloat();
         this.b = parcel.readString();
-        this.f5673c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readString();
@@ -58,11 +54,11 @@ public final class Crossroad extends Road implements Parcelable {
     }
 
     public final float getDistance() {
-        return this.f5672a;
+        return this.a;
     }
 
     public final String getFirstRoadId() {
-        return this.f5673c;
+        return this.c;
     }
 
     public final String getFirstRoadName() {
@@ -82,11 +78,11 @@ public final class Crossroad extends Road implements Parcelable {
     }
 
     public final void setDistance(float f) {
-        this.f5672a = f;
+        this.a = f;
     }
 
     public final void setFirstRoadId(String str) {
-        this.f5673c = str;
+        this.c = str;
     }
 
     public final void setFirstRoadName(String str) {
@@ -104,9 +100,9 @@ public final class Crossroad extends Road implements Parcelable {
     @Override // com.amap.api.services.road.Road, android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
         super.writeToParcel(parcel, i);
-        parcel.writeFloat(this.f5672a);
+        parcel.writeFloat(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5673c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeString(this.f);

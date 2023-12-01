@@ -4,15 +4,13 @@ import java.io.IOException;
 
 /* loaded from: source-3503164-dex2jar.jar:org/commonmark/renderer/text/TextContentWriter.class */
 public class TextContentWriter {
-
-    /* renamed from: a  reason: collision with root package name */
-    private final Appendable f44089a;
+    private final Appendable a;
     private char b;
 
-    private void b(char c2) {
+    private void b(char c) {
         try {
-            this.f44089a.append(c2);
-            this.b = c2;
+            this.a.append(c);
+            this.b = c;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -20,7 +18,7 @@ public class TextContentWriter {
 
     private void c(String str) {
         try {
-            this.f44089a.append(str);
+            this.a.append(str);
             int length = str.length();
             if (length != 0) {
                 this.b = str.charAt(length - 1);
@@ -31,15 +29,15 @@ public class TextContentWriter {
     }
 
     public void a() {
-        char c2 = this.b;
-        if (c2 == 0 || c2 == ' ') {
+        char c = this.b;
+        if (c == 0 || c == ' ') {
             return;
         }
         b(' ');
     }
 
-    public void a(char c2) {
-        b(c2);
+    public void a(char c) {
+        b(c);
     }
 
     public void a(String str) {
@@ -47,8 +45,8 @@ public class TextContentWriter {
     }
 
     public void b() {
-        char c2 = this.b;
-        if (c2 == 0 || c2 == ':') {
+        char c = this.b;
+        if (c == 0 || c == ':') {
             return;
         }
         b(':');
@@ -59,8 +57,8 @@ public class TextContentWriter {
     }
 
     public void c() {
-        char c2 = this.b;
-        if (c2 == 0 || c2 == '\n') {
+        char c = this.b;
+        if (c == 0 || c == '\n') {
             return;
         }
         b('\n');

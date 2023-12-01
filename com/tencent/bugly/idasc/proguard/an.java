@@ -6,5 +6,5 @@ import java.net.Proxy;
 public final class an {
 
     /* renamed from: a  reason: collision with root package name */
-    public static Proxy f35241a;
+    public static Proxy f21550a;
 }

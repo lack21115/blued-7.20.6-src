@@ -20,13 +20,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/b.class */
 public class b extends com.anythink.core.common.k.a implements k.b {
-
-    /* renamed from: a  reason: collision with root package name */
-    public static final String f6346a = b.class.getSimpleName();
+    public static final String a = b.class.getSimpleName();
     Map<String, com.anythink.core.common.e.e> b = new ConcurrentHashMap(3);
-
-    /* renamed from: c  reason: collision with root package name */
-    Runnable f6347c = new Runnable() { // from class: com.anythink.core.b.b.1
+    Runnable c = new Runnable() { // from class: com.anythink.core.b.b.1
         @Override // java.lang.Runnable
         public final void run() {
             com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.core.b.b.1.1
@@ -50,21 +46,19 @@ public class b extends com.anythink.core.common.k.a implements k.b {
     /* renamed from: com.anythink.core.b.b$5  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/b$5.class */
     public final class AnonymousClass5 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.core.common.e.e f6356a;
+        final /* synthetic */ com.anythink.core.common.e.e a;
         final /* synthetic */ ai b;
 
         AnonymousClass5(com.anythink.core.common.e.e eVar, ai aiVar) {
-            this.f6356a = eVar;
+            this.a = eVar;
             this.b = aiVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             if (b.this.i.b.e != null) {
-                if (this.f6356a != null) {
-                    b.this.i.b.e.a(this.f6356a, ErrorCode.getErrorCode(ErrorCode.adSourceBidError, "", this.b.z()));
+                if (this.a != null) {
+                    b.this.i.b.e.a(this.a, ErrorCode.getErrorCode(ErrorCode.adSourceBidError, "", this.b.z()));
                 }
                 b.this.b.remove(this.b.t());
             }
@@ -75,23 +69,21 @@ public class b extends com.anythink.core.common.k.a implements k.b {
     /* renamed from: com.anythink.core.b.b$6  reason: invalid class name */
     /* loaded from: source-6737240-dex2jar.jar:com/anythink/core/b/b$6.class */
     public final class AnonymousClass6 implements Runnable {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ com.anythink.core.common.e.e f6358a;
+        final /* synthetic */ com.anythink.core.common.e.e a;
         final /* synthetic */ ai b;
 
         AnonymousClass6(com.anythink.core.common.e.e eVar, ai aiVar) {
-            this.f6358a = eVar;
+            this.a = eVar;
             this.b = aiVar;
         }
 
         @Override // java.lang.Runnable
         public final void run() {
             if (b.this.i.b.e != null) {
-                com.anythink.core.common.e.e eVar = this.f6358a;
+                com.anythink.core.common.e.e eVar = this.a;
                 if (eVar != null) {
                     s.a(eVar, this.b, 0, false);
-                    b.this.i.b.e.b(this.f6358a);
+                    b.this.i.b.e.b(this.a);
                 }
                 b.this.b.remove(this.b.t());
             }
@@ -178,7 +170,7 @@ public class b extends com.anythink.core.common.k.a implements k.b {
                 final ArrayList arrayList = new ArrayList();
                 final ArrayList arrayList2 = new ArrayList();
                 ArrayList arrayList3 = new ArrayList();
-                com.anythink.core.c.d a2 = com.anythink.core.c.e.a(this.i.f6611a).a(this.d);
+                com.anythink.core.c.d a2 = com.anythink.core.c.e.a(this.i.a).a(this.d);
                 if (size > 0) {
                     int i = 0;
                     while (true) {
@@ -253,7 +245,7 @@ public class b extends com.anythink.core.common.k.a implements k.b {
                         }
                     });
                 }
-                com.anythink.core.b.d.a.a(this.i.d, this.i.n, this.i.f6612c, this.i.b != null ? this.i.b.d : 0, arrayList3, this.k, this.i.s.S(), this.i.u);
+                com.anythink.core.b.d.a.a(this.i.d, this.i.n, this.i.c, this.i.b != null ? this.i.b.d : 0, arrayList3, this.k, this.i.s.S(), this.i.u);
                 com.anythink.core.common.k.b.a.a().a(new Runnable() { // from class: com.anythink.core.b.b.4
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -300,7 +292,7 @@ public class b extends com.anythink.core.common.k.a implements k.b {
                         m N4 = unitGroupInfo.N();
                         if (N4 != null) {
                             double a3 = com.anythink.core.common.k.g.a(aiVar);
-                            String str2 = this.i.f6612c;
+                            String str2 = this.i.c;
                             String str3 = this.i.d;
                             com.anythink.core.c.d dVar = this.i.n;
                             Map<String, Object> map = null;
@@ -309,14 +301,14 @@ public class b extends com.anythink.core.common.k.a implements k.b {
                             }
                             com.anythink.core.common.e.e a4 = s.a(str2, str3, "", dVar, "", 1, 0, 0, map);
                             r rVar = new r();
-                            rVar.f6674a = 2;
+                            rVar.a = 2;
                             rVar.b = a3;
                             rVar.e = a4;
-                            rVar.f6675c = aiVar;
+                            rVar.c = aiVar;
                             rVar.d = unitGroupInfo;
                             N4.a(rVar, true);
                         }
-                        w.a().a(this.i.d, this.i.f6612c, unitGroupInfo);
+                        w.a().a(this.i.d, this.i.c, unitGroupInfo);
                         com.anythink.core.common.a.a().a(str, aiVar.t());
                         return;
                     }
@@ -324,7 +316,7 @@ public class b extends com.anythink.core.common.k.a implements k.b {
                     double a5 = com.anythink.core.common.k.g.a(unitGroupInfo2);
                     String str4 = unitGroupInfo2.N() != null ? unitGroupInfo2.N().token : "";
                     if (N != null && !TextUtils.equals(N.token, str4)) {
-                        String str5 = this.i.f6612c;
+                        String str5 = this.i.c;
                         String str6 = this.i.d;
                         com.anythink.core.c.d dVar2 = this.i.n;
                         Map<String, Object> map2 = null;
@@ -335,13 +327,13 @@ public class b extends com.anythink.core.common.k.a implements k.b {
                         r rVar2 = new r();
                         rVar2.b = a5;
                         rVar2.e = a6;
-                        rVar2.f6675c = unitGroupInfo2;
+                        rVar2.c = unitGroupInfo2;
                         rVar2.d = aiVar;
                         if (unitGroupInfo2.aa()) {
-                            rVar2.f6674a = 3;
+                            rVar2.a = 3;
                             N.a(rVar2, true);
                         } else {
-                            rVar2.f6674a = 2;
+                            rVar2.a = 2;
                             N.a(rVar2, true);
                         }
                     }
@@ -391,14 +383,14 @@ public class b extends com.anythink.core.common.k.a implements k.b {
         if (j <= 0) {
             j2 = 2000;
         }
-        n.a().a(this.f6347c, j2);
+        n.a().a(this.c, j2);
     }
 
     private void e() {
         synchronized (this) {
             if (this.j.size() == 0) {
                 a();
-                n.a().c(this.f6347c);
+                n.a().c(this.c);
                 if (this.e != null) {
                     this.e.b(this.f);
                 }
@@ -420,7 +412,7 @@ public class b extends com.anythink.core.common.k.a implements k.b {
         if (j <= 0) {
             j2 = 2000;
         }
-        n.a().a(this.f6347c, j2);
+        n.a().a(this.c, j2);
         this.k = System.currentTimeMillis();
         for (Map.Entry entry : new HashMap(this.j).entrySet()) {
             final Integer num = (Integer) entry.getKey();

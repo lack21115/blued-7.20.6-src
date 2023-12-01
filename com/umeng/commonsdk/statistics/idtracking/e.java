@@ -2,6 +2,7 @@ package com.umeng.commonsdk.statistics.idtracking;
 
 import android.content.Context;
 import android.text.TextUtils;
+import com.anythink.pd.ExHandler;
 import com.umeng.analytics.pro.at;
 import com.umeng.analytics.pro.bt;
 import com.umeng.analytics.pro.bz;
@@ -22,11 +23,11 @@ import java.util.Set;
 public class e {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final long f40919a = 86400000;
+    public static final long f27228a = 86400000;
     public static e b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static final String f40920c = at.b().b("id");
+    private static final String f27229c = at.b().b("id");
     private static Object j = new Object();
     private File d;
     private long f;
@@ -39,11 +40,11 @@ public class e {
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        private Context f40921a;
+        private Context f27230a;
         private Set<String> b = new HashSet();
 
         public a(Context context) {
-            this.f40921a = context;
+            this.f27230a = context;
         }
 
         public void a() {
@@ -55,7 +56,7 @@ public class e {
                         sb.append(',');
                     }
                     sb.deleteCharAt(sb.length() - 1);
-                    PreferenceWrapper.getDefault(this.f40921a).edit().putString("invld_id", sb.toString()).commit();
+                    PreferenceWrapper.getDefault(this.f27230a).edit().putString("invld_id", sb.toString()).commit();
                 }
             }
         }
@@ -71,7 +72,7 @@ public class e {
         public void b() {
             String[] split;
             synchronized (this) {
-                String string = PreferenceWrapper.getDefault(this.f40921a).getString("invld_id", null);
+                String string = PreferenceWrapper.getDefault(this.f27230a).getString("invld_id", null);
                 if (!TextUtils.isEmpty(string) && (split = string.split(",")) != null) {
                     int length = split.length;
                     int i = 0;
@@ -103,7 +104,7 @@ public class e {
 
     e(Context context) {
         this.i = null;
-        this.d = new File(context.getFilesDir(), f40920c);
+        this.d = new File(context.getFilesDir(), f27229c);
         a aVar = new a(context);
         this.i = aVar;
         aVar.b();
@@ -150,28 +151,28 @@ public class e {
     }
 
     private void a(com.umeng.commonsdk.statistics.proto.c cVar) {
-        if (cVar == null || cVar.f40947a == null) {
+        if (cVar == null || cVar.f27256a == null) {
             return;
         }
-        if (cVar.f40947a.containsKey("mac") && !FieldManager.allow(com.umeng.commonsdk.utils.d.h)) {
-            cVar.f40947a.remove("mac");
+        if (cVar.f27256a.containsKey("mac") && !FieldManager.allow(com.umeng.commonsdk.utils.d.h)) {
+            cVar.f27256a.remove("mac");
         }
-        if (cVar.f40947a.containsKey("imei") && !FieldManager.allow(com.umeng.commonsdk.utils.d.g)) {
-            cVar.f40947a.remove("imei");
+        if (cVar.f27256a.containsKey(ExHandler.JSON_REQUEST_IMEI) && !FieldManager.allow(com.umeng.commonsdk.utils.d.g)) {
+            cVar.f27256a.remove(ExHandler.JSON_REQUEST_IMEI);
         }
-        if (cVar.f40947a.containsKey("android_id") && !FieldManager.allow(com.umeng.commonsdk.utils.d.i)) {
-            cVar.f40947a.remove("android_id");
+        if (cVar.f27256a.containsKey("android_id") && !FieldManager.allow(com.umeng.commonsdk.utils.d.i)) {
+            cVar.f27256a.remove("android_id");
         }
-        if (cVar.f40947a.containsKey(Context.SERIAL_SERVICE) && !FieldManager.allow(com.umeng.commonsdk.utils.d.j)) {
-            cVar.f40947a.remove(Context.SERIAL_SERVICE);
+        if (cVar.f27256a.containsKey(Context.SERIAL_SERVICE) && !FieldManager.allow(com.umeng.commonsdk.utils.d.j)) {
+            cVar.f27256a.remove(Context.SERIAL_SERVICE);
         }
-        if (cVar.f40947a.containsKey(com.anythink.expressad.foundation.g.a.bj) && !FieldManager.allow(com.umeng.commonsdk.utils.d.w)) {
-            cVar.f40947a.remove(com.anythink.expressad.foundation.g.a.bj);
+        if (cVar.f27256a.containsKey(com.anythink.expressad.foundation.g.a.bj) && !FieldManager.allow(com.umeng.commonsdk.utils.d.w)) {
+            cVar.f27256a.remove(com.anythink.expressad.foundation.g.a.bj);
         }
-        if (!cVar.f40947a.containsKey("oaid") || FieldManager.allow(com.umeng.commonsdk.utils.d.G)) {
+        if (!cVar.f27256a.containsKey("oaid") || FieldManager.allow(com.umeng.commonsdk.utils.d.G)) {
             return;
         }
-        cVar.f40947a.remove("oaid");
+        cVar.f27256a.remove("oaid");
     }
 
     private boolean a(com.umeng.commonsdk.statistics.idtracking.a aVar) {

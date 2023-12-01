@@ -26,13 +26,9 @@ public final class ItemRoomPkLayoutBinding implements ViewBinding {
     public final TextView E;
     public final ConstraintLayout F;
     private final ConstraintLayout G;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final ShapeTextView f16653a;
+    public final ShapeTextView a;
     public final LinearLayout b;
-
-    /* renamed from: c  reason: collision with root package name */
-    public final ImageView f16654c;
+    public final ImageView c;
     public final ImageView d;
     public final ImageView e;
     public final SVGAImageView f;
@@ -59,9 +55,9 @@ public final class ItemRoomPkLayoutBinding implements ViewBinding {
 
     private ItemRoomPkLayoutBinding(ConstraintLayout constraintLayout, ShapeTextView shapeTextView, LinearLayout linearLayout, ImageView imageView, ImageView imageView2, ImageView imageView3, SVGAImageView sVGAImageView, ImageView imageView4, ShapeableImageView shapeableImageView, ImageView imageView5, ImageView imageView6, ShapeableImageView shapeableImageView2, ImageView imageView7, ShapeLinearLayout shapeLinearLayout, YYBaseUserHeadView yYBaseUserHeadView, LinearLayout linearLayout2, HollowView hollowView, LinearLayout linearLayout3, HollowView hollowView2, YYBaseUserHeadView yYBaseUserHeadView2, RecyclerView recyclerView, RecyclerView recyclerView2, RecyclerView recyclerView3, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, TextView textView7, TextView textView8, TextView textView9, ConstraintLayout constraintLayout2) {
         this.G = constraintLayout;
-        this.f16653a = shapeTextView;
+        this.a = shapeTextView;
         this.b = linearLayout;
-        this.f16654c = imageView;
+        this.c = imageView;
         this.d = imageView2;
         this.e = imageView3;
         this.f = sVGAImageView;
@@ -117,14 +113,14 @@ public final class ItemRoomPkLayoutBinding implements ViewBinding {
                             if (sVGAImageView != null) {
                                 ImageView imageView4 = (ImageView) view.findViewById(R.id.img_left_pk_result);
                                 if (imageView4 != null) {
-                                    ShapeableImageView shapeableImageView = (ShapeableImageView) view.findViewById(R.id.img_left_user_level);
-                                    if (shapeableImageView != null) {
+                                    ShapeableImageView findViewById = view.findViewById(R.id.img_left_user_level);
+                                    if (findViewById != null) {
                                         ImageView imageView5 = (ImageView) view.findViewById(R.id.img_other_member);
                                         if (imageView5 != null) {
                                             ImageView imageView6 = (ImageView) view.findViewById(R.id.img_right_pk_result);
                                             if (imageView6 != null) {
-                                                ShapeableImageView shapeableImageView2 = (ShapeableImageView) view.findViewById(R.id.img_right_user_level);
-                                                if (shapeableImageView2 != null) {
+                                                ShapeableImageView findViewById2 = view.findViewById(R.id.img_right_user_level);
+                                                if (findViewById2 != null) {
                                                     ImageView imageView7 = (ImageView) view.findViewById(R.id.img_vs_icon);
                                                     if (imageView7 != null) {
                                                         ShapeLinearLayout shapeLinearLayout = (ShapeLinearLayout) view.findViewById(R.id.iv_pk_pro);
@@ -141,12 +137,12 @@ public final class ItemRoomPkLayoutBinding implements ViewBinding {
                                                                             if (hollowView2 != null) {
                                                                                 YYBaseUserHeadView yYBaseUserHeadView2 = (YYBaseUserHeadView) view.findViewById(R.id.right_anchor_view);
                                                                                 if (yYBaseUserHeadView2 != null) {
-                                                                                    RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rv_blue_rank);
-                                                                                    if (recyclerView != null) {
-                                                                                        RecyclerView recyclerView2 = (RecyclerView) view.findViewById(R.id.rv_member_list);
-                                                                                        if (recyclerView2 != null) {
-                                                                                            RecyclerView recyclerView3 = (RecyclerView) view.findViewById(R.id.rv_red_rank);
-                                                                                            if (recyclerView3 != null) {
+                                                                                    RecyclerView findViewById3 = view.findViewById(R.id.rv_blue_rank);
+                                                                                    if (findViewById3 != null) {
+                                                                                        RecyclerView findViewById4 = view.findViewById(R.id.rv_member_list);
+                                                                                        if (findViewById4 != null) {
+                                                                                            RecyclerView findViewById5 = view.findViewById(R.id.rv_red_rank);
+                                                                                            if (findViewById5 != null) {
                                                                                                 TextView textView = (TextView) view.findViewById(R.id.tv_all_member);
                                                                                                 if (textView != null) {
                                                                                                     TextView textView2 = (TextView) view.findViewById(R.id.tv_blue_score);
@@ -165,9 +161,9 @@ public final class ItemRoomPkLayoutBinding implements ViewBinding {
                                                                                                                             if (textView8 != null) {
                                                                                                                                 TextView textView9 = (TextView) view.findViewById(R.id.tv_right_user_name);
                                                                                                                                 if (textView9 != null) {
-                                                                                                                                    ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.yy_connectting_root);
-                                                                                                                                    if (constraintLayout != null) {
-                                                                                                                                        return new ItemRoomPkLayoutBinding((ConstraintLayout) view, shapeTextView, linearLayout, imageView, imageView2, imageView3, sVGAImageView, imageView4, shapeableImageView, imageView5, imageView6, shapeableImageView2, imageView7, shapeLinearLayout, yYBaseUserHeadView, linearLayout2, hollowView, linearLayout3, hollowView2, yYBaseUserHeadView2, recyclerView, recyclerView2, recyclerView3, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, constraintLayout);
+                                                                                                                                    ConstraintLayout findViewById6 = view.findViewById(R.id.yy_connectting_root);
+                                                                                                                                    if (findViewById6 != null) {
+                                                                                                                                        return new ItemRoomPkLayoutBinding((ConstraintLayout) view, shapeTextView, linearLayout, imageView, imageView2, imageView3, sVGAImageView, imageView4, findViewById, imageView5, imageView6, findViewById2, imageView7, shapeLinearLayout, yYBaseUserHeadView, linearLayout2, hollowView, linearLayout3, hollowView2, yYBaseUserHeadView2, findViewById3, findViewById4, findViewById5, textView, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, findViewById6);
                                                                                                                                     }
                                                                                                                                     str = "yyConnecttingRoot";
                                                                                                                                 } else {
@@ -266,7 +262,6 @@ public final class ItemRoomPkLayoutBinding implements ViewBinding {
         throw new NullPointerException("Missing required view with ID: ".concat(str));
     }
 
-    @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public ConstraintLayout getRoot() {
         return this.G;

@@ -4,7 +4,7 @@ package com.vivo.push.b;
 public final class d extends com.vivo.push.o {
 
     /* renamed from: a  reason: collision with root package name */
-    private boolean f41039a;
+    private boolean f27348a;
 
     @Override // com.vivo.push.o
     public final void c(com.vivo.push.a aVar) {
@@ -15,7 +15,7 @@ public final class d extends com.vivo.push.o {
     }
 
     public final boolean d() {
-        return this.f41039a;
+        return this.f27348a;
     }
 
     @Override // com.vivo.push.o

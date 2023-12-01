@@ -144,7 +144,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
         if (indexOfKey < 0) {
             return super.onKeyDown(view, editable, i, keyEvent);
         }
-        CharSequence charSequence = (String) sRecs.valueAt(indexOfKey);
+        String valueAt2 = sRecs.valueAt(indexOfKey);
         int i3 = 0;
         if ((i2 & 1) != 0) {
             i3 = 0;
@@ -153,9 +153,9 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
                 while (true) {
                     int i5 = i4;
                     i3 = 0;
-                    if (i5 >= charSequence.length()) {
+                    if (i5 >= valueAt2.length()) {
                         break;
-                    } else if (Character.isUpperCase(charSequence.charAt(i5))) {
+                    } else if (Character.isUpperCase(valueAt2.charAt(i5))) {
                         i3 = i5;
                         break;
                     } else {
@@ -168,7 +168,7 @@ public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher 
             Selection.setSelection(editable, max);
         }
         editable.setSpan(OLD_SEL_START, min, min, 17);
-        editable.replace(min, max, charSequence, i3, i3 + 1);
+        editable.replace(min, max, valueAt2, i3, i3 + 1);
         int spanStart2 = editable.getSpanStart(OLD_SEL_START);
         int selectionEnd2 = Selection.getSelectionEnd(editable);
         if (selectionEnd2 != spanStart2) {

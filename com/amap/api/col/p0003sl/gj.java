@@ -7,9 +7,7 @@ import com.amap.api.services.core.AMapException;
 /* renamed from: com.amap.api.col.3sl.gj  reason: invalid package */
 /* loaded from: source-6737240-dex2jar.jar:com/amap/api/col/3sl/gj.class */
 public final class gj {
-
-    /* renamed from: a  reason: collision with root package name */
-    static kj f4993a;
+    static kj a;
 
     private static String a(AMapException aMapException) {
         if (aMapException != null) {
@@ -64,11 +62,11 @@ public final class gj {
             if (a2 == null || a2.length() <= 0) {
                 return;
             }
-            if (f4993a == null) {
-                f4993a = new kj(context, "sea", "9.3.1", "O002");
+            if (a == null) {
+                a = new kj(context, "sea", "9.3.1", "O002");
             }
-            f4993a.a(a2);
-            kk.a(f4993a, context);
+            a.a(a2);
+            kk.a(a, context);
         } catch (Throwable th) {
             fe.a(th, "StatisticsUtil", "recordResponseAction");
         }

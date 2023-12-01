@@ -16,19 +16,19 @@ import java.util.Locale;
 public final class k {
 
     /* renamed from: a  reason: collision with root package name */
-    private static PrintWriter f40106a;
+    private static PrintWriter f26415a;
     private static FileWriter b;
 
     /* renamed from: c  reason: collision with root package name */
-    private static boolean f40107c = false;
+    private static boolean f26416c = false;
     private static boolean d = false;
     private static File e;
     private static String f;
 
     public static void a() {
-        if (f40107c && !d) {
+        if (f26416c && !d) {
             d = true;
-            f = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA).format(new Date()) + com.anythink.china.common.a.a.f;
+            f = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA).format(new Date()) + ".log";
             File file = new File(TXCopyrightedMedia.instance().getApplicationContext().getExternalFilesDir(null) + File.separator + "AME", f);
             e = file;
             try {
@@ -37,7 +37,7 @@ public final class k {
                     parentFile.mkdirs();
                 }
                 b = new FileWriter(e, true);
-                f40106a = new PrintWriter(b);
+                f26415a = new PrintWriter(b);
             } catch (FileNotFoundException e2) {
                 e2.printStackTrace();
             } catch (IOException e3) {
@@ -47,7 +47,7 @@ public final class k {
     }
 
     public static void b() {
-        if (f40107c) {
+        if (f26416c) {
             FileWriter fileWriter = b;
             if (fileWriter != null) {
                 try {
@@ -62,14 +62,14 @@ public final class k {
                 }
                 b = null;
             }
-            PrintWriter printWriter = f40106a;
+            PrintWriter printWriter = f26415a;
             if (printWriter != null) {
                 printWriter.flush();
-                f40106a.close();
-                f40106a = null;
+                f26415a.close();
+                f26415a = null;
             }
             d = false;
-            if (!f40107c || e == null) {
+            if (!f26416c || e == null) {
                 return;
             }
             try {

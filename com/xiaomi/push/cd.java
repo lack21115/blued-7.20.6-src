@@ -6,12 +6,12 @@ import com.xiaomi.push.ch;
 public class cd extends ch.d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected String f41300a;
+    protected String f27609a;
 
     public cd(String str, String str2, String[] strArr, String str3) {
         super(str, str2, strArr);
-        this.f41300a = "MessageDeleteJob";
-        this.f41300a = str3;
+        this.f27609a = "MessageDeleteJob";
+        this.f27609a = str3;
     }
 
     public static cd a(String str) {

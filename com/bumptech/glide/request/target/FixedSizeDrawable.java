@@ -14,11 +14,11 @@ import com.bumptech.glide.util.Preconditions;
 public class FixedSizeDrawable extends Drawable {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Matrix f21064a;
+    private final Matrix f7458a;
     private final RectF b;
 
     /* renamed from: c  reason: collision with root package name */
-    private final RectF f21065c;
+    private final RectF f7459c;
     private Drawable d;
     private State e;
     private boolean f;
@@ -27,20 +27,20 @@ public class FixedSizeDrawable extends Drawable {
     static final class State extends Drawable.ConstantState {
 
         /* renamed from: a  reason: collision with root package name */
-        final int f21066a;
+        final int f7460a;
         final int b;
 
         /* renamed from: c  reason: collision with root package name */
-        private final Drawable.ConstantState f21067c;
+        private final Drawable.ConstantState f7461c;
 
         State(Drawable.ConstantState constantState, int i, int i2) {
-            this.f21067c = constantState;
-            this.f21066a = i;
+            this.f7461c = constantState;
+            this.f7460a = i;
             this.b = i2;
         }
 
         State(State state) {
-            this(state.f21067c, state.f21066a, state.b);
+            this(state.f7461c, state.f7460a, state.b);
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
@@ -50,12 +50,12 @@ public class FixedSizeDrawable extends Drawable {
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public Drawable newDrawable() {
-            return new FixedSizeDrawable(this, this.f21067c.newDrawable());
+            return new FixedSizeDrawable(this, this.f7461c.newDrawable());
         }
 
         @Override // android.graphics.drawable.Drawable.ConstantState
         public Drawable newDrawable(Resources resources) {
-            return new FixedSizeDrawable(this, this.f21067c.newDrawable(resources));
+            return new FixedSizeDrawable(this, this.f7461c.newDrawable(resources));
         }
     }
 
@@ -67,13 +67,13 @@ public class FixedSizeDrawable extends Drawable {
         this.e = (State) Preconditions.a(state);
         this.d = (Drawable) Preconditions.a(drawable);
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        this.f21064a = new Matrix();
+        this.f7458a = new Matrix();
         this.b = new RectF(0.0f, 0.0f, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-        this.f21065c = new RectF();
+        this.f7459c = new RectF();
     }
 
     private void a() {
-        this.f21064a.setRectToRect(this.b, this.f21065c, Matrix.ScaleToFit.CENTER);
+        this.f7458a.setRectToRect(this.b, this.f7459c, Matrix.ScaleToFit.CENTER);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -84,7 +84,7 @@ public class FixedSizeDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
         canvas.save();
-        canvas.concat(this.f21064a);
+        canvas.concat(this.f7458a);
         this.d.draw(canvas);
         canvas.restore();
     }
@@ -121,7 +121,7 @@ public class FixedSizeDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return this.e.f21066a;
+        return this.e.f7460a;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -174,14 +174,14 @@ public class FixedSizeDrawable extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public void setBounds(int i, int i2, int i3, int i4) {
         super.setBounds(i, i2, i3, i4);
-        this.f21065c.set(i, i2, i3, i4);
+        this.f7459c.set(i, i2, i3, i4);
         a();
     }
 
     @Override // android.graphics.drawable.Drawable
     public void setBounds(Rect rect) {
         super.setBounds(rect);
-        this.f21065c.set(rect);
+        this.f7459c.set(rect);
         a();
     }
 

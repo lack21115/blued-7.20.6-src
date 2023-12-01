@@ -18,11 +18,11 @@ import java.util.List;
 public class a implements com.opos.mobad.ad.c.d {
 
     /* renamed from: a  reason: collision with root package name */
-    protected Context f26161a;
+    protected Context f12473a;
     private com.opos.mobad.h.c b;
 
     /* renamed from: c  reason: collision with root package name */
-    private AdItemData f26162c;
+    private AdItemData f12474c;
     private MaterialData d;
     private List<com.opos.mobad.ad.c.e> e = null;
     private List<com.opos.mobad.ad.c.e> f = null;
@@ -34,18 +34,18 @@ public class a implements com.opos.mobad.ad.c.d {
 
     /* renamed from: com.opos.mobad.h.b.a$a  reason: collision with other inner class name */
     /* loaded from: source-8303388-dex2jar.jar:com/opos/mobad/h/b/a$a.class */
-    static class C0697a implements l {
+    static class C0527a implements l {
 
         /* renamed from: a  reason: collision with root package name */
-        private AppPrivacyData f26163a;
+        private AppPrivacyData f12475a;
 
-        public C0697a(AppPrivacyData appPrivacyData) {
-            this.f26163a = appPrivacyData;
+        public C0527a(AppPrivacyData appPrivacyData) {
+            this.f12475a = appPrivacyData;
         }
 
         @Override // com.opos.mobad.ad.c.b
         public String a() {
-            AppPrivacyData appPrivacyData = this.f26163a;
+            AppPrivacyData appPrivacyData = this.f12475a;
             if (appPrivacyData == null) {
                 return null;
             }
@@ -54,16 +54,16 @@ public class a implements com.opos.mobad.ad.c.d {
 
         @Override // com.opos.mobad.ad.c.b
         public String b() {
-            AppPrivacyData appPrivacyData = this.f26163a;
+            AppPrivacyData appPrivacyData = this.f12475a;
             if (appPrivacyData == null) {
                 return null;
             }
-            return appPrivacyData.f26469c;
+            return appPrivacyData.f12781c;
         }
 
         @Override // com.opos.mobad.ad.c.l
         public String c() {
-            AppPrivacyData appPrivacyData = this.f26163a;
+            AppPrivacyData appPrivacyData = this.f12475a;
             if (appPrivacyData == null) {
                 return null;
             }
@@ -72,21 +72,21 @@ public class a implements com.opos.mobad.ad.c.d {
 
         @Override // com.opos.mobad.ad.c.l
         public String d() {
-            AppPrivacyData appPrivacyData = this.f26163a;
+            AppPrivacyData appPrivacyData = this.f12475a;
             if (appPrivacyData == null) {
                 return null;
             }
-            return appPrivacyData.f26468a;
+            return appPrivacyData.f12780a;
         }
     }
 
     public a(Context context, com.opos.mobad.h.c cVar, AdItemData adItemData) {
-        this.f26161a = context;
+        this.f12473a = context;
         this.b = cVar;
-        this.f26162c = adItemData;
+        this.f12474c = adItemData;
         this.d = adItemData.i().get(0);
-        if (this.f26162c.O() != null) {
-            this.k = new C0697a(this.f26162c.O());
+        if (this.f12474c.O() != null) {
+            this.k = new C0527a(this.f12474c.O());
         }
     }
 
@@ -109,16 +109,16 @@ public class a implements com.opos.mobad.ad.c.d {
 
     private int m() {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        com.opos.cmn.an.f.a.b("NativeAdDataImpl", "mReqAdTime=" + this.g + ",mHasAdShow=" + this.h + ",nowTime=" + elapsedRealtime + ",getShowInterval=" + this.f26162c.p());
-        int i = this.h ? 10200 : elapsedRealtime - this.g > ((long) ((this.f26162c.p() * 60) * 1000)) ? 10201 : 0;
+        com.opos.cmn.an.f.a.b("NativeAdDataImpl", "mReqAdTime=" + this.g + ",mHasAdShow=" + this.h + ",nowTime=" + elapsedRealtime + ",getShowInterval=" + this.f12474c.p());
+        int i = this.h ? 10200 : elapsedRealtime - this.g > ((long) ((this.f12474c.p() * 60) * 1000)) ? 10201 : 0;
         com.opos.cmn.an.f.a.b("NativeAdDataImpl", "getAdShowStatus =" + i);
         return i;
     }
 
     private int n() {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        com.opos.cmn.an.f.a.b("NativeAdDataImpl", "mReqAdTime=" + this.g + ",mHasAdShow=" + this.h + ",mHasAdClick=" + this.i + ",nowTime=" + elapsedRealtime + ",getClickInterval=" + this.f26162c.q());
-        int i = !this.h ? 10202 : this.i ? 10203 : elapsedRealtime - this.g > ((long) ((this.f26162c.q() * 60) * 1000)) ? 10204 : 0;
+        com.opos.cmn.an.f.a.b("NativeAdDataImpl", "mReqAdTime=" + this.g + ",mHasAdShow=" + this.h + ",mHasAdClick=" + this.i + ",nowTime=" + elapsedRealtime + ",getClickInterval=" + this.f12474c.q());
+        int i = !this.h ? 10202 : this.i ? 10203 : elapsedRealtime - this.g > ((long) ((this.f12474c.q() * 60) * 1000)) ? 10204 : 0;
         com.opos.cmn.an.f.a.b("NativeAdDataImpl", "getAdClickStatus =" + i);
         return i;
     }
@@ -132,17 +132,17 @@ public class a implements com.opos.mobad.ad.c.d {
     public void a(View view) {
         synchronized (this) {
             if (!this.b.d()) {
-                this.f26162c.k(com.opos.mobad.service.f.a.a().x());
+                this.f12474c.k(com.opos.mobad.service.f.a.a().x());
                 int m = m();
                 if (m == 0) {
-                    this.b.b(this.f26162c);
-                    this.b.a(this.f26162c, true, null);
+                    this.b.b(this.f12474c);
+                    this.b.a(this.f12474c, true, null);
                     this.h = true;
                 } else {
-                    this.b.a(this.f26162c, false, null);
+                    this.b.a(this.f12474c, false, null);
                     this.b.b().a(new q(m, a(m)), this);
                 }
-                this.b.a(this.f26162c);
+                this.b.a(this.f12474c);
             }
         }
     }
@@ -156,7 +156,7 @@ public class a implements com.opos.mobad.ad.c.d {
             try {
                 if (!com.opos.cmn.an.c.a.a(str)) {
                     z = false;
-                    if (this.f26162c != null) {
+                    if (this.f12474c != null) {
                         z = false;
                         if (this.d != null) {
                             z = str.equals(this.d.k());
@@ -206,9 +206,9 @@ public class a implements com.opos.mobad.ad.c.d {
                 int n = n();
                 if (n == 0) {
                     this.i = true;
-                    this.b.a(this.f26162c, true, null, hashMap, com.opos.mobad.cmn.a.b.a.ClickBt, view);
+                    this.b.a(this.f12474c, true, null, hashMap, com.opos.mobad.cmn.a.b.a.ClickBt, view);
                 } else {
-                    this.b.a(this.f26162c, false, null, hashMap, com.opos.mobad.cmn.a.b.a.ClickBt, view);
+                    this.b.a(this.f12474c, false, null, hashMap, com.opos.mobad.cmn.a.b.a.ClickBt, view);
                     this.b.b().a(new q(n, a(n)), this);
                 }
             }
@@ -219,7 +219,7 @@ public class a implements com.opos.mobad.ad.c.d {
     public List<com.opos.mobad.ad.c.e> c() {
         List<MaterialData> i;
         List<MaterialFileData> j;
-        if (this.e == null && (i = this.f26162c.i()) != null && i.size() > 0) {
+        if (this.e == null && (i = this.f12474c.i()) != null && i.size() > 0) {
             for (MaterialData materialData : i) {
                 if (materialData != null && (j = materialData.j()) != null && j.size() > 0) {
                     this.e = new ArrayList();
@@ -243,7 +243,7 @@ public class a implements com.opos.mobad.ad.c.d {
     public List<com.opos.mobad.ad.c.e> d() {
         List<MaterialData> i;
         List<MaterialFileData> f;
-        if (this.f == null && (i = this.f26162c.i()) != null && i.size() > 0) {
+        if (this.f == null && (i = this.f12474c.i()) != null && i.size() > 0) {
             for (MaterialData materialData : i) {
                 if (materialData != null && (f = materialData.f()) != null && f.size() > 0) {
                     this.f = new ArrayList();
@@ -275,7 +275,7 @@ public class a implements com.opos.mobad.ad.c.d {
 
     @Override // com.opos.mobad.ad.c.d
     public com.opos.mobad.ad.c.e g() {
-        MaterialFileData l = this.f26162c.l();
+        MaterialFileData l = this.f12474c.l();
         b bVar = l != null ? new b(l) : null;
         StringBuilder sb = new StringBuilder();
         sb.append("getLogoFile=");
@@ -293,12 +293,12 @@ public class a implements com.opos.mobad.ad.c.d {
 
     @Override // com.opos.mobad.ad.c.d
     public String i() {
-        return this.f26162c.n();
+        return this.f12474c.n();
     }
 
     @Override // com.opos.mobad.ad.c.d
     public String j() {
-        String a2 = g.a(this.f26161a, this.f26162c, false);
+        String a2 = g.a(this.f12473a, this.f12474c, false);
         com.opos.cmn.an.f.a.b("NativeAdDataImpl", "getClickBnText=" + a2);
         return a2;
     }
@@ -311,8 +311,8 @@ public class a implements com.opos.mobad.ad.c.d {
             } catch (Exception e) {
                 com.opos.cmn.an.f.a.a("NativeAdDataImpl", "", (Throwable) e);
             }
-            if (this.f26162c != null && this.d != null) {
-                a2 = this.b.a(this.f26162c, this.d);
+            if (this.f12474c != null && this.d != null) {
+                a2 = this.b.a(this.f12474c, this.d);
                 com.opos.cmn.an.f.a.b("NativeAdDataImpl", "launchApp=" + a2);
                 return a2;
             }

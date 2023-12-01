@@ -12,12 +12,12 @@ import java.util.List;
 public class UserGiftPackageAdapter extends BaseQuickAdapter<UserGiftPackageModel, BaseViewHolder> {
 
     /* renamed from: a  reason: collision with root package name */
-    public int f32197a;
+    public int f18507a;
     private IRequestHost b;
 
     public UserGiftPackageAdapter(IRequestHost iRequestHost, List<UserGiftPackageModel> list) {
         super(R.layout.item_pop_user_gift_new, list);
-        this.f32197a = 2;
+        this.f18507a = 2;
         this.b = iRequestHost;
     }
 
@@ -26,7 +26,7 @@ public class UserGiftPackageAdapter extends BaseQuickAdapter<UserGiftPackageMode
     /* renamed from: a */
     public void convert(BaseViewHolder baseViewHolder, UserGiftPackageModel userGiftPackageModel) {
         GiftGivingOptionViewNew giftGivingOptionViewNew = (GiftGivingOptionViewNew) baseViewHolder.getView(R.id.gif_view);
-        giftGivingOptionViewNew.f32274a = this.f32197a;
+        giftGivingOptionViewNew.f18584a = this.f18507a;
         giftGivingOptionViewNew.a(this.b, userGiftPackageModel);
     }
 }

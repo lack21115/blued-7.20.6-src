@@ -1,5 +1,6 @@
 package com.soft.blued.ui.search.vm;
 
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelKt;
 import com.blued.android.module.common.base.mvi.BaseListViewModel;
 import com.soft.blued.ui.search.model.SearchGlobalInfo;
@@ -10,8 +11,9 @@ import java.util.HashSet;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
-import kotlinx.coroutines.BuildersKt__Builders_commonKt;
+import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineExceptionHandler;
+import kotlinx.coroutines.CoroutineStart;
 import kotlinx.coroutines.Dispatchers;
 
 @Metadata
@@ -19,10 +21,10 @@ import kotlinx.coroutines.Dispatchers;
 public final class SearchGlobalMoreVM extends BaseListViewModel<SearchGlobalInfo> {
 
     /* renamed from: c  reason: collision with root package name */
-    private int f33179c;
+    private int f19488c;
 
     /* renamed from: a  reason: collision with root package name */
-    private int f33178a = 2;
+    private int f19487a = 2;
     private String b = "";
     private HashSet<String> d = new HashSet<>();
 
@@ -64,7 +66,7 @@ public final class SearchGlobalMoreVM extends BaseListViewModel<SearchGlobalInfo
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void d() {
-        List<SearchSessionModel> a2 = SearchGlobalUtil.f33175a.a(this.b);
+        List<SearchSessionModel> a2 = SearchGlobalUtil.f19484a.a(this.b);
         ArrayList arrayList = new ArrayList();
         for (SearchSessionModel searchSessionModel : a2) {
             SearchGlobalInfo searchGlobalInfo = new SearchGlobalInfo();
@@ -76,11 +78,11 @@ public final class SearchGlobalMoreVM extends BaseListViewModel<SearchGlobalInfo
     }
 
     public final int a() {
-        return this.f33178a;
+        return this.f19487a;
     }
 
     public final void a(int i) {
-        this.f33178a = i;
+        this.f19487a = i;
     }
 
     public final void a(String str) {
@@ -93,15 +95,14 @@ public final class SearchGlobalMoreVM extends BaseListViewModel<SearchGlobalInfo
     }
 
     public final void b(int i) {
-        this.f33179c = i;
+        this.f19488c = i;
     }
 
     public final int c() {
-        return this.f33179c;
+        return this.f19488c;
     }
 
-    @Override // com.blued.android.module.common.base.mvi.BaseListViewModel
     public void requestData() {
-        BuildersKt__Builders_commonKt.a(ViewModelKt.getViewModelScope(this), Dispatchers.c().plus(new SearchGlobalMoreVM$requestData$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.b)), null, new SearchGlobalMoreVM$requestData$2(this, null), 2, null);
+        BuildersKt.a(ViewModelKt.getViewModelScope((ViewModel) this), Dispatchers.c().plus((CoroutineExceptionHandler) new SearchGlobalMoreVM$requestData$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.b)), (CoroutineStart) null, new SearchGlobalMoreVM$requestData$2(this, null), 2, (Object) null);
     }
 }

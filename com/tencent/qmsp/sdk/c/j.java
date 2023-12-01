@@ -14,21 +14,21 @@ import org.w3c.dom.NodeList;
 public class j {
 
     /* renamed from: c  reason: collision with root package name */
-    private static final byte[][] f38561c = {new byte[]{20, 67, -74, 67, 2, 50, 117, -18}, new byte[]{51, 117, -95, 83, 39, 52, 121}, new byte[]{9, 121, -79, 101, 32, 47, 101, -28}, new byte[]{44, 116}, new byte[]{49, 105, -93, 69}, new byte[]{35, 124, -78, 71, 61}, new byte[]{53, 113, -89, 72}, new byte[]{43, 113, -66, 69}, new byte[]{51, 113, -65, 85, 43}, new byte[]{51, 117, -95}, new byte[]{20, 125, -96, 80, 96, 63, 118, -23}};
+    private static final byte[][] f24870c = {new byte[]{20, 67, -74, 67, 2, 50, 117, -18}, new byte[]{51, 117, -95, 83, 39, 52, 121}, new byte[]{9, 121, -79, 101, 32, 47, 101, -28}, new byte[]{44, 116}, new byte[]{49, 105, -93, 69}, new byte[]{35, 124, -78, 71, 61}, new byte[]{53, 113, -89, 72}, new byte[]{43, 113, -66, 69}, new byte[]{51, 113, -65, 85, 43}, new byte[]{51, 117, -95}, new byte[]{20, 125, -96, 80, 96, 63, 118, -23}};
 
     /* renamed from: a  reason: collision with root package name */
-    private List<a> f38562a;
+    private List<a> f24871a;
     private int b;
 
     /* loaded from: source-8829756-dex2jar.jar:com/tencent/qmsp/sdk/c/j$a.class */
     public static class a {
 
         /* renamed from: a  reason: collision with root package name */
-        int f38563a;
+        int f24872a;
         int b;
 
         /* renamed from: c  reason: collision with root package name */
-        int f38564c;
+        int f24873c;
         String d;
         String e;
     }
@@ -38,10 +38,10 @@ public class j {
         Pair<Integer, List<a>> a2 = a(c(), 1);
         if (a2 != null) {
             this.b = a2.first.intValue();
-            this.f38562a = a2.second;
+            this.f24871a = a2.second;
         }
-        if (this.f38562a == null) {
-            this.f38562a = new LinkedList();
+        if (this.f24871a == null) {
+            this.f24871a = new LinkedList();
         }
     }
 
@@ -80,7 +80,6 @@ public class j {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:84:0x014e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r0v6, types: [java.io.ByteArrayInputStream] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct code enable 'Show inconsistent code' option in preferences
@@ -122,11 +121,11 @@ public class j {
                             i2 = i;
                         } else {
                             if (nodeName.equalsIgnoreCase(b(3))) {
-                                aVar.f38563a = Integer.parseInt(nodeValue);
+                                aVar.f24872a = Integer.parseInt(nodeValue);
                             } else if (nodeName.equalsIgnoreCase(b(4))) {
                                 aVar.b = Integer.parseInt(nodeValue);
                             } else if (nodeName.equalsIgnoreCase(b(5))) {
-                                aVar.f38564c = Integer.parseInt(nodeValue);
+                                aVar.f24873c = Integer.parseInt(nodeValue);
                             } else if (nodeName.equalsIgnoreCase(b(6))) {
                                 aVar.e = nodeValue;
                             } else {
@@ -203,7 +202,7 @@ public class j {
     }
 
     private String b(int i) {
-        return com.tencent.qmsp.sdk.f.h.a(f38561c[i]);
+        return com.tencent.qmsp.sdk.f.h.a(f24870c[i]);
     }
 
     private String c() {
@@ -215,8 +214,8 @@ public class j {
     }
 
     private a d(int i) {
-        for (a aVar : this.f38562a) {
-            if (aVar.f38563a == i) {
+        for (a aVar : this.f24871a) {
+            if (aVar.f24872a == i) {
                 return aVar;
             }
         }
@@ -232,21 +231,21 @@ public class j {
         if (d == null) {
             return;
         }
-        this.f38562a.remove(d);
+        this.f24871a.remove(d);
         if (z) {
-            a(c(), this.b, this.f38562a);
+            a(c(), this.b, this.f24871a);
         }
     }
 
     public boolean a() {
-        return a(c(), this.b, this.f38562a);
+        return a(c(), this.b, this.f24871a);
     }
 
     public boolean a(a aVar, boolean z) {
-        if (c(aVar.f38563a)) {
+        if (c(aVar.f24872a)) {
             return false;
         }
-        this.f38562a.add(aVar);
+        this.f24871a.add(aVar);
         if (z) {
             return a();
         }
@@ -254,6 +253,6 @@ public class j {
     }
 
     public List<a> b() {
-        return this.f38562a;
+        return this.f24871a;
     }
 }

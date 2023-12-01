@@ -9,7 +9,7 @@ import com.soft.blued.R;
 public class AddFloatingActionButton extends FloatingActionButton {
 
     /* renamed from: a  reason: collision with root package name */
-    int f28579a;
+    int f14889a;
 
     public AddFloatingActionButton(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -23,13 +23,13 @@ public class AddFloatingActionButton extends FloatingActionButton {
     @Override // com.soft.blued.customview.floating_action.FloatingActionButton
     public void a(Context context, AttributeSet attributeSet) {
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, R.styleable.AddFloatingActionButton, 0, 0);
-        this.f28579a = obtainStyledAttributes.getColor(0, a(17170443));
+        this.f14889a = obtainStyledAttributes.getColor(0, a(android.R.color.white));
         obtainStyledAttributes.recycle();
         super.a(context, attributeSet);
     }
 
     public int getPlusColor() {
-        return this.f28579a;
+        return this.f14889a;
     }
 
     @Override // com.soft.blued.customview.floating_action.FloatingActionButton
@@ -38,8 +38,8 @@ public class AddFloatingActionButton extends FloatingActionButton {
     }
 
     public void setPlusColor(int i) {
-        if (this.f28579a != i) {
-            this.f28579a = i;
+        if (this.f14889a != i) {
+            this.f14889a = i;
         }
     }
 

@@ -209,7 +209,7 @@ public final class MoreElements {
             /* JADX WARN: Incorrect types in method signature: (TT;)Z */
             @Override // com.google.common.base.Predicate
             public boolean apply(Element element) {
-                return element.getModifiers().containsAll(Set.this);
+                return element.getModifiers().containsAll(set);
             }
         };
     }

@@ -21,11 +21,11 @@ public class nf extends AsyncTask<Object, Void, Void> {
     public static final int g = 10000;
 
     /* renamed from: a  reason: collision with root package name */
-    private Handler f37665a;
+    private Handler f23974a;
     private String b;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f37666c;
+    private String f23975c;
     private d d;
     private c e;
     private Handler f = new a(Looper.myLooper());
@@ -42,7 +42,7 @@ public class nf extends AsyncTask<Object, Void, Void> {
             if (message.what != 10000) {
                 return;
             }
-            new nf(nf.this.f37665a, nf.this.b, nf.this.f37666c, nf.this.d).execute(new Object[0]);
+            new nf(nf.this.f23974a, nf.this.b, nf.this.f23975c, nf.this.d).execute(new Object[0]);
         }
     }
 
@@ -66,11 +66,11 @@ public class nf extends AsyncTask<Object, Void, Void> {
     public static class c implements JsonParser {
 
         /* renamed from: a  reason: collision with root package name */
-        public s5 f37669a;
+        public s5 f23978a;
         public JSONArray b;
 
         /* renamed from: c  reason: collision with root package name */
-        public JSONObject f37670c;
+        public JSONObject f23979c;
         public sf d;
         public int e = hh.r;
 
@@ -86,7 +86,7 @@ public class nf extends AsyncTask<Object, Void, Void> {
                 int optInt = optJSONObject2.optInt("enable", -1);
                 int optInt2 = optJSONObject2.optInt("type", -1);
                 if (optInt != -1 && optInt2 != -1) {
-                    this.f37669a = new s5(optInt, optInt2, optJSONObject2.optJSONArray("building_list"));
+                    this.f23978a = new s5(optInt, optInt2, optJSONObject2.optJSONArray("building_list"));
                 }
             }
             JSONObject optJSONObject3 = optJSONObject.optJSONObject("custom_layer");
@@ -97,7 +97,7 @@ public class nf extends AsyncTask<Object, Void, Void> {
             if (optJSONObject4 != null) {
                 this.e = optJSONObject4.optInt("enable", hh.r);
             }
-            this.f37670c = optJSONObject.optJSONObject("data_layer");
+            this.f23979c = optJSONObject.optJSONObject("data_layer");
         }
     }
 
@@ -107,10 +107,10 @@ public class nf extends AsyncTask<Object, Void, Void> {
     }
 
     public nf(Handler handler, String str, String str2, d dVar) {
-        this.f37665a = handler;
+        this.f23974a = handler;
         this.d = dVar;
         this.b = TextUtils.isEmpty(str) ? "" : str;
-        this.f37666c = TextUtils.isEmpty(str2) ? "" : str2;
+        this.f23975c = TextUtils.isEmpty(str2) ? "" : str2;
     }
 
     private void a(int i, String str) {
@@ -135,7 +135,7 @@ public class nf extends AsyncTask<Object, Void, Void> {
 
     private void a(JSONObject jSONObject) {
         this.e = (c) JsonUtils.parseToModel(jSONObject.optJSONObject("detail"), c.class, new Object[0]);
-        this.f37665a.post(new b(jSONObject));
+        this.f23974a.post(new b(jSONObject));
     }
 
     private String b() {
@@ -167,10 +167,10 @@ public class nf extends AsyncTask<Object, Void, Void> {
     }
 
     private void c() {
-        if (this.f37665a != null) {
+        if (this.f23974a != null) {
             v5 v5Var = new v5();
-            v5Var.f38062a = 3;
-            this.f37665a.sendMessage(this.f37665a.obtainMessage(3, v5Var));
+            v5Var.f24371a = 3;
+            this.f23974a.sendMessage(this.f23974a.obtainMessage(3, v5Var));
         }
     }
 
@@ -195,7 +195,7 @@ public class nf extends AsyncTask<Object, Void, Void> {
         if (g3Var == null) {
             return false;
         }
-        NetResponse checkAuth = ((u2) g3Var.d()).checkAuth(c7.t(), this.b, c7.N(), this.f37666c, c7.y(), c7.A(), c7.I(), c7.M(), c7.E(), c7.O(), b());
+        NetResponse checkAuth = ((u2) g3Var.d()).checkAuth(c7.t(), this.b, c7.N(), this.f23975c, c7.y(), c7.A(), c7.I(), c7.M(), c7.E(), c7.O(), b());
         byte[] bArr = new byte[0];
         if (checkAuth != null) {
             String str2 = checkAuth.charset;

@@ -7,16 +7,16 @@ import com.tencent.liteav.beauty.NativeLoad;
 public final class b extends com.tencent.liteav.videobase.c.d {
 
     /* renamed from: a  reason: collision with root package name */
-    int f36362a;
+    int f22671a;
     int b;
 
     /* renamed from: c  reason: collision with root package name */
-    private int f36363c;
+    private int f22672c;
 
     public b() {
         super(null);
-        this.f36363c = -1;
-        this.f36362a = -1;
+        this.f22672c = -1;
+        this.f22671a = -1;
         this.b = -1;
     }
 
@@ -28,8 +28,8 @@ public final class b extends com.tencent.liteav.videobase.c.d {
     @Override // com.tencent.liteav.videobase.c.d, com.tencent.liteav.videobase.a.b
     public final void onInit(com.tencent.liteav.videobase.frame.e eVar) {
         super.onInit(eVar);
-        this.f36362a = GLES20.glGetUniformLocation(getProgramId(), "whiteDegree");
-        this.f36363c = GLES20.glGetUniformLocation(getProgramId(), "contrast");
+        this.f22671a = GLES20.glGetUniformLocation(getProgramId(), "whiteDegree");
+        this.f22672c = GLES20.glGetUniformLocation(getProgramId(), "contrast");
         this.b = GLES20.glGetUniformLocation(getProgramId(), "ruddyDegree");
     }
 }

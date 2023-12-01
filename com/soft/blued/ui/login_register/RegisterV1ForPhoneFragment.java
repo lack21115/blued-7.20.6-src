@@ -25,6 +25,7 @@ import com.blued.android.chat.utils.BlueAppChatLocal;
 import com.blued.android.core.AppInfo;
 import com.blued.android.core.AppMethods;
 import com.blued.android.core.BlueAppLocal;
+import com.blued.android.core.net.IRequestHost;
 import com.blued.android.core.ui.BaseFragment;
 import com.blued.android.core.ui.TerminalActivity;
 import com.blued.android.framework.http.BluedUIHttpResponse;
@@ -58,6 +59,7 @@ import com.soft.blued.utils.StringUtils;
 import com.soft.blued.utils.TypefaceUtils;
 import com.soft.blued.utils.password.PasswordCheckUtils;
 import com.soft.blued.utils.password.PasswordStatusView;
+import com.xiaomi.mipush.sdk.Constants;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -99,16 +101,15 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
     private ClearEditText z;
 
     /* renamed from: c  reason: collision with root package name */
-    private String f31472c = RegisterV1ForPhoneFragment.class.getSimpleName();
+    private String f17782c = RegisterV1ForPhoneFragment.class.getSimpleName();
     private boolean F = true;
     private boolean G = false;
     private final int K = 11;
     private boolean M = true;
 
     /* renamed from: a  reason: collision with root package name */
-    public BluedUIHttpResponse f31471a = new AnonymousClass10();
+    public BluedUIHttpResponse f17781a = new AnonymousClass10();
     public BluedUIHttpResponse b = new BluedUIHttpResponse() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhoneFragment.11
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str, String str2) {
             switch (i) {
                 case 4036001:
@@ -124,28 +125,25 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
                     if (StringUtils.d(RegisterV1ForPhoneFragment.this.v)) {
                         return true;
                     }
-                    LoginRegisterTools.a(RegisterV1ForPhoneFragment.this.getFragmentActive(), RegisterV1ForPhoneFragment.this.x, RegisterV1ForPhoneFragment.this.v);
+                    LoginRegisterTools.a((IRequestHost) RegisterV1ForPhoneFragment.this.getFragmentActive(), RegisterV1ForPhoneFragment.this.x, RegisterV1ForPhoneFragment.this.v);
                     return true;
                 default:
                     return super.onUIFailure(i, str);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             DialogUtils.b(RegisterV1ForPhoneFragment.this.q);
             super.onUIFinish();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(RegisterV1ForPhoneFragment.this.q);
             super.onUIStart();
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIUpdate(BluedEntity bluedEntity) {
-            AppMethods.a((CharSequence) RegisterV1ForPhoneFragment.this.e.getResources().getString(2131886716));
+            AppMethods.a(RegisterV1ForPhoneFragment.this.e.getResources().getString(2131886716));
             RegisterV1ForPhoneFragment.this.l();
         }
     };
@@ -164,34 +162,32 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public BluedEntityA<BluedCheckResult> parseData(String str) {
-            BluedEntityA<BluedCheckResult> bluedEntityA = (BluedEntityA) super.parseData(str);
-            if (bluedEntityA != null) {
+            BluedEntityA<BluedCheckResult> parseData = super.parseData(str);
+            if (parseData != null) {
                 try {
-                    if (bluedEntityA.data != null && bluedEntityA.data.size() > 0) {
-                        String a2 = AesCrypto2.a(bluedEntityA.data.get(0).getEncrypted());
-                        Logger.b(RegisterV1ForPhoneFragment.this.f31472c, "解密：deData===", a2);
-                        bluedEntityA.data.set(0, (BluedCheckResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedCheckResult.class));
-                        return bluedEntityA;
+                    if (parseData.data != null && parseData.data.size() > 0) {
+                        String a2 = AesCrypto2.a(((BluedCheckResult) parseData.data.get(0)).getEncrypted());
+                        Logger.b(RegisterV1ForPhoneFragment.this.f17782c, "解密：deData===", a2);
+                        parseData.data.set(0, (BluedCheckResult) AppInfo.f().fromJson(a2, (Class<Object>) BluedCheckResult.class));
+                        return parseData;
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                     AppMethods.d(2131887272);
                 }
             }
-            return bluedEntityA;
+            return parseData;
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         /* renamed from: a */
         public void onUIUpdate(BluedEntityA<BluedCheckResult> bluedEntityA) {
             BluedCheckResult bluedCheckResult;
             try {
                 boolean z = true;
-                Logger.b(RegisterV1ForPhoneFragment.this.f31472c, "===success", "加密：responseJson:", bluedEntityA);
-                if (bluedEntityA.data.get(0) == null || (bluedCheckResult = bluedEntityA.data.get(0)) == null) {
+                Logger.b(RegisterV1ForPhoneFragment.this.f17782c, "===success", "加密：responseJson:", bluedEntityA);
+                if (bluedEntityA.data.get(0) == null || (bluedCheckResult = (BluedCheckResult) bluedEntityA.data.get(0)) == null) {
                     return;
                 }
                 RegisterV1ForPhoneFragment.this.u = bluedCheckResult.getToken();
@@ -218,14 +214,13 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
                 if (StringUtils.d(RegisterV1ForPhoneFragment.this.v)) {
                     return;
                 }
-                LoginRegisterTools.a(RegisterV1ForPhoneFragment.this.getFragmentActive(), RegisterV1ForPhoneFragment.this.x, RegisterV1ForPhoneFragment.this.v);
+                LoginRegisterTools.a((IRequestHost) RegisterV1ForPhoneFragment.this.getFragmentActive(), RegisterV1ForPhoneFragment.this.x, RegisterV1ForPhoneFragment.this.v);
             } catch (Exception e) {
                 e.printStackTrace();
                 AppMethods.d(2131887272);
             }
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public boolean onUIFailure(int i, String str, String str2) {
             if (i == 4036005 || i == 4036501) {
                 try {
@@ -244,21 +239,19 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
             return super.onUIFailure(i, str);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIFinish() {
             DialogUtils.b(RegisterV1ForPhoneFragment.this.q);
         }
 
-        @Override // com.blued.android.framework.http.BluedUIHttpResponse
         public void onUIStart() {
             DialogUtils.a(RegisterV1ForPhoneFragment.this.q);
         }
     }
 
     private void c() {
-        CommonTopTitleNoTrans commonTopTitleNoTrans = (CommonTopTitleNoTrans) this.d.findViewById(2131370749);
-        this.p = commonTopTitleNoTrans;
-        commonTopTitleNoTrans.a();
+        CommonTopTitleNoTrans findViewById = this.d.findViewById(R.id.top_title);
+        this.p = findViewById;
+        findViewById.a();
         this.p.f();
         this.p.setCenterText(this.e.getString(2131886632));
         this.p.setLeftClickListener(this);
@@ -267,15 +260,15 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
     private void d() {
         this.L = (PasswordStatusView) this.d.findViewById(R.id.pwd_check_view);
         this.q = DialogUtils.a(this.e);
-        CommonEdittextView commonEdittextView = (CommonEdittextView) this.d.findViewById(R.id.cev_mobile);
-        this.i = commonEdittextView;
-        ClearEditText editText = commonEdittextView.getEditText();
+        CommonEdittextView findViewById = this.d.findViewById(R.id.cev_mobile);
+        this.i = findViewById;
+        ClearEditText editText = findViewById.getEditText();
         this.j = editText;
         editText.setInputType(2);
         this.j.setFilters(new InputFilter[]{new InputFilter.LengthFilter(11)});
-        CommonEdittextView commonEdittextView2 = (CommonEdittextView) this.d.findViewById(R.id.cev_password);
-        this.g = commonEdittextView2;
-        ClearEditText editText2 = commonEdittextView2.getEditText();
+        CommonEdittextView findViewById2 = this.d.findViewById(R.id.cev_password);
+        this.g = findViewById2;
+        ClearEditText editText2 = findViewById2.getEditText();
         this.h = editText2;
         editText2.setTypeface(Typeface.DEFAULT);
         this.h.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
@@ -289,9 +282,9 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         TextView textView = (TextView) this.d.findViewById(R.id.tv_wechat_login);
         this.o = textView;
         textView.setOnClickListener(this);
-        ShapeTextView shapeTextView = (ShapeTextView) this.d.findViewById(R.id.tv_to_register);
-        this.r = shapeTextView;
-        shapeTextView.setOnClickListener(this);
+        ShapeTextView findViewById3 = this.d.findViewById(R.id.tv_to_register);
+        this.r = findViewById3;
+        findViewById3.setOnClickListener(this);
         TextView areaCodeText = this.i.getAreaCodeText();
         this.t = areaCodeText;
         areaCodeText.setOnClickListener(this);
@@ -311,12 +304,12 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         ImageView imageView = (ImageView) this.d.findViewById(2131361892);
         this.x = imageView;
         imageView.setOnClickListener(this);
-        CommonEdittextView commonEdittextView3 = (CommonEdittextView) this.d.findViewById(2131362783);
-        this.y = commonEdittextView3;
-        this.z = commonEdittextView3.getEditText();
+        CommonEdittextView findViewById4 = this.d.findViewById(2131362783);
+        this.y = findViewById4;
+        this.z = findViewById4.getEditText();
         this.w = (LinearLayout) this.d.findViewById(2131367685);
         this.A = (FrameLayout) this.d.findViewById(2131368252);
-        ImageView imageView2 = (ImageView) this.d.findViewById(2131369861);
+        ImageView imageView2 = (ImageView) this.d.findViewById(R.id.sm_refresh);
         this.B = imageView2;
         imageView2.setOnClickListener(this);
         e();
@@ -386,7 +379,7 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
             private int b;
 
             /* renamed from: c  reason: collision with root package name */
-            private int f31483c;
+            private int f17793c;
 
             @Override // android.text.TextWatcher
             public void afterTextChanged(Editable editable) {
@@ -396,7 +389,7 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
                 }
                 RegisterV1ForPhoneFragment.this.h.removeTextChangedListener(RegisterV1ForPhoneFragment.this.J);
                 this.b = RegisterV1ForPhoneFragment.this.h.getSelectionStart();
-                this.f31483c = RegisterV1ForPhoneFragment.this.h.getSelectionEnd();
+                this.f17793c = RegisterV1ForPhoneFragment.this.h.getSelectionEnd();
                 RegisterV1ForPhoneFragment.this.h.setSelection(this.b);
                 RegisterV1ForPhoneFragment.this.h.addTextChangedListener(RegisterV1ForPhoneFragment.this.J);
             }
@@ -419,7 +412,7 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         smOption.setOrganization("qRLrIEyYwqE1vOhOACQy");
         this.E.setMode(SmCaptchaWebView.MODE_SLIDE);
         this.E.setAppId("1");
-        this.E.setChannel(AppInfo.f9487c);
+        this.E.setChannel(AppInfo.c);
         if (!BlueAppLocal.d()) {
             HashMap hashMap = new HashMap();
             hashMap.put("lang", "en");
@@ -433,7 +426,7 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         layoutParams.width = AppInfo.l - DensityUtils.a(this.e, 80.0f);
         layoutParams.height = (int) ((layoutParams.width / 300.0d) * 234.0d);
         this.C.setLayoutParams(layoutParams);
-        this.f = (ScrollView) this.d.findViewById(2131369645);
+        this.f = (ScrollView) this.d.findViewById(R.id.scroll_view);
         this.C.setOnTouchListener(new View.OnTouchListener() { // from class: com.soft.blued.ui.login_register.RegisterV1ForPhoneFragment.8
             @Override // android.view.View.OnTouchListener
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -503,22 +496,22 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
 
     /* JADX INFO: Access modifiers changed from: private */
     public void k() {
-        LoginRegisterHttpUtils.a(this.f31471a, "mobile", getFragmentActive());
+        LoginRegisterHttpUtils.a(this.f17781a, "mobile", (IRequestHost) getFragmentActive());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void l() {
         Bundle bundle = new Bundle();
         bundle.putString(LoginRegisterTools.d, this.u);
-        bundle.putString(LoginRegisterTools.f31400c, this.v);
+        bundle.putString(LoginRegisterTools.f17710c, this.v);
         bundle.putString(LoginRegisterTools.e, this.j.getText().toString());
         bundle.putString(LoginRegisterTools.g, this.t.getText().toString());
         bundle.putString(LoginRegisterTools.h, this.h.getText().toString());
-        Logger.b(this.f31472c, "tokenVer===", this.u);
-        Logger.b(this.f31472c, "captcha===", this.v);
-        Logger.b(this.f31472c, "phonenum===", this.j.getText().toString());
-        Logger.b(this.f31472c, "areacode===", this.t.getText().toString());
-        Logger.b(this.f31472c, "password===", this.h.getText().toString());
+        Logger.b(this.f17782c, "tokenVer===", this.u);
+        Logger.b(this.f17782c, "captcha===", this.v);
+        Logger.b(this.f17782c, "phonenum===", this.j.getText().toString());
+        Logger.b(this.f17782c, "areacode===", this.t.getText().toString());
+        Logger.b(this.f17782c, "password===", this.h.getText().toString());
         TerminalActivity.d(getActivity(), RegisterV1ForPhone2Fragment.class, bundle);
     }
 
@@ -535,16 +528,15 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         int length = this.h.getText().toString().length();
         String str = this.F ? "identify_sm" : "identify";
         if (length < 6) {
-            AppMethods.a((CharSequence) this.e.getResources().getString(2131886713));
+            AppMethods.a(this.e.getResources().getString(2131886713));
         } else if (StringUtils.d(this.j.getText().toString()) || StringUtils.d(this.h.getText().toString()) || (StringUtils.d(this.z.getText().toString()) && !this.G)) {
             AppMethods.d(2131886603);
         } else {
             BluedUIHttpResponse bluedUIHttpResponse = this.b;
-            LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.t.getText().toString() + "-" + this.j.getText().toString(), this.u, this.z.getText().toString(), "mobile", str, this.H, getFragmentActive());
+            LoginRegisterHttpUtils.a(bluedUIHttpResponse, this.t.getText().toString() + Constants.ACCEPT_TIME_SEPARATOR_SERVER + this.j.getText().toString(), this.u, this.z.getText().toString(), "mobile", str, this.H, getFragmentActive());
         }
     }
 
-    @Override // androidx.fragment.app.Fragment
     public void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 100 && intent != null) {
@@ -556,6 +548,7 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         }
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // android.view.View.OnClickListener
     public void onClick(View view) {
         Tracker.onClick(view);
@@ -564,7 +557,7 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
                 if (StringUtils.d(this.v)) {
                     return;
                 }
-                LoginRegisterTools.a(getFragmentActive(), this.x, this.v);
+                LoginRegisterTools.a((IRequestHost) getFragmentActive(), this.x, this.v);
                 return;
             case 2131363120:
                 getActivity().finish();
@@ -572,7 +565,7 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
             case R.id.ll_root_layout /* 2131368210 */:
                 KeyboardUtils.a(getActivity());
                 return;
-            case 2131369861:
+            case R.id.sm_refresh /* 2131369861 */:
                 f();
                 return;
             case 2131370914:
@@ -603,7 +596,6 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         }
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.e = getActivity();
         View view = this.d;
@@ -617,14 +609,12 @@ public class RegisterV1ForPhoneFragment extends BaseFragment implements View.OnC
         return this.d;
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onResume() {
         super.onResume();
         g();
         i();
     }
 
-    @Override // com.blued.android.core.ui.BaseFragment, androidx.fragment.app.Fragment
     public void onStop() {
         j();
         super.onStop();

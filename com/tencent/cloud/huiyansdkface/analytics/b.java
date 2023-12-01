@@ -8,11 +8,11 @@ public class b {
     private static volatile b b;
 
     /* renamed from: a  reason: collision with root package name */
-    WeOkHttp f35496a;
+    WeOkHttp f21805a;
 
     private b() {
         WeOkHttp weOkHttp = new WeOkHttp();
-        this.f35496a = weOkHttp;
+        this.f21805a = weOkHttp;
         weOkHttp.config().timeout(14L, 14L, 14L).log(WeLog.Level.BODY, new WeLog.Logger() { // from class: com.tencent.cloud.huiyansdkface.analytics.b.1
             @Override // com.tencent.cloud.huiyansdkface.wehttp2.WeLog.Logger
             public final void log(String str) {

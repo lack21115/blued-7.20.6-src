@@ -24,13 +24,9 @@ public class PoiItem implements Parcelable {
             return a(i);
         }
     };
-
-    /* renamed from: a  reason: collision with root package name */
-    private String f5469a;
+    private String a;
     private String b;
-
-    /* renamed from: c  reason: collision with root package name */
-    private String f5470c;
+    private String c;
     private String d;
     private String e;
     private double f;
@@ -41,9 +37,9 @@ public class PoiItem implements Parcelable {
     private String k;
 
     public PoiItem() {
-        this.f5469a = "";
+        this.a = "";
         this.b = "";
-        this.f5470c = "";
+        this.c = "";
         this.d = "";
         this.e = "";
         this.f = 0.0d;
@@ -55,9 +51,9 @@ public class PoiItem implements Parcelable {
     }
 
     protected PoiItem(Parcel parcel) {
-        this.f5469a = "";
+        this.a = "";
         this.b = "";
-        this.f5470c = "";
+        this.c = "";
         this.d = "";
         this.e = "";
         this.f = 0.0d;
@@ -66,9 +62,9 @@ public class PoiItem implements Parcelable {
         this.i = "";
         this.j = "";
         this.k = "";
-        this.f5469a = parcel.readString();
+        this.a = parcel.readString();
         this.b = parcel.readString();
-        this.f5470c = parcel.readString();
+        this.c = parcel.readString();
         this.d = parcel.readString();
         this.e = parcel.readString();
         this.f = parcel.readDouble();
@@ -113,11 +109,11 @@ public class PoiItem implements Parcelable {
     }
 
     public String getPoiName() {
-        return this.f5469a;
+        return this.a;
     }
 
     public String getPoiType() {
-        return this.f5470c;
+        return this.c;
     }
 
     public String getProvince() {
@@ -157,11 +153,11 @@ public class PoiItem implements Parcelable {
     }
 
     public void setPoiName(String str) {
-        this.f5469a = str;
+        this.a = str;
     }
 
     public void setPoiType(String str) {
-        this.f5470c = str;
+        this.c = str;
     }
 
     public void setProvince(String str) {
@@ -178,9 +174,9 @@ public class PoiItem implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f5469a);
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.f5470c);
+        parcel.writeString(this.c);
         parcel.writeString(this.d);
         parcel.writeString(this.e);
         parcel.writeDouble(this.f);

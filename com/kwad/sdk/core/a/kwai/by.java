@@ -58,12 +58,12 @@ public final class by {
         ev.vP().put(o.a.class, new q());
         ev.vP().put(com.kwad.components.core.i.a.class, new p());
         ev.vP().put(com.kwad.components.core.webview.a.a.z.class, new jh());
-        ev.vP().put(a.C0574a.class, new cr());
+        ev.vP().put(a.C0404a.class, new cr());
         ev.vP().put(com.kwad.components.core.webview.a.a.u.class, new hq());
         ev.vP().put(ak.a.class, new aq());
         ev.vP().put(x.a.class, new go());
         ev.vP().put(b.a.class, new hi());
-        ev.vP().put(a.C0543a.class, new cl());
+        ev.vP().put(a.C0373a.class, new cl());
         ev.vP().put(ai.a.class, new gd());
         ev.vP().put(WebCardRegisterLiveMessageListener.AdLiveMessageInfoList.AdLiveMessageItemInfo.class, new x());
         ev.vP().put(com.kwad.components.core.webview.a.a.e.class, new bf());
@@ -80,7 +80,7 @@ public final class by {
         ev.vP().put(af.b.class, new es());
         ev.vP().put(com.kwad.components.core.webview.a.a.o.class, new gb());
         ev.vP().put(al.a.class, new ax());
-        ev.vP().put(b.C0575b.class, new hj());
+        ev.vP().put(b.C0405b.class, new hj());
         ev.vP().put(c.a.class, new dp());
         ev.vP().put(d.a.class, new dq());
         ev.vP().put(e.b.class, new ds());

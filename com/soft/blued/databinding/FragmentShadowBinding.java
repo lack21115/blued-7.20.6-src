@@ -7,11 +7,11 @@ import androidx.viewbinding.ViewBinding;
 public final class FragmentShadowBinding implements ViewBinding {
 
     /* renamed from: a  reason: collision with root package name */
-    private final LinearLayout f28971a;
+    private final LinearLayout f15281a;
 
     @Override // androidx.viewbinding.ViewBinding
     /* renamed from: a */
     public LinearLayout getRoot() {
-        return this.f28971a;
+        return this.f15281a;
     }
 }

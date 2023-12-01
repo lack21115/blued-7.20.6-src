@@ -2,7 +2,6 @@ package com.huawei.agconnect.config.impl;
 
 import android.util.Log;
 import com.baidu.mobads.sdk.internal.ci;
-import com.blued.android.module.common.web.jsbridge.BridgeUtil;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
@@ -15,16 +14,16 @@ import org.json.JSONObject;
 class h implements d {
 
     /* renamed from: a  reason: collision with root package name */
-    private final JSONObject f22337a;
+    private final JSONObject f8729a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public h(InputStream inputStream) {
-        this.f22337a = a(inputStream);
+        this.f8729a = a(inputStream);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public h(InputStream inputStream, String str) {
-        this.f22337a = a(inputStream);
+        this.f8729a = a(inputStream);
         a(str);
     }
 
@@ -60,13 +59,13 @@ class h implements d {
                 Log.d("InputStreamReader", "configuration_version to double error");
             }
             if (bigDecimal.compareTo(new BigDecimal("2.0")) == 0) {
-                this.f22337a.getJSONObject("client").put("app_id", b.getString("app_id"));
+                this.f8729a.getJSONObject("client").put("app_id", b.getString("app_id"));
             } else if (bigDecimal.compareTo(new BigDecimal("3.0")) >= 0) {
                 Iterator<String> keys = b.keys();
                 while (keys.hasNext()) {
                     String next = keys.next();
                     if (!"package_name".equals(next)) {
-                        a(next, b.get(next), this.f22337a);
+                        a(next, b.get(next), this.f8729a);
                     }
                 }
             }
@@ -92,7 +91,7 @@ class h implements d {
     }
 
     private JSONObject b(String str) throws JSONException {
-        JSONArray jSONArray = this.f22337a.getJSONArray("appInfos");
+        JSONArray jSONArray = this.f8729a.getJSONArray("appInfos");
         int i = 0;
         while (true) {
             int i2 = i;
@@ -109,12 +108,12 @@ class h implements d {
 
     @Override // com.huawei.agconnect.config.impl.d
     public String a(String str, String str2) {
-        if (str.endsWith(BridgeUtil.SPLIT_MARK)) {
+        if (str.endsWith("/")) {
             return str2;
         }
-        String[] split = str.split(BridgeUtil.SPLIT_MARK);
+        String[] split = str.split("/");
         try {
-            JSONObject jSONObject = this.f22337a;
+            JSONObject jSONObject = this.f8729a;
             int i = 1;
             while (true) {
                 int i2 = i;
@@ -134,6 +133,6 @@ class h implements d {
     }
 
     public String toString() {
-        return "InputStreamReader{config=" + this.f22337a.toString().hashCode() + '}';
+        return "InputStreamReader{config=" + this.f8729a.toString().hashCode() + '}';
     }
 }

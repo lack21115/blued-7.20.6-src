@@ -7,11 +7,11 @@ import org.json.JSONObject;
 public class Purchase {
 
     /* renamed from: a  reason: collision with root package name */
-    String f33012a;
+    String f19321a;
     String b;
 
     /* renamed from: c  reason: collision with root package name */
-    String f33013c;
+    String f19322c;
     String d;
     long e;
     int f;
@@ -22,11 +22,11 @@ public class Purchase {
     boolean k;
 
     public Purchase(String str, String str2, String str3) throws JSONException {
-        this.f33012a = str;
+        this.f19321a = str;
         this.i = str2;
         JSONObject jSONObject = new JSONObject(this.i);
         this.b = jSONObject.optString("orderId");
-        this.f33013c = jSONObject.optString("packageName");
+        this.f19322c = jSONObject.optString("packageName");
         this.d = jSONObject.optString("productId");
         this.e = jSONObject.optLong("purchaseTime");
         this.f = jSONObject.optInt("purchaseState");
@@ -37,7 +37,7 @@ public class Purchase {
     }
 
     public String a() {
-        return this.f33012a;
+        return this.f19321a;
     }
 
     public String b() {
@@ -49,6 +49,6 @@ public class Purchase {
     }
 
     public String toString() {
-        return "PurchaseInfo(type:" + this.f33012a + "):" + this.i;
+        return "PurchaseInfo(type:" + this.f19321a + "):" + this.i;
     }
 }

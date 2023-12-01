@@ -11,26 +11,20 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 @Metadata
 /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1.class */
 public final class FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1<T> implements Flow<T> {
-
-    /* renamed from: a  reason: collision with root package name */
-    final /* synthetic */ Flow f43305a;
+    final /* synthetic */ Flow a;
 
     @Metadata
     /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2  reason: invalid class name */
     /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2.class */
     public static final class AnonymousClass2 implements FlowCollector<T> {
-
-        /* renamed from: a  reason: collision with root package name */
-        final /* synthetic */ FlowCollector f43306a;
+        final /* synthetic */ FlowCollector a;
 
         @Metadata
         @DebugMetadata(b = "Transform.kt", c = {136}, d = "emit", e = "kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2")
         /* renamed from: kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2$1  reason: invalid class name */
         /* loaded from: source-3503164-dex2jar.jar:kotlinx/coroutines/flow/FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1$2$1.class */
         public static final class AnonymousClass1 extends ContinuationImpl {
-
-            /* renamed from: a  reason: collision with root package name */
-            /* synthetic */ Object f43307a;
+            /* synthetic */ Object a;
             int b;
 
             public AnonymousClass1(Continuation continuation) {
@@ -39,14 +33,14 @@ public final class FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1<
 
             @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
             public final Object invokeSuspend(Object obj) {
-                this.f43307a = obj;
+                this.a = obj;
                 this.b |= Integer.MIN_VALUE;
                 return AnonymousClass2.this.emit(null, this);
             }
         }
 
         public AnonymousClass2(FlowCollector flowCollector) {
-            this.f43306a = flowCollector;
+            this.a = flowCollector;
         }
 
         /* JADX WARN: Removed duplicated region for block: B:10:0x0049  */
@@ -88,7 +82,7 @@ public final class FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1<
                 r7 = r0
             L35:
                 r0 = r7
-                java.lang.Object r0 = r0.f43307a
+                java.lang.Object r0 = r0.a
                 r10 = r0
                 java.lang.Object r0 = kotlin.coroutines.intrinsics.IntrinsicsKt.a()
                 r9 = r0
@@ -113,7 +107,7 @@ public final class FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1<
                 r0 = r10
                 kotlin.ResultKt.a(r0)
                 r0 = r5
-                kotlinx.coroutines.flow.FlowCollector r0 = r0.f43306a
+                kotlinx.coroutines.flow.FlowCollector r0 = r0.a
                 r10 = r0
                 r0 = r7
                 kotlin.coroutines.Continuation r0 = (kotlin.coroutines.Continuation) r0
@@ -132,7 +126,7 @@ public final class FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1<
                 r0 = r9
                 return r0
             L8b:
-                kotlin.Unit r0 = kotlin.Unit.f42314a
+                kotlin.Unit r0 = kotlin.Unit.a
                 return r0
             */
             throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.flow.FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1.AnonymousClass2.emit(java.lang.Object, kotlin.coroutines.Continuation):java.lang.Object");
@@ -141,7 +135,7 @@ public final class FlowKt__TransformKt$filterNotNull$$inlined$unsafeTransform$1<
 
     @Override // kotlinx.coroutines.flow.Flow
     public Object a(FlowCollector flowCollector, Continuation continuation) {
-        Object a2 = this.f43305a.a(new AnonymousClass2(flowCollector), continuation);
-        return a2 == IntrinsicsKt.a() ? a2 : Unit.f42314a;
+        Object a = this.a.a(new AnonymousClass2(flowCollector), continuation);
+        return a == IntrinsicsKt.a() ? a : Unit.a;
     }
 }

@@ -142,7 +142,7 @@ public final class c {
         JSONObject jSONObject = new JSONObject();
         try {
             if (this.biz != null) {
-                jSONObject.put(com.alipay.sdk.app.statistic.c.b, this.biz.value);
+                jSONObject.put("biz", this.biz.value);
             }
             if (this.subBiz != null) {
                 jSONObject.put("sub_biz", this.subBiz.value);

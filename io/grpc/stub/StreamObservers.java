@@ -1,6 +1,5 @@
 package io.grpc.stub;
 
-import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.google.common.base.Preconditions;
 import java.util.Iterator;
 
@@ -13,7 +12,7 @@ public final class StreamObservers {
 
     public static <V> void copyWithFlowControl(final Iterator<V> it, final CallStreamObserver<V> callStreamObserver) {
         Preconditions.checkNotNull(it, "source");
-        Preconditions.checkNotNull(callStreamObserver, TypedValues.AttributesType.S_TARGET);
+        Preconditions.checkNotNull(callStreamObserver, "target");
         callStreamObserver.setOnReadyHandler(new Runnable() { // from class: io.grpc.stub.StreamObservers.1FlowControllingOnReadyHandler
             private boolean completed;
 

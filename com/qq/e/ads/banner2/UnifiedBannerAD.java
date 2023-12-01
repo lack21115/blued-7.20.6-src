@@ -21,7 +21,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
     private UnifiedBannerADListener b;
 
     /* renamed from: c  reason: collision with root package name */
-    private DownAPPConfirmPolicy f27859c;
+    private DownAPPConfirmPolicy f14171c;
     private AtomicInteger d;
     private int e;
     private LoadAdParams f;
@@ -58,8 +58,8 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(DownAPPConfirmPolicy downAPPConfirmPolicy) {
         T t;
-        this.f27859c = downAPPConfirmPolicy;
-        if (downAPPConfirmPolicy == null || (t = this.f27851a) == 0) {
+        this.f14171c = downAPPConfirmPolicy;
+        if (downAPPConfirmPolicy == null || (t = this.f14163a) == 0) {
             return;
         }
         ((UBVI) t).setDownAPPConfirmPolicy(downAPPConfirmPolicy);
@@ -68,7 +68,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(LoadAdParams loadAdParams) {
         this.f = loadAdParams;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UBVI) t).setLoadAdParams(loadAdParams);
         }
@@ -77,23 +77,23 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
     @Override // com.qq.e.ads.AbstractAD
     public void a(Object obj) {
         UBVI ubvi = (UBVI) obj;
-        DownAPPConfirmPolicy downAPPConfirmPolicy = this.f27859c;
+        DownAPPConfirmPolicy downAPPConfirmPolicy = this.f14171c;
         if (downAPPConfirmPolicy != null) {
-            this.f27859c = downAPPConfirmPolicy;
-            T t = this.f27851a;
+            this.f14171c = downAPPConfirmPolicy;
+            T t = this.f14163a;
             if (t != 0) {
                 ((UBVI) t).setDownAPPConfirmPolicy(downAPPConfirmPolicy);
             }
         }
         int i = this.e;
         this.e = i;
-        T t2 = this.f27851a;
+        T t2 = this.f14163a;
         if (t2 != 0) {
             ((UBVI) t2).setRefresh(i);
         }
         LoadAdParams loadAdParams = this.f;
         this.f = loadAdParams;
-        T t3 = this.f27851a;
+        T t3 = this.f14163a;
         if (t3 != 0) {
             ((UBVI) t3).setLoadAdParams(loadAdParams);
         }
@@ -105,7 +105,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void a(boolean z) {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UBVI) t).onWindowFocusChanged(z);
         }
@@ -126,7 +126,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
                 this.d.incrementAndGet();
                 return;
             }
-            T t = this.f27851a;
+            T t = this.f14163a;
             if (t != 0) {
                 ((UBVI) t).fetchAd();
             } else {
@@ -138,7 +138,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
     /* JADX INFO: Access modifiers changed from: package-private */
     public void c(int i) {
         this.e = i;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UBVI) t).setRefresh(i);
         }
@@ -146,7 +146,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void d() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UBVI) t).destroy();
         } else {
@@ -155,7 +155,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
     }
 
     public String getAdNetWorkName() {
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             return ((UBVI) t).getAdNetWorkName();
         }
@@ -176,7 +176,7 @@ public class UnifiedBannerAD extends LiteAbstractAD<UBVI> implements IReward, NF
     @Override // com.qq.e.comm.pi.IReward
     public void setServerSideVerificationOptions(ServerSideVerificationOptions serverSideVerificationOptions) {
         this.i = serverSideVerificationOptions;
-        T t = this.f27851a;
+        T t = this.f14163a;
         if (t != 0) {
             ((UBVI) t).setServerSideVerificationOptions(serverSideVerificationOptions);
         }
